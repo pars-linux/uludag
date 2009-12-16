@@ -124,8 +124,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>610</width>
-        <height>440</height>
+        <width>608</width>
+        <height>424</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -195,7 +195,7 @@
             <item>
              <widget class="KSqueezedTextLabel" name="labelDeviceDescription">
               <property name="text">
-               <string notr="true">KSque…Label</string>
+               <string notr="true">KS…el</string>
               </property>
              </widget>
             </item>
@@ -239,7 +239,11 @@
                <string>Cancel</string>
               </property>
               <property name="text">
-               <string notr="true">X</string>
+               <string notr="true"/>
+              </property>
+              <property name="icon">
+               <iconset resource="../icons/data.qrc">
+                <normaloff>:/data/edit-delete.png</normaloff>:/data/edit-delete.png</iconset>
               </property>
              </widget>
             </item>
