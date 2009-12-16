@@ -170,7 +170,7 @@
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QProgressBar" name="wifiStrength">
+      <widget class="QProgressBar" name="signalStrength">
        <property name="maximumSize">
         <size>
          <width>16777215</width>
