@@ -14,7 +14,6 @@
 # System
 import time
 import comar
-from pardus.netutils import findInterface
 
 # Qt Stuff
 from PyQt4 import QtGui
@@ -181,9 +180,10 @@ class MainManager(QtGui.QWidget):
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
+                    print device
                     # FIXME: There should be no backend specific names, etc. here
                     if True:#self.packages[package]['type'] in ('net', 'wifi'):
-                        menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], findInterface(device).name), self)
+                        menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], devices[device]), self)
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                         # Store a list of probed devices
