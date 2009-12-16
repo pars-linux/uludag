@@ -1042,6 +1042,8 @@
   translate
   dup "memtest" eq over "memtest86" eq or { pop txt_memtest return } if
   dup "hardware" eq { pop txt_hdt return } if
+  dup "mainmenu" eq { pop txt_mainmenu return } if
+  dup "otheroptions" eq { pop txt_otheroptions return } if
   dup "firmware" eq { pop txt_firmware return } if
   syslinux {
     livecd {
