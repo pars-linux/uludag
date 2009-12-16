@@ -22,7 +22,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.ui_main import Ui_mainManager
 from networkmanager.ui_item import Ui_ConnectionItemWidget
-from networkmanager.ui_wifi import Ui_WifiItemWidget
+from networkmanager.ui_ap import Ui_APItemWidget
 from networkmanager.ui_nameserver import Ui_nameServer
 from networkmanager.ui_security import Ui_DialogSecurity
 from networkmanager.ui_securityitem import Ui_SecurityWidget
@@ -114,24 +114,24 @@ class NameServerDialog(QtGui.QDialog):
             servers.append(unicode(item))
         return servers
 
-class WifiItemWidget(QtGui.QWidget):
+class APItemWidget(QtGui.QWidget):
 
     def __init__(self, data, parent, item):
         QtGui.QWidget.__init__(self, parent)
 
-        self.ui = Ui_WifiItemWidget()
+        self.ui = Ui_APItemWidget()
         self.ui.setupUi(self)
         self.item = item
         self.data = data
         self.ui.labelName.setText(data['remote'])
         self.setToolTip("%s - %s" % (data['encryption'], data['mac']))
-        self.ui.wifiStrength.setValue(int(data['quality']))
+        self.ui.signalStrength.setValue(int(data['quality']))
         icon = "document-encrypt"
         if data['encryption'] == 'none':
             icon = "document-decrypt"
         self.ui.labelStatus.setPixmap(KIcon(icon).pixmap(22))
 
-class WifiPopup(QtGui.QMenu):
+class APPopup(QtGui.QMenu):
     def __init__(self, parent):
         QtGui.QMenu.__init__(self, parent)
         self.parent = parent
@@ -167,8 +167,8 @@ class WifiPopup(QtGui.QMenu):
             for remote in args[0]:
                 item = QtGui.QListWidgetItem(self.listWidget)
                 item.setSizeHint(QSize(22,30))
-                wifi = WifiItemWidget(remote, self, item)
-                self.listWidget.setItemWidget(item, wifi)
+                ap = APItemWidget(remote, self, item)
+                self.listWidget.setItemWidget(item, ap)
         else:
             print exception
 
@@ -191,7 +191,7 @@ class ConnectionItemWidget(QtGui.QWidget):
 
         self.ui = Ui_ConnectionItemWidget()
         self.ui.setupUi(self)
-        self.ui.wifiStrength.hide()
+        self.ui.signalStrength.hide()
 
         self.ui.labelName.setText(profile)
 
@@ -207,11 +207,11 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.connect(self.ui.checkToggler, SIGNAL("clicked()"), self.toggleConnection)
 
     def setSignalStrength(self, value):
-        self.ui.wifiStrength.setValue(value)
-        self.ui.wifiStrength.show()
+        self.ui.signalStrength.setValue(value)
+        self.ui.signalStrength.show()
 
     def hideSignalStrength(self):
-        self.ui.wifiStrength.hide()
+        self.ui.signalStrength.hide()
 
     def mouseDoubleClickEvent(self, event):
         self.ui.buttonEdit.animateClick(100)
