@@ -179,8 +179,8 @@ class MainManager(QtGui.QWidget):
                 # FIXME: This is backend specific too!
                 if info["type"] == "wifi":
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-                    wifiScanner = WifiPopup(self)
-                    self.ui.buttonScan.setMenu(wifiScanner)
+                    APScanner = WifiPopup(self)
+                    self.ui.buttonScan.setMenu(APScanner)
 
             # Create devices menu entry
             if len(devices) > 0:
@@ -202,7 +202,6 @@ class MainManager(QtGui.QWidget):
                 menu.addSeparator()
 
             # FIXME: This part seems to be handled by the above code.
-            """
             if self.packages[package]['type'] == 'dialup':
                 pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
                 devices = self.iface.devices(package)
@@ -213,7 +212,6 @@ class MainManager(QtGui.QWidget):
                     pppMenu.addAction(menuItem)
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
-            """
 
         if len(self.packages) > 0:
             self.ui.buttonCreate.setMenu(menu)
@@ -417,8 +415,8 @@ class MainManager(QtGui.QWidget):
             remote_name = self.iface.remoteName(package)
             self.ui.labelRemote.setText("%s :" % remote_name)
             if "remote_scan" in modes:
-                wifiScanner = WifiPopup(self)
-                self.ui.buttonScan.setMenu(wifiScanner)
+                APScanner = WifiPopup(self)
+                self.ui.buttonScan.setMenu(APScanner)
                 self.ui.buttonScan.show()
             else:
                 self.ui.buttonScan.hide()
