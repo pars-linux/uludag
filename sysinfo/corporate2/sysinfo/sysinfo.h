@@ -82,6 +82,7 @@ public:
         CPU_MODEL,
         CPU_NOFCORE,            /* CPU stuff */
         CPU_SPEED,
+        CPU_VT,
         OS_SYSNAME,             /* OS Information */
         OS_RELEASE,
         OS_VERSION,

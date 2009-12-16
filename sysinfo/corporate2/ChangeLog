@@ -1,3 +1,8 @@
+16-12-2009  Ozan Çağlayan <ozan_at_pardus.org.tr>
+	* sysinfo/sysinfo.cpp:
+		Show swap information if swap is enabled,
+		Show virtualization information.
+
 15-12-2009  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* sysinfo/sysinfo.cpp:
 		Use glxinfo for GFX informations,
