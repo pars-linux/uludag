@@ -189,6 +189,7 @@ class MainManager(QtGui.QWidget):
                 for device in devices.keys():
 
                     if True:#self.packages[package]['type'] in ('net', 'wifi'):
+                        print device, devices[device]
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], devices[device]), self)
                         menuItem.setData(QVariant("%s::%s" % (package, device)))
 
