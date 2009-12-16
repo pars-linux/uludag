@@ -96,7 +96,7 @@ class MainManager(QtGui.QWidget):
 
         # Save changes when clicked Apply, Reject changes when clicked Cancel
         self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.hideEditBox)
-        self.connect(self.ui.buttonBox, SIGNAL("applied()"), self.applyChanges)
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.applyChanges)
 
         # Show NameServer Settings Dialog
         self.ui.buttonNameServer.setIcon(KIcon("configure"))
