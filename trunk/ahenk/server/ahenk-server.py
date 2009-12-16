@@ -28,7 +28,7 @@ rootpw        %(password)s
 directory     /var/lib/openldap-data
 index         objectClass eq
 
-access to attrs=userpassword
+access to attrs=userPassword
        by self write
        by anonymous auth
        by dn.exact="cn=%(root_account)s, %(domain)s" write
