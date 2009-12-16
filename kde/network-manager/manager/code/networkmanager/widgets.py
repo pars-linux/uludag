@@ -133,10 +133,11 @@ class APItemWidget(QtGui.QWidget):
         self.ui.labelStatus.setPixmap(KIcon(icon).pixmap(22))
 
 class APPopup(QtGui.QMenu):
-    def __init__(self, parent):
+    def __init__(self, parent, package):
         QtGui.QMenu.__init__(self, parent)
         self.parent = parent
         self.iface  = parent.iface
+        self.package= package
 
         # Layout & Widgets
         self.gridLayout = QtGui.QGridLayout(self)
@@ -183,7 +184,7 @@ class APPopup(QtGui.QMenu):
 
         # Scan with current device
         device = str(self.parent.ui.deviceList.currentText())
-        self.iface.scanRemote(device, "wireless_tools", self.fillList)
+        self.iface.scanRemote(device, self.package, self.fillList)
 
 class ConnectionItemWidget(QtGui.QWidget):
 
