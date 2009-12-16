@@ -191,7 +191,7 @@ class MainManager(QtGui.QWidget):
                     if True:#self.packages[package]['type'] in ('net', 'wifi'):
                         print device, devices[device]
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], devices[device]), self)
-                        menuItem.setData(QVariant("%s::%s" % (package, device)))
+                        menuItem.setData(QVariant("%s::%s::%s" % (package, device, devices[device])))
 
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
 
@@ -208,7 +208,7 @@ class MainManager(QtGui.QWidget):
                 devices = self.iface.devices(package)
                 for device in devices.keys():
                     menuItem = QtGui.QAction(device, self)
-                    menuItem.setData(QVariant("%s::%s" % (package,device)))
+                    menuItem.setData(QVariant("%s::%s::%s" % (package, device, devices[device])))
                     self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
                     pppMenu.addAction(menuItem)
                 menu.addMenu(pppMenu)
@@ -610,7 +610,13 @@ class MainManager(QtGui.QWidget):
         return data
 
     def createConnection(self):
-        package, device = str(self.sender().data().toString()).split('::')
+        package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
+
+        # Check for PIN requirement
+        if "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device):
+            pd = PINDialog(self, deviceHumanReadable)
+            pd.exec_()
+
         self.resetForm()
         self.lastEditedPackage = package
         self.showEditBox(package, device=device)

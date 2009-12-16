@@ -59,7 +59,7 @@ class PINDialog(KPasswordDialog):
     def __init__(self, parent, deviceName):
         KPasswordDialog.__init__(self, parent, KPasswordDialog.NoFlags)
         self.setCaption(i18n("Enter PIN"))
-        self.setPrompt("%s %s" % (i18n("Please Enter PIN Code for"), deviceName))
+        self.setPrompt("%s <b>%s</b>" % (i18n("Please Enter PIN Code for"), deviceName))
         self.setPixmap(KIcon("preferences-desktop-notification").pixmap(64))
 
     def show(self):
@@ -261,7 +261,7 @@ class ConnectionItemWidget(QtGui.QWidget):
             self.ui.labelStatus.setPixmap(KIcon("emblem-important").pixmap(32))
             self.setState(True)
         elif state == "unplugged":
-            self.ui.labelDesc.setText(i18n("Cable or device is unplugged."))
+            self.ui.labelDesc.setText(i18n("Cable or device is unplugged"))
             self.ui.labelStatus.setPixmap(KIcon("dialog-warning").pixmap(32))
             self.setState(False)
 
@@ -276,7 +276,7 @@ class ConnectionItemWidget(QtGui.QWidget):
                 else:
                     self.ui.checkToggler.setChecked(True)
                 if "Comar.PolicyKit" in exception._dbus_error_name:
-                    KMessageBox.error(self, i18n("Access denied."))
+                    KMessageBox.error(self, i18n("Access denied"))
                 else:
                     KMessageBox.error(self, unicode(exception))
 
