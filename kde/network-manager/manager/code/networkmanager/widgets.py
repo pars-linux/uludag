@@ -27,12 +27,16 @@ from networkmanager.ui_security     import Ui_DialogSecurity
 from networkmanager.ui_nameserver   import Ui_nameServer
 from networkmanager.ui_securityitem import Ui_SecurityWidget
 
-iconForPackage = {
-    "net_tools": "network-wired",
-    "wireless_tools": "network-wireless",
-    "ppp": "modem",
-    "broadband": "modem",
-}
+def getIconForPackage(package):
+
+    d = {
+            "net_tools": "network-wired",
+            "wireless_tools": "network-wireless",
+            "ModemManager": "modem",
+            "ppp": "modem",
+        }
+
+    return d.get(package, "modem")
 
 class SecurityWidget(QtGui.QWidget):
     def __init__(self, parent, key, label, type_):
@@ -251,7 +255,7 @@ class ConnectionItemWidget(QtGui.QWidget):
         if state == "down":
             self.ui.labelDesc.setText(i18n("Disconnected"))
             self.ui.checkToggler.setChecked(False)
-            self.ui.labelStatus.setPixmap(KIcon(iconForPackage[self.package]).pixmap(32))
+            self.ui.labelStatus.setPixmap(KIcon(getIconForPackage(self.package)).pixmap(32))
             self.setState(True)
         elif state == "up":
             self.ui.labelDesc.setText(unicode(i18n("Connected: %s")) % detail)
