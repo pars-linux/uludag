@@ -1,4 +1,4 @@
-# translation of nl.po to Nederlansd
+# translation of nl.po to Nederlands
 # Arthur & Ettie Kerkmeester <a.s.kerkmeester@hccnet.nl>, 2004, 2005.
 # Rinse de Vries <rinsedevries@kde.nl>, 2005.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
@@ -10,14 +10,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
-"PO-Revision-Date: 20/10/09 12:20\n"
+"PO-Revision-Date: 16/12/09 20:57\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #. ok button label
 #. txt_ok
@@ -443,9 +443,9 @@ msgstr "FS-controle"
 
 #. txt_mainmenu
 msgid "Main menu"
-msgstr ""
+msgstr "Hoofdmenu"
 
 #. txt_otheroptions
 msgid "Other options"
-msgstr ""
+msgstr "Overige opties"
 
