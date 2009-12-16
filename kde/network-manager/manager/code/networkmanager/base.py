@@ -628,18 +628,21 @@ class MainManager(QtGui.QWidget):
                 if pinDialog.exec_():
                     # Clicked OK
                     pin = pinDialog.password()
-                    print pin
 
                     # Send PIN to the card, returns True if PIN is valid.
                     if self.iface.sendPIN(package, device, str(pin)):
+                        self.pin = str(pin)
                         return True
                 else:
-                    print "Clicked cancel"
                     break
 
             # Verification failed for 3 times
-            KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
-            return False
+            if c == pinDialog.maxTries-1:
+                KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
+                return False
+            else:
+                # Canceled
+                return True
         else:
             # PIN is already entered or the backend doesn't support PIN operations
             return True
@@ -673,7 +676,7 @@ class MainManager(QtGui.QWidget):
 
     def handler(self, package, signal, args):
         args = map(lambda x: unicode(x), list(args))
-        print "COMAR: %s, %s", (signal, args)
+        print "COMAR: %s, %s" % (signal, args)
         if signal == "stateChanged":
             key = "%s-%s" % (package, args[0])
             if key in self.widgets:
