@@ -16,15 +16,15 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 # KDE Stuff
-from PyKDE4.kdeui import KIcon, KUrlLabel, KMessageBox
+from PyKDE4.kdeui import KIcon, KUrlLabel, KMessageBox, KPasswordDialog
 from PyKDE4.kdecore import i18n
 
 # Application Stuff
-from networkmanager.ui_main import Ui_mainManager
-from networkmanager.ui_item import Ui_ConnectionItemWidget
-from networkmanager.ui_ap import Ui_APItemWidget
-from networkmanager.ui_nameserver import Ui_nameServer
-from networkmanager.ui_security import Ui_DialogSecurity
+from networkmanager.ui_ap           import Ui_APItemWidget
+from networkmanager.ui_main         import Ui_mainManager
+from networkmanager.ui_item         import Ui_ConnectionItemWidget
+from networkmanager.ui_security     import Ui_DialogSecurity
+from networkmanager.ui_nameserver   import Ui_nameServer
 from networkmanager.ui_securityitem import Ui_SecurityWidget
 
 iconForPackage = {
@@ -53,6 +53,16 @@ class SecurityWidget(QtGui.QWidget):
 
     def getValue(self):
         return unicode(self.ui.lineFieldValue.text())
+
+
+class PINDialog(KPasswordDialog):
+    def __init__(self, parent, deviceName):
+        KPasswordDialog.__init__(self, parent, KPasswordDialog.NoFlags)
+        self.setCaption(i18n("Enter PIN"))
+        self.setPrompt("%s %s" % (i18n("Please Enter PIN Code for"), deviceName))
+
+    def show(self):
+        self.exec_()
 
 
 class SecurityDialog(QtGui.QDialog):

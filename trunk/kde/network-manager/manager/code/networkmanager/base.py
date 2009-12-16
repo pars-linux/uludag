@@ -26,7 +26,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.backend import NetworkIface
 from networkmanager.ui_main import Ui_mainManager
-from networkmanager.widgets import ConnectionItemWidget, APPopup, NameServerDialog, SecurityDialog
+from networkmanager.widgets import ConnectionItemWidget, APPopup, NameServerDialog, SecurityDialog, PINDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
