@@ -26,7 +26,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.backend import NetworkIface
 from networkmanager.ui_main import Ui_mainManager
-from networkmanager.widgets import ConnectionItemWidget, getIconForPackage, APPopup, NameServerDialog, SecurityDialog, PINDialog, ConnectionWizard
+from networkmanager.widgets import ConnectionItemWidget, getIconForPackage, APPopup, NameServerDialog, SecurityDialog, ConnectionWizard
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -614,44 +614,8 @@ class MainManager(QtGui.QWidget):
 
         return data
 
-    def askForPINAndAuthenticate(self, package, device, deviceHumanReadable):
-
-        # Check for PIN requirement
-        if "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device):
-
-            pinDialog = PINDialog(self, deviceHumanReadable)
-
-            # Loop 3 times by default
-            for c in range(pinDialog.maxTries):
-                # Clear textbox
-                pinDialog.setPassword("")
-                if pinDialog.exec_():
-                    # Clicked OK
-                    pin = pinDialog.password()
-
-                    # Send PIN to the card, returns True if PIN is valid.
-                    if self.iface.sendPIN(package, device, str(pin)):
-                        self.pin = str(pin)
-                        return True
-                else:
-                    break
-
-            # Verification failed for 3 times
-            if c == pinDialog.maxTries-1:
-                KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
-                return False
-            else:
-                # Canceled
-                return True
-        else:
-            # PIN is already entered or the backend doesn't support PIN operations
-            return True
-
-
     def createConnection(self):
         package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
-
-        #if self.askForPINAndAuthenticate(package, device, deviceHumanReadable):
 
         # Classical profile creation screen
         if "wizard" not in self.iface.capabilities(package)["modes"]:
@@ -663,9 +627,7 @@ class MainManager(QtGui.QWidget):
             self.showEditBox(package, device=device)
         else:
             # Use a wizard-like profile creation for devices like HSPA
-            cw = ConnectionWizard(self, package, device, deviceHumanReadable)
-            if cw.exec_():
-                print "Closed, OK"
+            ConnectionWizard(self, package, device, deviceHumanReadable).show()
 
     def editConnection(self):
         sender = self.sender().parent()
