@@ -13,9 +13,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-08-21 00:32+0200\n"
+"PO-Revision-Date: 2009-12-16 16:00+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -445,9 +445,9 @@ msgid "FS check"
 msgstr "Vérification du FS"
 #. txt_mainmenu
 msgid "Main menu"
-msgstr ""
+msgstr "Menu principal"
 
 #. txt_otheroptions
 msgid "Other options"
-msgstr ""
+msgstr "Autres options"
 
