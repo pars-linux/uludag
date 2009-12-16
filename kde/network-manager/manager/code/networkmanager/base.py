@@ -614,44 +614,47 @@ class MainManager(QtGui.QWidget):
 
         return data
 
-    def askForPINAndAuthenticate(self, package, device, deviceHumanReadable, pinNeeded):
-        # Pops up PIN dialog if pinNeeded is True
+    def askForPINAndAuthenticate(self, package, device, deviceHumanReadable):
 
-        def PINHandler(pin, keep):
-            print "in PINHandler with %s" % pin
+        # Check for PIN requirement
+        if "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device):
 
+            pinDialog = PINDialog(self, deviceHumanReadable)
 
-        if not pinNeeded:
+            # Loop 3 times by default
+            for c in range(pinDialog.maxTries):
+                # Clear textbox
+                pinDialog.setPassword("")
+                if pinDialog.exec_():
+                    # Clicked OK
+                    pin = pinDialog.password()
+                    print pin
+
+                    # Send PIN to the card, returns True if PIN is valid.
+                    if self.iface.sendPIN(package, device, str(pin)):
+                        return True
+                else:
+                    print "Clicked cancel"
+                    break
+
+            # Verification failed for 3 times
+            KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
+            return False
+        else:
+            # PIN is already entered or the backend doesn't support PIN operations
             return True
 
-        pinDialog = PINDialog(self, deviceHumanReadable)
-        pinDialog.connect(pinDialog, SIGNAL("gotPassword(const QString&, bool)"), PINHandler)
-
-        for c in range(pinDialog.maxTries):
-            pinDialog.show()
-            pinDialog.setPassword("")
-
-            #if self.iface.sendPIN(package, device, str(pin)):
-            #    return True
-
-        return False
 
     def createConnection(self):
         package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
 
-        # Check for PIN requirement
-        pinNeeded = "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device)
-
-        if self.askForPINAndAuthenticate(package, device, deviceHumanReadable, pinNeeded):
+        if self.askForPINAndAuthenticate(package, device, deviceHumanReadable):
             self.resetForm()
             self.lastEditedPackage = package
 
             # FIXME: Suggest some profile name here
             # self.ui.lineProfileName.setText(package)
             self.showEditBox(package, device=device)
-        else:
-            KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
-
 
     def editConnection(self):
         sender = self.sender().parent()

@@ -69,12 +69,6 @@ class PINDialog(KPasswordDialog):
 
         self.maxTries = maxTries
 
-    def show(self):
-        self.exec_()
-
-    def getPassword(self):
-        return self.password()
-
 
 class SecurityDialog(QtGui.QDialog):
     def __init__(self, parent):
