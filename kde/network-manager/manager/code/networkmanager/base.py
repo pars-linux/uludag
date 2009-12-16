@@ -179,7 +179,7 @@ class MainManager(QtGui.QWidget):
                 # FIXME: remote_scan or remote, what's their differences?
                 if "remote_scan" in info["modes"]:
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-                    APScanner = APPopup(self, self.package)
+                    APScanner = APPopup(self, package)
                     self.ui.buttonScan.setMenu(APScanner)
 
             # Create devices menu entry
