@@ -31,6 +31,7 @@ iconForPackage = {
     "net_tools": "network-wired",
     "wireless_tools": "network-wireless",
     "ppp": "modem",
+    "broadband": "modem",
 }
 
 class SecurityWidget(QtGui.QWidget):
