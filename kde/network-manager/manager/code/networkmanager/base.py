@@ -162,37 +162,46 @@ class MainManager(QtGui.QWidget):
             if not self.refreshBrowser in self.animatorFinishHook:
                 self.animatorFinishHook.append(self.refreshBrowser)
             return
+
         aa = time.time()
         self.ui.filterBox.clear()
         self.probedDevices = []
         menu = QtGui.QMenu(self)
+
         for package in self.packages:
             info = self.packages[package]
             devices = self.iface.devices(package)
+
             # Add filter menu entry
             if len(devices):
                 self.ui.filterBox.addItem(info["name"], QVariant(package))
+
+                # FIXME: This is backend specific too!
                 if info["type"] == "wifi":
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
                     wifiScanner = WifiPopup(self)
                     self.ui.buttonScan.setMenu(wifiScanner)
+
             # Create devices menu entry
             if len(devices) > 0:
+
                 # Create profile menu with current devices
                 for device in devices.keys():
-                    print device
-                    # FIXME: There should be no backend specific names, etc. here
+
                     if True:#self.packages[package]['type'] in ('net', 'wifi'):
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], devices[device]), self)
-                        menuItem.setData(QVariant("%s::%s" % (package,device)))
+                        menuItem.setData(QVariant("%s::%s" % (package, device)))
+
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
+
                         # Store a list of probed devices
                         if device not in self.probedDevices:
                             self.probedDevices.append(device)
+
                         menu.addAction(menuItem)
                 menu.addSeparator()
 
-            # FIXME: This part should be merged with the above in a generic way
+            # FIXME: This part seems to be handled by the above code.
             """
             if self.packages[package]['type'] == 'dialup':
                 pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
