@@ -617,7 +617,6 @@ class MainManager(QtGui.QWidget):
 
         pinDialog = PINDialog(self, deviceHumanReadable)
 
-        count = 0
         for c in range(pd.maxTries):
             pinDialog.show()
             pin = pinDialog.getPassword()
