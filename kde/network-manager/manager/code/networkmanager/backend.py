@@ -26,6 +26,10 @@ class NetworkIface:
     def capabilities(self, package):
         return self.link.Network.Link[package].linkInfo()
 
+    def requiresPIN(self, package, device):
+        # Mainly HSDPA modems, provided by ModemManager backend
+        return self.link.Network.Link[package].PINRequired(device)
+
     def authMethods(self, package):
         return self.link.Network.Link[package].authMethods()
 
