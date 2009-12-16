@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-06 09:32+0300\n"
+"POT-Creation-Date: 2009-12-16 15:55+0200\n"
 "PO-Revision-Date: 2009-07-09 19:49-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -18,55 +18,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-# favor verificar, refrescar, actualizar..
-#: .tmp/networkmanager/widgets.py:148 .tmp/ui_main.py:340
-msgid "Refresh"
-msgstr "Actualizar"
-
-#: .tmp/networkmanager/widgets.py:177 .tmp/ui_main.py:339
-msgid "Scanning..."
-msgstr "Buscando..."
-
-#: .tmp/networkmanager/widgets.py:230
-msgid "Disconnected"
-msgstr "Desconectado"
-
-#: .tmp/networkmanager/widgets.py:234
-#, python-format
-msgid "Connected: %s"
-msgstr "Conectado: %s"
-
-#: .tmp/networkmanager/widgets.py:238
-msgid "Connecting"
-msgstr "Conectando"
-
-#: .tmp/networkmanager/widgets.py:244
-msgid "Cable or device is unplugged."
-msgstr "Cable o dispositivo desconectado."
-
-#: .tmp/networkmanager/widgets.py:255
-msgid "Access denied."
-msgstr "Acceso denegado."
-
-#: .tmp/networkmanager/base.py:174
-msgid "Available Profiles"
-msgstr "Perfiles disponibles"
-
-#: .tmp/networkmanager/base.py:200
-msgid "All Profiles"
-msgstr "Todos los perfiles"
-
-#: .tmp/networkmanager/base.py:202 .tmp/networkmanager/base.py:204
-msgid "No Device Found"
-msgstr "Dispositivo no encontrado"
-
-#: .tmp/networkmanager/base.py:380
-msgid "No Authentication"
-msgstr "Sin autenticación"
-
-#: .tmp/networkmanager/base.py:592
-msgid "Do you really want to remove profile %1?"
-msgstr "Realmente desea remover el perfil %1?"
+#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
+msgid "Signal Strength"
+msgstr "Potencia de la señal"
 
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
@@ -92,6 +46,213 @@ msgstr ""
 msgid "Developer"
 msgstr "Desarrollador"
 
+#: .tmp/networkmanager/base.py:186
+msgid "Available Profiles"
+msgstr "Perfiles disponibles"
+
+#: .tmp/networkmanager/base.py:208
+msgid "All Profiles"
+msgstr "Todos los perfiles"
+
+#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+msgid "No Device Found"
+msgstr "Dispositivo no encontrado"
+
+#: .tmp/networkmanager/base.py:396
+msgid "No Authentication"
+msgstr "Sin autenticación"
+
+#: .tmp/networkmanager/base.py:624
+msgid "Do you really want to remove profile %1?"
+msgstr "Realmente desea remover el perfil %1?"
+
+#: .tmp/networkmanager/widgets.py:74
+msgid "Enter PIN"
+msgstr ""
+
+#: .tmp/networkmanager/widgets.py:75
+msgid "Please Enter PIN Code for"
+msgstr ""
+
+#: .tmp/networkmanager/widgets.py:158
+msgid "You've typed the wrong PIN code for 3 times"
+msgstr ""
+
+# favor verificar, refrescar, actualizar..
+#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+msgid "Refresh"
+msgstr "Actualizar"
+
+#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+msgid "Scanning..."
+msgstr "Buscando..."
+
+#: .tmp/networkmanager/widgets.py:378
+msgid "Disconnected"
+msgstr "Desconectado"
+
+#: .tmp/networkmanager/widgets.py:383
+#, python-format
+msgid "Connected: %s"
+msgstr "Conectado: %s"
+
+#: .tmp/networkmanager/widgets.py:388
+msgid "Connecting"
+msgstr "Conectando"
+
+#: .tmp/networkmanager/widgets.py:396
+#, fuzzy
+msgid "Cable or device is unplugged"
+msgstr "Cable o dispositivo desconectado."
+
+#: .tmp/networkmanager/widgets.py:412
+#, fuzzy
+msgid "Access denied"
+msgstr "Acceso denegado."
+
+#: .tmp/ui_main.py:334
+msgid "Form"
+msgstr ""
+
+#: .tmp/ui_main.py:335
+msgid "Create Profile"
+msgstr "Crear perfil"
+
+#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr "Servidor de nombres"
+
+#: .tmp/ui_main.py:339
+msgid "Profile Name :"
+msgstr "Nombre de Perfil :"
+
+#: .tmp/ui_main.py:340
+msgid "Device : "
+msgstr "Dispositivo : "
+
+#: .tmp/ui_main.py:341
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .tmp/ui_main.py:342
+msgid "Network Settings"
+msgstr "Configuración de Red"
+
+#: .tmp/ui_main.py:343
+msgid "Use DHCP"
+msgstr "Usar DHCP"
+
+#: .tmp/ui_main.py:344
+msgid "Use Manual Settings"
+msgstr "Configuración manual"
+
+#: .tmp/ui_main.py:345
+msgid "Address :"
+msgstr "Dirección :"
+
+#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+msgid "Custom"
+msgstr "Personalizado"
+
+#: .tmp/ui_main.py:347
+msgid "Network Mask :"
+msgstr "Mascara de red :"
+
+# favor revisar, aqui agregar tambien la palabra gateway ? - how much space can i use ? how long may this text be ?
+#: .tmp/ui_main.py:348
+msgid "Default Gateway :"
+msgstr "Puerto de enlace por omisión :"
+
+#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr "Servidores de nombres"
+
+#: .tmp/ui_main.py:351
+msgid "Default"
+msgstr "Por omisión"
+
+#: .tmp/ui_main.py:352
+msgid "Automatic"
+msgstr "Automático"
+
+#: .tmp/ui_main.py:353
+msgid "Custom :"
+msgstr "Personalizado :"
+
+#: .tmp/ui_main.py:354
+msgid "Remote"
+msgstr "Remoto"
+
+#: .tmp/ui_main.py:355
+msgid "Network Name (ESSID) :"
+msgstr "Nombre de red (ESSID) :"
+
+#: .tmp/ui_main.py:356
+msgid "Scan"
+msgstr "Buscar"
+
+#: .tmp/ui_main.py:357
+msgid "Security Type :"
+msgstr "Tipo de seguridad :"
+
+#: .tmp/ui_main.py:358
+msgid "Settings"
+msgstr "Configuración"
+
+#: .tmp/ui_main.py:359
+msgid "Key :"
+msgstr "Clave :"
+
+#: .tmp/ui_main.py:360
+msgid "Hide Password"
+msgstr "Ocultar contraseña"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:95
+#, fuzzy
+msgid "Device"
+msgstr "Dispositivo : "
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:97
+#, fuzzy
+msgid "Device:"
+msgstr "Dispositivo : "
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr ""
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr ""
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Configuración de seguridad"
+
 #: .tmp/ui_item.py:103
 msgid "Set connection state."
 msgstr "Establecer estado de conexión."
@@ -104,124 +265,13 @@ msgstr "Editar conexión"
 msgid "Delete connection"
 msgstr "Eliminar conexión"
 
-#: .tmp/ui_item.py:106 .tmp/ui_wifi.py:53
-msgid "Signal Strength"
-msgstr "Potencia de la señal"
-
 #: .tmp/ui_item.py:107
 msgid "  %p %"
 msgstr "  %p %"
-
-#: .tmp/ui_security.py:35
-msgid "Security Settings"
-msgstr "Configuración de seguridad"
-
-#: .tmp/ui_main.py:336
-msgid "Form"
-msgstr ""
-
-#: .tmp/ui_main.py:337
-msgid "Create Profile"
-msgstr "Crear perfil"
-
-#: .tmp/ui_main.py:338 .tmp/ui_nameserver.py:42
-msgid "Nameserver Settings"
-msgstr "Servidor de nombres"
-
-#: .tmp/ui_main.py:341
-msgid "Profile Name :"
-msgstr "Nombre de Perfil :"
-
-#: .tmp/ui_main.py:342
-msgid "Device : "
-msgstr "Dispositivo : "
-
-#: .tmp/ui_main.py:343 .tmp/ui_main.py:357
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: .tmp/ui_main.py:344
-msgid "Network Settings"
-msgstr "Configuración de Red"
-
-#: .tmp/ui_main.py:345
-msgid "Use DHCP"
-msgstr "Usar DHCP"
-
-#: .tmp/ui_main.py:346
-msgid "Use Manual Settings"
-msgstr "Configuración manual"
-
-#: .tmp/ui_main.py:347
-msgid "Address :"
-msgstr "Dirección :"
-
-#: .tmp/ui_main.py:348 .tmp/ui_main.py:351
-msgid "Custom"
-msgstr "Personalizado"
-
-#: .tmp/ui_main.py:349
-msgid "Network Mask :"
-msgstr "Mascara de red :"
-
-# favor revisar, aqui agregar tambien la palabra gateway ? - how much space can i use ? how long may this text be ?
-#: .tmp/ui_main.py:350
-msgid "Default Gateway :"
-msgstr "Puerto de enlace por omisión :"
-
-#: .tmp/ui_main.py:352 .tmp/ui_nameserver.py:44
-msgid "Name Servers"
-msgstr "Servidores de nombres"
-
-#: .tmp/ui_main.py:353
-msgid "Default"
-msgstr "Por omisión"
-
-#: .tmp/ui_main.py:354
-msgid "Automatic"
-msgstr "Automático"
-
-#: .tmp/ui_main.py:355
-msgid "Custom :"
-msgstr "Personalizado :"
-
-#: .tmp/ui_main.py:356
-msgid "Apply"
-msgstr "Aplicar"
-
-#: .tmp/ui_main.py:358
-msgid "Esc"
-msgstr ""
-
-#: .tmp/ui_main.py:359
-msgid "Remote"
-msgstr "Remoto"
-
-#: .tmp/ui_main.py:360
-msgid "Network Name (ESSID) :"
-msgstr "Nombre de red (ESSID) :"
-
-#: .tmp/ui_main.py:361
-msgid "Scan"
-msgstr "Buscar"
-
-#: .tmp/ui_main.py:362
-msgid "Security Type :"
-msgstr "Tipo de seguridad :"
-
-#: .tmp/ui_main.py:363
-msgid "Settings"
-msgstr "Configuración"
-
-#: .tmp/ui_main.py:364
-msgid "Key :"
-msgstr "Clave :"
-
-#: .tmp/ui_main.py:365
-msgid "Hide Password"
-msgstr "Ocultar contraseña"
 
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Nombre de la computadora"
 
+#~ msgid "Apply"
+#~ msgstr "Aplicar"
