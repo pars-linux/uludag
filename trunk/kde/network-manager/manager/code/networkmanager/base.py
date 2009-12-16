@@ -416,7 +416,7 @@ class MainManager(QtGui.QWidget):
             remote_name = self.iface.remoteName(package)
             self.ui.labelRemote.setText("%s :" % remote_name)
             if "remote_scan" in modes:
-                APScanner = APPopup(self)
+                APScanner = APPopup(self, package)
                 self.ui.buttonScan.setMenu(APScanner)
                 self.ui.buttonScan.show()
             else:
