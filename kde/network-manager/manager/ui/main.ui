@@ -123,9 +123,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>0</y>
-        <width>610</width>
-        <height>440</height>
+        <y>-68</y>
+        <width>608</width>
+        <height>428</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -496,19 +496,9 @@
              </spacer>
             </item>
             <item>
-             <widget class="KPushButton" name="buttonApply">
-              <property name="text">
-               <string>Apply</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="KPushButton" name="buttonCancel">
-              <property name="text">
-               <string>Cancel</string>
-              </property>
-              <property name="shortcut">
-               <string>Esc</string>
+             <widget class="KDialogButtonBox" name="buttonBox">
+              <property name="standardButtons">
+               <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
               </property>
              </widget>
             </item>
@@ -704,6 +694,11 @@
    <header>kcombobox.h</header>
   </customwidget>
   <customwidget>
+   <class>KDialogButtonBox</class>
+   <extends>QDialogButtonBox</extends>
+   <header>kdialogbuttonbox.h</header>
+  </customwidget>
+  <customwidget>
    <class>KLineEdit</class>
    <extends>QLineEdit</extends>
    <header>klineedit.h</header>
@@ -748,8 +743,6 @@
   <tabstop>useAutomatic</tabstop>
   <tabstop>useCustom</tabstop>
   <tabstop>lineCustomDNS</tabstop>
-  <tabstop>buttonApply</tabstop>
-  <tabstop>buttonCancel</tabstop>
  </tabstops>
  <resources>
   <include location="../icons/data.qrc"/>
