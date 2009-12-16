@@ -445,3 +445,11 @@ msgid "FS check"
 msgstr "Diski kurtar"
 
 
+#. txt_mainmenu
+msgid "Main menu"
+msgstr "Ana menü"
+
+#. txt_otheroptions
+msgid "Other options"
+msgstr "Diğer seçenekler"
+

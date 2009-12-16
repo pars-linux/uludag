@@ -441,3 +441,11 @@ msgstr "Opstarten"
 msgid "FS check"
 msgstr "FS-controle"
 
+#. txt_mainmenu
+msgid "Main menu"
+msgstr ""
+
+#. txt_otheroptions
+msgid "Other options"
+msgstr ""
+
