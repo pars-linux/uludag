@@ -63,6 +63,9 @@ using namespace KIO;
 
 static QString formattedUnit( unsigned long long value, int post=1 )
 {
+    if (value <= 0)
+        return "0";
+
     if (value > (1024 * 1024))
         if (value > (1024 * 1024 * 1024))
             return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(value / (1024 * 1024 * (post == 0 ? 1024 : 1024.0)), post));
@@ -178,8 +181,9 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     unsigned long int percent = memoryInfo();
 
     dynamicInfo += startStock( i18n( "Memory" ) );
-    dynamicInfo += addToStock( "memory", i18n( "%1 free of %2" ).arg( m_info[MEM_FREERAM] ).arg( m_info[MEM_TOTALRAM] ), m_info[MEM_USAGE]);
-    dynamicInfo += addProgress( "memory", percent);
+    dynamicInfo += addToStock( "memory", i18n("Physical memory: ") + i18n( "%1 of %2 is free" ).arg( m_info[MEM_FREERAM] ).arg( m_info[MEM_TOTALRAM]));
+    if (m_info[MEM_TOTALSWAP] != "0")
+        dynamicInfo += addToStock( "memory", i18n("Swap memory: ") + i18n( "%1 of %2 is free" ).arg( m_info[MEM_FREESWAP] ).arg( m_info[MEM_TOTALSWAP]));
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
@@ -195,7 +199,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     osInfo();
     staticInfo += startStock( i18n( "Operating System" ) );
     staticInfo += addToStock( "system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b>", m_info[OS_USER] + "@" + m_info[OS_HOSTNAME] );
-    staticInfo += addToStock( "system", i18n( "Kde <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM] ));
+    staticInfo += addToStock( "system", i18n( "KDE <b>%1</b> on <b>%2</b>" ).arg(KDE::versionString()).arg( m_info[OS_SYSTEM] ));
     staticInfo += finishStock();
 
     // update content..
@@ -210,6 +214,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
         staticInfo += addToStock( "kcmprocessor", m_info[CPU_MODEL]);
         staticInfo += addToStock( "kcmprocessor", i18n( "%1 MHz" ).arg( 
                     KGlobal::locale()->formatNumber( m_info[CPU_SPEED].toFloat(), 2 )), m_info[CPU_NOFCORE] + i18n( " core" ));
+        if (m_info[CPU_VT] == "Yes")
+            staticInfo += addToStock( "kcmprocessor", i18n("Virtualization is enabled"));
         staticInfo += finishStock();
     }
 
@@ -221,7 +227,7 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     if ( glInfo() )
     {
         staticInfo += startStock( i18n( "Display" ) );
-        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_MODEL]), formatStr(m_info[GFX_VENDOR]) );
+        staticInfo += addToStock( "krdc", formatStr(m_info[GFX_VENDOR]) + " " + formatStr(m_info[GFX_MODEL]) );
         if (!m_info[GFX_DRIVER].isNull())
             staticInfo += addToStock( "x", i18n( "Driver: " ) + m_info[GFX_DRIVER] + " (" + m_info[GFX_3D] + ")" );
         staticInfo += finishStock();
@@ -232,8 +238,8 @@ void kio_sysinfoProtocol::get( const KURL & /*url*/ )
     staticInfo = "";
 
     staticInfo += startStock(i18n("Machine information"));
-    staticInfo += addToStock("krdc", i18n("System vendor: ") + m_info[MANUFACTURER]);
-    staticInfo += addToStock("krdc", i18n("Product name: ") + m_info[PRODUCT]);
+    staticInfo += addToStock("krdc", i18n("Vendor: ") + m_info[MANUFACTURER]);
+    staticInfo += addToStock("krdc", i18n("Product: ") + m_info[PRODUCT]);
     staticInfo += addToStock("krdc", i18n("BIOS: ") + m_info[BIOSVENDOR] + " " + m_info[BIOSVERSION] + " " + m_info[BIOSDATE]);
     staticInfo += finishStock();
 
@@ -258,7 +264,7 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
     struct sysinfo info;
     int retval = sysinfo( &info );
 
-    if ( retval !=-1 )
+    if ( retval != -1 )
     {
         const int mem_unit = info.mem_unit;
         unsigned long int usage,percent,peer;
@@ -266,9 +272,13 @@ unsigned long int kio_sysinfoProtocol::memoryInfo()
         peer = (info.totalram * mem_unit) / 100;
         peer == 0 ? percent = 0 : percent = usage / peer;
 
+        // Total RAM
         m_info[MEM_TOTALRAM] = formattedUnit( info.totalram * mem_unit );
+
         m_info[MEM_FREERAM] = formattedUnit( info.freeram * mem_unit );
         m_info[MEM_USAGE] = formattedUnit( usage );
+
+        // Swap information
         m_info[MEM_TOTALSWAP] = formattedUnit( info.totalswap * mem_unit );
         m_info[MEM_FREESWAP] = formattedUnit( info.freeswap * mem_unit );
 
@@ -296,6 +306,9 @@ void kio_sysinfoProtocol::cpuInfo()
     m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "model name", ":" );
     if ( m_info[CPU_MODEL].isNull() ) // PPC?
          m_info[CPU_MODEL] = readFromFile( "/proc/cpuinfo", "cpu", ":" );
+
+    QString flags = readFromFile("/proc/cpuinfo", "flags", ":");
+    m_info[CPU_VT] = (flags.contains("vmx") || flags.contains("svm")) ? "Yes":"No";
 }
 
 
@@ -349,7 +362,6 @@ QString kio_sysinfoProtocol::diskInfo()
 
 int kio_sysinfoProtocol::netInfo() const
 {
-    // query kded.networkstatus.status(QString host)
     DCOPRef nsd( "kded", "networkstatus" );
     nsd.setDCOPClient( m_dcopClient );
     DCOPReply reply = nsd.call( "status" );
