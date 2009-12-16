@@ -20,13 +20,13 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import SIGNAL, Qt, QTimeLine, QSize, QVariant, QTimer
 
 # KDE Stuff
-from PyKDE4.kdeui import KMessageBox
+from PyKDE4.kdeui import KMessageBox, KMenu, KIcon
 from PyKDE4.kdecore import i18n
 
 # Application Stuff
 from networkmanager.backend import NetworkIface
 from networkmanager.ui_main import Ui_mainManager
-from networkmanager.widgets import ConnectionItemWidget, APPopup, NameServerDialog, SecurityDialog, PINDialog
+from networkmanager.widgets import ConnectionItemWidget, getIconForPackage, APPopup, NameServerDialog, SecurityDialog, PINDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -99,6 +99,7 @@ class MainManager(QtGui.QWidget):
         self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
 
         # Show NameServer Settings Dialog
+        self.ui.buttonNameServer.setIcon(KIcon("configure"))
         self.connect(self.ui.buttonNameServer, SIGNAL("clicked()"), self.slotNameServerDialog)
 
         # Filter
@@ -166,14 +167,19 @@ class MainManager(QtGui.QWidget):
         aa = time.time()
         self.ui.filterBox.clear()
         self.probedDevices = []
-        menu = QtGui.QMenu(self)
+        menu = KMenu(self)
 
         for package in self.packages:
             info = self.packages[package]
             devices = self.iface.devices(package)
 
-            # Add filter menu entry
-            if len(devices):
+            if len(devices) > 0:
+                # Add package container and set icon
+                menuPackageContainer = KMenu(self.packages[package]['name'], menu)
+                menuPackageContainer.setIcon(KIcon(getIconForPackage(package)))
+                menu.addMenu(menuPackageContainer)
+
+                # Add filter menu entry
                 self.ui.filterBox.addItem(info["name"], QVariant(package))
 
                 # FIXME: remote_scan or remote, what's their differences?
@@ -182,15 +188,12 @@ class MainManager(QtGui.QWidget):
                     APScanner = APPopup(self, package)
                     self.ui.buttonScan.setMenu(APScanner)
 
-            # Create devices menu entry
-            if len(devices) > 0:
-
                 # Create profile menu with current devices
                 for device in devices.keys():
 
                     if True:#self.packages[package]['type'] in ('net', 'wifi'):
                         print device, devices[device]
-                        menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], devices[device]), self)
+                        menuItem = QtGui.QAction(devices[device], menuPackageContainer)
                         menuItem.setData(QVariant("%s::%s::%s" % (package, device, devices[device])))
 
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
@@ -199,12 +202,12 @@ class MainManager(QtGui.QWidget):
                         if device not in self.probedDevices:
                             self.probedDevices.append(device)
 
-                        menu.addAction(menuItem)
-                menu.addSeparator()
+                        menuPackageContainer.addAction(menuItem)
 
             # FIXME: This part seems to be handled by the above code.
+            """
             if self.packages[package]['type'] == 'dialup':
-                pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
+                pppMenu = KMenu(self.packages[package]['name'], self)
                 devices = self.iface.devices(package)
                 for device in devices.keys():
                     menuItem = QtGui.QAction(device, self)
@@ -213,8 +216,10 @@ class MainManager(QtGui.QWidget):
                     pppMenu.addAction(menuItem)
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
+            """
 
         if len(self.packages) > 0:
+            self.ui.buttonCreate.setIcon(KIcon("list-add"))
             self.ui.buttonCreate.setMenu(menu)
             self.ui.filterBox.insertItem(0, i18n("All Profiles"), QVariant("all"))
         else:
