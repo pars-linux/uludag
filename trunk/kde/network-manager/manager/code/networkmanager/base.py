@@ -670,7 +670,7 @@ class MainManager(QtGui.QWidget):
 
     def handler(self, package, signal, args):
         args = map(lambda x: unicode(x), list(args))
-        #print "COMAR: %s, %s", (signal, args)
+        print "COMAR: %s, %s", (signal, args)
         if signal == "stateChanged":
             key = "%s-%s" % (package, args[0])
             if key in self.widgets:
