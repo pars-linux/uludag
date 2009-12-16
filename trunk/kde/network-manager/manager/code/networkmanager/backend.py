@@ -138,7 +138,7 @@ class NetworkIface:
     def linkInfo(self, package):
         return self.link.Network.Link[package].linkInfo()
 
-    def scanRemote(self, device, package="wireless_tools", func=None):
+    def scanRemote(self, device, package, func=None):
         if func:
             self.link.Network.Link[package].scanRemote(device, async=func)
         else:
