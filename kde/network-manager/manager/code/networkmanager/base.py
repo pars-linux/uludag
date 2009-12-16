@@ -357,7 +357,7 @@ class MainManager(QtGui.QWidget):
 
     def animateFinished(self):
         if self.lastAnimation == SHOW:
-            self.ui.lineConnectionName.setFocus()
+            self.ui.lineProfileName.setFocus()
             self.ui.editBox.setMaximumHeight(DEFAULT_HEIGHT)
             self.ui.profileList.setMaximumHeight(TARGET_HEIGHT)
             self.ui.editBox.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
@@ -455,7 +455,7 @@ class MainManager(QtGui.QWidget):
         ui = self.ui
         self.lastEditedData = data = self.iface.info(package, profile)
 
-        ui.lineConnectionName.setText(data["name"])
+        ui.lineProfileName.setText(data["name"])
 
         if "device_name" in data:
             ui.labelDeviceDescription.setText(data["device_name"])
@@ -515,7 +515,7 @@ class MainManager(QtGui.QWidget):
 
     def resetForm(self):
         ui = self.ui
-        ui.lineConnectionName.setText("")
+        ui.lineProfileName.setText("")
         ui.deviceList.clear()
         ui.labelDeviceDescription.setText("")
         ui.useDHCP.setChecked(True)
@@ -538,7 +538,7 @@ class MainManager(QtGui.QWidget):
 
     def applyChanges(self):
         ui = self.ui
-        connectionName = unicode(ui.lineConnectionName.text())
+        connectionName = unicode(ui.lineProfileName.text())
 
         try:
             self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
@@ -561,7 +561,7 @@ class MainManager(QtGui.QWidget):
         data = {}
 
         # Default options
-        data["name"] = ui.lineConnectionName.text()
+        data["name"] = ui.lineProfileName.text()
         data["device_id"] = ui.deviceList.currentText()
 
         # Network options
@@ -619,6 +619,9 @@ class MainManager(QtGui.QWidget):
 
         self.resetForm()
         self.lastEditedPackage = package
+
+        # FIXME: Suggest some profile name here
+        # self.ui.lineProfileName.setText(package)
         self.showEditBox(package, device=device)
 
     def editConnection(self):

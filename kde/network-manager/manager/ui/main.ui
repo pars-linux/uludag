@@ -154,7 +154,7 @@
              </widget>
             </item>
             <item>
-             <widget class="KLineEdit" name="lineConnectionName">
+             <widget class="KLineEdit" name="lineProfileName">
               <property name="minimumSize">
                <size>
                 <width>180</width>
@@ -730,7 +730,7 @@
   <tabstop>filterBox</tabstop>
   <tabstop>profileList</tabstop>
   <tabstop>editBox</tabstop>
-  <tabstop>lineConnectionName</tabstop>
+  <tabstop>lineProfileName</tabstop>
   <tabstop>deviceList</tabstop>
   <tabstop>buttonCancelMini</tabstop>
   <tabstop>lineRemote</tabstop>
