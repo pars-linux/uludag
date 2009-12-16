@@ -443,3 +443,11 @@ msgstr "Démarrage"
 #. txt_mudur_forcefsck
 msgid "FS check"
 msgstr "Vérification du FS"
+#. txt_mainmenu
+msgid "Main menu"
+msgstr ""
+
+#. txt_otheroptions
+msgid "Other options"
+msgstr ""
+
