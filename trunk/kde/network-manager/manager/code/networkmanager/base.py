@@ -26,7 +26,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.backend import NetworkIface
 from networkmanager.ui_main import Ui_mainManager
-from networkmanager.widgets import ConnectionItemWidget, getIconForPackage, APPopup, NameServerDialog, SecurityDialog, PINDialog
+from networkmanager.widgets import ConnectionItemWidget, getIconForPackage, APPopup, NameServerDialog, SecurityDialog, PINDialog, ConnectionWizard
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -651,13 +651,21 @@ class MainManager(QtGui.QWidget):
     def createConnection(self):
         package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
 
-        if self.askForPINAndAuthenticate(package, device, deviceHumanReadable):
+        #if self.askForPINAndAuthenticate(package, device, deviceHumanReadable):
+
+        # Classical profile creation screen
+        if "wizard" not in self.iface.capabilities(package)["modes"]:
             self.resetForm()
             self.lastEditedPackage = package
 
             # FIXME: Suggest some profile name here
             # self.ui.lineProfileName.setText(package)
             self.showEditBox(package, device=device)
+        else:
+            # Use a wizard-like profile creation for devices like HSPA
+            cw = ConnectionWizard(self, package, device, deviceHumanReadable)
+            if cw.exec_():
+                print "Closed, OK"
 
     def editConnection(self):
         sender = self.sender().parent()
