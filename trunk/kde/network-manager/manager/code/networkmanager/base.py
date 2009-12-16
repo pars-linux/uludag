@@ -182,7 +182,6 @@ class MainManager(QtGui.QWidget):
                 # Add filter menu entry
                 self.ui.filterBox.addItem(info["name"], QVariant(package))
 
-                # FIXME: remote_scan or remote, what's their differences?
                 if "remote_scan" in info["modes"]:
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
                     APScanner = APPopup(self, package)
@@ -191,32 +190,17 @@ class MainManager(QtGui.QWidget):
                 # Create profile menu with current devices
                 for device in devices.keys():
 
-                    if True:#self.packages[package]['type'] in ('net', 'wifi'):
-                        print device, devices[device]
-                        menuItem = QtGui.QAction(devices[device], menuPackageContainer)
-                        menuItem.setData(QVariant("%s::%s::%s" % (package, device, devices[device])))
-
-                        self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
-
-                        # Store a list of probed devices
-                        if device not in self.probedDevices:
-                            self.probedDevices.append(device)
-
-                        menuPackageContainer.addAction(menuItem)
-
-            # FIXME: This part seems to be handled by the above code.
-            """
-            if self.packages[package]['type'] == 'dialup':
-                pppMenu = KMenu(self.packages[package]['name'], self)
-                devices = self.iface.devices(package)
-                for device in devices.keys():
-                    menuItem = QtGui.QAction(device, self)
+                    print device, devices[device]
+                    menuItem = QtGui.QAction(devices[device], menuPackageContainer)
                     menuItem.setData(QVariant("%s::%s::%s" % (package, device, devices[device])))
+
                     self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
-                    pppMenu.addAction(menuItem)
-                menu.addMenu(pppMenu)
-                menu.addSeparator()
-            """
+
+                    # Store a list of probed devices
+                    if device not in self.probedDevices:
+                        self.probedDevices.append(device)
+
+                    menuPackageContainer.addAction(menuItem)
 
         if len(self.packages) > 0:
             self.ui.buttonCreate.setIcon(KIcon("list-add"))
