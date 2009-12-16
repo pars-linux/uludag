@@ -26,7 +26,9 @@ from networkmanager.ui_item         import Ui_ConnectionItemWidget
 from networkmanager.ui_security     import Ui_DialogSecurity
 from networkmanager.ui_nameserver   import Ui_nameServer
 from networkmanager.ui_securityitem import Ui_SecurityWidget
+from networkmanager.ui_nmwizard     import Ui_NMWizard
 
+# FIXME: The ideal is to have the icon names from the backends
 def getIconForPackage(package):
 
     d = {
@@ -57,6 +59,43 @@ class SecurityWidget(QtGui.QWidget):
 
     def getValue(self):
         return unicode(self.ui.lineFieldValue.text())
+
+
+class ConnectionWizard(QtGui.QDialog):
+    def __init__(self, parent, package, deviceID, deviceName):
+        QtGui.QDialog.__init__(self, parent)
+        self.ui = Ui_NMWizard()
+        self.ui.setupUi(self)
+
+        self.iface = parent.iface
+
+        self.ui.txtDevice.setText(deviceName)
+        self.ui.txtIMEI.setText(deviceID.split(":")[-1])
+
+        # Signals & Slots
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+
+        # Scan
+        self.scan(deviceID, package)
+
+    def scan(self, deviceID, package):
+        def scan_handler(*args):
+            if args[2][0]:
+                self.ui.progressBar.hide()
+                self.ui.comboBoxOperators.setEnabled(True)
+                self.ui.lineEditPIN.setEnabled(True)
+
+                for p in args[2][0]:
+                    op, status = p['remote'].split(",")
+                    self.ui.comboBoxOperators.addItem(op)
+                    if status < 3:
+                        # Operator is available
+                        self.ui.comboBoxOperators.setCurrentItem(op)
+
+        # Asynchronously scan for operators
+        self.iface.scanRemote(deviceID, package, func=scan_handler)
+
 
 
 class PINDialog(KPasswordDialog):
@@ -219,8 +258,15 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.desc = None
         self.data = data
 
+        # Check if package supports PIN operations
+        self.supportsPIN = "pin" in self.iface.capabilities(package)["modes"]
+        print "** Profile %s supports PIN: %s" % (profile, str(self.supportsPIN))
+
+        # Connect signals for edit and delte
         self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
         self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
+
+        # Toggle functionality depends on PIN support for some devices
         self.connect(self.ui.checkToggler, SIGNAL("clicked()"), self.toggleConnection)
 
     def setSignalStrength(self, value):
@@ -283,6 +329,10 @@ class ConnectionItemWidget(QtGui.QWidget):
                     KMessageBox.error(self, i18n("Access denied"))
                 else:
                     KMessageBox.error(self, unicode(exception))
+
+        if self.supportsPIN:
+            # We may need to set PIN before any toggling action
+            pass
 
         if self.ui.checkToggler.isChecked():
             self.iface.connect(self.package, self.profile, handler=handler)
