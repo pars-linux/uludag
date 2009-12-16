@@ -91,12 +91,12 @@ class MainManager(QtGui.QWidget):
         self.connect(self.animator, SIGNAL("frameChanged(int)"), self.animate)
         self.connect(self.animator, SIGNAL("finished()"), self.animateFinished)
 
-        # Hide editBox when clicked Cancel*
-        self.connect(self.ui.buttonCancel, SIGNAL("clicked()"), self.hideEditBox)
+        # Hide editBox when clicked mini cancel
         self.connect(self.ui.buttonCancelMini, SIGNAL("clicked()"), self.hideEditBox)
 
-        # Save changes when clicked Apply
-        self.connect(self.ui.buttonApply, SIGNAL("clicked()"), self.applyChanges)
+        # Save changes when clicked Apply, Reject changes when clicked Cancel
+        self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.hideEditBox)
+        self.connect(self.ui.buttonBox, SIGNAL("applied()"), self.applyChanges)
 
         # Show NameServer Settings Dialog
         self.ui.buttonNameServer.setIcon(KIcon("configure"))
