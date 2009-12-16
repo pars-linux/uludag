@@ -60,6 +60,7 @@ class PINDialog(KPasswordDialog):
         KPasswordDialog.__init__(self, parent, KPasswordDialog.NoFlags)
         self.setCaption(i18n("Enter PIN"))
         self.setPrompt("%s %s" % (i18n("Please Enter PIN Code for"), deviceName))
+        self.setPixmap(KIcon("preferences-desktop-notification").pixmap(64))
 
     def show(self):
         self.exec_()
