@@ -53,6 +53,7 @@
     * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (-)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (-)
+    * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
 
 * Müdür (Ozan Çağlayan)
     * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
@@ -95,10 +96,10 @@
 
 * Depo/Paketler (Ozan Çağlayan)
     * autostart dizinlerinin düzenlenmesi (+)
+    * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (-)
     * Pulseaudio yardımcı programlarının depoya alınması (-)
     * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
-    * component.xml'lerin temizlenerek sadece isim bırakılması (/50)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/50)
