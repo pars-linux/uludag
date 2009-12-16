@@ -181,7 +181,8 @@ class MainManager(QtGui.QWidget):
             if len(devices) > 0:
                 # Create profile menu with current devices
                 for device in devices.keys():
-                    if self.packages[package]['type'] in ('net', 'wifi'):
+                    # FIXME: There should be no backend specific names, etc. here
+                    if True:#self.packages[package]['type'] in ('net', 'wifi'):
                         menuItem = QtGui.QAction("%s - %s" % (self.packages[package]['name'], findInterface(device).name), self)
                         menuItem.setData(QVariant("%s::%s" % (package,device)))
                         self.connect(menuItem, SIGNAL("triggered()"), self.createConnection)
@@ -190,6 +191,9 @@ class MainManager(QtGui.QWidget):
                             self.probedDevices.append(device)
                         menu.addAction(menuItem)
                 menu.addSeparator()
+
+            # FIXME: This part should be merged with the above in a generic way
+            """
             if self.packages[package]['type'] == 'dialup':
                 pppMenu = QtGui.QMenu(self.packages[package]['name'], self)
                 devices = self.iface.devices(package)
@@ -200,6 +204,7 @@ class MainManager(QtGui.QWidget):
                     pppMenu.addAction(menuItem)
                 menu.addMenu(pppMenu)
                 menu.addSeparator()
+            """
 
         if len(self.packages) > 0:
             self.ui.buttonCreate.setMenu(menu)
