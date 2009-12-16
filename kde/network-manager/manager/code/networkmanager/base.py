@@ -26,7 +26,7 @@ from PyKDE4.kdecore import i18n
 # Application Stuff
 from networkmanager.backend import NetworkIface
 from networkmanager.ui_main import Ui_mainManager
-from networkmanager.widgets import ConnectionItemWidget, WifiPopup, NameServerDialog, SecurityDialog
+from networkmanager.widgets import ConnectionItemWidget, APPopup, NameServerDialog, SecurityDialog
 
 # Animation Definitions
 SHOW, HIDE     = range(2)
@@ -179,7 +179,7 @@ class MainManager(QtGui.QWidget):
                 # FIXME: This is backend specific too!
                 if info["type"] == "wifi":
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-                    APScanner = WifiPopup(self)
+                    APScanner = APPopup(self)
                     self.ui.buttonScan.setMenu(APScanner)
 
             # Create devices menu entry
@@ -415,7 +415,7 @@ class MainManager(QtGui.QWidget):
             remote_name = self.iface.remoteName(package)
             self.ui.labelRemote.setText("%s :" % remote_name)
             if "remote_scan" in modes:
-                APScanner = WifiPopup(self)
+                APScanner = APPopup(self)
                 self.ui.buttonScan.setMenu(APScanner)
                 self.ui.buttonScan.show()
             else:
