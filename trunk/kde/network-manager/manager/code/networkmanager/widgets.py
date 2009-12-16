@@ -56,11 +56,14 @@ class SecurityWidget(QtGui.QWidget):
 
 
 class PINDialog(KPasswordDialog):
-    def __init__(self, parent, deviceName):
+    def __init__(self, parent, deviceName, maxTries=3):
         KPasswordDialog.__init__(self, parent, KPasswordDialog.NoFlags)
+
         self.setCaption(i18n("Enter PIN"))
         self.setPrompt("%s <b>%s</b>" % (i18n("Please Enter PIN Code for"), deviceName))
         self.setPixmap(KIcon("preferences-desktop-notification").pixmap(64))
+
+        self.maxTries = maxTries
 
     def show(self):
         self.exec_()
