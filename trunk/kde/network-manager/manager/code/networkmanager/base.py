@@ -176,10 +176,10 @@ class MainManager(QtGui.QWidget):
             if len(devices):
                 self.ui.filterBox.addItem(info["name"], QVariant(package))
 
-                # FIXME: This is backend specific too!
-                if info["type"] == "wifi":
+                # FIXME: remote_scan or remote, what's their differences?
+                if "remote_scan" in info["modes"]:
                     self.ui.filterBox.addItem(i18n("Available Profiles"), QVariant("essid"))
-                    APScanner = APPopup(self)
+                    APScanner = APPopup(self, self.package)
                     self.ui.buttonScan.setMenu(APScanner)
 
             # Create devices menu entry
