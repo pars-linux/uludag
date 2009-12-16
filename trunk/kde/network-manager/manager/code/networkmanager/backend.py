@@ -128,9 +128,11 @@ class NetworkIface:
             self.link.Network.Link[package].setRemote(profile, data["remote"], async=func)
 
         if "auth" in modes:
+            print "Calling setAuthMethod with %s" % data["auth"]
             self.link.Network.Link[package].setAuthMethod(profile, data["auth"], async=func)
 
             for key, label, type_ in self.link.Network.Link[package].authParameters(data["auth"]):
+                print "Calling setAuthParameters %s" % key
                 self.link.Network.Link[package].setAuthParameters(profile, key, data.get("auth_%s" % key, ""), async=func)
 
     def deleteConnection(self, package, profile, func=None):

@@ -61,25 +61,114 @@ class SecurityWidget(QtGui.QWidget):
         return unicode(self.ui.lineFieldValue.text())
 
 
+class PINDialog(KPasswordDialog):
+    def __init__(self, parent, deviceName, maxTries=3, showKeepPassword=True):
+        if showKeepPassword:
+            flags = KPasswordDialog.ShowKeepPassword
+        else:
+            flags = KPasswordDialog.NoFlags
+
+        KPasswordDialog.__init__(self, parent, flags)
+
+        # Set UI
+        self.setCaption(i18n("Enter PIN"))
+        self.setPrompt("%s <b>%s</b>" % (i18n("Please Enter PIN Code for"), deviceName))
+        self.setPixmap(KIcon("preferences-desktop-notification").pixmap(64))
+
+        self.maxTries = maxTries
+
+
 class ConnectionWizard(QtGui.QDialog):
     def __init__(self, parent, package, deviceID, deviceName):
         QtGui.QDialog.__init__(self, parent)
         self.ui = Ui_NMWizard()
         self.ui.setupUi(self)
 
+        self.isAvailable = False
+
         self.iface = parent.iface
+        self.package = package
+        self.device = deviceID
+        self.pin = ""
 
         self.ui.txtDevice.setText(deviceName)
         self.ui.txtIMEI.setText(deviceID.split(":")[-1])
 
+        # Create PIN Dialog
+        self.pinDialog = PINDialog(self, deviceName)
+
         # Signals & Slots
-        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.accept)
+        self.connect(self.ui.buttonBox, SIGNAL("accepted()"), self.applyChanges)
         self.connect(self.ui.buttonBox, SIGNAL("rejected()"), self.reject)
+        self.connect(self.ui.lineEditPIN, SIGNAL("editingFinished()"), self.savePIN)
 
-        # Scan
-        self.scan(deviceID, package)
+        # Ask for pin and scan if OK
+        self.isAvailable = self.askForPIN()
 
-    def scan(self, deviceID, package):
+    def savePIN(self):
+        self.pin = str(self.ui.lineEditPIN.text())
+
+    def applyChanges(self):
+        def collectDataFromUI():
+            data = {}
+
+            data["device_id"] = self.device
+            data["name"] = self.connectionName
+            data["auth"] = "pin"
+
+            if self.pin:
+                print "******** %s" % self.pin
+                data["auth_pin"] = self.pin
+
+            print data
+            return data
+
+        self.connectionName = str(self.ui.comboBoxOperators.itemData(self.ui.comboBoxOperators.currentIndex()).toString())
+
+        try:
+            self.iface.updateConnection(self.package, self.connectionName, collectDataFromUI())
+            self.accept()
+        except Exception, e:
+            KMessageBox.error(self, unicode(e))
+            return
+
+    def show(self):
+        if self.isAvailable:
+            self.scan(self.package, self.device)
+            return self.exec_()
+
+    def askForPIN(self):
+        if "pin" in self.iface.capabilities(self.package)["modes"] and self.iface.requiresPIN(self.package, self.device):
+            # Loop 3 times by default
+            for c in range(self.pinDialog.maxTries):
+                # Clear textbox
+                self.pinDialog.setPassword("")
+                if self.pinDialog.exec_():
+                    # Clicked OK
+                    pin = self.pinDialog.password()
+
+                    # Send PIN to the card, returns True if PIN is valid.
+                    if self.iface.sendPIN(self.package, self.device, str(pin)):
+                        self.pin = str(pin)
+                        self.ui.lineEditPIN.setText(self.pin)
+                        return True
+                else:
+                    break
+
+            # Verification failed for 3 times
+            if c == self.pinDialog.maxTries-1:
+                KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
+                return False
+            else:
+                # Canceled
+                return True
+
+        else:
+            # PIN is already entered or the backend doesn't support PIN operations
+            return True
+
+
+    def scan(self, package, deviceID):
         def scan_handler(*args):
             if args[2][0]:
                 self.ui.progressBar.hide()
@@ -87,26 +176,14 @@ class ConnectionWizard(QtGui.QDialog):
                 self.ui.lineEditPIN.setEnabled(True)
 
                 for p in args[2][0]:
-                    op, status = p['remote'].split(",")
-                    self.ui.comboBoxOperators.addItem(op)
+                    oplong, opshort, status = p['remote'].split(",")
+                    self.ui.comboBoxOperators.addItem(oplong, QVariant(opshort))
                     if status < 3:
                         # Operator is available
-                        self.ui.comboBoxOperators.setCurrentItem(op)
+                        self.ui.comboBoxOperators.setCurrentItem(oplong)
 
         # Asynchronously scan for operators
         self.iface.scanRemote(deviceID, package, func=scan_handler)
-
-
-
-class PINDialog(KPasswordDialog):
-    def __init__(self, parent, deviceName, maxTries=3):
-        KPasswordDialog.__init__(self, parent, KPasswordDialog.NoFlags)
-
-        self.setCaption(i18n("Enter PIN"))
-        self.setPrompt("%s <b>%s</b>" % (i18n("Please Enter PIN Code for"), deviceName))
-        self.setPixmap(KIcon("preferences-desktop-notification").pixmap(64))
-
-        self.maxTries = maxTries
 
 
 class SecurityDialog(QtGui.QDialog):
@@ -251,6 +328,7 @@ class ConnectionItemWidget(QtGui.QWidget):
 
         self.ui.labelName.setText(profile)
 
+        # Class members
         self.iface = parent.iface
         self.item = item
         self.package = package
@@ -258,13 +336,20 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.desc = None
         self.data = data
 
+        # Get backend capabilities
+        self.capabilities = self.iface.capabilities(self.package)["modes"]
+
         # Check if package supports PIN operations
-        self.supportsPIN = "pin" in self.iface.capabilities(package)["modes"]
+        self.supportsPIN = "pin" in self.capabilities
         print "** Profile %s supports PIN: %s" % (profile, str(self.supportsPIN))
 
-        # Connect signals for edit and delte
-        self.connect(self.ui.buttonEdit,   SIGNAL("clicked()"), parent.editConnection)
+        # Connect signals for edit and delete
+        self.connect(self.ui.buttonEdit, SIGNAL("clicked()"), parent.editConnection)
         self.connect(self.ui.buttonDelete, SIGNAL("clicked()"), parent.deleteConnection)
+
+        # Hide editButton for "wizard" like backends
+        if "wizard" in self.capabilities:
+            self.ui.buttonEdit.hide()
 
         # Toggle functionality depends on PIN support for some devices
         self.connect(self.ui.checkToggler, SIGNAL("clicked()"), self.toggleConnection)
