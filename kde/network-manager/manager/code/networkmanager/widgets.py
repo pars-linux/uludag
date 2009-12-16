@@ -116,11 +116,9 @@ class ConnectionWizard(QtGui.QDialog):
             data["name"] = self.connectionName
             data["auth"] = "pin"
 
-            if self.pin:
-                print "******** %s" % self.pin
+            if self.pin and self.ui.checkBoxRemember.isChecked():
                 data["auth_pin"] = self.pin
 
-            print data
             return data
 
         self.connectionName = str(self.ui.comboBoxOperators.itemData(self.ui.comboBoxOperators.currentIndex()).toString())
@@ -341,7 +339,6 @@ class ConnectionItemWidget(QtGui.QWidget):
 
         # Check if package supports PIN operations
         self.supportsPIN = "pin" in self.capabilities
-        print "** Profile %s supports PIN: %s" % (profile, str(self.supportsPIN))
 
         # Connect signals for edit and delete
         self.connect(self.ui.buttonEdit, SIGNAL("clicked()"), parent.editConnection)
@@ -406,6 +403,7 @@ class ConnectionItemWidget(QtGui.QWidget):
     def toggleConnection(self):
         def handler(package, exception, args):
             if exception:
+                print "*** exception: %s" % exception
                 if self.ui.checkToggler.isChecked():
                     self.ui.checkToggler.setChecked(False)
                 else:
@@ -414,10 +412,6 @@ class ConnectionItemWidget(QtGui.QWidget):
                     KMessageBox.error(self, i18n("Access denied"))
                 else:
                     KMessageBox.error(self, unicode(exception))
-
-        if self.supportsPIN:
-            # We may need to set PIN before any toggling action
-            pass
 
         if self.ui.checkToggler.isChecked():
             self.iface.connect(self.package, self.profile, handler=handler)
