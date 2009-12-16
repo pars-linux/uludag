@@ -614,21 +614,25 @@ class MainManager(QtGui.QWidget):
 
         return data
 
-    def askForPINAndAuthenticate(self, device, deviceHumanReadable, pinNeeded):
+    def askForPINAndAuthenticate(self, package, device, deviceHumanReadable, pinNeeded):
         # Pops up PIN dialog if pinNeeded is True
 
+        def PINHandler(pin, keep):
+            print "in PINHandler with %s" % pin
+
+
         if not pinNeeded:
-            return
+            return True
 
         pinDialog = PINDialog(self, deviceHumanReadable)
+        pinDialog.connect(SIGNAL("gotPassword()"), PINHandler)
 
-        for c in range(pd.maxTries):
+        for c in range(pinDialog.maxTries):
             pinDialog.show()
-            pin = pinDialog.getPassword()
-            #result = self.iface.enterPIN(package, device, pin)
-            result = True
-            if result:
-                return True
+            pinDialog.setPassword("")
+
+            #if self.iface.sendPIN(package, device, str(pin)):
+            #    return True
 
         return False
 
@@ -636,16 +640,18 @@ class MainManager(QtGui.QWidget):
         package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
 
         # Check for PIN requirement
-        pinNeeded = "pin" in self.iface.capabilities(package)["modes"] and \
-                     self.iface.requiresPIN(package, device)
-        self.askForPINAndAuthenticate(device, deviceHumanReadable, pinNeeded)
+        pinNeeded = "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device)
 
-        self.resetForm()
-        self.lastEditedPackage = package
+        if self.askForPINAndAuthenticate(package, device, deviceHumanReadable, pinNeeded):
+            self.resetForm()
+            self.lastEditedPackage = package
 
-        # FIXME: Suggest some profile name here
-        # self.ui.lineProfileName.setText(package)
-        self.showEditBox(package, device=device)
+            # FIXME: Suggest some profile name here
+            # self.ui.lineProfileName.setText(package)
+            self.showEditBox(package, device=device)
+        else:
+            KMessageBox.error(self, i18n("You've typed the wrong PIN code for 3 times"))
+
 
     def editConnection(self):
         sender = self.sender().parent()
@@ -664,7 +670,7 @@ class MainManager(QtGui.QWidget):
 
     def handler(self, package, signal, args):
         args = map(lambda x: unicode(x), list(args))
-        # print "COMAR: ", signal
+        #print "COMAR: %s, %s", (signal, args)
         if signal == "stateChanged":
             key = "%s-%s" % (package, args[0])
             if key in self.widgets:
