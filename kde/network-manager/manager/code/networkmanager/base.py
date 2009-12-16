@@ -609,13 +609,32 @@ class MainManager(QtGui.QWidget):
 
         return data
 
+    def askForPINAndAuthenticate(self, device, deviceHumanReadable, pinNeeded):
+        # Pops up PIN dialog if pinNeeded is True
+
+        if not pinNeeded:
+            return
+
+        pinDialog = PINDialog(self, deviceHumanReadable)
+
+        count = 0
+        for c in range(pd.maxTries):
+            pinDialog.show()
+            pin = pinDialog.getPassword()
+            #result = self.iface.enterPIN(package, device, pin)
+            result = True
+            if result:
+                return True
+
+        return False
+
     def createConnection(self):
         package, device, deviceHumanReadable = str(self.sender().data().toString()).split('::')
 
         # Check for PIN requirement
-        if "pin" in self.iface.capabilities(package)["modes"] and self.iface.requiresPIN(package, device):
-            pd = PINDialog(self, deviceHumanReadable)
-            pd.exec_()
+        pinNeeded = "pin" in self.iface.capabilities(package)["modes"] and \
+                     self.iface.requiresPIN(package, device)
+        self.askForPINAndAuthenticate(device, deviceHumanReadable, pinNeeded)
 
         self.resetForm()
         self.lastEditedPackage = package
