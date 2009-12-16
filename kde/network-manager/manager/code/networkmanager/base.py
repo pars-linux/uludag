@@ -625,7 +625,7 @@ class MainManager(QtGui.QWidget):
             return True
 
         pinDialog = PINDialog(self, deviceHumanReadable)
-        pinDialog.connect(SIGNAL("gotPassword()"), PINHandler)
+        pinDialog.connect(pinDialog, SIGNAL("gotPassword(const QString&, bool)"), PINHandler)
 
         for c in range(pinDialog.maxTries):
             pinDialog.show()
