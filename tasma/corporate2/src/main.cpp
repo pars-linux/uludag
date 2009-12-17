@@ -59,10 +59,11 @@ TasmaApp::~TasmaApp()
 int main( int argc, char *argv[] )
 {
   KLocale::setMainCatalogue( "tasma" );
-  KAboutData aboutData( "tasma", I18N_NOOP( "TASMA - Pardus Configuration Center" ), "1.5.3",
+  KAboutData aboutData( "tasma", I18N_NOOP( "TASMA - Pardus Configuration Center" ), "1.5.4",
                         I18N_NOOP( "Pardus Configuration Center" ), KAboutData::License_GPL,
                         I18N_NOOP( "(c) TUBITAK - UEKAE" ) );
-  aboutData.addAuthor( "Pınar Yanardağ", I18N_NOOP( "Current Maintainer" ), "pinar@pardus.org.tr" );
+  aboutData.addAuthor( "Ozan Çağlayan", I18N_NOOP( "Current Maintainer" ), "ozan@pardus.org.tr" );
+  aboutData.addAuthor( "Pınar Yanardağ", I18N_NOOP( "Developer" ), "pinar@pardus.org.tr" );
   aboutData.addAuthor( "İsmail Dönmez", I18N_NOOP( "Developer" ), "ismail@pardus.org.tr" );
   aboutData.addAuthor( "Barış Metin", I18N_NOOP( "Old Maintainer & Original Author" ), "baris@pardus.org.tr" );
   aboutData.addCredit(I18N_NOOP("Bahadır Kandemir"), I18N_NOOP("Module Developers"), "bahadir@pardus.org.tr");
