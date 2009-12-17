@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-16 15:55+0200\n"
-"PO-Revision-Date: 2009-07-12 19:58+0200\n"
+"PO-Revision-Date: 2009-12-17 19:56+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -66,15 +66,15 @@ msgstr "Vill du verkligen ta bort profil %1?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
-msgstr ""
+msgstr "Ange PIN-kod"
 
 #: .tmp/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
-msgstr ""
+msgstr "Vänligen ange PIN-kod för"
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr ""
+msgstr "Du har angett fel PIN-kod tre gånger i följd"
 
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
 msgid "Refresh"
@@ -98,14 +98,12 @@ msgid "Connecting"
 msgstr "Ansluter"
 
 #: .tmp/networkmanager/widgets.py:396
-#, fuzzy
 msgid "Cable or device is unplugged"
-msgstr "Kabel eller enhet är ej ansluten."
+msgstr "Kabel eller enhet är ej ansluten"
 
 #: .tmp/networkmanager/widgets.py:412
-#, fuzzy
 msgid "Access denied"
-msgstr "Åtkomst nekad."
+msgstr "Åtkomst nekad"
 
 #: .tmp/ui_main.py:334
 msgid "Form"
@@ -205,45 +203,43 @@ msgstr "Dölj lösenord"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Detaljer"
 
 #: .tmp/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: .tmp/ui_nmwizard.py:95
-#, fuzzy
 msgid "Device"
-msgstr "Enhet: "
+msgstr "Enhet:"
 
 #: .tmp/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI:"
 
 #: .tmp/ui_nmwizard.py:97
-#, fuzzy
 msgid "Device:"
-msgstr "Enhet: "
+msgstr "Enhet:"
 
 #: .tmp/ui_nmwizard.py:98
 msgid "Select an operator"
-msgstr ""
+msgstr "Välj en operatör"
 
 #: .tmp/ui_nmwizard.py:99
 msgid "Operator:"
-msgstr ""
+msgstr "Operatör:"
 
 #: .tmp/ui_nmwizard.py:100
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: .tmp/ui_nmwizard.py:101
 msgid "Remember PIN for this connection"
-msgstr ""
+msgstr "Kom ihåg PIN-kod för den här anslutningen"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
