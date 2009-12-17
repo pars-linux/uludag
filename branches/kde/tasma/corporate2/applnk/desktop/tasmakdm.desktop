@@ -1,7 +1,7 @@
 [Desktop Entry]
 Encoding=UTF-8
 Exec=kcmshell kdm
-Icon=switchuser
+Icon=kmenu
 Type=Application
 DocPath=kdm/index.html#configuring-kdm
 
