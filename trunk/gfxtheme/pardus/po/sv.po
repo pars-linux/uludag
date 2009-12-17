@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bootloader\n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2009-07-12 11:12+0200\n"
+"PO-Revision-Date: 2009-12-17 17:56+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -431,20 +431,20 @@ msgstr "Av"
 msgid "Hardware info"
 msgstr "Hårdvaruinformation"
 
-
 #. txt_mudur
 msgid "Boot"
-msgstr ""
+msgstr "Starta om"
 
 #. txt_mudur_forcefsck
 msgid "FS check"
-msgstr ""
+msgstr "Filsystemskontroll"
 
 #. txt_mainmenu
 msgid "Main menu"
-msgstr ""
+msgstr "Huvudmeny"
 
 #. txt_otheroptions
 msgid "Other options"
-msgstr ""
+msgstr "Övriga alternativ"
+
 
