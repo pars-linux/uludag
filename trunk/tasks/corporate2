@@ -63,11 +63,11 @@
     * Simge teması düzeltilecek (+)
     * 32-53px arası Tango simgelerinin arkası panelde siyah gözüküyor (+)
     * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
+    * ses sunucusu ayarlarının TASMA'dan kaldırılması (+)
+    * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (/50)
+    * Fontlar çok kötü gözüküyor (/50) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
-    * ses sunucusu ayarlarının TASMA'dan kaldırılması (-)
-    * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (-)
-    * Fontlar çok kötü gözüküyor (-) [Fatih Aşıcı]
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
@@ -82,8 +82,8 @@
     * grub.conf'a girdilerin UUID tabanlı girilmesi (-) [Bahadır Kandemir]
 
 * sysinfo (Ozan Çağlayan)
+    * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+) [Fatih Aşıcı]
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (-) [Gökçen Eraslan]
-    * VGA bilgilerinin doğruluğunun gözden geçirilmesi (-) [Fatih Aşıcı]
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
@@ -97,12 +97,12 @@
 * Depo/Paketler (Ozan Çağlayan)
     * autostart dizinlerinin düzenlenmesi (+)
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
+    * Pulseaudio yardımcı programlarının depoya alınması (+)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (-)
-    * Pulseaudio yardımcı programlarının depoya alınması (-)
     * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/50)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (/50)
