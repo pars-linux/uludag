@@ -98,9 +98,9 @@ class SpecialList(QObject):
             part.write("</head><body>")
 
             if set(packages) - set(selected):
-                part.write('''<font size="-2"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></font>''')
+                part.write('''<span id="selection"><a href="#selectall">'''+i18n("Select all packages in this category")+'''</a></span>''')
             else:
-                part.write('''<font size="-2"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></font>''')
+                part.write('''<span id="selection"><a href="#selectall">'''+i18n("Reverse package selections")+'''</a></span>''')
 
             part.write(self.createListForPackages(packages))
             part.end()

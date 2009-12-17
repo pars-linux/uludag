@@ -61,3 +61,15 @@ body{
 	font-size:12px;	
 	position:relative;
 }
+
+#selection {
+    font-size:11px;
+}
+
+#selection a {
+    text-decoration:none;
+}
+
+#selection a:hover {
+    color:#244A80;
+}
