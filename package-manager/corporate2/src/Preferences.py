@@ -35,9 +35,9 @@ class Preferences(PreferencesDialog.PreferencesDialog):
         self.removeButton.setIconSet(Icons.loadIconSet("remove", KIcon.Small))
         self.moveUpButton.setIconSet(Icons.loadIconSet("up", KIcon.Small))
         self.moveDownButton.setIconSet(Icons.loadIconSet("down", KIcon.Small))
-        self.buttonOk.setIconSet(Icons.loadIconSet("ok", KIcon.Small))
-        self.buttonCancel.setIconSet(Icons.loadIconSet("cancel", KIcon.Small))
-        self.buttonHelp.setIconSet(Icons.loadIconSet("help1", KIcon.Small))
+        self.buttonOk.setIconSet(Icons.loadIconSet("button_ok", KIcon.Small))
+        self.buttonCancel.setIconSet(Icons.loadIconSet("button_cancel", KIcon.Small))
+        self.buttonHelp.setIconSet(Icons.loadIconSet("help", KIcon.Small))
 
         self.parent = parent
         self.connect(self.addButton, SIGNAL("clicked()"), self.addNewRepo)
