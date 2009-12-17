@@ -1,3 +1,8 @@
+2009-12-17 Ozan Çağlayan <ozan@pardus.org.tr>
+	* applnk/: Fix numerous icon mappings according to BCTango, hide arts
+	configuration section,
+	* src/main.cpp: Bump to 1.5.4
+
 2009-01-05 Pınar Yanardağ <pinar@pardus.org.tr>
 	* src/main.cpp: Add Credits for translators, update version to 1.5.3
 	* src/ticonview.cpp: Disable tooltip support
