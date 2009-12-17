@@ -1,6 +1,6 @@
 [Desktop Entry]
 Encoding=UTF-8
-Icon=encrypted
+Icon=lock
 Type=Application
 Exec=kcmshell crypto
 DocPath=kcontrol/crypto/index.html
