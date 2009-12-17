@@ -5,6 +5,7 @@ Exec=kcmshell arts
 Icon=arts
 Type=Application
 DocPath=kcontrol/arts/index.html
+Hidden=true
 
 X-KDE-ModuleType=Library
 X-KDE-Library=arts
