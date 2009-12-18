@@ -94,7 +94,7 @@ static QString formatMemory(unsigned long long value)
 
 void kio_sysinfoProtocol::memoryInfo(void)
 {
-    QFile file("/tmp/meminfo");
+    QFile file("/proc/meminfo");
     unsigned long long memtotal = 0,
                        memfree = 0,
                        buffers = 0,
