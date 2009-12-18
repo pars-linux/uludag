@@ -262,9 +262,12 @@ void kio_sysinfoProtocol::get( const KUrl &)
     dynamicInfo += addToStock( "media-flash",
                                 i18n( "Ram : %1 free of %2", m_info[MEM_FREERAM].toString(), m_info[MEM_TOTALRAM].toString() ),
                                 m_info[MEM_USAGE].toString());
+    dynamicInfo += addToStock("media-flash",(m_info[MEM_TOTALSWAP]!="0" ?
+                                  i18n("Swap: %1 free of %2", m_info[MEM_FREESWAP], m_info[MEM_TOTALSWAP]):
+                                  i18n("Not in use")));
+
     dynamicInfo += addToStock( "media-flash",
                                 i18n( "Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString() ));
-    dynamicInfo += addProgress( "media-flash", percent);
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
@@ -282,8 +285,7 @@ void kio_sysinfoProtocol::get( const KUrl &)
     staticInfo += addToStock( "computer", m_info[OS_SYSNAME].toString() +
                               " <b>" + m_info[OS_RELEASE].toString() + "</b>",
                               m_info[OS_USER].toString() + "@" + m_info[OS_HOSTNAME].toString() );
-    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>", KDE::versionString(), m_info[OS_SYSTEM].toString() ),
-                                          m_info[SYSTEM_UPTIME].toString());
+    staticInfo += addToStock( "computer", i18n( "Kde <b>%1</b> on <b>%2</b>", KDE::versionString(), m_info[OS_SYSTEM].toString()));
     staticInfo += finishStock();
 
     // update content..
@@ -340,65 +342,80 @@ void kio_sysinfoProtocol::mimetype( const KUrl & /*url*/ )
     finished();
 }
 
-static unsigned long int scan_one( const char* buff, const char *key )
+/*
+static unsigned long long scan_one( const char* buff, const char *key )
 {
     char *b = strstr( buff, key );
     if ( !b )
         return 0;
-    unsigned long int val = 0;
+    unsigned long long val = 0;
     if ( sscanf( b + strlen( key ), ": %lu", &val ) != 1 )
         return 0;
     //kDebug(1242) << "scan_one " << key << " " << val;
     return val;
 }
+*/
 
-static quint64 calculateFreeRam()
+static QString formatMemory(unsigned long long value)
 {
-    FILE *fd = fopen( "/proc/meminfo", "r" );
-    if ( !fd )
-        return 0;
+    // value is in kB
+    double temp;
 
-    QTextStream is(fd);
-    QString MemInfoBuf = is.readAll();
+    if (value <= 0)
+        return "0";
 
-    quint64 MemFree = scan_one( MemInfoBuf.toLatin1(), "MemFree" );
-    quint64 Buffers = scan_one( MemInfoBuf.toLatin1(), "Buffers" );
-    quint64 Cached  = scan_one( MemInfoBuf.toLatin1(), "Cached" );
-    quint64 Slab    = scan_one( MemInfoBuf.toLatin1(), "Slab" );
-    fclose( fd );
-
-    MemFree += Cached + Buffers + Slab;
-    if ( MemFree > 50 * 1024 )
-        MemFree -= 50 * 1024;
-    return MemFree;
+    temp = value / 1024.0; // MB
+    if (temp >= 1024) {
+        temp /= 1024.0; // GB
+        return i18n("%1 GB").arg(KGlobal::locale()->formatNumber(temp));
+    }
+    return i18n("%1 MB").arg(KGlobal::locale()->formatNumber(temp));
 }
 
-unsigned long int kio_sysinfoProtocol::memoryInfo()
+void kio_sysinfoProtocol::memoryInfo(void)
 {
-    struct sysinfo info;
-    int retval = sysinfo( &info );
-    unsigned long int usage, percent, peer;
-    if ( retval !=-1 )
+    QFile file("/proc/meminfo");
+    unsigned long long memtotal = 0,
+                       memfree = 0,
+                       buffers = 0,
+                       cached = 0,
+                       swaptotal = 0,
+                       swapfree = 0;
+
+    // Parse /proc/meminfo for memory usage statistics
+    if (file.exists() && file.open(IO_ReadOnly))
     {
-        quint64 mem_unit = info.mem_unit;
 
-        usage = ( info.totalram - info.freeram ) * mem_unit;
-        peer = (info.totalram * mem_unit) / 100;
-        peer == 0 ? percent = 0 : percent = usage / peer;
+        QTextStream stream(&file);
+        QString line;
 
-        m_info[MEM_USAGE] = formattedUnit( usage );
-        m_info[MEM_TOTALRAM] = formattedUnit( quint64(info.totalram) * mem_unit );
-        quint64 totalFree = calculateFreeRam() * 1024;
-        kDebug(1242) << "total " << totalFree << " free " << info.freeram << " unit " << mem_unit;
-        m_info[MEM_FREERAM] = formattedUnit( quint64(info.freeram) * mem_unit );
-
-        m_info[MEM_TOTALSWAP] = formattedUnit( quint64(info.totalswap) * mem_unit );
-        m_info[MEM_FREESWAP] = formattedUnit( quint64(info.freeswap) * mem_unit );
-
-        m_info[SYSTEM_UPTIME] = KIO::convertSeconds( info.uptime );
-        return percent;
+        while (!stream.atEnd())
+        {
+            line = stream.readLine();
+            if (!line.isEmpty())
+            {
+                if (line.startsWith("MemTotal"))
+                    memtotal = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                else if (line.startsWith("MemFree"))
+                    memfree = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                else if (line.startsWith("Buffers"))
+                    buffers = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                else if (line.startsWith("Cached"))
+                    cached = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                else if (line.startsWith("SwapTotal"))
+                    swaptotal = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                else if (line.startsWith("SwapFree"))
+                    swapfree = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+            }
+        }
     }
-    return 0;
+
+    // Disk cache and buffers are ignored as they will always be available
+    // upon request before swapping.
+    m_info[MEM_TOTALSWAP] = formatMemory(swaptotal);
+    m_info[MEM_FREESWAP] = formatMemory(swapfree);
+    m_info[MEM_TOTALRAM] = formatMemory(memtotal);
+    m_info[MEM_FREERAM] = formatMemory(memfree+buffers+cached);
 }
 
 void kio_sysinfoProtocol::osInfo()
@@ -416,7 +433,6 @@ void kio_sysinfoProtocol::osInfo()
     m_info[ OS_SYSTEM ] = readFromFile( "/etc/pardus-release" );
     m_info[ OS_SYSTEM ].toString().replace("X86-64", "x86_64");
 }
-
 
 void kio_sysinfoProtocol::cpuInfo()
 {
