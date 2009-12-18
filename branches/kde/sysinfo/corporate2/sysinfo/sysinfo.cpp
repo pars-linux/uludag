@@ -248,8 +248,9 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
 
     dynamicInfo += startStock(i18n("Memory"));
     dynamicInfo += addToStock("memory", i18n("Physical memory: ") + i18n("%1 of %2 is free").arg(m_info[MEM_FREERAM]).arg(m_info[MEM_TOTALRAM]));
-    if (m_info[MEM_TOTALSWAP] != "0")
-        dynamicInfo += addToStock("memory", i18n("Swap memory: ") + i18n("%1 of %2 is free").arg(m_info[MEM_FREESWAP]).arg(m_info[MEM_TOTALSWAP]));
+    dynamicInfo += addToStock("memory", i18n("Swap memory: ") + (m_info[MEM_TOTALSWAP]!="0" ?
+                              i18n("%1 of %2 is free").arg(m_info[MEM_FREESWAP]).arg(m_info[MEM_TOTALSWAP]):
+                              i18n("Not in use")));
     dynamicInfo += finishStock();
 
     content = content.arg(dynamicInfo); // put the dynamicInfo text into the dynamic left box
