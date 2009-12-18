@@ -102,7 +102,7 @@ private:
     /**
      * Gather basic memory info
      */
-    unsigned long int memoryInfo();
+    void memoryInfo();
 
     /**
      * Gather CPU info
