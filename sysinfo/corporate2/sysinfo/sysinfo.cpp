@@ -130,6 +130,8 @@ void kio_sysinfoProtocol::memoryInfo(void)
         }
     }
 
+    // Disk cache and buffers are ignored as they will always be available
+    // upon request before swapping.
     m_info[MEM_TOTALSWAP] = formatMemory(swaptotal);
     m_info[MEM_FREESWAP] = formatMemory(swapfree);
     m_info[MEM_TOTALRAM] = formatMemory(memtotal);
@@ -174,7 +176,7 @@ QString kio_sysinfoProtocol::addToStock(const QString _icon, const QString text,
     templator += QString ("<td><img src=\"%1\"></td><td>%2").arg(iconpath).arg(text);
 
     if (details != "")
-        templator += QString("<span class=\"detail\">[ %1 ]</span>").arg(details);
+        templator += QString("<span class=\"detail\">%1</span>").arg(details);
 
     templator += "</td><td></td></tr>";
     return templator;
@@ -364,9 +366,7 @@ QString kio_sysinfoProtocol::diskInfo()
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
             percent = di.mounted ? percent: 0;
-            QString sizeStatus;
-            sizeStatus = di.mounted ? i18n("%1 free of %2").arg(formattedUnit(di.avail,0)).arg(formattedUnit(di.total,0)):
-                                      "";
+            QString sizeStatus = di.mounted ? i18n("%1 free of %2").arg(formattedUnit(di.avail,0)).arg(formattedUnit(di.total,0)): "";
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
