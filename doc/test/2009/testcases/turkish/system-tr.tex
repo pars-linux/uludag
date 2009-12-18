@@ -45,7 +45,6 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  xtrans
- automake
  dietlibc 
  quilt
  gcc
@@ -58,6 +57,23 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  xorg-proto
  libtool
 \end{verbatim}
+\item automake paketi kurulumu sonrası:
+
+Aşağıda bulunan paketlerin sorunsuz derlendiğini gözlemleyin.
+\begin{verbatim}
+ sudo pisi it subversion
+ 2008 için
+ svn co http://svn.pardus.org.tr/pardus/2008/devel/applications/archive
+ cd applications/xdelta
+ sudo pisi  bi pspec.xml -vd
+
+ 2009 için
+ svn co http://svn.pardus.org.tr/pardus/2008/devel/hardware/library/
+ cd library/libgpod
+ sudo pisi  bi pspec.xml -vd
+
+\end{verbatim}
+
  \item icecream ve icecream scheduler paketleri kurulumu sonrası:
 
 Servis yöneticisinden icecream servisini başlatın.
