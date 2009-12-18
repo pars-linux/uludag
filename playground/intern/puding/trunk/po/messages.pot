@@ -13,11 +13,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-<<<<<<< HEAD
 "Content-Type: text/plain; charset=CHARSET\n"
-=======
-"Content-Type: text/plain; charset=utf-8\n"
->>>>>>> 7210ac5947cf2dc6754c66c8e2947e69405dfd3e
 "Content-Transfer-Encoding: 8bit\n"
 
 #: ../datas/puding.desktop.in.h:1
