@@ -38,21 +38,52 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
         self.ui.picKeyboard.setPixmap(QtGui.QPixmap(':/raw/pics/keyboards.png'))
 
-        # get Layout config
+        # get layout config
         self.config = KConfig("kxkbrc")
         self.group = self.config.group("Layout")
         self.layoutList = str(self.group.readEntry("LayoutList"))
         self.lastLayout = 0
+ 
+        # get language list
+        self.languageList = self.getLanguageList()
 
-        for lang in localedata.languages:
-            for each in localedata.languages[lang].keymaps:
-                item = QtGui.QListWidgetItem(self.ui.listWidgetKeyboard)
-                item.setText(each.name)
-                item.setToolTip(each.xkb_layout)
-                item.setStatusTip(each.xkb_variant)
-                self.ui.listWidgetKeyboard.addItem(item)
+        # generate language list
+        for language in self.languageList:
+            languageCode, languageName, languageLayout, languageVariant = language
+
+            item = QtGui.QListWidgetItem(self.ui.listWidgetKeyboard)
+            item.setText(languageName)
+            item.setToolTip(languageLayout)
+            item.setStatusTip(languageVariant)
+            self.ui.listWidgetKeyboard.addItem(item)
+
+            # select appropriate keymap
+            if self.getCurrentSystemLanguage().strip() == languageCode.strip():
+                self.ui.listWidgetKeyboard.setCurrentItem(item)
 
         self.ui.listWidgetKeyboard.connect(self.ui.listWidgetKeyboard, SIGNAL("itemSelectionChanged()"), self.setKeyboard)
+
+    def getCurrentSystemLanguage(self):
+        p = subprocess.Popen(["cat","/etc/mudur/language"], stdout=subprocess.PIPE)
+        lang, err = p.communicate()
+        return str(lang)
+
+    def getLanguageList(self):
+        languageList = []
+
+        for language in localedata.languages.items():
+            lcode, lprops = language
+
+            lkeymaps = lprops.keymaps
+
+            for lmap in lkeymaps:
+                lname = lmap.name
+                llayout = lmap.xkb_layout
+                lvariant = lmap.xkb_variant
+
+                languageList.append([lcode, lname, llayout, lvariant])
+
+        return languageList
 
     def setKeyboard(self):
         layout = self.ui.listWidgetKeyboard.currentItem().toolTip()
