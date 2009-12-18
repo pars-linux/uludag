@@ -60,7 +60,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             # select appropriate keymap
             if self.getCurrentSystemLanguage().strip() == languageCode.strip():
                 self.ui.listWidgetKeyboard.setCurrentItem(item)
-
+        
+        self.ui.listWidgetKeyboard.sortItems()
         self.ui.listWidgetKeyboard.connect(self.ui.listWidgetKeyboard, SIGNAL("itemSelectionChanged()"), self.setKeyboard)
 
     def getCurrentSystemLanguage(self):
