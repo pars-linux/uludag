@@ -5,18 +5,20 @@
 #
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-16 15:55+0200\n"
-"PO-Revision-Date: 2009-07-09 19:49-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: Spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-12-17 21:41-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
 msgid "Signal Strength"
@@ -68,15 +70,15 @@ msgstr "Realmente desea remover el perfil %1?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
-msgstr ""
+msgstr "Ingrese el PIN"
 
 #: .tmp/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
-msgstr ""
+msgstr "Por favor ingrese el código PIN para "
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr ""
+msgstr "Ha ingresado 3 veces un código PIN incorrecto"
 
 # favor verificar, refrescar, actualizar..
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
@@ -101,14 +103,12 @@ msgid "Connecting"
 msgstr "Conectando"
 
 #: .tmp/networkmanager/widgets.py:396
-#, fuzzy
 msgid "Cable or device is unplugged"
-msgstr "Cable o dispositivo desconectado."
+msgstr "Cable o dispositivo desconectado"
 
 #: .tmp/networkmanager/widgets.py:412
-#, fuzzy
 msgid "Access denied"
-msgstr "Acceso denegado."
+msgstr "Acceso denegado"
 
 #: .tmp/ui_main.py:334
 msgid "Form"
@@ -209,45 +209,43 @@ msgstr "Ocultar contraseña"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Diálogo"
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Detalles"
 
 #: .tmp/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: .tmp/ui_nmwizard.py:95
-#, fuzzy
 msgid "Device"
-msgstr "Dispositivo : "
+msgstr "Dispositivo"
 
 #: .tmp/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI:"
 
 #: .tmp/ui_nmwizard.py:97
-#, fuzzy
 msgid "Device:"
-msgstr "Dispositivo : "
+msgstr "Dispositivo: "
 
 #: .tmp/ui_nmwizard.py:98
 msgid "Select an operator"
-msgstr ""
+msgstr "Seleccione una operadora"
 
 #: .tmp/ui_nmwizard.py:99
 msgid "Operator:"
-msgstr ""
+msgstr "Operadora:"
 
 #: .tmp/ui_nmwizard.py:100
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: .tmp/ui_nmwizard.py:101
 msgid "Remember PIN for this connection"
-msgstr ""
+msgstr "Recordar PIN para esta conexión"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
