@@ -16,22 +16,18 @@ Puding is a USB image creator for Pardus 2008 or later. You can write image to U
 ## For translators: ##
     $ cd $(PUDING)/po
 
-+ To create new translation file:
-
+To create new translation file:
     $ msginit -l $(LANG)
 
-+ To update translation file:
-
+To update translation file:
     $ msgmerge -U ${LANG}.po messages.pot
 
 ## For developers: ##
-+ To update main translation file:
-
+To update main translation file:
     $ cd $(PUDING)/po
     $ intltool-update -p
 
-+ For Qt translation file:
-
+For Qt translation file:
     $ cd $(PUDING)/qt4
     $ pylupdate4 /usr/lib/python*/site-packages/puding/qt*.py src/*.py -ts messages.ts
 
