@@ -1,1 +1,17 @@
-* Kullanıcılar kendi hazırladığı Pardus sürümlerini de yazdırabilmeliler. Checksum değeri tutmayınca False değeri vermek yerine uyarmalı.
++ puding-0.3:
+    - qt4 ve src dizinlerinin birleştirilmesi gerekiyor.
+    - src dizininin isminin puding olarak değiştirilmesi gerekiyor.
+    - Kurmadan çalıştırmak mümkün mü? Bunu araştırmak gerekiyor.
+    - setup.py tamamen değişecek. puding-dev diye ayrı bir betik
+    yazılacak.
+    - constants.py gerekli mi? __init__.py dosyasının avantajından
+    yararlanmak gerekiyor.
+    - Bilinen bazı hatalar var, onların giderilmesi gerekiyor.
+    - ResourceManager oluşturulması gerekiyor mu acaba? Sanki Qt'ninki
+    yetermiş gibime geliyor, onu da bir araştır.
+    - README yerine README.markdown kullan.
+
++ Genel Düsünceler:
+    - Plasmoid arayüzünü yapmak.
+    - KDE entegrasyonunu sağlamak.
+
