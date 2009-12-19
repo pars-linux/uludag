@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -33,21 +34,17 @@
      FILTER bug_link(original_bug_id) %]
 
 <p>
-  When marking [% terms.abug %] as a duplicate, the reporter of the duplicate
-  is normally added to the CC list of the original. The permissions
-  on [% orig_bug FILTER none %] (the original) are currently set
-  such that the reporter would not normally be able to see it.
+  [% terms.AbugAcc %] [% terms.abugGen%] olarak işaretlerken, sonradan girilen [% terms.bugAcc %] oluşturan kişi asıl [% terms.bugGen %] haber verilecekler listesine eklenir. [% orig_bug FILTER none %] (asıl) üzerindeki izinler nedeniyle normalde bu kişi o [% terms.bugAcc%] göremez.
 </p>
 
 <p>
-  <b>Adding the reporter to the CC list of [% orig_bug FILTER none %]
+  <b>Bildireni [% orig_bug FILTER none %] haber verilecekler listesine eklemek o kişiye bu [% terms.bugAcc %]
   [% IF cclist_accessible %]
-    will immediately
+    hemen açar
   [% ELSE %]
-    might, in the future,
+    ileride açabilir
   [% END %]
-  allow him/her access to view this [% terms.bug %].</b>
-  Do you wish to do this?
+  . Bunu onaylıyor musunuz?
 </p>
 
 <form method="post" action="process_bug.cgi">
@@ -56,18 +53,18 @@
 
 <p>
   <input type="radio" name="confirm_add_duplicate" value="1">
-    Yes, add the reporter to CC list on [% orig_bug FILTER none %]
+    Evet, raporlayanı [% orig_bug FILTER none %] haber verilecekler listesine ekle
 </p>
 <p>
   <input type="radio" name="confirm_add_duplicate" value="0" checked="checked">
-    No, do not add the reporter to CC list on [% orig_bug FILTER none %]
+    Hayır, raporlayanı [% orig_bug FILTER none %] haber verilecekler listesine ekleme
 </p>
 <p>
-  [% "Throw away my changes, and revisit $terms.bug $duplicate_bug_id"
+  [% "Yaptığım değişikleri iptal et ve $duplicate_bug_id numaralı $terms.bugAcc aç"
      FILTER bug_link(duplicate_bug_id) FILTER none %]
 </p>
 <p>
-  <input type="submit" id="process" value="Submit">
+  <input type="submit" id="process" value="Gönder">
 </p>
 
 </form>

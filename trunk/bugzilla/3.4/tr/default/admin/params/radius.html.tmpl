@@ -15,40 +15,39 @@
   # All rights reserved.
   #
   # Contributor(s): Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
    title = "RADIUS"
-   desc = "Configure this first before choosing RADIUS as an authentication method"
+   desc = "Kimlik doğrulama yöntemi olarak RADIUS seçmeden önce bunu yapılandırın"
 %]
 
 [% param_descs = {
-  RADIUS_server => "The name (and optionally port) of your RADIUS server " _
-                   "(e.g. <code>radius.company.com</code>, or " _
-                   "<code>radius.company.com:portnum</code>).<br>" _
-                   "Required only if " _
-                   "<a href=\"?section=auth#user_verify_class\">the " _
-                   "<code>user_verify_class</code> parameter</a> contains " _
-                   "<code>RADIUS</code>.",
+  RADIUS_server => "RADIUS sunucunuzun adı (ve varsa port numarası) " _
+                   "(örn. <code>radius.sirket.com</code>, veya " _
+                   "<code>radius.sirket.com:portno</code>).<br>" _
+                   "Sadece " _
+                   "<a href=\"?section=auth#user_verify_class\">" _
+                   "<code>user_verify_class</code> parametresi</a> " _
+                   "<code>RADIUS</code> içeriyorsa gereklidir.",
 
-  RADIUS_secret => "Your RADIUS server's secret.<br>" _
-                   "Required only if " _
-                   "<a href=\"?section=auth#user_verify_class\">the " _
-                   "<code>user_verify_class</code> parameter</a> contains " _
-                   "<code>RADIUS</code>.",
+  RADIUS_secret => "RADIUS sunucunuzun sırrı.<br>" _
+                   "Sadece " _
+                   "<a href=\"?section=auth#user_verify_class\">" _
+                   "<code>user_verify_class</code> parametresi</a> " _
+                   "<code>RADIUS</code> içeriyorsa gereklidir.",
 
-  RADIUS_NAS_IP => "The NAS-IP-Address attribute to be used when exchanging " _
-                   "data with your RADIUS server. " _
-                   "If unspecified, <code>127.0.0.1</code> will be used.<br>" _
-                   "Useful only if " _
-                   "<a href=\"?section=auth#user_verify_class\">the " _
-                   "<code>user_verify_class</code> parameter</a> " _
-                   "contains <code>RADIUS</code>.",
+  RADIUS_NAS_IP => "RADIUS sunucuyla veri alışverişinde bulunurken kullanılacak NAS-IP-Address değeri" _
+                   "Eğer belirtilmezse, <code>127.0.0.1</code> kullanılır.<br>" _
+                   "Sadece " _
+                   "<a href=\"?section=auth#user_verify_class\">" _
+                   "<code>user_verify_class</code> parametresi</a> " _
+                   "<code>RADIUS</code> içeriyorsa anlamlıdır.",
 
-  RADIUS_email_suffix => "Suffix to append to a RADIUS user name to form an " _
-                         "e-mail address.<br>" _
-                         "Useful only if " _
-                         "<a href=\"?section=auth#user_verify_class\">the " _
-                         "<code>user_verify_class</code> parameter</a> " _
-                         "contains <code>RADIUS</code>.",
+  RADIUS_email_suffix => "RADIUS kullanıcı adından eposta adresi oluşturmak için kullanılacak ek.<br>" _
+                         "Sadece " _
+                         "<a href=\"?section=auth#user_verify_class\">" _
+                         "<code>user_verify_class</code> parametresi</a> " _
+                         "<code>RADIUS</code> içeriyorsa anlamlıdır.",
   }
 %]

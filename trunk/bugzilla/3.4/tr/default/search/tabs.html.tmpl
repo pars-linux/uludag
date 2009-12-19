@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -24,9 +25,9 @@
   #%]
 
 [% WRAPPER global/tabs.html.tmpl
-     tabs = [ { name => 'specific', label => "Find a Specific $terms.Bug",
+     tabs = [ { name => 'specific', label => "Belirli Bir $terms.Bug Bul",
                 link => "query.cgi?format=specific" },
-              { name => 'advanced', label => "Advanced Search",
+              { name => 'advanced', label => "Gelişmiş Arama",
                 link => "query.cgi?format=advanced" } ]
      current_tab_name = query_format || format || "advanced"
 %]

@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -20,7 +21,7 @@
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Add user"
+  title = "Kullanıcı ekle"
   style_urls = ['skins/standard/editusers.css']
   onload = "document.forms['f'].login.focus()"
   doc_section = "useradmin.html#createnewusers"
@@ -47,12 +48,11 @@
 </form>
 
 <p>
-  You can also <a href="editusers.cgi">find a user</a>
+  Ayrıca <a href="editusers.cgi">kullanıcı ara</a>yabilir
   [% IF listselectionvalues %],
     or
-    <a href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">go
-    back to the user list</a>
-  [% END %].
+    <a href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">kullanıcı listesine geri dön</a>ebilir
+  [% END %]siniz.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

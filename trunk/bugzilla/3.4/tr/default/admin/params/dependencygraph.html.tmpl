@@ -17,33 +17,27 @@
   #
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
-   title = "Dependency Graphs"
-   desc = "Optional setup for dependency graphing"
+   title = "Bağımlılık Grafikleri"
+   desc = "Bağımlılıkların grafiklerini çizmek için isteğe bağlı ayarlar"
 %]
 
 [% param_descs = {
-  webdotbase => "It is possible to show graphs of dependent ${terms.bugs}. You may set
-                 this parameter to any of the following:
+  webdotbase => "Birbirine bağımlı $terms.bugs ile ilgili grafikler gösterilebilir. Bu parametre şu değerlerden birini alabilir:
                  <ul>
                    <li>
-                     A complete file path to 'dot' (part of
-                     <a href=\"http://www.graphviz.org\">GraphViz</a>) will
-                     generate the graphs locally.
+                     'dot'a (<a href=\"http://www.graphviz.org\">GraphViz</a>'in bir parçası) tam bir dosya yolu - grafikler yerel olarak oluşturulur.
                    </li>
                    <li>
-                     A URL prefix pointing to an installation of the
+                     
                      <a href=\"http://www.research.att.com/~north/cgi-bin/webdot.cgi\">webdot
-                     package</a> will generate the graphs remotely.
+                     paketi</a>ne işaret eden bir adres öneki (URL prefix) - grafikler uzak makinada oluşturulur.
                    </li>
                    <li>
-                     A blank value will disable dependency graphing.
+                     Boş bir değer bağımlılık grafiği çizimini kapatır.
                    </li>
                  </ul>
-                 The default value is a publicly-accessible webdot server. If you change
-                 this value, make certain that the webdot server can read files from your
-                 webdot directory. On Apache you do this by editing the .htaccess file,
-                 for other systems the needed measures may vary. You can run checksetup.pl
-                 to recreate the .htaccess file if it has been lost."}
+                 Öntanımlı değer halka açık bir webdot sunucusudur. Eğer bu değeri değiştirirseniz, webdot sunucunun sizin webdot dizininizdeki dosyaları okuyabilmesi gerektiğini unutmayın. Apache'de bunu .htaccess dosyasında değişiklik yaparak elde edebilirsiniz, diğer sunucu yazılımlarında ise gerekli ayarlar farklılık gösterebilir. Eğer .htaccess dosyası silindiyse yeniden oluşturmak için checksetup.pl'yi çalıştırabilirsiniz."}
 %]

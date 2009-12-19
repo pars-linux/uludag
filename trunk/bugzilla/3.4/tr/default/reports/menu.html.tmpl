@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -26,48 +27,46 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Reporting and Charting Kitchen"
+  title = "Raporlama ve Çizelge Oluşturma Mutfağı"
   doc_section = "reporting.html"
 %]
 
 <p>
-  [% terms.Bugzilla %] allows you to view and track the state of the [% terms.bug %] database in
-  all manner of exciting ways.
+  [% terms.Bugzilla %] veritabanındaki [% terms.bugsGen %] durumlarını çok çeşitli şekillerde izlemenize olanak verir.
 </p>
 
-<h2>Current State</h2>
+<h2>Güncel Durum</h2>
 
 <ul>
   <li>
-    <strong><a href="query.cgi">Search</a></strong> -
-    list sets of [% terms.bugs %].
+    <strong><a href="query.cgi">Ara</a></strong> -
+    [% terms.bug %] kümelerini listele.
   </li>
   <li>
     <strong>
-      <a href="query.cgi?format=report-table">Tabular reports</a>
+      <a href="query.cgi?format=report-table">Tablo biçimli raporlar</a>
     </strong> -
-    tables of [% terms.bug %] counts in 1, 2 or 3 dimensions, as HTML or CSV.
+    [% terms.bug %] sayılarının bir, iki ya da üç boyutlu, HTML veya CSV biçimindeki tabloları
   </li>
   <li>
     <strong>
-      <a href="query.cgi?format=report-graph">Graphical reports</a>
+      <a href="query.cgi?format=report-graph">Grafik biçimli raporlar</a>
     </strong> -
-    line graphs, bar and pie charts.
+    çizgi, çubuk ve daire şeklindeki grafikler.
   </li>
 </ul>
 
-<h2>Change Over Time</h2>
+<h2>Zaman İçinde Değişiklik</h2>
 
 <ul>
   <li>
-    <strong><a href="reports.cgi">Old Charts</a></strong> - 
-    plot the status and/or resolution of [% terms.bugs %] against
-    time, for each product in your database.
+    <strong><a href="reports.cgi">Eski Çizelgeler</a></strong> - 
+    veritabanınızdaki her üründe bulunan [% terms.bugsGen %] durum ve-veya karar değerlerini zaman çizelgesi üzerinde gösterir.
   </li>
   [% IF user.in_group(Param("chartgroup")) %]
     <li>
-      <strong><a href="chart.cgi">New Charts</a></strong> - 
-      plot any arbitrary search against time. Far more powerful.
+      <strong><a href="chart.cgi">Yeni Çizelgeler</a></strong> - 
+      herhangi bir aramayı zaman çizelgesi üzerinde gösterir. Çok daha güçlüdür.
     </li>
   [% END %]
 </ul>

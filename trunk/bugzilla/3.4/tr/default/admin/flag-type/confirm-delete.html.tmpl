@@ -16,11 +16,12 @@
   # Rights Reserved.
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Confirm Deletion of Flag Type '[% flag_type.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[% flag_type.name FILTER html %]' Bayrak Türünün Silinmesini Onayla[% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -28,33 +29,24 @@
 %]
 
 <p>
-  [% IF flag_type.flag_count %]
-    There are [% flag_type.flag_count %] flags of type [% flag_type.name FILTER html %].
-    If you delete this type, those flags will also be deleted.
-  [% END %]
-
-  Note that instead of deleting the type you can
-   <a href="editflagtypes.cgi?action=deactivate&amp;id=[% flag_type.id %]&amp;token=
-           [%- token FILTER html %]">deactivate it</a>,
-   in which case the type [% IF flag_type.flag_count %] and its flags [% END %] will remain
-   in the database but will not appear in the [% terms.Bugzilla %] UI.
+   [% flag_type.name FILTER html %] türünde [% flag_type.flag_count %] bayrak var. Eğer bu türü silerseniz, o bayraklar da silinir. Türü silmek yerine <a href="editflagtypes.cgi?action=deactivate&amp;id=[% flag_type.id %]&amp;token=[%- token FILTER html %]">pasif hale getir</a>ebilirsiniz, bu durumda tür ve bayrakları veritabanında durur ancak [% terms.Bugzilla %] kullanıcı arayüzünde görüntülenmez.
 </p>
 
 <table>
    <tr>
       <td colspan="2">
-         Do you really want to delete this type?
+         Gerçekten bu türü silmek istiyor musunuz?
       </td>
    </tr>
    <tr>
       <td>
          <a href="editflagtypes.cgi?action=delete&amp;id=[% flag_type.id %]&amp;token=
-                 [%- token FILTER html %]">Yes, delete
+                 [%- token FILTER html %]">Evet, sil
          </a>
       </td>
       <td align="right">
          <a href="editflagtypes.cgi">
-            No, don't delete
+            Hayır, silme
          </a>
       </td>
    </tr>

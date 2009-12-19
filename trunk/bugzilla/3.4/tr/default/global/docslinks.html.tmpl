@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -32,7 +33,7 @@
 [% IF Param('docs_urlbase') &&
       docslinks.keys.size || (admindocslinks.keys.size && user.in_group('admin')) %]
   <div id="docslinks">
-    <h2>Related documentation</h2>
+    <h2>İlgili belgelendirme</h2>
     <ul>
       [% IF user.in_group('admin') %]
         [% PROCESS docslinkslist docstype = admindocslinks %]

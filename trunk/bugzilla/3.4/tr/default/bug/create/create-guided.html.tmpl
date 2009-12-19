@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Christine Begle <cbegle@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -29,20 +30,14 @@
 [% cgi = Bugzilla.cgi %]
 
 [% PROCESS global/header.html.tmpl
-   title = "Enter $terms.ABug"
+   title = "$terms.ABug Girin"
    onload = "PutDescription()"
    style = "#somebugs { width: 100%; height: 500px }"
  %]
 
 <p>
   <font color="red">
-    This is a template used on mozilla.org.  This template, and the
-    comment-guided.txt.tmpl template that formats the data submitted via 
-    the form in this template, are included as a demo of what it's
-    possible to do with custom templates in general, and custom [% terms.bug %]
-    entry templates in particular. As much of the text will not apply, 
-    you should alter it 
-    if you want to use this form on your [% terms.Bugzilla %] installation.
+    Bu, mozilla.org'da kullanılan şablondur. Bu şanlon ve bu şablondaki form tarafından gönderilen veriyi biçimlendiren comment-guided.txt-tmpl şablonu genel hatlarıyla kişiselleştirilmiş şablonlarla yapılabilecekleri ve özel olarak da kişiselleştirilmiş [% terms.bug %] giriş şablonlarıyla yapılabilecekleri göstermek için eklenmiştir. Metnin büyük bir kısmı size uymayacağı için, bu formu kendi [% terms.Bugzilla %] kurulumunuzda kullanmak istiyorsanız değiştirmeniz gerekir.
   </font>
 </p>
 
@@ -67,14 +62,46 @@ function PutDescription() {
 }
 </script>
 
+[%# Browser sniff to try and reduce the incidence of Netscape 6/7 bugs %]
+
+[% IF cgi.user_agent('Netscape(\d)') %]
+  [% matches = cgi.user_agent().match('Netscape(\d)') %]
+  <div style="background-color: lightgrey;
+              border: 1px solid black;
+              padding: 2px">
+    <font color="#990000">
+      <b>
+        Netscape [% matches.0 %] kullanıyorsunuz.
+        Bu tarayıcıyla yaşadığınız sorunları 
+        <a href="http://home.netscape.com/browsers/[% matches.0 %]/feedback/index.html">
+         Netscape [% matches.0 %] Geribildirim Merkezi</a>'ne raporlayabilirsiniz.
+      </b>
+    </font>
+    Bu form sadece Mozilla web tarayıcısı ve mozilla.org'un diğer ürünleri hakkında [% terms.bug %] raporlamak içindir.
+    Netscape [% matches.0 %] sürümünde karşılaştığınız [% terms.abugAcc %] bildirmek için önce bu hatayı 
+    <a href="http://ftp.mozilla.org/pub/mozilla.org/mozilla/nightly/latest/">Mozilla</a>,
+    <a href="http://ftp.mozilla.org/pub/mozilla.org/firefox/nightly/latest-trunk/">Firefox</a>,
+<a href="http://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-trunk/">Thunderbird</a> veya
+    <a href="http://ftp.mozilla.org/pub/mozilla.org/camino/nightly/latest/">Camino</a>
+    'nun güncel bir sürümünde tekrar edebilmeniz gerekir.
+  </div>
+[% END %]
+
+[% IF cgi.user_agent('Gecko/') %]
+  [% matches = cgi.user_agent().match('Gecko/(\d+)') %]
+  
+[% END %]
+
+<!-- @@@ Need UA checking here -->
+
 <a name="step1"></a>
-<h3>Step 1 of 3 - has your [% terms.bug %] already been reported?</h3>
+<h3>Adım 1 / 3 - [% terms.bug %] zaten raporlanmış olabilir mi?</h3>
 
 <p>
-  <font color="red">Please don't skip this step - half of all 
-  [% terms.bugs %] filed are
-  reported already.</font>
-    Check the two lists of frequently-reported [% terms.bugs %]:
+  <font color="red">
+  Lütfen bu aşamayı geçmeyin - genelde bildirilen [% terms.bugsGen %] yarısı zaten bildirilmiş hatalar oluyor.
+  </font>
+  Sık sık bildirilen [% terms.bugsGen %] listelerini kontrol edin:
 </p>
 
 [%# Include other products if sensible %]
@@ -87,8 +114,8 @@ function PutDescription() {
 [% END %]
 
 <p>
-    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">All-time Top 100</a> (loaded initially) |
-    <a href="duplicates.cgi?[% productstring %]&amp;format=simple&amp;sortby=delta&amp;reverse=1&amp;maxrows=100&amp;changedsince=14" target="somebugs">Hot in the last two weeks</a>  
+    <a href="duplicates.cgi?[% productstring %]&amp;format=simple" target="somebugs">Tüm Zamanların En çok Bildirilen 100 Hatası</a> (ilk gösterilir) |
+    <a href="duplicates.cgi?[% productstring %]&amp;format=simple&sortby=delta&reverse=1&maxrows=100&changedsince=14" target="somebugs">Son iki hafta içinde en çok bildirilenler</a>  
 </p>
 
 <iframe name="somebugs" id="somebugs"
@@ -97,10 +124,9 @@ function PutDescription() {
 </iframe>
 
 <p>
-    If your [% terms.bug %] isn't there, search [% terms.Bugzilla %] by entering
-    a few key words having to do with your [% terms.bug %] in this box.
-    For example: <tt><b>pop3 mail</b></tt> or <tt><b>copy paste</b></tt>.
-    The results will appear above.
+    Eğer [% terms.bug %] yukarıda listelenmemişse, bu kutuya [% terms.bug %] ile ilgili birkaç anahtar kelime girerek bir arama yapın. Örneğin: <tt><b>pop3 eposta</b></tt>
+    veya <tt><b>kopyala yapıştır</b></tt>.
+    Sonuçlar yukarıda listelenecektir.
   </p>
 
 [%# All bugs opened inside the past six months %]
@@ -127,21 +153,17 @@ function PutDescription() {
   </form>
 
 <p>
-  Look through the search results. If you get the
-  <tt><b>[% terms.zeroSearchResults %]</b></tt> message, [% terms.Bugzilla %]
-  found no [% terms.bugs %] that
-  match. Check for typing mistakes, or try fewer or different keywords.
-  If you find [% terms.abug %] that looks the same as yours, please add
-  any useful extra information you have to it, rather than opening a new one.
+  Arama sonuçlarına göz gezdirin. Eğer <tt><b>[% terms.zeroSearchResults %]</b></tt>
+  yanıtı alırsanız, [% terms.Bugzilla %] uyuşan bir hata bulamamış demektir.
+  Yazım hatası yapıp yapmadığınızı kontrol edin veya daha az sayıda ya da farklı anahtar kelimelerle tekrar deneyin. Sizinkiyle aynı [% terms.abug %] bulursanız, lütfen yeni bir [% terms.bug %] açmak yerine elinizdeki bilgileri o [% terms.bugDat %] ekleyin.
 </p>
 
 
 <a name="step2"></a>
-<h3>Step 2 of 3 - give information</h3>
+<h3>Adım 2 / 3 - bilgi verin</h3>
 
 <p>
-  If you've tried a few searches and your [% terms.bug %] really isn't in 
-  there, tell us all about it.
+  Birkaç arama denediyseniz fakat aradığınız [% terms.bugDat %] ulaşamadıysanız, bize [% terms.bug %] hakkında bilgi verin.
 </p>
 
 <form method="post" action="post_bug.cgi">
@@ -157,7 +179,7 @@ function PutDescription() {
 
   <tr bgcolor="[% tablecolour %]">
     <td align="right" valign="top">
-      <b>Product</b>
+      <b>Ürün</b>
     </td>
     <td valign="top">
       <input type="hidden" name="product" value="[% product.name FILTER html %]">
@@ -167,7 +189,7 @@ function PutDescription() {
 
   <tr>
     <td align="right" valign="top">
-      <b>Component</b>
+      <b>Bileşen</b>
     </td>
     <td valign="top">
       <table border="0" cellpadding="0" cellspacing="0">
@@ -194,7 +216,7 @@ function PutDescription() {
                 <script type="text/javascript">
                   if ((document.getElementById) && (document.body.innerHTML)) {
                     document.write("\
-                    Select a component to see its description here.");
+                    Bir bileşen seçerseniz açıklamasını burada görebilirsiniz.");
                   }
                 </script>
               </div>
@@ -203,12 +225,10 @@ function PutDescription() {
       </table>
       
       <p>
-        The area where the problem occurs.
-        To pick the right component, you could use the same one as
-        similar [% terms.bugs %] you found in your search, or read the full list of
+        Problemin yaşandığı yer. Doğru bileşeni seçmek için, aramanızda bulduğunuz [% terms.bugsDat %] benzer olanlarla aynı bileşeni seçebilirsiniz veya daha fazla yardım gerekirse 
         <a target="_blank" href="describecomponents.cgi?product=
-            [% product.name FILTER url_quote %]">component
-        descriptions</a> (opens in new window) if you need more help.
+            [% product.name FILTER url_quote %]">bileşen açıklamaları</a>na
+        (yeni pencerede açılır) bakabilirsiniz.
       </p>
     </td>
   </tr>
@@ -227,11 +247,11 @@ function PutDescription() {
   </tr>
 
   [% op_sys = [ "Windows 2000", "Windows XP", "Windows Vista", "Windows 7",
-                "Mac OS X", "Linux", "All", "Other" ] %]
+                "Mac OS X", "Linux", "Tümü", "Diğerleri" ] %]
 
   <tr>
     <td align="right" valign="top">
-      <b>Operating System</b>
+      <b>İşletim Sistemi</b>
     </td>
     <td valign="top">
       [% PROCESS select sel = 'op_sys' %]
@@ -250,55 +270,50 @@ function PutDescription() {
 
   <tr bgcolor="[% tablecolour %]">
     <td align="right" valign="top">
-      <b>Build Identifier</b>
+      <b>İnşa Tanımlayıcısı</b>
     </td>
     <td valign="top">
       <input type="text" size="80" name="buildid" value="[% buildid FILTER html %]">
       <p>
-        This should identify the exact version of the product you were using.  
-        If the above field is blank or you know it is incorrect, copy the 
-        version text from the product's Help | 
-        About menu (for browsers this will begin with "Mozilla/5.0...").  
-        If the product won't start, instead paste the complete URL you downloaded 
-        it from.
+        Bu değer, kullandığınız uygulamanın sürümünü tam olarak yansıtmalıdır. Eğer yukarıdaki alan boşsa veya hatalı olduğunu biliyorsanız, ürünün Yardım menüsünden Hakkında seçeneğini kopyalayabilirsiniz (tarayıcılarda bu değer "Mozilla/5.0..." diye başlar). Eğer ürün başlamıyorsa (açılmıyorsa), indirdiğiniz tam adresi yapıştırın.
       </p>
     </td>
   </tr>
 
   <tr>
     <td align="right" valign="top">
-      <b>URL</b>
+      <b>Adres</b>
     </td>
     <td valign="top">
       <input type="text" size="80" name="bug_file_loc" value="http://">
       <p>
         URL that demonstrates the problem you are seeing (optional).<br>
-        <b>IMPORTANT</b>: if the problem is with a broken web page, you need
-        to report it
-        <a href="https://bugzilla.mozilla.org/page.cgi?id=broken-website.html">a different way</a>.
+        <b>ÖNEMLİ</b>: 
+        Eğer problem düzgün çalışmayan bir web sayfası ile,
+        <a href="https://bugzilla.mozilla.org/page.cgi?id=broken-website.html">farklı bir şekilde</a>
+        raporlamanız gerekir.
       </p>
    </td>
   </tr>
 
   <tr bgcolor="[% tablecolour %]">
     <td align="right" valign="top">
-      <b>Summary</b>
+      <b>Özet</b>
     </td>
     <td valign="top">
       <input type="text" size="80" name="short_desc" id="short_desc" 
              maxlength="255" spellcheck="true">
       <p>
-        A sentence which summarises the problem.
-        Please be descriptive and use lots of keywords.
+        Problemi özetleyen bir cümle. Lütfen açıklayıcı olun ve çok sayıda anahtar kelime kullanın.
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: mail crashed
+          <font color="#990000">Kötü örnek</font>: eposta çöktü
         </tt>
         <br>
         <tt>
-          <font color="#009900">Good example</font>:
-          crash if I close the mail window while checking for new POP mail
+          <font color="#009900">İyi bir örnek</font>:
+          yeni POP eposta kontrolü yapılırken eposta penceresini kapatınca çakılma
         </tt>
       </p>
     </td>
@@ -306,7 +321,7 @@ function PutDescription() {
 
   <tr>
     <td align="right" valign="top">
-      <b>Details</b>
+      <b>Detaylar</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -315,20 +330,16 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Expand on the Summary. Please be
-        as specific as possible about what is wrong.
+        Özetinizi genişletin. Lütfen problemin ne olduğu hakkında mümkün olduğunca detaylı yazın.
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: Mozilla crashed.
-          You suck!
+          <font color="#990000">Kötü örnek</font>: Mozilla çöktü.
+          Yapma ya!
         </tt>
         <br>
         <tt>
-          <font color="#009900">Good example</font>: After a crash which
-          happened when I was sorting in the Bookmark Manager,<br> all of my
-          top-level bookmark folders beginning with the letters Q to Z are 
-          no longer present.
+          <font color="#009900">İyi bir örnek</font>: Ben Yer İmleri Yöneticisi'nde sıralama yaparken oluşan bir çakılmadan sonra,<br> en üst seviyedeki yer imlerimden V'den Z'ye kadar bir harfle başlayanlar yok oldu.
         </tt>
       </p>
     </td>
@@ -336,21 +347,21 @@ function PutDescription() {
 
   <tr bgcolor="[% tablecolour %]">
     <td align="right" valign="top">
-      <b>Reproducibility</b>
+      <b>Tekrarlanabilir olma</b>
     </td>
     <td valign="top">
       <select name="reproducible">
         <option name="AlwaysReproducible" value="Always">
-          Happens every time.
+          Her seferinde oluyor.
         </option>
         <option name="Sometimes" value="Sometimes">
-          Happens sometimes, but not always.
+          Her zaman değil, bazen oluyor.
         </option>
         <option name="DidntTry" value="Didn't try">
-          Haven't tried to reproduce it.
+          Tekrarlamaya çalışmadım.
         </option>
         <option name="NotReproducible" value="Couldn't Reproduce">
-          Tried, but couldn't reproduce it.
+          Tekrarlamaya çalıştım ama tekrar olmadı.
         </option>
       </select>
     </td>
@@ -358,7 +369,7 @@ function PutDescription() {
 
   <tr>
     <td align="right" valign="top">
-      <b>Steps to Reproduce</b>
+      <b>Tekrarlama Adımları</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -368,15 +379,14 @@ function PutDescription() {
         defaultcontent = "1.\n2.\n3."
       %]
       <p>
-        Describe how to reproduce the problem, step by
-        step. Include any special setup steps.
+        Oluşan durumu tekrarlamak için ne yapmak gerektiğini adım adım yazın. Özel adımları da açıklayın.
       </p>
     </td>
   </tr>
 
   <tr bgcolor="[% tablecolour %]">
     <td valign="top" align="right">
-      <b>Actual Results</b>
+      <b>Sonuçlar</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -385,14 +395,14 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        What happened after you performed the steps above?
+        Yukarıdaki adımları tekrarlayınca ne oldu?
       </p>
     </td>
   </tr>
 
   <tr>
     <td valign="top" align="right">
-      <b>Expected Results</b>
+      <b>Beklenen Sonuçlar</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -401,14 +411,14 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        What should the software have done instead?
+        Yazılımın yukarıda yazdığınız sonuçlar yerine ne yapması gerekiyordu?
       </p>
     </td>
   </tr>
 
   <tr bgcolor="[% tablecolour %]">
     <td valign="top" align="right">
-      <b>Additional Information</b>
+      <b>Ek Bilgi</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -417,57 +427,44 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Add any additional information you feel may be
-        relevant to this [% terms.bug %], such as the <b>theme</b> you were
-        using (does the [% terms.bug %] still occur
-        with the default theme?), a 
-        <b><a href="http://kb.mozillazine.org/Quality_Feedback_Agent">Talkback crash ID</a></b>, or special
-        information about <b>your computer's configuration</b>. Any information
-        longer than a few lines, such as a <b>stack trace</b> or <b>HTML
-        testcase</b>, should be added
-        using the "Add an Attachment" link on the [% terms.bug %], after
-        it is filed. If you believe that it's relevant, please also include
-        your build configuration, obtained by typing <tt>about:buildconfig</tt>
-        into your URL bar.
+        Bu [%terms.bugDat%] ilgili olabileceğini düşündüğünüz ek detayları (örn. kullandığınız <b>tema</b> (Öntanımlı temada da hata tekrarlanıyor mu?), <b><a href="http://kb.mozillazine.org/Quality_Feedback_Agent">Geribildirim çakılma kimliği</a></b>, veya <b>bilgisayarınızın yapılandırması</b> hakkında ek bilgiler) buraya yazın.
+        <b>Yığıt geri izlemesi</b> veya <b>HTML test vakası</b> gibi, birkaç satırdan uzun olan bilgiler
+        [% terms.bug %] girildikten sonra, [% terms.bugDat %] "Yeni Ek Oluştur" ile eklenmelidir. Ayrıca, ilgili olduğunu düşünüyorsanız, adres satırına <tt>about:buildconfig</tt>
+        yazarak elde edebileceğiniz inşa yapılandırmasını da girdiğiniz detaylara dahil edin.
         <br>
         <br>
-        If you are reporting a crash, note the module in
-        which the software crashed (e.g., <tt>Application Violation in
-        gkhtml.dll</tt>).
+        Eğer bir çakılma bildiriyorsanız, yazılımın çakıldığı bileşeni de (örn. <tt>Application Violation in gkhtml.dll</tt>) yazın.
       </p>
     </td>
   </tr>
 
   <tr>
     <td valign="top" align="right">
-      <b>Severity</b>
+      <b>Ciddiyet</b>
     </td>
     <td valign="top">
       <select name="bug_severity">
         <option name="critical" value="critical">
-          Critical: The software crashes, hangs, or causes you to
-          lose data.
+          Kritik: Yazılım çakılıyor, kilitleniyor veya veri kaybına neden oluyor.
         </option>
         <option name="major" value="major">
-          Major: A major feature is broken.
+          Büyük: Önemli bir özellik çalışmıyor.
         </option>
         <option name="normal" value="normal" selected="selected">
-          Normal: It's [% terms.abug %] that should be fixed.
+          Normal: Düzeltilmesi gereken [% terms.abug %].
         </option>
         <option name="minor" value="minor">
-          Minor: Minor loss of function, and there's an easy workaround.
+          Küçük: Küçük bir işlev kaybı (ve kolay bir çözümü var).
         </option>
         <option name="trivial" value="trivial">
-          Trivial: A cosmetic problem, such as a misspelled word or
-          misaligned text.
+          Makyaj: Kozmetik bir problem (yanlış yazılan bir kelime, yanlış yöne yaslanmış bir metin,..).
         </option>
         <option name="enhancement" value="enhancement">
-          Enhancement: Request for new feature or enhancement.
+          İyileştirme: Yeni özellik veya geliştirme isteği.
         </option>
       </select>
       <p>
-        Say how serious the problem is, or if your [% terms.bug %] is a 
-        request for a new feature.
+        Problemin ne kadar ciddi olduğunu belirtin.
       </p>
     </td>
   </tr>
@@ -475,27 +472,21 @@ function PutDescription() {
 
 
 <a name="step3"></a>
-<h3>Step 3 of 3 - submit the [% terms.bug %] report</h3>
+<h3>Adım 3 / 3 - [% terms.bug %] raporunu gönderin</h3>
 
 <p>
-  <input type="submit" id="report" value="    Submit [% terms.Bug %] Report    "
+  <input type="submit" id="report" value="    [% terms.Bug %] Raporunu Gönder    "
    onclick="if (this.form.comment.value == '')
-   { alert('Please enter some details about this [% terms.bug %].');
+   { alert('Lütfen bu [% terms.bug %] hakkında biraz bilgi girin.');
      this.form.comment.focus();
      return false; } return true;">
 </p>
 
 <p>
-  That's it! Thanks very much. You'll be notified by email about any
-  progress that is made on fixing your [% terms.bug %]. 
+  Bu kadar! Çok teşekkürler. Girdiğiniz [% terms.bugGen%] düzeltilmesi konusundaki ilerlemeden eposta yoluyla haberdar edileceksiniz.
 
 <p>  
-  Please be warned
-  that we get a lot of [% terms.bug %] reports filed - it may take quite a 
-  while to get around to yours. You can help the process by making sure your 
-  [%+ terms.bug %] is
-  complete and easy to understand, and by quickly replying to any questions
-  which may arrive by email.
+  Lütfen çok sayıda [% terms.bug %] raporlandığını unutmayın - sizinkine sıra gelmesi uzun zaman bile alabilir. Sürece [%+ terms.bug %] kaydınızın eksiksiz ve kolay anlaşılır olmasını sağlayarak ve konuyla ilgili olarak eposta yoluyla ulaşabilecek sorulara kısa sürede cevap vererek katkıda bulunabilirsiniz.
 </p>
 
     </form>

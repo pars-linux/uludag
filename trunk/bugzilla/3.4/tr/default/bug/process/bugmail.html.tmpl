@@ -17,6 +17,7 @@
   #
   # Contributor(s): Bradley Baetz <bbaetz@student.usyd.edu.au>
   #                 J. Paul Reed <preed@sigkill.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -41,12 +42,12 @@
 
 <dl>
 [% PROCESS emails
-   description = "Email sent to"
+   description = "Eposta gönderilen kişiler"
    names = mail.sent
 %]
 
 [% PROCESS emails
-   description = "Excluding"
+   description = "Şunlar dışında"
    names = mail.excluded
 %]
 </dl>
@@ -64,10 +65,10 @@
         <code>[% name FILTER html %]</code>[% ", " UNLESS loop.last() %]
       [% END %]
     [% ELSE %]
-      no one
+      hiçkimse
     [% END %]
   [% ELSE %]
-    (list of e-mails not available)
+    (eposta adresleri listesi gösterilebilir değil)
   [% END %]
   </dd>
 [% END %]

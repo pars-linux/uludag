@@ -16,20 +16,21 @@
   # Rights Reserved.
   #
   # Contributor(s): Albert Ting <alt@sonic.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/header.html.tmpl
-  title = "Add new classification"
+  title = "Yeni sınıf ekle"
 %]
 
 <form method=post action="editclassifications.cgi">
   <table border=0 cellpadding=4 cellspacing=0>
     <tr>
-      <th align="right">Classification:</th>
+      <th align="right">Sınıf:</th>
       <td><input size=64 maxlength=64 name="classification"></td>
     </tr>
     <tr>
-      <th align="right">Description:</th>
+      <th align="right">Açıklama:</th>
       <td>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'description'
@@ -40,18 +41,17 @@
       </td>
     </tr>
     <tr>
-      <th align="right"><label for="sortkey">Sortkey:</label></th>
+      <th align="right"><label for="sortkey">Sıralama anahtarı:</label></th>
       <td><input id="sortkey" size="20" maxlength="20" name="sortkey" 
                  value=""></td>
     </tr>
   </table>
   <hr>
-  <input type=submit value="Add">
+  <input type=submit value="Ekle">
   <input type=hidden name="action" value="new">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 </FORM>
 
-<p>Back to the <a href="./">main [% terms.bugs %] page</a>
-or <a href="editclassifications.cgi"> edit</a> more classifications.
+<p><a href="./">Ana [% terms.bug %] sayfası</a>na geri dön veya başka sınıfları <a href="editclassifications.cgi">değiştir</a>.
 
 [% PROCESS global/footer.html.tmpl %] 

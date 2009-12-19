@@ -12,12 +12,13 @@
   #
   # Contributor(s): N.N.
   #                 Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% INCLUDE global/header.html.tmpl
-   title  = "$terms.Bugzilla QuickSearch",
+   title  = "$terms.Bugzilla Hızlı Arama",
    style  = 'ul {margin-bottom: 2ex}
              ul li {margin-top: 2ex}
              ul li ul li {margin-top: 0}'
@@ -25,149 +26,134 @@
  %]
 
 <p style="font-size: 80%">
-  If you are already familiar with the original
-  <a href="query.cgi">[% terms.Bugzilla %] Search Form</a>,
-  you may prefer <a href="page.cgi?id=quicksearchhack.html">this form</a>.
+  Asıl <a href="query.cgi">[% terms.Bugzilla %] Arama Formu</a> ile aşinalığınız varsa,
+  <a href="page.cgi?id=quicksearchhack.html">bu formu</a> tercih edebilirsiniz.
 </p>
 
 <p>
-  Type in one or more words (or word fragments) to search for:
+  Aranacak bir veya daha fazla ifade girin:
 </p>
 
 <form name="f" action="buglist.cgi" method="get"
       onsubmit="if (this.quicksearch.value == '')
-                { alert('Please enter one or more search terms first.');
+                { alert('Lütfen önce aranacak metni girin.');
                   return false; } return true;">
   <input type="text" size="40" name="quicksearch">
-  <input type="submit" value="Find" id="find">
+  <input type="submit" value="Bul" id="find">
 </form>
 
-<h2>Getting Started</h2>
+<h2>Başlarken</h2>
 
 <ul>
   <li>
-    This is <strong>case-insensitive</strong> search:<br />
+    Bu aramada <strong>küçük-büyük harf ayrımı yapılmaz</strong>:<br />
     <ul>
-      <li><tt>table</tt>, <tt>Table</tt> and <tt>TABLE</tt> are all the same.</li>
+      <li><tt>tablo</tt>, <tt>Tablo</tt> ve <tt>TABLO</tt> aynıdır.</li>
     </ul>
   </li>
   <li>
-    This is <strong>all words as substrings</strong>
-    search.<br />
-    Therefore you should <strong>use stems</strong> to get better results:
+    Bu aramada girdiğiniz tüm parçalar <strong>oldukları gibi</strong> aranır.<br />
+    O nedenle daha iyi sonuçlar elde etmek için <strong>kelime parçaları kullanın</strong>:
     <ul>
       <li>
-        Use <tt>localiz</tt> instead of <tt>localize</tt> or
-        <tt>localization</tt>.
+        <tt>Yerelleştirme</tt> veya <tt>yerelleştirilmiş</tt> yerine
+        <tt>yerelleştir</tt> kullanın.
       </li>
      <li>
-       Use <tt>bookmark</tt> instead of <tt>bookmarks</tt> or
-       <tt>bookmarking</tt>.
+       <tt>Yer imi</tt> veya <tt>yer imleri</tt> yerine
+       <tt>yer im</tt> kullanın.
      </li>
    </ul>
   </li>
 </ul>
 
-<h2><a name="features">Features</a></h2>
+<h2><a name="features">Özellikler</a></h2>
 
 <ul>
   <li>
-    Boolean operations: &ldquo;<tt>-foo</tt>&rdquo;&nbsp;(NOT),
-    &ldquo;<tt>foo&nbsp;bar</tt>&rdquo;&nbsp;(AND),
-    &ldquo;<tt>foo|bar</tt>&rdquo;&nbsp;(OR).
+    Boole işlemler: &ldquo;<tt>-yer</tt>&rdquo;&nbsp;(DEĞİL),
+    &ldquo;<tt>yer&nbsp;im</tt>&rdquo;&nbsp;(VE),
+    &ldquo;<tt>yer|im</tt>&rdquo;&nbsp;(VEYA).
     <ul>
       <li>
-        <strong>NOT</strong>:<br />
-        Use <tt><b>-</b><i>foo</i></tt> to exclude [% terms.bugs %]
-        with <tt><i>foo</i></tt> in the summary.
+        <strong>DEĞİL</strong>:<br />
+        Özetinde <tt><i>yer</i></tt> geçen [% terms.bugsAcc %] almamak için <tt><b>-</b><i>yer</i></tt>.
       </li>
       <li>
-        <strong>AND</strong>:<br />
-        Space-separated words are treated as a conjunction.
+        <strong>VE</strong>:<br />
+        Birbirinden boşlukla ayrılmış kelimeler birleşik kabul edilir.
       </li>
       <li>
-        <strong>OR</strong>:<br />
-        Within a word, "|"-separated parts denote alternatives.
+        <strong>VEYA</strong>:<br />
+        Kelime içerisinde, birbirinden "|" ile ayrılmış kısımlar alternatif ifade eder.
       </li>
       <li>
-        Besides "|", a comma can be used to separate alternatives.
+        "|" gibi, alternatifleri ifade etmek için bir virgül (",") ve kullanılabilir.
       </li>
       <li>
-        OR has higher precedence than AND; AND is the top level operation.
+        VEYA VE'den daha önceliklidir ve VE en üst işlemdir.
       </li>
     </ul>
-    <i>Example:</i>
-    <tt>url,location bar,field -focus</tt> means
-    (<tt>url</tt> OR <tt>location</tt>) AND (<tt>bar</tt> OR <tt>field</tt>)
-    AND (NOT <tt>focus</tt>)
+    <i>Örnek:</i>
+    <tt>adres,çubu,alan -oda</tt> means
+    (<tt>adres</tt> VEYA <tt>çubuk</tt> VEYA <tt>alan</tt>)
+    VE (DEĞİL <tt>focus</tt>)
   </li>
   <li>
-    Use <tt>+foo</tt> to search for [% terms.bugs %] where the
-    <strong>summary</strong> contains <tt>foo</tt> as a
-    <strong>substring</strong>.<br/>
-    Use <tt>#foo</tt> to search for [% terms.bugs %] where the
-    <strong>summary</strong> contains the <strong>word</strong> <tt>foo</tt>.
+    <tt>+im</tt> kullanarak <strong>özet</strong>inde <tt>im</tt> geçen bütün [% terms.bugsAcc %] bulabilirsiniz.<br/>
+    <tt>#foo</tt> kullanarak ise <strong>summary</strong>inde <tt>im</tt> <strong>kelime</strong>si tek başına geçen [% terms.bugsAcc %] bulabilirsiniz.
     <ul>
       <li>
-        <tt>+brow</tt> does not find all [% terms.bugs %] in the
-        <tt>Browser</tt> product.
+        <tt>+tara</tt> <tt>Tarayıcı</tt> ürünündeki tüm [% terms.bugsAcc %] listelemez.
       </li>
       <li>
-        <tt>#title</tt> does not find [% terms.bugs %] with <tt>titlebar</tt>
-        or <tt>titled</tt>.
+        <tt>#baş</tt> ise <tt>başlık</tt> içeren [% terms.bugsAcc %] listelemeyecektir.
       </li>
     </ul>
-    Phrases with special chars (space, comma, +, -, #, &hellip;) can be
-    <strong>quoted</strong>:
+    Özel karakterler (boşluk, virgül, +, -, #, &hellip;) içeren ifadeler
+    <strong>tırnak içine alınarak</strong> aranabilir:
     <ul>
       <li>
-        <tt>"lock icon"</tt>
+        <tt>"simgeleri kilitle"</tt>
       </li>
     </ul>
   </li>
   <li>
-    <strong>Open vs. Resolved [% terms.Bugs %]</strong>:<br />
-    By default, only open (i.e. unresolved) [% terms.bugs %] are shown.
-    Use <tt>+DUP</tt> as first word in your search to include duplicate
-    [%+ terms.bugs %] in your search,
-    <tt>FIXED</tt> to search for fixed [%+ terms.bugs %] only,
-    or <tt>ALL</tt> to search all [% terms.bugs %],
-    regardless of status or resolution.
-    Searching for duplicates is recommended if you can't find an open
-    [%+ terms.bug %] directly.
+    <strong>Açık ve Kararlaştırılmış [% terms.Bugs %]</strong>:<br />
+    Öntanımlı olarak, sadece açık [% terms.bugs %] gösterilir.
+    Aramanıza başka bir [%+ terms.bugGen %] aynısı olarak işaretlenmiş [%+ terms.bugsAcc %] dahil etmek için ilk kelime olarak <tt>+DUP</tt>,
+    sadece düzeltilmiş [%+ terms.bugsAcc %] taramak için ilk kelime olarak <tt>FIXED</tt>,
+    ve durum ve karardan bağımsız olarak tüm [%+ terms.bugsLoc %] arama yapmak için de yine ilk kelime olarak <tt>ALL</tt> kullanın.
+    Eğer açık [%+ terms.abugAcc %] doğrudan bulamıyorsanız başka hataların aynısı olarak işaretlenmiş [%+ terms.bugsAcc %] da aramanız tavsiye olunur.
     <ul>
       <li>
-        <tt>+DUP,FIXED table border</tt>
+        <tt>+DUP,FIXED tablo çerçeve</tt>
       </li>
       <li>
-        <tt>ALL mouse wheel</tt>
+        <tt>ALL fare teker</tt>
       </li>
     </ul>
   </li>
   <li>
-    <strong>Focus the Search with Products &amp;
-    Components</strong>:<br />
-    To search for [% terms.bugs %] in product "Foo Bar" only, add
-    <tt>:foo</tt> or <tt>:bar</tt> or both to your search.
-    You can do this with any substring of a
-    <a href="describecomponents.cgi">product or component</a> to focus the
-    search.
+    <strong>Aramayı Ürün ve Bileşenlere Odaklamak</strong>:<br />
+    Sadece "Paket Yöneticisi" ürünündeki [% terms.bugs %] içinde arama yapmak için,
+    aramanıza <tt>:paket</tt>, <tt>:yönetici</tt> veya ikisini birden ekleyebilirsiniz.
+    Bunu, tüm
+    <a href="describecomponents.cgi">ürün ve bileşenler</a>in alt dizgelerine uygulayabilirsiniz.
   </li>
 </ul>
 
-<h2>More Tips</h2>
+<h2>Ek İpuçları</h2>
 
 <ul>
   <li>
-    You can also use this tool to <strong>lookup</strong> a [% terms.bug %] by
-    its number:<br />
+    Bu aracı ayrıca numarasına göre [% terms.bug %] <strong>aramak</strong> için de kullanabilirsiniz:<br />
     <ul>
       <li><tt>12345</tt></li>
     </ul>
   </li>
   <li>
-    A comma-separated list of [% terms.bug %] numbers gives you a list of these
-    [%+ terms.bugs %]:<br />
+    Birbirinden virgülle ayrılmış bir [% terms.bug %] listesi size bu [% terms.bugsAcc %] listeleyecektir:<br />
     <ul>
       <li><tt>12345,23456,34567</tt></li>
     </ul>
@@ -175,15 +161,12 @@
 </ul>
 
 <p>
-  By default, the following fields are searched: Summary, Keywords, Product,
-  Component, Status Whiteboard. If a word looks like a part of a URL, that field
-  is included in the search, too.
+  Öntanımlı olarak, şu alanlarda arama gerçekleştirilir: Özet, Anahtarlar, Ürün, Bileşen, Durum Notları. Eğer bir kelime bir adresin parçası gibi görünüyorsa, Adres alanı da aramaya dahil edilir.
 </p>
 <hr>
 
 <p>
-  Use the powerful <a href="query.cgi">[% terms.Bugzilla %] Search Form</a>
-  for advanced queries.
+  Gelişmiş aramalar için <a href="query.cgi">[% terms.Bugzilla %] Arama Formu</a>nu kullanabilirsiniz.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

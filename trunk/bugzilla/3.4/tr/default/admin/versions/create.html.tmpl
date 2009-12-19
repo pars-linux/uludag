@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -23,9 +24,8 @@
   #               which the version is being created for
   #%]
   
-[% title = BLOCK %]Add Version to Product '[% product.name FILTER html %]'[% END %]
-[% subheader = BLOCK %]This page allows you to add a new version to product
-                '[% product.name FILTER html %]'.[% END %]
+[% title = BLOCK %]'[% product.name FILTER html %]' Ürününe Sürüm Ekle[% END %]
+[% subheader = BLOCK %]Bu sayfa '[% product.name FILTER html %]' ürününe yeni bir sürüm eklemenize yarar.[% END %]
 [% PROCESS global/header.html.tmpl
   title = title
   subheader = subheader
@@ -34,12 +34,12 @@
 <form method="post" action="editversions.cgi">
   <table border="0" cellpadding="4" cellspacing="0">
     <tr>
-      <th align="right"><label for="version">Version:</label></th>
+      <th align="right"><label for="version">Sürüm:</label></th>
       <td><input id="version" size="64" maxlength="64" name="version"
                  value=""></td>
     </tr>
   </table>
-  <input type="submit" id="create" value="Add">
+  <input type="submit" id="create" value="Ekle">
   <input type="hidden" name="action" value="new">
   <input type="hidden" name='product' value="[% product.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">

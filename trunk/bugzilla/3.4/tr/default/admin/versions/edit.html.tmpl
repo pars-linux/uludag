@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -27,8 +28,8 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-[% title = BLOCK %]Edit Version '[% version.name FILTER html %]' of product '
-                   [%- product.name FILTER html %]'[% END %]
+[% title = BLOCK %]'[%- product.name FILTER html %]' ürününün '[% version.name FILTER html %]' Sürümünü Değiştir
+                   [% END %]
 [% PROCESS global/header.html.tmpl
   title = title
 %]
@@ -37,7 +38,7 @@
   <table border="0" cellpadding="4" cellspacing="0">
 
     <tr>
-      <th valign="top"><label for="version">Version:</label></th>
+      <th valign="top"><label for="version">Sürüm:</label></th>
       <td><input id="version" size="64" maxlength="64" name="version" value="
       [%- version.name FILTER html %]"></td>
     </tr>
@@ -48,7 +49,7 @@
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="product" value="[% product.name FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="update" value="Save Changes">
+  <input type="submit" id="update" value="Değişiklikleri Kaydet">
 </form>
 
 [% PROCESS admin/versions/footer.html.tmpl

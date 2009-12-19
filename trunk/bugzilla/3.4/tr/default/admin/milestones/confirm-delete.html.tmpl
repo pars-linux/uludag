@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -26,7 +27,7 @@
   #                    milestone the user wants to delete.
   #%]
 
-[% title = BLOCK %]Delete Milestone of Product '[% product.name FILTER html %]'
+[% title = BLOCK %]'[% product.name FILTER html %]' Ürününden Aşama Sil
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -35,58 +36,48 @@
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr bgcolor="#6666FF">
-  <th valign="top" align="left">Field</th>
-  <th valign="top" align="left">Value</th>
+  <th valign="top" align="left">Alan</th>
+  <th valign="top" align="left">Değer</th>
 </tr>
 <tr>
-  <td valign="top">Milestone:</td>
+  <td valign="top">Aşama</td>
   <td valign="top">[% milestone.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">Milestone of Product:</td>
+  <td valign="top">Ürün:</td>
   <td valign="top">[% product.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">[% terms.Bugs %]:</td>
+  <td valign="top">[% terms.Bug %] sayısı:</td>
   <td valign="top">
 [% IF milestone.bug_count %]
-  <a title="List of [% terms.bugs %] targetted at milestone '
-           [% milestone.name FILTER html %]'"
+  <a title="'[% milestone.name FILTER html %]' aşamasına yönelik [% terms.bug %] sayısı"
      href="buglist.cgi?target_milestone=[% milestone.name FILTER url_quote %]&amp;product=
           [%- product.name FILTER url_quote %]">
           [% milestone.bug_count FILTER none %]</a>
 [% ELSE %]
-  None
+  Yok
 [% END %]
   </td>
 </tr>
 </table>
 
-<h2>Confirmation</h2>
+<h2>Onay</h2>
   
 [% IF milestone.bug_count %]
 
   <table border="0" cellpadding="20" width="70%" bgcolor="red">
   <tr><td>
-    There
-    [% IF milestone.bug_count > 1 %] 
-      are [% milestone.bug_count FILTER none %] [%+ terms.bugs %] 
-    [% ELSE %]
-      is 1 [% terms.bug %]
-    [% END %]
-    entered for this milestone! When you delete this milestone,
-    <b><blink>ALL</blink></b> of these [% terms.bugs %] will be retargeted
-    to [% product.default_milestone FILTER html %], the default milestone for 
-    the [% product.name FILTER html %] product.
+    Bu aşama için kayıtlı [% milestone.bug_count FILTER none %] adet [% terms.bug %] var! Bu aşamayı silerseniz, bu [% milestone.bug_count%] [% terms.bugGen %] <b><blink>TAMAMI</blink></b> [% product.name FILTER html %] ürününün öntanımlı aşaması olan [% product.default_milestone FILTER html %] aşamasına yönlendirilecek.
   </td></tr>
   </table>
 
 [% END %]
 
-<p>Do you really want to delete this milestone?<p>
+<p>Gerçekten bu aşamayı silmek istiyor musunuz?<p>
 
 <form method="post" action="editmilestones.cgi">
-  <input type="submit" id="delete" value="Yes, delete">
+  <input type="submit" id="delete" value="Evet, sil">
   <input type="hidden" name="action" value="delete">
   <input type="hidden" name="product" value="[% product.name FILTER html %]">
   <input type="hidden" name="milestone" value="[% milestone.name FILTER html %]">

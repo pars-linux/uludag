@@ -12,6 +12,7 @@
   #
   # Contributor(s): Shane H. W. Travis <travis@sedsystems.ca>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -32,9 +33,8 @@
 [% IF settings.size %]
   [% UNLESS has_settings_enabled %]
     <p class="criticalmessages">
-      All user preferences have been disabled by the
-      <a href="mailto:[% Param("maintainer") %]">maintainer</a>
-      of this installation, and so you cannot customize any.
+      Tüm kullanıcı tercihleri bu kurulumun 
+      <a href="mailto:[% Param("maintainer") %]">bakımcı</a>sı tarafından kapatıldı, dolayısıyla herhangi birini değiştiremezsiniz.
     </p>
   [% END %]
 
@@ -51,7 +51,7 @@
             <select name="[% name FILTER html %]" id="[% name FILTER html %]">
               <option value="[% default_name FILTER html %]"
                 [% ' selected="selected"' IF settings.${name}.is_default %]>
-                Site Default ([% setting_descs.${default_val} OR default_val FILTER html %])
+                Site Varsayılanı ([% setting_descs.${default_val} OR default_val FILTER html %])
               </option>
               [% FOREACH x = settings.${name}.legal_values %]
                 <option value="[% x FILTER html %]"
@@ -65,7 +65,7 @@
           [% ELSE %]
             <select name="[% name FILTER html %]" id="[% name FILTER html %]" disabled="disabled">
               <option value="[% default_name FILTER html %]">
-                Site Default ([% setting_descs.${default_val} OR default_val FILTER html %])
+                Site Varsayılanı ([% setting_descs.${default_val} OR default_val FILTER html %])
               </option>
             </select>
           [% END %]

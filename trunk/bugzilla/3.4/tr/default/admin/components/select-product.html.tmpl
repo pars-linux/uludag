@@ -17,7 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
-  #
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -28,18 +28,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit components for which product?"
+  title = "Hangi ürünün bileşenleri değiştirilecek?"
 %]
 
 [% columns = [
      { 
        name => "name"
-       heading => "Edit components of..."
+       heading => "Şunun bileşenlerini değiştir:"
        contentlink => "editcomponents.cgi?product=%%name%%" 
      },
      { 
        name => "description"
-       heading => "Description" 
+       heading => "Açıklama" 
        allow_html_content => 1
      }
    ]
@@ -64,7 +64,7 @@
 
 [% IF !showbugcounts %]
   <p><a href="editcomponents.cgi?showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayılarıyla birlikte göster (daha yavaştır)</a></p>
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]

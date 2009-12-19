@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -26,13 +27,13 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit values for which field?"
+  title = "Hangi alanın değerleri değiştirilecek?"
 %]
 
 [% columns = [
      { 
        name => "name"
-       heading => "Edit field values for..."
+       heading => "Değerleri değiştirilecek alan"
        content_use_field = 1
        contentlink => "editvalues.cgi?field=%%name%%"
      }
