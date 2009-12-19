@@ -7,11 +7,10 @@
 
 from os import getenv
 
-NAME = "puding"
 LOCALE = "/usr/share/locale"
 VERSION = "0.2"
-HOME = "%s/.%s" % (getenv("HOME"), NAME)
-SHARE = "/usr/share/%s" % NAME
+HOME = "%s/.puding" % getenv("HOME")
+SHARE = "/usr/share/puding"
 SYSLINUX = "/usr/lib/syslinux"
 URL = "http://www.gokmengorgen.net/puding"
 CORE_DEVELOPER = u"Gökmen Görgen"
