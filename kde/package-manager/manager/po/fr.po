@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-08-21 00:10+0200\n"
+"PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -420,15 +420,15 @@ msgstr "mis-à-jour"
 
 #: .tmp/statemanager.py:88
 msgid "%1 new package(s) have been installed succesfully."
-msgstr "%1 le(s) nouveau(x) paquet(s) a(ont) été installé(s) avec succès."
+msgstr "%1 nouveau(x) paquet(s) a(ont) été installé(s) avec succès."
 
 #: .tmp/statemanager.py:89
 msgid "%1 package(s) have been removed succesfully."
-msgstr "%1 le(s) nouveau(x) paquet(s) a(ont) été désinstallé(s) avec succès."
+msgstr "%1 nouveau(x) paquet(s) a(ont) été désinstallé(s) avec succès."
 
 #: .tmp/statemanager.py:90
 msgid "%1 package(s) have been upgraded succesfully."
-msgstr "%1 le(s) nouveau(x) paquet(s) a(ont) été mis-à-jour avec succès."
+msgstr "%1 nouveau(x) paquet(s) a(ont) été mis-à-jour avec succès."
 
 #: .tmp/statemanager.py:93
 msgid "You have selected the following package(s) to install:"
