@@ -12,63 +12,55 @@
   #
   # Contributor(s): N.N.
   #                 Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 [% INCLUDE global/header.html.tmpl
-   title  = "$terms.Bugzilla QuickSearch (for Hackers)",
+   title  = "$terms.Bugzilla Hızlı Arama (Programcılar İçin)",
    style  = 'th {text-align: left}'
    onload = 'document.forms[\'f\'].quicksearch.focus()'
  %]
 
 <p>
-  Type in one or more words (or word fragments) to search for:
+  Aranacak dizge(ler) girin:
 </p>
 
 <form name="f" action="buglist.cgi" method="get"
       onsubmit="if (this.quicksearch.value == '')
-                { alert('Please enter one or more search terms first.');
+                { alert('Lütfen önce aranacak metni girin.');
                   return false; } return true;">
   <input type="text" size="40" name="quicksearch">
-  <input type="submit" value="Find" id="find">
-  <input type="submit" name="load" value="Load Search Form" id="load">
+  <input type="submit" value="Bul" id="find">
+  <input type="submit" name="load" value="Arama Formunu Yükle" id="load">
 </form>
 
 <p>
-  This is a case-insensitive &ldquo;all words as substrings&rdquo; search;
-  words are separated by spaces.
-  By default, the following fields are relevant: Summary, Keywords,
-  Product, Component, Status Whiteboard.
-  If a word looks like a part of a URL, that field is included in the search,
-  too.
+  Bu küçük-büyük harf ayrımı yapmayan, &ldquo;tüm metinleri alt dizgeler olarak alan&rdquo; bir aramadır, kelimeler birbirlerinden boşluk ile ayrılır.
+  Öntanımlı olarak, aşağıdaki alanlar taranır: Özet, Anahtarlar, Ürün, Bileşen, Durum Notları.
+  Eğer bir kelime bir adresin parçası gibi görünüyorsa, adres alanı da aramaya dahil edilir.
 </p>
 <p>
-  The generic format for a &ldquo;word&rdquo; is
-  <tt>field1,&hellip;,fieldN:value1,&hellip;,valueM</tt>.
-  A [% terms.bug %] qualifies if at least one of the values occurs as a
-  substring in at least one of the fields.
-  For example, <tt>assignee,reporter,qa:ibm,sun</tt> will give you
-  [%+ terms.bugs %] where the assignee, reporter, or qa contact has a login
-  that contains <tt>ibm</tt> or <tt>sun</tt>.
-  If only <tt>value1,&hellip;,valueM</tt> is given, the prefix (roughly) defaults to
-  <tt>summary,keywords,product,component,statuswhiteboard:</tt> as noted above.
-  You can use <tt>-<i>word</i></tt> to express the logical negation of
-  <tt><i>word</i></tt>.
+  &ldquo;Kelime&rdquo; için genel biçim <tt>alan1,&hellip;,alanN:değer1,&hellip;,değerM</tt> şeklindedir.
+  Bir [% terms.bug %], girilen değerlerden en az biri alanların herhangi birinde geçiyorsa sonuçlar arasında yer alır.
+  Örneğin, <tt>assignee,reporter,qa:ibm,sun</tt> araması size atanan, raporlayan veya kalite kontrol kişilerinden herhangi biri oturum açma adı
+  <tt>ibm</tt> veya <tt>sun</tt> metnini içeren [% terms.bugAcc %] döndürecektir.
+  Eğer sadece <tt>değer1,&hellip;,değerM</tt> verilmiyorsa, önek (yaklaşık olarak) yukarıda verilen öntanımlı değerlere karşılık gelir.
+  <tt>-<i>kelime</i></tt> yapısıyla <tt><i>kelime</i></tt>nin mantıksal zıttını alabilirsiniz.
 </p>
 <p>
-  Here is a complete listing of available fields (the Shortcut column is just
-  for access speed):
+  Kullanılabilir alanları tam listesi şöyledir (Kısayol sütununda verilen değer sadece erişimi hızlandırmak içindir):
 </p>
 
 <table border="1">
 <thead>
 <tr>
-  <th>Searched by default</th>
-  <th>Shortcut</th>
-  <th>Field Name</th>
-  <th>Aliases</th>
-  <th>Description</th>
+  <th>Öntanımlı arama</th>
+  <th>Kısayol</th>
+  <th>Alan Adı</th>
+  <th>Diğer Adı</th>
+  <th>Açıklama</th>
 </tr>
 </thead>
 
@@ -77,12 +69,12 @@
 <tr>
   <td>&nbsp;</td>
   <td rowspan="2">
-    <tt>UNCO,NEW,&hellip;,CLOS,<br>FIX,DUP,&hellip;<i>(as first word)</i></tt>
+    <tt>UNCO,NEW,&hellip;,CLOS,<br>FIX,DUP,&hellip;<i>(ilk kelime olarak)</i></tt>
   </td>
   <td><tt>status</tt></td>
   <td>&nbsp;</td>
   <td>
-    <a href="page.cgi?id=fields.html#status">Status</a>
+    <a href="page.cgi?id=fields.html#status">Durum</a>
     <i>(&ldquo;bug_status&rdquo;)</i>
   </td>
 </tr>
@@ -90,7 +82,7 @@
   <td>&nbsp;</td>
   <td><tt>resolution</tt></td>
   <td>&nbsp;</td>
-  <td><a href="page.cgi?id=fields.html#resolution">Resolution</a></td>
+  <td><a href="page.cgi?id=fields.html#resolution">Karar</a></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
@@ -108,7 +100,7 @@
   <td><tt>os</tt></td>
   <td><tt>opsys</tt></td>
   <td>
-    <a href="page.cgi?id=fields.html#op_sys">OS</a>
+    <a href="page.cgi?id=fields.html#op_sys">İşletim Sistemi</a>
     <i>(&ldquo;op_sys&rdquo;)</i>
   </td>
 </tr>
@@ -117,7 +109,7 @@
   <td><tt>p1,p2</tt> <i>or</i> <tt>p1-2</tt></td>
   <td><tt>priority</tt></td>
   <td><tt>pri</tt></td>
-  <td><a href="page.cgi?id=fields.html#priority">Priority</a></td>
+  <td><a href="page.cgi?id=fields.html#priority">Öncelik</a></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
@@ -125,7 +117,7 @@
   <td><tt>severity</tt></td>
   <td><tt>sev</tt></td>
   <td>
-    <a href="page.cgi?id=fields.html#bug_severity">Severity</a>
+    <a href="page.cgi?id=fields.html#bug_severity">Önem</a>
     <i>(&ldquo;bug_severity&rdquo;)</i>
   </td>
 </tr>
@@ -139,7 +131,7 @@
   <td><tt>assignedto</tt></td>
   <td><tt>assignee</tt></td>
   <td>
-    <a href="page.cgi?id=fields.html#assigned_to">Assignee</a>
+    <a href="page.cgi?id=fields.html#assigned_to">Atanan</a>
     <i>(&ldquo;assigned_to&rdquo;)</i>
   </td>
 </tr>
@@ -148,62 +140,62 @@
   <td>&nbsp;</td>
   <td><tt>reporter</tt></td>
   <td><tt>rep</tt></td>
-  <td>Reporter (login)</td>
+  <td>Raporlayan (oturum)</td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>qa</tt></td>
   <td><tt>qacontact</tt></td>
-  <td>QA Contact (login) <i>(&ldquo;qa_contact&rdquo;)</i></td>
+  <td>Kalite Kontrol Kişisi (oturum) <i>(&ldquo;qa_contact&rdquo;)</i></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>cc</tt></td>
   <td>&nbsp;</td>
-  <td>CC (login)</td>
+  <td>Haber Verilecekler (oturum)</td>
 </tr>
 
 <!-- Product, Version, Component, Target Milestone -->
 
 <tr>
-  <td><i>yes</i></td>
+  <td><i>evet</i></td>
   <td rowspan="2"><b>:</b><i>area</i></td>
   <td><tt>product</tt></td>
   <td><tt>prod</tt></td>
-  <td>Product (enum)</td>
+  <td>Ürün (sayı)</td>
 </tr>
 <tr>
-  <td><i>yes</i></td>
+  <td><i>evet</i></td>
   <td><tt>component</tt></td>
   <td><tt>comp</tt></td>
-  <td><a href="describecomponents.cgi">Component</a></td>
+  <td><a href="describecomponents.cgi">Bileşen</a></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>version</tt></td>
   <td><tt>ver</tt></td>
-  <td>Version (enum)</td>
+  <td>Sürüm (sayı)</td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>milestone</tt></td>
   <td><tt>target, targetmilestone</tt></td>
-  <td>Target Milestone <i>(&ldquo;target_milestone&rdquo;)</i></td>
+  <td>Hedef Aşama <i>(&ldquo;target_milestone&rdquo;)</i></td>
 </tr>
 
 <!-- Summary, Description, URL, Status whiteboard, Keywords -->
 
 <tr>
-  <td><i>yes</i></td>
+  <td><i>evet</i></td>
   <td>&nbsp;</td>
   <td><tt>summary</tt></td>
   <td><tt>shortdesc</tt></td>
   <td>
-    [% terms.Bug %] Summary (short text)
+    [% terms.Bug %] Özeti (kısa metin)
     <i>(&ldquo;short_desc&rdquo;)</i>
   </td>
 </tr>
@@ -213,35 +205,35 @@
   <td><tt>description</tt></td>
   <td><tt>desc, longdesc<!--, comment--></tt></td>
   <!-- reserve "comment" for "added comment" login search?! -->
-  <td>[% terms.Bug %] Description / Comments (long text)</td>
+  <td>[% terms.Bug %] Açıklaması / Yorumlar (uzun metin)</td>
 </tr>
 <tr>
-  <td><i>depends</i></td>
+  <td><i>değişir</i></td>
   <td>&nbsp;</td>
   <td><tt>url</tt></td>
   <td>&nbsp;</td>
-  <td>URL <i>(&ldquo;bug_file_loc&rdquo;)</i></td>
+  <td>Adres <i>(&ldquo;bug_file_loc&rdquo;)</i></td>
 </tr>
 <tr>
-  <td><i>yes</i></td>
+  <td><i>evet</i></td>
   <td>&nbsp;</td>
   <td><tt>statuswhiteboard</tt></td>
   <td><tt>sw, whiteboard</tt></td>
-  <td>Status Whiteboard <i>(&ldquo;status_whiteboard&rdquo;)</i></td>
+  <td>Durum Not Alanı <i>(&ldquo;status_whiteboard&rdquo;)</i></td>
 </tr>
 <tr>
-  <td><i>yes</i></td>
+  <td><i>evet</i></td>
   <td><b>!</b><i>keyword</i></td>
   <td><tt>keywords</tt></td>
   <td><tt>kw</tt></td>
-  <td><a href="describekeywords.cgi">Keywords</a></td>
+  <td><a href="describekeywords.cgi">Anahtarlar</a></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>group</tt></td>
   <td>&nbsp;</td>
-  <td>Group</td>
+  <td>Grup</td>
 </tr>
 
 <!-- Flags -->
@@ -251,20 +243,20 @@
   <td rowspan="2"><i>flag</i><b>?</b><i>requestee</i></td>
   <td><tt>flag</tt></td>
   <td>&nbsp;</td>
-  <td>Flag name and status (+, - or ?)</td>
+  <td>Bayrak adı ve durumu (+, - veya ?)</td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td><tt>requestee</tt></td>
   <td><tt>req</tt></td>
-  <td>Flag requestee (login)</td>
+  <td>Bayrağı isteyen (oturum)</td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>setter</tt></td>
   <td><tt>set</tt></td>
-  <td>Flag setter (login)</td>
+  <td>Bayrağı atayan (oturum)</td>
 </tr>
 
 <!-- Attachments -->
@@ -275,7 +267,7 @@
   <td><tt>attachmentdesc</tt></td>
   <td><tt>attachdesc</tt></td>
   <td>
-    Attachment Description
+    Ek Açıklaması
     <i>(&ldquo;attachments.description&rdquo;)</i>
   </td>
 </tr>
@@ -284,14 +276,14 @@
   <td>&nbsp;</td>
   <td><tt>attachmentdata</tt></td>
   <td><tt>attachdata</tt></td>
-  <td>Attachment Data <i>(&ldquo;attach_data.thedata&rdquo;)</i></td>
+  <td>Ek Verisi <i>(&ldquo;attach_data.thedata&rdquo;)</i></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
   <td>&nbsp;</td>
   <td><tt>attachmentmimetype</tt></td>
   <td><tt>attachmimetype</tt></td>
-  <td>Attachment mime-type <i>(&ldquo;attachments.mimetype&rdquo;)</i></td>
+  <td>Ek MIME türü <i>(&ldquo;attachments.mimetype&rdquo;)</i></td>
 </tr>
 <tr>
   <td>&nbsp;</td>
@@ -299,27 +291,27 @@
   <td><tt>votes</tt></td>
   <td>&nbsp;</td>
   <td>
-    Number of votes<br>
-    (votes:<i>N</i> and votes&gt;=<i>N</i> mean "at least N votes",
-    votes&gt;<i>N</i> means "more than N votes")
+    Oy sayısı<br>
+    (votes:<i>N</i> ve votes&gt;=<i>N</i> mean "en az N oy" demektir,
+    votes&gt;<i>N</i> ise "N oydan fazlası" demektir)
   </td>
 </tr>
 </table>
 
 <p>
-  Examples for some useful abbreviations:
+  Bazı kullanışlı kısaltmalara örnekler:
 </p>
 <table border="1">
 <thead>
 <tr>
-  <th>Syntax</th>
-  <th>Semantics and Examples</th>
+  <th>Cümle yapısı</th>
+  <th>Anlamı ve Örnekler</th>
 </tr>
 </thead>
 
 <!--
 <tr>
-  <td><i>STAT</i> <i>(as first word)</i></td>
+  <td><i>STAT</i> <i>(ilk kelime olarak)</i></td>
   <td><b>status,resolution:</b> <i>STAT</i></td>
 </tr>
 <tr>
@@ -327,12 +319,12 @@
   <td></td>
 </tr>
 <tr>
-  <td><tt>ALL</tt> <i>(as first word)</i></td>
-  <td><i>include all resolved [% terms.bugs %] in your search</i></td>
+  <td><tt>ALL</tt> <i>(ilk kelime olarak)</i></td>
+  <td><i>karara varılmamış tüm [% terms.bugsAcc %] aramaya dahil eder</i></td>
 </tr>
 <tr>
-  <td><tt>+DUP,FIXED</tt> <i>(as first word)</i></td>
-  <td><i>include DUPLICATE and FIXED [% terms.bugs %] in your search</i></td>
+  <td><tt>+DUP,FIXED</tt> <i>(ilk kelime olarak)</i></td>
+  <td><i>AYNISI ve DÜZELTİLDİ olan [% terms.bugsAcc %] aramaya dahil eder</i></td>
 </tr>
 -->
 
@@ -346,11 +338,11 @@
 </tr>
 <tr>
   <td><tt>blo,cri,maj</tt></td>
-  <td><i>severe [% terms.bugs %]</i></td>
+  <td><i>önemli [% terms.bugs %]</i></td>
 </tr>
 <tr>
   <td><tt>enh</tt></td>
-  <td><i>enhancement requests</i></td>
+  <td><i>geliştirme istekleri</i></td>
 </tr>
 <tr>
   <td><b>p</b><i>level</i></td>
@@ -358,11 +350,11 @@
 </tr>
 <tr>
   <td><tt>p1</tt></td>
-  <td><i>very high-priority [% terms.bugs %]</i></td>
+  <td><i>çok yüksek öncelikli [% terms.bugs %]</i></td>
 </tr>
 <tr>
   <td><tt>p1-2</tt></td>
-  <td><i>high-priority [% terms.bugs %]</i></td>
+  <td><i>yüksek öncelikli [% terms.bugs %]</i></td>
 </tr>
 <tr>
   <td><b>@</b><i>assignee</i></td>
@@ -379,9 +371,9 @@
 </table>
 
 <p>
-  More information can be found in the
-  <a href="page.cgi?id=quicksearch.html#features">&ldquo;Features&rdquo;</a>
-  section on the <a href="page.cgi?id=quicksearch.html">introductory page</a>.
+  Daha fazla bilgiyi <a href="page.cgi?id=quicksearch.html">giriş sayfası</a>ndaki
+  <a href="page.cgi?id=quicksearch.html#features">&ldquo;Özelikler&rdquo;</a>
+  bölümünde bulabilirsiniz.
 </p>
 
 [% PROCESS global/footer.html.tmpl %]

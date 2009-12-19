@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -44,15 +45,15 @@
    doc_section = "userpreferences.html"
  %]
 
-[% tabs = [{ name => "settings", label => "General Preferences",
+[% tabs = [{ name => "settings", label => "Genel Tercihler",
               link => "userprefs.cgi?tab=settings", saveable => "1" },
-            { name => "email", label => "Email Preferences", 
+            { name => "email", label => "Eposta Tercihleri", 
               link => "userprefs.cgi?tab=email", saveable => "1" },
-            { name => "saved-searches", label => "Saved Searches", 
+            { name => "saved-searches", label => "Kaydedilen Aramalar", 
               link => "userprefs.cgi?tab=saved-searches", saveable => "1" },
-            { name => "account", label => "Name and Password",
+            { name => "account", label => "İsim ve Parola",
               link => "userprefs.cgi?tab=account", saveable => "1" },
-            { name => "permissions", label => "Permissions", 
+            { name => "permissions", label => "İzinler", 
               link => "userprefs.cgi?tab=permissions", saveable => "0" } ] %]
 
 [% FOREACH tab IN tabs %]
@@ -69,12 +70,11 @@
 
 [% IF changes_saved %]
   <div id="message">
-    The changes to your [% current_tab.label FILTER lower %] have been saved.
+    [% current_tab.label FILTER lower %] kaydedildi.
 
     [% IF email_changes_saved %]
       <p>
-        An email has been sent to both old and new email
-        addresses to confirm the change of email address.
+        Eposta adresi değişikliğini onaylamak için hem eski hem yeni eposta adreslerine birer eposta gönderildi.
       </p>
     [% END %]
   </div>
@@ -99,7 +99,7 @@
         <tr>
           <td width="150">&nbsp;</td>
           <td>
-            <input type="submit" id="update" value="Submit Changes">
+            <input type="submit" id="update" value="Değişiklikleri Gönder">
           </td>
         </tr>
       </table>

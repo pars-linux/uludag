@@ -18,6 +18,7 @@
   # Contributor(s): Terry Weissman <terry@mozilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
   #                 Jouni Heikniemi <jouni@heikniemi.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -31,18 +32,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Select keyword"
+  title = "Anahtar seç"
 %]
 
 [% columns = [
      { 
        name => "name"
-       heading => "Edit keyword..."
+       heading => "Anahtarda değişiklik yap..."
        contentlink => "editkeywords.cgi?action=edit&amp;id=%%id%%" 
      },
      { 
        name => "description"
-       heading => "Description"
+       heading => "Açıklama"
        allow_html_content => 1
      },
      { 
@@ -52,9 +53,9 @@
        contentlink => "buglist.cgi?keywords=%%name%%"
      },
      { 
-       heading => "Action" 
-       content => "Delete"
-       contentlink => "editkeywords.cgi?action=del&amp;id=%%id%%"
+       heading => "Eylem" 
+       content => "Sil"
+       contentlink => "editkeywords.cgi?action=delete&amp;id=%%id%%"
      }
    ]
 %]
@@ -65,6 +66,6 @@
      footer = footer_row
 %]
 
-<p><a href="editkeywords.cgi?action=add">Add a new keyword</a></p>
+<p><a href="editkeywords.cgi?action=add">Yeni anahtar ekle</a></p>
 
 [% PROCESS global/footer.html.tmpl %]

@@ -19,6 +19,7 @@
   #                 Joel Peshkin <bugreport@peshkin.net>
   #                 Jacob Steenhagen <jake@bugzilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -35,15 +36,15 @@
 
 
 [% PROCESS global/header.html.tmpl
-  title = "Delete group"
+  title = "Grup sil"
   doc_section = "groups.html"
 %]
 
 <table border="1">
   <tr>
-    <th>Id</th>
-    <th>Name</th>
-    <th>Description</th>
+    <th>Kimlik</th>
+    <th>İsim</th>
+    <th>Açıklama</th>
   </tr>
   <tr>
     <td>[% gid FILTER html %]</td>
@@ -54,80 +55,52 @@
 
 <form method="post" action="editgroups.cgi">
   [% IF hasusers %]
-    <p><b>One or more users belong to this group. You cannot delete
-    this group while there are users in it.</b>
+    <p><b>Bu grupa kayıtlı kullanıcılar var. Grubu boşaltmadan silemezsiniz.</b>
 
-    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Show
-    me which users</a> - <input type="checkbox" name="removeusers">Remove
-    all users from this group for me.</p>
+    <br><a href="editusers.cgi?action=list&groupid=[% gid FILTER html %]&grouprestrict=1">Bana hangi kullanıcılar olduğunu göster</a> - <input type="checkbox" name="removeusers">Grubu benim yerime boşalt.</p>
   [% END %]
 
   [% IF hasbugs %]
-    <p><b>One or more [% terms.bug %] reports are visible only to this group.
-    You cannot delete this group while any [% terms.bugs %] are using it.</b>
+    <p><b>Bir veya daha fazla [% terms.bug %] raporu sadece bu grup tarafından görüntülenebilir. Grubu, onu kullanan [% terms.bugs %] varken silemezsiniz.</b>
 
-    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Show me
-    which [% terms.bugs %]</a> - <input type="checkbox" name="removebugs">Remove
-    all [% terms.bugs %] from this group restriction for me.</p>
+    <br><a href="buglist.cgi?bug_id=[% buglist FILTER html %]">Hangi [% terms.bugs %] hatalar olduğunu göster</a> - <input type="checkbox" name="removebugs">Bu grup sınırlamasaından tüm [% terms.bugsAcc %] benim yerime sil.</p>
 
-    <p><b>NOTE:</b> It's quite possible to make confidential [% terms.bugs %]
-    public by checking this box.  It is <B>strongly</B> suggested
-    that you review the [% terms.bugs %] in this group before checking
-    the box.</p>
+    <p><b>NOT:</b> Bu kutuyu işaretleyerek gizli [% terms.bugsAcc %] görünür kılmak mümkündür. Kutuyu işaretlemeden önce bu gruptaki [% terms.bugsAcc %] gözden geçirmeniz <b>şiddetle</b> tavsiye olunur.</p>
   [% END %]
 
   [% IF hasproduct %]
-    <p><b>This group is tied to the <U>[% name FILTER html %]</U> product.
-    You cannot delete this group while it is tied to a product.</b>
+    <p><b>Bu grup <u>[% name FILTER html %]</u> ürününe bağlı. Bir ürüne bağlı olduğu sürece bu grubu silemezsiniz.</b>
 
-    <br><input type="checkbox" name="unbind">Delete this group anyway,
-    and make the product <U>[% name FILTER html %]</U> publicly visible.</p>
+    <br><input type="checkbox" name="unbind">Bu grubu yine de sil ve <U>[% name FILTER html %]</U> ürününü herkes tarafından görülebilir hale getir.</p>
   [% END %]
   
   [% IF hasflags %]
-    <p><b>This group restricts who can make changes to flags of certain types.
-    You cannot delete this group while there are flag types using it.</b>
+    <p><b>Bu grup belirli bayrakları kimlerin değiştirebileceğini sınırlandırıyor. Bu grubu, onu kullanan bayrak türleri varken silemezsiniz.</b>
 
-    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Show
-    me which types</a> - <input type="checkbox" name="removeflags">Remove all
-    flag types from this group for me.</p>
+    <br><a href="editflagtypes.cgi?action=list&group=[% gid FILTER html %]">Bana hangi türler olduğunu göster</a> - <input type="checkbox" name="removeflags">Benim yerine bu gruptaki tüm bayrak türlerini sil.</p>
   [% END %]
 
   [% IF shared_queries %]
     <p>
-      <b>There
-      [% IF shared_queries > 1 %]
-        are [% shared_queries %] saved searches
-      [% ELSE %]
-        is a saved search
-      [% END %]
-      being shared with this group.</b>
-      If you delete this group,
-      [% IF shared_queries > 1 %]
-        these saved searches
-      [% ELSE %]
-        this saved search
-      [% END %]
-      will fall back to being private again.
-    </p>
+      <b>Bu grupla paylaşılan [% shared_queries %] kayıtlı arama var.</b>
+      Eğer bu grubu silerseniz bu kayıtlı arama[% 'lar' IF shared_queries > 1 %] yeniden gizli hale gelir.</p>
   [% END %]
 
-  <h2>Confirmation</h2>
+  <h2>Onay</h2>
 
-  <p>Do you really want to delete this group?</p>
+  <p>Gerçekten bu grubu silmek istiyor musunuz?</p>
   [% IF (hasusers || hasbugs || hasproduct || hasflags) %]
-    <p><b>You must check all of the above boxes or correct the
-          indicated problems first before you can proceed.</b></p>
+    <p><b>Devam etmeden önce ya yukarıdaki tüm kutuları işaretlemeli ya da belirtilen tüm problemleri gidermelisiniz.</b></p>
   [% END %]
 
   <p>
-    <input type="submit" id="delete" value="Yes, delete">
+    <input type="submit" id="delete" value="Eveti sil">
     <input type="hidden" name="action" value="delete">
     <input type="hidden" name="group" value="[% gid FILTER html %]">
     <input type="hidden" name="token" value="[% token FILTER html %]">
   </p>
 </form>
 
-Go back to the <a href="editgroups.cgi">group list</a>.
+<a href="editgroups.cgi">Grup listesi</a>ne geri dön.
 
 [% PROCESS global/footer.html.tmpl %] 

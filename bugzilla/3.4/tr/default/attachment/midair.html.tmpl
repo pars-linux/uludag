@@ -17,6 +17,7 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -34,13 +35,10 @@
 [% PROCESS global/variables.none.tmpl %]
 [% PROCESS global/header.html.tmpl title = "Mid-air collision!" %]
 
-<h1>Mid-air collision detected!</h1>
+<h1>Ekler çarpıştı!</h1>
 
 <p>
-  Someone else has made changes to
-  <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">attachment [% attachment.id %]</a>
-  of [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %]
-  at the same time you were trying to. The changes made were:
+  Sizinle aynı anda, başka birisi daha [% "$terms.bug $attachment.bug_id" FILTER bug_link(attachment.bug_id) FILTER none %] <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">ek [% attachment.id %]</a> üzerinde değişiklik yapmaya kalktı. Yapılan değişiklikler şunlardı:
 </p>
 
 <p>
@@ -49,7 +47,7 @@
 
 [% IF cgi.param("comment") %]
 <p>
-  Your comment was:<br>
+  Yorumunuz şuydu:<br>
   <blockquote><pre class="bz_comment_text">
     [% cgi.param("comment") FILTER wrap_comment FILTER html %]
   </pre></blockquote>
@@ -57,21 +55,20 @@
 [% END %]
 
 <p>
-You have the following choices:
+Seçeneklerini şunlar:
 </p>
 
 <ul>
   <li>
     <form method="post" action="attachment.cgi">
       [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
-      <input type="submit" id="process" value="Submit my changes anyway">
-        This will cause all of the above changes to be overwritten.
+      <input type="submit" id="process" value="Benim yaptıklarımı gönder">
+        Bu yukarıdaki değişikliklerin gözardı edilmesine neden olur.
     </form>
   </li>
   <li>
-    Throw away my changes, and
-    <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">revisit
-    attachment [% attachment.id %]</a>
+    Yaptığım değişiklikleri sil ve
+    <a href="attachment.cgi?id=[% attachment.id %]&amp;action=edit">geri dön</a>
   </li>
 </ul>
 

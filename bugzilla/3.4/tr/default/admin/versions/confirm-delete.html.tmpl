@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -26,7 +27,7 @@
   #                    version the user wants to delete.
   #%]
 
-[% title = BLOCK %]Delete Version of Product '[% product.name FILTER html %]'
+[% title = BLOCK %]'[% product.name FILTER html %]' Ürününün Sürümünü Sil
   [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -35,59 +36,52 @@
 
 <table border="1" cellpadding="4" cellspacing="0">
 <tr bgcolor="#6666FF">
-  <th valign="top" align="left">Field</th>
-  <th valign="top" align="left">Value</th>
+  <th valign="top" align="left">Alan</th>
+  <th valign="top" align="left">Değer</th>
 </tr>
 <tr>
-  <td valign="top">Version:</td>
+  <td valign="top">Sürüm:</td>
   <td valign="top">[% version.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">Version of Product:</td>
+  <td valign="top">Ürün:</td>
   <td valign="top">[% product.name FILTER html %]</td>
 </tr>
 <tr>
-  <td valign="top">[% terms.Bugs %]:</td>
+  <td valign="top">[% terms.Bug %] sayısı:</td>
   <td valign="top">
 [% IF version.bug_count %]
-  <a title="List of [% terms.bugs %] targetted at version '
-           [%- version.name FILTER html %]'"
+  <a title="'[%- version.name FILTER html %]' sürümüne yazılan [% terms.bug %] sayısı"
      href="buglist.cgi?version=[% version.name FILTER url_quote %]&amp;product=
           [%- product.name FILTER url_quote %]">
           [%- version.bug_count FILTER none %]</a>
 [% ELSE %]
-  None
+  Yok
 [% END %]
   </td>
 </tr>
 </table>
 
-<h2>Confirmation</h2>
+<h2>Onaylama</h2>
 
 [% IF version.bug_count %]
   <p>
-  Sorry, there
-  [% IF version.bug_count > 1 %] 
-    are [% version.bug_count FILTER none %] [%+ terms.bugs %] 
-  [% ELSE %]
-    is [% version.bug_count FILTER none %] [%+ terms.bug %] 
-  [% END %]
-
-  outstanding for this version. You must move 
-
+  Bu sürüme kayıtlı
+  [% version.bug_count FILTER none %] [%+ terms.bug %] 
+  hata var. Bu sürümü silebilmek için önce bu
   [% IF version.bug_count > 1 %]
-     those [% terms.bugs %] 
+     [% terms.bugsAcc %] 
   [% ELSE %]
-     that [% terms.bug %]
+     [% terms.bugAcc %]
   [% END %]
-  to another version before you can delete this one.
+  başka bir sürüme taşımalısınız.
   </p>
 [% ELSE %]
 
-  <p>Do you really want to delete this version?</p>
+  <p>Bu sürümü gerçekten silmek istiyor musunuz?</p>
   
   <form method="post" action="editversions.cgi">
-    <input type="submit" id="delete" value="Yes, delete">
+    <input type="submit" id="delete" value="Evet, sil">
     <input type="hidden" name="action" value="delete">
     <input type="hidden" name="product" value="[% product.name FILTER html %]">
     <input type="hidden" name="version" value="[% version.name FILTER html %]">

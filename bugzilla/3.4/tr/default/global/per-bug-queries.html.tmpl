@@ -11,6 +11,7 @@
   # The Original Code is the Bugzilla Bug Tracking System.
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% IF user.id && user.settings.per_bug_queries.value == "on" %]
@@ -25,11 +26,11 @@
         var new_query_text = document.getElementById('lob_new_query_text');
 
         if (action == "add") {
-          text.innerHTML = "to";
+          text.innerHTML = "kime";
           new_query_text.style.display = 'inline';
         }
         else {
-          text.innerHTML = "from";
+          text.innerHTML = "kimden";
           new_query_text.style.display = 'none';
         }
       }
@@ -64,16 +65,16 @@
         <input type="hidden" name="remtype" value="asnamed">
         <input type="hidden" name="list_of_bugs" value="1">
         <select id="lob_action" name="action" onchange="update_text();">
-          <option value="add">Add</option>
+          <option value="add">Ekle</option>
           [% IF lists_of_bugs.size %]
-            <option value="remove">Remove</option>
+            <option value="remove">Kaldır</option>
           [% END %]
         </select>
 
         [% IF Param('docs_urlbase') %]
-          <a href="[% docs_urlbase FILTER html %]query.html#individual-buglists">the named tag</a>
+          <a href="[% docs_urlbase FILTER html %]query.html#individual-buglists">adlandırılmış takı</a>
         [% ELSE %]
-          the named tag
+          adlandırılmış takı
         [% END %]
 
         [% IF lists_of_bugs.size %]
@@ -84,16 +85,19 @@
           </select>
         [% END %]
         <span id="lob_new_query_text">
-          [% " or create and add the tag" IF lists_of_bugs.size %]
+          [% " veya " IF lists_of_bugs.size %]
+          <input type="text" name="bug_ids" size="12" maxlength="80"
+          [%- " value=\"$bugids\"" IF bugids %]>
+          numaralı [%+ terms.bugsDat %]
           <input class="txt" type="text" id="lob_newqueryname"
                  size="20" maxlength="64" name="newqueryname"
                  onkeyup="manage_old_lists();">
+          [% " takısını oluşturup ekle." IF lists_of_bugs.size %]
         </span>
-        <span id="lob_direction">to</span>
-        [%+ terms.bugs %]
+        <!-- keep until the modification above is tried, delete after that <span id="lob_direction"></span> -->
         <input type="text" name="bug_ids" size="12" maxlength="80"
          [%- " value=\"$bugids\"" IF bugids %]>
-        <input type="submit" value="Commit" id="commit_list_of_bugs">
+        <input type="submit" value="Gönder" id="commit_list_of_bugs">
       </form>
     </li></ul>
   </li>

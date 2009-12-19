@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%# INTERFACE:
   # This template has no interface.
@@ -32,22 +33,22 @@ Build Identifier: [%+ cgi.param("buildid") %]
 
 [%+ cgi.param("comment") IF cgi.param("comment") %]
 
-[%+ IF cgi.param("reproducible") != "Choose one..." -%]
-Reproducible: [%+ cgi.param("reproducible") %]
+[%+ IF cgi.param("reproducible") != "Birini seçin" -%]
+Tekrarlanabilir: [%+ cgi.param("reproducible") %]
 [% END %]
 
-[% IF !(cgi.param("reproduce_steps").match('^1\.\s*2\.\s*3\.\s*$') || cgi.param("reproduce_steps").match('^\s*$')) %]
-Steps to Reproduce:
+[% IF !(cgi.param("reproduce_steps").match('^1\.\s+2\.\s+3\.\s+$') || cgi.param("reproduce_steps").match('^\s*$')) %]
+Tekrarlamak için Gereken Adımlar:
 [%+ cgi.param("reproduce_steps") %]
 [% END %]
 
 [% IF cgi.param("actual_results") -%]
-Actual Results:  
+Oluşan Sonuçlar:  
 [%+ cgi.param("actual_results") %]
 [% END %]
 
 [% IF cgi.param("expected_results") %]
-Expected Results:  
+Beklenen Sonuçlar:  
 [%+ cgi.param("expected_results") %]
 [% END %]
 

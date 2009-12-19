@@ -20,6 +20,7 @@
   #                 Jacob Steenhagen <jake@bugzilla.org>
   #                 Vlad Dascalu <jocuri@softhome.net>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -28,9 +29,9 @@
   #%]
 
 [% IF regexp %]
-  [% title = "Confirm: Remove Explicit Members in the Regular Expression?" %]
+  [% title = "Onayla: Düzenli İfadedeki Üyeler Kaldırılsın mı?" %]
 [% ELSE %]
-  [% title = "Confirm: Remove All Explicit Members?" %]
+  [% title = "Onayla: Tüm Üyeler Kaldırılsın mı?" %]
 [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -47,10 +48,7 @@
     from '[% group.name FILTER html %].'</p>
 [% END %]
   
-<p>Generally, you will only need to do this when upgrading groups
-  created with [% terms.Bugzilla %] versions 2.16 and earlier. Use
-  this option with <b>extreme care</b> and consult the documentation
-  for further information.
+<p>Genelde, bu özelliğe [% terms.Bugzilla %] 2.16 ve öncesi sürümlerde oluşturulan grupları yükseltirken ihtiyaç duyacaksınız. Bu seçeneği <b>çok dikkatli</b> kullanın ve daha fazla bilgi için belgelendirmeye bakmayı unutmayın.
 </p>
     
 <form method="post" action="editgroups.cgi">
@@ -59,8 +57,8 @@
   <input type="hidden" name="action" value="remove_regexp">
   
   <input name="token" type="hidden" value="[% token FILTER html %]">
-  <input name="confirm" type="submit" value="Confirm">
-  <p>Or <a href="editgroups.cgi">return to the Edit Groups page</a>.</p>
+  <input name="confirm" type="submit" value="Onayla">
+  <p>Veya <a href="editgroups.cgi">Grupları Düzenle sayfasına dön</a>.</p>
 </form>
     
 [% PROCESS global/footer.html.tmpl %] 

@@ -17,15 +17,14 @@
   #
   # Contributor(s): Stefan Seifert <nine@detonation.org>
   #                 Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
-[% INCLUDE global/header.html.tmpl title = "Linkify Text" %]
+[% INCLUDE global/header.html.tmpl title = "Metne Bağlantıları Yerleştir" %]
 
 <p>
-  If you enter some text, this form will return it marked up like a
-  standard [% terms.Bugzilla %] comment. That is, valid [% terms.bug %] numbers,
-  URLs, email addresses and so on will be replaced with appropriate HTML links.
+  Eğer bir miktar metin girerseniz, bu form onu standart bir [% terms.Bugzilla %] yorum alanı gibi işleyerek döndürecektir. Yani, geçerli [% terms.bug %] numaraları, adresler, eposta adresleri ve benzerleri uygun şekilde HTML bağlantıları yapılmış halde döndürülür.
 </p>
 
 <form action="page.cgi" method="post">
@@ -36,7 +35,7 @@
   %]
   <br>
   <input type="hidden" name="id" value="linked.html">
-  <input type="submit" id="linkify" value="Linkify">
+  <input type="submit" id="linkify" value="Bağlantıları Yerleştir">
 </form>
 
 [% INCLUDE global/footer.html.tmpl %]

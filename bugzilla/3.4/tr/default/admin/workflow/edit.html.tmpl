@@ -12,12 +12,13 @@
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
   #                 Gervase Markham <gerv@mozilla.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
 [% INCLUDE global/header.html.tmpl
-   title = "Edit Workflow"
+   title = "İş Akışında Değişiklik Yap"
    style_urls = ['skins/standard/admin.css']
 %]
 
@@ -33,24 +34,18 @@
 </script>
 
 <p>
-  This page allows you to define which status transitions are valid in your workflow.
-  For compatibility with older versions of [% terms.Bugzilla %], reopening [% terms.abug %]
-  will only display either [% get_status("UNCONFIRMED") FILTER html %] or
-  [%+ get_status("REOPENED") FILTER html %] (if allowed by your workflow) but not
-  both. The decision depends on whether the [% terms.bug %] has ever been confirmed or not.
-  So it is a good idea to allow both transitions and let [% terms.Bugzilla %] select the
-  correct one.
+  Bu sayfada sizin iş akışınız içerisinde hangi durum değişiklerinin kullanılabilir olduğunu belirtebilirsiniz. [% terms.BugzillaGen %] eski sürümleriyle uyumluluk amacıyla [% terms.abugAcc %] yeniden açmak ya [% get_status("UNCONFIRMED") FILTER html %] veya [%+ get_status("REOPENED") FILTER html %] gösterir, ama ikisini birden göstermez. Bu ikisinden sizin iş akışınız tarafından izin verilmeyen(ler) gösterilemez. Karar [% terms.bugGen %] daha önce onaylanıp onaylanmadığına bağlıdır. Dolayısıyla bu iki geçişe de izin vermek ve [% terms.BugzillaGen %] birini seçmesine izin vermek daha doğru olacaktır.
 </p>
 
 <form id="workflow_form" method="POST" action="editworkflow.cgi">
 <table>
   <tr>
     <th colspan="2">&nbsp;</th>
-    <th colspan="[% statuses.size FILTER html %]" class="title">To</th>
+    <th colspan="[% statuses.size FILTER html %]" class="title">Buna</th>
   </tr>
 
   <tr>
-    <th rowspan="[% statuses.size + 2 FILTER html %]" class="title">From</th>
+    <th rowspan="[% statuses.size + 2 FILTER html %]" class="title">Bundan</th>
     <th>&nbsp;</th>
     [% FOREACH status = statuses %]
       <th class="col-header[% status.is_open ? " open-status" : " closed-status" %]">
@@ -72,7 +67,7 @@
           [% checked = workflow.${status.id}.${new_status.id}.defined ? 1 : 0 %]
           [% mandatory = (status.id && new_status.name == Param("duplicate_or_move_bug_status")) ? 1 : 0 %]
           <td align="center" class="checkbox-cell[% " checked" IF checked || mandatory %]"
-              title="From [% status.name FILTER html %] to [% new_status.name FILTER html %]">
+              title="[% status.name FILTER html %] -> [% new_status.name FILTER html %]">
             <input type="checkbox" name="w_[% status.id %]_[% new_status.id %]"
                    id="w_[% status.id %]_[% new_status.id %]" onclick="toggle_cell(this)"
                    [%+ "checked='checked'" IF checked || mandatory %]
@@ -87,22 +82,22 @@
 </table>
 
 <p>
-  When [% terms.abug %] is marked as a duplicate of another one or is moved
-  to another installation, the [% terms.bug %] status is automatically set to
-  <b>[% Param("duplicate_or_move_bug_status") FILTER html %]</b>. All transitions to
-  this [% terms.bug %] status must then be valid (this is the reason why you cannot edit
-  them above).<br>
-  Note: you can change this setting by visiting the
-  <a href="editparams.cgi?section=bugchange#duplicate_or_move_bug_status">Parameters</a>
-  page and editing the <i>duplicate_or_move_bug_status</i> parameter.
+  [% terms.Abug %] bir başkasının aynısı olarak işaretlendiğinde veya başka bir kuruluma taşındığında, [% terms.bug %] durumu 
+  <b>[% Param("duplicate_or_move_bug_status") FILTER html %]</b>
+  olarak atanır. Bu [% terms.bug %] durumuna yapılan tüm değişiklikler geçerli olarak işaretlenmiş olmalıdır (bu nedenle yukarıda onları değiştiremiyorsunuz).
+  <br>
+  Not: Bu ayarı değiştirmek için
+  <a href="editparams.cgi?section=bugchange#duplicate_or_move_bug_status">Parametreler</a>
+  sayfasında <i>duplicate_or_move_bug_status</i>
+  parametresini kullanabilirsiniz.
 </p>
 
 <p align="center">
   <input type="hidden" name="action" value="update">
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" value="Commit Changes"> -
-  <a href="editworkflow.cgi">Cancel Changes</a> -
-  <a href="editworkflow.cgi?action=edit_comment">View Comments Required on Status Transitions</a>
+  <input type="submit" value="Değişiklikleri Kaydet"> -
+  <a href="editworkflow.cgi">Değişiklikleri İptal Et</a> -
+  <a href="editworkflow.cgi?action=edit_comment">Yorum Zorunlu Tutulan Durum Değişiklikleri</a>
 </p>
 
 </form>

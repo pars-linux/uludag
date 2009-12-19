@@ -15,6 +15,7 @@
   # Frédéric Buclin. All Rights Reserved.
   #
   # Contributor(s): Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -23,30 +24,21 @@
   # reason: reason of the failure.
   #%]
 
-[% PROCESS global/header.html.tmpl title = "Suspicious Action"
+[% PROCESS global/header.html.tmpl title = "Şüpheli Eylem"
                                    style_urls = ['skins/standard/global.css'] %]
 
 <div class="throw_error">
   [% IF reason == "expired_token" %]
-    Your changes have been rejected because you exceeded the time limit
-    of [% constants.MAX_TOKEN_AGE FILTER html %] days before submitting your
-    changes to [% script_name FILTER html %]. Your page may have been displayed
-    for too long, or old changes have been resubmitted by accident.
+    [% script_name FILTER html %] üzerinde yaptığınız değişiklikler, göndermek için [% constants.MAX_TOKEN_AGE FILTER html %] günü aştığınızdan ötürü reddedildi. Sayfanız çok uzun süre açık kalmış olabilir veya eski değişiklikleri yeniden göndermiş olabilirsiniz.
 
   [% ELSIF reason == "missing_token" %]
-    It looks like you didn't come from the right page.
-    One reason could be that you entered the URL in the address bar of your
-    web browser directly, which should be safe. Another reason could be that
-    you clicked on a URL which redirected you here <b>without your consent</b>.
+    Görünüşe bakılırsa buraya yanlış sayfadan geldiniz. Bu adresi tarayıcınızın adres çubuğuna doğrudan yazmış olabilirsiniz, bu durumda bir sorun yok. Bir başka olasılık da sizi buraya <b>sizin onayınız olmadan</b> yönlendiren bir sayfa olabilir.
 
   [% ELSIF reason == "invalid_token" %]
-    You submitted changes to [% script_name FILTER html %] with an invalid
-    token, which may indicate that someone tried to abuse you, for instance
-    by making you click on a URL which redirected you here <b>without your
-    consent</b>.
+    [% script_name FILTER html %] betiğine değişiklikleri geçersiz bir jetonla gönderdiniz. Bu, birisinin sizi buraya <b>sizin onayınız olmadan</b> gönderdiği anlamına gelebilir.
   [% END %]
   <p>
-    Are you sure you want to commit these changes?
+    Bu değişiklikleri göndermek istediğinize emin misiniz?
   </p>
 </div>
 
@@ -54,10 +46,9 @@
   [% PROCESS "global/hidden-fields.html.tmpl"
              exclude="^(Bugzilla_login|Bugzilla_password|token)$" %]
   <input type="hidden" name="token" value="[% token FILTER html %]">
-  <input type="submit" id="confirm" value="Yes, Confirm Changes">
+  <input type="submit" id="confirm" value="Evet, Değişiklikleri Onayla">
 </form>
 
-<p><a href="index.cgi">No, throw away these changes</a> (you will be redirected
-to the home page).</p>
+<p><a href="index.cgi">Hayır, bu değişiklikleri çöpe at</a> (ana sayfaya yönlendirileceksiniz).</p>
 
 [% PROCESS global/footer.html.tmpl %]

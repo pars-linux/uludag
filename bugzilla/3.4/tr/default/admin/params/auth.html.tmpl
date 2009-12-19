@@ -18,117 +18,124 @@
   # Contributor(s): Dave Miller <justdave@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
   #                 Marc Schumann <wurblzap@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%
-   title = "User Authentication"
-   desc = "Set up your authentication policies"
+   title = "Kullanıcı Kimlik Denetimi"
+   desc = "Kimlik denetimi politikalarınızı belirleyin"
 %]
 
 [% param_descs = {
-  auth_env_id => "Environment variable used by external authentication system " _
-                 "to store a unique identifier for each user. Leave it blank " _
-                 "if there isn't one or if this method of authentication " _
-                 "is not being used.",
+  auth_env_id => "Her kullanıcı için benzersiz bir tanımlayıcı depolayacak olan " _
+                 "haricî kimlik denetim mekanizması tarafından kullanılan çevre " _
+                 "değişkeni. Eğer haricî bir kimlik denetim mekanizması yoksa veya " _
+                 "kullanılmıyorsa boş bırakın.",
 
-  auth_env_email => "Environment variable used by external authentication system " _
-                    "to store each user's email address. This is a required " _
-                    "field for environmental authentication. Leave it blank " _
-                    "if you are not going to use this feature.",
+  auth_env_email => "Haricî kimlik denetim mekanizmasının her bir kullanıcının " _
+                    "eposta adresini depolamak için kullandığı çevre değişkeni. "_
+                    "Bu çevresel yöntemle kimlik denetimi söz konusu olduğunda " _
+                    "zorunlu bir alandır. Eğer haricî kimlik denetimi mekanizması " _
+                    "kullanmayacaksanız boş bırakın."
 
-  auth_env_realname => "Environment variable used by external authentication system " _
-                       "to store the user's real name. Leave it blank if there " _
-                       "isn't one or if this method of authentication is not being " _
-                       "used.",
+  auth_env_realname => "Haricî kimlik denetimi mekanizmasının kullanıcıların gerçek " _
+                       "adlarını tutmak için kullandığı çevre değişkeni. Eğer " _
+                       "haricî kimlik denetim mekanizması gerçek ad alanlarını " _
+                       "sağlamıyorsa veya haricî kimlik denetimi kullanılmıyorsa " _
+                       "boş bırakın."
 
-  user_info_class => "Mechanism(s) to be used for gathering a user's login information.
-                      More than one may be selected. If the first one returns nothing,
-                      the second is tried, and so on.<br>
-                      The types are:
+  user_info_class => "Kullanıcının oturum bilgilerini toplamak için kullanılacak 
+                      mekanizmalar. Birden fazla mekanizma seçilebilir. Eğer birincisi 
+                      bir sonuç döndürmezse ikincisi denenir ve sonuç alınana kadar böyle 
+                      devam edilir.<br>
+                      Türler şunlardır:
                       <dl>
                         <dt>CGI</dt>
                         <dd>
-                          Asks for username and password via CGI form interface.
+                          Kullanıcı adı ve parolayı CGI form arayüzüyle sor.
                         </dd>
                         <dt>Env</dt>
                         <dd>
-                          Info for a pre-authenticated user is passed in system
-                          environment variables.
+                          Önceden oturumu doğrulanmış kullanıcı bilgisi sistem çevre 
+                          değişkenlerinden gelir.
                         </dd>
                       </dl>",
 
-  user_verify_class => "Mechanism(s) to be used for verifying (authenticating) information
-                        gathered by user_info_class.
-                        More than one may be selected. If the first one cannot find the
-                        user, the second is tried, and so on.<br>
-                        The types are:
+  user_verify_class => "user_info_class tarafından toplanan bilgilerin onaylanması 
+                        (kimlik doğrulama) için kullanılacak mekanizma(lar).
+                        Birden fazla seçilebilir. Eğer birincisi kullanıcıyı bulamazsa
+                        ikincisi denenir, ve sonuç alınana kadar böyle devam edilir.<br>
+                        Türler şunlardır:
                         <dl>
                           <dt>DB</dt>
                           <dd>
-                            ${terms.Bugzilla}'s built-in authentication. This is the most common
-                            choice.
+                            ${terms.BugzillaGen} tümleşik kimlik doğrulama yöntemi. Bu
+                            en sık kullanılan seçenektir.
                           </dd>
                           <dt>RADIUS</dt>
                           <dd>
-                            RADIUS authentication using a RADIUS server.
-                            This method is experimental; please see the
-                            $terms.Bugzilla documentation for more information.
-                            Using this method requires
-                            <a href=\"?section=radius\">additional
-                            parameters</a> to be set.
+                            Bir RADIUS sunucu kullanarak RADIUS kimlik doğrulaması.
+                            Bu yöntem deneyseldir; lütfen daha fazla bilgi için
+                            $terms.Bugzilla belgelendirmesine bakın.
+                            Bu yöntemin kullanılması 
+                            <a href=\"?section=radius\">ek
+                            parametreler</a>in ayarlanmasını gerektir.
                           </dd>
                           <dt>LDAP</dt>
                           <dd>
-                            LDAP authentication using an LDAP server.
-                            Please see the $terms.Bugzilla documentation
-                            for more information. Using this method requires
-                            <a href=\"?section=ldap\">additional
-                            parameters</a> to be set.
+                            Bir LDAP sunucu kullanarak LDAP kimlik doğrulaması.
+                            Lütfen daha fazla bilgi için $terms.Bugzilla belgelendirmesine
+                            bakın. Bu yöntemin kullanılması
+                            <a href=\"?section=ldap\">ek
+                            parametreler</a>in ayarlanmasını gerektirir.
                           </dd>
                         </dl>",
 
-  rememberlogin => "Controls management of session cookies
+  rememberlogin => "Oturum (session) çerezlerinin yönetim şeklini belirler.
                     <ul>
                       <li>
-                        on - Session cookies never expire (the user has to login only
-                        once per browser).
+                        açık - Oturum çerezlerinin süresi dolmaz (kullanıcı tarayıcı başına
+                        sadece bir kez oturum açar).
                       </li>
                       <li>
-                        off - Session cookies last until the users session ends (the user
-                        will have to login in each new browser session).
+                        kapalı - Oturum çerezleri kullanıcı oturumu bitene kadar tutulur 
+                        (kullanıcı her yeni tarayıcı oturumunda yeniden oturum açar).
                       </li>
                       <li>
-                        defaulton/defaultoff - Default behavior as described
-                        above, but user can choose whether $terms.Bugzilla will remember his
-                        login or not.
+                        öntanımlı açık /öntanımlı kapalı - Yukarıda açıklandığı şekliyle
+                        öntanımlı davranış, fakat kullanıcı $terms.BugzillaGen oturumunu
+                        hatırlayıp hatırlamayacağını belirleyebilir.
                       </li>
                     </ul>",
 
-  loginnetmask => "The number of bits for the netmask used if a user chooses to " _
-                  "allow a login to be valid for more than a single IP. Setting " _
-                  "this to 32 disables this feature.<br> " _
-                  "Note that enabling this may decrease the security of your system.",
+  loginnetmask => "Kullanıcı oturumunun birden fazla IP için geçerli olmasını " _
+                  "seçtiğinde netmask için kullanılacak bit sayısı. Bu değeri 32 " _
+                  "yapmak bu özelliği kapatır.<br> " _
+                  "Bu özelliği açmanın sisteminizin güvenlik düzeyini " _
+                  "düşüreceğini unutmayınız",
 
-  requirelogin => "If this option is set, all access to the system beyond the " _
-                  "front page will require a login. No anonymous users will " _
-                  "be permitted.",
+  requirelogin => "Eğer bu seçenek açıksa, ön sayfa dışındaki herhangi bir sayfaya " _
+                  "erişebilmek için oturum açmak gerekir, kimliği doğrulanmamış " _
+                  "kullanıcılara izin verilmez",
 
-  emailregexp => "This defines the regexp to use for legal email addresses. The " _
-                 "default tries to match fully qualified email addresses. Another " _
-                 "popular value to put here is <tt>^[^@]+$</tt>, which means " _
-                 "'local usernames, no @ allowed.'",
+  emailregexp => "Bu değer geçerli eposta adresleri için kullanılacak düzenli " _
+                 "ifadeyi belirtir. Öntanımlı değer kurallara uygun eposta " _
+                 "adreslerine izin verecek şekildedir. Burada sık kullanılan bir " _
+                 "başka değer ise '@ işareti taşımayan yerel kullanıcı adları' " _
+                 "anlamına gelen <tt>^[^@]+$</tt> değeridir.'",
 
-  emailregexpdesc => "This describes in English words what kinds of legal addresses " _
-                     "are allowed by the <tt>emailregexp</tt> param.",
+  emailregexpdesc => "Bu alan Türkçe olarak <tt>emailregexp</tt> parametresine " _
+                     "girilebilecek ve geçerli kabul edilecek adresleri anlatır.",
 
-  emailsuffix => "This is a string to append to any email addresses when actually " _
-                 "sending mail to that address. It is useful if you have changed " _
-                 "the <tt>emailregexp</tt> param to only allow local usernames, " _
-                 "but you want the mail to be delivered to username@my.local.hostname.",
+  emailsuffix => "Bu, bir adrese eposta atarken eposta adresinin sonuna eklenecek bir " _
+                 "dizgedir. Bu değer özellikle <tt>emailregexp</tt> parametresini " _
+                 "sadece yerel kullanıcı adlarına izin verecek şekilde değiştirdiyseniz " _
+                 "fakat epostaların kullanıcıadı@yerel.sunucum adresine gönderilmesini " _
+                 "istiyorsanız kullanışlı olacaktır."
 
-  createemailregexp => "This defines the regexp to use for email addresses that are " _
-                       "permitted to self-register using a 'New Account' feature. The " _
-                       "default (.*) permits any account matching the emailregexp " _
-                       "to be created. If this parameter is left blank, no users " _
-                       "will be permitted to create their own accounts and all accounts " _
-                       "will have to be created by an administrator." }
+  createemailregexp => "Bu alan, 'Yeni Hesap' özelliğini kullanarak kendi kendine " _
+                       "sisteme kayıt olmasına izin verilen eposta adreslerini belirten " _
+                       "düzenli ifadedir. Öntanımlı değer (.*) emailregexp alanına uyan " _
+                       "hesaplar oluşturulmasına olanak tanır. Eğer bu parametre boş " _
+                       "geçilirse hiçbir kullanıcı kendi hesabını oluşturamaz ve tüm " _
+                       "hesapların bir yönetici tarafından oluşturulması gerekir." }
 %]

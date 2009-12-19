@@ -17,6 +17,7 @@
   #
   # Contributor(s): Gavin Shelley <bugzilla@chimpychompy.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
@@ -28,18 +29,18 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "Edit versions for which product?"
+  title = "Hangi ürünün sürümlerini değiştirmek istiyorsunuz?"
 %]
 
 [% columns = [
      { 
        name => "name"
-       heading => "Edit versions of..."
+       heading => "Şunu sürümlerini değiştir:"
        contentlink => "editversions.cgi?product=%%name%%" 
      },
      { 
        name => "description"
-       heading => "Description" 
+       heading => "Açıklama" 
        allow_html_content => 1
      }
    ]
@@ -49,7 +50,7 @@
 
   [% columns.push({
       name => 'bug_count'
-      heading => "$terms.Bugs"
+      heading => "$terms.Bug sayısı"
       align => "right"
       contentlink => "buglist.cgi?product=%%name%%"
     })
@@ -64,7 +65,7 @@
 
 [% IF !showbugcounts %]
   <p><a href="editversions.cgi?showbugcounts=1">
-      Redisplay table with [% terms.bug %] counts (slower)</a></p>
+      Tabloyu [% terms.bug %] sayılarıyla tekrar göster (daha yavaştır)</a></p>
 [% END %]
 
 [% PROCESS global/footer.html.tmpl %]

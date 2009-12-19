@@ -16,38 +16,35 @@
   # Rights Reserved.
   #
   # Contributor(s): Joel Peshkin <bugreport@peshkin.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 [% title = BLOCK %]
-  Confirm Group Control Change for product '[%- product.name FILTER html %]'
+  '[%- product.name FILTER html %]' Ürününün Grup Kontrol Değişikliğini Onaylayın
 [% END %]
 
 [% PROCESS global/header.html.tmpl title = title %]
 [% FOREACH group = mandatory_groups %]
 <P>
-group '[% group.name FILTER html %]' impacts [% group.count %] 
-[%+ terms.bugs %] for
-which the group is newly mandatory and will be added.
+'[% group.name FILTER html %]' grubu [% group.count %] 
+[%+ terms.bugAcc %] etkiliyor ve bu hatalara grup zorunlu olarak eklenecek.
 [% END %]
 
 [% FOREACH group = na_groups %]
 <P>
-group '[% group.name FILTER html %]' impacts [% group.count %]&nbsp;
-[% terms.bugs %] for which the group is no longer applicable and will
-be removed.[% END %]
+'[% group.name FILTER html %]' grubu [% group.count %]&nbsp;
+[% terms.bugDat %] artık uygulanamaz ve o hatalardan silinecek.[% END %]
 <form action="editproducts.cgi" method="post" >
 
   [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
 
   <br>
-     Click "Continue" to proceed with the change including the changes
-     indicated above.  If you do not want these changes, use "back" to
-     return to the previous page.
+     Yapacağınız değişiklik yukarıdaki değişikliklere de neden olacak. Tümünü uygulamak için "Devam et"e tıklayın. Eğer bu değişikliklerin yapılmasını istemiyorsanız, önceki sayfaya dönmek için "geri" düğmesini kullanın.
   <p>
     <input type="hidden" name="confirmed" value="confirmed">
-    <input type="submit" id="update" value="Continue">
+    <input type="submit" id="update" value="Devam et">
   </p>
 
 </form>

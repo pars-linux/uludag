@@ -17,6 +17,7 @@
   #
   # Contributor(s): Myk Melez <myk@mozilla.org>
   #                 Erik Stambaugh <not_erik@dasbistro.com>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -39,7 +40,7 @@
 [% PROCESS "global/field-descs.none.tmpl" %]
 
 [% IF matchsuccess == 1 %]
-  [% PROCESS global/header.html.tmpl title="Confirm Match" %]
+  [% PROCESS global/header.html.tmpl title="Eşleştirmeyi Onayla" %]
 
 [% USE Bugzilla %]
 
@@ -54,24 +55,20 @@
 
   <p>
     [% IF matchmultiple %]
-      [% terms.Bugzilla %] cannot make a conclusive match for one or more
-      of the names and/or email addresses you entered on the previous page.
-      <br>Please examine the lists of potential matches below and select the
-      ones you want,
+      [% terms.Bugzilla %] önceki sayfada girdiğiniz isimlerin ve/veya eposta adreslerinin en az biri için net bir eşleştirme yapmayı başaramadı. 
+      <br>Lütfen aşağıdan olası eşleştirmelerin listelerini seçin,
     [% ELSE %]
-      [% terms.Bugzilla %] is configured to require verification whenever
-      you enter a name or partial email address.
-      <br>Below are the names/addresses you entered and the matched accounts.
-      Please confirm that they are correct,
+      [% terms.Bugzilla %] ne zaman bir isim veya kısmî bir eposta adresi girseniz sizden onay isteyecek şekilde yapılandırılmış durumda.
+      <br>Aşağıda, girdiğiniz isim ve adresleri ve eşleşen hesapları görebilirsiniz.
+      Lütfen doğru olduklarını onaylayın,
     [% END %]
-    or go back to the previous page to revise the names you entered.
+    veya önceki sayfaya gidip girdiğiniz isimleri elden geçirin.
   </p>
 [% ELSE %]
-  [% PROCESS global/header.html.tmpl title="Match Failed" %]
+  [% PROCESS global/header.html.tmpl title="Eşleştirme Başarısız Oldu" %]
   <p>
-    [% terms.Bugzilla %] was unable to make any match at all for one or more of
-    the names and/or email addresses you entered on the previous page.<br>
-    Please go back and try other names or email addresses.
+    [% terms.Bugzilla %] girdiğiniz isim ve/veya eposta adreslerinin en az biri için herhangi bir eşleştirme yapamadı.<br>
+    Lütfen geri gidin ve başka isimler veya eposta adresleri deneyin.
   </p>
 [% END %]
 
@@ -97,17 +94,14 @@
                 [% IF query.value.users.size > 1 %]
                   [% IF query.value.status == 'fail' %]
                     <font color="#FF0000">
-                      matches multiple users.
+                      birden fazla kullanıcıyla eşleşiyor.
                     </font>
-                    Please go back and try again with a more specific
-                    name/address.
+                    Lütfen geri gidip daha belirgin isim veya eposta adresleriyle deneyin.
                   [% ELSE %]
                     [% IF query.value.status == 'trunc' %]
-                      matched
-                      more than the maximum
-                      of [% query.value.users.size %] users:<br>
+                      en fazla [% query.value.users.size %] adet eşleme olabilir ve bu durumda daha fazla kullanıcıyla eşleşti:<br>
                     [% ELSE %]
-                      matched:<br>
+                      eşleşti:<br>
                     [% END %]
                     <select name="[% field.key FILTER html %]"
                      id="[% field.key FILTER html %]"
@@ -128,16 +122,16 @@
                     </select>
                   [% END %]
                 [% ELSE %]
-                  matched
+                  eşleşti
                   <b>[% query.value.users.0.identity FILTER html %]</b>
                 [% END %]
             [% ELSE %]
                 [% IF (query.key.length < 3) && !(Param('emailsuffix'))
                     && (Param('usermatchmode') == 'search') %]
-                  <font color="#FF0000">was too short for substring match
-                  (minimum 3 characters)</font>
+                  <font color="#FF0000">alt-dizge eşleşmesi için fazla kısaydı
+                  (en az 3 karakter)</font>
                 [% ELSE %]
-                  <font color="#FF0000">did not match anything</font>
+                  <font color="#FF0000">herhangi birşeyle eşleşmedi</font>
                 [% END %]
             [% END %]
             </div>
@@ -158,7 +152,7 @@
   [% PROCESS "global/hidden-fields.html.tmpl" exclude="^Bugzilla_(login|password)$" %]
 
   <p>
-    <input type="submit" id="continue" value="Continue">
+    <input type="submit" id="continue" value="Devam et">
   </p>
 
   </form>
@@ -176,7 +170,7 @@
   [%-# ELSIF for things that don't belong in the field_descs hash here -%]
 
   [% ELSIF field_name.match("^requestee") %]
-    [% fields.${field_name}.flag_type.name %] requestee
+    [% fields.${field_name}.flag_type.name %] istenen
 
   [% ELSE %]
     [% field_name FILTER html %]
