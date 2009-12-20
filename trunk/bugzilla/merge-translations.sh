@@ -22,14 +22,10 @@ echo
 
 cat newtemplates
 
-echo "Unmodified templates are:"
-echo "-------------------------"
-echo
-
 for f in $(cat oldlist); do
     cmp $OLD/$f $NEW/$f &> /dev/null
     if [ $? == 0 ]; then
-        echo $f | tee -a unmodified
+        echo $f >> unmodified
     fi
 done
 
