@@ -17,6 +17,7 @@
   #
   # Contributor(s): Vlad Dascalu <jocuri@softhome.net>
   #                 Gavin Shelley <bugzilla@chimpychompy.org>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -35,7 +36,7 @@
   #%]
 
 [% title = BLOCK %]
-  Account History for '[% otheruser.login FILTER html %]'
+  '[% otheruser.login FILTER html %]' Kullanıcısının Hesap Geçmişi
 [% END %]
 
 
@@ -49,20 +50,20 @@
 
 [% columns =
   [{name               => 'who'
-    heading            => 'Who'
+    heading            => 'Kim'
    }
    {name               => 'activity_when'
-    heading            => 'When'
+    heading            => 'Ne zaman'
    }
    {name               => 'what'
-    heading            => 'What'
+    heading            => 'Ne'
     content_use_field  => 1
    }
    {name               => 'removed'
-    heading            => 'Removed'
+    heading            => 'Sildi'
    }
    {name               => 'added'
-    heading            => 'Added'
+    heading            => 'Ekledi'
    }
   ]
 %]
@@ -74,12 +75,11 @@
 
 <p><a href="editusers.cgi?action=edit&amp;userid=
   [%- otheruser.id FILTER url_quote %]"
-  title="Edit user '[% otheruser.login FILTER html %]'">Edit this user</a> or
-  <a title="Search For Users" href="editusers.cgi">find other accounts</a>
+  title="'[% otheruser.login FILTER html %]' kullanıcı hesabında değişiklik yap">Bu kullanıcıyı yönet</a> veya
+  <a title="Search For Users" href="editusers.cgi">başka hesap bul</a>
   [% IF listselectionvalues.matchtype != 'exact' %]
-    or go <a title="Return to the user list"
-       href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">back
-    to the user list</a>
+    veya <a title="Kullanıcıları listele"
+       href="editusers.cgi?action=list[% INCLUDE listselectionurlparams %]">kullanıcı listesine dön</a>
   [% END %]
 </p>
 

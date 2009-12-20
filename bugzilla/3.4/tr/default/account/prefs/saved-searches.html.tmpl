@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE:
@@ -40,31 +41,30 @@
   </script>
 [% END %]
 
-<p>Your saved searches are as follows:</p>
+<p>Kayıtlı aramalarınız şunlar:</p>
 
 <blockquote>
   <table border="1" cellpadding="3">  
     <tr>
       <th>
-        Search
+        Arama
       </th>
       <th>
-        Run
+        Çalıştır
       </th>
       <th>
-        Edit
+        Değiştir
       </th>
       <th>
-        Forget
+        Unut
       </th>
       <th>
-        Show in
-        Footer
+        Sayfa altlığında göster
       </th>
       [% may_share = user.in_group(Param('querysharegroup')) && queryshare_groups.size %]
       [% IF may_share %]
         <th>
-          Share With a Group
+          Bir grupla paylaş
         </th>
       [% END %]
     </tr>
@@ -72,7 +72,7 @@
       <td>My [% terms.Bugs %]</td>
       <td>
         [% filtered_username = user.login FILTER url_quote %]
-        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Run</a>
+        <a href="[% Param('mybugstemplate').replace('%userid%', filtered_username) %]">Çalıştır</a>
       </td>
       <td>
         &nbsp;
@@ -101,15 +101,14 @@
         </td>
         <td>
           <a href="query.cgi?[% q.edit_link FILTER html %]&amp;known_name=
-                   [% q.name FILTER url_quote %]">Edit</a>
+                   [% q.name FILTER url_quote %]">Değiştir</a>
         </td>
         <td>
           [% IF q.used_in_whine %]
-            Remove from <a href="editwhines.cgi">whining</a> first
+            Önce <a href="editwhines.cgi">alarmlar</a>dan kaldırın
           [% ELSE %]
             <a href="buglist.cgi?cmdtype=dorem&amp;remaction=forget&amp;namedcmd=
-                     [% q.name FILTER url_quote %]&amp;token=
-                     [% issue_hash_token([q.id, q.name]) FILTER url_quote %]">Forget</a>
+                     [% q.name FILTER url_quote %]">Unut</a>
           [% END %]
         </td>
         <td align="center">
@@ -123,7 +122,7 @@
           <td>
             <select name="share_[% q.id FILTER html %]"
               [% IF user.can_bless %] onchange="update_checkbox(this);"[% END %]>
-              <option value="">Don't share</option>
+              <option value="">Paylaşma</option>
               [% FOREACH group = queryshare_groups %]
                 <option value="[% group.id %]"
                         [% ' selected="selected"' 
@@ -137,11 +136,10 @@
                      [% " disabled"
                         IF !bless_group_ids.grep("^$q.shared_with_group.id\$").0
                      %]>
-              <label for="force_[% q.id FILTER html %]">Add to footer</label>
+              <label for="force_[% q.id FILTER html %]">Sayfa altlığına ekle</label>
             [% END %]
             [% IF q.shared_with_users %]
-              (shared with [% q.shared_with_users FILTER html %]
-              [%+ q.shared_with_users > 1 ? "users" : "user" %])
+              ([% q.shared_with_users FILTER html %] kullanıcıyla paylaşılmış)
             [% END %]
           </td>
         [% END %]
@@ -149,35 +147,32 @@
     [% END %]
   </table>
 [% IF user.can_bless %]
-  <p>Note that for every search that has the "Add to footer" selected, a
-     link to the shared search is added to the footer of every user that is
-     a direct member of the group at the time you click Submit Changes.</p>
+  <p>Önemli: "Sayfa altlığına ekle"nin seçili olduğu her aramada, paylaşılan aramaya oluşturulan bir bağlantı "Değişiklikleri Kaydet"e tıkladığınız anda grubun doğrudan üyesi olan her kullanıcının sayfa altlığına eklenir.</p>
 [% END %]
 </blockquote>
 
-<p>You may use these searches saved and shared by others:</p>
+<p>Başkaları tarafından oluşturulan ve paylaşılan şu aramaları da kullanabilirsiniz:</p>
 
 <blockquote>
   <table border="1" cellpadding="3">  
     <tr>
       <th>
-        Search
+        Arama
       </th>
       <th>
-        Shared By
+        Paylaşan
       </th>
       <th>
-        Shared To
+        Paylaşılan
       </th>
       <th>
-        Run
+        Çalıştır
       </th>
       <th>
-        Edit
+        Değiştir
       </th>
       <th>
-        Show in
-        Footer
+        Sayfa altlığında göster
       </th>
     </tr>
     [% found_shared_query = 0 %]
@@ -190,11 +185,11 @@
         <td>
           <a href="buglist.cgi?cmdtype=dorem&amp;remaction=run&amp;namedcmd=
                    [% q.name FILTER url_quote %]&amp;sharer_id=
-                   [% q.user.id FILTER url_quote %]">Run</a>
+                   [% q.user.id FILTER url_quote %]">Çalıştır</a>
         </td>
         <td>
           <a href="query.cgi?[% q.edit_link FILTER html %]&amp;known_name=
-                   [% q.name FILTER url_quote %]">Edit</a>
+                   [% q.name FILTER url_quote %]">Değiştir</a>
         </td>
         <td align="center">
           <input type="checkbox" 
@@ -208,7 +203,7 @@
     [% IF !found_shared_query %]
       <tr>
         <td colspan="6" style="text-align: center">
-          &lt;None&gt;
+          &lt;Yok&gt;
         </td>
       </tr>
     [% END %]

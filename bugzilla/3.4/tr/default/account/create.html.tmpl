@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s): Gervase Markham <gerv@gerv.net>
+  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [%# INTERFACE
@@ -28,7 +29,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% title = BLOCK %]
-  Create a new [% terms.Bugzilla %] account
+  Yeni bir [% terms.Bugzilla %] hesabı oluştur
 [% END %]
 
 [% PROCESS global/header.html.tmpl
@@ -36,27 +37,21 @@
            onload = "document.forms['account_creation_form'].login.focus();" %]
 
 <p>
-  To create a [% terms.Bugzilla %] account, all you need to do is to enter
+  Bir [% terms.Bugzilla %] hesabı oluşturmak için tek yapmanız gereken enter
 [% IF Param('emailsuffix') == '' %]
-  a legitimate email address.
+  geçerli bir eposta adresi
 [% ELSE %]
-  an account name which when combined with [% Param('emailsuffix') %]
-  corresponds to an address where you receive email.
+  [% Param('emailsuffix') %] ile birleştirildiğinde size ait bir eposta adresi oluşturan bir hesap adı
 [% END %]
-  You will receive an email at this address to confirm the creation of your
-  account. <b>You will not be able to log in until you receive the email.</b>
-  If it doesn't arrive within a reasonable amount of time, you may contact
-  the maintainer of this [% terms.Bugzilla %] installation
-  at <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a>.
+  girmek.
+  Hesabınızın oluşturulması işlemini onaylamak için bu adrese bir eposta göndereceğiz.
+  <b>O epostayı alana kadar oturum açamazsınız.</b>
+  Eposta makul bir sürede gelmezse, bu [% terms.Bugzilla %] kurulumunun bakımcısına <a href="mailto:[% Param("maintainer") %]">[% Param("maintainer") %]</a> adresinden ulaşabilirsiniz.
 </p>
 
 [% IF Param('createemailregexp') == '.*' && Param('emailsuffix') == '' %]
 <p>
-  <b>PRIVACY NOTICE:</b> [% terms.Bugzilla %] is an open [% terms.bug %]
-  tracking system. Activity on most [% terms.bugs %], including email
-  addresses, will be visible to the public. We <b>recommend</b> using a
-  secondary account or free web email service (such as Gmail, Yahoo,
-  Hotmail, or similar) to avoid receiving spam at your primary email address.
+  <b>GİZLİLİK NOTU:</b> [% terms.Bugzilla %] açık bir [% terms.bug %] takip sistemidir. Eposta adresleri de dahil çoğu [% terms.bugsLoc %]ki işlemler başkaları tarafından görülebilir. Asıl eposta adresinize spam eposta gelmesini engellemek için Gmail, Yahoo, Hotmail veya benzeri bir web eposta servisi ya da ikinci bir eposta hesabı kullanmanızı <b>öneririz</b>.
 </p>
 [% END %]
 
@@ -64,7 +59,7 @@
   <table>
     <tr>
       <td align="right">
-        <b>Email address:</b>
+        <b>Eposta adresi:</b>
       </td>
       <td>
         <input size="35" id="login" name="login">
@@ -73,7 +68,7 @@
     </tr>
   </table>
   <br>
-  <input type="submit" id="send" value="Send">
+  <input type="submit" id="send" value="Gönder">
 </form>
 
 [% PROCESS global/footer.html.tmpl %]

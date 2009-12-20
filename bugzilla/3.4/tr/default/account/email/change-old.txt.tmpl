@@ -16,6 +16,7 @@
   # Rights Reserved.
   #
   # Contributor(s):     John Vandenberg <zeroj@null.net>
+  # Translator(s):      Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 [%# INTERFACE:
   # emailaddress: string. The user's old Bugzilla login email address.
@@ -27,20 +28,16 @@
 
 From: [% Param('mailfrom') %]
 To: [% emailaddress %]
-Subject: [% terms.Bugzilla %] Change Email Address Request
+Subject: [% terms.Bugzilla %] Eposta Adresi Değiştirme İsteği
 Importance: High
 X-MSMail-Priority: High
 X-Priority: 1
 X-Bugzilla-Type: admin
 
-[%+ terms.Bugzilla %] has received a request to change the email address
-for your account to [%+ newemailaddress %].
+[%+ terms.BugzillaDat %] eposta adresinizi [%+ newemailaddress %] olarak değiştirme yönünde bir istek geldi.
 
-If you are not the person who made this request, or you wish to cancel
-this request, visit the following link:
+Eğer bu istekte bulunan siz değilseniz veya isteği iptal etmek istiyorsanız aşağıdaki bağlantıyı ziyaret edin:
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
 
-If you do nothing, and [%+ newemailaddress %] confirms this request,
-the change will be made permanent after [% constants.MAX_TOKEN_AGE %] days
-(on [% expiration_ts FILTER time("%B %e, %Y at %H:%M %Z") %]).
+Eğer hiçbir şey yapmazsanız ve [%+ newemailaddress %] bu isteği onaylarsa [% constants.MAX_TOKEN_AGE %] gün sonra (tam olarak (on [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %]) değişiklik kalıcı hale getirilecektir.
