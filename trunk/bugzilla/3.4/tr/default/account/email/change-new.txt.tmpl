@@ -16,26 +16,24 @@
   # Rights Reserved.
   #
   # Contributor(s):     John Vandenberg <zeroj@null.net>
+  # Translator(s):      Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS global/variables.none.tmpl %]
 
 From: [% Param('mailfrom') %]
 To: [% emailaddress %]
-Subject: [% terms.Bugzilla %] Change Email Address Request
+Subject: [% terms.Bugzilla %] Eposta Adresi Değiştirme İsteği
 X-Bugzilla-Type: admin
 
-[%+ terms.Bugzilla %] has received a request to change the email address
-for the account [% oldemailaddress %] to your address.
+[%+ terms.BugzillaDat %] [% oldemailaddress %] hesabınızın eposta adresini değiştirmek için bir istekte bulunuldu.
 
-To confirm the change, visit the following link:
+Bu değişikliği onaylamak için aşağıdaki bağlantıyı ziyaret edin:
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cfmem
 
-If you are not the person who made this request, or you wish to cancel
-this request, visit the following link:
+Eğer bu istekte bulunan siz değilseniz veya bu isteği iptal etmek istiyorsanız, aşağıdaki bağlantıyı ziyaret edin:
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=cxlem
 
-If you do nothing, the request will lapse after [% constants.MAX_TOKEN_AGE %] days
-(on [% expiration_ts FILTER time("%B %e, %Y at %H:%M %Z") %]).
+Eğer hiçbir işlem yapmazsanız, bu istek [% constants.MAX_TOKEN_AGE %] gün sonra (tam olarak [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %]) geçerliliğini yitirecektir.
