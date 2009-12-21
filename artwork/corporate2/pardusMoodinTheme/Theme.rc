@@ -15,7 +15,8 @@ IconSetSize = 48
 Image1 = kcmsystem
 Image2 = kcontrol
 Image3 = kcmpci
-Image7 = kmenu
+Image7 = kmenuedit
+Image8 = kmenu
 
 LineUpImages = false
 
