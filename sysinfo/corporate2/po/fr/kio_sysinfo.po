@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2007-06-19 00:24+0200\n"
 "Last-Translator: Amine Chadly <amine.chadly@gmail.com>\n"
 "Language-Team: french <pardus-translators@pardus.org.tr>\n"
@@ -74,7 +74,7 @@ msgstr "Mémoire allouée :"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr "Pilote :"
 
 #: sysinfo/sysinfo.cpp:307
 #, fuzzy
-msgid "Machine information"
+msgid "Machine Information"
 msgstr "Informations concernant la mémoire"
 
 #: sysinfo/sysinfo.cpp:308
@@ -155,10 +155,6 @@ msgstr ""
 
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
-msgstr ""
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
 msgstr ""
 
 #: sysinfo/sysinfo.cpp:503

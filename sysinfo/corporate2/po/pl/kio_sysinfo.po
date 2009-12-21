@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -73,7 +73,7 @@ msgstr "Używana Pamięć"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr "Sterownik:"
 
 #: sysinfo/sysinfo.cpp:307
 #, fuzzy
-msgid "Machine information"
+msgid "Machine Information"
 msgstr "Informacje o Pamięci"
 
 #: sysinfo/sysinfo.cpp:308
@@ -154,10 +154,6 @@ msgstr ""
 
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
-msgstr ""
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
 msgstr ""
 
 #: sysinfo/sysinfo.cpp:503

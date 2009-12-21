@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2009-01-08 17:47+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -73,7 +73,7 @@ msgstr "Minne"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -127,7 +127,7 @@ msgid "Driver: "
 msgstr "Drivrutin: "
 
 #: sysinfo/sysinfo.cpp:307
-msgid "Machine information"
+msgid "Machine Information"
 msgstr ""
 
 #: sysinfo/sysinfo.cpp:308
@@ -149,10 +149,6 @@ msgstr "Monterad på %1"
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
 msgstr "Inte monterad"
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
-msgstr "%1 ledigt av %2"
 
 #: sysinfo/sysinfo.cpp:503
 msgid "3D Not Supported"
@@ -185,6 +181,9 @@ msgstr "Du är <strong>ansluten</strong>"
 #: sysinfo/sysinfo.cpp:524
 msgid "Unknown network status"
 msgstr "Okänd nätverksstatus"
+
+#~ msgid "%1 free of %2"
+#~ msgstr "%1 ledigt av %2"
 
 #~ msgid ""
 #~ "Folders, Harddisks, Removable Devices, System Information and more..."

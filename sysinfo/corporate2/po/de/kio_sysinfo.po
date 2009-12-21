@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2009-01-13 23:38+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -75,7 +75,7 @@ msgstr "Arbeitsspeicher"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -129,7 +129,7 @@ msgid "Driver: "
 msgstr "Treiber: "
 
 #: sysinfo/sysinfo.cpp:307
-msgid "Machine information"
+msgid "Machine Information"
 msgstr ""
 
 #: sysinfo/sysinfo.cpp:308
@@ -151,10 +151,6 @@ msgstr "Gebunden auf %1"
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
 msgstr "Nicht gebunden"
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
-msgstr "%1 frei von %2"
 
 #: sysinfo/sysinfo.cpp:503
 msgid "3D Not Supported"
@@ -187,6 +183,9 @@ msgstr "Sie sind <strong>online</strong>"
 #: sysinfo/sysinfo.cpp:524
 msgid "Unknown network status"
 msgstr "Unbekannter Netzwerkstatus"
+
+#~ msgid "%1 free of %2"
+#~ msgstr "%1 frei von %2"
 
 #~ msgid ""
 #~ "Folders, Harddisks, Removable Devices, System Information and more..."
