@@ -262,17 +262,6 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
 
     // Static Info
 
-    // OS info
-    osInfo();
-    staticInfo += startStock(i18n("Operating System"));
-    staticInfo += addToStock("system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b>", m_info[OS_USER] + "@" + m_info[OS_HOSTNAME]);
-    staticInfo += addToStock("system", i18n("KDE <b>%1</b> on <b>%2</b>").arg(KDE::versionString()).arg(m_info[OS_SYSTEM]));
-    staticInfo += finishStock();
-
-    // update content..
-    content = content.arg(staticInfo);
-    staticInfo = "";
-
     // CPU info
     cpuInfo();
     if (!m_info[CPU_MODEL].isNull())
@@ -288,6 +277,17 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
                                                                         i18n("Processor doesn't support virtualization")));
         staticInfo += finishStock();
     }
+
+    // update content..
+    content = content.arg(staticInfo);
+    staticInfo = "";
+
+    // OS info
+    osInfo();
+    staticInfo += startStock(i18n("Operating System"));
+    staticInfo += addToStock("system", m_info[OS_SYSNAME] + " <b>" + m_info[OS_RELEASE] + "</b>", m_info[OS_USER] + "@" + m_info[OS_HOSTNAME]);
+    staticInfo += addToStock("system", i18n("KDE <b>%1</b> on <b>%2</b>").arg(KDE::versionString()).arg(m_info[OS_SYSTEM]));
+    staticInfo += finishStock();
 
     // update content..
     content = content.arg(staticInfo);
