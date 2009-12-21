@@ -9,42 +9,38 @@ import os
 import shutil
 import sys
 import tempfile
-
-from common import getDiskInfo
-from common import getIsoSize
-from common import getFileSize
-from common import getMounted
-from common import createSyslinux
-from common import createUSBDirs
-from common import runCommand
-from common import PartitionUtils
-
-from constants import CORE_DEVELOPER
-from constants import CORE_EMAIL
-from constants import LICENSE_NAME
-from constants import NAME
-from constants import SHARE
-from constants import URL
-from constants import VERSION
-from constants import YEAR
-from constants import ART_CONTRIBUTOR
-from constants import TRANSLATORS
-
-from puding import qtAbout
-from puding import qtConfirmDialog
-from puding import qtMain
-from puding import qtProgressBar
-from puding import qtSelectDisk
-
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-from releases import releases
+from puding.common import getDiskInfo
+from puding.common import getIsoSize
+from puding.common import getFileSize
+from puding.common import getMounted
+from puding.common import createSyslinux
+from puding.common import createUSBDirs
+from puding.common import runCommand
+from puding.common import PartitionUtils
+from puding.constants import CORE_DEVELOPER
+from puding.constants import CORE_EMAIL
+from puding.constants import LICENSE_NAME
+from puding.constants import SHARE
+from puding.constants import URL
+from puding.constants import VERSION
+from puding.constants import YEAR
+from puding.constants import ART_CONTRIBUTOR
+from puding.constants import TRANSLATORS
+from puding.releases import releases
+from puding.ui.qt import about_dialog_ui
+from puding.ui.qt import confirm_dialog_ui
+from puding.ui.qt import main_window_ui
+from puding.ui.qt import progressbar_ui
+from puding.ui.qt import select_disk_ui
+
 
 # General variables
 increment_value = 1024**2
 
-class Create(QtGui.QMainWindow, qtMain.Ui_MainWindow):
+class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
     def __init__(self, parent = None):
         self.iso_dir = tempfile.mkdtemp(suffix="_isoPuding")
 
@@ -211,7 +207,7 @@ you have downloaded the source correctly."""
 
         return True
 
-class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
+class SelectDisk(QtGui.QDialog, select_disk_ui.Ui_Dialog):
     def __init__(self, parent = None):
         self.partutils = PartitionUtils()
         self.partutils.detectRemovableDrives()
@@ -253,7 +249,7 @@ class SelectDisk(QtGui.QDialog, qtSelectDisk.Ui_Dialog):
 
         return self.line_directory.displayText()
 
-class ConfirmDialog(QtGui.QDialog, qtConfirmDialog.Ui_Dialog):
+class ConfirmDialog(QtGui.QDialog, confirm_dialog_ui.Ui_Dialog):
     def __init__(self, src, dst, mount_point, name, total_size, capacity, available, used, parent = None):
         super(ConfirmDialog, self).__init__(parent)
         self.setupUi(self)
@@ -268,7 +264,7 @@ class ConfirmDialog(QtGui.QDialog, qtConfirmDialog.Ui_Dialog):
         self.label_available.setText("%dMB" % available)
         self.label_used.setText("%dMB" % used)
 
-class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
+class ProgressBar(QtGui.QDialog, progressbar_ui.Ui_Dialog):
     def __init__(self, title, message, max_value, parent = None):
         super(ProgressBar, self).__init__(parent)
         self.setupUi(self)
@@ -283,7 +279,7 @@ class ProgressBar(QtGui.QDialog, qtProgressBar.Ui_Dialog):
         current_value = self.progressBar.value()
         self.progressBar.setValue(current_value + 1)
 
-class About(QtGui.QDialog, qtAbout.Ui_Dialog):
+class About(QtGui.QDialog, about_dialog_ui.Ui_Dialog):
     def __init__(self, parent = None):
         super(About, self).__init__(parent)
         self.setupUi(self)
@@ -367,13 +363,3 @@ class ProgressIncrementCopy(QtCore.QThread):
     def updateLabel(self, message):
         self.label.setText(message)
 
-# And last..
-def main():
-    app = QtGui.QApplication(sys.argv)
-    locale = QtCore.QLocale.system().name()
-    translator = QtCore.QTranslator()
-    translator.load("%s/qm/puding_%s.qm" % (SHARE, locale))
-    app.installTranslator(translator)
-    form = Create()
-    form.show()
-    sys.exit(app.exec_())
