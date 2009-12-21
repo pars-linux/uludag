@@ -12,22 +12,16 @@ import shutil
 import subprocess
 import tempfile
 
-from common import _
-from common import runCommand
-from common import createConfigFile
-from common import createSyslinux
-from common import createUSBDirs
-from common import getDiskInfo
-from common import getIsoSize
-from common import getMounted
-from common import unmountDirs
-from common import PartitionUtils
+from puding import _
+from puding.common import runCommand
+from puding.common import createSyslinux
+from puding.common import createUSBDirs
+from puding.common import getDiskInfo
+from puding.common import getIsoSize
+from puding.common import unmountDirs
+from puding.common import PartitionUtils
+from puding.releases import releases
 
-from constants import HOME
-from constants import NAME
-from constants import SHARE
-
-from releases import releases
 
 class ProgressBar:
     def __init__(self, src):
