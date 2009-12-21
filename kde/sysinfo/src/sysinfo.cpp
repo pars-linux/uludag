@@ -256,14 +256,14 @@ void kio_sysinfoProtocol::get( const KUrl &)
     dynamicInfo += finishStock( true );
 
     // memory info
-    unsigned long int percent = memoryInfo();
+    memoryInfo();
 
     dynamicInfo += startStock( i18n( "Memory" ) );
     dynamicInfo += addToStock( "media-flash",
                                 i18n( "Ram : %1 free of %2", m_info[MEM_FREERAM].toString(), m_info[MEM_TOTALRAM].toString() ),
                                 m_info[MEM_USAGE].toString());
     dynamicInfo += addToStock("media-flash",(m_info[MEM_TOTALSWAP]!="0" ?
-                                  i18n("Swap: %1 free of %2", m_info[MEM_FREESWAP], m_info[MEM_TOTALSWAP]):
+                                  i18n("Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString()):
                                   i18n("Not in use")));
 
     dynamicInfo += addToStock( "media-flash",
@@ -383,7 +383,7 @@ void kio_sysinfoProtocol::memoryInfo(void)
                        swapfree = 0;
 
     // Parse /proc/meminfo for memory usage statistics
-    if (file.exists() && file.open(IO_ReadOnly))
+    if (file.exists() && file.open(QIODevice::ReadOnly))
     {
 
         QTextStream stream(&file);
@@ -395,17 +395,17 @@ void kio_sysinfoProtocol::memoryInfo(void)
             if (!line.isEmpty())
             {
                 if (line.startsWith("MemTotal"))
-                    memtotal = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    memtotal = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
                 else if (line.startsWith("MemFree"))
-                    memfree = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    memfree = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
                 else if (line.startsWith("Buffers"))
-                    buffers = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    buffers = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
                 else if (line.startsWith("Cached"))
-                    cached = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    cached = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
                 else if (line.startsWith("SwapTotal"))
-                    swaptotal = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    swaptotal = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
                 else if (line.startsWith("SwapFree"))
-                    swapfree = line.section(":", 1, 1).replace(" kB", "").stripWhiteSpace().toULongLong();
+                    swapfree = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
             }
         }
     }
