@@ -279,8 +279,11 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
     {
         staticInfo += startStock(i18n("Processor"));
         staticInfo += addToStock("kcmprocessor", m_info[CPU_MODEL]);
-        staticInfo += addToStock("kcmprocessor", i18n("%1 MHz").arg(
-                    KGlobal::locale()->formatNumber(m_info[CPU_SPEED].toFloat(), 2))+ " (" + m_info[CPU_NOFCORE] + i18n(" core") + ")");
+
+        // Hack to handle plural forms
+#define ngettext i18n
+       staticInfo += addToStock("kcmprocessor", i18n("%1 MHz").arg(
+                    KGlobal::locale()->formatNumber(m_info[CPU_SPEED].toFloat(), 2))+ " (" + ngettext("1 core", "%n cores", m_info[CPU_NOFCORE].toLong()) + ")");
         staticInfo += addToStock("kcmprocessor", (m_info[CPU_VT]=="Yes"?i18n("Processor supports virtualization"):
                                                                         i18n("Processor doesn't support virtualization")));
         staticInfo += finishStock();
