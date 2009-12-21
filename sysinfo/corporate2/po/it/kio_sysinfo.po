@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-15 12:43+0200\n"
+"POT-Creation-Date: 2009-12-21 11:22+0200\n"
 "PO-Revision-Date: 2007-07-11 20:45+0200\n"
 "Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -20,141 +20,185 @@ msgstr ""
 msgid "KSysinfo"
 msgstr "KSysinfo"
 
-#: sysinfo/sysinfo.cpp:68
+#: sysinfo/sysinfo.cpp:72 sysinfo/sysinfo.cpp:90
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo/sysinfo.cpp:70
+#: sysinfo/sysinfo.cpp:74 sysinfo/sysinfo.cpp:92
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo/sysinfo.cpp:72
+#: sysinfo/sysinfo.cpp:76
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo/sysinfo.cpp:137
+#: sysinfo/sysinfo.cpp:206
 #, fuzzy
 msgid "Not Available"
 msgstr "Disponibile"
 
-#: sysinfo/sysinfo.cpp:151
+#: sysinfo/sysinfo.cpp:220
 msgid "Looking for hardware information..."
 msgstr "Recupero delle informazioni sull'hardware..."
 
-#: sysinfo/sysinfo.cpp:154
+#: sysinfo/sysinfo.cpp:223
 msgid "My Computer"
 msgstr "Il mio computer"
 
-#: sysinfo/sysinfo.cpp:156
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Cartelle, dischi rigidi, dispositivi rimovibili, informazioni sul sistema e "
-"altro..."
-
-#: sysinfo/sysinfo.cpp:164
+#: sysinfo/sysinfo.cpp:232
 msgid "Common Folders"
 msgstr "Cartelle di frequente utilizzo"
 
-#: sysinfo/sysinfo.cpp:165
+#: sysinfo/sysinfo.cpp:233
 msgid "My Home Folder"
 msgstr "Cartella Home"
 
-#: sysinfo/sysinfo.cpp:166
+#: sysinfo/sysinfo.cpp:234
 msgid "Root Folder"
 msgstr "Cartella di root"
 
-#: sysinfo/sysinfo.cpp:167
+#: sysinfo/sysinfo.cpp:235
 msgid "Network Folders"
 msgstr "Cartelle di rete"
 
-#: sysinfo/sysinfo.cpp:173
+#: sysinfo/sysinfo.cpp:241
 #, fuzzy
 msgid "Network"
 msgstr "Stato della rete"
 
-#: sysinfo/sysinfo.cpp:181
+#: sysinfo/sysinfo.cpp:249
 #, fuzzy
 msgid "Memory"
 msgstr "Memoria in uso"
 
-#: sysinfo/sysinfo.cpp:182 sysinfo/sysinfo.cpp:324
-msgid "%1 free of %2"
+#: sysinfo/sysinfo.cpp:250
+msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:190
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+msgid "%1 of %2 is free"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:251
+#, fuzzy
+msgid "Swap memory: "
+msgstr "Memoria libera:"
+
+#: sysinfo/sysinfo.cpp:253
+msgid "Not in use"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:260
 msgid "Disks"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:197
+#: sysinfo/sysinfo.cpp:267
 msgid "Operating System"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:199
-msgid "Kde <b>%1</b> on <b>%2</b>"
+#: sysinfo/sysinfo.cpp:269
+msgid "KDE <b>%1</b> on <b>%2</b>"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:210
+#: sysinfo/sysinfo.cpp:280
 #, fuzzy
 msgid "Processor"
 msgstr "Processore (CPU):"
 
-#: sysinfo/sysinfo.cpp:212
+#: sysinfo/sysinfo.cpp:282
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:213
+#: sysinfo/sysinfo.cpp:283
 msgid " core"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:224
+#: sysinfo/sysinfo.cpp:284 sysinfo/sysinfo.cpp:349
+msgid "Processor supports virtualization"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:285 sysinfo/sysinfo.cpp:350
+msgid "Processor doesn't support virtualization"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:296
 #, fuzzy
 msgid "Display"
 msgstr "Informazioni sulla scheda video"
 
-#: sysinfo/sysinfo.cpp:227
+#: sysinfo/sysinfo.cpp:299
 #, fuzzy
 msgid "Driver: "
 msgstr "Driver:"
 
-#: sysinfo/sysinfo.cpp:319
+#: sysinfo/sysinfo.cpp:307
+#, fuzzy
+msgid "Machine information"
+msgstr "Informazioni sulla memoria"
+
+#: sysinfo/sysinfo.cpp:308
+#, fuzzy
+msgid "Vendor: "
+msgstr "Produttore:"
+
+#: sysinfo/sysinfo.cpp:309
+msgid "Product: "
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:310
+#, fuzzy
+msgid "BIOS: "
+msgstr "SO:"
+
+#: sysinfo/sysinfo.cpp:364
 msgid "Mounted on %1"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:319
+#: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:458
+#: sysinfo/sysinfo.cpp:370
+msgid "%1 free of %2"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:503
 msgid "3D Not Supported"
 msgstr "senza supporto 3D"
 
-#: sysinfo/sysinfo.cpp:460
+#: sysinfo/sysinfo.cpp:505
 msgid "3D Supported"
 msgstr "con supporto 3D"
 
-#: sysinfo/sysinfo.cpp:469
+#: sysinfo/sysinfo.cpp:514
 msgid "Network is <strong>unreachable</strong>"
 msgstr "La rete <strong>non è raggiungibile</strong>"
 
-#: sysinfo/sysinfo.cpp:471
+#: sysinfo/sysinfo.cpp:516
 msgid "You are <strong>offline</strong>"
 msgstr "<strong>Non sei connesso</strong>"
 
-#: sysinfo/sysinfo.cpp:473
+#: sysinfo/sysinfo.cpp:518
 msgid "Network is <strong>shutting down</strong>"
 msgstr "La rete è <strong>in fase di chiusura</strong>"
 
-#: sysinfo/sysinfo.cpp:475
+#: sysinfo/sysinfo.cpp:520
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "Connessione alla rete <strong>in corso</strong>"
 
-#: sysinfo/sysinfo.cpp:477
+#: sysinfo/sysinfo.cpp:522
 msgid "You are <strong>online</strong>"
 msgstr "<strong>Sei connesso</strong>"
 
-#: sysinfo/sysinfo.cpp:479
+#: sysinfo/sysinfo.cpp:524
 msgid "Unknown network status"
 msgstr "Stato della rete sconosciuto"
+
+#~ msgid ""
+#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr ""
+#~ "Cartelle, dischi rigidi, dispositivi rimovibili, informazioni sul sistema "
+#~ "e altro..."
 
 #~ msgid "CPU Information"
 #~ msgstr "Informazioni sulla CPU"
@@ -162,14 +206,8 @@ msgstr "Stato della rete sconosciuto"
 #~ msgid "Speed:"
 #~ msgstr "Frequenza:"
 
-#~ msgid "Memory Information"
-#~ msgstr "Informazioni sulla memoria"
-
 #~ msgid "Total memory (RAM):"
 #~ msgstr "Memoria RAM totale:"
-
-#~ msgid "Free memory:"
-#~ msgstr "Memoria libera:"
 
 #~ msgid "Total swap:"
 #~ msgstr "Swap totale:"
@@ -182,9 +220,6 @@ msgstr "Stato della rete sconosciuto"
 
 #~ msgid "Type:"
 #~ msgstr "Tipo:"
-
-#~ msgid "Vendor:"
-#~ msgstr "Produttore:"
 
 #~ msgid "Model:"
 #~ msgstr "Modello:"
@@ -200,9 +235,6 @@ msgstr "Stato della rete sconosciuto"
 
 #~ msgid "OS Information"
 #~ msgstr "Informazioni sul sistema operativo"
-
-#~ msgid "OS:"
-#~ msgstr "SO:"
 
 #~ msgid "Current user:"
 #~ msgstr "Utente corrente:"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-15 12:43+0200\n"
+"POT-Creation-Date: 2009-12-21 11:22+0200\n"
 "PO-Revision-Date: 2009-01-13 23:38+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -23,131 +23,172 @@ msgstr ""
 msgid "KSysinfo"
 msgstr "KSysinfo"
 
-#: sysinfo/sysinfo.cpp:68
+#: sysinfo/sysinfo.cpp:72 sysinfo/sysinfo.cpp:90
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: sysinfo/sysinfo.cpp:70
+#: sysinfo/sysinfo.cpp:74 sysinfo/sysinfo.cpp:92
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: sysinfo/sysinfo.cpp:72
+#: sysinfo/sysinfo.cpp:76
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: sysinfo/sysinfo.cpp:137
+#: sysinfo/sysinfo.cpp:206
 msgid "Not Available"
 msgstr "Nicht Verfügbar"
 
-#: sysinfo/sysinfo.cpp:151
+#: sysinfo/sysinfo.cpp:220
 msgid "Looking for hardware information..."
 msgstr "Hardware-Informationen werden gesucht..."
 
-#: sysinfo/sysinfo.cpp:154
+#: sysinfo/sysinfo.cpp:223
 msgid "My Computer"
 msgstr "Mein Computer"
 
-#: sysinfo/sysinfo.cpp:156
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Ordner, Festplatten, Wechseldatenträger, System-Informationen und mehr..."
-
-#: sysinfo/sysinfo.cpp:164
+#: sysinfo/sysinfo.cpp:232
 msgid "Common Folders"
 msgstr "Gemeinsamer Ordner"
 
-#: sysinfo/sysinfo.cpp:165
+#: sysinfo/sysinfo.cpp:233
 msgid "My Home Folder"
 msgstr "Persönlicher Ordner"
 
-#: sysinfo/sysinfo.cpp:166
+#: sysinfo/sysinfo.cpp:234
 msgid "Root Folder"
 msgstr "Wurzel(Root)-Ordner"
 
-#: sysinfo/sysinfo.cpp:167
+#: sysinfo/sysinfo.cpp:235
 msgid "Network Folders"
 msgstr "Netzwerk-Ordner"
 
-#: sysinfo/sysinfo.cpp:173
+#: sysinfo/sysinfo.cpp:241
 msgid "Network"
 msgstr "Netzwerk"
 
-#: sysinfo/sysinfo.cpp:181
+#: sysinfo/sysinfo.cpp:249
 msgid "Memory"
 msgstr "Arbeitsspeicher"
 
-#: sysinfo/sysinfo.cpp:182 sysinfo/sysinfo.cpp:324
-msgid "%1 free of %2"
-msgstr "%1 frei von %2"
+#: sysinfo/sysinfo.cpp:250
+msgid "Physical memory: "
+msgstr ""
 
-#: sysinfo/sysinfo.cpp:190
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+msgid "%1 of %2 is free"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:251
+msgid "Swap memory: "
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:253
+msgid "Not in use"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:260
 msgid "Disks"
 msgstr "Festplatten"
 
-#: sysinfo/sysinfo.cpp:197
+#: sysinfo/sysinfo.cpp:267
 msgid "Operating System"
 msgstr "Betriebssystem"
 
-#: sysinfo/sysinfo.cpp:199
-msgid "Kde <b>%1</b> on <b>%2</b>"
+#: sysinfo/sysinfo.cpp:269
+#, fuzzy
+msgid "KDE <b>%1</b> on <b>%2</b>"
 msgstr "Kde <b>%1</b> auf <b>%2</b>"
 
-#: sysinfo/sysinfo.cpp:210
+#: sysinfo/sysinfo.cpp:280
 msgid "Processor"
 msgstr "Prozessor"
 
-#: sysinfo/sysinfo.cpp:212
+#: sysinfo/sysinfo.cpp:282
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:213
+#: sysinfo/sysinfo.cpp:283
 msgid " core"
 msgstr "Kern"
 
-#: sysinfo/sysinfo.cpp:224
+#: sysinfo/sysinfo.cpp:284 sysinfo/sysinfo.cpp:349
+msgid "Processor supports virtualization"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:285 sysinfo/sysinfo.cpp:350
+msgid "Processor doesn't support virtualization"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:296
 msgid "Display"
 msgstr "Anzeige"
 
-#: sysinfo/sysinfo.cpp:227
+#: sysinfo/sysinfo.cpp:299
 msgid "Driver: "
 msgstr "Treiber: "
 
-#: sysinfo/sysinfo.cpp:319
+#: sysinfo/sysinfo.cpp:307
+msgid "Machine information"
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:308
+msgid "Vendor: "
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:309
+msgid "Product: "
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:310
+msgid "BIOS: "
+msgstr ""
+
+#: sysinfo/sysinfo.cpp:364
 msgid "Mounted on %1"
 msgstr "Gebunden auf %1"
 
-#: sysinfo/sysinfo.cpp:319
+#: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
 msgstr "Nicht gebunden"
 
-#: sysinfo/sysinfo.cpp:458
+#: sysinfo/sysinfo.cpp:370
+msgid "%1 free of %2"
+msgstr "%1 frei von %2"
+
+#: sysinfo/sysinfo.cpp:503
 msgid "3D Not Supported"
 msgstr "Keine 3D-Unterstützung"
 
-#: sysinfo/sysinfo.cpp:460
+#: sysinfo/sysinfo.cpp:505
 msgid "3D Supported"
 msgstr "3D-Unterstützung"
 
-#: sysinfo/sysinfo.cpp:469
+#: sysinfo/sysinfo.cpp:514
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Das Netzwerk ist  <strong>nicht erreichbar</strong>"
 
-#: sysinfo/sysinfo.cpp:471
+#: sysinfo/sysinfo.cpp:516
 msgid "You are <strong>offline</strong>"
 msgstr "Sie sind <strong>offline</strong>"
 
-#: sysinfo/sysinfo.cpp:473
+#: sysinfo/sysinfo.cpp:518
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Netzwerkverbindungen werden <strong>getrennt</strong>"
 
-#: sysinfo/sysinfo.cpp:475
+#: sysinfo/sysinfo.cpp:520
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Herstellung</strong> der Netzwerkverbindung"
 
-#: sysinfo/sysinfo.cpp:477
+#: sysinfo/sysinfo.cpp:522
 msgid "You are <strong>online</strong>"
 msgstr "Sie sind <strong>online</strong>"
 
-#: sysinfo/sysinfo.cpp:479
+#: sysinfo/sysinfo.cpp:524
 msgid "Unknown network status"
 msgstr "Unbekannter Netzwerkstatus"
+
+#~ msgid ""
+#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr ""
+#~ "Ordner, Festplatten, Wechseldatenträger, System-Informationen und mehr..."
