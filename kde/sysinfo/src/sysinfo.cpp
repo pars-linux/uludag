@@ -266,8 +266,6 @@ void kio_sysinfoProtocol::get( const KUrl &)
                                   i18n("Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString()):
                                   i18n("Not in use")));
 
-    dynamicInfo += addToStock( "media-flash",
-                                i18n( "Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString() ));
     dynamicInfo += finishStock();
 
     content = content.arg( dynamicInfo ); // put the dynamicInfo text into the dynamic left box
