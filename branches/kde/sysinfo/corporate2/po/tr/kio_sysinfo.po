@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2008-05-16 13:07+0300\n"
 "Last-Translator: Gökmen GÖKSEL <gokmen@pardus.org.tr>\n"
 "Language-Team:  <yerellestirme@kde.org.tr>\n"
@@ -37,7 +37,7 @@ msgstr "Mevcut Değil"
 
 #: sysinfo/sysinfo.cpp:220
 msgid "Looking for hardware information..."
-msgstr "Donanım bilgileri alınıyor.."
+msgstr "Donanım bilgileri toplanıyor..."
 
 #: sysinfo/sysinfo.cpp:223
 msgid "My Computer"
@@ -65,13 +65,13 @@ msgstr "Ağ Durumu"
 
 #: sysinfo/sysinfo.cpp:249
 msgid "Memory"
-msgstr "Bellek kullanımı"
+msgstr "Bellek Kullanımı"
 
 #: sysinfo/sysinfo.cpp:250
 msgid "Physical memory: "
 msgstr "Fiziksel bellek: "
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr "%2'ın %1'ı boş"
 
@@ -124,8 +124,8 @@ msgid "Driver: "
 msgstr "Sürücü: "
 
 #: sysinfo/sysinfo.cpp:307
-msgid "Machine information"
-msgstr "Makine bilgisi"
+msgid "Machine Information"
+msgstr "Makine Bilgileri"
 
 #: sysinfo/sysinfo.cpp:308
 msgid "Vendor: "
@@ -146,10 +146,6 @@ msgstr "%1 noktasına bağlı"
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
 msgstr "Bağlı değil"
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
-msgstr "%2 'ın %1 'ı boş"
 
 #: sysinfo/sysinfo.cpp:503
 msgid "3D Not Supported"
@@ -182,6 +178,9 @@ msgstr "Şu anda <strong>bağlısınız</strong>"
 #: sysinfo/sysinfo.cpp:524
 msgid "Unknown network status"
 msgstr "Bilinmeyen ağ durumu"
+
+#~ msgid "%1 free of %2"
+#~ msgstr "%2 'ın %1 'ı boş"
 
 #~ msgid ""
 #~ "Folders, Harddisks, Removable Devices, System Information and more..."

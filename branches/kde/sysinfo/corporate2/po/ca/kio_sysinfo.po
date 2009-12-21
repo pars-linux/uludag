@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:22+0200\n"
+"POT-Creation-Date: 2009-12-21 11:28+0200\n"
 "PO-Revision-Date: 2007-03-27 18:15+0200\n"
 "Last-Translator: Jaume Villalba <javs@tinet.cat>\n"
 "Language-Team: català <Ubuntu Catalan Translators <ubuntu-l10n-ca@lists."
@@ -78,7 +78,7 @@ msgstr "Memòria en ús:"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -136,7 +136,7 @@ msgstr "Controlador:"
 
 #: sysinfo/sysinfo.cpp:307
 #, fuzzy
-msgid "Machine information"
+msgid "Machine Information"
 msgstr "Informació sobre la memòria"
 
 #: sysinfo/sysinfo.cpp:308
@@ -159,10 +159,6 @@ msgstr ""
 
 #: sysinfo/sysinfo.cpp:364
 msgid "Not mounted"
-msgstr ""
-
-#: sysinfo/sysinfo.cpp:370
-msgid "%1 free of %2"
 msgstr ""
 
 #: sysinfo/sysinfo.cpp:503
