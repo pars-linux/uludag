@@ -7,6 +7,7 @@ Puding is a USB image creator for Pardus 2008 or later. You can write image to U
 + mtools
 + fuseiso
 + fuse
++ pyxdg
 
 # Installation #
 ## Pardus (Puding is in contrib repository): ##

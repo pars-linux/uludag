@@ -6,22 +6,17 @@
 #
 
 import dbus
-import gettext
 import glob
 import os
 import shutil
 import subprocess
 import tempfile
 
-from constants import NAME
 from constants import LOCALE
 from constants import SHARE
 from constants import SYSLINUX
 
 from releases import releases
-
-t = gettext.translation(NAME, LOCALE, fallback = True)
-_ = t.ugettext
 
 def getDiskInfo(dst):
     disk_info = os.statvfs(dst)

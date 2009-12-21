@@ -60,7 +60,7 @@ script = os.path.join("build", "puding")
 # TODO: It will be in build process..
 if not os.path.exists("build"):
     os.mkdir("build")
-shutil.copyfile(os.path.join("puding", "puding.py"), script)
+shutil.copyfile(os.path.join("puding", "main.py"), script)
 
 # Convert desktop.in
 os.system("intltool-merge -d po datas/puding.desktop.in datas/puding.desktop")
