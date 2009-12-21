@@ -65,9 +65,9 @@
     * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (+)
     * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (+)
-    * Fontlar çok kötü gözüküyor (/50) [Fatih Aşıcı]
+    * Fontlar çok kötü gözüküyor (/80) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
-    * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (-)
+    * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (50)
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
@@ -83,7 +83,7 @@
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+) [Fatih Aşıcı]
-    * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (-) [Gökçen Eraslan]
+    * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (50) [Gökçen Eraslan]
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
