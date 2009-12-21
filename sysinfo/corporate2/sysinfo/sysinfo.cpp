@@ -304,7 +304,7 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
     content = content.arg(staticInfo);
     staticInfo = "";
 
-    staticInfo += startStock(i18n("Machine information"));
+    staticInfo += startStock(i18n("Machine Information"));
     staticInfo += addToStock("applications-other", i18n("Vendor: ") + m_info[MANUFACTURER]);
     staticInfo += addToStock("applications-other", i18n("Product: ") + m_info[PRODUCT]);
     staticInfo += addToStock("applications-other", i18n("BIOS: ") + m_info[BIOSVENDOR] + " " + m_info[BIOSVERSION] + " " + m_info[BIOSDATE]);
@@ -367,7 +367,7 @@ QString kio_sysinfoProtocol::diskInfo()
             peer = di.total / 100;
             peer == 0 ? percent = 0 : percent = usage / peer;
             percent = di.mounted ? percent: 0;
-            QString sizeStatus = di.mounted ? i18n("%1 free of %2").arg(formattedUnit(di.avail,0)).arg(formattedUnit(di.total,0)): "";
+            QString sizeStatus = di.mounted ? i18n("%1 of %2 is free").arg(formattedUnit(di.avail,0)).arg(formattedUnit(di.total,0)): "";
 
             result +=   QString("<tr class=\"media\">"
                                 "   <td>"
