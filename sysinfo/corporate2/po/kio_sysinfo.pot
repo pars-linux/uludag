@@ -8,13 +8,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:28+0200\n"
+"POT-Creation-Date: 2009-12-21 13:56+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
 #: sysinfo/ksysinfopart.cpp:72
 msgid "KSysinfo"
@@ -72,7 +73,7 @@ msgstr ""
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -100,82 +101,85 @@ msgstr ""
 msgid "Processor"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:282
+#: sysinfo/sysinfo.cpp:285
 msgid "%1 MHz"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:283
-msgid " core"
-msgstr ""
+#: sysinfo/sysinfo.cpp:286
+#, c-format
+msgid "1 core"
+msgid_plural "%n cores"
+msgstr[0] ""
+msgstr[1] ""
 
-#: sysinfo/sysinfo.cpp:284 sysinfo/sysinfo.cpp:349
+#: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
 msgid "Processor supports virtualization"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:285 sysinfo/sysinfo.cpp:350
+#: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
 msgid "Processor doesn't support virtualization"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:296
+#: sysinfo/sysinfo.cpp:299
 msgid "Display"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:299
+#: sysinfo/sysinfo.cpp:302
 msgid "Driver: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:307
+#: sysinfo/sysinfo.cpp:310
 msgid "Machine Information"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:308
+#: sysinfo/sysinfo.cpp:311
 msgid "Vendor: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:309
+#: sysinfo/sysinfo.cpp:312
 msgid "Product: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:310
+#: sysinfo/sysinfo.cpp:313
 msgid "BIOS: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:364
+#: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:364
+#: sysinfo/sysinfo.cpp:367
 msgid "Not mounted"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:503
+#: sysinfo/sysinfo.cpp:506
 msgid "3D Not Supported"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:505
+#: sysinfo/sysinfo.cpp:508
 msgid "3D Supported"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:514
+#: sysinfo/sysinfo.cpp:517
 msgid "Network is <strong>unreachable</strong>"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:516
+#: sysinfo/sysinfo.cpp:519
 msgid "You are <strong>offline</strong>"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:518
+#: sysinfo/sysinfo.cpp:521
 msgid "Network is <strong>shutting down</strong>"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:520
+#: sysinfo/sysinfo.cpp:523
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:522
+#: sysinfo/sysinfo.cpp:525
 msgid "You are <strong>online</strong>"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:524
+#: sysinfo/sysinfo.cpp:527
 msgid "Unknown network status"
 msgstr ""

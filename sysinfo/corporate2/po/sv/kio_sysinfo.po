@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-21 11:28+0200\n"
+"POT-Creation-Date: 2009-12-21 13:56+0200\n"
 "PO-Revision-Date: 2009-01-08 17:47+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -73,7 +73,7 @@ msgstr "Minne"
 msgid "Physical memory: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:370
+#: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
 msgstr ""
 
@@ -102,83 +102,86 @@ msgstr "<b>%2</b> med KDE <b>%1</b>"
 msgid "Processor"
 msgstr "Processor"
 
-#: sysinfo/sysinfo.cpp:282
+#: sysinfo/sysinfo.cpp:285
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:283
-msgid " core"
-msgstr " kärnor"
+#: sysinfo/sysinfo.cpp:286
+#, fuzzy, c-format
+msgid "1 core"
+msgid_plural "%n cores"
+msgstr[0] " kärnor"
+msgstr[1] " kärnor"
 
-#: sysinfo/sysinfo.cpp:284 sysinfo/sysinfo.cpp:349
+#: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
 msgid "Processor supports virtualization"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:285 sysinfo/sysinfo.cpp:350
+#: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
 msgid "Processor doesn't support virtualization"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:296
+#: sysinfo/sysinfo.cpp:299
 msgid "Display"
 msgstr "Grafik"
 
-#: sysinfo/sysinfo.cpp:299
+#: sysinfo/sysinfo.cpp:302
 msgid "Driver: "
 msgstr "Drivrutin: "
 
-#: sysinfo/sysinfo.cpp:307
+#: sysinfo/sysinfo.cpp:310
 msgid "Machine Information"
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:308
+#: sysinfo/sysinfo.cpp:311
 msgid "Vendor: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:309
+#: sysinfo/sysinfo.cpp:312
 msgid "Product: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:310
+#: sysinfo/sysinfo.cpp:313
 msgid "BIOS: "
 msgstr ""
 
-#: sysinfo/sysinfo.cpp:364
+#: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
 msgstr "Monterad på %1"
 
-#: sysinfo/sysinfo.cpp:364
+#: sysinfo/sysinfo.cpp:367
 msgid "Not mounted"
 msgstr "Inte monterad"
 
-#: sysinfo/sysinfo.cpp:503
+#: sysinfo/sysinfo.cpp:506
 msgid "3D Not Supported"
 msgstr "inget 3D-stöd"
 
-#: sysinfo/sysinfo.cpp:505
+#: sysinfo/sysinfo.cpp:508
 msgid "3D Supported"
 msgstr "3D-stöd"
 
-#: sysinfo/sysinfo.cpp:514
+#: sysinfo/sysinfo.cpp:517
 msgid "Network is <strong>unreachable</strong>"
 msgstr "Nätverket är <strong>otillgängligt</strong>"
 
-#: sysinfo/sysinfo.cpp:516
+#: sysinfo/sysinfo.cpp:519
 msgid "You are <strong>offline</strong>"
 msgstr "Du är <strong>nerkopplad</strong>"
 
-#: sysinfo/sysinfo.cpp:518
+#: sysinfo/sysinfo.cpp:521
 msgid "Network is <strong>shutting down</strong>"
 msgstr "Nätverket <strong>kopplas ur</strong>"
 
-#: sysinfo/sysinfo.cpp:520
+#: sysinfo/sysinfo.cpp:523
 msgid "<strong>Establishing</strong> connection to the network"
 msgstr "<strong>Etablerar</strong> nätverksanslutning"
 
-#: sysinfo/sysinfo.cpp:522
+#: sysinfo/sysinfo.cpp:525
 msgid "You are <strong>online</strong>"
 msgstr "Du är <strong>ansluten</strong>"
 
-#: sysinfo/sysinfo.cpp:524
+#: sysinfo/sysinfo.cpp:527
 msgid "Unknown network status"
 msgstr "Okänd nätverksstatus"
 
