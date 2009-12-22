@@ -364,7 +364,7 @@ class Applet:
             item.updateIcon(self.notifier)
 
     def setNotify(self, id):
-        if self.showNotifications:
+        if self.notifier and self.showNotifications:
             self.config.writeEntry("ShowNotifications", False)
             self.autoSwitch.setNotifier(False)
             self.notifier.close()
