@@ -65,16 +65,16 @@
     * Tango simge teması çok eksik, bir çok simge crystal'e düşüyor (+)
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (+)
     * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (+)
-    * Fontlar çok kötü gözüküyor (/80) [Fatih Aşıcı]
+    * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
+    * Font ayarlarına bir kere girince ayarlar değişiyor (/80) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
-    * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (50)
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
     * Managerların üzerinden geçilmesi (-) [Bahadır Kandemir, Mete Alpaslan, Renan Çakırerk]
 
 * KDE (Renan Çakırerk)
-    * Kaptan'ın gözden geçirilmesi (-) [Gökçen Eraslan]
+    * Kaptan'ın gözden geçirilmesi (50)
     * Göç aracının gözden geçirilmesi (-)
 
 * YALI (Mete Alpaslan)
