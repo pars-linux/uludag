@@ -16,7 +16,7 @@ from qt import *
 from kdecore import *
 from kdeui import *
 import  dcopext
-#import autoswitch
+import autoswitch
 import pynotify
 
 import dbus
@@ -285,17 +285,16 @@ class Applet:
 
     def createNotifier(self,dry=False):
         pynotify.init("network-applet")
-        #self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
+        self.autoSwitch = autoswitch.autoSwitch(comlink, notifier=False)
         if self.showNotifications:
             self.notifier = pynotify.Notification("Network Manager")
             iconPath = KGlobal.iconLoader().iconPath("network", KIcon.Desktop, True)
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-            #self.autoSwitch.setNotifier(self.notifier, iconPath)
+            self.autoSwitch.setNotifier(self.notifier, iconPath)
         if self.autoConnect and not dry:
-            pass
-            #self.autoSwitch.scanAndConnect(force=False)
+            self.autoSwitch.scanAndConnect(force=False)
 
     def fixQuit(self):
         self.config.sync()
@@ -344,7 +343,7 @@ class Applet:
             pos = self.trays[0].getPos()
             self.notifier.set_hint("x",pos['x'])
             self.notifier.set_hint("y",pos['y'])
-        #self.autoSwitch.scanAndConnect()
+        self.autoSwitch.scanAndConnect()
 
     def startManager(self):
         os.system("network-manager")
@@ -367,7 +366,7 @@ class Applet:
     def setNotify(self, id):
         if self.showNotifications:
             self.config.writeEntry("ShowNotifications", False)
-            #self.autoSwitch.setNotifier(False)
+            self.autoSwitch.setNotifier(False)
             self.notifier.close()
         else:
             self.config.writeEntry("ShowNotifications", True)
@@ -551,7 +550,7 @@ class NetTray(KSystemTray):
             self.notifier.clear_actions()
             self.notifier.set_timeout(4500)
             self.notifier.update(str(i18n("Network Manager")),message,icon)
-            #self.notifier.show()
+            self.notifier.show()
 
     def appendConns(self, menu, dev, idx):
         conn_keys = dev.connections.keys()
