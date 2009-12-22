@@ -111,14 +111,11 @@ class Kaptan(kaptanUi):
             filemode='w')
         logging.info("Kaptan Started")
 
-        icon = "kaptan/pics/kaptan-logo.png"
-
         # set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/bg.png")))
         self.pixSteps.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/leftWithCorner.png")))
         self.pageStack.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
         self.pageDesc.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/text_bg.png")))
-        self.pageIcon.setPixmap(QPixmap(locate("data", icon)))
 
         # set button icons
         loader = KGlobal.iconLoader()
