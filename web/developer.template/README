@@ -1,8 +1,0 @@
-After building a sphinx document you need
-to add static/* to source/_static or
-source/.static and do same for templates dir
-then build again ..
-
-If you need to change one of these you need to
-remove build dir before building..
-
