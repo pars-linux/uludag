@@ -1,0 +1,5 @@
+[Misc]
+External player[$e]=/usr/bin/canberra-event-play
+LastConfiguredApp=knotify
+Use external player=true
+Volume=100

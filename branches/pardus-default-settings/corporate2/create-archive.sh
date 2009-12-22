@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=pardus-default-settings
-VERSION=0.1.5
+VERSION=0.1.6
 
 DIRNAME=$NAME-$VERSION
 
