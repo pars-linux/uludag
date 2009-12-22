@@ -78,8 +78,15 @@
     * Göç aracının gözden geçirilmesi (-)
 
 * YALI (Mete Alpaslan)
-    * Senaryo bazlı kurulum (-) [Mete Alpaslan]
+    * Senaryo bazlı kurulum (+)
+    * Raid & LVM desteği (-)
+    * Netinstall desteği (-)
     * grub.conf'a girdilerin UUID tabanlı girilmesi (-) [Bahadır Kandemir]
+
+* Pardusman (Mete Alpaslan)
+    * Qt4 geçişi (+)
+    * Senaryo bazlı kurulum ve kernel seçebilme desteği (+)
+    * Imaj köküne girecek paketlerin seçebilme desteği (-)
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+) [Fatih Aşıcı]
