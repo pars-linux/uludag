@@ -30,7 +30,7 @@
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -53,10 +53,10 @@
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; font-weight:600;&quot;&gt;Congratulations! &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt; font-weight:600;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt; font-weight:600;&quot;&gt;You have finished all steps! Now you can continue to use Pardus or you can try the following applications:&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:26pt; font-weight:600; color:#5f2234;&quot;&gt;Congratulations! &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Droid Sans'; font-size:11pt; font-weight:600; color:#5f2234;&quot;&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:600; color:#5f2234;&quot;&gt;You have finished all steps. Now you may continue to use Pardus or check out the following applications for more settings, help and support&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -171,7 +171,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color: black</string>
             </property>
             <property name="text">
-             <string>Start</string>
+             <string>My Smolt Page</string>
             </property>
            </widget>
           </item>
@@ -266,7 +266,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color: black</string>
             </property>
             <property name="text">
-             <string>Start</string>
+             <string>Migration Wizard</string>
             </property>
            </widget>
           </item>
@@ -327,7 +327,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color:black</string>
             </property>
             <property name="text">
-             <string>System Settings is a configuration tool for Pardus.</string>
+             <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -361,7 +361,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color: black</string>
             </property>
             <property name="text">
-             <string>Start</string>
+             <string>System Settings</string>
             </property>
            </widget>
           </item>
@@ -380,7 +380,7 @@ p, li { white-space: pre-wrap; }
           <string notr="true">color:black</string>
          </property>
          <property name="title">
-          <string>User Groups and Help Pages</string>
+          <string>Help and Support</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
@@ -395,7 +395,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color:black</string>
             </property>
             <property name="text">
-             <string>Pardus community, user lists, IRC channels, wikis and more.</string>
+             <string>Pardus community, mailing lists, IRC channels, wiki's help and support pages..</string>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -445,7 +445,7 @@ p, li { white-space: pre-wrap; }
              <string notr="true">color: black</string>
             </property>
             <property name="text">
-             <string>Start</string>
+             <string>Help and Support</string>
             </property>
            </widget>
           </item>
@@ -494,7 +494,7 @@ p, li { white-space: pre-wrap; }
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>

@@ -7,8 +7,26 @@
     <x>0</x>
     <y>0</y>
     <width>700</width>
-    <height>500</height>
+    <height>466</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>466</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>466</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Kaptan Desktop</string>
@@ -18,25 +36,20 @@
     <normaloff>:/raw/pics/cr64-app-kaptan.png</normaloff>:/raw/pics/cr64-app-kaptan.png</iconset>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-#kaptan{
-	
-       background-image:url(':/raw/pics/bg.png');
+   <string notr="true">#kaptan{
+	   background-image:url(':/raw/pics/bg.png');
        background-repeat: no-repeat;
        background-position: left top;
        background-color: #642437;
        alternate-background-color: gray;
        selection-background-color: gray;
-
 }
 
 QStackedWidget#mainStack {
-	color: white;
+	 color: white;
      border-style: outset;
      border-width: 1px;
-     border-radius: 10px;
      border-color: rgba(255, 255, 255, 152);
-
 }
 </string>
   </property>
@@ -44,23 +57,32 @@ QStackedWidget#mainStack {
    <property name="margin">
     <number>0</number>
    </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QWidget" name="kaptan" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
+      <property name="margin">
+       <number>4</number>
+      </property>
+      <property name="spacing">
+       <number>-1</number>
+      </property>
       <item row="0" column="0">
        <layout class="QGridLayout" name="gridLayout">
-        <item row="1" column="0" rowspan="3" colspan="3">
+        <item row="1" column="0" rowspan="3" colspan="2">
          <widget class="QLabel" name="labelMenu">
           <property name="font">
            <font>
-            <pointsize>11</pointsize>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">color:black</string>
+           <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
           <property name="text">
            <string/>
@@ -70,31 +92,6 @@ QStackedWidget#mainStack {
           </property>
           <property name="indent">
            <number>10</number>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0" colspan="3">
-         <widget class="QLabel" name="labelLogo">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize">
-           <size>
-            <width>80</width>
-            <height>80</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">margin-left:14px;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="pixmap">
-           <pixmap resource="raw.qrc">:/raw/pics/kaptan-logo.png</pixmap>
           </property>
          </widget>
         </item>
@@ -114,12 +111,8 @@ QStackedWidget#mainStack {
           </property>
          </spacer>
         </item>
-       </layout>
-      </item>
-      <item row="0" column="1">
-       <layout class="QVBoxLayout" name="verticalLayout_4">
-        <item>
-         <spacer name="verticalSpacer">
+        <item row="0" column="0">
+         <spacer name="verticalSpacer_2">
           <property name="orientation">
            <enum>Qt::Vertical</enum>
           </property>
@@ -129,11 +122,15 @@ QStackedWidget#mainStack {
           <property name="sizeHint" stdset="0">
            <size>
             <width>20</width>
-            <height>10</height>
+            <height>80</height>
            </size>
           </property>
          </spacer>
         </item>
+       </layout>
+      </item>
+      <item row="0" column="1">
+       <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
          <widget class="QStackedWidget" name="mainStack">
           <property name="sizePolicy">
@@ -143,9 +140,16 @@ QStackedWidget#mainStack {
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,200);
+           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,150);
 margin: 10px;
+border-radius: 0px;
 }</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
           </property>
           <property name="lineWidth">
            <number>0</number>
@@ -160,6 +164,12 @@ margin: 10px;
       </item>
       <item row="1" column="0" colspan="2">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <property name="spacing">
+         <number>-1</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
         <item>
          <widget class="QPushButton" name="buttonCancel">
           <property name="styleSheet">
