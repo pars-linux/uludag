@@ -8,7 +8,7 @@
         <rect>
             <x>0</x>
             <y>0</y>
-            <width>553</width>
+            <width>590</width>
             <height>365</height>
         </rect>
     </property>
@@ -27,23 +27,40 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Expanding</enum>
+                <enum>Fixed</enum>
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>71</width>
+                    <width>40</width>
                     <height>21</height>
                 </size>
             </property>
         </spacer>
         <widget class="QLayoutWidget">
             <property name="name">
-                <cstring>layout73</cstring>
+                <cstring>layout3</cstring>
             </property>
             <vbox>
                 <property name="name">
                     <cstring>unnamed</cstring>
                 </property>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer6</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
                 <widget class="QLabel">
                     <property name="name">
                         <cstring>textLabel2</cstring>
@@ -56,13 +73,39 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>270</width>
+                            <height>0</height>
+                        </size>
+                    </property>
                     <property name="backgroundOrigin">
                         <enum>AncestorOrigin</enum>
                     </property>
                     <property name="scaledContents">
                         <bool>true</bool>
                     </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter</set>
+                    </property>
                 </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer7</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Fixed</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>50</height>
+                        </size>
+                    </property>
+                </spacer>
                 <widget class="QLabel">
                     <property name="name">
                         <cstring>textLabel1</cstring>
@@ -75,12 +118,55 @@
                             <verstretch>0</verstretch>
                         </sizepolicy>
                     </property>
+                    <property name="minimumSize">
+                        <size>
+                            <width>270</width>
+                            <height>0</height>
+                        </size>
+                    </property>
                     <property name="backgroundOrigin">
                         <enum>AncestorOrigin</enum>
                     </property>
+                    <property name="alignment">
+                        <set>WordBreak|AlignVCenter</set>
+                    </property>
                 </widget>
+                <spacer>
+                    <property name="name">
+                        <cstring>spacer8</cstring>
+                    </property>
+                    <property name="orientation">
+                        <enum>Vertical</enum>
+                    </property>
+                    <property name="sizeType">
+                        <enum>Expanding</enum>
+                    </property>
+                    <property name="sizeHint">
+                        <size>
+                            <width>20</width>
+                            <height>40</height>
+                        </size>
+                    </property>
+                </spacer>
             </vbox>
         </widget>
+        <spacer>
+            <property name="name">
+                <cstring>spacer5</cstring>
+            </property>
+            <property name="orientation">
+                <enum>Horizontal</enum>
+            </property>
+            <property name="sizeType">
+                <enum>Fixed</enum>
+            </property>
+            <property name="sizeHint">
+                <size>
+                    <width>40</width>
+                    <height>20</height>
+                </size>
+            </property>
+        </spacer>
         <widget class="QLabel">
             <property name="name">
                 <cstring>pixWelcome</cstring>
@@ -120,7 +206,7 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Expanding</enum>
+                <enum>Fixed</enum>
             </property>
             <property name="sizeHint">
                 <size>

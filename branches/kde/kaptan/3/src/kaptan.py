@@ -125,7 +125,7 @@ class Kaptan(kaptanUi):
         self.buttonFinish.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
 
         # set texts
-        self.pageDesc.setText(i18n("Welcome to Kaptan Wizard :)"))
+        self.pageDesc.setText(i18n("Welcome to Kaptan - Pardus Personalization Wizard"))
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("&Back"))
         self.buttonNext.setText(i18n("&Next"))
@@ -268,17 +268,17 @@ if __name__ == "__main__":
     KUniqueApplication.addCmdLineOptions()
 
     if not KUniqueApplication.start():
-        print i18n('Kaptan is already running!')
+        print i18n('Kaptan is already running.')
         sys.exit(1)
 
     kapp = KUniqueApplication(True, True, True)
     kaptan = Kaptan()
 
-    # if you use different theme our works looks ugly :)
+    # other themes don't look good
     style = QStyleFactory.create("QtCurve")
     kapp.setStyle(style)
 
-    kaptan.setCaption(i18n('Kaptan Welcome Wizard'))
+    kaptan.setCaption(i18n('Kaptan - Pardus Personalization Wizard'))
     kaptan.setIcon(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
     kaptan.show()
     kapp.setMainWidget(kaptan)
