@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 22/12/09 14:46\n"
+"PO-Revision-Date: 23/12/09 17:28\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -142,7 +142,7 @@ msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
-"<qt>Adres van installatiebron dient te eindigen op xml of xml.bz2. <p>Probeer "
+"<qt>Adres van softwarebron dient te eindigen op xml of xml.bz2. <p>Probeer "
 "opnieuw.</qt>"
 
 #: .tmp/settingsdialog.py:184 .tmp/pm-install.py:79 .tmp/mainwidget.py:174
@@ -264,19 +264,19 @@ msgstr "B&uffer"
 
 #: .tmp/ui_settingsdialog.py:353 .tmp/ui_repodialog.py:53
 msgid "Repository Name"
-msgstr "Naam installatiebron"
+msgstr "Naam softwarebron"
 
 #: .tmp/ui_settingsdialog.py:354 .tmp/ui_repodialog.py:54
 msgid "Repository Address"
-msgstr "Adres installatiebron"
+msgstr "Adres softwarebron"
 
 #: .tmp/ui_settingsdialog.py:355
 msgid "&Add New Repository"
-msgstr "Nieuwe installatiebron &toevoegen"
+msgstr "Nieuwe softwarebron &toevoegen"
 
 #: .tmp/ui_settingsdialog.py:356
 msgid "Remove Repository"
-msgstr "Installatiebron verwijderen"
+msgstr "Softwarebron verwijderen"
 
 #: .tmp/ui_settingsdialog.py:357
 msgid "Move &Up"
@@ -288,7 +288,7 @@ msgstr "Om&laag"
 
 #: .tmp/ui_settingsdialog.py:359
 msgid "&Repositories"
-msgstr "&Installatiebronnen"
+msgstr "&Softwarebronnen"
 
 #: .tmp/ui_settingsdialog.py:360
 msgid "HTTP proxy server:"
@@ -389,15 +389,15 @@ msgstr "Opwaarderen van pakket(ten) "
 
 #: .tmp/statemanager.py:68
 msgid "Applying Repository Changes"
-msgstr "Toepassen van installatiebronwijzigingen"
+msgstr "Toepassen van softwarebronwijzigingen"
 
 #: .tmp/statemanager.py:69
 msgid "Updating Repository"
-msgstr "Bijwerken van installatiebron"
+msgstr "Bijwerken van softwarebron"
 
 #: .tmp/statemanager.py:70
 msgid "Updating Repository(s)"
-msgstr "Bijwerken van installatiebron(nen)"
+msgstr "Bijwerken van softwarebron(nen)"
 
 #: .tmp/statemanager.py:74
 msgid "Remove Package(s)"
@@ -605,7 +605,7 @@ msgstr "Uitgave:"
 
 #: .tmp/packagedelegate.py:139
 msgid "Repository:"
-msgstr "Installatiebron:"
+msgstr "Softwarebron:"
 
 #: .tmp/packagedelegate.py:148
 msgid "Package Size:"
@@ -669,11 +669,11 @@ msgstr "Toon opwaardeerbare pakketten"
 
 #: .tmp/ui_repodialog.py:51
 msgid "Add New Repository"
-msgstr "Nieuwe installatiebron toevoegen"
+msgstr "Nieuwe softwarebron toevoegen"
 
 #: .tmp/ui_repodialog.py:52
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr "Naam van de installatiebron, bijv. <b>pardus-devel</b>"
+msgstr "Naam van de softwarebron, bijv. <b>pardus-devel</b>"
 
 #: .tmp/ui_repodialog.py:55
 msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
