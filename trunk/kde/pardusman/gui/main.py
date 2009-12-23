@@ -398,7 +398,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.linePluginPackage.setText(unicode(self.project.plugin_package))
         self.lineParameters.setText(unicode(self.project.extra_params))
         self.comboType.setCurrentIndex(["install", "live"].index(self.project.type))
-        self.comboCompression.setCurrentIndex(["gzip", "lzm"].index(self.project.squashfs_comp_type))
+        self.comboCompression.setCurrentIndex(["gzip", "lzma"].index(self.project.squashfs_comp_type))
         self.comboSize.setCurrentIndex(["cd", "dvd", "usb", "custom"].index(self.project.media))
 
         self.listPackageCollection.clear()
