@@ -31,7 +31,7 @@
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>40</width>
+                    <width>20</width>
                     <height>21</height>
                 </size>
             </property>
@@ -75,12 +75,16 @@
                     </property>
                     <property name="minimumSize">
                         <size>
-                            <width>270</width>
+                            <width>320</width>
                             <height>0</height>
                         </size>
                     </property>
                     <property name="backgroundOrigin">
                         <enum>AncestorOrigin</enum>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
                     </property>
                     <property name="scaledContents">
                         <bool>true</bool>
@@ -120,12 +124,16 @@
                     </property>
                     <property name="minimumSize">
                         <size>
-                            <width>270</width>
+                            <width>320</width>
                             <height>0</height>
                         </size>
                     </property>
                     <property name="backgroundOrigin">
                         <enum>AncestorOrigin</enum>
+                    </property>
+                    <property name="font">
+                        <font>
+                        </font>
                     </property>
                     <property name="alignment">
                         <set>WordBreak|AlignVCenter</set>
@@ -158,11 +166,11 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Fixed</enum>
+                <enum>Expanding</enum>
             </property>
             <property name="sizeHint">
                 <size>
-                    <width>40</width>
+                    <width>60</width>
                     <height>20</height>
                 </size>
             </property>
@@ -206,7 +214,7 @@
                 <enum>Horizontal</enum>
             </property>
             <property name="sizeType">
-                <enum>Fixed</enum>
+                <enum>Expanding</enum>
             </property>
             <property name="sizeHint">
                 <size>
