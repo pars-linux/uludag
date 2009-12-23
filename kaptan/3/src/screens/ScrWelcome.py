@@ -21,7 +21,7 @@ from screens.welcomedlg import WelcomeWidget
 class Widget(WelcomeWidget, ScreenWidget):
 
     title = i18n("Welcome")
-    desc = i18n("Welcome to Kaptan Wizard :)")
+    desc = i18n("Welcome to Kaptan")
     icon = "kaptan/pics/icons/welcome.png"
 
 
@@ -30,8 +30,8 @@ class Widget(WelcomeWidget, ScreenWidget):
 
         #set texts
         self.setCaption(i18n("Welcome"))
-        self.textLabel1.setText(i18n("This application, called <b>Kaptan Desktop</b>, will help you with your basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. Please click <b>Next</b> to personalize your desktop. :)"))
-        self.textLabel2.setText(i18n("<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"))
+        self.textLabel1.setText(i18n("<b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly.<br/><br/>Please click <b>next</b> in order to begin."))
+        self.textLabel2.setText(i18n("<b>Pardus</b> is a reliable, secure, fast and user friendly operating system.<br/><br/>With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more!"))
 
         #set images
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
