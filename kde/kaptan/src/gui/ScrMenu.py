@@ -40,19 +40,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 "menuIndex": 0,
                 "summaryMessage": ki18n("Kick-off Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/kickoff.png'),
-                "description": ki18n("Default menu of Pardus GNU/Linux.")
+                "description": ki18n("Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts are easy to access and well organized.")
                 }
         self.menuNames["simplelauncher"] = {
                 "menuIndex": 1,
                 "summaryMessage": ki18n("Simple Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/simple.png'),
-                "description": ki18n("An old style menu from KDE 3.")
+                "description": ki18n("Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's.")
                 }
         self.menuNames["lancelot_launcher"] = {
                 "menuIndex": 2,
                 "summaryMessage": ki18n("Lancelot Menu"),
                 "image": QtGui.QPixmap(':/raw/pics/lancelot.png'),
-                "description": ki18n("An advanced menu for KDE4.")
+                "description": ki18n("Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The program shortcuts are easy to access and well organized.")
                 }
 
         for each in list(group.groupList()):
