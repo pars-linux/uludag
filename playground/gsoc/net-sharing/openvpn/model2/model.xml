@@ -1,9 +1,0 @@
-<interface name="Net.Share">
-    <method name="checkShare" access_label="set">
-        <arg name="net_addr" type="s" direction="in"/>
-        <arg name="net_mode" type="s" direction="in"/>
-        <arg name="net_mask" type="s" direction="in"/>
-        <arg name="name_srv" type="s" direction="in"/>
-    </method>
-</interface>
- 
