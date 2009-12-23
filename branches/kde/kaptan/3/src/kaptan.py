@@ -125,7 +125,7 @@ class Kaptan(kaptanUi):
         self.buttonFinish.setIconSet(QIconSet(loader.loadIcon("ok", KIcon.Small)))
 
         # set texts
-        self.pageDesc.setText(i18n("Welcome to Kaptan - Pardus Personalization Wizard"))
+        self.pageDesc.setText(i18n("Welcome to Kaptan"))
         self.buttonCancel.setText(i18n("&Cancel"))
         self.buttonBack.setText(i18n("&Back"))
         self.buttonNext.setText(i18n("&Next"))
@@ -210,10 +210,10 @@ class Kaptan(kaptanUi):
         self.stackMove(self.getCurrent() + 1)
 
     def putBr(self, item):
-        return unicode("» ") + item + "<br>"
+        return item + "<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("» ") + item + "</b><br>"
+        return "<b>" + item + "</b><br>"
 
     def slotBack(self):
         stepBatch = ""
@@ -278,7 +278,7 @@ if __name__ == "__main__":
     style = QStyleFactory.create("QtCurve")
     kapp.setStyle(style)
 
-    kaptan.setCaption(i18n('Kaptan - Pardus Personalization Wizard'))
+    kaptan.setCaption(i18n('Welcome to Kaptan'))
     kaptan.setIcon(QPixmap(locate("data", "kaptan/pics/default_icon.png")))
     kaptan.show()
     kapp.setMainWidget(kaptan)
