@@ -66,7 +66,8 @@
     * ses sunucusu ayarlarının TASMA'dan kaldırılması (+)
     * TASMA ve PM'de simgelerin bazıları yanlış boyutta çıkıyor (+)
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
-    * Font ayarlarına bir kere girince ayarlar değişiyor (/80) [Fatih Aşıcı]
+    * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
+    * libnotify API breakage (-)
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
 
 * KDE (Gökçen Eraslan)
@@ -86,7 +87,7 @@
 * Pardusman (Mete Alpaslan)
     * Qt4 geçişi (+)
     * Senaryo bazlı kurulum ve kernel seçebilme desteği (+)
-    * Imaj köküne girecek paketlerin seçebilme desteği (-)
+    * Imaj köküne girecek paketleri seçebilme desteği (-)
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+) [Fatih Aşıcı]
