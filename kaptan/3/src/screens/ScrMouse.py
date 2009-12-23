@@ -37,12 +37,12 @@ class Widget(MouseWidget, ScreenWidget):
 
         # set texts
         self.setCaption(i18n("Mouse"))
-        self.checkReverse.setText(i18n("Reverse scroll"))
-        self.mouseLabel.setText(i18n("<p align=\"left\">If you are left-handed, you may prefer to swap the functions on the left and right buttons on your pointing device by choosing the \"Left handed\" option below. You can also select default click behaviour.</p>"))
+        self.checkReverse.setText(i18n("Reverse scrolling direction"))
+        self.mouseLabel.setText(i18n("<p align='left'>The <b>clicking behavior</b> defines how many times you want to click when you are opening a file.<br/><br/>If you are <b>left handed</b>, you may prefer to swap the left and right buttons of your pointing device.</p>"))
         self.buttonOrderGroup.setTitle(i18n("Button Order"))
         self.leftHanded.setText(i18n("Left Hand"))
         self.rightHanded.setText(i18n("Right Hand"))
-        self.clickSettingsGroup.setTitle(i18n("Click behaviour"))
+        self.clickSettingsGroup.setTitle(i18n("Clicking Behaviour"))
         self.singleClick.setText(i18n("&Single-click to open files and folders"))
         self.doubleClick.setText(i18n("Dou&ble-click to open files and folders"))
 
