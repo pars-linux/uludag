@@ -153,6 +153,9 @@ class Interface:
     def removeMonitor(self, outputName):
         self.link.Xorg.Display["zorg"].setMonitor(outputName, "", "", "", "")
 
+    def getGeometry(self, output):
+        return self.ext.getGeometry(output)
+
     def getModes(self, outputName):
         return MODES
 
