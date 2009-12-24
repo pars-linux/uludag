@@ -84,6 +84,9 @@ QStackedWidget#mainStack {
           <property name="styleSheet">
            <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
           <property name="text">
            <string/>
           </property>
@@ -91,7 +94,7 @@ QStackedWidget#mainStack {
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
           </property>
           <property name="indent">
-           <number>10</number>
+           <number>15</number>
           </property>
          </widget>
         </item>

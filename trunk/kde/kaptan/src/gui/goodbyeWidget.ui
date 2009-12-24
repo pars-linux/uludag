@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Goodbye</string>
+   <string>More</string>
   </property>
   <property name="styleSheet">
    <string notr="true">color: rgb(95, 34, 52);</string>
@@ -140,6 +140,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="smoltGroupBox">
          <property name="font">
           <font>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
            <underline>false</underline>
@@ -235,6 +236,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="migrationGroupBox">
          <property name="font">
           <font>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
            <underline>false</underline>
@@ -330,6 +332,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="groupBox">
          <property name="font">
           <font>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
            <underline>false</underline>
@@ -425,6 +428,7 @@ p, li { white-space: pre-wrap; }
         <widget class="QGroupBox" name="groupBox_2">
          <property name="font">
           <font>
+           <pointsize>10</pointsize>
            <weight>75</weight>
            <bold>true</bold>
           </font>

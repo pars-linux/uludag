@@ -184,10 +184,10 @@ class Kaptan(QtGui.QWidget):
         self.moveInc = 1
 
     def putBr(self, item):
-        return unicode("» ") + item + "<br>"
+        return unicode("  ") + item + "<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("» ") + item + "</b><br>"
+        return "<b>" + unicode("  ") + item + "</b><br>"
 
     # move to id numbered stack
     def stackMove(self, id):
