@@ -307,15 +307,18 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
     content = content.arg(staticInfo);
     staticInfo = "";
 
-    staticInfo += startStock(i18n("Machine Information"));
-    staticInfo += addToStock("applications-other", i18n("Vendor: ") + m_info[MANUFACTURER]);
-    staticInfo += addToStock("applications-other", i18n("Product: ") + m_info[PRODUCT]);
-    staticInfo += addToStock("applications-other", i18n("BIOS: ") + m_info[BIOSVENDOR] + " " + m_info[BIOSVERSION] + " " + m_info[BIOSDATE]);
-    staticInfo += finishStock();
+    if (!m_info[MANUFACTURER].isEmpty() || !m_info[PRODUCT].isEmpty() || !m_info[BIOSVENDOR].isEmpty())
+    {
+        staticInfo += startStock(i18n("Machine Information"));
+        staticInfo += addToStock("applications-other", i18n("Vendor: ") + m_info[MANUFACTURER]);
+        staticInfo += addToStock("applications-other", i18n("Product: ") + m_info[PRODUCT]);
+        staticInfo += addToStock("applications-other", i18n("BIOS: ") + m_info[BIOSVENDOR] + " " + m_info[BIOSVERSION] + " " + m_info[BIOSDATE]);
+        staticInfo += finishStock();
 
-    // update content..
-    content = content.arg(staticInfo);
-    staticInfo = "";
+        // update content..
+        content = content.arg(staticInfo);
+        staticInfo = "";
+    }
 
     // Send the data
     data(QCString(content.utf8()));
@@ -362,6 +365,11 @@ QString kio_sysinfoProtocol::diskInfo()
         for (QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it)
         {
             DiskInfo di = (*it);
+
+            if (di.mounted && di.mountPoint == "/")
+                // Skip root filesystem as it's listed above as 'Root Folder'
+                continue;
+
             unsigned long long usage,percent,peer;
             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
             QString mountState = di.mounted ? i18n("Mounted on %1").arg(di.mountPoint) : i18n("Not mounted");
