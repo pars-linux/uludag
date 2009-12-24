@@ -35,7 +35,7 @@ import gui.ScrSmolt  as smoltWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
-    desc = ki18n("Welcome to Kaptan Wizard :)")
+    desc = ki18n("Welcome to Kaptan")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
