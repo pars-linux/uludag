@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009</Title>
+    <Title>Pardus 2009.1 Beta</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -149,6 +149,7 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>ltrace</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
+        <SelectedPackage>logrotate</SelectedPackage>
         <SelectedPackage>libvisual-plugins</SelectedPackage>
         <SelectedPackage>liboldX</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
@@ -298,12 +299,12 @@
         <Package>unzip</Package>
         <Package>unrar</Package>
         <Package>unixODBC</Package>
-        <Package>udev-extras</Package>
         <Package>udev</Package>
         <Package>twolame</Package>
         <Package>tunepimp</Package>
         <Package>transcode</Package>
         <Package>tomcat-servlet-api</Package>
+        <Package>timezone</Package>
         <Package>time</Package>
         <Package>tiff</Package>
         <Package>texinfo</Package>
@@ -373,6 +374,7 @@
         <Package>pyparted</Package>
         <Package>pygtk</Package>
         <Package>pygobject</Package>
+        <Package>pycurl</Package>
         <Package>pycups</Package>
         <Package>pycairo</Package>
         <Package>pulseaudio-gconf</Package>
@@ -423,7 +425,7 @@
         <Package>opencore-amr</Package>
         <Package>openal</Package>
         <Package>obex-data-server</Package>
-        <Package>numeric</Package>
+        <Package>numpy</Package>
         <Package>ntp-client</Package>
         <Package>ntfs_3g</Package>
         <Package>nss-mdns</Package>
@@ -467,11 +469,13 @@
         <Package>miscfiles</Package>
         <Package>mingetty</Package>
         <Package>mina-core</Package>
+        <Package>migration</Package>
         <Package>microcode-data</Package>
         <Package>mesa</Package>
         <Package>memtest86</Package>
         <Package>meanwhile</Package>
         <Package>mdbtools</Package>
+        <Package>mcpp</Package>
         <Package>man-pages</Package>
         <Package>man</Package>
         <Package>madplay</Package>
@@ -563,6 +567,7 @@
         <Package>libid3tag</Package>
         <Package>libical</Package>
         <Package>libgsf</Package>
+        <Package>libgps</Package>
         <Package>libgpod</Package>
         <Package>libgphoto2</Package>
         <Package>libgpg-error</Package>
@@ -572,9 +577,11 @@
         <Package>libgnome</Package>
         <Package>libglademm</Package>
         <Package>libglade</Package>
+        <Package>libgfortran</Package>
         <Package>libgcrypt</Package>
         <Package>libgcc</Package>
         <Package>libgadu</Package>
+        <Package>libftdi</Package>
         <Package>libfreebob</Package>
         <Package>libfontenc</Package>
         <Package>libffi</Package>
@@ -598,6 +605,7 @@
         <Package>libcddb</Package>
         <Package>libcdaudio</Package>
         <Package>libcaptury</Package>
+        <Package>libcap-ng</Package>
         <Package>libcap</Package>
         <Package>libcanberra</Package>
         <Package>libcaca</Package>
@@ -640,6 +648,7 @@
         <Package>less</Package>
         <Package>lensfun</Package>
         <Package>lcms</Package>
+        <Package>lapack</Package>
         <Package>lame</Package>
         <Package>ladspa-sdk</Package>
         <Package>ksplash-pardus-theme</Package>
@@ -649,6 +658,7 @@
         <Package>kdm-pardus-theme</Package>
         <Package>kdepimlibs</Package>
         <Package>kdemultimedia</Package>
+        <Package>kdelibs-experimental</Package>
         <Package>kdelibs</Package>
         <Package>kdegraphics</Package>
         <Package>kdeedu-marble</Package>
@@ -716,11 +726,11 @@
         <Package>glut</Package>
         <Package>glitz</Package>
         <Package>glibmm</Package>
-        <Package>glibc-zoneinfo</Package>
         <Package>glibc</Package>
         <Package>glib2</Package>
         <Package>giflib</Package>
         <Package>ghostscript</Package>
+        <Package>gfxtheme-base</Package>
         <Package>gettext</Package>
         <Package>gegl</Package>
         <Package>gdbm</Package>
@@ -732,7 +742,6 @@
         <Package>fuse</Package>
         <Package>freetype</Package>
         <Package>foomatic-filters</Package>
-        <Package>foomatic-db-hpijs</Package>
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-db</Package>
         <Package>fontconfig</Package>
@@ -809,6 +818,7 @@
         <Package>boot-manager</Package>
         <Package>boost</Package>
         <Package>bluez</Package>
+        <Package>blas</Package>
         <Package>bc</Package>
         <Package>bash</Package>
         <Package>baselayout</Package>
