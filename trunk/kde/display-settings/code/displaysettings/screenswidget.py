@@ -138,6 +138,10 @@ class MainWidget(QtGui.QWidget, Ui_screensWidget):
                     elif self._right is None:
                         self._right = output
 
+                    w, h, x, y = self.iface.getGeometry(output)
+                    if x or y:
+                        self._cloned = False
+
             elif output.config.enabled:
                 print "Trying to add %s as it is enabled by config." % output.name
                 if output.config.right_of and \
