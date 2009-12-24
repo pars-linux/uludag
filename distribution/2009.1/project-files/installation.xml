@@ -50,6 +50,7 @@
         <SelectedPackage>xorg-video-ast</SelectedPackage>
         <SelectedPackage>xorg-video-ark</SelectedPackage>
         <SelectedPackage>xorg-video-apm</SelectedPackage>
+        <SelectedPackage>xorg-input-wacom</SelectedPackage>
         <SelectedPackage>xorg-input-void</SelectedPackage>
         <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
         <SelectedPackage>xorg-input-synaptics</SelectedPackage>
