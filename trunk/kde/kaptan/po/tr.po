@@ -1,5 +1,5 @@
-#ifndef TR.PO
-#define TR.PO
+# ifndef TR.PO
+# define TR.PO
 # translation of tr.po to Turkish
 # Kaptan
 # Copyright (C) 2009
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-24 08:32+0200\n"
+"POT-Creation-Date: 2009-12-24 11:28+0200\n"
 "PO-Revision-Date: 2009-07-17 01:52+0300\n"
 "Last-Translator: Renan Çakırerk <renan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -54,8 +54,9 @@ msgstr "Kick-off Menü"
 msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
-msgstr "Kick-off, Pardus'ta ön tanımlı olarak gelen menüdür.<br><br>Programların kısayolları"
-" kolay ulaşılabilir ve iyi organize edilmişlerdir."
+msgstr ""
+"Kick-off, Pardus'ta ön tanımlı olarak gelen menüdür.<br><br>Programların "
+"kısayolları kolay ulaşılabilir ve iyi organize edilmişlerdir."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:153
 msgid "Simple Menu"
@@ -65,8 +66,9 @@ msgstr "Basit Menü"
 msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
-msgstr "Basit menü KDE3 ile birlikte gelen eski bir menüdür.<br><br> Hafif ve hızlı"
-" yapısı yüzünden yavaş bilgisayarlar için tavsiye edilir."
+msgstr ""
+"Basit menü KDE3 ile birlikte gelen eski bir menüdür.<br><br> Hafif ve hızlı "
+"yapısı yüzünden yavaş bilgisayarlar için tavsiye edilir."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:154
 msgid "Lancelot Menu"
@@ -76,8 +78,10 @@ msgstr "Lancelot Menü"
 msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
-msgstr "Lancelot oldukça gelişmiş ve yüksek kişiselleştirilebilirliğe sahip bir menüdür.<br><br>"
-"Programların kısayolları kolay ulaşılabilir ve iyi organize edilmişlerdir."
+msgstr ""
+"Lancelot oldukça gelişmiş ve yüksek kişiselleştirilebilirliğe sahip bir "
+"menüdür.<br><br>Programların kısayolları kolay ulaşılabilir ve iyi organize "
+"edilmişlerdir."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -239,11 +243,11 @@ msgstr "Evet"
 msgid "No"
 msgstr "Hayır"
 
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:54
+#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:54
 msgid "Welcome"
 msgstr "Hoşgeldiniz"
 
-#: .tmp/ScrSummary.py:38
+#: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
 msgid "Welcome to Kaptan"
 msgstr "Kaptan'a hoşgeldiniz"
 
@@ -318,12 +322,7 @@ msgstr "Duvar kâğıtları hakkında güzel bir başlık"
 msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Muhteşem duvar kâğıtları!\\m/"
 
-#: .tmp/ScrWelcome.py:23
-msgid "Welcome to Kaptan Wizard :)"
-msgstr "Kaptan Masaüstü size \"Hoşgeldiniz!\" diyor :)"
-
 #: .tmp/ui_goodbyeWidget.py:222
-
 msgid "More"
 msgstr "Diğer"
 
@@ -339,7 +338,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_goodbyeWidget.py:225
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -366,13 +364,12 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600; color:#5f2234;\">Ayarlarınız kaydedildi."
-"</span><span style=\" font-size:10pt; color:#5f2234;\"> Artık Pardus'un "
-"tadını çıkarmaya başlayabilir ya da daha detaylı ayarlar veya yardım ve"
-"destek için aşağıdaki program ve linkleri inceleyebilirsiniz. </span><span style=\" "
-"font-size:10pt; font-weight:600; color:#5f2234;\">Topluluğumuza üye olmayı unutmayın!</"
-"span></p></body></html>"
-
+"size:10pt; font-weight:600; color:#5f2234;\">Ayarlarınız kaydedildi.</"
+"span><span style=\" font-size:10pt; color:#5f2234;\"> Artık Pardus'un tadını "
+"çıkarmaya başlayabilir ya da daha detaylı ayarlar veya yardım vedestek için "
+"aşağıdaki program ve linkleri inceleyebilirsiniz. </span><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Topluluğumuza üye olmayı "
+"unutmayın!</span></p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:230 .tmp/ui_goodbyeWidget.py:232
 msgid "My Smolt Page"
@@ -403,19 +400,21 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
-"Ekran, güvenlik duvarı, klavye ve kullanıcı hesapları gibi Pardus ayarlarını içerir..."
+"Ekran, güvenlik duvarı, klavye ve kullanıcı hesapları gibi Pardus ayarlarını "
+"içerir..."
 
 #: .tmp/ui_goodbyeWidget.py:239 .tmp/ui_goodbyeWidget.py:241
 msgid "Help and Support"
 msgstr "Yardım ve Destek"
 
 #: .tmp/ui_goodbyeWidget.py:240
-
+#, fuzzy
 msgid ""
-"Pardus community, mailing lists, IRC channels, wiki's, help and support "
+"Pardus community, mailing lists, IRC channels, wiki's help and support "
 "pages.."
 msgstr ""
-"Pardus topluluğu, mail listeleri, chat odaları, viki'ler, yardım ve destek sayfaları."
+"Pardus topluluğu, mail listeleri, chat odaları, viki'ler, yardım ve destek "
+"sayfaları."
 
 #: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
@@ -458,7 +457,6 @@ msgid "Choose a Menu Style"
 msgstr "Bir Menü Stili Seçin"
 
 #: .tmp/ui_menuWidget.py:139
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -483,9 +481,9 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600; color:#5f2234;\">KDE menü</span><span style=\" color:#5f2234;\"> "
-" stillerinden, kullanışlılık ve görünüm olarak size en uygun olanı seçebilirsiniz.</span></p></body></"
-"html>"
+"weight:600; color:#5f2234;\">KDE menü</span><span style=\" color:#5f2234;"
+"\">  stillerinden, kullanışlılık ve görünüm olarak size en uygun olanı "
+"seçebilirsiniz.</span></p></body></html>"
 
 #: .tmp/ui_menuWidget.py:144
 msgid ""
@@ -498,7 +496,6 @@ msgstr ""
 "}"
 
 #: .tmp/ui_menuWidget.py:147
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -521,11 +518,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Menü Stilleri</span></"
-"p></body></html>"
+"family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Menü Stilleri</"
+"span></p></body></html>"
 
 #: .tmp/ui_menuWidget.py:155
-
 msgid "Sample"
 msgstr "Örnek"
 
@@ -538,7 +534,6 @@ msgid "Setup Mouse Behavior"
 msgstr "Fare Davranışını Belirleyin"
 
 #: .tmp/ui_mouseWidget.py:138
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -571,18 +566,18 @@ msgstr ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-"
-"weight:600; color:#5f2234;\">Tıklama Biçimi</span><span style=\" font-"
-"size:10pt; color:#5f2234;\"> dosya açarken simgelere kaç kere tıklamanız"
-" gerektiğini belirlemenize yardımcı olur.</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Tıklama Biçimi</span><span "
+"style=\" font-size:10pt; color:#5f2234;\"> dosya açarken simgelere kaç kere "
+"tıklamanız gerektiğini belirlemenize yardımcı olur.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:10pt; color:#5f2234;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; color:#5f2234;\">Eğer </span><span style=\" font-size:10pt; "
-"font-weight:600; color:#5f2234;\">sol elinizi kullanıyorsanız</span><span style=\" font-"
-"size:10pt; color:#5f2234;\">, fare butonlarının yerini değiştirerek "
+"size:10pt; color:#5f2234;\">Eğer </span><span style=\" font-size:10pt; font-"
+"weight:600; color:#5f2234;\">sol elinizi kullanıyorsanız</span><span style="
+"\" font-size:10pt; color:#5f2234;\">, fare butonlarının yerini değiştirerek "
 "farenizi daha rahat kullanabilirsiniz.</span></p></body></html>"
 
 #: .tmp/ui_mouseWidget.py:145
@@ -590,7 +585,6 @@ msgid "mouse icon"
 msgstr "fare simgesi"
 
 #: .tmp/ui_mouseWidget.py:146
-
 msgid "Clicking Behaviour"
 msgstr "Tıklama Biçimi"
 
@@ -627,7 +621,6 @@ msgid "Connect to the Internet"
 msgstr "İnternete Bağlanın"
 
 #: .tmp/ui_networkWidget.py:63
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -656,14 +649,12 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:10pt; color:#5f2234;\">Yeni bir bağlantı oluşturmak için </span><span "
 "style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Profil Oluştur</"
-"span><span style=\" font-size:10pt; color:#5f2234;\">'a tıklayın ve "
-"listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu "
-"işaretleyip İnternet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip"
-"şifrenizi girmeyi unutmayın.</span></p></body></html>"
-
+"span><span style=\" font-size:10pt; color:#5f2234;\">'a tıklayın ve listeden "
+"uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu "
+"işaretleyip İnternet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise "
+"erişim noktasını seçipşifrenizi girmeyi unutmayın.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:106
-
 msgid "Packages"
 msgstr "Paketler"
 
@@ -672,12 +663,10 @@ msgid "Updates"
 msgstr "Güncellemeler"
 
 #: .tmp/ui_packageWidget.py:109
-
 msgid "Show updates in the system tray"
 msgstr "Güncellemeleri sistem tepsisinde göster"
 
 #: .tmp/ui_packageWidget.py:110
-
 msgid "Check updates automatically every"
 msgstr "Güncellemeleri kontrol etme sıklığı"
 
@@ -698,7 +687,6 @@ msgid "Add contrib repo"
 msgstr "Katkı deposunu ekle"
 
 #: .tmp/ui_packageWidget.py:115
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -723,10 +711,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-"
-"size:10pt; color:#5f2234;\">Pardus'ta program yükleyip silme işlemleri Paket Yöneticisi "
-"tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi otomatik olarak"
-"güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol etme sıklığını belirleyebilirsiniz.</span></"
-"p></body></html>"
+"size:10pt; color:#5f2234;\">Pardus'ta program yükleyip silme işlemleri Paket "
+"Yöneticisi tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi "
+"otomatik olarakgüncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol "
+"etme sıklığını belirleyebilirsiniz.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:120
 msgid "picture label"
@@ -737,17 +725,14 @@ msgid "Install / Remove Programs"
 msgstr "Program Yükle / Sil"
 
 #: .tmp/ui_searchWidget.py:68
-
 msgid "Search"
 msgstr "Arama"
 
 #: .tmp/ui_searchWidget.py:71
-
 msgid "Easy Desktop Search"
 msgstr "Pratik Masaüstü Araması"
 
 #: .tmp/ui_searchWidget.py:72
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -771,9 +756,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; color:#5f2234;\">Strigi Masaüstü Arama uygulaması sık kullandığınız dosyaları "
-"hafızasına alarak arama yaptığınızda hızlıca bulunmalarını sağlar. Strigi ayrıca "
-"dosyaların yalnızca ismine değil, içeriğine bakarak da arama yapmanıza olanak sağlar.</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Strigi Masaüstü Arama uygulaması sık "
+"kullandığınız dosyaları hafızasına alarak arama yaptığınızda hızlıca "
+"bulunmalarını sağlar. Strigi ayrıca dosyaların yalnızca ismine değil, "
+"içeriğine bakarak da arama yapmanıza olanak sağlar.</span></p></body></html>"
 
 #: .tmp/ui_searchWidget.py:77
 msgid "Allow Strigi to index my files"
@@ -784,7 +770,6 @@ msgid "&Send my profile"
 msgstr "Donanım Bilgisini &Gönder"
 
 #: .tmp/ui_smoltWidget.py:109
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -875,7 +860,6 @@ msgid "Help Pardus Improve!"
 msgstr "Pardus'un Gelişimine Katkıda Bulunun!"
 
 #: .tmp/ui_smoltWidget.py:120
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -900,9 +884,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; font-weight:600; color:#5f2234;\">Smolt,</span><span style=\" font-"
-"size:10pt; color:#5f2234;\"> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizlere göndererek "
-" istatistikler doğrultusunda Pardus'u geliştirmemize katkıda bulunur.</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Smolt,</span><span style=\" "
+"font-size:10pt; color:#5f2234;\"> aşağıdaki tabloda gösterilen sistem "
+"bilgilerinizi bizlere göndererek  istatistikler doğrultusunda Pardus'u "
+"geliştirmemize katkıda bulunur.</span></p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -925,7 +910,6 @@ msgid "Customize Your Desktop"
 msgstr "Masaüstünüzü Kişiselleştirin"
 
 #: .tmp/ui_styleWidget.py:102
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -949,7 +933,8 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:10pt; color:#5f2234;\">Favori temanızı ve masaüstü tipini seçip, "
-"Pardus'u renkli stil ve temalarla kişiselleştirebilirsiniz.</span></p></body></html>"
+"Pardus'u renkli stil ve temalarla kişiselleştirebilirsiniz.</span></p></"
+"body></html>"
 
 #: .tmp/ui_styleWidget.py:107
 msgid ""
@@ -963,7 +948,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:112
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -996,7 +980,6 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Klasör görünümü (KDE3 Biçemi)"
 
 #: .tmp/ui_styleWidget.py:119
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1022,7 +1005,6 @@ msgstr ""
 "size:10pt; font-weight:600; color:#5f2234;\">Masaüstü Adeti</span></p></"
 "body></html>"
 
-
 #: .tmp/ui_summaryWidget.py:60
 msgid "Summary"
 msgstr "Özet"
@@ -1037,12 +1019,10 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_summaryWidget.py:66
-
 msgid "Save Your Settings"
 msgstr "Ayarlarınızı Kaydedin"
 
 #: .tmp/ui_summaryWidget.py:67
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1069,10 +1049,11 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:10pt; color:#5f2234;\">Bütün adımları başarıyla tamamladınız. Aşağıda "
-"uygulanmasını istediğiniz ayarların listesini görebilirsiniz. </span><span style=\" "
-"font-size:10pt; font-weight:600; color:#5f2234;\"> Ayarları Uygula</span><span "
-"style=\" font-size:10pt; color:#5f2234;\"> tuşuna bastığınızda ayarlarınız kaydedilecektir. Artık "
-"Pardu'sun tadını çıkarmaya hazırsınız!</span></p></body></html>"
+"uygulanmasını istediğiniz ayarların listesini görebilirsiniz. </span><span "
+"style=\" font-size:10pt; font-weight:600; color:#5f2234;\"> Ayarları Uygula</"
+"span><span style=\" font-size:10pt; color:#5f2234;\"> tuşuna bastığınızda "
+"ayarlarınız kaydedilecektir. Artık Pardu'sun tadını çıkarmaya hazırsınız!</"
+"span></p></body></html>"
 
 #: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -1104,7 +1085,6 @@ msgid "Don't change wallpaper"
 msgstr "Duvar kâğıdını değiştirme"
 
 #: .tmp/ui_wallpaperWidget.py:82
-
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1129,13 +1109,13 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; color:#5f2234;\">Masaüstünüz için en beğendiğiniz duvar kağıdını seçin. "
-"</span><span style=\" font-size:10pt; font-weight:600; "
-"color:#5f2234;\">Masaüstü Ayarları</span><span style=\" font-size:10pt; color:"
-"#5f2234;\">'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın.</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Masaüstünüz için en beğendiğiniz duvar kağıdını "
+"seçin. </span><span style=\" font-size:10pt; font-weight:600; color:#5f2234;"
+"\">Masaüstü Ayarları</span><span style=\" font-size:10pt; color:#5f2234;"
+"\">'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın.</"
+"span></p></body></html>"
 
 #: .tmp/ui_wallpaperWidget.py:88
-
 msgid "Choose a Wallpaper"
 msgstr "Duvarkağıdı Seçin"
 
@@ -1147,24 +1127,27 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:20pt; font-weight:600; color:#5f2234;\">Welcome to Pardus 2009.1</"
-"span></p></body></html>"
+"size:20pt; font-weight:600; color:#5f2234;\">Welcome to Pardus 2009.1 </"
+"span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-"
+"align:super;\">beta</span></p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:20pt; font-weight:600; color:#5f2234;\">Pardus 2009.1'e Hoşgeldiniz</"
-"span></p></body></html>"
+"size:20pt; font-weight:600; color:#5f2234;\">Pardus 2009.1 </"
+"span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-"
+"align:super;\">beta</span><span style=\" font-size:20pt; font-weight:600; color:#5f2234;\">'ya hoşgeldiniz.</span></p></body></html>"
+
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid ""
@@ -1215,16 +1198,17 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:10pt; font-weight:600; color:#5f2234;\">Pardus</span><span style=\" "
-"font-size:10pt; color:#5f2234;\"> güvenilir, hızlı ve kullanıcı "
-"dostu bir işletim sistemidir.</span></p>\n"
+"font-size:10pt; color:#5f2234;\"> güvenilir, hızlı ve kullanıcı dostu bir "
+"işletim sistemidir.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:10pt; color:#5f2234;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:10pt; color:#5f2234;\">Pardus ile İnternet'e bağlanabilir, "
-"maillerinizi okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik "
-" dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha fazlasını yapabilirsiniz!</span></p>\n"
+"size:10pt; color:#5f2234;\">Pardus ile İnternet'e bağlanabilir, maillerinizi "
+"okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  "
+"dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha "
+"fazlasını yapabilirsiniz!</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
 "size:10pt; color:#5f2234;\"></p>\n"
@@ -1241,6 +1225,9 @@ msgstr ""
 "size:10pt; color:#5f2234;\">Lütfen başlamak için </span><span style=\" font-"
 "size:10pt; font-weight:600; color:#5f2234;\">İleri</span><span style=\" font-"
 "size:10pt; color:#5f2234;\">'ye tıklayın.</span></p></body></html>"
+
+#~ msgid "Welcome to Kaptan Wizard :)"
+#~ msgstr "Kaptan Masaüstü size \"Hoşgeldiniz!\" diyor :)"
 
 #~ msgid "Goodbye"
 #~ msgstr "Hoşçakalın"
@@ -1396,4 +1383,3 @@ msgstr ""
 
 #~ msgid "Authentication Error!"
 #~ msgstr "Yetkilendirme Hatası!"
-#endif // TR.PO
