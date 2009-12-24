@@ -239,9 +239,8 @@ msgid "Welcome"
 msgstr "Hoşgeldiniz"
 
 #: .tmp/ScrSummary.py:38
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Kaptan'a hoşgeldiniz!"
+msgstr "Kaptan'a hoşgeldiniz"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -320,7 +319,7 @@ msgstr "Kaptan Masaüstü size \"Hoşgeldiniz!\" diyor :)"
 
 #: .tmp/ui_goodbyeWidget.py:222
 
-msgid "Other"
+msgid "More"
 msgstr "Diğer"
 
 #: .tmp/ui_goodbyeWidget.py:223 .tmp/ui_menuWidget.py:137
@@ -407,8 +406,9 @@ msgstr ""
 #: .tmp/ui_goodbyeWidget.py:240
 
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages."
+
+"Pardus community, mailing lists, IRC channels, wiki's, help and support "
+"pages.."
 msgstr ""
 "Pardus topluluğu, mail listeleri, chat odaları, viki'ler, yardım ve destek sayfaları."
 
@@ -490,7 +490,7 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_menuWidget.py:147
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -517,7 +517,7 @@ msgstr ""
 "p></body></html>"
 
 #: .tmp/ui_menuWidget.py:155
-#, fuzzy
+
 msgid "Sample"
 msgstr "Örnek"
 
@@ -530,7 +530,7 @@ msgid "Setup Mouse Behavior"
 msgstr ""
 
 #: .tmp/ui_mouseWidget.py:138
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -565,7 +565,7 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-"
 "weight:600; color:#5f2234;\">Tıklama Biçimi</span><span style=\" font-"
-"size:10pt; color:#5f2234;\">  ayarı, dosya açarken simgelere kaç kere tıklamanız"
+"size:10pt; color:#5f2234;\"> dosya açarken simgelere kaç kere tıklamanız"
 " gerektiğini belirlemenize yardımcı olur.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
@@ -582,7 +582,7 @@ msgid "mouse icon"
 msgstr "fare simgesi"
 
 #: .tmp/ui_mouseWidget.py:146
-#, fuzzy
+
 msgid "Clicking Behaviour"
 msgstr "Tıklama Biçimi"
 
@@ -619,7 +619,7 @@ msgid "Connect to the Internet"
 msgstr ""
 
 #: .tmp/ui_networkWidget.py:63
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -642,31 +642,36 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Yeni bir bağlantı oluşturmak için </span><span "
+"style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Profil Oluştur</"
+"span><span style=\" font-size:10pt; color:#5f2234;\">'a tıklayın ve "
+"listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu "
+"işaretleyip İnternet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise erişim noktasını seçip"
+"şifrenizi girmeyi unutmayın.</span></p></body></html>"
+
 
 #: .tmp/ui_packageWidget.py:106
-#, fuzzy
+
 msgid "Packages"
-msgstr "Paket"
+msgstr "Paketler"
 
 #: .tmp/ui_packageWidget.py:108
 msgid "Updates"
 msgstr "Güncellemeler"
 
 #: .tmp/ui_packageWidget.py:109
-#, fuzzy
+
 msgid "Show updates in the system tray"
-msgstr "Sistem tepsisinde göster"
+msgstr "Güncellemeleri sistem tepsisinde göster"
 
 #: .tmp/ui_packageWidget.py:110
-#, fuzzy
+
 msgid "Check updates automatically every"
-msgstr "Güncelleme kontrol sıklığı:"
+msgstr "Güncellemeleri kontrol etme sıklığı"
 
 #: .tmp/ui_packageWidget.py:111
 msgid " hours"
@@ -674,7 +679,7 @@ msgstr " saat"
 
 #: .tmp/ui_packageWidget.py:112
 msgid "Repositories"
-msgstr ""
+msgstr "Depolar"
 
 #: .tmp/ui_packageWidget.py:113
 msgid "Contrib repo includes extra packages."
@@ -685,7 +690,7 @@ msgid "Add contrib repo"
 msgstr "Katkı deposunu ekle"
 
 #: .tmp/ui_packageWidget.py:115
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -706,12 +711,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-"
+"size:10pt; color:#5f2234;\">Pardus'ta program yükleyip silme işlemleri Paket Yöneticisi "
+"tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi otomatik olarak"
+"güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol etme sıklığını belirleyebilirsiniz.</span></"
+"p></body></html>"
 
 #: .tmp/ui_packageWidget.py:120
 msgid "picture label"
@@ -722,17 +729,17 @@ msgid "Install / Remove Programs"
 msgstr ""
 
 #: .tmp/ui_searchWidget.py:68
-#, fuzzy
+
 msgid "Search"
-msgstr "Masaüstü Araması"
+msgstr "Arama"
 
 #: .tmp/ui_searchWidget.py:71
-#, fuzzy
+
 msgid "Easy Desktop Search"
-msgstr "Masaüstü Araması"
+msgstr "Pratik Masaüstü Araması"
 
 #: .tmp/ui_searchWidget.py:72
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -752,23 +759,24 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Strigi Masaüstü Arama uygulaması sık kullandığınız dosyaları "
+"hafızasına alarak arama yaptığınızda hızlıca bulunmalarını sağlar. Strigi ayrıca "
+"dosyaların yalnızca ismine değil, içeriğine bakarak da arama yapmanıza olanak sağlar.</span></p></body></html>"
 
 #: .tmp/ui_searchWidget.py:77
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Strigi, dosyalarımı indekslesin"
 
 #: .tmp/ui_smoltWidget.py:107
 msgid "&Send my profile"
 msgstr "Donanım Bilgisini &Gönder"
 
 #: .tmp/ui_smoltWidget.py:109
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -859,7 +867,7 @@ msgid "Help Pardus Improve!"
 msgstr ""
 
 #: .tmp/ui_smoltWidget.py:120
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -880,12 +888,13 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Smolt,</span><span style=\" font-"
+"size:10pt; color:#5f2234;\"> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizlere göndererek "
+" istatistikler doğrultusunda Pardus'u geliştirmemize katkıda bulunur.</span></p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -908,7 +917,7 @@ msgid "Customize Your Desktop"
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:102
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -927,11 +936,12 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Favori temanızı ve masaüstü tipini seçip, "
+"Pardus'u renkli stil ve temalarla kişiselleştirebilirsiniz.</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:107
 msgid ""
@@ -945,7 +955,7 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:112
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -963,11 +973,11 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
+"size:10pt; font-weight:600;\">Masaüstü Tipi</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:117
 msgid "Desktop view (KDE4 Style)"
@@ -978,7 +988,7 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Klasör görünümü (KDE3 Biçemi)"
 
 #: .tmp/ui_styleWidget.py:119
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -997,11 +1007,13 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Masaüstü Adeti</span></p></"
+"body></html>"
+
 
 #: .tmp/ui_summaryWidget.py:60
 msgid "Summary"
@@ -1017,12 +1029,12 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_summaryWidget.py:66
-#, fuzzy
+
 msgid "Save Your Settings"
-msgstr "Arama Ayarları"
+msgstr "Ayarlarınızı Kaydedin"
 
 #: .tmp/ui_summaryWidget.py:67
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1044,12 +1056,15 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Bütün adımları başarıyla tamamladınız. Aşağıda "
+"uygulanmasını istediğiniz ayarların listesini görebilirsiniz. </span><span style=\" "
+"font-size:10pt; font-weight:600; color:#5f2234;\"> Ayarları Uygula</span><span "
+"style=\" font-size:10pt; color:#5f2234;\"> tuşuna bastığınızda ayarlarınız kaydedilecektir. Artık "
+"Pardu'sun tadını çıkarmaya hazırsınız!</span></p></body></html>"
 
 #: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -1081,7 +1096,7 @@ msgid "Don't change wallpaper"
 msgstr "Duvar kâğıdını değiştirme"
 
 #: .tmp/ui_wallpaperWidget.py:82
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1102,20 +1117,22 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarınız bir sonraki ekranda "
-"uygulanacaktır...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Masaüstünüz için en beğendiğiniz duvar kağıdını seçin. "
+"</span><span style=\" font-size:10pt; font-weight:600; "
+"color:#5f2234;\">Masaüstü Ayarları</span><span style=\" font-size:10pt; color:"
+"#5f2234;\">'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın.</span></p></body></html>"
 
 #: .tmp/ui_wallpaperWidget.py:88
-#, fuzzy
+
 msgid "Choose a Wallpaper"
-msgstr "Duvarkağıdı Seç"
+msgstr "Duvarkağıdı Seçin"
 
 #: .tmp/ui_welcomeWidget.py:55
-#, fuzzy
+
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1134,11 +1151,12 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Bir menü stili seçin:</span></p></body></html>"
+"size:20pt; font-weight:600; color:#5f2234;\">Pardus 2009.1'e Hoşgeldiniz</"
+"span></p></body></html>"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid ""
