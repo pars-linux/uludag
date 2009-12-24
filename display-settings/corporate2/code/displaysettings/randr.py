@@ -41,7 +41,13 @@ class Interface:
 
             name = "".join(map(chr, info.name))
             output = Output(name)
-            outputs.append(output)
+            output.randrInfo = info
+
+            try:
+                cookie = conn.randr.GetCrtcInfo(info.crtc, self.resources.config_timestamp)
+                output.crtcInfo = cookie.reply()
+            except xcb.randr.BadCrtc:
+                output.crtcInfo = None
 
             if info.connection == xcb.randr.Connection.Connected:
                 output.connection = Output.Connected
@@ -50,7 +56,13 @@ class Interface:
             else:
                 output.connection = Output.Unknown
 
+            outputs.append(output)
+
         return outputs
+
+    def getGeometry(self, output):
+        i = output.crtcInfo
+        return (i.width, i.height, i.x, i.y) if i else (0, 0, 0, 0)
 
 if __name__ == "__main__":
     iface = Interface()
