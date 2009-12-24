@@ -132,7 +132,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         if self.wallpaperSettings["hasChanged"] == True:
             hasChanged = True
             if self.wallpaperSettings["selectedWallpaper"]:
-                config =  KConfig("plasma-appletsrc")
+                config =  KConfig("plasma-desktop-appletsrc")
                 group = config.group("Containments")
                 for each in list(group.groupList()):
                     subgroup = group.group(each)
@@ -159,7 +159,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Menu Settings
         if self.menuSettings["hasChanged"] == True:
             hasChanged = True
-            config = KConfig("plasma-appletsrc")
+            config = KConfig("plasma-desktop-appletsrc")
             group = config.group("Containments")
 
             for each in list(group.groupList()):
@@ -175,7 +175,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Desktop Type
         if self.styleSettings["hasChangedDesktopType"] == True:
             hasChanged = True
-            config =  KConfig("plasma-appletsrc")
+            config =  KConfig("plasma-desktop-appletsrc")
             group = config.group("Containments")
 
             for each in list(group.groupList()):
@@ -233,12 +233,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
             configKdeGlobals.sync()
             kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
 
-            configPlasmaRc = KConfig("plasmarc")
+            configPlasmaRc = KConfig("plasma-desktoprc")
             groupDesktopTheme = configPlasmaRc.group("Theme")
             groupDesktopTheme.writeEntry("name", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["desktopTheme"])
             configPlasmaRc.sync()
 
-            configPlasmaApplet = KConfig("plasma-appletsrc")
+            configPlasmaApplet = KConfig("plasma-desktop-appletsrc")
             group = configPlasmaApplet.group("Containments")
             for each in list(group.groupList()):
                 subgroup = group.group(each)

@@ -98,7 +98,7 @@ class Kaptan(QtGui.QWidget):
 
     def slotFinished(self):
         if wallpaperWidget.Widget.selectedWallpaper:
-            config =  KConfig("plasma-appletsrc")
+            config =  KConfig("plasma-desktop-appletsrc")
             group = config.group("Containments")
             for each in list(group.groupList()):
                 subgroup = group.group(each)
