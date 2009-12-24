@@ -14,7 +14,7 @@
    <string>Goodbye</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">color: rgb(95, 34, 52);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_7">
    <item row="0" column="1">
@@ -45,39 +45,92 @@
      <item row="0" column="0">
       <layout class="QGridLayout" name="gridLayout_5">
        <item row="0" column="0">
-        <widget class="QLabel" name="labelGoodbye">
-         <property name="styleSheet">
-          <string notr="true">color:black</string>
-         </property>
-         <property name="text">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>20</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string>color: rgb(95, 34, 52);</string>
+           </property>
+           <property name="text">
+            <string>Congratulations!</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="labelMouseDesc">
+           <property name="minimumSize">
+            <size>
+             <width>300</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">color:black</string>
+           </property>
+           <property name="text">
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:26pt; font-weight:600; color:#5f2234;&quot;&gt;Congratulations! &lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Droid Sans'; font-size:11pt; font-weight:600; color:#5f2234;&quot;&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Droid Sans'; font-size:12pt; font-weight:600; color:#5f2234;&quot;&gt;You have finished all steps. Now you may continue to use Pardus or check out the following applications for more settings, help and support&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-         </property>
-         <property name="wordWrap">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>80</width>
-           <height>28</height>
-          </size>
-         </property>
-        </spacer>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;Your settings have been applied.&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt; Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;join our community!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="wordWrap">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>15</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
       </layout>
      </item>
@@ -118,7 +171,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Go to your Smolt page and rate your hardware components.</string>
@@ -168,7 +221,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>My Smolt Page</string>
@@ -189,7 +242,7 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:black</string>
+          <string notr="true"/>
          </property>
          <property name="title">
           <string>Migration Wizard</string>
@@ -213,7 +266,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus.</string>
@@ -263,7 +316,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Migration Wizard</string>
@@ -284,7 +337,7 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:black</string>
+          <string notr="true"/>
          </property>
          <property name="title">
           <string>System Settings</string>
@@ -324,7 +377,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
@@ -358,7 +411,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>System Settings</string>
@@ -377,7 +430,7 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:black</string>
+          <string notr="true"/>
          </property>
          <property name="title">
           <string>Help and Support</string>
@@ -392,7 +445,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color:black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Pardus community, mailing lists, IRC channels, wiki's help and support pages..</string>
@@ -442,7 +495,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: black</string>
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Help and Support</string>
@@ -466,7 +519,23 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>40</width>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="3" column="1" colspan="3">
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
        <height>20</height>
       </size>
      </property>
@@ -479,22 +548,6 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="3">
-    <spacer name="verticalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>

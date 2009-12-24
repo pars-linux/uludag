@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Summary</string>
   </property>
+  <property name="styleSheet">
+   <string>color: rgb(95, 34, 52);</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <spacer name="verticalSpacer_2">
@@ -30,10 +33,16 @@
      </property>
     </spacer>
    </item>
-   <item row="1" column="1">
-    <widget class="QTextEdit" name="textSummary"/>
+   <item row="2" column="1">
+    <widget class="QTextEdit" name="textSummary">
+     <property name="styleSheet">
+      <string>#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
+
+border: 1px solid rgb(236, 236, 236, 80);}</string>
+     </property>
+    </widget>
    </item>
-   <item row="1" column="2">
+   <item row="2" column="2">
     <spacer name="horizontalSpacer_2">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
@@ -49,10 +58,10 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="0">
-    <spacer name="horizontalSpacer_3">
+   <item row="5" column="1">
+    <spacer name="verticalSpacer_3">
      <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+      <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
@@ -65,10 +74,39 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="1">
-    <layout class="QVBoxLayout" name="verticalLayout">
+   <item row="1" column="1">
+    <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <spacer name="verticalSpacer">
+      <widget class="QLabel" name="label">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>50</height>
+        </size>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>20</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string>color: rgb(95, 34, 52);</string>
+       </property>
+       <property name="text">
+        <string>Save Your Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_5">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
@@ -84,37 +122,50 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="labelKaptanIntro">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
+      <widget class="QLabel" name="labelMouseDesc">
+       <property name="minimumSize">
+        <size>
+         <width>300</width>
+         <height>0</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">color:black</string>
-       </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
        </property>
        <property name="text">
         <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; font-weight:600;&quot;&gt;Your settings will be applied in next screen...&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt;You have finished all steps successfully. Here's a summary of the settings you want to apply. Click &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;Apply Settings&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt; to save them now. You are now ready to enjoy Pardus!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
        </property>
       </widget>
      </item>
+     <item>
+      <spacer name="verticalSpacer_6">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>15</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
     </layout>
    </item>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_3">
+   <item row="2" column="0">
+    <spacer name="horizontalSpacer_3">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Horizontal</enum>
      </property>
      <property name="sizeType">
       <enum>QSizePolicy::Fixed</enum>
