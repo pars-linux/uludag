@@ -1,0 +1,17 @@
+artwork
+--------
+
+pardusMoodinTheme
+------------------
+
+This is the ksplash theme used just after a successful login in KDM. It contains of an RC file, a screenshot and a JPG background image.
+
+One problem is that the moodin engine bloats the cached image files if the base background != 1280x1024..
+
+wallpapers
+-----------
+
+ksmserver
+----------
+
+Just a small image which is shown when you click 'Exit' from KMenu.
