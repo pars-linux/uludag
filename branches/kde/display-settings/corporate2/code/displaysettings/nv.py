@@ -53,6 +53,9 @@ class Interface:
         self.queryCurrent()
         return self.__outputs
 
+    def getGeometry(self, output):
+        return (0, 0, 0, 0)
+
 if __name__ == "__main__":
     iface = Interface()
 
