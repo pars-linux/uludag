@@ -1,0 +1,72 @@
+Index: sysinfo/sysinfo.cpp
+===================================================================
+--- sysinfo/sysinfo.cpp	(revision 27063)
++++ sysinfo/sysinfo.cpp	(working copy)
+@@ -228,13 +228,7 @@
+ 
+     // Dynamic Info
+ 
+-    // common folders
+-    dynamicInfo += startStock(i18n("Common Folders"));
+-    dynamicInfo += addToStock("folder_home", i18n("My Home Folder"), QDir::homeDirPath(), "file:" + QDir::homeDirPath());
+-    dynamicInfo += addToStock("folder_red", i18n("Root Folder"), QDir::rootDirPath(), "file:" + QDir::rootDirPath());
+-    dynamicInfo += addToStock("network", i18n("Network Folders"), "remote:/" , "remote:/");
+-    dynamicInfo += finishStock();
+-
++    
+     // net info
+     int state = netInfo();
+     if (state >= 1) { // assume no network manager / networkstatus
+@@ -255,6 +249,7 @@
+ 
+     content = content.arg(dynamicInfo); // put the dynamicInfo text into the dynamic left box
+ 
++    
+     // Disk Info
+ 
+     content = content.arg(i18n("Disks"));
+@@ -357,12 +355,43 @@
+ QString kio_sysinfoProtocol::diskInfo()
+ {
+     QString result;
++
++    // Add common folders
++    /*
++    staticInfo += addToStock("folder_home", i18n("My Home Folder"), QDir::homeDirPath(), "file:" + QDir::homeDirPath());
++    staticInfo += addToStock("folder_red", i18n("Root Folder"), QDir::rootDirPath(), "file:" + QDir::rootDirPath());
++    staticInfo += addToStock("network", i18n("Network Folders"), "remote:/" , "remote:/");
++    */
++
++    result += QString("<tr class=\"media\">"
++                        "   <td>"
++                        "   <a href=\"file:%1\">"
++                        "       <img src=\"%2\" width=\"48\" height=\"48\" />"
++                        "   </a></td>").
++                        arg(QDir::homeDirPath()).
++                        arg(icon("folder_home", 48, true));
++
++    result += QString("   <td>"
++                        "       <span class=\"detail\"><a href=\"file:%1\">%1</a></span>"
++                        "       %2<br>"
++                        "   <td></td>"
++                        "   </td>"
++                        "</tr>").
++                        arg(QDir::homeDirPath()).
++                        arg(i18n("My Home Folder"));
++
++
+     if (fillMediaDevices())
+     {
+         for (QValueList<DiskInfo>::ConstIterator it = m_devices.constBegin(); it != m_devices.constEnd(); ++it)
+         {
+             DiskInfo di = (*it);
+-            unsigned long long usage,percent,peer;
++
++            if (di.mounted && di.mountPoint == "/")
++                // Skip root filesystem as it's listed above as 'Root Folder'
++                continue;
++
++            unsigned long long usage, percent, peer;
+             QString label = di.userLabel.isEmpty() ? di.label : di.userLabel;
+             QString mountState = di.mounted ? i18n("Mounted on %1").arg(di.mountPoint) : i18n("Not mounted");
+             QString tooltip = i18n(di.model);
