@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd" compression="lzma">
-    <Title>Pardus 2009 Calisan</Title>
+    <Title>Pardus 2009.1 Calisan Beta</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -146,8 +146,6 @@
         <SelectedPackage>module-alsa-driver</SelectedPackage>
         <SelectedPackage>min12xxw</SelectedPackage>
         <SelectedPackage>migration</SelectedPackage>
-        <SelectedPackage>syslinux</SelectedPackage>
-        <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>mdadm</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
@@ -308,6 +306,7 @@
         <Package>tunepimp</Package>
         <Package>transcode</Package>
         <Package>tomcat-servlet-api</Package>
+        <Package>timezone</Package>
         <Package>time</Package>
         <Package>tiff</Package>
         <Package>texinfo</Package>
@@ -734,7 +733,6 @@
         <Package>glut</Package>
         <Package>glitz</Package>
         <Package>glibmm</Package>
-        <Package>glibc-zoneinfo</Package>
         <Package>glibc</Package>
         <Package>glib2</Package>
         <Package>giflib</Package>
