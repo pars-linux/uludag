@@ -1,3 +1,5 @@
+#ifndef TR.PO
+#define TR.PO
 # translation of tr.po to Turkish
 # Kaptan
 # Copyright (C) 2009
@@ -52,7 +54,8 @@ msgstr "Kick-off Menü"
 msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
-msgstr ""
+msgstr "Kick-off, Pardus'ta ön tanımlı olarak gelen menüdür.<br><br>Programların kısayolları"
+" kolay ulaşılabilir ve iyi organize edilmişlerdir."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:153
 msgid "Simple Menu"
@@ -62,7 +65,8 @@ msgstr "Basit Menü"
 msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
-msgstr ""
+msgstr "Basit menü KDE3 ile birlikte gelen eski bir menüdür.<br><br> Hafif ve hızlı"
+" yapısı yüzünden yavaş bilgisayarlar için tavsiye edilir."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:154
 msgid "Lancelot Menu"
@@ -72,7 +76,8 @@ msgstr "Lancelot Menü"
 msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
-msgstr ""
+msgstr "Lancelot oldukça gelişmiş ve yüksek kişiselleştirilebilirliğe sahip bir menüdür.<br><br>"
+"Programların kısayolları kolay ulaşılabilir ve iyi organize edilmişlerdir."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -331,7 +336,7 @@ msgstr "Diğer"
 #: .tmp/ui_summaryWidget.py:61 .tmp/ui_summaryWidget.py:65
 #: .tmp/ui_wallpaperWidget.py:76 .tmp/ui_wallpaperWidget.py:87
 msgid "color: rgb(95, 34, 52);"
-msgstr ""
+msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_goodbyeWidget.py:225
 
@@ -398,15 +403,15 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Ekran, güvenlik duvarı, klavye ve kullanıcı hesapları gibi Pardus ayarlarını içerir..."
 
 #: .tmp/ui_goodbyeWidget.py:239 .tmp/ui_goodbyeWidget.py:241
 msgid "Help and Support"
-msgstr ""
+msgstr "Yardım ve Destek"
 
 #: .tmp/ui_goodbyeWidget.py:240
 
 msgid ""
-
 "Pardus community, mailing lists, IRC channels, wiki's, help and support "
 "pages.."
 msgstr ""
@@ -450,7 +455,7 @@ msgstr "Menü"
 
 #: .tmp/ui_menuWidget.py:138
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Bir Menü Stili Seçin"
 
 #: .tmp/ui_menuWidget.py:139
 
@@ -488,6 +493,9 @@ msgid ""
 "border: 1px solid rgb(255, 255, 255);\n"
 "}"
 msgstr ""
+"#pictureMenuStyles{\n"
+"border: 1px solid rgb(255, 255, 255);\n"
+"}"
 
 #: .tmp/ui_menuWidget.py:147
 
@@ -527,7 +535,7 @@ msgstr "Fare"
 
 #: .tmp/ui_mouseWidget.py:137
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Fare Davranışını Belirleyin"
 
 #: .tmp/ui_mouseWidget.py:138
 
@@ -616,7 +624,7 @@ msgstr "Ağ"
 
 #: .tmp/ui_networkWidget.py:62
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "İnternete Bağlanın"
 
 #: .tmp/ui_networkWidget.py:63
 
@@ -726,7 +734,7 @@ msgstr "resim etiketi"
 
 #: .tmp/ui_packageWidget.py:122
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Program Yükle / Sil"
 
 #: .tmp/ui_searchWidget.py:68
 
@@ -864,7 +872,7 @@ msgstr ""
 
 #: .tmp/ui_smoltWidget.py:119
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Pardus'un Gelişimine Katkıda Bulunun!"
 
 #: .tmp/ui_smoltWidget.py:120
 
@@ -914,7 +922,7 @@ msgstr "Temalar"
 
 #: .tmp/ui_styleWidget.py:101
 msgid "Customize Your Desktop"
-msgstr ""
+msgstr "Masaüstünüzü Kişiselleştirin"
 
 #: .tmp/ui_styleWidget.py:102
 
@@ -1197,6 +1205,42 @@ msgid ""
 "size:10pt; font-weight:600; color:#5f2234;\">next</span><span style=\" font-"
 "size:10pt; color:#5f2234;\"> in order to begin.</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Pardus</span><span style=\" "
+"font-size:10pt; color:#5f2234;\"> güvenilir, hızlı ve kullanıcı "
+"dostu bir işletim sistemidir.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Pardus ile İnternet'e bağlanabilir, "
+"maillerinizi okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik "
+" dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha fazlasını yapabilirsiniz!</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Kaptan, </span><span style=\" "
+"font-size:10pt; color:#5f2234;\"> Pardus çalışma ortamınızı hızlı ve kolayca "
+"kişiselleştirmenize yardımcı olan bir uygulamadır. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Lütfen başlamak için </span><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">İleri</span><span style=\" font-"
+"size:10pt; color:#5f2234;\">'ye tıklayın.</span></p></body></html>"
 
 #~ msgid "Goodbye"
 #~ msgstr "Hoşçakalın"
@@ -1352,3 +1396,4 @@ msgstr ""
 
 #~ msgid "Authentication Error!"
 #~ msgstr "Yetkilendirme Hatası!"
+#endif // TR.PO
