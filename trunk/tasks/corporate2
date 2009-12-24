@@ -68,6 +68,8 @@
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * libnotify API breakage (-)
+    * moodin temasında resize sorunu (-)
+    * kdm temasının elden geçirilmesi (-)
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
 
 * KDE (Gökçen Eraslan)
