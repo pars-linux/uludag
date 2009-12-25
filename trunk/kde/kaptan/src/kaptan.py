@@ -22,16 +22,6 @@ import gui.ScrKeyboard  as keyboardWidget
 import gui.ScrPackage as packageWidget
 import gui.ScrSmolt as smoltWidget
 
-def getKernelOpt(cmdopt=None):
-    if cmdopt:
-        for cmd in "".join(loadFile("/proc/cmdline")).split():
-            if cmd.startswith("%s=" % cmdopt):
-                return cmd[len(cmdopt)+1:].split(",")
-    else:
-        return "".join(loadFile("/proc/cmdline")).split()
-
-    return ""
-
 def loadFile(_file):
     try:
         f = file(_file)
@@ -43,12 +33,12 @@ def loadFile(_file):
         return []
 
 def isLiveCD():
-    opts = getKernelOpt("mudur")
+    try:
+        liveCDcheck = open('/var/run/pardus/livemedia')
+    except IOError:
+        return False
 
-    if opts and "livecd" in opts:
-        return True
-
-    return False
+    return True
 
 def profileSended():
     ''' Do not show smolt screen if profile was already sended.'''
