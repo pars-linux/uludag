@@ -59,15 +59,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # select appropriate keymap
             if self.getCurrentSystemLanguage().strip() == languageCode.strip():
-                self.ui.listWidgetKeyboard.setCurrentItem(item)
-        
+                if languageCode.strip()=="tr" and languageVariant.strip() == "f":
+                    break
+                else:
+                    self.ui.listWidgetKeyboard.setCurrentItem(item)
+
         self.ui.listWidgetKeyboard.sortItems()
         self.ui.listWidgetKeyboard.connect(self.ui.listWidgetKeyboard, SIGNAL("itemSelectionChanged()"), self.setKeyboard)
 
     def getCurrentSystemLanguage(self):
-        p = subprocess.Popen(["cat","/etc/mudur/language"], stdout=subprocess.PIPE)
-        lang, err = p.communicate()
-        return str(lang)
+        lang = "en"
+
+        try:
+            langFile = open('/etc/mudur/language', 'r')
+            lang = langFile.readline().rstrip('\n').strip()
+        except IOError:
+            print "Cannot read /etc/mudur/language file"
+
+        return lang
 
     def getLanguageList(self):
         languageList = []
