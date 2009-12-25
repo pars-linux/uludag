@@ -5,18 +5,20 @@
 #
 # Pınar Yanardağ <pinar@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-24 11:28+0200\n"
-"PO-Revision-Date: 2009-07-20 20:39-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2009-12-25 10:54-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ScrGoodbye.py:26
 #, fuzzy
@@ -25,7 +27,7 @@ msgstr "Configuración del Estilo"
 
 #: .tmp/ScrGoodbye.py:27 .tmp/ui_goodbyeWidget.py:224
 msgid "Congratulations!"
-msgstr ""
+msgstr "Felicidades !"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
@@ -52,6 +54,9 @@ msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
 msgstr ""
+"Está predeterminado el estilo Kick-off para el menú de inicio de Pardus.<br>"
+"<br>Los accesos a los programas están bien organizados y son fáciles de "
+"ubicar."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:153
 msgid "Simple Menu"
@@ -62,6 +67,8 @@ msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
+"El menú Simple (sencillo) es el estilo del menú antiguo de KDE 3.<br><br>Es "
+"un menú muy liviano, y por lo tanto recomendable para los PCs más lentos."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:154
 msgid "Lancelot Menu"
@@ -72,6 +79,9 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
+"Lancelot es un menú avanzado con muchas opciones de personalización en "
+"Pardus.<br><br>Los accesos a los programas están bien organizados y son "
+"fáciles de ubicar."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -240,9 +250,8 @@ msgid "Welcome"
 msgstr "Bienvenido"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Bienvenido al Asistente Kaptan :)"
+msgstr "Bienvenido al Asistente Kaptan"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -317,9 +326,8 @@ msgstr ""
 "Elija el fondo que más le guste, o seleccione uno de sus propios imágenes..."
 
 #: .tmp/ui_goodbyeWidget.py:222
-#, fuzzy
 msgid "More"
-msgstr "Ratón"
+msgstr "Más"
 
 #: .tmp/ui_goodbyeWidget.py:223 .tmp/ui_menuWidget.py:137
 #: .tmp/ui_mouseWidget.py:136 .tmp/ui_networkWidget.py:61
@@ -333,7 +341,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:225
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -356,12 +363,19 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Las configuraciones están "
+"aplicadas."
+"</span><span style=\" font-size:10pt; color:#5f2234;\"> Ahora puede empezar "
+"y disfrutar usando Pardus o puede ingresar a los siguientes enlaces y "
+"programas para más configuraciones o ayuda y soporte. No se olvide de </span>"
+"<span style=\" "
+"font-size:10pt; font-weight:600; color:#5f2234;\">unirse a nuestra comunidad "
+"!</"
+"span></p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:230 .tmp/ui_goodbyeWidget.py:232
 msgid "My Smolt Page"
@@ -393,17 +407,20 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Herramientas de configuración de Pardus como monitor, cortafuegos, teclado, "
+"administrador de usuarios..."
 
 #: .tmp/ui_goodbyeWidget.py:239 .tmp/ui_goodbyeWidget.py:241
 msgid "Help and Support"
-msgstr ""
+msgstr "Ayuda y Soporte"
 
 #: .tmp/ui_goodbyeWidget.py:240
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, IRC channels, wiki's help and support "
 "pages.."
-msgstr "Comunidad Pardus, listas de usuarios, canales IRC, wikis y más."
+msgstr ""
+"Comunidad Pardus, listas de correo, canales IRC, wikis de ayuda y páginas de "
+"soporte.."
 
 # i am not sure if it is good to translate this, maybe it should remain in english (for the spanish version at least)
 # favor revisar
@@ -448,10 +465,9 @@ msgstr "Menú"
 
 #: .tmp/ui_menuWidget.py:138
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Elegir un estilo de Menú"
 
 #: .tmp/ui_menuWidget.py:139
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -472,11 +488,16 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#5f2234;\">Tambien puede personalizar su </span><span style=\" font-"
+"weight:600; color:#5f2234;\">menú de KDE</span><span style=\" "
+"color:#5f2234;\"> "
+"según sus preferencias. Por favor elija uno de los estilos siguientes.</span>"
+"</p></body></"
+"html>"
 
 #: .tmp/ui_menuWidget.py:144
 msgid ""
@@ -486,7 +507,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_menuWidget.py:147
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -505,15 +525,17 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Estilos de Menu<"
+"/span></"
+"p></body></html>"
 
 #: .tmp/ui_menuWidget.py:155
 msgid "Sample"
-msgstr ""
+msgstr "Ejemplo"
 
 #: .tmp/ui_mouseWidget.py:135
 msgid "Mouse"
@@ -521,10 +543,9 @@ msgstr "Ratón"
 
 #: .tmp/ui_mouseWidget.py:137
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Configurar comportamiento de ratón"
 
 #: .tmp/ui_mouseWidget.py:138
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -554,26 +575,31 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:11pt; font-weight:600;\">Felicidades! </span></p>\n"
+"size:10pt; color:#5f2234;\">Con el </span><span style=\" font-size:10pt; "
+"font-"
+"weight:600; color:#5f2234;\">comportamiento de clic</span><span style=\" "
+"font-"
+"size:10pt; color:#5f2234;\"> se determina cuantos clics desea hacer para "
+"abrir un archivo.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:11pt; font-weight:600;\"></p>\n"
+"size:10pt; color:#5f2234;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">Ha terminado todos los pasos de éste "
-"asistente ! Ahora puede continuar de usar Pardus o puede usar uno de los "
-"siguientes programas:</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Si es </span><span style=\" font-size:10pt; "
+"font-weight:600; color:#5f2234;\">zurdo</span><span style=\" font-"
+"size:10pt; color:#5f2234;\">, le gustaría intercambiar las funciones de "
+"botón derecho con el botón izquierda de su ratón.</span></p></body></html>"
 
 #: .tmp/ui_mouseWidget.py:145
 msgid "mouse icon"
 msgstr "Icono del ratón"
 
 #: .tmp/ui_mouseWidget.py:146
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Comportamiento del clic"
 
@@ -607,10 +633,9 @@ msgstr "Red"
 
 #: .tmp/ui_networkWidget.py:62
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "Conectar a Internet"
 
 #: .tmp/ui_networkWidget.py:63
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -633,29 +658,31 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Para crear una nueva conexión presione </span><"
+"span "
+"style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Crear Perfil</"
+"span><span style=\" font-size:10pt; color:#5f2234;\"> y seleccione una "
+"interfaz de la lista. Si su conexión es inalambrica, indique el punto de "
+"acceso. Luego guarde su perfil, y marque la casilla para establecer la "
+"conexión configurada.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:106
-#, fuzzy
 msgid "Packages"
-msgstr "Paquete"
+msgstr "Paquetes"
 
 #: .tmp/ui_packageWidget.py:108
 msgid "Updates"
 msgstr "Actualizaciones"
 
 #: .tmp/ui_packageWidget.py:109
-#, fuzzy
 msgid "Show updates in the system tray"
-msgstr "Mostrar en la barra de tareas"
+msgstr "Mostrar actualizaciones en la barra de tareas"
 
 #: .tmp/ui_packageWidget.py:110
-#, fuzzy
 msgid "Check updates automatically every"
 msgstr "Comprobar actualizaciones automáticamente cada"
 
@@ -665,7 +692,7 @@ msgstr " horas"
 
 #: .tmp/ui_packageWidget.py:112
 msgid "Repositories"
-msgstr ""
+msgstr "Repositorios"
 
 # favor verificar..
 #: .tmp/ui_packageWidget.py:113
@@ -677,7 +704,6 @@ msgid "Add contrib repo"
 msgstr "Agregar repositorio contrib"
 
 #: .tmp/ui_packageWidget.py:115
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -698,12 +724,15 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-"
+"size:10pt; color:#5f2234;\">Use Administrador de Paquetes para instalar y "
+"remover programas en Pardus. El administrador de Paquetes también puede "
+"instalar automaticamente las últimas actualizaciones. Puede especificar el "
+"intervalo de verificación por actualizaciones nuevas.</span></"
+"p></body></html>"
 
 #: .tmp/ui_packageWidget.py:120
 msgid "picture label"
@@ -711,20 +740,17 @@ msgstr "Rótulo de la imagen"
 
 #: .tmp/ui_packageWidget.py:122
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Instalar / remover programas"
 
 #: .tmp/ui_searchWidget.py:68
-#, fuzzy
 msgid "Search"
-msgstr "Busqueda de Escritorio"
+msgstr "Buscar"
 
 #: .tmp/ui_searchWidget.py:71
-#, fuzzy
 msgid "Easy Desktop Search"
-msgstr "Busqueda de Escritorio"
+msgstr "Busqueda Fácil de Escritorio"
 
 #: .tmp/ui_searchWidget.py:72
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -744,23 +770,24 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Strigi Desktop Search indexa sus archivos que "
+"utiliza frecuentemente. De esta manera obtiene resultados rápidos de "
+"búsqueda. Strigi buede también buscar archivos por su contenido.</span></p><"
+"/body></html>"
 
 #: .tmp/ui_searchWidget.py:77
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Permitir Strigi de crear indice de mis archivos"
 
 #: .tmp/ui_smoltWidget.py:107
 msgid "&Send my profile"
 msgstr "&Enviar mi perfil"
 
 #: .tmp/ui_smoltWidget.py:109
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -812,50 +839,57 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt enviará solamente "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Smolt enviará solamente "
 "información relacionado con hardware y información básica del sistema "
 "operativo al servidor smolt de Pardus (smoon). Lo único que vincula al "
 "remitente con la base de datos, es el UUID de la PC del remitente. Mientras "
 "el remitente no publica su UUID, los datos enviados son anónimos. Si en "
 "algún momento el usuario desea eliminar su perfil de la base de datos, puede "
-"ejecutar sencillamente </p>\n"
+"ejecutar sencillamente</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
-"style:italic;\">smoltDeleteProfile</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   La información enviada "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   La información enviada "
 "a la base de datos smolt se debe considerar pública, en la que cualquier "
 "persona puede ver datos estadísticas, perfiles de datos y recursos "
 "compartidos. Smolt fue diseñado para llamar la atención a los distintos "
-"fabricantes de hardware y de acesorios. Como tal, no solamente se va a "
+"fabricantes de hardware y de acesorios. Como tál, no solamente se va a "
 "compartir la información reunida con terceros, sino también se va a usar "
 "como herramienta para conseguir mejor soporte de los controladores libres y "
-"recibir mejor soporte en general.</p>\n"
+"recibir mejor soporte en general.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span> En la implementación del "
-"servidor Smolt de Pardus, todo el tráfico pasa por un servidor proxy. Esto "
-"es el único lugar donde se registra el IP, y se mantiene su registro durante "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" "
+"font-size:9pt;\">  Todo el tráfico con el servidor Smolt de Pardus pasa por "
+"un servidor proxy. Esto es el único lugar donde se registra el IP, y se "
+"mantiene su registro durante "
 "4 semanas, hasta que es eliminado por la rotación de los logs. El Proyecto "
 "Pardus no almacena la dirección ip en la base de datos smolt. Los archivos "
-"log son privados, y no estaránaccesible por el público en general.</p>\n"
+"log son privados, y no estarán accesible por el público en general.</span><"
+"/p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"> Usuarios a quienes no les "
-"agrada ésta política sencillamente no deberían usar smolt. Si hay dudas o "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Usuarios a quienes no les "
+"agrada ésta política sencillamente no deberían usar smolt. Si tiene dudas o "
 "preguntas sobre ésta política, debería contactar al equipo de la "
 "infraestructura Pardus en admin [at] pardus.org.tr. Recuerde que el usuario "
-"puede eliminar su perfil en cualquier momento con el comando\"<span style=\" "
-"font-style:italic;\">smoltDeleteProfile</span>\"</p></body></html>"
+"puede eliminar su perfil en cualquier momento con el comando \"</span><span "
+"style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</span><span "
+"style=\" font-"
+"size:9pt;\">\"</span></p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:119
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Ayude a mejorar a Pardus!"
 
 #: .tmp/ui_smoltWidget.py:120
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -876,12 +910,15 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-"
+"size:10pt; color:#5f2234;\"> es una herramienta que toma la información de "
+"la tabla siguiente y nos lo envia, permitiendonos mejorar Pardus "
+"según las estadísticas de perfiles de los equipos utilizados.</span></p><"
+"/body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -901,10 +938,9 @@ msgstr "Temas"
 
 #: .tmp/ui_styleWidget.py:101
 msgid "Customize Your Desktop"
-msgstr ""
+msgstr "Personalice sy Escritorio"
 
 #: .tmp/ui_styleWidget.py:102
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -923,11 +959,12 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Elija su tema y tipo de escritorio favorito. "
+"Personalice Pardus con estilos coloreados y temas.</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:107
 msgid ""
@@ -941,7 +978,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:112
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -959,11 +995,11 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"size:10pt; font-weight:600;\">Tipo de Escritorio</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:117
 msgid "Desktop view (KDE4 Style)"
@@ -974,7 +1010,6 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Vista de Directorios (Estilo KDE3)"
 
 #: .tmp/ui_styleWidget.py:119
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -993,11 +1028,13 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Cantidad de Escritorios</span><"
+"/p></"
+"body></html>"
 
 #: .tmp/ui_summaryWidget.py:60
 msgid "Summary"
@@ -1013,12 +1050,10 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_summaryWidget.py:66
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Configuración de la Busqueda"
+msgstr "Guardar Configuración"
 
 #: .tmp/ui_summaryWidget.py:67
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1040,12 +1075,17 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Ha finalizado exitosamente todos los pasos. Aqui "
+"un resumen de la configuración que está a punto de aplicar. Presione </span>"
+"<span style=\" "
+"font-size:10pt; font-weight:600; color:#5f2234;\">Aplicar Configuración<"
+"/span><span "
+"style=\" font-size:10pt; color:#5f2234;\"> para guardarlos ahora. Ahora está "
+"listo para disfrutar Pardus!</span></p></body></html>"
 
 #: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -1077,7 +1117,6 @@ msgid "Don't change wallpaper"
 msgstr "No cambiar imagen de fondo"
 
 #: .tmp/ui_wallpaperWidget.py:82
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1098,20 +1137,23 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">La configuración se aplicará en la pantalla "
-"siguiente...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Elija su fonde de escritorio favorito para "
+"Pardus. Puede también entrar en </span><span style=\" font-size:10pt; "
+"font-weight:600; "
+"color:#5f2234;\">Configuración de Escritorio</span><span style=\" "
+"font-size:10pt; color:"
+"#5f2234;\"> para descargar nuevos y hermosos fondes adicionales.</span></p><"
+"/body></html>"
 
 #: .tmp/ui_wallpaperWidget.py:88
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Elegir archivo para imagen de fondo "
+msgstr "Elija un Fondo de Escritorio"
 
 #: .tmp/ui_welcomeWidget.py:55
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1131,11 +1173,13 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Seleccione un estilo de menú:</span></p></body></html>"
+"size:20pt; font-weight:600; color:#5f2234;\">Bienvenido a Pardus 2009.1 </"
+"span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-"
+"align:super;\">beta</span></p></body></html>"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid ""
@@ -1176,6 +1220,43 @@ msgid ""
 "size:10pt; font-weight:600; color:#5f2234;\">next</span><span style=\" font-"
 "size:10pt; color:#5f2234;\"> in order to begin.</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Pardus</span><span style=\" "
+"font-size:10pt; color:#5f2234;\"> es un sistema operativo confiable, seguro, "
+"rápido y amigable.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Con Pardus puede conectar con internet, "
+"leer sus emails, trabajar con documentos de oficina, ver peliculas, tocar "
+"música, desarrollar programas, jugar y mucho más!</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Kaptan </span><span style=\" "
+"font-size:10pt; color:#5f2234;\">le ayudará a personalizar fácilmente el "
+"área de trabajo de Pardus. </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Por favor presione </span><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Siguiente</span><span style=\" "
+"font-"
+"size:10pt; color:#5f2234;\"> para empezar.</span></p></body></html>"
 
 #~ msgid "Welcome to Kaptan Wizard :)"
 #~ msgstr "Bienvenido al Asistente Kaptan :)"
