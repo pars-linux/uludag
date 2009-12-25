@@ -67,6 +67,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         self.__class__.screenSettings["selectedMenu"] =  subg2.readEntry('plugin')
 
         # set menu preview to default menu
+        # if default menu could not found, default to kickoff
+        if not self.__class__.screenSettings.has_key("selectedMenu"):
+            self.__class__.screenSettings["selectedMenu"] =  "launcher"
+
         self.ui.pictureMenuStyles.setPixmap(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["image"])
         self.ui.labelMenuDescription.setText(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["description"].toString())
         self.ui.menuStyles.setCurrentIndex(self.menuNames[str(self.__class__.screenSettings["selectedMenu"])]["menuIndex"])
