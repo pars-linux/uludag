@@ -408,7 +408,7 @@ msgid "Help and Support"
 msgstr "Yardım ve Destek"
 
 #: .tmp/ui_goodbyeWidget.py:240
-#, fuzzy
+
 msgid ""
 "Pardus community, mailing lists, IRC channels, wiki's help and support "
 "pages.."
