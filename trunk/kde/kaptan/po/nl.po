@@ -1,4 +1,4 @@
-# translation of nl.po to Nederlansd
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -8,23 +8,22 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-24 11:28+0200\n"
-"PO-Revision-Date: 21/07/09 14:01\n"
+"PO-Revision-Date: 26/12/09 21:41\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ScrGoodbye.py:26
-#, fuzzy
 msgid "Apply Settings"
-msgstr "Stijlinstellingen"
+msgstr "Instellingen toepassen"
 
 #: .tmp/ScrGoodbye.py:27 .tmp/ui_goodbyeWidget.py:224
 msgid "Congratulations!"
-msgstr ""
+msgstr "Gefeliciteerd!"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
@@ -50,7 +49,7 @@ msgstr "Kickoff-menu"
 msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
-msgstr ""
+msgstr "Het Kickoff-menu is het standaard menu van Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en en handig georganiseerd."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:153
 msgid "Simple Menu"
@@ -60,7 +59,7 @@ msgstr "Eenvoudig menu"
 msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
-msgstr ""
+msgstr "Het klassieke menu is de vertrouwde menustijl van KDE 3.<br><br>Het is een eenvoudig menu en geschikt voor tragere PC's."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:154
 msgid "Lancelot Menu"
@@ -70,7 +69,7 @@ msgstr "Lancelot-menu"
 msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
-msgstr ""
+msgstr "Lancelot is een geavanceerd en volledig instelbaar menu voor Pardus.<br><br>De programma's zijn gemakkelijk bereikbaar en en handig georganiseerd."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -166,7 +165,7 @@ msgstr "Taal"
 
 #: .tmp/ScrSmolt.py:119
 msgid "Platform"
-msgstr "Platform"
+msgstr "Platvorm"
 
 #: .tmp/ScrSmolt.py:120
 msgid "BogoMIPS"
@@ -237,9 +236,8 @@ msgid "Welcome"
 msgstr "Welkom"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Welkom bij de Kaptan wizard :)"
+msgstr "Welkom bij Kaptan"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -313,9 +311,8 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Prachtige, overweldigende, schitterende achtergronden! \\m/"
 
 #: .tmp/ui_goodbyeWidget.py:222
-#, fuzzy
 msgid "More"
-msgstr "Muis"
+msgstr "Meer"
 
 #: .tmp/ui_goodbyeWidget.py:223 .tmp/ui_menuWidget.py:137
 #: .tmp/ui_mouseWidget.py:136 .tmp/ui_networkWidget.py:61
@@ -326,10 +323,9 @@ msgstr "Muis"
 #: .tmp/ui_summaryWidget.py:61 .tmp/ui_summaryWidget.py:65
 #: .tmp/ui_wallpaperWidget.py:76 .tmp/ui_wallpaperWidget.py:87
 msgid "color: rgb(95, 34, 52);"
-msgstr ""
+msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_goodbyeWidget.py:225
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -352,12 +348,16 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">De instellingen zijn toegepast."
+"</span><span style=\" font-size:10pt; color:#5f2234;\"> U kunt nu van Pardus "
+"gaan genieten en de volgende aanwijzingen gaan volgen voor meer instellingen "
+"of help en ondersteuning. Vergeet niet om </span><span style=\" "
+"font-size:10pt; font-weight:600; color:#5f2234;\">lid van onze gemeenschap te worden!</"
+"span></p></body></html>"
 
 #: .tmp/ui_goodbyeWidget.py:230 .tmp/ui_goodbyeWidget.py:232
 msgid "My Smolt Page"
@@ -388,17 +388,18 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Configuratiegereedschap voor Pardus zoals het beeldscherm, firewall. toetsenbord, "
+"gebruikerbeheer..."
 
 #: .tmp/ui_goodbyeWidget.py:239 .tmp/ui_goodbyeWidget.py:241
 msgid "Help and Support"
-msgstr ""
+msgstr "Help en ondersteuning"
 
 #: .tmp/ui_goodbyeWidget.py:240
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, IRC channels, wiki's help and support "
 "pages.."
-msgstr "Pardus gemeenschap, gebruikers lijsten, IRC kanalen, Wiki's en meer."
+msgstr "Pardus-gemeenschap, email-lijsten, IRC-kanalen, Wiki-help en ondersteuning.."
 
 #: .tmp/ui_kaptanMain.py:120
 msgid "Kaptan Desktop"
@@ -438,10 +439,9 @@ msgstr "Menu"
 
 #: .tmp/ui_menuWidget.py:138
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Kies een menustijl"
 
 #: .tmp/ui_menuWidget.py:139
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -462,11 +462,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#5f2234;\">Het is ook mogelijk om het </span><span style=\" font-"
+"weight:600; color:#5f2234;\">KDE-menu</span><span style=\" color:#5f2234;\"> "
+"te veranderen. Selecteer een van de volgende stijlen.</span></p></body></"
+"html>"
 
 #: .tmp/ui_menuWidget.py:144
 msgid ""
@@ -474,9 +477,11 @@ msgid ""
 "border: 1px solid rgb(255, 255, 255);\n"
 "}"
 msgstr ""
+"#pictureMenuStyles{\n"
+"border: 1px solid rgb(255, 255, 255);\n"
+"}"
 
 #: .tmp/ui_menuWidget.py:147
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -495,15 +500,16 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:11pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"family:'Droid Sans'; font-weight:600; color:#5f2234;\"> Menustijlen</span></"
+"p></body></html>"
 
 #: .tmp/ui_menuWidget.py:155
 msgid "Sample"
-msgstr ""
+msgstr "Voorbeeld"
 
 #: .tmp/ui_mouseWidget.py:135
 msgid "Mouse"
@@ -511,10 +517,9 @@ msgstr "Muis"
 
 #: .tmp/ui_mouseWidget.py:137
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Muisgedrag instellen"
 
 #: .tmp/ui_mouseWidget.py:138
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -544,26 +549,28 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:11pt; font-weight:600;\">Gefeliciteerd! </span></p>\n"
+"size:10pt; color:#5f2234;\">Het </span><span style=\" font-size:10pt; font-"
+"weight:600; color:#5f2234;\">klikgedrag</span><span style=\" font-"
+"size:10pt; color:#5f2234;\"> bepaalt het aantal klikken dat nodig is om een "
+"bestand te openen.</span></p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
-"size:11pt; font-weight:600;\"></p>\n"
+"size:10pt; color:#5f2234;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:9pt; font-weight:600;\">U heeft alle stappen doorlopen! U kunt nu "
-"doorgaan met het gebruiken van Pardus of u kunt de volgende toepassing "
-"proberen:</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Bij </span><span style=\" font-size:10pt; "
+"font-weight:600; color:#5f2234;\">linkshandig</span><span style=\" font-"
+"size:10pt; color:#5f2234;\">gebruik, is het handig om de toetsen van de muis te verwisselen</span></p></body></html>"
 
 #: .tmp/ui_mouseWidget.py:145
 msgid "mouse icon"
 msgstr "muispictogram"
 
 #: .tmp/ui_mouseWidget.py:146
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Klikgedrag"
 
@@ -597,10 +604,9 @@ msgstr "Netwerk"
 
 #: .tmp/ui_networkWidget.py:62
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "Verbinden met het internet"
 
 #: .tmp/ui_networkWidget.py:63
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -623,31 +629,32 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Voor het maken van een nieuwe verbinding klik op </span><span "
+"style=\" font-size:10pt; font-weight:600; color:#5f2234;\">Profiel aanmaken</"
+"span><span style=\" font-size:10pt; color:#5f2234;\"> en selecteer het gewenste "
+"apparaat uit de lijst. Bij een draadloze verbinding zoek en kies de bron en stel de "
+"sleutel in. Na het opslaan van het profiel selecteer het keuzevakje om de verbinding "
+"te maken.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:106
-#, fuzzy
 msgid "Packages"
-msgstr "Pakket"
+msgstr "Pakketten"
 
 #: .tmp/ui_packageWidget.py:108
 msgid "Updates"
 msgstr "Opwaarderingen"
 
 #: .tmp/ui_packageWidget.py:109
-#, fuzzy
 msgid "Show updates in the system tray"
-msgstr "Toon in systeemvak"
+msgstr "Toon opwaarderingen in het systeemvak"
 
 #: .tmp/ui_packageWidget.py:110
-#, fuzzy
 msgid "Check updates automatically every"
-msgstr "Controleer op opwaarderingen elke "
+msgstr "Controleer automatisch op opwaarderingen elke "
 
 #: .tmp/ui_packageWidget.py:111
 msgid " hours"
@@ -655,7 +662,7 @@ msgstr " uren"
 
 #: .tmp/ui_packageWidget.py:112
 msgid "Repositories"
-msgstr ""
+msgstr "Softwarebronnen"
 
 #: .tmp/ui_packageWidget.py:113
 msgid "Contrib repo includes extra packages."
@@ -666,7 +673,6 @@ msgid "Add contrib repo"
 msgstr "Contrib repo toevoegen"
 
 #: .tmp/ui_packageWidget.py:115
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -687,12 +693,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\"font-"
+"size:10pt; color:#5f2234;\">Gebruik Pakketbeheer voor het installeren en verwijderen "
+"van programma's in Pardus. Pakketbeheer kan ook automatisch de laatste "
+"opwaarderingen installeren. De periodeduur van controle op nieuwe opwaarderingen "
+" kan ook ingesteld worden.</span></p></body></html>"
 
 #: .tmp/ui_packageWidget.py:120
 msgid "picture label"
@@ -700,20 +708,17 @@ msgstr "afbeeldingslabel"
 
 #: .tmp/ui_packageWidget.py:122
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Installeer / Verwijder programma's"
 
 #: .tmp/ui_searchWidget.py:68
-#, fuzzy
 msgid "Search"
-msgstr "Desktop-zoekactie"
+msgstr "Zoeken"
 
 #: .tmp/ui_searchWidget.py:71
-#, fuzzy
 msgid "Easy Desktop Search"
-msgstr "Desktop-zoekactie"
+msgstr "Gemakkelijke desktop-zoekactie"
 
 #: .tmp/ui_searchWidget.py:72
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -733,23 +738,23 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Strigi-zoekactie indexeert de meest gebruikte "
+"bestanden. Het zorgt voor snelle zoekresultaten. Strigi kan ook bestanden "
+"op inhoud zoeken.</span></p></body></html>"
 
 #: .tmp/ui_searchWidget.py:77
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Sta Strigi toe om mijn bestanden te doorzoeken"
 
 #: .tmp/ui_smoltWidget.py:107
 msgid "&Send my profile"
 msgstr "Mijn profiel &verzenden"
 
 #: .tmp/ui_smoltWidget.py:109
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -801,48 +806,54 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt zal alleen "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Smolt zal alleen "
 "hardware- en standaard informatie over het besturingssysteem naar de "
 "smoltserver (smoon) van Pardus versturen.De enige identiteitinformatie "
 "tussen de database en deze computer is het UUID (unieke naam voor een "
 "computer).  Zolang de indiener deze UUID niet opgeeft, zal dit anoniem "
 "gebeuren.  Voor het verwijderen van dit profiel van de database, op enige "
-"moment in de toekomst, volstaat het starten van</p>\n"
+"moment in de toekomst, volstaat het starten van</"
+"span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
-"style:italic;\">smoltDeleteProfile</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   De informatie die naar "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   De informatie die naar "
 "de smoltserver verstuurd wordt is openbaar en kan door iedereen ingezien "
 "worden. Het zal hoofdzakelijk door hardware fabrikanten en andere gebruikt "
 "worden. En kan ook gebruikt worden om een betere ondersteuning van open-"
 "source stuurprogramma's en betere ondersteuning in het algemeen te "
-"verkrijgen.</p>\n"
+"verkrijgen.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span>  Met de smolt van Pardus gaat al "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; text-decoration: underline;\">IP-loggen:</span><span style=\" "
+"font-size:9pt;\">  Met de smolt van Pardus gaat al "
 "het  web-verkeer eerst door een proxy server.  Dit is de enigste plaats waar "
 "IP-adressen gedurende 4 weken opgeslagen worden, waarna ze verwijderd "
 "worden.  Het Pardus-project verzamelt geen ip-adressen in de smolt "
 "database.  Deze logs zijn privé en zullen niet voor iedereen beschikbaar "
-"zijn.</p>\n"
+"zijn.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Indien U niet eens bent "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Indien U niet eens bent "
 "met dit beleid, gebruik smolt dan niet.  Voor vragen over dit beleid kunt u "
 "contact opnemen met het Pardus Infrastructure Team op admin [at] pardus.org."
 "tr  Denk er ook aan dat het verwijderen van het profiel op ieder moment kan "
-"door het starten van \"<span style=\" font-style:italic;"
-"\">smoltDeleteProfile</span>\"</p></body></html>"
+"door het starten van \"</span><span style=\" font-"
+"size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-"
+"size:9pt;\">\"</span></p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:119
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Help bij het verbeteren van Pardus!"
 
 #: .tmp/ui_smoltWidget.py:120
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -863,12 +874,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Smolt</span><span style=\" font-"
+"size:10pt; color:#5f2234;\"> is een gereedschap dat de informatie in de volgende "
+"tabel verzamelt en naar ons opstuurt waardoor we Pardus aan de hand van de "
+"profielstatistieken kunnen verbeteren.</span></p></body></html>"
 
 #: .tmp/ui_styleitem.py:46 .tmp/ui_uiitem.py:46 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -888,10 +901,9 @@ msgstr "Thema's"
 
 #: .tmp/ui_styleWidget.py:101
 msgid "Customize Your Desktop"
-msgstr ""
+msgstr "Pas uw bureaublad aan"
 
 #: .tmp/ui_styleWidget.py:102
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -910,11 +922,12 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Kies uw favoriete thema en type bureaublad. "
+"Pas Pardus met kleurrijke stijlen en thema's aan.</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:107
 msgid ""
@@ -926,9 +939,15 @@ msgid ""
 "border: 1px solid rgb(236, 236, 236, 80)\n"
 "}"
 msgstr ""
+"#listStyles{\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
+"stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba"
+"(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80)\n"
+"}"
 
 #: .tmp/ui_styleWidget.py:112
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -946,11 +965,11 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"size:10pt; font-weight:600;\">Type bureaublad</span></p></body></html>"
 
 #: .tmp/ui_styleWidget.py:117
 msgid "Desktop view (KDE4 Style)"
@@ -961,7 +980,6 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Mapweergave (KDE3-stijl)"
 
 #: .tmp/ui_styleWidget.py:119
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -980,11 +998,12 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"size:10pt; font-weight:600; color:#5f2234;\">Aantal bureaubladen</span></p></"
+"body></html>"
 
 #: .tmp/ui_summaryWidget.py:60
 msgid "Summary"
@@ -998,14 +1017,17 @@ msgid ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
+"#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, "
+"y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 "
+"rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);}"
 
 #: .tmp/ui_summaryWidget.py:66
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Zoekinstellingen"
+msgstr "Uw instellingen opslaan"
 
 #: .tmp/ui_summaryWidget.py:67
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1027,12 +1049,15 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Alle stappen zijn met succes doorlopen. Hier is een "
+"samenvatting van de gekozen instelling. Om ze te activeren, klik op </span><span style=\" "
+"font-size:10pt; font-weight:600; color:#5f2234;\">Instellingen toepassen</span><span "
+"style=\" font-size:10pt; color:#5f2234;\"> en ze worden opgeslagen. Geniet "
+"daarna van Pardus!</span></p></body></html>"
 
 #: .tmp/ui_uiitem.py:47 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -1054,6 +1079,11 @@ msgid ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
+"#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
+"x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
+"stop:1 rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);}"
 
 #: .tmp/ui_wallpaperWidget.py:80
 msgid "Choose Wallpaper From a File"
@@ -1064,7 +1094,6 @@ msgid "Don't change wallpaper"
 msgstr "Achtergrond niet wijzigen"
 
 #: .tmp/ui_wallpaperWidget.py:82
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1085,20 +1114,20 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">De instellingen worden in het volgende scherm "
-"toegepast...</span></p></body></html>"
+"size:10pt; color:#5f2234;\">Kies de favoriete achtergrondafbeelding voor Pardus. "
+"Kijk ook in </span><span style=\" font-size:10pt; font-weight:600; "
+"color:#5f2234;\">Bureaublad instellen</span><span style=\" font-size:10pt; color:"
+"#5f2234;\"> voor het ophalen van nieuwe en mooie achtergrondafbeeldingen.</span></p></body></html>"
 
 #: .tmp/ui_wallpaperWidget.py:88
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Achtergrond uit een bestand kiezen"
+msgstr "Achtergrondafbeelding kiezen"
 
 #: .tmp/ui_welcomeWidget.py:55
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -1118,11 +1147,13 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"weight:600;\">Kies een menustijl:</span></p></body></html>"
+"size:20pt; font-weight:600; color:#5f2234;\">Welkom bij Pardus 2009.1 </"
+"span><span style=\" font-size:20pt; font-weight:600; color:#5f2234; vertical-"
+"align:super;\">beta</span></p></body></html>"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid ""
@@ -1163,115 +1194,40 @@ msgid ""
 "size:10pt; font-weight:600; color:#5f2234;\">next</span><span style=\" font-"
 "size:10pt; color:#5f2234;\"> in order to begin.</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Pardus</span><span style=\" "
+"font-size:10pt; color:#5f2234;\"> is een betrouwbaar, veilig, snel en "
+"gebruikervriendelijk besturingsysteem.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Met Pardus kunt u verbinding met het internet "
+"maken, e-mail lezen, werken met office-documenten, films bekijken, muziek "
+"afspelen, toepassingen ontwikkelen, games spelen en nog veel meer!</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Kaptan </span><span style=\" "
+"font-size:10pt; color:#5f2234;\">zal behulpzaam zijn bij het snel en gemakkelijk "
+"instellen van Pardus </span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:10pt; color:#5f2234;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:10pt; color:#5f2234;\">Klik op </span><span style=\" font-"
+"size:10pt; font-weight:600; color:#5f2234;\">Volgende</span><span style=\" font-"
+"size:10pt; color:#5f2234;\"> om te beginnen.</span></p></body></html>"
 
-#~ msgid "Welcome to Kaptan Wizard :)"
-#~ msgstr "Welkom bij de Kaptan wizard :)"
-
-#~ msgid "Goodbye"
-#~ msgstr "Tot ziens"
-
-#~ msgid "Start"
-#~ msgstr "Starten"
-
-#~ msgid "System Settings is a configuration tool for Pardus."
-#~ msgstr "Systeeminstellingen is het configuratiegereedschap voor Pardus."
-
-#~ msgid "User Groups and Help Pages"
-#~ msgstr "Gebruikersgroepen en Help pagina' s"
-
-#~ msgid "Kick-off (Advanced Menu)"
-#~ msgstr "Kick-off (Geavanceerd menu)"
-
-#~ msgid "Classic (Simple Menu)"
-#~ msgstr "Klassiek (Eenvoudig menu)"
-
-#~ msgid "Lancelot (Experimental Menu)"
-#~ msgstr "Lancelot (Experimenteel menu)"
-
-#~ msgid ""
-#~ "<p align=\"left\">If you are left-handed, you may prefer to swap the "
-#~ "functions on the left and right buttons on your pointing device by "
-#~ "choosing the \"Left handed\"option below. You can also select default "
-#~ "click behaviour.</p>"
-#~ msgstr ""
-#~ "<p align=\"left\">Indien u linkshandig bent kunt u de functies van de "
-#~ "linker en rechter muisknop verwisselen door het kiezen van de optie "
-#~ "\"Linkshandig\". U kunt ook het standaard klikgedrag kiezen.</p>"
-
-#~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Package-manager is the graphical front-end of PiSi. You can "
-#~ "easily install new programs and upgrade your system and also can see new "
-#~ "upgrades of the programs periodically from the system tray with package "
-#~ "manager.</span></p></body></html>"
-#~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
-#~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Pakketbeheer is de grafische interface voor PiSi. U kunt "
-#~ "gemakkelijk nieuwe programma's installeren, het systeem opwaarderen en "
-#~ "ook periodiek nieuwe opwaarderingen van programma's in het systeemvak "
-#~ "laten tonen.</span></p></body></html>"
-
-#~ msgid "Repo"
-#~ msgstr "Repo"
-
-#~ msgid "Goodbye from Kaptan Wizard :)"
-#~ msgstr "Tot ziens van Kaptan wizard :)"
-
-#~ msgid "Default menu of Pardus GNU/Linux."
-#~ msgstr "Standaard menu van Pardus GNU/Linux."
-
-#~ msgid "An old style menu from KDE 3."
-#~ msgstr "Een oude stijlmenu van KDE 3."
-
-#~ msgid "An advanced menu for KDE4."
-#~ msgstr "Een geavanceerd menu voor KDE4."
-
-#~ msgid ""
-#~ "Strigi desktop search allows searching for files by content instead of "
-#~ "just by name."
-#~ msgstr ""
-#~ "Met Strigi bureaublad-zoekopdracht kunt u naar bestanden zoeken op inhoud "
-#~ "in plaats van alleen op naam."
-
-#~ msgid "Enable Strigi Desktop File Indexer"
-#~ msgstr "Strigi Desktop Bestandenindexering activeren"
-
-#~ msgid "<b>Desktop Type:</b>"
-#~ msgstr "<b>Bureaubladtype:</b>"
-
-#~ msgid "<b>Number of Desktops:</b>"
-#~ msgstr "<b>Aantal bureaubladen:</b>"
-
-#~ msgid ""
-#~ "This application, called Kaptan Desktop, will help you with your basic "
-#~ "but sufficient setup for your Pardus desktop in a quick manner. Please "
-#~ "click Next to personalize your desktop. \n"
-#~ "\n"
-#~ "Pardus is a GNU/Linux distribution, targeting at computer literate users' "
-#~ "basic desktop needs; helps you connect to internet, read e-mails, work "
-#~ "with office documents and more!"
-#~ msgstr ""
-#~ "Deze toepassing, genaamd Kaptan Desktop, zal op een snelle wijze "
-#~ "behulpzaam zijn bij de elementaire en noodzakelijke instellingen van de "
-#~ "Pardus-omgeving. Klik op Volgende voor het instellen van het "
-#~ "bureaublad. \n"
-#~ "\n"
-#~ "Pardus is een GNU/Linux-distributie, bedoelt voor standaard "
-#~ "computergebruik; verbinding maken met het internet, lezen/schrijven van e-"
-#~ "mails, werken met office documenten en meer!"
