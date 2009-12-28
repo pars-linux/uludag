@@ -103,7 +103,7 @@ class Kaptan(QtGui.QWidget):
             QtGui.qApp.quit()
 
     def killPlasma(self):
-        p = subprocess.Popen(["pidof", "-s", "plasma"], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
         out, err = p.communicate()
         pidOfPlasma = int(out)
 
@@ -117,7 +117,7 @@ class Kaptan(QtGui.QWidget):
             self.startPlasma()
 
     def startPlasma(self):
-        p = subprocess.Popen(["plasma"], stdout=subprocess.PIPE)
+        p = subprocess.Popen(["plasma-desktop"], stdout=subprocess.PIPE)
 
     # returns the id of current stack
     def getCur(self, d):
