@@ -6,21 +6,33 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>578</width>
-    <height>400</height>
+    <width>586</width>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Wallpaper</string>
   </property>
   <property name="styleSheet">
-   <string>color: rgb(95, 34, 52);</string>
+   <string>color: rgb(234, 225, 228);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="5" column="1">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QListWidget" name="listWallpaper">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>300</height>
+        </size>
+       </property>
        <property name="styleSheet">
         <string>#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
 
@@ -58,7 +70,7 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">color: #642437;</string>
          </property>
          <property name="text">
           <string>Choose Wallpaper From a File</string>
@@ -95,22 +107,6 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
      </item>
     </layout>
    </item>
-   <item row="6" column="0">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>17</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
    <item row="5" column="0">
     <spacer name="horizontalSpacer_3">
      <property name="orientation">
@@ -121,7 +117,7 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
+       <width>30</width>
        <height>20</height>
       </size>
      </property>
@@ -154,7 +150,7 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>10</height>
+       <height>20</height>
       </size>
      </property>
     </spacer>
@@ -175,7 +171,7 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt;Choose your favorite wallpaper for Pardus. Don't forget to check out &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;Desktop Settings&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt; for downloading new and cool wallpapers.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;Choose your favorite wallpaper for Pardus. Don't forget to check out &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Desktop Settings&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt; for downloading new and cool wallpapers.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -207,7 +203,11 @@ p, li { white-space: pre-wrap; }
       <string>color: rgb(95, 34, 52);</string>
      </property>
      <property name="text">
-      <string>Choose a Wallpaper</string>
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Choose a Wallpaper&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -229,6 +229,22 @@ p, li { white-space: pre-wrap; }
    </item>
    <item row="2" column="1">
     <spacer name="verticalSpacer_5">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Fixed</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="6" column="1">
+    <spacer name="verticalSpacer_6">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
