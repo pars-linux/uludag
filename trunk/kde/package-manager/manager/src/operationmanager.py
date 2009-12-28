@@ -48,8 +48,11 @@ class OperationManager(QObject):
         downloaded = self.totalDownloaded + self.curPkgDownloaded
         left = total - downloaded
 
-        timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
-        self.emit(SIGNAL("elapsedTime(QString)"), timeLeft)
+        try:
+            timeLeft = '%02d:%02d:%02d' % tuple([i for i in time.gmtime(left/rates)[3:6]])
+            self.emit(SIGNAL("elapsedTime(QString)"), timeLeft)
+        except ZeroDivisionError:
+            pass
 
     def updateTotalDownloaded(self, pkgDownSize, pkgTotalSize, rate, symbol):
         if rate == 0:
