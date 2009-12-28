@@ -42,6 +42,10 @@ def data_files():
     p = "yali4/data/*"
     return glob.glob(p)
 
+def rc_files():
+    p = "yali4/data_rc.py"
+    return glob.glob(p)
+
 def getRevision():
     import os
     try:
@@ -191,7 +195,8 @@ setup(name="yali4",
       package_dir = {'': ''},
       data_files = [('/usr/share/yali4/slideshow', gui_slidepics()),
                     ('/usr/share/yali4/user_faces', user_faces()),
-                    ('/usr/share/yali4/data', data_files())],
+                    ('/usr/share/yali4/data', data_files()),
+                    ('/usr/lib/python2.6/site-packages/yali4', rc_files())],
       scripts = ['yali4-bin', 'start-yali4', 'bindYali.sh'],
       ext_modules = [Extension('yali4._sysutils',
                                sources = ['yali4/_sysutils.c'],
