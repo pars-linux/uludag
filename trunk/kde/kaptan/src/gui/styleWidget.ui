@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>600</width>
-    <height>517</height>
+    <height>521</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,20 +51,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <family>URW Gothic L</family>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string>color: rgb(95, 34, 52);</string>
+        <string>color: rgb(234, 225, 228);</string>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Customize Your Desktop&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Customize Your Desktop</string>
        </property>
       </widget>
      </item>
@@ -92,15 +89,19 @@ p, li { white-space: pre-wrap; }
          <height>0</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color:black</string>
+        <string notr="true">color: rgb(234, 225, 228);</string>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -130,6 +131,14 @@ p, li { white-space: pre-wrap; }
          <width>0</width>
          <height>250</height>
         </size>
+       </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
        </property>
        <property name="styleSheet">
         <string>#listStyles{
@@ -164,20 +173,30 @@ color: rgb(234, 225, 228);
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
           <widget class="QLabel" name="labelDesktopType">
+           <property name="font">
+            <font>
+             <family>URW Gothic L</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
            <property name="text">
-            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Desktop Type&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            <string>Desktop Type</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QComboBox" name="comboBoxDesktopType">
+           <property name="font">
+            <font>
+             <family>URW Gothic L</family>
+             <pointsize>9</pointsize>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">color: rgb(100, 36, 55);</string>
            </property>
@@ -215,6 +234,14 @@ p, li { white-space: pre-wrap; }
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
           <widget class="QLabel" name="labelDesktopNumbers">
+           <property name="font">
+            <font>
+             <family>URW Gothic L</family>
+             <pointsize>11</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
            <property name="styleSheet">
             <string notr="true">color:black</string>
            </property>
@@ -229,6 +256,12 @@ p, li { white-space: pre-wrap; }
          </item>
          <item>
           <widget class="QSpinBox" name="spinBoxDesktopNumbers">
+           <property name="font">
+            <font>
+             <family>URW Gothic L</family>
+             <pointsize>11</pointsize>
+            </font>
+           </property>
            <property name="layoutDirection">
             <enum>Qt::LeftToRight</enum>
            </property>
