@@ -45,7 +45,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.repoName = "contrib"
         self.repoAddress = "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
         self.repoAddress2 = "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-        self.ui.picturePackage.setPixmap(QtGui.QPixmap(':/raw/pics/package.png'))
+        #self.ui.picturePackage.setPixmap(QtGui.QPixmap(':/raw/pics/package.png'))
 
         # set signals
         self.ui.showTray.connect(self.ui.showTray, SIGNAL("toggled(bool)"), self.enableCheckTime)

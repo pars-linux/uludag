@@ -32,7 +32,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_searchWidget()
         self.ui.setupUi(self)
 
-        self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
+        #self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
 
         config = KConfig("nepomukserverrc")
         group = config.group("Basic Settings")

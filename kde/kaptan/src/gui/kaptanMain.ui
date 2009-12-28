@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>700</width>
-    <height>466</height>
+    <width>790</width>
+    <height>570</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>700</width>
-    <height>466</height>
+    <width>790</width>
+    <height>570</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>700</width>
-    <height>466</height>
+    <width>790</width>
+    <height>570</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -44,13 +44,6 @@
        alternate-background-color: gray;
        selection-background-color: gray;
 }
-
-QStackedWidget#mainStack {
-	 color: white;
-     border-style: outset;
-     border-width: 1px;
-     border-color: rgba(255, 255, 255, 152);
-}
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
@@ -63,8 +56,17 @@ QStackedWidget#mainStack {
    <item row="0" column="0">
     <widget class="QWidget" name="kaptan" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
-      <property name="margin">
+      <property name="leftMargin">
        <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>4</number>
+      </property>
+      <property name="rightMargin">
+       <number>4</number>
+      </property>
+      <property name="bottomMargin">
+       <number>6</number>
       </property>
       <property name="spacing">
        <number>-1</number>
@@ -75,14 +77,15 @@ QStackedWidget#mainStack {
          <widget class="QLabel" name="labelMenu">
           <property name="font">
            <font>
-            <pointsize>10</pointsize>
+            <pointsize>11</pointsize>
            </font>
           </property>
           <property name="autoFillBackground">
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">color: rgb(95, 34, 52);</string>
+           <string notr="true">color: rgb(95, 34, 52);
+padding-top: 10px;</string>
           </property>
           <property name="lineWidth">
            <number>2</number>
@@ -94,7 +97,7 @@ QStackedWidget#mainStack {
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
           </property>
           <property name="indent">
-           <number>15</number>
+           <number>20</number>
           </property>
          </widget>
         </item>
@@ -108,7 +111,7 @@ QStackedWidget#mainStack {
           </property>
           <property name="sizeHint" stdset="0">
            <size>
-            <width>120</width>
+            <width>180</width>
             <height>20</height>
            </size>
           </property>
@@ -143,9 +146,10 @@ QStackedWidget#mainStack {
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,150);
-margin: 10px;
+           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,0);
+margin: 0px;
 border-radius: 0px;
+color: white;
 }</string>
           </property>
           <property name="frameShape">

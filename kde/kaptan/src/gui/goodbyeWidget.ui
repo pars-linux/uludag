@@ -14,7 +14,7 @@
    <string>More</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">color: rgb(95, 34, 52);</string>
+   <string notr="true">color: rgb(234, 225, 228);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_7">
    <item row="0" column="1">
@@ -71,7 +71,11 @@
             <string>color: rgb(95, 34, 52);</string>
            </property>
            <property name="text">
-            <string>Congratulations!</string>
+            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Congratulations!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
           </widget>
          </item>
@@ -107,7 +111,7 @@
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;Your settings have been applied.&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#5f2234;&quot;&gt; Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#5f2234;&quot;&gt;join our community!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Your settings have been applied.&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt; Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;join our community!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
            <property name="wordWrap">
             <bool>true</bool>
@@ -148,7 +152,7 @@ p, li { white-space: pre-wrap; }
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">v</string>
+          <string notr="true">color: rgb(234, 225, 228);</string>
          </property>
          <property name="title">
           <string>My Smolt Page</string>
@@ -222,7 +226,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color: rgb(100, 36, 55);</string>
             </property>
             <property name="text">
              <string>My Smolt Page</string>
@@ -318,7 +322,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color: rgb(100, 36, 55);</string>
             </property>
             <property name="text">
              <string>Migration Wizard</string>
@@ -414,7 +418,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color: rgb(100, 36, 55);</string>
             </property>
             <property name="text">
              <string>System Settings</string>
@@ -499,7 +503,7 @@ p, li { white-space: pre-wrap; }
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color: rgb(100, 36, 55);</string>
             </property>
             <property name="text">
              <string>Help and Support</string>
