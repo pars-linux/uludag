@@ -29,7 +29,7 @@ QTextBrowser#helpContent {
      border-width: 2px;
      border-top-left-radius:12px;
      border-bottom-left-radius:12px;
-     border-color: #744154;
+     border-color: #628577;
      border-right:none;
      background-color: rgba(255,255,255,30);
      background-repeat:none;
@@ -44,7 +44,7 @@ QDialog {
         background-image: url(:/images/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
-        background-color: #832F48;
+        background-color: #628577;
 }
 
 QLabel {
