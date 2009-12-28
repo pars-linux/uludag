@@ -100,7 +100,7 @@
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
-    * 2.6.31/32 çekirdeğe geçilmesi (-)
+    * 2.6.31/32 çekirdeğe geçilmesi (+)
 
 * Boot (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
