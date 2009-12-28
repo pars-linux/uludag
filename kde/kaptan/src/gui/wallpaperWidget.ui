@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>586</width>
-    <height>521</height>
+    <height>523</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,11 +69,17 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
            <height>0</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true">color: #642437;</string>
          </property>
          <property name="text">
-          <string>Choose Wallpaper From a File</string>
+          <string>Choose wallpaper from file</string>
          </property>
         </widget>
        </item>
@@ -95,6 +101,12 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
        </item>
        <item>
         <widget class="QCheckBox" name="checkBox">
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
           <string notr="true"/>
          </property>
@@ -163,15 +175,17 @@ border: 1px solid rgb(236, 236, 236, 80);}</string>
        <height>0</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>URW Gothic L</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">color:black</string>
+      <string notr="true"/>
      </property>
      <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;Choose your favorite wallpaper for Pardus. Don't forget to check out &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Desktop Settings&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt; for downloading new and cool wallpapers.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Choose your favorite wallpaper for Pardus. Don't forget to check out &lt;b&gt;Desktop Settings&lt;/b&gt; for downloading new and cool wallpapers.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
@@ -194,20 +208,17 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>URW Gothic L</family>
+       <pointsize>25</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string>color: rgb(95, 34, 52);</string>
+      <string/>
      </property>
      <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Choose a Wallpaper&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Choose a Wallpaper</string>
      </property>
     </widget>
    </item>

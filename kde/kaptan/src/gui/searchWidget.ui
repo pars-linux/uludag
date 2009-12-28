@@ -14,7 +14,7 @@
    <string>Search</string>
   </property>
   <property name="styleSheet">
-   <string>color: rgb(95, 34, 52);</string>
+   <string>color: rgb(234, 225, 228);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1" colspan="2">
@@ -35,20 +35,17 @@
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <family>URW Gothic L</family>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string>color: rgb(95, 34, 52);</string>
+        <string/>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Easy Desktop Search&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Easy Desktop Search</string>
        </property>
       </widget>
      </item>
@@ -78,18 +75,20 @@ p, li { white-space: pre-wrap; }
            <height>0</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>11</pointsize>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">color:black</string>
+          <string notr="true"/>
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
          <property name="text">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;Strigi Desktop Search indexes your frequently used files. This gives you very fast search results. Strigi also can search for files based on their contents.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>Strigi Desktop Search indexes your frequently used files. This gives you very fast file search results. Strigi also can search for files based on their contents.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -116,6 +115,12 @@ p, li { white-space: pre-wrap; }
      </item>
      <item>
       <widget class="QCheckBox" name="checkBoxNepomuk">
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">color: rgb(234, 225, 228);</string>
        </property>
