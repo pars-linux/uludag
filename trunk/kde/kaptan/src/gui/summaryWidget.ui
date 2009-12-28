@@ -35,11 +35,17 @@
    </item>
    <item row="2" column="1">
     <widget class="QTextEdit" name="textSummary">
+     <property name="font">
+      <font>
+       <family>URW Gothic L</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string>#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
 
 border: 1px solid rgb(236, 236, 236, 80);
-padding: 10px}
+padding: 20px}
 </string>
      </property>
     </widget>
@@ -71,7 +77,7 @@ padding: 10px}
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>20</height>
+       <height>30</height>
       </size>
      </property>
     </spacer>
@@ -94,20 +100,17 @@ padding: 10px}
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <family>URW Gothic L</family>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string>color: rgb(95, 34, 52);</string>
+        <string/>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Save Your Settings&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Save Your Settings</string>
        </property>
       </widget>
      </item>
@@ -122,7 +125,7 @@ p, li { white-space: pre-wrap; }
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>20</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>
@@ -135,15 +138,17 @@ p, li { white-space: pre-wrap; }
          <height>0</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
-        <string notr="true">color:black</string>
+        <string notr="true"/>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;You have finished all steps successfully. Here's a summary of the settings you want to apply. Click &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Apply Settings&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt; to save them now. You are now ready to enjoy Pardus!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>You have successfully finished all steps. Here's a summary of the settings you want to apply. Click &lt;b&gt;Apply Settings&lt;/b&gt; to save them now. You are now ready to enjoy Pardus!</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -161,7 +166,7 @@ p, li { white-space: pre-wrap; }
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>15</height>
+         <height>30</height>
         </size>
        </property>
       </spacer>

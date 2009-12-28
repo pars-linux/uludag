@@ -43,20 +43,17 @@ QLabel#labelMenuDescription{
        </property>
        <property name="font">
         <font>
-         <pointsize>20</pointsize>
+         <family>URW Gothic L</family>
+         <pointsize>25</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string>color: rgb(95, 34, 52);</string>
+        <string>color: rgb(234, 225, 228);</string>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Choose a Menu Style&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>Choose a Menu Style</string>
        </property>
       </widget>
      </item>
@@ -82,15 +79,15 @@ p, li { white-space: pre-wrap; }
         <widget class="QLabel" name="label_2">
          <property name="font">
           <font>
-           <pointsize>10</pointsize>
+           <family>URW Gothic L</family>
+           <pointsize>11</pointsize>
           </font>
          </property>
+         <property name="styleSheet">
+          <string>color: rgb(234, 225, 228);</string>
+         </property>
          <property name="text">
-          <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;You can also customize your &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#eae1e4;&quot;&gt;KDE menu&lt;/span&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt; as you like. Please choose one from the following styles.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+          <string>You can also customize your &lt;b&gt;KDE menu&lt;/b&gt; as you like. Please choose one from the following styles.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -138,6 +135,12 @@ p, li { white-space: pre-wrap; }
              <width>320</width>
              <height>190</height>
             </size>
+           </property>
+           <property name="font">
+            <font>
+             <family>URW Gothic L</family>
+             <pointsize>10</pointsize>
+            </font>
            </property>
            <property name="styleSheet">
             <string>#pictureMenuStyles{
@@ -191,26 +194,28 @@ border: 1px solid rgb(255, 255, 255);
                </property>
                <property name="font">
                 <font>
+                 <family>URW Gothic L</family>
                  <pointsize>11</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">#menuLabel{
-color:black;
-font-size:11pt;
-}</string>
+                <string notr="true">color: rgb(234, 225, 228);</string>
                </property>
                <property name="text">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot;font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot;font-weight:600; color:#eae1e4;&quot;&gt; Menu Styles&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>Menu Styles</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QComboBox" name="menuStyles">
+               <property name="font">
+                <font>
+                 <family>URW Gothic L</family>
+                 <pointsize>10</pointsize>
+                </font>
+               </property>
                <property name="styleSheet">
                 <string notr="true">color: rgb(95, 34, 52);</string>
                </property>
@@ -267,11 +272,7 @@ padding:5px;
 color: rgb(234, 225, 228);</string>
                </property>
                <property name="text">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Sample&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <string>Sample</string>
                </property>
                <property name="scaledContents">
                 <bool>false</bool>
@@ -330,7 +331,7 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
+       <width>30</width>
        <height>20</height>
       </size>
      </property>

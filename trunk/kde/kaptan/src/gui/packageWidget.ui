@@ -14,7 +14,7 @@
    <string>Packages</string>
   </property>
   <property name="styleSheet">
-   <string>color: rgb(95, 34, 52);</string>
+   <string>color: rgb(234, 225, 228);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="5" column="1">
@@ -29,6 +29,7 @@
        </property>
        <property name="font">
         <font>
+         <family>URW Gothic L</family>
          <pointsize>11</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -40,9 +41,18 @@
        <property name="title">
         <string>Updates</string>
        </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
          <widget class="QCheckBox" name="showTray">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true"/>
           </property>
@@ -55,6 +65,12 @@
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
            <widget class="QCheckBox" name="checkUpdate">
+            <property name="font">
+             <font>
+              <family>URW Gothic L</family>
+              <pointsize>11</pointsize>
+             </font>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -67,6 +83,12 @@
            <widget class="QSpinBox" name="updateInterval">
             <property name="enabled">
              <bool>false</bool>
+            </property>
+            <property name="font">
+             <font>
+              <family>URW Gothic L</family>
+              <pointsize>10</pointsize>
+             </font>
             </property>
             <property name="styleSheet">
              <string>color: #642437;</string>
@@ -92,6 +114,7 @@
       <widget class="QGroupBox" name="groupBoxRepo">
        <property name="font">
         <font>
+         <family>URW Gothic L</family>
          <pointsize>11</pointsize>
          <weight>75</weight>
          <bold>true</bold>
@@ -103,24 +126,39 @@
        <property name="title">
         <string>Repositories</string>
        </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
          <widget class="QLabel" name="label_3">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Contrib repo includes extra packages.</string>
+           <string>Contrib repository includes extra and handy programs.</string>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QCheckBox" name="checkBoxContrib">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>11</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true"/>
           </property>
           <property name="text">
-           <string>Add contrib repo</string>
+           <string>Add contrib repository</string>
           </property>
          </widget>
         </item>
@@ -139,6 +177,12 @@
          <height>0</height>
         </size>
        </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true"/>
        </property>
@@ -146,11 +190,7 @@
         <enum>QFrame::Raised</enum>
        </property>
        <property name="text">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt;To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        <string>To install and remove programs to Pardus, use Package-Manager. Package-Manager also can automatically install the latest updates available. You can set the period for checking new updates.</string>
        </property>
        <property name="wordWrap">
         <bool>true</bool>
@@ -255,20 +295,17 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>URW Gothic L</family>
+       <pointsize>25</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string>color: rgb(95, 34, 52);</string>
+      <string/>
      </property>
      <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Install / Remove Programs&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Install / Remove Programs</string>
      </property>
     </widget>
    </item>

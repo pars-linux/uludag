@@ -7,14 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>616</width>
-    <height>511</height>
+    <height>539</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Smolt</string>
   </property>
   <property name="styleSheet">
-   <string>color: rgb(95, 34, 52);</string>
+   <string>color: rgb(234, 225, 228);</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
    <item row="0" column="1">
@@ -23,7 +23,7 @@
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -43,7 +43,7 @@
      </property>
      <property name="sizeHint" stdset="0">
       <size>
-       <width>20</width>
+       <width>30</width>
        <height>20</height>
       </size>
      </property>
@@ -78,6 +78,12 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>11</pointsize>
+        </font>
+       </property>
        <property name="styleSheet">
         <string>color: rgb(234, 225, 228);</string>
        </property>
@@ -106,6 +112,15 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string>color:rgb(95, 34, 52)</string>
        </property>
        <property name="text">
         <string>&amp;Privacy policy</string>
@@ -165,6 +180,15 @@
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0">
         <widget class="QTableWidget" name="tableWidget">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string>color: rgb(95, 34, 52);</string>
+         </property>
          <property name="columnCount">
           <number>2</number>
          </property>
@@ -201,7 +225,7 @@ p, li { white-space: pre-wrap; }
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
+      <enum>QSizePolicy::Expanding</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>
@@ -222,7 +246,7 @@ p, li { white-space: pre-wrap; }
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>10</height>
+       <height>30</height>
       </size>
      </property>
     </spacer>
@@ -238,7 +262,7 @@ p, li { white-space: pre-wrap; }
      <property name="sizeHint" stdset="0">
       <size>
        <width>20</width>
-       <height>20</height>
+       <height>30</height>
       </size>
      </property>
     </spacer>
@@ -259,20 +283,17 @@ p, li { white-space: pre-wrap; }
      </property>
      <property name="font">
       <font>
-       <pointsize>20</pointsize>
+       <family>URW Gothic L</family>
+       <pointsize>25</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string>color: rgb(95, 34, 52);</string>
+      <string/>
      </property>
      <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:20pt; font-weight:600; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#eae1e4;&quot;&gt;Help Pardus Improve!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Help Pardus Improve!</string>
      </property>
     </widget>
    </item>
@@ -280,19 +301,21 @@ p, li { white-space: pre-wrap; }
     <widget class="QLabel" name="labelMouseDesc">
      <property name="minimumSize">
       <size>
-       <width>300</width>
+       <width>0</width>
        <height>0</height>
       </size>
      </property>
+     <property name="font">
+      <font>
+       <family>URW Gothic L</family>
+       <pointsize>11</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
-      <string notr="true">color:black</string>
+      <string notr="true"/>
      </property>
      <property name="text">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Sans Serif'; font-size:8pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#eae1e4;&quot;&gt;Smolt&lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#eae1e4;&quot;&gt; is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;b&gt;Smolt&lt;/b&gt; is a tool that collects the information in the following table and sends it to us for which lets us improve Pardus according to the user profile statistics.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>

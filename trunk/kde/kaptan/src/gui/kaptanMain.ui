@@ -28,6 +28,12 @@
     <height>570</height>
    </size>
   </property>
+  <property name="font">
+   <font>
+    <family>URW Gothic L</family>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Kaptan Desktop</string>
   </property>
@@ -56,17 +62,8 @@
    <item row="0" column="0">
     <widget class="QWidget" name="kaptan" native="true">
      <layout class="QGridLayout" name="gridLayout_2">
-      <property name="leftMargin">
+      <property name="margin">
        <number>4</number>
-      </property>
-      <property name="topMargin">
-       <number>4</number>
-      </property>
-      <property name="rightMargin">
-       <number>4</number>
-      </property>
-      <property name="bottomMargin">
-       <number>6</number>
       </property>
       <property name="spacing">
        <number>-1</number>
@@ -77,6 +74,7 @@
          <widget class="QLabel" name="labelMenu">
           <property name="font">
            <font>
+            <family>URW Gothic L</family>
             <pointsize>11</pointsize>
            </font>
           </property>
@@ -172,15 +170,27 @@ color: white;
       <item row="1" column="0" colspan="2">
        <layout class="QHBoxLayout" name="horizontalLayout_2">
         <property name="spacing">
-         <number>-1</number>
+         <number>1</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
         </property>
         <property name="bottomMargin">
          <number>0</number>
         </property>
         <item>
          <widget class="QPushButton" name="buttonCancel">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">color:black</string>
+           <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
           <property name="text">
            <string>Cancel</string>
@@ -202,8 +212,14 @@ color: white;
         </item>
         <item>
          <widget class="QPushButton" name="buttonBack">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">color:black</string>
+           <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
           <property name="text">
            <string>Back</string>
@@ -212,8 +228,14 @@ color: white;
         </item>
         <item>
          <widget class="QPushButton" name="buttonNext">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">color:black</string>
+           <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
           <property name="text">
            <string>Next</string>
@@ -222,8 +244,14 @@ color: white;
         </item>
         <item>
          <widget class="QPushButton" name="buttonFinish">
+          <property name="font">
+           <font>
+            <family>URW Gothic L</family>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="styleSheet">
-           <string notr="true">color:black</string>
+           <string notr="true">color: rgb(95, 34, 52);</string>
           </property>
           <property name="text">
            <string>Finish</string>

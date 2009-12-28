@@ -138,6 +138,7 @@
           <widget class="QGroupBox" name="groupBoxClickBehaviour">
            <property name="font">
             <font>
+             <family>URW Gothic L</family>
              <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -153,7 +154,7 @@
             <string>Clicking Behaviour</string>
            </property>
            <property name="flat">
-            <bool>false</bool>
+            <bool>true</bool>
            </property>
            <property name="checkable">
             <bool>false</bool>
@@ -163,6 +164,8 @@
              <widget class="QRadioButton" name="DoubleClick">
               <property name="font">
                <font>
+                <family>URW Gothic L</family>
+                <pointsize>10</pointsize>
                 <weight>50</weight>
                 <italic>false</italic>
                 <bold>false</bold>
@@ -183,6 +186,12 @@
              <widget class="QRadioButton" name="singleClick">
               <property name="enabled">
                <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>URW Gothic L</family>
+                <pointsize>10</pointsize>
+               </font>
               </property>
               <property name="mouseTracking">
                <bool>true</bool>
@@ -254,6 +263,7 @@
           <widget class="QGroupBox" name="groupBoxButtonOrder">
            <property name="font">
             <font>
+             <family>URW Gothic L</family>
              <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -265,9 +275,21 @@
            <property name="title">
             <string>Button Order</string>
            </property>
+           <property name="flat">
+            <bool>true</bool>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
            <layout class="QGridLayout" name="gridLayout_2">
             <item row="2" column="0">
              <widget class="QRadioButton" name="radioButtonRightHand">
+              <property name="font">
+               <font>
+                <family>URW Gothic L</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Right Hand</string>
               </property>
@@ -278,6 +300,12 @@
             </item>
             <item row="4" column="0">
              <widget class="QCheckBox" name="checkReverse">
+              <property name="font">
+               <font>
+                <family>URW Gothic L</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
               <property name="styleSheet">
                <string notr="true">color:#eae1e4</string>
               </property>
@@ -288,6 +316,12 @@
             </item>
             <item row="3" column="0">
              <widget class="QRadioButton" name="radioButtonLeftHand">
+              <property name="font">
+               <font>
+                <family>URW Gothic L</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Left Hand</string>
               </property>
