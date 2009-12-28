@@ -1,5 +1,5 @@
 QWidget#Yali {
-       background-image:url(':/images/background-2009.png');
+       background-image:url(':/images/background.png');
        background-repeat: no-repeat;
        background-position: left top;
        background-color: #628577;
