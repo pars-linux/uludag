@@ -477,7 +477,7 @@ msgid ""
 "swap the left and right buttons of your pointing device."
 msgstr ""
 "<b>Tıklama Biçimi</b> dosya açarken simgelere kaç kere "
-"tıklamanız gerektiğini belirlemenize yardımcı olur."
+"tıklamanız gerektiğini belirlemenize yardımcı olur. "
 "Eğer <b>sol elinizi</b> kullanıyorsanız, fare butonlarının yerini değiştirerek "
 "farenizi daha rahat kullanabilirsiniz."
 
@@ -503,7 +503,7 @@ msgstr "Sağ El"
 
 #: .tmp/ui_mouseWidget.py:174
 msgid "Reverse scrolling"
-msgstr "Ters Kaydır"
+msgstr "Tekerlek ters kaydırsın"
 
 #: .tmp/ui_mouseWidget.py:175
 msgid "Left Hand"
@@ -571,8 +571,8 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
-"Pardus'ta program yükleyip silme işlemleri Paket "
-"Yöneticisi tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi "
+"Pardus'ta program yükleyip silme işlemleri <b>Paket "
+"Yöneticisi</b> tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi "
 "otomatik olarak güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol "
 "etme sıklığını belirleyebilirsiniz."
 
@@ -602,7 +602,7 @@ msgstr ""
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
-msgstr "Strigi, dosyalarımı indekslesin"
+msgstr "Strigi, aramalarımda yardımcı olsun"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "&Send my profile"
@@ -704,7 +704,7 @@ msgstr ""
 
 #: .tmp/ui_smoltWidget.py:134
 msgid "Help Pardus Improve!"
-msgstr "Pardus'un Gelişimine Katkıda Bulunun!"
+msgstr "Pardus'a Katkıda Bulunun!"
 
 #: .tmp/ui_smoltWidget.py:135
 msgid ""
@@ -767,11 +767,11 @@ msgstr "Masaüstü Tipi"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
-msgstr "Masaüstü görünümü (KDE4 Biçemi)"
+msgstr "Masaüstü görünümü (KDE4 Stili)"
 
 #: .tmp/ui_styleWidget.py:146
 msgid "Folder view (KDE3 Style)"
-msgstr "Klasör görünümü (KDE3 Biçemi)"
+msgstr "Klasör görünümü (KDE3 Stili)"
 
 #: .tmp/ui_styleWidget.py:147
 msgid "Number of Desktops"
@@ -865,10 +865,10 @@ msgid ""
 "<b>next</b> in order to begin."
 msgstr ""
 "<b>Pardus</b> güvenilir, hızlı ve kullanıcı dostu bir "
-"işletim sistemidir. <br /><br />Pardus ile İnternet'e bağlanabilir, maillerinizi "
+"işletim sistemidir. <br /><br />Pardus ile İnternet'e bağlanabilir, e-posta'larınızı "
 "okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  "
 "dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha "
 "fazlasını yapabilirsiniz!<br /><br />"
 "<b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve kolayca "
-"kişiselleştirmenize yardımcı olan bir uygulamadır."
-"Lütfen başlamak için </b>İleri</b>'ye tıklayın."
+"kişiselleştirmenize yardımcı olan bir uygulamadır. "
+"Lütfen başlamak için <b>İleri</b>'ye tıklayın."
