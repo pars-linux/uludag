@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-21 13:56+0200\n"
-"PO-Revision-Date: 2009-01-08 17:47+0100\n"
+"PO-Revision-Date: 2009-12-28 12:25+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
-"Language-Team:  <sv@li.org>\n"
+"Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: sysinfo/ksysinfopart.cpp:72
@@ -71,19 +71,19 @@ msgstr "Minne"
 
 #: sysinfo/sysinfo.cpp:250
 msgid "Physical memory: "
-msgstr ""
+msgstr "Minne: "
 
 #: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
-msgstr ""
+msgstr "%1 av %2 är tillgängligt"
 
 #: sysinfo/sysinfo.cpp:251
 msgid "Swap memory: "
-msgstr ""
+msgstr "Växlingsutrymme: "
 
 #: sysinfo/sysinfo.cpp:253
 msgid "Not in use"
-msgstr ""
+msgstr "Används ej"
 
 #: sysinfo/sysinfo.cpp:260
 msgid "Disks"
@@ -94,9 +94,8 @@ msgid "Operating System"
 msgstr "Operativsystem"
 
 #: sysinfo/sysinfo.cpp:269
-#, fuzzy
 msgid "KDE <b>%1</b> on <b>%2</b>"
-msgstr "<b>%2</b> med KDE <b>%1</b>"
+msgstr "KDE <b>%1</b> på <b>%2</b>"
 
 #: sysinfo/sysinfo.cpp:280
 msgid "Processor"
@@ -106,20 +105,19 @@ msgstr "Processor"
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:286
-#, fuzzy, c-format
+#: sysinfo/sysinfo.cpp:286, c-format
 msgid "1 core"
 msgid_plural "%n cores"
-msgstr[0] " kärnor"
-msgstr[1] " kärnor"
+msgstr[0] "1 kärna"
+msgstr[1] "%n kärnor"
 
 #: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
 msgid "Processor supports virtualization"
-msgstr ""
+msgstr "Processorn stöder virtualisering"
 
 #: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
 msgid "Processor doesn't support virtualization"
-msgstr ""
+msgstr "Processorn stöder inte virtualisering"
 
 #: sysinfo/sysinfo.cpp:299
 msgid "Display"
@@ -131,19 +129,19 @@ msgstr "Drivrutin: "
 
 #: sysinfo/sysinfo.cpp:310
 msgid "Machine Information"
-msgstr ""
+msgstr "Datorinformation"
 
 #: sysinfo/sysinfo.cpp:311
 msgid "Vendor: "
-msgstr ""
+msgstr "Tillverkare: "
 
 #: sysinfo/sysinfo.cpp:312
 msgid "Product: "
-msgstr ""
+msgstr "Produkt: "
 
 #: sysinfo/sysinfo.cpp:313
 msgid "BIOS: "
-msgstr ""
+msgstr "BIOS: "
 
 #: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"
