@@ -82,6 +82,15 @@ pam = {
 }
 """
 
+# Configuration template for LDAP
+CONF_LDAP = """uri ldap://%(ldap_host)s
+suffix %(ldap_domain)s
+
+pam_password exop
+pam_filter objectclass=posixAccount
+pam_login_attribute uid
+"""
+
 
 def pamSetSource(mode, dryrun=False):
     """
@@ -164,6 +173,25 @@ def nsSwitchSetSource(mode, dryrun=False):
     else:
         nss.save()
 
+def ldapConfig(host, domain, dryrun=False):
+    """
+        Makes LDAP configuration for NS and PAM modules.
+
+        Parameters:
+            host: LDAP Host
+            domain: LDAP domain
+            dryrun: Does nothing, just prints configuration if True
+    """
+
+    dc = "dc=" + domain.replace(".", ", dc=")
+    conf_ldap = CONF_LDAP % {"ldap_domain": dc, "ldap_host": host}
+
+    if dryrun:
+        print "LDAP Configuration:"
+        print "    %s" % str(conf_ldap).replace("\n", "\n    ")
+    else:
+        file("/etc/security/ldap.conf", "w").write(conf_ldap)
+
 
 def domainConfig(host, domain, workgroup, dryrun=False):
     """
@@ -231,15 +259,21 @@ if __name__ == '__main__':
         if not options.host or not options.domain:
             print "Host and domain name is required. See --help"
             sys.exit(1)
+        # Use LDAP module as authentication source
         pamSetSource("ldap", options.dryrun)
+        # Use LDAP as Name Service source
         nsSwitchSetSource("ldap", options.dryrun)
-        # TODO: Write /etc/security/ldap.conf
+        # LDAP configuration for NS and PAM
+        ldapConfig(options.host, options.domain, options.dryrun)
     elif options.type == "ad":
         if not options.host or not options.domain or not options.workgroup:
             print "Host, domain name and workgroup is required. See --help"
             sys.exit(1)
+        # Use WinBind (AD) module as authentication source
         pamSetSource("ad", options.dryrun)
+        # Use WinBind (AD) as Name Service source
         nsSwitchSetSource("ad", options.dryrun)
+        # Kerberos and SAMBA configuration
         domainConfig(options.host, options.domain, options.workgroup, options.dryrun)
         # TODO: Enable winbind and start samba service
 
