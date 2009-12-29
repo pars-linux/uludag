@@ -1,11 +1,14 @@
-<PardusmanProject type="install" media="cd" compression="gzip">
-    <Title>PardusCorporate2-[2009.11.16]</Title>
+<PardusmanProject type="install" media="cd" compression="lzma">
+    <Title>PardusCorporate2-[2009.12.29]</Title>
     <WorkDir>/tmp/CD-image/iso</WorkDir>
-    <ReleaseFiles>/tmp/CD-image/CD-image-version-Corporate2</ReleaseFiles>
-    <PackageSelection repo_uri="http://adres/corporate2-test/pisi-index.xml.bz2">
+    <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
+    <PackageSelection repo_uri="http://buildfarm/corporate2-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
+        <SelectedComponent>kernel.default</SelectedComponent>
         <SelectedComponent>hardware.firmware</SelectedComponent>
         <SelectedPackage>zorg</SelectedPackage>
+        <SelectedPackage>zemberek-server</SelectedPackage>
+        <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>yakuake3</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
         <SelectedPackage>xorg-video-vmware</SelectedPackage>
@@ -45,36 +48,105 @@
         <SelectedPackage>xorg-video-ast</SelectedPackage>
         <SelectedPackage>xorg-video-ark</SelectedPackage>
         <SelectedPackage>xorg-video-apm</SelectedPackage>
+        <SelectedPackage>xorg-input-wacom</SelectedPackage>
+        <SelectedPackage>xorg-input-void</SelectedPackage>
+        <SelectedPackage>xorg-input-vmmouse</SelectedPackage>
+        <SelectedPackage>xorg-input-synaptics</SelectedPackage>
+        <SelectedPackage>xorg-input-penmount</SelectedPackage>
+        <SelectedPackage>xorg-input-mutouch</SelectedPackage>
+        <SelectedPackage>xorg-input-mouse</SelectedPackage>
+        <SelectedPackage>xorg-input-kbd</SelectedPackage>
+        <SelectedPackage>xorg-input-joystick</SelectedPackage>
+        <SelectedPackage>xorg-input-hyperpen</SelectedPackage>
+        <SelectedPackage>xorg-input-fpit</SelectedPackage>
         <SelectedPackage>xorg-input-evdev</SelectedPackage>
+        <SelectedPackage>xorg-input-elographics</SelectedPackage>
+        <SelectedPackage>xorg-input-aiptek</SelectedPackage>
+        <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xdm</SelectedPackage>
+        <SelectedPackage>xdg-utils</SelectedPackage>
         <SelectedPackage>xdg-user-dirs</SelectedPackage>
+        <SelectedPackage>wpa_supplicant</SelectedPackage>
+        <SelectedPackage>wireless-regdb</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
+        <SelectedPackage>unrar</SelectedPackage>
+        <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>tasma</SelectedPackage>
         <SelectedPackage>tango-icon-theme</SelectedPackage>
+        <SelectedPackage>system-config-printer-gtk</SelectedPackage>
+        <SelectedPackage>system-config-printer</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>subversion</SelectedPackage>
+        <SelectedPackage>splix</SelectedPackage>
+        <SelectedPackage>smartmontools</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
+        <SelectedPackage>sdparm</SelectedPackage>
+        <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
+        <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>pulseaudio</SelectedPackage>
+        <SelectedPackage>psutils</SelectedPackage>
+        <SelectedPackage>powertop</SelectedPackage>
+        <SelectedPackage>poster</SelectedPackage>
+        <SelectedPackage>pnm2ppa</SelectedPackage>
+        <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
+        <SelectedPackage>paprefs</SelectedPackage>
+        <SelectedPackage>paman</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
+        <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
+        <SelectedPackage>openoffice-kde</SelectedPackage>
+        <SelectedPackage>openoffice-help-tr</SelectedPackage>
+        <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
+        <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
+        <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
+        <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
+        <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
+        <SelectedPackage>openoffice</SelectedPackage>
+        <SelectedPackage>ntfsprogs</SelectedPackage>
+        <SelectedPackage>notification-daemon</SelectedPackage>
+        <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>mtools</SelectedPackage>
+        <SelectedPackage>module-uvcvideo</SelectedPackage>
+        <SelectedPackage>module-syntekdriver</SelectedPackage>
+        <SelectedPackage>module-r5u870</SelectedPackage>
+        <SelectedPackage>module-ov51x-jpeg</SelectedPackage>
+        <SelectedPackage>module-omnibook</SelectedPackage>
         <SelectedPackage>module-ndiswrapper-userspace</SelectedPackage>
         <SelectedPackage>module-ndiswrapper</SelectedPackage>
+        <SelectedPackage>module-microdia</SelectedPackage>
+        <SelectedPackage>module-lenovo-sl-laptop</SelectedPackage>
+        <SelectedPackage>module-kvm</SelectedPackage>
+        <SelectedPackage>module-gspca</SelectedPackage>
+        <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>module-alsa-driver-userspace</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
+        <SelectedPackage>min12xxw</SelectedPackage>
+        <SelectedPackage>microcode-data</SelectedPackage>
+        <SelectedPackage>microcode-ctl</SelectedPackage>
         <SelectedPackage>mc</SelectedPackage>
+        <SelectedPackage>lsscsi</SelectedPackage>
+        <SelectedPackage>logrotate</SelectedPackage>
+        <SelectedPackage>lirc-remotes</SelectedPackage>
+        <SelectedPackage>links</SelectedPackage>
         <SelectedPackage>libproxy</SelectedPackage>
+        <SelectedPackage>liberation-fonts</SelectedPackage>
+        <SelectedPackage>latencytop</SelectedPackage>
+        <SelectedPackage>kpowersave</SelectedPackage>
         <SelectedPackage>kernel-headers</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>kernel</SelectedPackage>
+        <SelectedPackage>kdetoys</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
+        <SelectedPackage>kdegames</SelectedPackage>
+        <SelectedPackage>kdeedu</SelectedPackage>
         <SelectedPackage>kdebase</SelectedPackage>
         <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
@@ -82,24 +154,39 @@
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
+        <SelectedPackage>kaffeine</SelectedPackage>
+        <SelectedPackage>iw</SelectedPackage>
+        <SelectedPackage>irqbalance</SelectedPackage>
+        <SelectedPackage>hunspell-dict-en</SelectedPackage>
         <SelectedPackage>gwenview-i18n-tr</SelectedPackage>
         <SelectedPackage>gnome-mplayer</SelectedPackage>
-        <SelectedPackage>notification-daemon</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-boot</SelectedPackage>
         <SelectedPackage>gecko-mediaplayer</SelectedPackage>
+        <SelectedPackage>foomatic-filters</SelectedPackage>
+        <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
+        <SelectedPackage>foomatic-db-engine</SelectedPackage>
+        <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
         <SelectedPackage>firewall-config</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
-        <SelectedPackage>essential</SelectedPackage>
+        <SelectedPackage>epson-alc1100</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
+        <SelectedPackage>droid-fonts</SelectedPackage>
         <SelectedPackage>display-settings</SelectedPackage>
         <SelectedPackage>disk-manager</SelectedPackage>
+        <SelectedPackage>crda</SelectedPackage>
+        <SelectedPackage>cdrtools</SelectedPackage>
+        <SelectedPackage>ccid</SelectedPackage>
         <SelectedPackage>bridge-utils</SelectedPackage>
         <SelectedPackage>br2684ctl</SelectedPackage>
         <SelectedPackage>boot-manager</SelectedPackage>
         <SelectedPackage>bogofilter</SelectedPackage>
+        <SelectedPackage>arrayprobe</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
+        <SelectedPackage>alsa-tools-gui</SelectedPackage>
+        <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
+        <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
@@ -109,11 +196,13 @@
         <Package>zorg</Package>
         <Package>zlib</Package>
         <Package>zip</Package>
+        <Package>zemberek</Package>
         <Package>zd1211-firmware</Package>
         <Package>zd1201-firmware</Package>
         <Package>xvid</Package>
         <Package>xulrunner</Package>
         <Package>xscreensaver</Package>
+        <Package>xpyb</Package>
         <Package>xorg-server-common</Package>
         <Package>xorg-server</Package>
         <Package>xorg-app</Package>
@@ -125,15 +214,18 @@
         <Package>xcb-proto</Package>
         <Package>x264</Package>
         <Package>wireless-tools</Package>
+        <Package>wireless-regdb</Package>
         <Package>which</Package>
         <Package>wavpack</Package>
         <Package>vorbis-tools</Package>
         <Package>vixie-cron</Package>
+        <Package>vigra</Package>
         <Package>vbetool</Package>
         <Package>v4l-dvb-firmware</Package>
         <Package>v4l-conexant-firmware</Package>
         <Package>util-linux</Package>
         <Package>utempter</Package>
+        <Package>user-manager</Package>
         <Package>usbutils</Package>
         <Package>urlgrabber</Package>
         <Package>unzip</Package>
@@ -141,34 +233,43 @@
         <Package>udev</Package>
         <Package>twolame</Package>
         <Package>tunepimp</Package>
+        <Package>tomcat-servlet-api</Package>
+        <Package>timezone</Package>
         <Package>time</Package>
         <Package>tiff</Package>
         <Package>texinfo</Package>
         <Package>tcp-wrappers</Package>
         <Package>tar</Package>
-        <Package>tango-icon-theme</Package>
         <Package>taglib</Package>
         <Package>sysvinit</Package>
+        <Package>system-config-printer</Package>
         <Package>sysklogd</Package>
         <Package>sysfsutils</Package>
+        <Package>suspend</Package>
         <Package>sun-jre</Package>
         <Package>startup-notification</Package>
         <Package>sqlite</Package>
         <Package>spidermonkey</Package>
         <Package>speex</Package>
         <Package>speedtouch-firmware</Package>
+        <Package>slf4j</Package>
         <Package>slang</Package>
         <Package>sip</Package>
         <Package>shared-mime-info</Package>
         <Package>shadow</Package>
         <Package>sg3_utils</Package>
         <Package>setserial</Package>
+        <Package>service-manager</Package>
         <Package>sed</Package>
         <Package>schroedinger</Package>
         <Package>sane-backends</Package>
         <Package>samba</Package>
+        <Package>sablotron</Package>
+        <Package>redland</Package>
         <Package>readline</Package>
         <Package>rdesktop</Package>
+        <Package>rasqal</Package>
+        <Package>raptor</Package>
         <Package>ralink-firmware</Package>
         <Package>qt3</Package>
         <Package>qscintilla</Package>
@@ -177,22 +278,27 @@
         <Package>qca</Package>
         <Package>python-fchksum</Package>
         <Package>python</Package>
+        <Package>pysmbc</Package>
         <Package>pypolkit</Package>
         <Package>pyparted</Package>
         <Package>pygtk</Package>
         <Package>pygobject</Package>
         <Package>pycurl</Package>
+        <Package>pycups</Package>
         <Package>pycairo</Package>
+        <Package>pulseaudio-gconf</Package>
         <Package>pulseaudio</Package>
         <Package>pth</Package>
         <Package>psmisc</Package>
         <Package>procps</Package>
         <Package>ppp</Package>
         <Package>postgresql-lib</Package>
+        <Package>portmap</Package>
         <Package>popt</Package>
         <Package>poppler-qt3</Package>
         <Package>poppler-data</Package>
         <Package>poppler</Package>
+        <Package>pnm2ppa</Package>
         <Package>pm-utils</Package>
         <Package>pixman</Package>
         <Package>pisi</Package>
@@ -204,23 +310,28 @@
         <Package>perl-Net-SSLeay</Package>
         <Package>perl-IO-Socket-SSL</Package>
         <Package>perl</Package>
+        <Package>perf</Package>
         <Package>pcsc-lite</Package>
         <Package>pcmciautils</Package>
         <Package>pciutils</Package>
         <Package>parted</Package>
         <Package>pardus-python</Package>
+        <Package>pangomm</Package>
         <Package>pango</Package>
         <Package>pam</Package>
+        <Package>package-manager</Package>
         <Package>p7zip</Package>
         <Package>orbit2</Package>
         <Package>openssl</Package>
         <Package>openssh</Package>
         <Package>openslp</Package>
+        <Package>openoffice</Package>
         <Package>openldap-client</Package>
         <Package>openjpeg</Package>
         <Package>openexr</Package>
         <Package>opencore-amr</Package>
         <Package>openal</Package>
+        <Package>ocaml</Package>
         <Package>numpy</Package>
         <Package>ntp-client</Package>
         <Package>ntfs_3g</Package>
@@ -228,6 +339,8 @@
         <Package>nss</Package>
         <Package>nspr</Package>
         <Package>notify-python</Package>
+        <Package>notification-daemon</Package>
+        <Package>network-manager</Package>
         <Package>netpbm</Package>
         <Package>net-tools</Package>
         <Package>neon</Package>
@@ -239,21 +352,36 @@
         <Package>musicbrainz</Package>
         <Package>mudur</Package>
         <Package>mplayer</Package>
+        <Package>mpfr</Package>
+        <Package>module-uvcvideo-userspace</Package>
+        <Package>module-syntekdriver-userspace</Package>
+        <Package>module-r5u870-userspace</Package>
+        <Package>module-ov51x-jpeg-userspace</Package>
+        <Package>module-omnibook-userspace</Package>
         <Package>module-ndiswrapper-userspace</Package>
+        <Package>module-microdia-userspace</Package>
+        <Package>module-lenovo-sl-laptop-userspace</Package>
+        <Package>module-kvm-userspace</Package>
         <Package>module-init-tools</Package>
+        <Package>module-gspca-userspace</Package>
+        <Package>module-broadcom-wl-userspace</Package>
         <Package>module-alsa-driver-userspace</Package>
         <Package>mkinitramfs</Package>
         <Package>mit-kerberos</Package>
         <Package>miscfiles</Package>
         <Package>mingetty</Package>
+        <Package>mina-core</Package>
+        <Package>microcode-data</Package>
         <Package>mesa</Package>
         <Package>memtest86</Package>
+        <Package>mdbtools</Package>
         <Package>mcpp</Package>
         <Package>man-pages</Package>
         <Package>man</Package>
         <Package>lzo</Package>
         <Package>lzma</Package>
         <Package>lsb-release</Package>
+        <Package>lpsolve</Package>
         <Package>live555</Package>
         <Package>lirc</Package>
         <Package>linux-atm</Package>
@@ -263,6 +391,10 @@
         <Package>libxcb</Package>
         <Package>libx86</Package>
         <Package>libwww</Package>
+        <Package>libwps</Package>
+        <Package>libwpg</Package>
+        <Package>libwpd</Package>
+        <Package>libwnck</Package>
         <Package>libvorbis</Package>
         <Package>libvisual</Package>
         <Package>libvdpau</Package>
@@ -276,10 +408,14 @@
         <Package>libtasn1</Package>
         <Package>libstdc++</Package>
         <Package>libssh2</Package>
+        <Package>libsoup</Package>
         <Package>libsndfile</Package>
+        <Package>libsigc++</Package>
+        <Package>libshout</Package>
         <Package>libsdl</Package>
         <Package>libsamplerate</Package>
         <Package>libraw1394</Package>
+        <Package>libproxy</Package>
         <Package>libpng</Package>
         <Package>libpcre</Package>
         <Package>libpciaccess</Package>
@@ -292,11 +428,13 @@
         <Package>libnut</Package>
         <Package>libnotify</Package>
         <Package>libnl</Package>
+        <Package>libnfsidmap</Package>
         <Package>libmpeg2</Package>
         <Package>libmpcdec</Package>
         <Package>libmp4v2</Package>
         <Package>libmodplug</Package>
         <Package>libmng</Package>
+        <Package>libmatthew-java</Package>
         <Package>libmatroska</Package>
         <Package>libmal</Package>
         <Package>libmad</Package>
@@ -308,12 +446,14 @@
         <Package>libidn</Package>
         <Package>libid3tag</Package>
         <Package>libical</Package>
+        <Package>libgsf</Package>
         <Package>libgpod</Package>
         <Package>libgphoto2</Package>
         <Package>libgpg-error</Package>
         <Package>libgnomeui</Package>
         <Package>libgnomecanvas</Package>
         <Package>libgnome</Package>
+        <Package>libglademm</Package>
         <Package>libglade</Package>
         <Package>libgfortran</Package>
         <Package>libgcrypt</Package>
@@ -324,6 +464,7 @@
         <Package>libffi</Package>
         <Package>libfame</Package>
         <Package>libexif</Package>
+        <Package>libevent</Package>
         <Package>libebml</Package>
         <Package>libdvdread</Package>
         <Package>libdvdnav</Package>
@@ -335,10 +476,13 @@
         <Package>libdca</Package>
         <Package>libdc1394</Package>
         <Package>libdaemon</Package>
+        <Package>libconfig</Package>
         <Package>libcdio</Package>
         <Package>libcddb</Package>
         <Package>libcap-ng</Package>
         <Package>libcap</Package>
+        <Package>libcanberra-gtk</Package>
+        <Package>libcanberra</Package>
         <Package>libcaca</Package>
         <Package>libbonoboui</Package>
         <Package>libbonobo</Package>
@@ -351,6 +495,7 @@
         <Package>libXv</Package>
         <Package>libXtst</Package>
         <Package>libXt</Package>
+        <Package>libXres</Package>
         <Package>libXrender</Package>
         <Package>libXrandr</Package>
         <Package>libXpm</Package>
@@ -378,8 +523,12 @@
         <Package>lapack</Package>
         <Package>lame</Package>
         <Package>ladspa-sdk</Package>
+        <Package>kio-to-local</Package>
         <Package>keyutils</Package>
+        <Package>kernel-source</Package>
+        <Package>kernel-module-headers</Package>
         <Package>kernel-firmware</Package>
+        <Package>kernel-doc</Package>
         <Package>kernel</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kdeutils</Package>
@@ -390,6 +539,7 @@
         <Package>kbd</Package>
         <Package>jpeg</Package>
         <Package>jimmac-xcursor</Package>
+        <Package>jbigkit</Package>
         <Package>jasper</Package>
         <Package>jack-audio-connection-kit</Package>
         <Package>iwlwifi5150-ucode</Package>
@@ -397,6 +547,7 @@
         <Package>iwlwifi4965-ucode</Package>
         <Package>iwlwifi3945-ucode</Package>
         <Package>iwlwifi1000-ucode</Package>
+        <Package>iw</Package>
         <Package>iscan-firmware</Package>
         <Package>ipw2200-firmware</Package>
         <Package>ipw2100-firmware</Package>
@@ -409,6 +560,7 @@
         <Package>icu4c</Package>
         <Package>icon-naming-utils</Package>
         <Package>hunspell</Package>
+        <Package>hsqldb-lib</Package>
         <Package>hicolor-icon-theme</Package>
         <Package>hdparm</Package>
         <Package>hal-info</Package>
@@ -416,10 +568,13 @@
         <Package>gzip</Package>
         <Package>gwenview</Package>
         <Package>guile</Package>
+        <Package>gtkmm</Package>
         <Package>gtk2</Package>
         <Package>gstreamer</Package>
         <Package>gst-plugins-ugly</Package>
+        <Package>gst-plugins-good</Package>
         <Package>gst-plugins-base</Package>
+        <Package>gst-ffmpeg</Package>
         <Package>gsm</Package>
         <Package>gsl</Package>
         <Package>grub</Package>
@@ -441,7 +596,7 @@
         <Package>gmp</Package>
         <Package>glut</Package>
         <Package>glitz</Package>
-        <Package>glibc-zoneinfo</Package>
+        <Package>glibmm</Package>
         <Package>glibc</Package>
         <Package>glib2</Package>
         <Package>giflib</Package>
@@ -449,23 +604,31 @@
         <Package>gfxtheme-base</Package>
         <Package>gettext</Package>
         <Package>gdbm</Package>
+        <Package>gconfmm</Package>
         <Package>gconf</Package>
         <Package>gawk</Package>
         <Package>fxload</Package>
         <Package>fuse</Package>
         <Package>freetype</Package>
         <Package>freetts</Package>
+        <Package>foomatic-filters</Package>
+        <Package>foomatic-db-engine</Package>
+        <Package>foo2zjs-firmware</Package>
         <Package>fontconfig</Package>
+        <Package>fltk</Package>
         <Package>flex</Package>
         <Package>flac</Package>
+        <Package>firewall-config</Package>
         <Package>findutils</Package>
         <Package>file</Package>
         <Package>fftw3</Package>
         <Package>ffmpeg</Package>
+        <Package>facile</Package>
         <Package>faad2</Package>
         <Package>faac</Package>
         <Package>expat</Package>
         <Package>exiv2</Package>
+        <Package>enscript</Package>
         <Package>eject</Package>
         <Package>eagle-firmware</Package>
         <Package>e2fsprogs</Package>
@@ -474,6 +637,7 @@
         <Package>dmapi</Package>
         <Package>djbfft</Package>
         <Package>disktype</Package>
+        <Package>disk-manager</Package>
         <Package>diffutils</Package>
         <Package>dialog</Package>
         <Package>dhcpcd</Package>
@@ -483,8 +647,10 @@
         <Package>dbus-qt3</Package>
         <Package>dbus-python</Package>
         <Package>dbus-pyqt3-mainloop</Package>
+        <Package>dbus-java</Package>
         <Package>dbus-glib</Package>
         <Package>dbus</Package>
+        <Package>db4-java</Package>
         <Package>db4</Package>
         <Package>cyrus-sasl</Package>
         <Package>curl</Package>
@@ -500,13 +666,17 @@
         <Package>comar</Package>
         <Package>check</Package>
         <Package>cdparanoia</Package>
+        <Package>cairomm</Package>
         <Package>cairo</Package>
         <Package>bzip2</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>bootsplash</Package>
+        <Package>boot-manager</Package>
+        <Package>boost</Package>
         <Package>bluez-firmware</Package>
         <Package>bluez</Package>
         <Package>blas</Package>
+        <Package>bctango-icon-theme</Package>
         <Package>bc</Package>
         <Package>bash</Package>
         <Package>baselayout</Package>
@@ -527,11 +697,14 @@
         <Package>apr</Package>
         <Package>amrwb</Package>
         <Package>amrnb</Package>
+        <Package>alsa-utils</Package>
         <Package>alsa-tools</Package>
         <Package>alsa-lib</Package>
         <Package>alsa-firmware</Package>
         <Package>akode</Package>
+        <Package>agg</Package>
         <Package>acx-firmware</Package>
+        <Package>acpid</Package>
         <Package>acl</Package>
         <Package>accessrunner-firmware</Package>
         <Package>aalib</Package>
@@ -540,11 +713,12 @@
         <Package>PyKDEeXtensions</Package>
         <Package>PyKDE3</Package>
         <Package>PolicyKit-kde</Package>
+        <Package>PolicyKit-devel</Package>
         <Package>PolicyKit</Package>
         <Package>DirectFB</Package>
         <Package>ConsoleKit</Package>
     </PackageSelection>
-    <LanguageSelection default_language="tr_TR">
+    <LanguageSelection default_language="en_US">
         <Language>en_US</Language>
         <Language>tr_TR</Language>
     </LanguageSelection>
