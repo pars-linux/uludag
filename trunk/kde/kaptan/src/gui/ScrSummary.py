@@ -233,7 +233,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             configKdeGlobals.sync()
             kdeui.KGlobalSettings.self().emitChange(kdeui.KGlobalSettings.StyleChanged)
 
-            configPlasmaRc = KConfig("plasma-desktoprc")
+            configPlasmaRc = KConfig("plasmarc")
             groupDesktopTheme = configPlasmaRc.group("Theme")
             groupDesktopTheme.writeEntry("name", self.styleSettings["styleDetails"][unicode(self.styleSettings["styleName"])]["desktopTheme"])
             configPlasmaRc.sync()
