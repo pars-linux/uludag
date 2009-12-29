@@ -341,6 +341,10 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
+"<b>Ayarlarınız kaydedildi.</b> Artık Pardus'un tadını "
+"çıkarmaya başlayabilirsiniz. Daha detaylı ayarlar veya yardım ve destek için "
+"aşağıdaki program ve linkleri inceleyebilirsiniz. <b>Topluluğumuza üye olmayı "
+"unutmayın!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
