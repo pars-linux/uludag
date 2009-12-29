@@ -8,8 +8,7 @@ description[tr]= Paneli üstte olan pembe bir tema
 panelPosition = 4
 widgetStyle = oxygen
 colorScheme = Chrome
-desktopTheme = air
+desktopTheme = default
 thumbnail = chrome.png
 iconTheme = milky
 windowDecoration = kwin3_plastik
-
