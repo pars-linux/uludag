@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-29 00:11+0200\n"
-"PO-Revision-Date: 2009-12-25 10:54-0300\n"
+"PO-Revision-Date: 2009-12-28 22:10-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -346,6 +346,10 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
+"<b>Se aplicaron sus preferencias.</b> Ahora puede continuar y disfrutar al "
+"sistema Pardus o puede seguir los siguientes enlaces y accesos directos para "
+"más configuraciones o para ayuda y soporte. No olvide de <b>unirse a nuestra "
+"comunidad!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -385,12 +389,12 @@ msgid "Help and Support"
 msgstr "Ayuda y Soporte"
 
 #: .tmp/ui_goodbyeWidget.py:266
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
 msgstr ""
-"Comunidad Pardus, listas de correo, canales IRC, wikis de ayuda y páginas de "
+"Comunidad Pardus, listas de correo, salas de chat, wikis, paginas de ayuda y "
+"de "
 "soporte.."
 
 # i am not sure if it is good to translate this, maybe it should remain in english (for the spanish version at least)
@@ -423,11 +427,11 @@ msgstr "Teclado"
 
 #: .tmp/ui_keyboardWidget.py:97
 msgid "Test Layout"
-msgstr ""
+msgstr "Probar Disposición"
 
 #: .tmp/ui_keyboardWidget.py:99
 msgid "Keyboard Layout Language"
-msgstr ""
+msgstr "Idioma de distribución de teclado"
 
 #: .tmp/ui_keyboardWidget.py:100
 msgid ""
@@ -435,6 +439,9 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
+"Kaptan automaticamente selecciona la mejor distribución de teclado de "
+"acuerdo al idioma de su sistema. Si desea utilizar otra distribución de "
+"teclas, puede elegirlo y probarlo al instante."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -449,6 +456,8 @@ msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
 msgstr ""
+"También puede personalizar su <b>menú de KDE</b> como desea. Por favor elija "
+"uno de los estilos siguientes."
 
 #: .tmp/ui_menuWidget.py:149
 msgid ""
@@ -458,9 +467,8 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_menuWidget.py:152
-#, fuzzy
 msgid "Menu Styles"
-msgstr "Configuración del Menú"
+msgstr "Estilos de Menú"
 
 #: .tmp/ui_menuWidget.py:156
 msgid "Sample"
@@ -480,6 +488,10 @@ msgid ""
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
+"El <b>comportamiento de clic</b> define cuantas veces desea cliquear cuando "
+"abre un archivo. Si es <b>zurdo</b>, podría preferir intercambiar las "
+"funciones del botón derecho con el botón izquierdo de su dispositivo de "
+"puntero."
 
 #: .tmp/ui_mouseWidget.py:169
 msgid "Clicking Behaviour"
@@ -524,6 +536,10 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
+"Para crear una conexión nueva presione <b>Crear Perfil</b> y seleccione su "
+"adaptador de la lista. Si su conexión es inalambrica indique el punto de "
+"acceso. Luego de guardar el perfil marque la casilla para activar la "
+"conexión."
 
 #: .tmp/ui_packageWidget.py:141
 msgid "Packages"
@@ -555,12 +571,10 @@ msgstr "Repositorios"
 
 # favor verificar..
 #: .tmp/ui_packageWidget.py:149
-#, fuzzy
 msgid "Contrib repository includes extra and handy programs."
-msgstr "Repositorio Contrib contiene paquetes opcionales."
+msgstr "Repositorio Contrib contiene programas adicionales."
 
 #: .tmp/ui_packageWidget.py:150
-#, fuzzy
 msgid "Add contrib repository"
 msgstr "Agregar repositorio contrib"
 
@@ -570,6 +584,10 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
+"Para instalar y remoter programas en Pardus, use el Administrador de "
+"Paquetes. Administrador de Paquetes también puede instalar automaticamente "
+"las ultimas actualizaciones. Puede establecer el intervalo de comprobación "
+"de nuevas actualizaciones."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
@@ -589,6 +607,9 @@ msgid ""
 "very fast file search results. Strigi also can search for files based on "
 "their contents."
 msgstr ""
+"El buscador de escritorio Strigi indexa sus archivos que utiliza "
+"frecuentemente. Esto le permite resultados rápidos para una búsqueda. Strigi "
+"también puede buscar archivos por su contenido."
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
@@ -711,6 +732,9 @@ msgid ""
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
+"<b>Smolt</b> es una herramienta que colecciona la información de la tabla "
+"siguiente y nos lo envia para mejorar Pardus según las estadísticas de uso "
+"de tipos de hardware."
 
 #: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -741,6 +765,8 @@ msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
+"Elija su tema favorito y tipo de escritorio. Personalice Pardus con estilos "
+"y temas coloreados."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -756,9 +782,8 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:144
-#, fuzzy
 msgid "Desktop Type"
-msgstr "<b>Tipo de Escritorio:</b>"
+msgstr "Tipo de Escritorio"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
@@ -769,9 +794,8 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Vista de Directorios (Estilo KDE3)"
 
 #: .tmp/ui_styleWidget.py:147
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "<b>Cantidad de Escritorios:</b>"
+msgstr "Cantidad de Escritorios"
 
 #: .tmp/ui_styleWidget.py:148
 msgid "color: rgb(100, 36, 55);"
@@ -801,6 +825,10 @@ msgid ""
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
 "ready to enjoy Pardus!"
 msgstr ""
+"Usted ha finalizado con éxito todos los pasos. Aqui un resumen de las "
+"configuraciones que está a punto de aplicar. Presione <b>Aplicar "
+"Configuración</b> para guardarlos ahora. Ahora está listo para disfrutar "
+"Pardus!"
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -824,9 +852,8 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_wallpaperWidget.py:99
-#, fuzzy
 msgid "Choose wallpaper from file"
-msgstr "Elegir archivo para imagen de fondo "
+msgstr "Elegir archivo de imagen de fondo "
 
 #: .tmp/ui_wallpaperWidget.py:100
 msgid "Don't change wallpaper"
@@ -837,6 +864,8 @@ msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
+"Elija su imágen de fonde favorito para Pardus. No se olvide verificar "
+"<b>Configuración de Escritorio</b> y descargar imagenes de fondo nuevos."
 
 #: .tmp/ui_wallpaperWidget.py:102
 msgid "Choose a Wallpaper"
@@ -844,7 +873,7 @@ msgstr "Elija un Fondo de Escritorio"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
-msgstr ""
+msgstr "Bienvenido a Pardus 2009.1 <sup>beta</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -855,6 +884,13 @@ msgid ""
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
 msgstr ""
+"<b>Pardus</b> es un sistema operativo confiable, seguro, rápido y amigable. "
+"<br /><br />Con Pardus puede conectar a internet, leer sus emails, trabajar "
+"con sus documentos de office, ver videos, tocar musica, desarrollar "
+"programas, jugar, y mucho más! <br /><br /><b>Kaptan</b> le ayudará "
+"personalizar su espacio de trabajo en Pardus de manera fácil y rápido. Por "
+"favor presione "
+"<b>siguiente</b> para empezar."
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
