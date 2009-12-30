@@ -50,7 +50,7 @@
 
 * Paket Yöneticisi (Faik Uygur)
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
-    * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (-)
+    * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (-)
     * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
