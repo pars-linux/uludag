@@ -212,7 +212,6 @@
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
-        <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gst-plugins-ugly</SelectedPackage>
         <SelectedPackage>gst-plugins-farsight</SelectedPackage>
@@ -269,7 +268,6 @@
         <SelectedPackage>bluez-firmware</SelectedPackage>
         <SelectedPackage>bluez-compat</SelectedPackage>
         <SelectedPackage>bind-tools</SelectedPackage>
-        <SelectedPackage>bespin-kde4-theme</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
@@ -531,6 +529,7 @@
         <Package>libvncserver</Package>
         <Package>libvisual</Package>
         <Package>libvdpau</Package>
+        <Package>libva</Package>
         <Package>libv4l</Package>
         <Package>libuuid</Package>
         <Package>libusb</Package>
@@ -675,6 +674,7 @@
         <Package>lame</Package>
         <Package>ladspa-sdk</Package>
         <Package>ksplash-pardus-theme</Package>
+        <Package>kosd</Package>
         <Package>kipi-plugins</Package>
         <Package>keyutils</Package>
         <Package>kernel</Package>
