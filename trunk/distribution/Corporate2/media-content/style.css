@@ -1,0 +1,39 @@
+body {
+    background-attachment: fixed;
+    background-image: url(./bg.png);
+    background-position: top left;
+    background-repeat: no-repeat;
+    color: #F4F4F4;
+}
+
+a {
+    font-family: Verdana;
+    font-size: 14px;
+    color: #CFE6DE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #B0C3BD;
+}
+
+a:visited {
+    color: #CFE6DE;
+}
+
+a:active {
+    color: #CFE6DE;
+}
+
+tr td {
+    color: #A1B3AF;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+div {
+    background-image: url(./logo.png);
+    background-position: 99% 63%;
+    background-repeat: no-repeat;
+}
