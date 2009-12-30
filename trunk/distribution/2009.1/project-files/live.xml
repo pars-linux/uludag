@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 Calisan Beta</Title>
+    <Title>Pardus Calisan 2009.1 Beta</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -80,6 +80,7 @@
         <SelectedPackage>unarj</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
+        <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
@@ -126,6 +127,7 @@
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
+        <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>nfs-utils</SelectedPackage>
         <SelectedPackage>network-manager</SelectedPackage>
         <SelectedPackage>netkit-ftp</SelectedPackage>
@@ -220,6 +222,7 @@
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>eciadsl</SelectedPackage>
         <SelectedPackage>eagle-firmware</SelectedPackage>
+        <SelectedPackage>dsniff</SelectedPackage>
         <SelectedPackage>droid-fonts</SelectedPackage>
         <SelectedPackage>djvu-plugin</SelectedPackage>
         <SelectedPackage>djview4</SelectedPackage>
@@ -431,6 +434,7 @@
         <Package>obex-data-server</Package>
         <Package>numpy</Package>
         <Package>ntp-client</Package>
+        <Package>ntfsprogs</Package>
         <Package>ntfs_3g</Package>
         <Package>nss-mdns</Package>
         <Package>nss</Package>
@@ -546,7 +550,9 @@
         <Package>libnut</Package>
         <Package>libnotify</Package>
         <Package>libnl</Package>
+        <Package>libnids</Package>
         <Package>libnfsidmap</Package>
+        <Package>libnet</Package>
         <Package>libmtp</Package>
         <Package>libmsn</Package>
         <Package>libmpeg3</Package>
