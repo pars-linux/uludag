@@ -153,6 +153,7 @@
         <SelectedPackage>kdeaddons</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
         <SelectedPackage>kde-i18n-tr</SelectedPackage>
+        <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>iw</SelectedPackage>
         <SelectedPackage>irqbalance</SelectedPackage>
@@ -275,6 +276,7 @@
         <Package>qscintilla</Package>
         <Package>qca-tls</Package>
         <Package>qca</Package>
+        <Package>python-xlib</Package>
         <Package>python-tk</Package>
         <Package>python-imaging</Package>
         <Package>python-fchksum</Package>
