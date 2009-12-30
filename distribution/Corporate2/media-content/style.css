@@ -1,4 +1,6 @@
 body {
+    margin: 0px;
+    padding: 30px;
     background-attachment: fixed;
     background-image: url(./bg.png);
     background-position: top left;
@@ -7,33 +9,76 @@ body {
 }
 
 a {
-    font-family: Verdana;
-    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
     color: #CFE6DE;
     text-decoration: none;
-    font-weight: bold;
 }
 
-a:hover {
-    color: #B0C3BD;
+a:hover { color: #B0C3BD; }
+
+a:visited { color: #CFE6DE; }
+
+a:visited:hover { color: #B0C3BD; }
+
+a:active { color: #CFE6DE; }
+
+img {
+  padding: 0px;
+  margin: 0px;
+  border:0 px;
 }
 
-a:visited {
-    color: #CFE6DE;
+ul {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
 }
 
-a:active {
-    color: #CFE6DE;
+h2 {
+  font-size: 20pt;
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  margin-bottom: 10px;
 }
 
-tr td {
-    color: #A1B3AF;
-    font-size: 18px;
-    font-weight: bold;
+.container {
+  width:800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:8%;
 }
 
-div {
-    background-image: url(./logo.png);
-    background-position: 99% 63%;
-    background-repeat: no-repeat;
+.title{ 
+  padding: 20px 0 60px 0;
 }
+
+.titleEN{
+  font-size: 14pt;
+  }
+
+.langName{
+  padding-right:70px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #A1B3AF;
+  font-size: 16pt;
+  font-weight: bold;
+  height: 300px;
+  float: left;
+  line-height: 22pt;
+}
+
+.langInfo{
+  padding-right:70px;
+  color: #A1B3AF;
+  font-size: 14pt;
+
+  height: 300px;
+  float: left;
+  line-height: 22pt;
+}
+
+.logo{
+  height: 300px;
+  float: left;
+  }
