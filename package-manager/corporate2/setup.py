@@ -29,7 +29,6 @@ kdedistutils.setup(
                         'src/Preferences.py',
                         'src/CommonText.py',
                         'src/HelpDialog.py',
-                        'src/ComarIface.py',
                         'src/Tray.py',
                         'src/Notifier.py',
                         'src/BasketDialog.py',
