@@ -315,13 +315,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             username = widget.getTitle()
             fullname = widget.getDescription()
 
-            dialog = DialogQuestion(self)
-            dialog.setQuestion(kdecore.i18n("Do you want to delete user '%1' (%2)?", fullname, username))
-            dialog.setCheckBox(kdecore.i18n("Also remove user files. (This may take long.)"))
-            if dialog.exec_():
-                self.iface.deleteUser(uid, deleteFiles=dialog.getCheckBox())
-                # User.Manager does not emit signals, refresh whole list.
-                self.buildItemList()
+            # If the user is logged in display warning, else delete user
+            if self.userLoggedOn(uid):
+                message = kdecore.i18n("Cannot delete <b>%1</b>. The user is currently logged in.", username)
+                kdeui.KMessageBox.sorry(self, message, 'Message')
+            else:
+                dialog = DialogQuestion(self)
+                dialog.setQuestion(kdecore.i18n("Do you want to delete user '%1' (%2)?", fullname, username))
+                dialog.setCheckBox(kdecore.i18n("Also remove user files. (This may take long.)"))
+                if dialog.exec_():
+                    self.iface.deleteUser(uid, deleteFiles=dialog.getCheckBox())
+                    # User.Manager does not emit signals, refresh whole list.
+                    self.buildItemList()
         else:
             gid = widget.getId()
             groupname = widget.getTitle()
@@ -329,6 +334,21 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.iface.deleteGroup(gid)
                 # User.Manager does not emit signals, refresh whole list.
                 self.buildItemList()
+
+    def userLoggedOn(self, uidToDelete):
+        """
+            Check if user is logged on.
+        """
+        # Read logged on users list
+        keyUsers = open('/proc/key-users', 'r')
+        loggedOnUsers = keyUsers.readlines()
+
+        # If "user to delete" is logged on return True
+        for user in loggedOnUsers:
+            uidUser = user.split(':')[0]
+            if str(uidToDelete).strip() == str(uidUser).strip():
+                return True
+         return False
 
     def slotOpenEdit(self, action):
         """
