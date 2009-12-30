@@ -44,7 +44,7 @@ QDialog {
         background-image: url(:/images/background-dialog.png);
         background-repeat: no-repeat;
         background-position: bottom center;
-        background-color: #628577;
+        background-color: #394E46;
 }
 
 QLabel {
@@ -365,7 +365,7 @@ QProgressBar {
 
 QProgressBar:chunk {
         background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                        stop: 0 #693B59, stop: 1 #B7A2B0);
+                                        stop: 0 #394E46, stop: 1 #6F9888);
         border: 2px solid #628577;
         border-radius: 2px;
         margin: 2px;
