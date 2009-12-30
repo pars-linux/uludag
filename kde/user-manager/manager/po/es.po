@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-03 13:56+0300\n"
+"POT-Creation-Date: 2009-12-30 13:41+0200\n"
 "PO-Revision-Date: 2009-07-06 18:55-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -17,14 +17,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-
-#: .tmp/ui_item.py:56
-msgid "Edit"
-msgstr "Modificar"
-
-#: .tmp/ui_item.py:57
-msgid "Delete"
-msgstr "Eliminar"
 
 #: .tmp/ui_edituser.py:184
 msgid "User Information"
@@ -95,29 +87,62 @@ msgstr "Grupo principal:"
 msgid "Groups"
 msgstr "Grupos"
 
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Información del grupo"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Nombre del grupo:"
+
+#: .tmp/ui_item.py:56
+msgid "Edit"
+msgstr "Modificar"
+
+#: .tmp/ui_item.py:57
+msgid "Delete"
+msgstr "Eliminar"
+
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Agregar nuevo"
 
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Administrador de Usuarios"
+#: .tmp/usermanager/edit.py:255
+msgid "There has to be at least one group selected."
+msgstr "Se debe seleccionar al menos un grupo."
 
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
+# favor revisar, no traduje "start with"
+#: .tmp/usermanager/edit.py:320
+msgid "Start with typing this user's full name."
+msgstr "Ingrese el nombre completo del usuario."
 
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
+#: .tmp/usermanager/edit.py:323
+msgid "You should enter a password for this user."
+msgstr "Debería ingresar una contraseña para éste usuario."
 
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr ""
+#: .tmp/usermanager/edit.py:328
+msgid "Password must be longer."
+msgstr "La contraseña debe ser más larga."
 
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mantenedor actual"
+#: .tmp/usermanager/edit.py:332
+msgid "Don't use your full name or user name as a password."
+msgstr "No use el nombre completo o el nombre de usuario para la contraseña."
+
+#: .tmp/usermanager/edit.py:335
+msgid "Passwords don't match."
+msgstr "Contraseñas no coinciden."
+
+#: .tmp/usermanager/edit.py:340
+msgid "You must enter a user name."
+msgstr "Debe ingresar un nombre de usuario."
+
+#: .tmp/usermanager/edit.py:343
+msgid "This user name is used by another user."
+msgstr "El nombre de usuario ya fue utilizado para otro usuario."
+
+#: .tmp/usermanager/edit.py:347
+msgid "User name must not start with a number."
+msgstr "El nombre de usuario no debe empezar con un número."
 
 # favor revisar, el tema de respaldo, backend..
 #: .tmp/usermanager/main.py:94
@@ -150,64 +175,43 @@ msgid "Add Group"
 msgstr "Agregar Grupo"
 
 #: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
-#: .tmp/usermanager/main.py:375
+#: .tmp/usermanager/main.py:395
 msgid "Access denied."
 msgstr "Acceso denegado."
 
-#: .tmp/usermanager/main.py:319
+#: .tmp/usermanager/main.py:320
+msgid "Cannot delete <b>%1</b>. The user is currently logged in."
+msgstr ""
+
+#: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "Desea eliminar usuario '%1' (%2)?"
 
-#: .tmp/usermanager/main.py:320
+#: .tmp/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
-msgstr "Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
+msgstr ""
+"Además remover archivos de los usuarios. (Esto puede tomar mucho tiempo.)"
 
-#: .tmp/usermanager/main.py:328
+#: .tmp/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
 msgstr "Desea eliminar grupo '%1'?"
 
-#: .tmp/usermanager/edit.py:248
-msgid "There has to be at least one group selected."
-msgstr "Se debe seleccionar al menos un grupo."
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Administrador de Usuarios"
 
-# favor revisar, no traduje "start with"
-#: .tmp/usermanager/edit.py:313
-msgid "Start with typing this user's full name."
-msgstr "Ingrese el nombre completo del usuario."
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr ""
 
-#: .tmp/usermanager/edit.py:316
-msgid "You should enter a password for this user."
-msgstr "Debería ingresar una contraseña para éste usuario."
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
 
-#: .tmp/usermanager/edit.py:321
-msgid "Password must be longer."
-msgstr "La contraseña debe ser más larga."
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr ""
 
-#: .tmp/usermanager/edit.py:325
-msgid "Don't use your full name or user name as a password."
-msgstr "No use el nombre completo o el nombre de usuario para la contraseña."
-
-#: .tmp/usermanager/edit.py:328
-msgid "Passwords don't match."
-msgstr "Contraseñas no coinciden."
-
-#: .tmp/usermanager/edit.py:333
-msgid "You must enter a user name."
-msgstr "Debe ingresar un nombre de usuario."
-
-#: .tmp/usermanager/edit.py:336
-msgid "This user name is used by another user."
-msgstr "El nombre de usuario ya fue utilizado para otro usuario."
-
-#: .tmp/usermanager/edit.py:340
-msgid "User name must not start with a number."
-msgstr "El nombre de usuario no debe empezar con un número."
-
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Información del grupo"
-
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Nombre del grupo:"
-
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor actual"
