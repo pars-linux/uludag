@@ -4,11 +4,12 @@
 #
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
+# Renan Çakırerk <renan@pardus.org.tr>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: User Manager 2.90\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-03 13:56+0300\n"
+"POT-Creation-Date: 2009-12-30 13:41+0200\n"
 "PO-Revision-Date: 2009-07-15 14:21+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -17,14 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: .tmp/ui_item.py:56
-msgid "Edit"
-msgstr "Düzenle"
-
-#: .tmp/ui_item.py:57
-msgid "Delete"
-msgstr "Sil"
 
 #: .tmp/ui_edituser.py:184
 msgid "User Information"
@@ -94,29 +87,61 @@ msgstr "Ana Grup:"
 msgid "Groups"
 msgstr "Gruplar"
 
+#: .tmp/ui_editgroup.py:78
+msgid "Group Information"
+msgstr "Grup Bilgisi"
+
+#: .tmp/ui_editgroup.py:79
+msgid "Group Name:"
+msgstr "Grup İsmi:"
+
+#: .tmp/ui_item.py:56
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .tmp/ui_item.py:57
+msgid "Delete"
+msgstr "Sil"
+
 #: .tmp/ui_main.py:77
 msgid "Add New"
 msgstr "Yeni Ekle"
 
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Kullanıcı Yöneticisi"
+#: .tmp/usermanager/edit.py:255
+msgid "There has to be at least one group selected."
+msgstr "En az bir grup seçili olmalı."
 
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+#: .tmp/usermanager/edit.py:320
+msgid "Start with typing this user's full name."
+msgstr "Kullanıcının tam adını yazarak başlayın."
 
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
+#: .tmp/usermanager/edit.py:323
+msgid "You should enter a password for this user."
+msgstr "Kullanıcı için parola girmelisiniz."
 
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
+#: .tmp/usermanager/edit.py:328
+msgid "Password must be longer."
+msgstr "Parola daha uzun olmalı."
 
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Şu Anki Geliştirici"
+#: .tmp/usermanager/edit.py:332
+msgid "Don't use your full name or user name as a password."
+msgstr "Adınızı ya da kullanıcı adınızı parola olarak kullanmayın."
+
+#: .tmp/usermanager/edit.py:335
+msgid "Passwords don't match."
+msgstr "Parolalar uyuşmuyor."
+
+#: .tmp/usermanager/edit.py:340
+msgid "You must enter a user name."
+msgstr "Kullanıcı adı girmelisiniz."
+
+#: .tmp/usermanager/edit.py:343
+msgid "This user name is used by another user."
+msgstr "Bu kullanıcı adı başkası tarafından kullanılıyor."
+
+#: .tmp/usermanager/edit.py:347
+msgid "User name must not start with a number."
+msgstr "Kullanıcı adı rakam ile başlayamaz."
 
 #: .tmp/usermanager/main.py:94
 msgid ""
@@ -147,63 +172,48 @@ msgid "Add Group"
 msgstr "Grup Ekle"
 
 #: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
-#: .tmp/usermanager/main.py:375
+#: .tmp/usermanager/main.py:395
 msgid "Access denied."
 msgstr "Erişim reddedildi."
 
-#: .tmp/usermanager/main.py:319
+#: .tmp/usermanager/main.py:320
+msgid "Cannot delete <b>%1</b>. The user is currently logged in."
+msgstr "<b>%1</b> kullanıcısı silinemiyor. Kullanıcı şu anda sisteme giriş yapmış."
+
+#: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "'%1' (%2) kullanıcısı silinsin mi?"
 
-#: .tmp/usermanager/main.py:320
+#: .tmp/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
 msgstr "Kullanıcı dosyalarını da sil. (Bu uzun sürebilir.)"
 
-#: .tmp/usermanager/main.py:328
+#: .tmp/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
 msgstr "'%1' grubu silinsin mi?"
 
-#: .tmp/usermanager/edit.py:248
-msgid "There has to be at least one group selected."
-msgstr "En az bir grup seçili olmalı."
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Kullanıcı Yöneticisi"
 
-#: .tmp/usermanager/edit.py:313
-msgid "Start with typing this user's full name."
-msgstr "Kullanıcının tam adını yazarak başlayın."
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/usermanager/edit.py:316
-msgid "You should enter a password for this user."
-msgstr "Kullanıcı için parola girmelisiniz."
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
 
-#: .tmp/usermanager/edit.py:321
-msgid "Password must be longer."
-msgstr "Parola daha uzun olmalı."
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: .tmp/usermanager/edit.py:325
-msgid "Don't use your full name or user name as a password."
-msgstr "Adınızı ya da kullanıcı adınızı parola olarak kullanmayın."
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Şu Anki Geliştirici"
 
-#: .tmp/usermanager/edit.py:328
-msgid "Passwords don't match."
-msgstr "Parolalar uyuşmuyor."
-
-#: .tmp/usermanager/edit.py:333
-msgid "You must enter a user name."
-msgstr "Kullanıcı adı girmelisiniz."
-
-#: .tmp/usermanager/edit.py:336
-msgid "This user name is used by another user."
-msgstr "Bu kullanıcı adı başkası tarafından kullanılıyor."
-
-#: .tmp/usermanager/edit.py:340
-msgid "User name must not start with a number."
-msgstr "Kullanıcı adı rakam ile başlayamaz."
-
-#: .tmp/ui_editgroup.py:78
-msgid "Group Information"
-msgstr "Grup Bilgisi"
-
-#: .tmp/ui_editgroup.py:79
-msgid "Group Name:"
-msgstr "Grup İsmi:"
-
+#~ msgid ""
+#~ "<b>%1</b> is currently logged on. You cannot delete a logged on user."
+#~ msgstr ""
+#~ "<b>%1</b> kullanıcısı şu anda sisteme giriş yapmış durumda.  olan "
+#~ "kullanıcıları silemezsiniz."
