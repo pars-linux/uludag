@@ -1,3 +1,6 @@
+2009-12-30 Renan Çakırerk <renan@pardus.org.tr>
+	* Kaptan: Update to version 3.5.5
+
 2009-01-27 Pınar Yanardağ <pinar@pardus.org.tr>
 	* __init__.py:	Update version to 3.5.4
 	* screens/ScrMultiple.py: Increase minimum desktop number to 2 (bug#9096)

@@ -70,8 +70,8 @@ app_data = [
 kdedistutils.setup(
     name="kaptan",
     version=version,
-    author="Pinar Yanardag",
-    author_email="pinar@pardus.org.tr",
+    author="Renan Çakırerk",
+    author_email="renan@pardus.org.tr",
     url="http://www.pardus.org.tr/",
     #min_kde_version = "3.5.0",
     #min_qt_version = "3.3.5",
