@@ -137,6 +137,15 @@ class Iface(Singleton):
     def setSource(self, source):
         self.source = source
 
+    def getUpdateType(self, pkg):
+        (version, release, build) = self.idb.get_version(pkg.name)
+        update_types = [i.type for i in pkg.history if pisi.version.Version(i.release) > pisi.version.Version(release)]
+        if "security" in update_types:
+            return "security"
+        elif "critical" in update_types:
+            return "critical"
+        return "normal"
+
     def getPackageRepository(self, name):
         try:
             return self.pdb.which_repo(name)
@@ -206,6 +215,11 @@ class Iface(Singleton):
         else:
             pkg = self.idb.get_package(name)
             pkg.size = pkg.installedSize
+
+        if self.source == self.REPO and self.idb.has_package(pkg.name):
+            pkg.type = self.getUpdateType(pkg)
+        else:
+            pkg.type = None
 
         try:
             pkg.repo = get_package_repository(package)

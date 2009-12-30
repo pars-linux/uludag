@@ -164,6 +164,14 @@ class SpecialList(QObject):
 
             iconSize = getIconSize()
             iconPath = getIconPath(app.icon)
+
+            if app.type == "security":
+                iconPath = getIconPath("software-update-urgent")
+            elif app.type == "critical":
+                iconPath = getIconPath("dialog-warning")
+            elif app.type == "normal":
+                iconPath = getIconPath("software-update-available")
+
             result += template % (checkbox, titleStyle, curindex, iconPath, iconSize, iconSize, app.name, summaryColor, app.summary, style, curindex, curindex,
                                   i18n("Description: "), app.description,
                                   i18n("Version: "), app.version,
