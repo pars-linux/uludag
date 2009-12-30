@@ -1,4 +1,4 @@
-# translation of nl.po to Nederlansd
+# translation of nl.po to Nederlands
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-30 13:41+0200\n"
-"PO-Revision-Date: 10/07/09 17:43\n"
+"PO-Revision-Date: 30/12/09 15:44\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ui_edituser.py:184
 msgid "User Information"
@@ -176,7 +176,7 @@ msgstr "Toegang geweigerd."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
+msgstr "Kan <b>%1</b> niet verwijderen. De gebruiker is op dit moment aangemeld."
 
 #: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -209,3 +209,4 @@ msgstr "Bahadır Kandemir"
 #: .tmp/usermanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
+
