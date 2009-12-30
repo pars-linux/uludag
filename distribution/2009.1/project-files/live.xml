@@ -4,12 +4,11 @@
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
-        <SelectedComponent>desktop.kde.admin</SelectedComponent>
+        <SelectedPackage>zniper</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>yakuake</SelectedPackage>
-        <SelectedPackage>yacpi</SelectedPackage>
         <SelectedPackage>xvattr</SelectedPackage>
         <SelectedPackage>xscreensaver</SelectedPackage>
         <SelectedPackage>xorg-video-voodoo</SelectedPackage>
@@ -67,6 +66,8 @@
         <SelectedPackage>xorg-input-acecad</SelectedPackage>
         <SelectedPackage>xdm</SelectedPackage>
         <SelectedPackage>xdelta</SelectedPackage>
+        <SelectedPackage>x2x</SelectedPackage>
+        <SelectedPackage>wvdial</SelectedPackage>
         <SelectedPackage>wpa_supplicant</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
@@ -75,15 +76,17 @@
         <SelectedPackage>vbetool</SelectedPackage>
         <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
         <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
-        <SelectedPackage>user-manager</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
+        <SelectedPackage>tvtime</SelectedPackage>
         <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>traceroute</SelectedPackage>
         <SelectedPackage>testdisk</SelectedPackage>
         <SelectedPackage>telnet-bsd</SelectedPackage>
+        <SelectedPackage>tcpdump</SelectedPackage>
         <SelectedPackage>syslinux</SelectedPackage>
         <SelectedPackage>sysinfo</SelectedPackage>
+        <SelectedPackage>synergy</SelectedPackage>
         <SelectedPackage>suspend</SelectedPackage>
         <SelectedPackage>sudo</SelectedPackage>
         <SelectedPackage>strace</SelectedPackage>
@@ -98,6 +101,7 @@
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>rsync</SelectedPackage>
+        <SelectedPackage>rpm2targz</SelectedPackage>
         <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
         <SelectedPackage>recordmydesktop</SelectedPackage>
@@ -107,15 +111,19 @@
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>ppp</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
+        <SelectedPackage>plasmoid-yawp</SelectedPackage>
+        <SelectedPackage>plasmoid-translatoid</SelectedPackage>
         <SelectedPackage>plasmoid-service-applet</SelectedPackage>
+        <SelectedPackage>plasmoid-qalculate-applet</SelectedPackage>
         <SelectedPackage>plasmoid-network-applet</SelectedPackage>
+        <SelectedPackage>plasmoid-daisy</SelectedPackage>
+        <SelectedPackage>plasmoid-adjustable-clock</SelectedPackage>
         <SelectedPackage>phonon-xine</SelectedPackage>
         <SelectedPackage>phonon-gstreamer</SelectedPackage>
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>partitionmanager</SelectedPackage>
         <SelectedPackage>pardus-default-settings</SelectedPackage>
         <SelectedPackage>paprefs</SelectedPackage>
-        <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>p7zip</SelectedPackage>
         <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
         <SelectedPackage>openoffice-kde</SelectedPackage>
@@ -153,6 +161,7 @@
         <SelectedPackage>mc</SelectedPackage>
         <SelectedPackage>ltrace</SelectedPackage>
         <SelectedPackage>lsscsi</SelectedPackage>
+        <SelectedPackage>lshw</SelectedPackage>
         <SelectedPackage>libvisual-plugins</SelectedPackage>
         <SelectedPackage>liboldX</SelectedPackage>
         <SelectedPackage>liberation-fonts</SelectedPackage>
@@ -161,6 +170,7 @@
         <SelectedPackage>ksplash-pardus-theme</SelectedPackage>
         <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
+        <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
@@ -197,11 +207,12 @@
         <SelectedPackage>ipw2100-firmware</SelectedPackage>
         <SelectedPackage>iptraf</SelectedPackage>
         <SelectedPackage>iproute2</SelectedPackage>
+        <SelectedPackage>iotop</SelectedPackage>
         <SelectedPackage>ifplugd</SelectedPackage>
         <SelectedPackage>icon-theme-milky-png</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
-        <SelectedPackage>history-manager</SelectedPackage>
+        <SelectedPackage>hping</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gst-plugins-ugly</SelectedPackage>
@@ -217,7 +228,9 @@
         <SelectedPackage>firewall-manager</SelectedPackage>
         <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>ffmpeg</SelectedPackage>
+        <SelectedPackage>ettercap</SelectedPackage>
         <SelectedPackage>ethtool</SelectedPackage>
+        <SelectedPackage>etherape</SelectedPackage>
         <SelectedPackage>enchant-zemberek</SelectedPackage>
         <SelectedPackage>ed</SelectedPackage>
         <SelectedPackage>eciadsl</SelectedPackage>
@@ -226,13 +239,14 @@
         <SelectedPackage>droid-fonts</SelectedPackage>
         <SelectedPackage>djvu-plugin</SelectedPackage>
         <SelectedPackage>djview4</SelectedPackage>
-        <SelectedPackage>disk-manager</SelectedPackage>
+        <SelectedPackage>display-settings</SelectedPackage>
         <SelectedPackage>digikam</SelectedPackage>
         <SelectedPackage>dejavu-fonts</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>crda</SelectedPackage>
         <SelectedPackage>command-not-found</SelectedPackage>
+        <SelectedPackage>choqok</SelectedPackage>
         <SelectedPackage>cdrtools</SelectedPackage>
         <SelectedPackage>cdparanoia</SelectedPackage>
         <SelectedPackage>ccid</SelectedPackage>
@@ -244,8 +258,10 @@
         <SelectedPackage>bind-tools</SelectedPackage>
         <SelectedPackage>bash-completion</SelectedPackage>
         <SelectedPackage>b43-firmware</SelectedPackage>
+        <SelectedPackage>aufs-progs</SelectedPackage>
         <SelectedPackage>atmel-firmware</SelectedPackage>
         <SelectedPackage>artwork-pardus-release</SelectedPackage>
+        <SelectedPackage>arptools</SelectedPackage>
         <SelectedPackage>aria2</SelectedPackage>
         <SelectedPackage>ar9170-firmware</SelectedPackage>
         <SelectedPackage>apmd</SelectedPackage>
@@ -255,6 +271,7 @@
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
+        <SelectedPackage>aircrack-ng</SelectedPackage>
         <SelectedPackage>acx-firmware</SelectedPackage>
         <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>acpi4asus</SelectedPackage>
@@ -296,7 +313,6 @@
         <Package>vbetool</Package>
         <Package>util-linux</Package>
         <Package>utempter</Package>
-        <Package>user-manager</Package>
         <Package>usbutils</Package>
         <Package>urlgrabber</Package>
         <Package>unzip</Package>
@@ -320,7 +336,6 @@
         <Package>taglib-extras</Package>
         <Package>taglib</Package>
         <Package>sysvinit</Package>
-        <Package>system-manager</Package>
         <Package>system-config-printer</Package>
         <Package>sysklogd</Package>
         <Package>sysfsutils</Package>
@@ -341,7 +356,6 @@
         <Package>shadow</Package>
         <Package>sg3_utils</Package>
         <Package>setserial</Package>
-        <Package>service-manager</Package>
         <Package>sed</Package>
         <Package>sdl-gfx</Package>
         <Package>schroedinger</Package>
@@ -395,8 +409,6 @@
         <Package>polkit-qt</Package>
         <Package>pnm2ppa</Package>
         <Package>pm-utils</Package>
-        <Package>plasmoid-service-applet</Package>
-        <Package>plasmoid-network-applet</Package>
         <Package>pixman</Package>
         <Package>pisi</Package>
         <Package>pinentry</Package>
@@ -417,7 +429,6 @@
         <Package>pangomm</Package>
         <Package>pango</Package>
         <Package>pam</Package>
-        <Package>package-manager</Package>
         <Package>ortp</Package>
         <Package>orbit2</Package>
         <Package>openssl</Package>
@@ -439,7 +450,6 @@
         <Package>nss-mdns</Package>
         <Package>nss</Package>
         <Package>nspr</Package>
-        <Package>network-manager</Package>
         <Package>netpbm</Package>
         <Package>net-tools</Package>
         <Package>net-snmp</Package>
@@ -495,6 +505,7 @@
         <Package>lpsolve</Package>
         <Package>lpc10</Package>
         <Package>loudmouth</Package>
+        <Package>lockdev</Package>
         <Package>lm_sensors</Package>
         <Package>live555</Package>
         <Package>lirc</Package>
@@ -507,6 +518,7 @@
         <Package>libxcb</Package>
         <Package>libx86</Package>
         <Package>libwww</Package>
+        <Package>libwvstreams</Package>
         <Package>libwps</Package>
         <Package>libwpg</Package>
         <Package>libwpd</Package>
@@ -536,6 +548,8 @@
         <Package>librsvg</Package>
         <Package>libraw1394</Package>
         <Package>libquicktime</Package>
+        <Package>libqjson</Package>
+        <Package>libqalculate</Package>
         <Package>libproxy</Package>
         <Package>libpng</Package>
         <Package>libpcre</Package>
@@ -628,7 +642,6 @@
         <Package>libart_lgpl</Package>
         <Package>libarchive</Package>
         <Package>libao</Package>
-        <Package>libacpi</Package>
         <Package>libXxf86vm</Package>
         <Package>libXxf86dga</Package>
         <Package>libXvMC</Package>
@@ -700,7 +713,6 @@
         <Package>icon-theme-milky-index</Package>
         <Package>hunspell</Package>
         <Package>hsqldb-lib</Package>
-        <Package>history-manager</Package>
         <Package>hicolor-icon-theme</Package>
         <Package>hdparm</Package>
         <Package>hal-info</Package>
@@ -759,7 +771,6 @@
         <Package>fontconfig</Package>
         <Package>flex</Package>
         <Package>flac</Package>
-        <Package>firewall-manager</Package>
         <Package>findutils</Package>
         <Package>file</Package>
         <Package>fftw3</Package>
@@ -784,9 +795,7 @@
         <Package>djvu</Package>
         <Package>djview4</Package>
         <Package>djbfft</Package>
-        <Package>display-settings</Package>
         <Package>disktype</Package>
-        <Package>disk-manager</Package>
         <Package>diffutils</Package>
         <Package>dialog</Package>
         <Package>dhcpcd</Package>
@@ -815,6 +824,7 @@
         <Package>comar-api</Package>
         <Package>comar</Package>
         <Package>clucene</Package>
+        <Package>cln</Package>
         <Package>chmlib</Package>
         <Package>check</Package>
         <Package>cdrtools</Package>
@@ -827,7 +837,6 @@
         <Package>bzip2</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>bootsplash</Package>
-        <Package>boot-manager</Package>
         <Package>boost</Package>
         <Package>bluez</Package>
         <Package>blas</Package>
