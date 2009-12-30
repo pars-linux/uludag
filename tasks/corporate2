@@ -78,6 +78,7 @@
 
 * KDE (Renan Çakırerk)
     * Kaptan'ın gözden geçirilmesi (50)
+    * Kaptan'da katkı deposu ekleme kısmı çıkarılacak (-)
     * Göç aracının gözden geçirilmesi (-)
 
 * YALI (Mete Alpaslan)
@@ -92,7 +93,7 @@
     * Imaj köküne girecek paketleri seçebilme desteği (-)
 
 * sysinfo (Ozan Çağlayan)
-    * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+) [Fatih Aşıcı]
+    * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (+)
     * DMI gizleyince %9 çıkıyor (-)
     * Common folders ile disks'i birleştir (-)
@@ -102,7 +103,7 @@
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
     * 2.6.31/32 çekirdeğe geçilmesi (+)
 
-* Boot (Bahadır Kandemir)
+* Boot/Managers (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
     * boot-manager'ın UUID değişiklikleriyle beraber gözden geçirilmesi (-)
     * mySQL, pgSQL, ldap, apache sunucu paketlerinin güncellenmesi, bakımının yapılması (-)
@@ -122,6 +123,7 @@
     * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (/80)
     * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
 
-* X/DRM (Fatih Aşıcı)
+* X/DRM/locales (Fatih Aşıcı)
     * display-settings exception veriyor (+)
     * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
+    * kdm ingilizce açılıyor (-)
