@@ -32,8 +32,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui = Ui_searchWidget()
         self.ui.setupUi(self)
 
-        #self.ui.labelSearchImage.setPixmap(QtGui.QPixmap(':/raw/pics/nepomuk.png'))
-
         config = KConfig("nepomukserverrc")
         group = config.group("Basic Settings")
         isNepomuk = str(group.readEntry('Start Nepomuk'))
