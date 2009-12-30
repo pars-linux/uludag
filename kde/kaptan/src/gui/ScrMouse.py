@@ -47,7 +47,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             config = KConfig("kdeglobals")
             group = config.group("KDE")
             self.__class__.screenSettings["selectedBehaviour"] = str(group.readEntry("SingleClick"))
-            self.ui.pixMouseIcon.setPixmap(QtGui.QPixmap(':/raw/pics/mouse.png'))
 
             self.ui.singleClick.setChecked(self.str2bool(self.__class__.screenSettings["selectedBehaviour"]))
             self.clickBehaviour = self.str2bool(self.__class__.screenSettings["selectedBehaviour"])

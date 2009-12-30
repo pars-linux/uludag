@@ -28,5 +28,8 @@ class WallpaperItemWidget(QtGui.QWidget):
 
         self.ui.labelName.setText( title)
         self.ui.labelDesc.setText("by "+ desc)
-        self.ui.labelStatus.setPixmap(QtGui.QPixmap(pic))
+        try:
+            self.ui.labelStatus.setPixmap(QtGui.QPixmap(pic))
+        except:
+            pass
 

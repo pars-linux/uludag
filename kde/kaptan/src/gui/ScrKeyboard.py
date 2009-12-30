@@ -36,7 +36,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_keyboardWidget()
         self.ui.setupUi(self)
-        self.ui.picKeyboard.setPixmap(QtGui.QPixmap(':/raw/pics/keyboards.png'))
 
         # get layout config
         self.config = KConfig("kxkbrc")
