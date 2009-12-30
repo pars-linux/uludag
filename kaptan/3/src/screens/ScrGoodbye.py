@@ -39,7 +39,6 @@ class Widget(GoodbyeWidget, ScreenWidget):
 
         self.minimumResolution = 800
 
-        self.picMigration.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/migration.png")))
         self.picTasma.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/tasma.png")))
         #self.picFeedback.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/feedback.png")))
         self.picHelp.setPixmap(QPixmap(locate("data", "kaptan/pics/icons/user_groups.png")))
@@ -49,12 +48,9 @@ class Widget(GoodbyeWidget, ScreenWidget):
         self.setPaletteBackgroundPixmap(QPixmap(locate("data", "kaptan/pics/middleWithCorner.png")))
 
         # set signals
-        self.connect(self.buttonMigration, SIGNAL("clicked()"), self.startMigration)
         self.connect(self.buttonTasma, SIGNAL("clicked()"), self.startTasma)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.startHelp)
         self.connect(self.buttonResolution, SIGNAL("clicked()"), self.startDisplayManager)
-
-        #self.isAppAvaiable("migration-users", self.groupBoxMigration)
 
         # if screen width smaller than 
         rect =  QApplication.desktop().screenGeometry()
@@ -83,11 +79,6 @@ class Widget(GoodbyeWidget, ScreenWidget):
     def startDisplayManager(self):
         self.proc = QProcess()
         self.proc.addArgument("display-manager")
-        self.proc.start()
-
-    def startMigration(self):
-        self.proc = QProcess()
-        self.proc.addArgument("migration")
         self.proc.start()
 
     def startTasma(self):

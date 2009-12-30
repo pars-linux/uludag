@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-08-27 20:48+0300\n"
+"POT-Creation-Date: 2009-12-30 16:28+0200\n"
 "PO-Revision-Date: 2009-01-19 01:55+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -18,62 +18,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/kaptan.py:93 src/screens/ScrWelcome.py:24
-msgid "Welcome to Kaptan Wizard :)"
+#: src/kaptan.py:128 src/kaptan.py:281 src/screens/ScrWelcome.py:24
+#, fuzzy
+msgid "Welcome to Kaptan"
 msgstr "Willkommen zum Kaptan-Assistenten :)"
 
-#: src/kaptan.py:95
+#: src/kaptan.py:130
 msgid "&Back"
 msgstr "&Zurück"
 
-#: src/kaptan.py:96
+#: src/kaptan.py:131
 msgid "&Next"
 msgstr "&Weiter"
 
-#: src/kaptan.py:97
+#: src/kaptan.py:132
 msgid "Finish"
 msgstr "Fertigstellen"
 
-#: src/kaptan.py:236
-msgid "Kaptan is already running!"
+#: src/kaptan.py:271
+#, fuzzy
+msgid "Kaptan is already running."
 msgstr "Kaptan wird bereits ausgeführt!"
 
-#: src/kaptan.py:246
-msgid "Kaptan Welcome Wizard"
-msgstr "Kaptan-Willkommensassistent"
+#: src/screens/ScrGoodbye.py:29
+msgid "Enjoy with Pardus..."
+msgstr "Amüsieren Sie sich mit Pardus..."
 
-#: src/screens/keyboarddlg.py:653 src/screens/keyboarddlg.py:669
-msgid "Keyboard Layouts"
-msgstr "Tastaturbelegungen"
+#: src/screens/ScrNetwork.py:25
+msgid "Configure network settings..."
+msgstr "Netzwerkeinstellungen konfigurieren..."
 
-#: src/screens/keyboarddlg.py:665 src/screens/ScrKeyboard.py:37
-msgid "Keyboard"
-msgstr "Tastatur"
+#: src/screens/ScrNetwork.py:37
+msgid "<big>Loading...</big>"
+msgstr "<big>Am Laden...</big>"
 
-#: src/screens/keyboarddlg.py:668
-msgid "Try:"
-msgstr "Testen:"
+#: src/screens/kaptanMain.py:107
+msgid "KaptanUi"
+msgstr "KaptanUi"
 
-#: src/screens/paneldlg.py:87 src/screens/ScrPanel.py:41
+#: src/screens/kaptanMain.py:119
+msgid "Sample"
+msgstr ""
+
+#: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
+#: src/screens/welcomedlg.py:76
+msgid "Welcome"
+msgstr "Willkommen"
+
+#: src/screens/ScrWelcome.py:33
+msgid ""
+"<b>Kaptan</b> will help you personalize your Pardus workspace easily and "
+"quickly.<br/><br/>Please click <b>next</b> in order to begin."
+msgstr ""
+
+#: src/screens/ScrWelcome.py:34
+msgid ""
+"<b>Pardus</b> is a reliable, secure, fast and user friendly operating system."
+"<br/><br/>With Pardus, you can connect to the internet, read your e-mails, "
+"work with your office documents, watch movies, play music, develop "
+"applications, play games and much more!"
+msgstr ""
+
+#: src/screens/paneldlg.py:85 src/screens/ScrPanel.py:41
 msgid "Panel"
 msgstr "Leiste"
 
-#: src/screens/ScrKeyboard.py:26
-msgid "Keyboard Settings"
-msgstr "Tastatureinstellungen"
-
-#: src/screens/ScrKeyboard.py:27
-msgid "Configure your keyboard"
-msgstr "Konfigurieren Sie Ihre Tastatur"
-
-#: src/screens/ScrKeyboard.py:38
-msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
-msgstr "<p align=\"left\">Sie können hier Ihre Tastatur konfigurieren.</p>"
-
-#: src/screens/welcomedlg.py:60 src/screens/ScrWelcome.py:23
-#: src/screens/ScrWelcome.py:32
-msgid "Welcome"
-msgstr "Willkommen"
+#: src/screens/multipledlg.py:135 src/screens/ScrMultiple.py:60
+msgid "Multiple"
+msgstr "Mehrfache Desktops"
 
 #: src/screens/wallpaperdlg.py:34 src/screens/wallpaperdlg.py:132
 msgid "Thumbnails"
@@ -91,31 +103,17 @@ msgstr "toolTip"
 msgid "Choose Wallpaper"
 msgstr "Hintergrundbild auswählen"
 
-#: src/screens/ScrMultiple.py:26
-msgid "Multiple Desktops"
-msgstr "Mehrere Desktops"
+#: src/screens/keyboarddlg.py:646 src/screens/keyboarddlg.py:671
+msgid "Keyboard Layouts"
+msgstr "Tastaturbelegungen"
 
-#: src/screens/ScrMultiple.py:27
-msgid "Configure virtual desktops.."
-msgstr "Virtuelle Desktops konfigurieren..."
+#: src/screens/keyboarddlg.py:668 src/screens/ScrKeyboard.py:37
+msgid "Keyboard"
+msgstr "Tastatur"
 
-#: src/screens/ScrMultiple.py:60 src/screens/multipledlg.py:135
-msgid "Multiple"
-msgstr "Mehrfache Desktops"
-
-#: src/screens/ScrMultiple.py:61
-msgid "<p>In this module, you can configure how many virtual desktops you want.</p>"
-msgstr ""
-"<p>In diesem Modul können Sie festlegen, wie viele virtuelle Desktops Sie "
-"möchten.</p>"
-
-#: src/screens/ScrMultiple.py:62
-msgid "Mouse wheel over desktop background switches desktop."
-msgstr "Mausrad über Desktophintergrund wechselt zum nächsten Desktop"
-
-#: src/screens/ScrMultiple.py:63
-msgid " Desktop(s)"
-msgstr "Desktop(s)"
+#: src/screens/keyboarddlg.py:672
+msgid "Try:"
+msgstr "Testen:"
 
 # ich habe hier "wonderful" verschluckt, kann man moeglicherweise besser sagen..
 #: src/screens/ScrWallpaper.py:46
@@ -134,6 +132,125 @@ msgstr "Altes Hintergrundbild"
 msgid "No Wallpaper"
 msgstr "Kein Hintergrundbild"
 
+#: src/screens/photodlg.py:66
+msgid "Photo"
+msgstr "Foto"
+
+#: src/screens/photodlg.py:67
+msgid "Shot"
+msgstr "Aufnehmen"
+
+#: src/screens/photodlg.py:68
+msgid "Put my photo to:"
+msgstr "Setze mein Foto nach:"
+
+#: src/screens/photodlg.py:69
+msgid "E-mail clients"
+msgstr "E-Mail-Clients"
+
+#: src/screens/photodlg.py:70
+msgid "Instant messengers"
+msgstr "Instant Messenger"
+
+#: src/screens/photodlg.py:71
+msgid "Login Screen (KDM)"
+msgstr "Anmeldungs-Bildschirm (KDM)"
+
+#: src/screens/smoltdlg.py:58 src/screens/ScrSmolt.py:38
+#, fuzzy
+msgid "Smolt"
+msgstr "Aufnehmen"
+
+#: src/screens/networkdlg.py:46
+msgid "Network"
+msgstr "Netzwerk"
+
+#: src/screens/ScrPackage.py:29
+msgid "Package Manager"
+msgstr "Paket-Manager"
+
+#: src/screens/ScrPackage.py:30
+msgid "Configure package manager settings..."
+msgstr "Paket-Manager-Einstellungen konfigurieren..."
+
+#: src/screens/ScrPackage.py:44 src/screens/packagedlg.py:89
+msgid "Package"
+msgstr "Paket"
+
+# bitte nachlesen, Zweifel: system tray
+#: src/screens/ScrPackage.py:45
+msgid ""
+"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
+"easily install new programs and upgrade your system and also can see new "
+"upgrades of the programs periodically  from the system tray with package "
+"manager."
+msgstr ""
+"<b>Paket-Manager</b> ist die grafische Benutzeroberfläche von <b>PiSi</b>. "
+"Sie können auf einfache Weise neue Programme installieren und System-"
+"Upgrades vornehmen, ausserdem können Sie durch die Meldungen, die im "
+"Systemabschnitt in der Taskleiste und festegelegten Zeitabständen die "
+"Upgrades anzeigt, mit dem Paket-Manager Upgrades vornehmen."
+
+#: src/screens/ScrPackage.py:46 src/screens/packagedlg.py:94
+msgid "tooltipPisiPopup"
+msgstr "tooltipPisiPopup"
+
+#: src/screens/ScrPackage.py:47
+msgid "Updates"
+msgstr "Updates"
+
+# Zweifel: system-tray
+#: src/screens/ScrPackage.py:48
+msgid "Show in system tray"
+msgstr "Im Systemabschnitt in der Taskleiste anzeigen"
+
+#: src/screens/ScrPackage.py:49
+msgid "Check updates automatically for every"
+msgstr "Automatisch nach Updates überprüfen, alle"
+
+#: src/screens/ScrPackage.py:50
+msgid " hours"
+msgstr "Stunden"
+
+#: src/screens/summarydlg.py:64
+msgid "SummaryWidget"
+msgstr "SummaryWidget"
+
+#: src/screens/ScrMultiple.py:26
+msgid "Multiple Desktops"
+msgstr "Mehrere Desktops"
+
+#: src/screens/ScrMultiple.py:27
+msgid "Configure virtual desktops.."
+msgstr "Virtuelle Desktops konfigurieren..."
+
+#: src/screens/ScrMultiple.py:61
+msgid ""
+"<p>In this module, you can configure how many virtual desktops you want.</p>"
+msgstr ""
+"<p>In diesem Modul können Sie festlegen, wie viele virtuelle Desktops Sie "
+"möchten.</p>"
+
+#: src/screens/ScrMultiple.py:62
+msgid "Mouse wheel over desktop background switches desktop."
+msgstr "Mausrad über Desktophintergrund wechselt zum nächsten Desktop"
+
+#: src/screens/ScrMultiple.py:63
+msgid " Desktop(s)"
+msgstr "Desktop(s)"
+
+#: src/screens/ScrKeyboard.py:26
+msgid "Keyboard Settings"
+msgstr "Tastatureinstellungen"
+
+#: src/screens/ScrKeyboard.py:27
+msgid "Configure your keyboard"
+msgstr "Konfigurieren Sie Ihre Tastatur"
+
+#: src/screens/ScrKeyboard.py:38
+msgid "<p align=\"left\">You can configure your keyboard from here.</p>"
+msgstr "<p align=\"left\">Sie können hier Ihre Tastatur konfigurieren.</p>"
+
 #: src/screens/ScrMouse.py:27
 msgid "Mouse Settings"
 msgstr "Mauseinstellungen"
@@ -142,27 +259,23 @@ msgstr "Mauseinstellungen"
 msgid "Configure your mouse"
 msgstr "Konfigurieren Sie Ihre Maus"
 
-#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:104
+#: src/screens/ScrMouse.py:39 src/screens/mousedlg.py:106
 msgid "Mouse"
 msgstr "Maus"
 
 # Mausrad rückwärts ??
 #: src/screens/ScrMouse.py:40
-msgid "Reverse scroll"
+#, fuzzy
+msgid "Reverse scrolling direction"
 msgstr "Entgegengesetztes Scrollen"
 
-# weiss nicht ob das hier wirklich gut klingt..
 #: src/screens/ScrMouse.py:41
 msgid ""
-"<p align=\"left\">If you are left-handed, you may prefer to swap the "
-"functions on the left and right buttons on your pointing device by choosing "
-"the \"Left handed\" option below. You can also select default click "
-"behaviour.</p>"
+"<p align='left'>The <b>clicking behavior</b> defines how many times you want "
+"to click when you are opening a file.<br/><br/>If you are <b>left handed</"
+"b>, you may prefer to swap the left and right buttons of your pointing "
+"device.</p>"
 msgstr ""
-"<p align=\"left\">Wenn Sie Linkshänder sind, ist es Ihnen möglicherweise "
-"angenehmer, die Funktionen der rechten und linken Taste des Zeigegerätes "
-"umzutauschen. Dafür können Sie weiter unten die Option \"Linkshänder\" "
-"benutzen. Sie könne auch das Klickverhalten festlegen.</p>"
 
 #: src/screens/ScrMouse.py:42
 msgid "Button Order"
@@ -177,7 +290,8 @@ msgid "Right Hand"
 msgstr "Rechtshänder"
 
 #: src/screens/ScrMouse.py:45
-msgid "Click behaviour"
+#, fuzzy
+msgid "Clicking Behaviour"
 msgstr "Klickverhalten"
 
 #: src/screens/ScrMouse.py:46
@@ -188,112 +302,102 @@ msgstr "Mit &einem Klick Dateien und Ordner öffnen"
 msgid "Dou&ble-click to open files and folders"
 msgstr "Mit Dop&pelklick Dateien und Ordner öffnen"
 
-#: src/screens/ScrNetwork.py:25
-msgid "Configure network settings..."
-msgstr "Netzwerkeinstellungen konfigurieren..."
-
-#: src/screens/ScrNetwork.py:37
-msgid "<big>Loading...</big>"
-msgstr "<big>Am Laden...</big>"
-
-# Zweifel 2: personalize..
-# zweifel rechtschreibung: vorzunehmen zusammen oder in mehreren woertern ?
-# so wie ich es gelernt hatte muesste es zusammen sein - aber die Zeiten haben sich geaendert
-# was ist "normal" heute ?
-#: src/screens/ScrWelcome.py:33
-msgid ""
-"This application, called <b>Kaptan Desktop</b>, will help you with your "
-"basic but sufficient setup for your <b>Pardus</b> desktop in a quick manner. "
-"Please click <b>Next</b> to personalize your desktop. :)"
+#: src/screens/ScrSmolt.py:29 src/screens/ScrSmolt.py:30
+msgid "Pardus hardware profiler"
 msgstr ""
-"Diese Anwendung, <b>Kaptan-Desktop</b>, wird Ihnen helfen die grundlegenden "
-"Einstellungen von Ihrem <b>Pardus</b> auf einfache Weise vorzunehmen. Bitte "
-"klicken Sie auf <b>Weiter</b> um Ihren Desktop einzurichten. :)"
 
-#: src/screens/ScrWelcome.py:34
+#: src/screens/ScrSmolt.py:39
 msgid ""
-"<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
-"users' basic desktop needs; helps you connect to internet, read e-mails, "
-"work with office documents and more!"
+"Pardus hardware profiler gets your hardware info and sends it<br> to public "
+"Pardus server."
 msgstr ""
-"<b>Pardus</b> ist eine GNU/Linux-Distribution, die die "
-"Grunddesktopbedürfnisse der Anwender erfüllt; surfen im Internet, lesen der "
-"E-Mail-Nachrichten, arbeiten mit Office-Dokumenten und mehr!"
 
-#: src/screens/networkdlg.py:46
-msgid "Network"
-msgstr "Netzwerk"
+#: src/screens/ScrSmolt.py:40
+msgid "Show details"
+msgstr ""
 
-#: src/screens/packagedlg.py:107 src/screens/ScrPackage.py:49
-msgid "Package"
-msgstr "Paket"
+#: src/screens/ScrSmolt.py:41
+msgid "Privacy policy"
+msgstr ""
 
-#: src/screens/packagedlg.py:112 src/screens/ScrPackage.py:51
-msgid "tooltipPisiPopup"
-msgstr "tooltipPisiPopup"
+#: src/screens/ScrSmolt.py:42
+msgid "I want to share my hardware info"
+msgstr ""
 
-#: src/screens/kaptanMain.py:102
-msgid "KaptanUi"
-msgstr "KaptanUi"
+#: src/screens/ScrSmolt.py:58
+#, fuzzy
+msgid "Label"
+msgstr "Leiste"
 
-#: src/screens/ScrPackage.py:30
-msgid "Package Manager"
-msgstr "Paket-Manager"
+#: src/screens/ScrSmolt.py:60
+msgid "Data"
+msgstr ""
 
-#: src/screens/ScrPackage.py:31
-msgid "Configure package manager settings..."
-msgstr "Paket-Manager-Einstellungen konfigurieren..."
+#: src/screens/ScrSmolt.py:86
+msgid "Smolt Detailes Wigdet"
+msgstr ""
 
-# bitte nachlesen, Zweifel: system tray
-#: src/screens/ScrPackage.py:50
+#: src/screens/ScrSmolt.py:92
+#, fuzzy
+msgid "Smolt Privacy Widget"
+msgstr "SummaryWidget"
+
+#: src/screens/ScrSmolt.py:105
+msgid "Sending..."
+msgstr ""
+
+#: src/screens/goodbyedlg.py:154
+msgid "Goodbye"
+msgstr "Abschluss"
+
+#: src/screens/goodbyedlg.py:155
+msgid "Tasma"
+msgstr "Tasma"
+
+#: src/screens/goodbyedlg.py:156
 msgid ""
-"<b>Package-manager</b> is the graphical front-end of <b>PiSi</b>. You can "
-"easily install new programs and upgrade your system and also can see new "
-"upgrades of the programs periodically  from the system tray with package "
-"manager."
+"<p>TASMA is a configuration application for Pardus Operating System. </p>"
+msgstr "<p>TASMA ist eine Konfigurationsanwendung von Pardus. </p>"
+
+#: src/screens/goodbyedlg.py:157 src/screens/goodbyedlg.py:159
+#: src/screens/goodbyedlg.py:163
+msgid "Start"
+msgstr "Starten"
+
+#: src/screens/goodbyedlg.py:158
+msgid "User Groups and Help Pages"
+msgstr "Benutzergruppen und Hilfeseiten"
+
+#: src/screens/goodbyedlg.py:160
+msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
+msgstr "<p>Pardus-Community, Benutzerlisten, IRC-Kanäle, Wikis und mehr.</p>"
+
+# Zweifel: steps, try - ausprobieren.. sollte vielleicht etwas formeller sein ?
+#: src/screens/goodbyedlg.py:161
+msgid ""
+"<p>Congratulations! You have finished all steps. You can now continue using "
+"Pardus and try applications below.</p>"
 msgstr ""
-"<b>Paket-Manager</b> ist die grafische Benutzeroberfläche von <b>PiSi</b>. "
-"Sie können auf einfache Weise neue Programme installieren und System-"
-"Upgrades vornehmen, ausserdem können Sie durch die Meldungen, die im "
-"Systemabschnitt in der Taskleiste und festegelegten Zeitabständen die "
-"Upgrades anzeigt, mit dem Paket-Manager Upgrades vornehmen."
+"<p>Herzlichen Glückwunsch! Sie haben alle Schritte abgeschlossen. Sie können "
+"jetzt Pardus weiter verwenden und die vorhandenen Anwendungen ausprobieren.</"
+"p>"
 
-#: src/screens/ScrPackage.py:52
-msgid "Updates"
-msgstr "Updates"
+#: src/screens/goodbyedlg.py:162
+msgid "Screen Resolution"
+msgstr "Bildschirmauflösung"
 
-# Zweifel: system-tray
-#: src/screens/ScrPackage.py:53
-msgid "Show in system tray"
-msgstr "Im Systemabschnitt in der Taskleiste anzeigen"
+# Zweifel - wie hast Du display-manager uebersetzt ?
+#: src/screens/goodbyedlg.py:164
+msgid ""
+"<p><p>Your screen resolution is very low. It may be wrong. You can change "
+"your resolution bye using <b>Display Manager</b>.</p></p>"
+msgstr ""
+"<p><p>Ihre Bildschirmauflösung ist sehr gering. Es könnte falsch sein. Sie "
+"können IhreBildschirmauflösung mit dem <b>Anzeige-Manager</b> ändern.</p></p>"
 
-#: src/screens/ScrPackage.py:54
-msgid "Check updates automatically for every"
-msgstr "Automatisch nach Updates überprüfen, alle"
-
-#: src/screens/ScrPackage.py:55
-msgid " hours"
-msgstr "Stunden"
-
-#: src/screens/ScrPackage.py:56
-msgid "Repo"
-msgstr "Depot"
-
-#: src/screens/ScrPackage.py:57
-msgid "Contrib repo includes extra packages."
-msgstr "Contrib-Depot enthält extra Pakete."
-
-#: src/screens/ScrPackage.py:58
-msgid "Add contrib repo"
-msgstr "Contrib-Depot hinzufügen"
-
-#: src/screens/ScrPackage.py:93
-msgid "You are not authorized for this operation."
-msgstr "Sie sind für diesen Vorgang nicht berechtigt."
-
-#: src/screens/ScrPackage.py:94
-msgid "Authentication Error!"
-msgstr "Authentifizierungs-Fehler!"
+#: src/screens/mousedlg.py:110 src/screens/mousedlg.py:115
+msgid "deneme"
+msgstr ""
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"
@@ -321,96 +425,70 @@ msgstr "Vorschau"
 msgid "Use enhanced Kickoff style menu"
 msgstr "Erweiterten Kickoff-Stylemenü verwenden"
 
-#: src/screens/ScrGoodbye.py:29
-msgid "Enjoy with Pardus..."
-msgstr "Amüsieren Sie sich mit Pardus..."
+#: src/screens/smoltProgressPopup.py:45
+msgid "smoltProgressWidget"
+msgstr ""
 
-#: src/screens/goodbyedlg.py:191
-msgid "Goodbye"
-msgstr "Abschluss"
+#~ msgid "Kaptan Welcome Wizard"
+#~ msgstr "Kaptan-Willkommensassistent"
 
-#: src/screens/goodbyedlg.py:192
-msgid "Tasma"
-msgstr "Tasma"
+# weiss nicht ob das hier wirklich gut klingt..
+#~ msgid ""
+#~ "<p align=\"left\">If you are left-handed, you may prefer to swap the "
+#~ "functions on the left and right buttons on your pointing device by "
+#~ "choosing the \"Left handed\" option below. You can also select default "
+#~ "click behaviour.</p>"
+#~ msgstr ""
+#~ "<p align=\"left\">Wenn Sie Linkshänder sind, ist es Ihnen möglicherweise "
+#~ "angenehmer, die Funktionen der rechten und linken Taste des Zeigegerätes "
+#~ "umzutauschen. Dafür können Sie weiter unten die Option \"Linkshänder\" "
+#~ "benutzen. Sie könne auch das Klickverhalten festlegen.</p>"
 
-#: src/screens/goodbyedlg.py:193
-msgid "<p>TASMA is a configuration application for Pardus Operating System. </p>"
-msgstr "<p>TASMA ist eine Konfigurationsanwendung von Pardus. </p>"
+# Zweifel 2: personalize..
+# zweifel rechtschreibung: vorzunehmen zusammen oder in mehreren woertern ?
+# so wie ich es gelernt hatte muesste es zusammen sein - aber die Zeiten haben sich geaendert
+# was ist "normal" heute ?
+#~ msgid ""
+#~ "This application, called <b>Kaptan Desktop</b>, will help you with your "
+#~ "basic but sufficient setup for your <b>Pardus</b> desktop in a quick "
+#~ "manner. Please click <b>Next</b> to personalize your desktop. :)"
+#~ msgstr ""
+#~ "Diese Anwendung, <b>Kaptan-Desktop</b>, wird Ihnen helfen die "
+#~ "grundlegenden Einstellungen von Ihrem <b>Pardus</b> auf einfache Weise "
+#~ "vorzunehmen. Bitte klicken Sie auf <b>Weiter</b> um Ihren Desktop "
+#~ "einzurichten. :)"
 
-#: src/screens/goodbyedlg.py:194 src/screens/goodbyedlg.py:196
-#: src/screens/goodbyedlg.py:199 src/screens/goodbyedlg.py:203
-msgid "Start"
-msgstr "Starten"
+#~ msgid ""
+#~ "<b>Pardus</b> is a GNU/Linux distribution, targeting at computer literate "
+#~ "users' basic desktop needs; helps you connect to internet, read e-mails, "
+#~ "work with office documents and more!"
+#~ msgstr ""
+#~ "<b>Pardus</b> ist eine GNU/Linux-Distribution, die die "
+#~ "Grunddesktopbedürfnisse der Anwender erfüllt; surfen im Internet, lesen "
+#~ "der E-Mail-Nachrichten, arbeiten mit Office-Dokumenten und mehr!"
 
-#: src/screens/goodbyedlg.py:195
-msgid "User Groups and Help Pages"
-msgstr "Benutzergruppen und Hilfeseiten"
+#~ msgid "Repo"
+#~ msgstr "Depot"
 
-#: src/screens/goodbyedlg.py:197
-msgid "<p>Pardus community, user lists, IRC channels, wikis and more.</p>"
-msgstr "<p>Pardus-Community, Benutzerlisten, IRC-Kanäle, Wikis und mehr.</p>"
+#~ msgid "Contrib repo includes extra packages."
+#~ msgstr "Contrib-Depot enthält extra Pakete."
 
-#: src/screens/goodbyedlg.py:198
-msgid "Migration Tool"
-msgstr "Migrations-Tool"
+#~ msgid "Add contrib repo"
+#~ msgstr "Contrib-Depot hinzufügen"
+
+#~ msgid "You are not authorized for this operation."
+#~ msgstr "Sie sind für diesen Vorgang nicht berechtigt."
+
+#~ msgid "Authentication Error!"
+#~ msgstr "Authentifizierungs-Fehler!"
+
+#~ msgid "Migration Tool"
+#~ msgstr "Migrations-Tool"
 
 # Zweifel: besseres Wort fuer wizard
-#: src/screens/goodbyedlg.py:200
-msgid ""
-"<p>A wizard to transfer files and settings from existing operating systems "
-"(e.g. Windows) to Pardus.</p>"
-msgstr ""
-"<p>Ein Assistent zur Übertragung Ihrer Dateien und Einstellungen von "
-"vorhandenen Betriebssystemen (z.B. Windows) nach Pardus.</p>"
-
-# Zweifel: steps, try - ausprobieren.. sollte vielleicht etwas formeller sein ?
-#: src/screens/goodbyedlg.py:201
-msgid ""
-"<p>Congratulations! You have finished all steps. You can now continue using "
-"Pardus and try applications below.</p>"
-msgstr ""
-"<p>Herzlichen Glückwunsch! Sie haben alle Schritte abgeschlossen. Sie können "
-"jetzt Pardus weiter verwenden und die vorhandenen Anwendungen ausprobieren.</"
-"p>"
-
-#: src/screens/goodbyedlg.py:202
-msgid "Screen Resolution"
-msgstr "Bildschirmauflösung"
-
-# Zweifel - wie hast Du display-manager uebersetzt ?
-#: src/screens/goodbyedlg.py:204
-msgid ""
-"<p><p>Your screen resolution is very low. It may be wrong. You can change "
-"your resolution bye using <b>Display Manager</b>.</p></p>"
-msgstr ""
-"<p><p>Ihre Bildschirmauflösung ist sehr gering. Es könnte falsch sein. Sie "
-"können IhreBildschirmauflösung mit dem <b>Anzeige-Manager</b> ändern.</p></p>"
-
-#: src/screens/summarydlg.py:64
-msgid "SummaryWidget"
-msgstr "SummaryWidget"
-
-#: src/screens/photodlg.py:66
-msgid "Photo"
-msgstr "Foto"
-
-#: src/screens/photodlg.py:67
-msgid "Shot"
-msgstr "Aufnehmen"
-
-#: src/screens/photodlg.py:68
-msgid "Put my photo to:"
-msgstr "Setze mein Foto nach:"
-
-#: src/screens/photodlg.py:69
-msgid "E-mail clients"
-msgstr "E-Mail-Clients"
-
-#: src/screens/photodlg.py:70
-msgid "Instant messengers"
-msgstr "Instant Messenger"
-
-#: src/screens/photodlg.py:71
-msgid "Login Screen (KDM)"
-msgstr "Anmeldungs-Bildschirm (KDM)"
-
+#~ msgid ""
+#~ "<p>A wizard to transfer files and settings from existing operating "
+#~ "systems (e.g. Windows) to Pardus.</p>"
+#~ msgstr ""
+#~ "<p>Ein Assistent zur Übertragung Ihrer Dateien und Einstellungen von "
+#~ "vorhandenen Betriebssystemen (z.B. Windows) nach Pardus.</p>"
