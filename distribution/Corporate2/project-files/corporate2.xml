@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>PardusCorporate2-[2009.12.30]</Title>
+    <Title>PardusCorporate2-Preview[2009.12.30]</Title>
     <WorkDir>/tmp/CD-image/iso</WorkDir>
     <ReleaseFiles>/root/distribution/Corporate2/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/corporate2-test/pisi-index.xml.bz2">
@@ -705,7 +705,7 @@
         <Package>ConsoleKit</Package>
     </PackageSelection>
     <LanguageSelection default_language="tr_TR">
-        <Language>en_US</Language>
         <Language>tr_TR</Language>
+        <Language>en_US</Language>
     </LanguageSelection>
 </PardusmanProject>
