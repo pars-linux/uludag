@@ -1,15 +1,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-29 00:11+0200\n"
-"PO-Revision-Date: 2009-08-18 23:08+0200\n"
+"PO-Revision-Date: 2010-01-01 21:36+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,13 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .tmp/ScrGoodbye.py:26
-#, fuzzy
 msgid "Apply Settings"
-msgstr "Paramètres du style"
+msgstr "Appliquer les réglages"
 
 #: .tmp/ScrGoodbye.py:27 .tmp/ui_goodbyeWidget.py:254
 msgid "Congratulations!"
-msgstr ""
+msgstr "Félicitations !"
 
 #: .tmp/ScrKeyboard.py:32
 msgid "Insert some catchy title about keyboards.."
@@ -50,16 +49,20 @@ msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
 msgstr ""
+"Le menu Kick-off menu est le menu par défaut de Pardus.<br><br>Les "
+"raccourcis vers les programmes sont facilement accessibles et bien organisés."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:154
 msgid "Simple Menu"
-msgstr "Menu simple"
+msgstr "Menu basique"
 
 #: .tmp/ScrMenu.py:49
 msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
+"Le menu basique était celui de KDE 3.<br><br>Sa légèreté le rend "
+"recommandable pour les vieux ordinateurs."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
 msgid "Lancelot Menu"
@@ -70,6 +73,8 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
+"Lancelot est un menu évolué et personnalisable.<br><br>Les raccourcis vers "
+"les programmes sont facilement accessibles et bien organisés."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -236,9 +241,8 @@ msgid "Welcome"
 msgstr "Bienvenue"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Bienvenue dans l'assistant Kaptan !"
+msgstr "Bienvenue dans Kaptan"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -312,9 +316,8 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Formidables, magnifiques, superbes fonds d'écran ! \\m/"
 
 #: .tmp/ui_goodbyeWidget.py:252
-#, fuzzy
 msgid "More"
-msgstr "Souris"
+msgstr "Plus"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
@@ -325,7 +328,7 @@ msgstr "Souris"
 #: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:95
 #: .tmp/ui_welcomeWidget.py:59
 msgid "color: rgb(234, 225, 228);"
-msgstr ""
+msgstr "color: rgb(234, 225, 228);"
 
 #: .tmp/ui_goodbyeWidget.py:255
 msgid ""
@@ -333,6 +336,11 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
+"<b>Vos paramètres ont été appliqués.</b> Vous pouvez dorénavant profiter de "
+"Pardus ou "
+"regarder les liens et applications suivants pour plus un paramètrage plus "
+"avancé ou pour de l'aide. N'oubliez pas de vous <b>inscrire sur notre forum "
+"!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -363,13 +371,14 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Outils de configuration de Pardus : gestionnaires d'affichage, de pare-feu, "
+"de clavier, d'utilisateurs..."
 
 #: .tmp/ui_goodbyeWidget.py:265 .tmp/ui_goodbyeWidget.py:267
 msgid "Help and Support"
-msgstr ""
+msgstr "Aide et assistance"
 
 #: .tmp/ui_goodbyeWidget.py:266
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
@@ -379,7 +388,7 @@ msgstr ""
 
 #: .tmp/ui_kaptanMain.py:136
 msgid "Kaptan Desktop"
-msgstr "Kaptan Bureau"
+msgstr "Kaptan"
 
 #: .tmp/ui_kaptanMain.py:137
 msgid "Cancel"
@@ -403,11 +412,11 @@ msgstr "Clavier"
 
 #: .tmp/ui_keyboardWidget.py:97
 msgid "Test Layout"
-msgstr ""
+msgstr "Tester la disposition"
 
 #: .tmp/ui_keyboardWidget.py:99
 msgid "Keyboard Layout Language"
-msgstr ""
+msgstr "Disposition du clavier"
 
 #: .tmp/ui_keyboardWidget.py:100
 msgid ""
@@ -415,6 +424,9 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
+"Kaptan sélectionne automatiquement la meilleure disposition de clavier "
+"d'après votre langue. Si le choix par défaut ne vous convient pas, vous "
+"pouvez en choisir une autre et la tester immédiatement."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -422,13 +434,15 @@ msgstr "Menu"
 
 #: .tmp/ui_menuWidget.py:146
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Choisissez un style de menu"
 
 #: .tmp/ui_menuWidget.py:148
 msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
 msgstr ""
+"Vous pouvez aussi personnaliser votre <b>menu KDE</b> à votre convenance. "
+"Choisissez-en un à partir des différents styles suivants."
 
 #: .tmp/ui_menuWidget.py:149
 msgid ""
@@ -436,15 +450,17 @@ msgid ""
 "border: 1px solid rgb(255, 255, 255);\n"
 "}"
 msgstr ""
+"#pictureMenuStyles{\n"
+"border: 1px solid rgb(255, 255, 255);\n"
+"}"
 
 #: .tmp/ui_menuWidget.py:152
-#, fuzzy
 msgid "Menu Styles"
-msgstr "Paramètres du menu"
+msgstr "Styles de menu"
 
 #: .tmp/ui_menuWidget.py:156
 msgid "Sample"
-msgstr ""
+msgstr "Exemple"
 
 #: .tmp/ui_mouseWidget.py:165
 msgid "Mouse"
@@ -452,7 +468,7 @@ msgstr "Souris"
 
 #: .tmp/ui_mouseWidget.py:167
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Configurer le comportement de la souris"
 
 #: .tmp/ui_mouseWidget.py:168
 msgid ""
@@ -460,9 +476,11 @@ msgid ""
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
+"Le <b>comportement du clic</b> définit le nombre de clics nécessaires à "
+"l'ouverture d'un fichier. Si vous êtes <b>gaucher</b>, vous préfèrerez sans "
+"doute échanger les boutons gauche et droit de la souris."
 
 #: .tmp/ui_mouseWidget.py:169
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Comportement du clic"
 
@@ -496,7 +514,7 @@ msgstr "Réseau"
 
 #: .tmp/ui_networkWidget.py:67
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "Se connecter à Internet"
 
 #: .tmp/ui_networkWidget.py:68
 msgid ""
@@ -505,9 +523,13 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
+"Pour créer une nouvelle connexion, cliquez sur <b>Créer un profil</b> et "
+"sélectionnez votre carte réseau dans la liste (eth0 en général). Si vous "
+"vous connectez en sans-fil, choisissez votre point d'accès. Après "
+"l'enregistrement de votre profil, cochez la case correspondante pour établir "
+"la connexion."
 
 #: .tmp/ui_packageWidget.py:141
-#, fuzzy
 msgid "Packages"
 msgstr "Paquets"
 
@@ -516,18 +538,16 @@ msgid "Updates"
 msgstr "Mises-à-jour"
 
 #: .tmp/ui_packageWidget.py:144
-#, fuzzy
 msgid "Show updates in the system tray"
 msgstr "Afficher dans le tableau de bord"
 
 #: .tmp/ui_packageWidget.py:145
-#, fuzzy
 msgid "Check updates automatically every"
-msgstr "Vérifier automatiquement la disponibilité des mises-à-jour toutes les"
+msgstr "Vérifier automatiquement s'il y a des mises-à-jour toutes les"
 
 #: .tmp/ui_packageWidget.py:146
 msgid "color: #642437;"
-msgstr ""
+msgstr "color: #642437;"
 
 #: .tmp/ui_packageWidget.py:147
 msgid " hours"
@@ -535,15 +555,13 @@ msgstr "heures"
 
 #: .tmp/ui_packageWidget.py:148
 msgid "Repositories"
-msgstr ""
+msgstr "Dépôts"
 
 #: .tmp/ui_packageWidget.py:149
-#, fuzzy
 msgid "Contrib repository includes extra and handy programs."
-msgstr "Le dépôt contrib fournit des paquets supplémentaires"
+msgstr "Le dépôt contrib fournit des paquets supplémentaires."
 
 #: .tmp/ui_packageWidget.py:150
-#, fuzzy
 msgid "Add contrib repository"
 msgstr "Ajouter le dépôt contrib"
 
@@ -553,18 +571,20 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
+"Pour installer ou désinstaller des programmes sous Pardus, utilisez le "
+"gestionnaire de paquets. "
+"Le gestionnaire de paquets (package manager) peut également vous avertir "
+"automatiquement de la disponibilité de mises-à-jour et les installer."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Installer / Supprimer des programmes"
 
 #: .tmp/ui_searchWidget.py:74
-#, fuzzy
 msgid "Search"
-msgstr "Recherche sur le bureau"
+msgstr "Recherche"
 
 #: .tmp/ui_searchWidget.py:76
-#, fuzzy
 msgid "Easy Desktop Search"
 msgstr "Recherche sur le bureau"
 
@@ -574,10 +594,14 @@ msgid ""
 "very fast file search results. Strigi also can search for files based on "
 "their contents."
 msgstr ""
+"La recherche sur le bureau Strigi indexe les fichiers que vous utilisez "
+"fréquemment. Les résultats d'une recherche de fichier en sont "
+"considérablement accélérés. Strigi a également la capacité d'effectuer des "
+"recherche de fichiers basées sur leurs contenus."
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Permettre à Strigi d'indexer mes fichiers"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "&Send my profile"
@@ -585,14 +609,13 @@ msgstr "&Envoyer mon profil"
 
 #: .tmp/ui_smoltWidget.py:122
 msgid "color:rgb(95, 34, 52)"
-msgstr ""
+msgstr "color:rgb(95, 34, 52)"
 
 #: .tmp/ui_smoltWidget.py:124
 msgid "color: rgb(95, 34, 52);"
-msgstr ""
+msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:125
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -685,7 +708,7 @@ msgstr ""
 
 #: .tmp/ui_smoltWidget.py:134
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Aidez-nous à améliorer Pardus !"
 
 #: .tmp/ui_smoltWidget.py:135
 msgid ""
@@ -693,6 +716,8 @@ msgid ""
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
+"<b>Smolt</b> est un outil de collecte d'information qui nous permet "
+"d'améliorer Pardus selon le profil statistique de l'utilisateur."
 
 #: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -700,7 +725,7 @@ msgstr "Form"
 
 #: .tmp/ui_styleitem.py:59 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
-msgstr ""
+msgstr "border: 1px solid rgb(236, 236, 236, 100);"
 
 #: .tmp/ui_styleitem.py:60
 msgid "styleName"
@@ -716,13 +741,16 @@ msgstr "Thèmes"
 
 #: .tmp/ui_styleWidget.py:135
 msgid "Customize Your Desktop"
-msgstr ""
+msgstr "Personnalisez votre bureau"
 
 #: .tmp/ui_styleWidget.py:136
 msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
+"Choisissez votre thème et type de bureau préférés. Personnalisez votre "
+"Pardus avec des "
+"styles et des thèmes."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -736,11 +764,19 @@ msgid ""
 "color: rgb(234, 225, 228);\n"
 "}"
 msgstr ""
+"#listStyles{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 "
+"rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, "
+"213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"\n"
+"color: rgb(234, 225, 228);\n"
+"}"
 
 #: .tmp/ui_styleWidget.py:144
-#, fuzzy
 msgid "Desktop Type"
-msgstr "<b>Type de bureau :</b>"
+msgstr "Type de bureau"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
@@ -751,17 +787,16 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Vue de dossier (style KDE3)"
 
 #: .tmp/ui_styleWidget.py:147
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "<b>Nombre de bureaux :</b>"
+msgstr "Nombre de bureaux"
 
 #: .tmp/ui_styleWidget.py:148
 msgid "color: rgb(100, 36, 55);"
-msgstr ""
+msgstr "color: rgb(100, 36, 55);"
 
 #: .tmp/ui_summaryWidget.py:68
 msgid "Summary"
-msgstr "Résumé"
+msgstr "Récapitulatif"
 
 #: .tmp/ui_summaryWidget.py:70
 msgid ""
@@ -772,11 +807,16 @@ msgid ""
 "border: 1px solid rgb(236, 236, 236, 80);\n"
 "padding: 20px}\n"
 msgstr ""
+"#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, "
+"y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 "
+"rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"padding: 20px}\n"
 
 #: .tmp/ui_summaryWidget.py:75
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Paramètres de recherche"
+msgstr "Enregistrez vos réglages"
 
 #: .tmp/ui_summaryWidget.py:76
 msgid ""
@@ -784,6 +824,9 @@ msgid ""
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
 "ready to enjoy Pardus!"
 msgstr ""
+"Vous avez passé avec succès toutes les étapes. Voici un récapitulatif du "
+"paramétrage que vous souhaitez. Cliquez sur <b>Appliquer les réglages</b> "
+"pour les enregistrer. Vous voilà fin prêt pour profiter de votre Pardus !"
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -805,9 +848,13 @@ msgid ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
+"#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
+"x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
+"stop:1 rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);}"
 
 #: .tmp/ui_wallpaperWidget.py:99
-#, fuzzy
 msgid "Choose wallpaper from file"
 msgstr "Choisir un fond d'écran à partir d'un fichier"
 
@@ -820,15 +867,16 @@ msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
+"Choisissez votre fond d'écran préféré. Allez voir éventuellement dans "
+"<b>Configuration du bureau</b> pour en télécharger d'autres."
 
 #: .tmp/ui_wallpaperWidget.py:102
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Choisir un fond d'écran à partir d'un fichier"
+msgstr "Choisir un fond d'écran"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
-msgstr ""
+msgstr "Bienvenue dans Pardus 2009.1 <sup>beta</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -839,6 +887,14 @@ msgid ""
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
 msgstr ""
+"<b>Pardus</b> est un système d'exploitation fiable, sécurisé, rapide et "
+"agréable à utiliser. <br /><br />Avec Pardus, vous pouvez vous connecter à "
+"Internet, lire vos courriels, travailler avec vos documents bureautiques, "
+"regarder des films, écouter de la musique, développer des "
+"applications, jouer à des jeux et plus encore ! <br /><br /><b>Kaptan</b> va "
+"vous aider à personnaliser rapidement et facilement votre espace de travail. "
+"Cliquez sur "
+"<b>suivant</b> pour commencer."
 
 #, fuzzy
 #~ msgid ""
