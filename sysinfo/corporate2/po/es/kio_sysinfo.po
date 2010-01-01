@@ -4,18 +4,20 @@
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
 # Klemens Häckel <click3d at linuxmail dot com>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-21 13:56+0200\n"
-"PO-Revision-Date: 2009-01-28 19:51-0300\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot com>\n"
-"Language-Team: español <es@li.org>\n"
+"PO-Revision-Date: 2010-01-01 17:10-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: sysinfo/ksysinfopart.cpp:72
 msgid "KSysinfo"
@@ -72,19 +74,19 @@ msgstr "Memoria"
 
 #: sysinfo/sysinfo.cpp:250
 msgid "Physical memory: "
-msgstr ""
+msgstr "Memoria Física:"
 
 #: sysinfo/sysinfo.cpp:250 sysinfo/sysinfo.cpp:252 sysinfo/sysinfo.cpp:373
 msgid "%1 of %2 is free"
-msgstr ""
+msgstr "%1 de %2 libre"
 
 #: sysinfo/sysinfo.cpp:251
 msgid "Swap memory: "
-msgstr ""
+msgstr "Memoria de intercambio:"
 
 #: sysinfo/sysinfo.cpp:253
 msgid "Not in use"
-msgstr ""
+msgstr "Sin uso"
 
 #: sysinfo/sysinfo.cpp:260
 msgid "Disks"
@@ -95,9 +97,8 @@ msgid "Operating System"
 msgstr "Sistema Operativo"
 
 #: sysinfo/sysinfo.cpp:269
-#, fuzzy
 msgid "KDE <b>%1</b> on <b>%2</b>"
-msgstr "Kde <b>%1</b> en <b>%2</b>"
+msgstr "KDE <b>%1</b> en <b>%2</b>"
 
 #: sysinfo/sysinfo.cpp:280
 msgid "Processor"
@@ -107,20 +108,19 @@ msgstr "Procesador (CPU)"
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: sysinfo/sysinfo.cpp:286
-#, fuzzy, c-format
+#: sysinfo/sysinfo.cpp:286, c-format
 msgid "1 core"
 msgid_plural "%n cores"
-msgstr[0] " core"
+msgstr[0] "1 core"
 msgstr[1] " core"
 
 #: sysinfo/sysinfo.cpp:287 sysinfo/sysinfo.cpp:352
 msgid "Processor supports virtualization"
-msgstr ""
+msgstr "Procesador soporta virtualización"
 
 #: sysinfo/sysinfo.cpp:288 sysinfo/sysinfo.cpp:353
 msgid "Processor doesn't support virtualization"
-msgstr ""
+msgstr "Procesador no soporta virtualización"
 
 #: sysinfo/sysinfo.cpp:299
 msgid "Display"
@@ -132,19 +132,19 @@ msgstr "Controlador:"
 
 #: sysinfo/sysinfo.cpp:310
 msgid "Machine Information"
-msgstr ""
+msgstr "Información del equipo"
 
 #: sysinfo/sysinfo.cpp:311
 msgid "Vendor: "
-msgstr ""
+msgstr "Fabricante:"
 
 #: sysinfo/sysinfo.cpp:312
 msgid "Product: "
-msgstr ""
+msgstr "Producto:"
 
 #: sysinfo/sysinfo.cpp:313
 msgid "BIOS: "
-msgstr ""
+msgstr "BIOS: "
 
 #: sysinfo/sysinfo.cpp:367
 msgid "Mounted on %1"

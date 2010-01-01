@@ -4,13 +4,13 @@
 #
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
-# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-07 10:25+0200\n"
-"PO-Revision-Date: 2009-10-17 21:28-0400\n"
+"PO-Revision-Date: 2010-01-01 17:48-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,7 +25,7 @@ msgstr "Configuración de Monitor"
 
 #: code/display-settings.py:96
 msgid "Display Settings module is already started!"
-msgstr ""
+msgstr "Configuración de Monitor ya se está ejecutando!"
 
 #: code/displaysettings/device.py:62
 msgid "Default Output"
@@ -89,6 +89,9 @@ msgid ""
 "Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
 "(LVDS, VGA, etc.)"
 msgstr ""
+"Mostrar en menus, listas, etc. %1 = Tipo de salida localizada, %2 = nombre "
+"de salida "
+"(LVDS, VGA, etc.)"
 
 #: code/displaysettings/mainwidget.py:213
 #: code/displaysettings/mainwidget.py:316
@@ -124,13 +127,12 @@ msgid "Start Package Manager"
 msgstr "Iniciar Administrador de Paquetes"
 
 #: code/displaysettings/mainwidget.py:530
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
 msgstr "Debe reiniciar su sesión gráfica X para que los cambios tengan efecto."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
-msgstr ""
+msgstr "Editar"
 
 #: code/displaysettings/monitorbrowser.py:38
 msgid "Type:"
@@ -154,7 +156,7 @@ msgstr "Detectar salidas"
 
 #: ui/mainview.py:186
 msgid "Configuration file is not ready."
-msgstr ""
+msgstr "Archivo de configuración no está listo."
 
 #: ui/mainview.py:190
 msgid "Output Properties"
@@ -191,12 +193,11 @@ msgstr "Derecha (270 Grad)"
 
 #: ui/mainview.py:199
 msgid "Screens"
-msgstr ""
+msgstr "Pantallas"
 
 #: ui/mainview.py:200
-#, fuzzy
 msgid "<b>Video Card:</b>"
-msgstr "Tarjeta gráfica:"
+msgstr "<b>Tarjeta de Video:</b>"
 
 #: ui/mainview.py:201
 msgid "Card Info"
@@ -207,13 +208,12 @@ msgid "Configure..."
 msgstr "Configurando..."
 
 #: ui/mainview.py:203
-#, fuzzy
 msgid "<b>Outputs:</b>"
-msgstr "Salidas:"
+msgstr "<b>Salidas:</b>"
 
 #: ui/mainview.py:204
 msgid "Devices"
-msgstr ""
+msgstr "Dispositivos"
 
 #: ui/videocard.py:101
 msgid "Video Card Configuration"
@@ -224,9 +224,8 @@ msgid "Video Driver"
 msgstr "Controlador gráfico"
 
 #: ui/videocard.py:103
-#, fuzzy
 msgid "Use the default driver for the detected card"
-msgstr "Usar el controlador preestablecido para la tarjeta detectada."
+msgstr "Usar el controlador predeterminado para la tarjeta detectada"
 
 #: ui/videocard.py:104 ui/videocard.py:109
 msgid "Select from the list:"
@@ -276,9 +275,8 @@ msgid "Horizontal sync:"
 msgstr "Sinc. horizontal:"
 
 #: ui/output.py:164
-#, fuzzy
 msgid "Monitor 800x600"
-msgstr "Monitor:"
+msgstr "Monitor 800x600"
 
 #: ui/output.py:165
 msgid "Choose..."
