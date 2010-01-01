@@ -1,15 +1,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-16 15:55+0200\n"
-"PO-Revision-Date: 2009-08-18 18:38+0200\n"
+"PO-Revision-Date: 2010-01-01 21:55+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -66,15 +66,15 @@ msgstr "Voulez-vous vraiment supprimer le profil %1 ?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
-msgstr ""
+msgstr "Entrez le PIN"
 
 #: .tmp/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
-msgstr ""
+msgstr "Entrez le code PIN pour"
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr ""
+msgstr "Vous vous êtes trompé 3 fois de code PIN"
 
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
 msgid "Refresh"
@@ -91,19 +91,17 @@ msgstr "Déconnecté"
 #: .tmp/networkmanager/widgets.py:383
 #, python-format
 msgid "Connected: %s"
-msgstr "Connecté: %s"
+msgstr "Connecté : %s"
 
 #: .tmp/networkmanager/widgets.py:388
 msgid "Connecting"
 msgstr "Connexion..."
 
 #: .tmp/networkmanager/widgets.py:396
-#, fuzzy
 msgid "Cable or device is unplugged"
 msgstr "Câble ou matériel débranché."
 
 #: .tmp/networkmanager/widgets.py:412
-#, fuzzy
 msgid "Access denied"
 msgstr "Accès refusé."
 
@@ -205,45 +203,43 @@ msgstr "Cacher le mot de passe"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Détails"
 
 #: .tmp/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: .tmp/ui_nmwizard.py:95
-#, fuzzy
 msgid "Device"
-msgstr "Matériel :"
+msgstr "Matériel"
 
 #: .tmp/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI :"
 
 #: .tmp/ui_nmwizard.py:97
-#, fuzzy
 msgid "Device:"
-msgstr "Matériel :"
+msgstr "Périphérique :"
 
 #: .tmp/ui_nmwizard.py:98
 msgid "Select an operator"
-msgstr ""
+msgstr "Choisissez un opérateur"
 
 #: .tmp/ui_nmwizard.py:99
 msgid "Operator:"
-msgstr ""
+msgstr "Opérateur :"
 
 #: .tmp/ui_nmwizard.py:100
 msgid "PIN:"
-msgstr ""
+msgstr "PIN :"
 
 #: .tmp/ui_nmwizard.py:101
 msgid "Remember PIN for this connection"
-msgstr ""
+msgstr "Se souvenir du PIN pour cette connexion"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
