@@ -10,18 +10,20 @@
 # Klemens Haeckel <click3d at linuxmail org>, 2008.
 # Klemens Häckel <click3d at linuxmail dot com>, 2008.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-17 12:35+0200\n"
-"PO-Revision-Date: 2009-05-05 20:39-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2010-01-01 17:11-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/Progress.py:69
 msgid "<p align='center'>%1 / %2, %3</p>"
@@ -122,7 +124,7 @@ msgstr "Instalar Paquete(s)"
 
 #: src/MainWidget.py:125
 msgid "Groups"
-msgstr ""
+msgstr "Grupos"
 
 #: src/MainWidget.py:179
 msgid ""
@@ -334,9 +336,8 @@ msgid "Adress of the repository, e.g <b>http://foo.bar.com/pisi-index.xml</b>"
 msgstr "Dirección de repositorio, ej. <b>http://foo.bar.com/pisi-index.xml</b>"
 
 #: src/RepoDialog.py:79
-#, fuzzy
 msgid "http://packages.pardus.org.tr/corporate2/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2008/pisi-index.xml.bz2"
+msgstr "http://packages.pardus.org.tr/corporate2/pisi-index.xml.bz2"
 
 #: src/RepoDialog.py:80
 msgid "Repository &Name"
