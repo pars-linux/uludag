@@ -322,8 +322,9 @@ Daha sonra uygulama yardımı ile usbdiske format atın, sorunsuz bir şekilde i
 Aşağıdaki komutları çalıştırın ve test dizini altında iso dosyasının açıldığını gözlemleyin.
 \begin{verbatim}
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
- fuseiso -p boot.iso /test
- ls test
+ fuseiso -p boot.iso test
+ su -
+ cd test
 \end{verbatim}
 
 \item fuse paketi kurulumu sonrası:
