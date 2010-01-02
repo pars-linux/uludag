@@ -196,6 +196,30 @@
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>QtCurve-KDE3</SelectedPackage>
         <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
+        <SelectedPackage>accessrunner-firmware</SelectedPackage>
+        <SelectedPackage>ar9170-firmware</SelectedPackage>
+        <SelectedPackage>atmel-firmware</SelectedPackage>
+        <SelectedPackage>b43-firmware</SelectedPackage>
+        <SelectedPackage>b43-fwcutter</SelectedPackage>
+        <SelectedPackage>bluez-firmware</SelectedPackage>
+        <SelectedPackage>eagle-firmware</SelectedPackage>
+        <SelectedPackage>fxload</SelectedPackage>
+        <SelectedPackage>ipw2100-firmware</SelectedPackage>
+        <SelectedPackage>ipw2200-firmware</SelectedPackage>
+        <SelectedPackage>iscan-firmware</SelectedPackage>
+        <SelectedPackage>iwlwifi1000-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi5000-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
+        <SelectedPackage>kernel-firmware</SelectedPackage>
+        <SelectedPackage>ql2x00-firmware</SelectedPackage>
+        <SelectedPackage>ralink-firmware</SelectedPackage>
+        <SelectedPackage>speedtouch-firmware</SelectedPackage>
+        <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
+        <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
+        <SelectedPackage>zd1201-firmware</SelectedPackage>
+        <SelectedPackage>zd1211-firmware</SelectedPackage>
         <Package>zorg</Package>
         <Package>zlib</Package>
         <Package>zip</Package>
