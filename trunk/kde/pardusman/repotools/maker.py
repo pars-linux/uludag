@@ -138,6 +138,7 @@ def generate_isolinux_conf(project):
     dict = {}
     dict["title"] = project.title
     dict["exparams"] = project.extra_params or ''
+    dict["rescue_template"] = ""
 
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
@@ -152,6 +153,14 @@ def generate_isolinux_conf(project):
                 lang_default = collection.languageSelection.defaultLanguage
                 lang_all =  collection.languageSelection.languages
 
+
+    if project.type == "live":
+        dict["rescue_template"] = """
+label rescue
+    kernel /boot/kernel
+    append initrd=/boot/initrd root=/dev/ram0 yali4=rescue splash=silent quiet %(exparams)s
+""" % dict
+
     isolinux_tmpl = """
 prompt 1
 timeout 200
@@ -162,9 +171,7 @@ label pardus
     kernel /boot/kernel
     append initrd=/boot/initrd root=/dev/ram0 splash=silent quiet %(exparams)s
 
-label rescue
-    kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 yali4=rescue splash=silent quiet %(exparams)s
+%(rescue_template)s
 
 label harddisk
     localboot 0x80
@@ -175,13 +182,6 @@ label memtest
 label hardware
     kernel hdt.c32
 """
-    # Hacky & Ugly parser :) Later will change with regex...
-    if project.type == "live":
-        firstChunkLabels = isolinux_tmpl.split("\n")[:9]
-        secondChunkLabels = isolinux_tmpl.split("\n")[13:]
-        live_isolinux_tmpl.extend(firstChunkLabels)
-        live_isolinux_tmpl.extend(secondChunkLabels)
-        isolinux_tmpl = "\n".join(live_isolinux_tmpl)
 
     # write isolinux.cfg
     dest = os.path.join(iso_dir, "boot/isolinux/isolinux.cfg")
