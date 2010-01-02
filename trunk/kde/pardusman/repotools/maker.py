@@ -154,7 +154,7 @@ def generate_isolinux_conf(project):
                 lang_all =  collection.languageSelection.languages
 
 
-    if project.type == "live":
+    if project.type != "live":
         dict["rescue_template"] = """
 label rescue
     kernel /boot/kernel
