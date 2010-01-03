@@ -91,6 +91,8 @@
     * Qt4 geçişi (+)
     * Senaryo bazlı kurulum ve kernel seçebilme desteği (+)
     * Imaj köküne girecek paketleri seçebilme desteği (-)
+* Network-Manager (Mete Alpaslan)
+    * Kablosuz Ağlarla ilgili backendlerim temizliği
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
