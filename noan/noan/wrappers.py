@@ -6,8 +6,7 @@ from django.template import RequestContext
 
 def render_response(req, *args, **kwargs):
     """
-    Wrapper function that automatically adds "context_instance" to render_to_response
-    So we avoid duplication of code in our views.
+        Wrapper function that automatically adds "context_instance" to render_to_response
     """
 
     kwargs['context_instance'] = RequestContext(req)
