@@ -12,7 +12,7 @@ IMG_DEVICES="hd[a-z] sr[0-9]* scd[a-z]"
 LOOPBACKFILE="pardus.img"
 
 NORESUME=0
-CDROOT=0
+LIVE=0
 NFSROOT=0
 QUIET=0
 RAID=0
@@ -97,10 +97,10 @@ parse_cmdline() {
                 for m in `echo ${x}|cut -f2 -d=|sed 's/,/ /g'`; do
                     case "${m}" in
                         livecd)
-                            CDROOT=1
+                            LIVE=1
                         ;;
                         livedisk)
-                            CDROOT=1
+                            LIVE=1
                             IMG_DEVICES="hd[a-z][0-9]* sd[a-z][0-9]*"
                         ;;
                         raid)
@@ -308,7 +308,7 @@ fi
 
 echo 0x0100 > /proc/sys/kernel/real-root-dev
 
-if [ "${CDROOT}" -eq "1" ]
+if [ "${LIVE}" -eq "1" ]
 then
     ROOT_DEVICE=""
     manage_tmpfs
