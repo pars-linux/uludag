@@ -42,7 +42,7 @@
 * PiSi (Faik Uygur)
     * needsServiceRestart, needsReboot desteği (+) [Bahadır Kandemir]
     * groups.xml tango simge teması düzeltmesi (+)
-    * revdepRebuild/replaces düzeltmelerinin test edilmesi (-)
+    * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
 
 * PiSi (Serdar Dalgıç)
     * Depo/paket bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (+)
@@ -73,12 +73,12 @@
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (-)  [Gökçen Eraslan, Gökhan Özkan]
 
 * KDE (Gökçen Eraslan)
-    * Qt/KDE -DNDEBUG/disable-debug ile derlenmesinin sağlanması (-)
+    * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (-)
     * Managerların üzerinden geçilmesi (-) [Bahadır Kandemir, Mete Alpaslan, Renan Çakırerk]
 
 * KDE (Renan Çakırerk)
-    * Kaptan'ın gözden geçirilmesi (50)
-    * Kaptan'da katkı deposu ekleme kısmı çıkarılacak (-)
+    * Kaptan'ın gözden geçirilmesi (80)
+    * Kaptan'da katkı deposu ekleme kısmı çıkarılacak (+)
     * Göç aracının gözden geçirilmesi (-)
 
 * YALI (Mete Alpaslan)
@@ -91,8 +91,9 @@
     * Qt4 geçişi (+)
     * Senaryo bazlı kurulum ve kernel seçebilme desteği (+)
     * Imaj köküne girecek paketleri seçebilme desteği (-)
+
 * Network-Manager (Mete Alpaslan)
-    * Kablosuz Ağlarla ilgili backendlerim temizliği
+    * Kablosuz ağlarla ilgili backendlerin temizliği (-)
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
@@ -127,5 +128,5 @@
 
 * X/DRM/locales (Fatih Aşıcı)
     * display-settings exception veriyor (+)
+    * kdm ingilizce açılıyor (+)
     * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
-    * kdm ingilizce açılıyor (-)
