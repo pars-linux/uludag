@@ -26,6 +26,11 @@ def updateDB(path_repo, repo_type, options):
     if repo_type not in ['stable', 'test']:
         return
 
+    if repo_type == 'test':
+        resolution = 'pending'
+    elif repo_type == 'stable':
+        resolution = 'released'
+
     print 'Scanning %s...' % (path_repo)
 
     # Get latest builds only
@@ -43,14 +48,12 @@ def updateDB(path_repo, repo_type, options):
             packages_farm[package_name] = (package_version, package_release, package_build)
     files_farm = ['%s-%s-%s-%s.pisi' % (name, version[0], version[1], version[2]) for name, version in packages_farm.iteritems()]
 
-    files_db = [x.get_filename() for x in Binary.objects.all()]
+    files_db = [x.get_filename() for x in Binary.objects.filter(resolution=resolution)]
     files_new = set(files_farm) - set(files_db)
 
     # Index binaries
     for filename in files_new:
         fullpath = os.path.join(path_repo, filename)
-
-        print '  Found binary: %s' % fullpath
 
         pisi_file = pisi.package.Package(fullpath)
         pisi_meta = pisi_file.get_metadata()
@@ -64,38 +67,37 @@ def updateDB(path_repo, repo_type, options):
         try:
             distribution = Distribution.objects.get(name=pisi_package.distribution, release=release)
         except Distribution.DoesNotExist:
-            print  '    Distribution (%s-%s) not found database, old binary probably.' % (pisi_package.distribution, release)
+            #print  '  Distribution (%s-%s) not found database, old binary probably.' % (pisi_package.distribution, release)
             continue
 
         try:
             source = Source.objects.get(name=pisi_package.source.name, distribution=distribution)
         except Source.DoesNotExist:
-            print  '    Source (%s) not found database, old binary probably.' % (pisi_package.source.name)
+            #print  '  Source (%s) not found database, old binary probably.' % (pisi_package.source.name)
             continue
 
         try:
             package = Package.objects.get(name=pisi_package.name, source=source)
         except Package.DoesNotExist:
-            print  '    Package (%s) not found database, old binary probably.' % (pisi_package.name)
+            #print  '  Package (%s) not found database, old binary probably.' % (pisi_package.name)
             continue
-
-        if repo_type == 'test':
-            resolution = 'pending'
-        elif repo_type == 'stable':
-            resolution = 'released'
 
         updates = Update.objects.filter(source=source, no=pisi_package.history[0].release)
         if len(updates) == 0:
-            print  '    Release information for %s not found database, source import not completed probably.' % (pisi_package.name)
+            #print  '  Release information for %s not found database, source import not completed probably.' % (pisi_package.name)
             continue
 
         update = updates[0]
         try:
             binary = Binary.objects.get(no=pisi_package.build, package=package)
+            if repo_type == 'stable' and binary.resolution == 'pending':
+                print '  Updating old binary: %s' % fullpath
+                binary.resolution = 'released'
+                binary.save()
         except Binary.DoesNotExist:
             binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution)
             binary.save()
-            print '    Saving binary to database.'
+            print '  Found binary: %s' % fullpath
 
         if repo_type == 'test':
             # Mark other 'pending' binaries as 'reverted'
@@ -116,6 +118,9 @@ def updateDB(path_repo, repo_type, options):
         dependencies = []
         for dep in bin.package.runtimedependency_set.all():
             binaries = Binary.objects.filter(package__source__distribution = bin.package.source.distribution, package__name=dep.name)
+            #
+            if binaries.filter(resolution="released").count() == 0:
+                dependencies.extend(binaries.filter(resolution="pending"))
             # version
             if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
                 dependencies.extend(binaries.filter(resolution="pending"))
@@ -135,17 +140,17 @@ def updateDB(path_repo, repo_type, options):
                         break
                 if not in_stable:
                     dependencies.extend(binaries.filter(resolution="pending"))
-            elif binaries.filter(resolution="released").count() == 0:
-                dependencies.extend(binaries.filter(resolution="pending"))
+
             # release
-            if dep.release != "" and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
+            if dep.release != 0 and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
                 dependencies.extend(binaries.filter(resolution="pending"))
-            elif dep.release_from != "" and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+            elif dep.release_from != 0 and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
                 dependencies.extend(binaries.filter(resolution="pending"))
-            elif dep.release_to != "" and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+            elif dep.release_to != 0 and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
                 dependencies.extend(binaries.filter(resolution="pending"))
-            elif binaries.filter(resolution="released").count() == 0:
-                dependencies.extend(binaries.filter(resolution="pending"))
+
+        dependencies = set(dependencies)
+
         if len(dependencies):
             print '  Found %d pending dependencies of %s' % (len(dependencies), unicode(bin))
         bin.linked_binary.clear()
