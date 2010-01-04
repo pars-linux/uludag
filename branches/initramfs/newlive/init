@@ -9,7 +9,7 @@ ROOT_LINKS="bin sbin lib boot usr opt"
 ROOT_TREES="etc root home var"
 TMPFS_DIRS="dev mnt mnt/cdrom mnt/livecd mnt/thin tmp sys proc media"
 IMG_DEVICES="hd[a-z] sr[0-9]* scd[a-z]"
-LOOP="pardus.img"
+LOOPBACKFILE="pardus.img"
 
 NORESUME=0
 CDROOT=0
@@ -155,7 +155,7 @@ findcdmount() {
             if [ "$?" = "0" ]
             then
                 # Check for cdroot image
-                if [ -e /newroot/mnt/cdrom/${LOOP} ]
+                if [ -e /newroot/mnt/cdrom/${LOOPBACKFILE} ]
                 then
                     ROOT_DEVICE="${x}"
                     break
@@ -236,7 +236,7 @@ mount_cdroot() {
 
     cd /newroot
     # Loop type squashfs
-    mount -t squashfs -o loop,ro /newroot/mnt/cdrom/${LOOP} /newroot/mnt/livecd
+    mount -t squashfs -o loop,ro /newroot/mnt/cdrom/${LOOPBACKFILE} /newroot/mnt/livecd
 
     if [ "$?" != "0" ]
     then
