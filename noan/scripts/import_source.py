@@ -41,7 +41,7 @@ def toInt(obj):
 
 def updateDB(path_source, full_import, newRelease):
     from django.contrib.auth.models import User
-    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency
+    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces
     from noan.profile.models import Profile
 
     def createUser(email, name):
@@ -51,26 +51,16 @@ def updateDB(path_source, full_import, newRelease):
         else:
             first_name = name
             last_name = ''
-        count = 1
-        username = email.split('@')[0]
-        while not user:
-            try:
-                user = User.objects.get(first_name=first_name, last_name=last_name)
-            except User.DoesNotExist:
-                user = User(email=email, username=username, first_name=first_name, last_name=last_name)
-                user.set_password(username)
-                try:
-                    user.save()
-                    p = Profile()
-                    p.user = user
-                    p.title = ''
-                    p.save()
-                except:
-                    user = None
-                    username += str(count)
-                    count += 1
-                    continue
-                print '    New developer: %s' % name
+        username = email.replace('@', '_at_')
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = User(email=email, username=username, first_name=first_name, last_name=last_name)
+            print '    New developer: %s' % name
+        user.username = username
+        user.first_name = first_name
+        user.last_name = last_name
+        user.save()
         return user
 
     print 'Scanning %s...' % path_source
@@ -124,15 +114,15 @@ def updateDB(path_source, full_import, newRelease):
                 package.save()
                 print '    New package: %s' % package.name
 
-            """
             for rep in pack.replaces:
+                replaces = Replaces(name=str(rep), package=package)
+                replaces.save()
                 count = 0
                 for bin in Binary.objects.filter(package__name=str(rep), package__source__distribution=distribution):
                     bin.resolution = 'removed'
                     bin.save()
                     count += 1
                 print '    Replaces package: %s (%d binaries)' % (rep, count)
-            """
 
             # Update runtime dependencies
             for dep in RuntimeDependency.objects.filter(package=package):
@@ -201,10 +191,10 @@ def main():
     usage = "usage: %prog [options] path/to/noan path/to/repo/source"
     parser = optparse.OptionParser(usage=usage)
     parser.add_option("-r", "--release", dest="release",
-                      help="use RELEASE as ditro version instead", metavar="RELEASE")
+                      help="Use RELEASE as ditro version instead", metavar="RELEASE")
     parser.add_option("-u", "--update",
                       action="store_false", dest="full", default=True,
-                      help="update changed files only")
+                      help="Run SVN UP and load changed files only")
 
     (options, args) = parser.parse_args()
     if len(args) != 2:
