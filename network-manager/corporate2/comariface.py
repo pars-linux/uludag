@@ -126,11 +126,18 @@ class AuthMode:
         self.paramters = paramters
 
 
+class DeviceMode:
+    def __init__(self, _id, label):
+        self.id = _id
+        self.name = label
+
+
 class Link:
     def __init__(self, script, data):
         self.script = script
         self.remote_name = None
         self.auth_modes = []
+        self.device_modes = []
         for key, value in data.iteritems():
             if key == "type":
                 self.type = value
@@ -252,6 +259,8 @@ class DBusInterface(Hook):
                     self.links[script] = Link(script, info)
                 for _met, _label in self.link.Network.Link[script].authMethods():
                     self.links[script].auth_modes.append(AuthMode(_met, _label, self.link.Network.Link[script].authParameters(_met)))
+                for _name, _label in self.link.Network.Link[script].deviceModes():
+                    self.links[script].device_modes.append(DeviceMode(_name, _label))
 
     def queryNames(self): 
         def handlerHost(package, exception, args):

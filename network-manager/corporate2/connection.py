@@ -248,7 +248,7 @@ class Settings(QWidget):
 
             if "device_mode" in link.modes:
                 for dev_mode in link.device_modes:
-                    self.selected_device_mode.insertItem(dev_mode)
+                    self.selected_device_mode.insertItem(dev_mode.name)
             else:
                 self.selected_device_mode.hide()
         else:
