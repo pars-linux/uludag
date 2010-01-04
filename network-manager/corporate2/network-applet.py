@@ -212,7 +212,7 @@ class DBusInterface:
                     if self.first_time:
                         self.first_time = False
                         # get signals
-                        self.link.listenSignals("Network.Link")
+                        self.link.listenSignals("Network.Link", self.handleSignals)
         self.link.Network.Link[script].connections(async=handler)
 
     def getConn(self, script, name):
