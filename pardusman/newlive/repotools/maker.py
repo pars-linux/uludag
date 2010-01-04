@@ -626,6 +626,9 @@ def make_iso(project):
         else:
             run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_file, iso_dir,))
 
+        # convert iso to a hybrid one
+        run("isohybrid -partok -offset 1 %s" % iso_dir)
+
     except KeyboardInterrupt:
         print "Keyboard Interrupt: make_iso() cancelled."
         sys.exit(1)
