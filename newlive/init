@@ -5,6 +5,8 @@
 #
 
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
+INITRAMFSCONF="/etc/initramfs/initramfs.conf"
+
 ROOT_LINKS="bin sbin lib boot usr opt"
 ROOT_TREES="etc root home var"
 TMPFS_DIRS="dev mnt mnt/cdrom mnt/livecd mnt/thin tmp sys proc media"
@@ -85,6 +87,39 @@ resume_from_hibernate() {
             /bin/resume
         fi
     fi
+}
+
+parse_config() {
+    while read inputline;
+    do
+        case "${inputline}" in
+            LIVEROOT=*)
+                LIVE=1
+                LIVEROOT=$(echo $inputline|cut -f2- -d=)
+            ;;
+            NFSROOT=*)
+                NFSROOT=$(echo $inputline|cut -f2- -d=)
+            ;;
+            RAID=*)
+                RAID=$(echo $inputline|cut -f2- -d=)
+            ;;
+            VIRTIO=*)
+                VIRTIO=$(echo $inputline|cut -f2- -d=)
+            ;;
+            ROOT=*)
+                ROOT=$(echo $inputline|cut -f2- -d=)
+            ;;
+            RESUME=*)
+                RESUME_DEVICE="${x#RESUME=}"
+            ;;
+            NORESUME=*)
+                NORESUME=$(echo $inputline|cut -f2- -d=)
+            ;;
+            INIT=*)
+                INIT="${x#INIT=}"
+            ;;
+        esac
+    done < $INITRAMFSCONF
 }
 
 parse_cmdline() {
@@ -265,6 +300,13 @@ mount_cdroot() {
 
 mount -n -t proc proc /proc > /dev/null 2>&1
 mount -n -t sysfs sys /sys > /dev/null 2>&1
+
+
+# first parse config file, then cmdline to allow overwriting internal config
+if [ -f "$INITRAMFSCONF" ]
+then
+    parse_config
+fi
 
 parse_cmdline
 
