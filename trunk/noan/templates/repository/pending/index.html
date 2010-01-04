@@ -4,7 +4,7 @@
     <ul>
         {% for dist in distributions %}
         <li>
-            <a href="/repository/pending/{{ dist.name }}/{{ dist.release }}">{{ dist }}</a>
+            <a href="{% url repo-pending dist.name dist.release %}">{{ dist }}</a>
         </li>
         {% endfor %}
     </ul>
