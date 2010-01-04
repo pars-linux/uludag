@@ -1,0 +1,6 @@
+Installing & Running
+--------------------
+
+1. Build and install COMAR from svn
+2. Run: hav register Boot.Loader grub comar/boot.loader.py
+3. Run: ./boot-manager.py
