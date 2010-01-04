@@ -1,9 +1,13 @@
 from django.db import models
+
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
+
 from noan.middleware.threadlocals import get_current_lang
-import datetime
+from noan.settings import SITE_ROOT
+
 from pisi.version import Version as Pisi_Version
+
 
 TEST_RESULTS = (
     ('yes', _('Can go to stable')),
@@ -26,6 +30,7 @@ class Distribution(models.Model):
         name: Name of distribution (Pardus, Pardus x64, ...)
         release: Distribution release (2008, 2009, ...)
     """
+
     name = models.CharField(max_length=64, verbose_name=_('name'))
     release = models.CharField(max_length=64, verbose_name=_('release'))
 
@@ -33,7 +38,7 @@ class Distribution(models.Model):
         return u'%s %s' % (self.name, self.release)
 
     def get_url(self):
-        return '/repository/%s/%s' % (self.name, self.release)
+        return SITE_ROOT + '/repository/%s/%s' % (self.name, self.release)
 
     class Meta:
         verbose_name = _('distribution')
@@ -50,6 +55,7 @@ class Source(models.Model):
         distribution: Distribution that contains the source
         maintained_by: Source maintainer
     """
+
     name = models.CharField(max_length=64, verbose_name=_('name'))
     distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
     maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
@@ -99,6 +105,7 @@ class BuildDependency(models.Model):
         release*: Release range
         source: Dependent source
     """
+
     name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
@@ -139,6 +146,7 @@ class RuntimeDependency(models.Model):
         release*: Release range
         package: Dependent package
     """
+
     name = models.CharField(max_length=64, verbose_name=_('name'))
     version = models.CharField(max_length=32, verbose_name=_('version'), default='', blank=True)
     version_from = models.CharField(max_length=32, verbose_name=_('version from'), default='', blank=True)
@@ -170,6 +178,26 @@ class RuntimeDependency(models.Model):
         ordering = ['name']
 
 
+class Replaces(models.Model):
+    """
+        Database model for old names of a package.
+
+        name: Package name of the depencency
+        package: Replaced package name
+    """
+
+    name = models.CharField(max_length=64, verbose_name=_('replaced package name'))
+    package = models.ForeignKey(Package, verbose_name=_('package'))
+
+    def __unicode__(self):
+        return u'%s replaced %s' % (self.package.name, self.name)
+
+    class Meta:
+        verbose_name = _('replaced package')
+        verbose_name_plural = _('replaced packages')
+        ordering = ['name']
+
+
 class Update(models.Model):
     """
         Database model for updates of a source.
@@ -181,6 +209,7 @@ class Update(models.Model):
         updated_on: Update date
         comment: Updater's comment
     """
+
     no = models.IntegerField(verbose_name=_('release no'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
     version_no = models.CharField(max_length=32, verbose_name=_('version no'))
@@ -207,6 +236,7 @@ class Binary(models.Model):
         update: Update
         resolution: 'pending', 'released' or 'reverted'. Import scripts set this value.
     """
+
     no = models.IntegerField(verbose_name=_('build no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
@@ -261,12 +291,6 @@ class Binary(models.Model):
                 return label
         return result
 
-    def get_testresult(self):
-        if not self.testresult_set.count():
-            return False
-        else:
-            return self.testresult_set.get().result
-
     class Meta:
         verbose_name = _('binary')
         verbose_name_plural = _('binaries')
@@ -284,6 +308,7 @@ class TestResult(models.Model):
         result: Test result
         comment: Tester's comment
     """
+
     binary = models.ForeignKey(Binary, verbose_name=_('binary'))
     created_by = models.ForeignKey(User, verbose_name=_('created by'))
     created_on = models.DateField(verbose_name=_('created on'), auto_now=True)

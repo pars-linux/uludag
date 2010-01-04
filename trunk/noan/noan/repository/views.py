@@ -1,7 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# DJANGO RELATED IMPORTS
 from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.template import RequestContext
@@ -11,19 +10,16 @@ from django.contrib.auth.decorators import login_required
 # we use generic view for listing as it handles pagination easily. so we don't duplicate the code.
 from django.views.generic.list_detail import object_list
 
-# APP RELATED IMPORTS
 from noan.repository.models import Distribution, Package, Source, Binary, TestResult
+
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
+
 from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
+
 
 def repository_index(request):
     distributions = Distribution.objects.all()
-
-    # If there is only one repository, redirect it to that
-    # Or list available distributios
-    if len(distributions) == 1:
-        return HttpResponseRedirect(distributions[0].get_url())
 
     context = {
         'distributions': distributions,
@@ -47,6 +43,7 @@ def list_source_packages(request, distName, distRelease):
 
     return object_list(request, **object_dict)
 
+
 # Details in <Source> section of the package
 def view_source_detail(request, distName, distRelease, sourceName):
     """
@@ -58,6 +55,7 @@ def view_source_detail(request, distName, distRelease, sourceName):
         'source': source,
     }
     return render_response(request, 'repository/source.html', context)
+
 
 # Details in <Package> section of the package
 def view_package_detail(request, distName, distRelease, sourceName, packageName):
@@ -73,6 +71,7 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
     }
     return render_response(request, 'repository/package.html', context)
 
+
 def view_binary_detail(request, distName, distRelease, sourceName, packageName, binaryNo):
     """
         sourceName: <Source> section in pspec.xml
@@ -83,8 +82,8 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     # FIXME: We also handle sending ACK/NACK info. Maybe it can be done in different view?
     if request.method == "POST" and request.user and request.user.is_authenticated():
         # if this package is not updated by the latest updater, give error:
-        if binary.update.updated_by != request.user:
-            return HttpResponse("Sorry, you can not change another developer's package. Only the developer who changed the package can give ACK.")
+        #if binary.update.updated_by != request.user:
+        #    return HttpResponse("Sorry, you can not change another developer's package. Only the developer who changed the package can give ACK.")
 
         if request.POST['result'] == "unknown":
             TestResult.objects.filter(binary=binary, created_by=request.user).delete()
@@ -109,14 +108,11 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
 def page_pending_index(request):
     distributions = Distribution.objects.all()
 
-    if len(distributions) == 1:
-        dist = '%s/%s' % (distributions[0].name, distributions[0].release)
-        return HttpResponseRedirect('/repository/pending/%s/' % dist)
-
     context = {
         'distributions': distributions,
     }
     return render_response(request, 'repository/pending/index.html', context)
+
 
 def list_pending_packages(request, distName, distRelease):
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease)
@@ -132,6 +128,7 @@ def list_pending_packages(request, distName, distRelease):
 
     return object_list(request, **object_dict)
 
+
 def list_pending_packages_in_txt(request, distName, distRelease):
     binaries = Binary.objects.filter(resolution='pending', package__source__distribution__name=distName, package__source__distribution__release=distRelease)
 
@@ -141,14 +138,13 @@ def list_pending_packages_in_txt(request, distName, distRelease):
 
     for binary in binaries:
         # if a binary has test a result, we should not list it.
-        testresult = binary.get_testresult()
-        if not testresult:
+        testresult = binary.get_result()
+        if testresult == "unknown":
             not_tested_packages.append(binary)
+        elif testresult == "yes":
+            acked_packages.append(binary)
         else:
-            if testresult == "yes":
-                acked_packages.append(binary)
-            else:
-                nacked_packages.append(binary)
+            nacked_packages.append(binary)
 
     data = "Packages for %s %s\n\n" % (distName, distRelease)
     data += "ACKed Packages:\n"
@@ -160,11 +156,12 @@ def list_pending_packages_in_txt(request, distName, distRelease):
     for nack in nacked_packages:
         data += "    %s (%s)\n" % (nack.package.name, nack.update.updated_by.get_full_name())
     data += "\nNot Tested Packages:\n"
-    data += "===================="
+    data += "====================\n"
     for not_tested in not_tested_packages:
         data += "    %s (%s)\n" % (not_tested.package.name, not_tested.update.updated_by.get_full_name())
 
     return HttpResponse(data)
+
 
 @login_required
 def list_pending_packages_for_user(request, distName, distRelease):
