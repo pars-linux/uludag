@@ -9,14 +9,14 @@
         <div id="container">
             <div id="menu">
                 <ul>
-                    <li><a href="/repository/pending/">Pending Packages</a></li>
-                    <li><a href="/user/list/">Developers</a></li>
-                    <li><a href="/repository/">Repository</a></li>
+                    <li><a href="{% url repo-pending-index %}">Pending Packages</a></li>
+                    <li><a href="{% url profile-list %}">Developers</a></li>
+                    <li><a href="{% url index %} ">Repositories</a></li>
                 </ul>
                 {% if user.is_authenticated %}
-                Logged as <font color="green">{{ user.username }}</font> <br /><br /><a href="/user/profile/">Profile</a> <br /> <a href="/user/logout/">Logout</a>
+                Logged as <font color="green">{{ user.username }}</font> <br /><br /><a href="{% url profile-edit %}">Profile</a> <br /> <a href="{% url profile-logout %}">Logout</a>
                 {% else %}
-                    <a href="/user/login/">Login</a>
+                    <a href="{% url profile-login %}">Login</a>
                 {% endif %}
             </div>
             <div id="content">
