@@ -118,7 +118,7 @@
     * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
-    * Samba 3.4 geçişi, service.py'lerin ayrılması (/20)
+    * Samba 3.4 geçişi, service.py'lerin ayrılması (/75)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
