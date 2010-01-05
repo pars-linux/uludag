@@ -1,5 +1,0 @@
-This is a development version of Sahip, which is an XML generator for
-Kahya, the silent installer module of YALI. Sahip consists of a simple
-form GUI. With the generated XML file put into proper place in the
-installation CD, installations on multi-computers with the same settings
-can be done.

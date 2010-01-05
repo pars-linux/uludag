@@ -1,4 +1,0 @@
-+ Butonların üzerine gelindiğinde açıklama gelmeli.
-- Gruba yeni bir bölüm eklerken disk bölümü kontrolü sadece aygıta bakılarak kontrol ediliyor, aygıt bölümlendirmelerine bakılarak kontrol edilebilir.
-x Kde dili ingilizce ve sistem dili türkçe olduğunda, Uygulamalar -> sistem altından uygulama çalıştırınca, uygulama türkçe açılıyor.
-+ Partitionlardan biri enable durumda iken disable edildiğinde şifre istiyor, şifre istenildiğinde cancel denilirse, buton disable duruma geçiyor.

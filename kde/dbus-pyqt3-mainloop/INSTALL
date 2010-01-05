@@ -1,2 +1,0 @@
-* Needs python, python-dbus and pyqt3 (and cmake to build)
-* "cmake -DPYTHONVER . && make" to build, and "make install" as root to install. PYTHONVER cmake variable should be in a format like "python2.5"

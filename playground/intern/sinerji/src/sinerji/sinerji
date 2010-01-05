@@ -1,3 +1,0 @@
-#!/bin/sh
-
-exec "/usr/bin/python" "/usr/lib/python2.5/site-packages/sinerji/sinerji.py" "$@"
