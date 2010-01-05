@@ -1,3 +1,8 @@
+2010-01-06  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg-cli:
+		-d parameter can take an empty string as the driver name
+		that means the driver will be selected by the X server.
+
 2009-11-17  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* data/DriversDB:
 		Remove nvidia71 driver as it doesn't work with new X servers.

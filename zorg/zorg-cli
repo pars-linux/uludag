@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009 TUBITAK/UEKAE
+# Copyright (C) 2005-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -55,7 +55,11 @@ def setDriver(driver):
 
     link.Xorg.Display["zorg"].setDriver(driver)
     link.Xorg.Display["zorg"].syncConfigs()
-    print "Driver changed to %s." % driver
+
+    if driver:
+        print "The video driver is set to '%s'." % driver
+    else:
+        print "The video driver will be selected by the X server."
 
 
 if __name__ == "__main__":
@@ -86,7 +90,7 @@ if __name__ == "__main__":
     elif opts.probe:
         probe(opts)
 
-    elif opts.driver:
+    elif opts.driver is not None:
         setDriver(opts.driver)
 
     elif opts.keymap:
