@@ -2,8 +2,8 @@
 name = Desert Rose
 name[tr] = Çöl Gülü
 
-description = A red colored theme with a panel on top
-description[tr]= Paneli üstte olan kırmızı bir tema
+description = A red and gray colored theme with a panel on top
+description[tr]= Paneli üstte olan kırmızı ve gri renkli bir tema
 
 panelPosition = 3
 widgetStyle = qtcurve

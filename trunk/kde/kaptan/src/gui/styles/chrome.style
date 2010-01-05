@@ -2,8 +2,8 @@
 name = Chrome
 name[tr] = Krom
 
-description = A light theme with a panel on bottom
-description[tr]= Paneli üstte olan pembe bir tema
+description = A light blue and gray colored theme with a white panel on bottom
+description[tr] = Paneli beyaz ve altta olan açık mavi ve gri renkli bir tema
 
 panelPosition = 4
 widgetStyle = oxygen

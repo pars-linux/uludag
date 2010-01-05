@@ -2,8 +2,8 @@
 name = Soldier
 name[tr] = Asker
 
-description = A green theme with a panel on top
-description[tr]= Paneli üstte olan yeşil bir tema
+description = A dark gray and green theme with a panel on top
+description[tr]= Paneli üstte olan koyu gri ve yeşil bir tema
 
 panelPosition = 3
 widgetStyle = qtc_klearlooks
