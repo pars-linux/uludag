@@ -87,6 +87,7 @@ static int mknod_parts(char *dev)
         major = strtok(tmp, ":");
         minor = strtok(NULL, "");
         if (minor) devnode_mknod(name, major, minor);
+        free(tmp);
     }
     closedir(dir);
     return 0;
@@ -112,6 +113,7 @@ int devnode_populate(void)
         dev = sys_value(path, "dev");
         major = strtok(dev, ":");
         minor = strtok(NULL, "");
+        free(dev);
         if (minor) {
             devnode_mknod(name, major, minor);
             mknod_parts(name);

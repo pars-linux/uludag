@@ -3,7 +3,7 @@ CC= klcc
 EXE= coolplug
 OBJS= main.c utility.c module.c scsi.c devnode.c
 INCLUDES= common.h
-CFLAGS= -Os -Wall
+CFLAGS= -Wall -Os
 LDFLAGS= -Wl,-z,noexecstack
 
 $(EXE): $(OBJS) $(INCLUDES)

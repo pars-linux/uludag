@@ -31,7 +31,7 @@ int list_has(struct list *listptr, const char *data)
     return 0;
 }
 
-struct list* list_add(struct list *listptr, const char *data)
+struct list* list_add(struct list *listptr, const char *data, int priority)
 {
     struct list *tmp;
 
@@ -42,6 +42,7 @@ struct list* list_add(struct list *listptr, const char *data)
     tmp = zalloc(sizeof(struct list));
     tmp->next = listptr;
     tmp->data = strdup(data);
+    tmp->priority = priority;
     return tmp;
 }
 
@@ -92,20 +93,16 @@ char* my_readlink(const char *path)
 
 char* sys_value(const char *path, const char *value)
 {
-    static char valbuf[128];
-    static char *buf = NULL;
-    static size_t buf_size = 0;
+    char valbuf[128];
     FILE *f;
+    char *buf;
     size_t size;
     size_t path_len = strlen(path);
     size_t value_len = strlen(value);
 
     size = path_len + value_len + 2;
-    if (buf_size < size) {
-        free(buf);
-        buf = zalloc(size * 2);
-        buf_size = size * 2;
-    }
+    if (!(buf = malloc(size)))
+        return NULL;
     memcpy(buf, path, path_len);
     buf[path_len] = '/';
     memcpy(buf + path_len + 1, value, value_len);
@@ -118,10 +115,12 @@ char* sys_value(const char *path, const char *value)
         fclose(f);
         return NULL;
     }
-    fclose(f);
     valbuf[size] = '\0';
     if (valbuf[size-1] == '\n')
         valbuf[size-1] = '\0';
-    return valbuf;
+
+    fclose(f);
+    free(buf);
+    return strdup(valbuf);
 }
 

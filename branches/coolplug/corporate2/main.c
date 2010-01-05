@@ -10,6 +10,7 @@
 */
 
 #include <unistd.h>
+#include <stdlib.h>
 #include "common.h"
 
 int cfg_debug = 0;
@@ -26,36 +27,38 @@ int main(int argc, char *argv[])
         cfg_debug = !strcmp(argv[i], "--debug") ? 1 : cfg_debug;
     }
 
-    /* First, load PCI modules. Load DRM ones only if cfg_drm is set */
-    probe_pci_modules(cfg_drm);
+    if (cfg_drm)
+        /* Early call for KMS stuff */
+        exit(probe_drm_modules());
 
-    if (!cfg_drm) {
+    /* Probe PCI modules */
+    probe_pci_modules();
 
-        /* Second, load USB modules */
-        probe_usb_modules(&has_scsi_storage);
+    /* Second, load USB modules */
+    probe_usb_modules(&has_scsi_storage);
 
-        /* Then, check if there is a need for scsi disk/cdrom drivers
-         * If these are on usb bus, they need some time to properly
-         * setup, so we wait a little bit.
-         */
-        if (has_scsi_storage) {
-            debug("has_scsi_storage is true, sleeping for 2 seconds..");
-            sleep(2);
-        }
-
-        /* The whole thing is *only* used for CONFIG_CHR_DEV_ST module (st.ko) */
-        modules = scsi_get_list();
-        for (item = modules; item; item = item->next)
-            module_probe(item->data);
-
-        /* Populate /dev directory for probed disk/cdrom devices
-         * Again, wait a bit for devices to settle.
-         */
-        if (has_scsi_storage) {
-            debug("has_scsi_storage is true, sleeping for 1 second..");
-            sleep(1);
-        }
-        devnode_populate();
+    /* Then, check if there is a need for scsi disk/cdrom drivers
+     * If these are on usb bus, they need some time to properly
+     * setup, so we wait a little bit.
+     */
+    if (has_scsi_storage) {
+        debug("has_scsi_storage is true, sleeping for 2 seconds..");
+        sleep(2);
     }
+
+    /* The whole thing is *only* used for CONFIG_CHR_DEV_ST module (st.ko) */
+    modules = scsi_get_list();
+    for (item = modules; item; item = item->next)
+        module_probe(item->data);
+
+    /* Populate /dev directory for probed disk/cdrom devices
+     * Again, wait a bit for devices to settle.
+     */
+    if (has_scsi_storage) {
+        debug("has_scsi_storage is true, sleeping for 1 second..");
+        sleep(1);
+    }
+
+    devnode_populate();
     return 0;
 }

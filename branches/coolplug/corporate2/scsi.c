@@ -41,7 +41,9 @@ struct list* scsi_get_list(void)
                 modules = list_add(modules, "sr_mod");
             */
             if (strcmp(tmp, "1") == 0)
-                modules = list_add(modules, "st");
+                modules = list_add(modules, "st", 0);
+            free(tmp);
+
         }
     }
     closedir(dir);
