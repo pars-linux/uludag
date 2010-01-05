@@ -96,3 +96,46 @@ int module_probe(const char *name)
     return 0;
 }
 
+int probe_pci_modules(int drm)
+{
+    struct list *modules, *item;
+    char *cmd;
+
+    modules = module_get_list("/sys/bus/pci/devices/");
+    /* FIXME: Don't hardcode */
+    if (drm && list_has(modules, "nouveau"))
+        return system("modprobe nouveau");
+    if (drm && list_has(modules, "i915"))
+        return system("modprobe i915");
+
+    /* Modprobes all modules in one call */
+    cmd = concat("modprobe ", "-a ");
+
+    for (item = modules; item; item = item->next) {
+        if ( !strcmp(item->data, "nouveau") || !strcmp(item->data, "i915") )
+            continue;
+        cmd = concat(cmd, item->data);
+        cmd = concat(cmd, " ");
+    }
+
+    return system(cmd);
+}
+
+int probe_usb_modules(int *has_scsi_storage)
+{
+    struct list *modules, *item;
+    char *cmd;
+
+    modules = module_get_list("/sys/bus/usb/devices/");
+    *has_scsi_storage = list_has(modules, "usb_storage");
+
+    /* Modprobes all modules in one call */
+    cmd = concat("modprobe ", "-a ");
+
+    for (item = modules; item; item = item->next) {
+        cmd = concat(cmd, item->data);
+        cmd = concat(cmd, " ");
+    }
+
+    return system(cmd);
+}
