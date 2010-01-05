@@ -1,0 +1,14 @@
+[Style]
+name = North
+name[tr] = Kuzey
+
+description = A blue theme with a panel on top
+description[tr]= Paneli üstte olan mavi bir tema
+
+panelPosition = 4
+widgetStyle = qtc_klearlooks
+colorScheme = Steel
+desktopTheme = Aya
+thumbnail = north.png
+iconTheme = milky
+windowDecoration = kwin3_qtcurve
