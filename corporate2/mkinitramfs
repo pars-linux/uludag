@@ -487,7 +487,7 @@ if __name__ == "__main__":
             help="print extra debug info")
     parser.add_option("--network", action="store_true", dest="networkModule", default=False,
             help="add network modules")
-    parser.add_option("--drm", action="store_true", dest="drmModule", default=False,
+    parser.add_option("--drm", action="store_true", dest="drmModule", default=True,
             help="add KMS capable DRM modules")
     parser.add_option("--network-generic", action="store_true", dest="networkModuleBasic", default=False,
             help="add only generic network modules")
