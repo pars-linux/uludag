@@ -30,6 +30,9 @@ char *sys_value(const char *path, const char *value);
 struct list *module_get_list(const char *syspath);
 int module_probe(const char *name);
 
+int probe_pci_modules(int drm);
+int probe_usb_modules(int *has_scsi_storage);
+
 struct list *scsi_get_list(void);
 
 int devnode_mknod(const char *name, const char *major, const char *minor);
