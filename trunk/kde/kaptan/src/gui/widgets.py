@@ -26,7 +26,7 @@ class WallpaperItemWidget(QtGui.QWidget):
         self.ui = Ui_ServiceItemWidget()
         self.ui.setupUi(self)
 
-        self.ui.labelName.setText( title)
+        self.ui.labelName.setText(title)
         self.ui.labelDesc.setText("by "+ desc)
         try:
             self.ui.labelStatus.setPixmap(QtGui.QPixmap(pic))

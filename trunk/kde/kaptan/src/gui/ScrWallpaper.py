@@ -98,7 +98,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.__class__.screenSettings["hasChanged"] = True
 
     def selectWallpaper(self):
-        selectedFile = QFileDialog.getOpenFileName(None,"Open Image", os.path.expanduser("~"), 'Image Files (*.png *.jpg *bmp)')
+        selectedFile = QFileDialog.getOpenFileName(None,"Open Image", os.environ["HOME"], 'Image Files (*.png *.jpg *bmp)')
 
         if selectedFile.isNull():
             return
@@ -109,11 +109,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.listWallpaper.setItemWidget(item, widget)
             item.setSizeHint(QSize(38,110))
             item.setStatusTip(selectedFile)
+            #self.ui.listWallpaper.
+            self.ui.listWallpaper.setCurrentItem(item)
 
     def shown(self):
         pass
 
     def execute(self):
         return True
-
 
