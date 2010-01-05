@@ -1,6 +1,11 @@
 2010-01-05  Ozan Çağlayan <ozan@pardus.org.tr>
-	* Probe only DRM modules if --drm is given,
-	Refactor the code.
+	* (main.c): Probe only DRM modules if --drm is given,
+	* (utility.c): Rewrite sys_value to not use static variables,
+	* (utility.c): Add priority field for prioritizing the probing of DRM
+	modules over other ones,
+	* (module.c): Use device_class to detect if the module is for VGA or not,
+	* (module.c): Don't try to re-modprobe already loaded modules for PCI
+	devices.
 
 2009-06-04  Ozan Çağlayan <ozan@pardus.org.tr>
 	* Makefile: Merge noexecstack.patch from devel/.

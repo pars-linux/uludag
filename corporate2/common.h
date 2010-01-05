@@ -7,7 +7,6 @@
 ** option) any later version. Please read the COPYING file.
 */
 
-#include <stddef.h>
 #include <string.h>
 
 extern int cfg_debug;
@@ -15,26 +14,27 @@ extern int cfg_debug;
 struct list {
     struct list *next;
     char *data;
+    int priority;
 };
 
 int list_has(struct list *listptr, const char *data);
-struct list *list_add(struct list *listptr, const char *data);
+struct list *list_add(struct list *listptr, const char *data, int priority);
 
 void debug(const char *message);
 void *zalloc(size_t size);
 char *concat(const char *str, const char *append);
-int fnmatch(const char *p, const char *s);
 char *my_readlink(const char *path);
 char *sys_value(const char *path, const char *value);
+int fnmatch(const char *p, const char *s);
 
 struct list *module_get_list(const char *syspath);
 int module_probe(const char *name);
 
-int probe_pci_modules(int drm);
+int probe_pci_modules();
+int probe_drm_modules();
 int probe_usb_modules(int *has_scsi_storage);
-
-struct list *scsi_get_list(void);
 
 int devnode_mknod(const char *name, const char *major, const char *minor);
 int devnode_populate(void);
 
+struct list *scsi_get_list(void);

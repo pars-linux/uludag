@@ -11,17 +11,22 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <dirent.h>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include <sys/utsname.h>
 
 #include "common.h"
+
+/* For detecting display drivers */
+#define PCI_BASE_CLASS_DISPLAY  0x03
 
 static struct list* find_aliases(const char *syspath)
 {
     DIR *dir;
     struct dirent *dirent;
     struct list *aliases = NULL;
-    char *modalias;
-    char *path;
+    int priority = 0;
+    char *path, *class, *modalias;
 
     dir = opendir(syspath);
     if (!dir) return NULL;
@@ -32,7 +37,13 @@ static struct list* find_aliases(const char *syspath)
         path = concat(syspath, name);
         modalias = sys_value(path, "modalias");
         if (modalias) {
-            aliases = list_add(aliases, modalias);
+            class = sys_value(path, "class");
+            if (class) {
+                priority = (int)strtol(class, NULL, 16) >> 16;
+                free(class);
+            }
+            aliases = list_add(aliases, modalias, priority);
+            free(modalias);
         }
     }
     closedir(dir);
@@ -63,7 +74,7 @@ static struct list* find_modules(const char *mapfile, struct list *aliases)
 
         for (alias = aliases; alias; alias = alias->next) {
             if (0 == fnmatch(modalias, alias->data)) {
-                modules = list_add(modules, modname);
+                modules = list_add(modules, modname, alias->priority);
             }
         }
     }
@@ -96,27 +107,40 @@ int module_probe(const char *name)
     return 0;
 }
 
-int probe_pci_modules(int drm)
+int probe_drm_modules()
 {
     struct list *modules, *item;
+
+    modules = module_get_list("/sys/bus/pci/devices/");
+
+    for (item = modules; item; item = item->next) {
+        /* FIXME: If there are more than one drivers matching the VGA adapter
+         * this will probe the first occurence. */
+        if (item->priority == PCI_BASE_CLASS_DISPLAY)
+            return system(concat("modprobe ", item->data));
+    }
+
+    return 1;
+}
+
+int probe_pci_modules()
+{
+    struct list *modules, *item;
+    struct stat st;
     int launch = 0;
     char *cmd;
 
     modules = module_get_list("/sys/bus/pci/devices/");
-    /* FIXME: Don't hardcode */
-    if (drm && list_has(modules, "nouveau"))
-        return system("modprobe nouveau");
-    if (drm && list_has(modules, "i915"))
-        return system("modprobe i915");
 
     /* Modprobes all modules in one call */
     cmd = concat("modprobe ", "-a ");
 
-    for (item = modules; item; item = item->next, ++launch) {
-        if ( !strcmp(item->data, "nouveau") || !strcmp(item->data, "i915") )
-            continue;
-        cmd = concat(cmd, item->data);
-        cmd = concat(cmd, " ");
+    for (item = modules; item; item = item->next) {
+        if (stat(concat("/sys/module/",item->data), &st) < 0) {
+            cmd = concat(cmd, item->data);
+            cmd = concat(cmd, " ");
+            ++launch;
+        }
     }
 
     return (launch > 0) ? system(cmd):-1;
