@@ -11,11 +11,9 @@
 # Please read the COPYING file.
 #
 
-# Qt Stuff
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# Application Stuff
 from uiitem import Ui_ServiceItemWidget
 
 class WallpaperItemWidget(QtGui.QWidget):
@@ -28,8 +26,8 @@ class WallpaperItemWidget(QtGui.QWidget):
 
         self.ui.labelName.setText(title)
         self.ui.labelDesc.setText("by "+ desc)
+
         try:
             self.ui.labelStatus.setPixmap(QtGui.QPixmap(pic))
         except:
             pass
-

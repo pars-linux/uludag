@@ -65,10 +65,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 wallpaperDesc = "Unknown"
 
             # Get all files in the wallpaper's directory
-            l = os.listdir(os.path.join(os.path.split(str(desktopFiles))[0], "contents/images"))
+            thumbFolder = os.listdir(os.path.join(os.path.split(str(desktopFiles))[0], "contents"))
+
+            """
+            Appearantly the thumbnail names doesn't have a standart.
+            So we get the file list from the contents folder and
+            choose the file which has a name that starts with "scre".
+
+            File names I've seen so far;
+            screenshot.jpg, screnshot.jpg, screenshot.png, screnshot.png
+            """
+
+            wallpaperThumb = ""
+
+            for thumb in thumbFolder:
+                if thumb.startswith('scre'):
+                    wallpaperThumb = os.path.join(os.path.split(str(desktopFiles))[0], "contents/" + thumb)
 
             wallpaperFile = os.path.split(str(desktopFiles))[0]
-            wallpaperThumb = os.path.join(os.path.split(str(desktopFiles))[0], "contents/screenshot.png")
 
             # Insert wallpapers to listWidget.
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
@@ -109,7 +123,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.ui.listWallpaper.setItemWidget(item, widget)
             item.setSizeHint(QSize(38,110))
             item.setStatusTip(selectedFile)
-            #self.ui.listWallpaper.
             self.ui.listWallpaper.setCurrentItem(item)
 
     def shown(self):
