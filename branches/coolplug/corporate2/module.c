@@ -99,6 +99,7 @@ int module_probe(const char *name)
 int probe_pci_modules(int drm)
 {
     struct list *modules, *item;
+    int launch = 0;
     char *cmd;
 
     modules = module_get_list("/sys/bus/pci/devices/");
@@ -111,19 +112,20 @@ int probe_pci_modules(int drm)
     /* Modprobes all modules in one call */
     cmd = concat("modprobe ", "-a ");
 
-    for (item = modules; item; item = item->next) {
+    for (item = modules; item; item = item->next, ++launch) {
         if ( !strcmp(item->data, "nouveau") || !strcmp(item->data, "i915") )
             continue;
         cmd = concat(cmd, item->data);
         cmd = concat(cmd, " ");
     }
 
-    return system(cmd);
+    return (launch > 0) ? system(cmd):-1;
 }
 
 int probe_usb_modules(int *has_scsi_storage)
 {
     struct list *modules, *item;
+    int launch = 0;
     char *cmd;
 
     modules = module_get_list("/sys/bus/usb/devices/");
@@ -132,10 +134,10 @@ int probe_usb_modules(int *has_scsi_storage)
     /* Modprobes all modules in one call */
     cmd = concat("modprobe ", "-a ");
 
-    for (item = modules; item; item = item->next) {
+    for (item = modules; item; item = item->next, ++launch) {
         cmd = concat(cmd, item->data);
         cmd = concat(cmd, " ");
     }
 
-    return system(cmd);
+    return (launch > 0) ? system(cmd):-1;
 }
