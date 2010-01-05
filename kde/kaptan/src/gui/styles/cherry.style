@@ -2,8 +2,8 @@
 name = Cherry Blossom
 name[tr] = Kiraz Çiçeği
 
-description = A pink theme with a panel on top
-description[tr]= Paneli üstte olan pembe bir tema
+description = A pink colored theme with a panel on top
+description[tr]= Paneli üstte olan pembe renkli bir tema
 
 panelPosition = 3
 widgetStyle = oxygen

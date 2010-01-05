@@ -1,9 +1,9 @@
 [Style]
 name = Dark Night
-name[tr] = Zifiri Karanlık
+name[tr] = Alaca Karanlık
 
-description = A dark theme with a panel on bottom
-description[tr]= Paneli allta olan karanlık bir tema
+description = A dark colored theme with a panel on bottom
+description[tr]= Paneli allta olan koyu renkli bir tema
 
 panelPosition = 4
 widgetStyle = qtcurve
