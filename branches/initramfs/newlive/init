@@ -22,9 +22,8 @@ VIRTIO=0
 
 FS_TYPE=""
 ROOT_FLAGS=""
-ROOT_LABEL=""
-ROOT_UUID=""
 ROOT_DEVICE=""
+ROOT_TARGET=""
 RESUME_DEVICE=""
 MNTDIR=""
 
@@ -151,15 +150,7 @@ parse_cmdline() {
                 done
             ;;
             root=*)
-                ROOT_DEVICE=`echo ${x}|cut -f2 -d=`
-                if [ "${ROOT_DEVICE}" == "LABEL" ]
-                then
-                    ROOT_LABEL=`echo ${x}|cut -f3 -d=`
-                fi
-                if [ "${ROOT_DEVICE}" == "UUID" ]
-                then
-                    ROOT_UUID=`echo ${x}|cut -f3 -d=`
-                fi
+                ROOT_TARGET=`echo ${x}|cut -f2- -d=`
             ;;
             rootflags=*)
                 ROOT_FLAGS="-o ${x#rootflags=}"
@@ -312,10 +303,10 @@ parse_cmdline
 
 info "Starting init on initramfs"
 
-if [ "${ROOT_DEVICE}" == "shellnoprobe" ]
+if [ "${ROOT_TARGET}" == "shellnoprobe" ]
 then
     fall2sh "Starting up a shell without probing, as commanded"
-elif [ "${ROOT_DEVICE}" == "shell" ]
+elif [ "${ROOT_TARGET}" == "shell" ]
 then
     probe_devices
     fall2sh "Starting up a shell, as commanded"
@@ -399,17 +390,8 @@ else
     info "Mounting real root"
     for i in `seq 50`
     do
-        if [ "${ROOT_LABEL}" != "" ]
-        then
-            #FIXME: Remove --no-floppy when the problem is fixed in busybox upstream
-            ROOT_DEVICE=`findfs LABEL=${ROOT_LABEL} --no-floppy`
-        fi
-
-        if [ "${ROOT_UUID}" != "" ]
-        then
-            #FIXME: Remove --no-floppy when the problem is fixed in busybox upstream
-            ROOT_DEVICE=`findfs UUID=${ROOT_UUID} --no-floppy`
-        fi
+        # let findfs handle all conversion
+        ROOT_DEVICE=`findfs ${ROOT_TARGET} --no-floppy 2>/dev/null`
 
         if [ ! -b "${ROOT_DEVICE}" ]
         then
