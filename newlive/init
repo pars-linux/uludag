@@ -92,29 +92,32 @@ parse_config() {
     while read inputline;
     do
         case "${inputline}" in
-            LIVEROOT=*)
+            liveroot=*)
                 LIVE=1
                 LIVEROOT=$(echo $inputline|cut -f2- -d=)
             ;;
-            NFSROOT=*)
+            thin=*)
                 NFSROOT=$(echo $inputline|cut -f2- -d=)
             ;;
-            RAID=*)
+            raid=*)
                 RAID=$(echo $inputline|cut -f2- -d=)
             ;;
-            VIRTIO=*)
+            virtio=*)
                 VIRTIO=$(echo $inputline|cut -f2- -d=)
             ;;
-            ROOT=*)
-                ROOT=$(echo $inputline|cut -f2- -d=)
+            root=*)
+                ROOT_TARGET=$(echo $inputline|cut -f2- -d=)
             ;;
-            RESUME=*)
+            rootflags=*)
+                ROOT_FLAGS=$(echo $inputline|cut -f2- -d=)
+            ;;
+            resume=*)
                 RESUME_DEVICE="${x#RESUME=}"
             ;;
-            NORESUME=*)
+            noresume=*)
                 NORESUME=$(echo $inputline|cut -f2- -d=)
             ;;
-            INIT=*)
+            init=*)
                 INIT="${x#INIT=}"
             ;;
         esac
