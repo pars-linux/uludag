@@ -42,6 +42,8 @@ int main(int argc, char *argv[])
             debug("has_scsi_storage is true, sleeping for 2 seconds..");
             sleep(2);
         }
+
+        /* The whole thing is *only* used for CONFIG_CHR_DEV_ST module (st.ko) */
         modules = scsi_get_list();
         for (item = modules; item; item = item->next)
             module_probe(item->data);
@@ -55,6 +57,5 @@ int main(int argc, char *argv[])
         }
         devnode_populate();
     }
-
     return 0;
 }
