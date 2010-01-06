@@ -5,13 +5,13 @@
 #
 # Pınar Yanardağ <pinar@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
-# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 2009-12-28 22:10-0300\n"
+"PO-Revision-Date: 2010-01-06 20:31-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,9 +21,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ScrGoodbye.py:26
-#, fuzzy
 msgid "Apply Settings"
-msgstr "Configuración del Estilo"
+msgstr "Aplicar Configuración"
 
 #: .tmp/ScrGoodbye.py:27 .tmp/ui_goodbyeWidget.py:254
 msgid "Congratulations!"

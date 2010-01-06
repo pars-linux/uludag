@@ -6,27 +6,28 @@
 # Pınar Yanardağ <pinar@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 2009-07-16 20:32-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2010-01-06 20:52-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ScrGoodbye.py:26
-#, fuzzy
 msgid "Apply Settings"
-msgstr "Stilkonfiguration"
+msgstr "Konfiguration übernehmen"
 
 #: .tmp/ScrGoodbye.py:27 .tmp/ui_goodbyeWidget.py:254
 msgid "Congratulations!"
-msgstr ""
+msgstr "Herzlichen Glückwunsch !"
 
 # Zweifel - habe ich nur gefüllt, damit es nicht neudeutsch herausleuchtet
 #: .tmp/ScrKeyboard.py:32
@@ -55,6 +56,8 @@ msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
 msgstr ""
+"Kick-off ist das Standartmenü in Pardus.<br><br>Die Programme sind leicht "
+"zugänglich und gut gruppiert."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:154
 msgid "Simple Menu"
@@ -65,6 +68,8 @@ msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
+"Simple menu ist das traditionelle Menü von KDE 3.<br><br>Es ist sehr "
+"leichtgewichtig und daher für langsamere PCs zu empfehlen."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
 msgid "Lancelot Menu"
@@ -75,6 +80,9 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
+"Lancelot ist ein fortgeschrittenes Menü mit vielen Möglichkeiten zu "
+"persönlichen Anpassungen in Pardus.<br><br>Die Programme sind einfach "
+"zugänglich und gut organisiert."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -246,9 +254,8 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Willkommen beim Assistenten Kaptan :)"
+msgstr "Willkommen bei Kaptan"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -264,10 +271,9 @@ msgstr "Gewähltes Klickverhalten: <b>%s</b>"
 msgid "Menu Settings"
 msgstr "Einstellung des Menüs"
 
-#: .tmp/ScrSummary.py:69
-#, fuzzy, python-format
+#: .tmp/ScrSummary.py:69, python-format
 msgid "Selected Menu: <b>%s</b>"
-msgstr "Gewählter Stil: <b>%s</b>"
+msgstr "Gewählter Menü-Typ: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
@@ -322,9 +328,8 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Wählen Sie den schönsten Bildschirmhintergrund für Ihren Desktop! \\m/"
 
 #: .tmp/ui_goodbyeWidget.py:252
-#, fuzzy
 msgid "More"
-msgstr "Maus"
+msgstr "Mehr"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
@@ -343,6 +348,10 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
+"<b>Ihre Einstellungen sind übernommen worden.</b> Jetzt könne Sie beginnen "
+"Pardus zu benutzen oder eines der folgenden Links oder Programmen für die "
+"weitere Konfiguration des Systems oder für Hilfe und Support ausprobieren. "
+"Bitte beteiligen Sie sich auch <b>an unserer Comminity!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -374,21 +383,23 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Konfigurationstool von Pardus für Bildschirmeinstellungen, Firewall, "
+"Tastatur, Benutzerkonten..."
 
 #: .tmp/ui_goodbyeWidget.py:265 .tmp/ui_goodbyeWidget.py:267
 msgid "Help and Support"
-msgstr ""
+msgstr "Hilfe und Support"
 
 #: .tmp/ui_goodbyeWidget.py:266
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
-msgstr "Pardus Community, Listen, IRC Räume, Wikis und mehr."
+msgstr ""
+"Pardus Community, Listen, Mailing-Listen, Chat, Wikis, Hilfe und Support..."
 
 #: .tmp/ui_kaptanMain.py:136
 msgid "Kaptan Desktop"
-msgstr ""
+msgstr "Kaptan Desktop"
 
 #: .tmp/ui_kaptanMain.py:137
 msgid "Cancel"
@@ -412,11 +423,11 @@ msgstr "Tastatur"
 
 #: .tmp/ui_keyboardWidget.py:97
 msgid "Test Layout"
-msgstr ""
+msgstr "Layout probieren"
 
 #: .tmp/ui_keyboardWidget.py:99
 msgid "Keyboard Layout Language"
-msgstr ""
+msgstr "Sprache des Tastaturlayouts"
 
 #: .tmp/ui_keyboardWidget.py:100
 msgid ""
@@ -424,6 +435,9 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
+"Kaptan wählt automatisch das beste Tastaturlayout entsprechend der "
+"Spracheinstellung Ihres Systems. Wenn Sie eine andere Tastaturanordnung "
+"benutzen möchten, können Sie ihre Wahl treffen und sofort ausprobieren."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -431,7 +445,7 @@ msgstr "Menü"
 
 #: .tmp/ui_menuWidget.py:146
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Menüstil wählen"
 
 #: .tmp/ui_menuWidget.py:148
 msgid ""
@@ -447,14 +461,12 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_menuWidget.py:152
-#, fuzzy
 msgid "Menu Styles"
-msgstr "Einstellung des Menüs"
+msgstr "Menüstile"
 
 #: .tmp/ui_menuWidget.py:156
-#, fuzzy
 msgid "Sample"
-msgstr "einfaches Menü"
+msgstr "Beispiel"
 
 #: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
@@ -462,7 +474,7 @@ msgstr "Maus"
 
 #: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Mauseinstellungen"
 
 #: .tmp/ui_mouseWidget.py:169
 msgid ""
