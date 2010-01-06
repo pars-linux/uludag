@@ -1,6 +1,9 @@
 2010-01-06  Ozan Çağlayan <ozan@pardus.org.tr>
 	* (devnode.c): Rename devnode_populate() to create_block_devnodes() for
-	better understanding.
+	better understanding,
+	Use mknod() system call instead of forking system(),
+	Disable SCSI scanning as the only driver (st.ko) to-be-found-and-probed is now
+	built-in to the kernel image,
 
 2010-01-05  Ozan Çağlayan <ozan@pardus.org.tr>
 	* (main.c): Probe only DRM modules if --drm is given,

@@ -1,7 +1,7 @@
 
 CC= klcc
 EXE= coolplug
-OBJS= main.c utility.c module.c scsi.c devnode.c
+OBJS= main.c utility.c module.c devnode.c #scsi.c
 INCLUDES= common.h
 CFLAGS= -Wall -Os
 LDFLAGS= -Wl,-z,noexecstack

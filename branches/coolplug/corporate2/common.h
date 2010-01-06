@@ -34,7 +34,7 @@ int probe_pci_modules(void);
 int probe_drm_modules(void);
 int probe_usb_modules(int *has_scsi_storage);
 
-int devnode_mknod(const char *name, const char *major, const char *minor);
+int devnode_mknod(const char *name, int major, int minor);
 int create_block_devnodes(void);
 
-struct list *scsi_get_list(void);
+/*struct list *scsi_get_list(void);*/
