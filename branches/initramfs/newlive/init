@@ -10,7 +10,6 @@ INITRAMFSCONF="/etc/initramfs/initramfs.conf"
 ROOT_LINKS="bin sbin lib boot usr opt"
 ROOT_TREES="etc root home var"
 TMPFS_DIRS="dev mnt mnt/cdrom mnt/livecd mnt/thin tmp sys proc media"
-IMG_DEVICES="hd[a-z] sr[0-9]* scd[a-z]"
 LOOPBACKFILE="pardus.img"
 
 NORESUME=0
@@ -138,7 +137,6 @@ parse_cmdline() {
                         ;;
                         livedisk)
                             LIVE=1
-                            IMG_DEVICES="hd[a-z][0-9]* sd[a-z][0-9]*"
                         ;;
                         raid)
                             RAID=1
@@ -357,14 +355,9 @@ then
 
     for i in `seq 50`
     do
-        for t in ${IMG_DEVICES}
-        do
-            findcdmount "/newroot/dev/$t"
-            if [ "${ROOT_DEVICE}" != "" ]
-            then
-                break
-            fi
-        done
+        t=`findfs ${LIVEROOT} --no-floppy 2>/dev/null`
+        findcdmount "/newroot/dev/$t"
+
         if [ "${ROOT_DEVICE}" != "" ]
         then
             break
