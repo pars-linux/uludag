@@ -62,6 +62,10 @@ ql2x00-firmware
 \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
 gutenprint 
+foomatic-db
+foomatic-db-engine
+foomatic-db-hpijs
+foomatic-filters
 \end{verbatim}
 \item epson-alc1100 paketi kurulumu sonrası:
 
@@ -145,6 +149,7 @@ Eğer bir tarayıcınız var ise bu paketi test edebilirsiniz!!
 
 İlk komutun sorunsuz olarak tarayıcınızı bulduğunu gözlemleyin.
 İkinci komutun ise düzgün bir şekilde tarama yaptığını ve bir .pnm uzantılı bir resim dosyası ürettiğini gözlemleyin.
+
 \end{enumerate}
 
 \section{Optical alt Bileşeni}
@@ -306,12 +311,22 @@ Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve tara
 \begin{verbatim}
  gobi_loader
  usb-modeswitch
+ pilot-link
 \end{verbatim}
 
 \end{enumerate}
 
 \section{Disk alt Bileşeni}
 \begin{enumerate}
+ \item Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
+\begin{verbatim}
+  squashfs-tools
+\end{verbatim}
+
+\item ntfs\_3g paketi kurulumu sonrası:
+
+gparted ile bir usb çubuğu ntfs olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. 
+
 \item gparted paketi kurulumu sonrası:
 
 Bir usbdis takın ve gparted uygulamasını Kmenu'den çalıştırın. 

@@ -22,6 +22,8 @@
  gnome-keyring
  gnome-keyring-docs
  gnome-doc-utils
+ gnome-common
+ gnome-desktop
 \end{verbatim}
 
 \end{itemize}
@@ -32,6 +34,11 @@
 \begin{verbatim}
  icon-theme-oxygen-svg-4.2.4-39-6.pisi
 \end{verbatim}
+
+\item artwork-pardus-release paketi kurulumu sonrası:
+
+Masaüstüne sağ tıklayın, görünüm ayarlarını seçin. Resim bölümünden Anıt Kabir veya Lily duvar kağıtlarından birini seçin ve değişiklikleri uygulayın. Değişimin sorunsuz bir şekilde gerçekleştirğini gözlemleyin.
+
 \item icon-theme-oxygen-index ve icon-theme-oxygen-png paketleri kurulumu sonrası: 
 
 Bilgisayarınızı yeniden başlatın ve ikonların düzgün bir şekilde görüntülendiğni gözlemleyin.
@@ -56,6 +63,14 @@ Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ İmleç teması alt
 
 \section{Font alt Bileşeni}
 \begin{itemize}
+\item  terminus-font paketi kurulumu sonrası:
+
+Konsole uygulamasını açın, uygulama üzerine sağ tıklayın, geçerli profili düzenle $\rightarrow$ görünüm $\rightarrow$ Yazı tipini düzenle seçeneklerini izleyin, ve terminus fontunu seçin ve fontun değiştiğini gözlemleyin.
+
+\item  droid-fonts paketi kurulumu sonrası:
+
+Open ofis yazıcı açın ve Droid fontlarının ekli olduğunu gözlemleyin.
+
 
 \item  urw-fonts paketi kurulumu sonrası:
 
@@ -87,7 +102,9 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
  iTest
  shared-mime-info
 \end{verbatim}
+\item xdg-user-dirs paketi kurulumu sonrası:
 
+Kullanıcı yöneticisi ile yeni bir kullanıcı yaratın ve daha sonra bu kullanıcı ile sistemi açın ve kullanıcı ev dizini altında sistemin dilinde "Belgeler", "İndirilenler", "Masaüstü" ve "Belgeler" altında da "Müzik", "Resimler", "Videolar" dizinlerinin oluştuğunu gözlemleyin.
 \item krename paketi kurulumu sonrası:
 
 Kmenüden uygulamayı açın, aşağıda bulunan resim dosyalarını Ekle butonuna basarak ekleyin. Daha sonra Dosya adı tab'ına gidip Örnek düşen kutusundan sayıyı seçin ve bitir butonuna basın ve sorunsuz bir şekilde yeni ismlendirmelerin yapıldığını gözlemleyin.
@@ -181,7 +198,14 @@ Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 \begin{verbatim}
 gtk+extra
 gtk-doc
+pango-docs
 \end{verbatim}
+
+\item QtCurve-Gtk2 paketi kurulumu sonrası:
+
+Firefox uygulamasının buton sitilleri ile paket yöneticisinin aynı işe yarayan butonlarının sitil olarak da aynı olduğunu gözlemleyin.
+
+Örneğin: Yenileme (Refresh) butonu...
 \item libglademm paketi kurulumu sonrası:
 
 multimedia-tr.pdf pavucontrol testini gerçekleştiriniz.
@@ -202,7 +226,7 @@ Drawing Area, Clipboard, Color Selector bölümlerine çift tıklayarak çalış
  \item multimedia-tr.pdf avidemux testini gerçekleştirin
 \item desktop-tr.pdf gtk2-demo testini gerçekleştirin.
 \end{itemize}
-\item pango ve pango-docs paketi kurulumu sonrası: 
+\item pango paketi kurulumu sonrası: 
 \begin{itemize}
  \item progrmming-tr.pdf pygtk testini gerçekleştirin.
  \item multimedia-tr.pdf inkscape testini gerçekleştirin.
@@ -258,10 +282,20 @@ Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir 
 
 \end{enumerate}
 
-\section{Kde alt Bileşeni}
+\section{Kde4 alt Bileşeni}
 \subsection*{Admin alt bileşeni}
 
 \begin{enumerate} 
+\item display-settings paketi kurulumu sonrası:
+
+\begin{itemize}
+\item Sistem ayarlarından ekran ayarlarını seçin ve aygıtlar bölümüne tıklayın, tıkladığınızda ekran kartınızın modelinin gösterildiğini gözlemleyin.
+
+\item Eğer ekran kartınıza ait uygun sürücü kurulu değil ise uygulamanın paket yöneticisinden ilgili sürücünün kurulması gerektiğine dair uyarı verdiğini gözlemleyin.
+
+\item Eğer birden fazla monitörünüz veya projeksiyon aletiniz var ise makinanınızı be aygıtlara bağlayın.Daha sonra Ekranlar seçeneğini seçin. Açılan pencerede masaüstünü tüm çıkışlara yay kutusunu işaretleyip çıkışları algıla butonuna basın. İki çıkışında algılandığını ve görüntünün iki ekrandada çıktığını gözlemleyin. 
+\end{itemize}
+
  \item history-manager paketi kurulumu sonrası:
 
  http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/history-manager-tr.pdf  testini gerçekleştiriniz.
@@ -278,13 +312,15 @@ http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/s
 
 \subsection*{Base alt bileşeni}
 
-2008'de tüm kde4 paketleri 4 versiyon numarasını içermekte iken, 2009'da bu versiyon numarasını içermemektedir.
 \begin{enumerate} 
 \item  Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
 kdelibs-devel
 kdelibs-apidox 
 \end{verbatim}
+\item kdegames paketi kurulumu sonrası:
+
+Kmenüden ktuberlink ve ksudoku oyunlarını açın ve ilgili seslerin çıktığını ve sorunsuz çalıştıklarını gözlemleyin.
 \item pardus-default-settings paketi kurulumu sonrası:
 
 Pardusun ön tanımlı ayarları olan milky ikon temasının, açılış ekranının, kullanıcı giriş ekranının düzgün bir şekilde açıldığını gözlemleyin.
@@ -397,7 +433,12 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 \end{enumerate}
 
 \subsection*{Addon alt bileşeni}
+
 \begin{enumerate}
+
+\item  bespin-kde4-theme paketi kurulumu sonrası:
+
+
 \item  ksplash-pardus-theme paketi kurulumu sonrası:
 
 Bilgisayarınız açılırken KDE açılış ekranının sorunsuz bir şekilde açıldığını gözlemleyin.
