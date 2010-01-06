@@ -16,6 +16,7 @@ import subprocess
 from optparse import OptionParser
 
 config = {"rootDir": "/",
+          "initramfsConf": "/etc/initramfs.conf",
           "kernelType": "kernel",
           "kernelVersion": "",
           "tmpDir": "",
@@ -153,6 +154,12 @@ class BaseSystem:
 
         writeFile(self.getNewRoot("/etc/fstab"), "none none none defaults 0 0")
 
+    def createConfig(self):
+        # FIXME: Parse config files and create a proper one by hand
+        configFileSource = config["initramfsConf"]
+        if os.path.exists(configFileSource):
+            copy(configFileSource, self.getNewRoot(configFileSource))
+
     def createNodes(self):
         for i in self.deviceNodes:
             k = self.deviceNodes[i]
@@ -186,6 +193,7 @@ class BaseSystem:
         self.copyBasefiles()
         self.createNodes()
         self.createBaseSymlinks()
+        self.createConfig()
         self.addRaid()
         self.addSuspend()
 
