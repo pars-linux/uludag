@@ -178,7 +178,7 @@ parse_cmdline() {
     done
 }
 
-findcdmount() {
+find_live_mount() {
     if [ "$#" -gt "0" ]
     then
         for x in $*
@@ -366,7 +366,7 @@ then
     for i in `seq 50`
     do
         t=`findfs ${LIVEROOT} --no-floppy 2>/dev/null`
-        findcdmount "/newroot/dev/$t"
+        find_live_mount "/newroot$t"
 
         if [ "${ROOT_DEVICE}" != "" ]
         then
