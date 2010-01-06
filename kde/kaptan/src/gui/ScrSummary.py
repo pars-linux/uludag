@@ -113,7 +113,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         try:
             os.kill(pidOfPlasma, 15)
-            #self.startPlasma()
         except OSError, e:
             print 'WARNING: failed os.kill: %s' % e
             print "Trying SIGKILL"
@@ -147,14 +146,18 @@ class Widget(QtGui.QWidget, ScreenWidget):
             config = KConfig("nepomukserverrc")
             group = config.group("Service-nepomukstrigiservice")
             #group = config.group("Basic Settings")
+            group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
+            #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
 
             session = dbus.SessionBus()
-            proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
-            group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
 
-            #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
-            proxy.reconfigure()
-            proxy.enableNepomuk(self.searchSettings["state"])
+            try:
+                proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
+                proxy.reconfigure()
+                proxy.enableNepomuk(self.searchSettings["state"])
+            except DBusException as e:
+                print e
+
 
         # Menu Settings
         if self.menuSettings["hasChanged"] == True:
@@ -201,8 +204,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
             info.activate()
 
             session = dbus.SessionBus()
-            proxy = session.get_object('org.kde.kwin', '/KWin')
-            proxy.reconfigure()
+
+            try:
+                proxy = session.get_object('org.kde.kwin', '/KWin')
+                proxy.reconfigure()
+            except DBusException as e:
+                print e
+
             config.sync()
 
         # Theme Settings
@@ -255,8 +263,12 @@ class Widget(QtGui.QWidget, ScreenWidget):
             configKwinRc.sync()
 
             session = dbus.SessionBus()
-            proxy = session.get_object('org.kde.kwin', '/KWin')
-            proxy.reconfigure()
+
+            try:
+                proxy = session.get_object('org.kde.kwin', '/KWin')
+                proxy.reconfigure()
+            except DBusException as e:
+                print e
 
         # Smolt Settings
         if self.smoltSettings["profileSend"] == True:
