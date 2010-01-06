@@ -1,3 +1,7 @@
+2010-01-06  Ozan Çağlayan <ozan@pardus.org.tr>
+	* (devnode.c): Rename devnode_populate() to create_block_devnodes() for
+	better understanding.
+
 2010-01-05  Ozan Çağlayan <ozan@pardus.org.tr>
 	* (main.c): Probe only DRM modules if --drm is given,
 	* (utility.c): Rewrite sys_value to not use static variables,
