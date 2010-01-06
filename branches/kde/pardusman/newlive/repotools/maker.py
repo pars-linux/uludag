@@ -491,6 +491,13 @@ def make_image(project):
         def chrun(cmd):
             run('chroot "%s" %s' % (image_dir, cmd))
 
+
+        # FIXME: we write static initramfs.conf for live systems for now, hopefully we will make it dynamic later on
+        # Note that this must be done before configure pending for the mkinitramfs use it
+        f = file(os.path.join(image_dir, "etc/initramfs.conf"), "w")
+        f.write("liveroot=LABEL=PardusLiveImage")
+        f.close()
+
         os.mknod("%s/dev/null" % image_dir, 0666 | stat.S_IFCHR, os.makedev(1, 3))
         os.mknod("%s/dev/console" % image_dir, 0666 | stat.S_IFCHR, os.makedev(5, 1))
         os.mknod("%s/dev/random" % image_dir, 0666 | stat.S_IFCHR, os.makedev(1, 8))
