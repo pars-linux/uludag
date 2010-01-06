@@ -17,9 +17,6 @@
 
 #include "common.h"
 
-/* For detecting display drivers */
-#define PCI_BASE_CLASS_DISPLAY  0x03
-
 static struct list* find_aliases(const char *syspath)
 {
     DIR *dir;
@@ -81,6 +78,40 @@ static struct list* find_modules(const char *mapfile, struct list *aliases)
     return modules;
 }
 
+struct list* module_get_list2(const char *syspath)
+{
+    DIR *dir;
+    struct dirent *dirent;
+    struct list *modules = NULL;
+    char *path, *modalias, *boot_vga;
+
+    /* Open sysfs path for traversal */
+    dir = opendir(syspath);
+    if (!dir)
+        return NULL;
+
+    while((dirent = readdir(dir))) {
+        char *name = dirent->d_name;
+        if (strcmp(name, ".") == 0 || strcmp(name, "..") == 0)
+            continue;
+        path = concat(syspath, name);
+
+        /* path is now something like /sys/bus/pci/devices/0000\:01\:00.0/ */
+        modalias = sys_value(path, "modalias");
+
+        if (modalias) {
+            boot_vga = sys_value(path, "boot_vga");
+            modules = list_add(modules, modalias, boot_vga?atoi(boot_vga):0);
+            free(modalias);
+            free(boot_vga);
+        }
+    }
+    closedir(dir);
+
+    return modules;
+
+}
+
 struct list* module_get_list(const char *syspath)
 {
     struct list *aliases;
@@ -111,12 +142,11 @@ int probe_drm_modules()
 {
     struct list *modules, *item;
 
-    modules = module_get_list("/sys/bus/pci/devices/");
+    modules = module_get_list2("/sys/bus/pci/devices/");
 
     for (item = modules; item; item = item->next) {
-        /* FIXME: If there are more than one drivers matching the VGA adapter
-         * this will probe the first occurence. */
-        if (item->priority == PCI_BASE_CLASS_DISPLAY)
+        if (item->priority > 0)
+            /* Booted VGA adapter, load driver and quit */
             return system(concat("modprobe ", item->data));
     }
 
@@ -130,7 +160,7 @@ int probe_pci_modules()
     int launch = 0;
     char *cmd;
 
-    modules = module_get_list("/sys/bus/pci/devices/");
+    modules = module_get_list2("/sys/bus/pci/devices/");
 
     /* Modprobes all modules in one call */
     cmd = concat("modprobe ", "-a ");
@@ -152,6 +182,7 @@ int probe_usb_modules(int *has_scsi_storage)
     int launch = 0;
     char *cmd;
 
+    /* FIXME: port this to module_get_list2 */
     modules = module_get_list("/sys/bus/usb/devices/");
     *has_scsi_storage = list_has(modules, "usb_storage");
 
