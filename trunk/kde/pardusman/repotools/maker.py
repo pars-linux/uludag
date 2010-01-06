@@ -281,6 +281,8 @@ def setup_live_kdm(project):
             lines.append("AutoLoginEnable=true\n")
         elif line.startswith("#AutoLoginUser"):
             lines.append("AutoLoginUser=pars\n")
+        elif line.startswith("#ServerTimeout="):
+            lines.append("ServerTimeout=60\n")
         else:
             lines.append(line)
     file(path, "w").write("".join(lines))
