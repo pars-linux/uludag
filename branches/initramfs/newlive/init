@@ -5,7 +5,7 @@
 #
 
 PATH=/usr/sbin:/usr/bin:/sbin:/bin
-INITRAMFSCONF="/etc/initramfs/initramfs.conf"
+INITRAMFSCONF="/etc/initramfs.conf"
 
 ROOT_LINKS="bin sbin lib boot usr opt"
 ROOT_TREES="etc root home var"
@@ -87,6 +87,7 @@ resume_from_hibernate() {
     fi
 }
 
+# maybe we should just source the file instead of parsing
 parse_config() {
     while read inputline;
     do
