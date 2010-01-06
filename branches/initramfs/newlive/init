@@ -91,15 +91,11 @@ parse_config() {
     while read inputline;
     do
         case "${inputline}" in
-            liveroot=*)
-                LIVE=1
-                LIVEROOT=$(echo $inputline|cut -f2- -d=)
+            raid=*)
+                RAID=$(echo $inputline|cut -f2- -d=)
             ;;
             thin=*)
                 NFSROOT=$(echo $inputline|cut -f2- -d=)
-            ;;
-            raid=*)
-                RAID=$(echo $inputline|cut -f2- -d=)
             ;;
             virtio=*)
                 VIRTIO=$(echo $inputline|cut -f2- -d=)
@@ -110,8 +106,12 @@ parse_config() {
             rootflags=*)
                 ROOT_FLAGS=$(echo $inputline|cut -f2- -d=)
             ;;
+            liveroot=*)
+                LIVE=1
+                LIVEROOT=$(echo $inputline|cut -f2- -d=)
+            ;;
             resume=*)
-                RESUME_DEVICE="${x#RESUME=}"
+                RESUME_DEVICE="${x#resume=}"
             ;;
             noresume=*)
                 NORESUME=$(echo $inputline|cut -f2- -d=)
@@ -156,17 +156,21 @@ parse_cmdline() {
             rootflags=*)
                 ROOT_FLAGS="-o ${x#rootflags=}"
             ;;
+            liveroot=*)
+                LIVE=1
+                LIVEROOT=$(echo $inputline|cut -f2- -d=)
+            ;;
             resume=*)
                 RESUME_DEVICE="${x#resume=}"
+            ;;
+            noresume)
+                NORESUME=1
             ;;
             init=*)
                 INIT="${x#init=}"
             ;;
             quiet)
                 QUIET=1
-            ;;
-            noresume)
-                NORESUME=1
             ;;
         esac
     done
