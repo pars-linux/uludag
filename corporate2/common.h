@@ -28,6 +28,7 @@ char *sys_value(const char *path, const char *value);
 int fnmatch(const char *p, const char *s);
 
 struct list *module_get_list(const char *syspath);
+struct list *module_get_list2(const char *syspath);
 int module_probe(const char *name);
 
 int probe_pci_modules(void);
