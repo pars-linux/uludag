@@ -256,7 +256,8 @@ def setup_isolinux(project):
     # copy config and gfxboot stuff
     generate_isolinux_conf(project)
 
-    copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
+    # we don't use debug anymore for the sake of hybrid
+    copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
     copy(os.path.join(image_dir, "usr/share/misc/pci.ids"), dest)
@@ -492,6 +493,13 @@ def make_image(project):
         def chrun(cmd):
             run('chroot "%s" %s' % (image_dir, cmd))
 
+
+        # FIXME: we write static initramfs.conf for live systems for now, hopefully we will make it dynamic later on
+        # Note that this must be done before configure pending for the mkinitramfs use it
+        f = file(os.path.join(image_dir, "etc/initramfs.conf"), "w")
+        f.write("liveroot=LABEL=PardusLiveImage\n")
+        f.close()
+
         os.mknod("%s/dev/null" % image_dir, 0666 | stat.S_IFCHR, os.makedev(1, 3))
         os.mknod("%s/dev/console" % image_dir, 0666 | stat.S_IFCHR, os.makedev(5, 1))
         os.mknod("%s/dev/random" % image_dir, 0666 | stat.S_IFCHR, os.makedev(1, 8))
@@ -624,10 +632,13 @@ def make_iso(project):
             sorted_list = generate_sort_list(iso_dir)
             if sorted_list:
                 open("%s/repo/install.order" % iso_dir, "w").write("\n".join(["%s %d" % (k,v) for (k,v) in sorted_list]))
-                run('mkisofs -f -sort %s/repo/install.order -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_dir, iso_file, iso_dir,))
+                run('mkisofs -f -sort %s/repo/install.order -J -joliet-long -R -l -V "PardusLiveImage" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_dir, iso_file, iso_dir,))
 
         else:
-            run('mkisofs -f -J -joliet-long -R -l -V "Pardus" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_file, iso_dir,))
+            run('mkisofs -f -J -joliet-long -R -l -V "PardusLiveImage" -o "%s" -b boot/isolinux/isolinux.bin -c boot/isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table "%s"' % (iso_file, iso_dir,))
+
+        # convert iso to a hybrid one
+        run("isohybrid -partok -offset 1 %s" % iso_file)
 
     except KeyboardInterrupt:
         print "Keyboard Interrupt: make_iso() cancelled."
