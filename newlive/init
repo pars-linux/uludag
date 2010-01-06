@@ -286,8 +286,12 @@ mount_cdroot() {
     chmod 1777 tmp
     (cd /newroot/${FS_LOCATION}; cp -a ${ROOT_TREES} /newroot)
 
-    # for userspace
-    touch /newroot/var/run/pardus/livemedia
+    # FIXME: the device list is taken from udev, we can't rely on sys entries since pluggable means different
+    #        in kernel world. Suggestions that do not include this kind of regexp mania are welcome
+
+    # for userspace applications
+    REAL_ROOT_TYPE=`echo "${REAL_ROOT}" | sed -e 's/^\/dev\///' | grep -qE '^sr[0-9]*|^hd[a-z]|^pcd[0-9]|^xvd*' && echo "optical" || echo "harddisk"`
+    echo "${REAL_ROOT_TYPE}" > /newroot/var/run/pardus/livemedia
 
     # this is needed for yali
     MNTDIR=`grep \/mnt\/cdrom\  /proc/mounts|sed 's/\/newroot//g'`
