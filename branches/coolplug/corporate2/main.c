@@ -59,6 +59,6 @@ int main(int argc, char *argv[])
         sleep(1);
     }
 
-    devnode_populate();
+    create_block_devnodes();
     return 0;
 }

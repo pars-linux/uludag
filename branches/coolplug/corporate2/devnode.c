@@ -93,7 +93,7 @@ static int mknod_parts(char *dev)
     return 0;
 }
 
-int devnode_populate(void)
+int create_block_devnodes(void)
 {
     DIR *dir;
     struct dirent *dirent;
