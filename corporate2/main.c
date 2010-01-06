@@ -18,7 +18,6 @@ int cfg_drm = 0;
 
 int main(int argc, char *argv[])
 {
-    struct list *modules, *item;
     int has_scsi_storage = 0, i = 0;
 
     /* Parse command line arguments */
@@ -46,19 +45,13 @@ int main(int argc, char *argv[])
         sleep(2);
     }
 
-    /* The whole thing is *only* used for CONFIG_CHR_DEV_ST module (st.ko) */
-    modules = scsi_get_list();
-    for (item = modules; item; item = item->next)
-        module_probe(item->data);
-
-    /* Populate /dev directory for probed disk/cdrom devices
-     * Again, wait a bit for devices to settle.
-     */
     if (has_scsi_storage) {
         debug("has_scsi_storage is true, sleeping for 1 second..");
         sleep(1);
     }
 
+    /* Create device nodes for disks/partitions */
     create_block_devnodes();
+
     return 0;
 }

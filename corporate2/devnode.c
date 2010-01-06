@@ -11,6 +11,7 @@
 #include <stdlib.h>
 #include <dirent.h>
 #include <sys/stat.h>
+#include <sys/types.h>
 
 #include "common.h"
 
@@ -35,58 +36,55 @@ static void ensure_path(char *path)
     }
 }
 
-int devnode_mknod(const char *name, const char *major, const char *minor)
+int devnode_mknod(const char *name, int major, int minor)
 {
-    struct stat fs;
-    char buf[512];
-    char *path;
-    char *msg;
-    char *t;
+    char *path, *t;
+    int ret;
 
+    /* Construct devpath */
     path = concat("/dev/", name);
+
+    /* Normalize path */
     for (t=path; *t != '\0'; t++) {
          if (*t == '!') *t = '/';
     }
 
-    if (stat(path, &fs) == 0)
-    {
-        msg = concat(path, " already exists.");
-        debug(msg);
-    }
-    else
-    {
-        sprintf(buf, "mknod %s b %s %s", path, major, minor);
-        debug(buf);
+    /* Create device node */
+    ensure_path(path);
+    debug(concat("Calling mknod for ", path));
+    if ((ret = mknod(path, S_IFBLK, makedev(major, minor))) < 0)
+        perror("devnode_mknod");
 
-        ensure_path(path);
-        system(buf);
-    }
-    return 0;
+    return ret;
 }
 
-static int mknod_parts(char *dev)
+static int mknod_disk_partitions(char *dev)
 {
     char *path;
     DIR *dir;
     struct dirent *dirent;
-    char *tmp;
-    char *major;
-    char *minor;
+    char *tmp, *minor;
+    int major;
 
+    /* e.g. /sys/block/sda */
     path = concat("/sys/block/", dev);
     dir = opendir(path);
-    if (!dir) return -1;
+    if (!dir)
+        return -1;
+
     while((dirent = readdir(dir))) {
-        char *name = dirent->d_name;
+        char *name = dirent->d_name; /* sdax */
         if (strcmp(name, ".") == 0 || strcmp(name, "..") == 0)
             continue;
         if (strncmp(name, dev, strlen(dev)) != 0)
             continue;
         tmp = concat(concat(path, "/"), name);
         tmp = sys_value(tmp, "dev");
-        major = strtok(tmp, ":");
+        major = atoi(strtok(tmp, ":"));
         minor = strtok(NULL, "");
-        if (minor) devnode_mknod(name, major, minor);
+        if (minor)
+            /* A minor is available, create /dev/sdxy */
+            devnode_mknod(name, major, atoi(minor));
         free(tmp);
     }
     closedir(dir);
@@ -97,27 +95,26 @@ int create_block_devnodes(void)
 {
     DIR *dir;
     struct dirent *dirent;
+    char *path, *dev, *name, *minor;
+    int major;
 
     dir = opendir("/sys/block");
     if (!dir) return -1;
     while((dirent = readdir(dir))) {
-        char *path;
-        char *dev;
-        char *major;
-        char *minor;
-        char *name = dirent->d_name;
+        name = dirent->d_name;
         if (strcmp(name, ".") == 0 || strcmp(name, "..") == 0)
             continue;
 
         path = concat("/sys/block/", name);
         dev = sys_value(path, "dev");
-        major = strtok(dev, ":");
+        major = atoi(strtok(dev, ":"));
         minor = strtok(NULL, "");
-        free(dev);
         if (minor) {
-            devnode_mknod(name, major, minor);
-            mknod_parts(name);
+            /* A minor is available, create /dev/sdx and relevant partitions */
+            devnode_mknod(name, major, atoi(minor));
+            mknod_disk_partitions(name);
         }
+        free(dev);
     }
     closedir(dir);
 
