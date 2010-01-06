@@ -9,26 +9,31 @@
 
 #include <string.h>
 
+#define BUS_PCI                 0x01
+#define BUS_USB                 0x02
+#define DEVICE_PRIMARY_VGA      0x04
+#define DEVICE_MASS_STORAGE     0x08
+
 extern int cfg_debug;
 
 struct list {
     struct list *next;
     char *data;
-    int priority;
+    int type;
 };
 
-int list_has(struct list *listptr, const char *data);
-struct list *list_add(struct list *listptr, const char *data, int priority);
 
-void debug(const char *message);
+int list_has(struct list *listptr, const char *data);
+struct list *list_add(struct list *listptr, const char *data, int type);
+
+void debug(const char *msg);
 void *zalloc(size_t size);
 char *concat(const char *str, const char *append);
 char *my_readlink(const char *path);
 char *sys_value(const char *path, const char *value);
 int fnmatch(const char *p, const char *s);
 
-struct list *module_get_list(const char *syspath);
-struct list *module_get_list2(const char *syspath);
+struct list *module_get_list(int bustype);
 int module_probe(const char *name);
 
 int probe_pci_modules(void);

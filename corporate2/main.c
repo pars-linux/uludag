@@ -15,6 +15,7 @@
 
 int cfg_debug = 0;
 int cfg_drm = 0;
+int cfg_wait_storage = 0;
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +25,7 @@ int main(int argc, char *argv[])
     for (i = 1; i < argc; ++i) {
         cfg_drm   = !strcmp(argv[i], "--drm")   ? 1 : cfg_drm;
         cfg_debug = !strcmp(argv[i], "--debug") ? 1 : cfg_debug;
+        cfg_wait_storage = !strcmp(argv[i], "--wait-for-storage") ? 1 : cfg_wait_storage;
     }
 
     if (cfg_drm)
@@ -40,14 +42,9 @@ int main(int argc, char *argv[])
      * If these are on usb bus, they need some time to properly
      * setup, so we wait a little bit.
      */
-    if (has_scsi_storage) {
-        debug("has_scsi_storage is true, sleeping for 2 seconds..");
-        sleep(2);
-    }
-
-    if (has_scsi_storage) {
-        debug("has_scsi_storage is true, sleeping for 1 second..");
-        sleep(1);
+    if (cfg_wait_storage && has_scsi_storage) {
+        debug("Waiting 3 seconds for USB mass storage devices to settle...");
+        sleep(3);
     }
 
     /* Create device nodes for disks/partitions */
