@@ -53,6 +53,11 @@ Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from faceb
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
+
+\item fluidsynth ğaketi kurulumu sonrası:
+
+multimedia-tr.pdf vlc testini gerçekleştiriniz.
+
 \item mixxx paketi kurulumu sonrası:
 
 Kmenüden uygulamanın açılabildiğini gözlemleyin.
@@ -125,9 +130,8 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # mpg123 music.mp3
+  # mpg123 sample.mp3
  \end{verbatim}
-
 
 \end{enumerate}
 
@@ -171,7 +175,22 @@ Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
  nrg2iso
  vnc2swf
+ subtitleripper
 \end{verbatim}
+\item soundconverter paketi kurulumu sonrası:
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+\end{verbatim}
+
+Kmenü'den uygulamayı açın ve yukarıda bulunan dosyayı açın ve daha sonra "dönüştür" butonuna basın. Dosyanın kopyalandığı dizinde sample.ogg adında bir dosya oluştuğunu gözlemleyin.
+
+Daha sonra bu dosyayı mplayer ile çalıştırın ve sorunsuz olarak çalıştığını gözlemleyin.
+\begin{verbatim}
+ mplayer sample.ogg
+\end{verbatim}
+
+
+
 
  \item amrwb ve amrnb paketleri kurulumu sonrası:
 
@@ -250,7 +269,7 @@ Ev dizininiz altında rip ettiğiniz format adı (mp3, wav, ogg, flac olabilir) 
 
 \item libnut paketi kurulumu sonrası:
 
-multimedia-tr.pdf mplayer ve ffmeg testlerini gerçekleştirin.
+multimedia-tr.pdf mplayer ve ffmpeg testlerini gerçekleştirin.
 
 \item mkvtoolnix paketi kurulumu sonrası:
 
@@ -344,6 +363,7 @@ Lake_dance_XviD.AVI
 \begin{verbatim}
  gimp-data-extras
  tachyon
+ graphviz-docs
 \end{verbatim}
 \item tesseract paketi kurulumu sonrası:
 
@@ -505,8 +525,9 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
 
 Yukarıdaki bağlantıda bulunan dosyaların aşağıda bulunan komutlar ile düzgün çalıştığını gözlemleyiniz.
   \begin{verbatim}
-   # animate test_animate.gif
-   # diplay test.*
+   cd graphics
+   animate test_animate.gif
+   diplay test.* (diğer tüm dosyalar için)
   \end{verbatim}
 \item tuxpaint, tuxpaint-stamps ve tuxpaint-doc paketleri kurulumu sonrası:
   \begin{itemize}

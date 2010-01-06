@@ -20,6 +20,13 @@
 \begin{verbatim}
  aircrack-ng
 \end{verbatim}
+\item bind-tools paketi kurulumu sonrası:
+
+\begin{verbatim}
+# dig www.google.com
+\end{verbatim}
+Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.
+
 \item netcat paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve komutun sorunsuz bir şekilde ilgili portu dinlediğini gözlemleyin.
@@ -137,6 +144,14 @@ Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indi
 
 \section{Chat alt Bileşeni}
 \begin{enumerate}
+\item amsn-skin-oxygen paketi kurulumu sonrası:
+
+Kmenüden amsn uygulamasını açın ve okosijen teması ile açıldığını gözlemleyin.
+
+\item amsn paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve msn ayarlarınızı yapınız. Sorunsuz bir şekilde beğlanabildiğinizi gözlemleyin.
+
 \item psi ve psimedia paketi kurulumu sonrası:
 
 Kmenüden uygulamayı açın ve eğer bir jabber hesabınız var ise bu bu hesabı ekleyin ve bağlantının şağlanabildiğini gözlemleyin.
@@ -208,6 +223,22 @@ Bu dosyayı indirin ve indirme penceresinin düzgün bir şekilde açıldığın
 
 \section{Monitor alt Bileşeni}
 \begin{enumerate}
+ \item net-snmp paketi kurulumu sonrası:
+
+Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin.
+\begin{verbatim}
+ service net_snp status
+\end{verbatim}
+
+\item net-snmptrap paketi kurulumu sonrası:
+
+Servis yöneticisinden net\_snp servisini başlatın ve aşağıda bulunan komut ile başlatıldığını gözlemleyin.
+\begin{verbatim}
+ service net_snmptrap status
+\end{verbatim}
+
+
+
  \item wireshark paketi kurulumu sonrası:
 	Wireshark uygulamasını açın, interface listesinden eth0 seçin ve bu interface ile ilgili paketleri listelendiğini gözlemleyin.
 \end{enumerate}
@@ -231,11 +262,12 @@ Bu dosyayı indirin ve indirme penceresinin düzgün bir şekilde açıldığın
 		\item Kmail menü çubuğundan Araçlar $\rightarrow$  Spam engelleme sihirbazı yolunu izleyin.
 		\item İndirdiğiniz ilgili spam filtresini seçin.
 		\item Bir postaya sağ tıklayın ve combobox'tan Filtreyi uygula $\rightarrow$ Filtreyi çöp posta olarak sınıflandır yolunu izleyin.
+
 		Bu spam'in ilgili spam klasörüne gittiğini gözlemleyin.( Default spam klasörü eğer değitirmediyseniz çöp klasörü olacaktır.)
 
 		\item Aşağıdaki linkten gtube.txt'yi indirin: 
 		\begin{verbatim}
- 		http://spamassassin.apache.org/gtube/
+ 		wget http://www.anta.net/irt/gtube.txt
 		\end{verbatim}
 		\item  Konsoldan komutu çalıştırın:
 		\begin{verbatim}
@@ -272,7 +304,7 @@ http://www.dailymotion.com/relevance/search/lorena+mckennit/video/xd9s3_princess
 \end{verbatim}
 \item gecko-mediaplayer paketi kurulumu sonrası:
 \begin{itemize}
-  \item Firefox $\rightarrow$ Düzen $\rightarrow$ Seçenekler $\rightarrow$ Eklentileri Yönet $\rightarrow$ Yan Uygulamalar bölümünde gecko-mediaplayer eklentisinin eklenmiş olduğunu gözlemleyin.
+  \item Firefox $\rightarrow$ Düzen $\rightarrow$ Seçenekler $\rightarrow$ Eklentileri Yönet $\rightarrow$ Yan Uygulamalar bölümünde gecko-mediaplayer eklentisinin eklenmiş olduğunu ve etkin olduğunu gözlemleyin.
   \item Aşağıda bulunan uzantıdaki videoları firefox üzerinden açınız. Ve düzgün bir şekilde çalıştıklarını gözlemleyiniz.
   \begin{verbatim}
   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/  
