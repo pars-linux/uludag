@@ -87,7 +87,8 @@ resume_from_hibernate() {
     fi
 }
 
-# maybe we should just source the file instead of parsing
+# FIXME: maybe we should just source the file instead of parsing
+#        also consider merging conf parser and cmdline parser
 parse_config() {
     while read inputline;
     do
