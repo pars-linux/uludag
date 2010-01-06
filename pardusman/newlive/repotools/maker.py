@@ -256,7 +256,8 @@ def setup_isolinux(project):
     # copy config and gfxboot stuff
     generate_isolinux_conf(project)
 
-    copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux-debug.bin"), "%s/isolinux.bin" % dest)
+    # we don't use debug anymore for the sake of hybrid
+    copy(os.path.join(image_dir, "usr/lib/syslinux/isolinux.bin"), "%s/isolinux.bin" % dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/hdt.c32"), dest)
     copy(os.path.join(image_dir, "usr/lib/syslinux/gfxboot.com"), dest)
     copy(os.path.join(image_dir, "usr/share/misc/pci.ids"), dest)
