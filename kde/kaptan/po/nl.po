@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-29 00:11+0200\n"
+"POT-Creation-Date: 2010-01-06 14:37+0200\n"
 "PO-Revision-Date: 30/12/09 22:24\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -86,19 +86,19 @@ msgstr "Muisinstellingen"
 msgid "Configure your mouse"
 msgstr "Configureer uw muis"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Left Handed"
 msgstr "Linkshandig"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Right Handed"
 msgstr "Rechtshandig"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Single Click "
 msgstr "Enkele klik"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Double Click"
 msgstr "Dubbelklik"
 
@@ -122,11 +122,11 @@ msgstr "Enigzins pakkende titel van desktop-zoekactie"
 msgid "Some catchy description desktop search"
 msgstr "Enigzins pakkende beschrijving van desktop-zoekactie"
 
-#: .tmp/ScrSearch.py:59
+#: .tmp/ScrSearch.py:57
 msgid "On"
 msgstr "Aan"
 
-#: .tmp/ScrSearch.py:61
+#: .tmp/ScrSearch.py:59
 msgid "Off"
 msgstr "Uit"
 
@@ -323,11 +323,11 @@ msgstr "Meer"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
-#: .tmp/ui_mouseWidget.py:166 .tmp/ui_networkWidget.py:66
+#: .tmp/ui_mouseWidget.py:167 .tmp/ui_networkWidget.py:66
 #: .tmp/ui_packageWidget.py:142 .tmp/ui_searchWidget.py:75
 #: .tmp/ui_smoltWidget.py:119 .tmp/ui_smoltWidget.py:120
 #: .tmp/ui_styleWidget.py:133 .tmp/ui_styleWidget.py:134
-#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:95
+#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:106
 #: .tmp/ui_welcomeWidget.py:59
 msgid "color: rgb(234, 225, 228);"
 msgstr "color: rgb(234, 225, 228);"
@@ -338,9 +338,9 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
-"<b>De instellingen zijn toegepast.</b> Begin nu van Pardus te genieten of gebruik "
-"de volgende linken of toepassingen voor meer instellingen en ondersteuning. Vergeet "
-"niet aan de <b>Pardus-gemeenschap deel te nemen!</b>"
+"<b>De instellingen zijn toegepast.</b> Begin nu van Pardus te genieten of "
+"gebruik de volgende linken of toepassingen voor meer instellingen en "
+"ondersteuning. Vergeet niet aan de <b>Pardus-gemeenschap deel te nemen!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -425,8 +425,8 @@ msgid ""
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
 "Kaptan selecteert automatisch de beste bij de systeemtaal bijbehorende "
-"toetsenborduitvoering. Indien een andere dan de standaard gewenst is, selecteer "
-"een andere en test deze ook hier."
+"toetsenborduitvoering. Indien een andere dan de standaard gewenst is, "
+"selecteer een andere en test deze ook hier."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -462,49 +462,49 @@ msgstr "Menustijlen"
 msgid "Sample"
 msgstr "Voorbeeld"
 
-#: .tmp/ui_mouseWidget.py:165
+#: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
 msgstr "Muis"
 
-#: .tmp/ui_mouseWidget.py:167
+#: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
 msgstr "Muisgedrag instellen"
 
-#: .tmp/ui_mouseWidget.py:168
+#: .tmp/ui_mouseWidget.py:169
 msgid ""
 "The <b>clicking behavior</b> defines how many times you want to click when "
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
-"Het <b>klikgedrag</b> bepaalt hoeveel maal nodig is om een bestand te openen. "
-"Voor <b>linkshandige</b> is het handig om de functies van de linker - en "
-"rechter muisknop te verwisselen."
+"Het <b>klikgedrag</b> bepaalt hoeveel maal nodig is om een bestand te "
+"openen. Voor <b>linkshandige</b> is het handig om de functies van de linker "
+"- en rechter muisknop te verwisselen."
 
-#: .tmp/ui_mouseWidget.py:169
+#: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
 msgstr "Klikgedrag"
 
-#: .tmp/ui_mouseWidget.py:170
+#: .tmp/ui_mouseWidget.py:171
 msgid "Dou&ble-click to open files and folders"
 msgstr "Du&bbel kikken opent bestanden en mappen"
 
-#: .tmp/ui_mouseWidget.py:171
+#: .tmp/ui_mouseWidget.py:172
 msgid "Single-click to open files and folders"
 msgstr "Enkele klik opent bestanden en mappen"
 
-#: .tmp/ui_mouseWidget.py:172
+#: .tmp/ui_mouseWidget.py:173
 msgid "Button Order"
 msgstr "Knopvolgorde"
 
-#: .tmp/ui_mouseWidget.py:173
+#: .tmp/ui_mouseWidget.py:174
 msgid "Right Hand"
 msgstr "Rechtshandig"
 
-#: .tmp/ui_mouseWidget.py:174
+#: .tmp/ui_mouseWidget.py:175
 msgid "Reverse scrolling"
 msgstr "Omgekeerd scrollen"
 
-#: .tmp/ui_mouseWidget.py:175
+#: .tmp/ui_mouseWidget.py:176
 msgid "Left Hand"
 msgstr "Linkshandig"
 
@@ -523,10 +523,11 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
-"Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</b> "
-"en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na een zoeken de "
-"gewenste bron gevonden worden en stel eventueel de bijbehorende sleutel in. Na toepassen "
-"van het profiel kan door markeren van het keuzeveld de verbinding gemaakt worden."
+"Voor het aanmaken van een nieuwe verbinding selecteer <b>Profiel aanmaken</"
+"b> en selecteer de poort uit de lijst. Bij een draadloze verbinding kan na "
+"een zoeken de gewenste bron gevonden worden en stel eventueel de "
+"bijbehorende sleutel in. Na toepassen van het profiel kan door markeren van "
+"het keuzeveld de verbinding gemaakt worden."
 
 #: .tmp/ui_packageWidget.py:141
 msgid "Packages"
@@ -571,8 +572,9 @@ msgid ""
 "set the period for checking new updates."
 msgstr ""
 "Gebruik pakketbeheer voor het installeren en verwijderen van programma's in "
-"Pardus. Het kan ook automatisch de laatst beschikbare opwaarderingen installeren. "
-"Tevens kan de tijdinterval voor controle op opwaarderingen ingesteld worden."
+"Pardus. Het kan ook automatisch de laatst beschikbare opwaarderingen "
+"installeren. Tevens kan de tijdinterval voor controle op opwaarderingen "
+"ingesteld worden."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
@@ -608,11 +610,11 @@ msgstr "Mijn profiel &verzenden"
 msgid "color:rgb(95, 34, 52)"
 msgstr "color:rgb(95, 34, 52)"
 
-#: .tmp/ui_smoltWidget.py:124
+#: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
-#: .tmp/ui_smoltWidget.py:125
+#: .tmp/ui_smoltWidget.py:126
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -702,11 +704,11 @@ msgstr ""
 "span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</"
 "span><span style=\" font-size:9pt;\">\"</span></p></body></html>"
 
-#: .tmp/ui_smoltWidget.py:134
+#: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
 msgstr "Help bij het verbeteren van Pardus!"
 
-#: .tmp/ui_smoltWidget.py:135
+#: .tmp/ui_smoltWidget.py:136
 msgid ""
 "<b>Smolt</b> is a tool that collects the information in the following table "
 "and sends it to us for which lets us improve Pardus according to the user "
@@ -716,19 +718,19 @@ msgstr ""
 "verzamelen en te versturen waardoor Pardus aan de hand gebruikte "
 "profielstatistieken verbeterd kan worden."
 
-#: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
 msgstr "Formulier"
 
-#: .tmp/ui_styleitem.py:59 .tmp/ui_uiitem.py:57
+#: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
 msgstr "border: 1px solid rgb(236, 236, 236, 100);"
 
-#: .tmp/ui_styleitem.py:60
+#: .tmp/ui_styleitem.py:62
 msgid "styleName"
 msgstr "Stijlnaam"
 
-#: .tmp/ui_styleitem.py:61
+#: .tmp/ui_styleitem.py:63
 msgid "styleDesc"
 msgstr "Stijlbeschrijving"
 
@@ -745,8 +747,8 @@ msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
-"Selecteer uw favoriete thema en type bureaublad. Pas Pardus aan met kleurrijke "
-"stijlen en thema's."
+"Selecteer uw favoriete thema en type bureaublad. Pas Pardus aan met "
+"kleurrijke stijlen en thema's."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -832,11 +834,11 @@ msgstr "Achtergrondnaam"
 msgid "wallpaperDesc"
 msgstr "Achtergrondbeschrijving"
 
-#: .tmp/ui_wallpaperWidget.py:94
+#: .tmp/ui_wallpaperWidget.py:105
 msgid "Wallpaper"
 msgstr "Achtergrond"
 
-#: .tmp/ui_wallpaperWidget.py:96
+#: .tmp/ui_wallpaperWidget.py:107
 msgid ""
 "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
 "x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
@@ -850,26 +852,30 @@ msgstr ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 
-#: .tmp/ui_wallpaperWidget.py:99
+#: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
 msgstr "Achtergrond uit een bestand kiezen"
 
-#: .tmp/ui_wallpaperWidget.py:100
+#: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
 msgstr "Achtergrond niet wijzigen"
 
-#: .tmp/ui_wallpaperWidget.py:101
+#: .tmp/ui_wallpaperWidget.py:112
 msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
-msgstr "Selecteer de favoriete achtergrondafbeelding voor Pardus. Vergeet niet om te kijken bij <b>Bureaublad instellen</b> voor het ophalen van nieuwe en mooie achtergrondafbeeldingen."
+msgstr ""
+"Selecteer de favoriete achtergrondafbeelding voor Pardus. Vergeet niet om te "
+"kijken bij <b>Bureaublad instellen</b> voor het ophalen van nieuwe en mooie "
+"achtergrondafbeeldingen."
 
-#: .tmp/ui_wallpaperWidget.py:102
+#: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
 msgstr "Achtergrondafbeelding kiezen"
 
 #: .tmp/ui_welcomeWidget.py:60
-msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
+#, fuzzy
+msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
 msgstr "Welkom bij Pardus 2009.1 <sup>bèta</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
@@ -881,9 +887,9 @@ msgid ""
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
 msgstr ""
-"<b>Pardus</b> is een betrouwbaar, veilig, snel en gebruikersvriendelijk besturingssysteem.<br /><br />Met Pardus kunt u verbinding met het internet "
-"maken, uw emails lezen, met office-documenten werken, films kijken, muziek afspelen, "
-"toepassingen maken, games spelen en nog veel meer! <br /><br /><b>Kaptan</b> "
-"zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van het Pardus systeem. "
-"Selecteer <b>Volgende</b> om te starten."
-
+"<b>Pardus</b> is een betrouwbaar, veilig, snel en gebruikersvriendelijk "
+"besturingssysteem.<br /><br />Met Pardus kunt u verbinding met het internet "
+"maken, uw emails lezen, met office-documenten werken, films kijken, muziek "
+"afspelen, toepassingen maken, games spelen en nog veel meer! <br /><br /"
+"><b>Kaptan</b> zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van "
+"het Pardus systeem. Selecteer <b>Volgende</b> om te starten."

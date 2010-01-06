@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-29 00:11+0200\n"
+"POT-Creation-Date: 2010-01-06 14:37+0200\n"
 "PO-Revision-Date: 2009-07-17 01:52+0300\n"
 "Last-Translator: Renan Çakırerk <renan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -65,8 +65,8 @@ msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
-"Basit menü KDE3 ile birlikte gelen eski stil bir menüdür.<br><br> Hafif ve hızlı "
-"yapısı yüzünden yavaş bilgisayarlar için tavsiye edilir."
+"Basit menü KDE3 ile birlikte gelen eski stil bir menüdür.<br><br> Hafif ve "
+"hızlı yapısı yüzünden yavaş bilgisayarlar için tavsiye edilir."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
 msgid "Lancelot Menu"
@@ -89,19 +89,19 @@ msgstr "Fare Ayarları"
 msgid "Configure your mouse"
 msgstr "Farenizi yapılandırın"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Left Handed"
 msgstr "Sol El"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Right Handed"
 msgstr "Sağ El"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Single Click "
 msgstr "Tek Tıklama"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Double Click"
 msgstr "Çift Tıklama"
 
@@ -125,11 +125,11 @@ msgstr "Masaüstü araması hakkında güzel bir başlık"
 msgid "Some catchy description desktop search"
 msgstr "Masaüstü araması hakkında güzel bir açıklama"
 
-#: .tmp/ScrSearch.py:59
+#: .tmp/ScrSearch.py:57
 msgid "On"
 msgstr "Açık"
 
-#: .tmp/ScrSearch.py:61
+#: .tmp/ScrSearch.py:59
 msgid "Off"
 msgstr "Kapalı"
 
@@ -326,11 +326,11 @@ msgstr "Diğer"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
-#: .tmp/ui_mouseWidget.py:166 .tmp/ui_networkWidget.py:66
+#: .tmp/ui_mouseWidget.py:167 .tmp/ui_networkWidget.py:66
 #: .tmp/ui_packageWidget.py:142 .tmp/ui_searchWidget.py:75
 #: .tmp/ui_smoltWidget.py:119 .tmp/ui_smoltWidget.py:120
 #: .tmp/ui_styleWidget.py:133 .tmp/ui_styleWidget.py:134
-#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:95
+#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:106
 #: .tmp/ui_welcomeWidget.py:59
 msgid "color: rgb(234, 225, 228);"
 msgstr "color: rgb(234, 225, 228);"
@@ -341,9 +341,9 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
-"<b>Ayarlarınız kaydedildi.</b> Artık Pardus'un tadını "
-"çıkarmaya başlayabilirsiniz. Daha detaylı ayarlar veya yardım ve destek için "
-"aşağıdaki program ve linkleri inceleyebilirsiniz. <b>Topluluğumuza üye olmayı "
+"<b>Ayarlarınız kaydedildi.</b> Artık Pardus'un tadını çıkarmaya "
+"başlayabilirsiniz. Daha detaylı ayarlar veya yardım ve destek için aşağıdaki "
+"program ve linkleri inceleyebilirsiniz. <b>Topluluğumuza üye olmayı "
 "unutmayın!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
@@ -383,13 +383,12 @@ msgid "Help and Support"
 msgstr "Yardım ve Destek"
 
 #: .tmp/ui_goodbyeWidget.py:266
-
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
 msgstr ""
-"Pardus topluluğu, e-posta listeleri, chat odaları, viki'ler, yardım ve destek "
-"sayfaları..."
+"Pardus topluluğu, e-posta listeleri, chat odaları, viki'ler, yardım ve "
+"destek sayfaları..."
 
 #: .tmp/ui_kaptanMain.py:136
 msgid "Kaptan Desktop"
@@ -428,8 +427,9 @@ msgid ""
 "Kaptan automatically selects the best keyboard layout according to your "
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
-msgstr "Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer."
-"Eğer varsayılan düzenden başka bir düzen seçmek istiyorsanız aşağıda bulunan "
+msgstr ""
+"Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer.Eğer "
+"varsayılan düzenden başka bir düzen seçmek istiyorsanız aşağıda bulunan "
 "listeden uygun olan düzeni seçip hemen test edebilirsiniz."
 
 #: .tmp/ui_menuWidget.py:144
@@ -444,8 +444,7 @@ msgstr "Bir Menü Stili Seçin"
 msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
-msgstr ""
-"KDE menüsünü istediğiniz stili seçerek kişiselleştirebilirsiniz."
+msgstr "KDE menüsünü istediğiniz stili seçerek kişiselleştirebilirsiniz."
 
 #: .tmp/ui_menuWidget.py:149
 msgid ""
@@ -458,7 +457,6 @@ msgstr ""
 "}"
 
 #: .tmp/ui_menuWidget.py:152
-
 msgid "Menu Styles"
 msgstr "Menü Stilleri"
 
@@ -466,50 +464,50 @@ msgstr "Menü Stilleri"
 msgid "Sample"
 msgstr "Örnek"
 
-#: .tmp/ui_mouseWidget.py:165
+#: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
 msgstr "Fare"
 
-#: .tmp/ui_mouseWidget.py:167
+#: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
 msgstr "Fare Davranışını Belirleyin"
 
-#: .tmp/ui_mouseWidget.py:168
+#: .tmp/ui_mouseWidget.py:169
 msgid ""
 "The <b>clicking behavior</b> defines how many times you want to click when "
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
-"<b>Tıklama Biçimi</b> dosya açarken simgelere kaç kere "
-"tıklamanız gerektiğini belirlemenize yardımcı olur. "
-"Eğer <b>sol elinizi</b> kullanıyorsanız, fare butonlarının yerini değiştirerek "
-"farenizi daha rahat kullanabilirsiniz."
+"<b>Tıklama Biçimi</b> dosya açarken simgelere kaç kere tıklamanız "
+"gerektiğini belirlemenize yardımcı olur. Eğer <b>sol elinizi</b> "
+"kullanıyorsanız, fare butonlarının yerini değiştirerek farenizi daha rahat "
+"kullanabilirsiniz."
 
-#: .tmp/ui_mouseWidget.py:169
+#: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
 msgstr "Tıklama Biçimi"
 
-#: .tmp/ui_mouseWidget.py:170
+#: .tmp/ui_mouseWidget.py:171
 msgid "Dou&ble-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için &çift tıkla"
 
-#: .tmp/ui_mouseWidget.py:171
+#: .tmp/ui_mouseWidget.py:172
 msgid "Single-click to open files and folders"
 msgstr "Dosya ve dizinleri açmak için tek tıkla"
 
-#: .tmp/ui_mouseWidget.py:172
+#: .tmp/ui_mouseWidget.py:173
 msgid "Button Order"
 msgstr "Düğme Sırası"
 
-#: .tmp/ui_mouseWidget.py:173
+#: .tmp/ui_mouseWidget.py:174
 msgid "Right Hand"
 msgstr "Sağ El"
 
-#: .tmp/ui_mouseWidget.py:174
+#: .tmp/ui_mouseWidget.py:175
 msgid "Reverse scrolling"
 msgstr "Tekerlek ters kaydırsın"
 
-#: .tmp/ui_mouseWidget.py:175
+#: .tmp/ui_mouseWidget.py:176
 msgid "Left Hand"
 msgstr "Sol El"
 
@@ -528,10 +526,10 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
-"Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve listeden "
-"uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki kutucuğu "
-"işaretleyip İnternet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz ise "
-"erişim noktasını seçip şifrenizi girmeyi unutmayın."
+"Yeni bir bağlantı oluşturmak için <b>Profil Oluştur</b>'a tıklayın ve "
+"listeden uygun cihazı seçtikten sonra oluşturulan bağlantının yanındaki "
+"kutucuğu işaretleyip İnternet'e bağlanabilirsiniz. Eğer bağlantınız kablosuz "
+"ise erişim noktasını seçip şifrenizi girmeyi unutmayın."
 
 #: .tmp/ui_packageWidget.py:141
 msgid "Packages"
@@ -575,11 +573,10 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
-"Pardus'ta program yükleyip silme işlemleri <b>Paket "
-"Yöneticisi</b> tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi "
-"otomatik olarak güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol "
-"etme sıklığını belirleyebilirsiniz."
-
+"Pardus'ta program yükleyip silme işlemleri <b>Paket Yöneticisi</b> "
+"tarafından yapılır. Paket Yöneticisi aynı zamanda sisteminizi otomatik "
+"olarak güncelleyebilir. Paket Yöneticisi'nin güncellemeleri kontrol etme "
+"sıklığını belirleyebilirsiniz."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
@@ -599,10 +596,10 @@ msgid ""
 "very fast file search results. Strigi also can search for files based on "
 "their contents."
 msgstr ""
-"Strigi Masaüstü Arama yardımcısı sık "
-"kullandığınız dosyaları hafızasına alarak arama yaptığınızda hızlıca "
-"bulunmalarını sağlar. Strigi ayrıca dosyaların yalnızca ismine değil, "
-"içeriğine bakarak da arama yapmanıza olanak sağlar."
+"Strigi Masaüstü Arama yardımcısı sık kullandığınız dosyaları hafızasına "
+"alarak arama yaptığınızda hızlıca bulunmalarını sağlar. Strigi ayrıca "
+"dosyaların yalnızca ismine değil, içeriğine bakarak da arama yapmanıza "
+"olanak sağlar."
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
@@ -616,11 +613,11 @@ msgstr "Donanım Bilgisini &Gönder"
 msgid "color:rgb(95, 34, 52)"
 msgstr "color: rgb(95, 34, 52);"
 
-#: .tmp/ui_smoltWidget.py:124
+#: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
-#: .tmp/ui_smoltWidget.py:125
+#: .tmp/ui_smoltWidget.py:126
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -706,33 +703,33 @@ msgstr ""
 "font-style:italic;\">smoltDeleteProfile</span>\" vasıtasıyla profillerini "
 "istedikleri zaman silebilirler.</p></body></html>"
 
-#: .tmp/ui_smoltWidget.py:134
+#: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
 msgstr "Pardus'a Katkıda Bulunun!"
 
-#: .tmp/ui_smoltWidget.py:135
+#: .tmp/ui_smoltWidget.py:136
 msgid ""
 "<b>Smolt</b> is a tool that collects the information in the following table "
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
-"<b>Smolt,</b> aşağıdaki tabloda gösterilen sistem "
-"bilgilerinizi bizlere göndererek  istatistikler doğrultusunda Pardus'u "
-"geliştirmemize katkıda bulunur."
+"<b>Smolt,</b> aşağıdaki tabloda gösterilen sistem bilgilerinizi bizlere "
+"göndererek  istatistikler doğrultusunda Pardus'u geliştirmemize katkıda "
+"bulunur."
 
-#: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_styleitem.py:59 .tmp/ui_uiitem.py:57
+#: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:60
+#: .tmp/ui_styleitem.py:62
 msgid "styleName"
 msgstr "biçemİsmi"
 
-#: .tmp/ui_styleitem.py:61
+#: .tmp/ui_styleitem.py:63
 msgid "styleDesc"
 msgstr "biçemAçıklaması"
 
@@ -749,8 +746,8 @@ msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
-"Favori temanızı ve masaüstü tipini seçip, "
-"Pardus'u renkli stil ve temalarla kişiselleştirebilirsiniz."
+"Favori temanızı ve masaüstü tipini seçip, Pardus'u renkli stil ve temalarla "
+"kişiselleştirebilirsiniz."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -809,10 +806,10 @@ msgid ""
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
 "ready to enjoy Pardus!"
 msgstr ""
-"Bütün adımları başarıyla tamamladınız. Aşağıda "
-"uygulanmasını istediğiniz ayarların listesini görebilirsiniz. "
-"<b>Ayarları Uygula</b> tuşuna bastığınızda "
-"ayarlarınız kaydedilecektir. Artık Pardus'un tadını çıkarmaya hazırsınız!"
+"Bütün adımları başarıyla tamamladınız. Aşağıda uygulanmasını istediğiniz "
+"ayarların listesini görebilirsiniz. <b>Ayarları Uygula</b> tuşuna "
+"bastığınızda ayarlarınız kaydedilecektir. Artık Pardus'un tadını çıkarmaya "
+"hazırsınız!"
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -822,11 +819,11 @@ msgstr "duvarkağıdıİsmi"
 msgid "wallpaperDesc"
 msgstr "duvarkağıdıAçıklaması"
 
-#: .tmp/ui_wallpaperWidget.py:94
+#: .tmp/ui_wallpaperWidget.py:105
 msgid "Wallpaper"
 msgstr "Duvarkağıdı"
 
-#: .tmp/ui_wallpaperWidget.py:96
+#: .tmp/ui_wallpaperWidget.py:107
 msgid ""
 "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
 "x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
@@ -835,29 +832,29 @@ msgid ""
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:99
+#: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
 msgstr "Duvarkağıdını Dosyadan Seç"
 
-#: .tmp/ui_wallpaperWidget.py:100
+#: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
 msgstr "Duvarkağıdını değiştirme"
 
-#: .tmp/ui_wallpaperWidget.py:101
+#: .tmp/ui_wallpaperWidget.py:112
 msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
-"Masaüstünüz için en beğendiğiniz duvar kağıdını "
-"seçin. <b>Masaüstü Ayarları</b>'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın."
+"Masaüstünüz için en beğendiğiniz duvar kağıdını seçin. <b>Masaüstü Ayarları</"
+"b>'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın."
 
-#: .tmp/ui_wallpaperWidget.py:102
+#: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
 msgstr "Duvarkağıdı Seçin"
 
 #: .tmp/ui_welcomeWidget.py:60
-msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
-msgstr "Pardus 2009.1 <sup>beta</sup>'ya Hoşgeldiniz"
+msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
+msgstr "Pardus 2009.1 <sup>RC</sup> 'ye Hoşgeldiniz"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -868,11 +865,10 @@ msgid ""
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
 msgstr ""
-"<b>Pardus</b> güvenilir, hızlı ve kullanıcı dostu bir "
-"işletim sistemidir. <br /><br />Pardus ile İnternet'e bağlanabilir, e-posta'larınızı "
-"okuyabilir, ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  "
-"dinleyebilir, uygulama geliştirebilir, oyunlar oynayabilir ve çok daha "
-"fazlasını yapabilirsiniz!<br /><br />"
-"<b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve kolayca "
-"kişiselleştirmenize yardımcı olan bir uygulamadır. "
-"Lütfen başlamak için <b>İleri</b>'ye tıklayın."
+"<b>Pardus</b> güvenilir, hızlı ve kullanıcı dostu bir işletim sistemidir. "
+"<br /><br />Pardus ile İnternet'e bağlanabilir, e-posta'larınızı okuyabilir, "
+"ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  dinleyebilir, "
+"uygulama geliştirebilir, oyunlar oynayabilir ve çok daha fazlasını "
+"yapabilirsiniz!<br /><br /><b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve "
+"kolayca kişiselleştirmenize yardımcı olan bir uygulamadır. Lütfen başlamak "
+"için <b>İleri</b>'ye tıklayın."
