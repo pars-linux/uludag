@@ -4,6 +4,11 @@
 	Use mknod() system call instead of forking system(),
 	Disable SCSI scanning as the only driver (st.ko) to-be-found-and-probed is now
 	built-in to the kernel image,
+	* (module.c): Alias parsing is completely dropped,
+	* (main.c): Disable waiting for USB storages by default, give
+	--wait-for-storage for explicitly waiting for them.
+	* (Makefile): Use -O2 as reducing code size doesn't matter much,
+	Compile with dietlibc which results in faster execution time.
 
 2010-01-05  Ozan Çağlayan <ozan@pardus.org.tr>
 	* (main.c): Probe only DRM modules if --drm is given,

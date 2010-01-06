@@ -12,6 +12,7 @@
 #include <dirent.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <errno.h>
 
 #include "common.h"
 
@@ -44,7 +45,7 @@ int devnode_mknod(const char *name, int major, int minor)
     /* Construct devpath */
     path = concat("/dev/", name);
 
-    /* Normalize path */
+    /* Normalize path for cciss like devices */
     for (t=path; *t != '\0'; t++) {
          if (*t == '!') *t = '/';
     }
@@ -53,7 +54,7 @@ int devnode_mknod(const char *name, int major, int minor)
     ensure_path(path);
     debug(concat("Calling mknod for ", path));
     if ((ret = mknod(path, S_IFBLK, makedev(major, minor))) < 0)
-        perror("devnode_mknod");
+        debug(concat("mknod: ", strerror(errno)));
 
     return ret;
 }

@@ -1,9 +1,8 @@
-
-CC= klcc
+CC= dietlibc-gcc
 EXE= coolplug
-OBJS= main.c utility.c module.c devnode.c #scsi.c
+OBJS= main.c utility.c module.c devnode.c
 INCLUDES= common.h
-CFLAGS= -Wall -Os
+CFLAGS= -Wall -O2
 LDFLAGS= -Wl,-z,noexecstack
 
 $(EXE): $(OBJS) $(INCLUDES)

@@ -13,10 +13,10 @@
 
 #include "common.h"
 
-void debug(const char *message)
+void debug(const char *msg)
 {
     if (cfg_debug)
-        fprintf(stdout, "DEBUG: %s\n", message);
+        fprintf(stdout, "DEBUG: %s\n", msg);
 }
 
 int list_has(struct list *listptr, const char *data)
@@ -31,7 +31,7 @@ int list_has(struct list *listptr, const char *data)
     return 0;
 }
 
-struct list* list_add(struct list *listptr, const char *data, int priority)
+struct list* list_add(struct list *listptr, const char *data, int type)
 {
     struct list *tmp;
 
@@ -42,7 +42,7 @@ struct list* list_add(struct list *listptr, const char *data, int priority)
     tmp = zalloc(sizeof(struct list));
     tmp->next = listptr;
     tmp->data = strdup(data);
-    tmp->priority = priority;
+    tmp->type = type;
     return tmp;
 }
 
