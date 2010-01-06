@@ -158,7 +158,7 @@ def generate_isolinux_conf(project):
         dict["rescue_template"] = """
 label rescue
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 yali4=rescue splash=silent quiet %(exparams)s
+    append initrd=/boot/initrd yali4=rescue splash=silent quiet %(exparams)s
 """ % dict
 
     isolinux_tmpl = """
@@ -169,7 +169,7 @@ ui gfxboot.com /boot/isolinux/init
 
 label pardus
     kernel /boot/kernel
-    append initrd=/boot/initrd root=/dev/ram0 splash=silent quiet %(exparams)s
+    append initrd=/boot/initrd splash=silent quiet %(exparams)s
 
 %(rescue_template)s
 
