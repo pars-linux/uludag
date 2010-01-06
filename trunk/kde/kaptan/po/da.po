@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-29 00:11+0200\n"
+"POT-Creation-Date: 2010-01-06 14:37+0200\n"
 "PO-Revision-Date: 2009-09-08 12:09+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -79,19 +79,19 @@ msgstr ""
 msgid "Configure your mouse"
 msgstr ""
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Left Handed"
 msgstr ""
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Right Handed"
 msgstr ""
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Single Click "
 msgstr ""
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Double Click"
 msgstr ""
 
@@ -115,11 +115,11 @@ msgstr ""
 msgid "Some catchy description desktop search"
 msgstr ""
 
-#: .tmp/ScrSearch.py:59
+#: .tmp/ScrSearch.py:57
 msgid "On"
 msgstr ""
 
-#: .tmp/ScrSearch.py:61
+#: .tmp/ScrSearch.py:59
 msgid "Off"
 msgstr ""
 
@@ -317,11 +317,11 @@ msgstr "Mus"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
-#: .tmp/ui_mouseWidget.py:166 .tmp/ui_networkWidget.py:66
+#: .tmp/ui_mouseWidget.py:167 .tmp/ui_networkWidget.py:66
 #: .tmp/ui_packageWidget.py:142 .tmp/ui_searchWidget.py:75
 #: .tmp/ui_smoltWidget.py:119 .tmp/ui_smoltWidget.py:120
 #: .tmp/ui_styleWidget.py:133 .tmp/ui_styleWidget.py:134
-#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:95
+#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:106
 #: .tmp/ui_welcomeWidget.py:59
 msgid "color: rgb(234, 225, 228);"
 msgstr ""
@@ -443,46 +443,46 @@ msgstr ""
 msgid "Sample"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:165
+#: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
 msgstr "Mus"
 
-#: .tmp/ui_mouseWidget.py:167
+#: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:168
+#: .tmp/ui_mouseWidget.py:169
 msgid ""
 "The <b>clicking behavior</b> defines how many times you want to click when "
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:169
+#: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:170
+#: .tmp/ui_mouseWidget.py:171
 msgid "Dou&ble-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:171
+#: .tmp/ui_mouseWidget.py:172
 msgid "Single-click to open files and folders"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:172
+#: .tmp/ui_mouseWidget.py:173
 msgid "Button Order"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:173
+#: .tmp/ui_mouseWidget.py:174
 msgid "Right Hand"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:174
+#: .tmp/ui_mouseWidget.py:175
 msgid "Reverse scrolling"
 msgstr ""
 
-#: .tmp/ui_mouseWidget.py:175
+#: .tmp/ui_mouseWidget.py:176
 msgid "Left Hand"
 msgstr ""
 
@@ -576,11 +576,11 @@ msgstr ""
 msgid "color:rgb(95, 34, 52)"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:124
+#: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:125
+#: .tmp/ui_smoltWidget.py:126
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -628,30 +628,30 @@ msgid ""
 "size:9pt;\">\"</span></p></body></html>"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:134
+#: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
 msgstr ""
 
-#: .tmp/ui_smoltWidget.py:135
+#: .tmp/ui_smoltWidget.py:136
 msgid ""
 "<b>Smolt</b> is a tool that collects the information in the following table "
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
 
-#: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:59 .tmp/ui_uiitem.py:57
+#: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:60
+#: .tmp/ui_styleitem.py:62
 msgid "styleName"
 msgstr ""
 
-#: .tmp/ui_styleitem.py:61
+#: .tmp/ui_styleitem.py:63
 msgid "styleDesc"
 msgstr ""
 
@@ -736,11 +736,11 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:94
+#: .tmp/ui_wallpaperWidget.py:105
 msgid "Wallpaper"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:96
+#: .tmp/ui_wallpaperWidget.py:107
 msgid ""
 "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
 "x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
@@ -749,26 +749,26 @@ msgid ""
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:99
+#: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:100
+#: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:101
+#: .tmp/ui_wallpaperWidget.py:112
 msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:102
+#: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
 msgstr ""
 
 #: .tmp/ui_welcomeWidget.py:60
-msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
+msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
 msgstr ""
 
 #: .tmp/ui_welcomeWidget.py:61

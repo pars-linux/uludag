@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-29 00:11+0200\n"
+"POT-Creation-Date: 2010-01-06 14:37+0200\n"
 "PO-Revision-Date: 2010-01-01 21:36+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <pardus-translators@pardus.org.tr>\n"
@@ -84,19 +84,19 @@ msgstr "Paramètres de la souris"
 msgid "Configure your mouse"
 msgstr "Configurer votre souris"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Left Handed"
 msgstr "Gaucher"
 
-#: .tmp/ScrMouse.py:135
+#: .tmp/ScrMouse.py:134
 msgid "Right Handed"
 msgstr "Droitier"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Single Click "
 msgstr "Simple clic"
 
-#: .tmp/ScrMouse.py:136
+#: .tmp/ScrMouse.py:135
 msgid "Double Click"
 msgstr "Double clic"
 
@@ -120,11 +120,11 @@ msgstr "Un titre pour la recherche sur le bureau"
 msgid "Some catchy description desktop search"
 msgstr "Une description de la recherche sur le bureau"
 
-#: .tmp/ScrSearch.py:59
+#: .tmp/ScrSearch.py:57
 msgid "On"
 msgstr "Marche"
 
-#: .tmp/ScrSearch.py:61
+#: .tmp/ScrSearch.py:59
 msgid "Off"
 msgstr "Arrêt"
 
@@ -321,11 +321,11 @@ msgstr "Plus"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
-#: .tmp/ui_mouseWidget.py:166 .tmp/ui_networkWidget.py:66
+#: .tmp/ui_mouseWidget.py:167 .tmp/ui_networkWidget.py:66
 #: .tmp/ui_packageWidget.py:142 .tmp/ui_searchWidget.py:75
 #: .tmp/ui_smoltWidget.py:119 .tmp/ui_smoltWidget.py:120
 #: .tmp/ui_styleWidget.py:133 .tmp/ui_styleWidget.py:134
-#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:95
+#: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:106
 #: .tmp/ui_welcomeWidget.py:59
 msgid "color: rgb(234, 225, 228);"
 msgstr "color: rgb(234, 225, 228);"
@@ -337,10 +337,9 @@ msgid ""
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
 "<b>Vos paramètres ont été appliqués.</b> Vous pouvez dorénavant profiter de "
-"Pardus ou "
-"regarder les liens et applications suivants pour plus un paramètrage plus "
-"avancé ou pour de l'aide. N'oubliez pas de vous <b>inscrire sur notre forum "
-"!</b>"
+"Pardus ou regarder les liens et applications suivants pour plus un "
+"paramètrage plus avancé ou pour de l'aide. N'oubliez pas de vous <b>inscrire "
+"sur notre forum !</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -462,15 +461,15 @@ msgstr "Styles de menu"
 msgid "Sample"
 msgstr "Exemple"
 
-#: .tmp/ui_mouseWidget.py:165
+#: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
 msgstr "Souris"
 
-#: .tmp/ui_mouseWidget.py:167
+#: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
 msgstr "Configurer le comportement de la souris"
 
-#: .tmp/ui_mouseWidget.py:168
+#: .tmp/ui_mouseWidget.py:169
 msgid ""
 "The <b>clicking behavior</b> defines how many times you want to click when "
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
@@ -480,31 +479,31 @@ msgstr ""
 "l'ouverture d'un fichier. Si vous êtes <b>gaucher</b>, vous préfèrerez sans "
 "doute échanger les boutons gauche et droit de la souris."
 
-#: .tmp/ui_mouseWidget.py:169
+#: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
 msgstr "Comportement du clic"
 
-#: .tmp/ui_mouseWidget.py:170
+#: .tmp/ui_mouseWidget.py:171
 msgid "Dou&ble-click to open files and folders"
 msgstr "Double-clic pour ouvrir fichiers et dossiers"
 
-#: .tmp/ui_mouseWidget.py:171
+#: .tmp/ui_mouseWidget.py:172
 msgid "Single-click to open files and folders"
 msgstr "Un seul clic pour ouvrir fichiers et dossiers"
 
-#: .tmp/ui_mouseWidget.py:172
+#: .tmp/ui_mouseWidget.py:173
 msgid "Button Order"
 msgstr "Ordre des boutons"
 
-#: .tmp/ui_mouseWidget.py:173
+#: .tmp/ui_mouseWidget.py:174
 msgid "Right Hand"
 msgstr "Droitier"
 
-#: .tmp/ui_mouseWidget.py:174
+#: .tmp/ui_mouseWidget.py:175
 msgid "Reverse scrolling"
 msgstr "Défilement inverse"
 
-#: .tmp/ui_mouseWidget.py:175
+#: .tmp/ui_mouseWidget.py:176
 msgid "Left Hand"
 msgstr "Gaucher"
 
@@ -572,9 +571,9 @@ msgid ""
 "set the period for checking new updates."
 msgstr ""
 "Pour installer ou désinstaller des programmes sous Pardus, utilisez le "
-"gestionnaire de paquets. "
-"Le gestionnaire de paquets (package manager) peut également vous avertir "
-"automatiquement de la disponibilité de mises-à-jour et les installer."
+"gestionnaire de paquets. Le gestionnaire de paquets (package manager) peut "
+"également vous avertir automatiquement de la disponibilité de mises-à-jour "
+"et les installer."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
@@ -611,11 +610,11 @@ msgstr "&Envoyer mon profil"
 msgid "color:rgb(95, 34, 52)"
 msgstr "color:rgb(95, 34, 52)"
 
-#: .tmp/ui_smoltWidget.py:124
+#: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
-#: .tmp/ui_smoltWidget.py:125
+#: .tmp/ui_smoltWidget.py:126
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -706,11 +705,11 @@ msgstr ""
 "la commande \"<span style=\" font-style:italic;\">smoltDeleteProfile</span>"
 "\"</p></body></html>"
 
-#: .tmp/ui_smoltWidget.py:134
+#: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
 msgstr "Aidez-nous à améliorer Pardus !"
 
-#: .tmp/ui_smoltWidget.py:135
+#: .tmp/ui_smoltWidget.py:136
 msgid ""
 "<b>Smolt</b> is a tool that collects the information in the following table "
 "and sends it to us for which lets us improve Pardus according to the user "
@@ -719,19 +718,19 @@ msgstr ""
 "<b>Smolt</b> est un outil de collecte d'information qui nous permet "
 "d'améliorer Pardus selon le profil statistique de l'utilisateur."
 
-#: .tmp/ui_styleitem.py:58 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
+#: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_styleitem.py:59 .tmp/ui_uiitem.py:57
+#: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
 msgstr "border: 1px solid rgb(236, 236, 236, 100);"
 
-#: .tmp/ui_styleitem.py:60
+#: .tmp/ui_styleitem.py:62
 msgid "styleName"
 msgstr "styleName"
 
-#: .tmp/ui_styleitem.py:61
+#: .tmp/ui_styleitem.py:63
 msgid "styleDesc"
 msgstr "styleDesc"
 
@@ -749,8 +748,7 @@ msgid ""
 "styles and themes."
 msgstr ""
 "Choisissez votre thème et type de bureau préférés. Personnalisez votre "
-"Pardus avec des "
-"styles et des thèmes."
+"Pardus avec des styles et des thèmes."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -836,11 +834,11 @@ msgstr "wallPaperName"
 msgid "wallpaperDesc"
 msgstr "wallpaperDesc"
 
-#: .tmp/ui_wallpaperWidget.py:94
+#: .tmp/ui_wallpaperWidget.py:105
 msgid "Wallpaper"
 msgstr "Fond d'écran"
 
-#: .tmp/ui_wallpaperWidget.py:96
+#: .tmp/ui_wallpaperWidget.py:107
 msgid ""
 "#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
 "x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
@@ -854,15 +852,15 @@ msgstr ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 
-#: .tmp/ui_wallpaperWidget.py:99
+#: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
 msgstr "Choisir un fond d'écran à partir d'un fichier"
 
-#: .tmp/ui_wallpaperWidget.py:100
+#: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
 msgstr "Ne pas changer le fond d'écran"
 
-#: .tmp/ui_wallpaperWidget.py:101
+#: .tmp/ui_wallpaperWidget.py:112
 msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
@@ -870,13 +868,13 @@ msgstr ""
 "Choisissez votre fond d'écran préféré. Allez voir éventuellement dans "
 "<b>Configuration du bureau</b> pour en télécharger d'autres."
 
-#: .tmp/ui_wallpaperWidget.py:102
+#: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
 msgstr "Choisir un fond d'écran"
 
 #: .tmp/ui_welcomeWidget.py:60
-msgid "Welcome to Pardus 2009.1 <sup>beta</sup>"
-msgstr "Bienvenue dans Pardus 2009.1 <sup>beta</sup>"
+msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
+msgstr "Bienvenue dans Pardus 2009.1 <sup>RC</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -890,10 +888,9 @@ msgstr ""
 "<b>Pardus</b> est un système d'exploitation fiable, sécurisé, rapide et "
 "agréable à utiliser. <br /><br />Avec Pardus, vous pouvez vous connecter à "
 "Internet, lire vos courriels, travailler avec vos documents bureautiques, "
-"regarder des films, écouter de la musique, développer des "
-"applications, jouer à des jeux et plus encore ! <br /><br /><b>Kaptan</b> va "
-"vous aider à personnaliser rapidement et facilement votre espace de travail. "
-"Cliquez sur "
+"regarder des films, écouter de la musique, développer des applications, "
+"jouer à des jeux et plus encore ! <br /><br /><b>Kaptan</b> va vous aider à "
+"personnaliser rapidement et facilement votre espace de travail. Cliquez sur "
 "<b>suivant</b> pour commencer."
 
 #, fuzzy
