@@ -88,12 +88,9 @@ int probe_pci_modules()
 {
     struct list *modules, *item;
     int launch = 0;
-    char *cmd;
+    char *cmd = "modprobe -a ";
 
     modules = module_get_list(BUS_PCI);
-
-    /* Modprobes all modules in one call */
-    cmd = concat("modprobe ", "-a ");
 
     for (item = modules; item; item = item->next, ++launch) {
         cmd = concat(cmd, item->data);
@@ -107,12 +104,9 @@ int probe_usb_modules(int *has_scsi_storage)
 {
     struct list *modules, *item;
     int launch = 0;
-    char *cmd;
+    char *cmd = "modprobe -a ";
 
     modules = module_get_list(BUS_USB);
-
-    /* Modprobes all modules in one call */
-    cmd = concat("modprobe ", "-a ");
 
     for (item = modules; item; item = item->next, ++launch) {
         *has_scsi_storage += (item->type == DEVICE_MASS_STORAGE);
