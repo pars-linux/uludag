@@ -265,12 +265,14 @@ class DBusInterface(Hook):
     def queryNames(self): 
         def handlerHost(package, exception, args):
             if exception:
+                KMessageBox.sorry(None, exception)
                 return
             self.name_host = args[0]
             if self.name_dns:
                 self.emitName(self.name_host, self.name_dns)
         def handlerDNS(package, exception, args):
             if exception:
+                KMessageBox.sorry(None, exception)
                 return
             self.name_dns = args[0]
             if self.name_host:
@@ -281,6 +283,7 @@ class DBusInterface(Hook):
 
     def handleConnectionInfo(self, script, exception, args):
         if exception:
+            KMessageBox.sorry(None, exception)
             return
         info = args[0]
         modes = self.links[script].modes
@@ -308,6 +311,7 @@ class DBusInterface(Hook):
     def queryConnections(self, script):
         def handler(package, exception, args):
             if exception:
+                KMessageBox.sorry(None, exception)
                 return
             self.nr_queried += 1
             profiles = args[0]
@@ -330,17 +334,20 @@ class DBusInterface(Hook):
     def queryDevices(self, script):
         def handler(package, exception, args):
             if exception:
+                KMessageBox.sorry(None, unicode(exception))
                 return
             info = args[0]
             self.emitDevices(package, info)
         self.link.Network.Link[script].deviceList(async=handler)
 
     def queryRemotes(self, script, devid):
-        def handler(info):
+        def handler(package, exception, args):
+            if exception:
+                KMessageBox.sorry(None, unicode(exception))
+                return
+            info = args[0]
             self.emitRemotes(script, info)
-        ch = self.callHandler(script, "Net.Link", "scanRemote", "tr.org.pardus.comar.net.link.get")
-        ch.registerDone(handler)
-        ch.call(devid)
+        self.link.Network.Link[script].scanRemote(devid, async=handler)
 
     def uniqueName(self):
         base_name = str(i18n("new connection"))
