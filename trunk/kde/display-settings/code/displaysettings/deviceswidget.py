@@ -130,6 +130,10 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
                 self.cardDialog.setDriver(preferredDriver)
 
         else:
+            pm = str(kdecore.KStandardDirs.findExe("package-manager"))
+            if not pm:
+                return
+
             package = driverPackages.get(preferredDriver)
             if package is None:
                 return
@@ -146,7 +150,7 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
                         kdeui.KStandardGuiItem.cont(),
                         dontAskAgainName)
             if answer == kdeui.KMessageBox.Yes:
-                run("package-manager", "--show-mainwindow")
+                run(pm, "--show-mainwindow")
 
     def makeItemWidget(self, id_, title="", description="", type_=None, icon=None):
         """
