@@ -56,6 +56,7 @@ Bilgisayarınızı yeniden başlatın ve açılış ekranının düzgün bir şe
  util-macros
  xorg-proto
  libtool
+ perl-XML-Parser
 \end{verbatim}
 \item automake paketi kurulumu sonrası:
 
@@ -100,6 +101,58 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  libtool-ltdl 
 \end{verbatim}
 
+\item perl paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test_perl.pl
+ perl test_perl.pl
+\end{verbatim}
+
+\item net-tools paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyin.
+\begin{verbatim}
+ ifconfig
+ hostname
+\end{verbatim}
+
+
+\item wireless-tools paketi kurulumu sonrası:
+
+Eğer bir kablosuz kartınızın bulunduğu makinanız var ise test edebilirsiniz!
+
+Aşağıda bulunan komutun kablosuz ağ noktalarını bulduğunu gözlemleyiniz.
+\begin{verbatim}
+ iwlist accesspoints
+\end{verbatim}
+
+
+\item util-linux paketi kurulumu sonrası:
+\begin{verbatim}
+ dmesg
+ mount 
+ blkid
+ fdisk
+\end{verbatim}
+
+\item nano paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyanın nano ile açılabildiğini gözlemleyin daha sonra bir kaç değişiklik yapın ve CTRL+X ve CTRL+Y tuşuna basın ve kaydedin. 
+
+Tekrar nano ile açın ve değişikliklerin yapılmış olduğunu ve sorunsuz açıldığını gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test-nano.txt 
+nano test-nano.txt
+\end{verbatim}
+
+
+\item timezone paketi kurulumu sonrası:
+
+Panel'de bulunan takviminizin zaman dilimini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
+
+Örneği Pasifik Line adaları...
+
 \item kbd paketi kurulumu sonrası:
 
 Aşağıda bulunan betiğin "Test encountered 0 errors." çıktısını döndürdüğünü gözlemleyin.
@@ -112,7 +165,7 @@ Aşağıda bulunan betiğin "Test encountered 0 errors." çıktısını döndür
 
 
 \item glibc-zoneinfo paketi kurulumu sonrası:
-Panel'de bulunan takviminizin zaman dilini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
+Panel'de bulunan takviminizin zaman dilimini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
 
 \item glibc paketi kurulumu sonrası:
 
@@ -337,7 +390,7 @@ Yukarıda bulunan dosyaları aşağıda bulunan komut ile çalıştırın, dosya
 
 \begin{itemize}
   \item Makinenizi yeniden başlatın ve sistemin düzgün bir şekilde açıldığını  gözlemleyin.
- \item Ctrl+Alt+F1 tuşuna basıp sistem konsoluna geçin ve sistem dilinizin daha önceki dil ve kalvye düzeni ile aynı olduğunu gözlemleyin.
+ \item Ctrl+Alt+F1 tuşuna basıp sistem konsoluna geçin ve sistem dilinizin daha önceki dil ve klavye düzeni ile aynı olduğunu gözlemleyin.
   \item /etc/mudur/ altında bulunan locale, language, keymap dosyalarının sistem dil ve klavye dilinize eskisi gibi uygun olduğunu gözlemleyin.
  \item Pisi komutlarının düzgün bir şekilde çalıştığını gözlemleyin. 
 
@@ -396,9 +449,9 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 
 \item gettext paketi kurulumu sonrası:
 
-Aşağıda bulunan komutun "network-manager.pot" dosyasını oluşturduğunu gözlemleyin.
+Aşağıda bulunan komutun po dizini altında "network-manager.pot" dosyasını oluşturduğunu gözlemleyin.
 \begin{verbatim}
- # svn co http://svn.pardus.org.tr/uludag/trunk/kde4/network-manager/
+ # svn co http://svn.pardus.org.tr/uludag/trunk/kde/network-manager/
  # cd network-manager/manager
  # rm -rf po
  # mkdir po
@@ -443,16 +496,13 @@ Servis yöneticisinden omniORB başlatın, aşağıdaki komut ile başlatıldı�
 
 multimedia-tr.pdf gimp-i18n-<lang> testlerini gerçekleştiriniz. Sadece ilgili dili bulunanları test etmeniz yeterli olacaktır.
 
-(2009 için)Sistem yöneticisinden sistem dilini değiştirin (değiştirdiğiniz dil için ilgili glibc loacale paketini kurduğunuza emin oldun), sisteminizi sisteminizi yeniden başlatın ve CTRL+ALT+F1 tuşuna basın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
+(2009 için)Sistem yöneticisinden sistem dilini değiştirin (değiştirdiğiniz dil için ilgili glibc locale paketini kurduğunuza emin oldun), sisteminizi sisteminizi yeniden başlatın ve CTRL+ALT+F1 tuşuna basın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
 
 (2008 için) Aşağıda bulunan dosyada sistem dilini değiştirin ve bilgisayarınızı yeniden başlatın ve CTRL+ALT+F1 tuşuna basın ve sistem konsolunun ilgili dilde açıldığını gözlemleyin.
 \begin{verbatim}
  su -
  vi /etc/mudur
 \end{verbatim}
-
-
-
 
 \begin{verbatim}
     glibc-locales-aa

@@ -17,7 +17,16 @@
 \maketitle
 \section{Profiler alt bileşeni}
 \begin{enumerate}
- \item oprofile paketi kurulumu sonrası
+ \item valgrind paketi kurulumu sonrası:
+
+Gimp uygulamasının işlem ve hafıza durumunun listelendiğini gözlemleyin.
+
+  \begin{verbatim}
+   valgrind gimp
+  \end{verbatim}
+
+
+ \item oprofile paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların hatasız çalıştığını gözlemleyin.
   \begin{verbatim}
@@ -98,6 +107,25 @@ git-gui
 git-svn
 gitweb
 \end{verbatim}
+\item SVK paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
+\begin{verbatim}
+svk mirror //svk/trunk svn://svn.clkao.org/svkbook/trunk
+svk sync //svk/trunk
+\end{verbatim}
+
+
+\item tig paketi kurulumu sonrası:
+
+tig comutunun tüm geçmişi listelediğini gözlemleyin.
+\begin{verbatim}
+git clone git://github.com/git/hello-world.git 
+cd hello-world
+tig
+\end{verbatim}
+
+
 \item mercurial paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyiniz.
@@ -110,8 +138,10 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyiniz.
 
 \item gitk paketi kurulumu sonrası:
 
-Aşağıda bulunan komutu çalıştırın ve hatasız bir şekilde bir git deposu bulamadım penceresi açıldığını gözlemleyin.
+gitk komutunun tüm geçmişi listelediğini gözlemleyin.
 \begin{verbatim}
+ git clone git://github.com/git/hello-world.git 
+ cd hello-world
  gitk 
 \end{verbatim}
 
@@ -213,6 +243,20 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemle
 
 
 \section{Language alt bileşeni}
+\subsection{tcl alt bileşeni}
+
+\begin{enumerate}
+ \item tcl, tcltk paketleri kurulumu sonrası:
+
+Aşağıda bulunan komutun bir gui ekranı çıkardığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_tcl.tcl
+ wish test_tcl.tcl
+\end{verbatim}
+
+
+\end{enumerate}
+
 \subsection{Php alt bileşeni}
 \begin{enumerate}
 
@@ -423,7 +467,17 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \begin{verbatim}
  python-docs
  gnome-python-docs
+ PyQt-doc
 \end{verbatim}
+
+\item setuptools paketi kurulumu sonrası:
+\begin{verbatim}
+ svn co http://svn.pardus.org.tr/uludag/trunk/kde/boot-manager/manager/
+ cd manager
+ sudo python setup.py build 
+ sudo python setup.py install
+\end{verbatim}
+
 \item django-tagging paketi kurulumu sonrası:
 \begin{verbatim}
  mkdir test
@@ -434,6 +488,78 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  import tagging
 \end{verbatim}
 
+\item pycha paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pycha
+ import chavier
+\end{verbatim}
+
+\item python-xlrd paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import xlrd
+\end{verbatim}
+
+\item pytz paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pytz
+\end{verbatim}
+
+\item python-Jinja2 paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import jinja2
+\end{verbatim}
+
+\item python-sphinx paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import sphinx
+\end{verbatim}
+
+
+\item mysql-python paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import MySQLdb
+\end{verbatim}
+
+\item python-markdown paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import markdown
+\end{verbatim}
+
+\item python-preprocess paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import preprocess
+\end{verbatim}
+
+
+\item python-avahi paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import avahi
+\end{verbatim}
+
+\item python-tornado paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import tornado
+\end{verbatim}
 
 \item pyorbit paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -474,7 +600,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \end{verbatim}
 
 
-\item PyQt ve PyQt-doc paketi kurulumu sonrası:
+\item PyQt paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın ve bir pencerenin açıldığını gözlemleyin.
 \begin{verbatim}
@@ -898,7 +1024,14 @@ Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözleml
 # javac test.java
 # java test
 \end{verbatim}
+
+\item libmatthew, slf4j paketleri kurulumu sonrası:
+
+office-tr.pdf zemberek-openoffice testini gerçekleştirin.
 \end{enumerate}
+
+
+
 \subsection{Lisp alt bileşeni}
 \begin{enumerate}
  \item clisp paketi kurulumu sonrası: (Warningleri önemsemeyiniz.)
@@ -942,8 +1075,13 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 \begin{verbatim}
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
 # mcs test_mono.cs
-# mopno test_mono.exe
+# mono test_mono.exe
 \end{verbatim}
+
+\item libgdiplus paketi kurulumu sonrası:
+
+programming-tr.pdf mono testini gerçekleştiriniz.
+
 \end{enumerate}
 
 

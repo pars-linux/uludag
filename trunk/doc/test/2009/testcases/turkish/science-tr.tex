@@ -14,6 +14,27 @@
 \begin{document}
 
 \maketitle
+\section{Biology alt Bileşeni}
+\begin{enumerate}
+ \item clustalx paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item hmmer, hmmer-doc paketleri kurulumu sonrası:
+
+Aşağıda bulunan komutun seorunsuz bir çıktı ürettiğini gözlemleyin.
+\begin{verbatim}
+ cd /usr/share/doc/hmmer/tutorial
+ sudo hmmbuild globins4.hmm  globins4.sto
+\end{verbatim}
+
+\end{enumerate}
+
+
+
+
+
+
 \section{Electronics alt Bileşeni}
 \begin{enumerate}
  \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -51,6 +72,14 @@ Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 
 \section{Astronomy alt Bileşeni}
 \begin{enumerate}
+\item xplanet paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun uzay ile ilgili bir resim ürettiğini gözlemleyin.
+\begin{verbatim}
+wget ftp://ssd.jpl.nasa.gov/pub/eph/export/unix/unxp1900.405
+xplanet -ephemeris unxp1900.405 -light_time -origin uranus -body sun -radius 30 -date 19140503.093000  
+\end{verbatim}
+
  \item stellarium paketi kurulumu sonrası:
 
 Kmenüden uygulamayı açın ve düzgün bir şekilde açılabildiğini gözlemleyin. 
@@ -87,6 +116,14 @@ Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözleml
  octave:1> A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
 \end{verbatim}
 
+\item FreeMat paketi kurulumu sonrası:
+
+Kmenüden uygulamayı açın ve ve aşağıda bulunan satırı kopyalayıp ENTER tuşuna basın ve sorunsuz olarak diziyi listelediğini gözlemleyin.
+\begin{verbatim}
+A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]
+\end{verbatim}
+
+
 
 \item rkward paketi kurulumu sonrası:
 
@@ -107,6 +144,15 @@ Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
  144*17 - 9;
  144^25;
 \end{verbatim}
+\item lpsolve paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/science/test_lpsolve
+lp_solve  < test_lpsolve
+\end{verbatim}
+
 
 \item Aşağıda bulunan paketler kurulum testine tabidir.
 \begin{verbatim}
