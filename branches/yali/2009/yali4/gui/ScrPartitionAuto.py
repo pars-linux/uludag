@@ -47,8 +47,8 @@ The disk area or partition selected for installation will automatically
 be formatted. Therefore, it is advised to backup your data to avoid future problems.
 </p>
 <p>Auto-partitioning will automatically format the select disk part/partition 
-and install Pardus 2009. If you like, you can do the partitioning manually or make 
-Pardus 2009 create a new partition for installation.</p>
+and install Pardus 2009.1. If you like, you can do the partitioning manually or make 
+Pardus 2009.1 create a new partition for installation.</p>
 <p>
 Please refer to Pardus Installing and Using Guide for more information
 about disk partitioning.

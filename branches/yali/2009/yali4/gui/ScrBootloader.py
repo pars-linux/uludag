@@ -41,7 +41,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">Boot loader setup</font>
 <font size="+1">
 <p>
-Pardus 2009 uses a boot manager called GRUB to start the operating system you choose.
+Pardus 2009.1 uses a boot manager called GRUB to start the operating system you choose.
 </p>
 <p>If there are multiple operating systems in your computer, you can start the one 
 you like using GRUB. Installing GRUB to the beginning of the boot disk is the advised 
