@@ -90,6 +90,14 @@ Yukarıda verilen ikinci komutun, virüsü tespit edebildiğini gözlemleyin.
 \end{enumerate}
 \section{Admin alt bileşeni}
 \begin{enumerate}
+\item ntp-client paketi kurulumu sonrası:
+
+Eğer ntp server servisi açık ise kapatmalısınız. 
+
+Aşağıda bulunan komutun sistem saatini değiştirdiğini gözlemleyin.  ("date" komutunu kullanarak kontrol edebilirsiniz.)
+\begin{verbatim}
+ntpdate -b "clock.nc.fukuoka-u.ac.jp" 
+\end{verbatim}
 
 \item systemtap paketi kurulumu sonrası:
 
