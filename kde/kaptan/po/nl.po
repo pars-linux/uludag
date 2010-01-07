@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 30/12/09 22:24\n"
+"PO-Revision-Date: 07/01/10 21:35\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -874,9 +874,8 @@ msgid "Choose a Wallpaper"
 msgstr "Achtergrondafbeelding kiezen"
 
 #: .tmp/ui_welcomeWidget.py:60
-#, fuzzy
 msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
-msgstr "Welkom bij Pardus 2009.1 <sup>bèta</sup>"
+msgstr "Welkom bij Pardus 2009.1 <sup>RC</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -893,3 +892,4 @@ msgstr ""
 "afspelen, toepassingen maken, games spelen en nog veel meer! <br /><br /"
 "><b>Kaptan</b> zal behulpzaam zijn bij het snel en gemakkelijk aanpassen van "
 "het Pardus systeem. Selecteer <b>Volgende</b> om te starten."
+
