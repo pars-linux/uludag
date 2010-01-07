@@ -155,8 +155,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
                 proxy.reconfigure()
                 proxy.enableNepomuk(self.searchSettings["state"])
-            except DBusException as e:
-                print e
+            except dbus.DBusException:
+                pass
 
 
         # Menu Settings
@@ -208,8 +208,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 proxy = session.get_object('org.kde.kwin', '/KWin')
                 proxy.reconfigure()
-            except DBusException as e:
-                print e
+            except dbus.DBusException:
+                pass
 
             config.sync()
 
@@ -267,8 +267,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 proxy = session.get_object('org.kde.kwin', '/KWin')
                 proxy.reconfigure()
-            except DBusException as e:
-                print e
+            except dbus.DBusException:
+                pass
 
         # Smolt Settings
         if self.smoltSettings["profileSend"] == True:
