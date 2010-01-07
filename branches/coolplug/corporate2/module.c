@@ -87,7 +87,6 @@ int probe_drm_modules()
 int probe_pci_modules()
 {
     struct list *modules, *item;
-    struct stat st;
     int launch = 0;
     char *cmd;
 
@@ -96,12 +95,9 @@ int probe_pci_modules()
     /* Modprobes all modules in one call */
     cmd = concat("modprobe ", "-a ");
 
-    for (item = modules; item; item = item->next) {
-        if (stat(concat("/sys/module/",item->data), &st) < 0) {
-            cmd = concat(cmd, item->data);
-            cmd = concat(cmd, " ");
-            ++launch;
-        }
+    for (item = modules; item; item = item->next, ++launch) {
+        cmd = concat(cmd, item->data);
+        cmd = concat(cmd, " ");
     }
 
     return (launch > 0) ? system(cmd):-1;
