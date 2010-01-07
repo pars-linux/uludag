@@ -221,9 +221,6 @@ class MainApplication(programbase):
             mainwidget.pushStatus.setEnabled(True)
             if _state  == "on":
                 self.state = "on"
-                mainwidget.frameIncoming.setEnabled(True)
-                mainwidget.frameAdvanced.setEnabled(True)
-                mainwidget.pushNewRule.setEnabled(True)
                 self.getRules()
             self.setState(self.state)
         self.link.Network.Firewall["iptables"].getState(async=handleState)
@@ -271,33 +268,10 @@ class MainApplication(programbase):
             mainwidget.textStatus.setText(i18n('<b><font size=\'+1\'>Firewall is not running</font></b>'))
             mainwidget.textStatus.setPaletteForegroundColor(QColor(182, 41, 31))
             mainwidget.textStatus2.setText(i18n('Click here to start the firewall and allow connections only to specified services.'))
-            self.updateRules()
+        self.updateRules()
 
     def updateRules(self):
         if self.state == 'on':
-            """
-            rules_processed = []
-            # Tab 1 - Incoming Connections
-            for checkbox in self.incoming:
-                rules_processed.extend(rules.filter[checkbox.name()][0])
-                if not set(rules.filter[checkbox.name()][0]) - set(self.rules['filter']):
-                    checkbox.setChecked(True)
-                else:
-                    checkbox.setChecked(False)
-            # Tab 2 - Advanced
-            for chk in self.advanced:
-                chk.close(True)
-            self.advanced = []
-            for custom_rule in set(self.rules['filter']) - set(rules_processed):
-                if "--dports" not in custom_rule:
-                    continue
-                chk = AdvancedRuleCheckBox(mainwidget.frameAdvanced, rule=custom_rule)
-                chk.setChecked(True)
-                mainwidget.frameAdvancedLayout.addWidget(chk)
-                self.advanced.append(chk)
-                chk.show()
-                self.connect(chk, SIGNAL('clicked()'), self.slotChanged)
-            """
             mainwidget.frameIncoming.setEnabled(True)
             mainwidget.frameAdvanced.setEnabled(True)
             mainwidget.pushNewRule.setEnabled(True)
