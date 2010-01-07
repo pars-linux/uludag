@@ -36,7 +36,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">User setup</font>
 <font size="+1">
 <p>
-Pardus 2009 allows multiple users to share the same computer.
+Pardus 2009.1 allows multiple users to share the same computer.
 You can assign management rights to the users you create; you can also
 configure permissions to users for various operations through User Manager.
 </p>
