@@ -1,0 +1,234 @@
+
+
+msgid ""
+msgstr ""
+"Project-Id-Version: firewall-config\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"PO-Revision-Date: 2006-04-08 12:19+0900\n"
+"Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
+"Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/firewall-config.py:37
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Interfejs Firewalla Pardusa"
+
+#: src/firewall-config.py:53
+msgid "GUI Design & Usability"
+msgstr "Projekt Interfeju i Użyteczność"
+
+#: src/firewall-config.py:54
+msgid "Help with IPTables"
+msgstr "Pomoc z IPTables"
+
+#: src/firewall-config.py:55
+msgid "Help with KDE stuff"
+msgstr "Pomoc z elementami KDE"
+
+#: src/firewall-config.py:91
+#, python-format
+msgid "Accept all incoming connection through ports %s"
+msgstr "Akceptuj wszystkie przychodzące połączenia przez porty %s"
+
+#: src/firewall-config.py:93
+#, python-format
+msgid "Reject all incoming connection through ports %s"
+msgstr "Odrzucaj wszystkie przychodzące połączenia przez porty %s"
+
+#: src/firewall-config.py:96
+#, python-format
+msgid "Accept all outgoing connection through ports %s"
+msgstr "Akceptuj wszystkie wychodzące połączenia przez porty %s"
+
+#: src/firewall-config.py:98
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr "Odrzucaj wszystkie wychodzące połączenia przez porty %s"
+
+#: src/firewall-config.py:127
+msgid "Invalid port range."
+msgstr "Błędny zakres portów."
+
+#: src/firewall-config.py:150 src/firewall.py:188
+msgid "Firewall Configuration"
+msgstr "Konfiguracja Firewalla"
+
+#: src/firewall-config.py:195
+#, python-format
+msgid "Ports: %s"
+msgstr "Porty: %s"
+
+#: src/firewall-config.py:238
+msgid "&Stop Firewall"
+msgstr "&Zatrzymaj Firewall"
+
+#: src/firewall-config.py:239
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr "<b><font size='+1'>Firewall działa</font></b>"
+
+#: src/firewall-config.py:241
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Kliknij tutaj by wyłączyć firewall i zezwolić na wszystkie przychodzące "
+"i wychodzące połączenia."
+
+#: src/firewall-config.py:246
+msgid "&Start Firewall"
+msgstr "&Uruchom Firewall"
+
+#: src/firewall-config.py:247
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr "<b><font size='+1'>Firewall nie działa</font></b>"
+
+#: src/firewall-config.py:249
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Kliknij tutaj by uruchomić firewall i dopuścić tylko określone połączenia."
+
+#: src/firewall-config.py:345
+msgid "You are not allowed to edit firewall settings."
+msgstr "Nie masz uprawnień do zmian ustawień firewalla"
+
+#: src/firewall-config.py:345
+msgid "Access Denied"
+msgstr "Odmowa Dostępu"
+
+#: src/firewall-config.py:439
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Interfejs Firewalla Pardusa już działa!"
+
+#: src/rules.py:16
+msgid "Mail services"
+msgstr "Poczta"
+
+#: src/rules.py:21
+msgid "Web services"
+msgstr "Strony www"
+
+#: src/rules.py:26
+msgid "Remote login service"
+msgstr "Zdalne logowanie"
+
+#: src/rules.py:35
+msgid "Windows file sharing service"
+msgstr "Wymiana plików z MS Windows"
+
+#: src/rules.py:40
+msgid "Internet relay chat service"
+msgstr "IRC"
+
+#: src/rules.py:45
+msgid "File transfer service"
+msgstr "Transfer plików"
+
+#: src/firewall.py:191
+msgid "<b><font size=\"+1\">Firewall is running</font></b>"
+msgstr "<b><font size=\"+1\">Firewall działa</font></b>"
+
+#: src/firewall.py:192
+msgid "&Stop"
+msgstr "&Stop"
+
+#: src/firewall.py:193
+msgid "Alt+S"
+msgstr "Alt+S"
+
+#: src/firewall.py:194
+msgid "Click here to stop the firewall and allow all incoming connections."
+msgstr "Kliknij tutaj by zatrzymać firewalla i dopuścić wszystkie połączenia."
+
+#: src/firewall.py:196
+msgid ""
+"All incoming connections are <b>rejected</b> by default. If you want to "
+"allow other computers to access services on this computer, check the service "
+"below:"
+msgstr ""
+"Wszystkie przychodzące połączenia są domyślnie <b>odrzucane</b>. Jeżeli "
+"chesz by inne komputery miały dostęp do określonych usług na tym komputerze "
+"wybierz je z listy poniżej:"
+
+#: src/firewall.py:197
+msgid "Incoming Connections"
+msgstr "Przychodzące Połączenia"
+
+#: src/firewall.py:198
+msgid ""
+"In this tab, you can create your own firewall rules. Use '+' button to "
+"create rules, and uncheck rules from list to remove them."
+msgstr "W tej zakładce możesz tworzyć własne reguły firewalla. Uzyj przycisku '+' "
+"do tworzenia nowych reguł. Odznacz reguły, które mają być usunięte."
+
+#: src/firewall.py:201
+msgid "Advanced"
+msgstr "Zaawansowane"
+
+#: src/firewall.py:204
+msgid "Alt+H"
+msgstr "Alt+H"
+
+#: src/firewall.py:206
+msgid "Alt+A"
+msgstr "Alt+A"
+
+#: src/firewall.py:207
+msgid "&Ok"
+msgstr "&Tak"
+
+#: src/firewall.py:208
+msgid "Alt+O"
+msgstr "Alt+O"
+
+#: src/firewall.py:210
+msgid "Alt+C"
+msgstr "Alt+C"
+
+#: src/dialog.py:105
+msgid "New Rule"
+msgstr "Nowa Reguła"
+
+#: src/dialog.py:106
+msgid "Connections"
+msgstr "Połączenia"
+
+#: src/dialog.py:107
+msgid "Incoming"
+msgstr "Przychodzące"
+
+#: src/dialog.py:108
+msgid "Outgoing"
+msgstr "Wychodzące"
+
+#: src/dialog.py:109
+msgid "Port Range"
+msgstr "Zakres Portów"
+
+#: src/dialog.py:110
+msgid "Example: 100-200,300"
+msgstr "Przykład: 100-200,300"
+
+#: src/dialog.py:112
+msgid "TCP"
+msgstr "TCP"
+
+#: src/dialog.py:113
+msgid "UDP"
+msgstr "UDP"
+
+#: src/dialog.py:114
+msgid "Action"
+msgstr "Akcja"
+
+#: src/dialog.py:115
+msgid "Accept"
+msgstr "Akceptuj"
+
+#: src/dialog.py:116
+msgid "Reject"
+msgstr "Odrzuć"
