@@ -720,13 +720,13 @@ msgstr ""
 
 #: yali4/gui/descSlide.py:21
 msgid ""
-"With the arrival of KDE 4.2, Konqueror is replaced with a new and very "
+"With the arrival of KDE 4.3, Konqueror is replaced with a new and very "
 "talented file manager, Dolphin. Dolphin is easy to use, and when it comes to "
 "viewing folders, it allows you to sort them in various ways, adding "
 "functionality like grouping and detailed information right on the spot. "
 "Anything you may need on viewing folders, you have it with Dolphin."
 msgstr ""
-"In der Version KDE 4.2 wurde Konqueror durch einen neuen und sehr "
+"In der Version KDE 4.3 wurde Konqueror durch einen neuen und sehr "
 "vielseitigen Dateimanager 'Dolphin' ersetzt. Dolphin ist einfach in der "
 "Benutzung, und die Verzeichnisansicht hat mehrere Optionen zur Sortierung, "
 "ermöglicht eine Gruppierung ähnlicher Dateien, und zeigt direkt diverse "
@@ -745,12 +745,12 @@ msgstr ""
 
 #: yali4/gui/descSlide.py:23
 msgid ""
-"Pardus 2009.1 also includes other components updated with KDE 4.2. If you have "
+"Pardus 2009.1 also includes other components updated with KDE 4.3. If you have "
 "used Pardus before, you may want to check out the welcome tour to see what "
 "those changes are."
 msgstr ""
 "Pardus 2009.1 beinhaltet auch andere Aktualisierungen im Zusammenhang mit der "
-"Version KDE 4.2. Wenn Sie schon vorher Pardus benutzt haben, laden wir Sie "
+"Version KDE 4.3. Wenn Sie schon vorher Pardus benutzt haben, laden wir Sie "
 "zur Willkommens-Tour ein, um die Neuerungen zu erfahren."
 
 #: yali4/gui/descSlide.py:24
