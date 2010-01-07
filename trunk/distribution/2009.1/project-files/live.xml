@@ -150,7 +150,6 @@
         <SelectedPackage>module-ndiswrapper</SelectedPackage>
         <SelectedPackage>module-microdia</SelectedPackage>
         <SelectedPackage>module-ltmodem</SelectedPackage>
-        <SelectedPackage>module-lirc</SelectedPackage>
         <SelectedPackage>module-gspca</SelectedPackage>
         <SelectedPackage>module-broadcom-wl</SelectedPackage>
         <SelectedPackage>module-alsa-driver</SelectedPackage>
