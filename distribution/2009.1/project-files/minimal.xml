@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 minimal Beta</Title>
+    <Title>Pardus 2009.1 minimal RC</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
