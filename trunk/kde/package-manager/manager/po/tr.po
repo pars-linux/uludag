@@ -3,20 +3,20 @@
 # package-manager paketi için Türkçe çeviriler.
 # Copyright (C) 2005 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the PiSi KGA package.
-# Faik Uygur <faik@pardus.org.tr>, 2009.
+# Faik Uygur <faik@pardus.org.tr>, 2009, 2010.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 15:50+0300\n"
-"PO-Revision-Date: 2009-07-17 15:46+0300\n"
+"POT-Creation-Date: 2010-01-08 10:29+0200\n"
+"PO-Revision-Date: 2010-01-08 10:30+0200\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
 #: .tmp/ui_basketdialog.py:75
@@ -65,51 +65,56 @@ msgstr "TextLabel"
 msgid "Ok"
 msgstr "Tamam"
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:39
+#, python-format
+msgid "Operation - %1%"
+msgstr "İşlem - %%1"
+
+#: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
 msgstr "yapılandırılıyor"
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "extracting"
 msgstr "çıkarılıyor"
 
-#: .tmp/progressdialog.py:45
+#: .tmp/progressdialog.py:46
 msgid "Downloading package list of %1"
 msgstr "%1 paket listesi indiriliyor"
 
-#: .tmp/progressdialog.py:47
+#: .tmp/progressdialog.py:48
 msgid "%1 %2"
 msgstr "%2 %1"
 
-#: .tmp/progressdialog.py:52
+#: .tmp/progressdialog.py:53
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 paket %3"
 
-#: .tmp/progressdialog.py:58
+#: .tmp/progressdialog.py:59
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:147
+#: .tmp/progressdialog.py:71 .tmp/ui_progressdialog.py:147
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>PiSi Hazırlanıyor...</h3>"
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr "Durum:"
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr "--  / --"
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr "Kalan zaman:"
 
-#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:78 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr "--:--:--"
 
-#: .tmp/progressdialog.py:81
+#: .tmp/progressdialog.py:82
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>İşlem iptal ediliyor...</b>"
 
@@ -125,29 +130,34 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/settingsdialog.py:128
+#: .tmp/settingsdialog.py:131
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz? "
 
-#: .tmp/settingsdialog.py:129
+#: .tmp/settingsdialog.py:132
 msgid "Warning"
 msgstr "Uyarı"
 
-#: .tmp/settingsdialog.py:130
+#: .tmp/settingsdialog.py:133
 msgid "Delete"
 msgstr "Sil"
 
-#: .tmp/settingsdialog.py:184
+#: .tmp/settingsdialog.py:187
+msgid "Not a valid repository name"
+msgstr "Geçerli bir depo ismi değil"
+
+#: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
+#: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
+msgid "Pisi Error"
+msgstr "Pisi Hatası"
+
+#: .tmp/settingsdialog.py:190
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
 msgstr ""
 "<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar "
 "deneyin.</qt>"
-
-#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:79 .tmp/mainwidget.py:174
-msgid "Pisi Error"
-msgstr "Pisi Hatası"
 
 #: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
 msgid "Package Manager"
@@ -323,23 +333,23 @@ msgstr "Vekil sunucu kullan"
 msgid "&Proxy"
 msgstr "&Vekil sunucu"
 
-#: .tmp/tray.py:45
+#: .tmp/tray.py:47
 msgid "Update"
 msgstr "Güncelle"
 
-#: .tmp/tray.py:54 .tmp/tray.py:64
+#: .tmp/tray.py:56 .tmp/tray.py:66
 msgid "All"
 msgstr "Tümü"
 
-#: .tmp/tray.py:90
+#: .tmp/tray.py:92
 msgid "There are <b>%1</b> updates available!"
 msgstr "Mevcut <b>%1</b> güncelleme bulunuyor!"
 
-#: .tmp/tray.py:91
+#: .tmp/tray.py:93
 msgid "Show Updates"
 msgstr "Güncellemeleri Göster"
 
-#: .tmp/tray.py:91
+#: .tmp/tray.py:93
 msgid "Ignore"
 msgstr "Yoksay"
 
@@ -455,7 +465,7 @@ msgid ""
 "upgraded:"
 msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
 
-#: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
+#: .tmp/statemanager.py:123 .tmp/mainwindow.py:71 .tmp/mainwindow.py:76
 msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
@@ -519,7 +529,7 @@ msgstr "Bakıcı"
 msgid "Show main window"
 msgstr "Ana pencereyi göster"
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:120
 msgid "downloading"
 msgstr "indiriliyor"
 
@@ -603,11 +613,19 @@ msgstr "Depo:"
 msgid "Package Size:"
 msgstr "Paket Boyutu:"
 
-#: .tmp/mainwidget.py:226
+#: .tmp/mainwidget.py:175
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+"Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. "
+"Lütfen depo bilgilerini güncellemeyi deneyin."
+
+#: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
 msgstr "Bu gruptaki tüm paketleri seç"
 
-#: .tmp/mainwidget.py:232
+#: .tmp/mainwidget.py:235
 msgid "Reverse package selections"
 msgstr "Paket seçimlerini tersine çevir"
 
@@ -647,15 +665,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/mainwindow.py:88
+#: .tmp/mainwindow.py:92
 msgid "Show Installable Packages"
 msgstr "Kurulabilir Paketleri Göster"
 
-#: .tmp/mainwindow.py:95
+#: .tmp/mainwindow.py:99
 msgid "Show Installed Packages"
 msgstr "Kurulu Paketleri Göster"
 
-#: .tmp/mainwindow.py:101
+#: .tmp/mainwindow.py:105
 msgid "Show Upgradable Packages"
 msgstr "Güncellemeleri Göster"
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-17 15:50+0300\n"
+"POT-Creation-Date: 2010-01-08 10:29+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -62,51 +62,56 @@ msgstr ""
 msgid "Ok"
 msgstr ""
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:39
+#, python-format
+msgid "Operation - %1%"
+msgstr ""
+
+#: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
 msgstr ""
 
-#: .tmp/progressdialog.py:41 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "extracting"
 msgstr ""
 
-#: .tmp/progressdialog.py:45
+#: .tmp/progressdialog.py:46
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: .tmp/progressdialog.py:47
+#: .tmp/progressdialog.py:48
 msgid "%1 %2"
 msgstr ""
 
-#: .tmp/progressdialog.py:52
+#: .tmp/progressdialog.py:53
 msgid "%1 / %2 package %3"
 msgstr ""
 
-#: .tmp/progressdialog.py:58
+#: .tmp/progressdialog.py:59
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:70 .tmp/ui_progressdialog.py:147
+#: .tmp/progressdialog.py:71 .tmp/ui_progressdialog.py:147
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: .tmp/progressdialog.py:74 .tmp/ui_progressdialog.py:152
+#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:152
 msgid "Status:"
 msgstr ""
 
-#: .tmp/progressdialog.py:75 .tmp/ui_progressdialog.py:149
+#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:149
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/progressdialog.py:76 .tmp/ui_progressdialog.py:148
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:148
 msgid "Time remaining:"
 msgstr ""
 
-#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:150
+#: .tmp/progressdialog.py:78 .tmp/ui_progressdialog.py:150
 msgid "--:--:--"
 msgstr ""
 
-#: .tmp/progressdialog.py:81
+#: .tmp/progressdialog.py:82
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
@@ -122,26 +127,31 @@ msgstr ""
 msgid "Firefox"
 msgstr ""
 
-#: .tmp/settingsdialog.py:128
+#: .tmp/settingsdialog.py:131
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr ""
 
-#: .tmp/settingsdialog.py:129
+#: .tmp/settingsdialog.py:132
 msgid "Warning"
 msgstr ""
 
-#: .tmp/settingsdialog.py:130
+#: .tmp/settingsdialog.py:133
 msgid "Delete"
 msgstr ""
 
-#: .tmp/settingsdialog.py:184
+#: .tmp/settingsdialog.py:187
+msgid "Not a valid repository name"
+msgstr ""
+
+#: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
+#: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
+msgid "Pisi Error"
+msgstr ""
+
+#: .tmp/settingsdialog.py:190
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
-msgstr ""
-
-#: .tmp/settingsdialog.py:184 .tmp/pm-install.py:79 .tmp/mainwidget.py:174
-msgid "Pisi Error"
 msgstr ""
 
 #: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
@@ -315,23 +325,23 @@ msgstr ""
 msgid "&Proxy"
 msgstr ""
 
-#: .tmp/tray.py:45
+#: .tmp/tray.py:47
 msgid "Update"
 msgstr ""
 
-#: .tmp/tray.py:54 .tmp/tray.py:64
+#: .tmp/tray.py:56 .tmp/tray.py:66
 msgid "All"
 msgstr ""
 
-#: .tmp/tray.py:90
+#: .tmp/tray.py:92
 msgid "There are <b>%1</b> updates available!"
 msgstr ""
 
-#: .tmp/tray.py:91
+#: .tmp/tray.py:93
 msgid "Show Updates"
 msgstr ""
 
-#: .tmp/tray.py:91
+#: .tmp/tray.py:93
 msgid "Ignore"
 msgstr ""
 
@@ -437,7 +447,7 @@ msgid ""
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:123 .tmp/mainwindow.py:67 .tmp/mainwindow.py:72
+#: .tmp/statemanager.py:123 .tmp/mainwindow.py:71 .tmp/mainwindow.py:76
 msgid "Currently your basket is empty."
 msgstr ""
 
@@ -498,7 +508,7 @@ msgstr ""
 msgid "Show main window"
 msgstr ""
 
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:117
+#: .tmp/commontext.py:15 .tmp/operationmanager.py:120
 msgid "downloading"
 msgstr ""
 
@@ -580,11 +590,17 @@ msgstr ""
 msgid "Package Size:"
 msgstr ""
 
-#: .tmp/mainwidget.py:226
+#: .tmp/mainwidget.py:175
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+
+#: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
 msgstr ""
 
-#: .tmp/mainwidget.py:232
+#: .tmp/mainwidget.py:235
 msgid "Reverse package selections"
 msgstr ""
 
@@ -614,15 +630,15 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: .tmp/mainwindow.py:88
+#: .tmp/mainwindow.py:92
 msgid "Show Installable Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:95
+#: .tmp/mainwindow.py:99
 msgid "Show Installed Packages"
 msgstr ""
 
-#: .tmp/mainwindow.py:101
+#: .tmp/mainwindow.py:105
 msgid "Show Upgradable Packages"
 msgstr ""
 
