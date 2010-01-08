@@ -7,7 +7,7 @@ urlpatterns = patterns('',
     # Pending packages
     url(r'^pending/$', 'noan.repository.views.page_pending_index', name="repo-pending-index"),
     url(r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/$', 'noan.repository.views.list_pending_packages', name="repo-pending"),
-    #url(r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/user/$', 'noan.repository.views.list_pending_packages_for_user'),
+    url(r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/user/$', 'noan.repository.views.list_pending_packages_for_user'),
     #url(r'^pending/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/salt/$', 'noan.repository.views.list_pending_packages_in_txt'),
 
     # List all source pakages
