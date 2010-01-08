@@ -363,7 +363,11 @@ class Yali:
             ctx.debugger.log("UA: newPartSize : %s " % newPartSize)
             ctx.debugger.log("UA: resizing to : %s " % (int(part.getMB()) - newPartSize))
 
-            _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+            try:
+                _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+            except FSCheckError, message:
+                ctx.debugger.log("FAILED: %s" % unicode(message))
+                InfoDialog(unicode(message), title = _("Filesystem Error"))
 
             self.info.updateMessage(_("Resize Finished ..."))
             ctx.debugger.log("UA: Resize finished.")
@@ -405,8 +409,9 @@ class Yali:
 
     def guessBootLoaderDevice(self, root_part=None):
         if len(yali4.storage.devices) > 1 or ctx.isEddFailed:
-            opts = get_kernel_option("mudur")
-            if opts.has_key("livedisk"):
+            #opts = get_kernel_option("mudur")
+            opts = yali4.sysutils.liveMediaSystem()
+            if opts.__eq__("harddisk"):
                 ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[1])
             else:
                 ctx.installData.bootLoaderDev = os.path.basename(ctx.installData.orderedDiskList[0])
