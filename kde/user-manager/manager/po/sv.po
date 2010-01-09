@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: user-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-30 13:41+0200\n"
-"PO-Revision-Date: 2009-07-12 17:01+0200\n"
+"PO-Revision-Date: 2009-12-31 17:41+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgstr "Åtkomst nekas."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
+msgstr "Kan inte ta bort <b>%1</b>. Användaren är inloggad."
 
 #: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -209,3 +209,4 @@ msgstr "Bahadır Kandemir"
 #: .tmp/usermanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Nuvarande utvecklare"
+

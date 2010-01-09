@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-08 10:29+0200\n"
-"PO-Revision-Date: 2009-07-28 03:30+0200\n"
+"PO-Revision-Date: 2010-01-09 20:01+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -62,10 +62,9 @@ msgstr "TextLabel"
 msgid "Ok"
 msgstr "Ok"
 
-#: .tmp/progressdialog.py:39
-#, fuzzy, python-format
+#: .tmp/progressdialog.py:39, python-format
 msgid "Operation - %1%"
-msgstr "Åtgärd"
+msgstr "Åtgärd - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
@@ -140,9 +139,8 @@ msgid "Delete"
 msgstr "Ta bort"
 
 #: .tmp/settingsdialog.py:187
-#, fuzzy
 msgid "Not a valid repository name"
-msgstr "Förrådsnamn"
+msgstr "Ogiltigt förrådsnamn"
 
 #: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
 #: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
@@ -615,6 +613,8 @@ msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
 msgstr ""
+"Paketet finns ej. Det kan vara uppdaterat i, eller borttaget ur, förrådet. "
+"Försök att uppdatera förrådsinformationen."
 
 #: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
