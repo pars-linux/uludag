@@ -1,15 +1,15 @@
 # Copyright (C) YEAR Pardus
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
+# Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nm-applet\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 17:52+0300\n"
-"PO-Revision-Date: 2009-08-18 19:33+0200\n"
+"PO-Revision-Date: 2010-01-09 16:08+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
-"Language-Team: French <kde-i18n-doc@kde.org>\n"
+"Language-Team: French <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,7 +19,7 @@ msgstr ""
 #: code/widgets/configIconui.py:53 code/widgets/configPopupui.py:37
 #: code/widgets/itemui.py:39 code/widgets/popupui.py:151
 msgid "Form"
-msgstr "Formulaire"
+msgstr "Form"
 
 #: code/widgets/configIconui.py:54
 msgid "Show connection status"
@@ -55,7 +55,7 @@ msgstr "Afficher les profils de la liste"
 
 #: code/widgets/itemui.py:40
 msgid "PushButton"
-msgstr "Bouton poussoir"
+msgstr "PushButton"
 
 #: code/widgets/notify.py:63
 msgid "Network Manager"
@@ -112,4 +112,5 @@ msgstr "Connexion à <b>%1</b> .."
 #: code/main.py:330
 msgid "Icon Settings"
 msgstr "Paramètres de l'icône"
+
 
