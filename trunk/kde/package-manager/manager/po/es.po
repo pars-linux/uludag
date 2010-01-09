@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
-# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-08 10:29+0200\n"
-"PO-Revision-Date: 2009-09-20 06:39-0400\n"
+"PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,10 +67,9 @@ msgid "Ok"
 msgstr "Ok"
 
 # translated as "progress information", i see this string is the title of the progress info window..
-#: .tmp/progressdialog.py:39
-#, fuzzy, python-format
+#: .tmp/progressdialog.py:39, python-format
 msgid "Operation - %1%"
-msgstr "Información del Progreso"
+msgstr "Operación - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
@@ -147,9 +146,8 @@ msgid "Delete"
 msgstr "Eliminar"
 
 #: .tmp/settingsdialog.py:187
-#, fuzzy
 msgid "Not a valid repository name"
-msgstr "Nombre de Repositorio"
+msgstr "Nombre de Repositorio no válido"
 
 #: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
 #: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
@@ -637,6 +635,10 @@ msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
 msgstr ""
+"Paquete no encontrado. Puede ser que el paquete fue actualizado o removido "
+"del repositorio. "
+"Por favor intente actualizar sus informaciones del contenido de los "
+"repositorios."
 
 #: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
@@ -703,3 +705,4 @@ msgstr ""
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
+
