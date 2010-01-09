@@ -1,13 +1,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 2009-12-28 11:58+0100\n"
+"PO-Revision-Date: 2010-01-09 19:57+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -235,9 +235,8 @@ msgid "Welcome"
 msgstr "Välkommen"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "<b>Välkommen till Kaptan!</b>"
+msgstr "Välkommen till Kaptan!"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -311,9 +310,8 @@ msgid "Wonderful, awesome, superb wallpapers! \\m/"
 msgstr "Underbara, häftiga utsökta skrivbordsunderlägg! \\m/"
 
 #: .tmp/ui_goodbyeWidget.py:252
-#, fuzzy
 msgid "More"
-msgstr "Mus"
+msgstr "Mer"
 
 #: .tmp/ui_goodbyeWidget.py:253 .tmp/ui_keyboardWidget.py:98
 #: .tmp/ui_menuWidget.py:145 .tmp/ui_menuWidget.py:147
@@ -323,9 +321,8 @@ msgstr "Mus"
 #: .tmp/ui_styleWidget.py:133 .tmp/ui_styleWidget.py:134
 #: .tmp/ui_summaryWidget.py:69 .tmp/ui_wallpaperWidget.py:106
 #: .tmp/ui_welcomeWidget.py:59
-#, fuzzy
 msgid "color: rgb(234, 225, 228);"
-msgstr "color: rgb(95, 34, 52);"
+msgstr "color: rgb(234, 225, 228);"
 
 #: .tmp/ui_goodbyeWidget.py:255
 msgid ""
@@ -369,11 +366,10 @@ msgid "Help and Support"
 msgstr "Hjälp och stöd"
 
 #: .tmp/ui_goodbyeWidget.py:266
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
-msgstr "Pardusgemenskap, användarförteckningar, IRC-kanaler, wikis med mera."
+msgstr "Pardus gemenskap, sändlistor, IRC-kanaler, wikis och hjälpsidor..."
 
 #: .tmp/ui_kaptanMain.py:136
 msgid "Kaptan Desktop"
@@ -439,14 +435,12 @@ msgstr ""
 "}"
 
 #: .tmp/ui_menuWidget.py:152
-#, fuzzy
 msgid "Menu Styles"
-msgstr "Menyinställning"
+msgstr "Menystil"
 
 #: .tmp/ui_menuWidget.py:156
-#, fuzzy
 msgid "Sample"
-msgstr "Enkel meny"
+msgstr "Smakprov"
 
 #: .tmp/ui_mouseWidget.py:166
 msgid "Mouse"
@@ -464,7 +458,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_mouseWidget.py:170
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Klickbeteende"
 
@@ -498,7 +491,7 @@ msgstr "Nätverk"
 
 #: .tmp/ui_networkWidget.py:67
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "Anslut till internet"
 
 #: .tmp/ui_networkWidget.py:68
 msgid ""
@@ -509,7 +502,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_packageWidget.py:141
-#, fuzzy
 msgid "Packages"
 msgstr "Paket"
 
@@ -518,18 +510,16 @@ msgid "Updates"
 msgstr "Uppdateringar"
 
 #: .tmp/ui_packageWidget.py:144
-#, fuzzy
 msgid "Show updates in the system tray"
-msgstr "Visa i systembrickan"
+msgstr "Visa uppdateringar i systembrickan"
 
 #: .tmp/ui_packageWidget.py:145
-#, fuzzy
 msgid "Check updates automatically every"
 msgstr "Automatisk kontroll av uppdateringar var"
 
 #: .tmp/ui_packageWidget.py:146
 msgid "color: #642437;"
-msgstr ""
+msgstr "color: #642437;"
 
 #: .tmp/ui_packageWidget.py:147
 msgid " hours"
@@ -540,12 +530,10 @@ msgid "Repositories"
 msgstr "Förråd"
 
 #: .tmp/ui_packageWidget.py:149
-#, fuzzy
 msgid "Contrib repository includes extra and handy programs."
-msgstr "Contrib-förrådet innehåller extra paket."
+msgstr "Contrib-förrådet innehåller flera behjälpliga program."
 
 #: .tmp/ui_packageWidget.py:150
-#, fuzzy
 msgid "Add contrib repository"
 msgstr "Lägg till contrib-förrådet"
 
@@ -561,14 +549,12 @@ msgid "Install / Remove Programs"
 msgstr "Installera / ta bort program"
 
 #: .tmp/ui_searchWidget.py:74
-#, fuzzy
 msgid "Search"
-msgstr "Skrivbordssökning"
+msgstr "Sök"
 
 #: .tmp/ui_searchWidget.py:76
-#, fuzzy
 msgid "Easy Desktop Search"
-msgstr "Skrivbordssökning"
+msgstr "Enkel skrivbordssökning"
 
 #: .tmp/ui_searchWidget.py:77
 msgid ""
@@ -586,9 +572,8 @@ msgid "&Send my profile"
 msgstr "&Skicka min profil"
 
 #: .tmp/ui_smoltWidget.py:122
-#, fuzzy
 msgid "color:rgb(95, 34, 52)"
-msgstr "color: rgb(95, 34, 52);"
+msgstr "color:rgb(95, 34, 52)"
 
 #: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
@@ -684,7 +669,7 @@ msgstr ""
 
 #: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Hjälp till att förbättra Pardus!"
 
 #: .tmp/ui_smoltWidget.py:136
 msgid ""
@@ -698,12 +683,8 @@ msgid "Form"
 msgstr "Form"
 
 #: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
-#, fuzzy
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
-msgstr ""
-"#pictureMenuStyles{\n"
-"border: 1px solid rgb(255, 255, 255);\n"
-"}"
+msgstr "border: 1px solid rgb(236, 236, 236, 100);"
 
 #: .tmp/ui_styleitem.py:62
 msgid "styleName"
@@ -728,7 +709,6 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:137
-#, fuzzy
 msgid ""
 "#listStyles{\n"
 "background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 "
@@ -741,17 +721,18 @@ msgid ""
 "}"
 msgstr ""
 "#listStyles{\n"
-"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, "
-"stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba"
-"(255, 213, 230, 80));\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 "
+"rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, "
+"213, 230, 80));\n"
 "\n"
-"border: 1px solid rgb(236, 236, 236, 80)\n"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"\n"
+"color: rgb(234, 225, 228);\n"
 "}"
 
 #: .tmp/ui_styleWidget.py:144
-#, fuzzy
 msgid "Desktop Type"
-msgstr "<b>Skrivbordstyp:</b>"
+msgstr "Skrivbordstyp"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
@@ -762,21 +743,18 @@ msgid "Folder view (KDE3 Style)"
 msgstr "Katalogvy (KDE3-stil)"
 
 #: .tmp/ui_styleWidget.py:147
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "<b>Antal skrivbord:</b>"
+msgstr "Antal skrivbord"
 
 #: .tmp/ui_styleWidget.py:148
-#, fuzzy
 msgid "color: rgb(100, 36, 55);"
-msgstr "color: rgb(95, 34, 52);"
+msgstr "color: rgb(100, 36, 55);"
 
 #: .tmp/ui_summaryWidget.py:68
 msgid "Summary"
 msgstr "Sammanställning"
 
 #: .tmp/ui_summaryWidget.py:70
-#, fuzzy
 msgid ""
 "#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, "
 "y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 "
@@ -789,12 +767,12 @@ msgstr ""
 "y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 "
 "rgba(255, 213, 230, 80));\n"
 "\n"
-"border: 1px solid rgb(236, 236, 236, 80);}"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"padding: 20px}\n"
 
 #: .tmp/ui_summaryWidget.py:75
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Sökinställningar"
+msgstr "Spara dina inställningar"
 
 #: .tmp/ui_summaryWidget.py:76
 msgid ""
@@ -830,7 +808,6 @@ msgstr ""
 "border: 1px solid rgb(236, 236, 236, 80);}"
 
 #: .tmp/ui_wallpaperWidget.py:110
-#, fuzzy
 msgid "Choose wallpaper from file"
 msgstr "Välj skrivbordsunderlägg från en fil"
 
@@ -845,13 +822,12 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_wallpaperWidget.py:113
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Välj skrivbordsunderlägg från en fil"
+msgstr "Välj ett skrivbordsunderlägg"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
-msgstr ""
+msgstr "Välkommen till Pardus 2009.1 <sup>RC</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
