@@ -89,9 +89,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Search Settings
-        content.append(subject %ki18n("Search Settings").toString())
-        content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
-        content.append(end)
+        if self.searchSettings.has_key('summaryMessage'):
+            content.append(subject %ki18n("Search Settings").toString())
+            content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
+            content.append(end)
 
         # Smolt Settings
         try:
@@ -142,21 +143,22 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         subg_2.writeEntry("wallpaper", self.wallpaperSettings["selectedWallpaper"])
 
         # Search Settings
-        if self.searchSettings["hasChanged"] == True:
-            config = KConfig("nepomukserverrc")
-            group = config.group("Service-nepomukstrigiservice")
-            #group = config.group("Basic Settings")
-            group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
-            #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
+        if self.searchSettings.has_key('state'):
+            if self.searchSettings["hasChanged"] == True:
+                config = KConfig("nepomukserverrc")
+                group = config.group("Service-nepomukstrigiservice")
+                #group = config.group("Basic Settings")
+                group.writeEntry('autostart', str(self.searchSettings["state"]).lower())
+                #group.writeEntry('Start Nepomuk', str(self.searchSettings["state"]).lower())
 
-            session = dbus.SessionBus()
+                session = dbus.SessionBus()
 
-            try:
-                proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
-                proxy.reconfigure()
-                proxy.enableNepomuk(self.searchSettings["state"])
-            except dbus.DBusException:
-                pass
+                try:
+                    proxy = session.get_object( "org.kde.NepomukServer", "/nepomukserver")
+                    proxy.reconfigure()
+                    proxy.enableNepomuk(self.searchSettings["state"])
+                except dbus.DBusException:
+                    pass
 
 
         # Menu Settings
