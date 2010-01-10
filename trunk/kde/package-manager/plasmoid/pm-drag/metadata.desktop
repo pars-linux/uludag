@@ -4,6 +4,7 @@ Name=Drag & Drop Pisi Installer
 Name[tr]=Sürükle & Bırak Pisi Yükleme Aracı
 Name[sv]=Dra och släpp Pisi-installerare
 Name[x-test]=xxDrag & Drop Pisi Installerxx
+Name[fr]=Installeur de paquets par glisser-déposer
 Type=Service
 ServiceTypes=Plasma/Applet
 X-Plasma-API=python
