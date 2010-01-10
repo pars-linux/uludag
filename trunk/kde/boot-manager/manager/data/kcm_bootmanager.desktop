@@ -26,4 +26,4 @@ Comment[tr]=Açılış Yöneticisi
 Comment[nl]=Programma voor beheer van het opstartmenu (GRUB).
 Comment[fr]=configuration du démarrage (menu GRUB)
 X-KDE-Keywords=python boot grub managers
-X-KDE-Keywords=python démarrage boot grub
+X-KDE-Keywords[fr]=python démarrage boot grub
