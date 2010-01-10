@@ -26,4 +26,4 @@ Comment[tr]=Disk Yöneticisi
 Comment[nl]=Programma voor beheer van schijven en partities.
 Comment[fr]=Gestion des partitions et points de montage
 X-KDE-Keywords=python disk managers
-X-KDE-Keywords=python disque partition
+X-KDE-Keywords[fr]=python disque partition
