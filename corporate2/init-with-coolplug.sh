@@ -58,7 +58,7 @@ probe_drm() {
     info "Preparing for KMS"
     for device in /sys/bus/pci/devices/*/boot_vga; do
         [ -f $device ] || continue
-        [ "x$(cat $device)" == "x1" ] && modprobe -b -q $(cat `dirname $device`/modalias)
+        grep -q 1 $device && modprobe -b -q $(cat `dirname $device`/modalias)
     done
 }
 
@@ -78,7 +78,7 @@ probe_usb_devices() {
     for module in /sys/bus/usb/devices/*/modalias; do
         [ -f $module ] || continue
         MODULES="$MODULES $(cat $module)"
-        [ "x$(cat `dirname $module`/bInterfaceClass)" == "x08" ] && HAS_MASS_STORAGE=1
+        grep -qw 08 `dirname $module`/bInterfaceClass && HAS_MASS_STORAGE=1
     done
 
     modprobe -b -q -a $MODULES
