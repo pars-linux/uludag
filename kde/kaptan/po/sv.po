@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 2010-01-09 19:57+0100\n"
+"PO-Revision-Date: 2010-01-10 17:23+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -49,6 +49,8 @@ msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
 msgstr ""
+"Kick-off-menyn är standardmenyn i Pardus.<br><br>Programgenvägarna "
+"är välorganiserade och enkla att hitta."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:154
 msgid "Simple Menu"
@@ -59,6 +61,8 @@ msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
+"Enkel meny är en äldre typ av meny från KDE 3.<br><br>Den är resurssnål "
+"och rekommenderas därför till långsammare datorer."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
 msgid "Lancelot Menu"
@@ -69,6 +73,9 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
+"Lancelot är en avancerad meny och den är mycket anpassningsbar för Pardus.<"
+"br><br> "
+"Programgenvägarna är välorganiserade och enkla att hitta."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
 msgid "Mouse Settings"
@@ -330,6 +337,9 @@ msgid ""
 "you can checkout the following links and applications for more settings or "
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
+"<b>Dina inställningar har verkställts.</b> Nu kan du njuta av Pardus eller "
+"så kan du följa dessa länkar och program för ytterligare inställningar och "
+"hjälp. Glöm inte bort <b>att gå med i vår gemenskap!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -360,6 +370,8 @@ msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
 msgstr ""
+"Inställningsverktyg för Pardus så som för bildskärm, brandvägg, tangentbord "
+"användarhantering..."
 
 #: .tmp/ui_goodbyeWidget.py:265 .tmp/ui_goodbyeWidget.py:267
 msgid "Help and Support"
@@ -397,11 +409,11 @@ msgstr "Tangentbord"
 
 #: .tmp/ui_keyboardWidget.py:97
 msgid "Test Layout"
-msgstr ""
+msgstr "Testa layout"
 
 #: .tmp/ui_keyboardWidget.py:99
 msgid "Keyboard Layout Language"
-msgstr ""
+msgstr "Tangentbordsspråk"
 
 #: .tmp/ui_keyboardWidget.py:100
 msgid ""
@@ -409,6 +421,9 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
+"Kaptan väljer automatiskt bästa teckenuppsättning baserat på ditt "
+"systemspråk. "
+"Om du vill använda en annan kan du göra ditt val och testa det direkt."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -416,13 +431,15 @@ msgstr "Meny"
 
 #: .tmp/ui_menuWidget.py:146
 msgid "Choose a Menu Style"
-msgstr ""
+msgstr "Välj en menystil"
 
 #: .tmp/ui_menuWidget.py:148
 msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
 msgstr ""
+"Du kan också anpassa din <b>KDE-meny</b> som du vill. Välj en av följande "
+"stilar."
 
 #: .tmp/ui_menuWidget.py:149
 msgid ""
@@ -448,7 +465,7 @@ msgstr "Mus"
 
 #: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
-msgstr ""
+msgstr "Anpassa musbeteendet"
 
 #: .tmp/ui_mouseWidget.py:169
 msgid ""
@@ -456,6 +473,11 @@ msgid ""
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
+"<b>Klickbeteendet</b> definierar hur många gånger du vill klicka för att "
+"öppna "
+"en fil. Om du är <b>vänsterhänt</b>, kanska du föredrar att växla funktion "
+"mellan "
+"höger och vänster knapp på ditt pekdon."
 
 #: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
@@ -565,7 +587,7 @@ msgstr ""
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Tillåt Strigi att indexera mina filer"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "&Send my profile"
