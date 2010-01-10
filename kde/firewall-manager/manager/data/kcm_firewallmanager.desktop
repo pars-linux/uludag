@@ -25,4 +25,4 @@ Comment[tr]=Güvenlik Duvarı Yöneticisi
 Comment[nl]=Beheerder voor firewall
 Comment[fr]=Configuration du pare-feu
 X-KDE-Keywords=python security firewall managers
-X-KDE-Keywords=python sécurité pare-feu parefeu
+X-KDE-Keywords[fr]=python sécurité pare-feu parefeu
