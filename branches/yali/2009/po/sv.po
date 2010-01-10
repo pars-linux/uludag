@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-16 23:40+0300\n"
+"POT-Creation-Date: 2010-01-10 17:39+0200\n"
 "PO-Revision-Date: 2009-12-28 17:19+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:89 yali4/gui/Ui/exception.py:58
+#: yali4/gui/Ui/datetimewidget.py:89 yali4/gui/Ui/exception.py:57
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:153
 #: yali4/gui/Ui/summarywidget.py:67
 msgid "Form"
@@ -211,7 +211,7 @@ msgstr ""
 "installationen."
 
 #: yali4/gui/Ui/checkcdwidget.py:82 yali4/gui/ScrCheckCD.py:56
-#: yali4/installer.py:203
+#: yali4/installer.py:204
 msgid "Check CD Integrity"
 msgstr "Kontrollera cd-skivans integritet"
 
@@ -239,11 +239,11 @@ msgstr ":"
 msgid "Time Zone"
 msgstr "Tidszon"
 
-#: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
+#: yali4/gui/Ui/exception.py:59 yali4/__init__.py:69
 msgid "Error"
 msgstr "Fel"
 
-#: yali4/gui/Ui/exception.py:61
+#: yali4/gui/Ui/exception.py:60
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -269,13 +269,13 @@ msgstr ""
 "felrapport på <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</"
 "span> och bifoga följande bakåtspårning.</p></body></html>"
 
-#: yali4/gui/Ui/exception.py:66
+#: yali4/gui/Ui/exception.py:65
 msgid "Show Backtrace"
 msgstr "Visa bakåtspårning"
 
-#: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:89
+#: yali4/gui/Ui/exception.py:66 yali4/gui/Ui/rescuewidget.py:89
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:684
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:694
 msgid "Reboot"
 msgstr "Starta om"
 
@@ -655,19 +655,19 @@ msgstr ""
 #: yali4/gui/descSlide.py:19
 msgid ""
 "Pardus 2009.1 is a Linux distribution that everybody can easily install and "
-"use. With Pardus 2009.1, you can do anything that you could otherwise do with "
-"other operating systems. With its fast, secure and stable infrastructure, "
-"Pardus opens the path to software libre."
+"use. With Pardus 2009.1, you can do anything that you could otherwise do "
+"with other operating systems. With its fast, secure and stable "
+"infrastructure, Pardus opens the path to software libre."
 msgstr ""
-"Pardus 2009.1 är en Linuxdistribution som alla med lätthet kan installera och "
-"använda. Med Pardus 2009.1 kan du göra vad som helst som du kunnat göra med "
-"andra operativsystem. Med sin snabba, säkra och stabila infrastruktur leder "
-"Pardus vägen till programvarufrihet."
+"Pardus 2009.1 är en Linuxdistribution som alla med lätthet kan installera "
+"och använda. Med Pardus 2009.1 kan du göra vad som helst som du kunnat göra "
+"med andra operativsystem. Med sin snabba, säkra och stabila infrastruktur "
+"leder Pardus vägen till programvarufrihet."
 
 #: yali4/gui/descSlide.py:20
 msgid ""
-"Pardus 2009.1 comes preinstalled with the open source desktop environment KDE "
-"4.2. You will have a much better desktop experience compared to what you "
+"Pardus 2009.1 comes preinstalled with the open source desktop environment "
+"KDE 4.3. You will have a much better desktop experience compared to what you "
 "have seen so far. Following the installation, you can choose to use the "
 "classical desktop view that includes icons to your files and folders, or you "
 "can have any number of the preinstalled plasma widgets on your desktop and "
@@ -675,8 +675,8 @@ msgid ""
 "your desktop; even more, you can have a real-time weather report, your notes "
 "and RSS feeds right on your desktop."
 msgstr ""
-"Pardus 2009.1 kommer förinstallerad med den fria skrivbordsmiljön KDE 4.3. Du "
-"får en mycket bättre skrivbordsupplevelse jämfört med vad du sett "
+"Pardus 2009.1 kommer förinstallerad med den fria skrivbordsmiljön KDE 4.3. "
+"Du får en mycket bättre skrivbordsupplevelse jämfört med vad du sett "
 "hitintills. Under installationen kan du välja att använda den klassiska "
 "skrivbordsvyn som innehåller ikoner till filer och mappar, eller så kan du "
 "ha ett valfritt antal av de förinstallerade grafiska komponenterna på ditt "
@@ -704,33 +704,23 @@ msgid ""
 "formats and you can view all your files without any additional software, "
 "take notes on bookmarks on them."
 msgstr ""
-"I Pardus 2009.1 är Kpdf ersatt av Okular. Okular har stöd för många format och "
-"du kan visa alla dina filer utan ytterligare program, skapa anteckningar och "
-"bokmärken."
+"I Pardus 2009.1 är Kpdf ersatt av Okular. Okular har stöd för många format "
+"och du kan visa alla dina filer utan ytterligare program, skapa anteckningar "
+"och bokmärken."
 
 #: yali4/gui/descSlide.py:23
 msgid ""
-"Pardus 2009.1 also includes other components updated with KDE 4.3. If you have "
-"used Pardus before, you may want to check out the welcome tour to see what "
-"those changes are."
-msgstr ""
-"Pardus 2009.1 innehåller också andra komponenter uppdaterade med KDE 4.3. Om "
-"du har använt Pardus tidigare kanske du vill kolla på välkomstvisningen för "
-"att se vilka dessa förändringar är."
-
-#: yali4/gui/descSlide.py:24
-msgid ""
 "Pardus includes many genuine technologies aiming for an easier use and "
-"management. TASMA has been replaced with System Manager in Pardus 2009.1, but "
-"you will still find all these management tools built into the System Manager "
-"interface."
+"management. TASMA has been replaced with System Manager in Pardus 2009.1, "
+"but you will still find all these management tools built into the System "
+"Manager interface."
 msgstr ""
 "Pardus innehåller flera genuina teknologier som syftar till att underlätta "
 "användning och hantering. TASMA har blivit ersatt av Systeminställningar i "
-"Pardus 2009.1, men du hittar fortfarande dessa hanteringsverktyg integrerade i "
-"Systeminställningar."
+"Pardus 2009.1, men du hittar fortfarande dessa hanteringsverktyg integrerade "
+"i Systeminställningar."
 
-#: yali4/gui/descSlide.py:25
+#: yali4/gui/descSlide.py:24
 msgid ""
 "Kaptan (Turkish for 'Captain') is what welcomes you to your Pardus "
 "installation. Using Kaptan, you can configure your desktop, changing the "
@@ -747,7 +737,7 @@ msgstr ""
 "också alternativ för att ställa in intelligenta sökmöjligheter och en "
 "rundtur för nybörjare."
 
-#: yali4/gui/descSlide.py:26
+#: yali4/gui/descSlide.py:25
 msgid ""
 "It is possible to install hundreds of software found in Pardus' package "
 "repositories with a single click. Using the Package Manager, you can install "
@@ -761,7 +751,7 @@ msgstr ""
 "konfigurationsalternativ. Efter paketinstallationen behöver du bara starta "
 "programmet. Det är så enkelt!"
 
-#: yali4/gui/descSlide.py:27
+#: yali4/gui/descSlide.py:26
 msgid ""
 "Adding new users, changing boot order, starting or stopping system services "
 "or rolling your system configuration back to a previous state has never been "
@@ -774,7 +764,7 @@ msgstr ""
 "och du kan även lägga till grafiska komponenter som du använder ofta på "
 "skrivbordet."
 
-#: yali4/gui/descSlide.py:28
+#: yali4/gui/descSlide.py:27
 msgid ""
 "To connect to a wireless or 'wired' network is as easy as choosing a "
 "connection profile with Pardus 2009.1. With the network manager's advanced "
@@ -782,13 +772,13 @@ msgid ""
 "server) for different connections with the profiles you create. Choosing a "
 "different connection profile requires just two clicks."
 msgstr ""
-"Att ansluta till ett trådlöst eller trådbundet nätverk i Pardus 2009.1 är lika "
-"enkelt som att välja en anslutningsprofil. Med Nätverkshanterarens "
+"Att ansluta till ett trådlöst eller trådbundet nätverk i Pardus 2009.1 är "
+"lika enkelt som att välja en anslutningsprofil. Med Nätverkshanterarens "
 "avancerade alternativ har du olika inställningar (t.ex. statisk IP, olika "
 "DNS-servrar) för olika anslutningar med den profil du skapade. Att välja en "
 "annan anslutning kräver bara två tryckningar."
 
-#: yali4/gui/descSlide.py:29
+#: yali4/gui/descSlide.py:28
 msgid ""
 "With Pardus 2009.1, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -806,7 +796,7 @@ msgstr ""
 "andra musikenheter kan du dra och släppa låtar till din spelare utan att "
 "behöva extra drivrutiner."
 
-#: yali4/gui/descSlide.py:30
+#: yali4/gui/descSlide.py:29
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -822,7 +812,7 @@ msgstr ""
 "webbplatser i dina bokmärken efter en standardinstallation av Pardus. Njut "
 "av internet snabbt och säkert med den nya Mozilla Firefox 3.5.7."
 
-#: yali4/gui/descSlide.py:31
+#: yali4/gui/descSlide.py:30
 msgid ""
 "Connecting to your friends and contacts is really easy and seamlessly "
 "integrated into the desktop with Pardus 2009.1. Using Kontact, you can send "
@@ -836,7 +826,7 @@ msgstr ""
 "följa RSS-flöden. Med Kopete kan du ansluta till populära nätverk som MSN "
 "och GTalk, och chatta med dina vänner."
 
-#: yali4/gui/descSlide.py:32
+#: yali4/gui/descSlide.py:31
 msgid ""
 "World's leading preferred libre office suite OpenOffice.org brings a word "
 "processor, a spreadsheet, a presentation application, database, formula and "
@@ -852,7 +842,7 @@ msgstr ""
 "skapade i en annan kontorssvit och dela dina dokument med vänner och "
 "kontakter som använder andra kontorsprogram."
 
-#: yali4/gui/descSlide.py:33
+#: yali4/gui/descSlide.py:32
 msgid ""
 "Gimp is an advanced image editing software. Allowing creation and editing of "
 "common graphics and image file formats, it has abilities that professional "
@@ -862,10 +852,9 @@ msgstr ""
 "Gimp är ett avancerat bildbehandlingsprogram. Tillåter skapande och "
 "redigering avvanliga grafik- och bildfilsformat, det har förmågor som "
 "professionella grafiska konstnärer och formgivare behöver, och en förmåga "
-"att "
-"enkelt integrera nya filter med sitt instickssystem."
+"att enkelt integrera nya filter med sitt instickssystem."
 
-#: yali4/gui/descSlide.py:34
+#: yali4/gui/descSlide.py:33
 msgid ""
 "Pardus, along with the preinstalled games, has many games in its "
 "repositories, allowing hours of fun with various kinds of games available "
@@ -874,7 +863,7 @@ msgstr ""
 "Utöver sina förinstallerade spel har Pardus många spel i sitt förråd, det "
 "ger timmar av nöje med olika typer av spel tillgängliga via Pakethanteraren."
 
-#: yali4/gui/descSlide.py:35
+#: yali4/gui/descSlide.py:34
 msgid ""
 "Pardus 2009.1 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -892,7 +881,7 @@ msgstr ""
 "Pardus kommer att installera rätt drivrutin och göra rätt inställningar på "
 "direkten."
 
-#: yali4/gui/descSlide.py:36
+#: yali4/gui/descSlide.py:35
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the Özgürlükİçin portal, where content is "
@@ -918,7 +907,7 @@ msgstr "Manuell partitionering vald."
 msgid "'Install Root' size must be larger than %s MB."
 msgstr "'Systempartitionen' måste vara på minst %s MB."
 
-#: yali4/gui/DiskWidgets.py:222 yali4/gui/ScrBootloader.py:68
+#: yali4/gui/DiskWidgets.py:222 yali4/gui/ScrBootloader.py:69
 #: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:71
 #: yali4/gui/ScrRescue.py:48
 msgid "Can't find a storage device!"
@@ -1052,7 +1041,7 @@ msgstr ""
 msgid "Resizing to %s MB.."
 msgstr "Ändrar storlek till %s MB.."
 
-#: yali4/gui/GUIAdditional.py:97
+#: yali4/gui/GUIAdditional.py:97 yali4/installer.py:370
 msgid "Filesystem Error"
 msgstr "Filsystemfel"
 
@@ -1096,11 +1085,11 @@ msgstr "Kan inte öppna licensfil!"
 msgid "Can't open Release Notes!"
 msgstr "Kan inte öppna versionsfakta!"
 
-#: yali4/gui/runner.py:150
+#: yali4/gui/runner.py:152
 msgid "Error occured !"
 msgstr "Ett fel uppstod!"
 
-#: yali4/gui/runner.py:166
+#: yali4/gui/runner.py:168
 msgid "Unhandled exception occured!"
 msgstr "Ohanterat undantag uppstod!"
 
@@ -1186,15 +1175,15 @@ msgstr "Använd inte ditt användarnamn som lösenord."
 msgid "Hostname contains invalid characters!"
 msgstr "Värddatornamnet innehåller ogiltiga tecken!"
 
-#: yali4/gui/ScrBootloader.py:37
+#: yali4/gui/ScrBootloader.py:38
 msgid "Bootloader Choice"
 msgstr "Alternativ för starthanteraren"
 
-#: yali4/gui/ScrBootloader.py:38
+#: yali4/gui/ScrBootloader.py:39
 msgid "Configure the system boot..."
 msgstr "Konfigurera systemets uppstart..."
 
-#: yali4/gui/ScrBootloader.py:40 yali4/gui/ScrRescueGrub.py:35
+#: yali4/gui/ScrBootloader.py:41 yali4/gui/ScrRescueGrub.py:35
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
@@ -1548,8 +1537,8 @@ msgstr ""
 "</p>\n"
 "<p>Automatisk partitionering formaterar automatiskt det valda området och "
 "installerar\n"
-"Pardus 2009.1. Om du vill kan du partitionera för hand eller låta Pardus 2009.1 "
-"skapa\n"
+"Pardus 2009.1. Om du vill kan du partitionera för hand eller låta Pardus "
+"2009.1 skapa\n"
 "en ny partition för installationen.</p>\n"
 "<p>\n"
 "Se Pardus installations- och användarguide för mer information om "
@@ -1638,7 +1627,7 @@ msgstr ""
 "<font size=\"+2\">Räddningsläge</font>\n"
 "<font size=\"+1\"><p>Klicka <b>Nästa</b> för att starta om!</p></font>\n"
 
-#: yali4/gui/ScrRescueFinish.py:64 yali4/installer.py:523
+#: yali4/gui/ScrRescueFinish.py:64 yali4/installer.py:533
 msgid "Installing BootLoader..."
 msgstr "Installerar starthanteraren..."
 
@@ -1685,7 +1674,7 @@ msgid "Starting DBUS..."
 msgstr "Startar D-Bus..."
 
 #: yali4/gui/ScrRescuePassword.py:63 yali4/gui/ScrRescuePisi.py:55
-#: yali4/installer.py:512
+#: yali4/installer.py:522
 msgid "Trying to connect DBUS..."
 msgstr "Försöker ansluta till DBUS..."
 
@@ -2084,11 +2073,11 @@ msgstr "Information"
 msgid "Show Help"
 msgstr "Visa hjälp"
 
-#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:172
+#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:178
 msgid "right"
 msgstr "höger"
 
-#: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:171
+#: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:177
 msgid "left"
 msgstr "vänster"
 
@@ -2118,7 +2107,7 @@ msgstr "Tetris"
 msgid "Hide Help"
 msgstr "Dölj hjälp"
 
-#: yali4/bootloader.py:216 yali4/bootloader.py:221
+#: yali4/bootloader.py:227 yali4/bootloader.py:232
 msgid "Windows"
 msgstr "Windows"
 
@@ -2129,8 +2118,8 @@ msgid ""
 "them.                                      You should restart the machine "
 "before starting the installation process !"
 msgstr ""
-"FSCheck hittade och lagade problem på partitionen "
-"%.                                      Du bör starta om datorn före du "
+"FSCheck hittade och lagade problem på partitionen %"
+"s.                                      Du bör starta om datorn före du "
 "återupptar installationsprocessen!"
 
 #: yali4/filesystem.py:168
@@ -2138,11 +2127,20 @@ msgstr ""
 msgid "FSCheck failed on %s"
 msgstr "FSCheck misslyckades på %s"
 
-#: yali4/filesystem.py:380 yali4/filesystem.py:471
+#: yali4/filesystem.py:380
 msgid "Partition is not ready for resizing. Check it before installation."
 msgstr ""
 "Partitionen är inte klar för storleksändring. Kontrollera den före "
 "installation."
+
+#: yali4/filesystem.py:471
+#, python-format
+msgid ""
+"Opening '%s' as NTFS failed: The NTFS journal file is unclean. Please "
+"shutdown Windows properly before using this software! Note, if you have run "
+"chkdsk previously then boot Windows again which will automatically "
+"initialize the journal correctly"
+msgstr ""
 
 #: yali4/filesystem.py:477
 #, python-format
@@ -2153,7 +2151,7 @@ msgstr "Storleksändringen av %s misslyckades"
 msgid "Backtrace:"
 msgstr "Spårning:"
 
-#: yali4/installer.py:150
+#: yali4/installer.py:151
 #, python-format
 msgid ""
 "Plugin (%s) not found or error occurred while loading. Switching to normal "
@@ -2162,24 +2160,24 @@ msgstr ""
 "Hittade inte insticksprogrammet (%s), eller så uppstod ett fel vid laddning. "
 "Återgår till normal installationsprocess."
 
-#: yali4/installer.py:156
+#: yali4/installer.py:157
 msgid "YALI Is Working..."
 msgstr "YALI arbetar..."
 
-#: yali4/installer.py:172
+#: yali4/installer.py:173
 msgid "Starting for CD Check"
 msgstr "Startar cd-kontroll"
 
-#: yali4/installer.py:190
+#: yali4/installer.py:191
 #, python-format
 msgid "Checking: %s"
 msgstr "Kontrollerar: %s"
 
-#: yali4/installer.py:197
+#: yali4/installer.py:198
 msgid "Check Failed"
 msgstr "Kontrollen misslyckades"
 
-#: yali4/installer.py:198
+#: yali4/installer.py:199
 msgid ""
 "<b><p>Integrity check for packages failed.                                  "
 "It seems that installation CD is broken.</p></b>"
@@ -2188,7 +2186,7 @@ msgstr ""
 "misslyckades.                                  Det verkar som om "
 "installationsskivan är trasig.</p></b>"
 
-#: yali4/installer.py:202
+#: yali4/installer.py:203
 msgid ""
 "<font color=\"#FFF\"><b>Check succeeded. You can proceed to the next screen."
 "</b></font>"
@@ -2196,59 +2194,59 @@ msgstr ""
 "<font color=\"#FFF\"><b>Kontrollen lyckades. Du kan fortsätta till nästa "
 "steg.</b></font>"
 
-#: yali4/installer.py:220
+#: yali4/installer.py:221
 msgid "Setting time settings.."
 msgstr "Sparar tidsinställningar..."
 
-#: yali4/installer.py:247
+#: yali4/installer.py:248
 msgid "Disk analyze started.."
 msgstr "Diskanalysen påbörjad..."
 
-#: yali4/installer.py:305
+#: yali4/installer.py:306
 msgid "Writing disk tables ..."
 msgstr "Skriver disktabeller"
 
-#: yali4/installer.py:367
+#: yali4/installer.py:372
 msgid "Resize Finished ..."
 msgstr "Storleksändringen avslutad..."
 
-#: yali4/installer.py:373
+#: yali4/installer.py:378
 msgid "Creating new partition ..."
 msgstr "Skapar ny partition..."
 
-#: yali4/installer.py:392
+#: yali4/installer.py:397
 msgid "Failed to use partition for automatic installation "
 msgstr "Misslyckades med automatisk installation på partitionen"
 
-#: yali4/installer.py:514
+#: yali4/installer.py:524
 msgid "Setting Hostname..."
 msgstr "Sparar värdnamn..."
 
-#: yali4/installer.py:515
+#: yali4/installer.py:525
 msgid "Setting TimeZone..."
 msgstr "Sparar tidszon..."
 
-#: yali4/installer.py:516
+#: yali4/installer.py:526
 msgid "Setting Root Password..."
 msgstr "Sparar lösenord för root..."
 
-#: yali4/installer.py:517
+#: yali4/installer.py:527
 msgid "Adding Users..."
 msgstr "Lägger till användare..."
 
-#: yali4/installer.py:518
+#: yali4/installer.py:528
 msgid "Writing Console Data..."
 msgstr "Skriver konsolldata..."
 
-#: yali4/installer.py:519
+#: yali4/installer.py:529
 msgid "Migrating X.org Configuration..."
 msgstr "Migrerar konfiguration av X.org..."
 
-#: yali4/installer.py:521
+#: yali4/installer.py:531
 msgid "Copy Pisi index..."
 msgstr "Kopierar Pisiindex..."
 
-#: yali4/installer.py:522
+#: yali4/installer.py:532
 msgid "Setting misc. package configurations..."
 msgstr "Sparar diverse paketkonfigurationer..."
 
@@ -2455,6 +2453,15 @@ msgid "Not enough free space on %s to create new partition"
 msgstr "Inte tillräckligt med ledigt utrymme på %s för att skapa ny partition"
 
 #~ msgid ""
+#~ "Pardus 2009.1 also includes other components updated with KDE 4.3. If you "
+#~ "have used Pardus before, you may want to check out the welcome tour to "
+#~ "see what those changes are."
+#~ msgstr ""
+#~ "Pardus 2009.1 innehåller också andra komponenter uppdaterade med KDE 4.3. "
+#~ "Om du har använt Pardus tidigare kanske du vill kolla på "
+#~ "välkomstvisningen för att se vilka dessa förändringar är."
+
+#~ msgid ""
 #~ "Welcome! Our improved setup tool YALI will help you with the installation "
 #~ "of Pardus 2009.1. YALI will help install Pardus 2009.1 quickly and easily "
 #~ "following the partitioning of disk(s) using the intelligent partitioning "
@@ -2553,10 +2560,10 @@ msgstr "Inte tillräckligt med ledigt utrymme på %s för att skapa ny partition
 #~ "including, but not limited to, MPEG, AVI and DivX. If you have a digital "
 #~ "TV card, you can record your favourite TV programs using Kaffeine!\n"
 #~ msgstr ""
-#~ "Kaffeine är standardvideospelaren i Pardus 2009.1. Den är en högpresterande "
-#~ "spelare av DVDs, VCDs och oändligt många fler format, bland annat MPEG, "
-#~ "AVI och DivX. Om du har ett digitalt tv-kort kan du spela in dina "
-#~ "favoritprogram med Kaffeine!\n"
+#~ "Kaffeine är standardvideospelaren i Pardus 2009.1. Den är en "
+#~ "högpresterande spelare av DVDs, VCDs och oändligt många fler format, "
+#~ "bland annat MPEG, AVI och DivX. Om du har ett digitalt tv-kort kan du "
+#~ "spela in dina favoritprogram med Kaffeine!\n"
 
 #~ msgid ""
 #~ "You can use multiple accounts in various instant messaging services like "
@@ -2584,9 +2591,9 @@ msgstr "Inte tillräckligt med ledigt utrymme på %s för att skapa ny partition
 #~ "that).\n"
 #~ msgstr ""
 #~ "Du kan hitta guider, information om pakethantering och andra "
-#~ "instruktioner på www.pardus.nu. Om du får problem med Pardus 2009.1 kan du "
-#~ "få hjälp i det svenska forumet och i #pardus.nu på IRC, Freenodeservern "
-#~ "(du kan använda Konversation till det).\n"
+#~ "instruktioner på www.pardus.nu. Om du får problem med Pardus 2009.1 kan "
+#~ "du få hjälp i det svenska forumet och i #pardus.nu på IRC, "
+#~ "Freenodeservern (du kan använda Konversation till det).\n"
 
 #~ msgid "The analog clock widget displays the current time."
 #~ msgstr "Den analoga klockan visar aktuell tid."
