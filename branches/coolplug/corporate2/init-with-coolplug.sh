@@ -58,7 +58,7 @@ probe_drm() {
     info "Preparing for KMS"
     for device in /sys/bus/pci/devices/*/boot_vga; do
         [ -f $device ] || continue
-        grep -q 1 $device && modprobe -b -q $(cat `dirname $device`/modalias)
+        grep -q 1 $device && modprobe -b -q ${device%boot_vga}modalias
     done
 }
 
