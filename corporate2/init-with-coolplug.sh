@@ -78,7 +78,7 @@ probe_usb_devices() {
     for module in /sys/bus/usb/devices/*/modalias; do
         [ -f $module ] || continue
         MODULES="$MODULES $(cat $module)"
-        grep -qw 08 `dirname $module`/bInterfaceClass && HAS_MASS_STORAGE=1
+        grep -qw 08 ${module%modalias}bInterfaceClass && HAS_MASS_STORAGE=1
     done
 
     modprobe -b -q -a $MODULES
@@ -97,7 +97,7 @@ create_device_nodes() {
         for partitionid in $block/*/partition; do
             [ -f $partitionid ] || continue
             PARTPATH="/dev/$(echo $(basename `dirname $partitionid`) | sed "s,!,/,g")"
-            mknod $PARTPATH b $(sed 's/:/ /' "$(dirname $partitionid)/dev") &> /dev/null
+            mknod $PARTPATH b $(sed 's/:/ /' "${partitionid%partition}dev") &> /dev/null
         done
     done
 }
