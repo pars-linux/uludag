@@ -5,7 +5,7 @@ Name[nl]=Pakketbeheer
 Name[es]=Administrador de Paquetes
 Name[de]=Paket-Manager
 Name[sv]=Pakethanteraren
-
+Name[fr]=Gestionnaire de paquets
 Icon=package-manager
 Type=Application
 StartupNotify=False
