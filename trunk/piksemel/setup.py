@@ -76,7 +76,9 @@ class Install(install):
 setup(
     name='piksemel',
     version=version,
-    ext_modules=[Extension('piksemel', ['src/iksemel.c', 'src/pyiks.c'])],
+    ext_modules=[Extension('piksemel',
+                            ['src/iksemel.c', 'src/pyiks.c'],
+                            extra_compile_args=["-fvisibility=hidden"])],
     cmdclass = {
         'install' : Install
     }
