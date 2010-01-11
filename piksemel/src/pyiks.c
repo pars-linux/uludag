@@ -994,6 +994,7 @@ static PyMethodDef methods[] = {
 	{ NULL, NULL, 0, NULL }
 };
 
+__attribute__((visibility("default")))
 PyMODINIT_FUNC
 initpiksemel(void)
 {
