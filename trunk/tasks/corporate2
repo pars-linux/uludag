@@ -129,5 +129,6 @@
 * X/DRM/locales (Fatih Aşıcı)
     * display-settings exception veriyor (+)
     * kdm ingilizce açılıyor (+)
+    * kcm_kdm'ye sistem dili seçiminin eklenmesi (-)
     * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
     * KMS (/50)
