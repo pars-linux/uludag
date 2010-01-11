@@ -7,18 +7,20 @@
 # Mustafa Ölcerman <mustafa.oelcerman@fk-koeln.de>, 2007.
 # Mustafa Ölcerman <mmoelcerman@googlemail.com>, 2007.
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-05-12 16:30+0300\n"
-"PO-Revision-Date: 2008-06-17 15:43+0200\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-01-11 19:58-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/bm_mainview.py:36
 msgid "New Entry"
@@ -46,7 +48,7 @@ msgstr "System:"
 
 #: src/bm_mainview.py:171
 msgid "Root (or UUID):"
-msgstr ""
+msgstr "Root (oder UUID):"
 
 #: src/bm_mainview.py:180
 msgid "Kernel:"
@@ -73,7 +75,6 @@ msgid "Access Denied"
 msgstr "Zugriff verweigert"
 
 #: src/bm_mainview.py:287
-#, fuzzy
 msgid "Are you sure you want to remove this entry from the boot loader?"
 msgstr "Sind Sie sicher, dass Sie diesen Eintrag entfernen möchten?"
 
