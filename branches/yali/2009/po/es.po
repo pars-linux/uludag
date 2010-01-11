@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-10 17:39+0200\n"
+"POT-Creation-Date: 2010-01-11 11:57+0200\n"
 "PO-Revision-Date: 2009-07-16 19:47-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -688,7 +688,6 @@ msgstr ""
 "estable de Pardus le abre camino al mundo de la sofware libre."
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Pardus 2009.1 comes preinstalled with the open source desktop environment "
 "KDE 4.3. You will have a much better desktop experience compared to what you "
@@ -920,7 +919,7 @@ msgstr ""
 #: yali4/gui/descSlide.py:35
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
-"with problems you encounter. In the Özgürlükİçin portal, where content is "
+"with problems you encounter. In the OzgurlukIcin portal, where content is "
 "developed by volunteer contributors, you will find guides, package and game "
 "introductions. If you happen to have any questions, the forum is waiting for "
 "you. If you need support, or if you want to support, your first stop should "
@@ -1406,15 +1405,15 @@ msgstr "Presione el botón <b>Reiniciar</b> para reiniciar el sistema."
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Rebooteando. Por favor espere..!</b>"
 
-#: yali4/gui/ScrInstall.py:63
+#: yali4/gui/ScrInstall.py:64
 msgid "Installing system..."
 msgstr "Instalando el sistema.."
 
-#: yali4/gui/ScrInstall.py:64
+#: yali4/gui/ScrInstall.py:65
 msgid "Installing takes approximately 20 minutes depending on your hardware..."
 msgstr "Instalación tarda ca. 20 minutos, dependiendo del equipo.."
 
-#: yali4/gui/ScrInstall.py:66
+#: yali4/gui/ScrInstall.py:67
 msgid ""
 "\n"
 "<font size=\"+2\">Installation started</font>\n"
@@ -1460,44 +1459,44 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:123
+#: yali4/gui/ScrInstall.py:124
 msgid "Packages are being installed.."
 msgstr "Instalando paquetes.."
 
-#: yali4/gui/ScrInstall.py:138
+#: yali4/gui/ScrInstall.py:139
 #, python-format
 msgid "Installing: <b>%s</b><br>%s"
 msgstr "Instalando: <b>%s</b><br>%s"
 
-#: yali4/gui/ScrInstall.py:143
+#: yali4/gui/ScrInstall.py:144
 #, python-format
 msgid "Configuring package: <b>%s</b>"
 msgstr "Configurando paquete: <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:166 yali4/gui/ScrPartitionManual.py:79
+#: yali4/gui/ScrInstall.py:167 yali4/gui/ScrPartitionManual.py:79
 msgid "Warning"
 msgstr "Alerta"
 
-#: yali4/gui/ScrInstall.py:167
+#: yali4/gui/ScrInstall.py:168
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Instalación de paquete falló : <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:168
+#: yali4/gui/ScrInstall.py:169
 msgid "Do you want to retry ?"
 msgstr "Desea intentar de nuevo ?"
 
 # favor verificar, traduccion libre, no estoy seguro a que se refiere
 # i shortened this message, i think it is a message of the bottom line..
-#: yali4/gui/ScrInstall.py:189
+#: yali4/gui/ScrInstall.py:190
 msgid "Creating baselayout for your system!"
 msgstr "Configuración de layout básico del sistema !"
 
-#: yali4/gui/ScrInstall.py:198
+#: yali4/gui/ScrInstall.py:202
 msgid "Configuring packages.."
 msgstr "Configurando paquetes.."
 
-#: yali4/gui/ScrInstall.py:221
+#: yali4/gui/ScrInstall.py:225
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -2546,7 +2545,7 @@ msgid "as Storage Area"
 msgstr "Área de almacenamiento"
 
 # if this is a message at the bottom line - this string should be shortened..
-#: yali4/postinstall.py:180
+#: yali4/postinstall.py:184
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Preparando directorio home de usuario <b>%s</b>.."
