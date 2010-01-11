@@ -243,11 +243,11 @@ msgstr "Hayır"
 
 #: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:58
 msgid "Welcome"
-msgstr "Hoşgeldiniz"
+msgstr "Hoş Geldiniz"
 
 #: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
 msgid "Welcome to Kaptan"
-msgstr "Kaptan'a hoşgeldiniz"
+msgstr "Kaptan'a Hoş Geldiniz"
 
 #: .tmp/ScrSummary.py:63
 #, python-format
@@ -270,16 +270,16 @@ msgstr "Seçilen Menü: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:73
 msgid "Wallpaper Settings"
-msgstr "Duvarkağıdı Ayarları"
+msgstr "Duvar kağıdı Ayarları"
 
 #: .tmp/ScrSummary.py:75
 msgid "You haven't selected any wallpaper."
-msgstr "Duvarkağıdı seçmediniz."
+msgstr "Duvar kağıdı seçmediniz."
 
 #: .tmp/ScrSummary.py:77
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
-msgstr "Seçilen duvarkağıdı: <b>%s</b>"
+msgstr "Seçilen duvar kağıdı: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:81
 msgid "Style Settings"
@@ -821,7 +821,7 @@ msgstr "duvarkağıdıAçıklaması"
 
 #: .tmp/ui_wallpaperWidget.py:105
 msgid "Wallpaper"
-msgstr "Duvarkağıdı"
+msgstr "Duvar Kağıdı"
 
 #: .tmp/ui_wallpaperWidget.py:107
 msgid ""
@@ -834,11 +834,11 @@ msgstr ""
 
 #: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
-msgstr "Duvarkağıdını Dosyadan Seç"
+msgstr "Duvar Kağıdını Dosyadan Seç"
 
 #: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
-msgstr "Duvarkağıdını değiştirme"
+msgstr "Duvar Kağıdını değiştirme"
 
 #: .tmp/ui_wallpaperWidget.py:112
 msgid ""
@@ -846,15 +846,15 @@ msgid ""
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
 "Masaüstünüz için en beğendiğiniz duvar kağıdını seçin. <b>Masaüstü Ayarları</"
-"b>'na girerek yeni ve havalı duvarkağıtları indirebileceğinizi unutmayın."
+"b>'na girerek yeni ve havalı duvar kağıtları indirebileceğinizi unutmayın."
 
 #: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
-msgstr "Duvarkağıdı Seçin"
+msgstr "Duvar Kağıdı Seçin"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
-msgstr "Pardus 2009.1 <sup>RC</sup> 'ye Hoşgeldiniz"
+msgstr "Pardus 2009.1 <sup>RC</sup> 'ye Hoş Geldiniz"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -866,7 +866,7 @@ msgid ""
 "<b>next</b> in order to begin."
 msgstr ""
 "<b>Pardus</b> güvenilir, hızlı ve kullanıcı dostu bir işletim sistemidir. "
-"<br /><br />Pardus ile İnternet'e bağlanabilir, e-posta'larınızı okuyabilir, "
+"<br /><br />Pardus ile İnternet'e bağlanabilir, e-postalarınızı okuyabilir, "
 "ofis dökümanlarıyla çalışabilir, film izleyebilir, müzik  dinleyebilir, "
 "uygulama geliştirebilir, oyunlar oynayabilir ve çok daha fazlasını "
 "yapabilirsiniz!<br /><br /><b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve "
