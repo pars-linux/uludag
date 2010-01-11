@@ -100,7 +100,6 @@
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (+)
     * DMI gizleyince %9 çıkıyor (-)
     * Common folders ile disks'i birleştir (-)
-    * Corporate için logosu yok (-)
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
