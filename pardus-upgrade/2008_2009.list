@@ -90,7 +90,6 @@ kernel-firmware
 logrotate
 module-broadcom-wl
 module-broadcom-wl-userspace
-module-lirc
 module-omnibook
 module-omnibook-userspace
 partitionmanager
