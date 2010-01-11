@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-10 17:39+0200\n"
+"POT-Creation-Date: 2010-01-11 11:57+0200\n"
 "PO-Revision-Date: 2010-01-10 21:12+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -884,7 +884,7 @@ msgstr ""
 #: yali4/gui/descSlide.py:35
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
-"with problems you encounter. In the Özgürlükİçin portal, where content is "
+"with problems you encounter. In the OzgurlukIcin portal, where content is "
 "developed by volunteer contributors, you will find guides, package and game "
 "introductions. If you happen to have any questions, the forum is waiting for "
 "you. If you need support, or if you want to support, your first stop should "
@@ -1342,16 +1342,16 @@ msgstr "Klicka på knappen <b>Starta om</b> för att starta om datorn."
 msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Startar om systemet. Vänta!</b>"
 
-#: yali4/gui/ScrInstall.py:63
+#: yali4/gui/ScrInstall.py:64
 msgid "Installing system..."
 msgstr "Installerar systemet..."
 
-#: yali4/gui/ScrInstall.py:64
+#: yali4/gui/ScrInstall.py:65
 msgid "Installing takes approximately 20 minutes depending on your hardware..."
 msgstr ""
 "Installationen tar uppskattningsvis 20 minuter, allt beroende på din dator..."
 
-#: yali4/gui/ScrInstall.py:66
+#: yali4/gui/ScrInstall.py:67
 msgid ""
 "\n"
 "<font size=\"+2\">Installation started</font>\n"
@@ -1395,42 +1395,42 @@ msgstr ""
 "</p>\n"
 "</font>\n"
 
-#: yali4/gui/ScrInstall.py:123
+#: yali4/gui/ScrInstall.py:124
 msgid "Packages are being installed.."
 msgstr "Installerar paket..."
 
-#: yali4/gui/ScrInstall.py:138
+#: yali4/gui/ScrInstall.py:139
 #, python-format
 msgid "Installing: <b>%s</b><br>%s"
 msgstr "Installerar: <b>%s</b><br>%s"
 
-#: yali4/gui/ScrInstall.py:143
+#: yali4/gui/ScrInstall.py:144
 #, python-format
 msgid "Configuring package: <b>%s</b>"
 msgstr "Konfigurerar paket: <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:166 yali4/gui/ScrPartitionManual.py:79
+#: yali4/gui/ScrInstall.py:167 yali4/gui/ScrPartitionManual.py:79
 msgid "Warning"
 msgstr "Varning"
 
-#: yali4/gui/ScrInstall.py:167
+#: yali4/gui/ScrInstall.py:168
 #, python-format
 msgid "Package install failed : <b>%s</b>"
 msgstr "Paketinstallationen misslyckades: <b>%s</b>"
 
-#: yali4/gui/ScrInstall.py:168
+#: yali4/gui/ScrInstall.py:169
 msgid "Do you want to retry ?"
 msgstr "Vill du försöka igen?"
 
-#: yali4/gui/ScrInstall.py:189
+#: yali4/gui/ScrInstall.py:190
 msgid "Creating baselayout for your system!"
 msgstr "Skapar baselayout för ditt system!"
 
-#: yali4/gui/ScrInstall.py:198
+#: yali4/gui/ScrInstall.py:202
 msgid "Configuring packages.."
 msgstr "Konfigurerar paket..."
 
-#: yali4/gui/ScrInstall.py:221
+#: yali4/gui/ScrInstall.py:225
 #, python-format
 msgid ""
 "An error during the installation of packages occured.\n"
@@ -2142,8 +2142,8 @@ msgid ""
 "initialize the journal correctly"
 msgstr ""
 "Öppnandet av '%s' som NTFS misslyckades: NTFS-journalen är oren. Vänligen "
-"stäng av Windows korrekt före du använder detta program! Observera,  om "
-"du nyligen har kört chkdsk, starta om Windows så korrigeras journalen."
+"stäng av Windows korrekt före du använder detta program! Observera,  om du "
+"nyligen har kört chkdsk, starta om Windows så korrigeras journalen."
 
 #: yali4/filesystem.py:477
 #, python-format
@@ -2445,7 +2445,7 @@ msgstr "Arkiveringspartition"
 msgid "as Storage Area"
 msgstr "till lagringsutrymme"
 
-#: yali4/postinstall.py:180
+#: yali4/postinstall.py:184
 #, python-format
 msgid "User <b>%s</b>'s home directory is being prepared.."
 msgstr "Användare <b>%s</b>s hemkatalog förbereds..."
