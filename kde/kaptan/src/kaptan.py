@@ -22,6 +22,8 @@ import gui.ScrKeyboard  as keyboardWidget
 import gui.ScrPackage as packageWidget
 import gui.ScrSmolt as smoltWidget
 
+import gui.tools as tools
+
 def loadFile(_file):
     try:
         f = file(_file)
@@ -32,14 +34,6 @@ def loadFile(_file):
     except:
         return []
 
-def isLiveCD():
-    try:
-        liveCDcheck = open('/var/run/pardus/livemedia')
-    except IOError:
-        return False
-
-    return True
-
 def profileSended():
     ''' Do not show smolt screen if profile was already sended.'''
     file = open("/etc/smolt/pub-uuid-smolt.pardus.org.tr", 'r')
@@ -49,7 +43,7 @@ def profileSended():
 
     return False
 
-if isLiveCD():
+if tools.isLiveCD():
     availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, summaryWidget, goodbyeWidget]
 elif profileSended():
     availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]

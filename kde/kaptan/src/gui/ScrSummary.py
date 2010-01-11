@@ -27,6 +27,8 @@ import gui.ScrMenu  as menuWidget
 import gui.ScrSearch  as searchWidget
 import gui.ScrSmolt  as smoltWidget
 
+import gui.tools as tools
+
 # Smolt related headers
 #import sys
 #sys.path.append('/usr/share/smolt/client')
@@ -89,7 +91,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Search Settings
-        if self.searchSettings.has_key('summaryMessage'):
+        if not tools.isLiveCD():
             content.append(subject %ki18n("Search Settings").toString())
             content.append(item % ki18n("Desktop search: <b>%s</b>").toString() % self.searchSettings["summaryMessage"].toString())
             content.append(end)
@@ -128,22 +130,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def execute(self):
         hasChanged = False
 
-        # Wallpaper Settings
-        if self.wallpaperSettings["hasChanged"] == True:
-            hasChanged = True
-            if self.wallpaperSettings["selectedWallpaper"]:
-                config =  KConfig("plasma-desktop-appletsrc")
-                group = config.group("Containments")
-                for each in list(group.groupList()):
-                    subgroup = group.group(each)
-                    subcomponent = subgroup.readEntry('plugin')
-                    if subcomponent == 'desktop' or subcomponent == 'folderview':
-                        subg = subgroup.group('Wallpaper')
-                        subg_2 = subg.group('image')
-                        subg_2.writeEntry("wallpaper", self.wallpaperSettings["selectedWallpaper"])
-
         # Search Settings
-        if self.searchSettings.has_key('state'):
+        if not tools.isLiveCD():
             if self.searchSettings["hasChanged"] == True:
                 config = KConfig("nepomukserverrc")
                 group = config.group("Service-nepomukstrigiservice")
@@ -160,6 +148,19 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 except dbus.DBusException:
                     pass
 
+        # Wallpaper Settings
+        if self.wallpaperSettings["hasChanged"] == True:
+            hasChanged = True
+            if self.wallpaperSettings["selectedWallpaper"]:
+                config =  KConfig("plasma-desktop-appletsrc")
+                group = config.group("Containments")
+                for each in list(group.groupList()):
+                    subgroup = group.group(each)
+                    subcomponent = subgroup.readEntry('plugin')
+                    if subcomponent == 'desktop' or subcomponent == 'folderview':
+                        subg = subgroup.group('Wallpaper')
+                        subg_2 = subg.group('image')
+                        subg_2.writeEntry("wallpaper", self.wallpaperSettings["selectedWallpaper"])
 
         # Menu Settings
         if self.menuSettings["hasChanged"] == True:
@@ -177,6 +178,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         launcher = subg2.readEntry('plugin')
                         if str(launcher).find('launcher') >= 0:
                             subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
+
         # Desktop Type
         if self.styleSettings["hasChangedDesktopType"] == True:
             hasChanged = True
