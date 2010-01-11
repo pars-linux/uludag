@@ -5,23 +5,24 @@
 #
 # Mustafa Ölcerman <m.oelcerman@pardus-linux.de>, 2008, 2009.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2008.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-30 16:28+0200\n"
-"PO-Revision-Date: 2009-01-19 01:55+0100\n"
-"Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
-"Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-01-11 20:35-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/kaptan.py:128 src/kaptan.py:281 src/screens/ScrWelcome.py:24
-#, fuzzy
 msgid "Welcome to Kaptan"
-msgstr "Willkommen zum Kaptan-Assistenten :)"
+msgstr "Willkommen zu Kaptan"
 
 #: src/kaptan.py:130
 msgid "&Back"
@@ -36,9 +37,8 @@ msgid "Finish"
 msgstr "Fertigstellen"
 
 #: src/kaptan.py:271
-#, fuzzy
 msgid "Kaptan is already running."
-msgstr "Kaptan wird bereits ausgeführt!"
+msgstr "Kaptan wird bereits ausgeführt."
 
 #: src/screens/ScrGoodbye.py:29
 msgid "Enjoy with Pardus..."
@@ -58,7 +58,7 @@ msgstr "KaptanUi"
 
 #: src/screens/kaptanMain.py:119
 msgid "Sample"
-msgstr ""
+msgstr "Beispiel"
 
 #: src/screens/ScrWelcome.py:23 src/screens/ScrWelcome.py:32
 #: src/screens/welcomedlg.py:76
@@ -70,6 +70,9 @@ msgid ""
 "<b>Kaptan</b> will help you personalize your Pardus workspace easily and "
 "quickly.<br/><br/>Please click <b>next</b> in order to begin."
 msgstr ""
+"<b>Kaptan</b> wird Ihnen bei einigen Grundeinstellungen Ihres Desktops in "
+"Pardus auf einfache und schnelle Weise helfen.<br/><br/>Bitte klicken Sie <b>"
+"weiter</b> um anzufangen."
 
 #: src/screens/ScrWelcome.py:34
 msgid ""
@@ -78,6 +81,11 @@ msgid ""
 "work with your office documents, watch movies, play music, develop "
 "applications, play games and much more!"
 msgstr ""
+"<b>Pardus</b> ist ein sicheres, schnelles und benutzerfreundliches "
+"Betriebssystem."
+"<br/><br/>Mit Pardus können Sie sich ans Internet verbinden, Emails lesen, "
+"Ihre Office-Dokumente bearbeiten, Filme anschauen, Musik hören, Programme "
+"entwickeln, Spiele spielen und vieles mehr!"
 
 #: src/screens/paneldlg.py:85 src/screens/ScrPanel.py:41
 msgid "Panel"
@@ -157,9 +165,8 @@ msgid "Login Screen (KDM)"
 msgstr "Anmeldungs-Bildschirm (KDM)"
 
 #: src/screens/smoltdlg.py:58 src/screens/ScrSmolt.py:38
-#, fuzzy
 msgid "Smolt"
-msgstr "Aufnehmen"
+msgstr ""
 
 #: src/screens/networkdlg.py:46
 msgid "Network"
@@ -265,9 +272,8 @@ msgstr "Maus"
 
 # Mausrad rückwärts ??
 #: src/screens/ScrMouse.py:40
-#, fuzzy
 msgid "Reverse scrolling direction"
-msgstr "Entgegengesetztes Scrollen"
+msgstr "Scroll in umgekehrter Richtung"
 
 #: src/screens/ScrMouse.py:41
 msgid ""
@@ -276,6 +282,10 @@ msgid ""
 "b>, you may prefer to swap the left and right buttons of your pointing "
 "device.</p>"
 msgstr ""
+"<p align='left'>Das <b>Klickverhalten</b> legt fest, wie oft Sie klicken "
+"möchten, um eine Datei zu öffnen.<br/><br/>Wenn Sie <b>linkshänder</b> sind, "
+"möchten Sie vielleicht die Funktionen der rechten und linken Maustaste "
+"vertauschen.</p>"
 
 #: src/screens/ScrMouse.py:42
 msgid "Button Order"
@@ -290,7 +300,6 @@ msgid "Right Hand"
 msgstr "Rechtshänder"
 
 #: src/screens/ScrMouse.py:45
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Klickverhalten"
 
@@ -311,10 +320,13 @@ msgid ""
 "Pardus hardware profiler gets your hardware info and sends it<br> to public "
 "Pardus server."
 msgstr ""
+"Pardus hardware profiler sucht Ihre Hardwareinformation und ssendet sie<br> "
+"an einen öffentlichen"
+"Pardus server."
 
 #: src/screens/ScrSmolt.py:40
 msgid "Show details"
-msgstr ""
+msgstr "Details anzeigen"
 
 #: src/screens/ScrSmolt.py:41
 msgid "Privacy policy"
@@ -322,29 +334,27 @@ msgstr ""
 
 #: src/screens/ScrSmolt.py:42
 msgid "I want to share my hardware info"
-msgstr ""
+msgstr "Ich möchte meine Hardwareinformation bekanntgeben"
 
 #: src/screens/ScrSmolt.py:58
-#, fuzzy
 msgid "Label"
-msgstr "Leiste"
+msgstr "Information"
 
 #: src/screens/ScrSmolt.py:60
 msgid "Data"
-msgstr ""
+msgstr "Wert"
 
 #: src/screens/ScrSmolt.py:86
 msgid "Smolt Detailes Wigdet"
 msgstr ""
 
 #: src/screens/ScrSmolt.py:92
-#, fuzzy
 msgid "Smolt Privacy Widget"
-msgstr "SummaryWidget"
+msgstr ""
 
 #: src/screens/ScrSmolt.py:105
 msgid "Sending..."
-msgstr ""
+msgstr "Abschicken..."
 
 #: src/screens/goodbyedlg.py:154
 msgid "Goodbye"
@@ -397,7 +407,7 @@ msgstr ""
 
 #: src/screens/mousedlg.py:110 src/screens/mousedlg.py:115
 msgid "deneme"
-msgstr ""
+msgstr "Versuch"
 
 #: src/screens/ScrPanel.py:31
 msgid "Configure your panel !"
