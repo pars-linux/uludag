@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Display Settings
+Name[sv]=Bildskärm
+Name[tr]=Ekran Ayarları
+Name[nl]=Beeldscherminstellingen
+Name[fr]=Affichage
+Comment=Configure display devices
+Comment[sv]=Anpassar bildskärmen
+Comment[tr]=Görüntü aygıtlarını yapılandır
+Comment[nl]=Beeldapparaten instellen
+Comment[fr]=Configuration de l'affichage
+Exec=display-settings
+Icon=preferences-desktop-display
+Type=Application
+Categories=Qt;KDE;Settings;
