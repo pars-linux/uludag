@@ -6,19 +6,20 @@
 # İşbaran Akçayır <isbaran@gmail.com>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 23:11+0300\n"
-"PO-Revision-Date: 2009-07-09 00:47+0100\n"
-"Last-Translator: Stefan <sw1976de@googlemail.com>\n"
-"Language-Team: LANGUAGE Deutsch <pardus-translation-de@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-01-11 22:17-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
@@ -142,21 +143,18 @@ msgstr "Upgrade"
 
 # prüfen in welchem Zusammenhang
 #: .tmp/historymanager/listitem.py:12
-#, fuzzy
 msgid "Removal"
-msgstr "Entferne"
+msgstr "Desinstallation"
 
 # Zweifel
 #: .tmp/historymanager/listitem.py:12
-#, fuzzy
 msgid "Emerge"
-msgstr "Erscheine"
+msgstr ""
 
 # prüfen in welchem Zusammenhang
 #: .tmp/historymanager/listitem.py:13
-#, fuzzy
 msgid "Installation"
-msgstr "Installiere"
+msgstr "Installation"
 
 #: .tmp/historymanager/listitem.py:13
 msgid "Snapshot"
@@ -190,7 +188,7 @@ msgstr "Bis zu diesem Punkt zurückgehen"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
@@ -206,7 +204,7 @@ msgstr "Einstellungen"
 
 #: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
-msgstr ""
+msgstr "Alias :"
 
 #: .tmp/ui_mainwindow.py:134
 msgid "Cancel"

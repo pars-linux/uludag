@@ -4,13 +4,13 @@
 #
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
-# Klemens Häckel <click3d at linuxmail (dot) org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 14:06+0200\n"
-"PO-Revision-Date: 2009-10-17 21:28-0400\n"
+"PO-Revision-Date: 2010-01-11 22:18-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -224,9 +224,9 @@ msgid "Output Properties - %1"
 msgstr "Configuración de salida - %1"
 
 #: .tmp/displaysettings/screenswidget.py:359
-#, fuzzy
 msgid "You must restart your X session for all the changes to take effect."
-msgstr "Debe reiniciar su sesión gráfica X para que los cambios tengan efecto."
+msgstr ""
+"Debe reiniciar su sesión gráfica X para que todos los cambios tengan efecto."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
@@ -365,3 +365,4 @@ msgstr "Configurando..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Salidas:"
+
