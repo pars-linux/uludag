@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-08 10:29+0200\n"
-"PO-Revision-Date: 23/12/09 17:28\n"
+"PO-Revision-Date: 12/01/10 22:19\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "Totale grootte:"
 
 #: .tmp/ui_basketdialog.py:79
 msgid "<b>2.2 MB</b>"
-msgstr "<b>2.2 MB</b>"
+msgstr "<b>2,2 MB</b>"
 
 #: .tmp/ui_basketdialog.py:80 .tmp/ui_mainwidget.py:60 .tmp/statemanager.py:73
 msgid "Install Package(s)"
@@ -51,7 +51,7 @@ msgstr "Downloadgrootte:"
 
 #: .tmp/ui_basketdialog.py:82
 msgid "<b>2.0 MB</"
-msgstr "<b>2.0 MB</"
+msgstr "<b>2,0 MB</"
 
 #: .tmp/ui_pminstaller.py:46 .tmp/ui_mainwidget.py:58
 msgid "Form"
@@ -66,9 +66,9 @@ msgid "Ok"
 msgstr "Ok"
 
 #: .tmp/progressdialog.py:39
-#, fuzzy, python-format
+#, python-format
 msgid "Operation - %1%"
-msgstr "Operatie"
+msgstr "Operatie - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
@@ -143,9 +143,8 @@ msgid "Delete"
 msgstr "Verwijderen"
 
 #: .tmp/settingsdialog.py:187
-#, fuzzy
 msgid "Not a valid repository name"
-msgstr "Naam softwarebron"
+msgstr "Geen geldige bronnaam"
 
 #: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
 #: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
@@ -475,8 +474,7 @@ msgid "Currently your basket is empty."
 msgstr "Momenteel is uw mandje leeg."
 
 #: .tmp/statemanager.py:125
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Momenteel zijn er <b>%1</b> geselecteerde pakket(ten) met een totale grootte "
 "van <b>%2</b>"
@@ -489,8 +487,7 @@ msgstr ""
 
 #: .tmp/statemanager.py:130
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
+msgstr "met <b>%1</b> extra afhankelijkheden met een totale grootte van <b>%2</b>"
 
 #: .tmp/statemanager.py:131
 msgid "in your basket."
@@ -629,6 +626,8 @@ msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
 msgstr ""
+"Pakket niet gevonden. Het kan eventueel opgewaardeerd of verwijderd zijn uit de bron. "
+"Ververs de informatie van de softwarebron."
 
 #: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
@@ -701,3 +700,4 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 #: .tmp/ui_repodialog.py:56
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+
