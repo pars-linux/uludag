@@ -22,6 +22,7 @@ config = {"rootDir": "/",
           "tmpDir": "",
           "destDir": "/boot",
           "blackList": ["pktcdvd", "floppy"],
+          "useaufs": False,
           "debug": False,
           "dryrun": False
 }
@@ -131,6 +132,13 @@ class BaseSystem:
                                 "/usr/sbin/resume": "/bin/"
                                }
 
+        self.aufsFileList = {"/sbin/auplink": "/sbin/",
+                             "/sbin/mount.aufs": "/sbin/",
+                             "/sbin/umount.aufs": "/sbin/",
+                             "/usr/bin/aubrsync": "/bin/",
+                             "/usr/bin/auchk": "/bin/"
+                             }
+
 
     def getNewRoot(self, dir):
         cleandir = dir.lstrip("/")
@@ -187,7 +195,12 @@ class BaseSystem:
     def addSuspend(self):
         if os.path.exists("/etc/suspend.conf"):
             for i in self.suspendFileList:
-                copy(i, self.getNewRoot(self.baseFileList[i]))
+                copy(i, self.getNewRoot(self.suspendFileList[i]))
+
+    def addAufs(self):
+        if os.path.exists("/sbin/auplink"):
+            for i in self.aufsFileList:
+                copy(i, self.getNewRoot(self.aufsFileList[i]))
 
     def create(self):
         self.createBaseDirectories()
@@ -197,6 +210,8 @@ class BaseSystem:
         self.createConfig()
         self.addRaid()
         self.addSuspend()
+        if config["useaufs"]:
+            self.addAufs()
 
 class KernelModule:
     def __init__(self):
@@ -492,6 +507,8 @@ if __name__ == "__main__":
             help="use FILE for initramfs file name")
     parser.add_option("-d", "--debug", action="store_true", dest="debug", default=False,
             help="print extra debug info")
+    parser.add_option("--useaufs", action="store_true", dest="useaufs", default=False,
+            help="add aufs utilities")
     parser.add_option("--blacklist", dest="blackList", type="string", metavar="FILES", default="",
             help="define modules to be blacklisted, seperated by comma. Example: e100,rtl819,ahci")
     parser.add_option("--network", action="store_true", dest="networkModule", default=False,
@@ -524,6 +541,7 @@ if __name__ == "__main__":
     config["networkModule"] = opts.networkModule
     config["networkModuleBasic"] = opts.networkModuleBasic
     config["drmModule"] = opts.drmModule
+    config["useaufs"] = opts.useaufs
 
     if "," in opts.blackList:
         config["blackList"].extend(opts.blackList.split(","))
