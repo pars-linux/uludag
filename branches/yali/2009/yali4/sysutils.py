@@ -171,7 +171,10 @@ def memTotal():
     return None
 
 def ejectCdrom(mount_point=consts.source_dir):
-    run("eject -m %s" % mount_point)
+    if "copytoram" not in open("/proc/cmdline", "r").read().strip().split():
+        run("eject -m %s" % mount_point)
+    else:
+        reboot()
 
 def setMouse(key="left"):
     struct = {_("left") :"1 2 3",
