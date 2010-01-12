@@ -4,18 +4,20 @@
 #
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-07-17 18:15+0300\n"
-"PO-Revision-Date: 2009-07-13 18:53-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: German <de@li.org>\n"
+"PO-Revision-Date: 2010-01-11 22:16-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
@@ -148,70 +150,62 @@ msgid "Wallpaper"
 msgstr "Bildschirmhintergrund"
 
 #: .tmp/ScrProgress.py:254
-#, fuzzy
 msgid "Firefox bookmarks could not be loaded."
-msgstr "Firefox Lesezeichen können nicht geladen werden."
+msgstr "Firefox Lesezeichen konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:256
 msgid "Firefox bookmarks loaded."
 msgstr "Firefox Lesezeichen geladen."
 
 #: .tmp/ScrProgress.py:266
-#, fuzzy
 msgid "Opera bookmarks could not be loaded."
-msgstr "Opera Lesezeichen können nicht geladen werden."
+msgstr "Opera Lesezeichen konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:268
 msgid "Opera bookmarks loaded."
 msgstr "Opera Lesezeichen geladen."
 
 #: .tmp/ScrProgress.py:278
-#, fuzzy
 msgid "Internet Explorer favorites could not be loaded."
-msgstr "Internet Explorer Lesezeichen können nicht geladen werden."
+msgstr "Internet Explorer Lesezeichen konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:280
 msgid "Internet Explorer favorites loaded."
 msgstr "Internet Explorer Lesezeichen geladen."
 
 #: .tmp/ScrProgress.py:293
-#, fuzzy
 msgid "Firefox is open. Please close it first to continue..."
 msgstr ""
-"Firefox ist geöffnet. Bitte schließen Sie erst das Programm um weitermachen "
+"Firefox ist geöffnet. Bitte schließen Sie Ihn erst um weitermachen "
 "zu können... "
 
 #: .tmp/ScrProgress.py:305
-#, fuzzy
 msgid "Windows Mail accounts could not be loaded."
-msgstr "Windows E-mailkonten können nicht geladen werden."
+msgstr "Windows E-mailkonten konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:307
 msgid "Windows Mail accounts loaded."
 msgstr "Windows E-mailkonten geladen."
 
 #: .tmp/ScrProgress.py:318
-#, fuzzy
 msgid "Thunderbird accounts could be loaded."
-msgstr "Thunderbird-konten können nicht geladen werden."
+msgstr "Thunderbird-konten konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:320
 msgid "Thunderbird accounts loaded."
 msgstr "Thunderbird-konten geladen."
 
 #: .tmp/ScrProgress.py:330
-#, fuzzy
 msgid "MSN accounts could be loaded."
-msgstr "MSN-konten können nicht geladen werden."
+msgstr ""
 
 #: .tmp/ScrProgress.py:332
 msgid "MSN accounts loaded."
-msgstr "MSN-konten geladen."
+msgstr "MSN-Konten geladen."
 
 #: .tmp/ScrProgress.py:342
-#, fuzzy
 msgid "GTalk accounts could not be loaded."
-msgstr "GTalk-konten können nicht geladen werden."
+msgstr "GTalk-konten konnten nicht geladen werden."
 
 #: .tmp/ScrProgress.py:344
 msgid "GTalk accounts loaded."
@@ -233,30 +227,27 @@ msgstr "News Konten"
 msgid "Desktop Links"
 msgstr "Desktopverknüpfungen"
 
-#: .tmp/ScrProgress.py:396
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:396, python-format
 msgid "Folder '%s' could not be created, please choose another folder!"
 msgstr ""
-"Ordner '%s' kann nicht erstellt werden, bitte wählen Sie einen anderen "
+"Ordner '%s' konnte nicht erstellt werden, bitte wählen Sie einen anderen "
 "Ordner!"
 
-#: .tmp/ScrProgress.py:400
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:400, python-format
 msgid ""
 "You don't have permission to write to folder '%s', please choose another "
 "folder!"
 msgstr ""
-"Sie haben nicht die Berechtigung, in diesen Ordner '%s' zu schreiben/"
-"speichern, bitte wählen Sie einen anderen Ordner!"
+"Sie haben nicht die Berechtigung, in den Ordner '%s' zu schreiben, bitte "
+"wählen Sie einen anderen Ordner!"
 
-#: .tmp/ScrProgress.py:411
-#, fuzzy, python-format
+#: .tmp/ScrProgress.py:411, python-format
 msgid ""
 "Total size of files you've selected is %(size)d MB, but you have only %(free)"
 "d MB of free space!"
 msgstr ""
-"Die Gesamtgröße der von Ihnen gewählten Dateien ist %(groß) MB, aber Sie "
-"haben nur %(freien) MB freien Speicherplatz zur Verfügung!"
+"Die Gesamtgröße der von Ihnen gewählten Dateien ist %(size)d MB, aber Sie "
+"haben nur %(free)d MB freien Speicherplatz zur Verfügung!"
 
 #: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
@@ -317,9 +308,8 @@ msgid "Options Settings"
 msgstr "Einstellungen"
 
 #: .tmp/ScrSummary.py:49
-#, fuzzy
 msgid "Option %1 : <b>%2</b>"
-msgstr "Ausgewählte Optionen: <b>%s</b>"
+msgstr "Option %1 : <b>%2</b>"
 
 #: .tmp/ScrSummary.py:54
 msgid "Destination Settings"
@@ -328,12 +318,12 @@ msgstr "Zieleinstellung"
 #: .tmp/ScrSummary.py:57
 #, python-format
 msgid "Linked Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Ziel verlinkt mit: <b> %s </b>"
 
 #: .tmp/ScrSummary.py:59
 #, python-format
 msgid "Copied Destination to: <b> %s </b>"
-msgstr ""
+msgstr "Ziel kopiert nach: <b> %s </b>"
 
 #: .tmp/ScrUserFiles.py:142
 msgid "Selecting Files"
@@ -345,7 +335,7 @@ msgstr "Eigene Dateien"
 
 #: .tmp/ScrUserFiles.py:178
 msgid "Desktop"
-msgstr ""
+msgstr "Desktop"
 
 #: .tmp/ScrUserFiles.py:179
 msgid "My Music"
@@ -372,10 +362,12 @@ msgid ""
 "There aren't any Microsoft Windows partitions to migrate! Please check your "
 "mounted partitions..."
 msgstr ""
+"Keine Partitionen mit Microsoft Windows gefunden! Bitte überprüfen Sie die "
+"angeschlossenen Partitionen..."
 
 #: .tmp/ScrUser.py:111
 msgid "There isn't any selected user on User Selection Window!"
-msgstr ""
+msgstr "Kein User aus der Benutzerliste markiert !"
 
 #: .tmp/ScrWelcome.py:22 .tmp/ui_welcomeWidget.py:44
 msgid "Welcome"
@@ -448,7 +440,6 @@ msgid "~/Desktop"
 msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:50
-#, fuzzy
 msgid "Directory"
 msgstr "Verzeichnis"
 
@@ -465,7 +456,6 @@ msgid "Users"
 msgstr "Benutzer"
 
 #: .tmp/ui_welcomeWidget.py:45
-#, fuzzy
 msgid ""
 "This application, called Migration Tool, helps you transfer files and "
 "settings from other operating systems to Pardus. Please click Next to "
@@ -477,8 +467,8 @@ msgid ""
 msgstr ""
 "Dieses Programm, genannt Migration Tool, wird Ihnen helfen Dateien und "
 "Einstellungen Ihres schon vorhandenen Betriebssystems zu Pardus zu "
-"überführen. Bitte klicken Sie auf Weiter um Ihren Desktop zu "
-"personalisieren. \n"
+"überführen. Bitte klicken Sie auf Weiter um die notwendigen Dateien zu "
+"kopieren. \n"
 "\n"
 "Pardus ist eine GNU/Linux Distribution, ausgerichtet auf die grundsätzlichen "
 "Anforderungen an ein PC-Betriebssystem für sämtliche Benutzerschichten. "

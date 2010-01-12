@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-06 14:37+0200\n"
-"PO-Revision-Date: 2010-01-06 20:52-0300\n"
+"PO-Revision-Date: 2010-01-11 21:59-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -151,11 +151,11 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:69
 msgid "Label"
-msgstr ""
+msgstr "Information"
 
 #: .tmp/ScrSmolt.py:70
 msgid "Data"
-msgstr ""
+msgstr "Wert"
 
 #: .tmp/ScrSmolt.py:109
 msgid "&Back"
@@ -452,6 +452,8 @@ msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
 msgstr ""
+"Sie können auch Ihr <b>KDE Startmenü</b> nach Ihrem Geschmack "
+"personalisieren. Bitte wählen Sie einen der folgenden Stile."
 
 #: .tmp/ui_menuWidget.py:149
 msgid ""
@@ -482,9 +484,11 @@ msgid ""
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
 "swap the left and right buttons of your pointing device."
 msgstr ""
+"Das <b>Klickverhalten</b> legt fest wie viele Klicks Sie machen möchten um "
+"eine Datei zu öffnen. Wenn Sie <b>Linkshänder</b> sind, möchten Sie "
+"vielleicht die Funktion der linken und der rechten Maustaste vertauschen."
 
 #: .tmp/ui_mouseWidget.py:170
-#, fuzzy
 msgid "Clicking Behaviour"
 msgstr "Klickverhalten"
 
@@ -519,7 +523,7 @@ msgstr "Netzwerk"
 
 #: .tmp/ui_networkWidget.py:67
 msgid "Connect to the Internet"
-msgstr ""
+msgstr "Internetverbindung"
 
 #: .tmp/ui_networkWidget.py:68
 msgid ""
@@ -528,23 +532,25 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
+"Um eine neue Internetverbingung zu erstellen klicken Sie <b>Profil "
+"erstellen</b> und wählen Sie einen Netzwerkadapter aus der Liste. Wenn Ihre "
+"Verbindung kabellos ist, wählen Sie den access "
+"point. Nachdem Sie das Verbindungsprofil gespeichert haben, klicken Sie auf "
+"das Markierfeld um die Verbindung zu aktivieren."
 
 #: .tmp/ui_packageWidget.py:141
-#, fuzzy
 msgid "Packages"
-msgstr "Paket"
+msgstr "Pakete"
 
 #: .tmp/ui_packageWidget.py:143
 msgid "Updates"
 msgstr "Aktualisierung"
 
 #: .tmp/ui_packageWidget.py:144
-#, fuzzy
 msgid "Show updates in the system tray"
-msgstr "In Systemleiste anzeigen"
+msgstr "Aktualisierungen in Systemleiste anzeigen"
 
 #: .tmp/ui_packageWidget.py:145
-#, fuzzy
 msgid "Check updates automatically every"
 msgstr "Automatisch nach updates suchen, alle"
 
@@ -558,16 +564,14 @@ msgstr " Stunden"
 
 #: .tmp/ui_packageWidget.py:148
 msgid "Repositories"
-msgstr ""
+msgstr "Depots"
 
 # favor verificar..
 #: .tmp/ui_packageWidget.py:149
-#, fuzzy
 msgid "Contrib repository includes extra and handy programs."
-msgstr "Das Contrib-Depot enthält optionale Pakete."
+msgstr "Das Contrib-Depot enthält weitere interessante Programme."
 
 #: .tmp/ui_packageWidget.py:150
-#, fuzzy
 msgid "Add contrib repository"
 msgstr "Contrib-Depot hinzufügen"
 
@@ -577,20 +581,22 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
+"Benutzen Sie den Paket-Manager um Software in Pardus zu installieren und "
+"deinstallieren. Der Paket-Manager kann auch automatisch die neuen "
+"Aktualisierungen installieren. Sie können das Zeitintervall der "
+"Aktualisierungsüberprüfung einstellen."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
-msgstr ""
+msgstr "Programme installieren /entfernen"
 
 #: .tmp/ui_searchWidget.py:74
-#, fuzzy
 msgid "Search"
-msgstr "Desktopsuche"
+msgstr "Suche"
 
 #: .tmp/ui_searchWidget.py:76
-#, fuzzy
 msgid "Easy Desktop Search"
-msgstr "Desktopsuche"
+msgstr "Einfache Desktopsuche"
 
 #: .tmp/ui_searchWidget.py:77
 msgid ""
@@ -601,7 +607,7 @@ msgstr ""
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
-msgstr ""
+msgstr "Erlaube Strigi meine Dateien zu katalogisieren"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "&Send my profile"
@@ -616,7 +622,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr ""
 
 #: .tmp/ui_smoltWidget.py:126
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -675,7 +680,7 @@ msgstr ""
 "Information über die Hardware und allgemeine Informationen über das "
 "Betriebsystem an den smolt-Server bei Pardus (smoon). Die einzige "
 "Identifikation des PCs des Absenders ist der UUID. Die Anonymität des "
-"Benutzers ist gewahrleistet solange er seinen UUID nicht anderweitig "
+"Benutzers ist gewährleistet solange er seinen UUID nicht anderweitig "
 "öffentlich preisgibt. Wenn der Benutzer sein Profil aus der Datenbank "
 "löschen möchte, kann er das jederzeit machen. Er braucht nur das folgende "
 "Kommando eingeben</p>\n"
@@ -695,20 +700,20 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
 "decoration: underline;\">IP Speichrung:</span> In den Pardus Einrichtungen "
 "geht der gesamte Web-Verkehr zu Smolt über einen Proxy-Server. Dieser Proxy "
-"Server ist der einzige Punkt, wo die IP-Adressen im log gespeichert werden, "
+"Server ist der einzige Punkt, wo die IP-Adressen im Log gespeichert werden, "
 "wo sie dann nach 4 Wochen durch Logrotation wieder gelöscht werden. Das "
 "Pardus Projekt speichert die IP-Adresse nicht in der smolt-Datenbank. Diese "
 "Logs sind privat und werden nicht der Öffentlichkeit zugänglich sein.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"> Benutzer denen diese "
-"Politik nicht gefällt, können sich an das Pardu Infrastructure Team wenden "
+"Politik nicht gefällt, können sich an das Pardus Infrastructure Team wenden "
 "an: admin [at] pardus.org.tr. Ausserdem gibt es jederzeit die Möglichkeit "
 "sein Profil zu löschen mit dem Befehl\"<span style=\" font-style:italic;"
 "\">smoltDeleteProfile</span>\"</p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:135
 msgid "Help Pardus Improve!"
-msgstr ""
+msgstr "Helfen Sie Pardus zu verbessern !"
 
 #: .tmp/ui_smoltWidget.py:136
 msgid ""
@@ -716,6 +721,9 @@ msgid ""
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
+"<b>Smolt</b> ist ein Werkzeug, das die Information aus der folgenden Tabelle "
+"uns zusendet, damit wir Pardus verbessern können gemäss der Statistiken der "
+"Benutzerhardware."
 
 #: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
@@ -739,13 +747,15 @@ msgstr "Themas"
 
 #: .tmp/ui_styleWidget.py:135
 msgid "Customize Your Desktop"
-msgstr ""
+msgstr "Personalisieren Ihren Desktop"
 
 #: .tmp/ui_styleWidget.py:136
 msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
+"Wählen Sie Ihr bevorzugtes Thema und Desktop-Stil. Konfigurieren Sie Pardus "
+"mit einem der vielfarbigen Stile und Themen."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -761,22 +771,20 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_styleWidget.py:144
-#, fuzzy
 msgid "Desktop Type"
-msgstr "<b>Desktop-Typ:</b>"
+msgstr "Desktop-Typ:"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
-msgstr ""
+msgstr "Desktop Ansicht (KDE4 Stil)"
 
 #: .tmp/ui_styleWidget.py:146
 msgid "Folder view (KDE3 Style)"
-msgstr ""
+msgstr "Verzeichnisansicht (KDE3 Stil)"
 
 #: .tmp/ui_styleWidget.py:147
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "<b>Anzahl der Desktops:</b>"
+msgstr "Anzahl der Desktops"
 
 #: .tmp/ui_styleWidget.py:148
 msgid "color: rgb(100, 36, 55);"
@@ -797,9 +805,8 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_summaryWidget.py:75
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Sucheinstellungen"
+msgstr "Einstellungen Speichern"
 
 #: .tmp/ui_summaryWidget.py:76
 msgid ""
@@ -807,6 +814,10 @@ msgid ""
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
 "ready to enjoy Pardus!"
 msgstr ""
+"Sie haben alle Schritte erfolgreich ausgeführt. Hier ist eine "
+"Zusammenfassung der Konfiguration die jetzt übernommen wird. Klicken Sie <b>"
+"Einstellungen übernehmen</b> um sie jetzt zu speichern. Jetzt sind Sie "
+"bereit um Pardus zu benutzen!"
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -830,9 +841,8 @@ msgid ""
 msgstr ""
 
 #: .tmp/ui_wallpaperWidget.py:110
-#, fuzzy
 msgid "Choose wallpaper from file"
-msgstr "Bilddatei suchen für Hintergrundbild"
+msgstr "Bilddatei als Hintergrundbild"
 
 #: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
@@ -843,15 +853,17 @@ msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
+"Wählen Sie Ihren Lieblingshintergrund für Pardus. Sie können auch zu  "
+"<b>Desktop Einstellungen</b> gehen um noch weitere coole Hintergrundbilder "
+"zu installieren."
 
 #: .tmp/ui_wallpaperWidget.py:113
-#, fuzzy
 msgid "Choose a Wallpaper"
-msgstr "Bilddatei suchen für Hintergrundbild"
+msgstr "Bilddatei für Hintergrundbild auswählen"
 
 #: .tmp/ui_welcomeWidget.py:60
 msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
-msgstr ""
+msgstr "Willkommen zu Pardus 2009.1 <sup>RC</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
@@ -862,6 +874,13 @@ msgid ""
 "you personalize your Pardus workspace easily and quickly. Please click "
 "<b>next</b> in order to begin."
 msgstr ""
+"<b>Pardus</b> ist ein sicheres, schnelles und benutzerfreundliches "
+"Betriebssystem. <br /> "
+"<br />Mit Pardus können Sie sich mit dem Internet verbinden, Ihre Emails "
+"lesen, mit Ihren Office-Dokumenten arbeiten, Filme anschauen, Musik hören, "
+"Programme entwickeln, Spiele spielen, und vieles mehr! <br /><br /><b>"
+"Kaptan</b> wird Ihnen einfach und schnell helfen, den Desktop in Pardus "
+"persönlicher zu gestalten. Bitte klicken Sie <b>weiter</b> um anzufangen."
 
 #, fuzzy
 #~ msgid ""
