@@ -1,3 +1,6 @@
+2010-01-12 Onur Küçük <onur [at] pardus.org.tr>
+		* Add aufs support
+
 2010-01-11 Onur Küçük <onur [at] pardus.org.tr>
 		* Add copytoram kernel parameter to copy all live files to ram befor
 		switchroot
