@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-11 11:57+0200\n"
+"POT-Creation-Date: 2010-01-13 00:52+0200\n"
 "PO-Revision-Date: 2009-07-16 21:55+0200\n"
 "Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
@@ -542,7 +542,7 @@ msgid "Users:"
 msgstr "Utenti:"
 
 #: yali4/gui/Ui/setupuserswidget.py:189 yali4/gui/ScrUsers.py:262
-#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:363
+#: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:374
 msgid "Create User"
 msgstr "Crea utente"
 
@@ -991,24 +991,24 @@ msgstr "(%s) [%s] Dimensione : %s - Spazio libero : %s"
 msgid "%s (Boot Disk)"
 msgstr "%s (Disco di Boot)"
 
-#: yali4/gui/GUIAdditional.py:246
+#: yali4/gui/GUIAdditional.py:247
 #, python-format
 msgid "Connecting to network <b>%s</b> ..."
 msgstr "Connessione alla rete <b>%s</b> ..."
 
-#: yali4/gui/GUIAdditional.py:252 yali4/gui/GUIAdditional.py:253
+#: yali4/gui/GUIAdditional.py:253 yali4/gui/GUIAdditional.py:254
 msgid "Connection failed"
 msgstr "Connessione fallita"
 
-#: yali4/gui/GUIAdditional.py:256 yali4/gui/GUIAdditional.py:257
+#: yali4/gui/GUIAdditional.py:257 yali4/gui/GUIAdditional.py:258
 msgid "Connected"
 msgstr "Connesso"
 
-#: yali4/gui/GUIAdditional.py:291
+#: yali4/gui/GUIAdditional.py:292
 msgid "Can't open License file!"
 msgstr "Impossibile aprire il file della licenza!"
 
-#: yali4/gui/GUIAdditional.py:302
+#: yali4/gui/GUIAdditional.py:303
 msgid "Can't open Release Notes!"
 msgstr "Impossibile aprire il file delle note di rilascio!"
 
@@ -1553,11 +1553,11 @@ msgstr ""
 msgid "Caps Lock is on!"
 msgstr ""
 
-#: yali4/gui/ScrRescuePassword.py:62 yali4/gui/ScrRescuePisi.py:54
+#: yali4/gui/ScrRescuePassword.py:62 yali4/gui/ScrRescuePisi.py:53
 msgid "Starting DBUS..."
 msgstr "Avvio DBUS..."
 
-#: yali4/gui/ScrRescuePassword.py:63 yali4/gui/ScrRescuePisi.py:55
+#: yali4/gui/ScrRescuePassword.py:63 yali4/gui/ScrRescuePisi.py:54
 #: yali4/installer.py:522
 msgid "Trying to connect DBUS..."
 msgstr "Tentativo di connessione al DBUS..."
@@ -1602,11 +1602,15 @@ msgstr ""
 "<font size=\"+2\">Cronologia PiSi</font>\n"
 "<font size=\"+1\"></font>\n"
 
-#: yali4/gui/ScrRescuePisi.py:56
+#: yali4/gui/ScrRescuePisi.py:55
 msgid "Getting history ..."
 msgstr ""
 
-#: yali4/gui/ScrRescuePisi.py:123
+#: yali4/gui/ScrRescuePisi.py:91
+msgid "There is no connection"
+msgstr ""
+
+#: yali4/gui/ScrRescuePisi.py:132
 #, python-format
 msgid "Operation %s : %s - %s"
 msgstr ""
@@ -1964,11 +1968,11 @@ msgstr "Informazioni"
 msgid "Show Help"
 msgstr "Mostra aiuto"
 
-#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:178
+#: yali4/gui/YaliWindow.py:88 yali4/gui/YaliWindow.py:96 yali4/sysutils.py:181
 msgid "right"
 msgstr "destra"
 
-#: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:177
+#: yali4/gui/YaliWindow.py:95 yali4/gui/YaliWindow.py:98 yali4/sysutils.py:180
 msgid "left"
 msgstr "sinistra"
 
@@ -1998,7 +2002,7 @@ msgstr "Tetris"
 msgid "Hide Help"
 msgstr "Nascondi aiuto"
 
-#: yali4/bootloader.py:227 yali4/bootloader.py:232
+#: yali4/bootloader.py:235 yali4/bootloader.py:240
 msgid "Windows"
 msgstr "Windows"
 
