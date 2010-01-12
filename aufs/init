@@ -19,6 +19,7 @@ QUIET=0
 RAID=0
 VIRTIO=0
 COPYTORAM=0
+USEAUFS=0
 
 FS_TYPE=""
 ROOT_FLAGS=""
@@ -119,8 +120,11 @@ parse_config() {
             noresume=*)
                 NORESUME=$(echo $inputline|cut -f2- -d=)
             ;;
-            copytoram)
-                COPYTORAM=1
+            copytoram=*)
+                COPYTORAM=$(echo $inputline|cut -f2- -d=)
+            ;;
+            useaufs=*)
+                USEAUFS=$(echo $inputline|cut -f2- -d=)
             ;;
             init=*)
                 INIT="${x#INIT=}"
@@ -177,6 +181,9 @@ parse_cmdline() {
             ;;
             copytoram)
                 COPYTORAM=1
+            ;;
+            useaufs)
+                USEAUFS=1
             ;;
             quiet)
                 QUIET=1
@@ -294,13 +301,20 @@ mount_cdroot() {
     FS_LOCATION="mnt/livecd"
     umount /dev
 
-    for x in ${ROOT_LINKS}
-    do
-        ln -s "${FS_LOCATION}/${x}" "${x}"
-    done
+    if [ "${USEAUFS}" -eq "1" ]
+    then
+        # FIXME: I know this is creepy but need to make this work
+        mkdir /newroot/mnt/ramdrive
+        mount -t aufs -o br=/newroot/mnt/ramdrive=rw:/newroot/mnt/livecd=ro none /newroot
+    else
+        for x in ${ROOT_LINKS}
+        do
+            ln -s "${FS_LOCATION}/${x}" "${x}"
+        done
 
-    chmod 1777 tmp
-    (cd /newroot/${FS_LOCATION}; cp -a ${ROOT_TREES} /newroot)
+        chmod 1777 tmp
+        (cd /newroot/${FS_LOCATION}; cp -a ${ROOT_TREES} /newroot)
+    fi
 
     # FIXME: the device list is taken from udev, we can't rely on sys entries since pluggable means different
     #        in kernel world. Suggestions that do not include this kind of regexp mania are welcome
