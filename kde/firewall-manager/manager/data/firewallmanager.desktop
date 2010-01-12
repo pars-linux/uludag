@@ -2,8 +2,9 @@
 Name=Firewall Manager
 Name[tr]=Güvenlik Duvarı Yöneticisi
 Name[sv]=Brandväggshanteraren
-Name[es]=Administrador de Cortafuegos
+Name[es]=Cortafuegos
 Name[nl]=Firewallbeheer
+Name[de]=Firewall
 Name[fr]=Pare-feu
 GenericName=Firewall Manager
 GenericName[tr]=Güvenlik Duvarı Yöneticisi
