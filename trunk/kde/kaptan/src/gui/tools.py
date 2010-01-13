@@ -1,10 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-def isLiveCD():
-    try:
-        liveCDcheck = open('/var/run/pardus/livemedia')
-    except IOError:
-        return False
+import os
 
-    return True
+def isLiveCD():
+    return os.path.exists('/var/run/pardus/livemedia')

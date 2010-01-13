@@ -53,7 +53,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         pass
 
     def execute(self):
-        if self.__class__.screenSettings["state"] == True:
+        if self.__class__.screenSettings["state"]:
             self.__class__.screenSettings["summaryMessage"] = ki18n("On")
         else:
             self.__class__.screenSettings["summaryMessage"] = ki18n("Off")
