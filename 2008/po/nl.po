@@ -4,18 +4,20 @@
 #
 # Willem Gielen <w.gielen@gmail.com>, 2007, 2008.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
+# Antoon Tolboom <atolboo@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-03-09 10:37+0200\n"
-"PO-Revision-Date: 2008-11-04 13:07+0100\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 13/01/10 21:06\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: bin/mudur.py:176
 msgid "Cannot write mudur.log, read-only file system"
@@ -70,7 +72,7 @@ msgstr "Stoppen DBus"
 
 #: bin/mudur.py:767
 msgid "Can't move persistent udev rules from /dev/.udev"
-msgstr ""
+msgstr "Kan blijvende udev rules niet van /dev/.udev verwijderen"
 
 #: bin/mudur.py:777
 msgid "Mounting /dev"
@@ -126,8 +128,7 @@ msgstr "Opnieuw aankoppelen root bestandssysteem als lezen/schrijven"
 
 #: bin/mudur.py:894
 msgid "Root filesystem could not be mounted read/write :("
-msgstr ""
-"Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
+msgstr "Root bestandssysteem kon niet aangekoppeld worden als 'lezen/schrijven' :("
 
 #: bin/mudur.py:937
 #, python-format
@@ -148,8 +149,7 @@ msgstr "Fouten in het bestandssysteem gecorrigeerd"
 
 #: bin/mudur.py:974
 msgid "Fsck could not correct all errors, manual repair needed"
-msgstr ""
-"Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
+msgstr "Fsck kon niet alle problemen oplossen. Handmatige reparatie is vereist."
 
 #: bin/mudur.py:987
 msgid "Mounting USB filesystem"
@@ -173,8 +173,7 @@ msgstr "Aankoppelen bestandssystemen op afstand (CTRL-C stopt pogen)"
 
 #: bin/mudur.py:1032
 msgid "Mounting skipped with CTRL-C, remote shares are not accessible!"
-msgstr ""
-"Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
+msgstr "Aankoppelen overgeslagen met CTRL-C, delen op afstand is niet toegankelijk!"
 
 #: bin/mudur.py:1045
 msgid "Setting disk parameters"
@@ -573,5 +572,3 @@ msgstr "D-Bus fout: %s"
 msgid "Cancelled"
 msgstr "Geannuleerd"
 
-#~ msgid "Calculating module dependencies for %s"
-#~ msgstr "Berekenen module afhankelijkheden voor %s"
