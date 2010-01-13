@@ -68,7 +68,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.procSettings.start(command)
 
     def setSmolt(self):
-        if self.smoltSettings["profileSend"] == False:
+        if not self.smoltSettings["profileSend"]:
             self.ui.smoltGroupBox.setVisible(False)
 
     def shown(self):

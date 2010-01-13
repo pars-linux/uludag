@@ -74,7 +74,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def slotContribRepo(self):
         if self.ui.checkBoxContrib.isChecked():
-            if self.addRepo(self.repoName, self.repoAddress) == False:
+            if not self.addRepo(self.repoName, self.repoAddress):
                 self.flagRepo = 1
                 self.ui.checkBoxContrib.setChecked(0)
                 kdeui.KMessageBox.error(self,("You are not authorized for this operation."), "Authentication Error")

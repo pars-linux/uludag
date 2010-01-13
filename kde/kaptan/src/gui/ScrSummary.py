@@ -73,7 +73,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Wallpaper Settings
         content.append(subject % ki18n("Wallpaper Settings").toString())
-        if self.wallpaperSettings["hasChanged"] == False:
+        if not self.wallpaperSettings["hasChanged"]:
             content.append(item % ki18n("You haven't selected any wallpaper.").toString())
         else:
             content.append(item % ki18n("Selected Wallpaper: <b>%s</b>").toString() % os.path.basename(str(self.wallpaperSettings["selectedWallpaper"])))
@@ -82,7 +82,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Style Settings
         content.append(subject % ki18n("Style Settings").toString())
 
-        if self.styleSettings["hasChanged"] == False:
+        if not self.styleSettings["hasChanged"]:
             content.append(item % ki18n("You haven't selected any style.").toString())
         else:
             content.append(item % ki18n("Selected Style: <b>%s</b>").toString() % unicode(self.styleSettings["summaryMessage"]))
@@ -132,7 +132,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Search Settings
         if not tools.isLiveCD():
-            if self.searchSettings["hasChanged"] == True:
+            if self.searchSettings["hasChanged"]:
                 config = KConfig("nepomukserverrc")
                 group = config.group("Service-nepomukstrigiservice")
                 #group = config.group("Basic Settings")
@@ -149,7 +149,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     pass
 
         # Wallpaper Settings
-        if self.wallpaperSettings["hasChanged"] == True:
+        if self.wallpaperSettings["hasChanged"]:
             hasChanged = True
             if self.wallpaperSettings["selectedWallpaper"]:
                 config =  KConfig("plasma-desktop-appletsrc")
@@ -163,7 +163,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                         subg_2.writeEntry("wallpaper", self.wallpaperSettings["selectedWallpaper"])
 
         # Menu Settings
-        if self.menuSettings["hasChanged"] == True:
+        if self.menuSettings["hasChanged"]:
             hasChanged = True
             config = KConfig("plasma-desktop-appletsrc")
             group = config.group("Containments")
@@ -180,7 +180,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                             subg2.writeEntry('plugin', self.menuSettings["selectedMenu"] )
 
         # Desktop Type
-        if self.styleSettings["hasChangedDesktopType"] == True:
+        if self.styleSettings["hasChangedDesktopType"]:
             hasChanged = True
             config =  KConfig("plasma-desktop-appletsrc")
             group = config.group("Containments")
@@ -196,7 +196,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             config.sync()
 
         # Number of Desktops
-        if self.styleSettings["hasChangedDesktopNumber"] == True:
+        if self.styleSettings["hasChangedDesktopNumber"]:
             hasChanged = True
             config = KConfig("kwinrc")
             group = config.group("Desktops")
@@ -218,7 +218,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             config.sync()
 
         # Theme Settings
-        if self.styleSettings["hasChanged"] == True:
+        if self.styleSettings["hasChanged"]:
             hasChanged = True
             configKdeGlobals = KConfig("kdeglobals")
             group = configKdeGlobals.group("General")
@@ -275,13 +275,13 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 pass
 
         # Smolt Settings
-        if self.smoltSettings["profileSend"] == True:
+        if self.smoltSettings["profileSend"]:
             self.procSettings = QProcess()
             command = "smoltSendProfile"
             arguments = ["-a", "--submitOnly"]
             self.procSettings.startDetached(command, arguments)
 
-        if hasChanged == True:
+        if hasChanged:
             self.killPlasma()
 
         return True
