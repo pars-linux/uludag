@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-13 00:52+0200\n"
-"PO-Revision-Date: 04/01/10 16:19\n"
+"PO-Revision-Date: 13/01/10 17:18\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -44,8 +44,7 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr ""
-"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -114,15 +113,13 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr ""
-"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr ""
-"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -201,7 +198,7 @@ msgstr "Onderstaande geselecteerde schijf"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
-msgstr "Installeer geen bootloader"
+msgstr "Installeer geen bootlader"
 
 #: yali4/gui/Ui/bootloaderwidget.py:86
 msgid "Automatically add other operating systems to the GRUB Menu"
@@ -215,12 +212,12 @@ msgid ""
 msgstr ""
 "U kunt de integriteit van de pakketten op de installatie-CD controleren. "
 "Ondanks dat dit een optionele stap is raden wij dit aan om mogelijke fouten "
-"bij de installatie te voorkomen."
+"bij de installatie te vermijden."
 
 #: yali4/gui/Ui/checkcdwidget.py:82 yali4/gui/ScrCheckCD.py:56
 #: yali4/installer.py:204
 msgid "Check CD Integrity"
-msgstr "Controleer CD integriteit"
+msgstr "CD integriteit controleren"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid ""
@@ -293,7 +290,7 @@ msgstr "Form3"
 
 #: yali4/gui/Ui/installwidget.py:72
 msgid "pix"
-msgstr "Backtracepix"
+msgstr "pix"
 
 #: yali4/gui/Ui/installwidget.py:73
 msgid "Desc"
@@ -301,7 +298,7 @@ msgstr "Desc"
 
 #: yali4/gui/Ui/installwidget.py:74
 msgid "Installing Package: "
-msgstr "Installeren pakket: "
+msgstr "Installeren van pakket: "
 
 #: yali4/gui/Ui/keyboardwidget.py:60
 msgid "Choose a keyboard layout:"
@@ -353,7 +350,7 @@ msgstr "Partitie 1 op FUJISTU - /dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:155
 msgid "Use :"
-msgstr "Gebruiken als:"
+msgstr "Gebruiken als :"
 
 #: yali4/gui/Ui/partedit.py:156
 msgid "Size :"
@@ -385,7 +382,7 @@ msgstr "Aanpassen partitiegrootte"
 
 #: yali4/gui/Ui/partedit.py:163
 msgid "Changes will be applied after Summary Screen."
-msgstr "Veranderingen zullen toegepast worden na het overzichtscherm."
+msgstr "Veranderingen worden na het overzichtscherm toegepast."
 
 #: yali4/gui/Ui/partedit.py:164
 msgid "Refresh Disks"
@@ -445,11 +442,11 @@ msgstr ""
 "color:#ffffff;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
-"\" font-weight:600; text-decoration: underline;\">Waarschuwing:</span> De "
-"grootte aanpassen van uw partitie, kan deze corrupt maken, waardoor uw "
+"\" font-weight:600; text-decoration: underline;\">Waarschuwing:</span> Het "
+"aanpassen van de grootte van de partitie kan deze corrupt maken waardoor de "
 "gegevens onbereikbaar worden. Zorg ervoor dat u een backup heeft van deze "
 "partitie.<span style=\" font-weight:600;\"> </span><span style=\" font-"
-"weight:600;\">Let op dat deze handeling niet ongedaan kan worden gemaakt</"
+"weight:600;\">Let op dat deze handeling niet ongedaan gemaakt kan worden.</"
 "span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
@@ -463,7 +460,7 @@ msgstr "Grootte wijzigen"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:102
 msgid "User to change password of:"
-msgstr "Gebruiker om wachtwoord te wijzigen:"
+msgstr "Wachtwoord wijzigen van gebruiker:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:103
 msgid "New password:"
@@ -551,7 +548,7 @@ msgstr "Echte naam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:176
 msgid "User Name:"
-msgstr "Gebruikersnaam:"
+msgstr "Gebruikernaam:"
 
 #: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Password:"
@@ -563,7 +560,7 @@ msgstr "Wachtwoord (nogmaals):"
 
 #: yali4/gui/Ui/setupuserswidget.py:179
 msgid "User ID"
-msgstr "Gebruikers-id"
+msgstr "Gebruiker-id"
 
 #: yali4/gui/Ui/setupuserswidget.py:180
 msgid "Give administrator privileges to this user"
@@ -608,12 +605,11 @@ msgstr "Gebruiker aanmaken"
 
 #: yali4/gui/Ui/summarywidget.py:69
 msgid "Begin Install"
-msgstr "Begin installatie"
+msgstr "Installatie starten"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid ""
-"If you check this, Yalı will install all language packages in this release"
-msgstr "Markeer dit om alle taalpakketten installeren"
+msgid "If you check this, Yalı will install all language packages in this release"
+msgstr "Markeer dit om alle taalpakketten te installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
 msgid "Install all language packages"
@@ -626,7 +622,7 @@ msgid ""
 "you must accept them. Do you accept GNU/GPL and other, corresponding "
 "licences?"
 msgstr ""
-"Alle software, ontwikkeld door TUBITAK/UEKAE, valt onder de GNU/GPL. Andere "
+"Alle software, ontwikkeld door TUBITAK/UEKAE, valt onder GNU/GPL. Andere "
 "software heeft zijn eigen vergelijkbare licentie. Door het installeren van "
 "Pardus stem u in met deze licentie. Accepteert u deze licenties en wilt u "
 "doorgaan?"
@@ -658,7 +654,7 @@ msgid ""
 "of Pardus 2009.1 while it is being installed."
 msgstr ""
 "Hallo. Het installatiegereedschap YALI is gestart met de installatie van "
-"Pardus. Het is nu tijd om achterover te leunen en enkele van eigenschappen "
+"Pardus. Het is nu tijd om achterover te leunen en enkele eigenschappen "
 "van Pardus 2009.1 tijdens de installatie te bewonderen."
 
 #: yali4/gui/descSlide.py:19
@@ -668,8 +664,8 @@ msgid ""
 "with other operating systems. With its fast, secure and stable "
 "infrastructure, Pardus opens the path to software libre."
 msgstr ""
-"Pardus 2009.1 is een Linuxdistributie, die iedereen gemakkelijk kan "
-"installeren en gebruiken. Met Pardus 2009.1 kunt u hetzelfde doen dat met "
+"Pardus 2009.1 is een Linux-distributie die iedereen gemakkelijk kan "
+"installeren en gebruiken. Met Pardus 2009.1 kunt u hetzelfde doen dat u met "
 "andere besturingsystemen kunt doen. Met zijn snelle, veilige en stabiele "
 "infrastructuur opent Pardus de weg naar software vrijheid."
 
@@ -716,7 +712,7 @@ msgid ""
 msgstr ""
 "Met Pardus 2009.1 is Kpdf vervangen door Okular. Okular ondersteunt vele "
 "bestandformaten en maakt het mogelijk om alle bestanden te bekijken zonder "
-"additionele software, notities of bladwijzers over ze maken."
+"additionele software en notities van bladwijzers maken."
 
 #: yali4/gui/descSlide.py:23
 msgid ""
@@ -726,8 +722,8 @@ msgid ""
 "Manager interface."
 msgstr ""
 "Pardus bevat vele technologieën voor een gemakkelijker gebruik en beheer. "
-"TASMA is vervangen door Systeembeheer in Pardus 2009.1, maar u kunt nog "
-"steeds al de beheerdergereedschappen terugvinden in Systeeminstellingen."
+"TASMA is vervangen door Systeeminstellingen in Pardus 2009.1, maar u kunt nog "
+"steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -739,9 +735,9 @@ msgid ""
 "intelligent search and an online Pardus Beginner's Tour."
 msgstr ""
 "Het programma Kaptan (Turks voor 'Kapitein') verwelkomt u na de eerste start "
-"van Pardus. Door middel van Kaptan kunt u uw desktop instellen, locatie van "
-"taakbalken wijzigen, achtergrondafbeeldingen en desktop thema en "
-"instellingen voor internetverbinding. In Kaptan kunt u ook de Contribution "
+"van Pardus. Door middel van Kaptan kunt u het bureaublad, locatie van "
+"taakbalken , achtergrondafbeeldingen en desktop thema en "
+"internetverbinding instellen. In Kaptan kunt u ook de Contribution "
 "Repository (installatiebron) aan pakketbeheer toevoegen. En ook bevat Kaptan "
 "opties voor het instellen van de intelligente zoekdienst en een online "
 "Pardus rondleiding voor beginners."
@@ -756,10 +752,10 @@ msgid ""
 msgstr ""
 "Met een paar muisklikken is het mogelijk om zeer veel programma's vanuit de "
 "pakketbronnen van Pardus te installeren. Door gebruik te maken van "
-"Pakketbeheer is het mogelijk om met een enkele muisklik PiSi-pakketten te "
+"Pakketbeheer is het mogelijk om met enkele muisklikken PiSi-pakketten te "
 "installeren, zonder door verschillende optieschermen lastig te worden "
 "gevallen. Na het installeren van het pakket is het alleen noodzakelijk om "
-"deze te starten. Zo eenvoudig is dat! "
+"deze te starten. Zo eenvoudig is dat!"
 
 #: yali4/gui/descSlide.py:26
 msgid ""
@@ -771,7 +767,7 @@ msgstr ""
 "Nieuwe gebruikers toevoegen, bootvolgorde wijzigen, starten of stoppen van "
 "systeemdiensten of het terugzetten van het systeem naar een vorige "
 "momentopname is nog nooit zo eenvoudig geweest. Het is allemaal mogelijk in "
-"Computerbeheer, en bij veelvuldig gebruik ook als widget op het bureaublad "
+"Computerbeheer en bij veelvuldig gebruik ook als widget op het bureaublad "
 "te plaatsen."
 
 #: yali4/gui/descSlide.py:27
@@ -782,11 +778,11 @@ msgid ""
 "server) for different connections with the profiles you create. Choosing a "
 "different connection profile requires just two clicks."
 msgstr ""
-"Verbinding maken met een draadloos of kabelnetwerk is net zo eenvoudig als "
-"het kiezen van een netwerkprofiel met Pardus 2009.1. Met de geavanceerde "
+"Verbinding maken met een draadloos of kabelnetwerk is eenvoudig door "
+"het kiezen van een netwerkprofiel in Pardus 2009.1. Met de geavanceerde "
 "opties van Netwerkbeheer is het mogelijk om meerdere instellingen (b.v. "
 "statische IP, een andere DNS-server) voor meerdere verbindingen door middel "
-"van profielen te maken. Het kiezen van een ander netwerkprofiel gebeurt met "
+"van het aanmaken van profielen. Het kiezen van een ander netwerkprofiel gebeurt met "
 "twee muisklikken."
 
 #: yali4/gui/descSlide.py:28
@@ -804,7 +800,7 @@ msgstr ""
 "de mogelijkheid om liedteksten te lezen en over de artiest of componist in "
 "Wikipedia te lezen tijdens het luisteren naar de muziek of de intelligente "
 "mogelijkheden van afspeellijst voor het ordenen  van muziekgroepen te "
-"gebruiken. Daar Amarok ook naadloos samenwerkt met de meeste spelers, is het "
+"gebruiken. Daar Amarok ook naadloos samenwerkt met de meeste spelers is het "
 "mogelijk om liedjes d.m.v. verslepen in de afspeellijst te plaatsen."
 
 #: yali4/gui/descSlide.py:29
@@ -851,7 +847,7 @@ msgstr ""
 "voorziet in een tekstbewerker, rekenblad en presentatie applicatie, formule "
 "en tekengereedschappen voor thuisgebruik, op de werkplek of op school. Met "
 "Openoffice.org kunt u documenten bekijken en bewerken en met vrienden delen "
-"die een met een andere office aanbieder gebruikt of gemaakt zijn."
+"die een andere office aanbieder gebruiken of gemaakt zijn."
 
 #: yali4/gui/descSlide.py:32
 msgid ""
@@ -871,8 +867,8 @@ msgid ""
 "repositories, allowing hours of fun with various kinds of games available "
 "through the package manager."
 msgstr ""
-"Pardus, met zijn voorgeïnstalleerde spelen, heeft vele spellen in zijn "
-"repositories en voorziet in vele uren vermaak met de verschillende soorten "
+"Pardus, met zijn voorgeïnstalleerde spellen, heeft vele spellen in zijn "
+"softwarebronnen en voorziet in vele uren vermaak met de verschillende soorten "
 "spellen die door Pakketbeheer beschikbaar zijn."
 
 #: yali4/gui/descSlide.py:34
@@ -957,8 +953,7 @@ msgstr "Er is een verzoek voor het gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid ""
-"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1736,9 +1731,8 @@ msgid "Getting history ..."
 msgstr "Geschiedenis ophalen ..."
 
 #: yali4/gui/ScrRescuePisi.py:91
-#, fuzzy
 msgid "There is no connection"
-msgstr "Selecteer verbinding"
+msgstr "Er is geen verbinding"
 
 #: yali4/gui/ScrRescuePisi.py:132
 #, python-format
@@ -1893,8 +1887,7 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr ""
-"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -2169,7 +2162,7 @@ msgid ""
 "shutdown Windows properly before using this software! Note, if you have run "
 "chkdsk previously then boot Windows again which will automatically "
 "initialize the journal correctly"
-msgstr ""
+msgstr "Openen van '%s' als NTFS is mislukt. Het NTFS journal-bestand is niet goed afgesloten. Sluit eerst Windows op een goede (normale) wijze af voor het gebruiken van deze software! Merk op: indien chkdisk is gebruikt, start dan Windows opnieuw op om het journal-bestand correct te initialiseren"
 
 #: yali4/filesystem.py:477
 #, python-format
@@ -2481,11 +2474,3 @@ msgstr "De thuismap van gebruiker <b>%s</b> wordt gereed gemaakt.."
 msgid "Not enough free space on %s to create new partition"
 msgstr "Niet genoeg ruimte op %s voor het aanmaken van nieuwe partitie"
 
-#~ msgid ""
-#~ "Pardus 2009.1 also includes other components updated with KDE 4.3. If you "
-#~ "have used Pardus before, you may want to check out the welcome tour to "
-#~ "see what those changes are."
-#~ msgstr ""
-#~ "Pardus 2009.1 bevat met de overgang naar KDE 4.3 ook andere componenten. "
-#~ "Wanneer u Pardus voorheen gebruikt heeft kunt u de Welkom tour volgen om "
-#~ "deze veranderingen te bekijken."
