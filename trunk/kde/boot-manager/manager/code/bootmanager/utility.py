@@ -14,4 +14,7 @@
 import os
 
 def getDiskByUUID(uuid):
-    return os.path.realpath(os.path.join("/dev/disk/by-uuid/", os.readlink("/dev/disk/by-uuid/%s" % uuid)))
+    if os.path.exists("/dev/disk/by-uuid/%s" % uuid):
+        return os.path.realpath(os.path.join("/dev/disk/by-uuid/", os.readlink("/dev/disk/by-uuid/%s" % uuid)))
+    else:
+        return uuid
