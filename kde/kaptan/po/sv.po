@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-06 14:37+0200\n"
+"POT-Creation-Date: 2010-01-13 15:42+0200\n"
 "PO-Revision-Date: 2010-01-11 19:19+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -49,8 +49,8 @@ msgid ""
 "Kick-off menu is the default menu of Pardus.<br><br>The program shortcuts "
 "are easy to access and well organized."
 msgstr ""
-"Kick-off-menyn är standardmenyn i Pardus.<br><br>Programgenvägarna "
-"är välorganiserade och enkla att hitta."
+"Kick-off-menyn är standardmenyn i Pardus.<br><br>Programgenvägarna är "
+"välorganiserade och enkla att hitta."
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:154
 msgid "Simple Menu"
@@ -61,8 +61,8 @@ msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
-"Enkel meny är en äldre typ av meny från KDE 3.<br><br>Den är resurssnål "
-"och rekommenderas därför till långsammare datorer."
+"Enkel meny är en äldre typ av meny från KDE 3.<br><br>Den är resurssnål och "
+"rekommenderas därför till långsammare datorer."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
 msgid "Lancelot Menu"
@@ -73,11 +73,10 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
-"Lancelot är en avancerad meny och den är mycket anpassningsbar för Pardus.<"
-"br><br> "
-"Programgenvägarna är välorganiserade och enkla att hitta."
+"Lancelot är en avancerad meny och den är mycket anpassningsbar för Pardus."
+"<br><br> Programgenvägarna är välorganiserade och enkla att hitta."
 
-#: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:61
+#: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:63
 msgid "Mouse Settings"
 msgstr "Musinställningar"
 
@@ -237,73 +236,73 @@ msgstr "Ja"
 msgid "No"
 msgstr "Nej"
 
-#: .tmp/ScrSummary.py:37 .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:58
+#: .tmp/ScrSummary.py:39 .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:58
 msgid "Welcome"
 msgstr "Välkommen"
 
-#: .tmp/ScrSummary.py:38 .tmp/ScrWelcome.py:25
+#: .tmp/ScrSummary.py:40 .tmp/ScrWelcome.py:25
 msgid "Welcome to Kaptan"
 msgstr "Välkommen till Kaptan!"
 
-#: .tmp/ScrSummary.py:63
+#: .tmp/ScrSummary.py:65
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
 msgstr "Vald musinställning: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:64
+#: .tmp/ScrSummary.py:66
 #, python-format
 msgid "Selected clicking behaviour: <b>%s</b>"
 msgstr "Valt klickbeteende: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:68
+#: .tmp/ScrSummary.py:70
 msgid "Menu Settings"
 msgstr "Menyinställning"
 
-#: .tmp/ScrSummary.py:69
+#: .tmp/ScrSummary.py:71
 #, python-format
 msgid "Selected Menu: <b>%s</b>"
 msgstr "Vald meny: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:73
+#: .tmp/ScrSummary.py:75
 msgid "Wallpaper Settings"
 msgstr "Skrivbordsunderlägg"
 
-#: .tmp/ScrSummary.py:75
+#: .tmp/ScrSummary.py:77
 msgid "You haven't selected any wallpaper."
 msgstr "Du har inte valt något skrivbordsunderlägg"
 
-#: .tmp/ScrSummary.py:77
+#: .tmp/ScrSummary.py:79
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
 msgstr "Valt skrivbordsunderlägg: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:81
+#: .tmp/ScrSummary.py:83
 msgid "Style Settings"
 msgstr "Stil"
 
-#: .tmp/ScrSummary.py:84
+#: .tmp/ScrSummary.py:86
 msgid "You haven't selected any style."
 msgstr "Du har inte valt någon stil."
 
-#: .tmp/ScrSummary.py:86
+#: .tmp/ScrSummary.py:88
 #, python-format
 msgid "Selected Style: <b>%s</b>"
 msgstr "Vald stil: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:92
+#: .tmp/ScrSummary.py:95
 msgid "Search Settings"
 msgstr "Sökinställningar"
 
-#: .tmp/ScrSummary.py:93
+#: .tmp/ScrSummary.py:96
 #, python-format
 msgid "Desktop search: <b>%s</b>"
 msgstr "Skrivbordssökning: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:99
+#: .tmp/ScrSummary.py:102
 msgid "Smolt Settings"
 msgstr "Smoltinställning"
 
-#: .tmp/ScrSummary.py:100
+#: .tmp/ScrSummary.py:103
 #, python-format
 msgid "Send my profile: <b>%s</b>"
 msgstr "Skicka min profil: <b>%s</b>"
@@ -422,8 +421,8 @@ msgid ""
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
 "Kaptan väljer automatiskt bästa teckenuppsättning baserat på ditt "
-"systemspråk. "
-"Om du vill använda en annan kan du göra ditt val och testa det direkt."
+"systemspråk. Om du vill använda en annan kan du göra ditt val och testa det "
+"direkt."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -474,10 +473,8 @@ msgid ""
 "swap the left and right buttons of your pointing device."
 msgstr ""
 "<b>Klickbeteendet</b> definierar hur många gånger du vill klicka för att "
-"öppna "
-"en fil. Om du är <b>vänsterhänt</b>, kanska du föredrar att växla funktion "
-"mellan "
-"höger och vänster knapp på ditt pekdon."
+"öppna en fil. Om du är <b>vänsterhänt</b>, kanska du föredrar att växla "
+"funktion mellan höger och vänster knapp på ditt pekdon."
 
 #: .tmp/ui_mouseWidget.py:170
 msgid "Clicking Behaviour"
@@ -669,10 +666,9 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:9pt;\">   Smolt kommer bara att skickahårdvaru- och grundläggande "
 "operativsystemet information till Pardus smolt server (smoon). Det enda "
-"koppling från databasen till en klientmaskin är UUID. Så länge klienten "
-"inte ger ut detta UUID är datat anonymt. Om en användare vid något tillfälle "
-"vill ta bort sin profilfrån databasen behöver denne bara köra</"
-"span></p>\n"
+"koppling från databasen till en klientmaskin är UUID. Så länge klienten inte "
+"ger ut detta UUID är datat anonymt. Om en användare vid något tillfälle vill "
+"ta bort sin profilfrån databasen behöver denne bara köra</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
@@ -747,8 +743,7 @@ msgid ""
 "styles and themes."
 msgstr ""
 "Välj ditt favorittema och skrivbordstyp. Anpassa Pardus med färgstarka "
-"stilar "
-"och teman."
+"stilar och teman."
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -823,9 +818,8 @@ msgid ""
 "ready to enjoy Pardus!"
 msgstr ""
 "Du har nu framgångsrikt fullföljt alla steg. Här är en sammanställning över "
-"de "
-"inställningar du valt, klicka <b>Verkställ</b> för att spara dem. Du är nu "
-"redo för att ha roligt med Pardus."
+"de inställningar du valt, klicka <b>Verkställ</b> för att spara dem. Du är "
+"nu redo för att ha roligt med Pardus."
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -874,7 +868,8 @@ msgid "Choose a Wallpaper"
 msgstr "Välj ett skrivbordsunderlägg"
 
 #: .tmp/ui_welcomeWidget.py:60
-msgid "Welcome to Pardus 2009.1 <sup>RC</sup>"
+#, fuzzy
+msgid "Welcome to Pardus 2009.1"
 msgstr "Välkommen till Pardus 2009.1 <sup>RC</sup>"
 
 #: .tmp/ui_welcomeWidget.py:61
@@ -887,13 +882,10 @@ msgid ""
 "<b>next</b> in order to begin."
 msgstr ""
 "<b>Pardus</b> är ett pålitligt, säkert, snabbt och användarvänligt "
-"operativsystem. "
-" <br /><br />Med Pardus kan du enkelt surfa, eposta, använda kontorsprogram, "
-"se filmer, spela musik, utveckla program, spela spel och mycket mer! <br /><"
-"br /> "
-"<b>Kaptan</b> låter dig enkelt och snabbt anpassa Pardus till att möta dina "
-"behov. "
-"Klicka <b>Nästa</b> för att börja."
+"operativsystem.  <br /><br />Med Pardus kan du enkelt surfa, eposta, använda "
+"kontorsprogram, se filmer, spela musik, utveckla program, spela spel och "
+"mycket mer! <br /><br /> <b>Kaptan</b> låter dig enkelt och snabbt anpassa "
+"Pardus till att möta dina behov. Klicka <b>Nästa</b> för att börja."
 
 #, fuzzy
 #~ msgid ""
