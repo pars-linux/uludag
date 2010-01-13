@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-13 00:52+0200\n"
-"PO-Revision-Date: 2010-01-10 21:12+0100\n"
+"PO-Revision-Date: 2010-01-13 11:34+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -1721,9 +1721,8 @@ msgid "Getting history ..."
 msgstr "Hämtar historik..."
 
 #: yali4/gui/ScrRescuePisi.py:91
-#, fuzzy
 msgid "There is no connection"
-msgstr "Välj anslutning"
+msgstr "Det finns inte någon anslutning"
 
 #: yali4/gui/ScrRescuePisi.py:132
 #, python-format
