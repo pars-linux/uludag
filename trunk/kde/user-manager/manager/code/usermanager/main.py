@@ -348,7 +348,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             uidUser = user.split(':')[0]
             if str(uidToDelete).strip() == str(uidUser).strip():
                 return True
-         return False
+        return False
 
     def slotOpenEdit(self, action):
         """
