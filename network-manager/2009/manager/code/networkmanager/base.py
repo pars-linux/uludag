@@ -35,6 +35,11 @@ TARGET_HEIGHT  = 0
 ANIMATION_TIME = 200
 DEFAULT_HEIGHT = 16777215
 
+def cropText(text):
+    if len(text) <= 32:
+        return text
+    return "%s...%s" % (text[:16], text[-16:])
+
 class MainManager(QtGui.QWidget):
     def __init__(self, parent, standAlone=True, app=None):
         QtGui.QWidget.__init__(self, parent)
@@ -432,7 +437,7 @@ class MainManager(QtGui.QWidget):
         if len(devices) == 1:
             ui.deviceList.hide()
             ui.labelDeviceDescription.show()
-            ui.labelDeviceDescription.setText(devices[device])
+            ui.labelDeviceDescription.setText(cropText(devices[device]))
         else:
             ui.deviceList.show()
             ui.labelDeviceDescription.hide()
@@ -445,7 +450,7 @@ class MainManager(QtGui.QWidget):
         ui.lineConnectionName.setText(data["name"])
 
         if "device_name" in data:
-            ui.labelDeviceDescription.setText(data["device_name"])
+            ui.labelDeviceDescription.setText(cropText(data["device_name"]))
         if "device_id" in data:
             index = ui.deviceList.findText(data["device_id"])
             if index != -1:
