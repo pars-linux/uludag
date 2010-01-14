@@ -2,12 +2,16 @@
 Name=Network Manager
 Name[tr]=Ağ Yöneticisi
 Name[nl]=Netwerkbeheer
+Name[de]=Netzwerkverbindungen
+Name[es]=Conexiones de Red
 GenericName=Network Manager
 GenericName[tr]=Ağ Yöneticisi
 GenericName[nl]=Netwerkbeheer
+GenericName[de]=Netzwerk
 Comment=An application for managing network connections.
 Comment[tr]=Ağ bağlantılarını yönetmenizi sağlayan bir uygulama.
 Comment[nl]=Beheerder voor netwerkverbindingen.
+Comment[de]=Netzwerkverbindung konfigurieren.
 Exec=network-manager
 Icon=applications-internet
 Type=Application
