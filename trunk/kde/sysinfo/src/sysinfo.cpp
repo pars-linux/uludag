@@ -384,7 +384,8 @@ void kio_sysinfoProtocol::memoryInfo(void)
         QTextStream stream(&file);
         QString line;
 
-        while (!stream.atEnd())
+        // Avoid using stream.atEnd() for /proc files as it always returns 1 in Qt4.
+        do
         {
             line = stream.readLine();
             if (!line.isEmpty())
@@ -403,6 +404,7 @@ void kio_sysinfoProtocol::memoryInfo(void)
                     swapfree = line.section(":", 1, 1).replace(" kB", "").trimmed().toULongLong();
             }
         }
+        while (!line.isNull());
     }
 
     // Disk cache and buffers are ignored as they will always be available
