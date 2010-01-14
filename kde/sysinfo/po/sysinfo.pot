@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 12:04+0300\n"
+"POT-Creation-Date: 2010-01-14 14:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/sysinfo.cpp:83
+#: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
 msgstr ""
 
-#: src/sysinfo.cpp:86
+#: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
 msgstr ""
 
@@ -60,86 +60,86 @@ msgstr ""
 msgid "System"
 msgstr ""
 
-#: src/sysinfo.cpp:239
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-
-#: src/sysinfo.cpp:246
+#: src/sysinfo.cpp:245
 msgid "Common Folders"
 msgstr ""
 
-#: src/sysinfo.cpp:247
+#: src/sysinfo.cpp:246
 msgid "My Home Folder"
 msgstr ""
 
-#: src/sysinfo.cpp:248
+#: src/sysinfo.cpp:247
 msgid "Root Folder"
 msgstr ""
 
-#: src/sysinfo.cpp:249
+#: src/sysinfo.cpp:248
 msgid "Network Folders"
 msgstr ""
 
-#: src/sysinfo.cpp:254
+#: src/sysinfo.cpp:253
 msgid "Network"
 msgstr ""
 
-#: src/sysinfo.cpp:261
+#: src/sysinfo.cpp:260
 msgid "Memory"
 msgstr ""
 
-#: src/sysinfo.cpp:263
+#: src/sysinfo.cpp:262
 msgid "Ram : %1 free of %2"
 msgstr ""
 
-#: src/sysinfo.cpp:266
+#: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
 msgstr ""
 
-#: src/sysinfo.cpp:274
+#: src/sysinfo.cpp:265
+msgid "Swap: Not in use"
+msgstr ""
+
+#: src/sysinfo.cpp:273
 msgid "Disks"
 msgstr ""
 
-#: src/sysinfo.cpp:281
+#: src/sysinfo.cpp:280
 msgid "Operating System"
 msgstr ""
 
-#: src/sysinfo.cpp:285
+#: src/sysinfo.cpp:284
 msgid "Kde <b>%1</b> on <b>%2</b>"
 msgstr ""
 
-#: src/sysinfo.cpp:297
+#: src/sysinfo.cpp:295
 msgid "Processor"
 msgstr ""
 
-#: src/sysinfo.cpp:299
+#: src/sysinfo.cpp:297
 msgid "%1 MHz"
 msgstr ""
 
-#: src/sysinfo.cpp:300
+#: src/sysinfo.cpp:298
 msgid " core"
 msgstr ""
 
-#: src/sysinfo.cpp:311
+#: src/sysinfo.cpp:309
 msgid "Display"
 msgstr ""
 
-#: src/sysinfo.cpp:545
+#: src/sysinfo.cpp:540
 msgid "3D Not Supported"
 msgstr ""
 
-#: src/sysinfo.cpp:547
+#: src/sysinfo.cpp:542
 msgid "3D Supported"
 msgstr ""
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Mounted on %1"
 msgstr ""
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Not mounted"
 msgstr ""
 
-#: src/sysinfo.cpp:572
+#: src/sysinfo.cpp:567
 msgid "%1 free of %2"
 msgstr ""

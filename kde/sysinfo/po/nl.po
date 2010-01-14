@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 12:04+0300\n"
+"POT-Creation-Date: 2010-01-14 14:45+0200\n"
 "PO-Revision-Date: 10/07/09 17:39\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -27,12 +27,12 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: src/sysinfo.cpp:83
+#: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
 msgstr "%1 GB"
 
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: src/sysinfo.cpp:86
+#: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
 msgstr "%1 MB"
 
@@ -74,91 +74,96 @@ msgstr "Ophalen van hardware informatie..."
 msgid "System"
 msgstr "Systeem"
 
-#: src/sysinfo.cpp:239
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en meer..."
-
 # /usr/lib/YaST2/clients/lan_dns.ycp:87
 # /usr/lib/YaST2/clients/lan_dns.ycp:87
-#: src/sysinfo.cpp:246
+#: src/sysinfo.cpp:245
 msgid "Common Folders"
 msgstr "Gemeenschappelijke mappen"
 
-#: src/sysinfo.cpp:247
+#: src/sysinfo.cpp:246
 msgid "My Home Folder"
 msgstr "Mijn persoonlijke map"
 
-#: src/sysinfo.cpp:248
+#: src/sysinfo.cpp:247
 msgid "Root Folder"
 msgstr "Hoofdmap"
 
 # /usr/lib/YaST2/clients/dialup_dev_cfg.ycp:71
-#: src/sysinfo.cpp:249
+#: src/sysinfo.cpp:248
 msgid "Network Folders"
 msgstr "Netwerkmappen"
 
-#: src/sysinfo.cpp:254
+#: src/sysinfo.cpp:253
 msgid "Network"
 msgstr "Netwerk"
 
-#: src/sysinfo.cpp:261
+#: src/sysinfo.cpp:260
 msgid "Memory"
 msgstr "Geheugen"
 
-#: src/sysinfo.cpp:263
+#: src/sysinfo.cpp:262
 msgid "Ram : %1 free of %2"
 msgstr "Ram : %1 vrij van %2"
 
-#: src/sysinfo.cpp:266
+#: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
 msgstr "Swap: %1 vrij van %2"
 
-#: src/sysinfo.cpp:274
+#: src/sysinfo.cpp:265
+msgid "Swap: Not in use"
+msgstr ""
+
+#: src/sysinfo.cpp:273
 msgid "Disks"
 msgstr "Schijven"
 
-#: src/sysinfo.cpp:281
+#: src/sysinfo.cpp:280
 msgid "Operating System"
 msgstr "Besturingssysteem"
 
-#: src/sysinfo.cpp:285
+#: src/sysinfo.cpp:284
 msgid "Kde <b>%1</b> on <b>%2</b>"
 msgstr "Kde <b>%1</b> op <b>%2</b>"
 
-#: src/sysinfo.cpp:297
+#: src/sysinfo.cpp:295
 msgid "Processor"
 msgstr "Processor"
 
 # /usr/lib/YaST2/clients/inst_config_x11.ycp:156
-#: src/sysinfo.cpp:299
+#: src/sysinfo.cpp:297
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: src/sysinfo.cpp:300
+#: src/sysinfo.cpp:298
 msgid " core"
 msgstr " kern"
 
-#: src/sysinfo.cpp:311
+#: src/sysinfo.cpp:309
 msgid "Display"
 msgstr "Beeldscherm"
 
-#: src/sysinfo.cpp:545
+#: src/sysinfo.cpp:540
 msgid "3D Not Supported"
 msgstr "3D wordt niet ondersteund"
 
-#: src/sysinfo.cpp:547
+#: src/sysinfo.cpp:542
 msgid "3D Supported"
 msgstr "3D wordt ondersteund"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Mounted on %1"
 msgstr "Aangekoppeld aan %1"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Not mounted"
 msgstr "Niet aangekoppeld"
 
-#: src/sysinfo.cpp:572
+#: src/sysinfo.cpp:567
 msgid "%1 free of %2"
 msgstr "%1 vrij van %2"
 
+#~ msgid ""
+#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr ""
+#~ "Mappen, harde schijven, verwijderbare apparaten, systeeminformatie en "
+#~ "meer..."

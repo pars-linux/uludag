@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 12:04+0300\n"
+"POT-Creation-Date: 2010-01-14 14:45+0200\n"
 "PO-Revision-Date: 2009-07-12 16:45+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: src/sysinfo.cpp:83
+#: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: src/sysinfo.cpp:86
+#: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
 msgstr "%1 MB"
 
@@ -66,89 +66,94 @@ msgstr "Söker efter hårdvaruinformation..."
 msgid "System"
 msgstr "System"
 
-#: src/sysinfo.cpp:239
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr "Kataloger, hårddiskar, flyttbara enheter, systeminformation och mer..."
-
-#: src/sysinfo.cpp:246
+#: src/sysinfo.cpp:245
 msgid "Common Folders"
 msgstr "Vanliga kataloger"
 
-#: src/sysinfo.cpp:247
+#: src/sysinfo.cpp:246
 msgid "My Home Folder"
 msgstr "Min hemkatalog"
 
-#: src/sysinfo.cpp:248
+#: src/sysinfo.cpp:247
 msgid "Root Folder"
 msgstr "Rotkatalog"
 
-#: src/sysinfo.cpp:249
+#: src/sysinfo.cpp:248
 msgid "Network Folders"
 msgstr "Nätverkskataloger"
 
-#: src/sysinfo.cpp:254
+#: src/sysinfo.cpp:253
 msgid "Network"
 msgstr "Nätverk"
 
-#: src/sysinfo.cpp:261
+#: src/sysinfo.cpp:260
 msgid "Memory"
 msgstr "Minne"
 
-#: src/sysinfo.cpp:263
+#: src/sysinfo.cpp:262
 msgid "Ram : %1 free of %2"
 msgstr "Ram : %1 ledigt av %2"
 
-#: src/sysinfo.cpp:266
+#: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
 msgstr "Växling: %1 ledigt av %2"
 
-#: src/sysinfo.cpp:274
+#: src/sysinfo.cpp:265
+msgid "Swap: Not in use"
+msgstr ""
+
+#: src/sysinfo.cpp:273
 msgid "Disks"
 msgstr "Lagringsmedia"
 
-#: src/sysinfo.cpp:281
+#: src/sysinfo.cpp:280
 msgid "Operating System"
 msgstr "Operativsystem"
 
-#: src/sysinfo.cpp:285
+#: src/sysinfo.cpp:284
 msgid "Kde <b>%1</b> on <b>%2</b>"
 msgstr "KDE <b>%1</b> på <b>%2</b>"
 
-#: src/sysinfo.cpp:297
+#: src/sysinfo.cpp:295
 msgid "Processor"
 msgstr "Processor"
 
-#: src/sysinfo.cpp:299
+#: src/sysinfo.cpp:297
 msgid "%1 MHz"
 msgstr "%1 MHz"
 
-#: src/sysinfo.cpp:300
+#: src/sysinfo.cpp:298
 msgid " core"
 msgstr "-kärnig"
 
-#: src/sysinfo.cpp:311
+#: src/sysinfo.cpp:309
 msgid "Display"
 msgstr "Bildskärm"
 
-#: src/sysinfo.cpp:545
+#: src/sysinfo.cpp:540
 msgid "3D Not Supported"
 msgstr "3D stöds ej"
 
-#: src/sysinfo.cpp:547
+#: src/sysinfo.cpp:542
 msgid "3D Supported"
 msgstr "3D stöds"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Mounted on %1"
 msgstr "Monterad på %1"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Not mounted"
 msgstr "Inte monterad"
 
-#: src/sysinfo.cpp:572
+#: src/sysinfo.cpp:567
 msgid "%1 free of %2"
 msgstr "%1 ledigt av %2"
+
+#~ msgid ""
+#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr ""
+#~ "Kataloger, hårddiskar, flyttbara enheter, systeminformation och mer..."
 
 #~ msgid "Driver: "
 #~ msgstr "Drivrutin: "
