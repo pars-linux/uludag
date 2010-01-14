@@ -106,11 +106,11 @@ msgstr "RAM : %1 libre sur %2"
 
 #: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
-msgstr "Swap : %1 libre sur %2"
+msgstr "Swap: %1 libre sur %2"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Swap: Pas utilisé"
 
 #: src/sysinfo.cpp:273
 msgid "Disks"
