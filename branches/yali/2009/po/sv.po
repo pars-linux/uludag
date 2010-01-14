@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 10:09+0200\n"
-"PO-Revision-Date: 2010-01-13 11:34+0100\n"
+"PO-Revision-Date: 2010-01-14 17:27+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -2145,6 +2145,9 @@ msgid ""
 "this partition properly!After this operation, start Pardus \n"
 "installation again!"
 msgstr ""
+"Filsystemet på  '%s' är NTFS, och det avslutades ej korrekt. \n"
+"Starta om ditt system och stäng partitionen ordentligt. \n"
+"Efter det kan du starta Pardusinstallationen igen!"
 
 #: yali4/filesystem.py:477
 #, python-format

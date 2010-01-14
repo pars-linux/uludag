@@ -7,13 +7,13 @@
 # Mattias Newzella <newzella@linux.nu>, 2001.
 # Gudmund Areskoug <fta@algonet.se>, 2001.
 # Mattias Newzella <newzella@linux.se>, 2007.
-# Patrik Karlsson <patrik@pardus.nu>, 2009.
+# Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_sysinfo\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 14:45+0200\n"
-"PO-Revision-Date: 2009-07-12 16:45+0200\n"
+"PO-Revision-Date: 2010-01-14 17:20+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -100,7 +100,7 @@ msgstr "Växling: %1 ledigt av %2"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Växling: Ej i bruk"
 
 #: src/sysinfo.cpp:273
 msgid "Disks"
