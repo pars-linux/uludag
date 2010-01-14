@@ -1,6 +1,22 @@
 Translation:
-------------
+-------------
 
 We've started a rewrite of all the strings in YALI Corporate2 branch.
 Note that nearly all strings will become fuzzy in a while.
 
+Status:
+--------
+
+I first started fixing the files which contains ambigious '...' or '..' at the
+end of the strings:
+
+gui/ScrRescueFinish.py
+gui/ScrGoodbye.py
+gui/ScrSummary.py
+gui/ScrInstall.py
+gui/ScrRescuePassword.py
+gui/ScrRescue.py
+gui/GUIAdditional.py
+gui/ScrRescuePisi.py
+installer.py
+postinstall.py
