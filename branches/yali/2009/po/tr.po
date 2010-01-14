@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:52+0200\n"
+"POT-Creation-Date: 2010-01-14 10:09+0200\n"
 "PO-Revision-Date: 2009-07-17 01:41+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -2127,11 +2127,14 @@ msgstr ""
 #: yali4/filesystem.py:471
 #, python-format
 msgid ""
-"Opening '%s' as NTFS failed: The NTFS journal file is unclean. Please "
-"shutdown Windows properly before using this software! Note, if you have run "
-"chkdsk previously then boot Windows again which will automatically "
-"initialize the journal correctly"
+"The filesystem of '%s' partition is NTFS, and this partition \n"
+"was not closed properly.Please restart your system and close \n"
+"this partition properly!After this operation, start Pardus \n"
+"installation again!"
 msgstr ""
+"'%s' bölümünün dosya sistemi NTFS'dir.Bu bölüm düzgün kapatılmamış\n"
+"bulunmakta.Lütfen bu sistemi tekrar başlatın ve düzgün bir şekilde kapatın.\n"
+"Bu işlemden sonra Pardus Kurulumuna tekrar başlayabilirsiniz!"
 
 #: yali4/filesystem.py:477
 #, python-format

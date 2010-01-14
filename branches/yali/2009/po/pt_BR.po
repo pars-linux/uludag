@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:52+0200\n"
+"POT-Creation-Date: 2010-01-14 10:09+0200\n"
 "PO-Revision-Date: 2007-02-19 22:25-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -210,8 +210,9 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/connectionlist.py:73
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "Checagem Falhou"
 
 #: yali4/gui/Ui/datetimewidget.py:90
 msgid "The current time"
@@ -447,8 +448,9 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
+#, fuzzy
 msgid "Select Connection"
-msgstr ""
+msgstr "Checagem Falhou"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Operation to undo:"
@@ -1980,10 +1982,10 @@ msgstr ""
 #: yali4/filesystem.py:471
 #, python-format
 msgid ""
-"Opening '%s' as NTFS failed: The NTFS journal file is unclean. Please "
-"shutdown Windows properly before using this software! Note, if you have run "
-"chkdsk previously then boot Windows again which will automatically "
-"initialize the journal correctly"
+"The filesystem of '%s' partition is NTFS, and this partition \n"
+"was not closed properly.Please restart your system and close \n"
+"this partition properly!After this operation, start Pardus \n"
+"installation again!"
 msgstr ""
 
 #: yali4/filesystem.py:477
