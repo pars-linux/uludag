@@ -3,6 +3,7 @@ Encoding=UTF-8
 Name=System Services
 Name[tr]=Sistem Servisleri
 Name[sv]=Systemtjänster
+Name[de]=Systemdienste
 Name[x-test]=xxSystem Servicesxx
 Type=Service
 ServiceTypes=Plasma/Applet
