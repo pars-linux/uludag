@@ -2,13 +2,13 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 10:21+0200\n"
-"PO-Revision-Date: 16/12/09 20:52\n"
+"PO-Revision-Date: 14/01/10 11:50\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -216,8 +216,9 @@ msgstr "Aangepast :"
 
 #: .tmp/ui_main.py:387
 msgid "Apply"
-msgstr ""
+msgstr "Toepassen"
 
 #: .tmp/ui_main.py:389
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
+
