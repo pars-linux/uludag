@@ -90,7 +90,7 @@ consts.cd_repo_uri = join(consts.source_dir, "repo/pisi-index.xml.bz2")
 
 # pardus repository
 consts.pardus_repo_name = "corporate2"
-consts.pardus_repo_uri = "http://packages.pardus.org.tr/corporate2-test/pisi-index.xml.bz2"
+consts.pardus_repo_uri = "http://packages.pardus.org.tr/corporate2/pisi-index.xml.bz2"
 consts.pardus_release_path = "etc/pardus-release"
 
 # min root partition size
