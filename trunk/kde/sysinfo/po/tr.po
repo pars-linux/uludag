@@ -103,7 +103,7 @@ msgstr "Takas Alanı: %1 / %2 boş"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Takas Alanı: Kullanılmıyor"
 
 #: src/sysinfo.cpp:273
 msgid "Disks"
