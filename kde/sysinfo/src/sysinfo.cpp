@@ -236,7 +236,6 @@ void kio_sysinfoProtocol::get( const KUrl &)
 
     content = content.arg( i18n( "System" ) ); // <title>
     content = content.arg( "file:" + KStandardDirs::locate( "data", "sysinfo/about/stil.css" ) );
-    content = content.arg( i18n( "Folders, Harddisks, Removable Devices, System Information and more..." ) ); // catchphrase
 
     QString dynamicInfo, staticInfo;
 
@@ -260,11 +259,10 @@ void kio_sysinfoProtocol::get( const KUrl &)
 
     dynamicInfo += startStock( i18n( "Memory" ) );
     dynamicInfo += addToStock( "media-flash",
-                                i18n( "Ram : %1 free of %2", m_info[MEM_FREERAM].toString(), m_info[MEM_TOTALRAM].toString() ),
-                                m_info[MEM_USAGE].toString());
+                                i18n( "Ram : %1 free of %2", m_info[MEM_FREERAM].toString(), m_info[MEM_TOTALRAM].toString()));
     dynamicInfo += addToStock("media-flash",(m_info[MEM_TOTALSWAP]!="0" ?
                                   i18n("Swap: %1 free of %2", m_info[MEM_FREESWAP].toString(), m_info[MEM_TOTALSWAP].toString()):
-                                  i18n("Not in use")));
+                                  i18n("Swap: Not in use")));
 
     dynamicInfo += finishStock();
 
@@ -383,7 +381,6 @@ void kio_sysinfoProtocol::memoryInfo(void)
     // Parse /proc/meminfo for memory usage statistics
     if (file.exists() && file.open(QIODevice::ReadOnly))
     {
-
         QTextStream stream(&file);
         QString line;
 
