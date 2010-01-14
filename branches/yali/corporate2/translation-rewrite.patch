@@ -1,0 +1,554 @@
+Index: gui/ScrRescueFinish.py
+===================================================================
+--- gui/ScrRescueFinish.py	(revision 27526)
++++ gui/ScrRescueFinish.py	(working copy)
+@@ -31,10 +31,10 @@
+ # Goodbye screen
+ class Widget(QtGui.QWidget, ScreenWidget):
+     title = _('Rescue Mode')
+-    desc = _('Final step of Rescue operations...')
++    desc = _('Final step of Rescue Operations')
+     help = _('''
+ <font size="+2">Rescue Mode</font>
+-<font size="+1"><p>Click <b>next</b> to reboot !</p></font>
++<font size="+1"><p>Click <b>next</b> to reboot</p></font>
+ ''')
+ 
+     def __init__(self, *args):
+@@ -61,13 +61,13 @@
+     def shown(self):
+         ctx.mainScreen.disableNext()
+         if ctx.rescueMode == "grub":
+-            self.steps.setOperations([{"text":      _("Installing BootLoader..."),
++            self.steps.setOperations([{"text":      _("Installing Boot Loader"),
+                                        "operation": self.installBootLoader}])
+         elif ctx.rescueMode == "pisi":
+-            self.steps.setOperations([{"text":      _("Taking back Pisi operation..."),
++            self.steps.setOperations([{"text":      _("Taking back PiSi operation"),
+                                        "operation": self.takeBackPisi}])
+ 
+-        ctx.yali.info.updateAndShow(_("Running rescue operations.."))
++        ctx.yali.info.updateAndShow(_("Rescuing your system"))
+         ctx.mainScreen.disableBack()
+         self.steps.slotRunOperations()
+ 
+@@ -84,9 +84,9 @@
+         ctx.mainScreen.disableNext()
+ 
+         ctx.debugger.log("Show reboot dialog.")
+-        InfoDialog(_("Press <b>Reboot</b> button to restart your system."), _("Reboot"))
++        InfoDialog(_("Press <b>Reboot</b> button to reboot your system."), _("Reboot"))
+ 
+-        ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
++        ctx.yali.info.updateAndShow(_('<b>Rebooting, please wait...</b>'))
+ 
+         # remove cd...
+         if not ctx.yali.install_type == YALI_FIRSTBOOT:
+Index: gui/ScrGoodbye.py
+===================================================================
+--- gui/ScrGoodbye.py	(revision 27526)
++++ gui/ScrGoodbye.py	(working copy)
+@@ -48,13 +48,10 @@
+ 
+ <font size="+1">
+ <p>
+-You have successfully installed Pardus, a very easy to use desktop system on
+-your machine. Now you can start playing with your system and stay productive
+-all the time.
++YALI has successfully installed Pardus on your system.
+ </p>
+ <P>
+-Click on the Next button to proceed. One note: You remember your password,
+-don't you?
++Click on the Next button to proceed.
+ </p>
+ </font>
+ ''')
+@@ -68,7 +65,7 @@
+ 
+     def shown(self):
+         ctx.mainScreen.disableNext()
+-        ctx.yali.info.updateAndShow(_("Running post install operations.."))
++        ctx.yali.info.updateAndShow(_("Finishing post-installation tasks"))
+         ctx.mainScreen.disableBack()
+         ctx.yali.processPendingActions(self)
+         self.steps.slotRunOperations()
+@@ -82,9 +79,9 @@
+         ctx.mainScreen.disableNext()
+ 
+         ctx.debugger.log("Show reboot dialog.")
+-        InfoDialog(_("Press <b>Reboot</b> button to restart your system."), _("Reboot"))
++        InfoDialog(_("Press <b>Reboot</b> button to reboot your system."), _("Reboot"))
+ 
+-        ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
++        ctx.yali.info.updateAndShow(_('<b>Rebooting, please wait...</b>'))
+ 
+         # remove cd...
+         if not ctx.yali.install_type == YALI_FIRSTBOOT:
+Index: gui/ScrSummary.py
+===================================================================
+--- gui/ScrSummary.py	(revision 27526)
++++ gui/ScrSummary.py	(working copy)
+@@ -84,7 +84,7 @@
+ 
+     def updateCounter(self):
+         remain = 20 - (int(time.time()) - self.startTime)
+-        ctx.yali.info.updateAndShow(_("Install starts in: <b>%s seconds</b>") % remain)
++        ctx.yali.info.updateAndShow(_("Installation starts in <b>%s</b>") % remain)
+         if remain <= 0:
+             self.timer.stop()
+             ctx.mainScreen.slotNext()
+@@ -125,31 +125,31 @@
+ 
+         # TimeZone
+         content.append(subject % _("Date/Time Settings"))
+-        content.append(item % _("Selected TimeZone is <b>%s</b>") % ctx.installData.timezone)
++        content.append(item % _("Selected time zone is <b>%s</b>") % ctx.installData.timezone)
+         content.append(end)
+ 
+         # Users
+         if len(yali4.users.pending_users)>0:
+             content.append(subject % _("User Settings"))
+             for user in yali4.users.pending_users:
+-                state = _("User %s (<b>%s</b>) added.")
++                state = _("Added user %s (<b>%s</b>)")
+                 if "wheel" in user.groups:
+-                    state = _("User %s (<b>%s</b>) added with <u>administrator privileges</u>.")
++                    state = _("Added user %s (<b>%s</b>) with administrator privileges")
+                 content.append(item % state % (user.realname, user.username))
+             content.append(end)
+ 
+         # HostName
+         if ctx.installData.hostName:
+             content.append(subject % _("Hostname Settings"))
+-            content.append(item % _("Hostname is set as <b>%s</b>") % ctx.installData.hostName)
++            content.append(item % _("Hostname is <b>%s</b>") % ctx.installData.hostName)
+             content.append(end)
+ 
+         # Partition
+         pardus_path = None
+         self.resizeAction = False
+-        content.append(subject % _("Partition Settings"))
++        content.append(subject % _("Partitioning Settings"))
+         if ctx.installData.autoPartMethod == methodEraseAll:
+-            content.append(item % _("Automatic Partitioning selected."))
++            content.append(item % _("Selected Partitioning Method: Automatic"))
+             dev = ctx.installData.autoPartDev
+             _sum = {"device":dev.getModel(),
+                     "partition":dev.getName()+"1",
+@@ -158,9 +158,9 @@
+                     "type":parttype.root.name}
+ 
+             pardus_path = dev.getPath()+"1"
+-            content.append(item % _("All partitions on device <b>%(device)s</b> has been deleted.") % _sum)
+-            content.append(item % _("Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with <b>%(size)s MBs</b> as <b>%(fs)s</b>.") % _sum)
+-            content.append(item % _("Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>.") % _sum)
++            content.append(item % _("All partitions on the device <b>%(device)s</b> has been deleted") % _sum)
++            content.append(item % _("A partition (<b>%(partition)s</b>) of <b>%(size)s MBs</b> has been added to <b>%(device)s</b> as <b>%(fs)s</b>") % _sum)
++            content.append(item % _("Partition <b>%(partition)s</b> selected as <b>%(type)s</b>") % _sum)
+ 
+         elif ctx.installData.autoPartMethod == methodUseAvail:
+             dev = ctx.installData.autoPartDev
+@@ -211,7 +211,7 @@
+             pardus_path = root_part_req.partition().getPath()
+ 
+         # Bootloader
+-        content.append(subject % _("Bootloader Settings"))
++        content.append(subject % _("Boot Loader Settings"))
+         grub_str = _("GRUB will be installed to <b>%s</b>.")
+         if ctx.installData.bootLoaderOption == B_DONT_INSTALL:
+             content.append(item % _("GRUB will not be installed."))
+@@ -257,6 +257,7 @@
+ 
+         if self.resizeAction:
+             reply = QuestionDialog(_("Before Starting"),
++                                    # FIXME: Rewrite this.
+                                    _("""<p><b><u>Warning</u></b>: There is a resizing operation and it may corrupt your partition,<br>
+                                         rendering your data unreachable.<br>
+                                         Make sure that you have a backup for this partition.<br>
+@@ -282,25 +283,25 @@
+             if ctx.installData.autoPartMethod == methodEraseAll:
+                 ctx.yali.autoPartDevice()
+                 ctx.yali.checkSwap()
+-                ctx.yali.info.updateMessage(_("Formatting..."))
++                ctx.yali.info.updateMessage(_("Formatting"))
+                 ctx.mainScreen.processEvents()
+                 ctx.partrequests.applyAll()
+ 
+             elif ctx.installData.autoPartMethod == methodUseAvail:
+                 if ctx.installData.autoPartPartition["partition"].isFreespace():
+-                    ctx.yali.info.updateAndShow(_("Writing disk tables..."))
++                    ctx.yali.info.updateAndShow(_("Writing partition tables"))
+                 else:
+-                    ctx.yali.info.updateAndShow(_("Resizing..."))
++                    ctx.yali.info.updateAndShow(_("Resizing"))
+                 ctx.yali.autoPartUseAvail()
+                 ctx.yali.checkSwap()
+-                ctx.yali.info.updateMessage(_("Formatting..."))
++                ctx.yali.info.updateMessage(_("Formatting"))
+                 ctx.mainScreen.processEvents()
+                 ctx.partrequests.applyAll()
+ 
+         # Manual Partitioning
+         else:
+             ctx.debugger.log("Format Operation Started")
+-            ctx.yali.info.updateAndShow(_("Writing disk tables..."))
++            ctx.yali.info.updateAndShow(_("Writing partition tables"))
+             for dev in yali4.storage.devices:
+                 ctx.mainScreen.processEvents()
+                 if dev._needs_commit:
+@@ -309,7 +310,7 @@
+             # wait for udev to create device nodes
+             time.sleep(2)
+             ctx.yali.checkSwap()
+-            ctx.yali.info.updateMessage(_("Formatting..."))
++            ctx.yali.info.updateMessage(_("Formatting"))
+             ctx.mainScreen.processEvents()
+             ctx.partrequests.applyAll()
+             ctx.debugger.log("Format Operation Finished")
+Index: gui/ScrInstall.py
+===================================================================
+--- gui/ScrInstall.py	(revision 27526)
++++ gui/ScrInstall.py	(working copy)
+@@ -120,7 +120,7 @@
+         self.pkg_installer = PkgInstaller()
+         ctx.debugger.log("Calling PkgInstaller.start...")
+         self.pkg_installer.start()
+-        ctx.yali.info.updateAndShow(_("Packages are being installed.."))
++        ctx.yali.info.updateAndShow(_("Installing packages"))
+ 
+         ctx.mainScreen.disableNext()
+         ctx.mainScreen.disableBack()
+@@ -135,12 +135,12 @@
+             p, event = qevent.data()
+ 
+             if event == pisi.ui.installing:
+-                self.ui.info.setText(_("Installing: <b>%s</b><br>%s") % (p.name, p.summary))
++                self.ui.info.setText(_("Installing <b>%s</b><br>%s") % (p.name, p.summary))
+                 ctx.debugger.log("Pisi : %s installing" % p.name)
+                 self.cur += 1
+                 self.ui.progress.setValue(self.cur)
+             elif event == pisi.ui.configuring:
+-                self.ui.info.setText(_("Configuring package: <b>%s</b>") % p.name)
++                self.ui.info.setText(_("Configuring <b>%s</b>") % p.name)
+                 ctx.debugger.log("Pisi : %s configuring" % p.name)
+                 self.cur += 1
+                 self.ui.progress.setValue(self.cur)
+@@ -186,7 +186,7 @@
+         # Configure Pending...
+         # run baselayout's postinstall first
+ 
+-        ctx.yali.info.updateAndShow(_("Creating baselayout for your system!"))
++        ctx.yali.info.updateAndShow(_("Creating baselayout"))
+         yali4.postinstall.initbaselayout()
+ 
+         # postscripts depend on 03locale...
+@@ -195,7 +195,7 @@
+         # run dbus in chroot
+         yali4.sysutils.chrootDbus()
+ 
+-        ctx.yali.info.updateMessage(_("Configuring packages.."))
++        ctx.yali.info.updateMessage(_("Configuring packages"))
+ 
+         # start configurator thread
+         self.pkg_configurator = PkgConfigurator()
+Index: gui/ScrRescuePassword.py
+===================================================================
+--- gui/ScrRescuePassword.py	(revision 27526)
++++ gui/ScrRescuePassword.py	(working copy)
+@@ -59,9 +59,9 @@
+         self.ui.updatePassword.setEnabled(False)
+ 
+         self.steps = YaliSteps()
+-        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chrootDbus},
+-                                  {"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
+-                                  {"text":_("Getting user list ..."),"operation":self.fillUserList}])
++        self.steps.setOperations([{"text":_("Starting D-Bus"),"operation":yali4.sysutils.chrootDbus},
++                                  {"text":_("Connecting to D-Bus Service"),"operation":yali4.postinstall.connectToDBus},
++                                  {"text":_("Getting User List"),"operation":self.fillUserList}])
+ 
+         self.connect(self.ui.updatePassword, SIGNAL("clicked()"), self.updatePassword)
+         self.connect(self.ui.userList, SIGNAL("itemChanged(QListWidgetItem*)"),
+@@ -94,7 +94,7 @@
+         password = unicode(self.ui.pass1.text())
+         uid  = int(self.ui.userList.currentItem().getInfo()[0])
+         yali4.postinstall.setUserPass(uid, password)
+-        InfoDialog(_("Password changed"), title = _("Info"))
++        InfoDialog(_("Password successfully changed"), title = _("Info"))
+         self.resetWidgets()
+ 
+     def slotTextChanged(self):
+Index: gui/ScrRescue.py
+===================================================================
+--- gui/ScrRescue.py	(revision 27526)
++++ gui/ScrRescue.py	(working copy)
+@@ -45,7 +45,7 @@
+ 
+         # initialize all storage devices
+         if not yali4.storage.initDevices():
+-            raise GUIException, _("Can't find a storage device!")
++            raise GUIException, _("YALI could not find a storage device")
+ 
+         # Get usable partitions for rescue
+         self.partitionList = PardusPartitions(self)
+@@ -90,7 +90,7 @@
+         ctx.installData.rescuePartition = self.ui.partitionList.currentItem().getPartition()
+         ctx.debugger.log("Selected Partition for rescue is %s" % ctx.installData.rescuePartition.getPath())
+ 
+-        ctx.yali.info.updateAndShow(_("Mounting selected partition..."))
++        ctx.yali.info.updateAndShow(_("Mounting the selected partition"))
+         # Mount selected partition
+         ctx.partrequests.append(request.MountRequest(ctx.installData.rescuePartition, parttype.root))
+         ctx.partrequests.applyAll()
+@@ -102,7 +102,7 @@
+     def __init__(self, parentWidget):
+         partitionList, pardusPartitions = self.scanDisks()
+         if len(partitionList) == 0:
+-            parentWidget.ui.infoLabel.setText(_("Yali couldn't find a suitable partition on your system"))
++            parentWidget.ui.infoLabel.setText(_("YALI could not find a suitable partition on your system."))
+             parentWidget.ui.info.show()
+             parentWidget.ui.partitionList.hide()
+             parentWidget.isSuitableForRescue = False
+@@ -119,7 +119,7 @@
+                 PartItem(parentWidget.ui.partitionList, partition, _info, icon)
+ 
+             parentWidget.ui.partitionList.setCurrentItem(parentWidget.ui.partitionList.item(0))
+-            parentWidget.ui.infoLabel.setText(_("Please select a partition from list"))
++            parentWidget.ui.infoLabel.setText(_("Please select a partition from the list"))
+ 
+     def scanDisks(self):
+         pardusPartitions = []
+Index: gui/GUIAdditional.py
+===================================================================
+--- gui/GUIAdditional.py	(revision 27526)
++++ gui/GUIAdditional.py	(working copy)
+@@ -72,7 +72,7 @@
+             self.ui.resizeMB.setVisible(False)
+             self.ui.resizeMBSlider.setVisible(False)
+             self.ui.resizeButton.setVisible(False)
+-            self.ui.label.setText(_("""<p><span style="color:#FFF"><b>It seems this partition is not ready for resizing.</b></span></p>"""))
++            self.ui.label.setText(_("""<p><span style="color:#FFF"><b>It seems that this partition is not ready for resizing.</b></span></p>"""))
+         else:
+             maxSize = self.part.getMB()
+             self.ui.resizeMB.setMaximum(maxSize)
+@@ -85,7 +85,7 @@
+ 
+     def slotResize(self):
+         self.hide()
+-        ctx.yali.info.updateAndShow(_("Resizing to %s MB..") % (self.ui.resizeMB.value()))
++        ctx.yali.info.updateAndShow(_("Resizing to %s MB") % (self.ui.resizeMB.value()))
+         ctx.debugger.log("Resize started on partition %s " % self.part.getPath())
+         QTimer.singleShot(500,self.res)
+ 
+@@ -101,7 +101,7 @@
+                 "currentSize":self.part.getMB(),
+                 "resizeTo":resizeTo,
+                 "fs":self.part._fsname}
+-        ctx.partSum.append(_("Partition <b>%(partition)s - %(fs)s</b> <b>resized</b> to <b>%(resizeTo)s MB</b>, old size was <b>%(currentSize)s MB</b>") % _sum)
++        ctx.partSum.append(_("Partition <b>%(partition)s (%(fs)s)</b> has been resized from <b>%(currentSize)s MB</b> to <b>%(resizeTo)s MB</b>") % _sum)
+ 
+         self.rootWidget.update()
+         ctx.yali.info.hide()
+@@ -243,7 +243,7 @@
+ 
+     def slotUseSelected(self):
+         current = self.ui.connectionList.currentItem()
+-        ctx.yali.info.updateAndShow(_("Connecting to network <b>%s</b> ...") % current.getConnection())
++        ctx.yali.info.updateAndShow(_("Connecting to <b>%s</b>") % current.getConnection())
+ 
+         try:
+             ret = current.connect()
+@@ -288,7 +288,7 @@
+             f = join(ctx.consts.source_dir, "license/license-en.txt")
+         if exists(f):
+             return f
+-        raise GUIException, _("Can't open License file!")
++        raise GUIException, _("YALI could not read the license file.")
+ 
+ class ReleaseNotes(TextBrowser):
+ 
+@@ -299,4 +299,4 @@
+             rel_path = join(ctx.consts.source_dir, "release-notes/releasenotes-en.html")
+         if exists(rel_path):
+             return rel_path
+-        raise GUIException, _("Can't open Release Notes!")
++        raise GUIException, _("YALI could not read the release notes file.")
+Index: gui/ScrRescuePisi.py
+===================================================================
+--- gui/ScrRescuePisi.py	(revision 27526)
++++ gui/ScrRescuePisi.py	(working copy)
+@@ -37,8 +37,8 @@
+ ##
+ # BootLoader screen.
+ class Widget(QtGui.QWidget, ScreenWidget):
+-    title = _('Rescue Mode for Pisi History')
+-    desc = _('You can take back your system ...')
++    title = _('Rescue Mode for Package Management History')
++    desc = _('Undo your package management operations to take back your system')
+     icon = "iconInstall"
+     help = _('''
+ <font size="+2">Pisi History</font>
+@@ -51,9 +51,9 @@
+         self.ui.setupUi(self)
+ 
+         self.steps = YaliSteps()
+-        self.steps.setOperations([{"text":_("Starting DBUS..."),"operation":yali4.sysutils.chrootDbus},
+-                                  {"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus},
+-                                  {"text":_("Getting history ..."),"operation":self.fillHistoryList}])
++        self.steps.setOperations([{"text":_("Starting D-Bus"),"operation":yali4.sysutils.chrootDbus},
++                                  {"text":_("Connecting to D-Bus Service"),"operation":yali4.postinstall.connectToDBus},
++                                  {"text":_("Getting Package History"),"operation":self.fillHistoryList}])
+ 
+         self.connect(self.ui.buttonSelectConnection, SIGNAL("clicked()"), self.showConnections)
+ 
+Index: installer.py
+===================================================================
+--- installer.py	(revision 27526)
++++ installer.py	(working copy)
+@@ -166,13 +166,13 @@
+                 self.plugin.config.setup()
+             else:
+                 install_type = YALI_INSTALL
+-                InfoDialog(_("Plugin (%s) not found or error occurred while loading. Switching to normal installation process." % install_plugin))
++                InfoDialog(_("YALI was not able to find and load the plugin '%s', switching to normal installation process." % install_plugin))
+ 
+         if not self.plugin:
+             self.screens = self._screens[install_type]
+ 
+         self.install_type = install_type
+-        self.info = InformationWindow(_("YALI Is Working..."))
++        self.info = InformationWindow(_("YALI Is Working"))
+         self.info.hide()
+         self.checkCDStop = True
+ 
+@@ -188,7 +188,7 @@
+         ctx.mainScreen.disableNext()
+         ctx.mainScreen.disableBack()
+ 
+-        self.info.updateAndShow(_("Starting for CD Check"))
++        self.info.updateAndShow(_("Initializing integrity verification"))
+         class PisiUI(pisi.ui.UI):
+             def notify(self, event, **keywords):
+                 pass
+@@ -206,20 +206,20 @@
+         for pkg_name in pkg_names:
+             cur += 1
+             ctx.debugger.log("Checking %s " % pkg_name)
+-            self.info.updateMessage(_("Checking: %s") % pkg_name)
++            self.info.updateMessage(_("Checking %s") % pkg_name)
+             if self.checkCDStop:
+                 continue
+             try:
+                 yali4.pisiiface.checkPackageHash(pkg_name)
+                 rootWidget.progressBar.setValue(cur)
+             except:
+-                self.showError(_("Check Failed"),
+-                               _("<b><p>Integrity check for packages failed.\
+-                                  It seems that installation CD is broken.</p></b>"))
++                self.showError(_("Verification Failed"),
++                               _("<b><p>Integrity verification failed.\
++                                  It seems that installation medium is corrupted.</p></b>"))
+ 
+         if not self.checkCDStop:
+-            rootWidget.checkLabel.setText(_('<font color="#FFF"><b>Check succeeded. You can proceed to the next screen.</b></font>'))
+-            rootWidget.checkButton.setText(_("Check CD Integrity"))
++            rootWidget.checkLabel.setText(_('<font color="#FFF"><b>The installation medium is healthy. You can now proceed with the installation.</b></font>'))
++            rootWidget.checkButton.setText(_("Check Medium Integrity"))
+         else:
+             rootWidget.checkLabel.setText("")
+             rootWidget.progressBar.setValue(0)
+@@ -236,7 +236,7 @@
+         ctx.installData.keyData = keymap
+ 
+     def setTime(self, rootWidget):
+-        self.info.updateAndShow(_("Setting time settings.."))
++        self.info.updateAndShow(_("Adjusting time settings"))
+         date = rootWidget.calendarWidget.selectedDate()
+         args = "%02d%02d%02d%02d%04d.%02d" % (date.month(), date.day(),
+                                               rootWidget.timeHours.time().hour(), rootWidget.timeMinutes.time().minute(),
+@@ -263,7 +263,7 @@
+             elif x["newSize"]==y["newSize"]: return 0
+             return 1
+ 
+-        self.info.updateAndShow(_("Disk analyze started.."))
++        self.info.updateAndShow(_("Analyzing disks"))
+ 
+         rootWidget.resizablePartitions = []
+         rootWidget.resizableDisks = []
+@@ -321,7 +321,7 @@
+             raise YaliException, "No Resizable partition found !"
+ 
+     def autoPartDevice(self):
+-        self.info.updateAndShow(_("Writing disk tables ..."))
++        self.info.updateAndShow(_("Writing partition tables"))
+ 
+         ctx.partrequests.remove_all()
+         dev = ctx.installData.autoPartDev
+@@ -383,13 +383,13 @@
+ 
+             _np = dev.resizePartition(part._fsname, part.getMB() - newPartSize, part)
+ 
+-            self.info.updateMessage(_("Resize Finished ..."))
++            self.info.updateMessage(_("Resizing is completed"))
+             ctx.debugger.log("UA: Resize finished.")
+             time.sleep(1)
+ 
+             newStart = _np.geom.end
+             np = dev.getPartition(_np.num)
+-            self.info.updateMessage(_("Creating new partition ..."))
++            self.info.updateMessage(_("Creating new partition"))
+             ctx.debugger.log("UA: newStart : %s " % newStart)
+             _newPart = dev.addPartition(None,
+                                         ptype,
+@@ -408,7 +408,8 @@
+                                         parttype.root.parted_flags)
+             newPart = dev.getPartition(_newPart.num)
+         else:
+-            raise YaliError, _("Failed to use partition for automatic installation " % part.getPath())
++            # FIXME: Isn't there an error here?
++            raise YaliError, _("Failed to use partition for the automatic installation " % part.getPath())
+ 
+         dev.commit()
+         ctx.mainScreen.processEvents()
+@@ -532,18 +533,18 @@
+         # ctx.debugger.log(yali.toPrettyString())
+ 
+     def processPendingActions(self, rootWidget):
+-        rootWidget.steps.setOperations([{"text":_("Trying to connect DBUS..."),"operation":yali4.postinstall.connectToDBus}])
++        rootWidget.steps.setOperations([{"text":_("Connecting to D-Bus Service"),"operation":yali4.postinstall.connectToDBus}])
+ 
+-        steps = [{"text":_("Setting Hostname..."),"operation":yali4.postinstall.setHostName},
+-                 {"text":_("Setting TimeZone..."),"operation":yali4.postinstall.setTimeZone},
+-                 {"text":_("Setting Root Password..."),"operation":yali4.postinstall.setRootPassword},
+-                 {"text":_("Adding Users..."),"operation":yali4.postinstall.addUsers},
+-                 {"text":_("Writing Console Data..."),"operation":yali4.postinstall.writeConsoleData},
+-                 {"text":_("Migrating X.org Configuration..."),"operation":yali4.postinstall.migrateXorgConf}]
++        steps = [{"text":_("Setting Hostname"),"operation":yali4.postinstall.setHostName},
++                 {"text":_("Setting Time Zone"),"operation":yali4.postinstall.setTimeZone},
++                 {"text":_("Setting Root Password"),"operation":yali4.postinstall.setRootPassword},
++                 {"text":_("Adding Users"),"operation":yali4.postinstall.addUsers},
++                 {"text":_("Setting Keyboard Map"),"operation":yali4.postinstall.writeConsoleData},
++                 {"text":_("Configuring X.org"),"operation":yali4.postinstall.migrateXorgConf}]
+ 
+-        stepsBase = [{"text":_("Copy Pisi index..."),"operation":yali4.postinstall.copyPisiIndex},
+-                     {"text":_("Setting misc. package configurations..."),"operation":yali4.postinstall.setPackages},
+-                     {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
++        stepsBase = [{"text":_("Moving Repository Index"),"operation":yali4.postinstall.copyPisiIndex},
++                     {"text":_("Configuring Next Boot"),"operation":yali4.postinstall.setPackages},
++                     {"text":_("Installing Boot Loader"),"operation":self.installBootloader}]
+ 
+         if self.install_type in [YALI_INSTALL, YALI_DVDINSTALL, YALI_FIRSTBOOT]:
+             rootWidget.steps.setOperations(steps)
+Index: postinstall.py
+===================================================================
+--- postinstall.py	(revision 27526)
++++ postinstall.py	(working copy)
+@@ -177,7 +177,7 @@
+         user_home_dir = os.path.join(consts.target_dir, 'home', u.username)
+         user_home_dir_id = os.stat(user_home_dir)[4]
+         if not user_home_dir_id == uid:
+-            ctx.yali.info.updateAndShow(_("User <b>%s</b>'s home directory is being prepared..") % u.username)
++            ctx.yali.info.updateAndShow(_("Preparing home directory for <b>%s</b>") % u.username)
+             os.system('chown -R %d:%d %s ' % (uid, 100, user_home_dir))
+             ctx.yali.info.hide()
+ 
