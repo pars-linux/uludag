@@ -54,13 +54,10 @@ class Build(build):
         # Clear all
         os.system("rm -rf build")
         # Copy codes
-        print "Copying PYs..."
         os.system("cp -R src build/")
         # Copy compiled UIs and RCs
-        print "Generating UIs..."
         for filename in glob.glob1("src/migration/gui/ui", "*.ui"):
             os.system("/usr/kde/4/bin/pykde4uic -o build/migration/gui/ui/%s.py src/migration/gui/ui/%s" % (filename.split(".")[0], filename))
-        print "Generating RCs..."
         for filename in glob.glob1("src/migration/gui/ui", "*.qrc"):
             os.system("/usr/bin/pyrcc4 src/migration/gui/ui/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))
 
@@ -73,23 +70,19 @@ class Install(install):
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
         locale_dir = os.path.join(kde_dir, "share/locale")
-        autostart_dir = os.path.join(kde_dir, "share/autostart")
+        autostart_dir = os.path.join(kde_dir, "share/applications/kde4")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories
-        print "Making directories..."
         makeDirs(bin_dir)
         #makeDirs(locale_dir)
         makeDirs(autostart_dir)
         makeDirs(project_dir)
         # Install desktop files
-        print "Installing desktop files..."
         for filename in glob.glob1("data", "*.desktop"):
             shutil.copy("data/%s" % filename, autostart_dir)
         # Install codes
-        print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
         # Install locales
-        print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
             lang = filename.rsplit(".", 1)[0]
             os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
@@ -99,10 +92,8 @@ class Install(install):
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
         # Rename
-        print "Renaming application.py..."
         #shutil.move(os.path.join(project_dir, "application.py"), os.path.join(project_dir, "%s.py" % about.appName))
         # Modes
-        print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
         # Symlink
         try:

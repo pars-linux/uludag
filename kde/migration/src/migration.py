@@ -185,8 +185,6 @@ class Migration(QtGui.QWidget):
             self.ui.mainStack.setCurrentIndex(id)
             _widget = self.ui.mainStack.currentWidget()
             _widget.update()
-            print "_widget.shown() çağrılacak..."
-            print "_widget.title:%s" % _widget.title
             _widget.shown()
 
         if self.ui.mainStack.currentIndex() == len(self.screens) - 1 :

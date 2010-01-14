@@ -43,7 +43,6 @@ class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
         self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
 
     def slotUserCheck(self):
-        print "ctx.user=%s" % self.getData()[2]
         ctx.user = self.getData()
 
     def setData(self, data):
@@ -78,7 +77,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def addUsers(self):
         "Searches old users and adds them to UserListViewWidget"
         self.users = partition.allUsers()
-        print "len(users)=%d" % len(self.users)
         for user in self.users:
             part, parttype, username, userdir = user
             if parttype == "Windows XP":

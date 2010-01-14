@@ -82,7 +82,6 @@ class DirectoryViewItem(QtGui.QTreeWidgetItem):
         if os.path.isdir(self.path):
             filelist = os.listdir(self.path)
             for thefile in filelist:
-                print "file:%s" % thefile
                 if thefile in files.ignoreList:
                     continue
                 realname = os.path.join(self.path, thefile)
@@ -146,7 +145,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_userFilesWidget()
         self.ui.setupUi(self)
-        print "os.getenv(\"HOME\"):%s" % os.getenv("HOME")
         self.ui.destination.setText(os.getenv("HOME"))
         self.connect(self.ui.copy, SIGNAL("toggled(bool)"), self.slotRadiosClicked)
         self.connect(self.ui.nothing, SIGNAL("toggled(bool checked)"), self.slotRadiosClicked)
