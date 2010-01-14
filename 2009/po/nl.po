@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:52+0200\n"
+"POT-Creation-Date: 2010-01-14 10:09+0200\n"
 "PO-Revision-Date: 13/01/10 17:18\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -44,7 +44,8 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr ""
+"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -113,13 +114,15 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr ""
+"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr ""
+"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -608,7 +611,8 @@ msgid "Begin Install"
 msgstr "Installatie starten"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr "Markeer dit om alle taalpakketten te installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
@@ -654,8 +658,8 @@ msgid ""
 "of Pardus 2009.1 while it is being installed."
 msgstr ""
 "Hallo. Het installatiegereedschap YALI is gestart met de installatie van "
-"Pardus. Het is nu tijd om achterover te leunen en enkele eigenschappen "
-"van Pardus 2009.1 tijdens de installatie te bewonderen."
+"Pardus. Het is nu tijd om achterover te leunen en enkele eigenschappen van "
+"Pardus 2009.1 tijdens de installatie te bewonderen."
 
 #: yali4/gui/descSlide.py:19
 msgid ""
@@ -722,8 +726,8 @@ msgid ""
 "Manager interface."
 msgstr ""
 "Pardus bevat vele technologieën voor een gemakkelijker gebruik en beheer. "
-"TASMA is vervangen door Systeeminstellingen in Pardus 2009.1, maar u kunt nog "
-"steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
+"TASMA is vervangen door Systeeminstellingen in Pardus 2009.1, maar u kunt "
+"nog steeds al de beheergereedschappen terugvinden in Systeeminstellingen."
 
 #: yali4/gui/descSlide.py:24
 msgid ""
@@ -736,11 +740,11 @@ msgid ""
 msgstr ""
 "Het programma Kaptan (Turks voor 'Kapitein') verwelkomt u na de eerste start "
 "van Pardus. Door middel van Kaptan kunt u het bureaublad, locatie van "
-"taakbalken , achtergrondafbeeldingen en desktop thema en "
-"internetverbinding instellen. In Kaptan kunt u ook de Contribution "
-"Repository (installatiebron) aan pakketbeheer toevoegen. En ook bevat Kaptan "
-"opties voor het instellen van de intelligente zoekdienst en een online "
-"Pardus rondleiding voor beginners."
+"taakbalken , achtergrondafbeeldingen en desktop thema en internetverbinding "
+"instellen. In Kaptan kunt u ook de Contribution Repository (installatiebron) "
+"aan pakketbeheer toevoegen. En ook bevat Kaptan opties voor het instellen "
+"van de intelligente zoekdienst en een online Pardus rondleiding voor "
+"beginners."
 
 #: yali4/gui/descSlide.py:25
 msgid ""
@@ -767,8 +771,8 @@ msgstr ""
 "Nieuwe gebruikers toevoegen, bootvolgorde wijzigen, starten of stoppen van "
 "systeemdiensten of het terugzetten van het systeem naar een vorige "
 "momentopname is nog nooit zo eenvoudig geweest. Het is allemaal mogelijk in "
-"Computerbeheer en bij veelvuldig gebruik ook als widget op het bureaublad "
-"te plaatsen."
+"Computerbeheer en bij veelvuldig gebruik ook als widget op het bureaublad te "
+"plaatsen."
 
 #: yali4/gui/descSlide.py:27
 msgid ""
@@ -778,11 +782,11 @@ msgid ""
 "server) for different connections with the profiles you create. Choosing a "
 "different connection profile requires just two clicks."
 msgstr ""
-"Verbinding maken met een draadloos of kabelnetwerk is eenvoudig door "
-"het kiezen van een netwerkprofiel in Pardus 2009.1. Met de geavanceerde "
-"opties van Netwerkbeheer is het mogelijk om meerdere instellingen (b.v. "
-"statische IP, een andere DNS-server) voor meerdere verbindingen door middel "
-"van het aanmaken van profielen. Het kiezen van een ander netwerkprofiel gebeurt met "
+"Verbinding maken met een draadloos of kabelnetwerk is eenvoudig door het "
+"kiezen van een netwerkprofiel in Pardus 2009.1. Met de geavanceerde opties "
+"van Netwerkbeheer is het mogelijk om meerdere instellingen (b.v. statische "
+"IP, een andere DNS-server) voor meerdere verbindingen door middel van het "
+"aanmaken van profielen. Het kiezen van een ander netwerkprofiel gebeurt met "
 "twee muisklikken."
 
 #: yali4/gui/descSlide.py:28
@@ -868,8 +872,8 @@ msgid ""
 "through the package manager."
 msgstr ""
 "Pardus, met zijn voorgeïnstalleerde spellen, heeft vele spellen in zijn "
-"softwarebronnen en voorziet in vele uren vermaak met de verschillende soorten "
-"spellen die door Pakketbeheer beschikbaar zijn."
+"softwarebronnen en voorziet in vele uren vermaak met de verschillende "
+"soorten spellen die door Pakketbeheer beschikbaar zijn."
 
 #: yali4/gui/descSlide.py:34
 msgid ""
@@ -953,7 +957,8 @@ msgstr "Er is een verzoek voor het gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1887,7 +1892,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr ""
+"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -2156,13 +2162,17 @@ msgstr ""
 "installatie."
 
 #: yali4/filesystem.py:471
-#, python-format
+#, fuzzy, python-format
 msgid ""
-"Opening '%s' as NTFS failed: The NTFS journal file is unclean. Please "
-"shutdown Windows properly before using this software! Note, if you have run "
-"chkdsk previously then boot Windows again which will automatically "
-"initialize the journal correctly"
-msgstr "Openen van '%s' als NTFS is mislukt. Het NTFS journal-bestand is niet goed afgesloten. Sluit eerst Windows op een goede (normale) wijze af voor het gebruiken van deze software! Merk op: indien chkdisk is gebruikt, start dan Windows opnieuw op om het journal-bestand correct te initialiseren"
+"The filesystem of '%s' partition is NTFS, and this partition \n"
+"was not closed properly.Please restart your system and close \n"
+"this partition properly!After this operation, start Pardus \n"
+"installation again!"
+msgstr ""
+"Openen van '%s' als NTFS is mislukt. Het NTFS journal-bestand is niet goed "
+"afgesloten. Sluit eerst Windows op een goede (normale) wijze af voor het "
+"gebruiken van deze software! Merk op: indien chkdisk is gebruikt, start dan "
+"Windows opnieuw op om het journal-bestand correct te initialiseren"
 
 #: yali4/filesystem.py:477
 #, python-format
@@ -2473,4 +2483,3 @@ msgstr "De thuismap van gebruiker <b>%s</b> wordt gereed gemaakt.."
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr "Niet genoeg ruimte op %s voor het aanmaken van nieuwe partitie"
-

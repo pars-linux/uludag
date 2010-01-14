@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: yali\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:52+0200\n"
+"POT-Creation-Date: 2010-01-14 10:09+0200\n"
 "PO-Revision-Date: 2007-03-18 14:13+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -212,8 +212,9 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/connectionlist.py:73
+#, fuzzy
 msgid "Connect"
-msgstr ""
+msgstr "La comprovació ha fallat"
 
 #: yali4/gui/Ui/datetimewidget.py:90
 msgid "The current time"
@@ -450,8 +451,9 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
+#, fuzzy
 msgid "Select Connection"
-msgstr ""
+msgstr "La comprovació ha fallat"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Operation to undo:"
@@ -1990,10 +1992,10 @@ msgstr ""
 #: yali4/filesystem.py:471
 #, python-format
 msgid ""
-"Opening '%s' as NTFS failed: The NTFS journal file is unclean. Please "
-"shutdown Windows properly before using this software! Note, if you have run "
-"chkdsk previously then boot Windows again which will automatically "
-"initialize the journal correctly"
+"The filesystem of '%s' partition is NTFS, and this partition \n"
+"was not closed properly.Please restart your system and close \n"
+"this partition properly!After this operation, start Pardus \n"
+"installation again!"
 msgstr ""
 
 #: yali4/filesystem.py:477
