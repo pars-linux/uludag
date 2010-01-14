@@ -28,4 +28,4 @@ catalog     = appName
 aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Author(s)
-aboutData.addAuthor(ki18n("Mete Alpaslan"), ki18n("Current Maintainer"))
+aboutData.addAuthor(ki18n("Renan Çakırerk"), ki18n("Current Maintainer"))
