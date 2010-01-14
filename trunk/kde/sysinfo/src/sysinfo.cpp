@@ -338,20 +338,6 @@ void kio_sysinfoProtocol::mimetype( const KUrl & /*url*/ )
     finished();
 }
 
-/*
-static unsigned long long scan_one( const char* buff, const char *key )
-{
-    char *b = strstr( buff, key );
-    if ( !b )
-        return 0;
-    unsigned long long val = 0;
-    if ( sscanf( b + strlen( key ), ": %lu", &val ) != 1 )
-        return 0;
-    //kDebug(1242) << "scan_one " << key << " " << val;
-    return val;
-}
-*/
-
 static QString formatMemory(unsigned long long value)
 {
     // value is in kB
