@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YaST (@memory@)\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-29 12:04+0300\n"
+"POT-Creation-Date: 2010-01-14 14:45+0200\n"
 "PO-Revision-Date: 2009-08-19 01:02+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -22,12 +22,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 
 # TLABEL x11_2002_01_04_0147__15
-#: src/sysinfo.cpp:83
+#: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
 msgstr "%1 Go"
 
 # TLABEL x11_2002_01_04_0147__15
-#: src/sysinfo.cpp:86
+#: src/sysinfo.cpp:86 src/sysinfo.cpp:354
 msgid "%1 MB"
 msgstr "%1 Mo"
 
@@ -71,98 +71,103 @@ msgstr "Recherche des informations matérielles..."
 msgid "System"
 msgstr "Système"
 
-#: src/sysinfo.cpp:239
-msgid "Folders, Harddisks, Removable Devices, System Information and more..."
-msgstr ""
-"Dossiers, disques durs, périphériques amovibles, informations système, etc."
-
 # TLABEL network_2002_03_14_2340__32
-#: src/sysinfo.cpp:246
+#: src/sysinfo.cpp:245
 msgid "Common Folders"
 msgstr "Dossiers communs"
 
-#: src/sysinfo.cpp:247
+#: src/sysinfo.cpp:246
 msgid "My Home Folder"
 msgstr "Mon dossier personnel"
 
 # TLABEL autoinst_2002_08_07_0216__0
-#: src/sysinfo.cpp:248
+#: src/sysinfo.cpp:247
 msgid "Root Folder"
 msgstr "Dossier racine"
 
 # TLABEL lan_2002_01_04_0147__264
-#: src/sysinfo.cpp:249
+#: src/sysinfo.cpp:248
 msgid "Network Folders"
 msgstr "Dossiers du réseau"
 
 # TLABEL autoinst_2002_08_07_0216__312
-#: src/sysinfo.cpp:254
+#: src/sysinfo.cpp:253
 msgid "Network"
 msgstr "Réseau"
 
 # TLABEL hwinfo_2002_01_04_0147__86
-#: src/sysinfo.cpp:261
+#: src/sysinfo.cpp:260
 msgid "Memory"
 msgstr "Mémoire"
 
-#: src/sysinfo.cpp:263
+#: src/sysinfo.cpp:262
 msgid "Ram : %1 free of %2"
 msgstr "RAM : %1 libre sur %2"
 
-#: src/sysinfo.cpp:266
+#: src/sysinfo.cpp:264
 msgid "Swap: %1 free of %2"
 msgstr "Swap : %1 libre sur %2"
 
-#: src/sysinfo.cpp:274
+#: src/sysinfo.cpp:265
+msgid "Swap: Not in use"
+msgstr ""
+
+#: src/sysinfo.cpp:273
 msgid "Disks"
 msgstr "Disques"
 
-#: src/sysinfo.cpp:281
+#: src/sysinfo.cpp:280
 msgid "Operating System"
 msgstr "Système d'exploitation"
 
-#: src/sysinfo.cpp:285
+#: src/sysinfo.cpp:284
 msgid "Kde <b>%1</b> on <b>%2</b>"
 msgstr "Kde <b>%1</b> sur <b>%2</b>"
 
 # TLABEL hwinfo_2002_01_04_0147__54
-#: src/sysinfo.cpp:297
+#: src/sysinfo.cpp:295
 msgid "Processor"
 msgstr "Processeur"
 
 # TLABEL x11_2002_01_04_0147__15
-#: src/sysinfo.cpp:299
+#: src/sysinfo.cpp:297
 msgid "%1 MHz"
 msgstr "%1 Mhz"
 
-#: src/sysinfo.cpp:300
+#: src/sysinfo.cpp:298
 msgid " core"
 msgstr "coeur"
 
 # TLABEL mail_2002_03_14_2340__41
-#: src/sysinfo.cpp:311
+#: src/sysinfo.cpp:309
 msgid "Display"
 msgstr "Affichage"
 
-#: src/sysinfo.cpp:545
+#: src/sysinfo.cpp:540
 msgid "3D Not Supported"
 msgstr "%1 (3D non supportée)"
 
-#: src/sysinfo.cpp:547
+#: src/sysinfo.cpp:542
 msgid "3D Supported"
 msgstr "%1 (3D supportée)"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Mounted on %1"
 msgstr "Monté dans %1"
 
-#: src/sysinfo.cpp:563
+#: src/sysinfo.cpp:558
 msgid "Not mounted"
 msgstr "Non monté"
 
-#: src/sysinfo.cpp:572
+#: src/sysinfo.cpp:567
 msgid "%1 free of %2"
 msgstr "%1 libre sur %2"
+
+#~ msgid ""
+#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr ""
+#~ "Dossiers, disques durs, périphériques amovibles, informations système, "
+#~ "etc."
 
 #, fuzzy
 #~ msgid "Driver: "
