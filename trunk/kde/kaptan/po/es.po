@@ -478,7 +478,7 @@ msgstr "Ratón"
 
 #: .tmp/ui_mouseWidget.py:168
 msgid "Setup Mouse Behavior"
-msgstr "Configurar comportamiento de ratón"
+msgstr "Comportamiento de Ratón"
 
 #: .tmp/ui_mouseWidget.py:169
 msgid ""
