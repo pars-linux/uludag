@@ -123,9 +123,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-123</y>
-        <width>861</width>
-        <height>483</height>
+        <y>0</y>
+        <width>863</width>
+        <height>508</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -195,6 +195,10 @@
                   </property>
                  </widget>
                 </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="horizontalLayout_9">
                 <item>
                  <widget class="KSqueezedTextLabel" name="labelDeviceDescription">
                   <property name="sizePolicy">
@@ -208,10 +212,6 @@
                   </property>
                  </widget>
                 </item>
-               </layout>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="horizontalLayout_9">
                 <item>
                  <widget class="QComboBox" name="deviceList">
                   <property name="minimumSize">
