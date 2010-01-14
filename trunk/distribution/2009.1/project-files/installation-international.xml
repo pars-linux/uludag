@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 RC International</Title>
+    <Title>Pardus 2009.1 Anthropoides virgo International</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -170,6 +170,7 @@
         <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
         <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
+        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
         <SelectedPackage>kde-l10n-sv</SelectedPackage>
         <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-l10n-pl</SelectedPackage>
