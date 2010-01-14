@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 RC</Title>
+    <Title>Pardus 2009.1 Anthropoides virgo</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -175,6 +175,7 @@
         <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
+        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
         <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kaudiocreator</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
