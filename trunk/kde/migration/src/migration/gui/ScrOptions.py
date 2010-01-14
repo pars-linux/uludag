@@ -36,7 +36,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Wallpaper:
         if sources.has_key("Wallpaper Path"):
-            print "Wallpaper Path"
             self.wallpaperGroup = QtGui.QButtonGroup(self)
             self.wallpaperLayout = QtGui.QHBoxLayout(self.wallpaperGroup)
             self.box.addWidget(self.wallpaperGroup)
@@ -87,7 +86,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Bookmarks:
         if sources.has_key("Firefox Profile Path") or sources.has_key("Favorites Path"):
-            print "Firefox Profile Path"
 
             self.bookmarks = QtGui.QGroupBox("Bookmarks", self)
             self.bookmarks.setTitle(i18n("Bookmarks"))
@@ -98,7 +96,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # FF Bookmarks:
             if sources.has_key("Firefox Profile Path"):
-                print "Firefox Profile Path"
 
                 self.fireFoxBookmarks = QtGui.QCheckBox(self.bookmarks)
                 self.fireFoxBookmarks.setObjectName("FFBookmarks")
@@ -109,7 +106,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # Opera Bookmarks:
             if sources.has_key("Opera Profile Path"):
-                print "Opera Profile Path"
 
                 self.operaBookmarks = QCheckBox(self.bookmarks)
                 self.operaBookmarks.setObjectName("OperaBookmarks")
@@ -120,7 +116,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # IE Bookmarks:
             if sources.has_key("Favorites Path"):
-                print "Internet Explorer favorites"
 
                 self.IEBookmarks = QtGui.QCheckBox(self.bookmarks)
                 self.IEBookmarks.setObjectName("IEBookmarks")
@@ -132,7 +127,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Mail Accounts:
         if sources.has_key("Windows Mail Path") or sources.has_key("Thunderbird Profile Path"):
-            print "Mail Accounts"
 
             self.mailAccounts = QtGui.QGroupBox("MailAccounts", self)
             self.mailAccounts.setTitle(i18n("E-Mail and News Accounts"))
@@ -142,7 +136,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # Windows Mail Accounts:
             if sources.has_key("Windows Mail Path"):
-                print "Windows Mail Path"
 
                 self.winMail = QtGui.QCheckBox(self.mailAccounts)
                 self.winMail.setObjectName("WinMail")
@@ -153,7 +146,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # Thunderbird Accounts:
             if sources.has_key("Thunderbird Profile Path"):
-                print "Thunderbird Profile Path"
 
                 self.TB = QtGui.QCheckBox(self.mailAccounts)
                 self.TB.setObjectName("TB")
@@ -173,7 +165,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # IM Accounts:
         if sources.has_key("Contacts Path") or sources.has_key("GTalk Key"):
-            print "IMAccounts"
 
             self.IMAccounts = QtGui.QGroupBox("IMAccounts", self)
             self.IMAccounts.setTitle(i18n("Instant Messenger Accounts"))
@@ -183,7 +174,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # MSN Accounts:
             if sources.has_key("Contacts Path"):
-                print "MSN Accounts"
 
                 self.MSN = QtGui.QCheckBox(self.IMAccounts)
                 self.MSN.setObjectName("MSN")
@@ -194,7 +184,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             # GTalk Accounts:
             if sources.has_key("GTalk Key"):
-                print "GTalk"
 
                 self.GTalk = QtGui.QCheckBox(self.IMAccounts)
                 self.GTalk.setObjectName("GTalk")
@@ -233,8 +222,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return options
 
     def shown(self):
-        print "ScrOptions.shown() çağrldı..."
-        print "ctx.sources:%s" % ctx.sources
         if ctx.sources:
             self.creator(ctx.sources)
 

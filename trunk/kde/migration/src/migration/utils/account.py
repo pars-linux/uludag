@@ -267,7 +267,6 @@ class Account:
                 generalGroup = config.group("General")
                 defaultAccount = generalGroup.readEntry("default-transport")
                 if defaultAccount:
-                    print "defaultSMTPAccount:%s" % defaultAccount
                     groupname = QString("Transport ").append(defaultAccount)
                     transportGroup = config.group(groupname)
                     accountGroups.append(transportGroup)
@@ -278,12 +277,9 @@ class Account:
                     if each.contains("Account") and not each.endsWith("Wizard"):
                         account = config.group(each)
                         accountGroups.append(account)
-            print "accountGroups:%s" % accountGroups
             return accountGroups
 
         for account in self.accounts:
-            print "account type:%s ve host:%s" % (account["type"], account["host"])
-            print "account keys%s" % account.keys()
             # Add POP3 Account:
             if account["type"] == "POP3":
                 validAccount = None
@@ -292,7 +288,6 @@ class Account:
                         if not isKMailAccountValid(accountGroup, account):
                             continue
 
-                    print "Popa girdir...."
 
                 config = KConfig("kmailrc")
                 configGroup = KConfigGroup(config, "Account")
@@ -336,14 +331,11 @@ class Account:
 
             # Add IMAP Account:
             elif account["type"] == "IMAP":
-                print "imap de.."
                 if getResourceConfigGroup(account):
                     for accountGroup in getResourceConfigGroup(account):
-                        print "iskmailAccount girilecek"
                         if not isKMailAccountValid(accountGroup, account):
                             continue
 
-                        print "IMAP girddiii"
 
                 config = KConfig("kmailrc")
                 configGroup = KConfigGroup(config, "Account")
@@ -373,7 +365,6 @@ class Account:
                 if not isKMailAccountValid(accountGroup, account):
                     return
 
-                print "SMTP girdi...."
                 config = KConfig("mailtransports")
                 configGroup = KConfigGroup(config, "Transport")
 
@@ -475,12 +466,9 @@ class Account:
     def write(self):
         "Prints accounts"
 #        for account in self.accounts:
-#            print account["type"]
 #            for key in account.keys():
 #                if key not in ["type", "folders"]:
-#                    print "%15s : %s" % (key, account[key])
 #        for folder in self.folders:
-#            print "%30s : %s" % folder
 
     def accountSize(self, accounttypes=None):
         "Size of accounts"
@@ -581,46 +569,31 @@ def kMailFolderName(folder):
 
 def isKMailAccountValid(group, account):
     "Check if the account is valid and not already in KMail accounts"
-    print "group%s" % group
-    print "account[\"type\"]:%s" % account["type"]
-    print "YESSS"
     if group :
-        print "isKMailAccountValid:True dondu"
         return True
 
     if (not account.has_key("type")) or (not account.has_key("host")) or (not account.has_key("user")):
-        print "isKMailAccountValid:False dondu"
         return False
 
     # Check all accounts
     if account["type"] == "SMTP":
         host = group.readEntry("host")
-        print "smptp.host%s" % host
         user = group.readEntry("user")
-        print "smtp.user:%s" % user
         if account["host"] == host and account["user"] == user:
-            print "isKMailAccountValid: SMTPFalse dondu"
             return False
     elif account["type"] == "POP3":
         type = group.readEntry("Type")
         host = group.readEntry("host")
-        print "pop.host:%s" % host
         user = group.readEntry("login")
-        print "pop.user:%s" % user
         if "Pop" == type and account["host"] == host and account[login] == user:
-            print "isKMailAccountValid: POP3 False dondu"
             return False
     elif account["type"] == "IMAP":
         type = group.readEntry("Type")
         host = group.readEntry("host")
-        print "imap.host:%s" % host
         user = group.readEntry("login")
-        print "imap.user:%s" % user
         if ("Imap" == type or "DImap" == type) and account["host"] == host and account["login"] == user:
-            print "isKMailAccountValid: IMAP False dondu"
             return False
 
-    print "isKMailAccountValid:True dondu"
     return True
 
 def getOutlookExpressFolders(path, relative=""):

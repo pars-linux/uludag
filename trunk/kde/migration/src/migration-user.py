@@ -14,4 +14,3 @@
 from migration.utils import partition
 
 users = partition.allUsers()
-print len(users)

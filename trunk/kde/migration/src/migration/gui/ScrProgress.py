@@ -244,7 +244,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.progresspage.addOperation(i18n("Wallpaper"), size)
             self.progresspage.makeProgress(3)
 
-        print "Wallpaper:makeProgress eklendi!"
 
         # Firefox:
         if ctx.options.has_key("Firefox Profile Path"):
@@ -256,7 +255,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("Firefox bookmarks loaded."))
             self.progresspage.makeProgress(10)
 
-        print "Firefox:makeProgress eklendi!"
 
         # Opera:
         if ctx.options.has_key("Opera Profile Path"):
@@ -268,7 +266,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("Opera bookmarks loaded."))
             self.progresspage.makeProgress(10)
 
-        print "Opera:makeProgress eklendi!"
 
         # Internet Explorer:
         if ctx.options.has_key("Favorites Path"):
@@ -281,21 +278,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.progresspage.makeProgress(10)
 
 
-        print "IE:makeProgress eklendi!"
 
         # Bookmarks:
         size = bookmark.size()
-        print "bookmark.size():%d" % size
         if size > 0:
             lockfile = os.path.join(ctx.destinations["Firefox Profile Path"], "lock")
             while os.path.lexists(lockfile):
-                print "warning giriliyor..."
                 if warning(self.progresspage, i18n("Firefox is open. Please close it first to continue...")) == QtGui.QMessageBox.Cancel:
-                    #print "burayı geçti mi?"
                     break
             self.progresspage.addOperation(i18n("Bookmarks"), size)
 
-        print "Bookmark:makeProgress eklendi!"
 
         # Windows Mail:
         if ctx.options.has_key("Windows Mail Path"):
@@ -308,7 +300,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
             self.progresspage.makeProgress(15)
 
-        print "WindowsMail:makeProgress eklendi!"
 
         # Thunderbird:
         if ctx.options.has_key("Thunderbird Profile Path"):
@@ -320,7 +311,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("Thunderbird accounts loaded."))
             self.progresspage.makeProgress(15)
 
-        print "Thunderbird:makeProgress eklendi!"
 
         # MSN Messenger Accounts:
         if ctx.options.has_key("Contacts Path"):
@@ -332,7 +322,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("MSN accounts loaded."))
             self.progresspage.makeProgress(5)
 
-        print "MSN:makeProgress eklendi!"
 
         # GTalk Accounts:
         if ctx.options.has_key("GTalk Key"):
@@ -344,7 +333,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 logging.info(i18n("GTalk accounts loaded."))
             self.progresspage.makeProgress(5)
 
-        print "GTalk:makeProgress eklendi!"
 
         # Mail Accounts:
         size = account.accountSize(["POP3", "IMAP", "SMTP"])
@@ -352,7 +340,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             # TODO: Control KMail to be closed
             self.progresspage.addOperation(i18n("E-Mail Accounts"), size)
 
-        print "Mail Accounts:makeProgress eklendi!"
 
         # E-Mails:
         if ctx.options.has_key("Copy E-Mails"):
@@ -360,7 +347,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             if size > 0:
                 self.progresspage.addOperation(i18n("E-Mail Messages"), size)
 
-        print "E-mails:makeProgress eklendi!"
 
         # News Accounts:
         size = account.accountSize(["NNTP"])
@@ -368,7 +354,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             # TODO: Control KNode to be closed
             self.progresspage.addOperation(i18n("News Accounts"), size)
 
-        print "New Accounts:makeProgress eklendi!"
 
         # IM Accounts:
         size = account.accountSize(["Jabber", "MSN"])
@@ -376,12 +361,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             # TODO: Control Kopete to be closed
             self.progresspage.addOperation(i18n("Instant Messenger Accounts"), size)
 
-        print "IM Accounts:makeProgress eklendi!"
 
         # Files:
-        #print "ctx.fileOptions:%s" % ctx.fileOptions
         #for k,v in ctx.fileOptions.items():
-        #     print "ctx.fileOptions[%s]=%s" %(k,v)
         #ctx.options.update(ctx.filesOptions)
         if ctx.filesOptions:
             if ctx.filesOptions.has_key("links"):
@@ -424,20 +406,17 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 self.progresspage.go(i18n("Wallpaper changed."), ctx.OK, size)
 
-        print "Wallpaper: apply!"
 
         # Bookmarks:
         size = bookmark.size()
         if size > 0:
             try:
-                print "ctx.destinations[\"Firefox Profile Path\"]:%s" % ctx.destinations["Firefox Profile Path"]
                 bookmark.setFFBookmarks(ctx.destinations["Firefox Profile Path"])
             except Exception, err:
                 self.progresspage.go(err, ctx.ERROR, size)
             else:
                 self.progresspage.go(i18n("Bookmarks saved."), ctx.OK, size)
 
-        print "BookMark: apply!"
 
         # Mail Accounts:
         size = account.accountSize(["POP3", "IMAP", "SMTP"])
@@ -449,7 +428,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 self.progresspage.go(i18n("Mail Accounts saved."), ctx.OK, size)
 
-        print "Mail: apply!"
         # E-Mails:
         if ctx.options.has_key("Copy E-Mails"):
             size = account.mailSize()
@@ -461,7 +439,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 else:
                     self.progresspage.go(i18n("Accounts saved."), ctx.OK, 0)
 
-        print "E-mails: apply!"
         # News Accounts:
         size = account.accountSize(["NNTP"])
         if size > 0:
@@ -472,7 +449,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 self.progresspage.go(i18n("News Accounts saved."), ctx.OK, size)
 
-        print "News: apply!"
         # IM Accounts:
         size = account.accountSize(["Jabber", "MSN"])
         if size > 0:
@@ -483,7 +459,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             else:
                 self.progresspage.go(i18n("Instant Messenger Accounts saved."), ctx.OK, size)
 
-        print "IM: apply!"
         # Links:
         if ctx.filesOptions:
             if ctx.filesOptions.has_key("links"):
@@ -492,7 +467,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     files.createLink(link)
                     self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], ctx.OK, 1000)
 
-            print "LINKS: apply!"
             # Folders:
             if ctx.filesOptions.has_key("folders"):
                 folders = ctx.filesOptions["folders"]
@@ -500,7 +474,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
                     foldername = os.path.join(ctx.filesOptions["copy destination"], folder["localname"])
                     files.copyFolder(folder, ctx.filesOptions["copy destination"], self.progresspage)
 
-        print "Folders: apply!"
         # The end:
         if self.progresspage.progressbar2.value() == 0:
             self.progresspage.label.setText(unicode(i18n("Nothing done, because no option selected. You can close the wizard...")))
