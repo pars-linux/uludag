@@ -13,9 +13,9 @@
 # YALI constants module defines a class with constant members. An
 # object from this class can only bind values one to it's members.
 
+import os
 import locale
-from os.path import join
-from os.path import exists
+
 from yali4.options import options
 
 class _constant:
@@ -50,7 +50,8 @@ class Constants:
 
 consts = Constants()
 
-consts.pardus_version = file("/etc/pardus-release").readlines()[0].strip()
+# Returns 2008, 2009, Corporate2
+consts.pardus_release = os.popen("lsb_release -r").read().split(":")[1].strip().split(".")[0]
 
 consts.data_dir = "/usr/share/yali4"
 
@@ -58,35 +59,35 @@ consts.mnt_dir = "/mnt"
 
 consts.tmp_mnt_dir = "/tmp/_pcheck"
 
-if options.firstBoot == True or exists("/etc/yali-is-firstboot"):
+if options.firstBoot == True or os.path.exists("/etc/yali-is-firstboot"):
     consts.target_dir = "/"
 else:
     # new system will be installed directly into this target directory
-    consts.target_dir = join(consts.mnt_dir, "target")
+    consts.target_dir = os.path.join(consts.mnt_dir, "target")
 
 # log file for storing after installation
-consts.log_file = join(consts.target_dir,"var/log/yaliInstall.log")
+consts.log_file = os.path.join(consts.target_dir,"var/log/yaliInstall.log")
 
 # session file for storing after installation
-consts.session_file = join(consts.target_dir,"root/kahyaSession.xml")
+consts.session_file = os.path.join(consts.target_dir,"root/kahyaSession.xml")
 
 # packages (and maybe others) will be in this source (cdrom) directory
-consts.source_dir = join(consts.mnt_dir, "cdrom")
+consts.source_dir = os.path.join(consts.mnt_dir, "cdrom")
 
 # dbus socket path
-consts.dbus_socket_file = join(consts.target_dir, "var/run/dbus/system_bus_socket")
+consts.dbus_socket_file = os.path.join(consts.target_dir, "var/run/dbus/system_bus_socket")
 
 # swap file path
 consts.swap_file_name = ".swap"
-consts.swap_file_path = join(consts.target_dir,
+consts.swap_file_path = os.path.join(consts.target_dir,
                              consts.swap_file_name)
 
 # user faces (for KDM)
-consts.user_faces_dir = join(consts.data_dir, "user_faces")
+consts.user_faces_dir = os.path.join(consts.data_dir, "user_faces")
 
 # pisi repository
 consts.cd_repo_name = "pardus-cd"
-consts.cd_repo_uri = join(consts.source_dir, "repo/pisi-index.xml.bz2")
+consts.cd_repo_uri = os.path.join(consts.source_dir, "repo/pisi-index.xml.bz2")
 
 # pardus repository
 # FIXME: Hardcoded version string
@@ -99,11 +100,11 @@ consts.min_root_size = 3500
 
 # kahya options
 consts.kahya_param = "kahya"
-consts.default_kahya_file = join(consts.data_dir,"data/default.xml")
+consts.default_kahya_file = os.path.join(consts.data_dir,"data/default.xml")
 
 # oem install options
 consts.oem_install_param = "oeminstall"
-consts.oem_install_file = join(consts.data_dir,"data/firstBoot.xml")
+consts.oem_install_file = os.path.join(consts.data_dir,"data/firstBoot.xml")
 
 # rescue mode parameter for cmdline
 consts.rescue_mode_param = "rescue"
@@ -114,15 +115,15 @@ consts.base_only_param = "baseonly"
 # pisi index files
 consts.dvd_repo_name = "pardus-dvd"
 consts.dvd_install_param = "dvdinstall"
-consts.pisi_index_file = join(consts.data_dir,"data/pisi-index.xml.bz2")
-consts.pisi_index_file_sum = join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
+consts.pisi_index_file = os.path.join(consts.data_dir,"data/pisi-index.xml.bz2")
+consts.pisi_index_file_sum = os.path.join(consts.data_dir,"data/pisi-index.xml.bz2.sha1sum")
 
 # pisi collection index file
-consts.pisi_collection_file = join(consts.data_dir, "data/index/collection.xml")
-consts.pisi_collection_dir = join(consts.data_dir, "data/index")
+consts.pisi_collection_file = os.path.join(consts.data_dir, "data/index/collection.xml")
+consts.pisi_collection_dir = os.path.join(consts.data_dir, "data/index")
 
 # slideshows
-consts.slidepics_dir = join(consts.data_dir, "slideshow")
+consts.slidepics_dir = os.path.join(consts.data_dir, "slideshow")
 
 try:
     consts.lang = locale.getdefaultlocale()[0][:2]
