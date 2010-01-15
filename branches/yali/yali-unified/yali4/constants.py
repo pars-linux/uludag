@@ -78,7 +78,7 @@ consts.dbus_socket_file = join(consts.target_dir, "var/run/dbus/system_bus_socke
 
 # swap file path
 consts.swap_file_name = ".swap"
-consts.swap_file_path = join(consts.target_dir, 
+consts.swap_file_path = join(consts.target_dir,
                              consts.swap_file_name)
 
 # user faces (for KDM)
@@ -89,6 +89,7 @@ consts.cd_repo_name = "pardus-cd"
 consts.cd_repo_uri = join(consts.source_dir, "repo/pisi-index.xml.bz2")
 
 # pardus repository
+# FIXME: Hardcoded version string
 consts.pardus_repo_name = "pardus-2009"
 consts.pardus_repo_uri = "http://packages.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 consts.pardus_release_path = "etc/pardus-release"
