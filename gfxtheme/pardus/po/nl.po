@@ -449,3 +449,7 @@ msgstr "Hoofdmenu"
 msgid "Other options"
 msgstr "Overige opties"
 
+#. txt_kernel_debug
+msgid "debug"
+msgstr ""
+

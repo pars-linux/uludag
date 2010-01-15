@@ -452,3 +452,7 @@ msgstr "Ana menü"
 msgid "Other options"
 msgstr "Diğer seçenekler"
 
+#. txt_kernel_debug
+msgid "debug"
+msgstr ""
+

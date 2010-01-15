@@ -443,3 +443,7 @@ msgstr ""
 msgid "Other options"
 msgstr ""
 
+#. txt_kernel_debug
+msgid "debug"
+msgstr ""
+

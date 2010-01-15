@@ -451,3 +451,7 @@ msgstr "Menu principal"
 msgid "Other options"
 msgstr "Autres options"
 
+#. txt_kernel_debug
+msgid "debug"
+msgstr ""
+
