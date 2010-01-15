@@ -8,23 +8,24 @@
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # Klemens Häckel <click3d at linuxmail dot org>, 2008, 2009.
 # Klemens Häckel <click3d at linuxmail dot com>, 2008, 2009.
+# Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-15 10:07+0200\n"
-"PO-Revision-Date: 2009-07-16 19:47-0400\n"
-"Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
-"Language-Team: spanish <es@li.org>\n"
+"PO-Revision-Date: 2010-01-15 15:18-0300\n"
+"Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
+"Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: yali4/gui/Ui/autoinstallationlistitemwidget.py:69
-#, fuzzy
 msgid "Set connection state."
-msgstr "Seleccionar Conexión"
+msgstr "Establecer estado de conexión."
 
 #: yali4/gui/Ui/autoinstallationwidget.py:80
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
@@ -36,12 +37,11 @@ msgstr "Formulario"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:81
 msgid "Choose Installation Method"
-msgstr ""
+msgstr "Elija el método de instalación"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:82
-#, fuzzy
 msgid "Automatic installation"
-msgstr "Detalles de la instalación por realizarse..."
+msgstr "Instalación automática"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:83
 #, fuzzy
@@ -50,15 +50,15 @@ msgstr "No, prefiero particionar manualmente."
 
 #: yali4/gui/Ui/autoinstallationwidget.py:84
 msgid "Defaul Kernel"
-msgstr ""
+msgstr "Kernel predeterminado"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:85
 msgid "PAE Kernel"
-msgstr ""
+msgstr "Kernel PAE"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:86
 msgid "Real Time Kernel"
-msgstr ""
+msgstr "Kernel de tiempo real"
 
 #: yali4/gui/Ui/autopartquestion.py:79
 msgid ""
@@ -696,19 +696,17 @@ msgid "Debug"
 msgstr "Depurar"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Hello, there. The easiest-ever install tool YALI has begun Pardus "
 "installation. It is now time to relax and learn about some of the features "
 "of Pardus Corporate 2 while it is being installed."
 msgstr ""
-"Hola, la herramienta de instalación de Pardus más fácil denominado YALI "
-"acaba de empezar su proceso de instalación. Ahora es el momento de relajarse "
+"Hola, la herramienta de instalación más fácil denominado YALI "
+"acaba de empezar la instalación de Pardus. Ahora es el momento de relajarse "
 "y averiguar más acerca de las características de Pardus Corporate2, mientras "
-"procede la instalación."
+"avanza la instalación."
 
 #: yali4/gui/descSlide.py:19
-#, fuzzy
 msgid ""
 "Pardus Corporate 2 is a Linux distribution that everybody can easily install "
 "and use. With Pardus Corporate 2, you can do anything that you could "
@@ -721,7 +719,6 @@ msgstr ""
 "segura y estable de Pardus le abre camino al mundo de la sofware libre."
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Pardus Corporate 2 comes preinstalled with the open source desktop "
 "environment KDE 3.5. You will have a much better desktop experience compared "
@@ -757,7 +754,6 @@ msgstr ""
 
 # favor revisar
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "With Pardus Corporate 2, Kpdf is replaced with Okular. Okular supports many "
 "file formats and you can view all your files without any additional "
@@ -769,7 +765,6 @@ msgstr ""
 "establecer marcadores."
 
 #: yali4/gui/descSlide.py:23
-#, fuzzy
 msgid ""
 "Pardus includes many genuine technologies aiming for an easier use and "
 "management. TASMA has been replaced with System Manager in Pardus Corporate "
@@ -779,7 +774,7 @@ msgstr ""
 "Pardus incluye muchas tecnologías propias diseñadas para facilitar un "
 "sencillo uso y administración. TASMA fue reemplazado por el Administrador "
 "del Sistema de Pardus Corporate2, pero todavía va a encontrar todas las "
-"herramientas de administración como parte de la interfaz del Administrador "
+"herramientas de administración como parte de ésta interfaz del Administrador "
 "del Sistema."
 
 #: yali4/gui/descSlide.py:24
@@ -829,7 +824,6 @@ msgstr ""
 "colocar como un widget en el escritorio, si lo usa a menudo."
 
 #: yali4/gui/descSlide.py:27
-#, fuzzy
 msgid ""
 "To connect to a wireless or 'wired' network is as easy as choosing a "
 "connection profile with Pardus Corporate 2. With the network manager's "
@@ -840,12 +834,12 @@ msgstr ""
 "Establecer una conexión de red inalambrica o 'cableada' es en Pardus "
 "Corporate2 tan fácil como elegir un perfil de conexión. Con las opciones "
 "avanzadas del administrador de red puede mantener diferentes configuraciones "
-"(p.ej. IP estático, servidor DNS) para diferentes conexiones y los puede "
+"(p.ej. IP estático, diferentes servidores DNS) para diferentes conexiones y "
+"los puede "
 "guardar en perfiles diferentes. Para cambiar la conexión bastan entonces "
 "solo dos clics."
 
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid ""
 "With Pardus Corporate 2, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -882,7 +876,6 @@ msgstr ""
 "rápida de internet usando Mozilla Firefox 3.5."
 
 #: yali4/gui/descSlide.py:30
-#, fuzzy
 msgid ""
 "Connecting to your friends and contacts is really easy and seamlessly "
 "integrated into the desktop with Pardus Corporate 2. Using Kontact, you can "
@@ -938,7 +931,6 @@ msgstr ""
 
 # i wish and hope it will be like this :) . Really ?
 #: yali4/gui/descSlide.py:34
-#, fuzzy
 msgid ""
 "Pardus Corporate 2 is set to support most hardware right away. At the end of "
 "the installation, when you start with Pardus, the graphics card and sound "
@@ -1431,17 +1423,14 @@ msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Rebooteando. Por favor espere..!</b>"
 
 #: yali4/gui/ScrInstallationAuto.py:34
-#, fuzzy
 msgid "Choose Installation"
-msgstr "Elegir Particionamiento"
+msgstr "Elegir Instalación"
 
 #: yali4/gui/ScrInstallationAuto.py:35
-#, fuzzy
 msgid "Auto or Manual installation..."
-msgstr "Particionamiento automático o manual..."
+msgstr "Instalación automática o manual..."
 
 #: yali4/gui/ScrInstallationAuto.py:37
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Installation</font>\n"
@@ -1451,8 +1440,11 @@ msgid ""
 "</font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Registro histórico de PISI</font>\n"
-"<font size=\"+1\"></font>\n"
+"<font size=\"+2\">Instalación Automática</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrInstall.py:64
 msgid "Installing system..."
@@ -1621,7 +1613,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Particionamiento automático o manual..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1846,9 +1837,8 @@ msgid "Getting history ..."
 msgstr "Obteniendo registro histórico ..."
 
 #: yali4/gui/ScrRescuePisi.py:91
-#, fuzzy
 msgid "There is no connection"
-msgstr "Seleccionar Conexión"
+msgstr "No existe conexión"
 
 #: yali4/gui/ScrRescuePisi.py:132
 #, python-format
@@ -2027,14 +2017,12 @@ msgid "GRUB will not be installed."
 msgstr "GRUB no se instalará."
 
 #: yali4/gui/ScrSummary.py:230
-#, fuzzy
 msgid "Package Installation Settings"
-msgstr "Particiones"
+msgstr "Configuración de Instalación de Paquetes"
 
 #: yali4/gui/ScrSummary.py:233
-#, fuzzy
 msgid "Auto installation collection selected."
-msgstr "Particionamiento automático."
+msgstr ""
 
 #: yali4/gui/ScrSummary.py:235
 #, fuzzy, python-format
@@ -2042,17 +2030,16 @@ msgid "Manual Installation %s collection selected"
 msgstr "Particionamiento manual seleccionado."
 
 #: yali4/gui/ScrSummary.py:238
-#, fuzzy
 msgid "Default Kernel selected"
-msgstr "Eliminar Usuario Seleccionado"
+msgstr "Kernel predeterminado"
 
 #: yali4/gui/ScrSummary.py:240
 msgid "PAE Kernel selected"
-msgstr ""
+msgstr "PAE Kernel"
 
 #: yali4/gui/ScrSummary.py:242
 msgid "Real Time Kernel selected"
-msgstr ""
+msgstr "Kernel de tiempo real"
 
 #: yali4/gui/ScrSummary.py:259
 msgid "Before Starting"
@@ -2100,7 +2087,6 @@ msgid "Create users to use Pardus..."
 msgstr "Crear los usuarios, que usarán Pardus..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
@@ -2175,7 +2161,6 @@ msgid "Welcome to the Pardus installer..."
 msgstr "Bienvenido al asistente de instalación de Pardus..."
 
 #: yali4/gui/ScrWelcome.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome !</font>\n"
@@ -2320,6 +2305,11 @@ msgid ""
 " this partition properly! After this operation, start Pardus \n"
 " installation again!"
 msgstr ""
+"El sistema de archivos de la partición '%s' es NTFS,y la partición \n"
+" no fue cerrada correctamente. Por favor vuelva a iniciar su sistema y "
+"cierre \n"
+" la partición correctamente ! Luego de esta operación inicie la instalación\n"
+" de Pardus de nuevo !"
 
 #: yali4/filesystem.py:480
 #, python-format
