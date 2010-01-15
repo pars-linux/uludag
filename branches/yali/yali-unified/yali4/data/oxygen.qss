@@ -1,6 +1,8 @@
 /* Jan Mette <funkyou@kdemod.ath.cx> */
 /* Gökmen GÖKSEL <gokmen@pardus.org.tr> */
 
+/* FIXME: Hardcoded version strings and paths */
+
 #Yali {
        background-image:url(':/images/background-2009.png');
        background-repeat: no-repeat;
