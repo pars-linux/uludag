@@ -26,7 +26,7 @@ msgstr "Çıkışlar"
 
 #: .tmp/ui_screens.py:85
 msgid "Extend desktop to all displays"
-msgstr "Masaüstünü tüm ekranlara yay"
+msgstr "Masaüstünü tüm ekranlara genişlet"
 
 #: .tmp/ui_screens.py:86
 msgid "Detect Outputs"
