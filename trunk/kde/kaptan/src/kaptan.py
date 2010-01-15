@@ -44,7 +44,7 @@ def profileSended():
     return False
 
 if tools.isLiveCD():
-    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, smoltWidget, summaryWidget, goodbyeWidget]
 elif profileSended():
     availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 else:
