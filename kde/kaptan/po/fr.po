@@ -54,14 +54,14 @@ msgstr ""
 
 #: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:154
 msgid "Simple Menu"
-msgstr "Menu basique"
+msgstr "Menu Simple"
 
 #: .tmp/ScrMenu.py:49
 msgid ""
 "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight "
 "menu thus it is recommended for slower PC's."
 msgstr ""
-"Le menu basique était celui de KDE 3.<br><br>Sa légèreté le rend "
+"Le menu simple était celui de KDE 3.<br><br>Sa légèreté le rend "
 "recommandable pour les vieux ordinateurs."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:155
@@ -854,7 +854,7 @@ msgstr ""
 
 #: .tmp/ui_wallpaperWidget.py:110
 msgid "Choose wallpaper from file"
-msgstr "Choisir un fond d'écran à partir d'un fichier"
+msgstr "Choisir un fond d'écran"
 
 #: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
@@ -873,9 +873,8 @@ msgid "Choose a Wallpaper"
 msgstr "Choisir un fond d'écran"
 
 #: .tmp/ui_welcomeWidget.py:60
-#, fuzzy
 msgid "Welcome to Pardus 2009.1"
-msgstr "Bienvenue dans Pardus 2009.1 <sup>RC</sup>"
+msgstr "Bienvenue à Pardus 2009.1"
 
 #: .tmp/ui_welcomeWidget.py:61
 msgid ""
