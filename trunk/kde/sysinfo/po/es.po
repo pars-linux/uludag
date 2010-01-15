@@ -119,7 +119,7 @@ msgstr "Swap: %1 libre de %2"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Swap: No disponible"
 
 #: src/sysinfo.cpp:273
 msgid "Disks"
