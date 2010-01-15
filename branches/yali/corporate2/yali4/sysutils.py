@@ -182,7 +182,10 @@ def memTotal():
     return None
 
 def ejectCdrom(mount_point=consts.source_dir):
-    run("eject -m %s" % mount_point)
+    if "copytoram" not in open("/proc/cmdline", "r").read().strip().split():
+        run("eject -m %s" % mount_point)
+    else:
+        reboot()
 
 def setMouse(key="left"):
     struct = {_("left") :"1 2 3",
@@ -272,6 +275,14 @@ def isLinuxBoot(partition_path, file_system):
             result = menuLst
 
     return result
+
+def liveMediaSystem(path=None):
+    if not path:
+        path  = "/var/run/pardus/livemedia"
+    if os.path.exists(path):
+        return file("/var/run/pardus/livemedia", 'r').read().split('\n')[0]
+    else:
+        return None
 
 def pardusRelease(partition_path, file_system):
     import yali4.gui.context as ctx

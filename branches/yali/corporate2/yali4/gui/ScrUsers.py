@@ -36,7 +36,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">User setup</font>
 <font size="+1">
 <p>
-Pardus 2009 allows multiple users to share the same computer.
+Pardus Corporate2 allows multiple users to share the same computer.
 You can assign management rights to the users you create; you can also
 configure permissions to users for various operations through User Manager.
 </p>
@@ -329,6 +329,12 @@ Click Next button to proceed.
         self.ui.createButton.setText(_("Update User"))
         self.ui.cancelButton.setVisible(self.ui.createButton.isVisible())
 
+    def checkUserFields(self):
+        if self.ui.realname.text() and self.ui.username.text() and (str(self.ui.pass1.text()).lower() == str(self.ui.pass2.text()).lower()):
+            return True
+        else:
+            return False
+
     def checkUsers(self):
         if self.ui.userList.count() > 0:
             self.ui.userList.setCurrentRow(0)
@@ -338,11 +344,16 @@ Click Next button to proceed.
             ctx.mainScreen.enableNext()
             ctx.mainScreen.enableBack()
             return True
+        else:
+            if self.checkUserFields():
+                ctx.mainScreen.enableNext()
+            else:
+                ctx.mainScreen.disableNext()
+
         # there is no user in list so noting to delete
         self.ui.deleteButton.setEnabled(False)
         self.ui.editButton.setEnabled(False)
         self.ui.autoLogin.setEnabled(False)
-        ctx.mainScreen.disableNext()
         return False
 
 

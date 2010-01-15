@@ -121,9 +121,9 @@ class BootLoader:
         deviceMap = open(self.device_map, "w")
         i = 0
 
-        opts = get_kernel_option("mudur")
-
-        if opts.has_key("livedisk"):
+        #opts = get_kernel_option("mudur")
+        opts = yali4.sysutils.liveMediaSystem()
+        if opts.__eq__("harddisk"):
             diskList = ctx.installData.orderedDiskList[1:]
         else:
             diskList = ctx.installData.orderedDiskList
@@ -132,7 +132,7 @@ class BootLoader:
         # force install root to be hd0
         if install_root.startswith(ctx.installData.bootLoaderDev):
             # create device map
-            if opts.has_key("livedisk"):
+            if opts.__eq__("harddisk"):
                 ctx.installData.orderedDiskList = ctx.installData.orderedDiskList[1:]
             for disk in ctx.installData.orderedDiskList:
                 if install_root.startswith(disk[5:]):
@@ -154,6 +154,12 @@ class BootLoader:
         # grub_root is the device on which we install.
         minor = getMinor(install_root)
         grub_root = ",".join([major, minor])
+
+        def find_pardus_release():
+            """Returns Pardus Relase"""
+            releaseConfPath = os.path.join(consts.target_dir, "etc/pardus-release")
+            ctx.debugger.log("DEBUG: Pardus Release %s" % file(releaseConfPath).readlines()[0].strip())
+            return file(releaseConfPath).readlines()[0].strip()
 
         def find_boot_kernel():
             """ Returns the installed kernel version """
@@ -178,18 +184,20 @@ class BootLoader:
                 return True
 
             s = []
-            s.append("root=LABEL=%s" % (root_label))
+            # Add initramfs.conf config file support on 2009.1. But may be old system didnt have it(Like Pardus 2008)
+            if not os.path.exists(os.path.join(consts.target_dir, "etc/initramfs.conf")):
+                s.append("root=LABEL=%s" % (root_label))
+                # a hack for http://bugs.pardus.org.tr/3345
+                rt = request.mountRequestType
+                pt = parttype.swap
+                swap_part_req = partrequests.searchPartTypeAndReqType(pt, rt)
+                if swap_part_req:
+                    s.append("resume=%s" %(swap_part_req.partition().getPath()))
+
             # Get parameters from cmdline.
             for i in [x for x in open("/proc/cmdline", "r").read().split()]:
                 if is_required(i):
                     s.append(i)
-
-            # a hack for http://bugs.pardus.org.tr/3345
-            rt = request.mountRequestType
-            pt = parttype.swap
-            swap_part_req = partrequests.searchPartTypeAndReqType(pt, rt)
-            if swap_part_req:
-                s.append("resume=%s" %(swap_part_req.partition().getPath()))
 
             return " ".join(s).strip()
 
@@ -199,7 +207,7 @@ class BootLoader:
         boot_parameters =  boot_parameters(install_root_path_label)
         s = grub_conf_tmp % {"root": install_root,
                              "grub_root": grub_root,
-                             "pardus_version": consts.pardus_version,
+                             "pardus_version": find_pardus_release(),
                              "boot_kernel": boot_kernel,
                              "boot_parameters": boot_parameters,
                              "initramfs": initramfs_name}
@@ -243,8 +251,12 @@ class BootLoader:
         major = findGrubDev(root_path)
         minor = getMinor(root_path)
         # LiveDisk installation grub detects usb
-        opts = get_kernel_option("mudur")
-        if opts.has_key("livedisk"):
+        #opts = get_kernel_option("mudur")
+        opts = yali4.sysutils.liveMediaSystem()
+        ctx.debugger.log("IG: I have found mediaSystem '%s'" % opts)
+        ctx.debugger.log("IG: I have found major:'%s' minor:'%s'" % (major, minor))
+
+        if opts.__eq__("harddisk"):
             major = major.replace(major[2],chr(ord(major[2])+1))
 
         root_path = "(%s,%s)" % (major, minor)
@@ -254,7 +266,7 @@ class BootLoader:
 
         # LiveDisk installation grub detects usb
         major = findGrubDev(grub_install_root)
-        if opts.has_key("livedisk"):
+        if opts.__eq__("harddisk"):
             major = major.replace(major[2],chr(ord(major[2])+1))
 
         ctx.debugger.log("IG: I have found major as '%s'" % major)
@@ -289,7 +301,14 @@ quit
             if os.system(cmd) > 0:
                 raise YaliException, "Command failed: %s" % cmd
             else:
-                return True
+                if os.system("sync") > 0:
+                    return False
+                else:
+                    return True
             return False
-        return True
+        else:
+            if os.system("sync") > 0:
+                return False
+            else:
+                return True
 

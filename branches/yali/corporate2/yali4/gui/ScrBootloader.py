@@ -30,6 +30,7 @@ from yali4.gui.Ui.bootloaderwidget import Ui_BootLoaderWidget
 from yali4.gui.GUIException import *
 import yali4.gui.context as ctx
 from pardus.sysutils import get_kernel_option
+import yali4.sysutils
 
 ##
 # BootLoader screen.
@@ -41,7 +42,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">Boot loader setup</font>
 <font size="+1">
 <p>
-Pardus 2009 uses a boot manager called GRUB to start the operating system you choose.
+Pardus Corporate2 uses a boot manager called GRUB to start the operating system you choose.
 </p>
 <p>If there are multiple operating systems in your computer, you can start the one 
 you like using GRUB. Installing GRUB to the beginning of the boot disk is the advised 
@@ -101,10 +102,11 @@ loader.
         self.getBootable().setBootable()
 
     def getBootable(self):
-        opts = get_kernel_option("mudur")
+        #opts = get_kernel_option("mudur")
+        opts =yali4.sysutils.liveMediaSystem()
         for i in range(self.ui.device_list.count()):
             item = self.ui.device_list.item(i)
-            if opts.has_key("livedisk"):
+            if opts.__eq__("harddisk"):
                 if item.getDevice().getPath() == ctx.installData.orderedDiskList[1]:
                     return item
             else:
