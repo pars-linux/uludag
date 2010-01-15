@@ -32,21 +32,24 @@ import yali4.gui.context as ctx
 import yali4.partitionrequest as request
 from yali4.constants import consts
 
-from yali4.gui.descSlide import slideDesc
 from yali4.gui.ScreenWidget import ScreenWidget
 from yali4.gui.YaliDialog import QuestionDialog, EjectAndRetryDialog
 from yali4.gui.Ui.installwidget import Ui_InstallWidget
 
 EventPisi, EventSetProgress, EventError, EventAllFinished, EventPackageInstallFinished, EventRetry = range(1001,1007)
 
+# Dynamic Release slide descriptions from datadir
+slides = {}
+exec compile(open(consts.slidedescriptions_file, "r").read(), 'error', 'exec') in slides
+
 def iter_slide_pics():
     def pat(pic):
-        return "%s/%s.png" % (ctx.consts.slidepics_dir, pic)
+        return "%s/%s.png" % (ctx.consts.slidepictures_dir, pic)
 
     # load all pics
     pics = []
 
-    for slide in slideDesc:
+    for slide in slides:
         pic, desc = slide.items()[0]
         pics.append({"pic":QtGui.QPixmap(pat(pic)),"desc":desc})
 
