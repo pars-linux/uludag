@@ -230,7 +230,7 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
 
     // common folders
     dynamicInfo += startStock(i18n("Common Folders"));
-    dynamicInfo += addToStock("folder_home", i18n("My Home Folder"), QDir::homeDirPath(), "file:" + QDir::homeDirPath());
+    dynamicInfo += addToStock("folder_home2", i18n("My Home Folder"), QDir::homeDirPath(), "file:" + QDir::homeDirPath());
     dynamicInfo += addToStock("folder_red", i18n("Root Folder"), QDir::rootDirPath(), "file:" + QDir::rootDirPath());
     dynamicInfo += addToStock("network", i18n("Network Folders"), "remote:/" , "remote:/");
     dynamicInfo += finishStock();
