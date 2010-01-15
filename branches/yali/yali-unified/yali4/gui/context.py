@@ -17,10 +17,17 @@ from yali4.gui import installdata
 from yali4.constants import consts
 from yali4.options import options
 from yali4.partitionrequest import partrequests
-
-# style sheet
 import yali4.sysutils
-consts.stylesheet = join(consts.data_dir, "data/%s.qss" % (yali4.sysutils.checkYaliOptions("theme") or options.theme))
+
+# Distribution specific artwork/images/styles
+# FIXME: This can't be moved to constants.py because it causes
+# circular import
+consts.stylesheet = join(consts.data_dir, "data", consts.pardus_release, "style.qss")
+
+# FIXME: Handling /proc/cmdline OR yali4-bin --theme is disabled for now
+#consts.stylesheet = join(consts.data_dir, "data/%s.qss" % (yali4.sysutils.checkYaliOptions("theme") or options.theme))
+
+# Alternative stylesheet
 consts.alternatestylesheet = join(consts.data_dir, "data/oxygen.qss")
 
 # lock for format request
