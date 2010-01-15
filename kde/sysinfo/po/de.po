@@ -99,7 +99,7 @@ msgstr "Swap: %1 frei von %2"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr ""
+msgstr "Swap: Nicht verfügbar"
 
 # Disks din allemein und Festplatten sind zu genau deklariert - es gibt ja auch SSD´s
 #: src/sysinfo.cpp:273
