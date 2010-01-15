@@ -122,8 +122,9 @@ consts.pisi_index_file_sum = os.path.join(consts.data_dir,"data/pisi-index.xml.b
 consts.pisi_collection_file = os.path.join(consts.data_dir, "data/index/collection.xml")
 consts.pisi_collection_dir = os.path.join(consts.data_dir, "data/index")
 
-# slideshows
-consts.slidepics_dir = os.path.join(consts.data_dir, "slideshow")
+# Release specific slide files
+consts.slidepictures_dir = os.path.join(consts.data_dir, consts.pardus_release, "slides")
+consts.slidedescriptions_file = os.path.join(consts.slidepictures_dir, "descriptions.py")
 
 try:
     consts.lang = locale.getdefaultlocale()[0][:2]
