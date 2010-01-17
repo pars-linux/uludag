@@ -166,6 +166,10 @@ def extract_from_translationsxmls(path, language, old_messages = []):
     messages = []
     paks = find_packages(path)
 
+    # For duplicate msgid detection
+    old_msg_ids = [omsg.msgid for omsg in old_messages]
+    print old_msg_ids
+
     def strp(msg):
         if msg:
             return msg.strip()
@@ -222,9 +226,10 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                         else:
                             msg.reference = pak[len(path):] + "::" + tag.lower()
 
-                    if msg.msgid:
+                    if msg.msgid and msg.msgid not in old_msg_ids:
                         msg = set_fuzzy_flag(msg)
                         messages.append(msg)
+                        old_msg_ids.append(msg.msgid)
 
     return messages
 
