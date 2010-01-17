@@ -3,7 +3,7 @@
 # Extract all the po files from the pspecs.
 # Usage: extract-all-languages <path_to_devel>
 
-for i in $(<LANGUAGES); do
+for i in $(<../LANGUAGES); do
 ./pspec2po extract $1 $i ../po/$i.po
 done
 
