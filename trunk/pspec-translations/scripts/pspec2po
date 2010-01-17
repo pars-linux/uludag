@@ -168,7 +168,6 @@ def extract_from_translationsxmls(path, language, old_messages = []):
 
     # For duplicate msgid detection
     old_msg_ids = [omsg.msgid for omsg in old_messages]
-    print old_msg_ids
 
     def strp(msg):
         if msg:
