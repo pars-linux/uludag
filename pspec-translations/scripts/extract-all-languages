@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Extract all the po files from the pspecs.
+# Usage: extract-all-languages <path_to_devel>
 
-for i in tr de nl es pt_BR fr it ca sv pl sv
-do
-./pspec2po.py extract ../../../../pardus/devel $i $i.po
+for i in $(<LANGUAGES); do
+./pspec2po extract $1 $i ../po/$i.po
 done
 
