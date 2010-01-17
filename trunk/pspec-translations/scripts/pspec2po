@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006, TUBITAK/UEKAE
+# Copyright (C) 2006-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -9,8 +9,8 @@
 # option) any later version. Please read the COPYING file.
 
 import os
-import sys
 import re
+import sys
 import xml.dom.minidom as dom
 
 po_header_tmpl = """# SOME DESCRIPTIVE TITLE.
@@ -154,7 +154,11 @@ def find_packages(path):
             dirs.remove(".svn")
     return paks
 
-getDataByTagName = lambda x, y: x.getElementsByTagName(y)[0].firstChild.data
+def getDataByTagName(elem, tag):
+    try:
+        return elem.getElementsByTagName(tag)[0].firstChild.data
+    except:
+        pass
 
 def extract_from_translationsxmls(path, language, old_messages = []):
     if not path.endswith('/'):
@@ -177,10 +181,10 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                         msg.msgstr = old_msg.msgstr
         return msg
 
-    for pak in paks:
-        def get_translation(section, tag, name):
-            if not os.path.exists(pak + "/translations.xml"):
-                return ""
+    def get_translation(pak, section, tag, name):
+        if not os.path.exists(pak + "/translations.xml"):
+            return ""
+        try:
             translations = dom.parse(pak + "/translations.xml")
             for t_node in translations.getElementsByTagName(section):
                 if getDataByTagName(t_node, "Name") == name:
@@ -189,7 +193,20 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                         if t_lang == language:
                             return t_item.firstChild.data
                     return ""
-        spec = dom.parse(pak + "/pspec.xml")
+        except:
+            print "** Failed parsing %s/translations.xml" % pak
+
+
+    # function starts here.
+
+    for pak in paks:
+        spec = None
+        try:
+            spec = dom.parse(pak + "/pspec.xml")
+        except:
+            print "** Failed parsing %s/pspec.xml" % pak
+            continue
+
         for section in ["Package", "Source"]:
             for node in spec.getElementsByTagName(section):
                 for tag in ["Summary", "Description"]:
@@ -198,7 +215,7 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                         lang = item.getAttribute("xml:lang")
                         if not lang or lang == "en":
                             msg.msgid = item.firstChild.data
-                        msg.msgstr = get_translation(section, tag, getDataByTagName(node, "Name"))
+                        msg.msgstr = get_translation(pak, section, tag, getDataByTagName(node, "Name"))
 
                         if section == "Package":
                             msg.reference = pak[len(path):] + ":" + getDataByTagName(node, "Name") + ":" + tag.lower()
