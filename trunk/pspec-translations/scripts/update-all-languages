@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Extract all the po files from the pspecs.
+# Update all the po files from the pspecs.
+# Usage: update-all-languages <path_to_devel>
 
-for i in tr de nl es pt_BR fr it ca sv
-do
-./pspec2po.py update ../../../../pardus/devel $i $i.po
+for i in $(<LANGUAGES); do
+./pspec2po update $1 $i ../po/$i.po
 done
