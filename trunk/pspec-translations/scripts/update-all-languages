@@ -4,5 +4,6 @@
 # Usage: update-all-languages <path_to_devel>
 
 for i in $(<../LANGUAGES); do
-./pspec2po update $1 $i ../po/$i.po
+    echo "Processing $i language."
+    ./pspec2po update $1 $i ../po/$i.po
 done
