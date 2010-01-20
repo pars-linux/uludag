@@ -25,15 +25,17 @@ def convert_qt_files(file_list):
 
     for i in file_list:
         file_name = os.path.split(i)[1]
+        destination = os.path.join("puding", "ui", "qt", file_name)
+
         print("converting %s..." % i)
         if os.path.splitext(i)[1] == ".qrc":
-            os.system("/usr/bin/pyrcc4 %s -o puding/%s" % (i, file_name.replace(".qrc", "_rc.py")))
+            os.system("/usr/bin/pyrcc4 %s -o %s" % (i, destination.replace(".qrc", "_rc.py")))
 
         if os.path.splitext(i)[1] == ".ui":
-            os.system("/usr/bin/pyuic4 %s -o puding/%s" % (i, file_name.replace(".ui", ".py")))
+            os.system("/usr/bin/pyuic4 %s -o %s" % (i, destination.replace(".ui", "_ui.py")))
 
         if os.path.splitext(i)[1] == ".ts":
-            os.system("/usr/bin/lrelease %s -qm build/qm/%s" % (i, file_name.replace(".ts", ".qm")))
+            os.system("/usr/bin/lrelease %s -qm %s" % (i, os.path.join(qm_dir, file_name.replace(".ts", ".qm"))))
 
 def create_mo_files():
     mo_dir = os.path.join("build", "mo")
