@@ -12,18 +12,17 @@ import tempfile
 from PyQt4 import QtCore
 from PyQt4 import QtGui
 
-from puding.common import getDiskInfo
-from puding.common import getIsoSize
-from puding.common import getFileSize
-from puding.common import getMounted
-from puding.common import createSyslinux
-from puding.common import createUSBDirs
-from puding.common import runCommand
+from puding.common import get_disk_info
+from puding.common import get_iso_size
+from puding.common import get_file_size
+from puding.common import get_mounted
+from puding.common import create_syslinux
+from puding.common import create_USB_dirs
+from puding.common import run_command
 from puding.common import PartitionUtils
 from puding.constants import CORE_DEVELOPER
 from puding.constants import CORE_EMAIL
 from puding.constants import LICENSE_NAME
-from puding.constants import SHARE
 from puding.constants import URL
 from puding.constants import VERSION
 from puding.constants import YEAR
@@ -44,7 +43,7 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
     def __init__(self, parent = None):
         self.iso_dir = tempfile.mkdtemp(suffix="_isoPuding")
 
-        super(Create, self).__init__(parent)
+        super(MainWindow, self).__init__(parent)
         self.setupUi(self)
 
         self.connect(self.button_quit, QtCore.SIGNAL("clicked()"), QtCore.SLOT("close()"))
@@ -61,10 +60,10 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
     def on_button_browse_disk_clicked(self):
         self.browse_disk = SelectDisk()
         if self.browse_disk.exec_() == QtGui.QDialog.Accepted:
-            dirname = self.browse_disk.getSelectedDirectory()
+            dirname = self.browse_disk.get_selected_directory()
 
             if not dirname:
-                self.warningDialog(self.tr("Warning"), self.tr("You should select a valid directory."))
+                self.warning_dialog(self.tr("Warning"), self.tr("You should select a valid directory."))
 
             else:
                 self.line_disk.setText(QtCore.QString(dirname))
@@ -89,25 +88,25 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
             auth = Authorization()
             auth.mount(device, dst)
 
-        if not self.__checkDestination(dst):
-            self.warningDialog(self.tr("Directory is Invalid"), self.tr("Please check the USB disk path."))
+        if not self.__check_destination(dst):
+            self.warning_dialog(self.tr("Directory is Invalid"), self.tr("Please check the USB disk path."))
 
             return False
 
         try:
-            (name, md5, url) = self.__getSourceInfo(src)
+            (name, md5, url) = self.__get_source_info(src)
 
         except TypeError: # 'bool' object is not iterable
             # It's not true way, you should warn to the users with WarningDialog.
             return False
 
-        mount_point = getMounted(dst)
-        (capacity, available, used) = getDiskInfo(dst)
+        mount_point = get_mounted(dst)
+        (capacity, available, used) = get_disk_info(dst)
 
         # Mount iso
         if not os.path.ismount(self.iso_dir):
             cmd = "fuseiso %s %s" % (src, self.iso_dir)
-            if runCommand(cmd):
+            if run_command(cmd):
                 # FIX ME: Should use warning dialog.
                 return False
 
@@ -115,42 +114,42 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
         from pardusTools import Main
 
         self.tools = Main(self.iso_dir, dst)
-        total_size = self.tools.getTotalSize()
+        total_size = self.tools.get_total_size()
 
         if available < total_size:
-            self.warningDialog("Warning", "There is not enough space left on your USB stick for the image.")
+            self.warning_dialog("Warning", "There is not enough space left on your USB stick for the image.")
 
         else:
             self.confirm_infos = ConfirmDialog(src, dst, mount_point, name, total_size, capacity, available, used)
 
             if self.confirm_infos.exec_() == QtGui.QDialog.Accepted:
-                createUSBDirs(dst)
-                self.__createImage(src, dst)
+                create_USB_dirs(dst)
+                self.__create_image(src, dst)
 
                 if dst.endswith("Puding"):
                     auth.umount(dst)
 
-        runCommand("fusermount -u %s" % self.iso_dir)
+        run_command("fusermount -u %s" % self.iso_dir)
 
-    def warningDialog(self, title, message,):
+    def warning_dialog(self, title, message,):
         QtGui.QMessageBox.warning(self, title, message, QtGui.QMessageBox.Ok)
 
-    def questionDialog(self, title, message):
+    def question_dialog(self, title, message):
         return QtGui.QMessageBox.question(self, title, message,
                 QtGui.QMessageBox.Cancel | QtGui.QMessageBox.Ok)
 
-    def __getSourceInfo(self, src):
+    def __get_source_info(self, src):
         if QtCore.QString(src).isEmpty():
-            self.warningDialog(self.tr("CD Image is Invalid"), self.tr("Please set an CD image path."))
+            self.warning_dialog(self.tr("CD Image is Invalid"), self.tr("Please set an CD image path."))
 
             return False
 
         if not os.path.isfile(src):
-            self.warningDialog(self.tr("CD Image is Invalid"), self.tr("Please check the CD image path."))
+            self.warning_dialog(self.tr("CD Image is Invalid"), self.tr("Please check the CD image path."))
 
             return False
 
-        iso_size = getIsoSize(src)
+        iso_size = get_iso_size(src)
         iso_size_progress = iso_size / increment_value
 
         check_iso = ProgressBar(title = self.tr("Verify Checksum"),
@@ -159,12 +158,12 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
         pi = ProgressIncrementChecksum(check_iso, src)
 
         # FIX ME: Why is it in here?
-        def closeDialog():
+        def close_dialog():
             pi.quit()
             check_iso.close()
 
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), check_iso.incrementProgress)
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("increment_progress()"), check_iso.increment_progress)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), close_dialog)
 
         pi.start()
         check_iso.exec_()
@@ -174,44 +173,44 @@ class MainWindow(QtGui.QMainWindow, main_window_ui.Ui_MainWindow):
 Please specify a correct source or be sure that
 you have downloaded the source correctly."""
 
-            self.warningDialog(self.tr("Checksum invalid"), self.tr(message))
+            self.warning_dialog(self.tr("Checksum invalid"), self.tr(message))
 
             return False
 
         return pi.checksum()
 
-    def __checkDestination(self, dst):
+    def __check_destination(self, dst):
         if QtCore.QString(dst).isEmpty():
             return False
 
         return os.path.ismount(str(dst))
 
-    def __createImage(self, src, dst):
+    def __create_image(self, src, dst):
         file_list = self.tools.file_list
-        max_value = self.tools.getNumberOfFiles()
+        max_value = self.tools.get_number_of_files()
         create_image = ProgressBar(title = self.tr("Creating Image"), message = self.tr("Creating image..."), max_value = max_value)
         pi = ProgressIncrementCopy(create_image, self.iso_dir, dst)
 
-        def closeDialog():
+        def close_dialog():
             pi.quit()
             create_image.close()
 
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("incrementProgress()"), create_image.incrementProgress)
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("updateLabel"), pi.updateLabel)
-        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), closeDialog)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("increment_progress()"), create_image.increment_progress)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("update_label"), pi.update_label)
+        QtCore.QObject.connect(pi, QtCore.SIGNAL("closeProgressDialog()"), close_dialog)
 
         pi.start()
         create_image.exec_()
 
-        self.warningDialog(self.tr("USB Image is Ready"), self.tr("Your USB image is ready. Now you can install or run Pardus from USB storage."))
+        self.warning_dialog(self.tr("USB Image is Ready"), self.tr("Your USB image is ready. Now you can install or run Pardus from USB storage."))
 
         return True
 
 class SelectDisk(QtGui.QDialog, select_disk_ui.Ui_Dialog):
     def __init__(self, parent = None):
         self.partutils = PartitionUtils()
-        self.partutils.detectRemovableDrives()
-        self.drives = self.partutils.returnDrives()
+        self.partutils.detect_removable_drives()
+        self.drives = self.partutils.return_drives()
 
         #print(self.drives)
 
@@ -243,7 +242,7 @@ class SelectDisk(QtGui.QDialog, select_disk_ui.Ui_Dialog):
 
         self.line_directory.setText(device)
 
-    def getSelectedDirectory(self):
+    def get_selected_directory(self):
         if self.line_directory.displayText() == "":
             return False
 
@@ -275,7 +274,7 @@ class ProgressBar(QtGui.QDialog, progressbar_ui.Ui_Dialog):
         self.progressBar.setMinimum(0)
         self.progressBar.setMaximum(max_value)
 
-    def incrementProgress(self):
+    def increment_progress(self):
         current_value = self.progressBar.value()
         self.progressBar.setValue(current_value + 1)
 
@@ -318,7 +317,7 @@ class ProgressIncrementChecksum(QtCore.QThread):
             data = isofile.read(bytes)
             checksum.update(data)
             bytes = len(data)
-            self.emit(QtCore.SIGNAL("incrementProgress()"))
+            self.emit(QtCore.SIGNAL("increment_progress()"))
 
         self.src_md5 = checksum.hexdigest()
 
@@ -348,18 +347,18 @@ class ProgressIncrementCopy(QtCore.QThread):
 
     def run(self):
         # Create config file
-        createSyslinux(self.dst)
+        create_syslinux(self.dst)
 
         for file in self.file_list:
-            size = getFileSize(file)
+            size = get_file_size(file)
             file_name = os.path.split(file)[1]
             self.message = self.tr("Copying %s (%0.2fMB)" % (file_name, size))
-            self.emit(QtCore.SIGNAL("updateLabel"), self.message)
+            self.emit(QtCore.SIGNAL("update_label"), self.message)
             shutil.copyfile(file, "%s/%s" % (self.dst, file.split(self.src)[-1]))
-            self.emit(QtCore.SIGNAL("incrementProgress()"))
+            self.emit(QtCore.SIGNAL("increment_progress()"))
 
         self.emit(QtCore.SIGNAL("closeProgressDialog()"))
 
-    def updateLabel(self, message):
+    def update_label(self, message):
         self.label.setText(message)
 
