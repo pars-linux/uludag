@@ -15,13 +15,21 @@ class DisplayItem(QtGui.QGraphicsRectItem):
     def __init__(self, scene):
         QtGui.QGraphicsRectItem.__init__(self)
 
-        self.setRect(0, 0, 200, 200)
-        self.setPen(QtGui.QPen(QtCore.Qt.black))
-        self.setBrush(QtGui.QColor(0, 255, 0, 128))
+        self.setRect(0, 0, 260, 200)
+
+        self.pen = QtGui.QPen(QtGui.QColor(84, 116, 138))
+        self.pen.setWidth(1)
+        self.setPen(self.pen)
+
+        self.gradient = QtGui.QLinearGradient(0, 200, 50, 0)
+        self.gradient.setColorAt(1, QtGui.QColor(160, 230, 255))
+        self.gradient.setColorAt(0, QtGui.QColor(42, 153, 229))
+        self.setBrush(self.gradient)
 
         self._text = QtGui.QGraphicsTextItem(self)
         font = kdeui.KGlobalSettings.generalFont()
         font.setPixelSize(48)
+        self._text.setDefaultTextColor(QtGui.QColor(40, 40, 40, 255))
         self._text.setFont(font)
 
         btn = QtGui.QToolButton()
@@ -85,7 +93,7 @@ class DisplayItem(QtGui.QGraphicsRectItem):
             self.hide()
         else:
             if pos == -1:
-                self.setPos(-102, 0)
+                self.setPos(-133, 0)
                 self._swapButton.setIcon(kdeui.KIcon("arrow-right"))
                 buttonRect = self._swapButtonProxy.rect()
                 buttonRect.moveBottomRight(self.rect().bottomRight())
@@ -94,7 +102,7 @@ class DisplayItem(QtGui.QGraphicsRectItem):
             elif pos == 0:
                 self.setPos(0, 0)
             else:
-                self.setPos(102, 0)
+                self.setPos(133, 0)
                 self._swapButton.setIcon(kdeui.KIcon("arrow-left"))
                 buttonRect = self._swapButtonProxy.rect()
                 buttonRect.moveBottomLeft(self.rect().bottomLeft())
@@ -162,8 +170,8 @@ class DisplayScene(QtGui.QGraphicsScene):
         bRect = self.itemsBoundingRect()
         bRect.setTop(bRect.top() - 50)
         bRect.setBottom(bRect.bottom() + 50)
-        bRect.setLeft(bRect.left() - 50)
-        bRect.setRight(bRect.right() + 50)
+        bRect.setLeft(bRect.left() - 30)
+        bRect.setRight(bRect.right() + 30)
         self._view.fitInView(bRect, QtCore.Qt.KeepAspectRatio)
 
     def mouseReleaseEvent(self, mouseEvent):
