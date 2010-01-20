@@ -63,7 +63,7 @@ if not os.path.exists("build"):
 shutil.copyfile(os.path.join("puding", "main.py"), script)
 
 # Convert desktop.in
-os.system("intltool-merge -d po datas/puding.desktop.in datas/puding.desktop")
+os.system("intltool-merge -d po puding/datas/puding.desktop.in puding/datas/puding.desktop")
 
 # Convert Qt files
 qt_files = ["puding/ui/qt/icons.qrc"]
@@ -72,12 +72,12 @@ qt_files.extend(glob.glob("translations/ts/*.ts"))
 convert_qt_files(qt_files)
 
 data = [
-    ("share/doc/puding", ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README", "TODO"]),
-    ("share/puding", glob.glob("datas/syslinux.cfg.*")),
+    ("share/doc/puding", ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README.markdown", "TODO"]),
+    ("share/puding", glob.glob("puding/datas/syslinux.cfg.*")),
     ("share/puding/qm", glob.glob("build/qm/puding*.qm")),
-    ("share/applications", ["datas/puding.desktop"]),
-    ("share/puding/gfxtheme", glob.glob("datas/gfxtheme/*")),
-    ("share/pixmaps", ["images/puding.png"])]
+    ("share/applications", ["puding/datas/puding.desktop"]),
+    ("share/puding/gfxtheme", glob.glob("puding/datas/gfxtheme/*")),
+    ("share/pixmaps", ["puding/ui/images/puding.png"])]
 
 data.extend(create_mo_files())
 
