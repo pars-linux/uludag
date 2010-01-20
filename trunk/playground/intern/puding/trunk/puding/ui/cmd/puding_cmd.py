@@ -6,19 +6,16 @@
 #
 
 import os
-import glob
 import sys
-import shutil
-import subprocess
 import tempfile
 
 from puding import _
-from puding.common import runCommand
-from puding.common import createSyslinux
-from puding.common import createUSBDirs
-from puding.common import getDiskInfo
-from puding.common import getIsoSize
-from puding.common import unmountDirs
+from puding.common import run_command
+from puding.common import create_syslinux
+from puding.common import create_USB_dirs
+from puding.common import get_disk_info
+from puding.common import get_iso_size
+from puding.common import unmount_dirs
 from puding.common import PartitionUtils
 from puding.releases import releases
 
@@ -27,7 +24,7 @@ class ProgressBar:
     def __init__(self, src):
         self.wheel = ("\\", "|", "/", "-")
         self.tour = 52 - 2
-        iso_size = getIsoSize(src)
+        iso_size = get_iso_size(src)
         self.bytes = iso_size / 50
 
     def fWheel(self, wheel, digit):
@@ -42,7 +39,7 @@ class ProgressBar:
         sys.stdout.flush()
 
     # FIX ME: This function should be src/common.py
-    def verifyIsoChecksum(self, src):
+    def verify_iso_checksum(self, src):
         import hashlib
 
         checksum = hashlib.md5()
@@ -109,42 +106,42 @@ class Create:
         if not dst:
             self.partutils = PartitionUtils()
 
-            if not self.partutils.detectRemovableDrives():
+            if not self.partutils.detect_removable_drives():
                 self.utils.cprint(_("USB device not found."), "red")
                 sys.exit()
 
             else:
-                device, dst = self.__askDestination()
+                device, dst = self.__ask_destination()
 
                 # FIX ME: You should not use it.
                 if not dst:
                     dst = tempfile.mkdtemp(suffix="_usbPuding")
                     cmd = "mount -t vfat %s %s" % (device, dst)
                     self.utils.cprint(_("Mounting USB device..."), "green")
-                    runCommand(cmd)
+                    run_command(cmd)
 
         self.utils.cprint(_("Mounting image..."), "green")
         cmd = "fuseiso %s %s" % (src, self.iso_dir)
-        if runCommand(cmd):
+        if run_command(cmd):
             self.utils.cprint(_("Could not mounted image."), "red")
 
             sys.exit(1)
 
-        if self.__checkSource(src) and self.__checkDestination(dst):
+        if self.__check_source(src) and self.__check_destination(dst):
             from pardusTools import Main
 
             tools = Main(self.iso_dir, dst)
-            if self.__checkDiskInfo(dst, tools.getTotalSize()):
-                self.__createImage(src, dst)
+            if self.__check_disk_info(dst, tools.get_total_size()):
+                self.__create_image(src, dst)
 
         else:
             self.utils.cprint(_("The path you have typed as second argument is invalid. Please check the USB directory."), "red")
-            unmountDirs()
+            unmount_dirs()
 
             sys.exit(1)
 
-    def __askDestination(self):
-        self.drives = self.partutils.returnDrives()
+    def __ask_destination(self):
+        self.drives = self.partutils.return_drives()
         if len(self.drives) == 1:
             # FIX ME: If disk is unmounted, you should mount it before return process!
             # It returns mount point directory.
@@ -205,19 +202,19 @@ class Create:
 
         return device, destination
 
-    def __checkDestination(self, dst):
+    def __check_destination(self, dst):
         if os.path.isdir(dst) and os.path.ismount(dst):
             return True
 
         return False
 
-    def __checkDiskInfo(self, dst, total_size):
-        (capacity, available, used) = getDiskInfo(str(dst))
+    def __check_disk_info(self, dst, total_size):
+        (capacity, available, used) = get_disk_info(str(dst))
         if available < total_size:
             self.utils.cprint(_("There is not enough space left on your USB stick for the image."), "red")
 
             self.utils.cprint(_("Unmounting directories..."), "red")
-            unmountDirs()
+            unmount_dirs()
 
             return False
 
@@ -240,11 +237,11 @@ class Create:
             return True
 
         self.utils.cprint(_("You did not type CONFIRM. Exiting.."), "red")
-        unmountDirs()
+        unmount_dirs()
 
         return False
 
-    def __checkSource(self, src):
+    def __check_source(self, src):
         if not os.path.isfile(src):
             self.utils.cprint(_("The path is invalid, please specify an image path."), "red")
 
@@ -253,7 +250,7 @@ class Create:
         self.utils.cprint(_("Calculating checksum..."), "green")
 
         try:
-            (name, md5, url) = self.progressbar.verifyIsoChecksum(src)
+            (name, md5, url) = self.progressbar.verify_iso_checksum(src)
 
             self.utils.cprint(_("Source Informations:"), "brightgreen")
             self.utils.cprint("    %s:" % _("Image Path"), "green", True)
@@ -273,25 +270,25 @@ class Create:
 
             return False
 
-    def __createImage(self, src, dst):
-        createUSBDirs(dst)
+    def __create_image(self, src, dst):
+        create_USB_dirs(dst)
 
         self.utils.cprint(_("Creating boot manager..."), "yellow")
-        if createSyslinux(dst):
+        if create_syslinux(self.iso_dir, dst):
             self.utils.cprint(_("Could not create boot manager."), "red")
 
             return False
 
-        self.__copyImage(self.iso_dir, dst)
+        self.__copy_image(self.iso_dir, dst)
 
         self.utils.cprint(_("Unmounting image and USB disk..."), "green")
-        unmountDirs()
+        unmount_dirs()
 
         self.utils.cprint(_("USB disk is ready. Now you can install or run Pardus from your USB disk."), "brightgreen")
 
         return True
 
-    def __copyImage(self, src, dst):
+    def __copy_image(self, src, dst):
         # FIX ME: Now, Puding supports only Pardus..
         from pardusTools import Main
 
@@ -302,4 +299,4 @@ class Create:
             file_name = os.path.split(path)[-1]
             self.utils.cprint("%s:" % _("Copying"), "green", True)
             self.utils.cprint(file_name, "brightyellow")
-            tools.copyFile(path)
+            tools.copy_file(path)

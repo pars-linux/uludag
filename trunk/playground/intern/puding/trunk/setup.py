@@ -18,7 +18,7 @@ from puding.constants import CORE_EMAIL
 from puding.constants import URL
 from puding.constants import LICENSE_NAME
 
-def convertQtFiles(file_list):
+def convert_qt_files(file_list):
     qm_dir = os.path.join("build", "qm")
     if not os.path.exists(qm_dir):
         os.makedirs(qm_dir)
@@ -35,7 +35,7 @@ def convertQtFiles(file_list):
         if os.path.splitext(i)[1] == ".ts":
             os.system("/usr/bin/lrelease %s -qm build/qm/%s" % (i, file_name.replace(".ts", ".qm")))
 
-def createMoFiles():
+def create_mo_files():
     mo_dir = os.path.join("build", "mo")
     if not os.path.exists(mo_dir):
         os.makedirs(mo_dir)
@@ -69,7 +69,7 @@ os.system("intltool-merge -d po datas/puding.desktop.in datas/puding.desktop")
 qt_files = ["puding/ui/qt/icons.qrc"]
 qt_files.extend(glob.glob("puding/ui/qt/ui/*.ui"))
 qt_files.extend(glob.glob("translations/ts/*.ts"))
-convertQtFiles(qt_files)
+convert_qt_files(qt_files)
 
 data = [
     ("share/doc/puding", ["AUTHORS", "ChangeLog", "COPYING", "NOTES", "README", "TODO"]),
@@ -79,7 +79,7 @@ data = [
     ("share/puding/gfxtheme", glob.glob("datas/gfxtheme/*")),
     ("share/pixmaps", ["images/puding.png"])]
 
-data.extend(createMoFiles())
+data.extend(create_mo_files())
 
 setup(
     name = "puding",

@@ -32,14 +32,14 @@ except ImportError:
 
     from puding import _
 
-from puding.common import runCommand
-from puding.common import unmountDirs
+from puding.common import run_command
+from puding.common import unmount_dirs
 from puding.constants import LICENSE
 from puding.constants import VERSION
 
 
 class Options:
-    def parseArgs(self, parser):
+    def parse_args(self, parser):
         parser.add_option("-l", "--license", dest = "license", action = "store_true", help = _("show program's license info and exit"))
         parser.add_option("-c", "--create", dest = "create", action = "store_true", help = _("create Pardus USB image from console"))
 
@@ -48,7 +48,7 @@ class Options:
     def main(self):
         description = _("Puding is an USB image creator for Pardus Linux.")
         parser = OptionParser(description = description, version = VERSION)
-        (opts, args) = self.parseArgs(parser)
+        (opts, args) = self.parse_args(parser)
 
         if opts.create:
             if not os.getuid() == 0:
@@ -90,4 +90,4 @@ if __name__ == "__main__":
 
     except KeyboardInterrupt:
         print(_("\nQuitting, please wait."))
-        unmountDirs()
+        unmount_dirs()

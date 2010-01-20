@@ -15,9 +15,9 @@ class Main:
         self.src = src
         self.dst = dst
 
-        self.file_list = self.getFileList()
+        self.file_list = self.get_file_list()
 
-    def getFileList(self):
+    def get_file_list(self):
         file_list = ["%s/pardus.img" % self.src]
         for i in glob.glob("%s/boot/*" % self.src):
             if os.path.isfile(i):
@@ -26,10 +26,10 @@ class Main:
 
         return file_list
 
-    def getNumberOfFiles(self):
+    def get_number_of_files(self):
         return len(self.file_list)
 
-    def getTotalSize(self):
+    def get_total_size(self):
         total_size = 0
         for i in self.file_list:
             file_size = os.stat(i).st_size
@@ -37,7 +37,7 @@ class Main:
 
         return total_size / 1024 ** 2
 
-    def copyFile(self, path):
+    def copy_file(self, path):
         shutil.copyfile(path, "%s/%s" % (self.dst, path.split(self.src)[-1]))
 
 class Authorization:
@@ -51,6 +51,6 @@ class Authorization:
     def umount(self, device):
         self.link.Disk.Manager["mudur"].umount(device)
 
-    def createSyslinux(self, device):
-        self.link.Disk.Manager["puding"].createSyslinux(device)
+    def create_syslinux(self, device):
+        self.link.Disk.Manager["puding"].create_syslinux(device)
 
