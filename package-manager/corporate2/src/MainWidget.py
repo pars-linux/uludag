@@ -26,6 +26,7 @@ import Basket
 import BasketDialog
 from Icons import *
 import Preferences
+import Info
 import Tray
 import Commander
 import Settings
@@ -52,6 +53,7 @@ class MainApplicationWidget(QWidget):
         self.command = Commander.Commander(self)
 
         self.progressDialog = Progress.Progress(self)
+        self.infoDialog = Info.Info(self)
 
         # Keys of this dict. are Groups Listview's items, and values are group object about the item
         self.groupDict = {}
@@ -397,6 +399,13 @@ class MainApplicationWidget(QWidget):
             self.searchPackage()
         basketDialog.deleteLater()
 
+    def approveRequirements(self, packages):
+        requirements = self.iface.getPackageRequirements(packages)
+        if not requirements:
+            return True
+        # FIXME: show dialog and ask ls
+        return self.infoDialog.showRequirements()
+
     def conflictCheckPass(self):
         (C, D, pkg_conflicts) = self.iface.getConflicts(self.basket.packages)
 
@@ -493,6 +502,9 @@ class MainApplicationWidget(QWidget):
         # upgrade action
         elif self.state == upgrade_state:
             if not self.conflictCheckPass():
+                return
+
+            if not self.approveRequirements(self.basket.packages):
                 return
 
             self.progressDialog.setCurrentOperation(i18n("<b>Upgrading Package(s)</b>"))
