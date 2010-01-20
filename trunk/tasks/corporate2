@@ -74,7 +74,7 @@
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
-    * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (-)
+    * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (X)
     * Managerların üzerinden geçilmesi (-) [Bahadır Kandemir, Mete Alpaslan, Renan Çakırerk]
 
 * KDE (Renan Çakırerk)
@@ -104,12 +104,12 @@
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
-    * 2.6.31/32 çekirdeğe geçilmesi (+)
+    * 2.6.32 çekirdeğe geçilmesi (/30)
 
 * Boot/Managers (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
     * boot-manager'ın UUID değişiklikleriyle beraber gözden geçirilmesi (-)
-    * mySQL, pgSQL, ldap, apache sunucu paketlerinin güncellenmesi, bakımının yapılması (-)
+    * mySQL, pgSQL, ldap, apache sunucu paketlerinin güncellenmesi, bakımının yapılması (/20)
 
 * Depo/Paketler (Ozan Çağlayan)
     * autostart dizinlerinin düzenlenmesi (+)
