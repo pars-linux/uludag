@@ -257,6 +257,12 @@ class Iface(Singleton):
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
 
+    # Returns dict from pisi api
+    # { "systemRestart":["kernel", "module-alsa-driver"], 
+    #   "serviceRestart":["mysql-server", "memcached", "postfix"] }
+    def getPackageRequirements(self, packages):
+        return pisi.api.get_package_requirements(packages)
+
     def getRepositoryUrl(self, repo):
         return self.rdb.get_repo_url(repo)
 

@@ -26,6 +26,7 @@ kdedistutils.setup(
                         'src/package-manager.py', 
                         'src/Group.py',
                         'src/Progress.py',
+                        'src/Info.py',
                         'src/Preferences.py',
                         'src/CommonText.py',
                         'src/HelpDialog.py',
@@ -53,6 +54,7 @@ kdedistutils.setup(
                         'src/ProgressDialog.ui',
                         'src/PreferencesDialog.ui',
                         'src/RepoDialog.ui',
+                        'src/InfoDialog.ui',
 
                         # data
                         'help',
