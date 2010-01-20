@@ -13,8 +13,6 @@ from distutils.core import setup
 
 from puding.constants import VERSION
 from puding.constants import DESCRIPTION
-from puding.constants import CORE_DEVELOPER
-from puding.constants import CORE_EMAIL
 from puding.constants import URL
 from puding.constants import LICENSE_NAME
 
@@ -87,8 +85,6 @@ setup(
     name = "puding",
     version = VERSION,
     description = DESCRIPTION,
-    author = CORE_DEVELOPER,
-    author_email = CORE_EMAIL,
     url = URL,
     license = LICENSE_NAME,
     packages = ["puding", "puding.ui", "puding.ui.cmd", "puding.ui.qt"],

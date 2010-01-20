@@ -12,8 +12,14 @@ VERSION = "0.2"
 HOME = "%s/.puding" % getenv("HOME")
 SYSLINUX = "/usr/lib/syslinux"
 URL = "http://www.gokmengorgen.net/puding"
-CORE_DEVELOPER = u"Gökmen Görgen"
-CORE_EMAIL = "gkmngrgn [at] gmail.com"
+AUTHORS= u"""\
+Maintainer:
+    Gökmen Görgen, <gkmngrgn [at] gmail.com>
+
+Developers:
+    Gökmen Görgen, <gkmngrgn [at] gmail.com>
+    Türker Sezer, <turkersezer [at] tsdesign.info>
+"""
 ART_CONTRIBUTOR = u"Yasin Özcan, hamfindik [at] gmail.com"
 TRANSLATORS = u"""\
 de: Stefan Wilhelm, sw1976de [at] googlemail.com
