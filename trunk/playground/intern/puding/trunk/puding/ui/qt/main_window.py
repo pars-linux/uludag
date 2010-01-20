@@ -20,8 +20,7 @@ from puding.common import create_syslinux
 from puding.common import create_USB_dirs
 from puding.common import run_command
 from puding.common import PartitionUtils
-from puding.constants import CORE_DEVELOPER
-from puding.constants import CORE_EMAIL
+from puding.constants import AUTHORS
 from puding.constants import LICENSE_NAME
 from puding.constants import URL
 from puding.constants import VERSION
@@ -289,10 +288,9 @@ class About(QtGui.QDialog, about_dialog_ui.Ui_Dialog):
         about_text = "<b>puding</b> - %s<br>%s<br>%s<br><br><a href=\"%s\">%s</a><br>" % (VERSION, description, copyright, URL, URL)
         self.label_description.setText(about_text)
 
-        authors = "%s, %s" % (CORE_DEVELOPER, CORE_EMAIL)
         translators = TRANSLATORS
         art_contributor = ART_CONTRIBUTOR
-        self.plaintext_authors.setPlainText(authors)
+        self.plaintext_authors.setPlainText(AUTHORS)
         self.plaintext_translators.setPlainText(translators)
         self.plaintext_artwork.setPlainText(art_contributor)
 
