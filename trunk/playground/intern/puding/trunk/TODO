@@ -1,12 +1,12 @@
 + puding-0.3:
-    - Kurmadan çalıştırmak mümkün mü? Bunu araştırmak gerekiyor.
     - setup.py tamamen değişecek. puding-dev diye ayrı bir betik
     yazılacak.
     - constants.py gerekli mi? __init__.py dosyasının avantajından
     yararlanmak gerekiyor.
-    - Bilinen bazı hatalar var, onların giderilmesi gerekiyor.
-    - ResourceManager oluşturulması gerekiyor mu acaba? Sanki Qt'ninki
-    yetermiş gibime geliyor, onu da bir araştır.
+    - Bilinen bazı hatalar var, onların giderilmesi gerekiyor. Issues
+    sayfasına bakabiliriz.
+    - fonskiyonların isimleri create_syslinux() create_config_files()
+    şeklinde değiştirilecek.
 
 + Genel Düsünceler:
     - Plasmoid arayüzünü yapmak.
