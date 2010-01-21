@@ -178,7 +178,8 @@ Have fun!
     def slotChangePix(self):
         slide = self.iter_pics.next()
         self.ui.pix.setPixmap(slide["pic"])
-        self.ui.desc.setText(slide["desc"])
+        # FIXME: Don't show slide descriptions for now
+        #self.ui.desc.setText(slide["desc"])
 
     def packageInstallFinished(self):
 
