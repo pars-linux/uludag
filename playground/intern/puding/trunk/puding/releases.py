@@ -17,7 +17,7 @@ releases = (
      "name": "Anthropoides Virgo",
      "installable": True,
      "international": True,
-     "url" "ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2009.1/Pardus_2009.1_Anthropoides_virgo_International.iso",
+     "url": "ftp://ftp.pardus.org.tr/pub/pardus/kurulan/2009.1/Pardus_2009.1_Anthropoides_virgo_International.iso",
      "md5": "f12c0e4e66ad36acfdf652f7de38639b",
     },
     {"release": "2009.1",
