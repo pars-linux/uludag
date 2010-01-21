@@ -15,6 +15,23 @@
 \begin{document}
 
 \maketitle
+\section{Auth alt bileşeni}
+\begin{enumerate}
+
+\item mit-kerberos paketi kurulumu sonrası:
+\begin{verbatim}
+sudo pisi it -c system.devel
+wget ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.16.00.tar.gz
+tar xf tcsh-6.16.00.tar.gz
+cd tcsh-6.16.00 
+./configure --prefix=/usr
+sudo make
+sudo make install
+cd ..
+
+\end{verbatim}
+\end{enumerate}
+
 \section{Proxy alt bileşeni}
 \begin{enumerate}
  \item mit-kerberos paketi kurulumu sonrası:
