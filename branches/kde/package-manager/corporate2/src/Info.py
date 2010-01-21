@@ -20,7 +20,22 @@ class Info(InfoDialog):
     def __init__(self, parent=None):
         InfoDialog.__init__(self)
         self.parent = parent
+        self.autoRestart = False
         self.iface = PisiIface.Iface()
+        self.connect(self.okButton, SIGNAL('clicked()'), self.accept)
+        self.connect(self.cancelButton, SIGNAL('clicked()'), self.reject)
+        self.connect(self.autoRestartCheckBox, SIGNAL("toggled(bool)"), self.setAutoRestart)
+
+    def reset(self):
+        self.autoRestart = False
+        self.autoRestartCheckBox.setChecked(False)
+
+    def setAutoRestart(self, enabled):
+        self.autoRestart = enabled
+
+    def autoRestartChecked(self):
+        return self.autoRestart
 
     def showRequirements(self):
-        return self.exec_()
+        self.reset()
+        return self.exec_loop()
