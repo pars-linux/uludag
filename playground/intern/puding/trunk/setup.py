@@ -47,7 +47,11 @@ def create_mo_files():
         lang = po_file.split(".")[0]
         mo_file = mo_dir + "/" + lang + "/puding.mo"
 
-        os.mkdir(mo_dir + "/" + lang + "/")
+        try:
+            os.mkdir(mo_dir + "/" + lang + "/")
+        except OSError:
+            pass
+
         print("generating %s" % mo_file)
         os.system("msgfmt %s -o %s" % (path, mo_file))
 
