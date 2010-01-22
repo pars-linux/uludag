@@ -211,6 +211,7 @@
         <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi5000-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi6000-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>ql2x00-firmware</SelectedPackage>
