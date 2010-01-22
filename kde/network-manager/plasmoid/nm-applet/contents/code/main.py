@@ -121,14 +121,15 @@ class NmApplet(plasmascript.Applet):
 
     def solidState(self):
         if self.hasBattery:
-            return (not self._config['followsolid']) or \
-                    (self._config['followsolid'] and self.chargeState == Solid.Battery.Charging)
+            if self._config['followsolid']:
+                return self.chargeState != Solid.Battery.Discharging
+
         return True
 
     def batteryStateChanged(self, newstate, udi):
         # print "Battery state changed to ", newstate
         self.chargeState = newstate
-        if newstate == Solid.Battery.Charging:
+        if newstate != Solid.Battery.Discharging:
             self.dataUpdated()
 
     def followSolid(self):
