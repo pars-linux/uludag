@@ -69,13 +69,14 @@
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (/50)
+    * tulliana2'nin fallback simge seti yapılması (-)
     * libnotify API breakage (-)
     * moodin temasında resize sorunu (-)
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (X)
-    * Managerların üzerinden geçilmesi (-) [Bahadır Kandemir, Mete Alpaslan, Renan Çakırerk]
+    * Managerların üzerinden geçilmesi (/50) [Bahadır Kandemir]
 
 * KDE (Renan Çakırerk)
     * Kaptan'ın gözden geçirilmesi (/80)
@@ -84,6 +85,8 @@
 
 * YALI (Mete Alpaslan)
     * Senaryo bazlı kurulum (+)
+    * Code refactoring (-)
+    * Yeni parted (-)
     * Raid & LVM desteği (-)
     * Netinstall desteği (-)
     * grub.conf'a girdilerin UUID tabanlı girilmesi (-) [Bahadır Kandemir]
@@ -106,6 +109,9 @@
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
     * 2.6.32 çekirdeğe geçilmesi (/30)
 
+* initramfs/coolplug (Ozan Çağlayan)
+    * 2.6.32 + devtmpfs'e gore refactor (-)
+
 * Boot/Managers (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
     * boot-manager'ın UUID değişiklikleriyle beraber gözden geçirilmesi (-)
@@ -115,11 +121,13 @@
     * autostart dizinlerinin düzenlenmesi (+)
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Pulseaudio yardımcı programlarının depoya alınması (+)
-    * expat vb. gibi kitaplıkların dışarıdan kullanılıp kullanılmamasının analizi/gereği (-) [Onur Küçük]
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
     * evolution paketlenmesi (-) [N/A]
     * Samba 3.4 geçişi, service.py'lerin ayrılması (/90)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
+    * Yeni polkit (Review'da, comar, hav, kdebase, polkit-kde port edilmeli) (/20)
+    * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli) (/90)
+    * Yeni udev (fuse, kvm, ltmodem, qemu paketlerindeki kurallardan NAME= atılmalı) (/85)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (/80)
@@ -130,5 +138,5 @@
     * display-settings exception veriyor (+)
     * kdm ingilizce açılıyor (+)
     * kcm_kdm'ye sistem dili seçiminin eklenmesi (-)
-    * nouveau sürücüsü sorunları (nouveau için blacklist'e alınacak kartlar) (-)
     * KMS (/50)
+    * nouveau sürücüsü sorunları (KMS'de gerek kalmayacak) (X)
