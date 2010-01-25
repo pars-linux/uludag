@@ -12,6 +12,6 @@ urlpatterns = patterns('',
 
     url(r'^list/$', 'noan.profile.views.get_user_list', name="profile-list"),
     url(r'^profile/$', 'noan.profile.views.user_profile', name="profile-edit"),
-    url(r'^change-password/$', 'noan.profile.views.change_password', name="profile-password"),
-    url(r'^detail/(?P<userName>[\w-]+)/$', 'noan.profile.views.view_user_detail', name="profile-info"),
+    url(r'^change-password/$', 'noan.profile.views.change_password', name="profile-change-password"),
+    url(r'^detail/(?P<userName>[\w\s.]+)/$', 'noan.profile.views.view_user_detail', name="profile-detail"),
 )
