@@ -35,17 +35,8 @@ class Notifier(QObject):
         else:
             hints= {"x": pos[0], "y": pos[1]}
 
-        # close previous notification window
-        try:
-            self.iface.CloseNotification(self.notifyid)
-        except Exception, e:
-            if "org.freedesktop.DBus.GLib.UnmappedError.NotificationDaemonErrorQuark.Code100" in str(e):
-                Globals.debug("Warning: %s" % str(e))
-            else:
-                raise e
-
         self.notifyid = self.iface.Notify("package-manager",
-                         0,
+                         self.notifyid,
                          "file://%s" % icon,
                          unicode(header),
                          unicode(msg),
