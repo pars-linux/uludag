@@ -66,8 +66,9 @@ class Tray(KSystemTray):
         icon = getIconPath("package-manager")
         message = i18n("There are <b>%1</b> updates available!").arg(len(upgrades))
         header = i18n("Updates Available!")
+        actions = ["showupdates", unicode(i18n("Show Updates")), "ignore", unicode(i18n("Ignore"))],
 
-        self.notifier.show(icon, header, message, self.getPos())
+        self.notifier.show(icon, header, message, actions, self.getPos())
 
     def showUpgrades(self):
         self.parent.mainwidget.trayUpgradeSwitch()

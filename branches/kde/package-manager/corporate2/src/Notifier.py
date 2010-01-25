@@ -4,6 +4,7 @@
 import dbus
 import dbus.mainloop.qt3
 import traceback
+import Globals
 
 from kdecore import i18n
 from qt import QObject, PYSIGNAL
@@ -28,20 +29,26 @@ class Notifier(QObject):
         except dbus.DBusException:
             traceback.print_exc()
 
-    def show(self, icon, header, msg, pos=None):
+    def show(self, icon, header, msg, actions, pos=None):
         if not pos or pos[0] < 0 or pos[1] < 0:
             hints = {}
         else:
             hints= {"x": pos[0], "y": pos[1]}
 
         # close previous notification window
-        self.iface.CloseNotification(self.notifyid)
+        try:
+            self.iface.CloseNotification(self.notifyid)
+        except Exception, e:
+            if "org.freedesktop.DBus.GLib.UnmappedError.NotificationDaemonErrorQuark.Code100" in str(e):
+                Globals.debug("Warning: %s" % str(e))
+            else:
+                raise e
 
         self.notifyid = self.iface.Notify("package-manager",
                          0,
                          "file://%s" % icon,
                          unicode(header),
                          unicode(msg),
-                         ["showupdates", unicode(i18n("Show Updates")), "ignore", unicode(i18n("Ignore"))],
+                         actions,
                          hints,
                          0)
