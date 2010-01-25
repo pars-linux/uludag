@@ -3,7 +3,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
-<font color="red">You are already logged in!</font> <a href="/">Go to Main Page</a>
+<font color="red">You are already logged in!</font> <a href="{% url index %}">Go to Main Page</a>
 {% else %}
 
 {% if form.errors %}
