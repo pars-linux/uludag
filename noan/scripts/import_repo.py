@@ -243,28 +243,39 @@ def updateDB(path_source, path_stable, path_test, options):
     # Indexes
     print "Fetching source index..."
     index_source = fetchIndex(path_source)
+
     print "Fetching stable (binary) index..."
     index_stable = fetchIndex(path_stable)
-    print "Fetching test (binary) index..."
-    index_test = fetchIndex(path_test)
+
+    if path_test:
+        print "Fetching test (binary) index..."
+        index_test = fetchIndex(path_test)
+    else:
+        index_test = None
+
     # Parse source indes
     print "Parsing source index..."
     parseSourceIndex(index_source)
     # Parse test (binary) index for new packages
-    parseBinaryIndex(index_test, "test")
+    if index_test:
+        parseBinaryIndex(index_test, "test")
     # Parse stable (binary) index for released packages
     parseBinaryIndex(index_stable, "stable")
 
 
 def main():
-    usage = "usage: %prog [options] path/to/noan http://url.to/source-repo http://url.to/stable-repo http://url.to/test-repo"
+    usage = "usage: %prog [options] path/to/noan http://url.to/source-repo http://url.to/stable-repo [http://url.to/test-repo]"
     parser = optparse.OptionParser(usage=usage)
 
     (options, args) = parser.parse_args()
-    if len(args) != 4:
-        parser.error("Incorrect number of arguments")
 
-    path_noan, path_source, path_stable, path_test = args
+    if len(args) == 4:
+        path_noan, path_source, path_stable, path_test = args
+    elif len(args) == 3:
+        path_noan, path_source, path_stable = args
+        path_test = None
+    else:
+        parser.error("Incorrect number of arguments")
 
     os.environ['DJANGO_SETTINGS_MODULE'] = 'noan.settings'
     sys.path.insert(0, path_noan)
