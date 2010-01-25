@@ -186,12 +186,33 @@ def updateDB(path_source, path_stable, path_test, options):
             importSpec(pspec)
 
     def parseBinaryIndex(_index, _type):
-        # FIXME: Write me
-        pass
+        distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+        print '  Distribution: %s-%s' % (distroName, distroRelease)
 
-    parseSourceIndex(fetchIndex(path_source))
-    parseBinaryIndex(fetchIndex(path_stable), "stable")
-    parseBinaryIndex(fetchIndex(path_test), "test")
+        # Add distribution to database
+        try:
+            distribution = Distribution.objects.get(name=distroName, release=distroRelease)
+        except Distribution.DoesNotExist:
+            distribution = Distribution(name=distroName, release=distroRelease)
+            distribution.save()
+
+        def importSpec(pspec):
+            # FIXME: Magic code that indexes binary packages
+            pass
+
+        for pspec in _index.specs:
+            importSpec(pspec)
+
+    # Indexes
+    index_source = fetchIndex(path_source)
+    index_stable = fetchIndex(path_stable)
+    index_test = fetchIndex(path_test)
+    # Parse source indes
+    parseSourceIndex(index_source)
+    # Parse test (binary) index for new packages
+    parseBinaryIndex(index_test, "test")
+    # Parse stable (binary) index for released packages
+    parseBinaryIndex(index_stable, "stable")
 
 
 def main():
