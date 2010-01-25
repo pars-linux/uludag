@@ -64,7 +64,7 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
         packageName: <Package> section in pspec.xml
     """
 
-    package = Package.objects.get(name=packageName, source__name=sourceName, source__distribution__release=distRelease)
+    package = Package.objects.get(name=packageName, source__name=sourceName, source__distribution__name=distName, source__distribution__release=distRelease)
 
     context = {
         'package': package,
@@ -77,7 +77,7 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         sourceName: <Source> section in pspec.xml
         packageName: <Package> section in pspec.xml
     """
-    binary = Binary.objects.get(no=binaryNo, package__name=packageName, package__source__name=sourceName)
+    binary = Binary.objects.get(no=binaryNo, package__name=packageName, package__source__name=sourceName, package__source__distribution__name=distName, package__source__distribution__release=distRelease)
 
     # FIXME: We also handle sending ACK/NACK info. Maybe it can be done in different view?
     if request.method == "POST" and request.user and request.user.is_authenticated():
