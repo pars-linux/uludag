@@ -74,6 +74,9 @@ def fetchIndex(target, tmp="/tmp"):
     file(filename, "w").write(data)
 
     ix = pisi.index.Index(filename)
+
+    os.unlink(filename)
+
     return ix
 
 def updateDB(path_source, path_stable, path_test, options):
@@ -145,12 +148,10 @@ def updateDB(path_source, path_stable, path_test, options):
                 for rep in pack.replaces:
                     replaces = Replaces(name=str(rep), package=package)
                     replaces.save()
-                    count = 0
                     for bin in Binary.objects.filter(package__name=str(rep), package__source__distribution=distribution):
                         bin.resolution = 'removed'
                         bin.save()
-                        count += 1
-                    print '    Replaces package: %s (%d binaries)' % (rep, count)
+                        print '    Marking %s-%s as removed' % (rep, bin.build)
 
                 # Update runtime dependencies
                 for dep in RuntimeDependency.objects.filter(package=package):
@@ -186,6 +187,11 @@ def updateDB(path_source, path_stable, path_test, options):
             importSpec(pspec)
 
     def parseBinaryIndex(_index, _type):
+        if _type == 'test':
+            resolution = 'pending'
+        elif _type == 'stable':
+            resolution = 'released'
+
         distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
         print '  Distribution: %s-%s' % (distroName, distroRelease)
 
@@ -193,21 +199,56 @@ def updateDB(path_source, path_stable, path_test, options):
         try:
             distribution = Distribution.objects.get(name=distroName, release=distroRelease)
         except Distribution.DoesNotExist:
-            distribution = Distribution(name=distroName, release=distroRelease)
-            distribution.save()
+            #print  '  Distribution (%s-%s) not found database, old binary probably.' % (pisi_package.distribution, release)
+            return
 
-        def importSpec(pspec):
-            # FIXME: Magic code that indexes binary packages
-            pass
+        def importPackage(pisi_package):
+            try:
+                source = Source.objects.get(name=pisi_package.source.name, distribution=distribution)
+            except Source.DoesNotExist:
+                return
 
-        for pspec in _index.specs:
-            importSpec(pspec)
+            try:
+                package = Package.objects.get(name=pisi_package.name, source=source)
+            except Package.DoesNotExist:
+                return
+
+            updates = Update.objects.filter(source=source, no=pisi_package.history[0].release)
+            if len(updates) == 0:
+                return
+
+            update = updates[0]
+            try:
+                binary = Binary.objects.get(no=pisi_package.build, package=package)
+                if _type == 'stable' and binary.resolution == 'pending':
+                    binary.resolution = 'released'
+                    binary.save()
+                    print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
+            except Binary.DoesNotExist:
+                binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution)
+                binary.save()
+                print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
+
+            if _type == 'test':
+                # Mark other 'pending' binaries as 'reverted'
+                binaries = Binary.objects.filter(package=package, resolution='pending', no__lt=binary.no)
+                for bin in binaries:
+                    bin.resolution = 'reverted'
+                    bin.save()
+                    print '  Marking %s-%s as %s' % (package.name, bin.build, bin.resolution)
+
+        for pack in _index.packages:
+            importPackage(pack)
 
     # Indexes
+    print "Fetching source index..."
     index_source = fetchIndex(path_source)
+    print "Fetching stable (binary) index..."
     index_stable = fetchIndex(path_stable)
+    print "Fetching test (binary) index..."
     index_test = fetchIndex(path_test)
     # Parse source indes
+    print "Parsing source index..."
     parseSourceIndex(index_source)
     # Parse test (binary) index for new packages
     parseBinaryIndex(index_test, "test")
