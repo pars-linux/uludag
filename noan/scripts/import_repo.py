@@ -157,6 +157,7 @@ def updateDB(path_source, path_stable, path_test, options):
                     dep.delete()
                 for dep in pack.runtimeDependencies():
                     if isinstance(dep, pisi.specfile.AnyDependency):
+                        # Any dependencies
                         for any_dep in dep.dependencies:
                             dependency = RuntimeDependency(package=package, name=any_dep.package, version=toString(any_dep.version), version_to=toString(any_dep.versionTo), version_from=toString(any_dep.versionFrom), release=toInt(any_dep.release), release_to=toInt(any_dep.releaseTo), release_from=toInt(any_dep.releaseFrom))
                             dependency.save()
@@ -184,7 +185,13 @@ def updateDB(path_source, path_stable, path_test, options):
         for pspec in _index.specs:
             importSpec(pspec)
 
+    def parseBinaryIndex(_index, _type):
+        # FIXME: Write me
+        pass
+
     parseSourceIndex(fetchIndex(path_source))
+    parseBinaryIndex(fetchIndex(path_stable), "stable")
+    parseBinaryIndex(fetchIndex(path_test), "test")
 
 
 def main():
