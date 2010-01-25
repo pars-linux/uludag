@@ -10,6 +10,7 @@ import urllib2
 
 try:
     import pisi
+    from pisi.version import Version as Pisi_Version
 except ImportError:
     print 'Unable to import module "pisi". Not using Pardus?'
     sys.exit(1)
@@ -199,7 +200,6 @@ def updateDB(path_source, path_stable, path_test, options):
         try:
             distribution = Distribution.objects.get(name=distroName, release=distroRelease)
         except Distribution.DoesNotExist:
-            #print  '  Distribution (%s-%s) not found database, old binary probably.' % (pisi_package.distribution, release)
             return
 
         def importPackage(pisi_package):
@@ -239,6 +239,52 @@ def updateDB(path_source, path_stable, path_test, options):
 
         for pack in _index.packages:
             importPackage(pack)
+
+        # Write pending dependencies of a package to it's model
+        if _type != 'test':
+            return
+        for bin in Binary.objects.filter(resolution='pending'):
+            dependencies = []
+            for dep in bin.package.runtimedependency_set.all():
+                binaries = Binary.objects.filter(package__source__distribution = bin.package.source.distribution, package__name=dep.name)
+                #
+                if binaries.filter(resolution="released").count() == 0:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+                # version
+                if dep.version != "" and binaries.filter(update__version_no=dep.version, resolution="released").count() == 0:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+                elif dep.version_from != "":
+                    in_stable = False
+                    for bin_released in binaries.filter(resolution="released"):
+                        if Pisi_Version(bin_released.update.version_no) >= Pisi_Version(dep.version_from):
+                            in_stable = True
+                            break
+                    if not in_stable:
+                        dependencies.extend(binaries.filter(resolution="pending"))
+                elif dep.version_to != "":
+                    in_stable = False
+                    for bin_released in binaries.filter(resolution="released"):
+                        if Pisi_Version(bin_released.update.version_no) <= Pisi_Version(dep.version_to):
+                            in_stable = True
+                            break
+                    if not in_stable:
+                        dependencies.extend(binaries.filter(resolution="pending"))
+
+                # release
+                if dep.release != 0 and binaries.filter(update__no=dep.release, resolution="released").count() == 0:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+                elif dep.release_from != 0 and binaries.filter(update__no__gte=dep.release, resolution="released").count() == 0:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+                elif dep.release_to != 0 and binaries.filter(update__no__lte=dep.release, resolution="released").count() == 0:
+                    dependencies.extend(binaries.filter(resolution="pending"))
+
+            dependencies = set(dependencies)
+
+            if len(dependencies):
+                print '  Found %d pending dependencies of %s' % (len(dependencies), unicode(bin))
+            bin.linked_binary.clear()
+            for dep in dependencies:
+                bin.linked_binary.add(dep)
 
     # Indexes
     print "Fetching source index..."
