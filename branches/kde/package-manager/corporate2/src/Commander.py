@@ -32,9 +32,9 @@ class Commander(QObject):
         self.parent.refreshState()
 
     def exceptionHandler(self, exception):
-        if "urlopen error" in exception.message or "Socket Error" in exception.message:
+        if "urlopen error" in str(exception) or "Socket Error" in str(exception):
             KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
-        elif "Access denied" in exception.message:
+        elif "Access denied" in str(exception):
             message = i18n("You are not authorized for this operation.")
             KMessageBox.sorry(None, message, i18n("Error"))
         else:
