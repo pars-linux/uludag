@@ -2,8 +2,6 @@
 {% load library %}
 
 {% block content %}
-Pending packages for {{ binary_package_list.0.package.source.distribution }}. Instead, you can <a href="{% url repo-pending-for-user binary_package_list.0.package.source.distribution.name binary_package_list.0.package.source.distribution.release %}">list packages</a> that you updated.</a>
-<br /><br />
     <table class="package_list">
         <tr>
             <th>Package</th>
