@@ -4,6 +4,7 @@
 import bz2
 import optparse
 import os.path
+import random
 import string
 import sys
 import urllib2
@@ -14,6 +15,18 @@ try:
 except ImportError:
     print 'Unable to import module "pisi". Not using Pardus?'
     sys.exit(1)
+
+
+MAIL_SUBJECT = "NOAN Developer Account: %(username)s"
+MAIL_BODY = """Hello %(name)s,
+
+Your developer account password for NOAN package management system is:
+
+    %(password)s
+
+Cheers,
+NOAN - http://noan.pardus.org.tr/noan/
+"""
 
 
 def toString(obj):
@@ -81,6 +94,7 @@ def fetchIndex(target, tmp="/tmp"):
     return ix
 
 def updateDB(path_source, path_stable, path_test, options):
+    from django.core.mail import send_mail
     from django.contrib.auth.models import User
     from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces
     from noan.profile.models import Profile
@@ -100,8 +114,13 @@ def updateDB(path_source, path_stable, path_test, options):
             user.save()
         except User.DoesNotExist:
             user = User(email=email, username=username, first_name=first_name, last_name=last_name)
-            print '    New developer: %s' % username
+            password = ''.join([random.choice("1234567890qwertyupasdfghjklizxcvbnm") for x in range(8)])
+            user.set_password(password)
             user.save()
+            print '    New developer: %s' % username
+            # E-mail password
+            data = {"username": username, "password": password, "name": name, "email": email}
+            send_mail(MAIL_SUBJECT % data, MAIL_BODY % data, 'no-reply@pardus.org.tr', [email])
         return user
 
     def parseSourceIndex(_index):
@@ -152,7 +171,7 @@ def updateDB(path_source, path_stable, path_test, options):
                     for bin in Binary.objects.filter(package__name=str(rep), package__source__distribution=distribution):
                         bin.resolution = 'removed'
                         bin.save()
-                        print '    Marking %s-%s as removed' % (rep, bin.build)
+                        print '    Marking %s-%s as removed' % (rep, bin.no)
 
                 # Update runtime dependencies
                 for dep in RuntimeDependency.objects.filter(package=package):
