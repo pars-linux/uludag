@@ -8,7 +8,7 @@ class Profile(models.Model):
     """Profile model for each User. It will allow us to collect and manage more data about users"""
     user = models.ForeignKey(User, unique=True)
     # only admins are able to edit title
-    title = models.CharField("Title", max_length=32, blank=True, help_text="Eg: COMAR Developer")
+    title = models.CharField("Title", max_length=32, blank=True, help_text="Eg: Developer, Maintainer")
 
     class Meta:
         verbose_name = "User Profile"
@@ -18,4 +18,4 @@ class Profile(models.Model):
         return self.user.username
 
     def get_absolute_url(self):
-        return '/user/detail/%s' % self.user.username
+        return '/noan/user/detail/%s' % self.user.username

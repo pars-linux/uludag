@@ -26,6 +26,9 @@ SITE_ID = 1
 # to load the internationalization machinery.
 USE_I18N = False
 
+# Site root
+SITE_ROOT = "/"
+
 # Absolute path to the directory that holds media.
 MEDIA_ROOT = '/path_to/noan/media/'
 
@@ -81,6 +84,11 @@ INSTALLED_APPS = (
 
 # For extending User classUser class
 AUTH_PROFILE_MODULE = 'profile.Profile'
+
+LOGIN_REDIRECT_URL = '/noan/'
+
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#EMAIL_HOST = 'mail.pardus.org.tr'
 
 # PAGINATION
 # Source packages per page
