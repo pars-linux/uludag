@@ -20,16 +20,25 @@
     {% endif %}
 
     <h2>Test Result</h2>
+    <ul>
+        {% for t in binary.testresult_set.all %}
+        <li class="test_{{ t.result }}">
+            <strong>{{ t.created_by.first_name }} {{ t.created_by.last_name }}:</strong> {{ t.get_result_str }} ({{ t.created_on }})
+            <p>{{ t.comment }}</p>
+        </li>
+        {% endfor %}
+    </ul>
     <p>
-        Current result: {{ binary.get_result_str }}
+        <strong>Final result:</strong> {{ binary.get_result_str }}
     </p>
+
     <h2>Your Report</h2>
-        {{ test }}
         {% if user.is_authenticated %}
         <form action="" method="post">
-            <button {% ifequal user_result "yes" %}style="background-color: #0b0;"{% endifequal %} type="submit" name="result" value="yes" >Yes</button>
-            <button {% ifequal user_result "no" %}style="background-color: #b00;"{% endifequal %} type="submit" name="result" value="no" >No</button>
-            <button {% ifequal user_result "unknown" %}style="background-color: #bbb;"{% endifequal %} type="submit" name="result" value="unknown" >Not Tested</button>
+            <button {% ifequal user_result.result "yes" %}style="background-color: #0b0;"{% endifequal %} type="submit" name="result" value="yes" >Yes</button>
+            <button {% ifequal user_result.result "no" %}style="background-color: #b00;"{% endifequal %} type="submit" name="result" value="no" >No</button>
+            <button {% ifequal user_result.result "unknown" %}style="background-color: #bbb;"{% endifequal %} type="submit" name="result" value="unknown" >Not Tested</button>
+            <strong>Comment:</strong> <input type="text" name="comment" value="{{ user_result.comment }}"/>
         </form>
         {% endif %}
     {% endifequal %}
