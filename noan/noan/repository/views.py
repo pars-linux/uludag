@@ -89,14 +89,15 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
             TestResult.objects.filter(binary=binary, created_by=request.user).delete()
         elif request.POST['result'] in ("yes", "no"):
             result, created = TestResult.objects.get_or_create(binary=binary, created_by=request.user)
-            result.result = request.POST['result']
+            result.result = request.POST.get('result', 'unknown')
+            result.comment = request.POST.get('comment', '')
             result.save()
 
-    user_result = "unknown"
+    user_result = None
     if request.user and request.user.is_authenticated():
         results = binary.testresult_set.filter(created_by=request.user)
         if len(results):
-            user_result = results[0].result
+            user_result = results[0]
 
     context = {
         'binary': binary,

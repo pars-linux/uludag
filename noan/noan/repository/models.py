@@ -318,6 +318,13 @@ class TestResult(models.Model):
     def __unicode__(self):
         return _('%(result)s (binary: %(binary)s source: %(source)s, distro: %(distro)s)') % {'result': self.result, 'binary': self.binary, 'source': self.binary.package.source.name, 'distro': self.binary.package.source.distribution}
 
+    def get_result_str(self):
+        result = self.result
+        for name, label in TEST_RESULTS:
+            if name == result:
+                return label
+        return result
+
     class Meta:
         ordering = ['-created_on']
         verbose_name = _('test result')
