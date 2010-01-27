@@ -15,8 +15,9 @@
                 </ul>
                 {% if user.is_authenticated %}
                 <ul>
-                    <li><a href="{% url profile-detail user.username %}">Profile ({{ user.username }})</a> <a href="{% url profile-logout %}">[x]</a></li>
+                    <li><a href="{% url profile-detail user.username %}">User: {{ user.username }}</a></li>
                     <li><a href="{% url profile-edit %}">Edit Profile</a></li>
+                    <li><a href="{% url profile-logout %}">Logout</a></li>
                 </ul>
                 {% else %}
                     <a href="{% url profile-login %}">Login</a>
