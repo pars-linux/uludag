@@ -10,7 +10,7 @@
             <ul>
                 {% for binary in pending %}
                 {% ifequal binary.package.source.distribution distro %}
-                <li><a href="{{ binary.get_url }}">{{ binary.get_filename }}</a></li>
+                <li class="test_{{ binary.get_result }}"><a href="{{ binary.get_url }}">{{ binary.get_filename }}</a></li>
                 {% endifequal %}
                 {% endfor %}
             </ul>
