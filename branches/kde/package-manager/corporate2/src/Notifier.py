@@ -14,6 +14,8 @@ class Notifier(QObject):
         if id == self.notifyid:
             if button == "default" or button == "ignore":
                 pass
+            if button == "cancel":
+                self.emit(PYSIGNAL("cancelled"), ())
             else:
                 self.emit(PYSIGNAL("showUpgrades"), ())
 
@@ -29,6 +31,9 @@ class Notifier(QObject):
         except dbus.DBusException:
             traceback.print_exc()
 
+    def close(self):
+        self.iface.CloseNotification(self.notifyid)
+        
     def show(self, icon, header, msg, actions, pos=None):
         if not pos or pos[0] < 0 or pos[1] < 0:
             hints = {}

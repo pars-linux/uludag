@@ -30,6 +30,7 @@ class Info(InfoDialog):
         self.connect(self.okButton, SIGNAL('clicked()'), self.accept)
         self.connect(self.cancelButton, SIGNAL('clicked()'), self.reject)
         self.connect(self.autoRestartCheckBox, SIGNAL("toggled(bool)"), self.setAutoRestart)
+        self.connect(self.notifier, PYSIGNAL("cancelled"), self.rebootCancelled)
 
     def reset(self):
         self.counter = 10
@@ -52,11 +53,22 @@ class Info(InfoDialog):
         self.showNotification()
         if self.counter:
             self.timer.start(1000)
-        self.counter -= 1
+            self.counter -= 1
+        else:
+            self.notifier.close()
+            self.rebootSystem()
+
+    def rebootSystem(self):
+        pass
+
+    def rebootCancelled(self):
+        self.timer.stop()
+        self.notifier.close()
+        self.reset()
 
     def showNotification(self):
         icon = getIconPath("package-manager")
-        message = i18n("Will Restart in %1 Seconds!").arg(self.counter)
-        header = i18n("Will Restart!")
+        message = i18n("Your system will restart in %1 Seconds!").arg(self.counter)
+        header = i18n("Reboot in progress")
         actions = ["cancel", unicode(i18n("Cancel"))]
         self.notifier.show(icon, header, message, actions)
