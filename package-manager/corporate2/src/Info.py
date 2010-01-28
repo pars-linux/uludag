@@ -10,6 +10,8 @@
 #
 # Please read the COPYING file
 
+import os
+
 from qt import *
 from kdecore import *
 from InfoDialog import *
@@ -59,7 +61,9 @@ class Info(InfoDialog):
             self.rebootSystem()
 
     def rebootSystem(self):
-        pass
+        os.system("dbus-send --system --dest=org.freedesktop.Hal --type=method_call "
+                  "--print-reply /org/freedesktop/Hal/devices/computer "
+                  "org.freedesktop.Hal.Device.SystemPowerManagement.Reboot")
 
     def rebootCancelled(self):
         self.timer.stop()
