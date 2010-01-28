@@ -40,9 +40,10 @@
 #################
 
 * PiSi (Faik Uygur)
-    * needsServiceRestart, needsReboot desteği (+) [Bahadır Kandemir]
     * groups.xml tango simge teması düzeltmesi (+)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
+    * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (/75)
+    * Global needsServiceRestart, needsReboot (?)
 
 * PiSi (Serdar Dalgıç)
     * Depo bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
@@ -55,6 +56,7 @@
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (-)
     * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
+    * Pisi/PM'in belli bazı paketleri önce güncelleyip güncellemeyi tekrar başlatması (?)
 
 * Müdür (Ozan Çağlayan)
     * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
@@ -69,14 +71,13 @@
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (/50)
-    * tulliana2'nin fallback simge seti yapılması (-)
     * libnotify API breakage (-)
-    * moodin temasında resize sorunu (-)
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (X)
     * Managerların üzerinden geçilmesi (/50) [Bahadır Kandemir]
+    * tulliana2'nin fallback simge seti yapılması (-)
 
 * KDE (Renan Çakırerk)
     * Kaptan'ın gözden geçirilmesi (/80)
@@ -107,10 +108,9 @@
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
-    * 2.6.32 çekirdeğe geçilmesi (/30)
-
-* initramfs/coolplug (Ozan Çağlayan)
-    * 2.6.32 + devtmpfs'e gore refactor (-)
+    * Yeni udev (fuse, kvm, ltmodem, qemu paketlerindeki kurallardan NAME= atılmalı) (+)
+    * 2.6.32 çekirdeğe geçilmesi (+)
+    * 2.6.32 + devtmpfs'e gore refactor (+)
 
 * Boot/Managers (Bahadır Kandemir)
     * root cihazının uuid anahtar kelimesiyle GRUB'a yazılması (-)
@@ -121,13 +121,21 @@
     * autostart dizinlerinin düzenlenmesi (+)
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Pulseaudio yardımcı programlarının depoya alınması (+)
+    * CUPS 1.4 geçişi (+)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
-    * evolution paketlenmesi (-) [N/A]
     * Samba 3.4 geçişi, service.py'lerin ayrılması (/90)
+    * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli, dizin silinme sorunu) (/90)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
-    * Yeni polkit (Review'da, comar, hav, kdebase, polkit-kde port edilmeli) (/20)
-    * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli) (/90)
-    * Yeni udev (fuse, kvm, ltmodem, qemu paketlerindeki kurallardan NAME= atılmalı) (/85)
+    * Yeni polkit (Review'da. kdebase, polkit-kde vs. port edilmeli) (/20)
+
+* COMAR/PolKit (Bahadır Kandemir)
+    * polkit 0.96 geçişi (-)    <<20/02/2010>>
+
+* PolicyKit-kde (Gökçen Eraslan)
+    * PolicyKit-kde'nin polkit-1'e geçirilmesi (veya polkit-gnome) (-)  <<20/02/2010>>
+
+* Evolution harekatı (İbrahim Güngör)
+    * Paketlerin hazırlanması (/5)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (/80)
@@ -137,6 +145,7 @@
 * X/DRM/locales (Fatih Aşıcı)
     * display-settings exception veriyor (+)
     * kdm ingilizce açılıyor (+)
+    * ksplash moodin temasında resize sorunu (-)
     * kcm_kdm'ye sistem dili seçiminin eklenmesi (-)
-    * KMS (/50)
+    * KMS (/90)
     * nouveau sürücüsü sorunları (KMS'de gerek kalmayacak) (X)
