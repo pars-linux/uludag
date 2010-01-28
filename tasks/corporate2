@@ -46,7 +46,7 @@
     * Global needsServiceRestart, needsReboot (?)
 
 * PiSi (Serdar Dalgıç)
-    * Depo bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (-)
+    * Depo bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (+) [Faik Uygur]
     * Paket bazında mimari ve dağıtım denetlemesi (+)
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (+)
 
