@@ -14,13 +14,18 @@ import PisiIface
 
 from kdeui import KMessageBox
 from kdecore import i18n
-from qt import QObject, QTimer, QString
+from qt import QObject, QTimer, QString, SIGNAL
 import Settings
 
 class Commander(QObject):
     def __init__(self, parent):
         QObject.__init__(self)
         self.parent = parent
+        # Modal dialogs freezes pm in dbus signal path
+        self.delayTimer = QTimer(self)
+        self.lastError = None
+        ##
+        self.connect(self.delayTimer, SIGNAL("timeout()"), self.exceptionHandler)
         self.iface = PisiIface.Iface()
         self.iface.setHandler(self.handler)
         self.iface.setExceptionHandler(self.exceptionHandler)
@@ -31,11 +36,15 @@ class Commander(QObject):
         self.parent.resetState()
         self.parent.refreshState()
 
-    def exceptionHandler(self, exception):
+    def exceptionHandler(self, exception=None):
+        exception = exception or self.lastError
         if "urlopen error" in str(exception) or "Socket Error" in str(exception):
-            KMessageBox.error(None, i18n("Network error. Please check your network connections and try again."), i18n("COMAR Error"))
+            KMessageBox.error(None, i18n("Network error. Please check your network connections and try again or check your repository addresses."), i18n("COMAR Error"))
         elif "Access denied" in str(exception):
             message = i18n("You are not authorized for this operation.")
+            KMessageBox.sorry(None, message, i18n("Error"))
+        elif "PYCURL ERROR" in str(exception):
+            message = i18n("Please check your network connection or repository addresses.")
             KMessageBox.sorry(None, message, i18n("Error"))
         else:
             KMessageBox.error(None, QString.fromUtf8(str(exception)), i18n("COMAR Error"))
@@ -58,9 +67,8 @@ class Commander(QObject):
         elif signal == "error":
             self.iface.com_lock.unlock()
             print "Error: ", str(data)
-#            self.parent.showErrorMessage(str(args))
-            self.parent.resetState()
-            self.parent.refreshState()
+            self.lastError = str(data)
+            self.delayTimer.start(500, True)
         elif signal == "cancelled":
             self.parent.finished("System.Manager.cancelled")
         elif signal == "started":
