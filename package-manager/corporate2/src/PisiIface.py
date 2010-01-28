@@ -93,6 +93,11 @@ class Iface(Singleton):
         self.com_lock.lock()
         self.link.System.Manager["pisi"].updatePackage(packages, async=self.handler, timeout=2**16-1)
 
+    def removeRepository(self, repo):
+        logger.debug("Removing repository: %s" % repo)
+        self.com_lock.lock()
+        self.link.System.Manager["pisi"].removeRepository(repo, async=self.handler, timeout=2**16-1)
+
     def updateRepositories(self):
         logger.debug("Updating repositories...")
         self.com_lock.lock()
@@ -161,7 +166,7 @@ class Iface(Singleton):
 
     def getPackageList(self):
         if self.source == self.REPO:
-            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(self.replaces.values()) )
+            return list( set(pisi.api.list_available()) - set(pisi.api.list_installed()) - set(sum(self.replaces.values(), [])) )
         else:
             return pisi.api.list_installed()
 
@@ -169,7 +174,7 @@ class Iface(Singleton):
         lu = set(pisi.api.list_upgradable())
         for replaced in self.replaces.keys():
             lu.remove(replaced)
-            lu.add(self.replaces[replaced])
+            lu |= set(self.replaces[replaced])
         return lu
 
     def getGroup(self, name):
@@ -190,6 +195,9 @@ class Iface(Singleton):
             except Exception:
                 pass
         return packages
+
+    def checkDistributionAndArchitecture(self, repo):
+        return self.rdb.check_distribution(repo) and self.rdb.check_architecture(repo)
 
     def getGroupComponents(self, name):
         return groups.getGroupComponents(name)
@@ -311,4 +319,3 @@ class Iface(Singleton):
     
     def inProgress(self):
         return False
-
