@@ -17,3 +17,4 @@ Low -> küçük + önemsiz + iyileştirme
 * Review ürün bileşenlerinin ve ilgili bileşen sorumlularının bir betik ile atanması.
 * Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
 * Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi.
+* collectstats.pl betiği çalıştırılacak. Yardım için http://bugs.pardus.org.tr/testzilla/docs/en/html/extraconfig.html
