@@ -20,9 +20,15 @@
 \begin{enumerate}
 \item perf paketi kurulumu sonrası:
 
+\begin{verbatim}
+uname -r  
+\end{verbatim}
+
+Yukarıdaki komut sonucunda dönen kernel versiyon numarasını aşağıda bulunan komutun ucuna ekleyiniz.
+
 Aşağıda bulunan komutun kernel fonksiyon bilgilerini listelediğini gözlemleyin.
 \begin{verbatim}
-sudo  perf top 
+sudo  perf.kernel-"versiyon" top 
 \end{verbatim} 
 
 
