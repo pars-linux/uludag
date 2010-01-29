@@ -1,0 +1,19 @@
+Bugzilla TODO
+* Severity'lerin ingilizceye dönüştürülmesinden sonra database'de türkçe olarak kalan severity değerlerine atanan hataların yeni ingilizce değerlerine update edilmesi.
+
+* Database'den silinen ürünlerin hatalarının genel ürününe atanması  (11,18,23,24,27,29,30,34,35 ürün id'lerinin 32'ye atanması ve bu ürünlere ait bileşenlerin de genel ürününe atanması)
+* Severity değerlerinin azaltılması ve silinen değerlerin uygun değerlere update edilmesi.
+
+Urgent -> engelleyici + kritik
+High -> büyük
+Medium -> normal
+Low -> küçük + önemsiz + iyileştirme
+
+* Status değerlerinin ingilizce ve türkçelerinin yazılması. 
+* Priority değerlerinin azaltılması 
+* Bileşenlerin version numaralarının pisi bilgisinden seçilmesi.
+* uludag/trunk/common altında bulunan kişilerin gözden geçirilmesi ve editbugs grubunun bu kişilerden oluşturulması.
+* Review ürününün yaratılması ve bu ürüne erişebilen editbugs'ı kapsayan review grubunun oluşturulması ve izinlerinin verilmesi. (Administration-> Parameters->Group Security -> Useentryfroupdefault-> on ve Products -> review -> Edit group access control -> review ENTRY, SHOWN,MANDATORY, canedit, editcomponents, canconfirm, editbugs, bugs)
+* Review ürün bileşenlerinin ve ilgili bileşen sorumlularının bir betik ile atanması.
+* Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
+* Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi.
