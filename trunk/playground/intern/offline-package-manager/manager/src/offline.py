@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -301,7 +301,7 @@ class Operations(Singleton):
 
             operationPool.append([op_type, packages])
 
-        doOperations.handlePool(operationPool)
+        doOperations.initialize(operationPool)
 
 class DoOperations(Singleton):
     def __init__(self):
@@ -311,6 +311,13 @@ class DoOperations(Singleton):
 
     def initialized(self):
         return "link" in self.__dict__
+
+    def initialize(self, operationPool):
+        self.operationPool = operationPool
+        self.totalProcesses = self.operationPool.__len__()
+        self.processNo = 0
+        
+        self.handlePool()
 
     def initComar(self):
         self.link = comar.Link()
@@ -326,21 +333,22 @@ class DoOperations(Singleton):
     def signalHandler(self, package, signal, args):
         if signal == "finished":
             if self.signalCounter == 1:
-                self.handlePool(self.operationPool)
+                self.handlePool()
                 self.signalCounter = 0
             else:
                 self.signalCounter += 1
 
-    def handlePool(self, operationPool):
+    def handlePool(self):
+        self.updateTotalProcessPercent()
+        self.processNo += 1
+        
         try:
-            operation = operationPool[0][0]
-            packages = operationPool[0][1]
+            operation = self.operationPool[0][0]
+            packages = self.operationPool[0][1]
 
-            operationPool.pop(0)
+            self.operationPool.pop(0)
 
-            self.operationPool = operationPool
-
-            self._doOperation(packages, operation)
+            self._doOperation(packages, operation)            
 
         except IndexError:
             pass
@@ -355,3 +363,16 @@ class DoOperations(Singleton):
 
         else:
             raise Exception("Unknown package operation")
+
+    def updateTotalProcessPercent(self):
+        try:
+            percent = (self.processNo * 100) / self.totalProcesses
+        except ZeroDivisionError:
+            percent = 0
+
+        print "TOTAL PERCENT = " , percent
+
+        print "----UPDATE AREA-------"
+        print "proNo :: " , self.processNo
+        print "Total :: " , self.totalProcesses
+        print "----------------------"
