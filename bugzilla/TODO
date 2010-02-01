@@ -16,5 +16,6 @@ Low -> küçük + önemsiz + iyileştirme
 * Review ürününün yaratılması ve bu ürüne erişebilen editbugs'ı kapsayan review grubunun oluşturulması ve izinlerinin verilmesi. (Administration-> Parameters->Group Security -> Useentryfroupdefault-> on ve Products -> review -> Edit group access control -> review ENTRY, SHOWN,MANDATORY, canedit, editcomponents, canconfirm, editbugs, bugs)
 * Review ürün bileşenlerinin ve ilgili bileşen sorumlularının bir betik ile atanması.
 * Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
-* Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi.
-* collectstats.pl betiği çalıştırılacak. Yardım için http://bugs.pardus.org.tr/testzilla/docs/en/html/extraconfig.html
++ Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi.
++ collectstats.pl betiği çalıştırılacak. Yardım için http://bugs.pardus.org.tr/testzilla/docs/en/html/extraconfig.html
+* collectstats.pl betiği cronjob olarak çalıştırılacak.
