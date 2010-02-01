@@ -2,6 +2,8 @@
 
 {% extends "base.html" %}
 
+{% block title %} PLSA-{{ advisory.plsa_id|escape }} {{ advisory.title|escape }} {% endblock %}
+
 {% block content %}
     <h2>[PLSA {{ advisory.plsa_id|escape }}] {{ advisory.title|escape }}</h2>
     <ul>
