@@ -417,10 +417,10 @@
             bug = bug, field = select_fields.rep_platform,
             no_tds = 1, value = bug.rep_platform
             editable = bug.check_can_change_field('rep_platform', 0, 1) %]
-       [%+ INCLUDE bug/field.html.tmpl 
+       <!--[%+ INCLUDE bug/field.html.tmpl 
             bug = bug, field = select_fields.op_sys, 
             no_tds = 1, value = bug.op_sys
-            editable = bug.check_can_change_field('op_sys', 0, 1) %]
+            editable = bug.check_can_change_field('op_sys', 0, 1) %]-->
        <script type="text/javascript">
          assignToDefaultOnChange(['product', 'component']);
        </script>
@@ -1034,7 +1034,7 @@
 [%############################################################################%]
 
 [% BLOCK section_timetracking %]
-  <table class="bz_time_tracking_table">
+  <!--table class="bz_time_tracking_table">
     <tr>
       <th>
         <label for="estimated_time">Orig. Est.</label>
@@ -1101,7 +1101,7 @@
         blocking this [% terms.bug %])</a>
       </td>
     </tr>
-  </table> 
+  </table--> 
 [% END %]
 
 [%############################################################################%]
