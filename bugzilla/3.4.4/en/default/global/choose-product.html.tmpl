@@ -59,42 +59,7 @@
         <a href="[% target %]?product=[% p.name FILTER url_quote -%]
               [%- IF cloned_bug_id %]&amp;cloned_bug_id=[% cloned_bug_id FILTER url_quote %][% END -%] 
               [%- IF format %]&amp;format=[% format FILTER url_quote %][% END %]">
-              [% IF p.name== "Bugzilla" %]
-              <img height="50" width="50" src="icons/bugzilla.jpg" border="0">
-              [% END %]
-              [% IF p.name=="Çeviriler /Translation" %]
-              <img height="50" width="50" src="icons/translation.png" border="0">
-              [% END %]
-              [% IF p.name=="COMAR / Config Manager" %]
-              <img height="50" width="50" src="icons/comar.png" border="0">
-              [% END %]
-              [% IF p.name=="Grafik / Graphics" %]
-              <img height="50" width="50" src="icons/graphics.png" border="0">
-              [% END %]
-              [% IF p.name=="Güvenlik / Security" %]
-              <img height="50" width="50" src="icons/security.png" border="0">
-              [% END %]
-              [% IF p.name=="Listeler / Lists" %]
-              <img height="50" width="50" src="icons/lists.png" border="0">
-              [% END %]
-              [% IF p.name=="Package problems - Paket sorunları" %]
-              <img height="50" width="50" src="icons/packages.png" border="0">
-              [% END %]
-              [% IF p.name=="Pardus Hizmetleri / Pardus Services" %]
-              <img height="50" width="50" src="icons/services.png" border="0">
-              [% END %]
-              [% IF p.name=="PiSi" %]
-              <img height="50" width="50" src="icons/pisi.png" border="0">
-              [% END %]
-              [% IF p.name=="review" %]
-              <img height="50" width="50" src="icons/review.png" border="0">
-              [% END %]
-              [% IF p.name=="TASMA" %]
-              <img height="50" width="50" src="icons/tasma.png" border="0">
-              [% END %]
-              [% IF p.name=="YALI" %]
-              <img height="50" width="50" src="icons/yali.png" border="0">
-              [% END %]
+              <img height="50" width="50" src="icons/[%p.id%].png" border="0">
               </a>&nbsp;
      </td>
      </tr>
