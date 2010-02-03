@@ -415,7 +415,7 @@ TUI_hide_default('expert_fields');
     </td>
   </tr>
 
-  <!--tr>
+  <tr>
     <th>Default CC:</th>
     <td colspan="2">
       <div id="initial_cc">
@@ -429,7 +429,7 @@ TUI_hide_default('expert_fields');
   
   <tr>
     <td colspan="3">&nbsp;</td>
-  </tr-->
+  </tr>
 
 [% IF user.in_group(Param('timetrackinggroup')) %]
   <!--tr>
@@ -552,6 +552,8 @@ TUI_hide_default('expert_fields');
     </td>
     <td valign="top">
       <select name="reproducible">
+        <option name="null" value="--">
+        --
         <option name="AlwaysReproducible" value="Always">
           Happens every time.
         </option>
@@ -658,7 +660,7 @@ TUI_hide_default('expert_fields');
       <b>Severity</b>
     </td>
     <td valign="top">
-      <select name="bug_severity">
+      <select name="bug_severity" size="7">
         <option name="blocking" value="blocking">
           Blocking: The bug makes whole system unusable
         <option name="critical" value="critical">
