@@ -286,7 +286,9 @@ Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir 
 \subsection*{Admin alt bileşeni}
 
 \begin{enumerate} 
-\item display-settings paketi kurulumu sonrası:
+\item plasmoid-network-applet paketi kurulumu sonrası:
+
+Ağ yöneticisi programcığının masaüstünde sorunsuz bir şekilde bağlantı ile ilgili bilgileri yansıttığını gözlemleyin.
 
 \begin{itemize}
 \item Sistem ayarlarından ekran ayarlarını seçin ve aygıtlar bölümüne tıklayın, tıkladığınızda ekran kartınızın modelinin gösterildiğini gözlemleyin.
@@ -316,11 +318,129 @@ http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/alfabeta/s
 \item  Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
 kdelibs-devel
+kdelibs-experimental
 kdelibs-apidox 
+kdebindings
+kdepimlibs-devel
+kdepimlibs
+kdevplatform
+kdevplatform-devel
 \end{verbatim}
+\item kdewebdev paketi kurulumu sonrası:
+\begin{itemize}
+ \item quanta uygulamasının sorunsuz çalıştırğını gözlemleyin
+ \item 
+\end{itemize}
+
+\item kdeutils paketi kurulumu sonrası:
+
+\begin{itemize}
+ \item ark uygulamasının sorunsuz çalıştırğını gözlemleyin
+
+Aşağıda bulunan sıkıştırılmış dosyanın ark ile açılabildiğini gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+\end{verbatim}
+
+ \item Superkaramba uygulamasını açın ve bu uygulama ile masaüstüne yeni bir programcık ekleyin. Sorunsuz bir şekilde ekleyebildiğinizi gözlemleyin.
+\end{itemize}
+
+\item kdesdk paketi kurulumu sonrası:
+\begin{itemize}
+ \item kate uygulamasının srunsuz çalıştırğını gözlemleyin.
+ \item umbrello uygulamasının sorunsuz çalıştığını gözlemleyin.
+\end{itemize}
+
+\item kdepim paketi kurulumu sonrası:
+\begin{itemize}
+ \item Korganizer uygulamasını açın. Olay, Yapılacaklar Öğesi, Günlük ayarlarını yapın ve sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
+ \item Knotes ayarlarını yapın ve sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
+ \item Akregator bir rss adresi ekleyin ve rss'leri çekebildiğini gözlemleyin.
+\end{itemize}
+
+\item kdenetwork paketi kurulumu sonrası: 
+
+Kopete uygulamasının sorunsuz çalıştığını gözlemleyin.
+
+\item kdeedu paketi kurulumu sonrası: 
+\begin{itemize}
+ \item kstars uygulamasını Kmenu'den açın ve sorunsuz bir şekilde çalıştığını gözlemleyin. 
+ \item kalgebra uygulamasını Kmenu'den açın ve sorunsuz bir şekilde çalıştığını gözlemleyin. 
+ \item kig uygulamasını Kmenu'den açın ve sorunsuz bir şekilde çalıştığını gözlemleyin. 
+\end{itemize}
+
+\item kdeedu-marble paketi kurulumu sonrası: 
+
+marble uygulamasını Kmenu'den açın ve sorunsuz bir şekilde çalıştığını gözlemleyin. 
+\item kdeartwork-wallpapers paketi kurulumu sonrası: 
+
+Masaüstüne sağ tıklayın ve Masaüstü ayarlarını seçin. Duvarkağıdı olarak Çiçek Damlalarını seçin ve duvar kağıdının değiştiğini gözlemleyin.
+
+\item kdeartwork-styles paketi kurulumu sonrası: 
+
+Masaüstüne sağ tıklayın ve Masaüstü ayarlarını seçin. Masaüstü temalarından Heron'u seçin ve temanın değiştiğini gözlemleyin.
+
+\item kdeartwork-sounds paketi kurulumu sonrası:
+
+Oturumu kapatın ve açılış sesinin düzgün çalıştığını gözlemleyin.
+
+\item kdeartwork-screensavers paketi kurulumu sonrası:
+
+Sistem Ayarları-> Masaüstü -> Ekran Koruyucu bölümünden asciiquarium seçeneğini seçin ve dene butonuna basın ve ekran koruyucusunun düzgün bir şekilde göründüğünü gözlemleyin.
+
+\item kdeartwork-icons paketi kurulumu sonrası:
+
+Sistem Ayarları-> Görünüm -> Simgeler bölümünden Siyah-Beyaz seçeneğini seçin ve uygula butonuna basın. Ve kde ikonlarınızın siyah-beyaz olduğunu gözlemleyin.
+
+\item kdeartwork-emoticons paketi kurulumu sonrası:
+
+Sistem Ayarları-> Görünüm -> Duygu Simgeleri bölümünden Kmess-Cartoon seçeneğini seçin ve uygula butonuna basın. Kopete uygulamasını açın ve duygu simgelerinizin değiştiğini gözlemleyin.
+
+\item kdeartwork-colorscheme paketi kurulumu sonrası:
+
+Sistem Ayarları-> Görünüm -> Renkler bölümünden Desert seçeneğini seçin ve uygula butonuna basın ve kde renginin kırmızı olduğunu gözlemleyin.
+
+\item kdeadmin paketi kurulumu sonrası:
+Aşağıda bulunan komutu çalıştırın ve kde sistem çağrılarının listelendiğini gözlemleyin.
+\begin{verbatim}
+ ksystemlog
+\end{verbatim}
+
+\item PyKDE paketi kurulumu sonrası:
+
+Aşağıda bulunan betiği çalıştırın ve renk paletinini ayarlanabildiğini gözlemleyin.
+\begin{verbatim}
+cd /usr/kde/4/share/apps/pykde4/examples/kdeuiExamples/
+python kcolordialog.py
+\end{verbatim}
+
+\item kdeaccessibility paketi kurulumu sonrası:
+
+kmag uygulamasını çalıştırın ve açık olan ekranı büyüttüğünü gözlemleyin.
+
+\item kdemultimedia paketi kurulumu sonrası:
+\begin{itemize}
+ \item dragon uygulaması için:
+Aşağıda bulunan dosyaların uygulama ile düzgün çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+\end{verbatim}
+
+\item juk uygulaması için:
+Aşağıda bulunan dosyaların uygulama ile düzgün çalıştığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+\end{verbatim}
+
+\item kmix uygulamasının ses ayarlarını düzgün yapabildiğini gözlemleyin.
+
+\end{itemize}
+
+
 \item kdegames paketi kurulumu sonrası:
 
 Kmenüden ktuberlink ve kapman oyunlarını açın ve ilgili seslerin çıktığını ve sorunsuz çalıştıklarını gözlemleyin.
+
 \item pardus-default-settings paketi kurulumu sonrası:
 
 Pardusun ön tanımlı ayarları olan milky ikon temasının, açılış ekranının, kullanıcı giriş ekranının düzgün bir şekilde açıldığını gözlemleyin.
@@ -397,7 +517,7 @@ Bilgisayarınızı yeniden başlatın. Açılışta, çıkışta ve kullanıcı 
 
 Masaüstüne sağ tıklayarak programcık kilidini açın.
 
-Panel Üzerine sağ tıklayarak, programcık ekleyi seçin ve lacelot'u programcık olarak eklemeye çalışın. Düzgün bir şekilde eklenediğini ve çalıştığını gözlemleyin.
+Panel Üzerine sağ tıklayarak, programcık ekleyi seçin ve lancelot'u programcık olarak eklemeye çalışın. Düzgün bir şekilde eklendiğini ve çalıştığını gözlemleyin.
 
 Aynı şekilde LCD Weather Station, Twitter Microblogging, RSSNOW, Blue Marble programcıklarını da deneyiniz.
 
@@ -436,8 +556,9 @@ Aşağıda bulunan ugulamaların düzgün çalıştığını gözlemleyin.
 
 \begin{enumerate}
 
-\item  bespin-kde4-theme paketi kurulumu sonrası:
+\item  kdm-pardus-theme, kdm paketleri kurulumu sonrası:
 
+Bilgisayarınız açılırken kullanıcı giriş ekranının sorunsuz açıldığını ve login olabildiğinizi gözlemleyin.
 
 \item  ksplash-pardus-theme paketi kurulumu sonrası:
 
