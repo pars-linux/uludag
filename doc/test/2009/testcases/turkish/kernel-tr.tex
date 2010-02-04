@@ -17,9 +17,15 @@
 \maketitle
 
 \section{Default alt bileşeni}
-\begin{enumerate}
-\item perf paketi kurulumu sonrası:
 
+\begin{enumerate}
+\item Aşağıda bulunan paketler kurulum testine tabidir:
+\begin{verbatim}
+ module-vloopback
+ module-vloopback-userspace
+\end{verbatim}
+
+\item perf paketi kurulumu sonrası:
 \begin{verbatim}
 uname -r  
 \end{verbatim}
@@ -266,6 +272,7 @@ virtualbox-guest-utils
 kernel-module-headers-pae
 module-pae-alsa-driver
 module-pae-virtualbox-guest
+module-pae-virtualbox
 module-pae-broadcom-wl
 module-pae-lirc
 module-pae-nvidia173
@@ -280,11 +287,11 @@ module-pae-kqemu
 module-pae-microdia
 module-pae-nvidia96
 module-pae-r5u870
-module-pae-virtualbox
 module-pae-kvm
 module-pae-ndiswrapper
 module-pae-nvidia-current
 module-pae-syntekdriver   
+module-pae-vloopback
 \end{verbatim}
 \end{enumerate}
 \end{document}
