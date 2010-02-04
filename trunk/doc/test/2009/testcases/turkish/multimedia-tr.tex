@@ -54,6 +54,15 @@ Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from faceb
 \section{Sound alt Bileşeni}
 \begin{enumerate}
 
+\item mpck paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun mp3 dosyası ile ilgili istatiskleri listelediğini gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3 
+mpck sample.mp3
+\end{verbatim}
+
+
 \item fluidsynth paketi kurulumu sonrası:
 
 multimedia-tr.pdf vlc testini gerçekleştiriniz.
@@ -137,6 +146,11 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
+\item dvdrip paketi kurulumu sonrası:
+
+Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.
+
+dvdrip uygulmasını kmenüden açın ve dvd'de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
  \item mplayer, vlc, kaffeine, smplpayer, gnome-mplayer paketleri kurulumu sonrası:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
@@ -364,6 +378,7 @@ Lake_dance_XviD.AVI
  gimp-data-extras
  tachyon
  graphviz-docs
+ GraphicsMagick-devel
 \end{verbatim}
 \item tesseract paketi kurulumu sonrası:
 
@@ -484,8 +499,7 @@ gimp-i18n-rw
 gimp-i18n-si 
 \end{verbatim}
 
-
- \item GraphicsMagick ve GraphicsMagick-devel paketi kurulumu sonras:
+ \item GraphicsMagick  paketi kurulumu sonras:
 
 office-tr.pdf koffice-krita testinin gerçekleştiriniz.
 
