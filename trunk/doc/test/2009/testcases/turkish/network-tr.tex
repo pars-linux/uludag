@@ -14,14 +14,48 @@
 \begin{document}
 
 \maketitle
+\section{filter alt Bileşeni}
+\begin{enumerate}
+ \item iproute2 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun ağ arayüzleri ile ilgili bilgileri listelediğini gözlemleyin. 
+\begin{verbatim}
+ ifstat
+\end{verbatim}
+\item conntrack-tools paketi kurulumu sonrası:
+
+Servis yöneticisinden conntrack\_tools servisini başlatın.
+
+Aşağıda bulunan komut ile servisin başlatıldığından emin olun.
+\begin{verbatim}
+ service conntrack_tools status
+\end{verbatim}
+\item iptables paketi kurulumu sonrası:
+
+Servis yöneticisinden iptables servisini başlatın.
+
+Aşağıda bulunan komut ile servisin başlatıldığından emin olun.
+\begin{verbatim}
+ service  iptables status
+\end{verbatim}
+\end{enumerate}
+
 \section{analyzer alt Bileşeni}
 \begin{enumerate}
 \item aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  aircrack-ng
 \end{verbatim}
-\item whois paketi kurulumu sonrası:
 
+\item nmap paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun verilen adresleri taradığını gözlemleyin.
+\begin{verbatim}
+ nmap -v -sP 192.168.0.0/16 10.0.0.0/8
+\end{verbatim}
+
+ 
+\item whois paketi kurulumu sonrası:
 Aşağıda bulunan komutun www.google.com adresinin tüm etki alanlarının listelendiğini gözlemleyin.
 \begin{verbatim}
  whois www.google.com
@@ -329,11 +363,29 @@ http://www.dailymotion.com/relevance/search/lorena+mckennit/video/xd9s3_princess
  # cd pardus
 \end{verbatim}
 Yukarıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+ \item ncftp paketi kurulumu sonrası:
+
+Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ncftp ftp://ftp.freebsd.org/pub/FreeBSD 
+ls
+cd misc
+\end{verbatim}
+
+
 
 \end{enumerate}
 
 \section{Connection alt Bileşeni}
 \begin{enumerate}
+\item rfkill paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun kablosuz aygıtları listelediğini gözlemleyin.
+\begin{verbatim}
+ frkill list
+\end{verbatim}
+
+
 \item kvpnc paketi kurulumu sonrası:
 
 Kmenüden uygulamanın düzgün çalıştığını gözlemleyin.
