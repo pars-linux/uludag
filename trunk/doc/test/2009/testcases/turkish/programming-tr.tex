@@ -15,6 +15,16 @@
 \begin{document}
 
 \maketitle
+\section{Build alt bileşeni}
+\begin{enumerate}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ autogen
+\end{verbatim}
+
+\end{enumerate}
+
+
 \section{Profiler alt bileşeni}
 \begin{enumerate}
  \item valgrind paketi kurulumu sonrası:
@@ -299,11 +309,48 @@ Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.ph
 
 \subsection{Perl alt bileşeni}
 \begin{enumerate}
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir:
+\begin{verbatim}
+ perl-HTML-Template-Pro
+ perl-JSON
+ perl-JSON-XS
+ perl-common-sense
+ perlmod
+\end{verbatim}
+
+\item perl-DBD-Pg paketi kurulumu sonrası:
+
+perl-DBI paketini kurduktan sonra:
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/DBD-Pg.tar.gz
+ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+\item perl-SDL ve perl-YAML paketleri kurulumu sonrası:
+
+game-tr.pdf frozen-bubble testini gerçekleştiriniz.
+
+\item perl-MailTools paketi kurulumu sonrası:
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/MailTools.tar.gz
+ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+\item perl-ExtUtils-ParseXS paketi kurulumu sonrası:
+
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/ExtUtils-Depends.tar.gz 
+perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+\end{verbatim}
+
+
 \item perl-libwww paketi kurulumu sonrası:
 
 Aşağıda bulunan dosyayı indirin ve açın.
 \begin{verbatim}
 wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/libwww-perl.tar.gz
+perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 \end{verbatim}
 
 Konsoldan;
@@ -360,8 +407,8 @@ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/RP
 
 Konsoldan;
 \begin{verbatim}
-# cd RPC-XML
-# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+ cd RPC-XML
+ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 \end{verbatim}
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
@@ -375,8 +422,8 @@ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IP
 
 Konsoldan;
 \begin{verbatim}
-# cd IP-Country
-# /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+cd IP-Country
+perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 \end{verbatim}
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
@@ -390,8 +437,8 @@ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/HT
 
 Konsoldan;
 \begin{verbatim}
-# cd HTML-Parser
-# sudo /usr/bin/perl5.10.0 "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+cd HTML-Parser
+perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 \end{verbatim}
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
@@ -485,11 +532,54 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 \end{enumerate}
 \subsection{Python alt bileşeni}
 \begin{enumerate}
+
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  python-docs
  gnome-python-docs
  PyQt-doc
+ python-addons
+ python-bytecodeassembler
+ python-extremes
+ epydoc-doc
+\end{verbatim}
+
+\item python-Babel paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import babel
+\end{verbatim}
+
+\item pyfits paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import pyfits
+\end{verbatim}
+
+
+\item epydoc paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import epydoc
+\end{verbatim}
+
+\item python-peak-rules paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import peak
+\end{verbatim}
+
+\item python-symboltype paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import symbol
 \end{verbatim}
 
 \item 4suite paketi kurulumu sonrası:
@@ -575,7 +665,6 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  # ipython
  import preprocess
 \end{verbatim}
-
 
 \item python-avahi paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
