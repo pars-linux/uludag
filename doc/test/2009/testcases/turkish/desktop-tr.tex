@@ -32,7 +32,7 @@
 \begin{itemize}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
- icon-theme-oxygen-svg-4.2.4-39-6.pisi
+ icon-theme-oxygen-svg
 \end{verbatim}
 
 \item artwork-pardus-release paketi kurulumu sonrası:
@@ -42,6 +42,7 @@ Masaüstüne sağ tıklayın, görünüm ayarlarını seçin. Resim bölümünde
 \item icon-theme-oxygen-index ve icon-theme-oxygen-png paketleri kurulumu sonrası: 
 
 Bilgisayarınızı yeniden başlatın ve ikonların düzgün bir şekilde görüntülendiğni gözlemleyin.
+
  \item Aşağıdaki paketler aynı şekilde test edilecektir.
 \begin{verbatim}
 cursor-theme-oxygen-black
@@ -56,7 +57,7 @@ cursor-theme-oxygen-zion
 cursor-theme-oxygen-zion-big
 \end{verbatim}
 
-Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ İmleç teması altında listelendiğini gözlemleyin. İmleç temasını değiştirin ve sorunsuz bir şekilde değiştiğini gözlemleyin.
+Sistem ayarları $\rightarrow$  Klavye ve Fare $\rightarrow$ Fare $\rightarrow$ İmleç teması altında listelendiğini gözlemleyin. İmleç temasını değiştirin ve sorunsuz bir şekilde değiştiğini gözlemleyin.
 
 \end{itemize}
 
@@ -283,6 +284,82 @@ Aşağıda bulunan komutu çalıştırın ve klipper'ı başlatın sorunsuz bir 
 \end{enumerate}
 
 \section{Kde4 alt Bileşeni}
+
+\subsection*{l10n alt bileşeni}
+
+\begin{enumerate} 
+ \item Aşağıda bulunan paketler için; 
+
+Sistem Ayarları $\rightarrow$ Ülke, Bölge ve Dil yolunu izleyin ve paketle ilgili dili seçerek dilin değiştiğini gözlemleyin. 
+
+\begin{verbatim}
+ kde-l10n-ar
+kde-l10n-bg
+kde-l10n-bn_IN
+kde-l10n-ca
+kde-l10n-ca-doc
+kde-l10n-cs
+kde-l10n-csb
+kde-l10n-da
+kde-l10n-de
+kde-l10n-de-doc
+kde-l10n-el
+kde-l10n-en_GB
+kde-l10n-es
+kde-l10n-es-doc
+kde-l10n-et
+kde-l10n-eu
+kde-l10n-fi
+kde-l10n-fr
+kde-l10n-fr-doc
+kde-l10n-ga
+kde-l10n-gl
+kde-l10n-he
+kde-l10n-hi
+kde-l10n-hu
+kde-l10n-is
+kde-l10n-it
+kde-l10n-it-doc
+kde-l10n-ja
+kde-l10n-kk
+kde-l10n-km
+kde-l10n-ko
+kde-l10n-ku
+kde-l10n-lt
+kde-l10n-lv
+kde-l10n-mk
+kde-l10n-ml
+kde-l10n-nb
+kde-l10n-nds
+kde-l10n-nl
+kde-l10n-nl-doc
+kde-l10n-nn
+kde-l10n-pa
+kde-l10n-pl
+kde-l10n-pl-doc
+kde-l10n-pt
+kde-l10n-pt_BR
+kde-l10n-pt_BR-doc
+kde-l10n-ro
+kde-l10n-ru
+kde-l10n-sk
+kde-l10n-sl
+kde-l10n-sr
+kde-l10n-sv
+kde-l10n-sv-doc
+kde-l10n-tg
+kde-l10n-th
+kde-l10n-tr
+kde-l10n-tr-doc
+kde-l10n-uk
+kde-l10n-wa
+kde-l10n-zh_CN
+kde-l10n-zh_TW
+\end{verbatim}
+
+\end{enumerate}
+
+
 \subsection*{Admin alt bileşeni}
 
 \begin{enumerate} 
@@ -324,7 +401,7 @@ kdebindings
 kdepimlibs-devel
 kdepimlibs
 kdevplatform
-kdevplatform-devel
+kdevplatform-devell
 \end{verbatim}
 \item kdewebdev paketi kurulumu sonrası:
 \begin{itemize}
@@ -347,7 +424,7 @@ Aşağıda bulunan sıkıştırılmış dosyanın ark ile açılabildiğini göz
 
 \item kdesdk paketi kurulumu sonrası:
 \begin{itemize}
- \item kate uygulamasının srunsuz çalıştırğını gözlemleyin.
+ \item kate uygulamasının sorunsuz çalıştırğını gözlemleyin.
  \item umbrello uygulamasının sorunsuz çalıştığını gözlemleyin.
 \end{itemize}
 
@@ -386,19 +463,19 @@ Oturumu kapatın ve açılış sesinin düzgün çalıştığını gözlemleyin.
 
 \item kdeartwork-screensavers paketi kurulumu sonrası:
 
-Sistem Ayarları-> Masaüstü -> Ekran Koruyucu bölümünden asciiquarium seçeneğini seçin ve dene butonuna basın ve ekran koruyucusunun düzgün bir şekilde göründüğünü gözlemleyin.
+Sistem Ayarları $\rightarrow$ Masaüstü $\rightarrow$ Ekran Koruyucu bölümünden asciiquarium seçeneğini seçin ve dene butonuna basın ve ekran koruyucusunun düzgün bir şekilde göründüğünü gözlemleyin.
 
 \item kdeartwork-icons paketi kurulumu sonrası:
 
-Sistem Ayarları-> Görünüm -> Simgeler bölümünden Siyah-Beyaz seçeneğini seçin ve uygula butonuna basın. Ve kde ikonlarınızın siyah-beyaz olduğunu gözlemleyin.
+Sistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Simgeler bölümünden Siyah-Beyaz seçeneğini seçin ve uygula butonuna basın. Ve kde ikonlarınızın siyah-beyaz olduğunu gözlemleyin.
 
 \item kdeartwork-emoticons paketi kurulumu sonrası:
 
-Sistem Ayarları-> Görünüm -> Duygu Simgeleri bölümünden Kmess-Cartoon seçeneğini seçin ve uygula butonuna basın. Kopete uygulamasını açın ve duygu simgelerinizin değiştiğini gözlemleyin.
+Sistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Duygu Simgeleri bölümünden Kmess-Cartoon seçeneğini seçin ve uygula butonuna basın. Kopete uygulamasını açın ve duygu simgelerinizin değiştiğini gözlemleyin.
 
 \item kdeartwork-colorscheme paketi kurulumu sonrası:
 
-Sistem Ayarları-> Görünüm -> Renkler bölümünden Desert seçeneğini seçin ve uygula butonuna basın ve kde renginin kırmızı olduğunu gözlemleyin.
+Sistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Renkler bölümünden Desert seçeneğini seçin ve uygula butonuna basın ve kde renginin kırmızı olduğunu gözlemleyin.
 
 \item kdeadmin paketi kurulumu sonrası:
 Aşağıda bulunan komutu çalıştırın ve kde sistem çağrılarının listelendiğini gözlemleyin.
