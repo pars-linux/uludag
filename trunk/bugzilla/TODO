@@ -16,6 +16,7 @@ Low -> küçük + önemsiz + iyileştirme
 - Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
 - collectstats.pl betiği çalıştırılacak. Yardım için http://bugs.pardus.org.tr/testzilla/docs/en/html/extraconfig.html,
 - Yeni hata giriş sayfasının layout'unda bazı değişiklikler gerekiyor bkz. bugzilla.mozilla.org
+- Default preferences->Enable tags for bugs Off yap.
 
 + Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi,
 + Öntanımlı eklenti tipi text/plain olsun ya da otomatik detect etsin (playground/bugzilla/files'da kod yaması olarak),
