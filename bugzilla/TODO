@@ -15,10 +15,10 @@ Low -> küçük + önemsiz + iyileştirme
 - Review ürününün yaratılması ve bu ürüne erişebilen editbugs'ı kapsayan review grubunun oluşturulması ve izinlerinin verilmesi. (Administration-> Parameters->Group Security -> Useentryfroupdefault-> on ve Products -> review -> Edit group access control -> review ENTRY, SHOWN,MANDATORY, canedit, editcomponents, canconfirm, editbugs, bugs)
 - Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
 - collectstats.pl betiği çalıştırılacak. Yardım için http://bugs.pardus.org.tr/testzilla/docs/en/html/extraconfig.html,
-- Öntanımlı eklenti tipi text/plain olsun ya da otomatik detect etsin.
 - Yeni hata giriş sayfasının layout'unda bazı değişiklikler gerekiyor bkz. bugzilla.mozilla.org
 
 + Bug girme sayfasının mozilla bugs'a benzer şekilde değiştirilmesi,
++ Öntanımlı eklenti tipi text/plain olsun ya da otomatik detect etsin (playground/bugzilla/files'da kod yaması olarak),
 + default cc'nin arayüzde görünür hale gelmesi ve default cc'ye atanan kişilerin gözden geçirilmesi,
 + Database'den silinen ürünlerin hatalarının genel ürününe atanması ve diğer sorunların çözülmesi,
 + AMD ve 'diğer' platformlarının x86'ya dönüştürülüp rep_platform tablosundan temizlenmesi,
