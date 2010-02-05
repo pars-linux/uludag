@@ -3,6 +3,7 @@
 
 import optparse
 import os
+import re
 import sys
 
 import ahenk.pam
@@ -192,7 +193,6 @@ def ldapConfig(host, domain, dryrun=False):
     else:
         file("/etc/security/ldap.conf", "w").write(conf_ldap)
 
-
 def domainConfig(host, domain, workgroup, dryrun=False):
     """
         Builds Samba and Kerberos configuration for AD authentication.
@@ -216,6 +216,41 @@ def domainConfig(host, domain, workgroup, dryrun=False):
     else:
         file("/etc/samba/smb.conf", "w").write(conf_samba)
         file("/etc/krb5.conf", "w").write(conf_krb)
+
+def serviceConfig(name, key, value=None, dryrun=False):
+    """
+        Updates configuration of a system service.
+
+        Parameters:
+            name: Service name
+            key: Setting
+            value: Value
+            dryrun: Does nothing, just prints configuration if True
+    """
+
+    fn = os.path.join("/etc/conf.d", name)
+
+    if os.path.exists(fn):
+        lines = []
+        updated = False
+        for line in file(fn):
+            line = line.strip()
+            if re.match("^%s\s*=.*" % key, line):
+                lines.append("%s = %s" % (key, value))
+                updated = True
+            else:
+                lines.append(line)
+        if not updated:
+            lines.append("%s = %s" % (key, value))
+        conf_service = "\n".join(lines)
+    else:
+        conf_service = "%s = %s\n" % (key, value)
+
+    if dryrun:
+        print "Service Configuration (%s):" % name
+        print "    %s" % str(conf_service).replace("\n", "\n    ")
+    else:
+        file(fn, "w").write(conf_service)
 
 
 if __name__ == '__main__':
@@ -275,6 +310,7 @@ if __name__ == '__main__':
         nsSwitchSetSource("ad", options.dryrun)
         # Kerberos and SAMBA configuration
         domainConfig(options.host, options.domain, options.workgroup, options.dryrun)
-        # TODO: Enable winbind and start samba service
+        serviceConfig("samba", "winbind", "yes", options.dryrun)
+        # FIXME: Start Samba
 
     sys.exit(0)
