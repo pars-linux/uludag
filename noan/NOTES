@@ -1,5 +1,0 @@
-This is the file that explains how our application structure is laid out.
-
-- wrappers.py
-    It contains render_response() wrapper function that wraps render_to_response with RequestContext
-    So, we avoid duplication of code like "context_instance=RequestContext(request))" in every render_to_response function
