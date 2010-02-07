@@ -1,5 +1,0 @@
-include COPYING
-include AUTHORS
-include README
-include test.py
-test_pksimple.py

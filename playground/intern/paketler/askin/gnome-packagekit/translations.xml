@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<PISI>
-  <Source>
-    <Name>gnome-packagekit</Name>
-    <Summary xml:lang="tr">Gtk+ ile yazılmış PackageKit istemcisi</Summary>
-    <Description xml:lang="tr">Birincil amacı farklı dağıtımlarda kullanılan grafiksel yazılım araçlarını birleştirmek ve PolicyKit gibi güncel teknolojileri kullanarak eksiklikleri gidermektir.</Description>
-  </Source>
-</PISI>

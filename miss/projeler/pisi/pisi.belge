@@ -1,0 +1,8 @@
+# -*- coding: utf-8 -*-
+depo = "http://svn.uludag.org.tr/uludag/trunk/doc/tr/pisi/"
+belge = "pisi.lyx"
+isim = "PİSİ"
+dizin = "pisi"
+ikonlar = "../../../images"
+dosyalar = [ "images/pisi-gelistirici-small.png", "images/pisi-gelistirici.png", "images/pisi-istemci-small.png", "images/pisi-istemci.png" ]
+

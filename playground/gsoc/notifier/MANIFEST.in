@@ -1,6 +1,0 @@
-recursive-include i18n *
-recursive-include pnm/ui *.ui
-recursive-include icons *
-recursive-include auxfiles *
-include AUTHORS COPYING
-
