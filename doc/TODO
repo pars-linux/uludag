@@ -1,8 +1,15 @@
 ======================================
 TODO list for missing documents
-Please write in the format
-DocumentName (Writer)
 ======================================
+
+Fill the list with the format "DocumentName (Writer)"
+
+Documents will be written in ReST format, see following for more info
+http://docutils.sourceforge.net/rst.html
+http://docutils.sourceforge.net/docs/user/rst/quickref.html
+
+Required documents
+------------------
 
 Repo component structure (Onur Küçük)
 
