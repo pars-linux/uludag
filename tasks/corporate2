@@ -103,7 +103,7 @@
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (+)
-    * DMI gizleyince %9 çıkıyor (-)
+    * DMI gizleyince %9 çıkıyor (+)
     * Common folders ile disks'i birleştir (-)
 
 * Kernel/Baselayout (Ozan Çağlayan)
