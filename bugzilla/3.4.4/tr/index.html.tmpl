@@ -52,7 +52,7 @@ function addSidebar() {
     sidebarname="[% terms.Bugzilla %] "+sidebarname;
   window.sidebar.addPanel (sidebarname, "[% urlbase FILTER html %]sidebar.cgi", "");
 }
-var quicksearch_message = "Enter [% terms.abug %] # or some search terms";
+var quicksearch_message = "Bir [% terms.abug %] veya arama kriteri giriniz";
 
 function checkQuicksearch( form ) {
   if (form.quicksearch.value == '' || form.quicksearch.value == quicksearch_message ) { 
@@ -147,7 +147,7 @@ YAHOO.util.Event.onDOMReady(onLoadActions);
               onfocus="quicksearchHelpText(this.id, 'hide');"
               onblur="quicksearchHelpText(this.id, 'show');"
             >
-            <input id="find" type="submit" value="Quick Search">
+            <input id="find" type="submit" value="Hızlı Arama">
             <ul class="additional_links" id="quicksearch_links">
               <li>
                 <a href="page.cgi?id=quicksearch.html">Hızlı Arama Yardımı</a>
