@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -18,15 +18,11 @@ import smtplib
 import pisi.specfile
 
 from buildfarm import logger, templates
+from buildfarm.auth import Auth
 from buildfarm.config import configuration as conf
 
-try:
-    import mailauth
-except ImportError:
-    # FIXME: Anddddd problem here
-    if conf.sendemail and conf.usesmtpauth:
-        logger.info("*** You have to create a mailauth.py file for defining 'username' and 'password' to use SMTP authentication.")
-        sys.exit(1)
+# Authentication stuff
+(username, password) = Auth().get_credentials("Mailer")
 
 class MailerError(Exception):
     pass
@@ -44,12 +40,6 @@ def send(message, pspec = "", type = ""):
     if not conf.sendemail:
         logger.info("*** Sending of notification e-mails is turned off.")
         return
-
-    if conf.usesmtpauth:
-        if globals().has_key('mailauth'):
-            if not mailauth.username or not mailauth.password:
-                logger.info("*** You have to define username/password in mailauth.py for sending authenticated e-mails.")
-                return
 
     recipientsName, recipientsEmail = [], []
     if pspec:
@@ -85,9 +75,9 @@ def send(message, pspec = "", type = ""):
         logger.error("*** Failed sending e-mail: Couldn't open session on %s." % conf.smtpserver)
         return
 
-    if conf.usesmtpauth and mailauth.password:
+    if conf.usesmtpauth:
         try:
-            session.login(mailauth.username, mailauth.password)
+            session.login(username, password)
         except smtplib.SMTPAuthenticationError:
             logger.error("*** Failed sending e-mail: Authentication failed.")
             return
