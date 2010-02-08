@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009, TUBITAK/UEKAE
+# Copyright (C) 2005-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -23,9 +23,6 @@ import pisi.util
 class Error(pisi.Error):
     pass
 
-class Exception(pisi.Exception):
-    pass
-
 def printu(obj, err = False):
     if not isinstance(obj, unicode):
         obj = unicode(obj)
@@ -35,7 +32,6 @@ def printu(obj, err = False):
         out = sys.stdout
     out.write(obj.encode('utf-8'))
     out.flush()
-
 
 
 class CLI(pisi.ui.UI):
