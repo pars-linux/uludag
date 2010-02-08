@@ -137,3 +137,10 @@ This message is sent from Pardus buildfarm. Please do not reply as it is automat
 
 Happy hacking!
 """
+
+# Convenience dict
+all = {
+        'error'     : error_message,
+        'announce'  : announce_message,
+        'info'      : info_message,
+      }
