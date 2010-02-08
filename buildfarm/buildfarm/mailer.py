@@ -11,7 +11,6 @@
 # Please read the COPYING file.
 
 import os
-import sys
 import socket
 import smtplib
 
@@ -48,13 +47,9 @@ def send(message, pspec = "", type = ""):
         recipientsName.append(specFile.source.packager.name)
         recipientsEmail.append(specFile.source.packager.email)
 
-    templates = {"error"    : templates.error_message,
-                 "info"     : templates.info_message,
-                 "announce" : templates.announce_message}
-
     packagename = os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(conf.logfile).readlines()[-20:])
-    message = templates.get(type) % {'log'          : wrap(last_log),
+    message = templates.all[type] % {'log'          : wrap(last_log),
                                      'recipientName': " ".join(recipientsName),
                                      'mailTo'       : ", ".join(recipientsEmail),
                                      'ccList'       : ', '.join(conf.cclist),
