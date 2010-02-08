@@ -1,3 +1,9 @@
+08-02-2010  Ozan Çağlayan <ozan_at_pardus.org.tr>
+	* sysinfo/sysinfo.cpp:	
+		 Fix VT support detection,
+		 Bring back root partition,
+		 Hide %9 placeholder when DMI data is unavailable.
+
 16-12-2009  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* sysinfo/sysinfo.cpp:
 		Show swap information if swap is enabled,
