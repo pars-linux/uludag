@@ -15,7 +15,7 @@ error_message = """\
 From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [2009] %(type)s: %(subject)s
+Subject: [%(subjectList)s] %(type)s: %(subject)s
 MIME-Version: 1.0
 Content-Type: multipart/alternative; boundary="boundary42"
 
@@ -40,8 +40,8 @@ The last 20 lines of the log before the error happens is as follows:
 %(log)s
 --------------------------------------------------------------------------
 
-Plain log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log
-Fancy log file: http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html
+Plain log file: http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log
+Fancy log file: http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html
 
 Happy hacking!
 
@@ -89,9 +89,9 @@ Content-Type: text/html;
 </div>
 
 <p>Plain log file:
-<a href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.log</a><br>
+<a href="http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log">http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.log</a><br>
 Fancy log file:
-<a href="http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html">http://paketler.pardus.org.tr/logs/2009/%(packagename)s.html</a>
+<a href="http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html">http://paketler.pardus.org.tr/logs/%(logsdir)s/%(packagename)s.html</a>
 
 
 <p>Happy hacking!<br>
@@ -105,7 +105,7 @@ info_message = """\
 From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
-Subject: [2009] %(subject)s
+Subject: [%(subjectList)s] %(subject)s
 Content-Type: text/plain;
             charset="utf-8"
 
@@ -122,7 +122,7 @@ Happy hacking!
 announce_message = """\
 From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
-Subject: [2009] [REPORT] New packages in -testing repository
+Subject: [%(subjectList)s] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
             charset="utf-8"
 
