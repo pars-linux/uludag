@@ -71,7 +71,8 @@
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (/50)
-    * libnotify API breakage (-)
+    * libnotify API breakage (X)
+    * yeni notification temasında bazı renk/pozisyon sorunları var (-)
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
@@ -122,17 +123,17 @@
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Pulseaudio yardımcı programlarının depoya alınması (+)
     * CUPS 1.4 geçişi (+)
+    * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli, dizin silinme sorunu) (+)
+    * Samba 3.4 geçişi, service.py'lerin ayrılması (+)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
-    * Samba 3.4 geçişi, service.py'lerin ayrılması (/90)
-    * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli, dizin silinme sorunu) (/90)
+    * Yeni polkit (Review'da. kdebase, polkit-kde vs. port edilmeli) (/70)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
-    * Yeni polkit (Review'da. kdebase, polkit-kde vs. port edilmeli) (/20)
 
 * COMAR/PolKit (Bahadır Kandemir)
-    * polkit 0.96 geçişi (-)    <<20/02/2010>>
+    * polkit 0.96 geçişi (/50)    <<20/02/2010>>
 
 * PolicyKit-kde (Gökçen Eraslan)
-    * PolicyKit-kde'nin polkit-1'e geçirilmesi (veya polkit-gnome) (-)  <<20/02/2010>>
+    * PolicyKit-kde'nin polkit-1'e geçirilmesi (veya polkit-gnome) (+)  <<20/02/2010>>
 
 * Evolution harekatı (İbrahim Güngör)
     * Paketlerin hazırlanması (/5)
