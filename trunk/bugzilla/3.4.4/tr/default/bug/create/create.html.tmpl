@@ -22,12 +22,11 @@
   #                 Akamai Technologies <bugzilla-dev@akamai.com>
   #                 Max Kanat-Alexander <mkanat@bugzilla.org>
   #                 Frédéric Buclin <LpSolit@gmail.com>
-  # Translator(s):  Necmettin Begiter <necmettin@pardus.org.tr> (Turkish)
   #%]
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% title = BLOCK %][% terms.Bug %] Gir: [% product.name FILTER html %][% END %]
+[% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -195,8 +194,7 @@ TUI_hide_default('expert_fields');
   <tr>
     <td colspan="4">
         <a id="expert_fields_controller" class="controller bz_default_hidden"
-            href="javascript:TUI_toggle_class('expert_fields')">Hide
-        Advanced Fields</a>
+            href="javascript:TUI_toggle_class('expert_fields')">Gelişmiş Alanları Gizle</a>
       [%# Show the link if the browser supports JS %]
       <script type="text/javascript">
           YAHOO.util.Dom.removeClass('expert_fields_controller', 
@@ -209,7 +207,7 @@ TUI_hide_default('expert_fields');
     <th>Ürün:</th>
     <td width="10%">[% product.name FILTER html %]</td>
 
-    <th>Bildiren:</th>
+    <th>Bileşen:</th>
     <td width="100%">[% user.login FILTER html %]</td>
   </tr>
 
@@ -221,11 +219,23 @@ TUI_hide_default('expert_fields');
     </th>
     <td>
       <select name="component" onchange="set_assign_to();" size="7">
+        [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
+        [% IF Param("usemenuforusers") %]
+          [% assignees_list = user.get_userlist.clone %]
+          [% qa_contacts_list = user.get_userlist.clone %]
+        [% END %]
+
         [%- FOREACH c = product.components %]
           <option value="[% c.name FILTER html %]"
             [% " selected=\"selected\"" IF c.name == default.component_ %]>
             [% c.name FILTER html -%]
           </option>
+          [% IF Param("usemenuforusers") %]
+            [% INCLUDE build_userlist default_user = c.default_assignee,
+                                      userlist = assignees_list %]
+            [% INCLUDE build_userlist default_user = c.default_qa_contact,
+                                      userlist = qa_contacts_list %]
+          [% END %]
         [%- END %]
       </select>
     </td>
@@ -238,7 +248,7 @@ TUI_hide_default('expert_fields');
           <td>
             <fieldset>
               <legend>Bileşen Açıklaması</legend>
-              <div id="comp_desc" class="comment">Açıklamasını okumak istediğiniz bileşeni seçin.</div>
+              <div id="comp_desc" class="comment">Açıklamasını görmek için bir bileşen seçin.</div>
             </fieldset>
           </td>
         </tr>
@@ -247,7 +257,7 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th rowspan="3">Sürüm:</th>
+    <th rowspan="3">Versiyon:</th>
     <td rowspan="3">
       <select name="version" size="5">
         [%- FOREACH v = version %]
@@ -257,10 +267,11 @@ TUI_hide_default('expert_fields');
         [%- END %]
       </select>
     </td>
-
+<!--
     [% INCLUDE bug/field.html.tmpl
       bug = default, field = select_fields.bug_severity, editable = 1, 
       value = default.bug_severity %]
+      -->
   </tr>
 
   <tr>
@@ -269,11 +280,11 @@ TUI_hide_default('expert_fields');
       value = default.rep_platform %]
   </tr>
 
-  <tr>
+  <!--tr>
     [% INCLUDE bug/field.html.tmpl 
        bug = default, field = select_fields.op_sys, editable = 1, 
        value = default.op_sys %]
-  </tr>
+  </tr-->
 </tbody>
 
 <tbody class="expert_fields">
@@ -296,21 +307,22 @@ TUI_hide_default('expert_fields');
 </tbody>
 
 [% IF !Param('defaultplatform') || !Param('defaultopsys') %]
-  <tbody>
+  <!--tbody>
     <tr>
       <th>&nbsp;</th>
       <td colspan="3" class="comment">
+        We've made a guess at your
         [% IF Param('defaultplatform') %]
-          İşletim sisteminiz 
+          operating system. Please check it
         [% ELSIF Param('defaultopsys') %]
           platform. Please check it
         [% ELSE %]
-          İşletim sisteminiz ve platform 
+          operating system and platform. Please check them
         [% END %]
-        tahminidir. Lütfen kontrol edip gerekiyorsa düzeltiniz.
+        and make any corrections if necessary.
       </td>
     </tr>
-  </tbody>
+  </tbody-->
 [% END %]
 
 <tbody class="expert_fields">
@@ -322,10 +334,10 @@ TUI_hide_default('expert_fields');
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Başlangıçtaki Durumu:</th>
+    <th>Başlangıç Durumu:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Başlangıçtaki Durumu', name => 'bug_status' } %]
+    [% sel = { description => 'Başlangıç Durumu', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
@@ -366,14 +378,15 @@ TUI_hide_default('expert_fields');
          disabled => assigned_to_disabled
          size => 30
          emptyok => 1
+         custom_userlist => assignees_list
        %]
-      <noscript>(Atamayı bileşen için öntanımlı olan kişiye yapmak için boş bırakın)</noscript>
+      <noscript>(Ön tanımlı atamak için kutuyu boş bırakınız)</noscript>
     </td>
   </tr>
   
 [% IF Param("useqacontact") %]
     <tr>
-      <th>Kalite kontrol kişisi:</th>
+      <th>QA Contact:</th>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -381,8 +394,9 @@ TUI_hide_default('expert_fields');
          disabled => qa_contact_disabled
          size => 30
          emptyok => 1
+         custom_userlist => qa_contacts_list
        %]
-        <noscript>(Kalite kontrol kişisinin bileşene göre seçilmesi için boş bırakın)</noscript>
+        <noscript>(Ön tanımlı kalite kontrol sorumlusuna atamak için kutuyu boş bırakınız)</noscript>
       </td>
     </tr>
 [% END %]
@@ -417,28 +431,28 @@ TUI_hide_default('expert_fields');
   </tr>
 
 [% IF user.in_group(Param('timetrackinggroup')) %]
-  <tr>
-    <th>Tahmini Saat:</th>
+  <!--tr>
+    <th>Estimated Hours:</th>
     <td colspan="2">
       <input name="estimated_time" size="6" maxlength="6" value="0.0">
     </td>
   </tr>
   <tr>
-    <th>Bitirme Tarihi:</th>
+    <th>Deadline:</th>
     <td colspan="2">
       <input name="deadline" size="10" maxlength="10" value="[% deadline FILTER html %]">
-      <small>(YYYY-AA-GG)</small>
+      <small>(YYYY-MM-DD)</small>
     </td>
   </tr>
 
   <tr>
     <td colspan="3">&nbsp;</td>
-  </tr>
+  </tr-->
 [% END %]
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <th>Hata İsmi:</th>
+    <th>Alias:</th>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -446,7 +460,7 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>Adres:</th>
+    <th>URL:</th>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
@@ -470,20 +484,188 @@ TUI_hide_default('expert_fields');
 
 <tbody>
 
-  <tr>
-    <th>Özet:</th>
+  <tr bgcolor="[% tablecolour %]">
+    <td align="right" valign="top">
+      <b>Özet</b>
+    </td>
+    <td valign="top">
+      <input type="text" size="70" name="short_desc" id="short_desc"·value="[% short_desc FILTER html %]"  maxlength="255" spellcheck="true">
+      <p>
+        Yaşadığınız problemi özetleyen bir cümle.
+        Olabildiğince ipucu kelime kullanmaya ve açıklayıcı olmaya çalışınız..
+      </p>
+      <p>
+        <tt>
+          <font color="#990000">Kötü Örnek</font>: KDE çöküyor
+        </tt>
+        <br>
+        <tt>
+          <font color="#009900">İyi Örnek</font>:
+          Dolphin uygulamasını açtığımda eğer dizin içerisinde çok fazla dosya varsa KDE çöküyor.
+        </tt>
+      </p>
+    </td>
+  </tr>
+
+  <!--tr>
+    <th>Summary:</th>
     <td colspan="3">
       <input name="short_desc" size="70" value="[% short_desc FILTER html %]"
              maxlength="255" spellcheck="true">
     </td>
-  </tr>
+  </tr-->
 
   <tr>
-    <th>Açıklama:</th>
+    <td align="right" valign="top">
+      <b>Ayrıntılar</b>
+    </td>
+    <td valign="top">
+      [% INCLUDE global/textarea.html.tmpl
+        name    = 'comment'
+        minrows = 6
+        cols    = constants.COMMENT_COLS
+      %]
+      <p>
+        Özeti daha ayrıntılı açıklayın. Bu açıklamanın hataya özgü olmasına lütfen özen gösterin.
+      </p>
+      <p>
+        <tt>
+          <font color="#990000">Kötü Örnek</font>: KDE çöktü. Hep böyle oluyor :S
+        </tt>
+        <br>
+        <tt>
+          <font color="#009900">İyi Örnek</font>: Dolphin uygulamasını açtığımda eğer dizin içierisinde çok fazla dosya varsa Dolphin uygulaması dosysları görüntüleyemiyor ve donuyor. <br> Bir süre sonra KDE çöküyor.
+        </tt>
+      </p>
+    </td>
+  </tr>
+
+ <tr bgcolor="[% tablecolour %]">
+    <td align="right" valign="top">
+      <b>Tekrarlanabilirlik</b>
+    </td>
+    <td valign="top">
+      <select name="reproducible">
+        <option name="null" value="--">
+        --
+        <option name="AlwaysReproducible" value="Always">
+          Herzaman tekrarlanabiliryor.
+        </option>
+        <option name="Sometimes" value="Sometimes">
+          Bazen tekrarlanabiliyor.
+        </option>
+        <option name="DidntTry" value="Didn't try">
+          Hatayı tekrarlamayı denemedim.
+        </option>
+        <option name="NotReproducible" value="Couldn't Reproduce">
+          Denedim fakat tekrarlayamadım.
+        </option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td align="right" valign="top">
+      <b>Tekrarlanabilmesi için gerekli adımlar</b>
+    </td>
+    <td valign="top">
+      [% INCLUDE global/textarea.html.tmpl
+        name           = 'reproduce_steps'
+        minrows        = 4
+        cols           = constants.COMMENT_COLS
+        defaultcontent = "1.\n2.\n3."
+      %]
+      <p>
+        Aşama aşama hatayı tekrarlamanız için gerekli olan adımları açıklayın.
+      </p>
+    </td>
+  </tr>
+
+ <tr bgcolor="[% tablecolour %]">
+    <td valign="top" align="right">
+      <b>Güncel Sonuçlar</b>
+    </td>
+    <td valign="top">
+      [% INCLUDE global/textarea.html.tmpl
+        name    = 'actual_results'
+        minrows = 4
+        cols    = constants.COMMENT_COLS
+      %]
+      <p>
+       Yukarıda açıkladığınız aşamalardan sonra neler oldu?
+      </p>
+    </td>
+  </tr>
+
+
+ <tr>
+    <td valign="top" align="right">
+      <b>Beklenen Sonuçlar</b>
+    </td>
+    <td valign="top">
+      [% INCLUDE global/textarea.html.tmpl
+        name    = 'expected_results'
+        minrows = 4
+        cols    = constants.COMMENT_COLS
+      %]
+      <p>
+        Gerçekte uygulama nasıl davranması gerekiyordu?
+     </p>
+    </td>
+  </tr>
+
+ <tr bgcolor="[% tablecolour %]">
+    <td valign="top" align="right">
+      <b>Ek Açıklamalar</b>
+    </td>
+    <td valign="top">
+      [% INCLUDE global/textarea.html.tmpl
+        name    = 'additional_info'
+        minrows = 8
+        cols    = constants.COMMENT_COLS
+      %]
+      <p>
+     <tt>
+          Hata için gerekli olduğunu düşündüğünüz her türlü bilgiyi buraya ekleyebilirsiniz.
+        Bu bilgi bilgisayarınız ile ilgili donanım bilgisi, herhangi bir ayar, test aşaması olabilir. 
+        <br>
+        Eğer bu açıklama bir kaç satırdan fazla ise, lütfen <b>dosya ekle</b> bölümünden ilgili dosyayı ekleyiniz. 
+      </p>
+
+    </tt>
+   </td>
+  </tr>
+
+ <tr>
+    <td valign="top" align="right">
+      <b>Önem</b>
+    </td>
+    <td valign="top">
+      <select name="bug_severity" size="4">
+        <option name="blocking" value="blocking">
+          Urgent:  Güvenlik güncellemeleri ve tüm sistemi kullanılmaz hale getiren hatalar
+        </option>
+        <option name="high" value="high">
+          Büyük: : Programı kullanılmaz hale getiren hatalar
+        </option>
+        <option name="normal" value="normal" selected="selected">
+          Normal: Programın bir kısmını kullanılmaz hale getiren hatalar.
+        </option>
+        <option name="low" value="low">
+          Küçük: Yeni bir ozellik, kozmetik sorun gibi hatalar
+        </option>
+      </select>
+      <p>
+        Karşılaştığınız problemin ne kadar önemli olduğunu veya yeni bir özellik isteğini açıklamanız içindir.
+      </p>
+    </td>
+  </tr>
+
+  <!--tr>
+    <th>Description:</th>
     <td colspan="3">
       [% defaultcontent = BLOCK %]
         [% IF cloned_bug_id %]
-+++ Bu [% terms.bug %], [% cloned_bug_id %] numaralı [% terms.bugGen %] kopyası olarak başlatıldı +++
++++ This [% terms.bug %] was initially created as a clone of [% terms.Bug %] #[% cloned_bug_id %] +++
 
 
         [% END %]
@@ -501,7 +683,7 @@ TUI_hide_default('expert_fields');
        %]
       <br>
     </td>
-  </tr>
+  </tr-->
 
   [% IF Param("insidergroup") && user.in_group(Param("insidergroup")) %]
     <tr class="expert_fields">
@@ -511,7 +693,7 @@ TUI_hide_default('expert_fields');
         <input type="checkbox" id="commentprivacy" name="commentprivacy"
           [% " checked=\"checked\"" IF commentprivacy %]>
         <label for="commentprivacy">
-          İlk Açıklama Gizli
+          Başlangıç Açıklaması Gizlidir
         </label>
       </td>
     </tr>
@@ -523,19 +705,20 @@ TUI_hide_default('expert_fields');
       <script type="text/javascript">
         <!--
         document.write( '<div id="attachment_false">'
-                      +   '<input type="button" value="Ek dosya gönder" '
+                      +   '<input type="button" value="Dosya Ekle" '
                       +          'onClick="handleWantsAttachment(true)"> '
-                      +   '<em style="display: none">Bu düğme sizde çalışmıyor '
-                      +   'çünkü tarayıcınız CSS desteklemiyor (veya kapatılmış).<\/em>'
+                      +   '<em style="display: none">This button has no '
+                      +   'functionality for you because your browser does '
+                      +   'not support CSS or does not use it.<\/em>'
                       + '<\/div>'
                       + '<div id="attachment_true" style="display: none">'
                       +   '<input type="button" '
-                      +          'value="Ek oluşturma " '
+                      +          'value="Don\'t add an attachment " '
                       +          'onClick="handleWantsAttachment(false)">');
         //-->
       </script>
         <fieldset>
-          <legend>Yeni ek oluştur</legend>
+          <legend>Dosya Ekle</legend>
           <table class="attachment_entry">
             [% PROCESS attachment/createformcontents.html.tmpl
                        flag_types = product.flag_types.attachment
@@ -559,7 +742,7 @@ TUI_hide_default('expert_fields');
         <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
-                 value="[% keywords FILTER html %]"> (isteğe bağlı)
+                 value="[% keywords FILTER html %]"> (optional)
         </td>
       </tr>
     [% END %]
@@ -571,7 +754,7 @@ TUI_hide_default('expert_fields');
       </td>
     </tr>
     <tr>
-      <th>Engelledikleri:</th>
+      <th>Ters Bağımlılıkları:</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
@@ -586,11 +769,11 @@ TUI_hide_default('expert_fields');
     <td colspan="3">
       <br>
         <strong>
-          Sadece seçili grupların tamamına üye olan kullanıcılar bu [% terms.bugAcc %] görebilir:
+          Sadece seçili gruptakiler bu hatayı görebilir:
         </strong>
       <br>
       <font size="-1">
-        (Bunu herkese açık bir [% terms.bug %] haline getirmek için bütün kutuları boş bırakın.)
+        (Hatayı halka açık hale getirmek için kutucuğu işaretlemeyin.)
       </font>
       <br>
       <br>
@@ -601,7 +784,7 @@ TUI_hide_default('expert_fields');
         <input type="checkbox" id="bit-[% g.bit %]"
           name="bit-[% g.bit %]" value="1"
           [% " checked=\"checked\"" IF g.checked %]>
-          <label for="bit-[% g.bit %]">[% g.description FILTER html_light %]</label><br>
+          <label for="bit-[% g.bit %]">Güvenlik Hataları Üzerinde değişiklik yapabilir.</label><br>
       [% END %]
     </td>
   </tr>
@@ -615,13 +798,13 @@ TUI_hide_default('expert_fields');
   <tr>
     <th>&nbsp;</th>
     <td colspan="3">
-      <input type="submit" id="commit" value="Gönder"
+      <input type="submit" id="commit" value="Kaydet"
              onclick="if (this.form.short_desc.value == '')
-             { alert('Lütfen bu [% terms.bugAcc %] özetleyen bir cümle girin.');
+             { alert('Bu hata için lütfen bir özet cümlesi giriniz!');
                return false; } return true;">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="submit" name="maketemplate" id="maketemplate"
-             value="Değerleri yer imlerine alınabilir bir şablon olarak hatırla"
+             value="Değerleri yer imi olarak hatırlat"
              class="expert_fields">
     </td>
   </tr>
@@ -668,4 +851,22 @@ TUI_hide_default('expert_fields');
         </script>
     [% END %]
   </td>
+[% END %]
+
+[% BLOCK build_userlist %]
+  [% user_found = 0 %]
+  [% default_login = default_user.login %]
+  [% RETURN UNLESS default_login %]
+
+  [% FOREACH user = userlist %]
+    [% IF user.login == default_login %]
+      [% user_found = 1 %]
+      [% LAST %]
+    [% END %]
+  [% END %]
+
+  [% userlist.push({login    => default_login,
+                    identity => default_user.identity,
+                    visible  => 1})
+     UNLESS user_found %]
 [% END %]
