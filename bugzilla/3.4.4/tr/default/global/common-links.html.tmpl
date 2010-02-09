@@ -90,7 +90,7 @@
           && user.authorizer.user_can_create_account %]
       <li id="new_account_container[% qs_suffix FILTER html %]">
         <span class="separator">| </span>
-        <a href="createaccount.cgi">Yeni&nbsp;Hesap</a>
+        <a href="createaccount.cgi">Oturumu&nbsp;Kapat</a>
       </li>
     [% END %]
 
@@ -111,7 +111,8 @@
     [% IF doc_section && Param('docs_urlbase') %]
       <li>
         <span class="separator">| </span>
-        <a href="[% docs_urlbase _ doc_section FILTER html %]" target="_blank">Yardım</a>
+        <!--a href="[% docs_urlbase _ doc_section FILTER html %]" target="_blank">Yardım</a-->
+        <a href="http://tr.pardus-wiki.org/NASIL:Hata_Raporlamak" target="_blank">Yardım</a>
       </li>
     [% END %]
 [% END %]
