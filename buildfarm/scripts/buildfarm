@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -20,7 +20,8 @@ import cPickle
 import traceback
 import cStringIO
 
-from buildfarm import config, logger, mailer, qmanager, pisiinterface, utils, twit
+from buildfarm import logger, mailer, qmanager, pisiinterface, utils, twit
+from buildfarm.config import configuration as conf
 
 
 def buildPackages():
@@ -41,8 +42,8 @@ def buildPackages():
     f = open("/var/run/buildfarm", 'w')
     f.close()
 
-    # Unpickle and load ISO package list here if config.generateDelta is true.
-    if config.generateDelta:
+    # Unpickle and load ISO package list here if conf.generatedelta is true.
+    if conf.generatedelta:
         try:
             isopackages = cPickle.Unpickler(open("data/packages.db", "rb")).load()
         except:
@@ -61,7 +62,7 @@ def buildPackages():
 
     for pspec in queue:
         packagename = utils.get_package_name_from_path(pspec)
-        build_output = open(os.path.join(config.outputDir, "%s.txt" % packagename), "w")
+        build_output = open(os.path.join(conf.outputdir, "%s.txt" % packagename), "w")
         logger.raw()
         log_msg = "Compiling %s (%d/%d)" % (packagename, int(queue.index(pspec)+1), len(queue))
         logger.info("*** %s" % log_msg)
@@ -70,11 +71,11 @@ def buildPackages():
         my_twitter.update(log_msg)
 
         # This is here because farm captures the build output
-        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = config.workDir)
+        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputdir = conf.workdir)
         try:
             try:
                 # Save current *.pisi file list in /var/pisi for further cleanup
-                pisiList = glob.glob1(config.workDir, "*.pisi")
+                pisiList = glob.glob1(conf.workdir, "*.pisi")
 
                 # Build source package
                 # Returned values can also contain -dbginfo- packages.
@@ -137,8 +138,8 @@ def buildPackages():
 
                 # If somehow some binary packages could have been build, they'll stay in /var/pisi
                 # We should remove them here.
-                for p in set(glob.glob1(config.workDir, "*.pisi")).difference(pisiList):
-                    logger.info("*** Removing stale package '%s' from '%s'" % (p, config.workDir))
+                for p in set(glob.glob1(conf.workdir, "*.pisi")).difference(pisiList):
+                    logger.info("*** Removing stale package '%s' from '%s'" % (p, conf.workdir))
                     removeBinaryPackageFromWorkDir(p)
 
                 errmsg = "Error occured for '%s' in BUILD process:\n %s" % (pspec, e)
@@ -156,8 +157,8 @@ def buildPackages():
 
                     for p in packagesToInstall:
                         # Install package
-                        logger.info("*** Installing: %s" % os.path.join(config.workDir, p))
-                        pisi.install(os.path.join(config.workDir, p))
+                        logger.info("*** Installing: %s" % os.path.join(conf.workdir, p))
+                        pisi.install(os.path.join(conf.workdir, p))
                 except Exception, e:
                     # Transfer source package to wait queue in case of an install error
                     qmgr.transferToWaitQueue(pspec)
@@ -166,7 +167,7 @@ def buildPackages():
                     # uninstalled because p can't be installed.
                     if utils.isdelta(p) and "no attribute 'old_files'" in str(e):
                         logger.info("*** %s was probably not installed on the system and the delta installation failed." % utils.get_package_name(p))
-                    errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(config.workDir, p), e)
+                    errmsg = "Error occured for '%s' in INSTALL process: %s" % (os.path.join(conf.workdir, p), e)
                     logger.error(errmsg)
                     mailer.error(errmsg, pspec)
 
@@ -177,7 +178,7 @@ def buildPackages():
                             deltasToInstall.remove(pa)
                         elif pa in newBinaryPackages:
                             newBinaryPackages.remove(pa)
-                        logger.info("*** (Cleanup) Removing %s from %s" % (pa, config.workDir))
+                        logger.info("*** (Cleanup) Removing %s from %s" % (pa, conf.workdir))
                         removeBinaryPackageFromWorkDir(pa)
                 else:
                     qmgr.removeFromWorkQueue(pspec)
@@ -202,16 +203,16 @@ def buildPackages():
     current = os.getcwd()
 
     # Set index paths
-    paths = [config.binaryPath, config.testPath]
-    if config.debugSupport:
+    paths = [conf.binarypath, conf.testpath]
+    if conf.debugsupport:
         # Enable debugSupport in config to generate an index
         # for the debug repository.
-        paths.append(config.debugPath)
+        paths.append(conf.debugpath)
 
     for d in paths:
         os.chdir(d)
         logger.info("\n*** Generating repository index in %s:" % d)
-        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % config.localPspecRepo)
+        os.system("/usr/bin/pisi index %s . --skip-signing --skip-sources" % conf.localpspecrepo)
         logger.info("*** Repository index generated for %s" % d)
 
     # Go back to the saved directory
@@ -230,53 +231,53 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
         # Say that 'package' is kernel-2.6.25.20-114.45.pisi
         # We can remove delta packages going to any build < 45 from both
         # packages/ and packages-test/ because we no longer need them.
-        for p in utils.get_deltas_not_going_to(config.binaryPath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.binaryPath))
-            remove(join(config.binaryPath, p))
+        for p in utils.get_deltas_not_going_to(conf.binarypath, package):
+            logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.binarypath))
+            remove(join(conf.binarypath, p))
 
-        for p in utils.get_deltas_not_going_to(config.testPath, package):
-            logger.info("*** Removing stale delta '%s' from '%s'" % (p, config.testPath))
-            remove(join(config.testPath, p))
+        for p in utils.get_deltas_not_going_to(conf.testpath, package):
+            logger.info("*** Removing stale delta '%s' from '%s'" % (p, conf.testpath))
+            remove(join(conf.testpath, p))
 
     def removeOldPackage(package):
-        logger.info("*** Removing old package '%s' from '%s'" % (package, config.testPath))
-        if exists(join(config.testPath, package)):
-            # If an old build is found in testPath remove it because the test repo is unique.
-            remove(join(config.testPath, package))
+        logger.info("*** Removing old package '%s' from '%s'" % (package, conf.testpath))
+        if exists(join(conf.testpath, package)):
+            # If an old build is found in testpath remove it because the test repo is unique.
+            remove(join(conf.testpath, package))
 
-        # Cleanup workDir
-        if exists(join(config.workDir, package)):
-            remove(join(config.workDir, package))
+        # Cleanup workdir
+        if exists(join(conf.workdir, package)):
+            remove(join(conf.workdir, package))
 
     def moveNewPackage(package):
         logger.info("*** Moving new package '%s'" % package)
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
-            copy(join(config.workDir, package), config.testPath)
-            remove(join(config.workDir, package))
+        if exists(join(conf.workdir, package)):
+            copy(join(conf.workdir, package), conf.binarypath)
+            copy(join(conf.workdir, package), conf.testpath)
+            remove(join(confg.workdir, package))
 
     def moveUnchangedPackage(package):
         logger.info("*** Moving unchanged package %s'" % package)
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
-            remove(join(config.workDir, package))
+        if exists(join(conf.workdir, package)):
+            copy(join(conf.workdir, package), conf.binarypath)
+            remove(join(conf.workdir, package))
 
     def moveDeltaPackage(package):
         # Move all delta packages into packages/ and packages-test/
-        # and clean them from workDir.
+        # and clean them from workdir.
         logger.info("*** Moving delta package '%s' to both directories" % package)
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.binaryPath)
-            copy(join(config.workDir, package), config.testPath)
-            remove(join(config.workDir, package))
+        if exists(join(conf.workdir, package)):
+            copy(join(conf.workdir, package), conf.binarypath)
+            copy(join(conf.workdir, package), conf.testpath)
+            remove(join(conf.workdir, package))
 
     def moveDebugPackage(package):
         # Move all debug packages into packages-debug/ and clean them
         # from WorkDir.
         logger.info("*** Moving debug package '%s' to packages-debug" % package)
-        if exists(join(config.workDir, package)):
-            copy(join(config.workDir, package), config.debugPath)
-            remove(join(config.workDir, package))
+        if exists(join(conf.workdir, package)):
+            copy(join(conf.workdir, package), conf.debugpath)
+            remove(join(conf.workdir, package))
 
     # Normalize files to full paths
     try:
@@ -342,18 +343,18 @@ def removeBinaryPackageFromWorkDir(package):
     join   = os.path.join
     remove = os.remove
     try:
-        remove(join(config.workDir, package))
+        remove(join(conf.workdir, package))
     except:
         # Don't fail if we can't remove the files
         pass
 
 def create_directories():
-    directories = [config.workDir,
-                   config.testPath,
-                   config.binaryPath,
-                   config.debugPath,
-                   config.localPspecRepo,
-                   config.outputDir]
+    directories = [conf.workdir,
+                   conf.testpath,
+                   conf.binarypath,
+                   conf.debugpath,
+                   conf.localpspecrepo,
+                   conf.outputdir]
 
     for d in directories:
         if d and not os.path.isdir(d):
