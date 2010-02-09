@@ -11,11 +11,8 @@
 
 # E-mail message templates for mailer module..
 
-
-## Error
-
 error_message = """\
-From: Pardus 2009 Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [2009] %(type)s: %(subject)s
@@ -105,7 +102,7 @@ Fancy log file:
 ## Info
 
 info_message = """\
-From: Pardus 2009 Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(mailTo)s
 Cc: %(ccList)s
 Subject: [2009] %(subject)s
@@ -123,7 +120,7 @@ Happy hacking!
 ## Announce
 
 announce_message = """\
-From: Pardus 2009 Buildfarm <%(mailFrom)s>
+From: %(distribution)s %(release)s Buildfarm <%(mailFrom)s>
 To: %(announceAddr)s
 Subject: [2009] [REPORT] New packages in -testing repository
 Content-Type: text/plain;
@@ -139,8 +136,8 @@ Happy hacking!
 """
 
 # Convenience dict
-all = {
-        'error'     : error_message,
-        'announce'  : announce_message,
-        'info'      : info_message,
-      }
+_all = {
+         'error'     : error_message,
+         'announce'  : announce_message,
+         'info'      : info_message,
+       }

@@ -15,6 +15,7 @@ import socket
 import smtplib
 
 import pisi.specfile
+import pisi.config
 
 from buildfarm import logger, templates
 from buildfarm.auth import Auth
@@ -23,11 +24,14 @@ from buildfarm.config import configuration as conf
 # Authentication stuff
 (username, password) = Auth().get_credentials("Mailer")
 
+# Parse pisi.conf for distribution informations
+pconfig = pisi.config.Config()
+
+
 class MailerError(Exception):
     pass
 
-
-def send(message, pspec = "", type = ""):
+def send(message, pspec = "", _type = ""):
 
     def wrap(message, length=72):
         return reduce(lambda line, word: "%s%s%s" %
@@ -49,17 +53,21 @@ def send(message, pspec = "", type = ""):
 
     packagename = os.path.basename(os.path.dirname(pspec))
     last_log = "".join(open(conf.logfile).readlines()[-20:])
-    message = templates.all[type] % {'log'          : wrap(last_log),
-                                     'recipientName': " ".join(recipientsName),
-                                     'mailTo'       : ", ".join(recipientsEmail),
-                                     'ccList'       : ', '.join(conf.cclist),
-                                     'mailFrom'     : conf.mailfrom,
-                                     'announceAddr' : conf.announceaddr,
-                                     'subject'      : pspec or type,
-                                     'message'      : wrap(message),
-                                     'pspec'        : pspec,
-                                     'type'         : type,
-                                     'packagename'  : packagename}
+    message = templates._all[_type] % {
+                                        'log'          : wrap(last_log),
+                                        'recipientName': " ".join(recipientsName),
+                                        'mailTo'       : ", ".join(recipientsEmail),
+                                        'ccList'       : ', '.join(conf.cclist),
+                                        'mailFrom'     : conf.mailfrom,
+                                        'announceAddr' : conf.announceaddr,
+                                        'subject'      : pspec or _type,
+                                        'message'      : wrap(message),
+                                        'pspec'        : pspec,
+                                        'type'         : _type,
+                                        'packagename'  : packagename,
+                                        'distribution' : pconfig.values.general.distribution,
+                                        'release'      : pconfig.values.general.distribution_release,
+                                     }
 
     # timeout value in seconds
     socket.setdefaulttimeout(10)
@@ -78,18 +86,18 @@ def send(message, pspec = "", type = ""):
             return
 
     try:
-        if type == "announce":
-            smtpresult = session.sendmail(conf.mailfrom, conf.announceaddr, message)
+        if _type == "announce":
+            session.sendmail(conf.mailfrom, conf.announceaddr, message)
         else:
-            smtpresult = session.sendmail(conf.mailfrom, recipientsEmail + conf.cclist, message)
+            session.sendmail(conf.mailfrom, recipientsEmail + conf.cclist, message)
     except smtplib.SMTPRecipientsRefused:
         logger.error("*** Failed sending e-mail: Recipient refused probably because of a non-authenticated session.")
 
 def error(message, pspec):
-    send(message, pspec, type = "error")
+    send(message, pspec, _type="error")
 
 def info(message):
-    send(message, type = "info")
+    send(message, _type="info")
 
 def announce(message):
-    send(message, type = "announce")
+    send(message, _type="announce")
