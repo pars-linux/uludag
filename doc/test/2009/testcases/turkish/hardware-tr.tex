@@ -259,7 +259,8 @@ Virtualbox uygulamasını çalıştırın ve yeni bir sanal sistem oluşturun. A
 
 /proc/cpuinfo dosyasından hangi işlemciyi kullandığınızı öğrenin.
 
-Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edildiğini gözlemleyin. (Aynı anda diğer sannallaştırma uygulamalarının çalışmadığından emin olun.)
+Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edildiğini gözlemleyin. (Aynı anda diğer sannallaştırma uygulamalarının çalışmadığından emin olun.) (Eğer kvm-intel veya kvm-amd modulleriniz bulunmamakta ise bu testi gerçekleştiremeyeceksiniz.)
+
 \begin{verbatim}
  su -
  modprobe kvm-intel (işlemci intel ise)
