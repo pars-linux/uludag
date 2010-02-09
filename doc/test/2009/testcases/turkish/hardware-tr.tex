@@ -271,6 +271,13 @@ Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edild
  qemu-kvm -m 512 -hda disk_imajim.img -cdrom boot.iso -boot d 
 \end{verbatim}
 
+\item qemu paketi kurulumu sonrası.
+Aşağıda bulunan komutların sorunsuz çalıştığını ve iso'nun boot edildiğini gözlemleyin. (Aynı anda diğer sannallaştırma uygulamalarının çalışmadığından emin olun.)
+\begin{verbatim}
+ qemu-img create pardus.img 5G
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+ qemu -m 512 -soundhw all -localtime -hda pardus.img -cdrom boot.iso -boot d
+\end{verbatim}
 
 
 \end{enumerate}
