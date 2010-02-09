@@ -26,6 +26,11 @@ from buildfarm.config import configuration as conf
 
 # Parse pisi.conf for distribution informations
 pconfig = pisi.config.Config()
+distribution = pconfig.values.general.distribution
+release = pconfig.values.general.distribution_release
+
+# Something like 2009, Corporate2 for e-mail subjects and logs directory
+distID = ("%s %s" % (distribution, release)).replace("Pardus", "").replace(" ", "")
 
 
 class MailerError(Exception):
@@ -67,6 +72,8 @@ def send(message, pspec = "", _type = ""):
                                         'packagename'  : packagename,
                                         'distribution' : pconfig.values.general.distribution,
                                         'release'      : pconfig.values.general.distribution_release,
+                                        'logsdir'      : distID,
+                                        'subjectList'  : distID,
                                      }
 
     # timeout value in seconds
