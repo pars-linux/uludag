@@ -1,23 +1,14 @@
-Code refactoring
-----------------
+TODO for buildfarm 2.0
+-----------------------
 
-- Install buildfarm modules into python' sitearch and make them importable
-- Use configuration file instead of config.py which is imported
-- Move standalone scripts under scripts/
-- Use pisi methods if available to avoid redundancy
-- Integrate repomanager into buildfarm executable
-- Grab Pardus version from /etc/pardus-release to be more flexible
-
-Features
---------
-
-+ Support for sandbox blacklist (Done)
-
-- Fork off a dependency checker after each run and send a report to the according
-mailing lists and maintainers about the missing dependencies of packages
-
-- Support for the removal of obsoleted packages
-
-- A Web status page for current status
-
-- Twit status updates ;)
+(+) Install buildfarm modules into python' sitearch and make them importable
+(+) Use configuration file instead of config.py which is imported
+(+) Move standalone scripts under scripts/
+(+) Grab Pardus version from pisi.conf to be more flexible
+(+) Support for sandbox blacklist
+(-) Use pisi methods if available to avoid redundancy
+(-) Integrate repomanager into buildfarm executable
+(-) Add hooks.d for running a number of hooks after each run
+(-) Support for the removal of obsoleted packages
+(-) A Web status page for current status
+(-) Twit status updates ;)
