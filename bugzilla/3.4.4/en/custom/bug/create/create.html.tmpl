@@ -497,12 +497,12 @@ TUI_hide_default('expert_fields');
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: mail crashed
+          <font color="#990000">Bad example</font>: KDE crashed
         </tt>
         <br>
         <tt>
           <font color="#009900">Good example</font>:
-          crash if I close the mail window while checking for new POP mail
+          KDE crashed when a directory tried to open with Dolphin.
         </tt>
       </p>
     </td>
@@ -532,15 +532,11 @@ TUI_hide_default('expert_fields');
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: Mozilla crashed.
-          You suck!
+          <font color="#990000">Bad example</font>: KDE crashed. You suck!
         </tt>
         <br>
         <tt>
-          <font color="#009900">Good example</font>: After a crash which
-          happened when I was sorting in the Bookmark Manager,<br> all of my
-          top-level bookmark folders beginning with the letters Q to Z are·
-          no longer present.
+          <font color="#009900">Good example</font>: When a directory which contains a lot of files is opened with Dolphin, Dolphin hangs and after a while KDE crashes.
         </tt>
       </p>
     </td>
@@ -633,22 +629,10 @@ TUI_hide_default('expert_fields');
       <p>
      <tt>
           Add any additional information you feel may be
-        relevant to this [% terms.Bug %], such as the <b>theme</b> you were
-        using (does the [% terms.Bug %] still occur
-        with the default theme?), a·
-        <b><a href="http://kb.mozillazine.org/Quality_Feedback_Agent">DONBILI konulabilir</a></b>, or special
-        information about <b>your computer's configuration</b>. Any information
-        longer than a few lines, such as a <b>stack trace</b> or <b>HTML
-        testcase</b>, should be added
-        using the "Add an Attachment" link on the [% terms.Bug %], after
-        it is filed. If you believe that it's relevant, please also include
-        your build configuration, obtained by typing <tt>about:buildconfig</tt>
-        into your URL bar.
-        <br>
-        <br>
-        If you are reporting a crash, note the module in
-        which the software crashed (e.g., <tt>Application Violation in
-        gkhtml.dll</tt>).
+        relevant to this [% terms.Bug %], such as your system information, stack trace, or a testcase.
+        Any information longer than a few lines, should be added
+        using the <b>Add an Attachment</b> link on the [% terms.Bug %], after
+        it is filed. 
       </p>
 
     </tt>
@@ -660,27 +644,18 @@ TUI_hide_default('expert_fields');
       <b>Severity</b>
     </td>
     <td valign="top">
-      <select name="bug_severity" size="7">
+      <select name="bug_severity" size="4">
         <option name="blocking" value="blocking">
-          Blocking: The bug makes whole system unusable
-        <option name="critical" value="critical">
-          Critical: The software crashes, hangs, or causes you to lose data.
+          Urgent: The bug makes whole system unusable.
         </option>
         <option name="high" value="high">
-          High: The bug makes the program unusable, or a license problem, bundled library, etc
+          High: The bug makes the program unusable.
         </option>
         <option name="normal" value="normal" selected="selected">
-          Normal: A real bug which makes program more difficult to use.
+          Normal: The bug which makes a part of the program unusable.
         </option>
         <option name="low" value="low">
-          Low: Minor loss of function, and there's an easy workaround.
-        </option>
-        <option name="notimportant" value="notimportant">
-          Trivial: A cosmetic problem, such as a misspelled word or
-          misaligned text.
-        </option>
-        <option name="enhancement" value="enhancement">
-          Enhancement: Request for new feature or enhancement.
+          Low: A cosmetic problem, such as a misspelled word or misaligned text or a new feature.
         </option>
       </select>
       <p>
