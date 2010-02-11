@@ -259,19 +259,19 @@ class ProxySettings(SettingsTab):
 
         http = config.get("general", "http_proxy")
         if http and http != "None":
-            httpProxy, httpProxyPort = http[7:].split(":")
+            httpProxy, httpProxyPort = http[7:].rsplit(":", 1)
             self.settings.httpProxy.setText(httpProxy)
             self.settings.httpProxyPort.setValue(int(httpProxyPort))
 
         https = config.get("general", "https_proxy")
         if https and https != "None":
-            httpsProxy, httpsProxyPort = https[8:].split(":")
+            httpsProxy, httpsProxyPort = https[8:].rsplit(":", 1)
             self.settings.httpsProxy.setText(httpsProxy)
             self.settings.httpsProxyPort.setValue(int(httpsProxyPort))
 
         ftp = config.get("general", "ftp_proxy")
         if ftp and ftp != "None":
-            ftpProxy, ftpProxyPort = ftp[6:].split(":")
+            ftpProxy, ftpProxyPort = ftp[6:].rsplit(":", 1)
             self.settings.ftpProxy.setText(ftpProxy)
             self.settings.ftpProxyPort.setValue(int(ftpProxyPort))
 
