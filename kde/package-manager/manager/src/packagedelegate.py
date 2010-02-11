@@ -88,6 +88,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
         size = index.model().data(index, SizeRole)
+        homepage = index.model().data(index, HomepageRole)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
@@ -121,6 +122,16 @@ class PackageDelegate(QtGui.QItemDelegate):
             fontMetrics = QtGui.QFontMetrics(normalDetailFont)
             rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, description.toString())
             p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, rect.height(), Qt.TextWordWrap, description.toString())
+
+            # Package Detail Homepage
+            position += rect.height()
+
+            p.setFont(boldDetailFont)
+            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, i18n("Website:"))
+
+            p.setFont(normalDetailFont)
+            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, homepage.toString())
+            p.drawText(left + 2 * ROW_HEIGHT, position, width - textInner - ROW_HEIGHT, rect.height(), Qt.TextWordWrap, homepage.toString())
 
             # Package Detail Version
             position += rect.height()
