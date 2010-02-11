@@ -18,10 +18,10 @@ from PyKDE4.kdecore import *
 appName     = "package-manager"
 catalog     = appName
 programName = ki18n("Package Manager")
-version     = "2.0.3"
+version     = "2.0.4"
 description = ki18n("Package Manager")
 license     = KAboutData.License_GPL
-copyright   = ki18n("(c) 2009 TUBITAK/UEKAE")
+copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
 text        = ki18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
