@@ -1,4 +1,5 @@
 package-manager 2.0.4
 ----------------------
 
-
+#4158   - user:pass in proxy fields in pisi.conf raises exception
+#11222  - Missing URL in package-manager's package information
