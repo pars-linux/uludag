@@ -23,7 +23,7 @@ import string
 import backend
 from pmutils import humanReadableSize
 
-(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6)
 
 class PackageModel(QAbstractTableModel):
 
@@ -50,7 +50,7 @@ class PackageModel(QAbstractTableModel):
 
         if role == Qt.DisplayRole:
             return QVariant(self.packages[index.row()])
-	elif role == Qt.CheckStateRole and index.column() == 0:
+        elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
 
         package = self.package(index)
@@ -64,6 +64,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.version))
         elif role == RepositoryRole:
             return QVariant(unicode(self.iface.getPackageRepository(package.name)))
+        elif role == HomepageRole:
+            return QVariant(unicode(package.source.homepage))
         elif role == Qt.DecorationRole:
             if package.icon:
                 icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
