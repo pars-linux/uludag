@@ -473,7 +473,10 @@ class MainManager(QtGui.QWidget):
             ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
 
             if len(authParams) == 1:
-                password = authInfo.values()[0]
+                if len(authInfo.values()):
+                    password = authInfo.values()[0]
+                else:
+                    password = ""
                 ui.lineKey.setText(password)
             elif len(authParams) > 1:
                 self.securityValues = authInfo
