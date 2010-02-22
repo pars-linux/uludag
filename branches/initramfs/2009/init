@@ -17,6 +17,7 @@ LIVE=0
 NFSROOT=0
 QUIET=0
 RAID=0
+LVM=0
 VIRTIO=0
 COPYTORAM=0
 
@@ -46,6 +47,15 @@ probe_raid() {
     modprobe -a dm-mod raid0 raid1 raid10 raid456
     /sbin/mdadm --examine --scan > /etc/mdadm.conf
     /sbin/mdadm -As
+}
+probe_lvm() {
+    info "Probing LVM devices"
+    modprobe -qa dm-mod
+    if [ -x /sbin/lvm ]
+    then
+        /sbin/lvm vgscan --ignorelockingfailure
+        /sbin/lvm vgchange -ay --ignorelockingfailure
+    fi
 }
 
 probe_virtio() {
@@ -83,6 +93,9 @@ parse_config() {
         case "${inputline}" in
             raid=*)
                 RAID=$(echo $inputline|cut -f2- -d=)
+            ;;
+            lvm=*)
+                LVM=$(echo $inputline|cut -f2- -d=)
             ;;
             thin=*)
                 NFSROOT=$(echo $inputline|cut -f2- -d=)
@@ -133,6 +146,9 @@ parse_cmdline() {
                         ;;
                         raid)
                             RAID=1
+                        ;;
+                        lvm)
+                            LVM=1
                         ;;
                         thin)
                             NFSROOT=1
@@ -337,6 +353,11 @@ probe_devices
 if [ "${RAID}" -eq "1" ]
 then
     probe_raid
+fi
+
+if [ "${LVM}" -eq "1" ]
+then
+    probe_lvm
 fi
 
 if [ "${VIRTIO}" -eq "1" ]
