@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 14:45+0200\n"
-"PO-Revision-Date: 2010-01-11 22:01-0300\n"
+"PO-Revision-Date: 2010-01-14 18:26-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -99,7 +99,7 @@ msgstr "Swap: %1 frei von %2"
 
 #: src/sysinfo.cpp:265
 msgid "Swap: Not in use"
-msgstr "Swap: Nicht verfügbar"
+msgstr "Swap: Wird nicht benutzt"
 
 # Disks din allemein und Festplatten sind zu genau deklariert - es gibt ja auch SSD´s
 #: src/sysinfo.cpp:273
