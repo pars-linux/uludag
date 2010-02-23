@@ -24,7 +24,7 @@ from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
-from offline import Operations
+from offline import Offline
 
 import backend
 import config
@@ -36,7 +36,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
-        self.offlineOperations = Operations()
+        self.offline = Offline()
         self.initializeActions()
         self.initializeStatusBar()
         self.initializeTray()
@@ -162,24 +162,24 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.xml", self, i18n("Select project file")))
 
         if filename:
-            self.offlineOperations.importIndex(filename)
+            self.offline.importIndex(filename)
             self.changeMode("offline")
 
     def exportIndex(self):
         filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Select project file")))
 
         if filename:
-            self.offlineOperations.exportIndex(filename)
+            self.offline.exportIndex(filename)
 
     def importOfflineJobs(self):
         filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
 
         if filename:
-            self.offlineOperations.startProcesses(filename)
+            self.offline.startProcesses(filename)
 
     def closeOfflineMode(self):
         filename = str(KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
 
         if filename:
-            self.offlineOperations.writeCatalog(filename)
+            self.offline.writeCatalog(filename)
             self.changeMode("normal")
