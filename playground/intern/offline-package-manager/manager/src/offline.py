@@ -27,40 +27,15 @@ from pisi.db.packagedb import PackageDB
 
 import backend
 
-class Offline(QObject):
+class Singleton(object):
+    def __new__(type):
+        if not '_the_instance' in type.__dict__:
+            type._the_instance = object.__new__(type)
+        return type._the_instance
+
+class Offline(Singleton):
     def __init__(self):
-        QObject.__init__(self)
-        self.setExceptionHandler(self.exceptionHandler)
-        self.setActionHandler(self.handler)
-
-        self.initialize()
-
-    def setActionHandler(self, handler):
-        backend.pm.Iface().setHandler(handler)
-
-    def setExceptionHandler(self, handler):
-        backend.pm.Iface().setExceptionHandler(handler)
-
-    def initialize(self):
-        self.path = os.getenv("HOME") + "/offline"
-        self.pkgs_path = self.path + "/packages"
-        self.pdb = PackageDB()
-
-    def __checkDir(self):
-        # This function checks if the working path exists or not.
-        try:
-            os.mkdir(self.path)
-            os.mkdir(self.pkgs_path)
-
-        except OSError:
-            pass
-
-    def __removeDir(self):
-        # This function removes if the working path exists.
-        try:
-            rmtree(self.path)
-        except OSError:
-            pass
+        pass
 
     def saveProcess(self, packages, operation):
         """
@@ -116,6 +91,42 @@ class Offline(QObject):
             return True
         except:
             print "Dosyaya yazılamadı!"
+    
+
+class OfflineManager(QObject):
+    def __init__(self):
+        QObject.__init__(self)
+        self.setExceptionHandler(self.exceptionHandler)
+        self.setActionHandler(self.handler)
+
+        self.initialize()
+
+    def setActionHandler(self, handler):
+        backend.pm.Iface().setHandler(handler)
+
+    def setExceptionHandler(self, handler):
+        backend.pm.Iface().setExceptionHandler(handler)
+
+    def initialize(self):
+        self.path = os.getenv("HOME") + "/offline"
+        self.pkgs_path = self.path + "/packages"
+        self.pdb = PackageDB()
+
+    def __checkDir(self):
+        # This function checks if the working path exists or not.
+        try:
+            os.mkdir(self.path)
+            os.mkdir(self.pkgs_path)
+
+        except OSError:
+            pass
+
+    def __removeDir(self):
+        # This function removes if the working path exists.
+        try:
+            rmtree(self.path)
+        except OSError:
+            pass
 
     def _get_latest(self):
 
