@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,8 +11,6 @@
 # Please read the COPYING file.
 #
 
-''' This module makes some operations for offline part of package manager'''
-
 import os
 import time
 import piksemel
@@ -20,27 +18,31 @@ import tarfile
 
 from shutil import rmtree
 
-import comar
 import pisi
 
-import gettext
-__trans = gettext.translation('pisi', fallback=True)
-_ = __trans.ugettext
+from PyQt4.QtCore import QObject, SIGNAL
+from PyKDE4.kdecore import i18n
 
 from pisi.db.packagedb import PackageDB
 
 import backend
 
-class Singleton(object):
-    def __new__(type):
-        if not '_the_instance' in type.__dict__:
-            type._the_instance = object.__new__(type)
-        return type._the_instance
-
-class Operations(Singleton):
-
+class Offline(QObject):
     def __init__(self):
-        self.path = os.getenv("HOME") + "/offlinePISI"
+        QObject.__init__(self)
+        self.setExceptionHandler(self.exceptionHandler)
+        self.setActionHandler(self.handler)
+
+        self.initialize()
+
+    def setActionHandler(self, handler):
+        backend.pm.Iface().setHandler(handler)
+
+    def setExceptionHandler(self, handler):
+        backend.pm.Iface().setExceptionHandler(handler)
+
+    def initialize(self):
+        self.path = os.getenv("HOME") + "/offline"
         self.pkgs_path = self.path + "/packages"
         self.pdb = PackageDB()
 
@@ -137,7 +139,7 @@ class Operations(Singleton):
         """
         os.chdir(os.getenv("HOME"))
         tar = tarfile.open(filename, "w")
-        tar.add("offlinePISI")
+        tar.add("offline")
         tar.close()
 
         self.__removeDir()
@@ -157,6 +159,18 @@ class Operations(Singleton):
         f.write(filename)
         f.close
 
+    def updateExportingProgress(self):
+        """
+        This function calculates and sends the percent of exporting
+        process.
+        """
+        try:
+            percent = (self.packageNo * 100) / self.totalPackages
+        except ZeroDivisionError:
+            percent = 0
+
+        self.emit(SIGNAL("exportingProgress(int)"), percent)
+
     def exportIndex(self, filename):
         """
         This function exports the index (list of installed packages)
@@ -167,8 +181,13 @@ class Operations(Singleton):
         idb = pisi.db.installdb.InstallDB()
         index = pisi.index.Index()
 
+        self.totalPackages = idb.list_installed().__len__()
+        self.packageNo = 0
+
         for name in idb.list_installed():
             index.packages.append(idb.get_package(name))
+            self.packageNo += 1
+            self.updateExportingProgress()
 
         self.__getComponents()
         self.__getGroups()
@@ -269,8 +288,7 @@ class Operations(Singleton):
 
     def __handleProcesses(self):
 
-        doOperations = DoOperations()
-        operationPool = []
+        self.operationPool = []
 
         files = filter(lambda x:x.endswith(".xml"), os.listdir(self.path))
         list = []
@@ -299,62 +317,38 @@ class Operations(Singleton):
                     for x in i.tags("Package"):
                         packages.append(str(x.firstChild().data()))
 
-            operationPool.append([op_type, packages])
+            self.operationPool.append([op_type, packages])
 
-        doOperations.initialize(operationPool)
+        self.applyProcess()
 
-class DoOperations(Singleton):
-    def __init__(self):
-        if not self.initialized():
-            self.initComar()
-            self.signalCounter = 0
 
-    def initialized(self):
-        return "link" in self.__dict__
+    # Below codes applies the processes (instal or remove)
 
-    def initialize(self, operationPool):
-        self.operationPool = operationPool
+    def applyProcess(self):
         self.totalProcesses = self.operationPool.__len__()
         self.processNo = 0
-        
+        self.signalCounter = 0
         self.handlePool()
-
-    def initComar(self):
-        self.link = comar.Link()
-        self.link.setLocale()
-        self.link.listenSignals("System.Manager", self.signalHandler)
-
-    def setHandler(self, handler):
-        self.link.listenSignals("System.Manager", handler)
-
-    def setExceptionHandler(self, handler):
-        self.exceptionHandler = handler
-
-    def signalHandler(self, package, signal, args):
-        if signal == "finished":
-            if self.signalCounter == 1:
-                self.handlePool()
-                self.signalCounter = 0
-            else:
-                self.signalCounter += 1
 
     def handlePool(self):
         self.updateTotalProcessPercent()
         self.processNo += 1
-        
+
         try:
             operation = self.operationPool[0][0]
             packages = self.operationPool[0][1]
 
             self.operationPool.pop(0)
 
-            self._doOperation(packages, operation)            
+            self._startOperation(packages, operation)
 
         except IndexError:
-            pass
+            self.emit(SIGNAL("finished()"))
 
-    def _doOperation(self, packages, operation):
-
+    def _startOperation(self, packages, operation):
+        self.totalPackages = packages.__len__()
+        self.packageNo = 0
+        
         if operation == "install":
             backend.pm.Iface().installPackages(packages)
 
@@ -364,15 +358,57 @@ class DoOperations(Singleton):
         else:
             raise Exception("Unknown package operation")
 
+    def exceptionHandler(self, exception):
+        self.emit(SIGNAL("exception(QString)"), str(exception))
+
+    def handler(self, package, signal, args):
+        print "SIGNAL SIGNAL :: " , signal
+        print "ARGS :: ARGS :: " , args
+        if signal == "status":
+            signal = str(args[0])
+            args = args[1:]
+
+            packageName = args[0]
+            if signal == "installing":
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Installing %s" % packageName))
+                
+            elif signal == "removing":
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Removing %s" % packageName))
+                # FIXME: "Removing %s" does not exists in PO files  !!!
+
+            elif signal in ["installed", "removed"]:
+                self.packageNo += 1
+                self.updateCurrentProcessPercent()
+        
+        elif signal == "finished":
+            if self.signalCounter == 1:
+                self.handlePool()
+                self.signalCounter = 0
+            else:
+                self.signalCounter += 1
+
+
     def updateTotalProcessPercent(self):
+        """
+        This function calculates and send the percent of total
+        process. Total process includes all of install or remove
+        processes in a offline catalog file.
+        """
         try:
             percent = (self.processNo * 100) / self.totalProcesses
         except ZeroDivisionError:
             percent = 0
 
-        print "TOTAL PERCENT = " , percent
+        self.emit(SIGNAL("totalProgress(int)"), percent)
 
-        print "----UPDATE AREA-------"
-        print "proNo :: " , self.processNo
-        print "Total :: " , self.totalProcesses
-        print "----------------------"
+    def updateCurrentProcessPercent(self):
+        """
+        This function calculates and sends the percent of current
+        process. Current processes can be install or remove.
+        """
+        try:
+            percent = (self.packageNo * 100) / self.totalPackages
+        except ZeroDivisionError:
+            percent = 0
+
+        self.emit(SIGNAL("currentProgress(int)"), percent)
