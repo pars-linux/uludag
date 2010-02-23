@@ -48,7 +48,7 @@ class Iface(Singleton):
             self.oidb = pisi.db.offline_idb.Offline_InstallDB()
             self.initDB()
 
-        self.operation = offline.Operations()
+        self.offline = offline.Offline()
 
     def initialized(self):
         return "link" in self.__dict__
@@ -91,7 +91,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.add_package(pkg)
 
-        self.operation.saveProcess(all_packages, "install")
+        self.offline.saveProcess(all_packages, "install")
 
     def removePackages(self, packages):
         all_packages = packages + self.requires_list
@@ -99,7 +99,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.remove_package(pkg)
 
-        self.operation.saveProcess(all_packages, "remove")
+        self.offline.saveProcess(all_packages, "remove")
 
     def upgradePackages(self, packages):
         self.installPackages(packages)
