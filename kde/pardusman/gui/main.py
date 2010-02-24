@@ -76,15 +76,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # Package Selection collections
         self.collections = None
 
-        # Set icons
-        self.setIcons()
+        # File menu
+        self.connect(self.actionNew, SIGNAL("activated()"), self.slotNew)
+        self.connect(self.actionOpen, SIGNAL("activated()"), self.slotOpen)
+        self.connect(self.actionSave, SIGNAL("activated()"), self.slotSave)
+        self.connect(self.actionSaveAs, SIGNAL("activated()"), self.slotSaveAs)
+        self.connect(self.actionExit, SIGNAL("activated()"), self.close)
 
-        # Top toolbar
-        self.connect(self.pushNew, SIGNAL("clicked()"), self.slotNew)
-        self.connect(self.pushOpen, SIGNAL("clicked()"), self.slotOpen)
-        self.connect(self.pushSave, SIGNAL("clicked()"), self.slotSave)
-        self.connect(self.pushSaveAs, SIGNAL("clicked()"), self.slotSaveAs)
-        self.connect(self.pushExit, SIGNAL("clicked()"), self.close)
+        # Project menu
+        self.connect(self.actionUpdateRepo, SIGNAL("activated()"), self.slotUpdateRepo)
+        self.connect(self.actionLanguages, SIGNAL("activated()"), self.slotSelectLanguages)
+        self.connect(self.actionPackages, SIGNAL("activated()"), self.slotSelectPackages)
+        self.connect(self.actionInstallationImagePackages, SIGNAL("activated()"), self.slotSelectInstallImagePackages)
+        self.connect(self.actionMakeImage, SIGNAL("activated()"), self.slotMakeImage)
 
         # Browse buttons
         self.connect(self.pushBrowseRepository, SIGNAL("clicked()"), self.slotBrowseRepository)
@@ -100,12 +104,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.connect(self.comboSize, SIGNAL("currentIndexChanged(int)"), self.slotShowPackageCollection)
         self.connect(self.listPackageCollection, SIGNAL("itemClicked(QListWidgetItem *)"),self.slotClickedCollection)
 
-        # Bottom toolbar
-        self.connect(self.pushUpdateRepo, SIGNAL("clicked()"), self.slotUpdateRepo)
-        self.connect(self.pushSelectLanguages, SIGNAL("clicked()"), self.slotSelectLanguages)
-        self.connect(self.pushSelectPackages, SIGNAL("clicked()"), self.slotSelectPackages)
-        self.connect(self.pushMakeImage, SIGNAL("clicked()"), self.slotMakeImage)
-
         # Initialize
         self.initialize()
 
@@ -120,30 +118,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             if not self.updateRepo():
                 return
 
-    def setIcons(self):
-        # Top toolbar
-        self.pushNew.setIcon(QIcon("document-new"))
-        self.pushOpen.setIcon(QIcon("document-open"))
-        self.pushSave.setIcon(QIcon("document-save"))
-        self.pushSaveAs.setIcon(QIcon("document-save-as"))
-        self.pushExit.setIcon(QIcon("dialog-close"))
-
-        # Bottom toolbar
-        self.pushUpdateRepo.setIcon(QIcon("view-refresh"))
-        self.pushSelectPackages.setIcon(QIcon("games-solve"))
-        self.pushSelectLanguages.setIcon(QIcon("applications-education-language"))
-        self.pushMakeImage.setIcon(QIcon("media-playback-start"))
-
     def slotNew(self):
         """
-            New button fires this function.
+            "New" menu item fires this function.
         """
         self.project = Project()
         self.loadProject()
 
     def slotOpen(self, filename=None):
         """
-            Open button fires this function.
+            "Open..." menu item fires this function.
         """
         if not filename:
             filename = QFileDialog.getOpenFileName(self, _("Select project file"), ".", "*.xml")
@@ -161,7 +145,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def slotSave(self):
         """
-            Save button fires this function.
+            "Save" menu item fires this function.
         """
         if self.project.filename:
             self.updateProject()
@@ -171,7 +155,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def slotSaveAs(self):
         """
-            Save as button fires this function.
+            "Save As..." menu item fires this function.
         """
         filename = QFileDialog.getSaveFileName(self, _("Save project"), "", "*.xml")
         if filename:
@@ -283,14 +267,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def slotShowPackageCollection(self, index):
         if self.comboSize.currentIndex() == 1:
             self.collectionFrame.show()
-            self.pushSelectPackages.hide()
+            self.actionPackages.setVisible(False)
         else:
             self.collectionFrame.hide()
-            self.pushSelectPackages.show()
+            self.actionPackages.setVisible(True)
 
     def slotSelectLanguages(self):
         """
-            Select language button fires this function.
+            "Languages..." menu item fires this function.
         """
         dialog = LanguagesDialog(self, self.project.selected_languages)
         if dialog.exec_():
@@ -299,7 +283,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def slotSelectPackages(self):
         """
-            Select package button fires this function.
+            "Packages..." menu item fires this function.
         """
         if not self.repo:
             if not self.checkProject():
@@ -313,6 +297,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.project.selected_packages = dialog.packages
             self.project.selected_components = dialog.components
             self.project.all_packages = dialog.all_packages
+
+    def slotSelectInstallImagePackages(self):
+        """
+            "Installation Image Packages..." menu item fires this function.
+        """
+        if not self.repo:
+            if not self.checkProject():
+                return
+            if not self.updateRepo():
+                return
+
+        dialog = PackagesDialog(self, \
+                                self.repo, \
+                                self.project.selected_install_image_packages, \
+                                self.project.selected_install_image_components)
+
+        if dialog.exec_():
+            self.project.selected_install_image_packages = dialog.packages
+            self.project.selected_install_image_components = dialog.components
+            self.project.all_install_image_packages = dialog.all_packages
 
     def slotUpdateRepo(self):
         """
