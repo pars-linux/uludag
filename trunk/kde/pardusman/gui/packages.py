@@ -114,11 +114,21 @@ class PackagesDialog(QDialog, Ui_PackagesDialog):
             if name in self.packages:
                 item.setChecked(True)
 
+        # Resize columns to their contents
+        for i in xrange(self.treePackages.columnCount()):
+            self.treePackages.resizeColumnToContents(i)
+
+        # Sort by package name in ascending order
+        self.treePackages.sortByColumn(0, Qt.AscendingOrder)
+
         # Components
         for name in self.repo.components:
             item = ComponentWidgetItem(self.treeComponents, name)
             if name in self.components:
                 item.setChecked(True)
+
+        # Sort by component name in ascending order
+        self.treeComponents.sortByColumn(0, Qt.AscendingOrder)
 
         # Draw selections
         self.updatePackages()
