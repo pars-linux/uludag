@@ -189,14 +189,18 @@ class OfflineManager(QObject):
         filename of index file like '/home/user/pisi-installed.xml'
         as a parameter.
         """
-        idb = pisi.db.installdb.InstallDB()
         index = pisi.index.Index()
 
-        self.totalPackages = idb.list_installed().__len__()
+        iface = backend.pm.Iface()
+        source = iface.source  # store current source
+        iface.setSource(None)  # set source None
+        
+        list_installed = iface.getPackageList()  # get installed package list
+        self.totalPackages = list_installed.__len__()
         self.packageNo = 0
-
-        for name in idb.list_installed():
-            index.packages.append(idb.get_package(name))
+        
+        for name in list_installed:
+            index.packages.append(iface.getPackage(name))
             self.packageNo += 1
             self.updateExportingProgress()
 
@@ -208,9 +212,11 @@ class OfflineManager(QObject):
         index.add_groups("/tmp/groups.xml")
         index.add_distro("/tmp/distribution.xml")
 
-        index.write(filename, sha1sum=True, compress=pisi.file.File.bz2, sign=None)
+        index.write(filename, sha1sum=False, compress=pisi.file.File.bz2, sign=None)
 
         print "Index file exported."
+
+        iface.setSource(source)  # restore source
 
     # clean extra information in groups, components and distro (return empty formatted data)
     def __getGroups(self):
