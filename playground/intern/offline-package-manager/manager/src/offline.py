@@ -204,13 +204,10 @@ class OfflineManager(QObject):
             self.packageNo += 1
             self.updateExportingProgress()
 
-        self.__getComponents()
-        self.__getGroups()
-        self.__getDistro()
-
-        index.add_components("/tmp/components.xml")
-        index.add_groups("/tmp/groups.xml")
-        index.add_distro("/tmp/distribution.xml")
+        # these are unnecessary for offline index
+        index.components = None
+        index.groups = None
+        index.distribution = None
 
         index.write(filename, sha1sum=False, compress=pisi.file.File.bz2, sign=None)
 
@@ -218,70 +215,6 @@ class OfflineManager(QObject):
 
         iface.setSource(source)  # restore source
 
-    # clean extra information in groups, components and distro (return empty formatted data)
-    def __getGroups(self):
-        gdb = pisi.db.groupdb.GroupDB()
-
-        doc = piksemel.newDocument("PISI")
-        newGroup = doc.insertTag("Groups")
-        for grp in gdb.list_groups():
-            group = newGroup.insertTag("Group")
-            group.insertTag("Name").insertData(grp)
-
-            g = gdb.get_group(grp)
-            for l in g.localName.keys():
-                ln = group.insertTag("LocalName")
-                ln.setAttribute("xml:lang", l)
-                ln.insertData(g.localName[l])
-
-        f = open("/tmp/groups.xml", "w")
-        f.write(doc.toPrettyString())
-        f.close()
-
-    def __getComponents(self):
-        cdb = pisi.db.componentdb.ComponentDB()
-
-        doc = piksemel.newDocument("PISI")
-        newComponent = doc.insertTag("Components")
-
-        for cpt in cdb.list_components():
-            comp = newComponent.insertTag("Component")
-            comp.insertTag("Name").insertData(cpt)
-
-            c = cdb.get_component(cpt)
-            i = comp.insertTag("LocalName")
-            i.setAttribute("xml:lang", c.localName.items()[0][0])
-            i.insertData(c.localName.items()[0][1])
-
-            i = comp.insertTag("Summary")
-            i.setAttribute("xml:lang", c.summary.items()[0][0])
-            i.insertData(c.localName.items()[0][1])
-
-            i = comp.insertTag("Description")
-            i.setAttribute("xml:lang", c.description.items()[0][0])
-            i.insertData(c.description.items()[0][1])
-            comp.insertTag("Group").insertData(c.group)
-
-        f = open("/tmp/components.xml", "w")
-        f.write(doc.toPrettyString())
-        f.close()
-
-    def __getDistro(self):
-        info = dict(pisi.context.config.values.general.items)
-
-        doc = piksemel.newDocument("PISI")
-        doc.insertTag("SourceName").insertData(info["distribution"])
-        doc.insertTag("Version").insertData(info["distribution_release"])
-
-        d = doc.insertTag("Description")
-        d.setAttribute("xml:lang", "en")
-        d.insertData("Pardus-2009 Repository")
-
-        doc.insertTag("Type").insertData("Core")
-
-        f = open("/tmp/distribution.xml", "w")
-        f.write(doc.toPrettyString())
-        f.close()
 
     ### Below codes are about doing offline jobs (install or remove pkgs)
 
