@@ -1,5 +1,13 @@
 <RCC>
   <qresource prefix="raw" >
+    <file>pics/document-new.png</file>
+    <file>pics/document-open.png</file>
+    <file>pics/document-save.png</file>
+    <file>pics/document-save-as.png</file>
+    <file>pics/application-exit.png</file>
+    <file>pics/view-refresh.png</file>
+    <file>pics/applications-other.png</file>
+    <file>pics/media-optical.png</file>
     <file>pics/preferences-system.png</file>
     <file>pics/applications-education-language.png</file>
     <file>pics/edit-delete.png</file>

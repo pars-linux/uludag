@@ -20,45 +20,6 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_5">
     <item row="0" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout">
-      <item>
-       <widget class="QPushButton" name="pushNew">
-        <property name="text">
-         <string>New</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushOpen">
-        <property name="text">
-         <string>Open</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushSave">
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushSaveAs">
-        <property name="text">
-         <string>Save As</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushExit">
-        <property name="text">
-         <string>Exit</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="1" column="0">
      <widget class="QFrame" name="frame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -260,7 +221,7 @@
       </layout>
      </widget>
     </item>
-    <item row="2" column="0">
+    <item row="1" column="0">
      <widget class="QFrame" name="collectionFrame">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -330,42 +291,7 @@
       <zorder></zorder>
      </widget>
     </item>
-    <item row="3" column="0">
-     <layout class="QHBoxLayout" name="horizontalLayout_2">
-      <item>
-       <widget class="QPushButton" name="pushUpdateRepo">
-        <property name="text">
-         <string>Update Repo</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushSelectPackages">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="text">
-         <string>Select Packages</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushSelectLanguages">
-        <property name="text">
-         <string>Select Languages</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="pushMakeImage">
-        <property name="text">
-         <string>Make Image</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item row="4" column="0">
+    <item row="2" column="0">
      <layout class="QVBoxLayout" name="terminalLayout"/>
     </item>
    </layout>
@@ -379,14 +305,125 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="separator"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSaveAs"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>Project</string>
+    </property>
+    <addaction name="actionUpdateRepo"/>
+    <addaction name="separator"/>
+    <addaction name="actionPackages"/>
+    <addaction name="actionInstallationImagePackages"/>
+    <addaction name="actionLanguages"/>
+    <addaction name="separator"/>
+    <addaction name="actionMakeImage"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuProject"/>
   </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/document-new.png</normaloff>:/raw/pics/document-new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/document-open.png</normaloff>:/raw/pics/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/document-save.png</normaloff>:/raw/pics/document-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSaveAs">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/document-save-as.png</normaloff>:/raw/pics/document-save-as.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/application-exit.png</normaloff>:/raw/pics/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="actionUpdateRepo">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/view-refresh.png</normaloff>:/raw/pics/view-refresh.png</iconset>
+   </property>
+   <property name="text">
+    <string>Update Repo</string>
+   </property>
+  </action>
+  <action name="actionPackages">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/applications-other.png</normaloff>:/raw/pics/applications-other.png</iconset>
+   </property>
+   <property name="text">
+    <string>Packages...</string>
+   </property>
+  </action>
+  <action name="actionInstallationImagePackages">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/applications-other.png</normaloff>:/raw/pics/applications-other.png</iconset>
+   </property>
+   <property name="text">
+    <string>Installation Image Packages...</string>
+   </property>
+  </action>
+  <action name="actionLanguages">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/applications-education-language.png</normaloff>:/raw/pics/applications-education-language.png</iconset>
+   </property>
+   <property name="text">
+    <string>Languages...</string>
+   </property>
+  </action>
+  <action name="actionMakeImage">
+   <property name="icon">
+    <iconset resource="raw.qrc">
+     <normaloff>:/raw/pics/media-optical.png</normaloff>:/raw/pics/media-optical.png</iconset>
+   </property>
+   <property name="text">
+    <string>Make Image</string>
+   </property>
+  </action>
  </widget>
  <tabstops>
-  <tabstop>pushNew</tabstop>
-  <tabstop>pushOpen</tabstop>
-  <tabstop>pushSave</tabstop>
-  <tabstop>pushSaveAs</tabstop>
-  <tabstop>pushExit</tabstop>
   <tabstop>lineTitle</tabstop>
   <tabstop>lineParameters</tabstop>
   <tabstop>lineRepository</tabstop>
@@ -405,10 +442,6 @@
   <tabstop>pushModifyCollection</tabstop>
   <tabstop>pushRemoveCollection</tabstop>
   <tabstop>pushSetDefaultCollection</tabstop>
-  <tabstop>pushUpdateRepo</tabstop>
-  <tabstop>pushSelectPackages</tabstop>
-  <tabstop>pushSelectLanguages</tabstop>
-  <tabstop>pushMakeImage</tabstop>
  </tabstops>
  <resources>
   <include location="raw.qrc"/>

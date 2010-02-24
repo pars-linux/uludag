@@ -273,7 +273,7 @@ class Repository:
 
         collect(package_name)
         if package_name =="yali4":
-       # Not needed deps search for system.base as default at all click!!!
+            # Not needed deps search for system.base as default at all click!!!
             if self.components.has_key("system.base"):
                 for item in self.components["system.base"]:
                     deps.add(item)

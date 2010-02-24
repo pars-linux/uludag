@@ -187,6 +187,9 @@ class Project:
         self.package_collections = []
         self.missing_packages = []
         self.missing_components = []
+        self.selected_install_image_components = []
+        self.selected_install_image_packages = []
+        self.all_install_image_packages = []
 
     def open(self, filename):
         # Open and parse project file filename
@@ -315,6 +318,17 @@ class Project:
             self.selected_packages.sort()
             self.all_packages.sort()
 
+        installImagePackagesTag = doc.getTag("InstallImagePackages")
+        if installImagePackagesTag:
+            uri, \
+            self.selected_install_image_components, \
+            self.selected_install_image_packages, \
+            self.all_install_image_packages = __packageSelection(installImagePackagesTag)
+
+            self.selected_install_image_components.sort()
+            self.selected_install_image_packages.sort()
+            self.all_install_image_packages.sort()
+
     def save(self, filename=None):
         # Save the data into filename as pardusman project file
         doc = piksemel.newDocument("PardusmanProject")
@@ -390,6 +404,19 @@ class Project:
                 package_selection.insertTag("SelectedPackage").insertData(item)
 
             for item in self.all_packages:
+                package_selection.insertTag("Package").insertData(item)
+
+        if self.all_install_image_packages:
+            package_selection = doc.insertTag("InstallImagePackages")
+
+            # Insert components if any
+            for item in self.selected_install_image_components:
+                package_selection.insertTag("SelectedComponent").insertData(item)
+
+            for item in self.selected_install_image_packages:
+                package_selection.insertTag("SelectedPackage").insertData(item)
+
+            for item in self.all_install_image_packages:
                 package_selection.insertTag("Package").insertData(item)
 
         if self.default_language:
@@ -499,6 +526,24 @@ class Project:
             self.all_packages = packages
 
         self.all_packages.sort()
+
+        # Find all install image packages
+        packages = []
+        self.all_install_image_packages = []
+
+        for component in self.selected_install_image_components:
+            if component not in repo.components:
+                if component not in self.missing_components:
+                    self.missing_components.append(component)
+                return
+            for package in repo.components[component]:
+                collect(package)
+
+        for package in self.selected_install_image_packages:
+            collect(package)
+
+        packages.sort()
+        self.all_install_image_packages = packages
 
     def image_repo_dir(self, clean=False):
         return self._get_dir("image_repo", clean)

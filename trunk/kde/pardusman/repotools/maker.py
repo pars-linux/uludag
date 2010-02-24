@@ -392,7 +392,7 @@ def make_repos(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir(clean=True)
         if project.type == "install":
-            imagedeps = repo.full_deps("yali4")
+            imagedeps = project.all_install_image_packages or repo.full_deps("yali4")
             xterm_title("Preparing image repo for installation")
         else:
             imagedeps = project.all_packages
@@ -439,7 +439,7 @@ def check_repo_files(project):
         repo = project.get_repo()
         repo_dir = project.image_repo_dir()
         if project.type == "install":
-            imagedeps = repo.full_deps("yali4")
+            imagedeps = project.all_install_image_packages or repo.full_deps("yali4")
         else:
             imagedeps = project.all_packages
         i = 0
@@ -483,7 +483,8 @@ def make_image(project):
 
         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
-            run('pisi --yes-all --ignore-comar -D"%s" it yali4' % image_dir)
+            install_image_packages = " ".join(project.all_install_image_packages)
+            run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, install_image_packages))
             if project.plugin_package:
                 plugin_package = project.plugin_package
                 run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, plugin_package))
