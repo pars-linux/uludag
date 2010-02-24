@@ -27,6 +27,9 @@ from pisi.db.packagedb import PackageDB
 
 import backend
 
+working_path = os.getenv("HOME") + "/offline"
+pkgs_path = working_path + "/packages"
+
 class Singleton(object):
     def __new__(type):
         if not '_the_instance' in type.__dict__:
@@ -35,7 +38,8 @@ class Singleton(object):
 
 class Offline(Singleton):
     def __init__(self):
-        pass
+        
+        self.pdb = PackageDB()
 
     def saveProcess(self, packages, operation):
         """
@@ -54,7 +58,7 @@ class Offline(Singleton):
 
         opno = self._get_latest()
         self.doc_path = "%s_%s.xml" % (opno, operation)
-        self.filename = self.path + "/" + self.doc_path
+        self.filename = working_path + "/" + self.doc_path
 
         year, month, day, hour, minute = time.localtime()[0:5]
 
@@ -74,7 +78,7 @@ class Offline(Singleton):
         newOp.setAttribute("Time", self.op_time)
 
         if self.op_type == "install":
-            pisi.api.fetch(self.pkgs, self.pkgs_path)
+            pisi.api.fetch(self.pkgs, pkgs_path)
 
         Packages = newOp.insertTag("Packages")
         if self.op_type == "install":
@@ -91,7 +95,28 @@ class Offline(Singleton):
             return True
         except:
             print "Dosyaya yazılamadı!"
-    
+
+    def _get_latest(self):
+
+        self.__checkDir()
+
+        files = filter(lambda h:h.endswith(".xml"), os.listdir(working_path))
+        if not files:
+            return "001"
+
+        files.sort(lambda x,y:int(x.split("_")[0]) - int(y.split("_")[0]))
+        no, opxml = files[-1].split("_")
+        return "%03d" % (int(no) + 1)
+
+    def __checkDir(self):
+        # This function checks if the working path exists or not.
+        try:
+            os.mkdir(working_path)
+            os.mkdir(pkgs_path)
+
+        except OSError:
+            pass
+
 
 class OfflineManager(QObject):
     def __init__(self):
@@ -99,46 +124,18 @@ class OfflineManager(QObject):
         self.setExceptionHandler(self.exceptionHandler)
         self.setActionHandler(self.handler)
 
-        self.initialize()
-
     def setActionHandler(self, handler):
         backend.pm.Iface().setHandler(handler)
 
     def setExceptionHandler(self, handler):
         backend.pm.Iface().setExceptionHandler(handler)
 
-    def initialize(self):
-        self.path = os.getenv("HOME") + "/offline"
-        self.pkgs_path = self.path + "/packages"
-        self.pdb = PackageDB()
-
-    def __checkDir(self):
-        # This function checks if the working path exists or not.
-        try:
-            os.mkdir(self.path)
-            os.mkdir(self.pkgs_path)
-
-        except OSError:
-            pass
-
     def __removeDir(self):
         # This function removes if the working path exists.
         try:
-            rmtree(self.path)
+            rmtree(working_path)
         except OSError:
             pass
-
-    def _get_latest(self):
-
-        self.__checkDir()
-
-        files = filter(lambda h:h.endswith(".xml"), os.listdir(self.path))
-        if not files:
-            return "001"
-
-        files.sort(lambda x,y:int(x.split("_")[0]) - int(y.split("_")[0]))
-        no, opxml = files[-1].split("_")
-        return "%03d" % (int(no) + 1)
 
     def writeCatalog(self, filename):
         """
@@ -240,7 +237,7 @@ class OfflineManager(QObject):
 
         self.operationPool = []
 
-        files = filter(lambda x:x.endswith(".xml"), os.listdir(self.path))
+        files = filter(lambda x:x.endswith(".xml"), os.listdir(working_path))
         list = []
 
         for file in files:
@@ -253,7 +250,7 @@ class OfflineManager(QObject):
             op_number = list[p][0]
             op_type = list[p][1]
 
-            doc = piksemel.parse(self.path + "/" + op_number)
+            doc = piksemel.parse(working_path + "/" + op_number)
             parent = doc.getTag("Operation")
 
             for i in parent.tags("Packages"):
@@ -262,7 +259,7 @@ class OfflineManager(QObject):
                 # find a better way to split install and remove functions
                 if op_type == "install":
                     for x in i.tags("PackageURI"):
-                        packages.append(self.pkgs_path + "/" + str(x.firstChild().data()))
+                        packages.append(pkgs_path + "/" + str(x.firstChild().data()))
                 else:
                     for x in i.tags("Package"):
                         packages.append(str(x.firstChild().data()))
