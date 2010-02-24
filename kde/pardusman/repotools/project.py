@@ -393,6 +393,10 @@ class Project:
                     languageSelection.insertTag("Language").insertData(language)
 
         else:
+            self.selected_components.sort()
+            self.selected_packages.sort()
+            self.all_packages.sort()
+
             package_selection = doc.insertTag("PackageSelection")
             package_selection.setAttribute("repo_uri", self.repo_uri)
 
@@ -407,6 +411,10 @@ class Project:
                 package_selection.insertTag("Package").insertData(item)
 
         if self.all_install_image_packages:
+            self.selected_install_image_components.sort()
+            self.selected_install_image_packages.sort()
+            self.all_install_image_packages.sort()
+
             package_selection = doc.insertTag("InstallImagePackages")
 
             # Insert components if any
