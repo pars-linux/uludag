@@ -262,6 +262,12 @@ class Iface(Singleton):
         except Exception:
             return []
 
+    def getPackageURI(self, package):
+        return self.pdb.get_package(package).packageURI
+
+    def fetch(self, packages, path):
+        pisi.api.fetch(packages, path)
+
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.
 # --------------------------------------------------------------
