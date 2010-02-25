@@ -203,10 +203,10 @@ if __name__ == "__main__":
 
         # Filter out the packages that shouldn't be build on this architecture
         candidateQueue = updatedPspecFiles + newPspecFiles + revDepsToBeRecompiled
-        queue.extend(filter(lambda x: pisi.ctx.config.get('general', 'architecture') not in
+        queue.extend(filter(lambda x: pisi.ctx.config.values.get('general', 'architecture') not in
                      pisi.specfile.SpecFile(x).source.excludeArch, candidateQueue))
 
         print "\nThese packages will not be compiled on this architecture:\n%s" % ('-'*60)
-        print "\n".join(list(set(candidateQueue.difference(queue))))
+        print "\n".join(list(set(candidateQueue).difference(queue)))
 
         open(os.path.join(config.workDir, "workQueue"), "wb").write("\n".join([l for l in list(set(queue)) if l])+"\n")
