@@ -243,7 +243,7 @@ db_load_model(iks *xml, PyObject **py_models)
     }
 }
 
-//! Returns a dictionar of models: methods
+//! Returns a dictionary of models: methods
 int
 db_load_models(PyObject **py_models)
 {
