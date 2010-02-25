@@ -38,8 +38,7 @@ class Singleton(object):
 
 class Offline(Singleton):
     def __init__(self):
-        
-        self.pdb = PackageDB()
+        pass
 
     def saveProcess(self, packages, operation):
         """
@@ -79,12 +78,10 @@ class Offline(Singleton):
         newOp.setAttribute("Date", self.op_date)
         newOp.setAttribute("Time", self.op_time)
 
-        if self.op_type == "install":
-            iface.fetch(self.pkgs, pkgs_path)
-
         Packages = newOp.insertTag("Packages")
         if self.op_type == "install":
             for pkg in self.pkgs:
+                iface.fetch([pkg], pkgs_path)
                 Packages.insertTag("PackageURI").insertData(iface.getPackageURI(pkg))
         else:
             for pkg in self.pkgs:
