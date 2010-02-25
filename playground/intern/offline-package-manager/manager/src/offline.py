@@ -70,6 +70,8 @@ class Offline(Singleton):
 
     def __write(self):
 
+        iface = backend.pm.Iface()
+
         self.doc = piksemel.newDocument("PISI-Offline")
 
         newOp = self.doc.insertTag("Operation")
@@ -78,12 +80,12 @@ class Offline(Singleton):
         newOp.setAttribute("Time", self.op_time)
 
         if self.op_type == "install":
-            pisi.api.fetch(self.pkgs, pkgs_path)
+            iface.fetch(self.pkgs, pkgs_path)
 
         Packages = newOp.insertTag("Packages")
         if self.op_type == "install":
             for pkg in self.pkgs:
-                Packages.insertTag("PackageURI").insertData(self.pdb.get_package(pkg).packageURI)
+                Packages.insertTag("PackageURI").insertData(iface.getPackageURI(pkg))
         else:
             for pkg in self.pkgs:
                 Packages.insertTag("Package").insertData(pkg)
