@@ -98,6 +98,7 @@ class Install(install):
         shutil.copy("data/package-manager.desktop", apps_dir)
         shutil.copy("data/package-manager.png", icon_dir)
         shutil.copy("data/packagemanager-helper.desktop", apps_dir)
+        shutil.copy("data/packagemanager-offline.desktop", apps_dir)
         shutil.copy("data/package-manager.xml", mime_dir)
 
         # Install icons
@@ -128,6 +129,7 @@ class Install(install):
         print "Changing file modes..."
         os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
         os.chmod(os.path.join(project_dir, "pm-install.py"), 0755)
+        os.chmod(os.path.join(project_dir, "pm-offline.py"), 0755)
         # Symlink
         try:
             if self.root:
@@ -136,6 +138,17 @@ class Install(install):
             else:
                 os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
                 os.symlink(os.path.join(project_dir, "pm-install.py"), os.path.join(bin_dir, "pm-install"))
+        except OSError, e:
+            pass
+
+        # Symlink for pm-offline
+        try:
+            if self.root:
+		os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+                os.symlink(os.path.join(project_dir.replace(self.root, ""), "pm-offline.py"), os.path.join(bin_dir, "pm-offline"))
+            else:
+		os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+                os.symlink(os.path.join(project_dir, "pm-offline.py"), os.path.join(bin_dir, "pm-offline"))
         except OSError, e:
             pass
 
