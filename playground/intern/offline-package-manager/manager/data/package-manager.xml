@@ -4,4 +4,8 @@
     <comment>PiSi package</comment>
     <glob pattern="*.pisi"/>
   </mime-type>
+  <mime-type type="application/x-offline">
+    <comment>PiSi catalog file</comment>
+    <glob pattern="*.offline"/>
+  </mime-type>
 </mime-info>
