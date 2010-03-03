@@ -61,7 +61,10 @@ def saveXorgConfig(card):
             monSec.options["Ignore"] = "true"
             continue
 
-        monSec.options["Enable"] = "true" if output.enabled else "false"
+        if output.enabled:
+            monSec.options["Enable"] = "true"
+        else:
+            monSec.options["Disable"] = "true"
 
         if output.mode:
             monSec.options["PreferredMode"] = output.mode
