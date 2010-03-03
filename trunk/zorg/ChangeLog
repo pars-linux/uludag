@@ -1,3 +1,7 @@
+2010-03-03  Fatih Aşıcı  <fatih@pardus.org.tr>
+	* zorg/config.py:
+		Use "Disable" option for disable outputs.
+
 2010-01-06  Fatih Aşıcı  <fatih@pardus.org.tr>
 	* zorg-cli:
 		-d parameter can take an empty string as the driver name
