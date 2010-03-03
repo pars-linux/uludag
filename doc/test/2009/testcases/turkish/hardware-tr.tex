@@ -97,6 +97,20 @@ pcsc-lite
 
 \section{Info alt Bileşeni}
 \begin{enumerate}
+ \item smolt paketi kurulumu sonrası:
+
+Aşağıdaki komutu çalıştırın ve datalarınızı gönderin.
+
+Profilinizi paylaşmak için bölümünden, donanımınıza ait linki kopyalayın ve firefox ile sayfanızı görüntüleyin, donanımınızın sunucuya gitmiş olduğunu gözlemleyin.
+
+\begin{verbatim}
+ smoltSendProfile
+\end{verbatim}
+
+\begin{verbatim}
+ kaptan
+\end{verbatim}
+
  \item  hal-info paketi kurulumu sonrası:
 Makinenize bir usbdisk takın ve sistemin uyarı verdiğini gözlemleyin.
 
@@ -214,7 +228,7 @@ Audio CD'yi mount edin ve daha sonra aşağıda bulunan klomutları çalıştır
 
 Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir şekilde boot ettiğini gözlemleyin.
 
-\item Aşağıdaki bağlantıda bulunan video ve müzikleri DVD ve CD'ye audio olarak yazdırın. 
+\item Aşağıdaki bağlantıda bulunan video ve müzikleri DVD ve CD'ye audio (ses cd'si) olarak yazdırın. (RAW mod ile)
 \begin{verbatim}
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
@@ -326,7 +340,13 @@ blueman
 kdebluetooth 
 \end{verbatim}
 
-Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
+\begin{itemize}
+ \item Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve taratın; uygulamanın cep telefonunuzu bulabildiğini gözlemleyin.
+
+ \item Sistem çekmecesinde bulunan kbluetooth ikonuna sağ tıklayarak dosya gönderi seçin ve cep telefonunuza bir dosya gönderin, sorunsuz bir şekilde gönderilebildiğini gözlemleyin.
+
+\end{itemize}
+
 \end{enumerate}
 
 \section{Mobile alt Bileşeni}
@@ -346,6 +366,10 @@ Cep telefonunuz ve sisteminizde de bluetooth var ise uygulamayı açın, ve tara
 \begin{verbatim}
   squashfs-tools
 \end{verbatim}
+
+\item dosfstools paketi kurulumu sonrası:
+
+gparted ile bir usb çubuğu dos veya fat olarak formatlayın, formatlama işlemi bittikten sonra usb çubuğu makinenizden çıkarıp tekrar takın ve mount edilebildiğini gözlemleyin. 
 
 \item ntfs\_3g paketi kurulumu sonrası:
 
