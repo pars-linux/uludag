@@ -23,7 +23,15 @@
  gnome-keyring-docs
  gnome-doc-utils
  gnome-common
+ libgnome-docs
+ libgweather
+ libgweather-docs
 \end{verbatim}
+
+\item libgnome paketi kurulumu sonrası:
+
+multimedia-tr.pdf padevchooser testini gerçekleştiriniz.
+
 
 \item gnome-desktop paketi kurulumu sonrası:
 
@@ -59,6 +67,10 @@ desktop-tr.pdf gvfs-common testini gerçekleştirin.
 \begin{verbatim}
  icon-theme-oxygen-svg
 \end{verbatim}
+
+\item gnome-icon-theme paketi kurulumu sonrası:
+
+Sistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Simgeler bölümünden GNOME simge setini seçin ve uygula deyin, sorunsuz bir şekilde gnome simge setinin uygulandığını gözlemleyin.
 
 \item artwork-pardus-release paketi kurulumu sonrası:
 
@@ -127,6 +139,7 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
 \begin{verbatim}
  iTest
  shared-mime-info
+ shared-desktop-ontologies
 \end{verbatim}
 \item xdg-user-dirs paketi kurulumu sonrası:
 
@@ -139,9 +152,16 @@ Kmenüden uygulamayı açın, aşağıda bulunan resim dosyalarını Ekle butonu
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/kde/base/tepecik_01.png
 \end{verbatim}
 
-\item google-gadgets, google-gadgets-qt ve google-gadgets-gtk paketleri kurulumu sonrası:
+\item google-gadgets, google-gadgets-qt  paketleri kurulumu sonrası:
 
 Uygulamalar $\rightarrow$ İnternet yolunu izleyerek uygulamanızı çalıştırın ve programcığın efektler bozulmadan eklendiğini gözlemleyin.
+
+\item google-gadgets-gtk paketi kurulumu sonrası:
+
+Aşağıda bulunan komutu çalıştırdığınızda, google programcığının eklendiğini gözlemleyin.
+\begin{verbatim}
+ ggl-gtk 
+\end{verbatim}
 
 \item basket paketi kurulumu sonrası:
 
@@ -168,6 +188,7 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
  ipython
  import PyQt4
 \end{verbatim}
+
 
 \item gtk-qt-engine paketi kurulumu sonrası
 
@@ -201,12 +222,12 @@ Menu $\rightarrow$ Programlar $\rightarrow$ Geliştirme yolunu izleyerek sorunsu
 
 qt-sql-mysql için Mysql'i servis yöneticisinden başaltınız.
 \begin{verbatim}
- # mkdir test
- # cd test
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/ 
-toolkit/test-qt-sql-<ilgili_veritabanı>.cpp
- # qmake-qt4 -project
- # qmake-qt4	
+ sudo pisi it -c system.devel
+ mkdir test
+ cd test
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/desktop/toolkit/test-qt-sql-<ilgili_veritabanı>.cpp
+ qmake-qt4 -project
+ qmake-qt4	
 \end{verbatim}
 qmake komutundan sonra oluşan .pro dosyanıza QT += sql satırını eklemelisiniz. Daha sonra aşağıdaki komutları çalıştırın.
 \begin{verbatim}
@@ -225,6 +246,17 @@ Bağlamtının sorunsuz bir şekilde gerçekleştğini gözlemleyin.
 gtk+extra
 gtk-doc
 pango-docs
+atk
+gtk2-docs
+gtksourceview
+gtksourceview-docs
+\end{verbatim}
+
+\item gtkhtml3 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun html editor açtığını gözlemleyin.
+\begin{verbatim}
+ gtkhtml-editor-test
 \end{verbatim}
 
 \item QtCurve-Gtk2 paketi kurulumu sonrası:
@@ -236,11 +268,11 @@ Firefox uygulamasının buton sitilleri ile paket yöneticisinin aynı işe yara
 
 multimedia-tr.pdf pavucontrol testini gerçekleştiriniz.
  
- \item cairo, gtk2-docs ve gtk2-demo paketleri kurulumu sonrası: 
+ \item cairo,  gtk2-demo paketleri kurulumu sonrası: 
 
 Aşağıda bulunan komutun demo kodlar için bir gui açtığını gözlemleyin:
 \begin{verbatim}
- # gtk-demo
+gtk-demo
 \end{verbatim}
 
 Bu gui'de bulunan listeden:
@@ -252,6 +284,7 @@ Drawing Area, Clipboard, Color Selector bölümlerine çift tıklayarak çalış
  \item multimedia-tr.pdf avidemux testini gerçekleştirin
 \item desktop-tr.pdf gtk2-demo testini gerçekleştirin.
 \end{itemize}
+
 \item pango paketi kurulumu sonrası: 
 \begin{itemize}
  \item progrmming-tr.pdf pygtk testini gerçekleştirin.

@@ -25,6 +25,12 @@
  module-vloopback-userspace
 \end{verbatim}
 
+\item module-ipheth-driver ve module-ipheth-driver-userspace paketleri kurulumu sonrası:
+
+Eğer iphone 3G veya 3Gs cihazınız var ise bu testi gerçekleştirebilirsiniz.
+
+iphone'u usb kablosu ile bağladıktan sonra ağ yöneticisinden iphone'u bir ağ olarak seçin ve internete bağlanmayı deneyin, sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin.
+
 \item perf paketi kurulumu sonrası:
 \begin{verbatim}
 uname -r  
@@ -93,7 +99,7 @@ Aşağıdaki komutu kullanarak ağa bağlı olduğunuzu gözlemleyiniz.
 
 (Eğer ATI ekran kartınız var ise test edebilirsiniz, kartınızın ne olduğuna bakabilmek için gerekli komut lspci)
 
-Bilgisayarınız yeniden başlatınız. x11-tr.tex altında bulunan test aşamalarını gerçekleştiriniz.
+Bilgisayarınız yeniden başlatınız. x11-tr.tex zorg test aşamalarını gerçekleştiriniz.
 
 \item module-gspca ve module-gspca-userspace kurulumu sonrası:
 
@@ -109,7 +115,13 @@ Aşağıda bulunan komutu çalıştırarak, bilgisayarınızın sanallaştırma 
 # egrep '^flags.*(vmx|svm)' /proc/cpuinfo	
 \end{verbatim}
 
-Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyiniz.
+Aşağıda bulunan komutu çalıştırın:
+
+\begin{verbatim}
+ sudo modprobe kvm
+\end{verbatim}
+
+Aşağıda bulunan komutun bir çıktı döndürdüğünü gözlemleyin.
 \begin{verbatim}
 # lsmod | grep kvm
 \end{verbatim}
