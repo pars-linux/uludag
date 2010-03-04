@@ -168,6 +168,7 @@ def extract_from_translationsxmls(path, language, old_messages = []):
 
     # For duplicate msgid detection
     old_msg_ids = [omsg.msgid for omsg in old_messages]
+    print "Number of old translations: %d" % len(old_msg_ids)
 
     def strp(msg):
         if msg:
@@ -201,8 +202,11 @@ def extract_from_translationsxmls(path, language, old_messages = []):
 
 
     # function starts here.
+    paklen = 0
+    msgidlen = 0
 
     for pak in paks:
+        paklen += 1
         spec = None
         try:
             spec = dom.parse(pak + "/pspec.xml")
@@ -217,6 +221,7 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                     for item in node.getElementsByTagName(tag):
                         lang = item.getAttribute("xml:lang")
                         if not lang or lang == "en":
+                            msgidlen += 1
                             msg.msgid = item.firstChild.data
                         msg.msgstr = get_translation(pak, section, tag, getDataByTagName(node, "Name"))
 
@@ -225,11 +230,12 @@ def extract_from_translationsxmls(path, language, old_messages = []):
                         else:
                             msg.reference = pak[len(path):] + "::" + tag.lower()
 
-                    if msg.msgid and msg.msgid not in old_msg_ids:
+                    if msg.msgid and (msg.msgid not in old_msg_ids):
                         msg = set_fuzzy_flag(msg)
                         messages.append(msg)
                         old_msg_ids.append(msg.msgid)
 
+    print "packages: %d, msgids: %d" % (paklen, msgidlen)
     return messages
 
 
