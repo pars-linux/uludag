@@ -448,3 +448,7 @@ msgid "Other options"
 msgstr "Övriga alternativ"
 
 
+#. txt_kernel_debug
+msgid "debug"
+msgstr ""
+

@@ -15,6 +15,7 @@
   "apm=off acpi=off mce=off barrier=off ide=nodma idewait=50 i8042.nomux psmouse.proto=bare irqpoll pci=nommconf"
   "acpi=off"
   "nolapic"
+  "bootmem_debug debug debugpat dynamic_printk earlyprintk=vga initcall_debug loglevel=7 mminit_loglevel=4 pnp.debug sched_debug apic=debug"
 ] def
 
 
@@ -34,6 +35,7 @@
     /txt_kernel_safe
     /txt_kernel_noacpi
     /txt_kernel_nolapic
+    /txt_kernel_debug
   ] put
   xmenu .xm_title /txt_kernel put
 
