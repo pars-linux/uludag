@@ -405,10 +405,6 @@
   syslinux {
     video.modes.list xmenu.video .xm_current get get .vm_mode get
 
-    % Make sure we boot as livecd even 
-    % FIXME: this can be defined in config
-    "mudur=livecd " bc.cmd dup length add sprintf
-
     dup 0 ge {
       0x200 add "vga=0x%x " bc.cmd dup length add sprintf
     } {

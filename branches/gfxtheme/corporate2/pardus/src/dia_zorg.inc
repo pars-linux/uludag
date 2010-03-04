@@ -12,7 +12,7 @@
 
 /zorg.options [
   ""
-  "xorg=safe"
+  "xorg=safe nomodeset"
   "xorg=probe"
   "xorg=off"
 ] def
