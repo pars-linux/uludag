@@ -53,7 +53,64 @@ lensfun
 zziplib
 gmm
 libraw1394
+gsm
+attica
+libiodbc
 \end{verbatim}
+
+
+\item ktoblzcheck paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import ktoblzcheck
+\end{verbatim}
+
+
+\item gobject-introspection paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import giscanner
+\end{verbatim}
+
+
+\item libnl paketi kurulumu sonrası:
+
+hardwar-tr.pdf bluez testini gerçekleştirin.
+\item protobuf paketi kurulumu sonrası:
+
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import google
+\end{verbatim}
+\item tunepimp paketi kurulumu sonrası:
+
+multimedia-tr.pdf kid3 testini gerçekleştirin.
+
+\item libmp4v2 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun mp4 dosyası ile ilgili özellikleri listelediğini gözlemleyin.
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample_mpeg4.mp4
+mp4info sample_mpeg4.mp4 
+\end{verbatim}
+
+\item libcaca paketi kurulumu sonrası:
+
+multimedia-tr.pdf mplayer testini gerçekleştirin.
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ cacademo
+\end{verbatim}
+
+
+\item libass paketi kurulumu sonrası:
+
+multimedia-tr.pdf mplayer testini gerçekleştirin.
+
 \item minixml paketi kurulumu sonrası:
 game-tr.pdf dreamchess testini gerçekleştiriniz.
 
@@ -167,7 +224,7 @@ multimedia-tr.pdf streamripper testini gerçekleştiriniz.
 
 \item gstreamer, gst-plugin-ugly, gst-plugin-bad, gst-plugin-base ve gst-ffmeg paketleri kurulumu sonrası:
 
-Sistem ayarları $\rightarrow$ multimedia $\rightarrow$ Arka uç $\rightarrow$ gstreamer seçilir. 
+Sistem ayarları $\rightarrow$ Çokluortam $\rightarrow$ Arka uç $\rightarrow$ gstreamer seçin. 
 
 dragon player ve kaffein ile aşağıda bulunan dosyaları çalıştırın ve sesin düzgün bir şekilde çıktığını gözlemleyin.
 \begin{verbatim}
@@ -264,10 +321,8 @@ multimedia-tr.pdf qpitch testini gerçekleştirin.
 
 \item libv4l paketi kurulumu sonrası: (Kamerası olanlar test edebilecektir.)
 
-Tüm kamera ile ilgili diğer ugulamaların kapalı olduğundan emin olduktan sonra aşağıda bulunan komutun düzgün çalıştığını gözlemleyin:
-\begin{verbatim}
- test-webcam
-\end{verbatim}
+
+multimedia-tr.pdf vlc testini gerçekleştirin.
 
 \item qca2 ve qca2-apidocs paketi kurulumu sonrası:
 \begin{itemize}

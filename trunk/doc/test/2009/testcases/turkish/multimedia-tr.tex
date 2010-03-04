@@ -14,18 +14,27 @@
 \begin{document}
 
 \maketitle
+
+\section{TV alt Bileşeni}
+\begin{enumerate}
+ \item mlt paketi kurulumu sonrası:
+
+programming-tr.pdf python-mlt testini gerçekleştiriniz.
+\end{enumerate}
+
 \section{Stream alt Bileşeni}
 \begin{enumerate}
  \item mpeg4ip paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
+
+Aşağıda bulunan komutun avi wav dönüşümünü gerçekleştirdiğini gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg 
-# mp4player DVD.mpg
+# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+# avi2wav Lake_dance_XviD.AVI
 \end{verbatim}
 
-
- \item streamripper paketi kurulumu sonrası:
+\item streamripper paketi kurulumu sonrası:
 
 Aşağıda bulunan komutu çalıştırın ve bir takım şarkıları stream.mp3 adı altında birleştirdiğini gözlemleyin:
 \begin{verbatim}
@@ -48,11 +57,32 @@ Daha sonra stream.mp3 dosyasını amarok, mplayer gibi uygulamalardan biri ile s
 
  \item kipi-plugins paketi kurulumu sonrası:
 
-Menü $\rightarrow$ digikam $\rightarrow$ import $\rightarrow$ Import from facebook yolunu izleyerek facebook hesabınızdan fotoğraf indirmeye çalışın. Sorunsuz bir şekilde indirebildiğinizi gözlemleyin. (Digikam uygulamasını ilk defa açıyorsanız bir albüm oluşturunuz.)
+Menü $\rightarrow$ digikam $\rightarrow$ İçeriye Aktar $\rightarrow$ Facebook'tan içeriye aktar yolunu izleyerek facebook hesabınızdan fotoğraf indirmeye çalışın. Sorunsuz bir şekilde indirebildiğinizi gözlemleyin. (Digikam uygulamasını ilk defa açıyorsanız bir albüm oluşturunuz.)
 \end{enumerate}
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
+\item rosegarden paketi kurulumu sonrası:
+
+Kmenu'den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
+
+\item faad2 paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun dosya ile ilgili bilgileri listelediğinii gözlemleyin. 
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample_mpeg4.mp4
+ faad sample_mpeg4.mp4
+\end{verbatim}
+
+\item faac paketi kurulumu sonrası:
+
+soundconverter paketini kurun. 
+
+\begin{verbatim}
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+\end{verbatim}
+
+Kmenü'den soundconverter uygulamasını açın ve yukarıda bulunan dosyayı açın ve daha sonra "dönüştür" butonuna basın. Dosyanın kopyalandığı dizinde sample.ogg adında bir dosya oluştuğunu gözlemleyin.
 
 \item padevchooser paketi kurulumu sonrası:
 
@@ -79,6 +109,7 @@ multimedia-tr.pdf vlc testini gerçekleştiriniz.
 \item mixxx paketi kurulumu sonrası:
 
 Kmenüden uygulamanın açılabildiğini gözlemleyin.
+
 \item pavucontrol paketi kurulumu sonrası:
 
 Uygulamayı Kmenüden açın ve daha sonra amarok ile aşağıda bulunan müzik dosyasını çalıştırın, çalma bölümünde titreşimlerin olduğunu gözlemleyin.
@@ -155,12 +186,26 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 \section{Video alt Bileşeni}
 \begin{enumerate}
+
+\item mpgtx paketi kurulumu sonrası:
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/vcd.mpg
+ mpgsplit -10M vcd.mpg
+ mplayer chunk-01.mpg
+ mpgjoin chunk-01.mpg chunk-02.mpg 
+ mplayer chunk.mpg
+\end{verbatim}
+
+\item gpac paketi kurulumu sonrası:
+
+multimedia-tr.padf x264 testini gerçekleştirin.
 \item dvdrip paketi kurulumu sonrası:
 
 Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.
 
 dvdrip uygulmasını kmenüden açın ve dvd'de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
- \item mplayer, vlc, kaffeine, smplpayer, gnome-mplayer paketleri kurulumu sonrası:
+ \item mplayer, vlc, kaffeine, smplayer, gnome-mplayer paketleri kurulumu sonrası:
  \begin{verbatim}
   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
@@ -177,17 +222,17 @@ Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya form
  
 Aşağıda bulunan ikinci komutun düzgün çıktılar ürettiğini ve üçüncü komutun da bu çıktıları çalıştırabildiğini gözlemleyin.
 \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar 
-  # ffmpeg -i <multimedia dosyası> -r 24 test.mpg
-  # ffplay <multimedia dosyası>
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
+   ffmpeg -i Lake_dance_XviD.AVI -r 24 test.mpg
+   ffplay test.mpg
   \end{verbatim}
 \item x264 paketi kurulumu sonrası:
 
 Aşağıdaki komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
-# wget  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/example.y4m
-# x264 -o test.mp4 example.y4m 300x300 
-# mplayer test.mp4 (Kısa bir video olmalı)
+ wget  http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/example.y4m
+ x264 -o test.mp4 example.y4m 300x300 
+ mplayer test.mp4 (Kısa bir video olmalı)
 \end{verbatim}
 
 \end{enumerate}
@@ -659,7 +704,7 @@ Aşağıdaki komutları çalıştırın ve bir slideshow oluştuğunu gözlemley
  # dvd-slideshow image.txt
  # mplayer image.vob 
 \end{verbatim}
-\itemk denlive paketi kurulumu sonrası:
+\item kdenlive paketi kurulumu sonrası:
 
 Kdenlive uygulamasını açın ve Projeler $\rightarrow$ Klip ekle yolunu izleyerek aşağıda bulunan dosyayı ekleyin ve çalıştırın sesinin ve görüntüsünün sorunsuz olduğunu gözlemleyin.
 \begin{verbatim}

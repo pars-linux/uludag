@@ -237,7 +237,34 @@ koffice-l10n-zh_TW
 
 \section{Misc alt bileşeni}
 \begin{enumerate}
-\item indywiki
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+
+\begin{verbatim}
+ enca
+ aqbanking
+ kmymoney
+ kmymoney-docs
+\end{verbatim}
+
+\item rst2pdf paketi kurulumu sonrası:
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
+ rst2pdf test.rst
+ okular test.pdf
+\end{verbatim}
+
+\item docutils paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde html formatına dönüştüğünü gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
+ rst2html test.rst test.html
+ firefox test.html
+\end{verbatim}
+
+\item indywiki paketi kurulumu sonrası:
 
 Kmenüden uygulamayı açın. Uygulamanın arama kısmına Pardus yazın, ve dil olarak türkçeyi seçin, daha sonra arama tuşuna basın. Pardus ile ilgili bilgilerin bulunduğunu gözlemleyin.
 \item dia paketi kurulumu sonrası:

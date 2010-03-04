@@ -117,6 +117,17 @@ git-gui
 git-svn
 gitweb
 \end{verbatim}
+
+\item bzr paketi kurulumu sonrası:
+\begin{verbatim}
+ bzr init test
+ bzr branch test test2
+ cd test
+ touch testfile
+ bzr add testfile
+ bzr diff
+\end{verbatim}
+
 \item SVK paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
@@ -193,6 +204,10 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
 
 \section{Environment alt bileşeni}
 \begin{enumerate}
+ \item eclipse-pydev paketi kurulumu sonrası:
+
+Kmenu'den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.
+
  \item kdevelop paketi kurulumu sonrası: 
 
 Kmenuden uygulamayı açın açılabildiğini gözlemleyin.
@@ -340,14 +355,6 @@ game-tr.pdf frozen-bubble testini gerçekleştiriniz.
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/MailTools.tar.gz
  perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 \end{verbatim}
-
-\item perl-ExtUtils-ParseXS paketi kurulumu sonrası:
-
-\begin{verbatim}
-wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/ExtUtils-Depends.tar.gz 
-perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
-\end{verbatim}
-
 
 \item perl-libwww paketi kurulumu sonrası:
 
@@ -546,7 +553,84 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  python-bytecodeassembler
  python-extremes
  epydoc-doc
+ reportlab-docs
 \end{verbatim}
+
+
+\item python-reportlab paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import reportlab
+\end{verbatim}
+
+\item python-wordaxe paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import wordaxe
+\end{verbatim}
+
+
+\item sqlalchemy paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import sqlalchemy
+\end{verbatim}
+
+
+\item python-bsddb3 paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import bsddb3
+\end{verbatim}
+
+\item python-webob paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import webob
+\end{verbatim}
+
+\item python-routes paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import routes
+\end{verbatim}
+
+
+\item python-prioritized-methods paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import prioritized-methods
+\end{verbatim}
+
+
+\item python-beaker paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import beaker
+\end{verbatim}
+
+\item Twisted paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import twisted
+\end{verbatim}
+
+\item python-mlt paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ # ipython
+ import mlt
+\end{verbatim}
+
 
 \item python-Babel paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -908,7 +992,6 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  # ipython
  import fltk
 \end{verbatim}
-
 
 \item python-turboflot paketi kurulumu sonrası:
 
