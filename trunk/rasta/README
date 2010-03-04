@@ -11,12 +11,17 @@ Requirements:
 * qt4
 * PyQt
 * docutils
+* qscintilla2
+* qscintilla2-python
 
 How to Run:
 ===========
 ::
-	
-$ ./main.py
+
+Install all the required packages
+
+$ python setup.py build
+$ ./rasta
 
 For Developers:
 ===============
