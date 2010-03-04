@@ -1,0 +1,25 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Python Core Libraries
+import sys
+
+# PyQt4 Core Libraries
+from PyQt4.QtGui import QApplication
+from PyQt4.QtCore import QCoreApplication
+
+# Rasta Core Library
+from rastaLib import Rasta
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+
+    # Application Settings
+    QCoreApplication.setOrganizationName("Pardus")
+    QCoreApplication.setOrganizationDomain("pt.pardus.org.tr")
+    QCoreApplication.setApplicationName("Rasta")
+
+    RastaUI = Rasta()
+    RastaUI.show()
+    sys.exit(app.exec_())
+
