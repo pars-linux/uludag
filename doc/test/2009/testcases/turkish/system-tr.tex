@@ -21,6 +21,7 @@
  pam_krb5
  pam_ldap
  nss_ldap
+ pam_pkcs11
 \end{verbatim}
 
 \end{enumerate}
@@ -99,7 +100,11 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  libssh2
  dbus-glib 
  libtool-ltdl 
+ memtest 
 \end{verbatim}
+\item sysklogd paketi kurulumu sonrası:
+Servis yöneticisi ile bu servisin çalışmakta olduğunu gözlemleyin.
+
 \item grub paketi kurulumu sonrası:
 
 Bilgisayarınızı başlatığınızda makinanızda bulunan sistemleri listeleyen pencerenin sorunsuz bir şekilde sistemlerinizi listelediğini gözlemleyin. 
@@ -162,7 +167,7 @@ nano test-nano.txt
 
 Panel'de bulunan takviminizin zaman dilimini değiştirin, ve sorunsuz bir şekilde değiştiğini gözlemleyin.
 
-Örneği Pasifik Line adaları...
+Örneğin Pasifik Line adaları...
 
 \item kbd paketi kurulumu sonrası:
 
@@ -246,7 +251,7 @@ programming-tr.pdf pysqlite testini gerçekleştiriniz.
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import urlgrabber
 \end{verbatim}
 
@@ -254,7 +259,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import curl
 \end{verbatim}
 
@@ -455,7 +460,7 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 \item glib2 paketi kurulumu sonrası:
 \begin{itemize}
  \item system-tr.pdf openssh testini gerçekleştirin.
-\item system-tr.pdf getext testini gerçekleştirin.
+\item system-tr.pdf gettext testini gerçekleştirin.
 \end{itemize}
 
 \item gettext paketi kurulumu sonrası:
@@ -482,7 +487,7 @@ Servis yöneticisinden openssh'ı çalıştırın ve aşağıda bulunan komutun 
 
 Bilgisayarınızı yeniden başlatın. Düzgün bir şekilde açıldığını gözlemleyin.
 
-/boot/ dizini altında kullanmakta olduğunuz kernelin initramfs dosyasının var olduğunu gözlemleyin.
+/boot/ dizini altında kullanmakta olduğunuz kernel'in initramfs dosyasının var olduğunu gözlemleyin.
 
 \item pardus-python paketi kurulum testine tabidir.
 
