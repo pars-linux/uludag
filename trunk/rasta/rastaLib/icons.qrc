@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="/" >
+    <file>icons/preview.png</file>
+    <file>icons/source.png</file>
     <file>icons/rasta.png</file>
     <file>icons/edit-undo.png</file>
     <file>icons/draw-text.png</file>

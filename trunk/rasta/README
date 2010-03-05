@@ -2,7 +2,7 @@
 Rasta, The Rst Editor
 ---------------------
 
-Live view supported Qt4 based Webkit integrated Rst editor for Pardus Developers and all others.
+Live view supported Qt4 based Webkit integrated Rst editor for `Pardus <http://developer.pardus.org.tr>`_ Developers and all others.
 
 Requirements:
 =============
@@ -10,18 +10,18 @@ Requirements:
 * python
 * qt4
 * PyQt
+* piksemel
 * docutils
 * qscintilla2
 * qscintilla2-python
 
 How to Run:
 ===========
-::
 
-Install all the required packages
+Install all the required packages and then::
 
-$ python setup.py build
-$ ./rasta
+ $ sudo python setup.py install
+ $ rasta
 
 For Developers:
 ===============
@@ -32,5 +32,9 @@ After modifying the ui file you need to update pythonic ui file too::
 And for icon changes you must update the rc file::
 
     $ pyrcc4 core/icons.qrc -o rastaLib/icons_rc.py
+
+Or you can just use::
+
+    $ python setup.py build
 
 Have fun.
