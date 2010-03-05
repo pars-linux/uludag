@@ -10,6 +10,7 @@ from PyQt4.QtCore import QCoreApplication
 
 # Rasta Core Library
 from rastaLib import Rasta
+from rastaLib import __version__
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
@@ -18,8 +19,20 @@ if __name__ == "__main__":
     QCoreApplication.setOrganizationName("Pardus")
     QCoreApplication.setOrganizationDomain("pt.pardus.org.tr")
     QCoreApplication.setApplicationName("Rasta")
+    QCoreApplication.setApplicationVersion(__version__)
 
-    RastaUI = Rasta()
+    arguments = QCoreApplication.arguments()
+    if len(arguments)>1:
+        if arguments[1] == "--help":
+            print "Usage :"
+            print " $ rasta [filename] [options]"
+            print 
+            print "Options :"
+            print " --help          : Show this help"
+            print " --hidesource    : Hide source window"
+            sys.exit(0)
+
+    RastaUI = Rasta(arguments)
     RastaUI.show()
     sys.exit(app.exec_())
 

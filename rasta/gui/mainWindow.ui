@@ -17,7 +17,7 @@
    <string>Rasta the Rst Editor</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="../core/icons.qrc">
+   <iconset resource="../rastaLib/icons.qrc">
     <normaloff>:/icons/rasta.png</normaloff>:/icons/rasta.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -78,10 +78,13 @@
     <property name="title">
      <string>&amp;Options</string>
     </property>
-    <addaction name="actionLive_Update"/>
-    <addaction name="actionShow_Logs"/>
     <addaction name="separator"/>
+    <addaction name="actionLive_Update"/>
     <addaction name="actionUpdate_Now"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Logs"/>
+    <addaction name="actionShow_Output"/>
+    <addaction name="actionShow_Source"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -117,7 +120,7 @@
     <bool>true</bool>
    </property>
    <property name="windowIcon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/logs.png</normaloff>:/icons/logs.png</iconset>
    </property>
    <property name="floating">
@@ -181,7 +184,7 @@
   </widget>
   <action name="actionOpen">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/document-open.png</normaloff>:/icons/document-open.png</iconset>
    </property>
    <property name="text">
@@ -193,7 +196,7 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/document-save.png</normaloff>:/icons/document-save.png</iconset>
    </property>
    <property name="text">
@@ -205,7 +208,7 @@
   </action>
   <action name="actionSave_As">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/document-save-as.png</normaloff>:/icons/document-save-as.png</iconset>
    </property>
    <property name="text">
@@ -214,7 +217,7 @@
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/system-log-out.png</normaloff>:/icons/system-log-out.png</iconset>
    </property>
    <property name="text">
@@ -222,6 +225,9 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
    </property>
   </action>
   <action name="actionLive_Update">
@@ -232,7 +238,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/system-restart.png</normaloff>:/icons/system-restart.png</iconset>
    </property>
    <property name="text">
@@ -244,7 +250,7 @@
   </action>
   <action name="actionUpdate_Now">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/system-run.png</normaloff>:/icons/system-run.png</iconset>
    </property>
    <property name="text">
@@ -256,7 +262,7 @@
   </action>
   <action name="actionRst_Howto">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/khelpcenter.png</normaloff>:/icons/khelpcenter.png</iconset>
    </property>
    <property name="text">
@@ -268,16 +274,19 @@
   </action>
   <action name="actionAbout">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/dialog-information.png</normaloff>:/icons/dialog-information.png</iconset>
    </property>
    <property name="text">
     <string>About</string>
    </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
   </action>
   <action name="actionNew">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/document-new.png</normaloff>:/icons/document-new.png</iconset>
    </property>
    <property name="text">
@@ -295,19 +304,19 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/logs.png</normaloff>:/icons/logs.png</iconset>
    </property>
    <property name="text">
     <string>Show Logs</string>
    </property>
    <property name="shortcut">
-    <string>F4</string>
+    <string>F2</string>
    </property>
   </action>
   <action name="actionBold">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/format-text-bold.png</normaloff>:/icons/format-text-bold.png</iconset>
    </property>
    <property name="text">
@@ -319,7 +328,7 @@
   </action>
   <action name="actionItalic">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/format-text-italic.png</normaloff>:/icons/format-text-italic.png</iconset>
    </property>
    <property name="text">
@@ -331,7 +340,7 @@
   </action>
   <action name="actionLink">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/insert-link.png</normaloff>:/icons/insert-link.png</iconset>
    </property>
    <property name="text">
@@ -343,7 +352,7 @@
   </action>
   <action name="actionHeader">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/format-text-underline.png</normaloff>:/icons/format-text-underline.png</iconset>
    </property>
    <property name="text">
@@ -355,7 +364,7 @@
   </action>
   <action name="actionAdd_Table">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/insert-table.png</normaloff>:/icons/insert-table.png</iconset>
    </property>
    <property name="text">
@@ -364,7 +373,7 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/edit-undo.png</normaloff>:/icons/edit-undo.png</iconset>
    </property>
    <property name="text">
@@ -373,7 +382,7 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/edit-redo.png</normaloff>:/icons/edit-redo.png</iconset>
    </property>
    <property name="text">
@@ -382,11 +391,47 @@
   </action>
   <action name="actionCode">
    <property name="icon">
-    <iconset resource="../core/icons.qrc">
+    <iconset resource="../rastaLib/icons.qrc">
      <normaloff>:/icons/draw-text.png</normaloff>:/icons/draw-text.png</iconset>
    </property>
    <property name="text">
     <string>Code</string>
+   </property>
+  </action>
+  <action name="actionShow_Output">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rastaLib/icons.qrc">
+     <normaloff>:/icons/preview.png</normaloff>:/icons/preview.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Output</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionShow_Source">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../rastaLib/icons.qrc">
+     <normaloff>:/icons/source.png</normaloff>:/icons/source.png</iconset>
+   </property>
+   <property name="text">
+    <string>Show Source</string>
+   </property>
+   <property name="shortcut">
+    <string>F4</string>
    </property>
   </action>
  </widget>
@@ -403,7 +448,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../core/icons.qrc"/>
+  <include location="../rastaLib/icons.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -443,6 +488,38 @@
    <signal>triggered()</signal>
    <receiver>textEdit</receiver>
    <slot>redo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>99</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_Output</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>webView</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>519</x>
+     <y>234</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionShow_Source</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>textEdit</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>

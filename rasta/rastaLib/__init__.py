@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+__version__ = "1.0"
+
 # Python Core
 import os
 import sys
@@ -57,7 +59,7 @@ def clearLog(log):
 class Rasta(QMainWindow):
     """ Rasta main class """
 
-    def __init__(self):
+    def __init__(self, arguments):
         QMainWindow.__init__(self)
         self.ui = Ui_Rasta()
         self.ui.setupUi(self)
@@ -124,7 +126,14 @@ class Rasta(QMainWindow):
         self.readSettings()
 
         self.fileName = TMPFILE
-        self.showHelp()
+        if "--hidesource" in arguments:
+            self.ui.actionShow_Source.toggle()
+        if len(arguments) > 1:
+            if not unicode(arguments[1]).startswith("--"):
+                self.loadFile(arguments[1])
+                self.updateRst(force = True)
+        else:
+            self.showHelp()
 
     def showAbout(self):
         QMessageBox.about(self, "Rasta the Rst Editor", unicode(
@@ -197,10 +206,10 @@ class Rasta(QMainWindow):
             self.ui.textEdit.clear()
             self.fileName = TMPFILE
 
-    def updateRst(self, source = None):
+    def updateRst(self, source = None, force = False):
         if self.ui.actionLive_Update.isChecked() or\
                 self.sender() == self.ui.actionUpdate_Now or\
-                source:
+                source or force:
             if not source:
                 source = unicode(self.ui.textEdit.text())
             pub.set_source(source)
