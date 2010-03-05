@@ -109,7 +109,7 @@
 
 * 64bit (Ozan Çağlayan)
     * binutils, gcc, glibc'nin üzerinden geçilerek unknown sorunu ve lib64 pathlerinin düzeltilmesi (+) [Onur Küçük]
-    * quilt serisindeki multimedia paket değişiklerinin merge edilmesi (/50) [Onur Küçük]
+    * quilt serisindeki multimedia paket değişiklerinin merge edilmesi (+) [Onur Küçük]
     * pisi'ye multiple archive desteği (-)
     * pspec.xml'de ExcludeArch gibi bir tag kullanılarak bazı paketlerin belirli mimarilerde derlenmesinin engellenmesi (-)
 
