@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>PardusCorporate2-Preview-x86_64[Vecihi]</Title>
+    <Title>PardusCorporate2-Preview-x86_64[seruhatto]</Title>
     <WorkDir>/home/buildfarm/workdir</WorkDir>
     <ReleaseFiles>/home/buildfarm/workdir/mkiso</ReleaseFiles>
     <PackageSelection repo_uri="http://x86-64.comu.edu.tr/pisi-index.xml.bz2">
@@ -45,6 +45,7 @@
         <SelectedPackage>firefox</SelectedPackage>
         <SelectedPackage>firewall-config</SelectedPackage>
         <SelectedPackage>flashplugin</SelectedPackage>
+        <SelectedPackage>foo2zjs</SelectedPackage>
         <SelectedPackage>foomatic-db</SelectedPackage>
         <SelectedPackage>foomatic-db-engine</SelectedPackage>
         <SelectedPackage>foomatic-db-hpijs</SelectedPackage>
@@ -145,6 +146,7 @@
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>reiserfsprogs</SelectedPackage>
+        <SelectedPackage>rp-pppoe</SelectedPackage>
         <SelectedPackage>screen</SelectedPackage>
         <SelectedPackage>sdparm</SelectedPackage>
         <SelectedPackage>service-manager</SelectedPackage>
@@ -365,6 +367,7 @@
         <Package>flex</Package>
         <Package>fltk</Package>
         <Package>fontconfig</Package>
+        <Package>foo2zjs</Package>
         <Package>foomatic-db</Package>
         <Package>foomatic-db-engine</Package>
         <Package>foomatic-db-hpijs</Package>
@@ -601,6 +604,7 @@
         <Package>libopensync</Package>
         <Package>libp11</Package>
         <Package>libpaper</Package>
+        <Package>libpcap</Package>
         <Package>libpciaccess</Package>
         <Package>libpcre</Package>
         <Package>libpng</Package>
@@ -792,6 +796,7 @@
         <Package>poster</Package>
         <Package>postgresql-lib</Package>
         <Package>powertop</Package>
+        <Package>ppp</Package>
         <Package>procps</Package>
         <Package>psmisc</Package>
         <Package>psutils</Package>
@@ -826,6 +831,7 @@
         <Package>reiserfsprogs</Package>
         <Package>reportlab</Package>
         <Package>rlog</Package>
+        <Package>rp-pppoe</Package>
         <Package>ruby</Package>
         <Package>sablotron</Package>
         <Package>samba</Package>
