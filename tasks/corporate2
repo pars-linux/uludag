@@ -110,8 +110,8 @@
 * 64bit (Ozan Çağlayan)
     * binutils, gcc, glibc'nin üzerinden geçilerek unknown sorunu ve lib64 pathlerinin düzeltilmesi (+) [Onur Küçük]
     * quilt serisindeki multimedia paket değişiklerinin merge edilmesi (+) [Onur Küçük]
-    * pisi'ye multiple archive desteği (-)
-    * pspec.xml'de ExcludeArch gibi bir tag kullanılarak bazı paketlerin belirli mimarilerde derlenmesinin engellenmesi (-)
+    * pisi'ye multiple archive desteği (+)
+    * pspec.xml'de ExcludeArch gibi bir tag kullanılarak bazı paketlerin belirli mimarilerde derlenmesinin engellenmesi (+)
 
 * Kernel/Baselayout (Ozan Çağlayan)
     * baselayout/lsb_release sürüm bilgilerinin denetlenmesi (+)
@@ -132,8 +132,8 @@
     * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli, dizin silinme sorunu) (+)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (+)
     * Yeni polkit (Review'da. kdebase, polkit-kde vs. port edilmeli) (+)
-    * kdebase'deki clock yamasının yeni polkite gecirilmesi (-)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
+    * kdebase'deki clock yamasının yeni polkite gecirilmesi (-)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (-) [N/A]
 
 * COMAR/PolKit (Bahadır Kandemir)
