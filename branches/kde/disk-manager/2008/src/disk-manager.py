@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -11,18 +11,15 @@
 # Python Modules
 import os
 import sys
-import time
 import dbus
-import grp
-import subprocess
 import functools
 
 # KDE/QT Modules
 from qt import *
-from kdecore import *
 from kdeui import *
 from kfile import *
 from khtml import *
+from kdecore import *
 
 # Widget
 import kdedesigner
@@ -35,7 +32,7 @@ import comar
 import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
-version = '2.0.0'
+version = '2.0.1'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
@@ -43,7 +40,7 @@ def AboutData():
                             version,
                             'Disk Manager Interface',
                             KAboutData.License_GPL,
-                            '(C) 2006 UEKAE/TÜBİTAK',
+                            '(C) 2006-2010 UEKAE/TÜBİTAK',
                             None, None,
                             'gokmen@pardus.org.tr')
     about_data.addAuthor('Gökmen GÖKSEL', None, 'gokmen@pardus.org.tr')
@@ -94,20 +91,22 @@ class diskForm(mainForm):
         self.frame_detail.setEnabled(False)
 
         self.knownFS = [
-            ('ext3', 'Extended 3'),
-            ('ext2', 'Extended 2'),
+            ('ext4', 'ext4'),
+            ('ext3', 'ext3'),
+            ('ext2', 'ext2'),
             ('reiserfs', 'Reiser FS'),
             ('xfs', 'XFS'),
             ('ntfs-3g', 'NTFS'),
             ('vfat', 'Fat 16/32'),
         ]
         self.fsOptions = {
-            "vfat": "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6",
-            "ext2": "noatime",
-            "ext3": "noatime",
-            "ntfs-3g": "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6",
-            "reiserfs": "noatime",
-            "xfs": "noatime",
+            "vfat"      : "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6",
+            "ext2"      : "noatime",
+            "ext3"      : "noatime",
+            "ext4"      : "noatime",
+            "ntfs-3g"   : "dmask=007,fmask=117,locale=tr_TR.UTF-8,gid=6",
+            "reiserfs"  : "noatime",
+            "xfs"       : "noatime",
         }
 
         for name, label in self.knownFS:
