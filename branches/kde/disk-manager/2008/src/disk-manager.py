@@ -22,14 +22,12 @@ from khtml import *
 from kdecore import *
 
 # Widget
-import kdedesigner
 from diskform import mainForm
 
 # COMAR
 import comar
 
 # DBus event loop
-import dbus
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
 version = '2.0.1'
