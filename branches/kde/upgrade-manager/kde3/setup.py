@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005,2006 TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -14,7 +14,7 @@ import kdedistutils
 
 kdedistutils.setup(
     name="upgrade-manager",
-    version="0.1",
+    version="0.1.1",
     author="Faik Uygur",
     author_email="faik@pardus.org.tr",
     url="http://www.pardus.org.tr",
