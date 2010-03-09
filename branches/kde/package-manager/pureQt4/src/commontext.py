@@ -10,8 +10,8 @@
 #
 # Please read the COPYING file
 
-from PyKDE4.kdecore import i18n
+import pt
 
-commonText = [i18n("downloading"), i18n("extracting"), i18n("configuring"), i18n("removing"), i18n("installing")]
+commonText = [pt.i18n("downloading"), pt.i18n("extracting"), pt.i18n("configuring"), pt.i18n("removing"), pt.i18n("installing")]
 
 

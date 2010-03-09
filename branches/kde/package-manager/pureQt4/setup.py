@@ -68,8 +68,7 @@ class Build(build):
 
 class Install(install):
     def run(self):
-        if not os.path.exists("build/"):
-            os.system("./setup.py build")
+        os.system("./setup.py build")
         if self.root:
             mime_icons_dir = "%s/usr/share/icons/hicolor" % self.root
             icon_dir = "%s/usr/share/icons/hicolor/128x128/apps" % self.root
@@ -80,7 +79,7 @@ class Install(install):
             kde_dir = "/usr/kde/4"
         bin_dir = os.path.join(kde_dir, "bin")
         mime_dir = os.path.join(kde_dir, "share/mime/packages")
-        locale_dir = os.path.join(kde_dir, "share/locale")
+        locale_dir = "/usr/share/locale"
         apps_dir = os.path.join(kde_dir, "share/applications/kde4")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
         # Make directories

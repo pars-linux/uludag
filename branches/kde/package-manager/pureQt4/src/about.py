@@ -11,23 +11,21 @@
 # Please read the COPYING file.
 #
 
-# PyKDE4 Stuff
-from PyKDE4.kdecore import *
+import pt
 
 # Application Data
 appName     = "package-manager"
 catalog     = appName
-programName = ki18n("Package Manager")
 version     = "2.0.4"
-description = ki18n("Package Manager")
-license     = KAboutData.License_GPL
-copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
-text        = ki18n(None)
+programName = pt.ki18n("Package Manager")
+description = pt.ki18n("Package Manager")
+license     = pt.AboutData.License_GPL
+copyright   = pt.ki18n("(c) 2009-2010 TUBITAK/UEKAE")
+text        = pt.ki18n(None)
 homePage    = "http://www.pardus.org.tr/eng/projects"
 bugEmail    = "bugs@pardus.org.tr"
-aboutData   = KAboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
+aboutData   = pt.AboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer"))
-
+aboutData.addAuthor (pt.ki18n("Faik Uygur"), pt.ki18n("Maintainer"))
 aboutData.setProgramIconName(":/data/package-manager.png")

@@ -10,13 +10,14 @@
 # Please read the COPYING file.
 
 import os
+import pt
 
 from PyQt4 import QtGui
+from PyQt4 import QtWebKit
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
-from PyKDE4.khtml import KHTMLPart
 
 from localedata import *
 
@@ -27,19 +28,19 @@ help_files = {
     PREFERENCES:"preferences_help.html"
     }
 
-class HelpDialog(KDialog):
+class HelpDialog(QtGui.QDialog):
     def __init__(self, parent, help):
-        KDialog.__init__(self, parent)
-        self.setButtons(KDialog.None)
-        self.setCaption(i18n("Package Manager Help"))
+        QtGui.QDialog.__init__(self, parent)
+        self.setModal(True)
+        self.setWindowTitle(pt.i18n("Package Manager Help"))
         self.layout = QtGui.QGridLayout(self)
-        self.htmlPart = KHTMLPart(self)
+        self.htmlPart = QtWebKit.QWebView(self)
         self.resize(700,500)
-        self.layout.addWidget(self.htmlPart.view(),1,1)
+        self.layout.addWidget(self.htmlPart,1,1)
 
         locale = getKDELocale()
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
-            self.htmlPart.openUrl(KUrl(KStandardDirs.locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
+            self.htmlPart.load(QUrl(KStandardDirs.locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
         else:
-            self.htmlPart.openUrl(KUrl(KStandardDirs.locate("data","package-manager/help/en/%s" % help_files[help])))
+            self.htmlPart.load(QUrl(KStandardDirs.locate("data","package-manager/help/en/%s" % help_files[help])))
