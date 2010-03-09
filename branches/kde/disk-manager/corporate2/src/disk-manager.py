@@ -72,13 +72,6 @@ class diskForm(mainForm):
         self.link = comar.Link()
 
         # Connections
-        """
-        self.connect(self.btn_defaultOpts, SIGNAL('clicked()'),self.getDefaultOptions)
-        self.connect(self.line_opts, SIGNAL('lostFocus()'), self.saveSession)
-        self.connect(self.line_mountpoint, SIGNAL('lostFocus()'), self.saveSession)
-        self.connect(self.combo_fs,SIGNAL('activated(const QString&)'),self.saveSession)
-        self.connect(self.btn_help, SIGNAL('clicked()'), self.slotHelp)
-        """
         self.connect(self.list_main, SIGNAL('selectionChanged()'), self.slotList)
         self.connect(self.combo_fs, SIGNAL('activated(const QString&)'), self.slotFS)
         self.connect(self.btn_reset, SIGNAL('clicked()'), self.slotReset)
@@ -97,6 +90,7 @@ class diskForm(mainForm):
             ('ntfs-3g', 'NTFS'),
             ('vfat', 'Fat 16/32'),
         ]
+
         self.fsOptions = {
             "vfat"      : "quiet,shortname=mixed,dmask=007,fmask=117,utf8,gid=6",
             "ext2"      : "noatime",
@@ -208,7 +202,7 @@ class diskForm(mainForm):
 
     def slotFS(self, text=""):
         fsType = self.getFSName()
-        options = self.fsOptions[fsType]
+        options = self.fsOptions.get(fsType, "defaults")
         self.line_opts.setText(options)
 
     def slotList(self):
