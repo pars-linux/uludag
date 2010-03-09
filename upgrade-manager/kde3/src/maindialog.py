@@ -35,6 +35,9 @@ class MainDialog(UI_MainDialog):
         self.connect(self.upgradeButton, SIGNAL("clicked()"), self.upgrade)
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
+        self.upgradeButton.setIconSet(KGlobal.iconLoader().loadIconSet("ok", KIcon.Toolbar, 0, False))
+        self.cancelButton.setIconSet(KGlobal.iconLoader().loadIconSet("cancel", KIcon.Toolbar, 0, False))
+
     def setTitle(self):
         try:
             currentRelease = " ".join(open("/etc/pardus-release", "r").readline().split()[0:2])
