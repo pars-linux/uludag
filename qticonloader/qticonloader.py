@@ -23,6 +23,13 @@ class QIconTheme:
 
 class QIconLoader:
 
+    SizeSmall       = 16
+    SizeSmallMedium = 22
+    SizeMedium      = 32
+    SizeLarge       = 48
+    SizeHuge        = 64
+    SizeEnormous    = 128
+
     def __init__(self, debug = False):
 
         self.iconSizes = (128, 64, 48, 32, 22, 16)
