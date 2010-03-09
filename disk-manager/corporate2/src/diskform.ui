@@ -175,7 +175,7 @@
             </property>
             <property name="font">
                 <font>
-                    <bold>1</bold>
+                    <bold>0</bold>
                 </font>
             </property>
             <property name="hScrollBarMode">
