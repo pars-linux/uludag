@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-01 10:51+0200\n"
+"POT-Creation-Date: 2010-03-09 11:50+0200\n"
 "PO-Revision-Date: 2009-12-01 17:57+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -16,69 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: src/state.py:50
-msgid "<qt>Downloading %1 of %2 packages</qt>"
-msgstr "<qt>Téléchargement des paquets %1 sur %2</qt>"
-
-#: src/state.py:55
-msgid "<qt>Installing (%1) %2 of %3 packages</qt>"
-msgstr "<qt>Installation (%1) %2 sur %3</qt>"
-
-#: src/state.py:61
-msgid "<qt>Configuring packages. This may take several minutes to finish</qt>"
-msgstr ""
-"<qt>Configuration des paquets. Ceci peut prendre plusieurs minutes.</qt>"
-
-#: src/state.py:76
-msgid ""
-"<qt>Following packages are obsoleted and are not maintained anymore in "
-"Pardus 2009 repositories. These packages are going to be removed from your "
-"system:<br><br> %1"
-msgstr ""
-"<qt>Les paquets suivants sont obsolètes et plus maintenus dans les dépôts de "
-"Pardus 2009. "
-"Ces paquets vont être retirés de votre système :<br><br> %1"
-
-#: src/state.py:77 src/maindialog.py:61
-msgid "<br><br>Do you want to continue?</qt>"
-msgstr "<br><br>Voulez-vous continuer ?</qt>"
-
-#: src/state.py:100
-msgid "Resolving dependencies..."
-msgstr "Résolution des dépendances..."
-
-#: src/comariface.py:37
-msgid "Unable to connect to DBus."
-msgstr "Impossible de se connecter à DBus."
-
-#: src/comariface.py:37
-msgid "DBus Error"
-msgstr "Erreur de DBus"
-
-#: src/comariface.py:51
-msgid "D-Bus Error"
-msgstr "Erreur de D-Bus"
-
-#: src/comariface.py:56
-msgid "COMAR Auth Error"
-msgstr "Erreur d'auth. de COMAR"
-
-#: src/comariface.py:61
-msgid "Network error. Please check your network connections and try again."
-msgstr "Erreur de réseau. Vérifiez votre connexion réseau et réessayez."
-
-#: src/comariface.py:61 src/comariface.py:66
-msgid "COMAR Error"
-msgstr "Erreur de COMAR"
-
-#: src/comariface.py:63 src/comariface.py:71 src/commander.py:57
-msgid "You are not authorized for this operation."
-msgstr "Vous n'êtes pas authorisé à effectuer cette opération."
-
-#: src/main.py:46
-msgid "Upgrade Manager"
-msgstr "Assistant de migration"
 
 #: src/ui_maindialog.py:128
 msgid "Form1"
@@ -112,6 +49,81 @@ msgstr "Redémarrage de l'ordinateur"
 msgid "Start Upgrading"
 msgstr "Commencer la migration"
 
+#: src/state.py:50
+msgid "<qt>Downloading %1 of %2 packages</qt>"
+msgstr "<qt>Téléchargement des paquets %1 sur %2</qt>"
+
+#: src/state.py:55
+msgid "<qt>Installing (%1) %2 of %3 packages</qt>"
+msgstr "<qt>Installation (%1) %2 sur %3</qt>"
+
+#: src/state.py:61
+msgid "<qt>Configuring packages. This may take several minutes to finish</qt>"
+msgstr ""
+"<qt>Configuration des paquets. Ceci peut prendre plusieurs minutes.</qt>"
+
+#: src/state.py:76
+msgid ""
+"<qt>Following packages are obsoleted and are not maintained anymore in "
+"Pardus 2009 repositories. These packages are going to be removed from your "
+"system:<br><br> %1"
+msgstr ""
+"<qt>Les paquets suivants sont obsolètes et plus maintenus dans les dépôts de "
+"Pardus 2009. Ces paquets vont être retirés de votre système :<br><br> %1"
+
+#: src/state.py:77 src/maindialog.py:61
+msgid "<br><br>Do you want to continue?</qt>"
+msgstr "<br><br>Voulez-vous continuer ?</qt>"
+
+#: src/state.py:100
+msgid "Resolving dependencies..."
+msgstr "Résolution des dépendances..."
+
+#: src/about.py:23 src/about.py:25
+msgid "Distribution Upgrade Manager"
+msgstr "Assistant de migration"
+
+#: src/about.py:27
+#, fuzzy
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: src/about.py:34
+msgid "Faik Uygur"
+msgstr "Faik Uygur"
+
+#: src/about.py:34
+msgid "Maintainer"
+msgstr "Mainteneur"
+
+#: src/comariface.py:37
+msgid "Unable to connect to DBus."
+msgstr "Impossible de se connecter à DBus."
+
+#: src/comariface.py:37
+msgid "DBus Error"
+msgstr "Erreur de DBus"
+
+#: src/comariface.py:51
+msgid "D-Bus Error"
+msgstr "Erreur de D-Bus"
+
+#: src/comariface.py:56
+msgid "COMAR Auth Error"
+msgstr "Erreur d'auth. de COMAR"
+
+#: src/comariface.py:61
+msgid "Network error. Please check your network connections and try again."
+msgstr "Erreur de réseau. Vérifiez votre connexion réseau et réessayez."
+
+#: src/comariface.py:61 src/comariface.py:66
+msgid "COMAR Error"
+msgstr "Erreur de COMAR"
+
+#: src/comariface.py:63 src/comariface.py:71 src/commander.py:57
+msgid "You are not authorized for this operation."
+msgstr "Vous n'êtes pas authorisé à effectuer cette opération."
+
 #: src/maindialog.py:43
 msgid "Upgrading from %1 to version 2009.1"
 msgstr "Migration de la version %1 vers la version 2009.1"
@@ -122,28 +134,15 @@ msgid ""
 "system."
 msgstr ""
 "<qt>Migration vers Pardus 2009.1 terminée. L'assistant va maintenant "
-"redémarrer "
-"l'ordinateur."
+"redémarrer l'ordinateur."
 
 #: src/maindialog.py:67
 msgid "Restart Later"
 msgstr "Redémarrer plus tard"
 
-#: src/about.py:23 src/about.py:25
-msgid "Distribution Upgrade Manager"
+#: src/main.py:46
+msgid "Upgrade Manager"
 msgstr "Assistant de migration"
-
-#: src/about.py:27
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: src/about.py:34
-msgid "Faik Uygur"
-msgstr "Faik Uygur"
-
-#: src/about.py:34
-msgid "Maintainer"
-msgstr "Mainteneur"
 
 #~ msgid "Cleaning up"
 #~ msgstr "Nettoyage"
