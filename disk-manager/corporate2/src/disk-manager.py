@@ -30,7 +30,7 @@ import comar
 # DBus event loop
 from dbus.mainloop.qt3 import DBusQtMainLoop
 
-version = '2.0.1'
+version = '2.1.1'
 
 def AboutData():
     about_data = KAboutData('disk-manager',
