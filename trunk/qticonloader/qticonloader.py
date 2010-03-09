@@ -33,7 +33,6 @@ class QIconLoader:
     def __init__(self, debug = False):
 
         self.iconSizes = (128, 64, 48, 32, 22, 16)
-        self.pixmap = QPixmap()
         self.debug = debug
         self.desktopSession = getenv('DESKTOP_SESSION').replace('default','kde')
         self.userHome = userHome(self.desktopSession, None)
@@ -188,6 +187,7 @@ class QIconLoader:
     def load(self, name, size = None):
         icon = QIcon()
         size = int(size)
+        self.pixmap = QPixmap()
         if not type(name) == list:
             name = [str(name)]
         for _size in self.iconSizes:
