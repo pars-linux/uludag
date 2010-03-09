@@ -1,0 +1,95 @@
+# translation of disk-manager.po to Catala
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Jaume Villalba Sanchez <javs@tinet.cat>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: disk-manager\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-09 08:43+0200\n"
+"PO-Revision-Date: 2007-03-23 16:57+0100\n"
+"Last-Translator: Jaume Villalba Sanchez <javs@tinet.cat>\n"
+"Language-Team: Catala <pardus-translation-ca@liste.uludag.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#: src/disk-manager.py:62 src/disk-manager.py:301 src/diskform.py:103
+msgid "Disk Manager"
+msgstr "Gestor de disc"
+
+#: src/disk-manager.py:293
+msgid "Disk Manager is already running!"
+msgstr "Ho sent, el gestor de discs ja està en funcionament"
+
+#: src/diskform.py:83 src/diskform.py:110
+msgid "Disks"
+msgstr "Discs"
+
+#: src/diskform.py:84 src/diskform.py:111
+msgid "Partitions"
+msgstr "Particions"
+
+#: src/diskform.py:105
+#, fuzzy
+msgid "Mount Automatically"
+msgstr "Troba els discs automàticament"
+
+#: src/diskform.py:106
+msgid "File System Type :"
+msgstr "Tipus de fitxer de sistema:"
+
+#: src/diskform.py:107
+msgid "Mount Point :"
+msgstr "Punt de muntatge:"
+
+#: src/diskform.py:108
+msgid "Reset"
+msgstr ""
+
+#: src/diskform.py:109
+msgid "Additional Options :"
+msgstr "Opcions addicionals:"
+
+#, fuzzy
+#~ msgid "Mount point is missing"
+#~ msgstr "Punt de muntatge:"
+
+#, fuzzy
+#~ msgid "Mount point does not exist"
+#~ msgstr "Punt de muntatge:"
+
+#, fuzzy
+#~ msgid "Add Missing Disks Automatically"
+#~ msgstr "Troba els discs automàticament"
+
+#~ msgid "Show System Partitions"
+#~ msgstr "Mostra les particions de sistema"
+
+#~ msgid "Get Default Options"
+#~ msgstr "Obté les opcions per defecte:"
+
+#~ msgid "To update disk changes the manager must run as root"
+#~ msgstr ""
+#~ "Per a actualitzar els canvis al disc s'ha de fer servir el gestor en "
+#~ "modus arrel"
+
+#~ msgid "User not in disk group !"
+#~ msgstr "Ho sent, l'usuari no es troba en el grup de disc"
+
+#~ msgid "Completed"
+#~ msgstr "Completat"
+
+#~ msgid "File /etc/fstab updated !"
+#~ msgstr "El fitxer /etc/fstab ha estat actualitzat"
+
+#~ msgid "%s for %s failure !!"
+#~ msgstr "%s per %s error !!"
+
+#~ msgid "Mount Point"
+#~ msgstr "Punt de muntatge"
+
+#~ msgid "File System Type"
+#~ msgstr "Tipus de fitxer de sistema"
