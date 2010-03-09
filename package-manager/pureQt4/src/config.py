@@ -10,7 +10,7 @@
 #
 # Please read the COPYING file
 
-from PyKDE4.kdecore import KConfig
+import pt
 from PyQt4.Qt import QVariant
 
 (general) = ("General")
@@ -23,7 +23,7 @@ defaults = {"SystemTray":False,
 
 class Config:
     def __init__(self, config):
-        self.config = KConfig(config)
+        self.config = pt.Config(config)
         self.group = None
 
     def setValue(self, group, option, value):
