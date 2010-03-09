@@ -1,8 +1,12 @@
 [Desktop Entry]
+Encoding=UTF-8
 Name=Upgrade Manager
-GenericName=Upgrade Manager
-Comment=An application for distribution upgrades
+Name[tr]=Sürüm Yükseltme Aracı
+GenericName=Distribution Upgrade to Pardus 2009
+GenericName[tr]=Pardus 2009 Dağıtım Güncellemesi
+Comment=An application for upgrading distribution to Pardus 2009
+Comment[tr]=Dağıtımı Pardus 2009'a yükselten bir uygulama
 Exec=upgrade-manager
-Icon=security-high
+Icon=run
 Type=Application
 Categories=Qt;KDE;System;
