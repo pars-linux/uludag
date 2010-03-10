@@ -133,11 +133,11 @@
     * Yeni ConsoleKit (Yeni polkit girdiginde tekrar derlenmeli, dizin silinme sorunu) (+)
     * Samba 3.4 geçişi, service.py'lerin ayrılması (+)
     * Yeni polkit (Review'da. kdebase, polkit-kde vs. port edilmeli) (+)
+    * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, mandriva yamalarının alınması (/80)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/60)
     * kdebase'deki clock yamasının yeni polkite gecirilmesi (-)
-    * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, polkit-1 ile derlenmesi (-)
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (-)
-    * gconf eski PolicyKit'e bağlı, yenisiyle derlenmeli (Burak Çalışkan) (-)
+    * gconf eski PolicyKit'e bağlı, yenisiyle derlenmeli (Burak Çalışkan) (+)
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (/50) <<20/02/2010>>
