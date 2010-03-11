@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2010, TUBITAK/UEKAE
+# Copyright (C) 2010, INRIA
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -17,6 +18,7 @@
 # Every aspect class should set this as __metaclass__
 
 
+import inspect
 from pyaspects.pointcut import PointCut
 
 
@@ -42,11 +44,16 @@ class MetaAspect(type):
         def after(cls, wobj, data, *args, **kwargs):
             if cls.hasJoinPoint(wobj, data):
                     met = getattr(cls, 'after__original')
+                    return met.im_func(cls, wobj, data, *args, **kwargs)
+
+        def around(cls, wobj, data, *args, **kwargs):
+            if cls.hasJoinPoint(wobj, data):
+                    met = getattr(cls, 'around__original')
                     return met.im_func(cls, wobj, data, *args, **kwargs)        
+
         def hasJoinPoint(cls, wobj, data):
             met_name = data['original_method_name']
 
-            
             if cls._pointcut.has_key(wobj):
                 if met_name in cls._pointcut[wobj]:
                     return True
@@ -60,12 +67,25 @@ class MetaAspect(type):
 
             return False
 
-        # we'll first rebind before and after.
-        # then bind our new modules
-        classdict['before__original'] = classdict['before']
-        classdict['after__original'] = classdict['after']
-        classdict['before'] = before
-        classdict['after'] = after
+        def proceed(cls, wobj, data, *args, **kwargs):
+            # continue on running the original method
+            if data.has_key('original_method'):
+                if inspect.isclass(wobj):
+                    return data['original_method'](wobj, *args, **kwargs)
+                else:
+                    return data['original_method'](*args, **kwargs)
+
+        # bind/rebind methods/attributes
+        if classdict.has_key('before'):
+            classdict['before__original'] = classdict['before']
+            classdict['before'] = before
+        if classdict.has_key('after'):
+            classdict['after__original'] = classdict['after']
+            classdict['after'] = after
+        if classdict.has_key('around'):
+            classdict['around__original'] = classdict['around']
+            classdict['around'] = around
+            classdict['proceed'] = proceed
         classdict['_pointcut'] = _pointcut
         classdict['updatePointCut'] = updatePointCut
         classdict['hasJoinPoint'] = hasJoinPoint

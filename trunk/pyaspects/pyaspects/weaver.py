@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2007, TUBITAK/UEKAE
+# Copyright (C) 2006-2010, TUBITAK/UEKAE
+# Copyright (C) 2010, INRIA
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -16,21 +17,40 @@ import inspect
 
 from pyaspects.pointcut import PointCut
 
+class AspectError(Exception):
+    pass
 
 ##
-# weave_method, weaves the method (met_name) of an object (obj) with
+# __weave_method, weaves the method (met_name) of an object (obj) with
 # an Aspect instance.
-def weave_method(aspect, obj, met_name):
+def __weave_method(aspect, obj, met_name):
+
+    def around_aspect(a):
+        try:
+            return getattr(a, "around")
+        except AttributeError:
+            return None
+
+    def has_around_aspect(o):
+        for a in aspect_dict.values():
+            if around_aspect(a):
+                return True
+        return False
 
     # set or update the aspects list of weaved object
     try:
-        aspect_dict = getattr(obj, 'aspect_dict')
+        aspect_dict = getattr(obj, '__aspect_dict')
     except:
         # no aspects defined before
         aspect_dict = {}
+
+
     if not aspect_dict.has_key(aspect.name):
-        aspect_dict[aspect.name] = aspect
-    setattr(obj, 'aspect_dict', aspect_dict)
+        if around_aspect(aspect) and has_around_aspect(obj):
+            raise AspectError('Already have an aspect that provide "around". Can not apply %s' % aspect.name)
+        else:
+            aspect_dict[aspect.name] = aspect
+    setattr(obj, '__aspect_dict', aspect_dict)
 
 
     # new method's data 
@@ -43,76 +63,83 @@ def weave_method(aspect, obj, met_name):
         data['__class__'] = obj.__class__
 
 
-    def wrapper(wobj, *args, **kwargs):
+    def __aspect_wrapper(wobj, *args, **kwargs):
 
         # run aspect's before method
         for a in aspect_dict.values():
-            a.before(wobj, data, *args, **kwargs)
+            if hasattr(a, "before"):
+                a.before(wobj, data, *args, **kwargs)
         
-        # run original method
-        met_name = data['method_name']
-        met = getattr(wobj, met_name)
-        ret =  met.im_func(wobj, *args, **kwargs)
+
+        for a in aspect_dict.values():
+            if hasattr(a, "around"):
+                # around aspect can run the original method when needed
+                data['original_method'] = getattr(obj, data['method_name'])
+                ret = a.around(wobj, data, *args, **kwargs)
+                break
+        else:
+            # run original method only if the method doesn't have an
+            # around aspect.
+            met_name = data['method_name']
+            met = getattr(wobj, met_name)
+            ret =  met.im_func(wobj, *args, **kwargs)
 
         # run aspect's after method
         for a in aspect_dict.values():
-            a.after(wobj, data, *args, **kwargs)
+            if hasattr(a, "after"):
+                a.after(wobj, data, *args, **kwargs)
 
         return ret
 
     original_method = getattr(obj, met_name)
     weaved_name = data['method_name']
-    # don't rebind it 
+
+    # rename the wrapper
+    __aspect_wrapper.__name__ = met_name
+    __aspect_wrapper.__doc__ = original_method.__doc__
+
+    # don't rebind the weaved method
     if not hasattr(obj, weaved_name):
         setattr(obj, weaved_name, original_method)
 
-    wrapper.__doc__ = original_method.__doc__
     if inspect.isclass(obj):
-        new_method = new.instancemethod(wrapper, None, obj)
+        new_method = new.instancemethod(__aspect_wrapper, None, obj)
     else:
-        new_method = new.instancemethod(wrapper, obj, obj.__class__)
+        new_method = new.instancemethod(__aspect_wrapper, obj, obj.__class__)
     setattr(obj, met_name, new_method)
 
 
+
 ##
-# Weave a method of a class
+# Weave a method of a class or object
 #
-# @param klass: Python class
+# @param class_or_object: Python class or object
 # @param met_name: (string) method name
-def weave_class_method(aspect, klass, met_name):
+def weave_method(aspect, class_or_object, met_name):
     p = PointCut()
-    p.addMethod(klass, met_name)
+    p.addMethod(class_or_object, met_name)
     aspect.updatePointCut(p)
-    weave_method(aspect, klass, met_name)
+    __weave_method(aspect, class_or_object, met_name)
 
 
 ##
-# Weave a method of an object 
-#
-# @param obj: Python object
-# @param met_name: (string) method name
-def weave_object_method(aspect, obj, met_name):
-    weave_class_method(aspect, obj, met_name)
-
-
-##
-# weave all methods in class (klass) with an aspect
-def weave_all_class_methods(aspect, klass):
+# weave all methods in class_or_object with an aspect
+def weave_all_methods(aspect, class_or_object):
     
     p = PointCut()
-    _dict = dict(inspect.getmembers(klass, inspect.ismethod))
+    _dict = dict(inspect.getmembers(class_or_object, inspect.ismethod))
     for met_name in _dict:
         if not met_name.startswith('__'):
-            p.addMethod(klass, met_name)
+            p.addMethod(class_or_object, met_name)
 
     aspect.updatePointCut(p)
     for met_name in _dict:
         if not met_name.startswith('__'):
-            weave_method(aspect, klass, met_name)
+            __weave_method(aspect, class_or_object, met_name)
 
 
-##
-# weave all methods in an object (obj) with an aspect
-def weave_all_object_methods(aspect, obj):
-    # it's the same as weaving a class. so apply it...
-    weave_all_class_methods(aspect, obj)
+# backward-compatibility functions
+weave_class_method = weave_method
+weave_object_method = weave_method
+weave_all_class_methods = weave_all_methods
+weave_all_object_methods = weave_all_methods
