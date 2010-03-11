@@ -14,9 +14,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from ui_mainwidget import Ui_MainWidget
 
 from packageproxy import PackageProxy
@@ -31,11 +28,16 @@ from statusupdater import StatusUpdater
 
 from pmutils import *
 
+from pt import i18n
+from pt import isKde4
+from qticonloader import QIconLoader
+IconLoader = QIconLoader(debug = True)
+
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        self.searchButton.setIcon(KIcon("edit-find"))
+        self.searchButton.setIcon(QtGui.QIcon(IconLoader.load("edit-find")))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
@@ -118,7 +120,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initializeGroupList(self):
         self.groupList.clear()
         self.groupList.setAlternatingRowColors(True)
-        self.groupList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
+        self.groupList.setIconSize(QSize(IconLoader.SizeLarge, IconLoader.SizeLarge))
         self.groupList.setState(self.state)
         self.groupList.addGroups(self.state.groups())
         self.groupFilter()
@@ -194,13 +196,19 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Since we can not identify the caller yet
         if not self.operation.totalPackages:
             return
-        KNotification.event("Summary",
-                self.state.getSummaryInfo(self.operation.totalPackages),
-                QtGui.QPixmap(),
-                None,
-                KNotification.CloseOnTimeout,
-                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
-                )
+        if pt.isKde4():
+            from PyKDE4.kdeui import KNotification
+            from PyKDE4.kdecore import KComponentData
+            KNotification.event("Summary",
+                    self.state.getSummaryInfo(self.operation.totalPackages),
+                    QtGui.QPixmap(),
+                    None,
+                    KNotification.CloseOnTimeout,
+                    KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
+                    )
+        else:
+            #FIXME PT
+            pass
 
     def showSummary(self):
         self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)

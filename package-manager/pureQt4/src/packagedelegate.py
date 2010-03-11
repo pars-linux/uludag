@@ -28,12 +28,14 @@ ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
 ROW_HEIGHT = 72
 
+from qticonloader import QIconLoader
+IconLoader = QIconLoader(debug = True)
+
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
-        icon_path = KIconLoader().iconPath(DEFAULT_ICON, KIconLoader.Panel)
-        self.defaultIcon = QtGui.QIcon(QtGui.QPixmap(icon_path).scaled(QSize(32, 32), Qt.KeepAspectRatio))
+        self.defaultIcon = QtGui.QIcon(IconLoader.load(DEFAULT_ICON, 32))
         self.animatable = True
 
     def paint(self, painter, option, index):
