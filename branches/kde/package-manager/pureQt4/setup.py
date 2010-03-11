@@ -77,11 +77,11 @@ class Install(install):
             mime_icons_dir = "/usr/share/icons/hicolor"
             icon_dir = "/usr/share/icons/hicolor/128x128/apps"
             kde_dir = "/usr/kde/4"
-        bin_dir = os.path.join(kde_dir, "bin")
-        mime_dir = os.path.join(kde_dir, "share/mime/packages")
+        bin_dir = "/usr/bin"
+        mime_dir = "/usr/share/mime/packages"
         locale_dir = "/usr/share/locale"
-        apps_dir = os.path.join(kde_dir, "share/applications/kde4")
-        project_dir = os.path.join(kde_dir, "share/apps", about.appName)
+        apps_dir = "/usr/share/applications"
+        project_dir = os.path.join("/usr/share", about.appName)
         # Make directories
         print "Making directories..."
         makeDirs(mime_icons_dir)
