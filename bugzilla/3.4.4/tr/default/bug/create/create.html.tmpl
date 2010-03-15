@@ -625,7 +625,7 @@ TUI_hide_default('expert_fields');
   [% END %]
 
   <tr>
-    <th>Eklentiler:</th>
+    <th>Eklentiler</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
@@ -664,7 +664,7 @@ TUI_hide_default('expert_fields');
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
+        <th><a href="describekeywords.cgi">Anahtarlar</a></th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
                  value="[% keywords FILTER html %]"> (optional)
@@ -679,7 +679,7 @@ TUI_hide_default('expert_fields');
       </td>
     </tr>
     <tr>
-      <th>Engelledikleri:</th>
+      <th>Engelledikleri</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
