@@ -318,7 +318,9 @@ function PutDescription() {
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Durum</th>
+    <td align="right" valign="top">
+    <b>Durum</b>
+    </td>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
     [% sel = { description => 'Durum', name => 'bug_status' } %]
