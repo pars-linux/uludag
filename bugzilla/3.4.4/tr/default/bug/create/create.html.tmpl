@@ -38,23 +38,14 @@
 
 
 <script type="text/javascript">
+
+<!--
 var descriptions = [
 [% FOREACH c = product.components %]
   '[% c.description FILTER js %]',
 [% END %]
 ];
 
-function PutDescription() {
-    if ((document.getElementById) && (document.body.innerHTML)) {
-        var componentIndex = document.getElementById('component').selectedIndex;
-        if (componentIndex != -1) {
-            var description = document.getElementById('description');
-            description.innerHTML = descriptions[componentIndex];
-        }
-    }
-}
-
-<!--
 var initialowners = new Array([% product.components.size %]);
 var last_initialowner;
 var initialccs = new Array([% product.components.size %]);
@@ -179,6 +170,17 @@ TUI_alternates['expert_fields'] = 'Gelişmiş Alanları Göster';
 // Hide the Advanced Fields by default, unless the user has a cookie
 // that specifies otherwise.
 TUI_hide_default('expert_fields');
+
+
+function PutDescription() {
+    if ((document.getElementById) && (document.body.innerHTML)) {
+        var componentIndex = document.getElementById('component').selectedIndex;
+        if (componentIndex != -1) {
+            var description = document.getElementById('description');
+            description.innerHTML = descriptions[componentIndex];
+        }
+    }
+}
 
 -->
 </script>
