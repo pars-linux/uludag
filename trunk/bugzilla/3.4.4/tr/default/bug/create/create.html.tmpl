@@ -259,6 +259,27 @@ function PutDescription() {
                 </option>
               [% END %]
             </select>
+
+             <select name="component" onchange="set_assign_to();" size="7">
+                [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
+                [% IF Param("usemenuforusers") %]
+                [% assignees_list = user.get_userlist.clone %]
+                [% qa_contacts_list = user.get_userlist.clone %]
+                [% END %]
+
+                [%- FOREACH c = product.components %]
+                <option value="[% c.name FILTER html %]"
+                [% " selected=\"selected\"" IF c.name == default.component_ %]>
+                [% c.name FILTER html -%]
+                </option>
+                [% IF Param("usemenuforusers") %]
+                [% INCLUDE build_userlist default_user = c.default_assignee,
+                                      userlist = assignees_list %]
+                [% INCLUDE build_userlist default_user = c.default_qa_contact,
+                                      userlist = qa_contacts_list %]
+                [% END %]
+                [%- END %]
+            </select>
           </td>
           <td valign="top" width="100%">
               <div id="description" style="color: green; margin-left: 10px;
