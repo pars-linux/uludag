@@ -32,7 +32,7 @@
 [% PROCESS global/variables.none.tmpl %]
 
 [% PROCESS global/header.html.tmpl
-  title = "$terms.Bugzilla Oturum Aç",
+  title = "Giriş Yap",
   onload = "document.forms['login'].Bugzilla_login.focus()"
 %]
 
@@ -66,7 +66,7 @@
         <td>
           <input type="checkbox" id="Bugzilla_remember" name="Bugzilla_remember" value="on"
                  [%+ "checked" IF Param('rememberlogin') == "defaulton" %]>
-          <label for="Bugzilla_remember">Oturumumu Hatırla</label>
+          <label for="Bugzilla_remember">Oturumu Hatırla</label>
         </td>
       </tr>
     [% END %]
@@ -87,10 +87,10 @@
   [% PROCESS "global/hidden-fields.html.tmpl"
      exclude="^Bugzilla_(login|password|restrictlogin)$" %]
 
-  <input type="submit" name="GoAheadAndLogIn" value="Oturum aç" id="log_in">
+  <input type="submit" name="GoAheadAndLogIn" value="Giriş Yap" id="log_in">
   
   <p>
-    (Not: Bu site için çerezler açık olmalı. Aksi taktirde sık sık oturum açmak zorunda kalabilirsiniz..)
+    (Not: Bu site için çerezler açık olmalı. Aksi takdirde sık sık oturum açmak zorunda kalabilirsiniz.)
   </p>
 </form>
 
@@ -103,7 +103,7 @@
 
     <p>
       Bir [% terms.Bugzilla %] hesabınız yoksa, 
-      <a href="createaccount.cgi">yeni hesap oluştur</a>abilirsiniz.
+      <a href="createaccount.cgi">yeni hesap oluşturabilirsiniz.</a>
     </p>
   [% END %]
 
@@ -113,9 +113,9 @@
     <a name="forgot"></a>
     <form method="get" action="token.cgi">
       <input type="hidden" name="a" value="reqpw">
-      Bir hesabınız varsa, fakat parolanızı unuttuysanız, eposta adresinizi girip parola değiştirme isteğinde bulunabilirsiniz.<br>
+      Bir hesabınız varsa, fakat parolanızı unuttuysanız, e-posta adresinizi girip parolanızı sıfırlama isteğinde bulunabilirsiniz.<br>
       <input size="35" name="loginname">
-      <input type="submit" id="request" value="Reset Password">
+      <input type="submit" id="request" value="Parolayı Sıfırla">
     </form>
   [% END %]
 

@@ -257,7 +257,7 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th rowspan="3">Versiyon:</th>
+    <th rowspan="3">Sürüm:</th>
     <td rowspan="3">
       <select name="version" size="5">
         [%- FOREACH v = version %]
@@ -334,7 +334,7 @@ TUI_hide_default('expert_fields');
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Başlangıç Durumu:</th>
+    <th>Durum:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
     [% sel = { description => 'Başlangıç Durumu', name => 'bug_status' } %]
@@ -452,7 +452,7 @@ TUI_hide_default('expert_fields');
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <th>Alias:</th>
+    <th>Sembolik Ad (Lakap):</th>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -491,12 +491,11 @@ TUI_hide_default('expert_fields');
     <td valign="top">
       <input type="text" size="70" name="short_desc" id="short_desc"·value="[% short_desc FILTER html %]"  maxlength="255" spellcheck="true">
       <p>
-        Yaşadığınız problemi özetleyen bir cümle.
-        Olabildiğince ipucu kelime kullanmaya ve açıklayıcı olmaya çalışınız..
+        <i>Olabildiğince ipucu kelime kullanmaya özen göstererek yaşadığınız problemi özetleyen bir cümle girin.</i>
       </p>
       <p>
         <tt>
-          <font color="#990000">Kötü Örnek</font>: KDE çöküyor
+          <font color="#990000">Kötü Örnek</font>: KDE çöktü.
         </tt>
         <br>
         <tt>
@@ -506,14 +505,6 @@ TUI_hide_default('expert_fields');
       </p>
     </td>
   </tr>
-
-  <!--tr>
-    <th>Summary:</th>
-    <td colspan="3">
-      <input name="short_desc" size="70" value="[% short_desc FILTER html %]"
-             maxlength="255" spellcheck="true">
-    </td>
-  </tr-->
 
   <tr>
     <td align="right" valign="top">
@@ -526,7 +517,7 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Özeti daha ayrıntılı açıklayın. Bu açıklamanın hataya özgü olmasına lütfen özen gösterin.
+        <i>Özeti daha ayrıntılı açıklayın. Bu açıklamanın hataya özgü olmasına lütfen özen gösterin.</i>
       </p>
       <p>
         <tt>
@@ -534,7 +525,7 @@ TUI_hide_default('expert_fields');
         </tt>
         <br>
         <tt>
-          <font color="#009900">İyi Örnek</font>: Dolphin uygulamasını açtığımda eğer dizin içierisinde çok fazla dosya varsa Dolphin uygulaması dosysları görüntüleyemiyor ve donuyor. <br> Bir süre sonra KDE çöküyor.
+          <font color="#009900">İyi Örnek</font>: Dolphin uygulamasını açtığımda eğer dizin içerisinde çok fazla dosya varsa, Dolphin uygulaması dosyaları görüntüleyemiyor ve donuyor. <br> Bir süre sonra KDE çöküyor.
         </tt>
       </p>
     </td>
@@ -549,16 +540,16 @@ TUI_hide_default('expert_fields');
         <option name="null" value="--">
         --
         <option name="AlwaysReproducible" value="Always">
-          Herzaman tekrarlanabiliryor.
+          Her zaman tekrarlanabiliyor
         </option>
         <option name="Sometimes" value="Sometimes">
-          Bazen tekrarlanabiliyor.
+          Bazen tekrarlanabiliyor
         </option>
         <option name="DidntTry" value="Didn't try">
-          Hatayı tekrarlamayı denemedim.
+          Hatayı tekrarlamayı denemedim
         </option>
         <option name="NotReproducible" value="Couldn't Reproduce">
-          Denedim fakat tekrarlayamadım.
+          Hatayı tekrarlayamıyorum
         </option>
       </select>
     </td>
@@ -575,14 +566,14 @@ TUI_hide_default('expert_fields');
         defaultcontent = "1.\n2.\n3."
       %]
       <p>
-        Aşama aşama hatayı tekrarlamanız için gerekli olan adımları açıklayın.
+        <i>Hatayı tekrarlamanız için gerekli olan adımları detaylandırın.</i>
       </p>
     </td>
   </tr>
 
  <tr bgcolor="[% tablecolour %]">
     <td valign="top" align="right">
-      <b>Güncel Sonuçlar</b>
+      <b>Güncel Sonuç</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -591,7 +582,7 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-       Yukarıda açıkladığınız aşamalardan sonra neler oldu?
+       <i>Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşıyorsunuz?</i>
       </p>
     </td>
   </tr>
@@ -599,7 +590,7 @@ TUI_hide_default('expert_fields');
 
  <tr>
     <td valign="top" align="right">
-      <b>Beklenen Sonuçlar</b>
+      <b>Beklenen Sonuç</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -608,7 +599,7 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Gerçekte uygulama nasıl davranması gerekiyordu?
+        <i>Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşmayı bekliyordunuz?</i>
      </p>
     </td>
   </tr>
@@ -626,9 +617,9 @@ TUI_hide_default('expert_fields');
       <p>
      <tt>
           Hata için gerekli olduğunu düşündüğünüz her türlü bilgiyi buraya ekleyebilirsiniz.
-        Bu bilgi bilgisayarınız ile ilgili donanım bilgisi, herhangi bir ayar, test aşaması olabilir. 
+        Bu bilgi bilgisayarınız ile ilgili bir donanım bilgisi veya herhangi bir ayar olabilir.
         <br>
-        Eğer bu açıklama bir kaç satırdan fazla ise, lütfen <b>dosya ekle</b> bölümünden ilgili dosyayı ekleyiniz. 
+        Eğer bu açıklama birkaç satırdan fazla ise, lütfen <b>dosya ekle</b> bölümünden ilgili dosyayı ekleyiniz.
       </p>
 
     </tt>
@@ -642,48 +633,23 @@ TUI_hide_default('expert_fields');
     <td valign="top">
       <select name="bug_severity" size="4">
         <option name="blocking" value="blocking">
-          Urgent:  Güvenlik güncellemeleri ve tüm sistemi kullanılmaz hale getiren hatalar
+          Acil: Tüm sistemi kullanılamaz hale getiren hatalar
         </option>
         <option name="high" value="high">
-          Büyük: : Programı kullanılmaz hale getiren hatalar
+          Büyük: Uygulamayı kullanılmaz hale getiren hatalar
         </option>
         <option name="normal" value="normal" selected="selected">
-          Normal: Programın bir kısmını kullanılmaz hale getiren hatalar.
+          Normal: Programın bir kısmını kullanılmaz hale getiren hatalar
         </option>
         <option name="low" value="low">
-          Küçük: Yeni bir ozellik, kozmetik sorun gibi hatalar
+          Küçük: Yeni bir özellik isteği, çeviri eksiği veya kozmetik hatalar
         </option>
       </select>
       <p>
-        Karşılaştığınız problemin ne kadar önemli olduğunu veya yeni bir özellik isteğini açıklamanız içindir.
+        <i>Karşılaştığınız problemin sizin için değil dağıtım için ne kadar önemli olduğunu belirtin.</i>
       </p>
     </td>
   </tr>
-
-  <!--tr>
-    <th>Description:</th>
-    <td colspan="3">
-      [% defaultcontent = BLOCK %]
-        [% IF cloned_bug_id %]
-+++ This [% terms.bug %] was initially created as a clone of [% terms.Bug %] #[% cloned_bug_id %] +++
-
-
-        [% END %]
-        [%-# We are within a BLOCK. The comment will be correctly HTML-escaped
-          # by global/textarea.html.tmpl. So we must not escape the comment here. %]
-        [% comment FILTER none %]
-      [%- END %]
-      [% INCLUDE global/textarea.html.tmpl
-         name           = 'comment'
-         id             = 'comment'
-         minrows        = 10
-         maxrows        = 25
-         cols           = constants.COMMENT_COLS
-         defaultcontent = defaultcontent
-       %]
-      <br>
-    </td>
-  </tr-->
 
   [% IF Param("insidergroup") && user.in_group(Param("insidergroup")) %]
     <tr class="expert_fields">
@@ -739,10 +705,10 @@ TUI_hide_default('expert_fields');
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
+        <th><a href="describekeywords.cgi">Anahtar kelimeler</a>:</th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
-                 value="[% keywords FILTER html %]"> (optional)
+                 value="[% keywords FILTER html %]"> (isteğe bağlı)
         </td>
       </tr>
     [% END %]
@@ -754,7 +720,7 @@ TUI_hide_default('expert_fields');
       </td>
     </tr>
     <tr>
-      <th>Ters Bağımlılıkları:</th>
+      <th>Engelledikleri:</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>

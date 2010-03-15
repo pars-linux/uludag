@@ -261,11 +261,11 @@ function doOnSelectProduct(selectmode) {
 [%# *** Comment URL Whiteboard Keywords *** %]
 
   [% FOREACH field = [
-    { name => "longdesc", description => "A&nbsp;<u>B</u>ileşen",
+    { name => "longdesc", description => "<u>B</u>ileşen",
       accesskey => 'c' },
-    { name => "bug_file_loc", description => "The&nbsp;<u>U</u>RL",
+    { name => "bug_file_loc", description => "<u>U</u>RL",
       accesskey => 'u' },
-    { name => "status_whiteboard", description => "<u>N</u>tlar",
+    { name => "status_whiteboard", description => "<u>N</u>otlar",
       accesskey => 'w' } ] %]
 
     [% UNLESS field.name == 'status_whiteboard' AND NOT Param('usestatuswhiteboard') %]
@@ -312,17 +312,17 @@ function doOnSelectProduct(selectmode) {
         <label for="deadlinefrom" accesskey="t">Bitirme&nbsp;<u>T</u>arihi</label>:
       </th>
       <td>
-        from <input name="deadlinefrom" id="deadlinefrom" size="10" maxlength="10"
+        <input name="deadlinefrom" id="deadlinefrom" size="10" maxlength="10"
                     value="[% default.deadlinefrom.0 FILTER html %]">
-        to <input name="deadlineto" size="10" maxlength="10"
-                  value="[% default.deadlineto.0 FILTER html %]">
+        tarihinden <input name="deadlineto" size="10" maxlength="10"
+                  value="[% default.deadlineto.0 FILTER html %]"> tarihine
       </td>
       <td>
         <small>(YYYY-AA-GG)</small>
       </td>
     </tr>
   [% END %]
-  
+
 </table>
 
 <hr>
@@ -479,7 +479,7 @@ function doOnSelectProduct(selectmode) {
              id="emailcc[% n %]" value="1"
              [% " checked" IF default.emailcc.$n %]>
       <label for="emailcc[% n %]">
-        a CC list member
+        CC liste üyesi
       </label>
     </td>
   </tr>
@@ -576,7 +576,7 @@ function doOnSelectProduct(selectmode) {
     <br>(YYYY-AA-GG veya bağıl tarihler)
   </dd>
   <dt>
-    <label for="chfield">şunlardan en az birinin değiştiği</label>:
+    <label for="chfield">Aşağıdakilerden en az birinin değiştiği</label>:
   </dt>
   <dd>
     [%# Create array, so we can sort it by description #%]
@@ -593,7 +593,7 @@ function doOnSelectProduct(selectmode) {
     [% END %]
     </select>
   </dd>
-  <dt>and <label for="chfieldvalue">yeni değer şuydu</label>:</dt>
+  <dt>ve <label for="chfieldvalue">yeni değerin aşağıdaki ifade olduğu</label>:</dt>
   <dd>
     <input name="chfieldvalue" id="chfieldvalue"
            size="20" value="[% default.chfieldvalue.0 FILTER html %]">

@@ -34,7 +34,7 @@
 
 [%# This is not necessary for English templates, but useful for localizers. %]
 [% ordersdesc = {
-   "Reuse same sort as last time" => "Son seferkiyle aynı sıralamayı kullan",
+   "Reuse same sort as last time" => "Son kullanılan sıralamayı kullan",
    "Bug Number"   => "$terms.Bug Numarası",
    "Importance"   => "Önem",
    "Assignee"     => "Atanan",
@@ -43,7 +43,7 @@
 <input type="hidden" name="cmdtype" value="doit">
 
 <p>
-  <label for="order">Sonuçları sıralama şekli:</label>:
+  <label for="order">Sonuçları sıralama şekli</label>:
   <select name="order" id="order">
   [% FOREACH order = orders %]
     <option value="[% order FILTER html %]"
@@ -70,7 +70,7 @@
   <input type="checkbox" id="remasdefault"
          name="remtype" value="asdefault">
   <label for="remasdefault">
-    ve bunları öntanımlı arama seçeneklerim olarak kaydet
+    Yukarıdakileri öntanımlı arama seçeneklerim olarak kaydet
   </label>
 </p>
         

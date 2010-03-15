@@ -51,7 +51,7 @@
     <tr>
       <th>Eskittikleri:</th>
       <td>
-        <em>(isteğe bağlı) Yeni ekinizin eski ve/ya geçersiz hale getirdiği ekleri işaretleyin.</em><br>
+        <em>(isteğe bağlı) Yeni eklentinin eski ve/veya geçersiz hale getirdiği eklentileri işaretleyin.</em><br>
         [% IF attachments.size %]
           [% FOREACH attachment = attachments %]
             [% IF ((attachment.isprivate == 0) || (Param("insidergroup")
@@ -62,7 +62,7 @@
             [% END %]
           [% END %]
         [% ELSE %]
-            [hiçbir ek eski hale getirilemez]
+            [eskitilecek eklenti yok]
         [% END %]
       </td>
     </tr>
@@ -71,7 +71,7 @@
       <tr>
         <th>Yeniden Atama:</th>
         <td>
-          <em>Bu [% terms.bugAcc %]kendinize atamak istiyorsanız,
+          <em>Bu [% terms.bugAcc %] kendinize atamak istiyorsanız,
               aşağıdaki kutuyu işaretleyin.</em><br>
           <input type="checkbox" id="takebug" name="takebug" value="1">
           <label for="takebug">[% terms.bugAcc %] al</label>
@@ -83,12 +83,12 @@
           [% IF bug_statuses.size %]
             <label for="takebug">ve [% terms.bug %] durumunu</label>
             <select id="bug_status" name="bug_status">
-              <option value="[% bug.status.name FILTER html %]">[% get_status(bug.status.name) FILTER html %] (güncel)</option>
+              <option value="[% bug.status.name FILTER html %]">[% get_status(bug.status.name) FILTER html %] (mevcut durum)</option>
               [% FOREACH bug_status = bug_statuses %]
                 [% NEXT IF bug_status.id == bug.status.id %]
                 <option value="[% bug_status.name FILTER html %]">[% get_status(bug_status.name) FILTER html %]</option>
               [% END %]
-            </select> olarak ayarla
+            </select> olarak değiştir
           [% END %]
         </td>
       </tr>
@@ -96,7 +96,7 @@
     <tr>
       <th><label for="comment">Yorum:</label></th>
       <td>
-        <em>(isteğe bağlı) [% terms.BugDat %] bu ek hakkında bir yorum ekle.</em><br>
+        <em>(isteğe bağlı) [% terms.BugDat %] bu eklenti hakkında bir yorum girin.</em><br>
         [% INCLUDE global/textarea.html.tmpl
           name    = 'comment'
           id      = 'comment'

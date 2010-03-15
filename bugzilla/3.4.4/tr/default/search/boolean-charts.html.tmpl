@@ -23,7 +23,7 @@
 [% types = [
   "noop",
   "eşittir",
-  "seşir değildir",
+  "eşit değildir",
   "dizgelerin herhangi birine eşit",
   "dizgeyi içerir",
   "dizgeyi içerir (büyük-küçük harf ayrımı yapar)",
@@ -39,16 +39,16 @@
   "kelimelerin tümünü içerir",
   "kelimelerin hiçbirini içermez",
   "öncesinde değiştirilmiş",
-  "öncesinde değiştirilmiş",
   "sonrasında değiştirilmiş",
-  "sonraki hali",
-  "değiştiren",
+  "tarihinden itibaren değiştirilmiş",
+  "sonraki değeri",
+  "tarafından değiştirildi",
   "eşleşir",
 ] %]
 
   <p>
     <strong>
-      <a name="chart">İkili Grafikleri Kullanarak Gelişmiş Arama</a>:
+      <a name="chart">Mantıksal İfade ile Gelişmiş Arama</a>:
     </strong>
   </p>
 
@@ -65,7 +65,7 @@
              name="negate[% chartnum FILTER html %]" value="1"
             [%+ "checked" IF chart.negate %]>
         <label for="negate[% chartnum FILTER html %]">
-          Değil (bu çizelgenin tamamının tersini al)
+          Değil (Bu çizelgenin tamamının tersini al)
         </label>
       </td>
     </tr>
@@ -121,7 +121,7 @@
                name="cmd-add[% "${chartnum}-${newand}-0" %]"
                id="cmd-add[% "${chartnum}-${newand}-0" %]">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="submit" value="Bir boole çizelge daha ekle" [% jsmagic %]
+        <input type="submit" value="Bir mantıksal çizelge daha ekle" [% jsmagic %]
                name="cmd-add[% newchart %]-0-0"
                id="cmd-add[% newchart %]-0-0">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

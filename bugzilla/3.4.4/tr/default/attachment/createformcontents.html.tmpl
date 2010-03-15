@@ -60,17 +60,17 @@
 <tr>
   <th><label for="description">Açıklama</label>:</th>
   <td>
-    <em>Eki kısaca açıklayın.</em><br>
+    <em>Eklentiyi kısaca açıklayın.</em><br>
     <input type="text" id="description" name="description" size="60" maxlength="200">
   </td>
 </tr>
 <tr class="expert_fields">
   <th>İçerik türü:</th>
   <td>
-    <em>Ek bir yama ise aşağıdaki kutuyu işaretleyin.</em><br>
+    <em>Eklenti bir yama ise aşağıdaki kutuyu işaretleyin.</em><br>
     <input type="checkbox" id="ispatch" name="ispatch" value="1"
            onchange="setContentTypeDisabledState(this.form);">
-    <label for="ispatch">patch</label><br><br>
+    <label for="ispatch">Eklenti bir yama</label><br><br>
     [%# Reset this whenever the page loads so that the JS state is up to date %]
     <script type="text/javascript">
       YAHOO.util.Event.onDOMReady(function() {
@@ -78,7 +78,7 @@
       });
     </script>
 
-    <em>Aksi taktirde, içerik türünü belirleme yöntemini seçin.</em><br>
+    <em>değilse, içerik türünü belirleme yöntemini seçin (önerilen: otomatik).</em><br>
     <input type="radio" id="autodetect"
            name="contenttypemethod" value="autodetect" checked="checked">
       <label for="autodetect">otomatik belirle</label><br>

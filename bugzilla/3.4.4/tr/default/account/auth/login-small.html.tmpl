@@ -40,7 +40,7 @@
 <li id="mini_login_container[% qs_suffix %]">
   <span class="separator">| </span>
   <a id="login_link[% qs_suffix %]" href="?GoAheadAndLogIn=1"
-     onclick="return show_mini_login_form('[% qs_suffix %]')">Oturum Aç</a>
+     onclick="return show_mini_login_form('[% qs_suffix %]')">Giriş Yap</a>
   <form action="[% login_target FILTER html %]" method="POST" 
         class="mini_login bz_default_hidden"
         id="mini_login[% qs_suffix FILTER html %]"
@@ -68,7 +68,7 @@
                  [%+ "checked" IF Param('rememberlogin') == "defaulton" %]>
       <label for="Bugzilla_remember[% qs_suffix %]">Hatırla</label>
     [% END %]
-    <input type="submit" name="GoAheadAndLogIn" value="Log in" 
+    <input type="submit" name="GoAheadAndLogIn" value="Giriş yap" 
             id="log_in[% qs_suffix %]">
     <script type="text/javascript">
       mini_login_constants = {
@@ -111,7 +111,7 @@
 <li id="forgot_container[% qs_suffix %]">
   <span class="separator">| </span>
   <a id="forgot_link[% qs_suffix %]" href="?GoAheadAndLogIn=1#forgot"
-     onclick="return show_forgot_form('[% qs_suffix %]')">Parolamı Sıfırla</a>
+     onclick="return show_forgot_form('[% qs_suffix %]')">Parolamı Unuttum</a>
   <form action="token.cgi" method="post" id="forgot_form[% qs_suffix %]"
         class="mini_forgot bz_default_hidden">
     <label>Login: <input type="text" name="loginname" size="20"></label>
