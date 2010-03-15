@@ -685,11 +685,11 @@
     <th>&nbsp;</th>
   
     <td colspan="2" align="left" id="show_dependency_tree_or_graph">
-      <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">Bağımlılık ağacını</a> göster
-  
+      Bağımlılık <a href="showdependencytree.cgi?id=[% bug.bug_id %]&amp;hide_resolved=1">ağacını</a>
       [% IF Param('webdotbase') %]
-        /&nbsp;<a href="showdependencygraph.cgi?id=[% bug.bug_id %]">grafik</a>
+        /&nbsp;<a href="showdependencygraph.cgi?id=[% bug.bug_id %]">grafiğini</a>
       [% END %]
+      göster
     </td>
   </tr>
 [% END %]
@@ -807,20 +807,20 @@
 [% BLOCK section_dates %]
   <tr>
     <td class="field_label">
-      <b>Bildirildi</b>:
+      <b>Raporlayan</b>:
     </td>
     <td>
-     [% bug.creation_ts FILTER time %] by [% INCLUDE global/user.html.tmpl who = bug.reporter %]
+     [% bug.creation_ts FILTER time %] [% INCLUDE global/user.html.tmpl who = bug.reporter %]
     </td>
   </tr>
   
   <tr>
     <td class="field_label">
-      <b> Değiştirildi</b>:
+      <b> Değiştiren</b>:
     </td>
     <td>
       [% bug.delta_ts FILTER time FILTER replace(':\d\d$', '') FILTER replace(':\d\d ', ' ')%] 
-      (<a href="show_activity.cgi?id=[% bug.bug_id %]">[%# terms.Bug %]History</a>)
+      (<a href="show_activity.cgi?id=[% bug.bug_id %]">[%# terms.Bug %]Geçmiş</a>)
     </td>
   
   </tr>
@@ -851,19 +851,19 @@
             <br> 
           [% END %]
         [% END %]
-        [% bug.cc.size || 0  FILTER html %] 
-        [% IF bug.cc.size == 1 %]
-          user
-        [% ELSE %]
-          kullanıcılar
-        [% END %]
+        [% bug.cc.size || 0  FILTER html %]
         [% IF user.id %]
           [% IF bug.cc.contains( user.email ) %]
-            siz dahil
+            [Raporlayan dahil]
           [% END %]
         [% END %]
+        [% IF bug.cc.size == 1 %]
+          kullanıcı
+        [% ELSE %]
+          kullanıcı
+        [% END %]
         <span id="cc_edit_area_showhide_container" class="bz_default_hidden">
-          (<a href="#" id="cc_edit_area_showhide">[% IF user.id %]değiştir[% ELSE %]show[% END %]</a>)
+          (<a href="#" id="cc_edit_area_showhide">[% IF user.id %]değiştir[% ELSE %]göster[% END %]</a>)
         </span>
         <div id="cc_edit_area">
           <br>
@@ -889,7 +889,7 @@
             [% IF user.id %]
               <br>
               <input type="checkbox" id="removecc" name="removecc">
-              [%%]<label for="removecc">Seçili CC'leri sil</label>
+              [%%]<label for="removecc">Seçili adresleri listeden sil</label>
               <br>
             [% END %]
           [% END %]
