@@ -337,7 +337,7 @@ TUI_hide_default('expert_fields');
     <th>Durum:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Başlangıç Durumu', name => 'bug_status' } %]
+    [% sel = { description => 'Durum', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
