@@ -373,14 +373,25 @@ TUI_hide_default('expert_fields');
   <tr>
     <th><a href="page.cgi?id=fields.html#assigned_to">Assign To</a>:</th>
     <td colspan="2">
-      [% INCLUDE global/userselect.html.tmpl
-         name => "assigned_to"
-         value => assigned_to
-         disabled => assigned_to_disabled
-         size => 30
-         emptyok => 1
-         custom_userlist => assignees_list
-       %]
+    [% IF product.name == "Review" %]
+     [% INCLUDE global/userselect.html.tmpl
+        name => "assigned_to"
+        value => user.login
+        disabled => assigned_to_disabled
+        size => 30
+        emptyok => 1
+        custom_userlist => assignees_list
+      %]
+     [% ELSE %]
+     [% INCLUDE global/userselect.html.tmpl
+        name => "assigned_to"
+        value => assigned_to
+        disabled => assigned_to_disabled
+        size => 30
+        emptyok => 1
+        custom_userlist => assignees_list
+      %]
+      [% END %]
       <noscript>(Leave blank to assign to component's default assignee)</noscript>
     </td>
   </tr>
