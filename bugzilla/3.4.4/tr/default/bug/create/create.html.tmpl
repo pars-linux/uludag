@@ -374,7 +374,11 @@ TUI_hide_default('expert_fields');
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "assigned_to"
-         value => assigned_to
+         [% IF product.name == "Review" %]
+            value => [% user.login FILTER html %]
+         [% ELSE %]
+            value => assigned_to
+         [% END %]
          disabled => assigned_to_disabled
          size => 30
          emptyok => 1
