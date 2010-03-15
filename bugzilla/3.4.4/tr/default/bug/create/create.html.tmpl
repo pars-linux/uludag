@@ -29,19 +29,33 @@
 [% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
-  title = title
-  style_urls = [ 'skins/standard/create_attachment.css',
-                 'skins/standard/yui/calendar.css' ]
-  javascript_urls = [ "js/attachment.js", "js/util.js", "js/yui/calendar.js",
-                      "js/field.js", "js/yui/cookie.js", "js/TUI.js" ]
+   title = "Enter $terms.ABug"
+      onload = "PutDescription()"
+         style = "#somebugs { width: 100%; height: 500px }"
 %]
 
 [% tablecolour = "#FFFFCC" %]
 
 
 <script type="text/javascript">
-<!--
+var descriptions = [
+[% FOREACH c = product.components %]
+  '[% c.description FILTER js %]',
+[% END %]
+];
 
+function PutDescription() {
+    if ((document.getElementById) && (document.body.innerHTML)) {
+        var componentIndex = document.getElementById('component').selectedIndex;
+        if (componentIndex != -1) {
+            var description = document.getElementById('description');
+            description.innerHTML = descriptions[componentIndex];
+        }
+    }
+}
+</script>
+
+<!--
 var initialowners = new Array([% product.components.size %]);
 var last_initialowner;
 var initialccs = new Array([% product.components.size %]);
