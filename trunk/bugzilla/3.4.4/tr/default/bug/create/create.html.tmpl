@@ -267,6 +267,21 @@ TUI_hide_default('expert_fields');
     </td>
   </tr>
 
+ <tr>
+    <td valign="top">
+    <b>Sürüm</b>
+    </td>
+    <td rowspan="3">
+      <select name="version" size="5">
+        [%- FOREACH v = version %]
+          <option value="[% v FILTER html %]"
+            [% ' selected="selected"' IF v == default.version %]>[% v FILTER html -%]
+          </option>
+        [%- END %]
+      </select>
+    </td>
+  </tr>
+
   <tr>
     [% INCLUDE bug/field.html.tmpl
       bug = default, field = select_fields.rep_platform, editable = 1,
