@@ -184,7 +184,7 @@ class QIconLoader:
             QPixmapCache.insert(pixmapName, self.pixmap)
         return self.pixmap
 
-    def load(self, name, size = None):
+    def load(self, name, size = 128):
         icon = QIcon()
         size = int(size)
         self.pixmap = QPixmap()
