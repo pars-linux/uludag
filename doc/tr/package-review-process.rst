@@ -1,11 +1,6 @@
 Paket Gözden Geçirme Süreci
 ===========================
 
-Bugzilla destekli paket gözden geçirme süreci:
-
-BUG:COMMENT ile yorum girilen yere aynı zamanda hangi dosyaların değiştiğini
-gösteren bir websvn bağlantısı koymaya karar verdik.
-
 #. Hata raporu "Paketler/00-Yeni Paket" bileşenine herhangi bir kullanıcı
    tarafından açılır. Bu hata raporu packages@pardus.org.tr adresine atanır ve
    doğal olarak listeye düşer.
