@@ -267,8 +267,14 @@ TUI_hide_default('expert_fields');
     </td>
   </tr>
 
+  <tr>
+    [% INCLUDE bug/field.html.tmpl
+      bug = default, field = select_fields.rep_platform, editable = 1,
+      value = default.rep_platform %]
+  </tr>
+
  <tr>
-    <td align="right" valign="top">
+    <td align="left" valign="top">
     <b>Sürüm</b>
     </td>
     <td>
@@ -281,12 +287,6 @@ TUI_hide_default('expert_fields');
       </select>
     </td>
   </tr>
-
-  <tr>
-    [% INCLUDE bug/field.html.tmpl
-      bug = default, field = select_fields.rep_platform, editable = 1,
-      value = default.rep_platform %]
-  </tr>
 </tbody>
 
 <tbody class="expert_fields">
@@ -295,7 +295,7 @@ TUI_hide_default('expert_fields');
       [% sel = { description => 'Target Milestone', name => 'target_milestone' } %]
       [% INCLUDE select %]
     [% ELSE %]
-      <td colspan="2">&nbsp;</td>
+      <!--td colspan="2">&nbsp;</td-->
     [% END %]
 
     [% IF Param('letsubmitterchoosepriority') %]
@@ -303,7 +303,7 @@ TUI_hide_default('expert_fields');
         bug = default, field = select_fields.priority, editable = 1, 
         value = default.priority %]
     [% ELSE %]
-      <td colspan="2">&nbsp;</td>
+      <!--td colspan="2">&nbsp;</td-->
     [% END %]
   </tr>
 </tbody>
