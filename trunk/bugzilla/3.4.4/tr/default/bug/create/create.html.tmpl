@@ -29,24 +29,16 @@
 [% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
-   title = "$terms.ABug Gir"
-   onload = "PutDescription()"
-   style_urls = [ 'skins/standard/create_attachment.css', 'skins/standard/yui/calendar.css' ]
-   javascript_urls = [ "js/attachment.js", "js/util.js", "js/yui/calendar.js",
-                                              "js/field.js", "js/yui/cookie.js", "js/TUI.js" ]
+  title = title
+  style_urls = [ 'skins/standard/create_attachment.css',
+                 'skins/standard/yui/calendar.css' ]
+  javascript_urls = [ "js/attachment.js", "js/util.js", "js/yui/calendar.js",
+                      "js/field.js", "js/yui/cookie.js", "js/TUI.js" ]
 %]
 
 [% tablecolour = "#FFFFCC" %]
-
-
 <script type="text/javascript">
-
 <!--
-var descriptions = [
-[% FOREACH c = product.components %]
-  '[% c.description FILTER js %]',
-[% END %]
-];
 
 var initialowners = new Array([% product.components.size %]);
 var last_initialowner;
@@ -173,17 +165,6 @@ TUI_alternates['expert_fields'] = 'Gelişmiş Alanları Göster';
 // that specifies otherwise.
 TUI_hide_default('expert_fields');
 
-
-function PutDescription() {
-    if ((document.getElementById) && (document.body.innerHTML)) {
-        var componentIndex = document.getElementById('component').selectedIndex;
-        if (componentIndex != -1) {
-            var description = document.getElementById('description');
-            description.innerHTML = descriptions[componentIndex];
-        }
-    }
-}
-
 -->
 </script>
 
@@ -197,16 +178,10 @@ function PutDescription() {
 
 <form name="Create" id="Create" method="post" action="post_bug.cgi"
       enctype="multipart/form-data">
-  <input type="hidden" name="product" value="[% product.name FILTER html %]">
-  <input type="hidden" name="token" value="[% token FILTER html %]">
+<input type="hidden" name="product" value="[% product.name FILTER html %]">
+<input type="hidden" name="token" value="[% token FILTER html %]">
 
-  <input type="hidden" name="format" value="guided">
-  <input type="hidden" name="assigned_to" value="">
-  <input type="hidden" name="priority" value="[% default.priority FILTER html %]">
-  <input type="hidden" name="version" value="[% default.version FILTER html %]">
-  <input type="hidden" name="token" value="[% token FILTER html %]">
-
-<table valign="top" cellpadding="5" cellspacing="5" border="0">
+<table cellspacing="4" cellpadding="2" border="0">
 <tbody>
   <tr>
     <td colspan="4">
@@ -229,39 +204,22 @@ function PutDescription() {
     </td>
   </tr>
 
-  <tr bgcolor="[% tablecolour %]">
-    <td align="right" valign="top">
-      <b>Ürün</b>
-    </td>
-    <td valign="top">
-      <input type="hidden" name="product" value="[% product.name FILTER html %]">
-      [% product.name FILTER html %]
-    </td>
+  <tr>
+    <th>Ürün:</th>
+    <td width="10%">[% product.name FILTER html %]</td>
+
+    <th>Raporlayan:</th>
+    <td width="100%">[% user.login FILTER html %]</td>
   </tr>
 
+  [%# We can't use the select block in these two cases for various reasons. %]
   <tr>
-    <td align="right" valign="top">
-      <b>Bileşen</b>
-    </td>
-    <td valign="top">
-      <table border="0" cellpadding="0" cellspacing="0">
-        <tr>
-          <td valign="top">
-            <!--select name="component" id="component"
-                    size="5" onchange="PutDescription()">
-              [% IF NOT default.component_ %]
-                [%# Various b.m.o. products have a "General" component,
-                    which is a useful default. %]
-                [% default.component_ = "General" %]
-              [% END %]
-              [% FOREACH c = product.components %]
-                <option value="[% c.name FILTER html %]"
-                  [% " selected=\"selected\"" IF c.name == default.component_ %]>
-                  [% c.name FILTER html %]
-                </option>
-              [% END %]
-            </select-->
-        <select name="component" onchange="set_assign_to();" size="7">
+    <th>
+      <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
+      Bileşen</a>:
+    </th>
+    <td>
+      <select name="component" onchange="set_assign_to();" size="7">
         [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
         [% IF Param("usemenuforusers") %]
           [% assignees_list = user.get_userlist.clone %]
@@ -281,36 +239,44 @@ function PutDescription() {
           [% END %]
         [%- END %]
       </select>
+    </td>
 
-
-          </td>
-          <td valign="top" width="100%">
-              <div id="description" style="color: green; margin-left: 10px;
-                                           height: 5em; overflow: auto;">
-                <script type="text/javascript">
-                  if ((document.getElementById) && (document.body.innerHTML)) {
-                    document.write("\
-                    Açıklamasını görmek için bir bileşen seçin.");
-                  }
-                </script>
-              </div>
+    <td colspan="2">
+      [%# Enclose the fieldset in a nested table so that its width changes based
+        # on the length on the component description. %]
+      <table>
+        <tr>
+          <td>
+            <fieldset>
+              <legend>Bileşen Açıklaması</legend>
+              <div id="comp_desc" class="comment">Açıklamasını görmek için bir bileşen seçin.</div>
+            </fieldset>
           </td>
         </tr>
       </table>
-      
-      <p>
-        Problem ile karşılaşılan alandır.
-        Yardım için, <a target="_blank" href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">bileşen açıklamaları</a> bağlantısını takip edebilirsiniz.
-      </p>
     </td>
   </tr>
 
   <tr>
+    <th rowspan="3">Sürüm:</th>
+    <td rowspan="3">
+      <select name="version" size="5">
+        [%- FOREACH v = version %]
+          <option value="[% v FILTER html %]"
+            [% ' selected="selected"' IF v == default.version %]>[% v FILTER html -%]
+          </option>
+        [%- END %]
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2">
     [% INCLUDE bug/field.html.tmpl
       bug = default, field = select_fields.rep_platform, editable = 1,
       value = default.rep_platform %]
+    </td>
   </tr>
-
 </tbody>
 
 <tbody class="expert_fields">
@@ -332,9 +298,6 @@ function PutDescription() {
   </tr>
 </tbody>
 
-[% IF !Param('defaultplatform') || !Param('defaultopsys') %]
-[% END %]
-
 <tbody class="expert_fields">
   <tr>
     <td colspan="4">&nbsp;</td>
@@ -342,16 +305,16 @@ function PutDescription() {
 
   <tr>
 [% IF bug_status.size <= 1 %]
-    <input type="hidden" name="bug_status" value="[% default.bug_status FILTER html %]">
-    <td align="right" valign="top">
-    <b>Durum</b>
-    </td>
+  <input type="hidden" name="bug_status" 
+         value="[% default.bug_status FILTER html %]">
+    <th>Durum:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
     [% sel = { description => 'Durum', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
+    <td>&nbsp;</td>
     [%# Calculate the number of rows we can use for flags %]
     [% num_rows = 6 + (Param("useqacontact") ? 1 : 0) +
                       (user.in_group(Param('timetrackinggroup')) ? 3 : 0) +
@@ -380,9 +343,7 @@ function PutDescription() {
   </tr>
 
   <tr>
-    <td align="right" valign="top">
-    <b><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></b>
-    </td>
+    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a>:</th>
     <td colspan="2">
     [% IF product.name == "Review" %]
      [% INCLUDE global/userselect.html.tmpl
@@ -406,12 +367,10 @@ function PutDescription() {
       <noscript>(Ön tanımlı atamak için kutuyu boş bırakınız)</noscript>
     </td>
   </tr>
-  
+
 [% IF Param("useqacontact") %]
     <tr>
-      <td align="right" valign="top">
-      <b>Kalite Kontrol Sorumlusu</b>
-      </td>
+      <th>QA Contact:</th>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -421,15 +380,13 @@ function PutDescription() {
          emptyok => 1
          custom_userlist => qa_contacts_list
        %]
-        <noscript>(Ön tanımlı kalite kontrol sorumlusuna atamak için kutuyu boş bırakınız.)</noscript>
+        <noscript>(Ön tanımlı kalite kontrol sorumlusuna atamak için kutuyu boş bırakınız)</noscript>
       </td>
     </tr>
 [% END %]
 
   <tr>
-    <td align="right" valign="top">
-    <b>CC</b>
-    </td>
+    <th>CC:</th>
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "cc"
@@ -442,9 +399,7 @@ function PutDescription() {
   </tr>
 
   <tr>
-    <td align="right" valign="top">
-    <b>Öntanımlı CC</b>
-    </td>
+    <th>Öntanımlı CC:</th>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -454,19 +409,14 @@ function PutDescription() {
       </div>
    </td>
   </tr>
-  
+
   <tr>
     <td colspan="3">&nbsp;</td>
   </tr>
 
-[% IF user.in_group(Param('timetrackinggroup')) %]
-[% END %]
-
 [% IF Param("usebugaliases") %]
   <tr>
-    <td align="right" valign="top">
-    <b>Sembolik Ad (Lakap)</b>
-    </td>
+    <th>Sembolik Ad (Lakap):</th>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -474,9 +424,7 @@ function PutDescription() {
 [% END %]
 
   <tr>
-    <td align="right" valign="top">
-    <b>URL</b>
-    </td>
+    <th>URL:</th>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
@@ -507,15 +455,15 @@ function PutDescription() {
     <td valign="top">
       <input type="text" size="70" name="short_desc" id="short_desc"·value="[% short_desc FILTER html %]"  maxlength="255" spellcheck="true">
       <p>
-      Olabildiğince ipucu kelime kullanmaya özen göstererek yaşadığınız problemi özetleyen bir cümle girin.
+        <i>Olabildiğince ipucu kelime kullanmaya özen göstererek yaşadığınız problemi özetleyen bir cümle girin.</i>
       </p>
       <p>
         <tt>
-          <font color="#990000">Kötü örnek</font>: KDE çöktü
+          <font color="#990000">Kötü Örnek</font>: KDE çöktü.
         </tt>
         <br>
         <tt>
-          <font color="#009900">İyi örnek</font>:
+          <font color="#009900">İyi Örnek</font>:
           Dolphin uygulamasını açtığımda eğer dizin içerisinde çok fazla dosya varsa KDE çöküyor.
         </tt>
       </p>
@@ -533,7 +481,7 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-      Özeti daha ayrıntılı açıklayın. Bu açıklamanın hataya özgü olmasına lütfen özen gösterin.
+        <i>Özeti daha ayrıntılı açıklayın. Bu açıklamanın hataya özgü olmasına lütfen özen gösterin.</i>
       </p>
       <p>
         <tt>
@@ -552,7 +500,7 @@ function PutDescription() {
       <b>Tekrarlanabilirlik</b>
     </td>
     <td valign="top">
-     <select name="reproducible">
+      <select name="reproducible">
         <option name="null" value="--">
         --
         <option name="AlwaysReproducible" value="Always">
@@ -582,14 +530,14 @@ function PutDescription() {
         defaultcontent = "1.\n2.\n3."
       %]
       <p>
-        Hatayı tekrarlamanız için gerekli olan adımları detaylandırın.
+        <i>Hatayı tekrarlamanız için gerekli olan adımları detaylandırın.</i>
       </p>
     </td>
   </tr>
 
  <tr bgcolor="[% tablecolour %]">
     <td valign="top" align="right">
-      <b>Güncel Sonuçlar</b>
+      <b>Güncel Sonuç</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -598,7 +546,7 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşıyorsunuz?
+       <i>Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşıyorsunuz?</i>
       </p>
     </td>
   </tr>
@@ -606,7 +554,7 @@ function PutDescription() {
 
  <tr>
     <td valign="top" align="right">
-      <b>Beklenen Sonuçlar</b>
+      <b>Beklenen Sonuç</b>
     </td>
     <td valign="top">
       [% INCLUDE global/textarea.html.tmpl
@@ -615,8 +563,8 @@ function PutDescription() {
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşmayı bekliyordunuz?
-      </p>
+        <i>Yukarıdaki adımları gerçekleştirdikten sonra nasıl bir sonuç ile karşılaşmayı bekliyordunuz?</i>
+     </p>
     </td>
   </tr>
 
@@ -632,13 +580,13 @@ function PutDescription() {
       %]
       <p>
      <tt>
-     Hata için gerekli olduğunu düşündüğünüz her türlü bilgiyi buraya ekleyebilirsiniz.
+          Hata için gerekli olduğunu düşündüğünüz her türlü bilgiyi buraya ekleyebilirsiniz.
         Bu bilgi bilgisayarınız ile ilgili bir donanım bilgisi veya herhangi bir ayar olabilir.
         <br>
         Eğer bu açıklama birkaç satırdan fazla ise, lütfen <b>dosya ekle</b> bölümünden ilgili dosyayı ekleyiniz.
-    </tt>
-    </p>
+      </p>
 
+    </tt>
    </td>
   </tr>
 
@@ -646,7 +594,7 @@ function PutDescription() {
     <td valign="top" align="right">
       <b>Önem</b>
     </td>
-     <td valign="top">
+    <td valign="top">
       <select name="bug_severity" size="4">
         <option name="blocking" value="blocking">
           Acil: Tüm sistemi kullanılamaz hale getiren hatalar
@@ -675,19 +623,19 @@ function PutDescription() {
         <input type="checkbox" id="commentprivacy" name="commentprivacy"
           [% " checked=\"checked\"" IF commentprivacy %]>
         <label for="commentprivacy">
-            Başlangıç Açıklaması Gizlidir
+          Başlangıç Açıklaması Gizlidir
         </label>
       </td>
     </tr>
   [% END %]
 
   <tr>
-    <th>Eklentiler</th>
+    <th>Eklentiler:</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
         document.write( '<div id="attachment_false">'
-                      +   '<input type="button" value="Add an attachment" '
+                      +   '<input type="button" value="Dosya Ekle" '
                       +          'onClick="handleWantsAttachment(true)"> '
                       +   '<em style="display: none">This button has no '
                       +   'functionality for you because your browser does '
@@ -721,22 +669,22 @@ function PutDescription() {
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Anahtarlar</a></th>
+        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
-                 value="[% keywords FILTER html %]"> (optional)
+                 value="[% keywords FILTER html %]"> (isteğe bağlı)
         </td>
       </tr>
     [% END %]
 
     <tr>
-      <th>Bağımlılıkları</th>
+      <th>Bağımlılıkları:</th>
       <td colspan="3">
         <input name="dependson" accesskey="d" value="[% dependson FILTER html %]">
       </td>
     </tr>
     <tr>
-      <th>Engelledikleri</th>
+      <th>Engelledikleri:</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
@@ -751,7 +699,7 @@ function PutDescription() {
     <td colspan="3">
       <br>
         <strong>
-        Sadece seçili gruptakiler bu hatayı görebilir:
+          Sadece seçili gruptakiler bu hatayı görebilir:
         </strong>
       <br>
       <font size="-1">
@@ -780,7 +728,7 @@ function PutDescription() {
   <tr>
     <th>&nbsp;</th>
     <td colspan="3">
-      <input type="submit" id="commit" value="Hata Raporunu Gönder"
+      <input type="submit" id="commit" value="Hata raporunu gönder"
              onclick="if (this.form.short_desc.value == '')
              { alert('Bu hata için lütfen bir özet cümlesi giriniz!');
                return false; } return true;">
