@@ -35,9 +35,9 @@
 [% PROCESS "global/field-descs.none.tmpl" %]
 [% field_descs.short_short_desc     = "Özet (ilk 60 karakter)" %]
 [% field_descs.short_desc           = "Tam Özet" %]
-[% field_descs.assigned_to_realname = "Atananın Gerçek Adı" %]
-[% field_descs.reporter_realname    = "Bildirenin Gerçek Adı" %]
-[% field_descs.qa_contact_realname  = "Kalite Kontrol Kişisi Gerçek Adı" %]
+[% field_descs.assigned_to_realname = "Atananın Adı" %]
+[% field_descs.reporter_realname    = "Raporlayanın Adı" %]
+[% field_descs.qa_contact_realname  = "Kalite Kontrol Sorumlusunun Adı" %]
 
 <form name="changecolumns" action="colchange.cgi" onsubmit="change_submit();">
   <input type="hidden" name="rememberedquery" value="[% buffer FILTER html %]">
