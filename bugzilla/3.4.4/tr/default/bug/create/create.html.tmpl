@@ -192,10 +192,14 @@ TUI_hide_default('expert_fields');
   [% select_fields.${field.name} = field %]
 [% END %]
 
-<form name="Create" id="Create" method="post" action="post_bug.cgi"
-      enctype="multipart/form-data">
-<input type="hidden" name="product" value="[% product.name FILTER html %]">
-<input type="hidden" name="token" value="[% token FILTER html %]">
+<form method="post" action="post_bug.cgi">
+  <input type="hidden" name="format" value="guided">
+  <input type="hidden" name="assigned_to" value="">
+  <input type="hidden" name="priority"
+         value="[% default.priority FILTER html %]">
+  <input type="hidden" name="version"
+         value="[% default.version FILTER html %]">
+  <input type="hidden" name="token" value="[% token FILTER html %]">
 
 <table valign="top" cellpadding="5" cellspacing="5" border="0">
 <tbody>
