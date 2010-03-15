@@ -195,13 +195,15 @@ function PutDescription() {
   [% select_fields.${field.name} = field %]
 [% END %]
 
-<form method="post" action="post_bug.cgi">
+<form name="Create" id="Create" method="post" action="post_bug.cgi"
+      enctype="multipart/form-data">
+  <input type="hidden" name="product" value="[% product.name FILTER html %]">
+  <input type="hidden" name="token" value="[% token FILTER html %]">
+
   <input type="hidden" name="format" value="guided">
   <input type="hidden" name="assigned_to" value="">
-  <input type="hidden" name="priority"
-         value="[% default.priority FILTER html %]">
-  <input type="hidden" name="version"
-         value="[% default.version FILTER html %]">
+  <input type="hidden" name="priority" value="[% default.priority FILTER html %]">
+  <input type="hidden" name="version" value="[% default.version FILTER html %]">
   <input type="hidden" name="token" value="[% token FILTER html %]">
 
 <table valign="top" cellpadding="5" cellspacing="5" border="0">
@@ -245,7 +247,7 @@ function PutDescription() {
       <table border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td valign="top">
-            <select name="component" id="component"
+            <!--select name="component" id="component"
                     size="5" onchange="PutDescription()">
               [% IF NOT default.component_ %]
                 [%# Various b.m.o. products have a "General" component,
@@ -258,28 +260,29 @@ function PutDescription() {
                   [% c.name FILTER html %]
                 </option>
               [% END %]
-            </select>
+            </select-->
+        <select name="component" onchange="set_assign_to();" size="7">
+        [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
+        [% IF Param("usemenuforusers") %]
+          [% assignees_list = user.get_userlist.clone %]
+          [% qa_contacts_list = user.get_userlist.clone %]
+        [% END %]
 
-             <select name="component" onchange="set_assign_to();" size="7">
-                [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
-                [% IF Param("usemenuforusers") %]
-                [% assignees_list = user.get_userlist.clone %]
-                [% qa_contacts_list = user.get_userlist.clone %]
-                [% END %]
-
-                [%- FOREACH c = product.components %]
-                <option value="[% c.name FILTER html %]"
-                [% " selected=\"selected\"" IF c.name == default.component_ %]>
-                [% c.name FILTER html -%]
-                </option>
-                [% IF Param("usemenuforusers") %]
-                [% INCLUDE build_userlist default_user = c.default_assignee,
+        [%- FOREACH c = product.components %]
+          <option value="[% c.name FILTER html %]"
+            [% " selected=\"selected\"" IF c.name == default.component_ %]>
+            [% c.name FILTER html -%]
+          </option>
+          [% IF Param("usemenuforusers") %]
+            [% INCLUDE build_userlist default_user = c.default_assignee,
                                       userlist = assignees_list %]
-                [% INCLUDE build_userlist default_user = c.default_qa_contact,
+            [% INCLUDE build_userlist default_user = c.default_qa_contact,
                                       userlist = qa_contacts_list %]
-                [% END %]
-                [%- END %]
-            </select>
+          [% END %]
+        [%- END %]
+      </select>
+
+
           </td>
           <td valign="top" width="100%">
               <div id="description" style="color: green; margin-left: 10px;
@@ -339,8 +342,7 @@ function PutDescription() {
 
   <tr>
 [% IF bug_status.size <= 1 %]
-  <input type="hidden" name="bug_status" 
-         value="[% default.bug_status FILTER html %]">
+    <input type="hidden" name="bug_status" value="[% default.bug_status FILTER html %]">
     <td align="right" valign="top">
     <b>Durum</b>
     </td>
