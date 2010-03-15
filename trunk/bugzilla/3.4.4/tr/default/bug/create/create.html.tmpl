@@ -29,9 +29,11 @@
 [% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
-   title = "Enter $terms.ABug"
-      onload = "PutDescription()"
-         style = "#somebugs { width: 100%; height: 500px }"
+   title = "$terms.ABug Gir"
+   onload = "PutDescription()"
+   style_urls = [ 'skins/standard/create_attachment.css', 'skins/standard/yui/calendar.css' ]
+   javascript_urls = [ "js/attachment.js", "js/util.js", "js/yui/calendar.js",
+                                              "js/field.js", "js/yui/cookie.js", "js/TUI.js" ]
 %]
 
 [% tablecolour = "#FFFFCC" %]
