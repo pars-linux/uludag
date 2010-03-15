@@ -1,0 +1,62 @@
+Uludağ Haftalık Bülteni - 27 Şubat 2005
+
+<p>
+Merhaba,
+</p>
+
+<p>
+Uludağ Projesi haftalık bültenine hoşgeldiniz.
+</p>
+
+<p>
+Uludağ Projesi geliştiricileri, 4-5 Mart 2005 tarihlerinde Bilgi 
+Üniversitesi'nin ev sahipliği yaptığı Özgür Yazılım ve Açık Kaynak 
+Günleri[1]'nde. İki gün boyunca açık olacak standımızın yanı sıra 5 Mart 
+günü, 16:30 - 18:00 saatleri arasında gerçekleşecek olan Ulusal Dağıtım 
+Projesi oturumunda[2] buluşmayı ümit ediyoruz.
+</p>
+
+<p>
+ 1. <a href="http://open.bilgi.edu.tr/freedays/">http://open.bilgi.edu.tr/freedays/</a><br>
+ 2. <a href="http://open.bilgi.edu.tr/freedays/program.php?lang=tr">http://open.bilgi.edu.tr/freedays/program.php?lang=tr</a>
+</p>
+
+<p>
+Uludağ Projesi'ne katkı vermek isteyenlerin projeye
+adaptasyon sürecini hızlandırmayı ve yardım etmek isteyen her
+seviyedeki katkıcıya iyi bir başlangıç noktası oluşturmayı hedefleyen Kalite
+Takımı'nın çalışması için açılan e-posta listesi[3] ve bu e-posta listesinin amacı ile ilgili
+belge[4] genel tartışma listemizde duyuruldu[5]. İlgi gösterenlere teşekkür
+ederiz.
+</p>
+
+<p>
+ 3. <a href="http://liste.uludag.org.tr/mailman/listinfo/kalite">http://liste.uludag.org.tr/mailman/listinfo/kalite</a><br>
+ 4. <a href="http://www.uludag.org.tr/kalite/kalite.html">http://www.uludag.org.tr/kalite/kalite.html</a><br>
+ 5. <a href="http://liste.uludag.org.tr/uludag/2005-February/001139.html">http://liste.uludag.org.tr/uludag/2005-February/001139.html</a>
+</p>
+
+<p>
+Geçtiğimiz hafta genel tartışma listemizde Emre Sağlam tarafından dile getirilen
+Pardus'un test edildiği platformlar ile ilgili bir bilgi tabanı oluşturulması
+önerisi[6] kendisinin önderliğinde yöntemi belirlenecek bir proje olarak
+Kalite listesinde tartışılmaya başlandı.
+</p>
+
+<p>
+ 6. <a href="http://liste.uludag.org.tr/uludag/2005-February/001143.html">http://liste.uludag.org.tr/uludag/2005-February/001143.html</a>
+</p>
+
+<p>
+Belgeler sayfamıza[7] üç yeni belge, 'Nasıl Yardım Ederim
+(Kalite)'[8], 'Yerelleştirme Çalışmaları'[9] ve 'Uludağ Programlama Stili'[10] eklenirken,
+'Yeni Geliştirici Kılavuzu'[11] da güncellendi.
+</p>
+
+<p>
+ 7. <a href="http://www.uludag.org.tr/belgeler.html">http://www.uludag.org.tr/belgeler.html</a><br>
+ 8. <a href="http://www.uludag.org.tr/kalite/kalite.html">http://www.uludag.org.tr/kalite/kalite.html</a><br>
+ 9. <a href="http://www.uludag.org.tr/yerellestirme/yerellestirme.html">http://www.uludag.org.tr/yerellestirme/yerellestirme.html</a><br>
+ 10. <a href="http://www.uludag.org.tr/programlama_stili/programlama_stili.html">http://www.uludag.org.tr/programlama_stili/programlama_stili.html</a><br>
+ 11. <a href="http://www.uludag.org.tr/yeni_gelistirici/yeni_gelistirici.html">http://www.uludag.org.tr/yeni_gelistirici/yeni_gelistirici.html</a>
+</p>
