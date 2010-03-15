@@ -1,6 +1,12 @@
 Paket Gözden Geçirme Süreci
 ===========================
 
+Paket gözden geçirme süreci, Pardus deposuna yeni girecek olan paketlerin
+depo politikasına uygun olmalarını amaçlar.
+
+Gözden geçirme süreci, `hata takip sistemi <http://http://hata.pardus.org.tr>`_
+aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
+
 #. Hata raporu "Paketler/00-Yeni Paket" bileşenine herhangi bir kullanıcı
    tarafından açılır. Bu hata raporu packages@pardus.org.tr adresine atanır ve
    doğal olarak listeye düşer.
