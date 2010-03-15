@@ -329,7 +329,6 @@ function PutDescription() {
     [% INCLUDE select %]
 [% END %]
 
-    <td>&nbsp;</td>
     [%# Calculate the number of rows we can use for flags %]
     [% num_rows = 6 + (Param("useqacontact") ? 1 : 0) +
                       (user.in_group(Param('timetrackinggroup')) ? 3 : 0) +
