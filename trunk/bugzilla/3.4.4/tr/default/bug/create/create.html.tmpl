@@ -26,7 +26,7 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
+[% title = BLOCK %][% terms.Bug %] Gir: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -181,7 +181,7 @@ TUI_hide_default('expert_fields');
 <input type="hidden" name="product" value="[% product.name FILTER html %]">
 <input type="hidden" name="token" value="[% token FILTER html %]">
 
-<table cellspacing="4" cellpadding="2" border="0">
+<table valign="top" cellpadding="5" cellspacing="5" border="0">
 <tbody>
   <tr>
     <td colspan="4">
@@ -204,21 +204,24 @@ TUI_hide_default('expert_fields');
     </td>
   </tr>
 
-  <tr>
-    <th>Ürün:</th>
-    <td width="10%">[% product.name FILTER html %]</td>
-
-    <th>Raporlayan:</th>
-    <td width="100%">[% user.login FILTER html %]</td>
+  <tr bgcolor="[% tablecolour %]">
+    <td align="right" valign="top">
+    <b>Ürün</b>
+    </td>
+    <td valign="top">[% product.name FILTER html %]</td>
   </tr>
 
   [%# We can't use the select block in these two cases for various reasons. %]
   <tr>
-    <th>
+    <td align="right" valign="top">
       <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
-      Bileşen</a>:
-    </th>
-    <td>
+        <b>Bileşen</b>
+        </a>
+    </td>
+    <td valign="top">
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign="top">
       <select name="component" onchange="set_assign_to();" size="7">
         [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
         [% IF Param("usemenuforusers") %]
@@ -241,7 +244,7 @@ TUI_hide_default('expert_fields');
       </select>
     </td>
 
-    <td colspan="2">
+    <td valign="top" width="100%">
       [%# Enclose the fieldset in a nested table so that its width changes based
         # on the length on the component description. %]
       <table>
@@ -255,18 +258,12 @@ TUI_hide_default('expert_fields');
         </tr>
       </table>
     </td>
-  </tr>
-
-  <tr>
-    <th rowspan="3">Sürüm:</th>
-    <td rowspan="3">
-      <select name="version" size="5">
-        [%- FOREACH v = version %]
-          <option value="[% v FILTER html %]"
-            [% ' selected="selected"' IF v == default.version %]>[% v FILTER html -%]
-          </option>
-        [%- END %]
-      </select>
+    </tr>
+    </table>
+    <p>
+    Problem ile karşılaşılan alandır.
+    Yardım için, <a target="_blank" href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">bileşen açıklamaları</a> bağlantısını takip edebilirsiniz.
+    </p>
     </td>
   </tr>
 
@@ -343,7 +340,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a>:</th>
+  <td align="right" valign="top">
+      <b><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></b>
+  </td>
     <td colspan="2">
     [% IF product.name == "Review" %]
      [% INCLUDE global/userselect.html.tmpl
@@ -370,7 +369,9 @@ TUI_hide_default('expert_fields');
 
 [% IF Param("useqacontact") %]
     <tr>
-      <th>QA Contact:</th>
+        <td align="right" valign="top">
+            <b>Kalite Kontrol Sorumlusu</b>
+        </td>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -386,7 +387,10 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>CC:</th>
+    <td align="right" valign="top">
+        <b>CC</b>
+    </td>
+
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "cc"
@@ -399,7 +403,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th>Öntanımlı CC:</th>
+    <td align="right" valign="top">
+    <b>Öntanımlı CC</b>
+    </td>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -449,8 +455,8 @@ TUI_hide_default('expert_fields');
 <tbody>
 
   <tr bgcolor="[% tablecolour %]">
-    <td align="right" valign="top">
-      <b>Özet</b>
+      <td align="right" valign="top">
+            <b>Özet</b>
     </td>
     <td valign="top">
       <input type="text" size="70" name="short_desc" id="short_desc"·value="[% short_desc FILTER html %]"  maxlength="255" spellcheck="true">
@@ -630,7 +636,7 @@ TUI_hide_default('expert_fields');
   [% END %]
 
   <tr>
-    <th>Eklentiler:</th>
+    <th>Eklentiler</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
@@ -669,7 +675,7 @@ TUI_hide_default('expert_fields');
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
+        <th><a href="describekeywords.cgi">Anahtarlar</a></th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
                  value="[% keywords FILTER html %]"> (isteğe bağlı)
@@ -678,13 +684,13 @@ TUI_hide_default('expert_fields');
     [% END %]
 
     <tr>
-      <th>Bağımlılıkları:</th>
+      <th>Bağımlılıkları</th>
       <td colspan="3">
         <input name="dependson" accesskey="d" value="[% dependson FILTER html %]">
       </td>
     </tr>
     <tr>
-      <th>Engelledikleri:</th>
+      <th>Engelledikleri</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
