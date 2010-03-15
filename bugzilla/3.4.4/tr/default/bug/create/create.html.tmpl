@@ -208,7 +208,7 @@ TUI_hide_default('expert_fields');
     <th>Ürün:</th>
     <td width="10%">[% product.name FILTER html %]</td>
 
-    <th>Bildiren:</th>
+    <th>Raporlayan:</th>
     <td width="100%">[% user.login FILTER html %]</td>
   </tr>
 
@@ -268,24 +268,16 @@ TUI_hide_default('expert_fields');
         [%- END %]
       </select>
     </td>
-<!--
-    [% INCLUDE bug/field.html.tmpl
-      bug = default, field = select_fields.bug_severity, editable = 1, 
-      value = default.bug_severity %]
-      -->
   </tr>
 
   <tr>
+    <th>Mimari:</th>
+    <td colspan="2">
     [% INCLUDE bug/field.html.tmpl
       bug = default, field = select_fields.rep_platform, editable = 1,
       value = default.rep_platform %]
+    </td>
   </tr>
-
-  <!--tr>
-    [% INCLUDE bug/field.html.tmpl 
-       bug = default, field = select_fields.op_sys, editable = 1, 
-       value = default.op_sys %]
-  </tr-->
 </tbody>
 
 <tbody class="expert_fields">
@@ -306,25 +298,6 @@ TUI_hide_default('expert_fields');
     [% END %]
   </tr>
 </tbody>
-
-[% IF !Param('defaultplatform') || !Param('defaultopsys') %]
-  <!--tbody>
-    <tr>
-      <th>&nbsp;</th>
-      <td colspan="3" class="comment">
-        We've made a guess at your
-        [% IF Param('defaultplatform') %]
-          operating system. Please check it
-        [% ELSIF Param('defaultopsys') %]
-          platform. Please check it
-        [% ELSE %]
-          operating system and platform. Please check them
-        [% END %]
-        and make any corrections if necessary.
-      </td>
-    </tr>
-  </tbody-->
-[% END %]
 
 <tbody class="expert_fields">
   <tr>
@@ -395,7 +368,7 @@ TUI_hide_default('expert_fields');
       <noscript>(Ön tanımlı atamak için kutuyu boş bırakınız)</noscript>
     </td>
   </tr>
-  
+
 [% IF Param("useqacontact") %]
     <tr>
       <th>QA Contact:</th>
@@ -437,30 +410,10 @@ TUI_hide_default('expert_fields');
       </div>
    </td>
   </tr>
-  
-  <tr>
-    <td colspan="3">&nbsp;</td>
-  </tr>
-
-[% IF user.in_group(Param('timetrackinggroup')) %]
-  <!--tr>
-    <th>Estimated Hours:</th>
-    <td colspan="2">
-      <input name="estimated_time" size="6" maxlength="6" value="0.0">
-    </td>
-  </tr>
-  <tr>
-    <th>Deadline:</th>
-    <td colspan="2">
-      <input name="deadline" size="10" maxlength="10" value="[% deadline FILTER html %]">
-      <small>(YYYY-MM-DD)</small>
-    </td>
-  </tr>
 
   <tr>
     <td colspan="3">&nbsp;</td>
-  </tr-->
-[% END %]
+  </tr>
 
 [% IF Param("usebugaliases") %]
   <tr>
@@ -678,7 +631,7 @@ TUI_hide_default('expert_fields');
   [% END %]
 
   <tr>
-    <th>Ek:</th>
+    <th>Eklentiler:</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
@@ -717,7 +670,7 @@ TUI_hide_default('expert_fields');
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Anahtar kelimeler</a>:</th>
+        <th><a href="describekeywords.cgi">Anahtarlar</a>:</th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
                  value="[% keywords FILTER html %]"> (isteğe bağlı)
