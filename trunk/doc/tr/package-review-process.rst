@@ -7,49 +7,38 @@ depo politikasına uygun olmalarını amaçlar.
 Gözden geçirme süreci, `Pardus Hata Takip Sistemi <http://hata.pardus.org.tr>`_
 aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 
-#. Hata raporu "Paketler/00-Yeni Paket" bileşenine herhangi bir kullanıcı
-   tarafından açılır. Bu hata raporu packages@pardus.org.tr adresine atanır ve
-   doğal olarak listeye düşer.
+#. Hata takip sisteminde, gözden geçirme sürecine girecek paket için daha önce
+   bildirilmiş bir yeni paket isteği varsa sürece bu hata raporu üzerinden
+   başlanır.
 
-#. Herhangi bir geliştirici paketle ilgilenmeye karar verir, hatayı kendine atar
-   ve ASSIGNED olarak işaretler. Bugzilla'da sadece 'editbugs' grubunda olanlar
-   bu işlemi gerçekleştirebilir.
+#. Paketi hazırlamak isteyen geliştirici, hata raporunu kendisine atar ve hata
+   durumunu ATANDI şeklinde değiştirir. Bu işlemi sadece "editbugs" grubuna
+   dahil bir Bugzilla kullanıcısı yapabilir.
 
-#. Eğer paket "Paketler/00-Yeni Paket" bileşeninden gelmiyor ise (Paket
-   geliştiricinin kendi isteği ile ilgilenmeye başladığı bir paket ise) işlem
-   aşağıda bulunan aşmadan itibaren devam eder.
+#. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
+   bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
+   eklenecektir.
 
-#. Geliştirici paketi hazırlar ve kendi playground alanına commit eder.
-   BUG:COMMENT aracılığıyla bu bilgi hataya yorum olarak girilir.
+#. Paket hazır duruma geldiğinde depoda playground/review dizini altında
+   girmesi düşünülen bileşene kopyalanır.
 
-#. Geliştirici paketin hazır olduğunu düşündüğünde playground/review dizininin
-   altına kopyalar. Tüm bu değişiklikler BUG:COMMENT aracılığıyla hataya
-   yansıtılır.
+#. Paket üzerinde sonradan yapılacak değişikliklerin SVN açıklamalarına
 
-#. Yeni paket ile ilgili olan hata, sahibi tarafından "Review" ürününe alınır.
-   Bu ürüne sadece 'editbugs' grubundaki hesaplar atama yapabilecektir.
+     BUG:COMMENT:<Hata Numarası>
 
-#. "Review" ürünü seçildikten sonra bileşen bilgisi girilecektir. Bileşen
-   bilgisi depo bileşenlerini yansıtacaktır. Örn: desktop.kde,
-   kernel.default.drivers, vb. İlgili bileşenin ve üst bileşenlerinin
-   sorumluları otomatik olarak CC'ye eklenecektir.
+   şeklinde bir satır eklenerek ilgili hataya yorum olarak iletilmesi sağlanır.
 
-#. Oylama süreci
+#. Paketin uygun olduğuna karar verilebilmesi için yeterli sayıda oy alması
+   gerekmektedir. Oylar, başta ilgili bileşen sorumluları olmak üzere diğer
+   geliştiriciler tarafından hata takip sisteminde yorum olarak verilir.
 
-   a. Eğer paketin sahibi, paketin ait olduğu bileşenin ve tüm üst
-      bileşenlerinin sorumlusuyla aynı kişiyse, herhangi 2 adet ACK,
+   Süreçin tamamlanması için en az 2 (iki) oy alınması gerekir. Bu oylardan
+   en az biri, ilgili bileşenlerin sorumlularından olmalıdır. Paket sahibinden
+   başka bileşen sorumlusu olmadığı durumda herhangi bir geliştirici oy
+   verebilir.
 
-   b. Eğer paketin sahibi, paketin ait olduğu bileşen ağacında herhangi bir
-      sorumluluğa sahip değilse, en az 1 adet bileşen ağacı sorumluları
-      tarafından olmak üzere 2 ACK
+#. Paketi gözden geçirmek isteyen geliştirici, herhangi bir hata bulursa oy
+   vermek için hatanın düzeltilmesini beklemelidir. Şartlı oy verilmemelidir.
 
-   olacak şekilde düşünülmüştür.
-
-#. ACK bilgileri hatalarda yorum olarak bildirilecektir. Yorumlarda "Şu sorunlar
-   düzeltildikten sonra OK" gibi ifadeler kullanmaktan kaçınılacaktır çünkü bu
-   ifadeler ilgili düzeltmelerin düzgünce yapılıp yapılmadığının denetimini
-   zorlaştırmaktadır. Geliştirici, sorunlar gerçekten düzeltildikten sonra "ACK"
-   ifadesini yorumuna katacaktır.
-
-#. Yeterli ACK sayısı elde edildiğinde, paket sahibi paketini ilgili depo veya
-   depolara taşıyacak ve hatayı FIXED olarak kapatacakdır.
+#. Yeterli sayıda oy alan paket, sahibi tarafından depoya alınır ve hata
+   raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak değiştirilir.
