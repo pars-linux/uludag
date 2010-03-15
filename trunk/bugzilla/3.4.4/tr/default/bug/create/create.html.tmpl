@@ -317,7 +317,7 @@ TUI_hide_default('expert_fields');
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Initial State:</th>
+    <th>Durum:</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
     [% sel = { description => 'Initial State', name => 'bug_status' } %]
