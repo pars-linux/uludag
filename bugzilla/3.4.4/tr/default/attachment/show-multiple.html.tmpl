@@ -22,10 +22,10 @@
 [% PROCESS global/variables.none.tmpl %]
 [% filtered_summary = bugsummary FILTER html %]
 [% header = BLOCK %]
-  Tüm [%+ "$terms.Bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %] Eklerine Bak[% END %]
+  Tüm [%+ "$terms.Bug $bug.bug_id" FILTER bug_link(bug.bug_id) FILTER none %] Eklentilerine Bak[% END %]
 
 [% title = BLOCK %]
-  Tüm [% terms.Bug %] [%+ bug.bug_id FILTER html %] Eklerine Bak
+  Tüm [% terms.Bug %] [%+ bug.bug_id FILTER html %] Eklentilerine Bak
 [% END %]
 
 [% PROCESS global/header.html.tmpl
