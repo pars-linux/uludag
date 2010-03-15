@@ -319,7 +319,7 @@ TUI_hide_default('expert_fields');
     <th>Durum</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Initial State', name => 'bug_status' } %]
+    [% sel = { description => 'Durum', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
@@ -352,7 +352,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></th>
+    <td align="right" valign="top">
+    <b><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></b>
+    </td>
     <td colspan="2">
     [% IF product.name == "Review" %]
      [% INCLUDE global/userselect.html.tmpl
@@ -379,7 +381,9 @@ TUI_hide_default('expert_fields');
   
 [% IF Param("useqacontact") %]
     <tr>
-      <th>Kalite Kontrol Sorumlusu</th>
+      <td align="right" valign="top">
+      <b>Kalite Kontrol Sorumlusu</b>
+      </td>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -395,7 +399,9 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>CC</th>
+    <td align="right" valign="top">
+    <b>CC</b>
+    </td>
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "cc"
@@ -408,7 +414,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th>Öntanımlı CC</th>
+    <td align="right" valign="top">
+    <b>Öntanımlı CC</b>
+    </td>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -428,7 +436,9 @@ TUI_hide_default('expert_fields');
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <th>Sembolik Ad (Lakap)</th>
+    <td align="right" valign="top">
+    <b>Sembolik Ad (Lakap)</b>
+    </td>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -436,7 +446,9 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>URL</th>
+    <td align="right" valign="top">
+    <b>URL</b>
+    </td>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
