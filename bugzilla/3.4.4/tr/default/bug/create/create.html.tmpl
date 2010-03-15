@@ -53,7 +53,6 @@ function PutDescription() {
         }
     }
 }
-</script>
 
 <!--
 var initialowners = new Array([% product.components.size %]);
@@ -317,7 +316,7 @@ TUI_hide_default('expert_fields');
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Durum:</th>
+    <th>Durum</th>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
     [% sel = { description => 'Initial State', name => 'bug_status' } %]
@@ -353,7 +352,7 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a>:</th>
+    <th><a href="page.cgi?id=fields.html#assigned_to">Atanan</a></th>
     <td colspan="2">
     [% IF product.name == "Review" %]
      [% INCLUDE global/userselect.html.tmpl
@@ -396,7 +395,7 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>CC:</th>
+    <th>CC</th>
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "cc"
@@ -409,7 +408,7 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th>Öntanımlı CC:</th>
+    <th>Öntanımlı CC</th>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -429,7 +428,7 @@ TUI_hide_default('expert_fields');
 
 [% IF Param("usebugaliases") %]
   <tr>
-    <th>Sembolik Ad (Lakap):</th>
+    <th>Sembolik Ad (Lakap)</th>
     <td colspan="2">
       <input name="alias" size="20">
     </td>
@@ -437,7 +436,7 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>URL:</th>
+    <th>URL</th>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
