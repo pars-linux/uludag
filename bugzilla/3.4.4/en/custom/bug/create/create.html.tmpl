@@ -26,7 +26,7 @@
 
 [% PROCESS "global/field-descs.none.tmpl" %]
 
-[% title = BLOCK %]Enter [% terms.Bug %]: [% product.name FILTER html %][% END %]
+[% title = BLOCK %][% terms.Bug %] Gir: [% product.name FILTER html %][% END %]
 
 [% PROCESS global/header.html.tmpl
   title = title
@@ -37,8 +37,6 @@
 %]
 
 [% tablecolour = "#FFFFCC" %]
-
-
 <script type="text/javascript">
 <!--
 
@@ -162,7 +160,7 @@ function handleWantsAttachment(wants_attachment) {
 }
 
 
-TUI_alternates['expert_fields'] = 'Show Advanced Fields';
+TUI_alternates['expert_fields'] = 'Gelişmiş Alanları Göster';
 // Hide the Advanced Fields by default, unless the user has a cookie
 // that specifies otherwise.
 TUI_hide_default('expert_fields');
@@ -183,7 +181,7 @@ TUI_hide_default('expert_fields');
 <input type="hidden" name="product" value="[% product.name FILTER html %]">
 <input type="hidden" name="token" value="[% token FILTER html %]">
 
-<table cellspacing="4" cellpadding="2" border="0">
+<table valign="top" cellpadding="5" cellspacing="5" border="0">
 <tbody>
   <tr>
     <td colspan="4">
@@ -197,8 +195,7 @@ TUI_hide_default('expert_fields');
   <tr>
     <td colspan="4">
         <a id="expert_fields_controller" class="controller bz_default_hidden"
-            href="javascript:TUI_toggle_class('expert_fields')">Hide
-        Advanced Fields</a>
+            href="javascript:TUI_toggle_class('expert_fields')">Gelişmiş Alanları Gizle</a>
       [%# Show the link if the browser supports JS %]
       <script type="text/javascript">
           YAHOO.util.Dom.removeClass('expert_fields_controller', 
@@ -207,21 +204,24 @@ TUI_hide_default('expert_fields');
     </td>
   </tr>
 
-  <tr>
-    <th>Product:</th>
-    <td width="10%">[% product.name FILTER html %]</td>
-
-    <th>Reporter:</th>
-    <td width="100%">[% user.login FILTER html %]</td>
+  <tr bgcolor="[% tablecolour %]">
+    <td align="right" valign="top">
+    <b>Product</b>
+    </td>
+    <td valign="top">[% product.name FILTER html %]</td>
   </tr>
 
   [%# We can't use the select block in these two cases for various reasons. %]
   <tr>
-    <th>
+    <td align="right" valign="top">
       <a href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">
-      Component</a>:
-    </th>
-    <td>
+        <b>Component</b>
+        </a>
+    </td>
+    <td valign="top">
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+    <td valign="top">
       <select name="component" onchange="set_assign_to();" size="7">
         [%# Build the lists of assignees and QA contacts if "usemenuforusers" is enabled. %]
         [% IF Param("usemenuforusers") %]
@@ -244,7 +244,7 @@ TUI_hide_default('expert_fields');
       </select>
     </td>
 
-    <td colspan="2">
+    <td valign="top" width="100%">
       [%# Enclose the fieldset in a nested table so that its width changes based
         # on the length on the component description. %]
       <table>
@@ -258,24 +258,13 @@ TUI_hide_default('expert_fields');
         </tr>
       </table>
     </td>
-  </tr>
-
-  <tr>
-    <th rowspan="3">Version:</th>
-    <td rowspan="3">
-      <select name="version" size="5">
-        [%- FOREACH v = version %]
-          <option value="[% v FILTER html %]"
-            [% ' selected="selected"' IF v == default.version %]>[% v FILTER html -%]
-          </option>
-        [%- END %]
-      </select>
+    </tr>
+    </table>
+    <p>
+    The area which the problem occured.
+    You can follow, <a target="_blank" href="describecomponents.cgi?product=[% product.name FILTER url_quote %]">component description</a> link for help.
+    </p>
     </td>
-<!--
-    [% INCLUDE bug/field.html.tmpl
-      bug = default, field = select_fields.bug_severity, editable = 1, 
-      value = default.bug_severity %]
-      -->
   </tr>
 
   <tr>
@@ -284,11 +273,20 @@ TUI_hide_default('expert_fields');
       value = default.rep_platform %]
   </tr>
 
-  <!--tr>
-    [% INCLUDE bug/field.html.tmpl 
-       bug = default, field = select_fields.op_sys, editable = 1, 
-       value = default.op_sys %]
-  </tr-->
+ <tr>
+    <td align="right" valign="top">
+    <b>Version</b>
+    </td>
+    <td>
+      <select name="version" size="5">
+        [%- FOREACH v = version %]
+          <option value="[% v FILTER html %]"
+            [% ' selected="selected"' IF v == default.version %]>[% v FILTER html -%]
+          </option>
+        [%- END %]
+      </select>
+    </td>
+  </tr>
 </tbody>
 
 <tbody class="expert_fields">
@@ -297,7 +295,7 @@ TUI_hide_default('expert_fields');
       [% sel = { description => 'Target Milestone', name => 'target_milestone' } %]
       [% INCLUDE select %]
     [% ELSE %]
-      <td colspan="2">&nbsp;</td>
+      <!--td colspan="2">&nbsp;</td-->
     [% END %]
 
     [% IF Param('letsubmitterchoosepriority') %]
@@ -305,29 +303,10 @@ TUI_hide_default('expert_fields');
         bug = default, field = select_fields.priority, editable = 1, 
         value = default.priority %]
     [% ELSE %]
-      <td colspan="2">&nbsp;</td>
+      <!--td colspan="2">&nbsp;</td-->
     [% END %]
   </tr>
 </tbody>
-
-[% IF !Param('defaultplatform') || !Param('defaultopsys') %]
-  <!--tbody>
-    <tr>
-      <th>&nbsp;</th>
-      <td colspan="3" class="comment">
-        We've made a guess at your
-        [% IF Param('defaultplatform') %]
-          operating system. Please check it
-        [% ELSIF Param('defaultopsys') %]
-          platform. Please check it
-        [% ELSE %]
-          operating system and platform. Please check them
-        [% END %]
-        and make any corrections if necessary.
-      </td>
-    </tr>
-  </tbody-->
-[% END %]
 
 <tbody class="expert_fields">
   <tr>
@@ -338,10 +317,12 @@ TUI_hide_default('expert_fields');
 [% IF bug_status.size <= 1 %]
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
-    <th>Initial State:</th>
+     <td align="right" valign="top">
+         <b>Status</b>
+    </td>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Initial State', name => 'bug_status' } %]
+    [% sel = { description => 'Durum', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
@@ -374,7 +355,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th><a href="page.cgi?id=fields.html#assigned_to">Assign To</a>:</th>
+  <td align="right" valign="top">
+      <b><a href="page.cgi?id=fields.html#assigned_to">Assigned to</a></b>
+  </td>
     <td colspan="2">
     [% IF product.name == "Review" %]
      [% INCLUDE global/userselect.html.tmpl
@@ -398,10 +381,12 @@ TUI_hide_default('expert_fields');
       <noscript>(Leave blank to assign to component's default assignee)</noscript>
     </td>
   </tr>
-  
+
 [% IF Param("useqacontact") %]
     <tr>
-      <th>QA Contact:</th>
+        <td align="right" valign="top">
+            <b>QA Contact</b>
+        </td>
       <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "qa_contact"
@@ -417,7 +402,10 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>CC:</th>
+    <td align="right" valign="top">
+        <b>CC</b>
+    </td>
+
     <td colspan="2">
       [% INCLUDE global/userselect.html.tmpl
          name => "cc"
@@ -430,7 +418,9 @@ TUI_hide_default('expert_fields');
   </tr>
 
   <tr>
-    <th>Default CC:</th>
+    <td align="right" valign="top">
+    <b>Default CC</b>
+    </td>
     <td colspan="2">
       <div id="initial_cc">
           <!-- This has to happen after everything above renders,
@@ -440,30 +430,10 @@ TUI_hide_default('expert_fields');
       </div>
    </td>
   </tr>
-  
-  <tr>
-    <td colspan="3">&nbsp;</td>
-  </tr>
-
-[% IF user.in_group(Param('timetrackinggroup')) %]
-  <!--tr>
-    <th>Estimated Hours:</th>
-    <td colspan="2">
-      <input name="estimated_time" size="6" maxlength="6" value="0.0">
-    </td>
-  </tr>
-  <tr>
-    <th>Deadline:</th>
-    <td colspan="2">
-      <input name="deadline" size="10" maxlength="10" value="[% deadline FILTER html %]">
-      <small>(YYYY-MM-DD)</small>
-    </td>
-  </tr>
 
   <tr>
     <td colspan="3">&nbsp;</td>
-  </tr-->
-[% END %]
+  </tr>
 
 [% IF Param("usebugaliases") %]
   <tr>
@@ -500,35 +470,27 @@ TUI_hide_default('expert_fields');
 <tbody>
 
   <tr bgcolor="[% tablecolour %]">
-    <td align="right" valign="top">
-      <b>Summary</b>
+      <td align="right" valign="top">
+        <b>Summary</b>
     </td>
     <td valign="top">
       <input type="text" size="70" name="short_desc" id="short_desc"·value="[% short_desc FILTER html %]"  maxlength="255" spellcheck="true">
       <p>
-        A sentence which summarises the problem.
-        Please be descriptive and use lots of keywords.
+        <i> A sentence which summarises the problem.
+            Please be descriptive and use lots of keywords.</i>
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: KDE crashed
+          <font color="#990000">Bad Example</font>: KDE crashed.
         </tt>
         <br>
         <tt>
-          <font color="#009900">Good example</font>:
+          <font color="#009900">Good Example</font>:
           KDE crashed when a directory tried to open with Dolphin.
         </tt>
       </p>
     </td>
   </tr>
-
-  <!--tr>
-    <th>Summary:</th>
-    <td colspan="3">
-      <input name="short_desc" size="70" value="[% short_desc FILTER html %]"
-             maxlength="255" spellcheck="true">
-    </td>
-  </tr-->
 
   <tr>
     <td align="right" valign="top">
@@ -541,16 +503,15 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        Expand on the Summary. Please be
-        as specific as possible about what is wrong.
+        <i>Expand on the Summary. Please be as specific as possible about what is wrong.</i>
       </p>
       <p>
         <tt>
-          <font color="#990000">Bad example</font>: KDE crashed. You suck!
+          <font color="#990000">Bad Example</font>: KDE crashed. You suck!
         </tt>
         <br>
         <tt>
-          <font color="#009900">Good example</font>: When a directory which contains a lot of files is opened with Dolphin, Dolphin hangs and after a while KDE crashes.
+          <font color="#009900">Bad Example</font>: When a directory which contains a lot of files is opened with Dolphin, Dolphin hangs and after a while KDE crashes.
         </tt>
       </p>
     </td>
@@ -571,7 +532,7 @@ TUI_hide_default('expert_fields');
           Happens sometimes, but not always.
         </option>
         <option name="DidntTry" value="Didn't try">
-          Haven't tried to reproduce it.
+           Haven't tried to reproduce it.
         </option>
         <option name="NotReproducible" value="Couldn't Reproduce">
           Tried, but couldn't reproduce it.
@@ -591,8 +552,8 @@ TUI_hide_default('expert_fields');
         defaultcontent = "1.\n2.\n3."
       %]
       <p>
-        Describe how to reproduce the problem, step by
-        step. Include any special setup steps.
+        <i>Describe how to reproduce the problem, step by
+        step. Include any special setup steps.</i>
       </p>
     </td>
   </tr>
@@ -608,7 +569,7 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        What happened after you performed the steps above?
+       <i>What happened after you performed the steps above?</i>
       </p>
     </td>
   </tr>
@@ -625,8 +586,8 @@ TUI_hide_default('expert_fields');
         cols    = constants.COMMENT_COLS
       %]
       <p>
-        What should the software have done instead?
-      </p>
+        <i>What should the software have done instead?</i>
+     </p>
     </td>
   </tr>
 
@@ -642,14 +603,9 @@ TUI_hide_default('expert_fields');
       %]
       <p>
      <tt>
-          Add any additional information you feel may be
-        relevant to this [% terms.Bug %], such as your system information, stack trace, or a testcase.
-        Any information longer than a few lines, should be added
-        using the <b>Add an Attachment</b> link on the [% terms.Bug %], after
-        it is filed. 
-      </p>
-
+    Add any additional information you feel may be relevant to this [% terms.Bug %], such as your sys     tem information, stack trace, or a testcase. Any information longer than a few lines, should be      added using the <b>Add an Attachment</b> link on the [% terms.Bug %], after
     </tt>
+      </p>
    </td>
   </tr>
 
@@ -660,49 +616,24 @@ TUI_hide_default('expert_fields');
     <td valign="top">
       <select name="bug_severity" size="4">
         <option name="blocking" value="blocking">
-          Urgent: The bug makes whole system unusable.
+         Urgent: The bug makes whole system unusable.
         </option>
         <option name="high" value="high">
           High: The bug makes the program unusable.
         </option>
         <option name="normal" value="normal" selected="selected">
-          Normal: The bug which makes a part of the program unusable.
+        Normal: The bug which makes a part of the program unusable.
         </option>
         <option name="low" value="low">
-          Low: A cosmetic problem, such as a misspelled word or misaligned text or a new feature.
+        Low: A cosmetic problem, such as a misspelled word or misaligned text or a new feature.
         </option>
       </select>
       <p>
-        Say how serious the problem is, or if your [% terms.Bug %] is a·
-        request for a new feature.
+        <i>   Say how serious the problem is, or if your [% terms.Bug %] is a·
+        request for a new feature.</i>
       </p>
     </td>
   </tr>
-
-  <!--tr>
-    <th>Description:</th>
-    <td colspan="3">
-      [% defaultcontent = BLOCK %]
-        [% IF cloned_bug_id %]
-+++ This [% terms.bug %] was initially created as a clone of [% terms.Bug %] #[% cloned_bug_id %] +++
-
-
-        [% END %]
-        [%-# We are within a BLOCK. The comment will be correctly HTML-escaped
-          # by global/textarea.html.tmpl. So we must not escape the comment here. %]
-        [% comment FILTER none %]
-      [%- END %]
-      [% INCLUDE global/textarea.html.tmpl
-         name           = 'comment'
-         id             = 'comment'
-         minrows        = 10
-         maxrows        = 25
-         cols           = constants.COMMENT_COLS
-         defaultcontent = defaultcontent
-       %]
-      <br>
-    </td>
-  </tr-->
 
   [% IF Param("insidergroup") && user.in_group(Param("insidergroup")) %]
     <tr class="expert_fields">
@@ -712,19 +643,19 @@ TUI_hide_default('expert_fields');
         <input type="checkbox" id="commentprivacy" name="commentprivacy"
           [% " checked=\"checked\"" IF commentprivacy %]>
         <label for="commentprivacy">
-          Initial Description is Private
+          Başlangıç Açıklaması Gizlidir
         </label>
       </td>
     </tr>
   [% END %]
 
   <tr>
-    <th>Attachment:</th>
+    <th>Attachment</th>
     <td colspan="3">
       <script type="text/javascript">
         <!--
         document.write( '<div id="attachment_false">'
-                      +   '<input type="button" value="Add an attachment" '
+                      +   '<input type="button" value="Dosya Ekle" '
                       +          'onClick="handleWantsAttachment(true)"> '
                       +   '<em style="display: none">This button has no '
                       +   'functionality for you because your browser does '
@@ -758,22 +689,22 @@ TUI_hide_default('expert_fields');
   [% IF user.in_group('editbugs', product.id) %]
     [% IF use_keywords %]
       <tr>
-        <th><a href="describekeywords.cgi">Keywords</a>:</th>
+        <th><a href="describekeywords.cgi">Keywords</a></th>
         <td colspan="3">
           <input id="keywords" name="keywords" size="40"
-                 value="[% keywords FILTER html %]"> (optional)
+                 value="[% keywords FILTER html %]"> (isteğe bağlı)
         </td>
       </tr>
     [% END %]
 
     <tr>
-      <th>Depends on:</th>
+      <th>Depends on</th>
       <td colspan="3">
         <input name="dependson" accesskey="d" value="[% dependson FILTER html %]">
       </td>
     </tr>
     <tr>
-      <th>Blocks:</th>
+      <th>Blocks</th>
       <td colspan="3">
         <input name="blocked" accesskey="b" value="[% blocked FILTER html %]">
       </td>
@@ -788,11 +719,11 @@ TUI_hide_default('expert_fields');
     <td colspan="3">
       <br>
         <strong>
-          Only users in all of the selected groups can view this [% terms.bug %]:
+         Only users in all of the selected groups can view this [% terms.bug %]:
         </strong>
       <br>
       <font size="-1">
-        (Leave all boxes unchecked to make this a public [% terms.bug %].)
+      (Leave all boxes unchecked to make this a public [% terms.bug %].)
       </font>
       <br>
       <br>
@@ -803,7 +734,7 @@ TUI_hide_default('expert_fields');
         <input type="checkbox" id="bit-[% g.bit %]"
           name="bit-[% g.bit %]" value="1"
           [% " checked=\"checked\"" IF g.checked %]>
-          <label for="bit-[% g.bit %]">[% g.description FILTER html_light %]</label><br>
+          <label for="bit-[% g.bit %]">Güvenlik Hataları Üzerinde değişiklik yapabilir.</label><br>
       [% END %]
     </td>
   </tr>
@@ -817,13 +748,13 @@ TUI_hide_default('expert_fields');
   <tr>
     <th>&nbsp;</th>
     <td colspan="3">
-      <input type="submit" id="commit" value="Commit"
+      <input type="submit" id="commit" value="Hata raporunu gönder"
              onclick="if (this.form.short_desc.value == '')
-             { alert('Please enter a summary sentence for this [% terms.bug %].');
+             { alert('Bu hata için lütfen bir özet cümlesi giriniz!');
                return false; } return true;">
       &nbsp;&nbsp;&nbsp;&nbsp;
       <input type="submit" name="maketemplate" id="maketemplate"
-             value="Remember values as bookmarkable template"
+             value="Değerleri yer imi olarak hatırlat"
              class="expert_fields">
     </td>
   </tr>
