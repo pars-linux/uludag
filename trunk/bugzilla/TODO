@@ -1,20 +1,20 @@
 Bugzilla TODO
-- Severity'lerin ingilizceye dönüştürülmesinden sonra database'de türkçe olarak kalan severity değerlerine atanan hataların yeni ingilizce değerlerine update edilmesi.
++ Severity'lerin ingilizceye dönüştürülmesinden sonra database'de türkçe olarak kalan severity değerlerine atanan hataların yeni ingilizce değerlerine update edilmesi.
 
-- Severity değerleri admin üzerinde azaltılacak ve silinmiş olanlar database'de aupdate edilecek.
++ Severity değerleri admin üzerinde azaltılacak ve silinmiş olanlar database'de aupdate edilecek.
 
 Urgent -> engelleyici + kritik
 High -> büyük
 Medium -> normal
 Low -> küçük + önemsiz + iyileştirme
 
-- Status değerlerinin ingilizce ve türkçelerinin yazılması.
++ Status değerlerinin ingilizce ve türkçelerinin yazılması.
 - Priority değerlerinin azaltılması
 - Bileşenlerin version numaralarının pisi bilgisinden seçilmesi.
-- uludag/trunk/common altında bulunan kişilerin gözden geçirilmesi ve editbugs grubunun bu kişilerden oluşturulması.
-- Review ürününün yaratılması ve bu ürüne erişebilen editbugs'ı kapsayan review grubunun oluşturulması ve izinlerinin verilmesi. (Administration-> Parameters->Group Security -> Useentryfroupdefault-> on ve Products -> review -> Edit group access control -> review ENTRY, SHOWN,MANDATORY, canedit, editcomponents, canconfirm, editbugs, bugs)
++ uludag/trunk/common altında bulunan kişilerin gözden geçirilmesi ve editbugs grubunun bu kişilerden oluşturulması.
++ Review ürününün yaratılması ve bu ürüne erişebilen editbugs'ı kapsayan review grubunun oluşturulması ve izinlerinin verilmesi. (Administration-> Parameters->Group Security -> Useentryfroupdefault-> on ve Products -> review -> Edit group access control -> review ENTRY, SHOWN,MANDATORY, canedit, editcomponents, canconfirm, editbugs, bugs)
 - Genel Hatalar ürünün disallow edilmesi ve bunun ile ilgili patch'in yapılması
-- Yeni hata giriş sayfasının layout'unda bazı değişiklikler gerekiyor bkz. bugzilla.mozilla.org
++ Yeni hata giriş sayfasının layout'unda bazı değişiklikler gerekiyor bkz. bugzilla.mozilla.org
 - Çevirmenlere ait bir grup ve ilgili çeviri ürününe bu grubun atanarak çeviri hatalarından haberdar olmaları,
 
 + Default preferences->Enable tags for bugs Off yap,
