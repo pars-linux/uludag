@@ -160,7 +160,7 @@ function handleWantsAttachment(wants_attachment) {
 }
 
 
-TUI_alternates['expert_fields'] = 'Gelişmiş Alanları Göster';
+TUI_alternates['expert_fields'] = 'Show Advence Fields';
 // Hide the Advanced Fields by default, unless the user has a cookie
 // that specifies otherwise.
 TUI_hide_default('expert_fields');
@@ -195,7 +195,7 @@ TUI_hide_default('expert_fields');
   <tr>
     <td colspan="4">
         <a id="expert_fields_controller" class="controller bz_default_hidden"
-            href="javascript:TUI_toggle_class('expert_fields')">Gelişmiş Alanları Gizle</a>
+            href="javascript:TUI_toggle_class('expert_fields')">Hide Advence Fields</a>
       [%# Show the link if the browser supports JS %]
       <script type="text/javascript">
           YAHOO.util.Dom.removeClass('expert_fields_controller', 
@@ -318,11 +318,11 @@ TUI_hide_default('expert_fields');
   <input type="hidden" name="bug_status" 
          value="[% default.bug_status FILTER html %]">
      <td align="right" valign="top">
-         <b>Status</b>
+         <b>State</b>
     </td>
     <td>[% get_status(default.bug_status) FILTER html %]</td>
 [% ELSE %]
-    [% sel = { description => 'Durum', name => 'bug_status' } %]
+    [% sel = { description => 'State', name => 'bug_status' } %]
     [% INCLUDE select %]
 [% END %]
 
@@ -445,7 +445,7 @@ TUI_hide_default('expert_fields');
 [% END %]
 
   <tr>
-    <th>URL:</th>
+    <th>URL</th>
     <td colspan="2">
       <input name="bug_file_loc" size="40"
              value="[% bug_file_loc FILTER html %]">
