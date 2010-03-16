@@ -32,7 +32,7 @@ X-Bugzilla-Type: whine
 veya daha fazla [% terms.bug %] var.
 
 Bu [% terms.bugsGen %] tamamı [% get_status("NEW") %] veya
-[% get_status("REOPENED") %] ve en az [% Param("whinedays") %] gündür dokunulmamış 
+[%= get_status("REOPENED") %] ve en az [% Param("whinedays") %] gündür dokunulmamış 
 durumda. Onlara bakıp birşeyler yapmalısınız.
 
 Bu, genelde, şu üçünden birini yapacağınız anlamına gelir:
@@ -41,10 +41,11 @@ Bu, genelde, şu üçünden birini yapacağınız anlamına gelir:
     kolayca kurtulursunuz.
 (2) [% terms.BugGen %] size ait olmadığına karar verir ve başkasına atarsınız.
     (İpucu: kime atayacağınızı bilmiyorsanız, bileşen alanının doğru olmasını 
-    sağlayın ve "[% terms.BugAcc %] seçili bileşenin öntanımlı sorumlusuna ata" 
+    sağlayın ve "[% terms.BugAcc %] seçili bileşenin öntanımlı sorumlusuna ata"
     seçeneğini kullanın.)
 (3) [% terms.BugGen %] size ait olduğuna karar verdiyseniz ama hemen 
-    çözemiyorsanız,"[% terms.BugAcc %] kabul et" komutunu kullanın.
+    çözemiyorsanız,"[% terms.BugAcc %] kabul et" komutunu kullanın ve durumunu [% get_status("ASSIGNED") %] olarak işaretleyin.
+
 
 Size atanmış tüm [% get_status("NEW") %] veya [% get_status("REOPENED") %] 
 durumdaki [%+ terms.bugsAcc %] görmek için, şu adresi kullanabilirsiniz (hattâ, 
