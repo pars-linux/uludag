@@ -136,7 +136,7 @@ class Rasta(QMainWindow):
         self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"),31)
 
     def showFontDialog(self):
-        font = QFontDialog.getFont(self.ui.textEdit.font())[0]
+        font = QFontDialog.getFont(self.ui.textEdit.lexer().dfont)[0]
         self.buildSci(font)
 
     def showAbout(self):
