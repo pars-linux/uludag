@@ -69,6 +69,9 @@
       herhangi bir aramayı zaman çizelgesi üzerinde gösterir. Çok daha güçlüdür.
     </li>
   [% END %]
+  [% Hook.process('current_state') %]
 </ul>
+
+[% Hook.process('end') %]
 
 [% PROCESS global/footer.html.tmpl %]
