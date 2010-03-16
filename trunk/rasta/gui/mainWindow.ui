@@ -85,6 +85,7 @@
     <addaction name="actionShow_Logs"/>
     <addaction name="actionShow_Output"/>
     <addaction name="actionShow_Source"/>
+    <addaction name="actionSelect_Editor_Font"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -432,6 +433,15 @@
    </property>
    <property name="shortcut">
     <string>F4</string>
+   </property>
+  </action>
+  <action name="actionSelect_Editor_Font">
+   <property name="icon">
+    <iconset resource="../rastaLib/icons.qrc">
+     <normaloff>:/icons/draw-text.png</normaloff>:/icons/draw-text.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select Editor Font</string>
    </property>
   </action>
  </widget>

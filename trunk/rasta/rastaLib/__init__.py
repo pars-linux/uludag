@@ -64,24 +64,6 @@ class Rasta(QMainWindow):
         self.ui = Ui_Rasta()
         self.ui.setupUi(self)
 
-        # Rst Lexer for QScintilla
-        lexer = RstLexer(self.ui.textEdit)
-
-        # QSci Settings
-        font = self.ui.textEdit.font()
-        fontMetric = QFontMetrics(font)
-        self.ui.textEdit.setLexer(lexer)
-        self.ui.textEdit.setUtf8(True)
-        self.ui.textEdit.setMarginLineNumbers(0, True)
-        self.ui.textEdit.setMarginWidth(0, fontMetric.width( "00000" ) + 5)
-        self.ui.textEdit.setCaretLineVisible(True)
-        self.ui.textEdit.setWrapMode(1)
-        self.ui.textEdit.setFolding(True)
-        self.ui.textEdit.setEdgeMode(QsciScintilla.EdgeLine)
-        self.ui.textEdit.setEdgeColumn(80)
-        self.ui.textEdit.setEdgeColor(QColor("#999"))
-        self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"),31)
-
         # Toolbar
         self.ui.toolBar.addAction(self.ui.actionNew)
         self.ui.toolBar.addAction(self.ui.actionOpen)
@@ -116,6 +98,7 @@ class Rasta(QMainWindow):
         self.ui.actionLink.triggered.connect(self.editTrigger)
         self.ui.actionAdd_Table.triggered.connect(self.addTable)
         self.ui.actionRst_Howto.triggered.connect(self.showHelp)
+        self.ui.actionSelect_Editor_Font.triggered.connect(self.showFontDialog)
         self.ui.actionAbout.triggered.connect(self.showAbout)
 
         self.ui.textEdit.textChanged.connect(self.updateRst)
@@ -134,6 +117,27 @@ class Rasta(QMainWindow):
                 self.updateRst(force = True)
         else:
             self.showHelp()
+
+    def buildSci(self, font = None):
+        # QSci Settings
+        lexer = RstLexer(self.ui.textEdit, font)
+        cfont = lexer.dfont
+        fontMetric = QFontMetrics(cfont)
+        self.ui.textEdit.setLexer(lexer)
+        self.ui.textEdit.setUtf8(True)
+        self.ui.textEdit.setMarginLineNumbers(0, True)
+        self.ui.textEdit.setMarginWidth(0, fontMetric.width( "00000" ) + 5)
+        self.ui.textEdit.setCaretLineVisible(True)
+        self.ui.textEdit.setWrapMode(1)
+        self.ui.textEdit.setFolding(True)
+        self.ui.textEdit.setEdgeMode(QsciScintilla.EdgeLine)
+        self.ui.textEdit.setEdgeColumn(80)
+        self.ui.textEdit.setEdgeColor(QColor("#999"))
+        self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"),31)
+
+    def showFontDialog(self):
+        font = QFontDialog.getFont(self.ui.textEdit.font())[0]
+        self.buildSci(font)
 
     def showAbout(self):
         QMessageBox.about(self, "Rasta the Rst Editor", unicode(
@@ -169,7 +173,7 @@ class Rasta(QMainWindow):
         elif self.sender() == self.ui.actionCode:
             marker = "``"
         elif self.sender() == self.ui.actionHeader:
-            self.ui.textEdit.insertAt("\n%s\n" % ("-"*(yz-yy)),xy,yz+1)
+            self.ui.textEdit.insertAt("\n%s" % ("-"*(yz-yy)),xy,yz+1)
         elif self.sender() == self.ui.actionLink:
             link, res = QInputDialog.getText(self, "Insert Link", "Address :")
             if res:
@@ -315,6 +319,7 @@ class Rasta(QMainWindow):
         # For TextEdit
         self.settings.beginGroup("TextEdit")
         self.settings.setValue("size", self.ui.textEdit.size())
+        self.settings.setValue("font", self.ui.textEdit.lexer().dfont.toString())
         self.settings.endGroup()
 
     def readSettings(self):
@@ -335,6 +340,7 @@ class Rasta(QMainWindow):
         self.settings.beginGroup("TextEdit")
         self.ui.textEdit.resize(
                 self.settings.value("size", QSize(300, 560)).toSize())
+        self.buildSci(self.settings.value('font', 'Droid Sans Mono'))
         self.settings.endGroup()
 
     def closeEvent(self, event):

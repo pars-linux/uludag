@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from PyQt4.QtCore import QVariant
 from PyQt4.QtGui import QApplication, QMainWindow, QColor, QFont
 from PyQt4.Qsci import QsciScintilla, QsciLexerCustom
 
 class RstLexer(QsciLexerCustom):
-    def __init__(self, parent):
+    def __init__(self, parent, font=None):
         QsciLexerCustom.__init__(self, parent)
         self._styles = {
             0: 'Default',
@@ -14,6 +15,12 @@ class RstLexer(QsciLexerCustom):
             }
         for key,value in self._styles.iteritems():
             setattr(self, value, key)
+        if font:
+            if font is QVariant:
+                font = font.toString()
+            self.dfont = QFont(font)
+        else:
+            self.dfont = QFont('Droid Sans Mono', 10)
 
     def language(self):
         return 'Rst Files'
@@ -39,7 +46,7 @@ class RstLexer(QsciLexerCustom):
         return QsciLexerCustom.defaultEolFill(self, style)
 
     def defaultFont(self, style):
-        return QFont('Droid Sans Mono', 10)
+        return self.dfont
 
     def styleText(self, start, end):
         editor = self.editor()
