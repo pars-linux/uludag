@@ -148,7 +148,8 @@
     * pypolkit obsolete mi edilecek, yenisine mi port edilecek? (-)
 
 * Evolution harekatı (İbrahim Güngör)
-    * Paketlerin hazırlanması (/50)
+    * Temel paketlerin hazırlanması (/70)
+    * MS Exchange desteği için Samba4'ün depoya alınması (/20)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (+)
