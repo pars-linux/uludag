@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,21 +11,25 @@
 # Please read the COPYING file.
 #
 
-import pt
+import context as ctx
 
-# Application Data
-appName     = "package-manager"
-catalog     = appName
-version     = "2.0.4"
-programName = pt.ki18n("Package Manager")
-description = pt.ki18n("Package Manager")
-license     = pt.AboutData.License_GPL
-copyright   = pt.ki18n("(c) 2009-2010 TUBITAK/UEKAE")
-text        = pt.ki18n(None)
-homePage    = "http://www.pardus.org.tr/eng/projects"
-bugEmail    = "bugs@pardus.org.tr"
-aboutData   = pt.AboutData(appName, catalog, programName, version, description, license, copyright, text, homePage, bugEmail)
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdecore import ki18n, KAboutData
 
-# Authors
-aboutData.addAuthor (pt.ki18n("Faik Uygur"), pt.ki18n("Maintainer"))
-aboutData.setProgramIconName(":/data/package-manager.png")
+    # Application Data
+    appName     = "package-manager"
+    catalog     = appName
+    version     = "2.0.4"
+    programName = ki18n("Package Manager")
+    description = ki18n("Package Manager")
+    license     = KAboutData.License_GPL
+    copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
+    text        = ki18n(None)
+    homePage    = "http://www.pardus.org.tr/eng/projects"
+    bugEmail    = "bugs@pardus.org.tr"
+    aboutData   = KAboutData(appName, catalog, programName, version, \
+                    description, license, copyright, text, homePage, bugEmail)
+
+    # Authors
+    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer"))
+    aboutData.setProgramIconName(":/data/package-manager.png")
