@@ -28,16 +28,14 @@ from statusupdater import StatusUpdater
 
 from pmutils import *
 
-from pt import i18n
-from pt import isKde4
-from qticonloader import QIconLoader
-IconLoader = QIconLoader(debug = True)
+from context import *
+iconLoader = pds.QIconLoader()
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        self.searchButton.setIcon(QtGui.QIcon(IconLoader.load("edit-find")))
+        self.searchButton.setIcon(QtGui.QIcon(iconLoader.load("edit-find")))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
@@ -120,7 +118,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initializeGroupList(self):
         self.groupList.clear()
         self.groupList.setAlternatingRowColors(True)
-        self.groupList.setIconSize(QSize(IconLoader.SizeLarge, IconLoader.SizeLarge))
+        self.groupList.setIconSize(QSize(iconLoader.SizeLarge, iconLoader.SizeLarge))
         self.groupList.setState(self.state)
         self.groupList.addGroups(self.state.groups())
         self.groupFilter()
@@ -196,7 +194,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Since we can not identify the caller yet
         if not self.operation.totalPackages:
             return
-        if pt.isKde4():
+        if Pds.session == pds.Kde4:
             from PyKDE4.kdeui import KNotification
             from PyKDE4.kdecore import KComponentData
             KNotification.event("Summary",

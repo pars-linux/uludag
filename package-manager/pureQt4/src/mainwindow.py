@@ -36,7 +36,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
-        self.setWindowIcon(KIcon(":/data/package-manager.png"))
+        self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
@@ -95,6 +95,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
+
+        # Action Show Installable Packages
         self.showInstallAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-add")),
                           ctx.Pds.i18n("Show Installable Packages"), self)
         self.showInstallAction.setCheckable(True)
@@ -104,6 +106,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         actionGroup.addAction(self.showInstallAction)
         self.toolBar.addAction(self.showInstallAction)
 
+        # Action Show Installed Packages
         self.showRemoveAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-remove")),
                           ctx.Pds.i18n("Show Installed Packages"), self)
         self.showRemoveAction.setCheckable(True)
@@ -112,6 +115,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         actionGroup.addAction(self.showRemoveAction)
         self.toolBar.addAction(self.showRemoveAction)
 
+        # Action Show Upgradable Packages
         self.showUpgradeAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("view-refresh")),
                           ctx.Pds.i18n("Show Upgradable Packages"), self)
         self.showUpgradeAction.setCheckable(True)

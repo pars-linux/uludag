@@ -15,3 +15,5 @@ import pds
 
 Pds = pds.Pds('package-manager')
 #Pds.session = pds.DefaultDe
+
+i18n = Pds.session.i18n

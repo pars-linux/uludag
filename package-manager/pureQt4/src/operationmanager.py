@@ -13,7 +13,9 @@
 import time
 
 from PyQt4.QtCore import QObject, SIGNAL
-from PyKDE4.kdecore import i18n
+
+import context as ctx
+i18n = ctx.Pds.i18n
 
 from pmutils import *
 from pmlogging import logger
