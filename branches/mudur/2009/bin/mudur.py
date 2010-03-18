@@ -292,7 +292,6 @@ class Config:
             if entry and len(entry) > 3 and entry[1] == mountpoint:
                 return entry
 
-
 ################
 # Splash class #
 ################
@@ -779,10 +778,6 @@ def setupUdev():
     # Many video drivers require exec access in /dev
     mount("/dev", "-t tmpfs -o exec,nosuid,mode=0755,size=10M udev /dev")
 
-    # Mount /dev/pts
-    createDirectory("/dev/pts")
-    mount("/dev/pts", "-t devpts -o gid=5,mode=0620 devpts /dev/pts")
-
     # At this point, an empty /dev is mounted on ramdisk
     # We need /dev/null for calling run_quiet
     S_IFCHR = 8192
@@ -800,6 +795,7 @@ def setupUdev():
 
     # When these files are missing, lots of trouble happens
     # so we double check their existence
+    createDirectory("/dev/pts")
     createDirectory("/dev/shm")
 
     devlinks = (
@@ -837,6 +833,9 @@ def startUdev():
 
     # Trigger events for all devices
     run("/sbin/udevadm", "trigger")
+
+    # Wait for events to finish
+    run("/sbin/udevadm", "settle", "--timeout=60")
 
     # Stop udevmonitor
     os.kill(pid, 15)
@@ -1211,15 +1210,17 @@ def setClock():
 
 def saveClock():
     """Saves the system time for further boots."""
-    if not config.get("live"):
-        opts = "--utc"
-        if config.get("clock") != "UTC":
-            opts = "--localtime"
+    if config.get("live"):
+        return
 
-        ui.info(_("Syncing system clock to hardware clock"))
-        t = capture("/sbin/hwclock", "--systohc", opts)
-        if t[1] != '':
-            ui.error(_("Failed to synchronize clocks"))
+    opts = "--utc"
+    if config.get("clock") != "UTC":
+        opts = "--localtime"
+
+    ui.info(_("Syncing system clock to hardware clock"))
+    t = capture("/sbin/hwclock", "--systohc", opts)
+    if t[1] != '':
+        ui.error(_("Failed to synchronize clocks"))
 
 def stopSystem():
     """Stops the system."""
@@ -1236,7 +1237,7 @@ def stopSystem():
         ents = map(lambda x: x.split(), ents)
         ents = filter(lambda x: len(x) > 2, ents)
         # not the virtual systems
-        vfs = ["proc", "devpts", "sysfs", "devfs", "tmpfs", "usbfs", "usbdevfs"]
+        vfs = [ "proc", "devpts", "sysfs", "devfs", "tmpfs", "usbfs", "usbdevfs" ]
         ents = filter(lambda x: not x[2] in vfs, ents)
         ents = filter(lambda x: x[0] != "none", ents)
         # not the root stuff
@@ -1306,8 +1307,8 @@ def except_hook(eType, eValue, eTrace):
 # Global objects #
 ##################
 
-config = Config()
 logger = Logger()
+config = Config()
 splash = Splash()
 ui = UI()
 
@@ -1329,13 +1330,8 @@ if __name__ == "__main__":
     ### SYSINIT ###
     if sys.argv[1] == "sysinit":
 
-        # Mount /proc if not mounted
-        if not os.path.exists("/proc/cmdline"):
-            mount("/proc", "-t proc proc /proc")
-
-        # Mount sysfs if not mounted
-        if not os.path.exists("/sys/kernel"):
-            mount("/sys", "-t sysfs sysfs /sys")
+        # Mount /proc
+        mount("/proc", "-t proc proc /proc")
 
         # We need /proc mounted before accessing kernel boot options
         config.parse_kernel_opts()
@@ -1359,6 +1355,10 @@ if __name__ == "__main__":
     if sys.argv[1] == "sysinit":
         splash.init(0)
 
+        # Mount sysfs
+        ui.info(_("Mounting /sys"))
+        mount("/sys", "-t sysfs sysfs /sys")
+
         # Set kernel console log level for cleaner boot
         # only panic messages will be printed
         run("/bin/dmesg", "-n", "1")
@@ -1368,6 +1368,10 @@ if __name__ == "__main__":
 
         # Start udev and event triggering
         startUdev()
+
+        # Mount /dev/pts
+        ui.info(_("Mounting /dev/pts"))
+        mount("/dev/pts", "-t devpts -o gid=5,mode=0620 devpts /dev/pts")
 
         # Check root file system
         checkRootFileSystem()
@@ -1404,9 +1408,6 @@ if __name__ == "__main__":
 
         # Set the system language
         setSystemLanguage()
-
-        # Wait for udev events to finish
-        run("/sbin/udevadm", "settle", "--timeout=60")
 
         # When we exit this runlevel, init will write a boot record to utmp
         writeToFile("/var/run/utmp")
