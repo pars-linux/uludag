@@ -21,7 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from src import about
+__version = '2.0.4'
 
 def update_messages():
     # Create empty directory
@@ -33,11 +33,11 @@ def update_messages():
     # Collect Python files
     os.system("cp -R src/* .tmp/")
     # Generate POT file
-    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (about.catalog, about.catalog))
+    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % ('package-manager', 'package-manager'))
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
-            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
+            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, 'package-manager'))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
     os.system("rm -rf .tmp")
@@ -81,7 +81,7 @@ class Install(install):
         mime_dir = "/usr/share/mime/packages"
         locale_dir = "/usr/share/locale"
         apps_dir = "/usr/share/applications"
-        project_dir = os.path.join("/usr/share", about.appName)
+        project_dir = os.path.join("/usr/share", 'package-manager')
         # Make directories
         print "Making directories..."
         makeDirs(mime_icons_dir)
@@ -119,21 +119,21 @@ class Install(install):
                 os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             except OSError:
                 pass
-            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % about.catalog))
+            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "package-manager.mo"))
         # Rename
         print "Renaming application.py..."
-        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % about.appName))
+        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "package-manager.py"))
         # Modes
         print "Changing file modes..."
-        os.chmod(os.path.join(project_dir, "%s.py" % about.appName), 0755)
+        os.chmod(os.path.join(project_dir, "package-manager.py"), 0755)
         os.chmod(os.path.join(project_dir, "pm-install.py"), 0755)
         # Symlink
         try:
             if self.root:
-                os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+                os.symlink(os.path.join(project_dir.replace(self.root, ""), "package-manager.py"), os.path.join(bin_dir, 'package-manager'))
                 os.symlink(os.path.join(project_dir.replace(self.root, ""), "pm-install.py"), os.path.join(bin_dir, "pm-install"))
             else:
-                os.symlink(os.path.join(project_dir, "%s.py" % about.appName), os.path.join(bin_dir, about.appName))
+                os.symlink(os.path.join(project_dir, "package-manager.py"), os.path.join(bin_dir, 'package-manager'))
                 os.symlink(os.path.join(project_dir, "pm-install.py"), os.path.join(bin_dir, "pm-install"))
         except OSError, e:
             pass
@@ -144,13 +144,13 @@ if "update_messages" in sys.argv:
     sys.exit(0)
 
 setup(
-      name              = about.appName,
-      version           = about.version,
-      description       = unicode(about.description),
-      license           = unicode(about.license),
+      name              = 'package-manager',
+      version           = __version,
+      description       = unicode('Package Manager'),
+      license           = unicode('GPL'),
       author            = "",
-      author_email      = about.bugEmail,
-      url               = about.homePage,
+      author_email      = 'bugs@pardus.org.tr',
+      url               = 'http://www.pardus.org.tr/eng/projects',
       packages          = [''],
       package_dir       = {'': ''},
       data_files        = [],

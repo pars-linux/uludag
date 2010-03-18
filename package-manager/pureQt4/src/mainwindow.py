@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,7 +12,8 @@
 #
 
 from PyQt4 import QtGui
-from PyQt4.QtCore import *
+from PyQt4 import QtCore
+from PyQt4.QtCore import SIGNAL
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
@@ -27,9 +28,12 @@ from tray import Tray
 import backend
 import config
 
-class MainWindow(KXmlGuiWindow, Ui_MainWindow):
+import context as ctx
+iconLoader = ctx.pds.QIconLoader()
+
+class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
-        KXmlGuiWindow.__init__(self, parent)
+        QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.iface = backend.pm.Iface()
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
@@ -44,7 +48,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
+        #self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self)
@@ -69,7 +73,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
-        self.statusLabel.setAlignment(Qt.AlignCenter)
+        self.statusLabel.setAlignment(QtCore.Qt.AlignCenter)
         self.statusBar().addWidget(self.statusLabel)
         self.statusBar().setSizeGripEnabled(True)
         self.wheelMovie = QtGui.QMovie(self)
@@ -79,33 +83,42 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.centralWidget(), SIGNAL("updatingStatus()"), self.statusWaiting)
 
     def initializeActions(self):
-        self.toolBar().setToolButtonStyle(Qt.ToolButtonTextBesideIcon)
-        KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
-        KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
+        self.toolBar = QtGui.QToolBar(self)
+        self.toolBar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
+        self.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
+
+        #KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
+        #KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
 
         self.initializeOperationActions()
-        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
+        #self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
-
-        self.showInstallAction = KToggleAction(KIcon("list-add"), i18n("Show Installable Packages"), self)
+        self.showInstallAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-add")),
+                          ctx.Pds.i18n("Show Installable Packages"), self)
+        self.showInstallAction.setCheckable(True)
         self.showInstallAction.setChecked(True)
-        self.actionCollection().addAction("showInstallAction", self.showInstallAction)
-        self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
-        self.connect(self.showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        self.showInstallAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.INSTALL))
+        self.showInstallAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showInstallAction)
+        self.toolBar.addAction(self.showInstallAction)
 
-        self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
-        self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
-        self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
-        self.connect(self.showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
+        self.showRemoveAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-remove")),
+                          ctx.Pds.i18n("Show Installed Packages"), self)
+        self.showRemoveAction.setCheckable(True)
+        self.showRemoveAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.REMOVE))
+        self.showRemoveAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showRemoveAction)
+        self.toolBar.addAction(self.showRemoveAction)
 
-        self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
-        self.actionCollection().addAction("showUpgradeAction", self.showUpgradeAction)
-        self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
+        self.showUpgradeAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("view-refresh")),
+                          ctx.Pds.i18n("Show Upgradable Packages"), self)
+        self.showUpgradeAction.setCheckable(True)
+        self.showUpgradeAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.UPGRADE))
+        self.showUpgradeAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showUpgradeAction)
+        self.toolBar.addAction(self.showUpgradeAction)
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)

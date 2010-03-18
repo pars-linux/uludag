@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,8 +11,8 @@
 # Please read the COPYING file
 
 import locale
-
-from PyKDE4.kdecore import KGlobal
+from os import getenv
+import context as ctx
 
 locales = {
     "tr" : "tr_TR.UTF8",
@@ -26,7 +26,7 @@ locales = {
     }
 
 def getKDELocale():
-    return str(KGlobal.locale().language())
+    return ctx.Pds.settings('Locale/Country','en_US')
 
 # package-manager uses KDE locale info, pisi.api uses system locale info. We need
 # to map KDE locale info to system locale info to make dynamic KDE system language
@@ -37,6 +37,6 @@ def setSystemLocale():
     if locales.has_key(kdeLocale):
         systemlocale = locales[kdeLocale]
     else:
-        systemlocale = "en_US.UTF-8"
+        systemlocale = getenv('LANG')
 
     locale.setlocale(locale.LC_ALL, systemlocale)

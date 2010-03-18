@@ -14,10 +14,7 @@ import pt
 
 from PyQt4 import QtGui
 from PyQt4 import QtWebKit
-from PyQt4.QtCore import *
-
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
+from PyQt4.QtCore import QUrl
 
 from localedata import *
 
@@ -41,6 +38,6 @@ class HelpDialog(QtGui.QDialog):
         locale = getKDELocale()
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
-            self.htmlPart.load(QUrl(KStandardDirs.locate("data","package-manager/help/%s/%s" % (locale, help_files[help]))))
+            self.htmlPart.load(QUrl("/usr/share/package-manager/help/%s/%s" % (locale, help_files[help])))
         else:
-            self.htmlPart.load(QUrl(KStandardDirs.locate("data","package-manager/help/en/%s" % help_files[help])))
+            self.htmlPart.load(QUrl("/usr/share/package-manager/help/en/%s" % help_files[help]))

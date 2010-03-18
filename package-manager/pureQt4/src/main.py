@@ -13,6 +13,7 @@
 
 import sys
 import traceback
+import context as ctx
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
@@ -22,7 +23,6 @@ from PyKDE4.kdecore import *
 
 import dbus
 
-from about import aboutData
 from mainwindow import MainWindow
 from localedata import setSystemLocale
 from pmlogging import logger
@@ -33,27 +33,33 @@ def handleException(exception, value, tb):
 
 if __name__ == '__main__':
 
-    KCmdLineArgs.init(sys.argv, aboutData)
-    options = KCmdLineOptions()
-    options.add("show-mainwindow", ki18n("Show main window"))
-    KCmdLineArgs.addCmdLineOptions(options)
-
-    app = KUniqueApplication(True, True)
-
-    args = KCmdLineArgs.parsedArgs()
-
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
-    manager = MainWindow()
-    if not config.PMConfig().systemTray():
-        manager.show()
-    else:
-        if args.isSet("show-mainwindow"):
-            manager.show()
+    if ctx.Pds.session == ctx.pds.Kde4:
+        from about import aboutData
 
-    sys.excepthook = handleException
-    setSystemLocale()
+        KCmdLineArgs.init(sys.argv, aboutData)
+        options = KCmdLineOptions()
+        options.add("show-mainwindow", ki18n("Show main window"))
+        KCmdLineArgs.addCmdLineOptions(options)
+
+        app = KUniqueApplication(True, True)
+        manager = MainWindow()
+        args = KCmdLineArgs.parsedArgs()
+
+        if not config.PMConfig().systemTray():
+            manager.show()
+        else:
+            if args.isSet("show-mainwindow"):
+                manager.show()
+
+        sys.excepthook = handleException
+        setSystemLocale()
+    else:
+        app = QtGui.QApplication(sys.argv)
+        manager = MainWindow()
+        manager.show()
 
     app.exec_()
