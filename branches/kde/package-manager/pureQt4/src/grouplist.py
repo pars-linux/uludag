@@ -16,8 +16,8 @@ from PyQt4.QtCore import *
 
 import backend
 
-from qticonloader import QIconLoader
-IconLoader = QIconLoader(debug = True)
+import context as ctx
+iconLoader = ctx.pds.QIconLoader()
 
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
@@ -43,10 +43,10 @@ class GroupList(QtGui.QListWidget):
         if package_count == 0:
             return
 
-        icon = QtGui.QIcon(IconLoader.load(icon_path, IconLoader.SizeSmallMedium))
+        icon = QtGui.QIcon(iconLoader.load(icon_path, iconLoader.SizeSmallMedium))
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
-        item.setSizeHint(QSize(0, IconLoader.SizeMedium))
+        item.setSizeHint(QSize(0, iconLoader.SizeMedium))
 
         if str(self.lastSelected) == name:
             self.selectLastSelected(item)

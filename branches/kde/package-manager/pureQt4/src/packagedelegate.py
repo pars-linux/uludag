@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -15,12 +15,10 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# PyKDE4 Stuff
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from packagemodel import *
 from rowanimator import RowAnimator
+
+from context import *
 
 DEFAULT_ICON = "applications-other"
 ICON_PADDING = 0
@@ -28,15 +26,15 @@ ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
 ROW_HEIGHT = 72
 
-from qticonloader import QIconLoader
-IconLoader = QIconLoader(debug = True)
+iconLoader = pds.QIconLoader()
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
-        self.defaultIcon = QtGui.QIcon(IconLoader.load(DEFAULT_ICON, 32))
+        self.defaultIcon = QtGui.QIcon(iconLoader.load(DEFAULT_ICON, 32))
         self.animatable = True
+        self.font = Pds.settings('font','Sans').split(',')[0]
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -93,10 +91,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         homepage = index.model().data(index, HomepageRole)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
-        normalFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Normal)
-        boldFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 10, QtGui.QFont.Bold)
-        normalDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Normal)
-        boldDetailFont = QtGui.QFont(KGlobalSettings.generalFont().family(), 9, QtGui.QFont.Bold)
+        normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
+        boldFont = QtGui.QFont(self.font, 10, QtGui.QFont.Bold)
+        normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
+        boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
 
         p.setPen(foregroundColor)
 
