@@ -480,10 +480,12 @@ def make_image(project):
         run('umount %s/proc' % image_dir, ignore_error=True)
         run('umount %s/sys' % image_dir, ignore_error=True)
         image_dir = project.image_dir(clean=True)
-
         run('pisi --yes-all -D"%s" ar pardus-install %s' % (image_dir, repo_dir + "/pisi-index.xml.bz2"))
         if project.type == "install":
-            install_image_packages = " ".join(project.all_install_image_packages)
+            if project.all_install_image_packages:
+                install_image_packages = " ".join(project.all_install_image_packages)
+            else:
+                install_image_packages = " ".join(repo.full_deps("yali4"))
             run('pisi --yes-all --ignore-comar -D"%s" it %s' % (image_dir, install_image_packages))
             if project.plugin_package:
                 plugin_package = project.plugin_package
