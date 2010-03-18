@@ -36,9 +36,7 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
         self.collection = collection
         self.tmpCollection = None
 
-        if self.collection:
-            print "modify cagrısı"
-        else:
+        if not self.collection:
             self.tmpCollection = PackageCollection()
         self.tmpPackageSelection = None
         self.tmpLanguageSelection = None
@@ -53,7 +51,6 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
 
         self.connect(self.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.buttonBox, SIGNAL("rejected()"), self.reject)
-        print "init de debugCollection cagrılacak"
         self.debugCollection()
         self.initialize()
 
@@ -93,8 +90,7 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
             self.collection.title = title
             self.collection.uniqueTag = uniqueTag
 
-        print "accept de debugCollection cagrılacak"
-        self.debugCollection()
+        #self.debugCollection()
 
         QDialog.accept(self)
 
@@ -108,15 +104,13 @@ class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
                 self.tmpIconPath = unicode(filename)
 
             self.labelIcon.setPixmap(QPixmap(filename))
-            print "tmpIconPAth :%s" % self.tmpIconPath
 
     def slotClearIcon(self):
         self.labelIcon.setPixmap(None)
 
     def slotSelectPackages(self):
         if self.collection:
-            print "buraya geldi...."
-            if self.collection.packageSelection.selectedPackages and self.collection.packageSelection.selectedComponents:
+            if self.collection.packageSelection and self.collection.packageSelection.selectedPackages and self.collection.packageSelection.selectedComponents:
                 dialog = PackagesDialog(self, self.repo, self.collection.packageSelection.selectedPackages, self.collection.packageSelection.selectedComponents)
                 if dialog.exec_():
                     self.collection.packageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
