@@ -28,8 +28,7 @@ from tray import Tray
 import backend
 import config
 
-import context as ctx
-iconLoader = ctx.pds.QIconLoader()
+from context import *
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
@@ -97,8 +96,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         actionGroup = QtGui.QActionGroup(self)
 
         # Action Show Installable Packages
-        self.showInstallAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-add")),
-                          ctx.Pds.i18n("Show Installable Packages"), self)
+        self.showInstallAction = QtGui.QAction(KIcon("list-add"),
+                          i18n("Show Installable Packages"), self)
         self.showInstallAction.setCheckable(True)
         self.showInstallAction.setChecked(True)
         self.showInstallAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.INSTALL))
@@ -107,8 +106,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.toolBar.addAction(self.showInstallAction)
 
         # Action Show Installed Packages
-        self.showRemoveAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("list-remove")),
-                          ctx.Pds.i18n("Show Installed Packages"), self)
+        self.showRemoveAction = QtGui.QAction(KIcon("list-remove"),
+                          i18n("Show Installed Packages"), self)
         self.showRemoveAction.setCheckable(True)
         self.showRemoveAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.REMOVE))
         self.showRemoveAction.triggered.connect(self.centralWidget().initialize)
@@ -116,8 +115,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.toolBar.addAction(self.showRemoveAction)
 
         # Action Show Upgradable Packages
-        self.showUpgradeAction = QtGui.QAction(QtGui.QIcon(iconLoader.load("view-refresh")),
-                          ctx.Pds.i18n("Show Upgradable Packages"), self)
+        self.showUpgradeAction = QtGui.QAction(KIcon("view-refresh"),
+                          i18n("Show Upgradable Packages"), self)
         self.showUpgradeAction.setCheckable(True)
         self.showUpgradeAction.triggered.connect(lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         self.showUpgradeAction.triggered.connect(self.centralWidget().initialize)

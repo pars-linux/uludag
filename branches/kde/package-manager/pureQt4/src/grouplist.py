@@ -16,8 +16,7 @@ from PyQt4.QtCore import *
 
 import backend
 
-import context as ctx
-iconLoader = ctx.pds.QIconLoader()
+from context import *
 
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
@@ -43,7 +42,7 @@ class GroupList(QtGui.QListWidget):
         if package_count == 0:
             return
 
-        icon = QtGui.QIcon(iconLoader.load(icon_path, iconLoader.SizeSmallMedium))
+        icon = KIcon(icon_path, iconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, iconLoader.SizeMedium))
