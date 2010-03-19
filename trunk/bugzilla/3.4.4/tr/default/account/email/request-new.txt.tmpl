@@ -22,9 +22,9 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-Kimden: [% Param('mailfrom') %]
-Kime: [% email %]
-Konu: [% terms.Bugzilla %]: hesap oluşturmayı onayla
+From: [% Param('mailfrom') %]
+To: [% email %]
+Subject: [% terms.Bugzilla %]: hesap oluşturmayı onayla
 X-Bugzilla-Type: admin
 
 [%+ terms.Bugzilla %] sizin eposta adresinizle ([% email %]) bir hesap oluşturulması yönünde bir istek aldı.
