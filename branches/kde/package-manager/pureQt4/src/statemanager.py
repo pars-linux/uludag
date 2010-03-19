@@ -17,7 +17,7 @@ from PyQt4.QtGui import QMessageBox
 from context import *
 
 from pmlogging import logger
-import config
+# import config
 import backend
 
 class StateManager(QObject):
@@ -57,8 +57,9 @@ class StateManager(QObject):
         return list(self.cached_packages)
 
     def onlyGuiInState(self):
-        pmConfig = config.PMConfig()
-        return pmConfig.showOnlyGuiApp()
+        return True
+        # pmConfig = config.PMConfig()
+        # return pmConfig.showOnlyGuiApp()
 
     def getActionCurrent(self, action):
         return {"System.Manager.installPackage":i18n("Installing Package(s)"),

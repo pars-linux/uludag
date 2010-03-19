@@ -15,8 +15,6 @@ import re
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
 from context import *
 
 from ui_settingsdialog import Ui_SettingsDialog

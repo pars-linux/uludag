@@ -15,9 +15,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# PyKDE4 Stuff
-from PyKDE4.kdeui import *
-
 import string
 import backend
 from pmutils import humanReadableSize
