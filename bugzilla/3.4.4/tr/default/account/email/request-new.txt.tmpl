@@ -29,7 +29,7 @@ X-Bugzilla-Type: admin
 
 [%+ terms.Bugzilla %] sizin eposta adresinizle ([% email %]) bir hesap oluşturulması yönünde bir istek aldı.
 
-Bu eposta adresini kullanarak bir hesap oluşturma işlemine devam etmek için, % expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] olana kadar aşağıdaki bağlantıya girin:
+Bu eposta adresini kullanarak bir hesap oluşturma işlemine devam etmek için, [% expiration_ts FILTER time("%B %e, %Y saat %H:%M %Z") %] olana kadar aşağıdaki bağlantıya giriniz:
 
 [%+ urlbase %]token.cgi?t=[% token FILTER url_quote %]&a=request_new_account
 
