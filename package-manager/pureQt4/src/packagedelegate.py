@@ -26,8 +26,6 @@ ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
 ROW_HEIGHT = 72
 
-iconLoader = pds.QIconLoader()
-
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
@@ -77,11 +75,12 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         margin = left + ICON_PADDING
 
-        icon_path = index.model().data(index, Qt.DecorationRole).toString()
-        if icon_path:
-            icon = QtGui.QIcon(QtGui.QPixmap(icon_path).scaled(QSize(32, 32), Qt.KeepAspectRatio))
+        icon = index.model().data(index, Qt.DecorationRole).toString()
+        if icon:
+            icon = QtGui.QIcon(iconLoader.load(icon).scaled(QSize(32, 32), Qt.KeepAspectRatio))
         else:
             icon = self.defaultIcon
+    
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         title = index.model().data(index, Qt.DisplayRole)

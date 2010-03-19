@@ -22,6 +22,8 @@ import string
 import backend
 from pmutils import humanReadableSize
 
+from context import iconLoader
+
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6)
 
 class PackageModel(QAbstractTableModel):
@@ -67,14 +69,10 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.source.homepage))
         elif role == Qt.DecorationRole:
             if package.icon:
-                # FIXME
-                icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
-            else:
-                icon_path = None
-            if icon_path and not icon_path.endsWith("unknown.png"):
-                return QVariant(icon_path)
-            else:
-                return QVariant()
+                __icon = iconLoader.load(package.icon)
+                if not __icon.isNull():
+                    return QVariant(package.icon)
+            return QVariant()
         elif role == GroupRole:
             # TODO
             return QVariant()
