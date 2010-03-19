@@ -27,9 +27,7 @@ from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
 
 from pmutils import *
-
 from context import *
-iconLoader = pds.QIconLoader()
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):

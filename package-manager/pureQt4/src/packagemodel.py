@@ -17,7 +17,6 @@ from PyQt4.QtCore import *
 
 # PyKDE4 Stuff
 from PyKDE4.kdeui import *
-from PyKDE4.kdecore import KGlobal
 
 import string
 import backend
@@ -68,6 +67,7 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.source.homepage))
         elif role == Qt.DecorationRole:
             if package.icon:
+                # FIXME
                 icon_path = KIconLoader().iconPath(package.icon, KIconLoader.Panel)
             else:
                 icon_path = None

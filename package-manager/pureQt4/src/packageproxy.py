@@ -15,10 +15,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# PyKDE4 Stuff
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 import packagemodel # roles needed
 
 class PackageProxy(QtGui.QSortFilterProxyModel):
