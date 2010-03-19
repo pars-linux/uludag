@@ -29,7 +29,7 @@ def update_messages():
     os.makedirs(".tmp")
     # Collect UI files
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        os.system("/usr/bin/pyuic4 -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
     # Collect Python files
     os.system("cp -R src/* .tmp/")
     # Generate POT file
@@ -61,7 +61,7 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("/usr/bin/pyuic4 -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
             os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))

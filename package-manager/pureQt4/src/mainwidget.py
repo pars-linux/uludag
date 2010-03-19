@@ -14,7 +14,11 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from ui_mainwidget import Ui_MainWidget
+from context import *
+if Pds.session == pds.Kde4:
+    from ui_mainwidget import Ui_MainWidget
+else:
+    from ui_mainwidget_x11 import Ui_MainWidget
 
 from packageproxy import PackageProxy
 from packagemodel import PackageModel, GroupRole
@@ -27,7 +31,6 @@ from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
 
 from pmutils import *
-from context import *
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
@@ -231,13 +234,13 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         if packages:
             self.packageList.reverseSelection(packages)
         self.selectAll.setText(i18n("Select all packages in this group"))
-        self.selectAll.setUrl("All")
+        #self.selectAll.setUrl("All")
 
     def setReverseAll(self, packages=None):
         if packages:
             self.packageList.selectAll(packages)
         self.selectAll.setText(i18n("Reverse package selections"))
-        self.selectAll.setUrl("Reverse")
+        #self.selectAll.setUrl("Reverse")
 
     def toggleSelectAll(self, text):
         packages = self.packageList.model().getFilteredPackages()

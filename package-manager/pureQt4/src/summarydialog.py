@@ -10,10 +10,11 @@
 #
 # Please read the COPYING file
 
+import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kio import KRun
+# from PyKDE4.kio import KRun
 
 from ui_summarydialog import Ui_SummaryDialog
 from ui_appitem import Ui_ApplicationItem
@@ -54,7 +55,8 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appName.hide()
 
     def mouseDoubleClickEvent(self, event):
-        KRun.runCommand(self.item.command, None)
+        os.system(self.item.command)
+        #KRun.runCommand(self.item.command, None)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, parent=None):
