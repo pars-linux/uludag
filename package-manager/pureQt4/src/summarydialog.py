@@ -13,8 +13,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
 from PyKDE4.kio import KRun
 
 from ui_summarydialog import Ui_SummaryDialog
@@ -25,6 +23,7 @@ from pmutils import *
 import backend
 import localedata
 import desktopparser
+from context import *
 
 class ApplicationItem(QtGui.QListWidgetItem):
     def __init__(self, name, genericName, icon, command, parent=None):
@@ -45,7 +44,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
     def initialize(self):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
-        self.appIcon.setPixmap(KIcon(self.item.icon).pixmap(32))
+        self.appIcon.setPixmap(iconLoader.load(self.item.icon, 32))
         self.appName.hide()
 
     def enterEvent(self, event):
