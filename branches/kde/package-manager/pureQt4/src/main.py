@@ -18,9 +18,6 @@ import context as ctx
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 import dbus
 
 from mainwindow import MainWindow
@@ -38,6 +35,9 @@ if __name__ == '__main__':
         DBusQtMainLoop(set_as_default = True)
 
     if ctx.Pds.session == ctx.pds.Kde4:
+        from PyKDE4.kdeui import KUniqueApplication
+        from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
+
         from about import aboutData
 
         KCmdLineArgs.init(sys.argv, aboutData)

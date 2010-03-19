@@ -14,8 +14,7 @@
 from PyQt4.QtCore import QObject, SIGNAL
 from PyQt4.QtGui import QMessageBox
 
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon
+from context import *
 
 from pmlogging import logger
 import config
