@@ -40,7 +40,7 @@
 [% usevotes = Param('usevotes') %]
 
 <p>
-  [% terms.bugs %] yapılan "küçük" değişiklikler hakkında bilgilendirme istemiyorsanız, bunu aşağıdaki ayarlardan değiştirebilirsiniz.
+  [% terms.Bugs %]da yapılan "küçük" değişiklikler hakkında bilgilendirme istemiyorsanız, bunu aşağıdaki ayarlardan değiştirebilirsiniz.
 </p>
 
 <script type="text/javascript">
@@ -120,7 +120,7 @@ document.write('<input type="button" value="Tüm Epostaları Kapat" onclick="Set
     { id = constants.EVT_BUG_CREATED,
       description = "Yeni bir $terms.bug rapolandığında" },
     { id = constants.EVT_OPENED_CLOSED,
-      description = "$terms.bug çözümlendiğinde veya yeniden açıldığında" },
+      description = "$terms.Bug çözümlendiğinde veya yeniden açıldığında" },
     { id = constants.EVT_PROJ_MANAGEMENT,
       description = "Öncelik, durum, ciddiyet veya aşama değiştiğinde" },
     { id = constants.EVT_COMMENT,
@@ -141,7 +141,7 @@ document.write('<input type="button" value="Tüm Epostaları Kapat" onclick="Set
 
 [% neg_events = [
     { id = constants.EVT_UNCONFIRMED,
-      description = "$terms.bug ONAYLANMAMIŞ durumda olduğunda" },
+      description = "$terms.Bug ONAYLANMAMIŞ durumda olduğunda" },
     { id = constants.EVT_CHANGED_BY_ME,
       description = "Değişiklik tarafımdan yapıldığında" },
 ] %]
@@ -267,7 +267,7 @@ document.write('<input type="button" value="Tüm Epostaları Kapat" onclick="Set
 
 <p>
 Eğer bir kullanıcıyı takibe alırsanız, eposta alma konusunda onun yerindeymişsiniz gibi bir yol izlenir. <u>Onların</u> (örneğin Atanan) [% terms.bugs %] ile olan ilişkilerinde <u>kendi</u> tercihlerinize göre eposta alırsınız (ya da almazsınız).
-(örnek Atanan.
+(örnek Atanan).
 </p>
 
 <p>
