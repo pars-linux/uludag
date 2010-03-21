@@ -7,6 +7,10 @@ BugSPY uses mechanize_ library which emulates a browser inside python library. M
 
 .. _mechanize: http://wwwsearch.sourceforge.net/mechanize/
 
+Configuration
+=============
+Before using BugSPY, you should set the bugzilla URL, username, and password inside bugspy.conf. Set your account, copy bugspy.conf to you home directory and rename it to ".bugspy.conf". You are ready to use it.
+
 Requirements
 ============
 

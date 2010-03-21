@@ -11,16 +11,11 @@ import logging
 
 from bugspy.error import LoginError
 from bugspy.constants import Constants
+from bugspy.config import Config
 
 logging.basicConfig()
 log = logging.getLogger("bugzilla")
 log.setLevel(logging.DEBUG)
-
-# FIXME: Read username and password from this file which is INI format.
-CONFIG_FILE = '~/.bugspy.conf'
-BUGZILLA_URL = 'http://bugs.pardus.org.tr'
-USERNAME = 'eren@pardus.org.tr'
-PASSWORD = 'Password'
 
 class Bugzilla:
     """
@@ -91,6 +86,19 @@ class Bugzilla:
             else:
                 return True
 
+        def get_bug(self, bug_id):
+            """Gets information about but
+
+            Args:
+                bug_id: Bug id to get
+
+            Returns:
+                # FIXME: Class representation of a bug?
+            """
+
+            
+
+    # FIXME: remove it on production
     def get_dummy_bug(self):
         log.debug("Calling dummy bug")
         print self.constants.get_bug_show_page(12146)
@@ -101,7 +109,9 @@ class Bugzilla:
         open("/tmp/bug.html", "w+").write(data)
 
 def main():
-    bugzilla = Bugzilla(BUGZILLA_URL, USERNAME, PASSWORD)
+    c = Config()
+
+    bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
     bugzilla.login()
     bugzilla.get_dummy_bug()
 
