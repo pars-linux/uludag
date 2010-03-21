@@ -65,6 +65,8 @@ class Bugzilla:
         # if username and password is supplied, it means we are expected to login.
         self.is_auth_needed = bool(username and password)
 
+        self.is_logged_in = False
+
     def login(self):
         """Logins to bugzilla
 
@@ -92,6 +94,7 @@ class Bugzilla:
                 logging.error("Failed to login, user or password is invalid")
                 raise LoginError("User or Password is invalid")
             else:
+                self.is_logged_in = True
                 return True
 
     def get_bug(self, bug_id):
@@ -105,7 +108,7 @@ class Bugzilla:
         """
 
         log.info("Getting bug %s" % bug_id)
-        bug_data = self.browser.open(self.constants.get_bug_url(12146)).read()
+        bug_data = self.browser.open(self.constants.get_bug_url(bug_id)).read()
 
         bugparser = BugParser()
         return bugparser.parse(bug_data)
@@ -119,7 +122,7 @@ def main():
 
     bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
     bugzilla.login()
-    bug = bugzilla.get_bug(12148)
+    bug = bugzilla.get_bug(9901)
 
     print "%s - %s" % (bug.reporter.name, bug.short_desc)
     for comment in bug.comments:
