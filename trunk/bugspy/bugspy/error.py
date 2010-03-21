@@ -9,3 +9,8 @@ class LoginError(BugzillaError):
     '''Error in login page'''
     def __init__(self, msg):
         self.msg = msg
+
+class ParseError(BugzillaError):
+    '''Parse error.'''
+    def __init__(self, msg):
+        self.msg = msg

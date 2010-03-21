@@ -8,14 +8,21 @@
 
 from mechanize import Browser
 import logging
+import piksemel
 
 from bugspy.error import LoginError
 from bugspy.constants import Constants
 from bugspy.config import Config
+from bugspy.bugparser import BugParser
 
-logging.basicConfig()
 log = logging.getLogger("bugzilla")
 log.setLevel(logging.DEBUG)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s"))
+
+log.addHandler(ch)
 
 class Bugzilla:
     """
@@ -82,27 +89,26 @@ class Bugzilla:
 
             if response.find(self.constants.LOGIN_FAILED_STRING) > -1:
                 # DAMN! We found the string and failed to login..
+                logging.error("Failed to login, user or password is invalid")
                 raise LoginError("User or Password is invalid")
             else:
                 return True
 
-        def get_bug(self, bug_id):
-            """Gets information about but
+    def get_bug(self, bug_id):
+        """Gets information about but
 
-            Args:
-                bug_id: Bug id to get
+        Args:
+            bug_id: Bug id to get
 
-            Returns:
-                # FIXME: Class representation of a bug?
-            """
+        Returns:
+            Bugdict containins bug information.
+        """
 
-            
+        log.info("Getting bug %s" % bug_id)
+        bug_data = self.browser.open(self.constants.get_bug_url(12146)).read()
 
-    # FIXME: remove it on production
-    def get_dummy_bug(self):
-        log.debug("Calling dummy bug")
-        print self.constants.get_bug_show_page(12146)
-        self.write_tmp(self.browser.open(self.constants.get_bug_show_page(12146)).read())
+        bugparser = BugParser()
+        return bugparser.parse(bug_data)
 
     # FIXME: remove it on production
     def write_tmp(self, data):
@@ -113,7 +119,11 @@ def main():
 
     bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
     bugzilla.login()
-    bugzilla.get_dummy_bug()
+    bug = bugzilla.get_bug(12148)
+
+    print "%s - %s" % (bug.reporter.name, bug.short_desc)
+    for comment in bug.comments:
+        print "%s (%s) - %s\n-----------\n%s\n\n\n" % (comment.name, comment.email, comment.time, comment.text)
 
 if __name__ == '__main__':
     main()
