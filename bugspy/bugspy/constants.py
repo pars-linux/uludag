@@ -1,9 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-
-# we search for specific string to understand whether we are logged in or not
-
 class Constants:
     """Class that defines constants, both static and dynamic.
 
@@ -21,14 +18,14 @@ class Constants:
     def __init__(self, bugzilla_url=None):
         self.bugzilla_url = bugzilla_url
 
-    def get_bug_show_page(self, bug_id=None):
-        """Returns full bug show page.
+    def get_bug_url(self, bug_id=None):
+        """Returns full bug url page in xml format
 
         Args:
             bug_id: Bug id to return with
         """
 
         if bug_id:
-            return "%s/%s?id=%s" % (self.bugzilla_url, self.SHOW_BUG_URL, bug_id)
+            return "%s/%s?id=%s&ctype=xml" % (self.bugzilla_url, self.SHOW_BUG_URL, bug_id)
         else:
-            return "%s/%s" % (self.bugzilla_url, self.SHOW_BUG_URL)
+            return "%s/%s?ctype=xml" % (self.bugzilla_url, self.SHOW_BUG_URL)
