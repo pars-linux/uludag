@@ -10,10 +10,10 @@ from mechanize import Browser
 import logging
 import piksemel
 
-from bugspy.error import LoginError
+from bugspy.error import LoginError, BugzillaError, ModifyError
 from bugspy.constants import Constants
 from bugspy.config import Config
-from bugspy.bugparser import BugParser
+from bugspy.bugparser import BugParser, BugStruct
 
 log = logging.getLogger("bugzilla")
 log.setLevel(logging.DEBUG)
@@ -58,8 +58,11 @@ class Bugzilla:
         self.password = password
 
         self.browser = Browser()
+        self.browser.addheaders = [("User-Agent", self.constants.USER_AGENT)]
         # disable robots txt. Pardus.org.tr has it and we cannot open any page if it is enabled. Also, kim takar yalova kaymakamını? :)
         self.browser.set_handle_robots(False)
+
+        # we first need to open the page for login and other things to work
         self.browser.open(bugzilla_url)
 
         # if username and password is supplied, it means we are expected to login.
@@ -94,39 +97,113 @@ class Bugzilla:
                 logging.error("Failed to login, user or password is invalid")
                 raise LoginError("User or Password is invalid")
             else:
+                log.info("Successfully logged in")
                 self.is_logged_in = True
                 return True
 
+    def _bug_open(self, bug_id, xml=True):
+        return self.browser.open(self.constants.get_bug_url(bug_id, xml)).read()
+
     def get_bug(self, bug_id):
-        """Gets information about but
+        """Gets information about bug
+
+        You can get everything returned from the site. See BugParser.parse() for what you get and how to use the information. If there is an error, "error" attribute contains the error msg. You should check this before continuting the program.
+
+        bug = bugzilla.get_bug(123456)
+        if bug.error:
+            print "Error! Reason: %s" % bug.error
+            return 0
+
+        print bug.creation_ts
+        print bug.reporter.name
 
         Args:
             bug_id: Bug id to get
 
         Returns:
-            Bugdict containins bug information.
+            BugStruct containins bug information.
         """
 
         log.info("Getting bug %s" % bug_id)
-        bug_data = self.browser.open(self.constants.get_bug_url(bug_id)).read()
+        bug_data = self._bug_open(bug_id)
 
         bugparser = BugParser()
         return bugparser.parse(bug_data)
 
+
+    def modify_bug(self, bug_id, **kwargs):
+        # TODO: Implement Product/Component/Assignee/CC list
+        """Modifies the bug.
+
+        All arguments can be supplied. This function modifies the form on the page and submits just like an ordinary browser does.
+
+        Args:
+            comment: Comment to write
+            status: Status (NEW, ASSIGNED, RESOLVED)
+            resolution: (FIXED, INVALID, WONTFIX, LATER, REMIND, DUPLICATE)
+
+        Raises:
+            BugzillaError: You should first login to modify the bug
+            ModifyError: Changes are not applied
+        """
+
+        args = BugStruct(**kwargs)
+
+        if not self.is_logged_in:
+            log.error("Login is needed")
+            raise LoginError("You should first login to comment")
+
+        log.info("Opening bug #%s to modify" % bug_id)
+
+        bug_data = self._bug_open(bug_id, xml=False)
+        # do we have permission to see this bug?
+        if bug_data.find(self.constants.NO_PERMISSON_STRING) > -1:
+            log.error("Don't have permission to modify the bug")
+            raise BugzillaError("You don't have permission to see this bug")
+
+        log.debug("Selecting changeform")
+        self.browser.select_form(name="changeform")
+
+        if args.has("status"):
+            log.debug("Setting bug_status..")
+            self.browser["bug_status"] = [args.status]
+
+        if args.has("resolution"):
+            log.debug("Setting resolution..")
+            self.browser["resolution"] = [args.resolution]
+
+        if args.has("comment"):
+            log.debug("Setting comment..")
+            self.browser["comment"] = args.comment
+
+        log.info("Submitting the changes")
+        response = self.browser.submit()
+        response = response.read()
+
+        # is everything alright?
+        if response.find(self.constants.BUG_PROCESS_OK_STRING) > -1:
+            log.info("Changes submitted")
+            return True
+        else:
+            # something is wrong.
+            log.error("Errr, something is wrong in returned value.")
+            #print response
+            raise ModifyError("Unexpected return value", response)
+
     # FIXME: remove it on production
-    def write_tmp(self, data):
-        open("/tmp/bug.html", "w+").write(data)
+    def write_file(self, file, data):
+        open("/tmp/%s" % file, "w+").write(data)
 
 def main():
     c = Config()
 
     bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
     bugzilla.login()
-    bug = bugzilla.get_bug(9901)
+    #bugzilla.modify_bug("12437", comment="FooBar", status="RESOLVED", solution="FIXED")
 
-    print "%s - %s" % (bug.reporter.name, bug.short_desc)
-    for comment in bug.comments:
-        print "%s (%s) - %s\n-----------\n%s\n\n\n" % (comment.name, comment.email, comment.time, comment.text)
+    #bugzilla.modify_bug("12437", comment="Re-opening the bug", status="REOPENED")
+
+    bugzilla.modify_bug("12437", comment="Testing again")
 
 if __name__ == '__main__':
     main()

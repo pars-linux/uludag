@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import piksemel
-from bugspy.error import ParseError
+from bugspy.error import ParseError, BugzillaError
 
 class BugStruct(object):
     """A container which can be accessed like class objects
@@ -19,8 +19,25 @@ class BugStruct(object):
     def __init__(self, **kwargs):
         self.__dict__.update(kwargs)
 
+    def __str__(self):
+        # if we are parsing bugzilla data, return bug information
+        if self.has("error"):
+            if self.error:
+                return "<BugStruct: Error: %s>" % self.error
+            else:
+                return "<BugStruct: %s>" % self.short_desc
+        # we are not using it to represent bug parsing. It is in normal use mode now
+        else:
+            return "<BugStruct: %s>" % self.__dict__
+
     def set(self, key, arg):
         self.__dict__.update({key: arg})
+
+    def has(self, key):
+        if self.__dict__.has_key(key):
+            return True
+        else:
+            return False
 
 class BugParser:
     """Parses xmldata and represents it like class objects"""
@@ -63,15 +80,22 @@ class BugParser:
 
         Raises:
             ParseError: XML data is not supplied.
+            BugzillaError: Bugzilla error returned from the site.
         """
 
         if not data:
             raise ParseError("XML Data is not supplied")
 
-        struct = BugStruct()
-
         xml = piksemel.parseString(data)
         bug = xml.getTag("bug")
+
+        # if <bug> has attribute error, we should return error.
+        error_msg = bug.getAttribute("error")
+        if error_msg:
+            return BugStruct(error=error_msg)
+
+        struct = BugStruct()
+        struct.set("error", False)
 
         for i in bug.tags():
             # append all the tags except for "cc" and "long_desc", these will need special care.
