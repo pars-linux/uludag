@@ -844,16 +844,16 @@
     We don't have enough data points to make a graph (yet).
         
   [% ELSIF error == "invalid_attach_id" %]
-    [% title = "Invalid Attachment ID" %]
+    [% title = "Geçersiz Eklenti Numarası" %]
     The attachment id [% attach_id FILTER html %] is invalid.
 
   [% ELSIF error == "bug_id_does_not_exist" %]
-    [% title = BLOCK %]Invalid [% terms.Bug %] ID[% END %]
+    [% title = BLOCK %]Geçersiz [% terms.Bug %] Numarası[% END %]
     [% terms.Bug %] #[% bug_id FILTER html %] does not exist.
     
   [% ELSIF error == "improper_bug_id_field_value" %]
     [% title = BLOCK %]
-      [% IF bug_id %]Invalid [% ELSE %]Missing [% END %] [% terms.Bug %] ID
+      [% IF bug_id %]Geçersiz [% ELSE %]Eksik [% END %] [% terms.Bug %] Numarası
     [% END %]
     [% IF bug_id %]
       '[% bug_id FILTER html %]' is not a valid [% terms.bug %] number
