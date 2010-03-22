@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2010, TUBITAK/UEKAE
+# Copyright (C) 2006-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -19,11 +19,11 @@ from ui_mainwindow import Ui_MainWindow
 
 from mainwidget import MainWidget
 from statemanager import StateManager
-# from settingsdialog import SettingsDialog
+from settingsdialog import SettingsDialog
 # from tray import Tray
 
 import backend
-# import config
+import config
 
 from context import *
 
@@ -34,15 +34,14 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.iface = backend.pm.Iface()
         self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
-        #self.settingsDialog = SettingsDialog(self)
+        self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
         self.initializeStatusBar()
         #self.initializeTray()
         self.connectMainSignals()
 
     def connectMainSignals(self):
-        pass
-        #self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
+        self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         #self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         #self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         #self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -10,11 +10,9 @@
 #
 # Please read the COPYING file
 
-import pt
-from PyQt4.Qt import QVariant
+from PyQt4.Qt import QVariant, QSettings
 
-(general) = ("General")
-
+general = 'General'
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
             "InstallUpdatesAutomatically":False,
@@ -22,34 +20,33 @@ defaults = {"SystemTray":False,
             }
 
 class Config:
-    def __init__(self, config):
-        self.config = pt.Config(config)
-        self.group = None
+    def __init__(self, organization, product):
+        self.config = QSettings(organization, product)
 
     def setValue(self, group, option, value):
-        self.group = self.config.group(group)
-        self.group.writeEntry(option, QVariant(value))
+        self.config.beginGroup(group)
+        self.config.setValue(option, QVariant(value))
+        self.config.endGroup(group)
         self.config.sync()
 
     def getBoolValue(self, group, option):
-        default = self._initValue(group, option, False)
-        return self.group.readEntry(option, QVariant(default)).toBool()
+        self.config.beginGroup(group)
+        default = self._initValue(option, False)
+        return self.config.value(option, QVariant(default)).toBool()
 
     def getNumValue(self, group, option):
-        default = self._initValue(group, option, 0)
-        return self.group.readEntry(option, QVariant(default)).toInt()[0]
+        self.config.beginGroup(group)
+        default = self._initValue(option, 0)
+        return self.config.value(option, QVariant(default)).toInt()[0]
 
-    def _initValue(self, group, option, value):
-        self.group = self.config.group(group)
-
+    def _initValue(self, option, value):
         if defaults.has_key(option):
             return defaults[option]
-        else:
-            return value
+        return value
 
 class PMConfig(Config):
     def __init__(self):
-        Config.__init__(self, "package-managerrc")
+        Config.__init__(self, "Pardus", "Package-Manager")
 
     def showOnlyGuiApp(self):
         return self.getBoolValue(general, "ShowOnlyGuiApp")
