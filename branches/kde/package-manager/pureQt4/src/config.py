@@ -62,7 +62,7 @@ class PMConfig(Config):
         return self.getNumValue("UpdateCheckInterval")
 
     def systemTray(self):
-        return self.getBoolValue"SystemTray")
+        return self.getBoolValue("SystemTray")
 
     def setSystemTray(self, enabled):
         self.setValue("SystemTray", enabled)
