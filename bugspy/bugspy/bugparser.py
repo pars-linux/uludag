@@ -4,24 +4,23 @@
 import piksemel
 from bugspy.error import ParseError
 
-class BugDict(dict):
+class BugStruct(object):
     """A container which can be accessed like class objects
 
-    f = BugDict({"foo": "bar",
-        "baz": "eheh",
-        "dummy": BugDict({"foo": 1, "bar": 2}),
-        })
+    f = BugStruct(foo="bar", baz="heh", bug=BugStruct("id": 1))
+    f.set("comment", "foobar")
 
     print f.foo
-    print f.dummy.foo
+    print f.bug.id
+    print f.comment
 
     """
 
-    def __getattr__(self, name):
-        try:
-            return self[name]
-        except KeyError:
-            raise AttributeError(name)
+    def __init__(self, **kwargs):
+        self.__dict__.update(kwargs)
+
+    def set(self, key, arg):
+        self.__dict__.update({key: arg})
 
 class BugParser:
     """Parses xmldata and represents it like class objects"""
@@ -59,6 +58,9 @@ class BugParser:
         Args:
             data: XML data got from bugzilla to parse
 
+        Returns:
+            BugStruct object.
+
         Raises:
             ParseError: XML data is not supplied.
         """
@@ -66,7 +68,7 @@ class BugParser:
         if not data:
             raise ParseError("XML Data is not supplied")
 
-        output = {}
+        struct = BugStruct()
 
         xml = piksemel.parseString(data)
         bug = xml.getTag("bug")
@@ -77,42 +79,33 @@ class BugParser:
             if tagName == "cc" or tagName == "long_desc":
                 continue
 
-            output[tagName] = bug.getTag(tagName).firstChild().data()
+            struct.set(tagName, bug.getTag(tagName).firstChild().data())
 
         assigned_to_name = bug.getTag("assigned_to").getAttribute("name")
         reporter_name = bug.getTag("reporter").getAttribute("name")
 
         # initial assigned_to and reporter contains e-mail addresses
-        output["assigned_to"] = BugDict({"name": assigned_to_name, "email": output["assigned_to"]})
-        output["reporter"] = BugDict({"name": reporter_name, "email": output["reporter"]})
+        struct.assigned_to = BugStruct(name=assigned_to_name, email=struct.assigned_to)
+        struct.reporter = BugStruct(name=reporter_name, email=struct.reporter)
 
         # feed comments
-        # I need to store the array within tmp variable. Somehow, I cannot use output["comments"] = []
-        comment_tmp = []
+        struct.set("comments", [])
         for comment in bug.tags("long_desc"):
-            name = comment.getTag("who").getAttribute("name")
-            email = comment.getTagData("who")
-            time = comment.getTagData("bug_when")
-            text = comment.getTagData("thetext")
+            c_name = comment.getTag("who").getAttribute("name")
+            c_email = comment.getTagData("who")
+            c_time = comment.getTagData("bug_when")
+            c_text = comment.getTagData("thetext")
 
-
-            comment_tmp.append(BugDict({"name": name,
-                                        "email": email,
-                                        "time": time,
-                                        "text": text}))
-
-
-        output["comments"] = comment_tmp
+            struct.comments.append(BugStruct(name=c_name, email=c_email, time=c_time, text=c_text))
 
         # feed cc
-        cc_tmp = []
+        struct.set("cc", [])
         for cc in bug.tags("cc"):
-            email = cc.firstChild().data()
-            cc_tmp.append(BugDict({"email": email}))
+            cc_email = cc.firstChild().data()
 
-        output["cc"] = cc_tmp
+            struct.cc.append(BugStruct(email=cc_email))
 
-        return BugDict(output)
+        return struct
 
 if __name__ == '__main__':
     data = open("/tmp/bug.xml", "r").read()
