@@ -23,7 +23,7 @@ ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(mes
 
 log.addHandler(ch)
 
-cmdlist = ["info", "modify"]
+cmdlist = ["info", "modify", "generate-config"]
 
 def setup_parser():
     u =   "usage: %prog [global options] COMMAND [options]"
@@ -67,8 +67,6 @@ def main():
 
     opt = BugStruct(**opt.__dict__)
 
-    print action
-    print opt
 
     #c = Config()
 
