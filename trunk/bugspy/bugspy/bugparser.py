@@ -24,41 +24,37 @@ class Bugdict(dict):
             raise AttributeError(name)
 
 class BugParser:
-    """Parses xmldata and represents it like class objects
-
-    It contains all of the information returned from bugzilla. Parser assigns exactly the same tag in XML as keywords. E.g: bugzilla returns these:
-
-          <cclist_accessible>1</cclist_accessible>
-          <classification_id>1</classification_id>
-          <classification>Unclassified</classification>
-          <product>Güvenlik / Security</product>
-          <component>guvenlik/security</component>
-
-    These can be accessed via;
-
-        bugparser = BugParser()
-        bug = bugparser.parse(data)
-
-        print bug.product
-        print bug.component
-        print bug.classfication_id
-
-    To get comments:
-
-        for comment in bug.comments:
-            print comment.name, comment.time, comment.email, comment.text
-
-    To get CC List:
-
-        for cc in bug.cc:
-            print cc.email
-
-    """
-
-    # FIXME: Document it.
+    """Parses xmldata and represents it like class objects"""
 
     def parse(self, data=None):
         """Parses the data and returns dictionary which can be accessed like class objects.
+
+        It contains all of the information returned from bugzilla. Parser assigns exactly the same tag in XML as keywords. E.g: bugzilla returns these:
+
+              <cclist_accessible>1</cclist_accessible>
+              <classification_id>1</classification_id>
+              <classification>Unclassified</classification>
+              <product>Güvenlik / Security</product>
+              <component>guvenlik/security</component>
+
+        These can be accessed via;
+
+            bugparser = BugParser()
+            bug = bugparser.parse(data)
+
+            print bug.product
+            print bug.component
+            print bug.classfication_id
+
+        To get comments:
+
+            for comment in bug.comments:
+                print comment.name, comment.time, comment.email, comment.text
+
+        To get CC List:
+
+            for cc in bug.cc:
+                print cc.email
 
         Args:
             data: XML data got from bugzilla to parse
