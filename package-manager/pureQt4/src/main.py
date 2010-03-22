@@ -23,7 +23,7 @@ import dbus
 from mainwindow import MainWindow
 from localedata import setSystemLocale
 from pmlogging import logger
-# import config
+import config
 
 def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
@@ -49,11 +49,11 @@ if __name__ == '__main__':
         manager = MainWindow()
         args = KCmdLineArgs.parsedArgs()
 
-        #if not config.PMConfig().systemTray():
-        manager.show()
-        #else:
-        #    if args.isSet("show-mainwindow"):
-        #        manager.show()
+        if not config.PMConfig().systemTray():
+            manager.show()
+        else:
+            if args.isSet("show-mainwindow"):
+                manager.show()
 
         sys.excepthook = handleException
         setSystemLocale()
