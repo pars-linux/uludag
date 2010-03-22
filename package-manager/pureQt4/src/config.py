@@ -13,6 +13,7 @@
 from PyQt4.Qt import QVariant, QSettings
 
 general = 'General'
+
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
             "InstallUpdatesAutomatically":False,
@@ -23,19 +24,19 @@ class Config:
     def __init__(self, organization, product):
         self.config = QSettings(organization, product)
 
-    def setValue(self, group, option, value):
-        self.config.beginGroup(group)
+    def setValue(self, option, value):
+        self.config.beginGroup(general)
         self.config.setValue(option, QVariant(value))
-        self.config.endGroup(group)
+        self.config.endGroup(general)
         self.config.sync()
 
-    def getBoolValue(self, group, option):
-        self.config.beginGroup(group)
+    def getBoolValue(self, option):
+        self.config.beginGroup(general)
         default = self._initValue(option, False)
         return self.config.value(option, QVariant(default)).toBool()
 
-    def getNumValue(self, group, option):
-        self.config.beginGroup(group)
+    def getNumValue(self, option):
+        self.config.beginGroup(general)
         default = self._initValue(option, 0)
         return self.config.value(option, QVariant(default)).toInt()[0]
 
@@ -49,31 +50,31 @@ class PMConfig(Config):
         Config.__init__(self, "Pardus", "Package-Manager")
 
     def showOnlyGuiApp(self):
-        return self.getBoolValue(general, "ShowOnlyGuiApp")
+        return self.getBoolValue("ShowOnlyGuiApp")
 
     def updateCheck(self):
-        return self.getBoolValue(general, "UpdateCheck")
+        return self.getBoolValue("UpdateCheck")
 
     def installUpdatesAutomatically(self):
-        return self.getBoolValue(general, "InstallUpdatesAutomatically")
+        return self.getBoolValue("InstallUpdatesAutomatically")
 
     def updateCheckInterval(self):
-        return self.getNumValue(general, "UpdateCheckInterval")
+        return self.getNumValue("UpdateCheckInterval")
 
     def systemTray(self):
-        return self.getBoolValue(general, "SystemTray")
+        return self.getBoolValue"SystemTray")
 
     def setSystemTray(self, enabled):
-        self.setValue(general, "SystemTray", enabled)
+        self.setValue("SystemTray", enabled)
 
     def setUpdateCheck(self, enabled):
-        self.setValue(general, "UpdateCheck", enabled)
+        self.setValue("UpdateCheck", enabled)
 
     def setInstallUpdatesAutomatically(self, enabled):
-        self.setValue(general, "InstallUpdatesAutomatically", enabled)
+        self.setValue("InstallUpdatesAutomatically", enabled)
 
     def setUpdateCheckInterval(self, value):
-        self.setValue(general, "UpdateCheckInterval", value)
+        self.setValue("UpdateCheckInterval", value)
 
     def setShowOnlyGuiApp(self, enabled):
-        self.setValue(general, "ShowOnlyGuiApp", enabled)
+        self.setValue("ShowOnlyGuiApp", enabled)
