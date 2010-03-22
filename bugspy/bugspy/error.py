@@ -3,14 +3,16 @@
 
 class BugzillaError(Exception):
     '''Generic error class'''
-    pass
+    def __init__(self, msg):
+        self.msg = msg
 
 class LoginError(BugzillaError):
-    '''Error in login page'''
-    def __init__(self, msg):
-        self.msg = msg
+    pass
 
 class ParseError(BugzillaError):
-    '''Parse error.'''
-    def __init__(self, msg):
+    pass
+
+class ModifyError(BugzillaError):
+    def __init__(self, msg, response):
         self.msg = msg
+        self.response = response
