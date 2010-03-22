@@ -19,6 +19,9 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
    eklenecektir.
 
+#. Paket, gözden geçirme sürecinde bulunan başka bir pakete bağlı ise o paket
+   için açılan hataya bağımlı olarak işaretlenir.
+
 #. Paket hazır duruma geldiğinde depoda playground/review dizini altında
    girmesi düşünülen bileşene kopyalanır.
 
