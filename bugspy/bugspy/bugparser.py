@@ -4,12 +4,12 @@
 import piksemel
 from bugspy.error import ParseError
 
-class Bugdict(dict):
+class BugDict(dict):
     """A container which can be accessed like class objects
 
-    f = Bugdict({"foo": "bar",
+    f = BugDict({"foo": "bar",
         "baz": "eheh",
-        "dummy": Bugdict({"foo": 1, "bar": 2}),
+        "dummy": BugDict({"foo": 1, "bar": 2}),
         })
 
     print f.foo
@@ -71,8 +71,6 @@ class BugParser:
         xml = piksemel.parseString(data)
         bug = xml.getTag("bug")
 
-        # output["creation_ts"] = bug.getTagData("creation_ts")
-
         for i in bug.tags():
             # append all the tags except for "cc" and "long_desc", these will need special care.
             tagName = i.name()
@@ -85,8 +83,8 @@ class BugParser:
         reporter_name = bug.getTag("reporter").getAttribute("name")
 
         # initial assigned_to and reporter contains e-mail addresses
-        output["assigned_to"] = Bugdict({"name": assigned_to_name, "email": output["assigned_to"]})
-        output["reporter"] = Bugdict({"name": reporter_name, "email": output["reporter"]})
+        output["assigned_to"] = BugDict({"name": assigned_to_name, "email": output["assigned_to"]})
+        output["reporter"] = BugDict({"name": reporter_name, "email": output["reporter"]})
 
         # feed comments
         # I need to store the array within tmp variable. Somehow, I cannot use output["comments"] = []
@@ -98,7 +96,7 @@ class BugParser:
             text = comment.getTagData("thetext")
 
 
-            comment_tmp.append(Bugdict({"name": name,
+            comment_tmp.append(BugDict({"name": name,
                                         "email": email,
                                         "time": time,
                                         "text": text}))
@@ -110,11 +108,11 @@ class BugParser:
         cc_tmp = []
         for cc in bug.tags("cc"):
             email = cc.firstChild().data()
-            cc_tmp.append(Bugdict({"email": email}))
+            cc_tmp.append(BugDict({"email": email}))
 
         output["cc"] = cc_tmp
 
-        return Bugdict(output)
+        return BugDict(output)
 
 if __name__ == '__main__':
     data = open("/tmp/bug.xml", "r").read()
