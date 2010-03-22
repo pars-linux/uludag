@@ -20,7 +20,7 @@ from rowanimator import RowAnimator
 
 from context import *
 
-DEFAULT_ICON = "applications-other"
+DEFAULT_ICON = ('applications-other', 'package')
 ICON_PADDING = 0
 ICON_SIZE = 24
 DETAIL_LINE_OFFSET = 36
