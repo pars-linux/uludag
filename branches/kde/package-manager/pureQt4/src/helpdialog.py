@@ -10,13 +10,13 @@
 # Please read the COPYING file.
 
 import os
-import pt
 
 from PyQt4 import QtGui
 from PyQt4 import QtWebKit
 from PyQt4.QtCore import QUrl
 
 from localedata import *
+from context import *
 
 (MAINAPP, PREFERENCES) = (1, 2)
 
@@ -29,7 +29,7 @@ class HelpDialog(QtGui.QDialog):
     def __init__(self, parent, help):
         QtGui.QDialog.__init__(self, parent)
         self.setModal(True)
-        self.setWindowTitle(pt.i18n("Package Manager Help"))
+        self.setWindowTitle(i18n("Package Manager Help"))
         self.layout = QtGui.QGridLayout(self)
         self.htmlPart = QtWebKit.QWebView(self)
         self.resize(700,500)
