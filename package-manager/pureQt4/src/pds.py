@@ -318,7 +318,7 @@ class QIconLoader:
 
     def findIcon(self, name = str, size = int):
         for _name in name:
-            pixmapName = ''.join(('$qt', str(name), str(size)))
+            pixmapName = ''.join(('$qt', str(_name), str(size)))
             if (QPixmapCache.find(pixmapName, self.pixmap)):
                 return self.pixmap
         self._themes = []
@@ -346,16 +346,16 @@ class QIconLoader:
         icon = QIcon()
         size = int(size)
         self.pixmap = QPixmap()
-        if not type(name) == list:
+        if not type(name) in (list, tuple):
             name = [str(name)]
         for _size in self.iconSizes:
             pix = self.findIcon(name, _size)
             if not pix.isNull():
-                icon.addPixmap(pix)
                 if size == _size:
                     return pix
+                icon.addPixmap(pix)
         if icon.isNull():
-            return QPixmap()
+            return self.pixmap
         return icon.pixmap(QSize(size, size))
 
     def icon(self, pix, size=128):
