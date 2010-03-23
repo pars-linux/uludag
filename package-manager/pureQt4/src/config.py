@@ -25,18 +25,14 @@ class Config:
         self.config = QSettings(organization, product)
 
     def setValue(self, option, value):
-        self.config.beginGroup(general)
         self.config.setValue(option, QVariant(value))
-        self.config.endGroup(general)
         self.config.sync()
 
     def getBoolValue(self, option):
-        self.config.beginGroup(general)
         default = self._initValue(option, False)
         return self.config.value(option, QVariant(default)).toBool()
 
     def getNumValue(self, option):
-        self.config.beginGroup(general)
         default = self._initValue(option, 0)
         return self.config.value(option, QVariant(default)).toInt()[0]
 
