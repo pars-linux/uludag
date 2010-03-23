@@ -84,7 +84,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
 
         self.initializeOperationActions()
-        self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
+        self.setupGUI(KXmlGuiWindow.Default, "/usr/share/package-manager/data/packagemanagerui.rc")
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
