@@ -43,14 +43,16 @@ class Config(object):
 
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
-        if value and value in ("True", "False"):
-            # the value from ConfigParser is always string, so control it and return bool
-            if value == "True":
-                return True
+        if value:
+            if value in ("True", "False"):
+                # the value from ConfigParser is always string, so control it and return bool
+                if value == "True":
+                    return True
+                else:
+                    return False
+            elif "," in value:
+                value = value.split(",")
             else:
-                return False
-        elif "," in value:
-            value = value.split(",")
-
-        return value
-
+                return value
+        else:
+            return None
