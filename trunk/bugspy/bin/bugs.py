@@ -27,7 +27,7 @@ ch.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
 
 log.addHandler(ch)
 
-cmdlist = ["info", "modify", "generate-config"]
+cmdlist = ["info", "modify", "new", "generate-config"]
 
 # CONSTANTS
 
@@ -43,6 +43,19 @@ CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
 VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
 VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED"]
+
+# Product mappings available on Pardus bugzilla
+# The URL for new bug is like: http://bugs.pardus.org.tr/enter_bug.cgi?product=*%20Genel%20/%20General, so we a clear mapping
+PRODUCTS = {"general": "* Genel / General",
+            "translation": "Çeviriler /Translation",
+            "comar": "COMAR / Config Manager",
+            "graphic": "Grafik / Graphics",
+            "security": "Güvenlik / Security",
+            "packages": "Paketler / Packages",
+            "pardus-services": "Pardus Hizmetleri / Pardus Services",
+            "pisi": "PiSi",
+            "review": "Review",
+            "yali": "YALI"}
 
 def setup_parser():
     u =   "usage: %prog [global options] COMMAND [options]"
@@ -92,8 +105,18 @@ def setup_action_parser(action):
 
     if action == "info":
         p.add_option("-b", "--bug",
-                metavar="BUG ID", dest="bug_id",
-                help="REQUIRED: bug id")
+                metavar="bug id", dest="bug_id",
+                help="required: bug id")
+
+    if action == "new":
+        p.add_option("-i", "--interactive",
+                help="optional: create bug interactively")
+
+        p.add_option("-p", "--product",
+                help="REQUIRED: product (%s)" % ','.join(PRODUCTS.keys()))
+
+        p.add_option("-c", "--component",
+                help="REQUIRED: component. Only work for security bugs. You have to use interactive bug creating (kernel, general)")
 
     return p
 
@@ -127,7 +150,7 @@ def main():
 
         # check arguments
         if not (opt.user and opt.password and opt.bugzilla_url):
-            log.error("Missing argument! See --help")
+            parser.error("Missing argument! See --help")
             sys.exit(1)
 
         config_data = CONFIG_TEMPLATE % {"bugzilla": opt.bugzilla_url,
@@ -194,11 +217,24 @@ def main():
 
         # TODO: Print decent output
         bug = bugzilla.get(opt.bug_id)
-        if bug.has("group"):
-            if bug.group == "security":
-                print "this is a security bug"
-            else:
-                print "not a security"
+
+        print bug
+
+    if action == "new":
+        # TODO: Only security related vulnerabilities can be entered with command line.
+        # Implement interactive bug creation stuff.
+
+        if not (opt.product and opt.component):
+            parser.error("Missing argument! See --help")
+            sys.exit(1)
+
+        if not opt.product in PRODUCTS.keys():
+            parser.error("product must be one of: %s" % ', '.join(PRODUCTS.keys()))
+
+        if opt.product == "security":
+            pass
+        else:
+            log.error("You can only create security related bugs for now")
 
 if __name__ == '__main__':
     main()

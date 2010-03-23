@@ -251,6 +251,15 @@ class Bugzilla:
             #print response
             raise ModifyError("Unexpected return value", response)
 
+    def new(self, **kwargs):
+        """Opens new bug"""
+
+        args = BugStruct(**kwargs)
+
+        print self.constants.get_new_bug_url("Güvenlik / Security")
+
+        return 0
+
     # FIXME: remove it on production
     def write_file(self, file, data):
         open("/tmp/%s" % file, "w+").write(data)
