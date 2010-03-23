@@ -42,10 +42,10 @@ class GroupList(QtGui.QListWidget):
         if package_count == 0:
             return
 
-        icon = KIcon(icon_path, iconLoader.SizeSmallMedium)
+        icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
-        item.setSizeHint(QSize(0, iconLoader.SizeMedium))
+        item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
         if str(self.lastSelected) == name:
             self.selectLastSelected(item)
