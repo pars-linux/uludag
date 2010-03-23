@@ -11,6 +11,7 @@ import optparse
 from bugspy.bugzilla import Bugzilla
 from bugspy.config import Config
 from bugspy.bugparser import BugStruct
+from bugspy.error import BugzillaError
 
 log = logging.getLogger("bugzilla")
 if "--debug" in sys.argv:
@@ -18,7 +19,7 @@ if "--debug" in sys.argv:
 elif "--verbose" in sys.argv:
     log.setLevel(logging.INFO)
 else:
-    log.setLevel(logging.WARNING)
+    log.setLevel(logging.INFO)
 
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
@@ -40,6 +41,9 @@ password = %(password)s
 """
 
 CONFIG_FILE = "%s/.bugspy.conf" % os.environ["HOME"]
+
+VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
+VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED"]
 
 def setup_parser():
     u =   "usage: %prog [global options] COMMAND [options]"
@@ -65,6 +69,12 @@ def setup_action_parser(action):
 
         p.add_option("-c", "--comment",
                 help="OPTIONAL: add comment")
+
+        p.add_option("-s", "--status",
+                help="OPTIONAL: set status (%s)" % ','.join(VALID_STATUSES))
+
+        p.add_option("-r", "--resolution",
+                help="OPTIONAL: set resolution (%s)" % ','.join(VALID_RESOLUTIONS))
 
     if action == "generate-config":
         p.add_option("-b", "--bugzilla",
@@ -93,24 +103,78 @@ def main():
 
     action_parser = setup_action_parser(action)
     (opt, args) = action_parser.parse_args(args)
-
     opt = BugStruct(**opt.__dict__)
 
+    # setup bugzilla class
+    c = Config()
+    bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
+
     if action == "generate-config":
-        #if os.path.exists(CONFIG_FILE):
-        #    log.warning("Configuration file exists, exiting..")
-        #    sys.exit(1)
+        if os.path.exists(CONFIG_FILE):
+            log.warning("Configuration file exists. Please edit ~/.bugspy.conf with your text editor. Exiting...")
+            sys.exit(1)
 
         # check arguments
         if not (opt.user and opt.password and opt.bugzilla_url):
             log.error("Missing argument! See --help")
             sys.exit(1)
 
-    #c = Config()
+        config_data = CONFIG_TEMPLATE % {"bugzilla": opt.bugzilla_url,
+                                         "user": opt.user,
+                                         "password": opt.password}
 
-   # bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
-    #bugzilla.login()
-    #print bugzilla.get_bug("9901")
+        log.info("Writing configuration file")
+        open(CONFIG_FILE, "w+").write(config_data)
+        log.info("Configuration file is written")
+
+        log.info("Configuration file is written. You can edit ~/.bugspy.conf for later use")
+
+    if action == "modify":
+        modify = {}
+        if not opt.bug_id:
+            log.error("Bud id must be provided!")
+            sys.exit(1)
+
+        modify["bug_id"] = opt.bug_id
+
+        if opt.comment:
+            modify["comment"] = opt.comment
+
+        if opt.resolution:
+            # make it upper-case for easy-of-use
+            opt.resolution = opt.resolution.upper()
+            if not opt.resolution in VALID_RESOLUTIONS:
+                parser.error("resolution must be one of: %s" % ','.join(VALID_RESOLUTIONS))
+                sys.exit(1)
+
+            # we cannot set resolution on NEW bugs
+            bugzilla.login()
+            bug_info = bugzilla.get(opt.bug_id)
+            if bug_info.has("status") and bug_info.status == "NEW":
+                log.error("You cannot change resolution on NEW bugs. Maybe you want to this?: --status RESOLVED --resolution %s" % opt.resolution)
+                sys.exit(1)
+
+            modify["resolution"] = opt.resolution
+
+        if opt.status:
+            # make it upper-case for easy-of-use
+            opt.status = opt.status.upper()
+
+            if not opt.status in VALID_STATUSES:
+                parser.error("status must be one of: %s" % ','.join(VALID_STATUSES))
+
+            if opt.status == "RESOLVED" and not opt.resolution:
+                parser.error("RESOLVED should be used along with RESOLUTION.")
+                sys.exit(1)
+
+            modify["status"] = opt.status
+
+
+        try:
+            bugzilla.login()
+            bugzilla.modify(**modify)
+        except BugzillaError, e:
+            log.error(e.msg)
 
 if __name__ == '__main__':
     main()
