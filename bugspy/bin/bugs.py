@@ -11,15 +11,14 @@ import optparse
 from bugspy.bugzilla import Bugzilla
 from bugspy.config import Config
 from bugspy.bugparser import BugStruct
-from bugspy.error import BugzillaError
+from bugspy.error import BugzillaError, LoginError
 
 log = logging.getLogger("bugzilla")
 if "--debug" in sys.argv:
     log.setLevel(logging.DEBUG)
-elif "--verbose" in sys.argv:
-    log.setLevel(logging.INFO)
 else:
-    log.setLevel(logging.INFO)
+    #FIXME: Make it INFO on production
+    log.setLevel(logging.DEBUG)
 
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
@@ -40,7 +39,7 @@ username = %(user)s
 password = %(password)s
 """
 
-CONFIG_FILE = "%s/.bugspy.conf" % os.environ["HOME"]
+CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
 VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
 VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED"]
@@ -74,7 +73,10 @@ def setup_action_parser(action):
                 help="OPTIONAL: set status (%s)" % ','.join(VALID_STATUSES))
 
         p.add_option("-r", "--resolution",
-                help="OPTIONAL: set resolution (%s)" % ','.join(VALID_RESOLUTIONS))
+                help="optional: set resolution (%s)" % ','.join(VALID_RESOLUTIONS))
+
+        p.add_option("--security",
+                help="optional: mark this bug as security. --security 0 for public, 1 for private (Pardus Specific)")
 
     if action == "generate-config":
         p.add_option("-b", "--bugzilla",
@@ -86,6 +88,12 @@ def setup_action_parser(action):
 
         p.add_option("-p", "--password", action="store", type="string",
                 help="REQUIRED: Password")
+
+
+    if action == "info":
+        p.add_option("-b", "--bug",
+                metavar="BUG ID", dest="bug_id",
+                help="REQUIRED: bug id")
 
     return p
 
@@ -170,12 +178,27 @@ def main():
 
             modify["status"] = opt.status
 
+        if opt.security:
+            modify["security"] = opt.security
 
         try:
             bugzilla.login()
             bugzilla.modify(**modify)
         except BugzillaError, e:
             log.error(e.msg)
+    if action == "info":
+        try:
+            bugzilla.login()
+        except LoginError, e:
+            sys.exit(1)
+
+        # TODO: Print decent output
+        bug = bugzilla.get(opt.bug_id)
+        if bug.has("group"):
+            if bug.group == "security":
+                print "this is a security bug"
+            else:
+                print "not a security"
 
 if __name__ == '__main__':
     main()
