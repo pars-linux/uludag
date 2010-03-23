@@ -15,8 +15,9 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 from context import *
+
 if Pds.session == pds.Kde4:
-    from ui_mainwidget import Ui_MainWidget
+    from ui_mainwidget_kde4 import Ui_MainWidget
 else:
     from ui_mainwidget_x11 import Ui_MainWidget
 
@@ -36,7 +37,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
-        self.searchButton.setIcon(QtGui.QIcon(iconLoader.load("edit-find")))
+        self.searchButton.setIcon(KIcon("edit-find"))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
@@ -119,7 +120,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initializeGroupList(self):
         self.groupList.clear()
         self.groupList.setAlternatingRowColors(True)
-        self.groupList.setIconSize(QSize(iconLoader.SizeLarge, iconLoader.SizeLarge))
+        self.groupList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
         self.groupList.setState(self.state)
         self.groupList.addGroups(self.state.groups())
         self.groupFilter()
@@ -206,7 +207,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
                     )
         else:
-            #FIXME PT
+            #FIXME PDS
             pass
 
     def showSummary(self):

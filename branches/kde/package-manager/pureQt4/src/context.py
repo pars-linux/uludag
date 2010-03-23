@@ -17,5 +17,5 @@ Pds = pds.Pds('package-manager')
 #Pds.session = pds.DefaultDe
 print 'Current session is : %s %s' % (Pds.session.Name, Pds.session.Version)
 i18n = Pds.session.i18n
-iconLoader = pds.QIconLoader(Pds)
-KIcon = iconLoader.icon
+KIconLoader = pds.QIconLoader(Pds)
+KIcon = KIconLoader.icon

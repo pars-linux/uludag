@@ -20,7 +20,6 @@ from PyQt4.QtCore import *
 
 import dbus
 
-from mainwindow import MainWindow
 from localedata import setSystemLocale
 from pmlogging import logger
 import config
@@ -39,6 +38,7 @@ if __name__ == '__main__':
         from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
 
         from about import aboutData
+        from mainwindow_kde4 import MainWindow
 
         KCmdLineArgs.init(sys.argv, aboutData)
         options = KCmdLineOptions()
@@ -58,6 +58,8 @@ if __name__ == '__main__':
         sys.excepthook = handleException
         setSystemLocale()
     else:
+        from mainwindow import MainWindow
+
         app = QtGui.QApplication(sys.argv)
         manager = MainWindow()
         manager.show()

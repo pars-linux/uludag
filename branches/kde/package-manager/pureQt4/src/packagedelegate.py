@@ -30,7 +30,7 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
-        self.defaultIcon = QtGui.QIcon(iconLoader.load(DEFAULT_ICON, 32))
+        self.defaultIcon = QtGui.QIcon(KIconLoader.load(DEFAULT_ICON, 32))
         self.animatable = True
         self.font = Pds.settings('font','Sans').split(',')[0]
 
@@ -77,10 +77,10 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
-            icon = QtGui.QIcon(iconLoader.load(icon).scaled(QSize(32, 32), Qt.KeepAspectRatio))
+            icon = QtGui.QIcon(KIconLoader.load(icon).scaled(QSize(32, 32), Qt.KeepAspectRatio))
         else:
             icon = self.defaultIcon
-    
+
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         title = index.model().data(index, Qt.DisplayRole)
