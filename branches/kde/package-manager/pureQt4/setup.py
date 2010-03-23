@@ -19,8 +19,10 @@ import sys
 from distutils.core import setup
 from distutils.cmd import Command
 from distutils.command.build import build
+from distutils.command.clean import clean
 from distutils.command.install import install
 
+PROJECT = 'package-manager'
 __version = '2.1.0'
 
 def update_messages():
@@ -33,11 +35,11 @@ def update_messages():
     # Collect Python files
     os.system("cp -R src/* .tmp/")
     # Generate POT file
-    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % ('package-manager', 'package-manager'))
+    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (PROJECT, PROJECT))
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
-            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, 'package-manager'))
+            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, PROJECT))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
     os.system("rm -rf .tmp")
@@ -81,7 +83,7 @@ class Install(install):
         mime_dir = "/usr/share/mime/packages"
         locale_dir = "/usr/share/locale"
         apps_dir = "/usr/share/applications"
-        project_dir = os.path.join("/usr/share", 'package-manager')
+        project_dir = os.path.join("/usr/share", PROJECT)
         # Make directories
         print "Making directories..."
         makeDirs(mime_icons_dir)
@@ -94,16 +96,16 @@ class Install(install):
 
         # Install desktop files
         print "Installing desktop files..."
-        shutil.copy("data/package-manager.desktop", apps_dir)
-        shutil.copy("data/package-manager.png", icon_dir)
+        shutil.copy("data/%s.desktop" % PROJECT, apps_dir)
+        shutil.copy("data/%s.png" % PROJECT, icon_dir)
         shutil.copy("data/packagemanager-helper.desktop", apps_dir)
-        shutil.copy("data/package-manager.xml", mime_dir)
+        shutil.copy("data/%s.xml" % PROJECT, mime_dir)
 
         # Install icons
         for size in ["16x16", "32x32", "48x48", "64x64"]:
             mime_size_dir = "%s/%s/mimetypes/" % (mime_icons_dir, size)
             makeDirs(mime_size_dir)
-            shutil.copy("data/package-manager-%s.png" % size, "%s/application-x-pisi.png" % mime_size_dir)
+            shutil.copy("data/%s-%s.png" % (PROJECT, size), "%s/application-x-pisi.png" % mime_size_dir)
 
         # Install codes
         print "Installing codes..."
@@ -119,32 +121,59 @@ class Install(install):
                 os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             except OSError:
                 pass
-            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "package-manager.mo"))
+            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
         # Rename
         print "Renaming application.py..."
-        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "package-manager.py"))
+        shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
         # Modes
         print "Changing file modes..."
-        os.chmod(os.path.join(project_dir, "package-manager.py"), 0755)
+        os.chmod(os.path.join(project_dir, "%s.py" % PROJECT), 0755)
         os.chmod(os.path.join(project_dir, "pm-install.py"), 0755)
         # Symlink
         try:
             if self.root:
-                os.symlink(os.path.join(project_dir.replace(self.root, ""), "package-manager.py"), os.path.join(bin_dir, 'package-manager'))
+                os.symlink(os.path.join(project_dir.replace(self.root, ""), "%s.py" % PROJECT), os.path.join(bin_dir, PROJECT))
                 os.symlink(os.path.join(project_dir.replace(self.root, ""), "pm-install.py"), os.path.join(bin_dir, "pm-install"))
             else:
-                os.symlink(os.path.join(project_dir, "package-manager.py"), os.path.join(bin_dir, 'package-manager'))
+                os.symlink(os.path.join(project_dir, "%s.py" % PROJECT), os.path.join(bin_dir, PROJECT))
                 os.symlink(os.path.join(project_dir, "pm-install.py"), os.path.join(bin_dir, "pm-install"))
         except OSError, e:
             pass
 
+class Uninstall(Command):
+    user_options = []
+    def initialize_options(self):
+        pass
+    def finalize_options(self):
+        pass
+    def run(self):
+        print 'Uninstalling ...'
+        data_dir    = '/usr/share/%s' % PROJECT
+        if os.path.exists(data_dir):
+            print ' removing: ', data_dir
+            shutil.rmtree(data_dir)
+        executable = '/usr/bin/%s' % PROJECT
+        if os.path.exists(executable):
+            print ' removing: ', executable
+            os.unlink(executable)
+
+class Clean(clean):
+    def run(self):
+        print 'Cleaning ...'
+        os.system('find -name *.pyc|xargs rm -rf')
+        os.system('find -name *.mo|xargs rm -rf')
+        for dirs in ('build', 'dist'):
+            if os.path.exists(dirs):
+                print ' removing: ', dirs
+                shutil.rmtree(dirs)
+        clean.run(self)
 
 if "update_messages" in sys.argv:
     update_messages()
     sys.exit(0)
 
 setup(
-      name              = 'package-manager',
+      name              = PROJECT,
       version           = __version,
       description       = unicode('Package Manager'),
       license           = unicode('GPL'),
@@ -157,5 +186,7 @@ setup(
       cmdclass          = {
                             'build': Build,
                             'install': Install,
+                            'uninstall':Uninstall,
+                            'clean':Clean
                           }
 )
