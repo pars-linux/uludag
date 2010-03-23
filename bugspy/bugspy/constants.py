@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
+import urllib
 
 class Constants:
     """Class that defines constants, both static and dynamic.
@@ -22,12 +23,17 @@ class Constants:
     BUG_PROCESS_OK_STRING = "Changes submitted for"
 
     SHOW_BUG_URL = "show_bug.cgi"
+    ENTER_BUG_URL = "enter_bug.cgi"
     USER_AGENT = "BugSPY v%s" % VERSION
 
     COOKIE_FILE = os.path.expanduser("~/.bugspy.cookie")
 
     def __init__(self, bugzilla_url=None):
         self.bugzilla_url = bugzilla_url
+
+    def get_new_bug_url(self, product):
+        """Returns a quoted url for the product"""
+        return "%s/%s?product=%s" % (self.bugzilla_url, self.ENTER_BUG_URL, urllib.quote(product))
 
     def get_bug_url(self, bug_id=None, xml=True):
         """Returns full bug url page in xml format
