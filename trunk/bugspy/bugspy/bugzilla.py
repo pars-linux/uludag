@@ -41,7 +41,6 @@ class Bugzilla:
             password: Bugzilla password.
         """
 
-        log.debug("Bugzilla class initialised")
 
         # define constants class so that we do not mess up the code with lots of "self.bugzilla_url + "/show_bug.cgi?id=123456".
         self.constants = Constants(bugzilla_url)
@@ -55,8 +54,8 @@ class Bugzilla:
         # disable robots txt. Pardus.org.tr has it and we cannot open any page if it is enabled. Also, kim takar yalova kaymakamını? :)
         self.browser.set_handle_robots(False)
 
-        # we first need to open the page for login and other things to work
-        self.browser.open(bugzilla_url)
+
+        log.info("Bugzilla class initialised")
 
         # if username and password is supplied, it means we are expected to login.
         self.is_auth_needed = bool(username and password)
@@ -73,6 +72,15 @@ class Bugzilla:
             LoginError: User or Password is wrong.
         """
         if self.is_auth_needed:
+            if self.is_logged_in:
+                log.debug("Already logged in, or login is not needed. Continuing..")
+                return 0
+
+            # we first need to open the page for login and other things to work
+            log.info("Opening initial bugzilla webpage to login..")
+            self.browser.open(self.bugzilla_url)
+            log.debug("Web page is opened")
+
             log.info("Trying to login...")
 
             # Bugzilla page does not provide form name for it. Select it by offset
@@ -97,7 +105,7 @@ class Bugzilla:
     def _bug_open(self, bug_id, xml=True):
         return self.browser.open(self.constants.get_bug_url(bug_id, xml)).read()
 
-    def get_bug(self, bug_id):
+    def get(self, bug_id):
         """Gets information about bug
 
         You can get everything returned from the site. See BugParser.parse() for what you get and how to use the information. If there is an error, "error" attribute contains the error msg. You should check this before continuting the program.
@@ -124,7 +132,7 @@ class Bugzilla:
         return bugparser.parse(bug_data)
 
 
-    def modify_bug(self, bug_id, **kwargs):
+    def modify(self, **kwargs):
         # TODO: Implement Product/Component/Assignee/CC list
         """Modifies the bug.
 
@@ -142,17 +150,22 @@ class Bugzilla:
 
         args = BugStruct(**kwargs)
 
+        if not args.has("bug_id"):
+            raise BugzillaError("Bug id is needed to modify")
+
         if not self.is_logged_in:
             log.error("Login is needed")
             raise LoginError("You should first login to comment")
 
-        log.info("Opening bug #%s to modify" % bug_id)
+        log.info("Opening bug #%s to modify" % args.bug_id)
 
-        bug_data = self._bug_open(bug_id, xml=False)
+        bug_data = self._bug_open(args.bug_id, xml=False)
         # do we have permission to see this bug?
         if bug_data.find(self.constants.NO_PERMISSON_STRING) > -1:
             log.error("Don't have permission to modify the bug")
             raise BugzillaError("You don't have permission to see this bug")
+
+        log.info("Opened bug #%s page" % args.bug_id)
 
         log.debug("Selecting changeform")
         self.browser.select_form(name="changeform")
@@ -175,7 +188,7 @@ class Bugzilla:
 
         # is everything alright?
         if response.find(self.constants.BUG_PROCESS_OK_STRING) > -1:
-            log.info("Changes submitted")
+            log.info("Changes have been submitted")
             return True
         else:
             # something is wrong.
