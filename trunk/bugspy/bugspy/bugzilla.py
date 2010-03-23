@@ -7,6 +7,9 @@
 #
 
 from mechanize import Browser
+from mechanize import LWPCookieJar
+
+import os
 import logging
 import piksemel
 
@@ -30,6 +33,7 @@ class Bugzilla:
         username: Username to use. Ie: eren@pardus.org.tr
         password: Bugzilla password.
         browser: Browser object from mechanize library
+        cookiejar: Cookiejar class that mechanize uses
     """
 
     def __init__(self, bugzilla_url, username=None, password=None):
@@ -40,7 +44,7 @@ class Bugzilla:
             username: Username to use. Ie. eren@pardus.org.tr
             password: Bugzilla password.
         """
-
+        log.debug("Initialising Bugzilla class")
 
         # define constants class so that we do not mess up the code with lots of "self.bugzilla_url + "/show_bug.cgi?id=123456".
         self.constants = Constants(bugzilla_url)
@@ -54,13 +58,43 @@ class Bugzilla:
         # disable robots txt. Pardus.org.tr has it and we cannot open any page if it is enabled. Also, kim takar yalova kaymakamını? :)
         self.browser.set_handle_robots(False)
 
+        # handle cookies in a file. this will allow us to login once.
+        self.cookiejar = LWPCookieJar(self.constants.COOKIE_FILE)
+        self.browser.set_cookiejar(self.cookiejar)
+        if self._has_cookie_file():
+            log.debug("Loading cookies..")
+            self._load_cookies()
 
-        log.info("Bugzilla class initialised")
 
         # if username and password is supplied, it means we are expected to login.
         self.is_auth_needed = bool(username and password)
 
         self.is_logged_in = False
+
+        self._check_cookies()
+        log.debug("Bugzilla class initialised")
+
+    def _save_cookies(self):
+        log.debug("Saving cookies...")
+        self.cookiejar.save()
+
+    def _delete_cookie_file(self):
+        log.debug("Deleting cookiefile..")
+        os.remove(self.constants.COOKIE_FILE)
+
+    def _has_cookie_file(self):
+        # FIXME: If cookiefile is 4 hours old. Delete it and return False
+        return os.path.exists(self.constants.COOKIE_FILE)
+
+    def _load_cookies(self):
+        self.cookiejar.load()
+
+    def _check_cookies(self):
+        if self._has_cookie_file():
+            log.debug("Cookile file is present, assuming we are logged in")
+            self.is_logged_in = True
+        else:
+            self.is_logged_in = False
 
     def login(self):
         """Logins to bugzilla
@@ -95,10 +129,12 @@ class Bugzilla:
 
             if response.find(self.constants.LOGIN_FAILED_STRING) > -1:
                 # DAMN! We found the string and failed to login..
-                logging.error("Failed to login, user or password is invalid")
+                log.error("Failed to login, user or password is invalid")
                 raise LoginError("User or Password is invalid")
             else:
                 log.info("Successfully logged in")
+                # save cookies for future use
+                self._save_cookies()
                 self.is_logged_in = True
                 return True
 
@@ -170,6 +206,9 @@ class Bugzilla:
         log.debug("Selecting changeform")
         self.browser.select_form(name="changeform")
 
+        # for x in self.browser.forms():
+        #     print x
+
         if args.has("status"):
             log.debug("Setting bug_status..")
             self.browser["bug_status"] = [args.status]
@@ -181,6 +220,22 @@ class Bugzilla:
         if args.has("comment"):
             log.debug("Setting comment..")
             self.browser["comment"] = args.comment
+
+        if args.has("security"):
+            # Pardus has specific setting for security vulnerabilities that will not be public. The checkbox name is "bit-10"
+            log.debug("Marking this as security")
+            if args.security == "1":
+                # if the bug has bit-10 field set
+                if len(self.browser["bit-10"]) != 0:
+                    log.warning("Bug is already in security group, not setting security tag")
+                else:
+                    self.browser["bit-10"] = ["1"]
+            # marking as non-security
+            else:
+                if len(self.browser["bit-10"]) == 0:
+                    log.warning("Bug is already public, not setting security tag..")
+                else:
+                    self.browser["bit-10"] = []
 
         log.info("Submitting the changes")
         response = self.browser.submit()

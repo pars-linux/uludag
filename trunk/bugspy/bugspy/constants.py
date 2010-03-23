@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import os
+
 class Constants:
     """Class that defines constants, both static and dynamic.
 
@@ -21,6 +23,8 @@ class Constants:
 
     SHOW_BUG_URL = "show_bug.cgi"
     USER_AGENT = "BugSPY v%s" % VERSION
+
+    COOKIE_FILE = os.path.expanduser("~/.bugspy.cookie")
 
     def __init__(self, bugzilla_url=None):
         self.bugzilla_url = bugzilla_url
