@@ -105,7 +105,10 @@ def main():
     (opt, args) = action_parser.parse_args(args)
     opt = BugStruct(**opt.__dict__)
 
-    # setup bugzilla class
+    if not os.path.exists(CONFIG_FILE) and action != "generate-config":
+        log.error("Configuation file is not found, please generate it first")
+        sys.exit(1)
+
     c = Config()
     bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
 
@@ -125,8 +128,6 @@ def main():
 
         log.info("Writing configuration file")
         open(CONFIG_FILE, "w+").write(config_data)
-        log.info("Configuration file is written")
-
         log.info("Configuration file is written. You can edit ~/.bugspy.conf for later use")
 
     if action == "modify":
