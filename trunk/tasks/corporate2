@@ -138,7 +138,9 @@
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/65)
     * kdebase'deki clock yamasının yeni polkite gecirilmesi (-)
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (-)
+    * bölünmüş kde paketlerinin review edilmesi (-)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
+    * pcscd/openct sorunu (/25)
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (/50) <<20/02/2010>>
