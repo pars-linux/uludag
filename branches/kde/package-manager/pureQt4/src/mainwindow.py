@@ -83,11 +83,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.toolBar.setToolButtonStyle(QtCore.Qt.ToolButtonTextBesideIcon)
         self.addToolBar(QtCore.Qt.TopToolBarArea, self.toolBar)
 
-        #KStandardAction.quit(KApplication.kApplication().quit, self.actionCollection())
-        #KStandardAction.preferences(self.settingsDialog.show, self.actionCollection())
-
         self.initializeOperationActions()
-        #self.setupGUI(KXmlGuiWindow.Default, "data/packagemanagerui.rc")
 
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
