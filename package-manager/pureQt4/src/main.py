@@ -46,6 +46,10 @@ if __name__ == '__main__':
         KCmdLineArgs.addCmdLineOptions(options)
 
         app = KUniqueApplication(True, True)
+
+        # It should set just before MainWindow call
+        setSystemLocale()
+
         manager = MainWindow()
         args = KCmdLineArgs.parsedArgs()
 
@@ -56,7 +60,6 @@ if __name__ == '__main__':
                 manager.show()
 
         sys.excepthook = handleException
-        setSystemLocale()
     else:
         from mainwindow import MainWindow
 

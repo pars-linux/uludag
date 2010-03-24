@@ -11,7 +11,7 @@
 # Please read the COPYING file
 
 import locale
-from os import getenv
+from os import getenv, path
 import context as ctx
 
 locales = {
@@ -28,13 +28,26 @@ locales = {
 def getKDELocale():
     return ctx.Pds.settings('Locale/Country','en_US')
 
+def getAppLocale():
+    cf = path.join(ctx.Pds.config_path, 'share/config/package-managerrc')
+    if path.exists(cf):
+        cc = ctx.Pds.parse(cf, force=True)
+        appLocale = cc.value('Locale/Language').toString()
+        if appLocale:
+            appLocale = str(appLocale).split(':')[0]
+            if locales.has_key(appLocale):
+                return appLocale
+    return None
+
 # package-manager uses KDE locale info, pisi.api uses system locale info. We need
 # to map KDE locale info to system locale info to make dynamic KDE system language
 # changes from Tasma visible to package-manager.
 def setSystemLocale():
     kdeLocale = getKDELocale()
-
-    if locales.has_key(kdeLocale):
+    appLocale = getAppLocale()
+    if appLocale:
+        systemlocale = locales[appLocale]
+    elif locales.has_key(kdeLocale):
         systemlocale = locales[kdeLocale]
     else:
         systemlocale = getenv('LANG')
