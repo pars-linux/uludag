@@ -59,7 +59,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
-        self.connect(self.selectAll, SIGNAL("leftClickedUrl(const QString&)"), self.toggleSelectAll)
+        self.connect(self.selectAll, SIGNAL("toggled(bool)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
@@ -77,6 +77,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def initialize(self):
         waitCursor()
+        self._last_packages = None
         self.state.reset()
         self.initializePackageList()
         self.initializeGroupList()
@@ -234,21 +235,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def setSelectAll(self, packages=None):
         if packages:
             self.packageList.reverseSelection(packages)
-        self.selectAll.setText(i18n("Select all packages in this group"))
-        #self.selectAll.setUrl("All")
 
     def setReverseAll(self, packages=None):
         if packages:
             self.packageList.selectAll(packages)
-        self.selectAll.setText(i18n("Reverse package selections"))
-        #self.selectAll.setUrl("Reverse")
 
-    def toggleSelectAll(self, text):
-        packages = self.packageList.model().getFilteredPackages()
-        if text == "All":
-            self.setReverseAll(packages)
+    def toggleSelectAll(self, toggled):
+        if toggled and self._last_packages:
+            self.setReverseAll(self._last_packages)
         else:
-            self.setSelectAll(packages)
+            self._last_packages = self.packageList.model().getFilteredPackages()
+            self.setSelectAll(self._last_packages)
         self.statusChanged()
 
     def showBasket(self):
