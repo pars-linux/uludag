@@ -10,6 +10,7 @@ from mechanize import Browser
 from mechanize import LWPCookieJar
 
 import os
+import re
 import logging
 import piksemel
 
@@ -105,6 +106,8 @@ class Bugzilla:
         Raises:
             LoginError: User or Password is wrong.
         """
+        log = logging.getLogger("bugzilla.LOGIN")
+
         if self.is_auth_needed:
             if self.is_logged_in:
                 log.debug("Already logged in, or login is not needed. Continuing..")
@@ -160,6 +163,7 @@ class Bugzilla:
         Returns:
             BugStruct containins bug information.
         """
+        log = logging.getLogger("bugzilla.GET")
 
         log.info("Getting bug %s" % bug_id)
         bug_data = self._bug_open(bug_id)
@@ -169,20 +173,24 @@ class Bugzilla:
 
 
     def modify(self, **kwargs):
-        # TODO: Implement Product/Component/Assignee/CC list
+        # TODO: Implement Product/Component/CC list
         """Modifies the bug.
 
         All arguments can be supplied. This function modifies the form on the page and submits just like an ordinary browser does.
 
         Args:
+            bug_id: Bug id to edit
             comment: Comment to write
             status: Status (NEW, ASSIGNED, RESOLVED)
             resolution: (FIXED, INVALID, WONTFIX, LATER, REMIND, DUPLICATE)
+            security: Whether it is security or not
+            assigned_to: E-mail address to assign a bug
 
         Raises:
             BugzillaError: You should first login to modify the bug
             ModifyError: Changes are not applied
         """
+        log = logging.getLogger("bugzilla.MODIFY")
 
         args = BugStruct(**kwargs)
 
@@ -237,6 +245,10 @@ class Bugzilla:
                 else:
                     self.browser["bit-10"] = []
 
+        if args.has("assigned_to"):
+            log.debug("Setting assign_to: %s" % args.assigned_to)
+            self.browser["assigned_to"] = args.assigned_to
+
         log.info("Submitting the changes")
         response = self.browser.submit()
         response = response.read()
@@ -252,13 +264,76 @@ class Bugzilla:
             raise ModifyError("Unexpected return value", response)
 
     def new(self, **kwargs):
-        """Opens new bug"""
+        """Opens new bug
+
+        It automatically generates bug_url from product as bugzilla wants product name in GET response
+
+        Args:
+            product: Product name in the site
+            component: Component name in bugzilla page
+            security: Whether it is security vulnerability
+            url: External url
+            assigned_to: Email address to assign
+            alias: Bug alias (NOT IMPLEMENTED)
+
+        Returns:
+            Integer indicating the bugzilla id for new bug
+
+        Raises:
+            BugzillaError: Required arguments are not provided
+
+        """
+        log = logging.getLogger("bugzilla.NEW")
 
         args = BugStruct(**kwargs)
 
-        print self.constants.get_new_bug_url("Güvenlik / Security")
+        # control required vars
+        if not (args.has("component") and args.has("product") and args.has("title") and args.has("description")):
+            raise BugzillaError("Missing argument. Component, Product, Title and Description are needed")
 
-        return 0
+        bug_url = self.constants.get_new_bug_url(args.product)
+
+        log.debug("Opening new bug page")
+        self.browser.open(bug_url)
+        log.debug("Selecting form name: Create")
+        self.browser.select_form(name="Create")
+
+        log.debug("Adding component, title and comment")
+        self.browser["component"] = [args.component]
+        self.browser["short_desc"] = args.title
+        self.browser["comment"] = args.description
+
+        if args.has("url"):
+            log.debug("Adding URL")
+            self.browser["bug_file_loc"] = args.url
+
+        if args.has("security"):
+            log.debug("Setting security tag")
+            self.browser["bit-10"] = ["1"]
+
+        if args.has("assigned_to"):
+            log.debug("Assigning bug to: %s" % args.assigned_to)
+            self.browser["assigned_to"] = args.assigned_to
+
+        # FIXME: Our bugzilla page doesn't show alias field. 
+        # FIXME: Uncomment it when it is done
+        # if args.has("alias"):
+        #     self.browser["alias"] = args.alias
+
+        response = self.browser.submit()
+        response = response.read()
+
+        log.info("Bug submitted")
+
+        # get bug id.
+        re_compile = re.compile("Bug (.*?) Submitted")
+        bug_id = re.findall(re_compile, response)
+
+        if len(bug_id) != 0:
+            return bug_id[0]
+        else:
+            log.error("Wohoops. Unexpected data returned after submitting.")
+            return False
 
     # FIXME: remove it on production
     def write_file(self, file, data):

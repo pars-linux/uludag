@@ -23,7 +23,7 @@ else:
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 #ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s"))
-ch.setFormatter(logging.Formatter("%(levelname)s: %(message)s"))
+ch.setFormatter(logging.Formatter("%(levelname)s: %(name)s: %(message)s"))
 
 log.addHandler(ch)
 
@@ -88,6 +88,12 @@ def setup_action_parser(action):
         p.add_option("-r", "--resolution",
                 help="optional: set resolution (%s)" % ','.join(VALID_RESOLUTIONS))
 
+        p.add_option("-a", "--assign", dest="assigned_to",
+                help="optional: assign bug using e-mail address")
+
+        p.add_option("--close",
+                help="optional: alias for -s RESOLVED -r <resolution>. Resolution should be one of: %s" % ','.join(VALID_RESOLUTIONS))
+
         p.add_option("--security",
                 help="optional: mark this bug as security. --security 0 for public, 1 for private (Pardus Specific)")
 
@@ -118,9 +124,26 @@ def setup_action_parser(action):
         p.add_option("-c", "--component",
                 help="REQUIRED: component. Only work for security bugs. You have to use interactive bug creating (kernel, general)")
 
+        p.add_option("-t", "--title",
+                help="REQUIRED: bug title")
+
+        p.add_option("-d", "--description",
+                help="REQUIRED: bug description (first comment)")
+
+        p.add_option("-a", "--assign", dest="assigned_to",
+                help="optional: bug assignee")
+
+        p.add_option("-u", "--url",
+                help="optional: bug external URL")
+
+        p.add_option("--alias",
+                help="optional: bug alias")
+
     return p
 
 def main():
+    log = logging.getLogger("bugzilla.BIN")
+
     parser = setup_parser()
     (global_opts, args) = parser.parse_args()
 
@@ -135,6 +158,35 @@ def main():
     action_parser = setup_action_parser(action)
     (opt, args) = action_parser.parse_args(args)
     opt = BugStruct(**opt.__dict__)
+
+    # Helper functions
+    def check_valid_resolutions():
+        """Checks if valid resolution is given for --resolution and --close"""
+
+        # make it upper-case for easy-of-use
+        if opt.resolution:
+            opt.resolution = opt.resolution.upper()
+            if not opt.resolution in VALID_RESOLUTIONS:
+                parser.error("resolution must be one of: %s" % ','.join(VALID_RESOLUTIONS))
+                sys.exit(1)
+        elif opt.close:
+            opt.close = opt.close.upper()
+            # --close is an alias for -s RESOLVED -r FIXED.
+            # When --close is used, only resolution is appended. So control it.
+            #
+            # bugspy.py modify -b 12346 --close invalid
+            #
+            if not opt.close in VALID_RESOLUTIONS:
+                parser.error("resolution must be one of: %s" % ','.join(VALID_RESOLUTIONS))
+                sys.exit(1)
+
+    def check_valid_statuses():
+        # make it upper-case for easy-of-use
+        opt.status = opt.status.upper()
+
+        if not opt.status in VALID_STATUSES:
+            parser.error("status must be one of: %s" % ','.join(VALID_STATUSES))
+
 
     if not os.path.exists(CONFIG_FILE) and action != "generate-config":
         log.error("Configuation file is not found, please generate it first")
@@ -172,12 +224,16 @@ def main():
         if opt.comment:
             modify["comment"] = opt.comment
 
-        if opt.resolution:
-            # make it upper-case for easy-of-use
-            opt.resolution = opt.resolution.upper()
-            if not opt.resolution in VALID_RESOLUTIONS:
-                parser.error("resolution must be one of: %s" % ','.join(VALID_RESOLUTIONS))
+        if opt.status:
+            check_valid_statuses()
+            if opt.status == "RESOLVED" and not opt.resolution:
+                parser.error("RESOLVED should be used along with RESOLUTION.")
                 sys.exit(1)
+
+            modify["status"] = opt.status
+
+        if opt.resolution:
+            check_valid_resolutions()
 
             # we cannot set resolution on NEW bugs
             bugzilla.login()
@@ -188,18 +244,13 @@ def main():
 
             modify["resolution"] = opt.resolution
 
-        if opt.status:
-            # make it upper-case for easy-of-use
-            opt.status = opt.status.upper()
+        if opt.close and not opt.resolution:
+            check_valid_resolutions()
+            modify["status"] = "RESOLVED"
+            modify["resolution"] = opt.close
 
-            if not opt.status in VALID_STATUSES:
-                parser.error("status must be one of: %s" % ','.join(VALID_STATUSES))
-
-            if opt.status == "RESOLVED" and not opt.resolution:
-                parser.error("RESOLVED should be used along with RESOLUTION.")
-                sys.exit(1)
-
-            modify["status"] = opt.status
+        if opt.assigned_to:
+            modify["assigned_to"] = opt.assigned_to
 
         if opt.security:
             modify["security"] = opt.security
@@ -220,19 +271,49 @@ def main():
 
         print bug
 
+
     if action == "new":
         # TODO: Only security related vulnerabilities can be entered with command line.
         # Implement interactive bug creation stuff.
 
-        if not (opt.product and opt.component):
-            parser.error("Missing argument! See --help")
+        if not (opt.product and opt.component and opt.description and opt.title):
+            parser.error("Missing argument! You should provide product, component, title and description. See --help")
             sys.exit(1)
 
         if not opt.product in PRODUCTS.keys():
             parser.error("product must be one of: %s" % ', '.join(PRODUCTS.keys()))
 
+        new = {}
+
         if opt.product == "security":
-            pass
+            new["product"] = PRODUCTS[opt.product]
+            new["security"] = 1
+
+            # set component manually. Normally, we should list available compoennts
+            # FIXME: this is really a hack..
+            COMPONENT_MAP = {"kernel": "cekirdek / kernel",
+                             "general": "guvenlik/security"}
+
+            if not opt.component in COMPONENT_MAP.keys():
+                parser.error("Invalid component")
+                sys.exit(1)
+
+            new["component"] = COMPONENT_MAP.get(opt.component)
+            new["title"] = opt.title
+            new["description"] = opt.description
+
+            if opt.url:
+                new["url"] = opt.url
+
+            if opt.alias:
+                new["alias"] = opt.alias
+
+            if opt.assigned_to:
+                new["assigned_to"] = opt.assigned_to
+
+            bug_id = bugzilla.new(**new)
+            print "Bug submitted: %s (%s)" % (bug_id, opt.title)
+
         else:
             log.error("You can only create security related bugs for now")
 
