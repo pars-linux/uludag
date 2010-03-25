@@ -39,6 +39,16 @@ username = %(user)s
 password = %(password)s
 """
 
+INFO_TEMPLATE = """
+Summary:    %(short_desc)s (%(bug_id)s) - %(creation_ts)s
+Product:    %(product)s
+Version:    %(version)s
+Creator:    %(reporter_name)s <%(reporter_email)s>
+Status:     %(bug_status)s
+Resolution: %(resolution)s
+
+%(description)s"""
+
 CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
 VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
@@ -266,10 +276,18 @@ def main():
         except LoginError, e:
             sys.exit(1)
 
-        # TODO: Print decent output
         bug = bugzilla.get(opt.bug_id)
 
-        print bug
+        print INFO_TEMPLATE % {"short_desc": bug.short_desc,
+                               "bug_id": bug.bug_id,
+                               "creation_ts": bug.creation_ts,
+                               "product": bug.product,
+                               "version": bug.version,
+                               "reporter_name": bug.reporter.name,
+                               "reporter_email": bug.reporter.email,
+                               "bug_status": bug.bug_status,
+                               "resolution": "",
+                               "description": bug.comments[0].text}
 
 
     if action == "new":
