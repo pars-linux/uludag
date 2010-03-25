@@ -102,6 +102,26 @@ Servisin başlatılmış olduğunu aşağıdaki komutu çalıştırarak emin olu
  libtool-ltdl 
  memtest 
 \end{verbatim}
+
+\item cpio paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ su -
+ find . -depth -print | cpio -pvd /mnt/backup
+\end{verbatim}
+
+
+\item tar paketi kurulumu sonrası:
+
+Aşağıda bulunan tar komutlarının sorunsuz bir şekilde sıkıştırma ve açma işlemlerini yaptığını gözlemleyin.
+\begin{verbatim}
+ touch test-tar
+ tar -cvf test-tar.tar.gz test-tar 
+ tar -xvf test-tar.tar.gz
+\end{verbatim}
+
+
 \item sysklogd paketi kurulumu sonrası:
 Servis yöneticisi ile bu servisin çalışmakta olduğunu gözlemleyin.
 
@@ -452,10 +472,9 @@ Resimlerin üzerine sağ tıklayarak gwenview, kolourPaint, gimp, showfoto ile a
 \item curl paketi kurulumu sonrası:
 
 \begin{itemize}
-\item http://pardus.org.tr adresinin içeriğinin hata alınmadan çıktı olarak alındığını gözlemleyin.
+\item http://packages.pardus.org.tr/search/pardus-2009/libkate/ içeriğinin sorunsuz bir şekilde listelendiğini gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test_curl.php
-# php test_curl.php
+# curl http://packages.pardus.org.tr/search/pardus-2009/libkate/
 \end{verbatim}
 
 \item network-tr.pdf sylpheed testini geçekleştirin.
