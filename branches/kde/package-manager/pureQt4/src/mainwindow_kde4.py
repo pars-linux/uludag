@@ -51,6 +51,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.tray = Tray(self)
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
+        self.tray.showPopup()
 
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
