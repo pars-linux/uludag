@@ -37,6 +37,11 @@ class Tray(QtGui.QSystemTrayIcon):
         self.initializePopup()
 
         self.settingsChanged()
+        self.activated.connect(self.__activated)
+
+    def __activated(self, reason):
+        if not reason == QtGui.QSystemTrayIcon.Context:
+            self.appWindow.show()
 
     def initializeTimer(self):
         self.timer = QTimer()
