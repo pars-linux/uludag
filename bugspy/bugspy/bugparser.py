@@ -63,9 +63,9 @@ class BugStruct(object):
             output = ""
 
             for i in comments:
-                output = wrap("%s <%s> %s" % (i.name, i.email, i.time))
+                output += wrap("%s <%s> %s" % (i.name, i.email, i.time))
                 output += "\n"
-                output += i.text + "\n"
+                output += i.text + "\n\n"
 
             return output
 
