@@ -270,7 +270,7 @@ def main():
             sys.exit(1)
 
         bug = bugzilla.get(opt.bug_id)
-        bug.print_bug_info()
+        bug.output()
 
     if action == "new":
         # TODO: Only security related vulnerabilities can be entered with command line.

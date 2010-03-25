@@ -40,7 +40,7 @@ class BugStruct(object):
         else:
             return False
 
-    def print_bug_info(self):
+    def output(self):
         """Prints a decent output on a bug"""
         # Helper methods for printing bug
         def wrap(data):
