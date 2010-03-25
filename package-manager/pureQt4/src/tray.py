@@ -13,9 +13,6 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-from PyKDE4.kdeui import *
-from PyKDE4.kdecore import *
-
 from pmutils import *
 from context import *
 
@@ -41,7 +38,10 @@ class Tray(QtGui.QSystemTrayIcon):
 
     def __activated(self, reason):
         if not reason == QtGui.QSystemTrayIcon.Context:
-            self.appWindow.show()
+            if self.appWindow.isVisible():
+                self.appWindow.hide()
+            else:
+                self.appWindow.show()
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -81,6 +81,8 @@ class Tray(QtGui.QSystemTrayIcon):
 
     def showPopup(self):
         upgrades = self.iface.getUpdates()
+        if len(upgrades) == 0:
+            return
         self.slotSetUnread(len(upgrades))
 
         if config.PMConfig().installUpdatesAutomatically():
@@ -88,23 +90,25 @@ class Tray(QtGui.QSystemTrayIcon):
                 self.iface.upgradePackages(upgrades)
             return
 
-        newUpgrades = set(upgrades) - set(self.lastUpgrades)
-        self.lastUpgrades = upgrades
-        if not len(upgrades) or not newUpgrades:
-            return
+        #newUpgrades = set(upgrades) - set(self.lastUpgrades)
+        #self.lastUpgrades = upgrades
+        #if not len(upgrades) or not newUpgrades:
+            #return
 
-        if Pds.session == pds.Kde4:
-            if self.notification:
-                self.notification.close()
-            self.notification = KNotification("Updates")
-            self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
-            self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
-            self.notification.setFlags(KNotification.Persistent)
-            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
-            self.notification.sendEvent()
-        else:
-            print 'There is updates !!'
+        #if Pds.session == pds.Kde4:
+            #from PyKDE4.kdeui import KNotification
+            #from PyKDE4.kdecore import KComponentData
+            #if self.notification:
+                #self.notification.close()
+            #self.notification = KNotification("Updates")
+            #self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
+            #self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
+            #self.notification.setFlags(KNotification.Persistent)
+            #self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+            #self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
+            #self.notification.sendEvent()
+        #else:
+        self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", len(upgrades)))
 
     def updateInterval(self, min):
         # minutes to milliseconds conversion
@@ -147,7 +151,7 @@ class Tray(QtGui.QSystemTrayIcon):
                 return
 
             countStr = "%s" % unread
-            f = KGlobalSettings.generalFont()
+            f = QtGui.QFont(Pds.settings('font','Sans'))
             f.setBold(True)
 
             pointSize = f.pointSizeF()
@@ -161,7 +165,7 @@ class Tray(QtGui.QSystemTrayIcon):
             overlayImg = QtGui.QPixmap(self.defaultIcon.pixmap(22))
             p = QtGui.QPainter(overlayImg)
             p.setFont(f)
-            scheme = KColorScheme(QtGui.QPalette.Active, KColorScheme.View)
+            scheme = QtGui.QBrush() #KColorScheme(QtGui.QPalette.Active, KColorScheme.View)
 
             fm = QtGui.QFontMetrics(f)
             boundingRect = QRect(fm.tightBoundingRect(countStr))
@@ -170,12 +174,12 @@ class Tray(QtGui.QSystemTrayIcon):
             boundingRect.moveTo((oldWidth - boundingRect.width()) / 2,
                                 ((oldWidth - boundingRect.height()) / 2) - 1)
             p.setOpacity(0.7)
-            p.setBrush(scheme.background(KColorScheme.LinkBackground))
-            p.setPen(scheme.background(KColorScheme.LinkBackground).color())
-            p.drawRoundedRect(boundingRect, 2.0, 2.0);
+            p.setBrush(scheme)
+            p.setPen(QtGui.QColor('blue'))
+            #p.drawRoundedRect(boundingRect, 2.0, 2.0);
 
             p.setBrush(Qt.NoBrush)
-            p.setPen(scheme.foreground(KColorScheme.LinkText).color())
+            p.setPen(QtGui.QColor('blue'))
             p.setOpacity(1.0)
             p.drawText(overlayImg.rect(), Qt.AlignCenter, countStr)
 
