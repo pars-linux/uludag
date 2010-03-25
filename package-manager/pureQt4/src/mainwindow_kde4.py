@@ -49,7 +49,6 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def initializeTray(self):
         self.tray = Tray(self)
-        self.tray.activated.connect(self.show)
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 
