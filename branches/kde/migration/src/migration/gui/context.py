@@ -12,6 +12,13 @@
 #
 
 
+import pds
+
+PDS = pds.Pds('migration')
+i18n = PDS.session.i18n
+IconLoader = pds.QIconLoader(PDS)
+KIcon = IconLoader.icon
+
 OK, WARNING, ERROR = range(3)
 
 user = None

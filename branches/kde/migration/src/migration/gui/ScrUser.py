@@ -13,8 +13,8 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon, KMessageBox
+#from PyKDE4.kdecore import i18n
+#from PyKDE4.kdeui import KIcon, KMessageBox
 
 from migration.gui.ui.usersItemWidget import Ui_usersItemWidget
 from migration.gui.ui.usersWidget import Ui_usersWidget
@@ -22,7 +22,8 @@ from migration.gui.ScreenWidget import ScreenWidget
 
 from migration.utils import partition
 from migration.utils import info
-import migration.gui.context as ctx
+
+from migration.gui.context import *
 
 iconXP, iconVista = range(2)
 
@@ -43,7 +44,8 @@ class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
         self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
 
     def slotUserCheck(self):
-        ctx.user = self.getData()
+        user = self.getData()
+        print "DENEME:" , "user"
 
     def setData(self, data):
         self.data = data
@@ -96,14 +98,15 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def shown(self):
         if not self.users :
-            KMessageBox.error(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
+            #KMessageBox.error(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
+            QMessageBox(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
 
     def execute(self):
-        if ctx.user:
-            part, ostype, username, userdir = ctx.user
+        if context.user:
+            part, ostype, username, userdir = context.user
             sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
-            ctx.sources = info.userInfo(sources)
-            ctx.destinations = info.localInfo()
+            context.sources = info.userInfo(sources)
+            context.destinations = info.localInfo()
             return (True, None)
         else:
             return (False, i18n("There isn't any selected user on User Selection Window!"))

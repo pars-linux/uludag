@@ -14,12 +14,13 @@
 import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import ki18n ,i18n
+#from PyKDE4.kdecore import i18n ,i18n
 
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.summaryWidget import Ui_summaryWidget
-from migration.gui import context as ctx
+
+from migration.gui.context import *
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Summary")
@@ -39,24 +40,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
         content.append("""<html><body><ul>""")
 
         # Selected User
-        content.append(subject % ki18n("User Settings").toString())
-        content.append(item % ki18n("Selected User: <b>%s</b>").toString() % ctx.user[2])
+        content.append(subject % i18n("User Settings"))
+        content.append(item % i18n("Selected User: <b>%s</b>") % user[2])
         content.append(end)
 
         # Selected Options
-        content.append(subject % ki18n("Options Settings").toString())
-        for key,value in ctx.options.items():
-            content.append(item % ki18n("Option %1 : <b>%2</b>").toString() % (key, value))
+        content.append(subject % i18n("Options Settings"))
+        for key,value in context.options.items():
+            content.append(item % i18n("Option %1 : <b>%2</b>") % (key, value))
         content.append(end)
 
-        if ctx.filesOptions:
+        if context.filesOptions:
             #Selected Files Destinations
-            content.append(subject % ki18n("Destination Settings").toString())
-            if ctx.filesOptions.has_key("links"):
-                for link in ctx.filesOptions["links"]:
-                    content.append(item % ki18n("Linked Destination to: <b> %s </b>").toString() % link)
-            elif ctx.filesOptions.has_key("copy destination"):
-                content.append(item % ki18n("Copied Destination to: <b> %s </b>").toString() % ctx.filesOptions["copy destination"])
+            content.append(subject % i18n("Destination Settings"))
+            if context.filesOptions.has_key("links"):
+                for link in context.filesOptions["links"]:
+                    content.append(item % i18n("Linked Destination to: <b> %s </b>") % link)
+            elif context.filesOptions.has_key("copy destination"):
+                content.append(item % i18n("Copied Destination to: <b> %s </b>") % filesOptions["copy destination"])
 
             content.append(end)
 

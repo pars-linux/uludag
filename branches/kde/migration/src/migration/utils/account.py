@@ -15,7 +15,7 @@
 import os
 import tempfile
 import xml.dom.minidom
-from PyKDE4.kdecore import KConfig, KConfigGroup, i18n
+#from PyKDE4.kdecore import KConfig, KConfigGroup, i18n
 from PyQt4.QtCore import QString
 from dbus import *
 

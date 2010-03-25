@@ -12,14 +12,18 @@
 #
 import os
 from PyQt4 import QtGui
+from PyQt4.QtGui import QMessageBox
+
 from PyQt4.QtCore import *
-from PyKDE4.kdecore import i18n
-from PyKDE4.kdeui import KIcon, KMessageBox
+#from PyKDE4.kdecore import i18n
+#from PyKDE4.kdeui import KIcon, KMessageBox
 
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.userFilesWidget import Ui_userFilesWidget
-from migration.gui import context as ctx
+
+from migration.gui.context import *
+
 from migration.utils import files
 
 class DirectoryViewItem(QtGui.QTreeWidgetItem):
@@ -221,14 +225,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         return options
 
     def shown(self):
-        if ctx.sources:
-            self.creator(ctx.sources)
+        if sources:
+            self.creator(context.sources)
         else:
-            KMessageBox.error(self, "There isn't any Windows User Sources to migrate! Check your Windows Partition...")
+            QMessageBox.critical(self,"Warning", "There isn't any Windows User Sources to migrate! Check your Windows Partition...")
 
     def execute(self):
         if self.getOptions():
-            ctx.filesOptions = self.getOptions()
+            context.filesOptions = self.getOptions()
             return (True, None)
         else:
             return (False, None)
