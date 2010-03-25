@@ -44,7 +44,7 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    vermek için hatanın düzeltilmesini beklemelidir. Şartlı ACK verilmemelidir.
 
    Örneğin: YANLIŞ: Dosya izinlerini değiştirdikten sonra ACK.
-            DOĞRU : Dosya dizinlerinin düzenlenmesi gerek.
+            DOĞRU : Dosya izinlerinin düzenlenmesi gerek.
 
    Paketçi, ACK için ön koşul olan kriteri yerine getirdikten sonra inceleme 
    yapan kişi değişikliğin doğruluğunu kontrol eder ve yorum olarak "ACK" yazar.
