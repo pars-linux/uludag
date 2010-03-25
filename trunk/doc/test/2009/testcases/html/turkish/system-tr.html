@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea system-tr.tex -->
+<!--HEVEA command line is: hevea turkish/system-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">System Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -104,6 +104,13 @@ Aşağıda bulunan paketler kurulum testine tabidir.
  dbus-glib 
  libtool-ltdl 
  memtest 
+</PRE></LI><LI CLASS="li-enumerate">cpio paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> su -
+ find . -depth -print | cpio -pvd /mnt/backup
+</PRE></LI><LI CLASS="li-enumerate">tar paketi kurulumu sonrası:<P>Aşağıda bulunan tar komutlarının sorunsuz bir şekilde sıkıştırma ve açma işlemlerini yaptığını gözlemleyin.
+</P><PRE CLASS="verbatim"> touch test-tar
+ tar -cvf test-tar.tar.gz test-tar 
+ tar -xvf test-tar.tar.gz
 </PRE></LI><LI CLASS="li-enumerate">sysklogd paketi kurulumu sonrası:
 Servis yöneticisi ile bu servisin çalışmakta olduğunu gözlemleyin.</LI><LI CLASS="li-enumerate">grub paketi kurulumu sonrası:<P>Bilgisayarınızı başlatığınızda makinanızda bulunan sistemleri listeleyen pencerenin sorunsuz bir şekilde sistemlerinizi listelediğini gözlemleyin. </P></LI><LI CLASS="li-enumerate">libpng paketi kurulumu sonrası:<P>multimedia-tr.pdf inkscape testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">gzip paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> touch test-gzip
@@ -248,9 +255,8 @@ Aşağıda bulunan komutun bir katalog oluşturduğunu gözlemleyin.
 <PRE CLASS="verbatim">   #  xmlcatalog --create
   </PRE></LI><LI CLASS="li-itemize">multimedia-tr.pdf avidemux-qt, avidemux ve inkscape testlerini gerçekleştirin.
 </LI></UL></LI><LI CLASS="li-enumerate">curl paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
-http://pardus.org.tr adresinin içeriğinin hata alınmadan çıktı olarak alındığını gözlemleyin.
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/system/base/test_curl.php
-# php test_curl.php
+http://packages.pardus.org.tr/search/pardus-2009/libkate/ içeriğinin sorunsuz bir şekilde listelendiğini gözlemleyin.
+<PRE CLASS="verbatim">curl http://packages.pardus.org.tr/search/pardus-2009/libkate/
 </PRE></LI><LI CLASS="li-itemize">network-tr.pdf sylpheed testini geçekleştirin.
 </LI></UL></LI><LI CLASS="li-enumerate">glib2 paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
