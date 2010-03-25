@@ -31,17 +31,23 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 
    şeklinde bir satır eklenerek ilgili hataya yorum olarak iletilmesi sağlanır.
 
-#. Paketin uygun olduğuna karar verilebilmesi için yeterli sayıda oy alması
-   gerekmektedir. Oylar, başta ilgili bileşen sorumluları olmak üzere diğer
+#. Paketin uygun olduğuna karar verilebilmesi için yeterli sayıda ACK alması
+   gerekmektedir. ACK'ler, başta ilgili bileşen sorumluları olmak üzere diğer
    geliştiriciler tarafından hata takip sisteminde yorum olarak verilir.
 
-   Süreçin tamamlanması için en az 2 (iki) oy alınması gerekir. Bu oylardan
+   Süreçin tamamlanması için en az 2 (iki) ACK alınması gerekir. Bu ACK'lerden
    en az biri, ilgili bileşenlerin sorumlularından olmalıdır. Paket sahibinden
-   başka bileşen sorumlusu olmadığı durumda herhangi bir geliştirici oy
+   başka bileşen sorumlusu olmadığı durumda herhangi bir geliştirici ACK
    verebilir.
 
-#. Paketi gözden geçirmek isteyen geliştirici, herhangi bir hata bulursa oy
-   vermek için hatanın düzeltilmesini beklemelidir. Şartlı oy verilmemelidir.
+#. Paketi gözden geçirmek isteyen geliştirici, herhangi bir hata bulursa ACK
+   vermek için hatanın düzeltilmesini beklemelidir. Şartlı ACK verilmemelidir.
 
-#. Yeterli sayıda oy alan paket, sahibi tarafından depoya alınır ve hata
+   Örneğin: YANLIŞ: Dosya izinlerini değiştirdikten sonra ACK.
+            DOĞRU : Dosya dizinlerinin düzenlenmesi gerek.
+
+   Paketçi, ACK için ön koşul olan kriteri yerine getirdikten sonra inceleme 
+   yapan kişi değişikliğin doğruluğunu kontrol eder ve yorum olarak "ACK" yazar.
+
+#. Yeterli sayıda ACK alan paket, sahibi tarafından depoya alınır ve hata
    raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak değiştirilir.
