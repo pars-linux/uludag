@@ -44,10 +44,12 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
+        self.connect(self.centralWidget(), SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self)
+        self.tray.activated.connect(self.show)
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
 

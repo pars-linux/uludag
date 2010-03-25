@@ -17,14 +17,16 @@ from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
 
 from pmutils import *
+from context import *
 
 import config
 import backend
 
-class Tray(KSystemTrayIcon):
+class Tray(QtGui.QSystemTrayIcon):
     def __init__(self, parent):
-        KSystemTrayIcon.__init__(self, parent)
-        self.defaultIcon = KIcon(":/data/package-manager.png")
+        QtGui.QSystemTrayIcon.__init__(self, parent)
+        self.defaultIcon = QtGui.QIcon(":/data/package-manager.png")
+        self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
         self.iface = backend.pm.Iface()
@@ -44,13 +46,13 @@ class Tray(KSystemTrayIcon):
 
     def initializePopup(self):
         self.setIcon(self.defaultIcon)
-        self.actionMenu = KActionMenu(i18n("Update"), self)
+        self.actionMenu = QtGui.QMenu(i18n("Update"))
         self.populateRepositoryMenu()
-        self.contextMenu().addAction(self.actionMenu)
+        self.setContextMenu(self.actionMenu)
         self.contextMenu().addSeparator()
 
     def populateRepositoryMenu(self):
-        self.actionMenu.menu().clear()
+        self.actionMenu.clear()
         for name, address in self.iface.getRepositories():
             self.__addAction(name, self.actionMenu)
         self.__addAction(i18n("All"), self.actionMenu)
@@ -86,15 +88,18 @@ class Tray(KSystemTrayIcon):
         if not len(upgrades) or not newUpgrades:
             return
 
-        if self.notification:
-            self.notification.close()
-        self.notification = KNotification("Updates")
-        self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
-        self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
-        self.notification.setFlags(KNotification.Persistent)
-        self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-        self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
-        self.notification.sendEvent()
+        if Pds.session == pds.Kde4:
+            if self.notification:
+                self.notification.close()
+            self.notification = KNotification("Updates")
+            self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
+            self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
+            self.notification.setFlags(KNotification.Persistent)
+            self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+            self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
+            self.notification.sendEvent()
+        else:
+            print 'There is updates !!'
 
     def updateInterval(self, min):
         # minutes to milliseconds conversion

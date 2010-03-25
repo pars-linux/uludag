@@ -189,8 +189,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.hide()
         if operation == "System.Manager.installPackage":
             self.showSummary()
-        if operation in ["System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"]:
+        if operation in ("System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"):
             self.notifyFinished()
+        if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
+            self.emit(SIGNAL("repositoriesUpdated()"))
         self.initialize()
 
     def notifyFinished(self):
