@@ -28,6 +28,18 @@ class Constants:
 
     COOKIE_FILE = os.path.expanduser("~/.bugspy.cookie")
 
+    BUG_INFO_TEMPLATE = """
+Summary:    %(short_desc)s (%(bug_id)s) - %(creation_ts)s
+Product:    %(product)s
+Version:    %(version)s
+Creator:    %(reporter_name)s <%(reporter_email)s>
+Status:     %(bug_status)s
+Resolution: %(resolution)s
+
+%(description)s
+
+%(comments)s"""
+
     def __init__(self, bugzilla_url=None):
         self.bugzilla_url = bugzilla_url
 

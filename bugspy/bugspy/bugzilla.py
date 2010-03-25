@@ -335,6 +335,8 @@ class Bugzilla:
             log.error("Wohoops. Unexpected data returned after submitting.")
             return False
 
+
+
     # FIXME: remove it on production
     def write_file(self, file, data):
         open("/tmp/%s" % file, "w+").write(data)

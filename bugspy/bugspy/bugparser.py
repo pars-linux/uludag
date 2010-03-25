@@ -3,6 +3,7 @@
 
 import piksemel
 from bugspy.error import ParseError, BugzillaError
+from bugspy.constants import Constants as constants
 
 class BugStruct(object):
     """A container which can be accessed like class objects
@@ -38,6 +39,59 @@ class BugStruct(object):
             return True
         else:
             return False
+
+    def print_bug_info(self):
+        """Prints a decent output on a bug"""
+        # Helper methods for printing bug
+        def wrap(data):
+            additional_space = 0
+
+            output = ""
+
+            for i in range(len(data) + additional_space):
+                output += "-"
+
+            output += "\n"
+            output += "%s\n" % data
+
+            for i in range(len(data) + additional_space):
+                output += "-"
+
+            return output
+
+        def generate_comment_output(comments):
+            output = ""
+
+            for i in comments:
+                output = wrap("%s <%s> %s" % (i.name, i.email, i.time))
+                output += "\n"
+                output += i.text + "\n"
+
+            return output
+
+        resolution = ""
+        if self.has("resolution"):
+            resolution = self.resolution
+
+        comments = ""
+        if len(self.comments) > 0:
+            # means we have comments
+            comments = generate_comment_output(self.comments)
+
+        data = constants.BUG_INFO_TEMPLATE % {"short_desc": self.short_desc,
+                                "bug_id": self.bug_id,
+                                "creation_ts": self.creation_ts,
+                                "product": self.product,
+                                "version": self.version,
+                                "reporter_name": self.reporter.name,
+                                "reporter_email": self.reporter.email,
+                                "bug_status": self.bug_status,
+                                "resolution": resolution,
+                                "description": self.description,
+                                "comments": comments}
+
+        print data
+
 
 class BugParser:
     """Parses xmldata and represents it like class objects"""
@@ -114,13 +168,19 @@ class BugParser:
 
         # feed comments
         struct.set("comments", [])
+        i = 0
         for comment in bug.tags("long_desc"):
             c_name = comment.getTag("who").getAttribute("name")
             c_email = comment.getTagData("who")
             c_time = comment.getTagData("bug_when")
             c_text = comment.getTagData("thetext")
 
-            struct.comments.append(BugStruct(name=c_name, email=c_email, time=c_time, text=c_text))
+            # bug description is the first comment of bug. make first comment a description.
+            if i == 0:
+                struct.set("description", c_text)
+                i += 1
+            else:
+                struct.comments.append(BugStruct(name=c_name, email=c_email, time=c_time, text=c_text))
 
         # feed cc
         struct.set("cc", [])
