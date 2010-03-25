@@ -13,11 +13,13 @@
 
 import sys
 from PyQt4 import QtCore, QtGui
-from PyKDE4 import kdeui
-from PyKDE4.kdecore import i18n, KAboutData, KConfig, KCmdLineArgs
+
+#from PyKDE4 import kdeui
+#from PyKDE4.kdecore import i18n, KAboutData, KConfig, KCmdLineArgs
+
 
 from migration.gui.ui.main import Ui_MigrationUI
-from migration.about import aboutData
+#from migration.about import aboutData
 
 #Screens
 import migration.gui.ScrWelcome as welcome
@@ -27,7 +29,7 @@ import migration.gui.ScrOptions as options
 import migration.gui.ScrSummary as summary
 import migration.gui.ScrProgress as progress
 
-import migration.gui.context as ctx
+from migration.gui.context import *
 
 
 def loadFile(_file):
@@ -70,10 +72,12 @@ class Migration(QtGui.QWidget):
         self.ui = Ui_MigrationUI()
         self.ui.setupUi(self)
 
-        self.screens = availableScreens
+        self.screens = filter(lambda s: s != None, availableScreens)
+
+        print self.screens
         self.moveInc = 1
         self.menuText = ""
-        self.config = KConfig("migrationrc")
+        #self.config = KConfig("migrationrc")
         self.createWidget(self.screens)
 
         self.screenId = []
@@ -118,7 +122,8 @@ class Migration(QtGui.QWidget):
                 self.stackMove(self.getCurrentStackId(self.moveInc))
                 self.moveInc = 1
             else:
-                kdeui.KMessageBox.error(self, _return[1])
+                #kdeui.KMessageBox.error(self, _return[1]) edit
+                QtGui.QMessageBox(self, _return[1])
 
     def slotBack(self):
         self.menuText = ""
@@ -201,18 +206,24 @@ class Migration(QtGui.QWidget):
             self.ui.buttonBack.show()
 
     def __del__(self):
-        group = self.config.group("General")
-        group.writeEntry("RunOnStart", "False")
+        pass
+        #group = self.config.group("General")
+        #group.writeEntry("RunOnStart", "False")
 
 if __name__ =="__main__":
 
-    KCmdLineArgs.init(sys.argv, aboutData)
-    application = kdeui.KApplication()
+    #KCmdLineArgs.init(sys.argv, aboutData) edit SOR
+
+    app = QtGui.QApplication(sys.argv)
+    MainWindow = QtGui.QMainWindow()
+
+    #application = kdeui.KApplication()
+
     migration = Migration()
     migration.show()
 
     geometry  = QtGui.QDesktopWidget().screenGeometry()
     migration.move(geometry.width()/2 - migration.width()/2, geometry.height()/2 - migration.height()/2) 
-    application.exec_()
+    app.exec_()
 
 
