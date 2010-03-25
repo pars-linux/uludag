@@ -39,18 +39,6 @@ username = %(user)s
 password = %(password)s
 """
 
-INFO_TEMPLATE = """
-Summary:    %(short_desc)s (%(bug_id)s) - %(creation_ts)s
-Product:    %(product)s
-Version:    %(version)s
-Creator:    %(reporter_name)s <%(reporter_email)s>
-Status:     %(bug_status)s
-Resolution: %(resolution)s
-
-%(description)s
-
-%(comments)s"""
-
 
 CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
@@ -69,13 +57,6 @@ PRODUCTS = {"general": "* Genel / General",
             "pisi": "PiSi",
             "review": "Review",
             "yali": "YALI"}
-
-def print_bug_info(bug):
-    """Prints formatter bug info"""
-    adjust = 20
-
-    print ""
-
 
 def setup_parser():
     u =   "usage: %prog [global options] COMMAND [options]"
@@ -282,31 +263,6 @@ def main():
             log.error(e.msg)
 
     if action == "info":
-        def wrap(data):
-            additional_space = 0
-
-            output = ""
-
-            for i in range(len(data) + additional_space):
-                output += "-"
-
-            output += "\n"
-            output += "%s\n" % data
-
-            for i in range(len(data) + additional_space):
-                output += "-"
-
-            return output
-
-        def generate_comment_output(comments):
-            output = ""
-
-            for i in comments:
-                output = wrap("%s <%s> %s" % (i.name, i.email, i.time))
-                output += "\n"
-                output += i.text + "\n"
-
-            return output
 
         try:
             bugzilla.login()
@@ -314,29 +270,7 @@ def main():
             sys.exit(1)
 
         bug = bugzilla.get(opt.bug_id)
-
-        resolution = ""
-        if bug.has("resolution"):
-            resolution = bug.resolution
-
-        comments = ""
-        if len(bug.comments) > 1:
-            # means we have comments
-            comments = generate_comment_output(bug.comments[1:])
-
-        data = INFO_TEMPLATE % {"short_desc": bug.short_desc,
-                                "bug_id": bug.bug_id,
-                                "creation_ts": bug.creation_ts,
-                                "product": bug.product,
-                                "version": bug.version,
-                                "reporter_name": bug.reporter.name,
-                                "reporter_email": bug.reporter.email,
-                                "bug_status": bug.bug_status,
-                                "resolution": resolution,
-                                "description": bug.comments[0].text,
-                                "comments": comments}
-
-        print data
+        bug.print_bug_info()
 
     if action == "new":
         # TODO: Only security related vulnerabilities can be entered with command line.
