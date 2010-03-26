@@ -125,8 +125,8 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def queryExit(self):
         if not self.iface.operationInProgress():
-            if self.tray.notification:
-                self.tray.notification.close()
+            if self.tray:
+                del self.tray.notification
             return True
         return False
 
