@@ -23,6 +23,9 @@ __trans = None
 from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
+# Logging
+import logging
+
 class DefaultDe(object):
     Name                 = 'X11'
     Version              = None
@@ -79,11 +82,17 @@ class Pds:
 
     SupportedDesktops = (DefaultDe, Kde4, Kde3, Xfce)
 
-    def __init__(self, catalogName=None):
+    def __init__(self, catalogName='', debug=False):
         self._session           = None
         self._version           = None
         self.home               = getenv('HOME').strip()
         self._config_content    = None
+
+        _log_file = path.join(self.home, '.%s-pds.log' % catalogName)
+        if debug:
+            logging.basicConfig(filename = _log_file, level = logging.DEBUG)
+        else:
+            logging.basicConfig(logging.NOTSET)
 
         if catalogName:
             __trans = gettext.translation(catalogName, fallback=True)
@@ -125,7 +134,7 @@ class Pds:
             else:
                 value = unicode(_value.toString())
             if not value or value == '':
-                print 'Switching to alternate conf'
+                logging.info('Switching to default conf')
                 alternateConfig = self.session.DefaultConfigPath or \
                         path.join(self.install_prefix, self.session.ConfigFile)
                 settings = self.parse(alternateConfig, force = True)
@@ -220,10 +229,9 @@ class QIconLoader:
     def __init__(self, pds = None, debug = False):
 
         self.iconSizes = (128, 64, 48, 32, 22, 16)
-        self.debug = debug
 
         if not pds:
-            pds = Pds()
+            pds = Pds(debug = debug)
 
         self.pds = pds
 
@@ -302,13 +310,11 @@ class QIconLoader:
                 for theme in subDirs:
                     fileName = path.join(iconDir, themeName, theme[1],
                             '%s.png' % str(iconName))
-                    if self.debug: 
-                        print "Looking for : ",fileName
+                    logging.debug('Looking for : %s' % fileName)
                     if path.exists(fileName):
                         pixmap.load(fileName)
-                        if self.debug: 
-                            print 'Icon: %s found in theme %s' % \
-                            (iconName, themeName)
+                        logging.debug('Icon: %s found in theme %s' % \
+                                (iconName, themeName))
                         return pixmap
         if len(self._themes) > 0:
             self._themes.pop(0)
