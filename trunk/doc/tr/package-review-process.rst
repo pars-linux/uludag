@@ -46,8 +46,10 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    Örneğin: YANLIŞ: Dosya izinlerini değiştirdikten sonra ACK.
             DOĞRU : Dosya izinlerinin düzenlenmesi gerek.
 
-   Paketçi, ACK için ön koşul olan kriteri yerine getirdikten sonra inceleme 
-   yapan kişi değişikliğin doğruluğunu kontrol eder ve yorum olarak "ACK" yazar.
+   Paketçi, ACK için ön koşul olan kriteri yerine getirdikten sonra inceleme
+   yapan kişi değişikliğin doğruluğunu kontrol eder ve yorum olarak "ACK"
+   yazar.
 
-#. Yeterli sayıda ACK alan paket, sahibi tarafından depoya alınır, review dizininden 
-   silinir ve hata raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak değiştirilir.
+#. Yeterli sayıda ACK alan paket, sahibi tarafından depoya alınır, review
+   dizininden silinir ve hata raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak
+   değiştirilir.
