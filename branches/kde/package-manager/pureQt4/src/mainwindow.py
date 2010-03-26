@@ -20,7 +20,7 @@ from ui_mainwindow import Ui_MainWindow
 from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
-# from tray import Tray
+from tray import Tray
 
 import backend
 import config
@@ -37,19 +37,20 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
         self.initializeStatusBar()
-        #self.initializeTray()
+        self.initializeTray()
         self.connectMainSignals()
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
-        #self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
-        #self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
+        self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
+        self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         #self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
-    #def initializeTray(self):
-    #    self.tray = Tray(self)
-    #    self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
-    #    self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
+    def initializeTray(self):
+        self.tray = Tray(self)
+        self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
+        self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
+        self.tray.showPopup()
 
     def trayShowUpdates(self):
         self.showUpgradeAction.setChecked(True)
@@ -59,13 +60,13 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.show()
         self.raise_()
 
-    #def trayAction(self, operation):
-    #    if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
-    #        self.tray.showPopup()
-    #    if self.tray.isVisible() and operation in ["System.Manager.updatePackage",
-    #                                               "System.Manager.installPackage",
-    #                                               "System.Manager.removePackage"]:
-    #        self.tray.updateTrayUnread()
+    def trayAction(self, operation):
+        if not self.isVisible() and operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
+            self.tray.showPopup()
+        if self.tray.isVisible() and operation in ["System.Manager.updatePackage",
+                                                   "System.Manager.installPackage",
+                                                   "System.Manager.removePackage"]:
+            self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
         self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
@@ -125,9 +126,9 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.statusLabel.setText(text)
 
     def queryClose(self):
-        #if config.PMConfig().systemTray() and not KApplication.kApplication().sessionSaving():
-        #    self.hide()
-        #    return False
+        if config.PMConfig().systemTray():# and not KApplication.kApplication().sessionSaving():
+            self.hide()
+            return False
         return True
 
     def queryExit(self):

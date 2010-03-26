@@ -30,7 +30,7 @@ class DefaultDe(object):
     ConfigFile           = None
     ConfigType           = None
     ConfigBin            = None
-    DefaultIconTheme     = None
+    DefaultIconTheme     = 'hicolor'
     DefaultIconFile      = ''
     DefaultConfigPath    = None
     ExtraDirs            = None
@@ -322,7 +322,7 @@ class QIconLoader:
             if (QPixmapCache.find(pixmapName, self.pixmap)):
                 return self.pixmap
         self._themes = []
-        if not self.themeName == '':
+        if self.themeName:
             self._themes.append(self.themeName)
             for _name in name:
                 self.pixmap = self.findIconHelper(int(size), 

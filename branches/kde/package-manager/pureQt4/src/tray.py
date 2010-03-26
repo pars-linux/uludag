@@ -19,29 +19,19 @@ from context import *
 import config
 import backend
 
-class Tray(QtGui.QSystemTrayIcon):
-    def __init__(self, parent):
-        QtGui.QSystemTrayIcon.__init__(self, parent)
+class PTray:
+    def __init__(self):
         self.defaultIcon = QtGui.QIcon(":/data/package-manager.png")
         self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
         self.iface = backend.pm.Iface()
         self.notification = None
-        self.appWindow = parent
 
         self.initializeTimer()
         self.initializePopup()
 
         self.settingsChanged()
-        self.activated.connect(self.__activated)
-
-    def __activated(self, reason):
-        if not reason == QtGui.QSystemTrayIcon.Context:
-            if self.appWindow.isVisible():
-                self.appWindow.hide()
-            else:
-                self.appWindow.show()
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -50,19 +40,12 @@ class Tray(QtGui.QSystemTrayIcon):
         self.updateInterval(self.interval)
 
     def initializePopup(self):
-        self.setIcon(self.defaultIcon)
-        self.actionMenu = QtGui.QMenu(i18n("Update"))
-        self.populateRepositoryMenu()
-        self.setContextMenu(self.actionMenu)
-        self.contextMenu().addSeparator()
+        pass
 
     def populateRepositoryMenu(self):
-        self.actionMenu.clear()
-        for name, address in self.iface.getRepositories():
-            self.__addAction(name, self.actionMenu)
-        self.__addAction(i18n("All"), self.actionMenu)
+        pass
 
-    def __addAction(self, name, menu):
+    def _addAction(self, name, menu):
         action = QtGui.QAction(name, self)
         menu.addAction(action)
         self.connect(action, SIGNAL("triggered()"), self.updateRepo)
@@ -79,36 +62,21 @@ class Tray(QtGui.QSystemTrayIcon):
         if not self.appWindow.isVisible() and not self.iface.operationInProgress():
             self.iface.updateRepositories()
 
-    def showPopup(self):
+    def _ready_to_popup(self):
         upgrades = self.iface.getUpdates()
-        if len(upgrades) == 0:
-            return
         self.slotSetUnread(len(upgrades))
 
         if config.PMConfig().installUpdatesAutomatically():
             if not self.appWindow.isVisible() and not self.iface.operationInProgress():
                 self.iface.upgradePackages(upgrades)
-            return
+            return False
 
-        #newUpgrades = set(upgrades) - set(self.lastUpgrades)
-        #self.lastUpgrades = upgrades
-        #if not len(upgrades) or not newUpgrades:
-            #return
+        newUpgrades = set(upgrades) - set(self.lastUpgrades)
+        self.lastUpgrades = upgrades
+        if not len(upgrades) or not newUpgrades:
+            return False
 
-        #if Pds.session == pds.Kde4:
-            #from PyKDE4.kdeui import KNotification
-            #from PyKDE4.kdecore import KComponentData
-            #if self.notification:
-                #self.notification.close()
-            #self.notification = KNotification("Updates")
-            #self.notification.setText(i18n("There are <b>%1</b> updates available!", len(upgrades)))
-            #self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
-            #self.notification.setFlags(KNotification.Persistent)
-            #self.notification.setComponentData(KComponentData("package-manager","package-manager"))
-            #self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
-            #self.notification.sendEvent()
-        #else:
-        self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", len(upgrades)))
+        return True
 
     def updateInterval(self, min):
         # minutes to milliseconds conversion
@@ -176,7 +144,6 @@ class Tray(QtGui.QSystemTrayIcon):
             p.setOpacity(0.7)
             p.setBrush(scheme)
             p.setPen(QtGui.QColor('blue'))
-            #p.drawRoundedRect(boundingRect, 2.0, 2.0);
 
             p.setBrush(Qt.NoBrush)
             p.setPen(QtGui.QColor('blue'))
@@ -186,3 +153,73 @@ class Tray(QtGui.QSystemTrayIcon):
             p.end()
 
             self.setIcon(QtGui.QIcon(overlayImg))
+
+if not Pds.session == pds.Kde4:
+
+    class Tray(QtGui.QSystemTrayIcon, PTray):
+        def __init__(self, parent):
+            QtGui.QSystemTrayIcon.__init__(self, parent)
+            PTray.__init__(self)
+
+            self.appWindow = parent
+            self.activated.connect(self.__activated)
+
+        def __activated(self, reason):
+            if not reason == QtGui.QSystemTrayIcon.Context:
+                if self.appWindow.isVisible():
+                    self.appWindow.hide()
+                else:
+                    self.appWindow.show()
+
+        def initializePopup(self):
+            self.setIcon(self.defaultIcon)
+            self.actionMenu = QtGui.QMenu(i18n("Update"))
+            self.populateRepositoryMenu()
+            self.setContextMenu(self.actionMenu)
+            self.contextMenu().addSeparator()
+
+        def populateRepositoryMenu(self):
+            self.actionMenu.clear()
+            for name, address in self.iface.getRepositories():
+                self._addAction(name, self.actionMenu)
+            self._addAction(i18n("All"), self.actionMenu)
+
+        def showPopup(self):
+            if self._ready_to_popup():
+                self.showMessage(i18n('Updates'), i18n("There are %1 updates available!", self.unread))
+
+else:
+
+    from PyKDE4.kdeui import KNotification, KSystemTrayIcon, KActionMenu
+    from PyKDE4.kdecore import KComponentData
+
+    class Tray(KSystemTrayIcon, PTray):
+        def __init__(self, parent):
+            KSystemTrayIcon.__init__(self, parent)
+            PTray.__init__(self)
+            self.appWindow = parent
+
+        def initializePopup(self):
+            self.setIcon(self.defaultIcon)
+            self.actionMenu = KActionMenu(i18n("Update"), self)
+            self.populateRepositoryMenu()
+            self.contextMenu().addAction(self.actionMenu)
+            self.contextMenu().addSeparator()
+
+        def populateRepositoryMenu(self):
+            self.actionMenu.menu().clear()
+            for name, address in self.iface.getRepositories():
+                self._addAction(name, self.actionMenu)
+            self._addAction(i18n("All"), self.actionMenu)
+
+        def showPopup(self):
+            if self._ready_to_popup():
+                if self.notification:
+                    del self.notification
+                self.notification = KNotification("Updates")
+                self.notification.setText(i18n("There are <b>%1</b> updates available!", self.unread))
+                self.notification.setActions(QStringList((i18n("Show Updates"), i18n("Ignore"))))
+                self.notification.setFlags(KNotification.Persistent)
+                self.notification.setComponentData(KComponentData("package-manager","package-manager"))
+                self.connect(self.notification, SIGNAL("action1Activated()"), lambda:self.emit(SIGNAL("showUpdatesSelected()")))
+                self.notification.sendEvent()
