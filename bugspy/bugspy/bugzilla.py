@@ -185,6 +185,8 @@ class Bugzilla:
             resolution: (FIXED, INVALID, WONTFIX, LATER, REMIND, DUPLICATE)
             security: Whether it is security or not
             assigned_to: E-mail address to assign a bug
+            blocks: Bugs that this bug blocks
+            dependson: Bug that depends on.
 
         Raises:
             BugzillaError: You should first login to modify the bug
@@ -249,6 +251,14 @@ class Bugzilla:
             log.debug("Setting assign_to: %s" % args.assigned_to)
             self.browser["assigned_to"] = args.assigned_to
 
+        if args.has("dependson"):
+            log.debug("Bug dependson : %s" % args.dependson)
+            self.browser["dependson"] = args.dependson
+
+        if args.has("blocks"):
+            log.debug("Bug blocks: %s" % args.blocks)
+            self.browser["blocked"] = args.blocks
+
         log.info("Submitting the changes")
         response = self.browser.submit()
         response = response.read()
@@ -275,6 +285,8 @@ class Bugzilla:
             url: External url
             assigned_to: Email address to assign
             alias: Bug alias (NOT IMPLEMENTED)
+            blocks: Bugs that this bug blocks
+            dependson: Bug that depends on.
 
         Returns:
             Integer indicating the bugzilla id for new bug
@@ -314,6 +326,14 @@ class Bugzilla:
         if args.has("assigned_to"):
             log.debug("Assigning bug to: %s" % args.assigned_to)
             self.browser["assigned_to"] = args.assigned_to
+
+        if args.has("dependson"):
+            log.debug("Bug dependson : %s" % args.dependson)
+            self.browser["dependson"] = args.dependson
+
+        if args.has("blocks"):
+            log.debug("Bug blocks: %s" % args.blocks)
+            self.browser["blocked"] = args.blocks
 
         # FIXME: Our bugzilla page doesn't show alias field. 
         # FIXME: Uncomment it when it is done

@@ -92,6 +92,12 @@ def setup_action_parser(action):
         p.add_option("-a", "--assign", dest="assigned_to",
                 help="optional: assign bug using e-mail address")
 
+        p.add_option("--blocks",
+                help="optional: the bugs that this bug blocks")
+
+        p.add_option("--depends",
+                help="optional: bugs that this bug depends on")
+
         p.add_option("--close",
                 help="optional: alias for -s RESOLVED -r <resolution>. Resolution should be one of: %s" % ','.join(VALID_RESOLUTIONS))
 
@@ -139,6 +145,12 @@ def setup_action_parser(action):
 
         p.add_option("--alias",
                 help="optional: bug alias")
+
+        p.add_option("--blocks",
+                help="optional: the bugs that this bug blocks")
+
+        p.add_option("--depends",
+                help="optional: bugs that this bug depends on")
 
     return p
 
@@ -256,6 +268,12 @@ def main():
         if opt.security:
             modify["security"] = opt.security
 
+        if opt.blocks:
+            modify["blocks"] = opt.blocks
+
+        if opt.depends:
+            modify["dependson"] = opt.depends
+
         try:
             bugzilla.login()
             bugzilla.modify(**modify)
@@ -310,6 +328,13 @@ def main():
 
             if opt.assigned_to:
                 new["assigned_to"] = opt.assigned_to
+
+
+            if opt.blocks:
+                new["blocks"] = opt.blocks
+
+            if opt.depends:
+                new["dependson"] = opt.depends
 
             bug_id = bugzilla.new(**new)
             print "Bug submitted: %s (%s)" % (bug_id, opt.title)
