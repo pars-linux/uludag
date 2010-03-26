@@ -80,6 +80,9 @@ def setup_action_parser(action):
                 metavar="BUG ID", dest="bug_id",
                 help="REQUIRED: bug id")
 
+        p.add_option("-t", "--title",
+                help="OPTIONAL: new title")
+
         p.add_option("-c", "--comment",
                 help="OPTIONAL: add comment")
 
@@ -261,6 +264,9 @@ def main():
             check_valid_resolutions()
             modify["status"] = "RESOLVED"
             modify["resolution"] = opt.close
+
+        if opt.title:
+            modify["title"] = opt.title
 
         if opt.assigned_to:
             modify["assigned_to"] = opt.assigned_to

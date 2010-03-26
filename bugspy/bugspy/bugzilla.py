@@ -180,6 +180,7 @@ class Bugzilla:
 
         Args:
             bug_id: Bug id to edit
+            title: New bug title
             comment: Comment to write
             status: Status (NEW, ASSIGNED, RESOLVED)
             resolution: (FIXED, INVALID, WONTFIX, LATER, REMIND, DUPLICATE)
@@ -218,6 +219,10 @@ class Bugzilla:
 
         # for x in self.browser.forms():
         #     print x
+
+        if args.has("title"):
+            log.debug("Setting new title..")
+            self.browser["short_desc"] = args.title
 
         if args.has("status"):
             log.debug("Setting bug_status..")
