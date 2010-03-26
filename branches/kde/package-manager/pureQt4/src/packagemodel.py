@@ -22,6 +22,8 @@ from pmutils import humanReadableSize
 from context import KIconLoader
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6)
+_variant = QVariant()
+_unknown_icons = []
 
 class PackageModel(QAbstractTableModel):
 
@@ -44,7 +46,7 @@ class PackageModel(QAbstractTableModel):
 
     def data(self, index, role=Qt.DisplayRole):
         if not index.isValid():
-            return QVariant()
+            return _variant
 
         if role == Qt.DisplayRole:
             return QVariant(self.packages[index.row()])
@@ -66,15 +68,9 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.source.homepage))
         elif role == Qt.DecorationRole:
             if package.icon:
-                __icon = KIconLoader.load(package.icon)
-                if not __icon.isNull():
+                if package.icon in KIconLoader._available_icons:
                     return QVariant(package.icon)
-            return QVariant()
-        elif role == GroupRole:
-            # TODO
-            return QVariant()
-        else:
-            return QVariant()
+        return _variant
 
     def setData(self, index, value, role):
         if role == Qt.CheckStateRole and index.column() == 0:
