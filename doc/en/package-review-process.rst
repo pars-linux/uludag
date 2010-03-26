@@ -49,5 +49,5 @@ The package review process steps on
    After the package maintainer has fixed the problem, the reviewer verify the
    problem and give an ACK as a comment.
 
-#. The package that takes the necessary ACKs, is taken to devel package repository
-   and the bug status is changed to RESOLVED/FIXED.
+#. The package that takes the necessary ACKs, is taken to devel package repository,
+   removed from review directory and the bug status is changed to RESOLVED/FIXED.
