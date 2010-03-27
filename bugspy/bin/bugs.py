@@ -9,7 +9,7 @@ import os
 import optparse
 
 from bugspy.bugzilla import Bugzilla
-from bugspy.config import Config
+from bugspy.config import BugspyConfig
 from bugspy.bugparser import BugStruct
 from bugspy.error import BugzillaError, LoginError
 
@@ -208,7 +208,7 @@ def main():
         log.error("Configuation file is not found, please generate it first")
         sys.exit(1)
 
-    c = Config()
+    c = BugspyConfig()
     bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
 
     if action == "generate-config":
