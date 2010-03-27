@@ -14,6 +14,7 @@ import os
 os.environ["LC_ALL"] = "C"
 
 import sys
+import glob
 import copy
 import shutil
 import cPickle
@@ -71,7 +72,7 @@ def buildPackages():
         my_twitter.update(log_msg)
 
         # This is here because farm captures the build output
-        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputdir = conf.workdir)
+        pisi = pisiinterface.PisiApi(stdout = build_output, stderr = build_output, outputDir = conf.workdir)
         try:
             try:
                 # Save current *.pisi file list in /var/pisi for further cleanup
@@ -254,7 +255,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
         if exists(join(conf.workdir, package)):
             copy(join(conf.workdir, package), conf.binarypath)
             copy(join(conf.workdir, package), conf.testpath)
-            remove(join(confg.workdir, package))
+            remove(join(config.workdir, package))
 
     def moveUnchangedPackage(package):
         logger.info("*** Moving unchanged package %s'" % package)

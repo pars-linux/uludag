@@ -27,12 +27,19 @@ class Config(object):
 
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
-        if value and value in ("True", "False"):
-            value = bool(value)
-        elif "," in value:
-            value = value.split(",")
-
-        return value
+        if value:
+            if value in ("True", "False"):
+                # the value from ConfigParser is always string, so control it and return bool
+                if value == "True":
+                    return True
+                else:
+                    return False
+            elif "," in value:
+                value = value.split(",")
+                return value
+        else:
+            # value not found
+            return None
 
 # Initialize configuration object
 configuration = Config()
@@ -41,4 +48,5 @@ configuration = Config()
 if __name__ == "__main__":
     # Test code
     c = Config()
+    print c.ignorecheck
     print c.deltablacklist
