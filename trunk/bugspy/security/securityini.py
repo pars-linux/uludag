@@ -22,7 +22,7 @@ class SecurityINI:
         # FIXME: Do validation before reading it.
         self.config = ConfigObj(os.path.expanduser(self.filename))
 
-    def addEntry(self, section, key, data, comments=[""]):
+    def addEntry(self, section, key, data, comments=None):
         """Adds entry to given section.
 
         It handles same keys. If the same key is added, it adds "_1" to the
@@ -41,13 +41,6 @@ class SecurityINI:
             IniError
         """
 
-        # if comments is not array, make it array and also strip \n
-        if not isinstance(comments, list):
-            print "it is not a string"
-            if comments.find("\n") > -1:
-                comments = comments.split("\n")
-            else:
-                comments = [comments]
 
         # control the section first.
         if not self.config.has_key(section):
@@ -55,18 +48,32 @@ class SecurityINI:
 
         section = self.config[section]
 
+        # if comments is not array, make it array and also strip \n
+        if not isinstance(comments, list):
+            if comments.find("\n") > -1:
+                comments = comments.split("\n")
+                comments.insert(0, '')
+                # comment dict's first element should be ''. We do it so that entries have blank chars on top of them.
+            else:
+                comments = [comments]
+                comments.insert(0, '')
+
         # handle individual keys first.
         if not section.has_key(key):
             section[key] = data
-
-            # comment dict's first element should be '', control it. We do it
-            if comments[0] != '':
-                comments.insert(0, '')
-
             section.comments[key] = comments
         else:
-            # now we are dealing with multiple keys. Iterate 
-            print "heh"
+            # now we are dealing with multiple keys. Increment the variable until we hit
+            key = "%s_0" % key
+            while 1:
+                (string, num) = key.split("_")
+                key = "%s_%s" % (string, int(num) + 1)
+                if not section.has_key(key):
+                    # we hit a key
+                    break
+
+            section[key] = data
+            section.comments[key] = comments
 
     def save(self):
         #FIXME: Do validation before writing.
@@ -75,7 +82,7 @@ class SecurityINI:
 def main():
     ini = SecurityINI("test.ini")
     ini.addEntry("in bugzilla not fixed", "amarok", "1123: medium: qa4",
-    "#xmlrpc error")
+    "#wikipedia data leak")
 
     ini.save()
 
