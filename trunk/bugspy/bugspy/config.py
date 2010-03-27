@@ -4,7 +4,7 @@
 import ConfigParser
 import os
 
-class Config(object):
+class BugspyConfig(object):
     """Configuration class for BugSPY.conf
 
     It parses the configuration and passes key/value to the class.

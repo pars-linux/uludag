@@ -16,7 +16,6 @@ import piksemel
 
 from bugspy.error import LoginError, BugzillaError, ModifyError
 from bugspy.constants import Constants
-from bugspy.config import Config
 from bugspy.bugparser import BugParser, BugStruct
 
 log = logging.getLogger("bugzilla")
@@ -365,17 +364,3 @@ class Bugzilla:
     # FIXME: remove it on production
     def write_file(self, file, data):
         open("/tmp/%s" % file, "w+").write(data)
-
-def main():
-    c = Config()
-
-    bugzilla = Bugzilla(c.bugzillaurl, c.username, c.password)
-    bugzilla.login()
-    #bugzilla.modify_bug("12437", comment="FooBar", status="RESOLVED", solution="FIXED")
-
-    #bugzilla.modify_bug("12437", comment="Re-opening the bug", status="REOPENED")
-
-    bugzilla.modify_bug("12437", comment="Testing again")
-
-if __name__ == '__main__':
-    main()
