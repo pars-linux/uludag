@@ -4,6 +4,9 @@
 import os
 from configobj import ConfigObj
 
+#FIXME: remove on production
+import sys
+
 class IniError(Exception):
     pass
 
@@ -58,8 +61,22 @@ class SecurityINI:
         self.config = ConfigObj(os.path.expanduser(self.filename))
 
     def _controlSection(self, section):
-        if not self.config.has_key(section):
+        if not self.has_section(section):
             raise IniError('Section "%s" does not exist' % section)
+
+    def has_section(self, section):
+        if self.config.has_key(section):
+            return True
+        else:
+            return False
+
+    def has_entry(self, section, key):
+        self._controlSection(section)
+
+        if self.config[section].has_key(key):
+            return True
+        else:
+            return False
 
     def addEntry(self, section, key, data, comments=None):
         """Adds entry to given section.
@@ -116,17 +133,17 @@ class SecurityINI:
 
         It handles multiple keys and returns an array for items which have "_1, _2" suffix. For example: If you have following keys:
 
-        [my-section]
-        kernel = denial of service: medium
-        kernel_1 = privilage escalation: high
-        kernel_2 = foobar
+            [my-section]
+            kernel = denial of service: medium
+            kernel_1 = privilage escalation: high
+            kernel_2 = foobar
 
         You get all of them in an array form with:
 
-        kernel = ini.getEntry("my-section", "kernel")
-        for i in kernel:
-            print i
-            print "Comments: %s" % i.comments
+            kernel = ini.getEntry("my-section", "kernel")
+            for i in kernel:
+                print i
+                print "Comments: %s" % i.comments
 
         Args:
             section: Section in ini file
@@ -144,11 +161,11 @@ class SecurityINI:
         if section.has_key(key):
             # we are not dealing with multiple keys, just return the key
             if not section.has_key("%s_1" % key):
-                output = Struct(section[key], comments=section.comments[key])
+                output = Struct(section[key], comments=section.comments[key], inline_comments=section.inline_comments[key])
                 return output
             else:
                 output = []
-                output.append(Struct(section[key], comments=section.comments[key]))
+                output.append(Struct(section[key], comments=section.comments[key], inline_comments=section.inline_comments[key]))
                 # we know that there exist a key with _1 suffix
                 key = "%s_1" % key
                 while 1:
@@ -156,7 +173,7 @@ class SecurityINI:
                         # we hit non-existant key
                         break
 
-                    output.append(Struct(section[key], comments=section.comments[key]))
+                    output.append(Struct(section[key], comments=section.comments[key], inline_comments=section.inline_comments[key]))
                     # increment the number
                     (string, num) = key.split("_")
                     key = "%s_%s" % (string, int(num) + 1)
@@ -166,6 +183,35 @@ class SecurityINI:
         else:
             raise IniError("Key '%s' does not exist")
 
+    def moveEntry(self, key, fromSection, toSection):
+        """Move entry from one section to another
+
+        Args:
+            key: Key to move
+            fromSection: Key's section
+            toSection: Section to move
+        """
+
+        self._controlSection(fromSection)
+        self._controlSection(toSection)
+
+        # FIXME: we cannot move multiple packages which have _1, _2 suffixes
+        # FIXME: think about them.
+
+        original_entry = self.getEntry(fromSection, key)
+
+        from_section = self.config[fromSection]
+        to_section = self.config[toSection]
+
+        if to_section.has_key(key):
+            raise IniError("Section '%s' has key '%s'" % (to_section, key))
+
+        to_section[key] = original_entry
+        to_section.comments[key] = original_entry.comments
+        to_section.inline_comments[key] = original_entry.inline_comments
+
+        del from_section[key]
+
     def save(self):
         #FIXME: Do validation before writing.
         self.config.write()
@@ -173,16 +219,12 @@ class SecurityINI:
 def main():
     ini = SecurityINI("test.ini")
 
-    entry = ini.getEntry("in bugzilla not fixed", "kernel")
-    print entry
+    if not ini.has_entry("in bugzilla not fixed", "amarok"):
+        print "Amarok is not there, exiting..."
+        sys.exit(1)
 
-    if len(entry) > 1:
-        for i in entry:
-            print "%s. Comments: %s" % (i, i.comments)
-    else:
-        entry = entry[0]
-        print "%s. Comments: %s" % (entry, entry.comments)
-
+    ini.moveEntry("amarok", "in bugzilla not fixed", "fixed, needs compiling")
+    ini.save()
 
     #ini.save()
 
