@@ -1,5 +1,12 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+#
+# A configuration library for tracking packages for security.
+#
+# Its purpose is to add/move entries into tracker file.
+#
+# Eren Türkay, <eren:pardus.org.tr>. March 27, 2010
+#
 
 import os
 from configobj import ConfigObj
