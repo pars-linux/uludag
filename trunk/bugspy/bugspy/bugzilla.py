@@ -267,6 +267,10 @@ class Bugzilla:
             log.debug("Adding to cc: %s" % args.cc)
             self.browser["newcc"] = args.cc
 
+        if args.has("version"):
+            log.debug("Changing version to: %s" % args.version)
+            self.browser["version"] = [args.version]
+
         log.info("Submitting the changes")
         response = self.browser.submit()
         response = response.read()
@@ -342,6 +346,10 @@ class Bugzilla:
         if args.has("blocks"):
             log.debug("Bug blocks: %s" % args.blocks)
             self.browser["blocked"] = args.blocks
+
+        if args.has("version"):
+            log.debug("Changing version to: %s" % args.version)
+            self.browser["version"] = [args.version]
 
         # FIXME: Our bugzilla page doesn't show alias field. 
         # FIXME: Uncomment it when it is done
