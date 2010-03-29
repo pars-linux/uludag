@@ -47,7 +47,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         #self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
 
     def initializeTray(self):
-        self.tray = Tray(self)
+        self.tray = Tray(self, self.iface)
         self.connect(self.centralWidget().operation, SIGNAL("finished(QString)"), self.trayAction)
         self.connect(self.tray, SIGNAL("showUpdatesSelected()"), self.trayShowUpdates)
         self.tray.showPopup()
