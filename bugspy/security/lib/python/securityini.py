@@ -114,7 +114,8 @@ class SecurityINI:
                 comments.insert(0, '')
                 # comment dict's first element should be ''. We do it so that entries have blank chars on top of them.
             else:
-                comments = [""]
+                comments = [comments]
+                comments.insert(0, '')
         else:
             comments = [""]
 
