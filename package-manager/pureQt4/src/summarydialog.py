@@ -45,7 +45,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
     def initialize(self):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
-        self.appIcon.setPixmap(iconLoader.load(self.item.icon, 32))
+        self.appIcon.setPixmap(KIconLoader.load(self.item.icon, 32))
         self.appName.hide()
 
     def enterEvent(self, event):
