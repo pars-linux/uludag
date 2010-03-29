@@ -21,6 +21,9 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    için gerekli olması, gözden geçirme sürecindeki başka bir paketin bağımlılığı
    olması vb.) hatanın 'Ayrıntılar' kısmına yazılmalıdır.
 
+#. Paketin katkı depolarına alınması gerekiyor ise, hatanın "Ayrıntılar" bölümünde
+   bu durumun açıklanması gerekmektedir.
+
 #. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
    bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
    eklenecektir.
