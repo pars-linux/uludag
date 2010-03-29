@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
+    <width>720</width>
     <height>457</height>
    </rect>
   </property>
@@ -14,10 +14,16 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <property name="margin">
+    <number>0</number>
+   </property>
    <item row="0" column="0">
     <widget class="QSplitter" name="splitter">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="handleWidth">
+      <number>3</number>
      </property>
      <widget class="GroupList" name="groupList">
       <property name="minimumSize">
@@ -33,7 +39,7 @@
        </size>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <layout class="QGridLayout" name="gridLayout">
        <item row="0" column="0">
         <widget class="QLineEdit" name="searchLine">
@@ -95,11 +101,17 @@
            <height>0</height>
           </size>
          </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
          <property name="rootIsDecorated">
           <bool>false</bool>
          </property>
          <property name="itemsExpandable">
           <bool>false</bool>
+         </property>
+         <property name="animated">
+          <bool>true</bool>
          </property>
          <property name="wordWrap">
           <bool>true</bool>

@@ -20,17 +20,15 @@ import config
 import backend
 
 class PTray:
-    def __init__(self):
+    def __init__(self, iface):
         self.defaultIcon = QtGui.QIcon(":/data/package-manager.png")
         self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
-        self.iface = backend.pm.Iface()
+        self.iface = iface
         self.notification = None
-
         self.initializeTimer()
         self.initializePopup()
-
         self.settingsChanged()
 
     def initializeTimer(self):
@@ -91,10 +89,9 @@ class PTray:
         cfg = config.PMConfig()
         if cfg.systemTray():
             self.show()
-            self.updateTrayUnread()
+            QTimer.singleShot(1, self.updateTrayUnread)
         else:
             self.hide()
-
         self.updateInterval(cfg.updateCheckInterval())
 
     def updateTrayUnread(self):
@@ -157,9 +154,9 @@ class PTray:
 if not Pds.session == pds.Kde4:
 
     class Tray(QtGui.QSystemTrayIcon, PTray):
-        def __init__(self, parent):
+        def __init__(self, parent, iface):
             QtGui.QSystemTrayIcon.__init__(self, parent)
-            PTray.__init__(self)
+            PTray.__init__(self, iface)
 
             self.appWindow = parent
             self.activated.connect(self.__activated)
@@ -194,9 +191,9 @@ else:
     from PyKDE4.kdecore import KComponentData
 
     class Tray(KSystemTrayIcon, PTray):
-        def __init__(self, parent):
+        def __init__(self, parent, iface):
             KSystemTrayIcon.__init__(self, parent)
-            PTray.__init__(self)
+            PTray.__init__(self, iface)
             self.appWindow = parent
 
         def initializePopup(self):

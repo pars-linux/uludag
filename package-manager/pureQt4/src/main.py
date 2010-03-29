@@ -67,4 +67,5 @@ if __name__ == '__main__':
         manager = MainWindow()
         manager.show()
 
+    ctx._time()
     app.exec_()
