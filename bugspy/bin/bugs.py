@@ -95,6 +95,9 @@ def setup_action_parser(action):
         p.add_option("-a", "--assign", dest="assigned_to",
                 help="optional: assign bug using e-mail address")
 
+        p.add_option("--cc",
+                help="optional: add e-mail address to cc")
+
         p.add_option("--blocks",
                 help="optional: the bugs that this bug blocks")
 
@@ -279,6 +282,9 @@ def main():
 
         if opt.depends:
             modify["dependson"] = opt.depends
+
+        if opt.cc:
+            modify["cc"] = opt.cc
 
         try:
             bugzilla.login()

@@ -263,6 +263,10 @@ class Bugzilla:
             log.debug("Bug blocks: %s" % args.blocks)
             self.browser["blocked"] = args.blocks
 
+        if args.has("cc"):
+            log.debug("Adding to cc: %s" % args.cc)
+            self.browser["newcc"] = args.cc
+
         log.info("Submitting the changes")
         response = self.browser.submit()
         response = response.read()
