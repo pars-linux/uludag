@@ -15,6 +15,7 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 from context import *
+from context import _time
 
 if Pds.session == pds.Kde4:
     from ui_mainwidget_kde4 import Ui_MainWidget
@@ -81,16 +82,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.reset()
         self.initializePackageList()
         self.initializeGroupList()
-        self.initializeBasket()
         self.initializeStatusUpdater()
         self.statusChanged()
         restoreCursor()
+        QTimer.singleShot(1, self.initializeBasket)
 
     def initializeStatusUpdater(self):
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
 
     def initializeBasket(self):
+        waitCursor()
         self.basket.setModel(self.packageList.model().sourceModel())
+        restoreCursor()
 
     def initializePackageList(self):
         self.packageList.setModel(PackageProxy(self))

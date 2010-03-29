@@ -22,9 +22,10 @@ MAX_HEIGHT = DEFAULT_HEIGHT * 3
 class RowAnimator(object):
     def __init__(self, updater=None):
         self.height = DEFAULT_HEIGHT
+        self.max_height = DEFAULT_HEIGHT * 3
         self.direction = DOWN
         self.row = None
-        self.timeLine = QTimeLine(350)
+        self.timeLine = QTimeLine(250)
         self.timeLine.setUpdateInterval(40)
         QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), updater)
         QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
@@ -43,7 +44,7 @@ class RowAnimator(object):
     def finished(self):
         if self.direction == DOWN:
             self.direction = UP
-            self.height = MAX_HEIGHT
+            self.height = self.max_height
         else:
             self.direction = DOWN
             self.height = DEFAULT_HEIGHT
@@ -66,8 +67,8 @@ class RowAnimator(object):
     def updateSize(self):
         if self.direction == DOWN:
             self.height += 25
-            if self.height > MAX_HEIGHT:
-                self.height = MAX_HEIGHT
+            if self.height > self.max_height:
+                self.height = self.max_height
         else:
             self.height -= 25
             if self.height < DEFAULT_HEIGHT:
