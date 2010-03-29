@@ -29,7 +29,7 @@ class Constants:
     COOKIE_FILE = os.path.expanduser("~/.bugspy.cookie")
 
     BUG_INFO_TEMPLATE = """
-Summary:    %(short_desc)s (%(bug_id)s) - %(creation_ts)s
+Summary:    (%(bug_id)s) %(short_desc)s - %(creation_ts)s
 Product:    %(product)s
 Version:    %(version)s
 Creator:    %(reporter_name)s <%(reporter_email)s>
