@@ -298,6 +298,10 @@ def main():
         except LoginError, e:
             sys.exit(1)
 
+        if not opt.bug_id:
+            parser.error("You need to supply -b argument")
+            sys.exit(1)
+
         bug = bugzilla.get(opt.bug_id)
         bug.output()
 
