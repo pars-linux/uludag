@@ -422,16 +422,13 @@ class EntryEditor:
 
         new_bug = {}
 
-        print "Make his bug private? [Y/n]",
+        print "Make his bug private? [Y/n]: ",
         answer = sys.stdin.readline()
 
         if answer[0] == "y" or answer[0] == "\n":
             new_bug["security"] = 1
         elif answer[0] == "n":
             new_bug["security"] = 0
-
-        # TODO: Ask for which Pardus releases are vulnerable
-        # TODO: Create bug for each vulnerable Pardus releases. Add blocking for original entry
 
         print "\nTitle: %s" % title.rstrip("\n")
         print "Component: %s" % component
