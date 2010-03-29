@@ -17,8 +17,7 @@ log = logging.getLogger("bugzilla")
 if "--debug" in sys.argv:
     log.setLevel(logging.DEBUG)
 else:
-    #FIXME: Make it INFO on production
-    log.setLevel(logging.DEBUG)
+    log.setLevel(logging.INFO)
 
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
