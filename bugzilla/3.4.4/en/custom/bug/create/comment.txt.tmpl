@@ -30,7 +30,7 @@
 
 [%+ cgi.param("comment") IF cgi.param("comment") %]
 
-[%+ IF cgi.param("reproducible") != "Choose one..." -%]
+[%+ IF cgi.param("reproducible") != "--" -%]
 Reproducible: [%+ cgi.param("reproducible") %]
 [% END %]
 
