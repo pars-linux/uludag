@@ -15,6 +15,12 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    durumunu ATANDI şeklinde değiştirir. Bu işlemi sadece "editbugs" grubuna
    dahil bir Bugzilla kullanıcısı yapabilir.
 
+#. Girilmiş olan hatada, 'Özet' bölümünde paketin adı, 'Ayrıntılar' bölümünde
+   paketin pspec.xml dosyasında yazan Açıklama (description) alanı yer almalıdır.
+   Paketin depoya alınmasında özel bir neden varsa (depoda var olan bir paket
+   için gerekli olması, gözden geçirme sürecindeki başka bir paketin bağımlılığı
+   olması vb.) hatanın 'Ayrıntılar' kısmına yazılmalıdır.
+
 #. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
    bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
    eklenecektir.
