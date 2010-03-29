@@ -77,7 +77,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
-            icon = QtGui.QIcon(KIconLoader.load(icon).scaled(QSize(32, 32), Qt.KeepAspectRatio))
+            icon = QtGui.QIcon(KIconLoader.load(icon, forceCache = True).scaled(QSize(32, 32), Qt.KeepAspectRatio))
         else:
             icon = self.defaultIcon
 
