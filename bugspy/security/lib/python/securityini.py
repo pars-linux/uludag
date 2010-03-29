@@ -108,15 +108,15 @@ class SecurityINI:
 
         section = self.config[section]
 
-        # if comments is not array, make it array and also strip \n
-        if not isinstance(comments, list):
+        if isinstance(comments, str):
             if comments.find("\n") > -1:
                 comments = comments.split("\n")
                 comments.insert(0, '')
                 # comment dict's first element should be ''. We do it so that entries have blank chars on top of them.
             else:
-                comments = [comments]
-                comments.insert(0, '')
+                comments = [""]
+        else:
+            comments = [""]
 
         # handle individual keys first.
         if not section.has_key(key):
