@@ -131,6 +131,9 @@ class CVEData:
         print
 
 
+    def get_cve_severity(self, cvename):
+        return self.cvedata[cvename]['severity']
+
     def get_cve_desc(self, cvename, indentation = 0, linelength = 72):
         """ returns the cve description, wrapped to specified line length and given space indentation"""
         cveinfo = self.cvedata[cvename]
