@@ -509,6 +509,7 @@ class EntryEditor:
                                          description=bug_desc,
                                          security=1,
                                          component=component,
+                                         version=affected_version,
                                          product="Güvenlik / Security",
                                          blocks=bugno)
 
