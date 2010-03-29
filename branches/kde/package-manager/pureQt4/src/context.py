@@ -13,7 +13,7 @@
 
 import pds
 
-Pds = pds.Pds('package-manager', debug=True)
+Pds = pds.Pds('package-manager', debug = False)
 # Force to use Default Session for testing
 # Pds.session = pds.DefaultDe
 print 'Current session is : %s %s' % (Pds.session.Name, Pds.session.Version)
