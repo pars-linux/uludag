@@ -1,12 +1,17 @@
 #!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 # Written by Robert Buchholz <rbu@gentoo.org> and Tobias Heinlein <keytoaster@gentoo.org>
 # Based on a Perl script by Stefan Fritsch <sf@sfritsch.de>
 
-# This program needs app-portage/eix installed and its database up-to-date
-# It uses a modified NVD python component
+# Modified by Eren Türkay <eren:pardus.org.tr> to meet Pardus' needs.
+#
+# - Pardus' bug reporter class is used.
+# - After creating a bug, the package is added to tracker.xxx.ini file.
+#
 
 import string
 import sys
@@ -14,8 +19,35 @@ import os
 import re
 import subprocess
 
+import logging
+
+# Use Pardus' own bugzilla library
+from bugspy.bugzilla import Bugzilla
+from bugspy.config import BugspyConfig
+
+
+# Files to edit
+TRACKER_PARDUS_2009 = "./data/Pardus/tracker.2009.ini"
+TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
+TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
+
+TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
+               "2008": TRACKER_PARDUS_2008,
+               "corporate2": TRACKER_PARDUS_CORPORATE2}
+
 DEFAULT_ISSUE_REGEX = '^CVE-20(0[3-9]|10)'
 DEFAULT_TODO_REGEX = '^\s+TODO: check$'
+
+# Log class for BugSPY
+log = logging.getLogger("bugzilla")
+log.setLevel(logging.DEBUG)
+
+ch = logging.StreamHandler()
+ch.setLevel(logging.DEBUG)
+#ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s"))
+ch.setFormatter(logging.Formatter("%(levelname)s: %(name)s: %(message)s"))
+
+log.addHandler(ch)
 
 
 def filterstring(strng):
@@ -172,6 +204,8 @@ class EntryEditor:
 
 
     def update_bug(self, bug, cves):
+        #TODO: Modify this also..
+
         title = self.bugreporter.get_bug_title(bug)
         if not title:
             return
@@ -332,23 +366,37 @@ class EntryEditor:
         if res and len(res) == 1:
             self.bugs_atom = res[0].strip()
 
-        title = self.bugs_atom + " DESCR (" + self.bugs_unify_cvenames(cvelist) + ")"
+        title = self.bugs_atom + ": DESCR (" + self.bugs_unify_cvenames(cvelist) + ")"
         description = ""
 
         bug_url = ""
         for cve in cvelist:
             # print cve
+            description += "Description\n"
+            description += "===========\n"
             description += "%s (http://nvd.nist.gov/nvd.cfm?cvename=%s):\n" % (cve, cve)
             description += "%s" % self.cvedb.get_cve_desc(cve, indentation = 2)
             description += "\n\n"
+
+            description += "Solution\n"
+            description += "========\n\n"
+
+            description += "References\n"
+            description += "==========\n"
+
+            references = ""
             if not bug_url:
                 for source, url in self.cvedb.get_refs_for(cve):
                     if source == u"CONFIRM":
                         bug_url = url
-                        break
+                        references += "%s: %s\n" % (source, url)
+                    elif source in ["BID", "SECUNIA", "FEDORA", "SUSE", "OSVDB"]:
+                        references += "%s: %s\n" % (source, url)
+
+            description += "%s\n" % references
 
         import tempfile
-        (fd, filename) = tempfile.mkstemp(suffix='.txt', prefix='gsec', text=True)
+        (fd, filename) = tempfile.mkstemp(suffix='.txt', prefix='psec', text=True)
         os.write(fd, "%s\n" % (title))
         os.write(fd, "\n== Only the first line is used as a title, comments follow ==\n")
         os.write(fd, description)
@@ -360,43 +408,124 @@ class EntryEditor:
         editfile.close()
         os.remove(filename)
 
-        print "Title: %s" % (title)
-        print "Description:"
-        print description
-        print
-        print "Component for bug [Enter=Vuln, k=Kernel, otherwise free text]: ",
+        print "Processing %s" % title
+
+        print "Component for bug [Enter=General, k=Kernel]: ",
         comp = sys.stdin.readline()
         component = ""
-        if comp[0] == "a":
-            component = "Auditing"
+        if comp[0] == "g" or comp[0] == "\n":
+            component = "guvenlik/security"
         elif comp[0] == "k":
-            component = "Kernel"
-        elif comp[0] == "\n":
-            component = "Vulnerabilities"
+            component = "cekirdek / kernel"
         else:
-            component = comp.strip()
-        print "Initial Whiteboard: ",
-        whiteboard = sys.stdin.readline()
+            component = "guvenlik/security"
 
-        print "Will file this bug [Y/n]: ",
+        new_bug = {}
+
+        print "Make his bug private? [Y/n]",
+        answer = sys.stdin.readline()
+
+        if answer[0] == "y" or answer[0] == "\n":
+            new_bug["security"] = 1
+        elif answer[0] == "n":
+            new_bug["security"] = 0
+
+        # TODO: Ask for which Pardus releases are vulnerable
+        # TODO: Create bug for each vulnerable Pardus releases. Add blocking for original entry
+
+        print "\nTitle: %s" % title.rstrip("\n")
+        print "Component: %s" % component
+        print "Bug url: %s" % bug_url
+        print "Description:\n%s" % description
+
+        print "Which Pardus versions are affected?"
+        print "1- Pardus 2009"
+        print "2- Pardus 2008"
+        print "3- Pardus Corporate2\n"
+
+        affected_pardus_versions = []
+        while 1:
+            print "Append Pardus version [r=Revert, q=Quit]: ",
+            answer = sys.stdin.readline()
+            answer = answer[0]
+            if answer == "q":
+                if len(affected_pardus_versions) > 0:
+                    break
+                else:
+                    print "You need to specify at least 1 version"
+                    continue
+
+            if answer == "r":
+                affected_pardus_versions = []
+                continue
+
+            if answer == "\n":
+                print affected_pardus_versions
+                continue
+
+            map = {"1": "2009",
+                   "2": "2008",
+                   "3": "corporate2"}
+
+            if not answer in map.keys():
+                print "Invalid entry"
+            else:
+                if map.get(answer) in affected_pardus_versions:
+                    print "This is already selected"
+                else:
+                    affected_pardus_versions.append(map.get(answer))
+                    print affected_pardus_versions
+
+        print "\nWill file this bug [Y/n]: ",
 
         answer = sys.stdin.readline()
-        print self.bugs_collected
         if answer[0] == "y" or answer[0] == "Y" or answer[0] == "\n":
-            print "Title: %s" % title
-            print "Description: %s" % description
-            print "Component: %s" % component
-            print "Bug url: %s" % bug_url
-            return 0
-            bugno = self.bugreporter.post_bug(title, description, component, whiteboard, bug_url)
+            print "Filing bug..."
+            new_bug["title"] = title
+            new_bug["description"] = description
+            new_bug["url"] = bug_url
+            new_bug["component"] = component
+            new_bug["product"] = "Güvenlik / Security"
+
+
+            # add bug for each Pardus version and add depends_on.
+
+            self.bugreporter.login()
+            bugno = self.bugreporter.new(**new_bug)
+
             if bugno:
-                print "Success! https://bugs.gentoo.org/%d" % (bugno)
+                print "Success! http://bugs.pardus.org.tr/%s" % (bugno)
                 # note the bug in the list
                 for cve in self.bugs_collected.keys():
                     entry = self.bugs_collected[cve]
-                    self.update_entry_todo(entry, "\tBUG: %d" % (bugno))
+                    self.update_entry_todo(entry, "\tBUG: %s" % (bugno))
+
+                # add each entry to files and file a bug
+                for affected_version in affected_pardus_versions:
+                    bug_title = "%s - Pardus %s" % (title.replace("\n",""), affected_version)
+                    bug_desc = "Pardus %s is affected from bug #%s" % (affected_version, bugno)
+
+                    self.bugreporter.new(title=bug_title,
+                                         description=bug_desc,
+                                         security=1,
+                                         component=component,
+                                         product="Güvenlik / Security",
+                                         blocks=bugno)
+
+
+                    file = TRACKER_MAP.get(affected_version)
+                    ini = SecurityINI(file)
+
+                    # redhat enterprise_linux: multiple integer overflows (CVE-2010-0727)
+                    # will be: multiple integer overflows (CVE-2010-0727)
+                    mini_description = title.split(":")[1].lstrip().rstrip("\n")
+                    severity = self.cvedb.get_cve_severity(cve).lower() or "none"
+
+                    ini.addEntry("in bugzilla not fixed", self.bugs_atom.lstrip(), "%s: %s: qa?" % (bugno, severity), mini_description)
+                    ini.save()
+
             else:
-                print "Failed creating the bug"
+                print "Failed to create bug! Please check log file."
 
         ## This edits our reference to the list, and therefore also the master entry
         #del entry[:]
@@ -588,14 +717,18 @@ def main():
         # without further narrowing
         todo_regex = "."
 
-    bugreporter = BugReporter(bugz_username, bugz_password)
+    conf = BugspyConfig()
+    bugreporter = Bugzilla(conf.bugzillaurl, conf.username, conf.password)
+
     EntryEditor(issue_regex, todo_regex, replace_line, list_only, list_lines, glsa_style, sort_only, bugreporter)
 
 
 if __name__ == "__main__":
     try:
         os.chdir(setup_paths())
-        from cvetools import BugReporter, CVEData
+        # import our ini parser
+        from securityini import SecurityINI
+        from cvetools import CVEData
         main()
     except KeyboardInterrupt:
         print '\n ! Exiting.'
