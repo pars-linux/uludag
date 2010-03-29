@@ -4,15 +4,25 @@ Package Review Process
 The goal of package review process is to control that new packages are
 suitable for repository policy rules.
 
-The package review process steps on 
+The package review process steps on
 `Pardus Bug Tracking System <http://hata.pardus.org.tr>`_;
 
-#. If a bug is reported for a new package on bug tracking system, the process 
+#. If a bug is reported for a new package on bug tracking system, the process
    is start from this point.
 
 #. The developer that wants to maintain this package, assigns this bug
    to him/her self and changes the bug status to ASSIGNED. This operation
    can be done only by the members of "editbugs" group.
+
+#. The "Summary" part of the bug will contain the name of the package. The "Details"
+   part of the package will contain the description of the package which will exist
+   in pspec.xml. 
+   If the package is taken to review process because of some reasons (for example
+   the package can be needed by a package in repository or can be a dependency of 
+   package in review.), this reason should be written in "Details" part.
+
+#. If the package will be taken to contrib repositories, this reason should be 
+   written in "Details" part.
 
 #. For the bug report, the product is selected as "Review", and the component
    will be the appropriate repository component. The interested component
