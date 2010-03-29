@@ -22,9 +22,9 @@ from context import *
 
 DEFAULT_ICON = ('applications-other', 'package')
 ICON_PADDING = 0
-ICON_SIZE = 24
+ICON_SIZE = 22
 DETAIL_LINE_OFFSET = 36
-ROW_HEIGHT = 72
+ROW_HEIGHT = 52
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
@@ -56,7 +56,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         if option.state & QtGui.QStyle.State_MouseOver:
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
-        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 64, 0, -2)
+        buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 54, 0, -2)
         opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index):
@@ -70,10 +70,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         p = QtGui.QPainter(pixmap)
         p.translate(-option.rect.topLeft())
 
-        textInner = 2 * ICON_PADDING + ROW_HEIGHT
+        textInner = 2 * ICON_PADDING + ROW_HEIGHT - 10
         itemHeight = ROW_HEIGHT + 2 * ICON_PADDING
 
-        margin = left + ICON_PADDING
+        margin = left + ICON_PADDING - 10
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
@@ -103,7 +103,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Summary
         p.setFont(normalFont)
-        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextWordWrap, summary.toString())
+        p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, summary.toString())
 
         if self.rowAnimator.currentRow() == index.row():
 
