@@ -17,7 +17,7 @@ log = logging.getLogger("bugzilla")
 if "--debug" in sys.argv:
     log.setLevel(logging.DEBUG)
 else:
-    log.setLevel(logging.INFO)
+    log.setLevel(logging.DEBUG)
 
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
@@ -43,6 +43,8 @@ CONFIG_FILE = os.path.expanduser("~/.bugspy.conf")
 
 VALID_RESOLUTIONS = ["FIXED", "INVALID", "WONTFIX", "LATER", "REMIND", "DUPLICATE"]
 VALID_STATUSES = ["REOPENED", "NEW", "ASSIGNED", "RESOLVED"]
+# valid versions for security
+VALID_VERSIONS = ["2008", "2009", "corporate2"]
 
 # Product mappings available on Pardus bugzilla
 # The URL for new bug is like: http://bugs.pardus.org.tr/enter_bug.cgi?product=*%20Genel%20/%20General, so we a clear mapping
@@ -90,6 +92,9 @@ def setup_action_parser(action):
 
         p.add_option("-r", "--resolution",
                 help="optional: set resolution (%s)" % ','.join(VALID_RESOLUTIONS))
+
+        p.add_option("-v", "--version",
+                help="optional: set version (%s)" % ','.join(VALID_VERSIONS))
 
         p.add_option("-a", "--assign", dest="assigned_to",
                 help="optional: assign bug using e-mail address")
@@ -147,6 +152,9 @@ def setup_action_parser(action):
 
         p.add_option("-u", "--url",
                 help="optional: bug external URL")
+
+        p.add_option("-v", "--version",
+                help="optional: set version (%s)" % ','.join(VALID_VERSIONS))
 
         p.add_option("--alias",
                 help="optional: bug alias")
@@ -285,6 +293,12 @@ def main():
         if opt.cc:
             modify["cc"] = opt.cc
 
+        if opt.version:
+            if not opt.version in VALID_VERSIONS:
+                parser.error("version must be one of: %s" % ', '.join(VALID_VERSIONS))
+
+            modify["version"] = opt.version
+
         try:
             bugzilla.login()
             bugzilla.modify(**modify)
@@ -350,6 +364,12 @@ def main():
 
             if opt.depends:
                 new["dependson"] = opt.depends
+
+            if opt.version:
+                if not opt.version in VALID_VERSIONS:
+                    parser.error("version must be one of: %s" % ', '.join(VALID_VERSIONS))
+
+                new["version"] = opt.version
 
             bug_id = bugzilla.new(**new)
             print "Bug submitted: %s (%s)" % (bug_id, opt.title)
