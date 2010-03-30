@@ -20,6 +20,7 @@ from PyQt4.QtCore import *
 from migration.gui.ScreenWidget import ScreenWidget
 
 from migration.gui.context import *
+import migration.gui.context as context
 
 from migration.utils.account import *
 from migration.utils.bookmark import *
