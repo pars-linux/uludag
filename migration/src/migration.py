@@ -22,15 +22,14 @@ from migration.gui.ui.main import Ui_MigrationUI
 #from migration.about import aboutData
 
 #Screens
-import migration.gui.ScrWelcome as welcome
-import migration.gui.ScrUser as user
-import migration.gui.ScrUserFiles as userfiles
-import migration.gui.ScrOptions as options
-import migration.gui.ScrSummary as summary
-import migration.gui.ScrProgress as progress
+import migration.gui.ScrWelcome
+import migration.gui.ScrUser
+import migration.gui.ScrUserFiles
+import migration.gui.ScrOptions
+import migration.gui.ScrSummary
+import migration.gui.ScrProgress
 
 from migration.gui.context import *
-
 
 def loadFile(_file):
     try:
@@ -62,9 +61,9 @@ def isLiveCD():
     return False
 
 if isLiveCD():
-    availableScreens = [welcome, user, options, userfiles, summary, progress]
+    availableScreens = [migration.gui.ScrWelcome, migration.gui.ScrUser, migration.gui.ScrOptions, migration.gui.ScrUserFiles, migration.gui.ScrSummary, migration.gui.ScrProgress]
 else:
-    availableScreens = [welcome, user, options, userfiles, summary, progress]
+    availableScreens = [migration.gui.ScrWelcome, migration.gui.ScrUser, migration.gui.ScrOptions, migration.gui.ScrUserFiles, migration.gui.ScrSummary, migration.gui.ScrProgress]
 
 class Migration(QtGui.QWidget):
     def __init__(self, parent=None):
@@ -72,9 +71,13 @@ class Migration(QtGui.QWidget):
         self.ui = Ui_MigrationUI()
         self.ui.setupUi(self)
 
-        print self.screens
-        self.screens = filter(lambda s: s != None, availableScreens) #edited
-        print self.screens
+
+        for s in availableScreens:
+            print "SCREEN: ", s
+
+        self.screens = availableScreens
+        #filter(lambda s: s != None, availableScreens) #edited
+        #print self.screens
 
         self.moveInc = 1
         self.menuText = ""
@@ -124,7 +127,7 @@ class Migration(QtGui.QWidget):
                 self.moveInc = 1
             else:
                 #kdeui.KMessageBox.error(self, _return[1]) edit
-                QtGui.QMessageBox(self, _return[1])
+                QtGui.QMessageBox.critical(self, "Error", _return[1])
 
     def slotBack(self):
         self.menuText = ""
