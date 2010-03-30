@@ -20,7 +20,7 @@ The package reviewing process steps on `Pardus Bug Tracking System
    what it does, etc.
 
 #. If the package is taken to the reviewing process because of a specific
-   reason (e.g.  the package may be a dependency of an available package in the
+   reason (e.g. the package may be a dependency of an available package in the
    repository or of another to-be-reviewed package), this reason should be
    indicated in the "Details" part of the bug report.
 
@@ -30,7 +30,7 @@ The package reviewing process steps on `Pardus Bug Tracking System
 
 #. The product of the bug report should be "Review". The component of the bug
    report should be the appropriate repository component for being able to
-   notify the relevant component responsables by e-mail about this new package
+   notify the relevant component responsibles by e-mail about this new package
    reviewing request.
 
 #. If the package depends on other packages currently in reviewing process,
@@ -53,21 +53,21 @@ The package reviewing process steps on `Pardus Bug Tracking System
    by the supervisor of the package component, then by an other package
    maintainer.
 
-   In order to complete the package review process two ACKs is necessary.
+   In order to complete the package reviewing process two ACKs is necessary.
    One of these ACKs should be given by component supervisor. If the package
-   maintainer is also the its component supervisor, the other package
-   maintainers can give these two ACKs.
+   maintainer is also the component supervisor, the other package maintainers
+   can give these two ACKs.
 
 #. If the reviewer find any problem about the package in review, he/she should
-   wait for this problem fixed by the maintainer. In other words the conditinal
-   ACK is forbidden.
+   wait for this problem to be fixed by the maintainer. In other words the
+   conditional ACK is forbidden.
 
-   Example: Bad: After changing the directory paths, it will be ACK.
-            Good: It should change the directory paths.
+   Example: Bad:    After changing the directory paths, it will be ACK.
+            Good:   It should change the directory paths.
 
-   After the package maintainer has fixed the problem, the reviewer verify the
-   problem and give an ACK as a comment.
+   After the package maintainer has fixed the problem, the reviewer verifies
+   the problem and gives an ACK as a comment.
 
-#. The package that takes the necessary ACKs, is taken to devel package
-   repository, removed from review directory and the bug status is changed to
+#. The package that takes the necessary ACKs, is taken to package repositories,
+   removed from the review directory and the bug status is changed to
    RESOLVED/FIXED.
