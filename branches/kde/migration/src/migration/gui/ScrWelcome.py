@@ -20,6 +20,9 @@ from migration.gui.context import *
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.welcomeWidget import Ui_welcomeWidget
 
+
+print "SCREEN"
+
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Welcome")
     desc = i18n("Welcome to Migration Tool Wizard :)")

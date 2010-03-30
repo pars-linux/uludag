@@ -24,6 +24,7 @@ from migration.utils import partition
 from migration.utils import info
 
 from migration.gui.context import *
+import migration.gui.context as context
 
 iconXP, iconVista = range(2)
 
@@ -44,8 +45,8 @@ class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
         self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
 
     def slotUserCheck(self):
-        user = self.getData()
-        print "DENEME:" , "user"
+        context.user = self.getData()
+        print "DENEME:" , context.user
 
     def setData(self, data):
         self.data = data
@@ -72,7 +73,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
         self.users = None
         self.addUsers()
-
+        
+        print "im in the user gui"
         self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
 
 
