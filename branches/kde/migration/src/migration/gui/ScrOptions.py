@@ -19,6 +19,7 @@ from PyQt4.QtCore import *
 
 from migration.gui.ScreenWidget import ScreenWidget
 
+import migration.gui.context as context
 from migration.gui.context import *
 
 class Widget(QtGui.QWidget, ScreenWidget):
