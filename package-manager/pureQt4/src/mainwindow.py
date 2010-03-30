@@ -44,7 +44,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        #self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
+        #self.connect(QtCore.QCoreApplication, SIGNAL("aboutToQuit()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
@@ -56,7 +56,6 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.showUpgradeAction.setChecked(True)
         self.centralWidget().switchState(StateManager.UPGRADE, action=False)
         self.centralWidget().initialize()
-        KApplication.kApplication().updateUserTimestamp()
         self.show()
         self.raise_()
 
@@ -89,6 +88,14 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def initializeOperationActions(self):
         actionGroup = QtGui.QActionGroup(self)
 
+        self.menubar = QtGui.QMenuBar(self)
+
+        self.menuFile = QtGui.QMenu(i18n('File'), self.menubar)
+        self.menuOptions = QtGui.QMenu(i18n('Settings'), self.menubar)
+        self.menuHelp = QtGui.QMenu(i18n('Help'), self.menubar)
+
+        self.setMenuBar(self.menubar)
+
         # Action Show Installable Packages
         self.showInstallAction = QtGui.QAction(KIcon("list-add"),
                           i18n("Show Installable Packages"), self)
@@ -98,6 +105,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.showInstallAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showInstallAction)
         self.toolBar.addAction(self.showInstallAction)
+        self.menuFile.addAction(self.showInstallAction)
 
         # Action Show Installed Packages
         self.showRemoveAction = QtGui.QAction(KIcon("list-remove"),
@@ -107,6 +115,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.showRemoveAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showRemoveAction)
         self.toolBar.addAction(self.showRemoveAction)
+        self.menuFile.addAction(self.showRemoveAction)
 
         # Action Show Upgradable Packages
         self.showUpgradeAction = QtGui.QAction(KIcon("view-refresh"),
@@ -116,6 +125,19 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.showUpgradeAction.triggered.connect(self.centralWidget().initialize)
         actionGroup.addAction(self.showUpgradeAction)
         self.toolBar.addAction(self.showUpgradeAction)
+        self.menuFile.addAction(self.showUpgradeAction)
+
+        self.showSettingsAction = QtGui.QAction(KIcon("preferences-other"),
+                          i18n("Package Manager Settings"), self)
+        self.showSettingsAction.triggered.connect(self.showSettingsDialog)
+        self.menuOptions.addAction(self.showSettingsAction)
+
+        self.menubar.addAction(self.menuFile.menuAction())
+        self.menubar.addAction(self.menuOptions.menuAction())
+        self.menubar.addAction(self.menuHelp.menuAction())
+
+    def showSettingsDialog(self):
+        self.settingsDialog.show()
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
@@ -126,7 +148,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.statusLabel.setText(text)
 
     def queryClose(self):
-        if config.PMConfig().systemTray():# and not KApplication.kApplication().sessionSaving():
+        if config.PMConfig().systemTray():
             self.hide()
             return False
         return True

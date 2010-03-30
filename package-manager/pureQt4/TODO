@@ -9,4 +9,4 @@ TODO
  - Write an alternative Krun
  - Fix package icons in summary dialog
  - Merge changes from corporate's package-manager
-
+ - Add summary notification for Qt-only mode mainwidget:216
