@@ -29,7 +29,6 @@ distfiles = """
     src/icons/*.png
     src/help/*.css
     src/help/*/*.html
-    src/help/*/*.html
     po/*.po
     po/*.pot
 """
