@@ -72,9 +72,10 @@ class Migration(QtGui.QWidget):
         self.ui = Ui_MigrationUI()
         self.ui.setupUi(self)
 
-        self.screens = filter(lambda s: s != None, availableScreens)
-
         print self.screens
+        self.screens = filter(lambda s: s != None, availableScreens) #edited
+        print self.screens
+
         self.moveInc = 1
         self.menuText = ""
         #self.config = KConfig("migrationrc")
