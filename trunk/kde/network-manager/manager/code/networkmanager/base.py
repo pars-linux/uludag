@@ -44,6 +44,7 @@ class MainManager(QtGui.QWidget):
         self.lastEditedPackage = None
         self.lastEditedData = None
         self.lastEditedInfo = None
+        self.isEditBox = None
 
         # Network Manager can run as KControl Module or Standalone
         if standAlone:
@@ -416,6 +417,7 @@ class MainManager(QtGui.QWidget):
 
         if profile:
             self.buildEditBoxFor(sender.package, sender.profile)
+            self.isEditBox = 1
 
         self.animator.setFrameRange(TARGET_HEIGHT, self.baseWidget.height() - TARGET_HEIGHT)
         self.animator.start()
@@ -528,11 +530,17 @@ class MainManager(QtGui.QWidget):
     def applyChanges(self):
         ui = self.ui
         connectionName = unicode(ui.lineProfileName.text())
+        connections = self.iface.connections(self.lastEditedPackage)
 
-        try:
-            self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
-        except Exception, e:
-            KMessageBox.error(self.baseWidget, unicode(e))
+        if (self.isEditBox) or (not connectionName in connections):
+            try:
+                self.iface.updateConnection(self.lastEditedPackage, connectionName, self.collectDataFromUI())
+            except Exception, e:
+                KMessageBox.error(self.baseWidget, unicode(e))
+                ui.lineProfileName.setFocus()
+                return
+        else:
+            KMessageBox.information(self.baseWidget, i18n("There is already a profile named '%1'.", connectionName))
             return
 
         if self.lastEditedData:
