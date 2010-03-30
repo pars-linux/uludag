@@ -1,0 +1,12 @@
+TODO
+~~~~
+
+ - For Kde 4 .pisi package we need to create following symlink:
+   /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
+
+ - For Qt-only mode add create menubar
+ - For Qt-only mode QUniqueApp support
+ - Write an alternative Krun
+ - Fix package icons in summary dialog
+ - Merge changes from corporate's package-manager
+
