@@ -7,6 +7,9 @@ depo politikasına uygun olmalarını amaçlar.
 Gözden geçirme süreci, `Pardus Hata Takip Sistemi <http://hata.pardus.org.tr>`_
 aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 
+#. Paket hazır duruma geldiğinde depoda playground/review dizini altında
+   girmesi düşünülen bileşene kopyalanır.
+
 #. Hata takip sisteminde, gözden geçirme sürecine girecek paket için daha önce
    bildirilmiş bir yeni paket isteği varsa sürece bu hata raporu üzerinden
    başlanır.
@@ -14,6 +17,10 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 #. Paketi hazırlamak isteyen geliştirici, hata raporunu kendisine atar ve hata
    durumunu ATANDI şeklinde değiştirir. Bu işlemi sadece "editbugs" grubuna
    dahil bir Bugzilla kullanıcısı yapabilir.
+
+#. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
+   bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
+   eklenecektir.
 
 #. Girilmiş olan hatada, 'Özet' bölümünde paketin adı, 'Ayrıntılar' bölümünde
    paketin pspec.xml dosyasında yazan Açıklama (description) alanı yer almalıdır.
@@ -24,15 +31,8 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 #. Paketin katkı depolarına alınması gerekiyor ise, hatanın "Ayrıntılar" bölümünde
    bu durumun açıklanması gerekmektedir.
 
-#. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
-   bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
-   eklenecektir.
-
 #. Paket, gözden geçirme sürecinde bulunan başka bir pakete bağlı ise o paket
    için açılan hataya bağımlı olarak işaretlenir.
-
-#. Paket hazır duruma geldiğinde depoda playground/review dizini altında
-   girmesi düşünülen bileşene kopyalanır.
 
 #. Paket üzerinde sonradan yapılacak değişikliklerin SVN açıklamalarına
 
