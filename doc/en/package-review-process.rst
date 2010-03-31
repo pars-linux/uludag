@@ -24,9 +24,9 @@ The package reviewing process steps on `Pardus Bug Tracking System
    repository or of another to-be-reviewed package), this reason should be
    indicated in the "Details" part of the bug report.
 
-#. If the developer is willing to maintain the package in the contribution
-   repositories, this should be indicated in the "Details" part of the bug
-   report.
+#. The repository of the package (contrib, pardus etc.) which the developer is
+   willing to maintain the package in, should be indicated in the "Details" part
+   of the bug report.
 
 #. The product of the bug report should be "Review". The component of the bug
    report should be the appropriate repository component for being able to
