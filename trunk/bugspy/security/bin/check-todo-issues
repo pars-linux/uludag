@@ -398,14 +398,18 @@ class EntryEditor:
         import tempfile
         (fd, filename) = tempfile.mkstemp(suffix='.txt', prefix='psec', text=True)
         os.write(fd, "%s\n" % (title))
-        os.write(fd, "\n== Only the first line is used as a title, comments follow ==\n")
+        os.write(fd, "\n")
         os.write(fd, description)
         os.close(fd)
         os.spawnlp(os.P_WAIT, self.editor, self.editor, filename)
 
         editfile = open(filename)
-        title = editfile.readline()
-        editfile.close()
+        data = editfile.read()
+        title = data.split("\n")[0]
+        # read everything after title.
+        # +2 is for \n and blank char that comes after title
+        description = data[len(title)+2:]
+
         os.remove(filename)
 
         print "Processing %s" % title
