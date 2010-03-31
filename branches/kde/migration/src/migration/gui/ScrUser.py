@@ -13,8 +13,6 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-#from PyKDE4.kdecore import i18n
-#from PyKDE4.kdeui import KIcon, KMessageBox
 
 from migration.gui.ui.usersItemWidget import Ui_usersItemWidget
 from migration.gui.ui.usersWidget import Ui_usersWidget
@@ -24,7 +22,6 @@ from migration.utils import partition
 from migration.utils import info
 
 from migration.gui.context import *
-import migration.gui.context as context
 
 iconXP, iconVista = range(2)
 
@@ -45,8 +42,8 @@ class UserItemWidget(QtGui.QWidget, Ui_usersItemWidget):
         self.connect(self.checkState, SIGNAL("stateChanged(int)"), self.slotUserCheck)
 
     def slotUserCheck(self):
-        context.user = self.getData()
-        print "DENEME:" , context.user
+        ctx_user = self.getData()
+        print "DENEME:" , ctx_user
 
     def setData(self, data):
         self.data = data
@@ -104,11 +101,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
             QMessageBox(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
 
     def execute(self):
-        if context.user:
-            part, ostype, username, userdir = context.user
+        if ctx_user:
+            part, ostype, username, userdir = ctx_user
             sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
-            context.sources = info.userInfo(sources)
-            context.destinations = info.localInfo()
+            ctx_sources = info.userInfo(sources)
+            ctx_destinations = info.localInfo()
             return (True, None)
         else:
             return (False, i18n("There isn't any selected user on User Selection Window!"))
