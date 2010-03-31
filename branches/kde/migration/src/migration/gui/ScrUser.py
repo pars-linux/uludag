@@ -70,10 +70,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.setupUi(self)
         self.users = None
         self.addUsers()
-        
-        print "im in the user gui"
         self.connect(self.ui.listUsers, SIGNAL("itemSelectionChanged()"), self.setUser)
-
 
     def addUsers(self):
         "Searches old users and adds them to UserListViewWidget"
@@ -90,7 +87,6 @@ class Widget(QtGui.QWidget, ScreenWidget):
             widgetItem = UserItemList(self.ui.listUsers, widget)
             self.ui.listUsers.setItemWidget(widgetItem, widget)
 
-
     def setUser(self):
         self.screenSettings["selectedUser"] = self.ui.listUsers.currentItem().statusTip()
         self.screenSettings["hasChanged"] = True
@@ -98,9 +94,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def shown(self):
         if not self.users :
             #KMessageBox.error(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
-            QMessageBox(self, i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
+            QMessageBox.critical(self, i18n("Error"), i18n("There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."))
 
     def execute(self):
+        print "\n\nctx_user: ", ctx_user
         if ctx_user:
             part, ostype, username, userdir = ctx_user
             sources = {"Partition":part, "OS Type":ostype, "User Name":username, "Home Path":userdir}
