@@ -21,8 +21,8 @@ KIcon = IconLoader.icon
 
 OK, WARNING, ERROR = range(3)
 
-user = None
-sources = None
-destinations = None
-options = None
-filesOptions = None
+ctx_user = None
+ctx_sources = None
+ctx_destinations = None
+ctx_options = None
+ctx_filesOptions = None

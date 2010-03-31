@@ -19,7 +19,6 @@ from PyQt4.QtCore import *
 
 from migration.gui.ScreenWidget import ScreenWidget
 
-import migration.gui.context as context
 from migration.gui.context import *
 
 class Widget(QtGui.QWidget, ScreenWidget):
@@ -32,7 +31,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         #self.ui.setupUi(self)
         self.box = QtGui.QGridLayout(self)
         #self.gridlayout.setContentsMargins(1,-1,11,-1)
-        #self.sources = context.sources
+        #self.sources = ctx_sources
         #self.vbox = QtGui.QVBoxLayout(self)
 
     def creator(self, sources):
@@ -204,10 +203,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def getOptions(self):
         "Returns a dictionary consists of selected options"
         options = {}
-        context.sources["Copy E-Mails"] = True
+        ctx_sources["Copy E-Mails"] = True
         # Add fundamental items:
         for item in ["Partition", "OS Type", "User Name", "Home Path"]:
-            options[item] = context.sources[item]
+            options[item] = ctx_sources[item]
         # Add selected optional items:
         items = [("IEBookmarks", "Favorites Path"),
                  ("FFBookmarks", "Firefox Profile Path"),
@@ -221,14 +220,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         for widgetname, dictname in items:
             item = self.findChild(QtGui.QWidget, widgetname)
             if item and item.isChecked():
-                options[dictname] = context.sources[dictname]
+                options[dictname] = ctx_sources[dictname]
         return options
 
     def shown(self):
-        if context.sources:
-            self.creator(context.sources)
+        if ctx_sources:
+            self.creator(ctx_sources)
 
     def execute(self):
         if self.getOptions():
-            context.options = self.getOptions()
+            ctx_options = self.getOptions()
             return (True, None)

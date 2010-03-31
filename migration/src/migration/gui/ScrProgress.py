@@ -14,13 +14,10 @@
 
 from PyQt4 import QtGui, QtCore
 from PyQt4.QtCore import *
-#from PyKDE4.kdecore import i18n
-#from PyKDE4.kdeui import KIconLoader, KIcon
 
 from migration.gui.ScreenWidget import ScreenWidget
 
 from migration.gui.context import *
-import migration.gui.context as context
 
 from migration.utils.account import *
 from migration.utils.bookmark import *
@@ -161,15 +158,15 @@ class Operation(QtGui.QWidget):
 
     def go(self, log, stat, steps):
         self.progress += steps
-        if stat == context.OK:
+        if stat == OK:
             if log:
                 logging.info(log)
             self.OKs += 1
-        elif stat == context.WARNING:
+        elif stat == WARNING:
             if log:
                 logging.warning(log)
             self.warnings += 1
-        elif stat == context.ERROR:
+        elif stat == ERROR:
             if log:
                 logging.error(log)
             self.errors += 1
@@ -215,25 +212,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.vbox.addWidget(self.progresspage)
 
     def run(self):
-        if context.options.has_key("Wallpaper Path"):
+        if ctx_options.has_key("Wallpaper Path"):
             self.progresspage.addProgress(3, 1)
-        if context.options.has_key("Firefox Profile Path"):
+        if ctx_options.has_key("Firefox Profile Path"):
             self.progresspage.addProgress(10, 1)
-        if context.options.has_key("Opera Profile Path"):
+        if ctx_options.has_key("Opera Profile Path"):
             self.progresspage.addProgress(10, 1)
-        if context.options.has_key("Favorites Path"):
+        if ctx_options.has_key("Favorites Path"):
             self.progresspage.addProgress(10, 1)
-        if context.options.has_key("GTalk Key"):
+        if ctx_options.has_key("GTalk Key"):
             self.progresspage.addProgress(5, 1)
-        if context.options.has_key("Contacts Path"):
+        if ctx_options.has_key("Contacts Path"):
             self.progresspage.addProgress(5, 1)
-        if context.options.has_key("Thunderbird Profile Path"):
+        if ctx_options.has_key("Thunderbird Profile Path"):
             self.progresspage.addProgress(15, 1)
-        if context.options.has_key("Windows Mail Path"):
+        if ctx_options.has_key("Windows Mail Path"):
             self.progresspage.addProgress(15, 1)
-        if context.options.has_key("links"):
+        if ctx_options.has_key("links"):
             self.progresspage.addProgress(3, 1)
-        if context.options.has_key("folders"):
+        if ctx_options.has_key("folders"):
             self.progresspage.addProgress(20, 1)
 
         # Initialization:
@@ -242,16 +239,16 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Control Settings and Set Second Progress Bar:
         # Wallpaper:
-        if context.options.has_key("Wallpaper Path"):
-            size = os.path.getsize(context.options["Wallpaper Path"])
+        if ctx_options.has_key("Wallpaper Path"):
+            size = os.path.getsize(ctx_options["Wallpaper Path"])
             self.progresspage.addOperation(i18n("Wallpaper"), size)
             self.progresspage.makeProgress(3)
 
 
         # Firefox:
-        if context.options.has_key("Firefox Profile Path"):
+        if ctx_options.has_key("Firefox Profile Path"):
             try:
-                bookmark.getFFBookmarks(context.options["Firefox Profile Path"])
+                bookmark.getFFBookmarks(ctx_options["Firefox Profile Path"])
             except:
                 logging.warning(i18n("Firefox bookmarks could not be loaded."))
             else:
@@ -260,9 +257,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Opera:
-        if context.options.has_key("Opera Profile Path"):
+        if ctx_options.has_key("Opera Profile Path"):
             try:
-                bookmark.getOperaBookmarks(context.options["Opera Profile Path"])
+                bookmark.getOperaBookmarks(ctx_options["Opera Profile Path"])
             except:
                 logging.warning(i18n("Opera bookmarks could not be loaded."))
             else:
@@ -271,9 +268,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Internet Explorer:
-        if context.options.has_key("Favorites Path"):
+        if ctx_options.has_key("Favorites Path"):
             try:
-                bookmark.getIEBookmarks(context.options["Favorites Path"])
+                bookmark.getIEBookmarks(ctx_options["Favorites Path"])
             except:
                 logging.warning(i18n("Internet Explorer favorites could not be loaded."))
             else:
@@ -285,7 +282,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # Bookmarks:
         size = bookmark.size()
         if size > 0:
-            lockfile = os.path.join(context.destinations["Firefox Profile Path"], "lock")
+            lockfile = os.path.join(ctx_destinations["Firefox Profile Path"], "lock")
             while os.path.lexists(lockfile):
                 if warning(self.progresspage, i18n("Firefox is open. Please close it first to continue...")) == QtGui.QMessageBox.Cancel:
                     break
@@ -293,9 +290,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Windows Mail:
-        if context.options.has_key("Windows Mail Path"):
+        if ctx_options.has_key("Windows Mail Path"):
             try:
-                account.getOEAccounts(context.options["Windows Mail Path"])
+                account.getOEAccounts(ctx_options["Windows Mail Path"])
             except:
                 logging.warning(i18n("Windows Mail accounts could not be loaded."))
             else:
@@ -305,9 +302,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Thunderbird:
-        if context.options.has_key("Thunderbird Profile Path"):
+        if ctx_options.has_key("Thunderbird Profile Path"):
             try:
-                account.getTBAccounts(context.options["Thunderbird Profile Path"])
+                account.getTBAccounts(ctx_options["Thunderbird Profile Path"])
             except:
                 logging.warning(i18n("Thunderbird accounts could be loaded."))
             else:
@@ -316,9 +313,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # MSN Messenger Accounts:
-        if context.options.has_key("Contacts Path"):
+        if ctx_options.has_key("Contacts Path"):
             try:
-                account.getMSNAccounts(context.options["Contacts Path"])
+                account.getMSNAccounts(ctx_options["Contacts Path"])
             except:
                 logging.warning(i18n("MSN accounts could be loaded."))
             else:
@@ -327,9 +324,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # GTalk Accounts:
-        if context.options.has_key("GTalk Key"):
+        if ctx_options.has_key("GTalk Key"):
             try:
-                account.getGTalkAccounts(context.options["GTalk Key"])
+                account.getGTalkAccounts(ctx_options["GTalk Key"])
             except:
                 logging.warning(i18n("GTalk accounts could not be loaded."))
             else:
@@ -345,7 +342,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # E-Mails:
-        if context.options.has_key("Copy E-Mails"):
+        if ctx_options.has_key("Copy E-Mails"):
             size = account.mailSize()
             if size > 0:
                 self.progresspage.addOperation(i18n("E-Mail Messages"), size)
@@ -366,26 +363,26 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
 
         # Files:
-        #for k,v in context.fileOptions.items():
-        #context.options.update(context.filesOptions)
-        if context.filesOptions:
-            if context.filesOptions.has_key("links"):
+        #for k,v in ctx_fileOptions.items():
+        #ctx_options.update(context.filesOptions)
+        if ctx_filesOptions:
+            if ctx_filesOptions.has_key("links"):
                 self.progresspage.makeProgress(3)
-                self.progresspage.addOperation(i18n("Desktop Links"), len(context.filesOptions["links"]) * 1000)
-            if context.filesOptions.has_key("folders"):
+                self.progresspage.addOperation(i18n("Desktop Links"), len(ctx_filesOptions["links"]) * 1000)
+            if ctx_filesOptions.has_key("folders"):
                 # Existance of directory:
-                if not os.path.isdir(context.filesOptions["copy destination"]):
+                if not os.path.isdir(ctx_filesOptions["copy destination"]):
                     try:
-                        os.makedirs(context.filesOptions["copy destination"])
+                        os.makedirs(ctx_filesOptions["copy destination"])
                     except:
-                        warning(self.progresspage , unicode(i18n("Folder '%s' could not be created, please choose another folder!")) % context.filesOptions["copy destination"])
+                        warning(self.progresspage , unicode(i18n("Folder '%s' could not be created, please choose another folder!")) % ctx_filesOptions["copy destination"])
                         return
                 # Write access:
-                if not os.access(context.filesOptions["copy destination"], os.W_OK):
-                    warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % context.filesOptions["copy destination"])
+                if not os.access(ctx_filesOptions["copy destination"], os.W_OK):
+                    warning(self.progresspage, unicode(i18n("You don't have permission to write to folder '%s', please choose another folder!")) % ctx_filesOptions["copy destination"])
                     return
                 # File size:
-                for folder in context.filesOptions["folders"]:
+                for folder in ctx_filesOptions["folders"]:
                     size = files.totalSize(folder["files"])
                     self.progresspage.addOperation(folder["localname"], size)
                 self.progresspage.makeProgress(20)
@@ -400,25 +397,25 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.progresspage.progressLayout.addItem(spacerItem)
         # Applying Changes:
         # Wallpaper:
-        if context.options.has_key("Wallpaper Path"):
-            size = os.path.getsize(context.options["Wallpaper Path"])
+        if ctx_options.has_key("Wallpaper Path"):
+            size = os.path.getsize(ctx_options["Wallpaper Path"])
             try:
-                wall.setWallpaper(context.options["Wallpaper Path"])
+                wall.setWallpaper(ctx_options["Wallpaper Path"])
             except Exception, err:
-                self.progresspage.go(err, context.ERROR, size)
+                self.progresspage.go(err, ctx_ERROR, size)
             else:
-                self.progresspage.go(i18n("Wallpaper changed."), context.OK, size)
+                self.progresspage.go(i18n("Wallpaper changed."), ctx_OK, size)
 
 
         # Bookmarks:
         size = bookmark.size()
         if size > 0:
             try:
-                bookmark.setFFBookmarks(context.destinations["Firefox Profile Path"])
+                bookmark.setFFBookmarks(ctx_destinations["Firefox Profile Path"])
             except Exception, err:
-                self.progresspage.go(err, context.ERROR, size)
+                self.progresspage.go(err, ctx_ERROR, size)
             else:
-                self.progresspage.go(i18n("Bookmarks saved."), context.OK, size)
+                self.progresspage.go(i18n("Bookmarks saved."), ctx_OK, size)
 
 
         # Mail Accounts:
@@ -427,20 +424,20 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.setKMailAccounts()
             except Exception, err:
-                self.progresspage.go(err, context.ERROR, size)
+                self.progresspage.go(err, ctx_ERROR, size)
             else:
-                self.progresspage.go(i18n("Mail Accounts saved."), context.OK, size)
+                self.progresspage.go(i18n("Mail Accounts saved."), ctx_OK, size)
 
         # E-Mails:
-        if context.options.has_key("Copy E-Mails"):
+        if ctx_options.has_key("Copy E-Mails"):
             size = account.mailSize()
             if size > 0:
                 try:
                     account.addKMailMessages(self.progresspage)
                 except Exception, err:
-                    self.progresspage.go(err, context.ERROR, size)
+                    self.progresspage.go(err, ctx_ERROR, size)
                 else:
-                    self.progresspage.go(i18n("Accounts saved."), context.OK, 0)
+                    self.progresspage.go(i18n("Accounts saved."), ctx_OK, 0)
 
         # News Accounts:
         size = account.accountSize(["NNTP"])
@@ -448,9 +445,9 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.setKNodeAccounts()
             except Exception, err:
-                self.progresspage.go(err, context.ERROR, size)
+                self.progresspage.go(err, ctx_ERROR, size)
             else:
-                self.progresspage.go(i18n("News Accounts saved."), context.OK, size)
+                self.progresspage.go(i18n("News Accounts saved."), ctx_OK, size)
 
         # IM Accounts:
         size = account.accountSize(["Jabber", "MSN"])
@@ -458,24 +455,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
             try:
                 account.setKopeteAccounts()
             except Exception, err:
-                self.progresspage.go(err, context.ERROR, size)
+                self.progresspage.go(err, ctx_ERROR, size)
             else:
-                self.progresspage.go(i18n("Instant Messenger Accounts saved."), context.OK, size)
+                self.progresspage.go(i18n("Instant Messenger Accounts saved."), ctx_OK, size)
 
         # Links:
-        if context.filesOptions:
-            if context.filesOptions.has_key("links"):
-                links = context.filesOptions["links"]
+        if ctx_filesOptions:
+            if ctx_filesOptions.has_key("links"):
+                links = ctx_filesOptions["links"]
                 for link in links:
                     files.createLink(link)
-                    self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], context.OK, 1000)
+                    self.progresspage.go(unicode(i18n("Link '%s' created.")) % link["localname"], ctx_OK, 1000)
 
             # Folders:
-            if context.filesOptions.has_key("folders"):
-                folders = context.filesOptions["folders"]
+            if ctx_filesOptions.has_key("folders"):
+                folders = ctx_filesOptions["folders"]
                 for folder in folders:
-                    foldername = os.path.join(context.filesOptions["copy destination"], folder["localname"])
-                    files.copyFolder(folder, context.filesOptions["copy destination"], self.progresspage)
+                    foldername = os.path.join(ctx_filesOptions["copy destination"], folder["localname"])
+                    files.copyFolder(folder, ctx_filesOptions["copy destination"], self.progresspage)
 
         # The end:
         if self.progresspage.progressbar2.value() == 0:
