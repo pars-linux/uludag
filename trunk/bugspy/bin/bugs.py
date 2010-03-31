@@ -22,7 +22,9 @@ else:
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 #ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s"))
-ch.setFormatter(logging.Formatter("%(levelname)s: %(name)s: %(message)s"))
+
+# Mark everything from logging purple.
+ch.setFormatter(logging.Formatter("\033[35m%(levelname)s: %(name)s: %(message)s\033[0m"))
 
 log.addHandler(ch)
 
