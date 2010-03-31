@@ -7,12 +7,21 @@ suitable for repository policy rules.
 The package reviewing process steps on `Pardus Bug Tracking System
 <http://hata.pardus.org.tr>`_;
 
+#. When the developer thinks that its new package is ready for the reviewing
+   process, he/she should copy it under the appropriate component of the
+   'playground/review' directory under pardus SVN repository.
+
 #. If a bug is reported for a new package on the bug tracking system, the
    process is starting from this point.
 
 #. The developer that wants to maintain this new package, assigns the bug report
    to himself/herself and changes the bug status to ASSIGNED. This operation
    can only be done by the members of bugzilla "editbugs" group.
+
+#. The product of the bug report should be "Review". The component of the bug
+   report should be the appropriate repository component for being able to
+   notify the relevant component responsibles by e-mail about this new package
+   reviewing request.
 
 #. The "Summary" part of the bug report should contain the name of the package.
    The "Details" part of the bug should contain the description of the package,
@@ -28,18 +37,9 @@ The package reviewing process steps on `Pardus Bug Tracking System
    willing to maintain the package in, should be indicated in the "Details" part
    of the bug report.
 
-#. The product of the bug report should be "Review". The component of the bug
-   report should be the appropriate repository component for being able to
-   notify the relevant component responsibles by e-mail about this new package
-   reviewing request.
-
 #. If the package depends on other packages currently in reviewing process,
    the bug report should "depend" on those other packages' bug reports to
    establish a dependency relationship between them.
-
-#. When the developer thinks that its new package is ready for the reviewing
-   process, he/she should copy it under the appropriate component of the
-   'playground/review' directory under pardus SVN repository.
 
 #. All changes done to the package during the reviewing process (e.g. All
    modifications committed under 'playground/review') should be reflected as
