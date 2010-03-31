@@ -110,41 +110,31 @@ class PTray:
         if unread == 0:
             self.setIcon(self.defaultIcon)
         else:
-            oldWidth = self.defaultIcon.pixmap(22).size().width()
-
-            if oldWidth == 0:
-                return
-
             countStr = "%s" % unread
+            print Pds.settings('font', 'Sans')
             f = QtGui.QFont(Pds.settings('font','Sans'))
             f.setBold(True)
 
             pointSize = f.pointSizeF()
             fm = QtGui.QFontMetrics(f)
             w = fm.width(countStr)
-            if w > (oldWidth - 2):
-                pointSize *= float(oldWidth - 2) / float(w)
+            if w > (19):
+                pointSize *= float(19) / float(w)
                 f.setPointSizeF(pointSize)
 
-            # overlay
             overlayImg = QtGui.QPixmap(self.defaultIcon.pixmap(22))
             p = QtGui.QPainter(overlayImg)
             p.setFont(f)
-            scheme = QtGui.QBrush() #KColorScheme(QtGui.QPalette.Active, KColorScheme.View)
+            scheme = QtGui.QBrush()
 
-            fm = QtGui.QFontMetrics(f)
-            boundingRect = QRect(fm.tightBoundingRect(countStr))
-            boundingRect.adjust(0, 0, 0, 2)
-            boundingRect.setHeight(min(boundingRect.height(), oldWidth))
-            boundingRect.moveTo((oldWidth - boundingRect.width()) / 2,
-                                ((oldWidth - boundingRect.height()) / 2) - 1)
-            p.setOpacity(0.7)
             p.setBrush(scheme)
-            p.setPen(QtGui.QColor('blue'))
-
-            p.setBrush(Qt.NoBrush)
-            p.setPen(QtGui.QColor('blue'))
+            p.setOpacity(0.6)
+            p.setPen(QtGui.QColor('white'))
+            # shadow
+            for i in range(20,24):
+                p.drawText(QRect(0, 0, i, i), Qt.AlignCenter, countStr)
             p.setOpacity(1.0)
+            p.setPen(QtGui.QColor('black'))
             p.drawText(overlayImg.rect(), Qt.AlignCenter, countStr)
 
             p.end()

@@ -11,3 +11,4 @@ TODO
  - Merge changes from corporate's package-manager
  - Add summary notification for Qt-only mode mainwidget:216
  - Fix summary dialog questions, k -> q messagebox
+ - Fix update repo timeout apply problem in settings dialog
