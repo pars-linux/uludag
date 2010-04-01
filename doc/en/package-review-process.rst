@@ -23,10 +23,11 @@ The package reviewing process steps on `Pardus Bug Tracking System
    notify the relevant component responsibles by e-mail about this new package
    reviewing request.
 
-#. The "Summary" part of the bug report should contain the name of the package.
-   The "Details" part of the bug should contain the description of the package,
-   e.g. a detailed phrase which explains the main objective of the package,
-   what it does, etc.
+#. The "Summary" part of the bug report should contain the full path of the
+   package after review folder (ex: desktop/toolkit/gtk/gtkimageview). The
+   "Details" part of the bug should contain the description of the package, e.g. a
+   detailed phrase which explains the main objective of the package, what it does,
+   etc.
 
 #. If the package is taken to the reviewing process because of a specific
    reason (e.g. the package may be a dependency of an available package in the
