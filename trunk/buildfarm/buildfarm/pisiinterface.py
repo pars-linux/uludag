@@ -52,7 +52,7 @@ class PisiApi:
     def close(self):
         pisi.api.ctx.ui.prepareLogs()
 
-    def getPreviousBuild(self, package):
+    def get_previous_build(self, package):
         """ Returns the previous build with buildno < buildno(package) (nearest) """
         package = package.rstrip(".pisi\n").rsplit("-", 3)
         searchedBuild = int(package[3])-1
@@ -135,7 +135,7 @@ class PisiApi:
                     delta_packages.append(create_delta_package(package, p))
 
             # Search for an older build (older < previous)
-            previous = self.getPreviousBuild(pl[0])
+            previous = self.get_previous_build(pl[0])
 
             if previous and previous != isopackages.get(name):
                 # Found build (older-1)
@@ -167,7 +167,7 @@ class PisiApi:
 
         return (self.__newBinaryPackages, self.__oldBinaryPackages)
 
-    def getInstallOrder(self, packages):
+    def get_install_order(self, packages):
         """ Get installation order for pisi packages. """
         import pisi.pgraph as pgraph
 
