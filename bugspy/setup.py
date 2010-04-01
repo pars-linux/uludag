@@ -22,7 +22,7 @@ import bugspy
 #bugs.py
 #""".split()]
 
-SCRIPTS = ["bin/bugs.py"]
+SCRIPTS = ["bin/bugs.py", "bin/file-sec-bug.py"]
 
 # Call distutils.setup
 
