@@ -93,6 +93,10 @@ class Iface(Singleton):
         logger.debug("Updating %s..." % repo)
         self.link.System.Manager["pisi"].updateRepository(repo, async=self.handler, timeout=2**16-1)
 
+    def removeRepository(self, repo):
+        logger.debug("Removing repository: %s" % repo)
+        self.link.System.Manager["pisi"].removeRepository(repo, async=self.handler, timeout=2**16-1)
+
     def clearCache(self, limit):
         logger.debug("Clearing cache with limit: %s" % limit)
         self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
@@ -123,6 +127,13 @@ class Iface(Singleton):
 
     def setSource(self, source):
         self.source = source
+
+    def getPackageRequirements(self, packages):
+        """ Returns dict from pisi api
+            { "systemRestart" : ["kernel", "module-alsa-driver"],
+              "serviceRestart": ["mysql-server", "memcached", "postfix"] }
+        """
+        return pisi.api.get_package_requirements(packages)
 
     def getPackageRepository(self, name):
         try:
@@ -242,6 +253,9 @@ class Iface(Singleton):
 
     def isRepoActive(self, name):
         return self.rdb.repo_active(name)
+
+    def checkDistributionAndArchitecture(self, repo):
+        return self.rdb.check_distribution(repo) and self.rdb.check_architecture(repo)
 
     def cancel(self):
         self.link.cancel()
