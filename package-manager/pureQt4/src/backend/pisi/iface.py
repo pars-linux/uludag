@@ -180,9 +180,16 @@ class Iface(Singleton):
 
     def getPackage(self, name):
         if self.source == self.REPO:
-            return self.pdb.get_package(name)
+            pkg = self.pdb.get_package(name)
         else:
-            return self.idb.get_package(name)
+            pkg = self.idb.get_package(name)
+
+        if self.source == self.REPO and self.idb.has_package(pkg.name):
+            pkg.type = self.getUpdateType(pkg)
+        else:
+            pkg.type = None
+
+        return pkg
 
     def getDepends(self, packages):
         base = pisi.api.get_base_upgrade_order(packages)
@@ -213,6 +220,15 @@ class Iface(Singleton):
         for repo in pisi.api.list_repos(only_active=False):
             repos.append((repo, self.rdb.get_repo_url(repo)))
         return repos
+
+    def getUpdateType(self, pkg):
+        (version, release, build) = self.idb.get_version(pkg.name)
+        update_types = [i.type for i in pkg.history if pisi.version.Version(i.release) > pisi.version.Version(release)]
+        if "security" in update_types:
+            return "security"
+        elif "critical" in update_types:
+            return "critical"
+        return "normal"
 
     def getPackageSize(self, name):
         package = self.getPackage(name)
