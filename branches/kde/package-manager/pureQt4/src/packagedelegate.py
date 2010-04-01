@@ -31,9 +31,9 @@ class PackageDelegate(QtGui.QItemDelegate):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
-        self.appIcons = {'security':KIcon('software-update-urgent', 32),
+        self.appIcons = {'security':KIcon(('security-medium', 'software-update-urgent'), 32),
                          'critical':KIcon('dialog-warning', 32),
-                         'normal'  :KIcon('software-update-available', 32)}
+                         'normal'  :KIcon(('preferences-desktop-default-applications', 'software-update-available'), 32)}
         self.animatable = True
 
         self._max_height = ROW_HEIGHT
