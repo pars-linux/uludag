@@ -1,3 +1,8 @@
+2010-04-01 Ozan Çağlayan <ozan_at_pardus.org.tr>
+	* (buildfarm/repomanager.py): Remove reverseDependencyUpdate checking as
+	maintainers *should* always write strict dependencies to the new library
+	for forcing a re-compile.
+
 2009-11-17  Ozan Çağlayan <ozan_at_pardus.org.tr>
 	* (data/buildfarm.conf): Add sandboxBlacklist option,
 	* (buildfarm/pisiinterface.py): Set ignore_sandbox for blacklisted
