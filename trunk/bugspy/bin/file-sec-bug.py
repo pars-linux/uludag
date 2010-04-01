@@ -149,7 +149,6 @@ def main(filename):
         bugzilla.login()
         bugno = bugzilla.new(**new_bug)
 
-        bugno = 11
         if bugno:
             print "Success! http://bugs.pardus.org.tr/%s" % (bugno)
 
@@ -158,15 +157,16 @@ def main(filename):
                 bug_title = "%s - Pardus %s" % (title.replace("\n",""), affected_version)
                 bug_desc = "Pardus %s is affected from bug #%s" % (affected_version, bugno)
 
+                no = bugzilla.new(title=bug_title,
+                                  description=bug_desc,
+                                  security=1,
+                                  component=component,
+                                  version=affected_version,
+                                  product="Güvenlik / Security",
+                                  blocks=bugno)
 
-                bugzilla.new(title=bug_title,
-                                   description=bug_desc,
-                                   security=1,
-                                   component=component,
-                                   version=affected_version,
-                                   product="Güvenlik / Security",
-                                   blocks=bugno)
 
+                print "Bug %s <%s> has been opened" % (no, bug_title)
 
                 # FIXME: Add them to tracker file when we move to new tracker system
                 #file = TRACKER_MAP.get(affected_version)
