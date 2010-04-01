@@ -153,7 +153,7 @@ def buildPackages():
                     if len(packagesToInstall) > 1:
                         # packagesToInstall doesn't contain full paths
                         logger.info("*** Reordering packages to satisfy inner runtime dependencies...")
-                        packagesToInstall = pisi.getInstallOrder(packagesToInstall)
+                        packagesToInstall = pisi.get_install_order(packagesToInstall)
                         logger.info("*** Installation order is: %s" % packagesToInstall)
 
                     for p in packagesToInstall:
