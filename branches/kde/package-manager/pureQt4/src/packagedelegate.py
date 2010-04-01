@@ -30,7 +30,10 @@ class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
-        self.defaultIcon = QtGui.QIcon(KIconLoader.load(DEFAULT_ICON, 32))
+        self.defaultIcon = KIcon(DEFAULT_ICON, 32)
+        self.appIcons = {'security':KIcon('software-update-urgent', 32),
+                         'critical':KIcon('dialog-warning', 32),
+                         'normal'  :KIcon('software-update-available', 32)}
         self.animatable = True
 
         self._max_height = ROW_HEIGHT
@@ -92,19 +95,23 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         margin = left + ICON_PADDING - 10
 
-        icon = index.model().data(index, Qt.DecorationRole).toString()
-        if icon:
-            icon = QtGui.QIcon(KIconLoader.load(icon, forceCache = True).scaled(QSize(32, 32), Qt.KeepAspectRatio))
-        else:
-            icon = self.defaultIcon
-
-        icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
-
         title = index.model().data(index, Qt.DisplayRole)
         summary = index.model().data(index, SummaryRole)
         description = index.model().data(index, DescriptionRole)
         size = index.model().data(index, SizeRole)
         homepage = index.model().data(index, HomepageRole)
+        ptype = str(index.model().data(index, TypeRole).toString())
+
+        if ptype in self.appIcons.keys():
+            icon = self.appIcons[ptype]
+        else:
+            icon = index.model().data(index, Qt.DecorationRole).toString()
+            if icon:
+                icon = QtGui.QIcon(KIconLoader.load(icon, forceCache = True).scaled(QSize(32, 32), Qt.KeepAspectRatio))
+            else:
+                icon = self.defaultIcon
+
+        icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 
         foregroundColor = option.palette.color(QtGui.QPalette.Text)
         p.setPen(foregroundColor)

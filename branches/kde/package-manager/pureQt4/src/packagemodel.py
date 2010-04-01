@@ -21,7 +21,7 @@ from pmutils import humanReadableSize
 
 from context import KIconLoader
 
-(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole, TypeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7)
 _variant = QVariant()
 _unknown_icons = []
 
@@ -58,6 +58,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
+        elif role == TypeRole:
+            return QVariant(unicode(package.type))
         elif role == SizeRole:
             return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))
         elif role == VersionRole:
