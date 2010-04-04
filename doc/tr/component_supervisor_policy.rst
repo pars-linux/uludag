@@ -94,7 +94,7 @@ postscript    (Ozan Çağlayan)
 =================== ===================
 programming         (Onur Küçük)
 ------------------- -------------------
-microcontrl         (Cihan Okyay)
+microcontroller     (Cihan Okyay)
 vcs                 (Fatih Aşıcı)
 profile             (Serdar Dalgıç)
 environment         (Mete Alpaslan)
