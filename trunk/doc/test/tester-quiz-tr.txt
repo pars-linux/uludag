@@ -47,58 +47,67 @@ Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
     Harici Projeler Deposu
 
 *** Test ile İlgili Genel  Sorular*****
-1. Blackbox ve whitebox testleri arasındaki fark nedir?
+Yazılı Soruları
+----------------------------
+1. Pardus Projesi için büyük bir atılım gerçekleştireceğini düşündüğünüz bir
+   özelliği veya uygulamayı önermenin en iyi yöntemi nedir? Bu özellik veya
+   uygulamanın onaylanması ve geliştirilmeye başlanması için gerekli süreci
+   ayrıntılı bir şekilde anlatınız.
 
-2. Aşağıda bulunan test türlerinin genel tanımlarını yapınız. Pardus linux
-dağıtımı ile birlikte bu testleri düşündüğümüzde, geliştirme aşamalarının ve
-paketlerin hangi durumlarında hangi testlerin uygulanacağına dair birer örnek
-veriniz.
-    - Konfigurasyon testi
-    - Kurulum testi
-    - Performans testi
-    - Güvenlik testi
-    - İşlev testi
-    - Regresyon testi
-    - Ad-hoc testing
+2. Pardus depolarında hangi sürüm takip sistemini kullanmaktadır.
+   Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
 
-3. Beta ve Alfa testlerinde hangi test çeşitleri uygulanmaktadır?
+       - Pisi Paketleri Deposu
+       - Katkı Deposu
+       - Özgürlükİçin Deposu
+       - Uludag Deposu
+       - Harici Projeler Deposu
+       - Derlenmiş Paket depoları
+            - Test deposu
+            - Kararlı depo
 
-4. Pardus depo işleyiş süreci ile ilgili:
+3. Blackbox ve whitebox testleri arasındaki fark nedir?
 
-    a) Hangi depolar test sürecine tabidir?
-    b) Bir uygulmanın depoya alınmaya karar verilmesinden, kararlı depoya
-    geçmesine kadar devam eden süreç nasıl işler?
-        - Review (gözden geçirme) süreci nasıl işler?
-        - Test ve testçi depolarının amacı nedir? Ack-Nack süreci nasıl işler?
+4. Aşağıda bulunan test türlerinin genel tanımlarını yapınız. Pardus linux
+   dağıtımı ile birlikte bu testleri düşündüğümüzde, geliştirme aşamalarının ve
+   paketlerin hangi durumlarında hangi testlerin uygulanacağına dair birer örnek
+   veriniz.
 
-5. Pisi paket adlarında bulunan rakamlar neleri ifade eder?
+   - Konfigurasyon testi
+   - Kurulum testi
+   - Performans testi
+   - Güvenlik testi
+   - İşlev testi
+   - Regresyon testi
+   - Ad-hoc testing
 
-örnek: x-paketi-0.3.0-13-6.pisi
+5. Beta ve Alfa testlerinde hangi test çeşitleri uygulanmaktadır?
 
-6. Paket bileşeni ne demektir? Pardus paketleri bileşen yapısı nasıl oluşturulmuştur?
+6. Pardus depo işleyiş süreci ile ilgili:
 
-7. Test aşamalarının (testcase) amacı nedir? 
-    a) Kararlı sürüm testleri için gerekli test aşamaları hangi yapıya göre oluşturulmuştur?
-    b) Pardusa özgü yazılımların test aşamaları nasıl oluşturulmuştur?
+   a) Hangi depolar test sürecine tabidir?
+   b) Bir uygulamanın depoya alınmaya karar verilmesinden, kararlı depoya
+      geçmesine kadar devam eden süreç nasıl işler?
+      - Review (gözden geçirme) süreci nasıl işler?
+      - Test ve testçi derlenmiş paket depolarının amacı nedir? Ack-Nack süreci nasıl işler?
 
-8. Düzgün ve yetkin hata raporlama neden çok önemlidir?
-    - Pardus Bugzilla hata rapolama taslağını kullanarak bir hata raporu
-      örneği veriniz.
+7. Paket bileşeni ne demektir?
 
+8. Test aşamalarının (testcase) amacı nedir?
 
-****** Hata Bulma ve Etkin Raporlama için Sorular *****
+9. Düzgün ve yetkin hata raporlama neden çok önemlidir?
 
-1. Pardus linux dağıtımına özgü uygulamalar nelerdir? Ne işe yararlar kısaca
+    - Pardus Bugzilla hata rapolama taslağını kullanarak bir hata raporu örneği veriniz.
+      (http://tr.pardus-wiki.org/NASIL:Hata_Raporlamak)
+
+10. Pardus linux dağıtımına özgü uygulamalar nelerdir? Ne işe yararlar kısaca
+    açıklayınız.
+
+11. COMAR ve MUDUR nedir?
+
+12. Aşağıda bulunan linux komutları ne işe yarar? ayrıntılı bir biçimde
 açıklayınız.
 
-2. COMAR ve MUDUR nedir? Hangi uygulamalar COMAR veya MUDUR'ü kullanır?
-
-3. Ne zaman aşağıda bulunan dosyayı incelememiz gerekebilir? Örnekler veriniz.
-    # su
-    # tail /var/log/comar3/trace.log
-
-3. Aşağıda bulunan linux komutları ne işe yarar? ayrıntılı bir biçimde
-açıklayınız.
     - lspci
     - lsmod
     - fdisk
@@ -109,7 +118,6 @@ açıklayınız.
     - xrandr
         - Çözünürlüklerin yanında bulunan "*" ve "+" işaretleri hangi anlama
           gelmektedir.
-    - xinit
     - glxgears
     - dmesg
     - lsusb
@@ -120,27 +128,68 @@ açıklayınız.
     - iptables
         - Güvenlik duvarı yöneticisi ile ilgili kuralları nasıl
           gözlemleyebiliriz?
-    - pisi
-        - Sisteme ekli depoları nasıl görebiliriz?
-        - Bir bileşene ait güncellenebilir paketler nasıl listelenebilir?
-        - Bir bileşene ait kurulmuş paketler nasıl listelenebilir?
-        - Bir bileşene ait yeni paketler nasıl listelenebilir?
-        - Paketler ile ilgili geçmişte yapılmış işlemler hangi komut ile
-          gözlemlenebilir?
-        - Sistemde bulunan belirli bir dosya yolunun hangi pakete ait olduğu
-          nasıl bulunabilir?
 
-4. Aşağıda bulunan dosyalar nelerdir? Ayrıntılı olarak açıklayınız.
-    /proc/cpuinfo
-    /proc/meminfo
-    /boot/grub/grub.conf
-    /etc/fstab
-    /etc/pisi/pisi.conf
-    /etc/passwd
-    /etc/group
-    /var/log/syslog
-    /var/lib/PolicyKit/user-<username>.auths
-    .kde/share/config/<application>rc
+13. Aşağıda bulunan dosyalar nelerdir? Ayrıntılı olarak açıklayınız.
+    - /proc/cpuinfo
+    - /proc/meminfo
+    - /boot/grub/grub.conf
+    - /etc/fstab
+    - /etc/pisi/pisi.conf
+    - /etc/passwd
+    - /etc/group
+    - /var/log/syslog
+    - /var/lib/PolicyKit/user-<username>.auths
+    - .kde/share/config/<application>rc
+
+Test Soruları
+------------------------
+1. Pisi paket adlarında bulunan rakamlar neleri ifade eder?
+   örnek: x-paketi-0.3.0-13-6.pisi
+   a. sürümNo-inşaNo-yayımNo
+   b. sürümNo-yayımNo-inşaNo
+   c. yayımNo-inşaNo-sürümNo
+
+2. Hangi uygulamalar COMAR'ı kullanır?
+   I. Ağ yöneticisi
+   II. Açılış sistemi
+   III. Güvenlik duvarı yöneticisi
+   IV. Sistem Yöneticisi
+
+   a. Hepsi
+   b. I-II-III
+   c. I-III-IV
+
+3. Hangi uygulamalar MUDUR'u kullanır?
+   I. Servis Yöneticisi
+   II. Açılış sistemi
+   III. Paket Yöneticisi
+   IV. Sistem Yöneticisi
+
+   a. Hepsi
+   b. II-IV
+   c. II-III-IV
+
+4. Paketler ile ilgili geçmişte yapılmış işlemler hangi komut ile
+   gözlemlenebilir?
+
+  a. pisi lr
+  b. pisi hs
+  c. pisi bl
+
+5. Sistemde bulunan belirli bir dosya yolunun hangi pakete ait olduğu
+   nasıl bulunabilir?
+
+  a. pisi ur
+  b. pisi info
+  c. pisi sf
+
+6. Ne zaman aşağıda bulunan dosyayı incelememiz gerekebilir?
+   # su
+   # tail /var/log/comar3/trace.log
+
+  a. Paket yöneticisinde hata aldığınızda
+  b. Ofis uygulamalarında hata aldığınızda
+  c. grub'ta hata aldığınızda
 
 *** Lütfen aşağıda bulunan bilgileri cevaplandırınız:
 
