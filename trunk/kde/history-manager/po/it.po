@@ -17,7 +17,6 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 
 #: .tmp/ui_configure.py:44
-#, fuzzy
 msgid "Options"
 msgstr "Opzioni"
 
