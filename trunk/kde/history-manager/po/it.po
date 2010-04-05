@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -18,7 +18,7 @@ msgstr ""
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
-msgstr "Opzioni"
+msgstr ""
 
 #: .tmp/ui_configure.py:45
 msgid "Startup Load :"
@@ -97,7 +97,8 @@ msgid "Takeback operation verification"
 msgstr "Verifica operazione di ripristino"
 
 #: .tmp/historymanager/window.py:225
-msgid "<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
+msgid ""
+"<center>This will restore your system back to : <b>%1</b> - <b>%2</b><br>"
 msgstr "<center>Il tuo sistema verrà ripristinato a:<b>%1</b> - <b>%2</b><br>"
 
 #: .tmp/historymanager/window.py:226
@@ -113,8 +114,12 @@ msgid "Start new snapshot"
 msgstr "Nuovo punto di ripristino"
 
 #: .tmp/historymanager/window.py:238
-msgid "<center>This will take a snapshot of your system.<br>Click Ok when you're ready.</center>"
-msgstr "<center>Verrà creato un punto di ripristino del tuo sistema.<br>Clicca su Ok quando sei pronto.</center>"
+msgid ""
+"<center>This will take a snapshot of your system.<br>Click Ok when you're "
+"ready.</center>"
+msgstr ""
+"<center>Verrà creato un punto di ripristino del tuo sistema.<br>Clicca su Ok "
+"quando sei pronto.</center>"
 
 #: .tmp/historymanager/window.py:244
 msgid "Taking New Snapshot"
@@ -241,7 +246,8 @@ msgstr "Copia"
 #~ msgstr "Piano di ripristino"
 
 #~ msgid "Click to see what will happen if you click restore button"
-#~ msgstr "Clicca qui per vedere cosa succederà se clicchi il pulsante di ripristino."
+#~ msgstr ""
+#~ "Clicca qui per vedere cosa succederà se clicchi il pulsante di ripristino."
 
 #~ msgid "Operation Details"
 #~ msgstr "Dettagli"
