@@ -35,9 +35,19 @@ class BuildService(xmlrpc.XMLRPC):
         return "Stopped buildfarm for %s %s" % (distribution, release)
 
     def xmlrpc_push(self, release, package, distribution="Pardus"):
-        """Stops the corresponding buildfarm service."""
+        """Push a package to the corresponding buildfarm's queue."""
         # FIXME: Implement
-        return "Stopped buildfarm for %s %s" % (distribution, release)
+        return "Pushed %s to %s %s buildfarm" % (package, distribution, release)
+
+    def xmlrpc_pop(self, release, package, distribution="Pardus"):
+        """Pop a package from the corresponding buildfarm's queue."""
+        # FIXME: Implement
+        return "Popped %s from %s %s buildfarm" % (package, distribution, release)
+
+    def xmlrpc_list(self):
+        """List currently online buildfarms."""
+        # FIXME: Implement
+        return "Listing online buildfarms"
 
     def xmlrpc_status(self, release, package, distribution="Pardus"):
         """Lists the current status of the corresponding buildfarm service."""
