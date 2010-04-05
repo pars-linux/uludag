@@ -36,9 +36,9 @@ class Config(object):
         value = self.__items.get(attr, None)
         retval = value
         if value:
-            if value in ("True", "False"):
+            if value.lower() in ("true", "false"):
                 # the value from ConfigParser is always string, so control it and return bool
-                retval = bool(value)
+                retval = True if value.lower() == "true" else False
             elif "," in value:
                 retval = value.split(",")
             return retval
@@ -54,4 +54,5 @@ if __name__ == "__main__":
     # Test code
     c = Config()
     print c.ignorecheck
+    print c.generatedelta
     print c.deltablacklist
