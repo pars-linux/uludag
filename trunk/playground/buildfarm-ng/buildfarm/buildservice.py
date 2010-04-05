@@ -5,9 +5,8 @@ import os
 import pisi
 from twisted.web import xmlrpc, server
 
-# FIXME: Get PORT from configuration
-# from buildfarm import config
-PORT = 8007
+#from buildfarm import config
+#PORT = 8007
 
 class BuildService(xmlrpc.XMLRPC):
 
