@@ -34,16 +34,14 @@ class Config(object):
 
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
+        retval = value
         if value:
             if value in ("True", "False"):
                 # the value from ConfigParser is always string, so control it and return bool
-                if value == "True":
-                    return True
-                else:
-                    return False
+                retval = bool(value)
             elif "," in value:
-                value = value.split(",")
-                return value
+                retval = value.split(",")
+            return retval
         else:
             # value not found
             raise KeyError(attr)
