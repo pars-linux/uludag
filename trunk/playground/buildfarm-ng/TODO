@@ -1,14 +1,9 @@
-TODO for buildfarm 2.0
------------------------
+New Features
+-------------
 
-(+) Install buildfarm modules into python' sitearch and make them importable
-(+) Use configuration file instead of config.py which is imported
-(+) Move standalone scripts under scripts/
-(+) Grab Pardus version from pisi.conf to be more flexible
-(+) Support for sandbox blacklist
-(-) Use pisi methods if available to avoid redundancy
-(-) Integrate repomanager into buildfarm executable
-(-) Add hooks.d for running a number of hooks after each run
-(-) Support for the removal of obsoleted packages
-(-) A Web status page for current status
-(-) Twit status updates ;)
+(-) Implement a general build service which will communicate with the
+    available buildfarms around,
+(-) Cleanup/Refactor and Port the current buildfarm code to Twisted.xmlrpc,
+(-) Add SSL and HTTP Authentication to both XMLPRC servers,
+(-) Use the build service's offerings to represent a *status-only* web page
+    on pardus.org.tr
