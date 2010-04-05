@@ -33,9 +33,6 @@ class PackageDelegate(QtGui.QItemDelegate):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
-        self.appIcons = {'security':KIcon(('security-medium', 'software-update-urgent'), 32),
-                         'critical':KIcon('dialog-warning', 32),
-                         'normal'  :KIcon(('preferences-desktop-default-applications', 'software-update-available'), 32)}
         self.animatable = True
 
         self._max_height = ROW_HEIGHT
@@ -107,14 +104,11 @@ class PackageDelegate(QtGui.QItemDelegate):
         homepage = index.model().data(index, HomepageRole)
         ptype = str(index.model().data(index, TypeRole).toString())
 
-        if ptype in self.appIcons.keys():
-            icon = self.appIcons[ptype]
+        icon = index.model().data(index, Qt.DecorationRole).toString()
+        if icon:
+            icon = QtGui.QIcon(KIconLoader.load(icon, forceCache = True).scaled(QSize(32, 32), Qt.KeepAspectRatio))
         else:
-            icon = index.model().data(index, Qt.DecorationRole).toString()
-            if icon:
-                icon = QtGui.QIcon(KIconLoader.load(icon, forceCache = True).scaled(QSize(32, 32), Qt.KeepAspectRatio))
-            else:
-                icon = self.defaultIcon
+            icon = self.defaultIcon
 
         icon.paint(p, margin, top + ICON_PADDING, ROW_HEIGHT, ROW_HEIGHT, Qt.AlignCenter)
 

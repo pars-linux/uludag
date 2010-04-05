@@ -22,6 +22,7 @@ from statemanager import StateManager
 from settingsdialog import SettingsDialog
 from tray import Tray
 
+import helpdialog
 import backend
 import config
 
@@ -94,6 +95,15 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.menuOptions = QtGui.QMenu(i18n('Settings'), self.menubar)
         self.menuHelp = QtGui.QMenu(i18n('Help'), self.menubar)
 
+        self.quitAppAction = QtGui.QAction(KIcon(('exit', 'application-exit')), i18n("Quit"), self)
+        self.quitAppAction.setShortcut(QtGui.QKeySequence('Ctrl+q'))
+        self.quitAppAction.triggered.connect(self.slotQuit)
+
+        self.helpAppAction = QtGui.QAction(KIcon(('help', 'help-contents')), i18n("Help"), self)
+        self.helpAppAction.setShortcut(QtGui.QKeySequence('F1'))
+        self.helpAppAction.triggered.connect(self.showHelp)
+        self.menuHelp.addAction(self.helpAppAction)
+
         self.setMenuBar(self.menubar)
 
         # Action Show Installable Packages
@@ -126,6 +136,8 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         actionGroup.addAction(self.showUpgradeAction)
         self.toolBar.addAction(self.showUpgradeAction)
         self.menuFile.addAction(self.showUpgradeAction)
+        self.menuFile.addSeparator()
+        self.menuFile.addAction(self.quitAppAction)
 
         self.showSettingsAction = QtGui.QAction(KIcon("preferences-other"),
                           i18n("Package Manager Settings"), self)
@@ -153,6 +165,10 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
             return False
         return True
 
+    def showHelp(self):
+        helpDialog = helpdialog.HelpDialog(self, helpdialog.MAINAPP)
+        helpDialog.show()
+
     def queryExit(self):
         if not self.iface.operationInProgress():
             if self.tray.notification:
@@ -163,3 +179,5 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def slotQuit(self):
         if self.iface.operationInProgress():
             return
+        QtCore.QCoreApplication.quit()
+
