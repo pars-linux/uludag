@@ -139,7 +139,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.menuFile.addSeparator()
         self.menuFile.addAction(self.quitAppAction)
 
-        self.showSettingsAction = QtGui.QAction(KIcon("preferences-other"),
+        self.showSettingsAction = QtGui.QAction(KIcon("preferences-system"),
                           i18n("Package Manager Settings"), self)
         self.showSettingsAction.triggered.connect(self.showSettingsDialog)
         self.menuOptions.addAction(self.showSettingsAction)
