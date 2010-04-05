@@ -48,7 +48,7 @@ Quick start guide to providing translations on Pardus
 
  2. Login
 
-  At the bottom of the page, select Sign in to visit the Sign in page. Authenticate with your Fedora Account System user name and password.
+  At the bottom of the page, select Sign in to visit the Sign in page. Authenticate with your Transifex user name and password.
 
  3. Submit
 
