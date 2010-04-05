@@ -29,7 +29,8 @@ import migration.gui.ScrOptions
 import migration.gui.ScrSummary
 import migration.gui.ScrProgress
 
-from migration.gui.context import *
+import migration.gui.context as ctx
+from migration.gui.context import i18n
 
 def loadFile(_file):
     try:

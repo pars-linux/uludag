@@ -14,15 +14,16 @@
 import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+#from PyKDE4.kdecore import i18n ,i18n
+from migration.gui.context import i18n
 
 from migration.gui.ScreenWidget import ScreenWidget
 from migration.gui.ui.summaryWidget import Ui_summaryWidget
-
-from migration.gui.context import *
+from migration.gui import context as ctx
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Summary")
-    desc = i18n("Welcome to Migration Tool Wizard")
+    desc = i18n("Welcome to Migration Tool Wizard :)")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
@@ -39,23 +40,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
         # Selected User
         content.append(subject % i18n("User Settings"))
-        content.append(item % i18n("Selected User: <b>%s</b>") % ctx_user[2])
+        content.append(item % i18n("Selected User: <b>%s</b>") % ctx.user[2])
         content.append(end)
 
         # Selected Options
         content.append(subject % i18n("Options Settings"))
-        for key,value in ctx_options.items():
-            content.append(item % i18n("Option %1 : <b>%2</b>") % (key, value))
+        for key,value in ctx.options.items():
+            print "YOOO:", key, value
+            content.append(item % i18n("Option %1 : <b>%2</b>", key, value))
         content.append(end)
 
-        if ctx_filesOptions:
+        if ctx.filesOptions:
             #Selected Files Destinations
             content.append(subject % i18n("Destination Settings"))
-            if ctx_filesOptions.has_key("links"):
-                for link in ctx_filesOptions["links"]:
+            if ctx.filesOptions.has_key("links"):
+                for link in ctx.filesOptions["links"]:
                     content.append(item % i18n("Linked Destination to: <b> %s </b>") % link)
-            elif ctx_filesOptions.has_key("copy destination"):
-                content.append(item % i18n("Copied Destination to: <b> %s </b>") % filesOptions["copy destination"])
+            elif ctx.filesOptions.has_key("copy destination"):
+                content.append(item % i18n("Copied Destination to: <b> %s </b>") % ctx.filesOptions["copy destination"])
 
             content.append(end)
 
