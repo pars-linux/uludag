@@ -10,11 +10,18 @@
 #
 # Please read the COPYING file.
 
+import os
 import ConfigParser
 
+class ConfigurationFileNotFound(Exception):
+    pass
+
 class Config(object):
-    """Configuration class for /etc/buildfarm/buildfarm.conf."""
+    """Configuration class for buildfarm configuration."""
     def __init__(self, conf_file="/etc/buildfarm/buildfarm.conf"):
+        if not os.path.exists(conf_file):
+            raise ConfigurationFileNotFound("Configuration file %s could not be accessed." % conf_file)
+
         self.__items = dict()
 
         self.configuration = ConfigParser.ConfigParser()
@@ -27,19 +34,17 @@ class Config(object):
 
     def __getattr__(self, attr):
         value = self.__items.get(attr, None)
+        retval = value
         if value:
             if value in ("True", "False"):
                 # the value from ConfigParser is always string, so control it and return bool
-                if value == "True":
-                    return True
-                else:
-                    return False
+                retval = bool(value)
             elif "," in value:
-                value = value.split(",")
-                return value
+                retval = value.split(",")
+            return retval
         else:
             # value not found
-            return None
+            raise KeyError(attr)
 
 # Initialize configuration object
 configuration = Config()
