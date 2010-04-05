@@ -12,3 +12,4 @@ TODO
  - Add summary notification for Qt-only mode mainwidget:216
  - Fix summary dialog questions, k -> q messagebox
  - Fix update repo timeout apply problem in settings dialog
+ - Show different warnings for update type

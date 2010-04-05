@@ -25,6 +25,8 @@ ICON_PADDING = 0
 ICON_SIZE = 2
 DETAIL_LINE_OFFSET = 36
 ROW_HEIGHT = 52
+DARKRED = QtGui.QColor('darkred')
+WHITE = QtGui.QColor('white')
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
@@ -43,6 +45,8 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.boldFont = QtGui.QFont(self.font, 10, QtGui.QFont.Bold)
         self.normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
         self.boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
+        self.tagFont = QtGui.QFont(self.font, 7, QtGui.QFont.Normal)
+        self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
 
         fontMetric = QtGui.QFontMetrics(self.boldFont)
 
@@ -88,6 +92,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         pixmap.fill(Qt.transparent)
 
         p = QtGui.QPainter(pixmap)
+        p.setRenderHint(QtGui.QPainter.Antialiasing, True)
         p.translate(-option.rect.topLeft())
 
         textInner = 2 * ICON_PADDING + ROW_HEIGHT - 10
@@ -95,8 +100,8 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         margin = left + ICON_PADDING - 10
 
-        title = index.model().data(index, Qt.DisplayRole)
-        summary = index.model().data(index, SummaryRole)
+        title = index.model().data(index, Qt.DisplayRole).toString()
+        summary = index.model().data(index, SummaryRole).toString()
         description = index.model().data(index, DescriptionRole)
         size = index.model().data(index, SizeRole)
         homepage = index.model().data(index, HomepageRole)
@@ -118,11 +123,20 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Name
         p.setFont(self.boldFont)
-        p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title.toString())
+        p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
+        if ptype not in ('None', 'normal'):
+            p.setFont(self.tagFont)
+            rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)
+            p.setPen(DARKRED)
+            p.setBrush(DARKRED)
+            p.drawRoundRect(width - rect.width() - 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width() + 4, rect.height(), 10, 10)
+            p.setPen(WHITE)
+            p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, ptype)
+            p.setPen(foregroundColor)
 
         # Package Summary
         p.setFont(self.normalFont)
-        elided_summary = QtGui.QFontMetrics(self.normalFont).elidedText(summary.toString(), Qt.ElideRight, width - textInner)
+        elided_summary = QtGui.QFontMetrics(self.normalFont).elidedText(summary, Qt.ElideRight, width - textInner)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, elided_summary)
 
         if self.rowAnimator.currentRow() == index.row():

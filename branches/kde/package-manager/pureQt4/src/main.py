@@ -64,6 +64,8 @@ if __name__ == '__main__':
         from mainwindow import MainWindow
 
         app = QtGui.QApplication(sys.argv)
+        font = ctx.Pds.settings('font','Sans').split(',')
+        app.setFont(QtGui.QFont(font[0], int(font[1])))
         manager = MainWindow()
         manager.show()
 
