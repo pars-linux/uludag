@@ -1,10 +1,9 @@
-
-
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2006-11-17 10:48+0200\n"
+"POT-Creation-Date: 2007-07-12 20:08+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -70,12 +69,8 @@ msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Firewall działa</font></b>"
 
 #: src/firewall-config.py:241
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Kliknij tutaj by wyłączyć firewall i zezwolić na wszystkie przychodzące "
-"i wychodzące połączenia."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
+msgstr "Kliknij tutaj by wyłączyć firewall i zezwolić na wszystkie przychodzące i wychodzące połączenia."
 
 #: src/firewall-config.py:246
 msgid "&Start Firewall"
@@ -86,11 +81,8 @@ msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Firewall nie działa</font></b>"
 
 #: src/firewall-config.py:249
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Kliknij tutaj by uruchomić firewall i dopuścić tylko określone połączenia."
+msgid "Click here to start the firewall and allow connections only to specified services."
+msgstr "Kliknij tutaj by uruchomić firewall i dopuścić tylko określone połączenia."
 
 #: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
@@ -128,6 +120,11 @@ msgstr "IRC"
 msgid "File transfer service"
 msgstr "Transfer plików"
 
+#: src/rules.py:50
+#, fuzzy
+msgid "Desktop Sharing"
+msgstr "Desktop Sharing"
+
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
 msgstr "<b><font size=\"+1\">Firewall działa</font></b>"
@@ -145,25 +142,16 @@ msgid "Click here to stop the firewall and allow all incoming connections."
 msgstr "Kliknij tutaj by zatrzymać firewalla i dopuścić wszystkie połączenia."
 
 #: src/firewall.py:196
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Wszystkie przychodzące połączenia są domyślnie <b>odrzucane</b>. Jeżeli "
-"chesz by inne komputery miały dostęp do określonych usług na tym komputerze "
-"wybierz je z listy poniżej:"
+msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
+msgstr "Wszystkie przychodzące połączenia są domyślnie <b>odrzucane</b>. Jeżeli chesz by inne komputery miały dostęp do określonych usług na tym komputerze wybierz je z listy poniżej:"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Przychodzące Połączenia"
 
 #: src/firewall.py:198
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr "W tej zakładce możesz tworzyć własne reguły firewalla. Uzyj przycisku '+' "
-"do tworzenia nowych reguł. Odznacz reguły, które mają być usunięte."
+msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
+msgstr "W tej zakładce możesz tworzyć własne reguły firewalla. Uzyj przycisku '+' do tworzenia nowych reguł. Odznacz reguły, które mają być usunięte."
 
 #: src/firewall.py:201
 msgid "Advanced"
