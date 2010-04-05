@@ -16,13 +16,13 @@ import pds
 
 PDS = pds.Pds('migration')
 i18n = PDS.session.i18n
-IconLoader = pds.QIconLoader(PDS)
-KIcon = IconLoader.icon
+KIconLoader = pds.QIconLoader(PDS)
+KIcon = KIconLoader.icon
 
 OK, WARNING, ERROR = range(3)
 
-ctx_user = None
-ctx_sources = None
-ctx_destinations = None
-ctx_options = None
-ctx_filesOptions = None
+user = None
+sources = None
+destinations = None
+options = None
+filesOptions = None

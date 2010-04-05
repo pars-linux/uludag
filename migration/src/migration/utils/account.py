@@ -16,6 +16,8 @@ import os
 import tempfile
 import xml.dom.minidom
 #from PyKDE4.kdecore import KConfig, KConfigGroup, i18n
+from migration.gui.context import i18n
+
 from PyQt4.QtCore import QString
 from dbus import *
 

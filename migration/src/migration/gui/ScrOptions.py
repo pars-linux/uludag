@@ -13,13 +13,12 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
-
 #from PyKDE4.kdecore import i18n
 #from PyKDE4.kdeui import KMessageBox
+from migration.gui.context import i18n
 
 from migration.gui.ScreenWidget import ScreenWidget
-
-from migration.gui.context import *
+import migration.gui.context as ctx
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = i18n("Selecting Options")
@@ -31,7 +30,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         #self.ui.setupUi(self)
         self.box = QtGui.QGridLayout(self)
         #self.gridlayout.setContentsMargins(1,-1,11,-1)
-        #self.sources = ctx_sources
+        #self.sources = ctx.sources
         #self.vbox = QtGui.QVBoxLayout(self)
 
     def creator(self, sources):
@@ -203,10 +202,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
     def getOptions(self):
         "Returns a dictionary consists of selected options"
         options = {}
-        ctx_sources["Copy E-Mails"] = True
+        ctx.sources["Copy E-Mails"] = True
         # Add fundamental items:
         for item in ["Partition", "OS Type", "User Name", "Home Path"]:
-            options[item] = ctx_sources[item]
+            options[item] = ctx.sources[item]
         # Add selected optional items:
         items = [("IEBookmarks", "Favorites Path"),
                  ("FFBookmarks", "Firefox Profile Path"),
@@ -220,14 +219,14 @@ class Widget(QtGui.QWidget, ScreenWidget):
         for widgetname, dictname in items:
             item = self.findChild(QtGui.QWidget, widgetname)
             if item and item.isChecked():
-                options[dictname] = ctx_sources[dictname]
+                options[dictname] = ctx.sources[dictname]
         return options
 
     def shown(self):
-        if ctx_sources:
-            self.creator(ctx_sources)
+        if ctx.sources:
+            self.creator(ctx.sources)
 
     def execute(self):
         if self.getOptions():
-            ctx_options = self.getOptions()
+            ctx.options = self.getOptions()
             return (True, None)

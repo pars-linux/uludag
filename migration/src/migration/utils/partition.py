@@ -22,10 +22,8 @@ def getPartitions():
     try:
         f = open("/etc/fstab")
         logging.debug("/etc/fstab :\n" + f.read())
-        print "/etc/fstab: ", f.read()
         f.close()
         f = open("/proc/mounts")
-        print "/proc/mounts: ", f.read()
         logging.debug("/proc/mounts :\n" + f.read())
         f.seek(0)
     except:
