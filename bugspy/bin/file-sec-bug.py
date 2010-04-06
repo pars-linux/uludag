@@ -126,6 +126,15 @@ def main(filename):
                 print affected_pardus_versions
 
     print ''
+    print "Assign this bug to [Enter=default]: ",
+    answer = sys.stdin.readline()
+    if answer[0] != "\n":
+        new_bug["assigned_to"] = answer.replace("\n","")
+        print "Bug is assigned to: %s" % new_bug["assigned_to"]
+    else:
+        print "Not assigning. Assignee is default."
+
+    print ''
     print "Make his bug private? [Y/n]: ",
     answer = sys.stdin.readline()
     if answer[0] == "y" or answer[0] == "\n":
@@ -133,11 +142,17 @@ def main(filename):
     elif answer[0] == "n":
         new_bug["security"] = 0
 
+    if new_bug.has_key("assigned_to"):
+        assigned_to = new_bug["assigned_to"]
+    else:
+        assigned_to = "none"
+
     print '\n!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print "Title:     %s" % title
     print "Component: %s" % component
     print "Affected:  %s" % ', '.join(affected_pardus_versions)
+    print "Assigned:  %s" % assigned_to
     print description + "\n"
 
     print "\nWill file this bug [Y/n]: ",
