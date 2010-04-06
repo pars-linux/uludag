@@ -73,6 +73,9 @@ if __name__ == '__main__':
         font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
         app.setFont(QtGui.QFont(font[0], int(font[1])))
 
+        if config.PMConfig().systemTray():
+            app.setQuitOnLastWindowClosed(False)
+
     if not config.PMConfig().systemTray():
         manager.show()
 
