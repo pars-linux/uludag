@@ -372,16 +372,16 @@ class EntryEditor:
         bug_url = ""
         for cve in cvelist:
             # print cve
-            description += "Description\n"
+            description += "DESCRIPTION\n"
             description += "===========\n"
             description += "%s (http://nvd.nist.gov/nvd.cfm?cvename=%s):\n" % (cve, cve)
             description += "%s" % self.cvedb.get_cve_desc(cve, indentation = 2)
             description += "\n\n"
 
-            description += "Solution\n"
+            description += "SOLUTION\n"
             description += "========\n\n"
 
-            description += "References\n"
+            description += "REFERENCES\n"
             description += "==========\n"
 
             references = ""
