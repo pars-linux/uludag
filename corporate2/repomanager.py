@@ -15,7 +15,6 @@ import os
 import re
 import sys
 import pisi
-from pisi.db.sourcedb import SourceDB
 from string import find
 
 import config
@@ -43,7 +42,6 @@ class RepositoryManager:
             return out
 
         # __init__ starts here
-        self.keys = {"U": self.getModified, "A": self.getAdded, "D": self.getRemoved, "ALL": self.getAll}
 
         self.oldRevision = self.getCurrentRevision()
 
@@ -60,79 +58,22 @@ class RepositoryManager:
         # Return the current repository revision
         return int(re.search("Revision: [0-9]*\n", os.popen("/usr/bin/svn info %s" % config.localPspecRepo).read()).group().split(":")[-1].strip())
 
-    def getChanges(self, type="ALL", filter='', exclude=Exclude):
-        data = self.keys.get(type)()
-        if not len(exclude):
-            return [x for x in data if find(x, filter) > -1]
+    def getChanges(self, _type="U", _filter='', _exclude=Exclude):
+        data = None
+        if _type == "U":
+            data = self.getModified()
+        elif _type == "A":
+            data = self.getAdded()
+        elif _type == "D":
+            data = self.getRemoved()
+
+        if not len(_exclude):
+            return [x for x in data if find(x, _filter) > -1]
         else:
             rval = data
-            for i in range(0, len(exclude)):
-                rval = [t for t in [x for x in rval if find(x, filter) > -1] if find(t, exclude[i]) == -1]
+            for i in range(0, len(_exclude)):
+                rval = [t for t in [x for x in rval if find(x, _filter) > -1] if find(t, _exclude[i]) == -1]
             return rval
-
-    def getReverseDependencies(self, pspecList):
-        # Needs a source repository
-
-        def check():
-            rdb = pisi.db.repodb.RepoDB()
-            try:
-                dbname = rdb.get_source_repos()[0]
-                pisi.api.update_repo(dbname)
-            except IndexError:
-                # No source repo
-                return False
-            else:
-                return True
-
-        def getPackageName(pspec):
-            # Extracts package name from full path to pspec.xml
-            return os.path.basename(pspec.rsplit("/pspec.xml")[0])
-
-
-        breaksABI = []
-        revBuildDeps = set()
-
-        if not check():
-            # No source repository
-            print "You should add a source repository for reverse dependency checking. Skipping.."
-            return (breaksABI, list(revBuildDeps))
-
-        # Create a source db instance
-        sdb = SourceDB()
-
-        # Create a diff output of all the repository
-        # This is much more efficient that doing 'svn di' for every changed file.
-        # difflist is list of tuples: ('kernel/kernel/pspec.xml', commit_diff)
-        print "\nCalling svn diff. This may take a little while depending on the repository state.."
-        diffoutput = os.popen("/usr/bin/svn di -r %d:%d %s" % (self.oldRevision, self.getRevision(), " ".join(pspecList))).read().strip()
-        print "Parsing svn diff output..",
-        difflist = [(pspec.split("\n")[0], "".join([l for l in pspec.split("\n")[4:] if l.startswith("+")])) \
-                    for pspec in diffoutput.split("Index: ")[1:]]
-        print "Done"
-
-        for pspec, diff in difflist:
-            if "<Action>reverseDependencyUpdate</Action>" in diff:
-                breaksABI.append(getPackageName(pspec))
-
-        # Now we have the list of packages which break ABI.
-        # We need to find out the reverse build dependencies of these packages.
-        # e.g. live555 breaks ABI, vlc and mplayer needs live555 during build
-
-        for p in breaksABI:
-            # FIXME: We also add the subpackages as we can't know which one needs revdepupdate.
-            # This may cause a lot of unneeded updates..
-            revdeps = []
-            for package in [_p.name for _p in sdb.get_spec(p).packages]:
-                srevdeps = sdb.get_rev_deps(package)
-                if srevdeps:
-                    revdeps.extend([d[0] for d in srevdeps])
-
-            for revdep in set(revdeps):
-                # e.g. (revdep, revdepObject) = ('vlc', <pisi.dependency.Dependency object at 0xa3284cc>)
-                revBuildDeps.add(os.path.join(config.localPspecRepo, sdb.get_spec(sdb.pkgtosrc(revdep)).source.partOf.replace(".", "/") + "/%s/pspec.xml" % revdep))
-
-        return (breaksABI, list(revBuildDeps))
-
 
     def getRevision(self):
         return int(self.output[-1][self.output[-1].index("revision")+1].strip("."))
@@ -145,10 +86,6 @@ class RepositoryManager:
 
     def getRemoved(self):
         return [d[1] for d in self.output if d[0] == "D"]
-
-    def getAll(self, filter='', exclude=[]):
-        return self.getModified() + self.getRemoved() + self.getAdded()
-
 
 # Main program
 
@@ -178,31 +115,13 @@ if __name__ == "__main__":
     for p in updatedPspecFiles + newPspecFiles:
         print "  * %s" % p
 
-    # Get 'reverseDependencyUpdate' containing package list
-    # A brand new package can't have this property
-    (breaksABI, revDepsToBeRecompiled) = r.getReverseDependencies(updatedPspecFiles)
-
-    # Print the revdeps to be recompiled
-    if breaksABI:
-        print "\nThese updates broke ABI:\n%s" % ('-'*24)
-        for p in breaksABI:
-            print "  * %s" % p
-
-        if revDepsToBeRecompiled:
-            print "\nThese reverse dependencies will be recompiled because of ABI breakage:\n%s" % ('-'*70)
-            for p in revDepsToBeRecompiled:
-                print "  * %s" % p
-        else:
-            # p broke API but no reverse build dependency exists
-            print "\nCouldn't find any reverse build dependency in source repository.."
-
     if len(updatedPspecFiles + newPspecFiles):
         queue = []
         if os.path.exists(os.path.join(config.workDir, "workQueue")):
             queue = open(os.path.join(config.workDir, "workQueue"), "rb").read().strip().split("\n")
 
         # Filter out the packages that shouldn't be build on this architecture
-        candidateQueue = updatedPspecFiles + newPspecFiles + revDepsToBeRecompiled
+        candidateQueue = updatedPspecFiles + newPspecFiles
         queue.extend(filter(lambda x: pisi.ctx.config.values.get('general', 'architecture') not in
                      pisi.specfile.SpecFile(x).source.excludeArch, candidateQueue))
 
