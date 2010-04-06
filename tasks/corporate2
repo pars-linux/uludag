@@ -52,13 +52,14 @@
 
 * Paket Yöneticisi (Gökmen Göksel)
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
-    * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
+    * needsServiceRestart, needsReboot desteği. GUI'ye reboot/restart uyarıları (-)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
-    * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (+)
-    * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
-    * QT4 ile baştan yazılması (/50)
     * Proxy ayar arayüzünün elden geçmesi, libproxy desteği ile KDE'den de alabilecek hale gelmesi (-)
+    * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (?)
     * Pisi/PM'in belli bazı paketleri önce güncelleyip güncellemeyi tekrar başlatması (?)
+    * Paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
+    * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (+)
+    * QT4 ile baştan yazılması (+)
 
 * Müdür (Ozan Çağlayan)
     * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
