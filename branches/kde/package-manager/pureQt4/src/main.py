@@ -52,22 +52,31 @@ if __name__ == '__main__':
 
         manager = MainWindow()
         args = KCmdLineArgs.parsedArgs()
-
-        if not config.PMConfig().systemTray():
+        if args.isSet("show-mainwindow"):
             manager.show()
-        else:
-            if args.isSet("show-mainwindow"):
-                manager.show()
 
-        sys.excepthook = handleException
     else:
         from mainwindow import MainWindow
+        from pds import QUniqueApplication
 
-        app = QtGui.QApplication(sys.argv)
+        app = QUniqueApplication(sys.argv, config.PMConfig().interfacePort())
+
+        setSystemLocale()
+
+        manager = MainWindow()
+        app.setMainWindow(manager)
+
+        # Update Interface Port
+        config.PMConfig().setInterfacePort(app.port)
+
+        # Set application font from system
         font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
         app.setFont(QtGui.QFont(font[0], int(font[1])))
-        manager = MainWindow()
+
+    if not config.PMConfig().systemTray():
         manager.show()
+
+    sys.excepthook = handleException
 
     ctx._time()
     app.exec_()
