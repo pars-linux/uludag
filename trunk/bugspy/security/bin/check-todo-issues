@@ -45,7 +45,7 @@ log.setLevel(logging.DEBUG)
 ch = logging.StreamHandler()
 ch.setLevel(logging.DEBUG)
 #ch.setFormatter(logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s"))
-ch.setFormatter(logging.Formatter("%(levelname)s: %(name)s: %(message)s"))
+ch.setFormatter(logging.Formatter("\033[35m%(levelname)s: %(name)s: %(message)s\033[0m"))
 
 log.addHandler(ch)
 
@@ -204,12 +204,19 @@ class EntryEditor:
 
 
     def update_bug(self, bug, cves):
-        #TODO: Modify this also..
+        def get_bug_cves(title = ""):
+            """ Get a list of CVEs on a bug number """
+            bug_cves = []
+            for (year, split_cves) in BugReporter.CVEGROUPALL.findall(title):
+                for cve in BugReporter.CVEGROUPSPLIT.findall(split_cves):
+                    bug_cves.append('CVE-%s-%s' % (year, cve))
+            return bug_cves
 
-        title = self.bugreporter.get_bug_title(bug)
-        if not title:
-            return
-        bug_cves = self.bugreporter.get_bug_cves(bug, title = title)
+        bug_data = self.bugreporter.get(bug)
+
+        title = bug_data.short_desc
+
+        bug_cves = get_bug_cves(title = title)
         total_cves = list(set(bug_cves + cves))
         new_title = "%s (%s)" % (BugReporter.CVEGROUPALL.sub('', re.sub('\(?CVEs? requested\)?', '', title)).strip(),
                           self.bugs_unify_cvenames(total_cves))
@@ -229,8 +236,9 @@ class EntryEditor:
 
         answer = sys.stdin.readline()
         if answer[0] == "y" or answer[0] == "Y" or answer[0] == "\n":
-            self.bugreporter.modify_bug(bug, new_title, description)
-
+            self.bugreporter.modify(bug_id=bug,
+                                    title=new_title,
+                                    comment=description)
 
 
     def handlecommand(self, command, entry, cve, product):
@@ -730,7 +738,7 @@ if __name__ == "__main__":
         os.chdir(setup_paths())
         # import our ini parser
         from securityini import SecurityINI
-        from cvetools import CVEData
+        from cvetools import CVEData, BugReporter
         main()
     except KeyboardInterrupt:
         print '\n ! Exiting.'
