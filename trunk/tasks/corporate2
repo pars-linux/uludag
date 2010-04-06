@@ -39,7 +39,7 @@
 # Current tasks #
 #################
 
-* PiSi (Faik Uygur)
+* PiSi (Fatih Aşıcı)
     * groups.xml tango simge teması düzeltmesi (+)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
     * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (/75)
@@ -50,12 +50,14 @@
     * Paket bazında mimari ve dağıtım denetlemesi (+)
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (+)
 
-* Paket Yöneticisi (Faik Uygur)
+* Paket Yöneticisi (Gökmen Göksel)
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
     * KHTML olan paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (+)
     * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
+    * QT4 ile baştan yazılması (/50)
+    * Proxy ayar arayüzünün elden geçmesi, libproxy desteği ile KDE'den de alabilecek hale gelmesi (-)
     * Pisi/PM'in belli bazı paketleri önce güncelleyip güncellemeyi tekrar başlatması (?)
 
 * Müdür (Ozan Çağlayan)
