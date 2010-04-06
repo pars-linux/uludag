@@ -8,8 +8,19 @@ from twisted.web import xmlrpc, server
 #from buildfarm import config
 #PORT = 8007
 
+class Privileged(object):
+    """Simple decorator to wrap privileged operations."""
+    def __init__(self, func):
+        self.__func = func
+
+    def __call__(self, *args):
+        # FIXME: Implement security layer
+        return self.__func(*args)
+
+
 class BuildService(xmlrpc.XMLRPC):
 
+    @Privileged
     def xmlrpc_start(self, release, distribution="Pardus"):
         """Starts the corresponding buildfarm service
 
@@ -28,6 +39,7 @@ class BuildService(xmlrpc.XMLRPC):
         # FIXME: Implement
         return "Started buildfarm for %s %s" % (distribution, release)
 
+    @Privileged
     def xmlrpc_stop(self, release, distribution="Pardus"):
         """Stops the corresponding buildfarm service."""
         # FIXME: Implement
