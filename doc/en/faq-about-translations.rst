@@ -1,17 +1,3 @@
-Hi,
-
-First of all I must say that We really appreciate the contribution that you're giving Pardus as volunteer translators, you're doing
-a great job by giving support to your native languages!
-
-Now I dediced to write down a looong e-mail which could possibly be published as an introductory guide to all translators.
-
-Feel free to ask more questions about the parts that are not clear to you.
-
-When I complete this text with the answers to your additional questions, I'll make the document public.
-
-
---
-
 1. Internationalization (i18n)
 ------------------------------
 
