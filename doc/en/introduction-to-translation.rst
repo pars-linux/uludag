@@ -7,49 +7,54 @@ Quick start guide to providing translations on Pardus
 
 #. Subscribing to the Mailing List
 
- * Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and 
+ * Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
    subscribe to this mailing list.
 
- * Wait for the confirmation email which contains a link to confirm your 
+ * Wait for the confirmation email which contains a link to confirm your
    subscription. Click the link to confirm your subscription.
 
 #. Introducing Yourself
 
  * Post a short self introduction to the pardus-translators mailing list.
    Please remember to include your Transifex user name and your language.
-   With this information, language coordinator can identify you for
-   language team joining approval.
+   With this information, language coordinator can identify you for language
+   team joining approval.
 
 #. Create a Bugzilla account
 
  * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
    useful for translators since there could be a bug in a translation file's
-   source (POT) and you should file a bug in order to warn the project maintainer.
+   source (POT) and you should file a bug in order to warn the project
+   maintainer.
 
 #. Welcome
 
  * You are now a fully recognized member of Pardus community, capable of
-   submitting contributions, submitting bugs and following the discussions of our groups.
+   submitting contributions, submitting bugs and following the discussions of
+   our groups.
 
 #. Obtaining and Translating Projects
 
  Now that you have prepared a directory structure, you can download a file to
- translate. You may need to communicate with other translators in your language
- team to avoid conflict. If you are not sure, please contact your language coordinator.
+ translate. You may need to communicate with other translators in your
+ language team to avoid conflict. If you are not sure, please contact your
+ language coordinator.
 
- 1. Visit your language page such as http://translate.pardus.org.tr/transifex/languages/l/pl/,
-    and select a target release. The interface will redirect you to a page for
-    that release, such as http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
+ 1. Visit your language page such as
+    http://translate.pardus.org.tr/transifex/languages/l/pl/, and select a
+    target release. The interface will redirect you to a page for that
+    release, such as
+    http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
 
  2. Scroll down the page to find the table of all projects available for that
-    release. Use the arrow download icon labeled Download pl.po or similar next
-    to each project to download the po file.
+    release. Use the arrow download icon labeled Download pl.po or similar
+    next to each project to download the po file.
 
- 3. Since the file name to commit follows the name convention of lang.po, change
-    the name of the downloaded file.
+ 3. Since the file name to commit follows the name convention of lang.po,
+    change the name of the downloaded file.
 
- 4. Now the file is ready for translation. Translate the po file for your language
-    in a po editor such as Lokalize.
+ 4. Now the file is ready for translation. Translate the po file for your
+    language in a po editor such as Lokalize.
 
  5. Check the integrity of your file before you commit it.
 
@@ -61,8 +66,9 @@ Quick start guide to providing translations on Pardus
 
  1. Go back to your language page such as
     http://translate.pardus.org.tr/transifex/languages/l/pl/, and select a
-    target release. The interface will redirect you to a page for that release,
-    such as http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
+    target release. The interface will redirect you to a page for that
+    release, such as
+    http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
 
  2. Login
 
@@ -123,7 +129,8 @@ To proofread your translation as part of the software, follow these steps:
 
    exit
 
- 4. Proofread the package with the translated strings as part of the application:
+ 4. Proofread the package with the translated strings as part of the
+    application:
 
    LANG=pl_PL.UTF-8 myproject
 
