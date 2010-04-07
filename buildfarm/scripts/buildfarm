@@ -255,7 +255,7 @@ def movePackages(newBinaryPackages, oldBinaryPackages, deltaPackages, debugPacka
         if exists(join(conf.workdir, package)):
             copy(join(conf.workdir, package), conf.binarypath)
             copy(join(conf.workdir, package), conf.testpath)
-            remove(join(config.workdir, package))
+            remove(join(conf.workdir, package))
 
     def moveUnchangedPackage(package):
         logger.info("*** Moving unchanged package %s'" % package)
