@@ -79,14 +79,15 @@ Quick start guide to providing translations on Pardus
 
    #. Submit
 
-      Use the pencil icon labeled Send a translation for this language next to each
-      project, then click the browse button to locate your translated file.
+      Use the pencil icon labeled Send a translation for this language next to
+      each project, then click the browse button to locate your translated
+      file.
 
       Select the Send to commit your translated file.
 
-      Interface displays the message File submitted successfully. If you receive an
-      error or some other success message, please post it to the pardus-translators
-      mailing list so it can be addressed. 
+      Interface displays the message File submitted successfully. If you
+      receive an error or some other success message, please post it to the
+      pardus-translators mailing list so it can be addressed.
 
 #. Adding New .po File
 
@@ -136,5 +137,5 @@ Quick start guide to providing translations on Pardus
 
         ``LANG=pl_PL.UTF-8 myproject``
 
-      The application related to the translated package runs with the translated
-      strings.
+      The application related to the translated package runs with the
+      translated strings.
