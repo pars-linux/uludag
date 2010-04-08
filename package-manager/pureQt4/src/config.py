@@ -54,9 +54,6 @@ class PMConfig(Config):
     def installUpdatesAutomatically(self):
         return self.getBoolValue("InstallUpdatesAutomatically")
 
-    def interfacePort(self):
-        return self.getNumValue("InterfacePort")
-
     def updateCheckInterval(self):
         return self.getNumValue("UpdateCheckInterval")
 
@@ -77,6 +74,3 @@ class PMConfig(Config):
 
     def setShowOnlyGuiApp(self, enabled):
         self.setValue("ShowOnlyGuiApp", enabled)
-
-    def setInterfacePort(self, port):
-        self.setValue("InterfacePort", port)

@@ -59,15 +59,12 @@ if __name__ == '__main__':
         from mainwindow import MainWindow
         from pds import QUniqueApplication
 
-        app = QUniqueApplication(sys.argv, config.PMConfig().interfacePort())
+        app = QUniqueApplication(sys.argv, catalog='package-manager')
 
         setSystemLocale()
 
         manager = MainWindow()
         app.setMainWindow(manager)
-
-        # Update Interface Port
-        config.PMConfig().setInterfacePort(app.port)
 
         # Set application font from system
         font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
