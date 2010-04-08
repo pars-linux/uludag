@@ -54,7 +54,7 @@ Quick start guide to providing translations on Pardus
 
       ..  image:: dl.png
 
-      Use the marked icon or similar next to each project to download the po
+      Use the marked button or similar next to each project to download the po
       file.
 
    #. Before starting to translate any translation file, please make sure that
@@ -70,8 +70,8 @@ Quick start guide to providing translations on Pardus
       to unlock it when the translation is done and commited.
 
    #. Now you are aware of the workflow and begin translating. Translate the po file for your
-      language in a po editor such as Lokalize, or use Transifex' online po
-      editor. Just click the icon below and start translating.
+      language in a po editor such as Lokalize, or by using Transifex' online po
+      editor. Just click the button below and start translating.
 
       .. image:: edit.png
 
@@ -81,35 +81,34 @@ Quick start guide to providing translations on Pardus
 
 #. Committing Projects
 
-   Once you finish translation work, commit the file using the same interface.
+   Once you finished your translation work, commit the file using the same interface.
 
-   Use the upload icon labeled Send a translation for this language next to
-   each project, then click the browse button to locate your translated
-   file.
+   Use the upload button marked below for your language next to each project,
+   then click the browse button to locate your translated file.
 
    .. image:: ul.png
 
    Select the Send to commit your translated file.
 
-   Interface displays the message File submitted successfully. If you
-   receive an error or some other message except success, please post it to the
+   Interface displays the message *File submitted successfully*. If you receive
+   an error or some other message except success, please post it to the
    pardus-translators mailing list so it can be addressed.
 
 #. Adding New Translation File
 
    If there is no po file for your language, please do the following steps:
 
-   * Download the pot file and copy it as your own language's **po** file.
+   * Download the POT file and copy it as your own language's **po** file.
 
       .. image:: dl-pot.png
 
-   * Once you finish the translation, click on the Add a new translation button
-     at project page.
+   * Once you finish the translation, click on the button marked below at
+     project page.
 
       .. image:: add-new.png
 
-   * Type your new file name in the field marked or enter it here:, replacing
-     the file name with your locale:
+   * Type your new file name in the field marked replacing the file name with
+     your locale. See the image:
 
        **po/your_lang.po**
 
