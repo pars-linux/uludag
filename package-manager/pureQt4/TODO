@@ -8,7 +8,7 @@ TODO
  - For Qt-only mode QUniqueApp support (+)
  - Show different warnings for update type (%70)
  - Fix package icons in summary dialog (+)
+ - Add summary notification for Qt-only mode (+)
  - Merge changes from corporate's package-manager
- - Add summary notification for Qt-only mode mainwidget:216
  - Fix summary dialog questions, k -> q messagebox
  - Fix update repo timeout apply problem in settings dialog
