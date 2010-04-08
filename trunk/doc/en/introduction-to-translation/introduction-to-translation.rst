@@ -5,8 +5,8 @@ Quick start guide to providing translations on Pardus
 #. Subscribing to the Mailing List
 
    - Pardus uses Transifex to help translators keep track of translation
-     projects. Please register yourself to Transifex at
-     http://translate.pardus.org.tr.
+     projects. Please register yourself to Transifex at 
+     http://translate.pardus.org.tr
 
    - Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
      subscribe to this mailing list.
@@ -96,7 +96,8 @@ Quick start guide to providing translations on Pardus
 
 #. Adding New Translation File
 
-   If there is no po file for your language, please do the following steps:
+   If there is no translation file for your language, please do the following
+   steps:
 
    * Download the POT file and copy it as your own language's **po** file.
 
@@ -131,5 +132,4 @@ Quick start guide to providing translations on Pardus
    project's *Watch* button. See the image:
 
       .. image:: watch-project.png
-
 
