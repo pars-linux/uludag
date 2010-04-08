@@ -213,8 +213,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                     KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
                     )
         else:
-            #FIXME PDS
-            pass
+            Pds.notify(i18n('Package Manager'), self.state.getSummaryInfo(self.operation.totalPackages))
 
     def showSummary(self):
         self.summaryDialog.setDesktopFiles(self.operation.desktopFiles)
