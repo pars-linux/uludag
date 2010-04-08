@@ -114,3 +114,22 @@ Quick start guide to providing translations on Pardus
 
       .. image:: add-new2.png
 
+#. Being Aware of Translation Updates
+
+   Transifex supports notifications per many events. One of them is PO updates.
+   If you want to receive notifications when a project developer updates
+   translation files, you should click the *Watch* button, as seen below:
+
+      .. image:: watch.png
+
+   You can watch every languages po file updates or may want to watch only your
+   language's translation updates, it's up to you. 
+
+   One notification that is useful as well is that watching a project's events.
+   If you want to receive notifications when a project has any update, such as
+   a translator joins a team or a new project is added etc., click the related
+   project's *Watch* button. See the image:
+
+      .. image:: watch-project.png
+
+
