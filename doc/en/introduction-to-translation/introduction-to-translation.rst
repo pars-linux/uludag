@@ -2,8 +2,7 @@
 Quick start guide to providing translations on Pardus
 =====================================================
 
-Subscribing to the Mailing List
--------------------------------
+#. Subscribing to the Mailing List
 
    - Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
      subscribe to this mailing list.
@@ -14,31 +13,25 @@ Subscribing to the Mailing List
    - Wait for the confirmation email which contains a link to confirm your
      subscription. Click the link to confirm your subscription.
 
-Introducing Yourself
---------------------
+#. Introducing Yourself
 
    - Post a short self introduction to the pardus-translators mailing list.
      Please remember to include your Transifex user name and your language.
      With this information, language coordinator can identify you for language
      team joining approval.
 
-Create a Bugzilla account
--------------------------
+#. Create a Bugzilla account
 
    * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
      useful for translators since there could be a bug in a translation file's
      source (POT) and you should file a bug in order to warn the project
      maintainer.
 
-Welcome
--------
-
    * You are now a fully recognized member of Pardus community, capable of
      submitting contributions, submitting bugs and following the discussions of
      our groups.
 
-Obtaining and Translating Projects
-----------------------------------
+#. Obtaining and Translating Projects
 
    You may need to communicate with other translators in your language team to
    avoid conflict. If you are not sure, please contact your language
@@ -73,8 +66,7 @@ Obtaining and Translating Projects
 
       .. image:: edit.png
 
-Committing Projects
--------------------
+#. Committing Projects
 
    Once you finish translation work, commit the file using the same interface.
 
@@ -103,8 +95,7 @@ Committing Projects
       receive an error or some other message except success, please post it to the
       pardus-translators mailing list so it can be addressed.
 
-Adding New Translation File
----------------------------
+#. Adding New Translation File
 
    If there is no po file for your language, please do the following steps:
 
@@ -124,8 +115,7 @@ Adding New Translation File
 
       .. image:: add-new2.png
 
-Proofreading
-------------
+#. Proofreading
 
    To proofread your translation as part of the software, follow these steps:
 
