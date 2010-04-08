@@ -1,42 +1,44 @@
-=============================
-Translation Quick Start Guide
-=============================
-
+=====================================================
 Quick start guide to providing translations on Pardus
------------------------------------------------------
+=====================================================
 
-#. Subscribing to the Mailing List
+Subscribing to the Mailing List
+-------------------------------
 
    - Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
      subscribe to this mailing list.
 
-   - It is better to subscribe to Development mailing list 
+   - It is better to subscribe to Development mailing list
      http://lists.pardus.org.tr/mailman/listinfo/pardus-devel.
 
    - Wait for the confirmation email which contains a link to confirm your
      subscription. Click the link to confirm your subscription.
 
-#. Introducing Yourself
+Introducing Yourself
+--------------------
 
    - Post a short self introduction to the pardus-translators mailing list.
      Please remember to include your Transifex user name and your language.
      With this information, language coordinator can identify you for language
      team joining approval.
 
-#. Create a Bugzilla account
+Create a Bugzilla account
+-------------------------
 
    * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
      useful for translators since there could be a bug in a translation file's
      source (POT) and you should file a bug in order to warn the project
      maintainer.
 
-#. Welcome
+Welcome
+-------
 
    * You are now a fully recognized member of Pardus community, capable of
      submitting contributions, submitting bugs and following the discussions of
      our groups.
 
-#. Obtaining and Translating Projects
+Obtaining and Translating Projects
+----------------------------------
 
    You may need to communicate with other translators in your language team to
    avoid conflict. If you are not sure, please contact your language
@@ -49,8 +51,12 @@ Quick start guide to providing translations on Pardus
       http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
 
    #. Scroll down the page to find the table of all projects available for that
-      release. Use the arrow download icon labeled Download pl.po or similar
-      next to each project to download the po file.
+      release. Use the
+
+      .. image::dl.png
+
+      arrow download icon labeled Download pl.po or similar next to each
+      project to download the po file.
 
    #. Since the file name to commit follows the name convention of <lang>.po,
       change the name of the downloaded file.
@@ -62,7 +68,13 @@ Quick start guide to providing translations on Pardus
 
       ``msgfmt -c --statistics pl.po``
 
-#. Committing Projects
+   #. You can translate using Transifex' online po editor. Just click the icon
+      below and start translating.
+
+      .. image:: edit.png
+
+Committing Projects
+-------------------
 
    Once you finish translation work, commit the file using the same interface.
 
@@ -79,31 +91,41 @@ Quick start guide to providing translations on Pardus
 
    #. Submit
 
-      Use the pencil icon labeled Send a translation for this language next to
+      Use the upload icon labeled Send a translation for this language next to
       each project, then click the browse button to locate your translated
       file.
+
+      .. image:: ul.png
 
       Select the Send to commit your translated file.
 
       Interface displays the message File submitted successfully. If you
-      receive an error or some other success message, please post it to the
+      receive an error or some other message except success, please post it to the
       pardus-translators mailing list so it can be addressed.
 
-#. Adding New .po File
+Adding New Translation File
+---------------------------
 
    If there is no po file for your language, please do the following steps:
 
    * Download the pot file and copy it as your own language's **po** file.
 
+      .. image:: dl-pot.png
+
    * Once you finish the translation, click on the Add a new translation button
      at project page.
+
+      .. image:: add-new.png
 
    * Type your new file name in the field marked or enter it here:, replacing
      the file name with your locale:
 
        ``po/<your_lang>.po``
 
-#. Proofreading
+      .. image:: add-new2.png
+
+Proofreading
+------------
 
    To proofread your translation as part of the software, follow these steps:
 
