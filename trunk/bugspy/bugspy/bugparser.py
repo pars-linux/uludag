@@ -36,7 +36,12 @@ class BugStruct(object):
 
     def has(self, key):
         if self.__dict__.has_key(key):
-            return True
+            # if the value is False or None, it means that there is no such key.
+            # in the bugzilla code, we do not need False or None keys
+            if not self.__dict__.get(key):
+                return False
+            else:
+                return True
         else:
             return False
 
