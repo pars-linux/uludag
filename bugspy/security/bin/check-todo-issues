@@ -420,8 +420,9 @@ class EntryEditor:
 
         os.remove(filename)
 
-        print "Processing %s" % title
+        print "\nProcessing %s\n" % title
 
+        # ask component
         print "Component for bug [Enter=General, k=Kernel]: ",
         comp = sys.stdin.readline()
         component = ""
@@ -434,20 +435,8 @@ class EntryEditor:
 
         new_bug = {}
 
-        print "Make his bug private? [Y/n]: ",
-        answer = sys.stdin.readline()
-
-        if answer[0] == "y" or answer[0] == "\n":
-            new_bug["security"] = 1
-        elif answer[0] == "n":
-            new_bug["security"] = 0
-
-        print "\nTitle: %s" % title.rstrip("\n")
-        print "Component: %s" % component
-        print "Bug url: %s" % bug_url
-        print "Description:\n%s" % description
-
-        print "Which Pardus versions are affected?"
+        # ask which versions
+        print "\nWhich Pardus versions are affected?"
         print "1- Pardus 2009"
         print "2- Pardus 2008"
         print "3- Pardus Corporate2\n"
@@ -485,7 +474,40 @@ class EntryEditor:
                     affected_pardus_versions.append(map.get(answer))
                     print affected_pardus_versions
 
-        print "\nWill file this bug [Y/n]: ",
+
+        # ask assignee
+        print "\nAssign this bug to [Enter=default]: ",
+        answer = sys.stdin.readline()
+        if answer[0] != "\n":
+            new_bug["assigned_to"] = answer.replace("\n","")
+            print "Bug is assigned to: %s" % new_bug["assigned_to"]
+        else:
+            print "Not assigning. Assignee is default."
+
+        if new_bug.has_key("assigned_to"):
+            assigned_to = new_bug["assigned_to"]
+        else:
+            assigned_to = None
+
+        # ask whether it is private or not
+        print "\nMake his bug private? [Y/n]: ",
+        answer = sys.stdin.readline()
+
+        if answer[0] == "y" or answer[0] == "\n":
+            new_bug["security"] = 1
+        elif answer[0] == "n":
+            new_bug["security"] = 0
+
+        # print last output
+        print '\n!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+        print '!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+        print "Title:     %s" % title
+        print "Component: %s" % component
+        print "Affected:  %s" % ', '.join(affected_pardus_versions)
+        print "Assigned:  %s" % assigned_to
+        print "\n" + description
+
+        print "\nWill file this bug? [Y/n]: ",
 
         answer = sys.stdin.readline()
         if answer[0] == "y" or answer[0] == "Y" or answer[0] == "\n":
@@ -496,9 +518,7 @@ class EntryEditor:
             new_bug["component"] = component
             new_bug["product"] = "Güvenlik / Security"
 
-
             # add bug for each Pardus version and add depends_on.
-
             self.bugreporter.login()
             bugno = self.bugreporter.new(**new_bug)
 
@@ -518,6 +538,7 @@ class EntryEditor:
                                          description=bug_desc,
                                          security=1,
                                          component=component,
+                                         assigned_to=assigned_to,
                                          version=affected_version,
                                          product="Güvenlik / Security",
                                          blocks=bugno)
