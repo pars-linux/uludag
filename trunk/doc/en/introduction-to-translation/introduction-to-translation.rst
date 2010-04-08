@@ -4,14 +4,20 @@ Quick start guide to providing translations on Pardus
 
 #. Subscribing to the Mailing List
 
+   - Pardus uses Transifex to help translators keep track of translation
+     projects. Please register yourself to Transifex at
+     http://translate.pardus.org.tr.
+
    - Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
      subscribe to this mailing list.
 
-   - It is better to subscribe to Development mailing list
+   - It is better to subscribe to development mailing list in order to keep
+     syncronized with other developers. Use the link below:
      http://lists.pardus.org.tr/mailman/listinfo/pardus-devel.
 
-   - Wait for the confirmation email which contains a link to confirm your
-     subscription. Click the link to confirm your subscription.
+   - Wait for the confirmation emails from you've just registered and
+     subscribed services. These e-mails contains a link to confirm your
+     subscription, click the link to confirm your subscription.
 
 #. Introducing Yourself
 
@@ -25,7 +31,7 @@ Quick start guide to providing translations on Pardus
    * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
      useful for translators since there could be a bug in a translation file's
      source (POT) and you should file a bug in order to warn the project
-     maintainer.
+     maintainer. This is not mandatory of course.
 
    * You are now a fully recognized member of Pardus community, capable of
      submitting contributions, submitting bugs and following the discussions of
@@ -44,56 +50,50 @@ Quick start guide to providing translations on Pardus
       http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
 
    #. Scroll down the page to find the table of all projects available for that
-      release. Use the
+      release.
 
-      .. image::dl.png
+      ..  image:: dl.png
 
-      arrow download icon labeled Download pl.po or similar next to each
-      project to download the po file.
+      Use the marked icon or similar next to each project to download the po
+      file.
 
-   #. Since the file name to commit follows the name convention of <lang>.po,
-      change the name of the downloaded file.
+   #. Before starting to translate any translation file, please make sure that
+      none of the translators are working on the file you choose. Transifex eases
+      this kind of conflicts with an icon indicating that a translator is working
+      on the file. See the marked icon below:
 
-   #. Now the file is ready for translation. Translate the po file for your
-      language in a po editor such as Lokalize.
+      ..  image:: locked.png
+
+   #. If noone is working on the file, as indicated by the icon, you can
+      safely translate the file. First step is to lock the file by clicking the
+      lock button. This way, you tell that you are working on the file and going
+      to unlock it when the translation is done and commited.
+
+   #. Now you are aware of the workflow and begin translating. Translate the po file for your
+      language in a po editor such as Lokalize, or use Transifex' online po
+      editor. Just click the icon below and start translating.
+
+      .. image:: edit.png
 
    #. Check the integrity of your file before you commit it.
 
       ``msgfmt -c --statistics pl.po``
 
-   #. You can translate using Transifex' online po editor. Just click the icon
-      below and start translating.
-
-      .. image:: edit.png
-
 #. Committing Projects
 
    Once you finish translation work, commit the file using the same interface.
 
-   #. Go back to your language page such as
-      http://translate.pardus.org.tr/transifex/languages/l/pl/, and select a
-      target release. The interface will redirect you to a page for that
-      release,
-      http://translate.pardus.org.tr/transifex/projects/p/pardus/r/corporate2/l/pl/.
+   Use the upload icon labeled Send a translation for this language next to
+   each project, then click the browse button to locate your translated
+   file.
 
-   #. Login
+   .. image:: ul.png
 
-      At the bottom of the page, select Sign in to visit the Sign in page.
-      Authenticate with your Transifex user name and password.
+   Select the Send to commit your translated file.
 
-   #. Submit
-
-      Use the upload icon labeled Send a translation for this language next to
-      each project, then click the browse button to locate your translated
-      file.
-
-      .. image:: ul.png
-
-      Select the Send to commit your translated file.
-
-      Interface displays the message File submitted successfully. If you
-      receive an error or some other message except success, please post it to the
-      pardus-translators mailing list so it can be addressed.
+   Interface displays the message File submitted successfully. If you
+   receive an error or some other message except success, please post it to the
+   pardus-translators mailing list so it can be addressed.
 
 #. Adding New Translation File
 
@@ -111,43 +111,7 @@ Quick start guide to providing translations on Pardus
    * Type your new file name in the field marked or enter it here:, replacing
      the file name with your locale:
 
-       ``po/<your_lang>.po``
+       **po/your_lang.po**
 
       .. image:: add-new2.png
 
-#. Proofreading
-
-   To proofread your translation as part of the software, follow these steps:
-
-   #. Change directory to the package you want to proofread. For example,
-
-        ``cd ~/myproject``
-
-   #. Convert the .po file to a .mo file using msgfmt with -o option:
-
-        ``msgfmt -o myproject..mo pl.po``
-
-   #. As a root user, overwrite the existing .mo file in
-      /usr/share/locale/lang/LC_MESSAGES/.
-
-      First, back up the existing file:
-
-        ``su -``
-
-        ``cp /usr/share/locale/pl/LC_MESSAGES/myproject.mo myproject.mo.bak``
-
-      Now move the file converted for proofreading.
-
-        ``mv myproject.mo /usr/share/locale/pl/LC_MESSAGES/``
-
-      Exit root user.
-
-        ``exit``
-
-   #. Proofread the package with the translated strings as part of the
-      application:
-
-        ``LANG=pl_PL.UTF-8 myproject``
-
-      The application related to the translated package runs with the
-      translated strings.
