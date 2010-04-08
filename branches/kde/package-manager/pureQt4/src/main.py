@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
         setSystemLocale()
 
-        manager = MainWindow()
+        manager = MainWindow(app)
         app.setMainWindow(manager)
 
         # Set application font from system

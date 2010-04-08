@@ -29,9 +29,10 @@ import config
 from context import *
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
-    def __init__(self, parent=None):
-        QtGui.QMainWindow.__init__(self, parent)
+    def __init__(self, app = None):
+        QtGui.QMainWindow.__init__(self, None)
         self.setupUi(self)
+        self.app = app
         self.iface = backend.pm.Iface()
         self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
@@ -45,7 +46,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        #self.connect(QtCore.QCoreApplication, SIGNAL("aboutToQuit()"), self.slotQuit)
+        self.connect(self.app, SIGNAL("aboutToQuit()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
