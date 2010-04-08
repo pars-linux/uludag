@@ -29,9 +29,10 @@ import config
 import context
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
-    def __init__(self, parent=None):
-        KXmlGuiWindow.__init__(self, parent)
+    def __init__(self, app = None):
+        KXmlGuiWindow.__init__(self, None)
         self.setupUi(self)
+        self.app = app
         self.iface = backend.pm.Iface()
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))

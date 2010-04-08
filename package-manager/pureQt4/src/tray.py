@@ -92,6 +92,8 @@ class PTray:
             QTimer.singleShot(1, self.updateTrayUnread)
         else:
             self.hide()
+        if self.appWindow.app:
+            self.appWindow.app.setQuitOnLastWindowClosed(not cfg.systemTray())
         self.updateInterval(cfg.updateCheckInterval())
 
     def updateTrayUnread(self):
@@ -145,9 +147,9 @@ if not Pds.session == pds.Kde4:
     class Tray(QtGui.QSystemTrayIcon, PTray):
         def __init__(self, parent, iface):
             QtGui.QSystemTrayIcon.__init__(self, parent)
+            self.appWindow = parent
             PTray.__init__(self, iface)
 
-            self.appWindow = parent
             self.activated.connect(self.__activated)
 
         def __activated(self, reason):
@@ -182,8 +184,8 @@ else:
     class Tray(KSystemTrayIcon, PTray):
         def __init__(self, parent, iface):
             KSystemTrayIcon.__init__(self, parent)
-            PTray.__init__(self, iface)
             self.appWindow = parent
+            PTray.__init__(self, iface)
 
         def initializePopup(self):
             self.setIcon(self.defaultIcon)
