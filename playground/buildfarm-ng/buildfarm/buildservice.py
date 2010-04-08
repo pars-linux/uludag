@@ -6,7 +6,7 @@ import pisi
 from twisted.web import xmlrpc, server
 
 #from buildfarm import config
-#PORT = 8007
+PORT = 8007
 
 class Privileged(object):
     """Simple decorator to wrap privileged operations."""
@@ -14,13 +14,11 @@ class Privileged(object):
         self.__func = func
 
     def __call__(self, *args):
-        # FIXME: Implement security layer
         return self.__func(*args)
 
 
 class BuildService(xmlrpc.XMLRPC):
 
-    @Privileged
     def xmlrpc_start(self, release, distribution="Pardus"):
         """Starts the corresponding buildfarm service
 
@@ -37,9 +35,13 @@ class BuildService(xmlrpc.XMLRPC):
         """
 
         # FIXME: Implement
-        return "Started buildfarm for %s %s" % (distribution, release)
+        return True
 
-    @Privileged
+    xmlrpc_start.signature  = [["string", "string", "bool"]]
+    xmlrpc_start.help       = """\
+Starts the corresponding buildfarm service defined by distribution name and release.
+Example: start("2009", "Pardus")"""
+
     def xmlrpc_stop(self, release, distribution="Pardus"):
         """Stops the corresponding buildfarm service."""
         # FIXME: Implement
@@ -67,5 +69,7 @@ class BuildService(xmlrpc.XMLRPC):
 
 if __name__ == "__main__":
     from twisted.internet import reactor
-    reactor.listenTCP(PORT, server.Site(BuildService()))
+    service = BuildService()
+    xmlrpc.addIntrospection(service)
+    reactor.listenTCP(PORT, server.Site(service))
     reactor.run()
