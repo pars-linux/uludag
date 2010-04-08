@@ -7,8 +7,7 @@ TODO
  - For Qt-only mode add create menubar (+)
  - For Qt-only mode QUniqueApp support (+)
  - Show different warnings for update type (%70)
- - Write an alternative Krun
- - Fix package icons in summary dialog
+ - Fix package icons in summary dialog (+)
  - Merge changes from corporate's package-manager
  - Add summary notification for Qt-only mode mainwidget:216
  - Fix summary dialog questions, k -> q messagebox

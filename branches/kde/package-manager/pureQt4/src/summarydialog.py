@@ -14,8 +14,6 @@ import os
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
-# from PyKDE4.kio import KRun
-
 from ui_summarydialog import Ui_SummaryDialog
 from ui_appitem import Ui_ApplicationItem
 
@@ -45,7 +43,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
     def initialize(self):
         self.appGenericName.setText(self.item.genericName)
         self.appName.setText(self.item.name)
-        self.appIcon.setPixmap(KIconLoader.load(self.item.icon, 32))
+        self.appIcon.setPixmap(KIconLoader.load(self.item.icon).scaledToHeight(32))
         self.appName.hide()
 
     def enterEvent(self, event):
@@ -55,8 +53,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appName.hide()
 
     def mouseDoubleClickEvent(self, event):
-        os.system(self.item.command)
-        #KRun.runCommand(self.item.command, None)
+        os.popen(self.item.command)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, parent=None):
