@@ -4,12 +4,12 @@ TODO
  - For Kde 4 .pisi package we need to create following symlink:
    /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
 
- - For Qt-only mode add create menubar (%70)
- - For Qt-only mode QUniqueApp support
+ - For Qt-only mode add create menubar (+)
+ - For Qt-only mode QUniqueApp support (+)
+ - Show different warnings for update type (%70)
  - Write an alternative Krun
  - Fix package icons in summary dialog
  - Merge changes from corporate's package-manager
  - Add summary notification for Qt-only mode mainwidget:216
  - Fix summary dialog questions, k -> q messagebox
  - Fix update repo timeout apply problem in settings dialog
- - Show different warnings for update type
