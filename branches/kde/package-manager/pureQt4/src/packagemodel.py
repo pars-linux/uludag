@@ -59,6 +59,7 @@ class PackageModel(QAbstractTableModel):
         elif role == DescriptionRole:
             return QVariant(unicode(package.description))
         elif role == TypeRole:
+            # FIXME new pisi comes with great feature for type properties has_update_type
             return QVariant(unicode(package.type))
         elif role == SizeRole:
             return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))

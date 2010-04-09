@@ -21,12 +21,14 @@ from rowanimator import RowAnimator
 from context import *
 
 DEFAULT_ICON = ('applications-other', 'package')
-ICON_PADDING = 0
-ICON_SIZE = 2
-DETAIL_LINE_OFFSET = 36
-ROW_HEIGHT = 52
 DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
+RED = QtGui.QColor('red')
+TYPE_COLORS = {'critical':RED, 'security':DARKRED}
+DETAIL_LINE_OFFSET = 36
+ICON_PADDING = 0
+ROW_HEIGHT = 52
+ICON_SIZE = 2
 
 class PackageDelegate(QtGui.QItemDelegate):
     def __init__(self, parent=None):
@@ -121,8 +123,8 @@ class PackageDelegate(QtGui.QItemDelegate):
         if ptype not in ('None', 'normal'):
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)
-            p.setPen(DARKRED)
-            p.setBrush(DARKRED)
+            p.setPen(TYPE_COLORS[ptype])
+            p.setBrush(TYPE_COLORS[ptype])
             p.drawRoundRect(width - rect.width() - 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width() + 4, rect.height(), 10, 10)
             p.setPen(WHITE)
             p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, ptype)
