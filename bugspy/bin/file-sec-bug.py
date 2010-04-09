@@ -181,7 +181,7 @@ def main(filename):
                                   blocks=bugno)
 
 
-                print "Bug %s <%s> has been opened" % (no, bug_title)
+                print "Bug %s <%s> has been created" % (no, bug_title)
 
                 # FIXME: Add them to tracker file when we move to new tracker system
                 #file = TRACKER_MAP.get(affected_version)
