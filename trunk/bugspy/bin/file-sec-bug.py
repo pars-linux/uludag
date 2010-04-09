@@ -145,13 +145,14 @@ def main(filename):
     if new_bug.has_key("assigned_to"):
         assigned_to = new_bug["assigned_to"]
     else:
-        assigned_to = "none"
+        assigned_to = None
 
     print '\n!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print "Title:     %s" % title
     print "Component: %s" % component
     print "Affected:  %s" % ', '.join(affected_pardus_versions)
+    print "Private?:  %s" % new_bug["security"]
     print "Assigned:  %s" % assigned_to
     print description + "\n"
 
@@ -176,6 +177,7 @@ def main(filename):
                                   description=bug_desc,
                                   security=1,
                                   component=component,
+                                  assigned_to=assigned_to,
                                   version=affected_version,
                                   product="Güvenlik / Security",
                                   blocks=bugno)
