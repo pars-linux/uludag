@@ -1,16 +1,12 @@
-.. contents:: :depth: 2
-
-
-
 =====================================================
 Quick start guide to providing translations on Pardus
 =====================================================
 
+.. contents:: :depth: 2
+
 .. .. admonition:: Abstract
 
    bla bla bla bla bla
-
-
 
 .. #. Subscribing to the Mailing List
 
