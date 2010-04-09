@@ -1,8 +1,21 @@
+.. contents:: :depth: 2
+
+
+
 =====================================================
 Quick start guide to providing translations on Pardus
 =====================================================
 
-#. Subscribing to the Mailing List
+.. .. admonition:: Abstract
+
+   bla bla bla bla bla
+
+
+
+.. #. Subscribing to the Mailing List
+
+Subscribing to the Mailing List
+-------------------------------
 
    - Pardus uses Transifex to help translators keep track of translation
      projects. Please register yourself to Transifex at 
@@ -19,14 +32,20 @@ Quick start guide to providing translations on Pardus
      subscribed services. These e-mails contains a link to confirm your
      subscription, click the link to confirm your subscription.
 
-#. Introducing Yourself
+.. #. Introducing Yourself
+
+Introducing Yourself
+--------------------
 
    - Post a short self introduction to the pardus-translators mailing list.
      Please remember to include your Transifex user name and your language.
      With this information, language coordinator can identify you for language
      team joining approval.
 
-#. Create a Bugzilla account
+.. #. Create a Bugzilla account
+
+Create a Bugzilla account
+-------------------------
 
    * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
      useful for translators since there could be a bug in a translation file's
@@ -37,7 +56,10 @@ Quick start guide to providing translations on Pardus
      submitting contributions, submitting bugs and following the discussions of
      our groups.
 
-#. Obtaining and Translating Projects
+.. #. Obtaining and Translating Projects
+
+Obtaining and Translating Projects
+----------------------------------
 
    You may need to communicate with other translators in your language team to
    avoid conflict. If you are not sure, please contact your language
@@ -79,7 +101,10 @@ Quick start guide to providing translations on Pardus
 
       ``msgfmt -c --statistics pl.po``
 
-#. Committing Projects
+.. #. Committing Projects
+
+Committing Projects
+-------------------
 
    Once you finished your translation work, commit the file using the same interface.
 
@@ -94,7 +119,10 @@ Quick start guide to providing translations on Pardus
    an error or some other message except success, please post it to the
    pardus-translators mailing list so it can be addressed.
 
-#. Adding New Translation File
+.. #. Adding New Translation File
+
+Adding New Translation File
+---------------------------
 
    If there is no translation file for your language, please do the following
    steps:
@@ -115,7 +143,10 @@ Quick start guide to providing translations on Pardus
 
       .. image:: add-new2.png
 
-#. Being Aware of Translation Updates
+.. #. Being Aware of Translation Updates
+
+Being Aware of Translation Updates
+----------------------------------
 
    Transifex supports notifications per many events. One of them is PO updates.
    If you want to receive notifications when a project developer updates
