@@ -534,15 +534,16 @@ class EntryEditor:
                     bug_title = "%s - Pardus %s" % (title.replace("\n",""), affected_version)
                     bug_desc = "Pardus %s is affected from bug #%s" % (affected_version, bugno)
 
-                    self.bugreporter.new(title=bug_title,
-                                         description=bug_desc,
-                                         security=1,
-                                         component=component,
-                                         assigned_to=assigned_to,
-                                         version=affected_version,
-                                         product="Güvenlik / Security",
-                                         blocks=bugno)
+                    no = self.bugreporter.new(title=bug_title,
+                                              description=bug_desc,
+                                              security=1,
+                                              component=component,
+                                              assigned_to=assigned_to,
+                                              version=affected_version,
+                                              product="Güvenlik / Security",
+                                              blocks=bugno)
 
+                    print "Bug %s <%s> has been created" % (no, bug_title)
 
                     file = TRACKER_MAP.get(affected_version)
                     ini = SecurityINI(file)
