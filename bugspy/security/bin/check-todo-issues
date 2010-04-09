@@ -504,6 +504,7 @@ class EntryEditor:
         print "Title:     %s" % title
         print "Component: %s" % component
         print "Affected:  %s" % ', '.join(affected_pardus_versions)
+        print "Private?:  %s" % new_bug["security"]
         print "Assigned:  %s" % assigned_to
         print "\n" + description
 
