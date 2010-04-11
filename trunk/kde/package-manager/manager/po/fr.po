@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_basketdialog.py:75
 msgid "Basket"
@@ -25,12 +25,8 @@ msgid "Selected package(s) for install:"
 msgstr "Paquet(s) sélectionné(s) pour installation :"
 
 #: .tmp/ui_basketdialog.py:77 .tmp/statemanager.py:98
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont également être "
-"installés :"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont également être installés :"
 
 #: .tmp/ui_basketdialog.py:78
 msgid "Total Size:"
@@ -65,9 +61,9 @@ msgid "Ok"
 msgstr "Ok"
 
 #: .tmp/progressdialog.py:39
-#, fuzzy, python-format
+#, python-format
 msgid "Operation - %1%"
-msgstr "Opération"
+msgstr "Opération - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:15
 msgid "configuring"
@@ -142,9 +138,8 @@ msgid "Delete"
 msgstr "Effacer"
 
 #: .tmp/settingsdialog.py:187
-#, fuzzy
 msgid "Not a valid repository name"
-msgstr "Nom du dépôt"
+msgstr "Nom de dépôt invalide"
 
 #: .tmp/settingsdialog.py:187 .tmp/settingsdialog.py:190 .tmp/pm-install.py:79
 #: .tmp/mainwidget.py:174 .tmp/mainwidget.py:177
@@ -152,12 +147,8 @@ msgid "Pisi Error"
 msgstr "Erreur de Pisi"
 
 #: .tmp/settingsdialog.py:190
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'adresse du dépôt doit se terminer par xml ou xml.bz2.<p>Merci de "
-"corriger.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>L'adresse du dépôt doit se terminer par xml ou xml.bz2.<p>Merci de corriger.</qt>"
 
 #: .tmp/ui_mainwindow.py:29 .tmp/about.py:20 .tmp/about.py:22
 msgid "Package Manager"
@@ -261,8 +252,7 @@ msgid ""
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "Effacer le cache du disque supprimera tous les logiciels téléchargés. \n"
-"Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de "
-"votre système."
+"Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de votre système."
 
 #: .tmp/ui_settingsdialog.py:351
 msgid "C&lean disk cache now"
@@ -359,27 +349,17 @@ msgstr "Cliquez pour rechercher"
 
 #: .tmp/ui_mainwidget.py:61
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-"this group</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les "
-"paquets de ce groupe</p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les paquets de ce groupe</p></body></html>"
 
 #: .tmp/ui_mainwidget.py:66
 msgid "Search"
@@ -454,31 +434,20 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Vous avez sélectionné les paquets suivants pour mise à jour :"
 
 #: .tmp/statemanager.py:99
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont être également "
-"désinstallés :"
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également désinstallés :"
 
 #: .tmp/statemanager.py:100
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont être également mis-"
-"à-jour :"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également mis-à-jour :"
 
 #: .tmp/statemanager.py:123 .tmp/mainwindow.py:71 .tmp/mainwindow.py:76
 msgid "Currently your basket is empty."
 msgstr "Votre panier est actuellement vide."
 
 #: .tmp/statemanager.py:125
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille "
-"totale de <b>%2</b>"
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille totale de <b>%2</b>"
 
 #: .tmp/statemanager.py:128
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -493,12 +462,8 @@ msgid "in your basket."
 msgstr "dans votre panier."
 
 #: .tmp/statemanager.py:153
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Les paquets sélectionnés [%1] sont en conflit les uns avec les autres. Ils "
-"ne peuvent être installés ensemble."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Les paquets sélectionnés [%1] sont en conflit les uns avec les autres. Ils ne peuvent être installés ensemble."
 
 #: .tmp/statemanager.py:154 .tmp/statemanager.py:162
 msgid "Conflict Error"
@@ -553,12 +518,8 @@ msgid "Operation Summary"
 msgstr "Résumé des opérations"
 
 #: .tmp/ui_summarydialog.py:46
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Vous pouvez lancer l'application que vous venez d'installer en double-"
-"cliquant dans la liste ci-dessous ou plus tard, à partir du menu général."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "Vous pouvez lancer l'application que vous venez d'installer en double-cliquant dans la liste ci-dessous ou plus tard, à partir du menu général."
 
 #: .tmp/ui_summarydialog.py:47
 msgid "&Ok"
@@ -621,10 +582,8 @@ msgid "Package Size:"
 msgstr "Taille du paquet :"
 
 #: .tmp/mainwidget.py:175
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Paquet introuvable. Il peut être mis à jour ou supprimé du dépôt. Essayez de mettre à jour les informations du dépôt."
 
 #: .tmp/mainwidget.py:229
 msgid "Select all packages in this group"
@@ -644,27 +603,17 @@ msgstr "Opération :"
 
 #: .tmp/ui_progressdialog.py:153
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- Ko/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- Ko/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:159
 msgid "Alt+C"
