@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
 msgid "Boot Manager"
@@ -26,7 +26,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/bootmanager/about.py:25
 msgid " "
-msgstr ""
+msgstr "1"
 
 #: .tmp/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -42,8 +42,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Cette application n'existe pas en version utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et "
-"configurés."
+"Merci de vous assurer que les paquets sont correctement installés et configurés."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
@@ -86,11 +85,8 @@ msgid "Ramdisk File"
 msgstr "Fichier RAM-disque"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Fichier contenant un micro système d'exploitation pour précharger les "
-"modules du noyau."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Fichier contenant un micro système d'exploitation pour précharger les modules du noyau."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -119,5 +115,3 @@ msgstr "Ajouter un nouveau"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Durée d'affichage du menu de démarrage :"
-
-
