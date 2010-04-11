@@ -1,7 +1,7 @@
 # translation of fr.po to French
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Amine Chadly <amine.chadly@gmail.com>, 2007.
 msgid ""
 msgstr ""
@@ -26,7 +26,7 @@ msgstr "Ergonomie & Conception d'IHM"
 
 #: src/firewall-config.py:54
 msgid "Help with IPTables"
-msgstr "Aide à propos d'IPTables"
+msgstr "Aide d'IPTables"
 
 #: src/firewall-config.py:55
 msgid "Help with KDE stuff"
@@ -54,7 +54,7 @@ msgstr "Rejeter toutes les connections sortantes via les ports %s"
 
 #: src/firewall-config.py:127
 msgid "Invalid port range."
-msgstr "Interval de ports invalide."
+msgstr "Intervalle de ports invalide."
 
 #: src/firewall-config.py:150 src/firewall.py:188
 msgid "Firewall Configuration"
@@ -74,12 +74,8 @@ msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est en cours d'exécution</font></b>"
 
 #: src/firewall-config.py:241
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Cliquer ici pour arrêter le pare-feu et autoriser toutes connections "
-"entrantes et sortantes."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
+msgstr "Cliquer ici pour arrêter le pare-feu et autoriser toutes connections entrantes et sortantes."
 
 #: src/firewall-config.py:246
 msgid "&Start Firewall"
@@ -90,12 +86,8 @@ msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Le Pare-feu est à l'arrêt</font></b>"
 
 #: src/firewall-config.py:249
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Cliquer ici pour démarrer le pare-feu et n'autoriser que les connections aux "
-"services spécifiés."
+msgid "Click here to start the firewall and allow connections only to specified services."
+msgstr "Cliquer ici pour démarrer le pare-feu et n'autoriser que les connections aux services spécifiés."
 
 #: src/firewall-config.py:345
 msgid "You are not allowed to edit firewall settings."
@@ -151,32 +143,19 @@ msgstr "Alt+S"
 
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-"Cliquer ici pour arrêter le pare-feu et autoriser toutes les connections "
-"entrantes."
+msgstr "Cliquer ici pour arrêter le pare-feu et autoriser toutes les connections entrantes."
 
 #: src/firewall.py:196
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Par défaut, toutes les connections entrantes sont <b>rejetées</b>, si vous "
-"voulez autoriser d'autres ordinateurs à accéder aux services de ce poste, "
-"veuillez activer le service ci-dessous :"
+msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
+msgstr "Par défaut, toutes les connections entrantes sont <b>rejetées</b>, si vous voulez autoriser d'autres ordinateurs à accéder aux services de ce poste, veuillez activer le service ci-dessous :"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Connections entrantes"
 
 #: src/firewall.py:198
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-"Dans cet onglet, vous pouvez créer vos propres règles de pare-feu. Utiliser "
-"le bonton '+' pour créer des règles. Pour supprimer une règle il suffit de "
-"la désactiver dans la liste."
+msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
+msgstr "Dans cet onglet, vous pouvez créer vos propres règles de pare-feu. Utiliser le bonton '+' pour créer des règles. Pour supprimer une règle il suffit de la désactiver dans la liste."
 
 #: src/firewall.py:201
 msgid "Advanced"
@@ -208,7 +187,7 @@ msgstr "Nouvelle règle"
 
 #: src/dialog.py:106
 msgid "Connections"
-msgstr "Connections"
+msgstr "Connexions"
 
 #: src/dialog.py:107
 msgid "Incoming"
@@ -245,4 +224,3 @@ msgstr "Accepter"
 #: src/dialog.py:116
 msgid "Reject"
 msgstr "Rejeter"
-
