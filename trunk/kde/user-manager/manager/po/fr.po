@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_edituser.py:184
 msgid "User Information"
@@ -122,9 +122,7 @@ msgstr "Le mot de passe doit être plus long."
 
 #: .tmp/usermanager/edit.py:332
 msgid "Don't use your full name or user name as a password."
-msgstr ""
-"N'utilisez pas votre nom complet ou votre nom d'utilisateur comme mot de "
-"passe."
+msgstr "N'utilisez pas votre nom complet ou votre nom d'utilisateur comme mot de passe."
 
 #: .tmp/usermanager/edit.py:335
 msgid "Passwords don't match."
@@ -148,8 +146,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Cette application n'existe pas sous une forme utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et "
-"configurés."
+"Merci de vous assurer que les paquets sont correctement installés et configurés."
 
 #: .tmp/usermanager/main.py:195
 msgid "Users"
@@ -178,8 +175,7 @@ msgstr "Accès refusé."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
-"Impossible de supprimer <b>%1</b>. Cet utilisateur est actuellement connecté."
+msgstr "Impossible de supprimer <b>%1</b>. Cet utilisateur est actuellement connecté."
 
 #: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -203,7 +199,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/usermanager/about.py:25
 msgid " "
-msgstr ""
+msgstr "1"
 
 #: .tmp/usermanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -212,4 +208,3 @@ msgstr "Bahadır Kandemir"
 #: .tmp/usermanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Mainteneur actuel"
-
