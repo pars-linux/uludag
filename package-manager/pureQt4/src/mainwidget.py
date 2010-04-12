@@ -39,6 +39,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.searchButton.setIcon(KIcon("edit-find"))
+        _time()
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
@@ -50,6 +51,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.summaryDialog = SummaryDialog()
         self.connectMainSignals()
         self.connectOperationSignals()
+        _time()
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
@@ -96,8 +98,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         restoreCursor()
 
     def initializePackageList(self):
-        self.packageList.setModel(PackageProxy(self))
-        self.packageList.model().setSourceModel(PackageModel(self))
+        model = PackageModel(self)
+        proxy = PackageProxy(self)
+        proxy.setSourceModel(model)
+        self.packageList.setModel(proxy)
         self.packageList.setItemDelegate(PackageDelegate(self))
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setAlternatingRowColors(True)

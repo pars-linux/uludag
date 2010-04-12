@@ -27,6 +27,7 @@ from tray import Tray
 import backend
 import config
 import context
+from context import _time
 
 class MainWindow(KXmlGuiWindow, Ui_MainWindow):
     def __init__(self, app = None):
@@ -34,6 +35,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setupUi(self)
         self.app = app
         self.iface = backend.pm.Iface()
+        _time()
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
@@ -41,6 +43,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.initializeStatusBar()
         self.initializeTray()
         self.connectMainSignals()
+        _time()
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
