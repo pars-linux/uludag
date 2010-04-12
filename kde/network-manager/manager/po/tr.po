@@ -2,7 +2,7 @@
 # Network Manager.
 # Copyright (C) 2009, TUBITAK/UEKAE
 # This file is distributed under the same license as the Network-Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
 msgid "Signal Strength"
@@ -69,7 +69,7 @@ msgstr "'%1' profili silinsin mi?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
-msgstr ""
+msgstr "PIN Girin"
 
 #: .tmp/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
@@ -77,7 +77,7 @@ msgstr ""
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr ""
+msgstr "PIN'i 3 kere yanlış girdiniz"
 
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
 msgid "Refresh"
@@ -101,7 +101,6 @@ msgid "Connecting"
 msgstr "Bağlanıyor"
 
 #: .tmp/networkmanager/widgets.py:396
-#, fuzzy
 msgid "Cable or device is unplugged"
 msgstr "Kablo ya da aygıt takılı değil."
 
@@ -212,41 +211,39 @@ msgstr ""
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Detaylar"
 
 #: .tmp/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: .tmp/ui_nmwizard.py:95
-#, fuzzy
 msgid "Device"
-msgstr "Aygıt: "
+msgstr "Aygıt:"
 
 #: .tmp/ui_nmwizard.py:96
 msgid "IMEI:"
-msgstr ""
+msgstr "IMEI:"
 
 #: .tmp/ui_nmwizard.py:97
-#, fuzzy
 msgid "Device:"
 msgstr "Aygıt: "
 
 #: .tmp/ui_nmwizard.py:98
 msgid "Select an operator"
-msgstr ""
+msgstr "Operatör seçin"
 
 #: .tmp/ui_nmwizard.py:99
 msgid "Operator:"
-msgstr ""
+msgstr "Operatör:"
 
 #: .tmp/ui_nmwizard.py:100
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: .tmp/ui_nmwizard.py:101
 msgid "Remember PIN for this connection"
-msgstr ""
+msgstr "Bu bağlantı için PIN'i hatırla"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
