@@ -36,17 +36,19 @@ class DebuggerAspect:
 
     def __init__(self, out = stdout):
         self.out = out
+        self.counter = 1
 
     def before(self, wobj, data, *args, **kwargs):
         met_name = data['original_method_name']
         class_ = str(data['__class__'])[8:-2]
         fun_str = "%s%s from %s" % (met_name, args, class_)
-        self.out.write("call, %s\n" % fun_str)
+        self.out.write("#%s. call, %s\n" % (self.counter, fun_str))
 
     def after(self, wobj, data, *args, **kwargs):
         met_name = data['original_method_name']
         fun_str = "%s%s" % (met_name, args)
-        self.out.write("left, %s\n" % fun_str)
+        self.out.write("#%s. left, %s\n" % (self.counter, fun_str))
+        self.counter += 1
 
 class PackageModel(QAbstractTableModel):
 
