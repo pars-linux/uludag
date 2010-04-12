@@ -23,12 +23,14 @@ import dbus
 from localedata import setSystemLocale
 from pmlogging import logger
 import config
+import signal
 
 def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 if __name__ == '__main__':
 
+    signal.signal(signal.SIGINT, signal.SIG_DFL)
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)

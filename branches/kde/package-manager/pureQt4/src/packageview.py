@@ -25,7 +25,6 @@ class PackageView(QtGui.QTreeView):
 
     def setPackages(self, packages):
         self.model().sourceModel().setPackages(packages)
-        self.model().reset()
 
     def selectedPackages(self):
         return self.model().sourceModel().selectedPackages()
@@ -48,13 +47,11 @@ class PackageView(QtGui.QTreeView):
     def reverseSelection(self, packages):
         waitCursor()
         self.model().sourceModel().reverseSelection(packages)
-        self.reset()
         restoreCursor()
 
     def selectAll(self, packages):
         waitCursor()
         self.model().sourceModel().selectPackages(packages)
-        self.reset()
         restoreCursor()
 
     def resetMoreInfoRow(self):

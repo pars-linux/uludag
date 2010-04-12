@@ -20,10 +20,33 @@ import backend
 from pmutils import humanReadableSize
 
 from context import KIconLoader
+from context import _time
 
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole, TypeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7)
 _variant = QVariant()
 _unknown_icons = []
+
+from sys import stdout
+from pyaspects.weaver import *
+from pyaspects.meta import MetaAspect
+
+class DebuggerAspect:
+    __metaclass__ = MetaAspect
+    name = "DebugAspect"
+
+    def __init__(self, out = stdout):
+        self.out = out
+
+    def before(self, wobj, data, *args, **kwargs):
+        met_name = data['original_method_name']
+        class_ = str(data['__class__'])[8:-2]
+        fun_str = "%s%s from %s" % (met_name, args, class_)
+        self.out.write("call, %s\n" % fun_str)
+
+    def after(self, wobj, data, *args, **kwargs):
+        met_name = data['original_method_name']
+        fun_str = "%s%s" % (met_name, args)
+        self.out.write("left, %s\n" % fun_str)
 
 class PackageModel(QAbstractTableModel):
 
@@ -41,8 +64,7 @@ class PackageModel(QAbstractTableModel):
     def columnCount(self, index=QModelIndex()):
         if self._flags & Qt.ItemIsUserCheckable:
             return 2
-        else:
-            return 1
+        return 1
 
     def data(self, index, role=Qt.DisplayRole):
         if not index.isValid():
@@ -163,3 +185,5 @@ class PackageModel(QAbstractTableModel):
 
     def downloadSize(self):
         return self.iface.calculate_download_size(self.selectedPackages() + self.extraPackages())
+
+weave_all_object_methods(DebuggerAspect(), PackageModel)
