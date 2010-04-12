@@ -31,6 +31,9 @@ ROW_HEIGHT = 52
 ICON_SIZE = 2
 
 class PackageDelegate(QtGui.QItemDelegate):
+
+    AppStyle = QtGui.qApp.style
+
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
         self.rowAnimator = RowAnimator(parent.packageList.reset)
@@ -60,10 +63,10 @@ class PackageDelegate(QtGui.QItemDelegate):
     def paint(self, painter, option, index):
         if not index.isValid():
             return
-
         opt = QtGui.QStyleOptionViewItemV4(option)
         opt.state &= ~QtGui.QStyle.State_Selected
-        opt.widget.style().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
+
+        PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
 
         if index.flags() & Qt.ItemIsUserCheckable and index.column() == 0:
             self.paintCheckBoxColumn(painter, option, index)
@@ -80,7 +83,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             buttonStyle.state |= QtGui.QStyle.State_HasFocus
 
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 54, 0, -2)
-        opt.widget.style().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
+        PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index):
         left = option.rect.left()
