@@ -51,7 +51,7 @@ msgstr "Nein, ich werde meine Installationsmethode händisch angeben"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:84
 msgid "Defaul Kernel"
-msgstr ""
+msgstr "Standard Kernel"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:85
 msgid "PAE Kernel"
@@ -1600,11 +1600,11 @@ msgstr "Standard Kernel gewählt"
 
 #: yali4/gui/ScrSummary.py:240
 msgid "PAE Kernel selected"
-msgstr ""
+msgstr "PAE Kernel ausgewählt"
 
 #: yali4/gui/ScrSummary.py:242
 msgid "Real Time Kernel selected"
-msgstr ""
+msgstr "Real Time Kernel ausgewählt"
 
 #: yali4/gui/ScrSummary.py:259
 msgid "Before Starting"
