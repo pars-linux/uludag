@@ -73,7 +73,7 @@ msgstr "PIN Girin"
 
 #: .tmp/networkmanager/widgets.py:75
 msgid "Please Enter PIN Code for"
-msgstr ""
+msgstr "PIN Kodu Girin"
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
@@ -105,7 +105,6 @@ msgid "Cable or device is unplugged"
 msgstr "Kablo ya da aygıt takılı değil."
 
 #: .tmp/networkmanager/widgets.py:412
-#, fuzzy
 msgid "Access denied"
 msgstr "Erişim reddedildi."
 
@@ -207,7 +206,7 @@ msgstr "Parolayı Gizle"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Diyalog"
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
