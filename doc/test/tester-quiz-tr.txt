@@ -51,6 +51,8 @@ Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
     Uludag Deposu,
     Harici Projeler Deposu
 
+10. Pardus'a katkı verirken kullanılabilecek iletişim kanalları nelerdir?
+
 *** Test ile İlgili Genel  Sorular*****
 Yazılı Soruları
 ----------------------------
