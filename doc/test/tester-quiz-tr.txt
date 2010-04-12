@@ -22,21 +22,26 @@ danışınız.
 
 *** Organizasyonel Yapı ile İlgili Sorular ***
 
-1. Pardus proje yapılaşmasının amacı nedir?
+1. Pardus'a neden katkı vermek istiyorsunuz?
 
-2. Aşağıda bulunan pardusun mail listelerinin amçları nelerdir?
+2. Size göre Pardus'un diğer dağıtımlardan farkı nedir?
+
+3. Bir özgür yazılım projesine katkıda bulunmak sizin için ne ifade ediyor?
+
+4. Sizce bir katkıcının sorumlulukları nelerdir?
+
+5. Bir özgür yazılım projesi için topluluk(community) kavramı nedir?
+
+6. Sizce Pardus'un eksik ve/veya iyileştirilmesi gereken tarafları nelerdir?
+
+7. Aşağıda bulunan pardusun mail listelerinin amaçları nelerdir?
 gelistirici, pardus-devel, paketler, paketler-commits, stable, projeler-commits,
 uludag-commits, bugzilla, turkce,  oi-commits, pardus-translators, pardus-guvenlik,
 pardus-security, pardus-mirrors, testci?
 
-3. Pardus Projesi için büyük bir atılım gerçekleştireceğini düşündüğünüz bir
-özelliği veya uygulamayı önermenin en iyi yöntemi nedir? Bu özellik veya
-uygulamanın onaylanması ve geliştirilmeye başlanması için gerekli süreci
-ayrıntılı bir şekilde anlatınız.
+8. Özgürlük İçin kurumunun amacı nedir?
 
-4. Özgürlük İçin kurumunun amacı nedir?
-
-5. Pardus hangi sürüm takip sistemini kullanmaktadır. Sürüm takip sisteminde
+9. Pardus hangi sürüm takip sistemini kullanmaktadır. Sürüm takip sisteminde
 kullanılan depoların yapısı nasıldır?
 
 Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
