@@ -62,7 +62,7 @@
     * QT4 ile baştan yazılması (+)
 
 * Müdür (Ozan Çağlayan)
-    * needsServiceRestart listesinin açılışta temizlenmesi (-)          [Bahadır Kandemir, Faik Uygur]
+    * needsServiceRestart listesinin açılışta temizlenmesi (+)          [Bahadır Kandemir, Faik Uygur]
 
 * Stil/KDE (Ozan Çağlayan)
     * Paket yöneticisinin eksik notification bağımlılıkları (+)
