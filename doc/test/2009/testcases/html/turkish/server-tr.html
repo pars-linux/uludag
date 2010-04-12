@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea server-tr.tex -->
+<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -64,9 +64,6 @@ cd ..
 
 </PRE></LI></OL><!--TOC section Proxy alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-mit-kerberos paketi kurulumu sonrası:
-</LI></OL><!--TOC section Proxy alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim"> # service squid status
 </PRE></LI><LI CLASS="li-enumerate">dansguardian paketi kurulumu sonrası:<P>Servis yöneticisinden dansguardian başlatın, aşağıdaki komut ile başlatıldığına emin olun:
@@ -74,7 +71,7 @@ squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşa�
 </PRE></LI><LI CLASS="li-enumerate">ntlmaps paketi kurulumu sonrası:<P>Servis yöneticisinden ntlmaps başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim"> # service ntlmaps status
 </PRE></LI></OL><!--TOC section Auth alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim"> # service ypserv status
 </PRE></LI><LI CLASS="li-enumerate">yp-tools paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatıldıktan sonra:
@@ -89,7 +86,7 @@ ypserv paketi kurulumu sonrası:<P>Servis yöneticisinden ypserv başlatın, aş
 </PRE><P>Servis yöneticisinden ypbind başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 </P><PRE CLASS="verbatim"> # service ypbind status
 </PRE></LI></OL><!--TOC section Mta alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Mta alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 dovecot paketi kurulumu sonrası:<P>Servis yöneticisinde dovecot başlatılır.
 Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </P><PRE CLASS="verbatim"> # service dovecot status
@@ -99,7 +96,7 @@ Aşağıdaki komut ile başlatıldığını gözlemleyin:
 </P><PRE CLASS="verbatim"># netstat -ln|grep 110
 # netstat -ln|grep 143
 </PRE></LI></OL><!--TOC section Web alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Web alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim">mod_dav_svn
 gitweb
@@ -118,7 +115,7 @@ Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu k
 </LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve komut çıktısında ‘Syntax Ok‘ aldığınzı gözlemleyin.
 <PRE CLASS="verbatim"># apachectl -M 
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mod_php paketi kurulumu sonrası:<P>util-tr.pdf phpmyadmin testini gerçekleştiriniz.</P></LI></OL><!--TOC section Database alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 memcached paketi kurulumu sonrası:<P>programming-tr.pdf python-memcached testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">postgresql-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">  ipython
   import pgdb </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrası:
@@ -153,7 +150,7 @@ Servise yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullan
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mysql-man-pages paketi kurulumu sonrası:<P>Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 </P><PRE CLASS="verbatim"># man myisampack 
 </PRE></LI></OL><!--TOC section Diğerleri-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> service ntp_server status
 </PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
 </P><PRE CLASS="verbatim"># ping 4.2.2.1
