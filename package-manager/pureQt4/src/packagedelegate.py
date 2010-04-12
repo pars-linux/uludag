@@ -63,11 +63,6 @@ class PackageDelegate(QtGui.QItemDelegate):
     def paint(self, painter, option, index):
         if not index.isValid():
             return
-        opt = QtGui.QStyleOptionViewItemV4(option)
-        opt.state &= ~QtGui.QStyle.State_Selected
-
-        PackageDelegate.AppStyle().drawPrimitive(QtGui.QStyle.PE_PanelItemViewItem, opt, painter, None)
-
         if index.flags() & Qt.ItemIsUserCheckable and index.column() == 0:
             self.paintCheckBoxColumn(painter, option, index)
         else:
