@@ -2,7 +2,7 @@
 # Copyright (C) 2009
 # This file is distributed under the same license as the display-settings package.
 # Fatih Aşıcı <fatih@pardus.org.tr>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
@@ -65,12 +65,10 @@ msgstr ""
 
 #: code/displaysettings/mainwidget.py:104
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Geçerli bir yapılandırma bulunamadı. Ekran ayarları yeni bir yapılandırma "
-"oluşturulmadıkça etkinleştirilmeyecek.\n"
+"Geçerli bir yapılandırma bulunamadı. Ekran ayarları yeni bir yapılandırma oluşturulmadıkça etkinleştirilmeyecek.\n"
 "Yeni bir güvenli yapılandırma oluşturmak ister misiniz?"
 
 #: code/displaysettings/mainwidget.py:113
@@ -79,10 +77,8 @@ msgid "Access denied."
 msgstr "Erişim engellendi."
 
 #: code/displaysettings/mainwidget.py:195
-msgid ""
-"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
-"(LVDS, VGA, etc.)"
-msgstr ""
+msgid "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
+msgstr "Menülerde, listelerde, vb yerlerde gösterilir. %1 = yerelleştirilmiş çıktı türü, %2 = çıktı ismi (LVDS, VGA, vb.)"
 
 #: code/displaysettings/mainwidget.py:213
 #: code/displaysettings/mainwidget.py:316
@@ -94,24 +90,12 @@ msgid "Output Properties - %1"
 msgstr "Çıkış Özellikleri - %1"
 
 #: code/displaysettings/mainwidget.py:396
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
-"b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor "
-"musunuz?</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</b> sürücüsünü kullanmak isteyebilirsiniz. Bu sürücüyü kullanmak istiyor musunuz?</qt>"
 
 #: code/displaysettings/mainwidget.py:412
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</"
-"b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini "
-"kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz."
-"</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Daha iyi performans alabilmek için donanım üreticisinin sunduğu <b>%1</b> sürücüsünü kullanmak isteyebilirsiniz. Kullanmak için <b>%2</b> paketini kurup daha sonra ekran kartı ayarlarından <b>%1</b> sürücüsünü seçmelisiniz.</qt>"
 
 #: code/displaysettings/mainwidget.py:417
 msgid "Start Package Manager"
@@ -119,8 +103,7 @@ msgstr "Paket Yöneticisini Başlat"
 
 #: code/displaysettings/mainwidget.py:530
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
-"Tüm değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
+msgstr "Tüm değişikliklerin etkin olması için X oturumunuzu yeniden başlatmalısınız."
 
 #: code/displaysettings/entryview.py:87
 msgid "Edit entry"
@@ -247,15 +230,8 @@ msgid "Output Configuration"
 msgstr "Çıkış Yapılandırması"
 
 #: ui/output.py:161
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
-"Herhangi bir nedenle monitörünüzün desteklediği frekans aralıkları "
-"algılanamazsa buradan elle belirleyebilirsiniz. Bu değerleri seçerken "
-"dikkatli olun. Özellikle eski model bir monitör ise yanlış bir değer "
-"monitörünüze zarar verebilir."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Herhangi bir nedenle monitörünüzün desteklediği frekans aralıkları algılanamazsa buradan elle belirleyebilirsiniz. Bu değerleri seçerken dikkatli olun. Özellikle eski model bir monitör ise yanlış bir değer monitörünüze zarar verebilir."
 
 #: ui/output.py:162
 msgid "Specify Ranges"
