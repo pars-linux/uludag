@@ -1,10 +1,9 @@
 # translation of de.po to German
 # Copyright (C) YEAR Pardus
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2010
-
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
@@ -60,9 +59,8 @@ msgid "PushButton"
 msgstr "Druckknopf"
 
 #: code/widgets/notify.py:63
-#, fuzzy
 msgid "Network Manager"
-msgstr "Netzwerkmanager öffnen"
+msgstr "Netzwerk-manager"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
@@ -85,14 +83,12 @@ msgid "Open Network Manager"
 msgstr "Network Manager öffnen"
 
 #: code/main.py:46
-#, fuzzy
 msgid "Connected"
-msgstr "Nicht verbunden."
+msgstr "Verbunden"
 
 #: code/main.py:49 code/main.py:280 code/main.py:289
-#, fuzzy
 msgid "Disconnected"
-msgstr "Nicht verbunden."
+msgstr "Nicht verbunden"
 
 #: code/main.py:52
 msgid "Connecting"
