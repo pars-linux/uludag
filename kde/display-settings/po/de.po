@@ -1,7 +1,7 @@
 # translation of de.po to German
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Heiko Pardus Translator <miltonjohn@web.de>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
@@ -49,8 +49,9 @@ msgid "Refresh Rate:"
 msgstr "Wiederholungsrate:"
 
 #: .tmp/ui_screens.py:90
+#, fuzzy
 msgid "Rotation:"
-msgstr ""
+msgstr "Rotation:"
 
 #: .tmp/ui_screens.py:91
 msgid "No Rotation"
@@ -142,20 +143,16 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
-"Es sind keine Pakete installiert / vorhanden, um für diese Application eine "
-"grafische Oberfläche zu bieten.\n"
-"Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert "
-"wurden."
+"Es sind keine Pakete installiert / vorhanden, um für diese Application eine grafische Oberfläche zu bieten.\n"
+"Bitte prüfen sie ob alle nötigen Pakete installiert und korrekt konfiguriert wurden."
 
 #: .tmp/displaysettings/deviceswidget.py:86
 #: .tmp/displaysettings/screenswidget.py:77
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Keine gültige Konfiguration gefunden. Bildschirmeinstellungen können erst "
-"aktiviert werden, wenn Sie eine neue Konfiguration erstellen.\n"
+"Keine gültige Konfiguration gefunden. Bildschirmeinstellungen können erst aktiviert werden, wenn Sie eine neue Konfiguration erstellen.\n"
 "Möchten Sie jetzt gerne eine sichere Konfiguration erstellen?"
 
 #: .tmp/displaysettings/deviceswidget.py:95
@@ -166,24 +163,12 @@ msgid "Access denied."
 msgstr "Zugriff verweigert."
 
 #: .tmp/displaysettings/deviceswidget.py:120
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
-"verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen "
-"Treiber verwenden?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher vom Hardwarehersteller angeboten wird. Wollen Sie diesen Treiber verwenden?</p></qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:136
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber "
-"verwenden, welcher vom Hardwarehersteller angeboten wird. Um diesen zu "
-"nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%"
-"1</b> bei den Grafikkartenoptionen aus.</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Für eine bessere Performance, könnten Sie den <b>%1</b> Treiber verwenden, welcher vom Hardwarehersteller angeboten wird. Um diesen zu nutzen, müssen Sie folgende Pakete installieren <b>%2</b> und wählen Sie <b>%1</b> bei den Grafikkartenoptionen aus.</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:141
 msgid "Start Package Manager"
@@ -191,9 +176,7 @@ msgstr "Starte Paket Manager"
 
 #: .tmp/displaysettings/deviceswidget.py:252
 msgid "You must restart your X session for the changes to take effect."
-msgstr ""
-"Sie müssen Ihre grafische X-Session neustarten, damit die Änderungen in "
-"Kraft treten."
+msgstr "Sie müssen Ihre grafische X-Session neustarten, damit die Änderungen in Kraft treten."
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -205,9 +188,7 @@ msgstr "Benutzerdefinierter Monitor"
 
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
-"<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</"
-"i></qt>"
+msgstr "<qt><i>klicken Sie den \"Wählen...\" Button um einen Monitor auszuwählen</i></qt>"
 
 #: .tmp/displaysettings/monitorbrowser.py:41
 msgid "Type:"
@@ -219,8 +200,9 @@ msgstr "Monitore:"
 
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
+#, fuzzy
 msgid "Auto"
-msgstr ""
+msgstr "Auto"
 
 #: .tmp/displaysettings/screenswidget.py:259
 msgid "Output Properties - %1"
@@ -228,26 +210,18 @@ msgstr "Konfiguration des Ausgangs - %1"
 
 #: .tmp/displaysettings/screenswidget.py:359
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
-"Sie müssen Ihre grafische X-Session neustarten, damit alle Änderungen in "
-"Kraft treten."
+msgstr "Sie müssen Ihre grafische X-Session neustarten, damit alle Änderungen in Kraft treten."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
 msgstr "Ausgangskonfiguration"
 
 #: .tmp/ui_output.py:225
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
-"Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht "
-"erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie "
-"besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren "
-"Monitor beschädigen können, besonders bei älteren Modellen."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Falls der mögliche höchste oder beste Frequenzbereich ihres Monitors nicht erkannt wird, können Sie hier die Frequenz einstellen. Bitte seien Sie besonders vorsichtig mit den neuen Parametern, da inkorrekte Eingaben Ihren Monitor beschädigen können, besonders bei älteren Modellen."
 
-# Zweifel: ist eigenlich nicht richtig übersetzt, kann aber trotzdem richtig passend sein. Müsste den Zusammenhang/Bildschirm dazu sehen..
+# Zweifel: ist eigenlich nicht richtig übersetzt, kann aber trotzdem richtig
+# passend sein. Müsste den Zusammenhang/Bildschirm dazu sehen..
 #: .tmp/ui_output.py:226
 msgid "Specify Ranges"
 msgstr "Spezifiziere Frequenzen"
@@ -269,8 +243,9 @@ msgid "Enter ranges manually"
 msgstr "Geben Sie die Frequenzen manuell ein"
 
 #: .tmp/ui_output.py:231
+#, fuzzy
 msgid "Monitor:"
-msgstr ""
+msgstr "Monitor:"
 
 #: .tmp/ui_output.py:232
 msgid "Choose..."
@@ -297,15 +272,8 @@ msgid "Frequency Ranges"
 msgstr "Frequenzwerte"
 
 #: .tmp/ui_output.py:238
-msgid ""
-"If your monitor's dimensions are not correctly detected, fonts and other "
-"visual objects might seem larger or smaller than normal. In order to fix "
-"this problem, you can specify your monitor's dimensions here."
-msgstr ""
-"Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, "
-"könnten Schriftarten und andere visuelle Objekte größer oder kleiner als "
-"normal erscheinen. Sie können dieses Problem lösen, indem sie hier die Größe "
-"Ihres Monitors angeben."
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+msgstr "Falls die Bildschirmgröße Ihres Monitors nicht korrekt erkannt wurden, könnten Schriftarten und andere visuelle Objekte größer oder kleiner als normal erscheinen. Sie können dieses Problem lösen, indem sie hier die Größe Ihres Monitors angeben."
 
 #: .tmp/ui_output.py:239
 msgid "Specify Display Size"
@@ -370,4 +338,3 @@ msgstr "Konfiguriere..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Ausgänge:"
-
