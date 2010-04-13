@@ -10178,10 +10178,12 @@ msgid "Kernel module for NVIDIA driver 173.14.xx releases"
 msgstr ""
 
 #: kernel/pae/drivers/module-pae-nvidia173::summary
+#, fuzzy
 msgid "NVIDIA drivers for GeForce 5 series GPUs"
 msgstr "Controladores nVIDIA  de kernel y glx para tarjetas NV3 o mejor (Geforce FX o mejor)"
 
 #: kernel/pae/drivers/module-pae-nvidia173::description
+#, fuzzy
 msgid "NVIDIA graphics drivers provide optimized 2D/3D performance."
 msgstr "Controladores de kernel nVIDIA y glx para rendimiento optimizado 2d/3d en Linux (Para NV3X o mejor)."
 
@@ -10202,6 +10204,7 @@ msgid "Kernel module for NVIDIA driver 96.43.xx releases"
 msgstr ""
 
 #: kernel/pae/drivers/module-pae-nvidia96::summary
+#, fuzzy
 msgid "NVIDIA drivers for GeForce 2 through GeForce 4 series GPUs"
 msgstr "Controladores de kernel nVIDIA y glx"
 
@@ -10258,6 +10261,7 @@ msgid "Kernel module for current NVIDIA graphics driver releases"
 msgstr ""
 
 #: kernel/pae/drivers/module-pae-nvidia-current::summary
+#, fuzzy
 msgid "NVIDIA drivers for GeForce 6xxx and newer GPUs"
 msgstr "Controladores nVIDIA  de kernel y glx para tarjetas NV3 o mejor (Geforce FX o mejor)"
 
