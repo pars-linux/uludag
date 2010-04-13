@@ -367,7 +367,6 @@ msgid "genus2reduction determines the reduction of a proper smooth curve of genu
 msgstr ""
 
 #: science/mathematics/qalculate::summary
-#, fuzzy
 msgid "A multi-purpose desktop calculator"
 msgstr "Un escritorio de usos múltiples calculadora"
 
