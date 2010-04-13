@@ -1,7 +1,7 @@
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens <click3d_at_linuxmail_org>, 2007.
 # Klemens Häckel <click3d_at_linuxmail_org>, 2007, 2008.
 # Klemens Haeckel <click3d at linuxmail dot org>, 2008.
@@ -12,7 +12,7 @@ msgstr ""
 "POT-Creation-Date: 2006-03-08 12:58+0200\n"
 "PO-Revision-Date: 2008-06-10 14:48-0400\n"
 "Last-Translator: Klemens Häckel\n"
-"Language-Team:  <es@li.org>\n"
+"Language-Team: <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -367,8 +367,9 @@ msgid "genus2reduction determines the reduction of a proper smooth curve of genu
 msgstr ""
 
 #: science/mathematics/qalculate::summary
+#, fuzzy
 msgid "A multi-purpose desktop calculator"
-msgstr ""
+msgstr "Un escritorio de usos múltiples calculadora"
 
 #: science/mathematics/kgraphviewer::summary
 msgid "GraphViz dot graph viewer for KDE4"
