@@ -104,24 +104,63 @@
          <property name="horizontalScrollBarPolicy">
           <enum>Qt::ScrollBarAlwaysOff</enum>
          </property>
-         <property name="rootIsDecorated">
+         <property name="editTriggers">
+          <set>QAbstractItemView::NoEditTriggers</set>
+         </property>
+         <property name="showDropIndicator" stdset="0">
           <bool>false</bool>
          </property>
-         <property name="itemsExpandable">
+         <property name="dragDropOverwriteMode">
           <bool>false</bool>
          </property>
-         <property name="animated">
+         <property name="alternatingRowColors">
           <bool>true</bool>
+         </property>
+         <property name="selectionMode">
+          <enum>QAbstractItemView::MultiSelection</enum>
+         </property>
+         <property name="selectionBehavior">
+          <enum>QAbstractItemView::SelectRows</enum>
+         </property>
+         <property name="showGrid">
+          <bool>false</bool>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
          </property>
-         <property name="headerHidden">
-          <bool>true</bool>
-         </property>
-         <property name="expandsOnDoubleClick">
+         <property name="cornerButtonEnabled">
           <bool>false</bool>
          </property>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>52</number>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>52</number>
+         </attribute>
+         <attribute name="verticalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderDefaultSectionSize">
+          <number>52</number>
+         </attribute>
+         <attribute name="horizontalHeaderStretchLastSection">
+          <bool>true</bool>
+         </attribute>
+         <attribute name="horizontalHeaderVisible">
+          <bool>false</bool>
+         </attribute>
+         <attribute name="verticalHeaderMinimumSectionSize">
+          <number>52</number>
+         </attribute>
         </widget>
        </item>
       </layout>
@@ -133,7 +172,7 @@
  <customwidgets>
   <customwidget>
    <class>PackageView</class>
-   <extends>QTreeView</extends>
+   <extends>QTableView</extends>
    <header location="global">packageview.h</header>
   </customwidget>
   <customwidget>
