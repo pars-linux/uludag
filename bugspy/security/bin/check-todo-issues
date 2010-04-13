@@ -479,15 +479,10 @@ class EntryEditor:
         print "\nAssign this bug to [Enter=default]: ",
         answer = sys.stdin.readline()
         if answer[0] != "\n":
-            new_bug["assigned_to"] = answer.replace("\n","")
-            print "Bug is assigned to: %s" % new_bug["assigned_to"]
-        else:
-            print "Not assigning. Assignee is default."
-
-        if new_bug.has_key("assigned_to"):
-            assigned_to = new_bug["assigned_to"]
+            assigned_to = answer.replace("\n","")
         else:
             assigned_to = None
+            print "Not assigning. Assignee is default."
 
         # ask whether it is private or not
         print "\nMake his bug private? [Y/n]: ",
