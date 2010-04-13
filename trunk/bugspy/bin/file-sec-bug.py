@@ -129,9 +129,10 @@ def main(filename):
     print "Assign this bug to [Enter=default]: ",
     answer = sys.stdin.readline()
     if answer[0] != "\n":
-        new_bug["assigned_to"] = answer.replace("\n","")
-        print "Bug is assigned to: %s" % new_bug["assigned_to"]
+        assigned_to = answer.replace("\n","")
+        print "Bug is assigned to: %s" % assigned_to
     else:
+        assigned_to = None
         print "Not assigning. Assignee is default."
 
     print ''
@@ -141,11 +142,6 @@ def main(filename):
         new_bug["security"] = 1
     elif answer[0] == "n":
         new_bug["security"] = 0
-
-    if new_bug.has_key("assigned_to"):
-        assigned_to = new_bug["assigned_to"]
-    else:
-        assigned_to = None
 
     print '\n!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!'
