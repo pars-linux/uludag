@@ -59,7 +59,7 @@ if __name__ == '__main__':
 
     else:
         from mainwindow import MainWindow
-        from pds import QUniqueApplication
+        from pds.quniqueapp import QUniqueApplication
 
         app = QUniqueApplication(sys.argv, catalog='package-manager')
 
