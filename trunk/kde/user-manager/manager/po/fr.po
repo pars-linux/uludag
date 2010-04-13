@@ -199,7 +199,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/usermanager/about.py:25
 msgid " "
-msgstr "1"
+msgstr " "
 
 #: .tmp/usermanager/about.py:32
 msgid "Bahadır Kandemir"
