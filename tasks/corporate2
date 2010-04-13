@@ -99,7 +99,7 @@
 * Pardusman (Mete Alpaslan)
     * Qt4 geçişi (+)
     * Senaryo bazlı kurulum ve kernel seçebilme desteği (+)
-    * Imaj köküne girecek paketleri seçebilme desteği (-)
+    * Imaj köküne girecek paketleri seçebilme desteği (+)
 
 * sysinfo (Ozan Çağlayan)
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
