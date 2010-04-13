@@ -295,6 +295,7 @@ class Bugzilla:
             component: Component name in bugzilla page
             security: Whether it is security vulnerability
             url: External url
+            status: Initial but status. (NEW, RESOLVED)
             assigned_to: Email address to assign
             alias: Bug alias (NOT IMPLEMENTED)
             blocks: Bugs that this bug blocks
@@ -334,6 +335,10 @@ class Bugzilla:
         if args.has("security"):
             log.debug("Setting security tag")
             self.browser["bit-10"] = ["1"]
+
+        if args.has("status"):
+            log.debug("Setting bug_status..")
+            self.browser["bug_status"] = [args.status]
 
         if args.has("assigned_to"):
             log.debug("Assigning bug to: %s" % args.assigned_to)
