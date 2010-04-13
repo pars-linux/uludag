@@ -77,7 +77,9 @@ class PackageModel(QAbstractTableModel):
         elif role == Qt.CheckStateRole and index.column() == 0:
             return QVariant(self.package_selections[index.row()])
 
-        package = self.package(index)
+        if role >= Qt.UserRole:
+            package = self.package(index)
+
         if role == SummaryRole:
             return QVariant(unicode(package.summary))
         elif role == DescriptionRole:
@@ -94,6 +96,7 @@ class PackageModel(QAbstractTableModel):
         elif role == HomepageRole:
             return QVariant(unicode(package.source.homepage))
         elif role == Qt.DecorationRole:
+            package = self.package(index)
             if package.icon:
                 if package.icon in KIconLoader._available_icons:
                     return QVariant(package.icon)
@@ -188,4 +191,4 @@ class PackageModel(QAbstractTableModel):
     def downloadSize(self):
         return self.iface.calculate_download_size(self.selectedPackages() + self.extraPackages())
 
-weave_all_object_methods(DebuggerAspect(), PackageModel)
+#weave_all_object_methods(DebuggerAspect(), PackageModel)

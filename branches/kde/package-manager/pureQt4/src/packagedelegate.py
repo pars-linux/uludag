@@ -25,6 +25,7 @@ DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
 TYPE_COLORS = {'critical':RED, 'security':DARKRED}
+
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
 ROW_HEIGHT = 52
@@ -36,7 +37,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
     def __init__(self, parent=None):
         QtGui.QItemDelegate.__init__(self, parent)
-        self.rowAnimator = RowAnimator(parent.packageList.reset)
+        self.rowAnimator = RowAnimator(parent.packageList)
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
         self.animatable = True
 

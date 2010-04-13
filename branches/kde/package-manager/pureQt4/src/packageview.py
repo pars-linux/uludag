@@ -16,33 +16,9 @@ from PyQt4.QtCore import *
 
 from pmutils import *
 
-from sys import stdout
-from pyaspects.weaver import *
-from pyaspects.meta import MetaAspect
-
-class DebuggerAspect:
-    __metaclass__ = MetaAspect
-    name = "DebugAspect"
-
-    def __init__(self, out = stdout):
-        self.out = out
-        self.counter = 1
-
-    def before(self, wobj, data, *args, **kwargs):
-        met_name = data['original_method_name']
-        class_ = str(data['__class__'])[8:-2]
-        fun_str = "%s%s from %s" % (met_name, args, class_)
-        self.out.write("#%s. call, %s\n" % (self.counter, fun_str))
-
-    def after(self, wobj, data, *args, **kwargs):
-        met_name = data['original_method_name']
-        fun_str = "%s%s" % (met_name, args)
-        self.out.write("#%s. left, %s\n" % (self.counter, fun_str))
-        self.counter += 1
-
-class PackageView(QtGui.QTreeView):
+class PackageView(QtGui.QTableView):
     def __init__(self, parent=None):
-        QtGui.QTreeView.__init__(self, parent)
+        QtGui.QTableView.__init__(self, parent)
 
     def isIndexHidden(self, index):
         return False
@@ -84,4 +60,3 @@ class PackageView(QtGui.QTreeView):
     def search(self, text):
         return self.model().sourceModel().search(text)
 
-weave_all_object_methods(DebuggerAspect(), PackageView)

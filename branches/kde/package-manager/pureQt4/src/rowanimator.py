@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -25,9 +25,11 @@ class RowAnimator(object):
         self.max_height = DEFAULT_HEIGHT * 3
         self.direction = DOWN
         self.row = None
+        self.lastrow = None
         self.timeLine = QTimeLine(250)
         self.timeLine.setUpdateInterval(40)
-        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), updater)
+        self.t_view = updater
+        QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), self.size)
         QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
 
     def animate(self, row):
@@ -37,9 +39,11 @@ class RowAnimator(object):
     def reset(self, row=None):
         self.timeLine.stop()
         self.timeLine.setCurrentTime(0)
-        self.row = row
         self.height = DEFAULT_HEIGHT
+        if self.row:
+            self.t_view.setRowHeight(self.row, self.height)
         self.direction = DOWN
+        self.row = row
 
     def finished(self):
         if self.direction == DOWN:
@@ -48,6 +52,7 @@ class RowAnimator(object):
         else:
             self.direction = DOWN
             self.height = DEFAULT_HEIGHT
+        self.t_view.setRowHeight(self.row, self.height)
 
     def size(self):
         if self.running():
@@ -73,3 +78,4 @@ class RowAnimator(object):
             self.height -= 25
             if self.height < DEFAULT_HEIGHT:
                 self.height = DEFAULT_HEIGHT
+        self.t_view.setRowHeight(self.row, self.height)
