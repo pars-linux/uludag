@@ -173,6 +173,7 @@ def main(filename):
                                   description=bug_desc,
                                   security=1,
                                   component=component,
+                                  status="ASSIGNED",
                                   assigned_to=assigned_to,
                                   version=affected_version,
                                   product="Güvenlik / Security",
