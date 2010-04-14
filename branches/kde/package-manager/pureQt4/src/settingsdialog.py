@@ -12,7 +12,7 @@
 
 import re
 
-from PyQt4 import QtGui
+from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox
 from PyQt4.QtCore import *
 
 from context import *
@@ -126,12 +126,10 @@ class CacheSettings(SettingsTab):
         self.connect(self.settings.useCacheSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def clearCache(self):
-        if KMessageBox.Yes == KMessageBox.warningYesNo(self.settings,
-                                                       i18n("All the cached packages will be deleted. Are you sure? "),
-                                                       i18n("Warning"),
-                                                       KGuiItem(i18n("Delete"), "trash-empty"),
-                                                       KStandardGuiItem.cancel()
-                                                       ):
+        if QMessageBox.Yes == QMessageBox.warning(self.settings,
+                                                  i18n("Warning"),
+                                                  i18n("All the cached packages will be deleted. Are you sure? "),
+                                                  QMessageBox.Yes | QMessageBox.No):
             self.iface.clearCache(0)
 
     def save(self):
@@ -159,17 +157,17 @@ class RepositorySettings(SettingsTab):
     def __insertRow(self, repoName, repoAddress):
         currentRow = self.settings.repoListView.rowCount()
         self.settings.repoListView.insertRow(currentRow)
-        checkbox = QtGui.QCheckBox(self.settings.repoListView)
+        checkbox = QCheckBox(self.settings.repoListView)
         self.connect(checkbox, SIGNAL("toggled(bool)"), self.markChanged)
         self.settings.repoListView.setCellWidget(currentRow, 0, checkbox)
         self.settings.repoListView.cellWidget(currentRow, 0).setChecked(self.iface.isRepoActive(repoName))
 
-        repoNameItem = QtGui.QTableWidgetItem()
+        repoNameItem = QTableWidgetItem()
         repoNameItem.setText(repoName)
         repoNameItem.setTextAlignment(Qt.AlignCenter)
         self.settings.repoListView.setItem(currentRow, 1, repoNameItem)
 
-        repoAddressItem = QtGui.QTableWidgetItem()
+        repoAddressItem = QTableWidgetItem()
         repoAddressItem.setText(repoAddress)
         repoAddressItem.setTextAlignment(Qt.AlignCenter)
         self.settings.repoListView.setItem(currentRow, 2, repoAddressItem)
@@ -183,10 +181,14 @@ class RepositorySettings(SettingsTab):
         repoName = self.repoDialog.repoName.text()
         repoAddress = self.repoDialog.repoAddress.currentText()
         if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)):
-            KMessageBox.error(self.settings, i18n("Not a valid repository name"), i18n("Pisi Error"))
+            QMessageBox.warning(self.settings, 
+                                i18n("Pisi Error"),
+                                i18n("Not a valid repository name"))
             return
         if not repoAddress.endsWith("xml") and not repoAddress.endsWith("xml.bz2"):
-            KMessageBox.error(self.settings, i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'), i18n("Pisi Error"))
+            QMessageBox.warning(self.settings,
+                                i18n("Pisi Error"),
+                                i18n('<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>'))
             return
         self.__insertRow(repoName, repoAddress)
         self.markChanged()
@@ -340,9 +342,9 @@ class ProxySettings(SettingsTab):
         else:
             self.iface.setConfig("general", "ftp_proxy", "None")
 
-class SettingsDialog(QtGui.QDialog, Ui_SettingsDialog):
+class SettingsDialog(QDialog, Ui_SettingsDialog):
     def __init__(self, parent=None):
-        QtGui.QDialog.__init__(self, parent)
+        QDialog.__init__(self, parent)
         self.setupUi(self)
         self.connectSignals()
 
