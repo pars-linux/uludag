@@ -30,8 +30,7 @@ class KOSD: public KDEDModule
     Q_OBJECT
     Q_CLASSINFO("D-Bus Interface", "org.kde.KOSD")
     public:
-        KOSD(QObject* parent, const QList<QVariant>&)
-        :KDEDModule(parent) {}
+        KOSD(QObject* parent, const QList<QVariant>&);
         ~KOSD();
 
     public Q_SLOTS:
