@@ -5,9 +5,9 @@ X-KDE-ServiceTypes=KDEDModule
 X-KDE-Library=kosd
 X-KDE-DBus-ModuleName=kosd
 X-KDE-Kded-autoload=true
-X-KDE-Kded-load-on-demand=true
+#X-KDE-Kded-load-on-demand=true
 
 Name=KDE OSD Daemon
 Name[tr]=KDE OSD Hizmeti
-Comment=OSD Daemon for KDE which displays small informational OSD widget upon request.
-Comment[tr]=İstek üzerine küçük bilgilendirici OSD diyalogları oluşturan KDE hizmeti.
+Comment=OSD Daemon for KDE which displays small informational OSD widget upon request
+Comment[tr]=İstek üzerine ekrana bilgilendirici OSD parçacığı çizer
