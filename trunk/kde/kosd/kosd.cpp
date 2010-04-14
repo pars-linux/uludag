@@ -35,6 +35,9 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
 {
     // Create an OSD instance
     m_osd = new OSD();
+
+    // Appear for 2 seconds and vanish
+    m_osd->setTimeout(2);
 }
 
 
