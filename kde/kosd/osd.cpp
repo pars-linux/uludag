@@ -39,7 +39,9 @@ using namespace std;
 #define OSD_BASE_HEIGHT 400
 
 #define ICON_BASE_SIZE 200
-#define ICON_BASE_X 100
+//#define ICON_BASE_X 100
+// Center the icon assuming that no kosd user passes a label!
+#define ICON_BASE_X ((OSD_BASE_WIDTH/2.0)-(ICON_BASE_SIZE/2.0))
 #define ICON_BASE_Y 50
 
 #define LABEL_BASE_WIDTH 470
