@@ -18,6 +18,8 @@ import backend
 
 from context import *
 
+UPDATE_TYPES = backend.pm.UPDATE_TYPES
+
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
         QtGui.QListWidget.__init__(self, parent)
@@ -36,11 +38,17 @@ class GroupList(QtGui.QListWidget):
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
-        group = self.iface.getGroup(name)
-        localName, icon_path = unicode(group.localName), group.icon
-        package_count = len(self.state.groupPackages(name))
-        if package_count == 0:
-            return
+        if not name.startswith('type:'):
+            group = self.iface.getGroup(name)
+            localName, icon_path = unicode(group.localName), group.icon
+            package_count = len(self.state.groupPackages(name))
+            if package_count == 0:
+                return
+        else:
+            localName, icon_path = unicode(UPDATE_TYPES[name][0]), UPDATE_TYPES[name][1]
+            package_count = 22
+            if package_count == 0:
+                return
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
@@ -57,10 +65,13 @@ class GroupList(QtGui.QListWidget):
         if not self.count():
             return
         for i in range(self.count()):
-            if self.item(i).data(Qt.UserRole).toString() == "all":
+            key = self.item(i).data(Qt.UserRole).toString()
+            if key == "all":
                 item = self.takeItem(i)
                 self.insertItem(0, item)
-                return
+            elif key in UPDATE_TYPES.keys():
+                item = self.takeItem(i)
+                self.insertItem(UPDATE_TYPES.keys().index(key), item)
 
     def ensureGroupSelected(self):
         if self.currentRow() == -1 and self.count():
