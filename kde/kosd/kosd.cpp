@@ -27,10 +27,11 @@ K_PLUGIN_FACTORY(KOSDFactory,
                  registerPlugin<KOSD>();
         )
 
-K_EXPORT_PLUGIN(KosdFactory("kosd"))
+K_EXPORT_PLUGIN(KOSDFactory("kosd"))
 
 
 KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
+    :KDEDModule(parent)
 {
     // Create an OSD instance
     m_osd = new OSD();
