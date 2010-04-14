@@ -11,7 +11,6 @@ Notes:
 Not started yet:
 ----------------
 
- - Filtering support for update type (critical, security ..)
  - Take care of pisi's needService/SystemReboot mechanism
  - Fix update repo timeout apply problem in settings dialog
  - Catch exceptions for trying to use different arch/distro repos
@@ -20,6 +19,7 @@ Not started yet:
 In progress:
 ------------
 
+ - Filtering support for update type (critical, security ..) (%60)
  - Merge changes from corporate's package-manager (%80)
  - Show different warnings for update type (%70)
  - Fix Qt-Only mode translations (%30)
