@@ -1,14 +1,34 @@
 TODO
 ~~~~
 
+Notes:
+------
+
  - For Kde 4 .pisi package we need to create following symlink:
    /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
+ - needService/SystemReboot support for GUI depends on new Pisi Api
 
- - For Qt-only mode add create menubar (+)
- - For Qt-only mode QUniqueApp support (+)
- - Show different warnings for update type (%70)
- - Fix package icons in summary dialog (+)
- - Add summary notification for Qt-only mode (+)
- - Merge changes from corporate's package-manager
- - Fix summary dialog questions, k -> q messagebox
+Not started yet:
+----------------
+
+ - Filtering support for update type (critical, security ..)
+ - Take care of pisi's needService/SystemReboot mechanism
  - Fix update repo timeout apply problem in settings dialog
+ - Catch exceptions for trying to use different arch/distro repos
+ - Fix Proxy Settings screen issues
+
+In progress:
+------------
+
+ - Merge changes from corporate's package-manager (%80)
+ - Show different warnings for update type (%70)
+ - Fix Qt-Only mode translations (%30)
+
+Completed:
+----------
+
+ - For Qt-only mode add create menubar
+ - For Qt-only mode QUniqueApp support
+ - Fix package icons in summary dialog
+ - Add summary notification for Qt-only mode
+ - Fix summary dialog questions, k -> q messagebox
