@@ -108,6 +108,7 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
         self.parent = parent
         self.operationText.setText("")
         self.operation = Operation()
+        self.actionButton.setIcon(KIcon("dialog-ok-apply"))
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
         self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
         self.connect(self.operation, SIGNAL("finished()"), self.finished)
