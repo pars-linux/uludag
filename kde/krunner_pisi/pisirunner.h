@@ -22,7 +22,6 @@
 #include <Plasma/AbstractRunner>
 #include <KProcess>
 
-#include <QProcessEnvironment>
 #include <QHash>
 
 class QWidget;
@@ -54,9 +53,7 @@ class PisiRunner : public Plasma::AbstractRunner
     private:
         bool m_enabled;
         QHash<QString, QString> m_packageCache;
-        QString m_installer;
         QStringList m_paths;
-        QProcessEnvironment m_processEnv;
         KProcess* m_commandNotFound;
 };
 
