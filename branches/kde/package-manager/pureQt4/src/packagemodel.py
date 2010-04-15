@@ -26,30 +26,6 @@ from context import _time
 _variant = QVariant()
 _unknown_icons = []
 
-from sys import stdout
-from pyaspects.weaver import *
-from pyaspects.meta import MetaAspect
-
-class DebuggerAspect:
-    __metaclass__ = MetaAspect
-    name = "DebugAspect"
-
-    def __init__(self, out = stdout):
-        self.out = out
-        self.counter = 1
-
-    def before(self, wobj, data, *args, **kwargs):
-        met_name = data['original_method_name']
-        class_ = str(data['__class__'])[8:-2]
-        fun_str = "%s%s from %s" % (met_name, args, class_)
-        self.out.write("#%s. call, %s\n" % (self.counter, fun_str))
-
-    def after(self, wobj, data, *args, **kwargs):
-        met_name = data['original_method_name']
-        fun_str = "%s%s" % (met_name, args)
-        self.out.write("#%s. left, %s\n" % (self.counter, fun_str))
-        self.counter += 1
-
 class PackageModel(QAbstractTableModel):
 
     def __init__(self, parent=None):
@@ -191,4 +167,3 @@ class PackageModel(QAbstractTableModel):
     def downloadSize(self):
         return self.iface.calculate_download_size(self.selectedPackages() + self.extraPackages())
 
-#weave_all_object_methods(DebuggerAspect(), PackageModel)

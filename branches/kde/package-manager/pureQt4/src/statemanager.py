@@ -29,6 +29,7 @@ class StateManager(QObject):
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
         self.cached_packages = None
+        self._typeFilter = None
 
     def setState(self, state):
         self.state = state
