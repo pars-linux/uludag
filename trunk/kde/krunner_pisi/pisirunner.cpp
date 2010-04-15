@@ -18,8 +18,6 @@
 
 #include "pisirunner.h"
 
-#include <QWidget>
-
 #include <KRun>
 #include <KIcon>
 #include <KLocale>
@@ -103,6 +101,9 @@ void PisiRunner::match(Plasma::RunnerContext &context)
             package = m_packageCache.value(fullPath);
             break;
         }
+        if (!context.isValid())
+            // The query may be invalidated by the main thread
+            return;
     }
 
     // Check if the query satisfies a binary shipped within any package
