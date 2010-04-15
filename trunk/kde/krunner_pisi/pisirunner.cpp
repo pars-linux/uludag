@@ -18,6 +18,8 @@
 
 #include "pisirunner.h"
 
+#include <QVariant>
+
 #include <KRun>
 #include <KIcon>
 #include <KLocale>
@@ -29,7 +31,6 @@ PisiRunner::PisiRunner(QObject *parent, const QVariantList &args)
     : Plasma::AbstractRunner(parent, args)
 {
     setObjectName("pisi");
-    m_installer = "/usr/bin/pminst";
     m_enabled = true;
     //setPriority(AbstractRunner::HighestPriority);
 }
@@ -46,8 +47,7 @@ void PisiRunner::init()
 void PisiRunner::prepareForMatchSession()
 {
     // Get $PATH
-    m_processEnv = QProcessEnvironment::systemEnvironment();
-    m_paths = m_processEnv.value("PATH").split(":");
+    m_paths = QProcessEnvironment::systemEnvironment().value("PATH").split(":");
 
     // Load the command-not-found db once
     m_commandNotFound = new KProcess(this);
@@ -110,6 +110,10 @@ void PisiRunner::match(Plasma::RunnerContext &context)
     if (!package.isEmpty()) {
         Plasma::QueryMatch match(this);
         match.setId(query);
+
+        // Keep the package name within QueryMatch
+        match.setData(QVariant(package));
+
         match.setType(Plasma::QueryMatch::ExactMatch);
         match.setIcon(KIcon("application-x-pisi"));
         match.setText(i18n("%1", package));
@@ -124,8 +128,8 @@ void PisiRunner::run(const Plasma::RunnerContext &context, const Plasma::QueryMa
     QMutexLocker lock(bigLock());
     Q_UNUSED(match);
 
-    // Run installer
-    KRun::runCommand(m_installer, NULL);
+    // Run installer giving the package name as the argument
+    KRun::runCommand(QString("pm-install %1").arg(match->data().toString()) , NULL);
 }
 
 #include "pisirunner.moc"
