@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -131,7 +131,8 @@ if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
 
     options = KCmdLineOptions()
-    options.add("+files", ki18n("Packages to install"))
+    options.add("r").add("from-repository", ki18n("Interpret the arguments as repository packages"))
+    options.add("+packages", ki18n("Packages or .pisi files to install"))
     KCmdLineArgs.addCmdLineOptions(options)
 
     if not KUniqueApplication.start():
@@ -142,11 +143,11 @@ if __name__ == '__main__':
     args = KCmdLineArgs.parsedArgs()
 
     packages = []
+
     for i in range(args.count()):
-        package = str(args.url(i).toLocalFile())
+        package = str(args.arg(i) if args.isSet("from-repository") else args.url(i).toLocalFile())
         print package
-        if package.endswith(".pisi"):
-            packages.append(package)
+        packages.append(package)
 
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
