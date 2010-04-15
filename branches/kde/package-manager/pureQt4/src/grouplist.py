@@ -17,8 +17,7 @@ from PyQt4.QtCore import *
 import backend
 
 from context import *
-
-UPDATE_TYPES = backend.pm.UPDATE_TYPES
+from statemanager import StateManager
 
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
@@ -34,21 +33,16 @@ class GroupList(QtGui.QListWidget):
         for name in groups:
             self.createGroupItem(name)
         self.sortItems()
-        self.moveAllToFirstLine()
+        if self.state.state == StateManager.UPGRADE:
+            self.moveAllToFirstLine()
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
-        if not name.startswith('type:'):
-            group = self.iface.getGroup(name)
-            localName, icon_path = unicode(group.localName), group.icon
-            package_count = len(self.state.groupPackages(name))
-            if package_count == 0:
-                return
-        else:
-            localName, icon_path = unicode(UPDATE_TYPES[name][0]), UPDATE_TYPES[name][1]
-            package_count = 22
-            if package_count == 0:
-                return
+        group = self.iface.getGroup(name)
+        localName, icon_path = unicode(group.localName), group.icon
+        package_count = len(self.state.groupPackages(name))
+        if package_count == 0:
+            return
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
@@ -64,14 +58,12 @@ class GroupList(QtGui.QListWidget):
     def moveAllToFirstLine(self):
         if not self.count():
             return
+
         for i in range(self.count()):
             key = self.item(i).data(Qt.UserRole).toString()
             if key == "all":
                 item = self.takeItem(i)
                 self.insertItem(0, item)
-            elif key in UPDATE_TYPES.keys():
-                item = self.takeItem(i)
-                self.insertItem(UPDATE_TYPES.keys().index(key), item)
 
     def ensureGroupSelected(self):
         if self.currentRow() == -1 and self.count():

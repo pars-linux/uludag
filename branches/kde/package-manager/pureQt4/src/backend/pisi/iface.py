@@ -17,10 +17,6 @@ import comar
 import pisi
 
 from pmlogging import logger
-from context import i18n
-
-UPDATE_TYPES = {'type:security':[i18n('Security'), 'security-medium'],
-                'type:critical':[i18n('Critical'), 'security-low']}
 
 class Singleton(object):
     def __new__(type):
@@ -169,9 +165,7 @@ class Iface(Singleton):
         return self.gdb.get_group(name)
 
     def getGroups(self):
-        currentGroups = self.gdb.list_groups()
-        currentGroups.extend(UPDATE_TYPES.keys())
-        return currentGroups
+        return self.gdb.list_groups()
 
     def getGroupPackages(self, name):
         try:
