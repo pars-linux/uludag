@@ -34,6 +34,10 @@ from statusupdater import StatusUpdater
 
 from pmutils import *
 
+UPDATE_TYPES = [['normal',   i18n('All Updates'), 'system-software-update'],
+                ['security', i18n('Security'),    'security-medium'],
+                ['critical', i18n('Critical'),    'security-low']]
+
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
@@ -57,6 +61,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.searchLine, SIGNAL("textEdited(const QString&)"), self.searchLineChanged)
         self.connect(self.searchLine, SIGNAL("returnPressed()"), self.searchActivated)
         self.connect(self.searchLine, SIGNAL("clearButtonClicked()"), self.groupFilter)
+        self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
@@ -80,12 +85,18 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         waitCursor()
         self._last_packages = None
         self.state.reset()
+        self.initializeUpdateTypeList()
         self.initializePackageList()
         self.initializeGroupList()
         self.initializeStatusUpdater()
         self.statusChanged()
         restoreCursor()
         QTimer.singleShot(1, self.initializeBasket)
+
+    def initializeUpdateTypeList(self):
+        self.typeCombo.clear()
+        for type in UPDATE_TYPES:
+            self.typeCombo.addItem(KIcon(type[2], KIconLoader.SizeSmallMedium), type[1], QVariant(type[0]))
 
     def initializeStatusUpdater(self):
         self.statusUpdater.setModel(self.packageList.model().sourceModel())
@@ -127,11 +138,24 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.groupList.setIconSize(QSize(KIconLoader.SizeLarge, KIconLoader.SizeLarge))
         self.groupList.setState(self.state)
         self.groupList.addGroups(self.state.groups())
+        if self.state.state == self.state.UPGRADE:
+            self.typeCombo.show()
+        else:
+            self.typeCombo.hide()
+            self.state._typeFilter = None
         self.groupFilter()
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
         self.packageList.model().setFilterRegExp(QRegExp(unicode(text), Qt.CaseInsensitive, QRegExp.FixedString))
+
+    def typeFilter(self, index):
+        if self.state.state == self.state.UPGRADE:
+            filter = self.typeCombo.itemData(index).toString()
+            if not self.state._typeFilter == filter:
+                self.state._typeFilter = filter
+                print 'Type filter : ', self.state._typeFilter
+                self.initializeGroupList()
 
     def groupFilter(self):
         self.setSelectAll()
