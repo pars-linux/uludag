@@ -129,7 +129,7 @@ void PisiRunner::run(const Plasma::RunnerContext &context, const Plasma::QueryMa
     Q_UNUSED(match);
 
     // Run installer giving the package name as the argument
-    KRun::runCommand(QString("pm-install %1").arg(match->data().toString()) , NULL);
+    KRun::runCommand(QString("pm-install %1").arg(match.data().toString()) , NULL);
 }
 
 #include "pisirunner.moc"
