@@ -180,7 +180,7 @@ class revdepRebuildAndLddResults:
       self.revdepOutput = ""
 
     self.execute.sendline(command)
-    print command + "\n"
+    #print command + "\n"
 
     if(mode == "close"):
       while(1):
@@ -203,7 +203,7 @@ class revdepRebuildAndLddResults:
         self.virtualName = str(sys.argv[2])
         return
 
-    self.execute.sendline("checking state ...")
+    self.execute.sendline("uname")
 
     while(1):
       outSendCommand = self.execute.readline()
@@ -217,7 +217,7 @@ class revdepRebuildAndLddResults:
       if(outSendCommand.find(self.virtualName) != -1):
           break
 
-      if((outSendCommand.find("checking state ...") == -1) and (outSendCommand.find(self.virtualName) == -1) ):
+      if((outSendCommand.find("uname") == -1) and (outSendCommand.find(self.virtualName) == -1) ):
         if(mode == "parse"):
               self.revdepOutput += outSendCommand
         elif(mode == "ldd"):
@@ -266,16 +266,37 @@ class revdepRebuildAndLddResults:
 
     for line in ack_file.readlines():
       self.startVm()
+      time.sleep(2)
       self.connectTo()
       self.sendCommand("su -","root")
       self.sendCommand("pisi it %s -y" % line.strip())
       self.sendCommand("revdep-rebuild","parse")
-      self.lddWorks(line)
+      self.connectTo()
       self.sendCommand("exit","close")
       self.parseOutput()
       self.shutdownVm()
       time.sleep(1)
       self.goBack()
+
+    ack_file.close()
+
+    time.sleep(2)
+    ack_file = open("ack", "r")
+    for line in ack_file.readlines():
+      self.startVm()
+      time.sleep(2)
+      self.connectTo()
+      self.sendCommand("su -","root")
+      self.sendCommand("pisi it %s -y" % line.strip())
+      self.lddWorks(line)
+      self.connectTo()
+      self.sendCommand("exit","close")
+      self.parseOutput()
+      self.shutdownVm()
+      time.sleep(1)
+      self.goBack()
+
+    ack_file.close()
 
   def parseOutput(self):
 
@@ -289,7 +310,11 @@ class revdepRebuildAndLddResults:
         split_out = line.split(" ")
 
         if "paket" in line:             # for Turkish
-            self.keyValue[split_out[3].strip()] = split_out[0]
+            if not split_out[3].strip().startswith("/"):
+                self.keyValue["/" + split_out[3].strip()] = split_out[0]
+            else:
+                self.keyValue[split_out[3].strip()] = split_out[0]
+
             print self.keyValue[split_out[3].strip()]
         elif "Package" in line:          # for English
             print split_out[4].strip()
@@ -302,6 +327,7 @@ class revdepRebuildAndLddResults:
         if "broken" in line and not "libraries" in line:
             print split_out[3]
             self.broken_outfile.write( "Package " + self.keyValue[split_out[3]] + "  needs " + split_out[3] + " library so following package(s) needed:")
+            print "Package " + self.keyValue[split_out[3]] + "  needs " + split_out[3] + " library so following package(s) needed:"
             self.broken_outfile.write("\n")
 
             for i  in range(5, len(split_out)):
@@ -349,7 +375,6 @@ resultObject.sendCommand("pisi up --ignore-safety -y")
 resultObject.sendCommand("exit","close")
 resultObject.shutdownVm()
 time.sleep(1)
-resultObject.takeSnapshot()
 
 resultObject.startVm()
 print "After the VirtualBox has opened, please restart openssh of Real Machine and Virtualbox and write the virtualbox ip address and enter to continue:"
@@ -361,4 +386,9 @@ resultObject.sendCommand("pisi lr", "pisilr")
 resultObject.sendCommand("pisi rr %s  -y" % resultObject.pisilrResult[0].replace("\x1b[32m", "").strip())
 resultObject.sendCommand("pisi rr contrib -y")
 resultObject.repoWorks()
+resultObject.sendCommand("pisi up --ignore-safety -y")
+resultObject.sendCommand("exit","close")
+resultObject.shutdownVm()
+time.sleep(1)
+resultObject.takeSnapshot()
 resultObject.reverseChecker()
