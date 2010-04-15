@@ -10,52 +10,19 @@ prefix = os.environ.get("prefix", "/usr")
 from distutils.core import setup, Extension
 import subprocess as S
 
-def pkg_config(package):
-    library_path=[]
-    libs=[]
-    include_path=[]
-    try:
-        output,err = \
-                   S.Popen('pkg-config --libs-only-L %s' % package,
-                           shell=True, stdin=S.PIPE, stdout=S.PIPE,
-                           close_fds=True).communicate()
-        if output:
-            for p in output.split():
-                library_path.append(p.strip()[2:])
-        output,err = \
-                   S.Popen('pkg-config --libs-only-l %s' % package,
-                           shell=True, stdin=S.PIPE, stdout=S.PIPE,
-                           close_fds=True).communicate()
-        if output:
-            for p in output.split():
-                libs.append(p.strip()[2:])
-        output,err = \
-                   S.Popen('pkg-config --cflags-only-I %s' % package,
-                           shell=True, stdin=S.PIPE, stdout=S.PIPE,
-                           close_fds=True).communicate()
-        if output:
-            for p in output.split():
-                include_path.append(p.strip()[2:])
-    except:
-        print >> sys.stderr, "Failed to find pkg-config"
-    return include_path,library_path,libs
-
-pk_include_dirs, pk_library_dirs, pk_libs = pkg_config("dbus-1 polkit-dbus polkit-grant")
-
-
 setup(name="pypolkit",
-      version="0.1.1",
-      description="Python bindings for PolicyKit",
-      long_description="Python bindings for PolicyKit",
+      version="1.0.0",
+      description="Python bindings for polkit-1",
+      long_description="Python bindings for polkit-1",
       license="GNU GPL2",
       author="Bahadır Kandemir",
       author_email="bahadir@pardus.org.tr",
-      url="http://svn.pardus.org.tr/uludag/trunk/python-modules/python-polkit/",
+      url="http://svn.pardus.org.tr/uludag/trunk/python-polkit/",
       py_modules = ["polkit"],
       ext_modules = [Extension('_polkit',
                                sources=['pypolkit.c'],
-                               include_dirs=pk_include_dirs,
-                               libraries=pk_libs,
-                               library_dirs=pk_library_dirs,
+                               include_dirs=["/usr/include/polkit-1", "/usr/include/glib-2.0", "/usr/lib/glib-2.0/include"],
+                               libraries=["polkit-gobject-1", "gio-2.0", "gobject-2.0", "gmodule-2.0", "gthread-2.0", "pthread", "rt", "glib-2.0"],
+                               library_dirs=[],
                                )],
       )
