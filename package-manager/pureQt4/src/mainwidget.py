@@ -35,8 +35,8 @@ from statusupdater import StatusUpdater
 from pmutils import *
 
 UPDATE_TYPES = [['normal',   i18n('All Updates'), 'system-software-update'],
-                ['security', i18n('Security'),    'security-medium'],
-                ['critical', i18n('Critical'),    'security-low']]
+                ['security', i18n('Security Updates'),    'security-medium'],
+                ['critical', i18n('Critical Updates'),    'security-low']]
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
@@ -142,7 +142,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.typeCombo.show()
         else:
             self.typeCombo.hide()
-            self.state._typeFilter = None
+            self.state._typeFilter = 'normal'
         self.groupFilter()
 
     def packageFilter(self, text):
@@ -154,7 +154,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             filter = self.typeCombo.itemData(index).toString()
             if not self.state._typeFilter == filter:
                 self.state._typeFilter = filter
-                print 'Type filter : ', self.state._typeFilter
                 self.initializeGroupList()
 
     def groupFilter(self):

@@ -29,11 +29,12 @@ class StateManager(QObject):
         self.state = self.INSTALL
         self.iface = backend.pm.Iface()
         self.cached_packages = None
-        self._typeFilter = None
+        self._typeFilter = 'normal'
+        self._typeCaches = {}
 
     def setState(self, state):
         self.state = state
-        self.cached_packages = None
+        self.reset()
         if self.state == self.REMOVE:
             self.iface.setSource(self.iface.SYSTEM)
         else:
@@ -41,6 +42,8 @@ class StateManager(QObject):
 
     def reset(self):
         self.cached_packages = None
+        self._typeCaches = {}
+        self._typeFilter = 'normal'
 
     def getState(self):
         return self.state
@@ -49,13 +52,18 @@ class StateManager(QObject):
         if self.cached_packages == None:
             if self.state == self.UPGRADE:
                 self.cached_packages = self.iface.getUpdates()
+                self._typeCaches = {}
             else:
                 self.cached_packages = self.iface.getPackageList()
 
                 if self.onlyGuiInState():
                     self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
-
-        return list(self.cached_packages)
+        if not self._typeFilter == 'normal' and self.state == self.UPGRADE:
+            if not self._typeCaches.has_key(self._typeFilter):
+                self._typeCaches[self._typeFilter] = self.iface.filterUpdates(self.cached_packages, self._typeFilter)
+            return self._typeCaches[self._typeFilter]
+        else:
+            return list(self.cached_packages)
 
     def onlyGuiInState(self):
         pmConfig = config.PMConfig()

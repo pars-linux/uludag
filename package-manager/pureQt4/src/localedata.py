@@ -26,7 +26,7 @@ locales = {
     }
 
 def getKDELocale():
-    return ctx.Pds.settings('Locale/Language','en_US')
+    return ctx.Pds.settings('Locale/Language', ctx.Pds.settings('Locale/Country', 'en_US'))
 
 def getAppLocale():
     cf = path.join(ctx.Pds.config_path, 'share/config/package-managerrc')
