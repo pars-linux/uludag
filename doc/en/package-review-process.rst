@@ -7,19 +7,23 @@ suitable for repository policy rules.
 The package reviewing process steps on `Pardus Bug Tracking System
 <http://hata.pardus.org.tr>`_;
 
-#. When the developer thinks that its new package is ready for the reviewing
+#. When the developer thinks that his/her new package is ready for the reviewing
    process, he/she should copy it under the appropriate component of the
    'playground/review' directory under pardus SVN repository.
 
-#. If a bug is reported for a new package on the bug tracking system, the
-   process is starting from this point.
+#. If a bug is reported for requesting this new package on the bug tracking system,
+   the process is starting from this point.
 
-#. The developer that wants to maintain this new package, assigns the bug report
+#. The developer who wants to maintain this new package, assigns the bug report
    to himself/herself and changes the bug status to ASSIGNED. This operation
    can only be done by the members of bugzilla "editbugs" group.
 
-#. The product of the bug report should be "Review". The component of the bug
-   report should be the appropriate repository component for being able to
+#. After the developer assigns the bug to (him/her)self, A new bug report which
+   will block the package request bug will be created. (From now on, this new bug
+   report will be mentioned as "the bug report")
+
+#. The product of the bug report should be "Review". The component of the
+   bug report should be the appropriate repository component for being able to
    notify the relevant component responsibles by e-mail about this new package
    reviewing request.
 
@@ -72,3 +76,8 @@ The package reviewing process steps on `Pardus Bug Tracking System
 #. The package that takes the necessary ACKs, is taken to package repositories,
    removed from the review directory and the bug status is changed to
    RESOLVED/FIXED.
+
+#. After the package is merged into Pardus Repositories and the review bug report
+   is closed, package request bug will be closed too. RESOLVED/FIXED solution can 
+   also be applied for this bug. Ideally, closing both review and request bugs at
+   the same commit is preferred.
