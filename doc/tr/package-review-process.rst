@@ -18,6 +18,10 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
    durumunu ATANDI şeklinde değiştirir. Bu işlemi sadece "editbugs" grubuna
    dahil bir Bugzilla kullanıcısı yapabilir.
 
+#. Paketi hazırlamak isteyen geliştirici hata raporunu kendine atadıktan sonra
+   paketin gözden geçirilme sürecini başlatmak için yeni bir hata raporu açar.
+   (Bundan sonra bu yeni hata raporundan, "hata raporu" olarak bahsedilecektir.)
+
 #. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
    bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
    eklenecektir.
@@ -62,3 +66,8 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 #. Yeterli sayıda ACK alan paket, sahibi tarafından depoya alınır, review
    dizininden silinir ve hata raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak
    değiştirilir.
+
+#. Paket pardus depolarına katıldıktan sonra ve paket gözden geçirme(review) hatası
+   kapatıldıktan sonra, paket isteği hatası da kapatılacaktır. KARAR VERİLDİ / ÇÖZÜLDÜ
+   mekanizması bu aşamada kullanılabilir. Hem paket isteği hem de paket gözden geçirme
+   hatalarını aynı commit mesajıyla kapatmak tercih edilmektedir.
