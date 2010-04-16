@@ -57,51 +57,43 @@ pk_action_list(PyObject *self, PyObject *args)
     glist = polkit_authority_enumerate_actions_sync(authority, NULL, &error);
     for (gitem = glist; gitem; gitem = g_list_next(gitem)) {
         gpointer data = gitem->data;
-        PyList_Append(py_list, PyString_FromString(polkit_action_description_get_action_id(data)));
+        PyObject *py_dict = PyDict_New();
+        // ID
+        dict_set_unless_null(py_dict, "action_id", polkit_action_description_get_action_id(data));
+
+        // Description
+        dict_set_unless_null(py_dict, "description", polkit_action_description_get_description(data));
+
+        // Message
+        dict_set_unless_null(py_dict, "message", polkit_action_description_get_message(data));
+
+        // Vendor
+        dict_set_unless_null(py_dict, "vendor", polkit_action_description_get_vendor_name(data));
+
+        // Vendor URL
+        dict_set_unless_null(py_dict, "vendor_url", polkit_action_description_get_vendor_url(data));
+
+        // Icon
+        dict_set_unless_null(py_dict, "icon", polkit_action_description_get_icon_name(data));
+
+        // Annotations
+        PyObject *py_list2 = PyList_New(0);
+        PyDict_SetItemString(py_dict, "annotations", py_list2);
+
+        // Default policy
+        PyDict_SetItemString(py_dict, "policy_any", PyString_FromString(polkit_implicit_authorization_to_string(polkit_action_description_get_implicit_any(data))));
+        PyDict_SetItemString(py_dict, "policy_active", PyString_FromString(polkit_implicit_authorization_to_string(polkit_action_description_get_implicit_active(data))));
+        PyDict_SetItemString(py_dict, "policy_inactive", PyString_FromString(polkit_implicit_authorization_to_string(polkit_action_description_get_implicit_inactive(data))));
+
+
+        PyList_Append(py_list, py_dict);
+        g_object_unref(data);
     }
 
-    // g_list_free(glist);
-    // g_list_free(gitem);
+    g_list_free(glist);
+    g_list_free(gitem);
 
     return py_list;
-}
-
-//! Returns action details
-static PyObject *
-pk_action_info(PyObject *self, PyObject *args)
-{
-    const char* action_id;
-    if (!PyArg_ParseTuple(args, "s", &action_id)) {
-        return NULL;
-    }
-
-    PyObject *dict = PyDict_New();
-
-    // Description
-    dict_set_unless_null(dict, "description", NULL);
-
-    // Message
-    dict_set_unless_null(dict, "message", NULL);
-
-    // Vendor
-    dict_set_unless_null(dict, "vendor", NULL);
-
-    // Vendor URL
-    dict_set_unless_null(dict, "vendor_url", NULL);
-
-    // Icon
-    dict_set_unless_null(dict, "icon", NULL);
-
-    // Annotations
-    PyObject *list = PyList_New(0);
-    PyDict_SetItemString(dict, "annotations", list);
-
-    // Default policy
-    PyDict_SetItemString(dict, "policy_any", NULL);
-    PyDict_SetItemString(dict, "policy_active", NULL);
-    PyDict_SetItemString(dict, "policy_inactive", NULL);
-
-    return dict;
 }
 
 //! Returns granted authorizations
@@ -190,7 +182,6 @@ pk_auth_block(PyObject *self, PyObject *args)
 //! polkit methods
 static PyMethodDef polkit_methods[] = {
     {"action_list", (PyCFunction) pk_action_list, METH_NOARGS, "Lists all actions."},
-    {"action_info", (PyCFunction) pk_action_info, METH_VARARGS, "Get action details."},
     {"auth_list_uid", (PyCFunction) pk_auth_list_uid, METH_VARARGS, "List granted authorizations for specified UID."},
     {"auth_list_all", (PyCFunction) pk_auth_list_all, METH_NOARGS, "List granted authorizations."},
     {"auth_add", (PyCFunction) pk_auth_add, METH_VARARGS, "Authorize user for the given action."},

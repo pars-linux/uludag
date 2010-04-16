@@ -53,7 +53,7 @@ def action_list():
     returns :
         A list() of action_ids
     """
-    return _polkit.action_list()
+    return [x["action_id"] for x in _polkit.action_list()]
 
 def action_info(action_id):
     """
@@ -65,7 +65,10 @@ def action_info(action_id):
     returns :
         A dict() of details about action_id
     """
-    return _polkit.action_info(action_id)
+    for act in _polkit.action_list():
+        if act["action_id"] == action_id:
+            return act
+    return {}
 
 def auth_list_uid(uid):
     """
