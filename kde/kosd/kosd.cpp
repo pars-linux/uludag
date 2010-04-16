@@ -53,14 +53,19 @@ KOSD::~KOSD()
 
 
 // Public slot (exposed via DBUS)
-void KOSD::showOSD(QString icon, QString label, int percent)
+void KOSD::showOSD(QString icon, QString label, int percent, QString type)
 {
     if (percent < 0)
         percent = 0;
     else if (percent > 100)
         percent = 100;
 
-    m_kosd->display(icon, label, percent);
+    if (type == "kosd")
+        m_kosd->display(icon, label, percent);
+    /*
+    else if (type == "kmix")
+        m_kmix->display(icon, label, percent);
+    */
 }
 
 #include "kosd.moc"

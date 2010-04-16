@@ -39,8 +39,9 @@ class KOSD: public KDEDModule
          *  @param icon determines the icon to show in the OSD widget
          *  @param label determines the label to show in the OSD widget
          *  @param percent determines the progress ratio to be showed in the OSD widget
+         *  @param type determines the OSD type (kmix or kosd)
          */
-        Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent);
+        Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent, QString type);
 
     private:
         KOSDWidget *m_kosd;     // KOSDWidget instance
