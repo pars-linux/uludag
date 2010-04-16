@@ -255,4 +255,4 @@ void OSD::paintEvent(QPaintEvent*)
     painter.drawText(m_labelRect, Qt::AlignCenter | Qt::TextWordWrap, m_labelText);
 }
 
-#include "osd.moc"
+#include "kosd_osd.moc"

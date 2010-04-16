@@ -21,7 +21,7 @@
 #ifndef KOSD_H
 #define KOSD_H
 
-#include "osd.h"
+#include "kosd_osd.h"
 #include <kdedmodule.h>
 
 
