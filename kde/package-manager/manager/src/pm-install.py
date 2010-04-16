@@ -40,7 +40,7 @@ class Operation(QObject):
             signal = str(args[0])
             args = args[1:]
 
-        if signal == "finished":
+        if signal == "finished" and "installPackage" in args[0]:
             self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", os.path.basename(self.packages[0])))
             self.emit(SIGNAL("finished()"))
 
@@ -86,7 +86,7 @@ class Operation(QObject):
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
         KMainWindow.__init__(self, parent)
-        self.setWindowTitle(i18n("Package Installer"))
+        self.setWindowFlags(Qt.FramelessWindowHint)
         widget = PMInstaller(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
@@ -106,19 +106,23 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.parent = parent
-        self.operationText.setText("")
         self.operation = Operation()
-        self.actionButton.setIcon(KIcon("dialog-ok-apply"))
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
-        self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
+        self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.progressBar.setFormat)
         self.connect(self.operation, SIGNAL("finished()"), self.finished)
 
     def finished(self):
-        self.actionButton.setEnabled(True)
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.parent.close)
+        QTimer.singleShot(2000, self.parent.close)
+        KNotification.event("Summary",
+                self.progressBar.format(),
+                QtGui.QPixmap(),
+                None,
+                KNotification.CloseOnTimeout,
+                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
+                )
 
     def install(self, packages):
-        self.operationText.setText(i18n("Installing %1", os.path.basename(packages[0])))
+        self.progressBar.setFormat("%s %s" % (i18n("Installing %1", os.path.basename(packages[0])), i18n("%p%")))
         self.operation.install(packages)
 
 if __name__ == '__main__':
@@ -126,7 +130,7 @@ if __name__ == '__main__':
     appName     = "pm-install"
     catalog     = "package-manager"
     programName = ki18n("pm-install")
-    version     = "0.1"
+    version     = "0.2"
     aboutData   = KAboutData(appName, catalog, programName, version)
     aboutData.setProgramIconName("package-manager")
     KCmdLineArgs.init(sys.argv, aboutData)
