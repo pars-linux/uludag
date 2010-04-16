@@ -41,18 +41,28 @@ class Operation(QObject):
             args = args[1:]
 
         if signal == "finished" and "installPackage" in args[0]:
-            self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", os.path.basename(self.packages[0])))
+            if len(self.packages) == 1:
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %s") % self.packages[0])
+            else:
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing packages"))
+
             self.emit(SIGNAL("finished()"))
 
         if signal == "cancelled":
             KApplication.kApplication().quit()
 
-        elif signal in ["installing", "extracting", "configuring"]:
+        elif signal in ["installing", "extracting", "configuring", "fetching"]:
             self.statusChanges += 1
             self.updateProgress()
-            # operation = signal
-            # package = args[0]
-            # self.emit(SIGNAL("operationChanged(QString)"), "Installing %s" % package)
+            package = args[0]
+            if signal == "installing":
+                self.emit(SIGNAL("operationChanged(QString)"), "Installing %s %s" % (package, i18n("%p%")))
+            elif signal == "fetching":
+                self.emit(SIGNAL("operationChanged(QString)"), "Fetching %s %s" % (package, i18n("%p%")))
+            elif signal == "configuring":
+                self.emit(SIGNAL("operationChanged(QString)"), "Configuring %s %s" % (package, i18n("%p%")))
+            elif signal == "extracting":
+                self.emit(SIGNAL("operationChanged(QString)"), "Extracting %s %s" % (package, i18n("%p%")))
 
     def updateProgress(self):
         try:
@@ -122,7 +132,6 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
                 )
 
     def install(self, packages):
-        self.progressBar.setFormat("%s %s" % (i18n("Installing %1", os.path.basename(packages[0])), i18n("%p%")))
         self.operation.install(packages)
 
 if __name__ == '__main__':
@@ -151,7 +160,6 @@ if __name__ == '__main__':
 
     for i in range(args.count()):
         package = str(args.arg(i) if args.isSet("from-repository") else args.url(i).toLocalFile())
-        print package
         packages.append(package)
 
     if not dbus.get_default_main_loop():
