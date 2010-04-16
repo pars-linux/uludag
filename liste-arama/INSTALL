@@ -1,6 +1,0 @@
-3rdparty dizini altında smarty dizini açılır,
-smarty dizini içine http://svn.pardus.org.tr/uludag/trunk/arto/3rdparty/smarty/ adresindeki dosyalar konur.
-
-tmp isimli dizin oluşturulur, chmod 777 yapılır.
-
-config.php düzenlenir, keyif kahvesi içilir.
