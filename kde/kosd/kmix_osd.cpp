@@ -142,4 +142,4 @@ void OSDWidget::resizeEvent(QResizeEvent*)
     setMask(m_background->mask());
 }
 
-#include "osdwidget.moc"
+#include "kmix_osd.moc"
