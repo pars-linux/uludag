@@ -42,7 +42,6 @@ Q_OBJECT
 public:
     OSDWidget(QWidget * parent = 0);
 
-    void setCurrentVolume(int volumeLevel, bool muted);
     void activateOSD();
 
     virtual QSize sizeHint() const;
@@ -56,14 +55,9 @@ private:
     QGraphicsScene *m_scene;
     QGraphicsWidget *m_container;
     Plasma::Label *m_iconLabel;
-    Plasma::Label *m_volumeLabel;
+    Plasma::Label *m_progressLabel;
     Plasma::Meter *m_meter;
     QTimer *m_hideTimer;
-
-    QPixmap m_volumeHighPixmap;
-    QPixmap m_volumeMediumPixmap;
-    QPixmap m_volumeLowPixmap;
-    QPixmap m_volumeMutedPixmap;
 };
 
 #endif

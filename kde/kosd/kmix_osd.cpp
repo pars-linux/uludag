@@ -40,7 +40,7 @@ OSDWidget::OSDWidget(QWidget * parent)
     m_scene(new QGraphicsScene(this)),
     m_container(new QGraphicsWidget),
     m_iconLabel(new Plasma::Label),
-    m_volumeLabel(new Plasma::Label),
+    m_progressLabel(new Plasma::Label),
     m_meter(new Plasma::Meter),
     m_hideTimer(new QTimer(this))
 {
@@ -52,17 +52,11 @@ OSDWidget::OSDWidget(QWidget * parent)
     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     setAttribute(Qt::WA_TranslucentBackground);
 
-    //Cache the icon pixmaps
-    QSize iconSize = QSize(KIconLoader::SizeSmallMedium, KIconLoader::SizeSmallMedium);
-    m_volumeHighPixmap = KIcon("audio-volume-high").pixmap(iconSize);
-    m_volumeMediumPixmap = KIcon("audio-volume-medium").pixmap(iconSize);
-    m_volumeLowPixmap = KIcon("audio-volume-low").pixmap(iconSize);
-    m_volumeMutedPixmap = KIcon("audio-volume-muted").pixmap(iconSize);
-
     //Setup the widgets
     m_background->setImagePath("widgets/tooltip");
 
-    m_iconLabel->nativeWidget()->setPixmap(m_volumeHighPixmap);
+    QSize iconSize = QSize(KIconLoader::SizeSmallMedium, KIconLoader::SizeSmallMedium);
+    //m_iconLabel->nativeWidget()->setPixmap(m_volumeHighPixmap);
     m_iconLabel->nativeWidget()->setFixedSize(iconSize);
     m_iconLabel->setMinimumSize(iconSize);
     m_iconLabel->setMaximumSize(iconSize);
@@ -71,7 +65,7 @@ OSDWidget::OSDWidget(QWidget * parent)
     m_meter->setMaximum(100);
     m_meter->setMaximumHeight(iconSize.height());
 
-    m_volumeLabel->setAlignment(Qt::AlignCenter);
+    m_progressLabel->setAlignment(Qt::AlignCenter);
 
     //Setup the auto-hide timer
     m_hideTimer->setInterval(2000);
@@ -92,6 +86,7 @@ void OSDWidget::activateOSD()
     m_hideTimer->start();
 }
 
+/*
 void OSDWidget::setCurrentVolume(int volumeLevel, bool muted)
 {
     m_meter->setValue(volumeLevel);
@@ -110,7 +105,7 @@ void OSDWidget::setCurrentVolume(int volumeLevel, bool muted)
 
     //Show the volume %
     //m_meter->setLabel(0, QString::number(volumeLevel) + " %");
-}
+}*/
 
 void OSDWidget::drawBackground(QPainter *painter, const QRectF &/*rectF*/)
 {
