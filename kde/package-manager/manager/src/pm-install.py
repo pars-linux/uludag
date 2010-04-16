@@ -13,14 +13,13 @@
 
 import os
 import sys
+import dbus
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
-
-import dbus
 
 import backend
 from localedata import setSystemLocale
@@ -42,7 +41,7 @@ class Operation(QObject):
 
         if signal == "finished" and "installPackage" in args[0]:
             if len(self.packages) == 1:
-                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %s") % self.packages[0])
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", self.packages[0]))
             else:
                 self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing packages"))
 
@@ -145,7 +144,8 @@ if __name__ == '__main__':
     KCmdLineArgs.init(sys.argv, aboutData)
 
     options = KCmdLineOptions()
-    options.add("r").add("from-repository", ki18n("Interpret the arguments as repository packages"))
+    options.add("from-repository", ki18n("Interpret the arguments as repository packages"))
+    #options.add("ignore-", ki18n("Interpret the arguments as repository packages"))
     options.add("+packages", ki18n("Packages or .pisi files to install"))
     KCmdLineArgs.addCmdLineOptions(options)
 
