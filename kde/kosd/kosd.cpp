@@ -38,6 +38,9 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
 
     // Appear for 2 seconds and vanish
     m_osd->setTimeout(2);
+
+    // Set painter's default opacity for non-composite desktop
+    m_osd->setOpacity(0.9f);
 }
 
 
