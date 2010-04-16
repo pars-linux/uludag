@@ -42,7 +42,7 @@ class KOSD: public KDEDModule
         Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent);
 
     private:
-        KOsdImpl *m_kosd;     // KOsdImpl instance
+        KKMixOSDWidget *m_kosd;     // KKMixOSDWidget instance
 };
 
 #endif // KOSD_H

@@ -34,7 +34,7 @@
 #include <Plasma/Label>
 #include <Plasma/Meter>
 
-OSDWidget::OSDWidget(QWidget * parent)
+KMixOSDWidget::KMixOSDWidget(QWidget * parent)
     : QGraphicsView(parent),
     m_background(new Plasma::FrameSvg(this)),
     m_scene(new QGraphicsScene(this)),
@@ -81,13 +81,13 @@ OSDWidget::OSDWidget(QWidget * parent)
     setScene(m_scene);
 }
 
-void OSDWidget::activateOSD()
+void KMixOSDWidget::activateOSD()
 {
     m_hideTimer->start();
 }
 
 /*
-void OSDWidget::setCurrentVolume(int volumeLevel, bool muted)
+void KMixOSDWidget::setCurrentVolume(int volumeLevel, bool muted)
 {
     m_meter->setValue(volumeLevel);
 
@@ -107,7 +107,7 @@ void OSDWidget::setCurrentVolume(int volumeLevel, bool muted)
     //m_meter->setLabel(0, QString::number(volumeLevel) + " %");
 }*/
 
-void OSDWidget::drawBackground(QPainter *painter, const QRectF &/*rectF*/)
+void KMixOSDWidget::drawBackground(QPainter *painter, const QRectF &/*rectF*/)
 {
     painter->save();
     painter->setCompositionMode(QPainter::CompositionMode_Source);
@@ -115,7 +115,7 @@ void OSDWidget::drawBackground(QPainter *painter, const QRectF &/*rectF*/)
     painter->restore();
 }
 
-QSize OSDWidget::sizeHint() const
+QSize KMixOSDWidget::sizeHint() const
 {
     int iconSize = m_iconLabel->nativeWidget()->pixmap()->height();
     int meterHeight = iconSize;
@@ -125,7 +125,7 @@ QSize OSDWidget::sizeHint() const
     return QSize(meterWidth + iconSize + left + right, meterHeight + top + bottom);
 }
 
-void OSDWidget::resizeEvent(QResizeEvent*)
+void KMixOSDWidget::resizeEvent(QResizeEvent*)
 {
     m_background->resizeFrame(size());
     m_container->setGeometry(0, 0, width(), height());

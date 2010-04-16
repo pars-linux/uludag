@@ -36,11 +36,11 @@ class Label;
 class Meter;
 }
 
-class OSDWidget : public QGraphicsView
+class KMixOSDWidget : public QGraphicsView
 {
 Q_OBJECT
 public:
-    OSDWidget(QWidget * parent = 0);
+    KMixOSDWidget(QWidget * parent = 0);
 
     void activateOSD();
 

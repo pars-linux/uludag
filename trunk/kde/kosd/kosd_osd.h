@@ -27,12 +27,12 @@
 
 #include <KDE/Plasma/FrameSvg>
 
-class KOsdImpl : public QWidget
+class KKMixOSDWidget : public QWidget
 {
     Q_OBJECT
     public:
-        KOsdImpl();
-        ~KOsdImpl();
+        KKMixOSDWidget();
+        ~KKMixOSDWidget();
 
         void setSize(unsigned int percent);
         void setPosition(unsigned int xPercent, unsigned int yPercent);
