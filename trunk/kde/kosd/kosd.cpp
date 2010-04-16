@@ -34,19 +34,19 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
     :KDEDModule(parent)
 {
     // Create an OSD instance
-    m_osd = new OSD();
+    m_kosd = new KOsdImpl();
 
     // Appear for 2 seconds and vanish
-    m_osd->setTimeout(2);
+    m_kosd->setTimeout(2);
 
     // Set painter's default opacity for non-composite desktop
-    m_osd->setOpacity(0.9f);
+    m_kosd->setOpacity(0.9f);
 }
 
 
 KOSD::~KOSD()
 {
-    delete m_osd;
+    delete m_kosd;
 }
 
 
@@ -58,7 +58,7 @@ void KOSD::showOSD(QString icon, QString label, int percent)
     else if (percent > 100)
         percent = 100;
 
-    m_osd->display(icon, label, percent);
+    m_kosd->display(icon, label, percent);
 }
 
 #include "kosd.moc"

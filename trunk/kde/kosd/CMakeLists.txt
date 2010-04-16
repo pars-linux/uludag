@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 2.6)
 
-#find_package(KDE4 REQUIRED)
-#include(KDE4Defaults)
-#add_definitions(${KDE4_DEFINITIONS})
-#include_directories(${KDE4_INCLUDES})
+find_package(KDE4 REQUIRED)
+include(KDE4Defaults)
+add_definitions(${KDE4_DEFINITIONS})
+include_directories(${KDE4_INCLUDES})
 
 set(kded_kosd_SRCS kosd_osd.cpp kmix_osd.cpp kosd.cpp)
 

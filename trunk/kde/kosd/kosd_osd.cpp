@@ -56,7 +56,7 @@ using namespace std;
 
 #define FONT_BASE_SIZE 65
 
-OSD::OSD()
+KOsdImpl::KOsdImpl()
     : QWidget(0, Qt::Window | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint),
     m_backPanel(this), m_meter(this), m_timer(this),
     m_hPos(50), m_vPos(70), m_scaleFactor(0.3f),
@@ -77,13 +77,13 @@ OSD::OSD()
 }
 
 
-OSD::~OSD()
+KOsdImpl::~KOsdImpl()
 {
     //
 }
 
 
-void OSD::setSize(unsigned int percent)
+void KOsdImpl::setSize(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -95,7 +95,7 @@ void OSD::setSize(unsigned int percent)
 }
 
 
-void OSD::setPosition(unsigned int xPercent, unsigned int yPercent)
+void KOsdImpl::setPosition(unsigned int xPercent, unsigned int yPercent)
 {
     if (xPercent > 100)
         xPercent = 100;
@@ -107,7 +107,7 @@ void OSD::setPosition(unsigned int xPercent, unsigned int yPercent)
 }
 
 
-void OSD::setOpacity(unsigned int percent)
+void KOsdImpl::setOpacity(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -117,13 +117,13 @@ void OSD::setOpacity(unsigned int percent)
 }
 
 
-void OSD::setPrimaryScreenLock(bool lock)
+void KOsdImpl::setPrimaryScreenLock(bool lock)
 {
     m_lockPrimaryScreen = lock;
 }
 
 
-void OSD::setTimeout(unsigned int seconds)
+void KOsdImpl::setTimeout(unsigned int seconds)
 {
     if (seconds < 1)
         seconds = 1;
@@ -132,7 +132,7 @@ void OSD::setTimeout(unsigned int seconds)
 }
 
 
-void OSD::updatePosition()
+void KOsdImpl::updatePosition()
 {
     QRect rect;
     if (m_lockPrimaryScreen)
@@ -146,7 +146,7 @@ void OSD::updatePosition()
 }
 
 
-void OSD::updateLayout()
+void KOsdImpl::updateLayout()
 {
     // OSD
     m_width = (unsigned int)(OSD_BASE_WIDTH * m_scaleFactor);
@@ -184,7 +184,7 @@ void OSD::updateLayout()
 }
 
 
-void OSD::display(QString icon, QString text, unsigned int percent)
+void KOsdImpl::display(QString icon, QString text, unsigned int percent)
 {
     this->updatePosition();
 
@@ -207,14 +207,14 @@ void OSD::display(QString icon, QString text, unsigned int percent)
 }
 
 
-void OSD::slotHide()
+void KOsdImpl::slotHide()
 {
     this->hide();
     m_isVisible = false;
 }
 
 
-void OSD::slotReloadTheme()
+void KOsdImpl::slotReloadTheme()
 {
     // Load back panel
     m_backPanel.setImagePath("dialogs/background");
@@ -230,7 +230,7 @@ void OSD::slotReloadTheme()
 }
 
 
-void OSD::paintEvent(QPaintEvent*)
+void KOsdImpl::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
