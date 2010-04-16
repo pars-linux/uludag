@@ -56,7 +56,7 @@ using namespace std;
 
 #define FONT_BASE_SIZE 65
 
-KOsdImpl::KOsdImpl()
+KKMixOSDWidget::KKMixOSDWidget()
     : QWidget(0, Qt::Window | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint),
     m_backPanel(this), m_meter(this), m_timer(this),
     m_hPos(50), m_vPos(70), m_scaleFactor(0.3f),
@@ -77,13 +77,13 @@ KOsdImpl::KOsdImpl()
 }
 
 
-KOsdImpl::~KOsdImpl()
+KKMixOSDWidget::~KKMixOSDWidget()
 {
     //
 }
 
 
-void KOsdImpl::setSize(unsigned int percent)
+void KKMixOSDWidget::setSize(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -95,7 +95,7 @@ void KOsdImpl::setSize(unsigned int percent)
 }
 
 
-void KOsdImpl::setPosition(unsigned int xPercent, unsigned int yPercent)
+void KKMixOSDWidget::setPosition(unsigned int xPercent, unsigned int yPercent)
 {
     if (xPercent > 100)
         xPercent = 100;
@@ -107,7 +107,7 @@ void KOsdImpl::setPosition(unsigned int xPercent, unsigned int yPercent)
 }
 
 
-void KOsdImpl::setOpacity(unsigned int percent)
+void KKMixOSDWidget::setOpacity(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -117,13 +117,13 @@ void KOsdImpl::setOpacity(unsigned int percent)
 }
 
 
-void KOsdImpl::setPrimaryScreenLock(bool lock)
+void KKMixOSDWidget::setPrimaryScreenLock(bool lock)
 {
     m_lockPrimaryScreen = lock;
 }
 
 
-void KOsdImpl::setTimeout(unsigned int seconds)
+void KKMixOSDWidget::setTimeout(unsigned int seconds)
 {
     if (seconds < 1)
         seconds = 1;
@@ -132,7 +132,7 @@ void KOsdImpl::setTimeout(unsigned int seconds)
 }
 
 
-void KOsdImpl::updatePosition()
+void KKMixOSDWidget::updatePosition()
 {
     QRect rect;
     if (m_lockPrimaryScreen)
@@ -146,7 +146,7 @@ void KOsdImpl::updatePosition()
 }
 
 
-void KOsdImpl::updateLayout()
+void KKMixOSDWidget::updateLayout()
 {
     // OSD
     m_width = (unsigned int)(OSD_BASE_WIDTH * m_scaleFactor);
@@ -184,7 +184,7 @@ void KOsdImpl::updateLayout()
 }
 
 
-void KOsdImpl::display(QString icon, QString text, unsigned int percent)
+void KKMixOSDWidget::display(QString icon, QString text, unsigned int percent)
 {
     this->updatePosition();
 
@@ -207,14 +207,14 @@ void KOsdImpl::display(QString icon, QString text, unsigned int percent)
 }
 
 
-void KOsdImpl::slotHide()
+void KKMixOSDWidget::slotHide()
 {
     this->hide();
     m_isVisible = false;
 }
 
 
-void KOsdImpl::slotReloadTheme()
+void KKMixOSDWidget::slotReloadTheme()
 {
     // Load back panel
     m_backPanel.setImagePath("dialogs/background");
@@ -230,7 +230,7 @@ void KOsdImpl::slotReloadTheme()
 }
 
 
-void KOsdImpl::paintEvent(QPaintEvent*)
+void KKMixOSDWidget::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
