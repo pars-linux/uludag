@@ -161,6 +161,9 @@ class Iface(Singleton):
             lu |= set(self.replaces[replaced])
         return lu
 
+    def filterUpdates(self, updates, type):
+        return filter(lambda x: self.getPackage(x).type == type, updates)
+
     def getGroup(self, name):
         return self.gdb.get_group(name)
 
