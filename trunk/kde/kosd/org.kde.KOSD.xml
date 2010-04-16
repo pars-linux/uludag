@@ -5,6 +5,7 @@
     <method name="showOSD">
       <arg name="icon" type="s" direction="in"/>
       <arg name="label" type="s" direction="in"/>
+      <arg name="type" type="s" direction="in"/>
       <arg name="progress" type="i" direction="in"/>
     </method>
   </interface>
