@@ -34,7 +34,8 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
     :KDEDModule(parent)
 {
     // Create an OSD instance
-    m_kosd = new KKMixOSDWidget();
+    m_kmix = new KMixOSDWidget();
+    m_kosd = new KOSDWidget();
 
     // Appear for 2 seconds and vanish
     m_kosd->setTimeout(2);
@@ -47,6 +48,7 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
 KOSD::~KOSD()
 {
     delete m_kosd;
+    delete m_kmix;
 }
 
 

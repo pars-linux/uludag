@@ -22,6 +22,7 @@
 #define KOSD_H
 
 #include "kosd_osd.h"
+#include "kmix_osd.h"
 #include <kdedmodule.h>
 
 
@@ -42,7 +43,8 @@ class KOSD: public KDEDModule
         Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent);
 
     private:
-        KKMixOSDWidget *m_kosd;     // KKMixOSDWidget instance
+        KOSDWidget *m_kosd;     // KOSDWidget instance
+        KMixOSDWidget *m_kmix;  // KMixOSDWidget instance
 };
 
 #endif // KOSD_H
