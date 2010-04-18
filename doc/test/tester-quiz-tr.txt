@@ -61,21 +61,9 @@ Yazılı Soruları
    uygulamanın onaylanması ve geliştirilmeye başlanması için gerekli süreci
    ayrıntılı bir şekilde anlatınız.
 
-2. Pardus depolarında hangi sürüm takip sistemini kullanmaktadır.
-   Aşağıda bulunan Pardus Depolarının amaçlarını açıklayınız.
+2. Blackbox ve whitebox testleri arasındaki fark nedir?
 
-       - Pisi Paketleri Deposu
-       - Katkı Deposu
-       - Özgürlükİçin Deposu
-       - Uludag Deposu
-       - Harici Projeler Deposu
-       - Derlenmiş Paket depoları
-            - Test deposu
-            - Kararlı depo
-
-3. Blackbox ve whitebox testleri arasındaki fark nedir?
-
-4. Aşağıda bulunan test türlerinin genel tanımlarını yapınız. Pardus linux
+3. Aşağıda bulunan test türlerinin genel tanımlarını yapınız. Pardus linux
    dağıtımı ile birlikte bu testleri düşündüğümüzde, geliştirme aşamalarının ve
    paketlerin hangi durumlarında hangi testlerin uygulanacağına dair birer örnek
    veriniz.
@@ -88,9 +76,9 @@ Yazılı Soruları
    - Regresyon testi
    - Ad-hoc testing
 
-5. Beta ve Alfa testlerinde hangi test çeşitleri uygulanmaktadır?
+4. Beta ve Alfa testlerinde hangi test çeşitleri uygulanmaktadır?
 
-6. Pardus depo işleyiş süreci ile ilgili:
+5. Pardus depo işleyiş süreci ile ilgili:
 
    a) Hangi depolar test sürecine tabidir?
    b) Bir uygulamanın depoya alınmaya karar verilmesinden, kararlı depoya
@@ -98,21 +86,21 @@ Yazılı Soruları
       - Review (gözden geçirme) süreci nasıl işler?
       - Test ve testçi derlenmiş paket depolarının amacı nedir? Ack-Nack süreci nasıl işler?
 
-7. Paket bileşeni ne demektir?
+6. Paket bileşeni ne demektir?
 
-8. Test aşamalarının (testcase) amacı nedir?
+7. Test aşamalarının (testcase) amacı nedir?
 
-9. Düzgün ve yetkin hata raporlama neden çok önemlidir?
+8. Düzgün ve yetkin hata raporlama neden çok önemlidir?
 
     - Pardus Bugzilla hata rapolama taslağını kullanarak bir hata raporu örneği veriniz.
       (http://tr.pardus-wiki.org/NASIL:Hata_Raporlamak)
 
-10. Pardus linux dağıtımına özgü uygulamalar nelerdir? Ne işe yararlar kısaca
+9. Pardus linux dağıtımına özgü uygulamalar nelerdir? Ne işe yararlar kısaca
     açıklayınız.
 
-11. COMAR ve MUDUR nedir?
+10. COMAR ve MUDUR nedir?
 
-12. Aşağıda bulunan linux komutları ne işe yarar? ayrıntılı bir biçimde
+11. Aşağıda bulunan linux komutları ne işe yarar? ayrıntılı bir biçimde
 açıklayınız.
 
     - lspci
@@ -136,7 +124,7 @@ açıklayınız.
         - Güvenlik duvarı yöneticisi ile ilgili kuralları nasıl
           gözlemleyebiliriz?
 
-13. Aşağıda bulunan dosyalar nelerdir? Ayrıntılı olarak açıklayınız.
+12. Aşağıda bulunan dosyalar nelerdir? Ayrıntılı olarak açıklayınız.
     - /proc/cpuinfo
     - /proc/meminfo
     - /boot/grub/grub.conf
