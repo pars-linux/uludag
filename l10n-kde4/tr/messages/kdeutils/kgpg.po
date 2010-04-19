@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: detailedconsole.cpp:31
 msgctxt "see kdeui/dialogs/kmessagebox.cpp"
@@ -3184,9 +3184,8 @@ msgid "<p><b>Enter passphrase for %1</b>:<br />Passphrase should include non alp
 msgstr "<p><b>%1 için parolayı girin</b>:<br />Parola içinde sayısal olmayan karakterler ve rastgele diziler yer almalıdır.</p>"
 
 #: transactions/kgpggeneratekey.cpp:110
-#, fuzzy
 msgid "Generating Key"
-msgstr "Yeni Anahtar Oluşturuluyor..."
+msgstr "Anahtar Oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:122
 #, fuzzy
@@ -3199,9 +3198,8 @@ msgid "Generating DSA key"
 msgstr "Yeni anahtar çifti oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:126
-#, fuzzy
 msgid "Generating ElGamal key"
-msgstr "Yeni anahtar çifti oluşturuluyor"
+msgstr "ElGamal anahtarı oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:128
 msgid "Waiting for entropy"
@@ -3212,9 +3210,9 @@ msgid "The entropy pool ran empty. The key generation process is stalled until e
 msgstr ""
 
 #: transactions/kgpggeneratekey.cpp:159
-#, fuzzy, kde-format
+#, kde-format
 msgid "Key %1 generated"
-msgstr "Anahtar Üretimi"
+msgstr "%1 anahtarı oluşturuldu"
 
 #: transactions/kgpgimport.cpp:204
 msgid "The import result string has an unsupported format.<br />Please see the detailed log for more information."
@@ -3355,10 +3353,9 @@ msgid "Startup"
 msgstr ""
 
 #: transactions/kgpgtransactionjob.cpp:65
-#, fuzzy
 msgctxt "State of operation as in status"
 msgid "State"
-msgstr "Sınırsız"
+msgstr "Durum"
 
 #~ msgid "1 Key, 1 Group"
 #~ msgid_plural "%1 Keys, 1 Group"
