@@ -4,5 +4,3 @@ recursive-include po/ *.po *.pot
 recursive-include data/ *.png *.qrc *.rc *.gif *.desktop *.mng *.xml
 recursive-include ui/ *.ui
 recursive-include help/ *.css *.html
-
-

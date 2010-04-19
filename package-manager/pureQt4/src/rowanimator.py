@@ -40,7 +40,7 @@ class RowAnimator(object):
         self.timeLine.stop()
         self.timeLine.setCurrentTime(0)
         self.height = DEFAULT_HEIGHT
-        if self.row:
+        if self.row >= 0:
             self.t_view.setRowHeight(self.row, self.height)
         self.direction = DOWN
         self.row = row
