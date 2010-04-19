@@ -8,18 +8,19 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-17 01:22+0200\n"
-"PO-Revision-Date: 2009-10-28 15:42+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-19 16:01+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: app/extractHereDndPlugin.cpp:69 kerfuffle/extractiondialog.cpp:111
@@ -271,11 +272,10 @@ msgid "Found program '%1', but failed to initialize the process."
 msgstr "'%1' uygulaması bulundu ancak süreç başlatılamadı."
 
 #: kerfuffle/extractiondialog.cpp:60
-#, fuzzy
 #| msgid "Extract"
 msgctxt "@title:window"
 msgid "Extract"
-msgstr "Aç"
+msgstr "Çıkart"
 
 #: kerfuffle/extractiondialog.cpp:96
 msgid "Extract multiple archives"
@@ -421,11 +421,11 @@ msgstr "??"
 
 #: part/arkviewer.cpp:60
 msgid "Closing preview"
-msgstr ""
+msgstr "Önizleme kapatılıyor"
 
 #: part/arkviewer.cpp:61
 msgid "Please wait while the preview is being closed..."
-msgstr ""
+msgstr "Önizleme kapatılırken lütfen bekleyin..."
 
 #: part/arkviewer.cpp:79 part/arkviewer.cpp:86
 msgid "The internal viewer cannot preview this file."
@@ -890,11 +890,10 @@ msgstr "Alt dizinleri &otomatik olarak oluştur"
 #. i18n: file: kerfuffle/extractiondialog.ui:161
 #. i18n: ectx: property (title), widget (QGroupBox, filesToExtractGroupBox)
 #: rc.cpp:70
-#, fuzzy
 #| msgid "Extract"
 msgctxt "@title:group"
 msgid "Extract"
-msgstr "Aç"
+msgstr "Çıkar"
 
 #. i18n: file: kerfuffle/extractiondialog.ui:179
 #. i18n: ectx: property (text), widget (QRadioButton, selectedFilesButton)

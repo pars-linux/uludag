@@ -2,19 +2,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-08-01 13:15+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-19 15:58+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: program.cpp:66
 msgid "File(s) to load"
@@ -29,10 +30,9 @@ msgid "KDE byte editor"
 msgstr "KDE bayt düzenleyici"
 
 #: about.cpp:43
-#, fuzzy
 #| msgid "Copyright 2006-2009 Friedrich W. H. Kossebau"
 msgid "Copyright 2006-2010 Friedrich W. H. Kossebau"
-msgstr "Telif Hakları 2006-2009 Friedrich W. H. Kossebau"
+msgstr "Telif Hakkı 2006-2010 Friedrich W. H. Kossebau"
 
 #: about.cpp:44
 msgid "Edit the raw data of files"
@@ -49,12 +49,12 @@ msgstr "Yazar"
 #: about.cpp:52
 msgctxt "Author"
 msgid "Alexander Richardson"
-msgstr ""
+msgstr "Alexander Richardson"
 
 #: about.cpp:53
 msgctxt "Task description"
 msgid "Structures tool"
-msgstr ""
+msgstr "Yapı aracı"
 
 #. i18n: file: oktetaui.rc:15
 #. i18n: ectx: Menu (permission)
@@ -78,12 +78,12 @@ msgstr "Ana Araç Çubuğu"
 #: rc.cpp:10
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:11
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #~ msgctxt "@title:menu"
 #~ msgid "Insert"

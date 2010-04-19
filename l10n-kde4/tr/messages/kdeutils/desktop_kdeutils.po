@@ -8,18 +8,19 @@
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeutils\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-10 23:33+0000\n"
-"PO-Revision-Date: 2009-08-01 13:43+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-19 16:01+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ark/app/ark_addtoservicemenu.desktop:6
@@ -371,37 +372,37 @@ msgstr "KWallet Yönetim Aracı"
 #: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:7
 msgctxt "Name"
 msgid "Testing dynamic length arrays"
-msgstr ""
+msgstr "Dinamik uzunluklu diziler sınanıyor"
 
 #: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:37
 msgctxt "Comment"
 msgid "A test structure for dynamic arrays"
-msgstr ""
+msgstr "Dinamik diziler için test yapısı"
 
 #: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:7
 msgctxt "Name"
 msgid "ELF structure"
-msgstr ""
+msgstr "ELF yapısı"
 
 #: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:36
 msgctxt "Comment"
 msgid "Structure for Executable Linking Format (ELF)"
-msgstr ""
+msgstr "Executable Linking Format (ELF) Yapısı"
 
 #: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:7
 msgctxt "Name"
 msgid "Testing enums"
-msgstr ""
+msgstr "Enum'lar test ediliyor"
 
 #: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:37
 msgctxt "Comment"
 msgid "A test structure for enums"
-msgstr ""
+msgstr "Enum'lar için test yapısı"
 
 #: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:7
 msgctxt "Name"
 msgid "PNG file header"
-msgstr ""
+msgstr "PNG dosya başlığı"
 
 #: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:42
 msgctxt "Comment"
@@ -409,26 +410,28 @@ msgid ""
 "A test structure containing the PNG file header (file must be set to big-"
 "endian)"
 msgstr ""
+"PNG dosya başlığı içeren test yapısı (dosya big-endian olarak "
+"ayarlanmalı)"
 
 #: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:7
 msgctxt "Name"
 msgid "Another simple test"
-msgstr ""
+msgstr "Bir diğer basit test"
 
 #: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:40
 msgctxt "Comment"
 msgid "A few more test structures"
-msgstr ""
+msgstr "Bir kaç test yapısı daha"
 
 #: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:7
 msgctxt "Name"
 msgid "Simple test"
-msgstr ""
+msgstr "Basit test"
 
 #: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:41
 msgctxt "Comment"
 msgid "A few test structures"
-msgstr ""
+msgstr "Bir kaç test yapısı"
 
 #: okteta/parts/kbytesedit/kbytearrayedit.desktop:3
 msgctxt "Name"

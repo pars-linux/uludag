@@ -10,24 +10,25 @@
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcalc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-09 01:22+0200\n"
-"PO-Revision-Date: 2009-10-28 15:42+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-19 15:55+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kcalc_const_button.cpp:32 kcalc_const_button.cpp:44
 msgctxt "Write display data into memory"
 msgid "Store"
-msgstr ""
+msgstr "Sakla"
 
 #: kcalc_const_button.cpp:32 kcalc_const_button.cpp:44
 msgid "Write display data into memory"
@@ -106,7 +107,6 @@ msgid "Show B&it Edit"
 msgstr "B&it Düzenlemeyi Göster"
 
 #: kcalc.cpp:357
-#, fuzzy
 #| msgid "M+"
 msgctxt "Add display to memory"
 msgid "M+"
@@ -117,11 +117,10 @@ msgid "Add display to memory"
 msgstr "Görüntüyü hafızaya ekle"
 
 #: kcalc.cpp:358
-#, fuzzy
 #| msgid "M"
 msgctxt "Subtract from memory"
 msgid "M-"
-msgstr "M"
+msgstr "M-"
 
 #: kcalc.cpp:358
 msgid "Subtract from memory"
@@ -138,7 +137,6 @@ msgid "Cube root"
 msgstr "Küp kök"
 
 #: kcalc.cpp:493
-#, fuzzy
 #| msgid "Sin"
 msgctxt "Sine"
 msgid "Sin"
@@ -151,40 +149,36 @@ msgid "Sine"
 msgstr "Sinüs"
 
 #: kcalc.cpp:494
-#, fuzzy
 #| msgid "Arc sine"
 msgctxt "Arc sine"
 msgid "Asin"
-msgstr "Ark sinüs"
+msgstr "Asin"
 
 #: kcalc.cpp:494
 msgid "Arc sine"
 msgstr "Ark sinüs"
 
 #: kcalc.cpp:495
-#, fuzzy
 #| msgid "Sin"
 msgctxt "Hyperbolic sine"
 msgid "Sinh"
-msgstr "Sin"
+msgstr "Sinh"
 
 #: kcalc.cpp:495
 msgid "Hyperbolic sine"
 msgstr "Hiperbolik Sinüs"
 
 #: kcalc.cpp:497
-#, fuzzy
 #| msgid "Arc sine"
 msgctxt "Inverse hyperbolic sine"
 msgid "Asinh"
-msgstr "Ark sinüs"
+msgstr "Asinh"
 
 #: kcalc.cpp:497
 msgid "Inverse hyperbolic sine"
 msgstr "Ters hiperbolik sinüs"
 
 #: kcalc.cpp:504
-#, fuzzy
 #| msgid "Cos"
 msgctxt "Cosine"
 msgid "Cos"
@@ -199,18 +193,17 @@ msgstr "Kosinüs"
 #: kcalc.cpp:505
 msgctxt "Arc cosine"
 msgid "Acos"
-msgstr ""
+msgstr "Acos"
 
 #: kcalc.cpp:505
 msgid "Arc cosine"
 msgstr "Ark kosinüs"
 
 #: kcalc.cpp:506
-#, fuzzy
 #| msgid "Cos"
 msgctxt "Hyperbolic cosine"
 msgid "Cosh"
-msgstr "Cos"
+msgstr "Cosh"
 
 #: kcalc.cpp:506
 msgid "Hyperbolic cosine"
@@ -219,18 +212,17 @@ msgstr "Hiperbolik kosinüs"
 #: kcalc.cpp:508
 msgctxt "Inverse hyperbolic cosine"
 msgid "Acosh"
-msgstr ""
+msgstr "Acosh"
 
 #: kcalc.cpp:508
 msgid "Inverse hyperbolic cosine"
 msgstr "Ters hiperbolik kosinüs"
 
 #: kcalc.cpp:515
-#, fuzzy
 #| msgid "Tan"
 msgctxt "Tangent"
 msgid "Tan"
-msgstr "Tanjant"
+msgstr "Tan"
 
 #. i18n: file: kcalc.ui:349
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbTan)
@@ -241,18 +233,17 @@ msgstr "Tanjant"
 #: kcalc.cpp:516
 msgctxt "Arc tangent"
 msgid "Atan"
-msgstr ""
+msgstr "Atan"
 
 #: kcalc.cpp:516
 msgid "Arc tangent"
 msgstr "Ark tanjant"
 
 #: kcalc.cpp:517
-#, fuzzy
 #| msgid "Tan"
 msgctxt "Hyperbolic tangent"
 msgid "Tanh"
-msgstr "Tanjant"
+msgstr "Tanh"
 
 #: kcalc.cpp:517
 msgid "Hyperbolic tangent"
@@ -261,14 +252,13 @@ msgstr "Hiperbolik tanjant"
 #: kcalc.cpp:519
 msgctxt "Inverse hyperbolic tangent"
 msgid "Atanh"
-msgstr ""
+msgstr "Atanh"
 
 #: kcalc.cpp:519
 msgid "Inverse hyperbolic tangent"
 msgstr "Ters hiperbolik tanjant"
 
 #: kcalc.cpp:526
-#, fuzzy
 #| msgid "Log"
 msgctxt "Logarithm to base 10"
 msgid "Log"
@@ -283,14 +273,13 @@ msgstr "Logaritma tabanı 10"
 #: kcalc.cpp:527
 msgctxt "10 to the power of x"
 msgid "10<sup>x</sup>"
-msgstr ""
+msgstr "10<sup>x</sup>"
 
 #: kcalc.cpp:527
 msgid "10 to the power of x"
 msgstr "10'un x kuvveti"
 
 #: kcalc.cpp:533
-#, fuzzy
 #| msgid "Ln"
 msgctxt "Natural log"
 msgid "Ln"
@@ -305,14 +294,13 @@ msgstr "Doğal Logaritma"
 #: kcalc.cpp:534
 msgctxt "Exponential function"
 msgid "e<sup>x</sup>"
-msgstr ""
+msgstr "e<sup>x</sup>"
 
 #: kcalc.cpp:534
 msgid "Exponential function"
 msgstr "Üssel fonksiyon"
 
 #: kcalc.cpp:550
-#, fuzzy
 #| msgid "N"
 msgctxt "Number of data entered"
 msgid "N"
@@ -329,7 +317,6 @@ msgid "Sum of all data items"
 msgstr "Tüm veri ögelerinin toplamı"
 
 #: kcalc.cpp:559
-#, fuzzy
 #| msgid "Mea"
 msgctxt "Mean"
 msgid "Mea"
@@ -356,7 +343,6 @@ msgid "Sample standard deviation"
 msgstr "Örnek standart sapma"
 
 #: kcalc.cpp:583
-#, fuzzy
 #| msgid "Dat"
 msgctxt "Enter data"
 msgid "Dat"
@@ -369,18 +355,16 @@ msgid "Enter data"
 msgstr "Veri girin"
 
 #: kcalc.cpp:584
-#, fuzzy
 #| msgid "Dat"
 msgctxt "Delete last data item"
 msgid "CDat"
-msgstr "Dat"
+msgstr "CDat"
 
 #: kcalc.cpp:584
 msgid "Delete last data item"
 msgstr "Son veri ögesini sil"
 
 #: kcalc.cpp:650
-#, fuzzy
 #| msgid "Mod"
 msgctxt "Modulo"
 msgid "Mod"
@@ -393,22 +377,20 @@ msgid "Modulo"
 msgstr "Mod"
 
 #: kcalc.cpp:651
-#, fuzzy
 #| msgid "Inv"
 msgctxt "Integer division"
 msgid "IntDiv"
-msgstr "Inv"
+msgstr "IntDiv"
 
 #: kcalc.cpp:651
 msgid "Integer division"
 msgstr "Tamsayı bölmesi"
 
 #: kcalc.cpp:659
-#, fuzzy
 #| msgid "1/X"
 msgctxt "Reciprocal"
 msgid "1/x"
-msgstr "1/X"
+msgstr "1/x"
 
 #. i18n: file: kcalc.ui:243
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbReci)
@@ -417,18 +399,16 @@ msgid "Reciprocal"
 msgstr "Evrik değer"
 
 #: kcalc.cpp:660
-#, fuzzy
 #| msgid "Cmp"
 msgctxt "n Choose m"
 msgid "nCm"
-msgstr "Cmp"
+msgstr "nCm"
 
 #: kcalc.cpp:660
 msgid "n Choose m"
 msgstr "n Seç m"
 
 #: kcalc.cpp:667
-#, fuzzy
 #| msgid "x!"
 msgctxt "Factorial"
 msgid "x!"
@@ -443,7 +423,7 @@ msgstr "Faktöryel"
 #: kcalc.cpp:673
 msgctxt "Square"
 msgid "x<sup>2</sup>"
-msgstr ""
+msgstr "x<sup>2</sup>"
 
 #. i18n: file: kcalc.ui:372
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbSquare)
@@ -454,7 +434,7 @@ msgstr "Kare"
 #: kcalc.cpp:674
 msgctxt "Third power"
 msgid "x<sup>3</sup>"
-msgstr ""
+msgstr "x<sup>3</sup>"
 
 #: kcalc.cpp:674
 msgid "Third power"
@@ -463,7 +443,7 @@ msgstr "Küp"
 #: kcalc.cpp:683
 msgctxt "x to the power of y"
 msgid "x<sup>y</sup>"
-msgstr ""
+msgstr "x<sup>y</sup>"
 
 #. i18n: file: kcalc.ui:438
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbPower)
@@ -474,7 +454,7 @@ msgstr "x nin y kuvveti"
 #: kcalc.cpp:684
 msgctxt "x to the power of 1/y"
 msgid "x<sup>1/y</sup>"
-msgstr ""
+msgstr "x<sup>1/y</sup>"
 
 #: kcalc.cpp:684
 msgid "x to the power of 1/y"
@@ -1017,7 +997,6 @@ msgstr "Kullanıcının programlayabileceği sabitlerin listesi"
 
 #. i18n: file: kcalc.kcfg:146
 #: rc.cpp:225
-#, fuzzy
 #| msgid "C1"
 msgctxt "Name of the user programmable constant"
 msgid "C1"
@@ -1025,7 +1004,6 @@ msgstr "C1"
 
 #. i18n: file: kcalc.kcfg:147
 #: rc.cpp:227
-#, fuzzy
 #| msgid "C2"
 msgctxt "Name of the user programmable constant"
 msgid "C2"
@@ -1033,7 +1011,6 @@ msgstr "C2"
 
 #. i18n: file: kcalc.kcfg:148
 #: rc.cpp:229
-#, fuzzy
 #| msgid "C3"
 msgctxt "Name of the user programmable constant"
 msgid "C3"
@@ -1041,7 +1018,6 @@ msgstr "C3"
 
 #. i18n: file: kcalc.kcfg:149
 #: rc.cpp:231
-#, fuzzy
 #| msgid "C4"
 msgctxt "Name of the user programmable constant"
 msgid "C4"
@@ -1049,7 +1025,6 @@ msgstr "C4"
 
 #. i18n: file: kcalc.kcfg:150
 #: rc.cpp:233
-#, fuzzy
 #| msgid "C5"
 msgctxt "Name of the user programmable constant"
 msgid "C5"
@@ -1057,7 +1032,6 @@ msgstr "C5"
 
 #. i18n: file: kcalc.kcfg:151
 #: rc.cpp:235
-#, fuzzy
 #| msgid "C6"
 msgctxt "Name of the user programmable constant"
 msgid "C6"
