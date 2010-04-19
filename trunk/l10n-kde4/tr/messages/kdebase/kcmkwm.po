@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: main.cpp:81
 msgid "&Focus"
@@ -90,25 +90,10 @@ msgid "Matthias Hoelzer-Kluepfel"
 msgstr "Matthias Hoelzer-Kluepfel"
 
 #: main.cpp:169
-msgid ""
-"<p><h1>Window Behavior</h1> Here you can customize the way windows behave "
-"when being moved, resized or clicked on. You can also specify a focus policy "
-"as well as a placement policy for new windows.</p> <p>Please note that this "
-"configuration will not take effect if you do not use KWin as your window "
-"manager. If you do use a different window manager, please refer to its "
-"documentation for how to customize window behavior.</p>"
-msgstr ""
-"<p><h1>Pencere Davranışları</h1> Pencerelerin hareket ettirildiğinde, "
-"yeniden boyutlandırıldığında ve üzerine tıklandığında hangi davranışlar "
-"sergileyebileceğine buradan karar verebilirsiniz. Ayrıca, yeni pencereler "
-"için odaklama ve yerleşim yöntemini de belirleyebilirsiniz.</p> <p>Ancak "
-"KWin pencere yöneticisini kullanmıyorsanız burada yaptığınız seçenekler "
-"etkin olmayacaktır. Başka bir pencere yöneticisi kullanıyorsanız, pencere "
-"davranışlarını değiştirmek için lütfen onun yardım belgelerine bakınız.</p>"
+msgid "<p><h1>Window Behavior</h1> Here you can customize the way windows behave when being moved, resized or clicked on. You can also specify a focus policy as well as a placement policy for new windows.</p> <p>Please note that this configuration will not take effect if you do not use KWin as your window manager. If you do use a different window manager, please refer to its documentation for how to customize window behavior.</p>"
+msgstr "<p><h1>Pencere Davranışları</h1> Pencerelerin hareket ettirildiğinde, yeniden boyutlandırıldığında ve üzerine tıklandığında hangi davranışlar sergileyebileceğine buradan karar verebilirsiniz. Ayrıca, yeni pencereler için odaklama ve yerleşim yöntemini de belirleyebilirsiniz.</p> <p>Ancak KWin pencere yöneticisini kullanmıyorsanız burada yaptığınız seçenekler etkin olmayacaktır. Başka bir pencere yöneticisi kullanıyorsanız, pencere davranışlarını değiştirmek için lütfen onun yardım belgelerine bakınız.</p>"
 
 #: mouse.cpp:158
-#, fuzzy
-#| msgid "Maximize"
 msgctxt "@item:inlistbox behavior on double click"
 msgid "Maximize"
 msgstr "Büyüt"
@@ -122,8 +107,6 @@ msgid "Maximize (horizontal only)"
 msgstr "Büyüt (sadece yatay)"
 
 #: mouse.cpp:161
-#, fuzzy
-#| msgid "Minimize"
 msgctxt "@item:inlistbox behavior on double click"
 msgid "Minimize"
 msgstr "Küçült"
@@ -137,8 +120,6 @@ msgid "Lower"
 msgstr "Alçalt"
 
 #: mouse.cpp:164
-#, fuzzy
-#| msgid "On All Desktops"
 msgctxt "@item:inlistbox behavior on double click"
 msgid "On All Desktops"
 msgstr "Tüm Masaüstlerinde"
@@ -197,60 +178,40 @@ msgid "Titlebar && Frame"
 msgstr "Başlık Çubuğu ve Çerçeve"
 
 #: mouse.cpp:206
-msgid ""
-"Here you can customize mouse click behavior when clicking on the titlebar or "
-"the frame of a window."
-msgstr ""
-"Pencerelerin başlık çubuğuna veya çerçevesine fare ile tıklandığındaki "
-"davranışı buradan özelleştirebilirsiniz."
+msgid "Here you can customize mouse click behavior when clicking on the titlebar or the frame of a window."
+msgstr "Pencerelerin başlık çubuğuna veya çerçevesine fare ile tıklandığındaki davranışı buradan özelleştirebilirsiniz."
 
 #: mouse.cpp:211 mouse.cpp:363 mouse.cpp:661 mouse.cpp:773
 msgid "Left button:"
 msgstr "Sol düğme:"
 
 #: mouse.cpp:212 mouse.cpp:662 mouse.cpp:774
-msgid ""
-"In this row you can customize left click behavior when clicking into the "
-"titlebar or the frame."
-msgstr ""
-"Bu satırda başlık çubuğuna veya çerçeveye sol tıklandığındaki davranışı "
-"özelleştirebilirsiniz."
+msgid "In this row you can customize left click behavior when clicking into the titlebar or the frame."
+msgstr "Bu satırda başlık çubuğuna veya çerçeveye sol tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:215 mouse.cpp:365 mouse.cpp:669 mouse.cpp:781
 msgid "Right button:"
 msgstr "Sağ düğme:"
 
 #: mouse.cpp:216 mouse.cpp:670 mouse.cpp:782
-msgid ""
-"In this row you can customize right click behavior when clicking into the "
-"titlebar or the frame."
-msgstr ""
-"Bu satırda başlık çubuğuna veya çerçeveye sağ tıklandığındaki davranışı "
-"özelleştirebilirsiniz."
+msgid "In this row you can customize right click behavior when clicking into the titlebar or the frame."
+msgstr "Bu satırda başlık çubuğuna veya çerçeveye sağ tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:230 mouse.cpp:364 mouse.cpp:665 mouse.cpp:777
 msgid "Middle button:"
 msgstr "Orta düğme:"
 
 #: mouse.cpp:233 mouse.cpp:666 mouse.cpp:778
-msgid ""
-"In this row you can customize middle click behavior when clicking into the "
-"titlebar or the frame."
-msgstr ""
-"Bu satırda başlık çubuğuna veya çerçeveye orta düğmeyle tıklandığındaki "
-"davranışı özelleştirebilirsiniz."
+msgid "In this row you can customize middle click behavior when clicking into the titlebar or the frame."
+msgstr "Bu satırda başlık çubuğuna veya çerçeveye orta düğmeyle tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:242
 msgid "Active"
 msgstr "Etkin"
 
 #: mouse.cpp:245
-msgid ""
-"In this column you can customize mouse clicks into the titlebar or the frame "
-"of an active window."
-msgstr ""
-"Bu sütunda etkin bir pencerenin başlık çubuğuna veya çerçevesine "
-"tıklandığındaki davranışı özelleştirebilirsiniz."
+msgid "In this column you can customize mouse clicks into the titlebar or the frame of an active window."
+msgstr "Bu sütunda etkin bir pencerenin başlık çubuğuna veya çerçevesine tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:252 mouse.cpp:275 mouse.cpp:322 mouse.cpp:813
 msgid "Raise"
@@ -273,56 +234,32 @@ msgid "Start Window Tab Drag"
 msgstr ""
 
 #: mouse.cpp:262
-msgid ""
-"Behavior on <em>left</em> click into the titlebar or frame of an <em>active</"
-"em> window."
-msgstr ""
-"<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>sol</em> "
-"tıklandığındaki davranış."
+msgid "Behavior on <em>left</em> click into the titlebar or frame of an <em>active</em> window."
+msgstr "<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>sol</em> tıklandığındaki davranış."
 
 #: mouse.cpp:265
-msgid ""
-"Behavior on <em>right</em> click into the titlebar or frame of an "
-"<em>active</em> window."
-msgstr ""
-"<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>sağ</em> "
-"tıklandığındaki davranış."
+msgid "Behavior on <em>right</em> click into the titlebar or frame of an <em>active</em> window."
+msgstr "<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>sağ</em> tıklandığındaki davranış."
 
 #: mouse.cpp:290
-msgid ""
-"Behavior on <em>middle</em> click into the titlebar or frame of an "
-"<em>active</em> window."
-msgstr ""
-"<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>orta</em> "
-"tuşla tıklandığındaki davranış."
+msgid "Behavior on <em>middle</em> click into the titlebar or frame of an <em>active</em> window."
+msgstr "<em>Etkin</em> pencerenin başlık çubuğuna veya çerçevesine <em>orta</em> tuşla tıklandığındaki davranış."
 
 #: mouse.cpp:301
-msgid ""
-"Behavior on <em>left</em> click into the titlebar or frame of an "
-"<em>inactive</em> window."
-msgstr ""
-"<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine "
-"<em>sol</em> tıklandığındaki davranış."
+msgid "Behavior on <em>left</em> click into the titlebar or frame of an <em>inactive</em> window."
+msgstr "<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine <em>sol</em> tıklandığındaki davranış."
 
 #: mouse.cpp:304
-msgid ""
-"Behavior on <em>right</em> click into the titlebar or frame of an "
-"<em>inactive</em> window."
-msgstr ""
-"<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine "
-"<em>sağ</em> tıklandığındaki davranış."
+msgid "Behavior on <em>right</em> click into the titlebar or frame of an <em>inactive</em> window."
+msgstr "<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine <em>sağ</em> tıklandığındaki davranış."
 
 #: mouse.cpp:310
 msgid "Inactive"
 msgstr "Etkin olmayan"
 
 #: mouse.cpp:313
-msgid ""
-"In this column you can customize mouse clicks into the titlebar or the frame "
-"of an inactive window."
-msgstr ""
-"Bu sütunda etkin olmayan bir pencerenin başlık çubuğuna veya çerçevesine "
-"tıklandığındaki davranışı özelleştirebilirsiniz."
+msgid "In this column you can customize mouse clicks into the titlebar or the frame of an inactive window."
+msgstr "Bu sütunda etkin olmayan bir pencerenin başlık çubuğuna veya çerçevesine tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:317 mouse.cpp:700
 msgid "Activate & Raise"
@@ -337,12 +274,8 @@ msgid "Activate"
 msgstr "Etkinleştir"
 
 #: mouse.cpp:342
-msgid ""
-"Behavior on <em>middle</em> click into the titlebar or frame of an "
-"<em>inactive</em> window."
-msgstr ""
-"<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine "
-"<em>orta</em> tuşla tıklandığındaki davranış."
+msgid "Behavior on <em>middle</em> click into the titlebar or frame of an <em>inactive</em> window."
+msgstr "<em>Etkin olmayan</em> bir pencerenin başlık çubuğuna veya çerçevesine <em>orta</em> tuşla tıklandığındaki davranış."
 
 #: mouse.cpp:354
 msgid "Maximize Button"
@@ -350,8 +283,7 @@ msgstr "Büyütme Düğmesi"
 
 #: mouse.cpp:358
 msgid "Here you can customize behavior when clicking on the maximize button."
-msgstr ""
-"Büyütme düğmesine tıklandığındaki davranışı buradan özelleştirebilirsiniz."
+msgstr "Büyütme düğmesine tıklandığındaki davranışı buradan özelleştirebilirsiniz."
 
 #: mouse.cpp:368
 msgid "Behavior on <em>left</em> click onto the maximize button."
@@ -370,49 +302,28 @@ msgid "Inactive Inner Window"
 msgstr "Etkin Olmayan Pencerenin İçi"
 
 #: mouse.cpp:656
-msgid ""
-"Here you can customize mouse click behavior when clicking on an inactive "
-"inner window ('inner' means: not titlebar, not frame)."
-msgstr ""
-"Etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki bölgeye) fare "
-"ile tıklandığındaki davranışı buradan özelleştirebilirsiniz."
+msgid "Here you can customize mouse click behavior when clicking on an inactive inner window ('inner' means: not titlebar, not frame)."
+msgstr "Etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki bölgeye) fare ile tıklandığındaki davranışı buradan özelleştirebilirsiniz."
 
 #: mouse.cpp:673
 msgid "Wheel"
 msgstr "Fare Tekeri"
 
 #: mouse.cpp:681
-msgid ""
-"In this row you can customize left click behavior when clicking into an "
-"inactive inner window ('inner' means: not titlebar, not frame)."
-msgstr ""
-"Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki "
-"bölgeye) sol tıklandığındaki davranışı özelleştirebilirsiniz."
+msgid "In this row you can customize left click behavior when clicking into an inactive inner window ('inner' means: not titlebar, not frame)."
+msgstr "Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki bölgeye) sol tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:684
-msgid ""
-"In this row you can customize middle click behavior when clicking into an "
-"inactive inner window ('inner' means: not titlebar, not frame)."
-msgstr ""
-"Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki "
-"bölgeye) orta düğmeyle tıklandığındaki davranışı özelleştirebilirsiniz."
+msgid "In this row you can customize middle click behavior when clicking into an inactive inner window ('inner' means: not titlebar, not frame)."
+msgstr "Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki bölgeye) orta düğmeyle tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:687
-msgid ""
-"In this row you can customize right click behavior when clicking into an "
-"inactive inner window ('inner' means: not titlebar, not frame)."
-msgstr ""
-"Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki "
-"bölgeye) sağ tıklandığındaki davranışı özelleştirebilirsiniz."
+msgid "In this row you can customize right click behavior when clicking into an inactive inner window ('inner' means: not titlebar, not frame)."
+msgstr "Bu satırda, etkin olmayan pencerenin içine (başlık ve çerçeve haricindeki bölgeye) sağ tıklandığındaki davranışı özelleştirebilirsiniz."
 
 #: mouse.cpp:690
-msgid ""
-"In this row you can customize behavior when scrolling into an inactive inner "
-"window ('inner' means: not titlebar, not frame)."
-msgstr ""
-"Bu satırdan, pasif bir iç pencere üzerinde kaydırma yapıldığında nasıl "
-"davranılacağını özelleştirebilirsiniz ('iç' şu anlama gelir: Başlık çubuğu "
-"ve çerçeve değil)."
+msgid "In this row you can customize behavior when scrolling into an inactive inner window ('inner' means: not titlebar, not frame)."
+msgstr "Bu satırdan, pasif bir iç pencere üzerinde kaydırma yapıldığında nasıl davranılacağını özelleştirebilirsiniz ('iç' şu anlama gelir: Başlık çubuğu ve çerçeve değil)."
 
 #: mouse.cpp:697
 msgid "Activate, Raise & Pass Click"
@@ -439,12 +350,8 @@ msgid "Inner Window, Titlebar && Frame"
 msgstr "Pencere İçi, Başlık Çubuğu ve Çerçeve"
 
 #: mouse.cpp:763
-msgid ""
-"Here you can customize KDE's behavior when clicking somewhere into a window "
-"while pressing a modifier key."
-msgstr ""
-"Bir pencereye değiştirici tuşlara basarken tıkladığınızdaki KDE davranışını "
-"buradan özelleştirebilirsiniz."
+msgid "Here you can customize KDE's behavior when clicking somewhere into a window while pressing a modifier key."
+msgstr "Bir pencereye değiştirici tuşlara basarken tıkladığınızdaki KDE davranışını buradan özelleştirebilirsiniz."
 
 #: mouse.cpp:793
 msgid "Meta"
@@ -455,12 +362,8 @@ msgid "Alt"
 msgstr "Alt"
 
 #: mouse.cpp:797
-msgid ""
-"Here you select whether holding the Meta key or Alt key will allow you to "
-"perform the following actions."
-msgstr ""
-"Meta ve Alt tuşlarına basılı tutmanın aşağıdaki eylemleri yapmanıza izin "
-"verip vermeyeceğini buradan seçebilirsiniz."
+msgid "Here you select whether holding the Meta key or Alt key will allow you to perform the following actions."
+msgstr "Meta ve Alt tuşlarına basılı tutmanın aşağıdaki eylemleri yapmanıza izin verip vermeyeceğini buradan seçebilirsiniz."
 
 #: mouse.cpp:800
 msgid "Modifier key:"
@@ -483,12 +386,8 @@ msgid "Minimize"
 msgstr "Küçült"
 
 #: mouse.cpp:867
-msgid ""
-"Here you can customize KDE's behavior when scrolling with the mouse wheel in "
-"a window while pressing the modifier key."
-msgstr ""
-"Bir pencereye değiştirici tuşa basarken fare tekerleğini kaydırdığınızdaki "
-"KDE davranışını buradan özelleştirebilirsiniz."
+msgid "Here you can customize KDE's behavior when scrolling with the mouse wheel in a window while pressing the modifier key."
+msgstr "Bir pencereye değiştirici tuşa basarken fare tekerleğini kaydırdığınızdaki KDE davranışını buradan özelleştirebilirsiniz."
 
 #: mouse.cpp:870
 msgid "Mouse wheel:"
@@ -530,40 +429,8 @@ msgid "Extreme"
 msgstr "Çok Yüksek"
 
 #: windows.cpp:125
-msgid ""
-"<p>This option specifies how much KWin will try to prevent unwanted focus "
-"stealing caused by unexpected activation of new windows. (Note: This feature "
-"does not work with the Focus Under Mouse or Focus Strictly Under Mouse focus "
-"policies.)<ul><li><em>None:</em> Prevention is turned off and new windows "
-"always become activated.</li><li><em>Low:</em> Prevention is enabled; when "
-"some window does not have support for the underlying mechanism and KWin "
-"cannot reliably decide whether to activate the window or not, it will be "
-"activated. This setting may have both worse and better results than the "
-"medium level, depending on the applications.</li><li><em>Medium:</em> "
-"Prevention is enabled.</li><li><em>High:</em> New windows get activated only "
-"if no window is currently active or if they belong to the currently active "
-"application. This setting is probably not really usable when not using mouse "
-"focus policy.</li><li><em>Extreme:</em> All windows must be explicitly "
-"activated by the user.</li></ul></p><p>Windows that are prevented from "
-"stealing focus are marked as demanding attention, which by default means "
-"their taskbar entry will be highlighted. This can be changed in the "
-"Notifications control module.</p>"
-msgstr ""
-"<p>Bu ayar, KWin'in, yeni pencerelerin beklenmedik bir şekilde etkin "
-"olmasından kaynaklanan odak çalmasını engellemek için ne kadar uğraşacağını "
-"belirler. (Not: Bu özellik Farenin Altından Odaklama veya Farenin Tam "
-"Altından Odaklama yöntemleriyle çalışmaz.)<ul><li><em>Hiçbiri:</em> "
-"Engelleme kapalıdır ve yeni pencereler her zaman etkin olur.</"
-"li><li><em>Düşük:</em> Engelleme açıktır; bazı pencereler altyapıyı "
-"desteklemiyorlarsa ve KWin doğru bir şekilde karar veremiyorsa "
-"etkinleşecektir.</li><li><em>Orta:</em> Engelleme açıktır.</"
-"li><li><em>Yüksek:</em> Yeni pencereler sadece hiçbir pencere etkin değilse "
-"veya geçerli uygulamaya aitse etkinleştirilir. Bu ayar fare odaklama yöntemi "
-"kullanılmıyorsa kullanışlı olmayabilir.</li><li><em>Çok Yüksek:</em> Tüm "
-"pencereler kullanıcı tarafından etkinleştirilmelidir.</li></ul></p><p>Odak "
-"çalması engellenen pencereler ilgi istiyor olarak işaretlenir, yani "
-"öntanımlı olarak görev çubuğu girdisi vurgulanır. Bu davranış Bildirimler "
-"kontrol modülünden değiştirilebilir.</p>"
+msgid "<p>This option specifies how much KWin will try to prevent unwanted focus stealing caused by unexpected activation of new windows. (Note: This feature does not work with the Focus Under Mouse or Focus Strictly Under Mouse focus policies.)<ul><li><em>None:</em> Prevention is turned off and new windows always become activated.</li><li><em>Low:</em> Prevention is enabled; when some window does not have support for the underlying mechanism and KWin cannot reliably decide whether to activate the window or not, it will be activated. This setting may have both worse and better results than the medium level, depending on the applications.</li><li><em>Medium:</em> Prevention is enabled.</li><li><em>High:</em> New windows get activated only if no window is currently active or if they belong to the currently active application. This setting is probably not really usable when not using mouse focus policy.</li><li><em>Extreme:</em> All windows must be explicitly activated by the user.</li></ul></p><p>Windows that are prevented from stealing focus are marked as demanding attention, which by default means their taskbar entry will be highlighted. This can be changed in the Notifications control module.</p>"
+msgstr "<p>Bu ayar, KWin'in, yeni pencerelerin beklenmedik bir şekilde etkin olmasından kaynaklanan odak çalmasını engellemek için ne kadar uğraşacağını belirler. (Not: Bu özellik Farenin Altından Odaklama veya Farenin Tam Altından Odaklama yöntemleriyle çalışmaz.)<ul><li><em>Hiçbiri:</em> Engelleme kapalıdır ve yeni pencereler her zaman etkin olur.</li><li><em>Düşük:</em> Engelleme açıktır; bazı pencereler altyapıyı desteklemiyorlarsa ve KWin doğru bir şekilde karar veremiyorsa etkinleşecektir.</li><li><em>Orta:</em> Engelleme açıktır.</li><li><em>Yüksek:</em> Yeni pencereler sadece hiçbir pencere etkin değilse veya geçerli uygulamaya aitse etkinleştirilir. Bu ayar fare odaklama yöntemi kullanılmıyorsa kullanışlı olmayabilir.</li><li><em>Çok Yüksek:</em> Tüm pencereler kullanıcı tarafından etkinleştirilmelidir.</li></ul></p><p>Odak çalması engellenen pencereler ilgi istiyor olarak işaretlenir, yani öntanımlı olarak görev çubuğu girdisi vurgulanır. Bu davranış Bildirimler kontrol modülünden değiştirilebilir.</p>"
 
 #: windows.cpp:147
 msgid "Focus stealing prevention level:"
@@ -590,37 +457,8 @@ msgid "&Policy:"
 msgstr "&Yöntem:"
 
 #: windows.cpp:168
-msgid ""
-"The focus policy is used to determine the active window, i.e. the window you "
-"can work in. <ul> <li><em>Click to focus:</em> A window becomes active when "
-"you click into it. This is the behavior you might know from other operating "
-"systems.</li> <li><em>Focus follows mouse:</em> Moving the mouse pointer "
-"actively on to a normal window activates it. New windows will receive the "
-"focus, without you having to point the mouse at them explicitly. Very "
-"practical if you are using the mouse a lot.</li> <li><em>Focus under mouse:</"
-"em> The window that happens to be under the mouse pointer is active. If the "
-"mouse points nowhere, the last window that was under the mouse has focus. "
-"New windows will not automatically receive the focus.</li> <li><em>Focus "
-"strictly under mouse:</em> Only the window under the mouse pointer is "
-"active. If the mouse points nowhere, nothing has focus.</li> </ul>Note that "
-"'Focus under mouse' and 'Focus strictly under mouse' prevent certain "
-"features such as the Alt+Tab walk through windows dialog in the KDE mode "
-"from working properly."
-msgstr ""
-"Odak yöntemi etkin (içerisinde çalışabileceğiniz) pencereyi belirlemek için "
-"kullanılır. <ul> <li><em>Tıklayarak odaklama:</em> Pencere siz "
-"tıkladığınızda etkin olur. Bu diğer işletim sistemlerinden de "
-"hatırlayabileceğiniz bir davranıştır.</li> <li><em>Fare ile Odaklama:</em> "
-"Fare imlecini normal bir pencerenin üstünde hareket ettirmek onu etkin "
-"yapar. Yeni pencereler odağı alır fakat fareyi onların üzerine götürmeniz "
-"gerekmez. Eğer fareyi çok kullanıyorsanız oldukça pratik bir çözümdür.</li> "
-"<li><em>Farenin Altından Odaklama:</em> Fare imlecinin altındaki pencere "
-"aktif olur. Eğer fare herhangi bir pencerede değilse, farenin altında olan "
-"son pencere odağı alır. </li><li><em>Farenin Tam Altından Odaklama:</em> "
-"Sadece farenin altında olan pencere aktif olur. Eğer fare herhangi bir "
-"pencerede değilse, hiçbiri odağı almaz. </li> </ul>'Farenin Altından "
-"Odaklama' ve 'Farenin Tam Altından Odaklama', KDE kipinde Alt+Tab ile "
-"pencereler arasında gezinmek gibi belli özelliklerin çalışmasını engeller."
+msgid "The focus policy is used to determine the active window, i.e. the window you can work in. <ul> <li><em>Click to focus:</em> A window becomes active when you click into it. This is the behavior you might know from other operating systems.</li> <li><em>Focus follows mouse:</em> Moving the mouse pointer actively on to a normal window activates it. New windows will receive the focus, without you having to point the mouse at them explicitly. Very practical if you are using the mouse a lot.</li> <li><em>Focus under mouse:</em> The window that happens to be under the mouse pointer is active. If the mouse points nowhere, the last window that was under the mouse has focus. New windows will not automatically receive the focus.</li> <li><em>Focus strictly under mouse:</em> Only the window under the mouse pointer is active. If the mouse points nowhere, nothing has focus.</li> </ul>Note that 'Focus under mouse' and 'Focus strictly under mouse' prevent certain features such as the Alt+Tab walk through windows dialog in the KDE mode from working properly."
+msgstr "Odak yöntemi etkin (içerisinde çalışabileceğiniz) pencereyi belirlemek için kullanılır. <ul> <li><em>Tıklayarak odaklama:</em> Pencere siz tıkladığınızda etkin olur. Bu diğer işletim sistemlerinden de hatırlayabileceğiniz bir davranıştır.</li> <li><em>Fare ile Odaklama:</em> Fare imlecini normal bir pencerenin üstünde hareket ettirmek onu etkin yapar. Yeni pencereler odağı alır fakat fareyi onların üzerine götürmeniz gerekmez. Eğer fareyi çok kullanıyorsanız oldukça pratik bir çözümdür.</li> <li><em>Farenin Altından Odaklama:</em> Fare imlecinin altındaki pencere aktif olur. Eğer fare herhangi bir pencerede değilse, farenin altında olan son pencere odağı alır. </li><li><em>Farenin Tam Altından Odaklama:</em> Sadece farenin altında olan pencere aktif olur. Eğer fare herhangi bir pencerede değilse, hiçbiri odağı almaz. </li> </ul>'Farenin Altından Odaklama' ve 'Farenin Tam Altından Odaklama', KDE kipinde Alt+Tab ile pencereler arasında gezinmek gibi belli özelliklerin çalışmasını engeller."
 
 #: windows.cpp:197 windows.cpp:213 windows.cpp:537
 msgid " ms"
@@ -639,76 +477,40 @@ msgid "C&lick raises active window"
 msgstr "Tık&lama etkin pencereyi yükseltir"
 
 #: windows.cpp:226
-msgid ""
-"When this option is enabled, a window in the background will automatically "
-"come to the front when the mouse pointer has been over it for some time."
-msgstr ""
-"Bu seçenek etkin ise, arka plandaki bir pencerenin üzerine fareyi getirip "
-"bir süre tuttuğunuz zaman bu pencere otomatik olarak öne getirilecektir."
+msgid "When this option is enabled, a window in the background will automatically come to the front when the mouse pointer has been over it for some time."
+msgstr "Bu seçenek etkin ise, arka plandaki bir pencerenin üzerine fareyi getirip bir süre tuttuğunuz zaman bu pencere otomatik olarak öne getirilecektir."
 
 #: windows.cpp:228
-msgid ""
-"This is the delay after which the window that the mouse pointer is over will "
-"automatically come to the front."
-msgstr ""
-"Bu arka plandaki bir pencerenin fare işaretçisinin üzerinde ne kadar "
-"kalmasıyla aktif olacağı süreyi belirler."
+msgid "This is the delay after which the window that the mouse pointer is over will automatically come to the front."
+msgstr "Bu arka plandaki bir pencerenin fare işaretçisinin üzerinde ne kadar kalmasıyla aktif olacağı süreyi belirler."
 
 #: windows.cpp:232
-msgid ""
-"When this option is enabled, the active window will be brought to the front "
-"when you click somewhere into the window contents. To change it for inactive "
-"windows, you need to change the settings in the Actions tab."
-msgstr ""
-"Eğer bir pencerenin içeriğine tıkladığınızda pencerenin otomatik olarak ön "
-"plana gelmesini istiyorsanız bu özelliği etkinleştirin. Etkin olamayan "
-"pencereler için değiştirmek istiyorsanız, Olaylar sekmesindeki ayarları "
-"değiştirmeniz gerekir."
+msgid "When this option is enabled, the active window will be brought to the front when you click somewhere into the window contents. To change it for inactive windows, you need to change the settings in the Actions tab."
+msgstr "Eğer bir pencerenin içeriğine tıkladığınızda pencerenin otomatik olarak ön plana gelmesini istiyorsanız bu özelliği etkinleştirin. Etkin olamayan pencereler için değiştirmek istiyorsanız, Olaylar sekmesindeki ayarları değiştirmeniz gerekir."
 
 #: windows.cpp:237
-msgid ""
-"When this option is enabled, there will be a delay after which the window "
-"the mouse pointer is over will become active (receive focus)."
-msgstr ""
-"Bu seçenek etkinleştirildiğinde, arka plandaki bir pencere fare "
-"işaretçisinin altında belli bir süre kaldıktan sonra etkin olacaktır."
+msgid "When this option is enabled, there will be a delay after which the window the mouse pointer is over will become active (receive focus)."
+msgstr "Bu seçenek etkinleştirildiğinde, arka plandaki bir pencere fare işaretçisinin altında belli bir süre kaldıktan sonra etkin olacaktır."
 
 #: windows.cpp:239
-msgid ""
-"This is the delay after which the window the mouse pointer is over will "
-"automatically receive focus."
-msgstr ""
-"Bu, arka plandaki bir pencerenin fare işaretçisinin altında kalmasıyla aktif "
-"olacağı gecikme süresidir."
+msgid "This is the delay after which the window the mouse pointer is over will automatically receive focus."
+msgstr "Bu, arka plandaki bir pencerenin fare işaretçisinin altında kalmasıyla aktif olacağı gecikme süresidir."
 
 #: windows.cpp:242
 msgid "S&eparate screen focus"
 msgstr "&Ekran odaklanmasını ayır"
 
 #: windows.cpp:244
-msgid ""
-"When this option is enabled, focus operations are limited only to the active "
-"Xinerama screen"
-msgstr ""
-"Bu ayar etkinse, odaklama işlemleri sadece etkin olan Xinerama ekranında "
-"geçerli olur"
+msgid "When this option is enabled, focus operations are limited only to the active Xinerama screen"
+msgstr "Bu ayar etkinse, odaklama işlemleri sadece etkin olan Xinerama ekranında geçerli olur"
 
 #: windows.cpp:247
 msgid "Active screen follows &mouse"
 msgstr "Etkin pencere fareyi &izlesin"
 
 #: windows.cpp:249
-msgid ""
-"When this option is enabled, the active Xinerama screen (where new windows "
-"appear, for example) is the screen containing the mouse pointer. When "
-"disabled, the active Xinerama screen is the  screen containing the focused "
-"window. By default this option is disabled for Click to focus and enabled "
-"for other focus policies."
-msgstr ""
-"Bu ayar etkinse, etkin Xinemara ekranı (örneğin yeni pencerelerin açıldığı "
-"ekran) fare işaretçisinin olduğu ekrandır. Etkin değilse, etkin Xinemara "
-"ekranı odaklı pencerenin olduğu ekrandır. Bu ayar Tıklayarak odaklama için "
-"öntanımlı olarak etkin değildir, diğer odaklama yöntemleri için etkindir."
+msgid "When this option is enabled, the active Xinerama screen (where new windows appear, for example) is the screen containing the mouse pointer. When disabled, the active Xinerama screen is the  screen containing the focused window. By default this option is disabled for Click to focus and enabled for other focus policies."
+msgstr "Bu ayar etkinse, etkin Xinemara ekranı (örneğin yeni pencerelerin açıldığı ekran) fare işaretçisinin olduğu ekrandır. Etkin değilse, etkin Xinemara ekranı odaklı pencerenin olduğu ekrandır. Bu ayar Tıklayarak odaklama için öntanımlı olarak etkin değildir, diğer odaklama yöntemleri için etkindir."
 
 #: windows.cpp:526
 msgid "Shading"
@@ -719,48 +521,35 @@ msgid "&Enable hover"
 msgstr "&Otomatik Açıl"
 
 #: windows.cpp:539
-msgid ""
-"If Shade Hover is enabled, a shaded window will un-shade automatically when "
-"the mouse pointer has been over the title bar for some time."
-msgstr ""
-"Eğer 'Otomatik Açıl' etkin ise, fare işaretçisi başlık çubuğunun üzerinde "
-"bir süre kaldığında gizlenmiş pencere kendiliğinden açılacaktır."
+msgid "If Shade Hover is enabled, a shaded window will un-shade automatically when the mouse pointer has been over the title bar for some time."
+msgstr "Eğer 'Otomatik Açıl' etkin ise, fare işaretçisi başlık çubuğunun üzerinde bir süre kaldığında gizlenmiş pencere kendiliğinden açılacaktır."
 
 #: windows.cpp:542
-msgid ""
-"Sets the time in milliseconds before the window unshades when the mouse "
-"pointer goes over the shaded window."
-msgstr ""
-"Fare işaretçisinin üzerine gitmesiyle pencere açığa çıkmadan önce kaç "
-"milisaniye bekleneceğini belirler."
+msgid "Sets the time in milliseconds before the window unshades when the mouse pointer goes over the shaded window."
+msgstr "Fare işaretçisinin üzerine gitmesiyle pencere açığa çıkmadan önce kaç milisaniye bekleneceğini belirler."
 
 #: windows.cpp:546
 msgid "Dela&y:"
 msgstr "&Gecikme:"
 
 #: windows.cpp:558
-#, fuzzy
-#| msgctxt "@title:group"
-#| msgid "Window Switching"
 msgid "Window Tabbing"
 msgstr "Pencere Değiştirme"
 
 #: windows.cpp:561
 msgid "Hide inactive window tabs from the taskbar"
-msgstr ""
+msgstr "Görev çubuğundan aktif olmayan pencere sekmelerini gizle"
 
 #: windows.cpp:564
 msgid "When turned on hide all tabs that are not active from the taskbar."
-msgstr ""
+msgstr "Etkinleştirildiğinde görev çubuğundaki aktif olmayan tüm sekmeleri gizler."
 
 #: windows.cpp:568
 msgid "Automatically group similar windows"
-msgstr ""
+msgstr "Benzer pencereleri otomatik grupla"
 
 #: windows.cpp:570
-msgid ""
-"When turned on attempt to automatically detect when a newly opened window is "
-"related to an existing one and place them in the same window group."
+msgid "When turned on attempt to automatically detect when a newly opened window is related to an existing one and place them in the same window group."
 msgstr ""
 
 #: windows.cpp:575
@@ -768,9 +557,7 @@ msgid "Switch to automatically grouped windows immediately"
 msgstr ""
 
 #: windows.cpp:577
-msgid ""
-"When turned on immediately switch to any new window tabs that were "
-"automatically added to the current group."
+msgid "When turned on immediately switch to any new window tabs that were automatically added to the current group."
 msgstr ""
 
 #: windows.cpp:595
@@ -798,25 +585,8 @@ msgid "Zero-Cornered"
 msgstr "Sıfır Köşeli"
 
 #: windows.cpp:607
-msgid ""
-"The placement policy determines where a new window will appear on the "
-"desktop. <ul> <li><em>Smart</em> will try to achieve a minimum overlap of "
-"windows</li> <li><em>Maximizing</em> will try to maximize every window to "
-"fill the whole screen. It might be useful to selectively affect placement of "
-"some windows using the window-specific settings.</li> <li><em>Cascade</em> "
-"will cascade the windows</li> <li><em>Random</em> will use a random "
-"position</li> <li><em>Centered</em> will place the window centered</li> "
-"<li><em>Zero-Cornered</em> will place the window in the top-left corner</"
-"li></ul>"
-msgstr ""
-"Yerleştirme yöntemi, yeni pencerenin masa üstünde nerede konumlanacağına "
-"karar verir. <ul> <li><em>Akıllı</em> pencerelerin üst üste gelmesini en aza "
-"indirmeye çalışacaktır.</li> <li><em>Büyülterek</em> her pencereyi ekranın "
-"tamamını dolduracak şekilde büyültmeye çalışacaktır.</li> <li><em>Kademeli</"
-"em> pencereleri kademeli olarak döşeyecektir.</li> <li><em>Rastgele</em> "
-"rastgele bir yerleşim kullanacaktır.</li> <li><em>Ortalanmış</em> pencereyi "
-"ortaya yerleştirecektir.</li> <li><em>Sıfır Köşeli</em> pencereyi sol üst "
-"köşeye yerleştirecektir.</li></ul>"
+msgid "The placement policy determines where a new window will appear on the desktop. <ul> <li><em>Smart</em> will try to achieve a minimum overlap of windows</li> <li><em>Maximizing</em> will try to maximize every window to fill the whole screen. It might be useful to selectively affect placement of some windows using the window-specific settings.</li> <li><em>Cascade</em> will cascade the windows</li> <li><em>Random</em> will use a random position</li> <li><em>Centered</em> will place the window centered</li> <li><em>Zero-Cornered</em> will place the window in the top-left corner</li></ul>"
+msgstr "Yerleştirme yöntemi, yeni pencerenin masa üstünde nerede konumlanacağına karar verir. <ul> <li><em>Akıllı</em> pencerelerin üst üste gelmesini en aza indirmeye çalışacaktır.</li> <li><em>Büyülterek</em> her pencereyi ekranın tamamını dolduracak şekilde büyültmeye çalışacaktır.</li> <li><em>Kademeli</em> pencereleri kademeli olarak döşeyecektir.</li> <li><em>Rastgele</em> rastgele bir yerleşim kullanacaktır.</li> <li><em>Ortalanmış</em> pencereyi ortaya yerleştirecektir.</li> <li><em>Sıfır Köşeli</em> pencereyi sol üst köşeye yerleştirecektir.</li></ul>"
 
 #: windows.cpp:623
 msgid "&Placement:"
@@ -827,16 +597,8 @@ msgid "Hide utility windows for inactive applications"
 msgstr "Etkin olmayan uygulamaların yardımcı pencerelerini gizle"
 
 #: windows.cpp:633
-msgid ""
-"When turned on, utility windows (tool windows, torn-off menus,...) of "
-"inactive applications will be hidden and will be shown only when the "
-"application becomes active. Note that applications have to mark the windows "
-"with the proper window type for this feature to work."
-msgstr ""
-"Açıldığında, etkin olmayan pencerelere ait yardımcı pencereler (araç "
-"pencereleri, ayrık menüler, ...) gizlenecektir ve sadece uygulama etkin "
-"olduğunda gösterilecektir. Bu özelliğin çalışması için uygulamaların "
-"pencerelerini doğru şekilde işaretlemeleri gereklidir."
+msgid "When turned on, utility windows (tool windows, torn-off menus,...) of inactive applications will be hidden and will be shown only when the application becomes active. Note that applications have to mark the windows with the proper window type for this feature to work."
+msgstr "Açıldığında, etkin olmayan pencerelere ait yardımcı pencereler (araç pencereleri, ayrık menüler, ...) gizlenecektir ve sadece uygulama etkin olduğunda gösterilecektir. Bu özelliğin çalışması için uygulamaların pencerelerini doğru şekilde işaretlemeleri gereklidir."
 
 #: windows.cpp:828
 msgid "Windows"
@@ -847,78 +609,45 @@ msgid "Di&splay content in moving windows"
 msgstr "&Taşırken pencerelerin içeriğini göster"
 
 #: windows.cpp:837
-msgid ""
-"Enable this option if you want a window's content to be fully shown while "
-"moving it, instead of just showing a window 'skeleton'. The result may not "
-"be satisfying on slow machines without graphic acceleration."
-msgstr ""
-"Eğer pencereyi hareket ettiğinizde sadece iskelet olarak gözükmesini "
-"istemiyor, pencere içeriğinin de gözükmesini istiyorsanız bu özelliği "
-"kullanın. Grafik hızlandırıcısı olmayan yavaş makinelerde sonuç tatmin edici "
-"olmayabilir."
+msgid "Enable this option if you want a window's content to be fully shown while moving it, instead of just showing a window 'skeleton'. The result may not be satisfying on slow machines without graphic acceleration."
+msgstr "Eğer pencereyi hareket ettiğinizde sadece iskelet olarak gözükmesini istemiyor, pencere içeriğinin de gözükmesini istiyorsanız bu özelliği kullanın. Grafik hızlandırıcısı olmayan yavaş makinelerde sonuç tatmin edici olmayabilir."
 
 #: windows.cpp:841
 msgid "Display content in &resizing windows"
 msgstr "&Yeniden boyutlandırılan pencerelerin içeriğini göster"
 
 #: windows.cpp:843
-msgid ""
-"Enable this option if you want a window's content to be shown while resizing "
-"it, instead of just showing a window 'skeleton'. The result may not be "
-"satisfying on slow machines."
-msgstr ""
-"Eğer pencereyi yeniden boyutlandırdığınızda sadece iskelet olarak "
-"gözükmesini istemiyor, pencere içeriğinin de gözükmesini istiyorsanız bu "
-"özelliği kullanın. Yavaş makinelerde sonuç tatmin edici olmayabilir."
+msgid "Enable this option if you want a window's content to be shown while resizing it, instead of just showing a window 'skeleton'. The result may not be satisfying on slow machines."
+msgstr "Eğer pencereyi yeniden boyutlandırdığınızda sadece iskelet olarak gözükmesini istemiyor, pencere içeriğinin de gözükmesini istiyorsanız bu özelliği kullanın. Yavaş makinelerde sonuç tatmin edici olmayabilir."
 
 #: windows.cpp:847
 msgid "Display window &geometry when moving or resizing"
 msgstr "Taşıma ve yeniden boyutlandırma sırasında pencere &boyutlarını göster"
 
 #: windows.cpp:849
-msgid ""
-"Enable this option if you want a window's geometry to be displayed while it "
-"is being moved or resized. The window position relative to the top-left "
-"corner of the screen is displayed together with its size."
-msgstr ""
-"Bir pencereyi taşırken veya yeniden boyutlandırırken pencere boyutunun "
-"gösterilmesini istiyorsanız bu ayarı etkinleştirin. Ekranın sol üst köşesine "
-"olan uzaklığı boyut ile birlikte gösterilir."
+msgid "Enable this option if you want a window's geometry to be displayed while it is being moved or resized. The window position relative to the top-left corner of the screen is displayed together with its size."
+msgstr "Bir pencereyi taşırken veya yeniden boyutlandırırken pencere boyutunun gösterilmesini istiyorsanız bu ayarı etkinleştirin. Ekranın sol üst köşesine olan uzaklığı boyut ile birlikte gösterilir."
 
 #: windows.cpp:854
 msgid "Allow moving and resizing o&f maximized windows"
-msgstr ""
-"&Büyültülmüş pencerelerin taşınmasına ve yeniden boyutlandırılmasına izin ver"
+msgstr "&Büyültülmüş pencerelerin taşınmasına ve yeniden boyutlandırılmasına izin ver"
 
 #: windows.cpp:856
-msgid ""
-"When enabled, this feature activates the border of maximized windows and "
-"allows you to move or resize them, just like for normal windows"
-msgstr ""
-"Etkinleştirildiğinde büyültülmüş pencerelerin çerçevelerini aktifleştirir ve "
-"onları normal pencereler gibi taşımanıza ve yeniden boyutlandırmanıza olanak "
-"verir"
+msgid "When enabled, this feature activates the border of maximized windows and allows you to move or resize them, just like for normal windows"
+msgstr "Etkinleştirildiğinde büyültülmüş pencerelerin çerçevelerini aktifleştirir ve onları normal pencereler gibi taşımanıza ve yeniden boyutlandırmanıza olanak verir"
 
 #: windows.cpp:882
 msgid "Snap Zones"
 msgstr "Yapışma Bölgeleri"
 
 #: windows.cpp:886
-#, fuzzy
-#| msgid "none"
 msgctxt "no border snap zone"
 msgid "none"
 msgstr "hiçbiri"
 
 #: windows.cpp:889
-msgid ""
-"Here you can set the snap zone for screen borders, i.e. the 'strength' of "
-"the magnetic field which will make windows snap to the border when moved "
-"near it."
-msgstr ""
-"Buradan ekran kenarları için yapışma alanınını ayarlayabilirsiniz. "
-"Pencerelerin kenara yapışmasını sağlayan manyetik alanın kuvveti gibi "
-"düşünülebilir."
+msgid "Here you can set the snap zone for screen borders, i.e. the 'strength' of the magnetic field which will make windows snap to the border when moved near it."
+msgstr "Buradan ekran kenarları için yapışma alanınını ayarlayabilirsiniz. Pencerelerin kenara yapışmasını sağlayan manyetik alanın kuvveti gibi düşünülebilir."
 
 #: windows.cpp:893
 msgid "&Border snap zone:"
@@ -926,19 +655,13 @@ msgstr "&Kenar yapışma alanı:"
 
 #: windows.cpp:900
 #, fuzzy
-#| msgid "none"
 msgctxt "no window snap zone"
 msgid "none"
 msgstr "hiçbiri"
 
 #: windows.cpp:903
-msgid ""
-"Here you can set the snap zone for windows, i.e. the 'strength' of the "
-"magnetic field which will make windows snap to each other when they are "
-"moved near another window."
-msgstr ""
-"Buradan pencereler için yapışma alanınını ayarlayabilirsiniz. Pencerelerin "
-"birbirine yapışmasını sağlayan manyetik alanın kuvveti gibi düşünülebilir."
+msgid "Here you can set the snap zone for windows, i.e. the 'strength' of the magnetic field which will make windows snap to each other when they are moved near another window."
+msgstr "Buradan pencereler için yapışma alanınını ayarlayabilirsiniz. Pencerelerin birbirine yapışmasını sağlayan manyetik alanın kuvveti gibi düşünülebilir."
 
 #: windows.cpp:907
 msgid "&Window snap zone:"
@@ -946,20 +669,13 @@ msgstr "&Pencere yapışma alanı:"
 
 #: windows.cpp:914
 #, fuzzy
-#| msgid "none"
 msgctxt "no center snap zone"
 msgid "none"
 msgstr "hiçbiri"
 
 #: windows.cpp:917
-msgid ""
-"Here you can set the snap zone for the screen center, i.e. the 'strength' of "
-"the magnetic field which will make windows snap to the center of the screen "
-"when moved near it."
-msgstr ""
-"Buradan ekranın ortası için yapışma alanınını ayarlayabilirsiniz. "
-"Pencerelerin ortaya yapışmasını sağlayan manyetik alanın kuvveti gibi "
-"düşünülebilir."
+msgid "Here you can set the snap zone for the screen center, i.e. the 'strength' of the magnetic field which will make windows snap to the center of the screen when moved near it."
+msgstr "Buradan ekranın ortası için yapışma alanınını ayarlayabilirsiniz. Pencerelerin ortaya yapışmasını sağlayan manyetik alanın kuvveti gibi düşünülebilir."
 
 #: windows.cpp:921
 msgid "&Center snap zone:"
@@ -970,14 +686,8 @@ msgid "Snap windows onl&y when overlapping"
 msgstr "&Pencereleri sadece üst üste gelirken yapıştır"
 
 #: windows.cpp:928
-msgid ""
-"Here you can set that windows will be only snapped if you try to overlap "
-"them, i.e. they will not be snapped if the windows comes only near another "
-"window or border."
-msgstr ""
-"Burada üst üste koymayı denediğinizde pencerelerin birbirine yapışmasını "
-"ayarlayabilirsiniz. Başka bir pencerenin veya ekranın kenarına yaklaşınca "
-"yapışmayacaklardır."
+msgid "Here you can set that windows will be only snapped if you try to overlap them, i.e. they will not be snapped if the windows comes only near another window or border."
+msgstr "Burada üst üste koymayı denediğinizde pencerelerin birbirine yapışmasını ayarlayabilirsiniz. Başka bir pencerenin veya ekranın kenarına yaklaşınca yapışmayacaklardır."
 
 #: windows.cpp:992 windows.cpp:996 windows.cpp:1000
 msgid " pixel"
@@ -988,59 +698,35 @@ msgstr[0] " piksel"
 #~ msgstr "Pencereler arasında geçiş yaparken pencere listesini göster"
 
 #~ msgid ""
-#~ "Hold down the Alt key and press the Tab key repeatedly to walk through "
-#~ "the windows on the current desktop (the Alt+Tab combination can be "
-#~ "reconfigured).\n"
+#~ "Hold down the Alt key and press the Tab key repeatedly to walk through the windows on the current desktop (the Alt+Tab combination can be reconfigured).\n"
 #~ "\n"
-#~ "If this checkbox is checked a popup widget is shown, displaying the icons "
-#~ "of all windows to walk through and the title of the currently selected "
-#~ "one.\n"
+#~ "If this checkbox is checked a popup widget is shown, displaying the icons of all windows to walk through and the title of the currently selected one.\n"
 #~ "\n"
-#~ "Otherwise, the focus is passed to a new window each time Tab is pressed, "
-#~ "with no popup widget.  In addition, the previously activated window will "
-#~ "be sent to the back in this mode."
+#~ "Otherwise, the focus is passed to a new window each time Tab is pressed, with no popup widget.  In addition, the previously activated window will be sent to the back in this mode."
 #~ msgstr ""
-#~ "Geçerli masaüstündeki pencereler arasında gezinmek için Alt tuşu basılı "
-#~ "iken ard arda sekme (Tab) tuşuna basın (Alt+Tab bileşimi yeniden "
-#~ "yapılandırılabilir).\n"
+#~ "Geçerli masaüstündeki pencereler arasında gezinmek için Alt tuşu basılı iken ard arda sekme (Tab) tuşuna basın (Alt+Tab bileşimi yeniden yapılandırılabilir).\n"
 #~ "\n"
-#~ "Bu işaretleme kutusu seçiliyse; gezinmek için geçerli olanın başlığı ile "
-#~ "tüm pencerelerin simgelerini görüntüleyen bir açılan pencere gösterilir.\n"
+#~ "Bu işaretleme kutusu seçiliyse; gezinmek için geçerli olanın başlığı ile tüm pencerelerin simgelerini görüntüleyen bir açılan pencere gösterilir.\n"
 #~ "\n"
-#~ "Diğer türlü her sekme tuşuna basıldığında açılan pencere olmadan bir "
-#~ "başka pencereye geçiş yapılır.  Ek olarak bu kipte bir önceki etkin "
-#~ "pencere arkaya gönderilir."
+#~ "Diğer türlü her sekme tuşuna basıldığında açılan pencere olmadan bir başka pencereye geçiş yapılır.  Ek olarak bu kipte bir önceki etkin pencere arkaya gönderilir."
 
 #~ msgid "&Traverse windows on all desktops"
 #~ msgstr "&Tüm masaüstlerindeki pencereleri dolaş"
 
-#~ msgid ""
-#~ "Leave this option disabled if you want to limit walking through windows "
-#~ "to the current desktop."
-#~ msgstr ""
-#~ "Pencereler arasında gezinmeyi geçerli masaüstüyle sınırlamak istiyorsanız "
-#~ "bu seçeneği etkinleştirmeyin."
+#~ msgid "Leave this option disabled if you want to limit walking through windows to the current desktop."
+#~ msgstr "Pencereler arasında gezinmeyi geçerli masaüstüyle sınırlamak istiyorsanız bu seçeneği etkinleştirmeyin."
 
 #~ msgid "Desktop navi&gation wraps around"
 #~ msgstr "&Masaüstlerinde çembersel gezinme"
 
-#~ msgid ""
-#~ "Enable this option if you want keyboard or active desktop border "
-#~ "navigation beyond the edge of a desktop to take you to the opposite edge "
-#~ "of the new desktop."
-#~ msgstr ""
-#~ "Klavyenin veya etkin masaüstü kenarı ile gezinmenin, sizi yeni geçilen "
-#~ "masaüstündeki zıt köşeye götürmesini istiyorsanız bu ayarı etkinleştirin."
+#~ msgid "Enable this option if you want keyboard or active desktop border navigation beyond the edge of a desktop to take you to the opposite edge of the new desktop."
+#~ msgstr "Klavyenin veya etkin masaüstü kenarı ile gezinmenin, sizi yeni geçilen masaüstündeki zıt köşeye götürmesini istiyorsanız bu ayarı etkinleştirin."
 
 #~ msgid "Popup desktop name on desktop &switch"
 #~ msgstr "&Bir masaüstünden diğerine geçerken ismini göster"
 
-#~ msgid ""
-#~ "Enable this option if you wish to see the current desktop name popup "
-#~ "whenever the current desktop is changed."
-#~ msgstr ""
-#~ "Masaüstü geçişlerinde geçerli masaüstünün adını görmek istiyorsanız bu "
-#~ "ayarı etkinleştirin."
+#~ msgid "Enable this option if you wish to see the current desktop name popup whenever the current desktop is changed."
+#~ msgstr "Masaüstü geçişlerinde geçerli masaüstünün adını görmek istiyorsanız bu ayarı etkinleştirin."
 
 #~ msgctxt "Focus Stealing Prevention Level"
 #~ msgid "Normal"
@@ -1049,13 +735,8 @@ msgstr[0] " piksel"
 #~ msgid "Active Desktop Borders"
 #~ msgstr "Etkin Masaüstü Kenarları"
 
-#~ msgid ""
-#~ "If this option is enabled, moving the mouse to a screen border will "
-#~ "change your desktop. This is e.g. useful if you want to drag windows from "
-#~ "one desktop to the other."
-#~ msgstr ""
-#~ "Bu seçenek etkinse, fareyi ekranın kenarına getirince masaüstü değişir. "
-#~ "Bir pencereyi diğer masaüstlerine taşırken kolaylık sağlayabilir."
+#~ msgid "If this option is enabled, moving the mouse to a screen border will change your desktop. This is e.g. useful if you want to drag windows from one desktop to the other."
+#~ msgstr "Bu seçenek etkinse, fareyi ekranın kenarına getirince masaüstü değişir. Bir pencereyi diğer masaüstlerine taşırken kolaylık sağlayabilir."
 
 #~ msgid "D&isabled"
 #~ msgstr "&Kapalı"
@@ -1066,32 +747,17 @@ msgstr[0] " piksel"
 #~ msgid "A&lways enabled"
 #~ msgstr "&Her zaman etkin"
 
-#~ msgid ""
-#~ "Here you can set a delay for switching desktops using the active borders "
-#~ "feature. Desktops will be switched after the mouse has been pushed "
-#~ "against a screen border for the specified number of milliseconds."
-#~ msgstr ""
-#~ "Burada, etkin kenarlar özelliğini kullanarak masaüstleri arasında geçiş "
-#~ "yaparken bir gecikme süresi belirleyebilirsiniz. Fareyi belirlediğiniz "
-#~ "milisaniyelik süre boyunca ekranın kenarında tutarsanız masaüstü geçişi "
-#~ "yapılır."
+#~ msgid "Here you can set a delay for switching desktops using the active borders feature. Desktops will be switched after the mouse has been pushed against a screen border for the specified number of milliseconds."
+#~ msgstr "Burada, etkin kenarlar özelliğini kullanarak masaüstleri arasında geçiş yaparken bir gecikme süresi belirleyebilirsiniz. Fareyi belirlediğiniz milisaniyelik süre boyunca ekranın kenarında tutarsanız masaüstü geçişi yapılır."
 
 #~ msgid "Desktop &switch delay:"
 #~ msgstr "M&asaüstü geçiş gecikmesi:"
 
-#~ msgid ""
-#~ "Here you can customize KDE's behavior when middle clicking into a window "
-#~ "while pressing the modifier key."
-#~ msgstr ""
-#~ "Bir pencereye değiştirici tuşlara basarken orta düğmeyle tıkladığınızdaki "
-#~ "KDE davranışını buradan özelleştirebilirsiniz."
+#~ msgid "Here you can customize KDE's behavior when middle clicking into a window while pressing the modifier key."
+#~ msgstr "Bir pencereye değiştirici tuşlara basarken orta düğmeyle tıkladığınızdaki KDE davranışını buradan özelleştirebilirsiniz."
 
-#~ msgid ""
-#~ "Here you can customize mouse click behavior when double clicking on the "
-#~ "titlebar of a window."
-#~ msgstr ""
-#~ "Bir pencerenin başlık çubuğuna çift tıklandığındaki davranışı buradan "
-#~ "özelleştirebilirsiniz."
+#~ msgid "Here you can customize mouse click behavior when double clicking on the titlebar of a window."
+#~ msgstr "Bir pencerenin başlık çubuğuna çift tıklandığındaki davranışı buradan özelleştirebilirsiniz."
 
 #~ msgid "Modifier key + left button:"
 #~ msgstr "Değiştirme tuşu + sol düğme:"
