@@ -2,7 +2,7 @@
 # translation of plasma.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: dashboardview.cpp:108
 msgid "Hide Dashboard"
@@ -27,10 +27,8 @@ msgid "Widget Dashboard"
 msgstr "Programcık Kontrol Paneli"
 
 #: desktopcorona.cpp:81 desktopcorona.cpp:87
-#, fuzzy
-#| msgid "Add Spacer"
 msgid "Add Panel"
-msgstr "Ayırıcı Ekle"
+msgstr "Panel Ekle"
 
 #: desktopcorona.cpp:184
 msgid "Desktop"
@@ -192,14 +190,9 @@ msgid "Zoom Out"
 msgstr "Küçült"
 
 #: plasmaapp.cpp:1183
-#, fuzzy, kde-format
-#| msgid ""
-#| "A new widget has become available on the network:<br><b>%1</b> - </i>%2</"
-#| "i>"
-msgid ""
-"A new widget has become available on the network:<br><b>%1</b> - <i>%2</i>"
-msgstr ""
-"Ağda biraz önce bir Plasma gereci yayınlandı:<br><b>%1</b> - </i>%2</i>"
+#, kde-format
+msgid "A new widget has become available on the network:<br><b>%1</b> - <i>%2</i>"
+msgstr "Ağda yeni bir programcık kullanılabilir hale geldi:<br><b>%1</b> - <i>%2</i>"
 
 #: plasmaapp.cpp:1185
 msgid "Add to current activity"
@@ -236,11 +229,8 @@ msgstr "Masaüstünde kullanılacak yazı tipi"
 #. i18n: file: data/plasma-shell-desktop.kcfg:15
 #. i18n: ectx: label, entry, group (General)
 #: rc.cpp:8
-msgid ""
-"Set to true if each virtual desktop should get its own, unique Plasma view."
-msgstr ""
-"Her masaüstü kendi biricik Plasma görünümünü kullansın istiyorsanız doğru "
-"seçeneğini işaretleyin."
+msgid "Set to true if each virtual desktop should get its own, unique Plasma view."
+msgstr "Her masaüstü kendi biricik Plasma görünümünü kullansın istiyorsanız doğru seçeneğini işaretleyin."
 
 #: scripting/containment.cpp:175
 msgid "widgetById requires an id"
@@ -303,12 +293,8 @@ msgstr ""
 #~ msgid "Activity"
 #~ msgstr "Eylem"
 
-#~ msgid ""
-#~ "This picture of a monitor contains a preview of what the current settings "
-#~ "will look like on your desktop."
-#~ msgstr ""
-#~ "Bu monitör resmi geçerli ayarların masaüstünüzde nasıl görüneceğini "
-#~ "gösteren bir önizleme içerir."
+#~ msgid "This picture of a monitor contains a preview of what the current settings will look like on your desktop."
+#~ msgstr "Bu monitör resmi geçerli ayarların masaüstünüzde nasıl görüneceğini gösteren bir önizleme içerir."
 
 #~ msgid "Mouse Plugins"
 #~ msgstr "Fare Eklentileri"
@@ -401,9 +387,7 @@ msgstr ""
 #~ msgstr "Yeni Tema..."
 
 #~ msgid "Starts plasma as an ordinary window rather than as the desktop."
-#~ msgstr ""
-#~ "Plasma uygulamasını bir masaüstünün aksine alışılmış bir pencere olarak "
-#~ "başlatır."
+#~ msgstr "Plasma uygulamasını bir masaüstünün aksine alışılmış bir pencere olarak başlatır."
 
 #~ msgid "Align panel to left"
 #~ msgstr "Paneli sola hizala"
@@ -414,12 +398,8 @@ msgstr ""
 #~ msgid "Align panel to right"
 #~ msgstr "Paneli sağa hizala"
 
-#, fuzzy
-#~| msgid "Move this slider to set the panel position"
 #~ msgid "Drag this handle to resize the panel"
 #~ msgstr "Panelin konumunu ayarlamak için bu ayırıcıyı kullanın"
 
-#, fuzzy
-#~| msgid "Remove this panel"
 #~ msgid "Move the panel"
 #~ msgstr "Bu Paneli Kaldır"
