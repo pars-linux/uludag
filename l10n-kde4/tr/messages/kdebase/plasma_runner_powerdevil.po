@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: PowerDevilRunner.cpp:53 PowerDevilRunner.cpp:54 PowerDevilRunner.cpp:75
 #: PowerDevilRunner.cpp:77 PowerDevilRunner.cpp:239
@@ -76,12 +76,8 @@ msgid "Lists all power saving schemes and allows them to be activated"
 msgstr "Tüm güç koruma şemalarını listeler ve etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:80
-msgid ""
-"Lists system suspend (e.g. sleep, hibernate) options and allows them to be "
-"activated"
-msgstr ""
-"Sistem askıya alma (uyku kipi, bekleme kipi vs.) seçeneklerini listeler ve "
-"etkinleştirilmelerine izin verir"
+msgid "Lists system suspend (e.g. sleep, hibernate) options and allows them to be activated"
+msgstr "Sistem askıya alma (uyku kipi, bekleme kipi vs.) seçeneklerini listeler ve etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:85
 msgid "Suspends the system to RAM"
@@ -92,20 +88,13 @@ msgid "Suspends the system to disk"
 msgstr "Sistemi disk kullanarak askıya alır"
 
 #: PowerDevilRunner.cpp:98
-msgid ""
-"Lists all CPU frequency scaling policies and allows them to be activated"
-msgstr ""
-"Tüm İşlemci frekans ölçekleme politikalarını listeler ve "
-"etkinleştirilmelerine izin verir"
+msgid "Lists all CPU frequency scaling policies and allows them to be activated"
+msgstr "Tüm İşlemci frekans ölçekleme politikalarını listeler ve etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:104
 #, no-c-format
-msgid ""
-"Lists screen brightness options or sets it to the brightness defined by :q:; "
-"e.g. screen brightness 50 would dim the screen to 50% maximum brightness"
-msgstr ""
-"Ekran parlaklığı seçeneklerini listeler veya parlaklığı :q: ile belirlenen "
-"değere ayarlar, 50 değeri ekran parlaklığını en fazla %50 olarak ayarlar"
+msgid "Lists screen brightness options or sets it to the brightness defined by :q:; e.g. screen brightness 50 would dim the screen to 50% maximum brightness"
+msgstr "Ekran parlaklığı seçeneklerini listeler veya parlaklığı :q: ile belirlenen değere ayarlar, 50 değeri ekran parlaklığını en fazla %50 olarak ayarlar"
 
 #: PowerDevilRunner.cpp:201
 msgid "Suspend to RAM"
@@ -116,12 +105,10 @@ msgid "Suspend to Disk"
 msgstr "Disk Kullanarak Askıya Al"
 
 #: PowerDevilRunner.cpp:238
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "power profile"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "power profile %1"
-msgstr "güç profili"
+msgstr "%1 güç profili"
 
 #: PowerDevilRunner.cpp:250
 #, kde-format
@@ -129,20 +116,16 @@ msgid "Set Profile to '%1'"
 msgstr "Profili '%1' olarak ayarla"
 
 #: PowerDevilRunner.cpp:257
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "cpu policy"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "cpu policy %1"
-msgstr "işlemci politikası"
+msgstr "%1 işlemci politikası"
 
 #: PowerDevilRunner.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "power governor"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "power governor %1"
-msgstr "güç yöneticisi"
+msgstr "%1 güç yöneticisi"
 
 #: PowerDevilRunner.cpp:292
 #, kde-format
@@ -150,12 +133,10 @@ msgid "Set CPU frequency scaling policy to '%1'"
 msgstr "İşlemci frekans ölçekleme politikasını '%1' olarak ayarla"
 
 #: PowerDevilRunner.cpp:299
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "power scheme"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "power scheme %1"
-msgstr "güç şeması"
+msgstr "%1 güç şeması"
 
 #: PowerDevilRunner.cpp:300
 msgctxt "Note this is a KRunner keyword"
@@ -168,20 +149,16 @@ msgid "Set Powersaving Scheme to '%1'"
 msgstr "Güç Koruma Şemasını '%1' olarak ayarla"
 
 #: PowerDevilRunner.cpp:322
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "screen brightness"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "screen brightness %1"
-msgstr "ekran parlaklığı"
+msgstr "%1 ekran parlaklığı"
 
 #: PowerDevilRunner.cpp:324
-#, fuzzy, kde-format
-#| msgctxt "Note this is a KRunner keyword"
-#| msgid "dim screen"
+#, kde-format
 msgctxt "Note this is a KRunner keyword; %1 is a parameter"
 msgid "dim screen %1"
-msgstr "ekranı kapat"
+msgstr "%1 ekranı kapat"
 
 #: PowerDevilRunner.cpp:335
 #, kde-format
