@@ -2,7 +2,7 @@
 # translation of plasma_applet_battery.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Ayhan YALÇINSOY <dellpardus@hotmail.com>, 2008.
 msgid ""
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: battery.cpp:264
 msgid "General"
@@ -40,11 +40,9 @@ msgid "Hibernate"
 msgstr "Askıya Al"
 
 #: battery.cpp:505
-#, fuzzy
-#| msgid "Power Management"
 msgctxt "tooltip on the config button in the popup"
 msgid "Configure Power Management..."
-msgstr "Güç Yönetimi"
+msgstr "Güç Yönetimini Yapılandır..."
 
 #: battery.cpp:527
 msgid "Power Management"
@@ -60,12 +58,10 @@ msgid "%1% (charged)"
 msgstr "%1% (şarj edilmiş)"
 
 #: battery.cpp:586
-#, fuzzy, kde-format
-#| msgctxt "Shown when a time estimate is not available"
-#| msgid "%1% (discharging)\n"
+#, kde-format
 msgctxt "Shown when a time estimate is not available"
 msgid "%1% (discharging)"
-msgstr "%1% (şarj tüketiliyor)\n"
+msgstr "%1% (şarj tüketiliyor)"
 
 #: battery.cpp:588 battery.cpp:605
 #, kde-format
@@ -78,16 +74,13 @@ msgid "Not present"
 msgstr "Hazır değil"
 
 #: battery.cpp:599
-#, fuzzy, kde-format
-#| msgid "Battery:"
+#, kde-format
 msgctxt "Placeholder is the battery ID"
 msgid "Battery %1:"
-msgstr "Pil:"
+msgstr "Pil %1:"
 
 #: battery.cpp:603
 #, fuzzy, kde-format
-#| msgctxt "Shown when a time estimate is not available"
-#| msgid "%1% (discharging)\n"
 msgid "%1% (discharging)"
 msgstr "%1% (şarj tüketiliyor)\n"
 
@@ -111,7 +104,7 @@ msgstr "<b>Pil:</b> "
 #, kde-format
 msgctxt "overlay on the battery, needs to be really tiny"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #. i18n: file: batteryConfig.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, batteryConfig)
@@ -126,33 +119,24 @@ msgid "Show charge &information"
 msgstr "Şa&rj bilgilerini göster"
 
 #. i18n: file: batteryConfig.ui:33
-#. i18n: ectx: property (text), widget (QCheckBox, showMultipleBatteriesCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. showMultipleBatteriesCheckBox)
 #: rc.cpp:9 rc.cpp:18
 msgid "Show the state for &each battery present"
 msgstr "Takılı olan &her pil için pil durumunu göster"
 
-#, fuzzy
-#~| msgctxt "Placeholder is the battery ID"
-#~| msgid "<b>Battery %1:</b> "
 #~ msgctxt "Placeholder is the battery ID"
 #~ msgid "<b>Battery %1:</b>"
 #~ msgstr "<b>Pil %1:</b> "
 
-#, fuzzy
-#~| msgid "%1% (charged)"
 #~ msgctxt "state of battery"
 #~ msgid "%1% (charged)"
 #~ msgstr "%1% (şarj edilmiş)"
 
-#, fuzzy
-#~| msgctxt "Shown when a time estimate is not available"
-#~| msgid "%1% (discharging)\n"
 #~ msgctxt "state of battery"
 #~ msgid "%1% (discharging)"
 #~ msgstr "%1% (şarj tüketiliyor)\n"
 
-#, fuzzy
-#~| msgid "%1% (charging)"
 #~ msgctxt "state of battery"
 #~ msgid "%1% (charging)"
 #~ msgstr "%1% (şarj ediliyor)"
@@ -179,7 +163,6 @@ msgstr "Takılı olan &her pil için pil durumunu göster"
 #~ msgid "<b>AC Adapter:</b>"
 #~ msgstr "<b>AC Adaptör:</b>"
 
-#~| msgid " charged"
 #~ msgid "1% (fully charged)"
 #~ msgstr "%1 (tam şarj edilmiş)"
 
