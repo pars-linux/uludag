@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_gzip\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2002-02-17 22:45+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "gzip"
+msgstr "gzip"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, no-c-format
+msgid "<command>gzip</command> is a compression program"
+msgstr "<command>gzip</command> bir sıkıştırma programıdır"
+
+#. Tag: para
+#: index.docbook:19
+#, no-c-format
+msgid ""
+"The gzip kioslave is not directly usable, and is intended for use as a "
+"filter. For example, the tar kioslave can filter a file through the gzip "
+"kioslave, in order to display the contents of a <literal role=\"extension"
+"\">tar.gz</literal> file directly in a &konqueror; window."
+msgstr ""
+"gzip kioslave doğrudan doğruya kullanılabilir değildir, genellikle bir "
+"filtre üzerinden kullanılmaya daha uygundur. Örneğin, tar kioslave programı "
+"gzip kioslave üzerinden <literal role=\"extension\">tar.gz</literal> "
+"uzantılı bir dosyayı &konqueror; içinde açmaya yarar."
+
+#. Tag: para
+#: index.docbook:25
+#, no-c-format
+msgid ""
+"If you click on a file compressed with a <literal role=\"extension\">gz</"
+"literal> extension in &konqueror;, this kioslave is used to uncompress it "
+"and display it as a normal (uncompressed) file."
+msgstr ""
+"&konqueror; içinde uzantısı <literal role=\"extension\">gz</literal>  olan "
+"bir dosyaya tıklamanız halinde, kioslave bunu açacak ve normal "
+"(sıkıştırılamamış) bir dosya olarak görüntüleyecektir."
+
+#. Tag: para
+#: index.docbook:30
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you are a developer, and would like to use the gzip filter, you can "
+#| "find documentation on using kioslaves at <ulink url=\"http://developer."
+#| "kde.org\">http://developer.kde.org</ulink>"
+msgid ""
+"If you are a developer, and would like to use the gzip filter, you can find "
+"documentation on using kioslaves at <ulink url=\"http://techbase.kde.org"
+"\">http://techbase.kde.org</ulink>"
+msgstr ""
+"Bir geliştirici iseniz ve gzip filtresi hakkında bilgi almak istiyorsanız, "
+"kioslave hakkında detaylı bilgiye <ulink url=\"http://developer.kde.org"
+"\">http://developer.kde.org</ulink> adresinden ulaşabilirsiniz."
+
+#. Tag: para
+#: index.docbook:34
+#, no-c-format
+msgid "See the manual: <ulink url=\"man:/gzip\">gzip</ulink>."
+msgstr "See the manual: <ulink url=\"man:/gzip\">gzip</ulink>."

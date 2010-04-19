@@ -1,0 +1,815 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadicontact\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-04 01:24+0200\n"
+"PO-Revision-Date: 2009-11-12 13:14+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: contacteditor.cpp:155
+msgid ""
+"The contact has been changed by someone else.\n"
+"What should be done?"
+msgstr ""
+
+#: contacteditor.cpp:156 contactgroupeditor.cpp:167
+msgid "Take over changes"
+msgstr "Değişiklikleri yönet"
+
+#: contacteditor.cpp:157 contactgroupeditor.cpp:168
+msgid "Ignore and Overwrite changes"
+msgstr "Yoksay ve Değişikliklerin üzerine yaz"
+
+#: contacteditor.cpp:247 contactgroupeditor.cpp:299
+msgid "Select Address Book"
+msgstr "Adres Defterini Seç"
+
+#: contacteditor.cpp:248
+msgid "Select the address book the new contact shall be saved in:"
+msgstr "Yeni kişilerin kaydedileceği adres defterini seçin:"
+
+#: contacteditordialog.cpp:46
+msgid "New Contact"
+msgstr "Yeni Kişi"
+
+#: contacteditordialog.cpp:46
+msgid "Edit Contact"
+msgstr "Kişiyi Düzenle"
+
+#: contacteditordialog.cpp:60 contactgroupeditordialog.cpp:72
+msgid "Add to:"
+msgstr "Buraya ekle:"
+
+#: contactgroupeditor.cpp:166
+msgid ""
+"The contact group has been changed by someone else.\n"
+"What should be done?"
+msgstr ""
+
+#: contactgroupeditor.cpp:198
+msgid "The name of the contact group must not be empty."
+msgstr "Kişi grubunun adı boş olmamalıdır."
+
+#: contactgroupeditor.cpp:300
+msgid "Select the address book the new contact group shall be saved in:"
+msgstr "Yeni kişi gruplarının kaydedileceği adres defterini seçin:"
+
+#: contactgroupeditordialog.cpp:54
+msgid "New Contact Group"
+msgstr "Yeni Kişi Grubu"
+
+#: contactgroupeditordialog.cpp:54
+msgid "Edit Contact Group"
+msgstr "Kişi  Grubunu Düzenle"
+
+#: contactgrouplineedit.cpp:181
+msgid "Select preferred email address"
+msgstr "Tercih edilen e-posta adresini seç"
+
+#: contactgroupmodel.cpp:206
+#, kde-format
+msgid "The member with email address <b>%1</b> is missing a name"
+msgstr ""
+
+#: contactgroupmodel.cpp:211
+#, kde-format
+msgid "The member with name <b>%1</b> is missing an email address"
+msgstr "<b>%1</b> kişisinin e-posta adresi yok"
+
+#: contactgroupmodel.cpp:254
+msgid "Contact does not exist anymore"
+msgstr "Kişi artık yok"
+
+#: contactgroupmodel.cpp:392
+msgctxt "contact's name"
+msgid "Name"
+msgstr "İsim"
+
+#: contactgroupmodel.cpp:394
+msgctxt "contact's email address"
+msgid "EMail"
+msgstr "E-posta"
+
+#: contactgroupviewer.cpp:121
+#, kde-format
+msgid "Contact Group %1"
+msgstr "Kişi Grubu %1"
+
+#: contactgroupviewerdialog.cpp:42
+msgid "Show Contact Group"
+msgstr "Kişi Grubunu Göster"
+
+#: contactviewer.cpp:132
+#, kde-format
+msgid "Contact %1"
+msgstr "Kişi %1"
+
+#: contactviewer.cpp:188
+msgctxt "a contact's email address"
+msgid "Email"
+msgstr "E-posta"
+
+#: contactviewer.cpp:204
+msgid "Homepage"
+msgstr "Ev Sayfası"
+
+#: contactviewer.cpp:210
+msgid "Blog Feed"
+msgstr "Web Günlüğü Beslemesi"
+
+#: contactviewer.cpp:236 editor/contacteditorwidget.cpp:279
+msgid "Notes"
+msgstr "Notlar"
+
+#: contactviewer.cpp:242
+msgid "Department"
+msgstr "Bölüm"
+
+#: contactviewer.cpp:243
+msgid "Profession"
+msgstr "Uzmanlık Alanı"
+
+#: contactviewer.cpp:244
+msgid "Assistant's Name"
+msgstr "Yardımcısının Adı"
+
+#: contactviewer.cpp:245
+msgid "Manager's Name"
+msgstr "Yöneticisinin Adı"
+
+#: contactviewer.cpp:246
+msgctxt "Wife/Husband/..."
+msgid "Partner's Name"
+msgstr "Arkadaşının Adı"
+
+#: contactviewer.cpp:247
+msgid "Office"
+msgstr "Ofis"
+
+#: contactviewer.cpp:248
+msgid "IM Address"
+msgstr "Hızlı Mesajlaşma Adresi"
+
+#: contactviewer.cpp:249
+msgid "Anniversary"
+msgstr "Yıldönümü"
+
+#: contactviewerdialog.cpp:42
+msgid "Show Contact"
+msgstr "Kişiyi Göster"
+
+#. i18n: file: contactgroupeditor.ui:17
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#: rc.cpp:3 editor/contacteditorwidget.cpp:162
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file: contactgroupeditor.ui:43
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:6
+msgid "Contact group members:"
+msgstr "Kişi grubu üyeleri:"
+
+#. i18n: file: recentcontactscollections.kcfg:9
+#. i18n: ectx: label, entry (DefaultResourceId), group (SpecialCollections)
+#: rc.cpp:9
+msgid "Id of the resource containing the default recent contacts collection."
+msgstr ""
+
+#. i18n: file: recentcontactscollections.kcfg:10
+#. i18n: ectx: whatsthis, entry (DefaultResourceId), group (SpecialCollections)
+#: rc.cpp:12
+msgid "Id of the contacts resource containing the recent contacts collection."
+msgstr ""
+
+#: rc.cpp:13
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:14
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file: actions/contactactionssettings.kcfg:15
+#. i18n: ectx: whatsthis, entry (ShowAddressAction), group (Show Address Settings)
+#: rc.cpp:17
+msgid ""
+"Defines which application shall be used to show the postal address of a "
+"contact on a map. If 'Web Browser' is selected, an URL can be defined with "
+"placeholders for the single address parts. If 'External Application' is "
+"selected, a command with placeholders can be defined."
+msgstr ""
+
+#. i18n: file: actions/contactactionssettings.kcfg:21
+#. i18n: ectx: whatsthis, entry (AddressUrl), group (Show Address Settings)
+#: rc.cpp:20
+msgid ""
+"This URL defines the website that shall be used to show a contact's\n"
+"                 postal address."
+msgstr ""
+
+#. i18n: file: actions/contactactionssettings.kcfg:27
+#. i18n: ectx: tooltip, entry (AddressUrl), group (Show Address Settings)
+#: rc.cpp:25
+#, no-c-format
+msgid ""
+"The following placeholders can be used in the URL:\n"
+"   %s: Street\n"
+"   %r: Region\n"
+"   %l: Location\n"
+"   %z: Zip Code\n"
+"   %c: Country ISO Code"
+msgstr ""
+"Adreste aşağıdaki yer tutucular kullanılabilir:\n"
+"   %s: Sokak\n"
+"   %r: Bölge\n"
+"   %l: Konum\n"
+"   %z: Posta Kodu\n"
+"   %c: Ülkenin ISO Kodu"
+
+#. i18n: file: actions/contactactionssettings.kcfg:30
+#. i18n: ectx: label, entry (AddressCommand), group (Show Address Settings)
+#: rc.cpp:33
+msgid "Address Command"
+msgstr "Adres Komutu"
+
+#. i18n: file: actions/contactactionssettings.kcfg:32
+#. i18n: ectx: whatsthis, entry (AddressCommand), group (Show Address Settings)
+#: rc.cpp:36
+msgid ""
+"This command defines the application that shall be executed to show a "
+"contact's\n"
+"                 postal address."
+msgstr ""
+
+#. i18n: file: actions/contactactionssettings.kcfg:38
+#. i18n: ectx: tooltip, entry (AddressCommand), group (Show Address Settings)
+#: rc.cpp:41
+#, no-c-format
+msgid ""
+"The following placeholders can be used in the command:\n"
+"   %s: Street\n"
+"   %r: Region\n"
+"   %l: Location\n"
+"   %z: Zip Code\n"
+"   %c: Country ISO Code"
+msgstr ""
+"Komutta aşağıdaki yer tutucular kullanılabilir:\n"
+"   %s: Sokak\n"
+"   %r: Bölge\n"
+"   %l: Konum\n"
+"   %z: Posta Kodu\n"
+"   %c: Ülkenin ISO Kodu"
+
+#. i18n: file: actions/contactactionssettings.kcfg:48
+#. i18n: ectx: whatsthis, entry (DialPhoneNumberAction), group (Phone Dial Settings)
+#: rc.cpp:49
+msgid ""
+"Defines which application shall be used to dial the phone number of a "
+"contact. If 'Skype' is selected the Skype application will be started (if "
+"installed on the computer) and the number is dialed. If 'External "
+"Application' is selected, a command with placeholders can be defined."
+msgstr ""
+
+#. i18n: file: actions/contactactionssettings.kcfg:52
+#. i18n: ectx: label, entry (PhoneCommand), group (Phone Dial Settings)
+#: rc.cpp:52
+msgid "Phone Command"
+msgstr "Telefon Komutu"
+
+#. i18n: file: actions/contactactionssettings.kcfg:54
+#. i18n: ectx: whatsthis, entry (PhoneCommand), group (Phone Dial Settings)
+#: rc.cpp:55
+msgid ""
+"This command defines the application that shall be executed to dial a "
+"contact's\n"
+"                 phone number."
+msgstr ""
+
+#. i18n: file: actions/contactactionssettings.kcfg:58
+#. i18n: ectx: tooltip, entry (PhoneCommand), group (Phone Dial Settings)
+#: rc.cpp:60
+#, no-c-format
+msgid ""
+"The following placeholders can be used in the command:\n"
+"   %N: The raw number as stored in the address book.\n"
+"   %n: The normalized number with all non-digit characters removed.\n"
+"      "
+msgstr ""
+
+#: recentcontactscollectionrequestjob.cpp:41
+#, fuzzy
+#| msgid "New Contact"
+msgctxt "recent contacts folder"
+msgid "Recent Contacts"
+msgstr "Yeni Kişi"
+
+#: waitingoverlay.cpp:51
+msgid "<p style=\"color: white;\"><b>Waiting for operation</b><br/></p>"
+msgstr "<p style=\"color: white;\"><b>İşlem bekleniyor</b><br/></p>"
+
+#: actions/dialphonenumberaction.cpp:57
+msgid ""
+"There is no application set which could be executed. Please go to the "
+"settings dialog and configure one."
+msgstr ""
+"Çalıştırılabilecek bir uygulama ayarlanmadı. Lütfen ayarlar iletişim "
+"kutusuna gidin ve bir tane ayarlayın."
+
+#: actions/qskypedialer.cpp:75
+msgid ""
+"Unable to start skype process, check that skype executable is in your PATH "
+"variable."
+msgstr ""
+
+#: actions/qskypedialer.cpp:94
+msgid "Skype Public API (DBus) seems to be disabled."
+msgstr ""
+
+#: actions/qskypedialer.cpp:102
+msgid "Skype registration failed."
+msgstr ""
+
+#: actions/qskypedialer.cpp:110
+msgid "Protocol mismatch."
+msgstr ""
+
+#: editor/addresseditwidget.cpp:182 editor/phoneeditwidget.cpp:82
+msgctxt "@item:inlistbox Category of contact info field"
+msgid "Other..."
+msgstr "Diğer..."
+
+#: editor/addresseditwidget.cpp:238
+msgctxt "street/postal"
+msgid "New..."
+msgstr "Yeni..."
+
+#: editor/addresseditwidget.cpp:240
+msgctxt "street/postal"
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: editor/addresseditwidget.cpp:242
+msgctxt "street/postal"
+msgid "Delete"
+msgstr "Sil"
+
+#: editor/addresseditwidget.cpp:300
+msgid "Do you really want to delete this address?"
+msgstr "Gerçekten bu adresi silmek istiyor musunuz?"
+
+#: editor/addresseditwidget.cpp:378
+msgctxt "street/postal"
+msgid "Edit Address"
+msgstr "Adresi Düzenle"
+
+#: editor/addresseditwidget.cpp:393
+#, kde-format
+msgctxt "<streetLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:404
+#, kde-format
+msgctxt "<postOfficeBoxLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:410
+#, kde-format
+msgctxt "<localityLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:416
+#, kde-format
+msgctxt "<regionLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:422
+#, kde-format
+msgctxt "<postalCodeLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:428
+#, kde-format
+msgctxt "<countryLabel>:"
+msgid "%1:"
+msgstr "%1:"
+
+#: editor/addresseditwidget.cpp:434
+msgid "Edit Label..."
+msgstr "Etiketi Düzenle..."
+
+#: editor/addresseditwidget.cpp:442
+msgctxt "street/postal"
+msgid "This is the preferred address"
+msgstr "Bu tercih edilen adrestir"
+
+#: editor/addresseditwidget.cpp:531
+msgctxt "street/postal"
+msgid "Edit Address Type"
+msgstr "Adres Tipini Düzenle"
+
+#: editor/addresseditwidget.cpp:541
+msgctxt "street/postal"
+msgid "Address Types"
+msgstr "Adres Tipleri"
+
+#: editor/contacteditorwidget.cpp:145
+msgid "Contact"
+msgstr "Kişi"
+
+#: editor/contacteditorwidget.cpp:147
+msgid "Name"
+msgstr "İsim"
+
+#: editor/contacteditorwidget.cpp:148
+msgid "Internet"
+msgstr "İnternet"
+
+#: editor/contacteditorwidget.cpp:149
+msgid "Phones"
+msgstr "Telefonlar"
+
+#: editor/contacteditorwidget.cpp:174
+msgid "Display:"
+msgstr "Görüntüle:"
+
+#: editor/contacteditorwidget.cpp:182
+msgid "Nickname:"
+msgstr "Takma ad:"
+
+#: editor/contacteditorwidget.cpp:190
+msgid "Pronunciation:"
+msgstr "Telaffuz:"
+
+#: editor/contacteditorwidget.cpp:201
+msgid "Email:"
+msgstr "E-posta:"
+
+#: editor/contacteditorwidget.cpp:209
+msgid "Homepage:"
+msgstr "Ev sayfası:"
+
+#: editor/contacteditorwidget.cpp:217
+msgid "Blog:"
+msgstr "Günlük:"
+
+#: editor/contacteditorwidget.cpp:225
+msgid "Messaging:"
+msgstr "Mesajlaşma:"
+
+#: editor/contacteditorwidget.cpp:247
+msgid "Location"
+msgstr "Konum"
+
+#: editor/contacteditorwidget.cpp:249
+msgid "Addresses"
+msgstr "Adresler"
+
+#: editor/contacteditorwidget.cpp:250
+msgid "Coordinates"
+msgstr "Koordinatlar"
+
+#: editor/contacteditorwidget.cpp:275
+msgid "Business"
+msgstr "İş"
+
+#: editor/contacteditorwidget.cpp:277
+msgid "General"
+msgstr "Genel"
+
+#: editor/contacteditorwidget.cpp:278
+msgid "Groupware"
+msgstr "Grup Çalışması"
+
+#: editor/contacteditorwidget.cpp:295
+msgid "Organization:"
+msgstr "Kurum:"
+
+#: editor/contacteditorwidget.cpp:303
+msgid "Profession:"
+msgstr "Uzmanlık alanı:"
+
+#: editor/contacteditorwidget.cpp:311
+msgid "Title:"
+msgstr "Başlık:"
+
+#: editor/contacteditorwidget.cpp:319
+msgid "Department:"
+msgstr "Bölüm:"
+
+#: editor/contacteditorwidget.cpp:327
+msgid "Office:"
+msgstr "Ofis:"
+
+#: editor/contacteditorwidget.cpp:335
+msgid "Manager's name:"
+msgstr "Yöneticisinin adı:"
+
+#: editor/contacteditorwidget.cpp:343
+msgid "Assistant's name:"
+msgstr "Yardımcısının adı:"
+
+#: editor/contacteditorwidget.cpp:352
+msgid "Free/Busy:"
+msgstr "Boş/Meşgul:"
+
+#: editor/contacteditorwidget.cpp:370
+msgid "Personal"
+msgstr "Kişisel"
+
+#: editor/contacteditorwidget.cpp:372
+msgid "Dates"
+msgstr "Tarihler"
+
+#: editor/contacteditorwidget.cpp:373
+msgid "Family"
+msgstr "Aile"
+
+#: editor/contacteditorwidget.cpp:384
+msgid "Birthdate:"
+msgstr "Doğum tarihi:"
+
+#: editor/contacteditorwidget.cpp:392
+msgid "Anniversary:"
+msgstr "Yıldönümü:"
+
+#: editor/contacteditorwidget.cpp:404
+msgid "Partner's name:"
+msgstr "Arkadaşının adı:"
+
+#: editor/dateeditwidget.cpp:49 editor/emaileditwidget.cpp:186
+#: editor/phoneeditwidget.cpp:282 editor/soundeditwidget.cpp:161
+msgid "Remove"
+msgstr "Sil"
+
+#: editor/displaynameeditwidget.cpp:59
+msgid "Short Name"
+msgstr "Kısa İsim"
+
+#: editor/displaynameeditwidget.cpp:60
+msgid "Full Name"
+msgstr "Tam Adı"
+
+#: editor/displaynameeditwidget.cpp:61
+msgid "Reverse Name with Comma"
+msgstr "Virgülle Ayrılmış Ters İsim"
+
+#: editor/displaynameeditwidget.cpp:62
+msgid "Reverse Name"
+msgstr "Ters İsim"
+
+#: editor/displaynameeditwidget.cpp:63
+msgid "Organization"
+msgstr "Kurum"
+
+#: editor/displaynameeditwidget.cpp:64
+msgid "Custom"
+msgstr "Özel"
+
+#: editor/emaileditwidget.cpp:155
+msgid "Edit Email Addresses"
+msgstr "E-posta Adresini Düzenle"
+
+#: editor/emaileditwidget.cpp:177
+msgid "Add..."
+msgstr "Ekle..."
+
+#: editor/emaileditwidget.cpp:181
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#: editor/emaileditwidget.cpp:191
+msgid "Set Standard"
+msgstr "Standardı Ayarla"
+
+#: editor/emaileditwidget.cpp:241
+msgid "Add Email"
+msgstr "E-posta Ekle"
+
+#: editor/emaileditwidget.cpp:241
+msgid "New Email:"
+msgstr "Yeni E-posta:"
+
+#: editor/emaileditwidget.cpp:265
+msgid "Edit Email"
+msgstr "E-postayı Düzenle"
+
+#: editor/emaileditwidget.cpp:266
+msgctxt "@label:textbox Inputfield for an email address"
+msgid "Email:"
+msgstr "E-posta:"
+
+#: editor/emaileditwidget.cpp:289
+#, kde-format
+msgid ""
+"<qt>Are you sure that you want to remove the email address <b>%1</b>?</qt>"
+msgstr ""
+"<qt>Gerçekten <b>%1</b> e-posta adresini kaldırmak istediğinizden emin "
+"misiniz?</qt>"
+
+#: editor/emaileditwidget.cpp:290
+msgid "Confirm Remove"
+msgstr "Silmeyi Onayla"
+
+#: editor/emaileditwidget.cpp:292
+msgid "&Delete"
+msgstr "&Sil"
+
+#: editor/geoeditwidget.cpp:100
+msgid "Latitude:"
+msgstr "Enlem:"
+
+#: editor/geoeditwidget.cpp:107
+msgid "Longitude:"
+msgstr "Boylam:"
+
+#: editor/geoeditwidget.cpp:114 editor/soundeditwidget.cpp:155
+msgid "Change..."
+msgstr "Değiştir..."
+
+#: editor/geoeditwidget.cpp:147 editor/geoeditwidget.cpp:148
+msgid "n/a"
+msgstr "etkin değil"
+
+#: editor/geoeditwidget.cpp:150 editor/geoeditwidget.cpp:151
+#, kde-format
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: editor/geoeditwidget.cpp:208
+msgctxt "@title:window"
+msgid "Coordinate Selection"
+msgstr "Koordinat Seçimi"
+
+#: editor/geoeditwidget.cpp:222
+msgctxt "@title:group"
+msgid "Decimal"
+msgstr "Ondalık"
+
+#: editor/geoeditwidget.cpp:227 editor/geoeditwidget.cpp:256
+msgctxt "@label:spinbox"
+msgid "Latitude:"
+msgstr "Enlem:"
+
+#: editor/geoeditwidget.cpp:239 editor/geoeditwidget.cpp:288
+msgctxt "@label:spinbox"
+msgid "Longitude:"
+msgstr "Boylam:"
+
+#: editor/geoeditwidget.cpp:251
+msgctxt "@title:group"
+msgid "Sexagesimal"
+msgstr "Altmışar"
+
+#: editor/geoeditwidget.cpp:284
+msgctxt "@item:inlistbox Latitude direction"
+msgid "North"
+msgstr "Kuzey"
+
+#: editor/geoeditwidget.cpp:285
+msgctxt "@item:inlistbox Latitude direction"
+msgid "South"
+msgstr "Güney"
+
+#: editor/geoeditwidget.cpp:314
+msgctxt "@item:inlistbox Longtitude direction"
+msgid "East"
+msgstr "Doğu"
+
+#: editor/geoeditwidget.cpp:315
+msgctxt "@item:inlistbox Longtitude direction"
+msgid "West"
+msgstr "Batı"
+
+#: editor/geoeditwidget.cpp:504
+msgctxt "@item:inlistbox Undefined location"
+msgid "Undefined"
+msgstr "Tanımlanmamış"
+
+#: editor/imagewidget.cpp:84
+msgid "This contact's image cannot be found."
+msgstr "Bu kişinin resmi bulunamıyor."
+
+#: editor/imagewidget.cpp:224
+msgid "Change photo..."
+msgstr "Resmi değiştir..."
+
+#: editor/imagewidget.cpp:227
+msgid "Save photo..."
+msgstr "Resmi kaydet..."
+
+#: editor/imagewidget.cpp:230
+msgid "Remove photo"
+msgstr "Resmi sil"
+
+#: editor/imagewidget.cpp:234
+msgid "Change logo..."
+msgstr "Logoyu değiştir..."
+
+#: editor/imagewidget.cpp:237
+msgid "Save logo..."
+msgstr "Logoyu kaydet..."
+
+#: editor/imagewidget.cpp:240
+msgid "Remove logo"
+msgstr "Logoyu sil"
+
+#: editor/kdatepickerpopup.cpp:96
+msgctxt "@option today"
+msgid "&Today"
+msgstr "&Bugün"
+
+#: editor/kdatepickerpopup.cpp:97
+msgctxt "@option tomorrow"
+msgid "To&morrow"
+msgstr "&Yarın"
+
+#: editor/kdatepickerpopup.cpp:98
+msgctxt "@option next week"
+msgid "Next &Week"
+msgstr "Gelecek &Hafta"
+
+#: editor/kdatepickerpopup.cpp:99
+msgctxt "@option next month"
+msgid "Next M&onth"
+msgstr "Gelecek A&y"
+
+#: editor/kdatepickerpopup.cpp:107
+msgctxt "@option do not specify a date"
+msgid "No Date"
+msgstr "Tarih Yok"
+
+#: editor/phoneeditwidget.cpp:278
+msgid "Add"
+msgstr "Ekle"
+
+#: editor/phoneeditwidget.cpp:333
+msgid "Edit Phone Number"
+msgstr "Telefon Numarasını Düzenle"
+
+#: editor/phoneeditwidget.cpp:345
+msgid "This is the preferred phone number"
+msgstr "Bu tercih edilen telefon numarasıdır"
+
+#: editor/phoneeditwidget.cpp:348
+msgid "Types"
+msgstr "Tipler"
+
+#: editor/soundeditwidget.cpp:85
+msgid "This contact's sound cannot be found."
+msgstr "Bu kişinin sesi bulunamadı."
+
+#: editor/soundeditwidget.cpp:140
+msgid "Click to play pronunciation"
+msgstr "Telaffuzu dinlemek için tıklayın"
+
+#: editor/soundeditwidget.cpp:143
+msgid "No pronunciation available"
+msgstr "Telaffuz yok"
+
+#: editor/soundeditwidget.cpp:152
+msgid "Play"
+msgstr "Oynat"
+
+#: editor/soundeditwidget.cpp:158
+msgid "Save..."
+msgstr "Kaydet..."
+
+#~ msgid "Simple Name"
+#~ msgstr "Basit İsim"
+
+#~ msgid "Organization Name"
+#~ msgstr "Kurum Adı"
+
+#~ msgid "Select the address book"
+#~ msgstr "Adres defterini seç"
+
+#~ msgid ""
+#~ "<qt>The contact '%1' does not have the correct format.<br/>Use <b>Name "
+#~ "&lt;email@address&gt;</b></qt>"
+#~ msgstr ""
+#~ "<qt>'%1' kişisinin biçimi doğru değil.<br/><b>İsim &lt;e-posta@adresi&gt; "
+#~ "gibi kullanın.</b></qt>"
+
+#~ msgid "Enter member in format: name <email>"
+#~ msgstr "Üyeyi şu biçimde girin: isim <e-posta>"
+
+#~ msgid "The contact '%1' is missing a name."
+#~ msgstr "'%1' kişisinin adı yok."

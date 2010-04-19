@@ -1,0 +1,846 @@
+# translation of desktop_kdeutils.po to Turkish
+# Kdesktop Turkish translation file
+# Copyright (C) 2000, 2003, 2005, 2008 Free Software Foundation, Inc.
+# Onur Soysal <e116511@ceng.metu.edu.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,1999-2002.
+# Görkem Çetin <gorkem@kde.org>, 2002.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: desktop_kdeutils\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-10 23:33+0000\n"
+"PO-Revision-Date: 2009-08-01 13:43+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ark/app/ark_addtoservicemenu.desktop:6
+msgctxt "X-KDE-Submenu"
+msgid "Compress"
+msgstr "Sıkıştır"
+
+#: ark/app/ark_addtoservicemenu.desktop:59
+msgctxt "Name"
+msgid "Here"
+msgstr "Buraya"
+
+#: ark/app/ark_addtoservicemenu.desktop:108
+msgctxt "Name"
+msgid "As ZIP Archive"
+msgstr "ZIP Arşivi Olarak"
+
+#: ark/app/ark_addtoservicemenu.desktop:156
+msgctxt "Name"
+msgid "As RAR Archive"
+msgstr "RAR Arşivi Olarak"
+
+#: ark/app/ark_addtoservicemenu.desktop:204
+msgctxt "Name"
+msgid "As ZIP/TAR Archive"
+msgstr "ZIP/TAR Arşivi Olarak"
+
+#: ark/app/ark_addtoservicemenu.desktop:252
+msgctxt "Name"
+msgid "Compress To..."
+msgstr "Farklı Sıkıştır..."
+
+#: ark/app/ark.desktop:3
+msgctxt "GenericName"
+msgid "Archiving Tool"
+msgstr "Arşivleme Aracı"
+
+#: ark/app/ark.desktop:70
+msgctxt "Name"
+msgid "Ark"
+msgstr "Ark"
+
+#: ark/app/ark_dndextract.desktop:5
+msgctxt "Name"
+msgid "Ark Extract Here"
+msgstr "Ark Arşivi Buraya Aç"
+
+#: ark/app/ark_servicemenu.desktop:12
+msgctxt "Name"
+msgid "Extract Archive Here"
+msgstr "Arşivi Buraya Aç"
+
+#: ark/app/ark_servicemenu.desktop:59
+msgctxt "Name"
+msgid "Extract Archive To..."
+msgstr "Arşivi Buraya Aç..."
+
+#: ark/app/ark_servicemenu.desktop:106
+msgctxt "Name"
+msgid "Extract Archive Here, Autodetect Subfolder"
+msgstr "Arşivi Buraya Aç, Dizin Yapısını Koru"
+
+#: ark/kerfuffle/kerfufflePlugin.desktop:4
+msgctxt "Comment"
+msgid "Plugin for handling of archive formats for the Kerfuffle library"
+msgstr "Kerfuffle kitaplığı için arşiv biçimleri eklentileri"
+
+#: ark/part/ark_part.desktop:3
+msgctxt "Name"
+msgid "Archiver"
+msgstr "Arşivleyici"
+
+#: ark/part/ark_part.desktop:70
+msgctxt "Comment"
+msgid "Archive Handling Tool"
+msgstr "Arşiv İşleme Aracı"
+
+#: ark/plugins/bk/kerfuffle_bk.desktop:14
+msgctxt "Name"
+msgid "kerfuffle_bk"
+msgstr "kerfuffle_bk"
+
+#: ark/plugins/bk/kerfuffle_bk.desktop:65
+msgctxt "Comment"
+msgid "bkisofs plugin for Kerfuffle"
+msgstr "Kerfuffle için bkisofs eklentisi"
+
+#: ark/plugins/cli7zplugin/kerfuffle_cli7z.desktop:14
+msgctxt "Name"
+msgid "7zip archive plugin"
+msgstr "7zip arşivi eklentisi"
+
+#: ark/plugins/cliplugin/kerfuffle_cli.desktop:14
+msgctxt "Name"
+msgid "TODO archive plugin"
+msgstr "TODO arşivi eklentisi"
+
+#: ark/plugins/clirarplugin/kerfuffle_clirar.desktop:14
+msgctxt "Name"
+msgid "RAR archive plugin"
+msgstr "RAR arşivi eklentisi"
+
+#: ark/plugins/clizipplugin/kerfuffle_clizip.desktop:14
+msgctxt "Name"
+msgid "ZIP archive plugin"
+msgstr "ZIP arşivi eklentisi"
+
+#: ark/plugins/karchiveplugin/kerfuffle_karchive.desktop:13
+msgctxt "Name"
+msgid "kerfuffle_karchive"
+msgstr "kerfuffle_karchive"
+
+#: ark/plugins/karchiveplugin/kerfuffle_karchive.desktop:64
+msgctxt "Comment"
+msgid "KArchive plugin for Kerfuffle"
+msgstr "Kerfuffle için KArchive eklentisi"
+
+#: ark/plugins/libarchive/kerfuffle_libarchive.desktop:14
+msgctxt "Name"
+msgid "kerfuffle_libarchive"
+msgstr "kerfuffle_libarchive"
+
+#: ark/plugins/libarchive/kerfuffle_libarchive.desktop:65
+msgctxt "Comment"
+msgid "LibArchive Plugin for Kerfuffle"
+msgstr "Kerfuffle için  LibArchive eklentisi"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libbz2.desktop:14
+msgctxt "Name"
+msgid "kerfuffle_libbz2"
+msgstr "kerfuffle_libbz2"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libbz2.desktop:59
+msgctxt "Comment"
+msgid "libbz2 plugin for Kerfuffle"
+msgstr "Kerfuffle için libbz2 eklentisi"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libgz.desktop:14
+msgctxt "Name"
+msgid "kerfuffle_libgz"
+msgstr "kerfuffle_libgz"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libgz.desktop:63
+msgctxt "Comment"
+msgid "libgz plugin for Kerfuffle"
+msgstr "Kerfuffle için libgz eklentisi"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libxz.desktop:14
+msgctxt "Name"
+msgid "kerfuffle_libxz"
+msgstr "kerfuffle_libxz"
+
+#: ark/plugins/libsinglefileplugin/kerfuffle_libxz.desktop:59
+msgctxt "Comment"
+msgid "libxz plugin for Kerfuffle"
+msgstr "Kerfuffle için libxz eklentisi"
+
+#: kcalc/kcalc.desktop:2
+msgctxt "Name"
+msgid "KCalc"
+msgstr "KCalc"
+
+#: kcalc/kcalc.desktop:70
+msgctxt "GenericName"
+msgid "Scientific Calculator"
+msgstr "Bilimsel Hesap Makinesi"
+
+#: kcharselect/KCharSelect.desktop:2
+msgctxt "GenericName"
+msgid "Character Selector"
+msgstr "Karakter Seçici"
+
+#: kcharselect/KCharSelect.desktop:74
+msgctxt "Name"
+msgid "KCharSelect"
+msgstr "KCharSelect"
+
+#: kdelirc/irkick/irkick.desktop:3
+msgctxt "Name"
+msgid "IRKick"
+msgstr "IRKick"
+
+#: kdelirc/irkick/irkick.desktop:55
+msgctxt "GenericName"
+msgid "KDE LIRC Server"
+msgstr "KDE LIRC Sunucusu"
+
+#: kdelirc/irkick/irkick.desktop:120
+msgctxt "Comment"
+msgid "KDE Linux infrared remote control server."
+msgstr "KDE Linux kızılötesi uzaktan kontrol sunucusu."
+
+#: kdelirc/irkick/irkick.notifyrc:3
+msgctxt "Comment"
+msgid "Irkick"
+msgstr "Irkick"
+
+#: kdelirc/irkick/irkick.notifyrc:49
+msgctxt "Name"
+msgid "Irkick notification"
+msgstr "Irkick bildirimi"
+
+#: kdelirc/irkick/irkick.notifyrc:91
+msgctxt "Comment"
+msgid "Irkick global notification event"
+msgstr "Irkick genel bildirim olayı"
+
+#: kdelirc/irkick/irkick.notifyrc:135
+msgctxt "Name"
+msgid "Mode event"
+msgstr "Kip olayı"
+
+#: kdelirc/irkick/irkick.notifyrc:174
+msgctxt "Comment"
+msgid "Mode has changed"
+msgstr "Kip değiştirildi"
+
+#: kdelirc/irkick/irkick.notifyrc:216
+msgctxt "Name"
+msgid "Application event"
+msgstr "Uygulama olayı"
+
+#: kdelirc/irkick/irkick.notifyrc:256
+msgctxt "Comment"
+msgid "Irkick has triggered an application"
+msgstr "Irkick bir uygulama tarafında çalıştırıldı"
+
+#: kdelirc/kcmlirc/kcm_lirc.desktop:22
+msgctxt "Name"
+msgid "Remote Controls"
+msgstr "Uzaktan Kontroller"
+
+#: kdelirc/kcmlirc/kcm_lirc.desktop:77
+msgctxt "Comment"
+msgid "Configure your remote controls for use with applications"
+msgstr "Uzaktan kontrol ayarlarınızı uygulamalarla kullanmak için ayarla"
+
+#: kdf/kcmdf.desktop:15
+msgctxt "Name"
+msgid "Storage Devices"
+msgstr "Depolama Aygıtları"
+
+#: kdf/kcmdf.desktop:82
+msgctxt "Comment"
+msgid "Shows the disk usage of the mounted devices"
+msgstr "Bağlı aygıtların disk kullanımını gösterir"
+
+#: kdf/kdf.desktop:2
+msgctxt "Name"
+msgid "KDiskFree"
+msgstr "K Disk Boşluğu"
+
+#: kdf/kdf.desktop:68
+msgctxt "GenericName"
+msgid "View Disk Usage"
+msgstr "Disk Kullanımını Görüntüle"
+
+#: kdf/kwikdisk.desktop:2
+msgctxt "Name"
+msgid "KwikDisk"
+msgstr "KwikDisk"
+
+#: kdf/kwikdisk.desktop:70
+msgctxt "GenericName"
+msgid "Removable Media Utility"
+msgstr "Çıkartılabilir Aygıt"
+
+#: kfloppy/floppy_format.desktop:4
+msgctxt "Name"
+msgid "Format"
+msgstr "Biçimlendir"
+
+#: kfloppy/KFloppy.desktop:2
+msgctxt "GenericName"
+msgid "Floppy Formatter"
+msgstr "Disket Biçimlendirici"
+
+#: kfloppy/KFloppy.desktop:70
+msgctxt "Name"
+msgid "KFloppy"
+msgstr "KFloppy"
+
+#: kgpg/encryptfile.desktop:9
+msgctxt "Name"
+msgid "Encrypt File"
+msgstr "Dosya Şifrele"
+
+#: kgpg/encryptfolder.desktop:7
+msgctxt "Name"
+msgid "Archive & Encrypt Folder"
+msgstr "Dizini Arşivle & Şifrele"
+
+#: kgpg/kgpg.desktop:8
+msgctxt "GenericName"
+msgid "Encryption Tool"
+msgstr "Şifreleme Aracı"
+
+#: kgpg/kgpg.desktop:69
+msgctxt "Comment"
+msgid "A GnuPG frontend"
+msgstr "Bir GnuPG arayüzü"
+
+#: kgpg/kgpg.desktop:131
+msgctxt "Name"
+msgid "KGpg"
+msgstr "KGpg"
+
+#: kgpg/viewdecrypted.desktop:8
+msgctxt "Name"
+msgid "View file decrypted"
+msgstr "Dosyayı şifrelemesi açılmış olarak göster"
+
+#: ktimer/ktimer.desktop:2
+msgctxt "GenericName"
+msgid "Countdown Launcher"
+msgstr "Gerisayım Çalıştırıcı"
+
+#: ktimer/ktimer.desktop:61
+msgctxt "Name"
+msgid "KTimer"
+msgstr "KTimer"
+
+#: kwallet/konfigurator/kwalletconfig.desktop:13
+msgctxt "Name"
+msgid "KDE Wallet"
+msgstr "KDE Cüzdanı"
+
+#: kwallet/konfigurator/kwalletconfig.desktop:75
+msgctxt "Comment"
+msgid "KDE Wallet Configuration"
+msgstr "KDE Cüzdan Ayarı"
+
+#: kwallet/konfigurator/kwalletmanager_show.desktop:2
+#: kwallet/kwalletmanager-kwalletd.desktop:2
+msgctxt "Name"
+msgid "Wallet Management Tool"
+msgstr "Cüzdan Yönetim Aracı"
+
+#: kwallet/kwalletmanager.desktop:2
+msgctxt "Name"
+msgid "KWalletManager"
+msgstr "KWallet Yönetim Aracı"
+
+#: kwallet/kwalletmanager.desktop:49
+msgctxt "GenericName"
+msgid "Wallet Management Tool"
+msgstr "KWallet Yönetim Aracı"
+
+#: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:7
+msgctxt "Name"
+msgid "Testing dynamic length arrays"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:37
+msgctxt "Comment"
+msgid "A test structure for dynamic arrays"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:7
+msgctxt "Name"
+msgid "ELF structure"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:36
+msgctxt "Comment"
+msgid "Structure for Executable Linking Format (ELF)"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:7
+msgctxt "Name"
+msgid "Testing enums"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:37
+msgctxt "Comment"
+msgid "A test structure for enums"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:7
+msgctxt "Name"
+msgid "PNG file header"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:42
+msgctxt "Comment"
+msgid ""
+"A test structure containing the PNG file header (file must be set to big-"
+"endian)"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:7
+msgctxt "Name"
+msgid "Another simple test"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:40
+msgctxt "Comment"
+msgid "A few more test structures"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:7
+msgctxt "Name"
+msgid "Simple test"
+msgstr ""
+
+#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:41
+msgctxt "Comment"
+msgid "A few test structures"
+msgstr ""
+
+#: okteta/parts/kbytesedit/kbytearrayedit.desktop:3
+msgctxt "Name"
+msgid "BytesEdit Widget"
+msgstr "BytesEdit Widget"
+
+#: okteta/parts/kpart/oktetapart.desktop:4
+msgctxt "Name"
+msgid "Okteta Hex Viewer"
+msgstr "Okteta Hex Görüntüleyici"
+
+#: okteta/program/okteta.desktop:2
+msgctxt "Name"
+msgid "Okteta"
+msgstr "Okteta"
+
+#: okteta/program/okteta.desktop:52
+msgctxt "GenericName"
+msgid "Hex Editor"
+msgstr "On Altılık Dosya Düzenleyici"
+
+#: printer-applet/printer-applet.desktop:2
+#: printer-applet/printer-applet.notifyrc:3
+msgctxt "Name"
+msgid "Printer Applet"
+msgstr "Yazıcı Programcığı"
+
+#: printer-applet/printer-applet.desktop:51
+msgctxt "Comment"
+msgid "System tray icon for managing print jobs"
+msgstr "Yazdırma görevlerini yönetmek için sistem çekmecesi simgesi"
+
+#: printer-applet/printer-applet.notifyrc:52
+msgctxt "Comment"
+msgid "Printer Applet"
+msgstr "Yazıcı Programcığı"
+
+#: printer-applet/printer-applet.notifyrc:98
+msgctxt "Name"
+msgid "New Printer"
+msgstr "Yeni Yazıcı"
+
+#: printer-applet/printer-applet.notifyrc:142
+msgctxt "Comment"
+msgid "Configuring New Printer"
+msgstr "Yeni Yazıcı Yapılandırılıyor"
+
+#: printer-applet/printer-applet.notifyrc:189
+msgctxt "Name"
+msgid "Printer Added"
+msgstr "Yazıcı Eklendi"
+
+#: printer-applet/printer-applet.notifyrc:233
+msgctxt "Comment"
+msgid "Printer Added"
+msgstr "Yazıcı Eklendi"
+
+#: printer-applet/printer-applet.notifyrc:280
+msgctxt "Name"
+msgid "Missing Printer Driver"
+msgstr "Yazıcı Sürücüsü Yok"
+
+#: printer-applet/printer-applet.notifyrc:324
+msgctxt "Comment"
+msgid "Missing Printer Driver"
+msgstr "Yazıcı Sürücüsü Yok"
+
+#: printer-applet/printer-applet.notifyrc:371
+msgctxt "Name"
+msgid "Other"
+msgstr "Diğer"
+
+#: printer-applet/printer-applet.notifyrc:415
+msgctxt "Comment"
+msgid "Other"
+msgstr "Diğer"
+
+#: superkaramba/plasma/plasma-package-superkaramba.desktop:2
+msgctxt "Name"
+msgid "SuperKaramba Theme Files"
+msgstr "SuperKaramba Tema Dosyaları"
+
+#: superkaramba/plasma/plasma-package-superkaramba.desktop:50
+msgctxt "Comment"
+msgid "Karamba Desktop Themes"
+msgstr "Karamba Masaüstü Temaları"
+
+#: superkaramba/plasma/plasma-scriptengine-superkaramba.desktop:2
+#: superkaramba/plasma/plasma-skapplet-default.desktop:2
+#: superkaramba/src/superkaramba.desktop:2
+msgctxt "Name"
+msgid "SuperKaramba"
+msgstr "SuperKaramba"
+
+#: superkaramba/plasma/plasma-scriptengine-superkaramba.desktop:60
+msgctxt "Comment"
+msgid "Karamba Desktop Theme"
+msgstr "Karamba Masaüstü Teması"
+
+#: superkaramba/plasma/plasma-skapplet-default.desktop:60
+msgctxt "Comment"
+msgid "SuperKaramba Plasma Applet"
+msgstr "SuperKaramba Plasma Programcığı"
+
+#: superkaramba/src/superkaramba.desktop:64
+msgctxt "Comment"
+msgid "An engine for cool desktop eyecandy."
+msgstr "Mükemmel masaüstü görünümü için bir motor."
+
+#: superkaramba/src/superkaramba.desktop:119
+msgctxt "GenericName"
+msgid "Desktop Widgets"
+msgstr "Masaüstü Programcıkları"
+
+#: sweeper/sweeper.desktop:10
+msgctxt "Name"
+msgid "Sweeper"
+msgstr "Sweeper"
+
+#: sweeper/sweeper.desktop:61
+msgctxt "GenericName"
+msgid "System Cleaner"
+msgstr "Sistem Temizleyici"
+
+#~ msgctxt "Name"
+#~ msgid "Embedded Binary Viewer"
+#~ msgstr "Gömülü İkili dosya Görüntüleyici"
+
+#~ msgctxt "Comment"
+#~ msgid "Embedded Binary Viewer"
+#~ msgstr "Gömülü İkili dosya Görüntüleyici"
+
+#~ msgctxt "Name"
+#~ msgid "kerfuffle_7zip"
+#~ msgstr "kerfuffle_7zip"
+
+#~ msgctxt "Comment"
+#~ msgid "7zip plugin for Kerfuffle"
+#~ msgstr "Kerfuffle için 7zip eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "kerfuffle_libzip"
+#~ msgstr "kerfuffle_libzip"
+
+#~ msgctxt "Comment"
+#~ msgid "libzip plugin for Kerfuffle"
+#~ msgstr "Kerfuffle için libzip eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "kerfuffle_rar"
+#~ msgstr "kerfuffle_rar"
+
+#~ msgctxt "Comment"
+#~ msgid "rar plugin for Kerfuffle"
+#~ msgstr "Kerfuffle için rar eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "unACE for Kerfuffle"
+#~ msgstr "Kerfuffle için unACE"
+
+#~ msgctxt "Comment"
+#~ msgid "plugin for unpacking ACE archives"
+#~ msgstr "ACE arşivlerini açmak için eklenti"
+
+#~ msgctxt "Name"
+#~ msgid "Gzip-compressed tar archive"
+#~ msgstr "Tar.gz arşivi"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "kerfuffle_libgz"
+#~ msgctxt "Name"
+#~ msgid "kerfuffle_liblzma"
+#~ msgstr "kerfuffle_libgz"
+
+#, fuzzy
+#~| msgctxt "Comment"
+#~| msgid "libgz plugin for Kerfuffle"
+#~ msgctxt "Comment"
+#~ msgid "liblzma plugin for Kerfuffle"
+#~ msgstr "Kerfuffle için libgz eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "KJots"
+#~ msgstr "KJots"
+
+#~ msgctxt "GenericName"
+#~ msgid "Note Taker"
+#~ msgstr "Not alıcı"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "Sony Vaio Plugin"
+#~ msgctxt "Comment"
+#~ msgid "Kontact KJots Plugin"
+#~ msgstr "Sony Vaio Eklentisi"
+
+#, fuzzy
+#~| msgctxt "Name"
+#~| msgid "KJots"
+#~ msgctxt "Name"
+#~ msgid "KJotsPart"
+#~ msgstr "KJots"
+
+#~ msgctxt "Name"
+#~ msgid "Laptop"
+#~ msgstr "Laptop"
+
+#~ msgctxt "Comment"
+#~ msgid "Laptop battery monitor"
+#~ msgstr "Dizüstü bilgisayar pil izleyici"
+
+#~ msgctxt "Name"
+#~ msgid "Laptop Battery Monitor"
+#~ msgstr "Dizüstü Bilgisayar Pil İzleyici"
+
+#~ msgctxt "Comment"
+#~ msgid "Laptop Battery"
+#~ msgstr "Dizüstü Pili"
+
+#~ msgctxt "Name"
+#~ msgid "Laptop Battery"
+#~ msgstr "Dizüstü Pili"
+
+#~ msgctxt "Comment"
+#~ msgid "PCMCIA status"
+#~ msgstr "PCMCIA durumu"
+
+#~ msgctxt "Name"
+#~ msgid "PCMCIA"
+#~ msgstr "PCMCIA"
+
+#~ msgctxt "Name"
+#~ msgid "Asus Laptop Plugin"
+#~ msgstr "Asus Dizüstü Bilgisayar Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid "Enables support for special Asus laptop keys"
+#~ msgstr ""
+#~ "Asus dizüstü bilgisayarların özel tuşları için desteği etkinleştirir"
+
+#~ msgctxt "Name"
+#~ msgid "Dell I8k Laptop Plugin"
+#~ msgstr "Dell I8k Dizüstü Bilgisayar Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid "Enables support for special Dell laptop keys"
+#~ msgstr ""
+#~ "Dell dizüstü bilgisayarların özel tuşları için desteği etkinleştirir"
+
+#~ msgctxt "Name"
+#~ msgid "Demo Plugin"
+#~ msgstr "Demo Plugin"
+
+#~ msgctxt "Comment"
+#~ msgid "This plugin does nothing."
+#~ msgstr "Bu plugin birşey yapmaz."
+
+#~ msgctxt "Name"
+#~ msgid "Generic Keyboard Plugin"
+#~ msgstr "Generic Klavye Plugini"
+
+#~ msgctxt "Comment"
+#~ msgid ""
+#~ "This plugin enables support for special keys on all sorts of keyboards "
+#~ "and laptops."
+#~ msgstr ""
+#~ "Bu plugin tüm klavye ve dizüstülerdeki özel tuşlar için desteği sağlar."
+
+#~ msgctxt "Name"
+#~ msgid "Sony Vaio Laptop"
+#~ msgstr "Sony Vaio Dizüstü"
+
+#~ msgctxt "Comment"
+#~ msgid ""
+#~ "Configure the KDE Interface to the Sony Programmable Interrupt Controller "
+#~ "Driver"
+#~ msgstr ""
+#~ "KDE arayüzünü Sony Programlanabilir Kesilme Kontrolör Sürücüsüne ayarla"
+
+#~ msgctxt "Comment"
+#~ msgid "KMilo Module for Sony Vaio Laptop support"
+#~ msgstr "Sony Vaio Dizüstüler için KMilo Modül desteği"
+
+#~ msgctxt "Name"
+#~ msgid "KMilo"
+#~ msgstr "KMilo"
+
+#~ msgctxt "Comment"
+#~ msgid "KDE special key notifier"
+#~ msgstr "KDE özel tuş bildirici"
+
+#~ msgctxt "Name"
+#~ msgid "Apple (R) PowerBook (R) Plugin"
+#~ msgstr "Apple (R) PowerBook (R) Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid ""
+#~ "This plugin enables support for special keys on Apple (R) PowerBook (R) "
+#~ "laptops via pbbuttonsd."
+#~ msgstr ""
+#~ "Bu plugin pbbuttonsd aracılığı ile Apple(R) PowerBook(R) dizüstüler için "
+#~ "özel tuş desteğini açar."
+
+#~ msgctxt "Name"
+#~ msgid "Apple PowerBook Plugin"
+#~ msgstr "Apple PowerBook Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid ""
+#~ "This plugin enabled support for special keys on Apple PowerBooks via "
+#~ "pbbuttonsd."
+#~ msgstr ""
+#~ "Bu plugin pbbuttonsd aracılığı ile Apple PowerBook dizüstüler için özel "
+#~ "tuş desteğini açar."
+
+#~ msgctxt "Name"
+#~ msgid "IBM Thinkpad Laptop"
+#~ msgstr "IBM Thinkpad Dizüstü"
+
+#~ msgctxt "Comment"
+#~ msgid "Configure the KDE Interface to the IBM Thinkpad Special Controls"
+#~ msgstr "KDE Arayüzünü Sony IBM Thinkpad Özel Denetimlerine Ayarla"
+
+#~ msgctxt "Name"
+#~ msgid "Thinkpad Plugin"
+#~ msgstr "Thinkpad Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid "Enables support for special Thinkpad keys"
+#~ msgstr "Özel Thinkpad tuşları için desteği etkinleştirir"
+
+#~ msgctxt "GenericName"
+#~ msgid "System Monitor"
+#~ msgstr "Sistem İzleyici"
+
+#~ msgctxt "Comment"
+#~ msgid "K System Information Monitor (GKrellM style)"
+#~ msgstr "K Sistem Bilgileri İzleyici (GKrellM biçimi)"
+
+#~ msgctxt "Name"
+#~ msgid "KSim"
+#~ msgstr "KSim"
+
+#~ msgctxt "Name"
+#~ msgid "CPU"
+#~ msgstr "İşlemci"
+
+#~ msgctxt "Comment"
+#~ msgid "CPU Monitor Plugin"
+#~ msgstr "İşlemci İzleyici Eklentisi"
+
+#~ msgctxt "Comment"
+#~ msgid "Disk Monitor Plugin"
+#~ msgstr "Disk İzleyici Eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "Disk"
+#~ msgstr "Disk"
+
+#~ msgctxt "Name"
+#~ msgid "DFree"
+#~ msgstr "DFree"
+
+#~ msgctxt "Comment"
+#~ msgid "Mounted Partitions Monitor"
+#~ msgstr "Bağlanmış Disk Bölümü İzleyici"
+
+#~ msgctxt "Comment"
+#~ msgid "Dell I8K Hardware Monitor Plugin"
+#~ msgstr "Dell I8K Donanım Monitör Plugini"
+
+#~ msgctxt "Name"
+#~ msgid "Dell I8K"
+#~ msgstr "Dell I8K"
+
+#~ msgctxt "Comment"
+#~ msgid "Lm_sensors Status Monitor"
+#~ msgstr "Lm_sensors Durum İzleyici"
+
+#~ msgctxt "Name"
+#~ msgid "Lm_sensors"
+#~ msgstr "Lm_sensors"
+
+#~ msgctxt "Comment"
+#~ msgid "Mail Monitor Plugin"
+#~ msgstr "Posta İzleyici Eklentisi"
+
+#~ msgctxt "Name"
+#~ msgid "Mail"
+#~ msgstr "E-posta"
+
+#~ msgctxt "Comment"
+#~ msgid "Net Status Monitor"
+#~ msgstr "Ağ İçin Durum İzleyici"
+
+#~ msgctxt "Name"
+#~ msgid "Net"
+#~ msgstr "ağ"
+
+#~ msgctxt "Comment"
+#~ msgid "Snmp Status Monitor"
+#~ msgstr "Snmp Durum Monitörü"
+
+#~ msgctxt "Name"
+#~ msgid "Snmp"
+#~ msgstr "Snmp"
+
+#~ msgctxt "Name"
+#~ msgid "Character Selector"
+#~ msgstr "Karakter Seçici"
+
+#~ msgctxt "Comment"
+#~ msgid "Allows to pick shown characters for clipboard"
+#~ msgstr "Pano için görünen karakterleri seçmeyi sağlar"

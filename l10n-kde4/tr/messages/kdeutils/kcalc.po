@@ -1,0 +1,1899 @@
+# translation of kcalc.po to
+# translation of kcalc.po to Turkish
+# Copyright (C) 2003, 2004, 2005, 2008, 2009 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Onur Küçük <onur@uludag.org.tr>, 2004.
+# İsmail Şimşek <simsek@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Muhammet Kara <muhammet.k@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcalc\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-09 01:22+0200\n"
+"PO-Revision-Date: 2009-10-28 15:42+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcalc_const_button.cpp:32 kcalc_const_button.cpp:44
+msgctxt "Write display data into memory"
+msgid "Store"
+msgstr ""
+
+#: kcalc_const_button.cpp:32 kcalc_const_button.cpp:44
+msgid "Write display data into memory"
+msgstr "Görüntü verisini hafızaya yaz"
+
+#: kcalc_const_button.cpp:76
+msgid "Set Name"
+msgstr "İsim Ayarla"
+
+#: kcalc_const_button.cpp:79
+msgid "Choose From List"
+msgstr "Listeden Seç"
+
+#: kcalc_const_button.cpp:92
+msgid "New Name for Constant"
+msgstr "Sabit İçin Yeni İsim"
+
+#: kcalc_const_button.cpp:92
+msgid "New name:"
+msgstr "Yeni isim:"
+
+#: kcalc_const_menu.cpp:91
+msgid "Mathematics"
+msgstr "Matematik"
+
+#: kcalc_const_menu.cpp:92
+msgid "Electromagnetism"
+msgstr "Elektromanyetizma"
+
+#: kcalc_const_menu.cpp:93
+msgid "Atomic && Nuclear"
+msgstr "Atomik ve Nükleer"
+
+#: kcalc_const_menu.cpp:94
+msgid "Thermodynamics"
+msgstr "Termodinamik"
+
+#: kcalc_const_menu.cpp:95
+msgid "Gravitation"
+msgstr "Yerçekimi"
+
+#: kcalc.cpp:69
+msgid "KDE Calculator"
+msgstr "KDE Hesap Makinesi"
+
+#: kcalc.cpp:122
+msgid "&Constants"
+msgstr "&Sabitler"
+
+#: kcalc.cpp:194
+msgid "&Statistic Buttons"
+msgstr "İ&statistiksel Düğmeler"
+
+#: kcalc.cpp:200
+msgid "Science/&Engineering Buttons"
+msgstr "Bilimsel Düğmeler/&Mühendislik Düğmeleri"
+
+#: kcalc.cpp:206
+msgid "&Logic Buttons"
+msgstr "&Mantıksal Düğmeler"
+
+#: kcalc.cpp:212
+msgid "&Constants Buttons"
+msgstr "Sa&bitler Düğmeleri"
+
+#: kcalc.cpp:218
+msgid "&Show All"
+msgstr "&Tümünü Göster"
+
+#: kcalc.cpp:222
+msgid "&Hide All"
+msgstr "&Tümünü Gizle"
+
+#: kcalc.cpp:226
+msgid "Show B&it Edit"
+msgstr "B&it Düzenlemeyi Göster"
+
+#: kcalc.cpp:357
+#, fuzzy
+#| msgid "M+"
+msgctxt "Add display to memory"
+msgid "M+"
+msgstr "M+"
+
+#: kcalc.cpp:357
+msgid "Add display to memory"
+msgstr "Görüntüyü hafızaya ekle"
+
+#: kcalc.cpp:358
+#, fuzzy
+#| msgid "M"
+msgctxt "Subtract from memory"
+msgid "M-"
+msgstr "M"
+
+#: kcalc.cpp:358
+msgid "Subtract from memory"
+msgstr "Hafızadan çıkar"
+
+#. i18n: file: kcalc.ui:552
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbRoot)
+#: kcalc.cpp:385 rc.cpp:509
+msgid "Square root"
+msgstr "Kare kök"
+
+#: kcalc.cpp:386
+msgid "Cube root"
+msgstr "Küp kök"
+
+#: kcalc.cpp:493
+#, fuzzy
+#| msgid "Sin"
+msgctxt "Sine"
+msgid "Sin"
+msgstr "Sin"
+
+#. i18n: file: kcalc.ui:220
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbSin)
+#: kcalc.cpp:493 rc.cpp:321
+msgid "Sine"
+msgstr "Sinüs"
+
+#: kcalc.cpp:494
+#, fuzzy
+#| msgid "Arc sine"
+msgctxt "Arc sine"
+msgid "Asin"
+msgstr "Ark sinüs"
+
+#: kcalc.cpp:494
+msgid "Arc sine"
+msgstr "Ark sinüs"
+
+#: kcalc.cpp:495
+#, fuzzy
+#| msgid "Sin"
+msgctxt "Hyperbolic sine"
+msgid "Sinh"
+msgstr "Sin"
+
+#: kcalc.cpp:495
+msgid "Hyperbolic sine"
+msgstr "Hiperbolik Sinüs"
+
+#: kcalc.cpp:497
+#, fuzzy
+#| msgid "Arc sine"
+msgctxt "Inverse hyperbolic sine"
+msgid "Asinh"
+msgstr "Ark sinüs"
+
+#: kcalc.cpp:497
+msgid "Inverse hyperbolic sine"
+msgstr "Ters hiperbolik sinüs"
+
+#: kcalc.cpp:504
+#, fuzzy
+#| msgid "Cos"
+msgctxt "Cosine"
+msgid "Cos"
+msgstr "Cos"
+
+#. i18n: file: kcalc.ui:286
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbCos)
+#: kcalc.cpp:504 rc.cpp:361
+msgid "Cosine"
+msgstr "Kosinüs"
+
+#: kcalc.cpp:505
+msgctxt "Arc cosine"
+msgid "Acos"
+msgstr ""
+
+#: kcalc.cpp:505
+msgid "Arc cosine"
+msgstr "Ark kosinüs"
+
+#: kcalc.cpp:506
+#, fuzzy
+#| msgid "Cos"
+msgctxt "Hyperbolic cosine"
+msgid "Cosh"
+msgstr "Cos"
+
+#: kcalc.cpp:506
+msgid "Hyperbolic cosine"
+msgstr "Hiperbolik kosinüs"
+
+#: kcalc.cpp:508
+msgctxt "Inverse hyperbolic cosine"
+msgid "Acosh"
+msgstr ""
+
+#: kcalc.cpp:508
+msgid "Inverse hyperbolic cosine"
+msgstr "Ters hiperbolik kosinüs"
+
+#: kcalc.cpp:515
+#, fuzzy
+#| msgid "Tan"
+msgctxt "Tangent"
+msgid "Tan"
+msgstr "Tanjant"
+
+#. i18n: file: kcalc.ui:349
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbTan)
+#: kcalc.cpp:515 rc.cpp:398
+msgid "Tangent"
+msgstr "Tanjant"
+
+#: kcalc.cpp:516
+msgctxt "Arc tangent"
+msgid "Atan"
+msgstr ""
+
+#: kcalc.cpp:516
+msgid "Arc tangent"
+msgstr "Ark tanjant"
+
+#: kcalc.cpp:517
+#, fuzzy
+#| msgid "Tan"
+msgctxt "Hyperbolic tangent"
+msgid "Tanh"
+msgstr "Tanjant"
+
+#: kcalc.cpp:517
+msgid "Hyperbolic tangent"
+msgstr "Hiperbolik tanjant"
+
+#: kcalc.cpp:519
+msgctxt "Inverse hyperbolic tangent"
+msgid "Atanh"
+msgstr ""
+
+#: kcalc.cpp:519
+msgid "Inverse hyperbolic tangent"
+msgstr "Ters hiperbolik tanjant"
+
+#: kcalc.cpp:526
+#, fuzzy
+#| msgid "Log"
+msgctxt "Logarithm to base 10"
+msgid "Log"
+msgstr "Log"
+
+#. i18n: file: kcalc.ui:415
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbLog)
+#: kcalc.cpp:526 rc.cpp:438
+msgid "Logarithm to base 10"
+msgstr "Logaritma tabanı 10"
+
+#: kcalc.cpp:527
+msgctxt "10 to the power of x"
+msgid "10<sup>x</sup>"
+msgstr ""
+
+#: kcalc.cpp:527
+msgid "10 to the power of x"
+msgstr "10'un x kuvveti"
+
+#: kcalc.cpp:533
+#, fuzzy
+#| msgid "Ln"
+msgctxt "Natural log"
+msgid "Ln"
+msgstr "Ln"
+
+#. i18n: file: kcalc.ui:478
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbLn)
+#: kcalc.cpp:533 rc.cpp:475
+msgid "Natural log"
+msgstr "Doğal Logaritma"
+
+#: kcalc.cpp:534
+msgctxt "Exponential function"
+msgid "e<sup>x</sup>"
+msgstr ""
+
+#: kcalc.cpp:534
+msgid "Exponential function"
+msgstr "Üssel fonksiyon"
+
+#: kcalc.cpp:550
+#, fuzzy
+#| msgid "N"
+msgctxt "Number of data entered"
+msgid "N"
+msgstr "N"
+
+#. i18n: file: kcalc.ui:144
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbNData)
+#: kcalc.cpp:550 rc.cpp:278
+msgid "Number of data entered"
+msgstr "Girilen veri sayısı"
+
+#: kcalc.cpp:552
+msgid "Sum of all data items"
+msgstr "Tüm veri ögelerinin toplamı"
+
+#: kcalc.cpp:559
+#, fuzzy
+#| msgid "Mea"
+msgctxt "Mean"
+msgid "Mea"
+msgstr "Mea"
+
+#. i18n: file: kcalc.ui:210
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMean)
+#: kcalc.cpp:559 rc.cpp:315
+msgid "Mean"
+msgstr "Ortalama"
+
+#: kcalc.cpp:562
+msgid "Sum of all data items squared"
+msgstr "Tüm veri ögelerinin toplamının karesi"
+
+#. i18n: file: kcalc.ui:276
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbSd)
+#: kcalc.cpp:570 rc.cpp:355
+msgid "Standard deviation"
+msgstr "Standart sapma"
+
+#: kcalc.cpp:572
+msgid "Sample standard deviation"
+msgstr "Örnek standart sapma"
+
+#: kcalc.cpp:583
+#, fuzzy
+#| msgid "Dat"
+msgctxt "Enter data"
+msgid "Dat"
+msgstr "Dat"
+
+#. i18n: file: kcalc.ui:402
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbDat)
+#: kcalc.cpp:583 rc.cpp:429
+msgid "Enter data"
+msgstr "Veri girin"
+
+#: kcalc.cpp:584
+#, fuzzy
+#| msgid "Dat"
+msgctxt "Delete last data item"
+msgid "CDat"
+msgstr "Dat"
+
+#: kcalc.cpp:584
+msgid "Delete last data item"
+msgstr "Son veri ögesini sil"
+
+#: kcalc.cpp:650
+#, fuzzy
+#| msgid "Mod"
+msgctxt "Modulo"
+msgid "Mod"
+msgstr "Mod"
+
+#. i18n: file: kcalc.ui:180
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMod)
+#: kcalc.cpp:650 rc.cpp:299
+msgid "Modulo"
+msgstr "Mod"
+
+#: kcalc.cpp:651
+#, fuzzy
+#| msgid "Inv"
+msgctxt "Integer division"
+msgid "IntDiv"
+msgstr "Inv"
+
+#: kcalc.cpp:651
+msgid "Integer division"
+msgstr "Tamsayı bölmesi"
+
+#: kcalc.cpp:659
+#, fuzzy
+#| msgid "1/X"
+msgctxt "Reciprocal"
+msgid "1/x"
+msgstr "1/X"
+
+#. i18n: file: kcalc.ui:243
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbReci)
+#: kcalc.cpp:659 rc.cpp:336
+msgid "Reciprocal"
+msgstr "Evrik değer"
+
+#: kcalc.cpp:660
+#, fuzzy
+#| msgid "Cmp"
+msgctxt "n Choose m"
+msgid "nCm"
+msgstr "Cmp"
+
+#: kcalc.cpp:660
+msgid "n Choose m"
+msgstr "n Seç m"
+
+#: kcalc.cpp:667
+#, fuzzy
+#| msgid "x!"
+msgctxt "Factorial"
+msgid "x!"
+msgstr "x!"
+
+#. i18n: file: kcalc.ui:309
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbFactorial)
+#: kcalc.cpp:667 rc.cpp:376
+msgid "Factorial"
+msgstr "Faktöryel"
+
+#: kcalc.cpp:673
+msgctxt "Square"
+msgid "x<sup>2</sup>"
+msgstr ""
+
+#. i18n: file: kcalc.ui:372
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbSquare)
+#: kcalc.cpp:673 rc.cpp:413
+msgid "Square"
+msgstr "Kare"
+
+#: kcalc.cpp:674
+msgctxt "Third power"
+msgid "x<sup>3</sup>"
+msgstr ""
+
+#: kcalc.cpp:674
+msgid "Third power"
+msgstr "Küp"
+
+#: kcalc.cpp:683
+msgctxt "x to the power of y"
+msgid "x<sup>y</sup>"
+msgstr ""
+
+#. i18n: file: kcalc.ui:438
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbPower)
+#: kcalc.cpp:683 rc.cpp:453
+msgid "x to the power of y"
+msgstr "x nin y kuvveti"
+
+#: kcalc.cpp:684
+msgctxt "x to the power of 1/y"
+msgid "x<sup>1/y</sup>"
+msgstr ""
+
+#: kcalc.cpp:684
+msgid "x to the power of 1/y"
+msgstr "x'in 1/y kuvveti"
+
+#. i18n: file: kcalc.ui:501
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbEE)
+#: kcalc.cpp:693 rc.cpp:490
+msgid "Exponent"
+msgstr "Üs"
+
+#: kcalc.cpp:1011 kcalc.cpp:1012
+msgid "M"
+msgstr "M"
+
+#: kcalc.cpp:1420
+msgid "Last stat item erased"
+msgstr "Son istatistik ögesi silindi"
+
+#: kcalc.cpp:1431
+msgid "Stat mem cleared"
+msgstr "İstatistik belleği temizlendi"
+
+#. i18n: file: general.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, General)
+#: kcalc.cpp:1479 rc.cpp:69
+msgid "General"
+msgstr "Genel"
+
+#: kcalc.cpp:1479
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: kcalc.cpp:1484
+msgid "Font"
+msgstr "Yazı tipi"
+
+#: kcalc.cpp:1484
+msgid "Select Display Font"
+msgstr "Görünüm Yazıtipi Seçin"
+
+#: kcalc.cpp:1489
+msgid "Colors"
+msgstr "Renkler"
+
+#: kcalc.cpp:1489
+msgid "Button & Display Colors"
+msgstr "Düğme & Görünüm Rengi"
+
+#. i18n: file: constants.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, Constants)
+#. i18n: file: constants.ui:19
+#. i18n: ectx: property (title), widget (QGroupBox, constantsBox)
+#: kcalc.cpp:1538 rc.cpp:33 rc.cpp:36
+msgid "Constants"
+msgstr "Sabitler"
+
+#: kcalc.cpp:1538
+msgid "Define Constants"
+msgstr "Sabitleri Tanımla"
+
+#. i18n: file: kcalc.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, KCalculator)
+#: kcalc.cpp:1962 rc.cpp:239
+msgid "KCalc"
+msgstr "KCalc"
+
+#: kcalc.cpp:1966
+msgid ""
+"(c) 2000-2008, The KDE Team\n"
+"(c) 2003-2005, Klaus Niederkrüger\n"
+"(c) 1996-2000, Bernd Johannes Wuebben"
+msgstr ""
+"(c) 2000-2008, KDE Takımı\n"
+"(c) 2003-2005, Klaus Niederkrüger\n"
+"(c) 1996-2000, Bernd Johannes Wuebben"
+
+#: kcalc.cpp:1973
+msgid "Klaus Niederkrüger"
+msgstr "Klaus Niederkrüger"
+
+#: kcalc.cpp:1974
+msgid "Bernd Johannes Wuebben"
+msgstr "Bernd Johannes Wuebben"
+
+#: kcalc.cpp:1975
+msgid "Evan Teran"
+msgstr "Evan Teran"
+
+#: kcalc.cpp:1976
+msgid "Espen Sand"
+msgstr "Espen Sand"
+
+#: kcalc.cpp:1977
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: kcalc.cpp:1978
+msgid "Aaron J. Seigo"
+msgstr "Aaron J. Seigo"
+
+#: kcalc.cpp:1979
+msgid "Charles Samuels"
+msgstr "Charles Samuels"
+
+#: kcalc.cpp:1981
+msgid "René Mérou"
+msgstr "René Mérou"
+
+#: kcalc.cpp:1982
+msgid "Michel Marti"
+msgstr "Michel Marti"
+
+#: kcalc.cpp:1983
+msgid "David Johnson"
+msgstr "David Johnson"
+
+#: kcalc.cpp:1983
+msgid "Maintainer"
+msgstr "Projeyi Yürüten"
+
+#. i18n: file: colors.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, displayColorsBox)
+#: rc.cpp:3
+msgid "Display Colors"
+msgstr "Görünüm Renkleri"
+
+#. i18n: file: colors.ui:24
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:6
+msgid "&Foreground:"
+msgstr "Ö&nplan:"
+
+#. i18n: file: colors.ui:51
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:9
+msgid "&Background:"
+msgstr "A&rkaplan:"
+
+#. i18n: file: colors.ui:96
+#. i18n: ectx: property (title), widget (QGroupBox, buttonColorsBox)
+#: rc.cpp:12
+msgid "Button Colors"
+msgstr "Düğme Renkleri"
+
+#. i18n: file: colors.ui:104
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: rc.cpp:15
+msgid "&Functions:"
+msgstr "&Fonksiyonlar:"
+
+#. i18n: file: colors.ui:124
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: rc.cpp:18
+msgid "St&atistic functions:"
+msgstr "İstatistik &fonksiyonlar:"
+
+#. i18n: file: colors.ui:144
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: rc.cpp:21
+msgid "He&xadecimals:"
+msgstr "&Onaltılıklar:"
+
+#. i18n: file: colors.ui:164
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#: rc.cpp:24
+msgid "&Numbers:"
+msgstr "&Sayılar:"
+
+#. i18n: file: colors.ui:184
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: rc.cpp:27
+msgid "&Memory:"
+msgstr "&Bellek:"
+
+#. i18n: file: colors.ui:204
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#: rc.cpp:30
+msgid "O&perations:"
+msgstr "İş&lemler:"
+
+#. i18n: file: constants.ui:39
+#. i18n: ectx: property (text), widget (QPushButton, pushButton0)
+#. i18n: file: constants.ui:60
+#. i18n: ectx: property (text), widget (QPushButton, pushButton1)
+#. i18n: file: constants.ui:81
+#. i18n: ectx: property (text), widget (QPushButton, pushButton2)
+#. i18n: file: constants.ui:102
+#. i18n: ectx: property (text), widget (QPushButton, pushButton3)
+#. i18n: file: constants.ui:123
+#. i18n: ectx: property (text), widget (QPushButton, pushButton4)
+#. i18n: file: constants.ui:144
+#. i18n: ectx: property (text), widget (QPushButton, pushButton5)
+#: rc.cpp:39 rc.cpp:42 rc.cpp:45 rc.cpp:48 rc.cpp:51 rc.cpp:54
+msgid "Predefined"
+msgstr "Önceden tanımlı"
+
+#. i18n: file: fonts.ui:21
+#. i18n: ectx: property (text), widget (QLabel, buttonlabel)
+#: rc.cpp:57
+msgid "&Button font:"
+msgstr "D&üğme yazı tipi:"
+
+#. i18n: file: fonts.ui:34
+#. i18n: ectx: property (toolTip), widget (KFontRequester, kcfg_ButtonFont)
+#: rc.cpp:60
+msgid "The font to use for the buttons"
+msgstr "Düğmeler için kullanılacak yazıtipi"
+
+#. i18n: file: fonts.ui:41
+#. i18n: ectx: property (text), widget (QLabel, displaylabel)
+#: rc.cpp:63
+msgid "&Display font:"
+msgstr "G&örünüm yazı tipi:"
+
+#. i18n: file: fonts.ui:54
+#. i18n: ectx: property (toolTip), widget (KFontRequester, kcfg_DisplayFont)
+#: rc.cpp:66
+msgid "The font to use in the display"
+msgstr "Ekranda kullanılacak yazıtipi"
+
+#. i18n: file: general.ui:19
+#. i18n: ectx: property (title), widget (QGroupBox, precisionGroupBox)
+#: rc.cpp:72
+msgid "Precision"
+msgstr "Hassasiyet"
+
+#. i18n: file: general.ui:27
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:75
+msgid "&Maximum number of digits:"
+msgstr "&Azami hane sayısı:"
+
+#. i18n: file: general.ui:40
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_Precision)
+#: rc.cpp:78
+msgid "Maximum number of digits displayed"
+msgstr "Gösterilecek en fazla hane sayısı"
+
+#. i18n: file: general.ui:43
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, kcfg_Precision)
+#: rc.cpp:81
+msgid ""
+"KCalc can compute with many more digits than the number that fits on the "
+"display. This setting gives the maximum number of digits displayed, before "
+"KCalc starts using scientific notation, i.e. notation of the type 2.34e12."
+msgstr ""
+"KCalc, ekrana sığandan çok daha fazla rakamlı sayıları hesaplayabilir. Bu "
+"ayar, KCalc 2.34e12 gibi bilimsel kipte açılmadan önce gösterilecek en fazla "
+"rakam sayısını ayarlar."
+
+#. i18n: file: general.ui:50
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Fixed)
+#: rc.cpp:84
+msgid "Whether to use fixed decimal places"
+msgstr "Sabit ondalık yerlerin kullanılıp kullanılmayacağı"
+
+#. i18n: file: general.ui:53
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Fixed)
+#: rc.cpp:87
+msgid "Set &decimal precision"
+msgstr "O&ndalık hassasiyetini ayarla"
+
+#. i18n: file: general.ui:63
+#. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_FixedPrecision)
+#: rc.cpp:90
+msgid "Number of fixed decimal digits"
+msgstr "Sabit ondalık hanelerin sayısı"
+
+#. i18n: file: general.ui:88
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:93
+msgid "Numbers"
+msgstr "Sayılar"
+
+#. i18n: file: general.ui:94
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_GroupDigits)
+#: rc.cpp:96
+msgid "Whether to group digits"
+msgstr "Basamakların gruplandırılıp gruplandırılmayacağı"
+
+#. i18n: file: general.ui:97
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_GroupDigits)
+#: rc.cpp:99
+msgid "Group digits"
+msgstr "Basamakları gruplandır"
+
+#. i18n: file: general.ui:107
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_TwosComplement)
+#: rc.cpp:102
+msgid "Whether to use Two's Complement for non-decimal numbers"
+msgstr ""
+"Ondalık olmayan sayılar için İkinin Tümleyeninin kullanılıp kullanılmayacağı"
+
+#. i18n: file: general.ui:110
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_TwosComplement)
+#: rc.cpp:105
+msgid ""
+"Select to use Two's Complement notation for Binary, Octal and Hexidecimal "
+"numbers. This is a common notation to represent negative numbers for non-"
+"decimal numbers in computers."
+msgstr ""
+"İkili, Sekizli ve Onaltılı sayıların gösteriminde İkinin Tümleyenini "
+"kullanmak için bunu seçin. Bu, bilgisayarlarda ondalık olmayan sayılar için "
+"negatif sayıları ifade etmede sıkça kullanılan bir gösterimdir."
+
+#. i18n: file: general.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TwosComplement)
+#: rc.cpp:108
+msgid "Two's complement"
+msgstr "İki'nin tümleyeni"
+
+#. i18n: file: general.ui:126
+#. i18n: ectx: property (title), widget (QGroupBox, miscGroupBox)
+#: rc.cpp:111
+msgid "Misc"
+msgstr "Çeşitli"
+
+#. i18n: file: general.ui:132
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_Beep)
+#: rc.cpp:114
+msgid "Whether to beep on error"
+msgstr "Hatada ses çıkarılıp çıkarılmayacağı"
+
+#. i18n: file: general.ui:135
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Beep)
+#: rc.cpp:117
+msgid "&Beep on error"
+msgstr "&Hatada ses çıkar"
+
+#. i18n: file: general.ui:145
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_CaptionResult)
+#: rc.cpp:120
+msgid "Whether to show the result in the window title"
+msgstr "Sonucun pencere başlığında gösterilip gösterilmeyeceği"
+
+#. i18n: file: general.ui:148
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CaptionResult)
+#: rc.cpp:123
+msgid "Show &result in window title"
+msgstr "Sonuçla&rı pencere başlığında göster"
+
+#. i18n: file: kcalc.kcfg:13
+#. i18n: ectx: label, entry (ForeColor), group (Colors)
+#: rc.cpp:126
+msgid "The foreground color of the display."
+msgstr "Görünümün metin rengi."
+
+#. i18n: file: kcalc.kcfg:19
+#. i18n: ectx: label, entry (BackColor), group (Colors)
+#: rc.cpp:129
+msgid "The background color of the display."
+msgstr "Görünümün arkaplan rengi."
+
+#. i18n: file: kcalc.kcfg:24
+#. i18n: ectx: label, entry (NumberButtonsColor), group (Colors)
+#: rc.cpp:132
+msgid "The color of number buttons."
+msgstr "Sayı düğmelerinin rengi."
+
+#. i18n: file: kcalc.kcfg:30
+#. i18n: ectx: label, entry (FunctionButtonsColor), group (Colors)
+#: rc.cpp:135
+msgid "The color of function buttons."
+msgstr "Fonksiyon düğmelerinin rengi."
+
+#. i18n: file: kcalc.kcfg:34
+#. i18n: ectx: label, entry (StatButtonsColor), group (Colors)
+#: rc.cpp:138
+msgid "The color of statistical buttons."
+msgstr "İstatistiksel düğmelerin rengi."
+
+#. i18n: file: kcalc.kcfg:38
+#. i18n: ectx: label, entry (HexButtonsColor), group (Colors)
+#: rc.cpp:141
+msgid "The color of hex buttons."
+msgstr "Onaltılılık düğmelerin rengi."
+
+#. i18n: file: kcalc.kcfg:42
+#. i18n: ectx: label, entry (MemoryButtonsColor), group (Colors)
+#: rc.cpp:144
+msgid "The color of memory buttons."
+msgstr "Hafıza düğmelerinin rengi."
+
+#. i18n: file: kcalc.kcfg:46
+#. i18n: ectx: label, entry (OperationButtonsColor), group (Colors)
+#: rc.cpp:147
+msgid "The color of operation buttons."
+msgstr "İşlem düğmelerinin rengi."
+
+#. i18n: file: kcalc.kcfg:52
+#. i18n: ectx: label, entry (ButtonFont), group (Font)
+#: rc.cpp:150
+msgid "The font to use for the buttons."
+msgstr "Düğmeler için kullanılacak yazıtipi."
+
+#. i18n: file: kcalc.kcfg:56
+#. i18n: ectx: label, entry (DisplayFont), group (Font)
+#: rc.cpp:153
+msgid "The font to use in the display."
+msgstr "Ekranda görüntülenecek yazıtipi."
+
+#. i18n: file: kcalc.kcfg:62
+#. i18n: ectx: label, entry (Precision), group (Precision)
+#: rc.cpp:156
+msgid "Maximum number of digits displayed."
+msgstr "Gösterilecek en fazla hane sayısı."
+
+#. i18n: file: kcalc.kcfg:68
+#. i18n: ectx: whatsthis, entry (Precision), group (Precision)
+#: rc.cpp:159
+msgid ""
+"\n"
+"\tKCalc can compute with many more digits than the number that\n"
+"\tfits on the display. This setting gives the maximum number of\n"
+"\tdigits displayed, before KCalc starts using scientific notation,\n"
+"\ti.e. notation of the type 2.34e12.\n"
+"      "
+msgstr ""
+"\n"
+"\tKCalcekrana sığandan çok daha fazla rakamlı sayıları hesaplayabilir.\n"
+"\tBu ayar, KCalc 2.34e12 gibi bilimsel kipte açılmadan önce\n"
+"\tgösterilecek en fazla rakam sayısını ayarlar\n"
+"\t.\n"
+"      "
+
+#. i18n: file: kcalc.kcfg:74
+#. i18n: ectx: label, entry (FixedPrecision), group (Precision)
+#: rc.cpp:167
+msgid "Number of fixed decimal digits."
+msgstr "Sabit ondalık hanelerin sayısı."
+
+#. i18n: file: kcalc.kcfg:78
+#. i18n: ectx: label, entry (Fixed), group (Precision)
+#: rc.cpp:170
+msgid "Whether to use fixed decimal places."
+msgstr "Sabit ondalık yerlerin kullanımı."
+
+#. i18n: file: kcalc.kcfg:84
+#. i18n: ectx: label, entry (Beep), group (General)
+#: rc.cpp:173
+msgid "Whether to beep on error."
+msgstr "Hatada ses çıkar."
+
+#. i18n: file: kcalc.kcfg:88
+#. i18n: ectx: label, entry (CaptionResult), group (General)
+#: rc.cpp:176
+msgid "Whether to show the result in the window title."
+msgstr "Sonucun pencere başlığında gösterimi."
+
+#. i18n: file: kcalc.kcfg:92
+#. i18n: ectx: label, entry (GroupDigits), group (General)
+#: rc.cpp:179
+msgid "Whether to group digits."
+msgstr "Basamakların gruplandırılıp gruplandırılmayacağı."
+
+#. i18n: file: kcalc.kcfg:96
+#. i18n: ectx: label, entry (TwosComplement), group (General)
+#: rc.cpp:182
+msgid "Whether to use Two's Complement for non-decimal numbers."
+msgstr ""
+"Ondalık olmayan sayılar için İki'nin Tümleyeninin kullanılıp "
+"kullanılmayacağı."
+
+#. i18n: file: kcalc.kcfg:101
+#. i18n: ectx: whatsthis, entry (TwosComplement), group (General)
+#: rc.cpp:185
+msgid ""
+"\n"
+"        Select to use Two's Complement notation for Binary, Octal\n"
+"        and Hexidecimal numbers. This is a common notation to represent\n"
+"        negative numbers in computers.\n"
+"      "
+msgstr ""
+"\n"
+"        İkili, Sekizli ve Onaltılı sayıların gösteriminde İki'nin "
+"Tümleyenini\n"
+"        kullanmak için bunu seçin. Bu, bilgisayarlarda ondalık olmayan "
+"sayılar için negatif sayıları ifade etmede\n"
+"        sıkça kullanılan bir gösterimdir.\n"
+"      "
+
+#. i18n: file: kcalc.kcfg:105
+#. i18n: ectx: label, entry (ShowBitset), group (General)
+#: rc.cpp:192
+msgid "Whether to show the bit edit widget."
+msgstr "Bit düzenlemenin gösterilip gösterilmeyeceği."
+
+#. i18n: file: kcalc.kcfg:109
+#. i18n: ectx: label, entry (ShowStat), group (General)
+#: rc.cpp:195
+msgid "Whether to show statistical buttons."
+msgstr "İstatistiksel düğmelerin gösterimi."
+
+#. i18n: file: kcalc.kcfg:114
+#. i18n: ectx: label, entry (ShowScientific), group (General)
+#: rc.cpp:198
+msgid ""
+"Whether to show buttons with functions used in science/engineering,\n"
+"\t     like exp, log, sin, etc."
+msgstr ""
+"Bilimsel düğmelerin/mühendislik düğmelerinin gösterilip gösterilmeyeceği.\n"
+"\t      exp, log, sin gibi."
+
+#. i18n: file: kcalc.kcfg:118
+#. i18n: ectx: label, entry (ShowLogic), group (General)
+#: rc.cpp:202
+msgid "Whether to show logic buttons."
+msgstr "Lojik düğmelerin gösterimi."
+
+#. i18n: file: kcalc.kcfg:122
+#. i18n: ectx: label, entry (ShowConstants), group (General)
+#: rc.cpp:205
+msgid "Whether to show constant buttons."
+msgstr "Sabit düğmelerin gösterimi."
+
+#. i18n: file: kcalc.kcfg:126
+#. i18n: ectx: label, entry (AngleMode), group (General)
+#: rc.cpp:208
+msgid "Degrees, radians or grads"
+msgstr "Derece, radyan ya da grad"
+
+#. i18n: file: kcalc.kcfg:130
+#. i18n: ectx: label, entry (BaseMode), group (General)
+#: rc.cpp:211
+msgid "Numeric base"
+msgstr "Rakamsal taban"
+
+#. i18n: file: kcalc.kcfg:136
+#. i18n: ectx: label, entry (nameConstant$(ConstIndex)), group (UserConstants)
+#: rc.cpp:214
+msgid "Name of the user programmable constants."
+msgstr "Kullanıcının programlayabileceği sabitlerin ismi."
+
+#. i18n: file: kcalc.kcfg:155
+#. i18n: ectx: label, entry (valueConstant$(ConstIndex)), group (UserConstants)
+#: rc.cpp:217
+msgid "List of user programmable constants"
+msgstr "Kullanıcının programlayabileceği sabitlerin listesi"
+
+#. i18n: file: kcalc.kcfg:146
+#: rc.cpp:225
+#, fuzzy
+#| msgid "C1"
+msgctxt "Name of the user programmable constant"
+msgid "C1"
+msgstr "C1"
+
+#. i18n: file: kcalc.kcfg:147
+#: rc.cpp:227
+#, fuzzy
+#| msgid "C2"
+msgctxt "Name of the user programmable constant"
+msgid "C2"
+msgstr "C2"
+
+#. i18n: file: kcalc.kcfg:148
+#: rc.cpp:229
+#, fuzzy
+#| msgid "C3"
+msgctxt "Name of the user programmable constant"
+msgid "C3"
+msgstr "C3"
+
+#. i18n: file: kcalc.kcfg:149
+#: rc.cpp:231
+#, fuzzy
+#| msgid "C4"
+msgctxt "Name of the user programmable constant"
+msgid "C4"
+msgstr "C4"
+
+#. i18n: file: kcalc.kcfg:150
+#: rc.cpp:233
+#, fuzzy
+#| msgid "C5"
+msgctxt "Name of the user programmable constant"
+msgid "C5"
+msgstr "C5"
+
+#. i18n: file: kcalc.kcfg:151
+#: rc.cpp:235
+#, fuzzy
+#| msgid "C6"
+msgctxt "Name of the user programmable constant"
+msgid "C6"
+msgstr "C6"
+
+#. i18n: file: kcalc.ui:35
+#. i18n: ectx: property (toolTip), widget (KCalcBitset, mBitset)
+#: rc.cpp:242
+msgid "Click on a Bit to toggle it."
+msgstr "Değiştirmek için tıklayın."
+
+#. i18n: file: kcalc.ui:44
+#. i18n: ectx: property (text), widget (QRadioButton, degRadio)
+#: rc.cpp:245
+msgid "Deg"
+msgstr "Derece"
+
+#. i18n: file: kcalc.ui:51
+#. i18n: ectx: property (text), widget (QRadioButton, radRadio)
+#: rc.cpp:248
+msgid "Rad"
+msgstr "Radyan"
+
+#. i18n: file: kcalc.ui:58
+#. i18n: ectx: property (text), widget (QRadioButton, gradRadio)
+#: rc.cpp:251
+msgid "Grad"
+msgstr "Gradyan"
+
+#. i18n: file: kcalc.ui:78
+#. i18n: ectx: property (toolTip), widget (QRadioButton, hexRadio)
+#: rc.cpp:254
+msgid "Switch base to hexadecimal."
+msgstr "Tabanı onaltılık sisteme dönüştür."
+
+#. i18n: file: kcalc.ui:81
+#. i18n: ectx: property (text), widget (QRadioButton, hexRadio)
+#: rc.cpp:257
+msgid "He&x"
+msgstr "O&naltılık"
+
+#. i18n: file: kcalc.ui:88
+#. i18n: ectx: property (toolTip), widget (QRadioButton, decRadio)
+#: rc.cpp:260
+msgid "Switch base to decimal."
+msgstr "Tabanı onluk sisteme dönüştür."
+
+#. i18n: file: kcalc.ui:91
+#. i18n: ectx: property (text), widget (QRadioButton, decRadio)
+#: rc.cpp:263
+msgid "&Dec"
+msgstr "&Onluk"
+
+#. i18n: file: kcalc.ui:98
+#. i18n: ectx: property (toolTip), widget (QRadioButton, octRadio)
+#: rc.cpp:266
+msgid "Switch base to octal."
+msgstr "Tabanı sekizlik sisteme dönüştür."
+
+#. i18n: file: kcalc.ui:101
+#. i18n: ectx: property (text), widget (QRadioButton, octRadio)
+#: rc.cpp:269
+msgid "&Oct"
+msgstr "&Sekizlik"
+
+#. i18n: file: kcalc.ui:108
+#. i18n: ectx: property (toolTip), widget (QRadioButton, binRadio)
+#: rc.cpp:272
+msgid "Switch base to binary."
+msgstr "Tabanı ikili sisteme dönüştür."
+
+#. i18n: file: kcalc.ui:111
+#. i18n: ectx: property (text), widget (QRadioButton, binRadio)
+#: rc.cpp:275
+msgid "&Bin"
+msgstr "İk&ilik"
+
+#. i18n: file: kcalc.ui:147
+#. i18n: ectx: property (text), widget (KCalcButton, pbNData)
+#. i18n: file: kcalc.ui:484
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbLn)
+#: rc.cpp:281 rc.cpp:481
+msgid "N"
+msgstr "N"
+
+#. i18n: file: kcalc.ui:154
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbHyp)
+#: rc.cpp:284
+msgid "Hyperbolic mode"
+msgstr "Hiperbolik kip"
+
+#. i18n: file: kcalc.ui:157
+#. i18n: ectx: property (text), widget (KCalcButton, pbHyp)
+#: rc.cpp:287
+msgid "Hyp"
+msgstr "Hyp"
+
+#. i18n: file: kcalc.ui:160
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbHyp)
+#: rc.cpp:290
+msgid "H"
+msgstr "H"
+
+#. i18n: file: kcalc.ui:170
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbAND)
+#: rc.cpp:293
+msgid "Bitwise AND"
+msgstr "Bit AND"
+
+#. i18n: file: kcalc.ui:173
+#. i18n: ectx: property (text), widget (KCalcButton, pbAND)
+#: rc.cpp:296
+msgid "AND"
+msgstr "AND"
+
+#. i18n: file: kcalc.ui:183
+#. i18n: ectx: property (text), widget (KCalcButton, pbMod)
+#: rc.cpp:302
+msgid "Mod"
+msgstr "Mod"
+
+#. i18n: file: kcalc.ui:190
+#. i18n: ectx: property (text), widget (KCalcButton, pbA)
+#. i18n: file: kcalc.ui:193
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbA)
+#: rc.cpp:305 rc.cpp:308
+msgid "A"
+msgstr "A"
+
+#. i18n: file: kcalc.ui:200
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC1)
+#: rc.cpp:311
+msgid "C1"
+msgstr "C1"
+
+#. i18n: file: kcalc.ui:213
+#. i18n: ectx: property (text), widget (KCalcButton, pbMean)
+#: rc.cpp:318
+msgid "Mea"
+msgstr "Mea"
+
+#. i18n: file: kcalc.ui:223
+#. i18n: ectx: property (text), widget (KCalcButton, pbSin)
+#: rc.cpp:324
+msgid "Sin"
+msgstr "Sin"
+
+#. i18n: file: kcalc.ui:226
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbSin)
+#: rc.cpp:327
+msgid "S"
+msgstr "S"
+
+#. i18n: file: kcalc.ui:233
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbOR)
+#: rc.cpp:330
+msgid "Bitwise OR"
+msgstr "Bit OR"
+
+#. i18n: file: kcalc.ui:236
+#. i18n: ectx: property (text), widget (KCalcButton, pbOR)
+#: rc.cpp:333
+msgid "OR"
+msgstr "OR"
+
+#. i18n: file: kcalc.ui:246
+#. i18n: ectx: property (text), widget (KCalcButton, pbReci)
+#: rc.cpp:339
+msgid "1/X"
+msgstr "1/X"
+
+#. i18n: file: kcalc.ui:249
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbReci)
+#: rc.cpp:342
+msgid "R"
+msgstr "R"
+
+#. i18n: file: kcalc.ui:256
+#. i18n: ectx: property (text), widget (KCalcButton, pbB)
+#. i18n: file: kcalc.ui:259
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbB)
+#: rc.cpp:345 rc.cpp:348
+msgid "B"
+msgstr "B"
+
+#. i18n: file: kcalc.ui:266
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC2)
+#: rc.cpp:351
+msgid "C2"
+msgstr "C2"
+
+#. i18n: file: kcalc.ui:279
+#. i18n: ectx: property (text), widget (KCalcButton, pbSd)
+#: rc.cpp:358
+msgid "SD"
+msgstr "SD"
+
+#. i18n: file: kcalc.ui:289
+#. i18n: ectx: property (text), widget (KCalcButton, pbCos)
+#: rc.cpp:364
+msgid "Cos"
+msgstr "Cos"
+
+#. i18n: file: kcalc.ui:292
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbCos)
+#. i18n: file: kcalc.ui:319
+#. i18n: ectx: property (text), widget (KCalcButton, pbC)
+#. i18n: file: kcalc.ui:322
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbC)
+#. i18n: file: kcalc.ui:843
+#. i18n: ectx: property (text), widget (KCalcButton, pbClear)
+#: rc.cpp:367 rc.cpp:382 rc.cpp:385 rc.cpp:623
+msgid "C"
+msgstr "C"
+
+#. i18n: file: kcalc.ui:299
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbXOR)
+#: rc.cpp:370
+msgid "Bitwise XOR"
+msgstr "Bit XOR"
+
+#. i18n: file: kcalc.ui:302
+#. i18n: ectx: property (text), widget (KCalcButton, pbXOR)
+#: rc.cpp:373
+msgid "XOR"
+msgstr "XOR"
+
+#. i18n: file: kcalc.ui:312
+#. i18n: ectx: property (text), widget (KCalcButton, pbFactorial)
+#: rc.cpp:379
+msgid "x!"
+msgstr "x!"
+
+#. i18n: file: kcalc.ui:329
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC3)
+#: rc.cpp:388
+msgid "C3"
+msgstr "C3"
+
+#. i18n: file: kcalc.ui:339
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMed)
+#: rc.cpp:392
+msgid "Median"
+msgstr "Medyan"
+
+#. i18n: file: kcalc.ui:342
+#. i18n: ectx: property (text), widget (KCalcButton, pbMed)
+#: rc.cpp:395
+msgid "Med"
+msgstr "Med"
+
+#. i18n: file: kcalc.ui:352
+#. i18n: ectx: property (text), widget (KCalcButton, pbTan)
+#: rc.cpp:401
+msgid "Tan"
+msgstr "Tanjant"
+
+#. i18n: file: kcalc.ui:355
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbTan)
+#: rc.cpp:404
+msgid "T"
+msgstr "T"
+
+#. i18n: file: kcalc.ui:362
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbLsh)
+#: rc.cpp:407
+msgid "Left bit shift"
+msgstr "Sola bit kaydırma"
+
+#. i18n: file: kcalc.ui:365
+#. i18n: ectx: property (text), widget (KCalcButton, pbLsh)
+#: rc.cpp:410
+msgid "Lsh"
+msgstr "Lsh"
+
+#. i18n: file: kcalc.ui:375
+#. i18n: ectx: property (text), widget (KCalcButton, pbSquare)
+#: rc.cpp:416
+msgid "x2"
+msgstr "x2"
+
+#. i18n: file: kcalc.ui:382
+#. i18n: ectx: property (text), widget (KCalcButton, pbD)
+#. i18n: file: kcalc.ui:385
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbD)
+#. i18n: file: kcalc.ui:408
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbDat)
+#: rc.cpp:419 rc.cpp:422 rc.cpp:435
+msgid "D"
+msgstr "D"
+
+#. i18n: file: kcalc.ui:392
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC4)
+#: rc.cpp:425
+msgid "C4"
+msgstr "C4"
+
+#. i18n: file: kcalc.ui:405
+#. i18n: ectx: property (text), widget (KCalcButton, pbDat)
+#: rc.cpp:432
+msgid "Dat"
+msgstr "Dat"
+
+#. i18n: file: kcalc.ui:418
+#. i18n: ectx: property (text), widget (KCalcButton, pbLog)
+#: rc.cpp:441
+msgid "Log"
+msgstr "Log"
+
+#. i18n: file: kcalc.ui:421
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbLog)
+#: rc.cpp:444
+msgid "L"
+msgstr "L"
+
+#. i18n: file: kcalc.ui:428
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbRsh)
+#: rc.cpp:447
+msgid "Right bit shift"
+msgstr "Sağa bit kaydırma"
+
+#. i18n: file: kcalc.ui:431
+#. i18n: ectx: property (text), widget (KCalcButton, pbRsh)
+#: rc.cpp:450
+msgid "Rsh"
+msgstr "Rsh"
+
+#. i18n: file: kcalc.ui:441
+#. i18n: ectx: property (text), widget (KCalcButton, pbPower)
+#: rc.cpp:456
+msgid "pow"
+msgstr "pow"
+
+#. i18n: file: kcalc.ui:448
+#. i18n: ectx: property (text), widget (KCalcButton, pbE)
+#. i18n: file: kcalc.ui:451
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbE)
+#. i18n: file: kcalc.ui:507
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbEE)
+#: rc.cpp:459 rc.cpp:462 rc.cpp:496
+msgid "E"
+msgstr "E"
+
+#. i18n: file: kcalc.ui:458
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC5)
+#: rc.cpp:465
+msgid "C5"
+msgstr "C5"
+
+#. i18n: file: kcalc.ui:468
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbCSt)
+#: rc.cpp:469
+msgid "Clear data store"
+msgstr "Kayıtlı veriyi temizle"
+
+#. i18n: file: kcalc.ui:471
+#. i18n: ectx: property (text), widget (KCalcButton, pbCSt)
+#: rc.cpp:472
+msgid "CSt"
+msgstr "CSt"
+
+#. i18n: file: kcalc.ui:481
+#. i18n: ectx: property (text), widget (KCalcButton, pbLn)
+#: rc.cpp:478
+msgid "Ln"
+msgstr "Ln"
+
+#. i18n: file: kcalc.ui:491
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbCmp)
+#: rc.cpp:484
+msgid "One's complement"
+msgstr "Bir'in tümleyeni"
+
+#. i18n: file: kcalc.ui:494
+#. i18n: ectx: property (text), widget (KCalcButton, pbCmp)
+#: rc.cpp:487
+msgid "Cmp"
+msgstr "Cmp"
+
+#. i18n: file: kcalc.ui:504
+#. i18n: ectx: property (text), widget (KCalcButton, pbEE)
+#: rc.cpp:493
+msgid "EXP"
+msgstr "EXP"
+
+#. i18n: file: kcalc.ui:514
+#. i18n: ectx: property (text), widget (KCalcButton, pbF)
+#. i18n: file: kcalc.ui:517
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbF)
+#: rc.cpp:499 rc.cpp:502
+msgid "F"
+msgstr "F"
+
+#. i18n: file: kcalc.ui:524
+#. i18n: ectx: property (text), widget (KCalcConstButton, pbC6)
+#: rc.cpp:505
+msgid "C6"
+msgstr "C6"
+
+#. i18n: file: kcalc.ui:555
+#. i18n: ectx: property (text), widget (KCalcButton, pbRoot)
+#: rc.cpp:512
+msgid "sr"
+msgstr "sr"
+
+#. i18n: file: kcalc.ui:568
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbDivision)
+#: rc.cpp:515
+msgid "Division"
+msgstr "Bölme"
+
+#. i18n: file: kcalc.ui:571
+#. i18n: ectx: property (text), widget (KCalcButton, pbDivision)
+#: rc.cpp:518
+msgid "/"
+msgstr "/"
+
+#. i18n: file: kcalc.ui:584
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMultiplication)
+#: rc.cpp:521
+msgid "Multiplication"
+msgstr "Çarpma"
+
+#. i18n: file: kcalc.ui:587
+#. i18n: ectx: property (text), widget (KCalcButton, pbMultiplication)
+#: rc.cpp:524
+msgid "X"
+msgstr "X"
+
+#. i18n: file: kcalc.ui:600
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMinus)
+#: rc.cpp:527
+msgid "Minus"
+msgstr "Minus"
+
+#. i18n: file: kcalc.ui:603
+#. i18n: ectx: property (text), widget (KCalcButton, pbMinus)
+#: rc.cpp:530
+msgctxt "- calculator button"
+msgid "-"
+msgstr "-"
+
+#. i18n: file: kcalc.ui:616
+#. i18n: ectx: property (text), widget (KCalcButton, pb7)
+#. i18n: file: kcalc.ui:619
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb7)
+#: rc.cpp:533 rc.cpp:536
+msgid "7"
+msgstr "7"
+
+#. i18n: file: kcalc.ui:632
+#. i18n: ectx: property (text), widget (KCalcButton, pb8)
+#. i18n: file: kcalc.ui:635
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb8)
+#: rc.cpp:539 rc.cpp:542
+msgid "8"
+msgstr "8"
+
+#. i18n: file: kcalc.ui:648
+#. i18n: ectx: property (text), widget (KCalcButton, pb9)
+#. i18n: file: kcalc.ui:651
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb9)
+#: rc.cpp:545 rc.cpp:548
+msgid "9"
+msgstr "9"
+
+#. i18n: file: kcalc.ui:664
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbPlus)
+#: rc.cpp:551
+msgid "Plus"
+msgstr "Plus"
+
+#. i18n: file: kcalc.ui:667
+#. i18n: ectx: property (text), widget (KCalcButton, pbPlus)
+#: rc.cpp:554
+msgctxt "+ calculator button"
+msgid "+"
+msgstr "+"
+
+#. i18n: file: kcalc.ui:680
+#. i18n: ectx: property (text), widget (KCalcButton, pb4)
+#. i18n: file: kcalc.ui:683
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb4)
+#: rc.cpp:557 rc.cpp:560
+msgid "4"
+msgstr "4"
+
+#. i18n: file: kcalc.ui:696
+#. i18n: ectx: property (text), widget (KCalcButton, pb5)
+#. i18n: file: kcalc.ui:699
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb5)
+#: rc.cpp:563 rc.cpp:566
+msgid "5"
+msgstr "5"
+
+#. i18n: file: kcalc.ui:712
+#. i18n: ectx: property (text), widget (KCalcButton, pb6)
+#. i18n: file: kcalc.ui:715
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb6)
+#: rc.cpp:569 rc.cpp:572
+msgid "6"
+msgstr "6"
+
+#. i18n: file: kcalc.ui:728
+#. i18n: ectx: property (text), widget (KCalcButton, pb1)
+#. i18n: file: kcalc.ui:731
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb1)
+#: rc.cpp:575 rc.cpp:578
+msgid "1"
+msgstr "1"
+
+#. i18n: file: kcalc.ui:744
+#. i18n: ectx: property (text), widget (KCalcButton, pb2)
+#. i18n: file: kcalc.ui:747
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb2)
+#: rc.cpp:581 rc.cpp:584
+msgid "2"
+msgstr "2"
+
+#. i18n: file: kcalc.ui:760
+#. i18n: ectx: property (text), widget (KCalcButton, pb3)
+#. i18n: file: kcalc.ui:763
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb3)
+#: rc.cpp:587 rc.cpp:590
+msgid "3"
+msgstr "3"
+
+#. i18n: file: kcalc.ui:776
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbEqual)
+#: rc.cpp:593
+msgid "Result"
+msgstr "Sonuç"
+
+#. i18n: file: kcalc.ui:779
+#. i18n: ectx: property (text), widget (KCalcButton, pbEqual)
+#: rc.cpp:596
+msgctxt "= calculator button"
+msgid "="
+msgstr "="
+
+#. i18n: file: kcalc.ui:786
+#. i18n: ectx: property (text), widget (KCalcButton, pb0)
+#. i18n: file: kcalc.ui:789
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pb0)
+#: rc.cpp:599 rc.cpp:602
+msgid "0"
+msgstr "0"
+
+#. i18n: file: kcalc.ui:802
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbPeriod)
+#: rc.cpp:605
+msgid "Decimal point"
+msgstr "Ondalık işareti"
+
+#. i18n: file: kcalc.ui:805
+#. i18n: ectx: property (text), widget (KCalcButton, pbPeriod)
+#: rc.cpp:608
+msgctxt ". calculator button"
+msgid "."
+msgstr "."
+
+#. i18n: file: kcalc.ui:824
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbInv)
+#: rc.cpp:611
+msgid "Inverse mode"
+msgstr "Ters kip"
+
+#. i18n: file: kcalc.ui:827
+#. i18n: ectx: property (text), widget (KCalcButton, pbInv)
+#: rc.cpp:614
+msgid "Inv"
+msgstr "Inv"
+
+#. i18n: file: kcalc.ui:830
+#. i18n: ectx: property (shortcut), widget (KCalcButton, pbInv)
+#: rc.cpp:617
+msgid "I"
+msgstr "I"
+
+#. i18n: file: kcalc.ui:840
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbClear)
+#: rc.cpp:620
+msgid "Clear"
+msgstr "Temizle"
+
+#. i18n: file: kcalc.ui:850
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbAllClear)
+#: rc.cpp:626
+msgid "Clear all"
+msgstr "Tümünü temizle"
+
+#. i18n: file: kcalc.ui:853
+#. i18n: ectx: property (text), widget (KCalcButton, pbAllClear)
+#: rc.cpp:629
+msgid "AC"
+msgstr "AC"
+
+#. i18n: file: kcalc.ui:860
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbParenOpen)
+#: rc.cpp:632
+msgid "Open parenthesis"
+msgstr "Parantez aç"
+
+#. i18n: file: kcalc.ui:863
+#. i18n: ectx: property (text), widget (KCalcButton, pbParenOpen)
+#: rc.cpp:635
+msgctxt "( calculator button"
+msgid "("
+msgstr "("
+
+#. i18n: file: kcalc.ui:870
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbParenClose)
+#: rc.cpp:638
+msgid "Close parenthesis"
+msgstr "Parantezi kapat"
+
+#. i18n: file: kcalc.ui:873
+#. i18n: ectx: property (text), widget (KCalcButton, pbParenClose)
+#: rc.cpp:641
+msgctxt ") calculator button"
+msgid ")"
+msgstr ")"
+
+#. i18n: file: kcalc.ui:880
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMemRecall)
+#: rc.cpp:644
+msgid "Memory recall"
+msgstr "Bellekten getir"
+
+#. i18n: file: kcalc.ui:883
+#. i18n: ectx: property (text), widget (KCalcButton, pbMemRecall)
+#: rc.cpp:647
+msgid "MR"
+msgstr "MR"
+
+#. i18n: file: kcalc.ui:890
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMemClear)
+#: rc.cpp:650
+msgid "Memory clear"
+msgstr "Bellek temizliği"
+
+#. i18n: file: kcalc.ui:893
+#. i18n: ectx: property (text), widget (KCalcButton, pbMemClear)
+#: rc.cpp:653
+msgid "MC"
+msgstr "MC"
+
+#. i18n: file: kcalc.ui:900
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMemPlusMinus)
+#: rc.cpp:656
+msgid "Add to memory"
+msgstr "Belleğe ekle"
+
+#. i18n: file: kcalc.ui:903
+#. i18n: ectx: property (text), widget (KCalcButton, pbMemPlusMinus)
+#: rc.cpp:659
+msgid "M+"
+msgstr "M+"
+
+#. i18n: file: kcalc.ui:910
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbMemStore)
+#: rc.cpp:662
+msgid "Memory store"
+msgstr "Hafızaya kaydet"
+
+#. i18n: file: kcalc.ui:913
+#. i18n: ectx: property (text), widget (KCalcButton, pbMemStore)
+#: rc.cpp:665
+msgid "MS"
+msgstr "MS"
+
+#. i18n: file: kcalc.ui:920
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbPercent)
+#: rc.cpp:668
+msgid "Percent"
+msgstr "Yüzde"
+
+#. i18n: file: kcalc.ui:923
+#. i18n: ectx: property (text), widget (KCalcButton, pbPercent)
+#: rc.cpp:672
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file: kcalc.ui:930
+#. i18n: ectx: property (toolTip), widget (KCalcButton, pbPlusMinus)
+#: rc.cpp:675
+msgid "Change sign"
+msgstr "İşareti değiştir"
+
+#. i18n: file: kcalc.ui:933
+#. i18n: ectx: property (text), widget (KCalcButton, pbPlusMinus)
+#: rc.cpp:678
+msgid "+/-"
+msgstr "+/-"
+
+#. i18n: file: kcalcui.rc:4
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:681
+msgid "&Settings"
+msgstr "&Ayarlar"
+
+#: rc.cpp:682
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Onur Küçük, İsmail Şimşek"
+
+#: rc.cpp:683
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gorkem@kde.org, simsek@kde.org.tr"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:3
+#: rc.cpp:686
+msgid "Pi"
+msgstr "Pi"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:7
+#: rc.cpp:689
+msgid "Euler Number"
+msgstr "Euler Sayısı"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:11
+#: rc.cpp:692
+msgid "Golden Ratio"
+msgstr "Altın Oran"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:15
+#: rc.cpp:695
+msgid "Light Speed"
+msgstr "Işık Hızı"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:19
+#: rc.cpp:698
+msgid "Planck's Constant"
+msgstr "Planck Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:23
+#: rc.cpp:701
+msgid "Gravitational Constant"
+msgstr "Yerçekimi Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:27
+#: rc.cpp:704
+msgid "Earth Acceleration"
+msgstr "Yerçekimi İvmesi"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:31
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:35
+#: rc.cpp:707 rc.cpp:710
+msgid "Elementary Charge"
+msgstr "Birim Yük"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:39
+#: rc.cpp:713
+msgid "Impedance of Vacuum"
+msgstr "Boşluğun Empedansı"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:43
+#: rc.cpp:716
+msgid "Fine-Structure Constant"
+msgstr "Hassas Yapı Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:48
+#: rc.cpp:719
+msgid "Permeability of Vacuum"
+msgstr "Boşluğun Geçirgenliği"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:52
+#: rc.cpp:722
+msgid "Permittivity of Vacuum"
+msgstr "Boşluğun Yüklenebilirliği"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:56
+#: rc.cpp:725
+msgid "Boltzmann Constant"
+msgstr "Boltzmann Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:61
+#: rc.cpp:728
+msgid "Atomic Mass Unit"
+msgstr "Atomik Kütle Birimi"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:65
+#: rc.cpp:731
+msgid "Molar Gas Constant"
+msgstr "Molar Gaz Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:69
+#: rc.cpp:734
+msgid "Stefan-Boltzmann Constant"
+msgstr "Stefan-Boltzmann Sabiti"
+
+#. i18n: tag constant attribute name
+#. i18n: file: scienceconstants.xml:73
+#: rc.cpp:737
+msgid "Avogadro's Number"
+msgstr "Avogadro Sayısı"
+
+#~ msgid "Constant of Gravitation"
+#~ msgstr "Çekim Sabiti"
+
+#~ msgid "Fonts"
+#~ msgstr "Yazı Tipleri"
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "Alt+2"
+#~ msgstr "Alt+2"
+
+#~ msgid "Alt+3"
+#~ msgstr "Alt+3"
+
+#~ msgid "Alt+4"
+#~ msgstr "Alt+4"
+
+#~ msgid "Alt+5"
+#~ msgstr "Alt+5"
+
+#~ msgid "Alt+6"
+#~ msgstr "Alt+6"

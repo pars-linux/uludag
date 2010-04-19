@@ -1,0 +1,413 @@
+# translation of khelpcenter_contact.po to
+# translation of khelpcenter_contact.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_contact\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2008-12-06 11:11+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: chapterinfo
+#: contact.docbook:2
+#, fuzzy, no-c-format
+#| msgid "<date>2002-01-18</date> <releaseinfo>3.00.00</releaseinfo>"
+msgid "<date>2009-05-09</date> <releaseinfo>4.00.00</releaseinfo>"
+msgstr "<date>01-18-2002</date> <releaseinfo>3.00.00</releaseinfo>"
+
+#. Tag: title
+#: contact.docbook:6
+#, no-c-format
+msgid "Contact the &kde; team"
+msgstr "&kde; grubuyla iletişime geçin"
+
+#. Tag: title
+#: contact.docbook:10
+#, no-c-format
+msgid "Mailing lists"
+msgstr "E-posta listeleri"
+
+#. Tag: para
+#: contact.docbook:12
+#, no-c-format
+msgid ""
+"&kde; has several mailing lists up. See below for some of the most useful. "
+"Older articles can be found in the <ulink url=\"http://lists.kde.org"
+"\">mailing list archive</ulink>."
+msgstr ""
+"&kde; 'nin pek çok e-posta listesi vardır. Güncel bir liste aşağıdadır. Daha "
+"eski yazılara ise <ulink url=\"http://lists.kde.org\">e-posta listesi "
+"arşivinden</ulink> erişebilirsiniz."
+
+#. Tag: ulink
+#: contact.docbook:19
+#, no-c-format
+msgid "<ulink>kde</ulink>"
+msgstr "<ulink>kde</ulink>"
+
+#. Tag: para
+#: contact.docbook:20
+#, no-c-format
+msgid "For general discussion, users helping each other."
+msgstr "Genel tartışmalar için"
+
+#. Tag: ulink
+#: contact.docbook:24
+#, no-c-format
+msgid "kde-announce"
+msgstr "kde-announce"
+
+#. Tag: para
+#: contact.docbook:25
+#, no-c-format
+msgid "Announcements of new &kde; applications"
+msgstr "Yeni &kde; uygulamalarının duyurusu"
+
+#. Tag: ulink
+#: contact.docbook:29
+#, no-c-format
+msgid "kde-devel"
+msgstr "kde-devel"
+
+#. Tag: para
+#: contact.docbook:30
+#, no-c-format
+msgid "For developers."
+msgstr "Geliştiriciler için."
+
+#. Tag: ulink
+#: contact.docbook:34
+#, no-c-format
+msgid "kde-artists"
+msgstr "kde-artists"
+
+#. Tag: para
+#: contact.docbook:35
+#, no-c-format
+msgid "Creating icons and other artwork"
+msgstr "Simgelerin ve diğer sanatsal çalışmaların tartışıldığı liste"
+
+#. Tag: ulink
+#: contact.docbook:39
+#, no-c-format
+msgid "kde-doc-english"
+msgstr "kde-doc-english"
+
+#. Tag: para
+#: contact.docbook:40
+#, no-c-format
+msgid "For people interested in writing documentation for &kde;."
+msgstr "&kde; için belge hazırlamak isteyen kullanıcılar için."
+
+#. Tag: ulink
+#: contact.docbook:44
+#, fuzzy, no-c-format
+msgid "kde-i18n-doc"
+msgstr "kde-18n-doc"
+
+#. Tag: para
+#: contact.docbook:45
+#, no-c-format
+msgid "Internationalization and documentation issues"
+msgstr "Yerelleştirme ve belgeleme çalışmaları"
+
+#. Tag: ulink
+#: contact.docbook:49
+#, fuzzy, no-c-format
+msgid "http://l10n.kde.org/teams/"
+msgstr "http://i18n.kde.org/teams/\""
+
+#. Tag: para
+#: contact.docbook:50
+#, no-c-format
+msgid ""
+"For localized information, which may include user email lists and websites, "
+"check the translation teams page at the above &URL;."
+msgstr ""
+"Yerelleştirme bilgileri için, yukarıdaki &URL; adresinden bağlantı "
+"kurabilirsiiz."
+
+#. Tag: title
+#: contact.docbook:60
+#, no-c-format
+msgid "Contacting the &kde; developers"
+msgstr "&kde; prgramcıları ile iletişim"
+
+#. Tag: para
+#: contact.docbook:62
+#, no-c-format
+msgid "On this page, you can find links to &kde; related web sites."
+msgstr ""
+"Bu sayfada &kde;'ye ilişkin diğer web sayfalarına bağlantılar bulabilirsiniz."
+
+#. Tag: para
+#: contact.docbook:64
+#, no-c-format
+msgid ""
+"The K Desktop Environment is developed by a large group of people around the "
+"world. Our main communication channel is the Internet. For general "
+"questions, you will be best served by asking on the mailing lists mentioned "
+"in the <link linkend=\"contact-mailinglists\">previous section</link>, and "
+"contact addresses for individual developers can be found in the "
+"documentation of their individual application."
+msgstr ""
+"K Masaüstü Ortamı dünya çapındaki geniş bir geliştiriciler grubu tarafından "
+"hazırlanmaktadır. Kullandığımız genel iletişim kanalı internettir. Genel "
+"sorularınız için  <link linkend=\"contact-mailinglists\">önceki bölümde</"
+"link> verilen e-posta listelerini kullanmanızı öneririz. "
+
+#. Tag: para
+#: contact.docbook:71
+#, fuzzy, no-c-format
+msgid ""
+"Please visit our <ulink url=\"http://www.kde.org/contact/representatives.php"
+"\">Official Representatives</ulink> page for official enquiries regarding "
+"&kde; (&eg; interviews)."
+msgstr ""
+"Lütfen <ulink url=\"http://www.kde.org/representatives.html\">KDE "
+"Temsilcileri</ulink> bağlantısını KDE hakkındaki basın çalışmalarınız için "
+"kullanın."
+
+#. Tag: para
+#: contact.docbook:76
+#, no-c-format
+msgid "More information about &kde; is available at &kde-http;."
+msgstr ""
+"&kde; hakkında daha geniş bilgiye &kde-http; sayfasından ulaşabilirsiniz."
+
+#. Tag: para
+#: contact.docbook:78
+#, no-c-format
+msgid "Other &kde; websites include:"
+msgstr "Diğer &kde; web sayfaları:"
+
+#. Tag: ulink
+#: contact.docbook:82
+#, fuzzy, no-c-format
+msgid "www.kde.org"
+msgstr "www.kde-look.org"
+
+#. Tag: para
+#: contact.docbook:83
+#, no-c-format
+msgid "&kde;'s official website"
+msgstr "&kde;'nin web sayfası"
+
+#. Tag: ulink
+#: contact.docbook:87
+#, fuzzy, no-c-format
+msgid "techbase.kde.org"
+msgstr "webcvs.kde.org"
+
+#. Tag: para
+#: contact.docbook:88
+#, fuzzy, no-c-format
+#| msgid "&kde;'s internationalization and documentation server"
+msgid "The &kde; technical documentation library"
+msgstr "Yerelleştirme ve belgeleme çalışmaları"
+
+#. Tag: ulink
+#: contact.docbook:92
+#, fuzzy, no-c-format
+msgid "websvn.kde.org"
+msgstr "webcvs.kde.org"
+
+#. Tag: para
+#: contact.docbook:93
+#, fuzzy, no-c-format
+msgid "A web interface to the &kde; Subversion repository"
+msgstr "&kde; CVS deposuna erişim için web arayüzü"
+
+#. Tag: ulink
+#: contact.docbook:97
+#, fuzzy, no-c-format
+msgid "l10n.kde.org"
+msgstr "i18n.kde.org"
+
+#. Tag: para
+#: contact.docbook:98
+#, no-c-format
+msgid "&kde;'s internationalization and documentation server"
+msgstr "Yerelleştirme ve belgeleme çalışmaları"
+
+#. Tag: ulink
+#: contact.docbook:102
+#, no-c-format
+msgid "ftp.kde.org"
+msgstr "ftp.kde.org"
+
+#. Tag: para
+#: contact.docbook:103
+#, no-c-format
+msgid ""
+"The main &kde; &FTP; server. Please have a look at the link below to find a "
+"mirror site in your geographic region."
+msgstr ""
+"&kde; &FTP; sunucusu. Kendi bölgenizde bir yansı adresi bulmak için "
+"aşağıdaki bağlantıyı kontrol edin."
+
+#. Tag: ulink
+#: contact.docbook:109
+#, fuzzy, no-c-format
+msgid "www.kde.org/mirrors"
+msgstr "www.kde.org/mirrors.html"
+
+#. Tag: para
+#: contact.docbook:110
+#, fuzzy, no-c-format
+msgid "&kde; web and &FTP; mirror sites"
+msgstr "&kde; &FTP; yansı adresleri"
+
+#. Tag: ulink
+#: contact.docbook:114
+#, fuzzy, no-c-format
+msgid "www.kde-apps.org"
+msgstr "www.kde-look.org"
+
+#. Tag: para
+#: contact.docbook:115
+#, fuzzy, no-c-format
+msgid "A directory of &kde; applications."
+msgstr "Yeni &kde; uygulamalarının duyurusu"
+
+#. Tag: ulink
+#: contact.docbook:119
+#, no-c-format
+msgid "www.kde-look.org"
+msgstr "www.kde-look.org"
+
+#. Tag: para
+#: contact.docbook:120
+#, no-c-format
+msgid ""
+"&kde; themes, icons, and other items to change the look of your desktop."
+msgstr "&kde; temaları, simgeleri ve diğer masaüstü ögeleri."
+
+#~ msgid "developer.kde.org"
+#~ msgstr "developer.kde.org"
+
+#~ msgid "The &kde; developers center"
+#~ msgstr "&kde; geliştiricilerinin merkezi"
+
+#~ msgid "&kde-http;"
+#~ msgstr "&kde-http;"
+
+#~ msgid "<email>kde-request@kde.org</email> - &kde;"
+#~ msgstr "<email>kde-request@kde.org</email> - &kde;"
+
+#~ msgid "<email>kde-announce-request@kde.org</email> - kde-announce"
+#~ msgstr "<email>kde-announce-request@kde.org</email> - kde-announce"
+
+#~ msgid "<email>kde-request@kde.org</email> - kde"
+#~ msgstr "<email>kde-request@kde.org</email> - kde"
+
+#~ msgid "Users help each other"
+#~ msgstr "Kullanıcıların birbirlerine yardım etmeleri için"
+
+#~ msgid "<email>kde-devel-request@kde.org</email> - kde-devel"
+#~ msgstr "<email>kde-devel-request@kde.org</email> - kde-devel"
+
+#~ msgid "<email>kde-licensing-request@kde.org</email> - kde-licensing"
+#~ msgstr "<email>kde-licensing-request@kde.org</email> - kde-licensing"
+
+#~ msgid "Discussion of licensing issues"
+#~ msgstr "KDE lisansları konusunda"
+
+#~ msgid "<email>kde-look-request@kde.org</email> - kde-look"
+#~ msgstr "<email>kde-look-request@kde.org</email> - kde-look"
+
+#~ msgid "Discussing \"look'n'feel issues\""
+#~ msgstr "KDE'nin dizaynı bu listede tartışılıyor"
+
+#~ msgid "<email>kde-artists-request@kde.org</email> - kde-artists"
+#~ msgstr "<email>kde-artists-request@kde.org</email> - kde-artists"
+
+#~ msgid "<email>kde-doc-english-request@kde.org</email> - kde-doc-english"
+#~ msgstr "<email>kde-doc-english-request@kde.org</email> - kde-doc-english"
+
+#~ msgid "<email>kde-i18n-doc-request@kde.org</email> - kde-18n-doc"
+#~ msgstr "<email>kde-i18n-doc-request@kde.org</email> - kde-i18n-doc"
+
+#~ msgid ""
+#~ "To subscribe: Click on one of the above links and type "
+#~ "<userinput>subscribe <replaceable>your-email-address</replaceable></"
+#~ "userinput> in the subject of the message. Please write your real email "
+#~ "address instead of the plain \"<userinput><replaceable>your-email-"
+#~ "address</replaceable></userinput>\" words. Leave the body of the message "
+#~ "empty. Do not include a signature or other text which might confuse the "
+#~ "mail server that processes your request."
+#~ msgstr ""
+#~ "Üye olmak için: Yukarıdaki bağlantılardan birisine tıklayın ve konu "
+#~ "kısmında <userinput>subscribe<replaceable> e-posta-adresiniz</"
+#~ "replaceable></userinput> yazan bir e-posta gönderin. Lütfen  "
+#~ "\"<userinput><replaceable>e-posta-adresiniz</replaceable></userinput>\" "
+#~ "yerine kendi gerçek adresinizi yazın. Mesaj gövdesini boş bırakın. Mesaj "
+#~ "içinde, e-posta servisini yanlış yönlendirebilecek imza vb. kullanmayın."
+
+#~ msgid ""
+#~ "To unsubscribe: Click on one of the above links and type "
+#~ "<userinput>unsubscribe <replaceable>your-email-address</replaceable></"
+#~ "userinput> in the subject of the message. Please replace "
+#~ "\"<userinput><replaceable>your-email-address</replaceable></userinput>\" "
+#~ "with the email address you used for the subscription. Leave the body of "
+#~ "the message empty. Do not include a signature or other text which might "
+#~ "confuse the mail server that processes your request."
+#~ msgstr ""
+#~ "Üyelikten çıkmak için: Yukarıdaki bağlantıların bir tanesine tıklayın ve "
+#~ "e-postanızın konu başlığında <userinput>unsubscribe <replaceable>e-posta "
+#~ "adresiniz</replaceable></userinput> yazın. Lütfen \"<userinput> "
+#~ "<replaceable>e-posta adresiniz</replaceable></userinput>\" geçen kısmı "
+#~ "kendi asıl e-posta adresiniz ile değiştirin. Mesajın gövdesini boş "
+#~ "bırakın. "
+
+#~ msgid ""
+#~ "The addresses listed above are for <emphasis>subscribing and "
+#~ "unsubscribing only</emphasis>. Once you have subscribed to a mailing "
+#~ "list, you will received a message telling you how to send messages to the "
+#~ "mailing list, and how to alter your mailing list options."
+#~ msgstr ""
+#~ "Yukarıdaki adresler sadece <emphasis>listeye üye olmak ve listeden "
+#~ "ayrılmak</emphasis> amacıyla kullanılabilir. E-posta adresine üye "
+#~ "olduktan sonra, bu listeye e-postayı nasıl göndereceğinize ilişkin bir "
+#~ "yardım postası alacaksınız."
+
+#~ msgid ""
+#~ "Please do not send messages intended to be posted to the mailing list to "
+#~ "the above addresses."
+#~ msgstr ""
+#~ "Lütfen listeye göndereceğiniz e-postaları yukarıdaki adreslere "
+#~ "yollamayınız."
+
+#~ msgid ""
+#~ "Please do not use <acronym>HTML</acronym> to send your request because it "
+#~ "makes it difficult for our mail server to process your request. If the "
+#~ "subscription address is identical to the address you are posting from, "
+#~ "you may omit the address in the subject line."
+#~ msgstr ""
+#~ "Lütfen yolladığınız istekleri <acronym> HTML </acronym> formunda "
+#~ "iletmeyiniz. Bu gibi durumlarda e-posta sunucusu görevini tam ve eksiksiz "
+#~ "yapamamaktadır."
+
+#~ msgid ""
+#~ "Contact addresses for developers can be found in the documentation of "
+#~ "their individual applications."
+#~ msgstr ""
+#~ "Programcılara kendi programları içerisindeki açıklamalarla bağlantı "
+#~ "kurabilirsiniz."
+
+#~ msgid "Official Contacts"
+#~ msgstr "Resmi Bağlantı"
+
+#~ msgid "More information"
+#~ msgstr "Daha Fazla Bilgi"

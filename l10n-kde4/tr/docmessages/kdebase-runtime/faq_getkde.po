@@ -1,0 +1,154 @@
+# translation of faq_getkde.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_getkde\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-27 20:45+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: getkde.docbook:8
+#, no-c-format
+msgid "Getting &kde;"
+msgstr "&kde; Temini"
+
+#. Tag: para
+#: getkde.docbook:14
+#, no-c-format
+msgid "Where do I get &kde;?"
+msgstr "&kde; 'yi nereden bulabilirim?"
+
+#. Tag: para
+#: getkde.docbook:18
+#, no-c-format
+msgid ""
+"The main distribution site for &kde; is <ulink url=\"ftp://ftp.kde.org/"
+"\">ftp.kde.org</ulink>. However, this site is often under heavy load, so you "
+"might prefer to use <ulink url=\"http://download.kde.org/\">download.kde."
+"org</ulink> which automatically redirects you to the mirror nearest to you. "
+"You can also have a look at the list of <ulink url=\"http://www.kde.org/"
+"ftpmirrors.html\"> &kde; mirror sites</ulink>."
+msgstr ""
+"&kde;'nin ana dağıtım sayfası <ulink url=\"ftp://ftp.kde.org/\">ftp.kde.org</"
+"ulink>'tur. Fakat bu site genellikle çok yoğun olduğu için, sizi size en "
+"yakın olan yansı sitesine yönlendirecek<ulink url=\"http://download.kde.org/"
+"\"> download.kde.org</ulink> adresini kullanabilirsiniz. Ayrıca yansı "
+"sitelerinin listesi için <ulink url=\"http://www.kde.org/ftpmirrors.html\"> "
+"</ulink>.adresine bakabilirsiniz."
+
+#. Tag: para
+#: getkde.docbook:29
+#, no-c-format
+msgid "Are there &Linux; distributions that include &kde;?"
+msgstr "&kde; 'yi içeren &Linux; dağıtımları var mı?"
+
+#. Tag: para
+#: getkde.docbook:32
+#, no-c-format
+msgid ""
+"Yes, major &Linux; distributions already ship &kde;. As building a "
+"distribution takes some time, they might not always contain the latest "
+"version, but for a start or to avoid downloading from the Internet, they do "
+"provide a good starting point."
+msgstr ""
+"Evet . Hemen Hemen bütün &Linux; dağıtımlarında yer alıyor. Fakat herzaman "
+"en son sürümü bulunmaya biliyor. Son sürümünüde internetten indirip kendiniz "
+"güncelleyebilirsiniz."
+
+#. Tag: para
+#: getkde.docbook:37
+#, no-c-format
+msgid ""
+"You can find an up-to-date list of distributions that ship with &kde; <ulink "
+"url=\"http://www.kde.org/download/distributions.php\">here</ulink>."
+msgstr ""
+"&kde; ile birlikte gelen dağıtımların güncelleme listesine <ulink url="
+"\"http://www.kde.org/kdeships.html\">bu linkten ulaşabilirsiniz. </ulink>."
+
+#. Tag: para
+#: getkde.docbook:46
+#, no-c-format
+msgid "What is the current version?"
+msgstr "Güncel sürüm nedir?"
+
+#. Tag: para
+#: getkde.docbook:49
+#, fuzzy, no-c-format
+msgid "Currently, the latest stable version is 4.2.1"
+msgstr "Şimdilik, son kararlı sürüm 3.4.1'dir."
+
+#. Tag: para
+#: getkde.docbook:50
+#, fuzzy, no-c-format
+msgid ""
+"The <ulink url=\"http://www.kde.org/info/4.2.1.php\">&kde; 4.2.1 Info Page</"
+"ulink> contains a lot of information specific to this release."
+msgstr ""
+"<ulink url=\"http://www.kde.org/info/3.4.1.html\">&kde; 3.2 Hakkında Bilgi "
+"sayfası </ulink> 3.2 sürümü hakkında en detaylı bilgileri içerir."
+
+#. Tag: para
+#: getkde.docbook:58
+#, no-c-format
+msgid "Where do I find &kde; snapshots?"
+msgstr "&kde; dosyalarına nasıl erişebilirim?"
+
+#. Tag: para
+#: getkde.docbook:61
+#, no-c-format
+msgid ""
+"You can get the latest snapshots from <ulink url=\"ftp://ftp.kde.org/pub/kde/"
+"unstable/snapshots\">ftp://ftp.kde.org/pub/kde/unstable/snapshots</ulink>. "
+"You might also want to consider setting up your own <acronym>SVN</acronym> "
+"client in order to maintain the latest snapshot at all times. Please refer "
+"to <ulink url=\"http://developer.kde.org/source/anonsvn.html\">Anonymous "
+"<acronym>SVN</acronym> and &kde;</ulink> for further information."
+msgstr ""
+"En son deneme derlemelerini <ulink url=\"ftp://ftp.kde.org/pub/kde/unstable/"
+"snapshots\"> ftp://ftp.kde.org/pub/kde/unstable/snapshots</ulink> adresinden "
+"elde edebilirsiniz. Ayrıca <acronym>CVS</acronym> istemcinizi en son deneme "
+"derlemelerini almak için ayarlamak isteyebilirsiniz. Daha fazla bilgi için "
+"<ulink url=\"http://developer.kde.org/source/anoncvs.html\">Anonim "
+"<acronym>CVS</acronym> ve &kde;</ulink>'ye bakınız."
+
+#. Tag: para
+#: getkde.docbook:77
+#, no-c-format
+msgid "Where do I get &Qt;?"
+msgstr "&Qt;'yi nereden bulabilirim?"
+
+#. Tag: para
+#: getkde.docbook:80
+#, no-c-format
+msgid ""
+"&Qt; is a product of the Norwegian company Trolltech. You can always get the "
+"latest &Qt; version from their <ulink url=\"ftp://ftp.trolltech.com\">&FTP; "
+"server</ulink>."
+msgstr ""
+"&Qt; Norweqian company Trolltech tarafından geliştirilmektedir. Herzaman son "
+"sürümünü <ulink url=\"ftp://ftp.trolltech.com\">&FTP; sunucusundan </ulink> "
+"indirebilirsiniz."
+
+#. Tag: para
+#: getkde.docbook:83
+#, no-c-format
+msgid ""
+"And with most up-to-date &Linux; distributions, &Qt; is already included. "
+"Please see <xref linkend=\"prerequisites\"/> for the version of &Qt; you "
+"need."
+msgstr ""
+"Birçok &Linux; dağıtımı ile birlikte &Qt; gelmektedir. Sisteminizin <xref "
+"linkend=\"prerequisites\"/> gerektirdiği &Qt; sürümüdür."

@@ -1,0 +1,144 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kblocks\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-08-07 06:10+0200\n"
+"PO-Revision-Date: 2009-08-23 01:15+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: file: kblocks.kcfg:9
+#. i18n: ectx: label, entry (Theme), group (General)
+#: rc.cpp:3
+msgid "The graphical theme to be used."
+msgstr "Kullanılacak görsel tema."
+
+#. i18n: file: kblocks.kcfg:14
+#. i18n: ectx: label, entry (Difficulty), group (Preferences)
+#: rc.cpp:6
+msgid "The difficulty level."
+msgstr "Zorluk düzeyi."
+
+#. i18n: file: kblocks.kcfg:18
+#. i18n: ectx: label, entry (Sounds), group (Preferences)
+#: rc.cpp:9
+msgid "Whether sound effects should be played."
+msgstr "Ses efektlerinin olup olmayacağı."
+
+#. i18n: file: kblocksui.rc:22
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:12
+msgid "Main Toolbar"
+msgstr "Ana Araç Çubuğu"
+
+#: rc.cpp:13
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:14
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: kblocks.cpp:66
+msgid "Rotate Piece Clockwise"
+msgstr "Parçayı Saat Yönünde Döndür"
+
+#: kblocks.cpp:72
+msgid "Rotate Piece Counter Clockwise"
+msgstr "Parçayı Saat Yönünün Tersine Döndür"
+
+#: kblocks.cpp:78
+msgid "Move Piece Left"
+msgstr "Parçayı Sola Taşı"
+
+#: kblocks.cpp:84
+msgid "Move Piece Right"
+msgstr "Parçayı Sağa Taşı"
+
+#: kblocks.cpp:90
+msgid "Move Piece Down"
+msgstr "Parçayı Aşağı Taşı"
+
+#: kblocks.cpp:96
+msgid "Drop the Piece"
+msgstr "Parçayı Bırak"
+
+#: kblocks.cpp:104
+msgid "&Play sounds"
+msgstr "&Sesleri çal"
+
+#: kblocks.cpp:109
+msgid "Points: 0 - Lines: 0 - Level: 0"
+msgstr "Puan: 0 - Satır: 0 - Düzey: 0"
+
+#: kblocks.cpp:170
+msgid "Theme"
+msgstr "Tema"
+
+#: kblocks.cpp:179
+#, kde-format
+msgid "Points: %1 - Lines: %2 - Level: %3"
+msgstr "Puan: %1 - Satır: %2 - Düzey: %3"
+
+#: kblocksscene.cpp:144
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: kblocksscene.cpp:227
+msgid "Game started"
+msgstr "Oyun başlatıldı"
+
+#: kblocksscene.cpp:239
+msgid "Resuming Game"
+msgstr "Oyuna Devam Ediliyor"
+
+#: kblocksscene.cpp:240
+msgid "Game Paused"
+msgstr "Oyun Duraklatıldı"
+
+#: main.cpp:21
+msgid "KBlocks"
+msgstr "KBlocks"
+
+#: main.cpp:22
+msgid "A falling blocks game for KDE"
+msgstr "KDE için bir düşen sütun oyunu"
+
+#: main.cpp:23
+msgid "(c) 2007, Mauricio Piacentini"
+msgstr "(c) 2007, Mauricio Piacentini"
+
+#: main.cpp:24
+msgid "Mauricio Piacentini"
+msgstr "Mauricio Piacentini"
+
+#: main.cpp:24
+msgid "Author"
+msgstr "Yazar"
+
+#: main.cpp:25
+msgid "Dirk Leifeld"
+msgstr "Dirk Leifeld"
+
+#: main.cpp:25
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: main.cpp:26
+msgid "Johann Ollivier Lapeyre"
+msgstr "Johann Ollivier Lapeyre"
+
+#: main.cpp:26
+msgid "Oxygen art for KDE4"
+msgstr "KDE4 için Oxygen sanatsal çalışmaları"

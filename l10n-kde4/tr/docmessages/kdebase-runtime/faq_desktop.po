@@ -1,0 +1,216 @@
+# translation of faq_desktop.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# GÃ¶rkem Ãetin <gorkem@kde.org>, 2003.
+# Kadir Leblebici <kadir@agribelsa.com>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_desktop\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-07-28 14:41+0200\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: desktop.docbook:8
+#, no-c-format
+msgid "The desktop"
+msgstr "Masaüstü"
+
+#. Tag: para
+#: desktop.docbook:13
+#, no-c-format
+msgid "How do I add an application to the desktop?"
+msgstr "Masaüstüne bir uygulamayı nasıl eklerim?"
+
+#. Tag: para
+#: desktop.docbook:17
+#, no-c-format
+msgid ""
+"Just choose the desired application from the <guimenu>K</guimenu> menu and "
+"drag and drop it to the Desktop."
+msgstr ""
+" <guimenu>K</guimenu> menüsünden istediğiniz uygulamayı seçin ve tutup  "
+"Masaüstüne taşıyın. Hepsi bu kadar."
+
+#. Tag: para
+#: desktop.docbook:19
+#, fuzzy, no-c-format
+msgid ""
+"For applications not listed in the <guimenu>K</guimenu> menu, use the &RMB; "
+"on the desktop and choose <menuchoice><guimenuitem>Create New</guimenuitem> "
+"<guimenuitem>Link to Application...</guimenuitem></menuchoice> and fill in "
+"the configuration for the application you want to link to."
+msgstr ""
+"<guimenu>K</guimenu> menüsünde listelenmemiş uygulamalar için, masaüstünde "
+"&RMB; tuşunu kullanıp <menuchoice><guimenuitem>Yeni Oluştur</guimenuitem> "
+"<guisubmenu>Dosya</guisubmenu> <guimenuitem>Uygulamaya Bağlantı... </"
+"guimenuitem></menuchoice>'yı seçin ve uygulamayla ilgili ayarları girin."
+
+#. Tag: para
+#: desktop.docbook:29
+#, no-c-format
+msgid "How do I mount/unmount a device from the desktop?"
+msgstr "Masaüstünden bir aygıtı nasıl bağlayıp/kaldırabilirim?"
+
+#. Tag: para
+#: desktop.docbook:33
+#, no-c-format
+msgid ""
+"First, make sure you are allowed to <command>mount</command>/"
+"<command>umount</command> the relevant device as a user."
+msgstr ""
+"Önce kullanıcı olarak <command>mount</command>/<command>umount </command> "
+"yapmanıza izniniz olduğuna emin olun."
+
+#. Tag: para
+#: desktop.docbook:35
+#, fuzzy, no-c-format
+msgid ""
+"Then you can add any device by clicking on the desktop with the &RMB; and "
+"then choosing <menuchoice><guimenu>Create New</guimenu><guisubmenu>Link to "
+"Device</guisubmenu></menuchoice>. Select the device of the type you wish to "
+"control. Fill in the settings for the device in the dialog that appears and "
+"click <guilabel>OK</guilabel>. You can use the resulting desktop icon to "
+"mount/unmount the device from the desktop."
+msgstr ""
+"&RMB; yi kullanarak herhangi bir cihazı masa üstüne ekleyebilirsiniz. "
+"<menuchoice><guimenu>Yeni oluştur</guimenu><guimenuitem>Cihaza bağlantı</"
+"guimenuitem></menuchoice>dedikten sonra masa üstünden kontrol etmek "
+"istediğiniz cihazı seçin. Açılan pencerede cihazla ilgili ayarları yapın ve "
+"<guilabel>OK</guilabel> i tıklayın. Oluşan masaüstü simgesini cihazı "
+"bağlamak ve ayırmak için kullanabilirsiniz."
+
+#. Tag: para
+#: desktop.docbook:44
+#, no-c-format
+msgid "Where are the icons kept?"
+msgstr "İkonlar nerede saklanıyor?"
+
+#. Tag: para
+#: desktop.docbook:47
+#, fuzzy, no-c-format
+msgid ""
+"The icons can be found only in <filename class=\"directory\">"
+"$<envar>KDEDIRS</envar>/share/icons</filename> or <filename class=\"directory"
+"\">$<envar>HOME</envar>/.kde/share/icons</filename>. To use icons stored in "
+"other locations, you must either copy them into one of the above-mentioned "
+"fixed &kde; locations or make symlinks."
+msgstr ""
+"İkonlar sadece <filename class=\"directory\">$<envar>KDEDIRS</envar>/share/"
+"icons</filename> yada <filename class=\"directory\">$<envar>HOME</envar>/."
+"kde/share/icons</filename> yada <filename class=\"directory\">$<envar>HOME</"
+"envar>/.kde2/share/icons</filename> dizininde bulunabilir. Diğer konumlada "
+"saklanan ikonları kullanmak için, yukarıda açıklanmış sabit &kde; "
+"konumlarına kopyalayabilir yada simgelerini yapabilirsiniz."
+
+#. Tag: para
+#: desktop.docbook:57
+#, no-c-format
+msgid "How do I use the mouse scroll wheel in &kde;?"
+msgstr "&kde; içerisinde fare tekerleğini nasıl kullanırım?"
+
+#. Tag: para
+#: desktop.docbook:60
+#, no-c-format
+msgid ""
+"Mouse wheel support comes with &Qt; 2.0 and above, so &kde; based on that "
+"will automatically support the use of the mouse scroll wheel if your system "
+"is configured correctly. Check that your &X-Server; settings support the use "
+"of a scrollwheel if it is not working."
+msgstr ""
+"Tekerlekli fare desteği sadece &Qt;2.0 ve daha üzerinde vardır.;böylece "
+"farenizin tekerlek fonksiyonu otomatik olarak &kde;tarafından "
+"desteklenecektir."
+
+#. Tag: para
+#: desktop.docbook:67
+#, no-c-format
+msgid "How do I launch applications in a particular desktop?"
+msgstr "Özel bir masaüstündeki uygulamaları nasıl çalıştırabilirim?"
+
+#. Tag: para
+#: desktop.docbook:70
+#, no-c-format
+msgid ""
+"&kde; comes with a program called &kstart;. To start an <application>xterm</"
+"application> on the second desktop and then activate it use: "
+"<userinput><command>kstart</command> <option>--desktop 2 --activate --window "
+"\"xterm\" </option>xterm</userinput>."
+msgstr ""
+"&kde;, &kstart; ad verilen bir programla birlikte gelir. İkinci masaüstünde "
+"bir <application>xterm</application> başlatmak ve aktifleştirmek için: "
+"<userinput><command>kstart</command> <option>--desktop 2 --activate --window "
+"\"xterm\" </option>xterm</userinput> komutunu kullanmalısınız."
+
+#. Tag: para
+#: desktop.docbook:75
+#, no-c-format
+msgid ""
+"Note that the <option>--window</option> option is important. It takes an "
+"argument which is a regular expression matching the title of the window to "
+"apply the settings to."
+msgstr ""
+"<option>--window</option> seçeneğinin önemli olduğunu unutmayın. Bu seçenek, "
+"ayarların uygulanacağı pencerenin başlığına göre kurallı bir ifade alır."
+
+#. Tag: para
+#: desktop.docbook:78
+#, no-c-format
+msgid ""
+"Please read <command>kstart</command> <option>--help-all</option> for more "
+"magic available with &kstart; (and there is an abundance)."
+msgstr ""
+"Lütfen &kstart; ile kullanılabilir daha fazla komut için <command>kstart</"
+"command> <option>--help-all</option> komutunu kullanın (ayrıca bir topluluk "
+"da var)."
+
+#. Tag: para
+#: desktop.docbook:86
+#, no-c-format
+msgid ""
+"Where do I save my files if I want them to appear directly on the desktop?"
+msgstr ""
+"Dosyalarımın doğrudan masaüstünde görünebilmesi için nereye kaydetmeliyim?"
+
+#. Tag: para
+#: desktop.docbook:90
+#, no-c-format
+msgid ""
+"<filename class=\"directory\">$<envar>HOME</envar>/Desktop</filename>. You "
+"might need to refresh your desktop after you have saved your files."
+msgstr ""
+"<filename class=\"directory\">$<envar>HOME</envar>/Desktop</filename>. "
+"Dosyalarınızı kaydettikten sonra masaüstünüzü yenilemelisiniz."
+
+#. Tag: para
+#: desktop.docbook:98
+#, no-c-format
+msgid "I've deleted the Trash icon on my desktop. How can I get it back?"
+msgstr "Masaüstümdeki Çöp ikonunu sildim. Nasıl geri getirebilirim?"
+
+#. Tag: para
+#: desktop.docbook:102
+#, no-c-format
+msgid ""
+"Right-click on the desktop and in the context menu that appears, choose "
+"<menuchoice><guisubmenu>Create New...</guisubmenu><guimenuitem>Link to "
+"Location (URL)...</guimenuitem> </menuchoice>. Set the <guilabel>File name</"
+"guilabel> to <userinput>Trash</userinput> and the location to "
+"<userinput>trash:/</userinput>. Click on <guibutton>OK</guibutton> and "
+"you're done."
+msgstr ""
+"Masaüstüne sağ tıklayınca görülen sağ tuş menüsünde, "
+"<menuchoice><guisubmenu>Yeni Oluştur...</guisubmenu><guimenuitem> Konuma "
+"Bağla (URL)...</guimenuitem> </menuchoice>seçin. <guilabel>Dosya adı</"
+"guilabel>nı <userinput>Çöp</userinput> olarak değiştirin ve konum olarak da "
+"<userinput>trash:/</userinput> yazın. <guibutton>Tamam</guibutton> "
+"tıkladığınızda, işleminizi tamamlamış olacaksınız."

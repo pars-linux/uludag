@@ -1,0 +1,159 @@
+# translation of kinfocenter_ioports.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_ioports\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:21+0000\n"
+"PO-Revision-Date: 2004-01-12 16:52+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "I/O Port"
+msgstr "G/Ç Portları"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Matthias.Hoelzer-Kluepfel;"
+msgstr "&Matthias.Hoelzer-Kluepfel;"
+
+#. Tag: author
+#: index.docbook:14
+#, no-c-format
+msgid "&Helge.Deller;"
+msgstr "&Helge.Deller;"
+
+#. Tag: author
+#: index.docbook:15
+#, no-c-format
+msgid "&Duncan.Haldane;"
+msgstr "&Duncan.Haldane;"
+
+#. Tag: author
+#: index.docbook:16
+#, no-c-format
+msgid "&Mike.McBride;"
+msgstr "&Mike.McBride;"
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:25
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:27
+#, no-c-format
+msgid "ioports"
+msgstr "g/çportları"
+
+#. Tag: keyword
+#: index.docbook:28
+#, no-c-format
+msgid "system information"
+msgstr "sistem bilgisi"
+
+#. Tag: title
+#: index.docbook:33
+#, no-c-format
+msgid "Input/Output Port Information"
+msgstr "Girdi/Çıktı Portları Bilgisi"
+
+#. Tag: para
+#: index.docbook:35
+#, no-c-format
+msgid "This page displays information about the I/O ports."
+msgstr "Bu sayfa G/Ç portları hakkında bilgi verir."
+
+#. Tag: para
+#: index.docbook:37
+#, no-c-format
+msgid ""
+"I/O Ports are memory addresses used by the processor for direct "
+"communication with a device that has sent an interrupt signal to the "
+"processor."
+msgstr ""
+"G/Ç Portları, işlemcilerin kendisine kesme sinyali gönderen aygıtlarla "
+"doğrudan bağlantı kurduğu hafıza adresleridir."
+
+#. Tag: para
+#: index.docbook:41
+#, no-c-format
+msgid ""
+"The exchange of commands or data between the processor and the device takes "
+"place through the I/O port address of the device, which is a hexadecimal "
+"number. No two devices can share the same I/O port. Many devices use "
+"multiple I/O port addresses, which are expressed as a range of hexadecimal "
+"numbers."
+msgstr ""
+"İşlemci ile aygıt arasındaki bilgi ya da komut alışverişi 16 sayı tabanlı "
+"(hexadecimal) bir numara olan G/Ç port adresinde gerçekleşir. İki aygıt asla "
+"aynı G/Ç portunu paylaşamaz. Birçok aygıt, 16 sayı tabanlı numaraların "
+"(hexadecimal) aralığı olarak tanımlanan, çoklu G/Ç portu adresi kullanır."
+
+#. Tag: para
+#: index.docbook:49
+#, no-c-format
+msgid ""
+"The exact information displayed is system-dependent. On some systems, I/O "
+"port information can not yet be displayed."
+msgstr ""
+"Gösterilen kesin bilgi sistemden sisteme göre değişir. Bazı sistemlerde  G/Ç "
+"portu bilgisinin görüntülenmesi hala mümkün değildir."
+
+#. Tag: para
+#: index.docbook:52
+#, no-c-format
+msgid ""
+"On &Linux;, this information is read from <filename class=\"devicefile\">/"
+"proc/ioports</filename> which is only available if the <filename class="
+"\"devicefile\">/proc</filename> pseudo-filesystem is compiled into the "
+"kernel. A list of all currently-registered I/O port regions that are in use "
+"is shown."
+msgstr ""
+"&Linux;'ta, bu bilgi <filename class=\"devicefile\">/proc</filename> pseudo-"
+"filesystem bölümü çekirdeğe eklenip çekirdek derlenmişse <filename class="
+"\"devicefile\">/proc/ioports</filename> dosyasından okunur. Kullanılan, şu "
+"anda kayıtlı G/Ç portu bölgelerinin listesi gösterilmiştir."
+
+#. Tag: para
+#: index.docbook:58
+#, no-c-format
+msgid ""
+"The first column is the I/O port (or the range of I/O ports), the second "
+"column identifies the device that uses these I/O ports."
+msgstr ""
+"Birinci bölüm G/Ç portudur (ya da G/Ç portlarının aralığıdır), ikinci bölüm "
+"ise bu G/Ç portlarını kullanan aygıtları tanımlar."
+
+#. Tag: para
+#: index.docbook:61
+#, no-c-format
+msgid "The user cannot modify any settings on this page."
+msgstr "Kullanıcı bu sayfada gösterilen ayarları değiştiremez."

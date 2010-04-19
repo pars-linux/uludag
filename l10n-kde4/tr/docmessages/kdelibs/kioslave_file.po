@@ -1,0 +1,58 @@
+# translation of kioslave_file.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_file\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2003-03-26 22:36+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "file"
+msgstr "dosya"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Ferdinand.Gassauer; &Ferdinand.Gassauer.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, no-c-format
+msgid ""
+"The <emphasis>file</emphasis> protocol is used by all &kde; applications to "
+"display locally available files."
+msgstr ""
+"Tüm &kde; uygulamaları, <emphasis>dosya</emphasis> protokolünü yerel "
+"dosyaları incelemek için kullanabilir."
+
+#. Tag: para
+#: index.docbook:21
+#, fuzzy, no-c-format
+msgid ""
+"Entering <userinput><command>file:/directoryname</command></userinput> in "
+"&konqueror; lists the files of this folder."
+msgstr ""
+"&konqueror; penceresinden <userinput><command>file:/dizin-adı</command></"
+"userinput> girilirse belirtilen dizinin içeiği görüntülenecektir."
+
+#~ msgid "Not yet documented"
+#~ msgstr "Henüz belgelenmedi"

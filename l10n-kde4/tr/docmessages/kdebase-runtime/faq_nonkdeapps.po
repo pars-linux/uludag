@@ -1,0 +1,137 @@
+# translation of faq_nonkdeapps.po to Türkçe
+# Copyright (C) 2004, 2006 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_nonkdeapps\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-03-19 11:54+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: nonkdeapps.docbook:8
+#, no-c-format
+msgid "&kde; with non-&kde; applications"
+msgstr "&kde; dışı(non-&kde; ) uygulamalar ile &kde;"
+
+#. Tag: para
+#: nonkdeapps.docbook:17
+#, no-c-format
+msgid ""
+"My non-&kde; applications like &Emacs; and <application>kterm</application> "
+"are running amok with strange colors!"
+msgstr ""
+"&Emacs; benzeri pek çok &kde; dışı uygulamalar büyük pencereler ve garip "
+"yazıtipleriyle çalışıyorlar!"
+
+#. Tag: para
+#: nonkdeapps.docbook:22
+#, no-c-format
+msgid ""
+"Start the <application>&kde; Control Center</application> and in "
+"<menuchoice><guimenu>Appearance &amp; Themes</guimenu><guimenuitem> Colors</"
+"guimenuitem></menuchoice> uncheck the <guilabel>Apply colors to non-KDE "
+"applications</guilabel> checkbox and click <guibutton>Apply</guibutton>."
+msgstr ""
+"<application>&kde; Kontrol Merkezi'ni</application> çalıştırın, "
+"<guimenu>Görünüm ve Doku</guimenu><guisubmenu>Stil</guisubmenu> menüsündeki "
+"<guilabel>KDE dışı uygulamalara yazıtipleri ve renkleri uygula</guilabel> "
+"düğmesini, ardından <guibutton>Uygula</guibutton> düğmesini tıklayın."
+
+#. Tag: para
+#: nonkdeapps.docbook:31
+#, no-c-format
+msgid ""
+"How can I set my default web browser to be something other than &konqueror;?"
+msgstr ""
+"Ön tanımlı web tarayıcımın &konqueror; dışında bir uygulama olmasını nasıl "
+"sağlarım?"
+
+#. Tag: para
+#: nonkdeapps.docbook:34
+#, no-c-format
+msgid ""
+"If you are using &kde; 3.3 or later, open up the &kcontrolcenter; and "
+"navigate to the <menuchoice><guimenu>KDE Components</"
+"guimenu><guimenuitem>Component Chooser</guimenuitem></menuchoice> panel. "
+"Select <guilabel>Web Browser</guilabel> from the list on the left, then "
+"select <guilabel>Open http and https URLs in the following browser:</"
+"guilabel> and type in the name of the browser (&eg; <application>mozilla</"
+"application>, <application>firefox</application>, <application>opera</"
+"application>, &etc;) in the textbox."
+msgstr ""
+"&kde; 3.3 ve sonrasını kullanıyorsanız &kcontrolcenter; da "
+"<menuchoice><guimenu>KDE Bileşenleri</guimenu><guimenuitem>Bileşen Seçici</"
+"guimenuitem></menuchoice> yi açın. Soldaki listeden <guilabel>Web Tarayıcı</"
+"guilabel> yı seçin <guilabel>http ve https adreslerini açın</guilabel> yazan "
+"kutuya tarayıcının adını yazın. (Örneğin <application>mozilla</application>, "
+"<application>firefox</application>, <application>opera</application>)"
+
+#. Tag: para
+#: nonkdeapps.docbook:48
+#, no-c-format
+msgid ""
+"How can I configure the style and fonts of <acronym>GTK</acronym> "
+"applications within &kde; ?"
+msgstr ""
+"&kde; içerisindeki <acronym>GTK</acronym> uygulamalarının stil ve yazı "
+"tiplerini nasıl ayarlayabilirim ?"
+
+#. Tag: para
+#: nonkdeapps.docbook:53
+#, no-c-format
+msgid ""
+"The simplest way to achieve this is to download and compile the <acronym>gtk-"
+"qt</acronym> theme engine from <ulink url=\"http://www.freedesktop.org/"
+"Software/gtk-qt\"> http://www.freedesktop.org/Software/gtk-qt</ulink>. This "
+"theme engine makes your <acronym>GTK</acronym> applications look like your "
+"&kde; widget style by calling functions from &Qt; instead of drawing the "
+"styles itself. Once the theme engine has been installed, there will be a "
+"&kcontrolcenter; module under <menuchoice><guimenu>Appearance &amp; Themes</"
+"guimenu><guimenuitem>GTK Styles and Fonts</guimenuitem></menuchoice>."
+msgstr ""
+"Bunun en kolay yolu <ulink url=\"http://www.freedesktop.org/Software/gtk-qt"
+"\"> http://www.freedesktop.org/Software/gtk-qt</ulink> adresinden "
+"<acronym>gtk-qt</acronym> tema motorunu indirmek ve derlemek olacaktır. Bu "
+"tema motoru stilleri kendisi çizmek yerine &Qt; işlevlerini kullanarak "
+"<acronym>GTK</acronym> uygulamalarınızın &kde; gibi görünmesini sağlar. Tema "
+"motoru kurulduktan sonra &kcontrolcenter; içerisinde "
+"<menuchoice><guimenu>Görünüm &amp; Temalar</guimenu><guimenuitem>GTK Stil ve "
+"Fontları</guimenuitem></menuchoice> altında bir modül oluşacaktır."
+
+#~ msgid ""
+#~ "I have been hearing about this gecko kpart or &Qt; Mozilla, how do I get "
+#~ "these?"
+#~ msgstr ""
+#~ "gecko, kpart &Qt; veya Mozilla hakkında sürekli bir şeyler duyuyorum. "
+#~ "Bunları nasıl elde edebilirim?"
+
+#~ msgid ""
+#~ "Good luck! The &Qt; Mozilla code is in Mozilla cvs, and not very stable "
+#~ "as of yet. In order to use it, you'll have to check out Mozilla from cvs "
+#~ "according to these instructions: <ulink url=\"http://www.mozilla.org/cvs."
+#~ "html\"> http://www.mozilla.org/cvs.html</ulink>. Then, configure either "
+#~ "the Mozilla suite or the Firefox browser with the option <command>--"
+#~ "enable-default-toolkit=qt</command> in addition to any other options you "
+#~ "would like to enable. More instructions on building Mozilla can be found "
+#~ "<ulink url=\"http://www.mozilla.org/build\">here</ulink>."
+#~ msgstr ""
+#~ "İyi şanslar! &Qt; Mozilla kodu Mozilla cvs içerisindedir ve henüz kararlı "
+#~ "bir yapıda değildir. Kullanmak için <ulink url=\"http://www.mozilla.org/"
+#~ "cvs.html\"> http://www.mozilla.org/cvs.html</ulink> adresindeki "
+#~ "talimatlara göre Mozilla'yı kontrol etmeniz gerekir. Daha sonra Mozilla "
+#~ "suite ya da Firefox web tarayıcısını <command>--enable-default-"
+#~ "toolkit=qt</command> seçeneğiyle yada aktif hale getirmek istediğiniz "
+#~ "diğer seçeneklerle ayarlayabilirsiniz. Mozillayı kurulumu hakkında daha "
+#~ "fazla bilgi için <ulink url=\"http://www.mozilla.org/build\">here</ulink> "
+#~ "adresine bir göz atın."

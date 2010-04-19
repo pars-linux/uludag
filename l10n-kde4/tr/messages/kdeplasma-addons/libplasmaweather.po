@@ -1,0 +1,200 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libplasmaweather\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-10 01:23+0100\n"
+"PO-Revision-Date: 2009-09-03 14:11+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#. i18n: file: weatherconfigsearch.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, WeatherConfigSearch)
+#: rc.cpp:3
+msgid "Search"
+msgstr "Ara"
+
+#. i18n: file: weatherconfigsearch.ui:23
+#. i18n: ectx: property (text), widget (QLabel, cityLabel)
+#: rc.cpp:6
+msgid "Place:"
+msgstr "Konum:"
+
+#. i18n: file: weatherconfigsearch.ui:36
+#. i18n: ectx: property (text), widget (QLabel, providerLabel)
+#. i18n: file: weatherconfig.ui:73
+#. i18n: ectx: property (text), widget (QLabel, providerLabel)
+#: rc.cpp:9 rc.cpp:18
+msgid "Provider:"
+msgstr "Sağlayıcı:"
+
+#. i18n: file: weatherconfig.ui:32
+#. i18n: ectx: property (windowTitle), widget (QWidget, WeatherConfig)
+#: rc.cpp:12
+msgid "Weather Station Configuration"
+msgstr "Hava Durumu İstasyonu Yapılandırması"
+
+#. i18n: file: weatherconfig.ui:44
+#. i18n: ectx: property (text), widget (QLabel, cityLabel)
+#: rc.cpp:15
+msgid "City:"
+msgstr "Şehir:"
+
+#. i18n: file: weatherconfig.ui:102
+#. i18n: ectx: property (text), widget (QLabel, intervalLabel)
+#: rc.cpp:21
+msgid "Update &interval:"
+msgstr "Güncelleme aral&ığı:"
+
+#. i18n: file: weatherconfig.ui:140
+#. i18n: ectx: property (text), widget (QLabel, unitsLabel)
+#: rc.cpp:24
+msgid "Units"
+msgstr "Birimler"
+
+#. i18n: file: weatherconfig.ui:153
+#. i18n: ectx: property (text), widget (QLabel, temperatureLabel)
+#: rc.cpp:27
+msgid "&Temperature:"
+msgstr "&Sıcaklık:"
+
+#. i18n: file: weatherconfig.ui:182
+#. i18n: ectx: property (text), widget (QLabel, pressureLabel)
+#: rc.cpp:30
+msgid "&Pressure:"
+msgstr "&Basınç:"
+
+#. i18n: file: weatherconfig.ui:211
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: rc.cpp:33
+msgid "Wind &speed:"
+msgstr "Rüzgâr &hızı:"
+
+#. i18n: file: weatherconfig.ui:240
+#. i18n: ectx: property (text), widget (QLabel, visibilityLabel)
+#: rc.cpp:36
+msgid "&Visibility:"
+msgstr "&Görüş Mesafesi:"
+
+#. i18n: file: weatherconfig.ui:282
+#. i18n: ectx: property (text), widget (KPushButton, changeButton)
+#: rc.cpp:39
+msgid "Ch&ange..."
+msgstr "&Değiştir..."
+
+#. i18n: file: weatherconfig.ui:295
+#. i18n: ectx: property (text), widget (QLabel, locationLabel)
+#: rc.cpp:42
+msgid "Locations"
+msgstr "Konumlar"
+
+#. i18n: file: weatherconfig.ui:308
+#. i18n: ectx: property (text), widget (QLabel, providerLabel_2)
+#: rc.cpp:45
+msgid "Providers"
+msgstr "Sağlayıcılar"
+
+#. i18n: file: weatherconfig.ui:321
+#. i18n: ectx: property (text), widget (KPushButton, ghnsProviderButton)
+#: rc.cpp:48
+msgid "&Get New Providers..."
+msgstr "Yeni &Sağlayıcılar Al..."
+
+#: weatherconfig.cpp:81
+msgid "Celsius °C"
+msgstr "Selsius °C"
+
+#: weatherconfig.cpp:82
+msgid "Fahrenheit °F"
+msgstr "Fahrenhayt °F"
+
+#: weatherconfig.cpp:83
+msgid "Kelvin K"
+msgstr "Kelvin K"
+
+#: weatherconfig.cpp:84
+msgid "Hectopascals hPa"
+msgstr "Hektopaskal hPa"
+
+#: weatherconfig.cpp:85
+msgid "Kilopascals kPa"
+msgstr "Kilopaskal kPa"
+
+#: weatherconfig.cpp:86
+msgid "Millibars mbar"
+msgstr "Milibar mbar"
+
+#: weatherconfig.cpp:87
+msgid "Inches of Mercury inHg"
+msgstr "İnçte Civa inHg"
+
+#: weatherconfig.cpp:88
+msgid "Meters per Second m/s"
+msgstr "Saniyedeki Metre m/s"
+
+#: weatherconfig.cpp:89
+msgid "Kilometers per Hour km/h"
+msgstr "Saatteki Kilometre km/s"
+
+#: weatherconfig.cpp:90
+msgid "Miles per Hour mph"
+msgstr "Saatteki Mil mph"
+
+#: weatherconfig.cpp:91
+msgid "Knots kt"
+msgstr "Knot kt"
+
+#: weatherconfig.cpp:92
+msgid "Beaufort scale bft"
+msgstr "Beaufort Ölçeği bft"
+
+#: weatherconfig.cpp:93
+msgid "Kilometers"
+msgstr "Kilometre"
+
+#: weatherconfig.cpp:94
+msgid "Miles"
+msgstr "Mil"
+
+#: weatherconfig.cpp:163
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " dakika"
+
+#: weatherconfigsearch.cpp:31
+msgid "&Search..."
+msgstr "&Ara..."
+
+#: weatherpopupapplet.cpp:100
+#, kde-format
+msgid "Weather information retrieval for %1 timed out."
+msgstr "%1 için havadurumu alma işlemi zamanaşımına uğradı."
+
+#: weatherpopupapplet.cpp:248
+msgid "Weather"
+msgstr "Hava Durumu"
+
+#: weathervalidator.cpp:67 weathervalidator.cpp:104
+#, kde-format
+msgid "Cannot find '%1'."
+msgstr "'%1' bulunamıyor."
+
+#: weathervalidator.cpp:88
+msgid "Weather station:"
+msgstr "Hava durumu istasyonu:"
+
+#: weathervalidator.cpp:89
+msgid "Found multiple places:"
+msgstr "Bulunan konumlar:"
+
+#: weathervalidator.cpp:102
+msgid "Timeout happened when trying to connect to weather server."
+msgstr "Hava durumu sunucusuna bağlanmaya çalışılırken zaman aşımı oluştu."

@@ -1,0 +1,519 @@
+# translation of dragonplayer.po to Türkçe
+#
+# Server Acim <sacim@kde.org.tr>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: dragonplayer\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:24+0000\n"
+"PO-Revision-Date: 2009-02-04 00:06+0200\n"
+"Last-Translator: Server Acim <sacim@kde.org.tr>\n"
+"Language-Team: Türkçe <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: branches/KDE/4.2/kdemultimedia/doc/dragonplayer/index."
+"docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 903087\n"
+"X-KDE-Associated-UI-Catalogs: \n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:19
+#, no-c-format
+msgid "The &codeine; Handbook"
+msgstr "Uygulama &codeine; El Kitabı"
+
+#. Tag: author
+#: index.docbook:22
+#, no-c-format
+msgid "<firstname>Mike</firstname> <surname>Diehl</surname>"
+msgstr "<firstname>Mike</firstname> <surname>Diehl</surname>"
+
+#. Tag: email
+#: index.docbook:26
+#, no-c-format
+msgid "madpenguin8@yahoo.com"
+msgstr "madpenguin8@yahoo.com"
+
+#. Tag: author
+#: index.docbook:29
+#, no-c-format
+msgid "<firstname>Ian</firstname> <surname>Monroe</surname>"
+msgstr "<firstname>Ian</firstname> <surname>Monroe</surname>"
+
+#. Tag: email
+#: index.docbook:33
+#, no-c-format
+msgid "imonroe@kde.org"
+msgstr "imonroe@kde.org"
+
+#. Tag: trans_comment
+#: index.docbook:36
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "<firstname>Server</firstname> <surname>Acim</surname>"
+
+#. Tag: holder
+#: index.docbook:41
+#, no-c-format
+msgid "Mike Diehl"
+msgstr "Mike Diehl"
+
+#. Tag: holder
+#: index.docbook:45
+#, no-c-format
+msgid "Ian Monroe"
+msgstr "Ian Monroe"
+
+#. Tag: para
+#: index.docbook:65
+#, no-c-format
+msgid "&codeine; is a simple video player for &kde;."
+msgstr "&codeine; basit bir video oynatıcı &kde;."
+
+#. Tag: keyword
+#: index.docbook:75
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:76
+#, no-c-format
+msgid "Codeine"
+msgstr "Codeine"
+
+#. Tag: keyword
+#: index.docbook:77
+#, no-c-format
+msgid "Phonon"
+msgstr "Phonon"
+
+#. Tag: keyword
+#: index.docbook:78
+#, no-c-format
+msgid "Dragon"
+msgstr "Dragon"
+
+#. Tag: keyword
+#: index.docbook:79
+#, no-c-format
+msgid "Player"
+msgstr "Oynatıcı"
+
+#. Tag: keyword
+#: index.docbook:80
+#, no-c-format
+msgid "Dragon Player"
+msgstr "Dragon Oynatıcı"
+
+#. Tag: keyword
+#: index.docbook:81
+#, no-c-format
+msgid "video"
+msgstr "video"
+
+#. Tag: keyword
+#: index.docbook:82
+#, no-c-format
+msgid "multi-media"
+msgstr "çokluortam"
+
+#. Tag: title
+#: index.docbook:97
+#, no-c-format
+msgid "Introduction"
+msgstr "Giriş"
+
+#. Tag: screeninfo
+#: index.docbook:100
+#, no-c-format
+msgid "&codeine; Screenshot"
+msgstr "&codeine; Ekran Görüntüsü"
+
+#. Tag: phrase
+#: index.docbook:103
+#, no-c-format
+msgid "Screenshot"
+msgstr "Ekran Görüntüsü"
+
+#. Tag: para
+#: index.docbook:108
+#, no-c-format
+msgid ""
+"&codeine; is a simple media player using Phonon technology. &codeine; is a "
+"no frills media player that excels at playing DVDs and movie files without "
+"getting in your way."
+msgstr ""
+"&codeine; Phonon teknolojisini kullanan basit bir medya oynatıcısıdır. "
+"&codeine; DVD veya film oynatırken sizi önemsemeden kendi başına üstünlük "
+"taslayan gösterişli bir medya oynatıcı değildir."
+
+#. Tag: title
+#: index.docbook:116
+#, no-c-format
+msgid "Menu and Command Reference"
+msgstr "Menü ve Komut Örneği"
+
+#. Tag: title
+#: index.docbook:119
+#, no-c-format
+msgid "The Play Menu"
+msgstr "Oynatma Menüsü"
+
+#. Tag: menuchoice
+#: index.docbook:122
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>Play</guimenu> <guimenuitem>Play Media...</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>O</keycap></keycombo> </shortcut> "
+"<guimenu>Oynat</guimenu> <guimenuitem>Ortam Oynat...</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"Opens the Play Media dialog, allowing you to Play a DVD, VCD or a video file."
+msgstr ""
+"Medya Oynat penceresini açar, ve size DVD, VCD veya bir video dosyasını "
+"oynatma olanağı tanır."
+
+#. Tag: menuchoice
+#: index.docbook:133
+#, no-c-format
+msgid ""
+"<shortcut> <keycap>Space</keycap> </shortcut> <guimenu>Play</guimenu> "
+"<guimenuitem>Play/Pause</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>Boşluk</keycap> </shortcut> <guimenu>Oynat</guimenu> "
+"<guimenuitem>Oynat/Duraklat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:140
+#, no-c-format
+msgid ""
+"If a movie is loaded, this option allows you to pause and resume playback."
+msgstr ""
+"eğer bir film yüklenmişse, bu seçenek size oynatmayı duraklatma veya kaldığı "
+"yerden devam etme olanağı tanır."
+
+#. Tag: menuchoice
+#: index.docbook:144
+#, no-c-format
+msgid ""
+"<shortcut> <keycap>S</keycap> </shortcut> <guimenu>Play</guimenu> "
+"<guimenuitem>Stop</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>S</keycap> </shortcut> <guimenu>Oynat</guimenu> "
+"<guimenuitem>Dur</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:151
+#, no-c-format
+msgid "If a movie is loaded, this option allows you to stop playback."
+msgstr ""
+"eğer bir film yüklenmişse, bu seçenek size oynatmayı durdurma olanağı tanır."
+
+#. Tag: menuchoice
+#: index.docbook:156
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>Play</guimenu> <guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo>&Ctrl;<keycap>Q</keycap></keycombo> </shortcut> "
+"<guimenu>Oynat</guimenu> <guimenuitem>Çık</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:163
+#, no-c-format
+msgid "Quits &codeine;."
+msgstr "&codeine; çıkar"
+
+#. Tag: title
+#: index.docbook:170
+#, no-c-format
+msgid "The Settings Menu"
+msgstr "Ayarlar Menüsü"
+
+#. Tag: menuchoice
+#: index.docbook:174
+#, no-c-format
+msgid ""
+"<shortcut> <keycap>F</keycap> </shortcut> <guimenu>Settings</guimenu> "
+"<guimenuitem>Full Screen Mode</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>F</keycap> </shortcut> <guimenu>Ayarlar</guimenu> "
+"<guimenuitem>Tam Ekran Kipi</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:181
+#, no-c-format
+msgid ""
+"While playing a movie, you can enter full screen mode. This uses the entire "
+"monitor to display the movie"
+msgstr ""
+"Bir filmi oynatırken, tam ekran kipine geçebilirsiniz. Bu seçenek ile filmi "
+"tam ekran seyredersiniz."
+
+#. Tag: menuchoice
+#: index.docbook:187
+#, no-c-format
+msgid "<guimenu>Settings</guimenu> <guisubmenu>Aspect Ratio</guisubmenu>"
+msgstr "<guimenu>Ayarlar</guimenu> <guisubmenu>Görüntü Oranı</guisubmenu>"
+
+#. Tag: action
+#: index.docbook:191
+#, no-c-format
+msgid ""
+"This menu lets you pick the aspect ratio of the playing movie. The aspect "
+"ratio is width of movie compared to the height."
+msgstr ""
+"Bu menü oynamakta olan filmin görüntü oranını ayarlamanıza yardımcı olur. "
+"Görüntü oranı, en ve boyun birbirine olan oranını ayarlar."
+
+#. Tag: menuchoice
+#: index.docbook:195
+#, no-c-format
+msgid "<guimenu>Settings</guimenu> <guisubmenu>Subtitles</guisubmenu>"
+msgstr "<guimenu>Ayarlar</guimenu> <guisubmenu>Altyazılar</guisubmenu>"
+
+#. Tag: action
+#: index.docbook:199
+#, no-c-format
+msgid ""
+"This menu is active if there are any subtitles available from the currently "
+"playing movie. Note that it may take a few seconds of playback before the "
+"subtitles become available."
+msgstr ""
+"Bu menü, eğer izlemekte olduğunuz filmde altyazı özelliği varsa etkindir. "
+"Altyazıların oynatma sırasında devreye girmesi biraz zaman alabilir."
+
+#. Tag: menuchoice
+#: index.docbook:205
+#, no-c-format
+msgid "<guimenu>Settings</guimenu> <guisubmenu>Audio Channels</guisubmenu>"
+msgstr "<guimenu>Ayarlar</guimenu> <guisubmenu>Ses Kanalları</guisubmenu>"
+
+#. Tag: action
+#: index.docbook:209
+#, no-c-format
+msgid ""
+"This menu is active if there are any additional audio channels available. "
+"For instance, some DVDs have additional languages. Note that it may take a "
+"few seconds of playback before the audio channels become available."
+msgstr ""
+"Bu menü, eğer ek ses kanalları varsa etkindir. Mesela, bazı DVD'lerde ek "
+"diller vardır. Oynatma sırasında ses kanallarının devreye girmesi biraz "
+"zaman alabilir."
+
+#. Tag: menuchoice
+#: index.docbook:215
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo><keycap>R</keycap></keycombo> </shortcut> "
+"<guimenu>Settings</guimenu> <guimenuitem>Menu Toggle</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo><keycap>R</keycap></keycombo> </shortcut> "
+"<guimenu>Ayarlar</guimenu> <guimenuitem>Menü Çubuğu</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:222 index.docbook:231
+#, no-c-format
+msgid "To be written"
+msgstr "Yazılan"
+
+#. Tag: menuchoice
+#: index.docbook:227
+#, no-c-format
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Videosettings</guimenuitem>"
+msgstr "<guimenu>Ayarlar</guimenu> <guimenuitem>Video ayarları</guimenuitem>"
+
+#. Tag: menuchoice
+#: index.docbook:237
+#, no-c-format
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts...</guimenuitem>"
+msgstr ""
+"<guimenu>>Ayarlar</guimenu> <guimenuitem>Kısayolları Yapılandır...</"
+"guimenuitem>"
+
+#. Tag: action
+#: index.docbook:241
+#, no-c-format
+msgid "Allows you to configure the &codeine; shortcuts."
+msgstr "Sizin &codeine; kısayollarını ayarlamanıza yardımcı olur."
+
+#. Tag: menuchoice
+#: index.docbook:245
+#, no-c-format
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Toolbars...</guimenuitem>"
+msgstr ""
+"<guimenu>Ayarlar</guimenu> <guimenuitem>Araç Çubuklarını Yapılandır...</"
+"guimenuitem>"
+
+#. Tag: action
+#: index.docbook:249
+#, no-c-format
+msgid "Allows you to configure what buttons are available on the toolbar."
+msgstr "Hangi düğmelerin araç çubuğunda yer alacağını yapılandırmanızı sağlar."
+
+#. Tag: menuchoice
+#: index.docbook:253
+#, no-c-format
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+msgstr ""
+"<guimenu>Ayarlar</guimenu> <guimenuitem>Araç Çubuğunu Göster</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:257
+#, no-c-format
+msgid "Enables or disable the main application toolbar."
+msgstr "Ana uygulama araç çubuğunu etkinleştirir veya devre dışı bırakır."
+
+#. Tag: title
+#: index.docbook:264
+#, no-c-format
+msgid "The Help Menu"
+msgstr "Yardım Menüsü"
+
+#. Tag: sect1
+#: index.docbook:264
+#, no-c-format
+msgid "&help.menu.documentation;"
+msgstr "&help.menu.documentation;"
+
+#. Tag: title
+#: index.docbook:322
+#, no-c-format
+msgid "Credits and License"
+msgstr "Kredi ve Lisans"
+
+#. Tag: title
+#: index.docbook:325
+#, no-c-format
+msgid "&codeine;"
+msgstr "&codeine;"
+
+#. Tag: para
+#: index.docbook:326
+#, no-c-format
+msgid ""
+"Program copyright 2004 Max B. Howell <email>max.howell@methylblue.com</email>"
+msgstr ""
+"Program telif hakkın 2004 Max B. Howell <email>max.howell@methylblue.com</"
+"email>"
+
+#. Tag: para
+#: index.docbook:327
+#, no-c-format
+msgid "Program copyright 2007 Ian A. Monroe <email>imonroe@kde.org</email>"
+msgstr "Program telif hakkı 2007 Ian A. Monroe <email>imonroe@kde.org</email>"
+
+#. Tag: sect1
+#: index.docbook:327
+#, no-c-format
+msgid "&underGPL;"
+msgstr "&underGPL;"
+
+#. Tag: title
+#: index.docbook:333
+#, no-c-format
+msgid "Documentation"
+msgstr "Belgelendirme"
+
+#. Tag: para
+#: index.docbook:335
+#, no-c-format
+msgid ""
+"Documentation copyright 2004 Mike Diehl <email>madpenguin8@yahoo.com</email>"
+msgstr ""
+"Belgelendirme telif hakkı 2004 Mike Diehl <email>madpenguin8@yahoo.com</"
+"email>"
+
+#. Tag: para
+#: index.docbook:338
+#, no-c-format
+msgid "Documentation copyright 2007 Ian Monroe <email>imonroe@kde.org</email>"
+msgstr ""
+"Belgelendirme telif hakkı 2007 Ian Monroe <email>imonroe@kde.org</email>"
+
+#. Tag: trans_comment
+#: index.docbook:343
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "Çeviri:Server ACİM <email>sacim@kde.org.tr</email>"
+
+#. Tag: sect1
+#: index.docbook:343
+#, no-c-format
+msgid "&underFDL;"
+msgstr "&underFDL;"
+
+#. Tag: title
+#: index.docbook:351
+#, no-c-format
+msgid "Requirements"
+msgstr "Gereksinimler"
+
+#. Tag: para
+#: index.docbook:353
+#, no-c-format
+msgid ""
+"&codeine; requires the installation of some software packages. The required "
+"packages are listed below."
+msgstr ""
+"&codeine; bazı yazılım paketlerinin yüklenmesini gerektirir. Gerekli "
+"paketler aşağıda listelenmiştir."
+
+#. Tag: title
+#: index.docbook:357
+#, no-c-format
+msgid "Required:"
+msgstr "Gereklilikler:"
+
+#. Tag: para
+#: index.docbook:358
+#, no-c-format
+msgid "Kdelibs 4.0 <ulink url=\"http://www.kde.org\"></ulink>"
+msgstr "Kdelibs 4.0 <ulink url=\"http://www.kde.org\"></ulink>"
+
+#. Tag: para
+#: index.docbook:359
+#, no-c-format
+msgid "Kdebase 4.0 <ulink url=\"http://www.kde.org\"></ulink>"
+msgstr "Kdebase 4.0 <ulink url=\"http://www.kde.org\"></ulink>"
+
+#. Tag: para
+#: index.docbook:360
+#, no-c-format
+msgid "xine-lib 1.1 <ulink url=\"http://xinehq.de\"></ulink>"
+msgstr "xine-lib 1.1 <ulink url=\"http://xinehq.de\"></ulink>"
+
+#. Tag: title
+#: index.docbook:367
+#, no-c-format
+msgid "Installation"
+msgstr "Kurulum"
+
+#. Tag: title
+#: index.docbook:370
+#, no-c-format
+msgid "How to obtain &codeine;"
+msgstr "&codeine; nasıl edinilir"
+
+#. Tag: para
+#: index.docbook:372
+#, no-c-format
+msgid ""
+"&codeine; is part of the &kde; multimedia module, it can be found at: <ulink "
+"url=\"http://multimedia.kde.org\">http://multimedia.kde.org</ulink>."
+msgstr ""
+"&codeine; &kde; çokluortam modülünün bir parçasıdır, şu adresten "
+"edinilebilir.: <ulink url=\"http://multimedia.kde.org\">http://www."
+"dragonplayer.org</ulink>."

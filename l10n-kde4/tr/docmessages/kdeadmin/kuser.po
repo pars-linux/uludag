@@ -1,0 +1,597 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kuser\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-09 19:04+0000\n"
+"PO-Revision-Date: 2001-11-23 10:43GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:12
+#, no-c-format
+msgid "The &kuser; Handbook"
+msgstr "&kuser; El Kitabı"
+
+#. Tag: author
+#: index.docbook:14
+#, no-c-format
+msgid "<firstname>Matt</firstname> <surname>Johnston</surname>"
+msgstr ""
+
+#. Tag: address
+#: index.docbook:18
+#, fuzzy, no-c-format
+msgid "&Matt.Johnston.mail;"
+msgstr "Matt Johnston"
+
+#. Tag: othercredit
+#: index.docbook:22
+#, no-c-format
+msgid "<firstname>Lauri</firstname> <surname>Watts</surname>"
+msgstr ""
+
+#. Tag: address
+#: index.docbook:26
+#, no-c-format
+msgid "&Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: contrib
+#: index.docbook:28 index.docbook:36
+#, no-c-format
+msgid "Reviewer"
+msgstr "Gözden geçiren"
+
+#. Tag: othercredit
+#: index.docbook:30
+#, no-c-format
+msgid "<firstname>Jonathan</firstname> <surname>Singer</surname>"
+msgstr ""
+
+#. Tag: address
+#: index.docbook:34
+#, no-c-format
+msgid "&Jonathan.Singer.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:38
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "ROLES_OF_TRANSLATORS"
+
+#. Tag: holder
+#: index.docbook:43
+#, fuzzy, no-c-format
+msgid "&Matt.Johnston;"
+msgstr "Matt Johnston"
+
+#. Tag: para
+#: index.docbook:51
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This documentation describes &kuser; version 1.0. This program allows you "
+#| "to manage users and groups on your system."
+msgid ""
+"This documentation describes &kuser; version 3.9. This program allows you to "
+"manage users and groups on your system."
+msgstr ""
+"Bu belge &kuser; sürüm 1.0'ı anlatır. Bu program sisteminizdeki "
+"kullanıcıları ve grupları düzenlemenize olanak verir."
+
+#. Tag: keyword
+#: index.docbook:56
+#, no-c-format
+msgid "kuser"
+msgstr "kuser"
+
+#. Tag: keyword
+#: index.docbook:57
+#, no-c-format
+msgid "user"
+msgstr "kullanıcı"
+
+#. Tag: keyword
+#: index.docbook:58
+#, no-c-format
+msgid "management"
+msgstr "yönetim"
+
+#. Tag: keyword
+#: index.docbook:59
+#, no-c-format
+msgid "admin"
+msgstr "yönetici"
+
+#. Tag: keyword
+#: index.docbook:60
+#, no-c-format
+msgid "tools"
+msgstr "araçlar"
+
+#. Tag: keyword
+#: index.docbook:61
+#, no-c-format
+msgid "group"
+msgstr "grup"
+
+#. Tag: keyword
+#: index.docbook:62
+#, no-c-format
+msgid "password"
+msgstr "parola"
+
+#. Tag: title
+#: index.docbook:67
+#, no-c-format
+msgid "Getting Started"
+msgstr "Başlangıç"
+
+#. Tag: para
+#: index.docbook:69
+#, fuzzy, no-c-format
+msgid ""
+"This is a short introduction to &kuser;. For more detailed information, see "
+"<link linkend=\"using\">Usage</link>."
+msgstr ""
+"Bu &kuser; programına kısa bir başlangıcı içerir. Daha detaylı bilgi için "
+"<link linkend=\"using\">bu bağlantıya</link> tıklayın."
+
+#. Tag: para
+#: index.docbook:72
+#, fuzzy, no-c-format
+msgid ""
+"Actually, you do not need to do anything to begin using &kuser; except <link "
+"linkend=\"customizing\">configuration</link>."
+msgstr ""
+"&kuser; çalıştırmak için <link linkend=\"customizing\">yapılandırma</link> "
+"bağlantısına tıklamak dışında herhangi bir işlem yapmanıza gerek yoktur."
+
+#. Tag: para
+#: index.docbook:75
+#, no-c-format
+msgid ""
+"If you do not launch &kuser; in administrator mode, you will get a warning, "
+"that the file <filename>/etc/shadow</filename> is not readable."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:87
+#, no-c-format
+msgid "Usage"
+msgstr "Kullanım"
+
+#. Tag: title
+#: index.docbook:90
+#, no-c-format
+msgid "Main Window"
+msgstr "Ana Pencere"
+
+#. Tag: para
+#: index.docbook:92
+#, fuzzy, no-c-format
+msgid ""
+"&kuser; is a very simple application. In the main window you can see two "
+"tabs: the list of users and the list of groups. To edit a user or a group, "
+"just click on it. The user or group properties dialog will appear."
+msgstr ""
+"&kuser; çok basit bir uygulamadır. Ana pencerede iki liste göreceksiniz: "
+"Kullanıcı listesi ve grup listesi. Bir kullanıcı ya da grubu düzenlemek için "
+"üzerine çift tıklayın. Karşınıza kullanıcı/grup özellikleri penceresi "
+"gelecektir."
+
+#. Tag: screeninfo
+#: index.docbook:97
+#, fuzzy, no-c-format
+msgid "<screeninfo>&kuser; Main Window</screeninfo>"
+msgstr "Ana Pencere"
+
+#. Tag: phrase
+#: index.docbook:103
+#, fuzzy, no-c-format
+msgid "<phrase>&kuser; Main Window</phrase>"
+msgstr "Ana Pencere"
+
+#. Tag: title
+#: index.docbook:111
+#, no-c-format
+msgid "User Properties Dialog"
+msgstr "Kullanıcı Özellikleri Penceresi"
+
+#. Tag: para
+#: index.docbook:113
+#, fuzzy, no-c-format
+#| msgid "The user properties dialog has various tabs."
+msgid "The user properties dialog has two tabs."
+msgstr "Kullanıcı özellikleri penceresinin pek çok sekmesi vardır."
+
+#. Tag: title
+#: index.docbook:122
+#, no-c-format
+msgid "<guilabel>User Info</guilabel> Tab"
+msgstr "<guilabel>Kullanıcı Bilgisi</guilabel> Sekmesi"
+
+#. Tag: para
+#: index.docbook:124
+#, fuzzy, no-c-format
+msgid "In the <guilabel>User Info</guilabel> tab you can modify:"
+msgstr ""
+"<guilabel>Kullanıcı Bilgisi</guilabel> sekmesinde aşağıdaki bilgiler "
+"düzenlenebilir:"
+
+#. Tag: para
+#: index.docbook:128
+#, no-c-format
+msgid ""
+"<guilabel>User login</guilabel> with the user name and a <guibutton>Set "
+"Password</guibutton> button for this account,"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:129
+#, fuzzy, no-c-format
+msgid "User Id"
+msgstr "Kullanıcı No"
+
+#. Tag: guilabel
+#: index.docbook:130
+#, fuzzy, no-c-format
+msgid "Full Name"
+msgstr "Tam adı"
+
+#. Tag: para
+#: index.docbook:131
+#, fuzzy, no-c-format
+msgid ""
+"<guilabel>Login Shell</guilabel> (the list of login shells is taken from the "
+"<filename>/etc/shells</filename> file)"
+msgstr ""
+"<guilabel>Giriş kabuğu</guilabel> (giriş kabuklarının listesi <filename>/etc/"
+"shells</filename> dosyasından alınır)"
+
+#. Tag: guilabel
+#: index.docbook:133
+#, no-c-format
+msgid "Home Folder"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:134
+#, no-c-format
+msgid "Two office locations"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:135
+#, no-c-format
+msgid "Address"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:136
+#, no-c-format
+msgid "Account disabled"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:142
+#, fuzzy, no-c-format
+msgid "<guilabel>Password Management</guilabel> Tab"
+msgstr "<guilabel>Kullanıcı Bilgisi</guilabel> Sekmesi"
+
+#. Tag: para
+#: index.docbook:144
+#, fuzzy, no-c-format
+msgid ""
+"The <guilabel>Password Management</guilabel> tab will appear if you have "
+"shadow passwords, or any other similar things such as <filename>/etc/master."
+"passwd</filename> in <acronym>BSD</acronym> flavor Unices."
+msgstr ""
+"<guilabel>Ek bilgi</guilabel> sekmesi sistemde gölge parolalar varsa, ya da "
+"<filename>/etc/master.passwd</filename> gibi ek dosyalar varsa görüntülenir."
+
+#. Tag: para
+#: index.docbook:153
+#, no-c-format
+msgid "Minimum number of days between password changes"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:155
+#, no-c-format
+msgid "Number of days after which a password expires if it hasn't been changed"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:157
+#, no-c-format
+msgid "Number of days before expiration the user will be warned"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:159
+#, no-c-format
+msgid "Whether and when an account will be disabled if the password expires"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:161
+#, fuzzy, no-c-format
+msgid "A set date when the account expires"
+msgstr "Hesap süresinin dolma tarihi"
+
+#. Tag: para
+#: index.docbook:162
+#, no-c-format
+msgid "<guilabel>Class</guilabel> (on <acronym>BSD</acronym> systems)"
+msgstr "<guilabel>Sınıf</guilabel> (<acronym>BSD</acronym> sistemlerinde)"
+
+#. Tag: para
+#: index.docbook:165
+#, no-c-format
+msgid ""
+"The date of the last password change is displayed near the top of the dialog."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:196
+#, no-c-format
+msgid "<guilabel>Groups</guilabel> Tab"
+msgstr "<guilabel>Gruplar</guilabel> Sekmesi"
+
+#. Tag: para
+#: index.docbook:198
+#, fuzzy, no-c-format
+msgid ""
+"The <guilabel>Groups</guilabel> tab contains all the information about the "
+"selected user's participation in groups. The primary group to which the user "
+"belongs is set with the <guilabel>Set as Primary</guilabel> button. The user "
+"can be assigned to additional groups by checking them in the large box."
+msgstr ""
+"<guilabel>Gruplar</guilabel> sekmesi bir kullanıcının üye olduğu grup "
+"hakkında tüm bilgileri verir. Öncelikle bir kullanıcının birincil grubu "
+"gösterilir. Ayrıca ok düğmeleri yardımıyla kullanıcıya istediğiniz kadar "
+"ikincil grup tanımlayabilirsiniz."
+
+#. Tag: guilabel
+#: index.docbook:208
+#, no-c-format
+msgid "Group Properties"
+msgstr "Grup Özellikleri"
+
+#. Tag: para
+#: index.docbook:210
+#, no-c-format
+msgid ""
+"The <guilabel>Group Properties</guilabel> dialog contains a list of all "
+"users. Check the boxes for each user to be assigned to the selected group."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:217
+#, fuzzy, no-c-format
+msgid "Adding, Editing and Deleting Users or Groups"
+msgstr "Kullanıcı ya da Grup Eklemek ve Çıkartmak"
+
+#. Tag: para
+#: index.docbook:219
+#, fuzzy, no-c-format
+msgid ""
+"To add a user or group to the system, either choose <guimenuitem>Add</"
+"guimenuitem> from the <guimenu>User</guimenu> or <guimenu>Group</guimenu> "
+"menu, or click the relevant <guiicon>Add</guiicon> button on the toolbar. "
+"The selected user or group can also be edited or deleted in the same way."
+msgstr ""
+"Sisteme bir kullanıcı eklemek ya da çıkartmak için ya <guimenu>Kullanıcı</"
+"guimenu> ya da <guimenu>Grup</guimenu> menüsünden <guimenuitem>Ekle</"
+"guimenuitem> seçin, ya da Araç Çubuğundaki <guiicon>Ekle</guiicon> simgesine "
+"tıklayın. Aynı işlem kullanıcıları silerken de geçerlidir."
+
+#. Tag: title
+#: index.docbook:229
+#, no-c-format
+msgid "Customizing &kuser;"
+msgstr "&kuser;'ın Özelleştirilmesi"
+
+#. Tag: title
+#: index.docbook:232
+#, no-c-format
+msgid "Edit user creation defaults"
+msgstr "Kullanıcı yaratma öntanımlı değerlerinin düzenlenmesi"
+
+#. Tag: para
+#: index.docbook:234
+#, fuzzy, no-c-format
+msgid ""
+"To edit the user creation defaults you can use the <guilabel>Connection</"
+"guilabel> tab on the <guilabel>General</guilabel> page of &kuser;'s "
+"configuration dialog, which is accessible via the menu "
+"<menuchoice><guimenu>Settings</guimenu> <guimenuitem>Configure &kuser;</"
+"guimenuitem></menuchoice>. There you may change the defaults that are used "
+"when creating a new user: Shell and Home Folder (or home folders volume). "
+"You can choose whether to make a home folder on <quote>create</quote> or "
+"not, and to copy a skeleton (standard configuration files) to the home "
+"folder or not. You can also enable <guilabel>User private group</guilabel> "
+"mechanism, which creates a new personal group with the creation of a new "
+"user, and removes the personal group when the user is removed."
+msgstr ""
+"Kullanıcı yaratma öntanımlı değerlerini değiştirmek için "
+"<guilabel>Öntanımlıları düzenle</guilabel> penceresini kullanabilirsiniz. "
+"Burada yeni bir kullanıcı yaratmak için düzenleyebileceğiniz değerler "
+"(Kabuk, ev dizini vb) vardır. Ayrıca kullanıcı hesabı yaratılırken ev "
+"dizininin oluşturulup oluşturulmayacağını tanımlayabilir, "
+"<guilabel>Kullanıcı Özel Grubu</guilabel> tanımlayıp yeni bir kullanıcı "
+"eklerken bu gruba dahil edebilirsiniz."
+
+#. Tag: title
+#: index.docbook:254
+#, no-c-format
+msgid "Credits and License"
+msgstr "Yazarlar ve Lisans"
+
+#. Tag: para
+#: index.docbook:256
+#, no-c-format
+msgid "&kuser;"
+msgstr "&kuser;"
+
+#. Tag: para
+#: index.docbook:258
+#, no-c-format
+msgid ""
+"Program copyright 1997-2000 Denis Pershin <email>dyp@inetlab.com</email>"
+msgstr "Telif Hakkı 1997-2000 Denis Pershin <email>dyp@inetlab.com</email>"
+
+#. Tag: para
+#: index.docbook:261
+#, no-c-format
+msgid ""
+"Documentation copyright 1997-2000 Denis Pershin <email>dyp@inetlab.com</"
+"email>"
+msgstr ""
+"Belge telif hakkı 1997-2000 Denis Pershin <email>dyp@inetlab.com</email>"
+
+#. Tag: para
+#: index.docbook:263
+#, fuzzy, no-c-format
+msgid "Documentation copyright 2000 &Matt.Johnston; &Matt.Johnston.mail;"
+msgstr ""
+"Belge telif hakkı 2000 Matt Johnston <email>mattj@flashmail.com</email>"
+
+#. Tag: trans_comment
+#: index.docbook:265
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "CREDIT_FOR_TRANSLATORS"
+
+#. Tag: chapter
+#: index.docbook:265
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr ""
+
+#~ msgid ""
+#~ "When you have made the changes you want, you must <guimenuitem>Save</"
+#~ "guimenuitem> them for them to take effect. Either choose the Toolbar "
+#~ "icon, or use the <guimenu>File</guimenu> menu."
+#~ msgstr ""
+#~ "İstediğiniz değişiklikleri yaptıktan sonra <guimenuitem>Kaydet</"
+#~ "guimenuitem> düğmesine basmanız yeterlidir. Bunun için ister araç çubuğu "
+#~ "simgesini kullanın, isterseniz <guimenu>Dosya</guimenu> menüsüne tıklayın."
+
+#~ msgid ""
+#~ "The number of tabs depends on the type of the user storage system and "
+#~ "whether quotas are being used. Additional tabs will appear if you have "
+#~ "shadow passwords, or any other similar things such as <filename>/etc/"
+#~ "master.passwd</filename> in BSD flavor Unices."
+#~ msgstr ""
+#~ "Sekmelerin sayısı kullanıcı veritabanı yapısına ve kotaların bulunup "
+#~ "bulunmadığına göre değişir. Eğer gölge parola kullanılıyorsa, ya da "
+#~ "<filename>/etc/master.passwd</filename> gibi ek dosyalar varsa bunlara "
+#~ "ilişkin sekmeler de olacaktır. "
+
+#~ msgid "Password"
+#~ msgstr "Parola"
+
+#~ msgid ""
+#~ "In the <guilabel>Extended Info</guilabel> tab you can modify parameters "
+#~ "related to extended account control:"
+#~ msgstr ""
+#~ "<guilabel>Ek Bilgi</guilabel> sekmesinde gelişmiş hesap denetimine "
+#~ "ilişkin bilgileri düzenlemek mümkündür:"
+
+#~ msgid "<guilabel>Quota</guilabel> Tab"
+#~ msgstr "<guilabel>Kota</guilabel> Sekmesi"
+
+#~ msgid ""
+#~ "You will probably see the <guilabel>Quota</guilabel> tab only if you have "
+#~ "at least one mounted volume with quota enabled and a quota file present. "
+#~ "There you may modify all quota related parameters:"
+#~ msgstr ""
+#~ "Eğer sistemde kota desteği olan bir disk varsa, <guilabel>Kota</guilabel> "
+#~ "sekmesini görebilirsiniz. Burada tüm kota parametreleri düzenlenebilir."
+
+#~ msgid "File Soft Quota"
+#~ msgstr "Dosya Birincil Kotası"
+
+#~ msgid "File Hard Quota"
+#~ msgstr "Dosya İkincil Kotası"
+
+#~ msgid "File Time Limit (Grace Period)"
+#~ msgstr "Dosya Zaman Sınırı"
+
+#~ msgid "iNode Soft Quota"
+#~ msgstr "iNode Birincil Kotası"
+
+#~ msgid "iNode Hard Quota"
+#~ msgstr "iNode İkincil Kotası"
+
+#~ msgid "iNode Time Limit (Grace Period)"
+#~ msgstr "iNode Süre Sınırı"
+
+#, fuzzy
+#~ msgid ""
+#~ "All these parameters can be changed for each file system that has user "
+#~ "quota enabled. File systems can be changed using the <guilabel>Quota "
+#~ "Filesystem</guilabel> box."
+#~ msgstr ""
+#~ "Tüm bu parametreler kota desteği olan dosya sistemleri için "
+#~ "düzenlenebilir. Dosya sistemleri <guilabel>Kota Dosya Sistemi</guilabel> "
+#~ "çoklu kutucuğundan değiştirilebilir."
+
+#, fuzzy
+#~ msgid "Home Directory"
+#~ msgstr "Ev dizini"
+
+#~ msgid ""
+#~ "<firstname>Matt</firstname> <surname>Johnston</surname> <affiliation> "
+#~ "<address><email>mattj@flashmail.com</email></address> </affiliation>"
+#~ msgstr ""
+#~ "<firstname>Matt</firstname> <surname>Johnston</surname> <affiliation> "
+#~ "<address><email>mattj@flashmail.com</email></address> </affiliation>"
+
+#~ msgid "Extra info"
+#~ msgstr "Ek bilgi"
+
+#~ msgid "<guilabel>Extended Info</guilabel> Tab"
+#~ msgstr "<guilabel>Daha geniş bilgi</guilabel> Sekmesi"
+
+#~ msgid "Date until change allowed"
+#~ msgstr "Değişikliğin izin verildiği gün sınırı"
+
+#~ msgid "Date before change required"
+#~ msgstr "Değişikliğin gerektiği en son gün"
+
+#~ msgid "Date user will be warned about expiration"
+#~ msgstr "Parola bitiminde "
+
+#~ msgid "Date before account inactivation"
+#~ msgstr "Hesabın kapatılma tarihi"
+
+#~ msgid ""
+#~ "The <guilabel>Group</guilabel> properties dialog has two list boxes. The "
+#~ "right one contains users (<guilabel>Users in group</guilabel>), who are "
+#~ "included in the group, and the left one contains the list of all other "
+#~ "users in the system (<guilabel>Users not in group</guilabel>). You can "
+#~ "use the <guibutton>arrow</guibutton> buttons to move a user from one list "
+#~ "to the other. Select the user you want to move, then use the "
+#~ "<guibutton>arrow</guibutton> button to move the user."
+#~ msgstr ""
+#~ "<guilabel>Grup</guilabel> özellikleri penceresinin iki liste kutusu "
+#~ "vardır. Sağ taraftaki kullanıcıları (<guilabel>Gruptaki kullanıcıları</"
+#~ "guilabel>) gösterirken,so taraftaki kutuda sistemdeki diğer tüm "
+#~ "kullanıcılar (<guilabel>Grupta bulunmayan kullanıcılar</guilabel> "
+#~ "görüntülenir. <guibutton>Ok</guibutton> tuşlarını kullanarak bir "
+#~ "kullanıcıyı listenin birisinden diğerine taşıyabilirsiniz. Taşımak "
+#~ "istediğiniz kullanıcıyı seçin, ardından <guibutton>ok</guibutton> tuşuyla "
+#~ "taşıyın."

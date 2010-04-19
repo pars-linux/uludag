@@ -1,0 +1,1996 @@
+# translation of kdelibs4.po to Turkish
+# translation of kdelibs4.po to
+# Kdelibs Turkish translation file
+# Copyright (C) 2000,2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,1999-2002.
+# Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
+# Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <serdar@kde.org.tr>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelibs4\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:27+0100\n"
+"PO-Revision-Date: 2009-11-15 23:27+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcalendarsystemindiannational.cpp:248
+msgctxt "Indian National month 1 - ShortNamePossessive"
+msgid "of Cha"
+msgstr "Cha'nın"
+
+#: kcalendarsystemindiannational.cpp:250
+msgctxt "Indian National month 2 - ShortNamePossessive"
+msgid "of Vai"
+msgstr "Vai'nin"
+
+#: kcalendarsystemindiannational.cpp:252
+msgctxt "Indian National month 3 - ShortNamePossessive"
+msgid "of Jya"
+msgstr "Jya'nın"
+
+#: kcalendarsystemindiannational.cpp:254
+msgctxt "Indian National month 4 - ShortNamePossessive"
+msgid "of Āsh"
+msgstr "Āsh'ın"
+
+#: kcalendarsystemindiannational.cpp:256
+msgctxt "Indian National month 5 - ShortNamePossessive"
+msgid "of Shr"
+msgstr "Shr'nin"
+
+#: kcalendarsystemindiannational.cpp:258
+msgctxt "Indian National month 6 - ShortNamePossessive"
+msgid "of Bhā"
+msgstr "Bhā'nın"
+
+#: kcalendarsystemindiannational.cpp:260
+msgctxt "Indian National month 7 - ShortNamePossessive"
+msgid "of Āsw"
+msgstr "Āsw'nin"
+
+#: kcalendarsystemindiannational.cpp:262
+msgctxt "Indian National month 8 - ShortNamePossessive"
+msgid "of Kār"
+msgstr "Kār'ın"
+
+#: kcalendarsystemindiannational.cpp:264
+msgctxt "Indian National month 9 - ShortNamePossessive"
+msgid "of Agr"
+msgstr "Agr'ın"
+
+#: kcalendarsystemindiannational.cpp:266
+msgctxt "Indian National month 10 - ShortNamePossessive"
+msgid "of Pau"
+msgstr "Pau'nun"
+
+#: kcalendarsystemindiannational.cpp:268
+msgctxt "Indian National month 11 - ShortNamePossessive"
+msgid "of Māg"
+msgstr "Māg'ın"
+
+#: kcalendarsystemindiannational.cpp:270
+msgctxt "Indian National month 12 - ShortNamePossessive"
+msgid "of Phā"
+msgstr "Phā'nın"
+
+#: kcalendarsystemindiannational.cpp:279
+msgctxt "Indian National month 1 - LongNamePossessive"
+msgid "of Chaitra"
+msgstr "Chaitra'nın"
+
+#: kcalendarsystemindiannational.cpp:281
+msgctxt "Indian National month 2 - LongNamePossessive"
+msgid "of Vaishākh"
+msgstr "Vaishākh'ın"
+
+#: kcalendarsystemindiannational.cpp:283
+msgctxt "Indian National month 3 - LongNamePossessive"
+msgid "of Jyaishtha"
+msgstr "Jyaishtha'nın"
+
+#: kcalendarsystemindiannational.cpp:285
+msgctxt "Indian National month 4 - LongNamePossessive"
+msgid "of Āshādha"
+msgstr "Āshādha'nın"
+
+#: kcalendarsystemindiannational.cpp:287
+msgctxt "Indian National month 5 - LongNamePossessive"
+msgid "of Shrāvana"
+msgstr "Shrāvana'nın"
+
+#: kcalendarsystemindiannational.cpp:289
+msgctxt "Indian National month 6 - LongNamePossessive"
+msgid "of Bhādrapad"
+msgstr "Bhādrapad'ın"
+
+#: kcalendarsystemindiannational.cpp:291
+msgctxt "Indian National month 7 - LongNamePossessive"
+msgid "of Āshwin"
+msgstr "Āshwin'in"
+
+#: kcalendarsystemindiannational.cpp:293
+msgctxt "Indian National month 8 - LongNamePossessive"
+msgid "of Kārtik"
+msgstr "Kārtik'in"
+
+#: kcalendarsystemindiannational.cpp:295
+msgctxt "Indian National month 9 - LongNamePossessive"
+msgid "of Agrahayana"
+msgstr "Agrahayana'nın"
+
+#: kcalendarsystemindiannational.cpp:297
+msgctxt "Indian National month 10 - LongNamePossessive"
+msgid "of Paush"
+msgstr "Paush'un"
+
+#: kcalendarsystemindiannational.cpp:299
+msgctxt "Indian National month 11 - LongNamePossessive"
+msgid "of Māgh"
+msgstr "Māgh'ın"
+
+#: kcalendarsystemindiannational.cpp:301
+msgctxt "Indian National month 12 - LongNamePossessive"
+msgid "of Phālgun"
+msgstr "Phālgun'un"
+
+#: kcalendarsystemindiannational.cpp:310
+msgctxt "Indian National month 1 - ShortName"
+msgid "Cha"
+msgstr "Cha"
+
+#: kcalendarsystemindiannational.cpp:312
+msgctxt "Indian National month 2 - ShortName"
+msgid "Vai"
+msgstr "Vai"
+
+#: kcalendarsystemindiannational.cpp:314
+msgctxt "Indian National month 3 - ShortName"
+msgid "Jya"
+msgstr "Jya"
+
+#: kcalendarsystemindiannational.cpp:316
+msgctxt "Indian National month 4 - ShortName"
+msgid "Āsh"
+msgstr "Āsh"
+
+#: kcalendarsystemindiannational.cpp:318
+msgctxt "Indian National month 5 - ShortName"
+msgid "Shr"
+msgstr "Shr"
+
+#: kcalendarsystemindiannational.cpp:320
+msgctxt "Indian National month 6 - ShortName"
+msgid "Bhā"
+msgstr "Bhā"
+
+#: kcalendarsystemindiannational.cpp:322
+msgctxt "Indian National month 7 - ShortName"
+msgid "Āsw"
+msgstr "Āsw"
+
+#: kcalendarsystemindiannational.cpp:324
+msgctxt "Indian National month 8 - ShortName"
+msgid "Kār"
+msgstr "Kār"
+
+#: kcalendarsystemindiannational.cpp:326
+msgctxt "Indian National month 9 - ShortName"
+msgid "Agr"
+msgstr "Agr"
+
+#: kcalendarsystemindiannational.cpp:328
+msgctxt "Indian National month 10 - ShortName"
+msgid "Pau"
+msgstr "Pau"
+
+#: kcalendarsystemindiannational.cpp:330
+msgctxt "Indian National month 11 - ShortName"
+msgid "Māg"
+msgstr "Māg"
+
+#: kcalendarsystemindiannational.cpp:332
+msgctxt "Indian National month 12 - ShortName"
+msgid "Phā"
+msgstr "Phā"
+
+#: kcalendarsystemindiannational.cpp:341
+msgctxt "Indian National month 1 - LongName"
+msgid "Chaitra"
+msgstr "Chaitra"
+
+#: kcalendarsystemindiannational.cpp:343
+msgctxt "Indian National month 2 - LongName"
+msgid "Vaishākh"
+msgstr "Vaishākh"
+
+#: kcalendarsystemindiannational.cpp:345
+msgctxt "Indian National month 3 - LongName"
+msgid "Jyaishtha"
+msgstr "Jyaishtha"
+
+#: kcalendarsystemindiannational.cpp:347
+msgctxt "Indian National month 4 - LongName"
+msgid "Āshādha"
+msgstr "Āshādha"
+
+#: kcalendarsystemindiannational.cpp:349
+msgctxt "Indian National month 5 - LongName"
+msgid "Shrāvana"
+msgstr "Shrāvana"
+
+#: kcalendarsystemindiannational.cpp:351
+msgctxt "Indian National month 6 - LongName"
+msgid "Bhādrapad"
+msgstr "Bhādrapad"
+
+#: kcalendarsystemindiannational.cpp:353
+msgctxt "Indian National month 7 - LongName"
+msgid "Āshwin"
+msgstr "Āshwin"
+
+#: kcalendarsystemindiannational.cpp:355
+msgctxt "Indian National month 8 - LongName"
+msgid "Kārtik"
+msgstr "Kārtik"
+
+#: kcalendarsystemindiannational.cpp:357
+msgctxt "Indian National month 9 - LongName"
+msgid "Agrahayana"
+msgstr "Agrahayana"
+
+#: kcalendarsystemindiannational.cpp:359
+msgctxt "Indian National month 10 - LongName"
+msgid "Paush"
+msgstr "Paush"
+
+#: kcalendarsystemindiannational.cpp:361
+msgctxt "Indian National month 11 - LongName"
+msgid "Māgh"
+msgstr "Māgh"
+
+#: kcalendarsystemindiannational.cpp:363
+msgctxt "Indian National month 12 - LongName"
+msgid "Phālgun"
+msgstr "Phālgun"
+
+#: kcalendarsystemindiannational.cpp:378
+msgctxt "Indian National weekday 1 - ShortDayName"
+msgid "Som"
+msgstr "Som"
+
+#: kcalendarsystemindiannational.cpp:379
+msgctxt "Indian National weekday 2 - ShortDayName"
+msgid "Mañ"
+msgstr "Mañ"
+
+#: kcalendarsystemindiannational.cpp:380
+msgctxt "Indian National weekday 3 - ShortDayName"
+msgid "Bud"
+msgstr "Bud"
+
+#: kcalendarsystemindiannational.cpp:381
+msgctxt "Indian National weekday 4 - ShortDayName"
+msgid "Gur"
+msgstr "Gur"
+
+#: kcalendarsystemindiannational.cpp:382
+msgctxt "Indian National weekday 5 - ShortDayName"
+msgid "Suk"
+msgstr "Suk"
+
+#: kcalendarsystemindiannational.cpp:383
+msgctxt "Indian National weekday 6 - ShortDayName"
+msgid "San"
+msgstr "San"
+
+#: kcalendarsystemindiannational.cpp:384
+msgctxt "Indian National weekday 7 - ShortDayName"
+msgid "Rav"
+msgstr "Rav"
+
+#: kcalendarsystemindiannational.cpp:390
+msgctxt "Indian National weekday 1 - LongDayName"
+msgid "Somavãra"
+msgstr "Somavãra"
+
+#: kcalendarsystemindiannational.cpp:391
+msgctxt "Indian National weekday 2 - LongDayName"
+msgid "Mañgalvã"
+msgstr "Mañgalvã"
+
+#: kcalendarsystemindiannational.cpp:392
+msgctxt "Indian National weekday 3 - LongDayName"
+msgid "Budhavãra"
+msgstr "Budhavãra"
+
+#: kcalendarsystemindiannational.cpp:393
+msgctxt "Indian National weekday 4 - LongDayName"
+msgid "Guruvãra"
+msgstr "Guruvãra"
+
+#: kcalendarsystemindiannational.cpp:394
+msgctxt "Indian National weekday 5 - LongDayName"
+msgid "Sukravãra"
+msgstr "Sukravãra"
+
+#: kcalendarsystemindiannational.cpp:395
+msgctxt "Indian National weekday 6 - LongDayName"
+msgid "Sanivãra"
+msgstr "Sanivãra"
+
+#: kcalendarsystemindiannational.cpp:396
+msgctxt "Indian National weekday 7 - LongDayName"
+msgid "Raviãra"
+msgstr "Raviãra"
+
+#: kcalendarsystemjalali.cpp:262
+msgctxt "of Farvardin short"
+msgid "of Far"
+msgstr "Far'ın"
+
+#: kcalendarsystemjalali.cpp:264
+msgctxt "of Ordibehesht short"
+msgid "of Ord"
+msgstr "Ord'un"
+
+#: kcalendarsystemjalali.cpp:266
+msgctxt "of Khordad short"
+msgid "of Kho"
+msgstr "Kho'nun"
+
+#: kcalendarsystemjalali.cpp:268
+msgctxt "of Tir short"
+msgid "of Tir"
+msgstr "Tir'in"
+
+#: kcalendarsystemjalali.cpp:270
+msgctxt "of Mordad short"
+msgid "of Mor"
+msgstr "Mor'un"
+
+#: kcalendarsystemjalali.cpp:272
+msgctxt "of Shahrivar short"
+msgid "of Sha"
+msgstr "Sha'nın"
+
+#: kcalendarsystemjalali.cpp:274
+msgctxt "of Mehr short"
+msgid "of Meh"
+msgstr "Meh'in"
+
+#: kcalendarsystemjalali.cpp:276
+msgctxt "of Aban short"
+msgid "of Aba"
+msgstr "Aba'nın"
+
+#: kcalendarsystemjalali.cpp:278
+msgctxt "of Azar short"
+msgid "of Aza"
+msgstr "Aza'nın"
+
+#: kcalendarsystemjalali.cpp:280
+msgctxt "of Dei short"
+msgid "of Dei"
+msgstr "Dei'nin"
+
+#: kcalendarsystemjalali.cpp:282
+msgctxt "of Bahman short"
+msgid "of Bah"
+msgstr "Bah'ın"
+
+#: kcalendarsystemjalali.cpp:284
+msgctxt "of Esfand short"
+msgid "of Esf"
+msgstr "Esf'in"
+
+#: kcalendarsystemjalali.cpp:293
+msgctxt "Farvardin short"
+msgid "Far"
+msgstr "Far"
+
+#: kcalendarsystemjalali.cpp:295
+msgctxt "Ordibehesht short"
+msgid "Ord"
+msgstr "Ord"
+
+#: kcalendarsystemjalali.cpp:297
+msgctxt "Khordad short"
+msgid "Kho"
+msgstr "Kho"
+
+#: kcalendarsystemjalali.cpp:299
+msgctxt "Tir short"
+msgid "Tir"
+msgstr "Tir"
+
+#: kcalendarsystemjalali.cpp:301
+msgctxt "Mordad short"
+msgid "Mor"
+msgstr "Mor"
+
+#: kcalendarsystemjalali.cpp:303
+msgctxt "Shahrivar short"
+msgid "Sha"
+msgstr "Sha"
+
+#: kcalendarsystemjalali.cpp:305
+msgctxt "Mehr short"
+msgid "Meh"
+msgstr "Meh"
+
+#: kcalendarsystemjalali.cpp:307
+msgctxt "Aban short"
+msgid "Aba"
+msgstr "Aba"
+
+#: kcalendarsystemjalali.cpp:309
+msgctxt "Azar short"
+msgid "Aza"
+msgstr "Aza"
+
+#: kcalendarsystemjalali.cpp:311
+msgctxt "Dei short"
+msgid "Dei"
+msgstr "Dei"
+
+#: kcalendarsystemjalali.cpp:313
+msgctxt "Bahman short"
+msgid "Bah"
+msgstr "Bah"
+
+#: kcalendarsystemjalali.cpp:315
+msgctxt "Esfand"
+msgid "Esf"
+msgstr "Esf"
+
+#: kcalendarsystemjalali.cpp:324
+msgid "of Farvardin"
+msgstr "Farvardin'in"
+
+#: kcalendarsystemjalali.cpp:326
+msgid "of Ordibehesht"
+msgstr "Ordibehesht'in"
+
+#: kcalendarsystemjalali.cpp:328
+msgid "of Khordad"
+msgstr "Khordad'ın"
+
+#: kcalendarsystemjalali.cpp:330
+msgctxt "of Tir long"
+msgid "of Tir"
+msgstr "Tir'in"
+
+#: kcalendarsystemjalali.cpp:332
+msgid "of Mordad"
+msgstr "Mordad'ın"
+
+#: kcalendarsystemjalali.cpp:334
+msgid "of Shahrivar"
+msgstr "Shahrivar'ın"
+
+#: kcalendarsystemjalali.cpp:336
+msgid "of Mehr"
+msgstr "Mehr'in"
+
+#: kcalendarsystemjalali.cpp:338
+msgid "of Aban"
+msgstr "Aban'ın"
+
+#: kcalendarsystemjalali.cpp:340
+msgid "of Azar"
+msgstr "Azar'ın"
+
+#: kcalendarsystemjalali.cpp:342
+msgctxt "of Dei long"
+msgid "of Dei"
+msgstr "Dei'nin"
+
+#: kcalendarsystemjalali.cpp:344
+msgid "of Bahman"
+msgstr "Bahman'ın"
+
+#: kcalendarsystemjalali.cpp:346
+msgid "of Esfand"
+msgstr "Esfand'ın"
+
+#: kcalendarsystemjalali.cpp:355
+msgid "Farvardin"
+msgstr "Farvardin"
+
+#: kcalendarsystemjalali.cpp:357
+msgid "Ordibehesht"
+msgstr "Ordibehesht"
+
+#: kcalendarsystemjalali.cpp:359
+msgid "Khordad"
+msgstr "Khordad"
+
+#: kcalendarsystemjalali.cpp:361
+msgctxt "Tir long"
+msgid "Tir"
+msgstr "Tir"
+
+#: kcalendarsystemjalali.cpp:363
+msgid "Mordad"
+msgstr "Mordad"
+
+#: kcalendarsystemjalali.cpp:365
+msgid "Shahrivar"
+msgstr "Shahrivar"
+
+#: kcalendarsystemjalali.cpp:367
+msgid "Mehr"
+msgstr "Mehr"
+
+#: kcalendarsystemjalali.cpp:369
+msgid "Aban"
+msgstr "Aban"
+
+#: kcalendarsystemjalali.cpp:371
+msgid "Azar"
+msgstr "Azar"
+
+#: kcalendarsystemjalali.cpp:373
+msgctxt "Dei long"
+msgid "Dei"
+msgstr "Dei"
+
+#: kcalendarsystemjalali.cpp:375
+msgid "Bahman"
+msgstr "Bahman"
+
+#: kcalendarsystemjalali.cpp:377
+msgid "Esfand"
+msgstr "Esfand"
+
+#: kcalendarsystemjalali.cpp:393
+msgctxt "Do shanbe short"
+msgid "2sh"
+msgstr "2."
+
+#: kcalendarsystemjalali.cpp:395
+msgctxt "Se shanbe short"
+msgid "3sh"
+msgstr "3."
+
+#: kcalendarsystemjalali.cpp:397
+msgctxt "Chahar shanbe short"
+msgid "4sh"
+msgstr "4."
+
+#: kcalendarsystemjalali.cpp:399
+msgctxt "Panj shanbe short"
+msgid "5sh"
+msgstr "5."
+
+#: kcalendarsystemjalali.cpp:401
+msgctxt "Jumee short"
+msgid "Jom"
+msgstr "Jom"
+
+#: kcalendarsystemjalali.cpp:403
+msgctxt "Shanbe short"
+msgid "shn"
+msgstr "shn"
+
+#: kcalendarsystemjalali.cpp:405
+msgctxt "Yek-shanbe short"
+msgid "1sh"
+msgstr "1."
+
+#: kcalendarsystemjalali.cpp:414
+msgid "Do shanbe"
+msgstr "Do shanbe"
+
+#: kcalendarsystemjalali.cpp:416
+msgid "Se shanbe"
+msgstr "Se shanbe"
+
+#: kcalendarsystemjalali.cpp:418
+msgid "Chahar shanbe"
+msgstr "Chahar shanbe"
+
+#: kcalendarsystemjalali.cpp:420
+msgid "Panj shanbe"
+msgstr "Panj shanbe"
+
+#: kcalendarsystemjalali.cpp:422
+msgid "Jumee"
+msgstr "Jumee"
+
+#: kcalendarsystemjalali.cpp:424
+msgid "Shanbe"
+msgstr "Shanbe"
+
+#: kcalendarsystemjalali.cpp:426
+msgid "Yek-shanbe"
+msgstr "Yek-shanbe"
+
+#: kcalendarsystemgregorianproleptic.cpp:239 kcalendarsystemgregorian.cpp:200
+#: kcalendarsystemjulian.cpp:206
+msgctxt "of January"
+msgid "of Jan"
+msgstr "Oca"
+
+#: kcalendarsystemgregorianproleptic.cpp:241 kcalendarsystemgregorian.cpp:202
+#: kcalendarsystemjulian.cpp:208
+msgctxt "of February"
+msgid "of Feb"
+msgstr "Şub"
+
+#: kcalendarsystemgregorianproleptic.cpp:243 kcalendarsystemgregorian.cpp:204
+#: kcalendarsystemjulian.cpp:210
+msgctxt "of March"
+msgid "of Mar"
+msgstr "Mar"
+
+#: kcalendarsystemgregorianproleptic.cpp:245 kcalendarsystemgregorian.cpp:206
+#: kcalendarsystemjulian.cpp:212
+msgctxt "of April"
+msgid "of Apr"
+msgstr "Nis"
+
+#: kcalendarsystemgregorianproleptic.cpp:247 kcalendarsystemgregorian.cpp:208
+#: kcalendarsystemjulian.cpp:214
+msgctxt "of May short"
+msgid "of May"
+msgstr "May"
+
+#: kcalendarsystemgregorianproleptic.cpp:249 kcalendarsystemgregorian.cpp:210
+#: kcalendarsystemjulian.cpp:216
+msgctxt "of June"
+msgid "of Jun"
+msgstr "Haz"
+
+#: kcalendarsystemgregorianproleptic.cpp:251 kcalendarsystemgregorian.cpp:212
+#: kcalendarsystemjulian.cpp:218
+msgctxt "of July"
+msgid "of Jul"
+msgstr "Tem"
+
+#: kcalendarsystemgregorianproleptic.cpp:253 kcalendarsystemgregorian.cpp:214
+#: kcalendarsystemjulian.cpp:220
+msgctxt "of August"
+msgid "of Aug"
+msgstr "Ağu"
+
+#: kcalendarsystemgregorianproleptic.cpp:255 kcalendarsystemgregorian.cpp:216
+#: kcalendarsystemjulian.cpp:222
+msgctxt "of September"
+msgid "of Sep"
+msgstr "Eyl"
+
+#: kcalendarsystemgregorianproleptic.cpp:257 kcalendarsystemgregorian.cpp:218
+#: kcalendarsystemjulian.cpp:224
+msgctxt "of October"
+msgid "of Oct"
+msgstr "Eki"
+
+#: kcalendarsystemgregorianproleptic.cpp:259 kcalendarsystemgregorian.cpp:220
+#: kcalendarsystemjulian.cpp:226
+msgctxt "of November"
+msgid "of Nov"
+msgstr "Kas"
+
+#: kcalendarsystemgregorianproleptic.cpp:261 kcalendarsystemgregorian.cpp:222
+#: kcalendarsystemjulian.cpp:228
+msgctxt "of December"
+msgid "of Dec"
+msgstr "Ara"
+
+#: kcalendarsystemgregorianproleptic.cpp:270 kcalendarsystemgregorian.cpp:231
+#: kcalendarsystemjulian.cpp:237
+msgid "of January"
+msgstr "Ocak"
+
+#: kcalendarsystemgregorianproleptic.cpp:272 kcalendarsystemgregorian.cpp:233
+#: kcalendarsystemjulian.cpp:239
+msgid "of February"
+msgstr "Şubat"
+
+#: kcalendarsystemgregorianproleptic.cpp:274 kcalendarsystemgregorian.cpp:235
+#: kcalendarsystemjulian.cpp:241
+msgid "of March"
+msgstr "Mart"
+
+#: kcalendarsystemgregorianproleptic.cpp:276 kcalendarsystemgregorian.cpp:237
+#: kcalendarsystemjulian.cpp:243
+msgid "of April"
+msgstr "Nisan"
+
+#: kcalendarsystemgregorianproleptic.cpp:278 kcalendarsystemgregorian.cpp:239
+#: kcalendarsystemjulian.cpp:245
+msgctxt "of May long"
+msgid "of May"
+msgstr "May"
+
+#: kcalendarsystemgregorianproleptic.cpp:280 kcalendarsystemgregorian.cpp:241
+#: kcalendarsystemjulian.cpp:247
+msgid "of June"
+msgstr "Haziran"
+
+#: kcalendarsystemgregorianproleptic.cpp:282 kcalendarsystemgregorian.cpp:243
+#: kcalendarsystemjulian.cpp:249
+msgid "of July"
+msgstr "Temmuz"
+
+#: kcalendarsystemgregorianproleptic.cpp:284 kcalendarsystemgregorian.cpp:245
+#: kcalendarsystemjulian.cpp:251
+msgid "of August"
+msgstr "Ağustos"
+
+#: kcalendarsystemgregorianproleptic.cpp:286 kcalendarsystemgregorian.cpp:247
+#: kcalendarsystemjulian.cpp:253
+msgid "of September"
+msgstr "Eylül"
+
+#: kcalendarsystemgregorianproleptic.cpp:288 kcalendarsystemgregorian.cpp:249
+#: kcalendarsystemjulian.cpp:255
+msgid "of October"
+msgstr "Ekim"
+
+#: kcalendarsystemgregorianproleptic.cpp:290 kcalendarsystemgregorian.cpp:251
+#: kcalendarsystemjulian.cpp:257
+msgid "of November"
+msgstr "Kasım"
+
+#: kcalendarsystemgregorianproleptic.cpp:292 kcalendarsystemgregorian.cpp:253
+#: kcalendarsystemjulian.cpp:259
+msgid "of December"
+msgstr "Aralık"
+
+#: kcalendarsystemgregorianproleptic.cpp:301 kcalendarsystemgregorian.cpp:262
+#: kcalendarsystemjulian.cpp:268
+msgctxt "January"
+msgid "Jan"
+msgstr "Oca"
+
+#: kcalendarsystemgregorianproleptic.cpp:303 kcalendarsystemgregorian.cpp:264
+#: kcalendarsystemjulian.cpp:270
+msgctxt "February"
+msgid "Feb"
+msgstr "Şub"
+
+#: kcalendarsystemgregorianproleptic.cpp:305 kcalendarsystemgregorian.cpp:266
+#: kcalendarsystemjulian.cpp:272
+msgctxt "March"
+msgid "Mar"
+msgstr "Mar"
+
+#: kcalendarsystemgregorianproleptic.cpp:307 kcalendarsystemgregorian.cpp:268
+#: kcalendarsystemjulian.cpp:274
+msgctxt "April"
+msgid "Apr"
+msgstr "Nis"
+
+#: kcalendarsystemgregorianproleptic.cpp:309 kcalendarsystemgregorian.cpp:270
+#: kcalendarsystemjulian.cpp:276
+msgctxt "May short"
+msgid "May"
+msgstr "May"
+
+#: kcalendarsystemgregorianproleptic.cpp:311 kcalendarsystemgregorian.cpp:272
+#: kcalendarsystemjulian.cpp:278
+msgctxt "June"
+msgid "Jun"
+msgstr "Haz"
+
+#: kcalendarsystemgregorianproleptic.cpp:313 kcalendarsystemgregorian.cpp:274
+#: kcalendarsystemjulian.cpp:280
+msgctxt "July"
+msgid "Jul"
+msgstr "Tem"
+
+#: kcalendarsystemgregorianproleptic.cpp:315 kcalendarsystemgregorian.cpp:276
+#: kcalendarsystemjulian.cpp:282
+msgctxt "August"
+msgid "Aug"
+msgstr "Ağu"
+
+#: kcalendarsystemgregorianproleptic.cpp:317 kcalendarsystemgregorian.cpp:278
+#: kcalendarsystemjulian.cpp:284
+msgctxt "September"
+msgid "Sep"
+msgstr "Eyl"
+
+#: kcalendarsystemgregorianproleptic.cpp:319 kcalendarsystemgregorian.cpp:280
+#: kcalendarsystemjulian.cpp:286
+msgctxt "October"
+msgid "Oct"
+msgstr "Eki"
+
+#: kcalendarsystemgregorianproleptic.cpp:321 kcalendarsystemgregorian.cpp:282
+#: kcalendarsystemjulian.cpp:288
+msgctxt "November"
+msgid "Nov"
+msgstr "Kas"
+
+#: kcalendarsystemgregorianproleptic.cpp:323 kcalendarsystemgregorian.cpp:284
+#: kcalendarsystemjulian.cpp:290
+msgctxt "December"
+msgid "Dec"
+msgstr "Ara"
+
+#: kcalendarsystemgregorianproleptic.cpp:332 kcalendarsystemgregorian.cpp:293
+#: kcalendarsystemjulian.cpp:299
+msgid "January"
+msgstr "Ocak"
+
+#: kcalendarsystemgregorianproleptic.cpp:334 kcalendarsystemgregorian.cpp:295
+#: kcalendarsystemjulian.cpp:301
+msgid "February"
+msgstr "Şubat"
+
+#: kcalendarsystemgregorianproleptic.cpp:336 kcalendarsystemgregorian.cpp:297
+#: kcalendarsystemjulian.cpp:303
+msgctxt "March long"
+msgid "March"
+msgstr "Mart"
+
+#: kcalendarsystemgregorianproleptic.cpp:338 kcalendarsystemgregorian.cpp:299
+#: kcalendarsystemjulian.cpp:305
+msgid "April"
+msgstr "Nisan"
+
+#: kcalendarsystemgregorianproleptic.cpp:340 kcalendarsystemgregorian.cpp:301
+#: kcalendarsystemjulian.cpp:307
+msgctxt "May long"
+msgid "May"
+msgstr "May"
+
+#: kcalendarsystemgregorianproleptic.cpp:342 kcalendarsystemgregorian.cpp:303
+#: kcalendarsystemjulian.cpp:309
+msgid "June"
+msgstr "Haziran"
+
+#: kcalendarsystemgregorianproleptic.cpp:344 kcalendarsystemgregorian.cpp:305
+#: kcalendarsystemjulian.cpp:311
+msgid "July"
+msgstr "Temmuz"
+
+#: kcalendarsystemgregorianproleptic.cpp:346 kcalendarsystemgregorian.cpp:307
+#: kcalendarsystemjulian.cpp:313
+msgctxt "August long"
+msgid "August"
+msgstr "Ağustos"
+
+#: kcalendarsystemgregorianproleptic.cpp:348 kcalendarsystemgregorian.cpp:309
+#: kcalendarsystemjulian.cpp:315
+msgid "September"
+msgstr "Eylül"
+
+#: kcalendarsystemgregorianproleptic.cpp:350 kcalendarsystemgregorian.cpp:311
+#: kcalendarsystemjulian.cpp:317
+msgid "October"
+msgstr "Ekim"
+
+#: kcalendarsystemgregorianproleptic.cpp:352 kcalendarsystemgregorian.cpp:313
+#: kcalendarsystemjulian.cpp:319
+msgid "November"
+msgstr "Kasım"
+
+#: kcalendarsystemgregorianproleptic.cpp:354 kcalendarsystemgregorian.cpp:315
+#: kcalendarsystemjulian.cpp:321
+msgid "December"
+msgstr "Aralık"
+
+#: kcalendarsystemgregorianproleptic.cpp:370 kcalendarsystemhebrew.cpp:704
+#: kcalendarsystemgregorian.cpp:331 kcalendarsystemjulian.cpp:337
+msgctxt "Monday"
+msgid "Mon"
+msgstr "Pts"
+
+#: kcalendarsystemgregorianproleptic.cpp:371 kcalendarsystemhebrew.cpp:705
+#: kcalendarsystemgregorian.cpp:332 kcalendarsystemjulian.cpp:338
+msgctxt "Tuesday"
+msgid "Tue"
+msgstr "Sal"
+
+#: kcalendarsystemgregorianproleptic.cpp:372 kcalendarsystemhebrew.cpp:706
+#: kcalendarsystemgregorian.cpp:333 kcalendarsystemjulian.cpp:339
+msgctxt "Wednesday"
+msgid "Wed"
+msgstr "Çar"
+
+#: kcalendarsystemgregorianproleptic.cpp:373 kcalendarsystemhebrew.cpp:707
+#: kcalendarsystemgregorian.cpp:334 kcalendarsystemjulian.cpp:340
+msgctxt "Thursday"
+msgid "Thu"
+msgstr "Per"
+
+#: kcalendarsystemgregorianproleptic.cpp:374 kcalendarsystemhebrew.cpp:708
+#: kcalendarsystemgregorian.cpp:335 kcalendarsystemjulian.cpp:341
+msgctxt "Friday"
+msgid "Fri"
+msgstr "Cum"
+
+#: kcalendarsystemgregorianproleptic.cpp:375 kcalendarsystemhebrew.cpp:709
+#: kcalendarsystemgregorian.cpp:336 kcalendarsystemjulian.cpp:342
+msgctxt "Saturday"
+msgid "Sat"
+msgstr "Cts"
+
+#: kcalendarsystemgregorianproleptic.cpp:376 kcalendarsystemhebrew.cpp:710
+#: kcalendarsystemgregorian.cpp:337 kcalendarsystemjulian.cpp:343
+msgctxt "Sunday"
+msgid "Sun"
+msgstr "Paz"
+
+#: kcalendarsystemgregorianproleptic.cpp:382 kcalendarsystemhebrew.cpp:716
+#: kcalendarsystemgregorian.cpp:343 kcalendarsystemjulian.cpp:349
+msgid "Monday"
+msgstr "Pazartesi"
+
+#: kcalendarsystemgregorianproleptic.cpp:383 kcalendarsystemhebrew.cpp:717
+#: kcalendarsystemgregorian.cpp:344 kcalendarsystemjulian.cpp:350
+msgid "Tuesday"
+msgstr "Salı"
+
+#: kcalendarsystemgregorianproleptic.cpp:384 kcalendarsystemhebrew.cpp:718
+#: kcalendarsystemgregorian.cpp:345 kcalendarsystemjulian.cpp:351
+msgid "Wednesday"
+msgstr "Çarşamba"
+
+#: kcalendarsystemgregorianproleptic.cpp:385 kcalendarsystemhebrew.cpp:719
+#: kcalendarsystemgregorian.cpp:346 kcalendarsystemjulian.cpp:352
+msgid "Thursday"
+msgstr "Perşembe"
+
+#: kcalendarsystemgregorianproleptic.cpp:386 kcalendarsystemhebrew.cpp:720
+#: kcalendarsystemgregorian.cpp:347 kcalendarsystemjulian.cpp:353
+msgid "Friday"
+msgstr "Cuma"
+
+#: kcalendarsystemgregorianproleptic.cpp:387 kcalendarsystemhebrew.cpp:721
+#: kcalendarsystemgregorian.cpp:348 kcalendarsystemjulian.cpp:354
+msgid "Saturday"
+msgstr "Cumartesi"
+
+#: kcalendarsystemgregorianproleptic.cpp:388 kcalendarsystemhebrew.cpp:722
+#: kcalendarsystemgregorian.cpp:349 kcalendarsystemjulian.cpp:355
+msgid "Sunday"
+msgstr "Pazar"
+
+#: kcalendarsystemhijri.cpp:262 kcalendarsystemhijri.cpp:293
+msgid "of Muharram"
+msgstr "Muharram'ın"
+
+#: kcalendarsystemhijri.cpp:264 kcalendarsystemhijri.cpp:295
+msgid "of Safar"
+msgstr "Safar'ın"
+
+#: kcalendarsystemhijri.cpp:266
+msgid "of R. Awal"
+msgstr "R. Awal'ın"
+
+#: kcalendarsystemhijri.cpp:268
+msgid "of R. Thaani"
+msgstr "R. Thaani'nin"
+
+#: kcalendarsystemhijri.cpp:270
+msgid "of J. Awal"
+msgstr "J. Awal'ın"
+
+#: kcalendarsystemhijri.cpp:272
+msgid "of J. Thaani"
+msgstr "J. Thaani'nin"
+
+#: kcalendarsystemhijri.cpp:274 kcalendarsystemhijri.cpp:305
+msgid "of Rajab"
+msgstr "Rajab'ın"
+
+#: kcalendarsystemhijri.cpp:276 kcalendarsystemhijri.cpp:307
+msgid "of Sha`ban"
+msgstr "Sha`ban'ın"
+
+#: kcalendarsystemhijri.cpp:278 kcalendarsystemhijri.cpp:309
+msgid "of Ramadan"
+msgstr "Ramadan'ın"
+
+#: kcalendarsystemhijri.cpp:280 kcalendarsystemhijri.cpp:311
+msgid "of Shawwal"
+msgstr "Shawwal'ın"
+
+#: kcalendarsystemhijri.cpp:282
+msgid "of Qi`dah"
+msgstr "Qi`dah'ın"
+
+#: kcalendarsystemhijri.cpp:284
+msgid "of Hijjah"
+msgstr "Hijjah'ın"
+
+#: kcalendarsystemhijri.cpp:297
+msgid "of Rabi` al-Awal"
+msgstr "Rabi` al-Awal'ın"
+
+#: kcalendarsystemhijri.cpp:299
+msgid "of Rabi` al-Thaani"
+msgstr "Rabi` al-Thaani'nin"
+
+#: kcalendarsystemhijri.cpp:301
+msgid "of Jumaada al-Awal"
+msgstr "Jumaada al-Awal'ın"
+
+#: kcalendarsystemhijri.cpp:303
+msgid "of Jumaada al-Thaani"
+msgstr "Jumaada al-Thaani'nin"
+
+#: kcalendarsystemhijri.cpp:313
+msgid "of Thu al-Qi`dah"
+msgstr "Thu al-Qi`dah'ın"
+
+#: kcalendarsystemhijri.cpp:315
+msgid "of Thu al-Hijjah"
+msgstr "Thu al-Hijjah'ın"
+
+#: kcalendarsystemhijri.cpp:324 kcalendarsystemhijri.cpp:355
+msgid "Muharram"
+msgstr "Muharram"
+
+#: kcalendarsystemhijri.cpp:326 kcalendarsystemhijri.cpp:357
+msgid "Safar"
+msgstr "Safar"
+
+#: kcalendarsystemhijri.cpp:328
+msgid "R. Awal"
+msgstr "R. Awal"
+
+#: kcalendarsystemhijri.cpp:330
+msgid "R. Thaani"
+msgstr "R. Thaani"
+
+#: kcalendarsystemhijri.cpp:332
+msgid "J. Awal"
+msgstr "J. Awal"
+
+#: kcalendarsystemhijri.cpp:334
+msgid "J. Thaani"
+msgstr "J. Thaani"
+
+#: kcalendarsystemhijri.cpp:336 kcalendarsystemhijri.cpp:367
+msgid "Rajab"
+msgstr "Rajab"
+
+#: kcalendarsystemhijri.cpp:338 kcalendarsystemhijri.cpp:369
+msgid "Sha`ban"
+msgstr "Sha`ban"
+
+#: kcalendarsystemhijri.cpp:340 kcalendarsystemhijri.cpp:371
+msgid "Ramadan"
+msgstr "Ramadan"
+
+#: kcalendarsystemhijri.cpp:342 kcalendarsystemhijri.cpp:373
+msgid "Shawwal"
+msgstr "Shawwal"
+
+#: kcalendarsystemhijri.cpp:344
+msgid "Qi`dah"
+msgstr "Qi`dah"
+
+#: kcalendarsystemhijri.cpp:346
+msgid "Hijjah"
+msgstr "Hijjah"
+
+#: kcalendarsystemhijri.cpp:359
+msgid "Rabi` al-Awal"
+msgstr "Rabi` al-Awal"
+
+#: kcalendarsystemhijri.cpp:361
+msgid "Rabi` al-Thaani"
+msgstr "Rabi` al-Thaani"
+
+#: kcalendarsystemhijri.cpp:363
+msgid "Jumaada al-Awal"
+msgstr "Jumaada al-Awal"
+
+#: kcalendarsystemhijri.cpp:365
+msgid "Jumaada al-Thaani"
+msgstr "Jumaada al-Thaani"
+
+#: kcalendarsystemhijri.cpp:375
+msgid "Thu al-Qi`dah"
+msgstr "Thu al-Qi`dah"
+
+#: kcalendarsystemhijri.cpp:377
+msgid "Thu al-Hijjah"
+msgstr "Thu al-Hijjah"
+
+#: kcalendarsystemhijri.cpp:393
+msgid "Ith"
+msgstr "Ith"
+
+#: kcalendarsystemhijri.cpp:395
+msgid "Thl"
+msgstr "Thl"
+
+#: kcalendarsystemhijri.cpp:397
+msgid "Arb"
+msgstr "Arb"
+
+#: kcalendarsystemhijri.cpp:399
+msgid "Kha"
+msgstr "Kha"
+
+#: kcalendarsystemhijri.cpp:401
+msgid "Jum"
+msgstr "Jum"
+
+#: kcalendarsystemhijri.cpp:403
+msgid "Sab"
+msgstr "Sab"
+
+#: kcalendarsystemhijri.cpp:405
+msgid "Ahd"
+msgstr "Ahd"
+
+#: kcalendarsystemhijri.cpp:414
+msgid "Yaum al-Ithnain"
+msgstr "Yaum al-Ithnain"
+
+#: kcalendarsystemhijri.cpp:416
+msgid "Yau al-Thulatha"
+msgstr "Yau al-Thulatha"
+
+#: kcalendarsystemhijri.cpp:418
+msgid "Yaum al-Arbi'a"
+msgstr "Yaum al-Arbi'a"
+
+#: kcalendarsystemhijri.cpp:420
+msgid "Yaum al-Khamees"
+msgstr "Yaum al-Khamees"
+
+#: kcalendarsystemhijri.cpp:422
+msgid "Yaum al-Jumma"
+msgstr "Yaum al-Jumma"
+
+#: kcalendarsystemhijri.cpp:424
+msgid "Yaum al-Sabt"
+msgstr "Yaum al-Sabt"
+
+#: kcalendarsystemhijri.cpp:426
+msgid "Yaum al-Ahad"
+msgstr "Yaum al-Ahad"
+
+#: kcalendarsystemhebrew.cpp:626
+msgid "of Tishrey"
+msgstr "of Tishrey"
+
+#: kcalendarsystemhebrew.cpp:628
+msgid "of Heshvan"
+msgstr "of Heshvan"
+
+#: kcalendarsystemhebrew.cpp:630
+msgid "of Kislev"
+msgstr "of Kislev"
+
+#: kcalendarsystemhebrew.cpp:632
+msgid "of Tevet"
+msgstr "of Tevet"
+
+#: kcalendarsystemhebrew.cpp:634
+msgid "of Shvat"
+msgstr "of Shvat"
+
+#: kcalendarsystemhebrew.cpp:636
+msgid "of Adar"
+msgstr "of Adar"
+
+#: kcalendarsystemhebrew.cpp:638
+msgid "of Nisan"
+msgstr "of Nisan"
+
+#: kcalendarsystemhebrew.cpp:640
+msgid "of Iyar"
+msgstr "of Iyar"
+
+#: kcalendarsystemhebrew.cpp:642
+msgid "of Sivan"
+msgstr "of Sivan"
+
+#: kcalendarsystemhebrew.cpp:644
+msgid "of Tamuz"
+msgstr "of Tamuz"
+
+#: kcalendarsystemhebrew.cpp:646
+msgid "of Av"
+msgstr "of Av"
+
+#: kcalendarsystemhebrew.cpp:648
+msgid "of Elul"
+msgstr "of Elul"
+
+#: kcalendarsystemhebrew.cpp:650
+msgid "of Adar I"
+msgstr "of Adar I"
+
+#: kcalendarsystemhebrew.cpp:652
+msgid "of Adar II"
+msgstr "of Adar II"
+
+#: kcalendarsystemhebrew.cpp:660
+msgid "Tishrey"
+msgstr "Tishrey"
+
+#: kcalendarsystemhebrew.cpp:662
+msgid "Heshvan"
+msgstr "Heshvan"
+
+#: kcalendarsystemhebrew.cpp:664
+msgid "Kislev"
+msgstr "Kislev"
+
+#: kcalendarsystemhebrew.cpp:666
+msgid "Tevet"
+msgstr "Tevet"
+
+#: kcalendarsystemhebrew.cpp:668
+msgid "Shvat"
+msgstr "Shvat"
+
+#: kcalendarsystemhebrew.cpp:670
+msgid "Adar"
+msgstr "Adar"
+
+#: kcalendarsystemhebrew.cpp:672
+msgid "Nisan"
+msgstr "Nisan"
+
+#: kcalendarsystemhebrew.cpp:674
+msgid "Iyar"
+msgstr "Iyar"
+
+#: kcalendarsystemhebrew.cpp:676
+msgid "Sivan"
+msgstr "Sivan"
+
+#: kcalendarsystemhebrew.cpp:678
+msgid "Tamuz"
+msgstr "Tamuz"
+
+#: kcalendarsystemhebrew.cpp:680
+msgid "Av"
+msgstr "Av"
+
+#: kcalendarsystemhebrew.cpp:682
+msgid "Elul"
+msgstr "Elul"
+
+#: kcalendarsystemhebrew.cpp:684
+msgid "Adar I"
+msgstr "Adar I"
+
+#: kcalendarsystemhebrew.cpp:686
+msgid "Adar II"
+msgstr "Adar II"
+
+#: kcalendarsystem.cpp:105
+msgctxt "@item Calendar system"
+msgid "Coptic"
+msgstr "Coptic"
+
+#: kcalendarsystem.cpp:109
+msgctxt "@item Calendar system"
+msgid "Ethiopian"
+msgstr "Habeş"
+
+#: kcalendarsystem.cpp:113
+msgctxt "@item Calendar system"
+msgid "Gregorian"
+msgstr "Gürcüce"
+
+#: kcalendarsystem.cpp:117
+msgctxt "@item Calendar system"
+msgid "Gregorian (Proleptic)"
+msgstr "Gürcüce (İlerisi için)"
+
+#: kcalendarsystem.cpp:121
+msgctxt "@item Calendar system"
+msgid "Hebrew"
+msgstr "İbranice"
+
+#: kcalendarsystem.cpp:125
+msgctxt "@item Calendar system"
+msgid "Hijri"
+msgstr "Hicri"
+
+#: kcalendarsystem.cpp:129
+msgctxt "@item Calendar system"
+msgid "Indian National"
+msgstr "Hint Ulusal"
+
+#: kcalendarsystem.cpp:133
+msgctxt "@item Calendar system"
+msgid "Jalali"
+msgstr "Celali"
+
+#: kcalendarsystem.cpp:137
+msgctxt "@item Calendar system"
+msgid "Julian"
+msgstr "Julian"
+
+#: kcalendarsystem.cpp:140
+msgctxt "@item Calendar system"
+msgid "Invalid Calendar Type"
+msgstr "Geçersiz Takvim Tipi"
+
+#: kcalendarsystem.cpp:1143
+msgid "Today"
+msgstr "Bugün"
+
+#: kcalendarsystem.cpp:1145
+msgid "Yesterday"
+msgstr "Dün"
+
+#: kcalendarsystemethiopian.cpp:193
+msgctxt "Ethiopian month 1 - ShortNamePossessive"
+msgid "of Mes"
+msgstr "Mes'in"
+
+#: kcalendarsystemethiopian.cpp:195
+msgctxt "Ethiopian month 2 - ShortNamePossessive"
+msgid "of Teq"
+msgstr "Teq'in"
+
+#: kcalendarsystemethiopian.cpp:197
+msgctxt "Ethiopian month 3 - ShortNamePossessive"
+msgid "of Hed"
+msgstr "Hed'in"
+
+#: kcalendarsystemethiopian.cpp:199
+msgctxt "Ethiopian month 4 - ShortNamePossessive"
+msgid "of Tah"
+msgstr "Tah'ın"
+
+#: kcalendarsystemethiopian.cpp:201
+msgctxt "Ethiopian month 5 - ShortNamePossessive"
+msgid "of Ter"
+msgstr "Ter'in"
+
+#: kcalendarsystemethiopian.cpp:203
+msgctxt "Ethiopian month 6 - ShortNamePossessive"
+msgid "of Yak"
+msgstr "Yak'ın"
+
+#: kcalendarsystemethiopian.cpp:205
+msgctxt "Ethiopian month 7 - ShortNamePossessive"
+msgid "of Mag"
+msgstr "Mag'ın"
+
+#: kcalendarsystemethiopian.cpp:207
+msgctxt "Ethiopian month 8 - ShortNamePossessive"
+msgid "of Miy"
+msgstr "Miy'in"
+
+#: kcalendarsystemethiopian.cpp:209
+msgctxt "Ethiopian month 9 - ShortNamePossessive"
+msgid "of Gen"
+msgstr "Gen'in"
+
+#: kcalendarsystemethiopian.cpp:211
+msgctxt "Ethiopian month 10 - ShortNamePossessive"
+msgid "of Sen"
+msgstr "Sen'in"
+
+#: kcalendarsystemethiopian.cpp:213
+msgctxt "Ethiopian month 11 - ShortNamePossessive"
+msgid "of Ham"
+msgstr "Ham'ın"
+
+#: kcalendarsystemethiopian.cpp:215
+msgctxt "Ethiopian month 12 - ShortNamePossessive"
+msgid "of Neh"
+msgstr "Neh'in"
+
+#: kcalendarsystemethiopian.cpp:217
+msgctxt "Ethiopian month 13 - ShortNamePossessive"
+msgid "of Pag"
+msgstr "Pag'ın"
+
+#: kcalendarsystemethiopian.cpp:226
+msgctxt "Ethiopian month 1 - LongNamePossessive"
+msgid "of Meskerem"
+msgstr "Meskerem'in"
+
+#: kcalendarsystemethiopian.cpp:228
+msgctxt "Ethiopian month 2 - LongNamePossessive"
+msgid "of Tequemt"
+msgstr "Tequemt'in"
+
+#: kcalendarsystemethiopian.cpp:230
+msgctxt "Ethiopian month 3 - LongNamePossessive"
+msgid "of Hedar"
+msgstr "Hedar'ın"
+
+#: kcalendarsystemethiopian.cpp:232
+msgctxt "Ethiopian month 4 - LongNamePossessive"
+msgid "of Tahsas"
+msgstr "Tahsas'ın"
+
+#: kcalendarsystemethiopian.cpp:234
+msgctxt "Ethiopian month 5 - LongNamePossessive"
+msgid "of Ter"
+msgstr "Ter'in"
+
+#: kcalendarsystemethiopian.cpp:236
+msgctxt "Ethiopian month 6 - LongNamePossessive"
+msgid "of Yakatit"
+msgstr "Yakatit'in"
+
+#: kcalendarsystemethiopian.cpp:238
+msgctxt "Ethiopian month 7 - LongNamePossessive"
+msgid "of Magabit"
+msgstr "Magabit'in"
+
+#: kcalendarsystemethiopian.cpp:240
+msgctxt "Ethiopian month 8 - LongNamePossessive"
+msgid "of Miyazya"
+msgstr "Miyazya'nın"
+
+#: kcalendarsystemethiopian.cpp:242
+msgctxt "Ethiopian month 9 - LongNamePossessive"
+msgid "of Genbot"
+msgstr "Genbot'un"
+
+#: kcalendarsystemethiopian.cpp:244
+msgctxt "Ethiopian month 10 - LongNamePossessive"
+msgid "of Sene"
+msgstr "Sene'nin"
+
+#: kcalendarsystemethiopian.cpp:246
+msgctxt "Ethiopian month 11 - LongNamePossessive"
+msgid "of Hamle"
+msgstr "Hamle'nin"
+
+#: kcalendarsystemethiopian.cpp:248
+msgctxt "Ethiopian month 12 - LongNamePossessive"
+msgid "of Nehase"
+msgstr "Nehase'nin"
+
+#: kcalendarsystemethiopian.cpp:250
+msgctxt "Ethiopian month 13 - LongNamePossessive"
+msgid "of Pagumen"
+msgstr "Pagumen'in"
+
+#: kcalendarsystemethiopian.cpp:259
+msgctxt "Ethiopian month 1 - ShortName"
+msgid "Mes"
+msgstr "Mes"
+
+#: kcalendarsystemethiopian.cpp:261
+msgctxt "Ethiopian month 2 - ShortName"
+msgid "Teq"
+msgstr "Teq"
+
+#: kcalendarsystemethiopian.cpp:263
+msgctxt "Ethiopian month 3 - ShortName"
+msgid "Hed"
+msgstr "Hed"
+
+#: kcalendarsystemethiopian.cpp:265
+msgctxt "Ethiopian month 4 - ShortName"
+msgid "Tah"
+msgstr "Tah"
+
+#: kcalendarsystemethiopian.cpp:267
+msgctxt "Ethiopian month 5 - ShortName"
+msgid "Ter"
+msgstr "Ter"
+
+#: kcalendarsystemethiopian.cpp:269
+msgctxt "Ethiopian month 6 - ShortName"
+msgid "Yak"
+msgstr "Yak"
+
+#: kcalendarsystemethiopian.cpp:271
+msgctxt "Ethiopian month 7 - ShortName"
+msgid "Mag"
+msgstr "Mag"
+
+#: kcalendarsystemethiopian.cpp:273
+msgctxt "Ethiopian month 8 - ShortName"
+msgid "Miy"
+msgstr "Miy"
+
+#: kcalendarsystemethiopian.cpp:275
+msgctxt "Ethiopian month 9 - ShortName"
+msgid "Gen"
+msgstr "Gen"
+
+#: kcalendarsystemethiopian.cpp:277
+msgctxt "Ethiopian month 10 - ShortName"
+msgid "Sen"
+msgstr "Sen"
+
+#: kcalendarsystemethiopian.cpp:279
+msgctxt "Ethiopian month 11 - ShortName"
+msgid "Ham"
+msgstr "Ham"
+
+#: kcalendarsystemethiopian.cpp:281
+msgctxt "Ethiopian month 12 - ShortName"
+msgid "Neh"
+msgstr "Neh"
+
+#: kcalendarsystemethiopian.cpp:283
+msgctxt "Ethiopian month 13 - ShortName"
+msgid "Pag"
+msgstr "Pag"
+
+#: kcalendarsystemethiopian.cpp:292
+msgctxt "Ethiopian month 1 - LongName"
+msgid "Meskerem"
+msgstr "Meskerem"
+
+#: kcalendarsystemethiopian.cpp:294
+msgctxt "Ethiopian month 2 - LongName"
+msgid "Tequemt"
+msgstr "Tequemt"
+
+#: kcalendarsystemethiopian.cpp:296
+msgctxt "Ethiopian month 3 - LongName"
+msgid "Hedar"
+msgstr "Hedar"
+
+#: kcalendarsystemethiopian.cpp:298
+msgctxt "Ethiopian month 4 - LongName"
+msgid "Tahsas"
+msgstr "Tahsas"
+
+#: kcalendarsystemethiopian.cpp:300
+msgctxt "Ethiopian month 5 - LongName"
+msgid "Ter"
+msgstr "Ter"
+
+#: kcalendarsystemethiopian.cpp:302
+msgctxt "Ethiopian month 6 - LongName"
+msgid "Yakatit"
+msgstr "Yakatit"
+
+#: kcalendarsystemethiopian.cpp:304
+msgctxt "Ethiopian month 7 - LongName"
+msgid "Magabit"
+msgstr "Magabit"
+
+#: kcalendarsystemethiopian.cpp:306
+msgctxt "Ethiopian month 8 - LongName"
+msgid "Miyazya"
+msgstr "Miyazya"
+
+#: kcalendarsystemethiopian.cpp:308
+msgctxt "Ethiopian month 9 - LongName"
+msgid "Genbot"
+msgstr "Genbot"
+
+#: kcalendarsystemethiopian.cpp:310
+msgctxt "Ethiopian month 10 - LongName"
+msgid "Sene"
+msgstr "Sene"
+
+#: kcalendarsystemethiopian.cpp:312
+msgctxt "Ethiopian month 11 - LongName"
+msgid "Hamle"
+msgstr "Hamle"
+
+#: kcalendarsystemethiopian.cpp:314
+msgctxt "Ethiopian month 12 - LongName"
+msgid "Nehase"
+msgstr "Nehase"
+
+#: kcalendarsystemethiopian.cpp:316
+msgctxt "Ethiopian month 13 - LongName"
+msgid "Pagumen"
+msgstr "Pagumen"
+
+#: kcalendarsystemethiopian.cpp:332
+msgctxt "Ethiopian weekday 1 - ShortDayName"
+msgid "Seg"
+msgstr "Seg"
+
+#: kcalendarsystemethiopian.cpp:333
+msgctxt "Ethiopian weekday 2 - ShortDayName"
+msgid "Mak"
+msgstr "Mak"
+
+#: kcalendarsystemethiopian.cpp:334
+msgctxt "Ethiopian weekday 3 - ShortDayName"
+msgid "Rob"
+msgstr "Rob"
+
+#: kcalendarsystemethiopian.cpp:335
+msgctxt "Ethiopian weekday 4 - ShortDayName"
+msgid "Ham"
+msgstr "Ham"
+
+#: kcalendarsystemethiopian.cpp:336
+msgctxt "Ethiopian weekday 5 - ShortDayName"
+msgid "Arb"
+msgstr "Arb"
+
+#: kcalendarsystemethiopian.cpp:337
+msgctxt "Ethiopian weekday 6 - ShortDayName"
+msgid "Qed"
+msgstr "Qed"
+
+#: kcalendarsystemethiopian.cpp:338
+msgctxt "Ethiopian weekday 7 - ShortDayName"
+msgid "Ehu"
+msgstr "Ehu"
+
+#: kcalendarsystemethiopian.cpp:344
+msgctxt "Ethiopian weekday 1 - LongDayName"
+msgid "Segno"
+msgstr "Segno"
+
+#: kcalendarsystemethiopian.cpp:345
+msgctxt "Ethiopian weekday 2 - LongDayName"
+msgid "Maksegno"
+msgstr "Maksegno"
+
+#: kcalendarsystemethiopian.cpp:346
+msgctxt "Ethiopian weekday 3 - LongDayName"
+msgid "Rob"
+msgstr "Rob"
+
+#: kcalendarsystemethiopian.cpp:347
+msgctxt "Ethiopian weekday 4 - LongDayName"
+msgid "Hamus"
+msgstr "Hamus"
+
+#: kcalendarsystemethiopian.cpp:348
+msgctxt "Ethiopian weekday 5 - LongDayName"
+msgid "Arb"
+msgstr "Arb"
+
+#: kcalendarsystemethiopian.cpp:349
+msgctxt "Ethiopian weekday 6 - LongDayName"
+msgid "Qedame"
+msgstr "Qedame"
+
+#: kcalendarsystemethiopian.cpp:350
+msgctxt "Ethiopian weekday 7 - LongDayName"
+msgid "Ehud"
+msgstr "Ehud"
+
+#: kcalendarsystemcoptic.cpp:271
+msgctxt "Coptic month 1 - ShortNamePossessive"
+msgid "of Tho"
+msgstr "Tho'nun"
+
+#: kcalendarsystemcoptic.cpp:273
+msgctxt "Coptic month 2 - ShortNamePossessive"
+msgid "of Pao"
+msgstr "Pao'nun"
+
+#: kcalendarsystemcoptic.cpp:275
+msgctxt "Coptic month 3 - ShortNamePossessive"
+msgid "of Hat"
+msgstr "Hat'ın"
+
+#: kcalendarsystemcoptic.cpp:277
+msgctxt "Coptic month 4 - ShortNamePossessive"
+msgid "of Kia"
+msgstr "Kia'nın"
+
+#: kcalendarsystemcoptic.cpp:279
+msgctxt "Coptic month 5 - ShortNamePossessive"
+msgid "of Tob"
+msgstr "Tob'un"
+
+#: kcalendarsystemcoptic.cpp:281
+msgctxt "Coptic month 6 - ShortNamePossessive"
+msgid "of Mes"
+msgstr "Mes'in"
+
+#: kcalendarsystemcoptic.cpp:283
+msgctxt "Coptic month 7 - ShortNamePossessive"
+msgid "of Par"
+msgstr "Par'ın"
+
+#: kcalendarsystemcoptic.cpp:285
+msgctxt "Coptic month 8 - ShortNamePossessive"
+msgid "of Pam"
+msgstr "Pam'ın"
+
+#: kcalendarsystemcoptic.cpp:287
+msgctxt "Coptic month 9 - ShortNamePossessive"
+msgid "of Pas"
+msgstr "Pas'ın"
+
+#: kcalendarsystemcoptic.cpp:289
+msgctxt "Coptic month 10 - ShortNamePossessive"
+msgid "of Pan"
+msgstr "Pan'ın"
+
+#: kcalendarsystemcoptic.cpp:291
+msgctxt "Coptic month 11 - ShortNamePossessive"
+msgid "of Epe"
+msgstr "Epe'nin"
+
+#: kcalendarsystemcoptic.cpp:293
+msgctxt "Coptic month 12 - ShortNamePossessive"
+msgid "of Meo"
+msgstr "Meo'nun"
+
+#: kcalendarsystemcoptic.cpp:295
+msgctxt "Coptic month 13 - ShortNamePossessive"
+msgid "of Kou"
+msgstr "Kou'nun"
+
+#: kcalendarsystemcoptic.cpp:304
+msgctxt "Coptic month 1 - LongNamePossessive"
+msgid "of Thoout"
+msgstr "Thoout'un"
+
+#: kcalendarsystemcoptic.cpp:306
+msgctxt "Coptic month 2 - LongNamePossessive"
+msgid "of Paope"
+msgstr "Paope'nin"
+
+#: kcalendarsystemcoptic.cpp:308
+msgctxt "Coptic month 3 - LongNamePossessive"
+msgid "of Hathor"
+msgstr "Hathor'un"
+
+#: kcalendarsystemcoptic.cpp:310
+msgctxt "Coptic month 4 - LongNamePossessive"
+msgid "of Kiahk"
+msgstr "Kiahk'ın"
+
+#: kcalendarsystemcoptic.cpp:312
+msgctxt "Coptic month 5 - LongNamePossessive"
+msgid "of Tobe"
+msgstr "Tobe'nin"
+
+#: kcalendarsystemcoptic.cpp:314
+msgctxt "Coptic month 6 - LongNamePossessive"
+msgid "of Meshir"
+msgstr "Meshir'in"
+
+#: kcalendarsystemcoptic.cpp:316
+msgctxt "Coptic month 7 - LongNamePossessive"
+msgid "of Paremhotep"
+msgstr "Paremhotep'in"
+
+#: kcalendarsystemcoptic.cpp:318
+msgctxt "Coptic month 8 - LongNamePossessive"
+msgid "of Parmoute"
+msgstr "Parmoute'un"
+
+#: kcalendarsystemcoptic.cpp:320
+msgctxt "Coptic month 9 - LongNamePossessive"
+msgid "of Pashons"
+msgstr "Pashons'un"
+
+#: kcalendarsystemcoptic.cpp:322
+msgctxt "Coptic month 10 - LongNamePossessive"
+msgid "of Paone"
+msgstr "Paone'nin"
+
+#: kcalendarsystemcoptic.cpp:324
+msgctxt "Coptic month 11 - LongNamePossessive"
+msgid "of Epep"
+msgstr "Epep'in"
+
+#: kcalendarsystemcoptic.cpp:326
+msgctxt "Coptic month 12 - LongNamePossessive"
+msgid "of Mesore"
+msgstr "Mesore'nin"
+
+#: kcalendarsystemcoptic.cpp:328
+msgctxt "Coptic month 13 - LongNamePossessive"
+msgid "of Kouji nabot"
+msgstr "Kouji nabot'un"
+
+#: kcalendarsystemcoptic.cpp:337
+msgctxt "Coptic month 1 - ShortName"
+msgid "Tho"
+msgstr "Tho"
+
+#: kcalendarsystemcoptic.cpp:339
+msgctxt "Coptic month 2 - ShortName"
+msgid "Pao"
+msgstr "Pao"
+
+#: kcalendarsystemcoptic.cpp:341
+msgctxt "Coptic month 3 - ShortName"
+msgid "Hat"
+msgstr "Hat"
+
+#: kcalendarsystemcoptic.cpp:343
+msgctxt "Coptic month 4 - ShortName"
+msgid "Kia"
+msgstr "Kia"
+
+#: kcalendarsystemcoptic.cpp:345
+msgctxt "Coptic month 5 - ShortName"
+msgid "Tob"
+msgstr "Tob"
+
+#: kcalendarsystemcoptic.cpp:347
+msgctxt "Coptic month 6 - ShortName"
+msgid "Mes"
+msgstr "Mes"
+
+#: kcalendarsystemcoptic.cpp:349
+msgctxt "Coptic month 7 - ShortName"
+msgid "Par"
+msgstr "Par"
+
+#: kcalendarsystemcoptic.cpp:351
+msgctxt "Coptic month 8 - ShortName"
+msgid "Pam"
+msgstr "Pam"
+
+#: kcalendarsystemcoptic.cpp:353
+msgctxt "Coptic month 9 - ShortName"
+msgid "Pas"
+msgstr "Pas"
+
+#: kcalendarsystemcoptic.cpp:355
+msgctxt "Coptic month 10 - ShortName"
+msgid "Pan"
+msgstr "Pan"
+
+#: kcalendarsystemcoptic.cpp:357
+msgctxt "Coptic month 11 - ShortName"
+msgid "Epe"
+msgstr "Epe"
+
+#: kcalendarsystemcoptic.cpp:359
+msgctxt "Coptic month 12 - ShortName"
+msgid "Meo"
+msgstr "Meo"
+
+#: kcalendarsystemcoptic.cpp:361
+msgctxt "Coptic month 13 - ShortName"
+msgid "Kou"
+msgstr "Kou"
+
+#: kcalendarsystemcoptic.cpp:370
+msgctxt "Coptic month 1 - LongName"
+msgid "Thoout"
+msgstr "Thoout"
+
+#: kcalendarsystemcoptic.cpp:372
+msgctxt "Coptic month 2 - LongName"
+msgid "Paope"
+msgstr "Paope"
+
+#: kcalendarsystemcoptic.cpp:374
+msgctxt "Coptic month 3 - LongName"
+msgid "Hathor"
+msgstr "Hathor"
+
+#: kcalendarsystemcoptic.cpp:376
+msgctxt "Coptic month 4 - LongName"
+msgid "Kiahk"
+msgstr "Kiahk"
+
+#: kcalendarsystemcoptic.cpp:378
+msgctxt "Coptic month 5 - LongName"
+msgid "Tobe"
+msgstr "Tobe"
+
+#: kcalendarsystemcoptic.cpp:380
+msgctxt "Coptic month 6 - LongName"
+msgid "Meshir"
+msgstr "Meshir"
+
+#: kcalendarsystemcoptic.cpp:382
+msgctxt "Coptic month 7 - LongName"
+msgid "Paremhotep"
+msgstr "Paremhotep"
+
+#: kcalendarsystemcoptic.cpp:384
+msgctxt "Coptic month 8 - LongName"
+msgid "Parmoute"
+msgstr "Parmoute"
+
+#: kcalendarsystemcoptic.cpp:386
+msgctxt "Coptic month 9 - LongName"
+msgid "Pashons"
+msgstr "Pashons"
+
+#: kcalendarsystemcoptic.cpp:388
+msgctxt "Coptic month 10 - LongName"
+msgid "Paone"
+msgstr "Paone"
+
+#: kcalendarsystemcoptic.cpp:390
+msgctxt "Coptic month 11 - LongName"
+msgid "Epep"
+msgstr "Epep"
+
+#: kcalendarsystemcoptic.cpp:392
+msgctxt "Coptic month 12 - LongName"
+msgid "Mesore"
+msgstr "Mesore"
+
+#: kcalendarsystemcoptic.cpp:394
+msgctxt "Coptic month 13 - LongName"
+msgid "Kouji nabot"
+msgstr "Kouji nabot"
+
+#: kcalendarsystemcoptic.cpp:411
+msgctxt "Coptic weekday 1 - ShortDayName"
+msgid "Pes"
+msgstr "Pes"
+
+#: kcalendarsystemcoptic.cpp:412
+msgctxt "Coptic weekday 2 - ShortDayName"
+msgid "Psh"
+msgstr "Psh"
+
+#: kcalendarsystemcoptic.cpp:413
+msgctxt "Coptic weekday 3 - ShortDayName"
+msgid "Pef"
+msgstr "Pef"
+
+#: kcalendarsystemcoptic.cpp:414
+msgctxt "Coptic weekday 4 - ShortDayName"
+msgid "Pti"
+msgstr "Pti"
+
+#: kcalendarsystemcoptic.cpp:415
+msgctxt "Coptic weekday 5 - ShortDayName"
+msgid "Pso"
+msgstr "Pso"
+
+#: kcalendarsystemcoptic.cpp:416
+msgctxt "Coptic weekday 6 - ShortDayName"
+msgid "Psa"
+msgstr "Psa"
+
+#: kcalendarsystemcoptic.cpp:417
+msgctxt "Coptic weekday 7 - ShortDayName"
+msgid "Tky"
+msgstr "Tky"
+
+#: kcalendarsystemcoptic.cpp:423
+msgctxt "Coptic weekday 1 - LongDayName"
+msgid "Pesnau"
+msgstr "Pesnau"
+
+#: kcalendarsystemcoptic.cpp:424
+msgctxt "Coptic weekday 2 - LongDayName"
+msgid "Pshoment"
+msgstr "Pshoment"
+
+#: kcalendarsystemcoptic.cpp:425
+msgctxt "Coptic weekday 3 - LongDayName"
+msgid "Peftoou"
+msgstr "Peftoou"
+
+#: kcalendarsystemcoptic.cpp:426
+msgctxt "Coptic weekday 4 - LongDayName"
+msgid "Ptiou"
+msgstr "Ptiou"
+
+#: kcalendarsystemcoptic.cpp:427
+msgctxt "Coptic weekday 5 - LongDayName"
+msgid "Psoou"
+msgstr "Psoou"
+
+#: kcalendarsystemcoptic.cpp:428
+msgctxt "Coptic weekday 6 - LongDayName"
+msgid "Psabbaton"
+msgstr "Psabbaton"
+
+#: kcalendarsystemcoptic.cpp:429
+msgctxt "Coptic weekday 7 - LongDayName"
+msgid "Tkyriakē"
+msgstr "Tkyriakē"

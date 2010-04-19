@@ -1,0 +1,304 @@
+# translation of faq_moreinfo.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_moreinfo\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-04 16:30+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: moreinfo.docbook:8
+#, no-c-format
+msgid "Getting more information"
+msgstr "Daha fazla bilgi için"
+
+#. Tag: para
+#: moreinfo.docbook:13
+#, no-c-format
+msgid "Where is the &kde; homepage?"
+msgstr "&kde; ana sayfası nerededir?"
+
+#. Tag: para
+#: moreinfo.docbook:16
+#, no-c-format
+msgid ""
+"The &kde; homepage is located at <ulink url=\"http://www.kde.org\">http://"
+"www.kde.org</ulink>. If you prefer a local mirror, there are several to "
+"choose from. For a current list of web site mirrors sorted by location, "
+"please visit <ulink url=\"http://www.kde.org/mirrors/web.php\">http://www."
+"kde.org/mirrors/web.php</ulink>."
+msgstr ""
+"&kde; ana sayfası <ulink url=\"http://www.kde.org\">http://www.kde.org</"
+"ulink> adresindedir. Eğer yerel bir yansı kullanmak isterseniz birkaç "
+"seçenek mevcuttur. Web sitesi yansılarının konuma göre sıralanmış bir "
+"listesi için <ulink url=\"http://www.kde.org/mirrors/web.php\">http://www."
+"kde.org/mirrors/web.php</ulink> adresini ziyaret ediniz."
+
+#. Tag: para
+#: moreinfo.docbook:26
+#, no-c-format
+msgid "Is there a &kde; mailing list?"
+msgstr "Bir &kde; posta listesi var mı?"
+
+#. Tag: para
+#: moreinfo.docbook:29
+#, no-c-format
+msgid ""
+"There are several &kde; mailing lists. Each focuses on a different aspect of "
+"&kde;. Some are for developers, so they are not discussed in detail. Some of "
+"the more important lists that users might be interested in are:"
+msgstr ""
+"Bazı &kde; posta listeleri var. Herbiri &kde;'nin değişik bir özelliğine "
+"odaklanır. Bazıları geliştiriciler içindir, bu nedenle bunlar detaylı "
+"incelenmemiştir. Kullanıcıların merak ilgileneceği daha önemli listelerden "
+"bazıları:"
+
+#. Tag: term
+#: moreinfo.docbook:34
+#, no-c-format
+msgid "<term>kde</term>"
+msgstr "<term>kde</term>"
+
+#. Tag: para
+#: moreinfo.docbook:35
+#, no-c-format
+msgid "This is the main &kde; mailing list for general discussions."
+msgstr "Burası genel tartışmaların olduğu &kde; ana posta listesidir."
+
+#. Tag: term
+#: moreinfo.docbook:38
+#, no-c-format
+msgid "kde-announce"
+msgstr "kde-announce"
+
+#. Tag: para
+#: moreinfo.docbook:39
+#, no-c-format
+msgid ""
+"This list is used to announce new versions of &kde; as well as new tools and "
+"applications."
+msgstr ""
+"Burası &kde;'nin yeni sürümleri ile yeni araçların ve uygulamaların "
+"duyurularının yapıldığı bir listedir."
+
+#. Tag: term
+#: moreinfo.docbook:42
+#, no-c-format
+msgid "kde-look"
+msgstr "kde-look"
+
+#. Tag: para
+#: moreinfo.docbook:43
+#, no-c-format
+msgid ""
+"This is the list that deals with questions about look and feel, and general "
+"user interface considerations."
+msgstr ""
+"Burası Görünüm ve Doku ve genel kullanıcı arayüzü ile ilgili soruların "
+"tartışıldığı bir listedir."
+
+#. Tag: para
+#: moreinfo.docbook:47
+#, no-c-format
+msgid ""
+"For the complete list of mailing lists available, please refer to <ulink url="
+"\"http://www.kde.org/mailinglists/\">http://www.kde.org/mailinglists/</"
+"ulink>."
+msgstr ""
+"Mevcut posta listelerinin listesi için lütfen <ulink url=\"http://www.kde."
+"org/mailinglists/\">http://www.kde.org/mailinglists/</ulink> adresini "
+"ziyaret ediniz."
+
+#. Tag: para
+#: moreinfo.docbook:50
+#, no-c-format
+msgid ""
+"Please note that it is not a good idea to ask questions which are already "
+"answered in this &FAQ;."
+msgstr ""
+"SSS bölümünde zaten açıklanmış soruları yeniden yöneltmenin iyi bir fikir "
+"olmadığını lütfen göz önünde bulundurun."
+
+#. Tag: para
+#: moreinfo.docbook:57
+#, no-c-format
+msgid "How do I subscribe/unsubscribe to these lists?"
+msgstr "Bu listelere nasıl üye olurum ya da bu listelerden nasıl çıkarım?"
+
+#. Tag: para
+#: moreinfo.docbook:60
+#, no-c-format
+msgid "To subscribe, send an email to list-request, that is:"
+msgstr "Üye olmak için, list-request'e (liste-talep) bir posta gönderin :"
+
+#. Tag: ulink
+#: moreinfo.docbook:63 moreinfo.docbook:72
+#, no-c-format
+msgid "kde-request@kde.org"
+msgstr "kde-request@kde.org"
+
+#. Tag: ulink
+#: moreinfo.docbook:64 moreinfo.docbook:73
+#, no-c-format
+msgid "kde-announce-request@kde.org"
+msgstr "kde-announce-request@kde.org"
+
+#. Tag: ulink
+#: moreinfo.docbook:65 moreinfo.docbook:74
+#, no-c-format
+msgid "kde-look-request@kde.org"
+msgstr "kde-look-request@kde.org"
+
+#. Tag: para
+#: moreinfo.docbook:67
+#, no-c-format
+msgid ""
+"The email must contain <userinput>subscribe <replaceable>your_email_address</"
+"replaceable></userinput> in the subject."
+msgstr ""
+"E-posta, konu bölümünde <userinput>subscribe <replaceable>e_mail_adresiniz</"
+"replaceable></userinput> satırını içermelidir."
+
+#. Tag: para
+#: moreinfo.docbook:70
+#, no-c-format
+msgid "To unsubscribe, send an email to list-request, that is:"
+msgstr ""
+"Üyelikten çıkmak için, list-request'e (liste-talep) bir e-posta gönderin:"
+
+#. Tag: para
+#: moreinfo.docbook:76
+#, no-c-format
+msgid ""
+"The email must contain <userinput>unsubscribe "
+"<replaceable>your_email_address</replaceable></userinput> in the subject."
+msgstr ""
+"E-posta, konu bölümünde <userinput>unsubscribe "
+"<replaceable>e_mail_adresiniz</replaceable></userinput> satırını içermelidir."
+
+#. Tag: para
+#: moreinfo.docbook:79
+#, no-c-format
+msgid ""
+"Never send subscribe/unsubscribe request to the mailing lists directly! Use "
+"the list-request instead."
+msgstr ""
+"Üye olma veya üyelikten çıkma taleplerinizi doğrudan listeye değil, list-"
+"request'e (liste-talep) gönderin!"
+
+#. Tag: para
+#: moreinfo.docbook:82
+#, no-c-format
+msgid ""
+"There is also a complete list of all &kde;-related mailing lists, and a web "
+"interface for subscribing and unsubscribing located at <ulink url=\"http://"
+"master.kde.org/mailman/listinfo\">http://master.kde.org/mailman/listinfo</"
+"ulink>."
+msgstr ""
+"Ayrıca &kde; ile ilgili posta listelerinin tam bir listesi, ve üye olma ve "
+"üyelikten çıkma işlemleri için bir web arayüzü <ulink url=\"http://master."
+"kde.org/mailman/listinfo\">http://master.kde.org/mailman/listinfo</ulink> "
+"adresinde mevcuttur."
+
+#. Tag: para
+#: moreinfo.docbook:90
+#, no-c-format
+msgid "Is there a mailing list archive?"
+msgstr "Posta listesi arşivi var mı?"
+
+#. Tag: para
+#: moreinfo.docbook:94
+#, no-c-format
+msgid ""
+"Yes, there is a searchable mailing list archive hosted by <ulink url="
+"\"http://www.progressive-comp.com\">Progressive Computer Concepts</ulink>. "
+"The &URL; is <ulink url=\"http://lists.kde.org\">http://lists.kde.org</"
+"ulink>. There you will see a folder listing of the mailing lists. Note that "
+"you can only do a subject/author search at this level. You probably will not "
+"find what you want doing this kind of search."
+msgstr ""
+"Evet, içinde arama yapılabilen bir posta listesi arşivi <ulink url=\"http://"
+"www.progressive-comp.com\">Progressive Computer Concepts</ulink> tarafından "
+"sağlanan  <ulink url=\"http://lists.kde.org\">http://lists.kde.org</ulink> "
+"adresindedir. Bu adreste posta listelerinin listelendiği bir klasör "
+"göreceksiniz. Sadece konu/yazar araması yapabileceğinizi unutmayın."
+
+#. Tag: para
+#: moreinfo.docbook:102
+#, no-c-format
+msgid ""
+"To do a body search, you have to enter one of the mailing lists. Just click "
+"on the folder you want to search (&eg; <quote>kde</quote> or <quote>kde-"
+"devel</quote>) and then the pull-down menu by the search box will default to "
+"<quote>Body</quote> searches. To be thorough, you should probably search the "
+"<quote>kde</quote>, <quote>kde-linux</quote>, and <quote>kde-devel</quote> "
+"folders."
+msgstr ""
+"Bir kişiyi aramak için posta listelerinden birinin içine girmeniz "
+"gerekmektedir. Arama yapmak istediğiniz dizine tıklayın (ör:<quote>kde</"
+"quote> veya <quote>kde-user</quote>) ve o posta listesindeki arama bölümü "
+"kişi arama olarak öntanımlı duruma gelecektir. Hedefinize ulaşma "
+"ihtimalinizi yükseltmek için <quote>kde</quote>, <quote>kde-user</quote>, ve "
+"<quote>kde-devel</quote> klasörlerinde arama yapmanız önerilir."
+
+#. Tag: para
+#: moreinfo.docbook:113
+#, no-c-format
+msgid "Is there a newsgroup about &kde;?"
+msgstr "&kde; ile ilgili haber grubu var mı?"
+
+#. Tag: para
+#: moreinfo.docbook:116
+#, no-c-format
+msgid ""
+"Yes, there is! It is at <literal>comp.windows.x.kde</literal>. In addition, "
+"there is also a German newsgroup at <literal>de.alt.comp.kde</literal>. "
+"Please note that it is not a good idea to ask questions which are already "
+"answered in this &FAQ;."
+msgstr ""
+"Evet var! <literal>comp.windows.x.kde</literal> adresinde. Ayrıca, "
+"<literal>de.alt.comp.kde</literal> adresinde bir de Almanca haber grubu "
+"vardır. SSS bölümünde cevaplanan soruların tekrar sorulmasının iyi bir fikir "
+"olmadığını unutmayın."
+
+#. Tag: para
+#: moreinfo.docbook:126
+#, no-c-format
+msgid "Are there any other &kde;-related &FAQ;s?"
+msgstr "Daha başka &kde; ile ilgili SSS var mı?"
+
+#. Tag: para
+#: moreinfo.docbook:130
+#, no-c-format
+msgid "Yes. Here is a list of them:"
+msgstr "Evet, işte onların listesi:"
+
+#. Tag: ulink
+#: moreinfo.docbook:133
+#, no-c-format
+msgid "&kde; &FAQ;"
+msgstr "&kde; &FAQ;"
+
+#. Tag: ulink
+#: moreinfo.docbook:135
+#, no-c-format
+msgid "&konqueror; &FAQ;"
+msgstr "&konqueror; &FAQ;"
+
+#. Tag: ulink
+#: moreinfo.docbook:138
+#, no-c-format
+msgid "aRts sound server documentation"
+msgstr "aRts ses sunucusu yardım dosyaları"

@@ -1,0 +1,847 @@
+# translation of libplasma.po to Turkish
+# translation of libplasma.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libplasma\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-30 01:19+0200\n"
+"PO-Revision-Date: 2009-11-19 16:34+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: applet.cpp:222
+msgid "Script initialization failed"
+msgstr "Betik başlatma hatası"
+
+#: applet.cpp:387
+msgid "Unable to load the widget"
+msgstr "Programcık yüklenemedi"
+
+#: applet.cpp:625
+msgid "Ok"
+msgstr "Tamam"
+
+#: applet.cpp:628 applet.cpp:1064
+msgid "Yes"
+msgstr "Evet"
+
+#: applet.cpp:631 applet.cpp:1071
+msgid "No"
+msgstr "Hayır"
+
+#: applet.cpp:634 applet.cpp:1078
+msgid "Cancel"
+msgstr "İptal"
+
+#: applet.cpp:784 applet.cpp:793
+#, kde-format
+msgid "%1 Activity"
+msgstr "%1 Eylemi"
+
+#: applet.cpp:788
+msgid "Unknown Activity"
+msgstr "Bilinmeyen Eylem"
+
+#: applet.cpp:796
+msgid "Unknown Widget"
+msgstr "Bilinmeyen Programcık"
+
+#: applet.cpp:833 applet.cpp:2160 applet.cpp:2161
+msgctxt "misc category"
+msgid "Miscellaneous"
+msgstr "Diğer"
+
+#: applet.cpp:1006
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: applet.cpp:1056
+msgid "OK"
+msgstr ""
+
+#: applet.cpp:1433
+#, kde-format
+msgid "Activate %1 Widget"
+msgstr "%1 Programcığı Ekinleştir"
+
+#: applet.cpp:1595
+msgid "Widget Settings"
+msgstr "Gereç Ayarları"
+
+#: applet.cpp:1602
+msgid "Remove this Widget"
+msgstr "Bu gereci kaldır"
+
+#: applet.cpp:1609
+msgid "Run the associated application"
+msgstr "İlişkilendirilmiş uygulamayı çalıştır"
+
+#: applet.cpp:1735
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: applet.cpp:1735
+#, kde-format
+msgid "%1 Settings"
+msgstr "%1 Ayarları"
+
+#: applet.cpp:1764
+#, kde-format
+msgctxt "@title:window"
+msgid "%1 Settings"
+msgstr "%1 Ayarları"
+
+#: applet.cpp:1772
+msgid "Accessibility"
+msgstr "Erişilebilirlik"
+
+#: applet.cpp:1773
+msgid "Application Launchers"
+msgstr "Uygulama Çalıştırıcılar"
+
+#: applet.cpp:1774
+msgid "Astronomy"
+msgstr "Astronomi"
+
+#: applet.cpp:1775
+msgid "Date and Time"
+msgstr "Tarih ve Saat"
+
+#: applet.cpp:1776
+msgid "Development Tools"
+msgstr "Geliştirme Araçları"
+
+#: applet.cpp:1777
+msgid "Education"
+msgstr "Eğitim"
+
+#: applet.cpp:1778
+msgid "Environment and Weather"
+msgstr "Çevre ve Hava"
+
+#: applet.cpp:1779
+msgid "Examples"
+msgstr "Örnekler"
+
+#: applet.cpp:1780
+msgid "File System"
+msgstr "Dosya Sistemi"
+
+#: applet.cpp:1781
+msgid "Fun and Games"
+msgstr "Eğlence ve Oyunlar"
+
+#: applet.cpp:1782
+msgid "Graphics"
+msgstr "Grafik"
+
+#: applet.cpp:1783
+msgid "Language"
+msgstr "Dil"
+
+#: applet.cpp:1784
+msgid "Mapping"
+msgstr "Haritalama"
+
+#: applet.cpp:1785
+msgid "Miscellaneous"
+msgstr "Diğer"
+
+#: applet.cpp:1786
+msgid "Multimedia"
+msgstr "Çokluortam"
+
+#: applet.cpp:1787
+msgid "Online Services"
+msgstr "Çevrimiçi Servisler"
+
+#: applet.cpp:1788
+msgid "System Information"
+msgstr "Sistem Bilgileri"
+
+#: applet.cpp:1789
+msgid "Utilities"
+msgstr "Yardımcı Araçlar"
+
+#: applet.cpp:1790
+msgid "Windows and Tasks"
+msgstr "Pencereler ve Görevler"
+
+#: applet.cpp:1833
+msgid "Keyboard Shortcut"
+msgstr "Klavye Kısayolu"
+
+#: applet.cpp:1851 applet.cpp:1895 package.cpp:585
+#, kde-format
+msgctxt ""
+"%1 is the name of a plasmoid, %2 the name of the machine that plasmoid is "
+"published on"
+msgid "%1 on %2"
+msgstr "%2 üzerinde %1"
+
+#: applet.cpp:1860
+msgid "Share"
+msgstr "Paylaş"
+
+#: applet.cpp:2598
+#, kde-format
+msgctxt "Package file, name of the widget"
+msgid "Could not locate the %1 package required for the %2 widget."
+msgstr "%2 programcığı için gereken %1 paketi konumlandırılamadı."
+
+#: applet.cpp:2618
+#, kde-format
+msgctxt ""
+"API or programming language the widget was written in, name of the widget"
+msgid "Could not create a %1 ScriptEngine for the %2 widget."
+msgstr "%2 programcığı için gereken %1 Betik Motoru oluşturulamadı."
+
+#: applet.cpp:2623
+#, kde-format
+msgctxt "Package file, name of the widget"
+msgid "Could not open the %1 package required for the %2 widget."
+msgstr "%2 programcığı için gereken %1 paketi açılamadı."
+
+#: applet.cpp:2644 containment.cpp:173
+#, kde-format
+msgctxt "%1 is the name of the applet"
+msgid "Remove this %1"
+msgstr "%1 ögesini kaldır"
+
+#: applet.cpp:2649 containment.cpp:178
+#, kde-format
+msgctxt "%1 is the name of the applet"
+msgid "%1 Settings"
+msgstr "%1 Ayarları"
+
+#: applet.cpp:2800
+msgid "This object could not be created."
+msgstr "Bu nesne oluşturulamadı."
+
+#: applet.cpp:2802
+#, kde-format
+msgid ""
+"This object could not be created for the following reason:<p><b>%1</b></p>"
+msgstr "Nesne şu nedenle oluşturulamadı:<p><b>%1</b></p>"
+
+#: containmentactions.cpp:142
+msgid "Unknown ContainmentActions"
+msgstr "Bilinmeyen Kapsayıcı Eylemleri"
+
+#: containment.cpp:285
+msgid "Remove this panel"
+msgstr "Bu paneli kaldır"
+
+#: containment.cpp:287
+msgid "Remove this activity"
+msgstr "Bu eylemi kaldır"
+
+#: containment.cpp:293
+msgid "Activity Settings"
+msgstr "Eylem Ayarları"
+
+#: containment.cpp:299
+msgid "Add Widgets..."
+msgstr "Programcık Ekle..."
+
+#: containment.cpp:305
+msgid "Next Widget"
+msgstr "Sonraki Programcık"
+
+#: containment.cpp:311
+msgid "Previous Widget"
+msgstr "Önceki Programcık"
+
+#: containment.cpp:318
+msgid "Zoom In"
+msgstr "Büyüt"
+
+#: containment.cpp:661
+msgid "This menu needs to be configured"
+msgstr "Bu menünün yapılandırılması gerekiyor"
+
+#: containment.cpp:704
+#, kde-format
+msgctxt "%1 is the name of the containment"
+msgid "%1 Options"
+msgstr "%1 Seçenekleri"
+
+#: containment.cpp:1334
+msgid "Fetching file type..."
+msgstr "Dosya tipi alınıyor..."
+
+#: containment.cpp:1515
+msgid "Widgets"
+msgstr "Programcıklar"
+
+#: containment.cpp:1528
+msgid "Icon"
+msgstr "Simge"
+
+#: containment.cpp:1532
+msgid "Wallpaper"
+msgstr "Duvar Kağıdı"
+
+#: containment.cpp:2088
+#, kde-format
+msgctxt "%1 is the name of the containment"
+msgid "Do you really want to remove this %1?"
+msgstr "Bu %1 ögesini gerçekten kaldırmak istiyor musunuz?"
+
+#: containment.cpp:2089
+#, kde-format
+msgctxt "@title:window %1 is the name of the containment"
+msgid "Remove %1"
+msgstr "%1 ögesini kaldır"
+
+#: containment.cpp:2279
+#, kde-format
+msgid "Could not find requested component: %1"
+msgstr "İstenilen bileşen bulunamadı: %1"
+
+#: containment.cpp:2510
+msgid "This plugin needs to be configured"
+msgstr "Eklentinin yapılandırılması gerekiyor"
+
+#: corona.cpp:92 corona.cpp:735
+msgid "Lock Widgets"
+msgstr "Programcıkları Kilitle"
+
+#: corona.cpp:103
+msgid "Shortcut Settings"
+msgstr "Kısayol Ayarları"
+
+#: corona.cpp:735
+msgid "Unlock Widgets"
+msgstr "Programcıkların Kilidini Aç"
+
+#: dataengine.cpp:512 dataengine.cpp:518
+msgid "Unnamed"
+msgstr "İsimsiz"
+
+#: glapplet.cpp:76 glapplet.cpp:87
+msgid "This system does not support OpenGL widgets."
+msgstr "Bu sistem OpenGL programcıkları desteklemiyor."
+
+#: glapplet.cpp:184
+msgid "Your machine does not support OpenGL widgets."
+msgstr "Makineniz OpenGL programcıkları desteklemiyor."
+
+#. i18n: file: private/pinpairing.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:3
+msgid ""
+"Enter a password below. Enter the same password on the device to which you "
+"are trying to connect."
+msgstr ""
+
+#. i18n: file: private/pinpairing.ui:64
+#. i18n: ectx: property (text), widget (QCheckBox, allServicesCheckbox)
+#: rc.cpp:6
+msgid "Allow this user access to any service"
+msgstr "Bu kullanıcının tüm servislere erişimine izin ver"
+
+#. i18n: file: private/pinpairing.ui:71
+#. i18n: ectx: property (text), widget (QCheckBox, persistentCheckbox)
+#: rc.cpp:9
+msgid "Remember this user"
+msgstr "Bu kullanıcıyı hatırla"
+
+#. i18n: file: private/publish.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:12
+msgid ""
+"Sharing a widget on the network allows you to access this widget from "
+"another computer as a remote control."
+msgstr ""
+
+#. i18n: file: private/publish.ui:27
+#. i18n: ectx: property (text), widget (QCheckBox, publishCheckbox)
+#: rc.cpp:15
+msgid "Share this widget on the network"
+msgstr "Bu gereci ağda paylaş"
+
+#. i18n: file: private/publish.ui:37
+#. i18n: ectx: property (text), widget (QCheckBox, allUsersCheckbox)
+#: rc.cpp:18
+msgid "Allow everybody to freely access this widget"
+msgstr "Bu programcığa herkesin erişmesine izin ver"
+
+#: runnersyntax.cpp:103
+msgid "search term"
+msgstr "arama ifadesi"
+
+#: wallpaper.cpp:184
+msgid "Unknown Wallpaper"
+msgstr "Bilinmeyen Duvar Kağıdı"
+
+#: packagestructure.h:85
+msgctxt "A non-functional package"
+msgid "Invalid"
+msgstr "Geçersiz"
+
+#: private/joliemessagehelper_p.h:57
+msgctxt "Error message, access to a remote service failed."
+msgid "Invalid token."
+msgstr "Geçersiz ifade."
+
+#: private/joliemessagehelper_p.h:60
+msgctxt "Error message, access to a remote service failed."
+msgid "Matching password required."
+msgstr "Eşleme parolası gerekiyor."
+
+#: private/joliemessagehelper_p.h:63
+msgctxt "Error message, access to a remote service failed."
+msgid "Access denied."
+msgstr "Erişim engellendi."
+
+#: private/joliemessagehelper_p.h:65
+msgid "Unknown error."
+msgstr "Bilinmeyen hata."
+
+#: private/service_p.h:56
+msgctxt "Error message, tried to start an invalid service"
+msgid "Invalid (null) service, can not perform any operations."
+msgstr "Geçersiz (null) servis, işlem yapılmayacak."
+
+#: extenders/extendergroup.cpp:50
+msgid "Show this group."
+msgstr "Bu grubu göster."
+
+#: extenders/extendergroup.cpp:56
+msgid "Hide this group."
+msgstr "Bu grubu gizle."
+
+#: extenders/extenderitem.cpp:993
+msgid "Expand this widget"
+msgstr "Bu programcığı aç"
+
+#: extenders/extenderitem.cpp:1014
+msgid "Collapse this widget"
+msgstr "Bu programcığı topla"
+
+#: private/associatedapplicationmanager.cpp:115
+msgid ""
+"There was an error attempting to exec the associated application with this "
+"widget."
+msgstr ""
+
+#: private/desktoptoolbox.cpp:256
+msgid "Tool Box"
+msgstr "Araç Kutusu"
+
+#: private/desktoptoolbox.cpp:257
+#, kde-format
+msgid ""
+"Click to access configuration options and controls, or to add more widgets "
+"to the %1."
+msgstr ""
+
+#: private/packages.cpp:42 private/packages.cpp:168
+msgid "Images"
+msgstr "Resimler"
+
+#: private/packages.cpp:47 tests/packagestructuretest.cpp:99
+#: tests/packagestructuretest.cpp:123
+msgid "Configuration Definitions"
+msgstr "Yapılandırma Tanımlamaları"
+
+#: private/packages.cpp:53
+msgid "User Interface"
+msgstr "Kullanıcı Arayüzü"
+
+#: private/packages.cpp:56
+msgid "Executable Scripts"
+msgstr "Çalıştırılabilir Betikler"
+
+#: private/packages.cpp:61
+msgid "Translations"
+msgstr "Çeviriler"
+
+#: private/packages.cpp:63
+msgid "Main Config UI File"
+msgstr "Ana Yapılandırma Arayüz Dosyası"
+
+#: private/packages.cpp:64
+msgid "Configuration XML file"
+msgstr "Yapılandırma XML dosyası"
+
+#: private/packages.cpp:65 private/packages.cpp:81
+#: tests/packagestructuretest.cpp:100 tests/packagestructuretest.cpp:124
+msgid "Main Script File"
+msgstr "Ana Betik Dosyası"
+
+#: private/packages.cpp:66
+msgid "Default configuration"
+msgstr "Öntanımlı yapılandırma"
+
+#: private/packages.cpp:101
+msgid "Images for dialogs"
+msgstr "Pencereler için resimler"
+
+#: private/packages.cpp:103
+msgid "Generic dialog background"
+msgstr "Genel pencere arkaplanı"
+
+#: private/packages.cpp:105
+msgid "Theme for the logout dialog"
+msgstr "Çıkış penceresi için tema"
+
+#: private/packages.cpp:107
+msgid "Wallpaper packages"
+msgstr "Duvarkağıdı paketleri"
+
+#: private/packages.cpp:109 private/packages.cpp:140
+msgid "Images for widgets"
+msgstr "Programcıklar için resimler"
+
+#: private/packages.cpp:111
+msgid "Background image for widgets"
+msgstr "Programcıklar için arkaplan"
+
+#: private/packages.cpp:113
+msgid "Analog clock face"
+msgstr "Analog saat"
+
+#: private/packages.cpp:115
+msgid "Background image for panels"
+msgstr "Paneller için arkaplan resmi"
+
+#: private/packages.cpp:117
+msgid "Background for graphing widgets"
+msgstr "Grafiksel programcıklar için arkaplan"
+
+#: private/packages.cpp:119
+msgid "Background image for tooltips"
+msgstr "İpuçları için arkaplan resmi"
+
+#: private/packages.cpp:121
+msgid "Opaque images for dialogs"
+msgstr "Pencereler için mat resimler"
+
+#: private/packages.cpp:123
+msgid "Opaque generic dialog background"
+msgstr "Mat genel pencere arkaplanı"
+
+#: private/packages.cpp:125
+msgid "Opaque theme for the logout dialog"
+msgstr "Çıkış penceresi için mat tema"
+
+#: private/packages.cpp:127
+msgid "Opaque images for widgets"
+msgstr "Programcıklar için mat resimler"
+
+#: private/packages.cpp:129
+msgid "Opaque background image for panels"
+msgstr "Paneller için mat arkaplan resmi"
+
+#: private/packages.cpp:131
+msgid "Opaque background image for tooltips"
+msgstr "İpuçları için mat arkaplan resmi"
+
+#: private/packages.cpp:134
+msgid "Low color images for dialogs"
+msgstr "Pencereler için düşük renkli resimler"
+
+#: private/packages.cpp:136
+msgid "Low color generic dialog background"
+msgstr "Genel pencere düşük renkli arkaplanı"
+
+#: private/packages.cpp:138
+msgid "Low color theme for the logout dialog"
+msgstr "Çıkış penceresi için düşük renkli tema"
+
+#: private/packages.cpp:142
+msgid "Low color background image for widgets"
+msgstr "Programcıklar için düşük renkli arkaplan resmi"
+
+#: private/packages.cpp:144
+msgid "Low color analog clock face"
+msgstr "Analog saat için düşük renk görünümü"
+
+#: private/packages.cpp:146
+msgid "Low color background image for panels"
+msgstr "Paneller için düşük renkli arkaplan resmi"
+
+#: private/packages.cpp:148
+msgid "Low color background for graphing widgets"
+msgstr "Grafiksel programcıklar için düşük renk arkaplan"
+
+#: private/packages.cpp:150
+msgid "Low color background image for tooltips"
+msgstr "İpuçları için düşük renk arkaplan resmi"
+
+#: private/packages.cpp:152
+msgid "KColorScheme configuration file"
+msgstr "KColorScheme yapılandırma dosyası"
+
+#: private/packages.cpp:170
+msgid "Screenshot"
+msgstr "Ekran Görüntüsü"
+
+#: private/packages.cpp:204 private/packages.cpp:259
+msgid "Recommended wallpaper file"
+msgstr "Önerilen duvar kağıdı dosyası"
+
+#: private/paneltoolbox.cpp:251
+msgid "Panel Tool Box"
+msgstr "Panel Araç Kutusu"
+
+#: private/paneltoolbox.cpp:252
+msgid ""
+"Click to access size, location and hiding controls as well as to add new "
+"widgets to the panel."
+msgstr ""
+
+#: private/pinpairingdialog.cpp:44
+msgid "Incoming connection request"
+msgstr "Gelen bağlantı isteği"
+
+#: private/pinpairingdialog.cpp:49
+msgid "Connect with remote widget"
+msgstr "Uzak gerece bağlan "
+
+#: private/remoteservicejob.cpp:119
+msgid "Job no longer valid, operation is not enabled."
+msgstr "Görev artık geçerli değil, işlem etkinleştirilmemiş."
+
+#: private/remoteservicejob.cpp:129
+msgid "Job no longer valid, invalid parameters."
+msgstr "Görev artık geçerli değil, geçersiz parametreler."
+
+#: private/remoteservicejob.cpp:172
+msgid "Timeout."
+msgstr "Zamanaşımı."
+
+#: remote/accessappletjob.cpp:80
+#, kde-format
+msgid "The \"%1\" widget is not installed."
+msgstr "\"%1\" gereci kurulu değil."
+
+#: remote/accessappletjob.cpp:94
+msgid "Server sent an invalid plasmoid package."
+msgstr "Sunucu geçersiz bir Plasma programcığı gönderdi."
+
+#: remote/accessappletjob.cpp:124
+msgid "Timeout"
+msgstr "Zamanaşımı"
+
+#: remote/accessappletjob.cpp:160
+msgid ""
+"Your system does not provide support for the 'remote widgets' feature. "
+"Access Failed."
+msgstr ""
+
+#: remote/authorizationrule.cpp:98
+#, kde-format
+msgid "Allow everybody access to %1."
+msgstr "%1 ögesine herkesin erişmesine izin ver."
+
+#: remote/authorizationrule.cpp:100
+#, kde-format
+msgid "Deny everybody access to %1"
+msgstr "%1 ögesine erişimi herkes için engelle"
+
+#: remote/authorizationrule.cpp:102
+#, kde-format
+msgid "Allow %1 access to all services."
+msgstr ""
+
+#: remote/authorizationrule.cpp:104
+#, kde-format
+msgid "Deny %1 access to all services."
+msgstr ""
+
+#: remote/authorizationrule.cpp:106
+#, kde-format
+msgid "Allow access to %1, by %2."
+msgstr "%1 ögesine %2 tarafından erişilmesine izin ver."
+
+#: remote/authorizationrule.cpp:108
+#, kde-format
+msgid "Deny access to %1, by %2."
+msgstr "%1 ögesine %2 tarafından erişilmesine izin verme."
+
+#: remote/authorizationrule.cpp:110
+#, kde-format
+msgid "Allow access to %1, by %2?"
+msgstr "%1 ögesine %2 tarafından erişilmesine izin verilsin mi?"
+
+#: remote/clientpinrequest.cpp:57
+#, kde-format
+msgid "You have requested access to the %1 hosted at %2."
+msgstr ""
+
+#~ msgid "Publish"
+#~ msgstr "Yayınla"
+
+#~ msgid "You don't got the widget %1 installed."
+#~ msgstr "%1 gereci sisteminizde yüklü değil."
+
+#~ msgid "Installation of <b>%1</b> failed."
+#~ msgstr "<b>%1</b> ögesinin kurulum işlemi başarısız oldu."
+
+#~ msgid "Installation Failed"
+#~ msgstr "Kurulum Başarısız Oldu"
+
+#~ msgid "Zoom Out"
+#~ msgstr "Küçült"
+
+#~ msgid "Add Activity"
+#~ msgstr "Eylem Ekle"
+
+#~ msgid "Appearance Settings"
+#~ msgstr "Görünüm Ayarları"
+
+#~ msgid "Background image for plasmoids"
+#~ msgstr "Plasmoidler için arkaplan resmi"
+
+#~ msgid "Low color background image for plasmoids"
+#~ msgstr "Plasmoidler için düşük renkli arkaplan resmi"
+
+#~ msgid "no items"
+#~ msgstr "öge yok"
+
+#~ msgid "Null Engine"
+#~ msgstr "Belirsiz Motor"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "tulliana@gmail.com"
+
+#~ msgid "Applet browser dialog"
+#~ msgstr "Programcık tarayıcı penceresi"
+
+#~ msgid "Plasma Applet Browser"
+#~ msgstr "Plasma Programcık Tarayıcı"
+
+#~ msgid "(C) 2008, Aaron Seigo"
+#~ msgstr "(C) 2008, Aaron Seigo"
+
+#~ msgid "Aaron Seigo"
+#~ msgstr "Aaron Seigo"
+
+#~ msgid "Original author"
+#~ msgstr "Asıl Yazar"
+
+#~ msgid "All Widgets"
+#~ msgstr "Tüm Programcıklar"
+
+#~ msgid "My Favorite Widgets"
+#~ msgstr "Sevdiğim Programcıklar"
+
+#~ msgid "Widgets I Have Used Before"
+#~ msgstr "Daha Önce Kullandığım Programcıklar"
+
+#~ msgid "Currently Running Widgets"
+#~ msgstr "Çalışan Programcıklar"
+
+#~ msgid "Categories:"
+#~ msgstr "Kategoriler:"
+
+#~| msgid "Plasmoid: Native plasma widget"
+#~ msgid "Download New Plasma Widgets"
+#~ msgstr "Yeni Plasma Programcıkları İndir"
+
+#~ msgid "Download New %1"
+#~ msgstr "Yeni %1 İndir"
+
+#~| msgid "Install New Widget From File"
+#~ msgid "Install A Widget From A Local File..."
+#~ msgstr "Yerel bir Dosyadan Yeni bir  Programcık Yükle..."
+
+#~ msgid "Add Widget"
+#~ msgstr "Programcık Ekle"
+
+#~ msgid "Install New Widgets"
+#~ msgstr "Yeni Programcıklar Yükle"
+
+#~ msgid "Get New Widgets"
+#~ msgstr "Yeni Programcıklar Al"
+
+#~ msgid "Close the dialog"
+#~ msgstr "Pencereyi kapat"
+
+#~ msgid ""
+#~ "<qt>When clicking <b>Close</b>, this dialog will be closed with no "
+#~ "further action taken.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Kapat</b> düğmesine tıkladığınızda pencere kapatılır ve başka "
+#~ "işlem yapılmaz.</qt>"
+
+#~ msgid "Add selected widgets"
+#~ msgstr "Seçilen Programcıkları Ekle"
+
+#~ msgid ""
+#~ "<qt>When clicking <b>Add Widget</b>, the selected widgets will be added "
+#~ "to your desktop.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Programcık Ekle</b> düğmesine tıkladığınızda seçilen programcıklar "
+#~ "masaüstünüze eklenir.</qt>"
+
+#~ msgid "Install new widgets"
+#~ msgstr "Yeni programcıklar yükle"
+
+#~ msgid ""
+#~ "<qt>Selecting <b>Get New Widgets</b> will show a window that allows you "
+#~ "to download new widgets directly from the Internet, while Install From "
+#~ "File allows you to add new widgets from files you have on disk.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Yeni Programcıklar Al</b> düğmesine tıkladığınızda İnternet'ten "
+#~ "yeni programcıklar indirmenizi sağlayacak bir pencere açılır. Ayrıca "
+#~ "Dosyadan Yükle seçeneği ile diskinizdeki programcıkları da "
+#~ "yükleyebilirsiniz.</qt>"
+
+#~ msgid "Enter search phrase here"
+#~ msgstr "Aranacak ifadeyi buraya girin"
+
+#~ msgid "Select the type of widget to install from the list below."
+#~ msgstr "Aşağıdaki listeden hangi tip programcık kuracağınızı seçin."
+
+#~ msgid "Plasmoid: Native plasma widget"
+#~ msgstr "Plasmoid: Gerçek plasma programcığı"
+
+#~ msgid "Install New Widget From File"
+#~ msgstr "Dosyadan Yeni Programcık Yükle"
+
+#~ msgid "Select File"
+#~ msgstr "Dosya Seç"
+
+#~ msgid "Could not load the required installer %1. The error given was: %2"
+#~ msgstr "%1 kurucusu yüklenemedi. Bildirilen hata: %2"
+
+#~ msgid "Installing the package %1 failed."
+#~ msgstr "%1 paketinin kurulumu başarısız oldu."
+
+#~ msgid "Download From Internet"
+#~ msgstr "İnternet'ten İndir"
+
+#~ msgid "Install From File..."
+#~ msgstr "Dosyadan Yükle..."
+
+#~ msgid "Next Applet"
+#~ msgstr "Sonraki Programcık"
+
+#~ msgid "Add Widgets"
+#~ msgstr "Programcık Ekle"
+
+#~ msgid "Invalid applet description"
+#~ msgstr "Geçersiz programcık tanımı"
+
+#~ msgid "Anonymous Engine"
+#~ msgstr "Anonim Motor"
+
+#~ msgid "Plasma Shared Timer Test"
+#~ msgstr "Plasma Ortak Zamanlayıcı Testi"
+
+#~ msgid "Back- and foregrounds for clickable icons"
+#~ msgstr "Tıklanabilir simgeler için arkaplan ve önplanlar"

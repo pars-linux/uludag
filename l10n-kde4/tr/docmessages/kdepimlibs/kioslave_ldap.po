@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_ldap\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2001-11-23 10:56GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "ldap"
+msgstr "ldap"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, no-c-format
+msgid ""
+"<acronym>ldap</acronym> is the lightweight directory access protocol. It "
+"provides access to an X.500 directory, or to a stand-alone <acronym>LDAP</"
+"acronym> server."
+msgstr ""
+"<acronym>ldap</acronym> (Lightweight Directory Access Protocol), X.500 "
+"dizinlerine, ya da kendi başına çalışan <acronym>LDAP</acronym> sunucularına "
+"erişim sağlar."
+
+#. Tag: para
+#: index.docbook:21
+#, no-c-format
+msgid "You can use the ldap kioslave as follows:"
+msgstr "Ldap kioslave'i aşağıdaki gibi kullanabilirsiniz:"
+
+#. Tag: para
+#: index.docbook:23
+#, no-c-format
+msgid ""
+"<userinput>ldap://host:port/ou=People,o=where,c=de??sub</userinput> for a "
+"subtree-query"
+msgstr ""
+"Alt dizin taraması için, <userinput>ldap://host:port/ou=People,o=where,c=de??"
+"sub</userinput> "
+
+#. Tag: para
+#: index.docbook:26
+#, no-c-format
+msgid ""
+"or <userinput>ldap://host:port/cn=MM,ou=People,o=where,c=de??base</"
+"userinput> for a complete branch."
+msgstr ""
+"ya da tüm dizinler üzerinde tarama yapmak için, <userinput>ldap://host:port/"
+"cn=MM,ou=People,o=where,c=de??base</userinput>"

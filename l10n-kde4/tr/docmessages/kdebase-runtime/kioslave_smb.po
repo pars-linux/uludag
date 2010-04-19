@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>,2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_smb\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2002-02-17 21:15+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "<title>SMB</title>"
+msgstr "<title>SMB</title>"
+
+#. Tag: author
+#: index.docbook:12
+#, fuzzy, no-c-format
+msgid "&Alexander.Neundorf; &Alexander.Neundorf.mail;"
+msgstr "Yazan: Alexander Neundorf <email>neundorf@kde.org</email>"
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:16
+#, no-c-format
+msgid ""
+"The smb ioslave enables you to browse the shares of a &Windows; (or Samba) "
+"network."
+msgstr ""
+"smb ioslave, bir &Windows; (ya da Samba ağı) üzerindeki dosyaları taramayı "
+"etkinleştirir."
+
+#. Tag: para
+#: index.docbook:21
+#, no-c-format
+msgid ""
+"To see the workgroups, enter <userinput><command>smb:/</command></userinput>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:25
+#, no-c-format
+msgid ""
+"<userinput><command>smb://</command><replaceable>a_workgroup</replaceable></"
+"userinput> will list the hosts in this workgroup."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:29
+#, no-c-format
+msgid ""
+"To see the shares of a host, enter <userinput><command>smb://</"
+"command><replaceable>the_host</replaceable></userinput> or "
+"<userinput><command>smb:/</command><replaceable>a_workgroup</replaceable>/"
+"<replaceable>the_host</replaceable></userinput>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:35
+#, no-c-format
+msgid ""
+"To access a share directly enter <userinput><command>smb://</"
+"command><replaceable>the_host/the_share</replaceable></userinput> or "
+"<userinput><command>smb:/</command><replaceable>a_workgroup</replaceable>/"
+"<replaceable>the_host</replaceable>/<replaceable>the_share</replaceable></"
+"userinput>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:42
+#, no-c-format
+msgid ""
+"The smb ioslave requires that you have libsmbclient to use this ioslave."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:46
+#, no-c-format
+msgid ""
+"You can set your default user name and password in the &systemsettings; in "
+"<menuchoice><guisubmenu>Network &amp; Connectivity</guisubmenu><guimenuitem> "
+"Sharing</guimenuitem></menuchoice>. This is especially useful if you are a "
+"member of a &Windows; <acronym>NT</acronym> domain. There you can also set "
+"your workgroup name, but in most cases this is not required. The kioslave "
+"will ask for your username and password if a default is not set."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:54
+#, no-c-format
+msgid ""
+"This ioslave is tested and developed using mainly Samba 2.0.7, but other "
+"versions of Samba should work too."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:59
+#, no-c-format
+msgid "Author: Alexander Neundorf <email>neundorf@kde.org</email>"
+msgstr "Yazan: Alexander Neundorf <email>neundorf@kde.org</email>"

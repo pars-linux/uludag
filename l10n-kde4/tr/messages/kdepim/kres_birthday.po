@@ -1,0 +1,55 @@
+# translation of kres_birthday.po to Turkish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_birthday\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-09-12 06:25+0200\n"
+"PO-Revision-Date: 2008-01-28 06:01+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: resourcekabcconfig.cpp:52
+msgid "Set reminder"
+msgstr "Anımsatıcıyı ayarla"
+
+#: resourcekabcconfig.cpp:55
+msgid "Reminder before (in days):"
+msgstr "Önce anımsat (gün olarak):"
+
+#: resourcekabcconfig.cpp:66
+msgid "Filter by categories"
+msgstr "Kategorilere göre filtrele"
+
+#: resourcekabc.cpp:153
+#, kde-format
+msgid "%1's birthday"
+msgstr "%1 kişisinin doğum günü"
+
+#: resourcekabc.cpp:195
+msgid "Birthday"
+msgstr "Doğum günü"
+
+#: resourcekabc.cpp:267
+#, kde-format
+msgctxt "insert names of both spouses"
+msgid "%1's & %2's anniversary"
+msgstr "%1 ve %2 yıldönümü"
+
+#: resourcekabc.cpp:270
+#, kde-format
+msgctxt "only one spouse in addressbook, insert the name"
+msgid "%1's anniversary"
+msgstr "%1 yıldönümü"
+
+#: resourcekabc.cpp:315
+msgid "Anniversary"
+msgstr "Yıldönümü"

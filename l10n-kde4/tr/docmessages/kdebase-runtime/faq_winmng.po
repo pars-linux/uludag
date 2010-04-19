@@ -1,0 +1,221 @@
+# translation of faq_winmng.po to Türkçe
+# Copyright (C) 2004, 2006 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_winmng\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-28 21:55+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: winmng.docbook:10
+#, no-c-format
+msgid "The window manager"
+msgstr "Pencere yöneticisi"
+
+#. Tag: para
+#: winmng.docbook:12
+#, no-c-format
+msgid ""
+"The default window manager provided by &kde; is the K Window Manager "
+"(&kwin;). Please read <quote>The K Window Manager Handbook</quote> (which "
+"should be accessible from the <application>&kde; Help Center</application>) "
+"for usage information."
+msgstr ""
+"&kde;'nin sunduğu pencere yöneticisi K Pencere Yöneticisi'dir (&kwin;). "
+"Kullanım bilgisi için lütfen <quote>K Pencere Yöneticisi Elkitabı</quote>'nı "
+"okuyun. (<application>&kde; Yardım Merkezi</application>'nden ulaşılabilir "
+"olmalıdır)."
+
+#. Tag: para
+#: winmng.docbook:20
+#, no-c-format
+msgid "Are there keyboard shortcuts for &kwin; operations?"
+msgstr "&kwin; işlemleri için klavye kısayolları var mı?"
+
+#. Tag: para
+#: winmng.docbook:23
+#, no-c-format
+msgid ""
+"Yes. Please refer to \"The K Window Manager Handbook\" for the list of "
+"shortcuts available."
+msgstr ""
+"Evet. Lütfen mevcut kısayollar için \"K Pencere Yöneticisi Elkitabı\"'na "
+"başvurun."
+
+#. Tag: para
+#: winmng.docbook:30
+#, no-c-format
+msgid "Can I define my own set of keyboard shortcuts?"
+msgstr "Kendi klavye kısayollarımı tanımlayabilir miyim?"
+
+#. Tag: para
+#: winmng.docbook:33
+#, no-c-format
+msgid ""
+"Yes. Launch the <application>&kde; Control Center</application> and select "
+"<menuchoice><guimenu>Regional &amp; Accessibility</"
+"guimenu><guimenuitem>Keyboard Shortcuts</guimenuitem></menuchoice> to "
+"configure window manager bindings like maximizing windows, &etc;."
+msgstr ""
+"Evet. <application>&kde;Denetim Masası</application>'nı çalıştırın ve  "
+"<menuchoice><guimenu>Erişebilirlik</guimenu><guimenuitem>Klavye Kısayolları</"
+"guimenuitem></menuchoice>'nı seçin. Burada pencere yöneticisi "
+"ilişkilendirmelerini (pencereleri büyültmek gibi) ayarlayabilirsiniz."
+
+#. Tag: para
+#: winmng.docbook:43
+#, no-c-format
+msgid "When I \"iconify\" a window, it disappears. Where does it go?"
+msgstr ""
+"Bir pencereyi \"Simge Durumuna Küçülttüğüm\" zaman gözden kayboluyor. "
+"Pencere nereye gidiyor?"
+
+#. Tag: para
+#: winmng.docbook:47
+#, no-c-format
+msgid ""
+"With many &X-Window; &GUI;s, the minimize button (a little dot) will erase "
+"the window that the program is running in and create, instead, an icon on "
+"the desktop. &kde; does not do this. Instead, when a window is iconified it "
+"is simply hidden (but the program is still running)."
+msgstr ""
+"Birçok &X-Window; Kullanıcı Arayüzünde küçültme düğmesi (küçük bir nokta) "
+"uygulamanın çalıştığı pencereyi siler ve onun yerine masaüstünde bir simge "
+"yaratır. &kde; bunu yapmaz. Bunun yerine, (hala çalışmakla birlikte) bir "
+"pencere simge haline getirildiğinde sadece gizlenir."
+
+#. Tag: para
+#: winmng.docbook:52
+#, no-c-format
+msgid "There are a few ways to access <quote>disappeared</quote> windows:"
+msgstr ""
+"<quote>Gözden kaybolan</quote> pencerelere ulaşmanın birkaç yolu vardır:"
+
+#. Tag: para
+#: winmng.docbook:55
+#, no-c-format
+msgid ""
+"If you are running the taskbar part of &kicker;, you can choose to have a "
+"list of tasks displayed on your desktop. Iconified tasks will have their "
+"names displayed in gray."
+msgstr ""
+"Eğer &kicker;'ın görev çubuğu bölümünü çalıştırıyorsanız, masaüstünüzde "
+"gösterilen görevlerin bir listesini görebilirsiniz. Simge durumuna "
+"küçültülmüş görevlerin isimleri grimsi görünür."
+
+#. Tag: para
+#: winmng.docbook:60
+#, no-c-format
+msgid ""
+"If you click the &MMB; on the root window (&ie;, the background of the "
+"desktop), &kwin; will give you a list of all available tasks."
+msgstr ""
+"Eğer masaüstünde Orta Fare Tuşu'na basarsanız, &kwin; size mevcut görevlerin "
+"listesini verir."
+
+#. Tag: para
+#: winmng.docbook:70
+#, no-c-format
+msgid "How do I maximize windows only vertically or horizontally?"
+msgstr ""
+"Pencereleri sadece dikey ya da sadece yatay olarak nasıl büyültebilirim?"
+
+#. Tag: para
+#: winmng.docbook:73
+#, no-c-format
+msgid ""
+"Provided your window is not already maximized, clicking on the maximize "
+"button with the &LMB;/&MMB;/&RMB; will maximize fully/vertically/"
+"horizontally respectively."
+msgstr ""
+"Pencereniz zaten büyültülmediyse, büyültme düğmesine Sol Fare Tuşu/Orta Fare "
+"Tuşu/Sağ Fare Tuşu'yla basmak sırasıyla pencereyi tamamen/dikey/yatay olarak "
+"büyültür."
+
+#. Tag: para
+#: winmng.docbook:81
+#, no-c-format
+msgid "What is <quote>shading</quote> a window?"
+msgstr "Bir pencereyi <quote>perdelemek</quote> ne demektir?"
+
+#. Tag: para
+#: winmng.docbook:84
+#, no-c-format
+msgid ""
+"By <quote>shading</quote> a window we mean <quote>rolling up</quote> the "
+"window leaving just the title bar visible. You can do this by double "
+"clicking on the window title bar."
+msgstr ""
+"Bir pencereyi <quote>perdelemek</quote> ile pencereyi <quote>katlamayı</"
+"quote> ve sadece başlık çubuğunu görünür halde bırakmayı kastediyoruz. Bu "
+"işlemi pencerenin başlık çubuğuna çift tıklayarak yapabilirsiniz."
+
+#. Tag: para
+#: winmng.docbook:94
+#, no-c-format
+msgid ""
+"How can I start an application with special window options, like maximized/"
+"minimized/to stay on top?"
+msgstr ""
+"Bir uygulamayı ekranı kapla/küçült/kapla gibi seçenekleri içeren özel bir "
+"pencerede nasıl açabilirim ?"
+
+#. Tag: para
+#: winmng.docbook:98
+#, no-c-format
+msgid ""
+"Use the <command>kstart</command> command. As an example, to open &kcalc; "
+"with the <quote>Stay on Top</quote> option, use:"
+msgstr ""
+" <command>kstart</command> komutunu kullanın. Örneğin, &kcalc; programını "
+"<quote>Kapla</quote> seçeneğiyle açmak için:"
+
+#. Tag: screen
+#: winmng.docbook:100
+#, no-c-format
+msgid ""
+"<prompt>%</prompt> <userinput><command>kstart</command> <option>--ontop</"
+"option> <option>kcalc</option></userinput>"
+msgstr ""
+"<prompt>%</prompt> <userinput><command>kstart</command> <option>--ontop</"
+"option> <option>kcalc</option></userinput>"
+
+#. Tag: para
+#: winmng.docbook:102
+#, no-c-format
+msgid ""
+"For maximized windows, use the <option>--maximize</option> option, for "
+"minimized windows, use <option>--iconify</option>. You can see a full list "
+"of <command>kstart</command> options with <userinput><command>kstart</"
+"command> <option>--help-all</option></userinput>."
+msgstr ""
+"Ekranı kapla için <option>--maximize</option>, küçült için <option>--"
+"iconify</option> seçeneklerini kullanabilirsiniz. <command>kstart</command> "
+"komutunu <userinput><command>kstart</command> <option>--help-all</option></"
+"userinput> seçeneğiyle kullanarak tam listeyi görebilirsiniz."
+
+#. Tag: para
+#: winmng.docbook:108
+#, no-c-format
+msgid ""
+"If you're using <command>kstart</command> to start applications at &kde; "
+"startup, you should use the <option>--window</option> option. See the &kde; "
+"User Guide, section <quote>Advanced Window Management</quote> for more "
+"information about this feature."
+msgstr ""
+"&kde; başlarken programları çalıştırmak için <command>kstart</command> "
+"komutunu kullanıyorsanız <option>--window</option> seçeneğini de "
+"kullanmalısınız. &kde; kullanım kılavuzu <quote>Gelişmiş pencere yönetimi</"
+"quote> bölümünden bu konuyla ilgili ayrıntılı bilgi edinebilirsiniz."

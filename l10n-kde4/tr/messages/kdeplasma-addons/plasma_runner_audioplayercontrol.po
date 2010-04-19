@@ -1,0 +1,460 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_runner_audioplayercontrol\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-12-30 07:21+0100\n"
+"PO-Revision-Date: 2009-11-13 16:53+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: audioplayercontrolrunner_config.cpp:64
+msgid "Amarok"
+msgstr "Amarok"
+
+#: audioplayercontrolrunner_config.cpp:90 audioplayercontrolrunner.cpp:304
+#, fuzzy
+#| msgid "Play"
+msgid "play"
+msgstr "Oynat"
+
+#: audioplayercontrolrunner_config.cpp:91 audioplayercontrolrunner.cpp:305
+#, fuzzy
+#| msgid "Append"
+msgid "append"
+msgstr "Ekle"
+
+#: audioplayercontrolrunner_config.cpp:92 audioplayercontrolrunner.cpp:306
+#, fuzzy
+#| msgid "Queue"
+msgid "queue"
+msgstr "Kuyruğa ekle"
+
+#: audioplayercontrolrunner_config.cpp:93 audioplayercontrolrunner.cpp:307
+#, fuzzy
+#| msgid "Pause"
+msgid "pause"
+msgstr "Duraklat"
+
+#: audioplayercontrolrunner_config.cpp:94
+#, fuzzy
+#| msgctxt "next song"
+#| msgid "Next"
+msgctxt "next song"
+msgid "next"
+msgstr "Sonraki"
+
+#: audioplayercontrolrunner_config.cpp:95 audioplayercontrolrunner.cpp:309
+#, fuzzy
+#| msgid "Mute"
+msgid "mute"
+msgstr "Sessiz"
+
+#: audioplayercontrolrunner_config.cpp:96
+msgctxt "increase the sound volume"
+msgid "up"
+msgstr ""
+
+#: audioplayercontrolrunner_config.cpp:98
+#, fuzzy
+#| msgctxt "decrease the sound volume"
+#| msgid "Down"
+msgctxt "decrease the sound volume"
+msgid "down"
+msgstr "Alçalt"
+
+#: audioplayercontrolrunner_config.cpp:100
+#, fuzzy
+#| msgctxt "previous song"
+#| msgid "Prev"
+msgctxt "previous song"
+msgid "prev"
+msgstr "Önceki"
+
+#: audioplayercontrolrunner_config.cpp:101 audioplayercontrolrunner.cpp:315
+#, fuzzy
+#| msgid "Stop"
+msgid "stop"
+msgstr "Durdur"
+
+#: audioplayercontrolrunner_config.cpp:102
+#, fuzzy
+#| msgid "Volume="
+msgctxt "set the sound volume"
+msgid "volume"
+msgstr "Ses="
+
+#: audioplayercontrolrunner_config.cpp:103
+#, fuzzy
+#| msgid "Quit"
+msgctxt "quit media player"
+msgid "quit"
+msgstr "Çık"
+
+#: audioplayercontrolrunner_config.cpp:155 audioplayercontrolrunner.cpp:283
+msgid "Play"
+msgstr "Oynat"
+
+#: audioplayercontrolrunner_config.cpp:156
+msgid "Append"
+msgstr "Ekle"
+
+#: audioplayercontrolrunner_config.cpp:157 audioplayercontrolrunner.cpp:284
+msgid "Queue"
+msgstr "Kuyruğa ekle"
+
+#: audioplayercontrolrunner_config.cpp:158
+msgid "Pause"
+msgstr "Duraklat"
+
+#: audioplayercontrolrunner_config.cpp:159
+msgid "Next"
+msgstr "Sonraki"
+
+#: audioplayercontrolrunner_config.cpp:160 audioplayercontrolrunner.cpp:190
+msgid "Mute"
+msgstr "Sessiz"
+
+#: audioplayercontrolrunner_config.cpp:161
+msgid "Increase"
+msgstr "Yükselt"
+
+#: audioplayercontrolrunner_config.cpp:163
+msgid "Decrease"
+msgstr "Alçalt"
+
+#: audioplayercontrolrunner_config.cpp:165
+msgid "Prev"
+msgstr "Önceki"
+
+#: audioplayercontrolrunner_config.cpp:166
+msgid "Stop"
+msgstr "Durdur"
+
+#: audioplayercontrolrunner_config.cpp:167
+msgid "Volume="
+msgstr "Ses="
+
+#: audioplayercontrolrunner_config.cpp:168
+msgid "Quit"
+msgstr "Çık"
+
+#: audioplayercontrolrunner.cpp:102
+msgid "Start playing"
+msgstr "Çalmaya başla"
+
+#: audioplayercontrolrunner.cpp:102 audioplayercontrolrunner.cpp:119
+#: audioplayercontrolrunner.cpp:128 audioplayercontrolrunner.cpp:137
+#: audioplayercontrolrunner.cpp:145 audioplayercontrolrunner.cpp:154
+#: audioplayercontrolrunner.cpp:160 audioplayercontrolrunner.cpp:168
+#: audioplayercontrolrunner.cpp:174 audioplayercontrolrunner.cpp:183
+#: audioplayercontrolrunner.cpp:190
+msgid "Audio player control"
+msgstr "Ses oynatıcı denetimi"
+
+#: audioplayercontrolrunner.cpp:119
+msgid "Play next song"
+msgstr "Sonraki parçayı çal"
+
+#: audioplayercontrolrunner.cpp:128
+msgid "Play previous song"
+msgstr "Önceki parçayı çal"
+
+#: audioplayercontrolrunner.cpp:137
+msgid "Pause playing"
+msgstr "Çalmayı duraklat"
+
+#: audioplayercontrolrunner.cpp:145
+msgid "Stop playing"
+msgstr "Çalmayı durdur"
+
+#: audioplayercontrolrunner.cpp:153 audioplayercontrolrunner.cpp:159
+#, kde-format
+msgid "Increase volume by %1"
+msgstr "Sesi %1 düzeyine çıkar"
+
+#: audioplayercontrolrunner.cpp:167 audioplayercontrolrunner.cpp:173
+#, kde-format
+msgid "Reduce volume by %1"
+msgstr "Sesi %1 düzeyine indir"
+
+#: audioplayercontrolrunner.cpp:182
+#, kde-format
+msgid "Set volume to %1%"
+msgstr "Sesi %1% düzeyine ayarla"
+
+#: audioplayercontrolrunner.cpp:199
+#, kde-format
+msgid "Quit %1"
+msgstr "%1 Uygulamasından Çık"
+
+#: audioplayercontrolrunner.cpp:285
+msgid "Append to playlist"
+msgstr "Parça listesine ekle"
+
+#: audioplayercontrolrunner.cpp:308
+#, fuzzy
+#| msgid "Next"
+msgid "next"
+msgstr "Sonraki"
+
+#: audioplayercontrolrunner.cpp:310
+#, fuzzy
+#| msgid "Increase"
+msgid "increase"
+msgstr "Yükselt"
+
+#: audioplayercontrolrunner.cpp:312
+#, fuzzy
+#| msgid "Decrease"
+msgid "decrease"
+msgstr "Alçalt"
+
+#: audioplayercontrolrunner.cpp:314
+#, fuzzy
+#| msgid "Prev"
+msgid "prev"
+msgstr "Önceki"
+
+#: audioplayercontrolrunner.cpp:316
+#, fuzzy
+#| msgid "Volume="
+msgid "volume"
+msgstr "Ses="
+
+#: audioplayercontrolrunner.cpp:317
+#, fuzzy
+#| msgid "Quit"
+msgid "quit"
+msgstr "Çık"
+
+#: audioplayercontrolrunner.cpp:324
+msgid ""
+"Plays the selected song. If :q: is not empty it lists songs matching :q: to "
+"play them"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:326
+msgid "Displays songs matching :q: for appending the selected to the playlist"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:328
+msgid "Displays songs matching :q: for queueing them"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:331
+msgid "Plays a song from playlist"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:333
+msgid "Pauses the playing"
+msgstr "Çalmayı duraklatır"
+
+#: audioplayercontrolrunner.cpp:334
+msgid "Plays the next song in the playlist if one is available"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:335
+msgid "Mutes/unmutes the player"
+msgstr "Oynatıcının sesini kapatır/açar"
+
+#: audioplayercontrolrunner.cpp:337
+msgid ""
+"Increases the volume by :q:. If :q: is empty it increases by the configured "
+"value"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:339
+msgid ""
+"Decreases the volume by :q:. If :q: is empty it decreases by the configured "
+"value"
+msgstr ""
+
+#: audioplayercontrolrunner.cpp:340
+msgid "Plays the previous song if one is available"
+msgstr "Eğer kullanılabilir durumdaysa önceki parçayı çalar"
+
+#: audioplayercontrolrunner.cpp:341
+msgid "Stops the playing"
+msgstr "Çalmayı durdurur"
+
+#: audioplayercontrolrunner.cpp:342
+msgid "Sets the volume to :q:"
+msgstr "Sesi :q: düzeyine ayarlar"
+
+#: audioplayercontrolrunner.cpp:343
+msgid "Quits the player"
+msgstr "Oynatıcıdan çıkar"
+
+#: audioplayercontrolrunner.cpp:376
+#, kde-format
+msgid "%1 not found"
+msgstr "%1 bulunamadı"
+
+#: audioplayercontrolrunner.cpp:377
+#, kde-format
+msgid "%1 was not found so the runner is unable to work."
+msgstr "%1 bulunamadığından çalıştırıcı çalışamaz."
+
+#. i18n: file: audioplayercontrolrunner_config.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:3
+msgid "Audio Player Control Runner Settings"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:28
+#. i18n: ectx: property (text), widget (QLabel, player_label)
+#: rc.cpp:6
+msgid "The player the runner controls:"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:36
+#. i18n: ectx: property (toolTip), widget (KComboBox, player_combo)
+#: rc.cpp:9
+msgid ""
+"The collection search is only available for Amarok.\n"
+"You may add another player. That player has to support the MPRIS "
+"specification."
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:48
+#. i18n: ectx: property (text), widget (QCheckBox, searchCollection)
+#: rc.cpp:13
+#, fuzzy
+#| msgid "Seach &collection"
+msgid "Search &collection"
+msgstr "&Koleksiyonda ara"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:61
+#. i18n: ectx: property (title), widget (QGroupBox, commands)
+#: rc.cpp:16
+msgid "Use Command&s"
+msgstr "&Komutları Kullan"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:78
+#. i18n: ectx: property (text), widget (QLabel, play_label)
+#: rc.cpp:19
+msgid "Pla&y:"
+msgstr "&Çal:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:88
+#. i18n: ectx: property (toolTip), widget (KLineEdit, play_edit)
+#: rc.cpp:22
+msgid ""
+"Can be used as \"Play\" for playing and \"Play <song>\" for playing a song "
+"that matches to <song> (in title, artist and album)"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:114
+#. i18n: ectx: property (text), widget (QLabel, append_label)
+#: rc.cpp:25
+msgid "Ap&pend a song:"
+msgstr "Bir parça ek&le:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:124
+#. i18n: ectx: property (toolTip), widget (KLineEdit, append_edit)
+#: rc.cpp:28
+msgid "Use: append <term> (where <term> matches to artist, title or album)"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:147
+#. i18n: ectx: property (text), widget (QLabel, queue_label)
+#: rc.cpp:31
+msgid "Q&ueue a song:"
+msgstr "Bir parçayı kuyruğa &ekle:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:157
+#. i18n: ectx: property (toolTip), widget (KLineEdit, queue_edit)
+#: rc.cpp:34
+msgid "Use: queue <term> (where <term> matches to artist, title or album)"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:180
+#. i18n: ectx: property (text), widget (QLabel, pause_label)
+#: rc.cpp:37
+msgid "P&ause:"
+msgstr "Dura&klat:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:213
+#. i18n: ectx: property (text), widget (QLabel, stop_label)
+#: rc.cpp:40
+msgid "S&top:"
+msgstr "&Durdur:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:246
+#. i18n: ectx: property (text), widget (QLabel, prev_label)
+#: rc.cpp:43
+msgid "Previ&ous song:"
+msgstr "Ö&nceki parça:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:279
+#. i18n: ectx: property (text), widget (QLabel, next_label)
+#: rc.cpp:46
+msgid "&Next song:"
+msgstr "S&onraki parça:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:312
+#. i18n: ectx: property (text), widget (QLabel, volume_label)
+#: rc.cpp:49
+msgid "Set &volume:"
+msgstr "Ses &düzeyini ayarla:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:323
+#. i18n: ectx: property (toolTip), widget (KLineEdit, volume_edit)
+#: rc.cpp:52
+msgid ""
+"The numbers are automatically added at the end:\n"
+"Amarok:Volume=10"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:352
+#. i18n: ectx: property (text), widget (QLabel, up_label1)
+#: rc.cpp:56
+msgid "&Increase volume by"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:381
+#. i18n: ectx: property (text), widget (QLabel, up_label2)
+#. i18n: file: audioplayercontrolrunner_config.ui:437
+#. i18n: ectx: property (text), widget (QLabel, down_label2)
+#: rc.cpp:59 rc.cpp:65
+msgid ":"
+msgstr ":"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:411
+#. i18n: ectx: property (text), widget (QLabel, down_label1)
+#: rc.cpp:62
+msgid "&Decrease volume by"
+msgstr ""
+
+#. i18n: file: audioplayercontrolrunner_config.ui:467
+#. i18n: ectx: property (text), widget (QLabel, mute_label)
+#: rc.cpp:68
+msgid "&Mute:"
+msgstr "S&essiz:"
+
+#. i18n: file: audioplayercontrolrunner_config.ui:500
+#. i18n: ectx: property (text), widget (QLabel, quit_label)
+#: rc.cpp:71
+msgid "Quit player:"
+msgstr "Oynatıcıdan çık:"
+
+#~ msgctxt "increase the sound volume"
+#~ msgid "Up"
+#~ msgstr "Yükselt"
+
+#~ msgctxt "set the sound volume to the volume after the '='"
+#~ msgid "Volume="
+#~ msgstr "Ses="
+
+#~ msgctxt "quit Amarok"
+#~ msgid "Quit"
+#~ msgstr "Çık"

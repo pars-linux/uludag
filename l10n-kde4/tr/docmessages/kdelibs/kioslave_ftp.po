@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_ftp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2001-11-12 18:39GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "&FTP;"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, no-c-format
+msgid ""
+"&FTP; is the Internet service used to transfer a data file from the disk of "
+"one computer to the disk of another, regardless of the operating system type."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:22
+#, no-c-format
+msgid ""
+"Similar to other Internet applications, &FTP; uses the client-server "
+"approach &mdash; a user invokes an &FTP; program on the computer, instructs "
+"it to contact a remote computer, and then requests the transfer of one or "
+"more files. The local &FTP; program becomes a client that uses <acronym>TCP</"
+"acronym> to contact an &FTP; server program on the remote computer. Each "
+"time the user requests a file transfer, the client and the server programs "
+"cooperate to send a copy of the data across the Internet."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid ""
+"&FTP; servers which allow <quote>anonymous &FTP;</quote> permit any user, "
+"not only users with accounts on the host, to browse the <quote>ftp</quote> "
+"archives and download files. Some &FTP; servers are configured to allow "
+"users to upload files."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:36
+#, no-c-format
+msgid ""
+"&FTP; is commonly used to retrieve information and obtain software stored in "
+"files at &FTP; archive sites throughout the world."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:42
+#, no-c-format
+msgid ""
+"Source: Paraphrased from <ulink url=\"http://tlc.nlm.nih.gov/resources/"
+"tutorials/internetdistlrn/ftpdef.htm\"> http://tlc.nlm.nih.gov/resources/"
+"tutorials/internetdistlrn/ftpdef.htm</ulink>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:48
+#, no-c-format
+msgid "See the manual: <ulink url=\"man:/ftp\">ftp</ulink>."
+msgstr ""
+
+#~ msgid "<title>ftp</title>"
+#~ msgstr "<title>ftp</title>"
+
+#~ msgid "Not yet documented"
+#~ msgstr "Henüz belgelenmedi"

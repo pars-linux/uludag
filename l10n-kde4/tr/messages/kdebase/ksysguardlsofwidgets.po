@@ -1,0 +1,48 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: ksysguardlsofwidgets\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-05-11 12:50+0200\n"
+"PO-Revision-Date: 2008-08-30 01:34+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: lsof.cpp:21
+msgctxt "Short for File Descriptor"
+msgid "FD"
+msgstr "FD"
+
+#. i18n: file: LsofSearchWidget.ui:28
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: lsof.cpp:21 rc.cpp:6 rc.cpp:15
+msgid "Type"
+msgstr "Tip"
+
+#: lsof.cpp:21
+msgid "Object"
+msgstr "Nesne"
+
+#: LsofSearchWidget.cpp:36
+msgid "Renice Process"
+msgstr "Süreci İyileştir"
+
+#. i18n: file: LsofSearchWidget.ui:23
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: rc.cpp:3 rc.cpp:12
+msgid "Stream"
+msgstr "Akım"
+
+#. i18n: file: LsofSearchWidget.ui:33
+#. i18n: ectx: property (text), widget (KLsofWidget, klsofwidget)
+#: rc.cpp:9 rc.cpp:18
+msgid "Filename"
+msgstr "Dosya adı"

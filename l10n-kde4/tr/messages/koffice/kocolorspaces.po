@@ -1,0 +1,76 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kocolorspaces\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"PO-Revision-Date: 2008-11-21 05:27+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.h:51
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:33
+msgid "CMYK (16-bit integer/channel)"
+msgstr "CMYK (16-bit integer/channel)"
+
+#: cmyk_u8/kis_cmyk_colorspace.h:48 cmyk_u8/kis_cmyk_colorspace.cc:34
+msgid "CMYK (8-bit integer/channel)"
+msgstr "CMYK (8-bit integer/channel)"
+
+#: gray_u16/kis_gray_u16_colorspace.h:47
+#: gray_u16/kis_gray_u16_colorspace.cc:36
+msgid "Grayscale (16-bit integer/channel)"
+msgstr "Grayscale (16-bit integer/channel)"
+
+#: gray_u8/kis_gray_colorspace.h:48 gray_u8/kis_gray_colorspace.cc:36
+msgid "Grayscale (8-bit integer/channel)"
+msgstr "Grayscale (8-bit integer/channel)"
+
+#: cmyk_u16/cmyk_u16_plugin.cc:43
+msgid "CMYK16 Histogram"
+msgstr "CMYK16 Histogram"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:35 cmyk_u8/kis_cmyk_colorspace.cc:36
+msgid "Cyan"
+msgstr "Cyan"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:36 cmyk_u8/kis_cmyk_colorspace.cc:37
+msgid "Magenta"
+msgstr "Macenta"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:37 cmyk_u8/kis_cmyk_colorspace.cc:38
+msgid "Yellow"
+msgstr "Sarı"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:38 cmyk_u8/kis_cmyk_colorspace.cc:39
+msgid "Black"
+msgstr "Siyah"
+
+#: cmyk_u16/kis_cmyk_u16_colorspace.cc:39 cmyk_u8/kis_cmyk_colorspace.cc:40
+#: gray_u16/kis_gray_u16_colorspace.cc:39 gray_u8/kis_gray_colorspace.cc:39
+msgid "Alpha"
+msgstr "Alpha"
+
+#: cmyk_u8/cmyk_plugin.cc:43
+msgid "CMYK8 Histogram"
+msgstr "CMYK8 Histogram"
+
+#: gray_u16/gray_u16_plugin.cc:43
+msgid "GRAY/Alpha16 Histogram"
+msgstr "GRAY/Alpha16 Histogram"
+
+#: gray_u16/kis_gray_u16_colorspace.cc:38 gray_u8/kis_gray_colorspace.cc:38
+msgid "Gray"
+msgstr "Gri"
+
+#: gray_u8/gray_plugin.cc:49
+msgid "GRAY/Alpha8 Histogram"
+msgstr "GRAY/Alpha8 Histogram"

@@ -1,0 +1,102 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_krunner_kopete\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-09 01:35+0100\n"
+"PO-Revision-Date: 2009-08-17 16:04+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kopeterunner.cpp:58
+msgid "Searches your Kopete buddylist for contacts matching :q:."
+msgstr ""
+
+#: kopeterunner.cpp:59
+msgid "Connect all Kopete accounts"
+msgstr "Tüm Kopete hesaplarına bağlan"
+
+#: kopeterunner.cpp:60
+msgid "Disconnect all Kopete accounts"
+msgstr "Tüm Kopete hesaplarının bağlantısını kes"
+
+#: kopeterunner.cpp:61
+msgid "Set Kopete accounts to a status with an optional message"
+msgstr ""
+
+#: kopeterunner.cpp:62
+msgid "Set Kopete status message"
+msgstr "Kopete durum iletisini ayarla"
+
+#: kopeterunner.cpp:92
+msgid "Set all accounts as online"
+msgstr "Tüm hesapları çevrimiçi olarak ayarla"
+
+#: kopeterunner.cpp:103
+msgid "Set all accounts as offline"
+msgstr "Tüm hesapları çevrimdışı olarak ayarla"
+
+#: kopeterunner.cpp:123
+#, kde-format
+msgctxt "The ': ' is used as a separator"
+msgid "Status: %1"
+msgstr "Durum: %1"
+
+#: kopeterunner.cpp:127 kopeterunner.cpp:149
+#, kde-format
+msgctxt "The ': ' is used as a separator"
+msgid "Message: %1"
+msgstr "İleti: %1"
+
+#: kopeterunner.cpp:150
+msgid "Set Status Message"
+msgstr "Durum İletisini Ayarla"
+
+#: kopeterunner.cpp:176
+#, kde-format
+msgid "Send message to %1"
+msgstr "%1 kişisine ileti gönder"
+
+#: kopeterunner.cpp:177
+#, kde-format
+msgid "Status: %1"
+msgstr "Durum: %1"
+
+#: kopeterunner.cpp:178
+#, kde-format
+msgid ""
+"%1\n"
+"Message: %2"
+msgstr ""
+"%1\n"
+"İleti: %2"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#~ msgid "Go Online"
+#~ msgstr "Bağlan"
+
+#~ msgid "Go Offline"
+#~ msgstr "Bağlantıyı Kes"
+
+#~ msgid "Set Status"
+#~ msgstr "Durumu Ayarla"
+
+#~ msgid "Set %1 to be \"%2\""
+#~ msgstr "\"%2\" olmak için %1 ayarlayın"

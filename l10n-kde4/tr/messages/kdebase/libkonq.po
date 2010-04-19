@@ -1,0 +1,347 @@
+# translation of libkonq.po to Turkish
+# Turkish translation of libkonq.
+# Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libkonq\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-20 06:08+0100\n"
+"PO-Revision-Date: 2009-09-27 21:36+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: knewmenu.cpp:147
+msgid "Create New"
+msgstr "Yeni Oluştur"
+
+#: knewmenu.cpp:171
+msgid "Link to Device"
+msgstr "Aygıta Bağlantı"
+
+#: knewmenu.cpp:495
+#, kde-format
+msgid "<qt>The template file <b>%1</b> does not exist.</qt>"
+msgstr "<qt><b>%1</b> şablon dosyası bulunamadı.</qt>"
+
+#: knewmenu.cpp:504 knewmenu.cpp:550
+msgid "File name:"
+msgstr "Dosya adı:"
+
+#: knewmenu.cpp:564
+msgid ""
+"Basic links can only point to local files or directories.\n"
+"Please use \"Link to Location\" for remote URLs."
+msgstr ""
+"Basit bağlantılar sadece yerel dosyaları ve dizinleri gösterebilir.\n"
+"Uzak bağlantılar için lütfen \"Konuma Bağlantı\" girdisini kullanın."
+
+#: konq_copytomenu.cpp:78
+msgctxt "@title:menu"
+msgid "Copy To"
+msgstr "Buraya Kopyala"
+
+#: konq_copytomenu.cpp:84
+msgctxt "@title:menu"
+msgid "Move To"
+msgstr "Buraya Taşı"
+
+#: konq_copytomenu.cpp:108
+msgctxt "@title:menu"
+msgid "Home Folder"
+msgstr "Ev Dizini"
+
+#: konq_copytomenu.cpp:115
+msgctxt "@title:menu"
+msgid "Root Folder"
+msgstr "Kök Dizin"
+
+#: konq_copytomenu.cpp:120
+msgctxt "@title:menu in Copy To or Move To submenu"
+msgid "Browse..."
+msgstr "Gözat..."
+
+#: konq_copytomenu.cpp:191
+msgctxt "@title:menu"
+msgid "Copy Here"
+msgstr "Buraya Kopyala"
+
+#: konq_copytomenu.cpp:192
+msgctxt "@title:menu"
+msgid "Move Here"
+msgstr "Buraya Taşı"
+
+#: konq_operations.cpp:275
+msgid "You cannot drop a folder on to itself"
+msgstr "Bir dizini kendi üzerine taşıyamazsınız."
+
+#: konq_operations.cpp:320
+msgid "File name for dropped contents:"
+msgstr "Bırakılan içerik için dosya adı:"
+
+#: konq_operations.cpp:532
+msgid "&Move Here"
+msgstr "B&uraya Taşı"
+
+#: konq_operations.cpp:536
+msgid "&Copy Here"
+msgstr "&Buraya Kopyala"
+
+#: konq_operations.cpp:540
+msgid "&Link Here"
+msgstr "Bu&raya Bağ Koy"
+
+#: konq_operations.cpp:542
+msgid "Set as &Wallpaper"
+msgstr "&Arkaplan Resmi Yap"
+
+#: konq_operations.cpp:544
+msgid "C&ancel"
+msgstr "İ&ptal"
+
+#: konq_operations.cpp:814
+#, fuzzy
+#| msgid "Creating directory"
+msgctxt "@action:button"
+msgid "Create directory"
+msgstr "Dizin oluşturuluyor"
+
+#: konq_operations.cpp:816
+#, fuzzy
+#| msgid "Enter folder name:"
+msgctxt "@action:button"
+msgid "Enter a different name"
+msgstr "Dizin adını verin:"
+
+#: konq_operations.cpp:819
+#, kde-format
+msgid ""
+"The name \"%1\" starts with a dot, so the directory will be hidden by "
+"default."
+msgstr ""
+
+#: konq_operations.cpp:820
+#, fuzzy
+#| msgid "Creating directory"
+msgid "Create hidden directory?"
+msgstr "Dizin oluşturuluyor"
+
+#: konq_operations.cpp:835 konq_operations.cpp:842
+msgid "New Folder"
+msgstr "Yeni Dizin"
+
+#: konq_operations.cpp:843
+msgid "Enter folder name:"
+msgstr "Dizin adını verin:"
+
+#: konq_operations.cpp:947
+msgctxt "@action:inmenu"
+msgid "Paste One Folder"
+msgstr "Bir Dizin Yapıştır"
+
+#: konq_operations.cpp:948
+msgctxt "@action:inmenu"
+msgid "Paste One File"
+msgstr "Bir Dosya Yapıştır"
+
+#: konq_operations.cpp:951
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Paste One Item"
+msgid_plural "Paste %1 Items"
+msgstr[0] "%1 Öge Yapıştır"
+
+#: konq_operations.cpp:953
+msgctxt "@action:inmenu"
+msgid "Paste Clipboard Contents..."
+msgstr "Pano İçeriğini Yapıştır..."
+
+#: konq_operations.cpp:957
+msgctxt "@action:inmenu"
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: konq_popupmenu.cpp:249
+msgid "&Open"
+msgstr "&Aç"
+
+#: konq_popupmenu.cpp:274
+msgid "Create &Folder..."
+msgstr "&Dizin Oluştur..."
+
+#: konq_popupmenu.cpp:283
+msgid "&Restore"
+msgstr "&Geri Yükle"
+
+#: konq_popupmenu.cpp:284
+msgid ""
+"Restores this file or directory, back to the location where it was deleted "
+"from initially"
+msgstr ""
+"Bu dosya veya dizini geri yükle, ilk silindiği konuma dosyayı geri gönderir"
+
+#: konq_popupmenu.cpp:304
+msgid "Show Original Directory"
+msgstr "Asıl Dizini Göster"
+
+#: konq_popupmenu.cpp:304
+msgid "Show Original File"
+msgstr "Asıl Dosyayı Göster"
+
+#: konq_popupmenu.cpp:305
+msgid ""
+"Opens a new file manager window showing the target of this link, in its "
+"parent directory."
+msgstr ""
+"Bu bağlantının açacağı hedefi göstermek için bir üst dizinde yeni bir dosya "
+"yöneticisi penceresi açar."
+
+#: konq_popupmenu.cpp:337
+msgid "&Empty Trash Bin"
+msgstr "Çö&p Kutusunu Boşalt"
+
+#: konq_popupmenu.cpp:363
+msgid "&Bookmark This Page"
+msgstr "&Bu Sayfayı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cpp:365
+msgid "&Bookmark This Location"
+msgstr "B&u Konumu Yer İmlerine Ekle"
+
+#: konq_popupmenu.cpp:368
+msgid "&Bookmark This Folder"
+msgstr "Bu &Dizini Yer İmlerine Ekle"
+
+#: konq_popupmenu.cpp:370
+msgid "&Bookmark This Link"
+msgstr "Bu B&ağlantıyı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cpp:372
+msgid "&Bookmark This File"
+msgstr "Bu &Dosyayı Yer İmlerine Ekle"
+
+#: konq_popupmenu.cpp:400
+msgid "Preview In"
+msgstr "Burada Önizle"
+
+#: konq_popupmenu.cpp:435
+msgid "&Properties"
+msgstr "Ö&zellikler"
+
+#: konq_popupmenu.cpp:449
+msgid "Share"
+msgstr "Paylaştır"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Actions"
+#~ msgstr "&Eylemler"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "&Birlikte Aç"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Diğer..."
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "&Birlikte Aç..."
+
+#~ msgid "Open &with %1"
+#~ msgstr "%1 &ile Aç"
+
+#~ msgid "Open in New &Window"
+#~ msgstr "&Yeni Pencerede Aç"
+
+#~ msgid "Open the trash in a new window"
+#~ msgstr "Çöp kutusunu yeni pencerede aç"
+
+#~ msgid "Open the medium in a new window"
+#~ msgstr "Belgeyi yeni bir pencerede aç"
+
+#~ msgid "Open the document in a new window"
+#~ msgstr "Belgeyi yeni bir pencerede aç"
+
+#~ msgid "Directory"
+#~ msgstr "Dizin"
+
+#~ msgid "Moving"
+#~ msgstr "Taşınıyor"
+
+#~ msgid "Source"
+#~ msgstr "Kaynak"
+
+#~ msgid "Destination"
+#~ msgstr "Hedef"
+
+#~ msgid "Deleting"
+#~ msgstr "Siliniyor"
+
+#~ msgid "File"
+#~ msgstr "Dosya"
+
+#~ msgid "Und&o"
+#~ msgstr "&Geri Al"
+
+#~ msgid "Und&o: Copy"
+#~ msgstr "&Geri Al: Kopyala"
+
+#~ msgid "Und&o: Link"
+#~ msgstr "&Geri Al: Bağlantı"
+
+#~ msgid "Und&o: Move"
+#~ msgstr "&Geri Al: Taşı"
+
+#~ msgid "Und&o: Rename"
+#~ msgstr "&Geri Al: Yeniden Adlandır"
+
+#~ msgid "Und&o: Trash"
+#~ msgstr "&Geri Al: Çöp"
+
+#~ msgid "Und&o: Create Folder"
+#~ msgstr "&Geri Al: Dizin Oluştur"
+
+#~ msgid ""
+#~ "The file %1 was copied from %2, but since then it has apparently been "
+#~ "modified at %3.\n"
+#~ "Undoing the copy will delete the file, and all modifications will be "
+#~ "lost.\n"
+#~ "Are you sure you want to delete %4?"
+#~ msgstr ""
+#~ "%1 dosyası %2 konumundan kopyalandı ama %3 konumunda düzenlendi.\n"
+#~ "Geri Alma işlemi dosyayı silecek ve tüm değişiklikler kaybedilecek.\n"
+#~ "%4 dosyasını silmek istediğinizden emin misiniz?"
+
+#~ msgid "Undo File Copy Confirmation"
+#~ msgstr "Dosya Kopyalama Doğrulamasını Geri Al"
+
+#~ msgid "Do you really want to delete this item?"
+#~ msgid_plural "Do you really want to delete these %1 items?"
+#~ msgstr[0] "Bu %1 öğeyi silmek istiyor musunuz?"
+
+#~ msgid "Delete Files"
+#~ msgstr "Dosyaları Sil"
+
+#~ msgid "Do you really want to move this item to the trash?"
+#~ msgid_plural "Do you really want to move these %1 items to the trash?"
+#~ msgstr[0] "Gerçekten bu %1 dosyayı çöpe göndermek istiyor musunuz?"
+
+#~ msgid "Move to Trash"
+#~ msgstr "Çöpe Taşı"
+
+#~ msgctxt "Verb"
+#~ msgid "&Trash"
+#~ msgstr "Çöpe gönde&r"
+
+#, fuzzy
+#~| msgid "Und&o"
+#~ msgid "Und&o: %1"
+#~ msgstr "&Geri Al"

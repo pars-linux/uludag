@@ -1,0 +1,134 @@
+# translation of kinfocenter_scsi.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_scsi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-13 18:28+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9 index.docbook:33
+#, no-c-format
+msgid "<acronym>SCSI</acronym> Interface Information"
+msgstr "<acronym>SCSI</acronym> Arayüzü Bilgisi"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Matthias.Hoelzer-Kluepfel;"
+msgstr "&Matthias.Hoelzer-Kluepfel;"
+
+#. Tag: author
+#: index.docbook:14
+#, no-c-format
+msgid "&Helge.Deller;"
+msgstr "&Helge.Deller;"
+
+#. Tag: author
+#: index.docbook:15
+#, no-c-format
+msgid "&Duncan.Haldane;"
+msgstr "&Duncan.Haldane;"
+
+#. Tag: author
+#: index.docbook:16
+#, no-c-format
+msgid "&Mike.McBride;"
+msgstr "&Mike.McBride;"
+
+#. Tag: trans_comment
+#: index.docbook:17
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:24
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:25
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "SCSI"
+msgstr "SCSI"
+
+#. Tag: keyword
+#: index.docbook:27
+#, no-c-format
+msgid "system information"
+msgstr "sistem bilgisi"
+
+#. Tag: para
+#: index.docbook:35
+#, no-c-format
+msgid ""
+"This page displays information about Small Computer Systems Interface "
+"(<acronym>SCSI</acronym>) Interfaces and the attached <acronym>SCSI</"
+"acronym> devices."
+msgstr ""
+"Bu sayfa Small Computer Systems Interface (<acronym>SCSI</acronym>) (Küçük "
+"Bilgisayar Sistemleri Arayüzü) Arayüzleri ve takılı <acronym>SCSI</acronym> "
+"aygıtları hakkında bilgi verir."
+
+#. Tag: para
+#: index.docbook:39
+#, no-c-format
+msgid ""
+"The exact information displayed is system-dependent. On some systems "
+"<acronym>SCSI</acronym> information cannot be displayed yet."
+msgstr ""
+"Gösterilen kesin bilgi sistemden sisteme göre değişir. Bazı sistemlerde  "
+"<acronym>SCSI</acronym> bilgisinin görüntülenmesi hala mümkün değildir."
+
+#. Tag: para
+#: index.docbook:43
+#, no-c-format
+msgid ""
+"On &Linux;, this information is read from <filename class=\"devicefile\">/"
+"proc/scsi/scsi</filename>, which is only available if the <filename class="
+"\"directory\">/proc</filename> pseudo-filesystem is compiled into the "
+"kernel. A listing of all <acronym>SCSI</acronym> devices known to the kernel "
+"is shown."
+msgstr ""
+"&Linux;'ta, bu bilgi <filename class=\"directory\">/proc</filename> pseudo-"
+"filesystem bölümü çekirdeğe, çekirdek derlenerek, eklenmişse, <filename "
+"class=\"devicefile\">/proc/scsi/scsi</filename> dosyasından alınır. Çekirdek "
+"tarafından tanınan tüm <acronym>SCSI</acronym> aygıtlarının listesi "
+"gösterilmiştir."
+
+#. Tag: para
+#: index.docbook:49
+#, no-c-format
+msgid ""
+"The devices are sorted numerically by their host, channel, and <acronym>ID</"
+"acronym> numbers."
+msgstr ""
+"Aygıtlar anabilgisayar, kanal, ve Tanımlayıcı (ID) numaralarına göre "
+"sıralanmıştır."
+
+#. Tag: para
+#: index.docbook:52
+#, no-c-format
+msgid "The user cannot modify any settings on this page."
+msgstr "Kullanıcılar bu sayfadaki ayarları değiştiremezler."

@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_rlogin\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2001-11-26 18:24GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "rlogin"
+msgstr "rlogin"
+
+#. Tag: personname
+#: index.docbook:12
+#, no-c-format
+msgid "<firstname>Christian</firstname><surname>Bunting</surname>"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:16
+#, no-c-format
+msgid ""
+"Using &konqueror; you can start up an <command>rlogin</command> session with "
+"a server hosting the rlogin service."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:19
+#, no-c-format
+msgid ""
+"To use this kioslave feature, in the &konqueror; <acronym>URL</acronym> bar, "
+"type <userinput>rlogin:/host_to_connect_to</userinput>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:23
+#, no-c-format
+msgid ""
+"This will initialize &konsole; with an <command>rlogin</command> session, "
+"prompting you for your password."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:26
+#, no-c-format
+msgid ""
+"The <command>rlogin</command> kioslave uses the username of the account you "
+"are currently using in &kde;."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:29
+#, no-c-format
+msgid ""
+"After you have successfully entered your password, you can begin your remote "
+"session."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:32
+#, no-c-format
+msgid "See the manual: <ulink url=\"man:/rlogin\">rlogin</ulink>."
+msgstr ""

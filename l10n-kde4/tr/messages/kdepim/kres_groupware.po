@@ -1,0 +1,104 @@
+# translation of kres_groupware.po to Turkish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kres_groupware\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-05-11 12:54+0200\n"
+"PO-Revision-Date: 2008-01-28 05:56+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kabc_resourcegroupwareconfig.cpp:68 kcal_resourcegroupwareconfig.cpp:47
+msgid "URL:"
+msgstr "Adres:"
+
+#: kabc_resourcegroupwareconfig.cpp:74 kcal_resourcegroupwareconfig.cpp:52
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: kabc_resourcegroupwareconfig.cpp:80 kcal_resourcegroupwareconfig.cpp:57
+msgid "Password:"
+msgstr "Parola:"
+
+#: kabc_resourcegroupwareconfig.cpp:92
+msgid "Retrieve Address Book List From Server"
+msgstr "Sunucudan Adres Defteri Listesini Al"
+
+#: kabc_resourcegroupwareconfig.cpp:96
+msgid "Address Book"
+msgstr "Adres Defteri"
+
+#: kabc_resourcegroupwareconfig.cpp:98
+msgid "Personal"
+msgstr "Kişisel"
+
+#: kabc_resourcegroupwareconfig.cpp:99
+msgid "Frequent Contacts"
+msgstr "Sık İletişim Kurulan Kişiler"
+
+#: kabc_resourcegroupwareconfig.cpp:105
+msgid "Address book for new contacts:"
+msgstr "Yeni kişiler için adres defteri:"
+
+#: kabc_resourcegroupware.cpp:258
+msgid "Downloading addressbook"
+msgstr "Adres defteri indiriliyor"
+
+#: kcal_resourcegroupware.cpp:164
+msgid "Downloading calendar"
+msgstr "Takvim indiriliyor"
+
+#: kcal_resourcegroupware.cpp:189
+msgid "Error parsing calendar data."
+msgstr "Takvim verisi ayrıştırılırken hata oluştu."
+
+#: kcal_resourcegroupware.cpp:279
+msgid "Added"
+msgstr "Eklendi"
+
+#: kcal_resourcegroupware.cpp:280
+msgid "Changed"
+msgstr "Değiştirildi"
+
+#: kcal_resourcegroupware.cpp:281
+msgid "Deleted"
+msgstr "Silindi"
+
+#. i18n: file: kresources_kabc_groupware.kcfg:9
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: kresources_kcal_groupware.kcfg:9
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:3 rc.cpp:12
+msgid "Server URL"
+msgstr "Sunucu Adresi"
+
+#. i18n: file: kresources_kabc_groupware.kcfg:12
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: kresources_kcal_groupware.kcfg:12
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:6 rc.cpp:15
+msgid "User Name"
+msgstr "Kullanıcı Adı"
+
+#. i18n: file: kresources_kabc_groupware.kcfg:15
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: kresources_kcal_groupware.kcfg:15
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:9 rc.cpp:18
+msgid "Password"
+msgstr "Parola"
+
+#. i18n: file: kresources_kcal_groupware.kcfg:18
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:21
+msgid "TCP Port"
+msgstr "TCP Portu"

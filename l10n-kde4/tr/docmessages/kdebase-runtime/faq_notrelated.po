@@ -1,0 +1,414 @@
+# translation of faq_notrelated.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_notrelated\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-04 16:32+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: notrelated.docbook:10
+#, no-c-format
+msgid "Not really &kde;-related, but frequently asked nevertheless."
+msgstr "Gerçekte pek &kde; ile ilgili değil ama yine de çokça sorulan sorular."
+
+#. Tag: para
+#: notrelated.docbook:15
+#, no-c-format
+msgid "How do I change the screen resolution?"
+msgstr "Ekran çözünürlüğünü nasıl değiştirebilirim?"
+
+#. Tag: para
+#: notrelated.docbook:18
+#, no-c-format
+msgid ""
+"Use <keycombo action=\"simul\">&Ctrl;&Alt;<keycap>+</keycap></keycombo> and "
+"<keycombo action=\"simul\">&Ctrl;&Alt;<keycap>-</keycap></keycombo> to cycle "
+"through the resolutions you have defined in <filename>XF86Config</filename> "
+"(maybe under <filename class=\"directory\">/etc/X11</filename>; poke around "
+"first). If you prefer to get your hands dirty, you can always edit the file "
+"directly. By placing your favorite resolution at the beginning (or making it "
+"the only one listed), &X-Window; will always start up with that resolution."
+msgstr ""
+"<filename>XF86Config</filename> (tahminen <filename class=\"directory\">/etc/"
+"X11</filename>; klasöründedir) dosyasında belirtilen çözünürlükler arasında "
+"dolaşmak için <keycombo action=\"simul\">&Ctrl;&Alt; <keycap>+</keycap></"
+"keycombo> ve <keycombo action=\"simul\">&Ctrl;&Alt; <keycap>-</keycap></"
+"keycombo> tuş kombinasyonlarını kullanın. Eğer uğraşmak istiyorsanız bu "
+"dosyayı doğrudan düzenleyebilirsiniz. İstediğiniz çözünürlüğü en başa "
+"yazarak (ya da listede sadece onu bırakarak), &X-Window; sunucusunun hep bu "
+"çözünürlükte başlamasını sağlayabilirsiniz."
+
+#. Tag: para
+#: notrelated.docbook:27
+#, no-c-format
+msgid ""
+"Always make a backup copy of your <filename>XF86Config</filename> file "
+"<emphasis>before</emphasis> you start editing it. Errors in this file can "
+"render &X-Window; unusable."
+msgstr ""
+"<filename>XF86Config</filename> dosyasını düzenlemeden <emphasis>önce </"
+"emphasis> mutlaka bu dosyanın bir yedeğini alın. Yapılan herhangi bir hata, "
+"düzeltilene kadar, &X-Window; sunucusunun çalışmasını engelleyebilir."
+
+#. Tag: para
+#: notrelated.docbook:30
+#, no-c-format
+msgid ""
+"These instructions are only valid if you are running version 3.3.x of the "
+"XFree86 server. If you are running XFree86 4.x, you must consult with the "
+"<ulink url=\"http://xfree.org\">XFree86(TM): Home Page</ulink>."
+msgstr ""
+"Bu anlatılanlar sadece XFree86 sunucusunun 3.3.x sürümünü kullanıyorsanız "
+"geçerlidir. XFree86 4.x kullanıyorsanız <ulink url=\"http://xfree.org\"> "
+"XFree86(TM): Ana Sayfa</ulink> adresinden bilgi almanız gerekir."
+
+#. Tag: para
+#: notrelated.docbook:39
+#, no-c-format
+msgid "How do I change the color depth?"
+msgstr "Renk derinliğini nasıl değiştirebilirim?"
+
+#. Tag: para
+#: notrelated.docbook:42
+#, no-c-format
+msgid ""
+"There is no way you can do this on the fly. You can either start &X-Window; "
+"using <command>startx <option> -bpp <replaceable>number</replaceable></"
+"option></command> where <replaceable>number</replaceable> can be 8, 16, 24 "
+"or 32, depending on the depth you want. Alternatively, if you are using "
+"<application>xdm</application>/&kdm;, you need to edit <filename>/etc/X11/"
+"xdm/Xservers</filename> (may vary) and enter <userinput>:0 local /usr/X11R6/"
+"bin/X -bpp 16</userinput> for 16 bit color depth."
+msgstr ""
+"Bunu yapmak için &X-Window; sunucusunu <command>startx <option> -bpp "
+"<replaceable>sayı</replaceable></option></command> seçeneği ile "
+"çalıştırmanız gerekir. <replaceable>sayı</replaceable> seçeneği isteğinize "
+"bağlı olarak 8, 16, 24 ya da 32 olabilir. Başka bir yol olarak da, "
+"<application>xdm</application>/&kdm;'yi kullanıyorsanız,<filename>/etc/X11/"
+"xdm/Xservers</filename> dosyasını (değişebilir) düzenleyin ve 16 bit renk "
+"derinliği için <userinput>:0 local /usr/X11R6/bin/X -bpp 16 </userinput> "
+"değerini girin."
+
+#. Tag: para
+#: notrelated.docbook:52
+#, no-c-format
+msgid ""
+"You can also edit the <filename>XF86Config</filename> file and add a line "
+"like <userinput>DefaultColorDepth <replaceable>number</replaceable></"
+"userinput> to Section \"Screen\". The next time you start X, it will run "
+"with the newly-configured color depth."
+msgstr ""
+"Ayrıca <filename>XF86Config</filename> dosyasındaki \"Screen\" bölümüne "
+"<userinput>DefaultColorDepth <replaceable>sayı</replaceable></userinput> "
+"değerini de girebilirsiniz.X sunucusunu başlattığınız bir dahaki seferde "
+"yeni ayarlanmış renk derinliğini kullanıyor olacaksınız."
+
+#. Tag: para
+#: notrelated.docbook:62
+#, no-c-format
+msgid "What can I do if I am using a 2-button mouse?"
+msgstr "Eğer 2-tuşlu fare kullanıyorsam ne yapabilirim?"
+
+#. Tag: para
+#: notrelated.docbook:65
+#, no-c-format
+msgid ""
+"Go buy a 3-button one, or use third button emulation. The third button is "
+"emulated by pressing both the &LMB; and the &RMB; together. You would need "
+"to enable <option>Emulate3Buttons</option> in your <filename>XF86Config</"
+"filename> file."
+msgstr ""
+"Yeni bir 3-tuşlu fare alın ya da üçüncü tuş emülasyonunu kullanın. Üçüncü "
+"tuş, sol ve sağ fare tuşlarına aynı anda basılmasıyla emüle edilir.Bunun "
+"için <filename>XF86Config</filename> dosyasındaki <option>Emulate3Buttons</"
+"option> seçeneğini aktif duruma getirmeniz gerekmektedir."
+
+#. Tag: para
+#: notrelated.docbook:74
+#, no-c-format
+msgid "What is a \"sticky\" window?"
+msgstr "\"Yapışkan\" pencere nedir?"
+
+#. Tag: para
+#: notrelated.docbook:77
+#, no-c-format
+msgid ""
+"In a virtual desktop environment with multiple virtual desktops, a \"sticky"
+"\" window will stay put on the screen when you switch between desktops, as "
+"if sticking to the glass of the screen. <application>Xclock</application> is "
+"a typical candidate for sticking, as you need to run only one instance of "
+"it, and it always stays with you."
+msgstr ""
+"Birden çok sanal masaüstü çalıştıran bir masaüstü ortamında, bir uygulamayı "
+"\"yapışkan\" hale getirmek, sanal masaüstleri arasında dolaşırken o "
+"uygulamanın her sanal masaüstünde görünmesini sağlar,  sanki monitörün "
+"camına yağışmış gibi.. <application>Xclock</application> uygulaması bunun "
+"tipik bir örneğidir."
+
+#. Tag: para
+#: notrelated.docbook:89
+#, no-c-format
+msgid "How do I extract/install diff files?"
+msgstr "diff dosyalarını nasıl açabilirim/yükleyebilirim?"
+
+#. Tag: para
+#: notrelated.docbook:92
+#, no-c-format
+msgid ""
+"To generate a context-diff suitable for patching, use <command>diff -u "
+"<replaceable>old-file new-file</replaceable> &gt; <replaceable>patchfile</"
+"replaceable></command>. To apply the diff to a file (<abbrev>i.e.</abbrev> "
+"\"patch the file\"), execute <command>patch &lt; <replaceable>patchfile</"
+"replaceable></command>."
+msgstr ""
+"Yamalama için diff dosyaları oluşturmak için <command>diff -u "
+"<replaceable>eski-dosya yeni-dosya</replaceable> &gt; "
+"<replaceable>yamadosyası</replaceable></command> komutunu kullanın. diff'i "
+"bir dosyaya uygulamak (ör: \"dosyayı yamalamak için\") için <command>patch "
+"&lt; <replaceable>patchfile</replaceable></command> komutunu çalıştırın."
+
+#. Tag: para
+#: notrelated.docbook:102
+#, no-c-format
+msgid ""
+"How do I get &Linux; to mount the floppy device for use with both DOS and "
+"ext2 formatted floppies?"
+msgstr ""
+"&Linux;'un hem DOS hem de ext2 biçimli disketleri okuması için disket "
+"sürücüyü nasıl bağlayabilirim?"
+
+#. Tag: para
+#: notrelated.docbook:106
+#, no-c-format
+msgid ""
+"Just specify the filesystem type as auto in <filename>/etc/fstab</filename>. "
+"Auto detection works fine for DOS and ext2."
+msgstr ""
+"<filename>/etc/fstab</filename> dosyasında filesystem (dosya sistemi) türünü "
+"auto (otomatik) olarak tanımlayın. Otomatik algılama DOS ve ext2 için gayet "
+"iyi çalışır."
+
+#. Tag: para
+#: notrelated.docbook:114
+#, no-c-format
+msgid "How do I start &kde; with the <keycap>Num Lock</keycap> on?"
+msgstr "&kde;'yi <keycap>Num Lock</keycap> açık olarak nasıl başlatabilirim?"
+
+#. Tag: para
+#: notrelated.docbook:117
+#, no-c-format
+msgid ""
+"Open the &kcontrolcenter; and navigate to <guimenu>Peripherals</"
+"guimenu><guimenuitem>Keyboard</guimenuitem>. Under the section "
+"<guilabel>NumLock on &kde; Startup</guilabel> move the radio button to "
+"select <guilabel>Turn on</guilabel>"
+msgstr ""
+
+#. Tag: para
+#: notrelated.docbook:123
+#, no-c-format
+msgid "How do I take window or desktop screenshots?"
+msgstr "Pencere veya masaüstü resimlerini nasıl çekebilirim?"
+
+#. Tag: para
+#: notrelated.docbook:126
+#, no-c-format
+msgid "Use &ksnapshot;."
+msgstr "&ksnapshot; uygulamasını kullanın."
+
+#. Tag: para
+#: notrelated.docbook:132
+#, no-c-format
+msgid "Is there a tool to make webpages?"
+msgstr "Web sayfaları yaratmak için bir araç var mı?"
+
+#. Tag: para
+#: notrelated.docbook:135
+#, no-c-format
+msgid ""
+"Yes, and there are a lot of them out there, including "
+"<application>StarOffice</application>, <application>&Netscape; Composer</"
+"application>, and <application>XEmacs</application>. There are also many "
+"&kde; applications. To find the most current list, go to <ulink url=\"http://"
+"kde-apps.org\">kde-apps.org: The Latest in &kde; Applications</ulink> and "
+"search for <emphasis>web development</emphasis>. Try as many as possible and "
+"choose the one most suitable to your needs."
+msgstr ""
+"Evet, ve bunlardan çokça vardır, bazıları <application>StarOffice</"
+"application>, <application>&Netscape; Composer</application>, ve "
+"<application>XEmacs </application> gibi uygulamalardır. Daha bir çok &kde; "
+"uygulaması da vardır. En güncel listeyi bulmak için <ulink url=\"http://apps."
+"kde.com\">APPS.&kde;.com: En Güncel &kde; Uygulamaları</ulink> adresine "
+"gidin ve <emphasis>(web development (web geliştirme)</emphasis> araçları "
+"için arama yapın.Size en uygun olan uygulamayı birçok uygulama arasından "
+"seçebilirsiniz."
+
+#. Tag: para
+#: notrelated.docbook:148
+#, no-c-format
+msgid "What do all those acronyms like AFAIK mean?"
+msgstr "AFAIK gibi kısaltmalar ne anlama geliyor?"
+
+#. Tag: screen
+#: notrelated.docbook:151
+#, no-c-format
+msgid ""
+"AAMOF: as a matter of fact\n"
+"AFAIK: as far as I know\n"
+"AISE: as I see it\n"
+"BFN: bye for now\n"
+"BION: believe it or not\n"
+"BRB: be right back\n"
+"BTW: by the way\n"
+"CMIIW: correct me if I am wrong\n"
+"FUD: fear, uncertainty, and doubt\n"
+"FWIW: for what it's worth\n"
+"FYI: for your information\n"
+"HTH: hope this helps\n"
+"IIRC: if I recall correctly\n"
+"IMHO: in my humble opinion\n"
+"LOL: laughing out loud\n"
+"MYOB: mind your own business\n"
+"PITA: pain in the ass\n"
+"ROTFL: rolling on the floor laughing\n"
+"RTFM: read the fine manual\n"
+"SOP: standard operating procedure\n"
+"TIA: thanks in advance\n"
+"YMMV: your mileage may vary"
+msgstr ""
+"AAMOF: as a matter of fact - gerçeğin bir parçası\n"
+"AFAIK: as far as I know - bildiğim kadarıyla\n"
+"AISE: as I see it\n"
+"BFN: bye for now - şimdilik güle güle\n"
+"BION: believe it or not - ister inan ister inanma\n"
+"BRB: be right back\n"
+"BTW: by the way\n"
+"CMIIW: correct me if I am wrong - hatalıysam düzelt\n"
+"FUD: fear, uncertainty, and doubt\n"
+"FWIW: for what it's worth\n"
+"FYI: for your information - bilginize\n"
+"HTH: hope this helps - umarım işe yarar\n"
+"IIRC: if I recall correctly - doğru hatırlıyorsam\n"
+"IMHO: in my humble opinion\n"
+"LOL: laughing out loud\n"
+"MYOB: mind your own business\n"
+"PITA: pain in the ass\n"
+"ROTFL: rolling on the floor laughing\n"
+"RTFM: read the fine manual\n"
+"SOP: standard operating procedure - standart işleme prosedürü\n"
+"TIA: thanks in advance - şimdiden teşekkürler\n"
+"YMMV: your mileage may vary"
+
+#~ msgid "How do I replace the \"X\" mouse pointer with an arrow?"
+#~ msgstr "\"X\" fare imlecini bir ok ile nasıl değiştirebilirim?"
+
+#~ msgid ""
+#~ "The various types of cursor available in X are defined in <filename class="
+#~ "\"headerfile\">X11/cursorfont.h</filename>. You can change it using "
+#~ "<command>xsetroot -cursor_name <replaceable>name_of_cursor</replaceable></"
+#~ "command>. For example, I have the following in my <filename>.Xclients</"
+#~ "filename>:"
+#~ msgstr ""
+#~ "X için mümkün olan imleçler <filename class=\"headerfile\">X11/cursorfont."
+#~ "h </filename> dosyasında tanımlıdır. Bunu <command>xsetroot -cursor_name "
+#~ "<replaceable>imlecin_adı</replaceable></command> satırıyla değiştirin. "
+#~ "Örneğin, <filename>.Xclients</filename> dosyamda bu var:"
+
+#~ msgid "xsetroot -cursor_name left_ptr"
+#~ msgstr "xsetroot -cursor_name left_ptr"
+
+#~ msgid ""
+#~ "This will create the common left-angled pointer. To see other "
+#~ "alternatives, type <command>xfd -fn cursor</command>. And of course, do "
+#~ "not forget that <command>man xsetroot</command> is your friend."
+#~ msgstr ""
+#~ "Bu komut genel sol-açılı imleci gösterir. Diğer seçenekleri görmek için "
+#~ "<command>xfd -fn cursor</command> komutunu girin. Tabii ki unutmayın, "
+#~ "<command>man xsetroot</command> sizin arkadaşınızdır."
+
+#~ msgid ""
+#~ "Have you tried <command>man setleds</command>? In addition, you might "
+#~ "want to edit your <filename>$<envar>HOME</envar>/.Xmodmap</filename> and "
+#~ "put the following lines in:"
+#~ msgstr ""
+#~ "<command>man setleds</command>'i denediniz mi? Ayrıca, <filename>"
+#~ "$<envar>HOME</envar>/.Xmodmap</filename> dosyanızı düzenleyip takip eden "
+#~ "satırları eklemek isteyebilirsiniz:"
+
+#~ msgid ""
+#~ "! redefines numeric keypad to be used without NumLock\n"
+#~ "keycode 79 = 7\n"
+#~ "keycode 80 = 8\n"
+#~ "keycode 81 = 9\n"
+#~ "\n"
+#~ "keycode 83 = 4\n"
+#~ "keycode 84 = 5\n"
+#~ "keycode 85 = 6\n"
+#~ "\n"
+#~ "keycode 87 = 1\n"
+#~ "keycode 88 = 2\n"
+#~ "keycode 89 = 3\n"
+#~ "\n"
+#~ "keycode 90 = 0\n"
+#~ "keycode 91 = comma\n"
+#~ "keycode 86 = plus\n"
+#~ "\n"
+#~ "! deactivates NumLock key\n"
+#~ "keycode 77 ="
+#~ msgstr ""
+#~ "! klavyenin NumLock olmadan çalışması için yeniden düzenler\n"
+#~ "keycode 79 = 7\n"
+#~ "keycode 80 = 8\n"
+#~ "keycode 81 = 9\n"
+#~ "\n"
+#~ "keycode 83 = 4\n"
+#~ "keycode 84 = 5\n"
+#~ "keycode 85 = 6\n"
+#~ "\n"
+#~ "keycode 87 = 1\n"
+#~ "keycode 88 = 2\n"
+#~ "keycode 89 = 3\n"
+#~ "\n"
+#~ "keycode 90 = 0\n"
+#~ "keycode 91 = comma\n"
+#~ "keycode 86 = plus\n"
+#~ "\n"
+#~ "! NumLock tuşunu kapatır\n"
+#~ "keycode 77 ="
+
+#~ msgid "Other possible alternatives:"
+#~ msgstr "Başka yollar:"
+
+#~ msgid ""
+#~ "<application>xkeycaps</application>: <mousebutton>right</mousebutton> "
+#~ "clicking should allow edits. You may have to do this as root."
+#~ msgstr ""
+#~ "<application>xkeycaps</application>: <mousebutton>sağ</mousebutton> "
+#~ "tıklaması düzenlemeyi sağlayabilir. root kullanıcısı olmanız gerekebilir."
+
+#~ msgid "<command>man XF86Config</command> and look under section Keyboard."
+#~ msgstr ""
+#~ "<command>man XF86Config</command> komutunu girin ve Keyboard (Klavye) "
+#~ "bölümü altındaki bilgilere bakın."
+
+#~ msgid ""
+#~ "Install <application>NumLockX</application>, which is available from "
+#~ "<ulink url=\"http://dforce.sh.cvut.cz/~seli/en/numlockx\">http://dforce."
+#~ "sh.cvut.cz/~seli/en/numlockx</ulink>."
+#~ msgstr ""
+#~ "<application>NumLockX</application> uygulamasını kurun, <ulink url="
+#~ "\"http://dforce.sh.cvut.cz/~seli/en/numlockx\">http://dforce.sh.cvut.cz/"
+#~ "~seli/en/numlockx</ulink> adresinde mevcuttur."

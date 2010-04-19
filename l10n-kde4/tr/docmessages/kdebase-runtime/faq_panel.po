@@ -1,0 +1,316 @@
+# translation of faq_panel.po to
+# translation of khelpcenter_faq_panel.po to
+# Copyright (C) 2003, 2006, 2008 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_panel\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2008-12-06 11:25+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: panel.docbook:9
+#, no-c-format
+msgid "The panel"
+msgstr "Panel"
+
+#. Tag: para
+#: panel.docbook:15
+#, no-c-format
+msgid "How do I add applications to the &kde; panel (&kicker;)?"
+msgstr "&kde; paneline (&kicker;) bir uygulamayı nasıl eklerim?"
+
+#. Tag: para
+#: panel.docbook:18
+#, no-c-format
+msgid ""
+"There are several ways to add an application to the panel, of which the "
+"easiest is to right-click on the panel, and from the context menu which "
+"appears, select <menuchoice><guimenu>Panel Menu</guimenu><guisubmenu>Add to "
+"Panel</guisubmenu><guisubmenu>Application Button</guisubmenu></menuchoice> "
+"and then the application for which you want to add a link."
+msgstr ""
+"Panele bir uygulama eklemenin bir çok yöntemi vardır. Bunlardan en kolayı, "
+"panele sağ tıklayarak menüden <menuchoice><guimenu>Panel Menüsü</"
+"guimenu><guisubmenu>Ekle</guisubmenu><guisubmenu>Uygulama Düğmesi</"
+"guisubmenu></menuchoice> alt menüsünü seçmek ve daha sonra bağlantısı "
+"eklemek istediğiniz uygulamanın üzerine tıklamak."
+
+#. Tag: para
+#: panel.docbook:24
+#, no-c-format
+msgid ""
+"For more ways of adding buttons to the panel, refer to the &kicker; Handbook."
+msgstr ""
+"Panele daha fazla düğmenin nasıl eklendiğini öğrenmek için &kicker; el "
+"kitabını okumanızı tavsiye ediyoruz."
+
+#. Tag: para
+#: panel.docbook:33
+#, no-c-format
+msgid ""
+"Is it possible to change the <guibutton>K</guibutton> button of the panel to "
+"another picture?"
+msgstr ""
+"Paneldeki <guibutton>K</guibutton> düğmesini başka bir resime dönüştürme "
+"imkanımız var mı ?"
+
+#. Tag: para
+#: panel.docbook:37
+#, no-c-format
+msgid ""
+"The simplest way is to download a new icon theme with a &kmenu; icon you "
+"prefer from <ulink url=\"http://www.kde-look.org\">http://www.kde-look.org</"
+"ulink> and install it using the &kcontrolcenter;."
+msgstr ""
+"Bunun en kolay yolu &kmenu; ile yeni bir simge teması indirmektir. <ulink "
+"url=\"http://www.kde-look.org\">http://www.kde-look.org</ulink> adresinden "
+"tercih ettiğiniz simgeyi indirin ve &kcontrolcenter; ı kullanarak kurun."
+
+#. Tag: para
+#: panel.docbook:41
+#, fuzzy, no-c-format
+msgid ""
+"In order to change only the &kmenu; icon you can overwrite the "
+"<filename>kmenu.png</filename> image for every size in an icon theme set. "
+"So, for &kde; default icons this would be <filename>$<envar>KDEDIR</envar>/"
+"share/icons/default.kde/<replaceable>size</replaceable>/apps/kmenu.png</"
+"filename>, where <replaceable>size</replaceable> is one of the sizes "
+"included in the &kde; icon theme. To see your new icon, either log out of "
+"&kde; and back in again, or run the command <command>dcop</"
+"command><option>kicker kicker restart</option> to restart the panel."
+msgstr ""
+"Sadece &kmenu; simgesini değiştirmek için simge teması setindeki her boyut "
+"için <filename>kmenu.png</filename> dosyasını değiştirebilirsiniz . &kde; "
+"nin öntanımlı simgeleri için bu dosya  <filename>$<envar>KDEDIR</envar>/"
+"share/icons/default.kde/<replaceable>size</replaceable>/apps/kmenu.png</"
+"filename> olacaktır. Buradaki <replaceable>size</replaceable> &kde; deki "
+"simge temasındaki boyutlardan biridir."
+
+#. Tag: para
+#: panel.docbook:52
+#, no-c-format
+msgid ""
+"After an upgrade my &kmenu; appears to be empty! How can I get my menu back?"
+msgstr ""
+"Güncellemeden sonra &kmenu; boş olarak gözüküyor. Eski haline nasıl "
+"getirebilirim ?"
+
+#. Tag: para
+#: panel.docbook:57
+#, fuzzy, no-c-format
+msgid ""
+"In &kde; 3.2 and later local modifications to the &kmenu; are stored in "
+"<filename>$<envar>HOME</envar>/.config/menus/applications-kmenuedit.menu </"
+"filename>. Try moving this file out of the way and then issuing the command "
+"<userinput><command>kbuildsycoca4</command> <option>--noincremental</"
+"option></userinput>. This should restore you to the default system menus."
+msgstr ""
+"&kde; 3.2 ve sonrasındaki sürümlerde &kmenu; ye yapılan değişiklikler "
+"<filename>$<envar>HOME</envar>/.config/menus/applications-kmenuedit.menu </"
+"filename> dosyasında tutulur. Bu dosyayı ortadan kaldırın ve konsoldan "
+"<userinput><command>kbuildsycoca</command> <option>--noincremental</option></"
+"userinput> komutunu verin. Bu işlem ön tanımlı sistem menülerini kullanıma "
+"sunacaktır."
+
+#. Tag: para
+#: panel.docbook:70
+#, no-c-format
+msgid "My desktop panel has disappeared. How can I get it back?"
+msgstr "Masa üstü panelim kayboldu. Nasıl geri getirebilirim ?"
+
+#. Tag: para
+#: panel.docbook:76
+#, no-c-format
+msgid ""
+"The panel disappearing is usually due to it crashing. This is most often "
+"caused by loading an applet that has a fatal bug or due to a bad "
+"installation of &kde; and/or the panel."
+msgstr ""
+"Panelin ortadan kaybolması genellikle çökmeden kaynaklanır. Bunun da sebebi "
+"sonlandırıcı bir hata içeren bir uygulama veya &kde; nin veya panelin yanlış "
+"yüklenmesinden kaynaklanır."
+
+#. Tag: para
+#: panel.docbook:80
+#, no-c-format
+msgid ""
+"The easiest way to get the panel back is to launch the <guilabel>Run "
+"Command</guilabel> window by pressing <keycombo action=\"simul\">&Alt;"
+"<keycap>F2</keycap> </keycombo> and entering <userinput><command>kicker</"
+"command></userinput> and then pressing the <guibutton>OK</guibutton> button."
+msgstr ""
+"Paneli geri getirmenin en kolay yolu <keycombo action=\"simul\">&Alt;"
+"<keycap>F2</keycap> </keycombo> tuşuna basarak açılan pencerede "
+"<guilabel>Run Command</guilabel> ı çalıştırmak ve "
+"<userinput><command>kicker</command></userinput> komutunu girerek "
+"<guibutton>OK</guibutton> tuşuna basmaktır."
+
+#. Tag: para
+#: panel.docbook:86
+#, no-c-format
+msgid ""
+"If the panel continues to disappear, you may wish to either remove or edit "
+"by hand your <filename>$<envar>KDEHOME</envar>/share/config/kickerrc</"
+"filename> file, where <filename class=\"directory\">$<envar>KDEHOME</envar></"
+"filename> is usually <filename class=\"directory\">~/.kde</filename>. If you "
+"choose to edit it by hand, start by removing the applet entry groups."
+msgstr ""
+"Panel kaybolmaya devam ederse kaldırmayı veya<filename>$<envar>KDEHOME</"
+"envar>/share/config/kickerrc</filename> dosyasını elle düzenlemeyi "
+"düşünebilirsiniz. <filename class=\"directory\">$<envar>KDEHOME</envar></"
+"filename> genellikle <filename class=\"directory\">~/.kde</filename> "
+"dizininin altındadır."
+
+#. Tag: para
+#: panel.docbook:98
+#, no-c-format
+msgid "Where did the Icon Zooming option that used to be in &kicker; go?"
+msgstr "&kicker; daki Simge Yakınlaştırma seçeneği nereye gitti ?"
+
+#. Tag: para
+#: panel.docbook:100
+#, no-c-format
+msgid ""
+"Icon zooming was not actively maintained and had caused severe bugs and "
+"usability issues. It was replaced in &kde; 3.4 by the new mouse over "
+"effects, which combine esthetics with useful information."
+msgstr ""
+"Simge yakınlaştırma seçeneği ciddi hatalara sebep olduğundan ve kullanım "
+"sorunlarından ötürü artık kullanılmıyor. &kde; 3.4 de estetiği faydalı "
+"bilgilerle birleştiren yeni fare efektleri ile değiştirildi"
+
+#. Tag: para
+#: panel.docbook:107
+#, no-c-format
+msgid "How can I start an application minimized to the system tray?"
+msgstr ""
+"Sistem çekmecesinde simge durumuna küçültülmüş bir uygulamayı nasıl "
+"başlatabilirim?"
+
+#. Tag: para
+#: panel.docbook:111
+#, no-c-format
+msgid ""
+"Use <command>ksystraycmd</command>. For example, to start a &konsole; hidden "
+"in the system tray, run <userinput><command>ksystraycmd </command> <option>--"
+"hidden</option> <command>konsole</command></userinput>. For more information "
+"about <command>ksystraycmd</command>, see the section <quote>Advanced Window "
+"Management</quote> in the &kde; User Guide."
+msgstr ""
+"<command>ksystraycmd</command> komutunu kullanın. Örneğin sistem "
+"çekmecesinde gizlenmiş bir &konsole; uygulamasını başlatmak için "
+"<userinput><command>ksystraycmd </command> <option>--hidden</option> "
+"<command>konsole</command></userinput> komutunu çalıştırın. Daha fazla bilgi "
+"için  &kde; kullanım kılavuzunda <quote>Advanced Window Management</quote> "
+"bölümüne bakınız."
+
+#. Tag: para
+#: panel.docbook:121
+#, no-c-format
+msgid "How do I use the &Windows; key to open the &kmenu;?"
+msgstr "&kmenu; yü açmak için &Windows; u nasıl kullanırım ?"
+
+#. Tag: para
+#: panel.docbook:124
+#, no-c-format
+msgid ""
+"Previous versions of &kde; provided a trick to allow you to use the "
+"&Windows; key both as a modifier (so you could have shortcuts like <keycombo "
+"action=\"simul\"><keysym>Win</keysym><keycap>R</keycap> </keycombo>), and as "
+"a regular key (so that pressing <keysym>Win</keysym> on its own could open "
+"the &kmenu;). This feature was removed for reasons of usability and "
+"accessibility, as well as keeping the code clean. For current versions of "
+"&kde;, you have two options: either use a different shortcut to open the "
+"&kmenu; (the default is <keycombo action=\"simul\">&Alt;<keycap>F1</keycap> "
+"</keycombo>), or remap the <keysym>Win</keysym> key to be a regular key, "
+"rather than a modifier."
+msgstr ""
+"&kde; nin önceki sürümlerinde &Windows; tuşu hem <keycombo action=\"simul"
+"\"><keysym>Win</keysym><keycap>R</keycap> </keycombo> gibi kısayollar "
+"tanımlamaya hem de &kmenu; yü açmaya (<keysym>Win</keysym> tuşuna basarak) "
+"yarıyordu. Bu özellik kullanım ve erişim ile ilgili sebeplerden ötürü "
+"çıkarıldı. &kde; nin şimdiki sürümlerinde iki seçenek sunuluyor. &kmenu; yü "
+"açmak için farklı bir kısayol tuşu kullanmak (ön tanımlı tuş <keycombo "
+"action=\"simul\">&Alt;<keycap>F1</keycap> </keycombo> dir.) ya da "
+"<keysym>Win</keysym> tuşunu sıradan bir tuş olarak tanımlamak."
+
+#. Tag: para
+#: panel.docbook:136
+#, no-c-format
+msgid "If you choose to do the second, here's one way:"
+msgstr "Eğer ikincisini seçerseniz bunu şöyle yapabilirsiniz:"
+
+#. Tag: para
+#: panel.docbook:139
+#, no-c-format
+msgid ""
+"Find the keycode for your <keysym>Win</keysym> key using <command>xev</"
+"command>: Run the command <userinput><command>xev</command></userinput> in a "
+"&konsole;, and press the <keysym>Win</keysym> key. Look in the output of "
+"<command>xev</command> for <computeroutput>keycode <replaceable>n</"
+"replaceable></computeroutput>, where <replaceable>n</replaceable> is the "
+"keycode of the <keysym>Win</keysym> key."
+msgstr ""
+"<command>xev</command> komutunu kullanarak <keysym>Win</keysym> tuşunuzun "
+"tuş kodunu bulabilirsiniz. &konsole; da <userinput><command>xev</command></"
+"userinput> komutunu verip <keysym>Win</keysym> tuşuna basın. "
+"<computeroutput>keycode <replaceable>n</replaceable></computeroutput> "
+"çıktısındaki <replaceable>n</replaceable> rakamı <keysym>Win</keysym> "
+"tuşunun tuş kodudur."
+
+#. Tag: para
+#: panel.docbook:149
+#, no-c-format
+msgid ""
+"Use <command>xmodmap</command> to remap the <keysym>Win</keysym> key. An "
+"appropriate command is <userinput><command>xmodmap <option>-e</option> "
+"'keycode <replaceable>n</replaceable>=Menu'</command></userinput>."
+msgstr ""
+"<keysym>Win</keysym> tuşunu tekrar tanımlamak için <command>xmodmap</"
+"command> komutunu kullanın. Uygun komut <userinput><command>xmodmap <option>-"
+"e</option> 'keycode <replaceable>n</replaceable>=Menu'</command></"
+"userinput>dır"
+
+#. Tag: para
+#: panel.docbook:155
+#, no-c-format
+msgid ""
+"In the &kcontrolcenter;, go to <menuchoice><guimenu>Regional &amp; "
+"Accessibility</guimenu><guimenuitem>Keyboard Shortcuts</guimenuitem> </"
+"menuchoice> and set the shortcut for <guilabel>Popup Launch Menu</guilabel> "
+"to the <keysym>Win</keysym> key. You should now be able to popup the &kmenu; "
+"by pressing the <keysym>Win</keysym> key."
+msgstr ""
+"&kcontrolcenter; da <menuchoice><guimenu>Bölgesel &amp; Erişilebilirlik</"
+"guimenu><guimenuitem>KlavyeKısayolları</guimenuitem> </menuchoice> na girin "
+"<guilabel>Popup Launch Menu</guilabel> yü <keysym>Win</keysym> tuşuna "
+"ayarlayın. Artık <keysym>Win</keysym> tuşuna basarak &kmenu; yü "
+"açabilirsiniz."
+
+#. Tag: para
+#: panel.docbook:163
+#, no-c-format
+msgid ""
+"One more step is required to save the changes across settings: Create a file "
+"<filename>~/.kde/env/win-key.sh</filename> (create the directory if it "
+"doesn't exist), and add the <command>xmodmap</command> command you used "
+"previously to it. The change should now be applied every time you start "
+"&kde;."
+msgstr ""
+"Ayarlamalardan sonra değişiklikleri kaydetmek için bir adımımız daha var. "
+"<filename>~/.kde/env/win-key.sh</filename> adında bir dosya oluşturun (eğer "
+"böyle bir dizin yoksa onu da oluşturun) daha önce kullandığınız "
+"<command>xmodmap</command> komutunu buraya ekleyin. Artık &kde; yi her "
+"açtığınızda değişiklik kendiliğinden uygulanacaktır."

@@ -1,0 +1,217 @@
+# translation of khelpcenter_support.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_support\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2004-01-11 17:50+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: chapterinfo
+#: support.docbook:2
+#, fuzzy, no-c-format
+#| msgid "<date>2002-03-04</date> <releaseinfo>2.02.00</releaseinfo>"
+msgid "<date>2009-05-09</date> <releaseinfo>4.00.00</releaseinfo>"
+msgstr "<date>2002-03-04</date> <releaseinfo>2.02.00</releaseinfo>"
+
+#. Tag: title
+#: support.docbook:6 support.docbook:10
+#, no-c-format
+msgid "Supporting &kde;"
+msgstr "&kde; Desteği"
+
+#. Tag: para
+#: support.docbook:12
+#, no-c-format
+msgid ""
+"If you are new to &kde;, the &kde; project might look like big machinery to "
+"you. Undoubtedly, &kde; is no longer a small project, nevertheless it is "
+"very important to realize that it is easy to <quote>make a difference</"
+"quote> in the &kde; world."
+msgstr ""
+"&kde;'ye yeniyseniz, &kde; projesi size karmaşık ve çok büyük bir sistem "
+"gibi gelebilir. Şüphesiz, &kde; küçük bir proje değildir, fakat &kde; "
+"dünyasında  <quote>değişiklik yaratmanın </quote> kolay bir şey olduğunun "
+"bilinmesi önemlidir."
+
+#. Tag: para
+#: support.docbook:17
+#, no-c-format
+msgid ""
+"There is always a need for dedicated developers, graphic artists, sound "
+"engineers, translators and documentation writers. Consider jumping aboard "
+"this exciting international project and make yourself a name in the software "
+"world."
+msgstr ""
+"&kde; projesinde her zaman ilgili ve becerili geliştiricilere, grafik "
+"sanatçılarına, ses mühendislerine, çevirmenlere ve belge yazarlarına ihtiyaç "
+"vardır. Bu heyecanlı uluslararası projede yer alıp isminizi yazılım "
+"dünyasında duyurmayı bir düşünün."
+
+#. Tag: para
+#: support.docbook:22
+#, no-c-format
+msgid ""
+"Along the way you will make countless friends and acquaintances all over the "
+"world. Also, the satisfaction that stems from doing actual hands-on work, "
+"that will benefit an uncountable number of users world-wide, and from seeing "
+"an unparalleled project grow, is hard to beat. Please consider joining and "
+"supporting &kde; and hop aboard this exciting journey towards a free and "
+"open alternative computing platform."
+msgstr ""
+"Ayrıca, dünya çapında sayısız arkadaşa ve birçok güzel deneyime sahip "
+"olacaksınız. Bu güç işin üstesinden dünya çapındaki sınırsız insan ile omuz "
+"omuza vererek gelmenin verdiği mutluluk ve bu büyük projenin gelişmesini "
+"görmek size tarifsiz bir mutluluk verecek. Lütfen bize katılmayı ve &kde;'ye "
+"destek vermeyi düşünün ve heyecan verici bir iş olan ücretsiz ve özgür bir "
+"bilgisayar platformunun gelişmesine yardım edin."
+
+#. Tag: title
+#: support.docbook:33
+#, no-c-format
+msgid "How to get started"
+msgstr "Nasıl başlamalı?"
+
+#. Tag: para
+#: support.docbook:37
+#, no-c-format
+msgid ""
+"Subscribe to the <link linkend=\"contact\">&kde; mailing lists</link> that "
+"interest you."
+msgstr ""
+"İlginizi çeken bir konuyu bulun ve herhangi bir <link linkend=\"contact"
+"\">&kde; e-posta listesine</link> üye olun."
+
+#. Tag: para
+#: support.docbook:42
+#, no-c-format
+msgid ""
+"Read the <ulink url=\"http://lists.kde.org\">mailing list</ulink> archives "
+"in order to get a feel for &kde; development."
+msgstr ""
+"&kde; geliştirme işlemlerinin nasıl yapıldığını öğrenmek için <ulink url="
+"\"http://lists.kde.org\">e-posta arşivlerine</ulink> göz atın."
+
+#. Tag: para
+#: support.docbook:47
+#, no-c-format
+msgid ""
+"Learn how to program using the &kde; application framework and join the "
+"friendly &kde; developers' community."
+msgstr ""
+"&kde; uygulama yapısının nasıl programlanacağını öğrenin ve arkadaşça olan "
+"&kde; geliştiriciler topluluğuna katılın."
+
+#. Tag: title
+#: support.docbook:57
+#, no-c-format
+msgid "Supporting financially"
+msgstr "Finansal olarak destekleme"
+
+#. Tag: para
+#: support.docbook:59
+#, no-c-format
+msgid ""
+"The &kde; team is working very hard on providing you with the best desktop "
+"available for the &UNIX; operating system. &kde; is available for free and "
+"will always be available for free, including each and every line of its "
+"source code, for everyone to modify and distribute. If you enjoy and use "
+"&kde; please consider supporting the &kde; Project financially. &kde; is in "
+"constant need of funds in order to finance its operations."
+msgstr ""
+"&kde; takımı size &UNIX; işletim sistemi için mevcut olan en iyi masaüstünü "
+"sağlamak için çok çalışmaktadır. &kde;, kaynak kodunun her satırında olduğu "
+"gibi ücretsizdir ve herkesin düzenlemesi ve dağıtması için ücretsiz "
+"olacaktır. Eğer &kde;'yi kullanmaktan memnunsanız lütfen &kde; Projesi'ni "
+"finansal olarak destekleyin. &kde; geliştirilmesini sürdürebilmek için sabit "
+"fonlara ihtiyaç duyar."
+
+#. Tag: para
+#: support.docbook:67
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If your busy schedule or skills do not permit you to be actively involved "
+#| "in &kde; development, please consider supporting &kde; financially by "
+#| "sending a donation to:"
+msgid ""
+"If your busy schedule or skills do not permit you to be actively involved in "
+"&kde; development, please consider supporting &kde; financially."
+msgstr ""
+"Eğer işiniz yoğun ya da herhangi bir sebepten dolayı geliştirmede aktif "
+"görev alamayacaksanız, lütfen &kde;'yi finansal olarak desteklemek için "
+"buraya bağış gönderin:"
+
+#. Tag: para
+#: support.docbook:71
+#, no-c-format
+msgid ""
+"There are three ways to make a payment to the &kde; project: PayPal, "
+"personal check, and money order. Please review <ulink url=\"http://www.kde."
+"org/support/support.php\"></ulink>."
+msgstr ""
+
+#. Tag: para
+#: support.docbook:77
+#, no-c-format
+msgid "Your contribution is very much appreciated. Thank you!"
+msgstr "Yardımınız için çok teşekkürler!"
+
+#~ msgid "You can send regular US checks to the following address:"
+#~ msgstr "Normal US çeklerini şu adrese gönderebilirisiniz:"
+
+#~ msgid ""
+#~ "K Desktop Environment e.V.\n"
+#~ "Mirko Boehm\n"
+#~ "2029 Chadds Ford Drive\n"
+#~ "Reston, VA 20191\n"
+#~ "USA"
+#~ msgstr ""
+#~ "K Desktop Environment e.V.\n"
+#~ "Mirko Boehm\n"
+#~ "2029 Chadds Ford Drive\n"
+#~ "Reston, VA 20191\n"
+#~ "USA"
+
+#~ msgid ""
+#~ "Use \"KDE e.V. - Mirko Boehm\" in the \"Pay to the order of...\" line."
+#~ msgstr ""
+#~ "\"Pay to the order of...\" satırında \"KDE e.V. - Mirko Boehm\"'i "
+#~ "kullanın."
+
+#~ msgid ""
+#~ "From Europe, you may remit your donation to (be aware of a fee if wiring "
+#~ "from outside of Germany):"
+#~ msgstr ""
+#~ "Avrupa'dan, bağışınızı buraya iletebilirsiniz (Almanya dışından "
+#~ "gönderilenlerden ücret alındığını unutmayın):"
+
+#~ msgid ""
+#~ "K Desktop Environment e.V.\n"
+#~ "Account-Nr. 0 66 64 46\n"
+#~ "BLZ 200 700 24\n"
+#~ "Deutsche Bank 24"
+#~ msgstr ""
+#~ "K Desktop Environment e.V.\n"
+#~ "Account-Nr. 0 66 64 46\n"
+#~ "BLZ 200 700 24\n"
+#~ "Deutsche Bank 24"
+
+#, fuzzy
+#~ msgid ""
+#~ "Please contact Mirko Boehm <email>kde-ev-treasurer@kde.org</email> if you "
+#~ "have any questions."
+#~ msgstr ""
+#~ "Sorularınız için Mirko Boehm <email>kde-ev-treasurer@kde.org</email> ile "
+#~ "iletişim kurunuz."
+
+#~ msgid "Supporting KDE"
+#~ msgstr "KDE Desteği"

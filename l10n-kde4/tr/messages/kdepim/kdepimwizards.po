@@ -1,0 +1,562 @@
+# Translation of kdepimwizards.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdepimwizards\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-22 06:28+0200\n"
+"PO-Revision-Date: 2009-08-14 12:22+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: groupwaremain.cpp:35
+msgid "KDE-PIM Groupware Configuration Wizard"
+msgstr "KDE-PIM Groupware Yapılandırma Sihirbazı"
+
+#: groupwaremain.cpp:39
+msgid "The server type"
+msgstr "Sunucu tipi"
+
+#: groupwarewizard.cpp:34 overviewpage.cpp:47
+msgid "KDE Groupware Wizard"
+msgstr "KDE Groupware Sihirbazı"
+
+#: groupwisemain.cpp:35
+msgid "Novell GroupWise Configuration Wizard"
+msgstr "Novell GroupWise Yapılandırma Sihirbazı"
+
+#: groupwisemain.cpp:40 kolabmain.cpp:39 sloxmain.cpp:39
+msgid "Verbose output"
+msgstr "Ayrıntılı çıktı"
+
+#: groupwisewizard.cpp:57
+msgid "Create GroupWise Calendar Resource"
+msgstr "GroupWise Takvim Kaynağı Oluştur"
+
+#: groupwisewizard.cpp:68 groupwisewizard.cpp:134 groupwisewizard.cpp:246
+msgid "GroupWise"
+msgstr "GroupWise"
+
+#: groupwisewizard.cpp:87
+msgid "Update GroupWise Calendar Resource"
+msgstr "GroupWise Takvim Kaynağını Yapılandır"
+
+#: groupwisewizard.cpp:117
+msgid "Create GroupWise Address Book Resource"
+msgstr "GroupWise Adres Defteri Kaynağını Oluştur"
+
+#: groupwisewizard.cpp:146
+msgid "Update GroupWise Address Book Resource"
+msgstr "GroupWise Adres Defteri Kaynağını Güncelle"
+
+#: groupwisewizard.cpp:273 overviewpage.cpp:72
+msgid "Novell GroupWise"
+msgstr "Novell GroupWise"
+
+#: groupwisewizard.cpp:279 kolabwizard.cpp:263 sloxwizard.cpp:231
+msgid "Server name:"
+msgstr "Sunucu adı:"
+
+#: groupwisewizard.cpp:284
+msgid "Path to SOAP interface:"
+msgstr "SOAP arayüzünün yolu:"
+
+#: groupwisewizard.cpp:289
+msgid "Port:"
+msgstr "Port:"
+
+#: groupwisewizard.cpp:294 sloxwizard.cpp:236
+msgid "User name:"
+msgstr "Kullanıcı adı:"
+
+#: groupwisewizard.cpp:299 kolabwizard.cpp:280 sloxwizard.cpp:241
+msgid "Password:"
+msgstr "Parola:"
+
+#: groupwisewizard.cpp:305 kolabwizard.cpp:286 sloxwizard.cpp:247
+msgid "Save password"
+msgstr "Parolayı kaydet"
+
+#: groupwisewizard.cpp:308 sloxwizard.cpp:250
+msgid "Encrypt communication with server"
+msgstr "Sunucu ile şifreli iletişim kur"
+
+#: groupwisewizard.cpp:314
+msgid "Mail"
+msgstr "E-Posta"
+
+#: groupwisewizard.cpp:320
+msgid "Create Mail Account"
+msgstr "E-Posta Hesabı Yarat"
+
+#: groupwisewizard.cpp:327 kolabwizard.cpp:268
+msgid "Email address:"
+msgstr "E-Posta Adresi"
+
+#: groupwisewizard.cpp:333
+msgid "Full name:"
+msgstr "Tam Ad:"
+
+#: groupwisewizard.cpp:364 groupwisewizard.cpp:370 kolabwizard.cpp:325
+#: sloxwizard.cpp:272
+msgid "Please fill in all fields."
+msgstr "Lütfen tüm alanları doldurun."
+
+#: groupwisewizard.cpp:368
+msgid "Invalid email address entered."
+msgstr "Geçersiz e-posta adresi girildi."
+
+#: kmailchanges.cpp:39
+msgid "Calendar"
+msgstr "Takvim"
+
+#: kmailchanges.cpp:40
+msgid "Contacts"
+msgstr "Kişiler"
+
+#: kmailchanges.cpp:41
+msgid "Notes"
+msgstr "Notlar"
+
+#: kmailchanges.cpp:42
+msgid "Tasks"
+msgstr "Görevler"
+
+#: kmailchanges.cpp:43
+msgid "Journal"
+msgstr "Günlük"
+
+#: kmailchanges.cpp:152
+msgid "Create Disconnected IMAP Account for KMail"
+msgstr "KMail için Çevrimdışı IMAP Hesabı Yarat"
+
+#: kmailchanges.cpp:312
+msgid "Create Online IMAP Account for KMail"
+msgstr "KMail için Çevrimiçi IMAP Hesabı Oluştur"
+
+#: kolabkmailchanges.cpp:133
+msgid "Kolab Server Mail"
+msgstr "Kolab Sunucusu E-postası"
+
+#: kolabkmailchanges.cpp:149 kolabwizard.cpp:110 kolabwizard.cpp:130
+#: kolabwizard.cpp:151 kolabwizard.cpp:258
+msgid "Kolab Server"
+msgstr "Kolab Sunucusu"
+
+#: kolabmain.cpp:35
+msgid "Kolab Configuration Wizard"
+msgstr "Kolab Yapılandırma Sihirbazı"
+
+#: kolabwizard.cpp:50
+msgid "Setup LDAP Search Account"
+msgstr "LDAP Arama Hesabı Ayarları"
+
+#: kolabwizard.cpp:101
+msgid "Create Calendar IMAP Resource"
+msgstr "Takvim IMAP Kaynağı Yarat"
+
+#: kolabwizard.cpp:121
+msgid "Create Contact IMAP Resource"
+msgstr "Contact IMAP Kaynağı Oluştur"
+
+#: kolabwizard.cpp:142
+msgid "Create Notes IMAP Resource"
+msgstr "Notes IMAP Kaynağı Oluştur"
+
+#: kolabwizard.cpp:272
+msgid "Your email address on the Kolab Server. Format: <i>name@example.net</i>"
+msgstr "Kolab Sunucusundaki e-posta adresiniz. Biçim: <i>isim@ornek.net</i>"
+
+#: kolabwizard.cpp:275
+msgid "Real name:"
+msgstr "Tam Ad:"
+
+#: kolabwizard.cpp:291
+msgid "Use an online IMAP account for non-groupware folders"
+msgstr "Groupware olmayan dizinler için çevrimiçi bir IMAP hesabı kullan"
+
+#: kolabwizard.cpp:295
+msgid "Server Version"
+msgstr "Sunucu Sürümü"
+
+#: kolabwizard.cpp:298
+msgid "Choose the version of the Kolab Server you are using."
+msgstr "Kullandığınız Kolab Sunucusunun sürümünü seçiniz."
+
+#: kolabwizard.cpp:299
+msgid "Kolab 1"
+msgstr "Kolab 1"
+
+#: kolabwizard.cpp:301
+msgid "Kolab 2"
+msgstr "Kolab 2"
+
+#: overviewpage.cpp:59
+msgid "Select the type of server you would like Kontact to connect to:"
+msgstr "Kontact uygulamasının bağlanması için sunucu tipini seçin:"
+
+#: overviewpage.cpp:64
+msgid "Kolab"
+msgstr "Kolab"
+
+#: overviewpage.cpp:68
+msgid "SUSE Linux Openexchange (SLOX)"
+msgstr "SUSE Linux Openexchange (SLOX)"
+
+#. i18n: file: groupwise.kcfg:10
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: slox.kcfg:10
+#. i18n: ectx: label, entry (Server), group (General)
+#: rc.cpp:3 rc.cpp:69
+msgid "Server name"
+msgstr "Sunucu adı"
+
+#. i18n: file: groupwise.kcfg:13
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:6
+msgid "Port"
+msgstr "Port"
+
+#. i18n: file: groupwise.kcfg:17
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: slox.kcfg:14
+#. i18n: ectx: label, entry (User), group (General)
+#: rc.cpp:9 rc.cpp:72
+msgid "User name"
+msgstr "Kullanıcı adı"
+
+#. i18n: file: groupwise.kcfg:20
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:12
+msgid "Path to SOAP interface"
+msgstr "SOAP arayüzünün yolu"
+
+#. i18n: file: groupwise.kcfg:24
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: slox.kcfg:18
+#. i18n: ectx: label, entry (Password), group (General)
+#: rc.cpp:15 rc.cpp:75
+msgid "User password"
+msgstr "Kullanıcı parolası"
+
+#. i18n: file: groupwise.kcfg:28
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:18
+msgid "Email Address"
+msgstr "E-posta Adresi"
+
+#. i18n: file: groupwise.kcfg:31
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:21
+msgid "Full Name of User"
+msgstr "Kullanıcının tam adı"
+
+#. i18n: file: groupwise.kcfg:34
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:24
+msgid "Create email account"
+msgstr "E-posta adresini yarat"
+
+#. i18n: file: groupwise.kcfg:39
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: kolab.kcfg:26
+#. i18n: ectx: label, entry (SavePassword), group (General)
+#. i18n: file: slox.kcfg:22
+#. i18n: ectx: label, entry (SavePassword), group (General)
+#: rc.cpp:27 rc.cpp:60 rc.cpp:78
+msgid "Save Password"
+msgstr "Parolayı Kaydet"
+
+#. i18n: file: groupwise.kcfg:43
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: slox.kcfg:26
+#. i18n: ectx: label, entry (UseHttps), group (General)
+#: rc.cpp:30 rc.cpp:81
+msgid "Use HTTPS"
+msgstr "HTTPS kullan"
+
+#. i18n: file: groupwise.kcfg:47
+#. i18n: ectx: label, entry, group (General)
+#. i18n: file: slox.kcfg:30
+#. i18n: ectx: label, entry (LogFile), group (General)
+#: rc.cpp:33 rc.cpp:84
+msgid "Log File"
+msgstr "Günlük Dosyası"
+
+#. i18n: file: groupwise.kcfg:53
+#. i18n: ectx: label, entry, group (Resources)
+#. i18n: file: slox.kcfg:36
+#. i18n: ectx: label, entry (KcalResource), group (Resources)
+#: rc.cpp:36 rc.cpp:87
+msgid "Id of KCal resource"
+msgstr "KCal kaynak tanımlayıcısı"
+
+#. i18n: file: groupwise.kcfg:56
+#. i18n: ectx: label, entry, group (Resources)
+#. i18n: file: slox.kcfg:39
+#. i18n: ectx: label, entry (KabcResource), group (Resources)
+#: rc.cpp:39 rc.cpp:90
+msgid "Id of KABC resource"
+msgstr "KABC kaynak tanımlayıcısı"
+
+#. i18n: file: groupwise.kcfg:59
+#. i18n: ectx: label, entry, group (Resources)
+#: rc.cpp:42
+msgid "Id of KMail account for receiving mail"
+msgstr "Alınan posta için KMail hesap tanımlayıcısı"
+
+#. i18n: file: groupwise.kcfg:63
+#. i18n: ectx: label, entry, group (Resources)
+#: rc.cpp:45
+msgid "Id of KMail transport for sending mail"
+msgstr "Gönderilecek posta için KMail taşıyıcı tanımlayıcısı"
+
+#. i18n: file: kolab.kcfg:10
+#. i18n: ectx: label, entry (Server), group (General)
+#: rc.cpp:48
+msgid "Kolab server name"
+msgstr "Kolab sunucu adı"
+
+#. i18n: file: kolab.kcfg:14
+#. i18n: ectx: label, entry (User), group (General)
+#: rc.cpp:51
+msgid "Kolab user name"
+msgstr "Kolab kullanıcı adı"
+
+#. i18n: file: kolab.kcfg:18
+#. i18n: ectx: label, entry (RealName), group (General)
+#: rc.cpp:54
+msgid "Real user name"
+msgstr "Gerçek kullanıcı adı"
+
+#. i18n: file: kolab.kcfg:22
+#. i18n: ectx: label, entry (Password), group (General)
+#: rc.cpp:57
+msgid "Kolab user password"
+msgstr "Kolab kullanıcı parolası"
+
+#. i18n: file: kolab.kcfg:31
+#. i18n: ectx: label, entry (UseOnlineForNonGroupware), group (General)
+#: rc.cpp:63
+msgid "Use Online IMAP account for non groupware folders"
+msgstr "Groupware olmayan dizinler için Çevrimiçi IMAP hesabı kullan"
+
+#. i18n: file: kolab.kcfg:36
+#. i18n: ectx: label, entry (Kolab1Legacy), group (General)
+#: rc.cpp:66
+msgid "Enable Kolab 1 Legacy settings"
+msgstr "Kolab 1 Ayarlarını Etkinleştir"
+
+#: rc.cpp:91
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir, Görkem Çetin, Ozan Eren BİLGEN"
+
+#: rc.cpp:92
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com, gorkem@kde.org, oebilgen@uekae.tubitak.gov.tr"
+
+#: sloxmain.cpp:34
+msgid "SUSE LINUX Openexchange Server Configuration Wizard"
+msgstr "SUSE LINUX Openexchange Sunucu Yapılandırma Sihirbazı"
+
+#: sloxwizard.cpp:56
+msgid "Create SLOX Calendar Resource"
+msgstr "SLOX Takvim Kaynağı Oluştur"
+
+#: sloxwizard.cpp:68 sloxwizard.cpp:130
+msgid "Openexchange Server"
+msgstr "Openexchange Sunucusu"
+
+#: sloxwizard.cpp:85
+msgid "Update SLOX Calendar Resource"
+msgstr "SLOX Takvim Kaynağını Güncelle"
+
+#: sloxwizard.cpp:116
+msgid "Create SLOX Address Book Resource"
+msgstr "SLOX Adres Defteri Kaynağı Oluştur"
+
+#: sloxwizard.cpp:142
+msgid "Update SLOX Address Book Resource"
+msgstr "SLOX Adres Defteri Kaynağı Güncelle"
+
+#: sloxwizard.cpp:225
+msgid "SUSE LINUX OpenExchange Server"
+msgstr "SUSE LINUX OpenExchange Sunucusu"
+
+#~ msgid "Scalix Server"
+#~ msgstr "Scalix Sunucusu"
+
+#~ msgid "Scalix Configuration Wizard"
+#~ msgstr "Scalix Yapılandırma Sihirbazı"
+
+#~ msgid "Setup ScalixAdmin Account"
+#~ msgstr "ScalixAdmin Hesabını Ayarla"
+
+#~ msgid "Synchronize Scalix Account"
+#~ msgstr "Scalix Hesabını Eşzamanla"
+
+#~ msgid "Preparing initial synchronization with Scalix server..."
+#~ msgstr "Scalix sunucusu ile ilk eşleştirme hazırlanıyor"
+
+#~ msgid ""
+#~ "Unable to start KMail to trigger initial synchronization with Scalix "
+#~ "server"
+#~ msgstr ""
+#~ "Scalix sunucusu ile ilk eşleştirmeyi tetiklemek için KMail başlatılamıyor"
+
+#~ msgid "Your full name. Example: <i>Joe User</i>"
+#~ msgstr "Tam adınız. Örnek: <i>Serdar Kullanıcı</i>"
+
+#~ msgid ""
+#~ "Your email address on the Scalix Server. Example: <i>name@crossplatform."
+#~ "com</i>"
+#~ msgstr ""
+#~ "Scalix sunucusundaki e-posta adresiniz. Örnek: <i>isim@sunucu.com</i>"
+
+#~ msgid "Server:"
+#~ msgstr "Sunucu:"
+
+#~ msgid ""
+#~ "The name or IP of the Scalix Server. Example: <i>scalix.domain.com</i>"
+#~ msgstr ""
+#~ "Scalix sunucusunun adı ya da IP adresi. Örnek: <i>scalix.alanadi.com</i>"
+
+#~ msgid "Username:"
+#~ msgstr "Kullanıcı adı:"
+
+#~ msgid "The user respectively login name. Example: <i>joe</i>"
+#~ msgstr "Kullanıcının giriş adı. Örneğin: <i>serdar</i>"
+
+#~ msgid "The password to your login."
+#~ msgstr "Giriş parolanız."
+
+#~ msgid "Shall the password be saved in KWallet?"
+#~ msgstr "Parolanız KWallet içerisine kaydedilsin mi?"
+
+#~ msgid "Use secure connection:"
+#~ msgstr "Güvenli bağlantı kullan:"
+
+#~ msgid "No Encryption"
+#~ msgstr "Şifreleme Yok"
+
+#~ msgid "TLS Encryption"
+#~ msgstr "TLS Şifrelemesi"
+
+#~ msgid "SSL Encryption"
+#~ msgstr "SSL Şifrelemesi"
+
+#~ msgid "Choose the encryption type that is supported by your server."
+#~ msgstr "Sunucunuz tarafından desteklenen şifreleme tipi."
+
+#~ msgid "Authentication type:"
+#~ msgstr "Kimlik doğrulama tipi:"
+
+#~ msgid "Password"
+#~ msgstr "Parola"
+
+#~ msgid "NTLM / SPA"
+#~ msgstr "NTLM / SPA"
+
+#~ msgid "GSSAPI"
+#~ msgstr "GSSAPI"
+
+#~ msgid "DIGEST-MD5"
+#~ msgstr "DIGEST-MD5"
+
+#~ msgid "CRAM-MD5"
+#~ msgstr "CRAM-MD5"
+
+#~ msgid "Choose the authentication type that is supported by your server."
+#~ msgstr "Sunucunuz tarafından desteklenen kimlik doğrulama tipi."
+
+#~ msgid "eGroupware Server Configuration Wizard"
+#~ msgstr "eGroupware Sunucu Yapılandırma Sihirbazı"
+
+#, fuzzy
+#~| msgid "Create eGroupware Addressbook Resource"
+#~ msgid "Create eGroupware Address Book Resource"
+#~ msgstr "eGroupware Adres Defteri Kaynağı Oluştur"
+
+#~ msgid "eGroupware"
+#~ msgstr "eGroupware"
+
+#~ msgid "Create eGroupware Calendar Resource"
+#~ msgstr "eGroupware Takvim Kaynağı Oluştur"
+
+#~ msgid "Create eGroupware Notes Resource"
+#~ msgstr "eGroupware Not Kaynağı Oluştur"
+
+#~ msgid "eGroupware Server"
+#~ msgstr "eGroupware Sunucusu"
+
+#~ msgid "&Server name:"
+#~ msgstr "&Sunucu adı:"
+
+#~ msgid "&Domain name:"
+#~ msgstr "&Alan adı:"
+
+#~ msgid "&Username:"
+#~ msgstr "&Kullanıcı adı:"
+
+#~ msgid "&Password:"
+#~ msgstr "&Parola:"
+
+#~ msgid "&Location xmlrpc.php on server:"
+#~ msgstr "&Sunucudaki xmlrpc.php dosyasının konumu:"
+
+#~ msgid ""
+#~ "Some servers may not have the xmlrpc.php file in the 'egroupware' folder "
+#~ "of the server. With this option it is possible to eventually change the "
+#~ "path to that file. For most servers, the default value is OK."
+#~ msgstr ""
+#~ "Bazı sunucular, sunucunun 'egroupware' dizininde xmlrpc.php dosyasına "
+#~ "sahip olmayabilir. Bu seçenek ile birlikte bu dosyanın yolunu değiştirmek "
+#~ "mümkündür. Çoğu sunucu için, öntanımlı değer Tamam'dır."
+
+#~ msgid "Use SS&L connection"
+#~ msgstr "&SSL bağlantı kullan"
+
+#~ msgid "Invalid path to xmlrpc.php entered."
+#~ msgstr "Geçersiz xmlrpc.php yolu girildi."
+
+#~ msgid "Domain name"
+#~ msgstr "Alan adı"
+
+#~ msgid "XMLRPC location on server"
+#~ msgstr "Sunucudaki XMLRPC konumu"
+
+#~ msgid "Use SSL connection"
+#~ msgstr "SSL (şifreli) bağlantı kullan"
+
+#, fuzzy
+#~ msgid "Microsoft Exchange Server Configuration Wizard"
+#~ msgstr "SUSE LINUX Openexchange Sunucu Yapılandırma Sihirbazı"
+
+#, fuzzy
+#~ msgid "Create Exchange Calendar Resource"
+#~ msgstr "SLOX Takvim Kaynağı Oluştur"
+
+#, fuzzy
+#~ msgid "Update Exchange Calendar Resource"
+#~ msgstr "SLOX Takvim Kaynağını Güncelle"
+
+#, fuzzy
+#~ msgid "Create Exchange Addressbook Resource"
+#~ msgstr "SLOX Adres Defteri Kaynağı Yarat"
+
+#, fuzzy
+#~ msgid "Update Exchange Addressbook Resource"
+#~ msgstr "SLOX Adres Defteri Kaynağı Güncelle"
+
+#, fuzzy
+#~ msgid "Microsoft Exchange Server"
+#~ msgstr "Openexchange Sunucusu"

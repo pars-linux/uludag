@@ -1,0 +1,902 @@
+# translation of kcmlirc.po to
+# Turkish translation of kcmlirc.
+# Copyright (C) 2003, 2004, 2007, 2008, 2009 Free Software Foundation, Inc.
+#
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmlirc\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-12-03 06:13+0100\n"
+"PO-Revision-Date: 2009-11-03 00:21+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: addaction.cpp:53
+msgctxt "Try-Button in Wizard"
+msgid "Try"
+msgstr ""
+
+#: addaction.cpp:181
+#, kde-format
+msgid ""
+"You did not select a mode of that remote control. Please use %1, or revert "
+"back to select a different mode."
+msgstr ""
+"Uzaktan denetleyici için bir kip seçmediniz. Lütfen %1 kullanın veya farklı "
+"bir kip seçmek için geri dönün."
+
+#: addaction.cpp:183
+msgid "Incorrect Remote Control Detected"
+msgstr "Yanlış Uzaktan Denetleyici Tespit Edildi"
+
+#: addaction.cpp:192
+msgid "Master"
+msgstr "Ana"
+
+#: addaction.cpp:190
+#, kde-format
+msgid ""
+"You are attempting to configure an action for a button on %1 (in mode %2)."
+msgstr ""
+"%1 üzerindeki bir düğme için bir eylemi ayarlamaya çalışıyorsunuz (%2 "
+"kipinde)."
+
+#: addaction.cpp:320 editaction.cpp:72 editaction.cpp:229
+msgid "Argument name"
+msgstr "Argüman adı"
+
+#: addaction.cpp:320 editaction.cpp:73
+msgctxt "The value of an argument"
+msgid "Value"
+msgstr "Değer"
+
+#: addaction.cpp:349
+msgid "D-Bus applications"
+msgstr "D-Bus uygulamaları"
+
+#: editaction.cpp:57 editaction.cpp:160 editaction.cpp:183
+msgid "[Exit current mode]"
+msgstr "[Şimdiki kipten çık]"
+
+#: editaction.cpp:229
+msgctxt "Value of the argument"
+msgid "Value"
+msgstr "Değer"
+
+#: kcmlirc.cpp:82
+msgid "KDE Lirc"
+msgstr "KDE Lirc"
+
+#: kcmlirc.cpp:83
+msgid "The KDE IR Remote Control System"
+msgstr "KDE Kızılötesi Uzaktan Denetim Sistemi"
+
+#: kcmlirc.cpp:85
+msgid "Copyright (c)2003 Gav Wood"
+msgstr "Copyright (c)2003 Gav Wood"
+
+#: kcmlirc.cpp:87
+msgid ""
+"Use this to configure KDE's infrared remote control system in order to "
+"control any KDE application with your infrared remote control."
+msgstr ""
+"Herhangi bir KDE uygulamasını kızılötesi kumandayla denetleyebilmek "
+"amacıyla, KDE'nin kızılötesi kumanda denetleme sistemini yapılandırmak için "
+"bunu kullanın."
+
+#: kcmlirc.cpp:91
+msgid ""
+"<h1>Remote Controls</h1><p>This module allows you to configure bindings "
+"between your remote controls and KDE applications. Simply select your remote "
+"control and click Add under the Actions/Buttons list. If you want KDE to "
+"attempt to automatically assign buttons to a supported application's "
+"actions, try clicking the Auto-Populate button.</p><p>To view the recognized "
+"applications and remote controls, simply select the <em>Loaded Profiles</em> "
+"tab.</p>"
+msgstr ""
+"<h1>Uzaktan Denetimler</h1><p>Bu modül KDE uygulamalarınız ile uzaktan "
+"denetim cihazınız arasındaki bağlayıcıları yapılandırmanızı sağlar. Basitçe "
+"uzaktan denetim cihazınızı seçip Eylemler/Düğmeler listesinde bulunan Ekle "
+"düğmesine tıklayın. Eğer KDE sizin için otomatik olarak atama yapsın "
+"istiyorsanız Otomatik Doldur düğmesine tıklayın.</p><p>Tanınan uygulamaları "
+"ve uzaktan denetimleri görmek için <em>Yüklü Profiller</em> sekmesini seçin."
+"</p>"
+
+#: kcmlirc.cpp:97
+msgid ""
+"The Infrared Remote Control software is not currently running. This "
+"configuration module will not work properly without it. Would you like to "
+"start it now?"
+msgstr ""
+"Kızıl Ötesi Uzaktan denetleyici yazılımı şuanda çalışmıyor. Bu ayarlama "
+"modülü yazılım çalıştırılmadan dügün çalışmaz. Yazılımı şimdi başlatmak "
+"ister misiniz?"
+
+#: kcmlirc.cpp:98
+msgid "Software Not Running"
+msgstr "Yazılım Çalışmıyor"
+
+#: kcmlirc.cpp:98
+#, fuzzy
+#| msgid "Start"
+msgctxt "Start irkick daemon"
+msgid "Start"
+msgstr "Başlat"
+
+#: kcmlirc.cpp:99
+#, fuzzy
+#| msgid "Do Not Start"
+msgctxt "Do not start irkick daemon"
+msgid "Do Not Start"
+msgstr "Başlatma"
+
+#: kcmlirc.cpp:107
+msgid ""
+"Would you like the infrared remote control software to start automatically "
+"when you begin KDE?"
+msgstr ""
+"KDE başladığında kızıl ötesi denetleyici yazılımının otomatik olarak "
+"başlatılmasını istiyor musunuz?"
+
+#: kcmlirc.cpp:108
+msgid "Automatically Start?"
+msgstr "Otomatik Olarak Başlatılsın mı?"
+
+#: kcmlirc.cpp:108
+msgid "Start Automatically"
+msgstr "Otomatik Olarak Başlat"
+
+#: kcmlirc.cpp:109
+msgid "Do Not Start"
+msgstr "Başlatma"
+
+#: kcmlirc.cpp:120
+msgctxt "Column which shows the available remotes on system"
+msgid "Remote"
+msgstr "Uzak"
+
+#: kcmlirc.cpp:328
+#, kde-format
+msgid "Are you sure you want to remove %1 and all its actions?"
+msgstr "%1 ve tüm eylemlerini kaldırmak istediğinizden emin misiniz?"
+
+#: kcmlirc.cpp:330
+msgid "Erase Actions?"
+msgstr "Eylemler Silinsin mi?"
+
+#: kcmlirc.cpp:376
+msgid "Actions <i>always</i> available"
+msgstr "<b>Herzaman</b> geçerli eylemler"
+
+#: kcmlirc.cpp:377
+#, kde-format
+msgid "Actions available only in mode <b>%1</b>"
+msgstr "Sadece <b>%1</b> kipinde geçerli olan eylemler"
+
+#: kcmlirc.cpp:396
+msgid "Do actions before. "
+msgstr "Eylemleri önce yap. "
+
+#: kcmlirc.cpp:397
+msgid "Do actions after. "
+msgstr "Eylemleri sonra yap. "
+
+#: kcmlirc.cpp:401
+msgid "Auto-start. "
+msgstr "Otomatik başlat. "
+
+#: kcmlirc.cpp:402
+msgid "Repeatable. "
+msgstr "Tekrarlanabilir. "
+
+#: kcmlirc.cpp:403
+msgid "Do nothing if many instances. "
+msgstr "Çok süreç örneği varsa bi şey yapma. "
+
+#: kcmlirc.cpp:404
+msgid "Send to top instance. "
+msgstr "Üst süreç örneğine gönder. "
+
+#: kcmlirc.cpp:405
+msgid "Send to bottom instance. "
+msgstr "Alt süreç örneğine gönder. "
+
+#: kcmlirc.cpp:405
+msgid "Send to all instances. "
+msgstr "Tüm süreç örneklerine gönder. "
+
+#: kcmlirc.cpp:502
+msgid "Profiles"
+msgstr "Profiller"
+
+#: kcmlirc.cpp:518
+msgid "Profile Name"
+msgstr "Profil Adı"
+
+#: kcmlirc.cpp:521
+msgid "Profile Author"
+msgstr "Profil Yazarı"
+
+#: kcmlirc.cpp:524
+msgid "Application Identifier"
+msgstr "Uygulama Kimlikleyici"
+
+#: kcmlirc.cpp:527
+msgid "Number of Actions"
+msgstr "Eylem Sayısı"
+
+#. i18n: file: editactionbase.ui:38
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#. i18n: file: kcmlircbase.ui:188
+#. i18n: ectx: property (text), widget (QTreeWidget, theActions)
+#: model.cpp:115 rc.cpp:75 rc.cpp:191
+msgid "Function"
+msgstr "Fonksiyon"
+
+#: model.cpp:117
+msgid "Parameter"
+msgstr "Parametre"
+
+#: model.cpp:119
+msgid "Prototype"
+msgstr "Prototip"
+
+#: model.cpp:170
+msgctxt "True"
+msgid "Value is true"
+msgstr "Değer doğruysa"
+
+#: model.cpp:171
+msgctxt "False"
+msgid "Value is false"
+msgstr "Değer yanlışsa"
+
+#: model.cpp:178 model.cpp:301
+msgid "A comma-separated list of Strings"
+msgstr "Virgülle ayrılmış İfadeler listesi"
+
+#: model.cpp:351
+#, fuzzy
+#| msgid "Name"
+msgctxt "Remote button name"
+msgid "Name"
+msgstr "İsim"
+
+#. i18n: file: editactionbase.ui:248
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: model.cpp:353 rc.cpp:105
+msgid "Options"
+msgstr "Seçenekler"
+
+#: model.cpp:355
+msgid "Comment"
+msgstr "Açıklama"
+
+#: model.cpp:357
+msgid "Mapped remote button"
+msgstr ""
+
+#: model.cpp:454
+msgid "Button"
+msgstr "Düğme"
+
+#: model.cpp:456
+msgid "Identifier"
+msgstr "Tanımlayıcı"
+
+#: model.cpp:487
+#, fuzzy
+#| msgid "Remote"
+msgctxt "Remote name"
+msgid "Remote"
+msgstr "Uzak"
+
+#. i18n: file: addactionbase.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWizard, AddActionBase)
+#: rc.cpp:3
+msgid "Add Action"
+msgstr "Eylem Ekle"
+
+#. i18n: file: addactionbase.ui:22
+#. i18n: ectx: property (text), widget (QRadioButton, theUseProfile)
+#: rc.cpp:6
+msgid "I wish to select an &application below for usage:"
+msgstr "Kullanım için alttan bir uygulama seçmek istiyorum:"
+
+#. i18n: file: addactionbase.ui:35
+#. i18n: ectx: property (text), widget (QRadioButton, theUseDBus)
+#: rc.cpp:9
+msgid "I wish to manually select a &function from a running program"
+msgstr "Çalışan bir programdan elle bir &fonksiyon seçmek istiyorum"
+
+#. i18n: file: addactionbase.ui:42
+#. i18n: ectx: property (text), widget (QRadioButton, theChangeMode)
+#: rc.cpp:12
+msgid "I wish to change the remote control's &mode"
+msgstr "Uzaktan denetleyicinin kipini değiştirmek istiyorum"
+
+#. i18n: file: addactionbase.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:15
+msgid " Press a button on this remote control or select one from the list."
+msgstr ""
+
+#. i18n: file: addactionbase.ui:129
+#. i18n: ectx: property (text), widget (QRadioButton, theNotJustStart)
+#: rc.cpp:18
+msgid "&Perform a function in the application:"
+msgstr "Uygulamadaki bir &fonksiyonu çalıştır:"
+
+#. i18n: file: addactionbase.ui:158
+#. i18n: ectx: property (text), widget (QRadioButton, theJustStart)
+#: rc.cpp:21
+msgid "&Just start the application. Do not do anything else."
+msgstr "Sadece u&ygulamayı çalıştır. Başka birşey yapma."
+
+#. i18n: file: addactionbase.ui:172
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:24
+msgid "Specify the arguments to be passed to the application"
+msgstr "Uygulamaya geçirilecek argümanları belirtin"
+
+#. i18n: file: addactionbase.ui:189
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:27
+msgid "Miscellaneous Options"
+msgstr "Çeşitli Seçenekler"
+
+#. i18n: file: addactionbase.ui:209
+#. i18n: ectx: property (text), widget (QCheckBox, theRepeat)
+#: rc.cpp:30
+msgid "This action is &repeatable if the button is held down"
+msgstr "Bu eylem eğe&r düğme basılı tutulursa tekrarlanabilir"
+
+#. i18n: file: addactionbase.ui:216
+#. i18n: ectx: property (text), widget (QCheckBox, theAutoStart)
+#: rc.cpp:33
+msgid "This action causes the application to &start if not already running"
+msgstr "Bu eylem eğer program çalışmıyorsa çalışmasına neden olur"
+
+#. i18n: file: addactionbase.ui:251
+#. i18n: ectx: property (text), widget (QLabel, theIMTop)
+#. i18n: file: editactionbase.ui:372
+#. i18n: ectx: property (text), widget (QLabel, theIMTop)
+#: rc.cpp:36 rc.cpp:126
+msgid "Multiple Instances"
+msgstr "Çoklu Örnekler"
+
+#. i18n: file: addactionbase.ui:277
+#. i18n: ectx: property (text), widget (QLabel, theIMLabel)
+#. i18n: file: editactionbase.ui:398
+#. i18n: ectx: property (text), widget (QLabel, theIMLabel)
+#: rc.cpp:39 rc.cpp:129
+msgid ""
+"This application may have multiple instances. In the case of having multiple "
+"instances at once when this action should be executed, choose a course of "
+"action:"
+msgstr ""
+"Bu uygulama birden çok örneğe sahip. Bu eylem çalıştırılırken bir kerede "
+"birden fazla örnek mevcut olduğunda bir eylem akışı seçin:"
+
+#. i18n: file: addactionbase.ui:293
+#. i18n: ectx: property (text), widget (QRadioButton, theDontSend)
+#. i18n: file: editactionbase.ui:414
+#. i18n: ectx: property (text), widget (QRadioButton, theDontSend)
+#: rc.cpp:42 rc.cpp:132
+msgid "&Ignore the action"
+msgstr "Eylem&i yoksay"
+
+#. i18n: file: addactionbase.ui:306
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToTop)
+#: rc.cpp:45
+msgid "Send the action to the instance hi&ghest in the window stacking order"
+msgstr "Eylemi pencere sıralamasında en üstte olana &gönder"
+
+#. i18n: file: addactionbase.ui:316
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToBottom)
+#. i18n: file: editactionbase.ui:437
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToBottom)
+#: rc.cpp:48 rc.cpp:138
+msgid "Send the action to the instance &lowest in window stacking order"
+msgstr "Ey&lemi pencere sıralamasında en altta olana gönder"
+
+#. i18n: file: addactionbase.ui:326
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToAll)
+#: rc.cpp:51
+msgid "Send the action to &all instances"
+msgstr "Eylemi tüm örneklere gönder"
+
+#. i18n: file: addactionbase.ui:350
+#. i18n: ectx: property (text), widget (QRadioButton, theSwitchMode)
+#: rc.cpp:54
+msgid "&Switch to mode:"
+msgstr "Bu Kipi &Seç:"
+
+#. i18n: file: addactionbase.ui:367
+#. i18n: ectx: property (text), widget (QRadioButton, theExitMode)
+#: rc.cpp:57
+msgid "&Exit current mode"
+msgstr "Ş&imdiki kipten çık"
+
+#. i18n: file: addactionbase.ui:393
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: rc.cpp:60
+msgid "<b>Options</b>"
+msgstr "<b>Seçenekler</b>"
+
+#. i18n: file: addactionbase.ui:413
+#. i18n: ectx: property (text), widget (QCheckBox, theDoBefore)
+#. i18n: file: editactionbase.ui:327
+#. i18n: ectx: property (text), widget (QCheckBox, theDoBefore)
+#: rc.cpp:63 rc.cpp:120
+msgid "E&xecute all other actions before mode change (in original mode)"
+msgstr "Kip değişikliğinden önce tüm diğer eylemleri çalıştır"
+
+#. i18n: file: addactionbase.ui:423
+#. i18n: ectx: property (text), widget (QCheckBox, theDoAfter)
+#. i18n: file: editactionbase.ui:340
+#. i18n: ectx: property (text), widget (QCheckBox, theDoAfter)
+#: rc.cpp:66 rc.cpp:123
+msgid "Exec&ute all actions after mode change (in new mode)"
+msgstr "Kip değişikliğinden sonra t&üm eylemleri çalıştır (yeni modda)"
+
+#. i18n: file: editactionbase.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditActionBase)
+#: rc.cpp:69
+msgid "Edit Action"
+msgstr "Eylem Düzenle"
+
+#. i18n: file: editactionbase.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:72
+msgid "Button:"
+msgstr "Düğme:"
+
+#. i18n: file: editactionbase.ui:44
+#. i18n: ectx: property (text), widget (QRadioButton, theUseProfile)
+#: rc.cpp:78
+msgid "&Use application:"
+msgstr "&Uygulama kullan"
+
+#. i18n: file: editactionbase.ui:63
+#. i18n: ectx: property (text), widget (QLabel, theUseProfileAppLabel)
+#: rc.cpp:81
+msgid "&Application:"
+msgstr "Uygul&ama:"
+
+#. i18n: file: editactionbase.ui:92
+#. i18n: ectx: property (text), widget (QRadioButton, thePerformFunction)
+#: rc.cpp:84
+msgid "&Perform function:"
+msgstr "&Fonksiyonu çalıştır:"
+
+#. i18n: file: editactionbase.ui:112
+#. i18n: ectx: property (text), widget (QRadioButton, theJustStart)
+#: rc.cpp:87
+msgid "Just start application"
+msgstr "Sadece uygulamayı çalıştır"
+
+#. i18n: file: editactionbase.ui:122
+#. i18n: ectx: property (text), widget (QRadioButton, theUseDBus)
+#: rc.cpp:90
+msgid "Use &D-Bus:"
+msgstr "&D-Bus Kullan:"
+
+#. i18n: file: editactionbase.ui:141
+#. i18n: ectx: property (text), widget (QLabel, theDBusApplicationsLabel)
+#: rc.cpp:93
+msgid "App&lication:"
+msgstr "Uygu&lama"
+
+#. i18n: file: editactionbase.ui:170
+#. i18n: ectx: property (text), widget (QLabel, theDBusObjectsLabel)
+#: rc.cpp:96
+msgid "O&bject:"
+msgstr "&Nesne:"
+
+#. i18n: file: editactionbase.ui:193
+#. i18n: ectx: property (text), widget (QLabel, theDBusFunctionsLabel)
+#: rc.cpp:99
+msgid "Fu&nction:"
+msgstr "Fo&nksiyon:"
+
+#. i18n: file: editactionbase.ui:225
+#. i18n: ectx: property (text), widget (QRadioButton, theChangeMode)
+#: rc.cpp:102
+msgid "Change &mode to:"
+msgstr "&Kipi değiştir:"
+
+#. i18n: file: editactionbase.ui:254
+#. i18n: ectx: property (text), widget (QLabel, optionsDBusAppLabel)
+#: rc.cpp:108
+msgid "<b>D-Bus/Application Action Options</b>"
+msgstr "<b>D-Bus/Uygulama Eylem Ayarları</b>"
+
+#. i18n: file: editactionbase.ui:274
+#. i18n: ectx: property (text), widget (QCheckBox, theRepeat)
+#: rc.cpp:111
+msgid "&Action repeats if button is held down"
+msgstr "Bu düğme b&asılı tutulursa eylem tekrarlar"
+
+#. i18n: file: editactionbase.ui:281
+#. i18n: ectx: property (text), widget (QCheckBox, theAutoStart)
+#: rc.cpp:114
+msgid "&Start program/service if not already running"
+msgstr "Eğer çalışmıyor&sa program/hizmet çalıştır"
+
+#. i18n: file: editactionbase.ui:304
+#. i18n: ectx: property (text), widget (QLabel, theMCOLabel)
+#: rc.cpp:117
+msgid "<b>Mode Change Options</b>"
+msgstr "<b>Kip Değişim Ayarları</b>"
+
+#. i18n: file: editactionbase.ui:427
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToTop)
+#: rc.cpp:135
+msgid "Send the action to the instance hi&ghest in window stacking order"
+msgstr "Eylemi pencere sıralamasında en üstte olana &gönder"
+
+#. i18n: file: editactionbase.ui:447
+#. i18n: ectx: property (text), widget (QRadioButton, theSendToAll)
+#: rc.cpp:141
+msgid "Send the action to all i&nstances"
+msgstr "Eylemi tüm ör&neklere gönder"
+
+#. i18n: file: editmodebase.ui:16
+#. i18n: ectx: property (windowTitle), widget (QWidget, EditModeBase)
+#: rc.cpp:144
+msgid "Edit Mode"
+msgstr "Düzenleme Kipi"
+
+#. i18n: file: editmodebase.ui:22
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:147
+msgid "<b>Description</b>"
+msgstr "<b>Tanım</b>"
+
+#. i18n: file: editmodebase.ui:102
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: rc.cpp:150
+msgid "&Mode name:"
+msgstr "&Kip adı:"
+
+#. i18n: file: editmodebase.ui:115
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox)
+#: rc.cpp:153
+msgid "&Icon for system tray:"
+msgstr "S&istem çekmecesi için simge:"
+
+#. i18n: file: editmodebase.ui:140
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:156
+msgid "<b>Behavior</b>"
+msgstr "<b>Davranış</b>"
+
+#. i18n: file: editmodebase.ui:160
+#. i18n: ectx: property (text), widget (QCheckBox, theDefault)
+#: rc.cpp:159
+msgid "Mo&de is the default for its remote "
+msgstr "Uzaktan denetleyicisi için varsayılan k&ip"
+
+#. i18n: file: kcmlircbase.ui:15
+#. i18n: ectx: property (windowTitle), widget (QWidget, KCMLircBase)
+#: rc.cpp:162
+msgid "Linux Infrared Remote Control"
+msgstr "Linux Kızıl Ötesi Uzaktan Denetim"
+
+#. i18n: file: kcmlircbase.ui:40
+#. i18n: ectx: property (text), widget (QLabel, theMainLabel)
+#: rc.cpp:165
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are currently no "
+"remote controls available. You must first set up LIRC correctly. Find more "
+"information on <a href=\"http://www.lirc.org\"><span style=\" text-"
+"decoration: underline; color:#3c7dbe;\">www.lirc.org</span></a>.</p></body></"
+"html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Kullanılabilir uzaktan "
+"kumandalar var. Öncelikle LIRC uygulamasını doğru bir şekilde "
+"yapılandırmalısınız. Daha fazla bilgiyi <a href=\"http://www.lirc.org"
+"\"><span style=\" text-decoration: underline; color:#3c7dbe;\">www.lirc.org</"
+"span></a> adresinde bulabilirsiniz.</p></body></html>"
+
+#. i18n: file: kcmlircbase.ui:60
+#. i18n: ectx: attribute (title), widget (QWidget, tab_0)
+#: rc.cpp:172
+msgid "Controller Functions"
+msgstr "Denetleyici Fonksiyonları"
+
+#. i18n: file: kcmlircbase.ui:74
+#. i18n: ectx: property (text), widget (QLabel, theModesLabel)
+#: rc.cpp:175
+msgid "Configured Modes:"
+msgstr "Yapılandırılmış Kipler:"
+
+#. i18n: file: kcmlircbase.ui:112
+#. i18n: ectx: property (text), widget (KPushButton, theAddMode)
+#: rc.cpp:178
+msgid "&Add..."
+msgstr "&Ekle..."
+
+#. i18n: file: kcmlircbase.ui:128
+#. i18n: ectx: property (text), widget (KPushButton, theEditMode)
+#: rc.cpp:181
+msgid "&Edit..."
+msgstr "&Düzenle..."
+
+#. i18n: file: kcmlircbase.ui:144
+#. i18n: ectx: property (text), widget (KPushButton, theRemoveMode)
+#: rc.cpp:184
+msgid "&Remove"
+msgstr "&Kaldır"
+
+#. i18n: file: kcmlircbase.ui:183
+#. i18n: ectx: property (text), widget (QTreeWidget, theActions)
+#: rc.cpp:188
+msgid "Application"
+msgstr "Uygulama"
+
+#. i18n: file: kcmlircbase.ui:193
+#. i18n: ectx: property (text), widget (QTreeWidget, theActions)
+#: rc.cpp:194
+msgid "Arguments"
+msgstr "Argümanlar"
+
+#. i18n: file: kcmlircbase.ui:198
+#. i18n: ectx: property (text), widget (QTreeWidget, theActions)
+#: rc.cpp:197
+msgid "Notes"
+msgstr "Notlar"
+
+#. i18n: file: kcmlircbase.ui:213
+#. i18n: ectx: property (text), widget (KPushButton, theAddActions)
+#: rc.cpp:200
+msgid "Auto-Populate..."
+msgstr "Otomatik Doldur..."
+
+#. i18n: file: kcmlircbase.ui:226
+#. i18n: ectx: property (text), widget (KPushButton, theAddAction)
+#: rc.cpp:203
+msgid "A&dd..."
+msgstr "&Ekle..."
+
+#. i18n: file: kcmlircbase.ui:236
+#. i18n: ectx: property (text), widget (QPushButton, theEditAction)
+#: rc.cpp:206
+msgid "Ed&it..."
+msgstr "&Düzenle..."
+
+#. i18n: file: kcmlircbase.ui:246
+#. i18n: ectx: property (text), widget (KPushButton, theRemoveAction)
+#: rc.cpp:209
+msgid "Re&move"
+msgstr "&Kaldır"
+
+#. i18n: file: kcmlircbase.ui:273
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: rc.cpp:212
+msgid "Profiles Overview"
+msgstr "Profil Gözden Geçirmeleri"
+
+#. i18n: file: kcmlircbase.ui:301
+#. i18n: ectx: property (title), widget (QGroupBox, theInformationBox)
+#: rc.cpp:215
+msgid "Profile details"
+msgstr "Profil ayrıntıları"
+
+#. i18n: file: kcmlircbase.ui:324
+#. i18n: ectx: property (text), widget (QTreeWidget, theProfileInformation)
+#: rc.cpp:218
+msgid "Information"
+msgstr "Bilgi"
+
+#. i18n: file: kcmlircbase.ui:329
+#. i18n: ectx: property (text), widget (QTreeWidget, theProfileInformation)
+#: rc.cpp:221
+msgid "Value"
+msgstr "Değer"
+
+#. i18n: file: kcmlircbase.ui:347
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:224
+msgid "Available actions:"
+msgstr "Kullanılabilir eylemler:"
+
+#. i18n: file: kcmlircbase.ui:381
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:227
+msgid "Available Remotes"
+msgstr "Kullanılabilir Denetimler"
+
+#. i18n: file: newmode.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, NewMode)
+#: rc.cpp:230
+msgid "New Mode"
+msgstr "Yeni Kip"
+
+#. i18n: file: newmode.ui:29
+#. i18n: ectx: property (text), widget (QTreeWidget, theRemotes)
+#: rc.cpp:233
+msgid "Remotes"
+msgstr "Uzaklar"
+
+#. i18n: file: newmode.ui:42
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#: rc.cpp:236
+msgctxt "Name of the remote mode"
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file: newmode.ui:56
+#. i18n: ectx: property (text), widget (QCheckBox, theDefault)
+#: rc.cpp:239
+msgid "Set mode as default"
+msgstr "Kipi öntanımlı olarak ayarla"
+
+#. i18n: file: newmode.ui:98
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox)
+#: rc.cpp:242
+msgid "&Icon "
+msgstr "&Simge "
+
+#: rc.cpp:243
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Görkem Çetin"
+
+#: rc.cpp:244
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gorkem@kde.org"
+
+#: selectprofile.cpp:34
+msgid "Select profile"
+msgstr "Profili seç"
+
+#: selectprofile.cpp:35
+msgid "Available profiles with button actions"
+msgstr "Düğme eylemleri olan kullanılabilir profiller"
+
+#: selectprofile.cpp:50
+msgid "Auto-Populate"
+msgstr "Otomatik-Doldur"
+
+#: selectprofile.cpp:93
+msgid "Remote supports all defined buttons in selected profile"
+msgstr ""
+
+#: selectprofile.cpp:97
+msgid "Remote does not support all defined buttons in selected profile"
+msgstr ""
+
+#: selectprofile.cpp:101
+msgid "Remote supports none of the defined buttons in selected profile"
+msgstr ""
+
+#~ msgctxt "The name of a parameter"
+#~ msgid "unknown"
+#~ msgstr "bilinmeyen "
+
+#~ msgid "Description"
+#~ msgstr "Tanım"
+
+#~ msgid "Applications"
+#~ msgstr "Uygulamalar"
+
+#~ msgid "Information on <b>%1</b>:"
+#~ msgstr "<b>%1</b> hakkında bilgi:"
+
+#~ msgid "Number of Applications"
+#~ msgstr "Uygulama Sayısı"
+
+#~ msgid "Remote Controls"
+#~ msgstr "Uzaktan Denetim"
+
+#~ msgid "Number of Remote Controls"
+#~ msgstr "Uzaktan Denetleyici Sayısı"
+
+#~ msgid "Remote controls and modes:"
+#~ msgstr "Uzaktan denetimler ve kipler:"
+
+#~ msgid "Extension Name"
+#~ msgstr "Uzantı Adı"
+
+#~ msgid "Extension Author"
+#~ msgstr "Uzantı Yazarı"
+
+#~ msgid "Used Extension"
+#~ msgstr "Kullanılan Eklenti"
+
+#~ msgid "Remote Control Identifier"
+#~ msgstr "Uzaktan Denetleyici Kimlikleyici"
+
+#~ msgid "Number of Buttons"
+#~ msgstr "Düğme Sayısı"
+
+#~ msgctxt "Name"
+#~ msgid "Name of the argument"
+#~ msgstr "Argümanın adı"
+
+#~ msgctxt "Value"
+#~ msgid "Value of the argument"
+#~ msgstr "Argümanın değeri"
+
+#~ msgid ""
+#~ "There are currently no remote controls available. You must first set up "
+#~ "LIRC correctly; see www.lirc.org for more information."
+#~ msgstr ""
+#~ "Şu andan bir uzaktan denetim mevcut değil. İlk önce LIRC uygulamasını "
+#~ "doğru ayarlamalısınız; daha çok bilgi için www.lirc.org adresini ziyaret "
+#~ "edin."
+
+#, fuzzy
+#~| msgid "Value"
+#~ msgid "False"
+#~ msgstr "Değer"
+
+#~ msgid ""
+#~ "You may only drag the selected items onto a mode of the same remote "
+#~ "control"
+#~ msgstr ""
+#~ "Sadece aynı uzaktan denetleyicinin kipine seçili ögeleri taşıyabilirsiniz"
+
+#~ msgid "You May Not Drag Here"
+#~ msgstr "Buraya Sürükleyemezsiniz"
+
+#~ msgid "Parameters"
+#~ msgstr "Parametreler"
+
+#, fuzzy
+#~| msgid "Function"
+#~ msgid "DBus functions"
+#~ msgstr "Fonksiyon"
+
+#~ msgctxt "Unknown parameter name in function"
+#~ msgid "&lt;anonymous&gt;"
+#~ msgstr "&lt;anonim&gt;"
+
+#~ msgid "Program"
+#~ msgstr "Program"
+
+#~ msgid "Option Description"
+#~ msgstr "Seçenek Tanımı"
+
+#~ msgid "Type"
+#~ msgstr "Tür"
+
+#~ msgid "Place"
+#~ msgstr "Yer"
+
+#~ msgid "Parameter:"
+#~ msgstr "Parametre:"
+
+#, fuzzy
+#~| msgid "A&pplication/D-Bus options:"
+#~ msgid "A&pplication / D-Bus options:"
+#~ msgstr "Uygul&ama/D-Bus seçenekleri:"

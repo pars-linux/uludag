@@ -1,0 +1,46 @@
+# translation of krunner_webshortcutsrunner.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: krunner_webshortcutsrunner\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-10 06:21+0200\n"
+"PO-Revision-Date: 2009-04-17 14:16+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: webshortcutrunner.cpp:89
+#, kde-format
+msgctxt "A web shortcut and its name"
+msgid "%1: %2"
+msgstr "%1: %2"
+
+#: webshortcutrunner.cpp:94
+#, kde-format
+msgctxt "A web shortcut, its name and a description"
+msgid "%1: %2 %3"
+msgstr "%1: %2 %3"
+
+#: webshortcutrunner.cpp:102
+#, kde-format
+msgid ""
+"Opens the location associated with \"shortcut\" in a web browser with the "
+"query :q:. Known shortcuts include:\n"
+"%1"
+msgstr ""
+
+#: webshortcutrunner.cpp:167
+#, kde-format
+msgid "Search %1 for %2"
+msgstr "%2 için %1 ara"
+
+#~ msgid "Web Shortcut"
+#~ msgstr "Web Kısayolu"

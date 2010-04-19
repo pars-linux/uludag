@@ -1,0 +1,95 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: ArtisticTextShape\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"PO-Revision-Date: 2009-09-18 03:32+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ArtisticTextShape.cpp:42
+msgid "Artistic Text"
+msgstr "Sanatsal Metin"
+
+#: ArtisticTextShapeFactory.cpp:30
+msgid "ArtisticTextShape"
+msgstr "Sanatsal Metin Şekli"
+
+#: ArtisticTextShapeFactory.cpp:32
+msgid "A shape which shows a single text line"
+msgstr "Tek bir metin satırı gösteren bir şekil"
+
+#: ArtisticTextTool.cpp:48 AttachTextToPathCommand.cpp:28
+msgid "Attach Path"
+msgstr "Yol Ekle"
+
+#: ArtisticTextTool.cpp:52 DetachTextFromPathCommand.cpp:27
+msgid "Detach Path"
+msgstr "Yolu Ayır"
+
+#: ArtisticTextTool.cpp:56 ArtisticTextTool.cpp:303
+msgid "Convert to Path"
+msgstr "Yola Dönüştür"
+
+#: ArtisticTextTool.cpp:233
+msgid "Press return to finish editing."
+msgstr "Düzenlemeyi bitirmek için enter tuşuna basın."
+
+#: ArtisticTextToolFactory.cpp:27
+msgid "Artistic Text Tool"
+msgstr "Sanatsal Metin Aracı"
+
+#: ArtisticTextToolFactory.cpp:29
+msgid "Artistic Text Editing Tool"
+msgstr "Sanatsal Metin Düzenleme Aracı"
+
+#: ChangeTextOffsetCommand.cpp:28
+msgid "Change Text Offset"
+msgstr "Metin Yerleşimini Değiştir"
+
+#. i18n: file: ArtisticTextShapeConfigWidget.ui:25
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:3
+msgid "Family:"
+msgstr "Aile:"
+
+#. i18n: file: ArtisticTextShapeConfigWidget.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6
+msgid "Size:"
+msgstr "Boyut:"
+
+#. i18n: file: ArtisticTextShapeConfigWidget.ui:113
+#. i18n: ectx: property (text), widget (QLabel, labelStartOffset)
+#: rc.cpp:9
+msgid "Offset:"
+msgstr "Yerleşim:"
+
+#: ArtisticTextShapeConfigWidget.h:57
+msgid "Change font"
+msgstr "Yazı tipini değiştir"
+
+#: ArtisticTextShapeConfigWidget.h:87
+msgid "Change text"
+msgstr "Metni değiştir"
+
+#: ArtisticTextShapeConfigWidget.h:117
+msgid "Change text anchor"
+msgstr "Metin hedefini değiştir"
+
+#: ArtisticTextTool.h:83
+msgid "Add text range"
+msgstr "Metin aralığı ekle"
+
+#: ArtisticTextTool.h:128
+msgid "Remove text range"
+msgstr "Metin aralığı sil"

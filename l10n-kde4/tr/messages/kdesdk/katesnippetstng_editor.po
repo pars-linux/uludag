@@ -1,0 +1,151 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: katesnippetstng_editor\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-30 06:56+0100\n"
+"PO-Revision-Date: 2009-11-10 16:12+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: editorapp.cpp:49
+#, kde-format
+msgid "The specified URL (%1) is not a local file"
+msgstr "Belirtilen adres (%1) bir yerel bir dosya değil"
+
+#: editor.cpp:24 editor.cpp:25
+msgid "Kate Snippets TNG Datafile Editor"
+msgstr "Kate Snippets TNG Veri Dosyası Düzenleyici"
+
+#: editor.cpp:26
+msgid "(c) 2009 Joseph Wenninger"
+msgstr "(c) 2009 Joseph Wenninger"
+
+#: editor.cpp:31
+msgid "Document to open"
+msgstr "Açılacak belge"
+
+#. i18n: file: filetypelistcreatorview.ui:41
+#. i18n: ectx: property (text), widget (KPushButton, filetypeAddButton)
+#: rc.cpp:3
+msgid "Add"
+msgstr "Ekle"
+
+#. i18n: file: newsnippetfileview.ui:20
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: snippeteditorview.ui:28
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:6 rc.cpp:27
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file: newsnippetfileview.ui:30
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: snippeteditorview.ui:54
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:9 rc.cpp:31
+msgid "License:"
+msgstr "Lisans:"
+
+#. i18n: file: newsnippetfileview.ui:41
+#. i18n: ectx: property (text), item, widget (KComboBox, snippetCollectionLicense)
+#: rc.cpp:12
+msgid "Artistic"
+msgstr "Sanatsal"
+
+#. i18n: file: newsnippetfileview.ui:46
+#. i18n: ectx: property (text), item, widget (KComboBox, snippetCollectionLicense)
+#: rc.cpp:15
+msgid "BSD"
+msgstr "BSD"
+
+#. i18n: file: newsnippetfileview.ui:51
+#. i18n: ectx: property (text), item, widget (KComboBox, snippetCollectionLicense)
+#: rc.cpp:18
+msgid "LGPL v2+"
+msgstr "LGPL v2+"
+
+#. i18n: file: newsnippetfileview.ui:56
+#. i18n: ectx: property (text), item, widget (KComboBox, snippetCollectionLicense)
+#: rc.cpp:21
+msgid "LGPL v3+"
+msgstr "LGPL v3+"
+
+#. i18n: file: newsnippetfileview.ui:64
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: snippeteditorview.ui:80
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:24 rc.cpp:35
+msgid "Authors:"
+msgstr "Yazarlar:"
+
+#. i18n: file: snippeteditorview.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:38
+msgid "File type:"
+msgstr "Dosya tipi:"
+
+#. i18n: file: snippeteditorview.ui:102
+#. i18n: ectx: property (text), widget (KPushButton, snippetCollectionFiletypeButton)
+#: rc.cpp:41
+msgid "Edit"
+msgstr "Düzenle"
+
+#. i18n: file: snippeteditorview.ui:164
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:44
+msgid "Display Prefix:"
+msgstr "Öneki Görüntüle:"
+
+#. i18n: file: snippeteditorview.ui:174
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:47
+msgid "Match/Name:"
+msgstr "Eşleşme/İsim:"
+
+#. i18n: file: snippeteditorview.ui:184
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:50
+msgid "Display Postfix:"
+msgstr "Soneki Gösrüntüle:"
+
+#. i18n: file: snippeteditorview.ui:194
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:53
+msgid "Display Arguments:"
+msgstr "Argümanları Görüntüle:"
+
+#. i18n: file: snippeteditorview.ui:204
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:56
+msgid "Snippet Content:"
+msgstr "Parçacık İçeriği:"
+
+#: rc.cpp:57
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:58
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: snippeteditornewdialog.cpp:28
+msgid "Create new snippet file"
+msgstr "Yeni parçacık dosyası oluştur"
+
+#: snippeteditornewdialog.cpp:30
+msgid "Create"
+msgstr "Oluştur"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"

@@ -1,0 +1,76 @@
+# translation of kinfocenter_usb.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_usb\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-12 20:57+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: acronym
+#: index.docbook:9 index.docbook:34
+#, no-c-format
+msgid "<acronym>USB</acronym>"
+msgstr "<acronym>USB</acronym>"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "<firstname></firstname> <surname></surname>"
+msgstr "<firstname></firstname> <surname></surname>"
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:27
+#, no-c-format
+msgid "<keyword>USB</keyword>"
+msgstr "<keyword>USB</keyword>"
+
+#. Tag: keyword
+#: index.docbook:28
+#, no-c-format
+msgid "System Information"
+msgstr "Sistem Bilgisi"
+
+#. Tag: para
+#: index.docbook:36
+#, no-c-format
+msgid ""
+"This module allows you to see the devices attached to your <acronym>USB</"
+"acronym> bus(es)."
+msgstr ""
+"Bu modül, <acronym>USB</acronym> bus(ları)'na bağlı olan aygıtları görmenizi "
+"sağlar."
+
+#. Tag: para
+#: index.docbook:39
+#, no-c-format
+msgid ""
+"This module is for information only, you cannot edit any information you see "
+"here."
+msgstr ""
+"Bu modül sadece bilgi amaçlıdır, burada gördüğünüz herhangi bir bilgiyi "
+"düzenleyemezsiniz."

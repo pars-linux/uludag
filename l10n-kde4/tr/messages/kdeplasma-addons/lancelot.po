@@ -1,0 +1,776 @@
+# translation of lancelot.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Koray Löker <loker@pardus.org.tr>, 2008.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: lancelot\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"PO-Revision-Date: 2009-09-18 20:11+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: logger/Logger.cpp:87
+msgid "Usage logging is activated."
+msgstr "Günlük kaydı tutma işlevi etkinleştirildi."
+
+#: logger/Logger.cpp:89
+msgid "Configure"
+msgstr "Yapılandır"
+
+#: logger/Logger.cpp:137
+msgid "Failed to open the log file. Logging is disabled."
+msgstr ""
+"Günlük kaydı dosyası açılamadı. Günlük kaydı tutma işlevi pasifleştirilmiş."
+
+#: models/SystemActions.cpp:136
+msgid "&Leave"
+msgstr "&Çık"
+
+#: models/SystemActions.cpp:138
+msgid "Switch &User"
+msgstr "&Kullanıcı Değiştir"
+
+#: models/SystemActions.cpp:140
+msgid "Loc&k Session"
+msgstr "&Oturumu Kilitle"
+
+#: models/SystemActions.cpp:142
+msgid "Log &Out"
+msgstr "&Çık"
+
+#: models/SystemActions.cpp:144
+msgid "Re&boot"
+msgstr "Yeniden &Başlat"
+
+#: models/SystemActions.cpp:146
+msgid "&Shut Down"
+msgstr "&Kapat"
+
+#: models/SystemActions.cpp:148
+msgid "Suspend to D&isk"
+msgstr "&Disk Kullanarak Askıya Al"
+
+#: models/SystemActions.cpp:150
+msgid "Suspend to &RAM"
+msgstr "&Bellek Kullanarak Askıya Al"
+
+#: models/SystemActions.cpp:289
+msgid "<p>Lancelot can not lock your screen at the moment.</p>"
+msgstr "<p>Lancelot şu anda ekranınızı kilitleyemiyor.</p>"
+
+#: models/SystemActions.cpp:291
+msgid "Session locking error"
+msgstr "Oturum kilitleme hatası"
+
+#: models/SystemActions.cpp:351
+msgid "New Session"
+msgstr "Yeni Oturum"
+
+#: models/SystemActions.cpp:374 models/SystemActions.cpp:397
+msgid "Display manager error"
+msgstr "Görüntü yöneticisi hatası"
+
+#: models/SystemActions.cpp:394
+msgid ""
+"<p>Lancelot can not find your display manager. This means that it not able "
+"to retrieve the list of currently running sessions, or start a new one.</p>"
+msgstr ""
+"<p>Lancelot görüntü yöneticinizi bulamadı. Bu durum çalışan oturumların "
+"listesinin alınamayacağı  ve yeni bir oturum başlatılamayacağı anlamına "
+"geliyor.</p>"
+
+#: models/SystemActions.cpp:403
+#, kde-format
+msgid ""
+"<p>You have chosen to open another desktop session.<br />The current session "
+"will be hidden and a new login screen will be displayed.<br />An F-key is "
+"assigned to each session; F%1 is usually assigned to the first session, F%2 "
+"to the second session and so on. You can switch between sessions by pressing "
+"Ctrl, Alt and the appropriate F-key at the same time. Additionally, the KDE "
+"Panel and Desktop menus have actions for switching between sessions.</p>"
+msgstr ""
+"<p>Başka bir masaüstü oturumu açmak istediniz.<br />Bu işlem için güncel "
+"oturum gizlenecek ve bir giriş ekranı görüntülenecektir.<br />Ayrıca her "
+"oturum için bir F-tuşu tanımlanacaktır. Genellikle ilk oturum için F%1, "
+"ikincisi için F%2 .. tanımlanır. Oturumlar arasında gezmek için Control - "
+"Alt ve karşılık gelen tuşa basmalısınız. Bunlara ek olarak, KDE Panel menüsü "
+"ve Masaüstü menüsü de oturumlar arasında geçiş yapmanızı sağlayacak "
+"eylemleri barındırır.</p>"
+
+#: models/SystemActions.cpp:414
+msgid "Warning - New Session"
+msgstr "Uyarı - Yeni Oturum"
+
+#: models/SystemActions.cpp:415
+msgid "&Start New Session"
+msgstr "&Yeni Oturum Başlat"
+
+#: models/Places.cpp:33 parts/PartsMergedModel.cpp:229
+msgid "Places"
+msgstr "Konumlar"
+
+#: models/Runner.cpp:98
+msgid "Search string is empty"
+msgstr "Arama ifadesi boş"
+
+#: models/Runner.cpp:99
+msgid "Enter something to search for"
+msgstr "Aramak için bir şeyler girin"
+
+#: models/Runner.cpp:106
+msgid "Searching..."
+msgstr "Aranıyor..."
+
+#: models/Runner.cpp:107
+msgid "Some searches can take longer to complete"
+msgstr "Bazı aramaların tamamlanması biraz zaman alabilir"
+
+#: models/Runner.cpp:150
+msgid "No matches found"
+msgstr "Eşleşme bulunamadı"
+
+#: models/Runner.cpp:151
+msgid "No matches found for current search"
+msgstr "Geçerli arama için sonuç bulunamadı"
+
+#: models/Runner.cpp:220 models/Applications.cpp:238
+msgid "Add to Favorites"
+msgstr "Yer İmlerine Ekle"
+
+#: models/NewDocuments.cpp:38
+msgid "New:"
+msgstr "Yeni:"
+
+#: models/Devices.cpp:51
+msgid "Removable"
+msgstr "Taşınabilir"
+
+#: models/Devices.cpp:55
+msgid "Fixed"
+msgstr "Sabit"
+
+#: models/Devices.cpp:119 models/Devices.cpp:141
+msgid "Unmounted"
+msgstr "Ayrılmış"
+
+#: models/Devices.cpp:260
+msgid "Mount"
+msgstr "Bağla"
+
+#: models/Devices.cpp:263
+msgid "Eject"
+msgstr "Çıkart"
+
+#: models/Devices.cpp:266
+msgid "Unmount"
+msgstr "Ayır"
+
+#: models/Devices.cpp:341
+msgid "The requested device can not be accessed."
+msgstr "İstenilen aygıta erişilemedi."
+
+#: models/Devices.cpp:341
+msgid "Failed to open"
+msgstr "Açılamadı"
+
+#: models/OpenDocuments.cpp:36
+msgctxt "@title Title of a list of documents that are open"
+msgid "Open documents"
+msgstr "Açık belgeler"
+
+#: models/MessagesKmail.cpp:34 parts/PartsMergedModel.cpp:257
+msgid "Unread messages"
+msgstr "Okunmamış iletiler"
+
+#: models/MessagesKmail.cpp:99
+msgid "Mail client"
+msgstr "E-Posta istemcisi"
+
+#: models/MessagesKmail.cpp:100
+msgid "Mail client is not running"
+msgstr "E-posta istemcisi çalışmıyor"
+
+#: models/MessagesKmail.cpp:102
+msgid "Unable to find KMail"
+msgstr "KMail bulunamadı"
+
+#: models/MessagesKmail.cpp:151
+msgid "No unread mail"
+msgstr "Okunmamış ileti yok"
+
+#: models/FavoriteApplications.cpp:37 models/FavoriteApplications.cpp:143
+#: LancelotWindow.cpp:134
+msgid "Favorites"
+msgstr "Sık Kullanılanlar"
+
+#: models/FavoriteApplications.cpp:125
+msgid "Remove From Favorites"
+msgstr "Yer İmlerinden Kaldır"
+
+#: models/RecentDocuments.cpp:30 parts/PartsMergedModel.cpp:253
+msgid "Recent Documents"
+msgstr "Son Kullanılan Belgeler"
+
+#: models/RecentDocuments.cpp:48
+msgid "Remove this item"
+msgstr "Bu ögeyi kaldır"
+
+#: models/RecentDocuments.cpp:50
+msgid "Clear documents history"
+msgstr "Belge geçmişini temizle"
+
+#: models/ContactsKopete.cpp:35 i18n_strings.cpp:30 LancelotWindow.cpp:361
+msgid "Contacts"
+msgstr "Kişiler"
+
+#: models/ContactsKopete.cpp:111
+msgid "Messaging client"
+msgstr "Mesajlaşma istemcisi"
+
+#: models/ContactsKopete.cpp:112
+msgid "Messaging client is not running"
+msgstr "Mesjlaşma uygulaması çalışmıyor"
+
+#: models/ContactsKopete.cpp:114
+msgid "Unable to find Kopete"
+msgstr "Kopete bulunamadı"
+
+#: models/ContactsKopete.cpp:143 models/ContactsKopete.cpp:208
+msgid "No online contacts"
+msgstr "Çevrimiçi kişi yok"
+
+#: models/SystemServices.cpp:38 parts/PartsMergedModel.cpp:233
+#: parts/PartsMergedModel.cpp:271 parts/PartsMergedModel.cpp:276
+msgid "System"
+msgstr "Sistem"
+
+#: parts/PartsMergedModel.cpp:64
+msgid "Remove this"
+msgstr "Bunu kaldır"
+
+#: parts/PartsMergedModel.cpp:237
+msgid "Removable devices"
+msgstr "Çıkarılabilir aygıtlar"
+
+#: parts/PartsMergedModel.cpp:241
+msgid "Fixed devices"
+msgstr "Sabit aygıtlar"
+
+#: parts/PartsMergedModel.cpp:245
+msgid "New Documents"
+msgstr "Yeni Belgeler"
+
+#: parts/PartsMergedModel.cpp:249
+msgid "Open Documents"
+msgstr "Açık Belgeler"
+
+#: parts/PartsMergedModel.cpp:261 i18n_strings.cpp:37
+msgid "Online contacts"
+msgstr "Çevrimiçi kişiler"
+
+#: parts/PartsMergedModel.cpp:266
+msgid "Favorite Applications"
+msgstr "Sık Kullanılan Uygulamalar"
+
+#: parts/LancelotPart.cpp:73 LancelotWindow.cpp:123
+msgid "Search"
+msgstr "Ara"
+
+#: launcher/LancelotApplet.cpp:170
+msgid "Configure Shortcuts..."
+msgstr "Kısayolları Yapılandır..."
+
+#: launcher/LancelotApplet.cpp:176 LancelotWindow.cpp:919
+msgid "Menu Editor"
+msgstr "Menü Düzenleyici"
+
+#: launcher/LancelotApplet.cpp:331
+msgid "Applet"
+msgstr "Gereç"
+
+#: launcher/LancelotApplet.cpp:332
+msgid "Lancelot Launcher Applet"
+msgstr "Lancelot Uygulama Çalıştırma Gereci"
+
+#: launcher/LancelotApplet.cpp:337
+msgid "Menu"
+msgstr "Menü"
+
+#: launcher/LancelotApplet.cpp:338
+msgid "Lancelot Menu"
+msgstr "Lancelot Menüsü"
+
+#: launcher/LancelotAppletConfig.cpp:56 AboutData.cpp:26
+#: LancelotWindow.cpp:736
+msgid "Lancelot"
+msgstr "Lancelot"
+
+#: launcher/LancelotAppletConfig.cpp:59
+msgid "KDE Logo"
+msgstr "KDE Logosu"
+
+#: launcher/LancelotAppletConfig.cpp:62
+msgid "Start here"
+msgstr "Buradan başla"
+
+#: launcher/LancelotAppletConfig.cpp:65
+msgid "Custom"
+msgstr "Özel"
+
+#: AboutData.cpp:28
+msgid "Next-generation application launcher."
+msgstr "Yeni nesil uygulama çalıştırıcı."
+
+#: AboutData.cpp:30
+msgid "(C) 2007-2009 Ivan Čukić"
+msgstr "(C) 2007-2009 Ivan Čukić"
+
+#: AboutData.cpp:37
+msgid "Ivan Čukić"
+msgstr "Ivan Čukić"
+
+#: AboutData.cpp:38
+msgid "Maintainer and lead developer"
+msgstr "Projeyi yürüten, lider geliştirici"
+
+#: AboutData.cpp:44
+msgid "Siraj Razick"
+msgstr "Siraj Razick"
+
+#: AboutData.cpp:45
+msgid "Raptor compositing code"
+msgstr "Raptor birleşiklik kodları"
+
+#: AboutData.cpp:47
+msgid "Robert Knight"
+msgstr "Robert Knight"
+
+#: AboutData.cpp:48
+msgid "Kickoff data models"
+msgstr "Kickoff veri modelleri"
+
+#: i18n_strings.cpp:24
+msgid "&Documents"
+msgstr "&Belgeler"
+
+#: i18n_strings.cpp:25
+msgid "&Contacts"
+msgstr "&Kişiler"
+
+#: i18n_strings.cpp:26
+msgid "Co&mputer"
+msgstr "&Bilgisayar"
+
+#. i18n: file: ui/LancelotConfigBase.ui:143
+#. i18n: ectx: attribute (title), widget (QWidget, tabApplications)
+#: i18n_strings.cpp:27 rc.cpp:101
+msgid "&Applications"
+msgstr "&Uygulamalar"
+
+#: i18n_strings.cpp:29 LancelotWindow.cpp:361
+msgid "Documents"
+msgstr "Belgeler"
+
+#: i18n_strings.cpp:31 LancelotWindow.cpp:361
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#. i18n: file: ui/LancelotConfigBase.ui:202
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: i18n_strings.cpp:32 LancelotWindow.cpp:136 LancelotWindow.cpp:361
+#: rc.cpp:119
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#: i18n_strings.cpp:35
+#, kde-format
+msgctxt "needed program is not running"
+msgid "%1 is not running"
+msgstr "%1 çalışmıyor"
+
+#: i18n_strings.cpp:36
+#, kde-format
+msgctxt "start a program"
+msgid "start %1"
+msgstr "%1 uygulamasını başlat"
+
+#: i18n_strings.cpp:38
+msgid "e-Mail contacts"
+msgstr "Kişilere e-posta gönder"
+
+#: LancelotWindow.cpp:737
+msgid "Open Lancelot menu"
+msgstr "Lancelot menüsünü aç"
+
+#: LancelotWindow.cpp:924
+msgid "Configure &Shortcuts..."
+msgstr "&Kısayolları Yapılandır..."
+
+#: LancelotWindow.cpp:929
+msgid "Configure &Lancelot menu..."
+msgstr "&Lancelot menüsünü yapılandır..."
+
+#: LancelotWindow.cpp:934
+msgid "&About Lancelot"
+msgstr "&Lancelot Hakkında"
+
+#: LancelotWindow.cpp:958 LancelotWindow.cpp:960
+msgid "Configure Lancelot menu"
+msgstr "Lancelot menüsünü yapılandır"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir, Koray Löker"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com, loker@pardus.org.tr"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, panelContents)
+#: rc.cpp:5
+msgid "Contents"
+msgstr "İçindekiler"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:23
+#. i18n: ectx: property (text), widget (QCheckBox, checkShowSearchBox)
+#: rc.cpp:8
+msgid "Show the search box"
+msgstr "Arama kutusunu göster"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:11
+msgid "Activation:"
+msgstr "Etkinleştirme:"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:44
+#. i18n: ectx: property (text), widget (QRadioButton, radioContentsActivationClick)
+#: rc.cpp:14
+msgid "Click to activate items"
+msgstr "Ögeleri etkinleştirmek için tıkla"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:54
+#. i18n: ectx: property (text), widget (QRadioButton, radioContentsActivationExtender)
+#: rc.cpp:17
+msgid "Use no-click interface"
+msgstr "Tıklama kullanmayan arayüzü kullan"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:64
+#. i18n: ectx: property (title), widget (QGroupBox, panelContentsExtenderPosition)
+#: rc.cpp:20
+msgid "Extender Position"
+msgstr "Genişletici Konumu"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:70
+#. i18n: ectx: property (text), widget (QRadioButton, radioContentsExtenderPositionLeft)
+#: rc.cpp:23
+msgid "Left"
+msgstr "Sol"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:77
+#. i18n: ectx: property (text), widget (QRadioButton, radioContentsExtenderPositionRight)
+#: rc.cpp:26
+msgid "Right"
+msgstr "Sağ"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:99
+#. i18n: ectx: property (title), widget (QGroupBox, panelIcon)
+#: rc.cpp:29
+msgid "Applet Icon"
+msgstr "Programcık Simgesi"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:123
+#. i18n: ectx: property (icon), widget (KIconButton, iconChooser)
+#: rc.cpp:32
+msgid "lancelot-part"
+msgstr "lancelot-part"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:135
+#. i18n: ectx: property (text), widget (QRadioButton, radioIconActivationClick)
+#: rc.cpp:35
+msgid "Show contents on &click"
+msgstr "İçeriği &tıklandığında göster"
+
+#. i18n: file: parts/LancelotPartConfigBase.ui:142
+#. i18n: ectx: property (text), widget (QRadioButton, radioIconActivationHover)
+#: rc.cpp:38
+msgid "Show contents on icon &hover (after a predefined interval of time)"
+msgstr ""
+"İçeriği simgenin &üzerine gelindiğinde göster (önceden tanımlanmış süre "
+"geçtiğinde)"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:20
+#. i18n: ectx: property (title), widget (QGroupBox, groupAppletIcons)
+#: rc.cpp:41
+msgid "Applet Icons"
+msgstr "Programcık Simgeleri"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:26
+#. i18n: ectx: property (text), widget (QRadioButton, radioShowCategories)
+#: rc.cpp:44
+msgid "Show cate&gories inside the applet"
+msgstr "&Kategorileri programcık içerisinde göster"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:33
+#. i18n: ectx: property (text), widget (QRadioButton, radioShowMenuIconOnly)
+#: rc.cpp:47
+msgid "Show only &menu launcher icon"
+msgstr "Sadece &menüyü açan simgeyi göster"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:65
+#. i18n: ectx: property (title), widget (QGroupBox, groupAppletIconsChoose)
+#: rc.cpp:50
+msgid "Choose Icon"
+msgstr "Simge Seç"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:127
+#. i18n: ectx: property (title), widget (QGroupBox, groupCategoriesChoose)
+#: rc.cpp:53
+msgid "Choose categories to show"
+msgstr "Gösterilecek kategorileri seç"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:186
+#. i18n: ectx: property (title), widget (QGroupBox, groupActivation)
+#: rc.cpp:56
+msgid "Menu Activation"
+msgstr "Menü Etkinleştirme"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:192
+#. i18n: ectx: property (text), widget (QRadioButton, radioActivationHover)
+#: rc.cpp:59
+msgid "Show menu on icon &hover (after a predefined interval of time)"
+msgstr ""
+"Menüyü &üzerine gelindiğinde göster (önceden tanımlanmış süre geçtiğinde)"
+
+#. i18n: file: launcher/LancelotAppletConfigBase.ui:202
+#. i18n: ectx: property (text), widget (QRadioButton, radioActivationClick)
+#: rc.cpp:62
+msgid "Show menu on &click"
+msgstr "Menüyü &tıklandığında göster"
+
+#. i18n: file: ui/LancelotConfigBase.ui:24
+#. i18n: ectx: attribute (title), widget (QWidget, tabGeneral)
+#: rc.cpp:65
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file: ui/LancelotConfigBase.ui:30
+#. i18n: ectx: property (title), widget (QGroupBox, groupActivation)
+#: rc.cpp:68
+msgid "Activation Method"
+msgstr "Etkinleştirme Yöntemi"
+
+#. i18n: file: ui/LancelotConfigBase.ui:36
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioActivationClick)
+#: rc.cpp:71
+msgid ""
+"Choose this option if you like to click. Every interface item will be "
+"activated only by clicking it."
+msgstr ""
+"Tıklamayı seviyorsanız bu seçeneği işaretleyin. Tüm arayüz ögeleri sadece "
+"tıklama ile etkinleştirilecek."
+
+#. i18n: file: ui/LancelotConfigBase.ui:39
+#. i18n: ectx: property (text), widget (QRadioButton, radioActivationClick)
+#: rc.cpp:74
+msgid "&Click on everything"
+msgstr "&Herşeyin üzerine tıkla"
+
+#. i18n: file: ui/LancelotConfigBase.ui:46
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioActivationClassic)
+#: rc.cpp:77
+msgid ""
+"Choose this option if you want the menu to behave like the standard "
+"application launchers. In order to launch applications, you should click on "
+"them. Section buttons are activated by hovering."
+msgstr ""
+"Eğer menünün standart uygulama başlatıcılar gibi davranmasını istiyorsanız "
+"bu seçeneği işaretleyin. Uygulamaları başlatmak için üzerine tıklamanız "
+"gerekir. Bölüm düğmeleri ise üzerine gelindiğinde etkinleştirilir."
+
+#. i18n: file: ui/LancelotConfigBase.ui:49
+#. i18n: ectx: property (text), widget (QRadioButton, radioActivationClassic)
+#: rc.cpp:80
+msgid "Cla&ssic menu"
+msgstr "&Klasik menü"
+
+#. i18n: file: ui/LancelotConfigBase.ui:56
+#. i18n: ectx: property (toolTip), widget (QRadioButton, radioActivationNoClick)
+#: rc.cpp:83
+msgid ""
+"Choose this option if you want to avoid clicking. Section buttons are "
+"activated by hovering. Applications are launched by hovering the button "
+"extenders."
+msgstr ""
+"Eğer tıklamak istemiyorsanız bu seçeneği işaretleyin. Bölüm düğmeleri "
+"üzerine gelindiğinde etkinleştirilecek. Uygulamalar düğmelerin "
+"genişleticilerinin üzerine gelindiğinde etkinleştirilecek."
+
+#. i18n: file: ui/LancelotConfigBase.ui:59
+#. i18n: ectx: property (text), widget (QRadioButton, radioActivationNoClick)
+#: rc.cpp:86
+msgid "&No-click activation"
+msgstr "&Tıklayarak etkinleştirme kullanma"
+
+#. i18n: file: ui/LancelotConfigBase.ui:76
+#. i18n: ectx: property (toolTip), widget (QCheckBox, checkKeepOpen)
+#: rc.cpp:89
+msgid "Do not close the menu until it loses focus."
+msgstr "Odaklanma kaybedilene kadar menüyü kapatma."
+
+#. i18n: file: ui/LancelotConfigBase.ui:79
+#. i18n: ectx: property (text), widget (QCheckBox, checkKeepOpen)
+#: rc.cpp:92
+msgid "&Keep menu open"
+msgstr "&Menüyü açık tut"
+
+#. i18n: file: ui/LancelotConfigBase.ui:89
+#. i18n: ectx: property (title), widget (QGroupBox, groupSystemActions)
+#: rc.cpp:95
+msgid "System Actions"
+msgstr "Sistem Eylemleri"
+
+#. i18n: file: ui/LancelotConfigBase.ui:116
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:98
+msgid "Choose which actions you want to be assigned to the system buttons:"
+msgstr "Sistem düğmelerine atanacak eylemleri seçin:"
+
+#. i18n: file: ui/LancelotConfigBase.ui:149
+#. i18n: ectx: property (title), widget (QGroupBox, groupAppBrowser)
+#: rc.cpp:104
+msgid "Application Browser"
+msgstr "Uygulama Tarayıcı"
+
+#. i18n: file: ui/LancelotConfigBase.ui:155
+#. i18n: ectx: property (text), widget (QCheckBox, checkAppBrowserReset)
+#: rc.cpp:107
+msgid "Reset the browser to show Favorites on menu open"
+msgstr "Tarayıcıyı menü açıldığında Yer İmlerini gösterecek şekilde ayarla"
+
+#. i18n: file: ui/LancelotConfigBase.ui:169
+#. i18n: ectx: property (text), widget (QLabel, labelAppBrowserColumnNumber)
+#: rc.cpp:110
+msgid "Column Number Limit"
+msgstr "Sütun Sayısı Sınırı"
+
+#. i18n: file: ui/LancelotConfigBase.ui:176
+#. i18n: ectx: property (text), widget (QRadioButton, radioAppBrowserNoColumnLimit)
+#: rc.cpp:113
+msgid "No column number limit"
+msgstr "Sütun sayısı sınırı yok"
+
+#. i18n: file: ui/LancelotConfigBase.ui:186
+#. i18n: ectx: property (text), widget (QRadioButton, radioAppBrowserTwoColumnLimit)
+#: rc.cpp:116
+msgid "Limit to two columns"
+msgstr "İki sütunla sınırlandır"
+
+#. i18n: file: ui/LancelotConfigBase.ui:208
+#. i18n: ectx: property (text), widget (QLabel, labelNewDocuments)
+#: rc.cpp:122
+msgid "New documents applications:"
+msgstr "Yeni belgele uygulamaları:"
+
+#. i18n: file: ui/LancelotConfigBase.ui:215
+#. i18n: ectx: property (text), widget (QPushButton, buttonNewDocumentsEdit)
+#. i18n: file: ui/LancelotConfigBase.ui:242
+#. i18n: ectx: property (text), widget (QPushButton, buttonSystemApplicationsEdit)
+#: rc.cpp:125 rc.cpp:131
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file: ui/LancelotConfigBase.ui:235
+#. i18n: ectx: property (text), widget (QLabel, labelSystemApplications)
+#: rc.cpp:128
+msgid "System applications:"
+msgstr "Sistem uygulamaları:"
+
+#. i18n: file: ui/LancelotConfigBase.ui:266
+#. i18n: ectx: attribute (title), widget (QWidget, tabUsageStatistics)
+#: rc.cpp:134
+msgid "&Usage Statistics"
+msgstr "K&ullanım İstatistikleri"
+
+#. i18n: file: ui/LancelotConfigBase.ui:299
+#. i18n: ectx: property (html), widget (KTextBrowser, textUsageStatistics)
+#: rc.cpp:137
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+"size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The usage statistics are "
+"intended to track applications you start, in order to provide a better user "
+"experience.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The collected data is "
+"considered private and is not shared with the outside world.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Note: The collected data "
+"is not used by Lancelot at the moment, but will be in the future. Leaving "
+"this option \"on\" will ensure that, once the features that depend on usage "
+"statistics are implemented, you will not need to train them.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
+msgstr ""
+
+#. i18n: file: ui/LancelotConfigBase.ui:312
+#. i18n: ectx: property (text), widget (QCheckBox, checkUsageStatisticsEnable)
+#: rc.cpp:147
+msgid "Enable usage statistics"
+msgstr "Kullanım istatistiklerini etkinleştir"
+
+#. i18n: file: ui/LancelotConfigBase.ui:322
+#. i18n: ectx: property (text), widget (QPushButton, buttonUsageStatisticsClear)
+#: rc.cpp:150
+msgid "Clear gathered data"
+msgstr "Toplanan verileri temizle"
+
+#~ msgid "Contents Behavior"
+#~ msgstr "İçerik Davranışı"
+
+#~ msgid "Recent documents"
+#~ msgstr "Son kullanılanlar"
+
+#~ msgid "Clear"
+#~ msgstr "Temizle"
+
+#~ msgid "Lock Session"
+#~ msgstr "Oturumu Kilitle"
+
+#~ msgid "Log Out"
+#~ msgstr "Çık"
+
+#~ msgid "Switch User"
+#~ msgstr "Kullanıcı Değiştir"
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgid "&Advanced"
+#~ msgstr "Gelişmiş"
+
+#~ msgid "run"
+#~ msgstr "çalıştır"
+
+#~ msgid "&Lancelot"
+#~ msgstr "&Lancelot"

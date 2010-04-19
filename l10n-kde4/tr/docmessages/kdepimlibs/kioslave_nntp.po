@@ -1,0 +1,99 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_nntp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2001-11-26 18:43GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "nntp"
+msgstr "nntp"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:16
+#, no-c-format
+msgid "The nntp kioslave accesses <acronym>NNTP</acronym> servers directly."
+msgstr ""
+"nntp kioslave, <acronym>NNTP</acronym> sunuculara doğrudan erişmek için "
+"kullanılır."
+
+#. Tag: para
+#: index.docbook:19
+#, no-c-format
+msgid ""
+"This kioslave can not be used with servers that do not implement the "
+"<command>GROUP</command> command, including some versions of the popular "
+"<application>INN</application> news server which is often used by "
+"<acronym>ISP</acronym>s. It does work with <application>leafnode</"
+"application>, which many people use to keep an offline cache of news "
+"articles on their own hard drive or within their <acronym>LAN</acronym>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:27
+#, no-c-format
+msgid ""
+"You can use the nntp kioslave by typing <userinput>nntp://yourserver/"
+"groupname</userinput> into the &konqueror; <acronym>URL</acronym> bar."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid ""
+"If you enter a group name, as above, and the group is available, you will "
+"see the messages stored for that group as icons in &konqueror;."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:35
+#, no-c-format
+msgid ""
+"Clicking on a message will display it as plain text, including all headers. "
+"This could be useful for debugging a news client to news server connection, "
+"for example, to ensure that your new <application>leafnode</application> "
+"server is working correctly."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:40
+#, no-c-format
+msgid ""
+"If you don't enter a group name, and only the server name, you will see a "
+"list of available groups."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:43
+#, no-c-format
+msgid ""
+"Please be aware that this could take an enormous amount of time, and will "
+"cause a lot of network traffic. Some commercial usenet servers have 60,000 "
+"or more groups available, and doing such a thing may cause your desktop to "
+"freeze."
+msgstr ""

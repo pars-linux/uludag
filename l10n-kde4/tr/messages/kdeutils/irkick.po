@@ -1,0 +1,188 @@
+# translation of irkick.po to Turkish
+# Copyright (C) 2008 Free Software Foundation, Inc.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: irkick\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-06 08:23+0100\n"
+"PO-Revision-Date: 2009-10-31 21:33+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: irkick.cpp:102
+msgid ""
+"A connection to the infrared system has been made. Remote controls may now "
+"be available."
+msgstr ""
+"Kızıl Ötesi sistemine bir bağlantı gerçekleştirildi. Uzak Kontroller artık "
+"kullanılabilir."
+
+#: irkick.cpp:115
+msgid ""
+"The infrared system has severed its connection. Remote controls are no "
+"longer available."
+msgstr ""
+"Kızıl Ötesi sistem bağlantısı kesildi. Uzak kontroller artık kullanılamaz."
+
+#: irkick.cpp:129
+msgid "Resetting all modes."
+msgstr "Tüm modlar yeniden başlatılıyor."
+
+#: irkick.cpp:172
+msgid "KDE Lirc Server: "
+msgstr "KDE Lirc Sunucusu: "
+
+#: irkick.cpp:176 irkick.cpp:181
+msgctxt "The state of kdelirc"
+msgid "Stopped"
+msgstr "Durduruldu"
+
+#: irkick.cpp:177
+msgid "Lirc daemon is currently not available."
+msgstr "Lirc servisi şu anda kullanılabilir değil."
+
+#: irkick.cpp:182
+msgid "No infra-red remote controls found."
+msgstr "Hiç kızılötesi uzaktan kumanda aygıtı bulunamadı."
+
+#: irkick.cpp:185
+msgctxt "The state of kdelirc"
+msgid "Ready"
+msgstr "Hazır"
+
+#: irkick.cpp:189 irkick.cpp:212
+msgid "Master"
+msgstr "Ana"
+
+#: irkick.cpp:201
+msgid "&Configure..."
+msgstr "&Yapılandır..."
+
+#: irkick.cpp:210
+msgid "Switch mode to"
+msgstr "Kipi bununla değiştir"
+
+#: irkick.cpp:226
+msgid "&Help"
+msgstr "&Yardım"
+
+#: irkick.cpp:227
+msgid "&About"
+msgstr "&Hakkında"
+
+#: irkick.cpp:272
+msgctxt "Default mode in notification"
+msgid "Default"
+msgstr "Öntanımlı"
+
+#: irkick.cpp:272
+#, kde-format
+msgid "Mode switched to %1"
+msgstr "%1 kipine geçildi"
+
+#: main.cpp:37
+msgid "IRKick"
+msgstr "IRKick"
+
+#: main.cpp:37
+msgid "The KDE Infrared Remote Control Server"
+msgstr "KDE Kızıl Ötesi Uzak Kontrol Sunucusu"
+
+#: main.cpp:37
+msgid "(c) 2003, Gav Wood"
+msgstr "(c) 2003, Gav Wood"
+
+#: main.cpp:37
+msgid "Control your desktop with your remote."
+msgstr "Uzaktan kumandanızla masaüstünüzü denetleyin."
+
+#: main.cpp:38
+msgid "Gav Wood"
+msgstr "Gav Wood"
+
+#: main.cpp:38
+msgid "Author"
+msgstr "Yazan"
+
+#: main.cpp:39
+msgid "Malte Starostik"
+msgstr "Malte Starostik"
+
+#: main.cpp:39
+msgid "Original LIRC interface code"
+msgstr "Özgün LIRC arayüz kodu"
+
+#: main.cpp:40
+msgid "Dirk Ziegelmeier"
+msgstr "Dirk Ziegelmeier"
+
+#: main.cpp:40
+msgid "Ideas, concept code"
+msgstr "Fikirler,  genel kavram kodu"
+
+#: main.cpp:41
+msgid "Zsolt Rizsanyi"
+msgstr "Zsolt Rizsanyi"
+
+#: main.cpp:41
+msgid "Random patches"
+msgstr "Rastgele yamalar"
+
+#: main.cpp:42
+msgid "Antonio Larrosa Jiménez"
+msgstr "Antonio Larrosa Jiménez"
+
+#: main.cpp:42
+msgid "Ideas"
+msgstr "Fikirler"
+
+#: main.cpp:43
+msgid "Michael Zanetti"
+msgstr "Michael Zanetti"
+
+#: main.cpp:43 main.cpp:44
+msgid "KDE4-Port and refactoring"
+msgstr "KDE4 geçişi ve yeniden yapılandırma"
+
+#: main.cpp:44
+msgid "Frank Scheffold"
+msgstr "Frank Scheffold"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "YILDIZ KARDEŞLER"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "turkishprogram@xposta.com"
+
+#~ msgid "Starting <b>%1</b>..."
+#~ msgstr "<b>%1</b> başlatılıyor..."
+
+#~ msgid ""
+#~ "Should the Infrared Remote Control server start automatically when you "
+#~ "begin KDE?"
+#~ msgstr ""
+#~ "KDE açılırken Kızıl Ötesi Uzak Kontrol sunucusu otomatik olarak "
+#~ "başlatılsın mı?"
+
+#~ msgid "Automatically Start?"
+#~ msgstr "Otomatik olarak Başlatılsın mı?"
+
+#~ msgid "Start Automatically"
+#~ msgstr "Otomatik olarak Başlat"
+
+#~ msgid "Do Not Start"
+#~ msgstr "Başlatma"
+
+#~ msgid "text"
+#~ msgstr "metin"

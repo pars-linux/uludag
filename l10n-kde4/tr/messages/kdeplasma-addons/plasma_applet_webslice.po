@@ -1,0 +1,93 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_webslice\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-26 06:19+0100\n"
+"PO-Revision-Date: 2009-11-19 16:29+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: file: websliceConfig.ui:26
+#. i18n: ectx: property (windowTitle), widget (QWidget, websliceConfig)
+#: rc.cpp:3
+msgid "Configure the System Bar"
+msgstr "Sistem Çubuğunu Yapılandır"
+
+#. i18n: file: websliceConfig.ui:35
+#. i18n: ectx: property (text), widget (QLabel, urlLabel)
+#: rc.cpp:6
+msgid "URL"
+msgstr "Adres"
+
+#. i18n: file: websliceConfig.ui:45
+#. i18n: ectx: property (text), widget (QLabel, elementLabel)
+#: rc.cpp:9
+msgid "Element to Show"
+msgstr "Gösterilecek Öge"
+
+#. i18n: file: websliceConfig.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:12
+msgid "Geometry"
+msgstr "Yerleşim"
+
+#. i18n: file: websliceConfig.ui:89
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:15
+msgid ""
+"<p>\n"
+"The Webslice Widget allows you to display a part of a webpage on your "
+"desktop or in a panel. The webslice is fully interactive.\n"
+"</p>\n"
+"<p>\n"
+"Specify the URL of the webpage in the URL field.\n"
+"\n"
+"In the <em>Element to Show</em> field, fill in a CSS identifier (for example "
+"#mybox for elements with the id \"mybox\").  This is the preferred method as "
+"it works best with layout changes on the webpage.\n"
+"</p>\n"
+"<p>\n"
+"Alternatively, you can specify a rectangle on the webpage to use as slice. "
+"Use \"x,y,width,height\" in pixels, for example <em>\"100,80,300,360\"</em>. "
+"This method is a fallback for webpages that do not provide enough semantic "
+"markup for the above mechanism.\n"
+"</p>\n"
+"If both methods (element and geometry) are used, the element will take "
+"precedence.\n"
+msgstr ""
+
+#. i18n: file: websliceConfig.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:30
+msgid "<b>Webslice</b>\n"
+msgstr "<b>Webslice</b>\n"
+
+#. i18n: file: websliceConfig.ui:110
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:34
+msgid "<b>Setup</b>"
+msgstr "<b>Ayarlar</b>"
+
+#: webslice.cpp:85
+msgctxt "displayed in the widget while loading"
+msgid "<h1>Loading...</h1>"
+msgstr ""
+
+#: webslice.cpp:99
+#, fuzzy
+#| msgid "General"
+msgctxt "general config page"
+msgid "General"
+msgstr "Genel"
+
+#~ msgid "%1,%2,%3,%4"
+#~ msgstr "%1,%2,%3,%4"

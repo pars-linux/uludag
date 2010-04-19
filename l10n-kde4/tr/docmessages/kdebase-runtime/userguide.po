@@ -1,0 +1,793 @@
+# translation of khelpcenter_userguide.po to Türkçe
+# Copyright (C) 2003,2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_userguide\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-24 20:26+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:59
+#, no-c-format
+msgid "The &kde; User Guide"
+msgstr "&kde; Kullanıcı Kılavuzu"
+
+#. Tag: corpauthor
+#: index.docbook:62
+#, no-c-format
+msgid "<corpauthor>The &kde; Documentation Team</corpauthor>"
+msgstr "<corpauthor>&kde; Belgeleme Grubu</corpauthor>"
+
+#. Tag: trans_comment
+#: index.docbook:66
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: holder
+#: index.docbook:71
+#, no-c-format
+msgid "<holder>The &kde; Documentation Team</holder>"
+msgstr "<holder>&kde; Belgeleme Grubu</holder>"
+
+#. Tag: para
+#: index.docbook:80
+#, no-c-format
+msgid "A general user guide to &kde;"
+msgstr "&kde; genel kullanıcı kılavuzu"
+
+#. Tag: para
+#: index.docbook:83
+#, no-c-format
+msgid ""
+"Please report any problems with this document to <email>kde-doc-english@kde."
+"org</email>."
+msgstr ""
+
+#. Tag: keyword
+#: index.docbook:89
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:90
+#, no-c-format
+msgid "desktop"
+msgstr "masaüstü"
+
+#. Tag: keyword
+#: index.docbook:91
+#, no-c-format
+msgid "handbook"
+msgstr "el kitabı"
+
+#. Tag: keyword
+#: index.docbook:92
+#, no-c-format
+msgid "tutorial"
+msgstr "kılavuz"
+
+#. Tag: title
+#: index.docbook:98
+#, no-c-format
+msgid "Introduction"
+msgstr "Giriş"
+
+#. Tag: title
+#: index.docbook:101
+#, no-c-format
+msgid "Welcome to the &kde; User Guide"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:103
+#, no-c-format
+msgid ""
+"This User Guide aims to provide an overview of the entire &kde; experience. "
+"We assume here that you have a standard, working installation of a complete "
+"&kde; desktop environment, and the accompanying packages. This book should "
+"be your first point of reference for any simple &kde; configuration "
+"question, or to find out how to perform a common task."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:110
+#, no-c-format
+msgid "What this book aims to be"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:112
+#, no-c-format
+msgid ""
+"The first place to look and a one stop shop for all questions you have "
+"regarding your &kde; experience."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:115
+#, no-c-format
+msgid ""
+"A Quick Start Guide to commonly performed tasks - In most cases, you do not "
+"need to know the details of how to configure every option in an application, "
+"in order to get down to work. You will find step-by-step guides which will "
+"work in most common situations, along with links to sources of further "
+"information in case you have any problems."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:121
+#, no-c-format
+msgid ""
+"There are also some tips and tricks showing you the most useful and "
+"impressive features of &kde;, and ways to save you time and effort."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:127
+#, no-c-format
+msgid "What this book is not"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"The User Guide is not intended to be a replacement for the application "
+"manuals. You should turn to the handbook for help with specific program "
+"configuration and troubleshooting issues not covered in this book. If the "
+"answer is outside the scope of this book, we will tell you here precisely "
+"where to look for further help."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:135
+#, no-c-format
+msgid ""
+"You may also have a variety of third party packages, and some of these "
+"applications are mentioned briefly here, but we normally cover only the "
+"applications provided as part of a &kde; release. This is not a judgment on "
+"the value of third party applications, and in fact many of them are "
+"excellent."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:141
+#, no-c-format
+msgid ""
+"The User Guide is not specific to a distribution, and covers a default &kde; "
+"installation. Your local installation may be customized by your distribution "
+"provider, or by yourself, and so our advice here is generic. You may have to "
+"adjust paths in order to locate the files that are discussed."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:149
+#, no-c-format
+msgid "Conventions used in this book"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:151
+#, no-c-format
+msgid ""
+"We'll use the following formatting conventions to make it clear what we're "
+"referring to:"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:158
+#, no-c-format
+msgid "Type of Text"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:159
+#, no-c-format
+msgid "Style"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:160
+#, no-c-format
+msgid "Example"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:166
+#, no-c-format
+msgid "Text appearing in the &GUI; (on buttons, &etc;)"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:167
+#, no-c-format
+msgid "Light gray background"
+msgstr ""
+
+#. Tag: guilabel
+#: index.docbook:168
+#, no-c-format
+msgid "Settings"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:172
+#, no-c-format
+msgid "Names of keys"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:173
+#, no-c-format
+msgid "Bold font"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:174
+#, no-c-format
+msgid "&Ctrl;"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:178
+#, no-c-format
+msgid "Menu entries"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:179
+#, no-c-format
+msgid "<quote>Menu Name</quote>-><quote>Menu Item</quote>"
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:180
+#, no-c-format
+msgid "<guimenu>File</guimenu><guimenuitem>Quit</guimenuitem>"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:185
+#, no-c-format
+msgid "Key combinations (pressed simultaneously)"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:186
+#, no-c-format
+msgid "<quote>Modifier Key</quote>+<quote>Action Key</quote>"
+msgstr ""
+
+#. Tag: keycombo
+#: index.docbook:187
+#, no-c-format
+msgid "&Ctrl;<keycap>Q</keycap>"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:192
+#, no-c-format
+msgid "Text you should enter"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:193
+#, no-c-format
+msgid "Bold, fixed width font"
+msgstr ""
+
+#. Tag: userinput
+#: index.docbook:194
+#, no-c-format
+msgid "ls -al kde/"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:198
+#, no-c-format
+msgid "Text you should replace as appropriate"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:199
+#, no-c-format
+msgid "Italic green font"
+msgstr ""
+
+#. Tag: replaceable
+#: index.docbook:200
+#, no-c-format
+msgid "user"
+msgstr "kullanıcı"
+
+#. Tag: title
+#: index.docbook:211
+#, no-c-format
+msgid "System Locations"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:213
+#, no-c-format
+msgid "You may need to know the following system locations:"
+msgstr ""
+
+#. Tag: term
+#: index.docbook:218
+#, no-c-format
+msgid "&kde; prefix"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:219
+#, no-c-format
+msgid ""
+"&kde; installs into its own folder tree, which you can find by running the "
+"command <userinput><command>kde4-config</command> <option>--prefix</option></"
+"userinput>. This folder is referred to by the environment variables "
+"$<envar>KDEDIRS</envar> and possibly $<envar>KDEDIR</envar>."
+msgstr ""
+
+#. Tag: term
+#: index.docbook:227
+#, no-c-format
+msgid "&kde; user-specific settings"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:228
+#, no-c-format
+msgid ""
+"The environment variable $<envar>KDEHOME</envar> points to the folder where "
+"&kde; should find user-specific settings. If it is not set, the default "
+"value of <filename class=\"directory\">~/.kde</filename> is used."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:241
+#, no-c-format
+msgid "Overview, or <quote>Where to look in the User Guide</quote>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:243
+#, no-c-format
+msgid "Here's an overview of what's in the User Guide:"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:245
+#, no-c-format
+msgid ""
+"contains an introduction to the basic use of &kde;, such as <xref linkend="
+"\"windows-how-to-work\"/>, and the tools that you'll be using in all &kde; "
+"applications, like <xref linkend=\"programs-save-open\"/>. If you're new to "
+"&kde; or even computers in general, you will probably find this section "
+"helpful."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:252
+#, no-c-format
+msgid ""
+"explains some important components of a &kde; installation and how they fit "
+"together: &kde;'s multimedia and networking capabilities are extensive, and "
+"not covered thoroughly here, but there's a taster of both of them in this "
+"part of the User Guide. At the end of this part, you'll find a guide to "
+"tweaking &kde; just that little bit more, in <xref linkend=\"tinkering-under-"
+"the-hood\"/>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:260
+#, no-c-format
+msgid ""
+"highlights &kde;'s suite of Internet applications. &kde; includes a powerful "
+"web browser, &konqueror;, a full-featured email client, &kmail;, a news "
+"reader, &knode;, and many more applications to make your Internet experience "
+"easier and more productive. This part of the User Guide contains information "
+"about setting up these applications."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:267
+#, no-c-format
+msgid ""
+"is a reference guide to some &kde; features which will be useful to "
+"administrators setting up multi-user systems. This part also has information "
+"that may be useful to &kde; users with single-user systems: where "
+"configuration files are stored, what environment variables affect &kde;, and "
+"so on. The KIOSK framework is the &kde; system which allows administrators "
+"to limit what users can do in &kde;. It is potentially useful in many "
+"situations, but especially for running single-function kiosks with, for "
+"example, just a web browser, hence the name."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:282
+#, no-c-format
+msgid "The Desktop"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:285
+#, no-c-format
+msgid "The Basics"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:286
+#, no-c-format
+msgid ""
+"The <quote>desktop</quote><indexterm><primary>Desktop</primary> </indexterm> "
+"is just the name for the layout of the screen when you start &kde;. It looks "
+"something like this (on your own system, it might look slightly different, "
+"but the main features should be the same):"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:298
+#, no-c-format
+msgid "A default desktop layout"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:303
+#, no-c-format
+msgid "Let us look at the most important parts:"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:305
+#, no-c-format
+msgid ""
+"Most of the screen is taken up by the "
+"background<indexterm><primary>Background</primary></indexterm>. At the "
+"moment, there is a picture making up the background. This picture is usually "
+"referred to as the <quote>wallpaper,</quote><indexterm><primary>Wallpaper</"
+"primary></indexterm> and you can change it to make &kde; suit your taste."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:312
+#, no-c-format
+msgid ""
+"In the top left-hand corner are two icons: <guiicon>Trash</guiicon> and "
+"<guiicon>Home</guiicon>. Clicking on these will open your <filename>Trash</"
+"filename> folder and Home folder, respectively. You can add more icons to "
+"the desktop so that you can open your favorite programs, or access removable "
+"media, with just one click."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:320
+#, no-c-format
+msgid ""
+"At the bottom is the &kde; Panel<indexterm><primary>Panel</primary></"
+"indexterm>, also known as <quote>&kicker;</quote>. The Panel contains "
+"several useful ways of interacting with &kde;. It houses the &kmenu;, from "
+"where you can open any &kde; application installed on your computer, it "
+"shows all the programs that are currently running, as well as the time, and "
+"more. Take a look at <xref linkend=\"panel-and-desktop\"/> for more "
+"information about the &kde; Panel."
+msgstr ""
+
+#. Tag: author
+#: index.docbook:353
+#, no-c-format
+msgid "&Philip.Rodrigues;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:359
+#, no-c-format
+msgid "Logging In and Logging Out"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:360
+#, no-c-format
+msgid "Basic KDM &amp; startkde stuff."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:363
+#, no-c-format
+msgid ""
+"There are two ways to log into &kde;: graphically and via the command line. "
+"We'll look at them both briefly:"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:367
+#, no-c-format
+msgid "Logging in Graphically"
+msgstr ""
+
+#. Tag: primary
+#: index.docbook:368
+#, no-c-format
+msgid "login"
+msgstr ""
+
+#. Tag: primary
+#: index.docbook:369
+#, no-c-format
+msgid "&kdm;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:371
+#, no-c-format
+msgid ""
+"If you see a screen a little bit like the one below when you start up your "
+"computer, then you are all set for logging in graphically. Just enter your "
+"username in the <guilabel>Login</guilabel> text box and your password in the "
+"<guilabel>Password</guilabel> text box. Your password will not be shown as "
+"you type it; it will probably be shown as asterisks. When you have entered "
+"that information, click on the <guibutton>Login</guibutton> button, and "
+"&kde; will start up. The &kde; splash screen will appear, and keep you "
+"informed about the progress of &kde; startup, and when it is done, &kde; "
+"will be ready to use."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:384
+#, no-c-format
+msgid "Logging in via the Command Line"
+msgstr ""
+
+#. Tag: command
+#: index.docbook:385
+#, no-c-format
+msgid "startkde"
+msgstr ""
+
+#. Tag: command
+#: index.docbook:386
+#, no-c-format
+msgid "startx"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:388
+#, no-c-format
+msgid ""
+"If you prefer using the command line, you can log in to &kde; with the "
+"<command>startx</command> command. Add the line <userinput>exec startkde</"
+"userinput> to the <filename>.xinitrc</filename> file in your home folder "
+"(create it if it does not exist), save the file, and then run "
+"<command>startx</command>. &kde; should start in the same way as if you had "
+"logged in graphically."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:398
+#, no-c-format
+msgid "Logging Out"
+msgstr ""
+
+#. Tag: primary
+#: index.docbook:399
+#, no-c-format
+msgid "logout"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:401
+#, no-c-format
+msgid ""
+"Once you have finished using &kde; for the moment, you will want to log out "
+"until next time. The easiest way to do this is to click on the &kmenu; at "
+"the bottom left of your screen, and then select the <guimenuitem>Log Out...</"
+"guimenuitem> item. A dialog with the text <guilabel>End session for "
+"<replaceable>username</replaceable></guilabel> will appear. To confirm that "
+"you want to log out, click on the <guibutton>End Current Session</guibutton> "
+"button. If you change your mind, and decide to carry on using &kde; for now, "
+"hit <guibutton>Cancel</guibutton>."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:412
+#, no-c-format
+msgid "Related Information"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:413
+#, no-c-format
+msgid ""
+"The &kdm; Handbook has information about using and setting up the &kde; "
+"graphical login manager. You can read it in &khelpcenter; or by entering "
+"<userinput>help:/kdm</userinput> in &konqueror;'s <guilabel>Location</"
+"guilabel> bar."
+msgstr ""
+
+#. Tag: chapter
+#: index.docbook:421
+#, no-c-format
+msgid "&getting-help; &windows-how-to; &the-filemanager;"
+msgstr ""
+
+#. Tag: part
+#: index.docbook:429
+#, no-c-format
+msgid "&panel-and-desktop; &programs-and-documents;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:438
+#, no-c-format
+msgid "&kde; Components"
+msgstr ""
+
+#. Tag: part
+#: index.docbook:438
+#, no-c-format
+msgid ""
+"&control-center; &base-kde-applications; &extragear-applications; <chapter "
+"id=\"multimedia\"> <title>Multimedia With &kde;</title> &removable-disks; "
+"&playing-music; &playing-audiocds; &playing-movies; </chapter> <chapter id="
+"\"multiuser-kde\"> <title>&kde; the Multiuser Desktop</title> &your-kde-"
+"account; &kde-as-root; &switching-sessions; </chapter> <chapter id="
+"\"networking\"> <title>Networking with &kde;</title> &file-sharing; "
+"&networking-with-windows; &shared-sessions; </chapter> <chapter id="
+"\"graphics-printing-and-fonts\"> <title>Graphics, Printing, and Fonts</"
+"title> &printer-setup; &printing-from-apps; &pdf-files; &font-installation; "
+"&creating-graphics; </chapter> &customizing-desktop; &konsole-intro; &kde-"
+"edutainment; &accessibility; &under-the-hood;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:505
+#, no-c-format
+msgid "&kde; and the Internet"
+msgstr ""
+
+#. Tag: part
+#: index.docbook:505
+#, no-c-format
+msgid ""
+"&net-connection-setup; &email; <chapter id=\"browser\"> <title>&konqueror;</"
+"title> <para>Intro to the browser</para> &internet-shortcuts; &browser-fine-"
+"tuning; </chapter> &usenet; &messaging-intro;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:532
+#, no-c-format
+msgid "More Tools"
+msgstr ""
+
+#. Tag: part
+#: index.docbook:532
+#, no-c-format
+msgid ""
+"&migrator-applications; &migrator-dictionary; &standard-menu-entries; "
+"&glossary;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:543
+#, no-c-format
+msgid "Troubleshooting Problems"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:545
+#, no-c-format
+msgid "Problems that aren't"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:547
+#, no-c-format
+msgid "Frozen apps (how to kill them)"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:549
+#, no-c-format
+msgid "Things won't open"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:551
+#, no-c-format
+msgid "That scary crash dialog"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:553
+#, no-c-format
+msgid "Reporting Bugs"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:555
+#, no-c-format
+msgid "More Resources"
+msgstr ""
+
+#. Tag: chapter
+#: index.docbook:555
+#, no-c-format
+msgid "&troubleshooting-network-x; &troubleshooting-no-open;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:564
+#, no-c-format
+msgid "Contributing to &kde;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:566
+#, no-c-format
+msgid ""
+"Some basic information to get encourage people to contribute to &kde;, "
+"information about what's available, and how to get started."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:576
+#, no-c-format
+msgid "Credits and Licenses"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:581
+#, no-c-format
+msgid "License"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:583
+#, fuzzy, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: sect1
+#: index.docbook:583
+#, no-c-format
+msgid "&underFDL;"
+msgstr ""
+
+#~ msgid "K Desktop Environment"
+#~ msgstr "K Masaüstü Ortamı"
+
+#~ msgid "<surname>The KDE Team</surname>"
+#~ msgstr "<surname>KDE Takımı</surname>"
+
+#~ msgid ""
+#~ "This is the &kde; User's Guide, a complete documentation of the K Desktop "
+#~ "Environment from the user perspective. The K Desktop Environment is a "
+#~ "collection of tools that will make your &UNIX; life easier and more "
+#~ "enjoyable."
+#~ msgstr ""
+#~ "Bu, kullanıcı cephesinden bakılarak oluşturulan, K Masaüstü Ortamı'nın "
+#~ "kapsamlı bir belgelendirmesi olan &kde; Kullanıcı Kılavuzu'dur. K "
+#~ "Masaüstü Ortamı, &UNIX; hayatıızı daha kolay ve eğlenceli hale getirmek "
+#~ "için oluşturulmuş araçlar topluluğudur."
+
+#~ msgid "guide"
+#~ msgstr "kılavuz"

@@ -1,0 +1,195 @@
+# translation of khelpcenter_faq_intro.po to Türkçe
+# translation of khelpcenter_faq_intro.po to Turkish
+# Copyright (C) 2003,2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_faq_intro\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2004-01-10 14:14+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: intro.docbook:8
+#, no-c-format
+msgid "Introduction"
+msgstr "Giriş"
+
+#. Tag: para
+#: intro.docbook:13
+#, no-c-format
+msgid "What is &kde;?"
+msgstr "&kde; nedir?"
+
+#. Tag: para
+#: intro.docbook:16
+#, no-c-format
+msgid ""
+"&kde; is the K Desktop Environment. It is a project initiated by <ulink url="
+"\"mailto:ettrich@kde.org\">Matthias Ettrich</ulink> in 1996. The aim of the "
+"&kde; project is to connect the power of the &UNIX; operating systems with "
+"the comfort of a modern user interface."
+msgstr ""
+"&kde;, K Masaüstü Ortamı olarak da bilinen bir grafiksel arayüzdür. İlk defa "
+"1996 yılında <ulink url=\"mailto:ettrich@kde.org\">Matthias Ettrich</ulink> "
+"tarafından başlatılan &kde;'nin amacı, &UNIX; işletim sisteminin gücünü "
+"modern bir kullanıcı arayüzüyle birleştirmektir."
+
+#. Tag: para
+#: intro.docbook:21
+#, no-c-format
+msgid "In short, &kde; will bring &UNIX; to the desktop!"
+msgstr "Kısacası, &kde;, &UNIX;'i masaüstüne getirecektir!"
+
+#. Tag: para
+#: intro.docbook:22
+#, fuzzy, no-c-format
+msgid ""
+"If you want further information about &kde;, have a look at <ulink url="
+"\"http://www.kde.org/whatiskde\">What is &kde;?</ulink>"
+msgstr ""
+"&kde; hakkında daha fazla bilgi isterseniz, <ulink url=\"http://www.kde.org/"
+"whatiskde/index.html\">&kde; nedir?</ulink> sayfasına göz atmanızı öneririz."
+
+#. Tag: para
+#: intro.docbook:30
+#, no-c-format
+msgid "On which platforms can I expect &kde; to work?"
+msgstr "&kde; hangi işletim sistemlerinde çalışır?"
+
+#. Tag: para
+#: intro.docbook:33
+#, no-c-format
+msgid ""
+"&kde; is a Desktop Environment for all flavors of &UNIX;. While it is true "
+"that most &kde; developers use &Linux;, &kde; runs smoothly on a wide range "
+"of systems. You may, however, need to tweak the source code a bit to get "
+"&kde; to compile on a not-so-popular variant of &UNIX;, or if you are not "
+"using the &GNU; development tools, in particular the &gcc; compiler."
+msgstr ""
+"&kde; tüm &UNIX; türleri için geliştirilmiş bir Masaüstü Ortamıdır. Birçok "
+"&kde; geliştiricisinin &Linux; kullandığı doğru olsa da, &kde; geniş bir "
+"sistem yelpazesinde rahatça çalışır.Yine de, &kde;'yi pek popüler olmayan "
+"&UNIX; türlerinde çalıştırmak istiyorsanız ya da &GNU; geliştirme araçlarını "
+"kullanmıyorsanız, özellikle de &gcc; derleyicisini, bunun için kaynak "
+"kodlarıyla oynayabilirsiniz, "
+
+#. Tag: para
+#: intro.docbook:44
+#, no-c-format
+msgid "Is &kde; a window manager?"
+msgstr "&kde; bir pencere yöneticisi midir?"
+
+#. Tag: para
+#: intro.docbook:47
+#, no-c-format
+msgid ""
+"No, &kde; is not a window manager. While &kde; includes a very sophisticated "
+"window manager (&kwin;), &kde; is much more than that. It is a full-blown "
+"Integrated Desktop Environment."
+msgstr ""
+"Hayır, &kde; bir pencere yöneticisi değildir. &kde;'nin gelişmiş bir pendere "
+"yöneticisi (&kwin;) içermesinin yanında, &kde; size bunun çok daha fazlasını "
+"verir. &kde; gelişmiş bir Entegre Masaüstü Ortamı'dır."
+
+#. Tag: para
+#: intro.docbook:50
+#, no-c-format
+msgid ""
+"&kde; provides a complete desktop environment, including a web browser, a "
+"file manager, a window manager, a help system, a configuration system, "
+"uncountable tools and utilities, and an ever increasing number of "
+"applications, including but not limited to mail and news clients, drawing "
+"programs, a &PostScript; and a &DVI; viewer and so forth."
+msgstr ""
+"&kde; size bir web tarayıcısı, dosya yöneticisi, pencere yöneticisi, yardım "
+"sistemi, yapılandırma sistemi,posta ve haber istemcileri, çizim "
+"uygulamaları, &PostScript; ve &DVI; izleyicisi ,ve daha birçok (ve gün "
+"geçtikçe artan sayıda) uygulama içerenkapsamlı bir masaüstü ortamı sağlar."
+
+#. Tag: para
+#: intro.docbook:61
+#, fuzzy, no-c-format
+msgid ""
+"Is &kde; a <acronym>CDE</acronym>, &Windows; or &Mac; <acronym>OS</acronym> "
+"clone?"
+msgstr ""
+"&kde; bir <acronym>CDE</acronym>, &Windows; 95 ya da &Mac; <acronym>OS</"
+"acronym> klonu mudur?"
+
+#. Tag: para
+#: intro.docbook:65
+#, no-c-format
+msgid ""
+"No, &kde; is not a clone. Specifically &kde; is not a <acronym>CDE</acronym> "
+"or &Windows; clone. While the &kde; developers have and will continue to "
+"glean the best features from all existing desktop environments, &kde; is a "
+"truly unique environment that has and will continue to go its own way."
+msgstr ""
+"Hayır, &kde; bir klon değildir, özellikle de <acronym>CDE</acronym>ya da "
+"&Windows;'un. &kde; geliştiricileri diğer masaüstü ortamlarının en iyi "
+"özelliklerini &kde;'ye ekleseler de, &kde; kendi yolunda ilerlemiş ve "
+"ilerleyecek tamamen benzersiz bir ortamdır."
+
+#. Tag: para
+#: intro.docbook:75
+#, no-c-format
+msgid "Is &kde; free software?"
+msgstr "&kde; serbest bir yazılım mıdır?"
+
+#. Tag: para
+#: intro.docbook:78
+#, no-c-format
+msgid ""
+"Yes, &kde; is free software according to the &GNU; General Public License. "
+"All &kde; libraries are available under the <acronym>LGPL</acronym> making "
+"commercial software development for the &kde; desktop possible, but all "
+"&kde; applications are licensed under the <acronym>GPL</acronym>."
+msgstr ""
+"Evet, &kde; &GNU;'ya (General Public License - Genel Kamu Lisansı) göre "
+"serbest bir yazılımdır.Tüm &kde; kitaplıkları <acronym>LGPL</acronym> "
+"lisansı altında ticari yazılım yazmak için mevcuttur, yine de tüm &kde; "
+"uygulamaları <acronym>GPL</acronym> altında lisanslanmıştır."
+
+#. Tag: para
+#: intro.docbook:83
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&kde; uses the <link linkend=\"qt\">&Qt; C++ crossplatform toolkit</"
+#| "link>, which is also released (since version 2.2) under the <acronym>GPL</"
+#| "acronym>."
+msgid ""
+"&kde; uses the <link linkend=\"qt\">&Qt; C++ crossplatform toolkit</link>, "
+"which is also released (since version 2.2) under the <acronym>GPL</acronym> "
+"and since version 4.5.0 also under the <acronym>LGPL</acronym>."
+msgstr ""
+"&kde;, kendisi de (2.2 sürümünden itibaren) <acronym>GPL</acronym> lisansı "
+"altında yazılmış <link linkend=\"qt\">&Qt; C++ çokluplatform geliştirme "
+"aracı</link> 'nı kullanır."
+
+#. Tag: para
+#: intro.docbook:86
+#, no-c-format
+msgid ""
+"It is absolutely legal to make &kde; and &Qt; available on &CD-ROM; free of "
+"charge. No runtime fees of any kind are incurred."
+msgstr ""
+"&kde;'yi ve &Qt;'yi &CD-ROM; üzerinde ücretsiz dağıtmak tamamen yasaldır."
+
+#~ msgid ""
+#~ "For an almost complete list of systems &kde; is running on, please refer "
+#~ "to <ulink url=\"http://promo.kde.org/kde_systems.php\">this list of "
+#~ "systems for KDE</ulink>"
+#~ msgstr ""
+#~ "&kde;'nin çalıştığı sistemlerin tam listesi için lütfen <ulink url="
+#~ "\"http://promo.kde.org/kde_systems.php\">KDE'nin çalıştığı sistemler</"
+#~ "ulink> adresine başvurun."

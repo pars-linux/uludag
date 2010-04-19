@@ -1,0 +1,355 @@
+# translation of khelpcenter_whatiskde.po to Türkçe
+# translation of khelpcenter_whatiskde.po to
+# Copyright (C) 2003,2004 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_whatiskde\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2008-12-06 11:11+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: chapterinfo
+#: whatiskde.docbook:2
+#, fuzzy, no-c-format
+#| msgid "<date>2002-01-18</date> <releaseinfo>3.00.00</releaseinfo>"
+msgid "<date>2009-05-09</date> <releaseinfo>4.00.00</releaseinfo>"
+msgstr "<date>18-01-2002</date> <releaseinfo>3.00.00</releaseinfo>"
+
+#. Tag: title
+#: whatiskde.docbook:6 whatiskde.docbook:10
+#, no-c-format
+msgid "What is &kde;?"
+msgstr "&kde; Nedir?"
+
+#. Tag: para
+#: whatiskde.docbook:12
+#, no-c-format
+msgid ""
+"&kde; is an international technology team that creates <ulink url=\"http://"
+"www.gnu.org/philosophy/free-sw.html\">Free Software</ulink> for desktop and "
+"portable computing. Among &kde;&apos;s products are a modern desktop system "
+"for &Linux; and &UNIX; platforms, comprehensive office productivity and "
+"groupware suites and hundreds of software titles in many categories "
+"including Internet and web applications, multimedia, entertainment, "
+"educational, graphics and software development. &kde; software is translated "
+"into more than 60 languages and is built with ease of use and modern "
+"accessibility principles in mind. &kde; 4&apos;s full-featured applications "
+"run natively on &Linux; &BSD;, &Solaris;, &Windows; and Mac OS X."
+msgstr ""
+
+#. Tag: para
+#: whatiskde.docbook:25
+#, no-c-format
+msgid "KDE is..."
+msgstr ""
+
+#. Tag: link
+#: whatiskde.docbook:29
+#, fuzzy, no-c-format
+#| msgid "&kde; The Desktop Environment"
+msgid "A Desktop Environment"
+msgstr "&kde; Masaüstü Ortamı"
+
+#. Tag: link
+#: whatiskde.docbook:34
+#, fuzzy, no-c-format
+#| msgid "&kde; The Application Development Framework"
+msgid "An Application Development Framework"
+msgstr "&kde; Uygulama Geliştirme Ortamı"
+
+#. Tag: link
+#: whatiskde.docbook:40
+#, fuzzy, no-c-format
+#| msgid "&kde; The Office Application Suite"
+msgid "An Office Application Suite"
+msgstr "&kde; Ofis Uygulama Ortamı"
+
+#. Tag: title
+#: whatiskde.docbook:48
+#, no-c-format
+msgid "&kde; The Desktop Environment"
+msgstr "&kde; Masaüstü Ortamı"
+
+#. Tag: para
+#: whatiskde.docbook:50
+#, no-c-format
+msgid ""
+"&kde; or the K Desktop Environment, is a network transparent, easy to use "
+"contemporary desktop environment available for &UNIX; and compatible "
+"systems. Together with a free implementation of &UNIX; such as &GNU;/"
+"&Linux;, &UNIX;/&kde; constitutes a completely free and open computing "
+"platform available to anyone free of charge. Source code is available for "
+"everyone to look at, learn from, modify and improve. Whilst there is always "
+"room for improvement, &kde; today delivers a viable feature packed "
+"alternative to the more commonly found commercial operating system/desktop "
+"combinations available."
+msgstr ""
+
+#. Tag: para
+#: whatiskde.docbook:61
+#, no-c-format
+msgid ""
+"&kde; will continue to bring open, reliable, stable and monopoly-free "
+"computing enjoyed by scientists and computing professionals world-wide to "
+"the everyday user."
+msgstr ""
+
+#. Tag: title
+#: whatiskde.docbook:70
+#, no-c-format
+msgid "&kde; The Application Development Framework"
+msgstr "&kde; Uygulama Geliştirme Ortamı"
+
+#. Tag: para
+#: whatiskde.docbook:72
+#, no-c-format
+msgid ""
+"&kde; also brings to the forefront many innovations for application "
+"developers. An entire infrastructure has been designed and implemented to "
+"help programmers create robust and comprehensive applications in the most "
+"efficient manner, eliminating the complexity and tediousness of general "
+"&UNIX; application development. &kde; recognizes the fact that a computing "
+"platform is only as good as the first class applications available to users. "
+"&kde;&apos;s application framework, implements the latest advances in "
+"framework technology positioning it in direct competition with popular "
+"development frameworks like Microsoft's <acronym>MFC</acronym>/<acronym>COM</"
+"acronym>/ActiveX technology etc. &kde;&apos;s innovative KParts compound "
+"document technology enables developers to quickly create first rate "
+"applications using cutting edge technology."
+msgstr ""
+
+#. Tag: para
+#: whatiskde.docbook:86
+#, no-c-format
+msgid ""
+"More information about &kde; development can be found at <ulink url=\"http://"
+"techbase.kde.org/Development\"></ulink>."
+msgstr ""
+
+#. Tag: title
+#: whatiskde.docbook:94
+#, no-c-format
+msgid "&kde; The Office Application Suite"
+msgstr "&kde; Ofis Uygulama Ortamı"
+
+#. Tag: para
+#: whatiskde.docbook:96
+#, no-c-format
+msgid "&koffice; is a free, integrated office suite for &kde;."
+msgstr ""
+
+#. Tag: para
+#: whatiskde.docbook:98
+#, no-c-format
+msgid ""
+"Leveraging the &kde; application development framework a great number of "
+"applications have been built for the K Desktop Environment. A selection of "
+"those applications is contained in the &kde; base distribution. At this "
+"moment &kde; is developing a complete office application suite based on &kde;"
+"&apos;s innovative KParts technology. This modern day office suite offers "
+"spread-sheet applications, presentation creators, organizers, news clients "
+"and much more. &kpresenter;, a part of this application suite has already "
+"been successfully used for many presentations."
+msgstr ""
+
+#. Tag: para
+#: whatiskde.docbook:109
+#, no-c-format
+msgid ""
+"More information about &koffice; can be found at <ulink url=\"http://www."
+"koffice.org/\"></ulink>."
+msgstr ""
+
+#~ msgid ""
+#~ "&kde; is a desktop environment. In other words, &kde; is a collection of "
+#~ "programs, technologies and documentation that attempt to make life easier "
+#~ "for computer users. &kde; is targeted at &UNIX; workstations. It features "
+#~ "network transparency and a contemporary work philosophy."
+#~ msgstr ""
+#~ "&kde; , bir masaüstü ortamıdır. Bir başka deyişle, &kde; programların, "
+#~ "teknolojilerin ve belgelerin toplandığı ve hayatı bilgisayar "
+#~ "kullanıcıları için daha kolay bir hale getiren bir sistemdir. &kde; , "
+#~ "&UNIX; iş istasyonları üzerinde çalışır ve ağ üzerinde şeffaflık ilkesini "
+#~ "benimser."
+
+#~ msgid ""
+#~ "The creators of the K Desktop Environment are a world-wide group of "
+#~ "software engineers. This group's major goal in free software development "
+#~ "is to provide high quality software that empowers the user with easy "
+#~ "control of his computer's resources."
+#~ msgstr ""
+#~ "K Masaüstü Ortamını oluşturanlar dünya çapındaki yazılım "
+#~ "geliştiricileridir. Bu grubun amacı serbest yazılımı daha ileriye "
+#~ "götürmek, daha kaliteli yazılımlar üretmek ve bilgisayar kaynaklarına "
+#~ "daha iyi bir performansla erişimi sağlayabilmektir."
+
+#~ msgid ""
+#~ "Stability, scaleability and openness are qualities which have made &UNIX; "
+#~ "the undisputed choice for the information technology professional for "
+#~ "many years. &kde; builds on top of this excellent base framework and "
+#~ "brings new, much needed qualities: usability, user friendliness and "
+#~ "beauty! &kde; was the first, and stays the forefront player in bringing "
+#~ "these qualities to &UNIX;, which constituted for years, the premier "
+#~ "platform for server computers and scientific institutions, but wasn't "
+#~ "very attractive for desktop users."
+#~ msgstr ""
+#~ "Sağlamlık, ölçeklendirilebilme ve açık oluş özellikleri &UNIX;'i yıllarca "
+#~ "iletişim teknolojileri uzmanlarının tartışmasız seçeneği yapmıştır. &kde; "
+#~ "bu mükemmel yapının en üstüne yapılandırılmış olup bu yapıya yeni ve "
+#~ "gerekli özellikler eklemiştir. Kullanışlılık, kullanıcı dostluğu ve "
+#~ "güzellik! &kde; bu alanda bir ilk olmakla beraber, yıllarca sunucu "
+#~ "bilgisayarlar ve bilimsel alanlarda kullanılan fakat masaüstünde pek "
+#~ "rağbet görmeyen &UNIX;'e bu özellikleri kazandırmakta bir öncü olmuştur."
+
+#~ msgid ""
+#~ "Without &UNIX; the Internet would not exist, or at least would have a "
+#~ "vastly different form. &UNIX; has not, until now, addressed the needs of "
+#~ "the average computer user. This fact is particularly unfortunate, since a "
+#~ "number of implementations of &UNIX; (<ulink url=\"http://www.linux.org"
+#~ "\">&Linux;</ulink>, <ulink url=\"http://www.freebsd.org\">FreeBSD</"
+#~ "ulink>, <ulink url=\"http://www.netbsd.org\">NetBSD</ulink>, &etc;) are "
+#~ "freely available on the Internet, all of which are of exceptional quality "
+#~ "and stability."
+#~ msgstr ""
+#~ "&UNIX; olmasaydı Internet ortaya çıkmazdı, ya da en azından bundan çok "
+#~ "daha değişik olurdu. &UNIX; şimdiye kadar ortalama bilgisayar "
+#~ "kullanıcısının ihtiyaçlarına eğilmemişti. Fakat bu gerçek, Internetten "
+#~ "ücretsiz dağıtılan, sağlam ve kaliteli yeni &UNIX; türleri (<ulink url="
+#~ "\"http://www.linux.org\">&Linux;</ulink>, <ulink url=\"http://www.freebsd."
+#~ "org\">FreeBSD</ulink>, <ulink url=\"http://www.netbsd.org\">NetBSD</"
+#~ "ulink>, &etc;) çıktığından beri artık pek geçerli değil."
+
+#~ msgid ""
+#~ "In combination with a free implementation of &UNIX;, &kde; provides to "
+#~ "the world an open and completely free desktop computing platform either "
+#~ "at home or at work."
+#~ msgstr ""
+#~ "&UNIX;'in ücretsiz bir uyarlamasıyla birleştiğinde, &kde; dünyaya evde ya "
+#~ "da işte açık ve tamamen ücretsiz bir masaüstü bilgisayar platformu "
+#~ "sunmaktadır."
+
+#~ msgid ""
+#~ "This platform is available to anyone free of charge including its source "
+#~ "code for anyone to modify."
+#~ msgstr ""
+#~ "Bu platform, herkesin değiştirebilmesi için kaynak koduyla beraber "
+#~ "ücretsizdir."
+
+#~ msgid ""
+#~ "While there will always be room for improvement we believe we have now "
+#~ "delivered a viable alternative to some of the more commonly found and "
+#~ "commercial operating systems/desktops combinations available today. It is "
+#~ "our hope that the combination of &UNIX; and &kde; will finally bring the "
+#~ "same open, reliable, stable, and monopoly free computing to the average "
+#~ "computer user that scientists and computing professionals world-wide have "
+#~ "enjoyed for years."
+#~ msgstr ""
+#~ "Geliştirmeye her zaman yer olmasıyla beraber, bugün çokça bulunan ve "
+#~ "ticari olanişletim sistemi/masaüstü kombinasyonlarına başarılı bir "
+#~ "alternatif eklediğimize inanıyoruz. &UNIX; ve &kde; kombinasyonunun "
+#~ "ortalama bilgisayar kullanıcısına, dünya çapındaki bilimadamlarının ve "
+#~ "bilgisayar uzmanlarının yıllarca kullandığı aynı açık, güvenilir, sağlam "
+#~ "ve tekelsiz bilgisayarcılığı verebilmeyi umuyoruz."
+
+#~ msgid ""
+#~ "&kde; focuses on the user's needs, but it's obvious that this focus is "
+#~ "more easily achieved by also giving developers the best tools. &kde; code "
+#~ "contains, and comes with, some of the best development technologies of "
+#~ "the modern computing age."
+#~ msgstr ""
+#~ "&kde; kullanıcıların ihtiyaçlarına odaklanır, fakat şu da açıktır ki bu "
+#~ "hedefe geliştiricilere en iyi araçları vererek daha kolay bir şekilde "
+#~ "ulaşılır. &kde; kodları modern bilgisayarcılık çağının bazı en iyi "
+#~ "geliştirme teknolojileriyle birlikte gelir."
+
+#~ msgid ""
+#~ "Authoring applications under &UNIX;/X11 used to be an extremely tedious "
+#~ "and labor intensive process. &kde; recognizes the fact that a computing "
+#~ "platform is only as good as the number of first class applications "
+#~ "available to the users of that particular platform."
+#~ msgstr ""
+#~ "Eskiden &UNIX;/X11 altında uygulamalar hazırlamak zahmetli ve bıktırıcı "
+#~ "bir işti. &kde;, bir bilgisayar platformunun, kullanıcılarına birinci "
+#~ "sınıf uygulamalar verdiği oranda iyi olduğu gerçeğinin farkındadır."
+
+#~ msgid ""
+#~ "&kde; defines new technologies in &DCOP; and KParts, created to offer a "
+#~ "component document model and technology. Together with the complete &kde; "
+#~ "libraries programming interface, &DCOP;/KParts are set in direct "
+#~ "competition with other similar technologies like &Microsoft; <abbrev>MFC</"
+#~ "abbrev>/<abbrev>COM</abbrev>/ActiveX technologies. The excellent quality "
+#~ "and the high level of refinement of &kde;'s application programming "
+#~ "interface (<acronym>API</acronym>) enables developers to focus on "
+#~ "original and interesting issues and avoid reinventing the wheel."
+#~ msgstr ""
+#~ "&kde; yeni teknolojilerini, parça belge modeli ve teknolojisi sunmak "
+#~ "üzere yaratılmış, &DCOP; ve KParts'ta tanımlar. Tüm &kde; kitaplıkları "
+#~ "programlama arayüzü ile birlikte &DCOP;/KParts, &Microsoft; <abbrev>MFC</"
+#~ "abbrev>/<abbrev>COM</abbrev>/ActiveX gibi teknolojilerle doğrudan rekabet "
+#~ "halindedir. &kde;'nin mükemmel kaliteli ve yüksek seviyeli uygulama "
+#~ "programlama arayüzü (application programming interface -<acronym>API</"
+#~ "acronym>), geliştiricileri orjinal ve ilginç konular üzerine odaklanmaya "
+#~ "teşfik ederken onları tekerleği yeniden keşfetmek zorunda bırakmaz."
+
+#~ msgid ""
+#~ "In its current form, &kde; provides, apart from the essential desktop "
+#~ "component applications, a suite of powerful office programs known to the "
+#~ "world by the name &koffice;."
+#~ msgstr ""
+#~ "Şu andaki durumda, &kde;, özel masaüstü uygulamaları haricinde, dünyaca "
+#~ "&koffice; ismiyle bilinen güçlü bir ofis uygulamaları ortamı sunar."
+
+#~ msgid ""
+#~ "&koffice; is based on the &kde; &DCOP;/KParts technologies. It currently "
+#~ "contains: a word processor with desktop publishing capabilities "
+#~ "(&kword;), a spreadsheet application (&kspread;) and accompanying "
+#~ "charting program (&kchart;), a presentation program (&kpresenter;) and a "
+#~ "vector drawing program (&kontour;). Tying things together is the "
+#~ "<application>KOffice Workspace</application>, an integrated shell to ease "
+#~ "the use of the &koffice; components in conjunction with each other. "
+#~ "Additional components include an email client, a news reader, and a "
+#~ "powerful <abbrev>PIM</abbrev> (Personal Information Manager - an "
+#~ "organizer)."
+#~ msgstr ""
+#~ "&koffice; &kde; &DCOP;/KParts teknolojileri üzerine kurulmuştur. Şu anda, "
+#~ "masaüstü yayımlama özellikleri içeren bir kelime işlemci (&kword;), bir "
+#~ "hesap çizelgesi uygulaması (&kspread;) ve destekleyici çizelge uygulaması "
+#~ "(&kchart;), bir sunum uygulaması (&kpresenter;) ve bir vektör çizim "
+#~ "uygulaması (&kontour;) içermektedir.Bunları bileşimi <application>KOffice "
+#~ "Çalışma Ortamı</application>'nı oluşturur, &koffice; üyelerinin "
+#~ "birbiriyle uyumlu çalışmasını sağlayan bir kabuk. Ek üyeler bir e-posta "
+#~ "istemcisini, bir haber okuyucusunu, ve güçlü bir <abbrev>PIM</abbrev>'yi "
+#~ "(Personal Information Manager - an organizer -- Kişisel Bilgi Yöneticisi "
+#~ "- bir organizatör) içerir."
+
+#~ msgid ""
+#~ "While some of those components are still in alpha development, others are "
+#~ "already extremely powerful. For example, &kpresenter;, &kde;'s "
+#~ "presentation application, was successfully used at the 5th International "
+#~ "&Linux; Congress in Cologne, Germany to deliver a &kde; presentation."
+#~ msgstr ""
+#~ "Bu üyelerin bazıları hala geliştirilme sürecinde olmakla beraber, "
+#~ "diğerleri yeterince güçlüdür. Örneğin, &kpresenter;, &kde;'nin sunum "
+#~ "uygulaması, 5'inci &Linux; Kongresi'nde (Cologne, Almanya) bir &kde; "
+#~ "sunumunda başarıyla kullanıldı."
+
+#~ msgid ""
+#~ "We would like to invite you to <ulink url=\"http://www.kde.org\">learn "
+#~ "more about &kde;</ulink> and <ulink url=\"http://koffice.kde.org"
+#~ "\">&koffice;</ulink>."
+#~ msgstr ""
+#~ "Sizi <ulink url=\"http://www.kde.org\">&kde; 'yi</ulink> ve <ulink url="
+#~ "\"http://koffice.kde.org\">&koffice; 'i</ulink> daha iyi tanımaya "
+#~ "çağırıyoruz."

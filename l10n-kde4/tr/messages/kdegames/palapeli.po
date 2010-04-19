@@ -1,0 +1,420 @@
+# translation of palapeli.po to Turkish
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Osman Tosun <rainman.neu@gmail.com>, 2008.
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: palapeli\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-04 01:22+0200\n"
+"PO-Revision-Date: 2009-11-13 16:52+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: tools/libpala-puzzlebuilder.cpp:37
+msgctxt "The application's name"
+msgid "libpala-puzzlebuilder"
+msgstr ""
+
+#: tools/libpala-puzzlebuilder.cpp:37
+msgid "Automatic builder for Palapeli puzzles"
+msgstr ""
+
+#: tools/libpala-puzzlebuilder.cpp:37 src/main.cpp:31
+msgid "Copyright 2009, Stefan Majewsky"
+msgstr "Telif Hakları 2009, Stefan Majewsky"
+
+#: tools/libpala-puzzlebuilder.cpp:38 src/main.cpp:32
+msgid "Stefan Majewsky"
+msgstr "Stefan Majewsky"
+
+#: tools/libpala-puzzlebuilder.cpp:41
+msgctxt "description for a command line switch"
+msgid "Configuration file"
+msgstr "Yapılandırma dosyası"
+
+#: tools/libpala-puzzlebuilder.cpp:42
+msgctxt "description for a command line switch"
+msgid "Output file"
+msgstr "Çıktı dosyası"
+
+#: libpala/slicerpropertyset.cpp:71
+msgid "Piece count"
+msgstr "Parça sayısı"
+
+#: libpala/slicerpropertyset.cpp:75
+msgid "Piece aspect ratio"
+msgstr "Parça görünüm oranı"
+
+#: src/file-io/collection-delegate.cpp:78
+msgid "[No name]"
+msgstr "Serdar Soytetir"
+
+#: src/file-io/collection-delegate.cpp:79
+#, fuzzy, kde-format
+#| msgctxt "Puzzle description, %1 = name string, %2 = piece count"
+#| msgid "%1 (%2 pieces)"
+msgctxt "Puzzle description, %2 = name string, %1 = piece count"
+msgid "%2 (%1 piece)"
+msgid_plural "%2 (%1 pieces)"
+msgstr[0] "%1 (%2 parça)"
+
+#: src/file-io/collection-delegate.cpp:94
+#, kde-format
+msgctxt "Author attribution, e.g. \"by Jack\""
+msgid "by %1"
+msgstr "%1 tarafından oluşturuldu"
+
+#: src/file-io/collection-list.cpp:89 src/window/mainwindow.cpp:66
+msgid "My collection"
+msgstr "Koleksiyonum"
+
+#: src/file-io/collection-filesystem.cpp:85
+#: src/file-io/collection-filesystem.cpp:99
+msgctxt "Filter for a file dialog"
+msgid "*.puzzle|Palapeli puzzles (*.puzzle)"
+msgstr "*.puzzle|Palapeli bulmacaları (*.puzzle)"
+
+#: src/creator/puzzlecreator.cpp:46
+msgid "Create new puzzle"
+msgstr "Yeni bir bulmaca oluştur"
+
+#: src/creator/puzzlecreator.cpp:50
+msgid "Create puzzle"
+msgstr "Bulmaca oluştur"
+
+#: src/creator/puzzlecreator.cpp:51
+msgid ""
+"Create a new puzzle with the given information, and save it in my collection"
+msgstr ""
+
+#: src/creator/puzzlecreator.cpp:68
+msgid "Image file:"
+msgstr "Resim dosyası:"
+
+#: src/creator/puzzlecreator.cpp:69
+msgid "Puzzle type:"
+msgstr "Bulmaca tipi:"
+
+#: src/creator/puzzlecreator.cpp:71
+msgid "Puzzle name:"
+msgstr "Bulmaca adı:"
+
+#: src/creator/puzzlecreator.cpp:72
+msgctxt "Like in: This is an optional comment."
+msgid "Optional comment:"
+msgstr "Seçimlik açıklamalar:"
+
+#: src/creator/puzzlecreator.cpp:73
+msgid "Name of image author:"
+msgstr "Resmin sahibinin adı:"
+
+#: src/creator/puzzlecreator.cpp:79
+msgid "Basic slicing options"
+msgstr "Temel dilimleme seçenekleri"
+
+#: src/creator/puzzlecreator.cpp:81
+msgid "Puzzle information"
+msgstr "Bulmaca bilgileri"
+
+#: src/creator/puzzlecreator.cpp:83
+msgid "Advanced slicing options"
+msgstr "Gelişmiş dilimleme seçenekleri"
+
+#: src/creator/puzzlecreator.cpp:131
+msgid "Puzzle cannot be created: The slicer plugin could not be loaded."
+msgstr ""
+
+#: src/creator/puzzlecreator.cpp:138
+msgid "Puzzle cannot be created: The file you selected is not an image."
+msgstr ""
+
+#: src/creator/puzzlecreator.cpp:144
+msgid ""
+"Puzzle cannot be created: Slicing failed because of undetermined problems."
+msgstr ""
+
+#: src/engine/view.cpp:150
+msgid "Your progress is saved automatically while you play."
+msgstr ""
+
+#: src/engine/view.cpp:150
+msgctxt "used as caption for a dialog that explains the autosave feature"
+msgid "Automatic saving"
+msgstr "Otomatik kayıt"
+
+#: src/engine/zoomwidget.cpp:38
+msgid "Lock the puzzle table area"
+msgstr "Bulmaca tablo alanını kilitle"
+
+#: src/engine/scene.cpp:226
+msgid ""
+"You have finished the puzzle the last time. Do you want to restart it now?"
+msgstr ""
+
+#: src/engine/scene.cpp:282
+msgid "Great! You have finished the puzzle."
+msgstr "Harika! Bulmacayı tamamladınız."
+
+#: src/window/collectionwidget.cpp:45
+msgid "Create &new puzzle..."
+msgstr "&Yeni bir bulmaca oluştur..."
+
+#: src/window/collectionwidget.cpp:47
+msgid "Create a new puzzle using an image file from your disk"
+msgstr ""
+
+#: src/window/collectionwidget.cpp:50
+msgid "&Import from file..."
+msgstr "&Dosyadan içeriye aktar..."
+
+#: src/window/collectionwidget.cpp:51
+msgid "Import a new puzzle from a file into your collection"
+msgstr ""
+
+#: src/window/collectionwidget.cpp:54
+msgid "&Export to file..."
+msgstr "&Dosyaya aktar..."
+
+#: src/window/collectionwidget.cpp:56
+msgid "Export the selected puzzle from your collection into a file"
+msgstr ""
+
+#: src/window/collectionwidget.cpp:59
+msgid "&Delete"
+msgstr "&Sil"
+
+#: src/window/collectionwidget.cpp:61
+msgid "Delete the selected puzzle from your collection"
+msgstr "Seçili bulmacayı koleksiyonundan sil"
+
+#: src/window/puzzletablewidget.cpp:61
+msgid "&Restart puzzle..."
+msgstr "Bulmacayı &yeniden başlat..."
+
+#: src/window/puzzletablewidget.cpp:62
+msgid "Delete the saved progress"
+msgstr "Kaydedilen ilerleme durumunu sil"
+
+#: src/window/puzzletablewidget.cpp:67
+msgid "No puzzle loaded"
+msgstr "Hiç bulmaca yüklenmedi"
+
+#: src/window/puzzletablewidget.cpp:124
+msgid "You finished the puzzle."
+msgstr "Bulmacayı bitirdiniz."
+
+#: src/window/puzzletablewidget.cpp:128
+#, kde-format
+msgctxt "Progress display"
+msgid "%1% finished"
+msgstr "%1% tamamlandı"
+
+#: src/window/mainwindow.cpp:60
+msgid "Show statusbar of puzzle table"
+msgstr ""
+
+#. i18n: file: src/settings.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: src/window/mainwindow.cpp:67 rc.cpp:23
+msgid "Puzzle table"
+msgstr "Bulmaca masası"
+
+#: src/window/mainwindow.cpp:188
+msgid "General settings"
+msgstr "Genel ayarlar"
+
+#: src/importhelper.cpp:44
+msgctxt "command line message"
+msgid "Error: No puzzle file given."
+msgstr "Hata: Hiç bulmaca dosyası verilmedi."
+
+#: src/importhelper.cpp:53
+msgid "The given puzzle file is corrupted."
+msgstr "Verilen dosya bozuk."
+
+#: src/importhelper.cpp:60
+msgid "The puzzle file could not be imported into the local collection."
+msgstr ""
+
+#: src/importhelper.cpp:65
+#, kde-format
+msgid "Importing puzzle \"%1\" into your collection"
+msgstr ""
+
+#: src/main.cpp:31
+msgctxt "The application's name"
+msgid "Palapeli"
+msgstr "Palapeli"
+
+#: src/main.cpp:31
+msgid "KDE Jigsaw Puzzle Game"
+msgstr "Bir KDE Jigsaw Bulmaca Oyunu"
+
+#: src/main.cpp:36
+msgid "URL of puzzle file (will be opened if -i is not given)"
+msgstr ""
+
+#: src/main.cpp:37
+msgid ""
+"Import the given puzzle file into the local collection (does nothing if no "
+"puzzle file is given)"
+msgstr ""
+
+#: src/main.cpp:38
+msgid ""
+"If the -i/--import option is specified, the main window will not be shown "
+"after importing the given puzzle."
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Osman Tosun"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "rainman.neu@gmail.com"
+
+#. i18n: file: src/palapeli-collectionui.rc:8
+#. i18n: ectx: ToolBar (collectionToolbar)
+#: rc.cpp:5
+msgid "Collection actions toolbar"
+msgstr "Koleksiyon eylemleri araç çubuğu"
+
+#. i18n: file: src/palapeli-puzzletableui.rc:8
+#. i18n: ectx: ToolBar (puzzleTableToolbar)
+#: rc.cpp:8
+msgid "Puzzle table toolbar"
+msgstr "Bulmaca tablosu araç çubuğu"
+
+#. i18n: file: src/palapeli.kcfg:6
+#. i18n: ectx: label, entry (SnappingPrecision), group (Puzzling)
+#: rc.cpp:11
+msgid "Precision of snapping (as a percentage of piece size)."
+msgstr ""
+
+#. i18n: file: src/palapeli.kcfg:12
+#. i18n: ectx: label, entry (ViewBackground), group (Appearance)
+#: rc.cpp:14
+msgid "The background image to use for the View."
+msgstr ""
+
+#. i18n: file: src/palapeli.kcfg:16
+#. i18n: ectx: label, entry (ShowStatusBar), group (Appearance)
+#: rc.cpp:17
+msgid ""
+"Whether to show the status bar on the puzzle table. (It is not a real status "
+"bar, but the position and provided functionality is similar.)"
+msgstr ""
+
+#. i18n: file: src/palapeli.kcfg:20
+#. i18n: ectx: label, entry (LeftMouseButtonMovesView), group (Appearance)
+#: rc.cpp:20
+msgid ""
+"Whether dragging with the left mouse button down will move the viewport."
+msgstr ""
+
+#. i18n: file: src/settings.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:26
+msgid "Background:"
+msgstr "Arkaplan:"
+
+#. i18n: file: src/settings.ui:65
+#. i18n: ectx: property (text), widget (QLabel, label_1)
+#: rc.cpp:29
+msgid "Snapping precision:"
+msgstr "Parça sıçratma duyarlılığı:"
+
+#. i18n: file: src/settings.ui:79
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:32
+msgid "Dragging with the left mouse button moves viewport"
+msgstr ""
+
+#, fuzzy
+#~| msgid "Main toolbar"
+#~ msgid "Library toolbar"
+#~ msgstr "Ana Araç Çubuğu"
+
+#~ msgid "This puzzle archive is unreadable. It might be corrupted."
+#~ msgstr "Bulmaca arşivi okunamaz durumda. Bozulmuş olabilir."
+
+#~ msgid "Do not open main window (to be used with --import)"
+#~ msgstr "Ana pencereyi açma (--import ile kullanılır)"
+
+#~ msgid "Puzzle archive to open and play"
+#~ msgstr "Açmak ve oynamak için bulmaca arşivi"
+
+#~ msgid "(c) 2008, the Palapeli team"
+#~ msgstr "(c) 2008, the Palapeli takımı"
+
+#~ msgid "Maintainer"
+#~ msgstr "Projeyi Yürüten"
+
+#~ msgid "Felix Lemke"
+#~ msgstr "Felix Lemke"
+
+#~ msgid "View"
+#~ msgstr "Görünüm"
+
+#~ msgid "Use antialiasing"
+#~ msgstr "Kenar yumuşatma kullan"
+
+#~ msgid "Use hardware acceleration"
+#~ msgstr "Donanım hızlandırması kullan"
+
+#~ msgid "Scene size"
+#~ msgstr "Sahne boyutu"
+
+#~ msgid "Same as image size"
+#~ msgstr "Resim boyutuyla aynı"
+
+#~ msgid "Five times the image size"
+#~ msgstr "Resim boyutunun 5 katı"
+
+#~ msgid "Quite precise"
+#~ msgstr "Tam duyarlılık"
+
+#~ msgid "Very unprecise"
+#~ msgstr "Çok az duyarlılık"
+
+#~ msgid "Show preview"
+#~ msgstr "ön izlemeyi Göster"
+
+#~ msgid "Appearance"
+#~ msgstr "Görünüm"
+
+#~ msgid "Adjust the visual appearance and performance of Palapeli"
+#~ msgstr "Palapeli performansını ve görünümünü ayarlayın"
+
+#~ msgid "Gameplay"
+#~ msgstr "Oynanış"
+
+#~ msgid "Adjust the gameplay of Palapeli"
+#~ msgstr "Palapeli oynanışını ayarlayın"
+
+#~ msgctxt "For usage as window title"
+#~ msgid "%1 - Palapeli"
+#~ msgstr "%1 - Palapeli"
+
+#~ msgid "Minimap"
+#~ msgstr "Mini Harita"
+
+#~ msgid "Enable transparency effects"
+#~ msgstr "Saydamlık etkilerini aç"
+
+#~ msgid "Show overview"
+#~ msgstr "Gözden geçirmeyi göster"
+
+#~ msgid "Overview"
+#~ msgstr "Gözden Geçirme"

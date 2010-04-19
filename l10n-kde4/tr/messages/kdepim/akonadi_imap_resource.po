@@ -1,0 +1,550 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_imap_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-16 01:35+0100\n"
+"PO-Revision-Date: 2009-11-12 14:02+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: imapaccount.cpp:226
+#, kde-format
+msgid ""
+"You requested TLS/SSL to connect to %1, but your system does not seem to be "
+"set up for that."
+msgstr ""
+"%1 konumuna TLS/SSL kullanarak bağlanmayı istediniz ancak sisteminiz bunu "
+"desteklemiyor."
+
+#: imapaccount.cpp:270 imapresource.cpp:1347
+#, kde-format
+msgid "Could not connect to the IMAP-server %1."
+msgstr "%1 IMAP sunucusuna bağlanılamadı."
+
+#: imapaccount.cpp:296
+#, kde-format
+msgid "Could not test the capabilities supported by the IMAP server %1."
+msgstr "%1 IMAP sunucusu tarafından desteklenen yetenekler sınanamadı."
+
+#: imapaccount.cpp:323
+#, kde-format
+msgid ""
+"Cannot use the IMAP server %1, some mandatory capabilities are missing: %2. "
+"Please ask your sysadmin to upgrade the server."
+msgstr ""
+
+#: imapresource.cpp:142 imapresource.cpp:598 imapresource.cpp:797
+msgid "There is currently no connection to the IMAP server."
+msgstr "IMAP sunucusuna yapılan bir bağlantı yok."
+
+#: imapresource.cpp:204
+msgid "No message retrieved, server reply was empty."
+msgstr "Hiç ileti alınmadı, sunucunun yanıtı boş."
+
+#: imapresource.cpp:238
+msgid "No server configured yet."
+msgstr "Henüz bir sunucu yapılandırılmadı."
+
+#: imapresource.cpp:257
+msgid "Could not read the password: user rejected wallet access."
+msgstr ""
+
+#: imapresource.cpp:260
+msgid "Authentication failed."
+msgstr "Kimlik doğrulama işlemi başarısız oldu."
+
+#: imapresource.cpp:477
+msgid "Cannot move message, it does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:483
+#, kde-format
+msgid "Cannot move message out of '%1', '%1' does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:490
+#, kde-format
+msgid "Cannot move message to '%1', '%1' does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:534
+#, fuzzy, kde-format
+#| msgid ""
+#| "Failed to move message out of '%1' on the IMAP server. Couldn't select '%"
+#| "1'."
+msgid ""
+"Failed to move message out of '%1' on the IMAP server. Could not select '%1'."
+msgstr "İleti IMAP sunucusu üzerinde '%1' dışına taşınamadı. '%1' seçilemedi."
+
+#: imapresource.cpp:570
+#, fuzzy, kde-format
+#| msgid ""
+#| "Failed to move message to '%1' on the IMAP server. Couldn't copy into '%"
+#| "1'."
+msgid ""
+"Failed to move message to '%1' on the IMAP server. Could not copy into '%1'."
+msgstr ""
+"İleti IMAP sunucusu üzerinde '%1' dışına taşınamadı. '%1' içerisine "
+"kopyalanamadı."
+
+#: imapresource.cpp:583
+#, fuzzy, kde-format
+#| msgid "Failed to create the folder, restoring folder list."
+msgid ""
+"Failed to mark the message from '%1' for deletion on the IMAP server. It "
+"will reappear on next sync."
+msgstr "Dizin oluşturulamadı, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:693
+msgid "Inbox"
+msgstr "Gelen Kutusu"
+
+#: imapresource.cpp:710
+msgid "Shared Folders"
+msgstr "Paylaşılan Dizinler"
+
+#: imapresource.cpp:937
+#, kde-format
+msgid "Cannot add IMAP folder '%1' for a non-existing parent folder '%2'."
+msgstr ""
+
+#: imapresource.cpp:972
+#, kde-format
+msgid "Failed to create folder '%1' on the IMAP server."
+msgstr "IMAP Sunucusu üzerinde '%1' dizini oluşturulamadı."
+
+#: imapresource.cpp:986
+#, kde-format
+msgid "Cannot modify IMAP folder '%1', it does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:1037
+#, kde-format
+msgid ""
+"ACLs for '%1' need to be retrieved from the IMAP server first. Skipping ACL "
+"change"
+msgstr ""
+
+#: imapresource.cpp:1179
+msgid "Failed to rename the folder, restoring folder list."
+msgstr "Dizin yeniden adlandırılamadı, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:1190
+#, fuzzy, kde-format
+#| msgid "Failed to create folder '%1' on the IMAP server."
+msgid "Failed to write the new ACLs for '%1' on the IMAP server. %2"
+msgstr "IMAP Sunucusu üzerinde '%1' dizini oluşturulamadı."
+
+#: imapresource.cpp:1205
+#, fuzzy, kde-format
+#| msgid "Failed to create the folder, restoring folder list."
+msgid "Failed to write the new annotations for '%1' on the IMAP server. %2"
+msgstr "Dizin oluşturulamadı, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:1236
+msgid "Failed to delete the folder, restoring folder list."
+msgstr "Dizin silinemedi, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:1252
+#, kde-format
+msgid "Cannot move IMAP folder '%1', it does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:1259
+#, kde-format
+msgid ""
+"Cannot move IMAP folder '%1' out of '%2', '%2' does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:1267
+#, kde-format
+msgid ""
+"Cannot move IMAP folder '%1' to '%2', '%2' does not exist on the server."
+msgstr ""
+
+#: imapresource.cpp:1304
+#, fuzzy, kde-format
+#| msgid "Failed to create the folder, restoring folder list."
+msgid "Failed to move folder '%1' out of '%2' on the IMAP server."
+msgstr "Dizin oluşturulamadı, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:1314
+#, fuzzy, kde-format
+#| msgid "Failed to create the folder, restoring folder list."
+msgid "Failed to subscribe to the newly moved folder '%1' on the IMAP server."
+msgstr "Dizin oluşturulamadı, dizin listesi yeniden yükleniyor."
+
+#: imapresource.cpp:1332
+msgid ""
+"The server refused the supplied username and password. Do you want to go to "
+"the settings, have another attempt at logging in, or do nothing?"
+msgstr ""
+
+#: imapresource.cpp:1335
+msgid "Could Not Authenticate"
+msgstr "Kimlik Denetimi Yapılamadı"
+
+#: imapresource.cpp:1336
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: imapresource.cpp:1337
+msgctxt "Input username/password manually and not store them"
+msgid "Single Input"
+msgstr "Tek Giriş"
+
+#: imapresource.cpp:1362
+msgid "Connection established."
+msgstr "Bağlantı sağlandı."
+
+#. i18n: file: imapresource.kcfg:9
+#. i18n: ectx: label, entry (ImapServer), group (network)
+#: rc.cpp:3
+msgid "IMAP server"
+msgstr "IMAP sunucu"
+
+#. i18n: file: imapresource.kcfg:12
+#. i18n: ectx: label, entry (UserName), group (network)
+#: rc.cpp:6
+msgid "Username"
+msgstr "Kullanıcı adı"
+
+#. i18n: file: imapresource.kcfg:15
+#. i18n: ectx: label, entry (Safety), group (network)
+#: rc.cpp:9
+msgid "Defines the encryption type to use"
+msgstr "Kullanılacak şifrelemeyi tanımlar"
+
+#. i18n: file: imapresource.kcfg:19
+#. i18n: ectx: label, entry (Authentication), group (network)
+#: rc.cpp:12
+msgid "Defines the authentication type to use"
+msgstr "Kullanılacak kimlik doğrulama tipini tanımlar"
+
+#. i18n: file: imapresource.kcfg:23
+#. i18n: ectx: label, entry (SubscriptionEnabled), group (network)
+#: rc.cpp:15
+msgid "Defines if the server side subscription is enabled"
+msgstr "Sunucu taraflı üyeliğin etkin olup olmadığını belirler"
+
+#. i18n: file: imapresource.kcfg:29
+#. i18n: ectx: label, entry (DisconnectedModeEnabled), group (cache)
+#: rc.cpp:18
+msgid "Defines if all the IMAP data should be cached locally all the time"
+msgstr ""
+
+#. i18n: file: imapresource.kcfg:33
+#. i18n: ectx: label, entry (IntervalCheckTime), group (cache)
+#: rc.cpp:21
+msgid "Check interval in minutes"
+msgstr ""
+
+#. i18n: file: imapresource.kcfg:38
+#. i18n: ectx: label, entry (RetrieveMetadataOnFolderListing), group (cache)
+#: rc.cpp:24
+msgid ""
+"Defines if the annotations, ACLs and quota information of mailboxes should\n"
+"             also be retrieved when the mailboxes get listed."
+msgstr ""
+
+#. i18n: file: imapresource.kcfg:43
+#. i18n: ectx: label, entry (AutomaticExpungeEnabled), group (cache)
+#: rc.cpp:28
+msgid ""
+"Defines if the expunge command is issued automatically, otherwise it should "
+"be\n"
+"             triggered manually through the D-Bus interface."
+msgstr ""
+
+#. i18n: file: imapresource.kcfg:49
+#. i18n: ectx: label, entry (IdleRidPath), group (idle)
+#: rc.cpp:32
+msgid "RID path to the mailbox to watch for changes"
+msgstr ""
+
+#. i18n: file: setupserverview.ui:19
+#. i18n: ectx: property (whatsThis), widget (QLabel, label)
+#: rc.cpp:35
+msgid ""
+"Indicate the IMAP server. If you want to connect to a non-standard port for "
+"a specific encryption scheme, you can add \":port\" to indicate that. For "
+"example: \"imap.foo.com:144\"."
+msgstr ""
+
+#. i18n: file: setupserverview.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:38
+msgid "IMAP server:"
+msgstr "IMAP sunucu:"
+
+#. i18n: file: setupserverview.ui:37
+#. i18n: ectx: property (text), widget (KPushButton, testButton)
+#: rc.cpp:41
+msgid "Auto Detect"
+msgstr "Otomatik Algıla"
+
+#. i18n: file: setupserverview.ui:52
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, safeImap)
+#: rc.cpp:44
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">SSL</span> is safe IMAP over port 993;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">TLS</span> will operate on port 143 and switch to a secure "
+"connection directly after connecting;</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">None</span> will connect to port 143 but not switch to a "
+"secure connection. This setting is not recommended.</p></body></html>"
+msgstr ""
+
+#. i18n: file: setupserverview.ui:55
+#. i18n: ectx: property (title), widget (QGroupBox, safeImap)
+#: rc.cpp:53
+msgid "Encryption"
+msgstr "Şifreleme"
+
+#. i18n: file: setupserverview.ui:61
+#. i18n: ectx: property (text), widget (QRadioButton, noRadio)
+#: rc.cpp:56
+msgid "None"
+msgstr "Hiçbiri"
+
+#. i18n: file: setupserverview.ui:74
+#. i18n: ectx: property (text), widget (QRadioButton, sslRadio)
+#: rc.cpp:60
+msgid "SSL"
+msgstr "SSL"
+
+#. i18n: file: setupserverview.ui:84
+#. i18n: ectx: property (text), widget (QRadioButton, tlsRadio)
+#: rc.cpp:64
+msgid "TLS"
+msgstr "TLS"
+
+#. i18n: file: setupserverview.ui:97
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_2)
+#: rc.cpp:68
+msgid "The username."
+msgstr "Kullanıcı adı."
+
+#. i18n: file: setupserverview.ui:100
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:71
+msgid "Username:"
+msgstr "Kullanıcı adı:"
+
+#. i18n: file: setupserverview.ui:113
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_3)
+#: rc.cpp:74
+msgid "The password."
+msgstr "Parola."
+
+#. i18n: file: setupserverview.ui:116
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:77
+msgid "Password:"
+msgstr "Parola: "
+
+#. i18n: file: setupserverview.ui:133
+#. i18n: ectx: property (title), widget (QGroupBox, authImap)
+#: rc.cpp:80
+msgid "Authentication Method"
+msgstr "Kimlik Doğrulama Yöntemi"
+
+#. i18n: file: setupserverview.ui:139
+#. i18n: ectx: property (text), widget (QRadioButton, clearRadio)
+#: rc.cpp:83
+msgid "Clear text"
+msgstr "Metni temizle"
+
+#. i18n: file: setupserverview.ui:152
+#. i18n: ectx: property (text), widget (QRadioButton, digestMd5Radio)
+#: rc.cpp:87
+msgid "DIGEST-MD5"
+msgstr "DIGEST-MD5"
+
+#. i18n: file: setupserverview.ui:162
+#. i18n: ectx: property (text), widget (QRadioButton, loginRadio)
+#: rc.cpp:91
+msgid "LOGIN"
+msgstr "LOGIN"
+
+#. i18n: file: setupserverview.ui:172
+#. i18n: ectx: property (text), widget (QRadioButton, ntlmRadio)
+#: rc.cpp:95
+msgid "NTLM"
+msgstr "NTLM"
+
+#. i18n: file: setupserverview.ui:182
+#. i18n: ectx: property (text), widget (QRadioButton, plainRadio)
+#: rc.cpp:99
+msgid "PLAIN"
+msgstr "PLAIN"
+
+#. i18n: file: setupserverview.ui:192
+#. i18n: ectx: property (text), widget (QRadioButton, gssapiRadio)
+#: rc.cpp:103
+msgid "GSSAPI"
+msgstr "GSSAPI"
+
+#. i18n: file: setupserverview.ui:202
+#. i18n: ectx: property (text), widget (QRadioButton, cramMd5Radio)
+#: rc.cpp:107
+msgid "CRAM-MD5"
+msgstr "CRAM-MD5"
+
+#. i18n: file: setupserverview.ui:212
+#. i18n: ectx: property (text), widget (QRadioButton, anonymousRadio)
+#: rc.cpp:111
+msgid "Anonymous"
+msgstr "Anonim"
+
+#. i18n: file: setupserverview.ui:232
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:115
+msgid "Check interval:"
+msgstr "Denetleme aralığı:"
+
+#. i18n: file: setupserverview.ui:239
+#. i18n: ectx: property (text), widget (QCheckBox, subscriptionEnabled)
+#: rc.cpp:118
+msgid "Enable Server-Side Subscriptions"
+msgstr "Sunucuya Tarafında Üyelikleri Etkinleştir"
+
+#. i18n: file: setupserverview.ui:249
+#. i18n: ectx: property (text), widget (KPushButton, subscriptionButton)
+#: rc.cpp:121 setupserver.cpp:353
+msgid "Serverside Subscription..."
+msgstr "Sunucuya Üyelik..."
+
+#. i18n: file: setupserverview.ui:256
+#. i18n: ectx: property (text), widget (QCheckBox, disconnectedModeEnabled)
+#: rc.cpp:124
+msgid "Enable Disconnected Mode"
+msgstr "Çevrimdışı Kipi Etkinleştir"
+
+#. i18n: file: setupserverview.ui:269
+#. i18n: ectx: property (suffix), widget (KIntNumInput, checkInterval)
+#: rc.cpp:127
+msgid " minutes"
+msgstr " dakika"
+
+#. i18n: file: setupserverview.ui:275
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, checkInterval)
+#: rc.cpp:130
+msgctxt "no interval mail check"
+msgid "Never"
+msgstr "Asla"
+
+#. i18n: file: setupserverview.ui:290
+#. i18n: ectx: property (text), widget (QLabel, testInfo)
+#: rc.cpp:133
+msgid "Empty"
+msgstr "Boş"
+
+#: rc.cpp:134
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:135
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: settings.cpp:98
+#, kde-format
+msgid ""
+"Could not find a valid password for user '%1' on IMAP server '%2', please "
+"enter it here."
+msgstr ""
+"'%2' sunucusu üzerinde '%1' kullanıcısı için geçerli bir parola bulunamadı, "
+"lütfen parolayı buraya girin."
+
+#: setupserver.cpp:153
+msgid ""
+"Could not access KWallet. If you want to store the password permanently then "
+"you have to activate it. If you do not want to use KWallet, check the box "
+"below, but note that you will be prompted for your password when needed."
+msgstr ""
+
+#: setupserver.cpp:158
+msgid "Do not use KWallet"
+msgstr "KWallet Kullanma"
+
+#: setupserver.cpp:217
+msgid "<qt><b>TLS is supported and recommended.</b></qt>"
+msgstr "<qt><b>TLS destekleniyor ve kullanılması önerilir.</b></qt>"
+
+#: setupserver.cpp:220
+msgid "<qt><b>SSL is supported and recommended.</b></qt>"
+msgstr "<qt><b>SSL destekleniyor ve kullanılması önerilir.</b></qt>"
+
+#: setupserver.cpp:223
+msgid ""
+"<qt><b>No security is supported. It is not recommended to connect to this "
+"server.</b></qt>"
+msgstr ""
+"<qt><b>Hiçbir güvenlik yapısı desteklenmiyor. Bu sunucuya bağlanmanız "
+"önerilmez.</b></qt>"
+
+#: setupserver.cpp:226
+msgid "<qt><b>It is not possible to use this server.</b></qt>"
+msgstr "<qt><b>Bu sunucunun kullanılması olanaksız.</b></qt>"
+
+#: subscriptiondialog.cpp:305
+msgid "Enable Subscriptions?"
+msgstr "Üyelikler Etkinleştirilsin mi?"
+
+#: subscriptiondialog.cpp:305
+msgid "Enable"
+msgstr "Etkinleştir"
+
+#: subscriptiondialog.cpp:305
+msgid "Do Not Enable"
+msgstr "Etkinleştirme"
+
+#: subscriptiondialog.cpp:374
+#, kde-format
+msgctxt "@info"
+msgid ""
+"Currently subscriptions are not used for server <resource>%1</resource>.<nl/"
+">\n"
+"Do you want to enable subscriptions?"
+msgstr ""
+"<resource>%1</resource> sunucusu için üyelik işlemi kullanılmıyor.<nl/ >\n"
+"Üyelikleri etkinleştirmek istiyor musunuz?"
+
+#~ msgid "There is curently no connection to the IMAP server."
+#~ msgstr "IMAP sunucusuna yapılan bir bağlantı yok."
+
+#~ msgid "Form"
+#~ msgstr "Biçim"
+
+#~ msgid "Server reported: %1."
+#~ msgstr "Sunucu bildirimi: %1."
+
+#~ msgid "Could Not Log In"
+#~ msgstr "Giriş Yapılamadı"
+
+#~ msgid "Safety:"
+#~ msgstr "Güvenlik:"

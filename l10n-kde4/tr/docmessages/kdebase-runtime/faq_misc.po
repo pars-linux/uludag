@@ -1,0 +1,358 @@
+# translation of faq_misc.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# GÃ¶rkem Ãetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_misc\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-28 21:44+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: misc.docbook:8
+#, no-c-format
+msgid "Miscellaneous questions"
+msgstr "Çeşitli sorular"
+
+#. Tag: para
+#: misc.docbook:15
+#, no-c-format
+msgid ""
+"Does &kde; support transparency and other visual effects provided by the new "
+"composite extension to X.org?"
+msgstr ""
+
+#. Tag: para
+#: misc.docbook:18
+#, no-c-format
+msgid ""
+"Yes! An exciting new feature in &kde; 3.4 and greater is support for the new "
+"X composite extension. This allows for effects such as translucency and drop "
+"shadows for all windows, easily configurable through &kwin;'s configuration "
+"dialog. This requires you to be using X.org version 6.8.0 or newer and have: "
+"<screen>\n"
+"Section \"Extensions\"\n"
+"Option  \"Composite\" \"Enable\"\n"
+"EndSection\n"
+"</screen> In your <filename>xorg.conf</filename>. If you have an nvidia "
+"graphics card and use the nvidia driver you can improve the performance of "
+"these effects by also adding the RenderAccel option to the Device section "
+"for your graphics card: <screen>\n"
+"Section \"Device\"\n"
+"    Identifier  \"nvidia-fx5200\"\n"
+"    Driver      \"nvidia\"\n"
+"    Option      \"RenderAccel\" \"true\"\n"
+"</screen> Once you have configured X.org correctly, transparency and other "
+"effects can be enabled through the <menuchoice><guimenu>Desktop</"
+"guimenu><guimenuitem>Window Behavior</guimenuitem></menuchoice> "
+"&kcontrolcenter; module, under the <guilabel>Translucency</guilabel> tab."
+msgstr ""
+
+#. Tag: para
+#: misc.docbook:32
+#, no-c-format
+msgid ""
+"What about &kde; programs that do not have icons? How do I get them into the "
+"menu?"
+msgstr ""
+"Simgeleri olmayan &kde; uygulamaları için ne yapacağım? Onları menüye nasıl "
+"ekleyeceğim?"
+
+#. Tag: para
+#: misc.docbook:36
+#, no-c-format
+msgid ""
+"Use &kmenuedit;. To access it use the &RMB; on the <guibutton>K</guibutton> "
+"button and select <guimenu>Menu Editor</guimenu>."
+msgstr ""
+"&kmenuedit;'i kullanın. Bu uygulamaya erişmek için  <guibutton>K</guibutton> "
+"tuşunun üstünde &RMB; tuşuna basın ve <guimenu>Menü Düzenleyici</guimenu>'yi "
+"seçin."
+
+#. Tag: para
+#: misc.docbook:43
+#, no-c-format
+msgid "Does &kde; have a graphical &FTP; client?"
+msgstr "&kde; grafiksel bir &FTP; istemcisine sahip midir?"
+
+#. Tag: para
+#: misc.docbook:46
+#, no-c-format
+msgid ""
+"Yes, and it is none other than your favorite file manager, &konqueror;. You "
+"can drag and drop remote files into local folders."
+msgstr ""
+"Evet, ve bu sizin en sevdiğiniz dosya yöneticisi &konqueror;'dan başka bir "
+"şey değil. Yerel dosyaları tutup yerel klasörlere taşıyabilirsiniz."
+
+#. Tag: para
+#: misc.docbook:54
+#, no-c-format
+msgid "How do I exit &kde;?"
+msgstr "&kde;'den nasıl çıkabilirim?"
+
+#. Tag: para
+#: misc.docbook:57
+#, no-c-format
+msgid ""
+"Simply click on the <guibutton>K</guibutton> button and select "
+"<guimenu>Logout</guimenu>. In addition, if you <mousebutton>right</"
+"mousebutton> click on an empty area of the desktop, you will be presented "
+"with a menu containing logout as one of the options."
+msgstr ""
+"<guibutton>K</guibutton> tuşuna basıp <guimenu>Oturumdan Çık</guimenu>'ı "
+"seçin. Ayrıca, masaüstünde boş bir alana <mousebutton>sağ</mousebutton> fare "
+"tuşu ile tıklarsanız, çıkış seçeneğinin de bulunduğu bir menüye ulaşırsınız."
+
+#. Tag: para
+#: misc.docbook:62
+#, no-c-format
+msgid ""
+"Depending on your configuration of the &X-Window;, <keycombo action=\"simul"
+"\">&Ctrl;&Alt;&Backspace;</keycombo> might also do the trick by killing the "
+"X server, but its use prevents session management and cannot be recommended."
+msgstr ""
+"&X-Window;'un ayarlarına bağlı olarak <keycombo action=\"simul\">&Ctrl;&Alt;"
+"&Backspace;</keycombo> tuşlarına basmak X sunucusunu kapatır, fakat bu yol "
+"oturum yönetimini engeller, bu nedenle önerilmez."
+
+#. Tag: para
+#: misc.docbook:71
+#, no-c-format
+msgid ""
+"Is there a program that checks for new mails at my <acronym>ISP</acronym> if "
+"and only if I am online?"
+msgstr ""
+"Sadece ama sadece internete bağlandığımda <acronym>ISS</acronym>'mde yeni e-"
+"postaların olup olmadığını kontrol eden bir uygulama var mı?"
+
+#. Tag: para
+#: misc.docbook:75
+#, no-c-format
+msgid ""
+"&korn; will do the job. If you are not connected, it will just sit there "
+"(idling)."
+msgstr ""
+"&korn; bu iş içindir. Eğer internete bağlı değilseniz, hazır halde bekler."
+
+#. Tag: para
+#: misc.docbook:82
+#, no-c-format
+msgid "Is it really necessary to upgrade to the latest version?"
+msgstr "KDE'yi son sürüme güncellemek gerçekten gerekli mi?"
+
+#. Tag: para
+#: misc.docbook:85
+#, no-c-format
+msgid ""
+"We recommend to always use the latest stable release. If you don't, it will "
+"probably be difficult to get answers to your questions. If you have a "
+"problem with an old version, the answer will probably be <quote>Please "
+"upgrade and try again</quote>. Note that new versions also sometimes fix "
+"security problems."
+msgstr ""
+"Biz her zaman en son sürümün kullanılmasından yanayız. Eğer uygulamayı "
+"yenilmezseniz, sorularınıza cevap almakta güçlük çekebilirsiniz. Eski "
+"sürümle ilgili sorununuz varsa, cevap <quote>Lütfen güncelleyin ve tekrar "
+"deneyin</quote> olacaktır. Yeni sürümlerin bazen güvenlik problemlerini "
+"çözdüğünü de unutmayın."
+
+#. Tag: para
+#: misc.docbook:95
+#, no-c-format
+msgid "How do I copy and paste in &kde;?"
+msgstr "&kde; içerisinde nasıl kopyalama ve yapıştırma yaparım?"
+
+#. Tag: para
+#: misc.docbook:98
+#, no-c-format
+msgid "The simplest method is to use your mouse:"
+msgstr "En basit metod farenizi kullanmaktır:"
+
+#. Tag: para
+#: misc.docbook:100
+#, no-c-format
+msgid ""
+"Highlight the text you want to copy by holding down the &LMB; and dragging "
+"across the text. This adds the selected text to the clipboard."
+msgstr ""
+"&LMB; tuşunu basılı tutarak ve metin üzerinde gezdirerek kopyalamak "
+"istediğiniz bölümü işaretleyin."
+
+#. Tag: para
+#: misc.docbook:102
+#, no-c-format
+msgid ""
+"Go to the destination area; depending on your configuration, you might need "
+"to click it using the &LMB; to give it focus."
+msgstr ""
+"Metni kopyalamak istediğiniz hedefe gidin, ayarlarınıza göre hedefi "
+"işaretlemek için sol fare tuşuna basmak durumunda kalabilirsiniz."
+
+#. Tag: para
+#: misc.docbook:105
+#, no-c-format
+msgid ""
+"Click the &MMB; to paste. If you have a two button mouse and are emulating a "
+"three button mouse, push both buttons simultaneously."
+msgstr ""
+"Yapıştırmak için orta fare tuşuna basın. İki tuşlu bir fareniz varsa ve üç "
+"tuşlu fare emülasyonunu kullanıyorsanız, aynı anda iki tuşa birden basın."
+
+#. Tag: para
+#: misc.docbook:110
+#, no-c-format
+msgid ""
+"For more information about using the clipboard in &kde; please see the "
+"&klipper; hand book, accessed by typing <userinput><command>help:/klipper</"
+"command></userinput> into the &konqueror; address bar."
+msgstr ""
+"&kde; de panonun nasıl kullanılacağı hakkında daha geniş bilgi için "
+"&klipper; el kitabını inceleyin. Kitaba ulaşmak için &konqueror; adres "
+"çubuğuna <userinput><command>help:/klipper</command></userinput> yazmanız "
+"yeterli."
+
+#. Tag: para
+#: misc.docbook:118
+#, no-c-format
+msgid ""
+"How do I convert the default &RedHat; menus into a menu in the <guimenu>K</"
+"guimenu> menu?"
+msgstr ""
+"Öntanımlı &RedHat; menülerini nasıl <guimenu>K</guimenu> menüsünde bir "
+"menüye nasıl dönüştürebilirim?"
+
+#. Tag: para
+#: misc.docbook:122
+#, no-c-format
+msgid ""
+"Click on the <guibutton>K</guibutton> button and select "
+"<menuchoice><guimenu>System</guimenu><guimenuitem>Appfinder</guimenuitem></"
+"menuchoice>."
+msgstr ""
+"<guimenu>K</guimenu> tuşuna basın ve <menuchoice><guimenu>Sistem </"
+"guimenu><guimenuitem>Uygulama Bulucu</guimenuitem></menuchoice>'yu seçin."
+
+#. Tag: para
+#: misc.docbook:129
+#, fuzzy, no-c-format
+msgid "What is<acronym>SVN</acronym>?"
+msgstr "<acronym>CVS</acronym> nedir?"
+
+#. Tag: para
+#: misc.docbook:131
+#, fuzzy, no-c-format
+msgid ""
+"It stands for Subversion, and is a version control system. It is similar to "
+"CVS, but improves on it in many ways. It is used to maintain source code "
+"under development. It will keep multiple versions of things (handy if you "
+"broke something and have to back up and get a clean old version), and allows "
+"people remote access over the internet to pick up the latest source code and "
+"even to check in new files if they have permission. It is also open source "
+"(you pay for support if you want it), and since it is free it is the system "
+"of choice for people writing more free products, such as &kde;."
+msgstr ""
+"Concurrent Versions System (Eşzamanlı Sürümler Sistemi) sözcüklerinin "
+"kısaltılmışıdır. Bu sistem, bir sistem kontrol sistemidir ve <acronym>RCS</"
+"acronym> (Revision Control System - Gözden Geçirme Kontrol Sistemi) "
+"uygulaması temellidir, fakat daha fazla özelliğe sahiptir. Geliştirilme "
+"sürecindeki kaynak kodunu yönetmek için kullanılır. Kodların birden çok "
+"sürümünü saklar (bir şeyi yanlış yaparsanız, hatayı geri almak ve düzgün "
+"olan bir önceki sürüme dönmek için kullanışlıdır), ve kullanıcıların "
+"internet üzerinden en son yazılmış kaynak koduna erişmelerine yardımcı olur, "
+"hatta izinleri varsa yeni dosyaları incelemelerini sağlar. Bu sistem de "
+"serbest yazılımdır (destek almak için ücret ödeyebilirsiniz), ve serbest "
+"yazılım olduğu için &kde; gibi serbest yazılımlar yazan kişilerin tercihidir."
+
+#. Tag: para
+#: misc.docbook:145
+#, no-c-format
+msgid "Does &kde; support dual screen (Xinerama)?"
+msgstr "&kde; çift ekranı (Xinerama) destekler mi?"
+
+#. Tag: para
+#: misc.docbook:148
+#, no-c-format
+msgid ""
+"Yes, you need to have a multi-headed X server (&eg; MetroX or XFree86 4.0 "
+"and above) and a &kde; >= 2.2.1"
+msgstr ""
+"Evet, bunun için çoklu-başlıklı X sunucusuna  (ör: MetroX veya XFree86 4.0 "
+"ve yukarısı) ve &kde; >=2.2.1'e ihtiyacınız vardır."
+
+#. Tag: para
+#: misc.docbook:157
+#, no-c-format
+msgid "How do I check which version of &kde; I am using?"
+msgstr "Hangi &kde; sürümünü kullandığımı nasıl öğrenebilirim?"
+
+#. Tag: para
+#: misc.docbook:160
+#, fuzzy, no-c-format
+msgid ""
+"Fire up the &kcontrolcenter;. It comes up with an Info Screen including the "
+"version of &kde; The &kde; version is also included in the application's "
+"<guimenuitem>About</guimenuitem> dialog. You can also check from the command "
+"line with the command <userinput><command>kde-config</command><option>--"
+"version</option></userinput>"
+msgstr ""
+"<application>&kde; Denetim Masası</application>'nı çalıştırın. Bu uygulama "
+"&kde;'nin sürümünün de gösterildiği bir Bilgi Ekranı ile birlikte gelir. "
+"&kde;'nin sürümü ayrıca uygulamanın <guimenuitem>Hakkında</guimenuitem> "
+"diyaloğunda da gösterilmektedir."
+
+#. Tag: para
+#: misc.docbook:171
+#, no-c-format
+msgid "How do I go about creating themes and icons?"
+msgstr "Temalar ve simgeleri nasıl yaratabilirim?"
+
+#. Tag: para
+#: misc.docbook:174
+#, fuzzy, no-c-format
+msgid ""
+"Go see <ulink url=\"http://kde-artists.org\">http://kde-artists.org</ulink>. "
+"There is also a more informal community of &kde; related artists and artwork "
+"at <ulink url=\"http://kde-look.org\">http://kde-look.org</ulink>."
+msgstr ""
+"<ulink url=\"http://artist.kde.org\">http://artist.kde.org</ulink> adresine "
+"bir göz atın. Ayrıca <ulink url=\"http://kde-look.org\">http://kde-look.org</"
+"ulink> adresinde daha gayri resmi bir topluluk bulabilirsiniz."
+
+#. Tag: para
+#: misc.docbook:185
+#, no-c-format
+msgid "How can I get to know about development updates?"
+msgstr "Geliştirme güncellemeleri hakkında nasıl haberdar olabilirim?"
+
+#. Tag: para
+#: misc.docbook:188
+#, no-c-format
+msgid ""
+"You might want to subscribe to the various &kde; mailing lists available, "
+"especially kde-cvs, which lists all commits done to the &kde; <acronym>CVS</"
+"acronym> repository. Check <ulink url=\"http://lists.kde.org\">http://lists."
+"kde.org</ulink> if you want to read without subscribing."
+msgstr ""
+"Var olan çeşitli &kde; posta listelerine üye olmak isteyebilirsiniz, "
+"özellikle de tüm <acronym>CVS</acronym> &kde; haberleşmelerini bünyesinde "
+"barındıran kde-cvs'ye. Üye olmadan okumak istiyorsanız <ulink url=\"http://"
+"lists.kde.org\"> http://lists.kde.org</ulink> adresine bakın."
+
+#~ msgid "Why does Drag and Drop not work with Xinerama?"
+#~ msgstr "Sürükle ve Bırak neden Xinerama ile çalışmıyor?"
+
+#~ msgid "You should upgrade to XFree86 4.2.0 for this to work properly."
+#~ msgstr ""
+#~ "Bu özelliğin düzgün çalışması için XFree86 4.2.0 sürümüne güncelleme "
+#~ "yapmanız gerekmektedir."

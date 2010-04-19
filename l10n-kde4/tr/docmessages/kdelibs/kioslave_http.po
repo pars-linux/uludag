@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_http\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2002-02-17 22:48+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "http / https"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, no-c-format
+msgid ""
+"<acronym>http</acronym> is the <emphasis>H</emphasis>yper<emphasis>T</"
+"emphasis>ext <emphasis>T</emphasis>ransfer <emphasis>P</emphasis>rotocol."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:21
+#, no-c-format
+msgid ""
+"The http kioslave is used by all &kde; applications to handle connections to "
+"http servers, that is, web servers. The most common usage is to view web "
+"pages in the &konqueror; web browser."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:25
+#, no-c-format
+msgid ""
+"You can use the http kioslave in &konqueror; by giving it a <acronym>URL</"
+"acronym>. <userinput>http://<replaceable>www.kde.org</replaceable></"
+"userinput>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:29
+#, no-c-format
+msgid "See the manual: <ulink url=\"man:/http\">http</ulink>."
+msgstr "See the manual: <ulink url=\"man:/http\">http</ulink>."
+
+#. Tag: para
+#: index.docbook:32
+#, no-c-format
+msgid "https is http encapsulated in a SSL/TLS stream."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:33
+#, no-c-format
+msgid ""
+"SSL is the Secure Sockets Layer protocol, a security protocol that provides "
+"communications privacy over the Internet. The protocol allows client/server "
+"applications to communicate in a way that is designed to prevent "
+"eavesdropping, tampering, or message forgery."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:36
+#, no-c-format
+msgid "TLS stands for Transport Layer Security."
+msgstr ""
+
+#~ msgid "http"
+#~ msgstr "http"

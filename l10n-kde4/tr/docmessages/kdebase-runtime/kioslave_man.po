@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_man\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-09 19:05+0000\n"
+"PO-Revision-Date: 2001-11-26 18:19GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "<title>Man</title>"
+msgstr "<title>Man</title>"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid ""
+"<firstname>Nicolas</firstname> <surname>Goutte</surname> <email>goutte@kde."
+"org</email>"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:22
+#, no-c-format
+msgid ""
+"Using the man ioslave you are able to read the man pages installed on your "
+"system. It is easy to use:"
+msgstr ""
+"Sistemdeki kılavuz sayfalarını okumak için man ioslave'i "
+"kullananabilirsiniz. Kullanımı da oldukça kolaydır:"
+
+#. Tag: command
+#: index.docbook:29
+#, fuzzy, no-c-format
+msgid "man:"
+msgstr "man:/"
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid "See the sections of the manual, click to find the rest."
+msgstr ""
+
+#. Tag: userinput
+#: index.docbook:36
+#, fuzzy, no-c-format
+msgid "<command>man:/</command><replaceable>fopen</replaceable>"
+msgstr "<command>man:</command>fopen"
+
+#. Tag: para
+#: index.docbook:38
+#, no-c-format
+msgid "See the man page of <command>fopen</command>."
+msgstr "<command>fopen</command> komutunun kılavuz sayfasını göster."
+
+#. Tag: userinput
+#: index.docbook:43
+#, fuzzy, no-c-format
+msgid "<command>man:/</command><replaceable>fopen(3)</replaceable>"
+msgstr "<command>man:</command>fopen"
+
+#. Tag: para
+#: index.docbook:45
+#, fuzzy, no-c-format
+msgid "See the man page of <command>fopen</command> in section 3."
+msgstr "<command>fopen</command> komutunun kılavuz sayfasını göster."
+
+#. Tag: userinput
+#: index.docbook:50
+#, fuzzy, no-c-format
+msgid "<command>man:/</command><replaceable>(3)</replaceable>"
+msgstr "<command>man:</command>fopen"
+
+#. Tag: para
+#: index.docbook:52
+#, no-c-format
+msgid "See the index of section 3."
+msgstr ""
+
+#. Tag: userinput
+#: index.docbook:57
+#, fuzzy, no-c-format
+msgid "<command>man:/</command>intro<replaceable>(3)</replaceable>"
+msgstr "<command>man:</command>fopen"
+
+#. Tag: para
+#: index.docbook:59
+#, no-c-format
+msgid "See the introduction of section 3."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:65
+#, no-c-format
+msgid ""
+"If there are more than one man page of the name that you have entered, you "
+"will get a list where you can choose the man page that you want to see."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:69
+#, no-c-format
+msgid ""
+"There is also a shortcut: <userinput><command>#fopen</command></userinput>, "
+"which has the same effect as above."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:74
+#, no-c-format
+msgid ""
+"If you do not find all your man pages, adjust the configuration file "
+"<filename>/etc/manpath.config</filename> (or a file of a similar name "
+"depending on your distribution) or adjust the environment variables "
+"<envar>MANPATH</envar> and <envar>MANSECT</envar>."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:82
+#, no-c-format
+msgid ""
+"As with any other &kde; ioslave, it is possible to enter a &URL;, like "
+"<userinput><command>man:/socket</command></userinput> in <emphasis>any</"
+"emphasis> &kde; application. Try it in &kwrite; and you will see the man "
+"page in &HTML; format."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:89
+#, no-c-format
+msgid "Contact mailing list: <email>kde-devel@kde.org</email>"
+msgstr ""

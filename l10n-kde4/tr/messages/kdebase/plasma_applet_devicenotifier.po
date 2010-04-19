@@ -1,0 +1,164 @@
+# translation of plasma_applet_devicenotifier.po to Turkish
+# translation of plasma_applet_devicenotifier.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Serdar Soytetir <serdar@kde.org.tr>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_devicenotifier\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-12 01:18+0100\n"
+"PO-Revision-Date: 2009-10-12 16:37+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: deviceitem.cpp:272
+msgid "Click to safely remove this device from the computer."
+msgstr "Bu aygıtı güvenli bir şekilde kaldırmak için tıklayın."
+
+#: deviceitem.cpp:273
+msgid "Device is plugged in and can be accessed by applications."
+msgstr "Aygıt takıldı ve uygulamalar tarafından erişilebilir durumda."
+
+#: deviceitem.cpp:275
+msgid "Click to access this device from other applications."
+msgstr "Bu aygıta diğer uygulamalardan erişmek için tıklatın."
+
+#: deviceitem.cpp:276
+msgid "Device is plugged in, but not mounted for access yet."
+msgstr "Aygıt takıldı ama erişilmek üzere bağlanmadı."
+
+#: deviceitem.cpp:367
+#, kde-format
+msgctxt "@info:status Free disk space"
+msgid "%1 free"
+msgstr "%1 boş"
+
+#: devicenotifier.cpp:202
+#, kde-format
+msgid "1 action for this device"
+msgid_plural "%1 actions for this device"
+msgstr[0] "Bu aygıt için %1 eylem"
+
+#: devicenotifier.cpp:271
+msgid "No devices plugged in"
+msgstr "Takılan aygıt yok"
+
+#: devicenotifier.cpp:275
+#, kde-format
+msgid "Last plugged in device: %1"
+msgstr "Son takılan aygıtlar : %1"
+
+#: devicenotifier.cpp:377
+msgctxt "General options page"
+msgid "General"
+msgstr "Genel"
+
+#: notifierdialog.cpp:65
+msgid "Show hidden devices"
+msgstr "Gizli aygıtları göster"
+
+#: notifierdialog.cpp:513
+msgid ""
+"Could not unmount the device.\n"
+"One or more files on this device are open within an application."
+msgstr ""
+"Bu aygıt ayrılamadı.\n"
+"Bu aygıt üzerindeki bir ya da daha fazla dosya bir uygulama ile açılmış "
+"durumda."
+
+#: notifierdialog.cpp:532
+msgid ""
+"Cannot eject the disc.\n"
+"One or more files on this disc are open within an application."
+msgstr ""
+"Disk çıkarılamadı.\n"
+"Bu aygıt üzerindeki bir ya da daha fazla dosya bir uygulama ile açılmış "
+"durumda."
+
+#: notifierdialog.cpp:547
+msgid "Cannot mount the disc."
+msgstr "Disk bağlanamadı."
+
+#: notifierdialog.cpp:756
+#, kde-format
+msgctxt "Hide a device"
+msgid "Hide %1"
+msgstr "%1 ögesini gizle "
+
+#: notifierdialog.cpp:820
+msgid "No devices plugged in."
+msgstr "Takılan aygıt yok."
+
+#: notifierdialog.cpp:822
+msgid "Devices recently plugged in:"
+msgstr "Son takılan aygıtlar:"
+
+#. i18n: file: configurationpage.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:3 rc.cpp:15
+msgid "Display:"
+msgstr "Göster:"
+
+#. i18n: file: configurationpage.ui:37
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:6 rc.cpp:18
+msgid "Removable devices only"
+msgstr "Sadece çıkarılabilir aygıtlar"
+
+#. i18n: file: configurationpage.ui:42
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:9 rc.cpp:21
+msgid "Non-removable devices only"
+msgstr "Sadece çıkarılabilir olmayan aygıtlar"
+
+#. i18n: file: configurationpage.ui:47
+#. i18n: ectx: property (text), item, widget (KComboBox, showDevices)
+#: rc.cpp:12 rc.cpp:24
+msgid "All devices"
+msgstr "Tüm aygıtlar"
+
+#~ msgid "Show the popup when a device is inserted"
+#~ msgstr "Bir aygıt takıldığında pencere göster"
+
+#~ msgid "Show "
+#~ msgstr "Göster "
+
+#~ msgid " second"
+#~ msgid_plural " seconds"
+#~ msgstr[0] " saniye"
+
+#~ msgid "Show all the items"
+#~ msgstr "Tüm ögeleri göster"
+
+#~ msgid "never"
+#~ msgstr "asla"
+
+#~ msgid "When inserting a device close the popup after"
+#~ msgstr ""
+#~ "Bir aygıt takıldığında açılan pencerenin kapanması için geçecek süre"
+
+#~ msgid "Form"
+#~ msgstr "Biçim"
+
+#~ msgid "&Time to stay on top:"
+#~ msgstr "&Diğer pencerein üzerinde kalma süresi :"
+
+#~ msgid "&Number of items displayed:"
+#~ msgstr "&Gösterilecek öge sayısı:"
+
+#~ msgid "Unlimited"
+#~ msgstr "Sınırsız"
+
+#~ msgid "&Display time of items:"
+#~ msgstr "&Ögelerin gösterilme süreleri:"
+
+#~ msgid "Configure New Device Notifier"
+#~ msgstr "Yeni Aygıt Bildiricisini Yapılandır"

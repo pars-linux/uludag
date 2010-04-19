@@ -1,0 +1,200 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_wallpaper_image\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 06:11+0100\n"
+"PO-Revision-Date: 2009-11-12 13:31+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: backgrounddelegate.cpp:69
+#, kde-format
+msgctxt "Caption to wallpaper preview, %1 author name"
+msgid "by %1"
+msgstr "%1 tarafından oluşturuldu"
+
+#: backgroundlistmodel.cpp:307 backgroundlistmodel.cpp:336
+#: backgroundlistmodel.cpp:352
+msgid "Finding images for the wallpaper slideshow."
+msgstr "Duvar kağıdı slayt gösterisi için resimler bulunuyor."
+
+#: backgroundlistmodel.cpp:337
+#, kde-format
+msgid "Adding wallpaper package in %1"
+msgstr "Duvar kağıdı paketi %1 içerisine ekleniyor"
+
+#: backgroundlistmodel.cpp:353
+#, kde-format
+msgid "Adding image %1"
+msgstr "%1 resmi ekleniyor"
+
+#: image.cpp:47
+msgid "Next Wallpaper Image"
+msgstr "Sonraki Duvar Kağıdı Resmi"
+
+#: image.cpp:142 image.cpp:188
+msgid "Scaled & Cropped"
+msgstr "Boyutlandırılmış & Kırpılmış"
+
+#: image.cpp:143 image.cpp:189
+msgid "Scaled"
+msgstr "Ölçeklendirilmiş"
+
+#: image.cpp:144 image.cpp:190
+msgid "Scaled, keep proportions"
+msgstr "Ölçeklendirilmiş, en boy oranını koru"
+
+#: image.cpp:145 image.cpp:191
+msgid "Centered"
+msgstr "Ortalanmış"
+
+#: image.cpp:146 image.cpp:192
+msgid "Tiled"
+msgstr "Döşenmiş"
+
+#: image.cpp:147 image.cpp:193
+msgid "Center Tiled"
+msgstr "Ortalı Döşenmiş"
+
+#: image.cpp:476
+#, kde-format
+msgctxt "Wallpaper info, author name"
+msgid "%1"
+msgstr "%1"
+
+#: image.cpp:506
+msgid "Select Wallpaper Image File"
+msgstr "Duvar Kağıdı Resmi Seç"
+
+#. i18n: file: imageconfig.ui:27
+#. i18n: ectx: property (text), widget (QLabel, m_emailLabel)
+#: rc.cpp:3 rc.cpp:47
+msgid "Email:"
+msgstr "E-posta:"
+
+#. i18n: file: imageconfig.ui:50
+#. i18n: ectx: property (text), widget (QLabel, m_licenseLabel)
+#: rc.cpp:6 rc.cpp:50
+msgid "License:"
+msgstr "Lisans:"
+
+#. i18n: file: imageconfig.ui:76
+#. i18n: ectx: property (text), widget (QLabel, m_positioningLabel)
+#: rc.cpp:9 rc.cpp:53
+msgid "P&ositioning:"
+msgstr "K&onumlandırma:"
+
+#. i18n: file: imageconfig.ui:89
+#. i18n: ectx: property (text), widget (QLabel, m_colorLabel)
+#. i18n: file: slideshowconfig.ui:57
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: imageconfig.ui:89
+#. i18n: ectx: property (text), widget (QLabel, m_colorLabel)
+#. i18n: file: slideshowconfig.ui:57
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:12 rc.cpp:24 rc.cpp:56 rc.cpp:68
+msgid "&Color:"
+msgstr "&Renk:"
+
+#. i18n: file: imageconfig.ui:185
+#. i18n: ectx: property (text), widget (KPushButton, m_pictureUrlButton)
+#: rc.cpp:15 rc.cpp:59
+msgid "Open..."
+msgstr "Aç..."
+
+#. i18n: file: imageconfig.ui:194
+#. i18n: ectx: property (text), widget (QPushButton, m_newStuff)
+#. i18n: file: slideshowconfig.ui:194
+#. i18n: ectx: property (text), widget (QPushButton, m_newStuff)
+#. i18n: file: imageconfig.ui:194
+#. i18n: ectx: property (text), widget (QPushButton, m_newStuff)
+#. i18n: file: slideshowconfig.ui:194
+#. i18n: ectx: property (text), widget (QPushButton, m_newStuff)
+#: rc.cpp:18 rc.cpp:42 rc.cpp:62 rc.cpp:86
+msgid "Get New Wallpapers..."
+msgstr "Yeni Duvar Kağıtları Al..."
+
+#. i18n: file: slideshowconfig.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:21 rc.cpp:65
+msgid "&Positioning:"
+msgstr "K&onumlandırma:"
+
+#. i18n: file: slideshowconfig.ui:107
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:27 rc.cpp:71
+msgid "C&hange images every:"
+msgstr "Resim değiştirme &aralığı:"
+
+#. i18n: file: slideshowconfig.ui:133
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, m_slideshowDelay)
+#: rc.cpp:30 rc.cpp:74
+msgctxt ""
+"(qtdt-format) Please do not change the quotes (') and translate only the "
+"content of the quotes."
+msgid "hh 'Hours' mm 'Mins' ss 'Secs'"
+msgstr "hh 'Saat' mm 'Dakika' ss 'Saniye'"
+
+#. i18n: file: slideshowconfig.ui:171
+#. i18n: ectx: property (text), widget (KPushButton, m_addDir)
+#: rc.cpp:33 rc.cpp:77
+msgid "&Add Folder..."
+msgstr "Dizin &Ekle..."
+
+#. i18n: file: slideshowconfig.ui:184
+#. i18n: ectx: property (text), widget (KPushButton, m_removeDir)
+#: rc.cpp:36 rc.cpp:80
+msgid "&Remove Folder"
+msgstr "Dizini &Kaldır"
+
+#. i18n: file: slideshowconfig.ui:191
+#. i18n: ectx: property (toolTip), widget (QPushButton, m_newStuff)
+#: rc.cpp:39 rc.cpp:83
+msgid "Download new wallpapers"
+msgstr "Yeni duvar kağıdı indir"
+
+#: rc.cpp:43
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:44
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#~ msgid "Color:"
+#~ msgstr "Renk:"
+
+#~ msgid "Folders:"
+#~ msgstr "Dizinler:"
+
+#~ msgid "Author:"
+#~ msgstr "Yazar:"
+
+#~ msgid "Browse"
+#~ msgstr "Göz at"
+
+#~ msgid "&Picture:"
+#~ msgstr "&Resim:"
+
+#~ msgid "Testing %1 for a Wallpaper package"
+#~ msgstr "Bir duvar kağıdı paketi için %1 test ediliyor"
+
+#~ msgid "Images"
+#~ msgstr "Resimler"
+
+#~ msgid "Screenshot"
+#~ msgstr "Ekran Görüntüsü"
+
+#~ msgid "Maxpect"
+#~ msgstr "Uygun Ortala"

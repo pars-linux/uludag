@@ -1,0 +1,218 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: gasCalculator\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-13 06:21+0200\n"
+"PO-Revision-Date: 2009-10-28 16:33+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: gasCalculator.cpp:86
+msgid "Gas Calculator"
+msgstr "Gaz Hesap Makinesi"
+
+#: gasCalculator.cpp:96
+msgid "Calculation Mode:"
+msgstr "Hesaplama Kipi:"
+
+#: gasCalculator.cpp:101
+msgid "Moles / Mass"
+msgstr "Mol / Kütle"
+
+#: gasCalculator.cpp:102
+msgid "Pressure"
+msgstr "Basınç"
+
+#: gasCalculator.cpp:103
+msgid "Temperature"
+msgstr "Sıcaklık"
+
+#: gasCalculator.cpp:104
+msgid "Volume"
+msgstr "Hacim"
+
+#: gasCalculator.cpp:114
+msgid "Molar Mass of Gas:"
+msgstr "Gazın Mol Kütlesi:"
+
+#: gasCalculator.cpp:123
+msgid "u (mass)"
+msgstr "u (kütle)"
+
+#: gasCalculator.cpp:133
+msgid "Number of moles:"
+msgstr "Mol sayısı:"
+
+#: gasCalculator.cpp:147
+msgid "Mass of the gas:"
+msgstr "Gazın kütlesi:"
+
+#: gasCalculator.cpp:157
+msgid "grams"
+msgstr "gram"
+
+#: gasCalculator.cpp:158
+msgid "tons"
+msgstr "ton"
+
+#: gasCalculator.cpp:159
+msgid "carats"
+msgstr "karat"
+
+#: gasCalculator.cpp:160
+msgid "pounds"
+msgstr "pound"
+
+#: gasCalculator.cpp:161
+msgid "ounces"
+msgstr "ons"
+
+#: gasCalculator.cpp:162
+msgid "troy ounces"
+msgstr "altın onsu"
+
+#: gasCalculator.cpp:174
+msgid "Pressure of the Gas:"
+msgstr "Gazın basıncı:"
+
+#: gasCalculator.cpp:184
+msgid "atmospheres"
+msgstr "atmosfer"
+
+#: gasCalculator.cpp:185
+msgid "pascal"
+msgstr "paskal"
+
+#: gasCalculator.cpp:186
+msgid "bars"
+msgstr "bar"
+
+#: gasCalculator.cpp:187
+msgid "millibars"
+msgstr "milibar"
+
+#: gasCalculator.cpp:188
+msgid "decibars"
+msgstr "desibar"
+
+#: gasCalculator.cpp:189
+msgid "torrs"
+msgstr "tor"
+
+#: gasCalculator.cpp:190
+msgid "inches of mercury"
+msgstr "inç civa"
+
+#: gasCalculator.cpp:202
+msgid "Temperature:"
+msgstr "Sıcaklık:"
+
+#: gasCalculator.cpp:212
+msgid "kelvins"
+msgstr "kelvin"
+
+#: gasCalculator.cpp:213
+msgid "celsius"
+msgstr "selsius"
+
+#: gasCalculator.cpp:214
+msgid "fahrenheit"
+msgstr "fahrenayt"
+
+#: gasCalculator.cpp:215
+msgid "delisles"
+msgstr "delisle"
+
+#: gasCalculator.cpp:216
+msgid "réaumurs"
+msgstr "réaumur"
+
+#: gasCalculator.cpp:228
+msgid "Volume of the gas:"
+msgstr "Gazın hacmi:"
+
+#: gasCalculator.cpp:238
+msgid "liter"
+msgstr "litre"
+
+#: gasCalculator.cpp:239 gasCalculator.cpp:290
+msgid "cubic feet"
+msgstr "feet küp"
+
+#: gasCalculator.cpp:240
+msgid "cubic inch"
+msgstr "inç küp"
+
+#: gasCalculator.cpp:241
+msgid "fluid ounce"
+msgstr "sıvı ons"
+
+#: gasCalculator.cpp:242 gasCalculator.cpp:293
+msgid "cups"
+msgstr "bardak"
+
+#: gasCalculator.cpp:243 gasCalculator.cpp:292
+msgid "gallons"
+msgstr "galon"
+
+#: gasCalculator.cpp:244
+msgid "pints"
+msgstr "pint"
+
+#: gasCalculator.cpp:256
+msgid "Van der Waals constant 'a':"
+msgstr "Van der Waals sabiti 'a':"
+
+#: gasCalculator.cpp:266
+msgid "liter^2 atmosphere/mol^2"
+msgstr "litre^2 atmosfer/mol^2"
+
+#: gasCalculator.cpp:278
+msgid "Van der Waals constant 'b':"
+msgstr "Van der Waals sabiti 'b'"
+
+#: gasCalculator.cpp:288
+msgid "liters"
+msgstr "litre"
+
+#: gasCalculator.cpp:289
+msgid "cubic meters"
+msgstr "metreküp"
+
+#: gasCalculator.cpp:291
+msgid "cubic inches"
+msgstr "inç küp"
+
+#: gasCalculator.cpp:307
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: gasCalculator.cpp:626
+msgid "Volume cannot be zero, please enter a valid value."
+msgstr "Mol kütlesi sıfır olamaz, lütfen sıfır olmayan bir değer girin."
+
+#: gasCalculator.cpp:629
+msgid "The molar mass cannot be zero, please enter a non-zero value."
+msgstr "Mol kütlesi sıfır olamaz, lütfen sıfır olmayan bir değer girin."
+
+#: gasCalculator.cpp:639
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: gasCalculatorConfig.ui:17
+#. i18n: ectx: property (text), widget (QCheckBox, ideal)
+#: rc.cpp:3
+msgid "Assume Gas is ideal (Do not show Van der Waals coefficients)"
+msgstr "Gazın ideal olduğunu varsay (Van der Waals katsayılarını gösterme)"
+
+#~ msgid "Volume cannot be zero, please correct the error!"
+#~ msgstr "Hacim sıfır olamaz, lütfen hatayı düzeltin!"

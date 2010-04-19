@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_news\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:23+0000\n"
+"PO-Revision-Date: 2001-11-12 18:55GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "news"
+msgstr "news"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:18
+#, no-c-format
+msgid ""
+"The news kioslave is used when you click on a news link on a web page. It "
+"will open &knode;, and if the group referred to in the news link is "
+"available from your server, it will subscribe you to the group, in the first "
+"available account you have configured in &knode;"
+msgstr ""
+"news kioslave, bir web sayfasındaki news bağlantısına tıklandığı anda "
+"kullanılır. &knode; programını çalıştırır ve &knode; içinde yapılandırılan "
+"kullanıcı için gerekli gruplara üyeliği yapar."
+
+#. Tag: para
+#: index.docbook:23
+#, no-c-format
+msgid ""
+"You can unsubscribe from within &knode; if you decide you don't want to read "
+"the group, by <mousebutton>right</mousebutton> clicking and selecting "
+"<guimenuitem>Unsubscribe from Group</guimenuitem>."
+msgstr ""
+"&knode; içinde gruplardan üyeliğinizi iptal edebilirsiniz. Eğer bir grubu "
+"artık okumak istemediğinizi düşünüyorsanız, <mousebutton>sağ</mousebutton> "
+"fare düğmesiyle <guimenuitem>Üyelikten çık</guimenuitem> seçeneğini "
+"işaretleyin."

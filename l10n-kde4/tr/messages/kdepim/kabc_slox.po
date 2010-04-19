@@ -1,0 +1,197 @@
+# Translation of kabc_slox.po to Turkish
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kabc_slox\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-05 06:18+0100\n"
+"PO-Revision-Date: 2009-08-14 12:56+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kabcresourcesloxconfig.cpp:52
+msgid "URL:"
+msgstr "Adres:"
+
+#: kabcresourcesloxconfig.cpp:58 kcalresourcesloxconfig.cpp:61
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: kabcresourcesloxconfig.cpp:64 kcalresourcesloxconfig.cpp:67
+msgid "Password:"
+msgstr "Parola:"
+
+#. i18n: file: kresources_kabc_slox.kcfg:19
+#. i18n: ectx: label, entry (UseLastSync), group (General)
+#. i18n: file: kresources_kcal_slox.kcfg:25
+#. i18n: ectx: label, entry (UseLastSync), group (General)
+#: kabcresourcesloxconfig.cpp:71 kcalresourcesloxconfig.cpp:74 rc.cpp:12
+#: rc.cpp:36
+msgid "Only load data since last sync"
+msgstr "Sadece son eşzamanlamadan sonraki verileri yükle"
+
+#: kabcresourcesloxconfig.cpp:75
+msgid "Select Folder..."
+msgstr "Dizin Seç..."
+
+#: kabcresourceslox.cpp:219
+msgid "Downloading contacts"
+msgstr "Kişiler indiriliyor"
+
+#: kabcresourceslox.cpp:533
+msgid "Uploading contacts"
+msgstr "Kişiler gönderiliyor"
+
+#: kcalresourcesloxconfig.cpp:54
+msgid "Download from:"
+msgstr "Buradan indir:"
+
+#: kcalresourcesloxconfig.cpp:78
+msgid "Calendar Folder..."
+msgstr "Takvim Dizini..."
+
+#: kcalresourcesloxconfig.cpp:82
+msgid "Task Folder..."
+msgstr "Görev Dizini..."
+
+#: kcalresourceslox.cpp:178
+#, kde-format
+msgid "Non-http protocol: '%1'"
+msgstr "HTTP dışı iletişim kuralı: '%1'"
+
+#: kcalresourceslox.cpp:233
+msgid "Downloading events"
+msgstr "Olaylar indiriliyor"
+
+#: kcalresourceslox.cpp:278
+msgid "Downloading to-dos"
+msgstr "Yapılacak ögeleri indiriliyor"
+
+#: kcalresourceslox.cpp:396
+msgid "Uploading incidence"
+msgstr "Olay gönderiliyor"
+
+#: kcalresourceslox.cpp:1248
+msgid "Added"
+msgstr "Eklendi"
+
+#: kcalresourceslox.cpp:1249
+msgid "Changed"
+msgstr "Değiştirildi"
+
+#: kcalresourceslox.cpp:1250
+msgid "Deleted"
+msgstr "Silindi"
+
+#. i18n: file: kresources_kabc_slox.kcfg:10
+#. i18n: ectx: label, entry (Url), group (General)
+#. i18n: file: kresources_kcal_slox.kcfg:10
+#. i18n: ectx: label, entry (Url), group (General)
+#: rc.cpp:3 rc.cpp:21
+msgid "Base Url"
+msgstr "Temel Adres"
+
+#. i18n: file: kresources_kabc_slox.kcfg:13
+#. i18n: ectx: label, entry (User), group (General)
+#. i18n: file: kresources_kcal_slox.kcfg:13
+#. i18n: ectx: label, entry (User), group (General)
+#: rc.cpp:6 rc.cpp:24
+msgid "User Name"
+msgstr "Kullanıcı Adı"
+
+#. i18n: file: kresources_kabc_slox.kcfg:16
+#. i18n: ectx: label, entry (Password), group (General)
+#. i18n: file: kresources_kcal_slox.kcfg:16
+#. i18n: ectx: label, entry (Password), group (General)
+#: rc.cpp:9 rc.cpp:27
+msgid "Password"
+msgstr "Parola"
+
+#. i18n: file: kresources_kabc_slox.kcfg:23
+#. i18n: ectx: label, entry (FolderId), group (General)
+#: rc.cpp:15 sloxfolderdialog.cpp:43
+msgid "Folder ID"
+msgstr "Dizin Kimliği"
+
+#. i18n: file: kresources_kabc_slox.kcfg:27
+#. i18n: ectx: label, entry (LastSync), group (General)
+#: rc.cpp:18
+msgid "Last Sync"
+msgstr "Son Eşzamanlama"
+
+#. i18n: file: kresources_kcal_slox.kcfg:19
+#. i18n: ectx: label, entry (LastEventSync), group (General)
+#: rc.cpp:30
+msgid "Last Event Sync"
+msgstr "Son Olay Eşzamanlaması"
+
+#. i18n: file: kresources_kcal_slox.kcfg:22
+#. i18n: ectx: label, entry (LastTodoSync), group (General)
+#: rc.cpp:33
+msgid "Last To-do Sync"
+msgstr "Son Yapılacaklar Eşzamanlaması"
+
+#. i18n: file: kresources_kcal_slox.kcfg:29
+#. i18n: ectx: label, entry (CalendarFolderId), group (General)
+#: rc.cpp:39
+msgid "Calendar Folder"
+msgstr "Takvim Dizini"
+
+#. i18n: file: kresources_kcal_slox.kcfg:33
+#. i18n: ectx: label, entry (TaskFolderId), group (General)
+#: rc.cpp:42
+msgid "Task Folder"
+msgstr "Görev Dizini"
+
+#: rc.cpp:43
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir, Görkem Çetin, Ozan Eren BİLGEN"
+
+#: rc.cpp:44
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com, gorkem@kde.org, oebilgen@uekae.tubitak.gov.tr"
+
+#: sloxfolder.cpp:45
+msgid "Global Address Book"
+msgstr "Genel Adres Defteri"
+
+#: sloxfolder.cpp:47
+msgid "Internal Address Book"
+msgstr "İç Adres Defteri"
+
+#: sloxfolderdialog.cpp:35
+msgid "Select Folder"
+msgstr "Dizin Seç"
+
+#: sloxfolderdialog.cpp:38
+msgid "Reload"
+msgstr "Yeniden Yükle"
+
+#: sloxfolderdialog.cpp:42
+msgid "Folder"
+msgstr "Dizin"
+
+#: sloxfoldermanager.cpp:163
+msgid "Private Folder"
+msgstr "Özel Dizin"
+
+#: sloxfoldermanager.cpp:165
+msgid "Public Folder"
+msgstr "Genel Dizin"
+
+#: sloxfoldermanager.cpp:167
+msgid "Shared Folder"
+msgstr "Paylaşılan Dizin"
+
+#: sloxfoldermanager.cpp:169
+msgid "System Folder"
+msgstr "Sistem Dizini"

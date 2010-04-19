@@ -1,0 +1,113 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kmail-migrator\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-02 06:07+0200\n"
+"PO-Revision-Date: 2009-11-04 18:36+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kmailmigrator.cpp:79
+msgid "Beginning KMail migration"
+msgstr "KMail göç işlemine başlanıyor"
+
+#: kmailmigrator.cpp:102
+#, kde-format
+msgid "No backend for '%1' available."
+msgstr "'%1' için arka uç bulunamadı."
+
+#: kmailmigrator.cpp:109
+#, kde-format
+msgid "'%1' has been already migrated."
+msgstr "'%1' zaten taşındı."
+
+#: kmailmigrator.cpp:121
+#, kde-format
+msgid "Migration of '%1' to akonadi resource failed: %2"
+msgstr "'%1' ögesi Akonadi kaynağına taşınamadı: %2"
+
+#: kmailmigrator.cpp:136
+#, kde-format
+msgid "Migration of '%1' succeeded."
+msgstr "'%1' ögesi başarılı bir şekilde taşındı."
+
+#: kmailmigrator.cpp:148
+#, kde-format
+msgid "Trying to migrate '%1' to resource..."
+msgstr "'%1' kaynağı taşınmaya çalışılıyor...."
+
+#: kmailmigrator.cpp:178 kmailmigrator.cpp:283 kmailmigrator.cpp:320
+#, kde-format
+msgid "Failed to create resource: %1"
+msgstr "Kaynak oluşturulamadı: %1"
+
+#: kmailmigrator.cpp:181
+msgid "Created imap resource"
+msgstr "Imap kaynağı oluşturuldu"
+
+#: kmailmigrator.cpp:191 kmailmigrator.cpp:296 kmailmigrator.cpp:333
+msgid "Failed to obtain D-Bus interface for remote configuration."
+msgstr "Uzak yapılandırma için D-Bus arayüzü edinilemedi."
+
+#: kmailmigrator.cpp:286
+msgid "Created mbox resource"
+msgstr "Mbox kaynağı oluşturuldu"
+
+#: kmailmigrator.cpp:323
+msgid "Created maildir resource"
+msgstr "Maildir kaynağı oluşturuldu"
+
+#: main.cpp:39
+msgid "KMail Migration Tool"
+msgstr "KMail Göç Aracı"
+
+#: main.cpp:41
+msgid "Migration of KMail accounts to Akonadi"
+msgstr "KMail hesaplarını Akonadi Sunucusuna Taşı"
+
+#: main.cpp:43
+msgid "(c) 2009 the Akonadi developers"
+msgstr "(c) 2009 Akonadi geliştiricileri"
+
+#: main.cpp:47
+msgid "Jonathan Armond"
+msgstr "Jonathan Armond"
+
+#: main.cpp:47
+msgid "Author"
+msgstr "Yazar"
+
+#: main.cpp:54
+msgid ""
+"Only migrate the specified types (supported: imap, mbox, maildir, dimap, "
+"local, pop)"
+msgstr ""
+"Sadece belirtilen tipleri taşı (desteklenenler: imap, mbox, maildir, dimap, "
+"local, pop)"
+
+#: main.cpp:57
+msgid "Show reporting dialog"
+msgstr "Raporlama penceresini göster"
+
+#: main.cpp:58
+msgid "Show report only if changes were made"
+msgstr "Sadece değişiklik yapıldığında raporu göster"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"

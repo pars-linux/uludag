@@ -1,0 +1,245 @@
+# translation of kinfocenter_memory.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_memory\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-13 18:22+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9 index.docbook:31
+#, no-c-format
+msgid "Memory Information"
+msgstr "Hafıza Bilgisi"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Mike.McBride;"
+msgstr "&Mike.McBride;"
+
+#. Tag: trans_comment
+#: index.docbook:15
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:23
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:24
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:25
+#, no-c-format
+msgid "memory"
+msgstr "hafıza"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "system information"
+msgstr "sistem bilgisi"
+
+#. Tag: para
+#: index.docbook:33
+#, no-c-format
+msgid ""
+"This module displays the current memory usage. It is updated constantly, and "
+"can be very useful for pinpointing bottlenecks when certain applications are "
+"executed."
+msgstr ""
+"Bu modül şu andaki hafıza kullanımını gösterir. Sürekli güncellenmekle "
+"birlikte bu modül, belli uygulamalar çalıştırıldığında oluşan darboğazların "
+"açığa çıkarılması konusunda da oldukça yardımcıdır."
+
+#. Tag: title
+#: index.docbook:38
+#, no-c-format
+msgid "Memory Types"
+msgstr "Hafıza Türleri"
+
+#. Tag: para
+#: index.docbook:40
+#, no-c-format
+msgid ""
+"The first thing you must understand, is there are two types of "
+"<quote>memory</quote>, available to the operating system and the programs "
+"that run within it."
+msgstr ""
+"Anlamanız gereken ilk konu,  işletim sistemi ve onun üzerinde çalışan "
+"uygulamalar için iki tür <quote>hafıza</quote> olduğudur."
+
+#. Tag: para
+#: index.docbook:44
+#, no-c-format
+msgid ""
+"The first type, is called physical memory. This is the memory located within "
+"the memory chips, within your computer. This is the <acronym>RAM</acronym> "
+"(for Random Access Memory) you bought when you purchased your computer."
+msgstr ""
+"Birinci tür, fiziksel hafızadır. Bu hafıza, bilgisayarınıza hafıza "
+"çipleriyle yerleştirilen hafıza modülleridir. Bunlar, bilgisayarınızı "
+"aldığınızda bilgisayarınızla birlikte gelen <acronym>RAM</acronym>'dir "
+"(Random Access Memory - Rastgele Erişim Hafızası)."
+
+#. Tag: para
+#: index.docbook:49
+#, no-c-format
+msgid ""
+"The second type of memory, is called virtual or swap memory. This block of "
+"memory, is actually space on the hard drive. The operating system reserves a "
+"space on the hard drive for <quote>swap space</quote>. The operating system "
+"can use this virtual memory (or swap space), if it runs out of physical "
+"memory. The reason this is called <quote>swap</quote> memory, is the "
+"operating system takes some data that it doesn't think you will want for a "
+"while, and saves that to disk in this reserved space. The operating system "
+"then loads the new data you need right now. It has <quote>swapped</quote> "
+"the not needed data, for the data you need right now. Virtual or swap memory "
+"is not as fast as physical memory, so operating systems try to keep data "
+"(especially often used data), in the physical memory."
+msgstr ""
+"İkinci tür hafıza takas ya da sanal hafıza olarak anılır. Bu alan aslında "
+"sabit diskinizdeki alandır. İşletim sistemi <quote>takas alanı</quote> için "
+"sabit diskinizin bir kısmını saklar. İşletim sisteminiz için yeterli "
+"fiziksel hafıza kalmadığında bu sanal hafıza (ya da takas alanı) kullanılır. "
+"Bu alanın <quote>takas</quote> hafızası olarak isimlendirilmesinin nedeni, "
+"işletim sisteminin sizin o sırada kullanmadığınıza kanaat getirdiği veriyi "
+"alıp sabit diskinizdeki ayrılmış alana taşımasıdır. Daha sonra işletim "
+"sistemi size şimdi gerekli olan veriyi yükler. Böylece gerekli olan yeni "
+"veri için, eski veri <quote>takas yapılmış</quote> oldu. Sanal ya da takas "
+"hafızası fiziksel hafıza kadar hızlı değildir, bu nedenle işletim sistemleri "
+"verileri (özellikle de sıkça kullanılan verileri) fiziksel hafızada tutmaya "
+"çalışır."
+
+#. Tag: para
+#: index.docbook:62
+#, no-c-format
+msgid ""
+"The total memory, is the combined total of physical memory and virtual "
+"memory."
+msgstr "Toplam hafıza, toplam fiziksel ve sanal hafızanın birleşimidir."
+
+#. Tag: title
+#: index.docbook:68
+#, no-c-format
+msgid "Memory Information Module"
+msgstr "Hafıza Bilgi Modülü"
+
+#. Tag: para
+#: index.docbook:70
+#, no-c-format
+msgid "This window is divided into a top and bottom section"
+msgstr "Bu pencere üst ve alt kısımlar olmak üzere ikiye bölünmüştür."
+
+#. Tag: para
+#: index.docbook:72
+#, no-c-format
+msgid ""
+"The top section shows you the total physical memory, total free physical "
+"memory, shared memory, and buffered memory."
+msgstr ""
+"Üst kısım, toplam fiziksel hafızayı, toplam boş fiziksel hafızayı, "
+"paylaşıyan hafızayı, ve önbelleklenmiş hafızayı gösterir."
+
+#. Tag: para
+#: index.docbook:75
+#, no-c-format
+msgid ""
+"All four values are represented as the total number of bytes, and as the "
+"number of megabytes (1 megabyte = slightly more than 1,000,000 bytes)"
+msgstr ""
+"Tüm bu dört değer toplam byte sayısı, ve megabyte boyutu (1 megabyte = "
+"1,000,000 byte'tan biraz da fazla) olarak gösterilir."
+
+#. Tag: para
+#: index.docbook:79
+#, no-c-format
+msgid "The bottom section shows you three graphs:"
+msgstr "Alt kısım ise size üç grafik gösterir:"
+
+#. Tag: para
+#: index.docbook:82
+#, no-c-format
+msgid ""
+"<guilabel>Total Memory</guilabel> (this is the combination of physical and "
+"virtual memory)."
+msgstr ""
+"<guilabel>Toplam Hafıza</guilabel> (Bu, fiziksel ve sanal hafızanın "
+"birleşimidir)."
+
+#. Tag: guilabel
+#: index.docbook:83
+#, no-c-format
+msgid "Physical Memory"
+msgstr "Fiziksel Hafıza"
+
+#. Tag: para
+#: index.docbook:84
+#, no-c-format
+msgid "Virtual memory, or <guilabel>Swap Space</guilabel>."
+msgstr "Sanal Hafıza, ya da <guilabel>Takas Alanı</guilabel>."
+
+#. Tag: para
+#: index.docbook:87
+#, no-c-format
+msgid "The green areas are free, and the red areas are used."
+msgstr ""
+"Yeşil alanlar boş hafızayı simgelerken, kırmızı alanlar kullanılanı gösterir."
+
+#. Tag: para
+#: index.docbook:89
+#, no-c-format
+msgid ""
+"The exact values of each type of memory are not critical, and they change "
+"regularly. When you evaluate this page, look at trends."
+msgstr ""
+"Tüm hafıza türlerinin kesin değeri yoktur, çünkü sürekli değişirler. Bu "
+"sayfaya bakarken değişimleri gözlemleyebilirsiniz."
+
+#. Tag: para
+#: index.docbook:93
+#, no-c-format
+msgid ""
+"Does your computer have plenty of free space (green areas)? If not, you can "
+"increase the swap size or increase the physical memory."
+msgstr ""
+"Bilgisayarınız yeteri kadar boş alana (yeşil alanlar) sahip mi? Değilse, "
+"takas alanı boyutunu ya da fiziksel hafızanın boyutunu arttırabilirsiniz."
+
+#. Tag: para
+#: index.docbook:97
+#, fuzzy, no-c-format
+msgid ""
+"Also, if your computer seems sluggish: is your physical memory full, and "
+"does the hard drive always seem to be running? This suggests that you do not "
+"have enough physical memory, and your computer is relying on the slower "
+"virtual memory for commonly used data. Increasing your physical memory will "
+"improve the responsiveness of your computer."
+msgstr ""
+"Ayrıca bilgisayarınız yavaş çalışıyorsa da fiziksel hafızanızın boyutunu "
+"arttırmalısınız. Fiziksel hafızanız dolu, ve sabit diskiniz sürekli "
+"çalışıyor mu? Bu, bilgisayarınızın yeterli fiziksel hafızaya sahip "
+"olmadığını ve sıkça kullanılan veri için daha yavaş olan sanal hafızaya "
+"yüklendiğini gösterir. Fiziksel hafızayı arttırmak bilgisayarınızın cevap "
+"süresini azaltacaktır."

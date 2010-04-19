@@ -1,0 +1,258 @@
+# translation of khelpcenter_faq_tips.po to Türkçe
+# translation of khelpcenter_faq_tips.po to Turkish
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2004.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_faq_tips\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2004-01-26 18:28+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: tips.docbook:8
+#, no-c-format
+msgid "Useful tips"
+msgstr "Kullanışlı ipuçları"
+
+#. Tag: para
+#: tips.docbook:13
+#, no-c-format
+msgid "Reading documentation in &kde;"
+msgstr "&kde;'de belgelere erişim"
+
+#. Tag: para
+#: tips.docbook:16
+#, no-c-format
+msgid ""
+"Pop up the <guilabel>Run Command</guilabel> window (<keycombo action=\"simul"
+"\">&Alt;<keycap>F2</keycap></keycombo> by default) and type:"
+msgstr ""
+"<guilabel>Komut Çalıştır</guilabel> penceresini (öntanımlı olarak<keycombo "
+"action=\"simul\">&Alt;<keycap>F2</keycap></keycombo>) açın ve yazın:"
+
+#. Tag: para
+#: tips.docbook:21
+#, no-c-format
+msgid ""
+"<command>man:<replaceable>command</replaceable></command> for man pages. It "
+"even unpacks on the fly if the man pages are gzipped."
+msgstr ""
+"man dosyaları için: <command>man:<replaceable>komut</replaceable></command> "
+"Man dosyaları gzip'le sıkıştırılmış olsa bile otomatik olarak açar."
+
+#. Tag: para
+#: tips.docbook:26
+#, no-c-format
+msgid ""
+"<command>info:<replaceable>command</replaceable></command> for info pages."
+msgstr ""
+"bilgi (info) dosyaları için : <command>info:<replaceable>komut</"
+"replaceable></command>."
+
+#. Tag: para
+#: tips.docbook:31
+#, no-c-format
+msgid ""
+"<command>help:<replaceable>kdeappname</replaceable></command> for &kde; "
+"application help pages."
+msgstr ""
+"&kde; uygulama yardım sayfaları için: <command>help:"
+"<replaceable>kde_uygulaması_adı</replaceable></command>."
+
+#. Tag: para
+#: tips.docbook:38
+#, no-c-format
+msgid ""
+"You can also enter any of these in the <guilabel>Location</guilabel> text "
+"box in &konqueror;."
+msgstr ""
+"Ayrıca bunlardan birini &konqueror;'daki <guilabel>Konum</guilabel> kutusuna "
+"da girebilirsiniz."
+
+#. Tag: para
+#: tips.docbook:40
+#, no-c-format
+msgid ""
+"Or you can use the <application>&kde; Help Center</application> if you are "
+"using &kde; 2. Simply start the <application>&kde; Help Center</application> "
+"by clicking on the icon (the blue book with the yellow key) on the toolbar. "
+"Once the <application>&kde; Help Center</application> has loaded, the window "
+"on the left will contain an entry called <guilabel>Unix manual pages</"
+"guilabel>. Click once on this entry, and you can browse through all the "
+"installed manual pages on your system."
+msgstr ""
+"Ya da, &kde; 2 kullanıyorsanız <application>&kde; Yardım Merkezi</"
+"application>'ni kullanabilirsiniz. Araç çubuğundaki simgeye (sarı anahtarlı "
+"mavi kitap) tıklayarak <application>&kde; Yardım Merkezi</application>'ni "
+"çalıştırın. <application>&kde; Yardım Merkezi</application> uygulaması "
+"yüklendiğinde solda <guilabel>Unix kılavuz sayfaları</guilabel> girdisini "
+"içeren bir pencere açılacak. Bu girdiye tıklayın, böylece sisteminize kurulu "
+"tüm kılavuz sayfalarını gezebileceksiniz."
+
+#. Tag: para
+#: tips.docbook:52
+#, no-c-format
+msgid "Move or resize windows quickly"
+msgstr "Pencereleri hızlıca taşı veya yeniden boyutlandır"
+
+#. Tag: para
+#: tips.docbook:55
+#, no-c-format
+msgid ""
+"To move a window, use <keycombo action=\"simul\">&Alt;<mousebutton>left</"
+"mousebutton></keycombo> mouse button. <keycombo action=\"simul\">&Alt;"
+"<mousebutton>right</mousebutton></keycombo> mouse button will resize the "
+"window. Last but not least, <keycombo action=\"simul\">&Alt;"
+"<mousebutton>middle</mousebutton></keycombo> mouse button raises/lowers the "
+"window. The <application>&kde; Control Center</application> allows you to "
+"change these mouse bindings."
+msgstr ""
+"Bir pencereyi taşımak için <keycombo action=\"simul\">&Alt;<mousebutton>sol</"
+"mousebutton></keycombo> fare tuşunu kullanın.<keycombo action=\"simul\">&Alt;"
+"<mousebutton>sağ</mousebutton></keycombo> ise bir pencereyi yeniden "
+"boyutlandıracaktır. Ayrıca, <keycombo action=\"simul\">&Alt;"
+"<mousebutton>orta</mousebutton></keycombo> fare tuşu bir pencereyi üste ya "
+"da alta taşır.<application>&kde; Denetim Masası </application> bu fare tuşu "
+"ayarlarını değiştirmenize yardımcı olur."
+
+#. Tag: para
+#: tips.docbook:68
+#, no-c-format
+msgid "Killing windows in &kde;"
+msgstr "&kde;'de pencerelerin kapatılması (öldürülmesi)"
+
+#. Tag: para
+#: tips.docbook:71
+#, no-c-format
+msgid ""
+"There is a standard keybinding (<keycombo action=\"simul\">&Ctrl;&Alt;&Esc;</"
+"keycombo>) that gives you a skull &amp; crossbones cursor. Click that cursor "
+"on a window to kill it. The keybindings are viewable/changeable from the "
+"<application>&kde; Control Center</application>."
+msgstr ""
+"<keycombo action=\"simul\">&Ctrl;&Alt;&Esc;</keycombo> fare tuşu fare okunun "
+"çapraz kemikler haline gelmesini sağlar. Bu durumda bir pencerenin üstüne "
+"tıklarsanız o pencereyi öldürürsünüz. Tuş ayarları <application>&kde; "
+"Denetim Masası</application>'ndan değiştirilebilir."
+
+#. Tag: para
+#: tips.docbook:77
+#, no-c-format
+msgid ""
+"Using this option kills the program forcibly. Data may be lost, and some "
+"processes related to the program may remain active. Use only as a last "
+"resort."
+msgstr ""
+"Bu seçeneği kullanmak programı kapanmaya zorlar. Veri kaybına "
+"uğrayabilirisiniz, ve uygulamayla ilgili bazı işlemler çalışır durumda "
+"kalabilir. Bu seçeneği sadece son çare olarak kullanın."
+
+#. Tag: para
+#: tips.docbook:86
+#, no-c-format
+msgid ""
+"What if something is so wrong that I can't even get the skull &amp; "
+"crossbones cursor? How do I get out of a total lockup?"
+msgstr ""
+"Bir şeyler çapraz kemikli fare imlecini getiremeyeceğim kadar kötüyse ne "
+"yapacağım? Bu durumdan tamamiyle nasıl kurtulabilirim?"
+
+#. Tag: para
+#: tips.docbook:90
+#, no-c-format
+msgid ""
+"These kind of locks tend to occur when an application locks up while it has "
+"a so called <quote>mouse/keyboard grab</quote>. When that happens you can "
+"try to select a virtual text console with <keycombo action=\"simul\">&Ctrl;"
+"&Alt;<keycap>F1</keycap></keycombo> and login. With the following command "
+"you will get a list of all running processes:"
+msgstr ""
+"Bu tür kilitlenmeler genellikle bir uygulama fare ya da klavye ile sorun "
+"yaşadığı zaman ortaya çıkar. Bu durum ortaya çıktığında, <keycombo action="
+"\"simul\">&Ctrl;&Alt;<keycap>F1</keycap></keycombo> tuşlarıyla sanal metin "
+"konsolunu seçmeyi deneyin ve giriş yapmaya çalışın. Şu komutu girdiğinizde "
+"çalışan işlemlerin listesini göreceksiniz."
+
+#. Tag: screen
+#: tips.docbook:96
+#, no-c-format
+msgid ""
+"<userinput>        <command>ps</command> <option>-aux</option> | "
+"<command>more</command></userinput>"
+msgstr ""
+"<userinput>        <command>ps</command> <option>-aux</option> | "
+"<command>more</command></userinput>"
+
+#. Tag: para
+#: tips.docbook:98
+#, no-c-format
+msgid ""
+"By killing the process that has the mousegrab, your desktop will come to "
+"life again. Unfortunately you can't see which process that is, so you will "
+"have to find out through trial and error. To kill a process use:"
+msgstr ""
+"Fare ile sorunu olan işlemi öldürdüğünüzde, masaüstünüz tekrar hayata "
+"dönecektir. Maalesef bunun hangi işlem olduğunu göremezsiniz, bu nedenle bu "
+"işlemi deneme yanılma yöntemiyle bulmalısınız.İşlemi öldürmek için:"
+
+#. Tag: screen
+#: tips.docbook:103
+#, no-c-format
+msgid ""
+"<userinput>        <command>kill</command> <option>-9</option> "
+"<replaceable>pid</replaceable></userinput>"
+msgstr ""
+"<userinput>        <command>kill</command> <option>-9</option> "
+"<replaceable>pid</replaceable></userinput>"
+
+#. Tag: para
+#: tips.docbook:105
+#, no-c-format
+msgid ""
+"Here <replaceable>pid</replaceable> is the process id of the process, which "
+"is the first number on each line reported by <command>ps</command> <option>-"
+"aux</option>."
+msgstr ""
+"Buradaki <replaceable>pid</replaceable>, işlemin 'işlem kimliği'dir. Bu, "
+"<command>ps</command> <option>-aux</option> tarafından verilen bilginin her "
+"satırındaki ilk sayıdır."
+
+#. Tag: para
+#: tips.docbook:109
+#, no-c-format
+msgid ""
+"You can switch back to the desktop with <keycombo action=\"simul\">&Ctrl;"
+"&Alt;<keycap>F7</keycap></keycombo> (or <keycap>F8</keycap> through "
+"<keycap>F9</keycap> depending on your operating system) to see if things "
+"work again. When you press <keycombo action=\"simul\">&Alt;<keycap>Tab</"
+"keycap></keycombo> you should get a response from the window manager. If "
+"not, you need to get back to the text console and try to kill another "
+"process."
+msgstr ""
+"Masaüstünüze <keycombo action=\"simul \">&Ctrl;&Alt;<keycap>F7</keycap></"
+"keycombo> ile (işletim sisteminize göre <keycap>F8</keycap> ile <keycap>F9</"
+"keycap> arasında) her şeyin tekrar çalışıp çalışmadığını görmek için "
+"dönebilirsiniz.<keycombo action=\"simul\">&Alt;<keycap>Tab</keycap></"
+"keycombo> tuşlarına bastığınızda pencere yöneticisinden cevap almalısınız. "
+"Alamazsanız, metin konsoluna geri dönüp, başka bir işlemi öldürmeye "
+"çalışmalısınız."
+
+#. Tag: para
+#: tips.docbook:117
+#, no-c-format
+msgid ""
+"Good candidates to kill are: the application you were working with, "
+"&kicker;, &klipper; and &kdesktop;."
+msgstr ""
+"Öldürmek için iyi adaylar; çalıştığınız uygulamalar, &kicker;, &klipper; ve "
+"&kdesktop;'tır."

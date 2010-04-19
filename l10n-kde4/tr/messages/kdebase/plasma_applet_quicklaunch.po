@@ -1,0 +1,119 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_quicklaunch\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-17 01:25+0100\n"
+"PO-Revision-Date: 2009-11-13 17:09+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: quicklaunchApplet.cpp:357
+msgid "General"
+msgstr "Genel"
+
+#: quicklaunchApplet.cpp:407
+#, fuzzy
+#| msgid "Add Icon..."
+msgid "Add Launcher..."
+msgstr "Simge Ekle..."
+
+#: quicklaunchApplet.cpp:416
+#, fuzzy
+#| msgid "Remove Icon"
+msgid "Remove Launcher"
+msgstr "Simgeyi Kaldır"
+
+#: quicklaunchApplet.cpp:423
+msgid "Sort Alphabetically (A to Z)"
+msgstr "Alfabetik Olarak Sırala (A'dan Z'ye)"
+
+#: quicklaunchApplet.cpp:429
+msgid "Sort Alphabetically (Z to A)"
+msgstr "Alfabetik Olarak Sırala (Z'den A'ya)"
+
+#: quicklaunchApplet.cpp:796
+#, no-c-format, kde-format
+msgid ""
+"The following is already in quicklaunch, ignoring it:\n"
+"%2"
+msgid_plural ""
+"The following are already in quicklaunch, ignoring them:\n"
+"%2"
+msgstr[0] ""
+"Bu ögeler zaten hızlı çalıştır içerisinde olduklarından yoksayılıyorlar:\n"
+"%2"
+
+#. i18n: file: quicklaunchConfig.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, quicklaunchConfig)
+#: rc.cpp:3 rc.cpp:27
+msgid "Configure QuickLaunch"
+msgstr "Hızlı Başlat Programcığını Yapılandır"
+
+#. i18n: file: quicklaunchConfig.ui:20
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:6 rc.cpp:30
+msgid "Visible icons:"
+msgstr "Görünür simgeler:"
+
+#. i18n: file: quicklaunchConfig.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:9 rc.cpp:33
+msgid "Icon size:"
+msgstr "Simge boyutu:"
+
+#. i18n: file: quicklaunchConfig.ui:79
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, iconSizeSpin)
+#. i18n: file: quicklaunchConfig.ui:125
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, dialogIconSizeSpin)
+#. i18n: file: quicklaunchConfig.ui:79
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, iconSizeSpin)
+#. i18n: file: quicklaunchConfig.ui:125
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, dialogIconSizeSpin)
+#: rc.cpp:12 rc.cpp:21 rc.cpp:36 rc.cpp:45
+msgid "px"
+msgstr "px"
+
+#. i18n: file: quicklaunchConfig.ui:92
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, icons)
+#: rc.cpp:15 rc.cpp:39
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#. i18n: file: quicklaunchConfig.ui:112
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:18 rc.cpp:42
+msgid "Dialog icon size:"
+msgstr "Pencere simgesi boyutu:"
+
+#. i18n: file: quicklaunchConfig.ui:132
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:24 rc.cpp:48
+msgid "Show icon names:"
+msgstr "Simge isimlerini göster:"
+
+#~ msgid "Add Shortcut"
+#~ msgstr "Kısayol Ekle"
+
+#~ msgid "New icon:"
+#~ msgstr "Yeni simge:"
+
+#~ msgid "Maximum Rows:"
+#~ msgstr "En Fazla Satır sayısı:"
+
+#~ msgid "Rows in the dialog:"
+#~ msgstr "Penceredeki satır sayısı:"
+
+#~ msgid "*.desktop"
+#~ msgstr "*.desktop"
+
+#~ msgid "Add shortcut"
+#~ msgstr "Kısayol ekle"

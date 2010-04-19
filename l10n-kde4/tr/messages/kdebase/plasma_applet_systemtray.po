@@ -1,0 +1,329 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_systemtray\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-19 01:23+0100\n"
+"PO-Revision-Date: 2009-11-19 16:39+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: statusnotifierwatcher/statusnotifierwatcher.cpp:36
+msgid "statusnotifierwatcher"
+msgstr "statusnotifierwatcher"
+
+#: core/extendertask.cpp:162
+#, kde-format
+msgid "%1 Recently Completed Job:"
+msgid_plural "%1 Recently Completed Jobs:"
+msgstr[0] "%1 Son Tamamlanan Görev:"
+
+#: core/extendertask.cpp:195
+#, kde-format
+msgid "%1 running job"
+msgid_plural "%1 running jobs"
+msgstr[0] "%1 çalışan görev"
+
+#: core/extendertask.cpp:202
+#, kde-format
+msgid "%1 suspended job"
+msgid_plural "%1 suspended jobs"
+msgstr[0] "%1 beklemeye alınmış görev"
+
+#: core/extendertask.cpp:209
+#, kde-format
+msgid "%1 notification"
+msgid_plural "%1 notifications"
+msgstr[0] "%1 bildirim"
+
+#: core/extendertask.cpp:214
+msgid "No active jobs or notifications"
+msgstr "Etkin görev veya bildirim yok"
+
+#: core/extendertask.cpp:217
+msgid "Notifications and jobs"
+msgstr "Bildirimler ve Görevler"
+
+#: core/extendertask.cpp:270
+msgid "Show or hide notifications and jobs"
+msgstr "Bildirimleri ve görevleri göster ya da gizle"
+
+#: core/job.cpp:180
+#, kde-format
+msgid "%1 file, to: %2"
+msgid_plural "%1 files, to: %2"
+msgstr[0] "%1 dosya, buraya: %2"
+
+#: core/manager.cpp:227
+#, kde-format
+msgid "1 running job (%2 remaining)"
+msgid_plural "%1 running jobs (%2 remaining)"
+msgstr[0] "%1 çalışan görev (%2 kaldı)"
+
+#: core/manager.cpp:232
+msgid "no running jobs"
+msgstr "çalışan görev yok"
+
+#: ui/jobwidget.cpp:99 ui/jobwidget.cpp:381
+msgid "More"
+msgstr "Daha Fazla"
+
+#: ui/jobwidget.cpp:110
+msgid "Pause job"
+msgstr "Görevi duraklat"
+
+#: ui/jobwidget.cpp:119
+msgid "Resume job"
+msgstr "Görevi devam ettir"
+
+#: ui/jobwidget.cpp:128
+msgid "Cancel job"
+msgstr "Görevi iptal et"
+
+#: ui/jobwidget.cpp:178 ui/jobwidget.cpp:207
+#, kde-format
+msgid "%1 (%2 remaining)"
+msgstr "%1 (%2 kaldı)"
+
+#: ui/jobwidget.cpp:186
+#, kde-format
+msgctxt ""
+"%1 is the name of the job, can be things like Copying, deleting, moving"
+msgid "%1 [Paused]"
+msgstr "%1 [Duraklatıldı]"
+
+#: ui/jobwidget.cpp:187
+msgid "Paused"
+msgstr "Duraklatıldı"
+
+#: ui/jobwidget.cpp:191
+#, kde-format
+msgctxt ""
+"%1 is the name of the job, can be things like Copying, deleting, moving"
+msgid "%1 [Finished]"
+msgstr "%1 [Tamamlandı]"
+
+#: ui/jobwidget.cpp:253
+#, kde-format
+msgid "%2 / 1 folder"
+msgid_plural "%2 / %1 folders"
+msgstr[0] "%2 / %1 dizin"
+
+#: ui/jobwidget.cpp:261
+#, kde-format
+msgid "%2 / 1 file"
+msgid_plural "%2 / %1 files"
+msgstr[0] "%2 / %1 dosya"
+
+#: ui/jobwidget.cpp:372
+msgid "Less"
+msgstr "Daha Az"
+
+#: ui/applet.cpp:109
+msgid "add default applets"
+msgstr "öntanımlı programcıkları ekle"
+
+#: ui/applet.cpp:164
+msgid "No notifications and no jobs"
+msgstr "Hiç bildirim ve görev yok"
+
+#: ui/applet.cpp:282
+#, fuzzy
+#| msgid "%1 notification"
+#| msgid_plural "%1 notifications"
+msgid "Recent notifications"
+msgstr "%1 bildirim"
+
+#: ui/applet.cpp:303
+msgctxt "Show all recent notifications"
+msgid "Recent"
+msgstr ""
+
+#: ui/applet.cpp:593
+msgid "Information"
+msgstr "Bilgiler"
+
+#: ui/applet.cpp:595
+msgid "Choose which information to show"
+msgstr "Hangi bilgilerin gösterileceğini seçin"
+
+#: ui/applet.cpp:596
+msgid "Auto Hide"
+msgstr "Otomatik Gizle"
+
+#: ui/applet.cpp:597
+msgid "Plasma Widgets"
+msgstr "Plasma Gereçleri"
+
+#: ui/applet.cpp:627
+msgctxt "Item will be automatically shown or hidden from the systray"
+msgid "Auto"
+msgstr "Otomatik"
+
+#: ui/applet.cpp:628
+msgctxt "Item is never visible in the systray"
+msgid "Hidden"
+msgstr "Gizli"
+
+#: ui/applet.cpp:629
+msgctxt "Item is always visible in the systray"
+msgid "Always Visible"
+msgstr "Her Zaman Görünür"
+
+#: ui/applet.cpp:938
+#, kde-format
+msgid "%1 [Finished]"
+msgstr "%1 [Tamamlandı]"
+
+#: ui/applet.cpp:976
+msgid "Recently Completed Jobs"
+msgstr "Son Tamamlanan Görevler"
+
+#: ui/notificationwidget.cpp:166
+#, kde-format
+msgid "Notification from %1"
+msgstr "%1 ögesinden bildirim"
+
+#: ui/taskarea.cpp:395
+msgid "Hide icons"
+msgstr "Simgeleri gizle"
+
+#: ui/taskarea.cpp:397
+msgid "Show hidden icons"
+msgstr "Gizli simgeleri göster"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file: ui/autohide.ui:23
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:5
+msgid "Jobs & Notifications"
+msgstr "Görevler ve Bildirimler"
+
+#. i18n: file: ui/autohide.ui:30
+#. i18n: ectx: property (text), widget (QCheckBox, autoHide)
+#: rc.cpp:8
+msgid "Automatically hide new notifications and jobs after a short delay"
+msgstr "Kısa bir gecikmeden sonra yeni bildirimleri otomatik olarak gizle"
+
+#. i18n: file: ui/autohide.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:11
+msgid "System Tray Icons"
+msgstr "Sistem Çekmecesi Simgeleri"
+
+#. i18n: file: ui/autohide.ui:79
+#. i18n: ectx: property (text), widget (QTreeWidget, icons)
+#: rc.cpp:14
+msgid "1"
+msgstr "1"
+
+#. i18n: file: ui/autohide.ui:84
+#. i18n: ectx: property (text), widget (QTreeWidget, icons)
+#: rc.cpp:17
+msgid "2"
+msgstr "2"
+
+#. i18n: file: ui/protocols.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:20
+msgid "Pop Up Notices"
+msgstr "Kendiliğinden Açılan Bildirimler"
+
+#. i18n: file: ui/protocols.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:23
+msgid "Application notifications"
+msgstr "Uygulama bildirimleri"
+
+#. i18n: file: ui/protocols.ui:50
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:26
+msgid "File transfers and other jobs"
+msgstr "Dosya aktarımları ve diğer görevler"
+
+#. i18n: file: ui/protocols.ui:73
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:29
+msgid "Icons"
+msgstr "Simgeler"
+
+#. i18n: file: ui/protocols.ui:80
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:32
+msgid "Application status"
+msgstr "Uygulama durumu"
+
+#. i18n: file: ui/protocols.ui:97
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:35
+msgid "Communications"
+msgstr "İletişim"
+
+#. i18n: file: ui/protocols.ui:114
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:38
+msgid "System services"
+msgstr "Sistem servisleri"
+
+#. i18n: file: ui/protocols.ui:131
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:41
+msgid "Hardware control"
+msgstr "Donanım denetimi"
+
+#~ msgid "more"
+#~ msgstr "daha fazla"
+
+#~ msgid "clear all"
+#~ msgstr "tümünü temizle"
+
+#~ msgctxt ""
+#~ "%1 is the name of the job, can be things like Copying, deleting, moving"
+#~ msgid "(paused) %1"
+#~ msgstr "(duraklatıldı) %1"
+
+#~ msgctxt ""
+#~ "%1 is the name of the job, can be things like Copying, deleting, moving"
+#~ msgid "(finished) %1"
+#~ msgstr "(tamamlandı) %1"
+
+#~ msgid ""
+#~ "Select the types of application feedback that should be integrated with "
+#~ "the system tray:"
+#~ msgstr ""
+#~ "Sistem çekmecesi ile bütünleştirilecek uygulama geribildirimlerini seç:"
+
+#~ msgid "Notifications"
+#~ msgstr "Bildirimler"
+
+#~ msgid "Notifications, such as task requests"
+#~ msgstr "Bildirimler, görev isteği gibi"
+
+#~ msgid "Jobs, such as file transfers"
+#~ msgstr "Dosya aktarımı gibi görevler"
+
+#~ msgid "Toggle visibility of notifications and jobs"
+#~ msgstr "Bildirimlerin ve görevlerin görünürlüğünü aç / kapat"
+
+#~ msgid "Show Jobs"
+#~ msgstr "Görevleri Göster"
+
+#~ msgid "Close"
+#~ msgstr "Kapat"

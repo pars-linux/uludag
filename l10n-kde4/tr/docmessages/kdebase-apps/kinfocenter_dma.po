@@ -1,0 +1,145 @@
+# translation of kinfocenter_dma.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+#
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_dma\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2008-04-17 17:14+0300\n"
+"Last-Translator: \n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: LoKalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9 index.docbook:32
+#, no-c-format
+msgid "<acronym>DMA</acronym> Channel Information"
+msgstr "<acronym>DMA</acronym> Kanallarına İlişkin Bilgiler"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Matthias.Hoelzer-Kluepfel;"
+msgstr "&Matthias.Hoelzer-Kluepfel;"
+
+#. Tag: author
+#: index.docbook:14
+#, no-c-format
+msgid "&Helge.Deller;"
+msgstr "&Helge.Deller;"
+
+#. Tag: author
+#: index.docbook:15
+#, no-c-format
+msgid "&Duncan.Haldane;"
+msgstr "&Duncan.Haldane;"
+
+#. Tag: author
+#: index.docbook:16
+#, no-c-format
+msgid "&Mike.McBride;"
+msgstr "&Mike.McBride;"
+
+#. Tag: trans_comment
+#: index.docbook:17
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname>Engin Çağatay</"
+"firstname><surname></surname><affiliation><address><email>engincagatay@yahoo."
+"com</email></address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:24
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:25
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "<keyword>DMA</keyword>"
+msgstr "<keyword>DMA</keyword>"
+
+#. Tag: keyword
+#: index.docbook:27
+#, no-c-format
+msgid "system information"
+msgstr "sistem bilgisi"
+
+#. Tag: para
+#: index.docbook:34
+#, no-c-format
+msgid ""
+"This page displays information about the <acronym>DMA</acronym> (Direct "
+"Memory Access) Channels. A <acronym>DMA</acronym> channel is a direct "
+"connection that allows devices to transfer data to and from memory without "
+"going through the processor. Typically, i386-architecture systems "
+"(<acronym>PC</acronym>'s) have eight <acronym>DMA</acronym> channels (0-7)."
+msgstr ""
+"Bu sayfa <acronym>DMA</acronym> (Direct Memory Access - Doğrudan Hafıza "
+"Erişimi) Kanalları hakkında bilgi verir. Bir <acronym>DMA</acronym> kanalı, "
+"aygıtların işlemciyi pas geçerek hafızayla bilgi alışverişlerini sağlayan "
+"bir doğrudan bağlantıdır. Tipik olarak, i386-mimarisi sistemleri "
+"(<acronym>PC</acronym>'ler - Personal Computer -- Kişisel Bilgisayar) sekiz "
+"<acronym>DMA</acronym> Kanalına sahiptir (0-7)."
+
+#. Tag: para
+#: index.docbook:41
+#, no-c-format
+msgid ""
+"The exact information displayed is system-dependent. On some systems, "
+"<acronym>DMA</acronym> Channel information cannot be displayed yet."
+msgstr ""
+"Gösterilen kesin bilgi sistemden sisteme göre değişir. Bazı sistemlerde  "
+"<acronym>DMA</acronym> Kanalı bilgisinin görüntülenmesi hala mümkün değildir."
+
+#. Tag: para
+#: index.docbook:45
+#, no-c-format
+msgid ""
+"On &Linux;, this information is read from <filename class=\"devicefile\">/"
+"proc/dma</filename>, which is only available if the <filename class="
+"\"directory\">/proc</filename> pseudo-filesystem is compiled into the kernel."
+msgstr ""
+"&Linux;'ta, bu bilgi <filename class=\"directory\">/proc</filename> pseudo-"
+"filesystem bölümü çekirdeğe eklenip çekirdek derlenmişse, <filename class="
+"\"devicefile\">/proc/dma</filename> dosyasından okunur."
+
+#. Tag: para
+#: index.docbook:50
+#, no-c-format
+msgid ""
+"A list of all currently-registered (<acronym>ISA</acronym> bus) "
+"<acronym>DMA</acronym> channels that are in use is shown. The first column "
+"shows the <acronym>DMA</acronym> channel, and the second column shows the "
+"device which uses that channel."
+msgstr ""
+"Şu anda kayıtlı olup (<acronym>ISA</acronym> bus) kullanılan   <acronym>DMA</"
+"acronym> kanallarının bir listesi gösterilmektedir. Birinci bölüm "
+"<acronym>DMA</acronym> kanalını, ikinci bölüm bu kanalı kullanan aygıtı "
+"gösterir."
+
+#. Tag: para
+#: index.docbook:55
+#, no-c-format
+msgid "Unused <acronym>DMA</acronym> channels are not listed."
+msgstr "Kullanılmayan <acronym>DMA</acronym> kanalları listelenmez."
+
+#. Tag: para
+#: index.docbook:59
+#, no-c-format
+msgid "The user cannot modify any settings on this page."
+msgstr "Kullanıcı bu sayfada gösterilen ayarları değiştiremez."

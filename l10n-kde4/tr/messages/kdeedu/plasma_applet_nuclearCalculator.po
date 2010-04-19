@@ -1,0 +1,150 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: nuclearCalculator\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-13 06:21+0200\n"
+"PO-Revision-Date: 2009-10-28 16:34+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: nuclearCalculator.cpp:130
+msgid "Nuclear Calculator"
+msgstr "Nükleer Hesaplayıcı"
+
+#: nuclearCalculator.cpp:145
+msgid "Element name:"
+msgstr "Element adı:"
+
+#: nuclearCalculator.cpp:148
+msgid "Isotope mass:"
+msgstr "İzotop kütlesi:"
+
+#: nuclearCalculator.cpp:151
+msgid "Half-Life"
+msgstr "Yarılanma Ömrü"
+
+#: nuclearCalculator.cpp:165 nuclearCalculator.cpp:251
+msgid "year"
+msgstr "yıl"
+
+#: nuclearCalculator.cpp:166 nuclearCalculator.cpp:252
+msgid "seconds"
+msgstr "saniye"
+
+#: nuclearCalculator.cpp:167 nuclearCalculator.cpp:253
+msgid "minutes"
+msgstr "dakika"
+
+#: nuclearCalculator.cpp:168 nuclearCalculator.cpp:254
+msgid "hours"
+msgstr "saat"
+
+#: nuclearCalculator.cpp:169 nuclearCalculator.cpp:255
+msgid "days"
+msgstr "gün"
+
+#: nuclearCalculator.cpp:170 nuclearCalculator.cpp:256
+msgid "weeks"
+msgstr "hafta"
+
+#: nuclearCalculator.cpp:187
+msgid "Calculation Mode:"
+msgstr "Hesaplama Kipi:"
+
+#: nuclearCalculator.cpp:192
+msgid "Initial amount"
+msgstr "İlk miktar"
+
+#: nuclearCalculator.cpp:193
+msgid "Final amount"
+msgstr "Son miktar"
+
+#: nuclearCalculator.cpp:194 nuclearCalculator.cpp:205
+msgid "Time"
+msgstr "Zaman"
+
+#: nuclearCalculator.cpp:199
+msgid "Initial amount:"
+msgstr "İlk miktar:"
+
+#: nuclearCalculator.cpp:202
+msgid "Final amount:"
+msgstr "Son miktar:"
+
+#: nuclearCalculator.cpp:212
+msgid "0 seconds"
+msgstr "0 saniye"
+
+#: nuclearCalculator.cpp:229 nuclearCalculator.cpp:240
+msgid "grams"
+msgstr "gram"
+
+#: nuclearCalculator.cpp:230 nuclearCalculator.cpp:241
+msgid "tons"
+msgstr "ton"
+
+#: nuclearCalculator.cpp:231 nuclearCalculator.cpp:242
+msgid "carats"
+msgstr "karat"
+
+#: nuclearCalculator.cpp:232 nuclearCalculator.cpp:243
+msgid "pounds"
+msgstr "pound"
+
+#: nuclearCalculator.cpp:233 nuclearCalculator.cpp:244
+msgid "ounces"
+msgstr "ons"
+
+#: nuclearCalculator.cpp:234 nuclearCalculator.cpp:245
+msgid "troy ounces"
+msgstr "altın onsu"
+
+#: nuclearCalculator.cpp:262 nuclearCalculator.cpp:269
+msgid "Mass"
+msgstr "Kütle"
+
+#: nuclearCalculator.cpp:263 nuclearCalculator.cpp:270
+msgid "moles"
+msgstr "mol"
+
+#: nuclearCalculator.cpp:281
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: nuclearCalculator.cpp:615
+msgid "Initial amount cannot be zero."
+msgstr "İlk miktar sıfır olamaz."
+
+#: nuclearCalculator.cpp:618
+msgid "Final amount cannot be zero."
+msgstr "Son miktar sıfır olamaz."
+
+#: nuclearCalculator.cpp:621
+msgid "Time is zero, please enter a valid value."
+msgstr "Süre sıfır, lütfen düzeltin."
+
+#: nuclearCalculator.cpp:624
+msgid "Final amount cannot be greater than initial amount."
+msgstr "Son miktar ilk miktardan fazla olamaz."
+
+#: nuclearCalculator.cpp:633
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: nuclearCalculatorConfig.ui:17
+#. i18n: ectx: property (text), widget (QCheckBox, massOnly)
+#: rc.cpp:3
+msgid "Amount is always specified in term of mass."
+msgstr "Miktar daima kütle cinsinden belirtilir."
+
+#~ msgid "Time in Half-Lives"
+#~ msgstr "Yarı ömür cinsinden süre"

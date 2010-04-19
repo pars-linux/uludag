@@ -1,0 +1,683 @@
+# translation of khelpcenter_glossary.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_glossary\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2004-01-11 12:35+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: glossary
+#: index.docbook:11
+#, no-c-format
+msgid "&glossary-kdeprinting;"
+msgstr "&glossary-kdeprinting;"
+
+#. Tag: title
+#: index.docbook:16
+#, no-c-format
+msgid "Technologies"
+msgstr "Teknolojiler"
+
+#. Tag: glossterm
+#: index.docbook:18
+#, no-c-format
+msgid "<glossterm><acronym>IO</acronym> Slave</glossterm>"
+msgstr "<glossterm><acronym>IO</acronym> Slave</glossterm>"
+
+#. Tag: para
+#: index.docbook:19
+#, no-c-format
+msgid ""
+"<acronym>IO</acronym> Slaves enable &kde; applications to access remote "
+"resources as easily as local resources (making them <quote>network "
+"transparent</quote>). Remote resources (&eg; files) might be stored on "
+"<acronym>SMB</acronym> shares or similar."
+msgstr ""
+"<acronym>IO</acronym> Slaves ( IO Elemanları ) &kde; uygulamalarının uzak "
+"bilgisayarlardaki kaynaklara sanki yerel kaynaklara erişir gibi kolaylıkla "
+"bağlanmalarını sağlar (onları ağ olarak saydam yaparak). Uzak kaynaklar "
+"(örneğin dosyalar) <acronym>SMB</acronym> paylaşımları ya da benzeri şekilde "
+"saklanabilir."
+
+#. Tag: glossdef
+#: index.docbook:22
+#, no-c-format
+msgid ""
+"<glossseealso otherterm=\"gloss-smb\"><acronym>SMB</acronym></glossseealso> "
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-smb\"><acronym>SMB</acronym></glossseealso> "
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso>"
+
+#. Tag: acronym
+#: index.docbook:28
+#, no-c-format
+msgid "<acronym>KIO</acronym>"
+msgstr "<acronym>KIO</acronym>"
+
+#. Tag: para
+#: index.docbook:29
+#, no-c-format
+msgid ""
+"The &kde; Input/Output system which makes use of so-called "
+"<quote><acronym>IO</acronym> Slaves</quote>."
+msgstr ""
+"<quote><acronym>IO</acronym> Slaves</quote> (IO Elemanları) olarak anılan "
+"&kde; Input/Output (Girdi/Çıktı) sistemi."
+
+#. Tag: glossdef
+#: index.docbook:30
+#, no-c-format
+msgid ""
+"<glossseealso otherterm=\"gloss-ioslave\"><acronym>IO</acronym> Slave</"
+"glossseealso> <glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-ioslave\"><acronym>IO</acronym> Slave</"
+"glossseealso> <glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:37
+#, no-c-format
+msgid "KParts"
+msgstr "KParts"
+
+#. Tag: para
+#: index.docbook:38
+#, no-c-format
+msgid ""
+"KParts is an embedding technology which allows &kde; applications to embed "
+"other &kde; applications. For example, the text view used by &konqueror; is "
+"a KPart."
+msgstr ""
+"KParts &kde; uygulamalarının başka &kde; uygulamalarını içermesi (embed-"
+"gömmek) sağlan bir embedding (gömme) teknolojisidir. Örneğin, &konqueror; "
+"tarafından kullanılan text view (metin görüntüleyici) bir Kpart'tır."
+
+#. Tag: glossseealso
+#: index.docbook:41 index.docbook:122
+#, no-c-format
+msgid "<glossseealso>&konqueror;</glossseealso>"
+msgstr "<glossseealso>&konqueror;</glossseealso>"
+
+#. Tag: acronym
+#: index.docbook:45
+#, no-c-format
+msgid "KSycoca"
+msgstr "KSyCoCa"
+
+#. Tag: para
+#: index.docbook:46
+#, no-c-format
+msgid ""
+"<acronym>KSycoca</acronym> (&kde; <emphasis>Sy</emphasis>stem <emphasis>Co</"
+"emphasis>nfiguration <emphasis>Ca</emphasis>che) is a configuration cache "
+"which, for example, guarantees fast access to the menu entries."
+msgstr ""
+"<acronym>KSycoca</acronym> (&kde; <emphasis>Sy</emphasis>stem <emphasis>Co</"
+"emphasis>nfiguration <emphasis>Ca</emphasis>che) (Sistem Ayarları "
+"Önbellekçisi) menü girişlerine hızlı erişim sağlayan, ayar önbelleğidir."
+
+#. Tag: application
+#: index.docbook:51 index.docbook:84
+#, no-c-format
+msgid "KBuildSycoca"
+msgstr "KBuildsycoca"
+
+#. Tag: title
+#: index.docbook:57
+#, no-c-format
+msgid "XFree86"
+msgstr "XFree86"
+
+#. Tag: glossterm
+#: index.docbook:59
+#, no-c-format
+msgid "Antialiasing"
+msgstr "Antialiasing"
+
+#. Tag: para
+#: index.docbook:60
+#, fuzzy, no-c-format
+msgid ""
+"If mentioned in context with &kde;, anti-aliasing often means the smoothing "
+"of the fonts visible on the screen. &Qt; version 2.3.0 or higher used "
+"together with XFree86 4.x makes this possible under &kde; as well."
+msgstr ""
+"&kde; konusu işlenirken değinilmiş olabilir, antialiasing genellikle "
+"yazıtiplerinin daha yumuşak hale getirilmesi işlemidir. XFree86 4.x ile "
+"kullanılan &Qt; sürüm 2.3.0 veya üstünün &kde; ile kullanılması bu işlemin "
+"uygulanmasını mümkün kılar."
+
+#. Tag: glossdef
+#: index.docbook:63
+#, no-c-format
+msgid ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-qt\">&Qt;</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-qt\">&Qt;</glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:69
+#, no-c-format
+msgid "&X-Server;"
+msgstr "X Sunucu"
+
+#. Tag: para
+#: index.docbook:70
+#, no-c-format
+msgid ""
+"The &X-Server; represents a basic layer upon which the various &GUI;s like "
+"&kde; are built. It manages the basic mouse and keyboard input (from the "
+"local host as well as from remote hosts) and provides elementary graphic "
+"routines to draw rectangles and other primitives."
+msgstr ""
+"&X-Server; (X- Sunucusu) &kde; gibi &GUI;lerin (Graphical User Interface - "
+"Grafiksel Kullanıcı Arayüzü) üzerinde çalıştığı bir grafiksel ortam sağlar. "
+"X Sunucusu basit fare ve klavye hareketlerini kontrol eder ve çeşitli "
+"grafiksel şekillerin, ortamların oluşturulmasını sağlar."
+
+#. Tag: glossdef
+#: index.docbook:74 index.docbook:189 index.docbook:206
+#, no-c-format
+msgid ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-gui\">&GUI;</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-gui\">&GUI;</glossseealso>"
+
+#. Tag: title
+#: index.docbook:82
+#, no-c-format
+msgid "Applications"
+msgstr "Uygulamalar"
+
+#. Tag: para
+#: index.docbook:85
+#, fuzzy, no-c-format
+msgid ""
+"<application>KBuildSycoca4</application> is a command line program and "
+"regenerates the so-called <acronym>KSycoca</acronym>. This is useful, for "
+"example, if some or all modules in &systemsettings; are missing."
+msgstr ""
+"<application>KBuildSycoca</application> bir komut satırı uygulaması olmakla "
+"beraber <acronym>KSycoca</acronym> uygulalamasına temel oluşturur. Bazı "
+"&kcontrol; modüllerinin eksik olduğu gibi durumlarıda kullanışlıdır."
+
+#. Tag: glossdef
+#: index.docbook:89
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<glossseealso otherterm=\"gloss-ksycoca\"><acronym>KSycoca</acronym></"
+#| "glossseealso> <glossseealso otherterm=\"gloss-kcontrol\">&kcontrol;</"
+#| "glossseealso>"
+msgid ""
+"<glossseealso otherterm=\"gloss-ksycoca\"><acronym>KSycoca</acronym></"
+"glossseealso> <glossseealso otherterm=\"gloss-systemsettings"
+"\">&systemsettings;</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-ksycoca\"><acronym>KSycoca</acronym></"
+"glossseealso> <glossseealso otherterm=\"gloss-kcontrol\">&kcontrol;</"
+"glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:95
+#, no-c-format
+msgid "&systemsettings;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:96
+#, fuzzy, no-c-format
+msgid ""
+"This is the project and filename of the &kde; control center. "
+"&systemsettings; allows you to customize virtually every configuration "
+"option of &kde;."
+msgstr ""
+"Bu uygulamala &kde; denetim masası isminin kısaltılması ile isimlendirilen "
+"bir projedir. &kcontrol; &kde;'nin her ayar seçeneğini değiştirmenize "
+"yarayan bir uygulamadır."
+
+#. Tag: glossseealso
+#: index.docbook:99 index.docbook:108 index.docbook:132 index.docbook:157
+#, no-c-format
+msgid "<glossseealso>&kde;</glossseealso>"
+msgstr "<glossseealso>&kde;</glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:103
+#, no-c-format
+msgid "<glossterm>&konqueror;</glossterm>"
+msgstr "<glossterm>&konqueror;</glossterm>"
+
+#. Tag: para
+#: index.docbook:104
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&konqueror; is a filemanager, web browser, picture viewer and more, and a "
+#| "core part of the &kde; project. You can find more information about "
+#| "&konqueror; at <ulink url=\"http://www.konqueror.org\">www.konqueror.org</"
+#| "ulink>."
+msgid ""
+"&konqueror; is a web browser, picture viewer, file manager and more, and a "
+"core part of the &kde; project. You can find more information about "
+"&konqueror; at <ulink url=\"http://www.konqueror.org\">www.konqueror.org</"
+"ulink>."
+msgstr ""
+"&konqueror;, &kde; projesinin dosya yöneticisi, web tarayıcısı, resim "
+"görüntüleyicisi, temel bileşeni ve daha birçok şeyidir. &konqueror; hakkında "
+"daha fazla bilgiye <ulink url=\"http://www.konqueror.org\">www.konqueror."
+"org</ulink> adresinde ulaşabilirsiniz."
+
+#. Tag: title
+#: index.docbook:114
+#, no-c-format
+msgid "Desktop Terminology"
+msgstr "Masaüstü Terimleri"
+
+#. Tag: glossterm
+#: index.docbook:116
+#, no-c-format
+msgid "Drag and Drop"
+msgstr "Sürükle ve Bırak"
+
+#. Tag: para
+#: index.docbook:117
+#, no-c-format
+msgid ""
+"This concept tries to replace many actions like copying files from one place "
+"to another by a certain mouse movement, &eg; clicking on an icon in a "
+"&konqueror; window, moving the mouse to another window while keeping the "
+"mouse button pressed, and releasing the mouse button (<quote>dropping</"
+"quote> the object) copies files."
+msgstr ""
+"Bu kavram, dosyaları bir yerden başka bir yere belli bir fare hareketiyle "
+"kopyalamak gibi hareketleri oluşturmayı amaçlar. Örneğin, &konqueror; "
+"penceresinde bir simgeye fareyle tıklayıp (fare tuşunu bırakmadan) başka bir "
+"yere - ya da pencereye - taşımak, ve sonra fare tuşunu serbest bırakmak "
+"dosyaları yeni konuma kopyalar."
+
+#. Tag: glossterm
+#: index.docbook:126
+#, no-c-format
+msgid "<glossterm>&GUI;</glossterm>"
+msgstr "<glossterm>&GUI;</glossterm>"
+
+#. Tag: para
+#: index.docbook:127
+#, no-c-format
+msgid ""
+"Abbreviation for <emphasis>G</emphasis>raphical <emphasis>U</emphasis>ser "
+"<emphasis>I</emphasis>nterface. Every desktop environment (like &kde;) is a "
+"&GUI;. Most &GUI;s feature mouse support and/or windows to manage the "
+"programs."
+msgstr ""
+"<emphasis>G</emphasis>raphical <emphasis>U</emphasis>ser <emphasis>I</"
+"emphasis>nterface (Grafiksel Kullanıcı Arayüzü) kelimelerinin "
+"kısaltılmışıdır. &kde; gibi her masaüstü ortamı bir &GUI;'dir. Birçok &GUI;, "
+"uygulamalara fare desteği ve/veya pencere yönetme özelliği sağlar."
+
+#. Tag: glossterm
+#: index.docbook:136
+#, no-c-format
+msgid "<glossterm>&kde;</glossterm>"
+msgstr "<glossterm>&kde;</glossterm>"
+
+#. Tag: para
+#: index.docbook:137
+#, fuzzy, no-c-format
+msgid ""
+"Abbreviation for <quote>K Desktop Environment</quote>, a leading &GUI; for "
+"&UNIX;-based systems. You can find more detailed information at <ulink url="
+"\"http://www.kde.org\">www.kde.org</ulink>."
+msgstr ""
+"<quote>K Desktop Environment</quote> (K Masaüstü Ortamı) kelimelerinin "
+"kısaltılmışıdır. Bu sistem, &UNIX; tabanlı sistemler için lider bir "
+"&GUI;'dir. Daha fazla bilgiye <ulink url=\"http://www.kde.org\">www.kde.org</"
+"ulink> adresinde ulaşabilirsiniz."
+
+#. Tag: glossseealso
+#: index.docbook:141 index.docbook:150
+#, no-c-format
+msgid "<glossseealso>&GUI;</glossseealso>"
+msgstr "<glossseealso>&GUI;</glossseealso>"
+
+#. Tag: acronym
+#: index.docbook:145
+#, no-c-format
+msgid "GNOME"
+msgstr "GNOME"
+
+#. Tag: para
+#: index.docbook:147
+#, no-c-format
+msgid ""
+"<emphasis>G</emphasis>NU <emphasis>N</emphasis>etwork <emphasis>O</"
+"emphasis>bject <emphasis>M</emphasis>odel <emphasis>E</emphasis>nvironment, "
+"one of the leading &UNIX; &GUI;s."
+msgstr ""
+"<emphasis>G</emphasis>NU <emphasis>N</emphasis>etwork <emphasis>O</"
+"emphasis>bject <emphasis>M</emphasis>odel <emphasis>E</emphasis>nvironment, "
+"lider &UNIX; &GUI;lerinden biri daha."
+
+#. Tag: glossterm
+#: index.docbook:154
+#, no-c-format
+msgid "Panel"
+msgstr "Panel"
+
+#. Tag: para
+#: index.docbook:155
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Refers to the panel (also known as <quote>&kicker;</quote>) which often "
+#| "resides at the bottom of the screen."
+msgid "Refers to the panel which often resides at the bottom of the screen."
+msgstr ""
+"Paneli simgeler, <quote>&kicker;</quote> olarak da bilinir. Genellikle "
+"ekranın alt bölümünde bulunur."
+
+#. Tag: glossterm
+#: index.docbook:161
+#, no-c-format
+msgid "ripping"
+msgstr "cd'den ses dosyası aktarma"
+
+#. Tag: para
+#: index.docbook:162
+#, no-c-format
+msgid ""
+"The process of reading audio data from a &cdrom; and storing it on the hard "
+"disk."
+msgstr ""
+"&cdrom;'dan ses verisi okuyup, bu veriyi sabit diskte bir dosyada saklama "
+"işlemidir."
+
+#. Tag: title
+#: index.docbook:169
+#, no-c-format
+msgid "&kde; Development"
+msgstr "&kde; Geliştirme"
+
+#. Tag: glossterm
+#: index.docbook:171
+#, no-c-format
+msgid "&Qt;"
+msgstr "&Qt;"
+
+#. Tag: para
+#: index.docbook:172
+#, no-c-format
+msgid ""
+"The &GUI; of &kde; is built on top of the &Qt; toolkit, which provides many "
+"graphical elements (so-called <quote>Widgets</quote>) which are used to "
+"construct the desktop. You can find more information about &Qt; at <ulink "
+"url=\"http://www.trolltech.com\">www.trolltech.com</ulink>."
+msgstr ""
+"&kde;'nin &GUI;'si, masaüstünü oluşturan, birçok grafiksel parça olan "
+"elemetler (<quote>Widgets</quote> - Parçacıklar olarak "
+"isimlendirilmişlerdir) sunan&Qt; geliştirme aracının üzerine kurulmuştur. "
+"&Qt; hakkında daha fazla bilgiyi <ulink url=\"http://www.trolltech.com\">www."
+"trolltech.com</ulink> adresinde bulabilirsiniz."
+
+#. Tag: glossdef
+#: index.docbook:176
+#, no-c-format
+msgid ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-gui\">&GUI;</glossseealso> <glossseealso otherterm=\"gloss-"
+"widget\">Widget</glossseealso>"
+msgstr ""
+"<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+"otherterm=\"gloss-gui\">&GUI;</glossseealso> <glossseealso otherterm=\"gloss-"
+"widget\">Widget - Parçacık</glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:183
+#, no-c-format
+msgid "<glossterm>i18n</glossterm>"
+msgstr "<glossterm>i18n</glossterm>"
+
+#. Tag: para
+#: index.docbook:184
+#, fuzzy, no-c-format
+msgid ""
+"Abbreviation for <quote>internationalization</quote>. &kde; supports many "
+"different languages, and several i18n techniques make it easy to translate "
+"the &GUI; as well as the accompanying documents of &kde; into all these "
+"languages. More information about the i18n process is available at <ulink "
+"url=\"http://l10n.kde.org\">l10n.kde.org</ulink>."
+msgstr ""
+"<quote>internationalization</quote> - Uluslararasılaştırma'nın "
+"kısaltılmışıdır. &kde; birçok farklı dili destekler. Kullanılan i18n "
+"teknikleri ile &GUI; çevrimiyle birlikte &kde; dokümanlarının da değişik "
+"dillere çevrimi kolaylaştırılmıştır. i18n işlemiyle ilgili daha fazla "
+"bilgiye <ulink url=\"http://i18n.kde.org\">i18n.kde.org</ulink> adresinde "
+"ulaşabilirsiniz."
+
+#. Tag: glossterm
+#: index.docbook:195
+#, no-c-format
+msgid "l10n"
+msgstr "l10n"
+
+#. Tag: para
+#: index.docbook:196
+#, no-c-format
+msgid ""
+"Abbreviation for <quote>localization</quote>, the process of adapting a "
+"program to the local environment. This includes &eg; the currency used for "
+"monetary values or the time format."
+msgstr ""
+"<quote>localization</quote> - yerelleştirme'nin kısaltılmışıdır. Bir "
+"uygulamanın yerel ortama uyarlanması işlemidir. Bu işlem, örneğin, para "
+"biriminin ve saat diliminin yerel ölçülere uyarlanmasını içerir."
+
+#. Tag: glossseealso
+#: index.docbook:199
+#, no-c-format
+msgid "<glossseealso>i18n</glossseealso>"
+msgstr "<glossseealso>i18n</glossseealso>"
+
+#. Tag: glossterm
+#: index.docbook:203
+#, no-c-format
+msgid "Widget"
+msgstr "Parçacık"
+
+#. Tag: para
+#: index.docbook:204
+#, no-c-format
+msgid ""
+"Graphical elements like scrollbars, buttons or input fields which are used "
+"by &kde; to construct the &GUI;."
+msgstr ""
+"&GUI;'yi oluşturmak için, &kde; tarafından kullanılan kaydırma çubukları, "
+"düğmeler veya girdi alanları gibi grafiksel elemanlardır."
+
+#. Tag: acronym
+#: index.docbook:212
+#, fuzzy, no-c-format
+msgid "<acronym>SVN</acronym>"
+msgstr "<acronym>SMB</acronym>"
+
+#. Tag: para
+#: index.docbook:214
+#, fuzzy, no-c-format
+msgid ""
+"Abbreviation for <emphasis>Subversion</emphasis>, a version control system. "
+"The <acronym>SVN</acronym> is a very elegant way of managing file versions "
+"that allow more than one developer to easily work on the same project. You "
+"can find a description of how to get the latest (developer) version of the "
+"&kde; sources via anonymous <acronym>SVN</acronym> on <ulink url=\"http://"
+"developer.kde.org/source/anonsvn.html\">http://developer.kde.org/source/"
+"anonsvn.html</ulink>. More about <acronym>SVN</acronym> is available at "
+"<ulink url=\"http://subversion.tigris.org/\">http://subversion.tigris.org/</"
+"ulink>."
+msgstr ""
+"<emphasis>C</emphasis>oncurrent <emphasis>V</emphasis>ersion <emphasis>S</"
+"emphasis>ystem - Eşzamanlı Sürüm Sistemi. <acronym>CVS</acronym>, birçok "
+"geliştiricinin aynı proje üzerinde aynı anda çalışmasını sağlayan etkili ve "
+"gelişmiş bir dosya sürümü kontrol sistemidir. &kde;'nin en son geliştirici "
+"sürümünü anonim <acronym>CVS</acronym> yoluyla nasıl alınabileceği konusunda "
+"bilgiyi <ulink url=\"http://www.kde.org/anoncvs.html\">http://www.kde.org/"
+"anoncvs.html</ulink> adresinden edinebilirsiniz. <acronym>CVS</acronym> "
+"hakkında daha fazla bilgi <ulink url=\"http://www.cvshome.org\">www.cvshome."
+"org</ulink> adresinden edinilebilir."
+
+#. Tag: title
+#: index.docbook:231
+#, no-c-format
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+#. Tag: acronym
+#: index.docbook:233 index.docbook:261
+#, no-c-format
+msgid "<acronym>RFC</acronym>"
+msgstr "<acronym>RFC</acronym>"
+
+#. Tag: para
+#: index.docbook:234
+#, no-c-format
+msgid ""
+"<emphasis>R</emphasis>equest <emphasis>F</emphasis>or <emphasis>C</"
+"emphasis>omment. A common way to publish new protocol ideas or procedures "
+"for evaluation of the Internet community. Though <acronym>RFC</acronym>s are "
+"not mandatory, many applications try to adhere to them, once they have been "
+"approved by the community. More information about <acronym>RFC</acronym>s "
+"can be found at the <ulink url=\"http://www.rfc-editor.org\">RFC Homepage</"
+"ulink>."
+msgstr ""
+"<emphasis>R</emphasis>equest <emphasis>F</emphasis>or <emphasis>C</"
+"emphasis>omment - Eleştiri İçin Talep. Internet topluluğunun gelişimi için "
+"yeni fikir ve prosedürlerin yayımlanması için kullanılan genel bir yol. "
+"<acronym>RFC</acronym>ler zorunlu olmasa da, bir uygulama topluluk "
+"tarafından beğenildiğinde bu özelliğe de sadık kalmaktadır. <acronym>RFC</"
+"acronym>ler hakkında daha fazla bilgiye <ulink url=\"http://www.rfc-editor."
+"org\">RFC Ana Sayfası</ulink> adresinden erişebilirsiniz."
+
+#. Tag: title
+#: index.docbook:246
+#, no-c-format
+msgid "Various protocols"
+msgstr "Çeşitli protokoller"
+
+#. Tag: acronym
+#: index.docbook:248
+#, no-c-format
+msgid "<acronym>SMB</acronym>"
+msgstr "<acronym>SMB</acronym>"
+
+#. Tag: para
+#: index.docbook:249
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>S</emphasis>erver <emphasis>M</emphasis>essage <emphasis>B</"
+"emphasis>lock. A network protocol used in &Microsoft; &Windows; networks to "
+"access the file systems of other computers."
+msgstr ""
+"<emphasis>S</emphasis>erver <emphasis>M</emphasis>essage <emphasis>B</"
+"emphasis>lock - Sunucu Mesaj Bloğu.&Microsoft; &Windows; ağlarıtarafından "
+"diğer bilgisayarların dosya sistemlerine ulaşmak için kullanılan bir ağ "
+"protokolüdür."
+
+#. Tag: glossseealso
+#: index.docbook:252
+#, no-c-format
+msgid "<glossseealso><acronym>IO</acronym> Slave</glossseealso>"
+msgstr "<glossseealso><acronym>IO</acronym> Slave</glossseealso>"
+
+#. Tag: acronym
+#: index.docbook:257
+#, no-c-format
+msgid "<acronym>IRC</acronym>"
+msgstr "<acronym>IRC</acronym>"
+
+#. Tag: para
+#: index.docbook:258
+#, fuzzy, no-c-format
+msgid ""
+"<emphasis>I</emphasis>nternet <emphasis>R</emphasis>elay <emphasis>C</"
+"emphasis>hat. A protocol defined in <acronym>RFC</acronym> 1459, which "
+"handles the specification to enable real-time text chat."
+msgstr ""
+"<emphasis>I</emphasis>nternet <emphasis>R</emphasis>elay <emphasis>C</"
+"emphasis>hat - Internet Canlı Yayın Sohbeti. <acronym>RFC</acronym> 1459'da "
+"tanımlanan, gerçek zamanlı metin sohbeti sağlayan bir protokoldür."
+
+#. Tag: glossterm
+#: index.docbook:265
+#, no-c-format
+msgid "host"
+msgstr "ana bilgisayar (ev sahibi)"
+
+#. Tag: para
+#: index.docbook:266
+#, no-c-format
+msgid ""
+"This can either be a name from your <filename>/etc/hosts</filename> file "
+"(<systemitem class=\"systemname\">mycomputer</systemitem>), an Internet name "
+"(<systemitem class=\"systemname\">www.kde.org</systemitem>) or an IP-Address "
+"(<systemitem>192.168.0.10</systemitem>)."
+msgstr ""
+"Bu, <filename>/etc/hosts</filename> dosyanızdan alınan bir isim (<systemitem "
+"class=\"systemname\">bilgisayarım</systemitem>), bir internet ismi "
+"(<systemitem class=\"systemname\">www.kde.org</systemitem>) ya da bir IP-"
+"Adresi (<systemitem>192.168.0.10</systemitem>) olabilir."
+
+#~ msgid "&kcontrol;"
+#~ msgstr "&kcontrol;"
+
+#~ msgid "&kicker;"
+#~ msgstr "&kicker;"
+
+#~ msgid "&kicker; is the nickname as well as project name of the &kde; panel."
+#~ msgstr "&kicker;, &kde; paneline verilen isimdir."
+
+#~ msgid ""
+#~ "<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+#~ "otherterm=\"gloss-panel\">Panel</glossseealso>"
+#~ msgstr ""
+#~ "<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+#~ "otherterm=\"gloss-panel\">Panel</glossseealso>"
+
+#~ msgid "&ksirc;"
+#~ msgstr "&ksirc;"
+
+#~ msgid ""
+#~ "&ksirc; is the default <acronym>IRC</acronym> client, which is shipped "
+#~ "with &kde;. You can use &ksirc; to chat with anyone on an <acronym>IRC</"
+#~ "acronym> network."
+#~ msgstr ""
+#~ "&ksirc;, &kde; ile dağıtılan öntanımlı <acronym>IRC</acronym> "
+#~ "istemcisidir. &ksirc;'yi <acronym>IRC</acronym> ağında herhangi birisiyle "
+#~ "sohbet etmek için kullanabilirsiniz."
+
+#~ msgid ""
+#~ "<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+#~ "otherterm=\"gloss-kicker\">&kicker;</glossseealso>"
+#~ msgstr ""
+#~ "<glossseealso otherterm=\"gloss-kde\">&kde;</glossseealso> <glossseealso "
+#~ "otherterm=\"gloss-kicker\">&kicker;</glossseealso>"
+
+#~ msgid "<acronym>CVS</acronym>"
+#~ msgstr "<acronym>CVS</acronym>"
+
+#~ msgid "&konqueror;"
+#~ msgstr "&konqueror;"
+
+#~ msgid "&kde;"
+#~ msgstr "&kde;"

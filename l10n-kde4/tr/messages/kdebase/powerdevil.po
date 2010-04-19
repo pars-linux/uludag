@@ -1,0 +1,1229 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: powerdevil\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-16 01:21+0200\n"
+"PO-Revision-Date: 2009-08-30 14:20+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: daemon/PowerDevilDaemon.cpp:135
+msgid "PowerDevil"
+msgstr "PowerDevil"
+
+#: daemon/PowerDevilDaemon.cpp:136
+msgid "A Power Management tool for KDE4"
+msgstr "KDE4 için bir güç yönetimi aracı"
+
+#: daemon/PowerDevilDaemon.cpp:137
+msgid "(c) 2008 Dario Freddi"
+msgstr "(c) 2008 Dario Freddi"
+
+#: daemon/PowerDevilDaemon.cpp:140 kcmodule/PowerDevilKCM.cpp:59
+msgid "Dario Freddi"
+msgstr "Dario Freddi"
+
+#: daemon/PowerDevilDaemon.cpp:140 kcmodule/PowerDevilKCM.cpp:59
+msgid "Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: daemon/PowerDevilDaemon.cpp:265
+msgid ""
+"Could not connect to battery interface.\n"
+"Please check your system configuration"
+msgstr ""
+"Pil arayüzüne bağlanılamadı.\n"
+"Lütfen sistem yapılandırmanızı kontrol edin"
+
+#: daemon/PowerDevilDaemon.cpp:320
+msgid ""
+"The power adaptor has been plugged in. Any pending suspend actions have been "
+"canceled."
+msgstr ""
+"Güç adaptörünün fişi takıldı. Bekleyen askıya alma işlemlerinin tamamı iptal "
+"edildi."
+
+#: daemon/PowerDevilDaemon.cpp:323
+msgid "The power adaptor has been plugged in."
+msgstr "Güç adaptörünün fişi takıldı."
+
+#: daemon/PowerDevilDaemon.cpp:329
+msgid "The power adaptor has been unplugged."
+msgstr "Güç adaptörünün fişi çekildi."
+
+#: daemon/PowerDevilDaemon.cpp:506
+#, kde-format
+msgid ""
+"Your battery level is critical, the computer will be halted in 1 second."
+msgid_plural ""
+"Your battery level is critical, the computer will be halted in %1 seconds."
+msgstr[0] ""
+"Pil seviyeniz kritik düzeye ulaştı, bilgisayarınız %1 saniye sonra "
+"kapatılacak."
+
+#: daemon/PowerDevilDaemon.cpp:519
+#, kde-format
+msgid ""
+"Your battery level is critical, the computer will be suspended to disk in 1 "
+"second."
+msgid_plural ""
+"Your battery level is critical, the computer will be suspended to disk in %1 "
+"seconds."
+msgstr[0] ""
+"Pil seviyeniz kritik düzeye ulaştı, bilgisayarınız %1 saniye sonra disk "
+"kullanılarak askıya alınacak."
+
+#: daemon/PowerDevilDaemon.cpp:532
+#, kde-format
+msgid ""
+"Your battery level is critical, the computer will be suspended to RAM in 1 "
+"second."
+msgid_plural ""
+"Your battery level is critical, the computer will be suspended to RAM in %1 "
+"seconds."
+msgstr[0] ""
+"Pil seviyeniz kritik düzeye ulaştı, bilgisayarınız %1 saniye sonra bellek "
+"kullanılarak askıya alınacak."
+
+#: daemon/PowerDevilDaemon.cpp:545
+#, kde-format
+msgid ""
+"Your battery level is critical, the computer will be put into standby in 1 "
+"second."
+msgid_plural ""
+"Your battery level is critical, the computer will be put into standby in %1 "
+"seconds."
+msgstr[0] ""
+"Pil seviyeniz kritik düzeye ulaştı, bilgisayarınız %1 saniye sonra bekleme "
+"kipine geçirilecek."
+
+#: daemon/PowerDevilDaemon.cpp:556
+msgid "Your battery level is critical: save your work as soon as possible."
+msgstr ""
+"Pil seviyeniz kritik düzeye ulaştı: Kaydedilmemiş verilerinizi en kısa "
+"sürede kaydedin."
+
+#: daemon/PowerDevilDaemon.cpp:562
+msgid "Your battery has reached the warning level."
+msgstr "Pil seviyesi uyarı düzeyine ulaştı."
+
+#: daemon/PowerDevilDaemon.cpp:566
+msgid "Your battery has reached a low level."
+msgstr "Pil seviyesi düşük düzeye ulaştı."
+
+#: daemon/PowerDevilDaemon.cpp:697
+#, kde-format
+msgid "The computer will be halted in 1 second."
+msgid_plural "The computer will be halted in %1 seconds."
+msgstr[0] "Bilgisayarınız %1 saniye sonra kapatılacak."
+
+#: daemon/PowerDevilDaemon.cpp:717
+#, kde-format
+msgid "The computer will be suspended to disk in 1 second."
+msgid_plural "The computer will be suspended to disk in %1 seconds."
+msgstr[0] "Bilgisayarınız %1 saniye sonra disk kullanılarak askıya alınacak."
+
+#: daemon/PowerDevilDaemon.cpp:737
+#, kde-format
+msgid "The computer will be suspended to RAM in 1 second."
+msgid_plural "The computer will be suspended to RAM in %1 seconds."
+msgstr[0] "Bilgisayarınız %1 saniye sonra bellek kullanılarak askıya alınacak."
+
+#: daemon/PowerDevilDaemon.cpp:757
+#, kde-format
+msgid "The computer will be put into standby in 1 second."
+msgid_plural "The computer will be put into standby in %1 seconds."
+msgstr[0] "Bilgisayarınız %1 saniye sonra bekleme kipine geçirilecek."
+
+#: daemon/PowerDevilDaemon.cpp:862
+msgid "There was an error while suspending:"
+msgstr "Askıya alma işlemi sırasında bir hata oluştu:"
+
+#: daemon/PowerDevilDaemon.cpp:983
+msgid "The screen is being locked"
+msgstr "Ekran kilitleniyor"
+
+#: daemon/PowerDevilDaemon.cpp:997
+msgctxt "Interrupts the suspension/shutdown process"
+msgid "Cancel"
+msgstr "İptal"
+
+#: daemon/PowerDevilDaemon.cpp:1045 daemon/PowerDevilDaemon.cpp:1383
+#, kde-format
+msgid ""
+"The profile \"%1\" has been selected, but it does not exist.\n"
+"Please check your PowerDevil configuration."
+msgstr ""
+"\"%1\" profili seçildi ancak bu profil yok.\n"
+"Lütfen PowerDevil yapılandırmanızı kontrol edin."
+
+#: daemon/PowerDevilDaemon.cpp:1148
+#, kde-format
+msgid "Profile changed to \"%1\""
+msgstr "Profil \"%1\" olarak değiştirildi"
+
+#: daemon/PowerDevilDaemon.cpp:1179 kcmodule/EditPage.cpp:150
+#: kcmodule/CapabilitiesPage.cpp:152 kcmodule/CapabilitiesPage.cpp:257
+msgid "Performance"
+msgstr "Başarım"
+
+#: daemon/PowerDevilDaemon.cpp:1183 kcmodule/EditPage.cpp:156
+#: kcmodule/CapabilitiesPage.cpp:156
+msgid "Dynamic (ondemand)"
+msgstr "Dinamik (gerektiğinde)"
+
+#: daemon/PowerDevilDaemon.cpp:1187 kcmodule/EditPage.cpp:160
+#: kcmodule/CapabilitiesPage.cpp:160
+msgid "Dynamic (conservative)"
+msgstr "Dinamik (kalıcı)"
+
+#: daemon/PowerDevilDaemon.cpp:1191 kcmodule/EditPage.cpp:165
+#: kcmodule/CapabilitiesPage.cpp:164
+msgid "Powersave"
+msgstr "Güç Koruma"
+
+#: daemon/PowerDevilDaemon.cpp:1195 kcmodule/EditPage.cpp:170
+#: kcmodule/CapabilitiesPage.cpp:168
+msgid "Userspace"
+msgstr "Kullanıcı düzeyi"
+
+#: daemon/PowerDevilDaemon.cpp:1209 kcmodule/GeneralPage.cpp:73
+#: kcmodule/EditPage.cpp:127 kcmodule/EditPage.cpp:128
+#: kcmodule/EditPage.cpp:129 kcmodule/EditPage.cpp:130
+#: kcmodule/CapabilitiesPage.cpp:128
+msgid "Suspend to Disk"
+msgstr "Disk Kullanarak Askıya Al"
+
+#: daemon/PowerDevilDaemon.cpp:1213 kcmodule/GeneralPage.cpp:77
+#: kcmodule/EditPage.cpp:134 kcmodule/EditPage.cpp:135
+#: kcmodule/EditPage.cpp:136 kcmodule/EditPage.cpp:137
+#: kcmodule/CapabilitiesPage.cpp:132
+msgid "Suspend to RAM"
+msgstr "Bellek Kullanarak Askıya Al"
+
+#: daemon/PowerDevilDaemon.cpp:1217 kcmodule/GeneralPage.cpp:81
+#: kcmodule/EditPage.cpp:141 kcmodule/EditPage.cpp:142
+#: kcmodule/EditPage.cpp:143 kcmodule/EditPage.cpp:144
+#: kcmodule/CapabilitiesPage.cpp:136
+msgid "Standby"
+msgstr "Bekleme Kipine Geç"
+
+#: daemon/SuspensionLockHandler.cpp:75
+#, kde-format
+msgid ""
+"The application %1 is inhibiting suspension for the following reason:\n"
+"%2"
+msgstr ""
+"%1 uygulaması şu nedenle askıya alma işlemini geciktiriyor:\n"
+" %2"
+
+#: kcmodule/ConfigWidget.cpp:35
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: kcmodule/ConfigWidget.cpp:36
+msgid "Edit Profiles"
+msgstr "Profilleri Düzenle"
+
+#: kcmodule/ConfigWidget.cpp:37
+msgid "Capabilities"
+msgstr "Yetenekler"
+
+#: kcmodule/GeneralPage.cpp:67
+msgid "Do nothing"
+msgstr "Hiçbir şey yapma"
+
+#: kcmodule/GeneralPage.cpp:68 kcmodule/EditPage.cpp:101
+#: kcmodule/EditPage.cpp:105 kcmodule/EditPage.cpp:109
+#: kcmodule/EditPage.cpp:114
+msgid "Shutdown"
+msgstr "Kapat"
+
+#: kcmodule/PowerDevilKCM.cpp:52
+msgid "PowerDevil Configuration"
+msgstr "PowerDevil Yapılandırması"
+
+#: kcmodule/PowerDevilKCM.cpp:53
+msgid "A configurator for PowerDevil"
+msgstr "PowerDevil için bir yapılandırma aracı"
+
+#: kcmodule/PowerDevilKCM.cpp:54
+msgid "(c), 2008 Dario Freddi"
+msgstr "(c), 2008 Dario Freddi"
+
+#: kcmodule/PowerDevilKCM.cpp:55
+msgid ""
+"From this module, you can configure the Daemon, create and edit powersaving "
+"profiles, and see your system's capabilities."
+msgstr ""
+"Bu modülden Servisi yapılandırabilir, güç koruma profillerini oluşturabilir "
+"ve düzenleyebilirsiniz. Ayrıca sisteminizin yeteneklerini de görebilirsiniz."
+
+#: kcmodule/PowerDevilKCM.cpp:64
+msgid ""
+"<h1>PowerDevil configuration</h1> <p>This module lets you configure "
+"PowerDevil. PowerDevil is a daemon (so it runs in background) that is "
+"started upon KDE startup.</p> <p>PowerDevil has 2 levels of configuration: a "
+"general one, that is always applied, and a profile-based one, that lets you "
+"configure a specific behavior in every situation. You can also have a look "
+"at your system capabilities in the last tab. To get you started, first "
+"configure the options in the first 2 tabs. Then switch to the fourth one, "
+"and create/edit your profiles. Last but not least, assign your profiles in "
+"the third Tab. You do not have to restart PowerDevil, just click \"Apply\", "
+"and you are done.</p>"
+msgstr ""
+"<h1>PowerDevil yapılandırması</h1> <p>Bu modülden PowerDevil uygulamasını "
+"yapılandırabilirsiniz. PowerDevil, KDE başlarken başlatılan bir servistir "
+"(tabii ki arkaplanda çalışır).</p> <p>PowerDevil uygulamasının iki düzeyli "
+"bir yapılandırması vardır: her zaman uygulanan bir genel yapılandırma ve her "
+"duruma özel bir davranış belirlemenizi sağlayan profil temelli bir "
+"yapılandırma. Bir sonraki sekmeden sisteminizin yeteneklerine de "
+"bakabilirsiniz. Başlangıç için ilk iki sekmedeki seçenekleri yapılandırın. "
+"Ardından dördüncü sekmeye geçerek profillerinizi oluşturun/düzenleyin. Son "
+"olarak üçüncü sekmeden profillerinizi atayın. PowerDevil uygulamasını "
+"yeniden başlatmak zorunda değilsiniz, sadece \"Uygula\" düğmesine tıklamanız "
+"yeterlidir.</p>"
+
+#: kcmodule/PowerDevilKCM.cpp:88
+msgid ""
+"Another power manager has been detected. PowerDevil will not start if other "
+"power managers are active. If you want to use PowerDevil as your primary "
+"power manager, please remove the existing one and restart the PowerDevil "
+"service."
+msgstr ""
+"Başka bir güç yöneticisi belirlendi. Diğer güç yöneticileri etkin ise "
+"PowerDevil başlatılmaz. Eğer birincil güç yöneticisi olarak PowerDevil "
+"kullanmak istiyorsanız lütfen kullanılan güç yönetimi uygulamasını kaldırın "
+"ve PowerDevil servisini yeniden başlatın."
+
+#: kcmodule/PowerDevilKCM.cpp:93
+msgid ""
+"It seems powersaved is running on this system. PowerDevil will not start if "
+"other power managers are active. If you want to use PowerDevil as your "
+"primary power manager, please stop powersaved and restart the PowerDevil "
+"service."
+msgstr ""
+"Bu sistemde powersaved servisi çalışıyor gibi görünüyor. Diğer güç "
+"yöneticileri etkin ise PowerDevil başlatılmaz. Eğer birincil güç yöneticisi "
+"olarak PowerDevil kullanmak istiyorsanız lütfen kullanılan güç yönetimi "
+"uygulamasını kaldırın ve PowerDevil servisini yeniden başlatın."
+
+#: kcmodule/PowerDevilKCM.cpp:103
+msgid ""
+"PowerDevil seems not to be started. Either you have its service turned off, "
+"or there is a problem in D-Bus."
+msgstr ""
+"PowerDevil başlatılmamış gibi görünüyor. Eğer servisi kapatmadıysanız, D-Bus "
+"ile ilgili bir hata oluşmuş olabilir."
+
+#: kcmodule/EditPage.cpp:100 kcmodule/EditPage.cpp:104
+#: kcmodule/EditPage.cpp:108 kcmodule/EditPage.cpp:113
+msgid "Do Nothing"
+msgstr "Hiçbir Şey Yapma"
+
+#: kcmodule/EditPage.cpp:102 kcmodule/EditPage.cpp:106
+#: kcmodule/EditPage.cpp:110 kcmodule/EditPage.cpp:115
+msgid "Lock Screen"
+msgstr "Ekranı Kilitle"
+
+#: kcmodule/EditPage.cpp:103 kcmodule/EditPage.cpp:107
+#: kcmodule/EditPage.cpp:111 kcmodule/EditPage.cpp:116
+msgid "Turn Off Screen"
+msgstr "Ekranı Kapat"
+
+#: kcmodule/EditPage.cpp:112 kcmodule/EditPage.cpp:117
+msgid "Prompt Log Out dialog"
+msgstr "Çıkış Penceresini Göster"
+
+#: kcmodule/EditPage.cpp:180
+#, kde-format
+msgid "CPU <numid>%1</numid>"
+msgstr "İşlemci <numid>%1</numid>"
+
+#: kcmodule/EditPage.cpp:185
+#, kde-format
+msgid "Disable CPU <numid>%1</numid>"
+msgstr "<numid>%1</numid> işlemcisini pasifleştir"
+
+#: kcmodule/EditPage.cpp:186
+#, kde-format
+msgid "If this box is checked, the CPU <numid>%1</numid> will be disabled"
+msgstr ""
+"Eğer bu kutucuk seçilirse <numid>%1</numid> İşlemcisi pasifleştirilecek"
+
+#: kcmodule/EditPage.cpp:205
+msgid "Learn more about the Energy Star program"
+msgstr "Energy Star uygulaması hakkında daha geniş bilgi"
+
+#: kcmodule/EditPage.cpp:503
+msgid "Please enter a name for the new profile:"
+msgstr "Lütfen yeni profil için bir isim girin:"
+
+#: kcmodule/EditPage.cpp:505 kcmodule/EditPage.cpp:508
+#: kcmodule/EditPage.cpp:559 kcmodule/EditPage.cpp:562
+msgid "The name for the new profile"
+msgstr "Yeni profilin adı"
+
+#: kcmodule/EditPage.cpp:506 kcmodule/EditPage.cpp:509
+#: kcmodule/EditPage.cpp:560 kcmodule/EditPage.cpp:563
+msgid "Enter here the name for the profile you are creating"
+msgstr "Oluşturduğunuz profilin adını buraya girin"
+
+#: kcmodule/EditPage.cpp:557
+msgid "Please enter a name for this profile:"
+msgstr "Lütfen bu profil için bir isim girin:"
+
+#: kcmodule/EditPage.cpp:591
+msgid "Import PowerDevil Profiles"
+msgstr "PowerDevil Profillerini İçeriye Aktar"
+
+#: kcmodule/EditPage.cpp:616
+msgid "Export PowerDevil Profiles"
+msgstr "PowerDevil Profillerini Dışarıya Aktar"
+
+#: kcmodule/EditPage.cpp:648
+msgid ""
+"The current profile has not been saved.\n"
+"Do you want to save it?"
+msgstr ""
+"Geçerli modül kaydedilmedi.\n"
+" Kaydetmek istiyor musunuz?"
+
+#: kcmodule/EditPage.cpp:649
+msgid "Save Profile"
+msgstr "Profili Kaydet"
+
+#: kcmodule/CapabilitiesPage.cpp:142 kcmodule/CapabilitiesPage.cpp:175
+#: kcmodule/CapabilitiesPage.cpp:196
+msgctxt "None"
+msgid "No methods found"
+msgstr "Hiç yöntem bulunamadı"
+
+#: kcmodule/CapabilitiesPage.cpp:259
+msgid ""
+"No scaling methods were found. If your CPU is reasonably recent, this is "
+"probably because you have not loaded some kernel modules. Usually scaling "
+"modules have names similar to cpufreq_ondemand. Scaling is useful and can "
+"save a lot of battery. Click on \"Attempt Loading Modules\" to let "
+"PowerDevil try to load the required modules. If you are sure your PC does "
+"not support scaling, you can also disable this warning by clicking \"Do not "
+"display this warning again\"."
+msgstr ""
+"Hiçbir ölçekleme yöntemi bulunamadı. Eğer işlemciniz gerçekten yeni ise "
+"muhtemelen smoke çekirdek modüllerini yüklemediniz. Ölçekleme modülleri "
+"genellikle cpufreq_ondemand'a benzer isimler taşır. Ölçekleme işlemi pil "
+"kullanımını azaltmak için kullanışlıdır. \"Modülleri Yüklemeyi Dene\" "
+"düğmesine tıklarsanız PowerDevil uygulaması gerekli modülleri yüklemeyi "
+"deneyecektir. Eğer bilgisayarınızın gerçekten ölçeklemeyi desteklemediğinden "
+"eminseniz bu uyarıyı  \"Bu uyarıyı tekrar gösterme\" düğmesine tıklayarak "
+"pasifleştirebilirsiniz. "
+
+#: kcmodule/CapabilitiesPage.cpp:266
+msgid "Attempt to load modules"
+msgstr "Modülleri yüklemeyi dene"
+
+#: kcmodule/CapabilitiesPage.cpp:267
+msgid "Do not display this warning again"
+msgstr "Bu uyarıyı bir daha gösterme"
+
+#: kcmodule/CapabilitiesPage.cpp:270
+msgid ""
+"ConsoleKit was not found active on your PC, or PowerDevil cannot contact it. "
+"ConsoleKit lets PowerDevil detect whether the current session is active, "
+"which is useful if you have more than one user logged into your system at "
+"any one time."
+msgstr ""
+
+#: kcmodule/CapabilitiesPage.cpp:275
+msgid "No issues found with your configuration."
+msgstr "Yapılandırmanızla ilgili bir sorun bulunamadı."
+
+#: kcmodule/CapabilitiesPage.cpp:373
+msgid ""
+"No kernel modules for CPU scaling were found. Either you do not have them "
+"installed, or PowerDevil could not detect them."
+msgstr ""
+"İşlemci ölçekleme işlemi için hiç bir çekirdek modülü bulunamadı. Bu "
+"modülleri yüklememiş olabilirsiniz veya PowerDevil bu modülleri bulamamıştır."
+
+#: kcmodule/CapabilitiesPage.cpp:375
+msgid "Modules not found"
+msgstr "Modüller bulunamadı"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file: kcmodule/profileEditPage.ui:23
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: rc.cpp:5
+msgid "Profile Management"
+msgstr "Profil Yönetimi"
+
+#. i18n: file: kcmodule/profileEditPage.ui:51
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:8
+msgid "Actions"
+msgstr "Eylemler"
+
+#. i18n: file: kcmodule/profileEditPage.ui:57
+#. i18n: ectx: property (text), widget (QCheckBox, disableCompositing)
+#: rc.cpp:11
+msgid "Disable desktop effects, if active"
+msgstr "Eğer etkinse masaüstü efektlerini pasifleştir"
+
+#. i18n: file: kcmodule/profileEditPage.ui:64
+#. i18n: ectx: property (toolTip), widget (QCheckBox, dimDisplayOnIdle)
+#: rc.cpp:14
+msgid "Activate automatic dimming"
+msgstr "Otomatik erkan kapatmayı etkinleştir"
+
+#. i18n: file: kcmodule/profileEditPage.ui:70
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, dimDisplayOnIdle)
+#: rc.cpp:17
+msgid "Automatically dims the display when the system is idle."
+msgstr "Sistem boşta ise ekranı otomatik olarak kapatır."
+
+#. i18n: file: kcmodule/profileEditPage.ui:73
+#. i18n: ectx: property (text), widget (QCheckBox, dimDisplayOnIdle)
+#: rc.cpp:20
+msgid "Dim display when idle for more than"
+msgstr "Sistem şu kadar süredir boşta ise ekranı kapat"
+
+#. i18n: file: kcmodule/profileEditPage.ui:98
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, dimOnIdleTime)
+#: rc.cpp:23
+msgctxt "Minutes"
+msgid " min"
+msgstr " dk"
+
+#. i18n: file: kcmodule/profileEditPage.ui:114
+#. i18n: ectx: property (whatsThis), widget (QLabel, PoweredIdleLabel_2)
+#. i18n: file: kcmodule/profileEditPage.ui:163
+#. i18n: ectx: property (whatsThis), widget (KComboBox, idleCombo)
+#: rc.cpp:26 rc.cpp:35
+msgid ""
+"To prevent data loss or other damage, you can have the system suspend or "
+"hibernate, so you do not run accidentally out of battery power. Configure "
+"the number of minutes below which the machine will run the configured action."
+msgstr ""
+"Veri kaybını ve diğer zararları önlemek için sisteminizin askıya alma ya da "
+"uyku kipini desteklemesi gerekir ki kazara sisteminizi boş pil ile "
+"çalıştıramayasınız. Makinenizi yapılandırılmış eylemlerle çalıştırmak için "
+"aşağıdaki bölümden birkaç dakikada yapılandırın."
+
+#. i18n: file: kcmodule/profileEditPage.ui:117
+#. i18n: ectx: property (text), widget (QLabel, PoweredIdleLabel_2)
+#: rc.cpp:29
+msgid "When the system is idle for more than"
+msgstr "Sistem şu kadar süredir boşta ise"
+
+#. i18n: file: kcmodule/profileEditPage.ui:138
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, idleTime)
+#. i18n: file: kcmodule/profileEditPage.ui:392
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, DPMSStandbyTime)
+#. i18n: file: kcmodule/profileEditPage.ui:418
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, DPMSSuspendTime)
+#. i18n: file: kcmodule/profileEditPage.ui:441
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, DPMSPowerOffTime)
+#. i18n: file: kcmodule/generalPage.ui:136
+#. i18n: ectx: property (suffix), widget (KIntNumInput, suspendWaitTime)
+#: rc.cpp:32 rc.cpp:71 rc.cpp:77 rc.cpp:83 rc.cpp:140
+msgid " min"
+msgstr " dk"
+
+#. i18n: file: kcmodule/profileEditPage.ui:175
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:38
+msgid "When laptop lid closed"
+msgstr "Dizüstü bilgisayarın kapağı kapatıldığında"
+
+#. i18n: file: kcmodule/profileEditPage.ui:197
+#. i18n: ectx: property (whatsThis), widget (KComboBox, laptopClosedCombo)
+#: rc.cpp:41
+msgid "This action will be performed when the laptop lid gets closed"
+msgstr "Bu eylem dizüstü bilgisayarın kapağı kapatıldığında gerçekleştirilecek"
+
+#. i18n: file: kcmodule/profileEditPage.ui:204
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:44
+msgid "When power button pressed"
+msgstr "Güç düğmesine basıldığında"
+
+#. i18n: file: kcmodule/profileEditPage.ui:230
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:47
+msgid "When sleep button pressed"
+msgstr "Uyku düğmesine basıldığında"
+
+#. i18n: file: kcmodule/profileEditPage.ui:267
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:50
+msgid "Screen"
+msgstr "Ekran"
+
+#. i18n: file: kcmodule/profileEditPage.ui:275
+#. i18n: ectx: property (toolTip), widget (QLabel, PoweredBrightnessLabel_2)
+#: rc.cpp:53
+msgid ""
+"With this slider you can set the brightness when the system is plugged into "
+"the socket outlet"
+msgstr "Makineniz prize takıldığı zaman parlaklığı buradan belirleyebilirsiniz"
+
+#. i18n: file: kcmodule/profileEditPage.ui:278
+#. i18n: ectx: property (text), widget (QLabel, PoweredBrightnessLabel_2)
+#: rc.cpp:56
+msgid "Brightness:"
+msgstr "Parlaklık:"
+
+#. i18n: file: kcmodule/profileEditPage.ui:330
+#. i18n: ectx: property (text), widget (QCheckBox, DPMSEnable)
+#: rc.cpp:59
+msgid "&Enable display power management"
+msgstr "Ekran enerji yönetimini &etkinleştir"
+
+#. i18n: file: kcmodule/profileEditPage.ui:373
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, DPMSStandbyEnabled)
+#. i18n: file: kcmodule/profileEditPage.ui:389
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, DPMSStandbyTime)
+#: rc.cpp:62 rc.cpp:68
+msgid ""
+"Choose the period of inactivity after which the display should enter "
+"\"standby\" mode. This is the first level of power saving."
+msgstr ""
+"Ekranın \"bekleme durumuna\" alınması için geçecek süreyi seçin. Bu, güç "
+"korumanın ilk aşamasıdır."
+
+#. i18n: file: kcmodule/profileEditPage.ui:376
+#. i18n: ectx: property (text), widget (QCheckBox, DPMSStandbyEnabled)
+#: rc.cpp:65
+msgid "&Standby after"
+msgstr "&Bu kadar süre geçince bekleme kipine geç"
+
+#. i18n: file: kcmodule/profileEditPage.ui:405
+#. i18n: ectx: property (text), widget (QCheckBox, DPMSSuspendEnabled)
+#: rc.cpp:74
+msgid "S&uspend after"
+msgstr "Bu kadar süre geçince &askıya al"
+
+#. i18n: file: kcmodule/profileEditPage.ui:428
+#. i18n: ectx: property (text), widget (QCheckBox, DPMSPowerOffEnabled)
+#: rc.cpp:80
+msgid "&Power off after"
+msgstr "Bu kadar süre geçince bilgisayarı &kapat"
+
+#. i18n: file: kcmodule/profileEditPage.ui:467
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:86
+msgid "CPU and System"
+msgstr "İşlemci ve Sistem"
+
+#. i18n: file: kcmodule/profileEditPage.ui:476
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: rc.cpp:89
+msgid "Turn off the following CPU(s)"
+msgstr "Şu işlemcileri kapat"
+
+#. i18n: file: kcmodule/profileEditPage.ui:486
+#. i18n: ectx: property (whatsThis), widget (QLabel, PoweredFreqLabel_2)
+#. i18n: file: kcmodule/profileEditPage.ui:514
+#. i18n: ectx: property (whatsThis), widget (KComboBox, freqCombo)
+#: rc.cpp:92 rc.cpp:98
+msgid ""
+"CPU Behaviour strongly impacts on your system performance and on your "
+"battery's life. Here you can choose the policy best suitable for this profile"
+msgstr ""
+"İşlemci Davranışı sisteminizin başarımını ve pilinizin ömrünü ciddi düzeyde "
+"etkiler. Buradan bu profile en uygun politikayı seçebilirsiniz"
+
+#. i18n: file: kcmodule/profileEditPage.ui:489
+#. i18n: ectx: property (text), widget (QLabel, PoweredFreqLabel_2)
+#: rc.cpp:95
+msgid "CPU frequency scaling policy:"
+msgstr "İşlemci frekans ölçekleme politikası:"
+
+#. i18n: file: kcmodule/profileEditPage.ui:521
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#: rc.cpp:101
+msgid "System powersaving scheme:"
+msgstr "Sistem güç koruma şeması:"
+
+#. i18n: file: kcmodule/profileEditPage.ui:547
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#: rc.cpp:104
+msgid "When loading profile execute:"
+msgstr "Profili yüklerken şunu çalıştır:"
+
+#. i18n: file: kcmodule/profileEditPage.ui:603
+#. i18n: ectx: property (text), item, widget (Line, line_5)
+#: rc.cpp:107
+msgid "New Profile"
+msgstr "Yeni Profil"
+
+#. i18n: file: kcmodule/profileEditPage.ui:608
+#. i18n: ectx: property (text), item, widget (Line, line_5)
+#: rc.cpp:110
+msgid "Delete Profile"
+msgstr "Profili Sil"
+
+#. i18n: file: kcmodule/profileEditPage.ui:613
+#. i18n: ectx: property (text), item, widget (Line, line_5)
+#: rc.cpp:113
+msgid "Import Profiles"
+msgstr "Profilleri İçeriye Aktar"
+
+#. i18n: file: kcmodule/profileEditPage.ui:618
+#. i18n: ectx: property (text), item, widget (Line, line_5)
+#: rc.cpp:116
+msgid "Export Profiles"
+msgstr "Profilleri Dışarıya Aktar"
+
+#. i18n: file: kcmodule/generalPage.ui:38
+#. i18n: ectx: property (text), widget (QLabel, issueText)
+#: rc.cpp:119
+msgid ""
+"<b>There are some issues in your configuration. Please check the "
+"Capabilities page for more details.</b>"
+msgstr ""
+"<b>Yapılandırmanızla ilgili bazı sorunlar var. Daha fazla bilgi için lütfen "
+"Yetenekler sayfasını kontrol edin.</b>"
+
+#. i18n: file: kcmodule/generalPage.ui:57
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:122
+#, fuzzy
+#| msgid "Settings and Profiles"
+msgid "Settings and Profile"
+msgstr "Ayarlar ve Profiller"
+
+#. i18n: file: kcmodule/generalPage.ui:65
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:125
+msgid "Lock screen on resume"
+msgstr "Askıya Alma ve Bekleme konumundan çıkıldığında ekranı kilitle"
+
+#. i18n: file: kcmodule/generalPage.ui:78
+#. i18n: ectx: property (toolTip), widget (QCheckBox, lockScreenOnResume)
+#: rc.cpp:128
+msgid "Locks screen when waking up from suspension"
+msgstr "Sistem askıya alma işleminden uyandırılırken ekranı kilitler"
+
+#. i18n: file: kcmodule/generalPage.ui:84
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, lockScreenOnResume)
+#: rc.cpp:131
+msgid "You will be asked for a password when resuming from sleep state"
+msgstr "Sistem uyku kipinden uyandırıldığında size parolanız sorulacak"
+
+#. i18n: file: kcmodule/generalPage.ui:94
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:134
+msgid "Let PowerDevil manage screen powersaving"
+msgstr ""
+"PowerDevil uygulamasının ekran güç koruma işlemlerini yapmasına izin ver"
+
+#. i18n: file: kcmodule/generalPage.ui:114
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:137
+msgid "Before doing a suspend action, wait"
+msgstr "Bir askıya alma işleminden önce beklenecek süre"
+
+#. i18n: file: kcmodule/generalPage.ui:139
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, suspendWaitTime)
+#: rc.cpp:143
+msgid "Do not wait"
+msgstr "Bekleme"
+
+#. i18n: file: kcmodule/generalPage.ui:177
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: rc.cpp:146
+msgid "Profile Assignment"
+msgstr "Profil Ataması"
+
+#. i18n: file: kcmodule/generalPage.ui:186
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:149
+msgid "When AC Adaptor is plugged in"
+msgstr "AC Adaptör fişi takıldığında"
+
+#. i18n: file: kcmodule/generalPage.ui:206
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:152
+msgid "When on battery power"
+msgstr "Pil ile çalıştığında"
+
+#. i18n: file: kcmodule/generalPage.ui:226
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:155
+msgid "When battery is at low level"
+msgstr "Pil seviyesi düşük olduğunda"
+
+#. i18n: file: kcmodule/generalPage.ui:246
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:158
+msgid "When battery is at warning level"
+msgstr "Pil seviyesi uyarı seviyesine geldiğinde"
+
+#. i18n: file: kcmodule/generalPage.ui:299
+#. i18n: ectx: property (text), widget (QPushButton, notificationsButton)
+#: rc.cpp:161
+msgid "Configure Notifications..."
+msgstr "Bildirimleri Yapılandır..."
+
+#. i18n: file: kcmodule/generalPage.ui:335
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:164
+msgid "Advanced Battery Settings"
+msgstr "Gelişmiş Pil Ayarları"
+
+#. i18n: file: kcmodule/generalPage.ui:343
+#. i18n: ectx: property (text), widget (QLabel, BatteryCriticalLabel)
+#: rc.cpp:167
+msgid "When battery remaining is critical"
+msgstr "Kalan pil süresi kritik düzeye ulaştığında"
+
+#. i18n: file: kcmodule/generalPage.ui:400
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:170
+msgid "Battery Levels"
+msgstr "Pil Seviyeleri"
+
+#. i18n: file: kcmodule/generalPage.ui:409
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:173
+msgid "Battery is at low level at"
+msgstr "Pil düşük seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:425
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, lowSpin)
+#: rc.cpp:176
+msgid "Low battery level"
+msgstr "Düşük pil seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:428
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, lowSpin)
+#: rc.cpp:179
+msgid "Battery will be considered low when it reaches this level"
+msgstr "Pil seviyesi bu düzeye geldiğinde düşük olarak değerlendirilecek"
+
+#. i18n: file: kcmodule/generalPage.ui:431
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, lowSpin)
+#. i18n: file: kcmodule/generalPage.ui:463
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, warningSpin)
+#. i18n: file: kcmodule/generalPage.ui:495
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, criticalSpin)
+#: rc.cpp:183 rc.cpp:196 rc.cpp:209
+#, no-c-format
+msgid "%"
+msgstr "%"
+
+#. i18n: file: kcmodule/generalPage.ui:441
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:186
+msgid "Battery is at warning level at"
+msgstr "Pil uyarı seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:457
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, warningSpin)
+#: rc.cpp:189
+msgid "Warning battery level"
+msgstr "Pil uyarı seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:460
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, warningSpin)
+#: rc.cpp:192
+msgid "Battery will be considered at warning level when it reaches this level"
+msgstr ""
+"Pil seviyesi bu düzeye geldiğinde uyarı seviyesi olarak değerlendirilecek"
+
+#. i18n: file: kcmodule/generalPage.ui:473
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:199
+msgid "Battery is at critical level at"
+msgstr "Pil kritik seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:489
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, criticalSpin)
+#: rc.cpp:202
+msgid "Critical battery level"
+msgstr "Kritik pil seviyesi"
+
+#. i18n: file: kcmodule/generalPage.ui:492
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, criticalSpin)
+#: rc.cpp:205
+msgid "Battery will be considered critical when it reaches this level"
+msgstr "Pil seviyesi bu düzeye geldiğinde kiritik olarak değerlendirilecek"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:23
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: rc.cpp:212
+msgid "System Capabilities"
+msgstr "Sistem Yetenekleri"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:215
+msgid "Number of CPUs"
+msgstr "İşlemci Sayısı"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:49
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:218
+msgid "Number of Batteries"
+msgstr "Pil Sayısı"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:70
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:221
+msgid "CPU can be turned Off"
+msgstr "İşlemci Kapatılabilir"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:84
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:224
+msgid "Scheme support"
+msgstr "Şema desteği"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:98
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: rc.cpp:227
+msgid "Scaling capability"
+msgstr "Ölçekleme yeteneği"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:119
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#: rc.cpp:230
+msgid "Supported CPU Policies"
+msgstr "Desteklenen İşlemci Politikaları"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:139
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#: rc.cpp:233
+msgid "Supported suspend methods"
+msgstr "Desteklenen askıya alma yöntemleri"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:159
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#: rc.cpp:236
+msgid "Supported schemes"
+msgstr "Desteklenen şemalar"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:180
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#: rc.cpp:239
+msgid "Support for DPMS"
+msgstr "DPMS Desteği"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:183
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_4)
+#: rc.cpp:242
+msgid ""
+"If this is enabled, PowerDevil will be able to configure power management "
+"for your monitor"
+msgstr ""
+"Eğer bu etkinleştirilirse PowerDevil monitörünüz için güç yönetimi "
+"yapabilecek"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:186
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:245
+msgid "DPMS Support"
+msgstr "DPMS Desteği"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:200
+#. i18n: ectx: property (toolTip), widget (QLabel, label_6)
+#: rc.cpp:248
+msgid "Checks if ConsoleKit is active on your system"
+msgstr "ConsoleKit'in sisteminizde etkin olup olmadığını denetler"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:203
+#. i18n: ectx: property (whatsThis), widget (QLabel, label_6)
+#: rc.cpp:251
+msgid ""
+"ConsoleKit lets PowerDevil detect whether the current session is active, "
+"which is useful if you have more than one user logged into your system at "
+"any one time."
+msgstr ""
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:206
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:254
+msgid "ConsoleKit Runtime Support"
+msgstr "ConsoleKit Çalışma Zamanı Desteği"
+
+#. i18n: file: kcmodule/capabilitiesPage.ui:227
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:257
+msgid "Status"
+msgstr "Durum"
+
+#. i18n: file: kcmodule/error.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, errorWidget)
+#: rc.cpp:260
+msgid "PowerDevil error"
+msgstr "PowerDevil hatası"
+
+#. i18n: file: kcmodule/error.ui:56
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:263
+msgid ""
+"The configuration module can not be started, since there seems to be a "
+"problem with the PowerDevil Daemon. Read below for more details"
+msgstr ""
+"Yapılandırma modülü başlatılamıyor. PowerDevil Servisi ile ilgili bir sorun "
+"var gibi görünüyor. Daha fazla ayrıntı için aşağıdaki bölümü okuyun"
+
+#~ msgid "Configure actions"
+#~ msgstr "Eylemleri yapılandır"
+
+#~ msgid "Configure preferences for Screen Powersaving"
+#~ msgstr "Ekran Güç Koruması tercihlerini yapılandır"
+
+#~ msgid "Configure System and CPU preferences"
+#~ msgstr "Sistem ve İşlemci Seçeneklerini Yapılandır"
+
+#~ msgid "Battery Actions"
+#~ msgstr "Pil Eylemleri"
+
+#~ msgid ""
+#~ "PowerDevil was compiled without Xss and Xext support, or the XSync "
+#~ "extension is not available. Determining idle time will not be possible. "
+#~ "Please consider recompiling PowerDevil with at least one of these two "
+#~ "libraries."
+#~ msgstr ""
+#~ "PowerDevil Xss ve Xext desteği olmadan derlenmiş ya da XSync "
+#~ "kullanılabilir durumda değil. Sistemin boşta kaldığı süreyi belirlemek "
+#~ "mümkün değil. Lütfen PowerDevil uygulamasını bu iki kitaplıktan en az "
+#~ "biri ile yeniden derleyin."
+
+#~ msgid ""
+#~ "PowerDevil was compiled without Xext support, or the XSync extension is "
+#~ "not available. XSync grants extra efficiency and performance, saving your "
+#~ "battery and CPU. It is advised to use PowerDevil with XSync enabled."
+#~ msgstr ""
+#~ "PowerDevil Xss ve Xext desteği olmadan derlenmiş ya da XSync "
+#~ "kullanılabilir durumda değil. XSync İşlemcinizi ve pilinizi koruyarak ek "
+#~ "verimlilik ve başarım sağlar. PowerDevil uygulamasını XSync desteğini "
+#~ "etkinleştirerek kullanmanız önerilir."
+
+#~ msgid ""
+#~ "XSync does not seem to be your preferred query backend, though it is "
+#~ "available on your system. Using it largely improves performance and "
+#~ "efficiency, and is strongly advised. Click on the button below to enable "
+#~ "it now."
+#~ msgstr ""
+#~ "XSync sisteminizde bulunmasına rağmen öntanımlı sorgu arka ucu olarak "
+#~ "seçilmemiş görünüyor. XSync kullanmak başarımı ve verimliliği büyük "
+#~ "ölçüde arttırır ve kullanılması tavsiye edilir. XSync'yi etkinleştirmek "
+#~ "için aşağıdaki düğmeye tıklayın."
+
+#~ msgid "Enable XSync Backend"
+#~ msgstr "XSync Arka Ucunu Etkinleştir"
+
+#~ msgid "Support for the XSync extension"
+#~ msgstr "XSync eklentisi Desteği"
+
+#~ msgid ""
+#~ "XSync is an extension that allows high efficiency query of the system. If "
+#~ "it is available, PowerDevil will be much more reliable and efficient"
+#~ msgstr ""
+#~ "XSync sistem sorgularında yüksek verimlilik sağlayan bir eklentidir. Eğer "
+#~ "kullanılabilir durumdaysa PowerDevil daha güvenilir ve etkili olacaktır"
+
+#~ msgid "XSync Support"
+#~ msgstr "XSync Desteği"
+
+#~ msgid "Support for XScreensaver"
+#~ msgstr "XScreensaver Desteği"
+
+#~ msgid ""
+#~ "Through XScreensaver, PowerDevil may query the system if XSync is not "
+#~ "available. It is necessary only if your system does not support XSync. If "
+#~ "both of them are unavailable, PowerDevil will not be able to query idle "
+#~ "time of the system"
+#~ msgstr ""
+#~ "PowerDevil XSync yoksa XScreensaver kullanarak sistemi sorgulayabilir. "
+#~ "XScreensaver, eğer sisteminiz XSync desteklemiyorsa gereklidir. Eğer "
+#~ "ikisi de kullanılabilir durumda değilse, PowerDevil sisteminizin boşta "
+#~ "kalma süresini sorgulayamayacak"
+
+#~ msgid "XScreenSaver Support"
+#~ msgstr "XScreenSaver Desteği"
+
+#~ msgid "Support for XTest extension"
+#~ msgstr "XTest eklentisi Desteği"
+
+#~ msgid ""
+#~ "Through XTest, PowerDevil is able to fake user activity, preventing "
+#~ "suspension loops. If it is not available, loops might occur"
+#~ msgstr ""
+#~ "PowerDevil  XTest kullanarak ve askıya alma döngülerini önleyerek "
+#~ "kullanıcı etkinliği takibini taklit edebilir. Eğer XTest kullanılabilir "
+#~ "değil ise askıya alma döngüleri gerçekleşebilir"
+
+#~ msgid "XTest Support"
+#~ msgstr "XTest Desteği"
+
+#~ msgid "Main Developer"
+#~ msgstr "Ana Geliştirici"
+
+#~ msgid "XSync Based (recommended)"
+#~ msgstr "XSync Temelli (önerilen)"
+
+#~ msgid "Timer Based"
+#~ msgstr "Zamanlayıcı Temelli"
+
+#~ msgid "Grabber Widget Based"
+#~ msgstr "Yakalayıcı Parçacık Temelli"
+
+#~ msgid "Enables standard notifications"
+#~ msgstr "Standart bildirimleri etkinleştirir"
+
+#~ msgid ""
+#~ "Notifications such as standard events or profile change will be shown"
+#~ msgstr ""
+#~ "Bildirimler, standart olaylar ya da profil değişiklikleri gösterilecek"
+
+#~ msgid "Enable notifications"
+#~ msgstr "Bildirimleri etkinleştir"
+
+#~ msgid "Enables warning notifications"
+#~ msgstr "Bildirim uyarılarını etkinleştirir"
+
+#~ msgid ""
+#~ "Notifications such as warnings or important events will be shown. It is "
+#~ "recommended to leave this enabled."
+#~ msgstr ""
+#~ "Bildirimler ve önemli uyarılar gösterilecek. Bu seçeneği etkin durumda "
+#~ "bırakmanız önerilir."
+
+#~ msgid "Enable warning notifications"
+#~ msgstr "Bildirim uyarılarını etkinleştir"
+
+#~ msgid "Interval for interactive confirm notifications"
+#~ msgstr "Etkileşimli doğrulama bildirimleri için aralık"
+
+#~ msgid ""
+#~ "If selected, before doing an automatic suspension PowerDevil will show an "
+#~ "interactive notification for the specified time. If that notification is "
+#~ "then clicked, the queued action will not be run."
+#~ msgstr ""
+#~ "Eğer seçilirse PowerDevil bir otomatik askıya alma eyleminden önce "
+#~ "belirli bir süre etkileşimli bir pencere gösterecektir. Eğer bu bildirim "
+#~ "tıklanırsa bekleyen eylem gerçekleştirilmeyecektir."
+
+#~ msgctxt "As in \"seconds\""
+#~ msgid " sec"
+#~ msgstr " sn"
+
+#~ msgctxt "Interrupts the suspension/shutdown process"
+#~ msgid "Abort Action"
+#~ msgstr "Eylemi Sonlandır"
+
+#~ msgid "Suspend to Ram"
+#~ msgstr "Bellek Kullanarak Askıya Al"
+
+#~ msgctxt "Minutes"
+#~ msgid "min"
+#~ msgstr "dak"
+
+#~ msgid "min"
+#~ msgstr "dak"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"
+
+#~ msgid "Profiles"
+#~ msgstr "Profiller"
+
+#~ msgid "Screen and Actions"
+#~ msgstr "Ekran ve Eylemler"
+
+#~ msgid "Screen Energy"
+#~ msgstr "Ekran Enerjisi"
+
+#~ msgid "Configure screen energy management"
+#~ msgstr "Ekran enerji yönetimini yapılandır"
+
+#~ msgctxt "A DPMS status will be disabled"
+#~ msgid "Disabled"
+#~ msgstr "Pasifleştirilmiş"
+
+#~ msgid "Undo Changes"
+#~ msgstr "Değişiklikleri Geri Al"
+
+#~ msgid "Save changes to this profile"
+#~ msgstr "Değişiklikleri bu profile kaydet"
+
+#~ msgid "Save Current Profile"
+#~ msgstr "Geçerli Profili Kaydet"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Edit"
+#~ msgstr "Düzenle"
+
+#~ msgctxt "Creates a new profile"
+#~ msgid "New"
+#~ msgstr "Yeni"
+
+#~ msgid "Clone"
+#~ msgstr "Kopyası"
+
+#~ msgid "Import profiles from a file"
+#~ msgstr "Profilleri bir dosyadan içeriye aktar"
+
+#~ msgid "Export your profiles to a file"
+#~ msgstr "Profilleri bir dosya olarak dışarıya aktar"
+
+#~ msgid "(c) 2008 PowerDevil Development Team"
+#~ msgstr "(c) 2008 PowerDevil Geliştirme Ekibi"
+
+#~ msgid "Developer"
+#~ msgstr "Geliştirici"
+
+#~ msgid "Preferred Polling System:"
+#~ msgstr "Tercih Edilen Kontrol Sistemi:"
+
+#~ msgctxt "Note this is a KRunner keyword"
+#~ msgid "power profile"
+#~ msgstr "güç profili"
+
+#~ msgctxt "Note this is a KRunner keyword"
+#~ msgid "power governor"
+#~ msgstr "güç yöneticisi"
+
+#~ msgctxt "Note this is a KRunner keyword"
+#~ msgid "power scheme"
+#~ msgstr "güç şeması"
+
+#~ msgctxt "Note this is a KRunner keyword"
+#~ msgid "screen brightness"
+#~ msgstr "ekran parlaklığı"
+
+#~ msgid "Set Profile to '%1'"
+#~ msgstr "Profili '%1' olarak ayarla"
+
+#~ msgid "Set CPU Governor to '%1'"
+#~ msgstr "İşlemci Yöneticisini '%1' olarak ayarla"
+
+#~ msgid "Set Powersaving Scheme to '%1'"
+#~ msgstr "Güç Koruma Şemasını '%1' olarak ayarla"
+
+#~ msgid "Set Brightness to %1"
+#~ msgstr "Parlaklığı %1 değerine ayarla"

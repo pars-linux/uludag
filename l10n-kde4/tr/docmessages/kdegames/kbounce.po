@@ -1,0 +1,1004 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kbounce\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:21+0000\n"
+"PO-Revision-Date: 2002-02-17 22:57+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:12
+#, fuzzy, no-c-format
+msgid "The &kbounce; Handbook"
+msgstr "&kjezz; El Kitabı"
+
+#. Tag: author
+#: index.docbook:15
+#, fuzzy, no-c-format
+msgid "<firstname>Tomasz</firstname><surname>Boczkowski</surname>"
+msgstr ""
+"<firstname>Aaron</firstname> <othername>J.</othername> <surname>Seigo</"
+"surname> <affiliation> <address><email>aseigo@olympusproject.org</email></"
+"address> </affiliation>"
+
+#. Tag: email
+#: index.docbook:17
+#, no-c-format
+msgid "tboczkowski@onet.pl"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:19
+#, fuzzy, no-c-format
+msgid "<firstname>Eugene</firstname><surname>Trounev</surname>"
+msgstr ""
+"<firstname>Aaron</firstname> <othername>J.</othername> <surname>Seigo</"
+"surname> <affiliation> <address><email>aseigo@olympusproject.org</email></"
+"address> </affiliation>"
+
+#. Tag: contrib
+#: index.docbook:21
+#, no-c-format
+msgid "Reviewer"
+msgstr "Ön İzleyici"
+
+#. Tag: address
+#: index.docbook:22
+#, no-c-format
+msgid "eugene.trounev@gmail.com"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:24
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "ROLES_OF_TRANSLATORS"
+
+#. Tag: holder
+#: index.docbook:29
+#, no-c-format
+msgid "&Aaron.J.Seigo;"
+msgstr ""
+
+#. Tag: holder
+#: index.docbook:34
+#, no-c-format
+msgid "Tomasz Boczkowski"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:44
+#, no-c-format
+msgid ""
+"This documentation describes the game of &kbounce; version &kappversion;"
+msgstr ""
+
+#. Tag: keyword
+#: index.docbook:49
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:50
+#, fuzzy, no-c-format
+#| msgid "kdegames"
+msgid "kdegames"
+msgstr "kdegames"
+
+#. Tag: keyword
+#: index.docbook:51
+#, fuzzy, no-c-format
+#| msgid "kdegames"
+msgid "game"
+msgstr "kdegames"
+
+#. Tag: keyword
+#: index.docbook:53
+#, no-c-format
+msgid "arcade"
+msgstr ""
+
+#. Tag: keyword
+#: index.docbook:54
+#, no-c-format
+msgid "puzzle"
+msgstr ""
+
+#. Tag: keyword
+#: index.docbook:55
+#, fuzzy, no-c-format
+#| msgid "jezzball"
+msgid "balls"
+msgstr "jezzball"
+
+#. Tag: keyword
+#: index.docbook:56
+#, no-c-format
+msgid "jezzball"
+msgstr "jezzball"
+
+#. Tag: keyword
+#: index.docbook:57
+#, no-c-format
+msgid "KBounce"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:63
+#, no-c-format
+msgid "Introduction"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:64
+#, no-c-format
+msgid "Gametype:"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:64
+#, no-c-format
+msgid "Puzzle, Arcade"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:65
+#, no-c-format
+msgid "Number of possible players:"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:65
+#, no-c-format
+msgid "<para>One</para>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:66
+#, fuzzy, no-c-format
+msgid "&kbounce; is a single player arcade game with the elements of puzzle."
+msgstr "&kjezz; , bir &kde; oyunudur."
+
+#. Tag: para
+#: index.docbook:70
+#, no-c-format
+msgid ""
+"It is played on a field, surrounded by walls, with two or more balls that "
+"move about in the field bouncing off of walls. The player can build new "
+"walls, decreasing the size of the active field."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:74
+#, no-c-format
+msgid ""
+"The goal of the game is to fill at least 75&percnt; of the field and advance "
+"to the next level."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:80
+#, no-c-format
+msgid "How To Play"
+msgstr "Nasıl Oynanır"
+
+#. Tag: para
+#: index.docbook:82
+#, no-c-format
+msgid ""
+"The player is presented a rectangular tiled field surrounded by walls. Two "
+"or more balls move about in the field and bounce off of the walls. The "
+"object of the game is to limit the size of room for the balls."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:86
+#, no-c-format
+msgid ""
+"The size of the active area of the field is decreased by making new walls "
+"that enclose areas without balls in them. To complete a level, the player "
+"must decrease the size of the active field by at least 75&percnt; within the "
+"time allowed."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:90
+#, no-c-format
+msgid ""
+"New walls are built by clicking the &LMB; in an active area of the field, at "
+"which point two walls will begin to grow in opposite directions from the "
+"square the mouse was clicked in. Only one wall in each direction may be "
+"growing on the screen at any given time."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:94
+#, no-c-format
+msgid ""
+"When the mouse is on the field, the cursor is shown as a pair of arrows "
+"pointing in opposite directions, either horizontally or vertically. The "
+"arrows point in the direction the walls will grow when the &LMB; is clicked. "
+"This direction can be changed by clicking the &RMB;."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:98
+#, no-c-format
+msgid ""
+"A new wall has a <quote>head</quote> which moves away from the point where "
+"the mouse was clicked. A wall is not permanent until this <quote>head</"
+"quote> runs into another wall. If a ball collides with any part of the wall "
+"except the head, before the head has run into another wall, the new wall "
+"will disappear completely and one life will be lost. If a ball collides with "
+"the head in the direction of the wall's growth, the wall will stop growing "
+"there, and become permanent, with no loss of life. If a ball collides with "
+"the head from any other side, the ball will bounce off and the wall will "
+"continue to grow normally."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:103
+#, no-c-format
+msgid "Game Rules, Strategies and Tips"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:105
+#, no-c-format
+msgid "Game Rules"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:107
+#, no-c-format
+msgid ""
+"The game starts with level 1 in which two balls move around in the field. "
+"The player has two lifes and 90 seconds to successfully complete the level."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:113
+#, no-c-format
+msgid ""
+"In n-th level there are n + 1 balls. The player is given n + 1 lives. They "
+"have 30 * ( n + 2 ) seconds to complete it."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:118
+#, no-c-format
+msgid ""
+"When a ball collides with a growing wall the player looses one life. An "
+"exception is the collision with wall's <quote>head</quote> when no life is "
+"lost."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:124
+#, no-c-format
+msgid ""
+"The goal of each level is to cover at least 75&percnt; of the field with "
+"wall."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:129
+#, no-c-format
+msgid ""
+"The loss of all lives and exceeding the time allowed result in the end of "
+"the game."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:134
+#, no-c-format
+msgid ""
+"If a player completes a level he receives 15 points for each life left, and "
+"a bonus depending on the number of balls and the number of tiles filled "
+"above 75&percnt;. They also advance to the next level."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:143
+#, no-c-format
+msgid "Strategies and Tips"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:147
+#, no-c-format
+msgid ""
+"Many players find the game becomes quite difficult by only the third or "
+"fourth level, given the number of balls on the field at once."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:155
+#, no-c-format
+msgid ""
+"The trick playing &kbounce; successfully is to build <quote>corridors</"
+"quote>. To build a corridor, start a pair of walls growing close to another "
+"wall, and time it so that one of the walls will be hit by a ball and one of "
+"the walls will not, and thus become permanent."
+msgstr ""
+
+#. Tag: screeninfo
+#: index.docbook:164
+#, fuzzy, no-c-format
+msgid "<screeninfo>Building a corridor</screeninfo>"
+msgstr "Koridor yapılıyor"
+
+#. Tag: phrase
+#: index.docbook:170
+#, fuzzy, no-c-format
+msgid "<phrase>Building a corridor</phrase>"
+msgstr "Koridor yapılıyor"
+
+#. Tag: para
+#: index.docbook:175
+#, no-c-format
+msgid ""
+"This will leave a narrow corridor only a few squares high on the field, "
+"surrounded on three sides by walls. Wait for the balls to bounce into the "
+"open end of the corridor, and close the corridor behind the ball with a new "
+"wall. Although you will most likely lose a life for each corridor created, "
+"you can trap several balls in a single corridor."
+msgstr ""
+
+#. Tag: screeninfo
+#: index.docbook:185
+#, no-c-format
+msgid "<screeninfo>Capturing balls in a corridor</screeninfo>"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:191
+#, no-c-format
+msgid "<phrase>Capturing balls in a corridor</phrase>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:198
+#, no-c-format
+msgid ""
+"A final tip &mdash; take your time! There is plenty of time, as shown in the "
+"<guilabel>Time</guilabel> display at the bottom of the screen. Rushing will "
+"just get you in trouble!"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:209
+#, no-c-format
+msgid "Interface Overview"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:212
+#, no-c-format
+msgid "The Tool Bar"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:218
+#, no-c-format
+msgid "Toolbar"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:221
+#, no-c-format
+msgid "The toolbar provides buttons for the commonly used functions."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:226
+#, no-c-format
+msgid "Toolbar Buttons"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:231
+#, no-c-format
+msgid "Button"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:232
+#, no-c-format
+msgid "Name"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:233
+#, no-c-format
+msgid "Menu Equivalent"
+msgstr ""
+
+#. Tag: entry
+#: index.docbook:234
+#, no-c-format
+msgid "Action"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:245
+#, no-c-format
+msgid "New Game Button"
+msgstr ""
+
+#. Tag: guiicon
+#: index.docbook:250
+#, no-c-format
+msgid "<guiicon>New</guiicon>"
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:255
+#, fuzzy, no-c-format
+msgid "<guimenu>Game</guimenu> <guimenuitem>New</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: entry
+#: index.docbook:261
+#, no-c-format
+msgid ""
+"Starts a new game. If a game is currently played clears the field and sets "
+"the level to 1."
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:274
+#, no-c-format
+msgid "Pause Button"
+msgstr ""
+
+#. Tag: guiicon
+#: index.docbook:279
+#, no-c-format
+msgid "Pause"
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:284
+#, fuzzy, no-c-format
+msgid "<guimenu>Game</guimenu> <guimenuitem>Pause</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: entry
+#: index.docbook:289
+#, fuzzy, no-c-format
+msgid "Pauses or resumes the current game."
+msgstr "Oyunu Duraklat"
+
+#. Tag: title
+#: index.docbook:299
+#, no-c-format
+msgid "The Menu Items"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:302
+#, no-c-format
+msgid "The <guimenu>Game</guimenu> Menu"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:309
+#, fuzzy, no-c-format
+msgid "<guimenu>Game</guimenu> Menu"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: menuchoice
+#: index.docbook:315
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>N</keycap></keycombo> </"
+"shortcut> <guimenu>Game</guimenu> <guimenuitem>New</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Y</keycap></keycombo> </"
+"shortcut> <guimenu>Oyun</guimenu> <guimenuitem>Yeni</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:322
+#, fuzzy, no-c-format
+#| msgid "Start a new game."
+msgid "Starts a new game."
+msgstr "Yeni bir Oyun başlat"
+
+#. Tag: menuchoice
+#: index.docbook:328
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>End</keycap> </keycombo> "
+"</shortcut> <guimenu>Game</guimenu> <guimenuitem>End Game</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>B</keycap> </keycombo> </"
+"shortcut> <guimenu>Oyun</guimenu> <guimenuitem>Oyunu Bitir</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:336
+#, fuzzy, no-c-format
+#| msgid "End the current game."
+msgid "Ends the current game."
+msgstr "Geçerli Oyunun Sonu"
+
+#. Tag: menuchoice
+#: index.docbook:342
+#, no-c-format
+msgid ""
+"<shortcut> <keycap>P</keycap></shortcut> <guimenu>Game</guimenu> "
+"<guimenuitem>Pause</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:348
+#, fuzzy, no-c-format
+msgid "Pauses or resumes the game."
+msgstr "Oyunu Duraklat"
+
+#. Tag: menuchoice
+#: index.docbook:354
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>N</keycap></keycombo> "
+#| "</shortcut> <guimenu>Game</guimenu> <guimenuitem>New</guimenuitem>"
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>H</keycap></keycombo> </"
+"shortcut> <guimenu>Game</guimenu> <guimenuitem>Show High Scores</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Y</keycap></keycombo> </"
+"shortcut> <guimenu>Oyun</guimenu> <guimenuitem>Yeni</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:361
+#, no-c-format
+msgid "Opens a dialog that displays different high score tables."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:368
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> </"
+"shortcut> <guimenu>Game</guimenu> <guimenuitem>Quit</guimenuitem>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:375
+#, no-c-format
+msgid ""
+"<action>Quit</action> and close &kbounce;. If a game is currently played, "
+"it's status is lost"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:383
+#, fuzzy, no-c-format
+msgid "The <guimenu>Settings</guimenu> Menu"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: phrase
+#: index.docbook:390
+#, no-c-format
+msgid "Settings Menu"
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:396
+#, fuzzy, no-c-format
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:401
+#, no-c-format
+msgid "Shows/hides the &kbounce; toolbar."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:406
+#, fuzzy, no-c-format
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Statusbar</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:411
+#, no-c-format
+msgid "Shows/hides the &kbounce; statusbar."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:416
+#, fuzzy, no-c-format
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Play Sounds</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:421
+#, no-c-format
+msgid "If checked, &kbounce; game sounds are played."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:426
+#, fuzzy, no-c-format
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts...</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:431
+#, no-c-format
+msgid ""
+"Opens a standard &kde; shortcut configuration dialog, in which you can "
+"change the keyboard shortcuts used by &kbounce;."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:437
+#, fuzzy, no-c-format
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Toolbars...</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:442
+#, no-c-format
+msgid ""
+"Opens the standard &kde; toolbar configuration dialog to customize the "
+"&kbounce; toolbar."
+msgstr ""
+
+#. Tag: menuchoice
+#: index.docbook:447
+#, fuzzy, no-c-format
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure &kbounce;...</guimenuitem>"
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: action
+#: index.docbook:452
+#, no-c-format
+msgid "Opens a dialog to customize the game. It allows to select themes."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:462
+#, no-c-format
+msgid "The <guimenu>Help</guimenu> Menu"
+msgstr ""
+
+#. Tag: phrase
+#: index.docbook:468
+#, no-c-format
+msgid "Help Menu"
+msgstr ""
+
+#. Tag: sect2
+#: index.docbook:469
+#, no-c-format
+msgid "&help.menu.documentation;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:477
+#, no-c-format
+msgid "Frequently asked questions"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:482
+#, no-c-format
+msgid "I want to change the way this game looks. Can I?"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:483
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycap>P</keycap></shortcut> <guimenu>Game</guimenu> "
+#| "<guimenuitem>Pause</guimenuitem>"
+msgid ""
+"Yes. To change &kbounce; visual theme you can use "
+"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kbounce;...</"
+"guimenuitem></menuchoice> option on the menubar."
+msgstr ""
+"<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+"<guimenuitem>Duraksat</guimenuitem>"
+
+#. Tag: para
+#: index.docbook:486
+#, no-c-format
+msgid "I have made a mistake. Can I undo?"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:487
+#, no-c-format
+msgid "&kbounce; does not have an <quote>Undo</quote> feature."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:490
+#, no-c-format
+msgid "Can I use the keyboard to play this game?"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:491
+#, no-c-format
+msgid "No. &kbounce; cannot be played using keyboard."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:494
+#, no-c-format
+msgid ""
+"I have to quit the game now, but I am not finished yet. Can I save my "
+"progress?"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:495
+#, no-c-format
+msgid "&kbounce; does not have a <quote>Save</quote> feature at the moment."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:500
+#, no-c-format
+msgid "Game Configuration"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:501
+#, no-c-format
+msgid ""
+"The &kbounce; configuration dialog allows you to select visual themes for "
+"&kbounce;."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:502
+#, no-c-format
+msgid ""
+"To select a new theme simply choose the theme's name from the selection list."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:503
+#, no-c-format
+msgid "Note:"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:503
+#, no-c-format
+msgid ""
+"For your convenience a quick preview screenshot will be displayed on the "
+"right hand sided of the selection list as soon as you select the theme you "
+"are interested in."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:504
+#, no-c-format
+msgid ""
+"Once you are satisfied with the theme you have selected you can either click "
+"the <guibutton>Apply</guibutton>, or simply click the <guibutton>Ok</"
+"guibutton> button, located at the bottom part of this dialog."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:505
+#, no-c-format
+msgid ""
+"If, however you are dissatisfied with your selection – simply click "
+"<guimenu>Cancel</guimenu> to discard the changes."
+msgstr ""
+
+#. Tag: title
+#: index.docbook:509
+#, no-c-format
+msgid "Credits and Licenses"
+msgstr "Bilgi ve Lisanslar"
+
+#. Tag: para
+#: index.docbook:512
+#, no-c-format
+msgid "&kbounce;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:516
+#, fuzzy, no-c-format
+#| msgid "Stefan Schimanski <email>schimmi@kde.org</email>"
+msgid "Stefan Schimanski <email>schimmi@kde.org</email> - Original Author"
+msgstr "Stefan Schimanski <email>schimmi@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:520
+#, no-c-format
+msgid "Sandro Sigala <email>ssigala@globalnet.it</email> - Highscore"
+msgstr "Sandro Sigala <email>ssigala@globalnet.it</email> - Rekor"
+
+#. Tag: para
+#: index.docbook:524
+#, no-c-format
+msgid "Benjamin Meyer <email>ben+kbounce@meyerhome.net</email> - Contributions"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:528
+#, no-c-format
+msgid "Dmitry Suzdalev <email>dimsuz@gmail.com</email>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:531
+#, no-c-format
+msgid ""
+"Tomasz Boczkowski <email>tboczkowski@onet.pl</email> - Port to KDE4 and "
+"KGameCavas"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:536
+#, fuzzy, no-c-format
+msgid "Documentation copyright 2002, &Aaron.J.Seigo; &Aaron.J.Seigo.mail;"
+msgstr ""
+"Dökümantasyon copyright 2002, Aaron J. Seigo <email>aseigo@olympusproject."
+"org</email>"
+
+#. Tag: para
+#: index.docbook:538
+#, no-c-format
+msgid ""
+"Documentation copyright 2007, Tomasz Boczkowski <email>tboczkowski@onet.pl</"
+"email>"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:541
+#, no-c-format
+msgid "This handbook is dedicated to Dennis E. Powell."
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:543
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "CREDIT_FOR_TRANSLATORS"
+
+#. Tag: chapter
+#: index.docbook:543
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr ""
+
+#. Tag: title
+#: index.docbook:552
+#, no-c-format
+msgid "Installation"
+msgstr "Kurulum"
+
+#, fuzzy
+#~| msgid "Start a new game."
+#~ msgid "How do I start a new game?"
+#~ msgstr "Yeni bir Oyun başlat"
+
+#, fuzzy
+#~| msgid ""
+#~| "<shortcut> <keycap>P</keycap></shortcut> <guimenu>Game</guimenu> "
+#~| "<guimenuitem>Pause</guimenuitem>"
+#~ msgid ""
+#~ "The start a new game please use the <menuchoice><guimenu>Game</"
+#~ "guimenu><guimenuitem>New</guimenuitem></menuchoice> option on the menubar."
+#~ msgstr ""
+#~ "<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+#~ "<guimenuitem>Duraksat</guimenuitem>"
+
+#, fuzzy
+#~| msgid ""
+#~| "<shortcut> <keycap>P</keycap></shortcut> <guimenu>Game</guimenu> "
+#~| "<guimenuitem>Pause</guimenuitem>"
+#~ msgid ""
+#~ "To pause &kbounce; use the <menuchoice><guimenu>Game</"
+#~ "guimenu><guimenuitem>Pause</guimenuitem></menuchoice> option on the "
+#~ "menubar."
+#~ msgstr ""
+#~ "<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+#~ "<guimenuitem>Duraksat</guimenuitem>"
+
+#, fuzzy
+#~| msgid "Show the high score table."
+#~ msgid "Where are the high scores?"
+#~ msgstr "Rekorlar Tablosunu göster"
+
+#, fuzzy
+#~| msgid ""
+#~| "<shortcut> <keycap>P</keycap></shortcut> <guimenu>Game</guimenu> "
+#~| "<guimenuitem>Pause</guimenuitem>"
+#~ msgid ""
+#~ "To change the game configuration you can use "
+#~ "<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &kbounce;..."
+#~ "</guimenuitem></menuchoice> option on the menubar."
+#~ msgstr ""
+#~ "<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+#~ "<guimenuitem>Duraksat</guimenuitem>"
+
+#, fuzzy
+#~| msgid "Start a new game."
+#~ msgid "How do I restart a &kbounce;?"
+#~ msgstr "Yeni bir Oyun başlat"
+
+#, fuzzy
+#~ msgid "&kbounce;, a ball game for &kde;."
+#~ msgstr "&kjezz; , bir &kde; oyunudur."
+
+#~ msgid "Strategy"
+#~ msgstr "Strateji"
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Select Background Folder...</"
+#~ "guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+#~ "<guimenuitem>Duraksat</guimenuitem>"
+
+#, fuzzy
+#~ msgid "Opens a dialog to select a folder for the background images."
+#~ msgstr "Arkaplan resmini seç."
+
+#, fuzzy
+#~ msgid ""
+#~ "<guimenu>Settings</guimenu> <guimenuitem>Show Backgrounds</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycap>D</keycap></shortcut> <guimenu>Oyun</guimenu> "
+#~ "<guimenuitem>Duraksat</guimenuitem>"
+
+#~ msgid "Copyright 2000, Stefan Schimanski"
+#~ msgstr "Copyright 2000, Stefan Schimanski"
+
+#~ msgid "Developers"
+#~ msgstr "Programcılar"
+
+#~ msgid "Enable the background image."
+#~ msgstr "Arkakaplan Resmini etkinleştir"
+
+#~ msgid "&kjezz;"
+#~ msgstr "&kjezz;"

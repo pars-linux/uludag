@@ -1,0 +1,82 @@
+<!--
+<?xml version="1.0" ?>
+<!DOCTYPE chapter PUBLIC "-//KDE//DTD DocBook XML V4.1.2-Based Variant V1.1//EN"
+ "dtd/kdex.dtd">
+-->
+
+<chapter id="panel">
+<title
+>Panel</title>
+
+<qandaset>
+<qandaentry>
+<question>
+<para
+>Panele (&kicker;) bir uygulamayı nasıl eklerim?</para>
+</question>
+<answer>
+<para
+>Bir uygulamayı panele eklemenin bir kaç yolu vardır:</para>
+<variablelist
+> <varlistentry
+><term
+>Panel yapılandırma menüsünü kullanarak</term
+> <listitem
+> <para
+>Herhalde en kolayı panel menüsünden<menuchoice
+><guimenu
+>Paneli Yapılandır</guimenu
+><guimenuitem
+>Ekle </guimenuitem
+><guimenuitem
+>Düğme</guimenuitem
+></menuchoice
+> seçeneğine tıklamaktır. Bu menü tüm kurulu &kde; uygulamalarını listeler. Bir düğmeyi menüye eklemek için uygulama üzerine tıklamak yeterlidir.</para
+> </listitem
+> </varlistentry
+> <varlistentry
+> <term
+>Dosya yöneticisini kullanarak</term
+> <listitem
+> <para
+>Dosya yöneticisi penceresindeki <filename
+>.desktop</filename
+> dosyasını panele sürükleyebilirsiniz.</para
+> </listitem
+> </varlistentry
+> </variablelist>
+</answer>
+</qandaentry>
+
+<!-- Since I don't know the anwser for this in KDE 2.2.1 I have to comment it out -->
+<!--
+<qandaentry>
+<question>
+<para
+>Is it possible to change the <guibutton
+>K</guibutton
+> button of
+the panel to another picture?</para>
+</question
+>/
+<answer>
+<para
+>Look for
+<filename
+>$<envar
+>HOME</envar
+>/.kde/share/apps/kicker/pics/go.png</filename
+> and
+<filename
+>$<envar
+>HOME</envar
+>/.kde/share/apps/kicker/pics/mini/go.png</filename>
+and replace them.  Do not forget to flatten the replacements to one
+layer, or else you will not see anything.  Create the directories if
+they do not already exist.  Then restart &kicker;.</para>
+</answer>
+</qandaentry>
+-->
+</qandaset>
+</chapter>
+
