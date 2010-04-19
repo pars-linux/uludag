@@ -11770,6 +11770,16 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Similarly, when searching for the previous unread message, the search will start from the bottom of the message list and continue to the previous folder depending on which option is selected.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Loop in all marked folders: </span>This is the same as \"Loop in all folders\" except that only folders are taken into account which have been marked with the folder property \"Act on new/unread mail in this folder\".</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sonraki okunmamış iletiye atlama sırasında, geçerli iletinin altında hiçbir okunmamış ileti kalmamış olabilir.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Döngüye girme:</span> Arama, geçerli klasördeki son iletide duracaktır.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Geçerli klasörde döngüye gir:</span> Arama, ileti listesinin başından devam edecek ve başka bir klasöre geçmeyecektir.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Tüm klasörlerde döngüye gir:</span> Arama, ileti listesinin başından devam edecektir. Okunmamış başka bir ileti bulunamazsa sonraki klasörde devam edecektir.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Benzer şekilde önceki okunmamış iletiler aranırken, ileti listesinin sonundan başlanacak ve seçilen yönteme bağlı olarak önceki klasörde devam edilecektir.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Tüm işaretli klasörlerde döngüye gir: </span>Sadece \"Bu klasöre yeni/okunmamış posta geldiğinde uyar\" özelliği işaretli olan klasörlerin dikkate alınması dışında \"Tüm klasörlerde döngüye gir\" seçeneği ile aynıdır.</p></body></html>"
 
 #. i18n: file: ui/miscpagemaintab.ui:68
 #. i18n: ectx: property (text), item, widget (KComboBox, mLoopOnGotoUnread)
