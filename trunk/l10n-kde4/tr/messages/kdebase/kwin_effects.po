@@ -2,7 +2,7 @@
 # translation of kwin_effects.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
@@ -16,16 +16,14 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: desktopgrid/desktopgrid.cpp:66 desktopgrid/desktopgrid_config.cpp:57
 msgid "Show Desktop Grid"
 msgstr "Masaüstü Kılavuzunu Göster"
 
 #: desktopgrid/desktopgrid_config.cpp:64
-#, fuzzy
-#| msgid "Disabled"
 msgctxt "Desktop name alignment:"
 msgid "Disabled"
 msgstr "Pasif"
@@ -171,8 +169,7 @@ msgstr "Çevirme Geçişini Aç/Kapat (Tüm Masaüstleri)"
 
 #: trackmouse/trackmouse_config.cpp:42
 msgid "Hold Ctrl+Meta keys to see where the mouse cursor is."
-msgstr ""
-"Fare işaretçisinin nerede olduğunu görmek için Ctrl+Meta tuşlarına basın."
+msgstr "Fare işaretçisinin nerede olduğunu görmek için Ctrl+Meta tuşlarına basın."
 
 #: _test/videorecord.cpp:69 _test/videorecord_config.cpp:64
 msgid "Toggle Video Recording"
@@ -229,7 +226,8 @@ msgid "Zoom &duration:"
 msgstr "&Büyütme süresi:"
 
 #. i18n: file: desktopgrid/desktopgrid_config.ui:42
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, zoomDurationSpin)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox,
+#. zoomDurationSpin)
 #: rc.cpp:9
 msgctxt "Duration of zoom"
 msgid "Default"
@@ -340,13 +338,16 @@ msgid "Animation duration:"
 msgstr "Canlandırma süresi:"
 
 #. i18n: file: magiclamp/magiclamp_config.ui:35
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, animationDurationSpin)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox,
+#. animationDurationSpin)
 #. i18n: file: coverswitch/coverswitch_config.ui:158
 #. i18n: ectx: property (specialValueText), widget (KIntSpinBox, spinDuration)
 #. i18n: file: cube/cube_config.ui:145
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, rotationDurationSpin)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox,
+#. rotationDurationSpin)
 #. i18n: file: cube/cubeslide_config.ui:49
-#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, rotationDurationSpin)
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox,
+#. rotationDurationSpin)
 #: rc.cpp:63 rc.cpp:267 rc.cpp:587 rc.cpp:667
 msgctxt "Duration of rotation"
 msgid "Default"
@@ -391,89 +392,119 @@ msgid "Left button:"
 msgstr "Sol düğme:"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:136
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:185
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:234
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:295
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:329
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:363
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonDesktopCombo)
 #: rc.cpp:87 rc.cpp:111 rc.cpp:135 rc.cpp:162 rc.cpp:177 rc.cpp:192
 msgid "No action"
 msgstr "Eylem yok"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:141
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:190
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:239
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:300
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:334
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:368
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonDesktopCombo)
 #: rc.cpp:90 rc.cpp:114 rc.cpp:138 rc.cpp:165 rc.cpp:180 rc.cpp:195
 msgid "Activate window"
 msgstr "Pencereyi etkinleştir"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:146
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:195
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:244
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:305
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:339
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:373
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonDesktopCombo)
 #: rc.cpp:93 rc.cpp:117 rc.cpp:141 rc.cpp:168 rc.cpp:183 rc.cpp:198
 msgid "End effect"
 msgstr "Bitme efekti"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:151
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:200
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:249
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #: rc.cpp:96 rc.cpp:120 rc.cpp:144
 msgid "Bring window to current desktop"
 msgstr "Pencereyi geçerli masaüstüne getir"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:156
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:205
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:254
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #: rc.cpp:99 rc.cpp:123 rc.cpp:147
 msgid "Send window to all desktops"
 msgstr "Pencereyi tüm masaüstlerine gönder"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:161
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:210
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:259
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #: rc.cpp:102 rc.cpp:126 rc.cpp:150
 msgid "(Un-)Minimize window"
 msgstr "Pencereyi küçült(me)"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:166
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:215
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonWindowCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:264
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonWindowCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonWindowCombo)
 #: rc.cpp:105 rc.cpp:129 rc.cpp:153
 msgid "Close window"
 msgstr "Pencereyi kapat"
@@ -497,18 +528,19 @@ msgstr "Sağ düğme:"
 #. i18n: file: presentwindows/presentwindows_config.ui:275
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
 #: rc.cpp:156
-#, fuzzy
-#| msgid "Desktop"
 msgctxt "@title:group actions when clicking on desktop"
 msgid "Desktop"
 msgstr "Masaüstü"
 
 #. i18n: file: presentwindows/presentwindows_config.ui:310
-#. i18n: ectx: property (text), item, widget (QComboBox, leftButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. leftButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:344
-#. i18n: ectx: property (text), item, widget (QComboBox, middleButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. middleButtonDesktopCombo)
 #. i18n: file: presentwindows/presentwindows_config.ui:378
-#. i18n: ectx: property (text), item, widget (QComboBox, rightButtonDesktopCombo)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. rightButtonDesktopCombo)
 #: rc.cpp:171 rc.cpp:186 rc.cpp:201
 msgid "Show desktop"
 msgstr "Masaüstünü göster"
@@ -646,8 +678,7 @@ msgstr "Ek küçük resim çubuğu kullan"
 #. i18n: file: coverswitch/coverswitch_config.ui:187
 #. i18n: ectx: property (toolTip), widget (QCheckBox, checkDynamicThumbnails)
 #: rc.cpp:276
-msgid ""
-"Only show thumbnail bar if there are at least specified number of windows"
+msgid "Only show thumbnail bar if there are at least specified number of windows"
 msgstr "Eğer belirli bir sayıda pencere kaldıysa küçük resim çubuğunu göster"
 
 #. i18n: file: coverswitch/coverswitch_config.ui:190
@@ -959,7 +990,8 @@ msgid "Draw with the mouse by holding Shift+Meta keys and moving the mouse."
 msgstr "Shift+Meta tuşlarına basarak ve fareyi hareket ettirerek çiz."
 
 #. i18n: file: translucency/translucency_config.ui:13
-#. i18n: ectx: property (windowTitle), widget (QWidget, KWin::TranslucencyEffectConfigForm)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. KWin::TranslucencyEffectConfigForm)
 #: rc.cpp:449
 msgid "Translucency"
 msgstr "Şeffaflık"
@@ -1129,10 +1161,8 @@ msgstr "Gruplandırırken kaydır"
 #. i18n: file: _test/slidetabs/slidetabs_config.ui:24
 #. i18n: ectx: property (text), widget (QCheckBox, switching)
 #: rc.cpp:554
-#, fuzzy
-#| msgid "slide when switching tabs"
 msgid "Slide when switching tabs"
-msgstr "sekmeler arasında geçiş yaparken kaydır"
+msgstr "Sekmeler arasında geçiş yaparken kaydır"
 
 #. i18n: file: cube/cube_config.ui:20
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
@@ -1242,12 +1272,10 @@ msgstr "Ek Seçenekler"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, closeOnMouseReleaseBox)
 #: rc.cpp:639
 msgid ""
-"If enabled the effect will be deactivated after rotating the cube with the "
-"mouse,\n"
+"If enabled the effect will be deactivated after rotating the cube with the mouse,\n"
 "otherwise it will remain active"
 msgstr ""
-"Etkinleştirilirse, küpü fare ile döndürdüğünüzde bu efekt pasifleştirilir "
-"etkinleştirilmezse,\n"
+"Etkinleştirilirse, küpü fare ile döndürdüğünüzde bu efekt pasifleştirilir etkinleştirilmezse,\n"
 "efekt etkin olarak kalır"
 
 #. i18n: file: cube/cube_config.ui:414
@@ -1348,37 +1376,29 @@ msgstr "Canlandırmalar için sayfalayıcı düzenini kullan"
 #~ msgstr "Dekorasyons&uz normal pencereler"
 
 #~ msgid ""
-#~ "If enabled span the cube across all screens on a multiscreen setup, "
-#~ "otherwise\n"
+#~ "If enabled span the cube across all screens on a multiscreen setup, otherwise\n"
 #~ "the cube will only be displayed on a single screen"
 #~ msgstr ""
-#~ "Etkinleştirilirse, çoklu ekran kullanımında küp tüm ekranları kapsar, "
-#~ "etkinleştirilmezse\n"
+#~ "Etkinleştirilirse, çoklu ekran kullanımında küp tüm ekranları kapsar, etkinleştirilmezse\n"
 #~ "küp sadece bir ekranda gösterilir"
 
 #~ msgid "Span cube on all screens in multi screen setup"
 #~ msgstr "Çoklu ekran kullanımında küp tüm ekranları içersin"
 
 #~ msgid ""
-#~ "If enabled the effect will be deactivated after rotating the cylinder "
-#~ "with the mouse,\n"
+#~ "If enabled the effect will be deactivated after rotating the cylinder with the mouse,\n"
 #~ "otherwise it will remain active."
 #~ msgstr ""
-#~ "Etkinleştirilirse, silindiri fare ile döndürdüğünüzde bu efekt "
-#~ "pasifleştirilir etkinleştirilmezse,\n"
+#~ "Etkinleştirilirse, silindiri fare ile döndürdüğünüzde bu efekt pasifleştirilir etkinleştirilmezse,\n"
 #~ "efekt etkin olarak kalır"
 
 #~ msgid ""
-#~ "If enabled the effect will be deactivated after rotating the sphere with "
-#~ "the mouse,\n"
+#~ "If enabled the effect will be deactivated after rotating the sphere with the mouse,\n"
 #~ "otherwise it will remain active"
 #~ msgstr ""
-#~ "Etkinleştirilirse, küreyi fare ile döndürdüğünüzde bu efekt "
-#~ "pasifleştirilir etkinleştirilmezse,\n"
+#~ "Etkinleştirilirse, küreyi fare ile döndürdüğünüzde bu efekt pasifleştirilir etkinleştirilmezse,\n"
 #~ "efekt etkin olarak kalır"
 
-#, fuzzy
-#~| msgid "Display the cube when switching desktops"
 #~ msgid "Fix panels while switching desktops"
 #~ msgstr "Masaüstleri seçilirken küpü göster"
 
@@ -1431,9 +1451,7 @@ msgstr "Canlandırmalar için sayfalayıcı düzenini kullan"
 #~ msgstr "Küp &Kapakları"
 
 #~ msgid "Activate when cursor is at a specific edge or corner of the screen:"
-#~ msgstr ""
-#~ "Fare işaretçisi belirli bir gölgeye ya da ekranın belirli bir köşesine "
-#~ "geldiğinde etkinleştir:"
+#~ msgstr "Fare işaretçisi belirli bir gölgeye ya da ekranın belirli bir köşesine geldiğinde etkinleştir:"
 
 #~ msgid "Toggle Expose Effect"
 #~ msgstr "Sergileme Efektini Aç / Kapat"
