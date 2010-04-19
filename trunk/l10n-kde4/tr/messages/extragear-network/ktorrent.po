@@ -8,18 +8,19 @@
 # serdar soytetir <tulliana@gmail.com>, 2007.
 # Akın Ömeroğlu <akin@omeroglu.net>, 2007.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:30+0100\n"
-"PO-Revision-Date: 2009-11-16 01:37+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-19 21:26+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: plugins/scanfolder/scanfolderplugin.cpp:62
@@ -398,7 +399,7 @@ msgstr "Web Arayüzü"
 
 #: plugins/webinterface/torrentposthandler.cpp:52
 msgid "HTTP Get not supported when uploading a torrent"
-msgstr ""
+msgstr "Torrent gönderilirken HTTP Get desteklenmiyor"
 
 #: plugins/webinterface/torrentposthandler.cpp:65
 msgid "Invalid data received"
@@ -738,6 +739,9 @@ msgid ""
 "Whether or not the peer has choked us - when we are choked the peer will not "
 "send us any data"
 msgstr ""
+"Diğer ucun bağlantıyı kesip kesmediği - bağlantı kesilirse uç tarafından "
+"veri "
+"aktarımı durur"
 
 #: plugins/infowidget/peerviewmodel.cpp:333
 msgid "Snubbed means the peer has not sent us any data in the last 2 minutes"
@@ -1348,6 +1352,8 @@ msgid ""
 "Failed to load script from archive. There is something wrong with the "
 "desktop file."
 msgstr ""
+"Arşivden betik yüklenirken hata oluştu. Desktop dosyasında bir sorun "
+"var."
 
 #: plugins/scripting/scriptmodel.cpp:154
 msgid "No script found in archive."
@@ -1400,11 +1406,11 @@ msgstr "Çıktıyı Askıya Al"
 
 #: plugins/logviewer/logviewer.cpp:131
 msgid "<font color=\"#FF0000\">Logging output suspended</font>"
-msgstr ""
+msgstr "<font color=\"#FF0000\">Çıktının kaydedilmesi duraklatıldı</font>"
 
 #: plugins/logviewer/logviewer.cpp:133
 msgid "<font color=\"#00FF00\">Logging output resumed</font>"
-msgstr ""
+msgstr "<font color=\"#00FF00\">Çıktı kaydedilmesine devam ediliyor</font>"
 
 #: plugins/logviewer/logprefpage.cpp:30
 msgid "Log Viewer"
@@ -1725,7 +1731,7 @@ msgstr "Tüm torrentlerin indirilmesi tamamlandığında"
 
 #: plugins/shutdown/shutdowndlg.cpp:45
 msgid "When all torrents finish seeding"
-msgstr ""
+msgstr "Tüm torrent bağlantıları yayınlamayı bitirince"
 
 #: plugins/shutdown/shutdowndlg.cpp:46
 msgid "When the events below happen"
@@ -1961,7 +1967,7 @@ msgstr "Bir konum olmadan yeniden yönlendir"
 #: libbtcore/tracker/httptracker.cpp:559
 #, kde-format
 msgid "Timeout contacting tracker %1"
-msgstr ""
+msgstr "İzleyici %1 bağlantısında zaman aşımı"
 
 #: libbtcore/tracker/udptracker.cpp:331
 #, kde-format
@@ -4593,7 +4599,7 @@ msgstr "Tazeleme sıklığı:"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, m_refresh_rate)
 #: rc.cpp:217
 msgid "Time between automatic refreshes of the feed."
-msgstr ""
+msgstr "Besleme otomatik güncellemeleri arası zaman."
 
 #. i18n: file: plugins/syndication/feedwidget.ui:91
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_refresh_rate)
@@ -4929,13 +4935,13 @@ msgstr "Grafikleri şu sıklıkla güncelle"
 #. i18n: ectx: label, entry (DataGatherIval), group (general)
 #: rc.cpp:337
 msgid "Interval in miliseconds between data gathering"
-msgstr ""
+msgstr "Veri toplamaları arası süre, milisaniye olarak"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:20
 #. i18n: ectx: label, entry (MaxMode), group (general)
 #: rc.cpp:340
 msgid "Method of determining maximum value of the scale"
-msgstr ""
+msgstr "Ölçeğin en yüksek değerinin belirlenmesi yöntemi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:25
 #. i18n: ectx: label, entry (ShowSeedsInSwarms), group (general)
@@ -4953,31 +4959,31 @@ msgstr "Sömürgenlerin kümeli gösterilip gösterilmeyeceği"
 #. i18n: ectx: label, entry (DlSpdSamples), group (general)
 #: rc.cpp:349
 msgid "Samples to show on download chart"
-msgstr ""
+msgstr "İndirme grafiğinde gösterilecek örnekler"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:40
 #. i18n: ectx: label, entry (PeersSpdSamples), group (general)
 #: rc.cpp:352
 msgid "Samples to show on peers chart"
-msgstr ""
+msgstr "Uç grafiğinde gösterilecek örnekler"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:45
 #. i18n: ectx: label, entry (UlSpdSamples), group (general)
 #: rc.cpp:355
 msgid "Samples to show on upload chart"
-msgstr ""
+msgstr "Gönderme grafiğinde gösterilecek örnekler"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:50
 #. i18n: ectx: label, entry (ConnsSamples), group (general)
 #: rc.cpp:358
 msgid "Samples to show on connections chart"
-msgstr ""
+msgstr "bağlantı grafiğinde gösterilecek örnekler"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:55
 #. i18n: ectx: label, entry (DhtSpdSamples), group (general)
 #: rc.cpp:361
 msgid "Samples to show on DHT chart"
-msgstr ""
+msgstr "DHT grafiğinde gösterilecek örnekler"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:60
 #. i18n: ectx: label, entry (DlSpdColor), group (general)
@@ -4989,43 +4995,43 @@ msgstr "İndirme grafiğindeki hızın rengi."
 #. i18n: ectx: label, entry (DlAvgColor), group (general)
 #: rc.cpp:367
 msgid "Color of the average on dl chart"
-msgstr ""
+msgstr "İndirme grafiği ortalama değerinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:70
 #. i18n: ectx: label, entry (DlLimitColor), group (general)
 #: rc.cpp:370
 msgid "Color of the limit on dl chart"
-msgstr ""
+msgstr "İndirme grafiği limit değerinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:75
 #. i18n: ectx: label, entry (PrAvgFromLColor), group (general)
 #: rc.cpp:373
 msgid "Color of the avg from leecher on peers chart"
-msgstr ""
+msgstr "Uçlar grafiğinde sömürgenlerden ortalama değerinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:80
 #. i18n: ectx: label, entry (PrAvgToLColor), group (general)
 #: rc.cpp:376
 msgid "Color of the avg to leecher on peers chart"
-msgstr ""
+msgstr "Uçlar grafiğinde ortalamadan sömürgenlere değerinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:85
 #. i18n: ectx: label, entry (PrAvgFromSColor), group (general)
 #: rc.cpp:379
 msgid "Color of the avg from seeds on peers chart"
-msgstr ""
+msgstr "Uçlar grafiğinde dağıtıcılardan ortalama değerine renk"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:90
 #. i18n: ectx: label, entry (PrFromLColor), group (general)
 #: rc.cpp:382
 msgid "Color of the leechers on peers chart"
-msgstr ""
+msgstr "Uçlar grafiğinde sömürgenler değerinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:95
 #. i18n: ectx: label, entry (PrFromSColor), group (general)
 #: rc.cpp:385
 msgid "Color of the seeds on peers chart"
-msgstr ""
+msgstr "Uçlar grafiğinde dağıtıcıların rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:100
 #. i18n: ectx: label, entry (UlSpdColor), group (general)
@@ -5037,49 +5043,51 @@ msgstr "Gönderme grafiğindeki hızın rengi."
 #. i18n: ectx: label, entry (UlAvgColor), group (general)
 #: rc.cpp:391
 msgid "Color of the avg on upload chart"
-msgstr ""
+msgstr "Gönderme grafiğinde ortalama değerin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:110
 #. i18n: ectx: label, entry (UlLimitColor), group (general)
 #: rc.cpp:394
 msgid "Color of the limit on upload chart"
-msgstr ""
+msgstr "Gönderme grafiğinde limit değerin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:115
 #. i18n: ectx: label, entry (CnLConnColor), group (general)
 #: rc.cpp:397
 msgid "Color of the connected leechers on connections chart"
-msgstr ""
+msgstr "Bağlantılar grafiğinde bağlı sömürgenlerin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:120
 #. i18n: ectx: label, entry (CnLSwarmsColor), group (general)
 #: rc.cpp:400
 msgid "Color of the leechers in swarms on connections chart"
-msgstr ""
+msgstr "Bağlantılar grafiğinde sömürgenler kümesinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:125
 #. i18n: ectx: label, entry (CnSConnColor), group (general)
 #: rc.cpp:403
 msgid "Color of the connected seeds on connections chart"
-msgstr ""
+msgstr "Bağlantılar grafiğinde bağlı dağıtıcıların rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:130
 #. i18n: ectx: label, entry (CnSSwarmsColor), group (general)
 #: rc.cpp:406
 msgid "Color of the seeds in swarms on connections chart"
-msgstr ""
+msgstr "Bağlantılar grafiğinde dağıtıcılar kümesinin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:135
 #. i18n: ectx: label, entry (CnAvgLConnPerTorrColor), group (general)
 #: rc.cpp:409
 msgid "Color of the avg connected leecher per torrent on connections chart"
 msgstr ""
+"Bağlantılar grafiğinde torrent başına ortalama bağlanılmış sömürgen rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:140
 #. i18n: ectx: label, entry (CnAvgSConnPerTorrColor), group (general)
 #: rc.cpp:412
 msgid "Color of the avg connected seeds per torrent on connections chart"
 msgstr ""
+"Bağlantılar grafiğinde torrent başına ortalama bağlanılmış dağıtıcı rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:145
 #. i18n: ectx: label, entry (CnAvgLConnPerRunTorrColor), group (general)
@@ -5087,6 +5095,8 @@ msgstr ""
 msgid ""
 "Color of the avg connected leechers per running torrent on connections chart"
 msgstr ""
+"Bağlantılar grafiğinde çalışan torrent başına ortalama bağlanılmış sömürgen "
+"rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:150
 #. i18n: ectx: label, entry (CnAvgSConnPerRunTorrColor), group (general)
@@ -5094,6 +5104,8 @@ msgstr ""
 msgid ""
 "Color of the avg connected seeds per running torrent on connections chart"
 msgstr ""
+"Bağlantılar grafiğinde çalışan torrent başına ortalama bağlanılmış dağıtıcı "
+"rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:155
 #. i18n: ectx: label, entry (DhtNodesColor), group (general)
@@ -5105,7 +5117,7 @@ msgstr "DHT grafiklerindeki düğümlerin rengi"
 #. i18n: ectx: label, entry (DhtTasksColor), group (general)
 #: rc.cpp:424
 msgid "Color of the tasks on DHT chart"
-msgstr ""
+msgstr "DHT grafiğinde süreçlerin rengi"
 
 #. i18n: file: plugins/stats/ktstatsplugin.kcfg:165
 #. i18n: ectx: label, entry (AntiAliasing), group (general)
@@ -5755,7 +5767,7 @@ msgstr "Bir torrentin indirilmesi tamamlandığı zaman"
 #. i18n: ectx: property (text), widget (QCheckBox, finish_seeding)
 #: rc.cpp:822
 msgid "The torrent finishes seeding"
-msgstr ""
+msgstr "Bir torrentin dağıtılması tamamlandığı zaman"
 
 #. i18n: file: plugins/scripting/scripts/auto_resume/auto_resume.ui:19
 #. i18n: ectx: property (text), widget (QCheckBox, auto_resume)
@@ -5903,13 +5915,13 @@ msgstr "Günlük kaydı gerecinin konumu:"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_logWidgetPosition)
 #: rc.cpp:891
 msgid "Separate activity"
-msgstr ""
+msgstr "Etkinliği böl"
 
 #. i18n: file: plugins/logviewer/logprefwidget.ui:76
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_logWidgetPosition)
 #: rc.cpp:894
 msgid "Dockable widget"
-msgstr ""
+msgstr "Eklenilebilir arayüz bileşeni"
 
 #. i18n: file: plugins/logviewer/logprefwidget.ui:81
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_logWidgetPosition)
@@ -6115,12 +6127,14 @@ msgid ""
 "Use these global limits when the screensaver is activated, instead of the "
 "ones configured in the network settings."
 msgstr ""
+"Ekran koruyucu devreye girdiğinde, ağ ayarlarında yapılan ayarlar yerine bu "
+"ayarları kullan."
 
 #. i18n: file: plugins/bwscheduler/bwprefpage.ui:25
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_screensaverLimits)
 #: rc.cpp:999
 msgid "Use different speed limits when the screensaver is activated"
-msgstr ""
+msgstr "Ekran koruyucu devreye girdiğinde farklı hız limitleri kullan"
 
 #. i18n: file: plugins/bwscheduler/bwprefpage.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -6146,7 +6160,7 @@ msgstr "En yüksek gönderme hızı:"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_screensaverUploadLimit)
 #: rc.cpp:1005
 msgid "Global upload limit when the screensaver is activated."
-msgstr ""
+msgstr "Ekran koruyucu devrede iken genel gönderme limiti"
 
 #. i18n: file: plugins/bwscheduler/bwprefpage.ui:65
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -6172,7 +6186,7 @@ msgstr "En fazla indirme hızı:"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_screensaverDownloadLimit)
 #: rc.cpp:1017
 msgid "Global download limit when the screensaver is activated."
-msgstr ""
+msgstr "Ekran koruyucu devrede iken genel indirme limiti."
 
 #. i18n: file: plugins/bwscheduler/bwprefpage.ui:120
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -7745,12 +7759,18 @@ msgid ""
 "It can be disabled if you do not like the additional network traffic it "
 "generates"
 msgstr ""
+"Bütün uçların alan adlarını bul. Bu seçenek seçildiğinde ucun IP adresi "
+"yerine "
+"alan adı gösterilir. \n"
+"\n"
+"Sebep olacağı fazla ağ trafiğini istemezseniz bu seçeneği "
+"kapatabilirsiniz"
 
 #. i18n: file: ktorrent/advancedpref.ui:288
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_lookUpHostnameOfPeers)
 #: rc.cpp:1727
 msgid "Resolve hostnames of peers"
-msgstr ""
+msgstr "Uçların alan adlarını bul"
 
 #. i18n: file: ktorrent/missingfilesdlg.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, MissingFilesDlg)
@@ -9604,6 +9624,9 @@ msgid ""
 "When there is no space left to complete download, and the available disk "
 "space is less than this value, the torrent will be stopped."
 msgstr ""
+"Bağlantıyı tamamlayacak disk alanı kalmadığında, ve uygun disk alanı bu "
+"değerden "
+"az olduğunda, torrent durdurulacak."
 
 #. i18n: file: libktcore/ktorrent.kcfg:256
 #. i18n: ectx: label, entry (useCompletedDir), group (downloads)
