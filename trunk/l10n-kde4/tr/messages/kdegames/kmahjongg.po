@@ -2,7 +2,7 @@
 # translation of kmahjongg.po to
 # translation of kmahjongg.po to Turkish
 # Copyright (C) 2003, 2004 Free Software Foundation, Inc.
-#
+# 
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
 # Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: boardwidget.cpp:411
 msgid "Undo operation done successfully."
@@ -39,7 +39,7 @@ msgstr "Demo modu. Durmak için tıkla."
 
 #: boardwidget.cpp:488
 msgid "Now it is you again."
-msgstr ""
+msgstr "Şimdi sıra tekrar sizin."
 
 #: boardwidget.cpp:511
 msgid "Your computer has lost the game."
@@ -226,7 +226,7 @@ msgstr "Oyun numarası: %1"
 #: kmahjongg.cpp:415
 #, kde-format
 msgid "Removed: %1/%2  Combinations left: %3"
-msgstr ""
+msgstr "Kaldırılan: %1/%2 Kalan kombinasyonlar: %3"
 
 #: kmahjongg.cpp:481
 msgid "Load Game"
@@ -298,7 +298,7 @@ msgstr "David Black"
 
 #: main.cpp:39
 msgid "KDE 3 rewrite and Extension"
-msgstr ""
+msgstr "KDE 3 yeniden yazılımı ve Eklentisi"
 
 #: main.cpp:40
 msgid "Michael Haertjens"
@@ -318,7 +318,7 @@ msgstr "Raquel Ravanini"
 
 #: main.cpp:41
 msgid "SVG Tileset for KDE4"
-msgstr ""
+msgstr "KDE4 için SVG Döşeme Seti"
 
 #: main.cpp:42
 msgid "Richard Lohman"
@@ -326,7 +326,7 @@ msgstr "Richard Lohman"
 
 #: main.cpp:42
 msgid "Tile set contributor and current web page maintainer"
-msgstr ""
+msgstr "Döşeme seti katkıcısı ve güncel web sitesinin bakıcısı"
 
 #: main.cpp:43
 msgid "Osvaldo Stark"
@@ -334,7 +334,7 @@ msgstr "Osvaldo Stark"
 
 #: main.cpp:43
 msgid "Tile set contributor and original web page maintainer"
-msgstr ""
+msgstr "Döşeme seti katkıcısı ve orijinal web sitesinin bakıcısı"
 
 #: main.cpp:44
 msgid "Benjamin Meyer"
@@ -407,8 +407,9 @@ msgstr "Tüm oyunlar çözülebilir mi?"
 #. i18n: file: kmahjongg.kcfg:25
 #. i18n: ectx: label, entry (ShowMatchingTiles), group (General)
 #: rc.cpp:33
+#, fuzzy
 msgid "Whether matching tiles are shown."
-msgstr ""
+msgstr "Eşleşen döşemelerin gösterilip gösterilmediği."
 
 #. i18n: file: kmahjonggui.rc:10
 #. i18n: ectx: Menu (game)
@@ -438,7 +439,7 @@ msgstr "Ana Araç Çubuğu"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowMatchingTiles)
 #: rc.cpp:48
 msgid "Blink matching tiles when first one is selected"
-msgstr ""
+msgstr "İlki seçildiğinde eşleşen döşemeleri yanıp söndür"
 
 #. i18n: file: settings.ui:29
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SolvableGames)
@@ -456,22 +457,18 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "omer_fad@hotmail.com"
 
-#, fuzzy
 #~ msgid "&Board Editor"
 #~ msgstr "&Tahta Düzenleyici..."
 
-#, fuzzy
 #~ msgid "&Edit"
 #~ msgstr "Çık"
 
-#, fuzzy
 #~ msgid "Load..."
 #~ msgstr "Yükle"
 
 #~ msgid "Change Background Image"
 #~ msgstr "Arkaplan Resmini Değiştir"
 
-#, fuzzy
 #~ msgid "*.bgnd|Background Image (*.bgnd)\n"
 #~ msgstr ""
 #~ "*.bgnd|Arkaplan Resmi\n"
@@ -480,25 +477,21 @@ msgstr "omer_fad@hotmail.com"
 #~ msgid "Change Tile Set"
 #~ msgstr "Döşemeleri Değiştir"
 
-#, fuzzy
 #~ msgid "*.tileset|Tile Set File (*.tileset)\n"
 #~ msgstr "*.tileset|Döşeme Dosyası\n"
 
-#, fuzzy
 #~ msgid "*.layout|Board Layout File (*.layout)\n"
 #~ msgstr "*.layout|Tahta Düzeni Dosyası\n"
 
 #~ msgid "Change Board Layout"
 #~ msgstr "Tahta Düzenini Değiştir"
 
-#, fuzzy
 #~ msgid "*.theme|KMahjongg Theme File (*.theme)\n"
 #~ msgstr "*.theme|Kmahjongg Dekoru\n"
 
 #~ msgid "Choose Theme"
 #~ msgstr "Dekor Seç"
 
-#, fuzzy
 #~ msgid "*|All Files"
 #~ msgstr "*|Tüm Dosyalar\n"
 
@@ -511,7 +504,6 @@ msgstr "omer_fad@hotmail.com"
 #~ msgid "Could not write to file. Aborting."
 #~ msgstr "Dosyaya kaydedilemedi. Çıkılıyor."
 
-#, fuzzy
 #~ msgid ""
 #~ "An error occurred when loading the board layout %1\n"
 #~ "KMahjongg will continue with the default layout."
@@ -564,12 +556,8 @@ msgstr "omer_fad@hotmail.com"
 #~ msgid "Anonymous"
 #~ msgstr "Anonim"
 
-#~ msgid ""
-#~ "Resetting the high scores will remove all high score entries both in "
-#~ "memory and on disk. Do you wish to proceed?"
-#~ msgstr ""
-#~ "Tüm Skorların silinmesi halinde hem disk, hem de bellekteki tümyüksek "
-#~ "puan bilgileri silinecektir. Devam etmek istiyor musunuz?"
+#~ msgid "Resetting the high scores will remove all high score entries both in memory and on disk. Do you wish to proceed?"
+#~ msgstr "Tüm Skorların silinmesi halinde hem disk, hem de bellekteki tümyüksek puan bilgileri silinecektir. Devam etmek istiyor musunuz?"
 
 #~ msgid "Reset High Scores"
 #~ msgstr "Puan Listesini Sıfırla"
