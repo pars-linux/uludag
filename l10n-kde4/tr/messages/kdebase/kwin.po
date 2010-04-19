@@ -28,12 +28,8 @@ msgstr "Pencere '%1' dikkat istiyor."
 
 #: composite.cpp:300
 #, kde-format
-msgid ""
-"Compositing has been suspended by another application.<br/>You can resume "
-"using the '%1' shortcut."
-msgstr ""
-"Birleşiklik başka bir uygulama tarafından beklemeye alındı.<br/>'%1' "
-"kısayolunu kullanarak tekrar etkinleştirebilirsiniz."
+msgid "Compositing has been suspended by another application.<br/>You can resume using the '%1' shortcut."
+msgstr "Birleşiklik başka bir uygulama tarafından beklemeye alındı.<br/>'%1' kısayolunu kullanarak tekrar etkinleştirebilirsiniz."
 
 #: composite.cpp:554
 msgid ""
@@ -41,22 +37,18 @@ msgid ""
 "You can disable functionality checks in advanced compositing settings."
 msgstr ""
 "Birleşiklik çok yavaş olduğundan askıya alındı.\n"
-"Gelişmiş birleşiklik ayarlarından işlevsellik denetimlerini "
-"pasifleştirebilirsiniz."
+"Gelişmiş birleşiklik ayarlarından işlevsellik denetimlerini pasifleştirebilirsiniz."
 
 #: composite.cpp:557
 #, kde-format
 msgid ""
 "Compositing was too slow and has been suspended.\n"
-"If this was only a temporary problem, you can resume using the '%1' "
-"shortcut.\n"
+"If this was only a temporary problem, you can resume using the '%1' shortcut.\n"
 "You can also disable functionality checks in advanced compositing settings."
 msgstr ""
 "Birleşiklik çok yavaş olduğundan askıya alındı.\n"
-"Eğer bu geçici bir sorun ise '%1' kısayonunu birleşikliği (compositing) "
-"kullanarak yeniden başlatabilirsiniz.\n"
-"Ayrıca gelişmiş birleşiklik ayarlarından işlevsellik denetimlerini "
-"pasifleştirebilirsiniz."
+"Eğer bu geçici bir sorun ise '%1' kısayonunu birleşikliği (compositing) kullanarak yeniden başlatabilirsiniz.\n"
+"Ayrıca gelişmiş birleşiklik ayarlarından işlevsellik denetimlerini pasifleştirebilirsiniz."
 
 #: compositingprefs.cpp:87
 msgid "Required X extensions (XComposite and XDamage) are not available."
@@ -67,11 +59,8 @@ msgid "GLX/OpenGL are not available and only OpenGL support is compiled."
 msgstr "GLX/OpenGL kullanılabilir değil, sadece OpenGL desteği derlenmiş."
 
 #: compositingprefs.cpp:94
-msgid ""
-"XRender/XFixes extensions are not available and only XRender support is "
-"compiled."
-msgstr ""
-"XRender/XFixes eklentileri bulunamadı, sadece XRender desteği derlenmiş."
+msgid "XRender/XFixes extensions are not available and only XRender support is compiled."
+msgstr "XRender/XFixes eklentileri bulunamadı, sadece XRender desteği derlenmiş."
 
 #: compositingprefs.cpp:100
 msgid "GLX/OpenGL and XRender/XFixes are not available."
@@ -102,16 +91,12 @@ msgid "Walk Through Windows (Reverse)"
 msgstr "Pencereler Arasında Geriye Git"
 
 #: kwinbindings.cpp:57
-#, fuzzy
-#| msgid "Walk Through Windows"
 msgid "Walk Through Window Tabs"
-msgstr "Pencereler Arasında Gezin"
+msgstr "Pencere Sekmeleri Arasında Gezin"
 
 #: kwinbindings.cpp:58
-#, fuzzy
-#| msgid "Walk Through Windows (Reverse)"
 msgid "Walk Through Window Tabs (Reverse)"
-msgstr "Pencereler Arasında Geriye Git"
+msgstr "Pencere Sekmeleri Arasında Geriye Git"
 
 #: kwinbindings.cpp:59
 msgid "Remove Window From Group"
@@ -598,9 +583,7 @@ msgid "Suspend Compositing"
 msgstr "Birleşikliği Askıya Al"
 
 #: main.cpp:178
-msgid ""
-"kwin: it looks like there's already a window manager running. kwin not "
-"started.\n"
+msgid "kwin: it looks like there's already a window manager running. kwin not started.\n"
 msgstr "kwin: çalışan bir masaüstü yöneticisi bulunmakta. kwin başlatılmadı.\n"
 
 #: main.cpp:207
@@ -614,12 +597,8 @@ msgstr ""
 "Çalıştırmak için başka bir pencere yöneticisi seçebilirsiniz:"
 
 #: main.cpp:267
-msgid ""
-"kwin: unable to claim manager selection, another wm running? (try using --"
-"replace)\n"
-msgstr ""
-"kwin: yönetici seçimi yapılamıyor, başka bir py(wm) çalışıyor olabilir? (--"
-"replace komutunu deneyin)\n"
+msgid "kwin: unable to claim manager selection, another wm running? (try using --replace)\n"
+msgstr "kwin: yönetici seçimi yapılamıyor, başka bir py(wm) çalışıyor olabilir? (--replace komutunu deneyin)\n"
 
 #: main.cpp:399
 msgid "KDE window manager"
@@ -760,10 +739,8 @@ msgid "&Close"
 msgstr "&Kapat"
 
 #: useractions.cpp:308
-#, fuzzy
-#| msgid "Switch to Window Above"
 msgid "Switch to window tab"
-msgstr "Yukarıdaki Masaüstüne Geç"
+msgstr "Pencere sekmesine git"
 
 #: useractions.cpp:349
 msgid "To the left"
@@ -799,28 +776,19 @@ msgstr "Masaüstü %1"
 #, kde-format
 msgid ""
 "You have selected to show a window without its border.\n"
-"Without the border, you will not be able to enable the border again using "
-"the mouse: use the window operations menu instead, activated using the %1 "
-"keyboard shortcut."
+"Without the border, you will not be able to enable the border again using the mouse: use the window operations menu instead, activated using the %1 keyboard shortcut."
 msgstr ""
 "Bir pencereyi kenarlıkları olmadan göstermeyi seçtiniz.\n"
-"Kenarlıklar olmadığında fare kullanarak kenarlıkları etkinleştiremezsiniz: "
-"Bunun yerine pencere eylemleri menüsünü kullanın, %1 kısayolunu kullanarak "
-"pencere eylemleri menüsünü etkinleştirin."
+"Kenarlıklar olmadığında fare kullanarak kenarlıkları etkinleştiremezsiniz: Bunun yerine pencere eylemleri menüsünü kullanın, %1 kısayolunu kullanarak pencere eylemleri menüsünü etkinleştirin."
 
 #: workspace.cpp:2604
 #, kde-format
 msgid ""
 "You have selected to show a window in fullscreen mode.\n"
-"If the application itself does not have an option to turn the fullscreen "
-"mode off you will not be able to disable it again using the mouse: use the "
-"window operations menu instead, activated using the %1 keyboard shortcut."
+"If the application itself does not have an option to turn the fullscreen mode off you will not be able to disable it again using the mouse: use the window operations menu instead, activated using the %1 keyboard shortcut."
 msgstr ""
 "Bir pencereyi tam ekran göstermeyi seçtiniz.\n"
-"Eğer uygulamanın kendi içerisinde tam ekran kipinden çıkmak için bir seçenek "
-"yoksa fareyi kullanarak tam ekran kipinden çıkamazsınız: Bunun yerine "
-"pencere eylemleri menüsünü kullanın, %1 kısayolunu kullanarak pencere "
-"eylemleri menüsünü etkinleştirin."
+"Eğer uygulamanın kendi içerisinde tam ekran kipinden çıkmak için bir seçenek yoksa fareyi kullanarak tam ekran kipinden çıkamazsınız: Bunun yerine pencere eylemleri menüsünü kullanın, %1 kısayolunu kullanarak pencere eylemleri menüsünü etkinleştirin."
 
 #: killer/killer.cpp:38
 msgid "KWin helper utility"
@@ -856,17 +824,8 @@ msgstr "Bu yardımcı uygulama doğrudan çağrılmayı desteklemiyor."
 
 #: killer/killer.cpp:68
 #, kde-format
-msgid ""
-"<p>The window \"<b>%2</b>\" is not responding. It belongs to the application "
-"<b>%1</b> (Process ID = %3, hostname = %4).</p><p>Do you wish to terminate "
-"the application process <em>including <b>all</b> of its child windows</em>?"
-"<br /><b>Any unsaved data will be lost.</b></p>"
-msgstr ""
-"<p>\"<b>%2</b>\" başlıklı pencere yanıt vermiyor. Bu pencere <b>%1</b> "
-"uygulamasına ait (süreç numarası=%3, makine adı=%4).</p><p>Bu uygulamayı "
-"<em><b>tüm alt pencereleri ile birlikte</b> sonlandırmak ister misiniz</em>?"
-"<br /><b>Bu durumda uygulamanın kaydetmediği tüm veriler kaybedilecektir.</"
-"b></p>"
+msgid "<p>The window \"<b>%2</b>\" is not responding. It belongs to the application <b>%1</b> (Process ID = %3, hostname = %4).</p><p>Do you wish to terminate the application process <em>including <b>all</b> of its child windows</em>?<br /><b>Any unsaved data will be lost.</b></p>"
+msgstr "<p>\"<b>%2</b>\" başlıklı pencere yanıt vermiyor. Bu pencere <b>%1</b> uygulamasına ait (süreç numarası=%3, makine adı=%4).</p><p>Bu uygulamayı <em><b>tüm alt pencereleri ile birlikte</b> sonlandırmak ister misiniz</em>?<br /><b>Bu durumda uygulamanın kaydetmediği tüm veriler kaybedilecektir.</b></p>"
 
 #: killer/killer.cpp:74
 #, kde-format
@@ -1051,8 +1010,7 @@ msgstr "*** Pencere Yok ***"
 #~ msgstr "Geçerli Pencere için Küçük Resim Oluşturmayı Aç / Kapat"
 
 #~ msgid "Hold Ctrl+Meta keys to see where the mouse cursor is."
-#~ msgstr ""
-#~ "Fare işaretçisinin nerede olduğunu görmek için Ctrl+Meta tuşlarına basın."
+#~ msgstr "Fare işaretçisinin nerede olduğunu görmek için Ctrl+Meta tuşlarına basın."
 
 #~ msgid "Toggle Video Recording"
 #~ msgstr "Video Kaydını Aç / Kapat"
@@ -1097,9 +1055,7 @@ msgstr "*** Pencere Yok ***"
 #~ msgstr "Pencere başlığını pencerenin en üzerinde oluştur"
 
 #~ msgid "Activate when cursor is at a specific edge or corner of the screen:"
-#~ msgstr ""
-#~ "Fare işaretçisi belirli bir gölgeye ya da ekranın belirli bir köşesine "
-#~ "geldiğinde etkinleştir:"
+#~ msgstr "Fare işaretçisi belirli bir gölgeye ya da ekranın belirli bir köşesine geldiğinde etkinleştir:"
 
 #~ msgid "for windows on all desktops: "
 #~ msgstr "tüm masaüstlerindeki pencereler için: "
