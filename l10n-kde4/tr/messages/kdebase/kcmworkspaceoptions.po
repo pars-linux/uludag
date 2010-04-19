@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #. i18n: file: mainpage.ui:20
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -25,8 +25,6 @@ msgstr ""
 #. i18n: file: mainpage.ui:28
 #. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
 #: rc.cpp:6 rc.cpp:26
-#, fuzzy
-#| msgid "Desktop"
 msgctxt "Form factor: desktop computer"
 msgid "Desktop"
 msgstr "Masaüstü"
@@ -34,8 +32,6 @@ msgstr "Masaüstü"
 #. i18n: file: mainpage.ui:33
 #. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
 #: rc.cpp:9 rc.cpp:29
-#, fuzzy
-#| msgid "Netbook"
 msgctxt "Form factor: netbook computer"
 msgid "Netbook"
 msgstr "Netbook"
