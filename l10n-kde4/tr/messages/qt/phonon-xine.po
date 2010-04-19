@@ -2,7 +2,7 @@
 # translation of phonon-xine.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Server Acim <sacim@kde.org.tr>, 2007.
 msgid ""
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: backend.cpp:85
 msgid "Phonon Xine Backend"
@@ -28,67 +28,34 @@ msgid "ALSA default output"
 msgstr "ALSA öntanımlı çıktısı"
 
 #: backend.cpp:642
-msgctxt ""
-"This string is only shown when the KDE runtime is broken. The technical term "
-"'Platform Plugin' might help users to find a solution, so it might make "
-"sense to leave that term untranslated."
-msgid ""
-"<html><p>The Platform Plugin failed. This is a fallback to use the first "
-"ALSA device available.</p></html>"
-msgstr ""
-"<html><p>Ortam Eklentisi başarısız oldu. Bu işlem kullanılabilir olan ilk "
-"ALSA aygıtına geçildiğini gösterir.</p></html>"
+msgctxt "This string is only shown when the KDE runtime is broken. The technical term 'Platform Plugin' might help users to find a solution, so it might make sense to leave that term untranslated."
+msgid "<html><p>The Platform Plugin failed. This is a fallback to use the first ALSA device available.</p></html>"
+msgstr "<html><p>Ortam Eklentisi başarısız oldu. Bu işlem kullanılabilir olan ilk ALSA aygıtına geçildiğini gösterir.</p></html>"
 
 #: backend.cpp:651
 msgid "OSS default output"
 msgstr "OSS öntanımlı çıktısı"
 
 #: backend.cpp:652
-msgctxt ""
-"This string is only shown when the KDE runtime is broken. The technical term "
-"'Platform Plugin' might help users to find a solution, so it might make "
-"sense to leave that term untranslated."
-msgid ""
-"<html><p>The Platform Plugin failed. This is a fallback to use the first OSS "
-"device available.</p></html>"
-msgstr ""
-"<html><p>Ortam Eklentisi başarısız oldu. Bu işlem kullanılabilir olan ilk "
-"OSS aygıtına geçildiğini gösterir.</p></html>"
+msgctxt "This string is only shown when the KDE runtime is broken. The technical term 'Platform Plugin' might help users to find a solution, so it might make sense to leave that term untranslated."
+msgid "<html><p>The Platform Plugin failed. This is a fallback to use the first OSS device available.</p></html>"
+msgstr "<html><p>Ortam Eklentisi başarısız oldu. Bu işlem kullanılabilir olan ilk OSS aygıtına geçildiğini gösterir.</p></html>"
 
 #: backend.cpp:662
 msgid "Jack Audio Connection Kit"
 msgstr "Jack Ses Bağlantı Takımı"
 
 #: backend.cpp:663
-msgid ""
-"<html><p>JACK is a low-latency audio server. It can connect a number of "
-"different applications to an audio device, as well as allowing them to share "
-"audio between themselves.</p><p>JACK was designed from the ground up for "
-"professional audio work, and its design focuses on two key areas: "
-"synchronous execution of all clients, and low latency operation.</p></html>"
-msgstr ""
-"<html><p>JACK bir düşük gecikmeli ses sunucusudur. O, farklı uygulamaları "
-"bir ses aygıtına bağladığı gibi, aynı zamanda da bu uygulamaların ses "
-"aygıtını birbirleriyle paylaşmalarına izin verir.</p><p>JACK temelden "
-"profesyonel ses ortamları için tasarlanmış olup, tasarımı iki temel alana "
-"yöneliktir: tüm istemcilerin eşzamanlı çalışabilmeleri ve düşük gecikme "
-"işlevi.</p></html>"
+msgid "<html><p>JACK is a low-latency audio server. It can connect a number of different applications to an audio device, as well as allowing them to share audio between themselves.</p><p>JACK was designed from the ground up for professional audio work, and its design focuses on two key areas: synchronous execution of all clients, and low latency operation.</p></html>"
+msgstr "<html><p>JACK bir düşük gecikmeli ses sunucusudur. O, farklı uygulamaları bir ses aygıtına bağladığı gibi, aynı zamanda da bu uygulamaların ses aygıtını birbirleriyle paylaşmalarına izin verir.</p><p>JACK temelden profesyonel ses ortamları için tasarlanmış olup, tasarımı iki temel alana yöneliktir: tüm istemcilerin eşzamanlı çalışabilmeleri ve düşük gecikme işlevi.</p></html>"
 
 #: backend.cpp:671
 msgid "aRts"
 msgstr "aRts"
 
 #: backend.cpp:672
-#, fuzzy
-#| msgid ""
-#| "<html><p>aRts is the old sound server and media framework that was used "
-#| "in KDE2 and KDE3. Its use is discouraged.</p></html>"
-msgid ""
-"<html><p>aRts is the old sound server and media framework that was used in "
-"KDE2 and KDE3. Its use is discouraged.</p></html>"
-msgstr ""
-"<html><p>aRts, KDE2 ve KDE3'de kullanılmış olan  eski bir ses sunucusu ve "
-"çokluortam çalışma ortamıdır. Artık kullanılmamaktadır.</p></html>"
+msgid "<html><p>aRts is the old sound server and media framework that was used in KDE2 and KDE3. Its use is discouraged.</p></html>"
+msgstr "<html><p>aRts, KDE2 ve KDE3'de kullanılmış olan eski bir ses sunucusu ve çoklu ortam çalışma ortamıdır. Kullanımı önerilmemektedir.</p></html>"
 
 #: backend.cpp:678
 msgid "Esound (ESD)"
@@ -96,13 +63,17 @@ msgstr "Esound (ESD)"
 
 #: kequalizer_plugin.cpp:183
 msgid ""
-"Equalizes audio using the very good IIR equalizer code by  Anders Johansson "
-"adopted from Audacious project.\n"
+"Equalizes audio using the very good IIR equalizer code by  Anders Johansson adopted from Audacious project.\n"
 "\n"
 "Parameters:\n"
 "Preamp gain - used to alter up or down all gain values\n"
 "10 Equalizer bands - actual IIR equalizer parameters.\n"
 msgstr ""
+"Audacious projesinden Anders Johansson tarafından geliştirilmiş iyi bir IIR ses dengeleyicisini (Ekolayzır) kullanır.\n"
+"\n"
+"Parametreler:\n"
+"Preamp gain - tüm kazanç değerlerini değiştirmek için kullanılır\n"
+"10 Dengeleyici bant - asıl IIR dengeleyici parametreleri.\n"
 
 #: mediaobject.cpp:356 xinestream.cpp:255
 #, qt-format
@@ -134,16 +105,12 @@ msgid ""
 "Normalizes audio by maximizing the volume without distorting the sound.\n"
 "\n"
 "Parameters:\n"
-"  method: 1: use a single sample to smooth the variations via the standard "
-"weighted mean over past samples (default); 2: use several samples to smooth "
-"the variations via the standard weighted mean over past samples.\n"
+"  method: 1: use a single sample to smooth the variations via the standard weighted mean over past samples (default); 2: use several samples to smooth the variations via the standard weighted mean over past samples.\n"
 msgstr ""
 "Sesin bozmadan sesi yükselterek ses kaynağını normalleştiriyor.\n"
 "\n"
 "Parametreler:\n"
-"  yöntem: 1: çeşitlemeleri yumuşatmak  ya da eski ses örneklerini temel "
-"alarak tek bir örnek kullanınız (varsayılan); 2: çeşitlemeleri yumuşatmak  "
-"ya da eski ses örneklerini temel alarak farklı örnekler kullanınız.\n"
+"  yöntem: 1: çeşitlemeleri yumuşatmak  ya da eski ses örneklerini temel alarak tek bir örnek kullanınız (varsayılan); 2: çeşitlemeleri yumuşatmak  ya da eski ses örneklerini temel alarak farklı örnekler kullanınız.\n"
 
 #: xinestream.cpp:269
 #, qt-format
@@ -166,8 +133,7 @@ msgstr "Xine akış yaratamadı."
 
 #: xinestream.cpp:1338
 msgid "Playback failed because no valid audio or video outputs are available"
-msgstr ""
-"Çalma başarılamadı çünkü geçerli bir ses veya görüntü çıkışı bulunamadı."
+msgstr "Çalma başarılamadı çünkü geçerli bir ses veya görüntü çıkışı bulunamadı."
 
 #~ msgid "PulseAudio"
 #~ msgstr "PulseAudio"
@@ -193,16 +159,8 @@ msgstr ""
 #~ msgid "%1 (ALSA)"
 #~ msgstr "%1 (ALSA)"
 
-#~ msgid ""
-#~ "<html>This device is currently not available (either it is unplugged or "
-#~ "the driver is not loaded).</html>"
-#~ msgstr ""
-#~ "<html>Bu aygıt şu anda çalışmıyor (ya aygıt takılı değil veya sürücüsü "
-#~ "yüklü değil.</html>"
+#~ msgid "<html>This device is currently not available (either it is unplugged or the driver is not loaded).</html>"
+#~ msgstr "<html>Bu aygıt şu anda çalışmıyor (ya aygıt takılı değil veya sürücüsü yüklü değil.</html>"
 
-#~ msgid ""
-#~ "<html>This will try the following devices and use the first that works: "
-#~ "<ol><li>%1</li></ol></html>"
-#~ msgstr ""
-#~ "<html>Bu aşağıdaki aygıtları deneyecek ve ilk çalışan aygıtı kullanmaya "
-#~ "başlayacaktır:<ol><li>%1</li></ol></html>"
+#~ msgid "<html>This will try the following devices and use the first that works: <ol><li>%1</li></ol></html>"
+#~ msgstr "<html>Bu aşağıdaki aygıtları deneyecek ve ilk çalışan aygıtı kullanmaya başlayacaktır:<ol><li>%1</li></ol></html>"
