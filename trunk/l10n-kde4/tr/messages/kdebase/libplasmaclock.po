@@ -1,7 +1,7 @@
 # translation of libplasmaclock.po to Turkish
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Ayhan YALÇINSOY <dellpardus@hotmail.com>, 2008.
 msgid ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: calendartable.cpp:572 clockapplet.cpp:551
 msgid "Calendar"
@@ -50,9 +50,7 @@ msgstr[0] "Saat %1"
 
 #: clockapplet.cpp:237
 #, kde-format
-msgctxt ""
-"Text sent to the text to speech service when minutes==0 and it is the 24 "
-"hour clock"
+msgctxt "Text sent to the text to speech service when minutes==0 and it is the 24 hour clock"
 msgid "It is 1 o clock"
 msgid_plural "It is %1 o clock"
 msgstr[0] "Saat %1"
@@ -90,7 +88,7 @@ msgstr "Panoya &Kopyala"
 
 #: clockapplet.cpp:480
 msgid "Adjust Date and Time"
-msgstr ""
+msgstr "Tarih ve Zamanı Ayarla"
 
 #: clockapplet.cpp:555
 msgid "Today"
@@ -149,7 +147,8 @@ msgid "Every "
 msgstr "Her "
 
 #. i18n: file: timezonesConfig.ui:20
-#. i18n: ectx: property (clickMessage), widget (KTreeWidgetSearchLine, searchLine)
+#. i18n: ectx: property (clickMessage), widget (KTreeWidgetSearchLine,
+#. searchLine)
 #: rc.cpp:24 rc.cpp:74
 msgid "Search"
 msgstr "Ara"
@@ -164,59 +163,23 @@ msgstr "Bir veya birkaç zaman dilimi seçin."
 #. i18n: ectx: property (whatsThis), widget (KTimeZoneWidget, timeZones)
 #: rc.cpp:30 rc.cpp:80
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Your <span style=\" font-"
-"weight:600;\">Local</span> time and time zone are defined in System "
-"Settings, in the Date and Time tab. As default, your plasma clock will use "
-"this setting.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">The plasma clock tooltip "
-"can display the time in several other time zones: to do so, select one or "
-"several more time zones in the list. Click on a line to select it and click "
-"on it again to deselect it. </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">After you validate your "
-"choices with the OK button, when your mouse is over the clock, a tooltip "
-"will display the time in all the selected time zones.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">To select a <span style=\" "
-"font-weight:600;\">Default</span> time zone: you can either scroll over the "
-"clock with your mouse wheel and set the one you want or you can set it with "
-"\"Clock defaults to:\". .</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Your <span style=\" font-weight:600;\">Local</span> time and time zone are defined in System Settings, in the Date and Time tab. As default, your plasma clock will use this setting.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The plasma clock tooltip can display the time in several other time zones: to do so, select one or several more time zones in the list. Click on a line to select it and click on it again to deselect it. </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">After you validate your choices with the OK button, when your mouse is over the clock, a tooltip will display the time in all the selected time zones.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">To select a <span style=\" font-weight:600;\">Default</span> time zone: you can either scroll over the clock with your mouse wheel and set the one you want or you can set it with \"Clock defaults to:\". .</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Sizin <span style=\" font-"
-"weight:600;\">Yerel</span>zaman ve zaman diliminiz sistemde tanımlandı. "
-"Ayarlar, tarih ve saat sekmesinde. Plazma saatiniz öntanımlı olarak bu ayarı "
-"kullanacak.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Plazma saat araç tipi "
-"zamanı birkaç zaman diliminde gösterebilir, listeden bir veya birkaç zaman "
-"dilimi seçin. Zaman dilimini seçmek için o satırı tıklayın ve seçimi iptal "
-"için tekrar tıklayın.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Seçiminizi Tamam "
-"düğmesiyle onayladıktan sonra, fareyi saat üzerine getirdiğinizde bir araç "
-"tipi saati seçilmiş bütün zaman dilimlerinde gösterecektir.</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">To select a <span style=\" "
-"font-weight:600;\">Öntanımlı</span>zaman dilimini farenizin tekeriyle saat "
-"üzerinde kaydırabilirsiniz ve \"Öntanımlı:\". ile istediğiniz birini "
-"ayarlayabilirsiniz.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sizin <span style=\" font-weight:600;\">Yerel</span>zaman ve zaman diliminiz sistemde tanımlandı. Ayarlar, tarih ve saat sekmesinde. Plazma saatiniz öntanımlı olarak bu ayarı kullanacak.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Plazma saat araç tipi zamanı birkaç zaman diliminde gösterebilir, listeden bir veya birkaç zaman dilimi seçin. Zaman dilimini seçmek için o satırı tıklayın ve seçimi iptal için tekrar tıklayın.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seçiminizi Tamam düğmesiyle onayladıktan sonra, fareyi saat üzerine getirdiğinizde bir araç tipi saati seçilmiş bütün zaman dilimlerinde gösterecektir.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">To select a <span style=\" font-weight:600;\">Öntanımlı</span>zaman dilimini farenizin tekeriyle saat üzerinde kaydırabilirsiniz ve \"Öntanımlı:\". ile istediğiniz birini ayarlayabilirsiniz.</p></body></html>"
 
 #. i18n: file: timezonesConfig.ui:73
 #. i18n: ectx: property (text), widget (QLabel, label)
