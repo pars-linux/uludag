@@ -1,7 +1,7 @@
 # translation of kmix.po to Turkish
 # translation of kmix.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-#
+# 
 #  Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003.
@@ -22,8 +22,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: dialogselectmaster.cpp:40
 msgid "Select Master Channel"
@@ -87,12 +87,8 @@ msgstr "Sessiz"
 
 #: kmix.cpp:494
 #, kde-format
-msgid ""
-"The soundcard containing the master device was unplugged. Changing to "
-"control %1 on card %2."
-msgstr ""
-"Ana aygıtı içeren ses kartı çıkarıldı. %2 kartının üzerindeki %1 kontrolüne "
-"geçiliyor."
+msgid "The soundcard containing the master device was unplugged. Changing to control %1 on card %2."
+msgstr "Ana aygıtı içeren ses kartı çıkarıldı. %2 kartının üzerindeki %1 kontrolüne geçiliyor."
 
 #: kmix.cpp:503
 msgid "The last soundcard was unplugged."
@@ -290,8 +286,7 @@ msgid "Mute and volume preview, other fixes"
 msgstr "Diğer güçlükler, sessiz ve ses önizlemesi"
 
 #: main.cpp:58
-msgid ""
-"Inhibits the unhiding of the KMix main window, if KMix is already running."
+msgid "Inhibits the unhiding of the KMix main window, if KMix is already running."
 msgstr "KMix çalışıyorsa KMix ana penceresinin gösterilmesini engeller."
 
 #: mdwenum.cpp:60 mdwslider.cpp:79 mdwswitch.cpp:58
@@ -403,38 +398,27 @@ msgstr ""
 
 #: mixer_backend.cpp:201
 msgid "kmix: Unknown error. Please report how you produced this error."
-msgstr ""
-"kmix: Bilinmeyen hata. Lütfen bu hatayı nasıl meydana getirdiğinizi "
-"bildiriniz."
+msgstr "kmix: Bilinmeyen hata. Lütfen bu hatayı nasıl meydana getirdiğinizi bildiriniz."
 
 #: mixer_backend_i18n.cpp:24
 msgid "Recording level of the microphone input."
-msgstr ""
+msgstr "Mikrofon girişinin kayıt seviyesi"
 
 #: mixer_backend_i18n.cpp:25
-msgid ""
-"Controls the volume of the front speakers or all speakers (depending on your "
-"soundcard model). If you use a digital output, you might need to also use "
-"other controls like ADC or DAC. For headphones, soundcards often supply a "
-"Headphone control."
-msgstr ""
+msgid "Controls the volume of the front speakers or all speakers (depending on your soundcard model). If you use a digital output, you might need to also use other controls like ADC or DAC. For headphones, soundcards often supply a Headphone control."
+msgstr "Ses kartı modelinize bağlı olarak, ön veya tüm hoparlörlerin ses seviyesini denetler. Sayısal bir çıkış kullanıyorsanız, ADC veya DAC gibi diğer denetimleri de kullanmanız gerekebilir. Kulaklıklar için, ses kartları genellikle ayrı bir Kulaklık denetimi sunmaktadır."
 
 #: mixer_backend_i18n.cpp:26
-msgid ""
-"Most media, such as MP3s or Videos, are played back using the PCM channel. "
-"As such, the playback volume of such media is controlled by both this and "
-"the Master or Headphone channels."
-msgstr ""
+msgid "Most media, such as MP3s or Videos, are played back using the PCM channel. As such, the playback volume of such media is controlled by both this and the Master or Headphone channels."
+msgstr "MP3 veya video gibi çoğu ortam, PCM kanalı kullanılarak oynatılır. Bu ortamların yürütme ses seviyesi, hem PCM kanalı hem de Ana kanal (Master) veya Kulaklık kanalı tarafından denetlenir."
 
 #: mixer_backend_i18n.cpp:27
-msgid ""
-"Controls the headphone volume. Some soundcards include a switch that must be "
-"manually activated to enable the headphone output."
-msgstr ""
+msgid "Controls the headphone volume. Some soundcards include a switch that must be manually activated to enable the headphone output."
+msgstr "Kulaklık ses seviyesini denetler. Bazı ses kartlarında, kulaklık çıkışının kullanılabilmesi için, elle etkinleştirilmesi gereken bir anahtar mevcuttur."
 
 #: mixer_backend_i18n.cpp:28
 msgid "---"
-msgstr ""
+msgstr "---"
 
 #: mixer_oss4.cpp:491 mixer_oss.cpp:230
 msgid ""
@@ -731,12 +715,8 @@ msgstr "Karıştırıcı"
 #~ msgid "Select Mixer"
 #~ msgstr "Karıştırıcı Seç"
 
-#~ msgid ""
-#~ "For detailed credits, please refer to the About information of the KMix "
-#~ "program"
-#~ msgstr ""
-#~ "Ayrıntılı bilgi için, lütfen Kmix uygulamasının Hakkında bilgisine "
-#~ "başvurun"
+#~ msgid "For detailed credits, please refer to the About information of the KMix program"
+#~ msgstr "Ayrıntılı bilgi için, lütfen Kmix uygulamasının Hakkında bilgisine başvurun"
 
 #~ msgid "Mixers"
 #~ msgstr "Karıştırıcılar"
