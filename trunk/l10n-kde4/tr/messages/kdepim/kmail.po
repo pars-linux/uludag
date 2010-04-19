@@ -6443,19 +6443,16 @@ msgid "Please select an archive file that should be imported."
 msgstr "Lütfen içeri aktarılacak bir arşiv dosyası seçin."
 
 #: importarchivedialog.cpp:95
-#, fuzzy
 msgid "No archive file selected"
-msgstr "Dizin Seçilmedi"
+msgstr "Arşiv dosyası seçilmedi"
 
 #: importarchivedialog.cpp:100
-#, fuzzy
 msgid "Please select the folder where the archive should be imported to."
-msgstr "Süresi sona erdirilecek iletiler için bir dizin seçin."
+msgstr "Lütfen arşiv dosyasının açılacağı klasörü seçin."
 
 #: importarchivedialog.cpp:101
-#, fuzzy
 msgid "No target folder selected"
-msgstr "Dizin Seçilmedi"
+msgstr "Hedef klasör seçilmedi"
 
 #: keyresolver.cpp:305
 msgid "One or more of your configured OpenPGP encryption keys or S/MIME certificates is not fully trusted for encryption."
@@ -6802,7 +6799,7 @@ msgstr "Adres defterinizde '%1' kişisinin ismi ne olmalıdır?"
 
 #: keyresolver.cpp:1791
 msgid "Select the address book folder to store the new contact in:"
-msgstr ""
+msgstr "Yeni kişi kaydının saklanacağı adres defteri klasörünü seçin:"
 
 #: kmfoldermgr.cpp:65
 msgid "Are you sure you want to expire old messages?"
@@ -7530,13 +7527,12 @@ msgid "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br />
 msgstr "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br />a<br />g<br />e</qt>"
 
 #: htmlstatusbar.cpp:116
-#, fuzzy
 msgid "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
-msgstr "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br />a<br />g<br />e</b></qt>"
+msgstr "<qt><b><br />H<br />T<br />M<br />L<br /> <br />İ<br />l<br />e<br />t<br />i<br />s<br />i</b></qt>"
 
 #: htmlstatusbar.cpp:130
 msgid "Click to toggle between HTML and plain text."
-msgstr ""
+msgstr "HTML ve düz metin arasında geçiş yapmak için tıklayın."
 
 #: attachmentlistview.cpp:47
 msgctxt "@title column attachment name."
@@ -9176,11 +9172,11 @@ msgstr "\"%1\" dizini sıkıştırılırken hata oluştu. Sıkıştırma yapıla
 
 #: callback.cpp:78
 msgid "<qt>The receiver of this invitation does not match any of your identities.<br>Please select the transport which should be used to send your reply.</qt>"
-msgstr ""
+msgstr "<qt>Bu davetin alıcısı kimliklerinizden hiçbiriyle eşleşmedi.<br>Lütfen yanıtınızın gönderilmesinde kullanılacak taşıyıcıyı seçin.</qt>"
 
 #: callback.cpp:81
 msgid "<qt>The identity matching the receiver of this invitation does not have an associated transport configured.<br>Please select the transport which should be used to send your reply.</qt>"
-msgstr ""
+msgstr "<qt>Bu davetin alıcısına eşleşen kimlik için ilişkilendirilmiş bir taşıyıcı bulunmuyor.<br>Lütfen yanıtınızın gönderilmesinde kullanılacak taşıyıcıyı seçin.</qt>"
 
 #: callback.cpp:85
 msgid "Select Transport"
@@ -9253,51 +9249,45 @@ msgid "Could not add message to folder (No space left on device?)"
 msgstr "İleti dizine eklenemiyor (Yeterli disk alanı yok?)"
 
 #: archivefolderdialog.cpp:42
-#, fuzzy
 msgctxt "Start of the filename for a mail archive file"
 msgid "Archive"
-msgstr "Liste Arşivleri"
+msgstr "Arşiv"
 
 #: archivefolderdialog.cpp:49
-#, fuzzy
 msgid "Archive Folder"
-msgstr "Yeni Dizin"
+msgstr "Yeni Klasör"
 
 #: archivefolderdialog.cpp:75
-#, fuzzy
 msgid "F&ormat:"
-msgstr "&Normal:"
+msgstr "B&içim:"
 
 #: archivefolderdialog.cpp:81
 msgid "Compressed Zip Archive (.zip)"
-msgstr ""
+msgstr "Sıkıştırılmış Zip Arşivi (.zip)"
 
 #: archivefolderdialog.cpp:82
 msgid "Uncompressed Archive (.tar)"
-msgstr ""
+msgstr "Sıkıştırılmamış Arşiv (.tar)"
 
 #: archivefolderdialog.cpp:83
 msgid "BZ2-Compressed Tar Archive (.tar.bz2)"
-msgstr ""
+msgstr "BZ2 ile Sıkıştırılmış Tar Arşivi (.tar.bz2)"
 
 #: archivefolderdialog.cpp:84
 msgid "GZ-Compressed Tar Archive (.tar.gz)"
-msgstr ""
+msgstr "GZ ile Sıkıştırılmış Tar Arşivi (.tar.gz)"
 
 #: archivefolderdialog.cpp:104
-#, fuzzy
 msgid "&Delete folders after completion"
-msgstr "Dizinler sunucudan siliniyor"
+msgstr "Tamamlandıktan sonra klasörleri &sil"
 
 #: archivefolderdialog.cpp:156
-#, fuzzy
 msgid "Please select the folder that should be archived."
-msgstr "Eklenecek genel anahtarı seçin."
+msgstr "Lütfen arşivlenecek klasörü seçin."
 
 #: archivefolderdialog.cpp:157
-#, fuzzy
 msgid "No folder selected"
-msgstr "Dizin Seçilmedi"
+msgstr "Klasör seçilmedi"
 
 #: filterimporterexporter.cpp:56
 msgid "Select Filters"
