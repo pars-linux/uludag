@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -169,8 +169,7 @@ msgid ""
 "Choose the style that suits your needs below."
 msgstr ""
 "Baskı nasıl görünmeli?\n"
-"KadressBook değişik amaçlar için hazırlanmış bazı baskı biçimlerine "
-"sahiptir.\n"
+"KadressBook değişik amaçlar için hazırlanmış bazı baskı biçimlerine sahiptir.\n"
 "İhtiyaçlarınıza uygun olan biçimi aşağıdan seçin."
 
 #: printing/stylepage.cpp:132
@@ -190,9 +189,7 @@ msgid "Print Style"
 msgstr "Yazdırma Biçimi"
 
 #: xxport/vcard/vcard_xxport.cpp:116
-msgid ""
-"You have selected a list of contacts, shall they be exported to several "
-"files?"
+msgid "You have selected a list of contacts, shall they be exported to several files?"
 msgstr "Bir liste dolusu kişi seçtiniz, bunlar farklı dosyalara mı çıkarılsın?"
 
 #: xxport/vcard/vcard_xxport.cpp:119
@@ -214,12 +211,8 @@ msgstr "İçeriye vCard Aktarımı Başarısız Oldu"
 #: xxport/vcard/vcard_xxport.cpp:197
 #, kde-format
 msgctxt "@info"
-msgid ""
-"<para>When trying to read the vCard, there was an error opening the file "
-"<filename>%1</filename>:</para><para>%2</para>"
-msgstr ""
-"<para>vCard okunurken <filename>%1</filename> dosyası açılamadı ve bir hata "
-"oluştu:</para><para> %2</para>"
+msgid "<para>When trying to read the vCard, there was an error opening the file <filename>%1</filename>:</para><para>%2</para>"
+msgstr "<para>vCard okunurken <filename>%1</filename> dosyası açılamadı ve bir hata oluştu:</para><para> %2</para>"
 
 #: xxport/vcard/vcard_xxport.cpp:205
 #, kde-format
@@ -622,13 +615,8 @@ msgstr "Tarih biçimi:"
 
 #: xxport/csv/csvimportdialog.cpp:335
 msgctxt "@info:tooltip"
-msgid ""
-"<para><list><item>y: year with 2 digits</item><item>Y: year with 4 digits</"
-"item><item>m: month with 1 or 2 digits</item><item>M: month with 2 digits</"
-"item><item>d: day with 1 or 2 digits</item><item>D: day with 2 digits</"
-"item><item>H: hours with 2 digits</item><item>I: minutes with 2 digits</"
-"item><item>S: seconds with 2 digits</item></list></para>"
-msgstr ""
+msgid "<para><list><item>y: year with 2 digits</item><item>Y: year with 4 digits</item><item>m: month with 1 or 2 digits</item><item>M: month with 2 digits</item><item>d: day with 1 or 2 digits</item><item>D: day with 2 digits</item><item>H: hours with 2 digits</item><item>I: minutes with 2 digits</item><item>S: seconds with 2 digits</item></list></para>"
+msgstr "<para><list><item>y: 2 haneli yıl</item><item>Y: 4 haneli yıl</item><item>m: 1 veya 2 haneli ay</item><item>M: 2 haneli ay</item><item>d: 1 veya 2 haneli gün</item><item>D: 2 haneli gün</item><item>H: 2 haneli saat</item><item>I: 2 haneli dakika</item><item>S: 2 haneli saniye</item></list></para>"
 
 #: xxport/csv/csvimportdialog.cpp:348
 msgctxt "@label:listbox"
@@ -719,7 +707,7 @@ msgstr "Adres Defterini Seç"
 
 #: xxportmanager.cpp:100
 msgid "Select the address book the imported contact(s) shall be saved in:"
-msgstr ""
+msgstr "İçeri aktarılan kişilerin saklanacağı adres defterini seçin:"
 
 #: xxportmanager.cpp:124
 msgid "Which contact do you want to export?"
@@ -780,7 +768,7 @@ msgstr "Buradaki tüm kişiler:"
 
 #: contactselectionwidget.cpp:103
 msgid "Include Subfolders"
-msgstr ""
+msgstr "Alt Dizinleri İçer"
 
 #: mainwidget.cpp:317
 msgid "Print the complete address book or a selected number of contacts."
@@ -927,9 +915,8 @@ msgid "Add Address Book Folder..."
 msgstr "Adres Defteri Dizini Ekle..."
 
 #: standardcontactactionmanager.cpp:52
-msgid ""
-"Add a new address book folder to the currently selected address book folder."
-msgstr ""
+msgid "Add a new address book folder to the currently selected address book folder."
+msgstr "Şu anda seçili adres defteri klasörüne yeni bir adres defteri klasörü ekle."
 
 #: standardcontactactionmanager.cpp:53
 #, kde-format
@@ -964,9 +951,8 @@ msgid "Folder Properties..."
 msgstr "Dizin Özellikleri..."
 
 #: standardcontactactionmanager.cpp:60
-msgid ""
-"Open a dialog to edit the properties of the selected address book folder."
-msgstr ""
+msgid "Open a dialog to edit the properties of the selected address book folder."
+msgstr "Seçili adres defteri klasörünün özelliklerini düzenlemek için bir pencere aç."
 
 #: standardcontactactionmanager.cpp:61 standardcontactactionmanager.cpp:85
 #, kde-format
@@ -1051,57 +1037,36 @@ msgid "New &Contact..."
 msgstr "&Yeni Kişi..."
 
 #: standardcontactactionmanager.cpp:294
-msgid ""
-"Create a new contact<p>You will be presented with a dialog where you can add "
-"data about a person, including addresses and phone numbers.</p>"
-msgstr ""
-"Yeni bir kişi oluştur<p>Bir kişi hakkında tüm verileri (adresler ve telefon "
-"numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla "
-"karşılaşacaksınız.</p>"
+msgid "Create a new contact<p>You will be presented with a dialog where you can add data about a person, including addresses and phone numbers.</p>"
+msgstr "Yeni bir kişi oluştur<p>Bir kişi hakkında tüm verileri (adresler ve telefon numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla karşılaşacaksınız.</p>"
 
 #: standardcontactactionmanager.cpp:301
 msgid "New &Group..."
 msgstr "&Yeni Grup..."
 
 #: standardcontactactionmanager.cpp:303
-msgid ""
-"Create a new group<p>You will be presented with a dialog where you can add a "
-"new group of contacts.</p>"
-msgstr ""
-"Yeni bir grup oluştur<p>Yeni bir kişi grubu ekleyebileceğiniz bir pencere "
-"karşınıza çıkacaktır.</p>"
+msgid "Create a new group<p>You will be presented with a dialog where you can add a new group of contacts.</p>"
+msgstr "Yeni bir grup oluştur<p>Yeni bir kişi grubu ekleyebileceğiniz bir pencere karşınıza çıkacaktır.</p>"
 
 #: standardcontactactionmanager.cpp:311
-msgid ""
-"Edit the selected contact<p>You will be presented with a dialog where you "
-"can edit the data stored about a person, including addresses and phone "
-"numbers.</p>"
-msgstr ""
-"Seçili kişiyi düzenle<p>Bir kişi hakkında tüm verileri (adresler ve telefon "
-"numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla "
-"karşılaşacaksınız.</p>"
+msgid "Edit the selected contact<p>You will be presented with a dialog where you can edit the data stored about a person, including addresses and phone numbers.</p>"
+msgstr "Seçili kişiyi düzenle<p>Bir kişi hakkında tüm verileri (adresler ve telefon numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla karşılaşacaksınız.</p>"
 
 #: standardcontactactionmanager.cpp:320
 msgid "Add &Address Book..."
 msgstr "&Adres Defteri Ekle..."
 
 #: standardcontactactionmanager.cpp:321
-msgid ""
-"Add a new address book<p>You will be presented with a dialog where you can "
-"select the type of the address book that shall be added.</p>"
-msgstr ""
-"Yeni adres defteri ekle<p>Yeni bir adres defteri ekleyebileceğiniz bir "
-"pencere karşınıza çıkacak.</p>"
+msgid "Add a new address book<p>You will be presented with a dialog where you can select the type of the address book that shall be added.</p>"
+msgstr "Yeni adres defteri ekle<p>Yeni bir adres defteri ekleyebileceğiniz bir pencere karşınıza çıkacak.</p>"
 
 #: standardcontactactionmanager.cpp:329
 msgid "&Delete Address Book"
 msgstr "Adres Defteri &Sil"
 
 #: standardcontactactionmanager.cpp:330
-msgid ""
-"Delete the selected address book<p>The currently selected address book will "
-"be deleted, along with all the contacts and contact groups it contains.</p>"
-msgstr ""
+msgid "Delete the selected address book<p>The currently selected address book will be deleted, along with all the contacts and contact groups it contains.</p>"
+msgstr "Seçili adres defterini sil<p>Şu an seçili konumda olan adres defteri, içerdiği tüm kişiler ve kişi grupları ile beraber silinecektir.</p>"
 
 #: standardcontactactionmanager.cpp:339
 msgid "Address Book Properties..."
@@ -1109,7 +1074,7 @@ msgstr "Adres Defteri Özellikleri..."
 
 #: standardcontactactionmanager.cpp:340
 msgid "Open a dialog to edit properties of the selected address book."
-msgstr ""
+msgstr "Seçili adres defterinin özelliklerini düzenlemek için bir pencere aç."
 
 #: quicksearchwidget.cpp:38
 msgid "Search"
@@ -1132,12 +1097,8 @@ msgid "All EMails"
 msgstr "Tüm E-postalar"
 
 #: mainwindow.cpp:60
-msgid ""
-"You will be presented with a dialog where you can configure the application-"
-"wide shortcuts."
-msgstr ""
-"Uygulama çapındaki kısayolları ayarlayabileceğiniz bir iletişim kutusuyla "
-"karşılaşacaksınız."
+msgid "You will be presented with a dialog where you can configure the application-wide shortcuts."
+msgstr "Uygulama çapındaki kısayolları ayarlayabileceğiniz bir iletişim kutusuyla karşılaşacaksınız."
 
 #: contactselectiondialog.cpp:29
 msgid "Select Contacts"
@@ -1221,7 +1182,8 @@ msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
 #. i18n: file: printing/rbs_appearance.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, RingBinderStyleAppearanceForm_Base)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. RingBinderStyleAppearanceForm_Base)
 #: rc.cpp:26
 msgid "Appearance"
 msgstr "Görünüm"
@@ -1332,38 +1294,17 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgid "Miscellaneous"
 #~ msgstr "Diğer"
 
-#~ msgid ""
-#~ "This is the minimum number of empty fields that have to be printed in "
-#~ "addition to real entries; if this number is not reached on the first "
-#~ "page, more pages with empty fields only may be appended."
-#~ msgstr ""
-#~ "Bu, gerçek girdilere ek olarak yazdırılmak zorunda olan asgari boş alan "
-#~ "sayısıdır; eğer bu sayıya ilk sayfada erişilemezse, boş alanlara sahip "
-#~ "daha fazla sayfa yalnızca eklenebilir."
+#~ msgid "This is the minimum number of empty fields that have to be printed in addition to real entries; if this number is not reached on the first page, more pages with empty fields only may be appended."
+#~ msgstr "Bu, gerçek girdilere ek olarak yazdırılmak zorunda olan asgari boş alan sayısıdır; eğer bu sayıya ilk sayfada erişilemezse, boş alanlara sahip daha fazla sayfa yalnızca eklenebilir."
 
-#~ msgid ""
-#~ "If you often add contacts to your printout manually before entering them "
-#~ "into the KDE address book, you should set this option to a value greater "
-#~ "than 0: it determines how many empty address fields are to be printed; if "
-#~ "this many do not fit onto the page, another page with only empty fields "
-#~ "will be printed."
-#~ msgstr ""
-#~ "Eğer kişileri KDE adres defterine girmeden önce onları çoğu kez el ile "
-#~ "yazıcı çıktınıza ekliyorsanız, bu seçeneği 0'dan büyük bir değer olarak "
-#~ "belirleyin: Kaç tane boş adres alanının yazılmak zorunda olduğunu "
-#~ "belirler; eğer bu sayfaya sığmazsa, boş alanlara sahip başka bir sayfa "
-#~ "sadece yazdırılacaktır."
+#~ msgid "If you often add contacts to your printout manually before entering them into the KDE address book, you should set this option to a value greater than 0: it determines how many empty address fields are to be printed; if this many do not fit onto the page, another page with only empty fields will be printed."
+#~ msgstr "Eğer kişileri KDE adres defterine girmeden önce onları çoğu kez el ile yazıcı çıktınıza ekliyorsanız, bu seçeneği 0'dan büyük bir değer olarak belirleyin: Kaç tane boş adres alanının yazılmak zorunda olduğunu belirler; eğer bu sayfaya sığmazsa, boş alanlara sahip başka bir sayfa sadece yazdırılacaktır."
 
 #~ msgid "Min. number of empty fields:"
 #~ msgstr "Boş alanların en az sayısı:"
 
-#~ msgid ""
-#~ "If this option is turned on, behind the contacts on a page the remaining "
-#~ "space will be filled with empty fields so you can add contacts manually "
-#~ "later"
-#~ msgstr ""
-#~ "Bu seçenek etkinse, bir sayfadaki kişilerin arkasında kalan boşluk boş "
-#~ "alanlarla doldurulacaktır böylece daha sonra el ile kişi ekleyebilirsiniz"
+#~ msgid "If this option is turned on, behind the contacts on a page the remaining space will be filled with empty fields so you can add contacts manually later"
+#~ msgstr "Bu seçenek etkinse, bir sayfadaki kişilerin arkasında kalan boşluk boş alanlarla doldurulacaktır böylece daha sonra el ile kişi ekleyebilirsiniz"
 
 #~ msgid "Fill pages with empty address fields"
 #~ msgstr "Sayfaları boş adres alanları ile doldur"
@@ -1374,16 +1315,8 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgid "Letter Groups"
 #~ msgstr "Mektup Grupları"
 
-#~ msgid ""
-#~ "Here you can group letters together as they are grouped in your time "
-#~ "planner. Press 'group letter' to combine the selected letter with the "
-#~ "letter group above it, press 'ungroup letter' to remove the last letter "
-#~ "from a selected group."
-#~ msgstr ""
-#~ "Burada mektupları zaman planlayıcınızda gruplandırıldıkları gibi "
-#~ "gruplayabilirsiniz. Seçili mektubu üzerindeki mektup grubu ile "
-#~ "birleştirmek için 'mektubu grupla'ya basın, son mektubu seçili bir "
-#~ "gruptan ayırmak için 'mektubu gruptan ayır'a basın."
+#~ msgid "Here you can group letters together as they are grouped in your time planner. Press 'group letter' to combine the selected letter with the letter group above it, press 'ungroup letter' to remove the last letter from a selected group."
+#~ msgstr "Burada mektupları zaman planlayıcınızda gruplandırıldıkları gibi gruplayabilirsiniz. Seçili mektubu üzerindeki mektup grubu ile birleştirmek için 'mektubu grupla'ya basın, son mektubu seçili bir gruptan ayırmak için 'mektubu gruptan ayır'a basın."
 
 #~ msgid "Group Letter"
 #~ msgstr "Mektubu Grupla"
@@ -1428,19 +1361,10 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgstr "Hazırlanıyor"
 
 #~ msgid "Printed on %1 by KAddressBook (http://www.kde.org)"
-#~ msgstr ""
-#~ "KAddressBook tarafından %1 tarihinde yazdırılmıştır (http://www.kde.org)"
+#~ msgstr "KAddressBook tarafından %1 tarihinde yazdırılmıştır (http://www.kde.org)"
 
-#~ msgid ""
-#~ "If this box is checked, at least one page will be printed for every "
-#~ "letter group, regardless of whether entries exist for this letter group. "
-#~ "This is normally only useful in conjunction with the option 'fill pages "
-#~ "with empty address fields'."
-#~ msgstr ""
-#~ "Eğer bu onay kutusu işaretliyse, bu mektup grubu için girilerin var olup "
-#~ "olmadığına bakmaksızın her mektup grubu için en azından bir sayfa "
-#~ "yazdırılaracaktır. Bu, normal olarak yalnızca 'sayfaları boş adres "
-#~ "alanlarıyla doldur' seçeneğiyle birlikte kullanışlıdır."
+#~ msgid "If this box is checked, at least one page will be printed for every letter group, regardless of whether entries exist for this letter group. This is normally only useful in conjunction with the option 'fill pages with empty address fields'."
+#~ msgstr "Eğer bu onay kutusu işaretliyse, bu mektup grubu için girilerin var olup olmadığına bakmaksızın her mektup grubu için en azından bir sayfa yazdırılaracaktır. Bu, normal olarak yalnızca 'sayfaları boş adres alanlarıyla doldur' seçeneğiyle birlikte kullanışlıdır."
 
 #~ msgid "Always print pages for all tabs"
 #~ msgstr "Sayfaları her zaman tüm sekmeler için yazdır"
@@ -1469,12 +1393,10 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgstr "Kategori ü&yeleri"
 
 #~ msgid ""
-#~ "Only print contacts who are members of a category that is checked on the "
-#~ "list to the left.\n"
+#~ "Only print contacts who are members of a category that is checked on the list to the left.\n"
 #~ "This option is disabled if you have no categories."
 #~ msgstr ""
-#~ "Solda listelenmiş kategorilerden sadece seçili olanlarının içerdiği "
-#~ "kişileri aktar.\n"
+#~ "Solda listelenmiş kategorilerden sadece seçili olanlarının içerdiği kişileri aktar.\n"
 #~ "Hiç kategoriniz yoksa bu seçenek kapatılır."
 
 #~ msgid "Select a filter to decide which contacts to print."
@@ -1487,8 +1409,7 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgstr "Seçilen herhangi bir kişi"
 
 #~ msgid "The following contact was imported into your address book:"
-#~ msgid_plural ""
-#~ "The following %1 contacts were imported into your address book:"
+#~ msgid_plural "The following %1 contacts were imported into your address book:"
 #~ msgstr[0] "Adres defterinize aşağıdaki %1 kişi aktarıldı:"
 
 #~ msgid "Take over changes"
@@ -1568,11 +1489,8 @@ msgstr "Başlık satırı metin rengi:"
 #~ msgid "Email:"
 #~ msgstr "E-posta:"
 
-#~ msgid ""
-#~ "<qt>Are you sure that you want to remove the email address <b>%1</b>?</qt>"
-#~ msgstr ""
-#~ "<qt>Gerçekten <b>%1</b> e-posta adresini kaldırmak istediğinizden emin "
-#~ "misiniz?</qt>"
+#~ msgid "<qt>Are you sure that you want to remove the email address <b>%1</b>?</qt>"
+#~ msgstr "<qt>Gerçekten <b>%1</b> e-posta adresini kaldırmak istediğinizden emin misiniz?</qt>"
 
 #~ msgid "Confirm Remove"
 #~ msgstr "Silmeyi Onayla"
