@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -13,27 +13,20 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kio_nepomuksearch.cpp:59 kio_nepomuksearch.cpp:251
 msgid "Query Results"
-msgstr ""
+msgstr "Sorgu Sonuçları"
 
 #: kio_nepomuksearch.cpp:125
-msgid ""
-"The Nepomuk system is not activated. Unable to answer queries without it."
-msgstr ""
-"Nepomuk sistemi etkinleştirilmemiş durumda. Nepomuk etkinleştirilmeden "
-"sorgulara yanıt verilemez."
+msgid "The Nepomuk system is not activated. Unable to answer queries without it."
+msgstr "Nepomuk sistemi etkinleştirilmemiş durumda. Nepomuk etkinleştirilmeden sorgulara yanıt verilemez."
 
 #: kio_nepomuksearch.cpp:131
-msgid ""
-"The Nepomuk query service is not running. Unable to answer queries without "
-"it."
-msgstr ""
-"✏Nepomuk sorgulama servisi şu anda çalışmıyor. Servis çalıştırılmadan "
-"sorgulara yanıt verilemez."
+msgid "The Nepomuk query service is not running. Unable to answer queries without it."
+msgstr "✏Nepomuk sorgulama servisi şu anda çalışmıyor. Servis çalıştırılmadan sorgulara yanıt verilemez."
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
