@@ -1,7 +1,7 @@
 # translation of kcm_kwindesktop.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2009.
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: desktopnameswidget.cpp:72
 #, kde-format
@@ -33,13 +33,8 @@ msgid "Desktop %1"
 msgstr "Masaüstü %1"
 
 #: main.cpp:87
-msgid ""
-"<h1>Multiple Desktops</h1>In this module, you can configure how many virtual "
-"desktops you want and how these should be labeled."
-msgstr ""
-"<h1>Çoklu Masaüstü</h1>Buradan kaç tane sanal masaüstü "
-"istediğinizibelirleyebilir ve masaüstlerinin nasıl görüneceğini "
-"ayarlayabilirsiniz."
+msgid "<h1>Multiple Desktops</h1>In this module, you can configure how many virtual desktops you want and how these should be labeled."
+msgstr "<h1>Çoklu Masaüstü</h1>Buradan kaç tane sanal masaüstü istediğinizibelirleyebilir ve masaüstlerinin nasıl görüneceğini ayarlayabilirsiniz."
 
 #: main.cpp:101
 msgid "Switch to Next Desktop"
@@ -110,15 +105,8 @@ msgstr "Düzen"
 #. i18n: file: main.ui:52
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, numberSpinBox)
 #: rc.cpp:9 rc.cpp:15
-#, fuzzy
-#| msgid ""
-#| "Here you can set how many virtual desktops you want on your KDE desktop. "
-#| "Move the slider to change the value."
-msgid ""
-"Here you can set how many virtual desktops you want on your KDE desktop."
-msgstr ""
-"Buradan KDE masaüstünde kaç tane sanal masaüstü istediğinizi "
-"belirleyebilirsiniz. Değerleri değiştirmek için kaydırma çubuğunu kullanın."
+msgid "Here you can set how many virtual desktops you want on your KDE desktop."
+msgstr "Buradan KDE masaüstünde kaç tane sanal masaüstü istediğinizi belirleyebilirsiniz."
 
 #. i18n: file: main.ui:42
 #. i18n: ectx: property (text), widget (QLabel, numberLabel)
@@ -153,10 +141,7 @@ msgstr "Geçiş"
 #. i18n: file: main.ui:137
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, wrapAroundBox)
 #: rc.cpp:30
-msgid ""
-"Enable this option if you want keyboard or active desktop border navigation "
-"beyond the edge of a desktop to take you to the opposite edge of the new "
-"desktop."
+msgid "Enable this option if you want keyboard or active desktop border navigation beyond the edge of a desktop to take you to the opposite edge of the new desktop."
 msgstr ""
 
 #. i18n: file: main.ui:140
@@ -196,17 +181,15 @@ msgid " msec"
 msgstr " ms"
 
 #. i18n: file: main.ui:234
-#. i18n: ectx: property (toolTip), widget (QCheckBox, desktopLayoutIndicatorCheckBox)
+#. i18n: ectx: property (toolTip), widget (QCheckBox,
+#. desktopLayoutIndicatorCheckBox)
 #: rc.cpp:51
-msgid ""
-"Enabling this option will show a small preview of the desktop layout "
-"indicating the selected desktop."
-msgstr ""
-"Bu seçeneği işaretlemek, seçili masaüstünün ve düzeninin küçük bir "
-"önizlemesinin gösterilmesini sağlar."
+msgid "Enabling this option will show a small preview of the desktop layout indicating the selected desktop."
+msgstr "Bu seçeneği işaretlemek, seçili masaüstünün ve düzeninin küçük bir önizlemesinin gösterilmesini sağlar."
 
 #. i18n: file: main.ui:237
-#. i18n: ectx: property (text), widget (QCheckBox, desktopLayoutIndicatorCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. desktopLayoutIndicatorCheckBox)
 #: rc.cpp:54
 msgid "Show desktop layout indicators"
 msgstr "Masaüstü düzeni göstergelerini göster"
@@ -234,5 +217,4 @@ msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
 #~ msgid "Mouse wheel over desktop background switches desktop"
-#~ msgstr ""
-#~ "Masaüstü arkaplanı üzerinde farenin orta düğmesi masaüstlerini değiştirsin"
+#~ msgstr "Masaüstü arkaplanı üzerinde farenin orta düğmesi masaüstlerini değiştirsin"
