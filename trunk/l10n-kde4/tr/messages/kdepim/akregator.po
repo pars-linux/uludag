@@ -22,8 +22,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: plugins/mk4storage/storagefactorymk4impl.cpp:48
 msgid "Metakit"
@@ -34,12 +34,8 @@ msgid "Authentication failed, synchronization aborted."
 msgstr "Kimlik doğrulama işlemi başarısız oldu, eşzamanlama iptal edildi."
 
 #: plugins/onlinesync/sync/feedsync.cpp:161
-msgid ""
-"Some categories and feeds have been marked for removal. Do you want to "
-"delete them?"
-msgstr ""
-"Bazı kategoriler ve kaynaklar silinmek üzere işaretlendi. İşaretlenen "
-"ögeleri silmek istiyor musunuz?"
+msgid "Some categories and feeds have been marked for removal. Do you want to delete them?"
+msgstr "Bazı kategoriler ve kaynaklar silinmek üzere işaretlendi. İşaretlenen ögeleri silmek istiyor musunuz?"
 
 #: plugins/onlinesync/sync/feedsync.cpp:163
 msgid "Remove nothing"
@@ -182,8 +178,7 @@ msgstr "Bağlan&tıyı Yeni Sekmede Aç"
 
 #: src/pageviewer.cpp:412
 msgid "<b>Open Link in New Tab</b><p>Opens current link in a new tab.</p>"
-msgstr ""
-"<b>Bağlantıyı Yeni Sekmede Aç</b><p>Seçilen bağlantıyı yeni sekmede açar.</p>"
+msgstr "<b>Bağlantıyı Yeni Sekmede Aç</b><p>Seçilen bağlantıyı yeni sekmede açar.</p>"
 
 #: src/pageviewer.cpp:413 src/actions.cpp:44
 msgid "Open Link in External &Browser"
@@ -260,12 +255,8 @@ msgstr "Eklenti hatası"
 
 #: src/akregator_part.cpp:431
 #, kde-format
-msgid ""
-"Access denied: Cannot save feed list to <b>%1</b>. Please check your "
-"permissions."
-msgstr ""
-"Erişim engellendi: Haber kaynağı listesi <b>%1</b> dosyasına kaydedilemedi. "
-"Lütfen izinlerinizi kontrol edin."
+msgid "Access denied: Cannot save feed list to <b>%1</b>. Please check your permissions."
+msgstr "Erişim engellendi: Haber kaynağı listesi <b>%1</b> dosyasına kaydedilemedi. Lütfen izinlerinizi kontrol edin."
 
 #: src/akregator_part.cpp:432 src/akregator_part.cpp:491
 msgid "Write Error"
@@ -282,12 +273,8 @@ msgstr "OPML Ayrıştırma Hatası"
 
 #: src/akregator_part.cpp:470
 #, kde-format
-msgid ""
-"The file %1 could not be read, check if it exists or if it is readable for "
-"the current user."
-msgstr ""
-"%1 dosyası okunamadı, dosyanın var olup olmadığını ya da geçerli "
-"kullanıcının okuma izninin olup olmadığını kontrol edin."
+msgid "The file %1 could not be read, check if it exists or if it is readable for the current user."
+msgstr "%1 dosyası okunamadı, dosyanın var olup olmadığını ya da geçerli kullanıcının okuma izninin olup olmadığını kontrol edin."
 
 #: src/akregator_part.cpp:470 src/loadfeedlistcommand.cpp:142
 msgid "Read Error"
@@ -305,8 +292,7 @@ msgstr "Dışarıya Aktar"
 #: src/akregator_part.cpp:491
 #, kde-format
 msgid "Access denied: cannot write to file %1. Please check your permissions."
-msgstr ""
-"Erişim engellendi: %1 dosyasına yazılamadı. Lütfen izinlerinizi kontrol edin."
+msgstr "Erişim engellendi: %1 dosyasına yazılamadı. Lütfen izinlerinizi kontrol edin."
 
 #: src/akregator_part.cpp:514 src/akregator_part.cpp:524
 msgid "OPML Outlines (*.opml, *.xml)"
@@ -336,7 +322,8 @@ msgid_plural "Days"
 msgstr[0] "Gün"
 
 #. i18n: file: src/feedpropertieswidgetbase.ui:21
-#. i18n: ectx: property (windowTitle), widget (QWidget, Akregator::FeedPropertiesWidgetBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. Akregator::FeedPropertiesWidgetBase)
 #: src/feedpropertiesdialog.cpp:88 src/feedpropertiesdialog.cpp:130 rc.cpp:265
 msgid "Feed Properties"
 msgstr "Kaynak Özellikleri"
@@ -499,27 +486,11 @@ msgstr "Bağlantıyı Farklı &Kaydet..."
 #, kde-format
 msgctxt "%1: Akregator version; %2: homepage URL; --- end of comment ---"
 msgid ""
-"<h2 style='margin-top: 0px;'>Welcome to Akregator %1</h2><p>Akregator is a "
-"feed reader for the K Desktop Environment. Feed readers provide a convenient "
-"way to browse different kinds of content, including news, blogs, and other "
-"content from online sites. Instead of checking all your favorite web sites "
-"manually for updates, Akregator collects the content for you.</p><p>For more "
-"information about using Akregator, check the <a href=\"%2\">Akregator "
-"website</a>. If you do not want to see this page anymore, <a href=\"config:/"
-"disable_introduction\">click here</a>.</p><p>We hope that you will enjoy "
-"Akregator.</p>\n"
+"<h2 style='margin-top: 0px;'>Welcome to Akregator %1</h2><p>Akregator is a feed reader for the K Desktop Environment. Feed readers provide a convenient way to browse different kinds of content, including news, blogs, and other content from online sites. Instead of checking all your favorite web sites manually for updates, Akregator collects the content for you.</p><p>For more information about using Akregator, check the <a href=\"%2\">Akregator website</a>. If you do not want to see this page anymore, <a href=\"config:/disable_introduction\">click here</a>.</p><p>We hope that you will enjoy Akregator.</p>\n"
 "<p>Thank you,</p>\n"
 "<p style='margin-bottom: 0px'>&nbsp; &nbsp; The Akregator Team</p>\n"
 msgstr ""
-"<h2 style='margin-top: 0px;'>Akregator %1 Sürümüne Hoşgeldiniz</"
-"h2><p>Akregator KDE Masaüstü için bir kaynak okuyucudur. Kaynak okuyucular "
-"haberler, günlükler ve diğer çevrimiçi sitelerin içerikleri gibi çok farklı "
-"içeriklere göz atmanın kullanışlı bir yoludur. Sevdiğiniz siteleri elle "
-"kontrol etmek yerine Akregator içeriği sizin için toplar.</p><p>Akregator "
-"hakkında daha fazla bilgi almak için <a href=\"%2\">Akregator web sayfasını</"
-"a> ziyaret edin. Artık bu sayfayı görmek istemiyorsanız, <a href=\"config:/"
-"disable_introduction\">buraya tıklayın</a>.</p><p>Akregator uygulamasından "
-"hoşlanacağınızı umuyoruz.</p>\n"
+"<h2 style='margin-top: 0px;'>Akregator %1 Sürümüne Hoşgeldiniz</h2><p>Akregator KDE Masaüstü için bir kaynak okuyucudur. Kaynak okuyucular haberler, günlükler ve diğer çevrimiçi sitelerin içerikleri gibi çok farklı içeriklere göz atmanın kullanışlı bir yoludur. Sevdiğiniz siteleri elle kontrol etmek yerine Akregator içeriği sizin için toplar.</p><p>Akregator hakkında daha fazla bilgi almak için <a href=\"%2\">Akregator web sayfasını</a> ziyaret edin. Artık bu sayfayı görmek istemiyorsanız, <a href=\"config:/disable_introduction\">buraya tıklayın</a>.</p><p>Akregator uygulamasından hoşlanacağınızı umuyoruz.</p>\n"
 "<p>Teşekkürler,</p>\n"
 "<p style='margin-bottom: 0px'>&nbsp; &nbsp; Akregator Takımı</p>\n"
 
@@ -638,21 +609,13 @@ msgid "Columns"
 msgstr "Sütunlar"
 
 #: src/deletesubscriptioncommand.cpp:53
-msgid ""
-"<qt>Are you sure you want to delete this folder and its feeds and subfolders?"
-"</qt>"
-msgstr ""
-"<qt>Bu dizini içindeki tüm kaynaklar ve alt dizinlerlerlerle birlikte silmek "
-"istediğinizden emin nisiniz?</qt>"
+msgid "<qt>Are you sure you want to delete this folder and its feeds and subfolders?</qt>"
+msgstr "<qt>Bu dizini içindeki tüm kaynaklar ve alt dizinlerlerlerle birlikte silmek istediğinizden emin nisiniz?</qt>"
 
 #: src/deletesubscriptioncommand.cpp:54
 #, kde-format
-msgid ""
-"<qt>Are you sure you want to delete folder <b>%1</b> and its feeds and "
-"subfolders?</qt>"
-msgstr ""
-"<qt>Gerçekten <b>%1</b>dizinini ve içindeki tüm kaynakları ve altdizinleri "
-"silmek istiyor musunuz?</qt>"
+msgid "<qt>Are you sure you want to delete folder <b>%1</b> and its feeds and subfolders?</qt>"
+msgstr "<qt>Gerçekten <b>%1</b>dizinini ve içindeki tüm kaynakları ve altdizinleri silmek istiyor musunuz?</qt>"
 
 #: src/deletesubscriptioncommand.cpp:58
 msgid "Delete Folder"
@@ -729,34 +692,16 @@ msgid "Complete Story"
 msgstr "Yazının Tamamı"
 
 #: src/articlelistview.cpp:322
-msgid ""
-"<h2>Article list</h2>Here you can browse articles from the currently "
-"selected feed. You can also manage articles, as marking them as persistent "
-"(\"Keep Article\") or delete them, using the right mouse button menu.To view "
-"the web page of the article, you can open the article internally in a tab or "
-"in an external browser window."
-msgstr ""
-"<h2>Yazı listesi</h2>Buradan seçilen kaynağın yazılarına bakabilirsiniz. Sağ "
-"tık menüsünü kullanarak yazıları (\"Yazıyı Koru\")  seçeneği ile kalıcı "
-"olarak işaretleyebilir ya da silebilirsiniz. Yazının web sayfasını görmek "
-"için yazıyı bir iç sekmede ya da harici tarayıcı penceresinde açabilirsiniz."
+msgid "<h2>Article list</h2>Here you can browse articles from the currently selected feed. You can also manage articles, as marking them as persistent (\"Keep Article\") or delete them, using the right mouse button menu.To view the web page of the article, you can open the article internally in a tab or in an external browser window."
+msgstr "<h2>Yazı listesi</h2>Buradan seçilen kaynağın yazılarına bakabilirsiniz. Sağ tık menüsünü kullanarak yazıları (\"Yazıyı Koru\")  seçeneği ile kalıcı olarak işaretleyebilir ya da silebilirsiniz. Yazının web sayfasını görmek için yazıyı bir iç sekmede ya da harici tarayıcı penceresinde açabilirsiniz."
 
 #: src/articlelistview.cpp:389
-msgid ""
-"<div align=center><h3>No matches</h3>Filter does not match any articles, "
-"please change your criteria and try again.</div>"
-msgstr ""
-"<div align=center><h3>Eşleşme yok</h3>Filtre herhangi bir yazıyla "
-"eşleşmiyor, lütfen kriterinizi değiştirin ve tekrar deneyin.</div>"
+msgid "<div align=center><h3>No matches</h3>Filter does not match any articles, please change your criteria and try again.</div>"
+msgstr "<div align=center><h3>Eşleşme yok</h3>Filtre herhangi bir yazıyla eşleşmiyor, lütfen kriterinizi değiştirin ve tekrar deneyin.</div>"
 
 #: src/articlelistview.cpp:400
-msgid ""
-"<div align=center><h3>No feed selected</h3>This area is article list. Select "
-"a feed from the feed list and you will see its articles here.</div>"
-msgstr ""
-"<div align=center><h3>Kaynak seçilmedi</h3>Burası yazı listesidir. Kaynak "
-"listesinden bir liste seçtiğinizde kaynağın yazılarını burada görebilirsiniz."
-"</div>"
+msgid "<div align=center><h3>No feed selected</h3>This area is article list. Select a feed from the feed list and you will see its articles here.</div>"
+msgstr "<div align=center><h3>Kaynak seçilmedi</h3>Burası yazı listesidir. Kaynak listesinden bir liste seçtiğinizde kaynağın yazılarını burada görebilirsiniz.</div>"
 
 #: src/mainwindow.cpp:105
 msgid "Could not find the Akregator part; please check your installation."
@@ -764,14 +709,8 @@ msgstr "Bir Akregator parçası bulunamadı, lütfen kurulumunuzu kontrol edin."
 
 #: src/mainwindow.cpp:231
 #, kde-format
-msgid ""
-"<qt><p>Closing the main window will keep Akregator running in the system "
-"tray. Use 'Quit' from the 'File' menu to quit the application.</p><p><center>"
-"%1</center></p></qt>"
-msgstr ""
-"<qt><p>Ana pencere kapatıldığında Akregator sistem çekmecesinde çalışmaya "
-"devam eder. Uygulamayı sonlandırmak için 'Dosya' menüsünden 'Çık' seçeneğini "
-"kullanın.<p><p><center>%1</center></qt>"
+msgid "<qt><p>Closing the main window will keep Akregator running in the system tray. Use 'Quit' from the 'File' menu to quit the application.</p><p><center>%1</center></p></qt>"
+msgstr "<qt><p>Ana pencere kapatıldığında Akregator sistem çekmecesinde çalışmaya devam eder. Uygulamayı sonlandırmak için 'Dosya' menüsünden 'Çık' seçeneğini kullanın.<p><p><center>%1</center></qt>"
 
 #: src/mainwindow.cpp:231
 msgid "Docking in System Tray"
@@ -1082,8 +1021,7 @@ msgstr "<qt><b>%1</b> isimli yazıyı silmek istediğinzden emin misiniz?</qt>"
 #: src/mainwidget.cpp:968
 #, kde-format
 msgid "<qt>Are you sure you want to delete the selected article?</qt>"
-msgid_plural ""
-"<qt>Are you sure you want to delete the %1 selected articles?</qt>"
+msgid_plural "<qt>Are you sure you want to delete the %1 selected articles?</qt>"
 msgstr[0] "<qt>Seçili %1 yazıyı silmek istediğinizden emin misiniz?</qt>"
 
 #: src/mainwidget.cpp:972
@@ -1132,20 +1070,12 @@ msgstr[0] "Akregator - %1 okunmamış yazı"
 
 #: src/loadfeedlistcommand.cpp:72
 #, kde-format
-msgid ""
-"<qt>The standard feed list is corrupted (invalid OPML). A backup was created:"
-"<p><b>%1</b></p></qt>"
-msgstr ""
-"<qt>Standart kaynak listesi bozuk (geçersiz OPML). Bir yedek oluşturuldu:"
-"<p><b>%1</b></p></qt>"
+msgid "<qt>The standard feed list is corrupted (invalid OPML). A backup was created:<p><b>%1</b></p></qt>"
+msgstr "<qt>Standart kaynak listesi bozuk (geçersiz OPML). Bir yedek oluşturuldu:<p><b>%1</b></p></qt>"
 
 #: src/loadfeedlistcommand.cpp:73
-msgid ""
-"<qt>The standard feed list is corrupted (invalid OPML). Could not create a "
-"backup.</p></qt>"
-msgstr ""
-"<qt>Standart kaynak listesi bozuk (geçersiz OPML). Bir yedek oluşturulamadı!"
-"</p></qt>"
+msgid "<qt>The standard feed list is corrupted (invalid OPML). Could not create a backup.</p></qt>"
+msgstr "<qt>Standart kaynak listesi bozuk (geçersiz OPML). Bir yedek oluşturulamadı!</p></qt>"
 
 #: src/loadfeedlistcommand.cpp:124
 msgid "Opening Feed List..."
@@ -1164,25 +1094,16 @@ msgstr "XML Ayrıştırma Hatası"
 #: src/loadfeedlistcommand.cpp:155
 #, kde-format
 msgid "<qt><p>XML parsing error in line %1, column %2 of %3:</p><p>%4</p></qt>"
-msgstr ""
-"<qt><p>%1 satırının %2 %3 sütununda XML ayrıştırma hatası:</p><p>%4</p></qt>"
+msgstr "<qt><p>%1 satırının %2 %3 sütununda XML ayrıştırma hatası:</p><p>%4</p></qt>"
 
 #: src/loadfeedlistcommand.cpp:161
 #, kde-format
-msgid ""
-"<qt>The standard feed list is corrupted (invalid XML). A backup was created:"
-"<p><b>%1</b></p></qt>"
-msgstr ""
-"<qt>Standart kaynak listesi bozuk (geçersiz XML). Bir yedek oluşturuldu:"
-"<p><b>%1</b></p></qt>"
+msgid "<qt>The standard feed list is corrupted (invalid XML). A backup was created:<p><b>%1</b></p></qt>"
+msgstr "<qt>Standart kaynak listesi bozuk (geçersiz XML). Bir yedek oluşturuldu:<p><b>%1</b></p></qt>"
 
 #: src/loadfeedlistcommand.cpp:162
-msgid ""
-"<qt>The standard feed list is corrupted (invalid XML). Could not create a "
-"backup.</p></qt>"
-msgstr ""
-"<qt>Standart kaynak listesi bozuk (geçersiz XML). Bir yedek oluşturulamadı!</"
-"p></qt>"
+msgid "<qt>The standard feed list is corrupted (invalid XML). Could not create a backup.</p></qt>"
+msgstr "<qt>Standart kaynak listesi bozuk (geçersiz XML). Bir yedek oluşturulamadı!</p></qt>"
 
 #: src/subscriptionlistjobs.cpp:64
 msgid "Feed list was deleted"
@@ -1242,7 +1163,8 @@ msgid "Total"
 msgstr "Toplam"
 
 #. i18n: file: src/addfeedwidgetbase.ui:13
-#. i18n: ectx: property (windowTitle), widget (QWidget, Akregator::AddFeedWidgetBase)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. Akregator::AddFeedWidgetBase)
 #: src/addfeeddialog.cpp:65 rc.cpp:256
 msgid "Add Feed"
 msgstr "Kaynak Ekle"
@@ -1262,9 +1184,6 @@ msgid "Feed found, downloading..."
 msgstr "Kaynak bulundu, indiriliyor..."
 
 #: configuration/akregator_config_general.cpp:51
-#, fuzzy
-#| msgid " minute"
-#| msgid_plural "minutes"
 msgid " minute"
 msgid_plural " minutes"
 msgstr[0] "dakika"
@@ -1566,12 +1485,8 @@ msgstr "Önemli Yazıları Zamanaşımına Uğratma"
 #. i18n: file: interfaces/akregator.kcfg:97
 #. i18n: ectx: whatsthis, entry, group (Archive)
 #: rc.cpp:125
-msgid ""
-"When this option is enabled, articles you marked as important will not be "
-"removed when limit the archive size by either age or number of the articles."
-msgstr ""
-"Bu seçenek etkinleştirildiğinde, önemli olarak işaretlediğiniz yazılar arşiv "
-"boyutu zaman veya miktara göre sınırlandırıldığında bile silinmeyecektir."
+msgid "When this option is enabled, articles you marked as important will not be removed when limit the archive size by either age or number of the articles."
+msgstr "Bu seçenek etkinleştirildiğinde, önemli olarak işaretlediğiniz yazılar arşiv boyutu zaman veya miktara göre sınırlandırıldığında bile silinmeyecektir."
 
 #. i18n: file: interfaces/akregator.kcfg:103
 #. i18n: ectx: label, entry, group (Network)
@@ -1594,25 +1509,14 @@ msgstr "HTML Önbelleği Kullan"
 #. i18n: file: interfaces/akregator.kcfg:109
 #. i18n: ectx: whatsthis, entry, group (Network)
 #: rc.cpp:137
-msgid ""
-"Use the KDE-wide HTML cache settings when downloading feeds, to avoid "
-"unnecessary traffic. Disable only when necessary."
-msgstr ""
-"Haberleri indirirken, trafiği azlatmak için, KDE'nin geniş HTML önbellek "
-"ayarlarını kullan. Bu seçeneği yalnızca gerektiği durumlarda kapatın."
+msgid "Use the KDE-wide HTML cache settings when downloading feeds, to avoid unnecessary traffic. Disable only when necessary."
+msgstr "Haberleri indirirken, trafiği azlatmak için, KDE'nin geniş HTML önbellek ayarlarını kullan. Bu seçeneği yalnızca gerektiği durumlarda kapatın."
 
 #. i18n: file: interfaces/akregator.kcfg:113
 #. i18n: ectx: whatsthis, entry, group (Network)
 #: rc.cpp:140
-msgid ""
-"This option allows user to specify custom user-agent string instead of using "
-"the default one. This is here because some proxies may interrupt the "
-"connection because of having \"gator\" in the name."
-msgstr ""
-"Bu seçenek kullanıcıların kullanıcı-istemcisi için kullanılan öntanımlı "
-"ifade yerine özel bir ifade belirlemesine izin verir. Bu seçeneğin "
-"oluşturulma amacı bazı vekil sunucuların \"gator\" ifadesi nedeni ile "
-"bağlantıyı kesmesidir."
+msgid "This option allows user to specify custom user-agent string instead of using the default one. This is here because some proxies may interrupt the connection because of having \"gator\" in the name."
+msgstr "Bu seçenek kullanıcıların kullanıcı-istemcisi için kullanılan öntanımlı ifade yerine özel bir ifade belirlemesine izin verir. Bu seçeneğin oluşturulma amacı bazı vekil sunucuların \"gator\" ifadesi nedeni ile bağlantıyı kesmesidir."
 
 #. i18n: file: interfaces/akregator.kcfg:119
 #. i18n: ectx: label, entry, group (General)
@@ -1728,7 +1632,8 @@ msgstr "Harici tarayıcı ile açarken KDE web tarayıcısını kullan."
 #. i18n: file: interfaces/akregator.kcfg:166
 #. i18n: ectx: label, entry, group (Browser)
 #. i18n: file: configuration/settings_browser.ui:82
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_ExternalBrowserUseCustomCommand)
+#. i18n: ectx: property (text), widget (QRadioButton,
+#. kcfg_ExternalBrowserUseCustomCommand)
 #: rc.cpp:198 rc.cpp:377
 msgid "Use this command:"
 msgstr "Bu komutu kullan:"
@@ -1744,9 +1649,7 @@ msgstr "Harici bir web tarayıcı açarken belirtilen komutu kullan."
 #: rc.cpp:205
 #, no-c-format
 msgid "Command to launch external browser.  URL will substitute for %u."
-msgstr ""
-"Harici bir web tarayıcı çalıştırmak için kullanılacak komut. Adres, %u "
-"yerine yazılacaktır."
+msgstr "Harici bir web tarayıcı çalıştırmak için kullanılacak komut. Adres, %u yerine yazılacaktır."
 
 #. i18n: file: interfaces/akregator.kcfg:175
 #. i18n: ectx: whatsthis, entry, group (Browser)
@@ -1770,17 +1673,13 @@ msgstr "Arşivleme Arka Ucu"
 #. i18n: ectx: whatsthis, entry (UseMarkReadDelay), group (Advanced)
 #: rc.cpp:217
 msgid "Whether to delay before marking an article as read upon selecting it."
-msgstr ""
-"Yazının üzerine gelindiğinde okundu olarak işaretlenmeden önceki gecikme."
+msgstr "Yazının üzerine gelindiğinde okundu olarak işaretlenmeden önceki gecikme."
 
 #. i18n: file: interfaces/akregator.kcfg:217
 #. i18n: ectx: whatsthis, entry (MarkReadDelay), group (Advanced)
 #: rc.cpp:220
-msgid ""
-"Configurable delay between selecting an article and it being marked as read."
-msgstr ""
-"Yazının seçilmesi ile okundu olarak işaretlenmesi arasında geçmesi gereken "
-"süre."
+msgid "Configurable delay between selecting an article and it being marked as read."
+msgstr "Yazının seçilmesi ile okundu olarak işaretlenmesi arasında geçmesi gereken süre."
 
 #. i18n: file: interfaces/akregator.kcfg:221
 #. i18n: ectx: whatsthis, entry, group (Advanced)
@@ -1997,14 +1896,16 @@ msgid "External Browsing"
 msgstr "Dış Tarayıcı Kullanımı"
 
 #. i18n: file: configuration/settings_browser.ui:75
-#. i18n: ectx: property (text), widget (QLineEdit, kcfg_ExternalBrowserCustomCommand)
+#. i18n: ectx: property (text), widget (QLineEdit,
+#. kcfg_ExternalBrowserCustomCommand)
 #: rc.cpp:374
 #, no-c-format
 msgid "firefox %u"
 msgstr "firefox %u"
 
 #. i18n: file: configuration/settings_browser.ui:89
-#. i18n: ectx: property (text), widget (QRadioButton, kcfg_ExternalBrowserUseKdeDefault)
+#. i18n: ectx: property (text), widget (QRadioButton,
+#. kcfg_ExternalBrowserUseKdeDefault)
 #: rc.cpp:380
 msgid "Use default web browser"
 msgstr "Öntanımlı Web tarayıcıyı kullan"
@@ -2136,7 +2037,8 @@ msgid " sec"
 msgstr "sn"
 
 #. i18n: file: configuration/settings_advancedbase.ui:93
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ResetQuickFilterOnNodeChange)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_ResetQuickFilterOnNodeChange)
 #: rc.cpp:449
 msgid "Reset search bar when changing feeds"
 msgstr "Kaynaklar değiştirilirken arama çubuğunu sıfırla"
@@ -2184,7 +2086,8 @@ msgid "Startup"
 msgstr "Başlangıç"
 
 #. i18n: file: configuration/settings_general.ui:111
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_MarkAllFeedsReadOnStartup)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_MarkAllFeedsReadOnStartup)
 #: rc.cpp:473
 msgid "Mark &all feeds as read on startup"
 msgstr "B&aşlarken tüm kaynakları okunmuş olarak işaretle"
@@ -2238,7 +2141,8 @@ msgid "Delete articles older than: "
 msgstr "Bu tarihten eski yazıları sil: "
 
 #. i18n: file: configuration/settings_archive.ui:100
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_DoNotExpireImportantArticles)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_DoNotExpireImportantArticles)
 #: rc.cpp:500
 msgid "Do not expire important articles"
 msgstr "Önemli yazılar zaman aşımına uğramasın"
@@ -2267,15 +2171,8 @@ msgstr "Önemli yazılar zaman aşımına uğramasın"
 #~ msgid "&Abort Fetches"
 #~ msgstr "Kay&nak Getirmeyi Durdur"
 
-#~ msgid ""
-#~ "<qt><p>Closing the main window will keep Akregator running in the system "
-#~ "tray. Use 'Quit' from the 'File' menu to quit the application.</"
-#~ "p><p><center><img source=\"systray_shot\" /></center></p></qt>"
-#~ msgstr ""
-#~ "<qt><p>Ana pencere kapatıldığında Akregator sistem çekmecesinde çalışmaya "
-#~ "devam eder. Uygulamayı sonlandırmak için 'Dosya' menüsünden 'Çık' "
-#~ "seçeneğini seçin.<p><p><center><img source=\"systray_shot\"></center></"
-#~ "p></qt>"
+#~ msgid "<qt><p>Closing the main window will keep Akregator running in the system tray. Use 'Quit' from the 'File' menu to quit the application.</p><p><center><img source=\"systray_shot\" /></center></p></qt>"
+#~ msgstr "<qt><p>Ana pencere kapatıldığında Akregator sistem çekmecesinde çalışmaya devam eder. Uygulamayı sonlandırmak için 'Dosya' menüsünden 'Çık' seçeneğini seçin.<p><p><center><img source=\"systray_shot\"></center></p></qt>"
 
 #~ msgid "&View Mode"
 #~ msgstr "&Görüntüleme Kipi"
@@ -2289,36 +2186,17 @@ msgstr "Önemli yazılar zaman aşımına uğramasın"
 #~ msgid "Show tab close button on hover"
 #~ msgstr "Üstüne geldiğinde sekme kapatma tuşunu göster"
 
-#~ msgid ""
-#~ "<p>KLibLoader could not load the plugin:<br/><i>%1</i></p><p>Error "
-#~ "message:<br/><i>%2</i></p>"
-#~ msgstr ""
-#~ "<p>KLibLoader <br/><i>%1</i>eklentisini yükleyemedi.</p><p>Hata mesajı:"
-#~ "<br/><i>%2</i></p>"
+#~ msgid "<p>KLibLoader could not load the plugin:<br/><i>%1</i></p><p>Error message:<br/><i>%2</i></p>"
+#~ msgstr "<p>KLibLoader <br/><i>%1</i>eklentisini yükleyemedi.</p><p>Hata mesajı:<br/><i>%2</i></p>"
 
-#~ msgid ""
-#~ "<h2>Feeds tree</h2>Here you can browse tree of feeds. You can also add "
-#~ "feeds or feed groups (folders) using right-click menu, or reorganize them "
-#~ "using drag and drop."
-#~ msgstr ""
-#~ "<h2>Kaynak ağacı</h2>Buradan kaynakların ağaç görünümüne göz "
-#~ "atabilirsiniz. Aynı zamanda burada sağ tık menüsünü kullanarak yeni "
-#~ "kaynaklar ve kaynak grupları (dizinler) ekleyebilirsiniz ve ögeleri "
-#~ "sürükle bırak yöntemi ile yeniden sıralayabilirsiniz."
+#~ msgid "<h2>Feeds tree</h2>Here you can browse tree of feeds. You can also add feeds or feed groups (folders) using right-click menu, or reorganize them using drag and drop."
+#~ msgstr "<h2>Kaynak ağacı</h2>Buradan kaynakların ağaç görünümüne göz atabilirsiniz. Aynı zamanda burada sağ tık menüsünü kullanarak yeni kaynaklar ve kaynak grupları (dizinler) ekleyebilirsiniz ve ögeleri sürükle bırak yöntemi ile yeniden sıralayabilirsiniz."
 
-#~ msgid ""
-#~ "<qt>The standard feed list is corrupted (no valid OPML). A backup of the "
-#~ "previous list was created:<p><b>%1</b></p></qt>"
-#~ msgstr ""
-#~ "<qt>Standart kaynak listesi bozuk (geçerli OPML yok). Önceki listenin bir "
-#~ "yedeği oluşturuldu:<p><b>%1</b></p></qt>"
+#~ msgid "<qt>The standard feed list is corrupted (no valid OPML). A backup of the previous list was created:<p><b>%1</b></p></qt>"
+#~ msgstr "<qt>Standart kaynak listesi bozuk (geçerli OPML yok). Önceki listenin bir yedeği oluşturuldu:<p><b>%1</b></p></qt>"
 
-#~ msgid ""
-#~ "<qt>The standard feed list is corrupted (no valid OPML). Could not create "
-#~ "a backup!></p></qt>"
-#~ msgstr ""
-#~ "<qt>Standart kaynak listesi bozuk (geçerli OPML yok). Bir yedek "
-#~ "oluşturulamadı!</p></qt>"
+#~ msgid "<qt>The standard feed list is corrupted (no valid OPML). Could not create a backup!></p></qt>"
+#~ msgstr "<qt>Standart kaynak listesi bozuk (geçerli OPML yok). Bir yedek oluşturulamadı!</p></qt>"
 
 #~ msgid "Write error"
 #~ msgstr "Yazma hatası"
