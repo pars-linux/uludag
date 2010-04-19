@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kdesu.cpp:85
 msgid "KDE su"
@@ -51,8 +51,7 @@ msgstr "Çalıştırılacak komutu belirtir"
 
 #: kdesu.cpp:102
 msgid "Run command under target uid if <file> is not writable"
-msgstr ""
-"<dosya> yazılabilir değilse komutu hedef kullanıcı numarası altında çalıştır."
+msgstr "<dosya> yazılabilir değilse komutu hedef kullanıcı numarası altında çalıştır."
 
 #: kdesu.cpp:103
 msgid "Specifies the target uid"
@@ -64,11 +63,11 @@ msgstr "Parolayı kaydetme"
 
 #: kdesu.cpp:105
 msgid "Stop the daemon (forgets all passwords)"
-msgstr "Deamon'ı durdur (tüm parolaları unutur)"
+msgstr "Daemon'ı durdur (tüm parolaları unutur)"
 
 #: kdesu.cpp:106
 msgid "Enable terminal output (no password keeping)"
-msgstr "Terminal çıktısını etkin kıl (parola kaydedilmez)"
+msgstr "Terminal çıktısını etkinleştir (parola kaydedilmez)"
 
 #: kdesu.cpp:107
 msgid "Set priority value: 0 <= prio <= 100, 0 is lowest"
@@ -76,11 +75,11 @@ msgstr "Öncelik değeri belirle: 0 <= öncelik 100, 0 en küçük"
 
 #: kdesu.cpp:108
 msgid "Use realtime scheduling"
-msgstr "Gerçek zaman takvimlemesi kullan"
+msgstr "Gerçek zamanlı planlama kullan"
 
 #: kdesu.cpp:109
 msgid "Do not display ignore button"
-msgstr "Yoksay düğmesini gösterme"
+msgstr "Yok say düğmesini gösterme"
 
 #: kdesu.cpp:110
 msgid "Specify icon to use in the password dialog"
@@ -91,12 +90,9 @@ msgid "Do not show the command to be run in the dialog"
 msgstr "Pencerede çalıştırılacak komutu gösterme"
 
 #: kdesu.cpp:115
-msgctxt ""
-"Transient means that the kdesu app will be attached to the app specified by "
-"the winid so that it is like a dialog box rather than some separate program"
+msgctxt "Transient means that the kdesu app will be attached to the app specified by the winid so that it is like a dialog box rather than some separate program"
 msgid "Makes the dialog transient for an X app specified by winid"
-msgstr ""
-"Pencereyi, pencere numarası belirtilen X uygulaması için geçici hale getirir"
+msgstr "Pencereyi, pencere numarası belirtilen X uygulaması için geçici hale getirir"
 
 #: kdesu.cpp:140
 #, kde-format
@@ -152,42 +148,22 @@ msgid "Please enter your password below."
 msgstr "Lütfen aşağıya parolanızı girin."
 
 #: sudlg.cpp:38
-msgid ""
-"The action you requested needs <b>root privileges</b>. Please enter "
-"<b>root's</b> password below or click Ignore to continue with your current "
-"privileges."
-msgstr ""
-"Yapmak istediğiniz işlem <b>root hakları</b> gerektiriyor. Lütfen <b>root</"
-"b> parolasını girin, ya da şimdiki yetkilerle devam etmek için 'Yoksay "
-"düğmesine tıklayın."
+msgid "The action you requested needs <b>root privileges</b>. Please enter <b>root's</b> password below or click Ignore to continue with your current privileges."
+msgstr "Yapmak istediğiniz işlem <b>root hakları</b> gerektiriyor. Lütfen <b>root</b> parolasını girin, ya da şimdiki yetkilerle devam etmek için 'Yoksay düğmesine tıklayın."
 
 #: sudlg.cpp:42
-msgid ""
-"The action you requested needs <b>root privileges</b>. Please enter "
-"<b>root's</b> password below."
-msgstr ""
-"Yapmak istediğiniz işlem <b>root hakları</b> gerektiriyor. Lütfen aşağıya "
-"<b>root</b> parolasını girin."
+msgid "The action you requested needs <b>root privileges</b>. Please enter <b>root's</b> password below."
+msgstr "Yapmak istediğiniz işlem <b>root hakları</b> gerektiriyor. Lütfen aşağıya <b>root</b> parolasını girin."
 
 #: sudlg.cpp:46
 #, kde-format
-msgid ""
-"The action you requested needs additional privileges. Please enter the "
-"password for <b>%1</b> below or click Ignore to continue with your current "
-"privileges."
-msgstr ""
-"Yapmak istediğiniz işlem için ek yetkilere ihtiyacınız var. Lütfen <b>%1</b> "
-"kullanıcısının parolasını girin ya da mevcut yetkilerinizle işleme devam "
-"etmek için Yoksay düğmesine tıklayın."
+msgid "The action you requested needs additional privileges. Please enter the password for <b>%1</b> below or click Ignore to continue with your current privileges."
+msgstr "Yapmak istediğiniz işlem için ek yetkilere ihtiyacınız var. Lütfen <b>%1</b> kullanıcısının parolasını girin ya da mevcut yetkilerinizle işleme devam etmek için Yoksay düğmesine tıklayın."
 
 #: sudlg.cpp:51
 #, kde-format
-msgid ""
-"The action you requested needs additional privileges. Please enter the "
-"password for <b>%1</b> below."
-msgstr ""
-"Yapmak istediğiniz işlem için ek yetkilere ihtiyacınız var. Lütfen aşağıya "
-"<b>%1</b> kullanıcısının parolasını girin."
+msgid "The action you requested needs additional privileges. Please enter the password for <b>%1</b> below."
+msgstr "Yapmak istediğiniz işlem için ek yetkilere ihtiyacınız var. Lütfen aşağıya <b>%1</b> kullanıcısının parolasını girin."
 
 #: sudlg.cpp:60
 msgid "&Ignore"
@@ -198,11 +174,8 @@ msgid "Conversation with su failed."
 msgstr "su ile çevirim başarısız."
 
 #: sudlg.cpp:84
-msgid ""
-"The program 'su' could not be found.<br />Ensure your PATH is set correctly."
-msgstr ""
-"'su' uygulaması bulunamadı.<br/>PATH değişkeninizin doğru ayarlandığından "
-"emin olun."
+msgid "The program 'su' could not be found.<br />Ensure your PATH is set correctly."
+msgstr "'su' uygulaması bulunamadı.<br/>PATH değişkeninizin doğru ayarlandığından emin olun."
 
 #: sudlg.cpp:95
 msgid "Incorrect password, please try again."
@@ -210,8 +183,7 @@ msgstr "Yanlış Parola, lütfen tekrar deneyin."
 
 #: sudlg.cpp:99
 msgid "Internal error: illegal return from SuProcess::checkInstall()"
-msgstr ""
-"İç hata: SuProcess::checkInstall() fonksiyonundan geçersiz değer döndürüldü"
+msgstr "İç hata: SuProcess::checkInstall() fonksiyonundan geçersiz değer döndürüldü"
 
 #~ msgid "Let command use existing dcopserver"
 #~ msgstr "Komutun mevcut dcopserver kullanmasına izin verin"
