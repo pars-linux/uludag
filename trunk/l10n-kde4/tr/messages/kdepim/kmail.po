@@ -2427,63 +2427,60 @@ msgstr "Bilinmeyen"
 #: importjob.cpp:76
 #, kde-format
 msgid "Importing the archive file '%1' into the folder '%2' succeeded."
-msgstr ""
+msgstr "'%1' arşiv dosyası içeriği '%2' klasörüne başarılı bir şekilde aktarıldı."
 
 #: importjob.cpp:78
-#, fuzzy, kde-format
+#, kde-format
 msgid "1 message was imported."
 msgid_plural "%1 messages were imported."
-msgstr[0] "Bu ileti şifrelenmiş."
+msgstr[0] "%1 ileti içeri aktarıldı."
 
 #: importjob.cpp:79
-#, fuzzy
 msgid "Import finished."
-msgstr "Filtreleri İçeriye Aktar"
+msgstr "İçeri aktarma işlemi tamamlandı."
 
 #: importjob.cpp:94
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to import the archive into folder '%1'."
-msgstr "Dizin oluşturulamadı"
+msgstr "Arşiv içeriğinin '%1' klasörüne aktarılması başarısız oldu."
 
 #: importjob.cpp:101
-#, fuzzy
 msgid "Importing archive failed."
-msgstr "Önbellek dosyası güncelleniyor"
+msgstr "Arşivin içeri aktarılması başarısız oldu."
 
 #: importjob.cpp:110 importjob.cpp:242
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unable to create subfolder for folder '%1'."
-msgstr "Dizin oluşturulamadı"
+msgstr "'%1' klasörü için alt klasör oluşturulamıyor."
 
 #: importjob.cpp:185
-#, fuzzy, kde-format
+#, kde-format
 msgid "Importing folder %1"
-msgstr "Dizin siliniyor"
+msgstr "%1 klasörü içeri aktarılıyor"
 
 #: importjob.cpp:196
-#, fuzzy, kde-format
+#, kde-format
 msgid "Failed to add a message to the folder '%1'."
-msgstr "İleti dizine eklenemiyor:"
+msgstr "'%1' klasörüne ileti eklenirken hata oluştu."
 
 #: importjob.cpp:292
 #, kde-format
 msgid "Unexpected subdirectory named '%1'."
-msgstr ""
+msgstr "'%1' adlı beklenmedik bir alt dizin ile karşılaşıldı."
 
 #: importjob.cpp:326
 #, kde-format
 msgid "The file '%1' does not appear to be a valid archive."
-msgstr ""
+msgstr "'%1' dosyası geçerli bir arşiv gibi görünmüyor."
 
 #: importjob.cpp:331
 #, kde-format
 msgid "Unable to open archive file '%1'"
-msgstr ""
+msgstr "'%1' adlı arşiv dosyası açılamıyor"
 
 #: importjob.cpp:337
-#, fuzzy
 msgid "Importing Archive"
-msgstr "Arşive Git"
+msgstr "Arşiv İçeri Aktarılıyor"
 
 #: kmkernel.cpp:744
 msgid "Certificate Signature Request"
@@ -3821,11 +3818,11 @@ msgstr "İletiyi Aşağıya Kaydır (Daha Fazla)"
 
 #: kmreaderwin.cpp:711
 msgid "Toggle HTML Display Mode"
-msgstr ""
+msgstr "HTML gösterim kipini aç/kapat"
 
 #: kmreaderwin.cpp:714
 msgid "Toggle display mode between HTML and plain text"
-msgstr ""
+msgstr "HTML ve düz metin gösterim kipleri arasında geçiş yap"
 
 #: kmreaderwin.cpp:1363
 msgid "The email client for the K Desktop Environment."
@@ -5916,9 +5913,8 @@ msgid "Rebuild Index..."
 msgstr "İndeksi Yeniden Oluştur..."
 
 #: kmmainwidget.cpp:3756
-#, fuzzy
 msgid "&Archive Folder..."
-msgstr "Yeni &Dizin..."
+msgstr "Klasörü &Arşivle..."
 
 #: kmmainwidget.cpp:3760
 msgid "Prefer &HTML to Plain Text"
@@ -6428,26 +6424,23 @@ msgstr "<qt><resource>%1</resource> adına sahip bir gönderim listesi zaten var
 
 #: distributionlistdialog.cpp:218
 msgid "Select the address book folder to store the contact group in:"
-msgstr ""
+msgstr "Kişi grubunun saklanacağı adres defteri klasörünü seçin:"
 
 #: importarchivedialog.cpp:39
-#, fuzzy
 msgid "Import Archive"
-msgstr "Arşive Git"
+msgstr "Arşivi İçeri Aktar"
 
 #: importarchivedialog.cpp:55 archivefolderdialog.cpp:65
-#, fuzzy
 msgid "&Folder:"
-msgstr "Dizin"
+msgstr "&Klasör:"
 
 #: importarchivedialog.cpp:63 archivefolderdialog.cpp:91
-#, fuzzy
 msgid "&Archive File:"
-msgstr "Dosya Ekle"
+msgstr "&Arşiv Dosyası:"
 
 #: importarchivedialog.cpp:94
 msgid "Please select an archive file that should be imported."
-msgstr ""
+msgstr "Lütfen içeri aktarılacak bir arşiv dosyası seçin."
 
 #: importarchivedialog.cpp:95
 #, fuzzy
