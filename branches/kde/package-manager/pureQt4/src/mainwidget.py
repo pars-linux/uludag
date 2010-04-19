@@ -271,6 +271,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         else:
             self._last_packages = self.packageList.model().getFilteredPackages()
             self.setSelectAll(self._last_packages)
+        # A hacky solution to repaint the list to take care of selection changes
+        # FIXME Later
+        self.packageList.setFocus()
+
         self.statusChanged()
 
     def showBasket(self):
