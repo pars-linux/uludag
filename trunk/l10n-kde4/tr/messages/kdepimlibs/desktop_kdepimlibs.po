@@ -1,0 +1,170 @@
+# translation of desktop_kdepimlibs.po to
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: desktop_kdepimlibs\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-02 23:30+0000\n"
+"PO-Revision-Date: 2009-10-05 16:43+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: akonadi/contact/kcm/akonadicontact_actions.desktop:12
+msgctxt "Name"
+msgid "Contact Actions"
+msgstr "Kişi Eylemleri"
+
+#: akonadi/contact/kcm/akonadicontact_actions.desktop:48
+msgctxt "Comment"
+msgid "Configure the Contact Actions"
+msgstr "Kişi Eylemlerini Yapılandır"
+
+#: kabc/formats/binary.desktop:2
+msgctxt "Name"
+msgid "Binary"
+msgstr "İkili"
+
+#: kabc/kabc_manager.desktop:3
+msgctxt "Name"
+msgid "Contacts"
+msgstr "Kişiler"
+
+#: kabc/plugins/dir/dir.desktop:2
+msgctxt "Name"
+msgid "Folder"
+msgstr "Dizin"
+
+#: kabc/plugins/dir/dir.desktop:43
+msgctxt "Comment"
+msgid ""
+"Provides access to contacts, each stored in a single file, in a given "
+"folder. Supports standard VCard file and other formats depending on "
+"availability of plugins."
+msgstr ""
+"Verilen bir dizin içerisindeki herbiri bir dosya içerisinde bulunan kişilere "
+"erişmeyi sağlar. VCard dosyalarını ve eklentilere uygun diğer biçimleri "
+"destekler."
+
+#: kabc/plugins/file/file.desktop:2
+msgctxt "Name"
+msgid "File"
+msgstr "Dosya"
+
+#: kabc/plugins/file/file.desktop:50
+msgctxt "Comment"
+msgid ""
+"Provides access to contacts stored in a single local file. Supports standard "
+"VCard files and other formats depending on available plugins."
+msgstr ""
+"Yerel bir dosya içerisindeki kişilere erişmeyi sağlar. VCard dosyalarını ve "
+"eklentilere uygun diğer biçimleri destekler."
+
+#: kabc/plugins/ldapkio/ldapkio.desktop:2
+msgctxt "Name"
+msgid "LDAP"
+msgstr "LDAP"
+
+#: kabc/plugins/ldapkio/ldapkio.desktop:50
+msgctxt "Comment"
+msgid "Provides access to contacts stored on a LDAP directory server"
+msgstr "Bir LDAP dizin sunucusunda depolanmış kişilere erişim sağlar"
+
+#: kabc/plugins/net/net.desktop:2
+msgctxt "Name"
+msgid "Network"
+msgstr "Ağ"
+
+#: kabc/plugins/net/net.desktop:50
+msgctxt "Comment"
+msgid ""
+"Provides access to contacts in remote files using KDE's network framework "
+"KIO. Supports standard VCard files and other formats depending on available "
+"plugins."
+msgstr ""
+"KDE'nin ağ iskeleti KIO'yu kullanarak uzak dosyalardaki kişilere erişim "
+"sağlar. Mevcut eklentilere bağlı olarak standart VCard dosyalarını ve diğer "
+"dosya biçimleri destekler."
+
+#: kcal/kcal_manager.desktop:3
+msgctxt "Name"
+msgid "Calendar"
+msgstr "Takvim"
+
+#: kcal/local.desktop:2
+msgctxt "Name"
+msgid "Calendar in Local File"
+msgstr "Yerel Dosyadaki Takvim"
+
+#: kcal/local.desktop:48
+msgctxt "Comment"
+msgid "Provides access to a calendar stored in a single local file"
+msgstr "TEk bir yerel dosyada depolanmış bir takvime erişim sağlar"
+
+#: kcal/localdir.desktop:2
+msgctxt "Name"
+msgid "Calendar in Local Directory"
+msgstr "Yerel Dizindeki Takvim"
+
+#: kcal/localdir.desktop:48
+msgctxt "Comment"
+msgid ""
+"Provides access to calendar items, each stored in a single file, in a given "
+"directory"
+msgstr ""
+"Belirli bir dizinde, her biri tek bir dosyada depolanmış takvim ögelerine "
+"erişim sağlar"
+
+#: kioslave/sieve/sieve.protocol:15
+msgctxt "Description"
+msgid "An ioslave for the Sieve mail filtering protocol"
+msgstr "Sieve e-posta filtrelemesi için bir kioslave"
+
+#: kontactinterface/kontactplugin.desktop:4
+msgctxt "Name"
+msgid "Kontact Plugin"
+msgstr "Kontact Eklentisi"
+
+#: kresources/kresources.desktop:11
+msgctxt "Name"
+msgid "KDE Resources"
+msgstr "KDE Kaynakları"
+
+#: kresources/kresources.desktop:58
+msgctxt "Comment"
+msgid "Configure KDE Resources"
+msgstr "KDE Kaynaklarını Yapılandır"
+
+#: kresources/kresources_manager.desktop:2
+msgctxt "Name"
+msgid "KResources Manager"
+msgstr "KResources Yöneticisi"
+
+#: kresources/kresources_manager.desktop:49
+msgctxt "Comment"
+msgid "KResources Manager"
+msgstr "KResources Yöneticisi"
+
+#: kresources/kresources_plugin.desktop:2
+msgctxt "Name"
+msgid "KResources Plugin"
+msgstr "KResources Eklentisi"
+
+#: kresources/kresources_plugin.desktop:49
+msgctxt "Comment"
+msgid "KResources Framework Plugin"
+msgstr "KResources Çalışma Alanı Eklentisi"
+
+#: mailtransport/kcm_mailtransport.desktop:14
+msgctxt "Name"
+msgid "Mail Transport"
+msgstr "E-posta Aktarımı"
+
+#~ msgctxt "Name"
+#~ msgid "Directory"
+#~ msgstr "Dizin"

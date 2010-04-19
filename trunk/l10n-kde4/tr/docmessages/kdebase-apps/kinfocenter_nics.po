@@ -1,0 +1,87 @@
+# translation of kinfocenter_nics.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_nics\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-12 17:31+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9 index.docbook:30
+#, no-c-format
+msgid "Network Interfaces"
+msgstr "Ağ Arayüzleri"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Lauri.Watts;"
+msgstr "&Lauri.Watts;"
+
+#. Tag: trans_comment
+#: index.docbook:14
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:21
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:22
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:23
+#, no-c-format
+msgid "Network"
+msgstr "Ağ"
+
+#. Tag: keyword
+#: index.docbook:24
+#, no-c-format
+msgid "Interfaces"
+msgstr "Arayüzleri"
+
+#. Tag: para
+#: index.docbook:32
+#, no-c-format
+msgid ""
+"This page displays information about the network interfaces installed in "
+"your computer."
+msgstr ""
+"Bu sayfa bilgisayarınızda kurulu olan ağ arayüzleri hakkında bilgi verir."
+
+#. Tag: para
+#: index.docbook:37
+#, no-c-format
+msgid ""
+"The exact information displayed is system-dependent. On some systems, this "
+"information can not yet be displayed."
+msgstr ""
+"Gösterilen kesin bilgi sistemden sisteme göre değişir. Bazı sistemlerde bu "
+"bilginin görüntülenmesi hala mümkün değildir."
+
+#. Tag: para
+#: index.docbook:40
+#, no-c-format
+msgid "The user cannot modify any settings on this page."
+msgstr "Kullanıcı bu sayfadaki ayarları değiştiremez."

@@ -1,0 +1,346 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_kdeobservatory\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"PO-Revision-Date: 2009-11-16 00:57+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:70
+#. i18n: ectx: property (text), item, widget (QListWidget, activeViews)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:196
+#. i18n: ectx: property (text), item, widget (KComboBox, views)
+#: commithistoryview.cpp:104 kdeobservatory.cpp:80 kdeobservatory.cpp:188
+#: kdeobservatory.cpp:303 kdeobservatory.cpp:621 kdeobservatorypresets.cpp:171
+#: rc.cpp:51 rc.cpp:78
+msgid "Commit History"
+msgstr "Yapılanların Özeti"
+
+#: kdeobservatoryconfigprojects.cpp:83
+#, kde-format
+msgid "Are you sure you want to remove project '%1'?"
+msgstr ""
+
+#: kdeobservatoryconfigprojects.cpp:83
+#, fuzzy
+#| msgid "Top Active Projects"
+msgid "Remove project"
+msgstr "En Etkin Projeler"
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:58
+#. i18n: ectx: property (text), item, widget (QListWidget, activeViews)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:178
+#. i18n: ectx: property (text), item, widget (KComboBox, views)
+#: kdeobservatory.cpp:78 kdeobservatory.cpp:186 kdeobservatory.cpp:190
+#: kdeobservatory.cpp:300 kdeobservatory.cpp:301 kdeobservatory.cpp:619
+#: kdeobservatorypresets.cpp:171 rc.cpp:48 rc.cpp:72
+#: topactiveprojectsview.cpp:61
+msgid "Top Active Projects"
+msgstr "En Etkin Projeler"
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:82
+#. i18n: ectx: property (text), item, widget (QListWidget, activeViews)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:187
+#. i18n: ectx: property (text), item, widget (KComboBox, views)
+#: kdeobservatory.cpp:79 kdeobservatory.cpp:187 kdeobservatory.cpp:302
+#: kdeobservatory.cpp:620 kdeobservatorypresets.cpp:171 rc.cpp:54 rc.cpp:75
+#: topdevelopersview.cpp:67
+msgid "Top Developers"
+msgstr "Daha Çok Katkıda Bulunan Geliştiriciler"
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:66
+#. i18n: ectx: property (text), widget (QTableWidget, projects)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:94
+#. i18n: ectx: property (text), item, widget (QListWidget, activeViews)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:205
+#. i18n: ectx: property (text), item, widget (KComboBox, views)
+#: kdeobservatory.cpp:81 kdeobservatory.cpp:189 kdeobservatory.cpp:304
+#: kdeobservatory.cpp:622 kdeobservatorypresets.cpp:171 krazyreportview.cpp:73
+#: rc.cpp:9 rc.cpp:57 rc.cpp:81
+msgid "Krazy Report"
+msgstr ""
+
+#: kdeobservatory.cpp:113
+msgid "Go to previous view"
+msgstr "Önceki görünüme git"
+
+#: kdeobservatory.cpp:119
+msgid "Go to next view"
+msgstr "Sonraki görünüme git"
+
+#: kdeobservatory.cpp:179
+#, fuzzy
+#| msgid "General"
+msgctxt "Global configuration options"
+msgid "General"
+msgstr "Genel"
+
+#: kdeobservatory.cpp:182
+msgid "Projects"
+msgstr "Projeler"
+
+#: kdeobservatory.cpp:191
+msgid "Views"
+msgstr ""
+
+#: kdeobservatory.cpp:323
+msgid "Last update: "
+msgstr "Son güncelleme: "
+
+#: krazyreportview.cpp:102
+msgid "error"
+msgid_plural "errors"
+msgstr[0] ""
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:56
+#. i18n: ectx: property (text), widget (QTableWidget, projects)
+#: rc.cpp:3
+#, fuzzy
+#| msgid "Projects"
+msgid "Project"
+msgstr "Projeler"
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:61
+#. i18n: ectx: property (text), widget (QTableWidget, projects)
+#: rc.cpp:6
+msgid "Commit Subject"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:71
+#. i18n: ectx: property (text), widget (QTableWidget, projects)
+#: rc.cpp:12
+msgid "Krazy File Identifier"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:101
+#. i18n: ectx: property (text), widget (KPushButton, psbAddProject)
+#: rc.cpp:15
+msgid "&Add"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:126
+#. i18n: ectx: property (text), widget (KPushButton, psbRemoveProject)
+#: rc.cpp:18
+msgid "&Remove"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigprojects.ui:151
+#. i18n: ectx: property (text), widget (KPushButton, psbEditProject)
+#: rc.cpp:21
+msgid "&Edit"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:41
+#. i18n: ectx: property (text), widget (QLabel, lblDays1)
+#: rc.cpp:24
+msgid "Show activities for the past "
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:88
+#. i18n: ectx: property (text), widget (QLabel, lblSynchronize)
+#: rc.cpp:27
+msgid "Synchronize data every:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:104
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, synchronizationDelay)
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:197
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, viewsDelay)
+#: rc.cpp:30 rc.cpp:42
+msgid "hh 'Hours' mm 'Mins' ss 'Secs'"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:118
+#. i18n: ectx: property (text), widget (QCheckBox, enableAutoViewChange)
+#: rc.cpp:33
+msgid "Enable automatic view change"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:134
+#. i18n: ectx: property (text), widget (QLabel, lblDays2)
+#: rc.cpp:36
+msgid "days"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfiggeneral.ui:181
+#. i18n: ectx: property (text), widget (QLabel, lblViewsDelay)
+#: rc.cpp:39
+msgid "Change view every:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:23
+#. i18n: ectx: property (text), widget (QLabel, lblActiveViews)
+#: rc.cpp:45
+msgid "Active views:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:111
+#. i18n: ectx: property (text), widget (QToolButton, tlbUp)
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:122
+#. i18n: ectx: property (text), widget (QToolButton, tlbDown)
+#: rc.cpp:60 rc.cpp:63
+msgid "..."
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:150
+#. i18n: ectx: property (title), widget (QGroupBox, gpbViewConfiguration)
+#: rc.cpp:66
+msgid "View Configuration"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:170
+#. i18n: ectx: property (text), widget (QLabel, lblView)
+#: rc.cpp:69
+msgid "View:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:225
+#. i18n: ectx: property (text), widget (QLabel, lblProjectsInView)
+#: rc.cpp:84
+#, fuzzy
+#| msgid "Projects"
+msgid "Projects in view:"
+msgstr "Projeler"
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:265
+#. i18n: ectx: property (text), widget (KPushButton, psbCheckAll)
+#: rc.cpp:87
+msgid "&Check All"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigviews.ui:290
+#. i18n: ectx: property (text), widget (KPushButton, psbUncheckAll)
+#: rc.cpp:90
+msgid "&Uncheck All"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:37
+#. i18n: ectx: property (text), widget (QLabel, lblName)
+#: rc.cpp:93
+#, fuzzy
+#| msgid "Projects"
+msgid "Project name:"
+msgstr "Projeler"
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:47
+#. i18n: ectx: property (text), widget (QLabel, lblCommitSubject)
+#: rc.cpp:96
+#, fuzzy
+#| msgid "Commit History"
+msgid "Commit subject:"
+msgstr "Yapılanların Özeti"
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:59
+#. i18n: ectx: property (toolTip), widget (KLineEdit, commitSubject)
+#: rc.cpp:99
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+"size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
+"italic;\">Prefix used for this project in kde-commits mailing list.</span></"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Ex:</span> KDE/kdebase/runtime/plasma/</p></body></html>"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:66
+#. i18n: ectx: property (text), widget (QLabel, lblIcon)
+#: rc.cpp:107
+msgid "Icon:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:108
+#. i18n: ectx: property (text), widget (QLabel, lblKrazyReport)
+#: rc.cpp:110
+msgid "Krazy report:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:124
+#. i18n: ectx: property (toolTip), widget (KLineEdit, krazyReport)
+#: rc.cpp:113
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+"size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
+"italic;\">Krazy report web address for this project.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Format:</span> http://www.englishbreakfastnetwork.org/krazy/"
+"<span style=\" font-style:italic;\">&lt;krazy-report&gt;</span> <span style="
+"\" font-weight:600;\">or </span>http://www.englishbreakfastnetwork.org/krazy/"
+"index.php?<span style=\" font-style:italic;\">&lt;krazy-component-module&gt;"
+"</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Ex:</span> http://www.englishbreakfastnetwork.org/krazy/<span "
+"style=\" font-weight:600; font-style:italic;\">reports/kde-4.x/kdebase-"
+"runtime/plasma</span>/<span style=\" font-weight:600; font-style:italic;"
+"\">index.html</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">or</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">http://www."
+"englishbreakfastnetwork.org/krazy/index.php?<span style=\" font-weight:600; "
+"font-style:italic;\">component=kde-4.x&amp;module=kdevelop</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
+"p></body></html>"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:131
+#. i18n: ectx: property (text), widget (QLabel, lblKrazyFilePrefix)
+#: rc.cpp:125
+msgid "Krazy file identifier:"
+msgstr ""
+
+#. i18n: file: ui/kdeobservatoryconfigproject.ui:143
+#. i18n: ectx: property (toolTip), widget (KLineEdit, krazyFilePrefix)
+#: rc.cpp:128
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Bitstream Vera Sans'; font-"
+"size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
+"italic;\">Sub-string that must appear in files belonging to this project. "
+"Leave it blank if all files in Krazy report belong to this project or a "
+"component-module address was given.</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Ex: for a plasmoid in "
+"playground, <span style=\" text-decoration: underline;\">Krazy report</span> "
+"would be \"playground/base/plasma\" and <span style=\" text-decoration: "
+"underline;\">Krazy file identifier</span> would be \"&lt;plasmoid-"
+"directory&gt;\".</p></body></html>"
+msgstr ""
+
+#: topactiveprojectsview.cpp:88 topdevelopersview.cpp:92
+msgid "commits"
+msgstr "gönderimler"

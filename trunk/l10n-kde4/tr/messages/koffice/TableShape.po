@@ -1,0 +1,93 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: TableShape\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"PO-Revision-Date: 2009-04-25 13:37+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: SheetsEditor.cpp:68 SheetsEditor.cpp:130
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+
+#: SheetsEditor.cpp:72
+msgid "Add"
+msgstr "Ekle"
+
+#: SheetsEditor.cpp:76
+msgid "Remove"
+msgstr "Sil"
+
+#: SheetsEditor.cpp:130
+msgid "Enter Name:"
+msgstr "İsim Girin:"
+
+#: TableShapeFactory.cpp:57
+msgid "Table"
+msgstr "Tablo"
+
+#: TableShapeFactory.cpp:60
+msgid "Table Shape"
+msgstr "Tablo Şekli"
+
+#: TableTool.cpp:80
+msgid "Import OpenDocument Spreadsheet File"
+msgstr "OpenDocument Hesap Tablosu Dosyasını İçeriye Aktar"
+
+#: TableTool.cpp:81
+msgid "Import"
+msgstr "İçeriye Aktar"
+
+#: TableTool.cpp:85
+msgid "Export OpenDocument Spreadsheet File"
+msgstr "OpenDocument Hesap Tablosu Dosyasını Dışarıya Aktar"
+
+#: TableTool.cpp:86
+msgid "Export"
+msgstr "Dışarıya Aktar"
+
+#: TableTool.cpp:228
+msgid "Sheets"
+msgstr "Sayfalar"
+
+#: TableTool.cpp:270
+msgid "Sheet:"
+msgstr "Sayfa:"
+
+#: TableTool.cpp:272
+msgid "Selected Sheet"
+msgstr "Seçili Sayfa"
+
+#: TableTool.cpp:281
+msgid "Columns:"
+msgstr "Sütunlar:"
+
+#: TableTool.cpp:283
+msgid "Number of columns"
+msgstr "Sütun sayısı"
+
+#: TableTool.cpp:292
+msgid "Rows:"
+msgstr "Satır:"
+
+#: TableTool.cpp:294
+msgid "Number of rows"
+msgstr "Satır sayısı"
+
+#: TableToolFactory.cpp:31
+msgid "Table tool"
+msgstr "Tablo aracı"
+
+#: TableToolFactory.cpp:33
+msgid "Table editing tool"
+msgstr "Tablo düzenleme aracı"

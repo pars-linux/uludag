@@ -1,0 +1,417 @@
+# translation of faq_filemng.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2003,2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_filemng\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2008-06-15 12:43+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: filemng.docbook:6
+#, no-c-format
+msgid "The File Manager"
+msgstr "Dosya Yöneticisi"
+
+#. Tag: para
+#: filemng.docbook:8
+#, no-c-format
+msgid ""
+"&kde;'s file manager is &konqueror;. The &konqueror; home page is located at "
+"<ulink url=\"http://www.konqueror.org\">http://www.konqueror.org</ulink> "
+"where a &konqueror; specific <acronym>FAQ</acronym> can be found."
+msgstr ""
+"&kde;'nin dosya yöneticisi ve web tarayıcısı &konqueror;'dır. &konqueror;'ın "
+"ana sayfası <ulink url=\"http://www.konqueror.org\">http://www.konqueror.org "
+"</ulink>'dur. Bu sayfada &konqueror;' a özel <acronym>SSS</acronym> "
+"bulunabilir."
+
+#. Tag: para
+#: filemng.docbook:18
+#, no-c-format
+msgid "How can I change the appearance of a folder in &konqueror;?"
+msgstr "&konqueror;'da bir dizinin görünümünü nasıl değiştirebilirim?"
+
+#. Tag: para
+#: filemng.docbook:22
+#, no-c-format
+msgid ""
+"Right-click the folder, select <guimenuitem>Properties</guimenuitem>, click "
+"on the large icon in the dialog which appears, and choose another icon."
+msgstr ""
+"Dizine sağ fare tuşu ile tıklayın, <guimenuitem>Özellikler</guimenuitem>'i "
+"seçin, karşınıza çıkan ekrandaki büyük simgeye tıklayın ve bir başka simge "
+"seçin."
+
+#. Tag: para
+#: filemng.docbook:24
+#, fuzzy, no-c-format
+msgid ""
+"To change the icon displayed for entries in the <guimenu>K Menu</guimenu>, "
+"use the <application>Menu Editor</application>, accessed by clicking with "
+"the &RMB; on the &kmenu; icon and selecting <guimenuitem>Menu Editor</"
+"guimenuitem> from the menu."
+msgstr ""
+"<guimenu>K Menüsü</guimenu>'ndeki girişler için gösterilen simgeyi "
+"değiştirmek için, <menuchoice><guisubmenu>Ayarlar</"
+"guisubmenu><guimenuitem>Menü Düzenleyicisi</guimenuitem></menuchoice> "
+"konumundaki <application> Menü Düzenleyicisi</application>'ni kullanın."
+
+#. Tag: para
+#: filemng.docbook:34
+#, no-c-format
+msgid "How can I do non-anonymous &FTP; transfers with &konqueror;?"
+msgstr "&konqueror;ile anonim olmayan &FTP; transferlerini nasıl yapabilirim?"
+
+#. Tag: para
+#: filemng.docbook:37
+#, fuzzy, no-c-format
+msgid ""
+"Normally, if you enter a &URL; like <userinput>ftp://<replaceable>ftp."
+"example.com</replaceable></userinput>, &konqueror; will attempt an anonymous "
+"login to the &FTP; server. If you want to login as a particular user, enter "
+"a &URL; like <userinput>ftp://<replaceable>username@ftp.example.com</"
+"replaceable></userinput> instead. &konqueror; will ask for your password and "
+"connect to the server."
+msgstr ""
+"Normalde, eğer <userinput>ftp://<replaceable>ftp.somehost.com </"
+"replaceable></userinput> şeklinde bir &URL; girerseniz,&konqueror; &FTP; "
+"sunucusuna anonim bir bağlantı yapmaya çalışır. Eğer özel bir kullanıcı "
+"olarak bağlanmak istiyorsanız, <userinput>ftp://<replaceable> username@ftp."
+"somehost.com</replaceable></userinput> şeklinde bir  &URL; yazınız. "
+"&konqueror; size şifrenizi sorduktan sonra sunucuya bağlanacaktır. "
+
+#. Tag: para
+#: filemng.docbook:50
+#, no-c-format
+msgid "How do I specify the startup folder for &konqueror;?"
+msgstr " &konqueror; için başlangıç dizinini nasıl seçerim?"
+
+#. Tag: para
+#: filemng.docbook:54
+#, no-c-format
+msgid ""
+"Using the &RMB;, click on the Home icon and choose <guimenuitem>Properties</"
+"guimenuitem>. Under the <guilabel>Application</guilabel> tab you will "
+"probably find something like <command>kfmclient openProfile filemanagement</"
+"command>; just append <filename class=\"directory\">file:/whereever/you/"
+"want</filename> with the folder you would like &konqueror; to start in."
+msgstr ""
+"&RMB;'yi kullanarak, Ev simgesine tıklayın ve <guimenuitem>Özellikler</"
+"guimenuitem>'i seçin. <guilabel>Uygulama</guilabel> sekmesi altında "
+"<command>kfmclient openProfile filemanagement</command>'a benzer birşeyler "
+"bulacaksınız. <filename class=\"directory\">file:/nereyi/istiyorsanız</"
+"filename>'ı &konqueror;'ın nereden açılmasını istiyorsanız orayla değiştirin."
+
+#. Tag: para
+#: filemng.docbook:66
+#, no-c-format
+msgid "How do I rename files?"
+msgstr "Dosyaları nasıl yeniden adlandırırım?"
+
+#. Tag: para
+#: filemng.docbook:69
+#, no-c-format
+msgid ""
+"Simply <mousebutton>right</mousebutton> click on the file and select "
+"<guimenuitem>Rename</guimenuitem> or press the keyboard shortcut <keycap>F2</"
+"keycap> with a file selected."
+msgstr ""
+"Basitçe <mousebutton>sağ</mousebutton> tuşu kullanarak dosyaya tıklayın ve "
+"<guimenuitem>Yeniden Adlandır</guimenuitem>'ı seçin ya da daha önceden "
+"seçilmiş olan bir dosyaya bir kere tıklayın. Bir dosyayı yeniden adlandırmak "
+"için kullanılan klavye kısayol tuşu <keycap>F2</keycap>'dir."
+
+#. Tag: para
+#: filemng.docbook:76
+#, no-c-format
+msgid "Where did the delete entry from my right-click context menu go?"
+msgstr "Fareyi sağ tıkladığımda açılan menüdeki sil seçeneği nereye gitti ?"
+
+#. Tag: para
+#: filemng.docbook:79
+#, no-c-format
+msgid ""
+"In &kde; 3.4 the delete context menu entries that bypass the trashcan are no "
+"longer displayed by default. To enable them, go to "
+"<menuchoice><guimenu>Settings</guimenu><guimenuitem>Configure &konqueror;</"
+"guimenuitem></menuchoice> and select <guilabel>Behaviour</guilabel> in the "
+"iconbar to the left. Tick the checkbox <guilabel>Show 'Delete' context menu "
+"entries which bypass the trashcan</guilabel>."
+msgstr ""
+"&kde; 3.4 de Çöp Kutusuna göndermeden silmek için 'Sil' menü girdilerini "
+"göster"
+
+#. Tag: para
+#: filemng.docbook:91
+#, no-c-format
+msgid ""
+"How do I configure the programs that &konqueror; uses to open different "
+"types of files?"
+msgstr ""
+"&konqueror; 'ı &Java; programcıklarını çalışması için nasıl ayarlayabilirim?"
+
+#. Tag: para
+#: filemng.docbook:94
+#, no-c-format
+msgid ""
+"In order to configure file associations, you should go to the "
+"&kcontrolcenter; and choose the item <guimenuitem>File Associations</"
+"guimenuitem> under the category <guimenu>KDE Components</guimenu>."
+msgstr ""
+
+#. Tag: para
+#: filemng.docbook:98
+#, no-c-format
+msgid ""
+"Suppose the default <acronym>PDF</acronym> viewer is now &kghostview; and "
+"you would prefer to use <application>KPDF</application> as a viewer. You "
+"would simply type <userinput>pdf</userinput> in the search box at the top of "
+"the dialog, choose <guimenuitem>pdf</guimenuitem> in the "
+"<guimenu>application</guimenu> group and move <application>KPDF</"
+"application> up. In the <guilabel>Embedding</guilabel> tab you can also "
+"choose which component other applications will use to display files (for "
+"example, when viewing files in &konqueror; or using &ark;'s embedded viewer)."
+msgstr ""
+"Örneğin ön tanımlı <acronym>PDF</acronym> görüntüleyiciniz &kghostview; "
+"ancak siz <application>KPDF</application> i kullanmayı tercih ediyorsunuz. "
+"Bunun için üst kısımdaki Dosya adı kalıbı bul kutusuna <userinput>pdf</"
+"userinput> yazıp, <guimenu>application</guimenu> ı çift tıklayıp "
+"<guimenuitem>pdf</guimenuitem> i seçip, uygulama tercih sırasında "
+"<application>KPDF</application> i seçip yukarı taşı demeniz yeterli. Ayrıca "
+"<guilabel>Yerleştirilmiş</guilabel> sekmesinden belirtilen dosya tipini "
+"diğer uygulamaların nasıl görüntüleyeceğini seçebilirsiniz. (Örneğin "
+"&konqueror; veya &ark; programının içerisinde PDF dosyaları hangi programla "
+"açılacak)"
+
+#. Tag: para
+#: filemng.docbook:114
+#, no-c-format
+msgid ""
+"How can I configure &konqueror; to open files with double-click instead of "
+"single-click?"
+msgstr ""
+"&konqueror; uygulamasını dosyalarımı çift tıklama yerine tek tıklama ile "
+"açmak üzere nasıl ayarlayabilirim?"
+
+#. Tag: para
+#: filemng.docbook:118
+#, no-c-format
+msgid ""
+"In the &kcontrolcenter;, go to <menuchoice><guimenu>Peripherals</"
+"guimenu><guimenuitem>Mouse</guimenuitem></menuchoice> and in the "
+"<guilabel>General</guilabel> tab, select <guilabel>Double-click to open "
+"files and folders</guilabel>."
+msgstr ""
+"&kcontrolcenter;'da, <menuchoice><guimenu>Çevresel</"
+"guimenu><guimenuitem>Fare</guimenuitem></menuchoice> bölümüne gidin ve "
+"<guilabel>Genel</guilabel> sekmesinde, <guilabel>Dosya ve klasörleri açmak "
+"için çift tıkla</guilabel> seçin."
+
+#. Tag: para
+#: filemng.docbook:127
+#, no-c-format
+msgid ""
+"When I try to click on a folder in &konqueror;, I get the message: "
+"<quote>There appears to be a configuration error. You have associated "
+"Konqueror with inode/directory, but it cannot handle this file type.</quote>"
+msgstr ""
+"&konqueror; içerisinde bir dizine tıkladığımda <quote>Yapılandırma hatası "
+"mevcut. inode/dizini Konqueror ile ilişkilendirdiniz ancak Konqueror bu "
+"dosya türünü açamaz.</quote> mesajı alıyorum."
+
+#. Tag: para
+#: filemng.docbook:133
+#, no-c-format
+msgid ""
+"You need to make sure that the embedding settings for inode/directory are "
+"correct:"
+msgstr ""
+"Belirtilen inode/dizin için Dosya ilişkileri--yerleştirilmiş sekmesi "
+"ayarlarının doğru yapıldığını kontrol edin."
+
+#. Tag: para
+#: filemng.docbook:136
+#, no-c-format
+msgid ""
+"In &konqueror;, go to <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure Konqueror</guimenuitem></menuchoice> and then "
+"to the <guilabel>File Associations</guilabel> page."
+msgstr ""
+"&konqueror; da <menuchoice><guimenu>Ayarlar</"
+"guimenu><guimenuitem>Konqueror'ı Yapılandır..</guimenuitem></menuchoice> "
+"menüsünde <guilabel>Tarayıcı Tanımlaması</guilabel>'nı seçin. Öntanımlı ve "
+"siteye özel seçenekler burada ayarlanabilir."
+
+#. Tag: para
+#: filemng.docbook:139
+#, no-c-format
+msgid "Open inode->directory in the tree view."
+msgstr "Listeden inode un altındaki directory dizinini aç."
+
+#. Tag: para
+#: filemng.docbook:140
+#, no-c-format
+msgid ""
+"Click on the <guilabel>Embedding</guilabel> tab. Make sure that "
+"<guilabel>Left Click Action</guilabel> is set to <guilabel>Show file in "
+"embedded viewer</guilabel>, and by default <guilabel>Icon View "
+"(konq_iconview)</guilabel> is at the top of <guilabel>Services Preference "
+"Order.</guilabel>"
+msgstr ""
+"<guilabel>Yerleştirilmiş</guilabel> sekmesini tıklayın. <guilabel>Sol "
+"tıklama eylemi</guilabel> bölümünde <guilabel>Dosyayı yerleştirilmiş "
+"göstericide göster</guilabel> in işaretli olduğunu kontrol edin. Ayrıca "
+"<guilabel>Servis tercih sırası</guilabel> bölümünde de <guilabel>Simge "
+"görünümü (konq_iconview)</guilabel> ön tanımlı olmalıdır."
+
+#. Tag: para
+#: filemng.docbook:154
+#, no-c-format
+msgid ""
+"What are <option>%i</option> and <option>%m</option> in the Execute line?"
+msgstr ""
+"Çalıştırma satırındaki <option>%i</option> and <option>%m</option> "
+"seçenekleri nelerdir?"
+
+#. Tag: para
+#: filemng.docbook:157
+#, no-c-format
+msgid ""
+"They are used by all &kde; applications (since they are implemented in "
+"<classname>KApplication</classname> and all good &kde; programs create a "
+"<classname>KApplication</classname> object before they even look at the "
+"command line arguments)."
+msgstr "Tüm bunlar &kde; uygulamaları tarafından kullanılır."
+
+#. Tag: para
+#: filemng.docbook:160
+#, no-c-format
+msgid ""
+"A standard line for a &kde; application looks like this: "
+"<userinput><command>foo</command> <option>... %i %m -caption \\\"%c\\\"</"
+"option></userinput>. Pretty confusing, -but it has been designed in that way "
+"so that it can integrate legacy, non-&kde; applications as smoothly as "
+"possible. &konqueror;, when executing the line above, will extend the "
+"command to <userinput><command><replaceable>foo</replaceable></command> "
+"<option>-icon something.png -miniicon something_mini.png -caption \\\"The Foo"
+"\\\"</option></userinput>. Both the icon and the mini-icon as well as \"The "
+"Foo\" are properties defined in the <filename>.desktop</filename> file. If "
+"the icons are not defined, they simply default to the executable name "
+"<replaceable>foo</replaceable>."
+msgstr ""
+"&kde; uygulamaları için standart bir satır şuna benzer : <userinput> "
+"<command>foo</command> <option>... %i %m -caption \\\"%c\\\"</option> </"
+"userinput>. Oldukça karmaşık, fakat bu yöntem &kde;-tabanlı olmayan "
+"uygulamaları olabildiğince yumuşak bir şekilde entegre edebilmek için "
+"oluşturuldu. Örneğin &konqueror; yukarıdaki satırı çalıştırırken, bunu "
+"<userinput><command> <replaceable>foo</replaceable></command> <option>-icon "
+"birşeyler.png -miniicon birşeyler_mini.png -caption \\\"The Foo\\\"</"
+"option></userinput> şekline dönüştürecektir. \"The Foo\" gibi icon ve the "
+"mini-icon da <filename>.desktop </filename> dosyasında tanımlanan "
+"özelliklerdir. Eğer bu simgeler tanımlanmazsa, bunlar <replaceable>foo</"
+"replaceable> uygulamasının ismine dönüştürülür."
+
+#. Tag: para
+#: filemng.docbook:173
+#, no-c-format
+msgid ""
+"This way a user can change these things in &kmenuedit; for his or her "
+"applications. The <option>-caption</option> option is important, because no "
+"user will accept that the menu item <guimenuitem>Editor</guimenuitem> starts "
+"something called <guilabel>kedit-0.9pl4-build47</guilabel>. Instead, he "
+"expects a window called <guilabel>Editor</guilabel>. Furthermore these names "
+"are localized, <abbrev>i.e.</abbrev> an American user launches "
+"<guimenuitem>CD-Player</guimenuitem> and gets a window called <guilabel>CD-"
+"Player</guilabel> while a German user launches <guimenuitem>CD-Spieler</"
+"guimenuitem> and gets a window called <guilabel>CD-Spieler</guilabel>."
+msgstr ""
+"Böylece bir kullanıcı bunları &kmenuedit; uygulamasında kendi uygulamaları "
+"için değiştirebilir. <option>-caption (-başlık)</option> seçeneği önemlidir, "
+"çünkü hiçbir kullanıcı <guimenuitem>Editor</guimenuitem> menü bileşeninin  "
+"<guilabel> kedit-0.9pl4-build47</guilabel> olarak gösterilmesini istemez; "
+"birinciyi tercih eder. Ayrıca bu isimler yerelleştirilebilir de, <abbrev>ör</"
+"abbrev> Amerikan bir kullanıcı <guimenuitem>CD-Player</guimenuitem>'ı "
+"çalıştırdığında pencere başlığı  <guilabel>CD-Player</guilabel> olarak "
+"görüntülenir, bir Türk kullanıcı ise <guimenuitem>CD-Oynatıcı</"
+"guimenuitem>'yı çalıştırdığında pencere başlığı<guilabel>CD-Oynatıcı</"
+"guilabel> olur."
+
+#. Tag: para
+#: filemng.docbook:187
+#, no-c-format
+msgid ""
+"How do I make &konqueror; start up without a menu bar? I can't save a view "
+"profile when the menu bar is invisible!"
+msgstr ""
+"&konqueror; ın menu çubuğu gizlenmiş olarak başlamasını nasıl "
+"sağlayabilirim ? Menü çubuğu görünmez iken bir görüntü profilini kaydedemem!"
+
+#. Tag: para
+#: filemng.docbook:191
+#, no-c-format
+msgid ""
+"The easiest way to do this is to edit &konqueror;'s configuration file "
+"manually. Add the following lines to <filename>~/.kde/share/config/"
+"konquerorrc</filename>:"
+msgstr ""
+"Bunu yapmanın en kolay yolu &konqueror; yapılandırma dosyasını elle "
+"düzenlemektir. Şu satırları <filename>~/.kde/share/config/konquerorrc</"
+"filename> dosyasına ekleyin."
+
+#. Tag: programlisting
+#: filemng.docbook:194
+#, no-c-format
+msgid ""
+"[KonqMainWindow]\n"
+"MenuBar=Disabled"
+msgstr ""
+"[KonqMainWindow]\n"
+"MenuBar=Disabled"
+
+#. Tag: para
+#: filemng.docbook:197
+#, no-c-format
+msgid "On restarting &konqueror;, the menubar should be hidden."
+msgstr "&konqueror; tekrar başlatıldığında menu çubuğu gizlenmiş olacaktır."
+
+#. Tag: para
+#: filemng.docbook:204
+#, no-c-format
+msgid ""
+"<acronym>JPEG</acronym> files no longer show previews in &konqueror; (and "
+"I've installed CrossOver Office)"
+msgstr ""
+"<acronym>JPEG</acronym> dosyalarının önizlemeleri artık &konqueror; "
+"içerisinde gösterilmiyor (ve CrossOver Office'i yükledim)"
+
+#. Tag: para
+#: filemng.docbook:207
+#, no-c-format
+msgid ""
+"CrossOver creates new &MIME; types that will override the default image/jpeg "
+"and image/jpg times. In &konqueror;, go to <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure Konqueror</guimenuitem> </menuchoice>, and "
+"then to <guilabel>File Associations</guilabel>. Find the application/x-"
+"crossover-jpg and application/x-crossover-jpeg entries, and remove them. "
+"Then hit <guibutton>OK</guibutton>. This problem is reported fixed in the "
+"latest version of CrossOver."
+msgstr ""
+"CrossOver, varsayılan image/jpeg ve image/jpg dönemlerini önemsetmeyen yeni "
+"&MIME; türleri oluşturur. &konqueror; içerisinde iken, "
+"<menuchoice><guimenu>Ayarlar</guimenu><guimenuitem>Konqueror'ı Yapılandır</"
+"guimenuitem> </menuchoice>, ve <guilabel>Dosya İlişkilendirmeleri</"
+"guilabel>ne gidin. application/x-crossover-jpg ve application/x-crossover-"
+"jpeg girişlerini bulup, kaldırın. Sonra <guibutton>Tamam</guibutton> "
+"butonuna basın. Bildirilen bu problem, CrossOver'ın son sürümünde onarıldı."

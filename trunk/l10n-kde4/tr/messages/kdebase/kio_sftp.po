@@ -1,0 +1,263 @@
+# translation of kio_sftp.po to
+# translation of kio_sftp.po to Türkçe
+# translation of kio_sftp.po to turkish
+# translation of kio_sftp.po to Turkish
+# Copyright (C) 2002,2003, 2004, 2005 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Serdar Soytetir, 2008.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kio_sftp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-18 01:17+0100\n"
+"PO-Revision-Date: 2009-10-12 16:29+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kio_sftp.cpp:197 kio_sftp.cpp:201 kio_sftp.cpp:478 kio_sftp.cpp:685
+msgid "SFTP Login"
+msgstr "SFTP Girişi"
+
+#: kio_sftp.cpp:212
+msgid "Use the username input field to answer this question."
+msgstr "Bu soruyu yanıtlamak için kullanıcı adı alanını kullanın."
+
+#: kio_sftp.cpp:462
+#, kde-format
+msgid "Opening SFTP connection to host %1:%2"
+msgstr "%1:%2 makinesine SFTP bağlantısı kuruluyor"
+
+#: kio_sftp.cpp:466
+msgid "No hostname specified"
+msgstr "Makine adı belirtilmedi"
+
+#: kio_sftp.cpp:480
+msgid "site:"
+msgstr "makine:"
+
+#: kio_sftp.cpp:608
+#, kde-format
+msgid ""
+"The host key for this server was not found, but another type of key exists.\n"
+"An attacker might change the default server key to confuse your client into "
+"thinking the key does not exist.\n"
+"Please contact your system administrator.\n"
+"%1"
+msgstr ""
+
+#: kio_sftp.cpp:619
+#, kde-format
+msgid ""
+"The host key for the server %1 has changed.\n"
+"This could either mean that DNS SPOOFING is happening or the IP address for "
+"the host and its host key have changed at the same time.\n"
+"The fingerprint for the key sent by the remote host is:\n"
+" %2\n"
+"Please contact your system administrator.\n"
+"%3"
+msgstr ""
+
+#: kio_sftp.cpp:631
+msgid "Warning: Cannot verify host's identity."
+msgstr "Uyarı: Makinenin kimliği saptanamadı."
+
+#: kio_sftp.cpp:632
+#, kde-format
+msgid ""
+"The authenticity of host %1 cannot be established.\n"
+"The key fingerprint is: %2\n"
+"Are you sure you want to continue connecting?"
+msgstr ""
+"%1 makinesinin güvenilirliğine ulaşılamadı.\n"
+"Anahtar parmak izi: %2\n"
+"Bağlanmaya devam etmek istediğinizden emin misiniz?"
+
+#: kio_sftp.cpp:663 kio_sftp.cpp:678 kio_sftp.cpp:717 kio_sftp.cpp:731
+msgid "Authentication failed."
+msgstr "Kimlik sınaması başarısız oldu."
+
+#: kio_sftp.cpp:686
+msgid "Please enter your username and password."
+msgstr "Lütfen kullanıcı adı ve parolanızı girin."
+
+#: kio_sftp.cpp:691
+msgid "Incorrect username or password"
+msgstr "Geçersiz kullanıcı adı veya parolası"
+
+#: kio_sftp.cpp:744
+msgid ""
+"Unable to request the SFTP subsystem. Make sure SFTP is enabled on the "
+"server."
+msgstr ""
+"SFTP alt sistemi sorgulanamadı. Sunucuda SFTP'nin etkinleştirildiğinden emin "
+"olun."
+
+#: kio_sftp.cpp:752
+msgid "Could not initialize the SFTP session."
+msgstr "SFTP oturumu başlatılamadı."
+
+#: kio_sftp.cpp:757
+#, kde-format
+msgid "Successfully connected to %1"
+msgstr "%1 adresine başarıyla bağlantı kuruldu"
+
+#: kio_sftp.cpp:1244
+#, kde-format
+msgid ""
+"Could not change permissions for\n"
+"%1"
+msgstr ""
+
+#~ msgid "An internal error occurred. Please retry the request again."
+#~ msgstr "Bir hata oluştu. Lütfen isteğinizi yenileyin."
+
+#~ msgid "Please enter your username and key passphrase."
+#~ msgstr "Lütfen kullanıcı adı ve parolanızı girin."
+
+#~ msgid "Warning: Host's identity changed."
+#~ msgstr "Uyarı: Makinenin kimliği değişti."
+
+#~ msgid "Connection failed."
+#~ msgstr "Bağlantıda yapılamadı."
+
+#~ msgid "Connection closed by remote host."
+#~ msgstr "Bağlantı karşıdaki makine tarafından sonlandırıldı!"
+
+#~ msgid "unexpected SFTP error: %1"
+#~ msgstr "Beklenmeyen SFTP hatası: %1"
+
+#~ msgid "SFTP version %1"
+#~ msgstr "SFTP sürüm: %1"
+
+#~ msgid "Protocol error."
+#~ msgstr "Protokol hatası."
+
+#~ msgid "An internal error occurred. Please try again."
+#~ msgstr "Bir hata oluştu. Lütfen yeniden deneyin."
+
+#~ msgid ""
+#~ "Unknown error was encountered while copying the file to '%1'. Please try "
+#~ "again."
+#~ msgstr ""
+#~ "Dosyayı '%1' dizinine kopyalarken bir hata oluştu. Lütfen tekrar deneyin."
+
+#~ msgid "The remote host does not support renaming files."
+#~ msgstr "Uzak makine dosyaların yeniden adlandırılmasını desteklemiyor"
+
+#~ msgid "The remote host does not support creating symbolic links."
+#~ msgstr "Uzak makine sembolik bağ oluşturulmasını desteklemiyor."
+
+#~ msgid "Connection closed"
+#~ msgstr "Bağlantı kesildi"
+
+#~ msgid "Could not read SFTP packet"
+#~ msgstr "SFTP paketi okunamadı"
+
+#~ msgid "End of file."
+#~ msgstr "Dosyanın sonu."
+
+#~ msgid "SFTP command failed for an unknown reason."
+#~ msgstr "SFTP komutunda bir hata oluştu"
+
+#~ msgid "The SFTP server received a bad message."
+#~ msgstr "SFTP sunucusu hatalı bir yanıt aldı."
+
+#~ msgid "You attempted an operation unsupported by the SFTP server."
+#~ msgstr "SFTP sunucusunun desteklemediği bir işlem gerçekleştirdiniz."
+
+#~ msgid "Error code: %1"
+#~ msgstr "Hata kodu: %1"
+
+#~ msgid "Cannot specify a subsystem and command at the same time."
+#~ msgstr "Aynı anda hem bir alt sistem, hem de komut belirtemezsiniz."
+
+#~ msgid "No options provided for ssh execution."
+#~ msgstr "ssh çalıştırmak için bir komut girilmedi."
+
+#~ msgid "Failed to execute ssh process."
+#~ msgstr "ssh sürecinin çalıştırılmasında hata."
+
+#~ msgid "Error encountered while talking to ssh."
+#~ msgstr "Ssh ile konuşurken bir hata oluştu."
+
+#~ msgid "Please supply a password."
+#~ msgstr "Lütfen bir parola girin."
+
+#~ msgid "Please supply the passphrase for your SSH private key."
+#~ msgstr "Lütfen SSH özel anahtarı için bir parola girin."
+
+#~ msgid "Authentication to %1 failed"
+#~ msgstr "%1 makinesi için yapılan kimlik sınaması başarısız oldu"
+
+#~ msgid ""
+#~ "The identity of the remote host '%1' could not be verified because the "
+#~ "host's key is not in the \"known hosts\" file."
+#~ msgstr "'%1' makinesinin kimliği onaylanamadı. "
+
+#~ msgid ""
+#~ " Manually, add the host's key to the \"known hosts\" file or contact your "
+#~ "administrator."
+#~ msgstr "Sistem yöneticinizle bağlantıya geçin."
+
+#~ msgid " Manually, add the host's key to %1 or contact your administrator."
+#~ msgstr ""
+#~ " El ile, %1 makinesinin anahtarını ekleyin ya da yöneticinize başvurun."
+
+#~ msgid ""
+#~ "The identity of the remote host '%1' could not be verified. The host's "
+#~ "key fingerprint is:\n"
+#~ "%2\n"
+#~ "You should verify the fingerprint with the host's administrator before "
+#~ "connecting.\n"
+#~ "\n"
+#~ "Would you like to accept the host's key and connect anyway? "
+#~ msgstr ""
+#~ "%1 doğrulanmayan uzak host sahibi kimliği. Host sahibi anahtar parmak "
+#~ "izi:\n"
+#~ "%2\n"
+#~ "Host sahibine bağlanarak yöneticisine anahtar parmak izini "
+#~ "doğrulatmalısınız.\n"
+#~ "\n"
+#~ "Kabuk edilmiş host parmak iziyle ve yine bağlanmaktan hoşlanırmıydınız?"
+
+#~ msgid ""
+#~ "WARNING: The identity of the remote host '%1' has changed!\n"
+#~ "\n"
+#~ "Someone could be eavesdropping on your connection, or the administrator "
+#~ "may have just changed the host's key. Either way, you should verify the "
+#~ "host's key fingerprint with the host's administrator. The key fingerprint "
+#~ "is:\n"
+#~ "%2\n"
+#~ "Add the correct host key to \"%3\" to get rid of this message."
+#~ msgstr ""
+#~ "TEHLİKE : Uzak host kimliği '%1' değişitirildi!\n"
+#~ "\n"
+#~ "Birileri açıkları gözletliyor olabilir.Host yöneticisi anahtar kimliğini "
+#~ "değiştirmiş olabilir.Doğrulanan yol host  yöneticisinin anahtarı olabilir."
+#~ "Anahtar parmak izi:\n"
+#~ "%2\n"
+#~ "Bu mesajdan kurtulmak için \"%3\" doğru anahtar parmak izini ekleyin."
+
+#~ msgid "Host key was rejected."
+#~ msgstr "Makine anahtarı kabul edilmedi."
+
+#~ msgid "Please enter a username and password"
+#~ msgstr "Lütfen bir kullanıcı adı ve parola girin"
+
+#~ msgid "File does not exist."
+#~ msgstr "Dosya yok."
+
+#~ msgid "Access is denied."
+#~ msgstr "Erişim engellendi."
+
+#~ msgid "Could not allocate memory for SFTP packet."
+#~ msgstr "SFTP paketi için yetersiz bellek."

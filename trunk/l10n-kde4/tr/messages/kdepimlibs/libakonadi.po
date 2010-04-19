@@ -1,0 +1,1313 @@
+# translation of libakonadi.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: libakonadi\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-26 01:23+0100\n"
+"PO-Revision-Date: 2009-11-12 13:10+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: agentbase.cpp:480 agentbase.cpp:481
+msgid "Akonadi Agent"
+msgstr "Akonadi Aracı"
+
+#: agentbase.cpp:484
+msgid "Agent identifier"
+msgstr "Temsilci tanımlayıcı"
+
+#: agentinstancecreatejob.cpp:82
+msgid "Unable to access dbus interface of created agent."
+msgstr "Oluşturulan araç için dbus arayüzüne erişilemedi"
+
+#: agentinstancecreatejob.cpp:116
+msgid "Agent instance creation timed out."
+msgstr "Temsilci süreci oluşturma işlemi zaman aşımına uğradı."
+
+#: agentinstancecreatejob.cpp:167
+msgid "Unable to create agent instance."
+msgstr "Temsil isteği oluşturulamıyor."
+
+#: agentinstancemodel.cpp:175 collectionmodel_p.h:51
+msgctxt "@title:column, name of a thing"
+msgid "Name"
+msgstr "İsim"
+
+#: cachepolicypage.cpp:33
+msgid "Cache"
+msgstr "Önbellek"
+
+#: cachepolicypage.cpp:86 cachepolicypage.cpp:91
+msgid "minute"
+msgid_plural "minutes"
+msgstr[0] "dakika"
+
+#: collectioncreatejob.cpp:58
+msgid "Invalid parent"
+msgstr "Geçersiz üst öge"
+
+#: collectiondeletejob.cpp:59
+msgid "Invalid collection"
+msgstr "Geçersiz koleksiyon"
+
+#: collectionfetchjob.cpp:129
+msgid "Invalid collection given."
+msgstr "Geçersiz koleksiyon girildi."
+
+#: collectiongeneralpropertiespage.cpp:36
+msgctxt "@title:tab general properties page"
+msgid "General"
+msgstr "Genel"
+
+#: collectiongeneralpropertiespage.cpp:61
+#, kde-format
+msgctxt "@label"
+msgid "One object"
+msgid_plural "%1 objects"
+msgstr[0] "%1 nesne"
+
+#: collectionpathresolver.cpp:87 collectionpathresolver.cpp:104
+msgid "No such collection."
+msgstr "Böyle bir koleksiyon yok."
+
+#: collectionrequester.cpp:74
+msgid "Open collection dialog"
+msgstr "Koleksiyon diyalogunu aç"
+
+#: collectionrequester.cpp:134
+msgid "no collection"
+msgstr "koleksiyon yok"
+
+#: collectionselectjob.cpp:72
+msgid "Invalid collection specified"
+msgstr "Geçersiz koleksiyon girildi"
+
+#: collectionstatisticsmodel.cpp:157
+msgctxt "@title:column, number of unread messages"
+msgid "Unread"
+msgstr "Okunmamış"
+
+#: collectionstatisticsmodel.cpp:158
+msgctxt "@title:column, total number of messages"
+msgid "Total"
+msgstr "Toplam"
+
+#: collectionstatisticsmodel.cpp:159
+msgctxt "@title:column, total size (in bytes) of the collection"
+msgid "Size"
+msgstr "Boyut"
+
+#: collectionsync.cpp:172
+msgid "Inconsistent local collection tree detected."
+msgstr "Tutarsız yerel koleksiyon ağacı belirlendi."
+
+#: collectionsync.cpp:269
+msgid ""
+"Remote collection without root-terminated ancestor chain provided, resource "
+"is broken."
+msgstr ""
+
+#: collectionsync.cpp:488
+msgid "Found unresolved orphan collections"
+msgstr "Çözümlenemeyen eski koleksiyonlar bulundu"
+
+#: collectionview.cpp:222
+msgid "&Move here"
+msgstr "Buraya &taşı"
+
+#: collectionview.cpp:223
+msgid "&Copy here"
+msgstr "Buraya &kopyala"
+
+#: collectionview.cpp:225
+msgid "Cancel"
+msgstr "İptal"
+
+#: control.cpp:232
+msgid "Starting Akonadi server..."
+msgstr "Akonadi sunucusu başlatılıyor..."
+
+#: control.cpp:238
+msgid "Stopping Akonadi server..."
+msgstr "Akonadi sunucusu durduruluyor..."
+
+#: dragdropmanager.cpp:168
+msgid "&Move Here"
+msgstr "Buraya &Taşı"
+
+#: dragdropmanager.cpp:174
+msgid "&Copy Here"
+msgstr "&Buraya Kopyala"
+
+#: dragdropmanager.cpp:180
+msgid "&Link Here"
+msgstr "Bu&raya Bağ Koy"
+
+#: dragdropmanager.cpp:184
+msgid "C&ancel"
+msgstr "İ&ptal"
+
+#: entitytreemodel.cpp:612
+#, fuzzy
+#| msgctxt "@title:column, name of a thing"
+#| msgid "Name"
+msgctxt "@title:column Name of a thing"
+msgid "Name"
+msgstr "İsim"
+
+#: erroroverlay.cpp:96
+msgid ""
+"<p style=\"color: white;\"><b>Akonadi not operational.<br/><a href=\"details"
+"\" style=\"color: white;\">Details...</a></b></p>"
+msgstr ""
+"<p style=\"color: white;\"><b>Akonadi kullanıma hazır değil.<br/><a href="
+"\"details\" style=\"color: white;\">Ayrıntılar...</a></b></p>"
+
+#: erroroverlay.cpp:104
+msgid ""
+"The Akonadi personal information management framework is not operational.\n"
+"Click on \"Details...\" to obtain detailed information on this problem."
+msgstr ""
+"Akonadi kişisel bilgi yönetimi çalışma ortamı kullanıma hazır değil.\n"
+"Sorun hakkında ayrıntılı bilgi almak için \"Ayrıntılar...\" düğmesine "
+"tıklayın."
+
+#: favoritecollectionsmodel.cpp:205
+msgid "Favorite Folders"
+msgstr "Sık Kullanılan Dizinler"
+
+#: itemfetchjob.cpp:149
+msgid "Cannot list root collection."
+msgstr "Kök koleksiyon listelenemedi."
+
+#: itemmodel.cpp:316
+msgid "Id"
+msgstr "Kimlik"
+
+#: itemmodel.cpp:318
+msgid "Remote Id"
+msgstr "Uzak Kimlik"
+
+#: itemmodel.cpp:320
+msgid "MimeType"
+msgstr "MimeTipi"
+
+#: job.cpp:231
+msgid "Cannot connect to the Akonadi service."
+msgstr "Akonadi servisine bağlanılamadı."
+
+#: job.cpp:234
+msgid ""
+"The protocol version of the Akonadi server is incompatible. Make sure you "
+"have a compatible version installed."
+msgstr ""
+"Akonadi sunucu protokolünün sürümü uyumsuz. Uygun sürümü yüklediğinizden "
+"emin olun."
+
+#: job.cpp:237
+msgid "User canceled operation."
+msgstr "Kullanıcı tarafından iptal edilmiş işlem."
+
+#: job.cpp:241
+msgid "Unknown error."
+msgstr "Bilinmeyen hata."
+
+#: partfetcher.cpp:63
+msgid "Unable to fetch item for index"
+msgstr "Bu öge indeks için getirilemedi"
+
+#: partfetcher.cpp:78
+msgid "Index is no longer available"
+msgstr "İndeks artık kullanılabilir değil"
+
+#: partfetcher.cpp:125
+#, kde-format
+msgid "Payload part '%1' is not available for this index"
+msgstr ""
+
+#: partfetcher.cpp:134
+msgid "No session available for this index"
+msgstr "Bu indeks için bir oturum yok"
+
+#: partfetcher.cpp:143
+msgid "No item available for this index"
+msgstr "Bu indeks için kullanılabilir öge yok"
+
+#: pluginloader.cpp:137
+msgid "Unnamed plugin"
+msgstr "İsimsiz eklenti"
+
+#: pluginloader.cpp:143
+msgid "No description available"
+msgstr "Açıklama yok"
+
+#. i18n: file: cachepolicypage.ui:19
+#. i18n: ectx: property (text), widget (QCheckBox, inherit)
+#: rc.cpp:3
+msgid "Inherit cache policy from parent"
+msgstr "Önbellek politikasını üst ögeden al"
+
+#. i18n: file: cachepolicypage.ui:35
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:6
+msgid "Cache Policy"
+msgstr "Önbellekleme Politikası"
+
+#. i18n: file: cachepolicypage.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:9
+msgid "Interval check time:"
+msgstr "Kontrol etme aralığı:"
+
+#. i18n: file: cachepolicypage.ui:54
+#. i18n: ectx: property (suffix), widget (KIntNumInput, checkInterval)
+#. i18n: file: cachepolicypage.ui:77
+#. i18n: ectx: property (suffix), widget (KIntNumInput, localCacheTimeout)
+#: rc.cpp:12 rc.cpp:21
+msgid "minutes"
+msgstr "dakika"
+
+#. i18n: file: cachepolicypage.ui:57
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, checkInterval)
+#: rc.cpp:15
+msgctxt "never check the cache"
+msgid "Never"
+msgstr "Asla"
+
+#. i18n: file: cachepolicypage.ui:64
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:18
+msgid "Local cache timeout:"
+msgstr "Yerel önbellek zaman aşımı:"
+
+#. i18n: file: cachepolicypage.ui:80
+#. i18n: ectx: property (specialValueText), widget (KIntNumInput, localCacheTimeout)
+#: rc.cpp:24
+msgctxt "no cache timeout"
+msgid "Never"
+msgstr "Asla"
+
+#. i18n: file: cachepolicypage.ui:87
+#. i18n: ectx: property (text), widget (QCheckBox, syncOnDemand)
+#: rc.cpp:27
+msgid "Synchronize on demand"
+msgstr "İstenildiğinde eşzamanla"
+
+#. i18n: file: cachepolicypage.ui:100
+#. i18n: ectx: property (title), widget (KEditListBox, localParts)
+#: rc.cpp:30
+msgid "Locally Cached Parts"
+msgstr "Yerel Olarak Önbelleklenmiş Bölümler"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:16
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:33
+msgid "&Name:"
+msgstr "&İsim:"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:29
+#. i18n: ectx: property (text), widget (QCheckBox, customIconCheckbox)
+#: rc.cpp:36
+msgid "&Use custom icon:"
+msgstr "&Özel simge kullan:"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:39
+#. i18n: ectx: property (icon), widget (KIconButton, customIcon)
+#: rc.cpp:39
+msgid "folder"
+msgstr "dizin"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:62
+#. i18n: ectx: property (title), widget (QGroupBox, statsBox)
+#: rc.cpp:42
+msgid "Statistics"
+msgstr "İstatistikler"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:68
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:45
+msgctxt "object names"
+msgid "Content:"
+msgstr "İçerik:"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:75
+#. i18n: ectx: property (text), widget (QLabel, countLabel)
+#: rc.cpp:48
+msgid "0 objects"
+msgstr "0 nesne"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:82
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:51
+msgid "Size:"
+msgstr "Boyut:"
+
+#. i18n: file: collectiongeneralpropertiespage.ui:89
+#. i18n: ectx: property (text), widget (QLabel, sizeLabel)
+#: rc.cpp:54
+msgid "0 Byte"
+msgstr "0 Bayt"
+
+#. i18n: file: selftestdialog.ui:16
+#. i18n: ectx: property (text), widget (QLabel, introductionLabel)
+#: rc.cpp:57
+msgid ""
+"An error occurred during the startup of the Akonadi server. The following "
+"self-tests are supposed to help with tracking down and solving this problem. "
+"When requesting support or reporting bugs, please always include this report."
+msgstr ""
+"Akonadi sunucusu başlatılırken bir hata meydana geldi. Aşağıdaki testlerin "
+"bu problemi takip etme ve çözmede yardımcı olacağı farz edilir. Destek talep "
+"ederken veya hata bildirirken, lütfen her zaman bu raporu dahil edin."
+
+#. i18n: file: selftestdialog.ui:39
+#. i18n: ectx: property (title), widget (QGroupBox, detailsGroup)
+#: rc.cpp:60
+msgid "Details"
+msgstr "Ayrıntılar"
+
+#. i18n: file: selftestdialog.ui:61
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:63
+msgid ""
+"<p>For more troubleshooting tips please refer to <a href=\"http://userbase."
+"kde.org/Akonadi\">userbase.kde.org/Akonadi</a>.</p>"
+msgstr ""
+"<p>Sorun giderme ile ilgili daha fazla ipucu için lütfen <a href=\"http://"
+"userbase.kde.org/Akonadi\">userbase.kde.org/Akonadi</a> adresine bakın."
+
+#. i18n: file: subscriptiondialog.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:66
+msgid "Manage which folders you want to see in the folder tree"
+msgstr "Dizin ağacında hangi dizinleri görmek istediğinizi ayarlayın"
+
+#. i18n: file: subscriptiondialog.ui:26
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:69
+msgctxt "search folder"
+msgid "Search:"
+msgstr "Ara:"
+
+#. i18n: file: subscriptiondialog.ui:39
+#. i18n: ectx: property (clickMessage), widget (KLineEdit, klineedit)
+#: rc.cpp:72
+msgid "TODO"
+msgstr "YAPILACAK"
+
+#. i18n: file: subscriptiondialog.ui:51
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:75
+msgid "<b>Available Folders</b>"
+msgstr "<b>Kullanılabilir Dizinler</b>"
+
+#. i18n: file: subscriptiondialog.ui:71
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:78
+msgid "<b>Current Changes</b>"
+msgstr "<b>Geçerli Değişiklikler</b>"
+
+#. i18n: file: subscriptiondialog.ui:104
+#. i18n: ectx: property (toolTip), widget (KPushButton, subscribeButton)
+#: rc.cpp:81
+msgid "Subscribe to selected folder"
+msgstr "Seçilen dizine üye ol"
+
+#. i18n: file: subscriptiondialog.ui:127
+#. i18n: ectx: property (toolTip), widget (KPushButton, unsubscribeButton)
+#: rc.cpp:84
+msgid "Unsubscribe from selected folder"
+msgstr "Seçilen dizinin üyeliğinden ayrıl"
+
+#: rc.cpp:85
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:86
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: resourcebase.cpp:205
+msgctxt "@title, application name"
+msgid "Akonadi Resource"
+msgstr "Akonadi Kaynağı"
+
+#: resourcebase.cpp:206
+msgctxt "@title, application description"
+msgid "Akonadi Resource"
+msgstr "Akonadi Kaynağı"
+
+#: resourcebase.cpp:210
+msgctxt "@label, commandline option"
+msgid "Resource identifier"
+msgstr "Kaynak tanımlayıcı"
+
+#: resourcebase.cpp:323
+#, kde-format
+msgctxt "@info"
+msgid "Updating local collection failed: %1."
+msgstr "Yerel koleksiyon güncellenemedi: %1."
+
+#: resourcebase.cpp:333
+msgctxt "@info"
+msgid "Cannot fetch item in offline mode."
+msgstr "Çevrimdışı kipte ögeler alınamaz."
+
+#: resourcebase.cpp:460
+#, kde-format
+msgctxt "@info:status"
+msgid "Syncing collection '%1'"
+msgstr "'%1' koleksiyonu eşzamanlanıyor"
+
+#: resourcescheduler.cpp:165 agentbase_p.h:57
+#, fuzzy
+#| msgctxt "@info:status, application ready for work"
+#| msgid "Ready"
+msgctxt "@info:status Application ready for work"
+msgid "Ready"
+msgstr "Hazır"
+
+#: resourcesynchronizationjob.cpp:76
+msgid "Invalid resource instance."
+msgstr "Geçersiz kaynak isteği."
+
+#: resourcesynchronizationjob.cpp:91
+#, kde-format
+msgid "Unable to obtain D-Bus interface for resource '%1'"
+msgstr "'%1' kaynağı için D-Bus arayüzü edinilemedi"
+
+#: resourcesynchronizationjob.cpp:112
+msgid "Resource synchronization timed out."
+msgstr "Eşzamanlama işlemi zaman aşımına uğradı."
+
+#: selftestdialog.cpp:71
+msgid "Akonadi Server Self-Test"
+msgstr "Akonadi Sunucusu Kendi Kendine Denetim"
+
+#: selftestdialog.cpp:73
+msgid "Save Report..."
+msgstr "Raporu Kaydet..."
+
+#: selftestdialog.cpp:75
+msgid "Copy Report to Clipboard"
+msgstr "Raporu Panoya Kopyala"
+
+#: selftestdialog.cpp:189
+#, kde-format
+msgid ""
+"The QtSQL driver '%1' is required by your current Akonadi server "
+"configuration and was found on your system."
+msgstr ""
+"QtSQL sürücüsü '%1' geçerli Akonadi sunucu yapılandırması için gerekiyor "
+"ancak sisteminizde bulunamadı."
+
+#: selftestdialog.cpp:191
+#, kde-format
+msgid ""
+"The QtSQL driver '%1' is required by your current Akonadi server "
+"configuration.\n"
+"The following drivers are installed: %2.\n"
+"Make sure the required driver is installed."
+msgstr ""
+"QtSQL sürücüsü '%1' geçerli Akonadi sunucu yapılandırması için gerekiyor.\n"
+"Şu sürücüler yüklü: %2.\n"
+"Gerekli sürücünün yüklü olduğundan emin olun."
+
+#: selftestdialog.cpp:198
+msgid "Database driver found."
+msgstr "Veritabanı sürücüsü bulundu."
+
+#: selftestdialog.cpp:200
+msgid "Database driver not found."
+msgstr "Veritabanı sürücüsü bulunamadı."
+
+#: selftestdialog.cpp:207
+msgid "MySQL server executable not tested."
+msgstr "MySQL sunucusu çalıştırılabilir dosyası denenmedi."
+
+#: selftestdialog.cpp:208 selftestdialog.cpp:248 selftestdialog.cpp:297
+msgid "The current configuration does not require an internal MySQL server."
+msgstr "Geçerli yapılandırma bir iç MySQL sunucu gerektirmiyor."
+
+#: selftestdialog.cpp:215
+#, kde-format
+msgid ""
+"You currently have configured Akonadi to use the MySQL server '%1'.\n"
+"Make sure you have the MySQL server installed, set the correct path and "
+"ensure you have the necessary read and execution rights on the server "
+"executable. The server executable is typically called 'mysqld', its "
+"locations varies depending on the distribution."
+msgstr ""
+"Şu anda Akonadi'yi '%1' MySQL sunucusunu kullanmak için yapılandırdınız. "
+"MySQL sunucusunun kurulu olduğundan, yolu doğru belirlediğinizden ve "
+"sunucunun yürütülmesi ilgili gerekli okuma ve çalıştırma haklarına sahip "
+"olduğunuzu kesinleştirdiğinizden emin olun. Sunucunun yürütülebilir komutu "
+"genellikle 'mysqld'dir, konumu dağıtımınıza bağlı olarak değişir."
+
+#: selftestdialog.cpp:222
+msgid "MySQL server not found."
+msgstr "MySQL sunucusu bulunamadı."
+
+#: selftestdialog.cpp:224
+msgid "MySQL server not readable."
+msgstr "MySQL sunucusu okunabilir değil."
+
+#: selftestdialog.cpp:226
+msgid "MySQL server not executable."
+msgstr "MySQL sunucusu çalıştırılabilir değil."
+
+#: selftestdialog.cpp:228
+msgid "MySQL found with unexpected name."
+msgstr "MySQL beklenmeyen bir isimle bulundu."
+
+#: selftestdialog.cpp:230
+msgid "MySQL server found."
+msgstr "MySQL sunucusu bulundu."
+
+#: selftestdialog.cpp:235
+#, kde-format
+msgid "MySQL server found: %1"
+msgstr "MySQL sunucusu bulundu: %1"
+
+#: selftestdialog.cpp:236
+msgid "MySQL server is executable."
+msgstr "MySQL sunucusu çalıştırılabilir durumda."
+
+#: selftestdialog.cpp:238
+#, kde-format
+msgid ""
+"Executing the MySQL server '%1' failed with the following error message: '%2'"
+msgstr "'%1' MySQL sunucusu şu hata iletisini vererek başarısız oldu: '%2'"
+
+#: selftestdialog.cpp:240
+msgid "Executing the MySQL server failed."
+msgstr "MySQL sunucusunu çalıştırma işlemi başarısız oldu."
+
+#: selftestdialog.cpp:247
+msgid "MySQL server error log not tested."
+msgstr "MySQL sunucusunun hata günlük kaydı denenmedi."
+
+#: selftestdialog.cpp:256
+msgid "No current MySQL error log found."
+msgstr "Geçerli MySQL hata günlük kaydı bulunamadı."
+
+#: selftestdialog.cpp:257
+#, kde-format
+msgid ""
+"The MySQL server did not report any errors during this startup into '%1'."
+msgstr "MySQL sunucusu bu açılışta '%1' konumuna hiç hata bildirmedi."
+
+#: selftestdialog.cpp:262
+msgid "MySQL error log not readable."
+msgstr "MySQL sunucusu hata günlük kaydı okunabilir değil."
+
+#: selftestdialog.cpp:263
+#, kde-format
+msgid "A MySQL server error log file was found but is not readable: %1"
+msgstr "Bir MySQL sunucusu hata kaydı bulundu ancak okunabilir değil: %1"
+
+#: selftestdialog.cpp:271
+msgid "MySQL server log contains errors."
+msgstr "MySQL sunucu hata günlük kaydı hatalar içeriyor."
+
+#: selftestdialog.cpp:272
+#, kde-format
+msgid "The MySQL server error log file '%1' contains errors."
+msgstr "MySQL sunucu hata günlük kaydı dosyası '%1' hatalar içeriyor."
+
+#: selftestdialog.cpp:281
+msgid "MySQL server log contains warnings."
+msgstr "MySQL sunucusu günlük kaydı içerisinde uyarılar var."
+
+#: selftestdialog.cpp:282
+#, kde-format
+msgid "The MySQL server log file '%1' contains warnings."
+msgstr "MySQL sunucusu günlük kaydı '%1' içerisinde uyarılar var."
+
+#: selftestdialog.cpp:284
+msgid "MySQL server log contains no errors."
+msgstr "MySQL sunucusu günlük kaydı hiç hata içermiyor."
+
+#: selftestdialog.cpp:285
+#, kde-format
+msgid "The MySQL server log file '%1' does not contain any errors or warnings."
+msgstr "MySQL sunucusu günlük kaydı '%1' hiç hata ya da uyarı içermiyor."
+
+#: selftestdialog.cpp:296
+msgid "MySQL server configuration not tested."
+msgstr "MySQL sunucu yapılandırması denenmedi."
+
+#: selftestdialog.cpp:305
+msgid "MySQL server default configuration found."
+msgstr "MySQL sunucunun öntanımlı yapılandırması bulundu."
+
+#: selftestdialog.cpp:306
+#, kde-format
+msgid ""
+"The default configuration for the MySQL server was found and is readable at %"
+"1."
+msgstr ""
+"MySQL öntanımlı sunucu yapılandırması %1 konumunda bulundu ve okunabilir "
+"durumda."
+
+#: selftestdialog.cpp:310
+msgid "MySQL server default configuration not found."
+msgstr "MySQL sunucunun öntanımlı yapılandırması bulunamadı."
+
+#: selftestdialog.cpp:311
+msgid ""
+"The default configuration for the MySQL server was not found or was not "
+"readable. Check your Akonadi installation is complete and you have all "
+"required access rights."
+msgstr ""
+"MySQL sunucusunun öntanımlı yapılandırması bulunamadı veya okunabilir değil. "
+"Akonadi kurulumunuzun eksiksiz olduğunu ve tüm gerekli erişim haklarına "
+"sahip olduğunuzu kontrol edin."
+
+#: selftestdialog.cpp:318
+msgid "MySQL server custom configuration not available."
+msgstr "MySQL sunucunun özel yapılandırması yok."
+
+#: selftestdialog.cpp:319
+msgid ""
+"The custom configuration for the MySQL server was not found but is optional."
+msgstr "MySQL sunucunun özel yapılandırması bulunamadı ancak isteğe bağlıdır."
+
+#: selftestdialog.cpp:321
+msgid "MySQL server custom configuration found."
+msgstr "MySQL sunucunun özel yapılandırması bulundu."
+
+#: selftestdialog.cpp:322
+#, kde-format
+msgid ""
+"The custom configuration for the MySQL server was found and is readable at %1"
+msgstr ""
+"MySQL sunucusunun özel yapılandırması bulundu ve %1 konumunda okunabilir."
+
+#: selftestdialog.cpp:326
+msgid "MySQL server custom configuration not readable."
+msgstr "MySQL sunucunun özel yapılandırması okunabilir değil."
+
+#: selftestdialog.cpp:327
+#, kde-format
+msgid ""
+"The custom configuration for the MySQL server was found at %1 but is not "
+"readable. Check your access rights."
+msgstr ""
+"MySQL sunucusunun özel yapılandırması %1 konumunda bulundu ancak okunabilir "
+"değil. Erişim haklarınızı kontrol edin."
+
+#: selftestdialog.cpp:334
+msgid "MySQL server configuration not found or not readable."
+msgstr "MySQL sunucunun yapılandırması bulunamadı ya da okunabilir değil."
+
+#: selftestdialog.cpp:335
+msgid "The MySQL server configuration was not found or is not readable."
+msgstr "MySQL sunucunun yapılandırması bulunamadı ya da okunabilir değil."
+
+#: selftestdialog.cpp:337
+msgid "MySQL server configuration is usable."
+msgstr "MySQL sunucunun yapılandırması kullanılabilir durumda."
+
+#: selftestdialog.cpp:338
+#, kde-format
+msgid "The MySQL server configuration was found at %1 and is readable."
+msgstr ""
+"MySQL sunucu yapılandırması %1 konumunda bulundu ve kullanılabilir durumda."
+
+#: selftestdialog.cpp:360
+msgid "Cannot connect to PostgreSQL server."
+msgstr "PostgreSQL sunucusuna bağlanılamadı."
+
+#: selftestdialog.cpp:363
+msgid "PostgreSQL server found."
+msgstr "PostgreSQL sunucusu bulundu."
+
+#: selftestdialog.cpp:364
+msgid "The PostgreSQL server was found and connection is working."
+msgstr "PostgreSQL sunucusu bulundu ve bağlantı çalışıyor."
+
+#: selftestdialog.cpp:373
+msgid "akonadictl not found"
+msgstr "akonadictl bulunamadı"
+
+#: selftestdialog.cpp:374
+msgid ""
+"The program 'akonadictl' needs to be accessible in $PATH. Make sure you have "
+"the Akonadi server installed."
+msgstr ""
+"'akonadictl' uygulamasının $PATH içerisinden erişilebilir olması gerekiyor. "
+"Akonadi sunucusunu yüklediğinizden emin olun."
+
+#: selftestdialog.cpp:380
+msgid "akonadictl found and usable"
+msgstr "akonadictl bulundu ve kullanılabilir durumda"
+
+#: selftestdialog.cpp:381
+#, kde-format
+msgid ""
+"The program '%1' to control the Akonadi server was found and could be "
+"executed successfully.\n"
+"Result:\n"
+"%2"
+msgstr ""
+"Akonadi sunucusunu kontrol etmek için '%1' programı bulundu ve başarılı bir "
+"şekilde yürütülebildi.\n"
+"Sonuç:\n"
+"%2"
+
+#: selftestdialog.cpp:384
+msgid "akonadictl found but not usable"
+msgstr "akonadictl bulundu ama kullanılabilir durumda değil"
+
+#: selftestdialog.cpp:385
+#, kde-format
+msgid ""
+"The program '%1' to control the Akonadi server was found but could not be "
+"executed successfully.\n"
+"Result:\n"
+"%2\n"
+"Make sure the Akonadi server is installed correctly."
+msgstr ""
+"Akonadi sunucusunu kontrol etmek için '%1' programı bulundu ve başarılı bir "
+"şekilde yürütülemedi.\n"
+"Sonuç:\n"
+"%2 Akonadi sunucusunun doğru bir şekilde kurulduğundan emin olun."
+
+#: selftestdialog.cpp:394
+msgid "Akonadi control process registered at D-Bus."
+msgstr "Akonadi denetim süreci D-Bus'a kaydedildi."
+
+#: selftestdialog.cpp:395
+msgid ""
+"The Akonadi control process is registered at D-Bus which typically indicates "
+"it is operational."
+msgstr ""
+"Akonadi kontrol süreci, sıklıkla kontrol sürecinin işlevsel olduğunu "
+"bildiren D-Bus'a kayıtlıdır."
+
+#: selftestdialog.cpp:397
+msgid "Akonadi control process not registered at D-Bus."
+msgstr "Akonadi denetim süreci D-Bus'a kaydedilmedi."
+
+#: selftestdialog.cpp:398
+msgid ""
+"The Akonadi control process is not registered at D-Bus which typically means "
+"it was not started or encountered a fatal error during startup."
+msgstr ""
+"Akonadi kontrol süreci, açılışta sıklıkla kontrol sürecinin başlatılmadığını "
+"veya ölümcül bir hatayla karşılaştığını ifade eden D-Bus'a kayıtlı değildir."
+
+#: selftestdialog.cpp:403
+msgid "Akonadi server process registered at D-Bus."
+msgstr "Akonadi sunucu süreci D-Bus'a kaydedildi."
+
+#: selftestdialog.cpp:404
+msgid ""
+"The Akonadi server process is registered at D-Bus which typically indicates "
+"it is operational."
+msgstr ""
+"Akonadi sunucu süreci, sıklıkla sunucu sürecinin işlevsel olduğunu bildiren "
+"D-Bus'a kayıtlıdır."
+
+#: selftestdialog.cpp:406
+msgid "Akonadi server process not registered at D-Bus."
+msgstr "Akonadi sunucu süreci D-Bus'a kaydedilmedi."
+
+#: selftestdialog.cpp:407
+msgid ""
+"The Akonadi server process is not registered at D-Bus which typically means "
+"it was not started or encountered a fatal error during startup."
+msgstr ""
+"Akonadi sunucu süreci, açılışta sıklıkla sunucu sürecinin başlatılmadığını "
+"veya ölümcül bir hatayla karşılaştığını ifade eden D-Bus'a kayıtlı değildir."
+
+#: selftestdialog.cpp:417
+msgid "Nepomuk search service registered at D-Bus."
+msgstr "Nepomuk arama servisi D-Bus'a kaydedildi."
+
+#: selftestdialog.cpp:418
+msgid ""
+"The Nepomuk search service is registered at D-Bus which typically indicates "
+"it is operational."
+msgstr ""
+"Nepomuk arama servisi D-Bus'a kayıtlı. Bu, servisin işlevsel olduğunu "
+"gösterir."
+
+#: selftestdialog.cpp:420
+msgid "Nepomuk search service not registered at D-Bus."
+msgstr "Nepomuk arama servisi D-Bus'a kaydedilmedi."
+
+#: selftestdialog.cpp:421
+msgid ""
+"The Nepomuk search service is not registered at D-Bus which typically means "
+"it was not started or encountered a fatal error during startup."
+msgstr ""
+"Nepomuk arama servisi D-Bus'a  kayıtlı değil. Bu, tipik olarak servisin "
+"açılışta ölümcül bir hatayla karşılaştığı anlamına gelir."
+
+#: selftestdialog.cpp:434
+msgid "Nepomuk search service uses inappropriate backend."
+msgstr "Nepomuk arama servisi uyumsuz arka uç kullanıyor."
+
+#: selftestdialog.cpp:435
+#, kde-format
+msgid ""
+"The Nepomuk search service uses the '%1' backend, which is not recommended "
+"for use with Akonadi."
+msgstr ""
+"Nepomuk arama servisi Akonadi ile birlikte kullanılması önerilmeyen '%1' "
+"arka ucunu kullanıyor."
+
+#: selftestdialog.cpp:438
+#, fuzzy
+#| msgid "Nepomuk search service uses inappropriate backend."
+msgid "Nepomuk search service uses an appropriate backend. "
+msgstr "Nepomuk arama servisi uyumsuz arka uç kullanıyor."
+
+#: selftestdialog.cpp:439
+#, fuzzy
+#| msgid "The Nepomuk search service uses the recommended Sesame2 backend."
+msgid "The Nepomuk search service uses one of the recommended backends."
+msgstr "Nepomuk arama servisi önerilen Sesame2 arka ucunu kullanıyor."
+
+#: selftestdialog.cpp:448
+msgid "Protocol version check not possible."
+msgstr "Protokol sürüm denetimi mümkün değil."
+
+#: selftestdialog.cpp:449
+msgid ""
+"Without a connection to the server it is not possible to check if the "
+"protocol version meets the requirements."
+msgstr ""
+"Sunucuya bağlantı olmadan protokol sürümünün gereklilikleri karşılayıp "
+"karşılamadığını kontrol etmek mümkün değildir."
+
+#: selftestdialog.cpp:453
+msgid "Server protocol version is too old."
+msgstr "Sunucu protokol sürümü çok eski."
+
+#: selftestdialog.cpp:454
+#, kde-format
+msgid ""
+"The server protocol version is %1, but at least version %2 is required. "
+"Install a newer version of the Akonadi server."
+msgstr ""
+"Sunucu protokol sürümü %1, ancak en az %2 sürümü gerekli. Akonadi "
+"sunucusunun yeni bir sürümünü kurun."
+
+#: selftestdialog.cpp:459
+msgid "Server protocol version is recent enough."
+msgstr "Sunucu protokol sürümü yeterince yeni."
+
+#: selftestdialog.cpp:460
+#, kde-format
+msgid ""
+"The server Protocol version is %1, which equal or newer than the required "
+"version %2."
+msgstr ""
+"Sunucu Protokol sürümü %1, gerekli %2 sürümüne denk veya daha yeni bir sürüm."
+
+#: selftestdialog.cpp:480
+msgid "Resource agents found."
+msgstr "Kaynak temsilleri bulundu."
+
+#: selftestdialog.cpp:480
+msgid "At least one resource agent has been found."
+msgstr "En azından bir kaynak temsili bulunmuş olmalı."
+
+#: selftestdialog.cpp:482
+msgid "No resource agents found."
+msgstr "Hiç kaynak temsili bulunamadı."
+
+#: selftestdialog.cpp:483
+#, kde-format
+msgid ""
+"No resource agents have been found, Akonadi is not usable without at least "
+"one. This usually means that no resource agents are installed or that there "
+"is a setup problem. The following paths have been searched: '%1'. The "
+"XDG_DATA_DIRS environment variable is set to '%2', make sure this includes "
+"all paths where Akonadi agents are installed to."
+msgstr ""
+"Hiçbir kaynak temsilcisi bulunamadı, Akonadi en az bir tane olmadan "
+"kullanılamaz. Bu genelde hiçbir kaynak temsilcisinin kurulu olmadığı veya "
+"bir kurulum problemi olduğunu belirtir. Şu yollar araştırıldı: '%1'. "
+"XDG_DATA_DIRS çevre değişkeni %2 değerine ayarlandı, Akonadi temsilcisinin "
+"kurulu olduğu tüm konumları kapsadığından emin olun."
+
+#: selftestdialog.cpp:501
+msgid "No current Akonadi server error log found."
+msgstr "Geçerli Akonadi sunucusunun hata günlük kaydı yok."
+
+#: selftestdialog.cpp:502
+msgid ""
+"The Akonadi server did not report any errors during its current startup."
+msgstr "Akonadi sunucusu geçerli açılışında hiç hata bildirmedi."
+
+#: selftestdialog.cpp:504
+msgid "Current Akonadi server error log found."
+msgstr "Geçerli Akonadi sunucusunun hata günlük kaydı bulundu."
+
+#: selftestdialog.cpp:505
+#, kde-format
+msgid "The Akonadi server did report error during startup into %1."
+msgstr "Akonadi sunucusu açılışta %1 konumuna hiç hata bildirdi."
+
+#: selftestdialog.cpp:512
+msgid "No previous Akonadi server error log found."
+msgstr "Önceki Akonadi sunucu hata kaydı bulunmadı."
+
+#: selftestdialog.cpp:513
+msgid ""
+"The Akonadi server did not report any errors during its previous startup."
+msgstr "Akonadi sunucusu önceki açılışında hiç hata bildirmedi."
+
+#: selftestdialog.cpp:515
+msgid "Previous Akonadi server error log found."
+msgstr "Akonadi sunucusunun önceki hata günlük kaydı bulundu."
+
+#: selftestdialog.cpp:516
+#, kde-format
+msgid ""
+"The Akonadi server did report error during its previous startup into %1."
+msgstr "Akonadi sunucusu önceki açılışında %1 konumuna hata bildirdi."
+
+#: selftestdialog.cpp:527
+msgid "No current Akonadi control error log found."
+msgstr "Geçerli Akonadi kontrol hata kaydı bulunmadı."
+
+#: selftestdialog.cpp:528
+msgid ""
+"The Akonadi control process did not report any errors during its current "
+"startup."
+msgstr "Akonadi kontrol süreci geçerli açılışında hiç hata bildirmedi."
+
+#: selftestdialog.cpp:530
+msgid "Current Akonadi control error log found."
+msgstr "Geçerli Akonadi kontrol hata kaydı bulundu."
+
+#: selftestdialog.cpp:531
+#, kde-format
+msgid "The Akonadi control process did report error during startup into %1."
+msgstr "Akonadi kontrol süreci açılışta %1 konumuna ' hata bildirdi."
+
+#: selftestdialog.cpp:538
+msgid "No previous Akonadi control error log found."
+msgstr "Akonadi denetiminin önceki hata günlük kaydı bulunamadı."
+
+#: selftestdialog.cpp:539
+msgid ""
+"The Akonadi control process did not report any errors during its previous "
+"startup."
+msgstr "Akonadi kontrol süreci önceki açılışında hiç hata bildirmedi."
+
+#: selftestdialog.cpp:541
+msgid "Previous Akonadi control error log found."
+msgstr "Akonadi denetiminin önceki hata günlük kaydı bulundu."
+
+#: selftestdialog.cpp:542
+#, kde-format
+msgid ""
+"The Akonadi control process did report error during its previous startup "
+"into %1."
+msgstr "Akonadi kontrol süreci önceki açılışında %1 konumuna hata bildirdi."
+
+#: selftestdialog.cpp:613
+msgid "Save Test Report"
+msgstr "Deneme Raporunu Kaydet"
+
+#: selftestdialog.cpp:619
+#, kde-format
+msgid "Could not open file '%1'"
+msgstr "'%1' dosyası açılamadı"
+
+#: session.cpp:167
+#, kde-format
+msgid "Protocol version %1 found, expected at least %2"
+msgstr "%1 protokolü bulundu, beklenen ise en az %2"
+
+#: specialcollectionshelperjobs.cpp:142
+#, fuzzy, kde-format
+#| msgid "Cannot list root collection."
+msgid "Could not fetch root collection of resource %1."
+msgstr "Kök koleksiyon listelenemedi."
+
+#: specialcollectionshelperjobs.cpp:190
+#, fuzzy
+#| msgid "No resource agents found."
+msgid "No resource ID given."
+msgstr "Hiç kaynak temsili bulunamadı."
+
+#: specialcollectionshelperjobs.cpp:299
+#, fuzzy, kde-format
+#| msgid "Invalid resource instance."
+msgid "Invalid resource identifier '%1'"
+msgstr "Geçersiz kaynak isteği."
+
+#: specialcollectionshelperjobs.cpp:315 specialcollectionshelperjobs.cpp:323
+msgid "Failed to configure default resource via D-Bus."
+msgstr ""
+
+#: specialcollectionshelperjobs.cpp:382
+#, fuzzy
+#| msgid "Unable to fetch item for index"
+msgid "Failed to fetch the resource collection."
+msgstr "Bu öge indeks için getirilemedi"
+
+#: specialcollectionshelperjobs.cpp:576
+msgid "Timeout trying to get lock."
+msgstr ""
+
+#: standardactionmanager.cpp:65
+msgid "&New Folder..."
+msgstr "Ye&ni Dizin..."
+
+#: standardactionmanager.cpp:67
+msgid "&Delete Folder"
+msgstr "&Dizini Sil"
+
+#: standardactionmanager.cpp:68
+msgid "&Synchronize Folder"
+msgstr "Dizini &Eşzamanla"
+
+#: standardactionmanager.cpp:69
+msgid "Folder &Properties"
+msgstr "Dizin &Özellikleri"
+
+#: standardactionmanager.cpp:71
+msgid "&Paste"
+msgstr "&Yapıştır"
+
+#: standardactionmanager.cpp:73
+msgid "Manage Local &Subscriptions..."
+msgstr "Yerel &Üyelikleri Yönet..."
+
+#: standardactionmanager.cpp:74
+msgid "Add to Favorite Folders"
+msgstr "Sık Kullanılan Dizinlere Ekle"
+
+#: standardactionmanager.cpp:75
+msgid "Remove from Favorite Folders"
+msgstr "Sık Kullanılan Dizinlerden Sil"
+
+#: standardactionmanager.cpp:76
+msgid "Rename Favorite..."
+msgstr "Sık Kullanılanı Yeniden Adlandır..."
+
+#: standardactionmanager.cpp:77
+msgid "Copy Folder To..."
+msgstr "Dizini Buraya Kopyala..."
+
+#: standardactionmanager.cpp:78
+msgid "Copy Item To..."
+msgstr "Ögeyi Buraya Kopyala..."
+
+#: standardactionmanager.cpp:79
+msgid "Move Item To..."
+msgstr "Ögeyi Buraya Taşı..."
+
+#: standardactionmanager.cpp:80
+msgid "Move Folder To..."
+msgstr "Dizini Buraya Taşı..."
+
+#: standardactionmanager.cpp:81 standardactionmanager.cpp:121
+#, kde-format
+msgid "&Cut Item"
+msgid_plural "&Cut %1 Items"
+msgstr[0] "%1 Ögeyi &Kes"
+
+#: standardactionmanager.cpp:82 standardactionmanager.cpp:122
+#, kde-format
+msgid "&Cut Folder"
+msgid_plural "&Cut %1 Folders"
+msgstr[0] "%1 Dizini &Kes"
+
+#: standardactionmanager.cpp:119
+#, kde-format
+msgid "&Copy Folder"
+msgid_plural "&Copy %1 Folders"
+msgstr[0] "%1 Dizin &Kopyala"
+
+#: standardactionmanager.cpp:120
+#, kde-format
+msgid "&Copy Item"
+msgid_plural "&Copy %1 Items"
+msgstr[0] "%1 Öge &Kopyala"
+
+#: standardactionmanager.cpp:123
+#, kde-format
+msgid "&Delete Item"
+msgid_plural "&Delete %1 Items"
+msgstr[0] "%1 Öge &Sil"
+
+#: standardactionmanager.cpp:333
+msgctxt "@title:window"
+msgid "New Folder"
+msgstr "Yeni Dizin"
+
+#: standardactionmanager.cpp:334
+msgctxt "@label:textbox, name of a thing"
+msgid "Name"
+msgstr "İsim"
+
+#: standardactionmanager.cpp:370
+#, kde-format
+msgid "Do you really want to delete folder '%1' and all its sub-folders?"
+msgstr "Gerçeten '%1' dizinini ve tüm alt dizinlerini silmek istiyor musunuz?"
+
+#: standardactionmanager.cpp:372
+#, kde-format
+msgid "Do you really want to delete the search view '%1'?"
+msgstr "Gerçeten '%1' arama görünümünü silmek istiyor musunuz?"
+
+#: standardactionmanager.cpp:375
+msgid "Delete folder?"
+msgstr "Dizin silinsin mi?"
+
+#: standardactionmanager.cpp:410
+#, kde-format
+msgid "Properties of Folder %1"
+msgstr "%1 Dizininin Özellikleri"
+
+#: standardactionmanager.cpp:444
+msgid "Do you really want to delete all selected items?"
+msgstr "Gerçekten seçilen tüm ögeleri silmek istiyor musunuz?"
+
+#: standardactionmanager.cpp:445
+msgid "Delete?"
+msgstr "Silinsin mi?"
+
+#: standardactionmanager.cpp:512
+msgid "Rename Favorite"
+msgstr "Sık Kullanılanı Yeniden Adlandır"
+
+#: standardactionmanager.cpp:513
+msgctxt "@label:textbox New name of the folder."
+msgid "Name:"
+msgstr "İsim:"
+
+#: standardactionmanager.cpp:562
+#, kde-format
+msgid "Could not create folder: %1"
+msgstr "Dizin oluşturulamadı: %1"
+
+#: standardactionmanager.cpp:563
+msgid "Folder creation failed"
+msgstr "Dizin oluşturma işlemi başarısız oldu"
+
+#: standardactionmanager.cpp:570
+#, kde-format
+msgid "Could not delete folder: %1"
+msgstr "Dizin silinemedi: %1"
+
+#: standardactionmanager.cpp:571
+msgid "Folder deletion failed"
+msgstr "Dizin silme işlemi başarısız oldu"
+
+#: standardactionmanager.cpp:578
+#, kde-format
+msgid "Could not paste data: %1"
+msgstr "Veri yapıştırılamadı: %1"
+
+#: standardactionmanager.cpp:579
+msgid "Paste failed"
+msgstr "Yapıştırma işlemi başarısız oldu"
+
+#: standardactionmanager.cpp:648
+msgid "Copy to This Folder"
+msgstr "Bu Dizine Kopyala"
+
+#: statisticsproxymodel.cpp:84
+msgid "Total Messages"
+msgstr "Toplam İleti Sayısı"
+
+#: statisticsproxymodel.cpp:85
+msgid "Unread Messages"
+msgstr "Okunmamış İletiler"
+
+#: statisticsproxymodel.cpp:96
+msgid "Quota"
+msgstr "Kota"
+
+#: statisticsproxymodel.cpp:103
+msgid "Storage Size"
+msgstr "Depolama Boyutu"
+
+#: statisticsproxymodel.cpp:248
+msgctxt "collection size"
+msgid "Size"
+msgstr "Boyut"
+
+#: statisticsproxymodel.cpp:250
+msgctxt "number of entities in the collection"
+msgid "Total"
+msgstr "Toplam"
+
+#: statisticsproxymodel.cpp:252
+msgctxt "number of unread entities in the collection"
+msgid "Unread"
+msgstr "Okunmamış"
+
+#: subscriptionchangeproxymodel.cpp:71
+msgctxt "@title:column"
+msgid "Subscribe To"
+msgstr "Buraya Üye Ol"
+
+#: subscriptionchangeproxymodel.cpp:73
+msgctxt "@title:column"
+msgid "Unsubscribe From"
+msgstr "Üyelikten Ayrıl"
+
+#: agentbase_p.h:58
+msgctxt "@info:status"
+msgid "Offline"
+msgstr "Çevrimdışı"
+
+#: agentbase_p.h:63
+msgctxt "@info:status"
+msgid "Syncing..."
+msgstr "Senkronize ediliyor..."
+
+#: agentbase_p.h:68
+msgctxt "@info:status"
+msgid "Error."
+msgstr "Hata."
+
+#: linkjobimpl_p.h:49 movejobimpl_p.h:49
+msgid "No valid destination specified"
+msgstr "Geçerli bir hedef belirtilmedi"
+
+#: movejobimpl_p.h:43
+msgid "No objects specified for moving"
+msgstr "Taşımak için bir öge belirtilmedi"
+
+#: qtest_akonadi.h:44
+msgid "KDE Test Program"
+msgstr "KDE Sınama Programı"
+
+#~ msgid "Nepomuk search service uses Sesame2 backend. "
+#~ msgstr "Nepomuk arama servisi Sesame2 arka ucu kullanıyor. "
+
+#, fuzzy
+#~| msgid "no collection"
+#~ msgid "&Cut Collection"
+#~ msgid_plural "&Cut %1 Collections"
+#~ msgstr[0] "koleksiyon yok"
+
+#~ msgid "Could not copy data: %1"
+#~ msgstr "Veri kopyalanamadı: %1"
+
+#~ msgid "Copy failed"
+#~ msgstr "Kopyalama işlemi başarısız oldu"

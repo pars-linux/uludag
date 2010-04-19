@@ -1,0 +1,142 @@
+# translation of khelpcenter_welcome.po to 
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@gelecek.com.tr>, 2002.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_welcome\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2003-12-08 07:20+0200\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team:  <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: chapterinfo
+#: welcome.docbook:2
+#, fuzzy, no-c-format
+#| msgid "<date>2002-01-18</date> <releaseinfo>3.00.00</releaseinfo>"
+msgid "<date>2009-05-09</date> <releaseinfo>4.00.00</releaseinfo>"
+msgstr "<date>2002-01-18</date> <releaseinfo>3.00.00</releaseinfo>"
+
+#. Tag: title
+#: welcome.docbook:6
+#, no-c-format
+msgid "Welcome to &kde;"
+msgstr "&kde;'ye Hoşgeldiniz"
+
+#. Tag: emphasis
+#: welcome.docbook:9
+#, no-c-format
+msgid "The &kde; team welcomes you to user-friendly &UNIX; computing."
+msgstr "&kde; grubu sizi kullanıcı dostu &UNIX; ortamına davet ediyor."
+
+#. Tag: title
+#: welcome.docbook:13
+#, no-c-format
+msgid "Welcome to the K Desktop Environment"
+msgstr "K Masaüstü Ortamına Hoşgeldiniz"
+
+#. Tag: title
+#: welcome.docbook:16
+#, no-c-format
+msgid "Information about &kde;"
+msgstr "&kde; hakkında bilgi"
+
+#. Tag: para
+#: welcome.docbook:18
+#, no-c-format
+msgid ""
+"&kde; is a powerful graphical desktop environment for &UNIX; workstations. A "
+"&kde; desktop combines ease of use, contemporary functionality and "
+"outstanding graphical design with the technological superiority of the "
+"&UNIX; operating system."
+msgstr ""
+"&kde;, &UNIX; iş istasyonları için güzel bir grafiksel masaüstü ortamıdır. "
+"&kde;, masaüstü kullanımı oldukça kolay ve zevklidir. KDE, başarılı "
+"grafiklerle, gelişmiş özelliklerle ve daha önemlisi &UNIX;'in gücüyle "
+"birleştirerek sizlerin karşısına çıkıyor."
+
+#. Tag: link
+#: welcome.docbook:23
+#, no-c-format
+msgid "What is the K Desktop Environment?"
+msgstr "K Masaüstü Ortamı nedir?"
+
+#. Tag: link
+#: welcome.docbook:25
+#, no-c-format
+msgid "Contacting the &kde; Project"
+msgstr "&kde; Projesi ile iletişim"
+
+#. Tag: link
+#: welcome.docbook:27
+#, no-c-format
+msgid "Supporting the &kde; Project"
+msgstr "&kde; Projesini destekleyin"
+
+#. Tag: link
+#: welcome.docbook:29
+#, no-c-format
+msgid "Useful links"
+msgstr "Kullanışlı bağlantılar"
+
+#. Tag: title
+#: welcome.docbook:34
+#, no-c-format
+msgid "Getting the most out of &kde;"
+msgstr "&kde;'den nasıl yararlanabilirim?"
+
+#. Tag: title
+#: welcome.docbook:37
+#, no-c-format
+msgid "General documentation"
+msgstr "Genel belgeler"
+
+#. Tag: ulink
+#: welcome.docbook:39
+#, no-c-format
+msgid "A Quick Start Guide to the Desktop"
+msgstr "Masaüstünde Küçük Bir Gezinti"
+
+#. Tag: ulink
+#: welcome.docbook:41
+#, no-c-format
+msgid "&kde; User's guide"
+msgstr "&kde; Kullanıcı Kılavuzu"
+
+#. Tag: ulink
+#: welcome.docbook:43
+#, no-c-format
+msgid "Frequently asked questions"
+msgstr "Sıkça sorulan sorular"
+
+#. Tag: title
+#: welcome.docbook:48
+#, no-c-format
+msgid "Basic applications"
+msgstr "Temel uygulamalar"
+
+#. Tag: ulink
+#: welcome.docbook:50
+#, no-c-format
+msgid "Desktop Panel"
+msgstr "Masaüstü Paneli"
+
+#. Tag: ulink
+#: welcome.docbook:52
+#, no-c-format
+msgid "Control Center"
+msgstr "Kontrol Merkezi"
+
+#. Tag: ulink
+#: welcome.docbook:54
+#, no-c-format
+msgid "File Manager"
+msgstr "Dosya Yöneticisi"

@@ -1,0 +1,495 @@
+# translation of faq_configkde.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_configkde\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-07-28 14:20+0200\n"
+"Last-Translator: Volkan Gezer <volkangezer@gmail.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: configkde.docbook:6
+#, no-c-format
+msgid "Configuring &kde;"
+msgstr "&kde;'nin yapılandırılması"
+
+#. Tag: para
+#: configkde.docbook:11
+#, no-c-format
+msgid "How do I set the language used by &kde;?"
+msgstr "&kde;'nin kullandığı dili nasıl değiştirebilirim?"
+
+#. Tag: para
+#: configkde.docbook:15
+#, no-c-format
+msgid ""
+"There are two ways to set the language &kde; uses in the messages it will "
+"display:"
+msgstr "&kde;'nin kullandığı dili değiştirmenin iki yolu vardır:"
+
+#. Tag: term
+#: configkde.docbook:19
+#, no-c-format
+msgid "Using the <application>&kde; Control Center</application>"
+msgstr "<application>&kde; Kontrol Merkezi</application>'ni kullanarak"
+
+#. Tag: para
+#: configkde.docbook:20
+#, no-c-format
+msgid ""
+"Fire up the <application>&kde; Control Center</application> and select "
+"<guimenu>Regional &amp; Accessibility</guimenu> followed by "
+"<guimenuitem>Country/Region &amp; Language</guimenuitem>. You can select "
+"your language and location here. If &kde; cannot find a translation in the "
+"first language chosen, it will fall back on the default language. This is "
+"usually (American) English by default."
+msgstr ""
+"<application>&kde; Kontrol Merkezi</application>'ni başlatın. Önce "
+"<guimenu>Bölgesel &amp; Erişilebilirlik</guimenu> daha sonra "
+"<guimenuitem>Ülke/Bölge &amp; Dil </guimenuitem> i açın. Buradan kendi "
+"dilinizi ve bulunduğunuz ülkeyi ayarlayabilirsiniz. Eğer &kde; seçilen ilk "
+"dil için bir çeviri bulamazsa öntanımlı dili (genellikle İngilizce) "
+"seçecektir."
+
+#. Tag: para
+#: configkde.docbook:26
+#, no-c-format
+msgid ""
+"Using the <application>&kde; Control Center</application> is the preferred "
+"way of choosing languages in &kde;."
+msgstr ""
+"<application>&kde; Kontrol Merkezi</application>'ni kullanmak &kde; altında "
+"dil seçimi yapmak için önerilen yöntemdir."
+
+#. Tag: term
+#: configkde.docbook:29
+#, no-c-format
+msgid "Using the <envar>KDE_LANG</envar> environment variable"
+msgstr "<envar>KDE_LANG</envar> çevresel değişkenini kullanarak"
+
+#. Tag: para
+#: configkde.docbook:30
+#, no-c-format
+msgid ""
+"The second method uses the standard locale setting on your system. To change "
+"the language, simply set the environment variable <envar>KDE_LANG</envar> "
+"accordingly. For example, if your shell is <application>bash</application>, "
+"execute <userinput><command>export</command> <envar>KDE_LANG</envar>=de</"
+"userinput> to set German as the language used."
+msgstr ""
+"İkinci yöntem, sistemdeki dil ayarlarını kullanır. Dili değiştirmek için "
+"<envar>KDE_LANG</envar> değişkenini düzenlemek yeterlidir. Örneğin, eğer "
+"kullandığınız kabuk <application>bash</application> ise, "
+"<userinput><command>export</command> <envar>KDE_LANG</envar>=tr</userinput> "
+"komutu dili Türkçe'ye çevirecektir."
+
+#. Tag: para
+#: configkde.docbook:43
+#, no-c-format
+msgid "Is there any keyboard switcher for international keyboards for &kde;?"
+msgstr "&kde; de uluslararası klavyeler arasında geçiş yapılabilir mi ?"
+
+#. Tag: para
+#: configkde.docbook:47
+#, no-c-format
+msgid ""
+"Yes, you can configure it using the <application>&kde; Control Center</"
+"application> <guimenu>Regional &amp; Accessibility</guimenu> "
+"<guimenuitem>Keyboard Layout</guimenuitem> configuration page."
+msgstr ""
+"Evet, <application>&kde; Kontrol Merkezi</application> <guimenu>Bölgesel "
+"&amp; Erişilebilirlik</guimenu> <guimenuitem>Klavye Düzen</guimenuitem> "
+"yapılandırma penceresini kullanarak ayarlayabilirsiniz."
+
+#. Tag: para
+#: configkde.docbook:58
+#, no-c-format
+msgid ""
+"How do I replace the standard text login screen with the &kde; login screen?"
+msgstr "Standart giriş ekranını &kde; giriş ekranına nasıl çevirebilirim?"
+
+#. Tag: para
+#: configkde.docbook:62
+#, no-c-format
+msgid ""
+"Your distribution/&UNIX; flavor may have its own setup tools to change this "
+"(&eg; <application>YaST</application> on &SuSE; &Linux;). This will be the "
+"safest way to enable the &kde; login screen. However, if for some reason you "
+"do not wish to use these tools, the following instructions may be useful."
+msgstr ""
+"&UNIX; dağıtımınız kendi yapılandırma araçlarına sahip olabilir (ör:&SuSE; "
+"&Linux; ta <application>YaST</application>). Bu araçları kullanmak &kde; "
+"giriş ekranını aktif duruma getirmenin en güvenli yolu olacaktır. Yine de, "
+"bu araçları kullanmak istemezseniz aşağıdaki açıklamalar size yardımcı "
+"olacaktır."
+
+#. Tag: para
+#: configkde.docbook:66
+#, no-c-format
+msgid ""
+"First, you need to change to the <quote>xdm runlevel</quote> (runlevel 5 on "
+"&RedHat; and &SuSE; systems) by editing your <filename>/etc/inittab</"
+"filename> file. In the file, you should have a line saying <userinput>id:3:"
+"initdefault:</userinput>. Change it to <userinput>id:5:initdefault:</"
+"userinput>. Now, at the end of the file, comment out the following line: "
+"<literal>x:5:respawn:/usr/bin/X11/xdm -nodaemon</literal> and replace it "
+"with <userinput>x:5:respawn:<replaceable>/opt/kde/</replaceable>bin/kdm -"
+"nodaemon</userinput>."
+msgstr ""
+"İlk önce, <filename>/etc/inittab</filename> dosyasındaki <quote>xdm runlevel "
+"</quote> değerini değiştirmeniz gerekiyor (&RedHat; ve &SuSE; sistemlerinde "
+"runlevel 5). Bu dosyada <userinput>id:3:initdefault:</userinput> yazılı bir "
+"satır olması gerekir. Bu satırı <userinput>id:5:initdefault:</userinput> "
+"olarak değiştirin. Sonra, dosyanın sonunda, <literal>x:5:respawn:/usr/bin/"
+"X11/xdm -nodaemon</literal> satırını bulun ve <userinput>x:5:respawn:"
+"<replaceable> /opt/kde/</replaceable>bin/kdm -nodaemon</userinput> ile "
+"değiştirin."
+
+#. Tag: para
+#: configkde.docbook:76
+#, no-c-format
+msgid "The location of &kdm; may differ on your system."
+msgstr "&kdm;'nin yeri sistemden sisteme değişiklik gösterebilir."
+
+#. Tag: para
+#: configkde.docbook:78
+#, no-c-format
+msgid ""
+"For changes to take effect immediately, type <command>init 5</command> (for "
+"&RedHat; systems) at the shell prompt."
+msgstr ""
+"Değişikliklerin hemen etkin olması için konsoldan (&RedHat; dağıtımında) "
+"<command>init 5</command> komutunu yazın."
+
+#. Tag: para
+#: configkde.docbook:80
+#, no-c-format
+msgid ""
+"It is risky to initiate a graphical login without checking beforehand "
+"whether it works. If it fails to work, you would be in for a hard time "
+"getting back...."
+msgstr ""
+"Çalışıp çalışmadığını kontrol etmeden, grafik tabanlı bir giriş ekranı "
+"kullanmak risklidir. Eğer çalışmazsa, işleminizi geri almakta "
+"zorlanabilirsiniz..."
+
+#. Tag: para
+#: configkde.docbook:85
+#, no-c-format
+msgid ""
+"For FreeBSD, you should edit the file <filename>/etc/ttys</filename> and "
+"change one of the lines that look like <programlisting>ttyv8   \"/usr/X11R6/"
+"bin/xdm -nodaemon\"  xterm   off secure</programlisting> to instead say "
+"<userinput>ttyv8 \"/usr/local/bin/kdm -nodaemon\" xterm off secure</"
+"userinput>."
+msgstr ""
+"FreeBSD için, <filename>/etc/ttys</filename> dosyasını düzenlemeli ve "
+"<programlisting> ttyv8   \"/usr/X11R6/bin/xdm -nodaemon\"  xterm   off "
+"secure</programlisting> benzeri bir satırı <userinput>ttyv8 \"/usr/local/bin/"
+"kdm -nodaemon\" xterm off secure </userinput> ile değiştirmelisiniz."
+
+#. Tag: para
+#: configkde.docbook:114
+#, no-c-format
+msgid "Where do I find information regarding &kde; themes?"
+msgstr "&kde; temaları hakkında detaylı bilgiye nasıl ulaşabilirim?"
+
+#. Tag: para
+#: configkde.docbook:117
+#, no-c-format
+msgid ""
+"Visit <ulink url=\"http://www.kde-look.org\">http://www.kde-look.org</ulink> "
+"for a wide range of KDE themes and theming resources."
+msgstr ""
+
+#. Tag: para
+#: configkde.docbook:124
+#, no-c-format
+msgid "How do I change &MIME; Types?"
+msgstr "&MIME; türlerini nasıl değiştirebilirim?"
+
+#. Tag: para
+#: configkde.docbook:127
+#, no-c-format
+msgid ""
+"If you are using &konqueror;, do this instead: first, open a &konqueror; "
+"window and choose <menuchoice><guimenu>Settings</"
+"guimenu><guimenuitem>Configure Konqueror</guimenuitem></menuchoice>, then "
+"<guilabel>File Associations</guilabel>. Find the type you want to change "
+"(&eg; <literal>text/english</literal> or <literal>image/gif</literal>), and "
+"set the application preference order to whatever you want."
+msgstr ""
+"&konqueror; kullanıyorsanız; önce, &konqueror;'ı açıp <menuchoice> "
+"<guimenu>Ayarlar</guimenu><guimenuitem>Konqueror'ı Yapılandır</guimenuitem> "
+"</menuchoice>'dan, <guilabel>Dosya İlişkileri</guilabel>'ni seçin. "
+"Değiştirmek istediğiniz dosya türünü seçin (ör: <literal>text/english</"
+"literal> veya <literal>image/gif </literal>), ve uygulama tercih sırasını "
+"istediğiniz şekilde oluşturun."
+
+#. Tag: para
+#: configkde.docbook:139
+#, no-c-format
+msgid "&kde; (&kdm;) does not read my <filename>.bash_profile</filename>!"
+msgstr "&kde;&kdm; benim<filename>.bash_profile</filename> dosyamı okumuyor!"
+
+#. Tag: para
+#: configkde.docbook:143
+#, no-c-format
+msgid ""
+"The login managers<application>xdm</application> and &kdm; do not run a "
+"login shell, so <filename>.profile</filename>, <filename>.bash_profile</"
+"filename>, &etc; are not sourced. When the user logs in, <application>xdm</"
+"application> runs <command>Xstartup</command> as root and then "
+"<command>Xsession</command> as user. So the normal practice is to add "
+"statements in <filename>Xsession</filename> to source the user profile. "
+"Please edit your <filename>Xsession</filename> and <filename>.xsession</"
+"filename> files."
+msgstr ""
+"Giriş yöneticileri <application>xdm</application> ve &kdm; bir giriş kabuğu "
+"çalıştırmazlar, bu nedenle <filename>.profile</filename>, <filename>."
+"bash_profile </filename>, &etc; gibilerine kaynak gösterilmemiştir. "
+"Kullanıcı giriş yaptığında <application>xdm</application> yetkili kullanıcı "
+"olarak <command>Xstartup</command> komutunu, normal kullanıcı olarak da "
+"<command>Xsession</command> komutunu çalıştırır. Bu nedenle, kullanıcı "
+"profilini kaynak göstermek için <filename>Xsession </filename> dosyasına "
+"bazı ifadeler eklenmelidir. Lütfen <filename>Xsession</filename> and "
+"<filename>.xsession</filename> dosyalarını düzenleyin."
+
+#. Tag: para
+#: configkde.docbook:157
+#, no-c-format
+msgid "How do I use &TrueType; fonts in &kde;?"
+msgstr "&kde; altında &TrueType; yazıtiplerini nasıl kullanabilirim?"
+
+#. Tag: para
+#: configkde.docbook:161
+#, no-c-format
+msgid ""
+"You need to install &TrueType; font support into your &X-Window; "
+"configuration. Please take a look at <ulink url=\"http://x.themes.org/\">x."
+"themes.org</ulink> for the fonts, and <ulink url=\"http://www.dcs.ed.ac.uk/"
+"home/jec/programs/xfsft/\">xfsft: &TrueType; Font Support For X11</ulink> or "
+"<ulink url=\"http://X-TT.dsl.gr.jp/\">X-&TrueType; Server Project Home Page</"
+"ulink> for the font servers."
+msgstr ""
+"&TrueType; yazıtipi desteğini &X-Window; ayarlarına eklemeniz gerekiyor. "
+"Yazıtipleri için lütfen <ulink url=\"http://x.themes.org/\">x.themes.org</"
+"ulink> sitesine, ve yazıtipi sunucuları için<ulink url=\"http://www.dcs.ed."
+"ac.uk/home/jec/programs/xfsft/\">xfsft: &TrueType; Font Support For X11</"
+"ulink> or <ulink url=\"http://X-TT.dsl.gr.jp/\"> X-&TrueType; Server Project "
+"Home Page</ulink> sitesine bakınız."
+
+#. Tag: para
+#: configkde.docbook:169
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you have a bunch of &TrueType; fonts from &Microsoft; &Windows;, edit "
+#| "the <filename>XF86Config</filename> file to get the fonts from the font "
+#| "folder. Then just tell &kde; to use these new fonts with the font "
+#| "administrator utility."
+msgid ""
+"If you have a bunch of &TrueType; fonts from &Microsoft; &Windows;, edit the "
+"<filename>xorg.conf</filename> file to get the fonts from the font folder. "
+"Then just tell &kde; to use these new fonts with the font administrator "
+"utility."
+msgstr ""
+"&Microsoft; &Windows;'tan gelen &TrueType; yazıtipleriniz varsa, <filename> "
+"XF86Config</filename> dosyasını düzenleyerek yazıtiplerinin o klasörden "
+"kullanılmasını sağlayın. Sonra &kde;'ye, yazıtipi yönetme uygulaması yardımı "
+"ile, yeni yazıtiplerini kullanmasını söyleyin."
+
+#. Tag: para
+#: configkde.docbook:179
+#, no-c-format
+msgid "Is it possible to enter, show and work with the Euro Symbol in &kde;?"
+msgstr "&kde; altında Euro sembolünü göstermek mümkün müdür?"
+
+#. Tag: para
+#: configkde.docbook:183
+#, no-c-format
+msgid ""
+"Yes and no. For details, look here: <ulink url=\"http://www.koffice.org/"
+"kword/euro.php\">http://www.koffice.org/kword/euro.php</ulink>."
+msgstr ""
+"Evet ve hayır. Ayrıntılar için, <ulink url=\"http://www.koffice.org/kword/"
+"euro.phtml\"> http://www.koffice.org/kword/euro.phtml</ulink> adresine bakın."
+
+#. Tag: para
+#: configkde.docbook:189
+#, no-c-format
+msgid "How do I run a program at &kde; startup?"
+msgstr "Bir programı &kde; başlarken nasıl çalıştırabilirim ?"
+
+#. Tag: para
+#: configkde.docbook:191
+#, fuzzy, no-c-format
+msgid ""
+"There are many ways to do that. If what you want to do is to run some "
+"scripts that would set some environment variables (for example, to start "
+"<command>gpg-agent</command>, <command>ssh-agent</command> and others), you "
+"can put these scripts into <filename class=\"directory\">$<envar>KDEHOME</"
+"envar>/env/</filename> and make sure their names end in <literal role="
+"\"extension\">.sh</literal>. $<envar>KDEHOME</envar> is usually a folder "
+"named <filename class=\"directory\">.kde</filename> (note the period at the "
+"beginning) in your home folder. If you want scripts to be executed for all "
+"&kde; users, you can put them under <filename class=\"directory\">"
+"$<envar>KDEDIR</envar>/env/</filename>, where $<envar>KDEDIR</envar> is the "
+"prefix &kde; was installed to (you can find this out using the command "
+"<userinput><command>kde4-config</command> --prefix</userinput>)."
+msgstr ""
+"Bunu yapmanın birçok yolu vardır. Eğer yapmak istediğiniz bazı çevresel "
+"değişkenleri (örneğin <command>gpg-agent</command>, <command>ssh-agent</"
+"command> ve diğerlerini çalıştırmak ) ayarlayan birtakım komutları "
+"çalıştırmak ise bu komutları <filename class=\"directory\">$<envar>KDEHOME</"
+"envar>/env/</filename>dosyasına ekleyin ve isimlerini"
+
+#. Tag: para
+#: configkde.docbook:202
+#, no-c-format
+msgid ""
+"If you wish to start a program after &kde; has started, you may want to use "
+"the <filename class=\"directory\">Autostart</filename> folder. To add "
+"entries to the <filename class=\"directory\">Autostart</filename> folder:"
+msgstr ""
+"Eğer bir programı &kde; başladıktan sonra çalıştırmak istiyorsanız <filename "
+"class=\"directory\">Autostart</filename> dizinini kullanabilirsiniz. "
+"<filename class=\"directory\">Autostart</filename> dizinine kayıt eklemek "
+"için :"
+
+#. Tag: para
+#: configkde.docbook:206
+#, no-c-format
+msgid "Open &konqueror;."
+msgstr "&konqueror; ı açın"
+
+#. Tag: para
+#: configkde.docbook:208
+#, no-c-format
+msgid ""
+"Select <menuchoice><guimenu>Go</guimenu><guimenuitem>Autostart</guimenuitem> "
+"</menuchoice> from the menubar."
+msgstr ""
+"Menü çubuğundan <menuchoice><guimenu>Git</guimenu><guimenuitem>Autostart</"
+"guimenuitem> </menuchoice>'i seçin."
+
+#. Tag: para
+#: configkde.docbook:211
+#, no-c-format
+msgid ""
+"Right-click in the window view area and select "
+"<menuchoice><guisubmenu>Create New</guisubmenu><guisubmenu>File</"
+"guisubmenu><guimenuitem>Link to Application</guimenuitem> </menuchoice>"
+msgstr ""
+"Açılan pencerenin üzerinde sağ tıklayın ve <menuchoice><guisubmenu>Yeni "
+"Oluştur</guisubmenu><guisubmenu>Dosya</guisubmenu><guimenuitem>Uygulamaya "
+"Bağlantı</guimenuitem> </menuchoice>'yı seçin."
+
+#. Tag: para
+#: configkde.docbook:215
+#, no-c-format
+msgid ""
+"Click on the <guilabel>Application</guilabel> tab in the window that appears "
+"and enter the name of the command to run in the <guilabel>Command</guilabel> "
+"text box."
+msgstr ""
+"Açılan pencerede <guilabel>Uygulama</guilabel>sekmesine tıklayın ve "
+"<guilabel>Komut</guilabel> metin kutusunun içerisine çalıştırılacak komutu "
+"yazın."
+
+#. Tag: para
+#: configkde.docbook:227
+#, no-c-format
+msgid ""
+"How can I allow more than one user to be logged in a at a time? Can &kde; do "
+"<quote>fast user switching</quote>?"
+msgstr ""
+"Aynı anda birden fazla kullanıcının oturum açmasına nasıl izin verebilirim ? "
+"&kde;<quote> Hızlı Kullanıcı Değiştirme</quote> yapabilir mi?"
+
+#. Tag: para
+#: configkde.docbook:231
+#, no-c-format
+msgid ""
+"To enable more than one user to log in at one time on the same computer "
+"(sometimes referred to as <quote>fast user switching</quote>) you need to "
+"tell the program that logs you in that it can use more than one session (or, "
+"in &X-Window; terms, <quote>display</quote>) at a time."
+msgstr ""
+"Aynı bilgisayarda aynı anda birden fazla kullanıcının oturum açmasını "
+"sağlamak için (Buna <quote>Hızlı Kullanıcı Değiştirme</quote> de denir) "
+"giriş programına aynı anda birden fazla oturum açabileceğini söylemeniz "
+"gerekir. (&X-Window; için  Kurallar, <quote>Görüntü</quote> kısmına bakınız.)"
+
+#. Tag: para
+#: configkde.docbook:236
+#, no-c-format
+msgid ""
+"In &kde;, this program is called &kdm; which stands for <quote>&kde; Display "
+"Manager</quote>. If you are not using &kdm; as your login screen then you "
+"will need to consult the documentation for the software you are using on how "
+"to accomplish multiple sessions."
+msgstr ""
+"&kde; de bu giriş programına &kdm; denir. &kdm; <quote>&kde; Yapılandırma "
+"Modülü</quote>' nün kısaltmasıdır. Eğer giriş ekranı olarak &kdm;' yi "
+"kullanmıyorsanız, nasıl aynı anda oturum açılabileceğini öğrenmek için "
+"kullandığınız yazılımın yardım sayfalarına başvurun."
+
+#. Tag: para
+#: configkde.docbook:241
+#, no-c-format
+msgid ""
+"By default, this will be configured at installation time automatically if "
+"&kdm; supports virtual terminals on your system (currently Linux only). If "
+"it was not configured automatically, consult the &kdm; manual, section "
+"<ulink url=\"help:/kdm/kdmrc-xservers\">Specifying permanent &X-Server;s</"
+"ulink>. After modifying kdmrc, you will have to let &kdm; know about it; "
+"just invoke <command>killall -HUP kdm</command>."
+msgstr ""
+"Eğer sisteminizde görsel terminalleri &kdm; destekliyorsa, kurulum esnasında "
+"kendiliğinden aktif hale gelecektir. Eğer otomatik olarak ayarlanmamışsa "
+"&kdm; el kitabı, <ulink url=\"help:/kdm/kdmrc-xservers\"> &X-Server;' da "
+"sabit olarak tanımlama </ulink> kısmına başvurun. Kdmrc' yi ayarladıktan "
+"sonra &kdm;' nin bundan haberdar olmasını sağlamalısınız. Bunun için de "
+"<command>killall -HUP kdm</command> komutunu kullanın."
+
+#~ msgid ""
+#~ "I would like to click the &LMB; anywhere on the desktop and have the "
+#~ "<guimenu>K</guimenu> menu displayed."
+#~ msgstr ""
+#~ "Masaüstünün herhangi bir yerinde &LMB; üzerine tıkladığımda <guimenu>K</"
+#~ "guimenu> menüsünün görüntülenmesini istiyorum."
+
+#~ msgid ""
+#~ "Open the <application>&kde; Control Center</application> and choose "
+#~ "<menuchoice><guisubmenu>Desktop</guisubmenu> <guisubmenu>Behavior</"
+#~ "guisubmenu></menuchoice>. You can now choose the behavior of mouse clicks "
+#~ "on the desktop. To have the <guimenu>K</guimenu> menu open from a single "
+#~ "&LMB; click, change the entry labeled <guilabel>Left button</guilabel> to "
+#~ "say <guilabel>Application Menu</guilabel>."
+#~ msgstr ""
+#~ "<application>&kde; Kontrol Merkezi</application>'nı açıp <menuchoice> "
+#~ "<guisubmenu>Masaüstü</guisubmenu> <guisubmenu>Davranış</guisubmenu> </"
+#~ "menuchoice>'ı seçin. Buradan masaüstündeki fare tıklamalarının "
+#~ "davranışını seçebilirsiniz. <guimenu>K</guimenu> menüsünün tek bir &LMB; "
+#~ "ile açılması için, <guilabel>Sol Tuş</guilabel>'tan <guilabel>Uygulama "
+#~ "Menüsü</guilabel>'nü seçin."
+
+#~ msgid ""
+#~ "Go to <ulink url=\"http://kde.themes.org/\">http://kde.themes.org/</"
+#~ "ulink> or <ulink url=\"http://www.kde-look.org\">http://www.kde-look.org</"
+#~ "ulink>."
+#~ msgstr ""
+#~ "<ulink url=\"http://kde.themes.org/\">http://kde.themes.org/</ulink> ya "
+#~ "da <ulink url=\"http://www.kde-look.org\">http://www.kde-look.org</ulink> "
+#~ "adresinden ulaşabilirsiniz."

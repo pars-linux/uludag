@@ -1,0 +1,105 @@
+# translation of faq_about.po to Türkçe
+# Copyright (C) 2003, 2006 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_about\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-01-30 20:36+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: about.docbook:8
+#, no-c-format
+msgid "About this <acronym>FAQ</acronym>"
+msgstr "Bu <acronym>SSS</acronym> hakkında"
+
+#. Tag: para
+#: about.docbook:13
+#, no-c-format
+msgid "What can I do to help out with this <acronym>FAQ</acronym>?"
+msgstr "Bu <acronym>SSS</acronym> ile ne yapabilirim?"
+
+#. Tag: para
+#: about.docbook:18
+#, fuzzy, no-c-format
+#| msgid ""
+#| "First, send us any errors that you may find. Also, any suggestions that "
+#| "you might have, are appreciated. Better yet, send us everything that you "
+#| "think is unclear, and if possible, send us what you think would be a "
+#| "clearer solution. Our email address is <email>faq@kde.org</email>."
+msgid ""
+"First, send us any errors that you may find. Also, any suggestions that you "
+"might have, are appreciated. Better yet, send us everything that you think "
+"is unclear, and if possible, send us what you think would be a clearer "
+"solution. The email address of the current maintainer is <email>jhall@kde."
+"org</email>."
+msgstr ""
+"Öncelikle bulacağınız tüm hataları bize bildiriniz. Yapacağınız tüm öneriler "
+"dikkate alınacaktır. Hatta belirsiz olduğunu düşündüğünüz herşeyi ,eğer "
+"mümkünse çözümü ile birlikte bize bildiriniz.E-posta adresimiz<email>faq@kde."
+"org</email> "
+
+#. Tag: para
+#: about.docbook:24
+#, no-c-format
+msgid ""
+"Second, send us your solutions of those frequently-asked questions which are "
+"still not in this <acronym>FAQ</acronym>. We will put them in as soon as "
+"possible."
+msgstr ""
+"İkinci olarak, bu <acronym>SSS</acronym> içinde cevapları olmayan sorular "
+"hakkındaki çözümlerinizi bize gönderebilirsiniz. Mümkün olan en kısa zamanda "
+"yerlerine koyacağımızdan emin olabilirsiniz. "
+
+#. Tag: para
+#: about.docbook:28
+#, no-c-format
+msgid ""
+"Last but not least, please make full use of this <acronym>FAQ</acronym>. "
+"Read this <acronym>FAQ</acronym> (and other relevant documentation) well "
+"before asking questions on the various &kde; mailing lists or newsgroups."
+msgstr ""
+"Son olarak, lütfen &kde; e-posta listelerine veya haber gruplarına soru "
+"sormadan önce bu <acronym>SSS</acronym> belgesinden ve ilgili diğer "
+"belgelerden  mümkün olduğunca yararlanın."
+
+#. Tag: para
+#: about.docbook:33
+#, no-c-format
+msgid ""
+"You might also want to consider becoming a <acronym>FAQ</acronym> "
+"maintainer. Please refer to <xref linkend=\"FAQ-maintainer-HOWTO\"/> for "
+"more details."
+msgstr ""
+"Ayrıca <acronym>SSS</acronym> belgesinin düzenlenmesine de yardımcı "
+"olabilirsiniz. Bunun için lütfen <xref linkend=\"FAQ-maintainer-HOWTO\"/> "
+"bağlantısına bir göz atın."
+
+#. Tag: para
+#: about.docbook:42
+#, no-c-format
+msgid "How do I become a <acronym>FAQ</acronym> maintainer?"
+msgstr "Nasıl <acronym>SSS</acronym> yardım gönüllüsü olabililirim ?"
+
+#. Tag: para
+#: about.docbook:46
+#, no-c-format
+msgid ""
+"Actually, it is very easy to become an <acronym>FAQ</acronym> maintainer, "
+"and we are always in need of fresh blood. :-) Just send us an email at "
+"<email>kde-doc-english@kde.org</email>."
+msgstr ""
+"Aslında <acronym>SSS</acronym> yardım gönüllüsü olmak oldukça kolay. Biz her "
+"zaman taze kan arayışı içindeyiz. Tek yapmanız gereken <email>kde-doc-"
+"english@kde.org</email> adresine isteğinizi bildiren bir e-posta göndermek."

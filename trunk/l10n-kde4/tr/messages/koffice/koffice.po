@@ -1,0 +1,3860 @@
+# translation of koffice.po to Turkish
+# Koffice Turkish translation file
+# Copyright (C) 2000,2003, 2008 Free Software Foundation, Inc.
+#
+# Onur Soysal <e116511@ceng.metu.edu.tr>, 2000.
+# Serdar Cevher <scevher@anet.com.tr>, 2001.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: koffice\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:30+0100\n"
+"PO-Revision-Date: 2009-09-18 03:25+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: flake/tools/KoCreatePathToolFactory.cpp:31
+#: flake/tools/KoCreatePathToolFactory.cpp:33
+msgid "Create Path"
+msgstr "Yol Oluştur"
+
+#: flake/tools/KoPathSegmentChangeStrategy.cpp:131
+msgid "Change Segment"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:84
+msgid "Corner point"
+msgstr "Köşe noktası"
+
+#: flake/tools/KoPathTool.cpp:89
+msgid "Smooth point"
+msgstr "Düz nokta"
+
+#: flake/tools/KoPathTool.cpp:94
+msgid "Symmetric Point"
+msgstr "Simetrik Nokta"
+
+#: flake/tools/KoPathTool.cpp:99
+msgid "Make curve point"
+msgstr "Kıvrım noktası oluştur"
+
+#: flake/tools/KoPathTool.cpp:103
+msgid "Make line point"
+msgstr "Çizgi noktası oluştur"
+
+#: flake/tools/KoPathTool.cpp:107
+msgid "Segment to Line"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:112
+msgid "Segment to Curve"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:117
+msgid "Insert point"
+msgstr "Nokta ekle"
+
+#: flake/tools/KoPathTool.cpp:122
+msgid "Remove point"
+msgstr "Nokta kaldır"
+
+#: flake/tools/KoPathTool.cpp:127
+msgid "Break at point"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:131
+msgid "Break at segment"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:135
+msgid "Join with segment"
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:140
+#: flake/commands/KoPathPointMergeCommand.cpp:152
+msgid "Merge points"
+msgstr "Noktaları birleştir"
+
+#: flake/tools/KoPathTool.cpp:144
+msgid "To Path"
+msgstr "Yola"
+
+#: flake/tools/KoPathTool.cpp:178
+msgid "Line/Curve"
+msgstr "Çizgi/Kıvrım"
+
+#: flake/tools/KoPathTool.cpp:179 flake/tools/KoCreatePathTool.cpp:475
+msgid "Snapping"
+msgstr "Kopma"
+
+#: flake/tools/KoPathTool.cpp:500
+msgid "Drag to move handle."
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:564
+msgid "Drag to move point. Shift click to change point type."
+msgstr ""
+
+#: flake/tools/KoPathTool.cpp:566
+msgid "Drag to move control point."
+msgstr "Denetim noktasını taşımak için sürükle."
+
+#: flake/tools/KoPathTool.cpp:591
+msgid "Press B to break path at selected point."
+msgstr "Seçilen noktadan yola ara vermek için B tuşuna bas."
+
+#: flake/tools/KoPathTool.cpp:593
+msgid "Press B to break path at selected segments."
+msgstr ""
+
+#: flake/tools/KoCreateShapesToolFactory.cpp:31
+msgid "Create Shapes"
+msgstr "Şekil Oluştur"
+
+#: flake/tools/KoCreateShapesToolFactory.cpp:33
+msgid "Create object"
+msgstr "Nesne oluştur"
+
+#: flake/tools/KoPanToolFactory.cpp:27
+msgid "Pan Tool"
+msgstr "Kaydırma Aracı"
+
+#: flake/tools/KoPanToolFactory.cpp:29
+msgid "Pan"
+msgstr "Kaydırma"
+
+#: flake/tools/KoZoomToolFactory.cpp:27
+msgid "Zoom Tool"
+msgstr "Büyütme Aracı"
+
+#: flake/tools/KoZoomToolFactory.cpp:29 widgets/KoZoomInput.cpp:52
+#: widgets/KoZoomAction.cpp:248 widgets/KoZoomController.cpp:37
+msgid "Zoom"
+msgstr "Büyüt"
+
+#: flake/tools/KoCreatePathTool.cpp:480
+msgid "Angle snapping delta"
+msgstr ""
+
+#: flake/tools/KoCreatePathTool.cpp:485
+msgid "Angle Constraints"
+msgstr ""
+
+#: flake/tools/KoPathToolFactory.cpp:27
+msgid "Path tool"
+msgstr "Yol aracı"
+
+#: flake/tools/KoPathToolFactory.cpp:29
+msgid "Path editing tool"
+msgstr "Yol düzenleme aracı"
+
+#: flake/commands/KoShapeUngroupCommand.cpp:53
+msgid "Ungroup shapes"
+msgstr "Şekillerin gruplamasını kaldır"
+
+#: flake/commands/KoPathPointRemoveCommand.cpp:91
+#: flake/commands/KoPathPointRemoveCommand.cpp:121
+msgid "Remove points"
+msgstr "Noktaları sil"
+
+#: flake/commands/KoSubpathJoinCommand.cpp:51
+msgid "Close subpath"
+msgstr "Alt yolları kapat"
+
+#: flake/commands/KoSubpathJoinCommand.cpp:53
+msgid "Join subpaths"
+msgstr "Alt yolları birleştir"
+
+#: flake/commands/KoPathCombineCommand.cpp:58
+msgid "Combine paths"
+msgstr "Yolları birleştir"
+
+#: flake/commands/KoPathReverseCommand.cpp:51
+msgid "Reverse paths"
+msgstr "Yolları tersine çevir"
+
+#: flake/commands/KoPathPointMoveCommand.cpp:30
+#: flake/commands/KoPathPointMoveCommand.cpp:46
+msgid "Move points"
+msgstr "Noktaları taşı"
+
+#: flake/commands/KoShapeShadowCommand.cpp:67
+#: flake/commands/KoShapeShadowCommand.cpp:84
+#: flake/commands/KoShapeShadowCommand.cpp:95
+msgid "Set Shadow"
+msgstr "Gölgeyi Ayarla"
+
+#: flake/commands/KoPathControlPointMoveCommand.cpp:40
+msgid "Move control point"
+msgstr "Denetim noktasını taşı"
+
+#: flake/commands/KoShapeLockCommand.cpp:36
+msgid "Lock shapes"
+msgstr "Şekilleri kilitle"
+
+#: flake/commands/KoParameterToPathCommand.cpp:30
+#: flake/commands/KoParameterToPathCommand.cpp:38
+msgid "Convert to Path"
+msgstr "Yola Dönüştür"
+
+#: flake/commands/KoShapeAlignCommand.cpp:85
+msgid "Align shapes"
+msgstr "Şekilleri yerleştir"
+
+#: flake/commands/KoConnectionShapeTypeCommand.cpp:31
+msgid "Change Connection"
+msgstr "Bağlantıyı Değiştir"
+
+#: flake/commands/KoPathPointTypeCommand.cpp:46
+msgid "Set point type"
+msgstr "Nokta tipini ayarla"
+
+#: flake/commands/KoPathSeparateCommand.cpp:56
+msgid "Separate paths"
+msgstr "Yolları ayır"
+
+#: flake/commands/KoShapeReorderCommand.cpp:38
+msgid "Reorder shapes"
+msgstr "Şekilleri yeniden sırala"
+
+#: flake/commands/KoPathSegmentTypeCommand.cpp:132
+msgid "Change segments to curves"
+msgstr ""
+
+#: flake/commands/KoPathSegmentTypeCommand.cpp:134
+msgid "Change segments to lines"
+msgstr ""
+
+#: flake/commands/KoShapeCreateCommand.cpp:52
+msgid "Create shape"
+msgstr "Şekil oluştur"
+
+#: flake/commands/KoParameterHandleMoveCommand.cpp:34
+msgid "Change parameter"
+msgstr "Parametreyi değiştir"
+
+#: flake/commands/KoShapeShearCommand.cpp:39
+msgid "Shear shapes"
+msgstr "Şekilleri kırp"
+
+#: flake/commands/KoSubpathRemoveCommand.cpp:30
+msgid "Remove subpath"
+msgstr "Alt yolu sil"
+
+#: flake/commands/KoPathSegmentBreakCommand.cpp:40
+msgid "Break subpath"
+msgstr "Alt yolu ayır"
+
+#: flake/commands/KoShapeSizeCommand.cpp:42
+msgid "Resize shapes"
+msgstr "Şekilleri yeniden boyutlandır"
+
+#: flake/commands/KoShapeDistributeCommand.cpp:125
+msgid "Distribute shapes"
+msgstr "Şekilleri dağıt"
+
+#: flake/commands/KoShapeMoveCommand.cpp:42
+msgid "Move shapes"
+msgstr "Şekillleri taşı"
+
+#: flake/commands/KoShapeBackgroundCommand.cpp:73
+#: flake/commands/KoShapeBackgroundCommand.cpp:84
+#: flake/commands/KoShapeBackgroundCommand.cpp:99
+msgid "Set background"
+msgstr "Arkaplanı ayarla"
+
+#: flake/commands/KoPathBreakAtPointCommand.cpp:38
+msgid "Break subpath at points"
+msgstr "Alt yolları noktalardan ayır"
+
+#: flake/commands/KoShapeGroupCommand.cpp:78
+#: flake/commands/KoShapeGroupCommand.cpp:81
+msgid "Group shapes"
+msgstr "Şekilleri grupla"
+
+#: flake/commands/KoShapeDeleteCommand.cpp:56
+msgid "Delete shape"
+msgstr "Şekli sil"
+
+#: flake/commands/KoShapeDeleteCommand.cpp:69
+msgid "Delete shapes"
+msgstr "Şekilleri sil"
+
+#: flake/commands/KoPathFillRuleCommand.cpp:44
+msgid "Set fill rule"
+msgstr "Doldurma kuralını ayarla"
+
+#: flake/commands/KoShapeBorderCommand.cpp:70
+#: flake/commands/KoShapeBorderCommand.cpp:89
+#: flake/commands/KoShapeBorderCommand.cpp:100
+msgid "Set border"
+msgstr "Kenarlığı ayarla"
+
+#: flake/commands/KoShapeKeepAspectRatioCommand.cpp:30
+msgid "Keep Aspect Ratio"
+msgstr "Görünüm Oranını Koru"
+
+#: flake/KoShapeController.cpp:59 kotext/InsertVariableAction.cpp:49
+#: kotext/InsertTextReferenceAction.cpp:65
+#, kde-format
+msgid "%1 Options"
+msgstr "%1 Seçenekleri"
+
+#: flake/KoTool.cpp:190 flake/KoToolManager.cpp:446
+msgid "Tool Options"
+msgstr "Araç Seçenekleri"
+
+#: flake/KoConnectionShapeFactory.cpp:33
+msgid "Tie"
+msgstr "Bağ"
+
+#: flake/KoConnectionShapeFactory.cpp:35
+msgid "A connection between two other shapes"
+msgstr ""
+
+#: flake/KoLineBorderFactory.cpp:25
+msgid "Line Border"
+msgstr "Çizgi Kenarlık"
+
+#: flake/KoToolManager.cpp:445
+#, kde-format
+msgid "Active tool: %1"
+msgstr "Etkin araç: %1"
+
+#: flake/KoConnectionShapeConfigWidget.cpp:29
+msgid "Standard"
+msgstr "Standart"
+
+#: flake/KoConnectionShapeConfigWidget.cpp:30
+msgid "Lines"
+msgstr "Çizgiler"
+
+#: flake/KoConnectionShapeConfigWidget.cpp:31
+msgid "Straight"
+msgstr "Düz çizgi"
+
+#: flake/KoConnectionShapeConfigWidget.cpp:32
+msgid "Curve"
+msgstr "Kıvrım"
+
+#: flake/KoPathShapeFactory.cpp:30
+msgid "Simple path shape"
+msgstr "Basit yol şekli"
+
+#: flake/KoPathShapeFactory.cpp:32
+msgid "A simple path shape"
+msgstr "Basit bir yol şekli"
+
+#: flake/KoShapePaste.cpp:85
+msgid "Paste Shapes"
+msgstr "Şekilleri Yapıştır"
+
+#: flake/KoZoomMode.cpp:25 widgets/KoZoomAction.cpp:166
+#: widgets/KoZoomAction.cpp:168 widgets/KoZoomAction.cpp:180
+#: widgets/KoZoomAction.cpp:182
+#, kde-format
+msgid "%1%"
+msgstr "%1%"
+
+#: flake/KoZoomMode.cpp:26
+msgid "Fit Page Width"
+msgstr "Sayfa Genişliğine Sığdır"
+
+#: flake/KoZoomMode.cpp:27
+msgid "Fit Page"
+msgstr "Sayfayı Sığdır"
+
+#: flake/KoZoomMode.cpp:29
+msgid "Actual Pixels"
+msgstr "Şimdiki Pikseller"
+
+#: main/config/KoConfigGridPage.cpp:65
+#: kopageapp/dialogs/KoPAConfigureDialog.cpp:37
+#: kopageapp/dialogs/KoPAConfigureDialog.cpp:38
+msgid "Grid"
+msgstr "Izgara"
+
+#: main/config/KoConfigGridPage.cpp:67
+msgid "Show grid:"
+msgstr "Izgarayı göster:"
+
+#: main/config/KoConfigGridPage.cpp:70
+msgid "Snap to grid:"
+msgstr "Izgaraya uydur:"
+
+#: main/config/KoConfigGridPage.cpp:73
+msgid "Grid color:"
+msgstr "Izgara rengi:"
+
+#: main/config/KoConfigGridPage.cpp:83
+msgid "Spacing"
+msgstr "Aralıklandırma"
+
+#: main/config/KoConfigGridPage.cpp:86
+msgctxt "Horizontal grid spacing"
+msgid "&Horizontal:"
+msgstr "&Yatay:"
+
+#: main/config/KoConfigGridPage.cpp:92
+msgctxt "Vertical grid spacing"
+msgid "&Vertical:"
+msgstr "&Dikey:"
+
+#: main/config/KoConfigDocumentPage.cpp:58
+#: kopageapp/dialogs/KoPAConfigureDialog.cpp:43
+msgid "Document Settings"
+msgstr "Belge Ayarları"
+
+#: main/config/KoConfigDocumentPage.cpp:75
+msgid "Auto save (min):"
+msgstr "Otomatik kayıt (dk):"
+
+#: main/config/KoConfigDocumentPage.cpp:76
+msgid "No auto save"
+msgstr "Otomatik kayıt yok"
+
+#: main/config/KoConfigDocumentPage.cpp:77
+msgid "min"
+msgstr "dk"
+
+#: main/config/KoConfigDocumentPage.cpp:80
+msgid "Create backup file"
+msgstr "Yedekleme dosyası oluştur"
+
+#: main/KoDocumentSectionToolTip.cpp:50
+msgid "Yes"
+msgstr "Evet"
+
+#: main/KoDocumentSectionToolTip.cpp:50
+msgid "No"
+msgstr "Hayır"
+
+#: main/KoGridData.cpp:209
+msgid "Show Grid"
+msgstr "Izagarayı Göster"
+
+#: main/KoGridData.cpp:210
+msgid "Hide Grid"
+msgstr "Izgarayı Gizle"
+
+#: main/KoGridData.cpp:211
+msgid "Shows or hides grid"
+msgstr "Izgarayı gizler veya gösterir"
+
+#: main/KoApplicationAdaptor.cpp:50
+#, kde-format
+msgid "Unknown KOffice MimeType %1. Check your installation."
+msgstr "Bilinmeyen KOffice Mime Tipi %1. Kurulumunuzu kontrol edin."
+
+#: main/KoMainWindow.cpp:154
+#, kde-format
+msgid "%1 unsaved document (%2)"
+msgstr "%1 kaydedilmemiş belge (%2)"
+
+#: main/KoMainWindow.cpp:253
+msgid "Export as PDF..."
+msgstr "PDF olarak &Aktar..."
+
+#: main/KoMainWindow.cpp:263
+msgid "Reload"
+msgstr "Yeniden Yükle"
+
+#: main/KoMainWindow.cpp:267
+msgid "Versions..."
+msgstr "Sürümler..."
+
+#: main/KoMainWindow.cpp:271
+msgid "I&mport..."
+msgstr "&Al..."
+
+#: main/KoMainWindow.cpp:275
+msgid "E&xport..."
+msgstr "&Aktar..."
+
+#: main/KoMainWindow.cpp:281 main/KoDocumentInfoDlg.cpp:78
+msgid "Document Information"
+msgstr "Belge Bilgisi"
+
+#: main/KoMainWindow.cpp:306
+msgid "&Close All Views"
+msgstr "&Bü&tün Görünümleri Kapat"
+
+#: main/KoMainWindow.cpp:313
+msgid "&Split View"
+msgstr "Gö&rünümü Böl"
+
+#: main/KoMainWindow.cpp:318
+msgid "&Remove View"
+msgstr "Görünümü &Kaldır"
+
+#: main/KoMainWindow.cpp:324
+msgid "Full Screen Mode"
+msgstr "Tam Ekran Kipi"
+
+#: main/KoMainWindow.cpp:329
+msgid "Splitter &Orientation"
+msgstr "&Böldürme Konumu"
+
+#: main/KoMainWindow.cpp:333
+msgid "&Horizontal"
+msgstr "&Yatay"
+
+#: main/KoMainWindow.cpp:333
+msgid "&Vertical"
+msgstr "&Düşey"
+
+#: main/KoMainWindow.cpp:341
+msgid "Dockers"
+msgstr ""
+
+#: main/KoMainWindow.cpp:577
+msgid "(write protected)"
+msgstr "(yazma korumalı)"
+
+#: main/KoMainWindow.cpp:581
+#, kde-format
+msgid "Save as %1"
+msgstr "Farklı kaydet %1"
+
+#: main/KoMainWindow.cpp:583 kokross/KoScriptManager.cpp:299
+msgid "Save"
+msgstr "Kaydet"
+
+#: main/KoMainWindow.cpp:626 main/KoDocument.cpp:1159 main/KoDocument.cpp:1399
+#, kde-format
+msgid "The file %1 does not exist."
+msgstr "%1 dosyası bulunamadı."
+
+#: main/KoMainWindow.cpp:748 main/KoDocumentInfoDlg.cpp:439
+#, kde-format
+msgid "%1 (unknown file type)"
+msgstr "Bilinmeyen dosya türü %1"
+
+#: main/KoMainWindow.cpp:756
+#, kde-format
+msgid ""
+"<qt>Saving as a %1 may result in some loss of formatting.<p>Do you still "
+"want to save in this format?</qt>"
+msgstr ""
+
+#: main/KoMainWindow.cpp:759
+msgid "Confirm Save"
+msgstr "Kaydetmeyi Onayla"
+
+#: main/KoMainWindow.cpp:768
+#, kde-format
+msgid ""
+"<qt>Exporting as a %1 may result in some loss of formatting.<p>Do you still "
+"want to export to this format?</qt>"
+msgstr ""
+
+#: main/KoMainWindow.cpp:771
+msgid "Confirm Export"
+msgstr "Aktarmayı Onayla"
+
+#: main/KoMainWindow.cpp:772
+msgid "Export"
+msgstr "Aktar"
+
+#: main/KoMainWindow.cpp:855
+msgid "Save Document As"
+msgstr "Farklı Kaydet"
+
+#: main/KoMainWindow.cpp:857
+msgid "Export Document As"
+msgstr "Belgeyi Farklı Aktar"
+
+#: main/KoMainWindow.cpp:915
+msgid ""
+"A document with this name already exists.\n"
+"Do you want to overwrite it?"
+msgstr ""
+"Bu isimde bir belge zaten var.\n"
+"Üzerine yazmak ister misiniz?"
+
+#: main/KoMainWindow.cpp:917 main/KoMainWindow.cpp:1707
+msgid "Warning"
+msgstr "Uyarı"
+
+#: main/KoMainWindow.cpp:1117 main/KoDocument.cpp:1766
+#: resources/KoColorSet.cpp:221
+msgid "Untitled"
+msgstr "Başlıksız"
+
+#: main/KoMainWindow.cpp:1120 main/KoDocument.cpp:1769
+#, kde-format
+msgid ""
+"<p>The document <b>'%1'</b> has been modified.</p><p>Do you want to save it?"
+"</p>"
+msgstr ""
+"<p><b>'%1'</b> adlı belge değiştirildi. </p><p>Kaydetmek ister misiniz?</p>"
+
+#: main/KoMainWindow.cpp:1187 main/KoExistingDocumentPane.cpp:45
+#: main/KoOpenPane.cpp:356 main/KoOpenPane.cpp:360
+msgid "Open Document"
+msgstr "Belge Aç"
+
+#: main/KoMainWindow.cpp:1189 kopageapp/KoPAView.cpp:428
+msgid "Import Document"
+msgstr "Belgeyi Al"
+
+#: main/KoMainWindow.cpp:1316
+msgid "Write PDF"
+msgstr "PDF Yaz"
+
+#: main/KoMainWindow.cpp:1601
+#, kde-format
+msgid "Show %1 Toolbar"
+msgstr "%1 Araç Çubuğunu Göster"
+
+#: main/KoMainWindow.cpp:1603
+#, kde-format
+msgid "Hide %1 Toolbar"
+msgstr "%1 Araç Çubuğunu Gizle"
+
+#: main/KoMainWindow.cpp:1667 kopageapp/KoPADocumentStructureDocker.cpp:95
+msgid "Document"
+msgstr "Belge"
+
+#: main/KoMainWindow.cpp:1675
+#, kde-format
+msgid "Document - %1"
+msgstr "Belge - %1"
+
+#: main/KoMainWindow.cpp:1705
+msgid ""
+"You will lose all changes made since your last save\n"
+"Do you want to continue?"
+msgstr ""
+"Son kayetmenizden bu yana yapılan tüm değişiklikleri kaybedeceksiniz\n"
+"Devam etmek istiyor musunuz?"
+
+#: main/KoFileDialog.cpp:98
+#, kde-format
+msgid "%1 (Uncompressed XML Files)"
+msgstr "%1 (Sıkıştırılmamış XML Dosyaları)"
+
+#: main/KoFileDialog.cpp:100
+#, kde-format
+msgid "%1 (Flat XML File)"
+msgstr "%1 (Düz XML Dosyası)"
+
+#: main/KoFileDialog.cpp:102
+#, kde-format
+msgid "%1 (Encrypted)"
+msgstr "%1 (Şifrelenmiş)"
+
+#: main/KoFileDialog.cpp:120
+#, kde-format
+msgid "%1 (%2 Compatible)"
+msgstr "%1 (%2 Uyumlu)"
+
+#: main/KoFilterManager_p.cpp:43
+msgid "Choose Filter"
+msgstr "Seç"
+
+#: main/KoTemplatesPane.cpp:47
+msgid "Use This Template"
+msgstr "Bu Şablonu Kullan"
+
+#: main/KoView.cpp:436
+msgid "&New View"
+msgstr "&Yeni Görünüm"
+
+#: main/KoToolBoxFactory.cpp:36 kopageapp/KoPAView.cpp:242
+msgid "Tools"
+msgstr "Araçlar"
+
+#: main/KoFilterManager.cpp:223 main/KoFilterManager.cpp:232
+msgid "Could not export file."
+msgstr "Dosya aktarılamadı."
+
+#: main/KoFilterManager.cpp:223 main/KoFilterManager.cpp:232
+msgid "Missing Export Filter"
+msgstr "Dışa Aktarma Süzgeci Eksik"
+
+#: main/KoFilterManager.cpp:521
+#, kde-format
+msgid ""
+"Could not import file of type\n"
+"%1"
+msgstr ""
+"%1\n"
+"türünde dosya içe aktarılamıyor"
+
+#: main/KoFilterManager.cpp:523
+msgid "Missing Import Filter"
+msgstr "İçe Aktarma Süzgeci Eksik"
+
+#: main/KoDocumentSectionDelegate.cpp:472
+#, kde-format
+msgid "%1 %"
+msgstr "%1 %"
+
+#: main/KoApplication.cpp:73
+msgid "Only print and exit"
+msgstr "Sadece yazdır ve çık"
+
+#: main/KoApplication.cpp:74
+msgid "Open a new document with a template"
+msgstr "Yeni bir belgeyi şablon ile aç"
+
+#: main/KoApplication.cpp:75
+msgid "Override display DPI"
+msgstr "Ekran DPI değerinin üzerine yaz"
+
+#: main/KoApplication.cpp:76
+msgid "Only export to PDF and exit"
+msgstr "Sadece PDF olarak dışarıya aktar ve çık"
+
+#: main/KoApplication.cpp:77
+msgid "Filename for export-pdf"
+msgstr ""
+
+#: main/KoApplication.cpp:78
+msgid "KOffice"
+msgstr "KOffice"
+
+#: main/KoApplication.cpp:187
+#, kde-format
+msgid "No template found for: %1"
+msgstr "Bunun için bir şablon bulunamadı: %1"
+
+#: main/KoApplication.cpp:190
+#, kde-format
+msgid "Too many templates found for: %1"
+msgstr "%1 için çok fazla şablon bulundu"
+
+#: main/KoApplication.cpp:210
+#, kde-format
+msgid "Template %1 failed to load."
+msgstr "%1 şablonu yüklenemedi."
+
+#: main/KoPrintingDialog.cpp:140 main/KoPrintingDialog.cpp:326
+#, kde-format
+msgid "Printing page %1"
+msgstr "%1 sayfasını yazdır"
+
+#: main/KoPrintingDialog.cpp:149
+msgid "Printing done"
+msgstr "Yazdırma tamamlandı"
+
+#: main/KoPrintingDialog.cpp:150
+msgid "Close"
+msgstr "Kapat"
+
+#: main/KoPrintingDialog.cpp:167
+msgid "Stopped"
+msgstr "Durdu"
+
+#: main/KoPrintingDialog.cpp:208
+msgid "Stop"
+msgstr "Dur"
+
+#: main/KoVersionDialog.cpp:48
+msgid "Version"
+msgstr "Sürüm"
+
+#: main/KoVersionDialog.cpp:64
+msgid "Date & Time"
+msgstr "Tarih ve Saat"
+
+#: main/KoVersionDialog.cpp:65
+msgid "Saved By"
+msgstr "Kaydeden"
+
+#: main/KoVersionDialog.cpp:66 main/KoVersionDialog.cpp:226
+msgid "Comment"
+msgstr "Açıklama"
+
+#: main/KoVersionDialog.cpp:73
+msgid "&Add"
+msgstr "&Ekle"
+
+#: main/KoVersionDialog.cpp:76 main/KoTemplateCreateDia.cpp:156
+msgid "&Remove"
+msgstr "&Kaldır"
+
+#: main/KoVersionDialog.cpp:79
+msgid "&Modify"
+msgstr "&Düzenle"
+
+#: main/KoVersionDialog.cpp:82
+msgid "&Open"
+msgstr "&Aç"
+
+#: main/KoVersionDialog.cpp:136
+msgid "A new version could not be added"
+msgstr "Yeni bir sürüm eklenemedi"
+
+#: main/KoVersionDialog.cpp:240 main/KoVersionDialog.cpp:242
+#, kde-format
+msgid "Date: %1"
+msgstr "Tarih: %1"
+
+#: main/KoDocument.cpp:420
+msgid "Making backup..."
+msgstr "Yedekleme yapılıyor..."
+
+#: main/KoDocument.cpp:435
+msgid "Saving..."
+msgstr "Kaydediliyor..."
+
+#: main/KoDocument.cpp:490
+#, kde-format
+msgid "Document <i>%1</i> saved"
+msgstr "<i>%1</i> belgesi kaydedildi"
+
+#: main/KoDocument.cpp:572
+msgid ""
+"The password of this encrypted document is not known. Autosave aborted! "
+"Please save your work manually."
+msgstr ""
+
+#: main/KoDocument.cpp:575
+msgid "Autosaving..."
+msgstr "Otomatik kaydediliyor..."
+
+#: main/KoDocument.cpp:587
+msgid "Error during autosave! Partition full?"
+msgstr "Otomatik kaydetme sırasında hata! Disk bölümü dolu olabilir mi?"
+
+#: main/KoDocument.cpp:768
+msgid "Could not create the file for saving"
+msgstr "Dosya kaydetmek için oluşturulamadı"
+
+#: main/KoDocument.cpp:802 main/KoDocument.cpp:815 main/KoDocument.cpp:845
+#: main/KoDocument.cpp:874
+#, kde-format
+msgid "Not able to write '%1'. Partition full?"
+msgstr "'%1' yazılamadı. Disk bölümü dolu olabilir mi?"
+
+#: main/KoDocument.cpp:809 main/KoDocument.cpp:853 main/KoDocument.cpp:1698
+#, kde-format
+msgid "Error while trying to write '%1'. Partition full?"
+msgstr "'%1' yazılırken hata oluştu. Disk bölümü dolu olabilir mi?"
+
+#: main/KoDocument.cpp:1054
+#, kde-format
+msgid ""
+"An autosaved file for an unnamed document exists in %1.\n"
+"This file is dated %2\n"
+"Do you want to open it?"
+msgstr ""
+"İsimsiz belge için %1 içerisinde otomatik olarak bir kaydedilen dosya var.\n"
+"%2 tarihinde kaydedildi.Açmak ister misiniz?"
+
+#: main/KoDocument.cpp:1105
+#, kde-format
+msgid ""
+"Malformed URL\n"
+"%1"
+msgstr ""
+"Bozuk URL\n"
+"%1"
+
+#: main/KoDocument.cpp:1120
+msgid ""
+"An autosaved file exists for this document.\n"
+"Do you want to open it instead?"
+msgstr ""
+"Bu belge için otomatik olarak kaydedilen bir dosya var.\n"
+"Diğer bir seçenek olarak bunu açmak ister misiniz?"
+
+#: main/KoDocument.cpp:1217
+msgid "Creation error"
+msgstr "Oluşturma hatası"
+
+#: main/KoDocument.cpp:1220
+msgid "File not found"
+msgstr "Dosya bulunamadı"
+
+#: main/KoDocument.cpp:1223
+msgid "Cannot create storage"
+msgstr "Depolama oluşturulamadı"
+
+#: main/KoDocument.cpp:1226
+msgid "Bad MIME type"
+msgstr "Kötü MIME tipi"
+
+#: main/KoDocument.cpp:1229
+msgid "Error in embedded document"
+msgstr "Gömülü belge içerisinde hata"
+
+#: main/KoDocument.cpp:1232
+msgid "Format not recognized"
+msgstr "Biçim tanınamadı"
+
+#: main/KoDocument.cpp:1235
+msgid "Not implemented"
+msgstr "Özellik henüz eklenmedi"
+
+#: main/KoDocument.cpp:1238
+msgid "Parsing error"
+msgstr "Ayrıştırma hatası"
+
+#: main/KoDocument.cpp:1241
+msgid "Document is password protected"
+msgstr "Belge parola korumalı"
+
+#: main/KoDocument.cpp:1248
+msgid "Internal error"
+msgstr "İç hata"
+
+#: main/KoDocument.cpp:1251
+msgid "Out of memory"
+msgstr "Yetersiz bellek"
+
+#: main/KoDocument.cpp:1258
+msgid "Unknown error"
+msgstr "Bilinmeyen hata"
+
+#: main/KoDocument.cpp:1262
+#, kde-format
+msgid ""
+"Could not open\n"
+"%2.\n"
+"Reason: %1"
+msgstr ""
+"Dosya açılamıyor\n"
+"%2.\n"
+"Sebep: %1"
+
+#: main/KoDocument.cpp:1343
+#, kde-format
+msgid "Document <i>%1</i> loaded"
+msgstr "<i>%1</i> belgesi yüklendi"
+
+#: main/KoDocument.cpp:1372 odf/KoOdfReadStore.cpp:115
+#, kde-format
+msgid "Could not find %1"
+msgstr "%1 bulunamıyor"
+
+#: main/KoDocument.cpp:1384
+#, kde-format
+msgid ""
+"Parsing error in %1 at line %2, column %3\n"
+"Error message: %4"
+msgstr ""
+"%1 dosyasında %2. satır, %3. sütunda ayrıştırma hatası\n"
+"Hata İletisi: %4"
+
+#: main/KoDocument.cpp:1406
+#, kde-format
+msgid "%1 is not a file."
+msgstr "%1 geçerli bir dosya değil."
+
+#: main/KoDocument.cpp:1421
+msgid "Could not open the file for reading (check read permissions)."
+msgstr "Dosya okumak için açılamadı (okuma izinlerini kontrol edin)."
+
+#: main/KoDocument.cpp:1432
+msgid "Could not read the beginning of the file."
+msgstr "Dosyanın başlangıcı okunamadı."
+
+#: main/KoDocument.cpp:1462
+#, kde-format
+msgid ""
+"parsing error in the main document at line %1, column %2\n"
+"Error message: %3"
+msgstr ""
+"Dosyadaki %1. satır, %2. sütunda ayırma hatası\n"
+"Hata Mesajı: %3"
+
+#: main/KoDocument.cpp:1483
+#, kde-format
+msgid "Not a valid KOffice file: %1"
+msgstr "Geçerli bir KOffice dosyası değil: %1"
+
+#: main/KoDocument.cpp:1557
+msgid "Invalid document: no file 'maindoc.xml'."
+msgstr "Geçersiz belge: 'maindoc.xml' dosyası yok"
+
+#: main/KoDocument.cpp:1580
+msgid ""
+"This document contains several versions. Go to File->Versions to open an old "
+"version."
+msgstr ""
+"Bu belge birkaç sürüm içeriyor. Eski sürümleri açmak için Dosya->Sürümler "
+"menüsüne gidin."
+
+#: main/KoDocument.cpp:1882
+msgid "Internal error: saveXML not implemented"
+msgstr "İç hata: saveXML desteklenmiyor"
+
+#: main/KoDocument.cpp:2060
+#, kde-format
+msgid ""
+"Could not save\n"
+"%1"
+msgstr ""
+"Kaydedilemiyor:\n"
+"%1"
+
+#: main/KoDocument.cpp:2062
+#, kde-format
+msgid ""
+"Could not save %1\n"
+"Reason: %2"
+msgstr ""
+"Kaydedilemiyor:%1\n"
+"Gerekçe: %2"
+
+#: main/KoDocument.cpp:2069
+#, kde-format
+msgid ""
+"Could not open\n"
+"%1"
+msgstr ""
+"Açılamıyor:\n"
+"%1"
+
+#: main/KoDocument.cpp:2071
+#, kde-format
+msgid ""
+"Could not open %1\n"
+"Reason: %2"
+msgstr ""
+"%1 dosyası açılamıyor\n"
+"Gerekçe: %2"
+
+#: main/KoDocument.cpp:2182
+msgid "a word processing"
+msgstr "bir kelime işlemci belgesi"
+
+#: main/KoDocument.cpp:2183
+msgid "a spreadsheet"
+msgstr "bir heasp tablosu"
+
+#: main/KoDocument.cpp:2184
+msgid "a presentation"
+msgstr "bir sunum"
+
+#: main/KoDocument.cpp:2185
+msgid "a chart"
+msgstr "bir çizelge"
+
+#: main/KoDocument.cpp:2186
+msgid "a drawing"
+msgstr "bir çizim"
+
+#: main/KoDocument.cpp:2351
+msgid "Embedding Object"
+msgstr "Gömülü Nesne"
+
+#: main/KoOpenPane.cpp:190
+msgid "Recent Documents"
+msgstr "Son Kullanılan Belgeler"
+
+#: main/KoOpenPane.cpp:272
+msgid "Custom Document"
+msgstr "Özel Belge"
+
+#: main/KoRuler.cpp:1144
+msgid "First line indent"
+msgstr "İlk satır girintilemesi"
+
+#: main/KoRuler.cpp:1145
+msgid "Left indent"
+msgstr "Sol girinti"
+
+#: main/KoRuler.cpp:1146
+msgid "Right indent"
+msgstr "Sağ girinti"
+
+#: main/KoDocumentInfoDlg.cpp:93 main/KoDocumentInfoDlg.cpp:94
+msgid "General"
+msgstr "Genel"
+
+#: main/KoDocumentInfoDlg.cpp:107 main/KoDocumentInfoDlg.cpp:108
+msgid "Author"
+msgstr "Yazar"
+
+#: main/KoDocumentInfoDlg.cpp:142
+msgid "Use ';' (Example: Office;KDE;KOffice)"
+msgstr "Kullan ';' (Örnek: Office;KDE;KOffice)"
+
+#: main/KoDocumentInfoDlg.cpp:172 main/KoDocumentInfoDlg.cpp:311
+msgid "This document will be decrypted"
+msgstr "Bu belgenin şifrelemesi açılacak"
+
+#: main/KoDocumentInfoDlg.cpp:174 main/KoDocumentInfoDlg.cpp:313
+msgid "Do not decrypt"
+msgstr "Şifrelemeyi açma"
+
+#: main/KoDocumentInfoDlg.cpp:177 main/KoDocumentInfoDlg.cpp:316
+msgid "This document is encrypted"
+msgstr "Bu belge şifrelenmiş"
+
+#: main/KoDocumentInfoDlg.cpp:179 main/KoDocumentInfoDlg.cpp:318
+msgid "D&ecrypt"
+msgstr "&Şifrelemeyi Aç"
+
+#: main/KoDocumentInfoDlg.cpp:184 main/KoDocumentInfoDlg.cpp:323
+msgid "This document will be encrypted."
+msgstr "Bu belge şifelenecek."
+
+#: main/KoDocumentInfoDlg.cpp:186 main/KoDocumentInfoDlg.cpp:325
+msgid "Do not encrypt"
+msgstr "Şifrelemeyi Aç&ma"
+
+#: main/KoDocumentInfoDlg.cpp:189 main/KoDocumentInfoDlg.cpp:328
+msgid "This document is not encrypted"
+msgstr "Bu belge şifrelenmiş değil"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:301
+#. i18n: ectx: property (text), widget (QPushButton, pbEncrypt)
+#: main/KoDocumentInfoDlg.cpp:191 main/KoDocumentInfoDlg.cpp:330 rc.cpp:185
+msgid "&Encrypt"
+msgstr "Şif&rele"
+
+#: main/KoDocumentInfoDlg.cpp:195
+msgid "This document does not support encryption"
+msgstr "Bu belge şifrelemeyi desteklemiyor"
+
+#: main/KoDocumentInfoDlg.cpp:361
+msgid ""
+"No personal contact data set, please use the "
+"option                                     \"Set as Personal Contact Data\" "
+"from the \"Edit\"     menu in KAddressbook to set one."
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:403
+msgid ""
+"<qt>Decrypting the document will remove the password protection from it."
+"<p>Do you still want to decrypt the file?</qt>"
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:405
+msgid "Confirm Decrypt"
+msgstr "Şifrelemeyi Doğrula"
+
+#: main/KoDocumentInfoDlg.cpp:406
+msgid "Decrypt"
+msgstr "Şifrelemeyi Aç"
+
+#: main/KoDocumentInfoDlg.cpp:417
+msgid ""
+"<qt>Your document could not be saved automatically.<p>To complete the "
+"decryption, please save the document.</qt>"
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:419 main/KoDocumentInfoDlg.cpp:427
+#: main/KoDocumentInfoDlg.cpp:460 main/KoDocumentInfoDlg.cpp:468
+msgid "Save Document"
+msgstr "Belgeyi Kaydet"
+
+#: main/KoDocumentInfoDlg.cpp:425
+msgid ""
+"<qt>The document has been changed since it was opened. To complete the "
+"decryption the document needs to be saved.<p>Do you want to save the "
+"document now?</qt>"
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:442
+#, kde-format
+msgid ""
+"<qt>The document is currently saved as %1. The document needs to be changed "
+"to <b>OASIS OpenDocument</b> to be encrypted.<p>Do you want to change the "
+"file to OASIS OpenDocument?</qt>"
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:444
+msgid "Change Filetype"
+msgstr "Dosya Tipini Değiştir"
+
+#: main/KoDocumentInfoDlg.cpp:445
+msgid "Change"
+msgstr "Değiştir"
+
+#: main/KoDocumentInfoDlg.cpp:458
+msgid ""
+"<qt>Your document could not be saved automatically.<p>To complete the "
+"encryption, please save the document.</qt>"
+msgstr ""
+
+#: main/KoDocumentInfoDlg.cpp:466
+msgid ""
+"<qt>The document has been changed since it was opened. To complete the "
+"encryption the document needs to be saved.<p>Do you want to save the "
+"document now?</qt>"
+msgstr ""
+
+#: main/KoTemplateCreateDia.cpp:117
+msgid "Create Template"
+msgstr "Şablon Oluştur"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:16
+#. i18n: ectx: property (text), widget (QLabel, fullNameLabel)
+#: main/KoTemplateCreateDia.cpp:127 rc.cpp:101
+msgid "Name:"
+msgstr "İsim:"
+
+#: main/KoTemplateCreateDia.cpp:138
+msgid "Group:"
+msgstr "Grup:"
+
+#: main/KoTemplateCreateDia.cpp:153
+msgid "&Add Group..."
+msgstr "&Grup Ekle..."
+
+#: main/KoTemplateCreateDia.cpp:162
+msgid "Picture"
+msgstr "Resim"
+
+#: main/KoTemplateCreateDia.cpp:169
+msgid "&Default"
+msgstr "Ö&ntanımlı"
+
+#: main/KoTemplateCreateDia.cpp:175
+msgid "Custom"
+msgstr "Özel"
+
+#: main/KoTemplateCreateDia.cpp:179
+msgid "&Select..."
+msgstr "&Seç..."
+
+#: main/KoTemplateCreateDia.cpp:184
+msgid "Preview:"
+msgstr "Önizleme:"
+
+#: main/KoTemplateCreateDia.cpp:194
+msgid "Use the new template as default"
+msgstr "Yeni şablonu öntanımlı olarak kullan"
+
+#: main/KoTemplateCreateDia.cpp:196
+#, kde-format
+msgid "Use the new template every time %1 starts"
+msgstr "%1 her başlatıldığında yeni şablonu kullan"
+
+#: main/KoTemplateCreateDia.cpp:306
+#, kde-format
+msgid "Do you really want to overwrite the existing '%1' template?"
+msgstr "Varolan '%1' şablonunun üstüne gerçekten yazmak istiyor musunuz?"
+
+#: main/KoTemplateCreateDia.cpp:420 main/KoTemplateCreateDia.cpp:426
+msgid "Add Group"
+msgstr "Grup Ekle"
+
+#: main/KoTemplateCreateDia.cpp:420
+msgid "Enter group name:"
+msgstr "Bir grup ismi girin:"
+
+#: main/KoTemplateCreateDia.cpp:426
+msgid "This name is already used."
+msgstr "Bu isim zaten kullanılıyor."
+
+#: main/KoTemplateCreateDia.cpp:450
+msgid "Do you really want to remove that group?"
+msgstr "Bu grubu gerçekten kaldırmak istiyor musunuz?"
+
+#: main/KoTemplateCreateDia.cpp:451
+msgid "Remove Group"
+msgstr "Grubu Kaldır"
+
+#: main/KoTemplateCreateDia.cpp:453
+msgid "Do you really want to remove that template?"
+msgstr "Bu şablonu gerçekten kaldırmak istiyor musunuz?"
+
+#: main/KoTemplateCreateDia.cpp:454
+msgid "Remove Template"
+msgstr "Şablonu Kaldır"
+
+#: main/KoTemplateCreateDia.cpp:458
+msgid "&Delete"
+msgstr "&Sil"
+
+#: main/KoTemplateCreateDia.cpp:505
+msgid "Could not load picture."
+msgstr "Resim yüklenemiyor."
+
+#: main/KoTemplateCreateDia.cpp:508
+msgid "No picture available."
+msgstr "Ulaşılabilir resim yok."
+
+#: main/KoRecentDocumentsPane.cpp:75
+msgid "Open This Document"
+msgstr "Bu Belgeyi Aç"
+
+#: main/KoRecentDocumentsPane.cpp:148
+#, kde-format
+msgctxt "File modification date and time. %1 is date time"
+msgid "<tr><td><b>Modified:</b></td><td>%1</td></tr>"
+msgstr "<tr><td><b>Değiştirilme zamanı:</b></td><td>%1</td></tr>"
+
+#: main/KoRecentDocumentsPane.cpp:151
+#, kde-format
+msgctxt "File access date and time. %1 is date time"
+msgid "<tr><td><b>Accessed:</b></td><td>%1</td></tr>"
+msgstr "<tr><td><b>Erişilme zamanı:</b></td><td>%1</td></tr>"
+
+#: main/KoDocumentInfo.cpp:51
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: kokross/KoScriptManagerAdd.cpp:52
+msgid ""
+"<qt>This wizard will guide you through the proccess of adding a new resource "
+"to your scripts.</qt>"
+msgstr ""
+
+#: kokross/KoScriptManagerAdd.cpp:57
+msgid "Add script file"
+msgstr "Betik dosyası ekle"
+
+#: kokross/KoScriptManagerAdd.cpp:62
+msgid "Add collection folder"
+msgstr "Koleksiyon dizini ekle"
+
+#: kokross/KoScriptManagerAdd.cpp:65
+msgid "Install script package file"
+msgstr "Betik paketi dosyası yükle"
+
+#: kokross/KoScriptManagerAdd.cpp:69
+msgid "Install online script package"
+msgstr "Çevrimiçi betik paketi yükle"
+
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:45
+#. i18n: ectx: property (toolTip), widget (QToolButton, add)
+#: kokross/KoScriptManagerAdd.cpp:272 kokross/KoScriptManagerAdd.cpp:275
+#: pigment/compositeops/KoCompositeOpAdd.h:35 rc.cpp:200
+msgid "Add"
+msgstr "Ekle"
+
+#: kokross/KoScriptManagerAdd.cpp:279
+msgid "Script File"
+msgstr "Betik Dosyası"
+
+#: kokross/KoScriptManagerAdd.cpp:282
+msgid "Script"
+msgstr "Betik"
+
+#: kokross/KoScriptManagerAdd.cpp:285
+msgid "Collection"
+msgstr "Koleksiyon"
+
+#: kokross/KoScriptingPart.cpp:81
+msgid "Execute Script File..."
+msgstr "Betik Dosyası Çalıştır..."
+
+#: kokross/KoScriptingPart.cpp:85 kokross/KoScriptingDocker.cpp:76
+msgid "Scripts"
+msgstr "Betikler"
+
+#: kokross/KoScriptingPart.cpp:89
+msgid "Script Manager..."
+msgstr "Betik Yöneticisi..."
+
+#: kokross/KoScriptingPart.cpp:158
+msgid "Execute Script File"
+msgstr "Betik Dosyası Çalıştır"
+
+#: kokross/KoScriptingDocker.cpp:111 kokross/KoScriptManager.cpp:297
+msgid "Script Manager"
+msgstr "Betik Yöneticisi"
+
+#: kokross/KoScriptManager.cpp:177
+msgid "Install Script Package"
+msgstr "Betik Paketi Yükle"
+
+#: kokross/KoScriptManager.cpp:215
+#, kde-format
+msgid "Could not read the package \"%1\"."
+msgstr "\"%1\" paketi okunamadı."
+
+#: kokross/KoScriptManager.cpp:222
+#, kde-format
+msgid "The package \"%1\" does not contain a valid install.rc file."
+msgstr "\"%1\" paketi geçerli bir install.rc dosyası içermiyor."
+
+#: kokross/KoScriptManager.cpp:229
+#, kde-format
+msgid "Failed to parse the install.rc file at package \"%1\"."
+msgstr "\"%1\" paketindeki install.rc dosyası ayrıştırılamadı."
+
+#: kokross/KoScriptManager.cpp:235
+#, kde-format
+msgid ""
+"Failed to determinate location where the package \"%1\" should be installed "
+"to."
+msgstr ""
+
+#: kokross/KoScriptManager.cpp:245
+#, kde-format
+msgid ""
+"A script package with the name \"%1\" already exists. Replace this package?"
+msgstr ""
+
+#: kokross/KoScriptManager.cpp:246
+msgid "Replace"
+msgstr "Değiştir"
+
+#: kokross/KoScriptManager.cpp:249
+#, kde-format
+msgid ""
+"Could not uninstall this script package. You may not have sufficient "
+"permissions to delete the folder \"%1\"."
+msgstr ""
+
+#: kokross/KoScriptManager.cpp:279
+#, kde-format
+msgid ""
+"Could not uninstall the script package \"%1\" since the script is not "
+"installed."
+msgstr ""
+
+#: kokross/KoScriptManager.cpp:285
+#, kde-format
+msgid ""
+"Could not uninstall the script package \"%1\". You may not have sufficient "
+"permissions to delete the folder \"%1\"."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:156 store/KoEncryptedStore.cpp:165
+msgid ""
+"The manifest file seems to be corrupted. The document could not be opened."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:223
+msgid ""
+"This document contains an unknown checksum. When you give a password it "
+"might not be verified."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:249 store/KoEncryptedStore.cpp:266
+msgid ""
+"This document contains an unknown encryption method. Some parts may be "
+"unreadable."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:281
+msgid ""
+"This document contains incomplete encryption data. Some parts may be "
+"unreadable."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:295
+msgid ""
+"QCA has currently no support for SHA1 or PBKDF2 using SHA1. The document can "
+"not be opened."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:326
+msgid ""
+"The manifest file seems to be corrupted. It cannot be modified and the "
+"document will remain unreadable. Please try and save the document again to "
+"prevent losing your work."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:424
+msgid ""
+"The manifest file cannot be written. The document will remain unreadable. "
+"Please try and save the document again to prevent losing your work."
+msgstr ""
+
+#: store/KoEncryptedStore.cpp:530
+msgid "Please enter the password to open this file."
+msgstr "Lütfen bu belgeyi açmak için parolayı girin."
+
+#: store/KoEncryptedStore.cpp:697
+msgid "Please enter the password to encrypt the document with."
+msgstr "Lütfen belgeyi şifrelemek istediğiniz parolayı girin."
+
+#: store/KoEncryptedStore.cpp:711
+msgid "Do you want to save the password?"
+msgstr "Parolayı gerçekten kaydetmek istiyor musunuz?"
+
+#: store/KoStore.cpp:182
+msgid "The directory mode is not supported for remote locations."
+msgstr "Uzak konumlar için dizin kipi desteklenmiyor."
+
+#: store/KoStore.cpp:183
+msgid "KOffice Storage"
+msgstr "KOffice Depolaması"
+
+#: kocolorwidgets/KoUniColorDialog.cpp:39
+msgid "Color Selector"
+msgstr "Renk Seçici"
+
+#: kocolorwidgets/KoEditColorSetDialog.cpp:159
+msgid "Add Color To Palette"
+msgstr "Rengi Palete Ekle"
+
+#: kocolorwidgets/KoEditColorSetDialog.cpp:159
+msgid "Color name:"
+msgstr "Renk adı:"
+
+#: kocolorwidgets/KoEditColorSetDialog.cpp:197
+#, kde-format
+msgid "Cannot write to palette file %1. Maybe it is read-only. "
+msgstr "%1 palet dosyasına yazılamıyor. Salt-okunur olabilir. "
+
+#: kocolorwidgets/KoEditColorSetDialog.cpp:197
+msgid "Palette"
+msgstr "Palet"
+
+#: kocolorwidgets/KoEditColorSetDialog.cpp:211
+msgid "Add/Remove Colors"
+msgstr "Renk Ekle/Kaldır"
+
+#: kocolorwidgets/KoColorSetWidget.cpp:190
+msgid "Recent:"
+msgstr "Son kullanılan:"
+
+#: kocolorwidgets/KoColorSetWidget.cpp:197
+msgid "Hide colors with bad contrast"
+msgstr "Kötü karşıtlık gösteren renkeri gizle"
+
+#: kocolorwidgets/KoColorSetWidget.cpp:208
+msgid "Add / Remove Colors..."
+msgstr "Renk Ekle / Kaldır..."
+
+#: kocolorwidgets/KoColorPopupAction.cpp:85
+#: kocolorwidgets/KoUniColorChooser.cpp:415
+msgid "Opacity"
+msgstr "Matlık"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:113
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:85
+msgid "Hue"
+msgstr "Renk"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:122
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:86
+msgid "Saturation"
+msgstr "Doygunluk"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:131
+msgid "Value (brightness)"
+msgstr "Değer (parlaklık)"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:140
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:73
+#: pigment/colorspaces/KoRgbU16ColorSpace.cpp:31
+msgid "Red"
+msgstr "Kırmızı"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:148
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:74
+#: pigment/colorspaces/KoRgbU16ColorSpace.cpp:32
+msgid "Green"
+msgstr "Yeşil"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:156
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:75
+#: pigment/colorspaces/KoRgbU16ColorSpace.cpp:33
+msgid "Blue"
+msgstr "Yeşil"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:165
+msgid "Cyan"
+msgstr "Cyan"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:173
+msgid "Magenta"
+msgstr "Magenta"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:181
+msgid "Yellow"
+msgstr "Sarı"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:189
+msgid "Black"
+msgstr "Siyah"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:198
+#: pigment/colorspaces/KoLabColorSpace.cpp:35
+msgid "Lightness"
+msgstr "Açıklık"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:206
+msgid "Green to magenta*"
+msgstr "Yeşilden megentaya*"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:214
+msgid "Blue to yellow"
+msgstr "Maviden sarıya"
+
+#: kocolorwidgets/KoUniColorChooser.cpp:218
+msgid "Opacity:"
+msgstr "Matlık:"
+
+#: kocolorwidgets/KoResourceItemChooser.cpp:68
+msgid "Import"
+msgstr "Al"
+
+#: kocolorwidgets/KoResourceItemChooser.cpp:75 kotext/KoTextEditor.cpp:223
+#: kotext/KoTextEditor.cpp:418 kotext/KoTextEditor.cpp:857
+#: kotext/KoTextEditor.cpp:870
+msgid "Delete"
+msgstr "Sil"
+
+#: kocolorwidgets/KoResourceItemChooser.cpp:101
+msgid "Choose File to Add"
+msgstr "Eklenecek Dosyayı Seç"
+
+#: pigment/compositeops/KoCompositeOpErase.h:39
+msgid "Erase"
+msgstr "Sil"
+
+#: pigment/compositeops/KoCompositeOpMultiply.h:34
+msgid "Multiply"
+msgstr ""
+
+#: pigment/compositeops/KoCompositeOpScreen.h:35
+msgid "Screen"
+msgstr "Ekran"
+
+#: pigment/compositeops/KoCompositeOpOverlay.h:35
+msgid "Overlay"
+msgstr "Üstüne Bindir"
+
+#: pigment/compositeops/KoCompositeOpDodge.h:36
+msgid "Dodge"
+msgstr ""
+
+#: pigment/compositeops/KoCompositeOpDivide.h:35
+msgid "Divide"
+msgstr "Böl"
+
+#: pigment/compositeops/KoCompositeOpBurn.h:35
+msgid "Burn"
+msgstr ""
+
+#: pigment/compositeops/KoCompositeOpSubtract.h:36
+#: pigment/colorspaces/KoAlphaColorSpace.cpp:121
+msgid "Subtract"
+msgstr "Çıkart"
+
+#: pigment/compositeops/KoCompositeOpAlphaDarken.h:40
+msgid "Alpha darken"
+msgstr "Alpha karart"
+
+#: pigment/compositeops/KoCompositeOpOver.h:35
+msgid "Normal"
+msgstr "Normal"
+
+#: pigment/tests/CCSGraph.cpp:39
+msgid "CCSGraph"
+msgstr "CCSGraph"
+
+#: pigment/tests/CCSGraph.cpp:41
+msgid "Output the graph of color conversion of pigment's Color Conversion"
+msgstr ""
+
+#: pigment/tests/CCSGraph.cpp:43
+msgid "(c) 2007 Cyrille Berger"
+msgstr "(c) 2007 Cyrille Berger"
+
+#: pigment/tests/CCSGraph.cpp:50
+msgid "return the list of available graphs"
+msgstr "kullanılabilir grafiklerin listesini döndür"
+
+#: pigment/tests/CCSGraph.cpp:51
+msgid ""
+"specify the type of graph (see --graphs to get the full list, the default is "
+"full)"
+msgstr ""
+
+#: pigment/tests/CCSGraph.cpp:52
+msgid "specify the key of the source color space"
+msgstr ""
+
+#: pigment/tests/CCSGraph.cpp:53
+msgid "specify the key of the destination color space"
+msgstr ""
+
+#: pigment/tests/CCSGraph.cpp:54
+msgid "specify the output (can be ps or dot, the default is ps)"
+msgstr "çıktıyı belirt (ps ya da dot, öntanımlı olan ps)"
+
+#: pigment/tests/CCSGraph.cpp:55
+msgid "name of the output file"
+msgstr "çıktı dosyasının adı"
+
+#: pigment/colorspaces/KoAlphaColorSpace.h:125
+#: pigment/colorspaces/KoAlphaColorSpace.h:130
+#: pigment/colorspaces/KoAlphaColorSpace.h:135
+#: pigment/colorspaces/KoAlphaColorSpace.h:140
+#: pigment/colorspaces/KoAlphaColorSpace.h:145
+#: pigment/colorspaces/KoAlphaColorSpace.h:149
+#: pigment/colorspaces/KoAlphaColorSpace.h:153
+msgid "Undefined operation in the alpha color space"
+msgstr ""
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:71
+#: pigment/colorspaces/KoRgbU8ColorSpace.h:62
+msgid "RGB (8-bit integer/channel)"
+msgstr "RGB (8-bit tam sayı/kanal)"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:76
+#: pigment/colorspaces/KoLabColorSpace.cpp:38
+#: pigment/colorspaces/KoAlphaColorSpace.cpp:191
+#: pigment/colorspaces/KoRgbU16ColorSpace.cpp:34
+#: pigment/KoColorModelStandardIds.cpp:25
+msgid "Alpha"
+msgstr "Alpha"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:83
+msgid "Darken"
+msgstr "Karart"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:84
+msgid "Lighten"
+msgstr "Aydınlat"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:87
+msgid "Value"
+msgstr "Değer"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:88 pigment/KoCompositeOp.cpp:35
+msgid "Color"
+msgstr "Renk"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:89
+msgid "In"
+msgstr "İç"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:90
+msgid "Out"
+msgstr "Dış"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:91
+msgid "Diff"
+msgstr "Fark"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:92
+msgid "Bumpmap"
+msgstr "Bumpmap"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:93
+#: pigment/colorspaces/KoAlphaColorSpace.cpp:46
+msgid "Clear"
+msgstr "Temizle"
+
+#: pigment/colorspaces/KoRgbU8ColorSpace.cc:94
+msgid "Dissolve"
+msgstr "Çözünme"
+
+#: pigment/colorspaces/KoRgbU16ColorSpace.h:53
+#: pigment/colorspaces/KoRgbU16ColorSpace.cpp:29
+msgid "RGB (16-bit integer/channel)"
+msgstr "RGB (16-bit tam sayı/kanal)"
+
+#: pigment/colorspaces/KoLabColorSpace.cpp:33
+#: pigment/colorspaces/KoLabColorSpace.h:65
+msgid "L*a*b* (16-bit integer/channel)"
+msgstr "L*a*b* (16-bit tam sayı/kanal)"
+
+#: pigment/colorspaces/KoLabColorSpace.cpp:36
+#: pigment/KoBasicHistogramProducers.cpp:418
+msgid "a*"
+msgstr "a*"
+
+#: pigment/colorspaces/KoLabColorSpace.cpp:37
+#: pigment/KoBasicHistogramProducers.cpp:419
+msgid "b*"
+msgstr "b*"
+
+#: pigment/colorspaces/KoAlphaColorSpace.cpp:189
+msgid "Alpha mask"
+msgstr "Alpha maskesi"
+
+#: pigment/KoColorSpaceAbstract.h:45
+#: kopageapp/KoPADocumentStructureDocker.cpp:641
+msgid "Copy"
+msgstr "Kopyala"
+
+#: pigment/KoColorModelStandardIds.cpp:26
+msgid "Red Green Blue"
+msgstr "Kırmızı Yeşil Mavi"
+
+#: pigment/KoColorModelStandardIds.cpp:27
+msgid "XYZ"
+msgstr "XYZ"
+
+#: pigment/KoColorModelStandardIds.cpp:28
+msgid "L a* b*"
+msgstr "L a* b*"
+
+#: pigment/KoColorModelStandardIds.cpp:29
+msgid "Cyan Magenta Yellow Black"
+msgstr "Cyan Magenta Yellow Black"
+
+#: pigment/KoColorModelStandardIds.cpp:30
+msgid "Grayscale"
+msgstr "Gri tonlama"
+
+#: pigment/KoColorModelStandardIds.cpp:31
+msgid "Grayscale (without transparency)"
+msgstr "Gri tonlama (şeffaflık olmadan)"
+
+#: pigment/KoColorModelStandardIds.cpp:32
+msgid "YCbCr"
+msgstr "YCbCr"
+
+#: pigment/KoColorModelStandardIds.cpp:34
+msgid "8 Bits"
+msgstr "8 Bit"
+
+#: pigment/KoColorModelStandardIds.cpp:35
+msgid "16 Bits"
+msgstr "16 Bit"
+
+#: pigment/KoColorModelStandardIds.cpp:36
+msgid "16 Bits Float"
+msgstr "16 Bit Float"
+
+#: pigment/KoColorModelStandardIds.cpp:37
+msgid "32 Bits Float"
+msgstr "32 Bit Float"
+
+#: pigment/KoColorSpaceRegistry.cpp:117
+#: pigment/KoBasicHistogramProducers.cpp:414
+msgid "L*a*b* Histogram"
+msgstr "L*a*b* Sütun Grafiği"
+
+#: pigment/KoColorSpaceRegistry.cpp:125
+msgid "RGB8 Histogram"
+msgstr "RGB8 Sütun Grafiği"
+
+#: pigment/KoBasicHistogramProducers.cpp:348
+#: pigment/KoBasicHistogramProducers.h:162
+msgid "Generic RGB Histogram"
+msgstr "Genel RGB Sütun Grafiği"
+
+#: pigment/KoBasicHistogramProducers.cpp:352
+msgid "R"
+msgstr "R"
+
+#: pigment/KoBasicHistogramProducers.cpp:353
+msgid "G"
+msgstr "G"
+
+#: pigment/KoBasicHistogramProducers.cpp:354
+msgid "B"
+msgstr "B"
+
+#: pigment/KoBasicHistogramProducers.cpp:417
+msgid "L*"
+msgstr "L*"
+
+#: pigment/KoCompositeOp.cpp:26
+msgid "Mix"
+msgstr "Karışım"
+
+#: pigment/KoCompositeOp.cpp:29
+msgid "Light"
+msgstr "Açık"
+
+#: pigment/KoCompositeOp.cpp:32
+msgid "Arithmetic"
+msgstr "Aritmetik"
+
+#: pigment/KoCompositeOp.cpp:38
+msgid "Misc"
+msgstr "Diğer"
+
+#: pigment/KoBasicHistogramProducers.h:191
+msgid "Generic L*a*b* Histogram"
+msgstr "Genel  L*a*b* Sütun Grafiği"
+
+#: pigment/KoIccColorSpaceEngine.cpp:109
+msgid "ICC Engine"
+msgstr "ICC Motoru"
+
+#: kobase/KoUnit.cpp:52
+msgid "Millimeters (mm)"
+msgstr "Milimetre (mm)"
+
+#: kobase/KoUnit.cpp:54
+msgid "Centimeters (cm)"
+msgstr "Santimetre (cm)"
+
+#: kobase/KoUnit.cpp:56
+msgid "Decimeters (dm)"
+msgstr "Desimetre (dm)"
+
+#: kobase/KoUnit.cpp:58
+msgid "Inches (in)"
+msgstr "İnç (in)"
+
+#: kobase/KoUnit.cpp:60
+msgid "Pica (pi)"
+msgstr "Pica (pi)"
+
+#: kobase/KoUnit.cpp:62
+msgid "Cicero (cc)"
+msgstr "Cicero (cc)"
+
+#: kobase/KoUnit.cpp:64
+msgid "Points (pt)"
+msgstr "Nokta (pt)"
+
+#: kobase/KoUnit.cpp:66
+msgid "Pixels (px)"
+msgstr "Piksel (px)"
+
+#: kobase/KoUnit.cpp:68
+msgid "Error!"
+msgstr "Hata!"
+
+#: widgets/KoCsvImportDialog.cpp:94
+msgid "Import Data"
+msgstr "Veri Al"
+
+#: widgets/KoCsvImportDialog.cpp:97
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Recommended ( %1 )"
+msgstr "Önerilen ( %1 )"
+
+#: widgets/KoCsvImportDialog.cpp:98
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Locale ( %1 )"
+msgstr "Yerel ( %1 )"
+
+#: widgets/KoCsvImportDialog.cpp:101
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Other ( %1 )"
+msgstr "Diğer ( %1 )"
+
+#: widgets/KoCsvImportDialog.cpp:216 widgets/KoCsvImportDialog.cpp:546
+#: widgets/KoCsvImportDialog.cpp:568
+msgid "Generic"
+msgstr "Genel"
+
+#: widgets/KoCsvImportDialog.cpp:218 widgets/KoCsvImportDialog.cpp:570
+#: kotext/KoTextEditor.cpp:105 kotext/KoTextEditor.cpp:158
+#: kotext/KoTextEditor.cpp:318
+msgid "Text"
+msgstr "Metin"
+
+#: widgets/KoCsvImportDialog.cpp:220 widgets/KoCsvImportDialog.cpp:572
+msgid "Date"
+msgstr "Tarih"
+
+#: widgets/KoCsvImportDialog.cpp:222 widgets/KoCsvImportDialog.cpp:574
+msgid "Currency"
+msgstr "Para birimi"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:268
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: widgets/KoCsvImportDialog.cpp:224 widgets/KoCsvImportDialog.cpp:576
+#: widgets/KoCsvImportDialog.cpp:683 rc.cpp:266
+msgid "None"
+msgstr "Hiçbiri"
+
+#: widgets/KoCsvImportDialog.cpp:710
+msgid ""
+"Please check the ranges you specified. The start value must be lower than "
+"the end value."
+msgstr ""
+
+#: widgets/KoCsvImportDialog.cpp:756
+#, kde-format
+msgid "Cannot find encoding: %1"
+msgstr "Kodlama bulunamadı: %1"
+
+#: widgets/KoPageLayoutWidget.cpp:170
+msgid "Left Edge:"
+msgstr "Sol Kenarlık:"
+
+#: widgets/KoPageLayoutWidget.cpp:171
+msgid "Right Edge:"
+msgstr "Sağ Kenarlık:"
+
+#: widgets/KoPageLayoutWidget.cpp:174
+msgid "Binding Edge:"
+msgstr "Cilt Kenarlığı:"
+
+#: widgets/KoPageLayoutWidget.cpp:175
+msgid "Page Edge:"
+msgstr "Sayfa Kenarlığı:"
+
+#: widgets/KoPageLayoutWidget.cpp:271
+msgid "Facing Pages:"
+msgstr "Dönen Sayfalar:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:142
+#. i18n: ectx: property (text), widget (QRadioButton, facingPages)
+#: widgets/KoPageLayoutWidget.cpp:272 rc.cpp:326
+msgid "Facing pages"
+msgstr "Dönen sayfalar"
+
+#: widgets/KoPageLayoutWidget.cpp:275
+msgid "Page Layout:"
+msgstr "Sayfa Düzeni:"
+
+#: widgets/KoPageLayoutWidget.cpp:276
+msgid "Page spread"
+msgstr ""
+
+#: widgets/KoZoomAction.cpp:264
+msgid "Use same aspect as pixels"
+msgstr "Aynı görünümü piksel olarak kullan"
+
+#: widgets/KoZoomAction.cpp:272
+msgid "Zoom to Selection"
+msgstr "Seçime Büyüt"
+
+#: widgets/KoZoomAction.cpp:280
+msgid "Zoom to All"
+msgstr "Tümünü Büyüt"
+
+#: widgets/KoPageLayoutDialog.cpp:47
+msgid "Page Layout"
+msgstr "Sayfa Yerleşimi"
+
+#: widgets/KoPageLayoutDialog.cpp:51
+#: kopageapp/KoPADocumentStructureDocker.cpp:116
+msgid "Page"
+msgstr "Sayfa"
+
+#: widgets/KoPageLayoutDialog.cpp:68
+msgid "Apply to document"
+msgstr "Belgeye uygula"
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundToolFactory.cpp:28
+msgid "Background tool"
+msgstr "Arkaplan aracı"
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundToolFactory.cpp:30
+msgid "Background editing tool"
+msgstr "Arkaplan düzenleme aracı"
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundTool.cpp:105
+msgid "Background Tool"
+msgstr "Arkaplan Aracı"
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundTool.cpp:106
+msgid "Use the styles docker to manipulate the background."
+msgstr ""
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundTool.cpp:110
+#: kopageapp/dialogs/KoPAMasterPageDialog.cpp:45
+msgid "Master Page"
+msgstr "Kılavuz Sayfa"
+
+#: kopageapp/tools/backgroundTool/KoPABackgroundToolWidget.cpp:93
+msgid "Change background image"
+msgstr "Arkaplan resmini değiştir"
+
+#: kopageapp/dialogs/KoPAMasterPageDialog.cpp:41
+msgid "Select a master slide design:"
+msgstr "Bir kılavuz slayt tasarımı seç:"
+
+#: kopageapp/dialogs/KoPAMasterPageDialog.cpp:42
+msgid "Master Slide"
+msgstr "Kılavuz Slayt"
+
+#: kopageapp/dialogs/KoPAMasterPageDialog.cpp:44
+msgid "Select a master page design:"
+msgstr "Bir kılavuz sayfa tasarımı seç:"
+
+#: kopageapp/dialogs/KoPAConfigureDialog.cpp:32
+msgid "Configure"
+msgstr "Yapılandır"
+
+#: kopageapp/dialogs/KoPAConfigureDialog.cpp:42
+msgctxt "@title:tab Document settings page"
+msgid "Document"
+msgstr "Belge"
+
+#: kopageapp/commands/KoPADisplayMasterShapesCommand.cpp:31
+msgid "Show master shapes"
+msgstr "Kılavuz şekilleri göster"
+
+#: kopageapp/commands/KoPADisplayMasterShapesCommand.cpp:34
+msgid "Hide master shapes"
+msgstr "Kılavuz şekilleri gizle"
+
+#: kopageapp/commands/KoPAChangeMasterPageCommand.cpp:35
+msgid "Change master slide"
+msgstr "Kılavuz slaytı değiştir"
+
+#: kopageapp/commands/KoPAChangeMasterPageCommand.cpp:38
+msgid "Change master page"
+msgstr "Kılavuz sayfayı değiştir"
+
+#: kopageapp/commands/KoPAPageDeleteCommand.cpp:39
+#: kopageapp/commands/KoPAPageDeleteCommand.cpp:63
+msgid "Delete slide"
+msgid_plural "Delete slides"
+msgstr[0] "Slaytları sil"
+
+#: kopageapp/commands/KoPAPageDeleteCommand.cpp:42
+#: kopageapp/commands/KoPAPageDeleteCommand.cpp:66
+msgid "Delete page"
+msgid_plural "Delete pages"
+msgstr[0] "Sayfaları sil"
+
+#: kopageapp/commands/KoPAChangePageLayoutCommand.cpp:33
+msgid "Set Page Layout"
+msgstr "Sayfa Yerleşimini Düzenle"
+
+#: kopageapp/commands/KoPADisplayMasterBackgroundCommand.cpp:31
+msgid "Display master background"
+msgstr "Kılavuz arkaplanı göster"
+
+#: kopageapp/commands/KoPADisplayMasterBackgroundCommand.cpp:35
+msgid "Display slide background"
+msgstr "Slayt arkaplanını göster"
+
+#: kopageapp/commands/KoPADisplayMasterBackgroundCommand.cpp:38
+msgid "Display page background"
+msgstr "Sayfa arkaplanını göster"
+
+#: kopageapp/commands/KoPAPageInsertCommand.cpp:37
+msgid "Insert slide"
+msgstr "Slayt ekle"
+
+#: kopageapp/commands/KoPAPageInsertCommand.cpp:40
+msgid "Insert page"
+msgstr "Sayfa al"
+
+#: kopageapp/commands/KoPAPageMoveCommand.cpp:58
+msgid "Move slide"
+msgid_plural "Move slides"
+msgstr[0] "Slaytları taşı"
+
+#: kopageapp/commands/KoPAPageMoveCommand.cpp:61
+msgid "Move page"
+msgid_plural "Move pages"
+msgstr[0] "Sayfaları taşı"
+
+#: kopageapp/KoPADocumentModel.cpp:166 kopageapp/KoPAPageThumbnailModel.cpp:67
+#, kde-format
+msgid "Slide %1"
+msgstr "Slayt %1"
+
+#: kopageapp/KoPADocumentModel.cpp:168
+#, kde-format
+msgid "Page  %1"
+msgstr "Sayfa %1"
+
+#: kopageapp/KoPADocumentModel.cpp:172
+#: kopageapp/KoPADocumentStructureDocker.cpp:118
+msgid "Layer"
+msgstr "Katman"
+
+#: kopageapp/KoPADocumentModel.cpp:175
+msgid "Group"
+msgstr "Grup"
+
+#: kopageapp/KoPADocumentModel.cpp:178
+msgid "Shape"
+msgstr "Şekil"
+
+#: kopageapp/KoPADocumentModel.cpp:291
+msgid "Visible"
+msgstr "Görünür"
+
+#: kopageapp/KoPADocumentModel.cpp:292
+msgid "Locked"
+msgstr "Kilitli"
+
+#: kopageapp/KoPADocumentModel.cpp:506 kopageapp/KoPADocumentModel.cpp:527
+msgid "Reparent shapes"
+msgstr "Şekilleri tekrar bağlantılandır"
+
+#: kopageapp/KoPAPageThumbnailModel.cpp:69
+#, kde-format
+msgid "Page %1"
+msgstr "Sayfa %1"
+
+#: kopageapp/KoPAView.cpp:284
+msgid "D&elete"
+msgstr "&Sil"
+
+#: kopageapp/KoPAView.cpp:295
+msgid "Snap to Grid"
+msgstr "Kılavuza Uydur"
+
+#: kopageapp/KoPAView.cpp:300
+msgid "Show Guides"
+msgstr "Kılavuzları Göster"
+
+#: kopageapp/KoPAView.cpp:302
+msgid "Hide Guides"
+msgstr "Kılavuzları Gizle"
+
+#: kopageapp/KoPAView.cpp:303
+msgid "Shows or hides guides"
+msgstr "Kılavuzları gösterir veya gizler"
+
+#: kopageapp/KoPAView.cpp:308
+msgid "Show Master Pages"
+msgstr "Ana Sayfaları Göster"
+
+#: kopageapp/KoPAView.cpp:312
+msgid "Show Rulers"
+msgstr "Cetveli Göster"
+
+#: kopageapp/KoPAView.cpp:314
+msgid "Show/hide the view's rulers"
+msgstr "Görünümün kılavuzlarını göster/gizle"
+
+#: kopageapp/KoPAView.cpp:318
+msgid "Insert Page"
+msgstr "Sayfa Al"
+
+#: kopageapp/KoPAView.cpp:320 kopageapp/KoPAView.cpp:321
+msgid "Insert a new page after the current one"
+msgstr "Şimdiki sayfadan sonra bir sayfa ekle"
+
+#: kopageapp/KoPAView.cpp:324
+msgid "Copy Page"
+msgstr "Sayfayı Kopyala"
+
+#: kopageapp/KoPAView.cpp:326 kopageapp/KoPAView.cpp:327
+msgid "Copy the current page"
+msgstr "Geçerli sayfayı kopyala"
+
+#: kopageapp/KoPAView.cpp:330
+msgid "Delete Page"
+msgstr "Sayfayı Sil"
+
+#: kopageapp/KoPAView.cpp:333 kopageapp/KoPAView.cpp:334
+msgid "Delete the current page"
+msgstr "Geçerli sayfayı sil"
+
+#: kopageapp/KoPAView.cpp:337
+msgid "Master Page..."
+msgstr "Kılavuz Sayfa..."
+
+#: kopageapp/KoPAView.cpp:341
+msgid "Page Layout..."
+msgstr "Sayfa Düzeni..."
+
+#: kopageapp/KoPAView.cpp:350
+msgid "Variable"
+msgstr "Değişken"
+
+#: kopageapp/KoPAView.cpp:355
+msgid "Import Document..."
+msgstr "İçeriye Belge Aktar..."
+
+#: kopageapp/KoPAView.cpp:359
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: kopageapp/KoPAView.cpp:425
+msgid "Import Slideshow"
+msgstr "İçeriye Slayt Gösterisi Aktar"
+
+#: kopageapp/KoPAView.cpp:457 kopageapp/KoPAView.cpp:461
+#, kde-format
+msgid ""
+"Could not import\n"
+"%1"
+msgstr ""
+"İçeriye aktarılmadı\n"
+"%1"
+
+#: kopageapp/KoPAView.cpp:565
+msgid "Change page layout"
+msgstr "Sayfa düzenini değiştir"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:104
+msgid "Add a new slide or layer"
+msgstr "Yeni bir slayt ya da katman ekle"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:106
+msgid "Add a new page or layer"
+msgstr "Yeni bir sayfa ya da katman ekle"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:114
+msgid "Slide"
+msgstr "Slayt"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:125
+#: kopageapp/KoPADocumentStructureDocker.cpp:638
+msgid "Delete selected objects"
+msgstr "Seçili nesneleri sil"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:131
+msgid "Raise selected objects"
+msgstr "Seçili nesneleri üste al"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:137
+msgid "Lower selected objects"
+msgstr "Seçili nesneleri alta gönder"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:146
+msgid "Minimal View"
+msgstr "En Küçük Görünüm"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:148
+msgid "Detailed View"
+msgstr "Ayrıntılı Görünüm"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:150
+msgid "Thumbnail View"
+msgstr "Küçük Resim Görünümü"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:160
+msgid "View mode"
+msgstr "Görünüm kipi"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:327
+msgid "New Layer"
+msgstr "Yeni Katman"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:327
+msgid "Enter the name of the new layer:"
+msgstr "Yeni katmanın adını girin:"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:328
+msgid "New layer"
+msgstr "Yeni Katman"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:342
+msgid "Create Layer"
+msgstr "Katman Oluştur"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:371
+msgid "Delete Layer"
+msgstr "Katmanı Sil"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:375
+msgid "Could not delete all layers. At least one layer is required."
+msgstr "Tüm katmanlar silinemedi. En az bir katman gerekli."
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:375
+msgid "Error deleting layers"
+msgstr "Katman silme hatası"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:637
+msgid "Add a new slide"
+msgstr "Yeni bir slayt ekle"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:640
+msgid "Cut"
+msgstr "Kes"
+
+#: kopageapp/KoPADocumentStructureDocker.cpp:642
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: kopageapp/KoPAPastePage.cpp:46
+#, fuzzy
+#| msgid "Paste Slide"
+#| msgid_plural "Paste Slides"
+msgid "Paste Slides"
+msgstr "Slaytları Yapıştır"
+
+#: kopageapp/KoPAPastePage.cpp:49
+#, fuzzy
+#| msgid "Paste Page"
+#| msgid_plural "Paste Pages"
+msgid "Paste Pages"
+msgstr "Sayfaları Yapıştır"
+
+#: kopageapp/KoPAPastePage.cpp:137
+msgid "Paste Slide"
+msgid_plural "Paste Slides"
+msgstr[0] "Slaytları Yapıştır"
+
+#: kopageapp/KoPAPastePage.cpp:140
+msgid "Paste Page"
+msgid_plural "Paste Pages"
+msgstr[0] "Sayfaları Yapıştır"
+
+#: odf/KoOdfReadStore.cpp:109
+msgid "No store backend"
+msgstr "Kaydetme arka ucu yok"
+
+#: odf/KoOdfReadStore.cpp:145
+msgid "QXml"
+msgstr "QXml"
+
+#: odf/KoOdfReadStore.cpp:144
+#, kde-format
+msgid ""
+"Parsing error in the main document at line %1, column %2\n"
+"Error message: %3"
+msgstr ""
+"Ana belge içerisinde %1. satır, %2. sütunda ayrıştırma hatası\n"
+"Hata İletisi: %3"
+
+#: resources/KoStopGradient.cpp:422
+msgid "SVG Gradient"
+msgstr ""
+
+#: kotext/styles/KoStyleManager.cpp:76 kotext/styles/KoStyleManager.cpp:78
+msgid "Default"
+msgstr "Öntanımlı"
+
+#: kotext/KoText.cpp:29
+msgctxt "Underline Style"
+msgid "None"
+msgstr "Hiçbiri"
+
+#: kotext/KoText.cpp:30
+msgctxt "Underline Style"
+msgid "Single"
+msgstr "Tek"
+
+#: kotext/KoText.cpp:31
+msgctxt "Underline Style"
+msgid "Double"
+msgstr "Çift"
+
+#: kotext/KoTextEditor.cpp:440 kotext/KoTextEditor.cpp:445
+msgid "Bold"
+msgstr "Kalın"
+
+#: kotext/KoTextEditor.cpp:452 kotext/KoTextEditor.cpp:457
+msgid "Italic"
+msgstr "Yatık"
+
+#: kotext/KoTextEditor.cpp:464 kotext/KoTextEditor.cpp:475
+msgid "Underline"
+msgstr "Altı çizili"
+
+#: kotext/KoTextEditor.cpp:482 kotext/KoTextEditor.cpp:492
+msgid "Strike Out"
+msgstr "Üzeri Çizili"
+
+#: kotext/KoTextEditor.cpp:510 kotext/KoTextEditor.cpp:511
+msgid "Set Horizontal Alignment"
+msgstr "Yatay Konumu Ayarla"
+
+#: kotext/KoTextEditor.cpp:523 kotext/KoTextEditor.cpp:527
+msgid "Set Vertical Alignment"
+msgstr "Dikey Konumu Ayarla"
+
+#: kotext/KoTextEditor.cpp:545 kotext/KoTextEditor.cpp:546
+msgid "Decrease Indent"
+msgstr "Girintiyi Azalt"
+
+#: kotext/KoTextEditor.cpp:563 kotext/KoTextEditor.cpp:564
+msgid "Increase Indent"
+msgstr "Girintiyi Arttır"
+
+#: kotext/KoTextEditor.cpp:594 kotext/KoTextEditor.cpp:596
+msgid "Decrease font size"
+msgstr "Yazı tipi boyutunu küçült"
+
+#: kotext/KoTextEditor.cpp:602 kotext/KoTextEditor.cpp:604
+msgid "Increase font size"
+msgstr "Yazı tipi boyutunu büyüt"
+
+#: kotext/KoTextEditor.cpp:610 kotext/KoTextEditor.cpp:614
+msgid "Set Font"
+msgstr "Yazı Tipini Ayarla"
+
+#: kotext/KoTextEditor.cpp:621 kotext/KoTextEditor.cpp:625
+msgid "Set Font Size"
+msgstr "Yazı Tipi Boyutunu Ayarla"
+
+#: kotext/KoTextEditor.cpp:632 kotext/KoTextEditor.cpp:636
+msgid "Set Background Color"
+msgstr "Arkaplan Rengini Ayarla"
+
+#: kotext/KoTextEditor.cpp:643 kotext/KoTextEditor.cpp:647
+msgid "Set Text Color"
+msgstr "Metin Rengini Ayarla"
+
+#: kotext/KoTextEditor.cpp:655 kotext/KoTextEditor.cpp:659
+msgid "Set Character Style"
+msgstr "Karakter Biçimlendirmesini Ayarla"
+
+#: kotext/KoTextEditor.cpp:666
+msgid "Set Paragraph Style"
+msgstr "Paragraf Biçimlendirmesini Ayarla"
+
+#: kotext/KoTextEditor.cpp:686 kotext/KoTextEditor.cpp:692
+msgid "Set default format"
+msgstr "Öntanımlı biçimi ayarla"
+
+#: kotext/KoTextEditor.cpp:700
+msgid "Insert Bookmark"
+msgstr "Yer İmi Ekle"
+
+#: kotext/KoTextEditor.cpp:746
+msgid "Insert Index"
+msgstr "İndeks Ekle"
+
+#: kotext/KoTextEditor.cpp:758
+msgid "Insert Variable"
+msgstr "Değişken Ekle"
+
+#: kotext/KoTextEditor.cpp:768
+msgid "Insert Break"
+msgstr ""
+
+#: kotext/KoTextEditor.cpp:919
+msgid "Insert Table"
+msgstr "Tablo Ekle"
+
+#: kotext/KoTextEditor.cpp:948 kotext/KoTextEditor.cpp:954
+msgid "Key Press"
+msgstr ""
+
+#: kotext/KoTextEditor.cpp:998
+msgid "Line Break"
+msgstr "Satır Sonu"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:147
+#. i18n: ectx: attribute (title), widget (QWidget, m_formatTab)
+#: kotext/KoTextEditor_p.h:82 kotext/KoTextEditor_p.h:119 rc.cpp:236
+msgid "Format"
+msgstr "Biçim"
+
+#: kotext/KoReplaceStrategy.cpp:54
+msgid ""
+"Found no match\n"
+"\n"
+"No text was replaced"
+msgstr ""
+"Hiç eşleşme bulunmadı\n"
+"\n"
+"Hiç metin değiştirilmedi"
+
+#: kotext/KoReplaceStrategy.cpp:57
+#, kde-format
+msgid "1 replacement made"
+msgid_plural "%1 replacements made"
+msgstr[0] "%1 değiştirme yapıldı"
+
+#: kotext/KoReplaceStrategy.cpp:70
+#, kde-format
+msgid "Replace %1 with %2?"
+msgstr "%1 ögesi %2 ile değiştirilsin mi?"
+
+#: kotext/KoFindStrategy.cpp:61
+#, kde-format
+msgid "Found 1 match"
+msgid_plural "Found %1 matches"
+msgstr[0] "%1 eşleşme bulundu"
+
+#: kotext/KoFindStrategy.cpp:61
+msgid "Found no match"
+msgstr "Elşeşme bulunamadı"
+
+#: kotext/KoPageFormat.cpp:59
+msgctxt "Page size"
+msgid "ISO A3"
+msgstr "ISO A3"
+
+#: kotext/KoPageFormat.cpp:60
+msgctxt "Page size"
+msgid "ISO A4"
+msgstr "ISO A4"
+
+#: kotext/KoPageFormat.cpp:61
+msgctxt "Page size"
+msgid "ISO A5"
+msgstr "ISO A5"
+
+#: kotext/KoPageFormat.cpp:62
+msgctxt "Page size"
+msgid "US Letter"
+msgstr "US Mektup"
+
+#: kotext/KoPageFormat.cpp:63
+msgctxt "Page size"
+msgid "US Legal"
+msgstr "US Resmi"
+
+#: kotext/KoPageFormat.cpp:64
+msgctxt "Page size"
+msgid "Screen"
+msgstr "Ekran"
+
+#: kotext/KoPageFormat.cpp:65
+msgctxt "Page size"
+msgid "Custom"
+msgstr "Özel"
+
+#: kotext/KoPageFormat.cpp:66
+msgctxt "Page size"
+msgid "ISO B5"
+msgstr "ISO B5"
+
+#: kotext/KoPageFormat.cpp:67
+msgctxt "Page size"
+msgid "US Executive"
+msgstr "US Executive"
+
+#: kotext/KoPageFormat.cpp:68
+msgctxt "Page size"
+msgid "ISO A0"
+msgstr "ISO A0"
+
+#: kotext/KoPageFormat.cpp:69
+msgctxt "Page size"
+msgid "ISO A1"
+msgstr "ISO A1"
+
+#: kotext/KoPageFormat.cpp:70
+msgctxt "Page size"
+msgid "ISO A2"
+msgstr "ISO A2"
+
+#: kotext/KoPageFormat.cpp:71
+msgctxt "Page size"
+msgid "ISO A6"
+msgstr "ISO A6"
+
+#: kotext/KoPageFormat.cpp:72
+msgctxt "Page size"
+msgid "ISO A7"
+msgstr "ISO A7"
+
+#: kotext/KoPageFormat.cpp:73
+msgctxt "Page size"
+msgid "ISO A8"
+msgstr "ISO A8"
+
+#: kotext/KoPageFormat.cpp:74
+msgctxt "Page size"
+msgid "ISO A9"
+msgstr "ISO A9"
+
+#: kotext/KoPageFormat.cpp:75
+msgctxt "Page size"
+msgid "ISO B0"
+msgstr "ISO B0"
+
+#: kotext/KoPageFormat.cpp:76
+msgctxt "Page size"
+msgid "ISO B1"
+msgstr "ISO B1"
+
+#: kotext/KoPageFormat.cpp:77
+msgctxt "Page size"
+msgid "ISO B10"
+msgstr "ISO B10"
+
+#: kotext/KoPageFormat.cpp:78
+msgctxt "Page size"
+msgid "ISO B2"
+msgstr "ISO B2"
+
+#: kotext/KoPageFormat.cpp:79
+msgctxt "Page size"
+msgid "ISO B3"
+msgstr "ISO B3"
+
+#: kotext/KoPageFormat.cpp:80
+msgctxt "Page size"
+msgid "ISO B4"
+msgstr "ISO B4"
+
+#: kotext/KoPageFormat.cpp:81
+msgctxt "Page size"
+msgid "ISO B6"
+msgstr "ISO B6"
+
+#: kotext/KoPageFormat.cpp:82
+msgctxt "Page size"
+msgid "ISO C5"
+msgstr "ISO C5"
+
+#: kotext/KoPageFormat.cpp:83
+msgctxt "Page size"
+msgid "US Common 10"
+msgstr "US Common 10"
+
+#: kotext/KoPageFormat.cpp:84
+msgctxt "Page size"
+msgid "ISO DL"
+msgstr "ISO DL"
+
+#: kotext/KoPageFormat.cpp:85
+msgctxt "Page size"
+msgid "US Folio"
+msgstr "US Folio"
+
+#: kotext/KoPageFormat.cpp:86
+msgctxt "Page size"
+msgid "US Ledger"
+msgstr "US Ana Defter"
+
+#: kotext/KoPageFormat.cpp:87
+msgctxt "Page size"
+msgid "US Tabloid"
+msgstr "US Tabloid"
+
+#: kotext/InsertTextReferenceAction.cpp:35
+msgid "Text Reference"
+msgstr "Metin Referans"
+
+#: kotext/InsertTextReferenceAction.cpp:55
+msgid "Select the index you want to reference"
+msgstr ""
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file: flake/tools/KoZoomToolWidget.ui:20
+#. i18n: ectx: property (text), widget (QRadioButton, zoomInButton)
+#: rc.cpp:5
+msgid "Zoom In"
+msgstr "Büyüt"
+
+#. i18n: file: flake/tools/KoZoomToolWidget.ui:30
+#. i18n: ectx: property (text), widget (QRadioButton, zoomOutButton)
+#: rc.cpp:8
+msgid "Zoom Out"
+msgstr "Küçült"
+
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:38
+#. i18n: ectx: property (text), widget (QToolButton, corner)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:45
+#. i18n: ectx: property (text), widget (QToolButton, smooth)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:52
+#. i18n: ectx: property (text), widget (QToolButton, symmetric)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:72
+#. i18n: ectx: property (text), widget (QToolButton, lineSegment)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:79
+#. i18n: ectx: property (text), widget (QToolButton, curveSegment)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:86
+#. i18n: ectx: property (text), widget (QToolButton, linePoint)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:93
+#. i18n: ectx: property (text), widget (QToolButton, curvePoint)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:100
+#. i18n: ectx: property (text), widget (QToolButton, addPoint)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:107
+#. i18n: ectx: property (text), widget (QToolButton, removePoint)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:114
+#. i18n: ectx: property (text), widget (QToolButton, breakPoint)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:121
+#. i18n: ectx: property (text), widget (QToolButton, breakSegment)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:128
+#. i18n: ectx: property (text), widget (QToolButton, joinSegment)
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:135
+#. i18n: ectx: property (text), widget (QToolButton, mergePoints)
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:48
+#. i18n: ectx: property (text), widget (QToolButton, add)
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:58
+#. i18n: ectx: property (text), widget (QToolButton, remove)
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:68
+#. i18n: ectx: property (text), widget (QToolButton, open)
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:78
+#. i18n: ectx: property (text), widget (QToolButton, save)
+#: rc.cpp:11 rc.cpp:14 rc.cpp:17 rc.cpp:20 rc.cpp:23 rc.cpp:26 rc.cpp:29
+#: rc.cpp:32 rc.cpp:35 rc.cpp:38 rc.cpp:41 rc.cpp:44 rc.cpp:47 rc.cpp:203
+#: rc.cpp:209 rc.cpp:215 rc.cpp:221
+msgid "..."
+msgstr "..."
+
+#. i18n: file: flake/tools/PathToolOptionWidgetBase.ui:169
+#. i18n: ectx: property (text), widget (QPushButton, convertToPath)
+#: rc.cpp:50
+msgid "Convert To Path"
+msgstr "Yola Dönüştür"
+
+#. i18n: file: flake/KoConnectionShapeConfigWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, KoConnectionShapeConfigWidget)
+#: rc.cpp:53
+msgid "Ellipse Shape"
+msgstr "Elips Şekli"
+
+#. i18n: file: flake/KoConnectionShapeConfigWidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:109
+#. i18n: ectx: property (text), widget (QLabel, lblTypeDesc)
+#: rc.cpp:56 rc.cpp:161
+msgid "Type:"
+msgstr "Tip:"
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:36
+#. i18n: ectx: property (toolTip), widget (QCheckBox, nodeSnapGuide)
+#: rc.cpp:59
+msgid "Nodes"
+msgstr "Düğümler"
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:56
+#. i18n: ectx: property (toolTip), widget (QCheckBox, extensionSnapGuide)
+#: rc.cpp:62
+msgid "Extension of lines"
+msgstr ""
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:76
+#. i18n: ectx: property (toolTip), widget (QCheckBox, boundingBoxSnapGuide)
+#: rc.cpp:65
+msgid "Bounding box of shape"
+msgstr ""
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:96
+#. i18n: ectx: property (toolTip), widget (QSpinBox, snapDistance)
+#: rc.cpp:68
+msgid "Proximity distance where snapping happens"
+msgstr ""
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:99
+#. i18n: ectx: property (suffix), widget (QSpinBox, snapDistance)
+#: rc.cpp:71
+msgid " px"
+msgstr " px"
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:112
+#. i18n: ectx: property (toolTip), widget (QCheckBox, orthogonalSnapGuide)
+#: rc.cpp:74
+msgid "Orthogonal"
+msgstr "Dikey"
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:132
+#. i18n: ectx: property (toolTip), widget (QCheckBox, intersectionSnapGuide)
+#: rc.cpp:77
+msgid "Intersection of lines"
+msgstr ""
+
+#. i18n: file: flake/SnapGuideConfigWidget.ui:152
+#. i18n: ectx: property (toolTip), widget (QCheckBox, lineGuideSnapGuide)
+#: rc.cpp:80
+msgid "Guide lines"
+msgstr "Kılavuz çizgileri"
+
+#. i18n: file: main/KoDetailsPaneBase.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, KoDetailsPaneBase)
+#: rc.cpp:83
+msgid "DetailsPaneBase"
+msgstr "DetailsPaneBase"
+
+#. i18n: file: main/KoDetailsPaneBase.ui:102
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_alwaysUseCheckBox)
+#: rc.cpp:86
+msgid "Always use this template at application start up"
+msgstr "Uygulama başlatılırken her zaman bu şablonu kullan"
+
+#. i18n: file: main/KoDetailsPaneBase.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox, m_alwaysUseCheckBox)
+#: rc.cpp:89
+msgid "Always use this template"
+msgstr "Her zaman bu şablonu kullan"
+
+#. i18n: file: main/koffice_shell.rc:4
+#. i18n: ectx: Menu (file)
+#: rc.cpp:92
+msgid "&File"
+msgstr "&Dosya"
+
+#. i18n: file: main/koffice_shell.rc:31
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:95
+msgid "&Settings"
+msgstr "&Ayarlar"
+
+#. i18n: file: main/koffice_shell.rc:44
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:98
+msgid "File"
+msgstr "Dosya"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:40
+#. i18n: ectx: property (text), widget (QLabel, lblInitialsDesc)
+#: rc.cpp:104
+msgid "Initials:"
+msgstr "Baş harfler:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:60
+#. i18n: ectx: property (text), widget (QLabel, lblTitleDesc)
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, lblTitleDesc)
+#: rc.cpp:107 rc.cpp:149
+msgid "Title:"
+msgstr "Başlık:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:73
+#. i18n: ectx: property (text), widget (QLabel, lblPositionDesc)
+#: rc.cpp:110
+msgid "Position:"
+msgstr "Konum:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:86
+#. i18n: ectx: property (text), widget (QLabel, lblCompanyDesc)
+#: rc.cpp:113
+msgid "Company:"
+msgstr "Şirket:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:99
+#. i18n: ectx: property (text), widget (QLabel, lblEmailDesc)
+#: rc.cpp:116
+msgid "Email:"
+msgstr "E-posta:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:112
+#. i18n: ectx: property (text), widget (QLabel, lblPhoneHome)
+#: rc.cpp:119
+msgid "Telephone (home):"
+msgstr "Telefon (ev):"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:125
+#. i18n: ectx: property (text), widget (QLabel, lblPhoneWork)
+#: rc.cpp:122
+msgid "Telephone (work):"
+msgstr "Telefon (iş):"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:138
+#. i18n: ectx: property (text), widget (QLabel, lblFaxDesc)
+#: rc.cpp:125
+msgid "Fax:"
+msgstr "Faks:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:151
+#. i18n: ectx: property (text), widget (QLabel, lblStreetDesc)
+#: rc.cpp:128
+msgid "Street:"
+msgstr "Sokak:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:164
+#. i18n: ectx: property (text), widget (QLabel, lblPostalDesc)
+#: rc.cpp:131
+msgid "Postal code:"
+msgstr "Posta kodu:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:177
+#. i18n: ectx: property (text), widget (QLabel, lblCityDesc)
+#: rc.cpp:134
+msgid "City:"
+msgstr "Şehir:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:190
+#. i18n: ectx: property (text), widget (QLabel, lblCountryDesc)
+#: rc.cpp:137
+msgid "Country:"
+msgstr "Ülke:"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:222
+#. i18n: ectx: property (text), widget (QPushButton, pbLoadKABC)
+#: rc.cpp:140
+msgid "&Load From Address Book"
+msgstr "Adres Defterinden &Yükle"
+
+#. i18n: file: main/koDocumentInfoAuthorWidget.ui:235
+#. i18n: ectx: property (text), widget (QPushButton, pbDelete)
+#: rc.cpp:143
+msgid "&Delete Personal Data"
+msgstr "&Kişisel Veri Sil"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:16
+#. i18n: ectx: property (text), widget (QLabel, filePathInfoLabel)
+#: rc.cpp:146
+msgid "Path:"
+msgstr "Yol:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:50
+#. i18n: ectx: property (text), widget (QLabel, lblSubjectDesc)
+#: rc.cpp:152
+msgid "Subject:"
+msgstr "Konu:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:63
+#. i18n: ectx: property (text), widget (QLabel, lblKeywordsDesc)
+#: rc.cpp:155
+msgid "Keywords:"
+msgstr "Anahtar sözcükler:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:80
+#. i18n: ectx: property (text), widget (QLabel, lbCommentsDesc)
+#: rc.cpp:158
+msgid "Comments:"
+msgstr "Açıklama:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:129
+#. i18n: ectx: property (text), widget (QLabel, lblCreatedDesc)
+#: rc.cpp:164
+msgid "Created:"
+msgstr "Oluşturulma zamanı:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:149
+#. i18n: ectx: property (text), widget (QLabel, lblModifiedDesc)
+#: rc.cpp:167
+msgid "Modified:"
+msgstr "Değiştirilme zamanı:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:169
+#. i18n: ectx: property (text), widget (QLabel, lblLastPrintedDesc)
+#: rc.cpp:170
+msgid "Last printed:"
+msgstr "Son yazdırılma zamanı:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:189
+#. i18n: ectx: property (text), widget (QLabel, lblEditingDesc)
+#: rc.cpp:173
+msgid "Total editing time:"
+msgstr "Toplam düzenleme süresi:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:215
+#. i18n: ectx: property (text), widget (QPushButton, pbReset)
+#: rc.cpp:176
+msgid "&Reset"
+msgstr "Sıfı&rla"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:228
+#. i18n: ectx: property (text), widget (QLabel, lblRevisionDesc)
+#: rc.cpp:179
+msgid "Revision number:"
+msgstr "Sürüm numarası:"
+
+#. i18n: file: main/koDocumentInfoAboutWidget.ui:242
+#. i18n: ectx: property (text), widget (QLabel, lblEncryptedDesc)
+#: rc.cpp:182
+msgid "Encryption:"
+msgstr "Şifreleme"
+
+#. i18n: file: kocolorwidgets/KoShadowConfigWidget.ui:17
+#. i18n: ectx: property (text), widget (QCheckBox, shadowVisible)
+#: rc.cpp:188
+msgid "Show Shadow"
+msgstr "Gölgeyi Göster"
+
+#. i18n: file: kocolorwidgets/KoShadowConfigWidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:191
+msgid "Shadow Angle:"
+msgstr "Gölge Açısı:"
+
+#. i18n: file: kocolorwidgets/KoShadowConfigWidget.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:194
+msgid "Shadow Offset:"
+msgstr "Gölge Yerleşimi:"
+
+#. i18n: file: kocolorwidgets/KoShadowConfigWidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:197
+msgid "Shadow Color:"
+msgstr "Gölge Rengi:"
+
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:55
+#. i18n: ectx: property (toolTip), widget (QToolButton, remove)
+#: rc.cpp:206
+msgid "Remove"
+msgstr "Kaldır"
+
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:65
+#. i18n: ectx: property (toolTip), widget (QToolButton, open)
+#: rc.cpp:212
+msgid "Open palette"
+msgstr "Palet aç"
+
+#. i18n: file: kocolorwidgets/KoEditColorSet.ui:75
+#. i18n: ectx: property (toolTip), widget (QToolButton, save)
+#: rc.cpp:218
+msgid "Save palette"
+msgstr "Paleti kaydet"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:52
+#. i18n: ectx: attribute (title), widget (QWidget, m_dataTab)
+#: rc.cpp:224
+msgid "Data"
+msgstr "Veri"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:66
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
+#: rc.cpp:227
+msgid "E&ncoding:"
+msgstr "K&odlama:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:110
+#. i18n: ectx: property (text), widget (QCheckBox, m_firstRowHeader)
+#: rc.cpp:230
+msgid "First row contains headers"
+msgstr "Birinci satır başlıkları içerir"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:123
+#. i18n: ectx: property (text), widget (QCheckBox, m_firstColHeader)
+#: rc.cpp:233
+msgid "First column contains headers"
+msgstr "Birinci sütun başlıkları içerir"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:159
+#. i18n: ectx: property (title), widget (QGroupBox, m_delimiterBox)
+#: rc.cpp:239
+msgid "Delimiter"
+msgstr "Sınırlayıcı"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:165
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioComma)
+#: rc.cpp:242
+msgid "Comma"
+msgstr "Virgül"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:175
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSemicolon)
+#: rc.cpp:245
+msgid "Semicolon"
+msgstr "Noktalı virgül"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:182
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioOther)
+#: rc.cpp:248
+msgid "Other"
+msgstr "Diğer"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:189
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioTab)
+#: rc.cpp:251
+msgid "Tabulator"
+msgstr "Tablolayıcı"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:196
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSpace)
+#: rc.cpp:254
+msgid "Space"
+msgstr "Boşluk"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:241
+#. i18n: ectx: property (text), widget (QLabel, label2)
+#: rc.cpp:257
+msgid "Text&quote:"
+msgstr "Metin &alıntı:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:258
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: rc.cpp:260
+msgid "\""
+msgstr "\""
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:263
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: rc.cpp:263
+msgid "'"
+msgstr "'"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:292
+#. i18n: ectx: property (text), widget (QLabel, label3)
+#: rc.cpp:269
+msgid "Decimal symbol:"
+msgstr "Ondalık sembolü:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:321
+#. i18n: ectx: property (text), widget (QLabel, label4)
+#: rc.cpp:272
+msgid "Thousands separator:"
+msgstr "Binler basamağı ayırıcısı:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:366
+#. i18n: ectx: property (text), widget (QCheckBox, m_ignoreDuplicates)
+#: rc.cpp:275
+msgid "Ignore duplicate delimiters"
+msgstr "Aynısı olan sınırlandırıcıları yoksay"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:373
+#. i18n: ectx: property (text), widget (QLabel, label1)
+#: rc.cpp:278
+msgid "&Format:"
+msgstr "&Biçim:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:387
+#. i18n: ectx: attribute (title), widget (QWidget, m_rangesTab)
+#: rc.cpp:281
+msgid "Ranges"
+msgstr "Aralıklar"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:393
+#. i18n: ectx: property (text), widget (QPushButton, m_updateButton)
+#: rc.cpp:284
+msgid "Update"
+msgstr "Güncelle"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:460
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: rc.cpp:287
+msgid "Import columns:"
+msgstr "Sütun ekle:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:479
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3)
+#: rc.cpp:290
+msgid "Import lines:"
+msgstr "Satır ekle:"
+
+#. i18n: file: widgets/KoCsvImportDialog.ui:489
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#. i18n: file: widgets/KoCsvImportDialog.ui:512
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:293 rc.cpp:296
+msgid "to"
+msgstr "-"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:16
+#. i18n: ectx: property (text), widget (QLabel, unitsLabel)
+#: rc.cpp:299
+msgid "Unit:"
+msgstr "Birim:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:52
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:302
+msgid "Size:"
+msgstr "Boyut:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:65
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:305
+msgid "Width:"
+msgstr "Genişlik:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:92
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:308
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:107
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:311
+msgid "Orientation:"
+msgstr "Yönelim:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:114
+#. i18n: ectx: property (text), widget (QRadioButton, portrait)
+#: rc.cpp:314
+msgid "Portrait"
+msgstr "Dikey"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:121
+#. i18n: ectx: property (text), widget (QRadioButton, landscape)
+#: rc.cpp:317
+msgid "Landscape"
+msgstr "Yatay"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:128
+#. i18n: ectx: property (text), widget (QLabel, facingPageLabel)
+#: rc.cpp:320
+msgid "Facing pages:"
+msgstr "Dönen sayfalar:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:135
+#. i18n: ectx: property (text), widget (QRadioButton, singleSided)
+#: rc.cpp:323
+msgid "Single sided"
+msgstr "Tek yanlı"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:149
+#. i18n: ectx: property (text), widget (QLabel, directionLabel)
+#: rc.cpp:329
+msgid "Text direction:"
+msgstr "Metin yönü:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:157
+#. i18n: ectx: property (text), item, widget (QComboBox, textDirection)
+#: rc.cpp:332
+msgid "Automatic"
+msgstr "Otomatik"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:162
+#. i18n: ectx: property (text), item, widget (QComboBox, textDirection)
+#: rc.cpp:335
+msgid "Left to right"
+msgstr "Soldan sağa"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:167
+#. i18n: ectx: property (text), item, widget (QComboBox, textDirection)
+#: rc.cpp:338
+msgid "Right to left"
+msgstr "Sağdan sola"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:175
+#. i18n: ectx: property (title), widget (QGroupBox, margins)
+#: rc.cpp:341
+msgid "Margins"
+msgstr "Kenarlarlıklar"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:203
+#. i18n: ectx: property (text), widget (QLabel, rightLabel)
+#: rc.cpp:344
+msgid "Page edge:"
+msgstr "Sayfa kenarlığı:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:213
+#. i18n: ectx: property (text), widget (QLabel, leftLabel)
+#: rc.cpp:347
+msgid "Binding edge:"
+msgstr "Cilt kenarlığı:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:223
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: rc.cpp:350
+msgid "Bottom:"
+msgstr "Alt:"
+
+#. i18n: file: widgets/KoPageLayoutWidget.ui:240
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:353
+msgid "Top:"
+msgstr "Üst:"
+
+#. i18n: file: kopageapp/tools/backgroundTool/BackgroundToolWidget.ui:18
+#. i18n: ectx: property (text), widget (QPushButton, backgroundImage)
+#: rc.cpp:356
+msgid "Set background image ..."
+msgstr "Arkaplan resmini ayarla ..."
+
+#. i18n: file: kopageapp/tools/backgroundTool/BackgroundToolWidget.ui:25
+#. i18n: ectx: property (text), widget (QCheckBox, useMasterBackground)
+#: rc.cpp:359
+msgid "Use master background"
+msgstr "Ana arkaplanı kullan"
+
+#. i18n: file: kopageapp/tools/backgroundTool/BackgroundToolWidget.ui:32
+#. i18n: ectx: property (text), widget (QCheckBox, displayMasterShapes)
+#: rc.cpp:362
+msgid "Display shapes of master"
+msgstr ""
+
+#~ msgid "Insert"
+#~ msgstr "Ekle"
+
+#~ msgid "Add Bookmark"
+#~ msgstr "Yer İmi Ekle"
+
+#~ msgid "Color Chooser"
+#~ msgstr "Renk Seçici"
+
+#, fuzzy
+#~| msgid "Set Horizontal Alignment"
+#~ msgid "Horizontal Alignment"
+#~ msgstr "Yatay Konumu Ayarla"
+
+#~ msgid "Select Character"
+#~ msgstr "Karakter Seç"
+
+#~ msgid "&Insert"
+#~ msgstr "&Ekle"
+
+#~ msgid "Insert the selected character in the text"
+#~ msgstr "Seçili karakteri metin içerisine yerleştir"
+
+#~ msgid "Access Keys"
+#~ msgstr "Erişim Kısayolları"
+
+#~ msgid "Enable word completion"
+#~ msgstr "Sözcük tamamlamayı etkinleştir"
+
+#~ msgid "Add..."
+#~ msgstr "Ekle..."
+
+#~ msgid "Automatically add new words to suggestion list"
+#~ msgstr "Tamamlama listesine yeni sözcükleri otomatik olarak ekle"
+
+#~ msgid "Completion Options"
+#~ msgstr "Tamamlama Seçenekleri"
+
+#~ msgid "Show words in tooltip"
+#~ msgstr "Sözcükleri ipuçlarında göster"
+
+#~ msgid "Characters needed:"
+#~ msgstr "Gereken karakter:"
+
+#~ msgid "Suggest words:"
+#~ msgstr "Sözcük öner:"
+
+#~ msgid "Append space"
+#~ msgstr "Bpşluk ekle"
+
+#~ msgid "Key to accept suggestion:"
+#~ msgstr "Öneriyi kabul etme tuşu:"
+
+#~ msgid "Make Default"
+#~ msgstr "Öntanımlı Yap"
+
+#~ msgid "C&ustom"
+#~ msgstr "Ö&zel"
+
+#~ msgid "&Insert:"
+#~ msgstr "&Satır Ekle"
+
+#~ msgid "Paragraph Background Color"
+#~ msgstr "Paragraf Arkaplan Rengi"
+
+#~ msgid "Borders"
+#~ msgstr "Kenarlıklar"
+
+#~ msgid "&Width:"
+#~ msgstr "&Genişlik:"
+
+#~ msgid "&Color:"
+#~ msgstr "&Renk:"
+
+#~ msgid "Add/remove left paragraph border"
+#~ msgstr "Sol paragraf kenarlığı ekle/kaldır"
+
+#~ msgid "&Style:"
+#~ msgstr "&Biçim:"
+
+#~ msgid "&Merge with next paragraph"
+#~ msgstr "&Sonraki paragraf ile birleştir"
+
+#~ msgid "Set Guide Line Position"
+#~ msgstr "Kılavuz Çizgisi Konumunu Ayarla"
+
+#~ msgid "Add Guide Line"
+#~ msgstr "Kılavuz Çizgisi Ekle"
+
+#~ msgid "Orientation"
+#~ msgstr "Yönelim"
+
+#~ msgid "Horizontal"
+#~ msgstr "Yatay"
+
+#~ msgid "Vertical"
+#~ msgstr "Dikey"
+
+#~ msgid "&Position:"
+#~ msgstr "&Konum:"
+
+#~ msgid "Guide Line"
+#~ msgstr "Kılavuz Çizgisi"
+
+#~ msgid "&Set Position..."
+#~ msgstr "&Konumu Ayarla..."
+
+#~ msgid "Guide Lines"
+#~ msgstr "Kılavuz Çizgileri"
+
+#~ msgid "Type"
+#~ msgstr "Tip"
+
+#~ msgid "Number:"
+#~ msgstr "Numara:"
+
+#~ msgid "String:"
+#~ msgstr "İfade:"
+
+#~ msgid "Boolean:"
+#~ msgstr "Boolean:"
+
+#~ msgid "true"
+#~ msgstr "doğru"
+
+#~ msgid "false"
+#~ msgstr "yanlış"
+
+#~ msgid "Time:"
+#~ msgstr "Zaman:"
+
+#~ msgid "Date:"
+#~ msgstr "Tarih:"
+
+#~ msgid "No handler found for %1"
+#~ msgstr "%1 için işleç bulunamadı "
+
+#~ msgid ""
+#~ "Error loading %1:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1 yüklenirken hata oluştu:\n"
+#~ "%2"
+
+#~ msgid ""
+#~ "This document contains an external link to a remote document\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Bu belge uazktaki bir belgeye dış bağ içermektedir.\n"
+#~ "%1"
+
+#~ msgid "Confirmation Required"
+#~ msgstr "Doğrulama Gerekli"
+
+#~ msgid "Download"
+#~ msgstr "İndir"
+
+#~ msgid "Skip"
+#~ msgstr "Atla"
+
+#~ msgid ""
+#~ "Could not load embedded object:\n"
+#~ "%1"
+#~ msgstr ""
+#~ "Gömülü nesne yüklenemedi:\n"
+#~ "%1"
+
+#~ msgid ""
+#~ "Could not load external document %1:\n"
+#~ "%2"
+#~ msgstr ""
+#~ "%1 dış belgesi yüklenemedi:\n"
+#~ "%2"
+
+#~ msgid "Error while saving embedded documents"
+#~ msgstr "Gömülü belgeler kaydedilirken hata oluştu"
+
+#~ msgid "Na&me:"
+#~ msgstr "İsi&m:"
+
+#~ msgid "Protect si&ze and position"
+#~ msgstr "Boyutu ve ko&numu koru"
+
+#~ msgid "Keep &aspect ratio"
+#~ msgstr "Görünüm or&anını koru"
+
+#~ msgid "Position"
+#~ msgstr "Konum"
+
+#~ msgid "&Height:"
+#~ msgstr "&Yükseklik:"
+
+#~ msgid "&Top:"
+#~ msgstr "Ü&st:"
+
+#~ msgid "&Left:"
+#~ msgstr "S&ol:"
+
+#~ msgid "Context Help"
+#~ msgstr "Bağlamsal Yardım"
+
+#~ msgid "All values are given in %1."
+#~ msgstr "Bütün değerler %1 içerisinde verilmiştir."
+
+#~ msgid "Page Size"
+#~ msgstr "Sayfa Boyutu"
+
+#~ msgid "&Size:"
+#~ msgstr "&Boy:"
+
+#~ msgid "&Portrait"
+#~ msgstr "&Dikey"
+
+#~ msgid "La&ndscape"
+#~ msgstr "&Yatay"
+
+#~ msgid "The page width is smaller than the left and right margins."
+#~ msgstr "Sayfa genişliği sağ ve sol boşluklardan küçük."
+
+#~ msgid "Page Layout Problem"
+#~ msgstr "Sayfa Yerleşimi Sorunu"
+
+#~ msgid "The page height is smaller than the top and bottom margins."
+#~ msgstr "Sayfa yüksekliği üst ve alt boşluklardan küçük."
+
+#~ msgid "Show &Grid"
+#~ msgstr "Izagarayı &Göster"
+
+#~ msgctxt "Custom size"
+#~ msgid "Custom"
+#~ msgstr "Özel"
+
+#, fuzzy
+#~| msgid "Delete slide"
+#~ msgid "Delete slides"
+#~ msgstr "Slaytı sil"
+
+#, fuzzy
+#~| msgid "Delete page"
+#~ msgid "Delete pages"
+#~ msgstr "Sayfayı sil"
+
+#~ msgid "Insert Object"
+#~ msgstr "Nesne Ekle"
+
+#~ msgid "Object"
+#~ msgstr "Nesne"
+
+#~ msgid "Columns:"
+#~ msgstr "Sütun:"
+
+#~ msgid "Column spacing:"
+#~ msgstr "Sütun aralığı:"
+
+#~ msgid "Footnote/ Endnote"
+#~ msgstr "Dip not / Son not"
+
+#~ msgid "Spacing between footnote and body:"
+#~ msgstr "Altbilgi ve gövde arasındaki aralık:"
+
+#~ msgid "Footer"
+#~ msgstr "Altbilgi"
+
+#~ msgid "Different footer for even and odd pages"
+#~ msgstr "Tek ve çift sayfalar için farklı altbilgi"
+
+#~ msgid "Different footer for the first page"
+#~ msgstr "İlk sayfa için farklı altbilgi"
+
+#~ msgid "Spacing between footer and body:"
+#~ msgstr "Dipnot ve gövde arasında bırakılacak boşluk:"
+
+#~ msgid "Header"
+#~ msgstr "Üstbilgi"
+
+#~ msgid "Spacing between header and body:"
+#~ msgstr "Üstbilgi ve gövde arasındaki aralık:"
+
+#~ msgid "Different header for even and odd pages"
+#~ msgstr "Tek ve çift sayfalar için farklı üstbilgiler"
+
+#~ msgid "Different header for the first page"
+#~ msgstr "İlk sayfa için ayrı üstbilgi"
+
+#~ msgid "Page Preview"
+#~ msgstr "Sayfa Önizlemesi"
+
+#~ msgid "Page Size && &Margins"
+#~ msgstr "Sayfa Boyu && &Kenarlıklar"
+
+#~ msgid "H&eader && Footer"
+#~ msgstr "Üstbilgi ve &Altbilgi"
+
+#~ msgid "Head Line"
+#~ msgstr "Başlangıç Satırı"
+
+#~ msgid "Left:"
+#~ msgstr "Sol:"
+
+#~ msgid "Mid:"
+#~ msgstr "Orta:"
+
+#~ msgid "Right:"
+#~ msgstr "Sağ:"
+
+#~ msgid "Foot Line"
+#~ msgstr "Bitiş Satırı"
+
+#~ msgid "You can insert several tags in the text:"
+#~ msgstr "Metin içerisine birçok etiket yerleştirebilirsiniz:"
+
+#~ msgid ""
+#~ "<qt><ul><li>&lt;sheet&gt; The sheet name</li><li>&lt;page&gt; The current "
+#~ "page</li><li>&lt;pages&gt; The total number of pages</li><li>&lt;name&gt; "
+#~ "The filename or URL</li><li>&lt;file&gt; The filename with complete path "
+#~ "or the URL</li></ul></qt>"
+#~ msgstr ""
+#~ "<qt><ul><li>&lt;sheet&gt; The çalışma sayfası adı</li><li>&lt;page&gt; "
+#~ "Güncel sayfa</li><li>&lt;pages&gt; Toplam sayfa sayısı</li><li>&lt;"
+#~ "name&gt; Dosya adı ya da URL</li><li>&lt;file&gt; Tam dosya adı veya URL</"
+#~ "li></ul></qt>"
+
+#~ msgid ""
+#~ "<qt><ul><li>&lt;time&gt; The current time</li><li>&lt;date&gt; The "
+#~ "current date</li><li>&lt;author&gt; Your full name</li><li>&lt;org&gt; "
+#~ "Your organization</li><li>&lt;email&gt; Your email address</li></ul></qt>"
+#~ msgstr ""
+#~ "<qt><ul><li>&lt;time&gt; Şimdiki zaman</li><li>&lt;date&gt;: Şimdiki "
+#~ "tarih</li><li>&lt;author&gt;: Tam adınız</li><li>&lt;org&gt;:Kurumunuz</"
+#~ "li><li>&lt;email&gt;: E-posta adresiniz</li></ul></qt>"
+
+#~ msgid "Col&umns"
+#~ msgstr "&Sütunlar"
+
+#~ msgid "TextLabel1:"
+#~ msgstr "MetinEtiketi1:"
+
+#~ msgid "&Help"
+#~ msgstr "&Yardım"
+
+#~ msgid "Delete a new page after the current one"
+#~ msgstr "Şimdiki sayfadan önceki bir sayfayı sil"
+
+#~ msgid "Styles"
+#~ msgstr "Biçimler"
+
+#~ msgid "Actions"
+#~ msgstr "Eylemler"
+
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgid "Storage Test"
+#~ msgstr "Depolama Testi"
+
+#~ msgid "A test for the KoStore classes"
+#~ msgstr "KoStore sınıfları için bir test"
+
+#~ msgid "Storage Test 2"
+#~ msgstr "Depolama Testi 2"
+
+#~ msgid "Master page"
+#~ msgstr "Kılavuz sayfa"
+
+#~ msgid "Resize"
+#~ msgstr "Yeniden Boyutlandır"
+
+#~ msgid "Rotate"
+#~ msgstr "Döndür"
+
+#~ msgid "Shear"
+#~ msgstr "Kırp"
+
+#, fuzzy
+#~| msgid "Close"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Cross"
+#~ msgstr "Kapat"
+
+#, fuzzy
+#~| msgid "Warning"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Waiting"
+#~ msgstr "Uyarı"
+
+#, fuzzy
+#~| msgid "Vertical"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Size Vertical"
+#~ msgstr "Dikey"
+
+#, fuzzy
+#~| msgid "Horizontal"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Size Horizontal"
+#~ msgstr "Yatay"
+
+#, fuzzy
+#~| msgid "Size:"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Size All"
+#~ msgstr "Boyut:"
+
+#, fuzzy
+#~| msgid "Vertical"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Split Vertical"
+#~ msgstr "Dikey"
+
+#, fuzzy
+#~| msgid "Horizontal"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Split Horizontal"
+#~ msgstr "Yatay"
+
+#, fuzzy
+#~| msgid "Printing done"
+#~ msgctxt "Mouse Cursor Shape"
+#~ msgid "Pointing Hand"
+#~ msgstr "Yazdırma tamamlandı"
+
+#, fuzzy
+#~| msgid "Insert page"
+#~ msgid "Insert image from file"
+#~ msgstr "Sayfa al"
+
+#, fuzzy
+#~| msgid "Select Character"
+#~ msgid "Select Char"
+#~ msgstr "Karakter Seç"
+
+#, fuzzy
+#~| msgid "File"
+#~ msgctxt "Size Policy"
+#~ msgid "Fixed"
+#~ msgstr "Dosya"
+
+#, fuzzy
+#~| msgid "E&ncoding:"
+#~ msgctxt "Size Policy"
+#~ msgid "Expanding"
+#~ msgstr "K&odlama:"
+
+#, fuzzy
+#~| msgid "General"
+#~ msgctxt "General properties"
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#, fuzzy
+#~| msgid "Name:"
+#~ msgid "Name"
+#~ msgstr "İsim:"
+
+#, fuzzy
+#~| msgid "Width:"
+#~ msgid "Width"
+#~ msgstr "Genişlik:"
+
+#, fuzzy
+#~| msgid "Height:"
+#~ msgid "Height"
+#~ msgstr "Yükseklik:"
+
+#, fuzzy
+#~| msgid "Horizontal"
+#~ msgid "Horizontal Size Type"
+#~ msgstr "Yatay"
+
+#, fuzzy
+#~| msgid "Vertical"
+#~ msgid "Vertical Size Type"
+#~ msgstr "Dikey"
+
+#, fuzzy
+#~| msgid "Horizontal"
+#~ msgid "Horizontal Stretch"
+#~ msgstr "Yatay"
+
+#, fuzzy
+#~| msgid "Vertical"
+#~ msgid "Vertical Stretch"
+#~ msgstr "Dikey"
+
+#, fuzzy
+#~| msgid "Ungroup shapes"
+#~ msgid "Undo changes"
+#~ msgstr "Şekillerin gruplamasını kaldır"
+
+#~ msgid "First page:"
+#~ msgstr "İlk sayfa:"
+
+#, fuzzy
+#~| msgid "Show Guides"
+#~ msgid "Snap Guides"
+#~ msgstr "Kılavuzları Göster"
+
+#~ msgid "Enable Guide Lines Guide "
+#~ msgstr "Kılavuz Çizgilerini Etkinleştir"
+
+#~ msgid "Tool Option"
+#~ msgstr "Araç Seçeneği"
+
+#, fuzzy
+#~| msgid "Confirm Save"
+#~ msgid "Configure Snap Guides"
+#~ msgstr "Kaydetmeyi Onayla"
+
+#~ msgid "Connection Shape"
+#~ msgstr "Bağlantı Şekli"
+
+#~| msgid "Guide Lines"
+#~ msgid "Edit Guidelines"
+#~ msgstr "Kılavuz Çizgilerini Düzenle"
+
+#~| msgid "Add Guide Line"
+#~ msgid "Edit guidelines"
+#~ msgstr "Kılavuz çizgilerini düzenle"
+
+#~ msgid "Activate %1"
+#~ msgstr "%1 Aracını Etkinleştir"
+
+#~ msgid "Select a filter:"
+#~ msgstr "Bir filtre seç:"
+
+#~ msgid "specify the source color depth"
+#~ msgstr "renk modelini belirt"
+
+#~ msgid "specify the destination color depth"
+#~ msgstr "hedef renk derinliğini belirt"
+
+#~ msgid "Fit to width"
+#~ msgstr "Genişliğe sığdır"
+
+#~ msgid "Fit to page/canvas"
+#~ msgstr "Sayfaya/Alana Sığdır"
+
+#~ msgid "[No Paragraph Style]"
+#~ msgstr "[Paragraf Biçimlendirmesi Yok]"
+
+#~ msgid "[No Character Style]"
+#~ msgstr "[Karakter Biçimlendirmesi Yok]"

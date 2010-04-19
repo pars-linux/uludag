@@ -1,0 +1,190 @@
+# translation of plasma_applet_frame.po to Turkish
+# translation of plasma_applet_frame.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Koray Löker <loker@pardus.org.tr>, 2008.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_frame\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-08 01:26+0200\n"
+"PO-Revision-Date: 2009-10-12 17:01+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: configdialog.cpp:48
+msgid ""
+"This picture of a monitor contains a preview of the picture you currently "
+"have in your frame."
+msgstr ""
+"Bu monitör resmi şu anda çerçevenizde bulunan resmin bir önizlemesini içerir."
+
+#: frame.cpp:125
+msgid "&Open Picture..."
+msgstr "&Resim Aç..."
+
+#. i18n: file: imageSettings.ui:21
+#. i18n: ectx: property (text), item, widget (KComboBox, pictureComboBox)
+#: frame.cpp:437 rc.cpp:21
+msgid "Image"
+msgstr "Resim"
+
+#: frame.cpp:438
+msgid "Appearance"
+msgstr "Görünüm"
+
+#: picture.cpp:81
+msgid "Loading image..."
+msgstr "Resim yükleniyor..."
+
+#: picture.cpp:85
+msgctxt "Info"
+msgid "Put your photo here or drop a folder to start a slideshow"
+msgstr ""
+"Slayt gösterisini başlatmak için fotoğrafınızı ya da bir dizini buraya "
+"sürükleyip bırakın"
+
+#: picture.cpp:124
+msgctxt "Error"
+msgid "Error loading image"
+msgstr "Resim yükleme hatası"
+
+#: picture.cpp:155
+#, kde-format
+msgid "Error loading image: %1"
+msgstr "Resim yükleme hatası: %1"
+
+#. i18n: file: appearanceSettings.ui:17
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:3
+msgid "Rounded corners:"
+msgstr "Yuvarlatılmış köşeler:"
+
+#. i18n: file: appearanceSettings.ui:30
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6
+msgid "Smooth scaling:"
+msgstr "Yumuşak ölçekleme kullan:"
+
+#. i18n: file: appearanceSettings.ui:43
+#. i18n: ectx: property (toolTip), widget (QCheckBox, smoothScaling)
+#: rc.cpp:9
+msgid ""
+"Use smooth scaling when resizing pictures. Usually pictures look better this "
+"way, but it takes more time to load them."
+msgstr ""
+"Resimleri yeniden boyutlandırırken yumuşak ölçekleme kullan. Resimler "
+"genellikle bu şekilde daha güzel görünür ancak yüklenmeleri uzun sürer."
+
+#. i18n: file: appearanceSettings.ui:53
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:12
+msgid "Shadow:"
+msgstr "Gölgeyi göster:"
+
+#. i18n: file: appearanceSettings.ui:82
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:15
+msgid "Frame:"
+msgstr "Çerçeve:"
+
+#. i18n: file: appearanceSettings.ui:111
+#. i18n: ectx: property (text), widget (QLabel, changeFrameColorLabel)
+#: rc.cpp:18
+msgid "Frame color:"
+msgstr "Çerçeve rengi:"
+
+#. i18n: file: imageSettings.ui:26
+#. i18n: ectx: property (text), item, widget (KComboBox, pictureComboBox)
+#: rc.cpp:24
+msgid "Slideshow"
+msgstr "Slayt Gösterisi"
+
+#. i18n: file: imageSettings.ui:31
+#. i18n: ectx: property (text), item, widget (KComboBox, pictureComboBox)
+#: rc.cpp:27
+msgid "Picture of the day"
+msgstr "Günün resmi"
+
+#. i18n: file: imageSettings.ui:54
+#. i18n: ectx: property (text), widget (QLabel, picLabel)
+#: rc.cpp:30
+msgid "Picture:"
+msgstr "Resim:"
+
+#. i18n: file: imageSettings.ui:73
+#. i18n: ectx: property (filter), widget (KUrlComboRequester, picRequester)
+#: rc.cpp:33
+msgid "*.png *.jpeg *.jpg *.svg *.svgz"
+msgstr "*.png *.jpeg *.jpg *.svg *.svgz"
+
+#. i18n: file: imageSettings.ui:164
+#. i18n: ectx: property (text), widget (KPushButton, addDirButton)
+#: rc.cpp:37
+msgid "&Add Folder..."
+msgstr "Dizin &Ekle..."
+
+#. i18n: file: imageSettings.ui:174
+#. i18n: ectx: property (text), widget (KPushButton, removeDirButton)
+#: rc.cpp:40
+msgid "&Remove Folder"
+msgstr "Dizini &Sil"
+
+#. i18n: file: imageSettings.ui:212
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:43
+msgid "Include Subfolders:"
+msgstr "Alt dizinleri içer:"
+
+#. i18n: file: imageSettings.ui:232
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:46
+msgid "Randomize:"
+msgstr "Rastgele:"
+
+#. i18n: file: imageSettings.ui:252
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:49
+msgid "Change images every:"
+msgstr "Fotoğraf değiştirme sıklığı:"
+
+#. i18n: file: imageSettings.ui:278
+#. i18n: ectx: property (displayFormat), widget (QTimeEdit, slideShowDelay)
+#: rc.cpp:52
+msgctxt ""
+"(qtdt-format) Please do not change the quotes (') and translate only the "
+"content of the quotes."
+msgid "hh 'Hours' mm 'Mins' ss 'Secs'"
+msgstr "hh 'Saat' mm 'Dakika' ss 'Saniye'"
+
+#. i18n: file: imageSettings.ui:311
+#. i18n: ectx: property (text), widget (QLabel, selectPoTDlabel)
+#: rc.cpp:55
+msgid "Select Picture of the day source:"
+msgstr "Günün resmi kaynağını seçin:"
+
+#: slideshow.cpp:201
+msgid "No Picture from this Provider."
+msgstr ""
+
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#~ msgid "Show frame"
+#~ msgstr "Çerçeveyi göster"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"
+
+#~ msgctxt "@title:window"
+#~ msgid "Configure Frame"
+#~ msgstr "Çerçeveyi Yapılandır"

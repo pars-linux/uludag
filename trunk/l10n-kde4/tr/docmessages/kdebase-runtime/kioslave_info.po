@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_info\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2001-11-26 18:16GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "Info"
+msgstr "Info"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid ""
+"<firstname>Nicolas</firstname> <surname>Goutte</surname> <email>goutte@kde."
+"org</email>"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:22
+#, no-c-format
+msgid ""
+"Info is a type of documentation. The documents are in a file format called "
+"texinfo, and can be read on the command line with the <command>info</"
+"command> program."
+msgstr ""
+"Info, bir belge türüdür. Belgeler texinfo adı verilen bir dosya "
+"biçimindedirler, ve komut satırından <command>info</command> komutu "
+"yardımıyla okunabilirler."
+
+#. Tag: para
+#: index.docbook:26
+#, no-c-format
+msgid ""
+"The Info ioslave allows you to read the info pages installed on your system, "
+"from within &konqueror;. You can use it very easily:"
+msgstr ""
+"Info ioslave'i, &konqueror; üzerinden sisteme kurulu info dosyalarınıza "
+"erişmenize olanak verir. Kullanımı çok kolaydır:"
+
+#. Tag: screen
+#: index.docbook:29
+#, fuzzy, no-c-format
+msgid ""
+"<userinput><command>info:</command><replaceable>gcc</replaceable></userinput>"
+msgstr "<command>info:/</command>gcc"
+
+#. Tag: para
+#: index.docbook:31
+#, no-c-format
+msgid ""
+"This would show you the top level node of the Info documentation for the "
+"&gcc; compiler."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:34
+#, no-c-format
+msgid ""
+"Info is a &GNU; replacement for <command>man</command>, but is not widely "
+"used outside of &GNU; software."
+msgstr ""
+
+#. Tag: para
+#: index.docbook:38
+#, no-c-format
+msgid ""
+"You can quite easily browse the info documentation you have installed from "
+"within the &khelpcenter; application, or you can use the info ioslave "
+"directly from within both &konqueror; and the mini-cli."
+msgstr ""

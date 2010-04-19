@@ -1,0 +1,51 @@
+# translation of kioslave_smtp.po to Turkish
+# Copyright (C) 2003 Free Software Foundation, Inc.
+# Görkem Çetin <gorkem@kde.org>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_smtp\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2003-03-26 22:39+0000\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "smtp"
+msgstr "smtp"
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Ferdinand.Gassauer; &Ferdinand.Gassauer.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:16
+#, no-c-format
+msgid "A protocol to send mail from the client workstation to the mail server."
+msgstr "Bu protokol iki bilgisayar arasında e-posta iletişimine olanak tanır."
+
+#. Tag: para
+#: index.docbook:20
+#, fuzzy, no-c-format
+msgid ""
+"See : <ulink url=\"http://cr.yp.to/smtp.html\">Simple Mail Transfer Protocol "
+"</ulink>."
+msgstr ""
+"Daha geniş bilgi için<ulink url=\"http://raddist.rad.com/networks/1998/smtp/"
+"smtp.htm#SMTP\"> Simple Mail Transfer Protokol</ulink> bağlantısını kullanın."

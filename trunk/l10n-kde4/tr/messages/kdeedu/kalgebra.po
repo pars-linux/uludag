@@ -1,0 +1,1053 @@
+# translation of kalgebra.po to Turkish
+# translation of kalgebra.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Kunter Kutlu <kunterkutlu@gmail.com>, 2008.
+# Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalgebra\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-12-09 07:57+0100\n"
+"PO-Revision-Date: 2009-10-28 16:39+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/console.cpp:59
+#, kde-format
+msgid ""
+"%1\n"
+"Error: %2"
+msgstr ""
+"%1\n"
+"Hata: %2"
+
+#: src/console.cpp:141 src/functionsmodel.cpp:75 src/variablesmodel.cpp:86
+#: analitzagui/operatorsmodel.cpp:79
+msgctxt "@title:column"
+msgid "Name"
+msgstr "İsim"
+
+#: src/console.cpp:142 src/variablesmodel.cpp:89
+msgctxt "@title:column"
+msgid "Value"
+msgstr "Değer"
+
+#: src/consolehtml.cpp:106
+#, kde-format
+msgid "<ul class='error'>Error: %1<li>%2</li></ul>"
+msgstr "<ul class='error'>Hata: %1<li>%2</li></ul>"
+
+#: src/consolehtml.cpp:220
+#, kde-format
+msgid "Paste \"%1\" to input"
+msgstr ""
+
+#: src/dictionary.cpp:47
+msgid "Information"
+msgstr "Bilgi"
+
+#: src/dictionary.cpp:73 src/dictionary.cpp:74 src/dictionary.cpp:75
+#: src/dictionary.cpp:76
+#, kde-format
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: src/dictionary.cpp:77
+msgid "<b>Formula</b>"
+msgstr "<b>Formül</b>"
+
+#: src/expressionedit.cpp:283
+#, kde-format
+msgid "Result: %1"
+msgstr "Sonuç: %1"
+
+#: src/expressionedit.cpp:294
+msgctxt "Current parameter is the bounding"
+msgid " : bounds"
+msgstr " : sınırlar"
+
+#: src/expressionedit.cpp:299
+#, kde-format
+msgctxt "n-ary function prototype"
+msgid "<em>%1</em>(..., <b>par%2</b>, ...)"
+msgstr "<em>%1</em>(..., <b>par%2</b>, ...)"
+
+#: src/expressionedit.cpp:303 src/expressionedit.cpp:332
+#, kde-format
+msgctxt "Function name in function prototype"
+msgid "<em>%1</em>("
+msgstr "<em>%1</em>("
+
+#: src/expressionedit.cpp:304
+#, kde-format
+msgctxt "Uncorrect function name in function prototype"
+msgid "<em style='color:red'><b>%1</b></em>("
+msgstr "<em style='color:red'><b>%1</b></em>("
+
+#: src/expressionedit.cpp:307
+#, kde-format
+msgctxt "Parameter in function prototype"
+msgid "par%1"
+msgstr "par%1"
+
+#: src/expressionedit.cpp:310 src/expressionedit.cpp:319
+#: src/expressionedit.cpp:338
+#, kde-format
+msgctxt "Current parameter in function prototype"
+msgid "<b>%1</b>"
+msgstr "<b>%1</b>"
+
+#: src/expressionedit.cpp:313 src/expressionedit.cpp:343
+msgctxt "Function parameter separator"
+msgid ", "
+msgstr ", "
+
+#: src/expressionedit.cpp:333
+#, kde-format
+msgctxt "Uncorrect function name in function prototype"
+msgid "<em style='color:red'>%1</em>("
+msgstr "<em style='color:red'>%1</em>("
+
+#: src/expressionedit.cpp:444
+msgid "To Expression"
+msgstr "İfadeye"
+
+#: src/expressionedit.cpp:446
+msgid "To MathML"
+msgstr "MathML'e"
+
+#: src/expressionedit.cpp:448
+msgid "Simplify"
+msgstr "Basitleştir"
+
+#: src/functioncartesian.cpp:162 src/functioncartesian.cpp:176
+#: src/functionpolar.cpp:122
+msgid "We can only draw Real results."
+msgstr "Sadece Gerçek sonuçları çizilebilir"
+
+#: src/functionedit.cpp:46
+msgid "Add/Edit a function"
+msgstr "İşlev ekle veya düzenle"
+
+#: src/functionedit.cpp:90
+msgid "Preview"
+msgstr "Önizleme"
+
+#: src/functionedit.cpp:97
+msgid "From:"
+msgstr ""
+
+#: src/functionedit.cpp:99
+msgid "To:"
+msgstr ""
+
+#: src/functionedit.cpp:102
+msgid "Options"
+msgstr "Seçenekler"
+
+#: src/functionedit.cpp:107
+msgid "OK"
+msgstr "Tamam"
+
+#: src/functionedit.cpp:109
+msgctxt "@action:button"
+msgid "Clear"
+msgstr "Temizle"
+
+#: src/functionedit.cpp:211
+#, kde-format
+msgctxt "text ellipsis"
+msgid "%1..."
+msgstr "%1..."
+
+#: src/functionedit.cpp:247
+msgid "The options you specified are not correct"
+msgstr ""
+
+#: src/functionedit.cpp:252
+msgid "Downlimit cannot be greater than uplimit"
+msgstr "Alt sınır üst sınırdan büyük olamaz"
+
+#: src/functionparametric.cpp:102
+msgctxt "if the specified function is not a vector"
+msgid "The parametric function does not return a vector"
+msgstr ""
+
+#: src/functionparametric.cpp:107
+msgctxt "If it is a vector but the wrong size. We work in R2 here"
+msgid "A two-dimensional vector is needed"
+msgstr ""
+
+#: src/functionparametric.cpp:110
+msgctxt "The vector has to be composed by integer members"
+msgid "The parametric function items should be scalars"
+msgstr ""
+
+#: src/functionpolar.cpp:64
+msgid "Cannot have downlimit ≥ uplimit"
+msgstr "Alt sınır ≥ üst sınır olamaz"
+
+#: src/functionpolar.cpp:88
+msgid "center"
+msgstr "merkez"
+
+#: src/functionsmodel.cpp:78
+msgctxt "@title:column"
+msgid "Function"
+msgstr "İşlev"
+
+#: src/functionsmodel.cpp:107
+#, kde-format
+msgid "%1 function added"
+msgstr "%1 işlevi eklendi"
+
+#: src/functionsview.cpp:50
+#, kde-format
+msgid "Hide '%1'"
+msgstr "'%1' Ögesini Gizle"
+
+#: src/functionsview.cpp:53
+#, kde-format
+msgid "Show '%1'"
+msgstr "'%1' Ögesini Göster"
+
+#: src/functionsview.cpp:58
+#, kde-format
+msgid "Remove '%1'"
+msgstr "'%1' Ögesini Kaldır"
+
+#: src/graph2d.cpp:418
+msgid "Selected viewport too small"
+msgstr "Seçilen görünüm alanı çok küçük"
+
+#: src/graph3d.cpp:434 src/graph3d.cpp:460
+#, kde-format
+msgid "Error: %1"
+msgstr "Hata: %1"
+
+#: src/graph3d.cpp:448
+msgid "Generating... Please wait"
+msgstr "Oluşturuluyor... Lütfen bekleyin"
+
+#: src/graph3d.cpp:453
+#, no-c-format, kde-format
+msgctxt "3D graph done in x miliseconds"
+msgid "Done: %1ms"
+msgstr "Tamamlandı: %1ms"
+
+#: src/graph3d.cpp:458
+msgid "Error: We need values to draw a graph"
+msgstr "Hata: Grafik çizebilmek için değerlere ihtiyacımız var"
+
+#: src/kalgebra.cpp:73 src/kalgebra.cpp:152
+msgid "Variables"
+msgstr "Değişkenler"
+
+#: src/kalgebra.cpp:91
+msgid "&Console"
+msgstr "&Konsol"
+
+#: src/kalgebra.cpp:104
+msgid "C&onsole"
+msgstr "K&onsol"
+
+#: src/kalgebra.cpp:107
+msgctxt "@item:inmenu"
+msgid "&Load Script"
+msgstr "Betik Yük&le"
+
+#: src/kalgebra.cpp:109
+msgctxt "@item:inmenu"
+msgid "&Save Script"
+msgstr "Betik &Kaydet"
+
+#: src/kalgebra.cpp:111
+msgctxt "@item:inmenu"
+msgid "&Save Log"
+msgstr "Günlük &Kaydet"
+
+#: src/kalgebra.cpp:123
+msgid "Functions"
+msgstr "İşlevler"
+
+#: src/kalgebra.cpp:135
+msgid "List"
+msgstr "Liste"
+
+#: src/kalgebra.cpp:140 src/kalgebra.cpp:312
+msgid "&Add"
+msgstr "&Ekle"
+
+#: src/kalgebra.cpp:156
+msgid "Viewport"
+msgstr ""
+
+#: src/kalgebra.cpp:160
+msgid "&2D Graph"
+msgstr "&2B Grafik"
+
+#: src/kalgebra.cpp:171
+msgid "2&D Graph"
+msgstr "2&B Grafik"
+
+#: src/kalgebra.cpp:173
+msgid "&Grid"
+msgstr "Iz&gara"
+
+#: src/kalgebra.cpp:174
+msgid "&Keep Aspect Ratio"
+msgstr "&Görünüm Oranını Koru"
+
+#: src/kalgebra.cpp:180
+msgid "Resolution"
+msgstr "Çözünürlük"
+
+#: src/kalgebra.cpp:181
+msgctxt "@item:inmenu"
+msgid "Poor"
+msgstr "Zayıf"
+
+#: src/kalgebra.cpp:182
+msgctxt "@item:inmenu"
+msgid "Normal"
+msgstr "Normal"
+
+#: src/kalgebra.cpp:183
+msgctxt "@item:inmenu"
+msgid "Fine"
+msgstr "İyi"
+
+#: src/kalgebra.cpp:184
+msgctxt "@item:inmenu"
+msgid "Very Fine"
+msgstr "Çok İyi"
+
+#: src/kalgebra.cpp:212
+msgid "&3D Graph"
+msgstr "&3B Grafik"
+
+#: src/kalgebra.cpp:220
+msgid "3D &Graph"
+msgstr "3B &Grafik"
+
+#: src/kalgebra.cpp:222
+msgid "&Transparency"
+msgstr "&Şeffaflık"
+
+#: src/kalgebra.cpp:224
+msgid "&Reset View"
+msgstr "Görünümü Sıfı&rla"
+
+#: src/kalgebra.cpp:225
+msgid "Type"
+msgstr "Tür"
+
+#: src/kalgebra.cpp:226
+msgid "Dots"
+msgstr "Noktalar"
+
+#: src/kalgebra.cpp:227
+msgid "Lines"
+msgstr "Çizgiler"
+
+#: src/kalgebra.cpp:228
+msgid "Solid"
+msgstr "Katı"
+
+#: src/kalgebra.cpp:245
+msgid "Operations"
+msgstr "İşlemler"
+
+#: src/kalgebra.cpp:249
+msgid "&Dictionary"
+msgstr "S&özlük"
+
+#: src/kalgebra.cpp:261
+msgid "Look for:"
+msgstr "Aranacak:"
+
+#: src/kalgebra.cpp:301
+msgid "&Editing"
+msgstr "&Düzenleme"
+
+#: src/kalgebra.cpp:349 src/kalgebra.cpp:356
+msgid "Script (*.kal)"
+msgstr "Betik (*.kal)"
+
+#: src/kalgebra.cpp:349
+msgid "Choose a script"
+msgstr "Bir betik seçin"
+
+#: src/kalgebra.cpp:363
+msgid "Text File (*)"
+msgstr "Metin Dosyası (*)"
+
+#: src/kalgebra.cpp:405
+msgid "*.png|PNG File"
+msgstr "*.png|PNG Dosyası"
+
+#: src/kalgebra.cpp:430
+msgid ""
+"*.png|Image File\n"
+"*.svg|SVG File"
+msgstr ""
+"*.png|Resim Dosyası\n"
+"*.svg|SVG Dosyası"
+
+#: src/kalgebra.cpp:466
+msgctxt "@info:status"
+msgid "Ready"
+msgstr "Hazır"
+
+#: src/kalgebra.cpp:490
+msgid "Add variable"
+msgstr "Değişken ekle"
+
+#: src/kalgebra.cpp:494
+msgid "Enter a name for the new variable"
+msgstr "Yeni değişkenin adını girin"
+
+#: src/main.cpp:26
+msgid "A calculator"
+msgstr "Bir hesap makinesi"
+
+#: src/main.cpp:27
+msgid "(C) 2006-2009 Aleix Pol Gonzalez"
+msgstr "(C) 2006-2009 Aleix Pol Gonzalez"
+
+#: src/main.cpp:28
+msgid "Aleix Pol Gonzalez"
+msgstr "Aleix Pol Gonzalez"
+
+#: src/varedit.cpp:36
+msgid "Add/Edit a variable"
+msgstr "Bir değişken ekle/değiştir"
+
+#: src/varedit.cpp:57
+msgid "Mode"
+msgstr "Kip"
+
+#: src/varedit.cpp:59
+msgid "Save the expression"
+msgstr "İfadeyi kaydet"
+
+#: src/varedit.cpp:60
+msgid "Calculate the expression"
+msgstr "İfadeyi hesapla"
+
+#: src/varedit.cpp:78
+#, kde-format
+msgid "Edit '%1' value"
+msgstr "'%1' değerini değiştir"
+
+#: src/varedit.cpp:80
+msgid "not available"
+msgstr "kullanılabilir değil"
+
+#: src/varedit.cpp:114
+#, kde-format
+msgid "%1:=%2"
+msgstr "%1:=%2"
+
+#: src/varedit.cpp:119
+msgid "<b style='color:red'>WRONG</b>"
+msgstr "<b style='color:red'>YANLIŞ</b>"
+
+#: src/varedit.cpp:123
+#, kde-format
+msgid "<b style='color:#090'>%1 := %2</b>"
+msgstr "<b style='color:#090'>%1 := %2</b>"
+
+#: src/viewportwidget.cpp:45
+msgid "Left:"
+msgstr "Sol:"
+
+#: src/viewportwidget.cpp:46
+msgid "Top:"
+msgstr "Üst:"
+
+#: src/viewportwidget.cpp:47
+msgid "Width:"
+msgstr "Genişlik:"
+
+#: src/viewportwidget.cpp:48
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: src/viewportwidget.cpp:50
+msgid "Apply"
+msgstr "Uygula"
+
+#: analitzagui/operatorsmodel.cpp:82
+msgctxt "@title:column"
+msgid "Description"
+msgstr "Açıklama"
+
+#: analitzagui/operatorsmodel.cpp:85
+msgctxt "@title:column"
+msgid "Parameters"
+msgstr "Parametreler"
+
+#: analitzagui/operatorsmodel.cpp:88
+msgctxt "@title:column"
+msgid "Example"
+msgstr "Örnek"
+
+#: analitzagui/operatorsmodel.cpp:121
+#, kde-format
+msgid "%1("
+msgstr "%1("
+
+#: analitzagui/operatorsmodel.cpp:124
+#, kde-format
+msgid "%1... parameters, ...%2)"
+msgstr "%1... parametreler, ...%2)"
+
+#: analitzagui/operatorsmodel.cpp:127
+#, kde-format
+msgid "par%1"
+msgstr "par%1"
+
+#: analitzagui/operatorsmodel.cpp:140
+msgid "Addition"
+msgstr "Toplama"
+
+#: analitzagui/operatorsmodel.cpp:143
+msgid "Multiplication"
+msgstr "Çarpma"
+
+#: analitzagui/operatorsmodel.cpp:146
+msgid "Division"
+msgstr "Bölme"
+
+#: analitzagui/operatorsmodel.cpp:149
+msgid "Subtraction"
+msgstr "Çıkarma"
+
+#: analitzagui/operatorsmodel.cpp:152
+msgid "Power"
+msgstr "Üstü"
+
+#: analitzagui/operatorsmodel.cpp:155
+msgid "Remainder"
+msgstr "Kalan"
+
+#: analitzagui/operatorsmodel.cpp:158
+msgid "Quotient"
+msgstr "Oran"
+
+#: analitzagui/operatorsmodel.cpp:161
+msgid "The factor of"
+msgstr "Şunun çarpanı"
+
+#: analitzagui/operatorsmodel.cpp:164
+msgid "Factorial. factorial(n)=n!"
+msgstr "Faktöriyel. factorial(n)=n!"
+
+#: analitzagui/operatorsmodel.cpp:167
+msgid "Function to calculate the sine of a given angle"
+msgstr "Verilen bir açının sinüsünü hesaplayan işlev"
+
+#: analitzagui/operatorsmodel.cpp:170
+msgid "Function to calculate the cosine of a given angle"
+msgstr "Verilen bir açının kosinüsünü hesaplayan işlev"
+
+#: analitzagui/operatorsmodel.cpp:173
+msgid "Function to calculate the tangent of a given angle"
+msgstr "Verilen bir açının tanjantını hesaplayan işlev"
+
+#: analitzagui/operatorsmodel.cpp:176
+msgid "Secant"
+msgstr "Sekant"
+
+#: analitzagui/operatorsmodel.cpp:179
+msgid "Cosecant"
+msgstr "Kosekant"
+
+#: analitzagui/operatorsmodel.cpp:182
+msgid "Cotangent"
+msgstr "Kotanjant"
+
+#: analitzagui/operatorsmodel.cpp:185
+msgid "Hyperbolic sine"
+msgstr "Hiperbolik sinüs"
+
+#: analitzagui/operatorsmodel.cpp:188
+msgid "Hyperbolic cosine"
+msgstr "Hiperbolik kosinüs"
+
+#: analitzagui/operatorsmodel.cpp:191
+msgid "Hyperbolic tangent"
+msgstr "Hiperbolik tanjant"
+
+#: analitzagui/operatorsmodel.cpp:194
+msgid "Hyperbolic secant"
+msgstr "Hiperbolik sekant"
+
+#: analitzagui/operatorsmodel.cpp:197
+msgid "Hyperbolic cosecant"
+msgstr "Hiperbolik kosekant"
+
+#: analitzagui/operatorsmodel.cpp:200
+msgid "Hyperbolic cotangent"
+msgstr "Hiperbolik kotanjant"
+
+#: analitzagui/operatorsmodel.cpp:203
+msgid "Arc sine"
+msgstr "Ark sinüs"
+
+#: analitzagui/operatorsmodel.cpp:206
+msgid "Arc cosine"
+msgstr "Ark kosinüs"
+
+#: analitzagui/operatorsmodel.cpp:209
+msgid "Arc tangent"
+msgstr "Ark tanjant"
+
+#: analitzagui/operatorsmodel.cpp:212
+msgid "Arc cotangent"
+msgstr "Ark kotanjant"
+
+#: analitzagui/operatorsmodel.cpp:218
+msgid "Hyperbolic arc tangent"
+msgstr "Hiperbolik ark tanjant"
+
+#: analitzagui/operatorsmodel.cpp:221
+msgid "Summatory"
+msgstr "Summatory"
+
+#: analitzagui/operatorsmodel.cpp:224
+msgid "Productory"
+msgstr "Productory"
+
+#: analitzagui/operatorsmodel.cpp:227
+msgid "Differentiation"
+msgstr "Türev"
+
+#: analitzagui/operatorsmodel.cpp:230
+msgid "Hyperbolic arc sine"
+msgstr "Hiperbolik ark sinüs"
+
+#: analitzagui/operatorsmodel.cpp:233
+msgid "Hyperbolic arc cosine"
+msgstr "Hiperbolik ark kosinüs"
+
+#: analitzagui/operatorsmodel.cpp:236
+msgid "Arc cosecant"
+msgstr "Ark kosekant"
+
+#: analitzagui/operatorsmodel.cpp:239
+msgid "Hyperbolic arc cosecant"
+msgstr "Hiperbolik ark kosekant"
+
+#: analitzagui/operatorsmodel.cpp:242
+msgid "Arc secant"
+msgstr "Ark sekant"
+
+#: analitzagui/operatorsmodel.cpp:245
+msgid "Hyperbolic arc secant"
+msgstr "Hiperbolik ark sekant"
+
+#: analitzagui/operatorsmodel.cpp:248
+msgid "Exponent (e^x)"
+msgstr "Kuvvet (e^x)"
+
+#: analitzagui/operatorsmodel.cpp:251
+msgid "Base-e logarithm"
+msgstr "Taban-e logaritma"
+
+#: analitzagui/operatorsmodel.cpp:254
+msgid "Base-10 logarithm"
+msgstr "Taban-10 logaritma"
+
+#: analitzagui/operatorsmodel.cpp:257
+msgid "Absolute value. abs(n)=|n|"
+msgstr "Mutlak değer. abs(n)=|n|"
+
+#: analitzagui/operatorsmodel.cpp:272
+msgid "Floor value. floor(n)=⌊n⌋"
+msgstr "Taban değer. floor(n)=⌊n⌋"
+
+#: analitzagui/operatorsmodel.cpp:275
+msgid "Ceil value. ceil(n)=⌈n⌉"
+msgstr "Tavan değer. ceil(n)=⌈n⌉"
+
+#: analitzagui/operatorsmodel.cpp:278
+msgid "Minimum"
+msgstr "En düşük"
+
+#: analitzagui/operatorsmodel.cpp:281
+msgid "Maximum"
+msgstr "En yüksek"
+
+#: analitzagui/operatorsmodel.cpp:284
+msgid "Greater than. gt(a,b)=a>b"
+msgstr "Büyüktür. gt(a,b)=a>b"
+
+#: analitzagui/operatorsmodel.cpp:287
+msgid "Less than. lt(a,b)=a<b"
+msgstr "Küçüktür. lt(a,b)=a<b"
+
+#: analitzagui/operatorsmodel.cpp:290
+msgid "Equal. eq(a,b) = a=b"
+msgstr "Eşit. eq(a,b) = a=b"
+
+#: analitzagui/operatorsmodel.cpp:293
+msgid "Approximation. approx(a)=a±n"
+msgstr "Yaklaştırma. approx(a)=a±n "
+
+#: analitzagui/operatorsmodel.cpp:296
+msgid "Not equal. neq(a,b)=a≠b"
+msgstr "Eşit değil. neq(a,b)=a≠b"
+
+#: analitzagui/operatorsmodel.cpp:299
+msgid "Greater or equal. geq(a,b)=a≥b"
+msgstr "Büyük ya da eşit. geq(a,b)=a≥b"
+
+#: analitzagui/operatorsmodel.cpp:302
+msgid "Less or equal. leq(a,b)=a≤b"
+msgstr "Küçük ya da eşit. leq(a,b)=a≤b"
+
+#: analitzagui/operatorsmodel.cpp:305
+msgid "Boolean and"
+msgstr "Boole ve"
+
+#: analitzagui/operatorsmodel.cpp:308
+msgid "Boolean not"
+msgstr "Boole değil"
+
+#: analitzagui/operatorsmodel.cpp:311
+msgid "Boolean or"
+msgstr "Boole veya"
+
+#: analitzagui/operatorsmodel.cpp:314
+msgid "Boolean xor"
+msgstr "Boole xor"
+
+#: analitzagui/operatorsmodel.cpp:317
+msgid "Boolean implication"
+msgstr "Boole çıkarım"
+
+#: analitzagui/operatorsmodel.cpp:320
+msgid "Greatest common divisor"
+msgstr "Ortak bölenlerin en büyüğü"
+
+#: analitzagui/operatorsmodel.cpp:323
+msgid "Least common multiple"
+msgstr "Ortak katların en küçüğü"
+
+#: analitzagui/operatorsmodel.cpp:326
+msgid "Root"
+msgstr "Kök"
+
+#: analitzagui/operatorsmodel.cpp:329
+msgid "Cardinal"
+msgstr "Asal"
+
+#: analitzagui/operatorsmodel.cpp:332
+msgid "Scalar product"
+msgstr "Sayıl ürün"
+
+#: analitzagui/operatorsmodel.cpp:335
+msgid "Select an element from a container"
+msgstr "Bir taşıyıcıdan bir öge seçin"
+
+#: analitzagui/operatorsmodel.cpp:338
+msgid "Joins several items of the same type"
+msgstr ""
+
+#: analitza/analitza.cpp:80 analitza/analitza.cpp:91
+msgid "Must specify a correct operation"
+msgstr "Doğru bir işlem belirtmelisiniz"
+
+#: analitza/analitza.cpp:96
+msgctxt "identifier separator in error message"
+msgid "', '"
+msgstr "', '"
+
+#: analitza/analitza.cpp:94
+#, kde-format
+msgid "Unknown identifier: '%1'"
+msgstr "Bilinmeyen tanımlayıcı: '%1'"
+
+#: analitza/analitza.cpp:485
+#, kde-format
+msgid "The %1 derivative has not been implemented."
+msgstr "%1 türevi henüz hazırlanmadı."
+
+#: analitza/analitza.cpp:546
+msgctxt "Error message, no proper condition found."
+msgid "Could not find a proper choice for a condition statement."
+msgstr "Bir şart cümlesi için uygun bir seçenek bulunamadı."
+
+#: analitza/analitza.cpp:812
+msgid "Type not supported for bounding."
+msgstr ""
+
+#: analitza/analitza.cpp:815
+#, fuzzy
+#| msgid "Incorrect uplimit or downlimit."
+msgid "Incorrect domain."
+msgstr "Yanlış üst veya alt sınır."
+
+#: analitza/analitza.cpp:840
+msgid "The downlimit is greater than the uplimit"
+msgstr "Alt sınır üst sınırdan büyük"
+
+#: analitza/analitza.cpp:842
+msgid "Incorrect uplimit or downlimit."
+msgstr "Yanlış üst veya alt sınır."
+
+#: analitza/analitza.cpp:892
+msgid "We can only call functions"
+msgstr "Sadece fonksiyonlar çağrılabilir"
+
+#: analitza/analitza.cpp:894
+msgid "Wrong parameter count"
+msgstr ""
+
+#: analitza/analitza.cpp:1690
+msgctxt "By a cycle i mean a variable that depends on itself"
+msgid "Defined a variable cycle"
+msgstr "Bir değişken döngüsü tanımlandı"
+
+#: analitza/analitza.cpp:1749
+msgid "The result is not a number"
+msgstr "Sonuç bir sayı değil"
+
+#: analitza/explexer.cpp:64
+#, kde-format
+msgctxt "Error message"
+msgid "Did not understand the real value: %1"
+msgstr "Gerçek değer anlaşılamadı: %1"
+
+#: analitza/explexer.cpp:87
+#, kde-format
+msgid "Unknown token %1"
+msgstr "Bilinmeyen simge %1"
+
+#: analitza/expression.cpp:156
+#, kde-format
+msgid "<em>%1</em> needs at least 2 parameters"
+msgstr "<em>%1</em> en az iki parametreye gereksinim duyuyor"
+
+#: analitza/expression.cpp:158
+#, kde-format
+msgid "<em>%1</em> requires %2 parameters"
+msgstr "<em>%1</em> %2 parametre gerektirir"
+
+#: analitza/expression.cpp:163
+#, kde-format
+msgid "Missing boundary for '%1'"
+msgstr ""
+
+#: analitza/expression.cpp:168
+#, kde-format
+msgid "<em>%1</em> missing bounds on '%2'"
+msgstr ""
+
+#: analitza/expression.cpp:181
+#, kde-format
+msgid "Wrong parameter count, had 1 parameter for '%2'"
+msgid_plural "Wrong parameter count, had %1 parameters for '%2'"
+msgstr[0] ""
+
+#: analitza/expression.cpp:191
+msgid "Wrong declare"
+msgstr ""
+
+#: analitza/expression.cpp:201
+#, kde-format
+msgid "Empty container: %1"
+msgstr "Boş taşıyıcı: %1"
+
+#: analitza/expression.cpp:220
+msgctxt "there was a conditional outside a condition structure"
+msgid "We can only have conditionals inside piecewise structures."
+msgstr ""
+
+#: analitza/expression.cpp:237
+msgctxt "this is an error message. otherwise is the else in a mathml condition"
+msgid "Only one <em>otherwise</em> parameters is enough"
+msgstr "Sadece bir tane <em>aksi durumda</em> parametresi yeterli"
+
+#: analitza/expression.cpp:245
+#, kde-format
+msgctxt "there was an element that was not a conditional inside a condition"
+msgid "%1 is not a proper condition inside the piecewise"
+msgstr ""
+
+#: analitza/expression.cpp:250
+msgid "We can only declare variables"
+msgstr "Sadece değişken tanımlanabilir"
+
+#: analitza/expression.cpp:256
+msgid "We can only have bounded variables"
+msgstr "Sadece sınırlandırılmış değişkenler kullanılabilir"
+
+#: analitza/expression.cpp:274
+#, kde-format
+msgid "Error while parsing: %1"
+msgstr "Ayrıştırma sırasında hata: %1"
+
+#: analitza/expression.cpp:301
+#, kde-format
+msgctxt "An error message"
+msgid "Container unknown: %1"
+msgstr "Taşıyıcı bilinmiyor: %1"
+
+#: analitza/expression.cpp:307
+#, kde-format
+msgid "Cannot codify the %1 value."
+msgstr ""
+
+#: analitza/expression.cpp:313
+#, kde-format
+msgid "The %1 operator cannot have child contexts."
+msgstr ""
+
+#: analitza/expression.cpp:317
+#, kde-format
+msgid "The element '%1' is not an operator."
+msgstr "'%1' ögesi bir operatör değil."
+
+#: analitza/expression.cpp:336
+#, kde-format
+msgctxt "Error message due to an unrecognized input"
+msgid "Not supported/unknown: %1"
+msgstr "Desteklenmeyen/bilinmeyen: %1"
+
+#: exp.g:394
+msgid ", "
+msgstr ", "
+
+#: exp.g:394
+#, kde-format
+msgctxt "error message"
+msgid "Expected %1 instead of '%2'"
+msgstr "'%2' yerine '%1' bekleniyordu"
+
+#: exp.g:396
+msgid "Missing right parenthesis"
+msgstr "Eksik sağ parantez"
+
+#: exp.g:398
+msgid "Unbalanced right parenthesis"
+msgstr "Yanlış yerleştirilmiş sağ parantez"
+
+#: exp.g:400
+#, kde-format
+msgid "Unexpected token %1"
+msgstr "Beklenmedik sembol %1"
+
+#: analitza/htmlexpressionwriter.cpp:32 analitza/htmlexpressionwriter.cpp:33
+#, kde-format
+msgctxt "html representation of an operator"
+msgid "<span class='op'>%1</span>"
+msgstr "<span class='op'>%1</span>"
+
+#: analitza/htmlexpressionwriter.cpp:69
+msgctxt ""
+"html representation of a true. please don't translate the true for "
+"consistency"
+msgid "<span class='const'>true</span>"
+msgstr "<span class='const'>doğru</span>"
+
+#: analitza/htmlexpressionwriter.cpp:71
+msgctxt ""
+"html representation of a false. please don't translate the false for "
+"consistency"
+msgid "<span class='const'>false</span>"
+msgstr "<span class='const'>yanlış</span>"
+
+#: analitza/htmlexpressionwriter.cpp:73
+#, kde-format
+msgctxt "html representation of a number"
+msgid "<span class='num'>%1</span>"
+msgstr "<span class='num'>%1</span>"
+
+#: analitza/mathmlpresentationlexer.cpp:88
+#, kde-format
+msgctxt "Error message"
+msgid "Unknown token %1"
+msgstr "Bilinmeyen simge %1"
+
+#: analitza/operations.cpp:61
+msgid "Cannot calculate the remainder on 0."
+msgstr ""
+
+#: analitza/operations.cpp:71
+msgid "Cannot calculate the factor on 0."
+msgstr ""
+
+#: analitza/operations.cpp:139
+msgid "Cannot calculate the lcm of 0."
+msgstr ""
+
+#: analitza/operations.cpp:281
+#, kde-format
+msgid "Could not calculate a value %1"
+msgstr ""
+
+#: analitza/operations.cpp:301
+#, kde-format
+msgid "Could not reduce '%1' and '%2'."
+msgstr ""
+
+#: analitza/operations.cpp:333 analitza/operations.cpp:444
+msgid "Invalid index for a container"
+msgstr "Bir taşıyıcı için geçersiz endeks"
+
+#: analitza/operations.cpp:366
+msgid "Cannot operate on different sized vectors."
+msgstr ""
+
+#: analitza/operations.cpp:391
+#, kde-format
+msgid "Could not calculate a vector's %1"
+msgstr ""
+
+#: analitza/operations.cpp:414 analitza/operations.cpp:429
+#, kde-format
+msgid "Could not calculate a list's %1"
+msgstr ""
+
+#~ msgid "Trying to call an invalid function"
+#~ msgstr "Geçersiz bir fonksiyon çağrılmaya çalışıldı"
+
+#~ msgid "The function <em>%1</em> does not exist"
+#~ msgstr "<em>%1</em> işlevi yok"
+
+#~ msgid "The variable <em>%1</em> does not exist"
+#~ msgstr "<em>%1</em> değişkeni yok"
+
+#~ msgid "Need a var name and a value"
+#~ msgstr "Bir değişken adı ve değeri gerekir"
+
+#~ msgid "We can only select a container's value with its integer index"
+#~ msgstr "Bir taşıyıcıyı sadece tamsayı indeksiyle seçebiliriz"
+
+#~ msgid "<b style='color:red'>%1</b>"
+#~ msgstr "<b style='color:red'>%1</b>"
+
+#~ msgctxt "Error message"
+#~ msgid "Unknown bounded variable: %1"
+#~ msgstr "Bilinmeyen sınırlandırılmış değişken: %1"
+
+#~ msgid "From parser:"
+#~ msgstr "Ayrıştırıcıdan:"
+
+#~ msgid "piece or otherwise in the wrong place"
+#~ msgstr "parça veya yanlış yerde "
+
+#~ msgctxt "Error message"
+#~ msgid "Trying to codify an unknown value: %1"
+#~ msgstr "Bilinmeyen bir değer kodlanmaya çalışıldı: %1"

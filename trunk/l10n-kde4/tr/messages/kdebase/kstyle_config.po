@@ -1,0 +1,176 @@
+# translation of kstyle_config.po to Turkish
+#
+# Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kstyle_config\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:27+0100\n"
+"PO-Revision-Date: 2009-11-10 16:16+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: highcontrast/config/highcontrastconfig.cpp:49
+msgid "Use wider lines"
+msgstr "Daha geniş satır kullan"
+
+#: web/plugin.cpp:9
+msgid "Web style plugin"
+msgstr "Web biçimi eklentisi"
+
+#: web/webstyle.cpp:1604
+msgid "modified"
+msgstr "değiştirildi"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, OxygenConfigDialog)
+#: rc.cpp:3
+msgid "Dialog"
+msgstr "Pencere"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:30
+#. i18n: ectx: attribute (title), widget (QWidget, tab_1)
+#: rc.cpp:6
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:36
+#. i18n: ectx: property (text), widget (QCheckBox, _toolBarDrawItemSeparator)
+#: rc.cpp:9
+msgid "Draw toolbar item separators"
+msgstr "Araç çubuğu öge ayraçlarını göster"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:43
+#. i18n: ectx: property (text), widget (QCheckBox, _animationsEnabled)
+#: rc.cpp:12
+msgid "Enable animations"
+msgstr "Canlandırmaları etkinleştir"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:63
+#. i18n: ectx: property (text), widget (QCheckBox, _checkDrawX)
+#: rc.cpp:15
+msgid "Use 'X' in checkboxes instead of check"
+msgstr "İşaretleme kutularında tik yerine 'X' kullan"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:76
+#. i18n: ectx: property (text), widget (QCheckBox, _stackedWidgetTransitionsEnabled)
+#: rc.cpp:18
+msgid "Animate tab transitions"
+msgstr "Sekme geçişlerini canlandır"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:100
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:21
+msgid "Views"
+msgstr "Görünümler"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, _viewDrawTriangularExpander)
+#: rc.cpp:24
+msgid "Use triangle tree expander instead of +/-"
+msgstr "+/- yerine üçgen ağaç açıcı kullan"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox, _viewDrawTreeBranchLines)
+#: rc.cpp:27
+msgid "Draw tree branch lines"
+msgstr "Ağaç demeti çizgilerini çiz"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:120
+#. i18n: ectx: property (text), widget (QCheckBox, _viewDrawFocusIndicator)
+#: rc.cpp:30
+msgid "Draw focus indicator"
+msgstr "Odaklama işaretçisini göster"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:154
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:33
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:160
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:36
+msgid "Tab style:"
+msgstr "Sekme biçimi:"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:174
+#. i18n: ectx: property (text), item, widget (KComboBox, _tabStyle)
+#: rc.cpp:39
+msgid "Single"
+msgstr "Tek"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:179
+#. i18n: ectx: property (text), item, widget (KComboBox, _tabStyle)
+#: rc.cpp:42
+msgid "Plain"
+msgstr "Düz"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:214
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: rc.cpp:45
+msgid "Scrollbars"
+msgstr "Kaydırma çubukları"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:220
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:48
+msgid "Width:"
+msgstr "Genişlik:"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:275
+#. i18n: ectx: property (text), widget (QCheckBox, _scrollBarBevel)
+#: rc.cpp:51
+msgid "Draw scrollbar bevel"
+msgstr "Kaydırma çubuğu eğimini göster"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:282
+#. i18n: ectx: property (text), widget (QCheckBox, _scrollBarColored)
+#: rc.cpp:54
+msgid "Colorful hovered scrollbars"
+msgstr "Üzerine gelindiğinde renklenen kaydırma çubukları"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:303
+#. i18n: ectx: attribute (title), widget (QWidget, tab_5)
+#: rc.cpp:57
+msgid "Menu Highlight"
+msgstr "Menü Vurgulaması"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:309
+#. i18n: ectx: property (text), widget (QRadioButton, _menuHighlightDark)
+#: rc.cpp:60
+msgid "Dark"
+msgstr "Koyu"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:316
+#. i18n: ectx: property (text), widget (QRadioButton, _menuHighlightStrong)
+#: rc.cpp:63
+msgid "Use selection color"
+msgstr "Seçim rengi kullan"
+
+#. i18n: file: oxygen/config/oxygenconf.ui:345
+#. i18n: ectx: property (text), widget (QCheckBox, _menuHighlightSubtle)
+#: rc.cpp:66
+msgid "Subtle"
+msgstr "İnce"
+
+#~ msgid "Animations"
+#~ msgstr "Canlandırmalar"
+
+#~ msgid "Animate toolbar hover"
+#~ msgstr "Araç çubuğunun üzerine gelince canlandır"
+
+#~ msgid "Animate menubar hover"
+#~ msgstr "Menü çubuğunun üzerine gelince canlandır"
+
+#~ msgid "Animate menu hover"
+#~ msgstr "Menünün üzerine gelince canlandır"
+
+#~ msgid "Animate label transitions"
+#~ msgstr "Etiket geçişlerini canlandır"

@@ -1,0 +1,435 @@
+# translation of kwrite.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kwrite\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-19 01:21+0100\n"
+"PO-Revision-Date: 2009-05-03 14:37+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kwriteapp.cpp:133
+#, kde-format
+msgid ""
+"The file '%1' could not be opened: it is not a normal file, it is a folder."
+msgstr "'%1' dosyası açılamadı: bu normal bir dosya değil, bir dizin."
+
+#: kwritemain.cpp:72 kwritemain.cpp:487
+msgid ""
+"A KDE text-editor component could not be found.\n"
+"Please check your KDE installation."
+msgstr ""
+"Bir KDE metin düzenleyici bileşeni bulunamadı.\n"
+"Lütfen KDE kurulumunuzu kontrol edin."
+
+#: kwritemain.cpp:151
+msgid "Use this command to close the current document"
+msgstr "Geçerli belgeyi kapatmak için bu komutu kullanın"
+
+#: kwritemain.cpp:155
+msgid "Use this command to create a new document"
+msgstr "Yeni bir belge oluşturmak için bu komutu kullanın."
+
+#: kwritemain.cpp:157
+msgid "Use this command to open an existing document for editing"
+msgstr "Varolan bir belgeyi düzenlemek amacıyla açmak için bu komutu kullanın"
+
+#: kwritemain.cpp:161
+msgid ""
+"This lists files which you have opened recently, and allows you to easily "
+"open them again."
+msgstr ""
+"Bu en son açtığını dosyaları listeler ve bu dosyalara yeniden kolayca "
+"erişmenizi sağlar."
+
+#: kwritemain.cpp:165
+msgid "&New Window"
+msgstr "&Yeni Pencere"
+
+#: kwritemain.cpp:167
+msgid "Create another view containing the current document"
+msgstr "Şimdiki belgeyi yeni pencerede aç"
+
+#: kwritemain.cpp:170
+msgid "Close the current document view"
+msgstr "Geçerli belgeyi kapat"
+
+#: kwritemain.cpp:177
+msgid "Use this command to show or hide the view's statusbar"
+msgstr "Durum çubuğunu göstermek ya da gizlemek için bu komutu kullanın"
+
+#: kwritemain.cpp:179
+msgid "Sho&w Path"
+msgstr "Yol&u Göster"
+
+#: kwritemain.cpp:182
+msgid "Show the complete document path in the window caption"
+msgstr "Belgenin tam yolunu pencere başlığında göster"
+
+#: kwritemain.cpp:185
+msgid "Configure the application's keyboard shortcut assignments."
+msgstr "Uygulamanın klavye kısayol atamalarını düzenleyin."
+
+#: kwritemain.cpp:189
+msgid "Configure which items should appear in the toolbar(s)."
+msgstr "Araç çubuklarında hangi ögelerin gösterileceğini ayarlayın."
+
+#: kwritemain.cpp:192
+msgid "&About Editor Component"
+msgstr "Düzenleyici Bileşeni H&akkında"
+
+#: kwritemain.cpp:201 kwritemain.cpp:551
+#, kde-format
+msgctxt "@info:status Statusbar label for cursor line and column position"
+msgid " Line: %1 Col: %2 "
+msgstr " Satır: %1 Sütun: %2 "
+
+#: kwritemain.cpp:212
+msgid " INS "
+msgstr "INS"
+
+#: kwritemain.cpp:216 kwritemain.cpp:558
+msgctxt "@info:status Statusbar label for line selection mode"
+msgid " LINE "
+msgstr " LINE "
+
+#: kwritemain.cpp:268
+msgid "Open File"
+msgstr "Dosya aç"
+
+#: kwritemain.cpp:283
+msgid ""
+"The file given could not be read; check whether it exists or is readable for "
+"the current user."
+msgstr ""
+"Verilen dosya okunamadı, dosyanın var olup olmadığını ve kullanıcınız "
+"tarafınızdan okunup okunamayacağını kontrol edin."
+
+#: kwritemain.cpp:557
+msgctxt "@info:status Statusbar label for block selection mode"
+msgid " BLOCK "
+msgstr " BLOCK "
+
+#: kwritemain.cpp:602
+msgid "Untitled"
+msgstr "İsimsiz"
+
+#: kwritemain.cpp:639
+msgid "KWrite"
+msgstr "KWrite"
+
+#: kwritemain.cpp:641
+msgid "KWrite - Text Editor"
+msgstr "KWrite - Metin Düzenleyici"
+
+#: kwritemain.cpp:642
+msgid "(c) 2000-2005 The Kate Authors"
+msgstr "(c) 2000-2005 Kate Geliştiricileri"
+
+#: kwritemain.cpp:643
+msgid "Christoph Cullmann"
+msgstr "Christoph Cullmann"
+
+#: kwritemain.cpp:643
+msgid "Maintainer"
+msgstr "Projeyi Sürdüren"
+
+#: kwritemain.cpp:644
+msgid "Anders Lund"
+msgstr "Anders Lund"
+
+#: kwritemain.cpp:644 kwritemain.cpp:645 kwritemain.cpp:646 kwritemain.cpp:652
+msgid "Core Developer"
+msgstr "Ana Geliştirici"
+
+#: kwritemain.cpp:645
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: kwritemain.cpp:646
+msgid "Hamish Rodda"
+msgstr "Hamish Rodda"
+
+#: kwritemain.cpp:647
+msgid "Dominik Haumann"
+msgstr "Dominik Haumann"
+
+#: kwritemain.cpp:647
+msgid "Developer & Highlight wizard"
+msgstr "Geliştirici & Vurgulama Sihirbazı"
+
+#: kwritemain.cpp:648
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: kwritemain.cpp:648
+msgid "The cool buffersystem"
+msgstr "Harika tamponlama sistemi"
+
+#: kwritemain.cpp:649
+msgid "Charles Samuels"
+msgstr "Charles Samuels"
+
+#: kwritemain.cpp:649
+msgid "The Editing Commands"
+msgstr "Düzenleme Komutları"
+
+#: kwritemain.cpp:650
+msgid "Matt Newell"
+msgstr "Matt Newell"
+
+#: kwritemain.cpp:650
+msgctxt ""
+"Credit text for someone that did testing and some other similar things"
+msgid "Testing, ..."
+msgstr "Testler, ..."
+
+#: kwritemain.cpp:651
+msgid "Michael Bartl"
+msgstr "Michael Bartl"
+
+#: kwritemain.cpp:651
+msgid "Former Core Developer"
+msgstr "Yol Gösterici Geliştirci"
+
+#: kwritemain.cpp:652
+msgid "Michael McCallum"
+msgstr "Michael McCallum"
+
+#: kwritemain.cpp:653
+msgid "Jochen Wilhemly"
+msgstr "Jochen Wilhemly"
+
+#: kwritemain.cpp:653
+msgid "KWrite Author"
+msgstr "KWrite Yazarı"
+
+#: kwritemain.cpp:654
+msgid "Michael Koch"
+msgstr "Michael Koch"
+
+#: kwritemain.cpp:654
+msgid "KWrite port to KParts"
+msgstr "KWrite KParts geçişi"
+
+#: kwritemain.cpp:655
+msgid "Christian Gebauer"
+msgstr "Christian Gebauer"
+
+#: kwritemain.cpp:656
+msgid "Simon Hausmann"
+msgstr "Simon Hausmann"
+
+#: kwritemain.cpp:657
+msgid "Glen Parker"
+msgstr "Glen Parker"
+
+#: kwritemain.cpp:657
+msgid "KWrite Undo History, Kspell integration"
+msgstr "KWrite Geri Geçmişi, Kspell bütünleşmesi"
+
+#: kwritemain.cpp:658
+msgid "Scott Manson"
+msgstr "Scott Manson"
+
+#: kwritemain.cpp:658
+msgid "KWrite XML Syntax highlighting support"
+msgstr "KWrite XML Söz Dizimi Vurgulama desteği"
+
+#: kwritemain.cpp:659
+msgid "John Firebaugh"
+msgstr "John Firebaugh"
+
+#: kwritemain.cpp:659
+msgid "Patches and more"
+msgstr "Yamalar ve daha fazlası"
+
+#: kwritemain.cpp:661
+msgid "Matteo Merli"
+msgstr "Matteo Merli"
+
+#: kwritemain.cpp:661
+msgid "Highlighting for RPM Spec-Files, Perl, Diff and more"
+msgstr "RPM Spec-Dosyaları Perl, Diff ve daha fazlası için vurgulama"
+
+#: kwritemain.cpp:662
+msgid "Rocky Scaletta"
+msgstr "Rocky Scaletta"
+
+#: kwritemain.cpp:662
+msgid "Highlighting for VHDL"
+msgstr "VHDL için vurgulama"
+
+#: kwritemain.cpp:663
+msgid "Yury Lebedev"
+msgstr "Yury Lebedev"
+
+#: kwritemain.cpp:663
+msgid "Highlighting for SQL"
+msgstr "SQL için vurgulama"
+
+#: kwritemain.cpp:664
+msgid "Chris Ross"
+msgstr "Chris Ross"
+
+#: kwritemain.cpp:664
+msgid "Highlighting for Ferite"
+msgstr "Ferite için vurgulama"
+
+#: kwritemain.cpp:665
+msgid "Nick Roux"
+msgstr "Nick Roux"
+
+#: kwritemain.cpp:665
+msgid "Highlighting for ILERPG"
+msgstr "ILERPG için vurgulama"
+
+#: kwritemain.cpp:666
+msgid "Carsten Niehaus"
+msgstr "Carsten Niehaus"
+
+#: kwritemain.cpp:666
+msgid "Highlighting for LaTeX"
+msgstr "LaTeX için vurgulama"
+
+#: kwritemain.cpp:667
+msgid "Per Wigren"
+msgstr "Per Wigren"
+
+#: kwritemain.cpp:667
+msgid "Highlighting for Makefiles, Python"
+msgstr "Makefile dosyaları ve Python için vurgulama"
+
+#: kwritemain.cpp:668
+msgid "Jan Fritz"
+msgstr "Jan Fritz"
+
+#: kwritemain.cpp:668
+msgid "Highlighting for Python"
+msgstr "Python için vurgulama"
+
+#: kwritemain.cpp:669
+msgid "Daniel Naber"
+msgstr "Daniel Naber"
+
+#: kwritemain.cpp:670
+msgid "Roland Pabel"
+msgstr "Roland Pabel"
+
+#: kwritemain.cpp:670
+msgid "Highlighting for Scheme"
+msgstr "Scheme için vurgulama"
+
+#: kwritemain.cpp:671
+msgid "Cristi Dumitrescu"
+msgstr "Cristi Dumitrescu"
+
+#: kwritemain.cpp:671
+msgid "PHP Keyword/Datatype list"
+msgstr "PHP Anahtar sözcük/Veri tipi listesi"
+
+#: kwritemain.cpp:672
+msgid "Carsten Pfeiffer"
+msgstr "Carsten Pfeiffer"
+
+#: kwritemain.cpp:672
+msgctxt "Credit text for someone that helped a lot"
+msgid "Very nice help"
+msgstr "Çok iyi yardımlar"
+
+#: kwritemain.cpp:673
+msgid "All people who have contributed and I have forgotten to mention"
+msgstr "Katılan tüm insanlar ve burada bahsetmeyi unuttuğum herkes"
+
+#: kwritemain.cpp:680
+msgid "Read the contents of stdin"
+msgstr "stdin içeriğini oku"
+
+#: kwritemain.cpp:681
+msgid "Set encoding for the file to open"
+msgstr "Açılacak dosya için kodlamayı ayarla"
+
+#: kwritemain.cpp:682
+msgid "Navigate to this line"
+msgstr "Bu satıra geç"
+
+#: kwritemain.cpp:683
+msgid "Navigate to this column"
+msgstr "Bu sütuna geç"
+
+#: kwritemain.cpp:684
+msgid "Document to open"
+msgstr "Açılacak belge"
+
+#: kwritemain.cpp:698
+msgid "Choose Editor Component"
+msgstr "Düzenleyici Bileşenini Seç"
+
+#. i18n: file: kwriteui.rc:5
+#. i18n: ectx: Menu (file)
+#: rc.cpp:3
+msgid "&File"
+msgstr "&Dosya"
+
+#. i18n: file: kwriteui.rc:27
+#. i18n: ectx: Menu (edit)
+#: rc.cpp:6
+msgid "&Edit"
+msgstr "Düz&en"
+
+#. i18n: file: kwriteui.rc:39
+#. i18n: ectx: Menu (view)
+#: rc.cpp:9
+msgid "&View"
+msgstr "&Görünüm"
+
+#. i18n: file: kwriteui.rc:45
+#. i18n: ectx: Menu (tools)
+#: rc.cpp:12
+msgid "&Tools"
+msgstr "A&raçlar"
+
+#. i18n: file: kwriteui.rc:51
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:15
+msgid "&Settings"
+msgstr "&Ayarlar"
+
+#. i18n: file: kwriteui.rc:62
+#. i18n: ectx: Menu (help)
+#: rc.cpp:18
+msgid "&Help"
+msgstr "&Yardım"
+
+#. i18n: file: kwriteui.rc:67
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:21
+msgid "Main Toolbar"
+msgstr "Ana Araç Çubuğu"
+
+#: rc.cpp:22
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:23
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#~ msgid "Choose Editor..."
+#~ msgstr "Düzenleyiciyi Seç..."
+
+#~ msgid "Override the system wide setting for the default editing component"
+#~ msgstr ""
+#~ "Öntanımlı düzenleyici bileşeni ayarlarının üzerine sistem genelinde "
+#~ "kullanılacak şekilde yaz"

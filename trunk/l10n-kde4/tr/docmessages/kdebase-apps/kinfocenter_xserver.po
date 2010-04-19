@@ -1,0 +1,120 @@
+# translation of kinfocenter_xserver.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter_xserver\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:20+0000\n"
+"PO-Revision-Date: 2004-01-12 21:07+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9 index.docbook:31
+#, no-c-format
+msgid "X Server Information"
+msgstr "X Sunucu Bilgisi"
+
+#. Tag: author
+#: index.docbook:13
+#, no-c-format
+msgid "&Mike.McBride;"
+msgstr "&Mike.McBride;"
+
+#. Tag: trans_comment
+#: index.docbook:15
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+"<othercredit role=\"translator\"><firstname></firstname><surname></"
+"surname><affiliation><address><email>engincagatay@yahoo.com</email></"
+"address></affiliation><contrib></contrib></othercredit>"
+
+#. Tag: keyword
+#: index.docbook:23
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:24
+#, no-c-format
+msgid "KControl"
+msgstr "KControl"
+
+#. Tag: keyword
+#: index.docbook:25
+#, no-c-format
+msgid "X server"
+msgstr "X sunucu"
+
+#. Tag: keyword
+#: index.docbook:26
+#, no-c-format
+msgid "system information"
+msgstr "sistem bilgisi"
+
+#. Tag: para
+#: index.docbook:33
+#, no-c-format
+msgid ""
+"This screen is useful for getting specific information about your X server "
+"and the current session of X."
+msgstr ""
+"Bu ekran, X sunucunuz ve X oturumunuz hakkında özel bilgiler almak için "
+"oldukça kullanışlıdır."
+
+#. Tag: para
+#: index.docbook:36
+#, no-c-format
+msgid ""
+"When you open this module, you are presented with some information. The left "
+"hand side of the window is organized into a tree. Some of the elements have "
+"a plus sign in front of the label. Clicking this sign opens a "
+"<quote>submenu</quote> related to the label. Clicking on a minus sign in "
+"front of a label hides the submenu."
+msgstr ""
+"Bu modülü çalıştırdığınızda, bazı bilgiler ile karşılaşırsınız. Pencerenin "
+"sol tarafı ağaç görünümü olarak tasarlanmıştır. Bazı elemanlar etiketlerinin "
+"önünde artı (+) işareti bulunturmaktadır. Bu artı işaretine tıklatmak o "
+"etikete bağlı bir <quote>altmenü</quote> açar. bir etiketin sol tarafındaki "
+"eksi (-) işaretine basmak ise altmenüyü gizler."
+
+#. Tag: para
+#: index.docbook:43
+#, no-c-format
+msgid ""
+"The right hand side of the window contains the individual values for each of "
+"the parameters on the left."
+msgstr ""
+"Pencerenin sol tarafında, sağ taraftaki her parametrenin özel değerleri "
+"gösterilmektedir."
+
+#. Tag: para
+#: index.docbook:46
+#, no-c-format
+msgid "The information presented will vary depending on your setup."
+msgstr "Burada gösterilen bilgiler ayarlarınıza göre değişiklik gösterir."
+
+#. Tag: para
+#: index.docbook:49
+#, no-c-format
+msgid "Some setups may not be able to determine some or all of the parameters."
+msgstr ""
+"Bazı kurulum uygulamaları bazı ya da tüm parametreleri saptamakta başarılı "
+"olamayabilir."
+
+#. Tag: para
+#: index.docbook:52
+#, no-c-format
+msgid ""
+"You can not change any values from this menu. It is for information only."
+msgstr ""
+"Bu menüdeki hiçbir değeri değiştiremezsiniz, sadece bilgi amaçlıdırlar."

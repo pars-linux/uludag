@@ -1,0 +1,443 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: solid_qt\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-26 20:27+0100\n"
+"PO-Revision-Date: 2009-09-10 13:32+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: backends/hal/haldevice.cpp:71
+#, qt-format
+msgid "%1 TiB"
+msgstr "%1 TB"
+
+#: backends/hal/haldevice.cpp:73
+#, qt-format
+msgid "%1 GiB"
+msgstr "%1 GB"
+
+#: backends/hal/haldevice.cpp:79
+#, qt-format
+msgid "%1 MiB"
+msgstr "%1 MB"
+
+#: backends/hal/haldevice.cpp:85
+#, qt-format
+msgid "%1 KiB"
+msgstr "%1 KB"
+
+#: backends/hal/haldevice.cpp:90
+#, qt-format
+msgid "%1 B"
+msgstr "%1 B"
+
+#: backends/hal/haldevice.cpp:95
+msgid "0 B"
+msgstr "0 B"
+
+#: backends/hal/haldevice.cpp:350
+msgid "WLAN Interface"
+msgstr "Kablosuz Ağ Arayüzü"
+
+#: backends/hal/haldevice.cpp:352
+msgid "Networking Interface"
+msgstr "Ağ Arayüzü"
+
+#: backends/hal/haldevice.cpp:564
+msgctxt "First item of %1%2 Drive sentence"
+msgid "CD-ROM"
+msgstr "CD-ROM"
+
+#: backends/hal/haldevice.cpp:566
+msgctxt "First item of %1%2 Drive sentence"
+msgid "CD-R"
+msgstr "CD-R"
+
+#: backends/hal/haldevice.cpp:568
+msgctxt "First item of %1%2 Drive sentence"
+msgid "CD-RW"
+msgstr "CD-RW"
+
+#: backends/hal/haldevice.cpp:571
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD-ROM"
+msgstr "/DVD-ROM"
+
+#: backends/hal/haldevice.cpp:573
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD+R"
+msgstr "/DVD+R"
+
+#: backends/hal/haldevice.cpp:575
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD+RW"
+msgstr "/DVD+RW"
+
+#: backends/hal/haldevice.cpp:577
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD-R"
+msgstr "/DVD-R"
+
+#: backends/hal/haldevice.cpp:579
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD-RW"
+msgstr "/DVD-RW"
+
+#: backends/hal/haldevice.cpp:581
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD-RAM"
+msgstr "/DVD-RAM"
+
+#: backends/hal/haldevice.cpp:584
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD±R DL"
+msgstr "/DVD±R DL"
+
+#: backends/hal/haldevice.cpp:586
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD±R"
+msgstr "/DVD±R"
+
+#: backends/hal/haldevice.cpp:590
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD±RW DL"
+msgstr "/DVD±RW DL"
+
+#: backends/hal/haldevice.cpp:592
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/DVD±RW"
+msgstr "/DVD±RW"
+
+#: backends/hal/haldevice.cpp:595
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/BD-ROM"
+msgstr "/BD-ROM"
+
+#: backends/hal/haldevice.cpp:597
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/BD-R"
+msgstr "/BD-R"
+
+#: backends/hal/haldevice.cpp:599
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/BD-RE"
+msgstr "/BD-RE"
+
+#: backends/hal/haldevice.cpp:601
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/HD DVD-ROM"
+msgstr "/HD DVD-ROM"
+
+#: backends/hal/haldevice.cpp:603
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/HD DVD-R"
+msgstr "/HD DVD-R"
+
+#: backends/hal/haldevice.cpp:605
+msgctxt "Second item of %1%2 Drive sentence"
+msgid "/HD DVD-RW"
+msgstr "/HD DVD-RW"
+
+#: backends/hal/haldevice.cpp:608
+#, qt-format
+msgid "External %1%2 Drive"
+msgstr "Harici %1%2 Sürücü"
+
+#: backends/hal/haldevice.cpp:610
+#, qt-format
+msgid "%1%2 Drive"
+msgstr "%1%2 Sürücü"
+
+#: backends/hal/haldevice.cpp:618
+msgid "External Floppy Drive"
+msgstr "Harici Disket Sürücü"
+
+#: backends/hal/haldevice.cpp:620
+msgid "Floppy Drive"
+msgstr "Disket Sürücü"
+
+#: backends/hal/haldevice.cpp:631 backends/hal/haldevice.cpp:817
+#, qt-format
+msgctxt "%1 is the size"
+msgid "%1 External Hard Drive"
+msgstr "%1 Harici Disk Sürücü"
+
+#: backends/hal/haldevice.cpp:633 backends/hal/haldevice.cpp:819
+#, qt-format
+msgctxt "%1 is the size"
+msgid "%1 Hard Drive"
+msgstr "%1 Disk Sürücü"
+
+#: backends/hal/haldevice.cpp:637 backends/hal/haldevice.cpp:823
+msgid "External Hard Drive"
+msgstr "Harici Disk Sürücü"
+
+#: backends/hal/haldevice.cpp:639 backends/hal/haldevice.cpp:825
+msgid "Hard Drive"
+msgstr "Disk Sürücü"
+
+#: backends/hal/haldevice.cpp:656
+#, qt-format
+msgctxt "%1 is the vendor, %2 is the model of the device"
+msgid "%1 %2"
+msgstr "%1 %2"
+
+#: backends/hal/haldevice.cpp:660
+msgid "Drive"
+msgstr "Sürücü"
+
+#: backends/hal/haldevice.cpp:688
+msgid "CD-ROM"
+msgstr "CD-ROM"
+
+#: backends/hal/haldevice.cpp:693
+msgid "Blank CD-R"
+msgstr "Boş CD-R"
+
+#: backends/hal/haldevice.cpp:695
+msgid "CD-R"
+msgstr "CD-R"
+
+#: backends/hal/haldevice.cpp:700
+msgid "Blank CD-RW"
+msgstr "Boş CD-RW"
+
+#: backends/hal/haldevice.cpp:702
+msgid "CD-RW"
+msgstr "CD-RW"
+
+#: backends/hal/haldevice.cpp:706
+msgid "DVD-ROM"
+msgstr "DVD-ROM"
+
+#: backends/hal/haldevice.cpp:711
+msgid "Blank DVD-RAM"
+msgstr "Boş DVD-RAM"
+
+#: backends/hal/haldevice.cpp:713
+msgid "DVD-RAM"
+msgstr "DVD-RAM"
+
+#: backends/hal/haldevice.cpp:718
+msgid "Blank DVD-R"
+msgstr "Boş DVD-R"
+
+#: backends/hal/haldevice.cpp:720
+msgid "DVD-R"
+msgstr "DVD-R"
+
+#: backends/hal/haldevice.cpp:725
+msgid "Blank DVD-R Dual-Layer"
+msgstr "Boş DVD-R Çift-Katmanlı"
+
+#: backends/hal/haldevice.cpp:727
+msgid "DVD-R Dual-Layer"
+msgstr "DVD-R Çift-Katmanlı"
+
+#: backends/hal/haldevice.cpp:732
+msgid "Blank DVD-RW"
+msgstr "Boş DVD-RW"
+
+#: backends/hal/haldevice.cpp:734
+msgid "DVD-RW"
+msgstr "DVD-RW"
+
+#: backends/hal/haldevice.cpp:739
+msgid "Blank DVD+R"
+msgstr "Boş DVD+R"
+
+#: backends/hal/haldevice.cpp:741
+msgid "DVD+R"
+msgstr "DVD+R"
+
+#: backends/hal/haldevice.cpp:746
+msgid "Blank DVD+RW"
+msgstr "Boş DVD+RW"
+
+#: backends/hal/haldevice.cpp:748
+msgid "DVD+RW"
+msgstr "DVD+RW"
+
+#: backends/hal/haldevice.cpp:753
+msgid "Blank DVD+R Dual-Layer"
+msgstr "Boş DVD+R Çift-Katmanlı"
+
+#: backends/hal/haldevice.cpp:755
+msgid "DVD+R Dual-Layer"
+msgstr "DVD+R Çift-Katmanlı"
+
+#: backends/hal/haldevice.cpp:759
+msgid "BD-ROM"
+msgstr "BD-ROM"
+
+#: backends/hal/haldevice.cpp:764
+msgid "Blank BD-R"
+msgstr "Boş BD-R"
+
+#: backends/hal/haldevice.cpp:766
+msgid "BD-R"
+msgstr "BD-R"
+
+#: backends/hal/haldevice.cpp:771
+msgid "Blank BD-RE"
+msgstr "Boş BD-RE"
+
+#: backends/hal/haldevice.cpp:773
+msgid "BD-RE"
+msgstr "BD-RE"
+
+#: backends/hal/haldevice.cpp:777
+msgid "HD DVD-ROM"
+msgstr "HD DVD-ROM"
+
+#: backends/hal/haldevice.cpp:782
+msgid "Blank HD DVD-R"
+msgstr "Boş HD DVD-R"
+
+#: backends/hal/haldevice.cpp:784
+msgid "HD DVD-R"
+msgstr "HD DVD-R"
+
+#: backends/hal/haldevice.cpp:789
+msgid "Blank HD DVD-RW"
+msgstr "Boş HD DVD-RW"
+
+#: backends/hal/haldevice.cpp:791
+msgid "HD DVD-RW"
+msgstr "HD DVD-RW"
+
+#: backends/hal/haldevice.cpp:797
+msgid "Audio CD"
+msgstr "Ses CDsi"
+
+#: backends/hal/haldevice.cpp:810
+#, qt-format
+msgctxt "%1 is the size"
+msgid "%1 Encrypted Container"
+msgstr ""
+
+#: backends/hal/haldevice.cpp:812
+msgid "Encrypted Container"
+msgstr ""
+
+#: backends/hal/haldevice.cpp:829
+#, qt-format
+msgctxt "%1 is the size"
+msgid "%1 Removable Media"
+msgstr "%1 Çıkarılabilir Ortamı"
+
+#: backends/hal/haldevice.cpp:831
+#, qt-format
+msgctxt "%1 is the size"
+msgid "%1 Media"
+msgstr "%1 Ortamı"
+
+#: deviceinterface.cpp:68
+msgctxt "Unknown device type"
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: deviceinterface.cpp:70
+msgctxt "Generic Interface device type"
+msgid "Generic Interface"
+msgstr "Genel Arayüz"
+
+#: deviceinterface.cpp:72
+msgctxt "Processor device type"
+msgid "Processor"
+msgstr "İşlemci"
+
+#: deviceinterface.cpp:74
+msgctxt "Block device type"
+msgid "Block"
+msgstr "Blok"
+
+#: deviceinterface.cpp:76
+msgctxt "Storage Access device type"
+msgid "Storage Access"
+msgstr "Depolama Erişimi"
+
+#: deviceinterface.cpp:78
+msgctxt "Storage Drive device type"
+msgid "Storage Drive"
+msgstr "Depolama Sürücüsü"
+
+#: deviceinterface.cpp:80
+msgctxt "Optical Drive device type"
+msgid "Optical Drive"
+msgstr "Optik Sürücü"
+
+#: deviceinterface.cpp:82
+msgctxt "Storage Volume device type"
+msgid "Storage Volume"
+msgstr "Depolama Bölümü"
+
+#: deviceinterface.cpp:84
+msgctxt "Optical Disc device type"
+msgid "Optical Disc"
+msgstr "Optik Disk"
+
+#: deviceinterface.cpp:86
+msgctxt "Camera device type"
+msgid "Camera"
+msgstr "Kamera"
+
+#: deviceinterface.cpp:88
+msgctxt "Portable Media Player device type"
+msgid "Portable Media Player"
+msgstr "Taşınabilir Çoklu Ortam Yürütücüsü"
+
+#: deviceinterface.cpp:90
+msgctxt "Network Interface device type"
+msgid "Network Interface"
+msgstr "Ağ Arayüzü"
+
+#: deviceinterface.cpp:92
+msgctxt "Ac Adapter device type"
+msgid "Ac Adapter"
+msgstr "AC Adaptör"
+
+#: deviceinterface.cpp:94
+msgctxt "Battery device type"
+msgid "Battery"
+msgstr "Pil"
+
+#: deviceinterface.cpp:96
+msgctxt "Button device type"
+msgid "Button"
+msgstr "Düğme"
+
+#: deviceinterface.cpp:98
+msgctxt "Audio Interface device type"
+msgid "Audio Interface"
+msgstr "Ses Arayüzü"
+
+#: deviceinterface.cpp:100
+msgctxt "Dvb Interface device type"
+msgid "Dvb Interface"
+msgstr "Dvb Arayüzü"
+
+#: deviceinterface.cpp:102
+msgctxt "Video device type"
+msgid "Video"
+msgstr "Video"
+
+#: deviceinterface.cpp:104
+msgctxt "Serial Interface device type"
+msgid "Serial Interface"
+msgstr "Seri Port Arayüzü"
+
+#: deviceinterface.cpp:106
+msgctxt "Smart Card Reader device type"
+msgid "Smart Card Reader"
+msgstr "Akıllı Kart Okuyucu"

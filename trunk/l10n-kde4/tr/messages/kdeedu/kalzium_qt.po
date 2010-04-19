@@ -1,0 +1,3338 @@
+# translation of kalzium.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Halil Erensu <halil@superonline.com>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005, 2007.
+# Ayşe Genç <ayse@uludag.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kalzium\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"PO-Revision-Date: 2009-08-10 11:56+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:79
+msgid ""
+"Bond Centric Manipulation Tool\n"
+"\n"
+"Left Mouse:   Click and drag to rotate the view\n"
+"Middle Mouse: Click and drag to zoom in or out\n"
+"Right Mouse:  Click and drag to move the view\n"
+"\n"
+"Left Click & drag on a Bond to set the Manipulation Plane:\n"
+"- Left Click & Drag one of the Atoms in the Bond to change the angle\n"
+"- Right Click & Drag one of the Atoms in the Bond to change the length"
+msgstr ""
+"Bağ Merkezinde Değiştirme Aracı\n"
+"\n"
+"Sol Fare Tuşu:   Görünümü çevirmek için basıp sürükleyin\n"
+"Orta Fare Tuşu: Basıp sürükleyerek yakınlaştırın veya uzaklaştırın\n"
+"Sağ Fare Tuşu:  Görünümü taşımak için basıp sürükleyin\n"
+"\n"
+"Bir bağ üzerinde Sol Tıklama & sürükleme ile Değiştirme Düzlemi oluşturun:\n"
+"- Bağdaki atomlardan birine Sol Tıklama & Sürükleme ile açıyı değiştirin\n"
+"- Bağdaki atomlardan birine Sağ Tıklama & Sürükleme ile uçunluğu değiştirin"
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:791
+msgid "Bond Length: "
+msgstr "Bağ Uzunluğu: "
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:1595
+msgid " Show Angles"
+msgstr " Açıları Göster"
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:1598
+msgid " Snap-to Bonds"
+msgstr "Bağları kopar"
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:1601
+msgid "Snap-to Threshold: "
+msgstr "Koparma Eşiği:"
+
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:1655
+#: libavogadro-kalzium/src/tools/bondcentrictool.cpp:1670
+msgid "Bond Centric Manipulation"
+msgstr "Bağ Merkezli Değiştirme"
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:151
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:159
+msgid "Avogadro"
+msgstr "Avogadro"
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:152
+#, qt-format
+msgid "Cannot read file format of file %1."
+msgstr "%1 dosyasının dosya biçimi okunamadı."
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:160
+#, qt-format
+msgid "Cannot read file %1."
+msgstr "%1 dosyası okunamadı."
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:211
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:220
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:240
+msgid "Stop Inserting"
+msgstr "Eklemeyi Durdur"
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:219
+msgid "Click to insert the fragment at that position."
+msgstr "Bu konumda parça eklemek için tıklayın"
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:224
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:980
+msgid "Insert Fragment"
+msgstr "Parça Ekle"
+
+#: libavogadro-kalzium/src/tools/insertfragmentdialog.cpp:247
+msgid "Open Directory"
+msgstr "Dizin Aç"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:57
+msgid ""
+"Auto Optimization Tool\n"
+"\n"
+"Navigation Functions when Clicking in empty space.\n"
+"Left Mouse: Rotate Space\n"
+"Middle Mouse: Zoom Space\n"
+"Right Mouse: Move Space\n"
+"\n"
+"Extra Function when running\n"
+"Left Mouse: Click and drag atoms to move them"
+msgstr ""
+"Otomatik Eniyileştirme Aracı\n"
+"\n"
+"Boş bir alanda tıklama ile seyir işlevi başlar.\n"
+"Sol Fare Tuşu: Boşluğu döndürür\n"
+"Orta Fare Tuşu: Boşluğu yakınlaştırır\n"
+"Sağ Fare Tuşu: Boşluğu taşır\n"
+"\n"
+"Çalışırken ilave işlev\n"
+"Sol Fare Tuşu: Atomlara basıp sürükleyerek taşıyın"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:219
+msgid "AutoOpt: Could not setup force field...."
+msgstr "OtoEniyi: Güç alanı kurulamadı..."
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:223
+#, qt-format
+msgid "AutoOpt: E = %1 %2 (dE = %3)"
+msgstr "OtoEniyi: E = %1 %2 (dE = %3)"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:252
+msgid "Force Field:"
+msgstr "Güç Alanı:"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:267
+msgid "Steps per Update:"
+msgstr "Güncelleme başına adım:"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:278
+msgid "Algorithm:"
+msgstr "Algoritma:"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:281
+msgid "Steepest Descent"
+msgstr "En dik iniş"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:282
+msgid "Conjugate Gradients"
+msgstr "Gradyanları birleştir"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:283
+msgid "Molecular Dynamics (300K)"
+msgstr "Moleküler Dinamik (300K)"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:284
+msgid "Molecular Dynamics (600K)"
+msgstr "Moleküler Dinamik (600K)"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:285
+msgid "Molecular Dynamics (900K)"
+msgstr "Moleküler Dinamik (900K)"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:287
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:380
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:230
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:291
+msgid "Start"
+msgstr "Başlat"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:289
+msgid "Fixed atoms are movable"
+msgstr "Sabit atomlar taşınabilir"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:290
+msgid "Ignored atoms are movable"
+msgstr "Yoksayılan atomlar taşınabilir"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:347
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:220
+msgid "Stop"
+msgstr "Durdur"
+
+#: libavogadro-kalzium/src/tools/autoopttool.cpp:542
+msgid "AutoOpt Molecule"
+msgstr "Moleküle OtoEniyi uygula"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:85
+msgid ""
+"Draw Tool (F8)\n"
+"\n"
+"Left Mouse: \tClick and Drag to create Atoms and Bonds\n"
+"Right Mouse: Delete Atom"
+msgstr ""
+"Çizim Kipi (F8)\n"
+"\n"
+"Sol Fare Tuşu: \tAtomlar ve Bağları oluşturmak için basıp sürükleyin\n"
+"Sağ Fare Tuşu: Atomu silin"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:415
+#: libavogadro-kalzium/src/tools/drawtool.cpp:421
+msgid "Draw Atom"
+msgstr "Atomu Çiz"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:441
+msgid "Draw Bond"
+msgstr "Bağ Çiz"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:450
+msgid "Draw"
+msgstr "Çiz"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:486
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:885
+msgid "Change Bond Order"
+msgstr "Bağ Mertebesini Değiştir"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:691
+msgid "Element:"
+msgstr "Element:"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:718
+msgid "Other..."
+msgstr "Diğer..."
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:722
+msgid "Bond Order:"
+msgstr "Bağ Mertebesi:"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:727
+msgid "Single"
+msgstr "Tek"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:728
+msgid "Double"
+msgstr "Çift"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:729
+msgid "Triple"
+msgstr "Üçlü"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:744
+msgid "Adjust Hydrogens"
+msgstr "Hidrojenleri Ayarla"
+
+#: libavogadro-kalzium/src/tools/drawtool.cpp:749
+msgid "Fragment Library..."
+msgstr "Parça Kitaplığı..."
+
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:274
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:288
+msgid "Add Atom"
+msgstr "Atom Ekle"
+
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:381
+msgid "Delete Atom"
+msgstr "Atomu Sil"
+
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:523
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:542
+msgid "Add Bond"
+msgstr "Bağ Ekle"
+
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:714
+msgid "Delete Bond"
+msgstr "Bağ Sil"
+
+#: libavogadro-kalzium/src/tools/drawcommand.cpp:782
+msgid "Change Element"
+msgstr "Elementi Değiştir"
+
+#: libavogadro-kalzium/src/tools/selectrotatetool.cpp:57
+msgid ""
+"Selection Tool (F11)\n"
+"Click to pick individual atoms, residues, or fragments\n"
+"Drag to select a range of atoms\n"
+"Use Ctrl to toggle the selection and shift to add to the selection"
+msgstr ""
+"Seçim Aracı (F11)\n"
+"Tekil atomları, artıkları veya kısımları seçmek için tıklayın\n"
+"Bir atom aralığı seçmek için sürükleyin\n"
+"Ctrl ile seçimi evirin, shift ile seçime ilave yapın"
+
+#: libavogadro-kalzium/src/tools/selectrotatetool.cpp:410
+msgid "Selection Mode:"
+msgstr "Seçim Kipi:"
+
+#: libavogadro-kalzium/src/tools/selectrotatetool.cpp:415
+msgid "Atom/Bond"
+msgstr "Atom/Bağ"
+
+#: libavogadro-kalzium/src/tools/selectrotatetool.cpp:416
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:295
+msgid "Residue"
+msgstr "Artık"
+
+#: libavogadro-kalzium/src/tools/selectrotatetool.cpp:417
+#: libavogadro-kalzium/src/tools/aligntool.cpp:270
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:261
+msgid "Molecule"
+msgstr "Molekül"
+
+#: libavogadro-kalzium/src/tools/zmatrixtool.cpp:81
+msgid "Z Matrix Editor..."
+msgstr "Z Matrix Düzenleyici..."
+
+#: libavogadro-kalzium/src/tools/manipulatetool.cpp:51
+msgid ""
+"Manipulation Tool (F10)\n"
+"\n"
+"Left Mouse:   Click and drag to move atoms\n"
+"Middle Mouse: Click and drag to move atoms further away or closer\n"
+"Right Mouse:  Click and drag to rotate selected atoms."
+msgstr ""
+"Değiştirme Aracı (F10)\n"
+"\n"
+"Sol Fare Tuşu:   Atomları taşımak için basıp sürükleyin\n"
+"Orta Fare Tuşu: Atomları uzaklaştırmak veya yakınlaştırmak için basıp "
+"sürükleyin\n"
+"Sağ Fare Tuşu:  Seçilmiş atomları döndürmek için basıp sürükleyin."
+
+#: libavogadro-kalzium/src/tools/manipulatetool.cpp:362
+#: libavogadro-kalzium/src/tools/manipulatetool.cpp:371
+msgid "Manipulate Atom"
+msgstr "Atomu Değiştir"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:55
+msgid ""
+"Click to Measure (F12)\n"
+"\n"
+"Left Mouse: \tSelect up to three Atoms.\n"
+"\tDistances are measured between 1-2 and 2-3\n"
+"\tAngle is measured between 1-3 using 2 as the common point\n"
+"Right Mouse: Reset the measurements."
+msgstr ""
+"Tıklayarak Ölçün (F12)\n"
+" \n"
+" Sol Fare Tuşu: \tÜç atoma kadar seçin\n"
+" \t1-2 ve 2-3 arası uzaklıklar ölçülür\n"
+" \tAçı 1-3 arasında, ortak nokta olarak 2 alınarak ölçülür\n"
+" Sağ Fare Tuşu: Ölçümleri sıfırlar."
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:146
+#, qt-format
+msgid "Distance (1->2): %1 %2"
+msgstr "Mesafe (1->2): %1 %2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:164
+#, qt-format
+msgid "Distance (2->3): %1 %2"
+msgstr "Mesafe (2->3): %1 %2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:173
+#, qt-format
+msgid "Angle: %1 %2"
+msgstr "Açı: %1 %2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:195
+#, qt-format
+msgid "Distance (3->4): %1 %2"
+msgstr "Mesafe (3->4): %1 %2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:211
+#, qt-format
+msgid "Dihedral Angle: %1 %2"
+msgstr "İki Düzlemli Açı: %1 %2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:254
+msgctxt "*1 is a number. You most likely do not need to translate this"
+msgid "*1"
+msgstr "*1"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:262
+msgctxt "*2 is a number. You most likely do not need to translate this"
+msgid "*2"
+msgstr "*2"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:271
+msgctxt "*3 is a number. You most likely do not need to translate this"
+msgid "*3"
+msgstr "*3"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:280
+msgctxt "*4 is a number. You most likely do not need to translate this"
+msgid "*4"
+msgstr "*4"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:284
+msgid "Distance(s):"
+msgstr "Mesafe(ler):"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:292
+msgid "Angle:"
+msgstr "Açı:"
+
+#: libavogadro-kalzium/src/tools/clickmeasuretool.cpp:304
+msgid "Dihedral:"
+msgstr "İki Düzlemli:"
+
+#: libavogadro-kalzium/src/tools/zmatrixmodel.cpp:78
+msgid "Symbol"
+msgstr "Semboller"
+
+#: libavogadro-kalzium/src/tools/zmatrixmodel.cpp:86
+msgid "Bond Length"
+msgstr "Bağ Uzunluğu"
+
+#: libavogadro-kalzium/src/tools/zmatrixmodel.cpp:89
+msgid "Bond Angle"
+msgstr "Bağ Açısı"
+
+#: libavogadro-kalzium/src/tools/zmatrixmodel.cpp:92
+msgid "Dihedral Angle"
+msgstr "İki Düzlemli Açı"
+
+#: libavogadro-kalzium/src/tools/zmatrixmodel.cpp:95
+#: libavogadro-kalzium/src/elementtranslate.cpp:397
+msgid "Unknown"
+msgstr "Bilinmeyen"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:52
+msgid "Auto Rotation Tool"
+msgstr "Otomatik Döndürme Aracı"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:245
+msgid "x rotation:"
+msgstr "x döndürmesi:"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:251
+msgid "x rotation"
+msgstr "x döndürmesi"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:261
+msgid "y rotation:"
+msgstr "y döndürmesi:"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:266
+msgid "y rotation"
+msgstr "y döndürmesi"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:276
+msgid "z rotation:"
+msgstr "z döndürmesi:"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:281
+msgid "z rotation"
+msgstr "z döndürmesi"
+
+#: libavogadro-kalzium/src/tools/autorotatetool.cpp:292
+msgid "Reset"
+msgstr "Sıfırla"
+
+#: libavogadro-kalzium/src/tools/aligntool.cpp:61
+msgid ""
+"Align Molecules\n"
+"\n"
+"Left Mouse: \tSelect up to two atoms.\n"
+"\tThe first atom is centered at the origin.\n"
+"\tThe second atom is aligned to the selected axis.\n"
+"Right Mouse: \tReset alignment."
+msgstr ""
+"Molekülleri Hizala\n"
+"\n"
+"Sol Fare Tuşu: \tİki atoma kadar seçer.\n"
+"\tİlk atom merkeze ortalanır.\n"
+"\tİkinci atom seçilen eksene hizalanır.\n"
+"Sağ Fare Tuşu: \tHizalamayı sıfırlar."
+
+#: libavogadro-kalzium/src/tools/aligntool.cpp:253
+msgid "Axis:"
+msgstr "Eksen:"
+
+#: libavogadro-kalzium/src/tools/aligntool.cpp:264
+msgid "Align:"
+msgstr "Hizala:"
+
+#: libavogadro-kalzium/src/tools/aligntool.cpp:269
+msgid "Everything"
+msgstr "Herşey"
+
+#: libavogadro-kalzium/src/tools/aligntool.cpp:274
+msgid "Align"
+msgstr "Hizala"
+
+#: libavogadro-kalzium/src/tools/navigatetool.cpp:50
+msgid ""
+"Navigation Tool (F9)\n"
+"\n"
+"Left Mouse:   Click and drag to rotate the view\n"
+"Middle Mouse: Click and drag to zoom in or out\n"
+"Right Mouse:  Click and drag to move the view"
+msgstr ""
+"Seyir Aracı (F9)\n"
+"\n"
+"Sol Fare Tuşu:   Tıklayıp sürükleyerek görünümü döndürün\n"
+"Orta Fare Tuşu: Tıklayıp sürükleyerek yakınlaştırın veya uzaklaştırın\n"
+"Sağ Fare Tuşu: Tıklayıp sürükleyerek görünümü taşıyın"
+
+#: libavogadro-kalzium/src/plugin.cpp:43
+msgid "No Description"
+msgstr "Açıklama Yok"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:42
+msgid "Hydrogen"
+msgstr "Hidrojen"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:45
+msgid "Helium"
+msgstr "Helyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:48
+msgid "Lithium"
+msgstr "Lityum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:51
+msgid "Beryllium"
+msgstr "Berilyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:54
+msgid "Boron"
+msgstr "Bor"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:57
+msgid "Carbon"
+msgstr "Karbon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:60
+msgid "Nitrogen"
+msgstr "Azot"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:63
+msgid "Oxygen"
+msgstr "Oksijen"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:66
+msgid "Fluorine"
+msgstr "Fluor"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:69
+msgid "Neon"
+msgstr "Neon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:72
+msgid "Sodium"
+msgstr "Sodyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:75
+msgid "Magnesium"
+msgstr "Magnezyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:78
+msgid "Aluminum"
+msgstr "Alüminyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:81
+msgid "Silicon"
+msgstr "Silisyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:84
+msgid "Phosphorus"
+msgstr "Fosfor"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:87
+msgid "Sulfur"
+msgstr "Kükürt"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:90
+msgid "Chlorine"
+msgstr "Klor"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:93
+msgid "Argon"
+msgstr "Argon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:96
+msgid "Potassium"
+msgstr "Potasyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:99
+msgid "Calcium"
+msgstr "Kalsiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:102
+msgid "Scandium"
+msgstr "Skandiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:105
+msgid "Titanium"
+msgstr "Titanyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:108
+msgid "Vanadium"
+msgstr "Vanadyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:111
+msgid "Chromium"
+msgstr "Krom"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:114
+msgid "Manganese"
+msgstr "Mangan"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:117
+msgid "Iron"
+msgstr "Demir"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:120
+msgid "Cobalt"
+msgstr "Kobalt"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:123
+msgid "Nickel"
+msgstr "Nikel"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:126
+msgid "Copper"
+msgstr "Bakır"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:129
+msgid "Zinc"
+msgstr "Çinko"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:132
+msgid "Gallium"
+msgstr "Galyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:135
+msgid "Germanium"
+msgstr "Germanyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:138
+msgid "Arsenic"
+msgstr "Arsenik"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:141
+msgid "Selenium"
+msgstr "Selenyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:144
+msgid "Bromine"
+msgstr "Brom"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:147
+msgid "Krypton"
+msgstr "Kripton"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:150
+msgid "Rubidium"
+msgstr "Rubidyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:153
+msgid "Strontium"
+msgstr "Stronsiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:156
+msgid "Yttrium"
+msgstr "İtriyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:159
+msgid "Zirconium"
+msgstr "Zirkonyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:162
+msgid "Niobium"
+msgstr "Niyobiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:165
+msgid "Molybdenum"
+msgstr "Molibden"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:168
+msgid "Technetium"
+msgstr "Teknesyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:171
+msgid "Ruthenium"
+msgstr "Rutenyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:174
+msgid "Rhodium"
+msgstr "Rodyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:177
+msgid "Palladium"
+msgstr "Paladyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:180
+msgid "Silver"
+msgstr "Gümüş"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:183
+msgid "Cadmium"
+msgstr "Kadmiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:186
+msgid "Indium"
+msgstr "İndiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:189
+msgid "Tin"
+msgstr "Kalay"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:192
+msgid "Antimony"
+msgstr "Antimon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:195
+msgid "Tellurium"
+msgstr "Tellür"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:198
+msgid "Iodine"
+msgstr "İyot"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:201
+msgid "Xenon"
+msgstr "Ksenon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:204
+msgid "Caesium"
+msgstr "Sezyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:207
+msgid "Barium"
+msgstr "Baryum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:210
+msgid "Lanthanum"
+msgstr "Lantan"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:213
+msgid "Cerium"
+msgstr "Seryum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:216
+msgid "Praseodymium"
+msgstr "Praseodiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:219
+msgid "Neodymium"
+msgstr "Neodimyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:222
+msgid "Promethium"
+msgstr "Prometyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:225
+msgid "Samarium"
+msgstr "Samaryum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:228
+msgid "Europium"
+msgstr "Öropyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:231
+msgid "Gadolinium"
+msgstr "Gadolinyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:234
+msgid "Terbium"
+msgstr "Terbiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:237
+msgid "Dysprosium"
+msgstr "Disprosyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:240
+msgid "Holmium"
+msgstr "Holmiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:243
+msgid "Erbium"
+msgstr "Erbiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:246
+msgid "Thulium"
+msgstr "Tulyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:249
+msgid "Ytterbium"
+msgstr "İterbiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:252
+msgid "Lutetium"
+msgstr "Lutesyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:255
+msgid "Hafnium"
+msgstr "Hafniyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:258
+msgid "Tantalum"
+msgstr "Tantal"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:261
+msgid "Tungsten"
+msgstr "Tungsten"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:264
+msgid "Rhenium"
+msgstr "Renyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:267
+msgid "Osmium"
+msgstr "Osmiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:270
+msgid "Iridium"
+msgstr "İridyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:273
+msgid "Platinum"
+msgstr "Platin"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:276
+msgid "Gold"
+msgstr "Altın"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:279
+msgid "Mercury"
+msgstr "Civa"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:282
+msgid "Thallium"
+msgstr "Talyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:285
+msgid "Lead"
+msgstr "Kurşun"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:288
+msgid "Bismuth"
+msgstr "Bizmut"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:291
+msgid "Polonium"
+msgstr "Polonyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:294
+msgid "Astatine"
+msgstr "Astatin"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:297
+msgid "Radon"
+msgstr "Radon"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:300
+msgid "Francium"
+msgstr "Fransiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:303
+msgid "Radium"
+msgstr "Radyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:306
+msgid "Actinium"
+msgstr "Aktinyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:309
+msgid "Thorium"
+msgstr "Toryum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:312
+msgid "Protactinium"
+msgstr "Protaktinyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:315
+msgid "Uranium"
+msgstr "Uranyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:318
+msgid "Neptunium"
+msgstr "Neptünyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:321
+msgid "Plutonium"
+msgstr "Plutonyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:324
+msgid "Americium"
+msgstr "Amerikyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:327
+msgid "Curium"
+msgstr "Küriyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:330
+msgid "Berkelium"
+msgstr "Berkelyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:333
+msgid "Californium"
+msgstr "Kaliforniyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:336
+msgid "Einsteinium"
+msgstr "Einsteinyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:339
+msgid "Fermium"
+msgstr "Fermiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:342
+msgid "Mendelevium"
+msgstr "Mendelevyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:345
+msgid "Nobelium"
+msgstr "Nobelyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:348
+msgid "Lawrencium"
+msgstr "Lawrensiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:351
+msgid "Rutherfordium"
+msgstr "Rutherfordiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:354
+msgid "Dubnium"
+msgstr "Dubniyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:357
+msgid "Seaborgium"
+msgstr "Seaborgiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:360
+msgid "Bohrium"
+msgstr "Bohriyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:363
+msgid "Hassium"
+msgstr "Hassiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:366
+msgid "Meitnerium"
+msgstr "Meitneriyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:369
+msgid "Darmstadtium"
+msgstr "Darmstadyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:372
+msgid "Roentgenium"
+msgstr "Röntgenyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:375
+msgid "Ununbium"
+msgstr "Ununbiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:378
+msgid "Ununtrium"
+msgstr "Ununtriyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:381
+msgid "Ununquadium"
+msgstr "Ununkuadiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:384
+msgid "Ununpentium"
+msgstr "Ununpentiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:387
+msgid "Ununhexium"
+msgstr "Ununheksiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:390
+msgid "Ununseptium"
+msgstr "Ununseptiyum"
+
+#: libavogadro-kalzium/src/elementtranslate.cpp:393
+msgid "Ununoctium"
+msgstr "Ununoktiyum"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:90
+#: libavogadro-kalzium/src/pythonextension.cpp:100
+msgid "Unknown Python Extension"
+msgstr "Bilinmeyen Python Eklentisi"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:106
+#: libavogadro-kalzium/src/pythonextension.cpp:116
+#: libavogadro-kalzium/src/pythontool.cpp:125
+#: libavogadro-kalzium/src/pythontool.cpp:133
+#: libavogadro-kalzium/src/pythonengine.cpp:113
+#: libavogadro-kalzium/src/pythonengine.cpp:121
+msgid "N/A"
+msgstr "Etkin Değil"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:145
+#: libavogadro-kalzium/src/pythonextension.cpp:159
+msgid "&Scripts"
+msgstr "&Betikler"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:337
+#: libavogadro-kalzium/src/pythonextension.cpp:342
+msgid "PythonExtension: checking "
+msgstr "PythonUzantısı: kontrol ediliyor"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:338
+msgid "  - script has no 'Extension' class defined"
+msgstr " - betiğin 'Uzantı' sınıfı tanımlanmış değil"
+
+#: libavogadro-kalzium/src/pythonextension.cpp:343
+#: libavogadro-kalzium/src/pythontool.cpp:332
+#: libavogadro-kalzium/src/pythonengine.cpp:254
+msgid "  - no module"
+msgstr "  - modül yok"
+
+#: libavogadro-kalzium/src/pythontool.cpp:110
+#: libavogadro-kalzium/src/pythontool.cpp:118
+msgid "Unknown Python Tool"
+msgstr "Bilinmeyen Python Aracı"
+
+#: libavogadro-kalzium/src/pythontool.cpp:326
+#: libavogadro-kalzium/src/pythontool.cpp:331
+msgid "PythonTool: checking "
+msgstr "Python Aracı: denetleniyor "
+
+#: libavogadro-kalzium/src/pythontool.cpp:327
+msgid "  - script has no 'Tool' class defined"
+msgstr " - betiğin 'Tool' sınıfı tanımlanmamış"
+
+#: libavogadro-kalzium/src/periodictableview.cpp:370
+msgid "Periodic Table"
+msgstr "Periyodik Tablo"
+
+#: libavogadro-kalzium/src/engine.cpp:62
+msgid "Engines"
+msgstr "Motorlar"
+
+#: libavogadro-kalzium/src/glwidget.cpp:521
+msgid ""
+"Invalid OpenGL context.\n"
+"Either something is completely broken in your OpenGL setup (can you run any "
+"OpenGL application?), or you found a bug."
+msgstr ""
+"Geçersiz OpenGL içeriği.\n"
+"OpenGL kurulumunuzda birşeyler tamamen bozulmuş (herhangi bir OpenGL "
+"uygulaması çalıştırabiliyor musunuz) ya da bir hata buldunuz."
+
+#: libavogadro-kalzium/src/glwidget.cpp:526
+msgid "OpenGL error"
+msgstr "OpenGL hatası"
+
+#: libavogadro-kalzium/src/glwidget.cpp:1102
+msgid "Debug Information"
+msgstr "Hata Ayıklama Bilgileri"
+
+#: libavogadro-kalzium/src/glwidget.cpp:1103
+msgid "FPS"
+msgstr "FPS"
+
+#: libavogadro-kalzium/src/glwidget.cpp:1105
+msgid "View Size"
+msgstr "Görünüm Boyutu"
+
+#: libavogadro-kalzium/src/glwidget.cpp:1111
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:310
+msgid "Atoms"
+msgstr "Atomlar"
+
+#: libavogadro-kalzium/src/glwidget.cpp:1114
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:312
+msgid "Bonds"
+msgstr "Bağlar"
+
+#: libavogadro-kalzium/src/glwidget.cpp:2125
+msgid "Ball and Stick"
+msgstr "Top ve Çubuk"
+
+#: libavogadro-kalzium/src/pythonengine.cpp:60
+msgid "Python script rendering"
+msgstr "Python betik çevirme"
+
+#: libavogadro-kalzium/src/pythonengine.cpp:98
+#: libavogadro-kalzium/src/pythonengine.cpp:106
+msgid "Unknown Python Engine"
+msgstr "Bilinmeyen Python Motoru"
+
+#: libavogadro-kalzium/src/pythonengine.cpp:248
+#: libavogadro-kalzium/src/pythonengine.cpp:253
+msgid "PythonEngine: checking "
+msgstr "Python Motoru: denetleniyor "
+
+#: libavogadro-kalzium/src/pythonengine.cpp:249
+msgid "  - script has no 'Engine' class defined"
+msgstr " - betiğin 'Motor' sınıfı tanımlanmamış"
+
+#: libavogadro-kalzium/src/extension.cpp:44
+msgid "Extensions"
+msgstr "Eklentiler"
+
+#: libavogadro-kalzium/src/tool.cpp:58
+msgid "Tools"
+msgstr "Araçlar"
+
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:265
+msgid "Atom"
+msgstr "Atom"
+
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:271
+msgid "Bond"
+msgstr "Bağ"
+
+#: libavogadro-kalzium/src/primitiveitemmodel.cpp:314
+msgid "Residues"
+msgstr "Artıklar"
+
+#~ msgid "Atom "
+#~ msgstr "Atom "
+
+#~ msgid " ("
+#~ msgstr " ("
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Halil Erensu, Engin ÇAĞATAY, Ayşe GENÇ"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "halilerensu@yahoo.com, engincagatay@yahoo.com, ayse@uludag.org.tr"
+
+#~ msgid "Insert Fragment..."
+#~ msgstr "Parça Ekle..."
+
+#~ msgid "Add Directory"
+#~ msgstr "Dizin Ekle"
+
+#~ msgid "Reset List"
+#~ msgstr "Listeyi Sıfırla"
+
+#~ msgid "Rendering:"
+#~ msgstr "Hazırlama:"
+
+#~ msgid "Backbone"
+#~ msgstr "Omurga"
+
+#~ msgid "Lines"
+#~ msgstr "Çizgiler"
+
+#~ msgid "Radius:"
+#~ msgstr "Yarıçap:"
+
+#~ msgid "Include Nitrogens"
+#~ msgstr "Azotları İçer"
+
+#~ msgid "Atom Labels:"
+#~ msgstr "Atom Etiketleri:"
+
+#~ msgid "Atom number"
+#~ msgstr "Atom numarası"
+
+#~ msgid "Element symbol"
+#~ msgstr "Element sembolü"
+
+#~ msgid "Element name"
+#~ msgstr "Element ismi"
+
+#~ msgid "None"
+#~ msgstr "Hiçbiri"
+
+#~ msgid "Atom Radius:"
+#~ msgstr "Atom Yarıçapı:"
+
+#~ msgid "Opacity:"
+#~ msgstr "Matlık:"
+
+#~ msgid "Show Atoms"
+#~ msgstr "Atomları Göster"
+
+#~ msgid "VdW Opacity:"
+#~ msgstr "VdW Matlığı:"
+
+#~ msgid "Width:"
+#~ msgstr "Genişlik:"
+
+#~ msgid "A"
+#~ msgstr "A"
+
+#~ msgid "°"
+#~ msgstr "°"
+
+#~ msgid "Render:"
+#~ msgstr "Hazırla:"
+
+#~ msgid "Fill"
+#~ msgstr "Doldur"
+
+#~ msgid "Color:"
+#~ msgstr "Renk:"
+
+#~ msgid "Custom Color"
+#~ msgstr "Özel Renk"
+
+#~ msgid "Electrostatic Potential (ESP)"
+#~ msgstr "Elektrostatik Potansiyel (ESP)"
+
+#~ msgid "Custom Color:"
+#~ msgstr "Özel Renk:"
+
+#~ msgid "Draw Box:"
+#~ msgstr "Çizim Kutusu:"
+
+#~ msgid "IsoValue:"
+#~ msgstr "IsoDeğeri:"
+
+#~ msgid "Positive"
+#~ msgstr "Pozitif"
+
+#~ msgid "Negative"
+#~ msgstr "Negatif"
+
+#~ msgid "Calculate"
+#~ msgstr "Hesapla"
+
+#~ msgid "Set Colors"
+#~ msgstr "Renkleri Ayarla"
+
+#~ msgid "Blocks"
+#~ msgstr "Bloklar"
+
+#~ msgid "s-Block:"
+#~ msgstr "s-Bloğu:"
+
+#~ msgid "p-Block:"
+#~ msgstr "p-Bloğu:"
+
+#~ msgid "d-Block:"
+#~ msgstr "d-Bloğu:"
+
+#~ msgid "f-Block:"
+#~ msgstr "f-Bloğu:"
+
+#~ msgid "Groups"
+#~ msgstr "Gruplar"
+
+#~ msgid "Group 1:"
+#~ msgstr "1. Grup:"
+
+#~ msgid "Group 2:"
+#~ msgstr "2. Grup:"
+
+#~ msgid "Group 3:"
+#~ msgstr "3. Grup:"
+
+#~ msgid "Group 4:"
+#~ msgstr "4. Grup:"
+
+#~ msgid "Group 5:"
+#~ msgstr "5. Grup:"
+
+#~ msgid "Group 6:"
+#~ msgstr "6. Grup:"
+
+#~ msgid "Group 7:"
+#~ msgstr "7. Grup:"
+
+#~ msgid "Group 8:"
+#~ msgstr "8. Grup:"
+
+#~ msgid "State of Matter"
+#~ msgstr "Maddenin Hali"
+
+#~ msgid "Solid:"
+#~ msgstr "Katı:"
+
+#~ msgid "Liquid:"
+#~ msgstr "Sıvı:"
+
+#~ msgid "Vaporous:"
+#~ msgstr "Buharlı:"
+
+#~ msgid "Family"
+#~ msgstr "Aile"
+
+#~ msgid "Alkali metals:"
+#~ msgstr "Alkali metaller:"
+
+#~ msgid "Non-metals:"
+#~ msgstr "Ametaller:"
+
+#~ msgid "Alkaline earth metals:"
+#~ msgstr "Toprak alkali metaller:"
+
+#~ msgid "Other metals:"
+#~ msgstr "Diğer metaller:"
+
+#~ msgid "Halogens:"
+#~ msgstr "Halojenler:"
+
+#~ msgid "Transition metals:"
+#~ msgstr "Geçiş metalleri:"
+
+#~ msgid "Noble gases:"
+#~ msgstr "Soy gazlar:"
+
+#~ msgid "Metalloids:"
+#~ msgstr "Metaloidler:"
+
+#~ msgid "No Color Scheme"
+#~ msgstr "Renk Şeması Yok"
+
+#~ msgid "All the elements:"
+#~ msgstr "Tüm elementler:"
+
+#~ msgid "This color will be used if no other scheme is selected"
+#~ msgstr "Eğer başka bir renk şablonu seçilmezse bu renk kullanılacak"
+
+#~ msgid "Covalent Radius"
+#~ msgstr "Kovalent Yarıçapı"
+
+#~ msgid "Van der Waals Radius"
+#~ msgstr "Van der Waals Yarıçapı"
+
+#~ msgid "Mass"
+#~ msgstr "Kütle"
+
+#~ msgid "Boiling Point"
+#~ msgstr "Kaynama Noktası"
+
+#~ msgid "Melting Point"
+#~ msgstr "Erime Noktası"
+
+#~ msgid "Electronegativity"
+#~ msgstr "Elektronegatiflik"
+
+#~ msgid "Discovery Date"
+#~ msgstr "Keşif Tarihi"
+
+#~ msgid "Electronaffinity"
+#~ msgstr "Elektron İlgisi"
+
+#~ msgid "Ionization"
+#~ msgstr "İyonizasyon"
+
+#~ msgid "Files to convert"
+#~ msgstr "Dönüştürülecek dosya"
+
+#~ msgid "&Select all"
+#~ msgstr "&Tümünü Seç"
+
+#~ msgid "&Remove"
+#~ msgstr "&Sil"
+
+#~ msgid "&Add"
+#~ msgstr "&Ekle"
+
+#~ msgid "Convert from:"
+#~ msgstr "Şundan dönüştür:"
+
+#~ msgid "Convert to:"
+#~ msgstr "Şuna dönüştür:"
+
+#~ msgid "Display"
+#~ msgstr "Görüntüle"
+
+#~ msgid "Quality:"
+#~ msgstr "Kalite:"
+
+#~ msgid "Low"
+#~ msgstr "Düşük"
+
+#~ msgid "Medium"
+#~ msgstr "Orta"
+
+#~ msgid "High"
+#~ msgstr "Yüksek"
+
+#~ msgid "Style:"
+#~ msgstr "Biçim:"
+
+#~ msgid "Balls and sticks"
+#~ msgstr "Balonlar ve Çubuklar"
+
+#~ msgid "Sticks"
+#~ msgstr "Çubuklar"
+
+#~ msgid "Van der Waals"
+#~ msgstr "Van der Waals"
+
+#~ msgid "Wireframe"
+#~ msgstr "TelkafesTelkafes"
+
+#~ msgid "2nd Style:"
+#~ msgstr "2. Biçim:"
+
+#~ msgid "Ribbon"
+#~ msgstr "Şerit"
+
+#~ msgid "Ring"
+#~ msgstr "Yüzük"
+
+#~ msgid "Labels:"
+#~ msgstr "Etiketler:"
+
+#~ msgid "Atoms numbers"
+#~ msgstr "Atom numarası"
+
+#~ msgid "Element symbols"
+#~ msgstr "Element sembolleri"
+
+#~ msgid "Element names"
+#~ msgstr "Element isimleri"
+
+#~ msgid "Edit"
+#~ msgstr "Düzen"
+
+#~ msgid "Adjust Hydrogens Automatically"
+#~ msgstr "Hidrojenleri Otomatik Ayarla"
+
+#~ msgid "Add Hydrogens"
+#~ msgstr "Hidrojen Ekle"
+
+#~ msgid "Optimize"
+#~ msgstr "En iyileştir"
+
+#~ msgid "Measure"
+#~ msgstr "Ölçü"
+
+#~ msgid "Statistics"
+#~ msgstr "İstatistikler"
+
+#~ msgid "Name:"
+#~ msgstr "İsim:"
+
+#~ msgid "Formula:"
+#~ msgstr "Formül:"
+
+#~ msgid "Weight:"
+#~ msgstr "Ağırlık:"
+
+#~ msgid "Display:"
+#~ msgstr "Görüntüle:"
+
+#~ msgid "No Labels"
+#~ msgstr "Etiket Yok"
+
+#~ msgid "Element Names"
+#~ msgstr "Element İsimleri"
+
+#~ msgid "Element Symbols"
+#~ msgstr "Element Sembolleri"
+
+#~ msgid "Last element:"
+#~ msgstr "Son element:"
+
+#~ msgid "First element:"
+#~ msgstr "İlk element:"
+
+#~ msgid "X-Axis"
+#~ msgstr "X ekseni"
+
+#~ msgid "X:"
+#~ msgstr "X:"
+
+#~ msgid "Here you can define what you want to plot"
+#~ msgstr "Burada neyi çizmek istediğinizi belirleyebilirsiniz"
+
+#~ msgid "Atomic Number"
+#~ msgstr "Atom Numarası"
+
+#~ msgid "Atomic Radius"
+#~ msgstr "Atom Yarıçapı"
+
+#~ msgid "Average value:"
+#~ msgstr "Ortalama değer:"
+
+#~ msgid "Maximum value:"
+#~ msgstr "En büyük değer:"
+
+#~ msgid "Minimum value:"
+#~ msgstr "En küçük değer:"
+
+#~ msgid "Y-Axis"
+#~ msgstr "Y ekseni"
+
+#~ msgid "Y:"
+#~ msgstr "Y:"
+
+#~ msgid "Information"
+#~ msgstr "Bilgiler"
+
+#~ msgid "Temperature:"
+#~ msgstr "Sıcaklık:"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Çeşitli"
+
+#~ msgid "PSE-Look:"
+#~ msgstr "Periyodik Tablo Görünümü:"
+
+#~ msgid "Display atomic mass in the PSE"
+#~ msgstr "Atomik kütleyi PSE cinsinden göster"
+
+#~ msgid "Display only the number of the element"
+#~ msgstr "Sadece elementin numarasını göster"
+
+#~ msgid "Year:"
+#~ msgstr "Yıl:"
+
+#~ msgid "File:"
+#~ msgstr "Dosya:"
+
+#~ msgid "Format:"
+#~ msgstr "Biçim:"
+
+#~ msgid "Calc"
+#~ msgstr "Hesap"
+
+#~ msgid "Units"
+#~ msgstr "Birimler"
+
+#~ msgid "Temperatures:"
+#~ msgstr "Sıcaklıklar:"
+
+#~ msgid "Kelvin"
+#~ msgstr "Kelvin"
+
+#~ msgid "Degrees Celsius"
+#~ msgstr "Santigrat Derece"
+
+#~ msgid "Degrees Fahrenheit"
+#~ msgstr "Fahrenhayt Derece"
+
+#~ msgid "Degrees Rankine"
+#~ msgstr "Rankine Derece"
+
+#~ msgid "Degrees Réaumur"
+#~ msgstr "Réaumur Derece"
+
+#~ msgid "kj/mol (kilojoule per mol)"
+#~ msgstr "kj/mol (mol başına kilojoule)"
+
+#~ msgid "eV (electronvolt)"
+#~ msgstr "eV (elektronvolt)"
+
+#~ msgid "This page gives an overview about the spectrum this element"
+#~ msgstr "Bu sayfa elementin tayfı hakkında genel bir görünüm gösterir"
+
+#~ msgid "Settings"
+#~ msgstr "Ayarlar"
+
+#~ msgid "Maximum &value:"
+#~ msgstr "En büyük &değer:"
+
+#~ msgid "This sets the rightmost wavelength of the spectrum"
+#~ msgstr "Tayfın en sağdaki dalga boyunu ayarlar"
+
+#~ msgid "nm"
+#~ msgstr "nm"
+
+#~ msgid "&Minimum value:"
+#~ msgstr "En &küçük değer:"
+
+#~ msgid "This sets the leftmost wavelength of the spectrum"
+#~ msgstr "Tayfın en soldaki dalga boyunu ayarlar"
+
+#~ msgid "Selected Peak"
+#~ msgstr "Seçili Zirve"
+
+#~ msgid "Intensity:"
+#~ msgstr "Yoğunluk:"
+
+#~ msgid "Wavelength:"
+#~ msgstr "Dalga boyu:"
+
+#~ msgid "List of all Peaks"
+#~ msgstr "Zirvelerin Listesi"
+
+#~ msgid "Number"
+#~ msgstr "Numara"
+
+#~ msgid "Wavelength"
+#~ msgstr "Dalga boyu"
+
+#~ msgid "Intensity"
+#~ msgstr "Yoğunluk"
+
+#~ msgid "This is the spectrum of the element"
+#~ msgstr "Bu, elementin tayfıdır"
+
+#~ msgid "R-Phrases:"
+#~ msgstr "R-Cümleleri:"
+
+#~ msgid "Enter the R-Phrases you want to read"
+#~ msgstr "Okumak istediğiniz R-Cümlelerini girin"
+
+#~ msgid "1-2-3-4-5-6-7-8-9"
+#~ msgstr "1-2-3-4-5-6-7-8-9"
+
+#~ msgid "S-Phrases: "
+#~ msgstr "G-Cümleleri: "
+
+#~ msgid "Enter the S-Phrases you want to read"
+#~ msgstr "Okumak istediğiniz G-Cümlelerini girin"
+
+#~ msgid "Click here to search for the phrases you entered on the left"
+#~ msgstr "Sol tarafa yazdığınız cümlelerde aramak yapmak için buraya tıklayın"
+
+#~ msgid "&Filter"
+#~ msgstr "&Süzgeç"
+
+#~ msgid "Equation:"
+#~ msgstr "Denklem:"
+
+#~ msgid "Enter the equation you want to balance in this field."
+#~ msgstr "Denkleştirmek istediğiniz denklemi bu alana girin."
+
+#~ msgid "aCH3(CH2)3COOH + bO2 -> cH2O + dCO2"
+#~ msgstr "aCH3(CH2)3COOH + bO2 -> cH2O + dCO2"
+
+#~ msgid "If you press this button the equation on the left will be balanced."
+#~ msgstr "Bu düğmeye tıklarsanız, soldaki denklem denkleştirilir."
+
+#~ msgid "&Calculate"
+#~ msgstr "&Hesapla"
+
+#~ msgid "&View"
+#~ msgstr "&Görünüm"
+
+#~ msgid "&Tools"
+#~ msgstr "&Araçlar"
+
+#~ msgid "Main Toolbar"
+#~ msgstr "Ana Araç Çubuğu"
+
+#~ msgid "Selects the PSE"
+#~ msgstr "PSE'yi seçer"
+
+#~ msgid "Select the PSE you want"
+#~ msgstr "İstediğiniz PSE 'yi  seçin"
+
+#~ msgid "Selects the default color scheme"
+#~ msgstr "Öntanımlı renk şablonunu seçer"
+
+#~ msgid ""
+#~ "Select the color scheme you prefer by clicking on the corresponding radio "
+#~ "button"
+#~ msgstr ""
+#~ "Tercih ettiğiniz renk şablonunu uygun radyo düğmesine tıklayarak seçin"
+
+#~ msgid "Selects the default numeration (IUPAC)"
+#~ msgstr "Öntanımlı numaralandırmayı (IUPAC) seçer"
+
+#~ msgid "Select the numeration you want"
+#~ msgstr "İstediğiniz numaralandırmayı seçin"
+
+#~ msgid "Show or hide the legend"
+#~ msgstr "Göstergeyi göster ya da gizle"
+
+#~ msgid "Display the atomic mass in the PSE"
+#~ msgstr "Atomik kütleleri periyodik tabloda göster"
+
+#~ msgid "Selects the table view (default is classical)"
+#~ msgstr "Tablo görünümünü seçer (öntanımlı olan klasiktir)"
+
+#~ msgid "Display the table view"
+#~ msgstr "Tablo görünümünü göster"
+
+#~ msgid "Selects the color if no scheme is selected"
+#~ msgstr "Eğer  bir şablon seçilmemişse rengi seçer"
+
+#~ msgid "Selects the color of the elements if no scheme is selected"
+#~ msgstr "Eğer bir şablon seçilmemişse elementlerin rengini seçer"
+
+#~ msgid "Selects the color of liquid elements"
+#~ msgstr "Sıvı elementlerin rengi seçer"
+
+#~ msgid "Selects the color of solid elements"
+#~ msgstr "Katı elementlerin rengini seçer"
+
+#~ msgid "Selects the color of vaporous elements"
+#~ msgstr "Gaz elementlerin rengini seçer"
+
+#~ msgid "Selects the color of radioactive elements"
+#~ msgstr "Radyoaktif elementlerin rengini seçer"
+
+#~ msgid "Selects the color of artificial elements"
+#~ msgstr "Yapay elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in block s"
+#~ msgstr "s bloğundaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in block p"
+#~ msgstr "p bloğundaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in block d"
+#~ msgstr "d bloğundaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in block f"
+#~ msgstr "f bloğundaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 1"
+#~ msgstr "1. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 2"
+#~ msgstr "2. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 3"
+#~ msgstr "3. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 4"
+#~ msgstr "4. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 5"
+#~ msgstr "5. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 6"
+#~ msgstr "6. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 7"
+#~ msgstr "7. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the elements in group 8"
+#~ msgstr "8. gruptaki elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the alkali metals"
+#~ msgstr "Alkali metallerin rengini seçer"
+
+#~ msgid "Selects the color of the non-metal elements"
+#~ msgstr "Ametal elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the alkaline earth metals"
+#~ msgstr "Toprak alkali metallerin rengini seçer"
+
+#~ msgid ""
+#~ "Selects the color of the metals which do not fit into the other categories"
+#~ msgstr "Diğer kategorilere koyamadığınız metallerin rengini seçer"
+
+#~ msgid "Selects the color of the halogen elements"
+#~ msgstr "Holojen elementlerin rengini seçer"
+
+#~ msgid "Selects the color of the transition elements"
+#~ msgstr "Geçiş elementlerinin rengini seçer"
+
+#~ msgid "Selects the color of the noble gases"
+#~ msgstr "Soy gazların rengini seçer"
+
+#~ msgid ""
+#~ "This value defines whether eV or kJ/mol should be used within Kalzium"
+#~ msgstr ""
+#~ "Bu değer, Kalzium ile eV'nin mi yoksa kj/mol'ün mü kullanacağını tanımlar"
+
+#~ msgid "Use eV or kJ/mol"
+#~ msgstr "eV'yi ya da kj/mol'ü kulan"
+
+#~ msgid ""
+#~ "This value defines which temperature scale should be used within Kalzium"
+#~ msgstr "Bu değer, Kalzium ile kullanılacak sıcaklık ölçüsünü tanımlar"
+
+#~ msgid "Select the scale for the temperature"
+#~ msgstr "Sıcaklık için ölçüyü seçin"
+
+#~ msgid "Show or hide the sidebar"
+#~ msgstr "Yan Çubuğu göster ya da gizle"
+
+#~ msgid "State of matter"
+#~ msgstr "Maddenin hali"
+
+#~ msgid "Boiling point"
+#~ msgstr "Kaynama noktası"
+
+#~ msgid "Melting point"
+#~ msgstr "Erime noktası"
+
+#~ msgid "Chemical Symbol"
+#~ msgstr "Kimyasal Sembol"
+
+#~ msgid "Element"
+#~ msgstr "Element"
+
+#~ msgid "Chromatography"
+#~ msgstr "Kromatografi"
+
+#~ msgid "Distillation"
+#~ msgstr "Damıtma"
+
+#~ msgid "Emulsion"
+#~ msgstr "Emülsiyon"
+
+#~ msgid "Heterogeneous mix of two liquids."
+#~ msgstr "İki sıvının heterojen karışımı."
+
+#~ msgid "Extraction"
+#~ msgstr "Ayrıştırma"
+
+#~ msgid "Processing a homogeneous or heterogeneous mix to get pure matter."
+#~ msgstr ""
+#~ "Homojen ya da heterojen karışımın kendisini oluşturanlara ayrılması."
+
+#~ msgid "Mix"
+#~ msgstr "Karışım"
+
+#~ msgid "Filtering"
+#~ msgstr "Süzgeçleme"
+
+#~ msgid "Accuracy"
+#~ msgstr "Doğruluk"
+
+#~ msgid "Law of Conservation of Mass"
+#~ msgstr "Kütlenin Korunumu Kanunu"
+
+#~ msgid "Law of multiple proportions"
+#~ msgstr "Katlı Oranlar Kanunu"
+
+#~ msgid "Crystallization"
+#~ msgstr "Kristallendirme"
+
+#~ msgid "Solution"
+#~ msgstr "Çözelti"
+
+#~ msgid "Homogeneous mix of multiple pure materials"
+#~ msgstr "Birden çok saf metalin homojen karışımı"
+
+#~ msgid "Measurement of an amount of matter."
+#~ msgstr "Maddenin miktarının ölçümü."
+
+#~ msgid "Matter"
+#~ msgstr "Madde"
+
+#~ msgid "All that takes up space and has mass."
+#~ msgstr "Uzayda hacim kaplayan ve kütlesi olan her şey."
+
+#~ msgid "Phase"
+#~ msgstr "Hal"
+
+#~ msgid "Accuracy and precision"
+#~ msgstr "Doğruluk ve hassaslık"
+
+#~ msgid "Correctness"
+#~ msgstr "Doğruluk"
+
+#~ msgid "SI-Unit"
+#~ msgstr "SI-Birimi"
+
+#~ msgid "Significant figures"
+#~ msgstr "Önemli figürler"
+
+#~ msgid "Standard deviation"
+#~ msgstr "Standart sapma"
+
+#~ msgid "Suspension"
+#~ msgstr "Süspansiyon"
+
+#~ msgid "Heterogeneous mix consisting of a liquid and solid matter."
+#~ msgstr "Heterojen karışım bir sıvı ve bir katı maddenin karışımıdır."
+
+#~ msgid "Alloys"
+#~ msgstr "Alaşımlar"
+
+#~ msgid "Pure matter consisting of multiple elements in a set ratio."
+#~ msgstr "Belirli oranlarda birden çok element içeren saf madde."
+
+#~ msgid "Alpha rays"
+#~ msgstr "Alfa ışınları"
+
+#~ msgid ""
+#~ "Rays consisting of alpha particles, consisting of two protons and two "
+#~ "neutrons that are emitted from the Atoms of certain radioactive elements."
+#~ msgstr ""
+#~ "Belirli radyoaktif elementlerden saçılan, iki proton ve iki nötron içeren "
+#~ "alfa parçacıklarından oluşan ışınlar."
+
+#~ msgid ""
+#~ "Atoms are chemically inseparable and building blocks of matter. Atoms of "
+#~ "one kind are called an Element."
+#~ msgstr ""
+#~ "Maddenin daha küçük parçalara ayrılamaz yapıtaşı. Tek tür atomlar "
+#~ "birleşerek elementleri oluşturur."
+
+#~ msgid "Electron"
+#~ msgstr "Elektron"
+
+#~ msgid "Proton"
+#~ msgstr "Proton"
+
+#~ msgid "Neutron"
+#~ msgstr "Nötron"
+
+#~ msgid "Atomic nucleus"
+#~ msgstr "Atom çekirdeği"
+
+#~ msgid ""
+#~ "The small, positively-charged center of an Atom, in which Protons and "
+#~ "Neutrons are found."
+#~ msgstr ""
+#~ "Atomun, protonlar ve nötronlardan oluşan, küçük ve pozitif yüklü merkezi."
+
+#~ msgid "Atomic Mass"
+#~ msgstr "Atom Kütlesi"
+
+#~ msgid "Isotope"
+#~ msgstr "İzotop"
+
+#~ msgid "Spin"
+#~ msgstr "Spin"
+
+#~ msgid "Magnetic Moment"
+#~ msgstr "Manyetik Moment"
+
+#~ msgid "Decay Mode"
+#~ msgstr "Bozulma Kipi"
+
+#~ msgid "Decay Energy"
+#~ msgstr "Bozulma Enerjisi"
+
+#~ msgid "The decay energy is the energy released by a nuclear decay."
+#~ msgstr ""
+#~ "Bozulma enerjisi, çekirdeksel bozulma sırasında açığa çıkan enerjidir."
+
+#~ msgid "[i]see isotopes[/i]"
+#~ msgstr "[i]izotoplara bakın[/i]"
+
+#~ msgid "Isotone"
+#~ msgstr "İzoton"
+
+#~ msgid "Nuclear Isomer"
+#~ msgstr "Nükleer İzomer"
+
+#~ msgid "Isobars"
+#~ msgstr "İzobarlar"
+
+#~ msgid "Isobar"
+#~ msgstr "İzobar"
+
+#~ msgid "Beta rays"
+#~ msgstr "Beta ışınları"
+
+#~ msgid ""
+#~ "Rays consisting of electrons that are emitted from Atoms of radioactive "
+#~ "elements."
+#~ msgstr ""
+#~ "Radyoaktif elemenlerin atomlarından yayılan elektronlardan oluşan ışınlar."
+
+#~ msgid "Ionic Radius"
+#~ msgstr "İyon Yarıçapı"
+
+#~ msgid "Dehydrator"
+#~ msgstr "Dehidratör"
+
+#~ msgid "Spatula"
+#~ msgstr "Spatula"
+
+#~ msgid "Heating Coil"
+#~ msgstr "Isınma Sarmalı"
+
+#~ msgid "Dropping Funnel"
+#~ msgstr "Damlatma Hunisi"
+
+#~ msgid "Test Tube Rack"
+#~ msgstr "Test Tüpü Askısı"
+
+#~ msgid "Vortexer"
+#~ msgstr "Anafor"
+
+#~ msgid "Wash Bottle"
+#~ msgstr "Yıkama Şişesi"
+
+#~ msgid "Test Tube"
+#~ msgstr "Test Tüpü"
+
+#~ msgid "Full Pipette"
+#~ msgstr "Dolu Pipet"
+
+#~ msgid "Drying Tube"
+#~ msgstr "Kurutma Tübü"
+
+#~ msgid "Thermometer"
+#~ msgstr "Termometre"
+
+#~ msgid "Pipette"
+#~ msgstr "Pipet"
+
+#~ msgid "Ultrasonic Bath"
+#~ msgstr "Ultrasonik Banyo"
+
+#~ msgid "Scales"
+#~ msgstr "Ölçekler"
+
+#~ msgid "Distillation bridge"
+#~ msgstr "Damıtma köprüsü"
+
+#~ msgid "Syringe"
+#~ msgstr "Enjektör"
+
+#~ msgid "Separation Beaker"
+#~ msgstr "Ayırma Şişesi"
+
+#~ msgid "Contact Thermometer"
+#~ msgstr "Temas Eden Termometre"
+
+#~ msgid "Clamps"
+#~ msgstr "Kıskaçlar"
+
+#~ msgid "Litmus Paper"
+#~ msgstr "Turnusol Kağıdı"
+
+#~ msgid "Beaker"
+#~ msgstr "Deney Şişesi"
+
+#~ msgid "KalziumGLPart"
+#~ msgstr "KalziumGL Parçası"
+
+#~ msgid "A cool thing"
+#~ msgstr "Güzel bir şey"
+
+#~ msgid "(c) 2006, Carsten Niehaus"
+#~ msgstr "(c) 2006, Carsten Niehaus"
+
+#~ msgid "Carsten Niehaus."
+#~ msgstr "Carsten Niehaus."
+
+#~ msgid "Marcus D. Hanwell."
+#~ msgstr "Marcus D. Hanwell."
+
+#~ msgid "Problem while opening the file"
+#~ msgstr "Dosya açılırken bir sorun oluştu"
+
+#~ msgid "Cannot open the specified file."
+#~ msgstr "Belirtilen dosya açılamadı."
+
+#~ msgid "Cannot read the file format. Check your OpenBabel installation."
+#~ msgstr "Dosya biçimi okunamadı. OpenBabel kurulumunuzu kontrol edin."
+
+#~ msgid "Problem reading file format"
+#~ msgstr "Dosya biçimi okuma sorunu"
+
+#~ msgid "Cannot save to the specified file."
+#~ msgstr "Belirtilen dosya kaydedilemedi."
+
+#~ msgid ""
+#~ "Unrecognized file format extension. Please append an extension to the "
+#~ "file name, for example \".cml\"."
+#~ msgstr ""
+#~ "Tanınmayan dosya uzantısı. Lütfen dosyaya bir uzantı ekleyin, örneğin \"."
+#~ "cml\" gibi."
+
+#~ msgid "Unknown Value"
+#~ msgstr "Bilinmeyen Değer"
+
+#~ msgctxt "%1 is the temperature, %2 is the unit, like \"300 K\""
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "Value not defined"
+#~ msgstr "Değer tanımlanmamış"
+
+#~ msgctxt "Just a number"
+#~ msgid "%1"
+#~ msgstr "%1"
+
+#~ msgctxt "electron volt"
+#~ msgid "%1 eV"
+#~ msgstr "%1 eV"
+
+#~ msgctxt "kilo joule per mol"
+#~ msgid "%1 kJ/mol"
+#~ msgstr "%1 kJ/mol"
+
+#~ msgctxt "x u (units). The atomic mass."
+#~ msgid "%1 u"
+#~ msgstr "%1 u"
+
+#~ msgid "This element was discovered in the year <numid>%1</numid>."
+#~ msgstr "Bu element<numid>%1</numid> yılında keşfedildi."
+
+#~ msgid "This element was known to ancient cultures."
+#~ msgstr "Bu element eski uygarlıklar tarafından bilinmekteydi."
+
+#~ msgctxt "%1 is a length, eg: 12.3 pm"
+#~ msgid "%1 pm"
+#~ msgstr "%1 pm"
+
+#~ msgid "OpenBabel Frontend"
+#~ msgstr "OpenBabel Önyüzü"
+
+#~ msgid "Convert"
+#~ msgstr "Dönüştür"
+
+#~ msgid "Convert selected files"
+#~ msgstr "Seçilen dosyaları dönüştür"
+
+#~ msgid "You must select some files first."
+#~ msgstr "Önce bir dosya seçmelisiniz."
+
+#~ msgid "No files selected"
+#~ msgstr "Bir dosya seçilmedi"
+
+#~ msgid "The file %1 already exists. Do you want to overwrite if possible?"
+#~ msgstr "%1 isimli bir dosya zaten var. Üzerine yazmak ister misiniz?"
+
+#~ msgid "The file %1 already exists ! -- KOpenBabel"
+#~ msgstr "%1 isimli bir dosya zaten var ! -- KOpenBabel"
+
+#~ msgid "OK to run these commands? -- KOpenBabel"
+#~ msgstr "Bu komutları çalıştırmak için Tamam diyor musunuz? -- KOpenBabel"
+
+#~ msgid "Molecular Editor"
+#~ msgstr "Moleküler Düzenleyici"
+
+#~ msgid "Load Molecule"
+#~ msgstr "Molekül Yükle"
+
+#~ msgid "Loading a molecule"
+#~ msgstr "Bir molekül yükleniyor"
+
+#~ msgid "Download New Molecules"
+#~ msgstr "Yeni Moleküller İndir"
+
+#~ msgid "Download new molecule files"
+#~ msgstr "Yeni molekül dosyaları indir"
+
+#~ msgid "Save Molecule"
+#~ msgstr "Molekülü Kaydet"
+
+#~ msgid "Saving a molecule"
+#~ msgstr "Bir molekül kaydediliyor"
+
+#~ msgid ""
+#~ "No tools or engines loaded - it is likely that the Avogadro plugins could "
+#~ "not be located."
+#~ msgstr ""
+#~ "Hiçbir araç ya da motor yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir."
+
+#~ msgid ""
+#~ "No engines loaded - it is likely that the Avogadro plugins could not be "
+#~ "located."
+#~ msgstr ""
+#~ "Hiçbir motor yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir."
+
+#~ msgid ""
+#~ "No tools loaded - it is likely that the Avogadro plugins could not be "
+#~ "located."
+#~ msgstr ""
+#~ "Hiçbir araç yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir."
+
+#~ msgid "Kalzium"
+#~ msgstr "Kalzium"
+
+#~ msgid ""
+#~ "No tools or engines loaded - it is likely that the Avogadro plugins could "
+#~ "not be located. No molecules can be viewed until this issue is resolved."
+#~ msgstr ""
+#~ "Hiçbir araç ya da motor yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir. Bu sorun çözülene kadar hiçbir "
+#~ "molekül gösterilemez."
+
+#~ msgid ""
+#~ "No engines loaded - it is likely that the Avogadro plugins could not be "
+#~ "located. No molecules can be viewed until this issue is resolved."
+#~ msgstr ""
+#~ "Hiçbir motor yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir. Bu sorun çözülene kadar hiçbir "
+#~ "molekül gösterilemez."
+
+#~ msgid ""
+#~ "No tools loaded - it is likely that the Avogadro plugins could not be "
+#~ "located. No molecules can be viewed until this issue is resolved."
+#~ msgstr ""
+#~ "Hiçbir araç yüklenmedi - bu Avogadro eklentilerinin yerinin "
+#~ "bulunamamasından kaynaklanıyor olabilir. Bu sorun çözülene kadar hiçbir "
+#~ "molekül gösterilemez."
+
+#~ msgid "Common molecule formats"
+#~ msgstr "Genel molekül biçimleri"
+
+#~ msgid "All files"
+#~ msgstr "Tüm dosyalar"
+
+#~ msgid "Choose a file to open"
+#~ msgstr "Açılacak bir dosya seçin"
+
+#~ msgid "Choose a file to save to"
+#~ msgstr "Kaydedilecek bir dosya seçin"
+
+#~ msgctxt ""
+#~ "This 'u' stands for the chemical unit (u for 'units'). Most likely this "
+#~ "does not need to be translated at all!"
+#~ msgid "%1 u"
+#~ msgstr "%1 u"
+
+#~ msgid "Remove hydrogens"
+#~ msgstr "Hidrojenleri kaldır"
+
+#~ msgid "Add hydrogens"
+#~ msgstr "Hidrojen ekle"
+
+#~ msgid "Knowledge"
+#~ msgstr "Bilgiler"
+
+#~ msgid "&Export Data..."
+#~ msgstr "&Verileri Dışarıya Aktar..."
+
+#~ msgid "&Scheme"
+#~ msgstr "&Şema"
+
+#~ msgid "Table: %1"
+#~ msgstr "Tablo: %1"
+
+#~ msgid "&Tables"
+#~ msgstr "&Tablolar"
+
+#~ msgid "&Numeration"
+#~ msgstr "&Numaralandırma"
+
+#~ msgid "&Equation Solver..."
+#~ msgstr "D&enklem Çözücü..."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid "This tool allows you to solve chemical equations."
+#~ msgstr "Bu araç sayesinde kimyasal denklemleri çözebilirsiniz."
+
+#~ msgid "&Plot Data..."
+#~ msgstr "Veriyi Ç&iz..."
+
+#~ msgid "&Isotope Table..."
+#~ msgstr "İ&zotop-Tablosu..."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid "This table shows all of the known isotopes of the chemical elements."
+#~ msgstr "Bu tablo kimyasal elementlerin bilinen tüm izotoplarını gösterir."
+
+#~ msgid "&Glossary..."
+#~ msgstr "Terimler &Sözlüğü..."
+
+#~ msgid "&R/S Phrases..."
+#~ msgstr "&R/G Sözcükleri..."
+
+#~ msgid "Convert chemical files..."
+#~ msgstr "Kimyasal dosyaları dönüştür..."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid ""
+#~ "With this tool, you can convert files containing chemical data between "
+#~ "various file formats."
+#~ msgstr ""
+#~ "Bu araç yardımıyla kimyasal bilgileri tutan dosyaları değişik biçimlere "
+#~ "dönüştürebilirsiniz."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid "This tool allows you to view and edit 3D molecular structures."
+#~ msgstr ""
+#~ "Bu araç sayesinde 3B moleküler yapıları görüntüleyebilir ve "
+#~ "düzenleyebilirsiniz."
+
+#~ msgid "&Tables..."
+#~ msgstr "&Tablolar..."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid ""
+#~ "This will open a dialog with listings of symbols and numbers related to "
+#~ "chemistry."
+#~ msgstr "Bu pencere, kimyasal sembollerin ve sayıların listesini gösterir."
+
+#~ msgctxt "WhatsThis Help"
+#~ msgid "This will show or hide the legend for the periodic table."
+#~ msgstr "Periyodik tablonun göstergesini gösterir ya da saklar."
+
+#~ msgid "Legend"
+#~ msgstr "Gösterge"
+
+#~ msgid "Table Information"
+#~ msgstr "Tablo Bilgileri"
+
+#~ msgid "Overview"
+#~ msgstr "Genel Bakış"
+
+#~ msgid "Timeline"
+#~ msgstr "Zaman çizelgesi"
+
+#~ msgid "*.png *.xpm *.jpg *.svg"
+#~ msgstr "*.png *.xpm *.jpg *.svg"
+
+#~ msgid "Save Kalziums Table In"
+#~ msgstr "Kalzium Talosunu Buraya Kaydet"
+
+#~ msgid "This system does not support OpenGL."
+#~ msgstr "Bu sistem OpenGL'i desteklemiyor."
+
+#~ msgid "Kalzium Error"
+#~ msgstr "Kalzium Hatası"
+
+#~ msgid "Show &Legend"
+#~ msgstr "&Göstergeyi Görüntüle"
+
+#~ msgid "Hide &Legend"
+#~ msgstr "&Göstergeyi Gizle"
+
+#~ msgid "Show &Sidebar"
+#~ msgstr "Yan Çubuğu Gö&ster"
+
+#~ msgid "Hide &Sidebar"
+#~ msgstr "Yan Çubuğu Gi&zle"
+
+#~ msgid "Colors"
+#~ msgstr "Renkler"
+
+#~ msgctxt "For example: \"Carbon (6), Mass: 12.0107 u\""
+#~ msgid "%1 (%2), Mass: %3 u"
+#~ msgstr "%1 (%2), Kütle: %3 u"
+
+#~ msgctxt "Next element"
+#~ msgid "Next"
+#~ msgstr "Sonraki"
+
+#~ msgid "Goes to the next element"
+#~ msgstr "Bir sonraki elemente gider"
+
+#~ msgctxt "Previous element"
+#~ msgid "Previous"
+#~ msgstr "Önceki"
+
+#~ msgid "Goes to the previous element"
+#~ msgstr "Bir önceki elemente gider"
+
+#~ msgid "Block: %1"
+#~ msgstr "Blok: %1"
+
+#~ msgid "It was discovered by %1."
+#~ msgstr "Bu element %1 tarafından keşfedildi."
+
+#~ msgid "Origin of the name:<br/>%1"
+#~ msgstr "İsmin kökeni: <br/>%1"
+
+#~ msgid "Melting Point: %1"
+#~ msgstr "Erime Noktası: %1"
+
+#~ msgid "Boiling Point: %1"
+#~ msgstr "Kaynama Noktası: %1"
+
+#~ msgid "Electron Affinity: %1"
+#~ msgstr "Elektron İlgisi: %1"
+
+#~ msgid "Electronic configuration: %1"
+#~ msgstr "Elektron dizilişi: %1"
+
+#~ msgid "Covalent Radius: %1"
+#~ msgstr "Kolavent Yarıçapı: %1"
+
+#~ msgid "van der Waals Radius: %1"
+#~ msgstr "van der Waals Yarıçapı: %1"
+
+#~ msgid "Mass: %1"
+#~ msgstr "Kütle: %1"
+
+#~ msgid "First Ionization energy: %1"
+#~ msgstr "İlk İyonlaşma enerjisi: %1"
+
+#~ msgid "Electronegativity: %1"
+#~ msgstr "Elektronegatiflik: %1"
+
+#~ msgid "Isotope-Table"
+#~ msgstr "İzotop-Tablosu"
+
+#~ msgid "Neutrons"
+#~ msgstr "Nötronlar"
+
+#~ msgid "Percentage"
+#~ msgstr "Yüzde"
+
+#~ msgid "Half-life period"
+#~ msgstr "Yarı-ömür süresi"
+
+#~ msgid "Energy and Mode of Decay"
+#~ msgstr "Enerji ve Bozulma Kipi"
+
+#~ msgid "%1 u"
+#~ msgstr "%1 u"
+
+#~ msgctxt "this can for example be '24%'"
+#~ msgid "%1%"
+#~ msgstr "%%1"
+
+#~ msgctxt ""
+#~ "The first argument is the value, the second is the unit. For example '17 "
+#~ "s' for '17 seconds',."
+#~ msgid "%1 %2"
+#~ msgstr "%1 %2"
+
+#~ msgid "%1 MeV"
+#~ msgstr "%1 MeV"
+
+#~ msgid " %1"
+#~ msgstr " %1"
+
+#~ msgid "(%1%)"
+#~ msgstr "(%1%)"
+
+#~ msgid ", "
+#~ msgstr ", "
+
+#~ msgid " %1<sup>-</sup>"
+#~ msgstr " %1<sup>-</sup>"
+
+#~ msgid " %1<sup>+</sup>"
+#~ msgstr " %1<sup>+</sup>"
+
+#~ msgctxt "Acronym of Electron Capture"
+#~ msgid " EC"
+#~ msgstr " EY"
+
+#~ msgid "%1 %2<sub>n</sub>"
+#~ msgstr "%1 %2<sub>n</sub>"
+
+#~ msgid "Isotopes"
+#~ msgstr "İzotoplar"
+
+#~ msgid "Data Overview"
+#~ msgstr "Veri Genel Bakışı"
+
+#~ msgid "Spectrum"
+#~ msgstr "Spektrum"
+
+#~ msgctxt "For example Carbon (6)"
+#~ msgid "%1 (%2)"
+#~ msgstr "%1 (%2)"
+
+#~ msgid "No spectrum of %1 found."
+#~ msgstr "%1 ögesinin spektrumu bulunamadı."
+
+#~ msgid "%1 of 1000"
+#~ msgstr "%1/1000"
+
+#~ msgid "%1 nm"
+#~ msgstr "%1 nm"
+
+#~ msgid "Classic Periodic Table"
+#~ msgstr "Klasik Periyodik Tablo"
+
+#~ msgid "Short Periodic Table"
+#~ msgstr "Kısa Periyodik Tablo"
+
+#~ msgid "Transition Elements"
+#~ msgstr "Geçiş Elementleri"
+
+#~ msgid "DZ Periodic Table"
+#~ msgstr "DZ Periyodik Tablo"
+
+#~ msgid "Risks/Security Phrases"
+#~ msgstr "Risk/Güvenlik Cümleleri"
+
+#~ msgid "S-Phrases:"
+#~ msgstr "G-Cümleleri:"
+
+#~ msgid "You asked for no R/S-Phrases."
+#~ msgstr "Sizden R/G-Cümleleri istenmiyor."
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S1: Keep locked up"
+#~ msgstr "G1: Kilit altında tutun"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S2: Keep out of the reach of children"
+#~ msgstr "G2: Çocukların erişemeyeceği yerlerde saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S3: Keep in a cool place"
+#~ msgstr "G3: Soğuk ortamda saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S4: Keep away from living quarters"
+#~ msgstr "G4: Meskenlerden uzak tutun"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid ""
+#~ "S5: Keep contents under ... ( appropriate liquid to be specified by the "
+#~ "manufacturer )"
+#~ msgstr "G5: İçeriği üreticinin belirttiği uygun bir sıvıda saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S6: Keep under ... ( inert gas to be specified by the manufacturer )"
+#~ msgstr "G6: Üreticinin belirttiği soy gazla beraber saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S7: Keep container tightly closed"
+#~ msgstr "G7: Kabı sıkıca kapatın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S8: Keep container dry"
+#~ msgstr "G8: Kabı kuru tutun"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S9: Keep container in a well-ventilated place"
+#~ msgstr "G9: Kabı iyi havalanan bir yerde saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S13: Keep away from food, drink and animal feedingstuffs"
+#~ msgstr "G13: Yiyeceklerden, içeceklerden ve hayvan yemlerinden uzak tutun"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S15: Keep away from heat"
+#~ msgstr "G15: Isıdan uzak tutun"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S16: Keep away from sources of ignition - No smoking"
+#~ msgstr "S16: Ateşten uzak tutun - Sigara içmek yasaktır"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S20: When using do not eat or drink"
+#~ msgstr "S20: Kullanırken bir şey yemeyin ya da içmeyin"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S21: When using do not smoke"
+#~ msgstr "S21: Kullanırken sigara içmeyin"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S22: Do not breathe dust"
+#~ msgstr "G22: Tozu solumayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S24: Avoid contact with skin"
+#~ msgstr "G24: Cildinizle temasından kaçının"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S25: Avoid contact with eyes"
+#~ msgstr "G25: Gözle temasından kaçının"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S30: Never add water to this product"
+#~ msgstr "G30: Bu ürüne asla su eklemeyin"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S36: Wear suitable protective clothing"
+#~ msgstr "G36: Uygun koruyucu elbise giyin"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S37: Wear suitable gloves"
+#~ msgstr "G36: Uygun eldiven giyin"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S39: Wear eye/face protection"
+#~ msgstr "G39: Göz veya yüz koruması takın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S49: Keep only in the original container"
+#~ msgstr "G49: Sadece özgün kutusunda saklayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S50: Do not mix with ... ( to be specified by the manufacturer )"
+#~ msgstr "G50: Üreticinin belirttiği maddelerle karıştırmayın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "S51: Use only in well-ventilated areas"
+#~ msgstr "G51: Sadece iyi havalandırılan mekanlarda kullanın"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R1: Explosive when dry"
+#~ msgstr "R1: Kuru haldeyken patlayıcıdır"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R5: Heating may cause an explosion"
+#~ msgstr "R5: Isıtma patlamaya neden olabilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R7: May cause fire"
+#~ msgstr "R7: Yangına sebep olabilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R10: Flammable"
+#~ msgstr "R10: Yanıcı"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R11: Highly flammable"
+#~ msgstr "R11: Oldukça yanıcı"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R12: Extremely flammable"
+#~ msgstr "R12: Çok yüksek derecede yanıcı"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R23: Toxic by inhalation"
+#~ msgstr "R23: Solunursa zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R24: Toxic in contact with skin"
+#~ msgstr "R24: Cilde temas ederse zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R25: Toxic if swallowed"
+#~ msgstr "R25: Yutulursa zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R26: Very toxic by inhalation"
+#~ msgstr "R26: Solunursa çok zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R27: Very toxic in contact with skin"
+#~ msgstr "R27: Cilde temas ederse çok zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R28: Very toxic if swallowed"
+#~ msgstr "R28: Yutulursa çok zehirleyicidir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R34: Causes burns"
+#~ msgstr "R34: Yangına sebep olur"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R36: Irritating to eyes"
+#~ msgstr "R36: Gözü tahriş eder"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R37: Irritating to respiratory system"
+#~ msgstr "R37: Solunum sistemini tahriş eder"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R38: Irritating to skin"
+#~ msgstr "R38: Cildi tahriş eder"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R41: Risk of serious damage to eyes"
+#~ msgstr "R41: Gözlere ciddi hasar verme riski"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R45: May cause cancer"
+#~ msgstr "R45: Kansere yol açabilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R59: Dangerous for the ozone layer"
+#~ msgstr "R59: Ozon tabakasına zarar verir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R60: May impair fertility"
+#~ msgstr "R60: Doğurganlığa zarar verebilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R61: May cause harm to the unborn child"
+#~ msgstr "R61: Anne karnındaki çocuğa zarar verebilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R63: Possible risk of harm to the unborn child"
+#~ msgstr "R63: Anne karnındaki çocuğa zarar verebilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R64: May cause harm to breast-fed babies"
+#~ msgstr "R64: Süt emen bebeklere zarar verebilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R65: Harmful: may cause lung damage if swallowed"
+#~ msgstr "R65: Zararlı: yutulursa akciğerinize zarar verebilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R66: Repeated exposure may cause skin dryness or cracking"
+#~ msgstr ""
+#~ "R66: Düzenli maruz kalma cildiniz kurumasına ve çatlamasına neden olabilir"
+
+#~ msgctxt ""
+#~ "Please take the official translations! You find them here: http://europa."
+#~ "eu.int/eur-lex/lex/LexUriServ/LexUriServ.do?uri=CELEX:32001L0059:EN:HTML"
+#~ msgid "R68: Possible risk of irreversible effects"
+#~ msgstr "R68: Geri alınamaz etkiler oluşturma riski"
+
+#~ msgid "At least one of the specified phrases is invalid."
+#~ msgstr "Belirtilen ifadelerden en az bir tanesi geçersiz."
+
+#~ msgid "Greek alphabet"
+#~ msgstr "Yunan alfabesi"
+
+#~ msgid "Uppercase"
+#~ msgstr "Büyük harf"
+
+#~ msgid "Lowercase"
+#~ msgstr "Küçük harf"
+
+#~ msgctxt ""
+#~ "The name of the greek letter in your language. For example 'Alpha' for "
+#~ "the first letter. "
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "alpha"
+#~ msgstr "alpha"
+
+#~ msgid "beta"
+#~ msgstr "beta"
+
+#~ msgid "gamma"
+#~ msgstr "gamma"
+
+#~ msgid "delta"
+#~ msgstr "delta"
+
+#~ msgid "epsilon"
+#~ msgstr "epsilon"
+
+#~ msgid "zeta"
+#~ msgstr "zeta"
+
+#~ msgid "eta"
+#~ msgstr "eta"
+
+#~ msgid "theta"
+#~ msgstr "theta"
+
+#~ msgid "iota"
+#~ msgstr "iota"
+
+#~ msgid "kappa"
+#~ msgstr "kappa"
+
+#~ msgid "lambda"
+#~ msgstr "lambda"
+
+#~ msgid "mu"
+#~ msgstr "mu"
+
+#~ msgid "nu"
+#~ msgstr "nu"
+
+#~ msgid "xi"
+#~ msgstr "xi"
+
+#~ msgid "omicron"
+#~ msgstr "omicron"
+
+#~ msgid "pi"
+#~ msgstr "pi"
+
+#~ msgid "rho"
+#~ msgstr "rho"
+
+#~ msgid "sigma"
+#~ msgstr "sigma"
+
+#~ msgid "tau"
+#~ msgstr "tau"
+
+#~ msgid "upsilon"
+#~ msgstr "upsilon"
+
+#~ msgid "phi"
+#~ msgstr "phi"
+
+#~ msgid "chi"
+#~ msgstr "chi"
+
+#~ msgid "psi"
+#~ msgstr "psi"
+
+#~ msgid "omega"
+#~ msgstr "omega"
+
+#~ msgid "Numbers"
+#~ msgstr "Sayılar"
+
+#~ msgid "Numeric Prefixes and Roman Numerals"
+#~ msgstr "Sayısal Önekler ve Roma Sayıları"
+
+#~ msgctxt "For example 'Mono' for 1 and 'Tri' for 3"
+#~ msgid "Prefix"
+#~ msgstr "Önek"
+
+#~ msgid "Roman Numerals"
+#~ msgstr "Roma Rakamları"
+
+#~ msgid "0.5"
+#~ msgstr "0.5"
+
+#~ msgid "1"
+#~ msgstr "1"
+
+#~ msgid "1.5"
+#~ msgstr "1.5"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "2.5"
+#~ msgstr "2.5"
+
+#~ msgid "3"
+#~ msgstr "3"
+
+#~ msgid "4"
+#~ msgstr "4"
+
+#~ msgid "5"
+#~ msgstr "5"
+
+#~ msgid "6"
+#~ msgstr "6"
+
+#~ msgid "7"
+#~ msgstr "7"
+
+#~ msgid "8"
+#~ msgstr "8"
+
+#~ msgid "9"
+#~ msgstr "9"
+
+#~ msgid "10"
+#~ msgstr "10"
+
+#~ msgid "11"
+#~ msgstr "11"
+
+#~ msgid "12"
+#~ msgstr "12"
+
+#~ msgid "13"
+#~ msgstr "13"
+
+#~ msgid "14"
+#~ msgstr "14"
+
+#~ msgid "15"
+#~ msgstr "15"
+
+#~ msgid "16"
+#~ msgstr "16"
+
+#~ msgid "17"
+#~ msgstr "17"
+
+#~ msgid "18"
+#~ msgstr "18"
+
+#~ msgid "19"
+#~ msgstr "19"
+
+#~ msgid "20"
+#~ msgstr "20"
+
+#~ msgid "40"
+#~ msgstr "40"
+
+#~ msgid "50"
+#~ msgstr "50"
+
+#~ msgid "60"
+#~ msgstr "60"
+
+#~ msgid "90"
+#~ msgstr "90"
+
+#~ msgid "100"
+#~ msgstr "100"
+
+#~ msgid "&Copy"
+#~ msgstr "&Kopyala"
+
+#~ msgid ""
+#~ "To start, enter\n"
+#~ "a formula in the\n"
+#~ "widget above and\n"
+#~ "click on 'Calc'."
+#~ msgstr ""
+#~ "Başlamak için\n"
+#~ "aşağıya bir formül\n"
+#~ "girin ve 'Hesap.'a\n"
+#~ "tıklayın."
+
+#~ msgctxt "For example: \"1 Carbon\" or \"3 Oxygen\""
+#~ msgid "%1 %2\n"
+#~ msgstr "%1 %2\n"
+
+#~ msgid "Molecular mass: %1 u"
+#~ msgstr "Molekül kütlesi: %1 u"
+
+#~ msgid "Invalid input"
+#~ msgstr "Geçersiz girdi"
+
+#~ msgid "%1<sub>%2</sub> "
+#~ msgstr "%1<sub>%2</sub> "
+
+#~ msgid "A periodic table of the elements"
+#~ msgstr "Elementlerin periyodik tablosu"
+
+#~ msgid "(C) 2002-2008 Carsten Niehaus"
+#~ msgstr "(C) 2002-2008 Carsten Niehaus"
+
+#~ msgid "Carsten Niehaus"
+#~ msgstr "Carsten Niehaus"
+
+#~ msgid "Pino Toscano"
+#~ msgstr "Pino Toscano"
+
+#~ msgid "Benoit Jacob"
+#~ msgstr "Benoit Jacob"
+
+#~ msgid "Marcus Hanwell"
+#~ msgstr "Marcus Hanwell"
+
+#~ msgid "Thomas Nagy"
+#~ msgstr "Thomas Nagy"
+
+#~ msgid "EqChem, the equation solver"
+#~ msgstr "EqChem, denklem çözücü"
+
+#~ msgid "Inge Wallin"
+#~ msgstr "Inge Wallin"
+
+#~ msgid "Anne-Marie Mahfouf"
+#~ msgstr "Anne-Marie Mahfouf"
+
+#~ msgid "A lot of small things and the documentation"
+#~ msgstr "Pek çok küçük detay ve belgelendirme"
+
+#~ msgid "Johannes Simon"
+#~ msgstr "Johannes Simon"
+
+#~ msgid "Jarle Akselsen"
+#~ msgstr "Jarle Akselsen"
+
+#~ msgid "Many beautiful element icons"
+#~ msgstr "Birçok güzel element simgesi"
+
+#~ msgid "Noémie Scherer"
+#~ msgstr "Noémie Scherer"
+
+#~ msgid "Many beautiful element icons, too!"
+#~ msgstr "Birçok güzel element simgesi!"
+
+#~ msgid "Danny Allen"
+#~ msgstr "Danny Allen"
+
+#~ msgid "Several icons"
+#~ msgstr "Bazı simgeler"
+
+#~ msgid "Lee Olson"
+#~ msgstr "Lee Olson"
+
+#~ msgid "Several icons in the information dialog"
+#~ msgstr "Bilgi iletişim kutusundaki bazı simgeler"
+
+#~ msgid "Jörg Buchwald"
+#~ msgstr "Jörg Buchwald"
+
+#~ msgid "Marco Martin"
+#~ msgstr "Marco Martin"
+
+#~ msgid "Daniel Haas"
+#~ msgstr "Daniel Haas"
+
+#~ msgid "The design of the information dialog"
+#~ msgstr "Bilgi iletişim kutusunun tasarımı"
+
+#~ msgid "Brian Beck"
+#~ msgstr "Brian Beck"
+
+#~ msgid "Paulo Cattai"
+#~ msgstr "Paulo Cattai"
+
+#~ msgid "Danilo Balzaque"
+#~ msgstr "Danilo Balzaque"
+
+#~ msgctxt ""
+#~ "one of the three states of matter (solid, liquid, vaporous or unknown)"
+#~ msgid "Solid"
+#~ msgstr "Katı"
+
+#~ msgctxt ""
+#~ "one of the three states of matter (solid, liquid, vaporous or unknown)"
+#~ msgid "Liquid"
+#~ msgstr "Sıvı"
+
+#~ msgctxt ""
+#~ "one of the three states of matter (solid, liquid, vaporous or unknown)"
+#~ msgid "Vaporous"
+#~ msgstr "Gaz"
+
+#~ msgctxt ""
+#~ "one of the three states of matter (solid, liquid, vaporous or unknown)"
+#~ msgid "Unknown"
+#~ msgstr "Bilinmeyen"
+
+#~ msgctxt "one of the two types of gradients available"
+#~ msgid "logarithmic"
+#~ msgstr "logaritmik"
+
+#~ msgctxt "one of the two types of gradients available"
+#~ msgid "linear"
+#~ msgstr "lineer"
+
+#~ msgctxt "Minimum value of the gradient"
+#~ msgid "Minimum: %1"
+#~ msgstr "En küçük değer: %1"
+
+#~ msgctxt "Maximum value of the gradient"
+#~ msgid "Maximum: %1"
+#~ msgstr "En büyük değer: %1"
+
+#~ msgid "Scheme: %1"
+#~ msgstr "Şema: %1"
+
+#~ msgid "Search:"
+#~ msgstr "Ara:"
+
+#~ msgid "Ok"
+#~ msgstr "Tamam"
+
+#~ msgid "Export Chemical Data"
+#~ msgstr "Kimyasal Veriyi Dışarıya Aktar"
+
+#~ msgid "Elements"
+#~ msgstr "Elementler"
+
+#~ msgid "Properties"
+#~ msgstr "Özellikler"
+
+#~ msgid "Exact Mass"
+#~ msgstr "Asıl Kütle"
+
+#~ msgid "Electron Affinity"
+#~ msgstr "Elektron İlgisi"
+
+#~ msgid "Could not open file for writing."
+#~ msgstr "Dosya yazma için açılamadı."
+
+#~ msgid "One Colour"
+#~ msgstr "Tek Renk"
+
+#~ msgid "All the Elements"
+#~ msgstr "Tüm Elementler"
+
+#~ msgid "s-Block"
+#~ msgstr "s-Bloğu"
+
+#~ msgid "p-Block"
+#~ msgstr "p-Bloğu"
+
+#~ msgid "d-Block"
+#~ msgstr "d-Bloğu"
+
+#~ msgid "f-Block"
+#~ msgstr "f-Bloğu"
+
+#~ msgid "Iconic"
+#~ msgstr "Simgesel"
+
+#~ msgid "Alkaline"
+#~ msgstr "Alkali"
+
+#~ msgid "Non-Metals"
+#~ msgstr "Ametaller"
+
+#~ msgid "Alkalie Metal"
+#~ msgstr "Alkali Metaller"
+
+#~ msgid "Other Metal"
+#~ msgstr "Başka Metal"
+
+#~ msgid "Halogen"
+#~ msgstr "Halojen"
+
+#~ msgid "Transition Metal"
+#~ msgstr "Geçiş Metali"
+
+#~ msgid "Noble Gas"
+#~ msgstr "Soy Gaz"
+
+#~ msgid "Metalloid"
+#~ msgstr "Metaloid"
+
+#~ msgid "Group 1"
+#~ msgstr "1. Grup"
+
+#~ msgid "Group 2"
+#~ msgstr "2. Grup"
+
+#~ msgid "Group 3"
+#~ msgstr "3. Grup"
+
+#~ msgid "Group 4"
+#~ msgstr "4. Grup"
+
+#~ msgid "Group 5"
+#~ msgstr "5. Grup"
+
+#~ msgid "Group 6"
+#~ msgstr "6. Grup"
+
+#~ msgid "Group 7"
+#~ msgstr "7. Grup"
+
+#~ msgid "Group 8"
+#~ msgstr "8. Grup"
+
+#~ msgid "Plot Data"
+#~ msgstr "Veriyi Çiz"
+
+#~ msgid "Atomic Mass [u]"
+#~ msgstr "Atom Kütlesi [u]"
+
+#~ msgid "Melting Point [K]"
+#~ msgstr "Erime Sıcaklığı [K]"
+
+#~ msgid "Boiling Point [K]"
+#~ msgstr "Kaynama Sıcaklığı [K]"
+
+#~ msgid "Atomic Radius [pm]"
+#~ msgstr "Atom Yarıçapı [pm]"
+
+#~ msgid "Covalent Radius [pm]"
+#~ msgstr "Kovalent Yarıçapı [pm]"
+
+#~ msgid "Isotope Table"
+#~ msgstr "İzotop Tablosu"
+
+#~ msgid "<h1>%1 (%2)</h1>"
+#~ msgstr "<h1>%1 (%2)</h1>"
+
+#~ msgid "Magnetic moment: %1"
+#~ msgstr "Manyetik moment: %1"
+
+#~ msgid "Halflife: %1 s"
+#~ msgstr "Yarılanma Ömrü: %1 s"
+
+#~ msgid "Number of nucleons: %1"
+#~ msgstr "Nükleon sayısı: %1"
+
+#~ msgid "Exact mass: %1 u"
+#~ msgstr "Asıl kütle: %1 u"
+
+#~ msgid "Isotope of Element %1 (%2)"
+#~ msgstr "%1 Elementinin İzotopu (%2)"
+
+#~ msgid "No element selected"
+#~ msgstr "Bir element seçilmedi"
+
+#~ msgid "No graphic found"
+#~ msgstr "Grafik bulunamadı"
+
+#~ msgctxt "For example '1.0079u', the mass of an element in units"
+#~ msgid "%1 u"
+#~ msgstr "%1 u"
+
+#~ msgid "van Der Waals"
+#~ msgstr "van Der Waals"
+
+#~ msgid "Electronegativity (Pauling)"
+#~ msgstr "Elektronegatiflik (Pauling)"
+
+#~ msgid "Discovery date"
+#~ msgstr "Keşfedilme Tarihi"
+
+#~ msgid "First Ionization"
+#~ msgstr "İlk İyonlaşma"
+
+#~ msgid "No Numeration"
+#~ msgstr "Numaralandırma Yok"
+
+#~ msgid "IUPAC"
+#~ msgstr "IUPAC"
+
+#~ msgid "CAS"
+#~ msgstr "CAS"
+
+#~ msgid "Old IUPAC"
+#~ msgstr "Eski IUPAC"
+
+#~ msgid "Elements with melting point around this temperature:"
+#~ msgstr "Bu sıcaklık yakınlarında erime noktası olan elementler:"
+
+#~ msgctxt "For example: Carbon (300K)"
+#~ msgid "%1 (%2%3)"
+#~ msgstr "%1 (%2%3)"
+
+#~ msgid "No elements with a melting point around this temperature"
+#~ msgstr "Bu sıcaklık yakınlarında erime noktası olan bir element yok"
+
+#~ msgid "Elements with boiling point around this temperature:"
+#~ msgstr "Bu sıcaklık yakınlarında kaynama noktası olan elementler:"
+
+#~ msgid "No elements with a boiling point around this temperature"
+#~ msgstr "Bu sıcaklık yakınlarında kaynama noktası olan bir element yok"
+
+#~ msgid "Solve Chemical Equations Viewer"
+#~ msgstr "Kimsayal Denklem Çözücü Görüntüleyicisi"
+
+#~ msgid "Copy"
+#~ msgstr "Kopyala"
+
+#~ msgid "Copy answer to clipboard"
+#~ msgstr "Yanıtı panoya kopyala"
+
+#~ msgctxt "Window title for the chemical solver's help"
+#~ msgid "Chemical Solver Help"
+#~ msgstr "Kimyasal Çözücü Yardımı"
+
+#~ msgid "&Look"
+#~ msgstr "&Görünüm"
+
+#~ msgid "&Blocks"
+#~ msgstr "&Bloklar"
+
+#~ msgid "&Groups"
+#~ msgstr "&Gruplar"
+
+#~ msgid "&State of Matter"
+#~ msgstr "Maddenin &Hali"
+
+#~ msgid ""
+#~ "Move the slider\n"
+#~ "to find out about\n"
+#~ "the state of matter"
+#~ msgstr ""
+#~ "Maddenin durumunu\n"
+#~ "görmek için kaydırma\n"
+#~ "çubuğunu hareket\n"
+#~ "ettirin"
+
+#~ msgctxt "Window title for the molecular 3D viewer's help"
+#~ msgid "Molecular Viewer Help"
+#~ msgstr "Moleküler Görüntüleyici Yardımı"
+
+#~ msgid "Mean Mass"
+#~ msgstr "Ortalama Kütle"
+
+#~ msgid "Mean mass: %1 u"
+#~ msgstr "Ortalama kütle: %1 u"
+
+#~ msgid "Mean Mass [u]"
+#~ msgstr "Ortalama Kütle [u]"
+
+#~ msgid "Density"
+#~ msgstr "Yoğunluk"
+
+#~ msgctxt "x gramm per cubic centimeter. This is the density."
+#~ msgid "%1 g/cm³"
+#~ msgstr "%1 g/cm³"
+
+#~ msgid "<tr><th colspan=\"2\" align=\"left\">Compound properties</th></tr>"
+#~ msgstr "<tr><th colspan=\"2\" align=\"left\">Bileşik özellikleri</th></tr>"
+
+#~ msgid "<tr><th colspan=\"2\" align=\"left\">Atomic properties</th></tr>"
+#~ msgstr "<tr><th colspan=\"2\" align=\"left\">Atom özellikleri</th></tr>"
+
+#~ msgid "Density: %1"
+#~ msgstr "Yoğunluk: %1"
+
+#~ msgid "<h1>%1</h1> Number: %2"
+#~ msgstr "<h1>%1</h1> Numara: %2"
+
+#~ msgid "Unknown."
+#~ msgstr "Bilinmeyen."

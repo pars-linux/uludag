@@ -1,0 +1,609 @@
+# translation of kinfocenter.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-09 19:04+0000\n"
+"PO-Revision-Date: 2004-01-13 18:27+0200\n"
+"Last-Translator: Engin ÇAĞATAY <engincagatay@yahoo.com>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-xml2pot; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.0.1\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:11 index.docbook:41
+#, no-c-format
+msgid "The &infocenter;"
+msgstr "&infocenter;"
+
+#. Tag: author
+#: index.docbook:14
+#, no-c-format
+msgid "<firstname>Michael</firstname> <surname>McBride</surname>"
+msgstr "<firstname>Michael</firstname> <surname>McBride</surname>"
+
+#. Tag: address
+#: index.docbook:17
+#, no-c-format
+msgid "&Mike.McBride.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:19
+#, fuzzy, no-c-format
+#| msgid "CREDIT_FOR_TRANSLATORS"
+msgid "ROLES_OF_TRANSLATORS"
+msgstr "<para>Engin ÇAĞATAY<email>engincagatay@yahoo.com</email></para>"
+
+#. Tag: para
+#: index.docbook:27
+#, no-c-format
+msgid "This documentation describes &kde;'s information center."
+msgstr "Bu belge &kde;'nin bilgi merkezini tanıtır."
+
+#. Tag: keyword
+#: index.docbook:31
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:32
+#, no-c-format
+msgid "kinfocenter"
+msgstr "kinfocenter"
+
+#. Tag: keyword
+#: index.docbook:33
+#, no-c-format
+msgid "system"
+msgstr "sistem"
+
+#. Tag: keyword
+#: index.docbook:34
+#, no-c-format
+msgid "information"
+msgstr "bilgi"
+
+#. Tag: keyword
+#: index.docbook:35
+#, no-c-format
+msgid "module"
+msgstr "modülü"
+
+#. Tag: para
+#: index.docbook:43
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The &infocenter; (from now on referred to simply as <quote>the "
+#| "information center</quote>) provides you with a centralized and "
+#| "convenient overview of your &kde; and system settings."
+msgid ""
+"The &infocenter; (from now on referred to simply as <quote>the information "
+"center</quote>) provides you with a centralized and convenient overview of "
+"your system and desktop environment."
+msgstr ""
+"&infocenter; (bundan sonra kısaca <quote>bilgi merkezi</quote> olarak "
+"anılacaktır) size &kde;'nizin ve sistem ayarlarınızın merkezi ve ulaşması "
+"kolay bilgilerini sunar."
+
+#. Tag: para
+#: index.docbook:49
+#, no-c-format
+msgid ""
+"The information center is made up of multiple modules. Each module is a "
+"separate application, but the information center organizes all of these "
+"programs into a convenient location."
+msgstr ""
+"Bilgi merkezi birçok modülden oluşur. Her modül ayrı bir uygulamadır, fakat "
+"bilgi merkezi tüm bu uygulamaları tutarlı bir şekilde organize eder."
+
+#. Tag: para
+#: index.docbook:55
+#, no-c-format
+msgid ""
+"This next section details the use of the information center itself. For "
+"information on individual modules, please see <link linkend=\"module\">Info "
+"Center Modules</link>"
+msgstr ""
+"Sıradaki bölüm bilgi merkezinin kullanımını detaylı bir şekilde anlatır. Her "
+"modül hakkında teker teker bilgi edinmek için lütfen <link linkend=\"module"
+"\">Bilgi Merkezi Modülleri</link> bölümüne gidin."
+
+#. Tag: title
+#: index.docbook:62
+#, no-c-format
+msgid "Starting the &infocenter;"
+msgstr "&infocenter;'ın başlatılması"
+
+#. Tag: para
+#: index.docbook:64
+#, no-c-format
+msgid "The &infocenter; can be started 3 ways:"
+msgstr "&infocenter; üç yolla başlatılabilir:"
+
+#. Tag: para
+#: index.docbook:70
+#, fuzzy, no-c-format
+#| msgid ""
+#| "By selecting <menuchoice><guimenu>K Button</guimenu><guisubmenu>System</"
+#| "guisubmenu><guimenuitem>Info Center</guimenuitem></menuchoice> from the "
+#| "&kde; Panel."
+msgid ""
+"By selecting <menuchoice><guimenu>Applications </guimenu><guisubmenu>System</"
+"guisubmenu><guimenuitem>Info Center</guimenuitem></menuchoice> from the "
+"application launcher in the panel."
+msgstr ""
+"&kde; panelinden <menuchoice><guimenu>K Düğmesi</guimenu><guisubmenu>Sistem</"
+"guisubmenu><guimenuitem>Bilgi Merkezi</guimenuitem></menuchoice>'ni seçerek."
+
+#. Tag: para
+#: index.docbook:78
+#, fuzzy, no-c-format
+#| msgid ""
+#| "This will bring up a dialog box. Type <userinput><command>kinfocenter</"
+#| "command></userinput>, and click <guibutton>Run</guibutton> or press "
+#| "<keycap>Enter</keycap>."
+msgid ""
+"By pressing <keycombo action=\"simul\">&Alt;<keycap>F2</keycap></keycombo>. "
+"This will bring up &krunner;. Type <userinput><command>kinfocenter</"
+"command></userinput>, and press &Enter;."
+msgstr ""
+"Bu size bir iletişim kutusu getirecek. <userinput><command>kinfocenter</"
+"command></userinput> yazın ve <guibutton>Çalıştır</guibutton> düğmesine ya "
+"da <keycap>Enter</keycap>'a basın."
+
+#. Tag: para
+#: index.docbook:87
+#, no-c-format
+msgid ""
+"You can type <command>kinfocenter &amp;</command> at any command prompt."
+msgstr ""
+"Herhangi bir komut satırında <command>kinfocenter &amp;</command> "
+"yazabilirsiniz."
+
+#. Tag: para
+#: index.docbook:93
+#, no-c-format
+msgid "All three of these methods are equivalent, and produce the same result."
+msgstr "Tüm bu üç yol da eşittir ve aynı sonuca ulaştırır."
+
+#. Tag: title
+#: index.docbook:100
+#, fuzzy, no-c-format
+#| msgid "The &infocenter; Screen"
+msgid "<title>The &infocenter; Screen</title>"
+msgstr "&infocenter; Ekranı"
+
+#. Tag: para
+#: index.docbook:102
+#, no-c-format
+msgid ""
+"When you start the information center, you are presented with a window, "
+"which can be divided into 3 functional parts."
+msgstr ""
+"Bilgi merkezini başlattığınızda, 3 fonksiyonel bölümü olan bir pencere ile "
+"karşılaşırsınız."
+
+#. Tag: screeninfo
+#: index.docbook:107
+#, fuzzy, no-c-format
+#| msgid "The &infocenter; Screen"
+msgid "The &infocenter; Screen."
+msgstr "&infocenter; Ekranı"
+
+#. Tag: phrase
+#: index.docbook:111
+#, fuzzy, no-c-format
+#| msgid "The &infocenter; Screen"
+msgid "<phrase>The &infocenter; Screen</phrase>"
+msgstr "&infocenter; Ekranı"
+
+#. Tag: para
+#: index.docbook:115
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Across the top is a menubar. The menubar will provide you with quick "
+#| "access to most of &infocenter;'s features. The menus are detailed in "
+#| "<link linkend=\"info-center-menus\">The &kde; Info Center Menus</link>."
+msgid ""
+"Across the top is a menubar. The menubar will provide you with quick access "
+"to most of &infocenter;'s features like quitting, configuring shortcuts and "
+"getting help."
+msgstr ""
+"En üstte menü çubuğu vardır. Menü çubuğu size &infocenter;'ın birçok "
+"özelliğine hızlı ulaşım sağlar. Menüler <link linkend=\"info-center-menus"
+"\">&kde; Bilgi Merkezi Menüleri</link> bölümünde detaylı anlatılmıştır."
+
+#. Tag: para
+#: index.docbook:121
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Along the left hand side, is a column. This is a where you choose which "
+#| "module to investigate. You can learn how to navigate through the modules "
+#| "in the section called <link linkend=\"module-intro\">Navigating Modules</"
+#| "link>."
+msgid ""
+"Along the left hand side, is a column with a filter field at the top. This "
+"is a where you choose which module to investigate. You can learn how to "
+"navigate through the modules in the section called <link linkend=\"module-"
+"intro\">Navigating Modules</link>."
+msgstr ""
+"Pencerenin sol tarafında bir başka bölüm vardır. Burası incelemek "
+"istediğiniz modülü seçtiğiniz bölümdür. Modüller arasında nasıl "
+"gezineceğinizi <link linkend=\"module-intro\">Modüllerde Gezinme</link> "
+"bölümünde öğrenebilirisiniz."
+
+#. Tag: para
+#: index.docbook:129
+#, fuzzy, no-c-format
+#| msgid "The main panel shows you some system information."
+msgid ""
+"The main panel shows you the system information about the selected module."
+msgstr "Ana panel size bazı sistem bilgilerini gösterir."
+
+#. Tag: title
+#: index.docbook:148
+#, no-c-format
+msgid "The &infocenter; Modules"
+msgstr "&infocenter; Modülleri"
+
+#. Tag: title
+#: index.docbook:151
+#, no-c-format
+msgid "Navigating Modules"
+msgstr "Modüllerde Gezinme"
+
+#. Tag: para
+#: index.docbook:153
+#, no-c-format
+msgid ""
+"This is a list of the <emphasis>standard</emphasis> configuration modules "
+"(sorted by category) provided by the <application role=\"package\">&kde; "
+"base</application> package. Please note that there may be many more modules "
+"on your system if you have installed additional software."
+msgstr ""
+"Burada <application role=\"package\">&kde; base</application> paketi "
+"tarafından sağlanan (kategorize edilmiş) <emphasis>standart</emphasis> "
+"ayarlama modüllerinin bir listesini görüyorsunuz. Sisteminize ek yazılım "
+"kurduysanız daha fazla modül olabileceğini unutmayınız."
+
+#. Tag: ulink
+#: index.docbook:163
+#, no-c-format
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#. Tag: ulink
+#: index.docbook:166
+#, no-c-format
+msgid "DMA-Channels"
+msgstr "DMA-Kanalları"
+
+#. Tag: ulink
+#: index.docbook:169
+#, no-c-format
+msgid "IEEE 1394 Devices"
+msgstr ""
+
+#. Tag: ulink
+#: index.docbook:172
+#, no-c-format
+msgid "Interrupts"
+msgstr "Kesmeler"
+
+#. Tag: ulink
+#: index.docbook:175
+#, no-c-format
+msgid "IO-Ports"
+msgstr "GÇ-Portları"
+
+#. Tag: ulink
+#: index.docbook:178
+#, no-c-format
+msgid "Memory"
+msgstr "Bellek"
+
+#. Tag: ulink
+#: index.docbook:181
+#, no-c-format
+msgid "Network Interfaces"
+msgstr "Ağ Arayüzleri"
+
+#. Tag: ulink
+#: index.docbook:184
+#, no-c-format
+msgid "OpenGL"
+msgstr ""
+
+#. Tag: ulink
+#: index.docbook:187
+#, no-c-format
+msgid "Partitions"
+msgstr "Disk Bölümleri"
+
+#. Tag: ulink
+#: index.docbook:190
+#, no-c-format
+msgid "<ulink>PCI</ulink>"
+msgstr "<ulink>PCI</ulink>"
+
+#. Tag: ulink
+#: index.docbook:193
+#, no-c-format
+msgid "Processor"
+msgstr "İşlemci"
+
+#. Tag: ulink
+#: index.docbook:196
+#, no-c-format
+msgid "Protocols"
+msgstr ""
+
+#. Tag: ulink
+#: index.docbook:199
+#, fuzzy, no-c-format
+msgid "Samba Status Information"
+msgstr "Samba Durumu"
+
+#. Tag: ulink
+#: index.docbook:202
+#, no-c-format
+msgid "SCSI"
+msgstr "SCSI"
+
+#. Tag: ulink
+#: index.docbook:205
+#, no-c-format
+msgid "Sound"
+msgstr "Ses"
+
+#. Tag: ulink
+#: index.docbook:208
+#, no-c-format
+msgid "USB Devices"
+msgstr "USB Aygıtları"
+
+#. Tag: ulink
+#: index.docbook:211
+#, fuzzy, no-c-format
+#| msgid "X-Server"
+msgid "&X-Server;"
+msgstr "X Sunucu"
+
+#. Tag: title
+#: index.docbook:222
+#, no-c-format
+msgid "Credits and License"
+msgstr "Yazarlar ve Lisanslar"
+
+#. Tag: para
+#: index.docbook:224
+#, no-c-format
+msgid "&infocenter;"
+msgstr "&infocenter;"
+
+#. Tag: para
+#: index.docbook:225
+#, no-c-format
+msgid "Program copyright 1997-2001 The &infocenter; Developers"
+msgstr ""
+"Uygulamanın hakları &infocenter; Geliştiricileri adına saklıdır 1997-2001"
+
+#. Tag: para
+#: index.docbook:226 index.docbook:237
+#, no-c-format
+msgid "Contributors:"
+msgstr "Katkıda Bulunanlar:"
+
+#. Tag: para
+#: index.docbook:229 index.docbook:246
+#, fuzzy, no-c-format
+#| msgid "Matthias Hoelzer-Kluepfel <email>hoelzer@kde.org</email>"
+msgid "Matthias Hoelzer-Kluepfel &Matthias.Hoelzer-Kluepfel.mail;"
+msgstr "Matthias Hoelzer-Kluepfel <email>hoelzer@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:231
+#, fuzzy, no-c-format
+#| msgid "Matthias Elter <email>elter@kde.org</email>"
+msgid "&Matthias.Elter; &Matthias.Elter.mail;"
+msgstr "Matthias Elter <email>elter@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:234
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Documentation <trademark class=\"copyright\">copyright 2000 Michael "
+#| "McBride</trademark> <email>mpmcbride7@yahoo.com</email>"
+msgid ""
+"Documentation <trademark class=\"copyright\">copyright 2000 Michael McBride</"
+"trademark> &Mike.McBride.mail;"
+msgstr ""
+"Belgenin <trademark class=\"copyright\">hakları Michael McBride adına "
+"saklıdır 2000</trademark> <email>mpmcbride7@yahoo.com</email>"
+
+#. Tag: para
+#: index.docbook:240
+#, no-c-format
+msgid "&Paul.Campbell; &Paul.Campbell.mail;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:241
+#, fuzzy, no-c-format
+#| msgid "Helge Deller <email>deller@kde.org</email>"
+msgid "&Helge.Deller; &Helge.Deller.mail;"
+msgstr "Helge Deller <email>deller@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:242
+#, fuzzy, no-c-format
+#| msgid "Mark Donohoe"
+msgid "&Mark.Donohoe;"
+msgstr "Mark Donohoe"
+
+#. Tag: para
+#: index.docbook:243
+#, fuzzy, no-c-format
+#| msgid "Pat Dowler"
+msgid "&Patrick.Dowler;"
+msgstr "Pat Dowler"
+
+#. Tag: para
+#: index.docbook:244
+#, fuzzy, no-c-format
+#| msgid "Duncan Haldane <email>duncan@kde.org</email>"
+msgid "&Duncan.Haldane; <email>duncan@kde.org</email>"
+msgstr "Duncan Haldane <email>duncan@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:245
+#, fuzzy, no-c-format
+#| msgid "Steffen Hansen <email>stefh@mip.ou.dk</email>."
+msgid "&Steffen.Hansen; <email>stefh@mip.ou.dk</email>."
+msgstr "Steffen Hansen <email>stefh@mip.ou.dk</email>."
+
+#. Tag: para
+#: index.docbook:247
+#, fuzzy, no-c-format
+#| msgid "Martin Jones <email>mjones@kde.org</email>"
+msgid "Martin Jones &Martin.R.Jones.mail;"
+msgstr "Martin Jones <email>mjones@kde.org</email>"
+
+#. Tag: para
+#: index.docbook:248
+#, fuzzy, no-c-format
+#| msgid "Jost Schenck <email>jost@schenck.de</email>"
+msgid "&Jost.Schenck; &Jost.Schenck.mail;"
+msgstr "Jost Schenck <email>jost@schenck.de</email>"
+
+#. Tag: para
+#: index.docbook:249
+#, no-c-format
+msgid "&Jonathan.Singer; &Jonathan.Singer.mail;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:250
+#, fuzzy, no-c-format
+#| msgid "Thomas Tanghus <email>tanghus@earthling.net</email>"
+msgid "&Thomas.Tanghus; &Thomas.Tanghus.mail;"
+msgstr "Thomas Tanghus <email>tanghus@earthling.net</email>"
+
+#. Tag: para
+#: index.docbook:251
+#, no-c-format
+msgid "&Krishna.Tateneni; &Krishna.Tateneni.mail;"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:252
+#, no-c-format
+msgid "Ellis Whitehead <email>ewhitehe@uni-freiburg.de</email>"
+msgstr "Ellis Whitehead <email>ewhitehe@uni-freiburg.de</email>"
+
+#. Tag: trans_comment
+#: index.docbook:256
+#, no-c-format
+msgid "CREDIT_FOR_TRANSLATORS"
+msgstr "<para>Engin ÇAĞATAY<email>engincagatay@yahoo.com</email></para>"
+
+#. Tag: chapter
+#: index.docbook:256
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr "&underFDL; &underGPL;"
+
+#~ msgid "Using The &infocenter;"
+#~ msgstr "&infocenter;'ın Kullanımı"
+
+#~ msgid ""
+#~ "By pressing <keycombo action=\"simul\">&Alt;<keycap>F2</keycap></"
+#~ "keycombo>."
+#~ msgstr ""
+#~ "<keycombo action=\"simul\">&Alt;<keycap>F2</keycap></keycombo> tuşlarına "
+#~ "basarak."
+
+#~ msgid "The &infocenter; Menus"
+#~ msgstr "&infocenter; Menüleri"
+
+#~ msgid ""
+#~ "This next section gives you a brief description of what each menu item "
+#~ "does."
+#~ msgstr ""
+#~ "Bir sonraki bölüm size her menü elemanının ne yaptığı hakkında kısa "
+#~ "bilgiler sunar."
+
+#~ msgid "<guimenu>File</guimenu> Menu"
+#~ msgstr "<guimenu>Dosya</guimenu> Menüsü"
+
+#~ msgid "The <guimenu>File</guimenu> menu has a single entry."
+#~ msgstr "<guimenu>Dosya</guimenu> menüsü tek girdiye sahiptir."
+
+#~ msgid ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> "
+#~ "</shortcut> <guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem>"
+#~ msgstr ""
+#~ "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Ç</keycap></keycombo> "
+#~ "</shortcut> <guimenu>Dosya</guimenu> <guimenuitem>Çık</guimenuitem>"
+
+#~ msgid "Closes the info center."
+#~ msgstr "Bilgi Merkezi'ni kapatır."
+
+#~ msgid "<guimenu>Help</guimenu> Menu"
+#~ msgstr "<guimenu>Yardım</guimenu> Menüsü"
+
+#~ msgid "&help.menu.documentation;"
+#~ msgstr "&help.menu.documentation;"
+
+#~ msgid "Exiting The &kde; Information Center"
+#~ msgstr "&kde; Bilgi Merkezi'nden Çıkış"
+
+#~ msgid "You can exit the info center one of three ways:"
+#~ msgstr "Bilgi merkezinden şu üç yoldan biriyle çıkabilirsiniz:"
+
+#~ msgid ""
+#~ "Select <menuchoice><guimenu>File</guimenu> <guimenuitem>Quit</"
+#~ "guimenuitem></menuchoice> from the menu bar."
+#~ msgstr ""
+#~ "Menü çubuğundan <menuchoice><guimenu>Dosya</guimenu> <guimenuitem>Çık</"
+#~ "guimenuitem></menuchoice>'ı seçin."
+
+#~ msgid ""
+#~ "Type <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> on "
+#~ "the keyboard."
+#~ msgstr ""
+#~ "Klavyede <keycombo action=\"simul\">&Ctrl;<keycap>Ç</keycap></keycombo> "
+#~ "tuşlarına basın."
+
+#~ msgid ""
+#~ "Click on the <guiicon>Close</guiicon> button on the frame surrounding the "
+#~ "info center."
+#~ msgstr ""
+#~ "Bilgi merkezini çevreleyen çerçeve üzerindeki <guiicon>Kapat</guiicon> "
+#~ "düğmesine basın."
+
+#~ msgid "PCMCIA"
+#~ msgstr "PCMCIA"
+
+#~ msgid "mpmcbride7@yahoo.com"
+#~ msgstr "mpmcbride7@yahoo.com"
+
+#~ msgid "Paul Campbell <email>paul@taniwha.com</email>"
+#~ msgstr "Paul Campbell <email>paul@taniwha.com</email>"
+
+#~ msgid "Jonathan Singer <email>jsinger@leeta.net</email>"
+#~ msgstr "Jonathan Singer <email>jsinger@leeta.net</email>"
+
+#~ msgid "Krishna Tateneni <email>tateneni@pluto.njcc.com></email>"
+#~ msgstr "Krishna Tateneni <email>tateneni@pluto.njcc.com></email>"
+
+#~ msgid "Block Devices"
+#~ msgstr "Blok Aygıtlar"

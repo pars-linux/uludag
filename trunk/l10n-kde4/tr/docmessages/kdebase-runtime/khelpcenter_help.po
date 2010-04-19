@@ -1,0 +1,1234 @@
+# translation of khelpcenter_help.po to Türkçe
+# Copyright (C) 2004 Free Software Foundation, Inc.
+#
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: khelpcenter_help\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2009-01-23 03:16+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: chapterinfo
+#: help.docbook:4
+#, fuzzy, no-c-format
+#| msgid "<date>2002-02-03</date> <releaseinfo>0.08.00</releaseinfo>"
+msgid "<date>2009-05-09</date> <releaseinfo>4.00.00</releaseinfo>"
+msgstr "<date>2002-02-03</date> <releaseinfo>0.08.00</releaseinfo>"
+
+#. Tag: title
+#: help.docbook:8
+#, no-c-format
+msgid "&kde; Help System User Manual"
+msgstr "&kde; Yardım Sistemi Kullanıcı Elkitabı"
+
+#. Tag: title
+#: help.docbook:12
+#, no-c-format
+msgid "&kde; Help System"
+msgstr "&kde; Yardım Sistemi"
+
+#. Tag: para
+#: help.docbook:14
+#, no-c-format
+msgid ""
+"The &kde; help system is designed to make accessing the common &UNIX; help "
+"systems (<application>man</application> and <application>info</application>) "
+"simple, as well as the native &kde; documentation (&XML;)."
+msgstr ""
+"&kde; yardım sistemi, &kde; yardım dosyalarına (&XML;) olduğu kadar genel "
+"&UNIX; yardım sistemlerine (<application>man</application> ve "
+"<application>info</application>) erişebilecek şekilde tasarlandı."
+
+#. Tag: para
+#: help.docbook:20
+#, fuzzy, no-c-format
+#| msgid ""
+#| "All base &kde; applications come fully documented, thanks to the efforts "
+#| "of the Documentation team. If you would like to help, please write to the "
+#| "Documentation coordinator, Lauri Watts, at <email>lauri@kde.org</email> "
+#| "for information. No experience is required, just enthusiasm and patience."
+msgid ""
+"All base &kde; applications come fully documented, thanks to the efforts of "
+"the Documentation team. If you are interested in helping with the "
+"documentation efforts, join the <ulink url=\"https://mail.kde.org/mailman/"
+"listinfo/kde-doc-english\">mailing list</ulink> and write to the team at "
+"<email>kde-doc-english@kde.org</email>. No experience is required, just "
+"enthusiasm and patience."
+msgstr ""
+"Tüm temel &kde; uygulamaları yardım belgeleri ile gelmektedir, Dökümantasyon "
+"takımına teşekkürler. Yardım etmek isterseniz lütfen Dökümantasyon "
+"koordinatörü Lauri Watts'a <email>lauri@kde.org</email> adresinden ulaşın. "
+"Tecrübe gerekmemektedir, ilgi ve istek yeterlidir..."
+
+#. Tag: para
+#: help.docbook:29
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you would like to help translating &kde; documentation to your native "
+#| "language, the Translation coordinator is Thomas Diehl, <email>thd@kde."
+#| "org</email>, and he would also welcome the help. More information, "
+#| "including the coordinators for each language team, can be found on the "
+#| "<ulink url=\"http://i18n.kde.org\">Internationalization web site</ulink>, "
+#| "and in the <link linkend=\"contact\">Contact</link> section of this "
+#| "document."
+msgid ""
+"If you would like to help translating &kde; documentation to your native "
+"language, review the information, including coordinators for each language "
+"team, on the <ulink url=\"http://l10n.kde.org\">Localization web site</"
+"ulink>, and in the <link linkend=\"contact\">Contact</link> section of this "
+"document."
+msgstr ""
+"&kde; yardım dosyalarının kendi anadilinize çevrilmesine yardımda bulunmak "
+"isterseniz, Çeviri koordinatörü Thomas Diehl'dir, <email>thd@kde.org</"
+"email>, yardımlarınızı beklemektedir. Her dil takımı koordinatörünü içeren "
+"bir sayfa <ulink url=\"http://i18n.kde.org\">Uluslararasılaştırma web "
+"sitesi</ulink> adresinde <link linkend=\"contact\">Contact - İletişim</"
+"link>bölümünde bulunmaktadır."
+
+#. Tag: title
+#: help.docbook:37
+#, no-c-format
+msgid "Installation"
+msgstr "Kurma"
+
+#. Tag: para
+#: help.docbook:39
+#, fuzzy, no-c-format
+#| msgid ""
+#| "&khelpcenter; is an integral part of the &kde; Base installation, and is "
+#| "installed with every copy of &kde;. It can be found in the kdebase "
+#| "package, and is available from the &kde-ftp;, or will be found in your "
+#| "operating system kdebase package."
+msgid ""
+"&khelpcenter; is an integral part of the &kde; Base installation, and is "
+"installed with every copy of &kde;. It can be found in the kdebase-runtime "
+"package, and is available from the &kde-ftp;, or will be found in your "
+"operating system's kdebase-runtime package."
+msgstr ""
+"&khelpcenter; &kde;'nin her sürümüyle dağıtılan ve yüklenen, &kde; Temel "
+"kurulumunun entegre bir parçasıdır. kdebase paketinde (&kde-ftp;'de "
+"mevcuttur) ya da işletim sisteminizin kdebase paketinde bulunur."
+
+#. Tag: title
+#: help.docbook:50
+#, no-c-format
+msgid "Invoking Help"
+msgstr "Yardım Alma"
+
+#. Tag: para
+#: help.docbook:52
+#, no-c-format
+msgid "&khelpcenter; can be called in several ways:"
+msgstr "&khelpcenter;'a birkaç yolla ulaşılabilir:"
+
+#. Tag: term
+#: help.docbook:58
+#, no-c-format
+msgid "From the <guimenu>Help</guimenu> menu"
+msgstr "<guimenu>Yardım</guimenu> menüsünden"
+
+#. Tag: para
+#: help.docbook:60
+#, fuzzy, no-c-format
+#| msgid ""
+#| "The most common will probably be from within an application. Choose "
+#| "<menuchoice><guimenu>Help</guimenu> <guimenuitem>Contents</guimenuitem></"
+#| "menuchoice> to open that application's help file, at the contents page."
+msgid ""
+"The most common will probably be from within an application. Choose "
+"<menuchoice> <shortcut> <keycombo action=\"simul\"><keycap>F1</keycap></"
+"keycombo> </shortcut> <guimenu>Help</guimenu> <guimenuitem>Application&apos;"
+"s Handbook</guimenuitem></menuchoice> to open that application's handbook."
+msgstr ""
+"Genel ulaşım daha çok bir uygulamanın içinden olacaktır. Yardımın içerik "
+"bölümünde kullandığınız uygulamanın yardım dosyasını açmak için<menuchoice> "
+"<guimenu>Yardım</guimenu> <guimenuitem>İçindekiler</guimenuitem></"
+"menuchoice> seçimlerini yapın."
+
+#. Tag: term
+#: help.docbook:74
+#, no-c-format
+msgid "From the Kickoff Application Launcher"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:76
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Choose the big <guiicon>K</guiicon> in your panel, and select "
+#| "<guimenuitem>Help</guimenuitem> to open &khelpcenter;, starting at the "
+#| "default welcome page."
+msgid ""
+"Choose the big <guiicon>K</guiicon> in your panel, and select the "
+"<guimenuitem>Applications</guimenuitem> tab followed by selecting "
+"<guimenuitem>Help</guimenuitem> to open &khelpcenter;, which will open up to "
+"the default welcome page."
+msgstr ""
+"Panelinizdeki büyük <guiicon>K</guiicon> simgesine basın ve "
+"&khelpcenter;'ıaçmak için <guimenuitem>Yardım</guimenuitem>'ı seçin. "
+"Öntanımlı hoşgeldiniz sayfası açılacaktır."
+
+#. Tag: term
+#: help.docbook:86
+#, no-c-format
+msgid "From the command line"
+msgstr "Komut satırından"
+
+#. Tag: para
+#: help.docbook:88
+#, no-c-format
+msgid ""
+"&khelpcenter; may be started using a &URL; to display a file. &URL;s have "
+"been added for <command>info</command> and <command>man</command> pages "
+"also. You can use them as follows:"
+msgstr ""
+"&khelpcenter; bir dosya göstermek için &URL; kullanılarak da "
+"çalıştırılabilir. <command>info</command> and <command>man</command> "
+"dosyaları için de &URL;ler eklenmiştir. Bunları şu şekillerde "
+"kullanabilirsiniz:"
+
+#. Tag: term
+#: help.docbook:97
+#, no-c-format
+msgid "An application help file"
+msgstr "Uygulama yardım dosyası"
+
+#. Tag: para
+#: help.docbook:99
+#, no-c-format
+msgid ""
+"<command>khelpcenter</command> <option>help:/<replaceable>kedit</"
+"replaceable></option>"
+msgstr ""
+"<command>khelpcenter</command> <option>help:/<replaceable>kedit</"
+"replaceable></option>"
+
+#. Tag: para
+#: help.docbook:103
+#, no-c-format
+msgid "Opens the &kedit; help file, at the contents page."
+msgstr "İçindekiler sayfasında &kedit; yardım dosyasını açar."
+
+#. Tag: term
+#: help.docbook:110
+#, no-c-format
+msgid "A local &URL;"
+msgstr "Yerel &URL;"
+
+#. Tag: para
+#: help.docbook:111
+#, no-c-format
+msgid ""
+"<command>khelpcenter</command> <option>file:/ <replaceable>usr/local/src/qt/"
+"html/index.html</replaceable></option>"
+msgstr ""
+"<command>khelpcenter</command> <option>file:/ <replaceable>usr/local/src/qt/"
+"html/index.html</replaceable></option>"
+
+#. Tag: term
+#: help.docbook:120
+#, no-c-format
+msgid "A Man page"
+msgstr "Bir Man sayfası"
+
+#. Tag: para
+#: help.docbook:122
+#, no-c-format
+msgid ""
+"<command>khelpcenter</command> <option>man:/<replaceable>strcpy</"
+"replaceable></option>"
+msgstr ""
+"<command>khelpcenter</command> <option>man:/<replaceable>strcpy</"
+"replaceable></option>"
+
+#. Tag: term
+#: help.docbook:130
+#, no-c-format
+msgid "An Info page"
+msgstr "Bir Bilgi safyası"
+
+#. Tag: para
+#: help.docbook:132
+#, no-c-format
+msgid ""
+"<command>khelpcenter</command> <option>info:/<replaceable>gcc</replaceable></"
+"option>"
+msgstr ""
+"<command>khelpcenter</command> <option>info:/<replaceable>gcc</replaceable></"
+"option>"
+
+#. Tag: para
+#: help.docbook:140
+#, no-c-format
+msgid ""
+"Invoking <command>khelpcenter</command> with no parameters opens the default "
+"welcome page."
+msgstr ""
+"<command>khelpcenter</command> komutunu herhangi bir parametre (seçenek) "
+"kullanmadan çalıştırmak hoşgeldiniz sayfasını açar."
+
+#. Tag: title
+#: help.docbook:151
+#, no-c-format
+msgid "The &khelpcenter; interface"
+msgstr "&khelpcenter; arayüzü"
+
+#. Tag: para
+#: help.docbook:153
+#, no-c-format
+msgid "The &khelpcenter; interface consists of two panes of information."
+msgstr "&khelpcenter; arayüzü iki bilgi panelinden oluşur."
+
+#. Tag: para
+#: help.docbook:157
+#, no-c-format
+msgid ""
+"The toolbar and menus are explained further in <xref linkend=\"menu-and-"
+"toolbar-ref\"/>."
+msgstr ""
+"Araç çubuğu ve menüler <xref linkend=\"menu-and-toolbar-ref\"/> bölümünde "
+"açıklanır."
+
+#. Tag: para
+#: help.docbook:162
+#, no-c-format
+msgid ""
+"Documents contain their own navigation tools, enabling you to move either "
+"sequentially through a document, using <guilabel>Next</guilabel>, "
+"<guilabel>Previous</guilabel>, and <guilabel>Home</guilabel> links, or to "
+"move around in a less structured manner, using hyperlinks."
+msgstr ""
+"Dökümanlar kendi yönetim araçlarını içerir, bunlar ya <guilabel>İleri</"
+"guilabel>, <guilabel>Geri</guilabel>, ve <guilabel>Ev</guilabel> köprülerini "
+"kullanarak sırayla okumanızı ya da yine köprüler kullanarak daha düzensiz "
+"okumanızı sağlarlar."
+
+#. Tag: para
+#: help.docbook:170
+#, no-c-format
+msgid ""
+"Links can take you to other parts of the same document, or to a different "
+"document, and you can use the <guiicon>Back</guiicon> (Left pointing arrow) "
+"or <guiicon>Forward</guiicon> (Right pointing arrow) icons on the toolbar to "
+"move through the documents you have viewed in this session."
+msgstr ""
+"Köprüler sizi aynı belgenin çeşitli bölümlerine görülebilir, ya da başka bir "
+"dökümana da götürebilir.Araç çubuğundaki <guiicon>Geri</guiicon> (Solu "
+"gösteren ok) ya da <guiicon>İleri</guiicon> (Sağı gösteren ok) simgelerini "
+"kullanarak, daha önce gezindiğiniz belgelere ulaşabilirisiniz."
+
+#. Tag: para
+#: help.docbook:178
+#, no-c-format
+msgid ""
+"The two panes display the contents of the help system, and the help files "
+"themselves, on the left and right respectively."
+msgstr ""
+"İki pencere yardım sisteminin içerini gösterir, ve yardım dosyaları, "
+"sırasıyla solda ve sağdadır."
+
+#. Tag: title
+#: help.docbook:184
+#, no-c-format
+msgid "The <guilabel>Contents</guilabel> pane"
+msgstr "<guilabel>İçindekiler</guilabel> penceresi"
+
+#. Tag: para
+#: help.docbook:186
+#, no-c-format
+msgid ""
+"The <guilabel>Contents</guilabel> pane in &khelpcenter; is displayed on the "
+"left hand side of the window. As you might expect, you can move the splitter "
+"bar, to make sure you can comfortably read the contents of either pane."
+msgstr ""
+"&khelpcenter;'daki <guilabel>İçindekiler</guilabel> penceresi, ana "
+"pencerenin sol tarafında gösterilir. Tabii ki, bu pencerenin içeriğini daha "
+"rahat okuyabilmeniz ayıraç çubuğunu hareket ettirebilirsiniz."
+
+#. Tag: para
+#: help.docbook:193
+#, no-c-format
+msgid ""
+"The <guilabel>Contents</guilabel> pane is further divided into two tabs, one "
+"containing a <link linkend=\"contents-menu\">menu</link> showing all the "
+"help information &khelpcenter; is aware of, and the other contains the &kde; "
+"<link linkend=\"kde-glossary\">glossary</link> of terms."
+msgstr ""
+"<guilabel>İçindekiler</guilabel> penceresi iki sekmeye ayrılır, biri "
+"&khelpcenter;'ın sahip olduğu tüm bilgiyi gösteren <link linkend=\"contents-"
+"menu\">İçindekiler</link>'i içerir, diğeri ise &kde; terimlerini içeren "
+"<link linkend=\"kde-glossary\">Sözlük</link>'ü gösterir."
+
+#. Tag: title
+#: help.docbook:202
+#, no-c-format
+msgid "The <guilabel>Contents</guilabel> Menu"
+msgstr "<guilabel>İçindekiler</guilabel> Menüsü"
+
+#. Tag: para
+#: help.docbook:204
+#, no-c-format
+msgid ""
+"The <guilabel>Contents</guilabel> contains the following default entries:"
+msgstr "<guilabel>İçindekiler</guilabel>  şu öntanımlı girişleri içerir:"
+
+#. Tag: guilabel
+#: help.docbook:211
+#, no-c-format
+msgid "Welcome to &kde;"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:213
+#, no-c-format
+msgid ""
+"Contains links that provide <guilabel>Information about &kde;</guilabel> as "
+"well as <guilabel>Getting the most out of &kde;</guilabel>."
+msgstr ""
+
+#. Tag: guilabel
+#: help.docbook:221
+#, no-c-format
+msgid "&kde; User's manual"
+msgstr "&kde; Kullanıcı elkitabı"
+
+#. Tag: para
+#: help.docbook:223
+#, no-c-format
+msgid ""
+"The &kde; User's manual is an in-depth exploration of &kde;, including "
+"installation, configuration and customization, and use."
+msgstr ""
+"&kde; Kullanıcı elkitabı kurma, ayarlama, kişiselleştirme ve kullanım "
+"konularını içeren detaylı bir &kde; yardım bölümüdür."
+
+#. Tag: guilabel
+#: help.docbook:231
+#, no-c-format
+msgid "Application manuals"
+msgstr "Uygulama elkitapları"
+
+#. Tag: para
+#: help.docbook:233
+#, no-c-format
+msgid ""
+"Native &kde; application documentation. All &kde; applications have "
+"documentation in &XML; format, which are converted to <acronym>HTML</"
+"acronym> when you view them. This section lists all the &kde; applications "
+"with a brief description and a link to the full application documentation."
+msgstr ""
+"&kde; uygulama belgeleri. Tüm &kde; uygulamaları &XML; biçiminde saklanan ve "
+"siz görüntülemek istediğinizde <acronym>HTML</acronym> biçimine çevrilen "
+"belgelere sahiptir. Bu bölüm, tüm &kde; uygulamalarını kısa açıklamalar "
+"vererek listeler ve kendi uygulama belgelerine köprüler içerir."
+
+#. Tag: para
+#: help.docbook:240
+#, no-c-format
+msgid ""
+"The applications are displayed in a tree structure that echoes the default "
+"structure of the <guimenu>K</guimenu> menu, making it easy to find the "
+"application you are looking for."
+msgstr ""
+"Uygulamalar, aradığınız uygulamayı bulmanızı kolaylaştırmak için <guimenu>K</"
+"guimenu> menüsünün öntanımlı yapısını taklit eden bir ağaç düzeninde "
+"gösterilmektedir."
+
+#. Tag: guilabel
+#: help.docbook:249
+#, no-c-format
+msgid "Control Center Modules"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:251
+#, no-c-format
+msgid ""
+"Provides a list of links to various modules that are located in the &kde; "
+"&systemsettings; application."
+msgstr ""
+
+#. Tag: guilabel
+#: help.docbook:259
+#, no-c-format
+msgid "Kioslaves"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:261
+#, no-c-format
+msgid ""
+"Contains a list of links to various <acronym>KIO</acronym> modules "
+"documentation."
+msgstr ""
+
+#. Tag: guilabel
+#: help.docbook:268
+#, no-c-format
+msgid "Plasma Manual"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:270
+#, no-c-format
+msgid ""
+"The &plasma; Manual is the documentation for the most visible pillar of "
+"&kde;, the core interface to the desktop."
+msgstr ""
+
+#. Tag: guilabel
+#: help.docbook:278
+#, no-c-format
+msgid "Tutorials"
+msgstr "Tutorials - Küçük yardımlar"
+
+#. Tag: para
+#: help.docbook:280
+#, no-c-format
+msgid "Short, task based or informational tutorials."
+msgstr "Kısa, görev tabanlı ya da bilgilendirme amaçlı kısa yardımlar."
+
+#. Tag: guilabel
+#: help.docbook:287
+#, no-c-format
+msgid "&UNIX; manual pages"
+msgstr "&UNIX; kılavuz sayfaları"
+
+#. Tag: para
+#: help.docbook:289
+#, no-c-format
+msgid ""
+"&UNIX; man pages are the traditional on-line documentation format for &UNIX; "
+"systems. Most programs on your system will have a man page. In addition, man "
+"pages exist for programming functions and file formats."
+msgstr ""
+"&UNIX; kılavuz sayfaları, &UNIX; sistemleri için geleneksel çevrimiçi belge "
+"biçimleridir. Sisteminizdeki birçok uygulama kılavuz sayfasına sahiptir. "
+"Ayrıca, programlarma fonksiyonları ve dosya biçimleri için de kılavuz "
+"sayfaları vardır."
+
+#. Tag: guilabel
+#: help.docbook:299
+#, no-c-format
+msgid "Browse info pages"
+msgstr "Bilgi sayfalarını gezin"
+
+#. Tag: para
+#: help.docbook:301
+#, no-c-format
+msgid ""
+"TeXinfo documentation is used by many &GNU; applications, including "
+"<command>gcc</command> (the C/C++ compiler), <command>emacs</command>, and "
+"many others."
+msgstr ""
+"TeXinfo belgelemesi <command>gcc</command> (C/C++derleyicisi), "
+"<command>emacs</command> gibi birçok &GNU; uygulaması için kullanılır."
+
+#. Tag: guilabel
+#: help.docbook:310
+#, no-c-format
+msgid "The &kde; FAQ"
+msgstr "&kde; SSS"
+
+#. Tag: para
+#: help.docbook:312
+#, no-c-format
+msgid "Frequently asked questions about &kde;, and their answers."
+msgstr ""
+"&kde; hakkında Frequently asked questions - Sıkça Sorulan Sorular ve "
+"cevapları."
+
+#. Tag: guilabel
+#: help.docbook:319
+#, no-c-format
+msgid "Contact Information"
+msgstr "İletişim Bilgisi"
+
+#. Tag: para
+#: help.docbook:321
+#, no-c-format
+msgid ""
+"Information on how to contact &kde; developers, and how to join the &kde; "
+"mailing lists."
+msgstr ""
+"&kde; geliştiricilerine nasıl ulaşabileceğiniz ve &kde; posta listelerine "
+"nasıl üye olacağınız konusunda bilgiler."
+
+#. Tag: guilabel
+#: help.docbook:329
+#, no-c-format
+msgid "&kde; on the web"
+msgstr "Web'de &kde;"
+
+#. Tag: para
+#: help.docbook:331
+#, no-c-format
+msgid ""
+"Links to &kde; on the web, both the official &kde; website, and other useful "
+"sites."
+msgstr ""
+"&kde;'nin resmi sitesine ve &kde; hakkında diğer yararlı sitelere köprüler."
+
+#. Tag: guilabel
+#: help.docbook:339
+#, no-c-format
+msgid "Supporting &kde;"
+msgstr "&kde; destekleme"
+
+#. Tag: para
+#: help.docbook:341
+#, no-c-format
+msgid "How to help, and how to get involved."
+msgstr ""
+"Nasıl yardım edeceğiniz, ve bize nasıl katılacağınız konusunda bilgiler."
+
+#. Tag: title
+#: help.docbook:449
+#, no-c-format
+msgid ""
+"The <application>Man</application> and <application>Info</application> "
+"sections"
+msgstr ""
+"<application>Man</application> ve <application>Info</application> bölümleri"
+
+#. Tag: para
+#: help.docbook:452
+#, no-c-format
+msgid ""
+"Man pages are the standard &UNIX; manual pages, and have been in use for "
+"many years on many operating systems. They are extremely thorough, and are "
+"the very best place to get information about most &UNIX; commands and "
+"applications. When people say <quote>RTFM</quote>, the Manual they are "
+"referring to is very often the man page."
+msgstr ""
+"Man sayfaları, standart &UNIX; klavuz sayfalarıdır, ve birçok işletim "
+"sisteminde uzun yıllardır kullanılmaktadır. Bu sayfalar &UNIX; uygulamaları "
+"ve komutları hakkında derinlemesine bilgi veren en iyi kaynaktır. İnsanlar "
+"<quote>RTFM</quote> dediği zaman genellikle klavuz sayfalarını kastederler."
+
+#. Tag: para
+#: help.docbook:459
+#, no-c-format
+msgid ""
+"The man pages are not perfect. They tend to be in depth, but also extremely "
+"technical, often written by developers, and for developers. In some cases "
+"this makes them somewhat unfriendly, if not downright impossible for many "
+"users to understand. They are, however, the best source of solid information "
+"on most command line applications, and very often the only source."
+msgstr ""
+"Klavuz sayfaları mükemmel değildir. Bunlar genellikle geliştiriciler için "
+"yine geliştiriciler tarafından yazılan, derinlemesine bilgi içeren fakat "
+"aşırı teknik dile sahip olan sayfalardır. Bazı durumlarda bu sayfalar pek "
+"dostça değildir ve anlaşılmazdırlar. Yine de bunlar komut satırı "
+"uygulamaları için en iyi, hatta bazen tek, kaynaktır."
+
+#. Tag: para
+#: help.docbook:466
+#, no-c-format
+msgid ""
+"If you've ever wondered what the number is when people write things like man"
+"(1) it means which section of the manual the item is in. You will see "
+"&khelpcenter; uses the numbers to divide the very many man pages into their "
+"own sections, making it easier for you to find the information you're "
+"looking for, if you're just browsing."
+msgstr ""
+"İnsanalar man(1) yazdığı zaman buradaki 1'in ne anlama geldiğini hiç merak "
+"ettiniz mi? Buradaki 1, aradığınız parçanın klavuzun hangi bölümünde "
+"olduğunu ifade eder. &khelpcenter; klavuz sayfalarını kendi bölümlerine "
+"ayırmal için sayılar kullanır, bu yolla aradığınız bilgiye daha rahat "
+"ulaşmanız amaçlanır."
+
+#. Tag: para
+#: help.docbook:472
+#, no-c-format
+msgid ""
+"Also available are the Info pages, intended to be a replacement for the man "
+"pages. The maintainer of some applications no longer update the man pages, "
+"so if there is both a man page and an info page available, the info page is "
+"probably the most recent. Most applications have one or the other though. If "
+"the application you are looking for help on is a &GNU; utility, you will "
+"most likely find it has an info page, not a man page."
+msgstr ""
+"Ayrıca klavuz sayfalarının yerine yazılmış Bilgi sayfaları vardır. Bazı "
+"uygulamaların dağıtıcıları klavuz sayfalarını güncellemediğinden, bilgi "
+"sayfaları daha güncel olmakla birlikte, hem klavuz sayfaları hem de bilgi "
+"sayfaları mevcuttur. Yine de çoğu uygulama birinden birine sahiptir.Yardım "
+"için aradığınız uygulama bir &GNU; aracıysa büyük ihtimalle klavuz sayfası "
+"yerine bilgi sayfasıyla karşılaşacaksınız."
+
+#. Tag: title
+#: help.docbook:481
+#, no-c-format
+msgid "Navigating inside the <application>Info</application> pages"
+msgstr "<application>Info</application> sayfaları içinde gezinme"
+
+#. Tag: para
+#: help.docbook:483
+#, no-c-format
+msgid ""
+"Info documents are arranged hierarchically with each page called a node. All "
+"info documents have a <guilabel>Top</guilabel> node, &ie; the opening page. "
+"You can return to the <guilabel>Top</guilabel> of an info document by "
+"pressing <guilabel>Top</guilabel>."
+msgstr ""
+"Bilgi belgeleri düğüm denilen sayfalara bağlı bir şekilde hiyerarşik "
+"olarakbirleştirilmişlerdir. Tüm bilgi belgeleri bir <guilabel>Üst</guilabel> "
+"düğüme, örneğin açılış sayfasına, sahiptir. Bir bilgi belgesinin "
+"<guilabel>Üst</guilabel> bölümüne <guilabel>Üst</guilabel>'e basarak "
+"dönebilirsiniz."
+
+#. Tag: para
+#: help.docbook:489
+#, no-c-format
+msgid ""
+"<guibutton>Prev</guibutton> &amp; <guibutton>Next</guibutton> are used to "
+"move to the previous/next page at the current level of the hierarchy."
+msgstr ""
+"<guibutton>Önceki</guibutton> &amp; <guibutton>Sonraki</guibutton> düğmeleri "
+"hiyerarşinin o andaki bölümünde ilerdeki/gerideki sayfalara ulaşmak için "
+"kullanılır."
+
+#. Tag: para
+#: help.docbook:493
+#, no-c-format
+msgid ""
+"Clicking on a menu item within a document moves you to a lower level in the "
+"hierarchy. You may move up the hierarchy by pressing <guibutton>Up</"
+"guibutton>."
+msgstr ""
+"Bir belgedeki menü elemanına tıklamak sizi hiyerarşide daha düşük bir "
+"seviyeye götürür. Bir üst seviyeye <guibutton>Yukarı</guibutton> tuşuna "
+"basarak dönebilirsiniz."
+
+#. Tag: para
+#: help.docbook:497
+#, no-c-format
+msgid ""
+"Man is treated similarly to info, with the section index being the Top node "
+"and each man page on the level below. Man entries are one page long."
+msgstr ""
+"Man (klavuz) sayfaları da bilgi sayfalarına benzer şekilde düzenlenmiştir, "
+"her bölüm düğüm özelliği gösteren index (içerik) sayfaları ile başlar, diğer "
+"sayfalar daha düşük seviyelerde bulunur. Klavuz girişleri birer sayfa "
+"uzunluğundadır."
+
+#. Tag: title
+#: help.docbook:505
+#, no-c-format
+msgid "The &kde; glossary"
+msgstr "&kde; sözlüğü"
+
+#. Tag: para
+#: help.docbook:507
+#, no-c-format
+msgid ""
+"The glossary provides a quick reference point, where you can look up the "
+"definitions of words that may be unfamiliar to you. These range from &kde; "
+"specific applications and technologies, through to general &UNIX; computing "
+"terms."
+msgstr ""
+"Sözlük size, pek fikir sahibi olmadığınız tanımlar içeren kelimer hakkında "
+"arama yapabileceğiniz bir kaynak sunar. Bu kaynak &kde;'ye özel uygulama ve "
+"teknolojilerden genel &UNIX; terimlerine kadar geniş bir sözcük yelpazesi "
+"içerir."
+
+#. Tag: para
+#: help.docbook:514
+#, no-c-format
+msgid ""
+"In the left hand pane you will see a tree view, with two choices: "
+"<guilabel>Alphabetically</guilabel> or <guilabel>By topic</guilabel>. Both "
+"contain the same entries, sorted differently, to allow you to quickly find "
+"the item of interest."
+msgstr ""
+"Sol pencere bölümünde <guilabel>Alfabetik</guilabel> ya da <guilabel>Konuya "
+"Göre</guilabel> seçenekleri olan bir ağaç görünümü göreceksiniz. İkisi de "
+"aynı girişlere sahip olmakla beraber, istediğiniz elemana daha rahat "
+"ulaşabilmeniz için değişik sıralanmıştır."
+
+#. Tag: para
+#: help.docbook:521
+#, no-c-format
+msgid ""
+"Navigate down the tree views to the left, and items you select will be "
+"displayed on the right."
+msgstr ""
+"Sol taraftaki ağaç görünümünde seçtiğiniz öge, sağ tarafta detaylı olarak "
+"gösterilecektir."
+
+#. Tag: title
+#: help.docbook:529
+#, no-c-format
+msgid "The menus and toolbar"
+msgstr "Menüler ve araç çubuğu"
+
+#. Tag: para
+#: help.docbook:531
+#, no-c-format
+msgid ""
+"&khelpcenter; has a very minimal interface, allowing you to concentrate on "
+"getting help rather than learning how to use the help browser."
+msgstr ""
+"&khelpcenter;, yardım merkezini nasıl kullanacağınızı öğrenmeye zaman "
+"ayrıcağınıza, yardım alma amacınıza konsantre olmanız için basit bir arayüze "
+"sahiptir."
+
+#. Tag: para
+#: help.docbook:536
+#, no-c-format
+msgid "The icons available to you in the toolbar are as follows:"
+msgstr "Araç çubuğunda ulaşabileceğiniz simgeler söyledir:"
+
+#. Tag: title
+#: help.docbook:541
+#, no-c-format
+msgid "Toolbar Icons"
+msgstr "Araç Çubuğu Simgeleri"
+
+#. Tag: guiicon
+#: help.docbook:544
+#, no-c-format
+msgid "Table of Contents"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:546
+#, no-c-format
+msgid "Go to the main welcome page of &khelpcenter;."
+msgstr ""
+
+#. Tag: guiicon
+#: help.docbook:553
+#, no-c-format
+msgid "Back"
+msgstr "Geri"
+
+#. Tag: para
+#: help.docbook:555
+#, no-c-format
+msgid "Go to the previous page you viewed."
+msgstr "Görüntülenen bir önceki sayfaya git."
+
+#. Tag: guiicon
+#: help.docbook:562
+#, no-c-format
+msgid "Forward"
+msgstr "İleri"
+
+#. Tag: para
+#: help.docbook:564
+#, no-c-format
+msgid ""
+"Go forward one page. This icon is only active if you have already used the "
+"<guiicon>Back</guiicon> icon."
+msgstr ""
+"Bir sayfa ileri git. Bu simge sadece <guiicon>Geri</guiicon> simgesini daha "
+"önce kullandıysanız aktiftir."
+
+#. Tag: guiicon
+#: help.docbook:572
+#, fuzzy, no-c-format
+#| msgid "Print"
+msgid "Print Frame"
+msgstr "Yazdır"
+
+#. Tag: para
+#: help.docbook:574 help.docbook:637
+#, no-c-format
+msgid "Print the contents of the currently visible page."
+msgstr "Şu anda görüntülenen sayfanın içeriğini yazdır."
+
+#. Tag: guiicon
+#: help.docbook:581
+#, no-c-format
+msgid "Copy"
+msgstr ""
+
+#. Tag: para
+#: help.docbook:583
+#, no-c-format
+msgid "Copy text to the clipboard to be pasted in another application."
+msgstr ""
+
+#. Tag: guiicon
+#: help.docbook:590
+#, no-c-format
+msgid "Find"
+msgstr "Bul"
+
+#. Tag: para
+#: help.docbook:592
+#, no-c-format
+msgid "Find a word or words within the currently visible page."
+msgstr "Şu anda görüntülenen sayfanın içinden kelime ya da kelimeler bul."
+
+#. Tag: guiicon
+#: help.docbook:599
+#, fuzzy, no-c-format
+#| msgid "Increase Font"
+msgid "Increase Font Sizes"
+msgstr "Yazıtipini Büyüt"
+
+#. Tag: para
+#: help.docbook:601
+#, no-c-format
+msgid "Increase the size of the text in the viewer pane."
+msgstr "Gösterici penceresindeki metnin boyunu büyüt."
+
+#. Tag: guiicon
+#: help.docbook:608
+#, fuzzy, no-c-format
+#| msgid "Decrease Font"
+msgid "Decrease Font Sizes"
+msgstr "Yazıtipini Küçült"
+
+#. Tag: para
+#: help.docbook:610
+#, no-c-format
+msgid ""
+"Decrease the size of the text in the viewer pane. This icon is only enabled "
+"if you have previously enlarged the text."
+msgstr ""
+"Gösterici penceresindeki metnin boyunu küçült. Bu simge sadece daha önceden "
+"metni büyüttüyseniz çalışır."
+
+#. Tag: para
+#: help.docbook:619
+#, no-c-format
+msgid "The menus contain the following entries:"
+msgstr "Menüler şu girişleri içerir:"
+
+#. Tag: guimenu
+#: help.docbook:625
+#, no-c-format
+msgid "File"
+msgstr "Dosya"
+
+#. Tag: menuchoice
+#: help.docbook:631
+#, fuzzy, no-c-format
+#| msgid "<guimenu>File</guimenu> <guimenuitem>Print...</guimenuitem>"
+msgid "<guimenu>File</guimenu> <guimenuitem>Print Frame...</guimenuitem>"
+msgstr "<guimenu>Dosya</guimenu> <guimenuitem>Yazdır...</guimenuitem>"
+
+#. Tag: menuchoice
+#: help.docbook:645
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> </"
+"shortcut> <guimenu>File</guimenu> <guimenuitem>Quit</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>Q</keycap></keycombo> </"
+"shortcut> <guimenu>File</guimenu> <guimenuitem>Çıkış</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:654
+#, no-c-format
+msgid "Close and exit &khelpcenter;"
+msgstr "&khelpcenter;'ı kapat"
+
+#. Tag: guimenu
+#: help.docbook:666
+#, no-c-format
+msgid "Edit"
+msgstr "Düzenle"
+
+#. Tag: menuchoice
+#: help.docbook:672
+#, fuzzy, no-c-format
+#| msgid ""
+#| "<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></"
+#| "keycombo></shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find...</"
+#| "guimenuitem>"
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></keycombo> </"
+"shortcut> <guimenu>Edit</guimenu><guimenuitem>Copy</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+"shortcut> <guimenu>Düzenle</guimenu> <guimenuitem>Bul...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:680
+#, no-c-format
+msgid "Copy the selected text to the clipboard."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:687
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>A</keycap></keycombo></"
+"shortcut> <guimenu>Edit</guimenu> <guimenuitem>Select All</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>A</keycap></keycombo></"
+"shortcut> <guimenu>Düzenle</guimenu> <guimenuitem>Tümünü Seç</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:694
+#, no-c-format
+msgid "Select all the text in the current page."
+msgstr "Bulunan sayfadaki tüm metni seç."
+
+#. Tag: menuchoice
+#: help.docbook:701
+#, no-c-format
+msgid ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+"shortcut> <guimenu>Edit</guimenu> <guimenuitem>Find...</guimenuitem>"
+msgstr ""
+"<shortcut> <keycombo action=\"simul\">&Ctrl;<keycap>F</keycap></keycombo></"
+"shortcut> <guimenu>Düzenle</guimenu> <guimenuitem>Bul...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:708
+#, no-c-format
+msgid "Find a word or words in the currently visible page."
+msgstr "Görünen sayfada bir kelime ya da kelime grubu bul."
+
+#. Tag: guimenu
+#: help.docbook:720
+#, no-c-format
+msgid "View"
+msgstr "Görünüm"
+
+#. Tag: menuchoice
+#: help.docbook:725
+#, no-c-format
+msgid "<guimenu>View</guimenu> <guisubmenu>Set Encoding</guisubmenu>"
+msgstr "<guimenu>Görünüm</guimenu> <guisubmenu>Kodlamayı Düzenle</guisubmenu>"
+
+#. Tag: para
+#: help.docbook:730
+#, no-c-format
+msgid ""
+"Change the encoding of the current page. Normally, the default setting of "
+"<guimenuitem>Auto</guimenuitem> should be sufficient, but if you are having "
+"problems viewing pages written in languages other than English, you may need "
+"to choose a specific encoding in this menu."
+msgstr ""
+"Görüntülenen sayfanın kodlamasını değiştir. Normalde öntanımlı ayar olan "
+"<guimenuitem>Auto</guimenuitem> yeterlidir, fakat İngilizce'den farklı "
+"dillerdeki sayfaların görünümünde sorun yaşıyorsanız, bu menüden özel bir "
+"kodlama seçebilirsiniz."
+
+#. Tag: guimenu
+#: help.docbook:745
+#, fuzzy, no-c-format
+#| msgid "From the <guimenu>K</guimenu> menu"
+msgid "<guimenu>Go</guimenu>"
+msgstr "<guimenu>K</guimenu> menüsünden"
+
+#. Tag: menuchoice
+#: help.docbook:750
+#, no-c-format
+msgid "<guimenu>Go</guimenu> <guimenuitem>Back</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>Geri</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:753
+#, no-c-format
+msgid "Go back to the previous page you were viewing."
+msgstr "Daha önce görüntülenen bir önceki sayfaya git."
+
+#. Tag: menuchoice
+#: help.docbook:758
+#, no-c-format
+msgid "<guimenu>Go</guimenu> <guimenuitem>Forward</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>İleri</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:762
+#, no-c-format
+msgid ""
+"If you have previously moved back with the back icon or menu entry, you can "
+"work your way forward again with this menu entry."
+msgstr ""
+"Bir önceki hareketiniz menü girişiyle ya da simgeyle bir sayfa geri "
+"gitmekse, bu tuşa basarak ileri gidebilirsiniz."
+
+#. Tag: menuchoice
+#: help.docbook:769
+#, no-c-format
+msgid "<guimenu>Go</guimenu> <guimenuitem>...</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:773
+#, no-c-format
+msgid ""
+"At the bottom of the <guimenu>Go</guimenu> menu, you will find a history "
+"list, of the last few pages you have looked at. Selecting one will take you "
+"directly back to that page."
+msgstr ""
+"<guimenu>Go</guimenu> menüsünün altında, baktığınız son birkaç sayfayı "
+"içeren bir geçmiş listesi bulacaksınız. Bir tanesini seçmek, o sayfaya geri "
+"dönmenizi sağlayacaktır."
+
+#. Tag: guimenu
+#: help.docbook:785
+#, no-c-format
+msgid "Settings"
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:791
+#, fuzzy, no-c-format
+#| msgid "<guimenu>Go</guimenu> <guimenuitem>Forward</guimenuitem>"
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Toolbar</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>İleri</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:797
+#, no-c-format
+msgid ""
+"Hides the toolbar that contains the icons at the top of the application."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:805
+#, fuzzy, no-c-format
+#| msgid "<guimenu>Go</guimenu> <guimenuitem>Forward</guimenuitem>"
+msgid "<guimenu>Settings</guimenu> <guimenuitem>Show Statusbar</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>İleri</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:811
+#, no-c-format
+msgid ""
+"Shows or hides the statusbar which is located at the bottom of the "
+"application."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:819
+#, fuzzy, no-c-format
+#| msgid "<guimenu>File</guimenu> <guimenuitem>Print...</guimenuitem>"
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Fonts...</guimenuitem>"
+msgstr "<guimenu>Dosya</guimenu> <guimenuitem>Yazdır...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:825
+#, no-c-format
+msgid "Allows you to configure the font family and size used by &khelpcenter;."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:833
+#, fuzzy, no-c-format
+#| msgid "<guimenu>File</guimenu> <guimenuitem>Print...</guimenuitem>"
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Build Search Index...</guimenuitem>"
+msgstr "<guimenu>Dosya</guimenu> <guimenuitem>Yazdır...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:839
+#, no-c-format
+msgid ""
+"If your distribution support this, you can build an index of search terms."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:847
+#, fuzzy, no-c-format
+#| msgid "<guimenu>File</guimenu> <guimenuitem>Print...</guimenuitem>"
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Shortcuts...</guimenuitem>"
+msgstr "<guimenu>Dosya</guimenu> <guimenuitem>Yazdır...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:853
+#, no-c-format
+msgid "Configure the shortcuts available to &khelpcenter;."
+msgstr ""
+
+#. Tag: menuchoice
+#: help.docbook:861
+#, fuzzy, no-c-format
+#| msgid "<guimenu>Go</guimenu> <guimenuitem>...</guimenuitem>"
+msgid ""
+"<guimenu>Settings</guimenu> <guimenuitem>Configure Toolbars...</guimenuitem>"
+msgstr "<guimenu>Git</guimenu> <guimenuitem>...</guimenuitem>"
+
+#. Tag: para
+#: help.docbook:867
+#, no-c-format
+msgid "Configure the toolbars available to &khelpcenter;."
+msgstr ""
+
+#. Tag: title
+#: help.docbook:882
+#, no-c-format
+msgid "Credits and Licenses"
+msgstr "Geliştiriciler ve Lisanslar"
+
+#. Tag: para
+#: help.docbook:884
+#, no-c-format
+msgid "&khelpcenter;"
+msgstr "&khelpcenter;"
+
+#. Tag: para
+#: help.docbook:886
+#, no-c-format
+msgid "Originally developed by &Matthias.Elter; &Matthias.Elter.mail;"
+msgstr "Aslen &Matthias.Elter; &Matthias.Elter.mail; tarafından geliştirildi"
+
+#. Tag: para
+#: help.docbook:887
+#, no-c-format
+msgid ""
+"The current maintainer is &Cornelius.Schumacher; &Cornelius.Schumacher.mail;"
+msgstr "Şu andaki sorumlu &Cornelius.Schumacher; &Cornelius.Schumacher.mail;"
+
+#. Tag: sect1
+#: help.docbook:887
+#, no-c-format
+msgid "&underFDL; &underGPL;"
+msgstr "&underFDL; &underGPL;"
+
+#~ msgid "From the panel"
+#~ msgstr "Panelden"
+
+#~ msgid ""
+#~ "By default, the &kicker; panel contains an icon to call &khelpcenter;. "
+#~ "Again, the default welcome page is displayed."
+#~ msgstr ""
+#~ "Öntanımlı olarak &kicker; paneli &khelpcenter;'ı açmak için bir simge "
+#~ "içerir. Tekrar, hoşgeldiniz penceresi açılacaktır."
+
+#~ msgid "Introduction"
+#~ msgstr "Giriş"
+
+#~ msgid "Welcome to &kde; - an introduction to the K Desktop Environment."
+#~ msgstr "&kde;'ye Hoşgeldiniz , K Masaüstü Ortamı'nın tanıtımı."
+
+#~ msgid "Introduction to &kde;"
+#~ msgstr "&kde;'yi tanıtım"
+
+#~ msgid ""
+#~ "The &kde; Quickstart guide. Contains a tour of the &kde; Interface and "
+#~ "specific help and tips on how to work smarter with &kde;."
+#~ msgstr ""
+#~ "&kde; Hızlı Başlangıç rehberi. &kde; Arayüzü turu ve &kde; üzerinde "
+#~ "etkili çalışmak için yardım ve ipuçları içerir."
+
+#~ msgid ""
+#~ "<guimenu>View</guimenu> <guimenuitem>View Document Source</guimenuitem>"
+#~ msgstr ""
+#~ "<guimenu>Görünüm</guimenu> <guimenuitem>Döküman Kaynağını Görüntüle</"
+#~ "guimenuitem>"
+
+#~ msgid ""
+#~ "View the <acronym>HTML</acronym> source of the page you are currently "
+#~ "viewing."
+#~ msgstr "Görüntülenen sayfanın <acronym>HTML</acronym> kaynağını görüntüle."

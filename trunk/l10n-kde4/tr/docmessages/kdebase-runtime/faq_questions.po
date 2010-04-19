@@ -1,0 +1,356 @@
+# translation of faq_questions.po to Türkçe
+# translation of faq_questions.po to
+#
+# Görkem Çetin <gorkem@uludag.org.tr>, 2006.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_questions\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2009-07-04 16:08+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-KDE-DocBook-SVN-URL: trunk/KDE/kdebase/doc/faq/questions.docbook\n"
+"X-KDE-DocBook-SVN-Changed-Revision: 449503\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: questions.docbook:4
+#, no-c-format
+msgid "Asking Questions"
+msgstr "Soru Sorma Yöntemi"
+
+#. Tag: para
+#: questions.docbook:6
+#, fuzzy, no-c-format
+msgid ""
+"Chances are, you have been linked to this document from IRC or a mailing "
+"list. You've asked a question, and someone has told you that you need to "
+"learn how to ask more effectively. In order to get an appropriate, clear "
+"answer you need to ask an appropriate, clear question in a manner that's "
+"going to provide an incentive for people to take their time to help you. If "
+"you appear to be rude, lazy or use bad or unclear language then chances are "
+"your question will be ignored"
+msgstr ""
+"Bu belgeye sohbet grubundan veya bir posta listesinden ulaşmış "
+"olabilirsiniz. Bir soru sordunuz ve birileri size nasıl daha etkin soru "
+"sorulacağını öğrenmeniz gerektiğini söyledi. Uygun ve açık bir cevap "
+"alabilmek için size yardım etmek amacıyla zaman ayıran insanları teşvik eden "
+"tarzda uygun ve açık sorular sormalısınız. Eğer kabalık veya tembellik "
+"yaparsanız ya da kötü ve açık olmayan bir dil kullanırsanız sorularınızın "
+"düzgün cevaplanma şansı azalacaktır."
+
+#. Tag: para
+#: questions.docbook:17
+#, no-c-format
+msgid "What do I do before I ask?"
+msgstr "Soru sormadan önce ne yapmalıyım ?"
+
+#. Tag: para
+#: questions.docbook:19
+#, no-c-format
+msgid ""
+"Read the documentation and &FAQ; for the application. There is a wealth of "
+"&kde; documentation availible both in the help center and online. A lot of "
+"time and effort has gone into this documentation, and quite often the answer "
+"to your question is here. The general &kde; userguide can be found by typing "
+"<userinput><command>help:/userguide</command></userinput> into your "
+"&konqueror; addressbar."
+msgstr ""
+"Uygulamaya ait belgeleri ve sıkça sorulan soruları okuyun. Hem yardım "
+"merkezinde hem de internet üzerinde &kde; ile ilgili bol miktarda belge "
+"bulunmaktadır. Belgelendirme çalışmaları için çok zaman ve emek harcanmıştır "
+"ve genellikle aradığınız cevap oradadır. Genel &kde; kullanım kılavuzuna "
+"ulaşmak için &konqueror; adres çubuğunda <userinput><command>help:/"
+"userguide</command></userinput> yazmak yeterli olacaktır."
+
+#. Tag: para
+#: questions.docbook:27
+#, no-c-format
+msgid ""
+"Search the web: Usually googling for a specific error message or searching "
+"mailing list archives can come up with a solution for you."
+msgstr ""
+"İnternette araştırın. Google.com' da özel bir hata mesajının aramak veya "
+"posta listesi arşivlerinde arama yapmak size çözüm getirebilir."
+
+#. Tag: para
+#: questions.docbook:30
+#, no-c-format
+msgid ""
+"Try it and see! Look through all the application options, read the What's "
+"this? and tooltips for the ones you're not sure about. If you're really "
+"unsure about an option save your data and then try it. As long as you use "
+"some common sense, you are very unlikely to break anything by clicking "
+"buttons."
+msgstr ""
+"Deneyin ve görün! Uygulama ile ilgili bütün seçenekleri deneyin, emin "
+"olmadıklarınız için denemeden önce Bu nedir ? ve ipucu bölümlerini okuyun. "
+"Eğer gerçekten emin olamıyorsanız bilgilerinizi kaydettikten sonra deneyin. "
+"Sağ duyulu davrandığınız sürece düğmelere tıklayarak herhangi bir şeye zarar "
+"vermezsiniz."
+
+#. Tag: para
+#: questions.docbook:36
+#, no-c-format
+msgid ""
+"Above all, don't be lazy. If you show the people who you are asking that you "
+"are able to troubleshoot and research in a logical manner, you're showing "
+"them you're a reasonable person who is worth their time to help. It's your "
+"problem and not theirs so the legwork is yours to do. Save your helpers as "
+"much time as you can, they're busy people."
+msgstr ""
+"Her şeyden önce tembel olmayın. Soru sorduğunuz insanlara mantıklı bir "
+"şekilde araştırma yapabildiğinizi ve sorunları giderebilecek yetenekte "
+"olduğunuzu gösterirseniz onlar da yardım etmek için zaman ayırmaya değer "
+"olduğunuzu düşüneceklerdir. Unutmayın ki problem sizin probleminiz "
+"dolayısıyla çalışması gereken de sizsiniz. Size yardımcı olan insanlara "
+"mümkün olduğunca yardımcı olun. Onlar meşgul insanlardır."
+
+#. Tag: para
+#: questions.docbook:44
+#, no-c-format
+msgid "Where do I ask?"
+msgstr "Sorularımı nereye sormalıyım?"
+
+#. Tag: para
+#: questions.docbook:46
+#, no-c-format
+msgid ""
+"Usually the best place to ask a question is on the <acronym>IRC</acronym> "
+"channels and mailing lists devoted to user questions. Don't post simple "
+"questions about using &kde; to the devel channels and mailing lists, these "
+"are for technical discussions. Some good places are #kde on irc.freenode."
+"net, and the &kde; mailing lists."
+msgstr ""
+"Genellikle soru sormak için en uygun yer kullanıcı sorularına tahsis edilmiş "
+"<acronym>IRC</acronym> kanalları ve posta listeleridir. &kde; nin kullanımı "
+"hakkındaki basit sorular için geliştirme kanallarını ve posta listelerini "
+"kullanmayınız. Bu yerler teknik tartışmalar içindir. Örneğin #kde on irc."
+"freenode.net, ve &kde; posta listeleri"
+
+#. Tag: para
+#: questions.docbook:54
+#, no-c-format
+msgid "How do I ask?"
+msgstr "Sorularımı nasıl sormalıyım?"
+
+#. Tag: para
+#: questions.docbook:56
+#, no-c-format
+msgid ""
+"Try to word your questions in a manner that gives the most information "
+"possible and is polite and courteous. Don't ask to ask, just ask!"
+msgstr ""
+"Soru sormuş olmak için sormayın! Kibar bir şekilde ve probleminizle ilgili "
+"mümkün olduğu kadar ayrıntılı bilgi içeren sorular sorun."
+
+#. Tag: para
+#: questions.docbook:60
+#, no-c-format
+msgid "Q: &kde; sucks, it's being slow"
+msgstr "Soru: Kahretsin, &kde; çok yavaş çalışıyor."
+
+#. Tag: para
+#: questions.docbook:62
+#, no-c-format
+msgid ""
+"Is not a question that is likely to get you a useful answer. It does not "
+"give any useful information about troubleshooting the problem, and it starts "
+"out attacking the software in a way that isn't productive."
+msgstr ""
+"Bu düzgün cevap alınabilecek bir soru değildir. Programa hakaret ederek "
+"başlamaktadır ve problemi çözmeye yarayacak hiçbir faydalı bilgi "
+"içermemektedir."
+
+#. Tag: para
+#: questions.docbook:66
+#, fuzzy, no-c-format
+msgid ""
+"Q: Since upgrading &kde; on Slackware &Linux; from version 3.2.3 to 3.3.2 "
+"using sources, I have noticed it's being really slow &mdash; sometimes "
+"applications take up to 20 seconds to launch. I am using the same user "
+"configuration as I had with the previous version, and I have tried creating "
+"a new user &mdash; but that account has the same problem. I can't find "
+"anything about this on the mailing lists or by a google search. Could anyone "
+"point me to some information that could help?"
+msgstr ""
+"Soru: Slackware &Linux; üzerinde (kaynak kodu kullanarak) &kde; yi 3.2.3 den "
+"3.3.2 ye yükseltirken &mdash; in gerçekten çok yavaş olması dikkatimi çekti. "
+"Bazen uygulamaların açılması 20 saniyeyi buluyor. Yeni bir kullanıcıyım ve "
+"daha önceki sürüm ile aynı yapılandırma ayarlarını kullanmaktayım. Google da "
+"ve posta listelerinde yaptığım araştırma sonucu bu konuda bir bilgiye "
+"rastlayamadım. Yardımcı olursanız sevinirim."
+
+#. Tag: para
+#: questions.docbook:72
+#, fuzzy, no-c-format
+msgid ""
+"This question is polite, contains information to help people troubleshoot "
+"the problem and shows your helpers what avenues you have already tried. Not "
+"only does this make their job easier, but saves you the frustration of being "
+"told to try all the possible solutions you've already gone through."
+msgstr ""
+"Bu problemi çözecek insanlara yardımcı olacak faydalı  bilgiler içeren ve "
+"kibar sorulmuş bir soru. Aynı zamanda gerçekten problemi çözmeye "
+"uğraştığınızı gösteriyor."
+
+#. Tag: para
+#: questions.docbook:76
+#, no-c-format
+msgid ""
+"Don't assume automatically that the problem is the fault of &kde;. Proceed "
+"as though this is your error, otherwise you will quickly annoy people if it "
+"does indeed turn out to be your problem and not &kde;."
+msgstr ""
+"Otomatik olarak problemin &kde; den kaynaklandığını düşünmeyin. Öncelikle "
+"sorunun kendinizden kaynaklandığını düşünün. Çünkü problem &kde; den değilde "
+"gerçekten sizden kaynaklanıyorsa bu durum size yardım eden insanları "
+"rahatsız eder."
+
+#. Tag: para
+#: questions.docbook:81
+#, no-c-format
+msgid ""
+"Use clear language with correct spelling. Watch out for any ambiguities and "
+"make sure you think about what you say before you write it. If you are asked "
+"for clarification, give it as best you can. &kde; is a project where many of "
+"the users and developers are not native english speakers and if you don't "
+"use correct english, misunderstandings may ensue. Use the language "
+"appropriate to the channel or mailing list you are in &mdash; if you don't, "
+"people who might have been able to help you may ignore your message because "
+"it is not in a language they understand."
+msgstr ""
+"Açık ve düzgün bir dil kullanın. Yazmadan önce tam olarak ne soracağınızı "
+"düşünün ve muğlak ifadelerden kaçının. &kde; ana dili ingilizce olmayan bir "
+"çok kullanıcı ve geliştiriciden oluşan bir projedir ve eğer düzgün bir "
+"ingilizce kullanmazsanız yanlış anlamalar olabilir. &mdash; in içerisinde "
+"bulunduğunuz kanal veya posta listesinde uygun bir dil kullanın aksi halde "
+"size yardım edebilecek insanlar söylediklerinizi anlamadıkları için yardımcı "
+"olamazlar."
+
+#. Tag: para
+#: questions.docbook:90
+#, no-c-format
+msgid ""
+"Include all information that could be relevant, even if you're not sure. "
+"Have you upgraded other software or hardware on your system, particularly "
+"system libraries or a new kernel? These things could affect how &kde; "
+"performs. Even if you cannot see a link, someone else might."
+msgstr ""
+"Emin olmasanız bile sorun ile ilgili olduğunu düşündüğünüz bütün bilgiyi "
+"ekleyin. Sisteminizdeki diğer donanımı veya yazılımı, özellikle çekirdek ya "
+"da kitaplıkları güncellediniz mi? Bütün bunlar &kde; nin çalışmasını "
+"etkileyecektir. Siz bir alaka göremesiniz bile başkaları belki görecektir."
+
+#. Tag: para
+#: questions.docbook:95
+#, fuzzy, no-c-format
+msgid ""
+"Don't paraphrase error messages. Paste in the exact error, and if it's more "
+"than a line or two don't paste them directly into an <acronym>IRC</acronym> "
+"channel. Use a paste service like <ulink url=\"http://www.rafb.net/paste/\"> "
+"http://www.rafb.net/paste</ulink>. If you must type them in by hand, be sure "
+"you are 100% accurate. When you provide incorrect information, your helpers "
+"cannot help you as easily."
+msgstr ""
+"Hata mesajlarını yorumlamayın. Hata mesajlarını olduğu gibi gönderin ancak "
+"bir veya iki satırdan fazla ise <acronym>IRC</acronym> kanalına direk "
+"eklemeyin. <ulink url=\"http://www.rafb.net/paste/\"> http://www.rafb.net/"
+"paste</ulink> gibi bir ekleme servisi kullanın. Eğer elle yazmak zorunda "
+"iseniz % 100 doğru olduğundan emin olun. Yanlış bilgiler size yardım "
+"edenlerin işini zorlaştıracaktır."
+
+#. Tag: para
+#: questions.docbook:102
+#, no-c-format
+msgid ""
+"Follow up on your solution! Tell us if it worked, or if you have solved it "
+"yourself in the meantime. This helps us know for sure if our solution "
+"worked, and helps other users who may be searching mailing list archives for "
+"a solution to the problem themselves."
+msgstr ""
+"Çözümü takip edin. Size söylenen çözümün İşe yarayıp yaramadığını veya bu "
+"esnada kendiniz çözmüşseniz nasıl çözdüğünüzü bize bildirin. Bu hem bizim "
+"çözümümüzün işe yarayıp yaramadığını öğrenmemize, hem de posta liste "
+"arşivlerinde arama yapan diğer insanların problemlerini kendi kendilerine "
+"çözmelerine yardımcı olacaktır."
+
+#. Tag: para
+#: questions.docbook:109
+#, no-c-format
+msgid "What do I do when told to look elsewhere?"
+msgstr "Başka bir yere bakmam söylendiğinde ne yapmalıyım?"
+
+#. Tag: para
+#: questions.docbook:111
+#, fuzzy, no-c-format
+msgid ""
+"When you're told <quote>google knows</quote> or <quote>google is your "
+"friend</quote> then chances are, you have not followed the above advice. "
+"You've not done your research, and the solution is probably one the helper "
+"knows very well to be easy to find. When you're linked to a <acronym>FAQ</"
+"acronym> or a usermanual please don't ever say, <quote>No, I don't want to "
+"have to read this I want you to just tell me</quote>. This is very bad "
+"manners. If you cannot put in the effort to read the document, what is the "
+"incentive for your helper to put in the time and effort to help you? If "
+"you're told to go use google, take it graciously and do so."
+msgstr ""
+"Eğer size<quote>google bilir</quote> veya <quote>google sizin dostunuzdur</"
+"quote> deniyorsa yukarıdaki tavsiyelere uymamışsınız demektir. Kendi "
+"araştırmanızı yapmamışsınız ve muhtemelen çözüm bulunması çok kolay bir "
+"yerde. <acronym>SSS</acronym> veya kullanım kılavuzuna bakıp sakın "
+"<quote>Hayır, ben bütün bunları okumak istemiyorum çözümü bana siz söyleyin</"
+"quote> demeyin. Bu uygun olmayan bir davranış biçimidir. Siz zahmet edip te "
+"sorununuzu çözecek belgeleri okumuyorsanız insanlar neden size yardım etmek "
+"için vakitlerini harcasınlar ki. Eğer size google ı kullanın deniyorsa bunu "
+"gurur meselesi yapmayın ve söyleneni yapın."
+
+#. Tag: para
+#: questions.docbook:122
+#, no-c-format
+msgid ""
+"Above all, use common courtesy. &kde; users and developers are usually "
+"volunteering their time out of an already very busy schedule, and like to "
+"know that you are appreciating that they are helping you for free. Be "
+"polite, say please and thank you and try to be pleasant and friendly."
+msgstr ""
+"Hepsinden önemlisi kibar olun. &kde; kullanıcıları ve geliştiricileri yoğun "
+"çalışmalarının arasında gönüllü olarak bu işe zaman ayırmaktadırlar ve "
+"bedava olarak bu işi yaptıkları için sizin tarafınızdan takdir edilmek "
+"isterler. Kibar bir şekilde konuşun, lütfen, teşekkür ederim gibi sihirli "
+"kelimeleri kullanmaktan çekinmeyin."
+
+#. Tag: para
+#: questions.docbook:128
+#, no-c-format
+msgid ""
+"Does this seem like a lot of trouble to ask a question? If you want to be "
+"able to feel that people owe you an answer or support, then you're quite "
+"welcome to pay for commercial support from companies that support &kde; on "
+"&UNIX; platforms. If you don't want to pay money, then pay the people who do "
+"this for free with your politeness and appreciation :)"
+msgstr ""
+"Soru sormanın tam bir işkence olduğunu mu düşünüyorsunuz? Eğer insanların "
+"size destek olması gerektiğini, bütün sorularınıza cevap vermeleri "
+"gerektiğini düşünüyorsanız &UNIX; üzerinde &kde; yi destekleyen firmalara "
+"destek olmalısınız. Eğer para ödemek istemiyorsanız o zaman size bu hizmeti "
+"bedava veren insanlara kibarlığınızla ve takdirlerinizle ödeme yapın :)"
+
+#. Tag: para
+#: questions.docbook:135
+#, no-c-format
+msgid ""
+"If you think the answer to your question should be included in the &kde; "
+"&FAQ; please feel free to submit any patches or suggestions to the &kde; "
+"&FAQ; Maintainer, at <email>faq@kde.org</email>"
+msgstr ""
+"Sorunuza verilen cevabın &kde; &SSS; bölümünde yer alması gerektiğini "
+"düşünüyorsanız <email>faq@kde.org</email> adresine posta göndererek &kde; "
+"&SSS; hakkındaki görüş veya önerilerinizi bildirebilirsiniz."

@@ -1,0 +1,1079 @@
+# translation of kinfocenter.po to
+# Copyright (C) 2003, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@gelecek.com.tr> , 2000.
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Muhammet Kara <muhammet.k@gmail.com>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kinfocenter\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-21 06:19+0100\n"
+"PO-Revision-Date: 2009-09-21 22:48+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-Language: Turkish\n"
+
+#: base/info_aix.cpp:54
+msgid "Name"
+msgstr "İsim"
+
+#: base/info_aix.cpp:55
+msgid "Status"
+msgstr "Durum"
+
+#: base/info_aix.cpp:56
+msgid "Location"
+msgstr "Konum"
+
+#: base/info_aix.cpp:57 base/info_fbsd.cpp:305
+msgid "Description"
+msgstr "Açıklama"
+
+#: base/info_aix.cpp:177 base/info_hpux.cpp:163 base/info_hpux.cpp:438
+#: base/info_linux.cpp:113 base/info_netbsd.cpp:53 base/info_openbsd.cpp:49
+#: base/os_base.h:203
+msgid "Information"
+msgstr "Bilgiler"
+
+#: base/info_aix.cpp:178 base/info_hpux.cpp:164 base/info_hpux.cpp:439
+#: base/info_linux.cpp:113 base/info_netbsd.cpp:53 base/info_openbsd.cpp:49
+#: base/info_solaris.cpp:697 base/os_base.h:203
+msgid "Value"
+msgstr "Değer"
+
+#: base/info_aix.cpp:307
+msgctxt "Mebibyte"
+msgid "MiB "
+msgstr "MB "
+
+#: base/info_aix.cpp:312 base/info_fbsd.cpp:277 base/info_fbsd.cpp:305
+#: base/info_hpux.cpp:361 base/info_linux.cpp:476 base/info_netbsd.cpp:161
+#: base/info_netbsd.cpp:273 base/info_openbsd.cpp:172
+#: base/info_openbsd.cpp:267 base/info_solaris.cpp:174
+msgid "Device"
+msgstr "Aygıt"
+
+#: base/info_aix.cpp:313 base/info_fbsd.cpp:277 base/info_hpux.cpp:362
+#: base/info_linux.cpp:476 base/info_netbsd.cpp:273 base/info_openbsd.cpp:267
+#: base/info_solaris.cpp:174
+msgid "Mount Point"
+msgstr "Bağlanma Noktası"
+
+#: base/info_aix.cpp:314 base/info_fbsd.cpp:277 base/info_hpux.cpp:363
+#: base/info_linux.cpp:476 base/info_netbsd.cpp:273 base/info_openbsd.cpp:267
+#: base/info_solaris.cpp:174
+msgid "FS Type"
+msgstr "Dosya Sistemi Tipi"
+
+#: base/info_aix.cpp:315 base/info_hpux.cpp:364 base/info_linux.cpp:476
+#: base/info_netbsd.cpp:273 base/info_solaris.cpp:174
+msgid "Total Size"
+msgstr "Toplam Boyut"
+
+#: base/info_aix.cpp:316 base/info_hpux.cpp:365 base/info_linux.cpp:476
+#: base/info_netbsd.cpp:273 base/info_solaris.cpp:174
+msgid "Free Size"
+msgstr "Boş Alan Boyutu"
+
+#: base/info_aix.cpp:334 base/info_aix.cpp:340 base/info_hpux.cpp:383
+#: base/info_hpux.cpp:389
+msgid "n/a"
+msgstr "n/a"
+
+#: base/info_fbsd.cpp:81
+#, kde-format
+msgid "CPU %1: %2, %3 MHz"
+msgstr "İşlemci %1: %2, %3 MHz"
+
+#: base/info_fbsd.cpp:83
+#, kde-format
+msgid "CPU %1: %2, unknown speed"
+msgstr "İşlemci %1: %2, bilinmeyen hız"
+
+#: base/info_fbsd.cpp:145
+msgid ""
+"Your sound system could not be queried.  /dev/sndstat does not exist or is "
+"not readable."
+msgstr "Ses sisteminiz sorgulanamadı. /dev/sndstat yok yada okunabilir değil."
+
+#: base/info_fbsd.cpp:173
+msgid ""
+"SCSI subsystem could not be queried: /sbin/camcontrol could not be found"
+msgstr "SCSI alt sistemi sorgulanamadı: /sbin/camcontrol bulunamadı"
+
+#: base/info_fbsd.cpp:178
+msgid ""
+"SCSI subsystem could not be queried: /sbin/camcontrol could not be executed"
+msgstr "SCSI alt sistemi sorgulanamadı: /sbin/camcontrol çalıştırılamadı"
+
+#: base/info_fbsd.cpp:226
+msgid ""
+"Could not find any programs with which to query your system's PCI information"
+msgstr "Sisteminizin PCI bilgilerini sorgulayacak bir uygulama bulunamadı"
+
+#: base/info_fbsd.cpp:243
+#, kde-format
+msgid "PCI subsystem could not be queried: %1 could not be executed"
+msgstr "PCI alt sistemi sorgulanamadı: %1 çalıştırılamadı"
+
+#: base/info_fbsd.cpp:255
+msgid "The PCI subsystem could not be queried, this may need root privileges."
+msgstr ""
+"PCI alt sistemi sorgulanamadı, bu işlem yetkili kullanıcı hakları "
+"gerektirebilir."
+
+#: base/info_fbsd.cpp:270
+msgid "Could not check file system info: "
+msgstr "Dosya sistemi bilgileri kontrol edilemedi:"
+
+#: base/info_fbsd.cpp:277 base/info_linux.cpp:476 base/info_openbsd.cpp:267
+#: base/info_solaris.cpp:174
+msgid "Mount Options"
+msgstr "Bağlanma Seçenekleri"
+
+#: base/info_hpux.cpp:129
+msgid "PA-RISC Processor"
+msgstr "PA-RISC İşlemci"
+
+#: base/info_hpux.cpp:131
+msgid "PA-RISC Revision"
+msgstr "PA-RISC Sürümü"
+
+#: base/info_hpux.cpp:168
+msgid "Machine"
+msgstr "Makine"
+
+#: base/info_hpux.cpp:175
+msgid "Model"
+msgstr "Model"
+
+#: base/info_hpux.cpp:182
+msgid "Machine Identification Number"
+msgstr "Makine Tanımlama Numarası"
+
+#: base/info_hpux.cpp:183 base/info_solaris.cpp:619
+msgid "(none)"
+msgstr "(hiçbiri)"
+
+#: base/info_hpux.cpp:188
+msgid "Number of Active Processors"
+msgstr "Etkin İşlemcilerin Sayısı"
+
+#: base/info_hpux.cpp:192
+msgid "CPU Clock"
+msgstr "İşlemci Hızı"
+
+#: base/info_hpux.cpp:193 base/info_solaris.cpp:69
+msgid "MHz"
+msgstr "Mhz"
+
+#: base/info_hpux.cpp:226
+msgid "(unknown)"
+msgstr "(bilinmeyen)"
+
+#: base/info_hpux.cpp:230
+msgid "CPU Architecture"
+msgstr "İşlemci Mimarisi"
+
+#: base/info_hpux.cpp:236
+msgid "enabled"
+msgstr "etkin"
+
+#: base/info_hpux.cpp:236
+msgid "disabled"
+msgstr "pasif"
+
+#: base/info_hpux.cpp:238
+msgid "Numerical Coprocessor (FPU)"
+msgstr "Nümerik İşlemci (FPU)"
+
+#: base/info_hpux.cpp:242 base/info_linux.cpp:334 base/info_linux.cpp:445
+msgctxt "Mebibyte"
+msgid "MiB"
+msgstr "MB"
+
+#: base/info_hpux.cpp:243
+msgid "Total Physical Memory"
+msgstr "Toplam Fiziksel Bellek"
+
+#: base/info_hpux.cpp:245
+msgid " Bytes"
+msgstr " Bayt"
+
+#: base/info_hpux.cpp:246
+msgid "Size of One Page"
+msgstr "Bir Sayfanın Büyüklüğü"
+
+#: base/info_hpux.cpp:356
+msgid "MB"
+msgstr "MB"
+
+#: base/info_hpux.cpp:441
+msgid "Audio Name"
+msgstr "Ses Adı"
+
+#: base/info_hpux.cpp:442
+msgid "Vendor"
+msgstr "Sağlayıcı"
+
+#: base/info_hpux.cpp:443
+msgid "Alib Version"
+msgstr "Alib Sürümü"
+
+#: base/info_hpux.cpp:447
+msgid "Protocol Revision"
+msgstr "Protokol Sürümü"
+
+#: base/info_hpux.cpp:451
+msgid "Vendor Number"
+msgstr "Sağlayıcı Numarası"
+
+#: base/info_hpux.cpp:454
+msgid "Release"
+msgstr "Sürüm"
+
+#: base/info_hpux.cpp:457
+msgid "Byte Order"
+msgstr "Bayt Sırası"
+
+#: base/info_hpux.cpp:458
+msgid "ALSBFirst (LSB)"
+msgstr "ALSB Öncelikli (LSB)"
+
+#: base/info_hpux.cpp:459
+msgid "AMSBFirst (MSB)"
+msgstr "AMSB Öncelikli (MSB)"
+
+#: base/info_hpux.cpp:460
+msgid "Invalid Byteorder."
+msgstr "Geçersiz bayt sırası."
+
+#: base/info_hpux.cpp:462
+msgid "Bit Order"
+msgstr "Bit Sırası"
+
+#: base/info_hpux.cpp:464
+msgid "ALeastSignificant (LSB)"
+msgstr "ALeastSignificant (LSB)"
+
+#: base/info_hpux.cpp:466
+msgid "AMostSignificant (MSB)"
+msgstr "AMostSignificant (MSB)"
+
+#: base/info_hpux.cpp:466
+msgid "Invalid Bitorder."
+msgstr "Geçersiz bit sırası."
+
+#: base/info_hpux.cpp:468
+msgid "Data Formats"
+msgstr "Veri Biçimleri"
+
+#: base/info_hpux.cpp:475
+msgid "Sampling Rates"
+msgstr "Örnekleme Hızı"
+
+#: base/info_hpux.cpp:481
+msgid "Input Sources"
+msgstr "Girdi Kaynakları"
+
+#: base/info_hpux.cpp:483
+msgid "Mono-Microphone"
+msgstr "Mono-Mikrofon"
+
+#: base/info_hpux.cpp:485
+msgid "Mono-Auxiliary"
+msgstr "Mono-Çıkış"
+
+#: base/info_hpux.cpp:487
+msgid "Left-Microphone"
+msgstr "Sol-Mikrofon"
+
+#: base/info_hpux.cpp:489
+msgid "Right-Microphone"
+msgstr "Sağ-Mikrofon"
+
+#: base/info_hpux.cpp:491
+msgid "Left-Auxiliary"
+msgstr "Sol-Çıkış"
+
+#: base/info_hpux.cpp:493
+msgid "Right-Auxiliary"
+msgstr "Sağ-Çıkış"
+
+#: base/info_hpux.cpp:496
+msgid "Input Channels"
+msgstr "Girdi Kanalları"
+
+#: base/info_hpux.cpp:498 base/info_hpux.cpp:522
+msgid "Mono-Channel"
+msgstr "Mono-Kanal"
+
+#: base/info_hpux.cpp:500 base/info_hpux.cpp:524
+msgid "Left-Channel"
+msgstr "Sol-Kanal"
+
+#: base/info_hpux.cpp:502 base/info_hpux.cpp:526
+msgid "Right-Channel"
+msgstr "Sağ-Kanal"
+
+#: base/info_hpux.cpp:505
+msgid "Output Destinations"
+msgstr "Çıktı Hedefleri"
+
+#: base/info_hpux.cpp:507
+msgid "Mono-InternalSpeaker"
+msgstr "Dahili Mono Hoparlör"
+
+#: base/info_hpux.cpp:509
+msgid "Mono-Jack"
+msgstr "Mono Fiş"
+
+#: base/info_hpux.cpp:511
+msgid "Left-InternalSpeaker"
+msgstr "Sol-İç Hoparlör"
+
+#: base/info_hpux.cpp:513
+msgid "Right-InternalSpeaker"
+msgstr "Sağ-İç Hoparlör"
+
+#: base/info_hpux.cpp:515
+msgid "Left-Jack"
+msgstr "Sol Fiş"
+
+#: base/info_hpux.cpp:517
+msgid "Right-Jack"
+msgstr "Sağ Fiş"
+
+#: base/info_hpux.cpp:520
+msgid "Output Channels"
+msgstr "Çıktı Kanalları"
+
+#: base/info_hpux.cpp:529
+msgid "Gain"
+msgstr "Kazanç"
+
+#: base/info_hpux.cpp:530
+msgid "Input Gain Limits"
+msgstr "Giriş Kazanç Sınırları"
+
+#: base/info_hpux.cpp:532
+msgid "Output Gain Limits"
+msgstr "Çıkış Kazanç Sınırları"
+
+#: base/info_hpux.cpp:535
+msgid "Monitor Gain Limits"
+msgstr "Monitör Kazanç Sınırları"
+
+#: base/info_hpux.cpp:538
+msgid "Gain Restricted"
+msgstr "Kazanç Kısıtlandı"
+
+#: base/info_hpux.cpp:542
+msgid "Lock"
+msgstr "Kilit"
+
+#: base/info_hpux.cpp:544
+msgid "Queue Length"
+msgstr "Kuyruk Uzunluğu"
+
+#: base/info_hpux.cpp:546
+msgid "Block Size"
+msgstr "Blok Boyutu"
+
+#: base/info_hpux.cpp:548
+msgid "Stream Port (decimal)"
+msgstr "Yayın Portu (ondalık)"
+
+#: base/info_linux.cpp:130
+msgid "DMA-Channel"
+msgstr "DMA-Kanalı"
+
+#: base/info_linux.cpp:130 base/info_linux.cpp:181
+msgid "Used By"
+msgstr "Kullanan"
+
+#: base/info_linux.cpp:181
+msgid "I/O-Range"
+msgstr "G/Ç Aralığı"
+
+#: base/info_linux.cpp:206
+msgid "Devices"
+msgstr "Aygıtlar"
+
+#: base/info_linux.cpp:206
+msgid "Major Number"
+msgstr "Birincil Numara"
+
+#: base/info_linux.cpp:206
+msgid "Minor Number"
+msgstr "İkincil Numara"
+
+#: base/info_linux.cpp:220
+msgid "Character Devices"
+msgstr "Karakter Aygıtları"
+
+#: base/info_linux.cpp:227
+msgid "Block Devices"
+msgstr "Blok Aygıtları"
+
+#: base/info_linux.cpp:262
+msgid "Miscellaneous Devices"
+msgstr "Çeşitli Aygıtlar"
+
+#: base/info_netbsd.cpp:161 base/info_openbsd.cpp:172
+msgid "IRQ"
+msgstr "IRQ"
+
+#: base/info_netbsd.cpp:179 base/info_openbsd.cpp:185
+msgid "No PCI devices found."
+msgstr "Hiç PCI aygıtı bulunamadı."
+
+#: base/info_netbsd.cpp:188 base/info_openbsd.cpp:194
+msgid "No I/O port devices found."
+msgstr "Hiç Girdi/Çıktı port aygıtı bulunamadı."
+
+#: base/info_netbsd.cpp:199 base/info_openbsd.cpp:203
+msgid "No audio devices found."
+msgstr "Hiç ses aygıtı bulunamadı."
+
+#: base/info_netbsd.cpp:237 base/info_openbsd.cpp:247
+msgid "No SCSI devices found."
+msgstr "Hiç SCSI aygıtı bulunamadı."
+
+#: base/info_netbsd.cpp:273
+msgid "Total Nodes"
+msgstr "Toplam Düğümler"
+
+#: base/info_netbsd.cpp:273
+msgid "Free Nodes"
+msgstr "Boş Düğümler"
+
+#: base/info_netbsd.cpp:273
+msgid "Flags"
+msgstr "Bayraklar"
+
+#: base/info_openbsd.cpp:261
+msgid "Unable to run /sbin/mount."
+msgstr "/sbin/mount çalıştırılamadı."
+
+#: base/info_osx.cpp:121
+msgid "Device Name"
+msgstr "Aygıt Adı"
+
+#: base/info_osx.cpp:131
+msgid "Manufacturer"
+msgstr "Üretici"
+
+#: base/info_solaris.cpp:69
+msgid "Instance"
+msgstr "Tekrar"
+
+#: base/info_solaris.cpp:69
+msgid "CPU Type"
+msgstr "İşlemci Tipi"
+
+#: base/info_solaris.cpp:69
+msgid "FPU Type"
+msgstr "FPU Tipi"
+
+#: base/info_solaris.cpp:69
+msgid "State"
+msgstr "Durum"
+
+#: base/info_solaris.cpp:174
+msgid "Mount Time"
+msgstr "Bağlanma Süresi"
+
+#: base/info_solaris.cpp:444
+msgid "character special"
+msgstr "özel karakter"
+
+#: base/info_solaris.cpp:446
+msgid "block special"
+msgstr "özel blok"
+
+#: base/info_solaris.cpp:449
+msgctxt "Can be either character special or block special"
+msgid "Special type:"
+msgstr "Özel tip:"
+
+#: base/info_solaris.cpp:462
+msgid "Nodetype:"
+msgstr "Düğüm tipi:"
+
+#: base/info_solaris.cpp:469
+msgid "Major/Minor:"
+msgstr "Büyük/Küçük:"
+
+#: base/info_solaris.cpp:540
+msgid "(no value)"
+msgstr "(değer yok)"
+
+#: base/info_solaris.cpp:605
+msgid "Driver Name:"
+msgstr "Sürücü Adı:"
+
+#: base/info_solaris.cpp:607
+msgid "(driver not attached)"
+msgstr "(sürücü eklenmedi)"
+
+#: base/info_solaris.cpp:614
+msgid "Binding Name:"
+msgstr "Bağlayıcı Adı:"
+
+#: base/info_solaris.cpp:629
+msgid "Compatible Names:"
+msgstr "Uyumlu Adlar:"
+
+#: base/info_solaris.cpp:633
+msgid "Physical Path:"
+msgstr "Fiziksel Yol:"
+
+#: base/info_solaris.cpp:643
+msgid "Properties"
+msgstr "Özellikler"
+
+#: base/info_solaris.cpp:657
+msgid "Type:"
+msgstr "Tip:"
+
+#: base/info_solaris.cpp:661
+msgid "Value:"
+msgstr "Değer:"
+
+#: base/info_solaris.cpp:672
+msgid "Minor Nodes"
+msgstr "Küçük Düğümler"
+
+#: base/info_solaris.cpp:697
+msgid "Device Information"
+msgstr "Aygıt Bilgileri"
+
+#: base/os_base.h:36
+msgid "LSBFirst"
+msgstr "LSB Öncelikli"
+
+#: base/os_base.h:38
+msgid "MSBFirst"
+msgstr "MSB Öncelikli"
+
+#: base/os_base.h:40
+#, kde-format
+msgid "Unknown Order %1"
+msgstr "Bilinmeyen Sıralama %1"
+
+#: base/os_base.h:44
+#, kde-format
+msgid "1 Bit"
+msgid_plural "%1 Bits"
+msgstr[0] "%1 Bit"
+
+#: base/os_base.h:50
+msgctxt "singular form: '1 Byte' (yes, it is '1', not '%1'!)"
+msgid "1 Byte"
+msgstr "1 Bayt"
+
+#: base/os_base.h:52
+#, kde-format
+msgctxt "plural form: '%1 Bytes'"
+msgid "%1 Bytes"
+msgstr "%1 Bayt"
+
+#: base/os_base.h:90
+#, kde-format
+msgid "Screen # %1"
+msgstr "Ekran # %1"
+
+#: base/os_base.h:92
+msgid "(Default Screen)"
+msgstr "(Öntanımlı Ekran)"
+
+#: base/os_base.h:101
+msgid "Dimensions"
+msgstr "Boyutlar"
+
+#: base/os_base.h:101
+#, kde-format
+msgid "%1 x %2 Pixels (%3 x %4 mm)"
+msgstr "%1 x %2 Piksel (%3 x %4 mm)"
+
+#: base/os_base.h:105
+msgid "Resolution"
+msgstr "Çözünürlük"
+
+#: base/os_base.h:105
+#, kde-format
+msgid "%1 x %2 dpi"
+msgstr "%1 x %2 dpi"
+
+#: base/os_base.h:122
+#, kde-format
+msgid "Depths (%1)"
+msgstr "Derinlik (%1)"
+
+#: base/os_base.h:128
+msgid "Root Window ID"
+msgstr "Kök Pencere Kimliği"
+
+#: base/os_base.h:132
+msgid "Depth of Root Window"
+msgstr "Kök Pencerenin Derinliği"
+
+#: base/os_base.h:132
+#, kde-format
+msgid "%1 plane"
+msgid_plural "%1 planes"
+msgstr[0] "%1 düzlem"
+
+#: base/os_base.h:136
+msgid "Number of Colormaps"
+msgstr "Renk Haritalarının Sayısı"
+
+#: base/os_base.h:136
+#, kde-format
+msgid "minimum %1, maximum %2"
+msgstr "en düşük  %1, en yüksek %2"
+
+#: base/os_base.h:140
+msgid "Default Colormap"
+msgstr "Öntanımlı Renk Haritası"
+
+#: base/os_base.h:144
+msgid "Default Number of Colormap Cells"
+msgstr "Öntanımlı Renk Haritası Hücrelerinin Sayısı"
+
+#: base/os_base.h:148
+msgid "Preallocated Pixels"
+msgstr "Önceden Ayrılmış Pikseller"
+
+#: base/os_base.h:148
+#, kde-format
+msgid "Black %1, White %2"
+msgstr "Siyah %1, Beyaz %2"
+
+#: base/os_base.h:151
+msgid "Yes"
+msgstr "Evet"
+
+#: base/os_base.h:152
+msgid "No"
+msgstr "Hayır"
+
+#: base/os_base.h:155
+msgid "Options"
+msgstr "Seçenekler"
+
+#: base/os_base.h:155
+msgid "When mapped"
+msgstr "Haritalandığında"
+
+#: base/os_base.h:155
+#, kde-format
+msgid "backing-store: %1, save-unders: %2"
+msgstr ""
+
+#: base/os_base.h:161
+msgid "Largest Cursor"
+msgstr "En Büyük İşaretçi"
+
+#: base/os_base.h:163
+msgid "unlimited"
+msgstr "sınırsız"
+
+#: base/os_base.h:169
+msgid "Current Input Event Mask"
+msgstr ""
+
+#: base/os_base.h:175
+#, kde-format
+msgid "Event = %1"
+msgstr "Olay = %1"
+
+#: base/os_base.h:208
+msgid "Server Information"
+msgstr "Sunucu Bilgileri"
+
+#: base/os_base.h:214
+msgid "Name of the Display"
+msgstr "Ekranın Adı"
+
+#: base/os_base.h:218
+msgid "Vendor String"
+msgstr "Sağlayıcı İfadesi"
+
+#: base/os_base.h:222
+msgid "Vendor Release Number"
+msgstr "Sağlayıcı Sürüm Numarası"
+
+#: base/os_base.h:226
+msgid "Version Number"
+msgstr "Sürüm Numarası"
+
+#: base/os_base.h:230
+msgid "Available Screens"
+msgstr "Kullanılabilir Ekranlar"
+
+#: base/os_base.h:240
+msgid "Supported Extensions"
+msgstr "Desteklenen Genişlemeler"
+
+#: base/os_base.h:255
+msgid "Supported Pixmap Formats"
+msgstr "Desteklenen Resim Biçimleri"
+
+#: base/os_base.h:262
+#, kde-format
+msgid "Pixmap Format #%1"
+msgstr "Resim Biçimi #%1"
+
+#: base/os_base.h:262
+#, kde-format
+msgid "%1 BPP, Depth: %2, Scanline padding: %3"
+msgstr ""
+
+#: base/os_base.h:274
+msgid "Maximum Request Size"
+msgstr "En Yüksek İstek Boyutu"
+
+#: base/os_base.h:278
+msgid "Motion Buffer Size"
+msgstr "Hareket Tamponu Boyutu"
+
+#: base/os_base.h:282
+msgid "Bitmap"
+msgstr "Bitmap"
+
+#: base/os_base.h:286
+msgid "Unit"
+msgstr "Birim"
+
+#: base/os_base.h:290
+msgid "Order"
+msgstr "Sıralama"
+
+#: base/os_base.h:294
+msgid "Padding"
+msgstr "Doldurma"
+
+#: base/os_base.h:298
+msgid "Image Byte Order"
+msgstr "Resim Bayt Sırası"
+
+#: base/os_current.h:49 base/os_current.h:64 base/os_current.h:95
+#: base/os_current.h:109 base/os_current.h:123 base/os_current.h:137
+#: base/os_current.h:152 base/os_current.h:166 base/os_current.h:180
+msgid "This system may not be completely supported yet."
+msgstr "Sistem henüz tamamen desteklenmiyor olabilir."
+
+#: aboutwidget.cpp:38 main.cpp:91
+msgid "KDE Info Center"
+msgstr "KDE Bilgi Merkezi"
+
+#: aboutwidget.cpp:40
+msgid "Get system and desktop environment information"
+msgstr "Sistem ve masaüstü ortamı bilgisini göster"
+
+#: aboutwidget.cpp:42
+msgid ""
+"Welcome to the \"KDE Info Center\", a central place to find information "
+"about your computer system."
+msgstr ""
+"Bilgisayarınız hakkındaki tüm bilgiye ulaşmak üzere hazırlanmış \"KDE Bilgi "
+"Merkezine\" hoşgeldiniz."
+
+#: aboutwidget.cpp:46
+msgid ""
+"Click on the \"Help\" tab on the left to view help for the active control "
+"module. Use the \"Search\" tab if you are unsure where to look for a "
+"particular configuration option."
+msgstr ""
+"Soldaki \"Yardım\" sekmesine tıklayarak etkin kontrol modülü hakkında yardım "
+"alabilirsiniz. Belli bir yapılandırma seçeneği için nereye bakacağınızdan "
+"emin değilseniz \"Ara\" sekmesini kullanın."
+
+#: aboutwidget.cpp:52
+msgid "KDE version:"
+msgstr "KDE sürümü:"
+
+#: aboutwidget.cpp:53
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#: aboutwidget.cpp:54
+msgid "Hostname:"
+msgstr "Makine adı:"
+
+#: aboutwidget.cpp:55
+msgid "System:"
+msgstr "Sistem:"
+
+#: aboutwidget.cpp:56
+msgid "Release:"
+msgstr "Dağıtım:"
+
+#: aboutwidget.cpp:57
+msgid "Machine:"
+msgstr "İşlemci:"
+
+#: dockcontainer.cpp:69
+#, kde-format
+msgid "<p>Click here to consult the full <a href=\"%1\">Manual</a>.</p>"
+msgstr "<p><a href=\"%1\">Kılavuza</a> bakmak için burayı tıklayın.</p>"
+
+#: dockcontainer.cpp:74
+msgid ""
+"<h1>KDE Info Center</h1>There is no quick help available for the active info "
+"module.<br /><br />Click <a href = \"kinfocenter/index.html\">here</a> to "
+"read the general Info Center manual."
+msgstr ""
+"<h1>KDE Bilgi Merkezi</h1>Etkin bilgi modülü için hızlı yardım yok.<br/><br /"
+">Genel Bilgi Merkezi kılavuzunu okumak için <a href=\"kinfocenter/index.html"
+"\">buraya</a> tıklayın."
+
+#: dockcontainer.cpp:91
+msgid "<big><b>Loading...</b></big>"
+msgstr "<big><b>Yükleniyor...</b></big>"
+
+#: dockcontainer.cpp:147
+msgid ""
+"There are unsaved changes in the active module.\n"
+"Do you want to apply the changes before running the new module or discard "
+"the changes?"
+msgstr ""
+"Etkin modülde kaydedilmemiş değişiklikler var.\n"
+"Yeni modülü çalıştırmadan önce değişiklikleri \n"
+"uygulamayı istiyor musunuz ?"
+
+#: dockcontainer.cpp:149
+#, fuzzy
+#| msgid ""
+#| "There are unsaved changes in the active module.\n"
+#| "Do you want to apply the changes before exiting the Control Center or "
+#| "discard the changes?"
+msgid ""
+"There are unsaved changes in the active module.\n"
+"Do you want to apply the changes before exiting the System Settings or "
+"discard the changes?"
+msgstr ""
+"Etkin modülde kaydedilmemiş değişiklikler var.\n"
+"Kontrol merkezinden çıkmadan önce değişiklikleri \n"
+"uygulamayı istiyor musunuz?"
+
+#: dockcontainer.cpp:151
+msgid "Unsaved Changes"
+msgstr "Kaydedilmemiş Değişiklikler"
+
+#: indexwidget.cpp:45
+msgid "Filter:"
+msgstr "Filtrele:"
+
+#: main.cpp:92
+msgid "The KDE Info Center"
+msgstr "KDE Bilgi Merkezi"
+
+#: main.cpp:93
+msgid "(c) 1998-2004, The KDE Control Center Developers"
+msgstr "(c) 1998-2004, KDE Kontrol Merkezi Geliştiricileri"
+
+#: main.cpp:98
+msgid "Nicolas Ternisien"
+msgstr "Nicolas Ternisien"
+
+#: main.cpp:98
+msgid "Current Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: main.cpp:99
+msgid "Helge Deller"
+msgstr "Helge Deller"
+
+#: main.cpp:99
+msgid "Previous Maintainer"
+msgstr "Projeyi Yürüten Önceki Geliştirici"
+
+#: main.cpp:100
+msgid "Matthias Hoelzer-Kluepfel"
+msgstr "Matthias Hoelzer-Kluepfel"
+
+#: main.cpp:101
+msgid "Matthias Elter"
+msgstr "Matthias Elter"
+
+#: main.cpp:102
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:103
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: moduletreeview.cpp:43 toplevel.cpp:221
+msgid "General Information"
+msgstr "Genel Bilgiler"
+
+#: proxywidget.cpp:51
+msgid "The currently loaded configuration module."
+msgstr "Şu anda yüklenmiş olan yapılandırma modülü."
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: toplevel.cpp:119 toplevel.cpp:150 toplevel.cpp:217
+msgid "About Current Module"
+msgstr "Geçerli Modül Hakkında"
+
+#: toplevel.cpp:126 toplevel.cpp:158 toplevel.cpp:223
+msgid "&Report Bug..."
+msgstr "Hata &Bildir..."
+
+#: toplevel.cpp:146
+#, kde-format
+msgctxt "Help menu->about <modulename>"
+msgid "About %1"
+msgstr "%1 Hakkında"
+
+#: toplevel.cpp:160
+#, kde-format
+msgid "Report Bug on Module %1..."
+msgstr "Modül %1 İçin Hata Bildir..."
+
+#~ msgid " MB"
+#~ msgstr " MB"
+
+#~ msgid "Kernel is configured for %1 CPUs"
+#~ msgstr "Çekirdek %1 işlemci için yapılandırılmış"
+
+#~ msgid "CPU %1: %2"
+#~ msgstr "İşlemci %1: %2"
+
+#~ msgid "Ext Number"
+#~ msgstr "Ext Numarası"
+
+#~ msgid "KDE Control Center"
+#~ msgstr "KDE Kontrol Merkezi"
+
+#, fuzzy
+#~| msgid "Configure your desktop environment."
+#~ msgid "Configure your desktop environment"
+#~ msgstr "Masaüstünüzü ayarlayın."
+
+#~ msgid ""
+#~ "Welcome to the \"KDE Control Center\", a central place to configure your "
+#~ "desktop environment. Select an item from the index on the left to load a "
+#~ "configuration module."
+#~ msgstr ""
+#~ "Masaüstü yapılandırması için kullanılan KDE Kontrol Merkezi'ne hoş "
+#~ "geldiniz. Bir yapılandırma modülünü yüklemek için soldaki dizinden bir "
+#~ "öğe seçiniz."
+
+#~ msgid ""
+#~ "<p>Use the \"Whats This\" (Shift+F1) to get help on specific options.</"
+#~ "p><p>To read the full manual click <a href=\"%1\">here</a>.</p>"
+#~ msgstr ""
+#~ "<p>\"Bu Nedir?\" (Shift+F1) özelliğini kullanarak belirli seçenekler "
+#~ "hakkında bilgi alabilirsiniz.</p><p>Tüm kılavuzu okumak için <a href=\"%1"
+#~ "\">buraya</a> tıklayın.</p>"
+
+#~ msgid ""
+#~ "<big>You need super user privileges to run this control module.</big><br /"
+#~ ">Click on the \"Administrator Mode\" button below."
+#~ msgstr ""
+#~ "<big>Bu denetim modülünü çalıştırmak için süper kullanıcı haklarına sahip "
+#~ "olmanız gerekir.</big><br />Aşağıdaki \"Yönetici Kipi\" düğmesine "
+#~ "tıklayınız."
+
+#~ msgctxt "go back"
+#~ msgid "Back"
+#~ msgstr "Geri"
+
+#~ msgid "<big>Loading...</big>"
+#~ msgstr "<big>Yükleniyor...</big>"
+
+#~ msgid "The %1 configuration group. Click to open it."
+#~ msgstr "%1 yapılandırma grubu. Açmak için tıklayın."
+
+#~ msgid ""
+#~ "This treeview displays all available control modules. Click on one of the "
+#~ "modules to receive more detailed information."
+#~ msgstr ""
+#~ "Bu ağaç yapısı tüm kullanılabilir modülleri görüntüler. Bir modül "
+#~ "hakkında daha detaylı bilgi almak için üzerine tıklayın."
+
+#~ msgid ""
+#~ "<b>Changes in this module require root access.</b><br />Click the "
+#~ "\"Administrator Mode\" button to allow modifications in this module."
+#~ msgstr ""
+#~ "<b>Bu modül üzerinde yapılacak değişiklikler root kullanıcısı erişimi "
+#~ "gerektirmektedir.</b><br />\"Yönetici Kipi\" düğmesine tıklayarak bu "
+#~ "modüldeki değişikliklere izin verebilirsiniz."
+
+#~ msgid ""
+#~ "This module requires special permissions, probably for system-wide "
+#~ "modifications; therefore, it is required that you provide the root "
+#~ "password to be able to change the module's properties.  If you do not "
+#~ "provide the password, the module will be disabled."
+#~ msgstr ""
+#~ "Bu modül özel izinlere ihtiyaç duyar. Bu nedenle modül özelliklerini "
+#~ "değiştirmek için root parolasını bilmelisiniz. Parolayı vermedikçe bu "
+#~ "modül kapalı duracaktır."
+
+#~ msgid "&Administrator Mode"
+#~ msgstr "&Yönetici Kipi"
+
+#~ msgid "&View"
+#~ msgstr "&Görünüm"
+
+#~ msgid "Se&arch:"
+#~ msgstr "Ar&a:"
+
+#~ msgid "&Keywords:"
+#~ msgstr "Anahtar &kelimeler:"
+
+#~ msgid "&Results:"
+#~ msgstr "So&nuçlar:"
+
+#~ msgid "Choose between Index, Search and Quick Help"
+#~ msgstr "İndeks, Arama ve Hızlı Yardım'dan birini seçin"
+
+#~ msgid "&Index"
+#~ msgstr "&İndeks"
+
+#~ msgid "Sear&ch"
+#~ msgstr "A&ra"
+
+#~ msgid "Hel&p"
+#~ msgstr "&Yardım"
+
+#~ msgid "&Icon View"
+#~ msgstr "&Simge Görünümü"
+
+#~ msgctxt "@option activate small size icons"
+#~ msgid "&Small"
+#~ msgstr "&Küçük"
+
+#~ msgctxt "@option activate medium size icons"
+#~ msgid "&Medium"
+#~ msgstr "&Orta"
+
+#~ msgctxt "@option activate large size icons"
+#~ msgid "&Large"
+#~ msgstr "&Büyük"
+
+#~ msgctxt "@option activate huge size icons"
+#~ msgid "&Huge"
+#~ msgstr "&Çok büyük"

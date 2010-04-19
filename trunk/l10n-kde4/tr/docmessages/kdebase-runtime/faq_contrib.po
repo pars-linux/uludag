@@ -1,0 +1,370 @@
+# translation of faq_contrib.po to Türkçe
+# translation of khelpcenter_faq_contrib.po to
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# GÃ¶rkem Ãetin <gorkem@kde.org>, 2003.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_contrib\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-09 19:05+0000\n"
+"PO-Revision-Date: 2006-02-24 17:04+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: contrib.docbook:9
+#, no-c-format
+msgid "Contributing"
+msgstr "Destekleme"
+
+#. Tag: para
+#: contrib.docbook:14
+#, no-c-format
+msgid "How can I contribute to &kde;?"
+msgstr "&kde;'ye nasıl destek olabilirim?"
+
+#. Tag: para
+#: contrib.docbook:17
+#, no-c-format
+msgid ""
+"&kde; is a free software project that lives from voluntary contributions. "
+"Everybody is encouraged to contribute to &kde;. Not only programmers are "
+"welcome. There are many ways in which you can help to improve &kde;:"
+msgstr ""
+"&kde; gönüllü katılımcılar tarafından desteklenen bir serbest yazılım "
+"projesidir. Herkes &kde;' ye katkı sağlamak için teşvik edilir, sadece "
+"programcılardan yardım beklenmez. &kde;'nin gelişimine katkıda "
+"bulunabileceğiniz birçok yol vardır."
+
+#. Tag: para
+#: contrib.docbook:22
+#, no-c-format
+msgid "Test the software."
+msgstr "Yazılımı deneyin."
+
+#. Tag: para
+#: contrib.docbook:23
+#, no-c-format
+msgid ""
+"Send in bug reports. For more information on this, see <link linkend=\"bug-"
+"report\">How do I submit a bug report?</link>."
+msgstr ""
+"Hata raporları gönderin. Bu konuda yardım için <link linkend=\"bug-report\"> "
+"Bir hata raporu nasıl gönderilir?</link>.'i görünüz."
+
+#. Tag: para
+#: contrib.docbook:26
+#, fuzzy, no-c-format
+msgid ""
+"Write documentation or help files. You can get some information by visiting "
+"the <ulink url=\"http://l10n.kde.org/docs/\">&kde; Editorial Team Home Page</"
+"ulink>."
+msgstr ""
+"Yardım dosyaları yazın. <ulink url=\"http://i18n.kde.org/doc/\">&kde; "
+"Editorial Team Home Page</ulink> adresini ziyaret ederek daha fazla bilgi "
+"alabilirsiniz."
+
+#. Tag: para
+#: contrib.docbook:30
+#, fuzzy, no-c-format
+msgid ""
+"Translate programs, documentation, and help files. For more information on "
+"this, you should visit <ulink url=\"http://l10n.kde.org\">The &kde; "
+"Translators' and Documenters' Web Site</ulink>."
+msgstr ""
+"Yardım dosyaları ve uygulamaları kendi dilinize çevirin.Bu konuda daha fazla "
+"bilgi sahibi olmak için <ulink url=\"http://i18n.kde.org\">&kde; "
+"Çevirmenlerinin veYardımcılarının Web Sitesi</ulink> adresini ziyaret "
+"etmelisiniz."
+
+#. Tag: para
+#: contrib.docbook:34
+#, fuzzy, no-c-format
+msgid ""
+"Draw nice icons or compose sound effects. You can visit the <ulink url="
+"\"http://kde-artists.org/\">&kde; artists page</ulink> to find out more."
+msgstr ""
+"Güzel simge dosyaları ya da ses dosyaları hazırlayın. Daha fazla bilgi için."
+"<ulink url=\"http://artist.kde.org/\">&kde; artistleri sayfası</ulink> "
+"adresini gezin."
+
+#. Tag: para
+#: contrib.docbook:37
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Write articles and books about &kde;. If you want to help spread the word "
+#| "about &kde;, simply send an email to <email>kde-pr@kde.org</email>. This "
+#| "will get you in touch with the &kde; public relations volunteers."
+msgid ""
+"Write articles and books about &kde;. If you want to help spread the word "
+"about &kde;, simply send an email to <email>kde-promo@kde.org</email>. This "
+"will get you in touch with the &kde; public relations volunteers."
+msgstr ""
+"&kde; hakkında yazılar ve kitaplar yazın. &kde;'nin daha çok duyulmasını "
+"sağlamak için <email>kde-pr@kde.org</email> adresine e-posta gönderin. Bu "
+"adres sizi &kde; halkla ilişkiler gönüllülerine ulaştıracaktır."
+
+#. Tag: para
+#: contrib.docbook:41
+#, no-c-format
+msgid ""
+"Program new &kde; applications. Please refer to <xref linkend=\"programming"
+"\"/> for more information."
+msgstr ""
+"Yeni &kde; uygulamaları yazın. Daha fazla bilgi için: <xref linkend="
+"\"programming\"/>."
+
+#. Tag: para
+#: contrib.docbook:43
+#, no-c-format
+msgid "Of course, sponsors are also welcome. :-)"
+msgstr "Tabii ki sponsorları bekliyoruz. :-)"
+
+#. Tag: para
+#: contrib.docbook:46
+#, no-c-format
+msgid ""
+"There are several places to look for more information if you want to get "
+"involved in the development. The first step is to subscribe to some of the "
+"<ulink url=\"http://www.kde.org/mailinglists/\">mailing lists</ulink>. You "
+"will soon see something that can be improved or added."
+msgstr ""
+"Geliştirmede yer almak istiyorsanız daha fazla bilgi için bakabileceğiniz "
+"birçok yer var. İlk adım olarak <ulink url=\"http://www.kde.org/mailinglists/"
+"\">posta listeleri </ulink>'ne üye olmak isteyebilirsiniz. Kısa süre sonra "
+"bazı şeylerin eklendiğini ya da geliştirildiğini göreceksiniz."
+
+#. Tag: para
+#: contrib.docbook:56
+#, no-c-format
+msgid "How do I submit a bug report?"
+msgstr "Nasıl hata raporu gönderebilirim?"
+
+#. Tag: para
+#: contrib.docbook:59
+#, no-c-format
+msgid ""
+"There is a bug tracking system available at <ulink url=\"http://bugs.kde.org"
+"\">http://bugs.kde.org</ulink>. The system features a wizard to submit new "
+"bug reports and a list of all known bugs."
+msgstr ""
+"<ulink url=\"http://bugs.kde.org\">http://bugs.kde.org</ulink> adresinde "
+"hata belirtme sistemi vardır. Bu sistem yeni hata raporları göndermek için "
+"bir yardımcıyı ve bilinen hataların listesini içerir."
+
+#. Tag: para
+#: contrib.docbook:63
+#, no-c-format
+msgid ""
+"The easiest way to submit a bug is to select <menuchoice><guimenu>Help</"
+"guimenu><guimenuitem>Report Bug...</guimenuitem></menuchoice> from the menu "
+"bar of the application with the bug. This will open a small dialog box with "
+"a link to the bug tracking system. Please make sure to follow the "
+"instructions of the bug reporting wizard."
+msgstr ""
+"Bir hata raporu göndermenin en iyi yolu, hata içeren uygulamanın menüsünden "
+"<menuchoice><guimenu>Yardım</guimenu><guimenuitem>Hata Bildir... </"
+"guimenuitem></menuchoice> seçeneğini seçmektir. Bu seçenek, hata belirtme "
+"sistemine bağlanan bir köprü içeren küçük bir diyalog kutusu açar. Lütfen "
+"hata bildirme sistemi yardımcısının talimatlarına uyduğunuzdan emin olun."
+
+#. Tag: para
+#: contrib.docbook:74
+#, no-c-format
+msgid "I want to program for &kde;. What should I do first?"
+msgstr "&kde; için uygulama yazmak istiyorum. Önce ne yapmalıyım?"
+
+#. Tag: para
+#: contrib.docbook:77
+#, no-c-format
+msgid ""
+"Everybody is encouraged to develop software for &kde;. What you should do "
+"first depends strongly on your experience, &eg; whether you have already "
+"learned C++ or have experience with the &Qt; toolkit and so on."
+msgstr ""
+"Herkes &kde; için uygulama yazlamaya teşvik edilir. Ne yapmanız gerektiği "
+"tamamen sizin tecrübenize bağlıdır, örneğin, daha önceden C++ dilini bilip "
+"bilmediğinize ya da &Qt; aracı ile tecrübeniz olup olmadığına bağlıdır."
+
+#. Tag: para
+#: contrib.docbook:81
+#, fuzzy, no-c-format
+msgid ""
+"To get into &kde; programming, you will need some basic tools: "
+"<application>cmake</application>, and <application>gcc</application>. You "
+"should look to <ulink url=\"http://techbase.kde.org/\">http://techbase.kde."
+"org/</ulink> for more tips."
+msgstr ""
+"&kde; için uygulama yazmaya başlamak için <application>automake</"
+"application>, <application>autoconf</application>, and <application>egcs</"
+"application> gibi temel uygulamalara sahip olmanız gerekir. <ulink url="
+"\"http://developer.kde.org/\"> http://developer.kde.org/</ulink> adresinden "
+"bazı ipuçlarına erişebilirsiniz."
+
+#. Tag: para
+#: contrib.docbook:87
+#, no-c-format
+msgid ""
+"Another excellent resource for learning &kde; programming is the &Qt; online "
+"tutorials. These are installed along with &Qt;. To view them, open <filename>"
+"$<envar>QTDIR</envar>/doc/html/index.html</filename> in &konqueror; and "
+"bookmark it. The tutorials can be found under \"Using Qt\". The source code "
+"for each lesson can be found in the <filename class=\"directory\">"
+"$<envar>QTDIR</envar>/tutorial</filename> directory."
+msgstr ""
+"&kde; uygulamaları hazırlamak için kullanabileceğiniz mükemmel başka bir "
+"kaynak  da &Qt; çevrimiçi yardım dosyalarıdır. Bu dosyalar &Qt; ile birlikte "
+"sisteminize yüklenir.Dosyaları görüntülemek için, <filename>$<envar>QTDIR</"
+"envar> /doc/html/index.html</filename> dosyasını &konqueror; ile açın. "
+"Dosyalar \"Using Qt\" başlığı altında bulunabilir. Her ders için kaynak kodu "
+"<filename class=\"directory\">$<envar>QTDIR</envar>/tutorial</filename> "
+"klasöründe bulunabilir."
+
+#. Tag: para
+#: contrib.docbook:96
+#, no-c-format
+msgid ""
+"There is, however, one thing that everybody interested in programming for "
+"&kde; should do: <emphasis>subscribe to the developers mailing list</"
+"emphasis>. To subscribe, you have to send an email to <ulink url=\"mailto:"
+"kde-devel-request@kde.org\">kde-devel-request@kde.org</ulink> with the "
+"subject <userinput>subscribe <replaceable>your_email_address</replaceable></"
+"userinput>."
+msgstr ""
+"&kde; için uygulama geliştirmeye ilgili herkesin yapması gereken bir şey "
+"vardır: <emphasis>geliştiriciler posta grubuna üye olmak</emphasis>. Üye "
+"olmak için<ulink url=\"mailto:kde-devel-request@kde.org\">kde-devel-"
+"request@kde.org</ulink> adresine "
+"<userinput>subscribe<replaceable>e_posta_adresiniz</replaceable></userinput> "
+"konulu bir posta göndermelisiniz."
+
+#. Tag: para
+#: contrib.docbook:103
+#, no-c-format
+msgid ""
+"Please read <link linkend=\"subscribe\">How to subscribe/unsubscribe to "
+"these lists</link> carefully. Everything said there applies to the "
+"development list as well."
+msgstr ""
+"Lütfen <link linkend=\"subscribe\">Bu listelere nasıl üye olunur/üyelik "
+"bitirilir?</link> yazısını dikkatlice okuyun. Yazıda söylenen her şey "
+"geliştirme listesi için de geçerlidir."
+
+#. Tag: para
+#: contrib.docbook:112
+#, no-c-format
+msgid "How do I get access to &kde; <acronym>SVN</acronym>?"
+msgstr "<acronym>CVS</acronym> 'ye nasıl bağlanacağım?"
+
+#. Tag: para
+#: contrib.docbook:115
+#, no-c-format
+msgid ""
+"The &kde; project uses <acronym>SVN</acronym> to develop the core parts of "
+"the software. Usually, when you have changed one of the parts (&eg; fixed a "
+"bug), and you want to commit this change, the best way is to create a patch "
+"against a current snapshot and send this patch to the developer/maintainer "
+"of the respective program."
+msgstr ""
+"&kde; projesi yazılımın çekirdek kısımlarını geliştirmek için <acronym>CVS</"
+"acronym>' yi kullanır.Genellikle, bir kısmı değiştirdiğinizde (ör: bir "
+"hatayı düzelttiğinizde), ve bu değişikliği dile getirmek istediğinizde en "
+"iyi yol, geçerli sürüm için yama yaratıp bu yamayı yazılımın üreticisine/"
+"sağlayıcısına göndermektir."
+
+#. Tag: para
+#: contrib.docbook:120
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you are doing this more or less regularly, there are instructions here "
+#| "on how to get write access to the <acronym>SVN</acronym> repository: "
+#| "<ulink url=\"http://developer.kde.org/documentation/other/developer-faq."
+#| "html#q1.8\"> http://developer.kde.org/documentation/other/developer-faq."
+#| "html#q1.8</ulink>. But be aware that more users will slow down "
+#| "<acronym>SVN</acronym> access for all developers, so we want to keep the "
+#| "number of people with direct <acronym>SVN</acronym> access reasonably "
+#| "small. But feel free to ask!"
+msgid ""
+"If you are doing this more or less regularly, there are instructions here on "
+"how to get write access to the <acronym>SVN</acronym> repository: <ulink url="
+"\"http://techbase.kde.org/Contribute/Get_a_SVN_Account\"> http://techbase."
+"kde.org/Contribute/Get_a_SVN_Account</ulink>. But be aware that more users "
+"will slow down <acronym>SVN</acronym> access for all developers, so we want "
+"to keep the number of people with direct <acronym>SVN</acronym> access "
+"reasonably small. But feel free to ask!"
+msgstr ""
+"Eğer bunu daha sık veya seyrek yapıyorsanız, Spehan Kulow'a <email>coolo@kde."
+"org </email> <acronym>CVS</acronym> sunucusuna doğrudan erişim için "
+"başvurabilirsiniz. Fakat <acronym>CVS</acronym> bağlantısına sahip olan "
+"kullanıcı sayısı arttıkça bağlantı hızı azalacaktır, bu nedenle "
+"<acronym>CVS</acronym> 'ye doğrudan bağlanabilen kişi sayıcısını az tutmak "
+"istiyoruz. Yine de başvurmaktan çekinmeyin!"
+
+#. Tag: para
+#: contrib.docbook:130
+#, no-c-format
+msgid "Can I have read-only access to the <acronym>SVN</acronym> repository?"
+msgstr ""
+"Sadece merak ediyorum, <acronym>CVS</acronym>' ye salt okunur erişimde "
+"bulunabilir miyim?"
+
+#. Tag: para
+#: contrib.docbook:133
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Yes. Instructions on how to get anonymous, read-only <acronym>SVN</"
+#| "acronym> access are here: <ulink url=\"http://developer.kde.org/source/"
+#| "anonsvn.html\"> http://developer.kde.org/source/anonsvn.html</ulink>"
+msgid ""
+"Yes. Instructions on how to get anonymous, read-only <acronym>SVN</acronym> "
+"access are here: <ulink url=\"http://techbase.kde.org/Getting_Started/"
+"Sources/Anonymous_SVN\"> http://techbase.kde.org/Getting_Started/Sources/"
+"Anonymous_SVN</ulink>"
+msgstr ""
+"anonscvs sunucusunu değiştirme ile ilgili bilgiler <ulink url=\"http://"
+"developer.kde.org/source/anoncvs.html\"> http://developer.kde.org/source/"
+"anoncvs.html</ulink> adresinde de bulunabilir."
+
+#. Tag: para
+#: contrib.docbook:141
+#, no-c-format
+msgid "How do I go about translating &kde; programs into my native language?"
+msgstr ""
+"&kde; uygulamalarını kendi ana dilime çevirmek için nereden bilgi "
+"edinebilirim?"
+
+#. Tag: para
+#: contrib.docbook:145
+#, fuzzy, no-c-format
+msgid ""
+"Look at the <ulink url=\"http://l10n.kde.org\">The &kde; Translators' and "
+"Documenters' Web Site</ulink> to see whether your program is already "
+"translated (most are). Otherwise you will find information there on how to "
+"do it yourself."
+msgstr ""
+"Çevirmek istediğiniz uygulamanın çevrilmiş olup olmadığını (birçoğu "
+"çevrilmiştir) öğrenmek için<ulink url=\"http://i18n.kde.org\">&kde; "
+"Çevirmenlerinin and Dökümacılarının Web Sitesi </ulink> adresine bakın. Eğer "
+"çevrilmemişse bunu kendi başınıza nasıl yapacağınıza ilişkin bilgileri "
+"burada bulabilirsiniz."
+
+#~ msgid "Are there any <acronym>SVN</acronym> mirror sites for &kde;?"
+#~ msgstr "&kde; için <application>cvs</application> yansı adresleri var mı?"
+
+#~ msgid ""
+#~ "No, there are currently no anonymous <acronym>SVN</acronym> mirror sites "
+#~ "for &kde;. If you're interested in setting one up, please contact "
+#~ "<email>sysadmin@kde.org</email>"
+#~ msgstr ""
+#~ "Hayır, şu anda &kde; için <application>cvs</application> yansı adresleri "
+#~ "yok. Eğer kurmayı düşünüyorsanız lütfen <email>sysadmin@kde.org</email> "
+#~ "adresine bir e-posta atınız."

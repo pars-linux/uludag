@@ -1,0 +1,251 @@
+# translation of plasma_applet_battery.po to Turkish
+# translation of plasma_applet_battery.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Ayhan YALÇINSOY <dellpardus@hotmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_battery\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-02 01:21+0200\n"
+"PO-Revision-Date: 2009-11-04 18:32+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: battery.cpp:264
+msgid "General"
+msgstr "Genel"
+
+#: battery.cpp:420
+msgid "Screen Brightness"
+msgstr "Ekran Parlaklığı"
+
+#: battery.cpp:444
+msgid "Power Profile"
+msgstr "Güç Profili"
+
+#: battery.cpp:477
+msgid "Sleep"
+msgstr "Uyku Kipine Geç"
+
+#: battery.cpp:491
+msgid "Hibernate"
+msgstr "Askıya Al"
+
+#: battery.cpp:505
+#, fuzzy
+#| msgid "Power Management"
+msgctxt "tooltip on the config button in the popup"
+msgid "Configure Power Management..."
+msgstr "Güç Yönetimi"
+
+#: battery.cpp:527
+msgid "Power Management"
+msgstr "Güç Yönetimi"
+
+#: battery.cpp:581
+msgid "Battery:"
+msgstr "Pil:"
+
+#: battery.cpp:584 battery.cpp:601
+#, kde-format
+msgid "%1% (charged)"
+msgstr "%1% (şarj edilmiş)"
+
+#: battery.cpp:586
+#, fuzzy, kde-format
+#| msgctxt "Shown when a time estimate is not available"
+#| msgid "%1% (discharging)\n"
+msgctxt "Shown when a time estimate is not available"
+msgid "%1% (discharging)"
+msgstr "%1% (şarj tüketiliyor)\n"
+
+#: battery.cpp:588 battery.cpp:605
+#, kde-format
+msgid "%1% (charging)"
+msgstr "%1% (şarj ediliyor)"
+
+#: battery.cpp:591 battery.cpp:627
+msgctxt "Battery is not plugged in"
+msgid "Not present"
+msgstr "Hazır değil"
+
+#: battery.cpp:599
+#, fuzzy, kde-format
+#| msgid "Battery:"
+msgctxt "Placeholder is the battery ID"
+msgid "Battery %1:"
+msgstr "Pil:"
+
+#: battery.cpp:603
+#, fuzzy, kde-format
+#| msgctxt "Shown when a time estimate is not available"
+#| msgid "%1% (discharging)\n"
+msgid "%1% (discharging)"
+msgstr "%1% (şarj tüketiliyor)\n"
+
+#: battery.cpp:609
+msgid "AC Adapter:"
+msgstr "AC Adaptör:"
+
+#: battery.cpp:611
+msgid "Plugged in "
+msgstr "Fişe takılı "
+
+#: battery.cpp:613
+msgid "Not plugged in"
+msgstr "Fişe takılı değil"
+
+#: battery.cpp:626
+msgid "<b>Battery:</b> "
+msgstr "<b>Pil:</b> "
+
+#: battery.cpp:886 battery.cpp:914
+#, kde-format
+msgctxt "overlay on the battery, needs to be really tiny"
+msgid "%1%"
+msgstr ""
+
+#. i18n: file: batteryConfig.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, batteryConfig)
+#: rc.cpp:3 rc.cpp:12
+msgid "Configure Battery Monitor"
+msgstr "Pil İzleyiciyi Yapılandır"
+
+#. i18n: file: batteryConfig.ui:23
+#. i18n: ectx: property (text), widget (QCheckBox, showBatteryStringCheckBox)
+#: rc.cpp:6 rc.cpp:15
+msgid "Show charge &information"
+msgstr "Şa&rj bilgilerini göster"
+
+#. i18n: file: batteryConfig.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, showMultipleBatteriesCheckBox)
+#: rc.cpp:9 rc.cpp:18
+msgid "Show the state for &each battery present"
+msgstr "Takılı olan &her pil için pil durumunu göster"
+
+#, fuzzy
+#~| msgctxt "Placeholder is the battery ID"
+#~| msgid "<b>Battery %1:</b> "
+#~ msgctxt "Placeholder is the battery ID"
+#~ msgid "<b>Battery %1:</b>"
+#~ msgstr "<b>Pil %1:</b> "
+
+#, fuzzy
+#~| msgid "%1% (charged)"
+#~ msgctxt "state of battery"
+#~ msgid "%1% (charged)"
+#~ msgstr "%1% (şarj edilmiş)"
+
+#, fuzzy
+#~| msgctxt "Shown when a time estimate is not available"
+#~| msgid "%1% (discharging)\n"
+#~ msgctxt "state of battery"
+#~ msgid "%1% (discharging)"
+#~ msgstr "%1% (şarj tüketiliyor)\n"
+
+#, fuzzy
+#~| msgid "%1% (charging)"
+#~ msgctxt "state of battery"
+#~ msgid "%1% (charging)"
+#~ msgstr "%1% (şarj ediliyor)"
+
+#~ msgid "%2% (discharging)"
+#~ msgstr "%2% (şarj tüketiliyor)"
+
+#~ msgid "%2% (charging)"
+#~ msgstr "%2% (şarj ediliyor)"
+
+#~ msgid "Configure..."
+#~ msgstr "Yapılandır..."
+
+#~ msgid "Actions"
+#~ msgstr "Eylemler"
+
+#~ msgid "%1% (fully charged)"
+#~ msgstr "%1% (tam şarj edilmiş)"
+
+#~ msgctxt "Shown when a time estimate is not available"
+#~ msgid "%1% (discharging)<br />"
+#~ msgstr "%1% (şarj tüketiliyor)<br />"
+
+#~ msgid "<b>AC Adapter:</b>"
+#~ msgstr "<b>AC Adaptör:</b>"
+
+#~| msgid " charged"
+#~ msgid "1% (fully charged)"
+#~ msgstr "%1 (tam şarj edilmiş)"
+
+#~ msgid "Time remaining: <b>%1</b><br />"
+#~ msgstr "Kalan süre: <b>%1</b><br />"
+
+#~ msgid "<b>Battery:</b> %1% (charging)<br />"
+#~ msgstr "<b>Pil:</b> %1% (şarj ediliyor)<br />"
+
+#~ msgid "<b>Battery %1:</b> %2% (fully charged)<br />"
+#~ msgstr "<b>Pil %1:</b> %2% (tam şarj edilmiş)<br />"
+
+#~ msgid "<b>Battery %1:</b> %2% (discharging)<br />"
+#~ msgstr "<b>Pil %1:</b> %2% (şarj tüketiliyor)<br />"
+
+#~ msgid "<b>AC Adapter:</b> Not plugged in"
+#~ msgstr "<b>AC Adaptör:</b> Fişe takılı değil"
+
+#~ msgid "Show &percentage"
+#~ msgstr "&Yüzdeyi göster"
+
+#~ msgid "Show remaining &time"
+#~ msgstr "&Kalan süreyi göster"
+
+#~ msgid "Show the percentage of &charge on the battery"
+#~ msgstr "&Şarj yüzdesini pil üzerinde göster"
+
+#~ msgid "<b>1 hour 1 minute</b> remaining<br />"
+#~ msgid_plural "<b>1 hour %1 minutes</b> remaining<br />"
+#~ msgstr[0] "<b>1 saat %1 dakika</b> kaldı<br />"
+
+#~ msgid "<b>%1 hour %1 minute</b> remaining<br />"
+#~ msgid_plural "<b>%1 hours %2 minute</b> remaining<br />"
+#~ msgstr[0] "<b>%1 saat %2 dakika</b> kaldı<br />"
+
+#~ msgid "<b>%1 hour %2 minutes</b> remaining<br />"
+#~ msgid_plural "<b>%1 hours %2 minutes</b> remaining<br />"
+#~ msgstr[0] "<b>%1 saat %2 dakika</b> kaldı<br />"
+
+#~ msgid "<b>%1 hours</b> remaining<br />"
+#~ msgstr "<b>%1 saat</b> kaldı<br />"
+
+#~ msgid "<b>%1 minute</b> remaining<br />"
+#~ msgid_plural "<b>%1 minutes</b> remaining<br />"
+#~ msgstr[0] "<b>%1 dakika</b> kaldı<br />"
+
+#~ msgid "Oxygen theme"
+#~ msgstr "Oxygen teması"
+
+#~ msgid "Classic theme"
+#~ msgstr "Klasik tema"
+
+#~ msgid "sources"
+#~ msgstr "kaynaklar"
+
+#~ msgid "PowerDevil"
+#~ msgstr "PowerDevil"
+
+#~ msgid "availableProfiles"
+#~ msgstr "Kullanılabilir Profiller"
+
+#~ msgid "currentProfile"
+#~ msgstr "Geçerli Profil"
+
+#~ msgid "Percent"
+#~ msgstr "Yüzde"
+
+#~ msgid "n/a"
+#~ msgstr "kullanılabilir değil"

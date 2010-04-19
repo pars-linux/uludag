@@ -1,0 +1,453 @@
+# translation of kcmscreensaver.po to
+# Copyright (C) 2003, 2004, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2004.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
+# Uğur Çetin <jnmbk@users.sourceforge.net>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmscreensaver\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-08 05:59+0100\n"
+"PO-Revision-Date: 2009-11-04 18:32+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: advanceddialog.cpp:21
+msgid "Advanced Options"
+msgstr "Gelişmiş Seçenekler"
+
+#: advanceddialog.cpp:147
+msgid ""
+"Specify the priority that the screensaver will run at. A higher priority may "
+"mean that the screensaver runs faster, though may reduce the speed that "
+"other programs run at while the screensaver is active."
+msgstr ""
+"Ekran koruyucusunun önceliğini belirleyin. Daha yüksek öncelik verilirse "
+"ekran koruyucu daha hızlı çalışacaktır, fakat bu ekran koruyucu çalışırken "
+"diğer programları yavaşlatabilir."
+
+#: advanceddialog.cpp:148
+msgid ""
+"The action to take when the mouse cursor is located in the top left corner "
+"of the screen for 15 seconds."
+msgstr ""
+"Fare işaretçisi 15 saniye boyunca ekranın sol üst köşesinde kalırsa "
+"gerçekleştirilecek eylem."
+
+#: advanceddialog.cpp:149
+msgid ""
+"The action to take when the mouse cursor is located in the top right corner "
+"of the screen for 15 seconds."
+msgstr ""
+"Fare işaretçisi 15 saniye boyunca ekranın sağ üst köşesinde kalırsa "
+"gerçekleştirilecek eylem."
+
+#: advanceddialog.cpp:150
+msgid ""
+"The action to take when the mouse cursor is located in the bottom left "
+"corner of the screen for 15 seconds."
+msgstr ""
+"Fare işaretçisi 15 saniye boyunca ekranın sol alt köşesinde kalırsa "
+"gerçekleştirilecek eylem."
+
+#: advanceddialog.cpp:151
+msgid ""
+"The action to take when the mouse cursor is located in the bottom right "
+"corner of the screen for 15 seconds."
+msgstr ""
+"Fare işaretçisi 15 saniye boyunca ekranın sağ alt köşesinde kalırsa "
+"gerçekleştirilecek eylem."
+
+#: category_list.cpp:7
+msgctxt "Screen saver category"
+msgid "Banners & Pictures"
+msgstr "Resimler ve Başlıklar"
+
+#: category_list.cpp:8
+msgctxt "Screen saver category"
+msgid "Desktop Distortions"
+msgstr "Masaüstü Bozulmaları"
+
+#: category_list.cpp:9
+msgctxt "Screen saver category"
+msgid "Flying Things"
+msgstr "Uçan Nesneler"
+
+#: category_list.cpp:10
+msgctxt "Screen saver category"
+msgid "Fractals"
+msgstr "Fraktaller"
+
+#: category_list.cpp:11
+msgctxt "Screen saver category"
+msgid "Gadgets & Simulations"
+msgstr "Makineler ve Benzetimler"
+
+#: category_list.cpp:12
+msgctxt "Screen saver category"
+msgid "Illusions of Depth"
+msgstr "Derinlik Yanılsaması"
+
+#: category_list.cpp:13
+msgctxt "Screen saver category"
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+#: category_list.cpp:14
+msgctxt "Screen saver category"
+msgid "OpenGL Screen Savers"
+msgstr "OpenGL Ekran Koruyucuları"
+
+#: category_list.cpp:15
+msgctxt "Screen saver category"
+msgid "Rapid Motion"
+msgstr "Hızlı Hareket"
+
+#: category_list.cpp:16
+msgctxt "Screen saver category"
+msgid "Visit to Flatland"
+msgstr "Arzın Merkezine Seyahat"
+
+#. i18n: file: advanceddialogimpl.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: rc.cpp:3 rc.cpp:128
+msgid "Screen Corner Actions"
+msgstr "Ekran Köşe Olayları"
+
+#. i18n: file: advanceddialogimpl.ui:60
+#. i18n: ectx: property (text), widget (QLabel, qlTopLeft)
+#: rc.cpp:6 rc.cpp:131
+msgid "Top left:"
+msgstr "Üst sol:"
+
+#. i18n: file: advanceddialogimpl.ui:71
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:132
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:193
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:254
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#. i18n: file: advanceddialogimpl.ui:71
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:132
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:193
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:254
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#: rc.cpp:9 rc.cpp:21 rc.cpp:33 rc.cpp:45 rc.cpp:134 rc.cpp:146 rc.cpp:158
+#: rc.cpp:170
+msgid "No Action"
+msgstr "Olay Yok"
+
+#. i18n: file: advanceddialogimpl.ui:76
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:137
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:198
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:259
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#. i18n: file: advanceddialogimpl.ui:76
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:137
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:198
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:259
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#: rc.cpp:12 rc.cpp:24 rc.cpp:36 rc.cpp:48 rc.cpp:137 rc.cpp:149 rc.cpp:161
+#: rc.cpp:173
+msgid "Lock Screen"
+msgstr "Ekranı Kilitle"
+
+#. i18n: file: advanceddialogimpl.ui:81
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:142
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:203
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:264
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#. i18n: file: advanceddialogimpl.ui:81
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopLeft)
+#. i18n: file: advanceddialogimpl.ui:142
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbTopRight)
+#. i18n: file: advanceddialogimpl.ui:203
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomLeft)
+#. i18n: file: advanceddialogimpl.ui:264
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbBottomRight)
+#: rc.cpp:15 rc.cpp:27 rc.cpp:39 rc.cpp:51 rc.cpp:140 rc.cpp:152 rc.cpp:164
+#: rc.cpp:176
+msgid "Prevent Locking"
+msgstr "Kilitlemeyi Engelle"
+
+#. i18n: file: advanceddialogimpl.ui:121
+#. i18n: ectx: property (text), widget (QLabel, qlTopRight)
+#: rc.cpp:18 rc.cpp:143
+msgid "Top right:"
+msgstr "Üst sağ:"
+
+#. i18n: file: advanceddialogimpl.ui:182
+#. i18n: ectx: property (text), widget (QLabel, qlBottomLeft)
+#: rc.cpp:30 rc.cpp:155
+msgid "Bottom left:"
+msgstr "Alt sol:"
+
+#. i18n: file: advanceddialogimpl.ui:243
+#. i18n: ectx: property (text), widget (QLabel, qlBottomRight)
+#: rc.cpp:42 rc.cpp:167
+msgid "Bottom right:"
+msgstr "Alt sağ:"
+
+#. i18n: file: advanceddialogimpl.ui:369
+#. i18n: ectx: property (title), widget (QGroupBox, qgbPriority)
+#: rc.cpp:54 rc.cpp:179
+msgid "Screen Saver Priority"
+msgstr "Ekran Koruyucu Önceliği"
+
+#. i18n: file: advanceddialogimpl.ui:379
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbPriority)
+#: rc.cpp:57 rc.cpp:182
+msgid "Low"
+msgstr "Düşük"
+
+#. i18n: file: advanceddialogimpl.ui:384
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbPriority)
+#: rc.cpp:60 rc.cpp:185
+msgid "Medium"
+msgstr "Orta"
+
+#. i18n: file: advanceddialogimpl.ui:389
+#. i18n: ectx: property (text), item, widget (QComboBox, qcbPriority)
+#: rc.cpp:63 rc.cpp:188
+msgid "High"
+msgstr "Yüksek"
+
+#. i18n: file: screensaver.ui:42
+#. i18n: ectx: property (text), widget (KPushButton, advancedBt)
+#: rc.cpp:66 rc.cpp:191
+msgid "Advanced &Options"
+msgstr "&Gelişmiş Seçenekler"
+
+#. i18n: file: screensaver.ui:64
+#. i18n: ectx: property (title), widget (QGroupBox, mSettingsGroup)
+#: rc.cpp:69 rc.cpp:194
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file: screensaver.ui:70
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, mEnabledCheckBox)
+#: rc.cpp:72 rc.cpp:197
+msgid "Automatically start the screen saver after a period of inactivity."
+msgstr ""
+"Belirli bir süre hareketsizliğin ardından ekran koruyucuyu otomatik başlatır."
+
+#. i18n: file: screensaver.ui:73
+#. i18n: ectx: property (text), widget (QCheckBox, mEnabledCheckBox)
+#: rc.cpp:75 rc.cpp:200
+msgid "Start a&utomatically"
+msgstr "&Otomatik başlat"
+
+#. i18n: file: screensaver.ui:98
+#. i18n: ectx: property (whatsThis), widget (QLabel, mActivateLbl)
+#: rc.cpp:78 rc.cpp:203
+msgid "The period of inactivity after which the screen saver should start."
+msgstr "Ekran koruyucusunun başlamadan önce bekleyeceği etkinsizlik süresi."
+
+#. i18n: file: screensaver.ui:101
+#. i18n: ectx: property (text), widget (QLabel, mActivateLbl)
+#. i18n: file: screensaver.ui:160
+#. i18n: ectx: property (text), widget (QLabel, mLockLbl)
+#. i18n: file: screensaver.ui:101
+#. i18n: ectx: property (text), widget (QLabel, mActivateLbl)
+#. i18n: file: screensaver.ui:160
+#. i18n: ectx: property (text), widget (QLabel, mLockLbl)
+#: rc.cpp:81 rc.cpp:93 rc.cpp:206 rc.cpp:218
+msgid "After:"
+msgstr "Gecikme:"
+
+#. i18n: file: screensaver.ui:129
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, mLockCheckBox)
+#: rc.cpp:84 rc.cpp:209
+msgid ""
+"Prevent potential unauthorized use by requiring a password to stop the "
+"screen saver."
+msgstr ""
+"Ekran koruyucusunu durdurmak için parola isteyerek izinsiz kullanımı "
+"engeller."
+
+#. i18n: file: screensaver.ui:132
+#. i18n: ectx: property (text), widget (QCheckBox, mLockCheckBox)
+#: rc.cpp:87 rc.cpp:212
+msgid "&Require password to stop"
+msgstr "&Ekran koruyucusundan çıkmak için parola sor"
+
+#. i18n: file: screensaver.ui:157
+#. i18n: ectx: property (whatsThis), widget (QLabel, mLockLbl)
+#. i18n: file: screensaver.ui:170
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mWaitLockEdit)
+#. i18n: file: screensaver.ui:157
+#. i18n: ectx: property (whatsThis), widget (QLabel, mLockLbl)
+#. i18n: file: screensaver.ui:170
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, mWaitLockEdit)
+#: rc.cpp:90 rc.cpp:96 rc.cpp:215 rc.cpp:221
+msgid ""
+"The amount of time, after the screen saver has started, to ask for the "
+"unlock password."
+msgstr ""
+"Ekran koruyucusu başladıktan sonra açma parolasını sormak için geçmesi "
+"gereken süre."
+
+#. i18n: file: screensaver.ui:192
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, mPlasmaCheckBox)
+#: rc.cpp:99 rc.cpp:224
+msgid "Add widgets to your screensaver."
+msgstr "Ekran koruyucunuza programcıklar ekleyin."
+
+#. i18n: file: screensaver.ui:195
+#. i18n: ectx: property (text), widget (QCheckBox, mPlasmaCheckBox)
+#: rc.cpp:102 rc.cpp:227
+msgid "Allow widgets on screen saver"
+msgstr "Ekran koruyucuda programcıklara izin ver"
+
+#. i18n: file: screensaver.ui:220
+#. i18n: ectx: property (text), widget (KPushButton, mPlasmaSetup)
+#: rc.cpp:105 rc.cpp:230
+msgid "Configure Widgets..."
+msgstr "Gereçleri Yapılandır..."
+
+#. i18n: file: screensaver.ui:245
+#. i18n: ectx: property (title), widget (QGroupBox, mScrenSaverGroup)
+#: rc.cpp:108 rc.cpp:233
+msgid "Screen Saver"
+msgstr "Ekran Koruyucu"
+
+#. i18n: file: screensaver.ui:251
+#. i18n: ectx: property (whatsThis), widget (K3ListView, mSaverListView)
+#: rc.cpp:111 rc.cpp:236
+msgid "Select the screen saver to use."
+msgstr "Kullanılacak ekran koruyucusunu seçer."
+
+#. i18n: file: screensaver.ui:261
+#. i18n: ectx: property (whatsThis), widget (KPushButton, mSetupBt)
+#: rc.cpp:114 rc.cpp:239
+msgid "Configure the screen saver's options, if any."
+msgstr "Varsa ekran koruyucunun ayarlarını yapılandırır."
+
+#. i18n: file: screensaver.ui:264
+#. i18n: ectx: property (text), widget (KPushButton, mSetupBt)
+#: rc.cpp:117 rc.cpp:242
+msgid "&Setup..."
+msgstr "&Ayarla..."
+
+#. i18n: file: screensaver.ui:280
+#. i18n: ectx: property (whatsThis), widget (KPushButton, mTestBt)
+#: rc.cpp:120 rc.cpp:245
+msgid "Show a full screen preview of the screen saver."
+msgstr "Ekran koruyucusunun tam ekran önizlemesini gösterir."
+
+#. i18n: file: screensaver.ui:283
+#. i18n: ectx: property (text), widget (KPushButton, mTestBt)
+#: rc.cpp:123 rc.cpp:248
+msgid "&Test"
+msgstr "&Dene"
+
+#: rc.cpp:124
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Görkem Çetin, Uğur Çetin"
+
+#: rc.cpp:125
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gorkem@kde.org, jnmbk@users.sourceforge.net"
+
+#: scrnsave.cpp:98
+msgid ""
+"<h1>Screen Saver</h1> <p>This module allows you to enable and configure a "
+"screen saver. Note that you can enable a screen saver even if you have power "
+"saving features enabled for your display.</p> <p>Besides providing an "
+"endless variety of entertainment and preventing monitor burn-in, a screen "
+"saver also gives you a simple way to lock your display if you are going to "
+"leave it unattended for a while. If you want the screen saver to lock the "
+"session, make sure you enable the \"Require password\" feature of the screen "
+"saver; if you do not, you can still explicitly lock the session using the "
+"desktop's \"Lock Session\" action.</p>"
+msgstr ""
+"<h1>Ekran Koruyucu</h1> <p>Bu modül bir ekran koruyucu seçmenizi ve "
+"etkinleştirmenizi sağlar. Güç yönetimi için ayarlamalar yapsanız da "
+"isterseniz bir ekran koruyucusunu etkinleştirmeniz mümkündür.</p> <p>Ekran "
+"koruyucu sadece eğlenceli bir kaç dakika geçirmenize olanak sağlamaz, ayrıca "
+"ekranı istediğiniz bir anda kilitlemenize olanak verir. Ekran koruyucusunun "
+"oturumunuzu kilitlemesini istiyorsanız, \"Ekranı Kilitle\" özelliğini "
+"etkinleştirin. Bunu yapmasanız bile masaüstünüzün \"Oturumu Kilitle\" "
+"eylemini kullanarak ekranı kilitleyebilirsiniz.</p>"
+
+#: scrnsave.cpp:139
+msgid " minute"
+msgid_plural " minutes"
+msgstr[0] " dakika"
+
+#: scrnsave.cpp:154
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " saniye"
+
+#: scrnsave.cpp:171
+msgid "A preview of the selected screen saver."
+msgstr "Seçilen ekran koruyucunun önizlemesi."
+
+#: scrnsave.cpp:193
+msgid "kcmscreensaver"
+msgstr "kcmscreensaver"
+
+#: scrnsave.cpp:193
+msgid "KDE Screen Saver Control Module"
+msgstr "KDE Ekran Koruyucu Denetim Modülü"
+
+#: scrnsave.cpp:195
+msgid ""
+"(c) 1997-2002 Martin R. Jones\n"
+"(c) 2003-2004 Chris Howells"
+msgstr ""
+"(c) 1997-2002 Martin R. Jones\n"
+"(c) 2003-2004 Chris Howells"
+
+#: scrnsave.cpp:197
+msgid "Chris Howells"
+msgstr "Chris Howells"
+
+#: scrnsave.cpp:198
+msgid "Martin R. Jones"
+msgstr "Martin R. Jones"
+
+#: scrnsave.cpp:386
+msgid "Loading..."
+msgstr "Yükleniyor..."
+
+#~ msgid "Form"
+#~ msgstr "Biçim"
+
+#~ msgid "Choose the period after which the display will be locked. "
+#~ msgstr "Ekranın ne kadar süre sonra kilitleneceğini seçin. "
+
+#~ msgid "Setup..."
+#~ msgstr "Ayarla..."
+
+#~ msgid "Desktop Widgets"
+#~ msgstr "Masaüstü Programcıkları"
+
+#~ msgid "Plasma"
+#~ msgstr "Plasma"
+
+#~ msgid "Enable Plasma Widgets"
+#~ msgstr "Plasma Programcıklarını Etkinleştir"

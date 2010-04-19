@@ -1,0 +1,77 @@
+# translation of kcmioslaveinfo.po to Turkish
+# kde
+# Copyright (C) 2008 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2001.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmioslaveinfo\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-18 06:33+0100\n"
+"PO-Revision-Date: 2008-11-09 03:05+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcmioslaveinfo.cpp:56
+msgid "Overview of the installed ioslaves and supported protocols."
+msgstr "Kurulu ioslave uygulamalarına ve desteklenen protokollere genel bakış."
+
+#: kcmioslaveinfo.cpp:62
+msgid "Select the protocol documentation to display:"
+msgstr "Belgelendirmesini göstermek istediğiniz protokolü seçin:"
+
+#: kcmioslaveinfo.cpp:94
+msgid "kcmioslaveinfo"
+msgstr "kcmioslaveinfo"
+
+#: kcmioslaveinfo.cpp:95
+msgid "KDE Panel System Information Control Module"
+msgstr "KDE Paneli Sistem Bilgisi Kontrol Modülü"
+
+#: kcmioslaveinfo.cpp:97
+msgid "(c) 2001 - 2002 Alexander Neundorf"
+msgstr "(c) 2001 - 2002 Alexander Neundorf"
+
+#: kcmioslaveinfo.cpp:99
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: kcmioslaveinfo.cpp:100
+msgid "George Staikos"
+msgstr "George Staikos"
+
+#: kcmioslaveinfo.cpp:150
+#, kde-format
+msgid ""
+"<html><body><p style='text-align:center'>No documentation available for the "
+"'%1:/' protocol.</p></body></html>"
+msgstr ""
+"<html><body><p style='text-align:center'>'%1:/' protokolü için belgelendirme "
+"yok.</p></body></html>"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Görkem Çetin"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gorkem@kde.org"
+
+#, fuzzy
+#~| msgid "Some info about protocol %1:/ ..."
+#~ msgid "Some information about protocol '%1:/' ..."
+#~ msgstr "%1:/ protokolü hakkında bazı bilgiler..."
+
+#~ msgid "Available IO slaves:"
+#~ msgstr "Kullanılabilir IO aracıları:"
+
+#~ msgid "<h1>IO slaves</h1> Gives you an overview of the installed ioslaves."
+#~ msgstr "<h1>IO slaves</h1> Kurulu ioslave'ler hakkında bilgi verir."

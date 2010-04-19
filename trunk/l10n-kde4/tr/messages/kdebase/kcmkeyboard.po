@@ -1,0 +1,153 @@
+# translation of kcmkeyboard.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
+# Uğur Çetin <jnmbk@users.sourceforge.net>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmkeyboard\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-10-23 06:06+0200\n"
+"PO-Revision-Date: 2008-07-03 11:14+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: file: kcmmiscwidget.ui:17
+#. i18n: ectx: property (whatsThis), widget (KButtonGroup, numlockGroup)
+#: rc.cpp:3 rc.cpp:52
+msgid ""
+"If supported, this option allows you to setup the state of NumLock after KDE "
+"startup.<p>You can configure NumLock to be turned on or off, or configure "
+"KDE not to set NumLock state."
+msgstr ""
+"Destekleniyorsa, KDE başladıktan sonra NumLock tuşunun durumunu "
+"belirlemenizi sağlar.<p>NumLock tuşunu açık, kapalı veya KDE'nin "
+"değiştirmeyeceği şekilde ayarlayabilirsiniz."
+
+#. i18n: file: kcmmiscwidget.ui:20
+#. i18n: ectx: property (title), widget (KButtonGroup, numlockGroup)
+#: rc.cpp:6 rc.cpp:55
+msgid "NumLock on KDE Startup"
+msgstr "KDE Başlatılırken NumLock'ı"
+
+#. i18n: file: kcmmiscwidget.ui:26
+#. i18n: ectx: property (text), widget (QRadioButton, RadioButton1)
+#: rc.cpp:9 rc.cpp:58
+msgid "T&urn on"
+msgstr "&Aç"
+
+#. i18n: file: kcmmiscwidget.ui:33
+#. i18n: ectx: property (text), widget (QRadioButton, RadioButton1_2)
+#: rc.cpp:12 rc.cpp:61
+msgid "Turn o&ff"
+msgstr "Kapa&t"
+
+#. i18n: file: kcmmiscwidget.ui:40
+#. i18n: ectx: property (text), widget (QRadioButton, RadioButton1_3)
+#: rc.cpp:15 rc.cpp:64
+msgid "Leave unchan&ged"
+msgstr "&Değiştirme"
+
+#. i18n: file: kcmmiscwidget.ui:50
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
+#: rc.cpp:18 rc.cpp:67
+msgid "Keyboard Repeat"
+msgstr "Klavye Tekrarlaması"
+
+#. i18n: file: kcmmiscwidget.ui:56
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, repeatBox)
+#: rc.cpp:21 rc.cpp:70
+msgid ""
+"If you check this option, pressing and holding down a key emits the same "
+"character over and over again. For example, pressing and holding down the "
+"Tab key will have the same effect as that of pressing that key several times "
+"in succession: Tab characters continue to be emitted until you release the "
+"key."
+msgstr ""
+"Bu seçeneği işaretlerseniz, bir tuşa basılı tuttuğunuzda bu tuş sürekli "
+"olarak tekrarlanır. Örneğin Tab tuşuna basılı tutmak, Tab tuşuna defalarca "
+"basmayla aynı etkiye sahip olacaktır: Siz tuşu bırakana kadar Tab "
+"karakterleri basılmaya devam edilecektir."
+
+#. i18n: file: kcmmiscwidget.ui:59
+#. i18n: ectx: property (text), widget (QCheckBox, repeatBox)
+#: rc.cpp:24 rc.cpp:73
+msgid "&Enable keyboard repeat"
+msgstr "&Klavye tekrarlamasını etkinleştir"
+
+#. i18n: file: kcmmiscwidget.ui:75
+#. i18n: ectx: property (text), widget (QLabel, lblDelay)
+#: rc.cpp:27 rc.cpp:76
+msgid "&Delay:"
+msgstr "&Gecikme:"
+
+#. i18n: file: kcmmiscwidget.ui:85
+#. i18n: ectx: property (whatsThis), widget (QSlider, delaySlider)
+#. i18n: file: kcmmiscwidget.ui:113
+#. i18n: ectx: property (whatsThis), widget (KIntNumInput, delay)
+#. i18n: file: kcmmiscwidget.ui:85
+#. i18n: ectx: property (whatsThis), widget (QSlider, delaySlider)
+#. i18n: file: kcmmiscwidget.ui:113
+#. i18n: ectx: property (whatsThis), widget (KIntNumInput, delay)
+#: rc.cpp:30 rc.cpp:33 rc.cpp:79 rc.cpp:82
+msgid ""
+"If supported, this option allows you to set the delay after which a pressed "
+"key will start generating keycodes. The 'Repeat rate' option controls the "
+"frequency of these keycodes."
+msgstr ""
+"Destekleniyorsa, basılan tuşun tekrarlanmaya başlamadan önce ne kadar "
+"bekleneceğini belirlemenizi sağlar. 'Tekrarlama Oranı' seçeneği bu "
+"tekrarların frekansını kontrol eder."
+
+#. i18n: file: kcmmiscwidget.ui:126
+#. i18n: ectx: property (text), widget (QLabel, lblRate)
+#: rc.cpp:36 rc.cpp:85
+msgid "&Rate:"
+msgstr "&Oran:"
+
+#. i18n: file: kcmmiscwidget.ui:136
+#. i18n: ectx: property (whatsThis), widget (QSlider, rateSlider)
+#. i18n: file: kcmmiscwidget.ui:164
+#. i18n: ectx: property (whatsThis), widget (KDoubleNumInput, rate)
+#. i18n: file: kcmmiscwidget.ui:136
+#. i18n: ectx: property (whatsThis), widget (QSlider, rateSlider)
+#. i18n: file: kcmmiscwidget.ui:164
+#. i18n: ectx: property (whatsThis), widget (KDoubleNumInput, rate)
+#: rc.cpp:39 rc.cpp:42 rc.cpp:88 rc.cpp:91
+msgid ""
+"If supported, this option allows you to set the rate at which keycodes are "
+"generated while a key is pressed."
+msgstr ""
+"Destekleniyorsa, bir tuşa basıldığında ne sıklıkta tekrarlanacağını "
+"belirlemenizi sağlar."
+
+#. i18n: file: kcmmiscwidget.ui:176
+#. i18n: ectx: property (whatsThis), widget (QLabel, TextLabel1)
+#: rc.cpp:46 rc.cpp:95
+#, no-c-format
+msgid ""
+"If supported, this option allows you to hear audible clicks from your "
+"computer's speakers when you press the keys on your keyboard. This might be "
+"useful if your keyboard does not have mechanical keys, or if the sound that "
+"the keys make is very soft.<p>You can change the loudness of the key click "
+"feedback by dragging the slider button or by clicking the up/down arrows on "
+"the spin box. Setting the volume to 0% turns off the key click."
+msgstr ""
+"Destekleniyorsa, klavyedeki tuşlara bastığınız zaman bilgisayarınızın "
+"hoparlöründen tıklama sesleri gelip gelmeyeceğini belirler. Klavyenizin "
+"tuşları mekanik değilse veya çok sessizse bu ayar kullanışlı olabilir."
+"<p>Tıklamanın ses şiddetini kaydırma çubuğu yardımıyla veya sayaç "
+"kutusundaki aşağı/yukarı oklar ile ayarlayabilirsiniz. Değeri 0% düzeyine "
+"getirmeniz halinde tıklama sesi duyulmayacaktır."
+
+#. i18n: file: kcmmiscwidget.ui:179
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: rc.cpp:49 rc.cpp:98
+msgid "Key click &volume:"
+msgstr "&Tuş tıklama sesi:"

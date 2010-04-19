@@ -1,0 +1,57 @@
+# translation of katehtmltools.po to Türkçe
+# Copyright (C) 2004, 2007 Free Software Foundation, Inc.
+#
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Mustafa Günay <mustafagunay@gmail.com>, 2007.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: katehtmltools\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2008-10-09 09:44+0200\n"
+"PO-Revision-Date: 2008-10-25 18:35+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: plugin_katehtmltools.cpp:34
+msgid "HTML Tools"
+msgstr "HTML Araçları"
+
+#: plugin_katehtmltools.cpp:34
+msgid "Tools to edit HTML files"
+msgstr "HTML dosyalarını düzenlemek için araçlar"
+
+#: plugin_katehtmltools.cpp:64
+msgid "HT&ML Tag..."
+msgstr "HT&ML Etiketi..."
+
+#: plugin_katehtmltools.cpp:114
+msgid "HTML Tag"
+msgstr "HTML Etiketi"
+
+#: plugin_katehtmltools.cpp:115
+msgid "Enter HTML tag contents (the <, >, and closing tag will be supplied):"
+msgstr ""
+"HTML etiketinin içeriğini girin (<, > ve kapatma komutu tarafımızdan "
+"sağlanacaktır):"
+
+#. i18n: file: ui.rc:4
+#. i18n: ectx: Menu (tools)
+#: rc.cpp:3
+msgid "&Tools"
+msgstr "&Araçlar"
+
+#: rc.cpp:4
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:5
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"

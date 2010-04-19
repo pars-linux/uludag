@@ -1,0 +1,1859 @@
+# Copyright (C).
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kofficefilters\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-03-30 01:24+0200\n"
+"PO-Revision-Date: 2009-09-28 01:53+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: kformula/svg/svgexport.cc:63 kformula/kformula1.3/KFormula13Import.cpp:55
+#: kformula/png/pngexport.cc:58 kformula/latex/latexexport.cc:60
+#: kchart/svg/svgexport.cc:61
+#: kchart/genericimageexport/genericimageexport.cpp:67
+msgid "Failed to read data."
+msgstr "Veri okuma işlemi başarısız oldu."
+
+#: kformula/svg/svgexport.cc:64 kformula/svg/svgexport.cc:81
+#: kformula/svg/svgexport.cc:95 kchart/svg/svgexport.cc:62
+#: kchart/svg/svgexport.cc:75 kchart/svg/svgexport.cc:89
+msgid "SVG Export Error"
+msgstr "SVG Dışarıya Aktarma Hatası"
+
+#: kformula/svg/svgexport.cc:80 kformula/png/pngexport.cc:65
+#: kformula/latex/latexexport.cc:67 kchart/svg/svgexport.cc:74
+#: kchart/genericimageexport/genericimageexport.cpp:80
+msgid "Malformed XML data."
+msgstr "Bozuk XML verisi."
+
+#: kformula/svg/svgexport.cc:94 kformula/png/pngexportdia.cc:248
+#: kformula/latex/latexexport.cc:74
+#: kpresenter/genericimageexport/genericimageexport.cpp:134
+#: libdialogfilter/exportsizedia.cpp:268 kchart/svg/svgexport.cc:88
+#: kchart/genericimageexport/genericimageexport.cpp:123
+msgid "Failed to write file."
+msgstr "Dosyaya yazılamadı."
+
+#: kformula/kformula1.3/KFormula13Import.cpp:56
+msgid "KFormula Import Error"
+msgstr "KFormula İçeriye Aktarma Hatası"
+
+#: kformula/kformula1.3/KFormula13Import.cpp:64
+#: kword/abiword/abiwordimport.cc:1846
+msgid "Unable to save main document."
+msgstr "Ana belge kaydedilemedi"
+
+#: kformula/kformula1.3/KFormula13Import.cpp:65
+msgid "KFormula1.3 Import Filter"
+msgstr "KFormula1.3 İçeriye Aktarma Filtresi"
+
+#: kformula/png/pngexportdia.cc:49
+msgid "PNG Export Filter Parameters"
+msgstr "PNG Dışarıya Aktarma Filtresi Parametreleri"
+
+#: kformula/png/pngexportdia.cc:189 libdialogfilter/exportsizedia.cpp:78
+msgid "Keep ratio"
+msgstr "Oranı koru"
+
+#: kformula/png/pngexportdia.cc:195
+msgid "Height"
+msgstr "Yükseklik"
+
+#: kformula/png/pngexportdia.cc:199
+msgid "Width"
+msgstr "Genişlik"
+
+#: kformula/png/pngexportdia.cc:212
+msgid "Height (%)"
+msgstr "Yükseklik (%)"
+
+#: kformula/png/pngexportdia.cc:215
+msgid "Width (%)"
+msgstr "Genişlik (%)"
+
+#: kformula/png/pngexportdia.cc:248 kformula/png/pngexport.cc:58
+#: kformula/png/pngexport.cc:65 libdialogfilter/exportsizedia.cpp:268
+msgid "PNG Export Error"
+msgstr "PNG Dışarıya Aktarma Hatası"
+
+#: kformula/latex/latexexport.cc:60 kformula/latex/latexexport.cc:67
+#: kformula/latex/latexexport.cc:74
+msgid "LaTeX Export Error"
+msgstr "LaTeX Dışarıya Aktarma Hatası"
+
+#: kpresenter/genericimageexport/genericimageexport.cpp:135
+#: kchart/genericimageexport/genericimageexport.cpp:124
+#, kde-format
+msgid "%1 Export Error"
+msgstr "%1 Dışarıya Aktarma Hatası"
+
+#: kpresenter/kword/kprkword.cc:92 kpresenter/kword/odp2odt.cpp:294
+msgid "Slide Title"
+msgstr "Slayt Başlığı"
+
+#: kword/msword-odf/texthandler.cpp:347 kword/abiword/abiwordimport.cc:1122
+#, kde-format
+msgid "Table %1"
+msgstr "Tablo %1"
+
+#: kword/msword-odf/texthandler.cpp:377
+#, kde-format
+msgid "Picture %1"
+msgstr "Resim %1"
+
+#: kword/msword-odf/conversion.cpp:490 kword/oowriter/conversion.cc:126
+msgid "Even Pages Header"
+msgstr "Çift Sayfa Başlığı"
+
+#: kword/msword-odf/conversion.cpp:492 kword/oowriter/conversion.cc:124
+msgid "Odd Pages Header"
+msgstr "Tek Sayfa Başlığı"
+
+#: kword/msword-odf/conversion.cpp:494 kword/oowriter/conversion.cc:130
+msgid "Even Pages Footer"
+msgstr "Çift Sayfa Dipnotu"
+
+#: kword/msword-odf/conversion.cpp:496 kword/oowriter/conversion.cc:128
+msgid "Odd Pages Footer"
+msgstr "Tek Sayfa Dipnotu"
+
+#: kword/msword-odf/conversion.cpp:498
+msgid "First Page Header"
+msgstr "İlk Sayfa Başlığı"
+
+#: kword/msword-odf/conversion.cpp:500
+msgid "First Page Footer"
+msgstr "İlk Sayfa Altlığı"
+
+#: kword/abiword/ImportField.cc:29
+#, kde-format
+msgctxt "Frameset name"
+msgid "Footnote %1"
+msgstr "Dipnot %1"
+
+#: kword/abiword/abiwordimport.cc:523
+#, kde-format
+msgctxt "Frameset name"
+msgid "Picture %1"
+msgstr "Resim %1"
+
+#: kword/abiword/abiwordimport.cc:1205 kword/oowriter/oowriterimport.cc:2302
+#, kde-format
+msgctxt "Frameset name"
+msgid "Table %3, row %1, column %2"
+msgstr "Tablo %3, satır %1, sütun %2"
+
+#: kword/abiword/abiwordimport.cc:1631 kword/libexport/KWEFKWordLeader.cc:1285
+msgid "QXml"
+msgstr "QXml"
+
+#: kword/abiword/abiwordimport.cc:1631
+#, kde-format
+msgid ""
+"An error has occurred while parsing the AbiWord file.\n"
+"At line: %1, column %2\n"
+"Error message: %3"
+msgstr ""
+"AbiWord dosyası ayrıştırılırken bir hata oluştu.\n"
+"Satır: %1, sütun %2\n"
+"Hata mesajı: %3"
+
+#: kword/abiword/abiwordimport.cc:1632 kword/abiword/abiwordimport.cc:1818
+#: kword/abiword/abiwordimport.cc:1832 kword/abiword/abiwordimport.cc:1846
+msgid "AbiWord Import Filter"
+msgstr "AbiWord Alma Süzgeci"
+
+#: kword/abiword/abiwordimport.cc:1696
+msgctxt "Frameset name"
+msgid "Main Text Frameset"
+msgstr "Ana Metin Çerçeve Tablosu"
+
+#: kword/abiword/abiwordimport.cc:1817
+#, kde-format
+msgid "An error occurred during the load of the AbiWord file: %1"
+msgstr "%1 AbiWord dosyası yüklenirken bir hata oluştu"
+
+#: kword/abiword/abiwordimport.cc:1832
+msgid "Unable to save document information."
+msgstr "Ana belge bilgisi kaydedilemedi"
+
+#: kword/ascii/ExportDialog.cc:40
+msgid "KWord's Plain Text Export Filter"
+msgstr "KWord'ün Düz Metin Aktarma Filtresi"
+
+#: kword/ascii/ExportDialog.cc:45 kword/ascii/ImportDialog.cc:45
+#: kword/html/export/ExportDialog.cc:50 kspread/csv/csvdialog.cpp:65
+#: kspread/csv/csvexportdialog.cpp:61
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Recommended ( %1 )"
+msgstr "Önerilen ( %1 )"
+
+#: kword/ascii/ExportDialog.cc:46 kword/ascii/ImportDialog.cc:46
+#: kword/html/export/ExportDialog.cc:51 kspread/csv/csvdialog.cpp:66
+#: kspread/csv/csvexportdialog.cpp:62
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Locale ( %1 )"
+msgstr "Yerel ( %1 )"
+
+#: kword/ascii/ExportDialog.cc:49 kword/ascii/ImportDialog.cc:49
+#: kspread/csv/csvdialog.cpp:69 kspread/csv/csvexportdialog.cpp:65
+#, kde-format
+msgctxt "Descriptive encoding name"
+msgid "Other ( %1 )"
+msgstr "Diğer ( %1 )"
+
+#: kword/ascii/ExportDialog.cc:89 kword/ascii/ImportDialog.cc:88
+#: kword/html/export/ExportDialog.cc:110 kspread/csv/csvdialog.cpp:576
+#: kspread/csv/csvexportdialog.cpp:314
+#, kde-format
+msgid "Cannot find encoding: %1"
+msgstr "Kodlama bulunamadı: %1"
+
+#: kword/ascii/ImportDialog.cc:40
+msgid "KWord's Plain Text Import Filter"
+msgstr "KWord'ün Düz Metin Alma Filtresi"
+
+#: kword/mswrite/ImportDialog.cc:42
+msgid "KWord's MS Write Import Filter"
+msgstr "KWord' ün MS Write Aktarma Filtresi"
+
+#: kword/rtf/import/rtfimport.cpp:338
+msgid "The file cannot be loaded, as it cannot be opened."
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:339 kword/rtf/import/rtfimport.cpp:356
+#: kword/rtf/import/rtfimport.cpp:373 kword/rtf/import/rtfimport.cpp:389
+#: kword/rtf/import/rtfimport.cpp:408 kword/rtf/import/rtfimport.cpp:427
+#: kword/rtf/import/rtfimport.cpp:444
+msgid "KWord's RTF Import Filter"
+msgstr "KWord Zengin Metin İçeriye Aktarma Filtresi"
+
+#: kword/rtf/import/rtfimport.cpp:355
+msgid "The file cannot be loaded, as it seems not to be an RTF document."
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:372
+msgid ""
+"The document cannot be loaded, as it seems not to follow the RTF syntax."
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:388
+#, kde-format
+msgid ""
+"The RTF (Rich Text Format) document has an unexpected version number: %1. "
+"Continuing might result in an erroneous conversion. Do you want to continue?"
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:407
+#, kde-format
+msgid ""
+"The PWD (PocketWord's Rich Text Format) document has an unexpected version "
+"number: %1. Continuing might result in an erroneous conversion. Do you want "
+"to continue?"
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:426
+#, kde-format
+msgid ""
+"The URTF (\"Unicode Rich Text Format\") document has an unexpected version "
+"number: %1. Continuing might result in an erroneous conversion. Do you want "
+"to continue?"
+msgstr ""
+
+#: kword/rtf/import/rtfimport.cpp:443
+#, kde-format
+msgid ""
+"The RTF document cannot be loaded, as it has an unexpected first keyword: \\%"
+"1."
+msgstr ""
+
+#: kword/html/export/ExportDialog.cc:44
+msgid "KWord's HTML Export Filter"
+msgstr "KWord HTML olarak Dışarıya Aktarma Filtresi"
+
+#: kword/html/export/ExportFilter.cc:614
+msgid "Untitled Document"
+msgstr "İsimsiz Belge"
+
+#: kword/libexport/KWEFKWordLeader.cc:1285
+#, kde-format
+msgid ""
+"An error has occurred while parsing the KWord file.\n"
+"At line: %1, column %2\n"
+"Error message: %3"
+msgstr ""
+"KWord dosyası ayrıştırılırken bir hata oluştu.\n"
+"Satır: %1, sütun %2\n"
+"Hata iletisi: %3"
+
+#: kword/libexport/KWEFKWordLeader.cc:1286
+msgid "KWord Export Filter Library"
+msgstr "KWord Dışarıya Aktarma Filtresi Kitaplığı"
+
+#: kword/oowriter/conversion.cc:124
+msgid "Header"
+msgstr "Başlık"
+
+#: kword/oowriter/conversion.cc:128
+msgid "Footer"
+msgstr "Altlık"
+
+#: kword/oowriter/oowriterimport.cc:132
+msgid "Main Text Frameset"
+msgstr "Ana Metin Çerçeve Tablosu"
+
+#: kword/oowriter/oowriterimport.cc:595
+#: kspread/opencalc/opencalcimport.cc:2282
+#, kde-format
+msgid ""
+"This document was created with OpenOffice.org version '%1'. This filter was "
+"written for version 1.0. Reading this file could cause strange behavior, "
+"crashes or incorrect display of the data. Do you want to continue converting "
+"the document?"
+msgstr ""
+"Bu belge OpenOffice.org'un '%1' sürümü ile oluşturulmuş. Bu filtre sürüm 1.0 "
+"için yazılmıştır. Bu dosyanın okunması garip davranışlara, çakılmalara veya "
+"verilerin yanlış gösterilmesine sebep olabilir. Belgeyi dönüştürmeye devam "
+"etmek istiyor musunuz?"
+
+#: kword/oowriter/oowriterimport.cc:597
+#: kspread/opencalc/opencalcimport.cc:2283
+msgid "Unsupported document version"
+msgstr "Desteklenmeyen belge sürümü"
+
+#: kword/oowriter/ExportFilter.cc:1205
+#, kde-format
+msgctxt "Object name"
+msgid "Table %1"
+msgstr "Tablo %1"
+
+#: kword/oowriter/ExportFilter.cc:1207
+#, kde-format
+msgctxt "Object name"
+msgid "Table Frame %1"
+msgstr "Tablo Çerçevesi %1"
+
+#: kword/oowriter/ExportFilter.cc:1585
+msgctxt "Pseudo-author for annotations"
+msgid "KWord 1.3"
+msgstr "KWord 1.3"
+
+#: kword/latex/import/lateximportdia.cc:47
+msgid "Latex Import Filter Parameters"
+msgstr "Latex Aktarma Filtre Parametreleri"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:82
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:82
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: kword/latex/import/lateximportdia.cc:67 rc.cpp:130 rc.cpp:442
+msgid "Document Style"
+msgstr "Belge Tarzı"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:116
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:116
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: kword/latex/import/lateximportdia.cc:73 rc.cpp:136 rc.cpp:448
+msgid "Latex style"
+msgstr "Latex tarzı"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:97
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:97
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: kword/latex/import/lateximportdia.cc:76 rc.cpp:133 rc.cpp:445
+msgid "KWord style"
+msgstr "KWord tarzı"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:332
+#. i18n: ectx: attribute (title), widget (QWidget)
+#. i18n: file: kword/latex/export/latexexportdia.ui:379
+#. i18n: ectx: property (title), widget (QGroupBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:329
+#. i18n: ectx: attribute (title), widget (QWidget)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:376
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: kword/latex/import/lateximportdia.cc:89 rc.cpp:187 rc.cpp:193 rc.cpp:496
+#: rc.cpp:502
+msgid "Language"
+msgstr "Dil"
+
+#: kword/latex/import/lateximportdia.cc:94
+msgid "Unicode"
+msgstr "Unicode"
+
+#: kword/latex/import/lateximportdia.cc:97
+msgid "latin1"
+msgstr "latin1"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:84
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kword/latex/export/latexexportdia.ui:133
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:133
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: kword/latex/import/lateximportdia.cc:111 rc.cpp:82 rc.cpp:139 rc.cpp:451
+msgid "Document Type"
+msgstr "Belge Türü"
+
+#: kword/latex/import/lateximportdia.cc:116
+msgid "New document"
+msgstr "Yeni belge"
+
+#: kword/latex/import/lateximportdia.cc:119
+msgid "Embedded document"
+msgstr "Gömülü belge"
+
+#: kspread/qpro/qproimport.cc:137
+msgid "QPRO filter cannot open input file - please report."
+msgstr ""
+
+#: kspread/qpro/qproimport.cc:254
+msgid ""
+"Unable to open password protected files.\n"
+"The password algorithm has not been published"
+msgstr ""
+
+#: kspread/html/exportdialog.cc:37
+msgid "Export Sheet to HTML"
+msgstr ""
+
+#: kspread/html/exportdialog.cc:48
+msgid "Recommended: UTF-8"
+msgstr "Önerilen: UTF-8"
+
+#: kspread/html/exportdialog.cc:49
+#, kde-format
+msgid "Locale (%1)"
+msgstr "Yerel (%1)"
+
+#: kspread/html/htmlexport.cc:216 kspread/html/htmlexport.cc:405
+msgid "Top"
+msgstr "Üst"
+
+#: kspread/opencalc/opencalcimport.cc:1455
+msgid "The file seems to be corrupt. Skipping a table."
+msgstr "Dosya bozulmuş görünüyor. Bir tablo atlanıyor."
+
+#: kspread/opencalc/opencalcimport.cc:1468
+msgid "Skipping a table."
+msgstr "Bir tablo atlanıyor."
+
+#: kspread/opencalc/opencalcexport.cc:965
+msgid "Page "
+msgstr "Sayfa"
+
+#: kspread/csv/csvexport.cc:311
+msgid "<SHEETNAME>"
+msgstr "<SHEETNAME>"
+
+#: kspread/csv/csvdialog.cpp:61
+msgid "Import"
+msgstr "İçeriye Aktar"
+
+#: kspread/csv/csvdialog.cpp:75 kspread/csv/csvdialog.cpp:315
+#: kspread/csv/csvdialog.cpp:375
+msgid "Text"
+msgstr "Metin"
+
+#: kspread/csv/csvdialog.cpp:76 kspread/csv/csvdialog.cpp:377
+msgid "Number"
+msgstr "Rakam"
+
+#: kspread/csv/csvdialog.cpp:77 kspread/csv/csvdialog.cpp:379
+msgid "Currency"
+msgstr "Para Birimi"
+
+#: kspread/csv/csvdialog.cpp:78 kspread/csv/csvdialog.cpp:381
+msgid "Date"
+msgstr "Gün"
+
+#: kspread/csv/csvdialog.cpp:79 kspread/csv/csvdialog.cpp:383
+msgid "Decimal Comma Number"
+msgstr ""
+
+#: kspread/csv/csvdialog.cpp:80 kspread/csv/csvdialog.cpp:385
+msgid "Decimal Point Number"
+msgstr ""
+
+#. i18n: file: kspread/csv/dialogui.ui:275
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: kspread/csv/csvdialog.cpp:503 rc.cpp:340
+msgid "None"
+msgstr "Hiçbiri"
+
+#: kspread/csv/csvdialog.cpp:530
+msgid ""
+"Please check the ranges you specified. The start value must be lower than "
+"the end value."
+msgstr ""
+
+#: kspread/csv/csvimport.cc:94
+msgid "CSV filter cannot open input file - please report."
+msgstr ""
+
+#: kspread/dbase/dbaseimport.cc:57
+msgid "File format is not supported."
+msgstr "Dosya biçimi desteklenmiyor."
+
+#: kspread/dbase/dbaseimport.cc:63
+msgid "Could not read from file."
+msgstr "Dosyadan okunamadı."
+
+#: libdialogfilter/exportsizedia.cpp:42
+msgid "Export Filter Parameters"
+msgstr "Dışarıya  Aktarma Filtresi Parametreleri"
+
+#: libdialogfilter/exportsizedia.cpp:84
+msgid "Width:"
+msgstr "Genişlik:"
+
+#: libdialogfilter/exportsizedia.cpp:89
+msgid "Height:"
+msgstr "Yükseklik:"
+
+#: libdialogfilter/exportsizedia.cpp:100
+msgid "Width (%):"
+msgstr "Genişlik (%):"
+
+#: libdialogfilter/exportsizedia.cpp:105
+msgid "Height (%):"
+msgstr "Yükseklik (%):"
+
+#. i18n: file: xsltfilter/export/xsltdialog.ui:16
+#. i18n: ectx: property (caption), widget (QDialog)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:16
+#. i18n: ectx: property (caption), widget (QDialog)
+#: xsltfilter/export/xsltexportdia.cc:61 rc.cpp:544 rc.cpp:562
+msgid "Export XSLT Configuration"
+msgstr "Dışarıya XSLT Yapılandırması Aktar"
+
+#: xsltfilter/export/xsltexportdia.cc:148
+#: xsltfilter/import/xsltimportdia.cc:143
+msgid "Open Document"
+msgstr "Belge Aç"
+
+#: xsltfilter/import/xsltimportdia.cc:56
+msgid "Import XSLT Configuration"
+msgstr "İçeriye XSLT Yapılandırması Aktar"
+
+#: kchart/genericimageexport/genericimageexport.cpp:68
+#: kchart/genericimageexport/genericimageexport.cpp:81
+msgid "Export Error"
+msgstr "Dışarıya Aktarma Hatası"
+
+#: karbon/png/PngExport.cpp:90
+msgid "PNG Export Options"
+msgstr "PNG Dışarıya Aktarma Seçenekleri"
+
+#: karbon/eps/epsexportdlg.cc:37
+msgid "EPS Export"
+msgstr "EPS Dışarıya Aktar"
+
+#: karbon/eps/epsexportdlg.cc:42
+msgid "Options"
+msgstr "Seçenekler"
+
+#: karbon/eps/epsexportdlg.cc:45
+msgid "PostScript level 1"
+msgstr "PostScript seviye 1"
+
+#: karbon/eps/epsexportdlg.cc:46
+msgid "PostScript level 2"
+msgstr "PostScript seviye 2"
+
+#: karbon/eps/epsexportdlg.cc:47
+msgid "PostScript level 3"
+msgstr "PostScript seviye 3"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:18
+#. i18n: ectx: property (caption), widget (QWidget)
+#: rc.cpp:3
+msgid "Plain Text Import Dialog"
+msgstr "Düz Metin Alma Penceresi"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:43
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kword/ascii/ExportDialogUI.ui:43
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kword/html/export/ExportDialogUI.ui:43
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kspread/csv/dialogui.ui:66
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
+#. i18n: file: kspread/csv/exportdialogui.ui:34
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:6 rc.cpp:24 rc.cpp:79 rc.cpp:301 rc.cpp:364
+msgid "E&ncoding:"
+msgstr "&Kodlama:"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:84
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: rc.cpp:9
+msgid "End of Paragraph"
+msgstr "Paragraf Sonu"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:101
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:12
+msgid "&As is: At the end of line"
+msgstr "Satır sonunda &olduğu gibi"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:112
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:15
+msgid "&Sentence: If the end of line is the end of a sentence"
+msgstr "&Cümle: Eğer satırın sonu bir cümlenin sonuysa"
+
+#. i18n: file: kword/ascii/ImportDialogUI.ui:120
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:18
+msgid "Old &method: If the line is empty or has less than 40 characters"
+msgstr "Eski yö&ntem: Eğer satır boşsa ya da 40 karakterden daha azına sahipse"
+
+#. i18n: file: kword/ascii/ExportDialogUI.ui:18
+#. i18n: ectx: property (caption), widget (QWidget)
+#: rc.cpp:21
+msgid "Plain Text Export Dialog"
+msgstr "Düz Metin Aktarma Penceresi"
+
+#. i18n: file: kword/ascii/ExportDialogUI.ui:84
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kspread/csv/exportdialogui.ui:75
+#. i18n: ectx: property (title), widget (Q3ButtonGroup, buttonGroupEndOfLine)
+#: rc.cpp:27 rc.cpp:367
+msgid "End of Line"
+msgstr "Satır Sonu"
+
+#. i18n: file: kword/ascii/ExportDialogUI.ui:101
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/csv/exportdialogui.ui:81
+#. i18n: ectx: property (text), widget (QRadioButton, radioEndOfLineLF)
+#: rc.cpp:30 rc.cpp:370
+msgid "&UNIX style (recommended; line feed only)"
+msgstr "&UNIX tarzı (önerilen; sadece yeni satır)"
+
+#. i18n: file: kword/ascii/ExportDialogUI.ui:112
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/csv/exportdialogui.ui:91
+#. i18n: ectx: property (text), widget (QRadioButton, radioEndOfLineCRLF)
+#: rc.cpp:33 rc.cpp:373
+msgid "&Windows style (carriage return and line feed)"
+msgstr "&Windows tarzı (satır başı ve yeni satır)"
+
+#. i18n: file: kword/ascii/ExportDialogUI.ui:123
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/csv/exportdialogui.ui:101
+#. i18n: ectx: property (text), widget (QRadioButton, radioEndOfLineCR)
+#: rc.cpp:36 rc.cpp:376
+msgid "&MacOS style (carriage return only)"
+msgstr "&MacOS tarzı (sadece satırbaşı)"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:18
+#. i18n: ectx: property (caption), widget (QWidget)
+#: rc.cpp:39
+msgid "MS Write Import Dialog"
+msgstr "MS Write Aktarma İletişimi"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:43
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: rc.cpp:42
+msgid "&Encoding"
+msgstr "&Kodlama"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:46
+#. i18n: ectx: property (whatsThis), widget (QButtonGroup)
+#: rc.cpp:45
+msgid ""
+"Select the encoding of the Write document.<br><br>Try the Default  Encoding "
+"(CP 1252), if unsure."
+msgstr ""
+"Write dokümanının kodlamasını seçin. <br><br>Emin Değilseniz Öntanımlı "
+"Kodlamayı (CP 1252) Deneyin."
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:76
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:48
+msgid "&Other encoding:"
+msgstr "&Diğer Kodlamalar:"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:107
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:51
+msgid "&Default encoding (CP 1252)"
+msgstr "Ö&ntanımlı Kodlama (CP 1252)"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:116
+#. i18n: ectx: property (whatsThis), widget (QRadioButton)
+#: rc.cpp:54
+msgid ""
+"Most Write documents are stored using this encoding (also known as windows-"
+"1252).<br><br>Select this if unsure."
+msgstr ""
+"Çoğu Write dokümanı bu kodlama ile saklanır (windows 1252 olarak da "
+"bilinir). <br><br>Emin değilseniz bunu seçin."
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:143
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:57
+msgid "&Advanced"
+msgstr "&Gelişmiş"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:146
+#. i18n: ectx: property (whatsThis), widget (QGroupBox)
+#: rc.cpp:60
+msgid ""
+"These advanced options allow you to fine-tune the importing of formatting "
+"information. They compensate for differences between KWord and MS Write by "
+"adding extra formatting information (not found in the original document), to "
+"try to make the imported document look as close to the original as possible."
+"<br><br>It is safe to use the defaults, if unsure."
+msgstr ""
+"Bu gelişmiş seçenekler size biçimlendirme bilgisinin aktarımı esnasında ince "
+"ayar yapma imkânı verir. Bu seçenekler, Kword ve MS Write arasındaki "
+"farkları telâfi etmek için fazladan biçimlendirme bilgisi ekleyerek "
+"aktarılan dokümanın esas dokümana mümkün olduğu kadar benzemesine çalışırlar."
+"<br><br>Eğer emin değilseniz öntenımlı ayarları kullanmanızda sakınca yoktur"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:171
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:63
+msgid "Compensate for &linespacing differences"
+msgstr "Satır aralığı farklarını te&lafi et"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:177
+#. i18n: ectx: property (whatsThis), widget (QCheckBox)
+#: rc.cpp:67
+msgid ""
+"Try to simulate Write's linespacing by adding some spaces before each "
+"paragraph."
+msgstr ""
+"Write' ın satır aralamasını her paragraftan önce birkaç boşluk ekleyerek "
+"yansıtmayı dene"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:202
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:70
+msgid "Enable &image positioning"
+msgstr "Resim &konumlandırmayı etkin yap"
+
+#. i18n: file: kword/mswrite/ImportDialogUI.ui:208
+#. i18n: ectx: property (whatsThis), widget (QCheckBox)
+#: rc.cpp:73
+msgid "Use paragraph indentation to position images."
+msgstr "Resimleri konumlandırmak için paragraf girintisi kullan."
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:18
+#. i18n: ectx: property (caption), widget (QWidget)
+#: rc.cpp:76
+msgid "HTML Export Dialog"
+msgstr "HTML Aktarma Penceresi"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:104
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:85
+msgid "&HTML 4.01"
+msgstr "&HTML 4.01"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:110
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:88
+msgid "HTML 4.01 (For older HTML user agents) "
+msgstr "HTML 4.01 (Daha eski HTML kullanıcı uygulamaları için) "
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:118
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:91
+msgid "&XHTML 1.0"
+msgstr "&XHTML 1.0"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:124
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:94
+msgid "XHTML 1.0"
+msgstr "XHTML 1.0"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:134
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: rc.cpp:97
+msgid "Mode"
+msgstr "Kip"
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:157
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:100
+msgid "L&ight: Convert to strict (X)HTML"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:160
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:103
+msgid ""
+"Convert mainly the document structure (Recommended for exporting to browsers "
+"with limited capabilities)"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:174
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:106
+msgid "&Basic: Convert to transitional (X)HTML"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:180
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:109
+msgid ""
+"Convert most of the document (Recommended for re-importing in KWord or for "
+"exporting to older browsers)"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:188
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:112
+msgid "&Enhanced: Convert to (X)HTML with CSS"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:194
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:115
+msgid ""
+"Convert as much as possible of the KWord document (Recommended for exporting "
+"to other modern word processors or to modern browsers)"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:235
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:118
+msgid "Use external CSS sheet:"
+msgstr ""
+
+#. i18n: file: kword/html/export/ExportDialogUI.ui:246
+#. i18n: ectx: property (toolTip), widget (KUrlRequester)
+#: rc.cpp:121
+msgid "Enter the location of the CSS file in this field"
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:18
+#. i18n: ectx: property (caption), widget (QDialog)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:18
+#. i18n: ectx: property (caption), widget (QDialog)
+#: rc.cpp:124 rc.cpp:436
+msgid "Latex Export Filter Configuration"
+msgstr "Latex Dışarıya Aktarma Filtresi Yapılandırması"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:45
+#. i18n: ectx: attribute (title), widget (QWidget)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:45
+#. i18n: ectx: attribute (title), widget (QWidget)
+#: rc.cpp:127 rc.cpp:439
+msgid "Document"
+msgstr "Belge"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:148
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:148
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:142 rc.cpp:454
+msgid "Independent document"
+msgstr "Bağımsız belge"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:154
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:154
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:145 rc.cpp:457
+msgid "The document will be able to be compiled alone"
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:157
+#. i18n: ectx: property (whatsThis), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:157
+#. i18n: ectx: property (whatsThis), widget (QRadioButton)
+#: rc.cpp:148 rc.cpp:460
+msgid ""
+"The document will be generated as a full latex document since all the "
+"include will be generated before the \\begin[document} and \\end{document} "
+"commands."
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:173
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:173
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:151 rc.cpp:463
+msgid "Document to include"
+msgstr "İçerilecek belge"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:176
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:176
+#. i18n: ectx: property (toolTip), widget (QRadioButton)
+#: rc.cpp:154 rc.cpp:466
+msgid "Do not generate either the latex header or the document environment"
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:179
+#. i18n: ectx: property (whatsThis), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:179
+#. i18n: ectx: property (whatsThis), widget (QRadioButton)
+#: rc.cpp:157 rc.cpp:469
+msgid ""
+"The document will be generated as a latex document which will have to be "
+"included in a main latex document. It will allow you to generate several "
+"little files for each chapter of your document."
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:196
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:196
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:160 rc.cpp:472
+msgid "Document class:"
+msgstr "Belge sınıfı:"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:212
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:212
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:163 rc.cpp:475
+msgid "Quality:"
+msgstr "Kalite:"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:228
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:228
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:166 rc.cpp:478
+msgid "Default font size:"
+msgstr "Öntanımlı yazı tipi boyutu:"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:247
+#. i18n: ectx: property (text), item, widget (KComboBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:247
+#. i18n: ectx: property (text), item, widget (KComboBox)
+#: rc.cpp:169 rc.cpp:481
+msgid "Final"
+msgstr "Son"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:252
+#. i18n: ectx: property (text), item, widget (KComboBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:252
+#. i18n: ectx: property (text), item, widget (KComboBox)
+#: rc.cpp:172 rc.cpp:484
+msgid "Draft"
+msgstr "Taslak"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:273
+#. i18n: ectx: attribute (title), widget (QWidget)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:273
+#. i18n: ectx: attribute (title), widget (QWidget)
+#: rc.cpp:175 rc.cpp:487
+msgid "Pictures"
+msgstr "Resimler"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:288
+#. i18n: ectx: property (toolTip), widget (KUrlRequester)
+#: rc.cpp:178
+msgid "This directory will contains the eps pictures of your document"
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:304
+#. i18n: ectx: property (text), widget (QCheckBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:301
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:181 rc.cpp:490
+msgid "Convert the pictures"
+msgstr "Resimleri dönüştür"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:323
+#. i18n: ectx: property (text), widget (QLabel)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:320
+#. i18n: ectx: property (text), widget (QLabel)
+#: rc.cpp:184 rc.cpp:493
+msgid "Pictures directory:"
+msgstr "Resim dizini:"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:347
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kspread/csv/dialogui.ui:52
+#. i18n: ectx: attribute (title), widget (QWidget, TabPage)
+#. i18n: file: kspread/csv/exportdialogui.ui:26
+#. i18n: ectx: attribute (title), widget (QWidget, encodingPage)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:344
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: rc.cpp:190 rc.cpp:298 rc.cpp:361 rc.cpp:499
+msgid "Encoding"
+msgstr "Kodlama"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:394
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:391
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:196 rc.cpp:505
+msgid "Remove"
+msgstr "Sil"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:410
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:407
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:199 rc.cpp:508
+msgid "Add"
+msgstr "Ekle"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:446
+#. i18n: ectx: attribute (title), widget (QWidget)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:443
+#. i18n: ectx: attribute (title), widget (QWidget)
+#: rc.cpp:202 rc.cpp:511
+msgid "Contents"
+msgstr "İçindekiler"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:464
+#. i18n: ectx: property (text), widget (QCheckBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:461
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:205 rc.cpp:514
+msgid "Export information about author"
+msgstr "Yazar bilgilerini içeriye aktar"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:486
+#. i18n: ectx: property (text), widget (QCheckBox)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:483
+#. i18n: ectx: property (text), widget (QCheckBox)
+#: rc.cpp:208 rc.cpp:517
+msgid "Add a table of content"
+msgstr "Bir içindekiler tablosu ekle"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:505
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:502
+#. i18n: ectx: property (title), widget (QButtonGroup)
+#: rc.cpp:211 rc.cpp:520
+msgid "Notes"
+msgstr "Notlar"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:520
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:517
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:214 rc.cpp:523
+msgid "Don't export"
+msgstr "Dışarıya aktarma"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:536
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:533
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:217 rc.cpp:526
+msgid "Export notes in comments"
+msgstr "Notları açıklamalar olarak dışarıya aktar"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:552
+#. i18n: ectx: property (text), widget (QRadioButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:549
+#. i18n: ectx: property (text), widget (QRadioButton)
+#: rc.cpp:220 rc.cpp:529
+msgid "Export notes in margin notes"
+msgstr ""
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:577
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:574
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:223 rc.cpp:532
+msgid "&Help"
+msgstr "&Yardım"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:580
+#. i18n: ectx: property (accel), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:577
+#. i18n: ectx: property (accel), widget (QPushButton)
+#: rc.cpp:226 rc.cpp:535
+msgid "F1"
+msgstr "F1"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:608
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:605
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: xsltfilter/export/xsltdialog.ui:160
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:160
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:229 rc.cpp:538 rc.cpp:556 rc.cpp:574
+msgid "&OK"
+msgstr "&Tamam"
+
+#. i18n: file: kword/latex/export/latexexportdia.ui:622
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: kspread/latex/export/latexexportdia.ui:619
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: xsltfilter/export/xsltdialog.ui:171
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:171
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:232 rc.cpp:541 rc.cpp:559 rc.cpp:577
+msgid "&Cancel"
+msgstr "İ&ptal"
+
+#. i18n: file: kspread/html/exportwidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:235
+msgid "En&coding:"
+msgstr "&Kodlama:"
+
+#. i18n: file: kspread/html/exportwidget.ui:32
+#. i18n: ectx: property (whatsThis), widget (QComboBox, mEncodingBox)
+#: rc.cpp:238
+msgid ""
+"With this option you can define the encoding of the HTML file. The "
+"recommended encoding (UTF8) is selected as default."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:57
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: rc.cpp:241
+msgid "Sheet Selection"
+msgstr "Kağıt Seçimi"
+
+#. i18n: file: kspread/html/exportwidget.ui:72
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mSelectAllButton)
+#. i18n: file: kspread/html/exportwidget.ui:82
+#. i18n: ectx: property (whatsThis), widget (QPushButton, mDeselectAllButton)
+#: rc.cpp:244 rc.cpp:250
+msgid "Click here to select all sheets in the list."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:75
+#. i18n: ectx: property (text), widget (QPushButton, mSelectAllButton)
+#: rc.cpp:247
+msgid "Select &All"
+msgstr "&Tümünü Seç"
+
+#. i18n: file: kspread/html/exportwidget.ui:85
+#. i18n: ectx: property (text), widget (QPushButton, mDeselectAllButton)
+#: rc.cpp:253
+msgid "Desele&ct All"
+msgstr "&Hiçbirisini Seçme"
+
+#. i18n: file: kspread/html/exportwidget.ui:110
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, mSeparateFiles)
+#: rc.cpp:256
+msgid ""
+"This option will make the HTML export filter generate a new page for each "
+"sheet. If you disable this option, all sheets are written on one page."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:113
+#. i18n: ectx: property (text), widget (QCheckBox, mSeparateFiles)
+#: rc.cpp:259
+msgid "Use &separate files for each table"
+msgstr "Her &tablo için ayrı dosya kullan"
+
+#. i18n: file: kspread/html/exportwidget.ui:123
+#. i18n: ectx: property (title), widget (QGroupBox, buttonGroup4)
+#: rc.cpp:262
+msgid "Style"
+msgstr "Biçim"
+
+#. i18n: file: kspread/html/exportwidget.ui:129
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mDefaultButton)
+#: rc.cpp:265
+msgid ""
+"Select this option to use the default fonts and colors for the HTML page."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:132
+#. i18n: ectx: property (text), widget (QRadioButton, mDefaultButton)
+#: rc.cpp:268
+msgid "Use &default style"
+msgstr "Ö&ntanımlı biçimi seç"
+
+#. i18n: file: kspread/html/exportwidget.ui:142
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, mCustomButton)
+#: rc.cpp:271
+msgid ""
+"Select this option to specify a separate stylesheet for the HTML page. You "
+"can select or type on in the field below."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:145
+#. i18n: ectx: property (text), widget (QRadioButton, mCustomButton)
+#: rc.cpp:274
+msgid "Use &external stylesheet:"
+msgstr "Dış &biçim kağıdı kullan:"
+
+#. i18n: file: kspread/html/exportwidget.ui:155
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, mCustomURL)
+#: rc.cpp:277
+msgid ""
+"In this field you can enter an URL for your stylesheet. It is possible to "
+"point to a stylesheet on disk, or to somewhere on the Internet."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:165
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: rc.cpp:280
+msgid "Layout"
+msgstr "Düzen"
+
+#. i18n: file: kspread/html/exportwidget.ui:171
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, mUseBorders)
+#: rc.cpp:283
+msgid "Use this option to enable or disable borders around the cells."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:174
+#. i18n: ectx: property (text), widget (QCheckBox, mUseBorders)
+#: rc.cpp:286
+msgid "Use &borders"
+msgstr "Kenarlık &kulan"
+
+#. i18n: file: kspread/html/exportwidget.ui:186
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1_2)
+#. i18n: file: kspread/html/exportwidget.ui:208
+#. i18n: ectx: property (whatsThis), widget (QSpinBox, mPixelsBetweenCells)
+#: rc.cpp:289 rc.cpp:295
+msgid ""
+"Use this option to define how many pixels there should be between the cells. "
+"This effect is better visible if you check <b>Use borders</b> too."
+msgstr ""
+
+#. i18n: file: kspread/html/exportwidget.ui:189
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: rc.cpp:292
+msgid "Pi&xels between cells:"
+msgstr "&Hücreler arası benek sayısı"
+
+#. i18n: file: kspread/csv/dialogui.ui:124
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:304
+msgid "Common"
+msgstr "Genel"
+
+#. i18n: file: kspread/csv/dialogui.ui:141
+#. i18n: ectx: property (title), widget (Q3ButtonGroup, m_delimiterBox)
+#. i18n: file: kspread/csv/exportdialogui.ui:223
+#. i18n: ectx: property (title), widget (Q3ButtonGroup, m_delimiterBox)
+#: rc.cpp:307 rc.cpp:403
+msgid "Delimiter"
+msgstr "Sınırlandırıcı"
+
+#. i18n: file: kspread/csv/dialogui.ui:153
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioComma)
+#. i18n: file: kspread/csv/exportdialogui.ui:229
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioComma)
+#: rc.cpp:310 rc.cpp:406
+msgid "Comma"
+msgstr "Virgül"
+
+#. i18n: file: kspread/csv/dialogui.ui:163
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSemicolon)
+#. i18n: file: kspread/csv/exportdialogui.ui:239
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSemicolon)
+#: rc.cpp:313 rc.cpp:409
+msgid "Semicolon"
+msgstr "Noktalı virgül"
+
+#. i18n: file: kspread/csv/dialogui.ui:170
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioTab)
+#. i18n: file: kspread/csv/exportdialogui.ui:246
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioTab)
+#: rc.cpp:316 rc.cpp:412
+msgid "Tabulator"
+msgstr "Tablolayıcı"
+
+#. i18n: file: kspread/csv/dialogui.ui:177
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSpace)
+#. i18n: file: kspread/csv/exportdialogui.ui:253
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioSpace)
+#: rc.cpp:319 rc.cpp:415
+msgid "Space"
+msgstr "Boşluk"
+
+#. i18n: file: kspread/csv/dialogui.ui:184
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioOther)
+#: rc.cpp:322
+msgid "Other"
+msgstr "Diğer"
+
+#. i18n: file: kspread/csv/dialogui.ui:212
+#. i18n: ectx: property (text), widget (QCheckBox, m_ignoreDuplicates)
+#: rc.cpp:325
+msgid "Ignore duplicate delimiters"
+msgstr "Aynısı olan sınırlandırıcıları yoksay"
+
+#. i18n: file: kspread/csv/dialogui.ui:227
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2)
+#: rc.cpp:328
+msgid "Text&quote:"
+msgstr "Metin &alıntı:"
+
+#. i18n: file: kspread/csv/dialogui.ui:240
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
+#: rc.cpp:331
+msgid "&Format:"
+msgstr "&Biçim:"
+
+#. i18n: file: kspread/csv/dialogui.ui:265
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#. i18n: file: kspread/csv/exportdialogui.ui:330
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: rc.cpp:334 rc.cpp:427
+msgid "\""
+msgstr "\""
+
+#. i18n: file: kspread/csv/dialogui.ui:270
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#. i18n: file: kspread/csv/exportdialogui.ui:335
+#. i18n: ectx: property (text), item, widget (QComboBox, m_comboQuote)
+#: rc.cpp:337 rc.cpp:430
+msgid "'"
+msgstr "'"
+
+#. i18n: file: kspread/csv/dialogui.ui:316
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:343
+msgid "Ranges"
+msgstr "Aralıklar"
+
+#. i18n: file: kspread/csv/dialogui.ui:337
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#. i18n: file: kspread/csv/dialogui.ui:390
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#: rc.cpp:346 rc.cpp:352
+msgid "to"
+msgstr "-"
+
+#. i18n: file: kspread/csv/dialogui.ui:370
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3)
+#: rc.cpp:349
+msgid "Import lines:"
+msgstr "Satırları içeriye aktar:"
+
+#. i18n: file: kspread/csv/dialogui.ui:430
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: rc.cpp:355
+msgid "Import columns:"
+msgstr "Sütunları içeriye aktar:"
+
+#. i18n: file: kspread/csv/dialogui.ui:504
+#. i18n: ectx: property (text), widget (QPushButton, m_updateButton)
+#: rc.cpp:358
+msgid "Update"
+msgstr "Güncelle"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:131
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:379
+msgid "Sheets"
+msgstr "Sayfalar"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:138
+#. i18n: ectx: property (text), widget (Q3ListView, m_sheetList)
+#: rc.cpp:382
+msgid "Available Sheets"
+msgstr "Kullanılabilir Tablolar"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:146
+#. i18n: ectx: property (text), widget (QLabel, TextLabel4)
+#: rc.cpp:385
+msgid "Select sheets to export:"
+msgstr ""
+
+#. i18n: file: kspread/csv/exportdialogui.ui:162
+#. i18n: ectx: property (title), widget (QGroupBox, m_delimiterLineBox)
+#: rc.cpp:388
+msgid "Delimiter Line"
+msgstr ""
+
+#. i18n: file: kspread/csv/exportdialogui.ui:168
+#. i18n: ectx: property (text), widget (QLineEdit, m_sheetDelimiter)
+#: rc.cpp:391
+msgid "********<SHEETNAME>********"
+msgstr "********<SHEETNAME>********"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:181
+#. i18n: ectx: property (text), widget (QLabel, TextLabel6)
+#: rc.cpp:394
+msgid "<SHEETNAME> gets replaced by the name of the next sheet."
+msgstr ""
+
+#. i18n: file: kspread/csv/exportdialogui.ui:200
+#. i18n: ectx: property (text), widget (QCheckBox, m_delimiterAboveAll)
+#: rc.cpp:397
+msgid "Print delimiter line above every sheet"
+msgstr ""
+
+#. i18n: file: kspread/csv/exportdialogui.ui:211
+#. i18n: ectx: attribute (title), widget (QWidget, tab2)
+#. i18n: file: kspread/csv/exportdialogui.ui:295
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox1)
+#: rc.cpp:400 rc.cpp:421
+msgid "Cells"
+msgstr "Hücreler"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:260
+#. i18n: ectx: property (text), widget (QRadioButton, m_radioOther)
+#: rc.cpp:418
+msgid "Other:"
+msgstr "Diğer:"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:310
+#. i18n: ectx: property (text), widget (QLabel, m_quotesLabel)
+#: rc.cpp:424
+msgid "Quotes:"
+msgstr "Alıntılar:"
+
+#. i18n: file: kspread/csv/exportdialogui.ui:372
+#. i18n: ectx: property (text), widget (QCheckBox, m_selectionOnly)
+#: rc.cpp:433
+msgid "Export selection only"
+msgstr "Sadece seçimi dışarıya aktar"
+
+#. i18n: file: xsltfilter/export/xsltdialog.ui:36
+#. i18n: ectx: property (title), widget (QGroupBox)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:36
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:547 rc.cpp:565
+msgid "Common xslt Files"
+msgstr "Genel xslt Dosyaları"
+
+#. i18n: file: xsltfilter/export/xsltdialog.ui:72
+#. i18n: ectx: property (title), widget (QGroupBox)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:72
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:550 rc.cpp:568
+msgid "Personal xslt Files"
+msgstr "Kişisel xslt Dosyaları"
+
+#. i18n: file: xsltfilter/export/xsltdialog.ui:119
+#. i18n: ectx: property (text), widget (QPushButton)
+#. i18n: file: xsltfilter/import/xsltdialog.ui:119
+#. i18n: ectx: property (text), widget (QPushButton)
+#: rc.cpp:553 rc.cpp:571
+msgid "Choose..."
+msgstr "Seç..."
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:580
+msgid "Size in Pixels"
+msgstr "Piksel olarak Boyut"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:25
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:60
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:583 rc.cpp:592
+msgid "Image width:"
+msgstr "Resim genişliği:"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:70
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:586 rc.cpp:595
+msgid "Image height:"
+msgstr "Resim yüksekliği:"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:51
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:589
+msgid "Size in Units"
+msgstr "Birim cinsinden Boyut"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:80
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:598
+msgid "Resolution:"
+msgstr "Çözünürlük:"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:90
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:601
+msgid "Unit:"
+msgstr "Birim:"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:106
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: rc.cpp:604
+msgid "Background Color"
+msgstr "Arkaplan Rengi"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:115
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:607
+msgid "Color"
+msgstr "Renk"
+
+#. i18n: file: karbon/png/PngExportOptionsWidget.ui:125
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:610
+msgid "Opacity"
+msgstr "Matlık"
+
+#~ msgid "Export to Image"
+#~ msgstr "Resim olarak Dışarıya Aktar"
+
+#~ msgid "Page:"
+#~ msgstr "Sayfa:"
+
+#~ msgid "Complete Page"
+#~ msgstr "Tam Sayfa"
+
+#~ msgid "Area of Objects on Page"
+#~ msgstr "Sayfadaki Nesnelerin Alanı"
+
+#~ msgid "Area to export:"
+#~ msgstr "Dışarıya aktarılacak alan:"
+
+#~ msgid "Custom size (in pixels):"
+#~ msgstr "Özel boyut (piksel cinsinden):"
+
+#~ msgid "Margin:"
+#~ msgstr "Kenar Boşluğu:"
+
+#~ msgid "A password is required to read that pdf"
+#~ msgstr "Bu pdf dosyasını okuyabilmek için bir parola gerekiyor"
+
+#~ msgid "PDF Import Options"
+#~ msgstr "PDF İçeriye Aktarma Seçenekleri"
+
+#~ msgid "Page %1"
+#~ msgstr "Sayfa %1"
+
+#~ msgid "Cannot export images in %1.\n"
+#~ msgstr "%1 içerisindeki resimler dışarıya aktarılamadı.\n"
+
+#~ msgid "JPEG Export Options"
+#~ msgstr "JPEG Dışarıya Aktarma Seçenekleri"
+
+#~ msgid "TIFF Export Options"
+#~ msgstr "TIFF Dışarıya Aktarma Seçenekleri"
+
+#~ msgid "All Images"
+#~ msgstr "Tüm Resimler"
+
+#~ msgid "PDFImportWidget"
+#~ msgstr "PDF İçeriye Aktarma Parçacığı"
+
+#~ msgid "Pages"
+#~ msgstr "Sayfa"
+
+#~ msgid "&All pages"
+#~ msgstr "&Tüm Sayfalar"
+
+#~ msgid "&First page"
+#~ msgstr "&İlk sayfa"
+
+#~ msgid "&Selection of page"
+#~ msgstr "&Sayfanın seçimi"
+
+#~ msgid "Dimensions"
+#~ msgstr "Boyutlar"
+
+#~ msgctxt "vertical resolution"
+#~ msgid "Vertical:"
+#~ msgstr "Dikey:"
+
+#~ msgctxt "horizontal resolution"
+#~ msgid "Horizontal:"
+#~ msgstr "Yatay:"
+
+#~ msgid "Size:"
+#~ msgstr "Boyut:"
+
+#~ msgid "Options of Your PNG"
+#~ msgstr "PNG dosyanızın Seçenekleri"
+
+#~ msgid "Compress:"
+#~ msgstr "Sıkıştırma:"
+
+#~ msgctxt ""
+#~ "The compression will take a long time; saving the file will be slow."
+#~ msgid "Slow"
+#~ msgstr "Yavaş"
+
+#~ msgctxt "The file will save fast but will not be compressed a lot"
+#~ msgid "Fast"
+#~ msgstr "Hızlı"
+
+#~ msgctxt "the file will be small"
+#~ msgid "Small"
+#~ msgstr "Küçük"
+
+#~ msgctxt "the file will be big"
+#~ msgid "Big"
+#~ msgstr "Büyük"
+
+#~ msgid "Interlacing"
+#~ msgstr "Karıştırma:"
+
+#~ msgctxt ""
+#~ "Show a preview of the image after saving to assess the quality difference"
+#~ msgid "Preview image"
+#~ msgstr "Resmi önizle"
+
+#~ msgid "Size: 100KB"
+#~ msgstr "Boyut: 100KB"
+
+#, fuzzy
+#~| msgctxt "simple options for average users"
+#~| msgid "Basic"
+#~ msgid "Basic"
+#~ msgstr "Temel"
+
+#~ msgid "File size:"
+#~ msgstr "Dosya boyutu:"
+
+#~ msgctxt ""
+#~ "the file will be much compressed, thus small, but quality will be bad"
+#~ msgid "Small"
+#~ msgstr "Küçük"
+
+#~ msgctxt "the file will be good quality, but big"
+#~ msgid "Big"
+#~ msgstr "Büyük"
+
+#~ msgctxt "the file will be much compressed, so the quality will be bad"
+#~ msgid "Bad"
+#~ msgstr "Kötü"
+
+#~ msgctxt "the quality will be good but the file will not be much compressed"
+#~ msgid "Good"
+#~ msgstr "İyi"
+
+#~ msgid "Advanced quality"
+#~ msgstr "Gelişmiş kalite"
+
+#~ msgid "Optimize"
+#~ msgstr "En İyileştir"
+
+#~ msgctxt "the result will be artificially smoothed to hide jpeg artefacts"
+#~ msgid "Smooth:"
+#~ msgstr "Düz:"
+
+#~ msgid "2x2, 1x1, 1x1 (smallest file)"
+#~ msgstr "2x2, 1x1, 1x1 (en küçük dosya)"
+
+#~ msgid "2x1, 1x1, 1x1"
+#~ msgstr "2x1, 1x1, 1x1"
+
+#~ msgid "1x2, 1x1, 1x1"
+#~ msgstr "1x2, 1x1, 1x1"
+
+#~ msgid "1x1, 1x1, 1x1 (best quality)"
+#~ msgstr "1x1, 1x1, 1x1 (en iyi kalite)"
+
+#~ msgid "Metadata"
+#~ msgstr "Metadata"
+
+#~ msgid "Formats:"
+#~ msgstr "Biçimler:"
+
+#~ msgid "Exif"
+#~ msgstr "Exif"
+
+#~ msgid "IPTC"
+#~ msgstr "IPTC"
+
+#~ msgid "XMP"
+#~ msgstr "XMP"
+
+#~ msgid "Filters:"
+#~ msgstr "Filtreler:"
+
+#~ msgid "Options of Your TIFF"
+#~ msgstr "TIFF dosyanız için Seçenekler"
+
+#~ msgid "TIFF Options"
+#~ msgstr "TIFF Seçenekleri"
+
+#~ msgid "Compression type:"
+#~ msgstr "Sıkıştırma tipi:"
+
+#~ msgid "JPEG DCT Compression"
+#~ msgstr "JPEG DCT Sıkıştırması"
+
+#~ msgid "Deflate (ZIP)"
+#~ msgstr "Söndürme (ZIP)"
+
+#~ msgid "JPEG Compression Options"
+#~ msgstr "JPEG Sıkıştırma Seçenekleri"
+
+#~ msgid "Smallest"
+#~ msgstr "En Küçük"
+
+#~ msgid "Best"
+#~ msgstr "En İyi"
+
+#~ msgid "Deflate Compression Options"
+#~ msgstr "Söndürme Sıkıştırması Seçenekleri"
+
+#~ msgctxt "save the file quickly, but do not compress very well"
+#~ msgid "Fast"
+#~ msgstr "Hızlı"
+
+#~ msgctxt "make the file small, at the price of a longer saving time"
+#~ msgid "Small"
+#~ msgstr "Küçük"
+
+#~ msgid "Fax mode:"
+#~ msgstr "Faks kipi:"
+
+#~ msgid "Classic"
+#~ msgstr "Klasik"
+
+#~ msgid "No RTC"
+#~ msgstr "No RTC"
+
+#~ msgid "No EOL"
+#~ msgstr "No EOL"
+
+#~ msgctxt "save quickly, but do not compress a lot"
+#~ msgid "Fast"
+#~ msgstr "Hızlı"
+
+#~ msgctxt "make a very small file, but take a long time saving"
+#~ msgid "Small"
+#~ msgstr "Küçük"
+
+#~ msgid "PDF Import"
+#~ msgstr "PDF İçeriye Aktar"
+
+#~ msgid "Initializing..."
+#~ msgstr "Başlatılıyor..."
+
+#~ msgid "KWord's PDF Import Filter"
+#~ msgstr "KWord PDF İçeriye Aktarma Filtresi"
+
+#~ msgid "Page Selection"
+#~ msgstr "Sayfa Seçimi"
+
+#~ msgid "All (%1 pages)"
+#~ msgstr "Tümü (%1 sayfa)"
+
+#~ msgid "Range:"
+#~ msgstr "Aralık:"
+
+#~ msgid "Import images"
+#~ msgstr "Resimleri içeriye aktar"
+
+#~ msgid "\"Smart\" mode"
+#~ msgstr "\"Akıllı\" kip"
+
+#~ msgid "Passwords"
+#~ msgstr "Parolalar"
+
+#~ msgid "Owner:"
+#~ msgstr "Sahip:"
+
+#~ msgid "User:"
+#~ msgstr "Kullanıcı:"
+
+#~ msgid "Endnote %1"
+#~ msgstr "Bitiş notu %1"
+
+#~ msgid "Footnote %1"
+#~ msgstr "Dipnot %1"
+
+#~ msgctxt "Table_Name Cell row,column"
+#~ msgid "%1 Cell %2,%3"
+#~ msgstr "%1 Hücre %2,%3"
+
+#~ msgid "Colorspace"
+#~ msgstr "Renk uzayı"
+
+#~ msgid "&Document mode"
+#~ msgstr "&Belge kipi"
+
+#~ msgid "&RGB"
+#~ msgstr "&RGB"
+
+#~ msgid "Channel Depth"
+#~ msgstr "Kanal Derinliği"
+
+#~ msgid "&16 bits per channel"
+#~ msgstr "Her kanal için &16 bit"
+
+#~ msgid "Alt+1"
+#~ msgstr "Alt+1"
+
+#~ msgid "&8 bits per channel"
+#~ msgstr "Her kanal için &8 bit"
+
+#~ msgid "Alt+8"
+#~ msgstr "Alt+8"
+
+#~ msgid "&Interpolate RGB as four colors"
+#~ msgstr "&RGB'yi dört renk olarak ekle"
+
+#~ msgid "&Update Preview"
+#~ msgstr "&Önizlemeyi Güncelle"
+
+#~ msgid "Color Settings"
+#~ msgstr "Renk Ayarları"
+
+#~ msgid "&White Balance"
+#~ msgstr "&Beyaz Dengesi"
+
+#~ msgid "White card in sunlight"
+#~ msgstr "Gün ışığında beyaz kart"
+
+#~ msgid "Automatic white balance"
+#~ msgstr "Otomatik beyaz dengesi"
+
+#~ msgid "Camera white balance"
+#~ msgstr "Kameranın beyaz dengesi"
+
+#~ msgid "Brightness:"
+#~ msgstr "Parlaklık:"
+
+#~ msgid "Red multiplier:"
+#~ msgstr "Kırmızı çarpanı:"
+
+#~ msgid "Blue multiplier:"
+#~ msgstr "Mavi çarpanı:"
+
+#~ msgid "Brightness. 1.0 is default"
+#~ msgstr "Parlaklık. Öntanımlı 1.0"
+
+#~ msgid "Use camera raw colors, not sRGB"
+#~ msgstr "Kamera ham renklerini kullan, sRGB kullanma"
+
+#, fuzzy
+#~ msgid "Export hidden layers"
+#~ msgstr "Latex Aktarma Filtre Parametreleri"
+
+#, fuzzy
+#~ msgid "KSpread Kexi Import Filter"
+#~ msgstr "AbiWord Alma Süzgeci"
+
+#, fuzzy
+#~ msgid "Unable to open output file."
+#~ msgstr "Ana belge kaydedilemedi"
+
+#, fuzzy
+#~ msgid "Failed to open input file: %1"
+#~ msgstr "Ana belge kaydedilemedi"
+
+#, fuzzy
+#~ msgid ""
+#~ "Parsing error in MathML file %4 at line %1, column %2\n"
+#~ "Error message: %3"
+#~ msgstr ""
+#~ "AbiWord dosyası ayrıştırılırken bir hata oluştu.\n"
+#~ "Satır: %1, sütun %2\n"
+#~ "Hata mesajı: %3"

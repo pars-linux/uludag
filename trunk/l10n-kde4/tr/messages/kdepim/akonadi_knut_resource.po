@@ -1,0 +1,47 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: akonadi_knut_resource\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-05 11:09+0200\n"
+"PO-Revision-Date: 2009-04-22 11:53+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: knutresource.cpp:70
+msgid "No data file selected."
+msgstr "Hiçbir veri dosyası seçilmedi."
+
+#: knutresource.cpp:85
+#, kde-format
+msgid "File '%1' loaded successfully."
+msgstr "'%1' dosyası başarılı bir şekilde yüklendi."
+
+#: knutresource.cpp:112
+msgctxt "Filedialog filter for Akonadi data file"
+msgid "Akonadi Knut Data File"
+msgstr "Akonadi Knut Veri Dosyası"
+
+#: knutresource.cpp:112
+msgid "Select Data File"
+msgstr "Veri Dosyası Seç"
+
+#. i18n: file: knutresource.kcfg:9
+#. i18n: ectx: label, entry (DataFile), group (General)
+#: rc.cpp:3
+msgid "Path to the Knut data file."
+msgstr "Knut veri dosyasının yolu."
+
+#. i18n: file: knutresource.kcfg:13
+#. i18n: ectx: label, entry (ReadOnly), group (General)
+#: rc.cpp:6
+msgid "Do not change the actual backend data."
+msgstr "Güncel arka uç verilerini değiştirme."

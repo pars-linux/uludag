@@ -1,0 +1,202 @@
+# translation of kdepimresources.po to turkish
+# translation of kdepimresources.po to Türkçe
+#
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdepimresources\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-05-11 12:54+0200\n"
+"PO-Revision-Date: 2009-04-22 12:21+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: folderconfig.cpp:53
+msgid "Folder Selection"
+msgstr "Dizin Seçimi"
+
+#: folderconfig.cpp:57
+msgid "Update Folder List"
+msgstr "Dizin Güncelleme Listesi"
+
+#: folderlistview.cpp:58
+msgid "Folder"
+msgstr "Dizin"
+
+#: folderlistview.cpp:63
+msgctxt "Short column header meaning default for new events"
+msgid "Events"
+msgstr "Olaylar"
+
+#: folderlistview.cpp:68
+msgctxt "Short column header meaning default for new to-dos"
+msgid "Todos"
+msgstr "Yapılacaklar"
+
+#: folderlistview.cpp:73
+msgctxt "Short column header meaning default for new journals"
+msgid "Journals"
+msgstr "Günlükler"
+
+#: folderlistview.cpp:78
+msgctxt "Short column header meaning default for new contacts"
+msgid "Contacts"
+msgstr "Bağlantılar"
+
+#: folderlistview.cpp:83
+msgctxt "Short column header meaning default for all items"
+msgid "All"
+msgstr "Tümü"
+
+#: folderlistview.cpp:88
+msgctxt "Short column header meaning default for unknown new items"
+msgid "Unknown"
+msgstr "Bilinmeyen öge"
+
+#: folderlistview.cpp:101
+msgid "&Enabled"
+msgstr "&Etkinlenmiş"
+
+#: folderlistview.cpp:108
+msgid "Default for New &Events"
+msgstr "Yeni &Olaylar için öntanımlı"
+
+#: folderlistview.cpp:114
+msgid "Default for New &Todos"
+msgstr "Yeni &Yapılacaklar için öntanımlı"
+
+#: folderlistview.cpp:120
+msgid "Default for New &Journals"
+msgstr "Yeni &Günlükler için öntanımlı"
+
+#: folderlistview.cpp:126
+msgid "Default for New &Contacts"
+msgstr "Yeni &Bağlantılar için öntanımlı"
+
+#: folderlistview.cpp:132
+msgid "Default for All New &Items"
+msgstr "Bütün Yeni &Öğeler için öntanımlı"
+
+#: folderlistview.cpp:138
+msgid "Default for &Unknown New Items"
+msgstr "&Bilinmeyen Yeni Öğeler için öntanımlı"
+
+#: groupwaredownloadjob.cpp:49
+msgid "Unable to initialize the download job."
+msgstr "indirmeyi sıfırlamak olanaksız"
+
+#: groupwareuploadjob.cpp:460
+#, kde-format
+msgid "1 item could not be uploaded."
+msgid_plural "%1 items could not be uploaded."
+msgstr[0] "%1 öge yüklenemiyor."
+
+#: kabc_resourcegroupwarebaseconfig.cpp:51
+#: kcal_resourcegroupwarebaseconfig.cpp:57
+msgid "URL:"
+msgstr "URL:"
+
+#: kabc_resourcegroupwarebaseconfig.cpp:57
+#: kcal_resourcegroupwarebaseconfig.cpp:62
+msgid "User:"
+msgstr "Kullanıcı"
+
+#: kabc_resourcegroupwarebaseconfig.cpp:63
+#: kcal_resourcegroupwarebaseconfig.cpp:67
+msgid "Password:"
+msgstr "Parola"
+
+#: kabc_resourcegroupwarebase.cpp:98
+msgid "Downloading address book"
+msgstr "Adres defteri indiriliyor"
+
+#: kabc_resourcegroupwarebase.cpp:99
+msgid "Uploading address book"
+msgstr "Adres defteri yükleniyor"
+
+#: kcal_cachesettingsdlg.cpp:45
+msgid "Resource Cache Settings"
+msgstr "Kaynak önbellek ayarları"
+
+#: kcal_resourcegroupwarebaseconfig.cpp:79
+msgid "Configure Cache Settings..."
+msgstr "Önbellek yapılandırma ayarları"
+
+#: kcal_resourcegroupwarebase.cpp:403
+msgid "Added"
+msgstr "Eklendi"
+
+#: kcal_resourcegroupwarebase.cpp:404
+msgid "Changed"
+msgstr "Değiştirildi"
+
+#: kcal_resourcegroupwarebase.cpp:405
+msgid "Deleted"
+msgstr "Silindi"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:9
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:3
+msgid "Server URL"
+msgstr "URL sunucu"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:12
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:6
+msgid "User Name"
+msgstr "Kullanıcı Adı"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:15
+#. i18n: ectx: label, entry, group (General)
+#: rc.cpp:9
+msgid "Password"
+msgstr "Parola"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:20
+#. i18n: ectx: label, group (Folders)
+#: rc.cpp:12
+msgid "All folder IDs on the server"
+msgstr "Sunucudaki bütün dizin numaraları"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:23
+#. i18n: ectx: label, entry, group (Folders)
+#: rc.cpp:15
+msgid "All folder names on the server"
+msgstr "Sunucudaki bütün dizin isimleri"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:26
+#. i18n: ectx: label, entry, group (Folders)
+#: rc.cpp:18
+msgid "All active folders from the server"
+msgstr "Sunucuda bütün faal dizinler"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:29
+#. i18n: ectx: label, entry, group (Folders)
+#: rc.cpp:21
+msgid "Number of folders on the server and in the config file"
+msgstr "Yapılandırma dosyasındaki ve sunucudaki dizinlerin sayısı"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:35
+#. i18n: ectx: label, entry (DefaultDestinations), group (Folders)
+#: rc.cpp:24
+msgid "Default destinations for the various types"
+msgstr "Çeşitli tipler için öntanımlı hedefler"
+
+#. i18n: file: kresources_groupwareprefs.kcfg:38
+#. i18n: ectx: whatsthis, entry (DefaultDestinations), group (Folders)
+#: rc.cpp:27
+msgid ""
+"These are the default destinations for the different data\n"
+"types in the following order:\n"
+"Event, Todo, Journal, Contact, All, Unknown"
+msgstr ""
+"Bunlar farklı veriler için öntanımlı hedeflerdir\n"
+"tipler aşağıdaki sıradadır\n"
+"Olay, Yapılacak, Günlük, Bağlantı, Bütün, Bilinmeyen"

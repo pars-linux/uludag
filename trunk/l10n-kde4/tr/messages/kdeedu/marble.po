@@ -1,0 +1,4173 @@
+# translation of marble.po to
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: marble\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"PO-Revision-Date: 2009-10-28 16:41+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/kdemain.cpp:63
+msgid "Marble Desktop Globe"
+msgstr "Marble Masaüstünde Dünya"
+
+#: src/kdemain.cpp:65
+msgid "A World Atlas."
+msgstr "Bir Dünya Atlası."
+
+#: src/kdemain.cpp:66
+msgid "(c) 2007, 2008, 2009"
+msgstr "(c) 2007, 2008, 2009"
+
+#: src/kdemain.cpp:71 src/kdemain.cpp:186
+msgid "Torsten Rahn"
+msgstr "Torsten Rahn"
+
+#: src/kdemain.cpp:72
+msgid "Core Developer and Original Author"
+msgstr "Çekirdek Geliştirici ve Asıl yazar"
+
+#: src/kdemain.cpp:74 src/kdemain.cpp:109
+msgid "Patrick Spendrin"
+msgstr "Patrick Spendrin"
+
+#: src/kdemain.cpp:75
+msgid "Core Developer: KML and Windows support"
+msgstr ""
+
+#: src/kdemain.cpp:77
+msgid "Jens-Michael Hoffmann"
+msgstr "Jens-Michael Hoffmann"
+
+#: src/kdemain.cpp:78
+msgid "OpenStreetMap Integration, OSM Namefinder, Download Management"
+msgstr ""
+
+#: src/kdemain.cpp:80
+msgid "Henry de Valence"
+msgstr "Henry de Valence"
+
+#: src/kdemain.cpp:81
+msgid "Core Developer: Marble Runners, World-Clock Plasmoid"
+msgstr ""
+
+#: src/kdemain.cpp:83
+msgid "Bastian Holst"
+msgstr "Bastian Holst"
+
+#: src/kdemain.cpp:84
+msgid "Online Services support"
+msgstr "Çevrimiçi Hizmetler Desteği"
+
+#: src/kdemain.cpp:86
+msgid "Pino Toscano"
+msgstr "Pino Toscano"
+
+#: src/kdemain.cpp:87
+msgid "Network plugins"
+msgstr "Ağ eklentileri"
+
+#: src/kdemain.cpp:89
+msgid "Harshit Jain"
+msgstr "Harshit Jain"
+
+#: src/kdemain.cpp:90
+msgid "Planet filter"
+msgstr "Gezegen filtresi"
+
+#: src/kdemain.cpp:92
+msgid "Simon Edwards"
+msgstr "Simon Edwards"
+
+#: src/kdemain.cpp:93
+msgid "Marble Python Bindings"
+msgstr "Marble Python Bağlayıcıları"
+
+#: src/kdemain.cpp:95
+msgid "Dennis Nienhüser"
+msgstr "Dennis Nienhüser"
+
+#: src/kdemain.cpp:96
+msgid "Navigator Float Item"
+msgstr ""
+
+#: src/kdemain.cpp:98
+msgid "Magnus Valle"
+msgstr "Magnus Valle"
+
+#: src/kdemain.cpp:99
+msgid "Historical Maps"
+msgstr "Tarihi Haritalar"
+
+#: src/kdemain.cpp:101
+msgid "Médéric Boquien"
+msgstr "Médéric Boquien"
+
+#: src/kdemain.cpp:102
+msgid "Astronomical Observatories"
+msgstr "Astronomik Gözlem Evleri"
+
+#: src/kdemain.cpp:104
+msgid "Eckhart Wörner"
+msgstr "Eckhart Wörner"
+
+#: src/kdemain.cpp:105
+msgid "Bugfixes"
+msgstr "Hata düzeltmeleri"
+
+#: src/kdemain.cpp:110
+msgid "Google Summer of Code 2008 Project: Vector Tiles for Marble"
+msgstr ""
+
+#: src/kdemain.cpp:113
+msgid "Shashank Singh"
+msgstr "Shashank Singh"
+
+#: src/kdemain.cpp:114
+msgid ""
+"Google Summer of Code 2008 Project: Panoramio / Wikipedia -photo support for "
+"Marble"
+msgstr ""
+
+#: src/kdemain.cpp:117
+msgid "Carlos Licea"
+msgstr "Carlos Licea"
+
+#: src/kdemain.cpp:118
+msgid ""
+"Google Summer of Code 2007 Project: Equirectangular Projection (\"Flat Map\")"
+msgstr ""
+
+#: src/kdemain.cpp:121
+msgid "Andrew Manson"
+msgstr "Andrew Manson"
+
+#: src/kdemain.cpp:122
+msgid "Google Summer of Code 2007 Project: GPS Support for Marble"
+msgstr ""
+
+#: src/kdemain.cpp:125
+msgid "Murad Tagirov"
+msgstr "Murad Tagirov"
+
+#: src/kdemain.cpp:126
+msgid "Google Summer of Code 2007 Project: KML Support for Marble"
+msgstr ""
+
+#: src/kdemain.cpp:131
+msgid "Inge Wallin"
+msgstr "Inge Wallin"
+
+#: src/kdemain.cpp:132
+msgid "Core Developer and Co-Maintainer"
+msgstr "Asıl Yazar, Geliştirici ve Projeyi Yürütenin Yardımcısı"
+
+#: src/kdemain.cpp:134
+msgid "Simon Schmeisser"
+msgstr "Simon Schmeisser"
+
+#: src/kdemain.cpp:135 src/kdemain.cpp:137 src/kdemain.cpp:139
+#: src/kdemain.cpp:141 src/kdemain.cpp:143 src/kdemain.cpp:145
+#: src/kdemain.cpp:147 src/kdemain.cpp:149 src/kdemain.cpp:151
+#: src/kdemain.cpp:153 src/kdemain.cpp:155 src/kdemain.cpp:157
+#: src/kdemain.cpp:159 src/kdemain.cpp:161 src/kdemain.cpp:163
+#: src/kdemain.cpp:165 src/kdemain.cpp:167 src/kdemain.cpp:169
+msgid "Development & Patches"
+msgstr "Geliştirme ve Yamalar"
+
+#: src/kdemain.cpp:136
+msgid "Claudiu Covaci"
+msgstr "Claudiu Covaci"
+
+#: src/kdemain.cpp:138
+msgid "David Roberts"
+msgstr "David Roberts"
+
+#: src/kdemain.cpp:140
+msgid "Nikolas Zimmermann"
+msgstr "Nikolas Zimmermann"
+
+#: src/kdemain.cpp:142
+msgid "Jan Becker"
+msgstr "Jan Becker"
+
+#: src/kdemain.cpp:144
+msgid "Stefan Asserhäll"
+msgstr "Stefan Asserhäll"
+
+#: src/kdemain.cpp:146
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: src/kdemain.cpp:148
+msgid "Prashanth Udupa"
+msgstr "Prashanth Udupa"
+
+#: src/kdemain.cpp:150
+msgid "Anne-Marie Mahfouf"
+msgstr "Anne-Marie Mahfouf"
+
+#: src/kdemain.cpp:152
+msgid "Josef Spillner"
+msgstr "Josef Spillner"
+
+#: src/kdemain.cpp:154
+msgid "Frerich Raabe"
+msgstr "Frerich Raabe"
+
+#: src/kdemain.cpp:156
+msgid "Frederik Gladhorn"
+msgstr "Frederik Gladhorn"
+
+#: src/kdemain.cpp:158
+msgid "Fredrik Höglund"
+msgstr "Fredrik Höglund"
+
+#: src/kdemain.cpp:160
+msgid "Albert Astals Cid"
+msgstr "Albert Astals Cid"
+
+#: src/kdemain.cpp:162
+msgid "Thomas Zander"
+msgstr "Thomas Zander"
+
+#: src/kdemain.cpp:164
+msgid "Joseph Wenninger"
+msgstr "Joseph Wenninger"
+
+#: src/kdemain.cpp:166
+msgid "Kris Thomsen"
+msgstr "Kris Thomsen"
+
+#: src/kdemain.cpp:168
+msgid "Daniel Molkentin"
+msgstr "Daniel Molkentin"
+
+#: src/kdemain.cpp:170
+msgid "Tim Sutton"
+msgstr "Tim Sutton"
+
+#: src/kdemain.cpp:171 src/kdemain.cpp:173 src/kdemain.cpp:175
+#: src/kdemain.cpp:177 src/kdemain.cpp:179 src/kdemain.cpp:181
+#: src/kdemain.cpp:183
+msgid "Platforms & Distributions"
+msgstr "Platformlar ve Dağıtımlar"
+
+#: src/kdemain.cpp:172
+msgid "Christian Ehrlicher"
+msgstr "Christian Ehrlicher"
+
+#: src/kdemain.cpp:174
+msgid "Ralf Habacker"
+msgstr "Ralf Habacker"
+
+#: src/kdemain.cpp:176
+msgid "Steffen Joeris"
+msgstr "Steffen Joeris"
+
+#: src/kdemain.cpp:178
+msgid "Marcus Czeslinski"
+msgstr "Marcus Czeslinski"
+
+#: src/kdemain.cpp:180
+msgid "Marcus D. Hanwell"
+msgstr "Marcus D. Hanwell"
+
+#: src/kdemain.cpp:182
+msgid "Chitlesh Goorah"
+msgstr "Chitlesh Goorah"
+
+#: src/kdemain.cpp:184
+msgid "Nuno Pinheiro"
+msgstr "Nuno Pinheiro"
+
+#: src/kdemain.cpp:185 src/kdemain.cpp:187
+msgid "Artwork"
+msgstr "Sanatsal İşler"
+
+#: src/kdemain.cpp:190
+msgid "Luis Silva"
+msgstr "Luis Silva"
+
+#: src/kdemain.cpp:191 src/kdemain.cpp:193 src/kdemain.cpp:195
+#: src/kdemain.cpp:197 src/kdemain.cpp:199 src/kdemain.cpp:201
+#: src/kdemain.cpp:203 src/kdemain.cpp:205 src/kdemain.cpp:207
+#: src/kdemain.cpp:209
+msgid "Various Suggestions & Testing"
+msgstr "Çeşitli Öneriler ve Testler"
+
+#: src/kdemain.cpp:192
+msgid "Stefan Jordan"
+msgstr "Stefan Jordan"
+
+#: src/kdemain.cpp:194
+msgid "Robert Scott"
+msgstr "Robert Scott"
+
+#: src/kdemain.cpp:196
+msgid "Lubos Petrovic"
+msgstr "Lubos Petrovic"
+
+#: src/kdemain.cpp:198
+msgid "Benoit Sigoure"
+msgstr "Benoit Sigoure"
+
+#: src/kdemain.cpp:200
+msgid "Martin Konold"
+msgstr "Martin Konold"
+
+#: src/kdemain.cpp:202
+msgid "Matthias Welwarsky"
+msgstr "Matthias Welwarsky"
+
+#: src/kdemain.cpp:204
+msgid "Rainer Endres"
+msgstr "Rainer Endres"
+
+#: src/kdemain.cpp:206
+msgid "Ralf Gesellensetter"
+msgstr "Ralf Gesellensetter"
+
+#: src/kdemain.cpp:208
+msgid "Tim Alder"
+msgstr "Tim Alder"
+
+#: src/kdemain.cpp:210
+msgid "John Layt"
+msgstr "John Layt"
+
+#: src/kdemain.cpp:211
+msgid ""
+"Special thanks for providing an important source of inspiration by creating "
+"Marble's predecessor \"Kartographer\"."
+msgstr ""
+
+#: src/kdemain.cpp:221
+msgid "Enable debug output"
+msgstr ""
+
+#: src/kdemain.cpp:222
+msgid "Make a time measurement to check performance"
+msgstr ""
+
+#: src/kdemain.cpp:223
+msgid "Check speed of gps drawing"
+msgstr ""
+
+#: src/kdemain.cpp:224
+msgid "Show frame rate"
+msgstr ""
+
+#: src/kdemain.cpp:225
+msgid "Enable tab to show the current location"
+msgstr ""
+
+#: src/kdemain.cpp:227
+msgid "Enable tab to see gpxFileView"
+msgstr ""
+
+#: src/kdemain.cpp:228
+msgid "Show tile id's"
+msgstr "Başlık numaralarını göster"
+
+#: src/marble_part.cpp:82
+#, kde-format
+msgid "Position: %1"
+msgstr "Konum: %1"
+
+#: src/marble_part.cpp:83
+#, kde-format
+msgid "Altitude: %1"
+msgstr "Rakım: %1"
+
+#: src/marble_part.cpp:84
+#, kde-format
+msgid "Tile Zoom Level: %1"
+msgstr ""
+
+#: src/marble_part.cpp:157
+msgid "marble_part"
+msgstr "marble_part"
+
+#: src/marble_part.cpp:158
+msgid "A Desktop Globe"
+msgstr "Masaüstünde Dünya"
+
+#: src/marble_part.cpp:173
+msgid ""
+"*.gpx *.kml|All Supported Files\n"
+"*.gpx|GPS Data\n"
+"*.kml|Google Earth KML"
+msgstr ""
+"*.gpx *.kml|Tüm Desteklenen Dosyalar\n"
+"*.gpx|GPS Verisi\n"
+"*.kml|Google Earth KML"
+
+#: src/marble_part.cpp:174
+msgid "Open File"
+msgstr "Dosya Aç"
+
+#: src/marble_part.cpp:194
+msgid "Images *.jpg *.png"
+msgstr "Resimler *.jpg *.png"
+
+#: src/marble_part.cpp:195
+msgid "Export Map"
+msgstr "Haritayı Dışarıya Aktar"
+
+#: src/marble_part.cpp:209
+msgctxt "Application name"
+msgid "Marble"
+msgstr "Marble"
+
+#: src/marble_part.cpp:210
+msgid "An error occurred while trying to save the file.\n"
+msgstr "Bir dosya kaydedilmeye çalışılırken bir hata oluştu.\n"
+
+#: src/marble_part.cpp:568
+msgctxt "Action for saving the map to a file"
+msgid "&Export Map..."
+msgstr "&Haritayı Dışarıya Aktar..."
+
+#: src/marble_part.cpp:577
+msgctxt "Action for toggling offline mode"
+msgid "&Work Offline"
+msgstr "Çevrim&dışı Çalış"
+
+#: src/marble_part.cpp:588
+msgctxt "Action for toggling the 'current location' box"
+msgid "Current Location"
+msgstr "Geçerli Konum"
+
+#: src/marble_part.cpp:597
+msgctxt "Action for copying the map to the clipboard"
+msgid "&Copy Map"
+msgstr "&Haritayı Kopyala"
+
+#: src/marble_part.cpp:604
+msgctxt "Action for copying the coordinates to the clipboard"
+msgid "C&opy Coordinates"
+msgstr "K&oordinatları Kopyala"
+
+#: src/marble_part.cpp:611
+msgctxt "Action for opening a file"
+msgid "&Open..."
+msgstr "&Aç..."
+
+#: src/marble_part.cpp:619
+msgctxt "Action for downloading maps (GHNS)"
+msgid "Download Maps..."
+msgstr "Harita İndir..."
+
+#: src/marble_part.cpp:623
+msgctxt "Status tip"
+msgid "Download new maps"
+msgstr "Yeni haritalar indir"
+
+#: src/marble_part.cpp:630
+msgctxt "Action for toggling the navigation panel"
+msgid "Show &Navigation Panel"
+msgstr "&Gezinme Panelini Göster"
+
+#: src/marble_part.cpp:635
+msgctxt "Status tip"
+msgid "Show Navigation Panel"
+msgstr "Gezinme Panelini Göster"
+
+#: src/marble_part.cpp:649
+msgctxt "Action for toggling the atmosphere"
+msgid "&Atmosphere"
+msgstr "&Atmosfer"
+
+#: src/marble_part.cpp:669
+msgctxt "Action for toggling clouds"
+msgid "&Clouds"
+msgstr "&Bulutlar"
+
+#: src/marble_part.cpp:676
+msgctxt "Action for sun control dialog"
+msgid "S&un Control..."
+msgstr "&Güneş Denetimi..."
+
+#: src/marble_part.cpp:687
+msgctxt "Action for locking float items on the map"
+msgid "Lock Position"
+msgstr "Konumu Kilitle"
+
+#: src/marble_part.cpp:888
+msgctxt "Action for toggling"
+msgid "Show Position"
+msgstr "Konumu Göster"
+
+#: src/marble_part.cpp:890
+msgctxt "Action for toggling"
+msgid "Show Altitude"
+msgstr "Rakımı Göster"
+
+#: src/marble_part.cpp:893
+msgctxt "Action for toggling"
+msgid "Show Tile Zoom Level"
+msgstr ""
+
+#: src/marble_part.cpp:895
+msgctxt "Action for toggling"
+msgid "Show Download Progress Bar"
+msgstr ""
+
+#: src/marble_part.cpp:952
+msgid "View"
+msgstr "Görünüm"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:252
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
+#: src/marble_part.cpp:958 rc.cpp:765
+msgid "Native"
+msgstr "Orijinal"
+
+#: src/marble_part.cpp:961
+msgid "Native (X11)"
+msgstr "Orijinal (X11)"
+
+#: src/marble_part.cpp:964
+msgid "Native (Mac OS X Core Graphics)"
+msgstr "Orijinal (Mac OS X Çekirdek Grafikleri)"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:68
+#. i18n: ectx: attribute (label), widget (QWidget, NavigationTab)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, Navigation)
+#: src/marble_part.cpp:975 rc.cpp:1084 rc.cpp:1423
+msgid "Navigation"
+msgstr "Gezinme"
+
+#: src/marble_part.cpp:981
+msgid "Cache & Proxy"
+msgstr "Önbellek ve Vekil Sunucu"
+
+#: src/marble_part.cpp:1002
+msgid "Plugins"
+msgstr "Eklentiler"
+
+#: src/marble_part.cpp:1126
+msgid ""
+"You have decided to run Marble with a different graphics system.\n"
+"For this change to become effective, Marble has to be restarted.\n"
+"Please close the application and start Marble again."
+msgstr ""
+
+#: src/marble_part.cpp:1129
+msgid "Graphics System Change"
+msgstr "Grafik Sistemi Değişikliği"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file ./tools/cloudtiles/clouds.dgml line 5
+#: rc.cpp:4
+msgid "Clouds"
+msgstr "Bulutlar"
+
+#. i18n: file ./tools/cloudtiles/clouds.dgml line 11
+#: rc.cpp:6
+msgid ""
+"A Real Time Cloud Map that gets updated every 3 hours. It uses GOES, "
+"METEOSAT, and GMS satellite imagery downloaded from the Geostationary "
+"Satellite Imagery page at Dundee University.  Credits: Hari Nair, Xplanet "
+"Project"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 5
+#: rc.cpp:8
+msgid "Historical Map 1689"
+msgstr "Tarihi Harita 1689"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 15
+#: rc.cpp:10
+msgid ""
+"<i>Historical world map</i> from the year 1689 created by G. van Schagen in "
+"Amsterdam."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 160
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 216
+#. i18n: file ./data/legend.html
+#: rc.cpp:12 rc.cpp:60 rc.cpp:584
+msgid "Populated Places"
+msgstr "Yerleşim Yerleri"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 169
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 174
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 163
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 193
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 207
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 193
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 182
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 193
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 193
+#: rc.cpp:14 rc.cpp:38 rc.cpp:72 rc.cpp:114 rc.cpp:168 rc.cpp:340 rc.cpp:398
+#: rc.cpp:440 rc.cpp:496
+msgid "Terrain"
+msgstr "Arazi"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 178
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 212
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 227
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 233
+#: rc.cpp:16 rc.cpp:42 rc.cpp:80 rc.cpp:404
+msgid "Surface"
+msgstr "Yüzey"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 191
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 187
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 176
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 206
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 220
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 256
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 206
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 195
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 206
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 206
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 165
+#: rc.cpp:18 rc.cpp:40 rc.cpp:74 rc.cpp:116 rc.cpp:170 rc.cpp:246 rc.cpp:342
+#: rc.cpp:400 rc.cpp:442 rc.cpp:498 rc.cpp:562
+msgid "Places of Interest"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 200
+#: rc.cpp:20
+msgid "Accurate Coastline"
+msgstr "Tam Kıyı Şeridi"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 204
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 233
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 240
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 298
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 348
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 272
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 302
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 258
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 298
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 301
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 175
+#: rc.cpp:22 rc.cpp:44 rc.cpp:82 rc.cpp:124 rc.cpp:182 rc.cpp:248 rc.cpp:350
+#: rc.cpp:406 rc.cpp:450 rc.cpp:506 rc.cpp:564
+msgid "Coordinate Grid"
+msgstr "Koordinat Ekseni"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 164
+#: rc.cpp:24
+msgid "Town"
+msgstr "Şehir"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 173
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 178
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 167
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 197
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 211
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 197
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 186
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 241
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 197
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 197
+#: rc.cpp:26 rc.cpp:46 rc.cpp:84 rc.cpp:126 rc.cpp:184 rc.cpp:352 rc.cpp:408
+#: rc.cpp:428 rc.cpp:452 rc.cpp:508
+msgid "Mountain"
+msgstr "Dağ"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 182
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 222
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 252
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 266
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 252
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 252
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 252
+#: rc.cpp:28 rc.cpp:104 rc.cpp:146 rc.cpp:204 rc.cpp:372 rc.cpp:472 rc.cpp:528
+msgid "River"
+msgstr "Nehir"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 186
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 218
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 248
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 262
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 248
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 248
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 248
+#: rc.cpp:30 rc.cpp:102 rc.cpp:144 rc.cpp:202 rc.cpp:370 rc.cpp:470 rc.cpp:526
+msgid "Lake"
+msgstr "Göl"
+
+#. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 195
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 191
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 180
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 210
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 224
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 210
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 199
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 210
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 210
+#: rc.cpp:32 rc.cpp:50 rc.cpp:88 rc.cpp:130 rc.cpp:188 rc.cpp:356 rc.cpp:412
+#: rc.cpp:456 rc.cpp:512
+msgid "Geographic Pole"
+msgstr "Coğrafi Kutup"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 5
+#: rc.cpp:34
+msgid "Earth at Night"
+msgstr "Dünya'nın Gece Görünümü"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 15
+#: rc.cpp:36
+msgid ""
+"This image of <i>Earth's city lights</i> was created with data from the "
+"Defense Meteorological Satellite Program (DMSP) Operational Linescan System "
+"(OLS)."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 182
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 171
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 201
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 215
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 201
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 190
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 201
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 201
+#: rc.cpp:48 rc.cpp:86 rc.cpp:128 rc.cpp:186 rc.cpp:354 rc.cpp:410 rc.cpp:454
+#: rc.cpp:510
+msgid "Volcano"
+msgstr "Volkan"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 195
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 184
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 214
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 228
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 214
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 203
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 214
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 214
+#: rc.cpp:52 rc.cpp:90 rc.cpp:132 rc.cpp:190 rc.cpp:358 rc.cpp:414 rc.cpp:458
+#: rc.cpp:514
+msgid "Magnetic Pole"
+msgstr "Manyetik Kutup"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 199
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 188
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 218
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 232
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 218
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 207
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 218
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 218
+#: rc.cpp:54 rc.cpp:92 rc.cpp:134 rc.cpp:192 rc.cpp:360 rc.cpp:416 rc.cpp:460
+#: rc.cpp:516
+msgid "Airport"
+msgstr "Havaalanı"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 203
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 192
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 222
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 236
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 222
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 211
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 222
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 222
+#: rc.cpp:56 rc.cpp:94 rc.cpp:136 rc.cpp:194 rc.cpp:362 rc.cpp:418 rc.cpp:462
+#: rc.cpp:518
+msgid "Shipwreck"
+msgstr "Gemi Enkazı"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 207
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 196
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 226
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 240
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 226
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 215
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 226
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 226
+#: rc.cpp:58 rc.cpp:96 rc.cpp:138 rc.cpp:196 rc.cpp:364 rc.cpp:420 rc.cpp:464
+#: rc.cpp:520
+msgid "Astronomical Observatory"
+msgstr "Astronomik Gözlem Evi"
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 220
+#: rc.cpp:62
+msgid "Light terrain"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 224
+#: rc.cpp:64
+msgid "Dark terrain"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/citylights/citylights.dgml line 228
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 235
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 253
+#: rc.cpp:66 rc.cpp:108 rc.cpp:434
+msgid "Water"
+msgstr "Su"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 5
+#: rc.cpp:68
+msgid "Plain Map"
+msgstr "Düz Harita"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 15
+#: rc.cpp:70
+msgid ""
+"<p>A <i>plain map</i>.<p>It uses vector lines to mark coastlines and country "
+"borders etc.."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 201
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 231
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 245
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 231
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 220
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 231
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 231
+#: rc.cpp:76 rc.cpp:118 rc.cpp:172 rc.cpp:344 rc.cpp:402 rc.cpp:444 rc.cpp:500
+msgid "Boundaries"
+msgstr "Sınırlar"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 214
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 244
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 258
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 244
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 244
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 244
+#: rc.cpp:78 rc.cpp:120 rc.cpp:174 rc.cpp:346 rc.cpp:446 rc.cpp:502
+msgid "Water Bodies"
+msgstr "Su Kütleleri"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 205
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 235
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 249
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 235
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 224
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 235
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 235
+#: rc.cpp:98 rc.cpp:140 rc.cpp:198 rc.cpp:366 rc.cpp:422 rc.cpp:466 rc.cpp:522
+msgid "International"
+msgstr "Uluslararası"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 209
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 239
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 253
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 239
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 228
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 239
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 239
+#: rc.cpp:100 rc.cpp:142 rc.cpp:200 rc.cpp:368 rc.cpp:424 rc.cpp:468
+#: rc.cpp:524
+msgid "State"
+msgstr "Eyalet"
+
+#. i18n: file ./data/maps/earth/plain/plain.dgml line 231
+#: rc.cpp:106
+msgid "Land"
+msgstr "Kara"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 5
+#: rc.cpp:110
+msgid "Precipitation (July)"
+msgstr "Yağış (Temmuz)"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 15
+#: rc.cpp:112
+msgid ""
+"A map which shows the average precipitation (rain/snow/hail/etc) in July."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 257
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 257
+#: rc.cpp:122 rc.cpp:448
+msgid "Precipitation"
+msgstr "Yağış"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 261
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 261
+#: rc.cpp:148 rc.cpp:474
+msgid "0 mm"
+msgstr "0 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 265
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 265
+#: rc.cpp:150 rc.cpp:476
+msgid "10 mm"
+msgstr "10 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 269
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 269
+#: rc.cpp:152 rc.cpp:478
+msgid "40 mm"
+msgstr "40 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 273
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 273
+#: rc.cpp:154 rc.cpp:480
+msgid "63 mm"
+msgstr "63 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 277
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 277
+#: rc.cpp:156 rc.cpp:482
+msgid "89 mm"
+msgstr "89 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 281
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 281
+#: rc.cpp:158 rc.cpp:484
+msgid "127 mm"
+msgstr "127 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 285
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 285
+#: rc.cpp:160 rc.cpp:486
+msgid "256 mm"
+msgstr "256 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 289
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 289
+#: rc.cpp:162 rc.cpp:488
+msgid "512 mm"
+msgstr "512 mm"
+
+#. i18n: file ./data/maps/earth/precip-july/precip-july.dgml line 293
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 293
+#: rc.cpp:164 rc.cpp:490
+msgid "1024 mm or more"
+msgstr "1024 mm ya da daha fazla"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 5
+#: rc.cpp:166
+msgid "Atlas"
+msgstr "Atlas"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 271
+#: rc.cpp:176
+msgid "Elevation"
+msgstr "Yükseklik"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 340
+#: rc.cpp:178
+msgid "Ice and Glaciers"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 344
+#: rc.cpp:180
+msgid "Relief"
+msgstr "Kabartma"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 275
+#: rc.cpp:206
+msgid "7000 m"
+msgstr "7000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 279
+#: rc.cpp:208
+msgid "5000 m"
+msgstr "5000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 283
+#: rc.cpp:210
+msgid "3500 m"
+msgstr "3500 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 287
+#: rc.cpp:212
+msgid "2000 m"
+msgstr "2000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 291
+#: rc.cpp:214
+msgid "1000 m"
+msgstr "1000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 295
+#: rc.cpp:216
+msgid "500 m"
+msgstr "500 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 299
+#: rc.cpp:218
+msgid "200 m"
+msgstr "200 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 303
+#: rc.cpp:220
+msgid "50 m"
+msgstr "50 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 307
+#: rc.cpp:222
+msgid "0 m"
+msgstr "0 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 311
+#: rc.cpp:224
+msgid "0 m (Water)"
+msgstr "0 m (Su)"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 315
+#: rc.cpp:226
+msgid "-50 m"
+msgstr "-50 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 319
+#: rc.cpp:228
+msgid "-200 m"
+msgstr "-200 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 323
+#: rc.cpp:230
+msgid "-2000 m"
+msgstr "-2000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 327
+#: rc.cpp:232
+msgid "-4000 m"
+msgstr "-4000 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 331
+#: rc.cpp:234
+msgid "-6500 m"
+msgstr "-6500 m"
+
+#. i18n: file ./data/maps/earth/srtm/srtm.dgml line 335
+#: rc.cpp:236
+msgid "-11000 m"
+msgstr "-11000 m"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 6
+#: rc.cpp:238
+msgid "OpenStreetMap"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 11
+#: rc.cpp:240
+msgid ""
+"<p>A <i>global roadmap</i> created by the OpenStreetMap (OSM) project.<p>OSM "
+"is an open community which creates free editable maps. The OSM data was "
+"rendered using Mapnik."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 88
+#: rc.cpp:242
+msgid "Transportation"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 172
+#: rc.cpp:244
+msgid "Areas"
+msgstr "Alanlar"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 92
+#: rc.cpp:250
+msgid "Motorway"
+msgstr "Otoyol"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 96
+#: rc.cpp:252
+msgid "Trunk road"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 100
+#: rc.cpp:254
+msgid "Primary road"
+msgstr "Birincil yol"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 104
+#: rc.cpp:256
+msgid "Secondary road"
+msgstr "İkincil yol"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 108
+#: rc.cpp:258
+msgid "Unclassified road"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 112
+#: rc.cpp:260
+msgid "Unsurfaced road"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 116
+#: rc.cpp:262
+msgid "Track"
+msgstr "İz"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 120
+#: rc.cpp:264
+msgid "Byway"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 124
+#: rc.cpp:266
+msgid "Bridleway"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 128
+#: rc.cpp:268
+msgid "Cycleway"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 132
+#: rc.cpp:270
+msgid "Footway"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 136
+#: rc.cpp:272
+msgid "Railway"
+msgstr "Tren Yolu"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 140
+#: rc.cpp:274
+msgid "Subway"
+msgstr "Metro"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 144
+#: rc.cpp:276
+msgid "Lightrail, tram"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 148
+#: rc.cpp:278
+msgid "Airport runway, taxiway"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 152
+#: rc.cpp:280
+msgid "Airport apron, terminal"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 156
+#: rc.cpp:282
+msgid "Administrative boundary"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 160
+#: rc.cpp:284
+msgid "Bridge"
+msgstr "Köprü"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 164
+#: rc.cpp:286
+msgid "Tunnel"
+msgstr "Tünel"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 168
+#: rc.cpp:288
+msgid "Railway station"
+msgstr "Tren istasyonu"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 176
+#: rc.cpp:290
+msgid "Forest"
+msgstr "Orman"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 180
+#: rc.cpp:292
+msgid "Wood"
+msgstr "Ağaç"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 184
+#: rc.cpp:294
+msgid "Golf course"
+msgstr "Golf sahası"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 188
+#: rc.cpp:296
+msgid "Park"
+msgstr "Park"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 192
+#: rc.cpp:298
+msgid "Residential Area"
+msgstr "Yerleşim Alanı"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 196
+#: rc.cpp:300
+msgid "Tourist attraction"
+msgstr "Turistik"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 200
+#: rc.cpp:302
+msgid "Common, meadow"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 204
+#: rc.cpp:304
+msgid "Retail area"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 208
+#: rc.cpp:306
+msgid "Industrial Area"
+msgstr "Endüstri Bölgesi"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 212
+#: rc.cpp:308
+msgid "Commercial Area"
+msgstr "Ticari Bölge"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 216
+#: rc.cpp:310
+msgid "Heathland"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 220
+#: rc.cpp:312
+msgid "Lake, reservoir"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 224
+#: rc.cpp:314
+msgid "Farm"
+msgstr "Çiftlik"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 228
+#: rc.cpp:316
+msgid "Brownfield site"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 232
+#: rc.cpp:318
+msgid "Cemetery"
+msgstr "Mezarlık"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 236
+#: rc.cpp:320
+msgid "Allotments"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 240
+#: rc.cpp:322
+msgid "Sports pitch"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 244
+#: rc.cpp:324
+msgid "Sports centre"
+msgstr "Spor merkezi"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 248
+#: rc.cpp:326
+msgid "Nature reserve"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 252
+#: rc.cpp:328
+msgid "Military area"
+msgstr "Askeri bölge"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 259
+#: rc.cpp:330
+msgid "School, university"
+msgstr "Okul, üniversite"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 263
+#: rc.cpp:332
+msgid "Significant Building"
+msgstr "Önemli Bina"
+
+#. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 267
+#: rc.cpp:334
+msgid "Summit, peak"
+msgstr ""
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 5
+#: rc.cpp:336
+msgid "Temperature (July)"
+msgstr "Sıcaklık (Temmuz)"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 15
+#: rc.cpp:338
+msgid "A map which shows the average temperature in July."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 257
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 256
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:44
+#. i18n: ectx: property (text), widget (QCheckBox, m_temperatureBox)
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:84
+#. i18n: ectx: property (text), widget (QLabel, m_temperatureLabel)
+#: rc.cpp:348 rc.cpp:504 rc.cpp:1521 rc.cpp:1541
+msgid "Temperature"
+msgstr "Sıcaklık"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 261
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 260
+#: rc.cpp:374 rc.cpp:530
+msgid "42&deg;C"
+msgstr "42&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 265
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 264
+#: rc.cpp:376 rc.cpp:532
+msgid "32&deg;C"
+msgstr "32&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 269
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 268
+#: rc.cpp:378 rc.cpp:534
+msgid "23&deg;C"
+msgstr "23&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 273
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 272
+#: rc.cpp:380 rc.cpp:536
+msgid "12&deg;C"
+msgstr "12&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 277
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 276
+#: rc.cpp:382 rc.cpp:538
+msgid "1&deg;C"
+msgstr "1&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 281
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 280
+#: rc.cpp:384 rc.cpp:540
+msgid "-10&deg;C"
+msgstr "-10&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 285
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 284
+#: rc.cpp:386 rc.cpp:542
+msgid "-21&deg;C"
+msgstr "-21&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 289
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 288
+#: rc.cpp:388 rc.cpp:544
+msgid "-32&deg;C"
+msgstr "-32&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 293
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 292
+#: rc.cpp:390 rc.cpp:546
+msgid "-41&deg;C"
+msgstr "-41&deg;C"
+
+#. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 297
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 296
+#: rc.cpp:392 rc.cpp:548
+msgid "-69&deg;C"
+msgstr "-69&deg;C"
+
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 5
+#: rc.cpp:394
+msgid "Satellite View"
+msgstr "Uydu Görünümü"
+
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 15
+#: rc.cpp:396
+msgid ""
+"<p>Earth as seen from Space.<p>The map is based on NASA's beautiful \"Blue "
+"Marble Next Generation\" pictures. Credits: NASA's Earth Observatory "
+msgstr ""
+
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 237
+#: rc.cpp:426
+msgid "Ice"
+msgstr "Buz"
+
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 245
+#: rc.cpp:430
+msgid "Vegetation"
+msgstr "Bitki Örtüsü"
+
+#. i18n: file ./data/maps/earth/bluemarble/bluemarble.dgml line 249
+#: rc.cpp:432
+msgid "Desert"
+msgstr "Çöl"
+
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 5
+#: rc.cpp:436
+msgid "Precipitation (December)"
+msgstr "Yağış (Aralık)"
+
+#. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 15
+#: rc.cpp:438
+msgid "A map which shows the average precipitation in December."
+msgstr ""
+
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 5
+#: rc.cpp:492
+msgid "Temperature (December)"
+msgstr "Sıcaklık (Aralık Ayı)"
+
+#. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 15
+#: rc.cpp:494
+msgid "A map which shows the average temperature in December."
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 5
+#: rc.cpp:550
+msgid "Moon"
+msgstr "Ay"
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 15
+#: rc.cpp:552
+msgid ""
+"<p>The moon.<p>The map is based on data from the Clementine Moon mission "
+"(UVVIS Basemap Mosaic). Credits: NASA/SDIO, Courtesy <a href=\"http://"
+"astrogeology.usgs.gov\">USGS Astrogeology Research Program</a>"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 114
+#: rc.cpp:554
+msgid "Landing Sites"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 134
+#: rc.cpp:556
+msgid "Craters"
+msgstr "Kraterler"
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 143
+#: rc.cpp:558
+msgid "Maria"
+msgstr "Aydaki karanlık düzlük"
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 147
+#: rc.cpp:560
+msgid "Other features"
+msgstr "Diğer özellikler"
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 117
+#: rc.cpp:566
+msgid "Manned landing site"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 121
+#: rc.cpp:568
+msgid "Robotic rover"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 125
+#: rc.cpp:570
+msgid "Unmanned soft landing"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 129
+#: rc.cpp:572
+msgid "Unmanned hard landing"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 138
+#: rc.cpp:574
+msgid "Crater, impact crater"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 151
+#: rc.cpp:576
+msgid "Mons, mountain"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 155
+#: rc.cpp:578
+msgid "Vallis, valley"
+msgstr ""
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 159
+#: rc.cpp:580
+msgid "Other"
+msgstr "Diğer"
+
+#. i18n: file ./data/maps/moon/clementine/clementine.dgml line 169
+#: rc.cpp:582
+msgid "Selenographic Pole"
+msgstr ""
+
+#. i18n: file ./data/legend.html
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:310
+#. i18n: ectx: property (text), widget (QLabel, population_lbl)
+#: rc.cpp:586 rc.cpp:1374
+msgid "Population:"
+msgstr "Nüfus:"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:588
+msgid "&gt; 1&nbsp;000&nbsp;000"
+msgstr "&gt; 1&nbsp;000&nbsp;000"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:590
+msgid "&ge; 100&nbsp;000"
+msgstr "&ge; 100&nbsp;000"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:592
+msgid "&ge; 10&nbsp;000"
+msgstr "&ge; 10&nbsp;000"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:594
+msgid "&lt; 10&nbsp;000"
+msgstr "&lt; 10&nbsp;000"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:596
+msgid "Capitals:"
+msgstr "Başkentler:"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:598
+msgid "Red:&nbsp;Nation"
+msgstr "Kırmızı:&nbsp;Ulus"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:600
+msgid "Orange:&nbsp;State"
+msgstr "Turuncu:&nbsp;Eyalet"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:602
+msgid "Yellow:&nbsp;County"
+msgstr "Sarı:&nbsp;Ülke"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:604
+msgid "White:&nbsp;None"
+msgstr "Beyaz:&nbsp;Hiçbiri"
+
+#. i18n: file ./data/legend.html
+#: rc.cpp:606
+msgid "<!-- ##customLegendEntries:all## -->"
+msgstr "<!-- ##customLegendEntries:all## -->"
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, MarbleNavigationSettingsWidget)
+#: rc.cpp:609
+msgid "Marble Cache Settings"
+msgstr "Marble Önbellek Ayarları"
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:33
+#. i18n: ectx: property (text), widget (QLabel, label_dragLocation)
+#: rc.cpp:612
+msgid "&Drag location:"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:50
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_dragLocation)
+#: rc.cpp:615
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">While dragging the mouse "
+"there are two standard behaviours when dealing with a virtual globe:</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The location below mouse "
+"pointer will follow the cursor exactly: As a result e.g. the north pole will "
+"not stay at the top which can lead to confusion. By default Marble makes "
+"sure that north is always up which results in a dragging behaviour where the "
+"location below the mouse pointer slightly \"detaches\" from the cursor. </"
+"p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:54
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: rc.cpp:622
+msgid "Keep Planet Axis Vertically"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:59
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_dragLocation)
+#: rc.cpp:625
+msgid "Follow Mouse Pointer"
+msgstr "Fare İşaretçisini İzle"
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:79
+#. i18n: ectx: property (text), widget (QLabel, label_onStartup)
+#: rc.cpp:628
+msgid "&On startup:"
+msgstr "&Başlangıçta:"
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:92
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_onStartup)
+#: rc.cpp:631
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">By default Marble will "
+"display the home location immediately after the application has started. As "
+"an alternative it can also show the last position that was active when the "
+"user left the application. </p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:96
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: rc.cpp:637
+msgid "Show Home Location"
+msgstr "Ev Konumunu Göster"
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:101
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
+#: rc.cpp:640
+msgid "Return to Last Location Visited"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:114
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: rc.cpp:643
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">When searching for a "
+"location Marble can either move instantly to the new location or it can show "
+"a travel animation from the previous place to the new place.</p></body></"
+"html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:117
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_animateTargetVoyage)
+#: rc.cpp:649
+msgid "&Animate voyage to the target"
+msgstr ""
+
+#. i18n: file: src/lib/MarblePluginSettingsWidget.ui:23
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_plugins)
+#: rc.cpp:652
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">This is Marble's machine room for advanced users. "
+"Here you can select and deselect the functionality that is provided through "
+"plugins. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Deselecting a plugin will remove the functionality "
+"from the map, menus and toolbars. </span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Also some of the plugins might allow for tweaking "
+"their configuration a bit. </span></p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarblePluginSettingsWidget.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_plugins)
+#: rc.cpp:661
+msgid "P&lugins"
+msgstr "&Eklentiler"
+
+#. i18n: file: src/lib/LatLonEdit.ui:25
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_deg)
+#: rc.cpp:664
+msgid "°"
+msgstr "°"
+
+#. i18n: file: src/lib/LatLonEdit.ui:35
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_min)
+#: rc.cpp:667
+msgid "′"
+msgstr "′"
+
+#. i18n: file: src/lib/LatLonEdit.ui:51
+#. i18n: ectx: property (suffix), widget (QSpinBox, m_sec)
+#: rc.cpp:670
+msgid "″"
+msgstr "″"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_units)
+#: rc.cpp:673
+msgid "&Units"
+msgstr "&Birimler"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_distanceUnit)
+#: rc.cpp:676
+msgid "&Distance:"
+msgstr "&Mesafe:"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:57
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_distanceUnit)
+#: rc.cpp:679
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit that gets used to "
+"measure altitude, lengths and distances (e.g. km, mi, ft).</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:61
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: rc.cpp:685
+msgid "Kilometer, Meter"
+msgstr "Kilometre, Metre"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:66
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_distanceUnit)
+#: rc.cpp:688
+msgid "Miles, Feet"
+msgstr "Mil, Fit"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:80
+#. i18n: ectx: property (text), widget (QLabel, label_angleUnit)
+#: rc.cpp:691
+msgid "An&gle:"
+msgstr "&Açı:"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:96
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_angleUnit)
+#: rc.cpp:694
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the notation of "
+"angles in coordinates: By default the Degree-Minute-Second notation (e.g. 54°"
+"30'00\" ) gets used. As an alternative you can choose decimal degrees (e.g. "
+"54.5°).</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:100
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: rc.cpp:700
+msgid "Degree (DMS)"
+msgstr "Derece (DMS)"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:105
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_angleUnit)
+#: rc.cpp:703
+msgid "Degree (Decimal)"
+msgstr "Derece (Onluk)"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:116
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_mapQuality)
+#: rc.cpp:706
+msgid "Map &Quality"
+msgstr "Harita &Kalitesi"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:134
+#. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
+#: rc.cpp:709
+msgid "&Still image:"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:147
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
+#: rc.cpp:712
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed while there is no user input. Usually this allows for "
+"high map quality as speed is no concern.</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:154
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:209
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:718 rc.cpp:743
+msgid "Outline Quality"
+msgstr "Çerçeve Kalitesi"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:159
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:214
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:721 rc.cpp:746
+msgid "Low Quality"
+msgstr "Düşük Kalite"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:164
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:219
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:724 rc.cpp:749
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:169
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:224
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:727 rc.cpp:752
+msgid "High Quality"
+msgstr "Yüksek Kalite"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:174
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_stillQuality)
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:229
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:730 rc.cpp:755
+msgid "Print Quality"
+msgstr "Yazdırma Kalitesi"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:188
+#. i18n: ectx: property (text), widget (QLabel, label_animationQuality)
+#: rc.cpp:733
+msgid "During &animations:"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:202
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_animationQuality)
+#: rc.cpp:736
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Specifies the map quality "
+"that gets displayed during map animations (e.g. while dragging the globe). </"
+"p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Especially on slow "
+"machines it is advisable to set this option to \"low quality\" as this will "
+"give better speed.</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:237
+#. i18n: ectx: property (text), widget (QLabel, label_graphicsSystem)
+#: rc.cpp:758
+msgid "G&raphics system:"
+msgstr "&Grafik sistemi:"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:248
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_graphicsSystem)
+#: rc.cpp:761
+msgid ""
+"Specifies the graphics system that Qt uses to draw the map.\n"
+"Changing this setting might be a good idea if there are performance issues "
+"with the system's graphics drivers."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:257
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
+#: rc.cpp:768
+msgid "Raster (Software rendering)"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:262
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
+#: rc.cpp:771
+msgid "OpenGL"
+msgstr "OpenGL"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:289
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_textLabels)
+#: rc.cpp:774
+msgid "&Text Labels"
+msgstr "&Metin Etiketleri"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:309
+#. i18n: ectx: property (text), widget (QLabel, label_labelLocalization)
+#: rc.cpp:777
+msgid "&Place names:"
+msgstr "&Yer isimleri:"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:325
+#. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_labelLocalization)
+#: rc.cpp:780
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Places often have "
+"different names in different languages. The label on the map can show the "
+"name in the user's language. Alternatively it can display the name in the "
+"official language and glyphs of that place. </p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:329
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: rc.cpp:786
+msgid "Custom & Native Language"
+msgstr "Özel & Doğal Dil"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:334
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: rc.cpp:789
+msgid "Custom Language"
+msgstr "Özel Dil"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:339
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
+#: rc.cpp:792
+msgid "Native Language"
+msgstr "Doğal Dil"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:363
+#. i18n: ectx: property (text), widget (QLabel, label_mapFont)
+#: rc.cpp:795
+msgid "Default map &font:"
+msgstr "Öntanımlı harita &yazı tipi:"
+
+#. i18n: file: src/lib/MarbleViewSettingsWidget.ui:376
+#. i18n: ectx: property (toolTip), widget (QFontComboBox, kcfg_mapFont)
+#: rc.cpp:798
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The default font that gets "
+"used on the map.</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/TileCreatorDialog.ui:20
+#. i18n: ectx: property (windowTitle), widget (QDialog, TileCreatorDialog)
+#: rc.cpp:804
+msgid "Creating Map"
+msgstr "Harita Oluşturuluyor"
+
+#. i18n: file: src/lib/TileCreatorDialog.ui:507
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: rc.cpp:807
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /></head><body style=\" "
+"white-space: pre-wrap; font-family:Sans Serif; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\"><p style=\" margin-"
+"top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-"
+"indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Satellite "
+"View</span></p><p style=\" margin-top:0px; margin-bottom:0px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Earth as "
+"seen from Space. The map is based on NASA's beautiful \"Blue Marble Next "
+"Generation\" pictures. Credits: NASA's Earth Observatory</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/TileCreatorDialog.ui:517
+#. i18n: ectx: property (text), widget (QLabel, messageLabel)
+#: rc.cpp:810
+msgid ""
+"Marble needs to create this map. This only needs to be done once and may "
+"take a few seconds."
+msgstr ""
+
+#. i18n: file: src/lib/TileCreatorDialog.ui:555
+#. i18n: ectx: property (text), widget (QPushButton, cancelButton)
+#: rc.cpp:813
+msgid "&Cancel"
+msgstr "İp&tal"
+
+#. i18n: file: src/lib/SunControlWidget.ui:19
+#. i18n: ectx: property (windowTitle), widget (QWidget, SunControlWidget)
+#: rc.cpp:816
+msgid "Sun Control"
+msgstr "Güneş Denetimi"
+
+#. i18n: file: src/lib/SunControlWidget.ui:25
+#. i18n: ectx: property (title), widget (QGroupBox, speedGroupBox)
+#: rc.cpp:819
+msgid "&Speed"
+msgstr "&Hız"
+
+#. i18n: file: src/lib/SunControlWidget.ui:47
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: rc.cpp:822
+msgid "1x"
+msgstr "1x"
+
+#. i18n: file: src/lib/SunControlWidget.ui:57
+#. i18n: ectx: property (title), widget (QGroupBox, dateGroupBox)
+#: rc.cpp:825
+msgid "&Date"
+msgstr "&Tarih"
+
+#. i18n: file: src/lib/SunControlWidget.ui:82
+#. i18n: ectx: property (title), widget (QGroupBox, timeGroupBox)
+#: rc.cpp:828
+msgid "&Time"
+msgstr "&Saat"
+
+#. i18n: file: src/lib/SunControlWidget.ui:93
+#. i18n: ectx: property (toolTip), widget (QTimeEdit, timeEdit)
+#. i18n: file: src/lib/SunControlWidget.ui:112
+#. i18n: ectx: property (toolTip), widget (QSlider, timeSlider)
+#: rc.cpp:831 rc.cpp:840
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Change sun time</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/SunControlWidget.ui:100
+#. i18n: ectx: property (text), widget (QToolButton, nowToolButton)
+#: rc.cpp:837
+msgid "Now"
+msgstr "Şimdi"
+
+#. i18n: file: src/lib/SunControlWidget.ui:128
+#. i18n: ectx: property (title), widget (QGroupBox, sunGroupBox)
+#: rc.cpp:846
+msgid "S&un"
+msgstr "&Güneş"
+
+#. i18n: file: src/lib/SunControlWidget.ui:136
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:849
+msgid "Sun sh&ading:"
+msgstr ""
+
+#. i18n: file: src/lib/SunControlWidget.ui:147
+#. i18n: ectx: property (text), item, widget (QComboBox, sunShadingComboBox)
+#: rc.cpp:852
+msgid "Shadow"
+msgstr "Gölge"
+
+#. i18n: file: src/lib/SunControlWidget.ui:152
+#. i18n: ectx: property (text), item, widget (QComboBox, sunShadingComboBox)
+#: rc.cpp:855
+msgid "Night Map"
+msgstr "Gece Haritası"
+
+#. i18n: file: src/lib/SunControlWidget.ui:167
+#. i18n: ectx: property (toolTip), widget (QToolButton, centerToolButton)
+#: rc.cpp:858
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Center the map on sun "
+"position</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/SunControlWidget.ui:170
+#. i18n: ectx: property (text), widget (QToolButton, centerToolButton)
+#: rc.cpp:864
+msgid "&Center"
+msgstr "&Orta"
+
+#. i18n: file: src/lib/SunControlWidget.ui:189
+#. i18n: ectx: property (toolTip), widget (QToolButton, showToolButton)
+#: rc.cpp:867
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Display sun position</p></"
+"body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/SunControlWidget.ui:192
+#. i18n: ectx: property (text), widget (QToolButton, showToolButton)
+#: rc.cpp:873
+msgid "Sh&ow"
+msgstr "&Göster"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:62
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveUpButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:267
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveUpButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:90
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveUpButton)
+#: rc.cpp:876 rc.cpp:1135 rc.cpp:1459
+msgid "Up"
+msgstr "Yukarı"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:65
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveUpButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:270
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveUpButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:93
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveUpButton)
+#: rc.cpp:879 rc.cpp:1138 rc.cpp:1462
+msgid "Tilts the earth's axis towards the user."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:68
+#. i18n: ectx: property (text), widget (QToolButton, moveUpButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:84
+#. i18n: ectx: property (text), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:103
+#. i18n: ectx: property (text), widget (QToolButton, goHomeButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:122
+#. i18n: ectx: property (text), widget (QToolButton, moveRightButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:141
+#. i18n: ectx: property (text), widget (QToolButton, moveDownButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:157
+#. i18n: ectx: property (text), widget (QToolButton, zoomInButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:215
+#. i18n: ectx: property (text), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:216
+#. i18n: ectx: property (text), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:236
+#. i18n: ectx: property (text), widget (QToolButton, goHomeButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:256
+#. i18n: ectx: property (text), widget (QToolButton, moveRightButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:273
+#. i18n: ectx: property (text), widget (QToolButton, moveUpButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:330
+#. i18n: ectx: property (text), widget (QToolButton, zoomInButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:350
+#. i18n: ectx: property (text), widget (QToolButton, moveDownButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:367
+#. i18n: ectx: property (text), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:39
+#. i18n: ectx: property (text), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:59
+#. i18n: ectx: property (text), widget (QToolButton, goHomeButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:79
+#. i18n: ectx: property (text), widget (QToolButton, moveRightButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:96
+#. i18n: ectx: property (text), widget (QToolButton, moveUpButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:153
+#. i18n: ectx: property (text), widget (QToolButton, zoomInButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:173
+#. i18n: ectx: property (text), widget (QToolButton, moveDownButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:190
+#. i18n: ectx: property (text), widget (QToolButton, moveLeftButton)
+#: rc.cpp:882 rc.cpp:891 rc.cpp:903 rc.cpp:915 rc.cpp:927 rc.cpp:936
+#: rc.cpp:954 rc.cpp:1108 rc.cpp:1120 rc.cpp:1132 rc.cpp:1141 rc.cpp:1156
+#: rc.cpp:1168 rc.cpp:1177 rc.cpp:1432 rc.cpp:1444 rc.cpp:1456 rc.cpp:1465
+#: rc.cpp:1480 rc.cpp:1492 rc.cpp:1501
+msgid "..."
+msgstr "..."
+
+#. i18n: file: src/lib/MarbleNavigator.ui:78
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:90
+#. i18n: ectx: property (shortcut), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:361
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:184
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveLeftButton)
+#: rc.cpp:885 rc.cpp:894 rc.cpp:1171 rc.cpp:1495
+msgid "Left"
+msgstr "Sol"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:81
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:364
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveLeftButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:187
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveLeftButton)
+#: rc.cpp:888 rc.cpp:1174 rc.cpp:1498
+msgid "Rotates the earth counterclockwise around its axis."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:97
+#. i18n: ectx: property (toolTip), widget (QToolButton, goHomeButton)
+#: rc.cpp:897
+msgid "Reset View"
+msgstr "Görünümü Sıfırla"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:100
+#. i18n: ectx: property (whatsThis), widget (QToolButton, goHomeButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:233
+#. i18n: ectx: property (whatsThis), widget (QToolButton, goHomeButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:56
+#. i18n: ectx: property (whatsThis), widget (QToolButton, goHomeButton)
+#: rc.cpp:900 rc.cpp:1117 rc.cpp:1441
+msgid "Click this button to restore the original zoom level and view angle."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:109
+#. i18n: ectx: property (shortcut), widget (QToolButton, goHomeButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:243
+#. i18n: ectx: property (shortcut), widget (QToolButton, goHomeButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:66
+#. i18n: ectx: property (shortcut), widget (QToolButton, goHomeButton)
+#: rc.cpp:906 rc.cpp:1123 rc.cpp:1447
+msgid "Home"
+msgstr "Ev"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:116
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveRightButton)
+#. i18n: file: src/lib/MarbleNavigator.ui:128
+#. i18n: ectx: property (shortcut), widget (QToolButton, moveRightButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:250
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveRightButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:73
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveRightButton)
+#: rc.cpp:909 rc.cpp:918 rc.cpp:1126 rc.cpp:1450
+msgid "Right"
+msgstr "Sağ"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:119
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveRightButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:253
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveRightButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:76
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveRightButton)
+#: rc.cpp:912 rc.cpp:1129 rc.cpp:1453
+msgid "Rotates the earth clockwise around its axis."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:135
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveDownButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:344
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveDownButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:167
+#. i18n: ectx: property (toolTip), widget (QToolButton, moveDownButton)
+#: rc.cpp:921 rc.cpp:1162 rc.cpp:1486
+msgid "Down"
+msgstr "Aşağı"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:138
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveDownButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:347
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveDownButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:170
+#. i18n: ectx: property (whatsThis), widget (QToolButton, moveDownButton)
+#: rc.cpp:924 rc.cpp:1165 rc.cpp:1489
+msgid "Tilts the earth's axis away from the user."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:151
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomInButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:324
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomInButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:147
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomInButton)
+#: rc.cpp:930 rc.cpp:1150 rc.cpp:1474
+msgid "Zoom In"
+msgstr "Büyüt"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:154
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomInButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:327
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomInButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:150
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomInButton)
+#: rc.cpp:933 rc.cpp:1153 rc.cpp:1477
+msgid "Zoom in by pressing this button to see more detail."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:163
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomInButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:337
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomInButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:160
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomInButton)
+#: rc.cpp:939 rc.cpp:1159 rc.cpp:1483
+msgid "+"
+msgstr "+"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:178
+#. i18n: ectx: property (toolTip), widget (QSlider, zoomSlider)
+#. i18n: file: src/lib/MarbleControlBox.ui:290
+#. i18n: ectx: property (toolTip), widget (QSlider, zoomSlider)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:113
+#. i18n: ectx: property (toolTip), widget (QSlider, zoomSlider)
+#: rc.cpp:942 rc.cpp:1144 rc.cpp:1468
+msgid "Zoom Slider"
+msgstr "Boyutlandırma Kaydırma Çubuğu"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:181
+#. i18n: ectx: property (whatsThis), widget (QSlider, zoomSlider)
+#. i18n: file: src/lib/MarbleControlBox.ui:293
+#. i18n: ectx: property (whatsThis), widget (QSlider, zoomSlider)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:116
+#. i18n: ectx: property (whatsThis), widget (QSlider, zoomSlider)
+#: rc.cpp:945 rc.cpp:1147 rc.cpp:1471
+msgid "Use this slider to adjust the zoom level of the map."
+msgstr ""
+"Haritanın büyütme oranını ayarlamak için bu kaydırma çubuğunu kullanın."
+
+#. i18n: file: src/lib/MarbleNavigator.ui:209
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:210
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:33
+#. i18n: ectx: property (toolTip), widget (QToolButton, zoomOutButton)
+#: rc.cpp:948 rc.cpp:1102 rc.cpp:1426
+msgid "Zoom Out"
+msgstr "Küçült"
+
+#. i18n: file: src/lib/MarbleNavigator.ui:212
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:213
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:36
+#. i18n: ectx: property (whatsThis), widget (QToolButton, zoomOutButton)
+#: rc.cpp:951 rc.cpp:1105 rc.cpp:1429
+msgid "Zoom out by pressing this button to see less detail."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleNavigator.ui:221
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/lib/MarbleControlBox.ui:223
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomOutButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:46
+#. i18n: ectx: property (shortcut), widget (QToolButton, zoomOutButton)
+#: rc.cpp:957 rc.cpp:1111 rc.cpp:1435
+msgid "-"
+msgstr "-"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QDialog, MarbleAboutDialog)
+#: rc.cpp:960
+msgid "About Marble"
+msgstr "Marble Hakkında"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:52
+#. i18n: ectx: property (text), widget (QLabel, m_pMarbleTitleLabel)
+#: rc.cpp:963
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Marble Desktop Globe</span></p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:59
+#. i18n: ectx: property (text), widget (QLabel, m_pMarbleVersionLabel)
+#: rc.cpp:969
+msgid "Version Unknown"
+msgstr "Sürüm Bilinmiyor"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:86
+#. i18n: ectx: attribute (title), widget (QWidget, m_aboutTab)
+#: rc.cpp:972
+msgid "&About"
+msgstr "&Hakkında"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:105
+#. i18n: ectx: property (html), widget (QTextBrowser, m_pMarbleAboutBrowser)
+#: rc.cpp:975
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">(c) 2007, The Marble Project</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt; font-style:italic;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">http://edu.kde.org/marble</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">(c) 2007, Marble Projesi</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt; font-style:italic;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">http://edu.kde.org/marble</span></p></body></html>"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:116
+#. i18n: ectx: attribute (title), widget (QWidget, m_authorsTab)
+#: rc.cpp:985
+msgid "A&uthors"
+msgstr "Y&azarlar"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:132
+#. i18n: ectx: property (html), widget (QTextBrowser, m_pMarbleAuthorsBrowser)
+#. i18n: file: src/lib/MarbleAboutDialog.ui:159
+#. i18n: ectx: property (html), widget (QTextBrowser, m_pMarbleDataBrowser)
+#: rc.cpp:988 rc.cpp:998
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt;\"></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"size:9pt;\"></p></body></html>"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:143
+#. i18n: ectx: attribute (title), widget (QWidget, m_dataTab)
+#: rc.cpp:995
+msgid "&Data"
+msgstr "&Veri"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:170
+#. i18n: ectx: attribute (title), widget (QWidget, m_licenseTab)
+#: rc.cpp:1005
+msgid "&License Agreement"
+msgstr "&Lisans Anlaşması"
+
+#. i18n: file: src/lib/MarbleAboutDialog.ui:186
+#. i18n: ectx: property (html), widget (QTextBrowser, m_pMarbleLicenseBrowser)
+#: rc.cpp:1008
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'MS Shell Dlg 2'; font-size:8pt;\"></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'MS Shell Dlg 2'; font-size:8pt;\"></p></body></html>"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:20
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_cache)
+#: rc.cpp:1015
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">There are two caches being "
+"used for Marble: The physical memory which is needed to keep map data in the "
+"computer's memory. Increasing the value will make the application more "
+"responsive. The hard disc memory cache is used by download contents from the "
+"Internet (e.g. Wikipedia data or map data). Decrease this value if you want "
+"to save space on the hard disc and if high usage of the Internet is not an "
+"issue. </p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:23
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_cache)
+#: rc.cpp:1021
+msgid "C&ache"
+msgstr "Ön&bellek"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label_volatileCache)
+#: rc.cpp:1024
+msgid "&Physical memory:"
+msgstr "&Fiziksel bellek:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:64
+#. i18n: ectx: property (text), widget (QLabel, label_MBVolatileCache)
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:141
+#. i18n: ectx: property (text), widget (QLabel, label_MBPersistentCache)
+#: rc.cpp:1027 rc.cpp:1039
+msgid "MB"
+msgstr "MB"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:77
+#. i18n: ectx: property (text), widget (QPushButton, button_clearVolatileCache)
+#: rc.cpp:1030
+msgid "C&lear"
+msgstr "&Temizle"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:109
+#. i18n: ectx: property (text), widget (QLabel, label_persistentCache)
+#: rc.cpp:1033
+msgid "&Hard disc:"
+msgstr "&Sabit disk:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:128
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, kcfg_persistentTileCacheLimit)
+#: rc.cpp:1036
+msgid "Unlimited"
+msgstr "Sınırsız"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:154
+#. i18n: ectx: property (text), widget (QPushButton, button_clearPersistentCache)
+#: rc.cpp:1042
+msgid "Cl&ear"
+msgstr "&Temizle"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:180
+#. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_proxy)
+#: rc.cpp:1045
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Proxy settings for your "
+"local intranet. Please leave empty if there is no proxy.</p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:183
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_proxy)
+#: rc.cpp:1051
+msgid "&Proxy"
+msgstr "&Vekil Sunucu"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:191
+#. i18n: ectx: property (text), widget (QLabel, label_proxyUrl)
+#: rc.cpp:1054
+msgid "&Url:"
+msgstr "&Adres:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:201
+#. i18n: ectx: property (text), widget (QLineEdit, kcfg_proxyUrl)
+#: rc.cpp:1057
+msgid "http://"
+msgstr "http://"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:208
+#. i18n: ectx: property (text), widget (QLabel, label_proxyPort)
+#: rc.cpp:1060
+msgid "P&ort:"
+msgstr "P&ort:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:248
+#. i18n: ectx: property (text), widget (QLabel, label_proxyType)
+#: rc.cpp:1063
+msgid "Proxy type:"
+msgstr "Vekil sunucu tipi:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:258
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: rc.cpp:1066
+msgid "Http"
+msgstr "Http"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:263
+#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_proxyType)
+#: rc.cpp:1069
+msgid "Socks5"
+msgstr "Socks5"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:286
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_proxyAuth)
+#: rc.cpp:1072
+msgid "Requires authentication"
+msgstr "Kimlik doğrulaması gerektiriyor"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:309
+#. i18n: ectx: property (text), widget (QLabel, label_username)
+#: rc.cpp:1075
+msgid "U&sername:"
+msgstr "&Kullanıcı adı:"
+
+#. i18n: file: src/lib/MarbleCacheSettingsWidget.ui:342
+#. i18n: ectx: property (text), widget (QLabel, label_password)
+#: rc.cpp:1078
+msgid "&Password:"
+msgstr "&Parola:"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:53
+#. i18n: ectx: property (whatsThis), widget (QToolBox, toolBox)
+#: rc.cpp:1081
+msgid ""
+"This control panel allows you to adjust the map according to your needs."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:95
+#. i18n: ectx: property (text), widget (QLabel, label_2_2)
+#: rc.cpp:1087
+msgid "&Search"
+msgstr "&Ara"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:111
+#. i18n: ectx: property (toolTip), widget (QLineEdit, searchLineEdit)
+#: rc.cpp:1090
+msgid "Search line"
+msgstr "Arama satırı"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:114
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, searchLineEdit)
+#: rc.cpp:1093
+msgid "Here you can enter the name of the location you are searching for."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:142
+#. i18n: ectx: property (toolTip), widget (MarbleSearchListView, locationListView)
+#: rc.cpp:1096
+msgid "Location Browser"
+msgstr "Konum Tarayıcı"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:145
+#. i18n: ectx: property (whatsThis), widget (MarbleSearchListView, locationListView)
+#: rc.cpp:1099
+msgid "Double click an entry of this list to get it displayed on the map."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:230
+#. i18n: ectx: property (toolTip), widget (QToolButton, goHomeButton)
+#. i18n: file: src/plugins/render/navigation/navigation.ui:53
+#. i18n: ectx: property (toolTip), widget (QToolButton, goHomeButton)
+#: rc.cpp:1114 rc.cpp:1438
+msgid "Navigate to your 'Home Location'"
+msgstr "'Ev Konumunuza' Gidin"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:435
+#. i18n: ectx: attribute (label), widget (QWidget, LegendTab)
+#: rc.cpp:1180
+msgid "Legend"
+msgstr "Uzunluk"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:463
+#. i18n: ectx: attribute (label), widget (QWidget, MapViewTab)
+#: rc.cpp:1183
+msgid "Map View"
+msgstr "Harita Görünümü"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:469
+#. i18n: ectx: property (text), widget (QLabel, projectionLabel_2)
+#: rc.cpp:1186
+msgid "&Projection"
+msgstr "&Projeksiyon"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:483
+#. i18n: ectx: property (text), item, widget (QComboBox, projectionComboBox)
+#: rc.cpp:1189
+msgid "Globe"
+msgstr "Küre"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:492
+#. i18n: ectx: property (text), item, widget (QComboBox, projectionComboBox)
+#: rc.cpp:1192
+msgid "Flat Map"
+msgstr "Düz Harita"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:501
+#. i18n: ectx: property (text), item, widget (QComboBox, projectionComboBox)
+#. i18n: file: src/plasmoid/worldclockConfig.ui:79
+#. i18n: ectx: property (text), item, widget (QComboBox, projection)
+#: rc.cpp:1195 rc.cpp:1619
+msgid "Mercator"
+msgstr "Merkator"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:523
+#. i18n: ectx: property (text), widget (QLabel, celestialBodyLabel)
+#: rc.cpp:1198
+msgid "&Celestial Body"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:556
+#. i18n: ectx: property (text), widget (QLabel, mapThemeLabel)
+#: rc.cpp:1201
+msgid "&Theme"
+msgstr "&Tema"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:572
+#. i18n: ectx: property (whatsThis), widget (MarbleThemeSelectView, marbleThemeSelectView)
+#: rc.cpp:1204
+msgid "Here you can choose the preferred map view from different topics."
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:594
+#. i18n: ectx: attribute (label), widget (QWidget, FileViewTab)
+#: rc.cpp:1207
+msgid "File View"
+msgstr "Dosya Görünümü"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:633
+#. i18n: ectx: property (text), widget (QPushButton, m_saveButton)
+#: rc.cpp:1210
+msgid "&Save"
+msgstr "Kay&det"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:643
+#. i18n: ectx: property (text), widget (QPushButton, m_closeButton)
+#: rc.cpp:1213
+msgid "&Close"
+msgstr "K&apat"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:661
+#. i18n: ectx: attribute (label), widget (QWidget, CurrentLocationTab)
+#: rc.cpp:1216
+msgid "Current Location"
+msgstr "Geçerli Konum"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:667
+#. i18n: ectx: property (toolTip), widget (QCheckBox, navigationCheckBox)
+#: rc.cpp:1219
+msgid "Centers onto your current position"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:670
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, navigationCheckBox)
+#: rc.cpp:1222
+msgid ""
+"In navigation mode the view will center onto your current position and will "
+"try to emulate the behaviour of a navigation system"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:673
+#. i18n: ectx: property (text), widget (QCheckBox, navigationCheckBox)
+#: rc.cpp:1225
+msgid "Navigation mode"
+msgstr "Gezinme Kipi"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:680
+#. i18n: ectx: property (toolTip), widget (QGroupBox, speedGroupBox)
+#. i18n: file: src/lib/MarbleControlBox.ui:698
+#. i18n: ectx: property (toolTip), widget (QLabel, speedLabel)
+#: rc.cpp:1228 rc.cpp:1237
+msgid "Your current speed"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:683
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, speedGroupBox)
+#: rc.cpp:1231
+msgid "Your current speed (measured e.g. via a GPS device)"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:686
+#. i18n: ectx: property (title), widget (QGroupBox, speedGroupBox)
+#: rc.cpp:1234
+msgid "Speed"
+msgstr "Hız"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:714
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: rc.cpp:1240
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">000,0 km/h</span></p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:10pt; "
+"font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">000,0 km/h</span></p></body></html>"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:736
+#. i18n: ectx: property (toolTip), widget (QGroupBox, positionGroupBox)
+#: rc.cpp:1247
+msgid "Your current position"
+msgstr "Şimdiki konumunuz"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:739
+#. i18n: ectx: property (whatsThis), widget (QGroupBox, positionGroupBox)
+#: rc.cpp:1250
+msgid "Your current position (measured e.g. via a GPS device)"
+msgstr ""
+
+#. i18n: file: src/lib/MarbleControlBox.ui:742
+#. i18n: ectx: property (title), widget (QGroupBox, positionGroupBox)
+#: rc.cpp:1253
+msgid "Position"
+msgstr "Konum"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:754
+#. i18n: ectx: property (toolTip), widget (QLabel, positionLabel)
+#: rc.cpp:1256
+msgid "Fuzzy description of your position"
+msgstr "Konumunuzun bulanık açıklaması"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:763
+#. i18n: ectx: property (text), widget (QLabel, positionLabel)
+#: rc.cpp:1259
+msgid "<b>Unidentified Position</b>"
+msgstr "<b>Tanımlanmamış Konum</b>"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:791
+#. i18n: ectx: property (toolTip), widget (QLabel, longitudeLabel)
+#. i18n: file: src/lib/MarbleControlBox.ui:801
+#. i18n: ectx: property (toolTip), widget (QLabel, longitudeValue)
+#: rc.cpp:1262 rc.cpp:1268
+msgid "Longitude of your current position"
+msgstr "Şimdiki konumunuzun boylamı"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:794
+#. i18n: ectx: property (text), widget (QLabel, longitudeLabel)
+#: rc.cpp:1265
+msgid "Longitude"
+msgstr "Boylam"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:804
+#. i18n: ectx: property (text), widget (QLabel, longitudeValue)
+#: rc.cpp:1271
+msgid "+00°00'00\" E"
+msgstr "+00°00'00\" E"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:811
+#. i18n: ectx: property (toolTip), widget (QLabel, latitudeLabel)
+#. i18n: file: src/lib/MarbleControlBox.ui:821
+#. i18n: ectx: property (toolTip), widget (QLabel, latitudeValue)
+#: rc.cpp:1274 rc.cpp:1280
+msgid "Latitude of your current position"
+msgstr "Şimdiki konumunuzun enlemi"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:814
+#. i18n: ectx: property (text), widget (QLabel, latitudeLabel)
+#: rc.cpp:1277
+msgid "Latitude"
+msgstr "Enlem"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:824
+#. i18n: ectx: property (text), widget (QLabel, latitudeValue)
+#: rc.cpp:1283
+msgid "+00°00'00\" N"
+msgstr "+00°00'00\" N"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:831
+#. i18n: ectx: property (toolTip), widget (QLabel, altitudeLabel)
+#. i18n: file: src/lib/MarbleControlBox.ui:841
+#. i18n: ectx: property (toolTip), widget (QLabel, altitudeValue)
+#: rc.cpp:1286 rc.cpp:1292
+msgid "Altitude of your current position"
+msgstr "Şimdiki konumunuzun rakımı"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:834
+#. i18n: ectx: property (text), widget (QLabel, altitudeLabel)
+#: rc.cpp:1289
+msgid "Altitude"
+msgstr "Rakım"
+
+#. i18n: file: src/lib/MarbleControlBox.ui:844
+#. i18n: ectx: property (text), widget (QLabel, altitudeValue)
+#: rc.cpp:1295
+msgid "000 m"
+msgstr "000 m"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:14
+#. i18n: ectx: property (windowTitle), widget (QDialog, PlacemarkInfoDialog)
+#: rc.cpp:1298
+msgid "Marble Infocenter"
+msgstr "Marble Bilgi Merkezi"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:30
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:1301
+msgid "Data Sheet"
+msgstr ""
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:44
+#. i18n: ectx: property (toolTip), widget (QLabel, name_val_lbl)
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:47
+#. i18n: ectx: property (whatsThis), widget (QLabel, name_val_lbl)
+#: rc.cpp:1304 rc.cpp:1307
+msgid "Name of the location"
+msgstr "Konumun adı"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:53
+#. i18n: ectx: property (text), widget (QLabel, name_val_lbl)
+#: rc.cpp:1310
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:14pt; font-weight:600;\">Name</span></p></body></html>"
+msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:14pt; font-weight:600;\">İsim</span></p></body></html>"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:95
+#. i18n: ectx: property (toolTip), widget (QLabel, role_val_lbl)
+#: rc.cpp:1316
+msgid "Role"
+msgstr "Rol"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:98
+#. i18n: ectx: property (whatsThis), widget (QLabel, role_val_lbl)
+#: rc.cpp:1319
+msgid "Role of the location."
+msgstr ""
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:104
+#. i18n: ectx: property (text), widget (QLabel, role_val_lbl)
+#: rc.cpp:1322
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal; text-decoration:none;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:"
+"italic;\">Role</span></p></body></html>"
+msgstr ""
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:114
+#. i18n: ectx: property (toolTip), widget (QLabel, altername_val_lbl)
+#: rc.cpp:1328
+msgid "Alternative name"
+msgstr "İkincil isim"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:117
+#. i18n: ectx: property (whatsThis), widget (QLabel, altername_val_lbl)
+#: rc.cpp:1331
+msgid "Alternative name of the location."
+msgstr "Konumun ikincil adı."
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:120
+#. i18n: ectx: property (text), widget (QLabel, altername_val_lbl)
+#: rc.cpp:1334
+msgid "Alternative Name"
+msgstr "İkincil İsim"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:132
+#. i18n: ectx: property (text), widget (QLabel, description_lbl)
+#: rc.cpp:1337
+msgid "Short description:"
+msgstr "Kısa açıklama:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:145
+#. i18n: ectx: property (toolTip), widget (QTextBrowser, description_val_browser)
+#: rc.cpp:1340
+msgid "Description"
+msgstr "Açıklama"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:148
+#. i18n: ectx: property (whatsThis), widget (QTextBrowser, description_val_browser)
+#: rc.cpp:1343
+msgid "Description field"
+msgstr "Açıklama Alanı"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:157
+#. i18n: ectx: property (html), widget (QTextBrowser, description_val_browser)
+#: rc.cpp:1346
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">No description available.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Sans Serif';\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">If you are connected to the Internet please click the "
+"\"Wikipedia\" tab at the top of this page to get more information.</span></"
+"p></body></html>"
+msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Açıklama yok.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-"
+"family:'Sans Serif';\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"family:'Sans Serif';\">Eğer İnternet'e bağlıysanız lütfen \"Wikipedia\" "
+"sekmesine tıklayarak daha fazla bilgi alın.</span></p></body></html>"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:182
+#. i18n: ectx: property (text), widget (QLabel, coordinates_lbl)
+#: rc.cpp:1355
+msgid "Coordinates:"
+msgstr "Koordinatlar:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:196
+#. i18n: ectx: property (text), widget (QLabel, coordinates_val_lbl)
+#: rc.cpp:1358
+msgid ""
+"000° 00' 00\" N\n"
+"000° 00' 00\" E "
+msgstr ""
+"000° 00' 00\" N\n"
+"000° 00' 00\" E "
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:242
+#. i18n: ectx: property (text), widget (QLabel, elevation_lbl)
+#: rc.cpp:1362
+msgid "Elevation:"
+msgstr "Rakım:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:255
+#. i18n: ectx: property (text), widget (QLabel, elevation_val_lbl)
+#: rc.cpp:1365
+msgid "9000.0 m"
+msgstr "9000.0 m"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:284
+#. i18n: ectx: property (text), widget (QLabel, country_lbl)
+#: rc.cpp:1368
+msgid "Country:"
+msgstr "Ülke:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:297
+#. i18n: ectx: property (text), widget (QLabel, country_val_lbl)
+#: rc.cpp:1371
+msgid "Country"
+msgstr "Ülke"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:323
+#. i18n: ectx: property (text), widget (QLabel, population_val_lbl)
+#: rc.cpp:1377
+msgid "1000000"
+msgstr "1000000"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:339
+#. i18n: ectx: property (text), widget (QLabel, timezone_lbl)
+#: rc.cpp:1380
+msgid "Timezone:"
+msgstr "Zaman dilimi:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:352
+#. i18n: ectx: property (text), widget (QLabel, timezone_val_lbl)
+#: rc.cpp:1383
+msgid "GMT"
+msgstr "GMT"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:365
+#. i18n: ectx: property (text), widget (QLabel, area_lbl)
+#: rc.cpp:1386
+msgid "Area:"
+msgstr "Alan:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:378
+#. i18n: ectx: property (text), widget (QLabel, area_val_lbl)
+#: rc.cpp:1389
+msgid "0.0 sq km"
+msgstr "0.0 km kare"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:391
+#. i18n: ectx: property (text), widget (QLabel, diameter_lbl)
+#: rc.cpp:1392
+msgid "Diameter:"
+msgstr "Çap:"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:440
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:1396
+msgid "Wikipedia"
+msgstr "Wikipedia"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:463
+#. i18n: ectx: property (toolTip), widget (QToolButton, m_pBackButton)
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:469
+#. i18n: ectx: property (text), widget (QToolButton, m_pBackButton)
+#: rc.cpp:1399 rc.cpp:1405
+msgid "Back"
+msgstr "Geri"
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:466
+#. i18n: ectx: property (whatsThis), widget (QToolButton, m_pBackButton)
+#: rc.cpp:1402
+msgid "Move backwards one step in the browsing history."
+msgstr "Tarama geçmişinde bir adım geriye git."
+
+#. i18n: file: src/lib/PlacemarkInfoDialog.ui:483
+#. i18n: ectx: property (text), widget (QToolButton, m_pPrintButton)
+#: rc.cpp:1408
+msgid "Print Page"
+msgstr "Sayfayı Yazdır"
+
+#. i18n: file: src/plugins/render/osmannotate/texteditorwidget/widget.ui:29
+#. i18n: ectx: property (text), widget (QPushButton, pushButton)
+#. i18n: file: src/plugins/render/osmannotate/texteditorwidget/widget.ui:36
+#. i18n: ectx: property (text), widget (QPushButton, pushButton_2)
+#. i18n: file: src/plugins/render/osmannotate/texteditorwidget/widget.ui:43
+#. i18n: ectx: property (text), widget (QPushButton, pushButton_4)
+#. i18n: file: src/plugins/render/osmannotate/texteditorwidget/widget.ui:50
+#. i18n: ectx: property (text), widget (QPushButton, pushButton_3)
+#: rc.cpp:1411 rc.cpp:1414 rc.cpp:1417 rc.cpp:1420
+msgid "p"
+msgstr "p"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:14
+#. i18n: ectx: property (windowTitle), widget (QDialog, WeatherConfigWidget)
+#: rc.cpp:1504
+msgid "Configure Weather Plugin"
+msgstr "Hava Durumu Eklentisini Yapılandır"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:23
+#. i18n: ectx: property (title), widget (QGroupBox, m_informationGroupBox)
+#: rc.cpp:1507
+msgid "Information"
+msgstr "Bilgiler"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:30
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_weatherConditionBox)
+#: rc.cpp:1510
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Here you can choose if you "
+"want the weather condition to be shown (for example, clouds or clear sky.) "
+"Marble will only show the condition if this information is available.</p></"
+"body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, m_weatherConditionBox)
+#: rc.cpp:1514
+msgid "Weather condition"
+msgstr "Hava durumu"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:41
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_temperatureBox)
+#: rc.cpp:1517
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Selects if you want the "
+"temperature to be shown. The temperature will only be shown for the stations "
+"it is available for.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:52
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_windDirectionBox)
+#: rc.cpp:1524
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select if you want the "
+"wind direction to be shown. The wind direction will only be shown if it is "
+"available for the particular station.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:55
+#. i18n: ectx: property (text), widget (QCheckBox, m_windDirectionBox)
+#: rc.cpp:1528
+msgid "Wind direction"
+msgstr "Rüzgar yönü"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:63
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_windSpeedBox)
+#: rc.cpp:1531
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Select if you want the "
+"wind speed to be shown. The wind speed will only be shown if it is available "
+"for the particular station.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:66
+#. i18n: ectx: property (text), widget (QCheckBox, m_windSpeedBox)
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:113
+#. i18n: ectx: property (text), widget (QLabel, m_windSpeedLabel)
+#: rc.cpp:1535 rc.cpp:1554
+msgid "Wind speed"
+msgstr "Rüzgar hızı"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:76
+#. i18n: ectx: property (title), widget (QGroupBox, m_unitsGroupBox)
+#: rc.cpp:1538
+msgid "Units"
+msgstr "Birimler"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:92
+#. i18n: ectx: property (toolTip), widget (QComboBox, m_temperatureComboBox)
+#: rc.cpp:1544
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit used to measure "
+"the temperature.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:96
+#. i18n: ectx: property (text), item, widget (QComboBox, m_temperatureComboBox)
+#: rc.cpp:1548
+msgid "Celsius"
+msgstr "Selsius"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:101
+#. i18n: ectx: property (text), item, widget (QComboBox, m_temperatureComboBox)
+#: rc.cpp:1551
+msgid "Fahrenheit"
+msgstr "Fahrenayt"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:121
+#. i18n: ectx: property (toolTip), widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1557
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit used to measure "
+"the wind speed.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:125
+#. i18n: ectx: property (text), item, widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1561
+msgid "Kilometers per hour"
+msgstr "Saatteki kilometre"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:130
+#. i18n: ectx: property (text), item, widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1564
+msgid "Miles per hour"
+msgstr "Saatteki mil"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:135
+#. i18n: ectx: property (text), item, widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1567
+msgid "Meters per second"
+msgstr "Saniyedeki metre"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:140
+#. i18n: ectx: property (text), item, widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1570
+msgid "Knots"
+msgstr "Knot"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:145
+#. i18n: ectx: property (text), item, widget (QComboBox, m_windSpeedComboBox)
+#: rc.cpp:1573
+msgid "Beaufort"
+msgstr "Beaufort"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:157
+#. i18n: ectx: property (text), widget (QLabel, m_pressureLabel)
+#: rc.cpp:1576
+msgid "Pressure"
+msgstr "Basınç"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:165
+#. i18n: ectx: property (toolTip), widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1579
+msgid ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\\np, li { white-space: pre-wrap; }\\n</style></head><body style=\" font-"
+"family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\"><p "
+"style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">The unit used to measure "
+"the air pressure.</p></body></html>\n"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:169
+#. i18n: ectx: property (text), item, widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1583
+msgid "Hecto Pascals"
+msgstr "Hekto Pacsal"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:174
+#. i18n: ectx: property (text), item, widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1586
+msgid "Kilo Pascals"
+msgstr "Kilo Pascal"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:179
+#. i18n: ectx: property (text), item, widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1589
+msgid "Bars"
+msgstr "Bar"
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:184
+#. i18n: ectx: property (text), item, widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1592
+msgid "Millimeters of Mercury"
+msgstr ""
+
+#. i18n: file: src/plugins/render/weather/WeatherConfigWidget.ui:189
+#. i18n: ectx: property (text), item, widget (QComboBox, m_pressureComboBox)
+#: rc.cpp:1595
+msgid "Inches of Mercury"
+msgstr ""
+
+#. i18n: file: src/plugins/render/wikipedia/WikipediaConfigWidget.ui:14
+#. i18n: ectx: property (windowTitle), widget (QDialog, WikipediaConfigWidget)
+#: rc.cpp:1598
+msgid "Configure Wikipedia Plugin"
+msgstr "Wikipedia Eklentisini Yapılandır"
+
+#. i18n: file: src/plugins/render/wikipedia/WikipediaConfigWidget.ui:20
+#. i18n: ectx: property (text), widget (QCheckBox, m_showThumbnailCheckBox)
+#: rc.cpp:1601
+msgid "Show thumbnail images"
+msgstr "Küçük resimleri göster"
+
+#. i18n: file: src/plugins/render/wikipedia/WikipediaConfigWidget.ui:32
+#. i18n: ectx: property (text), widget (QLabel, m_itemNumberLabel)
+#: rc.cpp:1604
+msgid "Number of items on the screen"
+msgstr ""
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:34
+#. i18n: ectx: property (windowTitle), widget (QWidget, worldclockConfig)
+#: rc.cpp:1607
+msgid "Worldclock Applet Configuration"
+msgstr "Dünya Saati Programcığı Yapılandırması"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:50
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:1610
+msgid "Map Display"
+msgstr "Harita Görünümü"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:62
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1613
+msgid "Projection:"
+msgstr "Projeksiyon:"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:70
+#. i18n: ectx: property (text), item, widget (QComboBox, projection)
+#: rc.cpp:1616
+msgid "Equirectangular"
+msgstr "Eşdikdörtgensel"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:97
+#. i18n: ectx: property (text), widget (QRadioButton, longitudeButton)
+#: rc.cpp:1622
+msgid "Center map on longitude:"
+msgstr ""
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:116
+#. i18n: ectx: property (text), widget (QRadioButton, daylightButton)
+#: rc.cpp:1625
+msgid "Center map on daylight"
+msgstr ""
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:123
+#. i18n: ectx: property (text), widget (QCheckBox, showdate)
+#: rc.cpp:1628
+msgid "Show date"
+msgstr "Tarihi göster"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:131
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:1631
+msgid "Time Zones"
+msgstr "Zaman Dilimleri"
+
+#. i18n: file: src/plasmoid/worldclockConfig.ui:140
+#. i18n: ectx: property (text), widget (QCheckBox, customTz)
+#: rc.cpp:1634
+msgid "Use custom timezone selection"
+msgstr "Özel zaman dilimi seçimini kullan"
+
+#. i18n: file: src/marble.kcfg:55
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1637
+msgid "The unit chosen to measure distances."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:63
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1640
+msgid "The unit chosen to measure angles."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:72
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1643
+msgid "The quality at which a still map gets painted."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:83
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1646
+msgid "The quality at which an animated map gets painted."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:94
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1649
+msgid "The graphics system that is used by Qt to render the graphics."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:103
+#. i18n: ectx: label, entry, group (View)
+#: rc.cpp:1652
+msgid "The localization of the labels."
+msgstr "Etiketlerin yerelleştirmesi."
+
+#. i18n: file: src/marble.kcfg:112
+#. i18n: ectx: label, entry (mapFont), group (View)
+#: rc.cpp:1655
+msgid "The general font used on the map."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:129
+#. i18n: ectx: label, entry, group (Navigation)
+#: rc.cpp:1658
+msgid "The behaviour of the planet's axis on mouse dragging."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:137
+#. i18n: ectx: label, entry, group (Navigation)
+#: rc.cpp:1661
+msgid "The location shown on application startup."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:145
+#. i18n: ectx: label, entry, group (Navigation)
+#: rc.cpp:1664
+msgid "Display animation on voyage to target."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:151
+#. i18n: ectx: label, entry, group (Cache)
+#: rc.cpp:1667
+msgid "Cache for tiles reserved in the physical memory."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:157
+#. i18n: ectx: label, entry, group (Cache)
+#: rc.cpp:1670
+msgid "Maximum space on the hard disk that can be used to store tiles."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:163
+#. i18n: ectx: label, entry (proxyUrl), group (Cache)
+#: rc.cpp:1673
+msgid "URL for the proxy server."
+msgstr "Vekil sunucunun adresi."
+
+#. i18n: file: src/marble.kcfg:167
+#. i18n: ectx: label, entry, group (Cache)
+#: rc.cpp:1676
+msgid "Port for the proxy server."
+msgstr "Vekil sunucunun portu."
+
+#. i18n: file: src/marble.kcfg:173
+#. i18n: ectx: label, entry (proxyUser), group (Cache)
+#: rc.cpp:1679
+msgid "Username for authorization."
+msgstr "Yetkilendirme için kullanıcı adı."
+
+#. i18n: file: src/marble.kcfg:176
+#. i18n: ectx: label, entry (proxyPass), group (Cache)
+#: rc.cpp:1682
+msgid "Password for authorization."
+msgstr "Yetkilendirme için parola."
+
+#. i18n: file: src/marble.kcfg:179
+#. i18n: ectx: label, entry (proxyHttp), group (Cache)
+#: rc.cpp:1685
+msgid "Proxy type is HTTP"
+msgstr "Vekil sunucu tipi HTTP"
+
+#. i18n: file: src/marble.kcfg:190
+#. i18n: ectx: label, entry (proxySocks5), group (Cache)
+#: rc.cpp:1688
+msgid "Proxy type is Socks5"
+msgstr "Vekil sunucu tipi Socks5"
+
+#. i18n: file: src/marble.kcfg:194
+#. i18n: ectx: label, entry (proxyAuth), group (Cache)
+#: rc.cpp:1691
+msgid "Proxy requires Authentication"
+msgstr "Vekil sunucu kimlik doğrulaması gerektiriyor"
+
+#. i18n: file: src/marble.kcfg:200
+#. i18n: ectx: label, entry (pluginNameId), group (Plugins)
+#: rc.cpp:1694
+msgid "Name Ids of plugins."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:203
+#. i18n: ectx: label, entry (pluginEnabled), group (Plugins)
+#: rc.cpp:1697
+msgid "List of toggles for enabling plugins."
+msgstr ""
+
+#. i18n: file: src/marble.kcfg:206
+#. i18n: ectx: label, entry (pluginVisible), group (Plugins)
+#: rc.cpp:1700
+msgid "List of toggles for making plugins visible."
+msgstr ""
+
+#. i18n: file: src/marble_part.rc:6
+#. i18n: ectx: Menu (file)
+#. i18n: file: src/marbleui.rc:5
+#. i18n: ectx: Menu (file)
+#: rc.cpp:1703 rc.cpp:1727
+msgid "&File"
+msgstr "&Dosya"
+
+#. i18n: file: src/marble_part.rc:16
+#. i18n: ectx: Menu (edit)
+#. i18n: file: src/marbleui.rc:13
+#. i18n: ectx: Menu (edit)
+#: rc.cpp:1706 rc.cpp:1730
+msgid "&Edit"
+msgstr "Düz&en"
+
+#. i18n: file: src/marble_part.rc:21
+#. i18n: ectx: Menu (view)
+#. i18n: file: src/marbleui.rc:17
+#. i18n: ectx: Menu (view)
+#: rc.cpp:1709 rc.cpp:1733
+msgid "&View"
+msgstr "&Görünüm"
+
+#. i18n: file: src/marble_part.rc:29
+#. i18n: ectx: Menu (infoboxes)
+#: rc.cpp:1712
+msgid "&Info Boxes"
+msgstr "&Bilgi Kutucukları"
+
+#. i18n: file: src/marble_part.rc:35
+#. i18n: ectx: Menu (onlineservices)
+#: rc.cpp:1715
+msgid "&Online Services"
+msgstr "&Çevrimiçi Servisler"
+
+#. i18n: file: src/marble_part.rc:45
+#. i18n: ectx: Menu (settings)
+#. i18n: file: src/marbleui.rc:26
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:1718 rc.cpp:1736
+msgid "&Settings"
+msgstr "&Ayarlar"
+
+#. i18n: file: src/marble_part.rc:57
+#. i18n: ectx: ToolBar (mainToolBar)
+#. i18n: file: src/marbleui.rc:31
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:1721 rc.cpp:1739
+msgid "Main Toolbar"
+msgstr "Ana Araç Çubuğu"
+
+#. i18n: file: src/marble_part.rc:65
+#. i18n: ectx: ToolBar (pluginToolBar)
+#: rc.cpp:1724
+msgid "Edit Toolbar"
+msgstr "Düzenleme Araç Çubuğu"
+
+#. i18n: file: examples/example1.ui:53
+#. i18n: ectx: property (toolTip), widget (Marble::MarbleWidget, MarbleWidget)
+#. i18n: file: examples/example2.ui:43
+#. i18n: ectx: property (toolTip), widget (Marble::MarbleWidget, MarbleWidget)
+#: rc.cpp:1742 rc.cpp:1754
+msgid "The Earth"
+msgstr "Dünya"
+
+#. i18n: file: examples/example1.ui:56
+#. i18n: ectx: property (whatsThis), widget (Marble::MarbleWidget, MarbleWidget)
+#. i18n: file: examples/example2.ui:46
+#. i18n: ectx: property (whatsThis), widget (Marble::MarbleWidget, MarbleWidget)
+#: rc.cpp:1745 rc.cpp:1757
+msgid "The Marble widget displays a virtual globe."
+msgstr ""
+
+#. i18n: file: examples/example2.ui:33
+#. i18n: ectx: property (toolTip), widget (Marble::MarbleNavigator, MarbleNavigator)
+#: rc.cpp:1748
+msgid "Navigation Control"
+msgstr "Gezinme Denetimi"
+
+#. i18n: file: examples/example2.ui:36
+#. i18n: ectx: property (whatsThis), widget (Marble::MarbleNavigator, MarbleNavigator)
+#: rc.cpp:1751
+msgid "Use this control to navigate."
+msgstr "Gezinmek için bu denetimi kullanın."
+
+#. i18n: file: examples/example2.ui:57
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox)
+#: rc.cpp:1760
+msgid "Show places"
+msgstr "Yerleri göster"
+
+#. i18n: file: examples/example2.ui:67
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_5)
+#: rc.cpp:1763
+msgid "Show relief"
+msgstr "Kabartmayı göster"
+
+#. i18n: file: examples/example2.ui:77
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_3)
+#: rc.cpp:1766
+msgid "Show scale bar"
+msgstr "Boyutlandırma çubuğunu göster"
+
+#. i18n: file: examples/example2.ui:87
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_9)
+#: rc.cpp:1769
+msgid "Show borders"
+msgstr "Sınırları göster"
+
+#. i18n: file: examples/example2.ui:97
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_7)
+#: rc.cpp:1772
+msgid "Show ice / snow"
+msgstr "Buzları / karları göster"
+
+#. i18n: file: examples/example2.ui:107
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_4)
+#: rc.cpp:1775
+msgid "Show compass"
+msgstr "Pusulayı göster"
+
+#. i18n: file: examples/example2.ui:117
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_2)
+#: rc.cpp:1778
+msgid "Show grid"
+msgstr "Izgarayı göster"
+
+#. i18n: file: examples/example2.ui:127
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_8)
+#: rc.cpp:1781
+msgid "Show rivers / lakes"
+msgstr "Nehirleri / gölleri göster"
+
+#. i18n: file: examples/example2.ui:137
+#. i18n: ectx: property (text), widget (QCheckBox, checkBox_6)
+#: rc.cpp:1784
+msgid "Show elevation model"
+msgstr ""
+
+#. i18n: file: examples/example2.ui:166
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1787
+msgid "Coordinates: "
+msgstr "Koordinatlar:"
+
+#~ msgid "Area"
+#~ msgstr "Alan"
+
+#~ msgid "Region"
+#~ msgstr "Yöre"
+
+#~ msgid "Comment"
+#~ msgstr "Açıklama"
+
+#, fuzzy
+#~| msgid "Bridge"
+#~ msgid "Widget"
+#~ msgstr "Köprü"
+
+#~ msgid "Forward"
+#~ msgstr "İleri"
+
+#~ msgid "Move forward one step in the browsing history."
+#~ msgstr "Tarama geçmişinde bir adım ileriye git."
+
+#~ msgid ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal; text-decoration:none;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'MS Shell Dlg 2'; font-size:8pt;\"></p></body></html>"
+#~ msgstr ""
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
+#~ "p, li { white-space: pre-wrap; }\n"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal; text-decoration:none;\">\n"
+#~ "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+#~ "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+#~ "font-family:'MS Shell Dlg 2'; font-size:8pt;\"></p></body></html>"
+
+#~ msgid "&Latitude"
+#~ msgstr "&Enlem"
+
+#~ msgid "N"
+#~ msgstr "K"
+
+#~ msgid "S"
+#~ msgstr "G"
+
+#~ msgid "L&ongitude"
+#~ msgstr "&Boylam"
+
+#~ msgid "E"
+#~ msgstr "D"
+
+#~ msgid "W"
+#~ msgstr "B"
+
+#~ msgid "Draw"
+#~ msgstr "Çiz"
+
+#~ msgid "Go To"
+#~ msgstr "Git"
+
+#~ msgid "&Add Place"
+#~ msgstr "Konum &Ekle"
+
+#, fuzzy
+#~| msgid "&Text Labels"
+#~ msgid "TextLabel"
+#~ msgstr "&Metin Etiketleri"
+
+#~ msgid "Co-maintainer and Architect"
+#~ msgstr "Projeyi Yürütene Yardımcı ve Mimari"
+
+#~ msgid "Maps..."
+#~ msgstr "Haritalar..."
+
+#~ msgid "GpxSax"
+#~ msgstr "GpxSax"
+
+#~ msgid ""
+#~ "Parse error at line %1, column %2:\n"
+#~ "%3."
+#~ msgstr ""
+#~ "%1 satırı, %2 sütununda ayrıştırma hatası:\n"
+#~ "%3."
+
+#~ msgid "Save File"
+#~ msgstr "Dosyayı Kaydet"
+
+#~ msgid "GpxFile (*.gpx)"
+#~ msgstr "Gpx Dosyası(*.gpx)"
+
+#~ msgid "&Hide"
+#~ msgstr "&Gizle"
+
+#~ msgid "km"
+#~ msgstr "km"
+
+#~ msgid "Total Distance: %1 km"
+#~ msgstr "Toplam Uzaklık: %1 km"
+
+#~ msgid "Total Distance: %1 m"
+#~ msgstr "Toplam Uzaklık: %1 m"
+
+#~ msgid "not available"
+#~ msgstr "kullanılabilir değil"
+
+#~ msgctxt "The compass direction"
+#~ msgid "North"
+#~ msgstr "Kuzey"
+
+#~ msgctxt "The compass direction"
+#~ msgid "East"
+#~ msgstr "Doğu"
+
+#~ msgctxt "The compass direction"
+#~ msgid "South"
+#~ msgstr "Güney"
+
+#~ msgctxt "The compass direction"
+#~ msgid "West"
+#~ msgstr "Batı"
+
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "Path"
+#~ msgstr "Yol"
+
+#~ msgid "File format unrecognized"
+#~ msgstr "Dosya biçimi tanınamadı"
+
+#~ msgid "The file is not a valid DGML 2.0 file"
+#~ msgstr "Dosya geçerli bir DGML 2.0 dosyası değil"
+
+#~ msgid "The file is not a valid GPX 1.0 / 1.1 file"
+#~ msgstr "Dosya geçerli bir GPX 1.0 / 1.1 dosyası değil"
+
+#~ msgid "The file is not a valid KML 2.0 / 2.1 / 2.2 file"
+#~ msgstr "Bu dosya geçerli bir KML 2.0 / 2.1 / 2.2 dosyası değil"
+
+#~ msgid "Version %1"
+#~ msgstr "Sürüm %1"
+
+#~ msgid ""
+#~ "<br />(c) 2007, 2008, The Marble Project<br /><br /><a href=\"http://edu."
+#~ "kde.org/marble\">http://edu.kde.org/marble</a>"
+#~ msgstr ""
+#~ "<br />(c) 2007, 2008 Marble Projesi<br /><br /><a href=\"http://edu.kde."
+#~ "org/marble\">http://edu.kde.org/marble</a>"
+
+#~ msgid "&Earth"
+#~ msgstr "&Dünya"
+
+#~ msgid "0 N 0 W"
+#~ msgstr "0 K 0 B"
+
+#~ msgid "Copy Coordinates"
+#~ msgstr "Koordinatları Kopyala"
+
+#~ msgctxt "East, the direction"
+#~ msgid "E"
+#~ msgstr "D"
+
+#~ msgctxt "West, the direction"
+#~ msgid "W"
+#~ msgstr "B"
+
+#~ msgctxt "North, the direction"
+#~ msgid "N"
+#~ msgstr "K"
+
+#~ msgctxt "South, the direction"
+#~ msgid "S"
+#~ msgstr "G"
+
+#~ msgid "Marble Info Center - %1"
+#~ msgstr "Marble Bilgi Merkezi - %1"
+
+#~ msgid "Capital"
+#~ msgstr "Başkent"
+
+#~ msgid "Regional Capital"
+#~ msgstr "Bölgesel Başkent"
+
+#~ msgid "Location"
+#~ msgstr "Konum"
+
+#~ msgid "City"
+#~ msgstr "Şehir"
+
+#~ msgid "Ocean"
+#~ msgstr "Okyanus"
+
+#~ msgid "Continent"
+#~ msgstr "Kıta"
+
+#~ msgid "Other Place"
+#~ msgstr "Diğer Yer"
+
+#~ msgid "%1 sq km"
+#~ msgstr "%1 km kare"
+
+#~ msgid "%1 Mio. sq km"
+#~ msgstr "%1 Mio. km kare"
+
+#~ msgid "%1 inh."
+#~ msgstr "%1 inh."
+
+#~ msgid "%1 m"
+#~ msgstr "%1 m"
+
+#~ msgid "Download failed: %1."
+#~ msgstr "İndirme işlemi başarısız oldu: %1."
+
+#~ msgid "Download finished."
+#~ msgstr "İndirme işlemi tamamlandı."
+
+#~ msgid "Marble - Desktop Globe"
+#~ msgstr "Maerble Masaüstünde Dünya"
+
+#~ msgid "Ctrl+O"
+#~ msgstr "Ctrl+A"
+
+#~ msgid "Ctrl+S"
+#~ msgstr "Ctrl+S"
+
+#~ msgid "&Print..."
+#~ msgstr "&Yazdır..."
+
+#~ msgid "Ctrl+P"
+#~ msgstr "Ctrl+Y"
+
+#~ msgid "&Quit"
+#~ msgstr "Çı&k"
+
+#~ msgid "Ctrl+Q"
+#~ msgstr "Ctrl+K"
+
+#~ msgid "Ctrl+C"
+#~ msgstr "Ctrl+H"
+
+#~ msgid "F9"
+#~ msgstr "F9"
+
+#~ msgid "&Full Screen Mode"
+#~ msgstr "Ta&m Ekran Kipi"
+
+#~ msgid "Ctrl+Shift+F"
+#~ msgstr "Ctrl+Shift+M"
+
+#~ msgid "Full Screen Mode"
+#~ msgstr "Tam Ekran Kipi"
+
+#~ msgid "&Status Bar"
+#~ msgstr "Durum Çubuğu"
+
+#~ msgid "Show Status Bar"
+#~ msgstr "Durum Çubuğunu Göster"
+
+#~ msgid "Show Atmosphere"
+#~ msgstr "Atmosferi Göster"
+
+#~ msgid "What's &This"
+#~ msgstr "Bu &Nedir?"
+
+#~ msgid "Shift+F1"
+#~ msgstr "Shift+F1"
+
+#~ msgid "&About Marble Desktop Globe"
+#~ msgstr "&Marble Hakında"
+
+#~ msgid "About &Qt"
+#~ msgstr "&Qt Hakkında"
+
+#~ msgid "&Help"
+#~ msgstr "&Yardım"
+
+#~ msgid "Ready"
+#~ msgstr "Hazır"
+
+#~ msgid "Images (*.jpg *.png)"
+#~ msgstr "Resimler (*.jpg *.png)"
+
+#~ msgid "Marble"
+#~ msgstr "Marble"
+
+#~ msgid ""
+#~ "All Supported Files (*.gpx *.kml);;GPS Data (*.gpx);;Google Earth KML (*."
+#~ "kml)"
+#~ msgstr ""
+#~ "Tüm Desteklenen Dosyalar (*.gpx *.kml);;GPS Verileri (*.gpx);;Google "
+#~ "Earth KML (*.kml)"
+
+#~ msgid "&Test Plugin"
+#~ msgstr "&Test Eklentisi"
+
+#~ msgid "This is a simple test plugin."
+#~ msgstr "Bu basit bir test eklentisidir."
+
+#~ msgid "Compass"
+#~ msgstr "Pusula"
+
+#~ msgid "&Compass"
+#~ msgstr "&Pusula"
+
+#~ msgid "Satellites"
+#~ msgstr "Uydular"
+
+#~ msgid "&Satellites"
+#~ msgstr "&Uydular"
+
+#~ msgid "DataView Plugin"
+#~ msgstr "DataView Eklentisi"
+
+#~ msgid "&DataView Plugin"
+#~ msgstr "&DataView Eklentisi"
+
+#~ msgid "Stars Plugin"
+#~ msgstr "Yıldız Eklentisi"
+
+#~ msgid "&Stars"
+#~ msgstr "&Yıldızlar"
+
+#~ msgid "&Overview Map"
+#~ msgstr "Haritayı &Gözden Geçir"
+
+#~ msgid "Scale Bar"
+#~ msgstr "Boyutlandırma Çubuğu"
+
+#~ msgid "&Scale Bar"
+#~ msgstr "&Boyutlandırma Çubuğu"
+
+#~ msgid "m"
+#~ msgstr "m"
+
+#~ msgid "&Navigation"
+#~ msgstr "&Gezinme"
+
+#~ msgid "GeoData Plugin"
+#~ msgstr "GeoData Eklentisi"
+
+#~ msgid "&GeoData Plugin"
+#~ msgstr "&GeoData Eklentisi"
+
+#~ msgid "FITemplate"
+#~ msgstr "FITemplate"
+
+#~ msgid "Placemarks Plugin"
+#~ msgstr "Placemarks Eklentisi"
+
+#~ msgid "&Placemarks Plugin"
+#~ msgstr "&Placemarks Eklentisi"
+
+#~ msgid "None"
+#~ msgstr "Hiçbiri"
+
+#~ msgid "24-hour clock"
+#~ msgstr "24-saat"
+
+#~ msgid "12-hour clock"
+#~ msgstr "12-saat"
+
+#, fuzzy
+#~| msgid "N"
+#~ msgctxt "one-letter uppercase abbreviation for North"
+#~ msgid "N"
+#~ msgstr "K"
+
+#, fuzzy
+#~| msgid "E"
+#~ msgctxt "one-letter uppercase abbreviation for East"
+#~ msgid "E"
+#~ msgstr "D"
+
+#, fuzzy
+#~| msgid "S"
+#~ msgctxt "one-letter uppercase abbreviation for South"
+#~ msgid "S"
+#~ msgstr "G"
+
+#, fuzzy
+#~| msgid "W"
+#~ msgctxt "one-letter uppercase abbreviation for West"
+#~ msgid "W"
+#~ msgstr "B"
+
+#~ msgid "<![CDATA[42&deg;C]]>"
+#~ msgstr "<![CDATA[42&deg;C]]>"
+
+#~ msgid "<![CDATA[32&deg;C]]>"
+#~ msgstr "<![CDATA[32&deg;C]]>"
+
+#~ msgid "<![CDATA[23&deg;C]]>"
+#~ msgstr "<![CDATA[23&deg;C]]>"
+
+#~ msgid "<![CDATA[12&deg;C]]>"
+#~ msgstr "<![CDATA[12&deg;C]]>"
+
+#~ msgid "<![CDATA[1&deg;C]]>"
+#~ msgstr "<![CDATA[1&deg;C]]>"
+
+#~ msgid "32°C"
+#~ msgstr "32°C"
+
+#~ msgid "23°C"
+#~ msgstr "23°C"
+
+#~ msgid "12°C"
+#~ msgstr "12°C"
+
+#~ msgid "-10°C"
+#~ msgstr "-10°C"
+
+#~ msgid "-21°C"
+#~ msgstr "-21°C"
+
+#~ msgid "-32°C"
+#~ msgstr "-32°C"
+
+#~ msgid "-41°C"
+#~ msgstr "-41°C"
+
+#~ msgid "-69°C"
+#~ msgstr "-69°C"
+
+#~ msgid "Show seconds"
+#~ msgstr "Saniyeleri göster"
+
+#~ msgid "Geo Tool"
+#~ msgstr "Geo Tool"
+
+#~ msgid "map editing tool"
+#~ msgstr "harita düzenleme aracı"
+
+#~ msgid "42°C"
+#~ msgstr "42°C"

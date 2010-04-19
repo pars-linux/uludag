@@ -1,0 +1,214 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: knode\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:23+0000\n"
+"PO-Revision-Date: 2003-08-20 13:07+0300\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Türkçe <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.6\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:27
+#, fuzzy, no-c-format
+msgid "The &knode; Handbook"
+msgstr "&knode; kılavuzu"
+
+#. Tag: author
+#: index.docbook:30
+#, no-c-format
+msgid "<firstname>Stephan</firstname><surname>Johach</surname>"
+msgstr "<firstname>Stephan</firstname><surname>Johach</surname>"
+
+#. Tag: email
+#: index.docbook:32
+#, no-c-format
+msgid "lucardus@onlinehome.de"
+msgstr "lucardus@onlinehome.de"
+
+#. Tag: author
+#: index.docbook:36
+#, fuzzy, no-c-format
+msgid "<firstname> Thomas</firstname> <surname>Schütz</surname>"
+msgstr "<firstname> Thomas</firstname> <surname>SchÃ»tz</surname>"
+
+#. Tag: address
+#: index.docbook:38
+#, fuzzy, no-c-format
+msgid "&Thomas.Schuetz.mail;"
+msgstr "Thomas.Schuetz@gmx.li"
+
+#. Tag: othercredit
+#: index.docbook:42
+#, no-c-format
+msgid "<firstname> Christian</firstname> <surname> Gebauer</surname>"
+msgstr "<firstname> Christian</firstname> <surname> Gebauer</surname>"
+
+#. Tag: contrib
+#: index.docbook:44
+#, no-c-format
+msgid "Developer and maintainer"
+msgstr "Güncel geliştirici"
+
+#. Tag: address
+#: index.docbook:45
+#, no-c-format
+msgid "&Christian.Gebauer.mail;"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:48
+#, no-c-format
+msgid "<firstname> Christian</firstname> <surname> Thurner</surname>"
+msgstr "<firstname> Christian</firstname> <surname> Thurner</surname>"
+
+#. Tag: contrib
+#: index.docbook:50 index.docbook:56 index.docbook:62 index.docbook:68
+#: index.docbook:74
+#, no-c-format
+msgid "Developer"
+msgstr "Geliştirici"
+
+#. Tag: address
+#: index.docbook:51
+#, no-c-format
+msgid "&Christian.Thurner.mail;"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:54
+#, no-c-format
+msgid "<firstname> Dirk</firstname> <surname> Mueller</surname>"
+msgstr "<firstname> Dirk</firstname> <surname> Mueller</surname>"
+
+#. Tag: address
+#: index.docbook:57
+#, no-c-format
+msgid "&Dirk.Mueller.mail;"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:60
+#, no-c-format
+msgid "<firstname> Mark</firstname> <surname> Mutz</surname>"
+msgstr "<firstname> Mark</firstname> <surname> Mutz</surname>"
+
+#. Tag: address
+#: index.docbook:63
+#, no-c-format
+msgid "&Marc.Mutz.mail;"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:66
+#, no-c-format
+msgid "<firstname> Roberto</firstname> <surname> Teixeira</surname>"
+msgstr "<firstname> Roberto</firstname> <surname> Teixeira</surname>"
+
+#. Tag: address
+#: index.docbook:69
+#, no-c-format
+msgid "&Roberto.Teixeira.mail;"
+msgstr ""
+
+#. Tag: othercredit
+#: index.docbook:72
+#, no-c-format
+msgid "<firstname> Mathias</firstname> <surname> Waack</surname>"
+msgstr "<firstname> Mathias</firstname> <surname> Waack</surname>"
+
+#. Tag: address
+#: index.docbook:75
+#, no-c-format
+msgid "&Mathias.Waack.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:77
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: holder
+#: index.docbook:82
+#, fuzzy, no-c-format
+msgid "&Stephan.Johach;"
+msgstr "Stephan Johach"
+
+#. Tag: holder
+#: index.docbook:83
+#, fuzzy, no-c-format
+msgid "&Thomas.Schuetz;"
+msgstr "Thomas.Schuetz@gmx.li"
+
+#. Tag: para
+#: index.docbook:92
+#, no-c-format
+msgid "&knode; is an easy-to-use newsreader."
+msgstr "&knode; kolay kullanımlı bir haber grubu okuyucusudur."
+
+#. Tag: keyword
+#: index.docbook:96
+#, no-c-format
+msgid "<keyword>KDE</keyword>"
+msgstr "<keyword>KDE</keyword>"
+
+#. Tag: keyword
+#: index.docbook:97
+#, no-c-format
+msgid "KNode"
+msgstr "KNode"
+
+#. Tag: keyword
+#: index.docbook:98
+#, no-c-format
+msgid "kdenetwork"
+msgstr "kdenetwork"
+
+#. Tag: keyword
+#: index.docbook:99
+#, no-c-format
+msgid "newsreader"
+msgstr "haber grubu okuyucusu"
+
+#. Tag: title
+#: index.docbook:108
+#, no-c-format
+msgid "Working with &knode;"
+msgstr "&knode; ile çalışmak"
+
+#. Tag: chapter
+#: index.docbook:108
+#, no-c-format
+msgid "&using-firststart; &using-subscribing; &using-morefeatures;"
+msgstr "&using-firststart; &using-subscribing; &using-morefeatures;"
+
+#~ msgid "gebauer@kde.org"
+#~ msgstr "gebauer@kde.org"
+
+#~ msgid "cthurner@web.de"
+#~ msgstr "cthurner@web.de"
+
+#~ msgid "mueller@kde.org"
+#~ msgstr "mueller@kde.org"
+
+#~ msgid "mutz@kde.org"
+#~ msgstr "mutz@kde.org"
+
+#~ msgid "roberto@kde.org"
+#~ msgstr "roberto@kde.org"
+
+#~ msgid "mathias@atoll-net.de"
+#~ msgstr "mathias@atoll-net.de"
+
+#, fuzzy
+#~ msgid "Thomas Schütz"
+#~ msgstr "Thomas SchÃ¼tz"

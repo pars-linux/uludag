@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kioslave_bzip2\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2002-02-17 22:43+0200\n"
+"Last-Translator: Ömer Fadıl USTA <omer_fad@hotmail.com>\n"
+"Language-Team: Turkish <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.9.5\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: index.docbook:9
+#, no-c-format
+msgid "bzip2 / bzip"
+msgstr ""
+
+#. Tag: author
+#: index.docbook:12
+#, no-c-format
+msgid "&Lauri.Watts; &Lauri.Watts.mail;"
+msgstr ""
+
+#. Tag: trans_comment
+#: index.docbook:13
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: para
+#: index.docbook:17
+#, fuzzy, no-c-format
+#| msgid "Bzip2 is a compression program"
+msgid "<command>bzip2</command> is a compression program."
+msgstr "Bzip2 bir sıkıştırma programıdır"
+
+#. Tag: para
+#: index.docbook:19
+#, no-c-format
+msgid ""
+"The bzip2 kioslave is not directly usable, and is intended for use as a "
+"filter. For example, the tar kioslave can filter a file through the bzip2 "
+"kioslave, in order to display the contents of a <literal role=\"extension"
+"\">tar.bz2</literal> file directly in a &konqueror; window."
+msgstr ""
+"<command>bzip2</command> bir sıkıştırma programıdır. Örneğin, bir <literal "
+"role=\"extension\">tar.bz2</literal> dosyasını &konqueror; altında açmak "
+"için bzip2 kioslave'e ihtiyaç duyarsınız."
+
+#. Tag: para
+#: index.docbook:25
+#, no-c-format
+msgid ""
+"If you click on a file compressed with a <literal role=\"extension\">.bz2</"
+"literal> in &konqueror;, this kioslave is used to uncompress it and display "
+"it as a normal (uncompressed) file."
+msgstr ""
+"&konqueror; altında <literal role=\"extension\">.bz2</literal> uzantısı "
+"bulunan sıkıştırılmış bir dosyaya tıklarsanız, kioslave bunu açacak ve "
+"normal (sıkıştırılmamış) bir dosya gibi görüntüleyecektir."
+
+#. Tag: para
+#: index.docbook:29
+#, fuzzy, no-c-format
+#| msgid ""
+#| "If you are a developer, and would like to use the bzip2 filter, you can "
+#| "find documentation on using kioslaves at <ulink url=\"http://developer."
+#| "kde.org\">http://developer.kde.org</ulink>"
+msgid ""
+"If you are a developer, and would like to use the bzip2 filter, you can find "
+"documentation on using kioslaves at <ulink url=\"http://techbase.kde.org"
+"\">http://techbase.kde.org</ulink>"
+msgstr ""
+"Eğer bir geliştirici iseniz, ve bzip2 filtresini kullanmak istiyorsanız, "
+"daha geniş bilgi için <ulink url=\"http://developer.kde.org\">http://"
+"developer.kde.org</ulink> adresine bakmanızı öneriyoruz."
+
+#. Tag: para
+#: index.docbook:33
+#, no-c-format
+msgid "See the manual: <ulink url=\"man:/bzip2\">bzip2</ulink>."
+msgstr "See the manual: <ulink url=\"man:/bzip2\">bzip2</ulink>."
+
+#. Tag: para
+#: index.docbook:36
+#, no-c-format
+msgid ""
+"<command>bzip</command> is the ancestor of bzip2. It is rarely used today, "
+"having been replaced with bzip2, which offers much better compression."
+msgstr ""
+
+#~ msgid "bzip2"
+#~ msgstr "bzip2"

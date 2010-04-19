@@ -1,0 +1,301 @@
+# translation of faq_kdeapps.po to Türkçe
+# Copyright (C) 2003,2004, 2006 Free Software Foundation, Inc.
+#
+# Engin ÇAĞATAY <engincagatay@yahoo.com>, 2003,2004.
+# M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: faq_kdeapps\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-08 18:19+0000\n"
+"PO-Revision-Date: 2006-02-28 21:38+0200\n"
+"Last-Translator: M.Kemal AYYILDIZ <kemal@kemalayyildiz.net>\n"
+"Language-Team: Türkçe <tr@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: title
+#: kdeapps.docbook:8
+#, no-c-format
+msgid "&kde; applications"
+msgstr "&kde; uygulamaları"
+
+#. Tag: para
+#: kdeapps.docbook:13
+#, no-c-format
+msgid "&kppp;"
+msgstr "&kppp;"
+
+#. Tag: para
+#: kdeapps.docbook:17
+#, no-c-format
+msgid ""
+"Many &kde; users report problems using &kppp;. But before you complain about "
+"&kppp;, make sure you have already checked the following:"
+msgstr ""
+"Birçok &kde; kullanıcısı &kppp;'yi kullanarak sorunları iletiyor. Fakat "
+"&kppp; hakkında endişelenmeden önce sıradakini incelediğinizden emin olun:"
+
+#. Tag: para
+#: kdeapps.docbook:22
+#, no-c-format
+msgid ""
+"Can you dialup to your <acronym>ISP</acronym> without using &kppp;? If you "
+"cannot, then perhaps &kppp; is not the culprit after all."
+msgstr ""
+"&kppp;'yi kullanmadan <acronym>ISS</acronym>'nize bağlanabiliyor musunuz? "
+"Eğer cevap hayırsa, &kppp; suçlu olmayabilir."
+
+#. Tag: para
+#: kdeapps.docbook:24
+#, no-c-format
+msgid ""
+"Have you gone through the &kppp; documentation at least three times and "
+"followed its instructions and trouble-shooting suggestions?"
+msgstr ""
+"&kppp; yardım metinlerini en azından üç kere gözden geçirip, yardımlarını ve "
+"önerilerini izlediniz mi?"
+
+#. Tag: para
+#: kdeapps.docbook:28
+#, no-c-format
+msgid ""
+"The &kppp; documentation can be accessed through the <application>&kde; Help "
+"Center</application>. Last, but not least, the &kppp; homepage is at <ulink "
+"url=\"http://ktown.kde.org/~kppp/\">http://ktown.kde.org/~kppp/</ulink>."
+msgstr ""
+"&kppp; yardım metnine <application>&kde; Yardım Merkezi</application>'nden "
+"erişilebilir. Ayrıca &kppp; ana sayfası <ulink url=\"http://ktown.kde.org/"
+"~kppp/\">http://ktown.kde.org/~kppp/</ulink> ziyaret edilebilir."
+
+#. Tag: para
+#: kdeapps.docbook:32
+#, no-c-format
+msgid ""
+"Now, if you still encounter problems, here's what might help you solve them:"
+msgstr "Hala sorunlar yaşıyorsanız, size yardım edebilecek şey işte burada:"
+
+#. Tag: term
+#: kdeapps.docbook:35
+#, no-c-format
+msgid "How do I change the &MTU; setting in &kppp;?"
+msgstr "&kppp;'deki &MTU;'yu nasıl değiştirebilirim? "
+
+#. Tag: para
+#: kdeapps.docbook:36
+#, no-c-format
+msgid ""
+"Open up the &kppp; dialog box and select <guibutton>Setup</guibutton>. "
+"Choose an existing account and click <guibutton>Edit</guibutton>, or "
+"<guibutton>New</guibutton> to create a new dialup account. Select the "
+"<guilabel>Dial</guilabel> tab and click <guibutton>Arguments</guibutton>. "
+"Type what you want to change in the Argument textbox (&eg; <userinput>mtu "
+"296</userinput>) and click <guibutton>Add</guibutton>. When you are "
+"satisfied, click <guibutton>Close</guibutton>."
+msgstr ""
+"&kppp;'yi açın ve  <guibutton>Ayarlar</guibutton>'ı seçin. Bir hesap seçip "
+"<guibutton>Düzenle</guibutton>'yi tıklayın ya da <guibutton>Yeni</"
+"guibutton>'yi seçip yeni bir hesap oluşturun. <guilabel>Ara</guilabel> "
+"sekmesini seçip <guibutton>Pppd Argümanlarını Özelleştir</guibutton>'i "
+"seçin. Neyi değiştirmek istiyorsanız onu yazı alanına girin (örneğin  "
+"<userinput>mtu 296</userinput>) ve <guibutton>Ekle</guibutton>'ye tıklayın.  "
+"Her şey tamamsa <guibutton> Kapat</guibutton>'a basın."
+
+#. Tag: para
+#: kdeapps.docbook:44
+#, no-c-format
+msgid ""
+"To check whether the options <quote>took</quote>, do one of the following:"
+msgstr "Seçeneklerin çalışıp çalışmadığını kontrol etmek için, birini yapın:"
+
+#. Tag: para
+#: kdeapps.docbook:47
+#, no-c-format
+msgid ""
+"In a terminal window, run <userinput><command>/sbin/ifconfig</command> ppp0</"
+"userinput> and look at the reported &MTU; in the output. It should match "
+"your request."
+msgstr ""
+"Bir terminal penceresinde <userinput><command>/sbin/ifconfig</command> ppp0</"
+"userinput> komutunu çalıştırın ve gösterilen &MTU; değerine bakın. "
+"İsteğinize uygun olması gerekir."
+
+#. Tag: para
+#: kdeapps.docbook:52
+#, no-c-format
+msgid ""
+"Add <option>debug</option> and <option>kdebug</option> (each on a separate "
+"line) to your <filename>/etc/ppp/options</filename> file and restart your "
+"&PPP; session. You will find debugging messages in <filename>/var/log/"
+"messages</filename>, including &MRU; and &MTU; settings."
+msgstr ""
+"<option>debug</option> ve <option>kdebug</option> seçeneklerini herbiri ayrı "
+"satırda olacak şekilde <filename>/etc/ppp/options</filename> dosyasına "
+"ekleyip &PPP; oturumunu yeniden başlatın. <filename>/var/log/messages</"
+"filename> dosyasında &MRU; ve &MTU; ayarlarını da içeren hata ayıklama "
+"mesajları bulacaksınız."
+
+#. Tag: para
+#: kdeapps.docbook:59
+#, no-c-format
+msgid ""
+"If you want, the &MRU; and &MTU; settings can be added to the "
+"<filename>options</filename> file, one complete setting per line, no quotes "
+"or dashes."
+msgstr ""
+"İsterseniz, &MRU; ve &MTU; ayarları <filename>seçenekler</filename> "
+"dosyasına eklenebilir. Her satıra tırnak işareti ve tiresiz bir ayar "
+"yazılmalıdır."
+
+#. Tag: term
+#: kdeapps.docbook:64
+#, no-c-format
+msgid "&kppp; connects at a slower speed than normal."
+msgstr "&kppp; normalden daha düşük bir hızda bağlanır."
+
+#. Tag: para
+#: kdeapps.docbook:66
+#, no-c-format
+msgid "The following might do the trick:"
+msgstr "Sıradaki bu işe yarayabilir:"
+
+#. Tag: para
+#: kdeapps.docbook:68
+#, no-c-format
+msgid "Try executing <command>setserial spd_hi</command>."
+msgstr "<command>setserial spd_hi</command> komutunu çalıştırmayı deneyin."
+
+#. Tag: para
+#: kdeapps.docbook:70
+#, no-c-format
+msgid ""
+"The default &MTU; value is 1500, which maybe too large for a dialup "
+"connection. Try changing it to a smaller value like <userinput>296</"
+"userinput> or <userinput>576</userinput>."
+msgstr ""
+"Öntanımlı &MTU; değeri 1500'dür. Bu değer çevirmeli ağ bağlantısı için çok "
+"büyük olabilir. Daha küçük bir değer girmeyi deneyin, örneğin "
+"<userinput>296</userinput> or <userinput>576</userinput>."
+
+#. Tag: para
+#: kdeapps.docbook:75
+#, no-c-format
+msgid ""
+"Check in your <filename class=\"directory\">$<envar>HOME</envar>/.kde/share/"
+"config</filename> for the <filename>kppprc</filename>. Ensure the correct "
+"modem speed is actually defined there."
+msgstr ""
+"Ev dizininizde 'kde/share/config' konumundaki 'kppprc' dosyasını kontrol "
+"edin. Bu dosyada doğru modem hızı değerinin girildiğinden emin olun."
+
+#. Tag: para
+#: kdeapps.docbook:87
+#, no-c-format
+msgid "&konsole;"
+msgstr "&konsole;"
+
+#. Tag: term
+#: kdeapps.docbook:93
+#, no-c-format
+msgid "How do I page-up or page-down?"
+msgstr "Nasıl bir sayfa yukarı ya da aşağı giderim?"
+
+#. Tag: para
+#: kdeapps.docbook:94
+#, fuzzy, no-c-format
+#| msgid ""
+#| "Use <keycombo action=\"simul\"> <keycap>Shift</keycap><keycap>Page Up</"
+#| "keycap></keycombo> and <keycombo action=\"simul\"><keycap>Shift</"
+#| "keycap><keycap>Pg Dn</keycap></keycombo>."
+msgid ""
+"Use <keycombo action=\"simul\"> &Shift;<keycap>Page Up</keycap></keycombo> "
+"and <keycombo action=\"simul\">&Shift;<keycap>Pg Dn</keycap></keycombo>."
+msgstr ""
+"<keycombo action=\"simul\"> <keycap>Shift</keycap><keycap>Page Up</keycap></"
+"keycombo> ve <keycombo action=\"simul\"><keycap>Shift</keycap><keycap>Pg Dn</"
+"keycap></keycombo>'yi kullanın."
+
+#. Tag: term
+#: kdeapps.docbook:102
+#, no-c-format
+msgid ""
+"How do I perform a simple <quote>copy</quote> from &konsole; to anything "
+"else?"
+msgstr ""
+"Nasıl &konsole;'dan herhangi bir yere basit bir <quote>kopyala</quote> "
+"işlemi yapabilirim"
+
+#. Tag: para
+#: kdeapps.docbook:104
+#, no-c-format
+msgid ""
+"When I do a <command>ls</command>, first I select with the mouse the desired "
+"text, press <keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></keycombo>, "
+"then I make the target application active, point the mouse to the relevant "
+"part and press <keycombo action=\"simul\">&Ctrl;<keycap>V</keycap></"
+"keycombo>. Alternatively, highlight the text by dragging with the &LMB; down "
+"and paste by clicking with the &MMB; (or both buttons if you are using a 2 "
+"button mouse with 3 button emulation)."
+msgstr ""
+"<command>ls</command> komutunu çalıştırdığımda, önce istediğim metni fare "
+"ile seçiyorum, sonra <keycombo action=\"simul\">&Ctrl;<keycap>C</keycap></"
+"keycombo> tuşlarına basıyorum. Daha sonra hedeflenen uygulamaya geçip, "
+"fareyi uygun bir yere getirip <keycombo action=\"simul\">&Ctrl;<keycap> V</"
+"keycap></keycombo> tuşlarına basıyorum. Farklı bir yöntem olarak, fareyi "
+"kullanarak &LMB; ile metni seçip, daha sonra &MMB; ile yapıştırabilirsiniz "
+"(ya da eğer 3 tuş emilasyonu ile 2 tuşlu fare kullanıyorsanız iki tuşa da "
+"aynı anda basabilirsiniz)."
+
+#. Tag: term
+#: kdeapps.docbook:117
+#, no-c-format
+msgid ""
+"Why can't &konsole; find the <quote>9x15</quote> and the 2 <quote>console</"
+"quote> bitmap fonts installed with &kde;?"
+msgstr ""
+
+#. Tag: para
+#: kdeapps.docbook:121
+#, no-c-format
+msgid ""
+"<application>FontConfig</application> must find the three fonts installed "
+"in: <filename class=\"directory\">$<envar>KDEDIR</envar>/share/fonts</"
+"filename>. If the &kde; install does not install these fonts in a directory "
+"that already exists (&eg; <filename class=\"directory\">/usr/share/fonts</"
+"filename>) then you must add this directory to the configuration file "
+"<filename class=\"directory\">/etc/fonts/local.conf</filename>. This should "
+"be the first line after <quote>&lt;fontconfig&gt;</quote>. For example: "
+"<programlisting>\n"
+"&lt;fontconfig&gt;\n"
+"&lt;dir&gt;/usr/kde3/share/fonts&lt;/dir&gt;\n"
+"&lt;/fontconfig&gt;\n"
+"</programlisting> After adding the directory, run (as root): "
+"<userinput><command>fc-cache</command> -v</userinput> and check that it "
+"found the directory."
+msgstr ""
+"<application>FontConfig</application> <filename class=\"directory\">"
+"$<envar>KDEDIR</envar>/share/fonts</filename> dosyasının içinde üç font "
+"bulmak zorundadır. Eğer &kde; bu fontları var olan bir dizine kurmazsa "
+"(&örneğin; <filename class=\"directory\">/usr/share/fonts</filename>) o "
+"zaman <filename class=\"directory\">/etc/fonts/local.conf</filename> "
+"yapılandırma dosyasına bu dizini siz ilave etmelisiniz. <quote>&lt;"
+"fontconfig&gt;</quote> satırından sonraki ilk satıra eklemelisiniz. "
+
+#. Tag: para
+#: kdeapps.docbook:144
+#, no-c-format
+msgid "&kmail;"
+msgstr "&kmail;"
+
+#. Tag: para
+#: kdeapps.docbook:147
+#, fuzzy, no-c-format
+msgid ""
+"&kmail; has its own home page at <ulink url=\"http://kmail.kde.org\">http://"
+"kmail.kde.org</ulink> where a <acronym>FAQ</acronym> is available."
+msgstr ""
+"&kmail;'in kendi SSS bölümünü içeren web sayfasını <ulink url=\"http://kmail."
+"kde.org\">http://kmail.kde.org</ulink> adresinde bulabilirsiniz."

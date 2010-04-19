@@ -1,0 +1,458 @@
+# translation of konquest.po to Türkçe
+# translation of konquest.po to
+# translation of konquest.po to Turkish
+# Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2004.
+# Bülent ŞENER <bulent@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: konquest\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-15 05:58+0100\n"
+"PO-Revision-Date: 2009-05-08 22:27+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: fleetdlg.cc:44
+msgid "Fleet Overview"
+msgstr "Filo Durumu"
+
+#: fleetdlg.cc:50
+msgid "Fleet No."
+msgstr "Filo No."
+
+#: fleetdlg.cc:50
+msgid "Destination"
+msgstr "Hedef"
+
+#: fleetdlg.cc:50
+msgid "Ships"
+msgstr "Gemiler"
+
+#: fleetdlg.cc:51
+msgid "Kill Percentage"
+msgstr "Yoketme Yüzdesi"
+
+#: fleetdlg.cc:51
+msgid "Arrival Turn"
+msgstr "Dönüş Sırası"
+
+#: gamelogic.cc:167
+#, kde-format
+msgid "The once mighty empire of %1 has fallen in ruins."
+msgstr "Bir zamanların kralı %1, bak şimdi ne hallere düştü."
+
+#: gamelogic.cc:174
+#, kde-format
+msgid "The fallen empire of %1 has staggered back to life."
+msgstr "Düşen %1 imparatorluğu tekrar hayata gelmeyi becerdi."
+
+#: gamelogic.cc:195
+#, kde-format
+msgid "Reinforcements (1 ship) have arrived for planet %2."
+msgid_plural "Reinforcements (%1 ships) have arrived for planet %2."
+msgstr[0] ""
+
+#: gamelogic.cc:240
+#, kde-format
+msgid "Planet %2 has held against an attack from %1."
+msgstr "%2 gezegeni, %1 tarafından karşı saldırıya uğradı."
+
+#: gamelogic.cc:248
+#, kde-format
+msgid "Planet %2 has fallen to %1."
+msgstr "%2 gezegeni %1 tarafından ele geçirildi."
+
+#: gameview.cc:110
+msgid "End Turn"
+msgstr "Hamle Sonu"
+
+#: gameview.cc:280
+msgid "Select source planet..."
+msgstr "Kalkılacak gezegeni seçin..."
+
+#: gameview.cc:300
+msgid "Select destination planet..."
+msgstr "Gidilecek gezegeni seçin..."
+
+#: gameview.cc:323
+msgid ": How many ships?"
+msgstr ": Kaç tane gemi?"
+
+#: gameview.cc:347
+msgid "Ruler: Select starting planet."
+msgstr "Cetvel: Başlangıç gezegeni seçin."
+
+#: gameview.cc:361
+#, kde-format
+msgid ""
+"The distance from Planet %1 to Planet %2 is %3 light years.\n"
+"A ship leaving this turn will arrive on turn %4"
+msgstr ""
+"%1 gezegeninden %2 gezegenine uzaklık %3 ışık yılıdır.\n"
+"Bu hamlede ayrılacak gemi %4. hamlede geri gelecek."
+
+#: gameview.cc:367
+msgid "Distance"
+msgstr "Uzaklık"
+
+#: gameview.cc:372
+msgid "Ruler: Select ending planet."
+msgstr "Cetvel: Bitiş gezegenini seçin."
+
+#: gameview.cc:410
+#, kde-format
+msgid "Messages for %1"
+msgstr "%1 için İleti"
+
+#: gameview.cc:425
+#, kde-format
+msgid "The mighty %1 has conquered the galaxy!"
+msgstr ""
+
+#: gameview.cc:426
+msgid "Game Over"
+msgstr "Oyun Bitti"
+
+#: gameview.cc:473
+#, kde-format
+msgid "Turn %1:"
+msgstr ""
+
+#: gameview.cc:561
+msgid "Do you wish to retire this game?"
+msgstr "Bu oyunu sonlandırmak istiyor musunuz?"
+
+#: gameview.cc:562
+msgid "End Game"
+msgstr "Oyunu Sonlandır"
+
+#: gameview.cc:575
+msgid "Final Standings"
+msgstr "Son Durum"
+
+#: gameview.cc:745
+msgid "Not enough ships to send."
+msgstr "Gönderilecek yeterli gemi yok"
+
+#: gameview.cc:771
+msgid "Current Standings"
+msgstr "Geçerli Mevki"
+
+#: Konquest.cc:32
+msgid "Galactic Strategy KDE Game"
+msgstr "KDE Uzay Strateji Oyunu"
+
+#: Konquest.cc:38
+msgid "Konquest"
+msgstr "Konquest"
+
+#: Konquest.cc:40
+msgid "Copyright (c) 1999-2006, Developers"
+msgstr "Copyright (c) 1999-2006, Geliştiriciler"
+
+#: Konquest.cc:42
+msgid "Russ Steffen"
+msgstr "Russ Steffen"
+
+#: Konquest.cc:43
+msgid "Stephan Zehetner"
+msgstr "Stephan Zehetner"
+
+#: Konquest.cc:43
+msgid "Computer/AI Player"
+msgstr "Bilgisayar/YZ Oyuncusu"
+
+#: Konquest.cc:44
+msgid "Dimitry Suzalev"
+msgstr "Dimitry Suzalev"
+
+#: Konquest.cc:44
+msgid "Port to KDE4"
+msgstr "Kde4 Geçişi"
+
+#: Konquest.cc:45
+msgid "Inge Wallin"
+msgstr "Inge Wallin"
+
+#: Konquest.cc:45 Konquest.cc:46
+msgid "Cleaning and bugfixing"
+msgstr "Temizleme ve hata düzeltmeler"
+
+#: Konquest.cc:46
+msgid "Pierre Ducroquet"
+msgstr "Pierre Ducroquet"
+
+#: mainwin.cc:49 mainwin.cc:56
+msgid "Galactic Conquest"
+msgstr "Galaktik Fetih"
+
+#: mainwin.cc:80
+msgid "&Measure Distance"
+msgstr "&Uzaklığı Ölç"
+
+#: mainwin.cc:88
+msgid "&Show Standings"
+msgstr "&Durumları Göster"
+
+#: mainwin.cc:96
+msgid "&Fleet Overview"
+msgstr "&Filo Durumu"
+
+#: mainwin.cc:135
+#, kde-format
+msgid "Turn # %1"
+msgstr ""
+
+#: mapitems.cc:228
+#, kde-format
+msgid "Planet name: %1"
+msgstr "Gezegen ismi : %1"
+
+#: mapitems.cc:230
+#, kde-format
+msgid "Owner: %1"
+msgstr "Sahibi: %1"
+
+#: mapitems.cc:232
+#, kde-format
+msgid "Ships: %1"
+msgstr "Gemi sayısı: %1"
+
+#: mapitems.cc:234
+#, kde-format
+msgid "Production: %1"
+msgstr "Üretim sayısı: %1"
+
+#: mapitems.cc:236
+#, kde-format
+msgid "Kill percent: %1"
+msgstr "Yoketme yüzdesi: %1"
+
+#: newgamedlg.cc:96 newgamedlg.cc:134 newgamedlg.cc:221 newgamedlg.cc:399
+msgctxt "A human player"
+msgid "Human"
+msgstr "İnsan"
+
+#: newgamedlg.cc:97 newgamedlg.cc:135 newgamedlg.cc:222
+msgid "Computer Weak"
+msgstr "Bilgisayar Zayıf"
+
+#: newgamedlg.cc:98 newgamedlg.cc:136 newgamedlg.cc:223
+msgid "Computer Normal"
+msgstr "Bilgisayar Normal"
+
+#: newgamedlg.cc:99 newgamedlg.cc:137 newgamedlg.cc:224
+msgid "Computer Hard"
+msgstr "Bilgisayar Güçlü"
+
+#: newgamedlg.cc:111
+msgctxt "The player name"
+msgid "Name"
+msgstr "İsim"
+
+#: newgamedlg.cc:112
+msgid "Type"
+msgstr "Tip"
+
+#: newgamedlg.cc:156
+#, kde-format
+msgctxt "Default player name is \"player \" + player number"
+msgid "Player %1"
+msgstr "%1. Oyuncu"
+
+#: newgamedlg.cc:255
+msgid "Start New Game"
+msgstr "Yeni Oyun Başlat"
+
+#: newgamedlg.cc:346
+msgid "The game is much more fun when you add a human player!"
+msgstr "Oyun insan oyuncu eklendiğinde daha eğlenceli olur!"
+
+#: scoredlg.cc:43
+msgctxt "The player name"
+msgid "Player"
+msgstr "Oyuncu"
+
+#: scoredlg.cc:43
+msgid ""
+"Ships\n"
+"Built"
+msgstr ""
+
+#: scoredlg.cc:44
+msgid ""
+"Planets\n"
+"Conquered"
+msgstr ""
+
+#: scoredlg.cc:44
+msgid ""
+"Fleets\n"
+"Launched"
+msgstr ""
+
+#: scoredlg.cc:45
+msgid ""
+"Fleets\n"
+"Destroyed"
+msgstr ""
+
+#: scoredlg.cc:45
+msgid ""
+"Ships\n"
+"Destroyed"
+msgstr ""
+
+#. i18n: file: konquestui.rc:10
+#. i18n: ectx: Menu (game)
+#: rc.cpp:3
+msgid "&Game"
+msgstr "&Oyun"
+
+#. i18n: file: konquestui.rc:17
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:6
+msgid "Main Toolbar"
+msgstr "Ana Araç Çubuğu"
+
+#. i18n: file: newGameDialog.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, newGameDialog)
+#: rc.cpp:9
+msgid "Dialog"
+msgstr "Pencere"
+
+#. i18n: file: newGameDialog.ui:41
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:12
+msgid "Players"
+msgstr "Oyuncular"
+
+#. i18n: file: newGameDialog.ui:74
+#. i18n: ectx: property (text), widget (QPushButton, addPlayerButton)
+#: rc.cpp:15
+msgid "&Add"
+msgstr "&Ekle"
+
+#. i18n: file: newGameDialog.ui:81
+#. i18n: ectx: property (text), widget (QPushButton, removePlayerButton)
+#: rc.cpp:18
+msgid "&Remove"
+msgstr "&Kaldır"
+
+#. i18n: file: newGameDialog.ui:101
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:21
+msgid "Map"
+msgstr "Harita"
+
+#. i18n: file: newGameDialog.ui:152
+#. i18n: ectx: property (text), widget (QPushButton, rejectMap)
+#: rc.cpp:24
+msgid "&Reject"
+msgstr "&Reddet"
+
+#. i18n: file: newGameDialog.ui:159
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:27
+msgid "&Neutral planets:"
+msgstr "&Tarafsız gezegenler:"
+
+#. i18n: file: newGameDialog.ui:181
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:30
+msgid "&Width:"
+msgstr "&Genişlik:"
+
+#. i18n: file: newGameDialog.ui:191
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:33
+msgid "&Height:"
+msgstr "&Yükseklik:"
+
+#: rc.cpp:34
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Ömer Fadıl USTA"
+
+#: rc.cpp:35
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "omer_fad@hotmail.com"
+
+#~ msgid "Player list:"
+#~ msgstr "Oyuncu listesi:"
+
+#~ msgid "New Column"
+#~ msgstr "Yeni Sütun"
+
+#~ msgid "&Human player:"
+#~ msgstr "&İnsan Oyuncu:"
+
+#~ msgid "&Add Human Player"
+#~ msgstr "&İnsan Oyuncu Ekle"
+
+#~ msgid "Preview map:"
+#~ msgstr "Harita önizleme:"
+
+#~ msgid "Computer Player thinking..."
+#~ msgstr "Bilgisayar Oyuncusu düşünüyor..."
+
+#~ msgid ""
+#~ "This is the last turn.\n"
+#~ "Do you wish to add extra turns?"
+#~ msgstr ""
+#~ "Bu son hamleydi.\n"
+#~ "Yeni hamleler eklemek ister misiniz?"
+
+#~ msgid "&Add Turns"
+#~ msgstr "H&amle Ekle"
+
+#~ msgid "Add the specified number of turns to the game and continue playing."
+#~ msgstr "Oyuna özel bir hamle numarası ekleyip devam edin."
+
+#~ msgid "&Game Over"
+#~ msgstr "&Oyun Bitti"
+
+#~ msgid "Terminate the current game."
+#~ msgstr "Geçerli oyun kesildi."
+
+#~ msgid "Extra turns: %1"
+#~ msgstr "İlave hamleler: %1"
+
+#~ msgid "Human Player"
+#~ msgstr "İnsan Oyuncu"
+
+#~ msgctxt "Generated AI player name"
+#~ msgid "Comp%1"
+#~ msgstr "Bilg%1"
+
+#~ msgid "Number of &players: %1"
+#~ msgstr "&Oyuncuların sayısı: %1"
+
+#~ msgid "Number of &turns: %1"
+#~ msgstr "&Hamlelerin sayısı: %1"
+
+#~ msgid "Planet name: "
+#~ msgstr "Gezegen ismi: "
+
+#~ msgid "Owner: "
+#~ msgstr "Sahibi: "
+
+#~ msgid "Ships: "
+#~ msgstr "Gemi sayısı: "
+
+#~ msgid "Production: "
+#~ msgstr "Üretim sayısı: "
+
+#~ msgid "Kill percent: "
+#~ msgstr "Yoketme yüzdesi: "

@@ -1,0 +1,350 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: PathShapes\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-26 20:30+0100\n"
+"PO-Revision-Date: 2009-09-28 01:16+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:36
+msgid "An enhanced path shape"
+msgstr "Gelişmiş bir yol şekli"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:38
+msgid "An enhanced path"
+msgstr "Gelişmiş bir yol"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:158
+msgid "Cross"
+msgstr "Çapraz"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:160
+msgid "A cross"
+msgstr "Çapraz"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:192
+msgid "Arrow"
+msgstr "Ok"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:194
+msgid "An arrow"
+msgstr "Bir ok"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:270
+msgid "Callout"
+msgstr ""
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:272
+msgid "A callout"
+msgstr ""
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:315
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:317
+msgid "Smiley"
+msgstr "Gülen yüz"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:394
+msgid "Circular Arrow"
+msgstr "Dairesel Ok"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:396
+msgid "A circular-arrow"
+msgstr "Bir dairesel ok"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:439
+msgid "Gearhead"
+msgstr "Dişli kafası"
+
+#: enhancedpath/KoEnhancedPathShapeFactory.cpp:441
+msgid "A gearhead"
+msgstr "Bir dişli kafası"
+
+#: rectangle/KoRectangleShapeFactory.cpp:31
+msgid "Rectangle"
+msgstr "Dikdörtgen"
+
+#: rectangle/KoRectangleShapeFactory.cpp:33
+msgid "A rectangle"
+msgstr "Bir dikdörtgen"
+
+#: rectangle/RectangleShapeConfigCommand.cpp:32
+msgid "Change rectangle"
+msgstr "Dikdörtgeni değiştir"
+
+#: star/StarShapeConfigCommand.cpp:34
+msgid "Change star"
+msgstr "Yıldızı değiştir"
+
+#: star/KoStarShapeFactory.cpp:34
+msgid "A star shape"
+msgstr "Bir yıldız şekli"
+
+#: star/KoStarShapeFactory.cpp:36 star/KoStarShapeFactory.cpp:48
+msgid "A star"
+msgstr "Bir yıldız"
+
+#: star/KoStarShapeFactory.cpp:46
+msgid "Star"
+msgstr "Yıldız"
+
+#: star/KoStarShapeFactory.cpp:60
+msgid "Flower"
+msgstr "Çiçek"
+
+#: star/KoStarShapeFactory.cpp:62
+msgid "A flower"
+msgstr "Bir çiçek"
+
+#: star/KoStarShapeFactory.cpp:77
+msgid "Pentagon"
+msgstr "Beşgen"
+
+#: star/KoStarShapeFactory.cpp:79
+msgid "A pentagon"
+msgstr "Bir beşgen"
+
+#: star/KoStarShapeFactory.cpp:93
+msgid "Hexagon"
+msgstr "Altıgen"
+
+#: star/KoStarShapeFactory.cpp:95
+msgid "A hexagon"
+msgstr "Bir altıgen"
+
+#: arrow/KoArrowShapeFactory.cpp:30
+msgid "A arrow shape"
+msgstr "Bir ok şekli"
+
+#: arrow/KoArrowShapeFactory.cpp:32
+msgid "A arrow"
+msgstr "Bir ok"
+
+#: arrow/KoArrowShapeFactory.cpp:34
+msgid "Right Arrow"
+msgstr "Sağ Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:35
+msgid "A right arrow"
+msgstr "Bir sağ ok"
+
+#: arrow/KoArrowShapeFactory.cpp:42
+msgid "Left Arrow"
+msgstr "Sol ok"
+
+#: arrow/KoArrowShapeFactory.cpp:43
+msgid "A left arrow"
+msgstr "Bir sol ok"
+
+#: arrow/KoArrowShapeFactory.cpp:50
+msgid "Top Arrow"
+msgstr "Yukarı Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:51
+msgid "A top arrow"
+msgstr "Bir yukarı ok"
+
+#: arrow/KoArrowShapeFactory.cpp:58
+msgid "Bottom Arrow"
+msgstr "Aşağı Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:59
+msgid "A bottom arrow"
+msgstr "Bit aşağı ok"
+
+#: arrow/KoArrowShapeFactory.cpp:66
+msgid "Left Down Arrow"
+msgstr "Sol Alt Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:67
+msgid "A left down arrow"
+msgstr "Bir sol alt ok"
+
+#: arrow/KoArrowShapeFactory.cpp:74
+msgid "Left Top Arrow"
+msgstr "Sol Üst Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:75
+msgid "A left top arrow"
+msgstr "Bir sol üst ok"
+
+#: arrow/KoArrowShapeFactory.cpp:82
+msgid "Right Down Arrow"
+msgstr "Sağ Alt Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:83
+msgid "A right down arrow"
+msgstr "Bir sağ alt ok"
+
+#: arrow/KoArrowShapeFactory.cpp:90
+msgid "Right Top Arrow"
+msgstr "Sağ Üst Ok"
+
+#: arrow/KoArrowShapeFactory.cpp:91
+msgid "A right top arrow"
+msgstr "Bir sağ üst ok"
+
+#: spiral/SpiralShapeConfigCommand.cpp:32
+msgid "Change spiral"
+msgstr "Spirali değiştir"
+
+#: spiral/SpiralShapeConfigWidget.cpp:29
+msgid "Curve"
+msgstr "Kıvrım"
+
+#: spiral/SpiralShapeConfigWidget.cpp:30
+msgid "Line"
+msgstr "Çizgi"
+
+#: spiral/KoSpiralShapeFactory.cpp:29
+msgid "Spiral"
+msgstr "Spiral"
+
+#: spiral/KoSpiralShapeFactory.cpp:31
+msgid "A spiral shape"
+msgstr "Bir spiral şekil"
+
+#: ellipse/KoEllipseShapeFactory.cpp:32
+msgid "Ellipse"
+msgstr "Elips"
+
+#: ellipse/KoEllipseShapeFactory.cpp:34
+msgid "An ellipse"
+msgstr "Bir elips"
+
+#: ellipse/EllipseShapeConfigCommand.cpp:32
+msgid "Change ellipse"
+msgstr "Elipsi değiştir"
+
+#: ellipse/EllipseShapeConfigWidget.cpp:29
+msgid "Arc"
+msgstr "Yay"
+
+#: ellipse/EllipseShapeConfigWidget.cpp:30
+msgid "Pie"
+msgstr "Pasta"
+
+#: ellipse/EllipseShapeConfigWidget.cpp:31
+msgid "Chord"
+msgstr "Tel"
+
+#. i18n: file: rectangle/RectangleShapeConfigWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, RectangleShapeConfigWidget)
+#: rc.cpp:3
+msgid "Rectangle Shape"
+msgstr "Dikdörtgen Şekli"
+
+#. i18n: file: rectangle/RectangleShapeConfigWidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:6
+msgid "Corner radius x:"
+msgstr "Köşe yarıçapı x:"
+
+#. i18n: file: rectangle/RectangleShapeConfigWidget.ui:29
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:9
+msgid "Corner radius y:"
+msgstr "Köşe yarıçapı y:"
+
+#. i18n: file: star/StarShapeConfigWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, StarShapeConfigWidget)
+#: rc.cpp:12
+msgid "Star shape"
+msgstr "Yıldız şekli"
+
+#. i18n: file: star/StarShapeConfigWidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:15
+msgid "Polygon:"
+msgstr "Çokgen:"
+
+#. i18n: file: star/StarShapeConfigWidget.ui:36
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:18
+msgid "Corners:"
+msgstr "Köşeler:"
+
+#. i18n: file: star/StarShapeConfigWidget.ui:46
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:21
+msgid "Inner radius:"
+msgstr "İç yarıçap:"
+
+#. i18n: file: star/StarShapeConfigWidget.ui:60
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:24
+msgid "Outer radius:"
+msgstr "Dış yarıçap:"
+
+#. i18n: file: spiral/SpiralShapeConfigWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, SpiralShapeConfigWidget)
+#: rc.cpp:27
+msgid "Spiral Shape"
+msgstr "Spiral Şekli"
+
+#. i18n: file: spiral/SpiralShapeConfigWidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:19
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:30 rc.cpp:42
+msgid "Type:"
+msgstr "Tip:"
+
+#. i18n: file: spiral/SpiralShapeConfigWidget.ui:29
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:33
+msgid "Fade:"
+msgstr "Kaybolma:"
+
+#. i18n: file: spiral/SpiralShapeConfigWidget.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:36
+msgid "Direction:"
+msgstr "Yönelim:"
+
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, EllipseShapeConfigWidget)
+#: rc.cpp:39
+msgid "Ellipse Shape"
+msgstr "Elips şekli"
+
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:29
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:45
+msgid "Start angle:"
+msgstr "Başlangıç açısı:"
+
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:39
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, startAngle)
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:56
+#. i18n: ectx: property (suffix), widget (QDoubleSpinBox, endAngle)
+#: rc.cpp:48 rc.cpp:54
+msgid "°"
+msgstr "°"
+
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:46
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:51
+msgid "End angle:"
+msgstr "Bitiş açısı:"
+
+#. i18n: file: ellipse/EllipseShapeConfigWidget.ui:63
+#. i18n: ectx: property (text), widget (QPushButton, closeEllipse)
+#: rc.cpp:57
+msgid "Close ellipse"
+msgstr "Elipsi kapat"
+
+#~ msgid "A rectangle shape"
+#~ msgstr "Bir dikdörtgen şekli"
+
+#~ msgid "Enhanced Path"
+#~ msgstr "Gelişmiş Yol"

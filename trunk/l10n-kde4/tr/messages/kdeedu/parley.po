@@ -1,0 +1,5375 @@
+# translation of parley.po to
+# translation of kvoctrain.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005, 2007.
+# Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
+# İsmail Şimşek <simsek@kde.org.tr>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: parley\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-03 01:26+0200\n"
+"PO-Revision-Date: 2009-10-28 16:32+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. i18n: file: src/export/exportdialog.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, ExportOptions)
+#: src/export/exportdialog.cpp:46 rc.cpp:20
+msgid "Export"
+msgstr "Dışarıya Aktar"
+
+#: src/export/exportdialog.cpp:72
+msgid "HTML document"
+msgstr "HTML belgesi"
+
+#: src/export/exportdialog.cpp:107 src/parleymainwindow.cpp:136
+#: src/parleydocument.cpp:233
+msgid "Untitled"
+msgstr "Başlıksız"
+
+#: src/export/exportdialog.cpp:110
+msgid "Export As"
+msgstr "Farklı Aktar"
+
+#: src/entry-dialogs/imagechooserwidget.cpp:49
+msgctxt "@label image preview is empty"
+msgid "No Preview"
+msgstr "Önizleme Yok"
+
+#: src/entry-dialogs/imagechooserwidget.cpp:60
+msgctxt "@label image preview is empty"
+msgid "No Image"
+msgstr "Resim Yok"
+
+#: src/entry-dialogs/comparisonwidget.cpp:86
+msgid "Could not determine word type of adjectives"
+msgstr "Sıfatların sözcük tipi belirlenemedi"
+
+#: src/entry-dialogs/comparisonwidget.cpp:105
+msgid "Could not determine word type of adverbs"
+msgstr "Zarfların sözcük tipi belirlenemedi"
+
+#: src/entry-dialogs/synonymwidget.cpp:59
+msgid "Select Synonyms"
+msgstr "Eşanlamlıları Seç"
+
+#: src/entry-dialogs/synonymwidget.cpp:65
+#, kde-format
+msgid "%1 and %2 are not Synonyms"
+msgstr "%1 ile %2 Eş Anlamlı değil"
+
+#: src/entry-dialogs/synonymwidget.cpp:67
+#, kde-format
+msgid "%1 and %2 are Synonyms"
+msgstr "%1 ile %2 Eş Anlamlı"
+
+#: src/entry-dialogs/synonymwidget.cpp:72
+#, kde-format
+msgid "%1 and %2 are not Antonyms"
+msgstr "%1 ile %2 Eş Anlamlı değil"
+
+#: src/entry-dialogs/synonymwidget.cpp:74
+#, kde-format
+msgid "%1 and %2 are Antonyms"
+msgstr "%1 ile %2 Eş Anlamlı"
+
+#: src/entry-dialogs/synonymwidget.cpp:79
+#, kde-format
+msgid "%1 and %2 are not False Friends"
+msgstr "%1 ve %2 Yanlış Arkadaş Değil"
+
+#: src/entry-dialogs/synonymwidget.cpp:81
+#, kde-format
+msgid "%1 and %2 are False Friends"
+msgstr "%1 ve %2 Yanlış Arkadaşlar"
+
+#: src/entry-dialogs/synonymwidget.cpp:90
+#, kde-format
+msgctxt "Title for a list of synonyms for a word"
+msgid "Synonyms of %1:"
+msgstr "%1 ile eşanlamlı:"
+
+#: src/entry-dialogs/synonymwidget.cpp:93
+#, kde-format
+msgctxt "Title for a list of antonyms (opposites) for a word"
+msgid "Antonyms of %1:"
+msgstr "%1 ile zıt anlamlı:"
+
+#: src/entry-dialogs/synonymwidget.cpp:96
+#, kde-format
+msgctxt ""
+"Title for a list of false friend (things that sound similar but have "
+"different meanings) for a word"
+msgid "False Friends of %1:"
+msgstr "%1 ögesinin Yanlış Arkadaşları:"
+
+#: src/entry-dialogs/conjugationwidget.cpp:135
+#, kde-format
+msgid "\"%1\" is a verb"
+msgstr "\"%1\" bir fiil"
+
+#: src/entry-dialogs/conjugationwidget.cpp:170
+msgid "Could not determine word type of verbs"
+msgstr "Fiillerin sözcük tipi belirlenemedi"
+
+#: src/entry-dialogs/FromToEntryPage.cpp:160
+#, kde-format
+msgid "Grades from %1 to %2"
+msgstr "%1 ile %2 arasındaki notlar"
+
+#: src/entry-dialogs/declensionwidget.cpp:140
+#, kde-format
+msgid "\"%1\" is a noun"
+msgstr "\"%1\" bir isim"
+
+#: src/entry-dialogs/declensionwidget.cpp:165
+msgid "Could not determine word type of nouns"
+msgstr "İsimlerin sözcük tipi belirlenemedi"
+
+#: src/editor/editor.cpp:134
+msgid "Lessons"
+msgstr "Dersler"
+
+#: src/editor/editor.cpp:147
+msgid ""
+"Right click to add, delete, or rename lessons. \n"
+"With the checkboxes you can select which lessons you want to practice. \n"
+"Only checked lessons [x] will be asked in the tests!"
+msgstr ""
+"Ders eklemek, silmek ve yeniden adlandırmak için sağ tıklatın.\n"
+"Onay kutucukları ile hangi ders hakkında pratik yapmak istediğinizi "
+"seçebilirsiniz.\n"
+"Sadece [x] şeklinde onaylanan dersler sınavlar içinde sorulacaktır!"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:160
+#. i18n: ectx: property (text), widget (QTreeWidget, PracticeWordTypesTreeWidget)
+#: src/editor/editor.cpp:162 rc.cpp:1390
+msgid "Word Types"
+msgstr "Sözcük Türleri"
+
+#: src/editor/editor.cpp:189
+msgid "Grade Boxes"
+msgstr "Derece Kutuları"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:92
+#. i18n: ectx: property (text), widget (QRadioButton, ConjugationRadio)
+#: src/editor/editor.cpp:212 rc.cpp:1547
+msgid "Conjugation"
+msgstr "Fiil Çekimi"
+
+#: src/editor/editor.cpp:240
+msgid "Comparison forms"
+msgstr "Karşılaştırma biçimi"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:44
+#. i18n: ectx: property (text), widget (QRadioButton, MultipleChoiceRadio)
+#: src/editor/editor.cpp:253 src/practiceold/MCQueryDlg.cpp:42 rc.cpp:1529
+msgid "Multiple Choice"
+msgstr "Çoktan seçmeli"
+
+#. i18n: file: src/entry-dialogs/synonymwidget.ui:16
+#. i18n: ectx: property (text), widget (QLabel, synonymLabel)
+#: src/editor/editor.cpp:265 rc.cpp:122
+msgid "Synonyms"
+msgstr "Eş Anlamlılar"
+
+#: src/editor/editor.cpp:276
+msgid "Antonyms"
+msgstr "Zıt Anlamlılar"
+
+#: src/editor/editor.cpp:287
+msgid "False Friends"
+msgstr "Yanlış Arkadaşlar"
+
+#: src/editor/editor.cpp:299
+msgid "Phonetic Symbols"
+msgstr "Fonetik Semboller"
+
+#: src/editor/editor.cpp:311
+msgid "Image"
+msgstr "Resim"
+
+#: src/editor/editor.cpp:323
+msgid "Summary"
+msgstr "Özet"
+
+#: src/editor/editor.cpp:337
+msgid "Sound"
+msgstr "Ses"
+
+#: src/editor/editor.cpp:349
+msgid "Internet"
+msgstr "İnternet"
+
+#: src/editor/editor.cpp:377
+#, fuzzy
+#| msgid "Open Vocabulary Document"
+msgid "&Upload Vocabulary Document..."
+msgstr "Sözcük Hazinesi Belgesi Aç"
+
+#: src/editor/editor.cpp:378
+#, fuzzy
+#| msgid "Save the active vocabulary collection with a different name"
+msgid "Share the current vocabulary collection with other users."
+msgstr "Etkin sözcük hazinesi koleksiyonunu farklı bir isimle kaydet"
+
+#: src/editor/editor.cpp:387
+msgid "&Languages..."
+msgstr "Dil&ler..."
+
+#: src/editor/editor.cpp:388
+msgid ""
+"Edit which languages are in the collection and their grammar properties."
+msgstr ""
+"Hangi dillerin koleksiyonda olduğunu ve gramer özelliklerini değiştirin."
+
+#: src/editor/editor.cpp:397
+msgid "Remove Grades"
+msgstr "Düzeyleri Kaldır"
+
+#: src/editor/editor.cpp:399
+msgid "Remove all grades from the current document"
+msgstr "Geçerli belgeden tüm düzeyleri sil"
+
+#: src/editor/editor.cpp:406
+msgid "Show Entries from Child Lessons"
+msgstr "Alt Derslerin girdilerini göster"
+
+#: src/editor/editor.cpp:408
+msgid "Enable to also see the entries of child lessons in each lesson."
+msgstr "Her derste alt derslere ait girdileri de görmek için etkinleştirin."
+
+#: src/editor/editor.cpp:414
+msgid "Automatic Translation"
+msgstr "Otomatik Çeviri"
+
+#. i18n: file: src/settings/parley.kcfg:46
+#. i18n: ectx: label, entry (AutomaticTranslation), group (General)
+#: src/editor/editor.cpp:416 rc.cpp:918
+msgid "Enable automatic translation of the lesson entries."
+msgstr "Ders girdilerinin otomatik olarak çevrilmesini etkinleştir."
+
+#: src/editor/editor.cpp:422
+msgid "Start Practice..."
+msgstr "Çalışmayı Başlat..."
+
+#: src/editor/editor.cpp:424
+msgid "Start a test"
+msgstr "Bir test başlat"
+
+#: src/editor/editor.cpp:433
+msgid "Configure Practice..."
+msgstr "Çalışmayı Yapılandır..."
+
+#: src/editor/editor.cpp:435
+msgid "Change practice settings"
+msgstr "Çalışma ayarlarını değiştir"
+
+#: src/editor/editor.cpp:444
+msgid "&Statistics..."
+msgstr "İ&statistikler..."
+
+#: src/editor/editor.cpp:446
+msgid "Show statistics for the current collection"
+msgstr "Geçerli koleksiyon için istatistikleri göster"
+
+#: src/editor/editor.cpp:452
+msgid "Show Se&arch"
+msgstr "Ar&amayı Göster"
+
+#: src/editor/editor.cpp:454
+msgid "Toggle display of the search bar"
+msgstr "Arama çubuğunun göster/gizle"
+
+#: src/editor/editor.cpp:466
+msgid "&Script Manager"
+msgstr "&Betik Yöneticisi"
+
+#: src/editor/editor.cpp:501
+msgid "Enter search terms here"
+msgstr "Aranacak terimleri buraya girin"
+
+#: src/editor/editor.cpp:505
+msgid "S&earch:"
+msgstr "Ar&a:"
+
+#: src/editor/editor.cpp:584 src/parleydocument.cpp:118
+#, kde-format
+msgctxt "@title:window document properties"
+msgid "Properties for %1"
+msgstr "%1 özellikleri"
+
+#: src/scripts/scriptmanager.cpp:131
+#, kde-format
+msgid "A script could not be activated and has been disabled."
+msgid_plural "%1 scripts could not be activated and have been disabled."
+msgstr[0] "%1 betiği aktif hale geçirilemiyor ve pasifleştirildi."
+
+#: src/scripts/scriptmanager.cpp:131
+msgid ""
+"This probably means that there are errors in the script or that the required "
+"packages are not installed."
+msgstr ""
+"Bunun anlamı muhtemelen betikte hata bulunmasıdır veya ihtiyaç duyulan "
+"paketlerin kurulmamış olmasıdır."
+
+#: src/scripts/scriptmanager.cpp:133
+msgid "Script Activation"
+msgstr "Betik Etkinleştirmesi"
+
+#: src/scripts/script.cpp:54
+msgid "The script file does not exist."
+msgstr "Betik dosyası yok."
+
+#: src/scripts/script.cpp:86
+#, kde-format
+msgid "Error in file %1 at line %2:"
+msgstr "%1 dosyasının %2 numaralı satırında hata:"
+
+#: src/scripts/script.cpp:88
+msgctxt "debug information in error message"
+msgid "Backtrace:"
+msgstr "Geri izleme:"
+
+#: src/scripts/scriptdialog.cpp:35
+msgid "Script Dialog"
+msgstr "Betik Penceresi"
+
+#: src/practiceold/entryfilter.cpp:92 src/practiceold/testentrymanager.cpp:65
+msgid ""
+"The vocabulary document contains no entries that can be used for the chosen "
+"type of practice."
+msgstr ""
+"Sözcük dağarcığı belgesinde, seçilen pratik türü için kullanılabilecek girdi "
+"mevcut değildir."
+
+#: src/practiceold/entryfilter.cpp:100
+msgid ""
+"The vocabulary document contains no articles for the current language. "
+"Please add some in the Edit->Grammar menu."
+msgstr ""
+"Sözcük dağarcığı belgesinde, şu andak idil için herhangi bir madde "
+"bulunmamaktadır. Lütfen Düzen->Gramer menüsü içinden biraz ekleme yapınız."
+
+#: src/practiceold/entryfilter.cpp:117
+#: src/statistics-dialogs/StatisticsDialog.cpp:44
+#: src/statistics-dialogs/StatisticsDialog.cpp:48
+msgid "Start Practice"
+msgstr "Çalışmayı Başlat"
+
+#: src/practiceold/AdjQueryDlg.cpp:35
+msgid "Comparison Training"
+msgstr "Karşılaştırma Çalışması"
+
+#: src/practiceold/VerbQueryDlg.cpp:37
+msgid "Verb Training"
+msgstr "Fiil Çalışması"
+
+#: src/practiceold/VerbQueryDlg.cpp:401
+#, kde-format
+msgid "Current tense is: %1"
+msgstr "Şu anki zaman: %1"
+
+#: src/practiceold/vocabularypractice.cpp:112
+msgid ""
+"The test dialog was not answered several times in a row.\n"
+"It is assumed that there is currently nobody in front of the screen, and for "
+"that reason the practice is stopped."
+msgstr ""
+"Bir satırdaki sınav diyaloğu birkaç kere cevaplanmamış.\n"
+"Şu anda ekranın karşısında kimsenin bulunmadığı varsayılıyor, ve bu nedenle "
+"çalışma durduruluyor."
+
+#: src/practiceold/vocabularypractice.cpp:116
+msgid "Stopping Test"
+msgstr "Sınav Durduruluyor"
+
+#: src/practiceold/writtenpracticedialog.cpp:47
+msgid "Written Practice"
+msgstr "Yazılı Çalışma"
+
+#: src/practiceold/writtenpracticedialog.cpp:170
+msgid "<font color=\"#188C18\">You are right!</font>"
+msgstr "<font color=\"#188C18\">Doğru!</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:173
+msgid "<font color=\"#222978\">Watch your capitalization!</font>"
+msgstr "<font color=\"#222978\">Büyük/küçük harflere dikkat edin!</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:176
+msgid ""
+"<font color=\"#8C1818\">I think you made a spelling mistake. But the word is "
+"right.</font>"
+msgstr ""
+"<font color=\"#8C1818\">Sanırım bir heceleme hatası yaptınız. Ama sözcük "
+"doğru.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:179
+msgid "<font color=\"#8C1818\">You made a mistake.</font>"
+msgstr "<font color=\"#8C1818\">Bir hata yaptınız.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:182
+msgid "<font color=\"#222978\">Your accentuation was wrong.</font>"
+msgstr "<font color=\"#222978\">Vurgulamanız hatalı.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:185
+msgid "<font color=\"#222978\">The article is wrong.</font>"
+msgstr "<font color=\"#222978\">Yazı hatalı.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:188
+msgid "<font color=\"#222978\">The article is missing.</font>"
+msgstr "<font color=\"#222978\">Yazı kayıp.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:191
+msgid "<font color=\"#8C1818\">Watch out! This is a false friend!</font>"
+msgstr "<font color=\"#8C1818\">Dikkat edin! Bu yanlış arkadaş!</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:194
+msgid "<font color=\"#8C1818\">Great, you entered a synonym.</font>"
+msgstr "<font color=\"#8C1818\">Harika, bir anlamdaş girdiniz.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:197
+msgid "<font color=\"#8C8C18\">Please enter something for me to check.</font>"
+msgstr ""
+"<font color=\"#8C8C18\">Lütfen kontrol etmem için bir şey girin.</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:200
+msgid ""
+"<font color=\"#8C1818\">I know that word, but are you sure it is the right "
+"one here?</font>"
+msgstr ""
+"<font color=\"#8C1818\">Bu sözcüğü biliyorum, ama buradaki doğru sözcük "
+"olduğundan emin misiniz?</font>"
+
+#: src/practiceold/writtenpracticedialog.cpp:204
+msgid "There is a mistake."
+msgstr "Bir hata var."
+
+#: src/practiceold/writtenpracticedialog.cpp:231
+msgid "The answer was wrong."
+msgstr "Yanıtınız yanlış."
+
+#: src/practiceold/writtenpracticedialog.cpp:394
+#: src/practiceold/MCQueryDlg.cpp:227
+msgid "Well done, you knew the correct answer."
+msgstr "Tebrikler, doğru yanıtı bildiniz."
+
+#: src/practiceold/practicesummarydialog.cpp:28
+msgid "Practice Summary"
+msgstr "Çalışma Özeti"
+
+#: src/practiceold/ArtQueryDlg.cpp:36
+msgctxt "@title:window"
+msgid "Article Training"
+msgstr "Yazı Çalışması"
+
+#: src/practiceold/ArtQueryDlg.cpp:112
+msgctxt "@label the gender of the word: masculine"
+msgid "&masculine"
+msgstr "&erkek"
+
+#: src/practiceold/ArtQueryDlg.cpp:113
+msgctxt "@label the gender of the word: feminine"
+msgid "&feminine"
+msgstr "&dişi"
+
+#: src/practiceold/ArtQueryDlg.cpp:114
+msgctxt "@label the gender of the word: neuter"
+msgid "&neuter"
+msgstr "&nötr"
+
+#: src/practiceold/ArtQueryDlg.cpp:125
+msgctxt "@label the gender of the word: masculine"
+msgid "&masculine:\t"
+msgstr "&erkek:\t"
+
+#: src/practiceold/ArtQueryDlg.cpp:135
+msgctxt "@label the gender of the word: feminine"
+msgid "&feminine:\t"
+msgstr "&dişi:\t"
+
+#: src/practiceold/ArtQueryDlg.cpp:148
+msgctxt "@label the gender of the word: neuter"
+msgid "&neuter:\t"
+msgstr "&nötr:\t"
+
+#: src/practiceold/SimpleQueryDlg.cpp:90
+#: src/practiceold/SimpleQueryDlg.cpp:102
+msgid "Expression"
+msgstr "İfade"
+
+#: src/practiceold/SimpleQueryDlg.cpp:91
+msgid "Enter the synonym:"
+msgstr "Anlamdaşı girin:"
+
+#: src/practiceold/SimpleQueryDlg.cpp:92
+msgid "Synonym Training"
+msgstr "Eşanlamlı Sözcük Öğretimi"
+
+#: src/practiceold/SimpleQueryDlg.cpp:103
+msgid "Enter the antonym:"
+msgstr "Zıt anlamlıyı girin:"
+
+#: src/practiceold/SimpleQueryDlg.cpp:104
+msgid "Antonym Training"
+msgstr "Zıt Anlamlı Sözcük Öğretimi"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:87
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:71
+#. i18n: ectx: property (text), widget (QRadioButton, ParaphraseRadio)
+#: src/practiceold/SimpleQueryDlg.cpp:113
+#: src/vocabulary/vocabularymodel.cpp:304 rc.cpp:254 rc.cpp:1538
+msgid "Paraphrase"
+msgstr "Açıklama"
+
+#: src/practiceold/SimpleQueryDlg.cpp:114
+msgid "Enter the word:"
+msgstr "Sözcüğü girin:"
+
+#: src/practiceold/SimpleQueryDlg.cpp:115
+msgid "Paraphrase Training"
+msgstr "Açıklama Çalışması"
+
+#: src/practiceold/SimpleQueryDlg.cpp:123
+msgid "Example sentence"
+msgstr "Örnek cümle"
+
+#: src/practiceold/SimpleQueryDlg.cpp:124
+msgid "Fill in the missing word:"
+msgstr "Eksik sözcüğü girin:"
+
+#: src/practiceold/SimpleQueryDlg.cpp:125
+msgid "Example Training"
+msgstr "Örnek Alıştırma"
+
+#: src/practiceold/practicedialog.cpp:70
+#, kde-format
+msgctxt "@popupmessage"
+msgid ""
+"Either the language set up is incorrect or no spellchecker was installed for "
+"%1 (%2)."
+msgstr ""
+"Dil ayarı doğru değil, veya %1 için yazım denetleyicisi kurulmamış (%2)."
+
+#: src/practiceold/practicedialog.cpp:70 src/vocabulary/vocabularyview.cpp:400
+msgctxt "@title of a popup"
+msgid "No Spell Checker Available"
+msgstr "Hiç Yazım Denetimi Uygulaması Yok"
+
+#: src/practiceold/MCQueryDlg.cpp:240
+msgid "Your answer was wrong."
+msgstr "Yanıtınız yanlış."
+
+#: src/practiceold/mixedletterpracticedialog.cpp:28
+msgid "Image Practice"
+msgstr "Resim Çalışması"
+
+#. i18n: file: src/editor/editorui.rc:12
+#. i18n: ectx: Menu (edit)
+#: src/welcomescreen/buttondelegate.cpp:42 rc.cpp:263
+msgid "&Edit"
+msgstr "Dü&zenle"
+
+#. i18n: file: src/editor/editorui.rc:59
+#. i18n: ectx: Menu (learning)
+#: src/welcomescreen/buttondelegate.cpp:45 rc.cpp:272
+msgid "&Practice"
+msgstr "&Çalışma"
+
+#: src/settings/languageproperties.cpp:27
+msgid "Edit Languages"
+msgstr "Dilleri Düzenle"
+
+#: src/settings/languageproperties.cpp:31
+msgid "Add language"
+msgstr "Dil ekle"
+
+#: src/settings/languageproperties.cpp:33
+msgid "Remove language"
+msgstr "Dil kaldır"
+
+#: src/settings/languageproperties.cpp:48
+msgid "New Language"
+msgstr "Yeni Dil"
+
+#: src/settings/languageproperties.cpp:60
+#, kde-format
+msgctxt "Edit language properties"
+msgid "Properties for %1"
+msgstr "%1 özellikleri"
+
+#: src/settings/languageproperties.cpp:94
+#, kde-format
+msgid "Really delete language: %1?"
+msgstr "Gerçekten %1 dili silinsin mi?"
+
+#: src/settings/languageproperties.cpp:94
+msgid "Remove Language"
+msgstr "Dili Kaldır"
+
+#: src/settings/generaloptions.cpp:60
+msgctxt "CSV separator"
+msgid ";"
+msgstr ";"
+
+#: src/settings/generaloptions.cpp:61
+msgctxt "CSV separator"
+msgid "#"
+msgstr "#"
+
+#: src/settings/generaloptions.cpp:62
+msgctxt "CSV separator"
+msgid "!"
+msgstr "!"
+
+#: src/settings/generaloptions.cpp:63
+msgctxt "CSV separator"
+msgid "|"
+msgstr "|"
+
+#: src/settings/generaloptions.cpp:64
+msgctxt "CSV separator"
+msgid ","
+msgstr ","
+
+#: src/settings/generaloptions.cpp:65
+msgctxt "CSV separator: tabulator"
+msgid "TAB"
+msgstr "TAB"
+
+#: src/settings/generaloptions.cpp:66
+msgctxt "CSV separator"
+msgid ">= 2 SPACES"
+msgstr ">= 2 BOŞLUK"
+
+#: src/settings/generaloptions.cpp:67
+msgctxt "CSV separator"
+msgid " : "
+msgstr " : "
+
+#: src/settings/generaloptions.cpp:68
+msgctxt "CSV separator"
+msgid " :: "
+msgstr " :: "
+
+#: src/settings/parleyprefs.cpp:38
+msgctxt "title:window general settings"
+msgid "General"
+msgstr "Genel"
+
+#: src/settings/parleyprefs.cpp:38
+msgid "General Settings"
+msgstr "Genel Ayarlar"
+
+#: src/settings/parleyprefs.cpp:41
+msgid "View"
+msgstr "Görünüm"
+
+#: src/settings/parleyprefs.cpp:41
+msgid "View Settings"
+msgstr "Görünüm Ayarları"
+
+#: src/settings/languagepropertiespage.cpp:79
+msgid "without name"
+msgstr "isim olmadan"
+
+#: src/settings/languagepropertiespage.cpp:90
+msgid "No icon"
+msgstr "Simge yok"
+
+#: src/settings/languagepropertiespage.cpp:377
+#: src/settings/languagepropertiespage.cpp:399
+msgid "Tense Name"
+msgstr "Zaman İsmi"
+
+#: src/settings/languagepropertiespage.cpp:377
+#: src/settings/languagepropertiespage.cpp:399
+msgid "Enter name of tense:"
+msgstr "Zamanın ismini girin:"
+
+#: src/settings/languagepropertiespage.cpp:428
+msgid ""
+"The selected user defined tense could not be deleted\n"
+"because it is in use."
+msgstr ""
+"Bu kullanıcı tanımlı zaman silinemiyor\n"
+"çünkü kullanımda."
+
+#: src/settings/languagepropertiespage.cpp:428
+msgid "Deleting Tense Description"
+msgstr "Zaman Açıklamasını Siliniyor"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: src/vocabulary/containermodel.cpp:171 rc.cpp:242
+msgid "Lesson"
+msgstr "Ders"
+
+#: src/vocabulary/containermodel.cpp:179
+msgid "Number of entries in this lesson."
+msgstr "Bu dersteki girdilerin sayısı."
+
+#: src/vocabulary/basiccontainermodel.cpp:133
+msgid "None"
+msgstr "Hiçbiri"
+
+#: src/vocabulary/lessonmodel.cpp:60
+#, kde-format
+msgctxt "display of the name of the vocabulary collection"
+msgid "Collection: %1"
+msgstr "Koleksiyon: %1"
+
+#: src/vocabulary/vocabularymodel.cpp:197
+msgid "You can drag and drop words onto their word type."
+msgstr ""
+"Sözcükleri, o sözcüklerin sözcük tiplerinin üzerine sürükleyip "
+"bırakabilirsiniz."
+
+#: src/vocabulary/vocabularymodel.cpp:199
+msgid "Enable the synonym view to edit synonyms."
+msgstr "Eşanlamları düzenlemek için eşanlam görünümünü etkinleştirin."
+
+#: src/vocabulary/vocabularymodel.cpp:201
+msgid "Enable the antonym view to edit antonyms."
+msgstr ""
+"Karşıt anlamları düzenlemek için karşıt anlam görünümünü etkinleştirin."
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:55
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: src/vocabulary/vocabularymodel.cpp:292 rc.cpp:248
+msgid "Pronunciation"
+msgstr "Telaffuz"
+
+#: src/vocabulary/vocabularymodel.cpp:294
+msgid "Word Type"
+msgstr "Sözcük Tipi"
+
+#. i18n: file: src/entry-dialogs/synonymwidget.ui:26
+#. i18n: ectx: property (text), widget (QPushButton, synonymButton)
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:99
+#. i18n: ectx: property (text), widget (QRadioButton, SynonymRadio)
+#: src/vocabulary/vocabularymodel.cpp:296 rc.cpp:125 rc.cpp:1550
+msgid "Synonym"
+msgstr "Eş anlamlı"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:106
+#. i18n: ectx: property (text), widget (QRadioButton, AntonymRadio)
+#: src/vocabulary/vocabularymodel.cpp:298 rc.cpp:1553
+msgid "Antonym"
+msgstr "Zıt anlamlı"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:71
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: src/vocabulary/vocabularymodel.cpp:300 rc.cpp:251
+msgid "Example"
+msgstr "Örnek"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: src/vocabulary/vocabularymodel.cpp:302 rc.cpp:257
+msgid "Comment"
+msgstr "Açıklama"
+
+#: src/vocabulary/vocabularymodel.cpp:323
+msgid "Please use Edit -> Languages to set up your document."
+msgstr "Lütfen belgenizi ayarlamak için Düzen -> Diller menüsünü kullanın."
+
+#: src/vocabulary/vocabularymodel.cpp:323
+msgid "No Languages Defined"
+msgstr "Hiç Dil Tanımlanmamış"
+
+#: src/vocabulary/vocabularymodel.cpp:328
+msgid "Select a lesson before adding vocabulary."
+msgstr "Sözcük hazinesi eklemeden önce bir ders seçin."
+
+#: src/vocabulary/vocabularymodel.cpp:328
+msgid "No Lesson Selected"
+msgstr "Hiç Ders Seçilmedi"
+
+#: src/vocabulary/lessonview.cpp:32
+msgid "New Lesson"
+msgstr "Yeni Ders"
+
+#: src/vocabulary/lessonview.cpp:34
+msgid "Add a new lesson to your document"
+msgstr "Belgenize yeni bir ders ekleyin"
+
+#: src/vocabulary/lessonview.cpp:40
+msgid "Rename Lesson"
+msgstr "Dersi Yeniden İsimlendir"
+
+#: src/vocabulary/lessonview.cpp:42
+msgid "Rename the selected lesson"
+msgstr "Seçili dersi yeniden isimlendir"
+
+#: src/vocabulary/lessonview.cpp:48
+msgid "Delete Lesson"
+msgstr "Dersi Sil"
+
+#: src/vocabulary/lessonview.cpp:50
+msgid "Delete the selected lesson."
+msgstr "Seçili dersi sil."
+
+#: src/vocabulary/lessonview.cpp:56
+msgid "Split Lesson into Smaller Lessons"
+msgstr "Dersi Daha Küçük Derslere Böl"
+
+#: src/vocabulary/lessonview.cpp:58
+msgid "Make multiple smaller lessons out of one big lesson."
+msgstr "Büyük bir dersten daha küçük dersler oluştur."
+
+#: src/vocabulary/lessonview.cpp:131 src/vocabulary/leitnerview.cpp:117
+msgid "The root lesson cannot be deleted."
+msgstr "Kök ders silinemez."
+
+#: src/vocabulary/lessonview.cpp:140 src/vocabulary/leitnerview.cpp:126
+#, kde-format
+msgid "There is %1 word left in this lesson. Do you want to delete it?"
+msgid_plural ""
+"There are %1 words left in this lesson. Do you want to delete them?"
+msgstr[0] "Bu derste %1 sözcük kaldı. Silmek ister misiniz?"
+
+#: src/vocabulary/lessonview.cpp:154
+msgid "Entries per Lesson"
+msgstr "Ders Başına Girdi"
+
+#: src/vocabulary/lessonview.cpp:154
+msgid ""
+"The lesson will be split into smaller lessons. How many entries in each "
+"lesson do you want?"
+msgstr ""
+"Ders daha küçük derslere bölünecek. Her derste kaç girdinin olmasını "
+"istiyorsunuz?"
+
+#: src/vocabulary/vocabularyview.cpp:84
+msgid "&Add New Entry"
+msgstr "Yeni Girdi &Ekle"
+
+#: src/vocabulary/vocabularyview.cpp:87
+msgid "Append a new row to the vocabulary"
+msgstr "Sözcük hazinesine yeni bir satır ekle"
+
+#: src/vocabulary/vocabularyview.cpp:95
+msgid "&Delete Entry"
+msgstr "Girdiyi &Sil"
+
+#: src/vocabulary/vocabularyview.cpp:98
+msgid "Delete the selected rows"
+msgstr "Seçili satırları sil"
+
+#: src/vocabulary/vocabularyview.cpp:108
+msgid "Copy"
+msgstr "Kopyala"
+
+#: src/vocabulary/vocabularyview.cpp:114
+msgid "Cut"
+msgstr "Kes"
+
+#: src/vocabulary/vocabularyview.cpp:120
+msgid "Paste"
+msgstr "Yapıştır"
+
+#: src/vocabulary/vocabularyview.cpp:126
+msgid "Select all rows"
+msgstr "Tüm satırları seç"
+
+#: src/vocabulary/vocabularyview.cpp:131
+msgid "Deselect all rows"
+msgstr "Bütün satırların seçimini kaldır"
+
+#: src/vocabulary/vocabularyview.cpp:139
+msgid "Vocabulary Columns..."
+msgstr "Sözcük Hazinesi Sütunları..."
+
+#: src/vocabulary/vocabularyview.cpp:140
+msgid "Toggle display of individual vocabulary columns"
+msgstr "Bireysel sözcük dağarcığı sütunlarının gösterilmesini aç/kapat"
+
+#: src/vocabulary/vocabularyview.cpp:250
+#, kde-format
+msgid "Do you really want to delete the selected entry?"
+msgid_plural "Do you really want to delete the selected %1 entries?"
+msgstr[0] "Seçili %1 girdiyi silmek istediğinizden emin misiniz?"
+
+#: src/vocabulary/vocabularyview.cpp:250
+msgid "Delete"
+msgstr "Sil"
+
+#: src/vocabulary/vocabularyview.cpp:400
+#, kde-format
+msgctxt "@popupmessage"
+msgid ""
+"Either the language set up is incorrect or no spellchecker was installed for "
+"this locale: %1."
+msgstr ""
+"Dil ayarı yanlış yapılmış, veya %1 yeri için hiç bir yazım denetleyicisi "
+"kurulmamış."
+
+#: src/vocabulary/wordtypeview.cpp:36
+msgid "New"
+msgstr "Yeni"
+
+#: src/vocabulary/wordtypeview.cpp:38
+msgid "Add a new word type to your document"
+msgstr "Belgenize yeni bir sözcük türü ekleyin"
+
+#: src/vocabulary/wordtypeview.cpp:44
+msgid "Rename"
+msgstr "Yeniden İsimlendir"
+
+#: src/vocabulary/wordtypeview.cpp:46
+msgid "Rename the selected word type"
+msgstr "Seçili sözcük tipini yeniden adlandır"
+
+#: src/vocabulary/wordtypeview.cpp:52
+msgid "Delete Word Type"
+msgstr "Sözcük Tipini Sil"
+
+#: src/vocabulary/wordtypeview.cpp:54
+msgid "Delete the selected word type."
+msgstr "Seçili sözcük tipini sil."
+
+#: src/vocabulary/wordtypeview.cpp:60
+msgctxt ""
+"Let the user select what grammatical meaning is connected to a word type "
+"(nouns have gender, verbs conjugations etc)"
+msgid "Grammar"
+msgstr "Dilbilgisi"
+
+#: src/vocabulary/wordtypeview.cpp:62
+msgid "To let Parley know the grammatical meaning of a word type."
+msgstr ""
+"Parley'in bir sözcük türünün gramatik anlamını bilmesini sağlamak için."
+
+#: src/vocabulary/wordtypeview.cpp:69 src/parleydocument.cpp:307
+msgid "Noun"
+msgstr "İsim"
+
+#: src/vocabulary/wordtypeview.cpp:71
+msgid "This word type folder contains nouns."
+msgstr "Bu sözcük tipi dizini isimleri içerir."
+
+#: src/vocabulary/wordtypeview.cpp:77
+msgid "Masculine Noun"
+msgstr "Erkek İsim"
+
+#: src/vocabulary/wordtypeview.cpp:79
+msgid "This word type folder contains masculine nouns."
+msgstr "Bu sözcük tipi dizini erkek isimleri içerir."
+
+#: src/vocabulary/wordtypeview.cpp:85
+msgid "Feminine Noun"
+msgstr "Dişi İsim"
+
+#: src/vocabulary/wordtypeview.cpp:87
+msgid "This word type folder contains feminine nouns."
+msgstr "Bu sözcük tipi dizini dişi isimleri içerir."
+
+#: src/vocabulary/wordtypeview.cpp:93
+msgid "Neuter Noun"
+msgstr "Nötr İsim"
+
+#: src/vocabulary/wordtypeview.cpp:95
+msgid "This word type folder contains neuter nouns."
+msgstr "Bu sözcük tipi dizini nötr isimleri içerir."
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:116
+#. i18n: ectx: property (text), widget (QPushButton, makeAdjectiveButton)
+#: src/vocabulary/wordtypeview.cpp:101 src/parleydocument.cpp:325 rc.cpp:116
+msgid "Adjective"
+msgstr "Sıfat"
+
+#: src/vocabulary/wordtypeview.cpp:103
+msgid "This word type folder contains adjectives."
+msgstr "Bu sözcük tipi dizini sıfatları içerir."
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:123
+#. i18n: ectx: property (text), widget (QPushButton, makeAdverbButton)
+#: src/vocabulary/wordtypeview.cpp:109 src/parleydocument.cpp:329 rc.cpp:119
+msgid "Adverb"
+msgstr "Zarf"
+
+#: src/vocabulary/wordtypeview.cpp:111
+msgid "This word type folder contains adverbs."
+msgstr "Bu sözcük tipi dizini zarfları içerir."
+
+#: src/vocabulary/wordtypeview.cpp:118 src/parleydocument.cpp:321
+msgid "Verb"
+msgstr "Fiil"
+
+#: src/vocabulary/wordtypeview.cpp:120
+msgid "This word type folder contains verbs."
+msgstr "Bu sözcük tipi dizini fiilleri içerir."
+
+#: src/vocabulary/wordtypeview.cpp:126
+msgid "No Special Type"
+msgstr "Özel Tür Yok"
+
+#: src/vocabulary/wordtypeview.cpp:129
+msgid "This word type folder contains no word type with special meaning."
+msgstr "Bu sözcük türü dizini, özel anlamlı hiçbir sözcük türü içermiyor."
+
+#: src/vocabulary/wordtypeview.cpp:232
+msgid "The root word type cannot be deleted."
+msgstr "Kök sözcük tipi silinemez."
+
+#: src/vocabulary/wordtypeview.cpp:241
+#, kde-format
+msgid ""
+"There is a word left with this word type. It will lose its type. Continue?"
+msgid_plural ""
+"There are %1 words left with this word type. They will lose their word type. "
+"Continue?"
+msgstr[0] ""
+"Bu sözcük türü için %1 adet sözcük kaldı. Bunlar sözcük türlerini "
+"kaybedecektir. Devam edilsin mi?"
+
+#: src/vocabulary/vocabularycolumnsdialog.cpp:51
+msgid "Vocabulary Columns"
+msgstr "Sözcük Hazinesi Sütunları"
+
+#: src/vocabulary/vocabularycolumnsdialog.cpp:60
+msgid "Enable/Disable the columns for each language"
+msgstr "Her dil için sütunları etkinleştir/pasifleştir"
+
+#: src/configure-practice/configurepracticewidget.cpp:67
+msgid "No options"
+msgstr "Seçenek yok"
+
+#: src/configure-practice/blockoptions.cpp:43
+msgid "Do not Care"
+msgstr "Aldırma"
+
+#: src/configure-practice/blockoptions.cpp:46
+msgid "30 Min"
+msgstr "30 Dk"
+
+#: src/configure-practice/blockoptions.cpp:47
+msgid "1 Hour"
+msgstr "1 Saat"
+
+#: src/configure-practice/blockoptions.cpp:48
+msgid "2 Hours"
+msgstr "2 Saat"
+
+#: src/configure-practice/blockoptions.cpp:49
+msgid "4 Hours"
+msgstr "4 Saat"
+
+#: src/configure-practice/blockoptions.cpp:50
+msgid "8 Hours"
+msgstr "8 Saat"
+
+#: src/configure-practice/blockoptions.cpp:51
+msgid "12 Hours"
+msgstr "12 Saat"
+
+#: src/configure-practice/blockoptions.cpp:52
+msgid "18 Hours"
+msgstr "18 Saat"
+
+#: src/configure-practice/blockoptions.cpp:54
+msgid "1 Day"
+msgstr "1 Gün"
+
+#: src/configure-practice/blockoptions.cpp:55
+msgid "2 Days"
+msgstr "2 Gün"
+
+#: src/configure-practice/blockoptions.cpp:56
+msgid "3 Days"
+msgstr "3 Gün"
+
+#: src/configure-practice/blockoptions.cpp:57
+msgid "4 Days"
+msgstr "4 Gün"
+
+#: src/configure-practice/blockoptions.cpp:58
+msgid "5 Days"
+msgstr "5 Gün"
+
+#: src/configure-practice/blockoptions.cpp:59
+msgid "6 Days"
+msgstr "6 Gün"
+
+#: src/configure-practice/blockoptions.cpp:61
+msgid "1 Week"
+msgstr "1 Hafta"
+
+#: src/configure-practice/blockoptions.cpp:62
+msgid "2 Weeks"
+msgstr "2 Hafta"
+
+#: src/configure-practice/blockoptions.cpp:63
+msgid "3 Weeks"
+msgstr "3 Hafta"
+
+#: src/configure-practice/blockoptions.cpp:64
+msgid "4 Weeks"
+msgstr "4 Hafta"
+
+#: src/configure-practice/blockoptions.cpp:66
+msgid "1 Month"
+msgstr "1 Ay"
+
+#: src/configure-practice/blockoptions.cpp:67
+msgid "2 Months"
+msgstr "2 Ay"
+
+#: src/configure-practice/blockoptions.cpp:68
+msgid "3 Months"
+msgstr "3 Ay"
+
+#: src/configure-practice/blockoptions.cpp:69
+msgid "4 Months"
+msgstr "4 Ay"
+
+#: src/configure-practice/blockoptions.cpp:70
+msgid "5 Months"
+msgstr "5 Ay"
+
+#: src/configure-practice/blockoptions.cpp:71
+msgid "6 Months"
+msgstr "6 Ay"
+
+#: src/configure-practice/blockoptions.cpp:72
+msgid "10 Months"
+msgstr "10 Ay"
+
+#: src/configure-practice/blockoptions.cpp:73
+msgid "12 Months"
+msgstr "12 Ay"
+
+#: src/configure-practice/blockoptions.cpp:244
+msgid "Illogical blocking times.\n"
+msgstr "Anlamsız engelleme zamanları.\n"
+
+#: src/configure-practice/blockoptions.cpp:246
+#: src/configure-practice/blockoptions.cpp:262
+#, kde-format
+msgid "The time for level %1 should be lower than the time for level %2.\n"
+msgstr ""
+"%1 seviyesi için olan zaman, %2 seviyesi için olan zamandan daha az olmalı.\n"
+
+#: src/configure-practice/blockoptions.cpp:260
+msgid ""
+"\n"
+"Illogical expiration times.\n"
+msgstr ""
+"\n"
+"Anlamsız sona erme zamanları.\n"
+
+#: src/configure-practice/blockoptions.cpp:279
+msgid ""
+"\n"
+"Illogical blocking vs. expiration times.\n"
+msgstr ""
+"\n"
+"Anlamsız sona erme zamanları, zaman aşımı zamanları.\n"
+
+#: src/configure-practice/blockoptions.cpp:281
+#, kde-format
+msgid ""
+"The blocking time at level %1 should be lower than the expiration time.\n"
+msgstr ""
+"%1 seviyesinde engellenme zamanı sona erme zamanından daha kısa olmalı.\n"
+
+#: src/configure-practice/blockoptions.cpp:287
+msgid "Illogical Values"
+msgstr "Anlamsız Değerler"
+
+#: src/configure-practice/configurepracticedialog.cpp:32
+msgctxt "@title:window"
+msgid "Configure Practice"
+msgstr "Çalışmayı Yapılandır"
+
+#: src/configure-practice/configurepracticedialog.cpp:37
+msgctxt "@title:group"
+msgid "Practice"
+msgstr "Çalışma"
+
+#: src/configure-practice/configurepracticedialog.cpp:37
+msgid "Practice options"
+msgstr "Çalışma seçenekleri"
+
+#: src/configure-practice/configurepracticedialog.cpp:40
+msgctxt ""
+"@title:group vocabulary can be set to be blocked for a certain amount of time"
+msgid "Blocking"
+msgstr "Engelleme"
+
+#: src/configure-practice/configurepracticedialog.cpp:40
+msgid "Blocking Settings"
+msgstr "Engelleme Ayarları"
+
+#: src/configure-practice/configurepracticedialog.cpp:43
+msgctxt ""
+"@title:group ignore vocabulary based on some properties like word type"
+msgid "Thresholds"
+msgstr "Sınırlar"
+
+#: src/configure-practice/configurepracticedialog.cpp:43
+msgid "Threshold Settings"
+msgstr "Sınır Ayarları"
+
+#: src/configure-practice/configurepracticedialog.cpp:46
+msgctxt ""
+"@title:group Configure advanced settings for practicing vocabulary, short "
+"title in config dialog."
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#: src/configure-practice/configurepracticedialog.cpp:46
+msgctxt "Configure advanced settings for practicing vocabulary."
+msgid "Advanced Practice Settings"
+msgstr "Gelişmiş Çalışma Ayarları"
+
+#: src/statistics-dialogs/lessonstatistics.cpp:87
+msgid "Remove &Grades"
+msgstr "Düzeyleri &Kaldır"
+
+#: src/statistics-dialogs/lessonstatistics.cpp:89
+msgid "Remove all grades from this lesson"
+msgstr "Geçerli dersten tüm düzeyleri sil"
+
+#: src/statistics-dialogs/StatisticsDialog.cpp:49
+msgid "Configure Practice"
+msgstr "Çalışmayı Yapılandır"
+
+#: src/statistics-dialogs/StatisticsDialog.cpp:49
+msgid "Configure practice settings"
+msgstr "Çalışma ayarlarını yapılandır"
+
+#: src/statistics-dialogs/StatisticsDialog.cpp:50
+msgid "Select the lessons to practice:"
+msgstr "Alıştırma yapmak istediğiniz dersleri seçin:"
+
+#: src/statistics-dialogs/StatisticsDialog.cpp:54
+msgid "Document Statistics"
+msgstr "Belge İstatistikleri"
+
+#: src/statistics-dialogs/StatisticsDialog.cpp:56
+msgid "Average grades for each lesson:"
+msgstr "Her dersin ortalama notları:"
+
+#: src/statistics-dialogs/statisticsmodel.cpp:31
+#, kde-format
+msgctxt "Grade in language, table header"
+msgid "Grade (%1)"
+msgstr "Düzey (%1)"
+
+#: src/main.cpp:36
+msgid "Vocabulary Trainer"
+msgstr "Sözcük Hazinesi Çalıştırıcısı"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, WelcomeScreen)
+#: src/main.cpp:40 rc.cpp:678
+msgid "Parley"
+msgstr "Parley"
+
+#: src/main.cpp:44
+msgid ""
+"© 1999-2002\tEwald Arnold\n"
+"© 2001-2002\tThe KDE team\n"
+"© 2004-2007\tPeter Hedlund\n"
+"© 2007-2008\tFrederik Gladhorn\n"
+msgstr ""
+"© 1999-2002\tEwald Arnold\n"
+"© 2001-2002\tThe KDE team\n"
+"© 2004-2007\tPeter Hedlund\n"
+"© 2007-2008\tFrederik Gladhorn\n"
+
+#: src/main.cpp:48
+msgid "Helps you train your vocabulary"
+msgstr "Sözcük hazinesi çalışmanıza yardım eder"
+
+#: src/main.cpp:52
+msgid "Frederik Gladhorn"
+msgstr "Frederik Gladhorn"
+
+#: src/main.cpp:53
+msgid "Current Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: src/main.cpp:56
+msgid "David Capel"
+msgstr "David Capel"
+
+#: src/main.cpp:57
+msgid "Practice Dialogs"
+msgstr "Çalışma Pencereleri"
+
+#: src/main.cpp:60
+msgid "Avgoustinos Kadis"
+msgstr "Avgoustinos Kadis"
+
+#: src/main.cpp:61
+msgid "Scripting"
+msgstr "Betikleme"
+
+#: src/main.cpp:64
+msgid "Peter Hedlund"
+msgstr "Peter Hedlund"
+
+#: src/main.cpp:65
+msgid "Countless fixes, former maintainer, port to KDE4"
+msgstr "Sayısız düzeltme, eski yürüten, KDE4 geçişi"
+
+#: src/main.cpp:68
+msgid "Ewald Arnold"
+msgstr "Ewald Arnold"
+
+#: src/main.cpp:68
+msgid "Original Author"
+msgstr "Asıl Yazar"
+
+#: src/main.cpp:73
+msgid "Lee Olson"
+msgstr "Lee Olson"
+
+#: src/main.cpp:74
+msgid "Artwork and Oxygen Icons"
+msgstr "Sanatsal Çalışmalar ve Oxygen Simgeleri"
+
+#: src/main.cpp:76
+msgid "Anne-Marie Mahfouf"
+msgstr "Anne-Marie Mahfouf"
+
+#: src/main.cpp:77
+msgid "Port to KConfig XT"
+msgstr "KConfig XT geçişi"
+
+#: src/main.cpp:79
+msgid "Jeremy Whiting"
+msgstr "Jeremy Whiting"
+
+#: src/main.cpp:80
+msgid "Rewriting the kvtml library for KDE4"
+msgstr "Kvtml kitaplığının KDE4 için yeniden yazımı"
+
+#: src/main.cpp:82
+msgid "Markus Büchele"
+msgstr "Markus Büchele"
+
+#: src/main.cpp:83
+msgid "Bug reports and testing on the way to KDE4"
+msgstr "KDE4 yolunda hata raporları ve testler"
+
+#: src/main.cpp:85
+msgid "Ramona Knapp"
+msgstr "Ramona Knapp"
+
+#: src/main.cpp:86
+msgid "Conceived the name Parley"
+msgstr "Parley isminin tasarlanması"
+
+#: src/main.cpp:92
+msgid "Start practice instead of editor"
+msgstr "Düzenleyici yerine çalışmayı başlat"
+
+#: src/main.cpp:93
+msgid "+[file]"
+msgstr "+[dosya]"
+
+#: src/main.cpp:93
+msgid "Document file to open"
+msgstr "Açılacak dosya"
+
+#: src/parleymainwindow.cpp:221
+msgid ""
+"Vocabulary is modified.\n"
+"\n"
+"Save file before exit?\n"
+msgstr ""
+"Sözcük hazinesi değiştirildi.\n"
+"\n"
+"Çıkmadan önce kaydedilsin mi?\n"
+
+#: src/parleymainwindow.cpp:255
+msgid "Creates a new vocabulary collection"
+msgstr "Yeni bir sözcük hazinesi belgesi oluşturur"
+
+#: src/parleymainwindow.cpp:260
+msgid "Opens an existing vocabulary collection"
+msgstr "Varolan bir sözcük hazinesi belgesini açar"
+
+#: src/parleymainwindow.cpp:264
+msgid "Download New Vocabularies..."
+msgstr "Yeni Sözcük Hazineleri İndir..."
+
+#: src/parleymainwindow.cpp:266
+msgid "Downloads new vocabulary collections"
+msgstr "Yeni sözcük hazineleri indirir"
+
+#: src/parleymainwindow.cpp:273
+msgid "Open &Downloaded Vocabularies..."
+msgstr "İn&dirilen Sözcük Hazinelerini Aç..."
+
+#: src/parleymainwindow.cpp:275
+msgid "Open downloaded vocabulary collections"
+msgstr "İndirilen sözcük hazinelerini aç"
+
+#: src/parleymainwindow.cpp:294
+msgid "Save the active vocabulary collection"
+msgstr "Etkin sözcük hazinesi koleksiyonunu kaydet"
+
+#: src/parleymainwindow.cpp:300
+msgid "Save the active vocabulary collection with a different name"
+msgstr "Etkin sözcük hazinesi koleksiyonunu farklı bir isimle kaydet"
+
+#: src/parleymainwindow.cpp:314
+msgid "&Export..."
+msgstr "&Dışarı Aktar..."
+
+#: src/parleymainwindow.cpp:317
+msgid "Export to HTML or CSV"
+msgstr "HTML ya da CSV olarak Dışarıya Aktar"
+
+#: src/parleymainwindow.cpp:324
+msgid "&Properties..."
+msgstr "&Özellikler..."
+
+#: src/parleymainwindow.cpp:327
+msgid "Edit document properties"
+msgstr "Belge özellikleri düzenle"
+
+#: src/parleymainwindow.cpp:332
+msgid "Close the current collection"
+msgstr "Geçerli koleksiyonu kapat"
+
+#: src/parleymainwindow.cpp:337
+msgid "Quit Parley"
+msgstr "Parley Uygulamasından Çık"
+
+#: src/parleymainwindow.cpp:343
+msgid "Show the configuration dialog"
+msgstr "Yapılandırma diyaloğunu göster"
+
+#: src/parleydocument.cpp:168
+msgid "Open in practice &mode"
+msgstr "Çalışma &kipi ile aç"
+
+#: src/parleydocument.cpp:170
+msgid "Open Vocabulary Collection"
+msgstr "Sözcük Hazinesi Koleksiyonu Aç"
+
+#: src/parleydocument.cpp:223
+msgid "Open Downloaded Vocabulary Collection"
+msgstr "İndirilen Sözcük Hazinesi Koleksiyonunu Aç"
+
+#: src/parleydocument.cpp:249 src/parleydocument.cpp:299
+#, kde-format
+msgid "Writing file \"%1\" resulted in an error: %2"
+msgstr "\"%1\" dosyasına yazmak bir hataya neden oldu: %2"
+
+#: src/parleydocument.cpp:250 src/parleydocument.cpp:300
+msgid "Save File"
+msgstr "Dosyayı Kaydet"
+
+#: src/parleydocument.cpp:268
+msgid "Save Vocabulary As"
+msgstr "Sözcük Hazinesini Farklı Kaydet"
+
+#: src/parleydocument.cpp:277
+#, kde-format
+msgid ""
+"<qt>The file<p><b>%1</b></p>already exists. Do you want to overwrite it?</qt>"
+msgstr "<qt><p><b>%1</b></p> zaten var. Üzerine yazmak istiyor musunuz?</qt>"
+
+#: src/parleydocument.cpp:283
+#, kde-format
+msgctxt "@info:status saving a file"
+msgid "Saving %1"
+msgstr "%1 Kaydediliyor"
+
+#: src/parleydocument.cpp:311
+msgid "Masculine"
+msgstr "Erkek"
+
+#: src/parleydocument.cpp:314
+msgid "Feminine"
+msgstr "Dişi"
+
+#: src/parleydocument.cpp:317
+msgid "Neuter"
+msgstr "Nötr"
+
+#. i18n: file: src/settings/documentproperties.ui:221
+#. i18n: ectx: property (text), item, widget (KComboBox, licenseComboBox)
+#: src/parleydocument.cpp:343 rc.cpp:1171
+msgid "Public Domain"
+msgstr "Public Domain"
+
+#. i18n: file: src/settings/documentproperties.ui:167
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#. i18n: file: src/settings/documentproperties.ui:237
+#. i18n: ectx: property (title), widget (QGroupBox, languageGroupBox)
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:126
+#. i18n: ectx: property (title), widget (QGroupBox, languageGroupBox)
+#: src/parleydocument.cpp:344 rc.cpp:1146 rc.cpp:1177 rc.cpp:1559
+msgid "Languages"
+msgstr "Diller"
+
+#: src/parleydocument.cpp:352
+msgid "A Second Language"
+msgstr "İkinci Bir Dil"
+
+#: src/parleydocument.cpp:355
+msgid "Lesson 1"
+msgstr "Ders 1"
+
+#: src/parleydocument.cpp:359
+msgid "Box 7 (best)"
+msgstr "Kutu 7 (en iyi)"
+
+#: src/parleydocument.cpp:360
+msgid "Box 6"
+msgstr "Kutu 6"
+
+#: src/parleydocument.cpp:361
+msgid "Box 5"
+msgstr "Kutu 5"
+
+#: src/parleydocument.cpp:362
+msgid "Box 4"
+msgstr "Kutu 4"
+
+#: src/parleydocument.cpp:363
+msgid "Box 3"
+msgstr "Kutu 3"
+
+#: src/parleydocument.cpp:364
+msgid "Box 2"
+msgstr "Kutu 2"
+
+#: src/parleydocument.cpp:365
+msgid "Box 1 (lowest)"
+msgstr "Kutu 1 (en düşük)"
+
+#: plasmoid/parley_plasma.cpp:174
+msgid " second"
+msgid_plural " seconds"
+msgstr[0] " saniye"
+
+#: plasmoid/parley_plasma.cpp:178
+msgid "*.kvtml|Vocabulary Collections"
+msgstr "*.kvtml|Sözcük Hazinesi Koleksiyonu"
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir, Engin Çağatay"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com, engincagatay@yahoo.com"
+
+#. i18n: file: plugins/google_images.ui:49
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:5
+msgid "Give a keyword to search for an image related to it:"
+msgstr ""
+"Bir resim araması yapmak için resimle ilişkili bir anahtar sözcük girin:"
+
+#. i18n: file: plugins/google_images.ui:61
+#. i18n: ectx: property (text), widget (QPushButton, searchButton)
+#: rc.cpp:8
+msgid "Search"
+msgstr "Ara"
+
+#. i18n: file: plugins/google_images.ui:72
+#. i18n: ectx: property (text), widget (QCheckBox, freeImageCheckBox)
+#: rc.cpp:11
+msgid "Free images only (creative commons, gpl, ...)"
+msgstr "Sadece özgür resimler (creative commons, gpl, ...)"
+
+#. i18n: file: plugins/google_images.ui:103
+#. i18n: ectx: property (text), widget (QPushButton, previousButton)
+#: rc.cpp:14
+msgid "Previous"
+msgstr "Önceki"
+
+#. i18n: file: plugins/google_images.ui:116
+#. i18n: ectx: property (text), widget (QPushButton, nextButton)
+#: rc.cpp:17
+msgid "Next"
+msgstr "Sonraki"
+
+#. i18n: file: src/export/exportdialog.ui:19
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:23
+msgid "Export Options"
+msgstr "Dışarıya Aktarma Seçenekleri"
+
+#. i18n: file: src/export/exportdialog.ui:25
+#. i18n: ectx: property (text), widget (QRadioButton, tableRadio)
+#: rc.cpp:26
+msgid "List"
+msgstr "Liste"
+
+#. i18n: file: src/export/exportdialog.ui:35
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:29
+msgid "A vocabulary list."
+msgstr "Bir sözcük hazinesi listesi."
+
+#. i18n: file: src/export/exportdialog.ui:42
+#. i18n: ectx: property (text), widget (QRadioButton, flashCardRadio)
+#: rc.cpp:32
+msgid "Flash Cards"
+msgstr "Bellek Kartları"
+
+#. i18n: file: src/export/exportdialog.ui:49
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:35
+msgid "Front and back sides for printing learning cards."
+msgstr "Öğrenme kartlarını bastırmak için ön ve arka yüzler."
+
+#. i18n: file: src/export/exportdialog.ui:59
+#. i18n: ectx: property (text), widget (QRadioButton, csvRadio)
+#: rc.cpp:38
+msgid "CSV"
+msgstr "CSV"
+
+#. i18n: file: src/export/exportdialog.ui:66
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:41
+msgid "Comma separated values"
+msgstr "Virgülle ayrılmış değerler"
+
+#. i18n: file: src/entry-dialogs/audiowidget.ui:18
+#. i18n: ectx: property (text), widget (QPushButton, playButton)
+#: rc.cpp:44
+msgid "Play"
+msgstr "Çal"
+
+#. i18n: file: src/entry-dialogs/audiowidget.ui:25
+#. i18n: ectx: property (text), widget (QPushButton, recordButton)
+#: rc.cpp:47
+msgid "Record"
+msgstr "Kaydet"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:20
+#. i18n: ectx: property (windowTitle), widget (QWidget, FromToEntryPageForm)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:25
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConjugationWidget)
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:25
+#. i18n: ectx: property (windowTitle), widget (QWidget, DeclensionWidget)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:43
+#. i18n: ectx: property (text), widget (QLabel, queryLabel)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:83
+#. i18n: ectx: property (text), widget (QLabel, instructionLabel)
+#. i18n: file: src/settings/optionlistform.ui:19
+#. i18n: ectx: property (windowTitle), widget (QWidget, OptionListForm)
+#. i18n: file: src/settings/documentproperties.ui:19
+#. i18n: ectx: property (windowTitle), widget (QWidget, DocumentProperties)
+#: rc.cpp:50 rc.cpp:128 rc.cpp:200 rc.cpp:393 rc.cpp:396 rc.cpp:879
+#: rc.cpp:1110
+msgid "-"
+msgstr "-"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, direc_label)
+#: rc.cpp:53
+msgid "Properties From Original"
+msgstr "Orjinalden Gelen Özellikler"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:72
+#. i18n: ectx: property (text), widget (QLabel, grade_label)
+#: rc.cpp:56
+msgid "&Grade:"
+msgstr "&Not:"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:95
+#. i18n: ectx: property (text), widget (QLabel, fauxami_label)
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:362
+#. i18n: ectx: property (text), widget (QCheckBox, falsefriendCheckBox)
+#: rc.cpp:59 rc.cpp:369
+msgid "&False friend:"
+msgstr "&Yanlış arkadaş:"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:110
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox3)
+#: rc.cpp:62
+msgid "Practice &Counts"
+msgstr "Çalışılma &Sayısı"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:142
+#. i18n: ectx: property (text), widget (QLabel, bcount_label)
+#: rc.cpp:65
+msgid "&Wrong:"
+msgstr "&Yanlış:"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:155
+#. i18n: ectx: property (text), widget (QLabel, qcount_label)
+#: rc.cpp:68
+msgid "Tot&al:"
+msgstr "Topl&am:"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:171
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox2)
+#: rc.cpp:71
+msgid "&Last Practiced"
+msgstr "&Son Çalışılan"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:183
+#. i18n: ectx: property (text), widget (QPushButton, never)
+#: rc.cpp:74
+msgid "&Never"
+msgstr "&Hiçbir Zaman"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:190
+#. i18n: ectx: property (text), widget (QPushButton, today)
+#: rc.cpp:77
+msgid "T&oday"
+msgstr "B&ugün"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:206
+#. i18n: ectx: property (toolTip), widget (QDateEdit, queryDateEdit)
+#: rc.cpp:80
+msgid "The date this expression was last practiced"
+msgstr "Bu dersin son çalışıldığı gün"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:209
+#. i18n: ectx: property (specialValueText), widget (QDateEdit, queryDateEdit)
+#: rc.cpp:83
+msgid "Not Practiced Yet"
+msgstr "Henüz Çalışılmadı"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:229
+#. i18n: ectx: property (displayFormat), widget (QDateEdit, queryDateEdit)
+#: rc.cpp:86
+msgid "dd.MM.yyyy"
+msgstr "gg.AA.yyyy"
+
+#. i18n: file: src/entry-dialogs/FromToEntryPageForm.ui:260
+#. i18n: ectx: property (text), widget (QPushButton, resetGradesButton)
+#: rc.cpp:89
+msgid "&Reset Grades"
+msgstr "Notları &Sıfırla"
+
+#. i18n: file: src/entry-dialogs/multiplechoicewidget.ui:21
+#. i18n: ectx: property (text), widget (QPushButton, addChoiceButton)
+#: rc.cpp:92
+msgid "Add"
+msgstr "Ekle"
+
+#. i18n: file: src/entry-dialogs/multiplechoicewidget.ui:28
+#. i18n: ectx: property (text), widget (QPushButton, removeChoiceButton)
+#: rc.cpp:95
+msgid "Remove"
+msgstr "Kaldır"
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:24
+#. i18n: ectx: property (toolTip), widget (QLabel, absoluteLabel)
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:56
+#. i18n: ectx: property (toolTip), widget (QLabel, comparativeLabel)
+#: rc.cpp:98 rc.cpp:104
+msgid "The comparative is used to compare nouns or verbs (faster)"
+msgstr ""
+"İsimler veya eylemlerin karşılaştırılması için karşılaştırma işlevi "
+"kullanılır (daha hızlı)"
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:27
+#. i18n: ectx: property (text), widget (QLabel, absoluteLabel)
+#: rc.cpp:101
+msgid "Absolute:"
+msgstr "Mutlak:"
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:59
+#. i18n: ectx: property (text), widget (QLabel, comparativeLabel)
+#: rc.cpp:107
+msgid "Comparative:"
+msgstr "Karşılaştırmalı:"
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:88
+#. i18n: ectx: property (toolTip), widget (QLabel, superlativeLabel)
+#: rc.cpp:110
+msgid "The superlative (fastest)"
+msgstr "En üstün (en hızlı)"
+
+#. i18n: file: src/entry-dialogs/comparisonwidget.ui:91
+#. i18n: ectx: property (text), widget (QLabel, superlativeLabel)
+#: rc.cpp:113
+msgid "Superlative:"
+msgstr "En üstünlük:"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:31
+#. i18n: ectx: property (text), widget (QPushButton, makeVerbButton)
+#: rc.cpp:131
+msgid "Turn the selected word into a verb."
+msgstr "Seçili sözcüğü bir fiile dönüştür."
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:52
+#. i18n: ectx: property (text), widget (QLabel, tenselabel)
+#: rc.cpp:134
+msgid "&Tense:"
+msgstr "&Zaman:"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:68
+#. i18n: ectx: property (text), widget (QPushButton, nextTenseButton)
+#: rc.cpp:137
+msgid "Ne&xt"
+msgstr "Bİr &Sonraki"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:102
+#. i18n: ectx: property (title), widget (QGroupBox, singularGroupBox)
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:186
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:118
+#. i18n: ectx: property (title), widget (QGroupBox, singularGroupBox)
+#. i18n: file: src/settings/languagepropertiespage.ui:342
+#. i18n: ectx: property (text), widget (QLabel, male_label_3)
+#. i18n: file: src/settings/languagepropertiespage.ui:456
+#. i18n: ectx: property (text), widget (QLabel, TextLabel4_2_2)
+#: rc.cpp:140 rc.cpp:230 rc.cpp:481 rc.cpp:1249 rc.cpp:1264
+msgid "Singular"
+msgstr "Tekil"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:108
+#. i18n: ectx: property (text), widget (QLabel, singularFirstPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:197
+#. i18n: ectx: property (text), widget (QLabel, dualFirstPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:286
+#. i18n: ectx: property (text), widget (QLabel, pluralFirstPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:124
+#. i18n: ectx: property (text), widget (QLabel, singularFirstPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:213
+#. i18n: ectx: property (text), widget (QLabel, pluralFirstPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:319
+#. i18n: ectx: property (text), widget (QLabel, dualFirstPersonLabel)
+#: rc.cpp:143 rc.cpp:161 rc.cpp:179 rc.cpp:484 rc.cpp:502 rc.cpp:520
+msgid "First"
+msgstr "İlk"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:124
+#. i18n: ectx: property (text), widget (QLabel, singularSecondPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:213
+#. i18n: ectx: property (text), widget (QLabel, dualSecondPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:302
+#. i18n: ectx: property (text), widget (QLabel, pluralSecondPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:140
+#. i18n: ectx: property (text), widget (QLabel, singularSecondPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:229
+#. i18n: ectx: property (text), widget (QLabel, pluralSecondPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:335
+#. i18n: ectx: property (text), widget (QLabel, dualSecondPersonLabel)
+#: rc.cpp:146 rc.cpp:164 rc.cpp:182 rc.cpp:487 rc.cpp:505 rc.cpp:523
+msgid "Second"
+msgstr "İkinci"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:140
+#. i18n: ectx: property (text), widget (QLabel, singularThirdMalePersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:229
+#. i18n: ectx: property (text), widget (QLabel, dualThirdMalePersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:318
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdMalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:156
+#. i18n: ectx: property (text), widget (QLabel, singularThirdMalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:245
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdMalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:351
+#. i18n: ectx: property (text), widget (QLabel, dualThirdMalePersonLabel)
+#: rc.cpp:149 rc.cpp:167 rc.cpp:185 rc.cpp:490 rc.cpp:508 rc.cpp:526
+msgid "Third Male"
+msgstr "Üçüncü Erkek"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:156
+#. i18n: ectx: property (text), widget (QLabel, singularThirdFemalePersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:245
+#. i18n: ectx: property (text), widget (QLabel, dualThirdFemalePersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:334
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdFemalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:172
+#. i18n: ectx: property (text), widget (QLabel, singularThirdFemalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:261
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdFemalePersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:367
+#. i18n: ectx: property (text), widget (QLabel, dualThirdFemalePersonLabel)
+#: rc.cpp:152 rc.cpp:170 rc.cpp:188 rc.cpp:493 rc.cpp:511 rc.cpp:529
+msgid "Third Female"
+msgstr "Üçüncü Dişi"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:172
+#. i18n: ectx: property (text), widget (QLabel, singularThirdNeutralPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:261
+#. i18n: ectx: property (text), widget (QLabel, dualThirdNeutralPersonLabel)
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:350
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdNeutralPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:188
+#. i18n: ectx: property (text), widget (QLabel, singularThirdNeutralPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:277
+#. i18n: ectx: property (text), widget (QLabel, pluralThirdNeutralPersonLabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:383
+#. i18n: ectx: property (text), widget (QLabel, dualThirdNeutralPersonLabel)
+#: rc.cpp:155 rc.cpp:173 rc.cpp:191 rc.cpp:496 rc.cpp:514 rc.cpp:532
+msgid "Third Neutral"
+msgstr "Üçüncü Nötr"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:191
+#. i18n: ectx: property (title), widget (QGroupBox, dualGroupBox)
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:193
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:313
+#. i18n: ectx: property (title), widget (QGroupBox, dualGroupBox)
+#. i18n: file: src/settings/languagepropertiespage.ui:463
+#. i18n: ectx: property (text), widget (QLabel, dualLabel)
+#: rc.cpp:158 rc.cpp:233 rc.cpp:517 rc.cpp:1267
+msgid "Dual"
+msgstr "İkili"
+
+#. i18n: file: src/entry-dialogs/conjugationwidget.ui:280
+#. i18n: ectx: property (title), widget (QGroupBox, pluralGroupBox)
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:200
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:207
+#. i18n: ectx: property (title), widget (QGroupBox, pluralGroupBox)
+#. i18n: file: src/settings/languagepropertiespage.ui:355
+#. i18n: ectx: property (text), widget (QLabel, male_label_4)
+#. i18n: file: src/settings/languagepropertiespage.ui:470
+#. i18n: ectx: property (text), widget (QLabel, TextLabel4_3)
+#: rc.cpp:176 rc.cpp:236 rc.cpp:499 rc.cpp:1252 rc.cpp:1270
+msgid "Plural"
+msgstr "Çoğul"
+
+#. i18n: file: src/entry-dialogs/browserwidget.ui:18
+#. i18n: ectx: property (text), widget (QPushButton, showCurrentButton)
+#: rc.cpp:194
+msgid "Lookup Current"
+msgstr "Şimdikini Ara"
+
+#. i18n: file: src/entry-dialogs/browserwidget.ui:33
+#. i18n: ectx: property (text), widget (QCheckBox, followTableCheckBox)
+#: rc.cpp:197
+msgid "Follow Table"
+msgstr "Tabloyu Takip Et"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:31
+#. i18n: ectx: property (text), widget (QPushButton, makeNounButton)
+#: rc.cpp:203
+msgid "Turn the selected word into a noun."
+msgstr "Seçilen sözcüğü bir isim haline çevirin."
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:44
+#. i18n: ectx: property (title), widget (QGroupBox, declensionGroupBox)
+#: rc.cpp:206
+msgid "Declension Forms"
+msgstr "İsim Çekim Biçimleri"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:50
+#. i18n: ectx: property (text), widget (QLabel, singularFirstPersonLabel)
+#: rc.cpp:209
+msgctxt "one of the seven cases (grammatical)"
+msgid "Nominative"
+msgstr "Yalın"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:72
+#. i18n: ectx: property (text), widget (QLabel, singularSecondPersonLabel)
+#: rc.cpp:212
+msgctxt "one of the seven cases (grammatical)"
+msgid "Genitive"
+msgstr "-in hali"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:91
+#. i18n: ectx: property (text), widget (QLabel, singularThirdMalePersonLabel)
+#: rc.cpp:215
+msgctxt "one of the seven cases (grammatical)"
+msgid "Dative"
+msgstr "-e hali"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:110
+#. i18n: ectx: property (text), widget (QLabel, singularThirdFemalePersonLabel)
+#: rc.cpp:218
+msgctxt "one of the seven cases (grammatical)"
+msgid "Accusative"
+msgstr "- hali"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:129
+#. i18n: ectx: property (text), widget (QLabel, singularThirdNeutralPersonLabel)
+#: rc.cpp:221
+msgctxt "one of the seven cases (grammatical)"
+msgid "Ablative"
+msgstr "-den hali"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:148
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:224
+msgctxt "one of the seven cases (grammatical)"
+msgid "Locative"
+msgstr "-de hali"
+
+#. i18n: file: src/entry-dialogs/declensionwidget.ui:167
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:227
+msgctxt "one of the seven cases (grammatical)"
+msgid "Vocative"
+msgstr "Seslenme"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:16
+#. i18n: ectx: property (text), widget (QLabel, languageLabel)
+#: rc.cpp:239
+msgid "Language"
+msgstr "Dil"
+
+#. i18n: file: src/entry-dialogs/summarywordwidget.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:245
+msgid "Word type"
+msgstr "Sözcük tipi"
+
+#. i18n: file: src/editor/editorui.rc:7
+#. i18n: ectx: Menu (file)
+#: rc.cpp:260
+#, fuzzy
+#| msgid "&Fixed"
+msgid "&File"
+msgstr "&Sabit"
+
+#. i18n: file: src/editor/editorui.rc:23
+#. i18n: ectx: Menu (view)
+#: rc.cpp:266
+msgid "&View"
+msgstr "&Görünüm"
+
+#. i18n: file: src/editor/editorui.rc:49
+#. i18n: ectx: Menu (lesson)
+#: rc.cpp:269
+msgid "&Lesson"
+msgstr "&Ders"
+
+#. i18n: file: src/editor/editorui.rc:66
+#. i18n: ectx: Menu (scripts)
+#: rc.cpp:275
+msgid "&Scripts"
+msgstr "&Betikler"
+
+#. i18n: file: src/editor/editorui.rc:75
+#. i18n: ectx: ToolBar (editorToolBar)
+#: rc.cpp:278
+msgid "Editor Toolbar"
+msgstr "Düzenleyici Araç Çubuğu"
+
+#. i18n: file: src/practiceold/entryfilter.ui:16
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:281
+msgid ""
+"<p>Your selection of vocabulary for the practice is empty.</p><p>Below you "
+"can choose to ignore some of your configuration settings to start a practice "
+"anyway.</p>"
+msgstr ""
+"<p>Alıştırma için sözcük dağarcığı seçiminiz boştur.</p><p>Aşağıda, yine de "
+"bir alıştırmaya başlamak için ihmal edebileceğiniz bazı ayarları "
+"seçebilirsiniz.</p>"
+
+#. i18n: file: src/practiceold/entryfilter.ui:26
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:284
+msgid "Ignore Configuration for:"
+msgstr "Bu öge için yapılandırmayı yoksay:"
+
+#. i18n: file: src/practiceold/entryfilter.ui:32
+#. i18n: ectx: property (text), widget (QCheckBox, lessonCheckBox)
+#: rc.cpp:287
+msgid "Ignore Lessons"
+msgstr "Dersleri Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:52
+#. i18n: ectx: property (text), widget (QCheckBox, wordTypeCheckBox)
+#: rc.cpp:291
+msgid "Ignore Word Types"
+msgstr "Sözcük Türlerini Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:72
+#. i18n: ectx: property (text), widget (QCheckBox, blockedCheckBox)
+#: rc.cpp:295
+msgid "Ignore Blocked"
+msgstr "Engellenenleri Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:92
+#. i18n: ectx: property (text), widget (QCheckBox, timesWrongCheckBox)
+#: rc.cpp:299
+msgid "Ignore Times Answered Incorrectly"
+msgstr "Yanlış Yanıtlama Sayısını Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:112
+#. i18n: ectx: property (text), widget (QCheckBox, timesPracticedCheckBox)
+#: rc.cpp:303
+msgid "Ignore Times Practiced"
+msgstr "Çalışılma Sayısını Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:132
+#. i18n: ectx: property (text), widget (QCheckBox, minMaxGradeCheckBox)
+#: rc.cpp:307
+msgid "Ignore Minimum/Maximum Grade"
+msgstr "En Yüksek/En Düşük Dereceyi Yoksay"
+
+#. i18n: file: src/practiceold/entryfilter.ui:152
+#. i18n: ectx: property (text), widget (QLabel, lessonLabel_2)
+#: rc.cpp:311
+msgid "Words"
+msgstr "Sözcükler"
+
+#. i18n: file: src/practiceold/entryfilter.ui:167
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:314
+msgid "Total number of entries:"
+msgstr "Toplam girdi sayısı:"
+
+#. i18n: file: src/practiceold/entryfilter.ui:188
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:318
+msgid "Resulting number of words to practice:"
+msgstr "Alıştırma yapılan son sözcük sayısı:"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: file: src/settings/languagepropertiespage.ui:20
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:321 rc.cpp:1204
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:22
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:324
+msgid "Total:"
+msgstr "Toplam:"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:45
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:327
+msgid "Answered correctly (first attempt):"
+msgstr "Doğru yanıtlanan (ilk deneme):"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:72
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:330
+msgid "Wrong answer:"
+msgstr "Yanlış yanıt:"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:99
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:333
+msgid "Not answered:"
+msgstr "Yanıtlanmayan:"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:126
+#. i18n: ectx: property (text), widget (QLabel, skipKnownLabel)
+#: rc.cpp:336
+msgid "Skipped:"
+msgstr "Atlandı:"
+
+#. i18n: file: src/practiceold/practicesummarywidget.ui:153
+#. i18n: ectx: property (text), widget (QLabel, skipUnknownLabel)
+#: rc.cpp:339
+msgid "Postponed:"
+msgstr "Ertelendi:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:103
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: rc.cpp:342
+msgid "Enter the correct translation:"
+msgstr "Doğru çeviriyi yazın:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:181
+#. i18n: ectx: property (text), widget (QPushButton, show_more)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:277
+#. i18n: ectx: property (text), widget (QPushButton, show_more)
+#: rc.cpp:345 rc.cpp:420
+msgid "Show &More"
+msgstr "Daha &Fazlasını Göster"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:200
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:264
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:203
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:437
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:243
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:79
+#. i18n: ectx: property (text), widget (QPushButton, showSolutionButton)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:239
+#. i18n: ectx: property (text), widget (QPushButton, show_all)
+#: rc.cpp:348 rc.cpp:417 rc.cpp:447 rc.cpp:535 rc.cpp:583 rc.cpp:621
+#: rc.cpp:669
+msgid "Show &Solution"
+msgstr "Çö&zümü Göster"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:228
+#. i18n: ectx: property (text), widget (QPushButton, verify)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:290
+#. i18n: ectx: property (text), widget (QPushButton, verify)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:177
+#. i18n: ectx: property (text), widget (QPushButton, verify)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:476
+#. i18n: ectx: property (text), widget (QPushButton, verify)
+#: rc.cpp:351 rc.cpp:423 rc.cpp:441 rc.cpp:544
+msgid "&Verify"
+msgstr "&Doğrula"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:256
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:238
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:190
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:450
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:256
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:226
+#. i18n: ectx: property (text), widget (QPushButton, know_it)
+#: rc.cpp:354 rc.cpp:411 rc.cpp:444 rc.cpp:538 rc.cpp:586 rc.cpp:666
+msgid "Skip (I &Know It)"
+msgstr "Atla (B&iliyorum)"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:269
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:251
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:216
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:463
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:269
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:252
+#. i18n: ectx: property (text), widget (QPushButton, dont_know)
+#: rc.cpp:357 rc.cpp:414 rc.cpp:450 rc.cpp:541 rc.cpp:589 rc.cpp:672
+msgid "Skip (Do &Not Know)"
+msgstr "Atla (&Bilmiyorum)"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:301
+#. i18n: ectx: property (text), widget (QPushButton, continueButton)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:230
+#. i18n: ectx: property (text), widget (QPushButton, continueButton)
+#: rc.cpp:360 rc.cpp:580
+msgid "&Continue"
+msgstr "De&vam Et"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:327
+#. i18n: ectx: property (text), widget (QPushButton, countAsRightButton)
+#: rc.cpp:363
+msgid "Count as &Right"
+msgstr "&Doğru olarak Say"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:356
+#. i18n: ectx: property (title), widget (QGroupBox, hintGroupBox)
+#: rc.cpp:366
+msgid "Hints"
+msgstr "İpuçları"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:382
+#. i18n: ectx: property (text), widget (QCheckBox, commentCheckBox)
+#. i18n: file: src/settings/documentproperties.ui:115
+#. i18n: ectx: property (text), widget (QLabel, label_remark)
+#: rc.cpp:372 rc.cpp:1134
+msgid "&Comment:"
+msgstr "&Yorum:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:402
+#. i18n: ectx: property (text), widget (QCheckBox, typeCheckBox)
+#: rc.cpp:375
+msgid "T&ype:"
+msgstr "&Tür:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:481
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:141
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:231
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:491
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:299
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:120
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:122
+#. i18n: ectx: property (title), widget (QGroupBox, progressgroup)
+#: rc.cpp:378 rc.cpp:399 rc.cpp:453 rc.cpp:547 rc.cpp:592 rc.cpp:627
+#: rc.cpp:654
+msgid "Progress"
+msgstr "İlerleme"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:493
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:172
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:255
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:515
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:331
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:134
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:154
+#. i18n: ectx: property (text), widget (QLabel, countlabel)
+#: rc.cpp:381 rc.cpp:402 rc.cpp:456 rc.cpp:550 rc.cpp:595 rc.cpp:630
+#: rc.cpp:657
+msgid "Count:"
+msgstr "Sayı:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:506
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:188
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:271
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:531
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:347
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:150
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:170
+#. i18n: ectx: property (text), widget (QLabel, timelabel)
+#: rc.cpp:384 rc.cpp:405 rc.cpp:459 rc.cpp:553 rc.cpp:598 rc.cpp:633
+#: rc.cpp:660
+msgid "Time:"
+msgstr "Zaman:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:522
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:201
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:284
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:544
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:360
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:163
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:189
+#. i18n: ectx: property (text), widget (QLabel, Cyclelabel)
+#: rc.cpp:387 rc.cpp:408 rc.cpp:462 rc.cpp:556 rc.cpp:601 rc.cpp:636
+#: rc.cpp:663
+msgid "Cycle:"
+msgstr "Çevrim:"
+
+#. i18n: file: src/practiceold/writtenpracticedialog.ui:562
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/SimpleQueryDlgForm.ui:314
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:322
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:603
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:432
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:232
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:292
+#. i18n: ectx: property (text), widget (QPushButton, stopPracticeButton)
+#: rc.cpp:390 rc.cpp:426 rc.cpp:465 rc.cpp:559 rc.cpp:604 rc.cpp:639
+#: rc.cpp:675
+msgid "&Stop Practice"
+msgstr "Çalışmayı &Durdur"
+
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:46
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: rc.cpp:429
+msgid "Fill in the missing comparison expressions:"
+msgstr "Olmayan karşılaştırma ifadelerini doldurun:"
+
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:55
+#. i18n: ectx: property (text), widget (QLabel, lev1Label)
+#: rc.cpp:432
+msgctxt ""
+"Comparison form of adjective - the normal form of the adjective (good)"
+msgid "&Absolute"
+msgstr "&Mutlak"
+
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:78
+#. i18n: ectx: property (text), widget (QLabel, lev2Label)
+#: rc.cpp:435
+msgctxt "comparison form of adjectives - comparison form (better)"
+msgid "&Comparative"
+msgstr "&Karşılaştırmalı"
+
+#. i18n: file: src/practiceold/AdjQueryDlgForm.ui:101
+#. i18n: ectx: property (text), widget (QLabel, lev3Label)
+#: rc.cpp:438
+msgctxt "comparison of adjectives - (best)"
+msgid "&Superlative"
+msgstr "&En Üstünlük"
+
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:37
+#. i18n: ectx: property (text), widget (QLabel, TextLabel2)
+#: rc.cpp:468
+msgid "Verb:"
+msgstr "Fiil:"
+
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:53
+#. i18n: ectx: property (text), widget (QLabel, verbNameLabel)
+#: rc.cpp:471
+msgid "verb name"
+msgstr "fiil adı"
+
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:81
+#. i18n: ectx: property (text), widget (QLabel, lab1)
+#: rc.cpp:474
+msgid "Enter the correct conjugation forms."
+msgstr "Doğru bağlaç formlarını girin."
+
+#. i18n: file: src/practiceold/VerbQueryDlgForm.ui:105
+#. i18n: ectx: property (text), widget (QLabel, instructionLabel)
+#: rc.cpp:478
+#, no-c-format, kde-format
+msgid "Current tense is %1."
+msgstr "Şu anki zaman %1."
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:46
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: rc.cpp:562
+msgid "Select the correct translation:"
+msgstr "Doğru çeviriyi seçin:"
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:103
+#. i18n: ectx: property (text), widget (QRadioButton, choiceRadioButton1)
+#: rc.cpp:565
+msgid "1"
+msgstr "1"
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:127
+#. i18n: ectx: property (text), widget (QRadioButton, choiceRadioButton2)
+#: rc.cpp:568
+msgid "2"
+msgstr "2"
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:151
+#. i18n: ectx: property (text), widget (QRadioButton, choiceRadioButton3)
+#: rc.cpp:571
+msgid "3"
+msgstr "3"
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:175
+#. i18n: ectx: property (text), widget (QRadioButton, choiceRadioButton4)
+#: rc.cpp:574
+msgid "4"
+msgstr "4"
+
+#. i18n: file: src/practiceold/MCQueryDlgForm.ui:199
+#. i18n: ectx: property (text), widget (QRadioButton, choiceRadioButton5)
+#: rc.cpp:577
+msgid "5"
+msgstr "5"
+
+#. i18n: file: src/practiceold/showsolutionwidget.ui:53
+#. i18n: ectx: property (text), widget (QLabel, dividerLabel)
+#: rc.cpp:608
+msgid " - "
+msgstr " - "
+
+#. i18n: file: src/practiceold/showsolutionwidget.ui:109
+#. i18n: ectx: property (text), widget (QPushButton, playQuestionSoundButton)
+#. i18n: file: src/practiceold/showsolutionwidget.ui:162
+#. i18n: ectx: property (text), widget (QPushButton, playSolutionSoundButton)
+#: rc.cpp:612 rc.cpp:615
+msgctxt "Listen to the vocabulary entry (sound)"
+msgid "Play"
+msgstr "Çal"
+
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:55
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:618
+msgid "Can you order the letters?"
+msgstr "Harfleri sıralamak ister misiniz?"
+
+#. i18n: file: src/practiceold/mixedletterpracticedialog.ui:92
+#. i18n: ectx: property (text), widget (QPushButton, verifySolutionButton)
+#: rc.cpp:624
+msgid "Verify"
+msgstr "Doğrula"
+
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:46
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1)
+#: rc.cpp:642
+msgid "Select the correct article for this noun:"
+msgstr "Bu isim için doğru artikeli seç:"
+
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:84
+#. i18n: ectx: property (text), widget (QRadioButton, maleRadio)
+#: rc.cpp:645
+msgid "&male"
+msgstr "&erkek"
+
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:91
+#. i18n: ectx: property (text), widget (QRadioButton, femaleRadio)
+#: rc.cpp:648
+msgid "&female"
+msgstr "&dişi"
+
+#. i18n: file: src/practiceold/ArtQueryDlgForm.ui:98
+#. i18n: ectx: property (text), widget (QRadioButton, neutralRadio)
+#: rc.cpp:651
+msgid "&neutral"
+msgstr "&nötr"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:19
+#. i18n: ectx: property (text), widget (QLabel, headingLabel)
+#: rc.cpp:681
+msgid "<h1>Parley</h1>"
+msgstr "<h1>Parley</h1>"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:26
+#. i18n: ectx: property (text), widget (KPushButton, newButton)
+#: rc.cpp:684
+msgid "Create a New Collection"
+msgstr "Yeni bir Koleksiyon Oluştur"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:43
+#. i18n: ectx: property (text), widget (KPushButton, openButton)
+#: rc.cpp:687
+msgid "Open an Existing Collection"
+msgstr "Varolan bir Sözcük Hazinesini Aç"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:50
+#. i18n: ectx: property (text), widget (KPushButton, ghnsButton)
+#: rc.cpp:690
+msgid "Download New Collections"
+msgstr "Yeni Sözcük Hazineleri İndir"
+
+#. i18n: file: src/welcomescreen/welcomescreen.ui:73
+#. i18n: ectx: property (text), widget (QLabel, recentLabel)
+#: rc.cpp:693
+msgid "Last Opened Collections"
+msgstr "Son Açılan Koleksiyonlar"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:46
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_IPAFont)
+#: rc.cpp:696
+msgid ""
+"Specify which font to use for displaying pronunciations using phonetic "
+"symbols."
+msgstr ""
+"Fonetik simgeler kullanılarak telaffuzların gösterileceği yazıtipini "
+"belirleyin."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:53
+#. i18n: ectx: property (text), widget (QLabel, IPAFontLabel)
+#: rc.cpp:699
+msgid "&IPA font:"
+msgstr "&IPA fontu:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:66
+#. i18n: ectx: property (text), widget (QLabel, TableFontLabel)
+#: rc.cpp:702
+msgid "&Table font:"
+msgstr "&Tablo yazıtipi:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:79
+#. i18n: ectx: property (whatsThis), widget (KFontRequester, kcfg_TableFont)
+#: rc.cpp:705
+msgid "Specify which font to use for editing of the main table."
+msgstr "Ana tablonun düzenlenmesinde hangi yazı tipinin kullanılacağını seçin."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:94
+#. i18n: ectx: property (title), widget (QGroupBox, gradegroup)
+#: rc.cpp:708
+msgid "Grade Colors"
+msgstr "Renkleri Derecelendir"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:100
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_UseGradeColors)
+#. i18n: file: src/settings/viewoptionsbase.ui:103
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_UseGradeColors)
+#: rc.cpp:711 rc.cpp:714
+msgid ""
+"If it is unchecked, you will just have black on white for the grades; if it "
+"is checked, the colors below will be chosen."
+msgstr ""
+"Seçilmemiş ise, notlar için sadece beyaz üstünde siyah görüntülenecektir; "
+"seçilmiş ise, aşağıdaki renkler seçilecektir."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:106
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseGradeColors)
+#: rc.cpp:717
+msgid "&Use colors"
+msgstr "&Renkleri kullan"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:119
+#. i18n: ectx: property (text), widget (QLabel, l_lev7)
+#. i18n: file: src/configure-practice/blockoptions.ui:128
+#. i18n: ectx: property (text), widget (QLabel, l_lev7)
+#: rc.cpp:720 rc.cpp:1354
+msgid "Level &7:"
+msgstr "Seviye &7:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:138
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor7)
+#: rc.cpp:723
+msgid "Color for the grade 7"
+msgstr "7. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:141
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor7)
+#: rc.cpp:726
+msgid "Click here to change the color for grade 7."
+msgstr "7. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:144
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor7)
+#: rc.cpp:729
+msgid "&7"
+msgstr "&7"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:147
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor7)
+#: rc.cpp:732
+msgid "Alt+7"
+msgstr "Alt+7"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:160
+#. i18n: ectx: property (text), widget (QLabel, l_lev6)
+#. i18n: file: src/configure-practice/blockoptions.ui:63
+#. i18n: ectx: property (text), widget (QLabel, l_lev6)
+#: rc.cpp:735 rc.cpp:1342
+msgid "Level &6:"
+msgstr "Seviye &6:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:179
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor6)
+#: rc.cpp:738
+msgid "Color for the grade 6"
+msgstr "6. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:182
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor6)
+#: rc.cpp:741
+msgid "Click here to change the color for grade 6."
+msgstr "6. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:185
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor6)
+#: rc.cpp:744
+msgid "&6"
+msgstr "&6"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:188
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor6)
+#: rc.cpp:747
+msgid "Alt+6"
+msgstr "Alt+6"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:201
+#. i18n: ectx: property (text), widget (QLabel, l_lev5)
+#. i18n: file: src/configure-practice/blockoptions.ui:53
+#. i18n: ectx: property (text), widget (QLabel, l_lev5)
+#: rc.cpp:750 rc.cpp:1339
+msgid "Level &5:"
+msgstr "Seviye &5:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:220
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor5)
+#: rc.cpp:753
+msgid "Color for the grade 5"
+msgstr "5. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:223
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor5)
+#: rc.cpp:756
+msgid "Click here to change the color for grade 5."
+msgstr "5. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:226
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor5)
+#: rc.cpp:759
+msgid "&5"
+msgstr "&5"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:229
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor5)
+#: rc.cpp:762
+msgid "Alt+5"
+msgstr "Alt+5"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:242
+#. i18n: ectx: property (text), widget (QLabel, l_lev4)
+#. i18n: file: src/configure-practice/blockoptions.ui:118
+#. i18n: ectx: property (text), widget (QLabel, l_lev4)
+#: rc.cpp:765 rc.cpp:1351
+msgid "Level &4:"
+msgstr "Seviye &4:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:261
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor4)
+#: rc.cpp:768
+msgid "Color for the grade 4"
+msgstr "4. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:264
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor4)
+#: rc.cpp:771
+msgid "Click here to change the color for grade 4."
+msgstr "4. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:267
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor4)
+#: rc.cpp:774
+msgid "&4"
+msgstr "&+"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:270
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor4)
+#: rc.cpp:777
+msgid "Alt+4"
+msgstr "Alt+4"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:283
+#. i18n: ectx: property (text), widget (QLabel, l_lev3)
+#. i18n: file: src/configure-practice/blockoptions.ui:192
+#. i18n: ectx: property (text), widget (QLabel, l_lev3)
+#: rc.cpp:780 rc.cpp:1360
+msgid "Level &3:"
+msgstr "Seviye &3:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:302
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor3)
+#: rc.cpp:783
+msgid "Color for the grade 3"
+msgstr "3. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:305
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor3)
+#: rc.cpp:786
+msgid "Click here to change the color for grade 3."
+msgstr "3. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:308
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor3)
+#: rc.cpp:789
+msgid "&3"
+msgstr "&3"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:311
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor3)
+#: rc.cpp:792
+msgid "Alt+3"
+msgstr "Alt+3"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:324
+#. i18n: ectx: property (text), widget (QLabel, l_lev2)
+#. i18n: file: src/configure-practice/blockoptions.ui:40
+#. i18n: ectx: property (text), widget (QLabel, l_lev2)
+#: rc.cpp:795 rc.cpp:1336
+msgid "Level &2:"
+msgstr "Seviye &2:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:343
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor2)
+#: rc.cpp:798
+msgid "Color for the grade 2"
+msgstr "2. derecenin rengi"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:346
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor2)
+#: rc.cpp:801
+msgid "Click here to change the color for grade 2."
+msgstr "2. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:349
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor2)
+#: rc.cpp:804
+msgid "&2"
+msgstr "&2"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:352
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor2)
+#: rc.cpp:807
+msgid "Alt+2"
+msgstr "Alt+2"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:365
+#. i18n: ectx: property (text), widget (QLabel, l_lev1)
+#. i18n: file: src/configure-practice/blockoptions.ui:150
+#. i18n: ectx: property (text), widget (QLabel, l_lev1)
+#: rc.cpp:810 rc.cpp:1357
+msgid "Level &1:"
+msgstr "Seviye &1:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:384
+#. i18n: ectx: property (toolTip), widget (KColorButton, kcfg_GradeColor1)
+#: rc.cpp:813
+msgid "Color for the grade 1"
+msgstr "1. derece için renk"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:387
+#. i18n: ectx: property (whatsThis), widget (KColorButton, kcfg_GradeColor1)
+#: rc.cpp:816
+msgid "Click here to change the color for grade 1."
+msgstr "1. derecenin rengini değiştirmek için buraya tıklayın."
+
+#. i18n: file: src/settings/viewoptionsbase.ui:390
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor1)
+#: rc.cpp:819
+msgid "&1"
+msgstr "&1"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:393
+#. i18n: ectx: property (shortcut), widget (KColorButton, kcfg_GradeColor1)
+#: rc.cpp:822
+msgid "Alt+1"
+msgstr "Alt+1"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:406
+#. i18n: ectx: property (text), widget (QLabel, l_lev0)
+#: rc.cpp:825
+msgid "Not &practiced:"
+msgstr "Çalı&şılmadı:"
+
+#. i18n: file: src/settings/viewoptionsbase.ui:425
+#. i18n: ectx: property (text), widget (KColorButton, kcfg_GradeColor0)
+#: rc.cpp:828
+msgid "&N"
+msgstr "&Hayır"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:17
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:831
+msgid "Open/Save"
+msgstr "Aç/Kaydet"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:23
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoOpenLast)
+#: rc.cpp:834
+msgid "Always open the collection that was active when quitting Parley"
+msgstr "Parley'den çıkarken, daima daha önce aktif olan koleksiyonu aç"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:26
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoOpenLast)
+#: rc.cpp:837
+msgid ""
+"When this option is checked, the last active collection will be loaded "
+"automatically when starting Parley instead of showing the welcome screen."
+msgstr ""
+"Bu seçenek işaretlendiğinde, hoşgeldiniz ekranını göstermek yerine en son "
+"aktif koleksiyon otomatik olarak yüklenecektir."
+
+#. i18n: file: src/settings/generaloptionsbase.ui:29
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoOpenLast)
+#: rc.cpp:840
+msgid "Always load the last opened collection on start"
+msgstr "Başlangıçta her zaman en son açılan koleksiyonu yükle"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:39
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoSave)
+#. i18n: file: src/settings/generaloptionsbase.ui:60
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AutoBackup)
+#: rc.cpp:843 rc.cpp:852
+msgid "Allow automatic saving of your work"
+msgstr "Çalışmanızın otomatik kaydedilmesine izin verin"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:42
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoSave)
+#. i18n: file: src/settings/generaloptionsbase.ui:63
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoBackup)
+#: rc.cpp:846 rc.cpp:855
+msgid "Your work will be automatically saved if you check this option"
+msgstr "Bu seçeneği seçerseniz çalışmanız otomatik olarak kaydedilcek"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:45
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoSave)
+#: rc.cpp:849
+msgid "&Save vocabularies automatically on close and quit"
+msgstr "Sözlükleri çıkışta otomatik kaydet, &sonra çık"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:66
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoBackup)
+#: rc.cpp:858
+msgid "&Create a backup every"
+msgstr "Belirtilen aralıklarla &yedekleme yap"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:89
+#. i18n: ectx: property (text), widget (QLabel, lblBackupInterva)
+#: rc.cpp:861
+msgid "minutes"
+msgstr "dakika"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:103
+#. i18n: ectx: property (text), widget (QLabel, label_sep)
+#: rc.cpp:864
+msgid "Sep&arator for text file import/export (CSV):"
+msgstr ""
+"Metin dosyası içeri alınırken ya da dışarı aktarılırken kullanılacak ayır&aç:"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:119
+#. i18n: ectx: property (toolTip), widget (KComboBox, kcfg_SeparatorCombo)
+#: rc.cpp:867
+msgid ""
+"Choose which separator you want to use to separate your data when importing "
+"and exporting text."
+msgstr ""
+"Metni içeri alırken ya da dışarı aktarırken verinizi bölmek için kullanmak "
+"istediğiniz ayıracı seçin."
+
+#. i18n: file: src/settings/generaloptionsbase.ui:122
+#. i18n: ectx: property (whatsThis), widget (KComboBox, kcfg_SeparatorCombo)
+#: rc.cpp:870
+msgid ""
+"Choose the separator to use to divide the parts of an expression when "
+"importing or exporting data as text."
+msgstr ""
+"Bir veriyi metin şeklinde içeri alırken ya da dışarı aktarırken bir ifadenin "
+"parçalarını ayırmak için kullanmak istediğiniz ayıracı seçin."
+
+#. i18n: file: src/settings/generaloptionsbase.ui:147
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:873
+msgid "Editing"
+msgstr "Düzenleme"
+
+#. i18n: file: src/settings/generaloptionsbase.ui:165
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_SmartAppend)
+#: rc.cpp:876
+msgid "&Append new rows automatically when editing"
+msgstr "Düzenlerken yeni satırları otomatik olarak &ekle"
+
+#. i18n: file: src/settings/optionlistform.ui:63
+#. i18n: ectx: property (text), widget (QPushButton, newButton)
+#. i18n: file: src/settings/languagepropertiespage.ui:722
+#. i18n: ectx: property (text), widget (QPushButton, newButton)
+#: rc.cpp:882 rc.cpp:1303
+msgid "&New..."
+msgstr "&Yeni..."
+
+#. i18n: file: src/settings/optionlistform.ui:78
+#. i18n: ectx: property (text), widget (QPushButton, modifyButton)
+#. i18n: file: src/settings/languagepropertiespage.ui:735
+#. i18n: ectx: property (text), widget (QPushButton, modifyButton)
+#: rc.cpp:885 rc.cpp:1306
+msgid "&Modify..."
+msgstr "&Değiştir..."
+
+#. i18n: file: src/settings/optionlistform.ui:93
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#. i18n: file: src/settings/languagepropertiespage.ui:748
+#. i18n: ectx: property (text), widget (QPushButton, deleteButton)
+#: rc.cpp:888 rc.cpp:1309
+msgid "&Delete"
+msgstr "&Sil"
+
+#. i18n: file: src/settings/optionlistform.ui:124
+#. i18n: ectx: property (text), widget (QPushButton, cleanUpButton)
+#: rc.cpp:891
+msgid "&Clean Up"
+msgstr "&Temizle"
+
+#. i18n: file: src/settings/parley.kcfg:11
+#. i18n: ectx: label, entry (NumPreSetting), group (General)
+#: rc.cpp:894
+msgid "Number of stored setting profiles"
+msgstr "Kaydedilmiş ayar profillerinin sayısı"
+
+#. i18n: file: src/settings/parley.kcfg:15
+#. i18n: ectx: label, entry (SmartAppend), group (General)
+#: rc.cpp:897
+msgid ""
+"If true, when using the entry dialog, new rows will be appended as needed"
+msgstr ""
+"Doğru ise, giriş iletişim kutusunu kullanırken, gerektiğinde yeni satırlar "
+"eklenecektir"
+
+#. i18n: file: src/settings/parley.kcfg:19
+#. i18n: ectx: label, entry (Separator), group (General)
+#: rc.cpp:900
+msgid "This sets the separator used when copying/pasting text, default is Tab"
+msgstr ""
+"Metni kopyalarken/yapıştırırken kullanılacak ayıraç karakterini ayarlar, "
+"varsayılan Sekme tuşudur"
+
+#. i18n: file: src/settings/parley.kcfg:23
+#. i18n: ectx: label, entry (EntriesPerLesson), group (General)
+#: rc.cpp:903
+msgid "The number of entries per lesson"
+msgstr "Her ders için girdi sayısı"
+
+#. i18n: file: src/settings/parley.kcfg:27
+#. i18n: ectx: label, entry (AutoOpenLast), group (General)
+#: rc.cpp:906
+msgid "If true, on each application start the last opened file will be loaded"
+msgstr "Doğru ise, uygulama her çalıştığında en son açılan dosya yüklenecektir"
+
+#. i18n: file: src/settings/parley.kcfg:31
+#. i18n: ectx: label, entry (AutoSave), group (General)
+#: rc.cpp:909
+msgid "If true, vocabularies are automatically saved on close and exit"
+msgstr "Eğer doğru ise, sözcükler otomatik olarak kaydedilip çıkılacak"
+
+#. i18n: file: src/settings/parley.kcfg:38
+#. i18n: ectx: label, entry (AutoBackup), group (General)
+#: rc.cpp:912
+msgid "If true, a backup is saved every BackupTime minutes"
+msgstr "Eğer doğru ise, her BackupTime dakikasında bir yedek kaydedilecektir"
+
+#. i18n: file: src/settings/parley.kcfg:42
+#. i18n: ectx: label, entry (BackupTime), group (General)
+#: rc.cpp:915
+msgid "Time interval between two automatic backups"
+msgstr "İki otomatik yedekleme arasındaki zaman aralığı"
+
+#. i18n: file: src/settings/parley.kcfg:53
+#. i18n: ectx: label, entry (FlashcardsFrontImage), group (PracticeOptions)
+#: rc.cpp:921
+msgid "Show images on the front of the flashcard."
+msgstr "Hafıza kartının önünde resimleri göster"
+
+#. i18n: file: src/settings/parley.kcfg:57
+#. i18n: ectx: label, entry (FlashcardsBackImage), group (PracticeOptions)
+#: rc.cpp:924
+msgid "Show images on the back of the flashcard."
+msgstr "Hafıza kartının arkasında resimleri göster."
+
+#. i18n: file: src/settings/parley.kcfg:61
+#. i18n: ectx: label, entry (Theme), group (PracticeOptions)
+#: rc.cpp:927
+msgid "Practice theme to use"
+msgstr "Kullanılacak çalışma teması"
+
+#. i18n: file: src/settings/parley.kcfg:65
+#. i18n: ectx: label, entry (Block), group (PracticeOptions)
+#: rc.cpp:930
+msgid "In Blocking Query Tab Dialog, if checked then the Query is blocked"
+msgstr ""
+"Engellenen Kuyruk Sekmesi İletişim kutusunda, işaretlendiği takdirde Kuyruk "
+"engellenir"
+
+#. i18n: file: src/settings/parley.kcfg:69
+#. i18n: ectx: label, entry (Expire), group (PracticeOptions)
+#: rc.cpp:933
+msgid ""
+"In Blocking Query Tab Dialog, if checked then the Query accepts an expiring "
+"time"
+msgstr ""
+"Engellenen Kuyruk Sekmesi İletişim kutusunda, işaretlendiği takdirde Kuyruk "
+"zaman aşımına izin verir"
+
+#. i18n: file: src/settings/parley.kcfg:73
+#. i18n: ectx: label, entry (AltLearn), group (PracticeOptions)
+#: rc.cpp:936
+msgid "Use the Leitner learning method"
+msgstr "Leitner öğrenme metodunu kullan"
+
+#. i18n: file: src/settings/parley.kcfg:77
+#. i18n: ectx: label, entry (TestOrderLesson), group (PracticeOptions)
+#: rc.cpp:939
+msgid ""
+"Append new vocabulary in a test in order of their lessons. Note that this "
+"will not be a hard transition, but a slow mix from one lesson to the next."
+msgstr ""
+"Derslerin sırasına göre bir sınava yeni sözcük dağarcıkları ekle. Dikkat: Bu "
+"zor bir geçiş olmayacaktır, ancak bir dersten diğerine yavaş bir karışım "
+"olacaktır."
+
+#. i18n: file: src/settings/parley.kcfg:81
+#. i18n: ectx: label, entry (TestNumberOfEntries), group (PracticeOptions)
+#: rc.cpp:942
+msgid ""
+"The number of entries that are practiced at the same time. If one of these "
+"is answered correctly another entry will be appended."
+msgstr ""
+"Aynı anda alıştırması yapılacak girdi sayısı. Bunlardan biri doğru "
+"cevaplanırsa, başka bir girdi eklenecektir."
+
+#. i18n: file: src/settings/parley.kcfg:85
+#. i18n: ectx: label, entry (SwapDirection), group (PracticeOptions)
+#: rc.cpp:945
+msgid "Swap direction randomly"
+msgstr "Yönü rastgele çevir"
+
+#. i18n: file: src/settings/parley.kcfg:90
+#. i18n: ectx: label, entry (PracticeTimeout), group (PracticeOptions)
+#: rc.cpp:948
+msgid "Limit the time for the user to answer in a test."
+msgstr "Bir sınavda, kullanıcının yanıt vermesi gereken süreyi sınırla."
+
+#. i18n: file: src/settings/parley.kcfg:94
+#. i18n: ectx: label, entry (PracticeTimeoutMode), group (PracticeOptions)
+#: rc.cpp:951
+msgid ""
+"Show - show the solution after the given time; Continue - go to the next "
+"question after the given time."
+msgstr ""
+"Göster - verilen zaman sonunda çözümü görüntüle; Devam - verilen zaman "
+"sonunda sonraki soruya geç."
+
+#. i18n: file: src/settings/parley.kcfg:102
+#. i18n: ectx: label, entry (PracticeTimeoutTimePerAnswer), group (PracticeOptions)
+#: rc.cpp:954
+msgid "Maximum time allowed to answer."
+msgstr "Her yanıt için izin verilen en uzun süre."
+
+#. i18n: file: src/settings/parley.kcfg:107
+#. i18n: ectx: label, entry (Suggestions), group (PracticeOptions)
+#: rc.cpp:957
+msgid "Enable suggestion lists in written practice."
+msgstr "Yazılı alıştırmada öneri listelerini etkinleştir."
+
+#. i18n: file: src/settings/parley.kcfg:111
+#. i18n: ectx: label, entry (ShowHints), group (PracticeOptions)
+#: rc.cpp:960
+msgid "Enable the showing of hints."
+msgstr "İpucu gösterimlerini etkinleştir."
+
+#. i18n: file: src/settings/parley.kcfg:115
+#. i18n: ectx: label, entry (IgnoreAccentMistakes), group (PracticeOptions)
+#: rc.cpp:963
+msgid "Count answers as right when only the accentuation is wrong."
+msgstr "Yalnızca aksan yanlış ise yanıtları doğru kabul et."
+
+#. i18n: file: src/settings/parley.kcfg:119
+#. i18n: ectx: label, entry (IgnoreCapitalizationMistakes), group (PracticeOptions)
+#: rc.cpp:966
+msgid "Count answers as right when only the capitalization is wrong."
+msgstr "Yalnızca büyük/küçük harf kullanımı yanlış ise yanıtı doğru kabul et."
+
+#. i18n: file: src/settings/parley.kcfg:124
+#. i18n: ectx: label, entry (SplitTranslations), group (PracticeOptions)
+#: rc.cpp:969
+msgid "Split translations in written practice."
+msgstr "Yazılı alıştırmada çevirileri böl."
+
+#. i18n: file: src/settings/parley.kcfg:128
+#. i18n: ectx: label, entry (Periods), group (PracticeOptions)
+#: rc.cpp:972
+msgid "Split translations at periods."
+msgstr "Çevirileri noktalarda böl."
+
+#. i18n: file: src/settings/parley.kcfg:132
+#. i18n: ectx: label, entry (Colons), group (PracticeOptions)
+#: rc.cpp:975
+msgid "Split translations at colons."
+msgstr "Çevirileri iki nokta üst üstelerde ayır."
+
+#. i18n: file: src/settings/parley.kcfg:136
+#. i18n: ectx: label, entry (Semicolons), group (PracticeOptions)
+#: rc.cpp:978
+msgid "Split translations at semicolons."
+msgstr "Çevirileri noktalı virgüllerde ayır."
+
+#. i18n: file: src/settings/parley.kcfg:140
+#. i18n: ectx: label, entry (Commas), group (PracticeOptions)
+#: rc.cpp:981
+msgid "Split translations at commas."
+msgstr "Çevirileri virgüllerde ayır."
+
+#. i18n: file: src/settings/parley.kcfg:146
+#. i18n: ectx: label, entry (ShowMore), group (PracticeOptions)
+#: rc.cpp:984
+msgid ""
+"Enable Show More button to reveal parts of the solution in written practice."
+msgstr ""
+"Yazılı alıştırmada çözümün parçalarını ortaya çıkarmak için Daha Fazla "
+"Göster düğmesini etkinleştir."
+
+#. i18n: file: src/settings/parley.kcfg:150
+#. i18n: ectx: label, entry (SkipKnownEnabled), group (PracticeOptions)
+#: rc.cpp:987
+msgid "Enable Skip (I Know It) button in written practice."
+msgstr "Yazma çalışmasında Atlama (Biliyorum) düğmesini etkinleştir."
+
+#. i18n: file: src/settings/parley.kcfg:154
+#. i18n: ectx: label, entry (CountSynonymsAsCorrect), group (PracticeOptions)
+#: rc.cpp:990
+msgid ""
+"When the synonym instead of the word was entered, does it count as correct?"
+msgstr "Sözcük yerine eş anlamlısı girildiğinde, bu doğru sayılacak mı?"
+
+#. i18n: file: src/settings/parley.kcfg:158
+#. i18n: ectx: label, entry (PracticeImagesEnabled), group (PracticeOptions)
+#: rc.cpp:993
+msgid "Enable image display in the practice dialogs."
+msgstr "Alıştırma iletişim kutularında resim göstermeyi aktifleştir."
+
+#. i18n: file: src/settings/parley.kcfg:162
+#. i18n: ectx: label, entry (PracticeSoundEnabled), group (PracticeOptions)
+#: rc.cpp:996
+msgid "Enable sound playback in the practice dialogs."
+msgstr "Alıştırma iletişim kutularında ses çalmayı etkinleştir."
+
+#. i18n: file: src/settings/parley.kcfg:166
+#. i18n: ectx: label, entry (MultipleChoiceWordTypeConsistancy), group (PracticeOptions)
+#: rc.cpp:999
+msgid ""
+"Use the same word type as the solution for the incorrect answers in a "
+"multiple choice practice."
+msgstr ""
+"Çoktan seçmeli bir alıştırmada, yanlış cevapların çözümü için aynı sözcük "
+"türü kullan."
+
+#. i18n: file: src/settings/parley.kcfg:170
+#. i18n: ectx: label, entry (NumberMultipleChoiceAnswers), group (PracticeOptions)
+#: rc.cpp:1002
+msgid ""
+"How many answers are provided for a multiple choice question, including the "
+"correct answer."
+msgstr ""
+"Doğru yanıt dahil, çoktan seçmeli bir soruda kaç yanıt verileceğini ayarlar."
+
+#. i18n: file: src/settings/parley.kcfg:177
+#. i18n: ectx: label, entry (ShowSearch), group (Appearance)
+#: rc.cpp:1005
+msgid "Toggle display of the search bar."
+msgstr "Arama çubuğunun göster/gizle."
+
+#. i18n: file: src/settings/parley.kcfg:182
+#. i18n: ectx: label, entry (ShowSublessonentries), group (Appearance)
+#: rc.cpp:1008
+msgid "When enabled a lesson also shows entries from its sublessons."
+msgstr ""
+"Etkinleştirildiğinde, bir derste alt derslere ait girdiler de görüntülenir."
+
+#. i18n: file: src/settings/parley.kcfg:187
+#. i18n: ectx: label, entry (TableLessonColumnVisible), group (Appearance)
+#: rc.cpp:1011
+msgid "Show/hide the lesson column."
+msgstr "Ders sütununu göster/gizle"
+
+#. i18n: file: src/settings/parley.kcfg:192
+#. i18n: ectx: label, entry (TableActiveColumnVisible), group (Appearance)
+#: rc.cpp:1014
+msgid "Show/hide the active column."
+msgstr "Etkin sütunu göster/gizle."
+
+#. i18n: file: src/settings/parley.kcfg:197
+#. i18n: ectx: label, entry (LessonEditingSelection), group (Appearance)
+#: rc.cpp:1017
+msgid "Select which lessons are displayed for editing"
+msgstr "Hangi derslerin düzenleme için gösterildiğini seçin"
+
+#. i18n: file: src/settings/parley.kcfg:207
+#. i18n: ectx: label, entry (MainWindowSplitter), group (Appearance)
+#: rc.cpp:1020
+msgid "How the main window is divided."
+msgstr "Ana pencerenin nasıl bölündüğü."
+
+#. i18n: file: src/settings/parley.kcfg:211
+#. i18n: ectx: label, entry (TableFont), group (Appearance)
+#: rc.cpp:1023
+msgid "The font used in the vocabulary table"
+msgstr "Sözcük dağarcığı tablosunda kullanılan yazı tipi"
+
+#. i18n: file: src/settings/parley.kcfg:215
+#. i18n: ectx: label, entry (IPAFont), group (Appearance)
+#: rc.cpp:1026
+msgid "The font used for phonetics"
+msgstr "Fonetikler için kullanılacak yazı tipi"
+
+#. i18n: file: src/settings/parley.kcfg:219
+#. i18n: ectx: label, entry (CurrentCol), group (Appearance)
+#: rc.cpp:1029
+msgid "Currently selected column"
+msgstr "Şimdi seçili olan sütun"
+
+#. i18n: file: src/settings/parley.kcfg:223
+#. i18n: ectx: label, entry (CurrentRow), group (Appearance)
+#: rc.cpp:1032
+msgid "Currently selected row"
+msgstr "Şimdi seçili olan satır"
+
+#. i18n: file: src/settings/parley.kcfg:227
+#. i18n: ectx: label, entry (UseGradeColors), group (Appearance)
+#: rc.cpp:1035
+msgid "Use your own colors"
+msgstr "Kendi renklerinizi kullanın"
+
+#. i18n: file: src/settings/parley.kcfg:232
+#. i18n: ectx: label, entry (GradeColor$(Number)), group (Appearance)
+#: rc.cpp:1038
+msgid "Colors used to display different grades"
+msgstr "Farklı düzeyleri göstermek için renkler"
+
+#. i18n: file: src/settings/parley.kcfg:247
+#. i18n: ectx: label, entry (PracticeMinimumTimesAsked), group (Thresholds)
+#: rc.cpp:1041
+msgid ""
+"The entry must have been asked at least this often to be included in the "
+"practice."
+msgstr "Girdi, alıştırmada yer alması için en az bu kadar sık sorulmalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:251
+#. i18n: ectx: label, entry (PracticeMaximumTimesAsked), group (Thresholds)
+#: rc.cpp:1044
+msgid ""
+"The entry must have been asked at most this often to be included in the "
+"practice."
+msgstr "Girdi, alıştırmada yer alması için en az bu kadar sorulmalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:256
+#. i18n: ectx: label, entry (PracticeMinimumWrongCount), group (Thresholds)
+#: rc.cpp:1047
+msgid ""
+"The entry must have been answered incorrectly at least this often to be "
+"included in the practice."
+msgstr ""
+"Girdi, alıştırmada yer alması için en az bu kadar yanlış yanıtlanmalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:260
+#. i18n: ectx: label, entry (PracticeMaximumWrongCount), group (Thresholds)
+#: rc.cpp:1050
+msgid ""
+"The entry must have been answered incorrectly at most this often to be "
+"included in the practice."
+msgstr ""
+"Girdi, alıştırmada yer alması için en az bu kadar yanlış yanıtlanmalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:265
+#. i18n: ectx: label, entry (PracticeMinimumGrade), group (Thresholds)
+#: rc.cpp:1053
+msgid ""
+"The entry must have at least this grade to be included in the practice "
+"(0..7)."
+msgstr ""
+"Girdi, alıştırmada yer alması için en az (0..7) arasında bir not almalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:269
+#. i18n: ectx: label, entry (PracticeMaximumGrade), group (Thresholds)
+#: rc.cpp:1056
+msgid ""
+"The entry must have at most this grade to be included in the practice (0..7)."
+msgstr ""
+"Girdi, alıştırmada yer alması için en az (0..) arasında bir not almalıdır."
+
+#. i18n: file: src/settings/parley.kcfg:273
+#. i18n: ectx: label, entry (WordTypesInPracticeEnabled), group (Thresholds)
+#: rc.cpp:1059
+msgid "Only selected word types will be included in practice."
+msgstr "Yalnızca seçilen sözcük türleri alıştırmada yer alacaktır."
+
+#. i18n: file: src/settings/parley.kcfg:277
+#. i18n: ectx: label, entry (WordTypesInPractice), group (Thresholds)
+#. i18n: file: src/settings/parley.kcfg:278
+#. i18n: ectx: whatsthis, entry (WordTypesInPractice), group (Thresholds)
+#: rc.cpp:1062 rc.cpp:1065
+msgid "Selected word types for practices."
+msgstr "Alıştırmalar için seçilen sözcük türleri."
+
+#. i18n: file: src/settings/parley.kcfg:281
+#. i18n: ectx: label, entry (SubWordTypesInPractice), group (Thresholds)
+#. i18n: file: src/settings/parley.kcfg:282
+#. i18n: ectx: whatsthis, entry (SubWordTypesInPractice), group (Thresholds)
+#: rc.cpp:1068 rc.cpp:1071
+msgid "Selected sub word types for practices."
+msgstr "Alıştırmalar için seçilen alt sözcük türleri."
+
+#. i18n: file: src/settings/parley.kcfg:288
+#. i18n: ectx: label, entry (QuestionLanguage), group (PracticeManager)
+#: rc.cpp:1074
+msgid "The language that is displayed in a test."
+msgstr "Testte gösterilecek dil."
+
+#. i18n: file: src/settings/parley.kcfg:292
+#. i18n: ectx: label, entry (SolutionLanguage), group (PracticeManager)
+#: rc.cpp:1077
+msgid "The language in which the user has to answer."
+msgstr "Kullanıcının yanıt vereceği dil."
+
+#. i18n: file: src/settings/parley.kcfg:297
+#. i18n: ectx: label, entry (ShowSolutionAfterAnswer), group (PracticeManager)
+#: rc.cpp:1080
+msgid "Show the solution after an answer was given."
+msgstr "Yanıtlandıktan sonra çözümü göster."
+
+#. i18n: file: src/settings/parley.kcfg:301
+#. i18n: ectx: label, entry (ShowSolutionAfterAnswerTime), group (PracticeManager)
+#: rc.cpp:1083
+msgid "The time the solution is shown (seconds). 0 is unlimited."
+msgstr "Çözümün gösterildiği zaman (saniye olarak). 0 sonsuz demektir."
+
+#. i18n: file: src/settings/parley.kcfg:318
+#. i18n: ectx: label, entry (TestType), group (PracticeManager)
+#: rc.cpp:1086
+msgid "The test type that is currently selected."
+msgstr "Şimdi seçilen test tipi."
+
+#. i18n: file: src/settings/parley.kcfg:322
+#. i18n: ectx: label, entry (ComparisonIncludeAdjective), group (PracticeManager)
+#: rc.cpp:1089
+msgid "In a comparison forms test, include adjectives."
+msgstr "Karşılaştırma biçimi sınavında, sıfatları kullan."
+
+#. i18n: file: src/settings/parley.kcfg:326
+#. i18n: ectx: label, entry (ComparisonIncludeAdverb), group (PracticeManager)
+#: rc.cpp:1092
+msgid "In a comparison forms test, include adverbs."
+msgstr "Karşılaştırma biçimi testinde, zarfları kullan."
+
+#. i18n: file: src/settings/parley.kcfg:333
+#. i18n: ectx: label, entry (BlockItem$(Grade)), group (PracticeManager)
+#: rc.cpp:1095
+msgid "Amount of time different grades should be blocked"
+msgstr "Farklı notların engelleneceği zaman miktarı"
+
+#. i18n: file: src/settings/parley.kcfg:344
+#. i18n: ectx: label, entry (ExpireItem$(Grade)), group (PracticeManager)
+#: rc.cpp:1098
+msgid "Amount of time after which different grades should expire"
+msgstr "Farklı notların kaybolacağı zaman miktarı"
+
+#. i18n: file: src/settings/parley.kcfg:356
+#. i18n: ectx: label, entry (ProvidersUrl), group (KNewStuff)
+#: rc.cpp:1101
+msgid "The Providers path for Parley"
+msgstr "Parley için sağlayıcı yolu"
+
+#. i18n: file: src/settings/parley.kcfg:360
+#. i18n: ectx: label, entry (InstallationCommand), group (KNewStuff)
+#: rc.cpp:1104
+msgid "The command used to start a downloaded vocabulary"
+msgstr "İndirilen sözlüğü başlatmak için kullanılan komut"
+
+#. i18n: file: src/settings/parley.kcfg:364
+#. i18n: ectx: label, entry (InstallPath), group (KNewStuff)
+#: rc.cpp:1107
+msgid "The folder where downloaded vocabularies are saved by default"
+msgstr "İndirilen sözcük dağarcıklarının varsayılan olarak kaydedileceği dizin"
+
+#. i18n: file: src/settings/documentproperties.ui:25
+#. i18n: ectx: property (title), widget (QGroupBox, tiltle_group)
+#: rc.cpp:1113
+msgid "General Document Properties"
+msgstr "Genel Belge Özellikleri"
+
+#. i18n: file: src/settings/documentproperties.ui:37
+#. i18n: ectx: property (text), widget (QLabel, label_title)
+#: rc.cpp:1116
+msgid "&Title:"
+msgstr "&Başlık:"
+
+#. i18n: file: src/settings/documentproperties.ui:56
+#. i18n: ectx: property (toolTip), widget (KLineEdit, titleLineEdit)
+#. i18n: file: src/settings/documentproperties.ui:82
+#. i18n: ectx: property (toolTip), widget (KLineEdit, authorLineEdit)
+#: rc.cpp:1119 rc.cpp:1125
+msgid "A title for your document."
+msgstr "Belgeniz için bir başlık."
+
+#. i18n: file: src/settings/documentproperties.ui:63
+#. i18n: ectx: property (text), widget (QLabel, label_author)
+#: rc.cpp:1122
+msgid "&Author:"
+msgstr "&Yazar:"
+
+#. i18n: file: src/settings/documentproperties.ui:89
+#. i18n: ectx: property (text), widget (QLabel, label_author_2)
+#: rc.cpp:1128
+msgid "&Email:"
+msgstr "&E-posta:"
+
+#. i18n: file: src/settings/documentproperties.ui:108
+#. i18n: ectx: property (toolTip), widget (KLineEdit, contactLineEdit)
+#: rc.cpp:1131
+msgid "A way to contact you (email or a webpage)."
+msgstr "Sizinle iletişim kurulacak bir yol (e-posta ya da web sayfası)"
+
+#. i18n: file: src/settings/documentproperties.ui:134
+#. i18n: ectx: property (toolTip), widget (KTextEdit, commentTextEdit)
+#: rc.cpp:1137
+msgid "Any additional information."
+msgstr "Ek bilgi."
+
+#. i18n: file: src/settings/documentproperties.ui:147
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1140
+msgid "Cat&egory"
+msgstr "Kat&egori"
+
+#. i18n: file: src/settings/documentproperties.ui:160
+#. i18n: ectx: property (toolTip), widget (KComboBox, categoryComboBox)
+#: rc.cpp:1143
+msgid "A general category into which your document belongs."
+msgstr "Belgenizin ait olduğu genel kategori."
+
+#. i18n: file: src/settings/documentproperties.ui:172
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#: rc.cpp:1149
+msgid "Music"
+msgstr "Müzik"
+
+#. i18n: file: src/settings/documentproperties.ui:177
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#: rc.cpp:1152
+msgid "Geography"
+msgstr "Coğrafya"
+
+#. i18n: file: src/settings/documentproperties.ui:182
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#: rc.cpp:1155
+msgid "Anatomy"
+msgstr "Anatomi"
+
+#. i18n: file: src/settings/documentproperties.ui:187
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#: rc.cpp:1158
+msgid "History"
+msgstr "Tarih"
+
+#. i18n: file: src/settings/documentproperties.ui:192
+#. i18n: ectx: property (text), item, widget (KComboBox, categoryComboBox)
+#: rc.cpp:1161
+msgid "Test Preparation"
+msgstr "Test Hazırlama"
+
+#. i18n: file: src/settings/documentproperties.ui:200
+#. i18n: ectx: property (text), widget (QLabel, label_license)
+#: rc.cpp:1164
+msgid "&License:"
+msgstr "&Lisans:"
+
+#. i18n: file: src/settings/documentproperties.ui:214
+#. i18n: ectx: property (toolTip), widget (KComboBox, licenseComboBox)
+#: rc.cpp:1167
+msgid ""
+"The license under which your document will be.\n"
+"If you consider contributing your file to KDE in the future, an appropriate "
+"license is required."
+msgstr ""
+"Belgenizin altında olması gereken lisans.\n"
+"Gelecekte dosyanızı KDE'ye destek olarak vermeyi düşünürseniz, uygun bir "
+"lisansa ihtiyacınız olacaktır."
+
+#. i18n: file: src/settings/documentproperties.ui:226
+#. i18n: ectx: property (text), item, widget (KComboBox, licenseComboBox)
+#: rc.cpp:1174
+msgid "GPLv2+ (GNU General Public License version 2 or later)"
+msgstr "GPLv2+  (GNU Genel Kamu Lisansı Sürüm 2 ve sonrası)"
+
+#. i18n: file: src/settings/documentproperties.ui:243
+#. i18n: ectx: property (text), widget (QLabel, label_language_1)
+#: rc.cpp:1180
+msgid "&First language:"
+msgstr "&Birinci dil:"
+
+#. i18n: file: src/settings/documentproperties.ui:269
+#. i18n: ectx: property (text), widget (QLabel, label_language_2)
+#: rc.cpp:1183
+msgid "&Second language:"
+msgstr "&İkinci dil:"
+
+#. i18n: file: src/settings/documentproperties.ui:298
+#. i18n: ectx: property (text), widget (QCheckBox, grammarCheckBox)
+#: rc.cpp:1186
+msgid "&Setup Grammar Details"
+msgstr "&Dilbilgisi Özelliklerini Ayarla"
+
+#. i18n: file: src/settings/documentproperties.ui:308
+#. i18n: ectx: property (text), widget (QCheckBox, downloadGrammarCheckBox)
+#: rc.cpp:1189
+msgctxt "Attept to download grammar properties for the selected languages"
+msgid "Download Grammar"
+msgstr "Dilbilgisi İndir"
+
+#. i18n: file: src/settings/documentsettings.kcfg:11
+#. i18n: ectx: label, entry (ConjugationTenses), group (Document $(fileurl))
+#. i18n: file: src/settings/documentsettings.kcfg:12
+#. i18n: ectx: whatsthis, entry (ConjugationTenses), group (Document $(fileurl))
+#. i18n: file: src/settings/languagesettings.kcfg:21
+#. i18n: ectx: label, entry (ConjugationTenses), group (Locale $(locale))
+#. i18n: file: src/settings/languagesettings.kcfg:22
+#. i18n: ectx: whatsthis, entry (ConjugationTenses), group (Locale $(locale))
+#: rc.cpp:1192 rc.cpp:1195 rc.cpp:1324 rc.cpp:1327
+msgid "Selected tenses for conjugation practice."
+msgstr "Çekim alıştırması için seçilen zaman kipleri."
+
+#. i18n: file: src/settings/documentsettings.kcfg:16
+#. i18n: ectx: label, entry (VisibleColumns), group (Document $(fileurl))
+#. i18n: file: src/settings/documentsettings.kcfg:17
+#. i18n: ectx: whatsthis, entry (VisibleColumns), group (Document $(fileurl))
+#. i18n: file: src/settings/languagesettings.kcfg:26
+#. i18n: ectx: label, entry (VisibleColumns), group (Locale $(locale))
+#. i18n: file: src/settings/languagesettings.kcfg:27
+#. i18n: ectx: whatsthis, entry (VisibleColumns), group (Locale $(locale))
+#: rc.cpp:1198 rc.cpp:1201 rc.cpp:1330 rc.cpp:1333
+msgid "Visible columns in the main editor window."
+msgstr "Ana düzenleyici penceresindeki görünebilir sütunlar."
+
+#. i18n: file: src/settings/languagepropertiespage.ui:26
+#. i18n: ectx: property (text), widget (QLabel, localeSelectionLabel)
+#: rc.cpp:1207
+msgid "Language:"
+msgstr "Dil:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:39
+#. i18n: ectx: property (text), widget (QLabel, nameLabel)
+#: rc.cpp:1210
+msgid "Name:"
+msgstr "İsim:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:55
+#. i18n: ectx: property (text), widget (QLabel, iconSelectionLabel)
+#: rc.cpp:1213
+msgid "Flag:"
+msgstr "Bayrak:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:68
+#. i18n: ectx: property (text), widget (QLabel, keyboardLayoutLabel)
+#: rc.cpp:1216
+msgid "Keyboard layout:"
+msgstr "Klavye düzeni:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:94
+#. i18n: ectx: property (text), widget (QPushButton, downloadGrammarButton)
+#: rc.cpp:1219
+msgid "&Download Grammar"
+msgstr "&Dilbilgisi İndir"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:105
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: rc.cpp:1222
+msgid "Articles"
+msgstr "Yazılar"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:117
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3)
+#. i18n: file: src/settings/languagepropertiespage.ui:374
+#. i18n: ectx: property (text), widget (QLabel, TextLabel3_2)
+#: rc.cpp:1225 rc.cpp:1255
+msgid "Definite"
+msgstr "Belirli"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:124
+#. i18n: ectx: property (text), widget (QLabel, TextLabel4)
+#. i18n: file: src/settings/languagepropertiespage.ui:381
+#. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
+#: rc.cpp:1228 rc.cpp:1258
+msgid "Indefinite"
+msgstr "Belirsiz"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:131
+#. i18n: ectx: property (text), widget (QLabel, male_label)
+#. i18n: file: src/settings/languagepropertiespage.ui:329
+#. i18n: ectx: property (text), widget (QLabel, male_label_2)
+#: rc.cpp:1231 rc.cpp:1246
+msgid "&Male:"
+msgstr "&Erkek:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:154
+#. i18n: ectx: property (text), widget (QLabel, female_label)
+#. i18n: file: src/settings/languagepropertiespage.ui:316
+#. i18n: ectx: property (text), widget (QLabel, female_label_2)
+#: rc.cpp:1234 rc.cpp:1243
+msgid "&Female:"
+msgstr "&Dişi:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:187
+#. i18n: ectx: property (text), widget (QLabel, natural_label)
+#. i18n: file: src/settings/languagepropertiespage.ui:303
+#. i18n: ectx: property (text), widget (QLabel, natural_label_2)
+#: rc.cpp:1237 rc.cpp:1240
+msgid "&Neutral:"
+msgstr "&Nötr:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:421
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: rc.cpp:1261
+msgid "Personal Pronouns"
+msgstr "Kişi Zamirleri"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:477
+#. i18n: ectx: property (text), widget (QLabel, pers1_label)
+#: rc.cpp:1273
+msgid "&1. Person:"
+msgstr "&1. Şahıs:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:513
+#. i18n: ectx: property (text), widget (QLabel, pers2_label)
+#: rc.cpp:1276
+msgid "&2. Person:"
+msgstr "&2. Şşahıs:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:549
+#. i18n: ectx: property (text), widget (QLabel, pers3_label)
+#: rc.cpp:1279
+msgid "3. Person:"
+msgstr "3. Şahıs:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:559
+#. i18n: ectx: property (text), widget (QLabel, male_c_label)
+#: rc.cpp:1282
+msgid "M&ale:"
+msgstr "&Erkek:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:595
+#. i18n: ectx: property (text), widget (QLabel, female_c_label)
+#: rc.cpp:1285
+msgid "F&emale:"
+msgstr "&Dişi:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:631
+#. i18n: ectx: property (text), widget (QLabel, natural_c_label)
+#: rc.cpp:1288
+msgid "Neu&ter:"
+msgstr "Nö&tr:"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:667
+#. i18n: ectx: property (text), widget (QCheckBox, dualCheckBox)
+#: rc.cpp:1291
+msgid "Dual conjugations"
+msgstr "İkili çekim"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:674
+#. i18n: ectx: property (text), widget (QCheckBox, neutralCheckBox)
+#: rc.cpp:1294
+msgid "A neutral conjugation form exists"
+msgstr "Nötral bir çekim biçimi var"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:687
+#. i18n: ectx: property (text), widget (QCheckBox, maleFemaleDifferCheckBox)
+#: rc.cpp:1297
+msgid "Male/female have different conjugations"
+msgstr "Erkek/dişi hallerinin çekimleri farklı"
+
+#. i18n: file: src/settings/languagepropertiespage.ui:695
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#. i18n: file: src/configure-practice/conjugationoptionswidget.ui:38
+#. i18n: ectx: property (text), widget (QTreeWidget, tenseSelectionTreeWidget)
+#: rc.cpp:1300 rc.cpp:1516
+msgid "Tenses"
+msgstr "Zamanlar"
+
+#. i18n: file: src/settings/languagesettings.kcfg:11
+#. i18n: ectx: label, entry (Icon), group (Locale $(locale))
+#: rc.cpp:1312
+msgid "Icon for an identifier"
+msgstr "Bir tanımlayıcı için simge"
+
+#. i18n: file: src/settings/languagesettings.kcfg:12
+#. i18n: ectx: whatsthis, entry (Icon), group (Locale $(locale))
+#: rc.cpp:1315
+msgid "The icon shown for the identifier (locale)"
+msgstr "Tanımlayıcı (yer) için gösterilen simge"
+
+#. i18n: file: src/settings/languagesettings.kcfg:16
+#. i18n: ectx: label, entry (KeyboardLayout), group (Locale $(locale))
+#. i18n: file: src/settings/languagesettings.kcfg:17
+#. i18n: ectx: whatsthis, entry (KeyboardLayout), group (Locale $(locale))
+#: rc.cpp:1318 rc.cpp:1321
+msgid "Keyboard layout for this locale"
+msgstr "Bu yerel için klavye düzeni"
+
+#. i18n: file: src/configure-practice/blockoptions.ui:79
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Expire)
+#: rc.cpp:1345
+msgid "E&xpiring"
+msgstr "S&ona Erme"
+
+#. i18n: file: src/configure-practice/blockoptions.ui:95
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_Block)
+#: rc.cpp:1348
+msgid "Bl&ocking"
+msgstr "E&ngelleme"
+
+#. i18n: file: src/configure-practice/blockoptions.ui:218
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1363
+msgid "Do not practice vocabulary that has been asked within:"
+msgstr ""
+"Aşağıdaki içinde sorulmuş bulunan sözcük dağarcıklarıyla ilgili alıştırma "
+"yapmayın:"
+
+#. i18n: file: src/configure-practice/blockoptions.ui:228
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1366
+msgid "Vocabulary drops one grade after this much time:"
+msgstr "Sözcük dağarcığı bu kadar zaman sonra bir not düşecektir:"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:16
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:1369
+msgid "Only practice vocabulary that fulfills the following conditions:"
+msgstr ""
+"Sadece aşağıdaki koşulları sağlayan sözcük dağarcıklarıyla ilgili alıştırma "
+"yapın:"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:25
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1372
+msgid "At least"
+msgstr "En az"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:32
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:1375
+msgid "At most"
+msgstr "En çok"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:42
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1378
+msgid "Grade"
+msgstr "Not"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:52
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:1381
+msgid "Times practiced"
+msgstr "Çalışma sayısı"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:79
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:1384
+msgid "Answered incorrectly"
+msgstr "Yanlış yanıtlanan"
+
+#. i18n: file: src/configure-practice/thresholdoptions.ui:152
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_WordTypesInPracticeEnabled)
+#: rc.cpp:1387
+msgid "Enable word type selection"
+msgstr "Sözcük türü seçimini etkinleştir"
+
+#. i18n: file: src/configure-practice/multiplechoiceoptionswidget.ui:16
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_MultipleChoiceWordTypeConsistancy)
+#: rc.cpp:1393
+msgid "Use choices of the same word type"
+msgstr "Aynı sözcük türü seçimi kullan"
+
+#. i18n: file: src/configure-practice/multiplechoiceoptionswidget.ui:44
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1396
+msgid "Number of choices"
+msgstr "Seçenek Sayısı"
+
+#. i18n: file: src/configure-practice/writtenpracticeoptionswidget.ui:16
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IgnoreAccentMistakes)
+#: rc.cpp:1399
+msgid "Ignore accent mistakes"
+msgstr "Kazaen oluşan hataları yoksay"
+
+#. i18n: file: src/configure-practice/writtenpracticeoptionswidget.ui:23
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_IgnoreCapitalizationMistakes)
+#: rc.cpp:1402
+msgid "Ignore capitalization mistakes"
+msgstr "Büyük harf hatalarını yoksay"
+
+#. i18n: file: src/configure-practice/flashcardsoptionswidget.ui:16
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_FlashcardsFrontImage)
+#: rc.cpp:1405
+msgid "Show images on the front of flashcard"
+msgstr "Hafıza kartının önünde resimleri göster"
+
+#. i18n: file: src/configure-practice/flashcardsoptionswidget.ui:23
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_FlashcardsBackImage)
+#: rc.cpp:1408
+msgid "Show images on the back of flashcard"
+msgstr "Hafıza kartının arkasında resimleri göster"
+
+#. i18n: file: src/configure-practice/comparisonoptionswidget.ui:16
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ComparisonIncludeAdjective)
+#: rc.cpp:1411
+msgid "Include Adjectives"
+msgstr "Sıfatları İçer"
+
+#. i18n: file: src/configure-practice/comparisonoptionswidget.ui:23
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ComparisonIncludeAdverb)
+#: rc.cpp:1414
+msgid "Include Adverbs"
+msgstr "Zarfları İçer"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:16
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:1417
+msgid "General Options"
+msgstr "Genel Seçenekler"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:22
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_AltLearn)
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:25
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AltLearn)
+#: rc.cpp:1420 rc.cpp:1423
+msgid ""
+"By checking this, you will use the Leitner method of learning which requires "
+"you to answer correctly to each question 3 times in a row. "
+msgstr ""
+"Bunu işaretleyerek, her soruyu bir sütunda 4 kez yanıtlamayı gerektiren "
+"Leitner öğrenme metodunu kullanacaksınız. "
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:28
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AltLearn)
+#: rc.cpp:1426
+msgid "&Require 3 consecutive correct answers to count as right"
+msgstr "Doğru olarak sayılabilmesi için arka arkaya 3 doğru yanıt &gerektirir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:40
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_ShowMore)
+#: rc.cpp:1429
+msgid "Enable the Show More button on the Random Query screen"
+msgstr "Rastgele Sorgula ekranındaki Daha Fazla Göster düğmesini aç"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:43
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_ShowMore)
+#: rc.cpp:1432
+msgid ""
+"When this is checked, you will be able to use a Show More button which allow "
+"you to get the next letter in your answer in the query. If this is "
+"unchecked, the Show More button will not be enabled, you will not be able to "
+"use it."
+msgstr ""
+"Bu seçilirse, sorgulamadaki cevabın bir sonraki harfini gösteren Daha Fazla "
+"Göster düğmesi etkin olur.Bu seçeneği kapatmak, Daha Fazla Göster düğmesini "
+"etkisiz kılar."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:46
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowMore)
+#: rc.cpp:1435
+msgid "Enable S&how More button"
+msgstr "Da&ha Fazla Göster düğmesini aktive et"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:53
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_PracticeSoundEnabled)
+#: rc.cpp:1438
+msgid "Enable Sound"
+msgstr "Sesleri Etkinleştir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:63
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_SkipKnownEnabled)
+#: rc.cpp:1441
+msgid "Enable the I Know It button on the Random Query screen"
+msgstr "Rastgele Sorgulama ekranındaki Biliyorum düğmesini aç"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:66
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_SkipKnownEnabled)
+#: rc.cpp:1444
+msgid ""
+"If this is checked, the I Know button will be available. It allows you to "
+"tell the query that you know the result without writing it or having it "
+"checked. This is available by default. If you uncheck this, the I Know "
+"button will not be available."
+msgstr ""
+"Bu seçilirse, Biliyorum düğmesi etkin olur. Bu, sorgulamaya yazmadan ya da "
+"cevabı kontrol etmeden sonucu bildiğinizi söylemeye yarar. Bu seçenek "
+"öntanımlı olarak açıktır. Bu seçeneği kapatmak, Biliyorum düğmesini etkisiz "
+"kılar."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:69
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_SkipKnownEnabled)
+#: rc.cpp:1447
+msgid "Enable Skip (I Know it) &button"
+msgstr "Atla (&Biliyorum) düğmesini etkinleştir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:76
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_PracticeImagesEnabled)
+#: rc.cpp:1450
+msgid "Enable Images"
+msgstr "Resimleri Etkinleştir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:83
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_CountSynonymsAsCorrect)
+#: rc.cpp:1453
+msgid "Accept synonyms as correct"
+msgstr "Anlamdaşları doğru kabul et"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:93
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_SwapDirection)
+#: rc.cpp:1456
+msgid "S&wap direction randomly"
+msgstr "Yönü rastgele ç&evir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:100
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_TestOrderLesson)
+#: rc.cpp:1459
+msgid ""
+"When practicing, new words will be chosen loosely in lesson order if this is "
+"selected.  Otherwise, they will be chosen completely at random."
+msgstr ""
+"Alıştırma yaparken, bu seçenek seçilmiş ise ders sırasında yeni sözcükler "
+"seyrek olarak seçilecektir. Aksi halde, tamamen rastlantısal olarak "
+"seçilecektir."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:103
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_TestOrderLesson)
+#: rc.cpp:1462
+msgid "&Practice in lesson order"
+msgstr "&Ders sırasına göre çalış"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:110
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowHints)
+#: rc.cpp:1465
+msgid "Enable Hints"
+msgstr "İpuçlarını Etkinleştir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:121
+#. i18n: ectx: property (toolTip), widget (QLabel, label)
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:134
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, kcfg_TestNumberOfEntries)
+#: rc.cpp:1468 rc.cpp:1474
+msgid ""
+"The number of times vocabulary will show up repeatedly until it is answered "
+"correctly."
+msgstr "Sözcük dağarcığının, doğru yanıtlanana kadar görüntülenme sayısı."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:124
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1471
+msgid "&Active entries during practice:"
+msgstr "Ç&alışma anındaki etkin girdiler:"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:170
+#. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_ShowSolutionAfterAnswer)
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:180
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, kcfg_ShowSolutionAfterAnswerTime)
+#: rc.cpp:1477 rc.cpp:1483
+msgid "After the answer was given the solution will be shown for this long"
+msgstr "Cevap verildikten sonra çözüm bu kadar süre gösterilecektir"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:173
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowSolutionAfterAnswer)
+#: rc.cpp:1480
+msgid "&Show solution after answering:"
+msgstr "Cevapladıktan sonra çö&zümü göster:"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:183
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, kcfg_ShowSolutionAfterAnswerTime)
+#: rc.cpp:1486
+msgid "unlimited"
+msgstr "sınırsız"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:186
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, kcfg_ShowSolutionAfterAnswerTime)
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:279
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, kcfg_PracticeTimeoutTimePerAnswer)
+#: rc.cpp:1489 rc.cpp:1513
+msgctxt "Seconds (suffix)"
+msgid "s"
+msgstr "s"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:217
+#. i18n: ectx: property (toolTip), widget (QGroupBox, kcfg_PracticeTimeout)
+#: rc.cpp:1492
+msgid ""
+"If a time limit is set, an answer has to have been given within the time set "
+"when practicing."
+msgstr ""
+"Bir zaman sınırı seçilmişse, alıştırma sırasında ayarlanmış olan süre içinde "
+"bir yanıt verilmelidir."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:220
+#. i18n: ectx: property (title), widget (QGroupBox, kcfg_PracticeTimeout)
+#: rc.cpp:1495
+msgid "&Time Limit in Tests"
+msgstr "&Testlerdeki Süre Sınırı"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:244
+#. i18n: ectx: property (text), widget (QRadioButton, ShowSolutionRadio)
+#: rc.cpp:1498
+msgid "&Show solution"
+msgstr "Çö&zümü göster"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:251
+#. i18n: ectx: property (text), widget (QRadioButton, ContinueRadio)
+#: rc.cpp:1501
+msgid "&Continue after timeout"
+msgstr "&Zaman aşımından sonra devam et"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:263
+#. i18n: ectx: property (text), widget (QLabel, label_mqtime)
+#: rc.cpp:1504
+msgid "Limit:"
+msgstr "Sınır:"
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:273
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, kcfg_PracticeTimeoutTimePerAnswer)
+#: rc.cpp:1507
+msgid "Set the maximum time allowed per answer."
+msgstr "Her cevap için izin verilen en uzun süreyi ayarla."
+
+#. i18n: file: src/configure-practice/advancedpracticeoptions.ui:276
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, kcfg_PracticeTimeoutTimePerAnswer)
+#: rc.cpp:1510
+msgid "Set here the maximum time you want to allow per answer."
+msgstr "Her cevap için izin verilen en uzun süreyi ayarlayın."
+
+#. i18n: file: src/configure-practice/conjugationoptionswidget.ui:59
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1519
+msgid ""
+"You have not defined any tenses.\n"
+"Use Edit->Languages to configure the tenses in the document and add "
+"conjugation forms to the verbs you want to practice."
+msgstr ""
+"Hiçbir zaman kipi tanımlamadınız.\n"
+"Belgedeki zaman kiplerini tanımlamak için Düzen->Diller seçeneği üzerinden "
+"alıştırma yapmak istediğiniz eylemler için çekim biçimlerini girin."
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:18
+#. i18n: ectx: property (title), widget (KButtonGroup, kcfg_TestType)
+#: rc.cpp:1523
+msgid "Type of Test"
+msgstr "Sınav Türü"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:37
+#. i18n: ectx: property (text), widget (QRadioButton, MixedLettersRadio)
+#: rc.cpp:1526
+msgid "Mixed Letters"
+msgstr "Karışık Harfler"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:54
+#. i18n: ectx: property (text), widget (QRadioButton, WrittenRadio)
+#: rc.cpp:1532
+msgid "Written"
+msgstr "Yazılı"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:64
+#. i18n: ectx: property (text), widget (QRadioButton, ExampleRadio)
+#: rc.cpp:1535
+msgid "Example Sentences"
+msgstr "Örnek Cümleler"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:78
+#. i18n: ectx: property (text), widget (QRadioButton, ArticleRadio)
+#: rc.cpp:1541
+msgid "Article Training"
+msgstr "Artikel Çalışması"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:85
+#. i18n: ectx: property (text), widget (QRadioButton, ComparisonRadio)
+#: rc.cpp:1544
+msgid "Comparison"
+msgstr "Karşılaştırma"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:117
+#. i18n: ectx: property (title), widget (QGroupBox, OptionsGroupBox)
+#: rc.cpp:1556
+msgid "Options"
+msgstr "Seçenekler"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:134
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1562
+msgctxt "the language that is shown to the user in a test"
+msgid "From"
+msgstr "Buradan"
+
+#. i18n: file: src/configure-practice/configurepracticewidget.ui:141
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:1565
+msgctxt "the language to which the user translates to in a test"
+msgid "To"
+msgstr "Buraya"
+
+#. i18n: file: src/parleyui.rc:19
+#. i18n: ectx: Menu (help)
+#: rc.cpp:1568
+msgid "&Help"
+msgstr "&Yardım"
+
+#. i18n: file: src/parleyui.rc:24
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:1571
+msgid "Main Toolbar"
+msgstr "Ana Araç Çubuğu"
+
+#. i18n: file: plasmoid/config.ui:18
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:1574
+msgid "Vocabulary collection:"
+msgstr "Sözcük hazinesi koleksiyonu:"
+
+#. i18n: file: plasmoid/config.ui:30
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:1577
+msgid "Language Selection"
+msgstr "Dil Seçimi"
+
+#. i18n: file: plasmoid/config.ui:38
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:1580
+msgid "Top:"
+msgstr "Üst:"
+
+#. i18n: file: plasmoid/config.ui:45
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:1583
+msgid "Bottom:"
+msgstr "Alt:"
+
+#. i18n: file: plasmoid/config.ui:81
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:1586
+msgid "Solution"
+msgstr "Çözüm"
+
+#. i18n: file: plasmoid/config.ui:87
+#. i18n: ectx: property (text), widget (QRadioButton, solutionOnHover)
+#: rc.cpp:1589
+msgid "Reveal solution when mouse cursor is over the widget"
+msgstr "Fare imleci ögenin üzerindeyken çözümü ortaya çıkar"
+
+#. i18n: file: plasmoid/config.ui:97
+#. i18n: ectx: property (text), widget (QRadioButton, solutionAlways)
+#: rc.cpp:1592
+msgid "Always show the solution"
+msgstr "Herzaman çözümü göster"
+
+#. i18n: file: plasmoid/config.ui:112
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:1595
+msgid "Update interval:"
+msgstr "Güncelleme aralığı:"
+
+#. i18n: file: plasmoid/config.ui:153
+#. i18n: ectx: property (text), widget (KPushButton, fontSelectButton)
+#: rc.cpp:1598
+msgid "Select Font..."
+msgstr "Yazı Tipini Seç..."
+
+#. i18n: file: tips:2
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:3
+msgid ""
+"<p>Parley enables you to edit many additional properties of the words you "
+"enter.</p>\n"
+"<p>Use \"Settings\" -> \"Tools\" to enable different tools that will help "
+"you set additional information for your vocabulary. These include images, "
+"sound, word types and many more. Choose the ones you like.</p>\n"
+msgstr ""
+"<p>Parley, girdiğiniz sözcüklerle ilgili pek çok ilave özelliği "
+"düzenlemenizi sağlar.</p>\n"
+"<p>\"Ayarlar\" -> \"Araçlar\" seçeneği üzerinden, sözcük dağarcığınız için "
+"ilave bilgileri ayarlamanıza yardımcı olabilecek farklı araçları "
+"aktifleştirebilirsiniz. Bunlar arasında resimler, ses, sözcük türleri ve "
+"daha pek çok unsur bulunmaktadır. İsteğinize uygun olanları seçiniz.</p>\n"
+
+#. i18n: file: tips:9
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:9
+msgid ""
+"<p>To <em>search</em> for a word, simply type it into the search bar.</p>\n"
+msgstr "<p>Bir sözcüğü <em>ararken</em>, basitçe arama çubuğuna yazın.</p>\n"
+
+#. i18n: file: tips:15
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:14
+msgid ""
+"<p>If you do not want to see the answer again after pressing enter when "
+"practicing, you can configure Parley to directly skip to the next entry.</"
+"p>\n"
+"<p>You can even choose to display the answer for a fixed amount of time. Use "
+"\"Configure Practice...\" -> \"Advanced\" -> \"Show solution after answering"
+"\".</p>\n"
+msgstr ""
+"<p>Alıştırma yaparken enter tuşuna bastıktan sonra cevabı tekrar görmek "
+"istemiyorsanız, Parley'i doğrudan sonraki girdiye atlaması için "
+"ayarlayabilirsiniz</p>\n"
+"<p>Sabit bir süre için yanıtın görüntülenmesini bile seçebilirsiniz. Bunun "
+"için, \"Alıştırmayı Ayarla...\" -> \"Gelişmiş\" -> \"Yanıtladıktan sonra "
+"çözümü göster\" seçeneğini kullanın.</p>\n"
+
+#. i18n: file: tips:22
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:20
+msgid ""
+"<p>If you want to see all words of a certain word type (e.g. nouns), simply "
+"select the word type in the list.</p>\n"
+"<p>To show the word type list, use \"Settings\" -> \"Tools\" -> \"Word Types"
+"\" in the menu.</p>\n"
+msgstr ""
+"<p>Belli bir sözcük türüne ait bütün sözcükleri görmek istiyorsanız (örneğin "
+"isimler), basitçe listeden istediğiniz sözcük türünü seçiniz.</p>\n"
+"<p>Sözcük türü listesini görüntülemek için, menü içinden \"Ayarlar\" -> "
+"\"Araçlar\" -> \"Sözcük Türleri\" seçimini yapın.</p>\n"
+
+#. i18n: file: tips:29
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:26
+msgid ""
+"<p>You can drag and drop your lessons to change their order or even make a "
+"lesson a child of another lesson.</p>\n"
+msgstr ""
+"<p>Derslerinizin sırasını değiştirmek ve hattâ başka bir dersin alt dersi "
+"yapmak için sürükle ve bırak tekniğini kullanabilirsiniz.</p>\n"
+
+#. i18n: file: tips:35
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:31
+msgid ""
+"<p>You can simply drag a word into the word types list to change its type.</"
+"p>\n"
+"<p>You can even select multiple words at the same time.</p>\n"
+msgstr ""
+"<p>Bir sözcüğün türünü değiştirmek için, basitçe sözcük türleri listesinden "
+"bir sözcük sürükleyebilirsiniz.</p>\n"
+"<p>Aynı anda birden fazla sözcük bile seçebilirsiniz.</p>\n"
+
+#. i18n: file: tips:42
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:37
+msgid ""
+"<p><em>Setting Images</em></p>\n"
+"<p>A fast way to set an image for a word is to simply drop it onto the image "
+"dock.</p>\n"
+msgstr ""
+"<p><em>Resimleri Ayarlamak</em></p>\n"
+"<p>Bir sözcük için bir resim ayarlamanın hızlı yolu, basitçe resim boşluğu "
+"üzerine sürükleyip bırakmaktır.</p>\n"
+
+#. i18n: file: tips:49
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:43
+msgid ""
+"<p><em>Word Types</em></p>\n"
+"<p>You can set a special tag to some word types to let Parley know their "
+"grammatical meaning.</p>\n"
+"<p>For verbs for example you can then enter conjugations.</p>\n"
+msgstr ""
+"<p><em>Sözcük Türleri</em></p>\n"
+"<p>Parley'in, gramatik anlamını bilmesini sağlamak için bazı sözcük "
+"türlerine özel etiketler ayarlayabilirsiniz.</p>\n"
+"<p>Örneğin fiiller için, sonra çekimleri girebilirsiniz.</p>\n"
+
+#. i18n: file: tips:57
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:50
+msgid ""
+"<p><em>Multiple Choice</em></p>\n"
+"<p>For some vocabularies multiple choice tests work best. You can add "
+"choices to a word that will always be displayed in Multiple Choice mode. "
+"Otherwise random choices are generated from the other entries in the "
+"document. (Use the Multiple Choice tool for that.)</p>\n"
+msgstr ""
+"<p><em>Çoktan Seçme</em></p>\n"
+"<p>Bazı sözcük dağarcıkları için çoktan seçmeli sınavlar çok iyidir. Çoktan "
+"Seçmeli kipte her zaman gösterilecek olan bir sözcüğe seçim "
+"ekleyebilirsiniz. Aksi takdirde belge içindeki diğer girdilerden rasgele "
+"seçimler üretilecektir. (Bunun için Çoktan Seçme aracını kullanınız).</p>\n"
+
+#. i18n: file: tips:64
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:56
+msgid ""
+"<p>Want to enter pronunciation symbols quickly? <em>Double-click</em> the "
+"symbol you need to directly add it.</p>\n"
+msgstr ""
+"<p>Telaffuz simgelerini hızla girmek ister misiniz?<em>Doğrudan eklemek için "
+"ihtiyacınız olan simgeye çift tıklayın.</p>\n"
+
+#. i18n: file: tips:70
+#. i18n: ectx: @info:tipoftheday
+#: tips.cpp:61
+msgid ""
+"<p>You can use the \"Download New Vocabulary\" dialog or visit the website "
+"listing many vocabulary documents:\n"
+"<a href=\"http://edu.kde.org/contrib/kvtml2.php\">http://edu.kde.org/contrib/"
+"kvtml2.php</a>.</p>\n"
+msgstr ""
+"<p>\"Yeni Sözcük Dağarcığı İndir\" iletişim kutusunu kullanabilir ya da pek "
+"çok sözcük dağarcığı belgesini listeleyen web sitesini ziyaret "
+"edebilirsiniz:\n"
+"<a href=\"http://edu.kde.org/contrib/kvtml2.php\">http://edu.kde.org/contrib/"
+"kvtml2.php</a>.</p>\n"
+
+#: plugins/google_images.py:46
+msgid ""
+"Error: ui file not found.\n"
+"Check your installation."
+msgstr ""
+"Hata: Ui dosyası bulunamadı.\n"
+"Kurulumunuzu kontrol edin."
+
+#: plugins/google_images.py:46 plugins/google_images.py:243
+#: plugins/google_images.py:249
+msgid "Fetch Image"
+msgstr "Resmi Getir"
+
+#: plugins/google_images.py:243
+msgid ""
+"No Selection:\n"
+"Select a word to fetch an image for it"
+msgstr ""
+"Seçim Yok:\n"
+"Resmini getirmek için bir sözcük seçin"
+
+#: plugins/google_images.py:250
+msgid "Fetches an image for the selected translation"
+msgstr "Seçili çeviri için bir resim getirir"
+
+#~ msgid ""
+#~ "<p>You are running a version of Parley that has not officially been "
+#~ "released yet.</p>\n"
+#~ "<p>Please be aware that this version might be unstable, crash or forget "
+#~ "to save your changes.</p>\n"
+#~ "<p>Please report any issues that you encounter to improve Parley! <a href="
+#~ "\"http://bugs.kde.org\">http://bugs.kde.org</a></p>\n"
+#~ msgstr ""
+#~ "<p>Şu anda resmi olarak yayınlanmamış bir Parley sürümünü kullanıyorsunuz."
+#~ "</p>\n"
+#~ "<p>Bu sürümün kararsız olabileceğini, çökebileceğini ve "
+#~ "değişikliklerinizi kaydetmeyi unutabileceğini akılda tutunuz.</p>\n"
+#~ "<p>Parley'i geliştirmeye katkıda bulunmak için, lütfen karşılaştığınız "
+#~ "herhangi bir durumu bize bildirin! <a href=\"http://bugs.kde.org\">http://"
+#~ "bugs.kde.org</a></p>\n"
+
+#~ msgid "No document set."
+#~ msgstr "Hiç belge ayarlanmamış."
+
+#~ msgid "There is %1 word left in this lesson. Do you want to delete them?"
+#~ msgid_plural ""
+#~ "There are %1 words left in this lesson. Do you want to delete them?"
+#~ msgstr[0] "Bu derste %1 sözcük kaldı. Silmek ister misiniz?"
+
+#~ msgid "Form"
+#~ msgstr "Biçim"
+
+#~ msgid "Google Images"
+#~ msgstr "Google Resimleri"
+
+#~ msgid "OK"
+#~ msgstr "Tamam"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
+
+#~ msgid "Tense Description"
+#~ msgstr "Zaman Açıklaması"
+
+#~ msgid "Enter tense description:"
+#~ msgstr "Zaman açıklamasını girin:"
+
+#~ msgctxt "@label the gender of the word: Masculine"
+#~ msgid "Masculine"
+#~ msgstr "Erkek"
+
+#~ msgctxt "@label the gender of the word: Female"
+#~ msgid "Feminine"
+#~ msgstr "Dişi"
+
+#~ msgctxt "@label the gender of the word: Neuter"
+#~ msgid "Neuter"
+#~ msgstr "Nötr"
+
+#~ msgid "First person"
+#~ msgstr "Birinci şahıs"
+
+#~ msgid "Second person"
+#~ msgstr "İkinci şahıs"
+
+#~ msgid "Third person"
+#~ msgstr "Üçüncü şahıs"
+
+#~ msgctxt "Grammatical masculine gender"
+#~ msgid "Masculine"
+#~ msgstr "Erkek"
+
+#~ msgctxt "Grammatical feminine gender"
+#~ msgid "Feminine"
+#~ msgstr "Dişi"
+
+#~ msgctxt "Grammatical neuter gender"
+#~ msgid "Neuter"
+#~ msgstr "Nötr"
+
+#~ msgctxt "Grammatical singular number"
+#~ msgid "Singular"
+#~ msgstr "Tekil"
+
+#~ msgctxt "Grammatical dual number (doesn't exist in all languages)"
+#~ msgid "Dual"
+#~ msgstr "İkili"
+
+#~ msgctxt "Grammatical plural number"
+#~ msgid "Plural"
+#~ msgstr "Çoğul"
+
+#~ msgctxt "Grammatical infinitive of a verb"
+#~ msgid "Infinitive"
+#~ msgstr "Mastar"
+
+#~ msgid "Theme"
+#~ msgstr "Tema"
+
+#~ msgctxt "the separator for a list of wrong words that the user entered"
+#~ msgid "; "
+#~ msgstr "; "
+
+#~ msgid "Original Word"
+#~ msgstr "Asıl Sözcük"
+
+#~ msgid "Translation"
+#~ msgstr "Çeviri"
+
+#~ msgid "False Answers"
+#~ msgstr "Yanlış Yanıtlar"
+
+#~ msgid "Points"
+#~ msgstr "Puanlar"
+
+#~ msgid "Check Answer"
+#~ msgstr "Yanıtı Kontrol Et"
+
+#~ msgid "Continue"
+#~ msgstr "Devam Et"
+
+#~ msgid "Correct!"
+#~ msgstr "Doğru!"
+
+#~ msgid "Empty answers are never correct."
+#~ msgstr "Boş yanıtlar asla doğru olmaz."
+
+#~ msgid "There is an article missing."
+#~ msgstr "Kayıp bir yazı var."
+
+#~ msgid "Empty answers are always wrong."
+#~ msgstr "Boş yanıtlar her zaman yanlıştır."
+
+#~ msgid "%1 has a problem..."
+#~ msgstr "%1 ögesinin bir sorunu var..."
+
+#~ msgid "Seems like you got the spelling wrong."
+#~ msgstr "Yazım hatası yapmışsınız gibi görünüyor."
+
+#~ msgid "No dictionary and no clue."
+#~ msgstr "Sözlük ve ipucu yok."
+
+#~ msgid "Correct:"
+#~ msgstr "Doğru:"
+
+#~ msgid "Wrong:"
+#~ msgstr "Yanlış:"
+
+#~ msgid "I &Know It"
+#~ msgstr "&Biliyorum"
+
+#~ msgid "I &Don't Know It"
+#~ msgstr "Bil&miyorum"
+
+#~ msgid "&Flip"
+#~ msgstr "&Çevir"
+
+#~ msgid "Stop Practice"
+#~ msgstr "Çalışmayı Durdur"
+
+#~ msgid "Leave the practice mode."
+#~ msgstr "Çalışma kipinden çık."
+
+#~ msgid "Skip (Answer Known)"
+#~ msgstr "Atla (Yanıt Biliniyor)"
+
+#~ msgid "Skip (Answer Not Known)"
+#~ msgstr "Atla (Yanıt Bilinmiyor)"
+
+#~ msgid "Show Solution"
+#~ msgstr "Çözümü Göster"
+
+#~ msgid "Show Hint"
+#~ msgstr "İpucu Göster"
+
+#~ msgid "Select Synonym:"
+#~ msgstr "Eşanlamlıyı Seç:"
+
+#~ msgid "Select Antonym:"
+#~ msgstr "Zıtanlamlıyı Seç:"
+
+#~ msgid "Select Translation:"
+#~ msgstr "Çeviriyi Seç:"
+
+#~ msgid "Enter Missing Word:"
+#~ msgstr "Eksik Sözcüğü Gir:"
+
+#~ msgid "Enter Translation:"
+#~ msgstr "Çeviriyi Gir:"
+
+#~ msgid "What is the solution?"
+#~ msgstr "Çözüm nedir?"
+
+#~ msgid "Enter Comparison Forms:"
+#~ msgstr "Karşılaştırma Biçimini Gir:"
+
+#~ msgid "I Know It"
+#~ msgstr "Biliyorum"
+
+#~ msgid "I Don't Know It"
+#~ msgstr "Bilmiyorum"
+
+#~ msgid "&Get New Themes"
+#~ msgstr "&Yeni Temalar Al"
+
+#~ msgid "Preview"
+#~ msgstr "Önizleme"
+
+#~ msgid "Theme Details"
+#~ msgstr "Tema Ayrıntıları"
+
+#~ msgid "Contact:"
+#~ msgstr "İletişim:"
+
+#~ msgid "Description:"
+#~ msgstr "Açıklama:"
+
+#~ msgid "Author:"
+#~ msgstr "Yazar:"
+
+#~ msgid "Total Points:"
+#~ msgstr "Toplam Puan:"
+
+#~ msgid "Percent:"
+#~ msgstr "Yüzde:"
+
+#~ msgid "Ignore Times Answered Wrong"
+#~ msgstr "Yanlış Yanıtlama Sayısını Yoksay"
+
+#~ msgid "Navigation"
+#~ msgstr "Gezinme"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"
+
+#~ msgid "Answered wrong"
+#~ msgstr "Yanlış yanıtlanan"
+
+#~ msgid "Check"
+#~ msgstr "Kontrol Et"
+
+#~ msgid "Hint"
+#~ msgstr "İpucu"
+
+#~ msgid "Smart a&ppending"
+#~ msgstr "Akıllı &ekleme"
+
+#~ msgid "Declension"
+#~ msgstr "İsim Çekimi"
+
+#~ msgid "Your changes will be applied automatically."
+#~ msgstr "Değişiklikleriniz otomatik olarak uygulanacak."
+
+#~ msgid ""
+#~ "If checked, you will not be asked if you really want this change; it will "
+#~ "be applied automatically."
+#~ msgstr ""
+#~ "Seçiliyse, bu değişikliği gerçekten isteyip istemediğiniz sorulmayacak, "
+#~ "değişiklikleriniz otomatik olarak uygulanacak."
+
+#~ msgid "Appl&y changes without asking"
+#~ msgstr "Değişiklikleri sormadan u&ygula"
+
+#~ msgid "If checked, the entry dialog will popup repeatedly"
+#~ msgstr "Seçilirse, girdi kutusu tekrar tekrar açılacak"
+
+#~ msgid ""
+#~ "If this feature is activated, you will repeatedly be prompted with the "
+#~ "entry dialog. After entering the first original you have to enter the "
+#~ "corresponding translations. Afterwards you proceed with the next original "
+#~ "and its translations until you stop by pressing the ESC key."
+#~ msgstr ""
+#~ "Bu özellik açılırsa, tekrar tekrar bir girdi ekranı açılacak. İlk "
+#~ "orjinali girdikten sonra ilgili çevirileri girmelisiniz. Daha sonra "
+#~ "ikinci orjinal ve çevirileriyle devam edeceksiniz, bu işlem siz ESC "
+#~ "tuşuna basana kadar devam eder."
+
+#~ msgid "Practice"
+#~ msgstr "Çalışma"
+
+#, fuzzy
+#~| msgid "Declension"
+#~ msgid "Declensions"
+#~ msgstr "İsim Çekimi"
+
+#~ msgid "Vocabulary Columns Dialog"
+#~ msgstr "Sözcük Hazinesi Sütunları Penceresi"
+
+#~ msgid "Vocabulary columns"
+#~ msgstr "Sözcük hazinesi sütunları"
+
+#~ msgid "Open &Example..."
+#~ msgstr "Örn&eği Aç..."
+
+#~ msgid "Open an example vocabulary document"
+#~ msgstr "Örnek bir sözcük hazinesi belgesi aç"
+
+#~ msgid "Open Example Vocabulary Document"
+#~ msgstr "Örnek Sözcük Hazinesi Dosyasını Aç"
+
+#~ msgid "Layout"
+#~ msgstr "Düzen"
+
+#, fuzzy
+#~| msgid "<font color=\"#000fff000\">Correct!</font> "
+#~ msgid "<font color=\"#006633\">Correct!</font> "
+#~ msgstr "<font color=\"#000fff000\">Doğru!</font> "
+
+#~ msgid "<font color=\"#000fff000\">Correct!</font>"
+#~ msgstr "<font color=\"#000fff000\">Doğru!</font>"
+
+#~ msgid "<font color=\"#000fff000\">Correct!</font> "
+#~ msgstr "<font color=\"#000fff000\">Doğru!</font> "
+
+#~ msgid ""
+#~ "<font color=\"#8C1818\">No spellchecker, but seems like a spelling error."
+#~ "</font> "
+#~ msgstr ""
+#~ "<font color=\"#8C1818\">Yazım denetleyici yok ama yazım hatası gibi "
+#~ "görünüyor.</font> "
+
+#~ msgid "<font color=\"#188C18\">"
+#~ msgstr "<font color=\"#188C18\">"
+
+#~ msgid "</font> "
+#~ msgstr "</font> "
+
+#~ msgid "<font color=\"#8C1818\">"
+#~ msgstr "<font color=\"#8C1818\">"
+
+#~ msgid "Old Practice Dialogs"
+#~ msgstr "Eski Çalışma Pencereleri"
+
+#~ msgid "Start a test with the last settings"
+#~ msgstr "Son ayarlarla bir sınava başla"
+
+#~ msgid "Set up and start a test"
+#~ msgstr "Bir sınavı yapılandır ve sınava başla"
+
+#~ msgid "Restore Native Order"
+#~ msgstr "Doğal Sıralamaya Dön"
+
+#~ msgid "Ready."
+#~ msgstr "Hazır."
+
+#~ msgid "Welcome"
+#~ msgstr "Hoşgeldiniz"
+
+#~ msgid "Introduction"
+#~ msgstr "Giriş"
+
+#~ msgid ""
+#~ "This wizard will get you started setting up your new document.\n"
+#~ "\n"
+#~ "With Parley you can practice anything that comes in pairs. For example "
+#~ "foreign languages and their translation to your language.\n"
+#~ "\n"
+#~ "To get started it is necessary to set up what you would like to "
+#~ "practice.\n"
+#~ "\n"
+#~ "On the next page you can choose to use languages or anything else. In "
+#~ "that case you can simply define yourself what it is you practice by "
+#~ "typing a title for it."
+#~ msgstr ""
+#~ "Bu sihirbaz yeni belgenizi hazırlamada size yardımcı olacak.\n"
+#~ "\n"
+#~ "Parley ile çiftler halindeki her konuyu çalışabilirsiniz. Yabancı diller "
+#~ "ve kendi dilinize çevirileri bir örnek olarak gösterilebilir.\n"
+#~ "\n"
+#~ "Başlamak için çalışmak istediğiniz konuyu ayarlamalısınız.\n"
+#~ "\n"
+#~ "Sonraki sayfada dil ya da başka bir konuda çalışmayı seçebilirsiniz. "
+#~ "Dilden başkabir konu için, hangi konu hakkında çalıştığınızı kendinize "
+#~ "daha sonra hatırlatmak için bir başlık yazabilirsiniz."
+
+#~ msgid "Identifier and language selection"
+#~ msgstr "Belirtici ve dil seçimi"
+
+#~ msgid "Please select the first column data:"
+#~ msgstr "Lütfen ilk sütunun verisini seçin:"
+
+#~ msgid "Title and author"
+#~ msgstr "Başlık ve yazar"
+
+#~ msgid "Create a New Parley Document"
+#~ msgstr "Yeni Bir Parley Belgesi Oluştur"
+
+#~ msgid "Please select the second column data:"
+#~ msgstr "Lütfen ikinci sütunun verisini seçin:"
+
+#~ msgid "Please select a language:"
+#~ msgstr "Lütfen bir dil seçin:"
+
+#~ msgid "Title:"
+#~ msgstr "Başlık:"
+
+#~ msgid ""
+#~ "This does not have to be a language. Anything goes: Definition, Chinese "
+#~ "simplified or anything else you want to learn."
+#~ msgstr ""
+#~ "Bu bir dil olmak zorunda değil. Her şey olabilir: Tanımlama, "
+#~ "Basitleştirilmiş Çince ya da öğrenmek istediğiniz herhangi bir şey."
+
+#~ msgid "So far your document contains:"
+#~ msgstr "Belgeniz bunları içeriyor:"
+
+#~ msgid "To change the first selection go back one page."
+#~ msgstr "İlk seçimi değiştirmek için bir sayfa geri gidin."
+
+#~ msgid "Please select a second language (can be the same as before):"
+#~ msgstr "Lütfen ikinci dili seçin (öncekiyle aynı olabilir):"
+
+#~ msgid "The language of the second column of vocabulary."
+#~ msgstr "Sözcük hazinesinin ikinci sütununun dili."
+
+#~ msgid "Second title:"
+#~ msgstr "İkinci başlık:"
+
+#~ msgid "© 2008\tDavid Capel\n"
+#~ msgstr "© 2008\tDavid Capel\n"
+
+#~ msgid "Plugins(test)"
+#~ msgstr "Eklentiler(test)"
+
+#~ msgid "Plugin Settings"
+#~ msgstr "Eklenti Ayarları"
+
+#~ msgid "Scripts"
+#~ msgstr "Betikler"
+
+#~ msgid "PluginSelector"
+#~ msgstr "Eklenti Seçici"
+
+#~ msgid "Available Plugins"
+#~ msgstr "Kullanılabilir Eklentiler"
+
+#~ msgid "Run"
+#~ msgstr "Çalıştır"
+
+#~ msgid "&Grammar..."
+#~ msgstr "&Dilbilgisi..."
+
+#~ msgid "Edit language properties (types, tenses and usages)."
+#~ msgstr "Dil özelliklerini düzenle (türler, zamanlar ve kullanımlar)."
+
+#~ msgid "Tense Descriptions"
+#~ msgstr "Zaman Açıklamaları"
+
+#~ msgid "Language Elements"
+#~ msgstr "Dil Elemanları"
+
+#~ msgctxt "Usage (area) of an Expression"
+#~ msgid "&Usage Labels"
+#~ msgstr "&Kullanım Etiketleri"
+
+#~ msgctxt "usage (area) of an expression"
+#~ msgid "Edit User-Defined Usage Labels"
+#~ msgstr "Kullanıcı Tanımlı Kullanım Etiketlerini Düzenle"
+
+#~ msgid "Edit User Defined Types"
+#~ msgstr "Kullanıcı Tanımlı Türleri Düzenle"
+
+#~ msgid "Common Properties"
+#~ msgstr "Ortak Özellikler"
+
+#~ msgid "&Pronunciation:"
+#~ msgstr "&Telaffuz:"
+
+#~ msgid "&Lesson:"
+#~ msgstr "&Ders:"
+
+#~ msgid "Invokes dialog page with characters from phonetic alphabet"
+#~ msgstr "Diyalog sayfasını fonetik alfabeden karakterlerle çağırır"
+
+#~ msgid "&Expression:"
+#~ msgstr "&İfade:"
+
+#~ msgid "T&ype"
+#~ msgstr "T&ür"
+
+#~ msgid "&Subtype:"
+#~ msgstr "&Alt Tür:"
+
+#~ msgid "Invokes input dialog for word types"
+#~ msgstr "Sözcük türleri için giriş diyaloğunu çağırır"
+
+#~ msgid "Invokes input dialog for usage labels"
+#~ msgstr "Kullanım etiketleri için giriş diyaloğunu çağırır"
+
+#~ msgid "Acti&ve"
+#~ msgstr "Akti&f"
+
+#~ msgid "Conjugation of Verbs"
+#~ msgstr "Fiil Çekimi"
+
+#, fuzzy
+#~| msgid "Definite"
+#~ msgctxt "@label the gender of the word: Feminine"
+#~ msgid "Feminine"
+#~ msgstr "Belirli"
+
+#, fuzzy
+#~| msgid "Neu&ter:"
+#~ msgctxt "@label the gender of the word: neuter"
+#~ msgid "Neuter:\t"
+#~ msgstr "Nö&tr:"
+
+#~ msgid "Waldo Bastian"
+#~ msgstr "Waldo Bastian"
+
+#~ msgid "Help with port to Qt3/KDE3"
+#~ msgstr "Qt3/KDE3 geçişine yardım"
+
+#~ msgid "Eric Bischoff"
+#~ msgstr "Eric Bischoff"
+
+#~ msgid "Converting documentation to docbook format"
+#~ msgstr "Belgelendirmenin docbook biçimine çevrilmesi"
+
+#~ msgid "Kevin Kramer"
+#~ msgstr "Kevin Kramer"
+
+#~ msgid "Tool to create lists with ISO639 codes"
+#~ msgstr "ISO639 kodları ile liste oluşturma aracı"
+
+#~ msgid "Andreas Neuper"
+#~ msgstr "Andreas Neuper"
+
+#~ msgid ""
+#~ "Converter script \"langen2kvtml\" \n"
+#~ "Download files at http://www.vokabeln.de/files.htm"
+#~ msgstr ""
+#~ "Dönüştürücü betiği \"langen2kvtml\" \n"
+#~ "Dosyaları http://www.vokabeln.de/files.htm adresinden alabilirsiniz"
+
+#~ msgid "Dennis Haney"
+#~ msgstr "Dennis Haney"
+
+#~ msgid "Patch to implement Leitner learning method"
+#~ msgstr "Leitner öğrenme metodunu uygulamak için yama"
+
+#~ msgid "Johannes Simon"
+#~ msgstr "Johannes Simon"
+
+#~ msgid "Bug fixes and testing on the way to KDE4"
+#~ msgstr "KDE4 yolunda hata düzeltmeleri ve testler "
+
+#~ msgid "KDE Team"
+#~ msgstr "KDE Takımı"
+
+#~ msgid "Many small enhancements"
+#~ msgstr "Birçok küçük iyileştirme"
+
+#~ msgctxt "@label the gender of the word: male"
+#~ msgid "&male"
+#~ msgstr "&erkek"
+
+#~ msgctxt "@label the gender of the word: female"
+#~ msgid "&female"
+#~ msgstr "&dişi"
+
+#~ msgctxt "@label the gender of the word: neutral"
+#~ msgid "&neutral"
+#~ msgstr "&nötr"
+
+#~ msgid "Female"
+#~ msgstr "Dişi"
+
+#~ msgid "Neutral"
+#~ msgstr "Nötr"
+
+#~ msgid "Get file from Parley (last opened)"
+#~ msgstr "Parley uygulamasından dosya al (son açılan)"
+
+#~ msgid "Custom:"
+#~ msgstr "Özel:"
+
+#~ msgid "Start Parley first."
+#~ msgstr "Önce Parley uygulamasını başlatın."
+
+#~ msgid "Remove &Duplicates"
+#~ msgstr "Aynısı Olanları &Kaldır"
+
+#~ msgid "Remove duplicate entries from the vocabulary"
+#~ msgstr "Aynı olan girdileri sözcük hazinesinden kaldır"
+
+#~ msgctxt "general statistics page"
+#~ msgid "General"
+#~ msgstr "Genel"
+
+#~ msgid "Lesson Statistics"
+#~ msgstr "Ders İstatistikleri"
+
+#~ msgid ""
+#~ "<html><p style='white-space:pre'><b>Number of Entries per Grade</b></"
+#~ "p><table><tr><td>%1</td><td>%2</td></tr><tr><td>%3</td><td>%4</td></"
+#~ "tr><tr><td>%5</td><td>%6</td></tr><tr><td>%7</td><td>%8</td></tr><tr><td>%"
+#~ "9</td><td>%10</td></tr><tr><td>%11</td><td>%12</td></tr><tr><td>%13</"
+#~ "td><td>%14</td></tr><tr><td>%15</td><td>%16</td></tr></table></html>"
+#~ msgstr ""
+#~ "<html><p style='white-space:pre'><b>Not Başına Girdi Sayısı</b></"
+#~ "p><table><tr><td>%1</td><td>%2</td></tr><tr><td>%3</td><td>%4</td></"
+#~ "tr><tr><td>%5</td><td>%6</td></tr><tr><td>%7</td><td>%8</td></tr><tr><td>%"
+#~ "9</td><td>%10</td></tr><tr><td>%11</td><td>%12</td></tr><tr><td>%13</"
+#~ "td><td>%14</td></tr><tr><td>%15</td><td>%16</td></tr></table></html>"
+
+#~ msgid "Entries"
+#~ msgstr "Girdiler"
+
+#~ msgid "Reset"
+#~ msgstr "Sıfırla"
+
+#~ msgid "Filename:"
+#~ msgstr "Dosya Adı:"
+
+#~ msgid "Entries:"
+#~ msgstr "Girdiler:"
+
+#~ msgid "Lessons:"
+#~ msgstr "Dersler:"
+
+#~ msgid "No sub types defined"
+#~ msgstr "Hiç sözcük türü tanımlanmamış"
+
+#~ msgid "GPL (GNU General Public License)"
+#~ msgstr "GPL (GNU Genel Kamu Lİsansı)"
+
+#~ msgid "Example document"
+#~ msgstr "Örnek belge"
+
+#~ msgid "Column Resizing"
+#~ msgstr "Sütun Boyutlandırması"
+
+#~ msgid "Automatically resize the columns"
+#~ msgstr "Sütunları otomatik boyutlandır"
+
+#~ msgid ""
+#~ "Parley makes each column the same width except the leftmost with the "
+#~ "lesson names, which is half the size of the others. The second column, "
+#~ "which contains the picture that describes the state of the row, has a "
+#~ "fixed width."
+#~ msgstr ""
+#~ "Parley en solda ders isimlerini gösteren, diğerlerinin yarısı boyutunda "
+#~ "olan, sütun hariç hepsini aynı genişilikte yapar. Satırın durumunu "
+#~ "gösteren ikinci sütun ise sabit bir genişliğe sahiptir."
+
+#~ msgid "A&utomatic"
+#~ msgstr "&Otomatik"
+
+#~ msgid ""
+#~ "The columns resize using the same factor that the window is resized to."
+#~ msgstr ""
+#~ "Sütunlar pencerenin yeniden boyutlanırken kullandığı aynı yüzdeyle "
+#~ "yeniden boyutlansın."
+
+#~ msgid ""
+#~ "If this is checked, the columns resize by the same amount as the window"
+#~ msgstr ""
+#~ "Bu seçilirse, sütunlar pencereyle aynı oranda yeniden boyutlandırılır"
+
+#~ msgid "There is no resizing of the columns"
+#~ msgstr "Sütunlar için boyutlandırma yok"
+
+#~ msgid "When checked, the columns are not resized"
+#~ msgstr "İşaretlendiğinde, sütunlar yeniden boyutlandırılamaz"
+
+#~ msgid "How the columns should be resized."
+#~ msgstr "Sütunların nasıl yeniden boyutlandırılacağı."
+
+#~ msgctxt "state of a row"
+#~ msgid "Inactive"
+#~ msgstr "Aktif değil"
+
+#~ msgctxt "state of a row"
+#~ msgid "Active"
+#~ msgstr "Aktif"
+
+#, fuzzy
+#~| msgid "Frederik Gladhorn"
+#~ msgid "© 2007\tFrederik Gladhorn\n"
+#~ msgstr "Frederik Gladhorn"
+
+#~ msgid "&Edit Entry..."
+#~ msgstr "Girdiyi &Düzenle..."
+
+#~ msgid "Print the active vocabulary document"
+#~ msgstr "Şu anki sözcük hazinesi belgesini kaydet"
+
+#~ msgid "Your name. You can also add an email address as contact information."
+#~ msgstr ""
+#~ "Adınız. Ayrıca, iletşim bilgisi olarak e-posta adresinizi de "
+#~ "ekleyebilirsiniz."
+
+#, fuzzy
+#~| msgid "No valid word type found"
+#~ msgid "No Valid Vocabulary Found"
+#~ msgstr "Geçerli bir kelime türü bulunamadı"
+
+#, fuzzy
+#~| msgid "View Settings"
+#~ msgid "Change Settings"
+#~ msgstr "Görünüm Ayarları"
+
+#, fuzzy
+#~| msgid "Select All Lessons"
+#~ msgid "Selected lessons"
+#~ msgstr "Tüm Dersleri Seç"
+
+#~ msgid "&Merge..."
+#~ msgstr "&Birleştir..."
+
+#~ msgid "Merge an existing vocabulary document with the current one"
+#~ msgstr "Varolan bir sözcük hazinesi belgesini şu anki belge ile birleştir"
+
+#~ msgid "Type Descriptions"
+#~ msgstr "Tür Açıklamaları"
+
+#~ msgid "New type"
+#~ msgstr "Yeni tür"
+
+#~ msgid "New subtype"
+#~ msgstr "Yeni alt tür"
+
+#~ msgid "Select a type"
+#~ msgstr "Bir tür seçin"
+
+#~ msgid "Special meaning of %1:"
+#~ msgstr "%1 için özel anlam:"
+
+#~ msgid "%1 does not have special subtypes."
+#~ msgstr "%1 özel alt türlere sahip değil."
+
+#~ msgid "%1 is not a special type."
+#~ msgstr "%1 özel bir tür değil."
+
+#~ msgid "&New word type"
+#~ msgstr "&Yeni kelime türü"
+
+#~ msgid "&Add subtype"
+#~ msgstr "&Alt tür ekle"
+
+#~ msgid "&Rename"
+#~ msgstr "&Yeniden isimlendir"
+
+#~ msgid "Toggle display of the toolbars"
+#~ msgstr "Araç çubuklarının görünümünü aç/kapat"
+
+#, fuzzy
+#~| msgid "&New..."
+#~ msgid "..."
+#~ msgstr "&Yeni..."
+
+#, fuzzy
+#~| msgid "Open an example vocabulary document"
+#~ msgid "Could not open vocabulary document."
+#~ msgstr "Örnek bir sözlük belgesi aç"
+
+#~ msgid "Show Lesson Column"
+#~ msgstr "Ders Sütununu Göster"
+
+#~ msgid "Show Active Entry Column"
+#~ msgstr "Aktif Girdi Sütununu Göster"
+
+#~ msgid "Vocabularies..."
+#~ msgstr "Sözcük hazineleri..."
+
+#~ msgid ""
+#~ "The lesson will be split into smaller lessons. The order will be "
+#~ "randomized.\n"
+#~ "How many entries in each lesson do you want?"
+#~ msgstr ""
+#~ "Ders, daha küçük derslere bölünecek. Derslerin sırası rasgele olacak.\n"
+#~ "Her derste kaç girdinin olmasını istiyorsunuz?"
+
+#, fuzzy
+#~| msgid "Pronunciation: %1"
+#~ msgid "Pronunciation IPA symbols?"
+#~ msgstr "Telaffuz: %1"
+
+#~ msgid "Select Characters From Phonetic Alphabet"
+#~ msgstr "Fonetik Alfabeden Harfleri Seç"
+
+#~ msgid "Unicode name: "
+#~ msgstr "Unicode isim: "
+
+#~ msgctxt "Describing the sound of the character"
+#~ msgid "Sound: "
+#~ msgstr "Ses: "
+
+#~ msgid "Do you really want to delete the selected entries?"
+#~ msgstr "Seçili girdileri silmek istediğinizden emin misiniz?"
+
+#, fuzzy
+#~| msgid "%1 entries with the same content were found and removed."
+#~ msgid "1 entry with the same content was found and removed."
+#~ msgid_plural "%1 entries with the same content were found and removed."
+#~ msgstr[0] "%1 tane aynı içerikli girdi bulundu ve silindi."
+
+#~ msgid "Remove Duplicates"
+#~ msgstr "Aynı Olanları Kaldır"
+
+#~ msgid "Comment: %1"
+#~ msgstr "Yorum: %1"
+
+#~ msgid " (%1)"
+#~ msgstr " (%1)"
+
+#~ msgid "Type: %1"
+#~ msgstr "Tür: %1"
+
+#~ msgid "Usage Labels"
+#~ msgstr "Kullanım Etiketleri"
+
+#~ msgctxt "usage (area) of an expression"
+#~ msgid "Usage Description"
+#~ msgstr "Kullanım Açıklaması"
+
+#~ msgid "Enter usage description:"
+#~ msgstr "Kullanım açıklaması girin:"
+
+#~ msgctxt "word types"
+#~ msgid "Types"
+#~ msgstr "Türler"
+
+#~ msgctxt "usage (area) of an expression"
+#~ msgid "Usage"
+#~ msgstr "Kullanım"
+
+#~ msgid "Additional Properties"
+#~ msgstr "Ek Özellikler"
+
+#~ msgid "Audio:"
+#~ msgstr "Ses:"
+
+#~ msgid "Comparison of Adjectives"
+#~ msgstr "Sıfatların Karşılaştırılması"
+
+#~ msgid "Suggestions for Multiple Choice"
+#~ msgstr "Çoktan Seçmeli için Öneriler"
+
+#~ msgid "&1:"
+#~ msgstr "&1:"
+
+#~ msgid "&2:"
+#~ msgstr "&2:"
+
+#~ msgid "&3:"
+#~ msgstr "&3:"
+
+#~ msgid "&4:"
+#~ msgstr "&4:"
+
+#~ msgid "&5:"
+#~ msgstr "&5:"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "anatomy"
+#~ msgstr "anatomi"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "biology"
+#~ msgstr "biyoloji"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "figuratively"
+#~ msgstr "mecazi olarak"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "geology"
+#~ msgstr "jeoloji"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "historical"
+#~ msgstr "tarihi"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "informal"
+#~ msgstr "gayri resmi"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "ironic"
+#~ msgstr "ironik"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "literary"
+#~ msgstr "edebi"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "mythology"
+#~ msgstr "mitoloji"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "pharmacy"
+#~ msgstr "eczacılık"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "philosophy"
+#~ msgstr "felsefe"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "physics"
+#~ msgstr "fizik"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "physiology"
+#~ msgstr "fizyoloji"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "rhetoric"
+#~ msgstr "konuşma sanatı"
+
+#~ msgctxt "context in which vocabulary entry is used"
+#~ msgid "zoology"
+#~ msgstr "zooloji"
+
+#~ msgid "&Reset"
+#~ msgstr "&Sıfırla"
+
+#~ msgctxt ""
+#~ "edit general vocabulary properties that are common to all word types"
+#~ msgid "Common"
+#~ msgstr "Ortak"
+
+#~ msgid "General properties of the word"
+#~ msgstr "Kelimenin genel özellikleri"
+
+#~ msgctxt "edit additional properties like image, synonym, etc."
+#~ msgid "Additional"
+#~ msgstr "Ek"
+
+#~ msgid "Additional properties"
+#~ msgstr "Ek özellikler"
+
+#~ msgid "Predetermined multiple choice suggestions"
+#~ msgstr "Önceden belirlenmiş çoklu tercih önerileri"
+
+#, fuzzy
+#~| msgid "Edit General Properties for %1 Files"
+#~ msgid "Edit General Properties"
+#~ msgid_plural "Edit General Properties for %1 Files"
+#~ msgstr[0] "%1 Dosyanın Genel Özelliklerini Düzenle"
+
+#~ msgctxt "@title:window Editing one entry, %1 the word, %2 the language"
+#~ msgid "\"%1\" (%2)"
+#~ msgstr "\"%1\" (%2)"
+
+#, fuzzy
+#~| msgctxt "@title:window Editing %1 entries, %2 the language"
+#~| msgid "Edit %1 words (%2)"
+#~ msgctxt "@title:window Editing %1 entries, %2 the language"
+#~ msgid "Edit One Word (%2)"
+#~ msgid_plural "Edit %1 words (%2)"
+#~ msgstr[0] "%1 Sözcüğü Düzenle (%2)"
+
+#~ msgid ""
+#~ "The entry dialog contains unsaved changes.\n"
+#~ "Do you want to apply or discard your changes?"
+#~ msgstr ""
+#~ "Girdi penceresi kaydedilmemiş değişiklikler içeriyor.\n"
+#~ "Değişikliklerinizi uygulamayı mı yoksa yoksaymayı mı istersiniz?"
+
+#~ msgid "Unsaved Changes"
+#~ msgstr "Kaydedilmeyen Değişiklikler"
+
+#~ msgid "Edit the entries in the selected rows"
+#~ msgstr "Seçili satırlardaki girdileri düzenle"
+
+#~ msgid "Deselect All Lessons"
+#~ msgstr "Bütün Dersleri Seçilmemiş Yap"
+
+#~ msgid "Edit current lesson"
+#~ msgstr "Mevcut dersi düzenle"
+
+#~ msgid "Edit lessons in test"
+#~ msgstr "Sınavdaki dersleri düzenle"
+
+#~ msgid "Edit all lessons"
+#~ msgstr "Tüm dersleri düzenle"

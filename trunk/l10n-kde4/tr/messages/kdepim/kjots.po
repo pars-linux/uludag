@@ -1,0 +1,606 @@
+# translation of kjots.po to Turkish
+# translation of kjots.po to
+# KDE TÜRKÇELEŞTİRME PROJESİ.
+# Copyright (C) 2000, 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
+#
+# Adem GUNES <adem@alaeddin.cc.selcuk.edu.tr>, 2000.
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kjots\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-09-30 06:52+0200\n"
+"PO-Revision-Date: 2009-11-04 18:58+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: aboutdata.cpp:32
+msgid "KJots"
+msgstr "Kjots"
+
+#: aboutdata.cpp:38
+msgid "KDE note taking utility"
+msgstr "KDE not alma uygulaması"
+
+#: aboutdata.cpp:40
+msgid "(c) 1997-2008, KJots developers"
+msgstr "(c) 1997-2008, KJots geliştiricileri"
+
+#: aboutdata.cpp:44
+msgid "Stephen Kelly"
+msgstr "Stephen Kelly"
+
+#: aboutdata.cpp:44
+msgid "Current maintainer"
+msgstr "Güncel yazar"
+
+#: aboutdata.cpp:45
+msgid "Pradeepto K. Bhattacharya"
+msgstr "Pradeepto K. Bhattacharya"
+
+#: aboutdata.cpp:46
+msgid "Jaison Lee"
+msgstr "Jaison Lee"
+
+#: aboutdata.cpp:47
+msgid "Aaron J. Seigo"
+msgstr "Aaron J. Seigo"
+
+#: aboutdata.cpp:48
+msgid "Stanislav Kljuhhin"
+msgstr "Stanislav Kljuhhin"
+
+#: aboutdata.cpp:49
+msgid "Christoph Neerfeld"
+msgstr "Christoph Neerfeld"
+
+#: aboutdata.cpp:49
+msgid "Original author"
+msgstr "Asıl yazar"
+
+#: bookshelf.cpp:60
+msgid "Bookshelf"
+msgstr "Kitaplık"
+
+#: bookshelf.cpp:403
+msgid ""
+"All pages must be inside a book. Would you like to create a new book to put "
+"the page in, or would you prefer to not move the page at all?"
+msgstr ""
+"Tüm sayfalar bir defterin içerisinde olmalı. Sayfayı koymak için boş bir "
+"defter oluşturulsun mu yoksa sayfayı şimdi taşımak istemiyor musunuz?"
+
+#: bookshelf.cpp:406
+msgid "Create New Book"
+msgstr "Yeni Defter Oluştur"
+
+#: bookshelf.cpp:406
+msgid "Do Not Move Page"
+msgstr "Sayfayı Taşıma"
+
+#: bookshelf.cpp:414 kjotsentry.cpp:650
+msgid "New Book"
+msgstr "Yeni Defter"
+
+#: bookshelf.cpp:631
+msgid "Multiple selections"
+msgstr "Çoklu seçimler"
+
+#: kjotscomponent.cpp:124
+msgid "Next Book"
+msgstr "Sonraki Defter"
+
+#: kjotscomponent.cpp:131
+msgid "Previous Book"
+msgstr "Önceki Defter"
+
+#: kjotscomponent.cpp:137
+msgid "Next Page"
+msgstr "Sonraki Sayfa"
+
+#: kjotscomponent.cpp:144
+msgid "Previous Page"
+msgstr "Önceki Sayfa"
+
+#: kjotscomponent.cpp:150
+msgid "&New Page"
+msgstr "Ye&ni Sayfa"
+
+#: kjotscomponent.cpp:156
+msgid "New &Book..."
+msgstr "&Yeni Defter..."
+
+#: kjotscomponent.cpp:162
+msgid "Export"
+msgstr "Dışarı Aktar"
+
+#: kjotscomponent.cpp:165
+msgid "To Text File..."
+msgstr "Metin Dosyasına..."
+
+#: kjotscomponent.cpp:171
+msgid "To HTML File..."
+msgstr "HTML Dosyasına..."
+
+#: kjotscomponent.cpp:177
+msgid "To Book File..."
+msgstr "Defter Dosyasına..."
+
+#: kjotscomponent.cpp:183
+msgid "Import..."
+msgstr "İçeriye Aktar..."
+
+#: kjotscomponent.cpp:188
+msgid "&Delete Page"
+msgstr "S&ayfayı Sil"
+
+#: kjotscomponent.cpp:194
+msgid "Delete Boo&k"
+msgstr "&Kitabı Sil"
+
+#: kjotscomponent.cpp:200
+msgid "Delete Selected"
+msgstr "Seçileni Sil"
+
+#: kjotscomponent.cpp:205
+msgid "Manual Save"
+msgstr "Elle Kaydet"
+
+#: kjotscomponent.cpp:211
+msgid "Auto Bullets"
+msgstr "Otomatik Madde İmleri"
+
+#: kjotscomponent.cpp:216
+msgid "Auto Decimal List"
+msgstr "Otomatik Ondalık Liste"
+
+#: kjotscomponent.cpp:221
+msgid "Link"
+msgstr "Bağlantı Koy"
+
+#: kjotscomponent.cpp:225
+msgid "Insert Checkmark"
+msgstr "Kontrol İşareti Ekle"
+
+#: kjotscomponent.cpp:241
+msgid "Copy &into Page Title"
+msgstr "Sayfa Başlığına &Kopyala"
+
+#: kjotscomponent.cpp:256
+msgid "Rename..."
+msgstr "Yeniden İsimlendir..."
+
+#: kjotscomponent.cpp:262
+msgid "Insert Date"
+msgstr "Tarih Ekle"
+
+#: kjotscomponent.cpp:269
+msgid "Change Color..."
+msgstr "Rengi Değiştir..."
+
+#: kjotscomponent.cpp:273
+msgid "Copy Link Address"
+msgstr "Bağlantı Adresini Kopyala"
+
+#: kjotscomponent.cpp:278
+msgctxt "@action Paste the text in the clipboard without rich text formatting."
+msgid "Paste Plain Text"
+msgstr "Düz Metin Yapıştır"
+
+#: kjotscomponent.cpp:284
+msgid "&Bookmarks"
+msgstr "&Yer İmleri"
+
+#: kjotscomponent.cpp:364 kjotscomponent.cpp:376
+msgid "Search all pages"
+msgstr "Tüm sayfaları ara"
+
+#: kjotscomponent.cpp:535
+#, kde-format
+msgctxt "remove the book, by title"
+msgid "<qt>Are you sure you want to delete the book <strong>%1</strong>?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> adlı defteri silmek istediğinizden emin misiniz?</qt>"
+
+#: kjotscomponent.cpp:536 kjotscomponent.cpp:554 kjotscomponent.cpp:572
+msgid "Delete"
+msgstr "Sil"
+
+#: kjotscomponent.cpp:553
+#, kde-format
+msgctxt "remove the page, by title"
+msgid "<qt>Are you sure you want to delete the page <strong>%1</strong>?</qt>"
+msgstr ""
+"<qt><strong>%1</strong> sayfasını silmek istediğinizden emin misiniz?</qt>"
+
+#: kjotscomponent.cpp:571
+msgid "<qt>Are you sure you want to delete these entries?</qt>"
+msgstr "<qt>Bu girdileri silmek istediğinizden emin misiniz?</qt>"
+
+#: kjotscomponent.cpp:604
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: kjotscomponent.cpp:716
+msgid "<qt>No matches found.</qt>"
+msgstr "<qt>Eşleşme bulunamadı.</qt>"
+
+#: kjotscomponent.cpp:889
+#, kde-format
+msgid "<qt>Replaced 1 occurrence.</qt>"
+msgid_plural "<qt>Replaced %1 occurrences.</qt>"
+msgstr[0] "<qt>Bulunan %1 sonuç değiştirildi.</qt>"
+
+#: kjotscomponent.cpp:894
+#, kde-format
+msgid "<qt>Replaced %2 of 1 occurrence.</qt>"
+msgid_plural "<qt>Replaced %2 of %1 occurrences.</qt>"
+msgstr[0] "<qt>Bulunan %2 sonucun %1 tanesi değiştirildi.</qt>"
+
+#: kjotscomponent.cpp:978
+msgid ""
+"<qt>End of search area reached. Do you want to wrap around and continue?</qt>"
+msgstr ""
+"<qt>Arama alanının sonuna gelindi. Baştan devam etmek ister misiniz?</qt>"
+
+#: kjotscomponent.cpp:1113
+msgid "Multiple Selections"
+msgstr "Çoklu Seçim"
+
+#: kjotscomponent.cpp:1119 kjotscomponent.cpp:1228
+msgid "KJots Books"
+msgstr "KJots Defterleri"
+
+#: kjotscomponent.cpp:1123
+msgid "HTML Files"
+msgstr "HTML Dosyaları"
+
+#: kjotscomponent.cpp:1142
+msgid "<qt>Error opening temporary file.</qt>"
+msgstr "<qt>Geçici dosya açma hatası.</qt>"
+
+#: kjotscomponent.cpp:1186
+msgid "<qt>Error opening internal file.</qt>"
+msgstr "<qt>İç dosya açma hatası.</qt>"
+
+#: kjotscomponent.cpp:1229
+msgid "KnowIt files"
+msgstr "KnowIt dosyaları"
+
+#: kjotscomponent.cpp:1299
+msgid "Send To Printer"
+msgstr "Yazıcıya Gönder"
+
+#: kjotsentry.cpp:101
+#, kde-format
+msgid ""
+"A duplicate ID was found in the book %1. This can happen if you manipulate "
+"the data files by hand, and will prevent KJots from working correctly. KJots "
+"can attempt to fix this, or you can fix it yourself. In either case, "
+"bookmarks and links between pages may be broken."
+msgstr ""
+"%1 kitabında aynısı olan bir kimlik bulundu. KJots uygulamasının düzgün "
+"çalışmasını engelleyen bu durum veriyi ele değiştirmenizden kaynaklanıyor "
+"olabilir. KJots bunu düzeltmeye çalışacak. Bu sorunu siz de elle "
+"düzeltebilirsiniz. Aksi durumda yer imleri ve sayfalar arasındaki "
+"bağlantılar çalışmaz duruma gelebilir."
+
+#: kjotsentry.cpp:105
+msgid "A duplicate ID was found"
+msgstr "Aynısı olan bir kimlik bulundu"
+
+#: kjotsentry.cpp:105
+msgid "Exit and fix by hand"
+msgstr "Çık ve elle düzelt"
+
+#: kjotsentry.cpp:106
+msgid "Fix it automatically"
+msgstr "Otomatik olarak düzelt"
+
+#: kjotsentry.cpp:372
+msgid ""
+"<qt>KJots is having problems saving your data. This might be a permissions "
+"problem, or you may be out of disk space.</qt>"
+msgstr ""
+"<qt>KJots verilerinizi kaydederken sorunlar yaşıyor. Bu bir izin sorunu "
+"olabilir veya disk alanınız kalmamış olabilir.</qt>"
+
+#: kjotsentry.cpp:407
+msgid "Rename Book"
+msgstr "Kitabı Yeniden İsimlendir"
+
+#: kjotsentry.cpp:408 kjotsentry.cpp:651
+msgid "Book name:"
+msgstr "Defter adı:"
+
+#: kjotsentry.cpp:554
+msgid "Table of Contents"
+msgstr "İçindekiler"
+
+#: kjotsentry.cpp:689
+#, kde-format
+msgid "Page %1"
+msgstr "Sayfa %1"
+
+#: kjotsentry.cpp:692
+msgid "New Page"
+msgstr "Yeni Sayfa"
+
+#: kjotsentry.cpp:693
+msgid "Page name:"
+msgstr "Sayfa adı:"
+
+#: kjotsentry.cpp:723
+msgid "Rename Page"
+msgstr "Sayfayı Yeniden Adlandır"
+
+#: kjotsentry.cpp:724
+msgid "Page title:"
+msgstr "Sayfa başlığı:"
+
+#: kjotslinkdialog.cpp:41
+msgid "Manage Link"
+msgstr "Bağlantıyı Yönet"
+
+#: kjotslinkdialog.cpp:57
+msgid "Link Text:"
+msgstr "Bağlantı Metni:"
+
+#: kjotslinkdialog.cpp:60
+msgid "Link URL:"
+msgstr "Bağlantı Adresi:"
+
+#: kjotsreplacenextdialog.cpp:31 kjotsreplacenextdialog.cpp:35
+msgid "Replace"
+msgstr "Değiştir"
+
+#: kjotsreplacenextdialog.cpp:33
+msgid "&All"
+msgstr "&Tümü"
+
+#: kjotsreplacenextdialog.cpp:34
+msgid "&Skip"
+msgstr "&Atla"
+
+#: kjotsreplacenextdialog.cpp:49
+#, kde-format
+msgid "Replace '%1' with '%2'?"
+msgstr "'%1' '%2' ögesinin üzerine yazılsın mı?"
+
+#: knowitimporter.cpp:144
+msgctxt "Name for the top level book created to hold the imported data."
+msgid "KNowIt Import"
+msgstr "KNowIt İçeriye Aktar"
+
+#. i18n: file: confpagemisc.ui:13
+#. i18n: ectx: property (windowTitle), widget (QWidget, confPageMisc)
+#: rc.cpp:3
+msgid "Miscellaneous"
+msgstr "Çeşitli"
+
+#. i18n: file: confpagemisc.ui:22
+#. i18n: ectx: property (suffix), widget (KIntSpinBox, kcfg_AutoSaveInterval)
+#: rc.cpp:6
+msgid " minutes"
+msgstr "dakika"
+
+#. i18n: file: confpagemisc.ui:25
+#. i18n: ectx: property (specialValueText), widget (KIntSpinBox, kcfg_AutoSaveInterval)
+#: rc.cpp:9
+msgid "1 minute"
+msgstr "1 dakika"
+
+#. i18n: file: confpagemisc.ui:34
+#. i18n: ectx: property (whatsThis), widget (KIntSpinBox, kcfg_AutoSaveInterval)
+#. i18n: file: confpagemisc.ui:47
+#. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1)
+#: rc.cpp:12 rc.cpp:18
+msgid ""
+"This is the number of minutes KJots will wait before automatically saving "
+"changes."
+msgstr "Bu KJots'un otomatik olarak kaydetmeden önce bekliyeceği süredir."
+
+#. i18n: file: confpagemisc.ui:41
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:15
+msgid "S&ave every:"
+msgstr "Kay&detme aralığı:"
+
+#. i18n: file: confpagemisc.ui:105
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoSave)
+#: rc.cpp:21
+msgid "&Save changes periodically"
+msgstr "Ara &sıra değişiklikleri kaydet"
+
+#. i18n: file: confpagemisc.ui:111
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_AutoSave)
+#: rc.cpp:24
+msgid ""
+"When \"Enable autosave\" is checked, KJots will automatically save changes "
+"made to books at the interval defined below."
+msgstr ""
+"\"Otokayıt Aktif\" seçili olduğunda, KJots seçilen sürede bir kitabı "
+"otomatik olarak kaydeder."
+
+#. i18n: file: confpagemisc.ui:118
+#. i18n: ectx: property (text), widget (QCheckBox, kcfg_PageNamePrompt)
+#: rc.cpp:27
+msgid "Ask for new &page names"
+msgstr "Yeni &sayfa adlarını sor"
+
+#. i18n: file: confpagemisc.ui:124
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_PageNamePrompt)
+#: rc.cpp:30
+msgid ""
+"Determines if new pages are given an automatic name, or a prompt is "
+"displayed."
+msgstr ""
+"Yeni sayfalara otomatik isim verilip verilmeyeceğini ve kullanıcıya sorulup "
+"sorulmayacağını belirler."
+
+#. i18n: file: kjots.kcfg:10
+#. i18n: ectx: label, entry (SplitterSizes), group (kjots)
+#: rc.cpp:33
+msgid "How the main window is divided."
+msgstr "Ana pencerenin nasıl bölündüğü."
+
+#. i18n: file: kjots.kcfg:13
+#. i18n: ectx: label, entry (CurrentSelection), group (kjots)
+#: rc.cpp:36
+msgid "The book or page that is currently active."
+msgstr "Defter veya sayfa zaten açık."
+
+#. i18n: file: kjots.kcfg:16
+#. i18n: ectx: label, entry (Font), group (kjots)
+#: rc.cpp:39
+msgid "The font used to display the contents of books."
+msgstr "Defterlerin içeriğini göstermekte kullanılan yazıtipi."
+
+#. i18n: file: kjots.kcfg:20
+#. i18n: ectx: label, entry (AutoSave), group (kjots)
+#: rc.cpp:42
+msgid "Whether books should be saved automatically."
+msgstr "Defterler otomatik olarak kaydedilecek."
+
+#. i18n: file: kjots.kcfg:24
+#. i18n: ectx: label, entry (Unicode), group (kjots)
+#: rc.cpp:45
+msgid "Whether UTF-8 encoding should be forced for saving and loading."
+msgstr "Kaydetme ve yükleme için UTF-8 şifrelemeye zorlanacak."
+
+#. i18n: file: kjots.kcfg:28
+#. i18n: ectx: label, entry (AutoSaveInterval), group (kjots)
+#: rc.cpp:48
+msgid "The interval in minutes at which books should be saved automatically."
+msgstr ""
+"Defterlerin otomatik olarak kaydedileceği dakika cinsinden zaman aralığı."
+
+#. i18n: file: kjots.kcfg:32
+#. i18n: ectx: label, entry (LastId), group (kjots)
+#: rc.cpp:51
+msgid "The last ID that was used for a book or page."
+msgstr "Defter veya sayfa için kullanılan son kimlik."
+
+#. i18n: file: kjots.kcfg:36
+#. i18n: ectx: label, entry (BookshelfOrder), group (kjots)
+#: rc.cpp:54
+msgid "The IDs of the books in the bookshelf."
+msgstr "Kitaplıktaki defterlerin kimlikleri."
+
+#. i18n: file: kjots.kcfg:40
+#. i18n: ectx: label, entry (PageNamePrompt), group (kjots)
+#: rc.cpp:57
+msgid "Ask for a name when creating a new page?"
+msgstr "Yeni sayfa oluşturulurken ismi sorulsun mu?"
+
+#. i18n: file: kjotspartui.rc:19
+#. i18n: ectx: Menu (format)
+#. i18n: file: kjotsui.rc:19
+#. i18n: ectx: Menu (format)
+#: rc.cpp:60 rc.cpp:78
+msgid "F&ormat"
+msgstr "&Biçim"
+
+#. i18n: file: kjotspartui.rc:42
+#. i18n: ectx: Menu (go)
+#: rc.cpp:63
+msgid "&Go"
+msgstr "Gi&t"
+
+#. i18n: file: kjotspartui.rc:51
+#. i18n: ectx: Menu (tools)
+#: rc.cpp:66
+msgid "&Tools"
+msgstr "A&raçlar"
+
+#. i18n: file: kjotspartui.rc:65
+#. i18n: ectx: ToolBar (mainToolBar)
+#. i18n: file: kjotsui.rc:62
+#. i18n: ectx: ToolBar (mainToolBar)
+#: rc.cpp:69 rc.cpp:81
+msgid "Main Toobar"
+msgstr "Ana Araç Çubuğu"
+
+#. i18n: file: kjotspartui.rc:77
+#. i18n: ectx: ToolBar (textToolBar)
+#. i18n: file: kjotsui.rc:77
+#. i18n: ectx: ToolBar (textToolBar)
+#: rc.cpp:72 rc.cpp:84
+msgid "Text Toolbar"
+msgstr "Metin Araç Çubuğu"
+
+#. i18n: file: kjotspartui.rc:90
+#. i18n: ectx: ToolBar (formatToolBar)
+#. i18n: file: kjotsui.rc:90
+#. i18n: ectx: ToolBar (formatToolBar)
+#: rc.cpp:75 rc.cpp:87
+msgid "Format Toolbar"
+msgstr "Biçimlendirme Araç Çubuğu"
+
+#: rc.cpp:88
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:89
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#~ msgid ""
+#~ "<qt>Are you sure you want to delete the <strong>%1</strong> page?</qt>"
+#~ msgstr ""
+#~ "<qt><strong>%1</strong> adlı sayfayı silmek istediğinizden emin misiniz? "
+#~ "</qt>"
+
+#~ msgid "Autosave"
+#~ msgstr "Otomatik kayıt"
+
+#~| msgid "KJots"
+#~ msgid "KJotsPart"
+#~ msgstr "KJotsPart"
+
+#~ msgid "Italics"
+#~ msgstr "Yatık"
+
+#~ msgid "Bold"
+#~ msgstr "Kalın"
+
+#~ msgid "Underline"
+#~ msgstr "Altı çizili"
+
+#~ msgid "Strike Out"
+#~ msgstr "Üzeri çizili"
+
+#~ msgid "Font Color"
+#~ msgstr "Yazı Tipi Tengi"
+
+#~ msgid "Highlight"
+#~ msgstr "Vurgulama"
+
+#~ msgid "Font Family"
+#~ msgstr "Yazı Tipi Ailesi"
+
+#~ msgid "Font Size"
+#~ msgstr "Yazı Tipi Boyutu"
+
+#~ msgid "Insert Rule Line"
+#~ msgstr "Cetvel Satırı Ekle"
+
+#~ msgid "(c) 1997-2002, Christoph Neerfeld"
+#~ msgstr "(c) 1997-2002, Christoph Neerfeld"
+
+#~ msgid "Text Toobar"
+#~ msgstr "Metin Araç Çubuğu"
+
+#~ msgid "Fonts..."
+#~ msgstr "Yazı tipleri..."

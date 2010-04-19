@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR Free Software Foundation, Inc.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kpresenter_screen\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-02-07 19:59+0000\n"
+"PO-Revision-Date: 2001-10-31 19:44GMT\n"
+"Last-Translator: Görkem Çetin <gorkem@kde.org>\n"
+"Language-Team: Turkish <kde-i18n-tr@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 0.8\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#. Tag: author
+#: screen.docbook:4
+#, no-c-format
+msgid "<firstname>Neil</firstname> <surname>Lucock</surname>"
+msgstr ""
+
+#. Tag: email
+#: screen.docbook:8
+#, no-c-format
+msgid "neil@nlucock.freeserve.co.uk"
+msgstr ""
+
+#. Tag: author
+#: screen.docbook:11
+#, no-c-format
+msgid "<firstname>Krishna</firstname> <surname>Tateneni</surname>"
+msgstr ""
+
+#. Tag: email
+#: screen.docbook:15
+#, no-c-format
+msgid "tateneni@pluto.njcc.com"
+msgstr ""
+
+#. Tag: trans_comment
+#: screen.docbook:18
+#, no-c-format
+msgid "ROLES_OF_TRANSLATORS"
+msgstr ""
+
+#. Tag: title
+#: screen.docbook:21
+#, no-c-format
+msgid "The &kpresenter; Screen"
+msgstr "&kpresenter; Ekranı"
+
+#. Tag: para
+#: screen.docbook:23
+#, fuzzy, no-c-format
+msgid "Here is the default &kpresenter; Screen Layout."
+msgstr "&kpresenter; Ekranı"
+
+#. Tag: para
+#: screen.docbook:25
+#, no-c-format
+msgid ""
+"At the top there is the menubar. All &kpresenter; functions are available "
+"from the menus, which are described in detail in <xref linkend=\"menu-items"
+"\"/>."
+msgstr ""
+
+#. Tag: para
+#: screen.docbook:29
+#, no-c-format
+msgid ""
+"Below the menubar are the toolbars. There are several toolbars. You may hide "
+"and show toolbars as you prefer. The toolbars are described in detail in "
+"<xref linkend=\"toolbars\"/>."
+msgstr ""
+
+#. Tag: para
+#: screen.docbook:34
+#, no-c-format
+msgid ""
+"The <guilabel>Outline</guilabel> and <guilabel>Preview</guilabel> panes give "
+"an overview of your entire presentation. The <guilabel>Preview</guilabel> "
+"pane provides thumbnails of each slide, and allows you to drag and drop to "
+"change the order. The <guilabel>Outline</guilabel> pane provides a "
+"hierarchal tree of each slide, and also the objects inside the slides. As "
+"well as overview, this allows you to easily select objects which may be "
+"covered by others, or are otherwise difficult to grab directly on the slide."
+msgstr ""

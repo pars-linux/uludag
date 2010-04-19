@@ -1,0 +1,65 @@
+# translation of kdelirc.po to Türkçe
+# Copyright (C) 2003 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003.
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kdelirc\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-17 05:58+0100\n"
+"PO-Revision-Date: 2009-01-09 16:06+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: dbusinterface.cpp:203
+msgctxt "The name of a parameter"
+msgid "unknown"
+msgstr ""
+
+#: dbusinterface.cpp:407
+#, kde-format
+msgid "Starting <b>%1</b>..."
+msgstr ""
+
+#: iraction.cpp:114
+msgid "Exit mode"
+msgstr "Çıkış kipi"
+
+#: iraction.cpp:116
+#, kde-format
+msgid "Switch to %1"
+msgstr "%1'e Geç"
+
+#: iraction.cpp:119
+msgid "Just start"
+msgstr "Sadece başlat"
+
+#~ msgid "Do actions before. "
+#~ msgstr "Önce bu işlemleri yap. "
+
+#~ msgid "Do actions after. "
+#~ msgstr "Sonra bu işlemleri yap. "
+
+#~ msgid "Auto-start. "
+#~ msgstr "Otomatik başla. "
+
+#~ msgid "Repeatable. "
+#~ msgstr "Tekrarlanabilir. "
+
+#~ msgid "Do nothing if many instances. "
+#~ msgstr "Çok örnek varsa bi şey yapma."
+
+#~ msgid "Send to top instance. "
+#~ msgstr "Üst örneğe gönder."
+
+#~ msgid "Send to bottom instance. "
+#~ msgstr "Alt örneğe gönder"
+
+#~ msgid "Send to all instances. "
+#~ msgstr "Tüm örneklere gönder."

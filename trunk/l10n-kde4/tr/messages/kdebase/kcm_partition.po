@@ -1,0 +1,165 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir, 2008.
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcm_partition\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-01-02 05:57+0100\n"
+"PO-Revision-Date: 2009-03-19 16:39+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcm_partition.cpp:58
+msgid "kcm_partition"
+msgstr "kcm_partition"
+
+#: kcm_partition.cpp:59
+msgid "KDE Partitions Information Control Module"
+msgstr "KDE Disk Bölümleri Kontrol Paneli Modülü"
+
+#: kcm_partition.cpp:61
+msgid "(c) 2008 Nicolas Ternisien"
+msgstr "(c) 2008 Nicolas Ternisien"
+
+#: kcm_partition.cpp:63
+msgid "Nicolas Ternisien"
+msgstr "Nicolas Ternisien"
+
+#: kcm_partition.cpp:77
+msgid "This list displays partitions of your system."
+msgstr "Bu liste sisteminizdeki disk bölümlerini gösterir."
+
+#: kcm_partition.cpp:80
+msgid "Mount Point"
+msgstr "Bağlanma Noktası"
+
+#: kcm_partition.cpp:80
+msgid "Label"
+msgstr "Etiket"
+
+#: kcm_partition.cpp:80
+msgid "Type"
+msgstr "Tip"
+
+#: kcm_partition.cpp:80
+msgid "Total Size"
+msgstr "Toplam Boyut"
+
+#: kcm_partition.cpp:80
+msgid "Free Size"
+msgstr "Boş Alan"
+
+#: kcm_partition.cpp:80
+msgid "Used Size"
+msgstr "Kullanılan Alan"
+
+#: kcm_partition.cpp:107
+#, kde-format
+msgctxt "Device (Vendor)"
+msgid "%1 (%2)"
+msgstr "%1 (%2)"
+
+#: kcm_partition.cpp:137
+#, fuzzy
+#| msgid "none"
+msgctxt "no storage volume"
+msgid "none"
+msgstr "hiçbiri"
+
+#: kcm_partition.cpp:183
+msgid "IDE"
+msgstr "IDE"
+
+#: kcm_partition.cpp:185
+msgid "USB"
+msgstr "USB"
+
+#: kcm_partition.cpp:187
+msgid "IEEE 1394"
+msgstr "IEEE 1394"
+
+#: kcm_partition.cpp:189
+msgid "SCSI"
+msgstr "SCSI"
+
+#: kcm_partition.cpp:191
+msgid "S-ATA"
+msgstr "S-ATA"
+
+#: kcm_partition.cpp:193
+msgid "Platform"
+msgstr "Platform"
+
+#: kcm_partition.cpp:196
+msgid "Unknown Bus"
+msgstr "Bilinmeyen Bus"
+
+#: kcm_partition.cpp:202
+msgid "Hard Disk"
+msgstr "Sabit Disk"
+
+#: kcm_partition.cpp:204
+msgid "CD/DVD Drive"
+msgstr "CD/DVD Sürücü"
+
+#: kcm_partition.cpp:206
+msgid "Floppy Drive"
+msgstr "Disket Sürücü"
+
+#: kcm_partition.cpp:208
+msgid "Tape"
+msgstr "Teyp"
+
+#: kcm_partition.cpp:210
+msgid "Compact Flash"
+msgstr "Compact Flash"
+
+#: kcm_partition.cpp:212
+msgid "Memory Stick"
+msgstr "Bellek Çubuğu"
+
+#: kcm_partition.cpp:214
+msgid "Smart Media"
+msgstr "Akıllı Ortam"
+
+#: kcm_partition.cpp:216
+msgid "SD/MMC"
+msgstr "SD/MMC"
+
+#: kcm_partition.cpp:218
+msgid "Xd"
+msgstr "Xd"
+
+#: kcm_partition.cpp:221
+msgid "Unknown Type"
+msgstr "Bilinmeyen Tip"
+
+#: kcm_partition.cpp:225
+msgid ""
+"This display shows information about partitions and hard disks of your "
+"system."
+msgstr ""
+"Sisteminizdeki sabit diskler ve sabit disk bölümleri hakkındaki bilgileri "
+"gösterir."
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: usedSizeWidget.cpp:44
+msgid "unknown"
+msgstr "bilinmeyen"

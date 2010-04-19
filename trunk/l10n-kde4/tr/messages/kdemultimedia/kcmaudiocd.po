@@ -1,0 +1,354 @@
+# translation of kcmaudiocd.po to
+# Copyright (C) 2003, 2004, 2005, 2007 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2002, 2003.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# YILDIZ KARDESLER <turkishprogram@xposta.com>, 2004.
+# Engin Çağatay <engincagatay@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kcmaudiocd\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-07-21 11:52+0200\n"
+"PO-Revision-Date: 2009-07-04 16:14+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: kcmaudiocd.cpp:65
+#, kde-format
+msgid "%1 Encoder"
+msgstr "%1 Kodlayıcı"
+
+#: kcmaudiocd.cpp:99
+msgid "kcmaudiocd"
+msgstr "kcmaudiocd"
+
+#: kcmaudiocd.cpp:99
+msgid "KDE Audio CD IO Slave"
+msgstr "KDE Audio-CD Slave Kontrol Modulu"
+
+#: kcmaudiocd.cpp:101
+msgid "(c) 2000 - 2005 Audio CD developers"
+msgstr "(c) 2000 - 2001 Audio CD geliştiricileri"
+
+#: kcmaudiocd.cpp:103
+msgid "Benjamin C. Meyer"
+msgstr "Benjamin C. Meyer"
+
+#: kcmaudiocd.cpp:103
+msgid "Current Maintainer"
+msgstr "Projeyi Yürüten"
+
+#: kcmaudiocd.cpp:104
+msgid "Carsten Duvenhorst"
+msgstr "Carsten Duvenhorst"
+
+#. i18n: file: audiocdconfig.ui:406
+#. i18n: ectx: property (text), widget (QLabel, exampleOutput)
+#. i18n: file: audiocdconfig.ui:416
+#. i18n: ectx: property (text), widget (QLineEdit, example)
+#: kcmaudiocd.cpp:151 kcmaudiocd.cpp:224 rc.cpp:116 rc.cpp:119
+msgid "Cool artist - example audio file.wav"
+msgstr "Cool·sanatcı - örnek ses dosyası file.wav"
+
+#: kcmaudiocd.cpp:268
+msgid ""
+"<h1>Audio CDs</h1> The Audio CD IO-Slave enables you to easily create wav, "
+"MP3 or Ogg Vorbis files from your audio CD-ROMs or DVDs. The slave is "
+"invoked by typing <i>\"audiocd:/\"</i> in Konqueror's location bar. In this "
+"module, you can configure encoding, and device settings. Note that MP3 and "
+"Ogg Vorbis encoding are only available if KDE was built with a recent "
+"version of the LAME or Ogg Vorbis libraries."
+msgstr ""
+"<h1>Audio CD</h1> Audio CD modülü sizin CD-ROM veya DVD lerden kolay bir "
+"şekilde wav, MP3 veya Ogg gibi formatları oluştuımanızı sağlar. Programı "
+"çalıştırmak için konqueror içinden <i>\"audiocd:/\"</i> komutunu vermeniz "
+"yeterlidir. Bu kontrol modülü sayesinde programların kodlamasını yapabilir "
+"ve aynı zamanda CDDB taleplerini ve aygıt ayarlarını yapabilirsiniz. Yalnız, "
+"MP3 ve OggVorbis kodlamasının sadece KDE yeni sürümlerinde Lame veya "
+"OggVorbis kitaplıkları ile mümkün olduğunu unutmayın."
+
+#. i18n: file: audiocdconfig.ui:25
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:3
+msgid "&General"
+msgstr "&Genel"
+
+#. i18n: file: audiocdconfig.ui:47
+#. i18n: ectx: property (title), widget (QGroupBox, encoderPriority)
+#: rc.cpp:6
+msgid "Encoder Priority"
+msgstr "Kodlayıcı Önceliği"
+
+#. i18n: file: audiocdconfig.ui:72
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:9
+msgid "Highest"
+msgstr "Yüksek"
+
+#. i18n: file: audiocdconfig.ui:82
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: rc.cpp:12
+msgid "Lowest"
+msgstr "Düşük"
+
+#. i18n: file: audiocdconfig.ui:95
+#. i18n: ectx: property (text), widget (QLabel, textLabel4)
+#: rc.cpp:15
+msgid "Normal"
+msgstr "Normal"
+
+#. i18n: file: audiocdconfig.ui:114
+#. i18n: ectx: property (text), widget (QLineEdit, cd_device_string)
+#: rc.cpp:18
+msgid "/dev/cdrom"
+msgstr "/dev/cdrom"
+
+#. i18n: file: audiocdconfig.ui:117
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, cd_device_string)
+#: rc.cpp:21
+msgid ""
+"Specify a location for the drive you want to use. Normally, this is a file "
+"inside the /dev folder representing your CD or DVD drive."
+msgstr ""
+"Kullanmak istediğiniz sürücününü adresini verin. Normal olarak bu /dev "
+"dizini altında olan sizin CD veya DVD sürücünüzü içeren dosyadır."
+
+#. i18n: file: audiocdconfig.ui:124
+#. i18n: ectx: property (text), widget (QCheckBox, cd_autosearch_check)
+#: rc.cpp:24
+msgid "&Specify CD Device:"
+msgstr "CD &Aygıtı Belirtin:"
+
+#. i18n: file: audiocdconfig.ui:127
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, cd_autosearch_check)
+#: rc.cpp:27
+msgid ""
+"Uncheck this if you want to specify a CD device different from the one "
+"autoprobed"
+msgstr ""
+"Otomatik olarak algılanandan farklı bir CD aygıtı tanımlamak istediğinizde "
+"bunun işaretini kaldırın"
+
+#. i18n: file: audiocdconfig.ui:134
+#. i18n: ectx: property (text), widget (QCheckBox, ec_enable_check)
+#: rc.cpp:30
+msgid "Use &error correction when reading the CD"
+msgstr "CD'yi okurken hata düz&eltmesi kullan"
+
+#. i18n: file: audiocdconfig.ui:140
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, ec_enable_check)
+#: rc.cpp:33
+msgid ""
+"If you uncheck this option, the slave will not try to use error correction "
+"which can be useful for reading damaged CDs. However, this feature can be "
+"problematic in some cases, so you can switch it off here."
+msgstr ""
+"Eğer bu ayarı kapatırsanız, program hata düzeltmeyi kullanamaz, ki bu bazen "
+"hatalı CD lerde çok işinize yarayabilir. Diğer yanda bu fonksiyon arasırada "
+"olsa problem yaratabilir ki bu durumda da bu seçeneği etkisiz hale getirmek "
+"zorunda kalırsınız."
+
+#. i18n: file: audiocdconfig.ui:147
+#. i18n: ectx: property (text), widget (QCheckBox, ec_skip_check)
+#: rc.cpp:36
+msgid "&Skip on errors"
+msgstr "Ha&taları yoksay"
+
+#. i18n: file: audiocdconfig.ui:174
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:39
+msgid "&Names"
+msgstr "&Dosya isimleri"
+
+#. i18n: file: audiocdconfig.ui:180
+#. i18n: ectx: property (title), widget (QGroupBox, fileNameGroupBox)
+#: rc.cpp:42
+msgid "File Name (without extension)"
+msgstr "Dosya ismi (uzantısız)"
+
+#. i18n: file: audiocdconfig.ui:186
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
+#. i18n: file: audiocdconfig.ui:474
+#. i18n: ectx: property (text), widget (QLabel, fileNameLabel_2)
+#: rc.cpp:45 rc.cpp:128
+msgid "The following macros will be expanded:"
+msgstr "Şu makrolar genişletilecek:"
+
+#. i18n: file: audiocdconfig.ui:198
+#. i18n: ectx: property (text), widget (QLabel, textLabel13)
+#. i18n: file: audiocdconfig.ui:516
+#. i18n: ectx: property (text), widget (QLabel, textLabel21)
+#: rc.cpp:48 rc.cpp:142
+msgid "Genre"
+msgstr "Tür"
+
+#. i18n: file: audiocdconfig.ui:208
+#. i18n: ectx: property (text), widget (QLabel, textLabel10)
+#. i18n: file: audiocdconfig.ui:506
+#. i18n: ectx: property (text), widget (QLabel, textLabel16)
+#: rc.cpp:52 rc.cpp:139
+#, no-c-format
+msgid "%{year}"
+msgstr "%{yıl}"
+
+#. i18n: file: audiocdconfig.ui:218
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_3)
+#: rc.cpp:56
+#, no-c-format
+msgid "%{title}"
+msgstr "%{başlık}"
+
+#. i18n: file: audiocdconfig.ui:228
+#. i18n: ectx: property (text), widget (QLabel, textLabel5)
+#. i18n: file: audiocdconfig.ui:536
+#. i18n: ectx: property (text), widget (QLabel, textLabel18)
+#: rc.cpp:59 rc.cpp:148
+msgid "Album Title"
+msgstr "Albüm Başlığı"
+
+#. i18n: file: audiocdconfig.ui:238
+#. i18n: ectx: property (text), widget (QLabel, textLabel11)
+#. i18n: file: audiocdconfig.ui:486
+#. i18n: ectx: property (text), widget (QLabel, textLabel20)
+#: rc.cpp:62 rc.cpp:131
+msgid "Year"
+msgstr "Yıl"
+
+#. i18n: file: audiocdconfig.ui:248
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_4)
+#: rc.cpp:65
+msgid "Track Artist"
+msgstr "Parça Sanatçısı"
+
+#. i18n: file: audiocdconfig.ui:258
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_3)
+#: rc.cpp:68
+msgid "Track Title"
+msgstr "Parça Başlığı"
+
+#. i18n: file: audiocdconfig.ui:268
+#. i18n: ectx: property (text), widget (QLabel, textLabel9)
+#. i18n: file: audiocdconfig.ui:526
+#. i18n: ectx: property (text), widget (QLabel, textLabel19)
+#: rc.cpp:71 rc.cpp:145
+msgid "Album Artist"
+msgstr "Albüm Sanatçısı"
+
+#. i18n: file: audiocdconfig.ui:278
+#. i18n: ectx: property (text), widget (QLabel, textLabel8)
+#. i18n: file: audiocdconfig.ui:496
+#. i18n: ectx: property (text), widget (QLabel, textLabel15)
+#: rc.cpp:75 rc.cpp:135
+#, no-c-format
+msgid "%{albumartist}"
+msgstr "%{albümsanatçısı}"
+
+#. i18n: file: audiocdconfig.ui:288
+#. i18n: ectx: property (text), widget (QLabel, textLabel12)
+#. i18n: file: audiocdconfig.ui:546
+#. i18n: ectx: property (text), widget (QLabel, textLabel17)
+#: rc.cpp:79 rc.cpp:152
+#, no-c-format
+msgid "%{genre}"
+msgstr "%{tarz}"
+
+#. i18n: file: audiocdconfig.ui:298
+#. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
+#: rc.cpp:83
+#, no-c-format
+msgid "%{trackartist}"
+msgstr "%{parçasanatçısı}"
+
+#. i18n: file: audiocdconfig.ui:308
+#. i18n: ectx: property (text), widget (QLabel, textLabel6)
+#. i18n: file: audiocdconfig.ui:556
+#. i18n: ectx: property (text), widget (QLabel, textLabel14)
+#: rc.cpp:87 rc.cpp:156
+#, no-c-format
+msgid "%{albumtitle}"
+msgstr "%{albümbaşlığı}"
+
+#. i18n: file: audiocdconfig.ui:318
+#. i18n: ectx: property (text), widget (QLabel, textLabel7)
+#: rc.cpp:90
+msgid "Track Number"
+msgstr "Parça Numarası"
+
+#. i18n: file: audiocdconfig.ui:328
+#. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
+#: rc.cpp:94
+#, no-c-format
+msgid "%{number}"
+msgstr "%{numara}"
+
+#. i18n: file: audiocdconfig.ui:346
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox2)
+#: rc.cpp:97
+msgid "Name Regular Expression Replacement"
+msgstr "Düzenli İfadeleri Değiştirme İsmi"
+
+#. i18n: file: audiocdconfig.ui:352
+#. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
+#: rc.cpp:100
+msgid "Selection:"
+msgstr "Seçim:"
+
+#. i18n: file: audiocdconfig.ui:363
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:103
+msgid ""
+"Regular expression used on all file names. For example using selection \" \" "
+"and replace with \"_\" would replace all the spaces with underlines.\n"
+msgstr ""
+"Düzenli ifadeler bütün dosya isimlerinde kullanılabilir. Mesela \"·"
+"\"·kullanılarak\"_\" alt çizgili dosya isimler ile değiştirelebilir.\n"
+
+#. i18n: file: audiocdconfig.ui:376
+#. i18n: ectx: property (text), widget (QLabel, inputlabel)
+#: rc.cpp:107
+msgid "Input:"
+msgstr "Giriş:"
+
+#. i18n: file: audiocdconfig.ui:386
+#. i18n: ectx: property (text), widget (QLabel, outputLabel)
+#: rc.cpp:110
+msgid "Output:"
+msgstr "Çıkış:"
+
+#. i18n: file: audiocdconfig.ui:396
+#. i18n: ectx: property (text), widget (QLabel, exampleLabel)
+#: rc.cpp:113
+msgid "Example"
+msgstr "Örnek"
+
+#. i18n: file: audiocdconfig.ui:429
+#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
+#: rc.cpp:122
+msgid "Replace with:"
+msgstr "Bununla değiştir:"
+
+#. i18n: file: audiocdconfig.ui:468
+#. i18n: ectx: property (title), widget (QGroupBox, fileNameGroupBox_2)
+#: rc.cpp:125
+msgid "Album Name"
+msgstr "Albüm İsmi"
+
+#: rc.cpp:157
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "erkaN kaplaN"
+
+#: rc.cpp:158
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "erkaN@linux-sevenler.org"
+
+#~ msgid "Report errors found on the cd."
+#~ msgstr "Cd'de bulunan sorunları bildir."

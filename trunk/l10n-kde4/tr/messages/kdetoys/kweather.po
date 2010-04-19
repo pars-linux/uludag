@@ -1,0 +1,760 @@
+# translation of kweather.po to Turkish
+# Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
+# Engin Çağatay <engincagatay@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: kweather\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-04-22 11:31+0200\n"
+"PO-Revision-Date: 2009-03-20 04:41+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: dockwidget.cpp:104 weatherlib.cpp:169
+msgid "The network is currently offline..."
+msgstr "Ağ halen çevrim dışı..."
+
+#: dockwidget.cpp:107 reportview.cpp:143
+msgid "Temperature:"
+msgstr "Sıcaklık:"
+
+#: dockwidget.cpp:108 reportview.cpp:146
+msgid "Dew Point:"
+msgstr "Çiy Oluşum Noktası:"
+
+#: dockwidget.cpp:110 reportview.cpp:148
+msgid "Air Pressure:"
+msgstr "Hava Basıncı:"
+
+#: dockwidget.cpp:111 reportview.cpp:151
+msgid "Rel. Humidity:"
+msgstr "Bağıl Nem:"
+
+#: dockwidget.cpp:113 reportview.cpp:153
+msgid "Wind Speed:"
+msgstr "Rüzgar Hızı:"
+
+#: dockwidget.cpp:117 reportview.cpp:160
+msgid "Heat Index:"
+msgstr "Sıcaklık İndeksi:"
+
+#: dockwidget.cpp:119 reportview.cpp:163
+msgid "Wind Chill:"
+msgstr "Rüzgarın Soğukluğu:"
+
+#: dockwidget.cpp:124 reportview.cpp:169
+msgid "Sunrise:"
+msgstr "Güneş doğuşu:"
+
+#: dockwidget.cpp:125 reportview.cpp:171
+msgid "Sunset:"
+msgstr "Güneş batışı:"
+
+#: dockwidget.cpp:132
+msgid ""
+"Station reports that it needs maintenance.\n"
+"Please try again later."
+msgstr ""
+"İstasyon bakıma ihtiyacı oldunu rapor ediyor.\n"
+"Lütfen daha sonra tekrar deneyin."
+
+#: dockwidget.cpp:138
+msgid "Temperature: "
+msgstr "Sıcaklık:"
+
+#: dockwidget.cpp:139
+msgid ""
+"\n"
+"Wind: "
+msgstr ""
+"\n"
+"Rüzgar: "
+
+#: dockwidget.cpp:140
+msgid ""
+"\n"
+"Air pressure: "
+msgstr ""
+"\n"
+"Hava Basıncı: "
+
+#: kcmweather.cpp:78
+msgid "kcmweather"
+msgstr "kcmweather"
+
+#: kcmweather.cpp:79 kcmweatherservice.cpp:56
+msgid "KWeather Configure Dialog"
+msgstr "KWeather Ayar Penceresi"
+
+#: kcmweather.cpp:81 kcmweatherservice.cpp:58
+msgid "(c), 2003 Tobias Koenig"
+msgstr "(c), 2003 Tobias Koenig"
+
+#: kcmweather.cpp:83 kcmweatherservice.cpp:60
+msgid "Tobias Koenig"
+msgstr "Tobias Koenig"
+
+#: kweather.cpp:92
+#, kde-format
+msgid "KWeather - %1"
+msgstr "KWeather - %1"
+
+#: kweather.cpp:93
+msgid "Show &Report"
+msgstr "&Raporu Göster"
+
+#: kweather.cpp:95
+msgid "&Update Now"
+msgstr "Ş&imdi Güncelle"
+
+#: kweather.cpp:98
+msgid "&About KWeather"
+msgstr "&KWeather Hakkında..."
+
+#: kweather.cpp:100
+msgid "&Configure KWeather..."
+msgstr "&KWeather'i Yapılandır..."
+
+#: kweather.cpp:122
+msgid "KWeather"
+msgstr "KWeather"
+
+#: kweather.cpp:123
+msgid "Weather applet for the Kicker"
+msgstr "Kicker için hava durumu programcığı"
+
+#: kweather.cpp:124 main.cpp:17 reportmain.cpp:41
+msgid "Ian Reinhart Geiser"
+msgstr "Ian Reinhart Geiser"
+
+#: kweather.cpp:127 main.cpp:18 reportmain.cpp:43
+msgid "Nadeem Hasan"
+msgstr "Nadeem Hasan"
+
+#: kweather.cpp:127
+msgid "Lots of bugfixes, improvements and cleanups."
+msgstr "Hata düzeltmeleri, yenilikler ve temizlik"
+
+#: kweather.cpp:129
+msgid "Will Andrews"
+msgstr "Will Andrews"
+
+#: kweather.cpp:129
+msgid "Fixed for BSD port"
+msgstr "BSD'ye aktarım için düzeltildi"
+
+#: kweather.cpp:131
+msgid "Ben Burton"
+msgstr "Ben Burton"
+
+#: kweather.cpp:131
+msgid "Debian fixes"
+msgstr "Debian hata düzeltmeleri"
+
+#: kweather.cpp:132
+msgid "Otto Bruggeman"
+msgstr "Otto Bruggeman"
+
+#: kweather.cpp:132
+msgid "Fixed the i18n stuff and made sure the indentation was consistent :P"
+msgstr "i18n düzeltmeleri ve girintilemelerin tutarlılığının denetimi :P"
+
+#: kweather.cpp:134
+msgid "Carles Carbonell Bernado"
+msgstr "Carles Carbonell Bernado"
+
+#: kweather.cpp:135
+msgid "Great new weather icons"
+msgstr "Büyük yeni hava simgeleri"
+
+#: kweather.cpp:136
+msgid "John Ratke"
+msgstr "John Ratke"
+
+#: kweather.cpp:137
+msgid "Improvements and more code cleanups"
+msgstr "Hata düzeltmeleri yenilikler ve temizlik"
+
+#: kweather.cpp:261
+msgid ""
+"For some reason the log file could not be written to.\n"
+"Please check to see if your disk is full or if you have write access to the "
+"location you are trying to write to."
+msgstr ""
+"Günlük dosyası diske kaydedilemedi.\n"
+"Lütfen diskinizin dolu olup olmadığından veya yazmak istediğiniz konuma "
+"yazma hakkınızın olduğundan emin olun."
+
+#: kweather.cpp:265 kweather.cpp:346 weatherlib.cpp:138 weatherlib.cpp:147
+#: weatherlib.cpp:160
+msgid "KWeather Error"
+msgstr "KWeather Hatası"
+
+#: kweather.cpp:343
+msgid ""
+"For some reason a new log file could not be opened.\n"
+"Please check to see if your disk is full or if you have write access to the "
+"location you are trying to write to."
+msgstr ""
+"Bazı nedenlerle günlük dosyası açılamadı.\n"
+"Lütfen diskinizin dolu olup olmadığından veya yazmak istediğiniz konuma "
+"yazma hakkınızın olduğundan emin olun."
+
+#: main.cpp:14
+msgid "KDE"
+msgstr "KDE"
+
+#: main.cpp:15
+msgid "KWeather D-Bus Service"
+msgstr "KWeather D-Bus Servisi"
+
+#: main.cpp:16
+msgid "(C) 2002, Ian Reinhart Geiser"
+msgstr "(C) 2002, Ian Reinhart Geiser"
+
+#: main.cpp:17 main.cpp:18 reportmain.cpp:41 reportmain.cpp:43
+msgid "Developer"
+msgstr "Geliştirici"
+
+#: main.cpp:19
+msgid "Laurent Montel"
+msgstr "Laurent Montel"
+
+#: main.cpp:19
+msgid "Conversion to D-Bus"
+msgstr "D-Bus Dönüşümü"
+
+#: metar_parser.cpp:163
+#, kde-format
+msgid "1 meter"
+msgid_plural "%1 meters"
+msgstr[0] "%1 metre"
+
+#: metar_parser.cpp:168
+#, kde-format
+msgid "1 foot"
+msgid_plural "%1 feet"
+msgstr[0] "%1 fit"
+
+#: metar_parser.cpp:173
+#, kde-format
+msgid "Few clouds at %1"
+msgstr "%1 üzerinde biraz bulutlu"
+
+#: metar_parser.cpp:178
+#, kde-format
+msgid "Scattered clouds at %1"
+msgstr "%1 yüksekliğinde parçalı bulutlu"
+
+#: metar_parser.cpp:183
+#, kde-format
+msgid "Broken clouds at %1"
+msgstr "%1 üzerinde parçalı bulut"
+
+#: metar_parser.cpp:188
+#, kde-format
+msgid "Overcast clouds at %1"
+msgstr "%1 fitte kapalı hava"
+
+#: metar_parser.cpp:193
+msgid "Clear skies"
+msgstr "Açık gökyüzü"
+
+#: metar_parser.cpp:219
+msgid "Heavy"
+msgstr "Ağır"
+
+#: metar_parser.cpp:224
+msgid "Light"
+msgstr "Hafif"
+
+#: metar_parser.cpp:230
+msgid "Shallow"
+msgstr "Yüzeysel "
+
+#: metar_parser.cpp:232
+msgid "Partial"
+msgstr "Kısmi "
+
+#: metar_parser.cpp:234
+msgid "Patches"
+msgstr "Yamalar"
+
+#: metar_parser.cpp:236
+msgid "Low Drifting"
+msgstr "Hafif Akıntı"
+
+#: metar_parser.cpp:238
+msgid "Blowing"
+msgstr "Esinti"
+
+#: metar_parser.cpp:241
+msgid "Showers"
+msgstr "Sağanak"
+
+#: metar_parser.cpp:246
+msgid "Thunder Storm"
+msgstr "Gök Gürültüsü"
+
+#: metar_parser.cpp:251
+msgid "Freezing"
+msgstr "Dondurucu"
+
+#: metar_parser.cpp:257
+msgid "Drizzle"
+msgstr "Çiseleyen Yağmur"
+
+#: metar_parser.cpp:262
+msgid "Rain"
+msgstr "Yağmur"
+
+#: metar_parser.cpp:267
+msgid "Snow"
+msgstr "Kar"
+
+#: metar_parser.cpp:272
+msgid "Snow Grains"
+msgstr "Kar Taneleri"
+
+#: metar_parser.cpp:277
+msgid "Ice Crystals"
+msgstr "Buz Kristalleri"
+
+#: metar_parser.cpp:282
+msgid "Ice Pellets"
+msgstr "Buz Pelteleri"
+
+#: metar_parser.cpp:287
+msgid "Hail"
+msgstr "Dolu"
+
+#: metar_parser.cpp:292
+msgid "Small Hail Pellets"
+msgstr "Küçük Dolu Taneleri"
+
+#: metar_parser.cpp:297
+msgid "Unknown Precipitation"
+msgstr "Bilinmeyen Çökelti"
+
+#: metar_parser.cpp:302
+msgid "Mist"
+msgstr "Duman"
+
+#: metar_parser.cpp:311
+msgid "Fog"
+msgstr "Sis"
+
+#: metar_parser.cpp:319
+msgid "Smoke"
+msgstr "Duman"
+
+#: metar_parser.cpp:321
+msgid "Volcanic Ash"
+msgstr "Volkanik Kül"
+
+#: metar_parser.cpp:323
+msgid "Widespread Dust"
+msgstr "Geniş Toz Bulutu"
+
+#: metar_parser.cpp:325
+msgid "Sand"
+msgstr "Kum"
+
+#: metar_parser.cpp:327
+msgid "Haze"
+msgstr "Pus"
+
+#: metar_parser.cpp:329
+msgid "Spray"
+msgstr "Serpinti"
+
+#: metar_parser.cpp:331
+msgid "Dust/Sand Swirls"
+msgstr "Kum/Toz Anaforları"
+
+#: metar_parser.cpp:333
+msgid "Sudden Winds"
+msgstr "Ani Rüzgarlar"
+
+#: metar_parser.cpp:337
+msgid "Tornado"
+msgstr "Bora"
+
+#: metar_parser.cpp:339
+msgid "Funnel Cloud"
+msgstr "Bulut Hortumu"
+
+#: metar_parser.cpp:342
+msgid "Sand Storm"
+msgstr "Kum Fırtınası"
+
+#: metar_parser.cpp:344
+msgid "Dust Storm"
+msgstr "Toz Fırtınası"
+
+#: metar_parser.cpp:346
+#, kde-format
+msgctxt "%1 is the intensity, %2 is the descriptor and %3 is the phenomena"
+msgid "%1 %2 %3"
+msgstr "%1 %2 %3"
+
+#: metar_parser.cpp:438 metar_parser.cpp:807
+msgid "°C"
+msgstr "°C"
+
+#: metar_parser.cpp:446 metar_parser.cpp:813
+msgid "°F"
+msgstr "°F"
+
+#: metar_parser.cpp:544
+msgid "km"
+msgstr "km"
+
+#: metar_parser.cpp:549
+msgid "m"
+msgstr "m"
+
+#: metar_parser.cpp:575
+msgid " hPa"
+msgstr " hPa"
+
+#: metar_parser.cpp:584
+msgid "\" Hg"
+msgstr "\" Hg"
+
+#: metar_parser.cpp:599 metar_parser.cpp:615 metar_parser.cpp:616
+msgid "N"
+msgstr "K"
+
+#: metar_parser.cpp:600
+msgid "NNE"
+msgstr "KKD"
+
+#: metar_parser.cpp:601
+msgid "NE"
+msgstr "KD"
+
+#: metar_parser.cpp:602
+msgid "ENE"
+msgstr "DKD"
+
+#: metar_parser.cpp:603
+msgid "E"
+msgstr "D"
+
+#: metar_parser.cpp:604
+msgid "ESE"
+msgstr "DGD"
+
+#: metar_parser.cpp:605
+msgid "SE"
+msgstr "GD"
+
+#: metar_parser.cpp:606
+msgid "SSE"
+msgstr "GGD"
+
+#: metar_parser.cpp:607
+msgid "S"
+msgstr "G"
+
+#: metar_parser.cpp:608
+msgid "SSW"
+msgstr "GGB"
+
+#: metar_parser.cpp:609
+msgid "SW"
+msgstr "GB"
+
+#: metar_parser.cpp:610
+msgid "WSW"
+msgstr "BGB"
+
+#: metar_parser.cpp:611
+msgid "W"
+msgstr "B"
+
+#: metar_parser.cpp:612
+msgid "WNW"
+msgstr "BKB"
+
+#: metar_parser.cpp:613
+msgid "NW"
+msgstr "KB"
+
+#: metar_parser.cpp:614
+msgid "NNW"
+msgstr "KKB"
+
+#: metar_parser.cpp:662
+#, kde-format
+msgid "1 km/h"
+msgid_plural "%1 km/h"
+msgstr[0] "%1 km/h"
+
+#: metar_parser.cpp:682
+#, kde-format
+msgid "1 MPH"
+msgid_plural "%1 MPH"
+msgstr[0] "%1 MPH"
+
+#: metar_parser.cpp:689
+#, kde-format
+msgid "Wind gusts up to 1 km/h"
+msgid_plural "Wind gusts up to %1 km/h"
+msgstr[0] "Rüzgar Saatte %1 Km hıza çıkıyor"
+
+#: metar_parser.cpp:694
+#, kde-format
+msgid "Wind gusts up to 1 MPH"
+msgid_plural "Wind gusts up to %1 MPH"
+msgstr[0] "Rüzgar Saatte %1 mil hıza çıkıyor"
+
+#: metar_parser.cpp:824 metar_parser.cpp:825 stationdatabase.cpp:90
+#: stationdatabase.cpp:112 stationdatabase.cpp:134 stationdatabase.cpp:156
+#: weatherservice.cpp:301 weatherservice.cpp:302 weatherservice.cpp:304
+msgid "Unknown Station"
+msgstr " Bilinmeyen İstasyon"
+
+#. i18n: file: prefdialogdata.ui:45
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox2)
+#: rc.cpp:3
+msgid "Weather Station Options"
+msgstr "Meteoroloji İstasyon Seçenekleri"
+
+#. i18n: file: prefdialogdata.ui:54
+#. i18n: ectx: property (text), widget (QLabel, TextLabel1_4_2_2)
+#: rc.cpp:6
+msgid "&Location:"
+msgstr "&Konum:"
+
+#. i18n: file: prefdialogdata.ui:112
+#. i18n: ectx: property (title), widget (Q3ButtonGroup, m_viewMode)
+#: rc.cpp:9
+msgid "Panel Display Options"
+msgstr "Panel Görüntü Seçenekleri"
+
+#. i18n: file: prefdialogdata.ui:135
+#. i18n: ectx: property (text), widget (QRadioButton, m_smallView)
+#: rc.cpp:12
+msgid "&Show icon only"
+msgstr "&Sadece simge göster"
+
+#. i18n: file: prefdialogdata.ui:141
+#. i18n: ectx: property (toolTip), widget (QRadioButton, m_smallView)
+#: rc.cpp:15
+msgid "<qt>Click here to show only the weather icon.</qt>"
+msgstr "<qt>Sadece hava durumu ikonunu görmek için buraya tıklayın.</qt>"
+
+#. i18n: file: prefdialogdata.ui:144
+#. i18n: ectx: property (whatsThis), widget (QRadioButton, m_smallView)
+#: rc.cpp:18
+msgid ""
+"This feature will allow you to make KWeather take up only one slot on the "
+"kicker. Normally this application will take up two slots. The small view "
+"will only show the weather icon, while the normal view will display both the "
+"icon and the current weather statistics. For the small view the weather "
+"statistics will be put on the buttons tool tip."
+msgstr ""
+"Bu özellik KWeather'ın kickerda sadece bir yuva kaplamasını sağlayacak. "
+"Normalde bu uygulama iki yuva kaplar. Küçük görünümde sadece hava durumu "
+"simgesi görünürken normal görünümde hem simge, hem de şimdiki hava durumu "
+"istatistikleri görünür. Küçük görünümde, hava durumu istatistikleri, "
+"düğmenin ipucunda görünecek."
+
+#. i18n: file: prefdialogdata.ui:151
+#. i18n: ectx: property (text), widget (QRadioButton, CheckBox9)
+#: rc.cpp:21
+msgid "Show &icon and temperature"
+msgstr "Simge &ve sıcaklığı göster"
+
+#. i18n: file: prefdialogdata.ui:161
+#. i18n: ectx: property (text), widget (QRadioButton, CheckBox10)
+#: rc.cpp:24
+msgid "Show icon, temperature, &wind and pressure information"
+msgstr "S&imge, sıcaklık, rüzgar ve basınç bilgisini göster"
+
+#. i18n: file: prefdialogdata.ui:185
+#. i18n: ectx: property (title), widget (QGroupBox, GroupBox1)
+#: rc.cpp:27
+msgid "Logging Options"
+msgstr "Günlük Kayıt Seçenekleri"
+
+#. i18n: file: prefdialogdata.ui:194
+#. i18n: ectx: property (text), widget (QCheckBox, m_enableLog)
+#: rc.cpp:30
+msgid "E&nable logging"
+msgstr "Günlük kaydını &Etkinleştir"
+
+#. i18n: file: prefdialogdata.ui:220
+#. i18n: ectx: property (text), widget (QLabel, m_labelLogFile)
+#: rc.cpp:33
+msgid "Log &file:"
+msgstr "Günlük &dosyası:"
+
+#. i18n: file: prefdialogdata.ui:242
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, m_logFile)
+#: rc.cpp:36
+msgid "Enter the logfile name."
+msgstr "Günlük dosyasının adını verin:"
+
+#. i18n: file: prefdialogdata.ui:245
+#. i18n: ectx: property (whatsThis), widget (KUrlRequester, m_logFile)
+#: rc.cpp:39
+msgid "Enter the full path and filename to enable logging in KWeather."
+msgstr ""
+"KWeather'da günlüğü etkinleştirmek için dosyanın tam yolunu ve ismini girin."
+
+#. i18n: file: prefdialogdata.ui:255
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
+#: rc.cpp:42
+msgid "Text"
+msgstr "Metin"
+
+#. i18n: file: prefdialogdata.ui:269
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:45
+msgid "Color:"
+msgstr "Renk:"
+
+#. i18n: file: serviceconfigdata.ui:20
+#. i18n: ectx: property (text), widget (KPushButton, mAddButton)
+#: rc.cpp:48
+msgid "A&dd"
+msgstr "&Ekle"
+
+#. i18n: file: serviceconfigdata.ui:27
+#. i18n: ectx: property (text), widget (QLabel, textLabel2)
+#: rc.cpp:51
+msgid "Se&lected stations:"
+msgstr "&Seçilen istasyonlar:"
+
+#. i18n: file: serviceconfigdata.ui:40
+#. i18n: ectx: property (text), widget (QLabel, textLabel1)
+#: rc.cpp:54
+msgid "A&vailable stations:"
+msgstr "&Mevcut istasyonlar:"
+
+#. i18n: file: serviceconfigdata.ui:90
+#. i18n: ectx: property (text), widget (K3ListView, mSelectedStations)
+#: rc.cpp:57
+msgid "Selected"
+msgstr "Seçilen"
+
+#. i18n: file: serviceconfigdata.ui:104
+#. i18n: ectx: property (text), widget (KPushButton, mRemoveButton)
+#: rc.cpp:60
+msgid "&Remove"
+msgstr "&Sil"
+
+#. i18n: file: serviceconfigdata.ui:151
+#. i18n: ectx: property (text), widget (K3ListView, mAllStations)
+#: rc.cpp:63
+msgid "All"
+msgstr "Tümü"
+
+#. i18n: file: serviceconfigdata.ui:170
+#. i18n: ectx: property (text), widget (KPushButton, mExit)
+#: rc.cpp:66
+msgid "&Stop Weather Service"
+msgstr "H&ava Servisini Durdur"
+
+#. i18n: file: serviceconfigdata.ui:177
+#. i18n: ectx: property (text), widget (KPushButton, mUpdate)
+#: rc.cpp:69
+msgid "&Update All"
+msgstr "&Tümünü Güncelle"
+
+#. i18n: file: sidebarwidgetbase.ui:25
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:72
+msgid "Station Manager"
+msgstr "İstasyon Yöneticisi"
+
+#. i18n: file: sidebarwidgetbase.ui:49
+#. i18n: ectx: property (text), widget (KPushButton)
+#: rc.cpp:75
+msgid "Add"
+msgstr "Ekle"
+
+#. i18n: file: sidebarwidgetbase.ui:78
+#. i18n: ectx: property (title), widget (QGroupBox)
+#: rc.cpp:78 reportmain.cpp:38
+msgid "Weather Report"
+msgstr "Hava Raporu"
+
+#: rc.cpp:79
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:80
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#: reportmain.cpp:39
+msgid "Weather Report for KWeatherService"
+msgstr "KWeatherService için hava raporu"
+
+#: reportmain.cpp:40
+msgid "(C) 2002-2003, Ian Reinhart Geiser"
+msgstr "(C) 2002-2003, Ian Reinhart Geiser"
+
+#: reportmain.cpp:51
+msgid "METAR location code for the report"
+msgstr "Rapor için METAR konum kodu."
+
+#: reportview.cpp:103
+#, kde-format
+msgid "Weather Report - %1"
+msgstr "Hava Durumu Raporu - %1"
+
+#: reportview.cpp:109
+msgid "Station reports that it needs maintenance"
+msgstr "İstasyon bakıma ihtiyacı olduğunu rapor ediyor"
+
+#: reportview.cpp:131
+#, kde-format
+msgid "Weather Report - %1 - %2"
+msgstr "Hava Durumu Raporu - %1 - %2"
+
+#: reportview.cpp:135
+#, kde-format
+msgid "Latest data from %1"
+msgstr "Son verilerin alınma zamanı %1"
+
+#: weatherbar.cpp:164
+msgid "Sidebar Weather Report"
+msgstr "Hava Raporu Kenar Çubuğu"
+
+#: weatherlib.cpp:139
+#, kde-format
+msgid "The temp file %1 was empty."
+msgstr "%1 geçici dosyası boş."
+
+#: weatherlib.cpp:148
+#, kde-format
+msgid "Could not read the temp file %1."
+msgstr "%1 geçici dosyası okunamadı."
+
+#: weatherlib.cpp:161
+msgid "The requested station does not exist."
+msgstr "İstenen istasyon yok."
+
+#: weatherlib.cpp:170
+msgid "Please update later."
+msgstr "Lütfen daha sonra güncelleyiniz."
+
+#: weatherlib.cpp:218
+msgid "Retrieving weather data..."
+msgstr "Hava verilerine yeniden ulaşılıyor..."

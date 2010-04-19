@@ -1,0 +1,1986 @@
+# translation of konsole.po to Turkish
+# translation of konsole.po to
+# Turkish translation of konsole.
+# Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
+#
+# Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
+# Mehmet Tarımcı <mehmet@gelecek.com.tr>, 2002.
+# Görkem Çetin <gorkem@kde.org>, 2003, 2004.
+# Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
+# Görkem Çetin <gorkem@kde.org.tr>, 2005.
+# Bekir SONAT <cortexbs@yahoo.com>, 2005.
+# Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Serdar Soytetir <serdar@kde.org.tr>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: konsole\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-16 01:20+0200\n"
+"PO-Revision-Date: 2009-09-26 15:04+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: BookmarkHandler.cpp:134
+#, kde-format
+msgid "%1 on %2"
+msgstr "%2 üzerine %1"
+
+#: BookmarkHandler.cpp:136
+#, kde-format
+msgid "%1"
+msgstr "%1"
+
+#: ColorScheme.cpp:93
+msgid "Foreground"
+msgstr "Önplan"
+
+#: ColorScheme.cpp:94
+msgid "Background"
+msgstr "Arkaplan"
+
+#: ColorScheme.cpp:95
+msgid "Color 1"
+msgstr "Renk 1"
+
+#: ColorScheme.cpp:96
+msgid "Color 2"
+msgstr "Renk 2"
+
+#: ColorScheme.cpp:97
+msgid "Color 3"
+msgstr "Renk 3"
+
+#: ColorScheme.cpp:98
+msgid "Color 4"
+msgstr "Renk 4"
+
+#: ColorScheme.cpp:99
+msgid "Color 5"
+msgstr "Renk 5"
+
+#: ColorScheme.cpp:100
+msgid "Color 6"
+msgstr "Renk 6"
+
+#: ColorScheme.cpp:101
+msgid "Color 7"
+msgstr "Renk 7"
+
+#: ColorScheme.cpp:102
+msgid "Color 8"
+msgstr "Renk 8"
+
+#: ColorScheme.cpp:103
+msgid "Foreground (Intense)"
+msgstr "Önplan (Keskin)"
+
+#: ColorScheme.cpp:104
+msgid "Background (Intense)"
+msgstr "Arkaplan (Keskin)"
+
+#: ColorScheme.cpp:105
+msgid "Color 1 (Intense)"
+msgstr "Renk 1 (Keskin)"
+
+#: ColorScheme.cpp:106
+msgid "Color 2 (Intense)"
+msgstr "Renk 2 (Keskin)"
+
+#: ColorScheme.cpp:107
+msgid "Color 3 (Intense)"
+msgstr "Renk 3 (Keskin)"
+
+#: ColorScheme.cpp:108
+msgid "Color 4 (Intense)"
+msgstr "Renk 4 (Keskin)"
+
+#: ColorScheme.cpp:109
+msgid "Color 5 (Intense)"
+msgstr "Renk 5 (Keskin)"
+
+#: ColorScheme.cpp:110
+msgid "Color 6 (Intense)"
+msgstr "Renk 6 (Keskin)"
+
+#: ColorScheme.cpp:111
+msgid "Color 7 (Intense)"
+msgstr "Renk 7 (Keskin)"
+
+#: ColorScheme.cpp:112
+msgid "Color 8 (Intense)"
+msgstr "Renk 8 (Keskin)"
+
+#: ColorScheme.cpp:269
+msgid "Un-named Color Scheme"
+msgstr "İsimlendirilmemiş Renk Şeması"
+
+#: ColorScheme.cpp:386
+msgid "Accessible Color Scheme"
+msgstr "Erişilebilir Renk Şeması"
+
+#: ColorSchemeEditor.cpp:83 ManageProfilesDialog.cpp:222
+msgid "Name"
+msgstr "İsim"
+
+#: ColorSchemeEditor.cpp:83
+msgid "Color"
+msgstr "Renk"
+
+#: ColorSchemeEditor.cpp:103
+msgid ""
+"The background transparency setting will not be used because your desktop "
+"does not appear to support transparent windows."
+msgstr ""
+"Bilgisayarınız şeffaf pencereleri desteklemediğinden arkaplan şeffaflığı "
+"ayarları kullanılamayacak."
+
+#: CopyInputDialog.cpp:35
+msgid "Copy Input"
+msgstr "Girdiyi Kopyala"
+
+#: EditProfileDialog.cpp:63
+msgid "Edit Profile"
+msgstr "Profili Düzenle"
+
+#: EditProfileDialog.cpp:149
+#, kde-format
+msgid "Editing profile: %2"
+msgid_plural "Editing %1 profiles: %2"
+msgstr[0] "%1 profil düzenleniyor: %2"
+
+#: EditProfileDialog.cpp:152
+#, kde-format
+msgid "Edit Profile \"%1\""
+msgstr "\"%1\" Profilini Düzenle"
+
+#: EditProfileDialog.cpp:283
+msgid "Edit Environment"
+msgstr "Çevreyi Düzenle"
+
+#: EditProfileDialog.cpp:309
+msgid "Always Hide Tab Bar"
+msgstr "Sekme Çubuğunu Her Zaman Gizle"
+
+#: EditProfileDialog.cpp:310
+msgid "Show Tab Bar When Needed"
+msgstr "Sekme Çubuğunu Gerektiğinde Göster"
+
+#: EditProfileDialog.cpp:311
+msgid "Always Show Tab Bar"
+msgstr "Sekme Çubuğunu Her Zaman Göster"
+
+#: EditProfileDialog.cpp:316
+msgid "Below Terminal Displays"
+msgstr "Uçbirim Ekranlarının Altında"
+
+#: EditProfileDialog.cpp:317
+msgid "Above Terminal Displays"
+msgstr "Uçbirim Ekranlarının Üstünde"
+
+#: EditProfileDialog.cpp:413
+msgid "Select Initial Directory"
+msgstr "Başlangıç Dizinini Seç"
+
+#: EditProfileDialog.cpp:430
+msgid ""
+"This color scheme uses a transparent background which does not appear to be "
+"supported on your desktop"
+msgstr ""
+"Bu renk şeması masaüstünüz tarafından desteklenmiyor görünen saydam arkaplan "
+"kullanıyor"
+
+#: EditProfileDialog.cpp:596
+#, kde-format
+msgid "%1, size %2"
+msgstr "%1, boyut %2"
+
+#: EditProfileDialog.cpp:709 EditProfileDialog.cpp:718
+msgid "New Color Scheme"
+msgstr "Yeni Renk Şeması"
+
+#: EditProfileDialog.cpp:711
+msgid "Edit Color Scheme"
+msgstr "Renk Şemasını Düzenle"
+
+#: EditProfileDialog.cpp:844 EditProfileDialog.cpp:855
+msgid "New Key Binding List"
+msgstr "Yeni Kısayol Listesi"
+
+#: EditProfileDialog.cpp:846
+msgid "Edit Key Binding List"
+msgstr "Kısayol Listesini Düzenle"
+
+#: Filter.cpp:516
+msgid "Open Link"
+msgstr "Bağlantıyı Aç"
+
+#: Filter.cpp:517
+msgid "Copy Link Address"
+msgstr "Bağlantı Adresini Kopyala"
+
+#: Filter.cpp:521
+msgid "Send Email To..."
+msgstr "E-posta olarak Gönder..."
+
+#: Filter.cpp:522
+msgid "Copy Email Address"
+msgstr "E-posta Adresini Kopyala"
+
+#: HistorySizeDialog.cpp:51 SessionController.cpp:528
+msgid "Scrollback Options"
+msgstr "Geçmiş Seçenekleri"
+
+#: HistorySizeDialog.cpp:64
+msgid "No scrollback"
+msgstr "Geçmişi kullanma"
+
+#: HistorySizeDialog.cpp:65
+msgid "Fixed size scrollback: "
+msgstr "Sabit sınırlı geçmiş: "
+
+#. i18n: file: EditProfileDialog.ui:684
+#. i18n: ectx: property (text), widget (QRadioButton, unlimitedScrollbackButton)
+#: HistorySizeDialog.cpp:66 rc.cpp:199 rc.cpp:659
+msgid "Unlimited scrollback"
+msgstr "Sınırsız geçmiş"
+
+#: HistorySizeDialog.cpp:67
+msgid "Save to current profile"
+msgstr "Geçerli profile kaydet"
+
+#: HistorySizeDialog.cpp:87
+msgid "lines"
+msgstr "satır"
+
+#: IncrementalSearchBar.cpp:53
+msgid "Close the search bar"
+msgstr "Arama çubuğunu kapat"
+
+#: IncrementalSearchBar.cpp:58
+msgid "Find:"
+msgstr "Bul:"
+
+#: IncrementalSearchBar.cpp:63
+msgid "Enter the text to search for here"
+msgstr "Aranacak metni buraya girin"
+
+#: IncrementalSearchBar.cpp:82
+msgid "Next"
+msgstr "Sonraki"
+
+#: IncrementalSearchBar.cpp:86
+msgid "Find the next match for the current search phrase"
+msgstr "Geçerli arama ifadesi ile eşleşen sonraki sonucu bul"
+
+#: IncrementalSearchBar.cpp:91
+msgid "Previous"
+msgstr "Önceki"
+
+#: IncrementalSearchBar.cpp:95
+msgid "Find the previous match for the current search phrase"
+msgstr "Geçerli arama ifadesi ile eşleşen önceki sonucu bul"
+
+#: IncrementalSearchBar.cpp:100
+msgid "Highlight all"
+msgstr "Tümünü vurgula"
+
+#: IncrementalSearchBar.cpp:102
+msgid "Sets whether matching text should be highlighted"
+msgstr "Eşleşen metnin vurgulanıp vurgulanmayacağını ayarlar"
+
+#: IncrementalSearchBar.cpp:110
+msgid "Match case"
+msgstr "Eşleşme şartı"
+
+#: IncrementalSearchBar.cpp:112
+msgid "Sets whether the search is case sensitive"
+msgstr "Aramanın büyük küçük harf duyarlı olup olmayacağını ayarlar"
+
+#: IncrementalSearchBar.cpp:118
+msgid "Match regular expression"
+msgstr "Düzenli ifade eşle"
+
+#: IncrementalSearchBar.cpp:120
+msgid ""
+"Sets whether the search phrase is interpreted as normal text or as a regular "
+"expression"
+msgstr ""
+"Aranan ifadenin normal metin olarak mı düzenli ifade olarak mı "
+"yorumlanacağını ayarlar"
+
+#: IncrementalSearchBar.cpp:246
+msgid "Search reached bottom, continued from top."
+msgstr "Arama en aşağıya ulaştı, yukarıdan devam ediliyor."
+
+#: IncrementalSearchBar.cpp:251
+msgid "Search reached top, continued from bottom."
+msgstr "Arama en yukarıya ulaştı, aşağıdan devam ediliyor."
+
+#: KeyBindingEditor.cpp:49
+msgid "Key Combination"
+msgstr "Kısayol Birleşimi"
+
+#: KeyBindingEditor.cpp:49
+msgid "Output"
+msgstr "Çıktı"
+
+#: main.cpp:51
+msgid "Konsole"
+msgstr "Konsole"
+
+#: main.cpp:53
+msgid "Terminal emulator"
+msgstr "Terminal emülatörü"
+
+#: main.cpp:91
+msgid "Name of profile to use for new Konsole instance"
+msgstr "Yeni Konsole sürecinin kullanacağı profil adı"
+
+#: main.cpp:92
+msgid "List the available profiles"
+msgstr "Kullanılabilir profilleri listele"
+
+#: main.cpp:94
+msgid ""
+"Start Konsole in the background and bring to the front when the F12 key is "
+"pressed"
+msgstr ""
+"Konsole uygulamasını arkaplanda başlat ve F12 tuşuna baslınca önplana getir"
+
+#: main.cpp:97
+msgid ""
+"Create a new tab in an existing window rather than creating a new window"
+msgstr ""
+"Yeni bir pencere oluşturmaktansa var olan pencerede yeni bir sekme oluştur"
+
+#: main.cpp:98
+msgid "Set the initial working directory of the new tab or window to 'dir'"
+msgstr "Yeni sekme ya da pencereler için başlangıç çalışma dizini 'dizin'"
+
+#: main.cpp:100
+msgid "Disable transparent backgrounds, even if the system supports them."
+msgstr "Sistem desteklese bile saydam arkaplanları pasifleştir."
+
+#: main.cpp:101
+msgid ""
+"Try to enable transparency, even if the system does not appear to support it."
+msgstr "Sistem desteklemiyor görünse bile saydamlığı etkinleştirmeyi dene."
+
+#: main.cpp:103
+msgid "Do not close the initial session automatically when it ends."
+msgstr "Başlatılan oturumu bittiğinde otomatik olarak kapatma."
+
+#: main.cpp:105
+msgid "Change the value of a profile property."
+msgstr "Bir profil özelliğine ait değeri değiştir."
+
+#: main.cpp:106
+msgid "Command to execute"
+msgstr "Çalıştırılacak komut"
+
+#: main.cpp:107
+msgid "Arguments passed to command"
+msgstr "Argümanlar komuta verildi"
+
+#: main.cpp:112
+msgid "Robert Knight"
+msgstr "Robert Knight"
+
+#: main.cpp:112
+msgid "Maintainer"
+msgstr "Projeyi Sürdüren"
+
+#: main.cpp:113
+msgid "Lars Doelle"
+msgstr "Lars Doelle"
+
+#: main.cpp:113
+msgid "Author"
+msgstr "Yazar"
+
+#: main.cpp:114
+msgid "Kurt V. Hindenburg"
+msgstr "Kurt V. Hindenburg"
+
+#: main.cpp:115 main.cpp:118 main.cpp:121
+msgid "Bug fixes and general improvements"
+msgstr "Hata düzeltmeleri ve diğer geliştirmeler"
+
+#: main.cpp:117
+msgid "Waldo Bastian"
+msgstr "Waldo Bastian"
+
+#: main.cpp:120
+msgid "Stephan Binner"
+msgstr "Stephan Binner"
+
+#: main.cpp:123
+msgid "Thomas Dreibholz"
+msgstr "Thomas Dreibholz"
+
+#: main.cpp:124
+msgid "General improvements"
+msgstr "Genel geliştirmeler"
+
+#: main.cpp:126
+msgid "Chris Machemer"
+msgstr "Chris Machemer"
+
+#: main.cpp:127 main.cpp:163 main.cpp:166 main.cpp:169 main.cpp:172
+msgid "Bug fixes"
+msgstr "Hata düzeltmeleri"
+
+#: main.cpp:129
+msgid "Stephan Kulow"
+msgstr "Stephan Kulow"
+
+#: main.cpp:130
+msgid "Solaris support and history"
+msgstr "Solaris desteği ve geçmiş özelliği"
+
+#: main.cpp:132
+msgid "Alexander Neundorf"
+msgstr "Alexander Neundorf"
+
+#: main.cpp:133
+msgid "Bug fixes and improved startup performance"
+msgstr "Hata düzeltmeleri ve başlangıç performansı"
+
+#: main.cpp:135
+msgid "Peter Silva"
+msgstr "Peter Silva"
+
+#: main.cpp:136
+msgid "Marking improvements"
+msgstr "İşaretleme geliştirmeleri"
+
+#: main.cpp:138
+msgid "Lotzi Boloni"
+msgstr "Lotzi Boloni"
+
+#: main.cpp:139
+msgid ""
+"Embedded Konsole\n"
+"Toolbar and session names"
+msgstr ""
+"Gömülü Konsole\n"
+"Araç çubuğu ve oturum isimleri"
+
+#: main.cpp:142
+msgid "David Faure"
+msgstr "David Faure"
+
+#: main.cpp:143
+msgid ""
+"Embedded Konsole\n"
+"General improvements"
+msgstr ""
+"Gömülü Konsole\n"
+"Genel geliştirmeler"
+
+#: main.cpp:146
+msgid "Antonio Larrosa"
+msgstr "Antonio Larrosa"
+
+#: main.cpp:147
+msgid "Visual effects"
+msgstr "Görsel efektler"
+
+#: main.cpp:149
+msgid "Matthias Ettrich"
+msgstr "Matthias Ettrich"
+
+#: main.cpp:150
+msgid ""
+"Code from the kvt project\n"
+"General improvements"
+msgstr ""
+"Kvt projesinden kodlar\n"
+"Genel iyileştirmeler"
+
+#: main.cpp:153
+msgid "Warwick Allison"
+msgstr "Warwick Allison"
+
+#: main.cpp:154
+msgid "Schema and text selection improvements"
+msgstr "Şema ve metin seçme geliştirmeleri"
+
+#: main.cpp:156
+msgid "Dan Pilone"
+msgstr "Dan Pilone"
+
+#: main.cpp:157
+msgid "SGI port"
+msgstr "SGI ortamına aktarma"
+
+#: main.cpp:159
+msgid "Kevin Street"
+msgstr "Kevin Street"
+
+#: main.cpp:160
+msgid "FreeBSD port"
+msgstr "FreeBSD'ye Aktarma"
+
+#: main.cpp:162
+msgid "Sven Fischer"
+msgstr "Sven Fischer"
+
+#: main.cpp:165
+msgid "Dale M. Flaven"
+msgstr "Dale M. Flaven"
+
+#: main.cpp:168
+msgid "Martin Jones"
+msgstr "Martin Jones"
+
+#: main.cpp:171
+msgid "Lars Knoll"
+msgstr "Lars Knoll"
+
+#: main.cpp:174
+msgid "Thanks to many others.\n"
+msgstr "Diğer kişilere teşekkürler.\n"
+
+#: MainWindow.cpp:235
+msgid "New &Tab"
+msgstr "Yeni &Sekme"
+
+#: MainWindow.cpp:241
+msgid "New &Window"
+msgstr "&Yeni Pencere"
+
+#: MainWindow.cpp:246
+msgid "Remote Connection..."
+msgstr "Uzak Bağlantı..."
+
+#: MainWindow.cpp:257
+msgid "&Bookmarks"
+msgstr "&Yer İmleri"
+
+#: MainWindow.cpp:268
+msgid "Show Menu Bar"
+msgstr "Menü çubuğunu göster"
+
+#: MainWindow.cpp:290 Part.cpp:117
+msgid "Manage Profiles..."
+msgstr "Profilleri Yönet..."
+
+#: MainWindow.cpp:363
+msgid "You have multiple tabs in this window, are you sure you want to quit?"
+msgstr ""
+"Bu pencerede birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
+
+#: MainWindow.cpp:365 SessionController.cpp:633
+msgid "Confirm Close"
+msgstr "Kapatmayı Doğrula"
+
+#: MainWindow.cpp:367
+msgid "Close Current Tab"
+msgstr "Geçerli Sekmeyi Kapat"
+
+#: ManageProfilesDialog.cpp:48
+msgid "Manage Profiles"
+msgstr "Profilleri Yönet"
+
+#: ManageProfilesDialog.cpp:223
+msgid "Show in Menu"
+msgstr "Menüde Göster"
+
+#: ManageProfilesDialog.cpp:224
+msgid "Shortcut"
+msgstr "Kısayol"
+
+#: ManageProfilesDialog.cpp:350
+msgid "New Profile"
+msgstr "Yeni Profil"
+
+#: Profile.cpp:145
+msgid "Shell"
+msgstr "Kabuk"
+
+#: ProfileList.cpp:48
+msgid "No profiles available"
+msgstr "Kullanılabilir profil yok"
+
+#. i18n: file: ColorSchemeEditor.ui:21
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: KeyBindingEditor.ui:21
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#. i18n: file: ColorSchemeEditor.ui:21
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: file: KeyBindingEditor.ui:21
+#. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
+#: rc.cpp:3 rc.cpp:344 rc.cpp:427 rc.cpp:804
+msgid "Description:"
+msgstr "Tanım:"
+
+#. i18n: file: ColorSchemeEditor.ui:41
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:6 rc.cpp:430
+msgid "Background transparency:"
+msgstr "Arkaplan şeffaflığı"
+
+#. i18n: file: ColorSchemeEditor.ui:61
+#. i18n: ectx: property (text), widget (QLabel, transparencyPercentLabel)
+#: rc.cpp:9 rc.cpp:433
+msgid "Percent"
+msgstr "Yüzde"
+
+#. i18n: file: ColorSchemeEditor.ui:73
+#. i18n: ectx: property (text), widget (QCheckBox, randomizedBackgroundCheck)
+#: rc.cpp:12 rc.cpp:436
+msgid "Vary the background color for each tab"
+msgstr "Her sekme için arkaplan rengini değiştir"
+
+#. i18n: file: CopyInputDialog.ui:18
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:15 rc.cpp:439
+msgid "Filter:"
+msgstr "Filtrele:"
+
+#. i18n: file: CopyInputDialog.ui:45
+#. i18n: ectx: property (text), widget (QPushButton, selectAllButton)
+#: rc.cpp:18 rc.cpp:442
+msgid "Select All"
+msgstr "Tümünü Seç"
+
+#. i18n: file: CopyInputDialog.ui:52
+#. i18n: ectx: property (text), widget (QPushButton, deselectAllButton)
+#: rc.cpp:21 rc.cpp:445
+msgid "Deselect All"
+msgstr "Hiçbirini Seçme"
+
+#. i18n: file: EditProfileDialog.ui:40
+#. i18n: ectx: attribute (title), widget (QWidget, generalTab)
+#. i18n: file: EditProfileDialog.ui:46
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_10)
+#. i18n: file: EditProfileDialog.ui:40
+#. i18n: ectx: attribute (title), widget (QWidget, generalTab)
+#. i18n: file: EditProfileDialog.ui:46
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_10)
+#: rc.cpp:24 rc.cpp:27 rc.cpp:484 rc.cpp:487
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: EditProfileDialog.ui:55
+#. i18n: ectx: property (text), widget (QLabel, profileNameLabel)
+#: rc.cpp:30 rc.cpp:490
+msgid "Profile name:"
+msgstr "Profil adı:"
+
+#. i18n: file: EditProfileDialog.ui:65
+#. i18n: ectx: property (toolTip), widget (KLineEdit, profileNameEdit)
+#: rc.cpp:33 rc.cpp:493
+msgid "A descriptive name for the profile"
+msgstr "Profil için tanımlayıcı bir isim"
+
+#. i18n: file: EditProfileDialog.ui:72
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: rc.cpp:36 rc.cpp:496
+msgid "Command:"
+msgstr "Komut:"
+
+#. i18n: file: EditProfileDialog.ui:82
+#. i18n: ectx: property (toolTip), widget (KLineEdit, commandEdit)
+#: rc.cpp:39 rc.cpp:499
+msgid ""
+"The command to execute when new terminal sessions are created using this "
+"profile"
+msgstr ""
+"Bu profil kullanılarak oluşturulan yeni uçbirim oturumu açıldığında "
+"çalıştırılacak komut"
+
+#. i18n: file: EditProfileDialog.ui:92
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: rc.cpp:42 rc.cpp:502
+msgid "Initial directory:"
+msgstr "Başlangıç dizini:"
+
+#. i18n: file: EditProfileDialog.ui:102
+#. i18n: ectx: property (toolTip), widget (KLineEdit, initialDirEdit)
+#: rc.cpp:45 rc.cpp:505
+msgid ""
+"The initial working directory for new terminal sessions using this profile"
+msgstr ""
+"Bu profil kullanılarak yeni uçbirim oturumu açıldığında kullanılacak "
+"başlangıç çalışma dizini"
+
+#. i18n: file: EditProfileDialog.ui:112
+#. i18n: ectx: property (toolTip), widget (QToolButton, dirSelectButton)
+#: rc.cpp:48 rc.cpp:508
+msgid "Browse for initial directory"
+msgstr "Başlangıç dizini için gözat"
+
+#. i18n: file: EditProfileDialog.ui:115
+#. i18n: ectx: property (text), widget (QToolButton, dirSelectButton)
+#: rc.cpp:51 rc.cpp:511
+msgid "..."
+msgstr "..."
+
+#. i18n: file: EditProfileDialog.ui:122
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#: rc.cpp:54 rc.cpp:514
+msgid "Icon:"
+msgstr "Simge:"
+
+#. i18n: file: EditProfileDialog.ui:150
+#. i18n: ectx: property (toolTip), widget (QPushButton, iconSelectButton)
+#: rc.cpp:57 rc.cpp:517
+msgid "Select the icon displayed on tabs using this profile"
+msgstr "Bu profilde sekmeler üzerinde gösterilecek simgeyi seç"
+
+#. i18n: file: EditProfileDialog.ui:179
+#. i18n: ectx: property (text), widget (QLabel, environmentLabel)
+#: rc.cpp:60 rc.cpp:520
+msgid "Environment:"
+msgstr "Çevre:"
+
+#. i18n: file: EditProfileDialog.ui:189
+#. i18n: ectx: property (toolTip), widget (QPushButton, environmentEditButton)
+#: rc.cpp:63 rc.cpp:523
+msgid "Edit the list of environment variables and associated values"
+msgstr "Çevresel değişkenler ve ilgili değerler listesini düzenle"
+
+#. i18n: file: EditProfileDialog.ui:192
+#. i18n: ectx: property (text), widget (QPushButton, environmentEditButton)
+#. i18n: file: EditProfileDialog.ui:456
+#. i18n: ectx: property (text), widget (QPushButton, editColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:824
+#. i18n: ectx: property (text), widget (QPushButton, editKeyBindingsButton)
+#. i18n: file: EditProfileDialog.ui:192
+#. i18n: ectx: property (text), widget (QPushButton, environmentEditButton)
+#. i18n: file: EditProfileDialog.ui:456
+#. i18n: ectx: property (text), widget (QPushButton, editColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:824
+#. i18n: ectx: property (text), widget (QPushButton, editKeyBindingsButton)
+#: rc.cpp:66 rc.cpp:138 rc.cpp:241 rc.cpp:526 rc.cpp:598 rc.cpp:701
+msgid "Edit..."
+msgstr "Düzenle..."
+
+#. i18n: file: EditProfileDialog.ui:199
+#. i18n: ectx: property (text), widget (QCheckBox, startInSameDirButton)
+#: rc.cpp:69 rc.cpp:529
+msgid "Start in same directory as current tab"
+msgstr "Geçerli sekme ile aynı dizinde aç"
+
+#. i18n: file: EditProfileDialog.ui:209
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_12)
+#: rc.cpp:72 rc.cpp:532
+msgid "Window"
+msgstr "Pencere"
+
+#. i18n: file: EditProfileDialog.ui:224
+#. i18n: ectx: property (toolTip), widget (QCheckBox, showMenuBarButton)
+#: rc.cpp:75 rc.cpp:535
+msgid "Show or hide the menu bar in terminal windows"
+msgstr "Uçbirim pencerelerinde menü çubuğunu göster ya da gizle"
+
+#. i18n: file: EditProfileDialog.ui:227
+#. i18n: ectx: property (text), widget (QCheckBox, showMenuBarButton)
+#: rc.cpp:78 rc.cpp:538
+msgid "Show menu bar in new windows"
+msgstr "Yeni pencerelerde menü çubuğunu göster"
+
+#. i18n: file: EditProfileDialog.ui:259
+#. i18n: ectx: attribute (title), widget (QWidget, tabsTab)
+#: rc.cpp:81 rc.cpp:541
+msgid "Tabs"
+msgstr "Sekmeler"
+
+#. i18n: file: EditProfileDialog.ui:265
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
+#: rc.cpp:84 rc.cpp:544
+msgid "Tab Titles"
+msgstr "Sekme Başlıkları"
+
+#. i18n: file: EditProfileDialog.ui:274
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:87 rc.cpp:547
+msgid "Tab title format:"
+msgstr "Sekme başlığı biçimi:"
+
+#. i18n: file: EditProfileDialog.ui:284
+#. i18n: ectx: property (toolTip), widget (KLineEdit, tabTitleEdit)
+#: rc.cpp:90 rc.cpp:550
+msgid "Normal tab title format"
+msgstr "Normal sekme başlığı biçimi"
+
+#. i18n: file: EditProfileDialog.ui:291
+#. i18n: ectx: property (toolTip), widget (QPushButton, tabTitleEditButton)
+#: rc.cpp:93 rc.cpp:553
+msgid "Edit normal tab title format"
+msgstr "Normal sekme başlığı biçimini düzenle"
+
+#. i18n: file: EditProfileDialog.ui:294
+#. i18n: ectx: property (text), widget (QPushButton, tabTitleEditButton)
+#. i18n: file: EditProfileDialog.ui:321
+#. i18n: ectx: property (text), widget (QPushButton, remoteTabTitleEditButton)
+#. i18n: file: EditProfileDialog.ui:294
+#. i18n: ectx: property (text), widget (QPushButton, tabTitleEditButton)
+#. i18n: file: EditProfileDialog.ui:321
+#. i18n: ectx: property (text), widget (QPushButton, remoteTabTitleEditButton)
+#: rc.cpp:96 rc.cpp:108 rc.cpp:556 rc.cpp:568
+msgid "Insert"
+msgstr "Ekle"
+
+#. i18n: file: EditProfileDialog.ui:301
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:99 rc.cpp:559
+msgid "Remote tab title format:"
+msgstr "Uzak sekme başlığı biçimi:"
+
+#. i18n: file: EditProfileDialog.ui:311
+#. i18n: ectx: property (toolTip), widget (KLineEdit, remoteTabTitleEdit)
+#: rc.cpp:102 rc.cpp:562
+msgid ""
+"Tab title format used when a remote command (e.g. connection to another "
+"computer via SSH) is being executed"
+msgstr ""
+"Bir uzak komut (örneğin SSH ile uzak bir makineye bağlanıldığında) "
+"çalıştırıldığında kullanılacak sekme başlığı biçimi"
+
+#. i18n: file: EditProfileDialog.ui:318
+#. i18n: ectx: property (toolTip), widget (QPushButton, remoteTabTitleEditButton)
+#: rc.cpp:105 rc.cpp:565
+msgid "Edit tab title format used when executing remote commands"
+msgstr ""
+"Uzak komutlar çalıştırıldığında kullanılacak sekme başlık biçimini düzenle"
+
+#. i18n: file: EditProfileDialog.ui:331
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: rc.cpp:111 rc.cpp:571
+msgid "Tab Bar"
+msgstr "Sekme Çubuğu"
+
+#. i18n: file: EditProfileDialog.ui:340
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: rc.cpp:114 rc.cpp:574
+msgid "Tab bar display:"
+msgstr "Sekme çubuğu görünümü:"
+
+#. i18n: file: EditProfileDialog.ui:363
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#: rc.cpp:117 rc.cpp:577
+msgid "Tab bar position:"
+msgstr "Sekme çubuğu konumu:"
+
+#. i18n: file: EditProfileDialog.ui:383
+#. i18n: ectx: property (text), widget (QCheckBox, newTabButton)
+#: rc.cpp:120 rc.cpp:580
+msgid "Show 'New Tab' and 'Close Tab' buttons in tab bar"
+msgstr "Sekme Çubuğunda 'Yeni Sekme' ve 'Sekmeyi Kapat' düğmelerini göster"
+
+#. i18n: file: EditProfileDialog.ui:415
+#. i18n: ectx: attribute (title), widget (QWidget, appearanceTab)
+#: rc.cpp:123 rc.cpp:583
+msgid "Appearance"
+msgstr "Görünüm"
+
+#. i18n: file: EditProfileDialog.ui:427
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:126 rc.cpp:586
+msgid "Color Scheme && Background"
+msgstr "Renk Şeması && Arkaplan"
+
+#. i18n: file: EditProfileDialog.ui:443
+#. i18n: ectx: property (toolTip), widget (QPushButton, newColorSchemeButton)
+#: rc.cpp:129 rc.cpp:589
+msgid "Create a new color scheme based upon the selected scheme"
+msgstr "Seçilen şemayı temel alan yeni bir renk şeması oluştur"
+
+#. i18n: file: EditProfileDialog.ui:446
+#. i18n: ectx: property (text), widget (QPushButton, newColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:814
+#. i18n: ectx: property (text), widget (QPushButton, newKeyBindingsButton)
+#. i18n: file: EditProfileDialog.ui:446
+#. i18n: ectx: property (text), widget (QPushButton, newColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:814
+#. i18n: ectx: property (text), widget (QPushButton, newKeyBindingsButton)
+#: rc.cpp:132 rc.cpp:235 rc.cpp:592 rc.cpp:695
+msgid "New..."
+msgstr "Yeni..."
+
+#. i18n: file: EditProfileDialog.ui:453
+#. i18n: ectx: property (toolTip), widget (QPushButton, editColorSchemeButton)
+#: rc.cpp:135 rc.cpp:595
+msgid "Edit the selected color scheme"
+msgstr "Seçilen renk şemasını düzenle"
+
+#. i18n: file: EditProfileDialog.ui:463
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeColorSchemeButton)
+#: rc.cpp:141 rc.cpp:601
+msgid "Delete the selected color scheme"
+msgstr "Seçilen renk şemasını sil"
+
+#. i18n: file: EditProfileDialog.ui:466
+#. i18n: ectx: property (text), widget (QPushButton, removeColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:834
+#. i18n: ectx: property (text), widget (QPushButton, removeKeyBindingsButton)
+#. i18n: file: KeyBindingEditor.ui:52
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryButton)
+#. i18n: file: EditProfileDialog.ui:466
+#. i18n: ectx: property (text), widget (QPushButton, removeColorSchemeButton)
+#. i18n: file: EditProfileDialog.ui:834
+#. i18n: ectx: property (text), widget (QPushButton, removeKeyBindingsButton)
+#. i18n: file: KeyBindingEditor.ui:52
+#. i18n: ectx: property (text), widget (QPushButton, removeEntryButton)
+#: rc.cpp:144 rc.cpp:247 rc.cpp:350 rc.cpp:604 rc.cpp:707 rc.cpp:810
+msgid "Remove"
+msgstr "Kaldır"
+
+#. i18n: file: EditProfileDialog.ui:492
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: rc.cpp:147 rc.cpp:607
+msgid "Font"
+msgstr "Yazıtipi"
+
+#. i18n: file: EditProfileDialog.ui:503
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: rc.cpp:150 rc.cpp:610
+msgid "Preview:"
+msgstr "Önizleme:"
+
+#. i18n: file: EditProfileDialog.ui:527
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: rc.cpp:154 rc.cpp:614
+msgid "Text size:"
+msgstr "Metin boyutu:"
+
+#. i18n: file: EditProfileDialog.ui:537
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: rc.cpp:157 rc.cpp:617
+msgid "Small"
+msgstr "Küçük"
+
+#. i18n: file: EditProfileDialog.ui:544
+#. i18n: ectx: property (toolTip), widget (QSlider, fontSizeSlider)
+#: rc.cpp:160 rc.cpp:620
+msgid "Adjust the font size used in this profile"
+msgstr "Bu profilde kullanılan yazıtipi boyutunu ayarla"
+
+#. i18n: file: EditProfileDialog.ui:560
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: rc.cpp:163 rc.cpp:623
+msgid "Large"
+msgstr "Büyük"
+
+#. i18n: file: EditProfileDialog.ui:567
+#. i18n: ectx: property (toolTip), widget (QPushButton, editFontButton)
+#: rc.cpp:166 rc.cpp:626
+msgid "Change the font used in this profile"
+msgstr "Bu profilde kullanılan yazıtipini değiştir"
+
+#. i18n: file: EditProfileDialog.ui:570
+#. i18n: ectx: property (text), widget (QPushButton, editFontButton)
+#: rc.cpp:169 rc.cpp:629
+msgid "Edit Font..."
+msgstr "Yazıtipini Düzenle..."
+
+#. i18n: file: EditProfileDialog.ui:579
+#. i18n: ectx: property (text), widget (QCheckBox, antialiasTextButton)
+#: rc.cpp:172 rc.cpp:632
+msgid "Smooth fonts"
+msgstr "Düz yazı tipleri"
+
+#. i18n: file: EditProfileDialog.ui:598
+#. i18n: ectx: attribute (title), widget (QWidget, scrollingTab)
+#. i18n: file: EditProfileDialog.ui:604
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#. i18n: file: EditProfileDialog.ui:598
+#. i18n: ectx: attribute (title), widget (QWidget, scrollingTab)
+#. i18n: file: EditProfileDialog.ui:604
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
+#: rc.cpp:175 rc.cpp:178 rc.cpp:635 rc.cpp:638
+msgid "Scrolling"
+msgstr "Kaydırma"
+
+#. i18n: file: EditProfileDialog.ui:619
+#. i18n: ectx: property (toolTip), widget (QRadioButton, disableScrollbackButton)
+#: rc.cpp:181 rc.cpp:641
+msgid "Disable scroll bar and do not remember previous output"
+msgstr "Kaydırma çubuğunu pasifleştir ve önceki çıktıyı anımsama"
+
+#. i18n: file: EditProfileDialog.ui:622
+#. i18n: ectx: property (text), widget (QRadioButton, disableScrollbackButton)
+#: rc.cpp:184 rc.cpp:644
+msgid "Disable scrollback"
+msgstr "Geçmişi pasifleştir"
+
+#. i18n: file: EditProfileDialog.ui:637
+#. i18n: ectx: property (toolTip), widget (QRadioButton, fixedScrollbackButton)
+#: rc.cpp:187 rc.cpp:647
+msgid "Limit the remembered output to a fixed number of lines"
+msgstr "Anımsanacak çıktının satır sayısını sabit bir değerle sınırlandır"
+
+#. i18n: file: EditProfileDialog.ui:640
+#. i18n: ectx: property (text), widget (QRadioButton, fixedScrollbackButton)
+#: rc.cpp:190 rc.cpp:650
+msgid "Fixed number of lines: "
+msgstr "Sabit satır sayısı: "
+
+#. i18n: file: EditProfileDialog.ui:647
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox, scrollBackLinesSpinner)
+#: rc.cpp:193 rc.cpp:653
+msgid "Number of lines of output to remember"
+msgstr "Çıktının hatırlanacak satır sayısı"
+
+#. i18n: file: EditProfileDialog.ui:681
+#. i18n: ectx: property (toolTip), widget (QRadioButton, unlimitedScrollbackButton)
+#: rc.cpp:196 rc.cpp:656
+msgid "Remember all output produced by the terminal"
+msgstr "Uçbirim tarafından üretilen tüm çıktıları anımsa"
+
+#. i18n: file: EditProfileDialog.ui:694
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_7)
+#: rc.cpp:202 rc.cpp:662
+msgid "Scroll Bar"
+msgstr "Kaydırma Çubuğu "
+
+#. i18n: file: EditProfileDialog.ui:709
+#. i18n: ectx: property (toolTip), widget (QRadioButton, scrollBarLeftButton)
+#: rc.cpp:205 rc.cpp:665
+msgid "Show the scroll bar on the left side of the terminal window"
+msgstr "Kaydırma çubuğunu uçbirim penceresinin solunda göster"
+
+#. i18n: file: EditProfileDialog.ui:712
+#. i18n: ectx: property (text), widget (QRadioButton, scrollBarLeftButton)
+#: rc.cpp:208 rc.cpp:668
+msgid "Show on left side"
+msgstr "Sol tarafta göster"
+
+#. i18n: file: EditProfileDialog.ui:725
+#. i18n: ectx: property (toolTip), widget (QRadioButton, scrollBarRightButton)
+#: rc.cpp:211 rc.cpp:671
+msgid "Show the scroll bar on the right side of the terminal window"
+msgstr "Kaydırma çubuğunu uçbirim penceresinin sağında göster"
+
+#. i18n: file: EditProfileDialog.ui:728
+#. i18n: ectx: property (text), widget (QRadioButton, scrollBarRightButton)
+#: rc.cpp:214 rc.cpp:674
+msgid "Show on right side"
+msgstr "Sağ tarafta göster"
+
+#. i18n: file: EditProfileDialog.ui:741
+#. i18n: ectx: property (toolTip), widget (QRadioButton, scrollBarHiddenButton)
+#: rc.cpp:217 rc.cpp:677
+msgid "Hide the scroll bar"
+msgstr "Kaydırma çubuğunu gizle"
+
+#. i18n: file: EditProfileDialog.ui:744
+#. i18n: ectx: property (text), widget (QRadioButton, scrollBarHiddenButton)
+#: rc.cpp:220 rc.cpp:680
+msgid "Hidden"
+msgstr "Gizli"
+
+#. i18n: file: EditProfileDialog.ui:776
+#. i18n: ectx: attribute (title), widget (QWidget, keyboardTab)
+#: rc.cpp:223 rc.cpp:683
+msgid "Input"
+msgstr "Girdi"
+
+#. i18n: file: EditProfileDialog.ui:782
+#. i18n: ectx: property (title), widget (QGroupBox, keyBindingsGroup)
+#: rc.cpp:226 rc.cpp:686
+msgid "Key Bindings"
+msgstr "Kısayollar"
+
+#. i18n: file: EditProfileDialog.ui:791
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#: rc.cpp:229 rc.cpp:689
+msgid ""
+"Key bindings control how combinations of key presses in the terminal window "
+"are converted into the stream of characters which is sent to the current "
+"terminal program."
+msgstr ""
+
+#. i18n: file: EditProfileDialog.ui:811
+#. i18n: ectx: property (toolTip), widget (QPushButton, newKeyBindingsButton)
+#: rc.cpp:232 rc.cpp:692
+msgid "Create a new key bindings list based upon the selected bindings"
+msgstr "Seçilen kısayolları temel alan yeni bir kısayollar listesi oluştur"
+
+#. i18n: file: EditProfileDialog.ui:821
+#. i18n: ectx: property (toolTip), widget (QPushButton, editKeyBindingsButton)
+#: rc.cpp:238 rc.cpp:698
+msgid "Edit the selected key bindings list"
+msgstr "Seçilen kısayol listesini düzenle"
+
+#. i18n: file: EditProfileDialog.ui:831
+#. i18n: ectx: property (toolTip), widget (QPushButton, removeKeyBindingsButton)
+#: rc.cpp:244 rc.cpp:704
+msgid "Delete the selected key bindings list"
+msgstr "Seçilen kısayol listesini sil"
+
+#. i18n: file: EditProfileDialog.ui:866
+#. i18n: ectx: attribute (title), widget (QWidget, advancedTab)
+#: rc.cpp:250 rc.cpp:710
+msgid "Advanced"
+msgstr "Gelişmiş"
+
+#. i18n: file: EditProfileDialog.ui:872
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: rc.cpp:253 rc.cpp:713
+msgid "Terminal Features"
+msgstr "Terminal Özellikleri"
+
+#. i18n: file: EditProfileDialog.ui:887
+#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBlinkingTextButton)
+#: rc.cpp:256 rc.cpp:716
+msgid "Allow terminal programs to create blinking sections of text"
+msgstr "Uçbirim uygulamalarının yanıp sönen metinler oluşturmasına izin ver"
+
+#. i18n: file: EditProfileDialog.ui:890
+#. i18n: ectx: property (text), widget (QCheckBox, enableBlinkingTextButton)
+#: rc.cpp:259 rc.cpp:719
+msgid "Allow blinking text"
+msgstr "Yanıp sönen metinlere izin ver"
+
+#. i18n: file: EditProfileDialog.ui:903
+#. i18n: ectx: property (toolTip), widget (QCheckBox, enableFlowControlButton)
+#: rc.cpp:262 rc.cpp:722
+msgid "Allow the output to be suspended by pressing Ctrl+S"
+msgstr "Ctrl+S tuşlarına basıldığında çıktıyı askıya almaya izin ver"
+
+#. i18n: file: EditProfileDialog.ui:906
+#. i18n: ectx: property (text), widget (QCheckBox, enableFlowControlButton)
+#: rc.cpp:265 rc.cpp:725
+msgid "Enable flow control using Ctrl+S, Ctrl+Q"
+msgstr "Ctrl+S kullanarak akım kontrolünü etkinleştir, Ctrl+Q"
+
+#. i18n: file: EditProfileDialog.ui:919
+#. i18n: ectx: property (toolTip), widget (QCheckBox, enableResizeWindowButton)
+#: rc.cpp:268 rc.cpp:728
+msgid "Allow terminal programs to resize the window"
+msgstr "Uçbirim uygulamalarının pencereyi boyutlandırmasına izin ver"
+
+#. i18n: file: EditProfileDialog.ui:922
+#. i18n: ectx: property (text), widget (QCheckBox, enableResizeWindowButton)
+#: rc.cpp:271 rc.cpp:731
+msgid "Allow programs to resize terminal window"
+msgstr "Uygulamaların uçbirim penceresini boyutlandırmasına izin ver"
+
+#. i18n: file: EditProfileDialog.ui:935
+#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBidiRenderingButton)
+#: rc.cpp:274 rc.cpp:734
+msgid ""
+"Enable Bi-Directional display on terminals (valid for Arabic, Farsi or "
+"Hebrew only)"
+msgstr ""
+"Uçbirimlerde çift yönlü görünümü etkinleştir (Arapça, Farsça ve İbranice "
+"için geçerlidir)"
+
+#. i18n: file: EditProfileDialog.ui:938
+#. i18n: ectx: property (text), widget (QCheckBox, enableBidiRenderingButton)
+#: rc.cpp:277 rc.cpp:737
+msgid "Enable Bi-Directional text rendering"
+msgstr "Çift yönlü metin hazırlamayı etkinleştir"
+
+#. i18n: file: EditProfileDialog.ui:948
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_9)
+#: rc.cpp:280 rc.cpp:740
+msgid "Mouse Interaction"
+msgstr "Fare Etkileşimi"
+
+#. i18n: file: EditProfileDialog.ui:959
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#: rc.cpp:283 rc.cpp:743
+msgid "Word characters for double-click selection: "
+msgstr "Çift tıklama seçimi için sözcük karakterleri: "
+
+#. i18n: file: EditProfileDialog.ui:969
+#. i18n: ectx: property (toolTip), widget (KLineEdit, wordCharacterEdit)
+#: rc.cpp:286 rc.cpp:746
+msgid ""
+"Characters which are considered part of a word when double-clicking to "
+"select whole words in the terminal"
+msgstr ""
+"Uçbirim penceresinde çift tıklayarak tüm sözcüğün seçilmesini sağlayacak "
+"olan, dikkate alınacak karakterler"
+
+#. i18n: file: EditProfileDialog.ui:978
+#. i18n: ectx: property (text), widget (QCheckBox, tripleClickMode)
+#: rc.cpp:289 rc.cpp:749
+msgid "Triple click selects from current word forward"
+msgstr "Üç kez tıklama geçerli sözcüğün sonrasını seçer"
+
+#. i18n: file: EditProfileDialog.ui:981
+#. i18n: ectx: property (toolTip), widget (QCheckBox, tripleClickMode)
+#: rc.cpp:292 rc.cpp:752
+msgid ""
+"All characters from the current word to the end of line will be selected."
+msgstr ""
+"Geçerli sözcükten itibaren satırın sonuna kadar tüm karakterler seçilecek."
+
+#. i18n: file: EditProfileDialog.ui:991
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_8)
+#: rc.cpp:295 rc.cpp:755
+msgid "Cursor"
+msgstr "İmleç"
+
+#. i18n: file: EditProfileDialog.ui:1006
+#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBlinkingCursorButton)
+#: rc.cpp:298 rc.cpp:758
+msgid "Make the cursor blink regularly"
+msgstr "İmleci düzenli olarak yanıp-sönen olarak ayarla"
+
+#. i18n: file: EditProfileDialog.ui:1009
+#. i18n: ectx: property (text), widget (QCheckBox, enableBlinkingCursorButton)
+#: rc.cpp:301 rc.cpp:761
+msgid "Blinking cursor"
+msgstr "Yanıp-sönen imleç"
+
+#. i18n: file: EditProfileDialog.ui:1018
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: rc.cpp:304 rc.cpp:764
+msgid "Cursor shape:"
+msgstr "İmleç biçimi:"
+
+#. i18n: file: EditProfileDialog.ui:1025
+#. i18n: ectx: property (toolTip), widget (QComboBox, cursorShapeCombo)
+#: rc.cpp:307 rc.cpp:767
+msgid "Change the shape of the cursor"
+msgstr "İmlecin biçimini değiştir"
+
+#. i18n: file: EditProfileDialog.ui:1029
+#. i18n: ectx: property (text), item, widget (QComboBox, cursorShapeCombo)
+#: rc.cpp:310 rc.cpp:770
+msgctxt "The shape of the cursor"
+msgid "Block"
+msgstr "Blok"
+
+#. i18n: file: EditProfileDialog.ui:1034
+#. i18n: ectx: property (text), item, widget (QComboBox, cursorShapeCombo)
+#: rc.cpp:313 rc.cpp:773
+msgctxt "The shape of the cursor, similar to a capital I"
+msgid "I-Beam"
+msgstr "I-Beam"
+
+#. i18n: file: EditProfileDialog.ui:1039
+#. i18n: ectx: property (text), item, widget (QComboBox, cursorShapeCombo)
+#: rc.cpp:316 rc.cpp:776
+msgctxt "The shape of the cursor"
+msgid "Underline"
+msgstr "Altı çizili"
+
+#. i18n: file: EditProfileDialog.ui:1068
+#. i18n: ectx: property (toolTip), widget (QRadioButton, autoCursorColorButton)
+#: rc.cpp:319 rc.cpp:779
+msgid "Set the cursor to match the color of the character underneath it."
+msgstr ""
+"Fare işaretçisini altındaki karakterin rengi ile eşleşmesi için ayarlayın."
+
+#. i18n: file: EditProfileDialog.ui:1071
+#. i18n: ectx: property (text), widget (QRadioButton, autoCursorColorButton)
+#: rc.cpp:322 rc.cpp:782
+msgid "Set cursor color to match current character"
+msgstr "Geçerli karakter ile eşleşmesi için imleç rengini ayarla"
+
+#. i18n: file: EditProfileDialog.ui:1086
+#. i18n: ectx: property (toolTip), widget (QRadioButton, customCursorColorButton)
+#: rc.cpp:325 rc.cpp:785
+msgid "Use a custom, fixed color for the cursor"
+msgstr "İmleç için özel, sabit bir renk kullan"
+
+#. i18n: file: EditProfileDialog.ui:1089
+#. i18n: ectx: property (text), widget (QRadioButton, customCursorColorButton)
+#: rc.cpp:328 rc.cpp:788
+msgid "Custom cursor color:"
+msgstr "Özel imleç rengi:"
+
+#. i18n: file: EditProfileDialog.ui:1102
+#. i18n: ectx: property (toolTip), widget (KColorButton, customColorSelectButton)
+#: rc.cpp:331 rc.cpp:791
+msgid "Select the color used to draw the cursor"
+msgstr "İmleç için kullanılacak rengi seçin"
+
+#. i18n: file: EditProfileDialog.ui:1130
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_11)
+#: rc.cpp:334 rc.cpp:794
+msgid "Encoding"
+msgstr "Kodlama"
+
+#. i18n: file: EditProfileDialog.ui:1139
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#: rc.cpp:337 rc.cpp:797
+msgid "Default character encoding:"
+msgstr "Öntanımlı karakter kodlaması:"
+
+#. i18n: file: EditProfileDialog.ui:1159
+#. i18n: ectx: property (text), widget (QPushButton, selectEncodingButton)
+#: rc.cpp:341 rc.cpp:801
+msgid "Select"
+msgstr "Seç"
+
+#. i18n: file: KeyBindingEditor.ui:45
+#. i18n: ectx: property (text), widget (QPushButton, addEntryButton)
+#: rc.cpp:347 rc.cpp:807
+msgid "Add"
+msgstr "Ekle"
+
+#. i18n: file: KeyBindingEditor.ui:74
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: rc.cpp:353 rc.cpp:813
+msgctxt "Title of the area where you test your keys are properly configured"
+msgid "Test Area"
+msgstr "Test Alanı"
+
+#. i18n: file: KeyBindingEditor.ui:83
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: rc.cpp:356 rc.cpp:816
+msgid "Input:"
+msgstr "Girdi:"
+
+#. i18n: file: KeyBindingEditor.ui:96
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: rc.cpp:359 rc.cpp:819
+msgid "Output:"
+msgstr "Çıktı:"
+
+#. i18n: file: ManageProfilesDialog.ui:28
+#. i18n: ectx: property (toolTip), widget (QPushButton, newSessionButton)
+#: rc.cpp:362 rc.cpp:448
+msgid "Create a new profile based upon the selected profile"
+msgstr "Seçili profili temel alan yeni bir profil oluştur"
+
+#. i18n: file: ManageProfilesDialog.ui:31
+#. i18n: ectx: property (text), widget (QPushButton, newSessionButton)
+#: rc.cpp:365 rc.cpp:451
+msgid "New Profile..."
+msgstr "Yeni Profil..."
+
+#. i18n: file: ManageProfilesDialog.ui:41
+#. i18n: ectx: property (toolTip), widget (QPushButton, editSessionButton)
+#: rc.cpp:368 rc.cpp:454
+msgid "Edit the selected profile(s)"
+msgstr "Seçilen profil(ler)i düzenle"
+
+#. i18n: file: ManageProfilesDialog.ui:44
+#. i18n: ectx: property (text), widget (QPushButton, editSessionButton)
+#: rc.cpp:371 rc.cpp:457
+msgid "Edit Profile..."
+msgstr "Profili Düzenle..."
+
+#. i18n: file: ManageProfilesDialog.ui:54
+#. i18n: ectx: property (toolTip), widget (QPushButton, deleteSessionButton)
+#: rc.cpp:374 rc.cpp:460
+msgid "Delete the selected profile(s)"
+msgstr "Seçilen profil(ler)i sil"
+
+#. i18n: file: ManageProfilesDialog.ui:57
+#. i18n: ectx: property (text), widget (QPushButton, deleteSessionButton)
+#: rc.cpp:377 rc.cpp:463
+msgid "Delete Profile"
+msgstr "Profili Sil"
+
+#. i18n: file: ManageProfilesDialog.ui:67
+#. i18n: ectx: property (toolTip), widget (QPushButton, setAsDefaultButton)
+#: rc.cpp:380 rc.cpp:466
+msgid "Set the selected profile as the default for new terminal sessions"
+msgstr "Yeni uçbirim oturumları için seçilen profili öntanımlı olarak ayarla"
+
+#. i18n: file: ManageProfilesDialog.ui:70
+#. i18n: ectx: property (text), widget (QPushButton, setAsDefaultButton)
+#: rc.cpp:383 rc.cpp:469
+msgid "Set as Default"
+msgstr "Öntanımlı olarak Kaydet"
+
+#. i18n: file: ManageProfilesDialog.ui:80
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveUpButton)
+#: rc.cpp:386 rc.cpp:472
+msgid "Move the selected profile up in the menu list"
+msgstr "Seçilen profili menü listesinde yukarıya taşı"
+
+#. i18n: file: ManageProfilesDialog.ui:83
+#. i18n: ectx: property (text), widget (QPushButton, moveUpButton)
+#: rc.cpp:389 rc.cpp:475
+msgid "Move Up"
+msgstr "Yukarı Taşı"
+
+#. i18n: file: ManageProfilesDialog.ui:93
+#. i18n: ectx: property (toolTip), widget (QPushButton, moveDownButton)
+#: rc.cpp:392 rc.cpp:478
+msgid "Move the selected profile down in the menu list"
+msgstr "Seçilen profili menü listesinde aşağıya taşı"
+
+#. i18n: file: ManageProfilesDialog.ui:96
+#. i18n: ectx: property (text), widget (QPushButton, moveDownButton)
+#: rc.cpp:395 rc.cpp:481
+msgid "Move Down"
+msgstr "Aşağı Taşı"
+
+#. i18n: file: RemoteConnectionDialog.ui:25
+#. i18n: ectx: property (windowTitle), widget (QWidget, RemoteConnectionDialog)
+#: rc.cpp:398 rc.cpp:822
+msgid "Remote Connection"
+msgstr "Uzak Bağlantı"
+
+#. i18n: file: RemoteConnectionDialog.ui:31
+#. i18n: ectx: property (text), widget (QLabel, hostLabel)
+#: rc.cpp:401 rc.cpp:825
+msgid "Host:"
+msgstr "Makine:"
+
+#. i18n: file: RemoteConnectionDialog.ui:41
+#. i18n: ectx: property (text), widget (QLabel, userLabel)
+#: rc.cpp:404 rc.cpp:828
+msgid "User:"
+msgstr "Kullanıcı:"
+
+#. i18n: file: RemoteConnectionDialog.ui:58
+#. i18n: ectx: property (text), widget (QPushButton, lookupHostButton)
+#: rc.cpp:407 rc.cpp:831
+msgid "Lookup..."
+msgstr "Bak..."
+
+#. i18n: file: RemoteConnectionDialog.ui:65
+#. i18n: ectx: property (text), widget (QLabel, serviceLabel)
+#: rc.cpp:410 rc.cpp:834
+msgid "Service:"
+msgstr "Servis:"
+
+#. i18n: file: RemoteConnectionDialog.ui:73
+#. i18n: ectx: property (text), item, widget (QComboBox, serviceComboBox)
+#: rc.cpp:413 rc.cpp:837
+msgid "SSH"
+msgstr "SSH"
+
+#. i18n: file: RemoteConnectionDialog.ui:78
+#. i18n: ectx: property (text), item, widget (QComboBox, serviceComboBox)
+#: rc.cpp:416 rc.cpp:840
+msgid "Secure FTP"
+msgstr "Güvenli FTP"
+
+#. i18n: file: RemoteConnectionDialog.ui:86
+#. i18n: ectx: property (text), widget (QLabel, backgroundColorLabel)
+#: rc.cpp:419 rc.cpp:843
+msgid "Background color:"
+msgstr "Arkaplan rengi:"
+
+#. i18n: file: RemoteConnectionDialog.ui:96
+#. i18n: ectx: property (text), widget (QCheckBox, saveAsCustomCheckBox)
+#: rc.cpp:422 rc.cpp:846
+msgid "Save as custom session"
+msgstr "Özel oturum olarak kaydet"
+
+#: rc.cpp:423
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Serdar Soytetir"
+
+#: rc.cpp:424
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "tulliana@gmail.com"
+
+#. i18n: file: ../desktop/sessionui.rc:14
+#. i18n: ectx: Menu (edit-copy-input-to)
+#: rc.cpp:849
+msgid "Copy Input To"
+msgstr "Girdiyi Buraya Kopyala"
+
+#. i18n: file: ../desktop/sessionui.rc:47
+#. i18n: ectx: Menu (debug)
+#: rc.cpp:852
+msgid "Debug"
+msgstr "Hata Ayıklama"
+
+#. i18n: file: ../desktop/sessionui.rc:66
+#. i18n: ectx: Menu (change-profile)
+#. i18n: file: ../desktop/partui.rc:26
+#. i18n: ectx: Menu (change-profile)
+#: rc.cpp:855 rc.cpp:861
+msgid "&Change Profile"
+msgstr "&Profili Değiştir"
+
+#. i18n: file: ../desktop/partui.rc:8
+#. i18n: ectx: Menu (history)
+#: rc.cpp:858
+msgid "S&crollback"
+msgstr "&Geçmiş"
+
+#. i18n: file: ../desktop/konsoleui.rc:5
+#. i18n: ectx: Menu (file)
+#: rc.cpp:864
+msgid "File"
+msgstr "Dosya"
+
+#. i18n: file: ../desktop/konsoleui.rc:15
+#. i18n: ectx: Menu (edit)
+#: rc.cpp:867
+msgid "Edit"
+msgstr "Düzen"
+
+#. i18n: file: ../desktop/konsoleui.rc:18
+#. i18n: ectx: Menu (history)
+#: rc.cpp:870
+msgid "Scrollback"
+msgstr "Geçmiş"
+
+#. i18n: file: ../desktop/konsoleui.rc:21
+#. i18n: ectx: Menu (view)
+#: rc.cpp:873
+msgid "View"
+msgstr "Görünüm"
+
+#. i18n: file: ../desktop/konsoleui.rc:22
+#. i18n: ectx: Menu (view-split)
+#: rc.cpp:876
+msgid "Split View"
+msgstr "Görünümü Böl"
+
+#. i18n: file: ../desktop/konsoleui.rc:40
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:879
+msgid "Settings"
+msgstr "Ayarlar"
+
+#. i18n: file: ../desktop/konsoleui.rc:47
+#. i18n: ectx: Menu (help)
+#: rc.cpp:882
+msgid "Help"
+msgstr "Yardım"
+
+#: RemoteConnectionDialog.cpp:39
+msgid "New Remote Connection"
+msgstr "Yeni Uzak Bağlantı"
+
+#: RemoteConnectionDialog.cpp:41
+msgid "Connect"
+msgstr "Bağlan"
+
+#: schemas.cpp:1
+msgid "Black on Light Yellow"
+msgstr "Açık Sarı üzerine Siyah"
+
+#: schemas.cpp:2
+msgid "Black on White"
+msgstr "Beyaz üzerine Siyah"
+
+#: schemas.cpp:3
+msgid "White on Black"
+msgstr "Siyah üzerine Beyaz"
+
+#: schemas.cpp:4
+msgid "Black on Random Light"
+msgstr "Rastgele Açık Renk üzerine Siyah"
+
+#: schemas.cpp:5
+msgid "Dark Pastels"
+msgstr "Koyu Pastel Renkler"
+
+#: schemas.cpp:6
+msgid "Green on Black"
+msgstr "Siyah üzerine Yeşil"
+
+#: schemas.cpp:7
+msgid "Linux Colors"
+msgstr "Linux Renkleri"
+
+#: schemas.cpp:8
+msgid "Default (XFree 4)"
+msgstr "Öntanımlı (XFree 4)"
+
+#: schemas.cpp:9
+msgid "Linux console"
+msgstr "Linux konsolu"
+
+#: schemas.cpp:10
+msgid "Solaris console"
+msgstr "Solaris konsolu"
+
+#: schemas.cpp:11
+msgid "DEC VT420 Terminal"
+msgstr "DEC VT420 Terminali"
+
+#: SessionController.cpp:278
+msgid "Konsole does not know how to open the bookmark: "
+msgstr ""
+
+#: SessionController.cpp:396
+msgid "&Close Tab"
+msgstr "Sekmeyi &Kapat"
+
+#: SessionController.cpp:402
+msgid "Open File Manager"
+msgstr "Dosya Yöneticisini Aç"
+
+#: SessionController.cpp:409
+msgid "&Copy"
+msgstr "&Kopyala"
+
+#: SessionController.cpp:413
+msgid "&Paste"
+msgstr "&Yapıştır"
+
+#: SessionController.cpp:426
+msgid "Paste Selection"
+msgstr "Seçimi Yapıştır"
+
+#: SessionController.cpp:432
+msgid "&Rename Tab..."
+msgstr "Sekmeyi &Yeniden Adlandır..."
+
+#: SessionController.cpp:439
+msgid "&All Tabs in Current Window"
+msgstr "Geçerli Penceredeki &Tüm Sekmeler"
+
+#: SessionController.cpp:446
+msgid "&Select Tabs..."
+msgstr "Sekmeleri &Seç..."
+
+#: SessionController.cpp:453
+msgid "&None"
+msgstr "&Hiçbiri"
+
+#: SessionController.cpp:460
+msgid "Clear && Reset"
+msgstr "Temizle && Sıfırla"
+
+#: SessionController.cpp:465
+msgid "&ZModem Upload..."
+msgstr ""
+
+#: SessionController.cpp:471
+msgid "Monitor for &Activity"
+msgstr "Etkinlikleri İ&zle"
+
+#: SessionController.cpp:476
+msgid "Monitor for &Silence"
+msgstr "Sessiz&likleri İzle"
+
+#: SessionController.cpp:482
+msgid "Character Encoding"
+msgstr "Karakter Kodlaması"
+
+#: SessionController.cpp:489
+msgid "Increase Text Size"
+msgstr "Metin Boyutunu Büyüt"
+
+#: SessionController.cpp:495
+msgid "Decrease Text Size"
+msgstr "Metin Boyutunu Küçült"
+
+#: SessionController.cpp:501
+msgid "Search Output..."
+msgstr "Arama Çıktısı..."
+
+#: SessionController.cpp:510
+msgid "Find Next"
+msgstr "Sonrakini Bul"
+
+#: SessionController.cpp:517
+msgid "Find Previous"
+msgstr "Öncekini Bul"
+
+#: SessionController.cpp:523
+msgid "Save Output..."
+msgstr "Çıktıyı Kaydet..."
+
+#: SessionController.cpp:533
+msgid "Clear Scrollback && Reset"
+msgstr "Geçmişi Temizle && Sıfırla"
+
+#: SessionController.cpp:539
+msgid "Edit Current Profile..."
+msgstr "Geçerli Profili Düzenle..."
+
+#: SessionController.cpp:543
+msgid "Change Profile"
+msgstr "Profil Değiştir"
+
+#: SessionController.cpp:583
+msgid "Rename Tab"
+msgstr "Sekmeyi Yeniden Adlandır"
+
+#: SessionController.cpp:584
+msgid "Enter new tab text:"
+msgstr "Yeni sekme metnini gir:"
+
+#: SessionController.cpp:627
+msgid ""
+"A program is currently running in this session.  Are you sure you want to "
+"close it?"
+msgstr "Bu oturumda bir uygulama açık. Kapatmak istediğinizden emin misiniz?"
+
+#: SessionController.cpp:630
+#, kde-format
+msgid ""
+"The program '%1' is currently running in this session.  Are you sure you "
+"want to close it?"
+msgstr ""
+"'%1' uygulaması bu oturumda çalışıyor. Kapatmak istediğinizden emin misiniz?"
+
+#: SessionController.cpp:1188
+msgid "Save ZModem Download to..."
+msgstr ""
+
+#: SessionController.cpp:1197
+msgid ""
+"<p>A ZModem file transfer attempt has been detected, but no suitable ZModem "
+"software was found on this system.\n"
+"<p>You may wish to install the 'rzsz' or 'lrzsz' package.\n"
+msgstr ""
+
+#: SessionController.cpp:1209
+msgid "<p>The current session already has a ZModem file transfer in progress."
+msgstr ""
+
+#: SessionController.cpp:1218
+msgid ""
+"<p>No suitable ZModem software was found on this system.\n"
+"<p>You may wish to install the 'rzsz' or 'lrzsz' package.\n"
+msgstr ""
+
+#: SessionController.cpp:1224
+msgid "Select Files for ZModem Upload"
+msgstr ""
+
+#: SessionController.cpp:1296
+#, kde-format
+msgid "Save Output From %1"
+msgstr "%1 Çıktısını Kaydet"
+
+#: SessionController.cpp:1307
+#, kde-format
+msgid "%1 is an invalid URL, the output could not be saved."
+msgstr "%1 geçersiz bir adres, çıktı kaydedilmeyecek."
+
+#: SessionController.cpp:1396
+#, kde-format
+msgid ""
+"A problem occurred when saving the output.\n"
+"%1"
+msgstr ""
+"Çıktı kaydedilirken bir sorun oluştu.\n"
+"%1"
+
+#: Session.cpp:333
+msgid "Could not find binary: "
+msgstr "İkili dosya bulunamadı."
+
+#: Session.cpp:342
+msgid "Warning: "
+msgstr "Uyarı:"
+
+#: Session.cpp:383
+#, kde-format
+msgid ""
+"Could not find '%1', starting '%2' instead.  Please check your profile "
+"settings."
+msgstr ""
+"'%1' bulunamadı, onun yerine '%2' başlatılıyor. Lütfen profil ayarlarınızı "
+"kontrol edin."
+
+#: Session.cpp:388
+msgid "Could not find an interactive shell to start."
+msgstr "Başlatılacak etkileşimli kabuk bulunamadı."
+
+#: Session.cpp:422
+#, kde-format
+msgid "Could not start program '%1' with arguments '%2'."
+msgstr "'%1' uygulaması '%2' argümanıyla başlatılamadı."
+
+#: Session.cpp:532
+#, kde-format
+msgid "Silence in session '%1'"
+msgstr "'%1' oturumunda sessizlik"
+
+#: Session.cpp:567
+#, kde-format
+msgid "Bell in session '%1'"
+msgstr "'%1' oturumunda zil"
+
+#: Session.cpp:578
+#, kde-format
+msgid "Activity in session '%1'"
+msgstr "'%1' oturumunda etkinlik"
+
+#: Session.cpp:722
+msgid "Finished"
+msgstr "Tamamlandı"
+
+#: Session.cpp:731
+#, kde-format
+msgid "Program '%1' exited with status %2."
+msgstr "'%1' uygulamasından %2 durumu ile çıkıldı."
+
+#: Session.cpp:733
+#, kde-format
+msgid "Program '%1' crashed."
+msgstr "'%1' uygulaması çöktü."
+
+#: Session.cpp:1049
+msgid "ZModem Progress"
+msgstr "ZModem İşlemi"
+
+#: SessionManager.cpp:931
+msgid "Number"
+msgstr "Numara"
+
+#: SessionManager.cpp:933
+msgid "Title"
+msgstr "Başlık"
+
+#: TabTitleFormatAction.cpp:34
+msgid "Program Name"
+msgstr "Uygulama Adı"
+
+#: TabTitleFormatAction.cpp:35
+msgid "Current Directory (Short)"
+msgstr "Geçerli Dizin (Kısa)"
+
+#: TabTitleFormatAction.cpp:36
+msgid "Current Directory (Long)"
+msgstr "Geçerli Dizin (Uzun)"
+
+#: TabTitleFormatAction.cpp:37 TabTitleFormatAction.cpp:47
+msgid "Window Title Set by Shell"
+msgstr "Pencere Başlığı Kabuk Tarafından Ayarlansın"
+
+#: TabTitleFormatAction.cpp:38 TabTitleFormatAction.cpp:48
+msgid "Session Number"
+msgstr "Oturum Numarası"
+
+#: TabTitleFormatAction.cpp:39 TabTitleFormatAction.cpp:44
+msgid "User Name"
+msgstr "Kullanıcı Adı"
+
+#: TabTitleFormatAction.cpp:45
+msgid "Remote Host (Short)"
+msgstr "Uzak Makine (Kısa)"
+
+#: TabTitleFormatAction.cpp:46
+msgid "Remote Host (Long)"
+msgstr "Uzak Makine (Uzun)"
+
+#: TerminalDisplay.cpp:1126 TerminalDisplay.cpp:1127
+msgid "Size: XXX x XXX"
+msgstr "Boyut: XXX x XXX"
+
+#: TerminalDisplay.cpp:1137
+#, kde-format
+msgid "Size: %1 x %2"
+msgstr "Boyut: %1 x %2"
+
+#: TerminalDisplay.cpp:2879
+msgid ""
+"<qt>Output has been <a href=\"http://en.wikipedia.org/wiki/Flow_control"
+"\">suspended</a> by pressing Ctrl+S.  Press <b>Ctrl+Q</b> to resume.</qt>"
+msgstr ""
+"<qt>Çıktı Ctrl+S kısayolu kullanılarak <a href=\"http://en.wikipedia.org/"
+"wiki/Flow_control\">geçici olarak durduruldu</a>.  Devam etmek için <b>Ctrl"
+"+Q</b> kısayolunu kullanın.</qt>"
+
+#: ViewManager.cpp:137
+msgid "Next View"
+msgstr "Sonraki Görünüm"
+
+#: ViewManager.cpp:138
+msgid "Previous View"
+msgstr "Önceki Görünüm"
+
+#: ViewManager.cpp:139
+msgid "Next View Container"
+msgstr "Sonraki Görünüm İçerici"
+
+#: ViewManager.cpp:141
+msgid "Move View Left"
+msgstr "Görünümü Sola Taşı"
+
+#: ViewManager.cpp:142
+msgid "Move View Right"
+msgstr "Görünümü Sağa Taşı"
+
+#: ViewManager.cpp:152
+msgctxt "@action:inmenu"
+msgid "Split View Left/Right"
+msgstr "Görünümü Sol/Sağ Şeklinde Böl"
+
+#: ViewManager.cpp:159
+msgctxt "@action:inmenu"
+msgid "Split View Top/Bottom"
+msgstr "Görünümü Üst/Alt Şeklinde Böl"
+
+#: ViewManager.cpp:164
+msgctxt "@action:inmenu Close Active View"
+msgid "Close Active"
+msgstr "Etkin Olanı Kapat"
+
+#: ViewManager.cpp:173
+msgctxt "@action:inmenu Close Other Views"
+msgid "Close Others"
+msgstr "Diğerlerini Kapat"
+
+#: ViewManager.cpp:183
+msgid "&Detach View"
+msgstr "&Görünümü Ayır"
+
+#: ViewManager.cpp:192
+msgctxt "@action:inmenu"
+msgid "Expand View"
+msgstr "Görünümü Genişlet"
+
+#: ViewManager.cpp:199
+msgctxt "@action:inmenu"
+msgid "Shrink View"
+msgstr "Görünümü Küçült"
+
+#: ViewManager.cpp:219
+#, kde-format
+msgid "Switch to Tab %1"
+msgstr "%1 sekmesine geç"
+
+#: Vt102Emulation.cpp:965
+msgid ""
+"No keyboard translator available.  The information needed to convert key "
+"presses into characters to send to the terminal is missing."
+msgstr ""
+"Hiç klavye çevirmeni yok.  Uç birime gönderilecek olan tuş basmalarını "
+"karakterlere dönüştürecek bilgi yok."
+
+#: ZModemDialog.cpp:35
+msgid "&Stop"
+msgstr "&Dur"
+
+#~ msgid "Open Browser Here"
+#~ msgstr "Tarayıcıyı Burada Aç"
+
+#~ msgid "C&lear Display"
+#~ msgstr "Ekranı &Temizle"
+
+#~ msgid "Clear Scrollback"
+#~ msgstr "Geçmişi Temizle"
+
+#~ msgctxt "Regular expression to remove accelerators from menu items"
+#~ msgid "\\(\\s*\\&.*\\)|\\&"
+#~ msgstr "\\(\\s*\\&.*\\)|\\&"
+
+#~ msgid "KWrited - Listening on Device %1"
+#~ msgstr "KWrited - Dinlenen cihaz %1"
+
+#~ msgid "FONT PREVIEW TEXT"
+#~ msgstr "Yazıtipi Önizlemesi Metni"
+
+#~ msgid "DEFAULTENCODING"
+#~ msgstr "ÖNTANIMLIKODLAMA"
+
+#~ msgid "New"
+#~ msgstr "Yeni"
+
+#~ msgid "Select &Tab Color"
+#~ msgstr "S&ekme Rengini Seç"
+
+#~ msgid "Form"
+#~ msgstr "Form"
+
+#~ msgid "Enable transparent backgrounds"
+#~ msgstr "Saydam arkaplanları etkinleştir"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"

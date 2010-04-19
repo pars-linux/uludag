@@ -1,0 +1,27 @@
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Serdar Soytetir <tulliana@gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma_applet_currentappcontrol\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2010-04-01 01:22+0200\n"
+"PO-Revision-Date: 2009-11-12 13:31+0200\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
+
+#: currentappcontrol.cpp:167
+#, kde-format
+msgid "%1 running app"
+msgid_plural "%1 running apps"
+msgstr[0] "%1 çalışan uygulama"
+
+#: currentappcontrol.cpp:169
+msgid "No running apps"
+msgstr "Çalışan uygulama yok"

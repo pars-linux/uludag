@@ -1,0 +1,298 @@
+# translation of joystick.po to Turkish
+# translation of joystick.po to
+# Copyright (C) 2004, 2008 Free Software Foundation, Inc.
+#
+# Görkem Çetin <gorkem@kde.org>, 2004.
+# Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
+# Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
+# Serdar Soytetir <tulliana@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: joystick\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-11-21 06:19+0100\n"
+"PO-Revision-Date: 2008-06-25 16:30+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.2\n"
+
+#: caldialog.cpp:41 joywidget.cpp:390
+msgid "Calibration"
+msgstr "Ayarlama"
+
+#: caldialog.cpp:44
+msgid "Next"
+msgstr "Sonraki"
+
+#: caldialog.cpp:60
+msgid "Please wait a moment to calculate the precision"
+msgstr "İncelik ayarının hesaplanması için bir süre bekleyin"
+
+#: caldialog.cpp:91
+msgid "(usually X)"
+msgstr "(genellikle X)"
+
+#: caldialog.cpp:93
+msgid "(usually Y)"
+msgstr "(genellikle Y)"
+
+#: caldialog.cpp:98
+#, kde-format
+msgid ""
+"<qt>Calibration is about to check the value range your device delivers.<br /"
+"><br />Please move <b>axis %1 %2</b> on your device to the <b>minimum</b> "
+"position.<br /><br />Press any button on the device or click on the 'Next' "
+"button to continue with the next step.</qt>"
+msgstr ""
+"<qt>Bu ayarlama ile sizin cihazınızın gönderdiği değer aralıkları kontrol "
+"edilecektir. <br /><br />Oyun kumandanızı<b>%1 %2 ekseninde</b> <b>minimum</"
+"b> noktasına getirin. <br /><br />Bir sonraki adıma geçmek için herhangi bir "
+"tuşa veya 'İleri' düğmesine basın.</qt>"
+
+#: caldialog.cpp:115
+#, kde-format
+msgid ""
+"<qt>Calibration is about to check the value range your device delivers.<br /"
+"><br />Please move <b>axis %1 %2</b> on your device to the <b>center</b> "
+"position.<br /><br />Press any button on the device or click on the 'Next' "
+"button to continue with the next step.</qt>"
+msgstr ""
+"<qt>Bu ayarlama ile sizin cihazınızın gönderdiği değer aralıkları kontrol "
+"edilecektir. <br /><br />Oyun kumandanızı<b>%1 %2 ekseninde</b> <b>merkez</"
+"b> noktasına getirin. <br /><br />Bir sonraki adıma geçmek için herhangi bir "
+"tuşa veya 'İleri' düğmesine basın.</qt>"
+
+#: caldialog.cpp:132
+#, kde-format
+msgid ""
+"<qt>Calibration is about to check the value range your device delivers.<br /"
+"><br />Please move <b>axis %1 %2</b> on your device to the <b>maximum</b> "
+"position.<br /><br />Press any button on the device or click on the 'Next' "
+"button to continue with the next step.</qt>"
+msgstr ""
+"<qt>Bu ayarlama ile sizin cihazınızın gönderdiği değer aralıkları kontrol "
+"edilecektir. <br /><br />Oyun kumandanızı<b>%1 %2 ekseninde</b> <b>maksimum</"
+"b> noktasına getirin. <br /><br />Bir sonraki adıma geçmek için herhangi bir "
+"tuşa veya 'İleri' düğmesine basın.</qt>"
+
+#: caldialog.cpp:155 joywidget.cpp:381 joywidget.cpp:416
+msgid "Communication Error"
+msgstr "İletişim Hatası"
+
+#: caldialog.cpp:159
+msgid "You have successfully calibrated your device"
+msgstr "Aygıtın kalibrasyon ayarlarını başarıyla tamamladınız"
+
+#: caldialog.cpp:159 joywidget.cpp:422
+msgid "Calibration Success"
+msgstr "Kalibrasyon Başarıyla Tamamlandı"
+
+#: caldialog.cpp:183
+#, kde-format
+msgid "Value Axis %1: %2"
+msgstr "%1 Eksen Değeri:%2"
+
+#: joydevice.cpp:55
+#, kde-format
+msgid "The given device %1 could not be opened: %2"
+msgstr "%1 aygıtı açılamadı:%2"
+
+#: joydevice.cpp:61
+#, kde-format
+msgid "The given device %1 is not a joystick."
+msgstr "Seçilen %1 aygıtı bir oyun kumandası değil."
+
+#: joydevice.cpp:66
+#, kde-format
+msgid "Could not get kernel driver version for joystick device %1: %2"
+msgstr "%1 oyun kumandası için çekirdek sürücü sürümü alınamadı:%2"
+
+#: joydevice.cpp:80
+#, kde-format
+msgid ""
+"The current running kernel driver version (%1.%2.%3) is not the one this "
+"module was compiled for (%4.%5.%6)."
+msgstr ""
+"Şu anki çekirdek sürümünüz (%1.%2.%3) , bu modülün derlendiği çekirdek "
+"sürümü (%4.%5.%6) ile uyumlu değil."
+
+#: joydevice.cpp:92
+#, kde-format
+msgid "Could not get number of buttons for joystick device %1: %2"
+msgstr "Oyun kumandası %1 deki düğme sayısı alınamadı:%2"
+
+#: joydevice.cpp:98
+#, kde-format
+msgid "Could not get number of axes for joystick device %1: %2"
+msgstr "Oyun kumandası %1 deki eksen sayısı alınamadı:%2"
+
+#: joydevice.cpp:104
+#, kde-format
+msgid "Could not get calibration values for joystick device %1: %2"
+msgstr "Oyun kumandası %1 deki kalibrasyon değerleri alınamadı:%2"
+
+#: joydevice.cpp:110
+#, kde-format
+msgid "Could not restore calibration values for joystick device %1: %2"
+msgstr "Oyun kumandası %1 'in kalbrasyon değerleri geri yüklenemiyor:%2"
+
+#: joydevice.cpp:116
+#, kde-format
+msgid "Could not initialize calibration values for joystick device %1: %2"
+msgstr "Oyun kumandası %1 'in kalbrasyon değerleri yüklenemiyor:%2"
+
+#: joydevice.cpp:122
+#, kde-format
+msgid "Could not apply calibration values for joystick device %1: %2"
+msgstr "Oyun kumandası %1 'in kalbrasyon değerlerini uygulayamıyor:%2"
+
+#: joydevice.cpp:126
+#, kde-format
+msgid "internal error - code %1 unknown"
+msgstr "İç hata - kod %1 bilinmiyor"
+
+#: joystick.cpp:80
+msgid "KDE Joystick Control Module"
+msgstr "KDE Oyun Çubuğu Kontrol Modülü"
+
+#: joystick.cpp:81
+#, fuzzy
+#| msgid "KDE Control Center Module to test Joysticks"
+msgid "KDE System Settings Module to test Joysticks"
+msgstr ""
+"Oyun çubuklarını ayarlamak ve denemek için kullanılan KDE Kontrol Merkezi "
+"modülüKDE "
+
+#: joystick.cpp:82
+msgid "(c) 2004, Martin Koller"
+msgstr "(c) 2004, Martin Koller"
+
+#: joystick.cpp:85
+msgid ""
+"<h1>Joystick</h1>This module helps to check if your joystick is working "
+"correctly.<br />If it delivers wrong values for the axes, you can try to "
+"solve this with the calibration.<br />This module tries to find all "
+"available joystick devices by checking /dev/js[0-4] and /dev/input/js[0-4]"
+"<br />If you have another device file, enter it in the combobox.<br />The "
+"Buttons list shows the state of the buttons on your joystick, the Axes list "
+"shows the current value for all axes.<br />NOTE: the current Linux device "
+"driver (Kernel 2.4, 2.6) can only autodetect<ul><li>2-axis, 4-button "
+"joystick</li><li>3-axis, 4-button joystick</li><li>4-axis, 4-button "
+"joystick</li><li>Saitek Cyborg 'digital' joysticks</li></ul>(For details you "
+"can check your Linux source/Documentation/input/joystick.txt)"
+msgstr ""
+"<h1>Oyun kumandası</h1> Bu modül oyun kumandanızın düzgün çalışıp "
+"çalışmadığının kontrolü içindir.<br /> Eğer cihaz eksenler için yanlış "
+"değerler gönderiyorsa , bu sorunu ayarlama ile aşabilirsiniz.<br />Bu modül /"
+"dev/js[0-4] ve dev/input/js[0-4] kontrolü yaparak uygun tüm oyun "
+"kumandalarını bulmaya çalışır.<br />Eğer başka bir cihaz dosyanız varsa bunu "
+"combobox'a girin.<br />Düğme listesi oyun kumandası üzerindeki tüm düğmeleri "
+"belirtir , Eksen listesi ise tüm eksenler için değerleri veriri.<br />Not: "
+"Şu anki Linux Cihaz Sürücüsü (Çekirdek 2.4, 2.6) sadece otomatik tanıma "
+"yapabilir.<ul><li>2-eksen , 4-düğmeli oyun kumandası</li><li>3-eksen , 4-"
+"düğmeli oyun kumandası</li><li>4-eksen , 4-düğmeli oyun kumandası</li> "
+"<li>Saitek Cyborg Sayısal Oyun kumandaları</li></ul>(Detaylar için Linux "
+"source/Documentation/input/joystick.txt dosyasını kontrol edin)"
+
+#: joywidget.cpp:47
+msgid "PRESSED"
+msgstr "BASILDI"
+
+#: joywidget.cpp:93
+msgid "Device:"
+msgstr "Aygıt:"
+
+#: joywidget.cpp:112
+msgctxt "Cue for deflection of the stick"
+msgid "Position:"
+msgstr "Konum:"
+
+#: joywidget.cpp:115
+msgid "Show trace"
+msgstr "İzi göster"
+
+#: joywidget.cpp:128
+msgid "Buttons:"
+msgstr "Düğmeler:"
+
+#: joywidget.cpp:132
+msgid "State"
+msgstr "Durum"
+
+#: joywidget.cpp:140
+msgid "Axes:"
+msgstr "Eksenler:"
+
+#: joywidget.cpp:144
+msgid "Value"
+msgstr "Değer"
+
+#: joywidget.cpp:157
+msgid "Calibrate"
+msgstr "Kalibrasyon"
+
+#: joywidget.cpp:230
+msgid ""
+"No joystick device automatically found on this computer.<br />Checks were "
+"done in /dev/js[0-4] and /dev/input/js[0-4]<br />If you know that there is "
+"one attached, please enter the correct device file."
+msgstr ""
+"Bu bilgisayarda otomatik olarak hiçbir oyun kumandası cihazı bulunamadı.<br /"
+">/dev/js[0-4] ve /devinput/js[0-4] te arama yapıldı.<br />Eğer bağlı bir "
+"oyun kumandası olduğundan eminseniz, lütfen doğru cihaz dosyasını girin."
+
+#: joywidget.cpp:275
+msgid ""
+"The given device name is invalid (does not contain /dev).\n"
+"Please select a device from the list or\n"
+"enter a device file, like /dev/js0."
+msgstr ""
+"Verilen cihaz ismi geçersiz(/dev şeklinde başlamıyor).\n"
+"Lütfen listeden bir cihaz seçin ya da \n"
+"/dev/js0 'a benzer bir cihaz dosyası girin."
+
+#: joywidget.cpp:277
+msgid "Unknown Device"
+msgstr "Bilinmeyen Aygıt"
+
+#: joywidget.cpp:295
+msgid "Device Error"
+msgstr "Aygıt Hatası"
+
+#: joywidget.cpp:316
+msgid "1(x)"
+msgstr "1(x)"
+
+#: joywidget.cpp:317
+msgid "2(y)"
+msgstr "2(y)"
+
+#: joywidget.cpp:386
+msgid ""
+"<qt>Calibration is about to check the precision.<br /><br /><b>Please move "
+"all axes to their center position and then do not touch the joystick anymore."
+"</b><br /><br />Click OK to start the calibration.</qt>"
+msgstr ""
+"<qt>Ayarlama doğruluğu kontrol ediliyor.<br /><br /><b>Lütfen tüm yönleri "
+"merkez konumuna getirin ve oyun kumandasına daha fazla dokunmayın. </b><br /"
+"><br />Ayarlamayı başlatmak için OK tuşuna basın.</qt>"
+
+#: joywidget.cpp:421
+#, kde-format
+msgid "Restored all calibration values for joystick device %1."
+msgstr ""
+"Oyun kumandası %1 için tüm kalibrasyon değerleri eski yeniden yüklendi."
+
+#: rc.cpp:1
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Görkem Çetin"
+
+#: rc.cpp:2
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "gorkem@kde.org"
