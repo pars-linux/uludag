@@ -10,18 +10,19 @@
 # Adil YILDIZ <adil@kde.org.tr>, 2005.
 # Koray Löker <loker@pardus.org.tr>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcminput\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2008-09-15 14:02+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-19 15:04+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: logitechmouse.cpp:46 logitechmouse.cpp:88
@@ -50,7 +51,6 @@ msgstr ""
 "ile bağlantıyı sağlayın"
 
 #: logitechmouse.cpp:360
-#, fuzzy
 #| msgid "none"
 msgctxt "no cordless mouse"
 msgid "none"
@@ -672,3 +672,4 @@ msgstr "Temanın Üzerine Yazılsın mı?"
 #: xcursor/xcursortheme.cpp:39
 msgid "No description available"
 msgstr "Açıklama yok"
+
