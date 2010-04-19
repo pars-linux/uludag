@@ -20,8 +20,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: akonadiconsole/akonadiconsole.desktop:2
 msgctxt "Name"
@@ -318,12 +318,8 @@ msgstr "Yerel Dizindeki Alarmlar"
 
 #: kalarm/resources/localdir.desktop:46
 msgctxt "Comment"
-msgid ""
-"Provides access to an alarm calendar stored in a local directory, in which "
-"each calendar item is stored in a separate file"
-msgstr ""
-"Her takvim öğesinin ayrı bir dosyada depolandığı yerel bir dizinde "
-"depolanmış bir alarm takvimine erişim sağlar"
+msgid "Provides access to an alarm calendar stored in a local directory, in which each calendar item is stored in a separate file"
+msgstr "Her takvim öğesinin ayrı bir dosyada depolandığı yerel bir dizinde depolanmış bir alarm takvimine erişim sağlar"
 
 #: kalarm/resources/remote.desktop:2
 msgctxt "Name"
@@ -332,12 +328,8 @@ msgstr "Uzak Dosyadaki Alarmlar"
 
 #: kalarm/resources/remote.desktop:46
 msgctxt "Comment"
-msgid ""
-"Provides access to an alarm calendar in a remote file using KDE's network "
-"framework KIO"
-msgstr ""
-"KDE'nin ağ çatısı KIO'yu kullanarak uzak bir dosyadaki bir alarm takvimine "
-"erişim sağlar"
+msgid "Provides access to an alarm calendar in a remote file using KDE's network framework KIO"
+msgstr "KDE'nin ağ çatısı KIO'yu kullanarak uzak bir dosyadaki bir alarm takvimine erişim sağlar"
 
 #: kjots/kjots_config_misc.desktop:15 kmail/kmail_config_misc.desktop:16
 msgctxt "Name"
@@ -624,9 +616,7 @@ msgstr "İmzalama/Doğruluma"
 #: knode/knode_config_privacy.desktop:69
 msgctxt "Comment"
 msgid "Protect your privacy by signing and verifying postings"
-msgstr ""
-"Gönderilen iletilerinizi imzalayarak ve doğrulayarak güvenirliliğinizi "
-"sağlayın"
+msgstr "Gönderilen iletilerinizi imzalayarak ve doğrulayarak güvenirliliğinizi sağlayın"
 
 #: knode/knode_config_read_news.desktop:15
 msgctxt "Name"
@@ -978,7 +968,7 @@ msgstr "Kontact"
 #: kontact/src/kontactconfig.desktop:74
 msgctxt "Comment"
 msgid "Default KDE Kontact Component"
-msgstr ""
+msgstr "Öntanımlı KDE Kontact Bileşeni"
 
 #: kontact/src/Kontact.desktop:64
 msgctxt "GenericName"
@@ -1140,12 +1130,8 @@ msgstr "Takvimler için Tarih Rakamları Eklentisi"
 
 #: korganizer/plugins/datenums/datenums.desktop:55
 msgctxt "Comment"
-msgid ""
-"For each day this plugin shows its daynumber of the year at the top of the "
-"agenda view. For example, February 1 is day 32 of the year."
-msgstr ""
-"Bu eklenti, her gün için tarih bilgisini gün sayısı olarak ajanda "
-"görünümünün yukarısında gösterir. Örneğin, 1 Şubat yılın 32. günüdür."
+msgid "For each day this plugin shows its daynumber of the year at the top of the agenda view. For example, February 1 is day 32 of the year."
+msgstr "Bu eklenti, her gün için tarih bilgisini gün sayısı olarak ajanda görünümünün yukarısında gösterir. Örneğin, 1 Şubat yılın 32. günüdür."
 
 #: korganizer/plugins/hebrew/hebrew.desktop:3
 msgctxt "Name"
@@ -1185,9 +1171,7 @@ msgstr "Liste Yazdırma Tarzı"
 #: korganizer/plugins/printing/list/listprint.desktop:54
 msgctxt "Comment"
 msgid "This plugin allows you to print out events and to-dos in list form."
-msgstr ""
-"Bu eklenti, olayları ve yapılacaklar listesini bir liste biçiminde "
-"yazdırmanızı sağlar."
+msgstr "Bu eklenti, olayları ve yapılacaklar listesini bir liste biçiminde yazdırmanızı sağlar."
 
 #: korganizer/plugins/printing/whatsnext/whatsnextprint.desktop:3
 msgctxt "Name"
@@ -1196,11 +1180,8 @@ msgstr "Sıradaki Nedir Yazdırma Tarzı"
 
 #: korganizer/plugins/printing/whatsnext/whatsnextprint.desktop:54
 msgctxt "Comment"
-msgid ""
-"This plugin allows you to print out a list of all upcoming events and to-dos."
-msgstr ""
-"Bu eklenti, sıradaki olayları ve yapılacaklar listesini bir liste biçiminde "
-"yazdırmanızı sağlar."
+msgid "This plugin allows you to print out a list of all upcoming events and to-dos."
+msgstr "Bu eklenti, sıradaki olayları ve yapılacaklar listesini bir liste biçiminde yazdırmanızı sağlar."
 
 #: korganizer/plugins/printing/year/yearprint.desktop:3
 msgctxt "Name"
@@ -1229,12 +1210,8 @@ msgstr "KDE Adres Defterinden Doğum Günleri"
 
 #: kresources/birthdays/kabc.desktop:60
 msgctxt "Comment"
-msgid ""
-"Provides access to birthday dates of contacts in the KDE address book as "
-"calendar events"
-msgstr ""
-"KDE Adres defterindeki kişilerin doğumgünü günlerine takvim olayları olarak "
-"erişmeyi sağlar"
+msgid "Provides access to birthday dates of contacts in the KDE address book as calendar events"
+msgstr "KDE Adres defterindeki kişilerin doğumgünü günlerine takvim olayları olarak erişmeyi sağlar"
 
 #: kresources/blog/blog.desktop:2
 msgctxt "Name"
@@ -1244,8 +1221,7 @@ msgstr "Bir günlük içerisinde bildiri"
 #: kresources/blog/blog.desktop:45
 msgctxt "Comment"
 msgid "Allows to post calendar journal entries as blog entries"
-msgstr ""
-"Takvim günlük girdilerini günlük (blog) girdileri olarak göndermeyi sağlar"
+msgstr "Takvim günlük girdilerini günlük (blog) girdileri olarak göndermeyi sağlar"
 
 #: kresources/groupdav/kabc_groupdav.desktop:2
 #: kresources/groupdav/kcal_groupdav.desktop:2
@@ -1255,12 +1231,8 @@ msgstr "GroupDAV Sunucusu (ör. OpenGroupware)"
 
 #: kresources/groupdav/kabc_groupdav.desktop:52
 msgctxt "Comment"
-msgid ""
-"Provides access to contacts stored in address books on GroupDAV enabled "
-"servers, e.g. OpenGroupware"
-msgstr ""
-"GroupDAV etkinleştirilmiş olan sunucular üzerinde bulunan adres defterindeki "
-"kişilere erişimi sağlar, OpenGroupware gibi"
+msgid "Provides access to contacts stored in address books on GroupDAV enabled servers, e.g. OpenGroupware"
+msgstr "GroupDAV etkinleştirilmiş olan sunucular üzerinde bulunan adres defterindeki kişilere erişimi sağlar, OpenGroupware gibi"
 
 #: kresources/groupware/kabc_groupware.desktop:2
 #: kresources/groupware/kcal_groupware.desktop:2
@@ -1286,12 +1258,8 @@ msgstr "KMail Aracılığı ile IMAP Sunucusunda Adres Defteri"
 
 #: kresources/kolab/kabc/kolab.desktop:37
 msgctxt "Comment"
-msgid ""
-"Provides access to contacts stored on a Kolab server using IMAP via KMail or "
-"Kontact"
-msgstr ""
-"KMail ya da KOntact IMAP kullanarak Kolab sunucusu üzerindeki kişilere "
-"erişim sağlar"
+msgid "Provides access to contacts stored on a Kolab server using IMAP via KMail or Kontact"
+msgstr "KMail ya da KOntact IMAP kullanarak Kolab sunucusu üzerindeki kişilere erişim sağlar"
 
 #: kresources/kolab/kcal/kolab.desktop:2
 msgctxt "Name"
@@ -1300,12 +1268,8 @@ msgstr "KMail Aracılığı ile IMAP Sunucusunda Takvim"
 
 #: kresources/kolab/kcal/kolab.desktop:53
 msgctxt "Comment"
-msgid ""
-"Provides access to a calendar stored on a Kolab server using IMAP via KMail "
-"or Kontact"
-msgstr ""
-"KMail veya Kontact aracılığıyla IMAP kullanarak bir Kolab sunucusunda "
-"depolanan bir takvime erişim sağlar"
+msgid "Provides access to a calendar stored on a Kolab server using IMAP via KMail or Kontact"
+msgstr "KMail veya Kontact aracılığıyla IMAP kullanarak bir Kolab sunucusunda depolanan bir takvime erişim sağlar"
 
 #: kresources/kolab/knotes/kolabresource.desktop:2
 msgctxt "Name"
@@ -1319,12 +1283,8 @@ msgstr "Uzak Dosyadaki Takvim"
 
 #: kresources/remote/remote.desktop:57
 msgctxt "Comment"
-msgid ""
-"Provides access to a calendar in a remote file using KDE's network framework "
-"KIO"
-msgstr ""
-"KDE'nin ağ çatısı KIO'yu kullanarak uzak bir dosyadaki bir takvime erişimi "
-"sağlar"
+msgid "Provides access to a calendar in a remote file using KDE's network framework KIO"
+msgstr "KDE'nin ağ çatısı KIO'yu kullanarak uzak bir dosyadaki bir takvime erişimi sağlar"
 
 #: kresources/slox/kabc_ox.desktop:2 kresources/slox/kcal_ox.desktop:2
 msgctxt "Name"
@@ -1384,17 +1344,18 @@ msgstr "Kişisel Saat İzleyici"
 #: libkleo/libkleopatrarc.desktop:4
 msgctxt "Name"
 msgid "TAR (PGP®-compatible)"
-msgstr ""
+msgstr "TAR (PGP®-uyumlu)"
 
 #: libkleo/libkleopatrarc.desktop:40
+#, fuzzy
 msgctxt "Name"
 msgid "ZIP"
-msgstr ""
+msgstr "ZIP"
 
 #: libkleo/libkleopatrarc.desktop:77
 msgctxt "Name"
 msgid "TAR (with bzip2 compression)"
-msgstr ""
+msgstr "TAR (bzip2 sıkıştırmalı)"
 
 #: libkleo/libkleopatrarc.desktop:111
 msgctxt "Name"
@@ -1481,7 +1442,7 @@ msgstr "Nepomuk Takvim Besleyici"
 #: runtime/agents/nepomuk_calendar_feeder/nepomukcalendarfeeder.desktop:34
 msgctxt "Comment"
 msgid "Extension to push events, journals and todos into Nepomuk"
-msgstr ""
+msgstr "Olayları, günlükleri ve yapılacak işleri Nepomuk'a göndermek için eklenti"
 
 #: runtime/agents/nepomuk_contact_feeder/nepomukcontactfeeder.desktop:2
 msgctxt "Name"
@@ -1541,7 +1502,7 @@ msgstr "kaddressbookmigrator"
 #: runtime/migration/kaddressbook/kaddressbookmigrator.desktop:36
 msgctxt "Comment"
 msgid "Tool to migrate the old kresource based address book to Akonadi."
-msgstr ""
+msgstr "Kresource tabanlı eski adres defterini Akonadi'ye taşımak için araç"
 
 #: runtime/plugins/akonadi_serializer_addressee.desktop:2
 msgctxt "Name"
@@ -1610,12 +1571,8 @@ msgstr "Doğumgünleri & Yıldönümleri"
 
 #: runtime/resources/birthdays/birthdaysresource.desktop:38
 msgctxt "Comment"
-msgid ""
-"Provides access to birthday and anniversary dates of contacts in your "
-"address book as calendar events"
-msgstr ""
-"Adres defterindeki kişilerin doğumgünleri ve yıldönümlerine takvim olayları "
-"olarak erişmeyi sağlar"
+msgid "Provides access to birthday and anniversary dates of contacts in your address book as calendar events"
+msgstr "Adres defterindeki kişilerin doğumgünleri ve yıldönümlerine takvim olayları olarak erişmeyi sağlar"
 
 #: runtime/resources/contacts/contactsresource.desktop:2
 msgctxt "Name"
@@ -1689,12 +1646,8 @@ msgstr "Kolab Groupware Sunucusu"
 
 #: runtime/resources/kolabproxy/kolabproxyresource.desktop:35
 msgctxt "Comment"
-msgid ""
-"Provides access to Kolab groupware folders on an IMAP server (IMAP accounts "
-"need to be set up separately)."
-msgstr ""
-"IMAP sunucusu (IMAP hesapları ayrı ayrı yapılandırılmalıdır) üzerindeki "
-"Kolab groupware klasörlerine erişim sağlar."
+msgid "Provides access to Kolab groupware folders on an IMAP server (IMAP accounts need to be set up separately)."
+msgstr "IMAP sunucusu (IMAP hesapları ayrı ayrı yapılandırılmalıdır) üzerindeki Kolab groupware klasörlerine erişim sağlar."
 
 #: runtime/resources/localbookmarks/localbookmarksresource.desktop:2
 msgctxt "Name"
@@ -1717,14 +1670,16 @@ msgid "Loads data from a local maildir folder"
 msgstr "Yerel maildir dizininden veri yükleme aracı"
 
 #: runtime/resources/mailtransport_dummy/mtdummyresource.desktop:2
+#, fuzzy
 msgctxt "Name"
 msgid "Dummy MailTransport Resource"
-msgstr ""
+msgstr "Hayali MailTransport Kaynağı"
 
 #: runtime/resources/mailtransport_dummy/mtdummyresource.desktop:30
+#, fuzzy
 msgctxt "Comment"
 msgid "Dummy Resource implementing mail transport interface"
-msgstr ""
+msgstr "Posta nakletme arayüzünü gerçekleyen hayali kaynak"
 
 #: runtime/resources/mbox/mboxresource.desktop:2
 msgctxt "Name"
@@ -1744,9 +1699,7 @@ msgstr "Mini günlük (Twitter ve Identi.ca)"
 #: runtime/resources/microblog/microblog.desktop:39
 msgctxt "Comment"
 msgid "Shows your microblog data from Twitter or Identi.ca."
-msgstr ""
-"Twitter veya Identi.ca servislerinde bulunan mini günlük verilerinizi "
-"gösterir."
+msgstr "Twitter veya Identi.ca servislerinde bulunan mini günlük verilerinizi gösterir."
 
 #: runtime/resources/nepomuktag/nepomuktagresource.desktop:2
 msgctxt "Name"
@@ -1836,25 +1789,16 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "Senkronizasyon"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld calendar database with an Akonadi "
-#~ "calendar Collection."
-#~ msgstr ""
-#~ "Bu kanal el bilgisayarınızdaki takvim ile bilgisayarınızdakini eşzamanlar."
+#~ msgid "This conduit syncs the handheld calendar database with an Akonadi calendar Collection."
+#~ msgstr "Bu kanal el bilgisayarınızdaki takvim ile bilgisayarınızdakini eşzamanlar."
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld address book database with an Akonadi "
-#~ "collection."
-#~ msgstr ""
-#~ "Bu kanal, el bilgisayarınızdaki adres defteri veritabanı ile "
-#~ "bilgisayarınızdaki Akonadi koleksiyonunu eşzamanlar. "
+#~ msgid "This conduit syncs the handheld address book database with an Akonadi collection."
+#~ msgstr "Bu kanal, el bilgisayarınızdaki adres defteri veritabanı ile bilgisayarınızdaki Akonadi koleksiyonunu eşzamanlar. "
 
 #~ msgctxt "Comment"
 #~ msgid "Adds text files to your handheld, suitable for DOC readers."
-#~ msgstr ""
-#~ "Metin dosyalarını el bilgisayarınıza ekler, DOC biçimi okuyucuları için "
-#~ "uygundur."
+#~ msgstr "Metin dosyalarını el bilgisayarınıza ekler, DOC biçimi okuyucuları için uygundur."
 
 #~ msgctxt "Name"
 #~ msgid "Palm DOC"
@@ -1869,12 +1813,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "PalmDOC Çevirici"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld keyring database with a database stored "
-#~ "on the PC."
-#~ msgstr ""
-#~ "Bu kanal el bilgisayarınızdaki anahtar çifti veritabanı ile "
-#~ "bilgisayarınızdaki veritabanını  eşzamanlar."
+#~ msgid "This conduit syncs the handheld keyring database with a database stored on the PC."
+#~ msgstr "Bu kanal el bilgisayarınızdaki anahtar çifti veritabanı ile bilgisayarınızdaki veritabanını  eşzamanlar."
 
 #~ msgctxt "Name"
 #~ msgid "Keyring"
@@ -1885,15 +1825,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "MAL (AvantGo) Kanalı"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "Synchronize AvantGo (or generally a MAL server's content) to the "
-#~ "handheld. This allows you to view web-pages offline on the handheld, like "
-#~ "your cinema or TV schedule, or any other web page."
-#~ msgstr ""
-#~ "AvantGo içeriğini (ya da genel olarak MAL sunucuları içeriğini) el "
-#~ "bilgisayarı ile eşzamanlar. Bu, TV ya da sinema programı ve diğer  web "
-#~ "sayfalarını el bilgisayarınızda çevirim dışı olarak görüntülemenizi "
-#~ "sağlar."
+#~ msgid "Synchronize AvantGo (or generally a MAL server's content) to the handheld. This allows you to view web-pages offline on the handheld, like your cinema or TV schedule, or any other web page."
+#~ msgstr "AvantGo içeriğini (ya da genel olarak MAL sunucuları içeriğini) el bilgisayarı ile eşzamanlar. Bu, TV ya da sinema programı ve diğer  web sayfalarını el bilgisayarınızda çevirim dışı olarak görüntülemenizi sağlar."
 
 #~ msgctxt "Name"
 #~ msgid "Memo File"
@@ -1901,9 +1834,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "This conduit syncs your handheld memos with a local directory."
-#~ msgstr ""
-#~ "Bu bileşen el bilgisayarı hatırlatmalarını yerel bir dosyaya aktarır veya "
-#~ "alır."
+#~ msgstr "Bu bileşen el bilgisayarı hatırlatmalarını yerel bir dosyaya aktarır veya alır."
 
 #~ msgctxt "Name"
 #~ msgid "NotePad"
@@ -1911,8 +1842,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "This conduit backs up NotePad drawings to a local folder."
-#~ msgstr ""
-#~ "Bu bileşen, NotePad çizimlerini yerel bir dosyaya aktarır veya alır."
+#~ msgstr "Bu bileşen, NotePad çizimlerini yerel bir dosyaya aktarır veya alır."
 
 #~ msgctxt "Name"
 #~ msgid "NULL"
@@ -1927,9 +1857,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "El bilgisayarınızdan KMail aracılığı ile e-posta gönderir."
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit writes information about your handheld and the sync to a "
-#~ "file."
+#~ msgid "This conduit writes information about your handheld and the sync to a file."
 #~ msgstr "Bu bileşen, el bilgisayarınızın bilgilerini bir dosyaya yazar."
 
 #~ msgctxt "Name"
@@ -1945,32 +1873,20 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "Zaman Senkronizasyonu"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld todo database with an Akonadi Todo "
-#~ "Collection."
-#~ msgstr ""
-#~ "Bu kanal el bilgisayarınızdaki yapılacak ögeleri ile bilgisayarınızdaki "
-#~ "Akonadi Yapılacak Ögeleri Koleksiyonunu eşzamanlar."
+#~ msgid "This conduit syncs the handheld todo database with an Akonadi Todo Collection."
+#~ msgstr "Bu kanal el bilgisayarınızdaki yapılacak ögeleri ile bilgisayarınızdaki Akonadi Yapılacak Ögeleri Koleksiyonunu eşzamanlar."
 
 #~ msgctxt "Name"
 #~ msgid "To-do"
 #~ msgstr "Yapılacak Ögesi"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld address book with a database stored on "
-#~ "the PC."
-#~ msgstr ""
-#~ "Bu kanal el bilgisayarınızdaki adres defteri ile bilgisayarınızdaki "
-#~ "veritabanını eşzamanlar."
+#~ msgid "This conduit syncs the handheld address book with a database stored on the PC."
+#~ msgstr "Bu kanal el bilgisayarınızdaki adres defteri ile bilgisayarınızdaki veritabanını eşzamanlar."
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This conduit syncs the handheld keyring database with a database stored "
-#~ "on the pc."
-#~ msgstr ""
-#~ "Bu kanal el bilgisayarınızdaki anahtar çifti veritabanı ile "
-#~ "bilgisayarınızdakini eşzamanlar."
+#~ msgid "This conduit syncs the handheld keyring database with a database stored on the pc."
+#~ msgstr "Bu kanal el bilgisayarınızdaki anahtar çifti veritabanı ile bilgisayarınızdakini eşzamanlar."
 
 #~ msgctxt "Comment"
 #~ msgid "KPilot Conduit"
@@ -2005,12 +1921,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "KMail kullanarak Scalix Sunucusu üzerinde adres defteri"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "Provides access to contacts stored on a Scalix server using IMAP via "
-#~ "KMail or Kontact"
-#~ msgstr ""
-#~ "KMail ya da KOntact IMAP kullanarak Scalix sunucusu üzerindeki kişilere "
-#~ "erişim sağlar"
+#~ msgid "Provides access to contacts stored on a Scalix server using IMAP via KMail or Kontact"
+#~ msgstr "KMail ya da KOntact IMAP kullanarak Scalix sunucusu üzerindeki kişilere erişim sağlar"
 
 #~ msgctxt "Name"
 #~ msgid "Calendar on Scalix Server via KMail"
@@ -2041,15 +1953,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "KOrganizer için Zaman Dilimi Görünümü Eklentisi"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "This plugin provides a timespan view for korganizer (like the to-do or "
-#~ "month views). If you enable this plugin, you can switch to the timespan "
-#~ "view and view your events like in a Gantt diagram."
-#~ msgstr ""
-#~ "Bu eklenti, KOrganizer için zaman dilimi görünümü sağlar (yapılacaklar "
-#~ "listesi ya da aylık görünüm gibi). Eğer bu eklentiyi aktif hale "
-#~ "getirirseniz, zaman dilimi görünümüne geçebilir ve olayları Gantt "
-#~ "diyagramı şeklinde görüntüleyebilirsiniz."
+#~ msgid "This plugin provides a timespan view for korganizer (like the to-do or month views). If you enable this plugin, you can switch to the timespan view and view your events like in a Gantt diagram."
+#~ msgstr "Bu eklenti, KOrganizer için zaman dilimi görünümü sağlar (yapılacaklar listesi ya da aylık görünüm gibi). Eğer bu eklentiyi aktif hale getirirseniz, zaman dilimi görünümüne geçebilir ve olayları Gantt diyagramı şeklinde görüntüleyebilirsiniz."
 
 #~ msgctxt "Name"
 #~ msgid "Kontact Plugin"
@@ -2249,8 +2154,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "Plugin to export the web addresses of the contacts as bookmarks"
-#~ msgstr ""
-#~ "Bağlantıların web adreslerini yeri imleri olarak aktarmak için eklenti"
+#~ msgstr "Bağlantıların web adreslerini yeri imleri olarak aktarmak için eklenti"
 
 #~ msgctxt "Name"
 #~ msgid "KAB CSV XXPort Plugin"
@@ -2274,8 +2178,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "Plugin to import and export contacts in GMX's address book format"
-#~ msgstr ""
-#~ "GMX'in adres defteri biçimini içeriye ya da dışarıya aktarma eklentisi"
+#~ msgstr "GMX'in adres defteri biçimini içeriye ya da dışarıya aktarma eklentisi"
 
 #~ msgctxt "Name"
 #~ msgid "KAB Mobile Phone XXPort Plugin"
@@ -2283,9 +2186,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "Mobile phone plugin to import and export address book entries"
-#~ msgstr ""
-#~ "Adres defteri girdilerini cep telefonuna aktarma ve cep telefonundan alma "
-#~ "eklentisi"
+#~ msgstr "Adres defteri girdilerini cep telefonuna aktarma ve cep telefonundan alma eklentisi"
 
 #~ msgctxt "Name"
 #~ msgid "KAB KDE2 XXPort Plugin"
@@ -2300,11 +2201,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "KAB LDIF XXPort Eklentisi"
 
 #~ msgctxt "Comment"
-#~ msgid ""
-#~ "Plugin to import and export contacts in Netscape and Mozilla LDIF format"
-#~ msgstr ""
-#~ "Netscape ve Mozilla'nın LDIF biçimindeki bağlantılarını alma ve gönderme "
-#~ "eklentisi"
+#~ msgid "Plugin to import and export contacts in Netscape and Mozilla LDIF format"
+#~ msgstr "Netscape ve Mozilla'nın LDIF biçimindeki bağlantılarını alma ve gönderme eklentisi"
 
 #~ msgctxt "Name"
 #~ msgid "KAB Opera XXPort Plugin"
@@ -2454,9 +2352,6 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgid "Weather Information"
 #~ msgstr "Hava Durumu Bilgisi"
 
-#, fuzzy
-#~| msgctxt "GenericName"
-#~| msgid "Contact Manager"
 #~ msgctxt "Name"
 #~ msgid "Contacts manager"
 #~ msgstr "Kişi Yöneticisi"
@@ -2489,24 +2384,9 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgid "KMobileTools Engine based on the standard GSM AT Command Set"
 #~ msgstr "KMobileTools Motoru tabanlı standart GSM AT Komut Seti"
 
-#, fuzzy
-#~| msgctxt "Description"
-#~| msgid ""
-#~| "KMobileTools default engine, developed interally by the KMobileTools "
-#~| "team.\\nGood choice with almost all mobile phones, but on some models it "
-#~| "lacks advanced features.\\nBest choice with Motorola Phones, works good "
-#~| "also with Sony Ericsson and Siemens."
 #~ msgctxt "Description"
-#~ msgid ""
-#~ "KMobileTools default engine, developed interally by the KMobileTools team."
-#~ "\\nGood choice with almost all mobile phones, but on some models it lacks "
-#~ "advanced features.\\nBest choice with Motorola phones, also works well "
-#~ "with Sony Ericsson and Siemens phones."
-#~ msgstr ""
-#~ "KMobileTools takımı tarafından geliştirilen KMobileTools öntanımlı motoru."
-#~ "\\nTüm cep telefonları için iyi bir seçimdir ancak bazı modellerin "
-#~ "gelişmiş özelliklerinde yetersiz kalabilir.\\nMotorola telefonlar için en "
-#~ "iyi seçimdir, Sony Ericsson ve Siemens telefonlar ile de iyi çalışır."
+#~ msgid "KMobileTools default engine, developed interally by the KMobileTools team.\\nGood choice with almost all mobile phones, but on some models it lacks advanced features.\\nBest choice with Motorola phones, also works well with Sony Ericsson and Siemens phones."
+#~ msgstr "KMobileTools takımı tarafından geliştirilen KMobileTools öntanımlı motoru.\\nTüm cep telefonları için iyi bir seçimdir ancak bazı modellerin gelişmiş özelliklerinde yetersiz kalabilir.\\nMotorola telefonlar için en iyi seçimdir, Sony Ericsson ve Siemens telefonlar ile de iyi çalışır."
 
 #~ msgctxt "Name"
 #~ msgid "Fake engine"
@@ -2517,12 +2397,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "Bir KMobileTools yalancı motoru..."
 
 #~ msgctxt "Description"
-#~ msgid ""
-#~ "A KMobileTools fake engine that is used as a proof of concept for the api "
-#~ "redesign."
-#~ msgstr ""
-#~ "Api'yi yeniden tasarlama ve güçlendirme amacıyla kullanılan KMobileTools "
-#~ "yalancı motoru."
+#~ msgid "A KMobileTools fake engine that is used as a proof of concept for the api redesign."
+#~ msgstr "Api'yi yeniden tasarlama ve güçlendirme amacıyla kullanılan KMobileTools yalancı motoru."
 
 #~ msgctxt "Name"
 #~ msgid "Gammu Engine"
@@ -2533,14 +2409,8 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgstr "KMobileTools Motoru tabanlı Gammu"
 
 #~ msgctxt "Description"
-#~ msgid ""
-#~ "A KMobileTools engine which uses Gammu as backend. Compatible with all AT-"
-#~ "based phones. Special drivers for Alcatel, Nokia, Symbian and Sony "
-#~ "Ericsson phones."
-#~ msgstr ""
-#~ "Gammu arka ucunu kullanan bir KMobileTools motoru. AT-tabanlı telefonlar "
-#~ "ile uyumludur. Alcatel, Nokia, Symbian ve Sony Ericsson telefonlar için "
-#~ "özel sürücüler."
+#~ msgid "A KMobileTools engine which uses Gammu as backend. Compatible with all AT-based phones. Special drivers for Alcatel, Nokia, Symbian and Sony Ericsson phones."
+#~ msgstr "Gammu arka ucunu kullanan bir KMobileTools motoru. AT-tabanlı telefonlar ile uyumludur. Alcatel, Nokia, Symbian ve Sony Ericsson telefonlar için özel sürücüler."
 
 #~ msgctxt "Name"
 #~ msgid "KMobileTools"
@@ -2594,9 +2464,6 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 #~ msgid "kmobiletoolsMainPart"
 #~ msgstr "kmobiletoolsMainPart"
 
-#, fuzzy
-#~| msgctxt "Name"
-#~| msgid "Addressbook service"
 #~ msgctxt "Name"
 #~ msgid "Address Book Service"
 #~ msgstr "Adres defteri servisi"
@@ -2615,9 +2482,7 @@ msgstr "Grup Çalışması (Groupware) Sihirbazı"
 
 #~ msgctxt "Comment"
 #~ msgid "An application for configuration of devices used by kmobiletools"
-#~ msgstr ""
-#~ "Kmobiletools tarafından kullanılan aygıtları yapılandırmak için bir "
-#~ "uygulama"
+#~ msgstr "Kmobiletools tarafından kullanılan aygıtları yapılandırmak için bir uygulama"
 
 #~ msgctxt "Name"
 #~ msgid "Mobile Phones Filesystem"
