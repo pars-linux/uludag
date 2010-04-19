@@ -2,7 +2,7 @@
 # translation of kdeqt.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Uğur Çetin <jnmbk@users.sourceforge.net>, 2008.
 msgid ""
@@ -22,7 +22,8 @@ msgstr ""
 #. i18n: file: gui/dialogs/qpagesetupwidget.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, QPageSetupWidget)
 #. i18n: file: gui/dialogs/qprintpropertieswidget.ui:13
-#. i18n: ectx: property (windowTitle), widget (QWidget, QPrintPropertiesWidget)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. QPrintPropertiesWidget)
 #. i18n: file: gui/dialogs/qprintsettingsoutput.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, QPrintSettingsOutput)
 #. i18n: file: gui/dialogs/qprintwidget.ui:13
@@ -124,7 +125,8 @@ msgstr "sağ boşluk"
 #. i18n: file: gui/dialogs/qpagesetupwidget.ui:286
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, bottomMargin)
 #. i18n: file: gui/dialogs/qpagesetupwidget.ui:289
-#. i18n: ectx: property (accessibleName), widget (QDoubleSpinBox, bottomMargin)
+#. i18n: ectx: property (accessibleName), widget (QDoubleSpinBox,
+#. bottomMargin)
 #: rc.cpp:57 rc.cpp:60
 msgid "bottom margin"
 msgstr "alt boşluk"
@@ -299,8 +301,7 @@ msgstr "..."
 
 #: 3rdparty/phonon/gstreamer/backend.cpp:182
 msgid ""
-"Warning: You do not seem to have the package gstreamer0.10-plugins-good "
-"installed.\n"
+"Warning: You do not seem to have the package gstreamer0.10-plugins-good installed.\n"
 "          Some video features have been disabled."
 msgstr ""
 "Uyarı: gstreamer0.10-plugins-good eklentilerini  yüklememiş görünüyorsunuz.\n"
@@ -315,31 +316,19 @@ msgstr ""
 "       Tüm ses ve video desteği pasifleştirilecek"
 
 #: 3rdparty/phonon/gstreamer/mediaobject.cpp:90
-#, fuzzy
-#| msgid ""
-#| "Cannot start playback. \n"
-#| "\n"
-#| "Check your Gstreamer installation and make sure you \n"
-#| "have libgstreamer-plugins-base installed."
 msgid ""
 "Cannot start playback. \n"
 "\n"
 "Check your GStreamer installation and make sure you \n"
 "have libgstreamer-plugins-base installed."
 msgstr ""
-"Çalma işlemi başlatılamadı. \n"
-"\n"
-"Gstreamer kurulumunuzu kontrol edin ve \n"
-"libgstreamer-plugins-base paketinin kurulu olduğundan emin olun."
+"Gstreamer kurulumunuzu denetleyin ve gst-plugins-base \n"
+"paketinin kurulu olduğundan emin olun."
 
 #: 3rdparty/phonon/gstreamer/mediaobject.cpp:203
 #, qt-format
-msgid ""
-"A required codec is missing. You need to install the following codec(s) to "
-"play this content: %0"
-msgstr ""
-"Gerekli olan bir kodlayıcı yok. Bu içeriği çalmak için şu kodlayıcıları "
-"yüklemeniz gerekir: %0"
+msgid "A required codec is missing. You need to install the following codec(s) to play this content: %0"
+msgstr "Gerekli olan bir kodlayıcı yok. Bu içeriği çalmak için şu kodlayıcıları yüklemeniz gerekir: %0"
 
 #: 3rdparty/phonon/gstreamer/mediaobject.cpp:905
 #: 3rdparty/phonon/gstreamer/mediaobject.cpp:913
@@ -369,171 +358,144 @@ msgid "Could not decode media source."
 msgstr "Ortam kaynağı açılamadı."
 
 #: 3rdparty/phonon/mmf/audioequalizer.cpp:92
-#, fuzzy, qt-format
-#| msgid "%1 TB"
+#, qt-format
 msgid "%1 Hz"
-msgstr "%1 TB"
+msgstr "%1 Hz"
 
 #: 3rdparty/phonon/mmf/audiooutput.cpp:103
-#, fuzzy
-#| msgid "Debug Output"
 msgctxt "Phonon::MMF"
 msgid "Audio Output"
-msgstr "Hata Ayıklama Çıktısı"
+msgstr "Ses Çıktısı"
 
 #: 3rdparty/phonon/mmf/audiooutput.cpp:104
 msgctxt "Phonon::MMF"
 msgid "The audio output device"
-msgstr ""
+msgstr "Ses çıktı aygıtı"
 
 #: 3rdparty/phonon/mmf/audioplayer.cpp:173
 #: 3rdparty/phonon/mmf/abstractvideoplayer.cpp:178
 msgid "Getting position failed"
-msgstr ""
+msgstr "Pozisyon alınamadı"
 
 #: 3rdparty/phonon/mmf/audioplayer.cpp:209
 #: 3rdparty/phonon/mmf/abstractvideoplayer.cpp:244
 msgid "Opening clip failed"
-msgstr ""
+msgstr "Klip açılamadı"
 
 #: 3rdparty/phonon/mmf/effectfactory.cpp:181
 msgid "Enabled"
-msgstr ""
+msgstr "Etkin"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:146
 msgid "Decay HF ratio (%)"
-msgstr ""
+msgstr "HF Azalma (Decay) oranı (%)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:152
 msgid "Decay time (ms)"
-msgstr ""
+msgstr "Azalma (Decay) süresi (ms)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:159
 msgid "Density (%)"
-msgstr ""
+msgstr "Yoğunluk (%)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:165
 msgid "Diffusion (%)"
-msgstr ""
+msgstr "Dağılma (%)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:170
 msgid "Reflections delay (ms)"
-msgstr ""
+msgstr "Yansıma gecikmesi (ms)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:177
 msgid "Reflections level (mB)"
-msgstr ""
+msgstr "Yansıma seviyesi (mB)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:184
 msgid "Reverb delay (ms)"
-msgstr ""
+msgstr "Yankılanma gecikmesi (ms)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:192
 msgid "Reverb level (mB)"
-msgstr ""
+msgstr "Yankılanma seviyesi(mB)"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:199
 msgid "Room HF level"
-msgstr ""
+msgstr "Oda HF seviyesi"
 
 #: 3rdparty/phonon/mmf/environmentalreverb.cpp:205
 msgid "Room level (mB)"
-msgstr ""
+msgstr "Oda seviyesi (mB)"
 
 #: 3rdparty/phonon/mmf/stereowidening.cpp:79
-#, fuzzy
-#| msgid "Level"
 msgid "Level (%)"
-msgstr "Düzey"
+msgstr "Seviye (%)"
 
 #: 3rdparty/phonon/mmf/utils.cpp:89 network/ssl/qsslerror.cpp:213
-#, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Network error"
 msgid "No error"
-msgstr "Ağ hatası"
+msgstr "Hata yok"
 
 #: 3rdparty/phonon/mmf/utils.cpp:91
-#, fuzzy
-#| msgid "Host not found"
 msgid "Not found"
-msgstr "Makine bulunamadı"
+msgstr "Bulunamadı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:93
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Out of resources"
 msgid "Out of memory"
 msgstr "Yetersiz kaynak"
 
 #: 3rdparty/phonon/mmf/utils.cpp:95
 #, fuzzy
-#| msgid "Address type not supported"
 msgid "Not supported"
 msgstr "Adres tipi desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/utils.cpp:97
 #, fuzzy
-#| msgctxt "Underline context menu item"
-#| msgid "Underline"
 msgid "Overflow"
 msgstr "Altı Çizili"
 
 #: 3rdparty/phonon/mmf/utils.cpp:99
 #, fuzzy
-#| msgctxt "Underline context menu item"
-#| msgid "Underline"
 msgid "Underflow"
 msgstr "Altı Çizili"
 
 #: 3rdparty/phonon/mmf/utils.cpp:101
 #, fuzzy
-#| msgid "%1: already exists"
 msgid "Already exists"
 msgstr "%1: zaten var"
 
 #: 3rdparty/phonon/mmf/utils.cpp:103
 #, fuzzy
-#| msgid "Host not found"
 msgid "Path not found"
 msgstr "Makine bulunamadı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:105
 #, fuzzy
-#| msgid "Insert"
 msgid "In use"
 msgstr "Ekle"
 
 #: 3rdparty/phonon/mmf/utils.cpp:107
 #, fuzzy
-#| msgid "Address type not supported"
 msgid "Not ready"
 msgstr "Adres tipi desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/utils.cpp:109
 #, fuzzy
-#| msgctxt "QIODevice"
-#| msgid "Permission denied"
 msgid "Access denied"
 msgstr "İzin verilmedi"
 
 #: 3rdparty/phonon/mmf/utils.cpp:111
 #, fuzzy
-#| msgid "Could not open file."
 msgid "Could not connect"
 msgstr "Dosya açılamadı."
 
 #: 3rdparty/phonon/mmf/utils.cpp:113
 #, fuzzy
-#| msgid "Socket is not connected"
 msgid "Disconnected"
 msgstr "Soket bağlı değil"
 
 #: 3rdparty/phonon/mmf/utils.cpp:115
 #: network/socket/qnativesocketengine.cpp:230
 #, fuzzy
-#| msgctxt "QIODevice"
-#| msgid "Permission denied"
 msgid "Permission denied"
 msgstr "İzin verilmedi"
 
@@ -543,39 +505,32 @@ msgstr ""
 
 #: 3rdparty/phonon/mmf/utils.cpp:122
 #, fuzzy
-#| msgid "Network unreachable"
 msgid "Network unavailable"
 msgstr "Ağ erişilemez durumda"
 
 #: 3rdparty/phonon/mmf/utils.cpp:126
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Network error"
 msgid "Network communication error"
 msgstr "Ağ hatası"
 
 #: 3rdparty/phonon/mmf/utils.cpp:128
 #, fuzzy
-#| msgid "Operation not supported on %1"
 msgid "Streaming not supported"
 msgstr "İşlemi %1 üzerinde desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/utils.cpp:130
 #, fuzzy
-#| msgid "%1: ftok failed"
 msgid "Server alert"
 msgstr "%1: ftok başarısız oldu"
 
 #: 3rdparty/phonon/mmf/utils.cpp:132
 #, fuzzy
-#| msgid "Invalid filename"
 msgid "Invalid protocol"
 msgstr "Geçersiz dosya adı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:134
 #: 3rdparty/webkit/WebKit/qt/tests/qwebframe/tst_qwebframe.cpp:2202
 #, fuzzy
-#| msgid "Invalid URI: %1"
 msgid "Invalid URL"
 msgstr "Geçersiz Adres: %1"
 
@@ -585,33 +540,26 @@ msgstr ""
 
 #: 3rdparty/phonon/mmf/utils.cpp:139
 #, fuzzy
-#| msgid "Parse error: %1"
 msgid "Proxy server error"
 msgstr "Ayrıştırma hatası: %1"
 
 #: 3rdparty/phonon/mmf/utils.cpp:141
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Protocol type not supported"
 msgid "Proxy server not supported"
 msgstr "Protokol tipi desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/utils.cpp:143
 #, fuzzy
-#| msgid "Debug Output"
 msgid "Audio output error"
 msgstr "Hata Ayıklama Çıktısı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:145
 #, fuzzy
-#| msgid "Debug Output"
 msgid "Video output error"
 msgstr "Hata Ayıklama Çıktısı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:147
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Network error"
 msgid "Decoder error"
 msgstr "Ağ hatası"
 
@@ -621,28 +569,21 @@ msgstr ""
 
 #: 3rdparty/phonon/mmf/utils.cpp:151
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Network error"
 msgid "DRM error"
 msgstr "Ağ hatası"
 
 #: 3rdparty/phonon/mmf/utils.cpp:166
 #, fuzzy, qt-format
-#| msgid "Unknown error"
 msgid "Unknown error (%1)"
 msgstr "Bilinmeyen hata"
 
 #: 3rdparty/phonon/mmf/mediaobject.cpp:276
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Protocol type not supported"
 msgid "Error opening source: type not supported"
 msgstr "Protokol tipi desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/mediaobject.cpp:294
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Protocol type not supported"
 msgid "Error opening source: media type could not be determined"
 msgstr "Protokol tipi desteklenmiyor"
 
@@ -663,21 +604,16 @@ msgstr ""
 #: 3rdparty/phonon/mmf/abstractmediaplayer.cpp:234
 #: 3rdparty/phonon/mmf/abstractmediaplayer.cpp:244
 #, fuzzy
-#| msgctxt "QNetworkAccessCacheBackend"
-#| msgid "Error opening %1"
 msgid "Error opening file"
 msgstr "%1 açılamadı"
 
 #: 3rdparty/phonon/mmf/abstractmediaplayer.cpp:248
 #, fuzzy
-#| msgctxt "QNetworkAccessCacheBackend"
-#| msgid "Error opening %1"
 msgid "Error opening URL"
 msgstr "%1 açılamadı"
 
 #: 3rdparty/phonon/mmf/abstractmediaplayer.cpp:331
 #, fuzzy
-#| msgid "%1: ftok failed"
 msgid "Setting volume failed"
 msgstr "%1: ftok başarısız oldu"
 
@@ -687,13 +623,11 @@ msgstr ""
 
 #: 3rdparty/phonon/mmf/abstractvideoplayer.cpp:108
 #, fuzzy
-#| msgid "%1: ftok failed"
 msgid "Pause failed"
 msgstr "%1: ftok başarısız oldu"
 
 #: 3rdparty/phonon/mmf/abstractvideoplayer.cpp:124
 #, fuzzy
-#| msgid "%1: ftok failed"
 msgid "Seek failed"
 msgstr "%1: ftok başarısız oldu"
 
@@ -703,21 +637,13 @@ msgstr ""
 
 #: 3rdparty/phonon/phonon/audiooutput.cpp:385
 #, qt-format
-msgid ""
-"<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to "
-"<b>%2</b>.</html>"
-msgstr ""
-"<html>Ses çalma aygıtı <b>%1</b> çalışmıyor.<br/><b>%2</b> aygıtına geri "
-"dönülüyor.</html>"
+msgid "<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to <b>%2</b>.</html>"
+msgstr "<html>Ses çalma aygıtı <b>%1</b> çalışmıyor.<br/><b>%2</b> aygıtına geri dönülüyor.</html>"
 
 #: 3rdparty/phonon/phonon/audiooutput.cpp:398
 #, qt-format
-msgid ""
-"<html>Switching to the audio playback device <b>%1</b><br/>which just became "
-"available and has higher preference.</html>"
-msgstr ""
-"<html>Şimdi kullanılabilir duruma gelen ve daha yüksek öncelikli olan <b>%1</"
-"b><br/> aygıtına geçiliyor.</html>"
+msgid "<html>Switching to the audio playback device <b>%1</b><br/>which just became available and has higher preference.</html>"
+msgstr "<html>Şimdi kullanılabilir duruma gelen ve daha yüksek öncelikli olan <b>%1</b><br/> aygıtına geçiliyor.</html>"
 
 #: 3rdparty/phonon/phonon/audiooutput.cpp:401
 #, qt-format
@@ -766,12 +692,8 @@ msgstr "Ses: %1%"
 #: 3rdparty/phonon/phonon/volumeslider.cpp:63
 #: 3rdparty/phonon/phonon/volumeslider.cpp:117
 #, qt-format
-msgid ""
-"Use this slider to adjust the volume. The leftmost position is 0%, the "
-"rightmost is %1%"
-msgstr ""
-"Sesi ayarlamak için bu kaydırıcıyı kullanın. En soldaki konum 0%, en sağdaki "
-"ise %1%."
+msgid "Use this slider to adjust the volume. The leftmost position is 0%, the rightmost is %1%"
+msgstr "Sesi ayarlamak için bu kaydırıcıyı kullanın. En soldaki konum 0%, en sağdaki ise %1%."
 
 #: 3rdparty/phonon/phonon/volumeslider.cpp:184
 msgid "Muted"
@@ -788,9 +710,7 @@ msgid "Submit"
 msgstr "Gönder"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:47
-msgctxt ""
-"Submit (input element) alt text for <input> elements with no alt, title, or "
-"value"
+msgctxt "Submit (input element) alt text for <input> elements with no alt, title, or value"
 msgid "Submit"
 msgstr "Gönder"
 
@@ -800,9 +720,7 @@ msgid "Reset"
 msgstr "Sıfırla"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:63
-msgctxt ""
-"text that appears at the start of nearly-obsolete web pages in the form of a "
-"'searchable index'"
+msgctxt "text that appears at the start of nearly-obsolete web pages in the form of a 'searchable index'"
 msgid "This is a searchable index. Enter search keywords: "
 msgstr "Bu aranabilir bir indeks. Aranacak sözcükleri girin:"
 
@@ -812,8 +730,7 @@ msgid "Choose File"
 msgstr "Dosya Seç"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:73
-msgctxt ""
-"text to display in file button used in HTML forms when no file is selected"
+msgctxt "text to display in file button used in HTML forms when no file is selected"
 msgid "No file selected"
 msgstr "Dosya seçilmedi"
 
@@ -999,7 +916,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:254
 #, fuzzy
-#| msgid "Right edge"
 msgctxt "Right to Left context menu item"
 msgid "Right to Left"
 msgstr "Sağ gölge"
@@ -1010,16 +926,12 @@ msgid "Inspect"
 msgstr "Denetle"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:264
-msgctxt ""
-"Label for only item in menu that appears when clicking on the search field "
-"image, when no searches have been performed"
+msgctxt "Label for only item in menu that appears when clicking on the search field image, when no searches have been performed"
 msgid "No recent searches"
 msgstr "Son aramalar boş"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:269
-msgctxt ""
-"label for first item in the menu that appears when clicking on the search "
-"field image, used as embedded menu title"
+msgctxt "label for first item in the menu that appears when clicking on the search field image, used as embedded menu title"
 msgid "Recent searches"
 msgstr "Son aramalar"
 
@@ -1051,8 +963,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:372
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Audio Repeat"
 msgctxt "Media controller element"
 msgid "Audio Element"
 msgstr "Sesi Tekrarla"
@@ -1084,7 +994,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:384
 #, fuzzy
-#| msgid "SliderHandle"
 msgctxt "Media controller element"
 msgid "Slider"
 msgstr "Kaydırma Çubuğu Tutucu"
@@ -1116,8 +1025,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:396
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Display"
 msgctxt "Media controller element"
 msgid "Status Display"
 msgstr "Ekran"
@@ -1179,7 +1086,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:426
 #, fuzzy
-#| msgid "Remove"
 msgctxt "Media controller element"
 msgid "Rewind movie"
 msgstr "Kaldır"
@@ -1330,14 +1236,11 @@ msgstr "JavaScript Sorusu - %1"
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:1893
 #, fuzzy, qt-format
-#| msgid "JavaScript Prompt - %1"
 msgid "JavaScript Problem - %1"
 msgstr "JavaScript Sorusu - %1"
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:1893
-msgid ""
-"The script on this page appears to have a problem. Do you want to stop the "
-"script?"
+msgid "The script on this page appears to have a problem. Do you want to stop the script?"
 msgstr ""
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2274
@@ -1466,14 +1369,11 @@ msgstr ""
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2399
 #, fuzzy
-#| msgid "Stri&keout"
 msgid "Strikethrough"
 msgstr "Üstü çi&zili"
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2403
 #, fuzzy
-#| msgctxt "default label for Submit buttons in forms on web pages"
-#| msgid "Submit"
 msgid "Subscript"
 msgstr "Gönder"
 
@@ -1491,7 +1391,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2419
 #, fuzzy
-#| msgid "Insert"
 msgid "Indent"
 msgstr "Ekle"
 
@@ -1501,8 +1400,6 @@ msgstr ""
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2425
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Enter"
 msgid "Center"
 msgstr "Enter"
 
@@ -1512,15 +1409,11 @@ msgstr ""
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2431
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Application Left"
 msgid "Align Left"
 msgstr "Uygulama Sağ"
 
 #: 3rdparty/webkit/WebKit/qt/Api/qwebpage.cpp:2434
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Application Right"
 msgid "Align Right"
 msgstr "Uygulama Sol"
 
@@ -1532,7 +1425,6 @@ msgstr "Web Denetleyici - %2"
 
 #: 3rdparty/webkit/WebKit/qt/tests/qwebframe/tst_qwebframe.cpp:2199
 #, fuzzy
-#| msgid "Parse error: %1"
 msgid "Fake error !"
 msgstr "Ayrıştırma hatası: %1"
 
@@ -1579,7 +1471,6 @@ msgstr "Süreç işlemde zaman aşımı"
 
 #: corelib/io/qprocess_win.cpp:403
 #, fuzzy, qt-format
-#| msgid "Process failed to start"
 msgid "Process failed to start: %1"
 msgstr "Süreç başlatılamadı."
 
@@ -1715,7 +1606,6 @@ msgstr "%1: anahtar yapılamadı"
 #: corelib/kernel/qsharedmemory_unix.cpp:89
 #: corelib/kernel/qsharedmemory_win.cpp:74
 #, fuzzy, qt-format
-#| msgid "%1: doesn't exists"
 msgid "%1: doesn't exist"
 msgstr "%1: yok"
 
@@ -1726,7 +1616,6 @@ msgstr "%1: anahtar boş"
 
 #: corelib/kernel/qsharedmemory_unix.cpp:128
 #, fuzzy, qt-format
-#| msgid "%1: unix key file doesn't exists"
 msgid "%1: UNIX key file doesn't exist"
 msgstr "%1: unix anahtar dosyası yok"
 
@@ -1836,21 +1725,13 @@ msgstr "'%1' eklentisi uyumsuz Qt kitaplığı kullanıyor. (%2.%3.%4) [%5]"
 
 #: corelib/plugin/qlibrary.cpp:776
 #, qt-format
-msgid ""
-"The plugin '%1' uses incompatible Qt library. Expected build key \"%2\", got "
-"\"%3\""
-msgstr ""
-"'%1' eklentisi uyumsuz Qt kitaplığı kullanıyor. Beklenen inşa anahtarı \"%2"
-"\", alınan \"%3\""
+msgid "The plugin '%1' uses incompatible Qt library. Expected build key \"%2\", got \"%3\""
+msgstr "'%1' eklentisi uyumsuz Qt kitaplığı kullanıyor. Beklenen inşa anahtarı \"%2\", alınan \"%3\""
 
 #: corelib/plugin/qlibrary.cpp:784
 #, qt-format
-msgid ""
-"The plugin '%1' uses incompatible Qt library. (Cannot mix debug and release "
-"libraries.)"
-msgstr ""
-"'%1' eklentisi uyumsuz Qt kitaplığı kullanıyor. (Hata ayıklama ve uygulama "
-"kitaplıkları karışık olamaz.)"
+msgid "The plugin '%1' uses incompatible Qt library. (Cannot mix debug and release libraries.)"
+msgstr "'%1' eklentisi uyumsuz Qt kitaplığı kullanıyor. (Hata ayıklama ve uygulama kitaplıkları karışık olamaz.)"
 
 #: corelib/plugin/qlibrary_unix.cpp:236 corelib/plugin/qlibrary_win.cpp:87
 #, qt-format
@@ -1933,15 +1814,12 @@ msgstr "iç limite ulaşıldı"
 
 #: corelib/tools/qregexp.cpp:74
 #, fuzzy
-#| msgctxt "QRegExp"
-#| msgid "invalid octal value"
 msgctxt "QRegExp"
 msgid "invalid interval"
 msgstr "geçersiz sekizlik değer"
 
 #: corelib/tools/qregexp.cpp:75
 #, fuzzy
-#| msgid "Invalid XML character."
 msgctxt "QRegExp"
 msgid "invalid category"
 msgstr "Geçersiz XML karakteri."
@@ -2644,12 +2522,8 @@ msgstr "Geçersiz dosya adı"
 
 #: gui/dialogs/qfilesystemmodel.cpp:829
 #, qt-format
-msgid ""
-"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
-"characters or no punctuations marks."
-msgstr ""
-"<b>\"%1\" ismi kullanılamaz.</b><p>Daha az karakter içeren ve noktalama "
-"işaretleri içermeyen başka bir isim kullanmayı deneyin."
+msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
+msgstr "<b>\"%1\" ismi kullanılamaz.</b><p>Daha az karakter içeren ve noktalama işaretleri içermeyen başka bir isim kullanmayı deneyin."
 
 #: gui/dialogs/qfilesystemmodel.cpp:893 gui/itemviews/qdirmodel.cpp:457
 msgid "Name"
@@ -2693,81 +2567,13 @@ msgstr "Yardım"
 
 #: gui/dialogs/qmessagebox.cpp:1715
 #, fuzzy, qt-format
-#| msgid "<p>This program uses Qt version %1.</p>"
 msgid "<h3>About Qt</h3><p>This program uses Qt version %1.</p>"
 msgstr "<p>Bu uygulama Qt %1 sürümü kullanmaktadır.</p>"
 
 #: gui/dialogs/qmessagebox.cpp:1720
 #, fuzzy
-#| msgid ""
-#| "<h3>About Qt</h3><p>This program uses Qt version %1.</p><p>Qt is a C++ "
-#| "toolkit for cross-platform application development.</p><p>Qt provides "
-#| "single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, "
-#| "Linux, and all major commercial Unix variants. Qt is also available for "
-#| "embedded devices as Qt for Embedded Linux and Qt for Windows CE.</p><p>Qt "
-#| "is available under three different licensing options designed to "
-#| "accommodate the needs of our various users.</p>Qt licensed under our "
-#| "commercial license agreement is appropriate for development of "
-#| "proprietary/commercial software where you do not want to share any source "
-#| "code with third parties or otherwise cannot comply with the terms of the "
-#| "GNU LGPL version 2.1 or GNU GPL version 3.0.</p><p>Qt licensed under the "
-#| "GNU LGPL version 2.1 is appropriate for the development of Qt "
-#| "applications (proprietary or open source) provided you can comply with "
-#| "the terms and conditions of the GNU LGPL version 2.1.</p><p>Qt licensed "
-#| "under the GNU General Public License version 3.0 is appropriate for the "
-#| "development of Qt applications where you wish to use such applications in "
-#| "combination with software subject to the terms of the GNU GPL version 3.0 "
-#| "or where you are otherwise willing to comply with the terms of the GNU "
-#| "GPL version 3.0.</p><p>Please see <a href=\"http://www.qtsoftware.com/"
-#| "products/licensing\">www.qtsoftware.com/products/licensing</a> for an "
-#| "overview of Qt licensing.</p><p>Copyright (C) 2009 Nokia Corporation and/"
-#| "or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a href="
-#| "\"http://www.qtsoftware.com/qt/\">www.qtsoftware.com/qt</a> for more "
-#| "information.</p>"
-msgid ""
-"<p>Qt is a C++ toolkit for cross-platform application development.</p><p>Qt "
-"provides single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;"
-"X, Linux, and all major commercial Unix variants. Qt is also available for "
-"embedded devices as Qt for Embedded Linux and Qt for Windows CE.</p><p>Qt is "
-"available under three different licensing options designed to accommodate "
-"the needs of our various users.</p><p>Qt licensed under our commercial "
-"license agreement is appropriate for development of proprietary/commercial "
-"software where you do not want to share any source code with third parties "
-"or otherwise cannot comply with the terms of the GNU LGPL version 2.1 or GNU "
-"GPL version 3.0.</p><p>Qt licensed under the GNU LGPL version 2.1 is "
-"appropriate for the development of Qt applications (proprietary or open "
-"source) provided you can comply with the terms and conditions of the GNU "
-"LGPL version 2.1.</p><p>Qt licensed under the GNU General Public License "
-"version 3.0 is appropriate for the development of Qt applications where you "
-"wish to use such applications in combination with software subject to the "
-"terms of the GNU GPL version 3.0 or where you are otherwise willing to "
-"comply with the terms of the GNU GPL version 3.0.</p><p>Please see <a href="
-"\"http://qt.nokia.com/products/licensing\">qt.nokia.com/products/licensing</"
-"a> for an overview of Qt licensing.</p><p>Copyright (C) 2010 Nokia "
-"Corporation and/or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a "
-"href=\"http://qt.nokia.com/\">qt.nokia.com</a> for more information.</p>"
-msgstr ""
-"<h3>Qt Hakkında</h3>%1<p>Qt, uygulama geliştirmek için oluşturulmuş, "
-"platformdan bağımsız bir C++ araç takımıdır.</p><p>Qt, MS&nbsp;Windows, "
-"Mac&nbsp;OS&nbsp;X, Linux ve tüm ticari Unix platformları için tek-kaynak "
-"kod taşınabilirliği sağlar. Qt, gömülü Linux sistemler ve  Windows CE için "
-"de kulanılabilir.</p><p>Qt çeşitli kullanıcıların gereksinimlerini "
-"karşılamak için üç farklı lisans ile sunulmaktadır.</p>Qt, sahipli/ticari "
-"yazılım geliştirmek ve üçüncü şahıslarla kaynak kodlarını paylaşmak "
-"istemeyenler başka bir deyişle GNU LGPL sürüm 2.1 veya GNU GPL sürüm 3.0 "
-"lisansına uymak istemeyenler için Qt ticari lisans sözleşmesi ile "
-"lisanslanmıştır.<p>Qt, GNU LGPL sürüm 2.1 lisansının kurallarına uyarak Qt "
-"uygulamaları (sahipli veya açık kaynak kodlu) geliştirmek için de GNU LGPL "
-"sürüm 2.1 lisansı ile lisanslanmıştır.</p><p>Qt ayrıca Genel Kamu Lisansı "
-"sürüm 3.0 ile lisanslanmıştır. Bu lisans ile GNU GPL sürüm 3.0 kuralları "
-"içerisindeki yazılım konusuyla birlikte kullanmak üzere veya GNU GPL sürüm "
-"3.0. kurallarına uygun Qt uygulamaları geliştirilebilir.</p><p> Qt "
-"lisanslaması hakkında bilgi almak için lütfen <a href=\"http://www."
-"qtsoftware.com/products/licensing\">www.qtsoftware.com/products/licensing</"
-"a> adresine bakın.</p><p>Telif Hakları (C) 2009 Nokia ve Nokia'ya bağlı "
-"kuruluşlar.</p><p>Qt bir Nokia ürünüdür. Daha fazla bilgi için <a href="
-"\"http://www.trolltech.com/qt/\">www.qtsoftware.com/qt</a> adresine bakın.</"
-"p>"
+msgid "<p>Qt is a C++ toolkit for cross-platform application development.</p><p>Qt provides single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</p><p>Qt is available under three different licensing options designed to accommodate the needs of our various users.</p><p>Qt licensed under our commercial license agreement is appropriate for development of proprietary/commercial software where you do not want to share any source code with third parties or otherwise cannot comply with the terms of the GNU LGPL version 2.1 or GNU GPL version 3.0.</p><p>Qt licensed under the GNU LGPL version 2.1 is appropriate for the development of Qt applications (proprietary or open source) provided you can comply with the terms and conditions of the GNU LGPL version 2.1.</p><p>Qt licensed under the GNU General Public License version 3.0 is appropriate for the development of Qt applications where you wish to use such applications in combination with software subject to the terms of the GNU GPL version 3.0 or where you are otherwise willing to comply with the terms of the GNU GPL version 3.0.</p><p>Please see <a href=\"http://qt.nokia.com/products/licensing\">qt.nokia.com/products/licensing</a> for an overview of Qt licensing.</p><p>Copyright (C) 2010 Nokia Corporation and/or its subsidiary(-ies).</p><p>Qt is a Nokia product. See <a href=\"http://qt.nokia.com/\">qt.nokia.com</a> for more information.</p>"
+msgstr "<h3>Qt Hakkında</h3>%1<p>Qt, uygulama geliştirmek için oluşturulmuş, platformdan bağımsız bir C++ araç takımıdır.</p><p>Qt, MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, Linux ve tüm ticari Unix platformları için tek-kaynak kod taşınabilirliği sağlar. Qt, gömülü Linux sistemler ve  Windows CE için de kulanılabilir.</p><p>Qt çeşitli kullanıcıların gereksinimlerini karşılamak için üç farklı lisans ile sunulmaktadır.</p>Qt, sahipli/ticari yazılım geliştirmek ve üçüncü şahıslarla kaynak kodlarını paylaşmak istemeyenler başka bir deyişle GNU LGPL sürüm 2.1 veya GNU GPL sürüm 3.0 lisansına uymak istemeyenler için Qt ticari lisans sözleşmesi ile lisanslanmıştır.<p>Qt, GNU LGPL sürüm 2.1 lisansının kurallarına uyarak Qt uygulamaları (sahipli veya açık kaynak kodlu) geliştirmek için de GNU LGPL sürüm 2.1 lisansı ile lisanslanmıştır.</p><p>Qt ayrıca Genel Kamu Lisansı sürüm 3.0 ile lisanslanmıştır. Bu lisans ile GNU GPL sürüm 3.0 kuralları içerisindeki yazılım konusuyla birlikte kullanmak üzere veya GNU GPL sürüm 3.0. kurallarına uygun Qt uygulamaları geliştirilebilir.</p><p> Qt lisanslaması hakkında bilgi almak için lütfen <a href=\"http://www.qtsoftware.com/products/licensing\">www.qtsoftware.com/products/licensing</a> adresine bakın.</p><p>Telif Hakları (C) 2009 Nokia ve Nokia'ya bağlı kuruluşlar.</p><p>Qt bir Nokia ürünüdür. Daha fazla bilgi için <a href=\"http://www.trolltech.com/qt/\">www.qtsoftware.com/qt</a> adresine bakın.</p>"
 
 #: gui/dialogs/qmessagebox.cpp:1750
 msgid "About Qt"
@@ -2795,7 +2601,6 @@ msgstr "Mac OS X girdi yöntemi"
 
 #: gui/inputmethod/qinputcontextfactory.cpp:340
 #, fuzzy
-#| msgid "Mac OS X input method"
 msgid "S60 FEP input method"
 msgstr "Mac OS X girdi yöntemi"
 
@@ -2806,7 +2611,6 @@ msgstr "Kök Dizini"
 
 #: gui/itemviews/qdirmodel.cpp:1354
 #, fuzzy, qt-format
-#| msgid "%1 bytes"
 msgid "%1 byte(s)"
 msgstr "%1 bayt"
 
@@ -2836,14 +2640,12 @@ msgstr ""
 
 #: gui/itemviews/qfileiconprovider.cpp:475
 #, fuzzy
-#| msgid "Form"
 msgctxt "All other platforms"
 msgid "Folder"
 msgstr "Biçim"
 
 #: gui/itemviews/qfileiconprovider.cpp:484
 #, fuzzy
-#| msgid "Aliases: %1"
 msgctxt "Mac OS X Finder"
 msgid "Alias"
 msgstr "Takma adlar: %1"
@@ -2859,10 +2661,7 @@ msgid "Unknown"
 msgstr "Bilinmeyen"
 
 #: gui/kernel/qapplication.cpp:2289
-msgctxt ""
-"Translate this string to the string 'LTR' in left-to-right languages or to "
-"'RTL' in right-to-left languages (such as Hebrew and Arabic) to get proper "
-"widget layout."
+msgctxt "Translate this string to the string 'LTR' in left-to-right languages or to 'RTL' in right-to-left languages (such as Hebrew and Arabic) to get proper widget layout."
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
 
@@ -3772,8 +3571,6 @@ msgstr ""
 
 #: gui/kernel/qsoftkeymanager.cpp:66
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "Select"
 msgid "Select"
 msgstr "Seç"
 
@@ -4009,8 +3806,6 @@ msgstr "Rünik"
 
 #: gui/text/qfontdatabase.cpp:2244
 #, fuzzy
-#| msgctxt "QShortcut"
-#| msgid "No"
 msgctxt "QFontDatabase"
 msgid "N'Ko"
 msgstr "Hayır"
@@ -4355,7 +4150,6 @@ msgstr "&Kapat"
 
 #: gui/widgets/qmenu_symbian.cpp:452
 #, fuzzy
-#| msgid "Options"
 msgid "Actions"
 msgstr "Seçenekler"
 
@@ -4468,7 +4262,6 @@ msgstr "Geçersiz Adres: %1"
 
 #: network/access/qnetworkaccessdebugpipebackend.cpp:195
 #, fuzzy, qt-format
-#| msgid "Write error writing to %1: %2"
 msgctxt "QNetworkAccessDebugPipeBackend"
 msgid "Write error writing to %1: %2"
 msgstr "%1 konumuna yazılırken yazma hatası oluştu: %2"
@@ -4544,7 +4337,6 @@ msgstr "Makine adı verilmedi"
 
 #: network/kernel/qhostinfo_unix.cpp:196 network/kernel/qhostinfo_win.cpp:179
 #, fuzzy
-#| msgid "Invalid filename"
 msgid "Invalid hostname"
 msgstr "Geçersiz dosya adı"
 
@@ -4563,71 +4355,51 @@ msgstr "Makine bulunamadı"
 
 #: network/socket/qnativesocketengine.cpp:197
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unable to initialize non-blocking socket"
 msgid "Unable to initialize non-blocking socket"
 msgstr "Tıkanmasız soket başlatılamadı"
 
 #: network/socket/qnativesocketengine.cpp:200
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unable to initialize broadcast socket"
 msgid "Unable to initialize broadcast socket"
 msgstr "Yayın soketi başlatılamadı"
 
 #: network/socket/qnativesocketengine.cpp:203
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Attempt to use IPv6 socket on a platform with no IPv6 support"
 msgid "Attempt to use IPv6 socket on a platform with no IPv6 support"
 msgstr "IPv6 desteği olmayan bir platformda IPv6 soketi kullanılmaya çalışıldı"
 
 #: network/socket/qnativesocketengine.cpp:206
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "The remote host closed the connection"
 msgid "The remote host closed the connection"
 msgstr "Uzak makine bağlantıyı kapattı"
 
 #: network/socket/qnativesocketengine.cpp:209
 #, fuzzy
-#| msgctxt "QSocks5SocketEngine"
-#| msgid "Network operation timed out"
 msgid "Network operation timed out"
 msgstr "Ağ işleminde zaman aşımı oluştuAğ işleminde zaman aşımı"
 
 #: network/socket/qnativesocketengine.cpp:212
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Out of resources"
 msgid "Out of resources"
 msgstr "Yetersiz kaynak"
 
 #: network/socket/qnativesocketengine.cpp:215
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unsupported socket operation"
 msgid "Unsupported socket operation"
 msgstr "Desteklenmeyen soket işlemi"
 
 #: network/socket/qnativesocketengine.cpp:218
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Protocol type not supported"
 msgid "Protocol type not supported"
 msgstr "Protokol tipi desteklenmiyor"
 
 #: network/socket/qnativesocketengine.cpp:221
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Invalid socket descriptor"
 msgid "Invalid socket descriptor"
 msgstr "Geçersiz soket tanımlayıcı"
 
 #: network/socket/qnativesocketengine.cpp:224
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Host unreachable"
 msgid "Host unreachable"
 msgstr "Makine erişilemez"
 
@@ -4649,78 +4421,56 @@ msgstr "Bağlantı reddedildi"
 
 #: network/socket/qnativesocketengine.cpp:239
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "The bound address is already in use"
 msgid "The bound address is already in use"
 msgstr "Bağlanılacak adres zaten kullanılıyor"
 
 #: network/socket/qnativesocketengine.cpp:242
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "The address is not available"
 msgid "The address is not available"
 msgstr "Adres kullanılabilir değil"
 
 #: network/socket/qnativesocketengine.cpp:245
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "The address is protected"
 msgid "The address is protected"
 msgstr "Adres korumalı"
 
 #: network/socket/qnativesocketengine.cpp:248
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Datagram was too large to send"
 msgid "Datagram was too large to send"
 msgstr "Veri paketi göndermek için çok büyük"
 
 #: network/socket/qnativesocketengine.cpp:251
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unable to send a message"
 msgid "Unable to send a message"
 msgstr "Bir ileti gönderilemedi"
 
 #: network/socket/qnativesocketengine.cpp:254
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unable to receive a message"
 msgid "Unable to receive a message"
 msgstr "Bir ileti alınamadı"
 
 #: network/socket/qnativesocketengine.cpp:257
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Unable to write"
 msgid "Unable to write"
 msgstr "Yazılamadı"
 
 #: network/socket/qnativesocketengine.cpp:260
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Network error"
 msgid "Network error"
 msgstr "Ağ hatası"
 
 #: network/socket/qnativesocketengine.cpp:263
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Another socket is already listening on the same port"
 msgid "Another socket is already listening on the same port"
 msgstr "Başka bir soket aynı portu dinliyor"
 
 #: network/socket/qnativesocketengine.cpp:266
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "Operation on non-socket"
 msgid "Operation on non-socket"
 msgstr "Soketsiz işlem"
 
 #: network/socket/qnativesocketengine.cpp:269
 #, fuzzy
-#| msgctxt "QNativeSocketEngine"
-#| msgid "The proxy type is invalid for this operation"
 msgid "The proxy type is invalid for this operation"
 msgstr "Bu işlem için vekil sunucu tipi geçersiz"
 
@@ -4838,13 +4588,11 @@ msgid "The certificate is self-signed, and untrusted"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:243
-msgid ""
-"The root certificate of the certificate chain is self-signed, and untrusted"
+msgid "The root certificate of the certificate chain is self-signed, and untrusted"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:246
-msgid ""
-"The issuer certificate of a locally looked up certificate could not be found"
+msgid "The issuer certificate of a locally looked up certificate could not be found"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:249
@@ -4872,21 +4620,15 @@ msgid "The root CA certificate is marked to reject the specified purpose"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:267
-msgid ""
-"The current candidate issuer certificate was rejected because its subject "
-"name did not match the issuer name of the current certificate"
+msgid "The current candidate issuer certificate was rejected because its subject name did not match the issuer name of the current certificate"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:271
-msgid ""
-"The current candidate issuer certificate was rejected because its issuer "
-"name and serial number was present and did not match the authority key "
-"identifier of the current certificate"
+msgid "The current candidate issuer certificate was rejected because its issuer name and serial number was present and did not match the authority key identifier of the current certificate"
 msgstr ""
 
 #: network/ssl/qsslerror.cpp:276
 #, fuzzy
-#| msgid "The name %1 does not refer to any schema type."
 msgid "The peer did not present any certificate"
 msgstr "%1 adı hiçbir şema tipine karşılık gelmiyor."
 
@@ -4921,7 +4663,6 @@ msgstr "Yerel gizli anahtar yüklenirken hata, %1"
 
 #: network/ssl/qsslsocket_openssl.cpp:327
 #, fuzzy, qt-format
-#| msgid "Private key does not certificate public key, %1"
 msgid "Private key does not certify public key, %1"
 msgstr "Gizli anahtar açık anahtarı sertifikalayamıyor, %1"
 
@@ -4942,7 +4683,6 @@ msgstr "Veri yazılamadı: %1"
 
 #: network/ssl/qsslsocket_openssl.cpp:609
 #, fuzzy, qt-format
-#| msgid "Unable to write data: %1"
 msgid "Unable to decrypt data: %1"
 msgstr "Veri yazılamadı: %1"
 
@@ -4974,7 +4714,6 @@ msgstr "Pencereyi durumunu değiştirmek için gereken komutları içerir"
 
 #: plugins/accessible/compat/q3complexwidgets.cpp:277
 #, fuzzy
-#| msgid "Puts a maximized window back to normal"
 msgid "Puts a minimized window back to normal"
 msgstr "Büyütülmüş bir pencereyi önceki haline getirir"
 
@@ -4996,8 +4735,7 @@ msgstr "Pencereyi kapatır"
 
 #: plugins/accessible/compat/q3complexwidgets.cpp:286
 msgid "Displays the name of the window and contains controls to manipulate it"
-msgstr ""
-"Pencerenin adını gösterir ve pencereyi değiştirebilecek kontrolleri içerir"
+msgstr "Pencerenin adını gösterir ve pencereyi değiştirebilecek kontrolleri içerir"
 
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:158
 #: plugins/accessible/widgets/qaccessiblemenu.cpp:383
@@ -5095,8 +4833,7 @@ msgid "Multiple input method switcher"
 msgstr "Çoklu girdi metodu seçici"
 
 #: plugins/inputmethods/imsw-multi/qmultiinputcontextplugin.cpp:102
-msgid ""
-"Multiple input method switcher that uses the context menu of the text widgets"
+msgid "Multiple input method switcher that uses the context menu of the text widgets"
 msgstr "Çoklu girdi metodu seçici metin parçacıkları genel menüsünü kullanır"
 
 #: qt3support/dialogs/q3tabdialog.cpp:648
@@ -5199,29 +4936,24 @@ msgstr "Ek Bilgi..."
 
 #: scripttools/debugging/qscriptbreakpointsmodel.cpp:455
 #, fuzzy
-#| msgid "ID"
 msgctxt "QScriptBreakpointsModel"
 msgid "ID"
 msgstr "Kimlik"
 
 #: scripttools/debugging/qscriptbreakpointsmodel.cpp:457
 #, fuzzy
-#| msgid "Location"
 msgctxt "QScriptBreakpointsModel"
 msgid "Location"
 msgstr "Konum"
 
 #: scripttools/debugging/qscriptbreakpointsmodel.cpp:459
 #, fuzzy
-#| msgid "Condition"
 msgctxt "QScriptBreakpointsModel"
 msgid "Condition"
 msgstr "Durum"
 
 #: scripttools/debugging/qscriptbreakpointsmodel.cpp:461
 #, fuzzy
-#| msgctxt "QDialogButtonBox"
-#| msgid "Ignore"
 msgctxt "QScriptBreakpointsModel"
 msgid "Ignore-count"
 msgstr "Yoksay"
@@ -5367,41 +5099,35 @@ msgid "Whole words"
 msgstr "Tam Sözcükler"
 
 #: scripttools/debugging/qscriptdebuggercodefinderwidget.cpp:178
-msgid ""
-"<img src=\":/qt/scripttools/debugging/images/wrap.png\">&nbsp;Search wrapped"
+msgid "<img src=\":/qt/scripttools/debugging/images/wrap.png\">&nbsp;Search wrapped"
 msgstr ""
 
 #: scripttools/debugging/qscriptdebuggerlocalsmodel.cpp:872
 #, fuzzy
-#| msgid "Name"
 msgctxt "QScriptDebuggerLocalsModel"
 msgid "Name"
 msgstr "Ad"
 
 #: scripttools/debugging/qscriptdebuggerlocalsmodel.cpp:874
 #, fuzzy
-#| msgid "Value"
 msgctxt "QScriptDebuggerLocalsModel"
 msgid "Value"
 msgstr "Değer"
 
 #: scripttools/debugging/qscriptdebuggerstackmodel.cpp:161
 #, fuzzy
-#| msgid "Level"
 msgctxt "QScriptDebuggerStackModel"
 msgid "Level"
 msgstr "Düzey"
 
 #: scripttools/debugging/qscriptdebuggerstackmodel.cpp:163
 #, fuzzy
-#| msgid "Name"
 msgctxt "QScriptDebuggerStackModel"
 msgid "Name"
 msgstr "Ad"
 
 #: scripttools/debugging/qscriptdebuggerstackmodel.cpp:165
 #, fuzzy
-#| msgid "Location"
 msgctxt "QScriptDebuggerStackModel"
 msgid "Location"
 msgstr "Konum"
@@ -5753,12 +5479,8 @@ msgstr "İşlem (transaction) geri alınamadı"
 
 #: sql/drivers/odbc/qsql_odbc.cpp:973 sql/drivers/odbc/qsql_odbc.cpp:1324
 msgctxt "QODBCResult"
-msgid ""
-"QODBCResult::reset: Unable to set 'SQL_CURSOR_STATIC' as statement "
-"attribute. Please check your ODBC driver configuration"
-msgstr ""
-"QODBCResult::reset:  'SQL_CURSOR_STATIC' sorgu niteliği olarak ayarlanamadı. "
-"Lütfen ODBC sürücü yapılandırmanızı kontrol edin"
+msgid "QODBCResult::reset: Unable to set 'SQL_CURSOR_STATIC' as statement attribute. Please check your ODBC driver configuration"
+msgstr "QODBCResult::reset:  'SQL_CURSOR_STATIC' sorgu niteliği olarak ayarlanamadı. Lütfen ODBC sürücü yapılandırmanızı kontrol edin"
 
 #: sql/drivers/odbc/qsql_odbc.cpp:990 sql/drivers/odbc/qsql_odbc.cpp:1619
 msgctxt "QODBCResult"
@@ -5797,7 +5519,6 @@ msgstr "Değişken atanamadı"
 
 #: sql/drivers/odbc/qsql_odbc.cpp:1915
 #, fuzzy
-#| msgid "Unable to connect - Driver doesn't support all needed functionality"
 msgid "Unable to connect - Driver doesn't support all functionality required"
 msgstr "Bağlanılamadı - Sürücü gereken işlevleri desteklemiyor"
 
@@ -5955,11 +5676,8 @@ msgstr "bağımsız tanımlama için hatalı değer"
 
 #: xml/sax/qxml.cpp:69
 msgctxt "QXml"
-msgid ""
-"encoding declaration or standalone declaration expected while reading the "
-"XML declaration"
-msgstr ""
-"XML bildirimi okunurken  kodlama bildirmi ya da bağımsız bildirim beklenir"
+msgid "encoding declaration or standalone declaration expected while reading the XML declaration"
+msgstr "XML bildirimi okunurken  kodlama bildirmi ya da bağımsız bildirim beklenir"
 
 #: xml/sax/qxml.cpp:70
 msgctxt "QXml"
@@ -5994,16 +5712,12 @@ msgstr "içsel genel varlık başvurusuna DTD içinde izin verilmez"
 #: xml/sax/qxml.cpp:76
 msgctxt "QXml"
 msgid "external parsed general entity reference not allowed in attribute value"
-msgstr ""
-"Nitelik değeri içerisinde ayrıştırılmış genel dış varlık referansılarına "
-"(entity) izin verilmez"
+msgstr "Nitelik değeri içerisinde ayrıştırılmış genel dış varlık referansılarına (entity) izin verilmez"
 
 #: xml/sax/qxml.cpp:77
 msgctxt "QXml"
 msgid "external parsed general entity reference not allowed in DTD"
-msgstr ""
-"DTD içerisinde ayrıştırılmış genel dış varlık referansılarına (entity) izin "
-"verilmez"
+msgstr "DTD içerisinde ayrıştırılmış genel dış varlık referansılarına (entity) izin verilmez"
 
 #: xml/sax/qxml.cpp:78
 msgctxt "QXml"
@@ -6042,9 +5756,7 @@ msgstr ""
 
 #: xmlpatterns/acceltree/qacceltreeresourceloader.cpp:378
 #, qt-format
-msgid ""
-"The codepoint %1, occurring in %2 using encoding %3, is an invalid XML "
-"character."
+msgid "The codepoint %1, occurring in %2 using encoding %3, is an invalid XML character."
 msgstr ""
 
 #: xmlpatterns/api/qcoloringmessagehandler.cpp:87
@@ -6054,14 +5766,11 @@ msgstr ""
 
 #: xmlpatterns/api/qcoloringmessagehandler.cpp:94
 #, fuzzy, qt-format
-#| msgctxt "QNetworkAccessFileBackend"
-#| msgid "Error opening %1: %2"
 msgid "Warning in %1: %2"
 msgstr "%1 açma hatası: %2"
 
 #: xmlpatterns/api/qcoloringmessagehandler.cpp:110
 #, fuzzy
-#| msgid "Unknown error"
 msgid "Unknown location"
 msgstr "Bilinmeyen hata"
 
@@ -6072,8 +5781,6 @@ msgstr ""
 
 #: xmlpatterns/api/qcoloringmessagehandler.cpp:132
 #, fuzzy, qt-format
-#| msgctxt "QNetworkAccessFileBackend"
-#| msgid "Error opening %1: %2"
 msgid "Error %1 in %2: %3"
 msgstr "%1 açma hatası: %2"
 
@@ -6083,9 +5790,7 @@ msgstr " Ağ zaman aşımına uğradı."
 
 #: xmlpatterns/api/qxmlserializer.cpp:321
 #, qt-format
-msgid ""
-"Element %1 can't be serialized because it appears outside the document "
-"element."
+msgid "Element %1 can't be serialized because it appears outside the document element."
 msgstr "%1 ögesi dizilemez çünkü belge ögesinin dışında bulunuyor."
 
 #: xmlpatterns/api/qxmlserializer.cpp:381
@@ -6120,11 +5825,8 @@ msgstr "%1 Günü %2 Ayı için geçersiz."
 
 #: xmlpatterns/data/qabstractdatetime.cpp:174
 #, qt-format
-msgid ""
-"Time 24:%1:%2.%3 is invalid. Hour is 24, but minutes, seconds, and "
-"milliseconds are not all 0; "
-msgstr ""
-"Saat 24:%1:%2.%3 geçersiz. Saat 24 ama dakika, saniye ve milisaniye 0 değil; "
+msgid "Time 24:%1:%2.%3 is invalid. Hour is 24, but minutes, seconds, and milliseconds are not all 0; "
+msgstr "Saat 24:%1:%2.%3 geçersiz. Saat 24 ama dakika, saniye ve milisaniye 0 değil; "
 
 #: xmlpatterns/data/qabstractdatetime.cpp:187
 #, qt-format
@@ -6179,25 +5881,17 @@ msgstr "Sıfıra (%2) göre mod alma işlemi (%1) tanımlı değildir."
 #: xmlpatterns/data/qatomicmathematicians.cpp:234
 #, qt-format
 msgid "Dividing a value of type %1 by %2 (not-a-number) is not allowed."
-msgstr ""
-"%1 türündeki bir değer, %2 türündeki (sayı olmayan) bir değere bölünemez."
+msgstr "%1 türündeki bir değer, %2 türündeki (sayı olmayan) bir değere bölünemez."
 
 #: xmlpatterns/data/qatomicmathematicians.cpp:214
 #, qt-format
-msgid ""
-"Dividing a value of type %1 by %2 or %3 (plus or minus zero) is not allowed."
-msgstr ""
-"%1 türündeki bir değer, %2 veya %3 türündeki (artı veya eksi sıfır) bir "
-"değere bölünemez."
+msgid "Dividing a value of type %1 by %2 or %3 (plus or minus zero) is not allowed."
+msgstr "%1 türündeki bir değer, %2 veya %3 türündeki (artı veya eksi sıfır) bir değere bölünemez."
 
 #: xmlpatterns/data/qatomicmathematicians.cpp:246
 #, qt-format
-msgid ""
-"Multiplication of a value of type %1 by %2 or %3 (plus or minus infinity) is "
-"not allowed."
-msgstr ""
-"%1 türündeki bir değer, %2 veya %3 türündeki (artı veya eksi sıfır) bir "
-"değerle çarpılamaz."
+msgid "Multiplication of a value of type %1 by %2 or %3 (plus or minus infinity) is not allowed."
+msgstr "%1 türündeki bir değer, %2 veya %3 türündeki (artı veya eksi sıfır) bir değerle çarpılamaz."
 
 #: xmlpatterns/data/qatomicvalue.cpp:79
 #, qt-format
@@ -6205,21 +5899,13 @@ msgid "A value of type %1 cannot have an Effective Boolean Value."
 msgstr "%1 türündeki bir değerin Etkin Doğruluk Değeri olamaz."
 
 #: xmlpatterns/data/qboolean.cpp:78
-msgid ""
-"Effective Boolean Value cannot be calculated for a sequence containing two "
-"or more atomic values."
-msgstr ""
-"Etkin Doğruluk Değeri, iki veya daha fazla atomik değer içeren ardışımlardan "
-"hesaplanamaz."
+msgid "Effective Boolean Value cannot be calculated for a sequence containing two or more atomic values."
+msgstr "Etkin Doğruluk Değeri, iki veya daha fazla atomik değer içeren ardışımlardan hesaplanamaz."
 
 #: xmlpatterns/data/qhexbinary.cpp:92
 #, qt-format
-msgid ""
-"A value of type %1 must contain an even number of digits. The value %2 does "
-"not."
-msgstr ""
-"%1 türündeki bir değer mutlaka çift sayıda haneden oluşmalıdır. %2 değeri "
-"buna uymuyor."
+msgid "A value of type %1 must contain an even number of digits. The value %2 does not."
+msgstr "%1 türündeki bir değer mutlaka çift sayıda haneden oluşmalıdır. %2 değeri buna uymuyor."
 
 #: xmlpatterns/data/qhexbinary.cpp:111
 #, qt-format
@@ -6247,11 +5933,8 @@ msgstr "Hesaplanmış bir özelliğin isim alanı URI'si %1 olamaz."
 
 #: xmlpatterns/expr/qattributenamevalidator.cpp:75
 #, qt-format
-msgid ""
-"The name for a computed attribute cannot have the namespace URI %1 with the "
-"local name %2."
-msgstr ""
-"Hesaplanmış bir özelliğin isim alanı URI'si %2 yerel ismiyle %1 olamaz."
+msgid "The name for a computed attribute cannot have the namespace URI %1 with the local name %2."
+msgstr "Hesaplanmış bir özelliğin isim alanı URI'si %2 yerel ismiyle %1 olamaz."
 
 #: xmlpatterns/expr/qcastas.cpp:88
 #, qt-format
@@ -6260,12 +5943,8 @@ msgstr "Çevirimde yazma hatası, beklenen %1, alınan %2."
 
 #: xmlpatterns/expr/qcastas.cpp:117
 #, qt-format
-msgid ""
-"When casting to %1 or types derived from it, the source value must be of the "
-"same type, or it must be a string literal. Type %2 is not allowed."
-msgstr ""
-"%1 veya ondan türemiş türlere biçim verirken, kaynak değer aynı türden, veya "
-"bir dizgi değişmezi olmalıdır. %2 türüne izin verilmez."
+msgid "When casting to %1 or types derived from it, the source value must be of the same type, or it must be a string literal. Type %2 is not allowed."
+msgstr "%1 veya ondan türemiş türlere biçim verirken, kaynak değer aynı türden, veya bir dizgi değişmezi olmalıdır. %2 türüne izin verilmez."
 
 #: xmlpatterns/expr/qcastingplatform.cpp:136
 #, qt-format
@@ -6279,9 +5958,7 @@ msgstr "%1 türünden %2 türüne dönüşüm yapılamaz."
 
 #: xmlpatterns/expr/qcastingplatform.cpp:178
 #, qt-format
-msgid ""
-"Casting to %1 is not possible because it is an abstract type, and can "
-"therefore never be instantiated."
+msgid "Casting to %1 is not possible because it is an abstract type, and can therefore never be instantiated."
 msgstr "%1 türüne dönüşüm yapılamaz çünkü o soyut bir türdür ve örneklenemez."
 
 #: xmlpatterns/expr/qcastingplatform.cpp:201
@@ -6315,9 +5992,7 @@ msgid "Operator %1 is not available between atomic values of type %2 and %3."
 msgstr "İşleç %1, tür %2 ve %3 atomik değerleri arasında kullanılamaz."
 
 #: xmlpatterns/expr/qcomputednamespaceconstructor.cpp:69
-msgid ""
-"In a namespace constructor, the value for a namespace cannot be an empty "
-"string."
+msgid "In a namespace constructor, the value for a namespace cannot be an empty string."
 msgstr ""
 
 #: xmlpatterns/expr/qcomputednamespaceconstructor.cpp:80
@@ -6337,24 +6012,16 @@ msgstr ""
 
 #: xmlpatterns/expr/qdocumentcontentvalidator.cpp:86
 #, qt-format
-msgid ""
-"An attribute node cannot be a child of a document node. Therefore, the "
-"attribute %1 is out of place."
-msgstr ""
-"Bir öznitelik düğümü, bir belge düğümünün alt öğesi olamaz. Bu nedenle, "
-"öznitelik %1 uygun değildir. "
+msgid "An attribute node cannot be a child of a document node. Therefore, the attribute %1 is out of place."
+msgstr "Bir öznitelik düğümü, bir belge düğümünün alt öğesi olamaz. Bu nedenle, öznitelik %1 uygun değildir. "
 
 #: xmlpatterns/expr/qevaluationcache.cpp:117
 msgid "Circularity detected"
 msgstr ""
 
 #: xmlpatterns/expr/qexpressionfactory.cpp:162
-msgid ""
-"A library module cannot be evaluated directly. It must be imported from a "
-"main module."
-msgstr ""
-"Bir kitaplık modülü doğrudan işletilemez. Ana bir modülde içe aktarılmış "
-"olmalıdır."
+msgid "A library module cannot be evaluated directly. It must be imported from a main module."
+msgstr "Bir kitaplık modülü doğrudan işletilemez. Ana bir modülde içe aktarılmış olmalıdır."
 
 #: xmlpatterns/expr/qexpressionfactory.cpp:202
 #, qt-format
@@ -6363,25 +6030,16 @@ msgstr "%1 isimli bir şablon yok."
 
 #: xmlpatterns/expr/qgenericpredicate.cpp:106
 #, qt-format
-msgid ""
-"A value of type %1 cannot be a predicate. A predicate must have either a "
-"numeric type or an Effective Boolean Value type."
-msgstr ""
-"%1 türündeki bir değer öngörülemez. Öngörülecek değer sayısal veya doğruluk "
-"belirten türden olmalıdır."
+msgid "A value of type %1 cannot be a predicate. A predicate must have either a numeric type or an Effective Boolean Value type."
+msgstr "%1 türündeki bir değer öngörülemez. Öngörülecek değer sayısal veya doğruluk belirten türden olmalıdır."
 
 #: xmlpatterns/expr/qgenericpredicate.cpp:138
 msgid "A positional predicate must evaluate to a single numeric value."
-msgstr ""
-"Öngörülecek bir yerleşik değer sadece bir sayısal değere karşılık gelmelidir."
+msgstr "Öngörülecek bir yerleşik değer sadece bir sayısal değere karşılık gelmelidir."
 
 #: xmlpatterns/expr/qpath.cpp:109
-msgid ""
-"The last step in a path must contain either nodes or atomic values. It "
-"cannot be a mixture between the two."
-msgstr ""
-"Bir yolun son adımında düğümler veya atomik değerler olmak zorundadır. "
-"İkisinin arasındaki bir karışım olamaz."
+msgid "The last step in a path must contain either nodes or atomic values. It cannot be a mixture between the two."
+msgstr "Bir yolun son adımında düğümler veya atomik değerler olmak zorundadır. İkisinin arasındaki bir karışım olamaz."
 
 #: xmlpatterns/expr/qprocessinginstructionconstructor.cpp:84
 #, qt-format
@@ -6405,30 +6063,18 @@ msgstr ""
 
 #: xmlpatterns/functions/qaggregatefns.cpp:120
 #, qt-format
-msgid ""
-"The first argument to %1 cannot be of type %2. It must be a numeric type, xs:"
-"yearMonthDuration or xs:dayTimeDuration."
-msgstr ""
-"%1 için ilk bağımsız değişken %2 türünde olamaz. Sayısal türde olmalıdır, xs:"
-"yearMonthDuration veya xs:dayTimeDuration"
+msgid "The first argument to %1 cannot be of type %2. It must be a numeric type, xs:yearMonthDuration or xs:dayTimeDuration."
+msgstr "%1 için ilk bağımsız değişken %2 türünde olamaz. Sayısal türde olmalıdır, xs:yearMonthDuration veya xs:dayTimeDuration"
 
 #: xmlpatterns/functions/qaggregatefns.cpp:194
 #, qt-format
-msgid ""
-"The first argument to %1 cannot be of type %2. It must be of type %3, %4, or "
-"%5."
-msgstr ""
-"%1 için ilk bağımsız değişken %2 türünde olamaz. %3, %4 veya %5 türünde "
-"olmalıdır."
+msgid "The first argument to %1 cannot be of type %2. It must be of type %3, %4, or %5."
+msgstr "%1 için ilk bağımsız değişken %2 türünde olamaz. %3, %4 veya %5 türünde olmalıdır."
 
 #: xmlpatterns/functions/qaggregatefns.cpp:285
 #, qt-format
-msgid ""
-"The second argument to %1 cannot be of type %2. It must be of type %3, %4, "
-"or %5."
-msgstr ""
-"%1 için ikinci bağımsız değişken %2 türünde olamaz. %3, %4 veya %5 türünde "
-"olmalıdır."
+msgid "The second argument to %1 cannot be of type %2. It must be of type %3, %4, or %5."
+msgstr "%1 için ikinci bağımsız değişken %2 türünde olamaz. %3, %4 veya %5 türünde olmalıdır."
 
 #: xmlpatterns/functions/qassemblestringfns.cpp:88
 #, qt-format
@@ -6442,21 +6088,13 @@ msgstr "%1 için ilk bağımsız değişken %2 türünde olamaz."
 
 #: xmlpatterns/functions/qcontextnodechecker.cpp:54
 #, qt-format
-msgid ""
-"The root node of the second argument to function %1 must be a document node. "
-"%2 is not a document node."
-msgstr ""
-"%1 işlevi için ikinci bağımsız değişkenin kök düğümü bir belge düğümü "
-"olmalıdır. %2 bir belge düğümü değildir."
+msgid "The root node of the second argument to function %1 must be a document node. %2 is not a document node."
+msgstr "%1 işlevi için ikinci bağımsız değişkenin kök düğümü bir belge düğümü olmalıdır. %2 bir belge düğümü değildir."
 
 #: xmlpatterns/functions/qdatetimefn.cpp:86
 #, qt-format
-msgid ""
-"If both values have zone offsets, they must have the same zone offset. %1 "
-"and %2 are not the same."
-msgstr ""
-"Eğer her iki değer de göreli alan konumlarına sahipse, aynı göreli alan "
-"konumlarına sahip olmalılar. %1 ve %2 aynı değildir."
+msgid "If both values have zone offsets, they must have the same zone offset. %1 and %2 are not the same."
+msgstr "Eğer her iki değer de göreli alan konumlarına sahipse, aynı göreli alan konumlarına sahip olmalılar. %1 ve %2 aynı değildir."
 
 #: xmlpatterns/functions/qerrorfn.cpp:61
 #, qt-format
@@ -6465,28 +6103,18 @@ msgstr "%1 iptal edildi."
 
 #: xmlpatterns/functions/qpatternmatchingfns.cpp:94
 #, qt-format
-msgid ""
-"%1 must be followed by %2 or %3, not at the end of the replacement string."
-msgstr ""
-"%1, %2 veya %3 tarafından takip edilmelidir, yer değiştirme dizgisinin "
-"sonunda değil."
+msgid "%1 must be followed by %2 or %3, not at the end of the replacement string."
+msgstr "%1, %2 veya %3 tarafından takip edilmelidir, yer değiştirme dizgisinin sonunda değil."
 
 #: xmlpatterns/functions/qpatternmatchingfns.cpp:133
 #, qt-format
-msgid ""
-"In the replacement string, %1 must be followed by at least one digit when "
-"not escaped."
-msgstr ""
-"Yer değiştirme dizgisinde, %1, öncelenmediği zaman en az bir rakamla takip "
-"edilmek zorundadır."
+msgid "In the replacement string, %1 must be followed by at least one digit when not escaped."
+msgstr "Yer değiştirme dizgisinde, %1, öncelenmediği zaman en az bir rakamla takip edilmek zorundadır."
 
 #: xmlpatterns/functions/qpatternmatchingfns.cpp:159
 #, qt-format
-msgid ""
-"In the replacement string, %1 can only be used to escape itself or %2, not %3"
-msgstr ""
-"Yer değiştirme dizgisinde, %1, %3 değil sadece %2 veya kendisini öncelemek "
-"için kullanılabilinir."
+msgid "In the replacement string, %1 can only be used to escape itself or %2, not %3"
+msgstr "Yer değiştirme dizgisinde, %1, %3 değil sadece %2 veya kendisini öncelemek için kullanılabilinir."
 
 #: xmlpatterns/functions/qpatternplatform.cpp:92
 #, qt-format
@@ -6503,12 +6131,8 @@ msgid "Matches are case insensitive"
 msgstr "Eşlemeler büyük küçük harf duyarlıdır"
 
 #: xmlpatterns/functions/qpatternplatform.cpp:106
-msgid ""
-"Whitespace characters are removed, except when they appear in character "
-"classes"
-msgstr ""
-"Alfabe dışı karakterler, karakter sınırflarında gözüktükleri zaman dışında "
-"kaldırılır"
+msgid "Whitespace characters are removed, except when they appear in character classes"
+msgstr "Alfabe dışı karakterler, karakter sınırflarında gözüktükleri zaman dışında kaldırılır"
 
 #: xmlpatterns/functions/qpatternplatform.cpp:206
 #, qt-format
@@ -6527,12 +6151,8 @@ msgstr "%1 geçersiz bir %2"
 
 #: xmlpatterns/functions/qqnamefns.cpp:87
 #, qt-format
-msgid ""
-"If the first argument is the empty sequence or a zero-length string (no "
-"namespace), a prefix cannot be specified. Prefix %1 was specified."
-msgstr ""
-"Eğer ilk bağımsız değişken boş dizge veya sıfır uzunluklu bir dizgiyse (ad "
-"boşluğu yok), bir önek belirtilemez. Önek %1 belirtildi."
+msgid "If the first argument is the empty sequence or a zero-length string (no namespace), a prefix cannot be specified. Prefix %1 was specified."
+msgstr "Eğer ilk bağımsız değişken boş dizge veya sıfır uzunluklu bir dizgiyse (ad boşluğu yok), bir önek belirtilemez. Önek %1 belirtildi."
 
 #: xmlpatterns/functions/qsequencefns.cpp:346
 #, qt-format
@@ -6550,20 +6170,13 @@ msgstr "%1 alınamadı"
 
 #: xmlpatterns/functions/qstringvaluefns.cpp:252
 #, qt-format
-msgid ""
-"The normalization form %1 is unsupported. The supported forms are %2, %3, %"
-"4, and %5, and none, i.e. the empty string (no normalization)."
-msgstr ""
-"Normalleştirme biçimi %1 desteklenmiyor. Desteklenen biçimler %2, %3, %4, %5 "
-"ve hiçbiridir; örn. boş dizgi (normalleştirme yok)."
+msgid "The normalization form %1 is unsupported. The supported forms are %2, %3, %4, and %5, and none, i.e. the empty string (no normalization)."
+msgstr "Normalleştirme biçimi %1 desteklenmiyor. Desteklenen biçimler %2, %3, %4, %5 ve hiçbiridir; örn. boş dizgi (normalleştirme yok)."
 
 #: xmlpatterns/functions/qtimezonefns.cpp:87
 #, qt-format
-msgid ""
-"A zone offset must be in the range %1..%2 inclusive. %3 is out of range."
-msgstr ""
-"Bir göreli alan konumu %1..%2 kapsayan bir aralıkta olmalıdır. %3 aralık "
-"dışındadır."
+msgid "A zone offset must be in the range %1..%2 inclusive. %3 is out of range."
+msgstr "Bir göreli alan konumu %1..%2 kapsayan bir aralıkta olmalıdır. %3 aralık dışındadır."
 
 #: xmlpatterns/functions/qtimezonefns.cpp:99
 #, qt-format
@@ -6586,37 +6199,27 @@ msgstr "%1 ögesi gereken %2 tipi ile örtüşmüyor."
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:184
 #, qt-format
-msgid ""
-"Attribute %1 cannot appear on the element %2. Only the standard attributes "
-"can appear."
+msgid "Attribute %1 cannot appear on the element %2. Only the standard attributes can appear."
 msgstr ""
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:190
 #, qt-format
-msgid ""
-"Attribute %1 cannot appear on the element %2. Only %3 is allowed, and the "
-"standard attributes."
+msgid "Attribute %1 cannot appear on the element %2. Only %3 is allowed, and the standard attributes."
 msgstr ""
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:198
 #, qt-format
-msgid ""
-"Attribute %1 cannot appear on the element %2. Allowed is %3, %4, and the "
-"standard attributes."
+msgid "Attribute %1 cannot appear on the element %2. Allowed is %3, %4, and the standard attributes."
 msgstr ""
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:207
 #, qt-format
-msgid ""
-"Attribute %1 cannot appear on the element %2. Allowed is %3, and the "
-"standard attributes."
+msgid "Attribute %1 cannot appear on the element %2. Allowed is %3, and the standard attributes."
 msgstr ""
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:220
 #, qt-format
-msgid ""
-"XSL-T attributes on XSL-T elements must be in the null namespace, not in the "
-"XSL-T namespace which %1 is."
+msgid "XSL-T attributes on XSL-T elements must be in the null namespace, not in the XSL-T namespace which %1 is."
 msgstr ""
 
 #: xmlpatterns/parser/qmaintainingreader.cpp:232
@@ -6644,8 +6247,7 @@ msgstr ""
 
 #: querytransformparser.ypp:209
 #, qt-format
-msgid ""
-"A construct was encountered which is disallowed in the current language(%1)."
+msgid "A construct was encountered which is disallowed in the current language(%1)."
 msgstr ""
 
 #: querytransformparser.ypp:259 querytransformparser.ypp:4492
@@ -6655,7 +6257,6 @@ msgstr "%1 bilinmeyen bir şema tipi."
 
 #: querytransformparser.ypp:328
 #, fuzzy, qt-format
-#| msgid "A template by name %1 has already been declared."
 msgid "A template with name %1 has already been declared."
 msgstr "%1 adıyla bir şablon zaten tanımlanmış."
 
@@ -6676,7 +6277,6 @@ msgstr "%1 değişkeninin başlatılması kendisine bağlı"
 
 #: querytransformparser.ypp:792
 #, fuzzy, qt-format
-#| msgid "No variable by name %1 exists"
 msgid "No variable with name %1 exists"
 msgstr "%1 isimli bir değişken yok"
 
@@ -6687,12 +6287,8 @@ msgstr "Sürüm %1 desteklenmiyor. Desteklenen XQuery sürümü 1.0'dır."
 
 #: querytransformparser.ypp:1417
 #, qt-format
-msgid ""
-"The encoding %1 is invalid. It must contain Latin characters only, must not "
-"contain whitespace, and must match the regular expression %2."
-msgstr ""
-"%1 dil kodlaması geçersiz. Yalnızca Latin karakterler içermeli, alfabe dışı "
-"karakterler içermemeli, ve %2 düzenli ifadesiyle uyuşmalıdır."
+msgid "The encoding %1 is invalid. It must contain Latin characters only, must not contain whitespace, and must match the regular expression %2."
+msgstr "%1 dil kodlaması geçersiz. Yalnızca Latin karakterler içermeli, alfabe dışı karakterler içermemeli, ve %2 düzenli ifadesiyle uyuşmalıdır."
 
 #: querytransformparser.ypp:1469
 #, qt-format
@@ -6700,27 +6296,16 @@ msgid "No function with signature %1 is available"
 msgstr "%1 imzasına sahip hiçbir işlev yok."
 
 #: querytransformparser.ypp:1539 querytransformparser.ypp:1545
-msgid ""
-"A default namespace declaration must occur before function, variable, and "
-"option declarations."
-msgstr ""
-"Varsayılan ad boşluğu bildirimi işlev, değişken ve seçenek bildiriminden "
-"önce meydana gelmelidir."
+msgid "A default namespace declaration must occur before function, variable, and option declarations."
+msgstr "Varsayılan ad boşluğu bildirimi işlev, değişken ve seçenek bildiriminden önce meydana gelmelidir."
 
 #: querytransformparser.ypp:1551
-msgid ""
-"Namespace declarations must occur before function, variable, and option "
-"declarations."
-msgstr ""
-"Ad boşluğu bildirimleri işlev, değişken ve seçenek bildirimlerinden önce "
-"meydana gelmelidir."
+msgid "Namespace declarations must occur before function, variable, and option declarations."
+msgstr "Ad boşluğu bildirimleri işlev, değişken ve seçenek bildirimlerinden önce meydana gelmelidir."
 
 #: querytransformparser.ypp:1558
-msgid ""
-"Module imports must occur before function, variable, and option declarations."
-msgstr ""
-"Modül aktarımları işlev, değişken ve seçenek bildirimlerinden önce meydana "
-"gelmelidir."
+msgid "Module imports must occur before function, variable, and option declarations."
+msgstr "Modül aktarımları işlev, değişken ve seçenek bildirimlerinden önce meydana gelmelidir."
 
 #: querytransformparser.ypp:1659
 #, qt-format
@@ -6729,7 +6314,6 @@ msgstr ""
 
 #: querytransformparser.ypp:1682
 #, fuzzy, qt-format
-#| msgid "An %1-attribute must have a valid %2 as value, which %3 isn't."
 msgid "The value of attribute %1 must be of type %2, which %3 isn't."
 msgstr "Bir %1-özniteliği, %3 değil, geçerli bir %2 değerine sahip olmalı."
 
@@ -6740,9 +6324,7 @@ msgstr "%1 önekini yeniden tanımlamak olanaksız."
 
 #: querytransformparser.ypp:1743
 #, qt-format
-msgid ""
-"The prefix %1 cannot be bound. By default, it is already bound to the "
-"namespace %2."
+msgid "The prefix %1 cannot be bound. By default, it is already bound to the namespace %2."
 msgstr ""
 
 #: querytransformparser.ypp:1754
@@ -6751,21 +6333,13 @@ msgid "Prefix %1 is already declared in the prolog."
 msgstr "%1 öneki zaten giriş bölümünde tanımlanmış."
 
 #: querytransformparser.ypp:1836
-msgid ""
-"The name of an option must have a prefix. There is no default namespace for "
-"options."
-msgstr ""
-"Bir seçenek adı bir öneke sahip olmalıdır. Seçenekler için varsayılan ad "
-"boşluğu yoktur."
+msgid "The name of an option must have a prefix. There is no default namespace for options."
+msgstr "Bir seçenek adı bir öneke sahip olmalıdır. Seçenekler için varsayılan ad boşluğu yoktur."
 
 #: querytransformparser.ypp:1964
 #, qt-format
-msgid ""
-"The Schema Import feature is not supported, and therefore %1 declarations "
-"cannot occur."
-msgstr ""
-"Şema İçeriye Aktarma özelliği desteklenmiyor ve bu nedenle %1 tanımlamaları "
-"oluşmayacak."
+msgid "The Schema Import feature is not supported, and therefore %1 declarations cannot occur."
+msgstr "Şema İçeriye Aktarma özelliği desteklenmiyor ve bu nedenle %1 tanımlamaları oluşmayacak."
 
 #: querytransformparser.ypp:1978
 #, qt-format
@@ -6778,13 +6352,11 @@ msgstr "Modül içeriye aktarma özelliği desteklenmiyor"
 
 #: querytransformparser.ypp:2006
 #, fuzzy, qt-format
-#| msgid "A variable by name %1 has already been declared."
 msgid "A variable with name %1 has already been declared."
 msgstr "%1 isimli bir değişken zaten tanımlanmış."
 
 #: querytransformparser.ypp:2045
 #, fuzzy, qt-format
-#| msgid "No value is available for the external variable by name %1."
 msgid "No value is available for the external variable with name %1."
 msgstr "%1 adıyla harici değişken için hiçbir değer yoktur."
 
@@ -6794,33 +6366,18 @@ msgstr ""
 
 #: querytransformparser.ypp:2119
 #, qt-format
-msgid ""
-"The namespace for a user defined function cannot be empty (try the "
-"predefined prefix %1 which exists for cases like this)"
-msgstr ""
-"Kullanıcı tanımlı bir işlev için ad boşluğu boş olamaz (bu gibi durumlarda "
-"var olan daha önce tanımlanmış %1 önekini deneyin)"
+msgid "The namespace for a user defined function cannot be empty (try the predefined prefix %1 which exists for cases like this)"
+msgstr "Kullanıcı tanımlı bir işlev için ad boşluğu boş olamaz (bu gibi durumlarda var olan daha önce tanımlanmış %1 önekini deneyin)"
 
 #: querytransformparser.ypp:2129
 #, qt-format
-msgid ""
-"The namespace %1 is reserved; therefore user defined functions may not use "
-"it. Try the predefined prefix %2, which exists for these cases."
-msgstr ""
-"%1 ad boşluğu ayrılmıştır; bu nedenle kullanıcı tanımlı işlevler onu "
-"kullanmayabilir. Bu durumlar için var olan daha önce tanımlanmış %2 önekini "
-"deneyin."
+msgid "The namespace %1 is reserved; therefore user defined functions may not use it. Try the predefined prefix %2, which exists for these cases."
+msgstr "%1 ad boşluğu ayrılmıştır; bu nedenle kullanıcı tanımlı işlevler onu kullanmayabilir. Bu durumlar için var olan daha önce tanımlanmış %2 önekini deneyin."
 
 #: querytransformparser.ypp:2141
 #, qt-format
-msgid ""
-"The namespace of a user defined function in a library module must be "
-"equivalent to the module namespace. In other words, it should be %1 instead "
-"of %2"
-msgstr ""
-"Bir kitaplık modülündeki bir kullanıcı tanımlı işlevin isimlendirmesi, modül "
-"isimlendirmesi ile eşdeğer olmalıdır. Başka bir deyişle, %2 yerine %1 "
-"olmalıdır."
+msgid "The namespace of a user defined function in a library module must be equivalent to the module namespace. In other words, it should be %1 instead of %2"
+msgstr "Bir kitaplık modülündeki bir kullanıcı tanımlı işlevin isimlendirmesi, modül isimlendirmesi ile eşdeğer olmalıdır. Başka bir deyişle, %2 yerine %1 olmalıdır."
 
 #: querytransformparser.ypp:2174
 #, qt-format
@@ -6828,44 +6385,27 @@ msgid "A function already exists with the signature %1."
 msgstr "%1 imzasını taşıyan bir fonksiyon zaten var."
 
 #: querytransformparser.ypp:2197
-msgid ""
-"No external functions are supported. All supported functions can be used "
-"directly, without first declaring them as external"
-msgstr ""
-"Hiçbir harici işlev desteklenmiyor. Desteklenen tüm işlevler, onları ilk "
-"önce harici olarak bildirmeden, doğrudan kullanılabilinir."
+msgid "No external functions are supported. All supported functions can be used directly, without first declaring them as external"
+msgstr "Hiçbir harici işlev desteklenmiyor. Desteklenen tüm işlevler, onları ilk önce harici olarak bildirmeden, doğrudan kullanılabilinir."
 
 #: querytransformparser.ypp:2223
 #, fuzzy, qt-format
-#| msgid ""
-#| "An argument by name %1 has already been declared. Every argument name "
-#| "must be unique."
-msgid ""
-"An argument with name %1 has already been declared. Every argument name must "
-"be unique."
-msgstr ""
-"%1 adıyla bir bağımsız değişken hali hazırda bildirilmiştir. Her bağımsız "
-"değişken adı eşsiz olmalıdır."
+msgid "An argument with name %1 has already been declared. Every argument name must be unique."
+msgstr "%1 adıyla bir bağımsız değişken hali hazırda bildirilmiştir. Her bağımsız değişken adı eşsiz olmalıdır."
 
 #: querytransformparser.ypp:2382
 #, qt-format
-msgid ""
-"When function %1 is used for matching inside a pattern, the argument must be "
-"a variable reference or a string literal."
+msgid "When function %1 is used for matching inside a pattern, the argument must be a variable reference or a string literal."
 msgstr ""
 
 #: querytransformparser.ypp:2393
 #, qt-format
-msgid ""
-"In an XSL-T pattern, the first argument to function %1 must be a string "
-"literal, when used for matching."
+msgid "In an XSL-T pattern, the first argument to function %1 must be a string literal, when used for matching."
 msgstr ""
 
 #: querytransformparser.ypp:2407
 #, qt-format
-msgid ""
-"In an XSL-T pattern, the first argument to function %1 must be a literal or "
-"a variable reference, when used for matching."
+msgid "In an XSL-T pattern, the first argument to function %1 must be a literal or a variable reference, when used for matching."
 msgstr ""
 
 #: querytransformparser.ypp:2416
@@ -6875,9 +6415,7 @@ msgstr ""
 
 #: querytransformparser.ypp:2426
 #, qt-format
-msgid ""
-"In an XSL-T pattern, only function %1 and %2, not %3, can be used for "
-"matching."
+msgid "In an XSL-T pattern, only function %1 and %2, not %3, can be used for matching."
 msgstr ""
 
 #: querytransformparser.ypp:2480
@@ -6892,29 +6430,17 @@ msgstr "%1 geçersiz bir şsblon kipi adıdır."
 
 #: querytransformparser.ypp:2608
 #, qt-format
-msgid ""
-"The name of a variable bound in a for-expression must be different from the "
-"positional variable. Hence, the two variables named %1 collide."
-msgstr ""
-"Bir aşırı-ifadede bağlı değişkenin adı, konumsal değişkenden farklı "
-"olmalıdır. Bunun sonucu olarak, %1 adlı iki değişken birbiriyle çatışır."
+msgid "The name of a variable bound in a for-expression must be different from the positional variable. Hence, the two variables named %1 collide."
+msgstr "Bir aşırı-ifadede bağlı değişkenin adı, konumsal değişkenden farklı olmalıdır. Bunun sonucu olarak, %1 adlı iki değişken birbiriyle çatışır."
 
 #: querytransformparser.ypp:3123
 #, qt-format
-msgid ""
-"The Schema Validation Feature is not supported. Hence, %1-expressions may "
-"not be used."
-msgstr ""
-"Şema Doğrulama Özelliği desteklenmiyor. Bu nedenle %1-ifadeleri "
-"kullanılmayacak."
+msgid "The Schema Validation Feature is not supported. Hence, %1-expressions may not be used."
+msgstr "Şema Doğrulama Özelliği desteklenmiyor. Bu nedenle %1-ifadeleri kullanılmayacak."
 
 #: querytransformparser.ypp:3148
-msgid ""
-"None of the pragma expressions are supported. Therefore, a fallback "
-"expression must be present"
-msgstr ""
-"Pragma ifadelerin hiçbiri desteklenmiyor. Bu nedenle, bir son çare ifadesi "
-"sunulmalı"
+msgid "None of the pragma expressions are supported. Therefore, a fallback expression must be present"
+msgstr "Pragma ifadelerin hiçbiri desteklenmiyor. Bu nedenle, bir son çare ifadesi sunulmalı"
 
 #: querytransformparser.ypp:3340
 #, qt-format
@@ -6928,14 +6454,12 @@ msgstr "%1-ekseni XQuery içerisinde desteklenmiyor"
 
 #: querytransformparser.ypp:3653
 #, fuzzy, qt-format
-#| msgid "No function by name %1 is available."
 msgid "No function with name %1 is available."
 msgstr "%1 isimli kullanılabilir bir fonksiyon yok."
 
 #: querytransformparser.ypp:3784
 #, qt-format
-msgid ""
-"The namespace URI cannot be the empty string when binding to a prefix, %1."
+msgid "The namespace URI cannot be the empty string when binding to a prefix, %1."
 msgstr "URI ad boşluğu, bir %1 önekine boş bir dizgi olarak bağlanamaz."
 
 #: querytransformparser.ypp:3791
@@ -6950,20 +6474,13 @@ msgstr "%1 önekini bağlamak mümkün değil"
 
 #: querytransformparser.ypp:3804
 #, qt-format
-msgid ""
-"Namespace %1 can only be bound to %2 (and it is, in either case, pre-"
-"declared)."
-msgstr ""
-"%1 ad boşluğu yalnızca %2 ifadesine bağlanabilir (ve herhangi bir durumda "
-"önceden bildirilir)."
+msgid "Namespace %1 can only be bound to %2 (and it is, in either case, pre-declared)."
+msgstr "%1 ad boşluğu yalnızca %2 ifadesine bağlanabilir (ve herhangi bir durumda önceden bildirilir)."
 
 #: querytransformparser.ypp:3812
 #, qt-format
-msgid ""
-"Prefix %1 can only be bound to %2 (and it is, in either case, pre-declared)."
-msgstr ""
-"%1 öneki yalnızca %2 ifadesine bağlanabilir (ve herhangi bir durumda önceden "
-"bildirilir)."
+msgid "Prefix %1 can only be bound to %2 (and it is, in either case, pre-declared)."
+msgstr "%1 öneki yalnızca %2 ifadesine bağlanabilir (ve herhangi bir durumda önceden bildirilir)."
 
 #: querytransformparser.ypp:3827
 #, qt-format
@@ -6971,22 +6488,18 @@ msgid "Two namespace declaration attributes have the same name: %1."
 msgstr "İki adboşluğu bildirim öznitelikleri aynı ada sahip: %1."
 
 #: querytransformparser.ypp:3914
-msgid ""
-"The namespace URI must be a constant and cannot use enclosed expressions."
+msgid "The namespace URI must be a constant and cannot use enclosed expressions."
 msgstr "URI ad boşluğu sabit olmalıdır ve kapalı ifadeler kullanamaz."
 
 #: querytransformparser.ypp:3930
 #, fuzzy, qt-format
-#| msgid "An attribute by name %1 has already appeared on this element."
 msgid "An attribute with name %1 has already appeared on this element."
 msgstr "Bu öğede %1 adıyla bir öznitelik halihazırda görünmüştür."
 
 #: querytransformparser.ypp:3984
 #, qt-format
 msgid "A direct element constructor is not well-formed. %1 is ended with %2."
-msgstr ""
-"Bir doğrudan öğe inşaatçısı iyi biçimlendirilmedi. %1, %2 ifadesiyle "
-"sonlanıyor."
+msgstr "Bir doğrudan öğe inşaatçısı iyi biçimlendirilmedi. %1, %2 ifadesiyle sonlanıyor."
 
 #: querytransformparser.ypp:4310
 #, qt-format
@@ -6995,18 +6508,13 @@ msgstr "%1 adı hiçbir şema tipine karşılık gelmiyor."
 
 #: querytransformparser.ypp:4320
 #, qt-format
-msgid ""
-"%1 is an complex type. Casting to complex types is not possible. However, "
-"casting to atomic types such as %2 works."
-msgstr ""
-"%1 karmaşık bir türdür. Karmaşık türlere biçim verme mümkün değildir. Ancak, "
-"%2 gibi atomik türlere biçim vermek işe yarar."
+msgid "%1 is an complex type. Casting to complex types is not possible. However, casting to atomic types such as %2 works."
+msgstr "%1 karmaşık bir türdür. Karmaşık türlere biçim verme mümkün değildir. Ancak, %2 gibi atomik türlere biçim vermek işe yarar."
 
 #: querytransformparser.ypp:4329
 #, qt-format
 msgid "%1 is not an atomic type. Casting is only possible to atomic types."
-msgstr ""
-"%1 bir atomik tür değildir. Yalnızca atomik türlere biçim vermek mümkündür."
+msgstr "%1 bir atomik tür değildir. Yalnızca atomik türlere biçim vermek mümkündür."
 
 #: querytransformparser.ypp:4395
 #, qt-format
@@ -7015,12 +6523,8 @@ msgstr ""
 
 #: querytransformparser.ypp:4447 querytransformparser.ypp:4503
 #, qt-format
-msgid ""
-"%1 is not in the in-scope attribute declarations. Note that the schema "
-"import feature is not supported."
-msgstr ""
-"%1, kapsam-içi öznitelik bildiriminde yok. Taslak içe aktarma özelliğinin "
-"desteklenmediğine dikkat edin."
+msgid "%1 is not in the in-scope attribute declarations. Note that the schema import feature is not supported."
+msgstr "%1, kapsam-içi öznitelik bildiriminde yok. Taslak içe aktarma özelliğinin desteklenmediğine dikkat edin."
 
 #: querytransformparser.ypp:4553
 msgid "The name of an extension expression must be in a namespace."
@@ -7042,9 +6546,7 @@ msgstr "Ayrıştırma hatası: %1"
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:610
 #, qt-format
-msgid ""
-"The value of the XSL-T version attribute must be a value of type %1, which %"
-"2 isn't."
+msgid "The value of the XSL-T version attribute must be a value of type %1, which %2 isn't."
 msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:630
@@ -7103,8 +6605,7 @@ msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:1279
 #, qt-format
-msgid ""
-"When attribute %1 is present on %2, a sequence constructor cannot be used."
+msgid "When attribute %1 is present on %2, a sequence constructor cannot be used."
 msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:1292
@@ -7114,9 +6615,7 @@ msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:1417
 #, qt-format
-msgid ""
-"When a parameter is required, a default value cannot be supplied through a %"
-"1-attribute or a sequence constructor."
+msgid "When a parameter is required, a default value cannot be supplied through a %1-attribute or a sequence constructor."
 msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:1687
@@ -7146,15 +6645,12 @@ msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:2437
 #, qt-format
-msgid ""
-"Top level stylesheet elements must be in a non-null namespace, which %1 "
-"isn't."
+msgid "Top level stylesheet elements must be in a non-null namespace, which %1 isn't."
 msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:2485
 #, qt-format
-msgid ""
-"The value for attribute %1 on element %2 must either be %3 or %4, not %5."
+msgid "The value for attribute %1 on element %2 must either be %3 or %4, not %5."
 msgstr ""
 
 #: xmlpatterns/parser/qxslttokenizer.cpp:2505
@@ -7183,8 +6679,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:187
 #, qt-format
-msgid ""
-"Derived element %1 is missing value constraint as defined in base particle."
+msgid "Derived element %1 is missing value constraint as defined in base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:192
@@ -7194,9 +6689,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:199
 #, qt-format
-msgid ""
-"Fixed value constraint of element %1 differs from value constraint in base "
-"particle."
+msgid "Fixed value constraint of element %1 differs from value constraint in base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:206
@@ -7206,23 +6699,17 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:216
 #, qt-format
-msgid ""
-"Block constraints of derived element %1 must not be more weaker than in the "
-"base element."
+msgid "Block constraints of derived element %1 must not be more weaker than in the base element."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:227
 #, qt-format
-msgid ""
-"Simple type of derived element %1 cannot be validly derived from base "
-"element."
+msgid "Simple type of derived element %1 cannot be validly derived from base element."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:232
 #, qt-format
-msgid ""
-"Complex type of derived element %1 cannot be validly derived from base "
-"element."
+msgid "Complex type of derived element %1 cannot be validly derived from base element."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:256
@@ -7232,25 +6719,19 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:274
 #, qt-format
-msgid ""
-"Element %1 does not match namespace constraint of wildcard in base particle."
+msgid "Element %1 does not match namespace constraint of wildcard in base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:285
-msgid ""
-"Wildcard in derived particle is not a valid subset of wildcard in base "
-"particle."
+msgid "Wildcard in derived particle is not a valid subset of wildcard in base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:290
-msgid ""
-"processContent of wildcard in derived particle is weaker than wildcard in "
-"base particle."
+msgid "processContent of wildcard in derived particle is weaker than wildcard in base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdparticlechecker.cpp:530
-msgid ""
-"Derived particle allows content that is not allowed in the base particle."
+msgid "Derived particle allows content that is not allowed in the base particle."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:227
@@ -7271,34 +6752,27 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:292
 #, qt-format
-msgid ""
-"%1 is not allowed to derive from %2 by restriction as the latter defines it "
-"as final."
+msgid "%1 is not allowed to derive from %2 by restriction as the latter defines it as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:297
 #, qt-format
-msgid ""
-"%1 is not allowed to derive from %2 by extension as the latter defines it as "
-"final."
+msgid "%1 is not allowed to derive from %2 by extension as the latter defines it as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:328
 #, fuzzy, qt-format
-#| msgid "The first argument to %1 cannot be of type %2."
 msgid "Base type of simple type %1 cannot be complex type %2."
 msgstr "%1 için ilk bağımsız değişken %2 türünde olamaz."
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:337
 #, fuzzy, qt-format
-#| msgid "Operator %1 cannot be used on type %2."
 msgid "Simple type %1 cannot have direct base type %2."
 msgstr "%1 işleci %2 tipi üzerinde kullanılamaz."
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:370
 #: xmlpatterns/schema/qxsdschemachecker.cpp:379
 #, fuzzy, qt-format
-#| msgid "%1 is not valid as a value of type %2."
 msgid "Simple type %1 is not allowed to have base type %2."
 msgstr "%1 %2 tipinin bir geçerli değeri değil."
 
@@ -7309,9 +6783,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:397
 #, qt-format
-msgid ""
-"Simple type %1 cannot derive from %2 as the latter defines restriction as "
-"final."
+msgid "Simple type %1 cannot derive from %2 as the latter defines restriction as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:410
@@ -7329,9 +6801,7 @@ msgstr ""
 #: xmlpatterns/schema/qxsdschemachecker.cpp:433
 #: xmlpatterns/schema/qxsdschemachecker.cpp:884
 #, qt-format
-msgid ""
-"%1 is not allowed to derive from %2 by list as the latter defines it as "
-"final."
+msgid "%1 is not allowed to derive from %2 by list as the latter defines it as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:453
@@ -7346,8 +6816,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:469
 #, qt-format
-msgid ""
-"Base type of simple type %1 has defined derivation by restriction as final."
+msgid "Base type of simple type %1 has defined derivation by restriction as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:475
@@ -7358,21 +6827,17 @@ msgstr ""
 #: xmlpatterns/schema/qxsdschemachecker.cpp:501
 #: xmlpatterns/schema/qxsdschemachecker.cpp:594
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Simple type %1 contains not allowed facet type %2."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:522
 #: xmlpatterns/schema/qxsdschemachecker.cpp:935
 #, qt-format
-msgid ""
-"%1 is not allowed to derive from %2 by union as the latter defines it as "
-"final."
+msgid "%1 is not allowed to derive from %2 by union as the latter defines it as final."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:531
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "%1 is not allowed to have any facets."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
@@ -7383,22 +6848,17 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:548
 #, qt-format
-msgid ""
-"Base type %1 of simple type %2 is not allowed to have restriction in %3 "
-"attribute."
+msgid "Base type %1 of simple type %2 is not allowed to have restriction in %3 attribute."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:566
 #, qt-format
-msgid ""
-"Member type %1 cannot be derived from member type %2 of %3's base type %4."
+msgid "Member type %1 cannot be derived from member type %2 of %3's base type %4."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:631
 #, qt-format
-msgid ""
-"Derivation method of %1 must be extension because the base type %2 is a "
-"simple type."
+msgid "Derivation method of %1 must be extension because the base type %2 is a simple type."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:661
@@ -7413,16 +6873,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:690
 #, qt-format
-msgid ""
-"Attributes of complex type %1 are not a valid extension of the attributes of "
-"base type %2: %3."
+msgid "Attributes of complex type %1 are not a valid extension of the attributes of base type %2: %3."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:727
 #, qt-format
-msgid ""
-"Content model of complex type %1 is not a valid extension of content model "
-"of %2."
+msgid "Content model of complex type %1 is not a valid extension of content model of %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:737
@@ -7437,22 +6893,17 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:811
 #, fuzzy, qt-format
-#| msgid "Operator %1 cannot be used on type %2."
 msgid "Complex type %1 cannot be derived from base type %2%3."
 msgstr "%1 işleci %2 tipi üzerinde kullanılamaz."
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:825
 #, qt-format
-msgid ""
-"Attributes of complex type %1 are not a valid restriction from the "
-"attributes of base type %2: %3."
+msgid "Attributes of complex type %1 are not a valid restriction from the attributes of base type %2: %3."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:839
 #, qt-format
-msgid ""
-"Complex type %1 with simple content cannot be derived from complex base type "
-"%2."
+msgid "Complex type %1 with simple content cannot be derived from complex base type %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:874
@@ -7501,7 +6952,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1129
 #, fuzzy, qt-format
-#| msgid "%1 is an invalid regular expression pattern: %2"
 msgid "%1 facet contains invalid regular expression"
 msgstr "%1, geçersiz bir düzenli ifade kalıbıdır: %2"
 
@@ -7592,16 +7042,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1638
 #, qt-format
-msgid ""
-"Attribute group %1 contains two different attributes that both have types "
-"derived from %2."
+msgid "Attribute group %1 contains two different attributes that both have types derived from %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1646
 #, qt-format
-msgid ""
-"Attribute group %1 contains attribute %2 that has value constraint but type "
-"that inherits from %3."
+msgid "Attribute group %1 contains attribute %2 that has value constraint but type that inherits from %3."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1669
@@ -7611,30 +7057,22 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1678
 #, qt-format
-msgid ""
-"Complex type %1 contains two different attributes that both have types "
-"derived from %2."
+msgid "Complex type %1 contains two different attributes that both have types derived from %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1686
 #, qt-format
-msgid ""
-"Complex type %1 contains attribute %2 that has value constraint but type "
-"that inherits from %3."
+msgid "Complex type %1 contains attribute %2 that has value constraint but type that inherits from %3."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1729
 #, qt-format
-msgid ""
-"Element %1 is not allowed to have a value constraint if its base type is "
-"complex."
+msgid "Element %1 is not allowed to have a value constraint if its base type is complex."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1736
 #, qt-format
-msgid ""
-"Element %1 is not allowed to have a value constraint if its type is derived "
-"from %2."
+msgid "Element %1 is not allowed to have a value constraint if its type is derived from %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1746
@@ -7645,16 +7083,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1770
 #, qt-format
-msgid ""
-"Element %1 is not allowed to have substitution group affiliation as it is no "
-"global element."
+msgid "Element %1 is not allowed to have substitution group affiliation as it is no global element."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1798
 #, qt-format
-msgid ""
-"Type of element %1 cannot be derived from type of substitution group "
-"affiliation."
+msgid "Type of element %1 cannot be derived from type of substitution group affiliation."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1839
@@ -7674,16 +7108,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1915
 #, qt-format
-msgid ""
-"Attribute %1 in derived complex type must have %2 value constraint like in "
-"base type."
+msgid "Attribute %1 in derived complex type must have %2 value constraint like in base type."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1924
 #, qt-format
-msgid ""
-"Attribute %1 in derived complex type must have the same %2 value constraint "
-"like in base type."
+msgid "Attribute %1 in derived complex type must have the same %2 value constraint like in base type."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemachecker.cpp:1931
@@ -7713,16 +7143,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:697
 #, qt-format
-msgid ""
-"Type of derived attribute %1 cannot be validly derived from type of base "
-"attribute."
+msgid "Type of derived attribute %1 cannot be validly derived from type of base attribute."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:725
 #, qt-format
-msgid ""
-"Value constraint of derived attribute %1 does not match value constraint of "
-"base attribute."
+msgid "Value constraint of derived attribute %1 does not match value constraint of base attribute."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:730
@@ -7732,8 +7158,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:741
 #, qt-format
-msgid ""
-"Derived attribute %1 does not match the wildcard in the base definition."
+msgid "Derived attribute %1 does not match the wildcard in the base definition."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:758
@@ -7743,9 +7168,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:767
 #, qt-format
-msgid ""
-"Derived definition contains an %1 element that does not exists in the base "
-"definition"
+msgid "Derived definition contains an %1 element that does not exists in the base definition"
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:772
@@ -7754,8 +7177,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:777
 #, qt-format
-msgid ""
-"%1 of derived wildcard is not a valid restriction of %2 of base wildcard"
+msgid "%1 of derived wildcard is not a valid restriction of %2 of base wildcard"
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:800
@@ -7770,9 +7192,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemahelper.cpp:813
 #, qt-format
-msgid ""
-"Base definition contains an %1 element that is missing in the derived "
-"definition"
+msgid "Base definition contains an %1 element that is missing in the derived definition"
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:354
@@ -7787,9 +7207,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:374
 #, qt-format
-msgid ""
-"%1 has a different number of fields from the identity constraint %2 that it "
-"references."
+msgid "%1 has a different number of fields from the identity constraint %2 that it references."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:397
@@ -7826,16 +7244,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:850
 #, qt-format
-msgid ""
-"Content model of complex type %1 contains %2 element so it cannot be derived "
-"by extension from a non-empty type."
+msgid "Content model of complex type %1 contains %2 element so it cannot be derived by extension from a non-empty type."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:856
 #, qt-format
-msgid ""
-"Complex type %1 cannot be derived by extension from %2 as the latter "
-"contains %3 element in its content model."
+msgid "Complex type %1 cannot be derived by extension from %2 as the latter contains %3 element in its content model."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:957
@@ -7874,7 +7288,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1213
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "%1 element is not allowed in this scope"
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
@@ -7890,9 +7303,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1317
 #, qt-format
-msgid ""
-"%1 or %2 attribute of reference %3 does not match with the attribute "
-"declaration %4."
+msgid "%1 or %2 attribute of reference %3 does not match with the attribute declaration %4."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1342
@@ -7902,15 +7313,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1473
 #, fuzzy, qt-format
-#| msgid "The attribute %1 must appear on element %2."
 msgid "%1 attribute in %2 must have %3 use like in base type %4."
 msgstr "%1 özniteliği %2 ögesinin üzerinde ortaya çıkmalıdır."
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1525
 #, qt-format
-msgid ""
-"Attribute wildcard of %1 is not a valid restriction of attribute wildcard of "
-"base type %2."
+msgid "Attribute wildcard of %1 is not a valid restriction of attribute wildcard of base type %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1532
@@ -7920,35 +7328,29 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1558
 #, qt-format
-msgid ""
-"Union of attribute wildcard of type %1 and attribute wildcard of its base "
-"type %2 is not expressible."
+msgid "Union of attribute wildcard of type %1 and attribute wildcard of its base type %2 is not expressible."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1606
 #, qt-format
-msgid ""
-"Enumeration facet contains invalid content: {%1} is not a value of type %2."
+msgid "Enumeration facet contains invalid content: {%1} is not a value of type %2."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1616
 #, fuzzy, qt-format
-#| msgid "Namespace prefix '%1' not declared"
 msgid "Namespace prefix of qualified name %1 is not defined."
 msgstr "İsimlendirme öneki '%1' bildirilmedi"
 
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1667
 #: xmlpatterns/schema/qxsdschemaresolver.cpp:1685
 #, qt-format
-msgid ""
-"%1 element %2 is not a valid restriction of the %3 element it redefines: %4."
+msgid "%1 element %2 is not a valid restriction of the %3 element it redefines: %4."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdtypechecker.cpp:233
 #: xmlpatterns/schema/qxsdtypechecker.cpp:240
 #: xmlpatterns/schema/qxsdtypechecker.cpp:261
 #, fuzzy, qt-format
-#| msgid "%1 is an invalid encoding name."
 msgid "%1 is not valid according to %2."
 msgstr "%1 geçersiz bir kodlama adıdır."
 
@@ -8130,7 +7532,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdtypechecker.cpp:1013
 #, fuzzy, qt-format
-#| msgid "Invalid document."
 msgid "Invalid QName content: %1."
 msgstr "Geçersiz belge."
 
@@ -8181,7 +7582,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:160
 #, fuzzy, qt-format
-#| msgid "Element %1 cannot have children."
 msgid "Element %1 is missing child element."
 msgstr "%1 ögesinin alt ögesi olamaz."
 
@@ -8196,22 +7596,16 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:219
 #, fuzzy, qt-format
-#| msgid "%1 is an invalid %2"
 msgid "%1 contains invalid data."
 msgstr "%1 geçersiz bir %2"
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:232
 #, fuzzy, qt-format
-#| msgid "An attribute by name %1 has already appeared on this element."
-msgid ""
-"xsi:schemaLocation namespace %1 has already appeared earlier in the instance "
-"document."
+msgid "xsi:schemaLocation namespace %1 has already appeared earlier in the instance document."
 msgstr "Bu öğede %1 adıyla bir öznitelik halihazırda görünmüştür."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:254
-msgid ""
-"xsi:noNamespaceSchemaLocation cannot appear after the first no-namespace "
-"element or attribute."
+msgid "xsi:noNamespaceSchemaLocation cannot appear after the first no-namespace element or attribute."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:272
@@ -8220,7 +7614,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:282
 #, fuzzy, qt-format
-#| msgid "No function by name %1 is available."
 msgid "No definition for element %1 available."
 msgstr "%1 isimli kullanılabilir bir fonksiyon yok."
 
@@ -8233,7 +7626,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:315
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Element %1 is not defined in this scope."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
@@ -8244,25 +7636,21 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:370
 #, fuzzy, qt-format
-#| msgid "Element %1 cannot have children."
 msgid "Element %1 contains invalid content."
 msgstr "%1 ögesinin alt ögesi olamaz."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:443
 #, fuzzy, qt-format
-#| msgid "Element %1 must come last."
 msgid "Element %1 is declared as abstract."
 msgstr "%1 ögesi en son gelmeli."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:450
 #, fuzzy, qt-format
-#| msgid "Element %1 must come last."
 msgid "Element %1 is not nillable."
 msgstr "%1 ögesi en son gelmeli."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:458
 #, fuzzy, qt-format
-#| msgid "Attribute %1 cannot have the value %2."
 msgid "Attribute %1 contains invalid data: %2"
 msgstr "%1 özniteliği %2 değerini alamaz."
 
@@ -8281,20 +7669,17 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:527
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Complex type %1 is not allowed to be abstract."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:548
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Element %1 contains not allowed attributes."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:554
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:651
 #, fuzzy, qt-format
-#| msgid "Element %1 cannot have children."
 msgid "Element %1 contains not allowed child element."
 msgstr "%1 ögesinin alt ögesi olamaz."
 
@@ -8313,13 +7698,11 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:643
 #, fuzzy, qt-format
-#| msgid "Element %1 cannot have children."
 msgid "Element %1 contains not allowed child content."
 msgstr "%1 ögesinin alt ögesi olamaz."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:684
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Element %1 contains not allowed text content."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
@@ -8335,7 +7718,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:774
 #, fuzzy, qt-format
-#| msgid "Attribute %1 cannot have the value %2."
 msgid "Attribute %1 does not match the attribute wildcard."
 msgstr "%1 özniteliği %2 değerini alamaz."
 
@@ -8346,13 +7728,11 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:789
 #, fuzzy, qt-format
-#| msgid "The first argument to %1 cannot be of type %2."
 msgid "Element %1 contains two attributes of type %2."
 msgstr "%1 için ilk bağımsız değişken %2 türünde olamaz."
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:800
 #, fuzzy, qt-format
-#| msgid "Attribute %1 cannot have the value %2."
 msgid "Attribute %1 contains invalid content."
 msgstr "%1 özniteliği %2 değerini alamaz."
 
@@ -8405,7 +7785,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdvalidatinginstancereader.cpp:1224
 #, fuzzy, qt-format
-#| msgid "The variable %1 is unused"
 msgid "ID value '%1' is not unique."
 msgstr "%1 değişkeni kullanılmıyor"
 
@@ -8421,14 +7800,12 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:183
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "Element %1 is not allowed in this scope, possible elements are: %2."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:199
 #, qt-format
-msgid ""
-"Child element is missing in that scope, possible child elements are: %1."
+msgid "Child element is missing in that scope, possible child elements are: %1."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:342
@@ -8437,9 +7814,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:364
 #, qt-format
-msgid ""
-"%1 attribute of %2 element contains invalid content: {%3} is not a value of "
-"type %4."
+msgid "%1 attribute of %2 element contains invalid content: {%3} is not a value of type %4."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:370
@@ -8449,31 +7824,23 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:396
 #, qt-format
-msgid ""
-"Target namespace %1 of included schema is different from the target "
-"namespace %2 as defined by the including schema."
+msgid "Target namespace %1 of included schema is different from the target namespace %2 as defined by the including schema."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:410
 #: xmlpatterns/schema/qxsdschemaparser.cpp:421
 #, qt-format
-msgid ""
-"Target namespace %1 of imported schema is different from the target "
-"namespace %2 as defined by the importing schema."
+msgid "Target namespace %1 of imported schema is different from the target namespace %2 as defined by the importing schema."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:664
 #, qt-format
-msgid ""
-"%1 element is not allowed to have the same %2 attribute value as the target "
-"namespace %3."
+msgid "%1 element is not allowed to have the same %2 attribute value as the target namespace %3."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:672
 #, qt-format
-msgid ""
-"%1 element without %2 attribute is not allowed inside schema without target "
-"namespace."
+msgid "%1 element without %2 attribute is not allowed inside schema without target namespace."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:1523
@@ -8514,7 +7881,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:3668
 #, fuzzy, qt-format
-#| msgid "Attribute %1 cannot have the value %2."
 msgid "%1 attribute of %2 element must have a value of %3."
 msgstr "%1 özniteliği %2 değerini alamaz."
 
@@ -8556,9 +7922,7 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:4220
 #, qt-format
-msgid ""
-"%1 attribute of %2 element must have the value %3 because the %4 attribute "
-"is set."
+msgid "%1 attribute of %2 element must have the value %3 because the %4 attribute is set."
 msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:4407
@@ -8582,8 +7946,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:5388
 #, fuzzy, qt-format
-#| msgctxt "QXml"
-#| msgid "internal general entity reference not allowed in DTD"
 msgid "Text or entity references not allowed inside %1 element"
 msgstr "içsel genel varlık başvurusuna DTD içinde izin verilmez"
 
@@ -8595,7 +7957,6 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:5667
 #, fuzzy, qt-format
-#| msgid "Element %1 is not allowed at this location."
 msgid "%1 element is not allowed in this context."
 msgstr "%1 ögesine bu konumda izin verilmiyor."
 
@@ -8622,25 +7983,21 @@ msgstr ""
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:6019
 #, fuzzy, qt-format
-#| msgid "Element %1 cannot have children."
 msgid "Element %1 already defined."
 msgstr "%1 ögesinin alt ögesi olamaz."
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:6030
 #, fuzzy, qt-format
-#| msgid "Attribute redefined."
 msgid "Attribute %1 already defined."
 msgstr "Nitelik yeniden tanımlandı."
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:6045
 #, fuzzy, qt-format
-#| msgid "%1: already exists"
 msgid "Type %1 already defined."
 msgstr "%1: zaten var"
 
 #: xmlpatterns/schema/qxsdschemaparser.cpp:6068
 #, fuzzy, qt-format
-#| msgid "Attribute redefined."
 msgid "Attribute group %1 already defined."
 msgstr "Nitelik yeniden tanımlandı."
 
@@ -8707,46 +8064,30 @@ msgstr "Başka düğüm türlerinden sonra öznitelikler eklemek mümkün değil
 msgid "An attribute by name %1 has already been created."
 msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 
-#, fuzzy
-#~| msgid "Done"
 #~ msgctxt "QSoftKeyManager"
 #~ msgid "Done"
 #~ msgstr "Bitti"
 
-#, fuzzy
-#~| msgid "Options"
 #~ msgctxt "QSoftKeyManager"
 #~ msgid "Options"
 #~ msgstr "Seçenekler"
 
-#, fuzzy
-#~| msgid "Cancel"
 #~ msgctxt "QSoftKeyManager"
 #~ msgid "Cancel"
 #~ msgstr "İptal"
 
-#, fuzzy
-#~| msgctxt "QShortcut"
-#~| msgid "Audio Repeat"
 #~ msgctxt "Phonon::MMF::EffectFactory"
 #~ msgid "Audio Equalizer"
 #~ msgstr "Sesi Tekrarla"
 
-#, fuzzy
-#~| msgctxt "QShortcut"
-#~| msgid "Bass Boost"
 #~ msgctxt "Phonon::MMF::EffectFactory"
 #~ msgid "Bass Boost"
 #~ msgstr "Bası Güçlendir"
 
-#, fuzzy
-#~| msgid "Less"
 #~ msgctxt "Phonon::MMF::EffectFactory"
 #~ msgid "Loudness"
 #~ msgstr "Daha az"
 
-#, fuzzy
-#~| msgid "Orientation"
 #~ msgctxt "Phonon::MMF::EffectFactory"
 #~ msgid "Source Orientation"
 #~ msgstr "Yön"
@@ -8798,37 +8139,11 @@ msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 #~ msgid "Puts a minimized back to normal"
 #~ msgstr "Küçültülmüş bir pencereyi önceki haline getirir"
 
-#~ msgid ""
-#~ "<h3>About Qt</h3>%1<p>Qt is a C++ toolkit for cross-platform application "
-#~ "development.</p><p>Qt provides single-source portability across MS&nbsp;"
-#~ "Windows, Mac&nbsp;OS&nbsp;X, Linux, and all major commercial Unix "
-#~ "variants. Qt is also available for embedded devices as Qt for Embedded "
-#~ "Linux and Qt for Windows CE.</p><p>Qt is a Nokia product. See <a href="
-#~ "\"http://qtsoftware.com/qt/\">qtsoftware.com/qt/</a> for more information."
-#~ "</p>"
-#~ msgstr ""
-#~ "<h3>Qt Hakkında</h3>%1<p>Qt, uygulama geliştirmek için oluşturulmuş, "
-#~ "platformdan bağımsız bir C++ araç takımıdır.</p><p>Qt, MS&nbsp;Windows, "
-#~ "Mac&nbsp;OS&nbsp;X, Linux ve tüm ticari Unix platformları için tek-kaynak "
-#~ "kod taşınabilirliği sağlar. Qt, gömülü Linux sistemler ve  Windows CE "
-#~ "için de kulanılabilir.</p><p>Qt bir Nokia ürünüdür. Daha fazla bilgi için "
-#~ "<a href=\"http://qtsoftware.com/qt/\">qtsoftware.com/qt/</a> adresine "
-#~ "bakın.</p>"
+#~ msgid "<h3>About Qt</h3>%1<p>Qt is a C++ toolkit for cross-platform application development.</p><p>Qt provides single-source portability across MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, Linux, and all major commercial Unix variants. Qt is also available for embedded devices as Qt for Embedded Linux and Qt for Windows CE.</p><p>Qt is a Nokia product. See <a href=\"http://qtsoftware.com/qt/\">qtsoftware.com/qt/</a> for more information.</p>"
+#~ msgstr "<h3>Qt Hakkında</h3>%1<p>Qt, uygulama geliştirmek için oluşturulmuş, platformdan bağımsız bir C++ araç takımıdır.</p><p>Qt, MS&nbsp;Windows, Mac&nbsp;OS&nbsp;X, Linux ve tüm ticari Unix platformları için tek-kaynak kod taşınabilirliği sağlar. Qt, gömülü Linux sistemler ve  Windows CE için de kulanılabilir.</p><p>Qt bir Nokia ürünüdür. Daha fazla bilgi için <a href=\"http://qtsoftware.com/qt/\">qtsoftware.com/qt/</a> adresine bakın.</p>"
 
-#~ msgid ""
-#~ "<p>This program uses Qt Open Source Edition version %1.</p><p>Qt Open "
-#~ "Source Edition is intended for the development of Open Source "
-#~ "applications. You need a commercial Qt license for development of "
-#~ "proprietary (closed source) applications.</p><p>Please see <a href="
-#~ "\"http://qtsoftware.com/company/model/\">qtsoftware.com/company/model/</"
-#~ "a> for an overview of Qt licensing.</p>"
-#~ msgstr ""
-#~ "<p>Bu uygulama Qt  Açık Kaynak Sürümü %1 sürümü kullanmaktadır.</"
-#~ "p><p>Qt'nin Açık Kaynak Sürümü Açık Kaynaklı uygulamalar geliştirilmesini "
-#~ "amaçlar. Kapalı kodlu ve sahipli uygulamalar geliştirmek için Qt ticari "
-#~ "lisansı almanız gerekir.</p><p>Qt lisanslaması hakkında bilgi almak için "
-#~ "lütfen <a href=\"http://qtsoftware.com/company/model/\">qtsoftware.com/"
-#~ "company/model/</a> adresine bakın.</p>"
+#~ msgid "<p>This program uses Qt Open Source Edition version %1.</p><p>Qt Open Source Edition is intended for the development of Open Source applications. You need a commercial Qt license for development of proprietary (closed source) applications.</p><p>Please see <a href=\"http://qtsoftware.com/company/model/\">qtsoftware.com/company/model/</a> for an overview of Qt licensing.</p>"
+#~ msgstr "<p>Bu uygulama Qt  Açık Kaynak Sürümü %1 sürümü kullanmaktadır.</p><p>Qt'nin Açık Kaynak Sürümü Açık Kaynaklı uygulamalar geliştirilmesini amaçlar. Kapalı kodlu ve sahipli uygulamalar geliştirmek için Qt ticari lisansı almanız gerekir.</p><p>Qt lisanslaması hakkında bilgi almak için lütfen <a href=\"http://qtsoftware.com/company/model/\">qtsoftware.com/company/model/</a> adresine bakın.</p>"
 
 #~ msgctxt "QOCIResult"
 #~ msgid "Unable to execute select statement"
@@ -8865,12 +8180,8 @@ msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 #~ msgid "QLibrary::unload_sys: Cannot unload %1 (%2)"
 #~ msgstr "QLibrary::unload_sys: %1 (%2) kaldırılamadı"
 
-#~ msgid ""
-#~ "%1 is not a valid name for a processing-instruction. Therefore this name "
-#~ "test will never match."
-#~ msgstr ""
-#~ "%1, bir işlem yönergesi için geçerli bir ad değil. Bu nedenle bu ad testi "
-#~ "hiçbir zaman uygun olmayacaktır."
+#~ msgid "%1 is not a valid name for a processing-instruction. Therefore this name test will never match."
+#~ msgstr "%1, bir işlem yönergesi için geçerli bir ad değil. Bu nedenle bu ad testi hiçbir zaman uygun olmayacaktır."
 
 #~ msgid "Socks5 timeout error connecting to socks server"
 #~ msgstr "Socks sunucusuna bağlanırken Socks5 zamanaşımı hatası"
@@ -8922,8 +8233,7 @@ msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 #~ msgstr "'%1' Güncelleniyor...\n"
 
 #~ msgid "Removing translations equal to source text in '%1'...\n"
-#~ msgstr ""
-#~ "'%1' içerisindeki kaynak metin ile aynı olan çeviriler siliniyor ...\n"
+#~ msgstr "'%1' içerisindeki kaynak metin ile aynı olan çeviriler siliniyor ...\n"
 
 #~ msgid "lrelease version %1\n"
 #~ msgstr "lrelease sürümü %1\n"
@@ -8938,8 +8248,7 @@ msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 #~ "           Drop all obsolete strings.\n"
 #~ "    -extensions <ext>[,<ext>]...\n"
 #~ "           Process files with the given extensions only.\n"
-#~ "           The extension list must be separated with commas, not with "
-#~ "whitespace.\n"
+#~ "           The extension list must be separated with commas, not with whitespace.\n"
 #~ "           Default: '%1'.\n"
 #~ "    -pluralonly\n"
 #~ "           Only include plural form messages.\n"
@@ -8990,8 +8299,6 @@ msgstr "%1 adıyla bir öznitelik halihazırda yaratılmıştır."
 #~ msgid "Could not open stream."
 #~ msgstr "Yayın açılamadı."
 
-#~ msgctxt ""
-#~ "text that appears at the start of nearly-obsolete web pages in the form "
-#~ "of a 'searchable index'"
+#~ msgctxt "text that appears at the start of nearly-obsolete web pages in the form of a 'searchable index'"
 #~ msgid "Searchable Index"
 #~ msgstr "Aranabilir İndeks"
