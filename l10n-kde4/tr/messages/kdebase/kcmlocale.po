@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: countryselectordialog.cpp:217
 msgid "Country Selector"
@@ -65,19 +65,12 @@ msgid "Add Language"
 msgstr "Dil Ekle"
 
 #: kcmlocale.cpp:228
-msgid ""
-"This is where you live. KDE will use the defaults for this country or region."
-msgstr ""
-"Burası yaşadığınız yerdir. KDE bu ülke için öntanımlı değerleri "
-"kullanacaktır."
+msgid "This is where you live. KDE will use the defaults for this country or region."
+msgstr "Burası yaşadığınız yerdir. KDE bu ülke için öntanımlı değerleri kullanacaktır."
 
 #: kcmlocale.cpp:231
-msgid ""
-"This will add a language to the list. If the language is already in the "
-"list, the old one will be moved instead."
-msgstr ""
-"Bir dili listeye ekler. Eğer listede dil zaten varsa eski olanın üzerine "
-"yazılır."
+msgid "This will add a language to the list. If the language is already in the list, the old one will be moved instead."
+msgstr "Bir dili listeye ekler. Eğer listede dil zaten varsa eski olanın üzerine yazılır."
 
 #: kcmlocale.cpp:235
 msgid "This will remove the highlighted language from the list."
@@ -85,37 +78,19 @@ msgstr "Seçili dili listeden siler."
 
 #: kcmlocale.cpp:238
 msgid ""
-"KDE programs will be displayed in the first available language in this "
-"list.\n"
+"KDE programs will be displayed in the first available language in this list.\n"
 "If none of the languages are available, US English will be used."
 msgstr ""
-"KDE programları bu listedeki ilk bulunan dil özellikleriyle "
-"çalıştırılacaktır.\n"
+"KDE programları bu listedeki ilk bulunan dil özellikleriyle çalıştırılacaktır.\n"
 "Eğer dil bulunamazsa Amerikan İngilizcesi kullanılır."
 
 #: kcmlocale.cpp:245
-msgid ""
-"Here you can choose your country or region. The settings for languages, "
-"numbers etc. will automatically switch to the corresponding values."
-msgstr ""
-"Buradan ülkenizi seçebilirsiniz. Dil, sayı vb ayarları otomatik olarak "
-"ilgili değerlere dönecektir. "
+msgid "Here you can choose your country or region. The settings for languages, numbers etc. will automatically switch to the corresponding values."
+msgstr "Buradan ülkenizi seçebilirsiniz. Dil, sayı vb ayarları otomatik olarak ilgili değerlere dönecektir. "
 
 #: kcmlocale.cpp:252
-msgid ""
-"<p>Here you can choose the languages that will be used by KDE. If the first "
-"language in the list is not available, the second will be used, etc. If only "
-"US English is available, no translations have been installed. You can get "
-"translation packages for many languages from the place you got KDE from.</"
-"p><p>Note that some applications may not be translated to your languages; in "
-"this case, they will automatically fall back to US English.</p>"
-msgstr ""
-"<p>Buradan KDE tarafından kullanılacak dili seçebilirsiniz. Eğer listedeki "
-"ilk dil kullanılamıyorsa ikincisi kullanılır. Eğer sadece İngilizce mevcut "
-"ise hiç çeviri dosyası kurulu değildir. KDE'yi temin ettiğiniz yerden çeviri "
-"dosyalarını da alabilirsiniz.</p><p>Ancak bazı programlar dilinize henüz "
-"çevrilmemiş olabilir. Bu durumda ilgili satırlar İngilizce görüntülenecektir."
-"</p>"
+msgid "<p>Here you can choose the languages that will be used by KDE. If the first language in the list is not available, the second will be used, etc. If only US English is available, no translations have been installed. You can get translation packages for many languages from the place you got KDE from.</p><p>Note that some applications may not be translated to your languages; in this case, they will automatically fall back to US English.</p>"
+msgstr "<p>Buradan KDE tarafından kullanılacak dili seçebilirsiniz. Eğer listedeki ilk dil kullanılamıyorsa ikincisi kullanılır. Eğer sadece İngilizce mevcut ise hiç çeviri dosyası kurulu değildir. KDE'yi temin ettiğiniz yerden çeviri dosyalarını da alabilirsiniz.</p><p>Ancak bazı programlar dilinize henüz çevrilmemiş olabilir. Bu durumda ilgili satırlar İngilizce görüntülenecektir.</p>"
 
 #: klocalesample.cpp:46
 msgid "Numbers:"
@@ -151,9 +126,7 @@ msgstr "Tarih değerlerinin nasıl görüntüleneceğini gösterir."
 
 #: klocalesample.cpp:115
 msgid "This is how date values will be displayed using a short notation."
-msgstr ""
-"Kısa yazım biçimi kullanılarak tarih değerlerinin nasıl görüntüleneceğini "
-"gösterir."
+msgstr "Kısa yazım biçimi kullanılarak tarih değerlerinin nasıl görüntüleneceğini gösterir."
 
 #: klocalesample.cpp:120
 msgid "This is how the time will be displayed."
@@ -162,10 +135,8 @@ msgstr "Saatin nasıl görüntüleneceğini gösterir."
 #. i18n: file: localemon.ui:78
 #. i18n: ectx: property (text), widget (QLabel, m_labelCurrencyCode)
 #: localemon.cpp:47 rc.cpp:27
-#, fuzzy
-#| msgid "Currency symbol:"
 msgid "Currency:"
-msgstr "Para birimi simgesi:"
+msgstr "Kur:"
 
 #. i18n: file: localemon.ui:91
 #. i18n: ectx: property (text), widget (QLabel, m_labelCurrencySymbol)
@@ -189,7 +160,6 @@ msgstr "Binler basamağı ayracı:"
 #. i18n: ectx: property (text), widget (QLabel, m_labelMonetaryDecimalPlaces)
 #: localemon.cpp:51 rc.cpp:21
 #, fuzzy
-#| msgid "Decimal symbol:"
 msgid "Decimal places:"
 msgstr "Ondalık simgesi:"
 
@@ -231,143 +201,98 @@ msgstr "Basamak ayarla:"
 #, kde-format
 msgctxt "@item currency name and currency code"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #. i18n: file: localemon.ui:131
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonPosMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonPosMonSignPos)
 #. i18n: file: localemon.ui:200
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonNegMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonNegMonSignPos)
 #: localemon.cpp:317 rc.cpp:42 rc.cpp:66
 msgid "Parentheses Around"
 msgstr "Çevreleyen Parantezler"
 
 #. i18n: file: localemon.ui:136
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonPosMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonPosMonSignPos)
 #. i18n: file: localemon.ui:205
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonNegMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonNegMonSignPos)
 #: localemon.cpp:318 rc.cpp:45 rc.cpp:69
 msgid "Before Quantity Money"
 msgstr "Para Miktarından Önce"
 
 #. i18n: file: localemon.ui:141
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonPosMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonPosMonSignPos)
 #. i18n: file: localemon.ui:210
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonNegMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonNegMonSignPos)
 #: localemon.cpp:319 rc.cpp:48 rc.cpp:72
 msgid "After Quantity Money"
 msgstr "Para Miktarından Sonra"
 
 #. i18n: file: localemon.ui:146
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonPosMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonPosMonSignPos)
 #. i18n: file: localemon.ui:215
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonNegMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonNegMonSignPos)
 #: localemon.cpp:320 rc.cpp:51 rc.cpp:75
 msgid "Before Money"
 msgstr "Paradan Önce"
 
 #. i18n: file: localemon.ui:151
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonPosMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonPosMonSignPos)
 #. i18n: file: localemon.ui:220
-#. i18n: ectx: property (text), item, widget (QComboBox, m_cmbMonNegMonSignPos)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. m_cmbMonNegMonSignPos)
 #: localemon.cpp:321 rc.cpp:54 rc.cpp:78
 msgid "After Money"
 msgstr "Paradan Sonra"
 
 #: localemon.cpp:335
-msgid ""
-"Here you can choose the currency to be used when displaying monetary values, "
-"e.g. United States Dollar or Pound Sterling."
+msgid "Here you can choose the currency to be used when displaying monetary values, e.g. United States Dollar or Pound Sterling."
 msgstr ""
 
 #: localemon.cpp:341
-msgid ""
-"Here you can choose the currency symbol to be displayed for your chosen "
-"currency, e.g. $, US$, or USD."
-msgstr ""
+msgid "Here you can choose the currency symbol to be displayed for your chosen currency, e.g. $, US$, or USD."
+msgstr "Seçtiğiniz kur için gösterilecek kur simgesini seçebilirsiniz."
 
 #: localemon.cpp:347
-msgid ""
-"<p>Here you can define the decimal separator used to display monetary values."
-"</p><p>Note that the decimal separator used to display other numbers has to "
-"be defined separately (see the 'Numbers' tab).</p>"
-msgstr ""
-"<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını "
-"belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık "
-"ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
+msgid "<p>Here you can define the decimal separator used to display monetary values.</p><p>Note that the decimal separator used to display other numbers has to be defined separately (see the 'Numbers' tab).</p>"
+msgstr "<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localemon.cpp:355
-msgid ""
-"<p>Here you can define the thousands separator used to display monetary "
-"values.</p><p>Note that the thousands separator used to display other "
-"numbers has to be defined separately (see the 'Numbers' tab).</p>"
-msgstr ""
-"<p>Burada parasal değerleri göstermekte kullanılan binler basamağı ayracını "
-"belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan binler "
-"basamağı ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
+msgid "<p>Here you can define the thousands separator used to display monetary values.</p><p>Note that the thousands separator used to display other numbers has to be defined separately (see the 'Numbers' tab).</p>"
+msgstr "<p>Burada parasal değerleri göstermekte kullanılan binler basamağı ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localemon.cpp:363
 #, fuzzy
-#| msgid ""
-#| "<p>Here you can define the decimal separator used to display monetary "
-#| "values.</p><p>Note that the decimal separator used to display other "
-#| "numbers has to be defined separately (see the 'Numbers' tab).</p>"
-msgid ""
-"<p>Here you can set the number of decimal places displayed for monetary "
-"values, i.e. the number of digits <em>after</em> the decimal separator. "
-"<p>Note that the decimal places used to display other numbers has to be "
-"defined separately (see the 'Numbers' tab).</p>"
-msgstr ""
-"<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını "
-"belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık "
-"ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
+msgid "<p>Here you can set the number of decimal places displayed for monetary values, i.e. the number of digits <em>after</em> the decimal separator. <p>Note that the decimal places used to display other numbers has to be defined separately (see the 'Numbers' tab).</p>"
+msgstr "<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localemon.cpp:372
-msgid ""
-"If this option is checked, the currency sign will be prefixed (i.e. to the "
-"left of the value) for all positive monetary values. If not, it will be "
-"postfixed (i.e. to the right)."
-msgstr ""
-"Bu seçenek işaretliyse tüm pozitif parasal değerlerde para birimi miktarın "
-"önüne gelir (yani değerin soluna). İşaretli değilse, miktarın arkasına gelir "
-"(yani sağa)."
+msgid "If this option is checked, the currency sign will be prefixed (i.e. to the left of the value) for all positive monetary values. If not, it will be postfixed (i.e. to the right)."
+msgstr "Bu seçenek işaretliyse tüm pozitif parasal değerlerde para birimi miktarın önüne gelir (yani değerin soluna). İşaretli değilse, miktarın arkasına gelir (yani sağa)."
 
 #: localemon.cpp:378
-msgid ""
-"If this option is checked, the currency sign will be prefixed (i.e. to the "
-"left of the value) for all negative monetary values. If not, it will be "
-"postfixed (i.e. to the right)."
-msgstr ""
-"Bu seçenek işaretliyse tüm negatif parasal değerlerde para birimi miktarın "
-"önüne gelir (yani değerin soluna). İşaretli değilse, miktarın arkasına gelir "
-"(yani sağa)."
+msgid "If this option is checked, the currency sign will be prefixed (i.e. to the left of the value) for all negative monetary values. If not, it will be postfixed (i.e. to the right)."
+msgstr "Bu seçenek işaretliyse tüm negatif parasal değerlerde para birimi miktarın önüne gelir (yani değerin soluna). İşaretli değilse, miktarın arkasına gelir (yani sağa)."
 
 #: localemon.cpp:384
-msgid ""
-"Here you can select how a positive sign will be positioned. This only "
-"affects monetary values."
-msgstr ""
-"Burada, pozitif simgesinin konumunu seçebilirsiniz. Bu sadece parasal "
-"değerleri etkiler."
+msgid "Here you can select how a positive sign will be positioned. This only affects monetary values."
+msgstr "Burada, pozitif simgesinin konumunu seçebilirsiniz. Bu sadece parasal değerleri etkiler."
 
 #: localemon.cpp:389
-msgid ""
-"Here you can select how a negative sign will be positioned. This only "
-"affects monetary values."
-msgstr ""
-"Burada, negatif simgesinin konumunu seçebilirsiniz. Bu sadece parasal "
-"değerleri etkiler."
+msgid "Here you can select how a negative sign will be positioned. This only affects monetary values."
+msgstr "Burada, negatif simgesinin konumunu seçebilirsiniz. Bu sadece parasal değerleri etkiler."
 
 #: localemon.cpp:395
-msgid ""
-"<p>Here you can define the set of digits used to display monetary values. If "
-"digits other than Arabic are selected, they will appear only if used in the "
-"language of the application or the piece of text where the number is shown.</"
-"p><p>Note that the set of digits used to display other numbers has to be "
-"defined separately (see the 'Numbers' tab).</p>"
-msgstr ""
-"<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını "
-"belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık "
-"ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
+msgid "<p>Here you can define the set of digits used to display monetary values. If digits other than Arabic are selected, they will appear only if used in the language of the application or the piece of text where the number is shown.</p><p>Note that the set of digits used to display other numbers has to be defined separately (see the 'Numbers' tab).</p>"
+msgstr "<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localenum.cpp:48
 msgid "&Decimal symbol:"
@@ -387,7 +312,6 @@ msgstr "&Negatif işareti:"
 
 #: localenum.cpp:88
 #, fuzzy
-#| msgid "Decimal symbol:"
 msgid "Decimal &places:"
 msgstr "Ondalık simgesi:"
 
@@ -396,70 +320,29 @@ msgid "Di&git set:"
 msgstr "&Basamak ayarla:"
 
 #: localenum.cpp:230
-msgid ""
-"<p>Here you can define the decimal separator used to display numbers (i.e. a "
-"dot or a comma in most countries).</p><p>Note that the decimal separator "
-"used to display monetary values has to be set separately (see the 'Money' "
-"tab).</p>"
-msgstr ""
-"<p>Burada, sayıların görüntülenmesinde kullanılacak ondalık simgesini (çoğu "
-"ülkede nokta ya da virgül) belirleyebilirsiniz.</p><p>Parasal değerleri "
-"göstermekte kullanılan ondalık simgesi ayrıca belirlenmelidir (bkz., 'Para' "
-"sekmesi).</p>"
+msgid "<p>Here you can define the decimal separator used to display numbers (i.e. a dot or a comma in most countries).</p><p>Note that the decimal separator used to display monetary values has to be set separately (see the 'Money' tab).</p>"
+msgstr "<p>Burada, sayıların görüntülenmesinde kullanılacak ondalık simgesini (çoğu ülkede nokta ya da virgül) belirleyebilirsiniz.</p><p>Parasal değerleri göstermekte kullanılan ondalık simgesi ayrıca belirlenmelidir (bkz., 'Para' sekmesi).</p>"
 
 #: localenum.cpp:239
-msgid ""
-"<p>Here you can define the thousands separator used to display numbers.</"
-"p><p>Note that the thousands separator used to display monetary values has "
-"to be set separately (see the 'Money' tab).</p>"
-msgstr ""
-"<p>Burada sayıların gösterilmesinde kullanılan binler basamağı ayracını "
-"belirleyebilirsiniz.</p><p>Parasal değerlerin gösterilmesinde kullanılan "
-"binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Para' sekmesi).</p>"
+msgid "<p>Here you can define the thousands separator used to display numbers.</p><p>Note that the thousands separator used to display monetary values has to be set separately (see the 'Money' tab).</p>"
+msgstr "<p>Burada sayıların gösterilmesinde kullanılan binler basamağı ayracını belirleyebilirsiniz.</p><p>Parasal değerlerin gösterilmesinde kullanılan binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Para' sekmesi).</p>"
 
 #: localenum.cpp:247
-msgid ""
-"Here you can specify text used to prefix positive numbers. Most people leave "
-"this blank."
-msgstr ""
-"Burada pozitif sayıların önünde kullanılacak işareti belirtebilirsiniz. Çoğu "
-"kimse bunu boş bırakır."
+msgid "Here you can specify text used to prefix positive numbers. Most people leave this blank."
+msgstr "Burada pozitif sayıların önünde kullanılacak işareti belirtebilirsiniz. Çoğu kimse bunu boş bırakır."
 
 #: localenum.cpp:253
-msgid ""
-"Here you can specify text used to prefix negative numbers. This should not "
-"be empty, so you can distinguish positive and negative numbers. It is "
-"normally set to minus (-)."
-msgstr ""
-"Burada negatif sayıların önünde kullanılacak işareti belirleyebilirsiniz. Bu "
-"boş bırakılmamalıdır ki pozitif ve negatif sayılar birbirinden ayrılabilsin. "
-"Genelde eksi (-) işaretine ayarlanır."
+msgid "Here you can specify text used to prefix negative numbers. This should not be empty, so you can distinguish positive and negative numbers. It is normally set to minus (-)."
+msgstr "Burada negatif sayıların önünde kullanılacak işareti belirleyebilirsiniz. Bu boş bırakılmamalıdır ki pozitif ve negatif sayılar birbirinden ayrılabilsin. Genelde eksi (-) işaretine ayarlanır."
 
 #: localenum.cpp:260
 #, fuzzy
-#| msgid ""
-#| "This determines the number of fract digits for monetary values, i.e. the "
-#| "number of digits you find <em>behind</em> the decimal separator. Correct "
-#| "value is 2 for almost all people."
-msgid ""
-"Here you can set the number of decimal places displayed for numeric values, "
-"i.e. the number of digits <em>after</em> the decimal separator. "
-msgstr ""
-"Bu, parasal değerler için kuruş hanelerinin sayısını gösterir. Diğer bir "
-"deyişle ondalık ayracının <em>ardında</em> gördüğünüz hane sayısını "
-"gösterir. Neredeyse herkes için doğru değer 2'dir."
+msgid "Here you can set the number of decimal places displayed for numeric values, i.e. the number of digits <em>after</em> the decimal separator. "
+msgstr "Bu, parasal değerler için kuruş hanelerinin sayısını gösterir. Diğer bir deyişle ondalık ayracının <em>ardında</em> gördüğünüz hane sayısını gösterir. Neredeyse herkes için doğru değer 2'dir."
 
 #: localenum.cpp:266
-msgid ""
-"<p>Here you can define the set of digits used to display numbers. If digits "
-"other than Arabic are selected, they will appear only if used in the "
-"language of the application or the piece of text where the number is shown.</"
-"p><p>Note that the set of digits used to display monetary values has to be "
-"set separately (see the 'Money' tab).</p>"
-msgstr ""
-"<p>Burada sayıların gösterilmesinde kullanılan binler basamağı ayracını "
-"belirleyebilirsiniz.</p><p>Parasal değerlerin gösterilmesinde kullanılan "
-"binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Para' sekmesi).</p>"
+msgid "<p>Here you can define the set of digits used to display numbers. If digits other than Arabic are selected, they will appear only if used in the language of the application or the piece of text where the number is shown.</p><p>Note that the set of digits used to display monetary values has to be set separately (see the 'Money' tab).</p>"
+msgstr "<p>Burada sayıların gösterilmesinde kullanılan binler basamağı ayracını belirleyebilirsiniz.</p><p>Parasal değerlerin gösterilmesinde kullanılan binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Para' sekmesi).</p>"
 
 #: localeother.cpp:48
 msgid "Paper format:"
@@ -623,112 +506,39 @@ msgstr ""
 "GG.AA.YYYY"
 
 #: localetime.cpp:523
-msgid ""
-"<p>The text in this textbox will be used to format time strings. The "
-"sequences below will be replaced:</p><table><tr><td><b>HH</b></td><td>The "
-"hour as a decimal number using a 24-hour clock (00-23).</td></"
-"tr><tr><td><b>hH</b></td><td>The hour (24-hour clock) as a decimal number (0-"
-"23).</td></tr><tr><td><b>PH</b></td><td>The hour as a decimal number using a "
-"12-hour clock (01-12).</td></tr><tr><td><b>pH</b></td><td>The hour (12-hour "
-"clock) as a decimal number (1-12).</td></tr><tr><td><b>MM</b></td><td>The "
-"minutes as a decimal number (00-59).</td></tr><tr><td><b>SS</b></td><td>The "
-"seconds as a decimal number (00-59).</td></tr><tr><td><b>AMPM</b></"
-"td><td>Either \"am\" or \"pm\" according to the given time value. Noon is "
-"treated as \"pm\" and midnight as \"am\".</td></tr></table>"
-msgstr ""
-"<p>Buradan zamanın nasıl gösterileceğini belirleyebilirsiniz. Aşağıdaki "
-"simgeleri kullanarak bunu yapabilirsiniz:</p><table><tr><td><b>ST</b></"
-"td><td>24 Saatlik zaman biçimi. (T: Türk usulü). Soldaki sıfır gösterilir "
-"(00-23).</td></tr><tr><td><b>sT</b></td><td>24 Saatlik zaman biçimi (T: Türk "
-"usulü). Soldaki sıfır gösterilmez (0-23).</td></tr><tr><td><b>SI</b></"
-"td><td>12 Saatlik zaman biçimi (I: İngiliz usulü). Soldaki sıfır gösterilir "
-"(01-12).</td></tr><tr><td><b>sI</b></td><td>12 Saatlik zaman biçimi (I: "
-"İngiliz usulü). Soldaki sıfır gösterilmez(1-12).</td></tr><tr><td><b>DD</b></"
-"td><td>Dakika, daima 2 basamaklı (00-59).</td></tr><tr><td><b>SS</b></"
-"td><td>Saniye, daima 2 basamaklı (00-59).</td></tr><tr><td><b>ÖÖÖS</b></"
-"td><td>12 saatlik zaman biçiminde öğleden önce \"öö\", öğleden sonra \"ös\", "
-"gösterilir.</td></tr></table>"
+msgid "<p>The text in this textbox will be used to format time strings. The sequences below will be replaced:</p><table><tr><td><b>HH</b></td><td>The hour as a decimal number using a 24-hour clock (00-23).</td></tr><tr><td><b>hH</b></td><td>The hour (24-hour clock) as a decimal number (0-23).</td></tr><tr><td><b>PH</b></td><td>The hour as a decimal number using a 12-hour clock (01-12).</td></tr><tr><td><b>pH</b></td><td>The hour (12-hour clock) as a decimal number (1-12).</td></tr><tr><td><b>MM</b></td><td>The minutes as a decimal number (00-59).</td></tr><tr><td><b>SS</b></td><td>The seconds as a decimal number (00-59).</td></tr><tr><td><b>AMPM</b></td><td>Either \"am\" or \"pm\" according to the given time value. Noon is treated as \"pm\" and midnight as \"am\".</td></tr></table>"
+msgstr "<p>Buradan zamanın nasıl gösterileceğini belirleyebilirsiniz. Aşağıdaki simgeleri kullanarak bunu yapabilirsiniz:</p><table><tr><td><b>ST</b></td><td>24 Saatlik zaman biçimi. (T: Türk usulü). Soldaki sıfır gösterilir (00-23).</td></tr><tr><td><b>sT</b></td><td>24 Saatlik zaman biçimi (T: Türk usulü). Soldaki sıfır gösterilmez (0-23).</td></tr><tr><td><b>SI</b></td><td>12 Saatlik zaman biçimi (I: İngiliz usulü). Soldaki sıfır gösterilir (01-12).</td></tr><tr><td><b>sI</b></td><td>12 Saatlik zaman biçimi (I: İngiliz usulü). Soldaki sıfır gösterilmez(1-12).</td></tr><tr><td><b>DD</b></td><td>Dakika, daima 2 basamaklı (00-59).</td></tr><tr><td><b>SS</b></td><td>Saniye, daima 2 basamaklı (00-59).</td></tr><tr><td><b>ÖÖÖS</b></td><td>12 saatlik zaman biçiminde öğleden önce \"öö\", öğleden sonra \"ös\", gösterilir.</td></tr></table>"
 
 #: localetime.cpp:546
-msgid ""
-"<table><tr><td><b>YYYY</b></td><td>The year with century as a decimal number."
-"</td></tr><tr><td><b>YY</b></td><td>The year without century as a decimal "
-"number (00-99).</td></tr><tr><td><b>MM</b></td><td>The month as a decimal "
-"number (01-12).</td></tr><tr><td><b>mM</b></td><td>The month as a decimal "
-"number (1-12).</td></tr><tr><td><b>SHORTMONTH</b></td><td>The first three "
-"characters of the month name. </td></tr><tr><td><b>MONTH</b></td><td>The "
-"full month name.</td></tr><tr><td><b>DD</b></td><td>The day of month as a "
-"decimal number (01-31).</td></tr><tr><td><b>dD</b></td><td>The day of month "
-"as a decimal number (1-31).</td></tr><tr><td><b>SHORTWEEKDAY</b></td><td>The "
-"first three characters of the weekday name.</td></tr><tr><td><b>WEEKDAY</b></"
-"td><td>The full weekday name.</td></tr></table>"
-msgstr ""
-"<table><tr><td><b>YYYY</b></td><td>Dört basamaklı uzun yıl gösterimi</td></"
-"tr><tr><td><b>YY</b></td><td>İki basamaklı kısa yıl gösterimi (00-99).</td></"
-"tr><tr><td><b>AA</b></td><td>Soldaki sıfırı gösterilen sayısal ay gösterimi "
-"(01-12).</td></tr><tr><td><b>aA</b></td><td>Soldaki sıfırı gösterilmeyen "
-"sayısal ay gösterimi (1-12).</td></tr><tr><td><b>KISAAY</b></td><td>Ay, "
-"genelde isminin ilk üç harfi ile gösterilir.</td></tr><tr><td><b>AY</b></"
-"td><td>Ayın ismi tam olarak gösterilir.</td></tr><tr><td><b>GG</b></"
-"td><td>Soldaki sıfırı gösterilen sayısal gün gösterimi (01-31).</td></"
-"tr><tr><td><b>gG</b></td><td>Soldaki sıfırı gösterilmeyen sayısal gün "
-"gösterimi (1-31).</td></tr><tr><td><b>KISAGÜN</b></td><td>Gün isminin "
-"genellikle ilk üç harfi gösterilir. </td></tr><tr><td><b>GÜN</b></td><td>Tam "
-"gün ismi.</td></tr></table>"
+msgid "<table><tr><td><b>YYYY</b></td><td>The year with century as a decimal number.</td></tr><tr><td><b>YY</b></td><td>The year without century as a decimal number (00-99).</td></tr><tr><td><b>MM</b></td><td>The month as a decimal number (01-12).</td></tr><tr><td><b>mM</b></td><td>The month as a decimal number (1-12).</td></tr><tr><td><b>SHORTMONTH</b></td><td>The first three characters of the month name. </td></tr><tr><td><b>MONTH</b></td><td>The full month name.</td></tr><tr><td><b>DD</b></td><td>The day of month as a decimal number (01-31).</td></tr><tr><td><b>dD</b></td><td>The day of month as a decimal number (1-31).</td></tr><tr><td><b>SHORTWEEKDAY</b></td><td>The first three characters of the weekday name.</td></tr><tr><td><b>WEEKDAY</b></td><td>The full weekday name.</td></tr></table>"
+msgstr "<table><tr><td><b>YYYY</b></td><td>Dört basamaklı uzun yıl gösterimi</td></tr><tr><td><b>YY</b></td><td>İki basamaklı kısa yıl gösterimi (00-99).</td></tr><tr><td><b>AA</b></td><td>Soldaki sıfırı gösterilen sayısal ay gösterimi (01-12).</td></tr><tr><td><b>aA</b></td><td>Soldaki sıfırı gösterilmeyen sayısal ay gösterimi (1-12).</td></tr><tr><td><b>KISAAY</b></td><td>Ay, genelde isminin ilk üç harfi ile gösterilir.</td></tr><tr><td><b>AY</b></td><td>Ayın ismi tam olarak gösterilir.</td></tr><tr><td><b>GG</b></td><td>Soldaki sıfırı gösterilen sayısal gün gösterimi (01-31).</td></tr><tr><td><b>gG</b></td><td>Soldaki sıfırı gösterilmeyen sayısal gün gösterimi (1-31).</td></tr><tr><td><b>KISAGÜN</b></td><td>Gün isminin genellikle ilk üç harfi gösterilir. </td></tr><tr><td><b>GÜN</b></td><td>Tam gün ismi.</td></tr></table>"
 
 #: localetime.cpp:567
-msgid ""
-"<p>The text in this textbox will be used to format long dates. The sequences "
-"below will be replaced:</p>"
-msgstr ""
-"<p>Bu kutudaki metin uzun tarih biçimi için kullanılacaktır. Aşağıdaki "
-"sıralamalar değiştirilecektir:</p>"
+msgid "<p>The text in this textbox will be used to format long dates. The sequences below will be replaced:</p>"
+msgstr "<p>Bu kutudaki metin uzun tarih biçimi için kullanılacaktır. Aşağıdaki sıralamalar değiştirilecektir:</p>"
 
 #: localetime.cpp:573
-msgid ""
-"<p>The text in this textbox will be used to format short dates. For "
-"instance, this is used when listing files. The sequences below will be "
-"replaced:</p>"
-msgstr ""
-"<p>Bu kutudaki metin, kısa tarih biçimi için kullanılacaktır. Aşağıdaki "
-"sıralamalar değiştirilecektir:</p>"
+msgid "<p>The text in this textbox will be used to format short dates. For instance, this is used when listing files. The sequences below will be replaced:</p>"
+msgstr "<p>Bu kutudaki metin, kısa tarih biçimi için kullanılacaktır. Aşağıdaki sıralamalar değiştirilecektir:</p>"
 
 #: localetime.cpp:592
-msgid ""
-"<p>This option determines which day will be considered as the first one of "
-"the week.</p>"
-msgstr ""
-"<p>Bu seçenek ile haftanın ilk günü olarak hangi günün kullanılacağını "
-"belirtebilirsiniz. Biz Pazartesi kabul ederiz.</p>"
+msgid "<p>This option determines which day will be considered as the first one of the week.</p>"
+msgstr "<p>Bu seçenek ile haftanın ilk günü olarak hangi günün kullanılacağını belirtebilirsiniz. Biz Pazartesi kabul ederiz.</p>"
 
 #: localetime.cpp:597
-msgid ""
-"<p>This option determines which day will be considered as the first working "
-"day of the week.</p>"
-msgstr ""
-"<p>Bu seçenek haftanın ilk çalışma günü olarak hangi günün kullanılacağını "
-"belirler.</p>"
+msgid "<p>This option determines which day will be considered as the first working day of the week.</p>"
+msgstr "<p>Bu seçenek haftanın ilk çalışma günü olarak hangi günün kullanılacağını belirler.</p>"
 
 #: localetime.cpp:602
-msgid ""
-"<p>This option determines which day will be considered as the last working "
-"day of the week.</p>"
-msgstr ""
-"<p>Bu seçene haftanın son çalışma günü olarak hangi günün kullanılacağını "
-"belirler.</p>"
+msgid "<p>This option determines which day will be considered as the last working day of the week.</p>"
+msgstr "<p>Bu seçene haftanın son çalışma günü olarak hangi günün kullanılacağını belirler.</p>"
 
 #: localetime.cpp:607
-msgid ""
-"<p>This option determines which day will be considered as the day of the "
-"week for religious observance.</p>"
-msgstr ""
-"<p>Bu seçenek haftanın ilk günü olarak hangi günün kullanılacağını belirler."
-"</p>"
+msgid "<p>This option determines which day will be considered as the day of the week for religious observance.</p>"
+msgstr "<p>Bu seçenek haftanın ilk günü olarak hangi günün kullanılacağını belirler.</p>"
 
 #: localetime.cpp:614
-msgid ""
-"<p>This option determines whether possessive form of month names should be "
-"used in dates.</p>"
+msgid "<p>This option determines whether possessive form of month names should be used in dates.</p>"
 msgstr "<p>Bu seçenek, tarih seçeneklerde kısaltılmış ayları kullanır.</p>"
 
 #: localetime.cpp:624
@@ -786,8 +596,7 @@ msgid ""
 "\"Germany\" from the list. It will also change the time format \n"
 "to use 24 hours and and use comma as decimal separator.</p>\n"
 msgstr ""
-"<h1>Ülke, Bölge ve Dil</h1><p>Buradan kendi bölgenize özgü dil, sayı ve "
-"zaman \n"
+"<h1>Ülke, Bölge ve Dil</h1><p>Buradan kendi bölgenize özgü dil, sayı ve zaman \n"
 "ayarlarını yapabilirsiniz. Çoğu durumda bulunduğunuz ülkeyi seçmeniz \n"
 "yeterli olur. Örneğin listeden \"Türkiye\"yi seçmeniz halinde KDE \n"
 "otomatik olarak dil seçeneğini \"Türkçe\" yapacaktır. Ayrıca, saat \n"
@@ -822,8 +631,7 @@ msgstr "&Diğer"
 #~ msgstr "Kesirli basamaklar:"
 
 #~ msgid "Here you can enter your usual currency symbol, e.g. $ or €."
-#~ msgstr ""
-#~ "Buraya para birimiznizin sembolünü girebilirsiniz, YTL ya da $, € gibi."
+#~ msgstr "Buraya para birimiznizin sembolünü girebilirsiniz, YTL ya da $, € gibi."
 
 #~ msgid "Fractional digits:"
 #~ msgstr "Kesirli basamaklar:"
