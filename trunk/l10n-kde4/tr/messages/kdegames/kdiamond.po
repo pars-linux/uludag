@@ -1,7 +1,7 @@
 # translation of kdiamond.po to Türkçe
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Engin ÇAĞATAY <engincagatay@yahoo.com>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
@@ -61,10 +61,8 @@ msgid "KDiamond"
 msgstr "KDiamond"
 
 #: main.cpp:41
-#, fuzzy
-#| msgid "(C) 2008 Stefan Majewsky and others"
 msgid "(C) 2008-2009 Stefan Majewsky and others"
-msgstr "(C) 2008 Stefan Majewsky ve diğerleri"
+msgstr "(C) 2008-2009 Stefan Majewsky ve diğerleri"
 
 #: main.cpp:42
 msgid "Stefan Majewsky"
@@ -199,16 +197,8 @@ msgid "Your emails"
 msgstr "engincagatay@yahoo.com"
 
 #: view.cpp:32
-msgid ""
-"<h3>Rules of Game</h3><p>Your goal is to assemble lines of at least three "
-"similar diamonds. Click on two adjacent diamonds to swap them.</p><p>Earn "
-"extra points by building cascades, and extra seconds by assembling big lines "
-"or multiple lines at one time.</p>"
-msgstr ""
-"<h3>Oyun Kuralları</h3><p>Amacınız en az üç benzer elmastan oluşan diziler "
-"oluşturmaktır. Yerlerini değiştirmek için iki komşu elmas üzerine tıklayın.</"
-"p><p>Katlar inşa ederek fazladan puan ve aynı anda uzun dizeler ya da çoklu "
-"dizeler oluşturarak fazladan saniyeler kazanın.</p>"
+msgid "<h3>Rules of Game</h3><p>Your goal is to assemble lines of at least three similar diamonds. Click on two adjacent diamonds to swap them.</p><p>Earn extra points by building cascades, and extra seconds by assembling big lines or multiple lines at one time.</p>"
+msgstr "<h3>Oyun Kuralları</h3><p>Amacınız en az üç benzer elmastan oluşan diziler oluşturmaktır. Yerlerini değiştirmek için iki komşu elmas üzerine tıklayın.</p><p>Katlar inşa ederek fazladan puan ve aynı anda uzun dizeler ya da çoklu dizeler oluşturarak fazladan saniyeler kazanın.</p>"
 
 #~ msgid "Time left: 1 second"
 #~ msgid_plural "Time left: %1 seconds"
