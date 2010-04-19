@@ -7,24 +7,25 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlirc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-03 06:13+0100\n"
-"PO-Revision-Date: 2009-11-03 00:21+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-19 16:07+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: addaction.cpp:53
 msgctxt "Try-Button in Wizard"
 msgid "Try"
-msgstr ""
+msgstr "Dene"
 
 #: addaction.cpp:181
 #, kde-format
@@ -127,14 +128,12 @@ msgid "Software Not Running"
 msgstr "Yazılım Çalışmıyor"
 
 #: kcmlirc.cpp:98
-#, fuzzy
 #| msgid "Start"
 msgctxt "Start irkick daemon"
 msgid "Start"
 msgstr "Başlat"
 
 #: kcmlirc.cpp:99
-#, fuzzy
 #| msgid "Do Not Start"
 msgctxt "Do not start irkick daemon"
 msgid "Do Not Start"
@@ -266,7 +265,6 @@ msgid "A comma-separated list of Strings"
 msgstr "Virgülle ayrılmış İfadeler listesi"
 
 #: model.cpp:351
-#, fuzzy
 #| msgid "Name"
 msgctxt "Remote button name"
 msgid "Name"
@@ -295,7 +293,6 @@ msgid "Identifier"
 msgstr "Tanımlayıcı"
 
 #: model.cpp:487
-#, fuzzy
 #| msgid "Remote"
 msgctxt "Remote name"
 msgid "Remote"
