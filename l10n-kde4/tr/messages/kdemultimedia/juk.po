@@ -1,7 +1,7 @@
 # translation of juk.po to Turkish
 # translation of juk.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-#
+# 
 # Salih Giray <salih.giray@gelecek.com.tr>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
@@ -24,8 +24,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: advancedsearchdialog.cpp:43
 msgid "Create Search Playlist"
@@ -57,12 +57,8 @@ msgid "Fewer"
 msgstr "Daha az"
 
 #: cache.cpp:379
-msgid ""
-"The music data cache has been corrupted. JuK needs to rescan it now. This "
-"may take some time."
-msgstr ""
-"Müzik veritabanı önbelleği bozulmuş. JuK tüm bilgileri yeniden tarayacak. Bu "
-"işlem biraz zaman alabilir."
+msgid "The music data cache has been corrupted. JuK needs to rescan it now. This may take some time."
+msgstr "Müzik veritabanı önbelleği bozulmuş. JuK tüm bilgileri yeniden tarayacak. Bu işlem biraz zaman alabilir."
 
 #: collectionlist.cpp:96
 msgid "Collection List"
@@ -70,17 +66,13 @@ msgstr "Arşiv Listesi"
 
 #: collectionlist.cpp:203
 msgid ""
-"Removing an item from the collection will also remove it from all of your "
-"playlists. Are you sure you want to continue?\n"
+"Removing an item from the collection will also remove it from all of your playlists. Are you sure you want to continue?\n"
 "\n"
-"Note, however, that if the directory that these files are in is in your "
-"\"scan on startup\" list, they will be readded on startup."
+"Note, however, that if the directory that these files are in is in your \"scan on startup\" list, they will be readded on startup."
 msgstr ""
-"Arşivden kaldırılan bir eleman tüm parça listelerinden de kaldırılacaktır. "
-"Devam etmek istiyor musunuz?\n"
+"Arşivden kaldırılan bir eleman tüm parça listelerinden de kaldırılacaktır. Devam etmek istiyor musunuz?\n"
 "\n"
-"Unutmayın ki eğer bu dosyalarınızın bulunduğu dizin, açılışta taranacaklar "
-"listenizdeyse açılışta tekrar eklenecektir."
+"Unutmayın ki eğer bu dosyalarınızın bulunduğu dizin, açılışta taranacaklar listenizdeyse açılışta tekrar eklenecektir."
 
 #: collectionlist.cpp:249
 msgid "Show Playing"
@@ -101,8 +93,7 @@ msgid_plural "<b>%1</b> files selected."
 msgstr[0] "<b>%1</b> dosya seçildi."
 
 #: deletedialog.cpp:65
-msgid ""
-"<qt>These items will be <b>permanently deleted</b> from your hard disk.</qt>"
+msgid "<qt>These items will be <b>permanently deleted</b> from your hard disk.</qt>"
 msgstr "<qt>Bu ögeler sabit diskinizden <b>silinecek</b>.</qt>"
 
 #: deletedialog.cpp:71
@@ -135,12 +126,8 @@ msgid "Warning"
 msgstr "Uyarı"
 
 #: filerenamer.cpp:76
-msgid ""
-"You are about to rename the following files. Are you sure you want to "
-"continue?"
-msgstr ""
-"Aşağıdaki dosya isimlerini değiştirmek üzeresiniz. Devam etmek istiyor "
-"musunuz?"
+msgid "You are about to rename the following files. Are you sure you want to continue?"
+msgstr "Aşağıdaki dosya isimlerini değiştirmek üzeresiniz. Devam etmek istiyor musunuz?"
 
 #: filerenamer.cpp:82
 msgid "Original Name"
@@ -209,13 +196,8 @@ msgstr "Parça için %1 boş olduğunda"
 
 #: filerenameroptions.cpp:41
 #, kde-format
-msgid ""
-"When using the file renamer your files will be renamed to the values that "
-"you have in your track's %1 tag, plus any additional text that you specify "
-"below."
-msgstr ""
-"Dosya adı değiştirici kullanırken dosyalarınızın yeni adı parçanın %1 "
-"bilgisi ve aşağıda belirttiğiniz metin birleştirilerek belirlenir."
+msgid "When using the file renamer your files will be renamed to the values that you have in your track's %1 tag, plus any additional text that you specify below."
+msgstr "Dosya adı değiştirici kullanırken dosyalarınızın yeni adı parçanın %1 bilgisi ve aşağıda belirttiğiniz metin birleştirilerek belirlenir."
 
 #: filerenameroptions.cpp:115
 msgid "File Renamer"
@@ -349,12 +331,8 @@ msgid "Track Position"
 msgstr "Parça Konumu"
 
 #: juk.cpp:482
-msgid ""
-"<qt>Closing the main window will keep JuK running in the system tray. Use "
-"Quit from the File menu to quit the application.</qt>"
-msgstr ""
-"<qt>Ana pencereyi kapattığınızda JuK sistem çekmecesinde çalışmaya devam "
-"edecektir. Programı kapatmak için Dosya menüsünden Çık'ı seçin.</qt>"
+msgid "<qt>Closing the main window will keep JuK running in the system tray. Use Quit from the File menu to quit the application.</qt>"
+msgstr "<qt>Ana pencereyi kapattığınızda JuK sistem çekmecesinde çalışmaya devam edecektir. Programı kapatmak için Dosya menüsünden Çık'ı seçin.</qt>"
 
 #: juk.cpp:484
 msgid "Docking in System Tray"
@@ -373,13 +351,8 @@ msgid "There was a DCOP communication error with K3b."
 msgstr "K3b ile birlikte bir DCOP iletişim hatası vardı."
 
 #: k3bexporter.cpp:245
-msgid ""
-"Create an audio mode CD suitable for CD players, or a data mode CD suitable "
-"for computers and other digital music players?"
-msgstr ""
-"Diğer dijital müzik oynatıcıları ve bilgisayarlar için uygun bir data CD "
-"modu yaratmak mı ya da CD oynatıcılar için uygun bir müzik CD modu yaratmak "
-"mı?"
+msgid "Create an audio mode CD suitable for CD players, or a data mode CD suitable for computers and other digital music players?"
+msgstr "Diğer dijital müzik oynatıcıları ve bilgisayarlar için uygun bir data CD modu yaratmak mı ya da CD oynatıcılar için uygun bir müzik CD modu yaratmak mı?"
 
 #: k3bexporter.cpp:248
 msgid "Create K3b Project"
@@ -418,11 +391,8 @@ msgid "&Multimedia keys"
 msgstr "&Çokluortam tuşları"
 
 #: keydialog.cpp:132
-msgid ""
-"Here you can select the keys used as global shortcuts to control the player"
-msgstr ""
-"Oynatıcıyı kontrol etmek için genel kısayollar olarak kullanılan tuşları "
-"buradan seçebilirsiniz"
+msgid "Here you can select the keys used as global shortcuts to control the player"
+msgstr "Oynatıcıyı kontrol etmek için genel kısayollar olarak kullanılan tuşları buradan seçebilirsiniz"
 
 #: main.cpp:27
 msgid "Jukebox and music manager for KDE"
@@ -608,22 +578,10 @@ msgid "History"
 msgstr "Geçmiş"
 
 #: playermanager.cpp:454
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "%1 will be the /path/to/file, %2 will be some string from Phonon "
-#| "describing the error"
-#| msgid ""
-#| "JuK is unable to play the audio file<nl><filename>%1</filename><nl>for "
-#| "the following reason:<nl><message>%2</message>"
-msgctxt ""
-"%1 will be the /path/to/file, %2 will be some string from Phonon describing "
-"the error"
-msgid ""
-"JuK is unable to play the audio file<nl/><filename>%1</filename><nl/>for the "
-"following reason:<nl/><message>%2</message>"
-msgstr ""
-"JuK<nl><filename>%1</filename><nl>dosyasını şu nedenle çalamıyor:"
-"<nl><message>%2</message>"
+#, kde-format
+msgctxt "%1 will be the /path/to/file, %2 will be some string from Phonon describing the error"
+msgid "JuK is unable to play the audio file<nl/><filename>%1</filename><nl/>for the following reason:<nl/><message>%2</message>"
+msgstr "JuK <filename>%1</filename> ses dosyasını şu sebepten dolayı oynatamadı:<nl/><message>%2</message>"
 
 #: playlistbox.cpp:109
 msgid "View Modes"
@@ -652,8 +610,7 @@ msgstr "Bu dosyalar silinemedi."
 
 #: playlistbox.cpp:351
 msgid "Are you sure you want to remove these playlists from your collection?"
-msgstr ""
-"Bu parça listesini kollaksiyonunuzdani silmek istediğinize emin misiniz?"
+msgstr "Bu parça listesini kollaksiyonunuzdani silmek istediğinize emin misiniz?"
 
 #: playlistbox.cpp:354
 msgid "Remove Items?"
@@ -682,10 +639,8 @@ msgid "Now Playing"
 msgstr "Şu Anda Çalan"
 
 #: playlistcollection.cpp:330
-msgid ""
-"Do you want to add these items to the current list or to the collection list?"
-msgstr ""
-"Bu ögeleri mevcut listeye veya arşiv listesine eklemek istiyor musunuz?"
+msgid "Do you want to add these items to the current list or to the collection list?"
+msgstr "Bu ögeleri mevcut listeye veya arşiv listesine eklemek istiyor musunuz?"
 
 #: playlistcollection.cpp:332
 msgctxt "current playlist"
@@ -940,12 +895,8 @@ msgid "Create New Playlist"
 msgstr "Yeni Parça Listesi Oluştur"
 
 #: playlist.cpp:2342
-msgid ""
-"Manual column widths have been enabled.  You can switch back to automatic "
-"column sizes in the view menu."
-msgstr ""
-"Elle sütun boyutlandırma etkinleştirildi. Görünüm menüsünden kendiliğinden "
-"değişen sütun genişliğini yeniden etkinleştirebilirsiniz."
+msgid "Manual column widths have been enabled.  You can switch back to automatic column sizes in the view menu."
+msgstr "Elle sütun boyutlandırma etkinleştirildi. Görünüm menüsünden kendiliğinden değişen sütun genişliğini yeniden etkinleştirebilirsiniz."
 
 #: playlist.cpp:2345
 msgid "Manual Column Widths Enabled"
@@ -968,26 +919,20 @@ msgstr "Bu ögeleri silmek istiyor musunuz?"
 #. i18n: file: deletedialogbase.ui:111
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ddShouldDelete)
 #: rc.cpp:15
-msgid ""
-"If checked, files will be permanently removed instead of being placed in the "
-"Trash Bin"
+msgid "If checked, files will be permanently removed instead of being placed in the Trash Bin"
 msgstr "Seçilmesi halinde reriyodik olarak çöplükteki dosyalar silinir"
 
 #. i18n: file: deletedialogbase.ui:116
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ddShouldDelete)
 #: rc.cpp:18
 msgid ""
-"<qt><p>If this box is checked, files will be <b>permanently removed</b> "
-"instead of being placed in the Trash Bin.</p>\n"
+"<qt><p>If this box is checked, files will be <b>permanently removed</b> instead of being placed in the Trash Bin.</p>\n"
 "\n"
-"<p><em>Use this option with caution</em>: Most filesystems are unable to "
-"reliably undelete deleted files.</p></qt>"
+"<p><em>Use this option with caution</em>: Most filesystems are unable to reliably undelete deleted files.</p></qt>"
 msgstr ""
-"<qt><p>Bu kutunun seçilmesi halinde, çöplükteki dosyalar <b>düzenli olarak </"
-"b>·silinir..</p>\n"
+"<qt><p>Bu kutunun seçilmesi halinde, çöplükteki dosyalar <b>düzenli olarak </b>·silinir..</p>\n"
 "\n"
-"<p><em>Bu seçimi çok dikkatli yapın:</em>:·Bazı dosya sistemleri silinen "
-"dosyaları·tekrar geri oluşturma desteği vermeyebilir.</p></qt>"
+"<p><em>Bu seçimi çok dikkatli yapın:</em>:·Bazı dosya sistemleri silinen dosyaları·tekrar geri oluşturma desteği vermeyebilir.</p></qt>"
 
 #. i18n: file: deletedialogbase.ui:119
 #. i18n: ectx: property (text), widget (QCheckBox, ddShouldDelete)
@@ -1201,13 +1146,8 @@ msgstr "Parça numaralandırması"
 #. i18n: file: filerenameroptionsbase.ui:196
 #. i18n: ectx: property (text), widget (QLabel, textLabel10)
 #: rc.cpp:140
-msgid ""
-"JuK can force the track used in a file name to have a minimum number of "
-"digits.  You may want to do this for better sorting in file managers."
-msgstr ""
-"JuK dosya ismi oluşturulurken kullanılan izin sahip olması gereken minimum "
-"basamak sayısı değerini zorlayabilir. Bu özelliği dosya yöneticilerinde daha "
-"rahat sıralama yapabilmek için kullanabilirsiniz."
+msgid "JuK can force the track used in a file name to have a minimum number of digits.  You may want to do this for better sorting in file managers."
+msgstr "JuK dosya ismi oluşturulurken kullanılan izin sahip olması gereken minimum basamak sayısı değerini zorlayabilir. Bu özelliği dosya yöneticilerinde daha rahat sıralama yapabilmek için kullanabilirsiniz."
 
 #. i18n: file: filerenameroptionsbase.ui:228
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
@@ -1334,37 +1274,25 @@ msgstr "Şu anda kullanılan dosya adı şemaları"
 #: rc.cpp:204
 #, no-c-format
 msgid ""
-"Here you can see the currently configured file name schemes which the "
-"\"Suggest\" button in the tag editor uses to extract tag information from a "
-"file name. Each string may contain one of the following placeholders:<ul>\n"
+"Here you can see the currently configured file name schemes which the \"Suggest\" button in the tag editor uses to extract tag information from a file name. Each string may contain one of the following placeholders:<ul>\n"
 "<li>%t: Title</li>\n"
 "<li>%a: Artist</li>\n"
 "<li>%A: Album</li>\n"
 "<li>%T: Track</li>\n"
 "<li>%c: Comment</li>\n"
 "</ul>\n"
-"For example, the file name scheme \"[%T] %a - %t\" would match \"[01] Deep "
-"Purple - Smoke on the water\" but not \"(Deep Purple) Smoke on the water\". "
-"For that second name, you would use the scheme \"(%a) %t\".<p/>\n"
-"Note that the order in which the schemes appear in the list is relevant, "
-"since the tag guesser will go through the list from the top to the bottom, "
-"and use the first matching scheme."
+"For example, the file name scheme \"[%T] %a - %t\" would match \"[01] Deep Purple - Smoke on the water\" but not \"(Deep Purple) Smoke on the water\". For that second name, you would use the scheme \"(%a) %t\".<p/>\n"
+"Note that the order in which the schemes appear in the list is relevant, since the tag guesser will go through the list from the top to the bottom, and use the first matching scheme."
 msgstr ""
-"Burada bir dosya isminden başlık bilgisini açmada kullanılan başlık editörü "
-"içinde \"Önerilen\" buton olan ayarlanmış dosya ismi şablonlarını şu anda "
-"görebilirsiniz. Her karakter aşağıdaki paketyerlerinden birini içerebilir:"
-"<ul>\n"
+"Burada bir dosya isminden başlık bilgisini açmada kullanılan başlık editörü içinde \"Önerilen\" buton olan ayarlanmış dosya ismi şablonlarını şu anda görebilirsiniz. Her karakter aşağıdaki paketyerlerinden birini içerebilir:<ul>\n"
 "<li>%t: Başlık</li>\n"
 "<li>%a: Sanatçı</li>\n"
 "<li>%A: Albüm</li>\n"
 "<li>%T: Parça</li>\n"
 "<li>%c: Yorum</li>\n"
 "</ul>\n"
-"Örneğin, dosya adı şablonuna \"[%T] %a - %t\" Su üzerinde sigara içmek - "
-"Derin Mor\" uyardı \"fakat değil\"(Derin Mor) Su üzerinde sigara içmek\". "
-"İkinci isim için, şema kullanırdınız \"(%a) %t\".<p/>\n"
-"Bu listede görünen şemalar geçerlidir, çünkü başlık tahmincisi ilk eşleşen "
-"şemayı kullanacak ve üstten alta liste boyunca gidecektir."
+"Örneğin, dosya adı şablonuna \"[%T] %a - %t\" Su üzerinde sigara içmek - Derin Mor\" uyardı \"fakat değil\"(Derin Mor) Su üzerinde sigara içmek\". İkinci isim için, şema kullanırdınız \"(%a) %t\".<p/>\n"
+"Bu listede görünen şemalar geçerlidir, çünkü başlık tahmincisi ilk eşleşen şemayı kullanacak ve üstten alta liste boyunca gidecektir."
 
 #. i18n: file: tagguesserconfigdlgwidget.ui:42
 #. i18n: ectx: property (toolTip), widget (QToolButton, bMoveUp)
@@ -1375,8 +1303,7 @@ msgstr "Şemayı yukarı kaydır"
 #. i18n: file: tagguesserconfigdlgwidget.ui:45
 #. i18n: ectx: property (whatsThis), widget (QToolButton, bMoveUp)
 #: rc.cpp:218
-msgid ""
-"Press this button to move the currently selected scheme one step upwards."
+msgid "Press this button to move the currently selected scheme one step upwards."
 msgstr "Seçili şemayı bir basamak yukarı kaydırmak için bu tuşa basın."
 
 #. i18n: file: tagguesserconfigdlgwidget.ui:55
@@ -1388,8 +1315,7 @@ msgstr "Şemayı aşağı kaydır"
 #. i18n: file: tagguesserconfigdlgwidget.ui:58
 #. i18n: ectx: property (whatsThis), widget (QToolButton, bMoveDown)
 #: rc.cpp:224
-msgid ""
-"Press this button to move the currently selected scheme one step downwards."
+msgid "Press this button to move the currently selected scheme one step downwards."
 msgstr "Seçili şemayı bir basamak aşağı kaydırmak için bu tuşa basın."
 
 #. i18n: file: tagguesserconfigdlgwidget.ui:68
@@ -1402,9 +1328,7 @@ msgstr "Yeni şema ekle"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, bAdd)
 #: rc.cpp:230
 msgid "Press this button to add a new file name scheme to the end of the list."
-msgstr ""
-"Listenin sonuna kadar yeni bir dosya ismi şeması eklemek için bu düğmeye "
-"basın."
+msgstr "Listenin sonuna kadar yeni bir dosya ismi şeması eklemek için bu düğmeye basın."
 
 #. i18n: file: tagguesserconfigdlgwidget.ui:74
 #. i18n: ectx: property (text), widget (KPushButton, bAdd)
@@ -1439,8 +1363,7 @@ msgstr "Şemayı sil"
 #. i18n: file: tagguesserconfigdlgwidget.ui:97
 #. i18n: ectx: property (whatsThis), widget (KPushButton, bRemove)
 #: rc.cpp:248
-msgid ""
-"Press this button to remove the currently selected scheme from the list."
+msgid "Press this button to remove the currently selected scheme from the list."
 msgstr "Seçili şemayı silmek için bu düğmeye basın."
 
 #. i18n: file: trackpickerdialogbase.ui:64
@@ -1504,11 +1427,10 @@ msgid "Redisplay Popup"
 msgstr "Popup tekrar göster"
 
 #: tag.cpp:97
-#, fuzzy, kde-format
-#| msgid "%1 to %2"
+#, kde-format
 msgctxt "a playing track, %1 is artist, %2 is song title"
 msgid "%1 - %2"
-msgstr "%1 den %2 e"
+msgstr "%1 - %2"
 
 #: tageditor.cpp:492
 msgid "Show &Tag Editor"
@@ -1689,14 +1611,8 @@ msgid "Playlist"
 msgstr "Parça Listesi"
 
 #~ msgctxt "%1 is Cover Art, %2 is the playing track, %3 is the appname"
-#~ msgid ""
-#~ "<table style=\"font-size:14pt;\" cellspacing=\"2em\"><tr><td rowspan=\"2"
-#~ "\">%1</td><td align=\"center\" valign=\"middle\">%2</td></tr><tr><td "
-#~ "align=\"center\" valign=\"middle\"><em>%3</em></td></tr></table>"
-#~ msgstr ""
-#~ "<table style=\"font-size:14pt;\" cellspacing=\"2em\"><tr><td rowspan=\"2"
-#~ "\">%1</td><td align=\"center\" valign=\"middle\">%2</td></tr><tr><td "
-#~ "align=\"center\" valign=\"middle\"><em>%3</em></td></tr></table>"
+#~ msgid "<table style=\"font-size:14pt;\" cellspacing=\"2em\"><tr><td rowspan=\"2\">%1</td><td align=\"center\" valign=\"middle\">%2</td></tr><tr><td align=\"center\" valign=\"middle\"><em>%3</em></td></tr></table>"
+#~ msgstr "<table style=\"font-size:14pt;\" cellspacing=\"2em\"><tr><td rowspan=\"2\">%1</td><td align=\"center\" valign=\"middle\">%2</td></tr><tr><td align=\"center\" valign=\"middle\"><em>%3</em></td></tr></table>"
 
 #~ msgid "List of files that are about to be deleted."
 #~ msgstr "Silinecek dosyaların listesi."
