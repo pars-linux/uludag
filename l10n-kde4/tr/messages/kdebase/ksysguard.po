@@ -1,7 +1,7 @@
 # translation of ksysguard.po to Turkish
 # translation of ksysguard.po to
 # Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
-#
+# 
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2000.
 # Serdar Cevher <scevher@anet.com.tr>, 2001.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: SensorDisplayLib/FancyPlotter.cc:178
 msgctxt "Largest axis title"
@@ -51,10 +51,8 @@ msgstr "<p><b>%1:</b><br>"
 
 #: SensorDisplayLib/FancyPlotter.cc:582
 #, fuzzy, kde-format
-#| msgctxt "%1 and %2 are sensor's last and maximum value"
-#| msgid "%1 of %2"
 msgid "%1 of %2%1"
-msgstr "%2 - %1"
+msgstr "%1 of %2%1"
 
 #: SensorDisplayLib/FancyPlotter.cc:610
 #, kde-format
@@ -185,14 +183,8 @@ msgid "Specify graph range:"
 msgstr "Grafik aralığını belirleyin:"
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:98
-msgid ""
-"Check this box if you want the display range to adapt dynamically to the "
-"currently displayed values; if you do not check this, you have to specify "
-"the range you want in the fields below."
-msgstr ""
-"Eğer ekran aralığının otomatik olarak ekran değerlerine göre ayarlanmasını "
-"istiyorsanız bunu işaretleyin. Eğer bunu işaretlemezseniz, aşağıdaki "
-"boşluklarda istediğiniz değerleri belirlemeniz gerekir."
+msgid "Check this box if you want the display range to adapt dynamically to the currently displayed values; if you do not check this, you have to specify the range you want in the fields below."
+msgstr "Eğer ekran aralığının otomatik olarak ekran değerlerine göre ayarlanmasını istiyorsanız bunu işaretleyin. Eğer bunu işaretlemezseniz, aşağıdaki boşluklarda istediğiniz değerleri belirlemeniz gerekir."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:102
 #: SensorDisplayLib/DancingBarsSettings.cc:73
@@ -209,10 +201,7 @@ msgid "Maximum value:"
 msgstr "En yüksek değer:"
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:119
-msgid ""
-"Enter the soft maximum value for the display here. The upper range will not "
-"be reduced below this value, but will still go above this number for values "
-"above this value."
+msgid "Enter the soft maximum value for the display here. The upper range will not be reduced below this value, but will still go above this number for values above this value."
 msgstr ""
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:126
@@ -257,9 +246,7 @@ msgstr "Yatay çizgiler"
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:169
 msgid "Check this to enable horizontal lines if display is large enough."
-msgstr ""
-"Görüntü yeteri kadar büyükse yatay çizgileri etkinleştirmek için bu düğmeye "
-"tıklayın."
+msgstr "Görüntü yeteri kadar büyükse yatay çizgileri etkinleştirmek için bu düğmeye tıklayın."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:174
 msgid "Text"
@@ -270,11 +257,8 @@ msgid "Show axis labels"
 msgstr "Eksen etiketlerini göster"
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:181
-msgid ""
-"Check this box if horizontal lines should be decorated with the values they "
-"mark."
-msgstr ""
-"Yatay çizgilerin tanımladığı değerleri göstermek için bu düğmeye tıklayın."
+msgid "Check this box if horizontal lines should be decorated with the values they mark."
+msgstr "Yatay çizgilerin tanımladığı değerleri göstermek için bu düğmeye tıklayın."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:184
 #: SensorDisplayLib/DancingBarsSettings.cc:183
@@ -292,8 +276,7 @@ msgstr "Rengi Ayarla..."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:225
 msgid "Push this button to configure the color of the sensor in the diagram."
-msgstr ""
-"Diyagramdaki algılayıcıların rengini değiştirmek için bu düğmeye basın."
+msgstr "Diyagramdaki algılayıcıların rengini değiştirmek için bu düğmeye basın."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:232
 #: SensorDisplayLib/DancingBarsSettings.cc:212
@@ -335,20 +318,12 @@ msgid "Display Range"
 msgstr "Aralığı Göster"
 
 #: SensorDisplayLib/DancingBarsSettings.cc:81
-msgid ""
-"Enter the minimum value for the display here. If both values are 0, "
-"automatic range detection is enabled."
-msgstr ""
-"Ekran için en küçük değeri girin. Eğer iki değer de 0 ise otomatik oran "
-"belirleme etkinleştirilecek."
+msgid "Enter the minimum value for the display here. If both values are 0, automatic range detection is enabled."
+msgstr "Ekran için en küçük değeri girin. Eğer iki değer de 0 ise otomatik oran belirleme etkinleştirilecek."
 
 #: SensorDisplayLib/DancingBarsSettings.cc:93
-msgid ""
-"Enter the maximum value for the display here. If both values are 0, "
-"automatic range detection is enabled."
-msgstr ""
-"Gösterge için en büyük değeri girin. Eğer iki değer de 0 ise otomatik oran "
-"belirleme etkinleştirilecek."
+msgid "Enter the maximum value for the display here. If both values are 0, automatic range detection is enabled."
+msgstr "Gösterge için en büyük değeri girin. Eğer iki değer de 0 ise otomatik oran belirleme etkinleştirilecek."
 
 #: SensorDisplayLib/DancingBarsSettings.cc:103
 msgid "Alarms"
@@ -413,14 +388,8 @@ msgid "Out-of-range color:"
 msgstr "Sınır dışında rengi:"
 
 #: SensorDisplayLib/DancingBarsSettings.cc:187
-msgid ""
-"This determines the size of the font used to print a label underneath the "
-"bars. Bars are automatically suppressed if text becomes too large, so it is "
-"advisable to use a small font size here."
-msgstr ""
-"Bu barların altında kullanılan yazıtipi büyüklüğünü belirler. Eğer bir metin "
-"fazla geniş gelirse barlar otomatik olarak genişler. O yüzden burada küçük "
-"yazıtipi kullanmak daha uygundur."
+msgid "This determines the size of the font used to print a label underneath the bars. Bars are automatically suppressed if text becomes too large, so it is advisable to use a small font size here."
+msgstr "Bu barların altında kullanılan yazıtipi büyüklüğünü belirler. Eğer bir metin fazla geniş gelirse barlar otomatik olarak genişler. O yüzden burada küçük yazıtipi kullanmak daha uygundur."
 
 #: SensorDisplayLib/DancingBarsSettings.cc:208
 msgid "Edit..."
@@ -448,24 +417,15 @@ msgstr "Ekranı &Kaldır"
 
 #: SensorDisplayLib/SensorDisplay.cc:193
 #, kde-format
-msgid ""
-"<qt><p>This is a sensor display. To customize a sensor display click the "
-"right mouse button here and select the <i>Properties</i> entry from the "
-"popup menu. Select <i>Remove</i> to delete the display from the worksheet.</"
-"p>%1</qt>"
-msgstr ""
-"<qt> <p>Bu bir algılayıcı ekranıdır. Bir algılayıcıyı düzenlemek için "
-"farenizin sağ düğmesini kullanarak menüden <i>Özellikler</i> girdisini "
-"seçin. Daha sonra çalışma kağıdından <i>Kaldır</i> menüsüne tıklayın.</p> %"
-"1</qt>"
+msgid "<qt><p>This is a sensor display. To customize a sensor display click the right mouse button here and select the <i>Properties</i> entry from the popup menu. Select <i>Remove</i> to delete the display from the worksheet.</p>%1</qt>"
+msgstr "<qt> <p>Bu bir algılayıcı ekranıdır. Bir algılayıcıyı düzenlemek için farenizin sağ düğmesini kullanarak menüden <i>Özellikler</i> girdisini seçin. Daha sonra çalışma kağıdından <i>Kaldır</i> menüsüne tıklayın.</p> %1</qt>"
 
 #: SensorDisplayLib/SensorLoggerDlg.cc:32 SensorDisplayLib/SensorLogger.cc:431
 msgid "Sensor Logger"
 msgstr "Algılayıcı Kayıtçısı"
 
 #: SensorDisplayLib/MultiMeterSettings.cc:31
-msgctxt ""
-"Multimeter is a sensor display that mimics 'digital multimeter' aparatus"
+msgctxt "Multimeter is a sensor display that mimics 'digital multimeter' aparatus"
 msgid "Multimeter Settings"
 msgstr "Ölçü Aygıtı Ayarları"
 
@@ -512,13 +472,8 @@ msgid "Drop Sensor Here"
 msgstr "Algılayıcıyı Buraya Taşıyın"
 
 #: SensorDisplayLib/DummyDisplay.cc:32
-msgid ""
-"This is an empty space in a worksheet. Drag a sensor from the Sensor Browser "
-"and drop it here. A sensor display will appear that allows you to monitor "
-"the values of the sensor over time."
-msgstr ""
-"Burası bir çalışma kağıdındaki boş alandır. Algılayıcı menüsündeki bir "
-"algılayıcıyı buraya taşıyabilirsiniz."
+msgid "This is an empty space in a worksheet. Drag a sensor from the Sensor Browser and drop it here. A sensor display will appear that allows you to monitor the values of the sensor over time."
+msgstr "Burası bir çalışma kağıdındaki boş alandır. Algılayıcı menüsündeki bir algılayıcıyı buraya taşıyabilirsiniz."
 
 #: SensorDisplayLib/ListViewSettings.cc:30
 msgid "List View Settings"
@@ -550,12 +505,8 @@ msgstr "%1 makinesi bulunamadı"
 
 #: ksgrd/SensorSocketAgent.cc:111
 #, kde-format
-msgid ""
-"An error occurred with the network (e.g. the network cable was accidentally "
-"unplugged) for host %1."
-msgstr ""
-"%1 makinesi için ağ ile ilgili bir hata oluştu (örneğin, ağ kablosu "
-"yanlışlıkla çıkartılmış olabilir)."
+msgid "An error occurred with the network (e.g. the network cable was accidentally unplugged) for host %1."
+msgstr "%1 makinesi için ağ ile ilgili bir hata oluştu (örneğin, ağ kablosu yanlışlıkla çıkartılmış olabilir)."
 
 #: ksgrd/SensorSocketAgent.cc:115
 #, kde-format
@@ -1065,11 +1016,7 @@ msgstr "Silinebilecek bir çalışma alanınız yok."
 
 #: Workspace.cc:300
 #, kde-format
-msgid ""
-"<qt>To propose the current custom tab as a new System Monitor tab, email "
-"<br><a href=\"file:%1\">%2</a><br> to <a href=\"mailto:john.tapsell@kde.org?"
-"subject='System Monitor Tab'&attach='file://%2'\">john.tapsell@kde.org</a></"
-"qt>"
+msgid "<qt>To propose the current custom tab as a new System Monitor tab, email <br><a href=\"file:%1\">%2</a><br> to <a href=\"mailto:john.tapsell@kde.org?subject='System Monitor Tab'&attach='file://%2'\">john.tapsell@kde.org</a></qt>"
 msgstr ""
 
 #: Workspace.cc:300
@@ -1110,9 +1057,7 @@ msgstr "%1 dosyası uygun XML içermiyor."
 
 #: WorkSheet.cc:103
 #, kde-format
-msgid ""
-"The file %1 does not contain a valid worksheet definition, which must have a "
-"document type 'KSysGuardWorkSheet'."
+msgid "The file %1 does not contain a valid worksheet definition, which must have a document type 'KSysGuardWorkSheet'."
 msgstr "%1 dosyası geçersiz bir çalışma kağıdı tanımı içeriyor."
 
 #: WorkSheet.cc:127
@@ -1334,12 +1279,7 @@ msgid "Drag sensors to empty cells of a worksheet "
 msgstr "Çalışma kağıdının boş hücrelerine algılayıcıları sürükleyin "
 
 #: SensorBrowser.cc:474
-msgid ""
-"The sensor browser lists the connected hosts and the sensors that they "
-"provide. Click and drag sensors into drop zones of a worksheet. A display "
-"will appear that visualizes the values provided by the sensor. Some sensor "
-"displays can display values of multiple sensors. Simply drag other sensors "
-"on to the display to add more sensors."
+msgid "The sensor browser lists the connected hosts and the sensors that they provide. Click and drag sensors into drop zones of a worksheet. A display will appear that visualizes the values provided by the sensor. Some sensor displays can display values of multiple sensors. Simply drag other sensors on to the display to add more sensors."
 msgstr ""
 
 #: HostConnector.cc:44
@@ -1379,21 +1319,15 @@ msgid "Daemon"
 msgstr "Servis"
 
 #: HostConnector.cc:89
-msgid ""
-"Select this if you want to connect to a ksysguard daemon that is running on "
-"the machine you want to connect to, and is listening for client requests."
-msgstr ""
-"Bağlamayı isterseniz ksysguard daemona şu açık çalışıyor bağlamayı istediğin "
-"makine için ve istemci istekleri için dinleme için bunu seçin"
+msgid "Select this if you want to connect to a ksysguard daemon that is running on the machine you want to connect to, and is listening for client requests."
+msgstr "Bağlamayı isterseniz ksysguard daemona şu açık çalışıyor bağlamayı istediğin makine için ve istemci istekleri için dinleme için bunu seçin"
 
 #: HostConnector.cc:92
 msgid "Custom command"
 msgstr "Özel komut"
 
 #: HostConnector.cc:93
-msgid ""
-"Select this to use the command you entered below to start ksysguardd on the "
-"remote host."
+msgid "Select this to use the command you entered below to start ksysguardd on the remote host."
 msgstr "Uzak host sahibindeki ksysguard'ı başlatmak için girdiğin komudu seç."
 
 #: HostConnector.cc:96
@@ -1401,9 +1335,7 @@ msgid "Port:"
 msgstr "Port:"
 
 #: HostConnector.cc:103
-msgid ""
-"Enter the port number on which the ksysguard daemon is listening for "
-"connections."
+msgid "Enter the port number on which the ksysguard daemon is listening for connections."
 msgstr "Ksysguard daemon bağlantıları için dinlenecek port numaralarını girin."
 
 #: HostConnector.cc:106
@@ -1416,8 +1348,7 @@ msgstr "Komut:"
 
 #: HostConnector.cc:118
 msgid "Enter the command that runs ksysguardd on the host you want to monitor."
-msgstr ""
-"Bilgisayarınızda ksysguardd'yi çalıştırması istenen komutu buraya yazın."
+msgstr "Bilgisayarınızda ksysguardd'yi çalıştırması istenen komutu buraya yazın."
 
 #: HostConnector.cc:122
 msgid "e.g. ssh -l root remote.host.org ksysguardd"
@@ -1659,13 +1590,8 @@ msgstr "Ağ Geçmişi"
 #~ msgid "%1%"
 #~ msgstr "%1%"
 
-#~ msgid ""
-#~ "This is your work space. It holds your tabs. You need to create a new tab "
-#~ "(Menu File->New) before you can drag sensors here."
-#~ msgstr ""
-#~ "Bu sizin çalışma alanınızdır. Sekmelerinizi tutar. Algılayıcıları buraya "
-#~ "sürükleyip bırakmadan önce yeni bir sekme (Menü Dosya->Yeni) "
-#~ "oluşturmalısınız. "
+#~ msgid "This is your work space. It holds your tabs. You need to create a new tab (Menu File->New) before you can drag sensors here."
+#~ msgstr "Bu sizin çalışma alanınızdır. Sekmelerinizi tutar. Algılayıcıları buraya sürükleyip bırakmadan önce yeni bir sekme (Menü Dosya->Yeni) oluşturmalısınız. "
 
 #~ msgid "Connection to %1 has been lost."
 #~ msgstr "%1 adresine bağlantı kesildi."
@@ -1704,19 +1630,11 @@ msgstr "Ağ Geçmişi"
 #~ msgid "&Dancing Bars"
 #~ msgstr "&Dans Eden Çubuklar"
 
-#~ msgid ""
-#~ "The KSysGuard applet does not support displaying of this type of sensor. "
-#~ "Please choose another sensor."
-#~ msgstr ""
-#~ "KSysGuard çalışma kağıdı bu tür algılayıcıları desteklememektedir. Lütfen "
-#~ "başka bir algılayıcı seçin."
+#~ msgid "The KSysGuard applet does not support displaying of this type of sensor. Please choose another sensor."
+#~ msgstr "KSysGuard çalışma kağıdı bu tür algılayıcıları desteklememektedir. Lütfen başka bir algılayıcı seçin."
 
-#~ msgid ""
-#~ "The file %1 does not contain a valid applet definition, which must have a "
-#~ "document type 'KSysGuardApplet'."
-#~ msgstr ""
-#~ "%1 dosyası 'KSysGuardApplet' döküman türüne sahip olması gereken, uygun "
-#~ "bir çalışma kağıdı açıklaması değil"
+#~ msgid "The file %1 does not contain a valid applet definition, which must have a document type 'KSysGuardApplet'."
+#~ msgstr "%1 dosyası 'KSysGuardApplet' döküman türüne sahip olması gereken, uygun bir çalışma kağıdı açıklaması değil"
 
 #~ msgid "Drag sensors from the KDE System Guard into this cell."
 #~ msgstr "Algılayıcıları KDE sistem izleyicisinden bu hücreye sürükle."
@@ -1748,14 +1666,8 @@ msgstr "Ağ Geçmişi"
 #~ msgid "Top bar"
 #~ msgstr "Tepe Çubuğu"
 
-#~ msgid ""
-#~ "Check this to active the display title bar. This is probably only useful "
-#~ "for applet displays. The bar is only visible if the display is large "
-#~ "enough."
-#~ msgstr ""
-#~ "Başlık çubuğunu görüntülemek için bu düğmeye tıklayın. Bu applet ekranlar "
-#~ "için kullanışlıdır. Bar sadece ekran yeteri derecede büyük olduğunda "
-#~ "görünür olur."
+#~ msgid "Check this to active the display title bar. This is probably only useful for applet displays. The bar is only visible if the display is large enough."
+#~ msgstr "Başlık çubuğunu görüntülemek için bu düğmeye tıklayın. Bu applet ekranlar için kullanışlıdır. Bar sadece ekran yeteri derecede büyük olduğunda görünür olur."
 
 #~ msgid "Horizontal lines:"
 #~ msgstr "Yatay çizgiler:"
