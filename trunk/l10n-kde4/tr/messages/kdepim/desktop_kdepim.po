@@ -1347,7 +1347,6 @@ msgid "TAR (PGP®-compatible)"
 msgstr "TAR (PGP®-uyumlu)"
 
 #: libkleo/libkleopatrarc.desktop:40
-#, fuzzy
 msgctxt "Name"
 msgid "ZIP"
 msgstr "ZIP"
