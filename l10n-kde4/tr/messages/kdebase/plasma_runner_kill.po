@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,20 +13,20 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: killrunner_config.cpp:40
 msgid "CPU usage"
-msgstr ""
+msgstr "CPU kullanımı"
 
 #: killrunner_config.cpp:41
 msgid "inverted CPU usage"
-msgstr ""
+msgstr "Ters CPU kullanımı"
 
 #: killrunner_config.cpp:42
 msgid "nothing"
-msgstr ""
+msgstr "hiçbir şey"
 
 #: killrunner_config.cpp:60 killrunner_config.cpp:86 killrunner.cpp:60
 msgid "kill"
@@ -34,12 +34,12 @@ msgstr "sonlandır"
 
 #: killrunner.cpp:66
 msgid "Terminate running applications whose names match the query."
-msgstr ""
+msgstr "İsimleri sorguyla eşleşen uygulamaları sonlandır"
 
 #: killrunner.cpp:138
 #, kde-format
 msgid "Terminate %1"
-msgstr ""
+msgstr "%1 uygulamasını sonlandır"
 
 #: killrunner.cpp:139
 #, kde-format
@@ -47,6 +47,8 @@ msgid ""
 "Process ID: %1\n"
 "Running as user: %2"
 msgstr ""
+"Süreç ID: %1\n"
+"Çalıştıran kullanıcı: %2"
 
 #: killrunner.cpp:196
 msgid "Send SIGTERM"
@@ -78,13 +80,13 @@ msgstr "&Tetikleme sözcüğü:"
 #. i18n: ectx: property (text), widget (QLabel, label_sorting)
 #: rc.cpp:12
 msgid "&Sort by"
-msgstr ""
+msgstr "&Sırala"
 
 #. i18n: file: killrunner_config.ui:70
 #. i18n: ectx: property (toolTip), widget (KComboBox, sorting)
 #: rc.cpp:15
 msgid "It is not sure, that this will take effect"
-msgstr ""
+msgstr "Değişikliğin yansıyıp yansımayacağı belli değil"
 
 #~ msgid "Kill %1"
 #~ msgstr "%1 Sürecini Sonlandır"
