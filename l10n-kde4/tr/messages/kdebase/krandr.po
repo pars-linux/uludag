@@ -2,8 +2,8 @@
 # translation of krandr.po to
 # Turkish translation of krandr.
 # Copyright (C) 2003, 2005, 2008 Free Software Foundation, Inc.
-#
-#
+# 
+# 
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
@@ -18,19 +18,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: krandrmodule.cpp:46
-msgid ""
-"Your X server does not support resizing and rotating the display. Please "
-"update to version 4.3 or greater. You need the X Resize, Rotate, and Reflect "
-"extension (RANDR) version 1.1 or greater to use this feature."
-msgstr ""
-"X sunucunuz ekranı yeniden boyutlandırmayı ve çevirmeyi desteklemiyor. "
-"Lütfen 4.3 veya daha üst bir sürüme yükseltin. Bu özelliği kullanmak için, X "
-"Yeniden Boyutlandır ve Çevir uzantısının (RANDR) 1.1 veya daha üst sürümüne "
-"ihtiyacınız var."
+msgid "Your X server does not support resizing and rotating the display. Please update to version 4.3 or greater. You need the X Resize, Rotate, and Reflect extension (RANDR) version 1.1 or greater to use this feature."
+msgstr "X sunucunuz ekranı yeniden boyutlandırmayı ve çevirmeyi desteklemiyor. Lütfen 4.3 veya daha üst bir sürüme yükseltin. Bu özelliği kullanmak için, X Yeniden Boyutlandır ve Çevir uzantısının (RANDR) 1.1 veya daha üst sürümüne ihtiyacınız var."
 
 #: krandrtray.cpp:53
 msgid "Screen Settings"
@@ -235,20 +228,17 @@ msgstr "%1 (Bağlı)"
 #: randrconfig.cpp:323
 msgid ""
 "Insufficient virtual size for the total screen size.\n"
-"The configured virtual size of your X server is insufficient for this setup. "
-"This configuration needs to be adjusted.\n"
+"The configured virtual size of your X server is insufficient for this setup. This configuration needs to be adjusted.\n"
 "Do you wish to run a tool to adjust the configuration?"
 msgstr ""
 
 #: randrconfig.cpp:331
-msgid ""
-"Configuration has been adjusted. Please restart your session for this change "
-"to take effect."
-msgstr ""
+msgid "Configuration has been adjusted. Please restart your session for this change to take effect."
+msgstr "Yapılandırma ayarlandı. Değişikliklerden faydalanmak için lütfen oturumunuzu yeniden başlatın."
 
 #: randrconfig.cpp:334
 msgid "Changing configuration failed. Please adjust your xorg.conf manually."
-msgstr ""
+msgstr "Yapılandırma başarısız oldu. "
 
 #: randr.cpp:31
 msgid "No Rotation"
@@ -335,14 +325,8 @@ msgid "&Revert to Previous Configuration"
 msgstr "&Önceki Yapılandırmaya Dön"
 
 #: randr.cpp:133
-msgid ""
-"Your screen configuration has been changed to the requested settings. Please "
-"indicate whether you wish to keep this configuration. In 15 seconds the "
-"display will revert to your previous settings."
-msgstr ""
-"Ekranınızın yerleşimi, boyutu ve tazeleme hızı istenen ayarlara uygun olarak "
-"değiştirildi. Lütfen bu ayarları tutup tutmayacağınızı belirleyin. 15 saniye "
-"içinde eski ayarlara geri dönecektir."
+msgid "Your screen configuration has been changed to the requested settings. Please indicate whether you wish to keep this configuration. In 15 seconds the display will revert to your previous settings."
+msgstr "Ekranınızın yerleşimi, boyutu ve tazeleme hızı istenen ayarlara uygun olarak değiştirildi. Lütfen bu ayarları tutup tutmayacağınızı belirleyin. 15 saniye içinde eski ayarlara geri dönecektir."
 
 #: randrdisplay.cpp:49
 #, kde-format
@@ -358,12 +342,8 @@ msgstr "Ekran Yeniden Boyutlandırma ve Çevirme Ayarları"
 #. i18n: file: legacyrandrconfigbase.ui:17
 #. i18n: ectx: property (whatsThis), widget (QWidget, LegacyRandRConfigBase)
 #: rc.cpp:6 rc.cpp:68
-msgid ""
-"If this option is enabled, options set by the system tray applet will be "
-"saved and loaded when KDE starts instead of being temporary."
-msgstr ""
-"Bu seçenekler seçili ise, sistem tepsi uygulaması tarafından ayarlanan "
-"seçenekler geçici olmayıp kaydedilecek ve KDE başladığında yüklenecek."
+msgid "If this option is enabled, options set by the system tray applet will be saved and loaded when KDE starts instead of being temporary."
+msgstr "Bu seçenekler seçili ise, sistem tepsi uygulaması tarafından ayarlanan seçenekler geçici olmayıp kaydedilecek ve KDE başladığında yüklenecek."
 
 #. i18n: file: legacyrandrconfigbase.ui:25
 #. i18n: ectx: property (text), widget (QLabel, screenLabel)
@@ -374,12 +354,8 @@ msgstr "Ekran içi ayarlar:"
 #. i18n: file: legacyrandrconfigbase.ui:38
 #. i18n: ectx: property (whatsThis), widget (KComboBox, screenCombo)
 #: rc.cpp:12 rc.cpp:74
-msgid ""
-"The screen whose settings you would like to change can be selected using "
-"this drop-down list."
-msgstr ""
-"Ayarlarını değiştirmek istediğiniz ekran bu açılan listeyi kullanarak "
-"seçilebilir."
+msgid "The screen whose settings you would like to change can be selected using this drop-down list."
+msgstr "Ayarlarını değiştirmek istediğiniz ekran bu açılan listeyi kullanarak seçilebilir."
 
 #. i18n: file: legacyrandrconfigbase.ui:49
 #. i18n: ectx: property (text), widget (QLabel, sizeLabel)
@@ -390,12 +366,8 @@ msgstr "Ekran boyutu:"
 #. i18n: file: legacyrandrconfigbase.ui:62
 #. i18n: ectx: property (whatsThis), widget (KComboBox, sizeCombo)
 #: rc.cpp:18 rc.cpp:80
-msgid ""
-"The size, otherwise known as the resolution, of your screen can be selected "
-"from this drop-down list."
-msgstr ""
-"Ekranınızın boyutu, diğer adıyla çözünürlüğü, bu açılan listeyi kullanarak "
-"seçilebilir. "
+msgid "The size, otherwise known as the resolution, of your screen can be selected from this drop-down list."
+msgstr "Ekranınızın boyutu, diğer adıyla çözünürlüğü, bu açılan listeyi kullanarak seçilebilir. "
 
 #. i18n: file: legacyrandrconfigbase.ui:73
 #. i18n: ectx: property (text), widget (QLabel, rateLabel)
@@ -406,17 +378,14 @@ msgstr "Tazeleme oranı:"
 #. i18n: file: legacyrandrconfigbase.ui:83
 #. i18n: ectx: property (whatsThis), widget (KComboBox, rateCombo)
 #: rc.cpp:24 rc.cpp:86
-msgid ""
-"The refresh rate of your screen can be selected from this drop-down list."
+msgid "The refresh rate of your screen can be selected from this drop-down list."
 msgstr "Ekranınızın tazeleme oranı bu açılan listeyi kullanarak seçilebilir."
 
 #. i18n: file: legacyrandrconfigbase.ui:98
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, rotationGroup)
 #: rc.cpp:27 rc.cpp:89
-msgid ""
-"The options in this section allow you to change the rotation of your screen."
-msgstr ""
-"Bu bölümdeki seçenekler ekranınızın dönüşünü değiştirmenize izin verir."
+msgid "The options in this section allow you to change the rotation of your screen."
+msgstr "Bu bölümdeki seçenekler ekranınızın dönüşünü değiştirmenize izin verir."
 
 #. i18n: file: legacyrandrconfigbase.ui:101
 #. i18n: ectx: property (title), widget (QGroupBox, rotationGroup)
@@ -427,12 +396,8 @@ msgstr "Hizalama (saat yönünün tersi)"
 #. i18n: file: legacyrandrconfigbase.ui:108
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, applyOnStartup)
 #: rc.cpp:33 rc.cpp:95
-msgid ""
-"If this option is enabled the size and orientation settings will be used "
-"when KDE starts."
-msgstr ""
-"Bu seçenekler seçili ise, KDE başladığında boyut ve hizalama ayarları "
-"kullanılabilir olacak."
+msgid "If this option is enabled the size and orientation settings will be used when KDE starts."
+msgstr "Bu seçenekler seçili ise, KDE başladığında boyut ve hizalama ayarları kullanılabilir olacak."
 
 #. i18n: file: legacyrandrconfigbase.ui:111
 #. i18n: ectx: property (text), widget (QCheckBox, applyOnStartup)
