@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2010-04-19 16:06+0300\n"
+"PO-Revision-Date: 2010-04-19 16:22+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -41,7 +41,7 @@ msgstr "İkilik"
 #: gui/liboktetawidgets/bytearraycombobox_p.cpp:47
 msgctxt "@item:inlistbox coding of the bytes as characters with the values"
 msgid "Char"
-msgstr ""
+msgstr "Char"
 
 #: gui/liboktetawidgets/bytearraycombobox_p.cpp:48
 #| msgctxt "@label:textbox"
@@ -850,7 +850,7 @@ msgstr "Belge başlangıcı yerine imlecin bulunduğu yerden aramaya başla."
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:107
 msgctxt "@info:whatsthis"
 msgid "Replace backwards."
-msgstr ""
+msgstr "Geriye doğru değiştir."
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:108
 msgctxt "@option:check"
@@ -889,7 +889,7 @@ msgstr ""
 #: controllers/view/bookmarks/bookmarksview.cpp:99
 msgctxt "@info:tooltip"
 msgid "Deletes all the selected bookmarks."
-msgstr ""
+msgstr "Seçili tüm yerimlerini siler."
 
 #: controllers/view/bookmarks/bookmarksview.cpp:101
 msgctxt "@info:whatsthis"
@@ -901,7 +901,7 @@ msgstr ""
 #: controllers/view/bookmarks/bookmarksview.cpp:110
 msgctxt "@info:tooltip"
 msgid "Moves the cursor to the selected bookmark."
-msgstr ""
+msgstr "İmleci seçili yerimine taşır."
 
 #: controllers/view/bookmarks/bookmarksview.cpp:112
 msgctxt "@info:whatsthis"
@@ -914,7 +914,7 @@ msgstr ""
 #: controllers/view/bookmarks/bookmarksview.cpp:119
 msgctxt "@info:tooltip"
 msgid "Enables renaming of the selected bookmark."
-msgstr ""
+msgstr "Seçili yerimini yeniden adlandırmayı etkinleştirir."
 
 #: controllers/view/bookmarks/bookmarksview.cpp:121
 msgctxt "@info:whatsthis"
@@ -981,7 +981,7 @@ msgstr ""
 #: controllers/view/bytetable/bytetablemodel.cpp:99
 msgctxt "@item:intable character is not defined"
 msgid "undef."
-msgstr ""
+msgstr "undef."
 
 #: controllers/view/info/statistictablemodel.cpp:183
 #: controllers/view/bytetable/bytetablemodel.cpp:121
@@ -1176,7 +1176,7 @@ msgstr ""
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:47
 msgctxt "@label:textbox operand to the arithmetic filter function"
 msgid "Operand:"
-msgstr ""
+msgstr "Operand:"
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:52
 msgctxt "@info:tooltip"
