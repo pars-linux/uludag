@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kwmtheme/cli_installer/main.cpp:27
 msgid "Installs a KWM theme"
@@ -112,36 +112,24 @@ msgid "Draw titlebar &stipple effect"
 msgstr "Başlık çubuğu &noktalama etkisi kullan"
 
 #: kde2/config/config.cpp:59
-msgid ""
-"When selected, active titlebars are drawn with a stipple (dotted) effect; "
-"otherwise, they are drawn without the stipple."
-msgstr ""
-"Eğer seçiliyse, seçili başlık çubukları noktalama etkisi ile çizilir; aksi "
-"takdirde noktalama etkisi kullanılmaz."
+msgid "When selected, active titlebars are drawn with a stipple (dotted) effect; otherwise, they are drawn without the stipple."
+msgstr "Eğer seçiliyse, seçili başlık çubukları noktalama etkisi ile çizilir; aksi takdirde noktalama etkisi kullanılmaz."
 
 #: kde2/config/config.cpp:63
 msgid "Draw g&rab bar below windows"
 msgstr "Pencerelerin altında &kavrama çubuğu çiz"
 
 #: kde2/config/config.cpp:65
-msgid ""
-"When selected, decorations are drawn with a \"grab bar\" below windows; "
-"otherwise, no grab bar is drawn."
-msgstr ""
-"Eğer seçiliyse, dekorasyonlar pencerelerin altında \"kavrama çubuğu\" ile "
-"çizilir; aksi takdirde kavrama çubuğu çizilmez."
+msgid "When selected, decorations are drawn with a \"grab bar\" below windows; otherwise, no grab bar is drawn."
+msgstr "Eğer seçiliyse, dekorasyonlar pencerelerin altında \"kavrama çubuğu\" ile çizilir; aksi takdirde kavrama çubuğu çizilmez."
 
 #: kde2/config/config.cpp:71
 msgid "Draw &gradients"
 msgstr "Gradyanları çiz"
 
 #: kde2/config/config.cpp:73
-msgid ""
-"When selected, decorations are drawn with gradients for high-color displays; "
-"otherwise, no gradients are drawn."
-msgstr ""
-"Eğer seçiliyse, dekorasyonlar yüksek-renk için gradyanlarlar beraber "
-"çizilir; aksi takdirde gradyan çizilmeyecektir."
+msgid "When selected, decorations are drawn with gradients for high-color displays; otherwise, no gradients are drawn."
+msgstr "Eğer seçiliyse, dekorasyonlar yüksek-renk için gradyanlarlar beraber çizilir; aksi takdirde gradyan çizilmeyecektir."
 
 #: kde2/kde2.cpp:783
 msgid "KDE 2"
@@ -152,12 +140,8 @@ msgid "Draw window frames using &titlebar colors"
 msgstr "Başlık &çubuğu renklerini kullanarak pencere karelerini çiz"
 
 #: quartz/config/config.cpp:58
-msgid ""
-"When selected, the window decoration borders are drawn using the titlebar "
-"colors; otherwise, they are drawn using normal border colors instead."
-msgstr ""
-"Eğer seçiliyse, pencere dekorasyonları başlık çubuğu renkleri kullanılarak "
-"çizilir. aksi takdirde normal kenarlık renkleri kullanılır."
+msgid "When selected, the window decoration borders are drawn using the titlebar colors; otherwise, they are drawn using normal border colors instead."
+msgstr "Eğer seçiliyse, pencere dekorasyonları başlık çubuğu renkleri kullanılarak çizilir. aksi takdirde normal kenarlık renkleri kullanılır."
 
 #: quartz/config/config.cpp:61
 msgid "Quartz &extra slim"
@@ -202,14 +186,8 @@ msgid "&Show window resize handle"
 msgstr "Pencere &boyutlandırıcısını göster"
 
 #: modernsystem/config/config.cpp:64
-msgid ""
-"When selected, all windows are drawn with a resize handle at the lower right "
-"corner. This makes window resizing easier, especially for trackballs and "
-"other mouse replacements on laptops."
-msgstr ""
-"Eğer seçiliyse, bütün pencereler sağ alt köşelerinde bir boyutlandırıcı ile "
-"çizilir. Böylece özellikle işarettopu veya başka dizüstü işaret cihazları "
-"için boyutlandırma işlevi oldukça basitleşir."
+msgid "When selected, all windows are drawn with a resize handle at the lower right corner. This makes window resizing easier, especially for trackballs and other mouse replacements on laptops."
+msgstr "Eğer seçiliyse, bütün pencereler sağ alt köşelerinde bir boyutlandırıcı ile çizilir. Böylece özellikle işarettopu veya başka dizüstü işaret cihazları için boyutlandırma işlevi oldukça basitleşir."
 
 #: modernsystem/config/config.cpp:78
 msgid "Here you can change the size of the resize handle."
@@ -267,40 +245,24 @@ msgid "Laptop"
 msgstr "Laptop"
 
 #: b2/config/config.cpp:61
-msgid ""
-"When selected, the window borders are drawn using the titlebar colors; "
-"otherwise, they are drawn using normal border colors."
-msgstr ""
-"Eğer seçiliyse, pencere kenarları başlık çubuğu renkleri kullanılarak "
-"çizilir, aksi takdirde normal kenarlık renkleriyle çizilir."
+msgid "When selected, the window borders are drawn using the titlebar colors; otherwise, they are drawn using normal border colors."
+msgstr "Eğer seçiliyse, pencere kenarları başlık çubuğu renkleri kullanılarak çizilir, aksi takdirde normal kenarlık renkleriyle çizilir."
 
 #: b2/config/config.cpp:67
 msgid "Draw &resize handle"
 msgstr "&Boyutlandırma işleyicisi çiz"
 
 #: b2/config/config.cpp:69
-msgid ""
-"When selected, decorations are drawn with a \"grab handle\" in the bottom "
-"right corner of the windows; otherwise, no grab handle is drawn."
-msgstr ""
-"Eğer seçiliyse, dekorasyonlar pencerenin sağ alt köşesinde bir \"yakalayıcı"
-"\" ile çizilir; aksi takdirde yakalayıcı çizilmez."
+msgid "When selected, decorations are drawn with a \"grab handle\" in the bottom right corner of the windows; otherwise, no grab handle is drawn."
+msgstr "Eğer seçiliyse, dekorasyonlar pencerenin sağ alt köşesinde bir \"yakalayıcı\" ile çizilir; aksi takdirde yakalayıcı çizilmez."
 
 #: b2/config/config.cpp:75
 msgid "Auto-move titlebar"
-msgstr ""
+msgstr "Başlık çubuğunu otomatik taşı"
 
 #: b2/config/config.cpp:77
-#, fuzzy
-#| msgid ""
-#| "When selected, active titlebars are drawn with a stipple (dotted) effect; "
-#| "otherwise, they are drawn without the stipple."
-msgid ""
-"When selected, titlebars are automatically relocated to visible positions; "
-"otherwise, they are only moved manually using shift+drag."
-msgstr ""
-"Eğer seçiliyse, seçili başlık çubukları noktalama etkisi ile çizilir; aksi "
-"takdirde noktalama etkisi kullanılmaz."
+msgid "When selected, titlebars are automatically relocated to visible positions; otherwise, they are only moved manually using shift+drag."
+msgstr "Eğer seçiliyse, seçili başlık çubukları noktalama etkisi ile çizilir; aksi takdirde noktalama etkisi kullanılmaz."
 
 #: b2/config/config.cpp:82
 msgid "Actions Settings"
@@ -327,12 +289,8 @@ msgid "Close Window"
 msgstr "Pencereyi Kapat"
 
 #: b2/config/config.cpp:93
-msgid ""
-"An action can be associated to a double click of the menu button. Leave it "
-"to none if in doubt."
-msgstr ""
-"Menü tuşunun çift tıklanma eylemiyle bir işlev ilişkilendirilebilir. Eğer "
-"şüphedeyseniz boş bırakın."
+msgid "An action can be associated to a double click of the menu button. Leave it to none if in doubt."
+msgstr "Menü tuşunun çift tıklanma eylemiyle bir işlev ilişkilendirilebilir. Eğer şüphedeyseniz boş bırakın."
 
 #: b2/b2client.cpp:412
 msgid "Resize"
@@ -354,25 +312,20 @@ msgstr "Plastik"
 #: oxygen/config/oxygenexceptiondialog.cpp:95
 #: oxygen/config/oxygenexceptiondialog.cpp:122
 #: oxygen/config/oxygenexceptiondialog.cpp:143
-#, fuzzy
-#| msgid "Enabled"
 msgctxt "outline window title"
 msgid "Enabled"
 msgstr "Etkin"
 
 #: oxygen/config/oxygenexceptiondialog.cpp:95
 #: oxygen/config/oxygenexceptiondialog.cpp:122
-#, fuzzy
-#| msgid "Disabled"
 msgctxt "outline window title"
 msgid "Disabled"
-msgstr "Pasifleştirilmiş"
+msgstr "Pasif"
 
 #: oxygen/config/oxygenexceptiondialog.cpp:101
 #: oxygen/config/oxygenexceptiondialog.cpp:121
 #: oxygen/config/oxygenexceptiondialog.cpp:142
 #, fuzzy
-#| msgid "Enabled"
 msgctxt "draw separator"
 msgid "Enabled"
 msgstr "Etkin"
@@ -380,7 +333,6 @@ msgstr "Etkin"
 #: oxygen/config/oxygenexceptiondialog.cpp:101
 #: oxygen/config/oxygenexceptiondialog.cpp:121
 #, fuzzy
-#| msgid "Disabled"
 msgctxt "draw separator"
 msgid "Disabled"
 msgstr "Pasifleştirilmiş"
@@ -520,12 +472,8 @@ msgstr "Pencere simgesini başlıkta göster"
 #. i18n: file: keramik/config/keramikconfig.ui:25
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, showAppIcons)
 #: rc.cpp:11
-msgid ""
-"Check this option if you want the window icon to be displayed in the caption "
-"bubble next to the titlebar text."
-msgstr ""
-"Eğer pencere simgesinin başlık çubuğundaki metinin yanında gözükmesini "
-"istiyorsanız bu seçeneği kullanın."
+msgid "Check this option if you want the window icon to be displayed in the caption bubble next to the titlebar text."
+msgstr "Eğer pencere simgesinin başlık çubuğundaki metinin yanında gözükmesini istiyorsanız bu seçeneği kullanın."
 
 #. i18n: file: keramik/config/keramikconfig.ui:32
 #. i18n: ectx: property (text), widget (QCheckBox, smallCaptions)
@@ -536,16 +484,8 @@ msgstr "Çalışan pencerelerde &küçük başlık çerceveleri çiz"
 #. i18n: file: keramik/config/keramikconfig.ui:35
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, smallCaptions)
 #: rc.cpp:17
-msgid ""
-"Check this option if you want the caption bubble to have the same size on "
-"active windows that it has on inactive ones. This option is useful for "
-"laptops or low resolution displays where you want maximize the amount of "
-"space available to the window contents."
-msgstr ""
-"Eğer başlık çerçevesinin etkin ve etkin olamayan pencerelerde aynı boyutta "
-"çizilmesini istiyorsanız bu seçeneği kullanın. Bu seçenek pencereler için "
-"görünürürlük alanın yüksek olması gereken düşük çözünürlüklü cihazlarda veya "
-"dizüstü bilgisayarlarda çok yararlıdır."
+msgid "Check this option if you want the caption bubble to have the same size on active windows that it has on inactive ones. This option is useful for laptops or low resolution displays where you want maximize the amount of space available to the window contents."
+msgstr "Eğer başlık çerçevesinin etkin ve etkin olamayan pencerelerde aynı boyutta çizilmesini istiyorsanız bu seçeneği kullanın. Bu seçenek pencereler için görünürürlük alanın yüksek olması gereken düşük çözünürlüklü cihazlarda veya dizüstü bilgisayarlarda çok yararlıdır."
 
 #. i18n: file: keramik/config/keramikconfig.ui:42
 #. i18n: ectx: property (text), widget (QCheckBox, largeGrabBars)
@@ -556,13 +496,8 @@ msgstr "Pencerelerin altında &kavrama çubukları çiz"
 #. i18n: file: keramik/config/keramikconfig.ui:45
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, largeGrabBars)
 #: rc.cpp:23
-msgid ""
-"Check this option if you want a grab bar to be drawn below windows. When "
-"this option is not selected only a thin border will be drawn in its place."
-msgstr ""
-"Eğer pencerelerin altında kavrama çubuğu çizilmesini istiyorsanız bu "
-"seçeneği kullanın. Bu seçenek etkin durumda değilse pencerelerin altında "
-"sadece ince bir kenarlık çizilir."
+msgid "Check this option if you want a grab bar to be drawn below windows. When this option is not selected only a thin border will be drawn in its place."
+msgstr "Eğer pencerelerin altında kavrama çubuğu çizilmesini istiyorsanız bu seçeneği kullanın. Bu seçenek etkin durumda değilse pencerelerin altında sadece ince bir kenarlık çizilir."
 
 #. i18n: file: keramik/config/keramikconfig.ui:52
 #. i18n: ectx: property (text), widget (QCheckBox, useShadowedText)
@@ -577,12 +512,8 @@ msgstr "&Gölgeli metin kullan"
 #. i18n: file: plastik/config/configdialog.ui:66
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, titleShadow)
 #: rc.cpp:29 rc.cpp:80
-msgid ""
-"Check this option if you want the titlebar text to have a 3D look with a "
-"shadow behind it."
-msgstr ""
-"Eğer başlık çubuğu metninin arkasında gölgesi ile 3 boyut etkisi almasını "
-"istiyorsanız bu seçeneği kullanın."
+msgid "Check this option if you want the titlebar text to have a 3D look with a shadow behind it."
+msgstr "Eğer başlık çubuğu metninin arkasında gölgesi ile 3 boyut etkisi almasını istiyorsanız bu seçeneği kullanın."
 
 #. i18n: file: tabstrip/config/tabstripconfig.ui:20
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -614,7 +545,7 @@ msgstr "S&ağ"
 #. i18n: ectx: property (text), widget (QCheckBox, showIcon)
 #: rc.cpp:47
 msgid "Display window icons"
-msgstr ""
+msgstr "Pencere simgelerini göster"
 
 #. i18n: file: aurorae/src/config/config.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -643,12 +574,8 @@ msgstr "Yapılandırma Penceresi"
 #. i18n: file: plastik/config/configdialog.ui:53
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, coloredBorder)
 #: rc.cpp:74
-msgid ""
-"Check this option if the window border should be painted in the titlebar "
-"color. Otherwise it will be painted in the background color."
-msgstr ""
-"Pencere kenarlığı başlık çubuğu ile aynı renge boyanmalıysa bu seçeneği "
-"işaretleyin. Aksi taktirde kenarlıklar için arkaplan rengi kullanılacaktır."
+msgid "Check this option if the window border should be painted in the titlebar color. Otherwise it will be painted in the background color."
+msgstr "Pencere kenarlığı başlık çubuğu ile aynı renge boyanmalıysa bu seçeneği işaretleyin. Aksi taktirde kenarlıklar için arkaplan rengi kullanılacaktır."
 
 #. i18n: file: plastik/config/configdialog.ui:56
 #. i18n: ectx: property (text), widget (QCheckBox, coloredBorder)
@@ -659,13 +586,8 @@ msgstr "Renklendirilmiş pencere kenarlığı"
 #. i18n: file: plastik/config/configdialog.ui:76
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, animateButtons)
 #: rc.cpp:86
-msgid ""
-"Check this option if you want the buttons to fade in when the mouse pointer "
-"hovers over them and fade out again when it moves away."
-msgstr ""
-"Eğer imleç tuşların üstlerine gelince tuşların şekil değiştirmesini "
-"istiyorsanız bu seçeneği kullanın, imleç tuşun üstünden gidince eski halini "
-"alacaktır."
+msgid "Check this option if you want the buttons to fade in when the mouse pointer hovers over them and fade out again when it moves away."
+msgstr "Eğer imleç tuşların üstlerine gelince tuşların şekil değiştirmesini istiyorsanız bu seçeneği kullanın, imleç tuşun üstünden gidince eski halini alacaktır."
 
 #. i18n: file: plastik/config/configdialog.ui:79
 #. i18n: ectx: property (text), widget (QCheckBox, animateButtons)
@@ -676,12 +598,8 @@ msgstr "Tuşları canlandır"
 #. i18n: file: plastik/config/configdialog.ui:86
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, menuClose)
 #: rc.cpp:92
-msgid ""
-"Check this option if you want windows to be closed when you double click the "
-"menu button, similar to Microsoft Windows."
-msgstr ""
-"Eğer pencerelerin Microsoft Windows'taki gibi menü tuşuna çift tıklanınca "
-"kapanmasını istiyorsanız bu seçeneği kullanın."
+msgid "Check this option if you want windows to be closed when you double click the menu button, similar to Microsoft Windows."
+msgstr "Eğer pencerelerin Microsoft Windows'taki gibi menü tuşuna çift tıklanınca kapanmasını istiyorsanız bu seçeneği kullanın."
 
 #. i18n: file: plastik/config/configdialog.ui:89
 #. i18n: ectx: property (text), widget (QCheckBox, menuClose)
@@ -877,13 +795,13 @@ msgstr "Düğme boyutu:"
 #. i18n: ectx: property (text), widget (QCheckBox, tabsEnabled)
 #: rc.cpp:194
 msgid "Enable window grouping"
-msgstr ""
+msgstr "Pencere gruplamayı etkinleştir"
 
 #. i18n: file: oxygen/config/oxygenconfigurationui.ui:108
 #. i18n: ectx: property (text), widget (QCheckBox, useAnimations)
 #: rc.cpp:197
 msgid "Enable animations"
-msgstr ""
+msgstr "Animasyonları etkinleştir"
 
 #. i18n: file: oxygen/config/oxygenconfigurationui.ui:116
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
@@ -922,13 +840,15 @@ msgid "Shadows"
 msgstr "Gölgeler"
 
 #. i18n: file: oxygen/config/oxygenconfigurationui.ui:192
-#. i18n: ectx: property (title), widget (Oxygen::OxygenShadowConfigurationUI, inactiveShadowConfiguration)
+#. i18n: ectx: property (title), widget (Oxygen::OxygenShadowConfigurationUI,
+#. inactiveShadowConfiguration)
 #: rc.cpp:218
 msgid "Window Drop-Down Shadow"
 msgstr "Aşağıya Doğru Düşen Pencere Gölgesi"
 
 #. i18n: file: oxygen/config/oxygenconfigurationui.ui:199
-#. i18n: ectx: property (title), widget (Oxygen::OxygenShadowConfigurationUI, activeShadowConfiguration)
+#. i18n: ectx: property (title), widget (Oxygen::OxygenShadowConfigurationUI,
+#. activeShadowConfiguration)
 #: rc.cpp:221
 msgid "Active Window Glow"
 msgstr "Etkin Pencere Parlaması"
@@ -954,12 +874,8 @@ msgstr "Pencereye Özel Ayarlar"
 #~ msgid "Additional window decoration configuration options"
 #~ msgstr "Pencere dekorasyonu ek yapılandırma seçenekleri"
 
-#~ msgid ""
-#~ "When enabled, this option makes an horizontal separator appear between "
-#~ "the window title bar and the window contents."
-#~ msgstr ""
-#~ "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu ile pencere "
-#~ "içeriği yatay bir çubuk ile ayrılır."
+#~ msgid "When enabled, this option makes an horizontal separator appear between the window title bar and the window contents."
+#~ msgstr "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu ile pencere içeriği yatay bir çubuk ile ayrılır."
 
 #~ msgid "Configure shadow colors for active and inactive windows"
 #~ msgstr "Etkin olan ve olmayan pencereler için gölge renklerini yapılandır"
@@ -979,22 +895,14 @@ msgstr "Pencereye Özel Ayarlar"
 #~ msgid "Oxygen team"
 #~ msgstr "Oxygen takımı"
 
-#~ msgid ""
-#~ "When enabled, this option increases the visibility of the window titlebar "
-#~ "by showing stripes"
-#~ msgstr ""
-#~ "Bu seçenek etkinleştirilirse çizgileri göstererek pencere başlık "
-#~ "çubuğunun görünürlüğünü arttırır"
+#~ msgid "When enabled, this option increases the visibility of the window titlebar by showing stripes"
+#~ msgstr "Bu seçenek etkinleştirilirse çizgileri göstererek pencere başlık çubuğunun görünürlüğünü arttırır"
 
 #~ msgid "Show stripes next to the title"
 #~ msgstr "Başlıktan sonra çizgileri göster"
 
-#~ msgid ""
-#~ "When enabled, this option increases the visibility of the window titlebar "
-#~ "by adding an horizontal bar between the title bar and the window contents"
-#~ msgstr ""
-#~ "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu ile pencere "
-#~ "içeriği yatay bir çubuk ile ayrılarak görünürlüğü arttırır"
+#~ msgid "When enabled, this option increases the visibility of the window titlebar by adding an horizontal bar between the title bar and the window contents"
+#~ msgstr "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu ile pencere içeriği yatay bir çubuk ile ayrılarak görünürlüğü arttırır"
 
 #~ msgid "Draw separator between title bar and window contents"
 #~ msgstr "Başlık çubuğu ile pencere içeriği arasına ayırıcı çiz"
@@ -1005,7 +913,6 @@ msgstr "Pencereye Özel Ayarlar"
 #~ msgid "Exception type: "
 #~ msgstr "İstisna tipi: "
 
-#~| msgid "&Add"
 #~ msgid "&Advanced"
 #~ msgstr "&Gelişmiş"
 
@@ -1051,12 +958,8 @@ msgstr "Pencereye Özel Ayarlar"
 #~ msgid "No"
 #~ msgstr "Hayır"
 
-#~ msgid ""
-#~ "When enabled, this option makes the window title bar use the same colors "
-#~ "as the window contents, instead of using the system title bar colors."
-#~ msgstr ""
-#~ "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu, sistem başlık "
-#~ "çubuğu rengi yerine pencere içeriği ile aynı rengi kullanır."
+#~ msgid "When enabled, this option makes the window title bar use the same colors as the window contents, instead of using the system title bar colors."
+#~ msgstr "Bu seçenek etkinleştirildiğinde, pencere başlık çubuğu, sistem başlık çubuğu rengi yerine pencere içeriği ile aynı rengi kullanır."
 
 #~ msgid "Keep above others"
 #~ msgstr "Diğerlerinin üzerinde tut"
