@@ -2,18 +2,19 @@
 # translation of dolphin.po to
 # Copyright (C) 2004, 2005, 2006, 2007, 2008 Free Software Foundation, Inc.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: dolphin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-16 01:20+0100\n"
-"PO-Revision-Date: 2009-11-16 01:09+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-19 15:01+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: panels/information/kmetadatawidget.cpp:538
@@ -1550,25 +1551,23 @@ msgid "&Edit File Type..."
 msgstr "&Dosya Tipini Düzenle..."
 
 #: dolphinpart.cpp:169
-#, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "Select Item"
 msgctxt "@action:inmenu Edit"
 msgid "Select Items Matching..."
-msgstr "Ögeyi Seç"
+msgstr "Uyuşan Öğeleri Seç..."
 
 #: dolphinpart.cpp:174
 msgctxt "@action:inmenu Edit"
 msgid "Unselect Items Matching..."
-msgstr ""
+msgstr "Uyuşan Öğeleri Bırak..."
 
 #: dolphinpart.cpp:180
-#, fuzzy
 #| msgctxt "@action:inmenu Edit"
 #| msgid "Select All"
 msgctxt "@action:inmenu Edit"
 msgid "Unselect All"
-msgstr "Tümünü Seç"
+msgstr "Tümünü Bırak"
 
 #: dolphinpart.cpp:184 dolphinmainwindow.cpp:1318
 msgctxt "@action:inmenu Edit"
@@ -1611,12 +1610,11 @@ msgid "Dolphin Part"
 msgstr "Dolphin Part"
 
 #: dolphinpart.cpp:519
-#, fuzzy
 #| msgctxt "@label"
 #| msgid "Select..."
 msgctxt "@title:window"
 msgid "Select"
-msgstr "Seç..."
+msgstr "Seç"
 
 #: dolphinpart.cpp:520
 msgid "Select all items matching this pattern:"
@@ -2162,12 +2160,11 @@ msgstr "&Düzen"
 #. i18n: file: dolphinpart.rc:14
 #. i18n: ectx: Menu (selection)
 #: rc.cpp:6 rc.cpp:278
-#, fuzzy
 #| msgctxt "@action:inmenu Edit"
 #| msgid "Invert Selection"
 msgctxt "@title:menu"
 msgid "Selection"
-msgstr "Seçimi Tersine Çevir"
+msgstr "Seçim"
 
 #. i18n: file: dolphinpart.rc:23
 #. i18n: ectx: Menu (view)
@@ -2227,12 +2224,11 @@ msgstr "Paneller"
 #. i18n: file: dolphinui.rc:67
 #. i18n: ectx: Menu (navigation_bar)
 #: rc.cpp:39 rc.cpp:266
-#, fuzzy
 #| msgctxt "@label:textbox"
 #| msgid "Location:"
 msgctxt "@title:menu"
 msgid "Location Bar"
-msgstr "Konum:"
+msgstr "Konum Çubuğu"
 
 #. i18n: file: dolphinui.rc:122
 #. i18n: ectx: ToolBar (mainToolBar)
@@ -2386,7 +2382,7 @@ msgstr "Metin satır sayısı"
 #. i18n: ectx: label, entry (disabledPlugins), group (VersionControl)
 #: rc.cpp:119
 msgid "Disabled plugins"
-msgstr ""
+msgstr "Etkinleştirilmemiş eklentiler>"
 
 #. i18n: file: settings/dolphin_columnmodesettings.kcfg:37
 #. i18n: ectx: label, entry (ColumnWidth), group (ColumnMode)
@@ -2632,26 +2628,24 @@ msgstr "Bu özelliklerin kullanıcı tarafından değiştirildiği son tarih."
 #. i18n: file: search/dolphin_searchsettings.kcfg:7
 #. i18n: ectx: label, entry (Location), group (Search)
 #: rc.cpp:245
-#, fuzzy
 #| msgctxt "@label:textbox"
 #| msgid "Location:"
 msgid "Location"
-msgstr "Konum:"
+msgstr "Konum"
 
 #. i18n: file: search/dolphin_searchsettings.kcfg:11
 #. i18n: ectx: label, entry (What), group (Search)
 #: rc.cpp:248
-#, fuzzy
 #| msgctxt "@label"
 #| msgid "What:"
 msgid "What"
-msgstr "Ne:"
+msgstr "Ne"
 
 #. i18n: file: search/dolphin_searchsettings.kcfg:15
 #. i18n: ectx: label, entry (Criteria), group (Search)
 #: rc.cpp:251
 msgid "Criteria"
-msgstr ""
+msgstr "Kriter"
 
 #~ msgctxt "@action:inmenu Settings"
 #~ msgid "Get Service Menu..."

@@ -9,18 +9,19 @@
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Adil YILDIZ <adil@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmcolors\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-21 01:22+0100\n"
-"PO-Revision-Date: 2009-09-27 22:17+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-19 15:03+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: colorsettings.ui:254
@@ -577,7 +578,6 @@ msgstr "Etkin Olmayan Başlık Çubuğu Metni"
 #. i18n: file: colorsettings.ui:702
 #. i18n: ectx: attribute (title), widget (QWidget, pageInactice)
 #: rc.cpp:243 rc.cpp:845
-#, fuzzy
 #| msgid "Inactive"
 msgctxt "@title:tab color transformations on inactive elements"
 msgid "Inactive"
@@ -604,7 +604,6 @@ msgstr "Etkin olmayan yoğunluk efekti tipi"
 #. i18n: file: colorsettings.ui:722
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveIntensityBox)
 #: rc.cpp:252 rc.cpp:854
-#, fuzzy
 #| msgid "None"
 msgctxt "no inactive intensity effect"
 msgid "None"
@@ -673,7 +672,6 @@ msgstr "Etkin olmayan renk efekti tipi"
 #. i18n: file: colorsettings.ui:794
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveColorBox)
 #: rc.cpp:273 rc.cpp:875
-#, fuzzy
 #| msgid "None"
 msgctxt "no inactive color effect"
 msgid "None"
@@ -766,7 +764,6 @@ msgstr "Etkin olmayan karşıtlık efekti tipi"
 #. i18n: file: colorsettings.ui:860
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveContrastBox)
 #: rc.cpp:297 rc.cpp:899
-#, fuzzy
 #| msgid "None"
 msgctxt "no inactive contrast effect"
 msgid "None"
@@ -781,7 +778,6 @@ msgstr "Etkin olmayan karşıtlık efekti toplamı"
 #. i18n: file: colorsettings.ui:952
 #. i18n: ectx: attribute (title), widget (QWidget, pageDisabled)
 #: rc.cpp:312 rc.cpp:914
-#, fuzzy
 #| msgid "Disabled"
 msgctxt "@title:tab color transformations on disabled elements"
 msgid "Disabled"
@@ -796,7 +792,6 @@ msgstr "Pasifleştirilmiş yoğunluk efekti tipi"
 #. i18n: file: colorsettings.ui:972
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledIntensityBox)
 #: rc.cpp:321 rc.cpp:923
-#, fuzzy
 #| msgid "None"
 msgctxt "no disabled intensity effect"
 msgid "None"
@@ -817,7 +812,6 @@ msgstr "Pasifleştirilmiş renk efekti tipi"
 #. i18n: file: colorsettings.ui:1044
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledColorBox)
 #: rc.cpp:342 rc.cpp:944
-#, fuzzy
 #| msgid "None"
 msgctxt "no disabled color effect"
 msgid "None"
@@ -844,7 +838,6 @@ msgstr "Pasifleştirilmiş karşıtlık tipi"
 #. i18n: file: colorsettings.ui:1110
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledContrastBox)
 #: rc.cpp:366 rc.cpp:968
-#, fuzzy
 #| msgid "None"
 msgctxt "no disabled contrast"
 msgid "None"
