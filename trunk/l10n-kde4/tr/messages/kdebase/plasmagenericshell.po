@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: widgetsexplorer/openwidgetassistant.cpp:46
 msgid "Select the type of widget to install from the list below."
@@ -48,34 +48,32 @@ msgid "Installing the package %1 failed."
 msgstr "%1 paketinin kurulumu başarısız oldu."
 
 #: widgetsexplorer/applettooltip.cpp:124
-#, fuzzy
-#| msgid "Install New Widgets"
 msgid "Uninstall Widget"
-msgstr "Yeni Programcıklar Kur"
+msgstr "Programcığı Kaldır"
 
 #: widgetsexplorer/applettooltip.cpp:187
 #, kde-format
 msgid "Version %1"
-msgstr ""
+msgstr "Sürüm %1"
 
 #: widgetsexplorer/applettooltip.cpp:193
 #, kde-format
 msgid "<font color=\"%1\">Author:</font>"
-msgstr ""
+msgstr "<font color=\"%1\">Yazar:</font>"
 
 #: widgetsexplorer/applettooltip.cpp:202
 #, kde-format
 msgid "<font color=\"%1\">Website:</font>"
-msgstr ""
+msgstr "<font color=\"%1\">Web Sayfası:</font>"
 
 #: widgetsexplorer/applettooltip.cpp:206
 #, kde-format
 msgid "<font color=\"%1\">License:</font>"
-msgstr ""
+msgstr "<font color=\"%1\">Lisans:</font>"
 
 #: widgetsexplorer/applettooltip.cpp:215
 msgid "Unknown Applet"
-msgstr ""
+msgstr "Bilinmeyen programcık"
 
 #: widgetsexplorer/widgetexplorer.cpp:120
 msgid "All Widgets"
@@ -83,11 +81,9 @@ msgstr "Tüm Programcıklar"
 
 #: widgetsexplorer/widgetexplorer.cpp:124
 msgid "Running"
-msgstr ""
+msgstr "Çalışıyor"
 
 #: widgetsexplorer/widgetexplorer.cpp:128
-#, fuzzy
-#| msgid "Category:"
 msgid "Categories:"
 msgstr "Kategori:"
 
@@ -96,10 +92,8 @@ msgid "Filters"
 msgstr "Filtreler"
 
 #: widgetsexplorer/appletsfiltering.cpp:175
-#, fuzzy
-#| msgid "Enter search phrase here"
 msgid "Enter Search Term"
-msgstr "Aranacak ifadeyi buraya girin"
+msgstr "Aranacak İfadeyi Girin"
 
 #: widgetsexplorer/appletsfiltering.cpp:180
 #: widgetsexplorer/appletsfiltering.cpp:181
@@ -112,9 +106,7 @@ msgstr "Yeni Plasma Gereçleri İndir"
 
 #: widgetsexplorer/appletsfiltering.cpp:334
 #, kde-format
-msgctxt ""
-"%1 is a type of widgets, as defined by e.g. some plasma-packagestructure-*."
-"desktop files"
+msgctxt "%1 is a type of widgets, as defined by e.g. some plasma-packagestructure-*.desktop files"
 msgid "Download New %1"
 msgstr "Yeni %1 İndir"
 
@@ -128,11 +120,11 @@ msgstr "Kapsayıcılar"
 
 #: tests/background.cpp:38
 msgid "Plasma"
-msgstr ""
+msgstr "Plasma"
 
 #: tests/background.cpp:40
 msgid "(C) 2008, Aaron Seigo"
-msgstr ""
+msgstr "(C) 2008, Aaron Seigo"
 
 #: backgrounddialog.cpp:208
 msgid "Desktop Settings"
@@ -147,23 +139,16 @@ msgid "Activity"
 msgstr "Eylem"
 
 #: backgrounddialog.cpp:226
-msgid ""
-"This picture of a monitor contains a preview of what the current settings "
-"will look like on your desktop."
-msgstr ""
-"Bu ekran resmi güncel ayarların masaüstünde nasıl görüntüleneceğini gösterir."
+msgid "This picture of a monitor contains a preview of what the current settings will look like on your desktop."
+msgstr "Bu ekran resmi güncel ayarların masaüstünde nasıl görüntüleneceğini gösterir."
 
 #: backgrounddialog.cpp:246
-#, fuzzy
-#| msgid "Mouse Plugins"
 msgid "Mouse Actions"
-msgstr "Fare Eklentileri"
+msgstr "Fare Eylemleri"
 
 #: mouseinputbutton.cpp:33
-#, fuzzy
-#| msgid "Add Widget"
 msgid "Set Trigger..."
-msgstr "Programcık Ekle"
+msgstr "Tetikleyici Ayarla..."
 
 #: mouseinputbutton.cpp:33
 msgid "Click to change how an action is triggered"
@@ -210,14 +195,12 @@ msgid "Input here..."
 msgstr "Buraya girin..."
 
 #: mouseinputbutton.cpp:71
-msgid ""
-"Hold down the modifier keys you want, then click a mouse button or scroll a "
-"mouse wheel here"
+msgid "Hold down the modifier keys you want, then click a mouse button or scroll a mouse wheel here"
 msgstr ""
 
 #: mousepluginwidget.cpp:46
 msgid "No plugins found, check your installation."
-msgstr ""
+msgstr "Eklenti bulunamadı, kurulumuzunu kontrol edin."
 
 #: mousepluginwidget.cpp:215
 msgid "Configure Plugin"
@@ -225,17 +208,15 @@ msgstr "Eklentiyi Yapılandır"
 
 #: mouseplugins.cpp:38
 msgid "Add Action..."
-msgstr ""
+msgstr "Eylem Ekle..."
 
 #: mouseplugins.cpp:38
 msgid "Add another mouse action"
-msgstr ""
+msgstr "Başka bir fare eylemi ekle"
 
 #: mouseplugins.cpp:79
-#, fuzzy
-#| msgid "This trigger is assigned to another plugin."
 msgid "This trigger is already assigned to another action."
-msgstr "Bu tetikleyici başka bir eklentiye atandı."
+msgstr "Bu tetikleyici başka bir eklentiye atanmış."
 
 #: mouseplugins.cpp:79 mouseplugins.cpp:158
 msgid "Reassign"
@@ -285,8 +266,6 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
-#, fuzzy
-#~| msgid "Add Widget"
 #~ msgid "Add Trigger"
 #~ msgstr "Programcık Ekle"
 
@@ -308,9 +287,7 @@ msgstr "tulliana@gmail.com"
 #~ msgid "Configure..."
 #~ msgstr "Yapılandır..."
 
-#~ msgctxt ""
-#~ "%1 is the entity (person, staff, organization...) which recommends the "
-#~ "widget"
+#~ msgctxt "%1 is the entity (person, staff, organization...) which recommends the widget"
 #~ msgid "Recommended by %1"
 #~ msgstr "%1 tarafından önerildi"
 
@@ -329,31 +306,17 @@ msgstr "tulliana@gmail.com"
 #~ msgid "Close the dialog"
 #~ msgstr "Pencereyi kapat"
 
-#~ msgid ""
-#~ "<qt>When clicking <b>Close</b>, this dialog will be closed with no "
-#~ "further action taken.</qt>"
-#~ msgstr ""
-#~ "<qt><b>Kapat</b> düğmesine tıkladığınızda pencere kapatılacak ve daha "
-#~ "fazla işlem yapılmayacak.</qt>"
+#~ msgid "<qt>When clicking <b>Close</b>, this dialog will be closed with no further action taken.</qt>"
+#~ msgstr "<qt><b>Kapat</b> düğmesine tıkladığınızda pencere kapatılacak ve daha fazla işlem yapılmayacak.</qt>"
 
 #~ msgid "Add selected widgets"
 #~ msgstr "Seçilen programcıkları ekle"
 
-#~ msgid ""
-#~ "<qt>When clicking <b>Add Widget</b>, the selected widgets will be added "
-#~ "to your desktop.</qt>"
-#~ msgstr ""
-#~ "<qt><b>Programcık Ekle</b> düğmesine tıkladığınızda seçilen programcık "
-#~ "masaüstünüze eklenecek.</qt>"
+#~ msgid "<qt>When clicking <b>Add Widget</b>, the selected widgets will be added to your desktop.</qt>"
+#~ msgstr "<qt><b>Programcık Ekle</b> düğmesine tıkladığınızda seçilen programcık masaüstünüze eklenecek.</qt>"
 
 #~ msgid "Install new widgets"
 #~ msgstr "Yeni programcıklar kur"
 
-#~ msgid ""
-#~ "<qt>Selecting <b>Get New Widgets</b> will show a window that allows you "
-#~ "to download new widgets directly from the Internet, while Install From "
-#~ "File allows you to add new widgets from files you have on disk.</qt>"
-#~ msgstr ""
-#~ "<qt><b>Yeni Programcıklar Al</b> düğmesine tıkladığınızda İnternet'ten "
-#~ "yeni programcıklar alanızı sağlayacak bir pencere açılacak. Dosyadan Kur "
-#~ "seçeneği ise diskinizde kayıtlı olan programcıkları kurmanızı sağlar.</qt>"
+#~ msgid "<qt>Selecting <b>Get New Widgets</b> will show a window that allows you to download new widgets directly from the Internet, while Install From File allows you to add new widgets from files you have on disk.</qt>"
+#~ msgstr "<qt><b>Yeni Programcıklar Al</b> düğmesine tıkladığınızda İnternet'ten yeni programcıklar alanızı sağlayacak bir pencere açılacak. Dosyadan Kur seçeneği ise diskinizde kayıtlı olan programcıkları kurmanızı sağlar.</qt>"
