@@ -47,7 +47,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
         self.initialize()
-        self.setSelectAll()
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
@@ -157,7 +156,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.initializeGroupList()
 
     def groupFilter(self):
-        self.setSelectAll()
         self.packageList.resetMoreInfoRow()
         packages = self.state.groupPackages(self.groupList.currentGroup())
         self.packageList.model().setFilterRole(GroupRole)
@@ -166,7 +164,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         restoreCursor()
 
     def searchActivated(self):
-        self.setSelectAll()
         self.packageList.resetMoreInfoRow()
         waitCursor()
         packages = self.packageList.search(str(self.searchLine.text()).split())
@@ -249,7 +246,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.basket.setActionEnabled(enabled)
 
     def switchState(self, state, action=True):
-        self.setSelectAll()
         self.searchLine.clear()
         self.state.setState(state)
         self.setActionButton()
@@ -268,7 +264,9 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.packageList.selectAll(packages)
 
     def toggleSelectAll(self, toggled):
-        if toggled and self._last_packages:
+        if toggled:
+            if not self._last_packages:
+                self._last_packages = self.packageList.model().getFilteredPackages()
             self.setReverseAll(self._last_packages)
         else:
             self._last_packages = self.packageList.model().getFilteredPackages()
