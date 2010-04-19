@@ -9255,7 +9255,7 @@ msgstr "Arşiv"
 
 #: archivefolderdialog.cpp:49
 msgid "Archive Folder"
-msgstr "Yeni Klasör"
+msgstr "Klasör Arşivle"
 
 #: archivefolderdialog.cpp:75
 msgid "F&ormat:"
