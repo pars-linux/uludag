@@ -61,7 +61,7 @@ msgstr "Çevrim içi sıralamalar"
 
 #: ksquareswindow.cpp:336
 msgid "List of seats"
-msgstr ""
+msgstr "Koltukların listesi"
 
 #: ksquareswindow.cpp:342
 msgid "Start a new game with the current settings"
