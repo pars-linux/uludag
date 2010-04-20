@@ -1,26 +1,27 @@
 # translation of ksysguard.po to Turkish
 # translation of ksysguard.po to
 # Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
-# 
+#
 # Görkem Çetin <gorkem@gelecek.com.tr>, 2000.
 # Serdar Cevher <scevher@anet.com.tr>, 2001.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksysguard\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2009-10-28 15:51+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 13:51+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: SensorDisplayLib/FancyPlotter.cc:178
 msgctxt "Largest axis title"
@@ -50,7 +51,7 @@ msgid "<p><b>%1:</b><br>"
 msgstr "<p><b>%1:</b><br>"
 
 #: SensorDisplayLib/FancyPlotter.cc:582
-#, fuzzy, kde-format
+#, kde-format
 msgid "%1 of %2%1"
 msgstr "%1 of %2%1"
 
@@ -202,7 +203,7 @@ msgstr "En yüksek değer:"
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:119
 msgid "Enter the soft maximum value for the display here. The upper range will not be reduced below this value, but will still go above this number for values above this value."
-msgstr ""
+msgstr "Görünen alan için yaklaşık en yüksek değeri giriniz. Tepe değeri bu değerin altına indirilmeyecek, ancak bu değerin üzerindeki sayılar için yükselmeye devam edecek."
 
 #: SensorDisplayLib/FancyPlotterSettings.cc:126
 msgid "Horizontal scale"
@@ -883,7 +884,7 @@ msgstr "Başarısız Olan Aygıtlar"
 
 #: ksgrd/SensorManager.cc:156
 msgid "Spare Devices"
-msgstr ""
+msgstr "Ayrılmış Aygıtlar"
 
 #: ksgrd/SensorManager.cc:157
 msgid "Number of Raid Devices"
@@ -903,7 +904,7 @@ msgstr "Aygıt Sayısı"
 
 #: ksgrd/SensorManager.cc:161
 msgid "Resyncing Percent"
-msgstr ""
+msgstr "Yineleme Yüzdesi"
 
 #: ksgrd/SensorManager.cc:162
 msgid "Disk Information"
@@ -1017,7 +1018,7 @@ msgstr "Silinebilecek bir çalışma alanınız yok."
 #: Workspace.cc:300
 #, kde-format
 msgid "<qt>To propose the current custom tab as a new System Monitor tab, email <br><a href=\"file:%1\">%2</a><br> to <a href=\"mailto:john.tapsell@kde.org?subject='System Monitor Tab'&attach='file://%2'\">john.tapsell@kde.org</a></qt>"
-msgstr ""
+msgstr "<qt>Mevcut özel ayarları yeni Sistem Monitörü ayarı olarak önermek için, <br><a href=\"file:%1\">%2</a><br> dosyasını <a href=\"mailto:john.tapsell@kde.org?subject='System Monitor Tab'&attach='file://%2'\">john.tapsell@kde.org</a> adresine e-posta ile yollayınız</qt>"
 
 #: Workspace.cc:300
 msgid "Upload custom System Monitor tab"
@@ -1281,6 +1282,8 @@ msgstr "Çalışma kağıdının boş hücrelerine algılayıcıları sürükley
 #: SensorBrowser.cc:474
 msgid "The sensor browser lists the connected hosts and the sensors that they provide. Click and drag sensors into drop zones of a worksheet. A display will appear that visualizes the values provided by the sensor. Some sensor displays can display values of multiple sensors. Simply drag other sensors on to the display to add more sensors."
 msgstr ""
+"Algılayıcı tarayıcısı bağlı olan sistemleri ve sundukları algılayıcı bilgilerini gösterir. Algılayıcıları sürükle bırak yöntemi ile ana tabloya taşıyıp yerleştirdiğinizde algılayıcı tarafından iletilen değerler burada görüntülenecektir. Bazı algılayıcı görüntüleri birden çok algılayıcı değerini aynı anda gösterebilir. Bu özelliklerini "
+"açmak için diğer algılayıcıları algılayıcı görüntü alanına sürükleyip bırakmanız yeterlidir."
 
 #: HostConnector.cc:44
 msgid "Connect Host"
