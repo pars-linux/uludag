@@ -23,8 +23,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: filesharing/advanced/kcm_sambaconf/kcmsambaconf.desktop:20
 msgctxt "Comment"
@@ -43,11 +43,8 @@ msgstr "Dosya Paylaşımı Konqueror Dizin Özellikleri Sayfası"
 
 #: filesharing/advanced/propsdlgplugin/fileshare_propsdlgplugin.desktop:66
 msgctxt "Comment"
-msgid ""
-"Konqueror properties dialog plugin to share a directory with the local "
-"network"
-msgstr ""
-"Yerel ağ ile dizin paylaşımı için Konqueror iletişim eklentisi özellikleri"
+msgid "Konqueror properties dialog plugin to share a directory with the local network"
+msgstr "Yerel ağ ile dizin paylaşımı için Konqueror iletişim eklentisi özellikleri"
 
 #: filesharing/simple/fileshare.desktop:11
 msgctxt "Name"
@@ -627,12 +624,9 @@ msgid "Cannot Connect"
 msgstr "Bağlanılamıyor"
 
 #: kopete/kopete/kopete.notifyrc:2102
-#, fuzzy
-#| msgctxt "Comment"
-#| msgid "Kopete can't connect to the service"
 msgctxt "Comment"
 msgid "Kopete cannot connect to the service"
-msgstr "Kopete servise bağlanamıyor"
+msgstr "Kopete hizmete bağlanamıyor"
 
 #: kopete/kopete/kopete.notifyrc:2145
 msgctxt "Name"
@@ -650,12 +644,9 @@ msgid "Server Internal Error"
 msgstr "Sunucu İç Hatası"
 
 #: kopete/kopete/kopete.notifyrc:2315
-#, fuzzy
-#| msgctxt "Comment"
-#| msgid "An service internal error has occurred"
 msgctxt "Comment"
 msgid "An internal service error has occurred"
-msgstr "Servis içerinde bir hata oluştu"
+msgstr "İç hizmet hatası oluştu"
 
 #: kopete/kopete/kopete.notifyrc:2357
 msgctxt "Name"
@@ -693,25 +684,16 @@ msgid "Service Message"
 msgstr "Servis Mesajı"
 
 #: kopete/kopete/kopete.notifyrc:2727
-#, fuzzy
-#| msgctxt "Comment"
-#| msgid "An service message has been received (e.g. authorization request)"
 msgctxt "Comment"
 msgid "A service message has been received (e.g. authorization request)"
-msgstr "Bir servis mesajı alındı (yetkilendirme isteği gib)"
+msgstr "Bir hizmet iletisi alındı (yetkilendirme isteği)"
 
 #: kopete/kopete/kopete.notifyrc:2770
-#, fuzzy
-#| msgctxt "Name"
-#| msgid "GaduGadu contacts list"
 msgctxt "Name"
 msgid "Gadu-Gadu contacts list"
-msgstr "GaduGadu kişi listesi"
+msgstr "Gadu-Gadu kişi listesi"
 
 #: kopete/kopete/kopete.notifyrc:2806
-#, fuzzy
-#| msgctxt "Comment"
-#| msgid "Contacts list have been received/exported/deleted"
 msgctxt "Comment"
 msgid "Contact list has been received/exported/deleted"
 msgstr "Kişi listesi alındı/dışarıya aktarıldı/silindi"
@@ -1241,7 +1223,7 @@ msgstr "KRDC"
 #: krdc/krdc_approver/krdc_rfb_approver.notifyrc:97
 msgctxt "Name"
 msgid "Incoming RFB Tube"
-msgstr ""
+msgstr "Gelen RFB Tube"
 
 #: krdc/krdc.desktop:57
 msgctxt "GenericName"
@@ -1527,8 +1509,7 @@ msgstr "Babul edilmiş beklenmedik bağlantı, durdur"
 
 #~ msgctxt "Comment"
 #~ msgid "Show the status of (parts of) your contact list on a web page"
-#~ msgstr ""
-#~ "Bağlantı listesinde web sayfası olanların (bölümler) durumunu göster"
+#~ msgstr "Bağlantı listesinde web sayfası olanların (bölümler) durumunu göster"
 
 #~ msgctxt "Comment"
 #~ msgid "Bittorrent-Transfer plugin for KGet"
