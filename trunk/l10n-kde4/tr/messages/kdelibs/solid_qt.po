@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: backends/hal/haldevice.cpp:71
 #, qt-format
@@ -324,11 +324,11 @@ msgstr "Ses CDsi"
 #, qt-format
 msgctxt "%1 is the size"
 msgid "%1 Encrypted Container"
-msgstr ""
+msgstr "Şifrelenmiş Taşıyıcı (%1)"
 
 #: backends/hal/haldevice.cpp:812
 msgid "Encrypted Container"
-msgstr ""
+msgstr "Şifrelenmiş Taşıyıcı"
 
 #: backends/hal/haldevice.cpp:829
 #, qt-format
