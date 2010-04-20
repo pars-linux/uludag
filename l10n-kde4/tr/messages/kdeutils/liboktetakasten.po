@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2010-04-19 16:22+0300\n"
+"PO-Revision-Date: 2010-04-20 11:47+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -115,12 +115,12 @@ msgstr[0] " bayt"
 #: gui/io/bytearrayrandomdatageneratorconfigeditor.cpp:55
 msgctxt "@info:whatsthis"
 msgid "Enter the size of the byte to generate."
-msgstr ""
+msgstr "Oluşturulacak baytın boyutunu girin."
 
 #: gui/io/bytearrayrandomdatageneratorconfigeditor.cpp:63
 msgctxt "@item name of the generated data"
 msgid "Random Data"
-msgstr ""
+msgstr "Rastgele Veri"
 
 #: gui/io/bytearraysequencegenerator.cpp:51
 msgctxt "name of the generated data"
@@ -185,12 +185,12 @@ msgstr ""
 #: gui/io/bytearraysourcecodestreamencoderconfigeditor.cpp:100
 msgctxt "@item name of the encoding result"
 msgid "C Array"
-msgstr ""
+msgstr "C Dizisi"
 
 #: gui/io/bytearraysourcecodestreamencoder.cpp:69
 msgctxt "name of the encoding target"
 msgid "C Array..."
-msgstr ""
+msgstr "C Dizisi..."
 
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:49
 msgctxt "@label:textbox"
@@ -213,7 +213,7 @@ msgstr "&Numara:"
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:71
 msgctxt "@info:whatsthis"
 msgid "Enter the number of times the pattern should be inserted."
-msgstr ""
+msgstr "Eklenecek desenin kaç kere ekleneceğini girin."
 
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:81
 msgctxt "@item name of the generated data"
@@ -223,7 +223,7 @@ msgstr "Desen"
 #: gui/io/bytearrayrandomdatagenerator.cpp:54
 msgctxt "name of the generated data"
 msgid "Random Data..."
-msgstr ""
+msgstr "Rastgele Veri..."
 
 #: gui/io/bytearrayrandomdatagenerator.cpp:80
 msgid "RandomData inserted."
@@ -266,14 +266,14 @@ msgstr "&Seçimi genişlet"
 #: controllers/view/selectrange/selectrangeview.cpp:97
 msgctxt "@info:whatsthis"
 msgid "Extend the selection by the cursor move."
-msgstr ""
+msgstr "İmleç hareketiyle seçimi genişlet."
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:82
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:106
 #: controllers/view/selectrange/selectrangeview.cpp:100
 msgctxt "@option:check"
 msgid "&Backwards"
-msgstr ""
+msgstr "&Geri"
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:84
 #: controllers/view/selectrange/selectrangeview.cpp:102
@@ -321,7 +321,7 @@ msgstr "&Satırlar"
 #: controllers/view/structures/datatypes/uint64datainformation.h:38
 msgctxt "Data type"
 msgid "unsigned long"
-msgstr ""
+msgstr "unsigned long"
 
 #: controllers/view/structures/datatypes/bool32datainformation.cpp:27
 #: controllers/view/structures/datatypes/bool16datainformation.cpp:27
@@ -340,7 +340,7 @@ msgstr ""
 #: controllers/view/structures/datatypes/uint8datainformation.cpp:27
 msgctxt "invalid value (out of range)"
 msgid "<invalid>"
-msgstr ""
+msgstr "<geçersiz>"
 
 #: controllers/view/structures/datatypes/bool32datainformation.cpp:31
 #: controllers/view/structures/datatypes/bool16datainformation.cpp:31
@@ -348,7 +348,7 @@ msgstr ""
 #: controllers/view/structures/datatypes/bool8datainformation.cpp:31
 msgctxt "boolean value"
 msgid "false"
-msgstr ""
+msgstr "yanlış"
 
 #: controllers/view/structures/datatypes/bool32datainformation.cpp:33
 #: controllers/view/structures/datatypes/bool16datainformation.cpp:33
@@ -356,7 +356,7 @@ msgstr ""
 #: controllers/view/structures/datatypes/bool8datainformation.cpp:33
 msgctxt "boolean value"
 msgid "true"
-msgstr ""
+msgstr "doğru"
 
 #: controllers/view/structures/datatypes/bool32datainformation.cpp:42
 #: controllers/view/structures/datatypes/bool16datainformation.cpp:42
@@ -365,7 +365,7 @@ msgstr ""
 #, kde-format
 msgctxt "boolean value with actual value"
 msgid "true (%1)"
-msgstr ""
+msgstr "doğru (%1)"
 
 #: controllers/view/structures/datatypes/int8datainformation.h:38
 #| msgid " byte"
@@ -377,12 +377,12 @@ msgstr "byte"
 #: controllers/view/structures/datatypes/structuredatainformation.cpp:26
 msgctxt "data type in C/C++"
 msgid "struct"
-msgstr ""
+msgstr "yapı"
 
 #: controllers/view/structures/datatypes/doubledatainformation.h:41
 msgctxt "Data type"
 msgid "double"
-msgstr ""
+msgstr "double"
 
 #: controllers/view/structures/datatypes/int32datainformation.h:39
 #| msgctxt "@item:inlistbox coding of the bytes as values in the binary format"
@@ -394,12 +394,12 @@ msgstr "int"
 #: controllers/view/structures/datatypes/int16datainformation.h:39
 msgctxt "Data type"
 msgid "short"
-msgstr ""
+msgstr "short"
 
 #: controllers/view/structures/datatypes/int64datainformation.h:39
 msgctxt "Data type"
 msgid "long"
-msgstr ""
+msgstr "long"
 
 #: controllers/view/structures/datatypes/uint8datainformation.h:38
 #| msgctxt "@label:textbox"
@@ -439,10 +439,15 @@ msgid_plural ""
 "Type: %4\n"
 "Size: %5 (%1 children)"
 msgstr[0] ""
+"İsim: %2\n"
+"Değer: %3\n"
+"\n"
+"Tip: %4\n"
+"Boyut: %5 (%1 children)"
 
 #: controllers/view/structures/datatypes/abstractarraydatainformation.cpp:30
 msgid "Empty array"
-msgstr ""
+msgstr "Boş dizi"
 
 #: controllers/view/structures/datatypes/abstractarraydatainformation.cpp:36
 #, kde-format
@@ -456,7 +461,7 @@ msgstr "%1[%2]"
 #, kde-format
 msgctxt "subelem type then array name and length"
 msgid "%1[%2] (%3)"
-msgstr ""
+msgstr "%1[%2] (%3)"
 
 #: controllers/view/structures/datatypes/enumdatainformation.cpp:59
 #, kde-format
@@ -468,22 +473,22 @@ msgstr "%1 (%2)"
 #: controllers/view/structures/datatypes/enumdatainformation.cpp:62
 #, kde-format
 msgid "%1 (value not in enum)"
-msgstr ""
+msgstr "%1 (değer enum içerisinde değil)"
 
 #: controllers/view/structures/datatypes/enumdatainformation.cpp:70
 #, kde-format
 msgid "enum (%1)"
-msgstr ""
+msgstr "enum (%1)"
 
 #: controllers/view/structures/datatypes/bool32datainformation.h:38
 msgctxt "Data type"
 msgid "bool (4 bytes)"
-msgstr ""
+msgstr "bool (4 bytes)"
 
 #: controllers/view/structures/datatypes/bool16datainformation.h:39
 msgctxt "Data type"
 msgid "bool (2 bytes)"
-msgstr ""
+msgstr "bool (2 bayt)"
 
 #: controllers/view/structures/datatypes/primitivedatainformation.cpp:106
 #, kde-format
@@ -494,16 +499,21 @@ msgid ""
 "Type: %3\n"
 "Size: %4"
 msgstr ""
+"İsim: %1\n"
+"Değer: %2\n"
+"\n"
+"Tip: %3\n"
+"Boyut: %4"
 
 #: controllers/view/structures/datatypes/floatdatainformation.h:41
 msgctxt "Data type"
 msgid "float"
-msgstr ""
+msgstr "float"
 
 #: controllers/view/structures/datatypes/bool64datainformation.h:39
 msgctxt "Data type"
 msgid "bool (8 bytes)"
-msgstr ""
+msgstr "bool (8 bayt)"
 
 #: controllers/view/structures/datatypes/bool8datainformation.h:38
 #| msgid "1 byte"
@@ -515,7 +525,7 @@ msgstr "bool (1 byte)"
 #: controllers/view/structures/datatypes/uniondatainformation.cpp:27
 msgctxt "data type in C/C++"
 msgid "union"
-msgstr ""
+msgstr "union"
 
 #: controllers/view/structures/datatypes/uint32datainformation.h:38
 #| msgctxt "@label:textbox"
@@ -539,31 +549,31 @@ msgstr "Değişiklikleri Uygula"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:93
 msgid "Structure Definitions"
-msgstr ""
+msgstr "Yapı Tanımlamaları"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:115
 #: controllers/view/structures/settings/structuresmanagerview.cpp:138
 msgid "*.osd|Okteta structure definition files (*.osd)"
-msgstr ""
+msgstr "*.osd|Okteta yapı tanımlama dosyaları (*.osd)"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:117
 msgctxt "@title:window Do import the structure definitions"
 msgid "Import Structure Definitions"
-msgstr ""
+msgstr "Yapı Tanımlamalarını İçeri Aktar"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:140
 msgctxt "@title:window Do export the structure definition"
 msgid "Export Structure Definition"
-msgstr ""
+msgstr "Yapı Tanımını Dışarı Aktar"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:152
 #: controllers/view/structures/settings/structuresmanagerview.cpp:177
 msgid "Error"
-msgstr ""
+msgstr "Hata"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:176
 msgid "You do not have permission to delete that structure definition."
-msgstr ""
+msgstr "Bu yapı tanımlamasını silmeye yetkiniz yok."
 
 #: controllers/view/structures/settings/structureaddremovewidget.cpp:56
 #| msgctxt "@option:check"
@@ -582,7 +592,7 @@ msgstr "Kullanılan yapılar"
 #: controllers/view/structures/structuredefinitionfile.cpp:95
 #: controllers/view/structures/structuredefinitionfile.cpp:110
 msgid "<no name specified>"
-msgstr ""
+msgstr "<isim belirtilmemiş>"
 
 #: controllers/view/structures/structuredefinitionfile.cpp:253
 #: controllers/view/structures/structuredefinitionfile.cpp:298
@@ -590,7 +600,7 @@ msgstr ""
 #: controllers/view/structures/structuredefinitionfile.cpp:329
 #: controllers/view/structures/structuredefinitionfile.cpp:345
 msgid "<invalid name>"
-msgstr ""
+msgstr "<geçersiz isim>"
 
 #: controllers/view/structures/structview.cpp:87
 #: controllers/view/poddecoder/podtableview.cpp:82
@@ -620,7 +630,7 @@ msgstr "Ayarlar"
 #: controllers/view/structures/structview.cpp:101
 msgctxt "@info:tooltip"
 msgid "Open settings."
-msgstr ""
+msgstr "Ayarları aç."
 
 #: controllers/view/structures/structview.cpp:132
 #| msgctxt "@item name of the encoding result"
@@ -636,17 +646,17 @@ msgstr "Yapılar"
 
 #: controllers/view/structures/structview.cpp:145
 msgid "Structures management"
-msgstr ""
+msgstr "Yapı yönetimi"
 
 #: controllers/view/structures/structtool.cpp:75
 msgctxt "@title:window"
 msgid "Structures"
-msgstr ""
+msgstr "Yapılar"
 
 #: controllers/view/structures/structtool.cpp:187
 msgctxt "name of a data structure"
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: controllers/view/structures/structtool.cpp:189
 #| msgctxt "@title:column name of the datatype"
@@ -671,7 +681,7 @@ msgstr "En küçük uzunluk:"
 #: controllers/view/stringsextract/stringsextractview.cpp:72
 msgctxt "@action:button extract the strings from the byte array"
 msgid "&Extract"
-msgstr ""
+msgstr "&Çıkart"
 
 #: controllers/view/stringsextract/stringsextractview.cpp:73
 msgctxt "@info:tooltip"
@@ -695,7 +705,7 @@ msgstr "Filtrele:"
 
 #: controllers/view/stringsextract/stringsextractview.cpp:93
 msgid "Enter a term to limit the list."
-msgstr ""
+msgstr "Listeyi sınırlamak için bir sınır girin."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:136
 msgid "C&opy"
@@ -715,7 +725,7 @@ msgstr ""
 
 #: controllers/view/stringsextract/stringsextractview.cpp:147
 msgid "&Show"
-msgstr ""
+msgstr "&Göster"
 
 #: controllers/view/stringsextract/stringsextractview.cpp:148
 msgctxt "@info:tooltip"
@@ -732,7 +742,7 @@ msgstr ""
 #: controllers/view/stringsextract/stringsextractview.cpp:168
 msgctxt "@info:tooltip"
 msgid "Warning: Byte Array has been modified since last update."
-msgstr ""
+msgstr "Uyarı: Byte Array son güncellemeden sonra düzenlenmiş."
 
 #: controllers/view/stringsextract/stringsextracttool.cpp:68
 msgctxt "@title:window of the tool to extract strings"
@@ -757,12 +767,12 @@ msgstr "İşlem:"
 #: controllers/view/filter/filterview.cpp:64
 msgctxt "@info:tooltip"
 msgid "The operation to use for the filter."
-msgstr ""
+msgstr "Filtre için kullanılacak işlem."
 
 #: controllers/view/filter/filterview.cpp:68
 msgctxt "@info:whatsthis"
 msgid "Select the operation to use for the filter."
-msgstr ""
+msgstr "Filtre için kullanılacak işlemi seçin."
 
 #: controllers/view/filter/filterview.cpp:76
 #: controllers/view/checksum/checksumview.cpp:77
@@ -801,7 +811,6 @@ msgid "Find"
 msgstr "Bul"
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:71
-#, fuzzy
 #| msgctxt "@info:whatsthis"
 #| msgid ""
 #| "Enter a pattern to search for, or select a previous pattern from the list."
@@ -809,9 +818,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Enter the bytes to search for, or select bytes previously searched for from "
 "the list."
-msgstr ""
-"Aranacak desen'i girin veya daha önceden girilmiş bir tanesini listeden "
-"seçin."
+msgstr "Aranacak baytı girin veya listeden önceden aranmış baytı seçin."
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:93
 msgctxt "@title:group"
@@ -876,7 +883,7 @@ msgstr "Başlık"
 #: controllers/view/bookmarks/bookmarksview.cpp:88
 msgctxt "@info:tooltip"
 msgid "Creates a new bookmark for the current cursor position."
-msgstr ""
+msgstr "Şu anki imleç konumu için bir yerimi oluştur."
 
 #: controllers/view/bookmarks/bookmarksview.cpp:90
 msgctxt "@info:whatsthis"
@@ -884,6 +891,7 @@ msgid ""
 "If you press this button, a new bookmark will be created for the current "
 "cursor position."
 msgstr ""
+"Bu düğmeye basarsanız, imlecin şu anki konumuna bir yer imi oluşturulacak."
 
 #. i18n("&Go to")
 #: controllers/view/bookmarks/bookmarksview.cpp:99
@@ -895,7 +903,7 @@ msgstr "Seçili tüm yerimlerini siler."
 msgctxt "@info:whatsthis"
 msgid ""
 "If you press this button, all bookmarks which are selected will be deleted."
-msgstr ""
+msgstr "Bu düğmeye tıklarsanız, seçili tüm yerimleri silinecek."
 
 #. i18n("&Go to")
 #: controllers/view/bookmarks/bookmarksview.cpp:110
@@ -1132,7 +1140,7 @@ msgstr "Seç"
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Byte Array %1"
-msgstr ""
+msgstr "%1 Bayt Dizisini Bas"
 
 #: controllers/view/print/printtool.cpp:106
 msgctxt "in the header of the printed page, e.g. Page 2 of 20"
@@ -1649,7 +1657,6 @@ msgid "Replace With"
 msgstr "Değiştir"
 
 #: controllers/view/replace/kreplacedialog.cpp:64
-#, fuzzy
 #| msgctxt "@info:whatsthis"
 #| msgid ""
 #| "Enter a pattern to search for, or select a previous pattern from the list."
@@ -1658,7 +1665,7 @@ msgid ""
 "Enter the bytes to replace with, or select bytes previously replaced with "
 "from the list."
 msgstr ""
-"Aranacak desen'i girin veya daha önceden girilmiş bir tanesini listeden "
+"Değiştirilecek baytları seçin veya daha önceden değiştirilmiş baytı listeden "
 "seçin."
 
 #: controllers/view/replace/kreplacedialog.cpp:73
