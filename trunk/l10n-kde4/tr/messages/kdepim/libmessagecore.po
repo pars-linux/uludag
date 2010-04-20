@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: attachmentcompressjob.cpp:65
 msgid "Could not initiate attachment compression."
@@ -42,101 +42,41 @@ msgstr "%1 boyutunu aşan dosyaları ekleyemezsiniz."
 
 #: attachmentpropertiesdialog.cpp:126
 #, kde-format
-msgid ""
-"<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
-"touch this setting, since the type of the file is automatically checked; "
-"but, sometimes, %1 may not detect the type correctly -- here is where you "
-"can fix that.</p>"
-msgstr ""
-"<p>Dosyanın <em>MIME tipi:</em></p><p>Normal olarak bu ayarlara dokunmanıza "
-"gerek yoktur. Dosya türü otomatik olarak algılanmaktadır. Ancak bazen %1 "
-"uygulaması dosya türünü otomatik olarak bulamayabilir -- böyle durumlarda "
-"dosya türünü buradan ayarlayabilirsiniz.</p>"
+msgid "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to touch this setting, since the type of the file is automatically checked; but, sometimes, %1 may not detect the type correctly -- here is where you can fix that.</p>"
+msgstr "<p>Dosyanın <em>MIME tipi:</em></p><p>Normal olarak bu ayarlara dokunmanıza gerek yoktur. Dosya türü otomatik olarak algılanmaktadır. Ancak bazen %1 uygulaması dosya türünü otomatik olarak bulamayabilir -- böyle durumlarda dosya türünü buradan ayarlayabilirsiniz.</p>"
 
 #: attachmentpropertiesdialog.cpp:133
-msgid ""
-"<p>The estimated size of the attachment:</p><p>Note that, in an email "
-"message, a binary file encoded with base64 will take up four thirds the "
-"actual size of the file.</p>"
-msgstr ""
+msgid "<p>The estimated size of the attachment:</p><p>Note that, in an email message, a binary file encoded with base64 will take up four thirds the actual size of the file.</p>"
+msgstr "<p>Tahmini eklenti büyüklüğü:</p><p>E-posta iletisinde base64 ile kodlanmış bir ikili dosya, gerçek boyutunun dört bölü üçü kadar yer kaplar.</p>"
 
 #: attachmentpropertiesdialog.cpp:138
-msgid ""
-"<p>The file name of the part:</p><p>Although this defaults to the name of "
-"the attached file, it does not specify the file to be attached; rather, it "
-"suggests a file name to be used by the recipient's mail agent when saving "
-"the part to disk.</p>"
-msgstr ""
-"<p>Bölümün ismi:</p><p>her ne kadar bu eklenen dosyanın adı olarak "
-"varsayılan ise de, eklenen dosyaya özgü değildir; bundan ziyade, bölümün "
-"diske kaydedilmesi sırasında alıcının posta programı tarafından kullanılacak "
-"bir dosya adı önerir.</p>"
+msgid "<p>The file name of the part:</p><p>Although this defaults to the name of the attached file, it does not specify the file to be attached; rather, it suggests a file name to be used by the recipient's mail agent when saving the part to disk.</p>"
+msgstr "<p>Bölümün ismi:</p><p>her ne kadar bu eklenen dosyanın adı olarak varsayılan ise de, eklenen dosyaya özgü değildir; bundan ziyade, bölümün diske kaydedilmesi sırasında alıcının posta programı tarafından kullanılacak bir dosya adı önerir.</p>"
 
 #: attachmentpropertiesdialog.cpp:145
-msgid ""
-"<p>A description of the part:</p><p>This is just an informational "
-"description of the part, much like the Subject is for the whole message; "
-"most mail agents will show this information in their message previews "
-"alongside the attachment's icon.</p>"
-msgstr ""
-"<p>Bölümün tanımı:</p><p>bu, bölümün sadece bilgi amaçlı bir tanımıdır, "
-"tıpkı Konu kısmının bütün iletiyi ilgilendirmesi gibidir; pek çok posta "
-"programı, bu bilgiyi eklenti simgesinin yanında, ileti önizlemesinde "
-"gösterir.</p>"
+msgid "<p>A description of the part:</p><p>This is just an informational description of the part, much like the Subject is for the whole message; most mail agents will show this information in their message previews alongside the attachment's icon.</p>"
+msgstr "<p>Bölümün tanımı:</p><p>bu, bölümün sadece bilgi amaçlı bir tanımıdır, tıpkı Konu kısmının bütün iletiyi ilgilendirmesi gibidir; pek çok posta programı, bu bilgiyi eklenti simgesinin yanında, ileti önizlemesinde gösterir.</p>"
 
 #: attachmentpropertiesdialog.cpp:152
 #, kde-format
-msgid ""
-"<p>The transport encoding of this part:</p><p>Normally, you do not need to "
-"change this, since %1 will use a decent default encoding, depending on the "
-"MIME type; yet, sometimes, you can significantly reduce the size of the "
-"resulting message, e.g. if a PostScript file does not contain binary data, "
-"but consists of pure text -- in this case, choosing \"quoted-printable\" "
-"over the default \"base64\" will save up to 25% in resulting message size.</"
-"p>"
-msgstr ""
-"<p>Bu bölümün iletim kodlaması:</p><p>normalde, bunu değiştirmeniz gerekmez, "
-"çünkü %1 MIME türüne göre iyi bir varsayılan kodlama kullanacaktır; yine de "
-"bazen, oluşan iletinin boyutunu belirgin şekilde düşürebilirsiniz, örneğin, "
-"bir PostScript dosyasında ikilik veri yok ve sadece düz metin varsa, bu "
-"durumda varsayılan \"base64\" yerine \"alıntılanmış-basılabilir\" seçeneğini "
-"seçtiğinizde oluşan ileti boyutu 25%'e kadar küçülür.</p>"
+msgid "<p>The transport encoding of this part:</p><p>Normally, you do not need to change this, since %1 will use a decent default encoding, depending on the MIME type; yet, sometimes, you can significantly reduce the size of the resulting message, e.g. if a PostScript file does not contain binary data, but consists of pure text -- in this case, choosing \"quoted-printable\" over the default \"base64\" will save up to 25% in resulting message size.</p>"
+msgstr "<p>Bu bölümün iletim kodlaması:</p><p>normalde, bunu değiştirmeniz gerekmez, çünkü %1 MIME türüne göre iyi bir varsayılan kodlama kullanacaktır; yine de bazen, oluşan iletinin boyutunu belirgin şekilde düşürebilirsiniz, örneğin, bir PostScript dosyasında ikilik veri yok ve sadece düz metin varsa, bu durumda varsayılan \"base64\" yerine \"alıntılanmış-basılabilir\" seçeneğini seçtiğinizde oluşan ileti boyutu 25%'e kadar küçülür.</p>"
 
 #: attachmentpropertiesdialog.cpp:163
-msgid ""
-"<p>Check this option if you want to suggest to the recipient the automatic "
-"(inline) display of this part in the message preview, instead of the default "
-"icon view;</p><p>Technically, this is carried out by setting this part's "
-"<em>Content-Disposition</em> header field to \"inline\" instead of the "
-"default \"attachment\".</p>"
-msgstr ""
-"<p>Varsayılan simge görüntüsü yerine, ileti önizlemesinde bu bölümün "
-"otomatik (metin içi) görüntülenmesini alıcıya bildirmek istiyorsanız, bu "
-"seçeneği işaretleyin;<p><p>teknik olarak, bu olay ilgili kısmın <em>Content-"
-"Disposition</em> başlık alanının varsayılan değer olan \"ek dosya\" yerine "
-"\"metin içi\" olarak düzenlenmesi ile yapılmaktadır.</p>"
+msgid "<p>Check this option if you want to suggest to the recipient the automatic (inline) display of this part in the message preview, instead of the default icon view;</p><p>Technically, this is carried out by setting this part's <em>Content-Disposition</em> header field to \"inline\" instead of the default \"attachment\".</p>"
+msgstr "<p>Varsayılan simge görüntüsü yerine, ileti önizlemesinde bu bölümün otomatik (metin içi) görüntülenmesini alıcıya bildirmek istiyorsanız, bu seçeneği işaretleyin;<p><p>teknik olarak, bu olay ilgili kısmın <em>Content-Disposition</em> başlık alanının varsayılan değer olan \"ek dosya\" yerine \"metin içi\" olarak düzenlenmesi ile yapılmaktadır.</p>"
 
 #: attachmentpropertiesdialog.cpp:171
-msgid ""
-"<p>Check this option if you want this message part to be signed.</p><p>The "
-"signature will be made with the key that you associated with the currently-"
-"selected identity.</p>"
-msgstr ""
-"<p>Eğer bu ileti parçasının imzalanmasını istiyorsanız bu seçeneği "
-"etkinleştirin;</p><p>şu anda seçili kimlik ile ilişkilendirilen anahtar ile "
-"imzalama işlemi yapılacak.</p>"
+msgid "<p>Check this option if you want this message part to be signed.</p><p>The signature will be made with the key that you associated with the currently-selected identity.</p>"
+msgstr "<p>Eğer bu ileti parçasının imzalanmasını istiyorsanız bu seçeneği etkinleştirin;</p><p>şu anda seçili kimlik ile ilişkilendirilen anahtar ile imzalama işlemi yapılacak.</p>"
 
 #: attachmentpropertiesdialog.cpp:177
-msgid ""
-"<p>Check this option if you want this message part to be encrypted.</"
-"p><p>The part will be encrypted for the recipients of this message.</p>"
-msgstr ""
-"<p>Eğer bu ileti parçasının şifrelenmesini istiyorsanız bu seçeneği "
-"etkinleştirin;</p><p>bu iletinin alıcıları için bu parça şifrelenmiş "
-"olacaktır</p>"
+msgid "<p>Check this option if you want this message part to be encrypted.</p><p>The part will be encrypted for the recipients of this message.</p>"
+msgstr "<p>Eğer bu ileti parçasının şifrelenmesini istiyorsanız bu seçeneği etkinleştirin;</p><p>bu iletinin alıcıları için bu parça şifrelenmiş olacaktır</p>"
 
 #. i18n: file: attachmentpropertiesdialog.ui:14
-#. i18n: ectx: property (windowTitle), widget (QWidget, AttachmentPropertiesDialog)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. AttachmentPropertiesDialog)
 #: rc.cpp:3
 msgid "Attachment Properties"
 msgstr "Eklenti Özellikleri"
