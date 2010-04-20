@@ -61,7 +61,7 @@ msgstr "%1% (şarj edilmiş)"
 #, kde-format
 msgctxt "Shown when a time estimate is not available"
 msgid "%1% (discharging)"
-msgstr "%1% (şarj tüketiliyor)"
+msgstr "%1% (şarj boşalıyor)"
 
 #: battery.cpp:588 battery.cpp:605
 #, kde-format
