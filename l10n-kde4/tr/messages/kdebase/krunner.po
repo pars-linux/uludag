@@ -306,7 +306,7 @@ msgstr "Ekranın üst kenarı"
 #. i18n: ectx: property (text), widget (QRadioButton, freeFloatingButton)
 #: rc.cpp:9
 msgid "Free floating window"
-msgstr ""
+msgstr "Serbest kayan pencere"
 
 #. i18n: file: interfaceOptions.ui:57
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -352,7 +352,7 @@ msgstr "KRunner içerisinde kullanılacak arayüz biçimi"
 #. i18n: ectx: label, entry, group (General)
 #: rc.cpp:29
 msgid "Set to true to show the interface in a freely floating dialog instead of at the top of the screen"
-msgstr ""
+msgstr "Arayüzü ekranın tepesine sabitlemek yerine serbestçe kayan bir pencere olarak kullanmak için etkinleştirin"
 
 #. i18n: file: kcfg/krunner.kcfg:26
 #. i18n: ectx: label, entry, group (General)
