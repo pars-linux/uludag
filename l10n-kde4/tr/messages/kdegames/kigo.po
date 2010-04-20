@@ -1,23 +1,24 @@
 # translation of kigo.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Osman Tosun <rainman.neu@gmail.com>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kigo\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-11-10 16:13+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 15:44+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: gui/widgets/setupwidget.cpp:51 gui/widgets/gamewidget.cpp:62
 msgid " Stone"
@@ -216,16 +217,16 @@ msgid "Black resigned"
 msgstr "Siyah çekilmiş"
 
 #: game/game.cpp:418
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 response from Go engine"
 msgid "White %1"
-msgstr "Beyaz"
+msgstr "Beyaz %1"
 
 #: game/game.cpp:420
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 response from Go engine"
 msgid "Black %1"
-msgstr "Siyah "
+msgstr "Siyah %1"
 
 #: main.cpp:41
 msgid "Kigo"
@@ -475,6 +476,11 @@ msgid ""
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Please select a Go engine that supports the <span style=\" font-style:italic;\">GnuGo Text Protocol (GTP)</span>. The indicator light turns green when the selected backend is working.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Lütfen <span style=\" font-style:italic;\">GnuGo Text Protocol (GTP)</span> destekleyen bir Go motoru seçin. Seçili arka uç çalışıyorsa belirteç ışığı yeşile dönecektir.</p></body></html>"
 
 #. i18n: file: gui/config/generalconfig.ui:131
 #. i18n: ectx: property (title), widget (QGroupBox, appearanceGroupBox)
@@ -715,6 +721,13 @@ msgid ""
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt; color:#ff0000;\"></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:10pt;\">If you are sure that you already installed a suitable Go engine, you might want to configure Kigo to use that engine. Otherwise you should install a Go engine (like GnuGo).</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:10pt; color:#ff0000;\">Kigo Go motoru bulamadı.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Sans Serif'; font-size:10pt; color:#ff0000;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Sans Serif'; font-size:10pt;\">Uygun bir Go motoru yüklediğinizden eminseniz Kigo'yu o motoru kullanacak şekilde yapılandırabilirsiniz. Aksi takdirde GnuGo gibi bir Go motoru yüklemelisiziniz.</span></p></body></html>"
 
 #. i18n: file: gui/widgets/errorwidget.ui:49
 #. i18n: ectx: property (text), widget (KPushButton, configureButton)
