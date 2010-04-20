@@ -1,585 +1,255 @@
-# translation of kfindpart.po to Turkish
+# translation of kcmkwindecoration.po to Turkish
 # kde
-# Copyright (C) 2002, 2008 Free Software Foundation, Inc.
+# Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
 #
-# Görkem Çetin <gorkem@kde.org>, 2001,2002.
+# Görkem Çetin <gorkem@kde.org>, 2001, 2003.
+# Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: kfindpart\n"
+"Project-Id-Version: kcmkwindecoration\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-19 01:21+0100\n"
-"PO-Revision-Date: 2009-09-21 22:49+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"POT-Creation-Date: 2010-01-02 05:57+0100\n"
+"PO-Revision-Date: 2010-04-20 12:10+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
-#: kfinddlg.cpp:50
-msgid "Find Files/Folders"
-msgstr "Dosya ve Dizinleri Bul"
+#: buttons.cpp:610
+msgid "KDE"
+msgstr "KDE"
 
-#: kfinddlg.cpp:71 kfinddlg.cpp:198
-msgctxt "the application is currently idle, there is no active search"
-msgid "Idle."
-msgstr "Boşta."
-
-#: kfinddlg.cpp:133 kfinddlg.cpp:237 kfinddlg.cpp:266
+#: buttons.cpp:640
 #, kde-format
-msgid "one file found"
-msgid_plural "%1 files found"
-msgstr[0] "%1 dosya bulundu"
+msgid "%1 (unavailable)"
+msgstr "%1 (mevcut değil)"
 
-#: kfinddlg.cpp:173
-msgid "Searching..."
-msgstr "Arıyor..."
-
-#: kfinddlg.cpp:200
-msgid "Canceled."
-msgstr "İptal edildi."
-
-#: kfinddlg.cpp:203 kfinddlg.cpp:208 kfinddlg.cpp:214
-msgid "Error."
-msgstr "Hata."
-
-#: kfinddlg.cpp:204
-msgid "Please specify an absolute path in the \"Look in\" box."
-msgstr "Lütfen \"Buraya bak\" kutucuğunda bir tam yol belirtin."
-
-#: kfinddlg.cpp:209
-msgid "Could not find the specified folder."
-msgstr "Belirtilen dizin bulunamadı."
-
-#: kfindpart.cpp:81
-msgctxt "Name of the component that finds things"
-msgid "Find Component"
-msgstr "Bileşen Bul"
-
-#: kfindtreeview.cpp:50
-msgid "Read-write"
-msgstr "Oku-Yaz"
-
-#: kfindtreeview.cpp:51
-msgid "Read-only"
-msgstr "Sadece oku"
-
-#: kfindtreeview.cpp:52
-msgid "Write-only"
-msgstr "Sadece yaz"
-
-#: kfindtreeview.cpp:53
-msgid "Inaccessible"
-msgstr "Erişilemez"
-
-#: kfindtreeview.cpp:72
-msgctxt "file name column"
-msgid "Name"
-msgstr "İsim"
-
-#: kfindtreeview.cpp:74
-msgctxt "name of the containing folder"
-msgid "In Subfolder"
-msgstr "Alt Dizinlerde"
-
-#: kfindtreeview.cpp:76
-msgctxt "file size column"
-msgid "Size"
-msgstr "Boyut"
-
-#: kfindtreeview.cpp:78
-msgctxt "modified date column"
-msgid "Modified"
-msgstr "Değiştirilmiş"
-
-#: kfindtreeview.cpp:80
-msgctxt "file permissions column"
-msgid "Permissions"
-msgstr "İzinler"
-
-#: kfindtreeview.cpp:82
-msgctxt "first matching line of the query string in this file"
-msgid "First Matching Line"
-msgstr "İlk Eşleşen Satır"
-
-#: kfindtreeview.cpp:350
-msgid "&Open containing folder(s)"
-msgstr "&İçeren dizin(ler)i aç"
-
-#: kfindtreeview.cpp:354
-msgid "&Delete"
-msgstr "&Sil"
-
-#: kfindtreeview.cpp:359
-msgid "&Move to Trash"
-msgstr "&Çöp Kutusuna Taşı"
-
-#: kfindtreeview.cpp:442
-msgid "Save Results As"
-msgstr "Sonucu Farklı Kaydet"
-
-#: kfindtreeview.cpp:443
-msgid "HTML page"
-msgstr "HTML sayfası"
-
-#: kfindtreeview.cpp:443
-msgid "Text file"
-msgstr "Metin dosyası"
-
-#: kfindtreeview.cpp:463
-msgid "Unable to save results."
-msgstr "Sonuçlar kaydedilemedi."
-
-#: kfindtreeview.cpp:479
-msgid "KFind Results File"
-msgstr "KFind Sonuç Dosyası"
-
-#: kfindtreeview.cpp:500
-msgid "Results were saved to file\n"
-msgstr "Sonuçlar dosyaya kaydedildi\n"
-
-#: kftabdlg.cpp:73
-msgctxt "this is the label for the name textfield"
-msgid "&Named:"
-msgstr "&İsimli:"
-
-#: kftabdlg.cpp:76
-msgid "You can use wildcard matching and \";\" for separating multiple names"
-msgstr ""
-"Birden fazla dosya adını ayırmak için \";\" karakterini kullanabilirsiniz."
-
-#: kftabdlg.cpp:80
-msgid "Look &in:"
-msgstr "Bu&raya bak:"
-
-#: kftabdlg.cpp:83
-msgid "Include &subfolders"
-msgstr "&Alt dizinleri de kapsa"
-
-#: kftabdlg.cpp:84
-msgid "Case s&ensitive search"
-msgstr "&Küçük/büyük harfe duyarlı arama"
-
-#: kftabdlg.cpp:85
-msgid "&Browse..."
-msgstr "&Gözat..."
-
-#: kftabdlg.cpp:86
-msgid "&Use files index"
-msgstr "&Dosya indisini kullan"
-
-#: kftabdlg.cpp:87
-msgid "Show &hidden files"
-msgstr "G&izli dosyaları göster"
-
-#: kftabdlg.cpp:105
+#: buttons.cpp:663
 msgid ""
-"<qt>Enter the filename you are looking for. <br />Alternatives may be "
-"separated by a semicolon \";\".<br /><br />The filename may contain the "
-"following special characters:<ul><li><b>?</b> matches any single character</"
-"li><li><b>*</b> matches zero or more of any characters</li><li><b>[...]</b> "
-"matches any of the characters between the braces</li></ul><br />Example "
-"searches:<ul><li><b>*.kwd;*.txt</b> finds all files ending with .kwd or ."
-"txt</li><li><b>go[dt]</b> finds god and got</li><li><b>Hel?o</b> finds all "
-"files that start with \"Hel\" and end with \"o\", having one character in "
-"between</li><li><b>My Document.kwd</b> finds a file of exactly that name</"
-"li></ul></qt>"
+"To add or remove titlebar buttons, simply <i>drag</i> items between the "
+"available item list and the titlebar preview. Similarly, drag items within "
+"the titlebar preview to re-position them."
 msgstr ""
+"Başlık çubuğu düğmelerini eklemek için sadece listeden bir öge seçerek "
+"başlık çubuğu önizleme penceresine doğru sürüklemek yeterlidir."
 
-#: kftabdlg.cpp:126
+#: buttons.cpp:759
+msgid "Resize"
+msgstr "Boyutlandır"
+
+#: buttons.cpp:763
+msgid "Shade"
+msgstr "Gölge"
+
+#: buttons.cpp:767
+msgid "Keep Below Others"
+msgstr "Diğerlerinin Altında Tut"
+
+#: buttons.cpp:771
+msgid "Keep Above Others"
+msgstr "Diğerlerinin Üstünde Tut"
+
+#: buttons.cpp:775
+msgid "Close"
+msgstr "Kapat"
+
+#: buttons.cpp:779
+msgid "Maximize"
+msgstr "Büyüt"
+
+#: buttons.cpp:783
+msgid "Minimize"
+msgstr "Küçült"
+
+#: buttons.cpp:787
+msgid "Help"
+msgstr "Yardım"
+
+#: buttons.cpp:791
+msgid "On All Desktops"
+msgstr "Tüm Masaüstlerinde"
+
+#: buttons.cpp:795
+msgid "Menu"
+msgstr "Menü"
+
+#: buttons.cpp:799
+msgid "--- spacer ---"
+msgstr "--- ayırıcı ---"
+
+#: kwindecoration.cpp:98
 msgid ""
-"<qt>This lets you use the files' index created by the <i>slocate</i> package "
-"to speed-up the search; remember to update the index from time to time "
-"(using <i>updatedb</i>).</qt>"
+"Select the window decoration. This is the look and feel of both the window "
+"borders and the window handle."
+msgstr "Pencere dekorunu seçin."
+
+#: kwindecoration.cpp:103
+msgid "Decoration Options"
+msgstr "Dekorasyon Seçenekleri"
+
+#: kwindecoration.cpp:113
+msgid "B&order size:"
+msgstr "Kenarlık b&oyutu:"
+
+#: kwindecoration.cpp:116
+msgid "Use this combobox to change the border size of the decoration."
 msgstr ""
+"Dekorasyonun kenarlık boyutunu değiştirmek için bu açılır kutuyu kullan."
 
-#: kftabdlg.cpp:172
-msgid "Find all files created or &modified:"
-msgstr "Oluşturulan ya da değiştirilen &tüm dosyaları bul:"
+#: kwindecoration.cpp:133
+msgid "&Show window button tooltips"
+msgstr "&Pencere düğmesi ipuçlarını göster"
 
-#: kftabdlg.cpp:174
-msgid "&between"
-msgstr "&arasında"
-
-#: kftabdlg.cpp:176
-msgid "and"
-msgstr "ve"
-
-#: kftabdlg.cpp:197
-msgid "File &size is:"
-msgstr "Dosya b&oyutu:"
-
-#: kftabdlg.cpp:210
-msgid "Files owned by &user:"
-msgstr "&Sahibi olan dosyalar:"
-
-#: kftabdlg.cpp:215
-msgid "Owned by &group:"
-msgstr "&Grubu olan dosyalar:"
-
-#: kftabdlg.cpp:218
-msgctxt "file size isn't considered in the search"
-msgid "(none)"
-msgstr "(hiçbiri)"
-
-#: kftabdlg.cpp:219
-msgid "At Least"
-msgstr "En Az"
-
-#: kftabdlg.cpp:220
-msgid "At Most"
-msgstr "En Çok"
-
-#: kftabdlg.cpp:221
-msgid "Equal To"
-msgstr "Eşit"
-
-#: kftabdlg.cpp:223 kftabdlg.cpp:889
-msgid "Byte"
-msgid_plural "Bytes"
-msgstr[0] "Bayt"
-
-#: kftabdlg.cpp:224
-msgid "KiB"
-msgstr "KB"
-
-#: kftabdlg.cpp:225
-msgid "MiB"
-msgstr "MB"
-
-#: kftabdlg.cpp:226
-msgid "GiB"
-msgstr "GB"
-
-#: kftabdlg.cpp:293
-msgctxt "label for the file type combobox"
-msgid "File &type:"
-msgstr "Dosya &tipi:"
-
-#: kftabdlg.cpp:298
-msgid "C&ontaining text:"
-msgstr "İçerdiği me&tne göre:"
-
-#: kftabdlg.cpp:304
+#: kwindecoration.cpp:135
 msgid ""
-"<qt>If specified, only files that contain this text are found. Note that not "
-"all file types from the list above are supported. Please refer to the "
-"documentation for a list of supported file types.</qt>"
+"Enabling this checkbox will show window button tooltips. If this checkbox is "
+"off, no window button tooltips will be shown."
 msgstr ""
-"<qt> Eğer belirtilirse, sadece bu metni içeren dosyalar bulunur. Listedeki "
-"tüm dosya türleri desteklenmeyebilir. Desteklenen dosya türleri için KDE "
-"yardım belgesine bakınız.</qt>"
+"Bu düğmeye tıkladığınızda pencere düğmelerine ilişkin ipuçlarını "
+"görebilirsiniz."
 
-#: kftabdlg.cpp:312
-msgid "Case s&ensitive"
-msgstr "Büyük/Küçük &harfe duyarlı "
+#: kwindecoration.cpp:139
+msgid "Use custom titlebar button &positions"
+msgstr "Özel &başlık çubuğu düğme konumlarını kullan"
 
-#: kftabdlg.cpp:313
-msgid "Include &binary files"
-msgstr "&Çalıştırılabilen (ikili) dosyaları da kapsa"
-
-#: kftabdlg.cpp:314
-msgid "Regular e&xpression"
-msgstr "&Düzenli ifade"
-
-#: kftabdlg.cpp:317
+#: kwindecoration.cpp:141
 msgid ""
-"<qt>This lets you search in any type of file, even those that usually do not "
-"contain text (for example program files and images).</qt>"
+"The appropriate settings can be found in the \"Buttons\" Tab; please note "
+"that this option is not available on all styles yet."
 msgstr ""
-"<qt> Bu işlem hemen her türlü dosya üzerinde (program dosyaları ya da "
-"resimler dahil) arama yapmanıza olanak sağlar.</qt>"
+"Uygun ayarlar \"Düğmeler\" sekmesinde bulunabilir; ancak bu seçenek tüm "
+"biçimler için henüz kullanılabilir değildir."
 
-#: kftabdlg.cpp:325
-msgid "&Edit..."
-msgstr "&Düzenle"
+#: kwindecoration.cpp:176
+msgid "&Window Decoration"
+msgstr "&Pencere Dekorasyonu"
 
-#: kftabdlg.cpp:331
-msgid "fo&r:"
-msgstr "içi&n:"
+#: kwindecoration.cpp:177
+msgid "&Buttons"
+msgstr "&Düğmeler"
 
-#: kftabdlg.cpp:333
-msgid "Search &metainfo sections:"
-msgstr "Arama &meta bilgisi bölümleri:"
+#: kwindecoration.cpp:192
+msgid "kcmkwindecoration"
+msgstr "kcmkwindecoration"
 
-#: kftabdlg.cpp:337
-msgid "All Files & Folders"
-msgstr "Tüm Dosya ve Dizinler"
+#: kwindecoration.cpp:193
+msgid "Window Decoration Control Module"
+msgstr "Pencere Dekoru Kontrol Modülü"
 
-#: kftabdlg.cpp:338
-msgid "Files"
-msgstr "Dosyalar"
+#: kwindecoration.cpp:195
+msgid "(c) 2001 Karol Szwed"
+msgstr "(c) 2001 Karol Szwed"
 
-#: kftabdlg.cpp:339
-msgid "Folders"
-msgstr "Dizinler"
+#: kwindecoration.cpp:196
+msgid "Karol Szwed"
+msgstr "Karol Szwed"
 
-#: kftabdlg.cpp:340
-msgid "Symbolic Links"
-msgstr "Sembolik Bağlantılar"
+#: kwindecoration.cpp:276
+msgid "Tiny"
+msgstr "Minik"
 
-#: kftabdlg.cpp:341
-msgid "Special Files (Sockets, Device Files, ...)"
-msgstr "Özel Dosyalar (Soketler, Aygıt Dosyaları, ...)"
+#: kwindecoration.cpp:277
+msgid "Normal"
+msgstr "Normal"
 
-#: kftabdlg.cpp:342
-msgid "Executable Files"
-msgstr "Çalıştırılabilir Dosyalar"
+#: kwindecoration.cpp:278
+msgid "Large"
+msgstr "Büyük"
 
-#: kftabdlg.cpp:343
-msgid "SUID Executable Files"
-msgstr "SUID Çalıştırılabilir Dosyalar"
+#: kwindecoration.cpp:279
+msgid "Very Large"
+msgstr "Çok Büyük"
 
-#: kftabdlg.cpp:344
-msgid "All Images"
-msgstr "Tüm Resimler"
+#: kwindecoration.cpp:280
+msgid "Huge"
+msgstr "Kocaman"
 
-#: kftabdlg.cpp:345
-msgid "All Video"
-msgstr "Tüm Videolar"
+#: kwindecoration.cpp:281
+msgid "Very Huge"
+msgstr "İnanılmaz!"
 
-#: kftabdlg.cpp:346
-msgid "All Sounds"
-msgstr "Tüm Sesler"
+#: kwindecoration.cpp:282
+msgid "Oversized"
+msgstr "Aşırı Büyük"
 
-#: kftabdlg.cpp:397
-msgid "Name/&Location"
-msgstr "İsim/&Konum"
+#: kwindecoration.cpp:553 kwindecoration.cpp:554
+msgid "Oxygen"
+msgstr "Oxygen"
 
-#: kftabdlg.cpp:398
-msgctxt "tab name: search by contents"
-msgid "C&ontents"
-msgstr "İç&erik"
-
-#: kftabdlg.cpp:399
-msgid "&Properties"
-msgstr "Ö&zellikler"
-
-#: kftabdlg.cpp:404
+#: kwindecoration.cpp:598
+#| msgid ""
+#| "<h1>Window Manager Decoration</h1><p>This module allows you to choose the "
+#| "window border decorations, as well as titlebar button positions and "
+#| "custom decoration options.</p>To choose a theme for your window "
+#| "decoration click on its name and apply your choice by clicking the \"Apply"
+#| "\" button below. If you do not want to apply your choice you can click "
+#| "the \"Reset\" button to discard your changes.<p>You can configure each "
+#| "theme in the \"Configure [...]\" tab. There are different options "
+#| "specific for each theme.</p><p>In \"General Options (if available)\" you "
+#| "can activate the \"Buttons\" tab by checking the \"Use custom titlebar "
+#| "button positions\" box. In the \"Buttons\" tab you can change the "
+#| "positions of the buttons to your liking.</p>"
 msgid ""
-"<qt>Search within files' specific comments/metainfo<br />These are some "
-"examples:<br /><ul><li><b>Audio files (mp3...)</b> Search in id3 tag for a "
-"title, an album</li><li><b>Images (png...)</b> Search images with a special "
-"resolution, comment...</li></ul></qt>"
+"<h1>Window Manager Decoration</h1><p>This module allows you to choose the "
+"window border decorations, as well as titlebar button positions and custom "
+"decoration options.</p>To choose a theme for your window decoration click on "
+"its name and apply your choice by clicking the \"Apply\" button below. If "
+"you do not want to apply your choice you can click the \"Reset\" button to "
+"discard your changes.<p>You can configure each theme. There are different "
+"options specific for each theme.</p><p>On the \"Buttons\" tab check the "
+"\"Use custom titlebar button positions\" box and you can change the "
+"positions of the buttons to your liking.</p>"
 msgstr ""
+"<h1>Pencere Yöneticisi Dekorasyonu</h1> <p>Bu modül pencere kenarlarının "
+"dekorasyonu ile başlık çubuğundaki düğmelerin konumunu ayarlamaya olanak "
+"verir. </p>Pencere dekorasyonunda kullanılacak bir tema seçmek için sadece "
+"üzerine tıklamak ve \"Uygula\" düğmesine basmak yeterlidir. Eğer seçimin "
+"uygun olmadığını düşünüyorsanız \"Sıfırla\" düğmesine tıklamak ve "
+"değişiklikleri silmek gerekecektir. <p>Her temayı \"Yapılandır...\" "
+"düğmesinden değiştirebilirsiniz. Temalar için farklı yapılandırma "
+"seçenekleri mevcuttur.</p> <p>Eğer varsa, \"Genel Seçenekler\" altında "
+"\"Özel başlık çubuğu düğme konumlarını kullan\" düğmesine tıklayarak "
+"\"Düğmeler\" sekmesini etkinleştirmek mümkündür. \"Düğmeler\" sekmesinde ise "
+"her düğmenin konumunu zevkinize göre ayarlayabilirsiniz.</p>"
 
-#: kftabdlg.cpp:412
+#: preview.cpp:54
 msgid ""
-"<qt>If specified, search only in this field<br /><ul><li><b>Audio files "
-"(mp3...)</b> This can be Title, Album...</li><li><b>Images (png...)</b> "
-"Search only in Resolution, Bitdepth...</li></ul></qt>"
+"No preview available.\n"
+"Most probably there\n"
+"was a problem loading the plugin."
 msgstr ""
+"Önizleme kullanılamıyor.\n"
+"Eklenti yüklenirken bir \n"
+"hata alınmış olabilir."
 
-#: kftabdlg.cpp:605
-msgid "Unable to search within a period which is less than a minute."
-msgstr "1 Dakikadan daha sık bir periyotta arama tekrarlanamaz."
+#: preview.cpp:367
+msgid "Active Window"
+msgstr "Öndeki Pencere"
 
-#: kftabdlg.cpp:616
-msgid "The date is not valid."
-msgstr "Bu tarih geçerli değil."
-
-#: kftabdlg.cpp:618
-msgid "Invalid date range."
-msgstr "Geçersiz tarih aralığı."
-
-#: kftabdlg.cpp:620
-msgid "Unable to search dates in the future."
-msgstr "Geleceğe ait bir tarih ile arama yapılamaz."
-
-#: kftabdlg.cpp:682
-msgid "Size is too big. Set maximum size value?"
-msgstr "Boyut Aşırı büyük. En büyük boyut değerini belirlediniz mi?"
-
-#: kftabdlg.cpp:682
-msgid "Error"
-msgstr "Hata"
-
-#: kftabdlg.cpp:682
-msgid "Set"
-msgstr "Ayarla"
-
-#: kftabdlg.cpp:682
-msgid "Do Not Set"
-msgstr "Ayarlama"
-
-#: kftabdlg.cpp:879
-#, fuzzy
-#| msgctxt "&during the previous day(s)"
-#| msgid "&during the previous"
-#| msgid_plural "&during the previous"
-msgctxt ""
-"during the previous minute(s)/hour(s)/...; dynamic context 'type': 'i' "
-"minutes, 'h' hours, 'd' days, 'm' months, 'y' years"
-msgid "&during the previous"
-msgid_plural "&during the previous"
-msgstr[0] "önce&ki sırasında"
-
-#: kftabdlg.cpp:880
-msgctxt "use date ranges to search files by modified time"
-msgid "minute"
-msgid_plural "minutes"
-msgstr[0] "dakika"
-
-#: kftabdlg.cpp:881
-msgctxt "use date ranges to search files by modified time"
-msgid "hour"
-msgid_plural "hours"
-msgstr[0] "saat"
-
-#: kftabdlg.cpp:882
-msgctxt "use date ranges to search files by modified time"
-msgid "day"
-msgid_plural "days"
-msgstr[0] "gün"
-
-#: kftabdlg.cpp:883
-msgctxt "use date ranges to search files by modified time"
-msgid "month"
-msgid_plural "months"
-msgstr[0] "ay"
-
-#: kftabdlg.cpp:884
-msgctxt "use date ranges to search files by modified time"
-msgid "year"
-msgid_plural "years"
-msgstr[0] "yıl"
-
-#: kquery.cpp:552
-msgid "Error while using locate"
-msgstr "Locate komutu kullanılırken bir hata oluştu"
-
-#: main.cpp:30
-msgid "KDE file find utility"
-msgstr "KDE dosya bulma aracı"
-
-#: main.cpp:34
-msgid "KFind"
-msgstr "KFind"
-
-#: main.cpp:36
-msgid "(c) 1998-2003, The KDE Developers"
-msgstr "(c) 1998-2003, KDE Geliştiricileri"
-
-#: main.cpp:38
-msgid "Eric Coquelle"
-msgstr "Eric Coquelle"
-
-#: main.cpp:38
-msgid "Current Maintainer"
-msgstr "Projeyi Yürüten"
-
-#: main.cpp:39
-msgid "Mark W. Webb"
-msgstr "Mark W. Webb"
-
-#: main.cpp:39
-msgid "Developer"
-msgstr "Geliştirici"
-
-#: main.cpp:40
-msgid "Beppe Grimaldi"
-msgstr "Beppe Grimaldi"
-
-#: main.cpp:40
-msgid "UI Design & more search options"
-msgstr "Grafik tasarım ve diğer arama ayarları"
-
-#: main.cpp:41
-msgid "Martin Hartig"
-msgstr "Martin Hartig"
-
-#: main.cpp:42
-msgid "Stephan Kulow"
-msgstr "Stephan Kulow"
-
-#: main.cpp:43
-msgid "Mario Weilguni"
-msgstr "Mario Weilguni"
-
-#: main.cpp:44
-msgid "Alex Zepeda"
-msgstr "Alex Zepeda"
-
-#: main.cpp:45
-msgid "Miroslav Flídr"
-msgstr "Miroslav Flídr"
-
-#: main.cpp:46
-msgid "Harri Porten"
-msgstr "Harri Porten"
-
-#: main.cpp:47
-msgid "Dima Rogozin"
-msgstr "Dima Rogozin"
-
-#: main.cpp:48
-msgid "Carsten Pfeiffer"
-msgstr "Carsten Pfeiffer"
-
-#: main.cpp:49
-msgid "Hans Petter Bieker"
-msgstr "Hans Petter Bieker"
-
-#: main.cpp:50
-msgid "Waldo Bastian"
-msgstr "Waldo Bastian"
-
-#: main.cpp:50
-msgid "UI Design"
-msgstr "UI tasarım"
-
-#: main.cpp:51
-msgid "Alexander Neundorf"
-msgstr "Alexander Neundorf"
-
-#: main.cpp:52
-msgid "Clarence Dang"
-msgstr "Clarence Dang"
-
-#: main.cpp:57
-msgid "Path(s) to search"
-msgstr "Arama yolları"
+#: preview.cpp:367
+msgid "Inactive Window"
+msgstr "Arkadaki Pencere"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Görkem Çetin"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "gorkem@kde.org"
 
-#~ msgid "Aborted."
-#~ msgstr "İptal Edildi."
+#~ msgid "Buttons"
+#~ msgstr "Düğmeler"
 
-#~ msgid "Ready."
-#~ msgstr "Hazır."
+#~ msgid "Nitrogen"
+#~ msgstr "Nitrogen"
 
-#~ msgid "Do you really want to delete the selected file?"
-#~ msgid_plural "Do you really want to delete the %1 selected files?"
-#~ msgstr[0] "Seçili %1 dosyayı silmek istiyor musunuz?"
-
-#~ msgctxt "Menu item"
-#~ msgid "Open"
-#~ msgstr "Aç"
-
-#~ msgid "Open Folder"
-#~ msgstr "Dizin Aç"
-
-#~ msgid "Copy"
-#~ msgstr "Kopyala"
-
-#~ msgid "Open With..."
-#~ msgstr "Birlikte Aç..."
-
-#~ msgid "Properties"
-#~ msgstr "Özellikler"
-
-#~ msgid "Selected Files"
-#~ msgstr "Seçilmiş Dosyalar"
-
-#~ msgid "AMiddleLengthText..."
-#~ msgstr "Orta uzunlukta bir metin...."
+#~ msgid "Ozone"
+#~ msgstr "Ozone"
