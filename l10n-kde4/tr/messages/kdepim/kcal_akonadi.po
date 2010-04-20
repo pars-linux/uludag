@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Fatih Aşıcı <fatih@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcal_akonadi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-06-22 11:32+0200\n"
-"PO-Revision-Date: 2009-08-06 15:11+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 14:53+0300\n"
+"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
+"Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: resourceakonadiconfig.cpp:41
@@ -31,6 +32,13 @@ msgid ""
 "para><para><note>If the folder list below is empty, you might have to add a "
 "calendar source through <interface>%1</interface></note></para>"
 msgstr ""
+"<para>Öntanımlı olarak, yeni bir Olay, Yapılacak İş veya Günlük girdisi "
+"eklediğiniz "
+"sırada nereye koymak istediğiniz sorulur.</para><para>Kolaylık sağlamak için "
+"her üç veri öğesi için öntanımlı bir klasör tanımlamak da mümkündür.</"
+"para><para><note>Eğer aşağıdaki klasör listesi boş ise <interface>%1<"
+"/interface> "
+"arayüzünden bir takvim kaynağı ekleyebilirsiniz.</note></para>"
 
 #: resourceakonadiconfig.cpp:56
 msgctxt "@item:inlistbox, calendar entries"
@@ -110,3 +118,4 @@ msgstr "Lütfen bu takvim girdisi için bir depolama dizini seçin"
 msgctxt "@label"
 msgid "Please select a storage folder"
 msgstr "Lütfen bir depolama dizini seçin"
+
