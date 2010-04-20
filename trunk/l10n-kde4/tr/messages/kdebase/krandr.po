@@ -231,6 +231,9 @@ msgid ""
 "The configured virtual size of your X server is insufficient for this setup. This configuration needs to be adjusted.\n"
 "Do you wish to run a tool to adjust the configuration?"
 msgstr ""
+"Tüm ekran boyutu için yetersiz sanal boyut.\n"
+"X sunucusu için yapılandırılmış sanal boyut yetersiz. Yapılandırmanın değiştirilmesi gerekiyor.\n"
+"Yapılandırmanın değiştirilmesi için bir araç çalıştırmak istiyor musunuz?"
 
 #: randrconfig.cpp:331
 msgid "Configuration has been adjusted. Please restart your session for this change to take effect."
