@@ -1,23 +1,24 @@
 # translation of kgpg.po to Turkish
 # Copyright (C) 2003, 2004, 2005, 2008 Free Software Foundation, Inc.
-# 
+#
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Serkan Arıkuşu <kde-i18n-tr@kde.org>, 2004.
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-05 01:22+0200\n"
-"PO-Revision-Date: 2009-11-16 00:41+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 11:56+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: detailedconsole.cpp:31
@@ -3188,14 +3189,12 @@ msgid "Generating Key"
 msgstr "Anahtar Oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:122
-#, fuzzy
 msgid "Generating prime numbers"
-msgstr "Yeni anahtar çifti oluşturuluyor"
+msgstr "Asal sayılar oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:124
-#, fuzzy
 msgid "Generating DSA key"
-msgstr "Yeni anahtar çifti oluşturuluyor"
+msgstr "DSA anahtarı oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:126
 msgid "Generating ElGamal key"
@@ -3216,7 +3215,7 @@ msgstr "%1 anahtarı oluşturuldu"
 
 #: transactions/kgpgimport.cpp:204
 msgid "The import result string has an unsupported format.<br />Please see the detailed log for more information."
-msgstr ""
+msgstr "İçeri aktarılan dizge desteklenmeyen bir biçemde.<br />Daha fazla bilgi için detaylı kayıt çıktısına bakın."
 
 #: transactions/kgpgimport.cpp:206
 #, kde-format
@@ -3343,14 +3342,13 @@ msgid "<b>Connecting to the server...</b>"
 msgstr "<b>Sunucuya bağlantı kuruluyor...</b>"
 
 #: transactions/kgpgtransaction.cpp:128
-#, fuzzy
 msgid "Requesting Passphrase"
-msgstr "Parolayı Değiştir..."
+msgstr "Parola İsteniyor"
 
 #: transactions/kgpgtransactionjob.cpp:39
 msgctxt "Job is started up"
 msgid "Startup"
-msgstr ""
+msgstr "Açılış"
 
 #: transactions/kgpgtransactionjob.cpp:65
 msgctxt "State of operation as in status"
