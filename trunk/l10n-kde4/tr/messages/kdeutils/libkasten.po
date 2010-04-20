@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2010-04-19 16:03+0300\n"
+"PO-Revision-Date: 2010-04-20 09:44+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -356,6 +356,9 @@ msgid ""
 "There are unsaved modifications to <filename>%1</filename>. They will be "
 "lost if you reload the document.<nl/>Do you want to discard them?"
 msgstr ""
+"<filename>%1</filename> dosyasında kaydedilmemiş değişiklikler var. "
+"Belgeyi yeniden yüklerseniz bu değişiklikler kaybolacak.<nl/>Devam etmek "
+"istiyor musunuz?"
 
 #: core/system/dialoghandler.cpp:68
 #, kde-format
