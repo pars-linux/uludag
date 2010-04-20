@@ -73,7 +73,7 @@ msgstr ""
 
 #: filetypedetails.cpp:84
 msgid "Filename Patterns"
-msgstr "Dosya Adı Kalıpları"
+msgstr "Dosya Adı Desenleri"
 
 #: filetypedetails.cpp:96
 msgid ""
