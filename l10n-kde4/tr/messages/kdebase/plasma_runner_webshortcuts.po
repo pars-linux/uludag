@@ -1,7 +1,7 @@
 # translation of krunner_webshortcutsrunner.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: webshortcutrunner.cpp:89
 #, kde-format
@@ -32,10 +32,11 @@ msgstr "%1: %2 %3"
 #: webshortcutrunner.cpp:102
 #, kde-format
 msgid ""
-"Opens the location associated with \"shortcut\" in a web browser with the "
-"query :q:. Known shortcuts include:\n"
+"Opens the location associated with \"shortcut\" in a web browser with the query :q:. Known shortcuts include:\n"
 "%1"
 msgstr ""
+"\"kısayol\" ile ilişkilendirilmiş konumu :q: sorgusu ile birlikte web tarayıcıda açar. Bilinen kısayollar:\n"
+"%1"
 
 #: webshortcutrunner.cpp:167
 #, kde-format
