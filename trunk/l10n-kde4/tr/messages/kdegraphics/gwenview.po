@@ -1,7 +1,7 @@
 # translation of gwenview.po to Turkish
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Koray Löker <loker@pardus.org.tr>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: app/documentpanel.cpp:291 app/thumbnailviewpanel.cpp:105
 #: app/mainwindow.cpp:304 lib/documentview/documentview.cpp:123
@@ -35,11 +35,8 @@ msgstr "Değişiklikleri Kaydetme ve Yeniden Yükle"
 
 #: app/documentpanel.cpp:484
 msgctxt "@info"
-msgid ""
-"This image has been modified. Reloading it will discard all your changes."
-msgstr ""
-"Bu resim değiştirildi. Resmi yeniden yüklemek yaptığınız değişiklikleri "
-"kaybetmenize neden olacak."
+msgid "This image has been modified. Reloading it will discard all your changes."
+msgstr "Bu resim değiştirildi. Resmi yeniden yüklemek yaptığınız değişiklikleri kaybetmenize neden olacak."
 
 #: app/thumbnailviewpanel.cpp:107
 msgctxt "@action:inmenu Navigation Bar"
@@ -114,50 +111,36 @@ msgstr ""
 "%1"
 
 #: app/kipiinterface.cpp:210
-#, fuzzy
-#| msgid "Images"
 msgctxt "@title:menu"
 msgid "Images"
-msgstr "Resimler"
+msgstr "Görüntüler"
 
 #: app/kipiinterface.cpp:211
-#, fuzzy
-#| msgid "Effects"
 msgctxt "@title:menu"
 msgid "Effects"
 msgstr "Efektler"
 
 #: app/kipiinterface.cpp:212
-#, fuzzy
-#| msgid "Tools"
 msgctxt "@title:menu"
 msgid "Tools"
 msgstr "Araçlar"
 
 #: app/kipiinterface.cpp:213
-#, fuzzy
-#| msgid "Import"
 msgctxt "@title:menu"
 msgid "Import"
 msgstr "İçeriye Aktar"
 
 #: app/kipiinterface.cpp:214
-#, fuzzy
-#| msgid "Export"
 msgctxt "@title:menu"
 msgid "Export"
 msgstr "Dışarıya Aktar"
 
 #: app/kipiinterface.cpp:215
-#, fuzzy
-#| msgid "Batch Processing"
 msgctxt "@title:menu"
 msgid "Batch Processing"
 msgstr "Toplu İşlemler"
 
 #: app/kipiinterface.cpp:216
-#, fuzzy
-#| msgid "Collections"
 msgctxt "@title:menu"
 msgid "Collections"
 msgstr "Koleksiyonlar"
@@ -281,9 +264,7 @@ msgstr[0] "%1 belge kaydedilemedi:"
 
 #: app/gvcore.cpp:246
 #, kde-format
-msgctxt ""
-"@info %1 is the name of the document which failed to save, %2 is the reason "
-"for the failure"
+msgctxt "@info %1 is the name of the document which failed to save, %2 is the reason for the failure"
 msgid "<filename>%1</filename>: %2"
 msgstr "<filename>%1</filename>: %2"
 
@@ -314,11 +295,11 @@ msgstr ""
 
 #: app/gvcore.cpp:315
 msgid "You are now viewing the new document."
-msgstr ""
+msgstr "Şu anda yeni belgeyi görüntülüyorsunuz."
 
 #: app/gvcore.cpp:317
 msgid "Go back to the original"
-msgstr ""
+msgstr "Özgün haline geri dön"
 
 #: app/gvcore.cpp:371
 msgctxt "@info"
@@ -596,8 +577,7 @@ msgstr "Düzenle"
 
 #: app/infocontextmanageritem.cpp:85
 #, kde-format
-msgctxt ""
-"@item:intext %1 is a key, we append a colon to it. A value is displayed after"
+msgctxt "@item:intext %1 is a key, we append a colon to it. A value is displayed after"
 msgid "%1:"
 msgstr "%1:"
 
@@ -755,12 +735,8 @@ msgid "If you quit now, your changes will be lost."
 msgstr "Uygulamayı kapattığınızda yaptığınız değişiklikler kaybedilecek."
 
 #: app/savebar.cpp:84
-msgid ""
-"You have modified many images. To avoid memory problems, you should save "
-"your changes."
-msgstr ""
-"Bir çok resmi değiştirdiniz. Bellek sorunları yaşamamak için yaptığınız "
-"değişiklikleri kaydetmelisiniz."
+msgid "You have modified many images. To avoid memory problems, you should save your changes."
+msgstr "Bir çok resmi değiştirdiniz. Bellek sorunları yaşamamak için yaptığınız değişiklikleri kaydetmelisiniz."
 
 #: app/savebar.cpp:168
 msgid "Current image modified"
@@ -868,19 +844,20 @@ msgstr[0] "%1 belge içeriye aktarıldı."
 #: importer/importdialog.cpp:76
 #, kde-format
 msgid "One document has been skipped because it had already been imported."
-msgid_plural ""
-"%1 documents have been skipped because they had already been imported."
+msgid_plural "%1 documents have been skipped because they had already been imported."
 msgstr[0] ""
+"Bir belge daha önce içeriye aktarıldığı için atlandı.\r\n"
+"\r\n"
+"%1 belge daha önce içeriye aktarıldığı için atlandı."
 
 #: importer/importdialog.cpp:84
 #, kde-format
-msgid ""
-"One of them has been renamed because another document with the same name had "
-"already been imported."
-msgid_plural ""
-"%1 of them have been renamed because other documents with the same name had "
-"already been imported."
+msgid "One of them has been renamed because another document with the same name had already been imported."
+msgid_plural "%1 of them have been renamed because other documents with the same name had already been imported."
 msgstr[0] ""
+"Aynı isime sahip bir belge daha önce içeriye aktarıldığından bir dosya yeniden adlandırıldı.\r\n"
+"\r\n"
+"Aynı isime sahip belgeler daha önce içeriye aktarıldığından %1 belge yeniden adlandırıldı."
 
 #: importer/importdialog.cpp:93
 #, kde-format
@@ -893,15 +870,19 @@ msgstr[0] "İçeriye aktarılan %1 belge aygıttan silinsin mi?"
 msgid "Delete the skipped document from the device?"
 msgid_plural "Delete the %1 skipped documents from the device?"
 msgstr[0] ""
+"Atlanan belge aygıttan silinsin mi?\r\n"
+"\r\n"
+"Atlanan %1 belge aygıttan silinsin mi?"
 
 #: importer/importdialog.cpp:104
-#, fuzzy, kde-format
-#| msgid "Delete the imported document from the device?"
-#| msgid_plural "Delete the %1 imported documents from the device?"
+#, kde-format
 msgctxt "Singular sentence is actually never used."
 msgid "Delete the imported or skipped document from the device?"
 msgid_plural "Delete the %1 imported and skipped documents from the device?"
-msgstr[0] "İçeriye aktarılan %1 belge aygıttan silinsin mi?"
+msgstr[0] ""
+"İçeriye aktarılan veya atlanan belge aygıttan silinsin mi?\r\n"
+"\r\n"
+"İçeriye aktarılan veya atlanan %1 belge aygıttan silinsin mi?"
 
 #: importer/importdialog.cpp:111
 msgid "Import Finished"
@@ -981,9 +962,7 @@ msgid "Fit"
 msgstr "Sığdır"
 
 #: lib/documentview/documentview.cpp:136
-msgctxt ""
-"@action:button Zoom to original size, shown in status bar, keep it short "
-"please"
+msgctxt "@action:button Zoom to original size, shown in status bar, keep it short please"
 msgid "100%"
 msgstr "100%"
 
@@ -1023,22 +1002,14 @@ msgstr "Resim yükleme işlemi başarısız oldu."
 #: lib/document/documentloadedimpl.cpp:117
 #, kde-format
 msgctxt "@info"
-msgid ""
-"Could not open file for writing, check that you have the necessary rights in "
-"<filename>%1</filename>."
-msgstr ""
-"Dosya yazmak için açılamıyor, <filename>%1</filename> dosyası için yeterli "
-"haklarınızın olup olmadığını kontrol edin."
+msgid "Could not open file for writing, check that you have the necessary rights in <filename>%1</filename>."
+msgstr "Dosya yazmak için açılamıyor, <filename>%1</filename> dosyası için yeterli haklarınızın olup olmadığını kontrol edin."
 
 #: lib/document/documentloadedimpl.cpp:127
 #, kde-format
 msgctxt "@info"
-msgid ""
-"Could not overwrite file, check that you have the necessary rights to write "
-"in <filename>%1</filename>."
-msgstr ""
-"Dosyanın üzerine yazılamıyor, <filename>%1</filename> dosyası için yeterli "
-"haklarınızın olup olmadığını kontrol edin."
+msgid "Could not overwrite file, check that you have the necessary rights to write in <filename>%1</filename>."
+msgstr "Dosyanın üzerine yazılamıyor, <filename>%1</filename> dosyası için yeterli haklarınızın olup olmadığını kontrol edin."
 
 #: lib/document/documentloadedimpl.cpp:133
 msgctxt "@info"
@@ -1195,7 +1166,8 @@ msgid "&View background color:"
 msgstr "Arkaplan &Rengi:"
 
 #. i18n: file: app/thumbnailviewpanel.ui:64
-#. i18n: ectx: property (text), widget (Gwenview::StatusBarToolButton, mAddFilterButton)
+#. i18n: ectx: property (text), widget (Gwenview::StatusBarToolButton,
+#. mAddFilterButton)
 #: rc.cpp:26
 msgid "Add Filter"
 msgstr "Filtre Ekle"
@@ -1243,14 +1215,16 @@ msgid "Mouse wheel behavior:"
 msgstr "Fare tekeri davranışı:"
 
 #. i18n: file: app/imageviewconfigpage.ui:128
-#. i18n: ectx: property (text), widget (QRadioButton, mouseWheelScrollRadioButton)
+#. i18n: ectx: property (text), widget (QRadioButton,
+#. mouseWheelScrollRadioButton)
 #: rc.cpp:50
 msgctxt "@option:radio action on mouse wheel"
 msgid "Scroll"
 msgstr "Kaydır"
 
 #. i18n: file: app/imageviewconfigpage.ui:155
-#. i18n: ectx: property (text), widget (QRadioButton, mouseWheelBrowseRadioButton)
+#. i18n: ectx: property (text), widget (QRadioButton,
+#. mouseWheelBrowseRadioButton)
 #: rc.cpp:53
 msgctxt "@option:radio action on mouse wheel"
 msgid "Browse"
@@ -1259,7 +1233,8 @@ msgstr "Gözat"
 #. i18n: file: app/imageviewconfigpage.ui:195
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnlargeSmallerImages)
 #. i18n: file: lib/print/printoptionspage.ui:98
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_PrintEnlargeSmallerImages)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_PrintEnlargeSmallerImages)
 #: rc.cpp:56 rc.cpp:208
 msgid "Enlarge smaller images"
 msgstr "Küçük resimleri büyüt"
@@ -1325,7 +1300,8 @@ msgid "Metadata"
 msgstr "Metadata"
 
 #. i18n: file: app/fullscreenconfigdialog.ui:98
-#. i18n: ectx: property (text), widget (QPushButton, mConfigureDisplayedInformationButton)
+#. i18n: ectx: property (text), widget (QPushButton,
+#. mConfigureDisplayedInformationButton)
 #: rc.cpp:89
 msgid "Configure Displayed Metadata..."
 msgstr "Gösterilen Metadatayı Yapılandır..."
@@ -1367,7 +1343,8 @@ msgid "Cache:"
 msgstr "Önbellek:"
 
 #. i18n: file: app/advancedconfigpage.ui:29
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_DeleteThumbnailCacheOnExit)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_DeleteThumbnailCacheOnExit)
 #: rc.cpp:110
 msgid "Delete thumbnail cache folder on exit"
 msgstr "Çıkışta küçük resim önbelleğini boşalt"
@@ -1377,14 +1354,10 @@ msgstr "Çıkışta küçük resim önbelleğini boşalt"
 #: rc.cpp:113
 msgid ""
 "Enable this option if you do not have a lot of disk space.\n"
-"Be careful: this will delete the folder named <filename>.thumbnails</"
-"filename> in your home folder, deleting all thumbnails previously generated "
-"by Gwenview and other applications."
+"Be careful: this will delete the folder named <filename>.thumbnails</filename> in your home folder, deleting all thumbnails previously generated by Gwenview and other applications."
 msgstr ""
 "Çok fazla disk alanınız yoksa bu seçeneği etkinleştirin.\n"
-"Dikkatli olun: Bu işlem, ev dizininizde bulunan ve Gwenview ve diğer "
-"uygulamalar tarafından oluşturulan, küçük resimlerin bulunduğu <filename>."
-"thumbnails</filename> isimli dizini silecektir."
+"Dikkatli olun: Bu işlem, ev dizininizde bulunan ve Gwenview ve diğer uygulamalar tarafından oluşturulan, küçük resimlerin bulunduğu <filename>.thumbnails</filename> isimli dizini silecektir."
 
 #. i18n: file: app/advancedconfigpage.ui:78
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1431,12 +1404,8 @@ msgstr "Etiketler"
 #. i18n: file: app/startpage.ui:138
 #. i18n: ectx: property (text), widget (QLabel, mTagLabel)
 #: rc.cpp:138
-msgid ""
-"Browsing by tags is not available. Make sure Nepomuk is properly installed "
-"on your computer."
-msgstr ""
-"Etiketlere göre tarama kullanılabilir değil. Nepomuk uygulamasının "
-"bilgisayarınıza doğru bir şekilde kurulduğundan emin olun."
+msgid "Browsing by tags is not available. Make sure Nepomuk is properly installed on your computer."
+msgstr "Etiketlere göre tarama kullanılabilir değil. Nepomuk uygulamasının bilgisayarınıza doğru bir şekilde kurulduğundan emin olun."
 
 #. i18n: file: importer/importerconfigdialog.ui:17
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AutoRename)
@@ -1460,7 +1429,7 @@ msgstr "Önizleme:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:152
 msgid "<i>Type text or click the items below to customize the format</i>"
-msgstr ""
+msgstr "<i>Biçimi özelleştirmek için metin girin veya aşağıdaki ögelere tıklayın.</i>"
 
 #. i18n: file: importer/thumbnailpage.ui:84
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1590,7 +1559,8 @@ msgid "Keep ratio"
 msgstr "Oranı koru"
 
 #. i18n: file: lib/gwenviewconfig.kcfg:30
-#. i18n: ectx: whatsthis, entry (PercentageOfMemoryUsageWarning), group (General)
+#. i18n: ectx: whatsthis, entry (PercentageOfMemoryUsageWarning), group
+#. (General)
 #: rc.cpp:229
 msgid ""
 "The percentage of memory used by Gwenview before it\n"
@@ -1607,8 +1577,7 @@ msgid ""
 "\t\t\tload. This is useful to exclude raw files which are recognized as\n"
 "\t\t\tTIFF or JPEG."
 msgstr ""
-"Gwenview uygulamasının yüklemeyi denemeyeceği dosya uzantıları.\t\t\tBu "
-"seçenek, TIFF veya JPEG olarak algılanan ham dosyaları\n"
+"Gwenview uygulamasının yüklemeyi denemeyeceği dosya uzantıları.\t\t\tBu seçenek, TIFF veya JPEG olarak algılanan ham dosyaları\n"
 "\t\t\thariç bırakmak için kullanışlıdır."
 
 #. i18n: file: lib/gwenviewconfig.kcfg:183
@@ -1716,18 +1685,12 @@ msgstr "&Görünüm"
 #~ msgid "URL Bag"
 #~ msgstr "Adres Çantası"
 
-#, fuzzy
-#~| msgid "Crop"
 #~ msgid "&Crop"
 #~ msgstr "Kırp"
 
-#, fuzzy
-#~| msgid "Height:"
 #~ msgid "Width:Height"
 #~ msgstr "Yükseklik:"
 
-#, fuzzy
-#~| msgid "Constrain ratio"
 #~ msgctxt "Crop tool won't apply any ratio constraint"
 #~ msgid "No Constraint"
 #~ msgstr "Oranı zorla"
@@ -1747,14 +1710,9 @@ msgstr "&Görünüm"
 #~ msgid "TextLabel"
 #~ msgstr "MetinEtiketi"
 
-#, fuzzy
-#~| msgctxt "@title:group General info about the image"
-#~| msgid "General"
 #~ msgid "<b>General</b>"
 #~ msgstr "Genel"
 
-#, fuzzy
-#~| msgid "An Image Viewer"
 #~ msgid "<b>Image View</b>"
 #~ msgstr "Resim Gösterici"
 
@@ -1777,46 +1735,28 @@ msgstr "&Görünüm"
 #~ msgstr "&Çöp"
 
 #~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">General</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">General</span></p></body></html>"
 #~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Genel</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Genel</span></p></body></html>"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Image View</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Image View</span></p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Resim Görünümü</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Resim Görünümü</span></p></body></html>"
 
 #~ msgid "Save"
 #~ msgstr "Kaydet"
@@ -1839,12 +1779,8 @@ msgstr "&Görünüm"
 #~ msgid " seconds"
 #~ msgstr " saniye"
 
-#, fuzzy
-#~| msgid "Meta Information"
 #~ msgid "Image Information:"
 #~ msgstr "Meta Bilgisi"
 
-#, fuzzy
-#~| msgid "Meta Information"
 #~ msgid "Full Screen Information"
 #~ msgstr "Meta Bilgisi"
