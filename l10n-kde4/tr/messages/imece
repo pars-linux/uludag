@@ -1,20 +1,20 @@
-extragear-network -> onur
-kdeaccessibility  -> isil
-kdeadmin          -> ali
-kdeartwork        -> isil
-kdebase           -> gokcen,fatih,ibrahim,onur
-kdeedu            -> renan
-kdegames          -> serdar
-kdegraphics       -> fatih
-kdelibs           -> gokcen
-kdemultimedia     -> ozan
-kdenetwork        -> ozan
-kdepim            -> fatih
-kdepimlibs        -> ibrahim
-kdeplasma-addons  -> gokmen
-kdesdk            -> mete
-kdetoys           -> isil
-kdeutils          -> ibrahim
-kdewebdev         -> serdar
-koffice           -> admins
-qt                -> gokmen
+[X] extragear-network -> onur
+[ ] kdeaccessibility  -> isil
+[ ] kdeadmin          -> ali
+[ ] kdeartwork        -> isil
+[ ] kdebase           -> gokcen,fatih,ibrahim,onur
+[ ] kdeedu            -> renan
+[ ] kdegames          -> serdar
+[ ] kdegraphics       -> fatih
+[ ] kdelibs           -> gokcen
+[ ] kdemultimedia     -> ozan
+[ ] kdenetwork        -> ozan
+[ ] kdepim            -> fatih
+[ ] kdepimlibs        -> ibrahim
+[ ] kdeplasma-addons  -> gokmen
+[ ] kdesdk            -> mete
+[ ] kdetoys           -> isil
+[ ] kdeutils          -> ibrahim
+[ ] kdewebdev         -> serdar
+[ ] koffice           -> admins
+[ ] qt                -> gokmen
