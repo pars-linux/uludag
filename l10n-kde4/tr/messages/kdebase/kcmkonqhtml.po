@@ -7,19 +7,20 @@
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2009-11-04 18:31+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 11:49+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: appearance.cpp:53
 msgctxt "@title:tab"
@@ -384,6 +385,8 @@ msgid ""
 "<qt>Filter expression (e.g. <tt>http://www.example.com/ad/*</tt>, <a href="
 "\"filterhelp\">more information</a>):"
 msgstr ""
+"<qt>Filtre tarifi (örn. <tt>http://www.example.com/ad/*</tt>, <a href="
+"\"filterhelp\">daha fazla bilgi</a>):"
 
 #: filteropts.cpp:101
 msgid "Insert"
@@ -410,6 +413,8 @@ msgid ""
 "<qt>More information on <a href=\"importhelp\">import format</a>, <a href="
 "\"exporthelp\">export format</a>"
 msgstr ""
+"<qt>Daha fazla bilgi <a href=\"importhelp\">biçemi içeri al</a>, <a href="
+"\"exporthelp\">biçemi dışarı aktar</a>"
 
 #: filteropts.cpp:128
 msgid ""
@@ -444,6 +449,15 @@ msgid ""
 "(allow) any matching URL, which takes priority over any blacklist (blocking) "
 "filter."
 msgstr ""
+"<qt><p>Bir filtreleme tanımı gir. Filtre tanımları:"
+"<ul><li>kabuk tarzı özel işaret, örn. <tt>http://www.example.com/ads*</tt>, "
+"<tt>*?[]</tt> işaretleri kullanılabilir</li><li>metnin başına ve sonuna '<tt>"
+"/</tt>', vb. konularak tam bir düzenli ifade tanımlanabilir<tt>"
+"/\\/(ad|banner)\\./</tt></"
+"li></ul><p>Herhangi bir filtre metni başına'<tt>@@</tt>' konularak eşleşen "
+"URL beyaz"
+"(izin verilen) listeye eklenir. Beyaz liste filtrelerin kara liste "
+"(engellenen) filtrelere göre önceliği vardır."
 
 #: filteropts.cpp:157
 msgid ""
@@ -451,6 +465,11 @@ msgid ""
 "lines starting with '<tt>!</tt>' and the header line <tt>[AdBlock]</tt> are "
 "ignored. Any other line is added as a filter expression."
 msgstr ""
+"<qt><p>Filtre içeri alma dosyası bir düz metin dosyasıdır. Boş satırlar, '<"
+"tt>!</tt>' "
+"ile başlayan yorum satırları ve <tt>[AdBlock]</tt> başlık satırı gözardı "
+"edilir. "
+"Kalan tüm satırlar filtre ifadesi olarak eklenir."
 
 #: filteropts.cpp:162
 msgid ""
@@ -458,6 +477,11 @@ msgid ""
 "header line <tt>[AdBlock]</tt>, then all of the filters follow each on a "
 "separate line."
 msgstr ""
+"<qt><p>Filtre dışarı aktarma biçimi düz metin dosyasıdır. Dosya <tt>"
+"[AdBlock]</tt> "
+"başlık satırı ile başlar, altına bütün filtreler her biri tek satır "
+"kaplayacak şekilde "
+"eklenir."
 
 #: filteropts.cpp:411
 msgid ""
