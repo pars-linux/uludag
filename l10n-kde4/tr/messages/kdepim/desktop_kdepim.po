@@ -1669,16 +1669,14 @@ msgid "Loads data from a local maildir folder"
 msgstr "Yerel maildir dizininden veri yükleme aracı"
 
 #: runtime/resources/mailtransport_dummy/mtdummyresource.desktop:2
-#, fuzzy
 msgctxt "Name"
 msgid "Dummy MailTransport Resource"
-msgstr "Hayali MailTransport Kaynağı"
+msgstr "Boş MailTransport Kaynağı"
 
 #: runtime/resources/mailtransport_dummy/mtdummyresource.desktop:30
-#, fuzzy
 msgctxt "Comment"
 msgid "Dummy Resource implementing mail transport interface"
-msgstr "Posta nakletme arayüzünü gerçekleyen hayali kaynak"
+msgstr "Posta nakletme arayüzünü gerçekleyen boş kaynak"
 
 #: runtime/resources/mbox/mboxresource.desktop:2
 msgctxt "Name"
