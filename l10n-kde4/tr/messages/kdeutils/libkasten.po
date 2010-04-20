@@ -642,7 +642,7 @@ msgstr "<filename>%1</filename> dosyası değiştirildi.<nl/>Değişiklikleriniz
 
 #~ msgctxt "@label:textbox"
 #~ msgid "Pattern:"
-#~ msgstr "Kalıp:"
+#~ msgstr "Desen:"
 
 #~ msgctxt "@info:whatsthis"
 #~ msgid "Enter a pattern to search for, or select a previous pattern from the list."

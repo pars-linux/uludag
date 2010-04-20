@@ -493,7 +493,7 @@ msgstr "Boşluklarla ayrılmış dosya uzantısı listesi, örneğin *.txt * .od
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, filterFilesPattern)
 #: rc.cpp:161
 msgid "Pattern filter"
-msgstr "Kalıp filtresi"
+msgstr "Desen filtresi"
 
 #. i18n: file: folderviewLocationConfig.ui:16
 #. i18n: ectx: property (text), widget (QRadioButton, showDesktopFolder)

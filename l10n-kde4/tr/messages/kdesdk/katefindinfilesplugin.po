@@ -126,7 +126,7 @@ msgstr "Ara"
 #. i18n: ectx: property (text), widget (QLabel, lblPattern)
 #: rc.cpp:6
 msgid "Pattern:"
-msgstr "Kalıp:"
+msgstr "Desen:"
 
 #. i18n: file: findwidget.ui:49
 #. i18n: ectx: property (text), widget (QLabel, lblFolder)
