@@ -2,7 +2,7 @@
 # translation of kpdf.po to
 # translation of kpdf.po to
 # Copyright (C) 2004, 2005, 2008, 2009 Free Software Foundation, Inc.
-# 
+#
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
@@ -12,19 +12,20 @@
 # Alper Sen <aalpersen@gmail.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: okular\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-31 01:22+0200\n"
-"PO-Revision-Date: 2009-11-10 16:16+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 11:15+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: conf/dlgpresentation.cpp:28
 msgctxt "@label:listbox The current screen, for the presentation mode"
@@ -1315,13 +1316,13 @@ msgid "Reading font information..."
 msgstr "Yazı tipi bilgisi okunuyor..."
 
 #: ui/propertiesdialog.cpp:213
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is \"Title\""
 msgid "%1:"
 msgstr "%1:"
 
 #: ui/propertiesdialog.cpp:217
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "%1 is \"File Path\""
 msgid "%1:"
 msgstr "%1:"
