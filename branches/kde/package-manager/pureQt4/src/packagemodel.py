@@ -22,7 +22,13 @@ from pmutils import humanReadableSize
 from context import KIconLoader
 from context import _time
 
-(SummaryRole, DescriptionRole, VersionRole, GroupRole, RepositoryRole, HomepageRole, SizeRole, TypeRole) = (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7)
+(SummaryRole, DescriptionRole, VersionRole, GroupRole, \
+    RepositoryRole, HomepageRole, SizeRole, TypeRole, \
+    ComponentRole) =\
+(Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, \
+    Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7, \
+    Qt.UserRole+8)
+
 _variant = QVariant()
 _unknown_icons = []
 
@@ -71,6 +77,8 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(self.iface.getPackageRepository(package.name)))
         elif role == HomepageRole:
             return QVariant(unicode(package.source.homepage))
+        elif role == ComponentRole:
+            return QVariant(unicode(package.partOf))
         elif role == Qt.DecorationRole:
             package = self.package(index)
             if package.icon:

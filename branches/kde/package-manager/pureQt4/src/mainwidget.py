@@ -65,6 +65,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("toggled(bool)"), self.toggleSelectAll)
+        self.connect(self.checkComponents, SIGNAL("toggled(bool)"), self.showComponents)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
@@ -262,6 +263,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def setReverseAll(self, packages=None):
         if packages:
             self.packageList.selectAll(packages)
+
+    def showComponents(self, toggled):
+        self.packageList.showComponents = toggled
+        self.packageList.setFocus()
 
     def toggleSelectAll(self, toggled):
         if toggled:
