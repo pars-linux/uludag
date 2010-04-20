@@ -4,19 +4,20 @@
 # Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmlocale\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-29 06:16+0100\n"
-"PO-Revision-Date: 2009-05-22 14:42+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 16:18+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: countryselectordialog.cpp:217
 msgid "Country Selector"
@@ -159,9 +160,8 @@ msgstr "Binler basamağı ayracı:"
 #. i18n: file: localemon.ui:45
 #. i18n: ectx: property (text), widget (QLabel, m_labelMonetaryDecimalPlaces)
 #: localemon.cpp:51 rc.cpp:21
-#, fuzzy
 msgid "Decimal places:"
-msgstr "Ondalık simgesi:"
+msgstr "Ondalık yerleri:"
 
 #. i18n: file: localemon.ui:108
 #. i18n: ectx: property (title), widget (QGroupBox, m_positiveGB)
@@ -255,7 +255,7 @@ msgstr "Paradan Sonra"
 
 #: localemon.cpp:335
 msgid "Here you can choose the currency to be used when displaying monetary values, e.g. United States Dollar or Pound Sterling."
-msgstr ""
+msgstr "Parasal değerler gösterilirken kullanılacak kuru buradan seçebilirsiniz, örneğin: Türk Lirası veya Amerikan Doları."
 
 #: localemon.cpp:341
 msgid "Here you can choose the currency symbol to be displayed for your chosen currency, e.g. $, US$, or USD."
@@ -270,9 +270,8 @@ msgid "<p>Here you can define the thousands separator used to display monetary v
 msgstr "<p>Burada parasal değerleri göstermekte kullanılan binler basamağı ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan binler basamağı ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localemon.cpp:363
-#, fuzzy
 msgid "<p>Here you can set the number of decimal places displayed for monetary values, i.e. the number of digits <em>after</em> the decimal separator. <p>Note that the decimal places used to display other numbers has to be defined separately (see the 'Numbers' tab).</p>"
-msgstr "<p>Burada parasal değerleri göstermekte kullanılan ondalık ayracını belirleyebilirsiniz.</p><p>Diğer sayıları göstermekte kullanılan ondalık ayracı ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
+msgstr "<p>Burada parasal değerleri gösterirken kullanılan ondalık yerlerinin sayısını belirleyebilirsiniz, örneğin: ondalık ayracından <em>sonraki </em> hanelerin sayısı. <p>Diğer sayıları gösterirken kullanılan ondalık yerleri ayrıca belirlenmelidir (bkz., 'Sayılar' sekmesi).</p>"
 
 #: localemon.cpp:372
 msgid "If this option is checked, the currency sign will be prefixed (i.e. to the left of the value) for all positive monetary values. If not, it will be postfixed (i.e. to the right)."
@@ -311,9 +310,8 @@ msgid "&Negative sign:"
 msgstr "&Negatif işareti:"
 
 #: localenum.cpp:88
-#, fuzzy
 msgid "Decimal &places:"
-msgstr "Ondalık simgesi:"
+msgstr "&Ondalık yerleri:"
 
 #: localenum.cpp:99 localetime.cpp:214
 msgid "Di&git set:"
@@ -336,9 +334,8 @@ msgid "Here you can specify text used to prefix negative numbers. This should no
 msgstr "Burada negatif sayıların önünde kullanılacak işareti belirleyebilirsiniz. Bu boş bırakılmamalıdır ki pozitif ve negatif sayılar birbirinden ayrılabilsin. Genelde eksi (-) işaretine ayarlanır."
 
 #: localenum.cpp:260
-#, fuzzy
 msgid "Here you can set the number of decimal places displayed for numeric values, i.e. the number of digits <em>after</em> the decimal separator. "
-msgstr "Bu, parasal değerler için kuruş hanelerinin sayısını gösterir. Diğer bir deyişle ondalık ayracının <em>ardında</em> gördüğünüz hane sayısını gösterir. Neredeyse herkes için doğru değer 2'dir."
+msgstr "Sayısal değerleri gösterirken kullanılan ondalık yerlerinin sayısını buradan ayarlayabilirsiniz. Örneğin: ondalık ayracından <em>sonraki</em> hanelerin sayısı. "
 
 #: localenum.cpp:266
 msgid "<p>Here you can define the set of digits used to display numbers. If digits other than Arabic are selected, they will appear only if used in the language of the application or the piece of text where the number is shown.</p><p>Note that the set of digits used to display monetary values has to be set separately (see the 'Money' tab).</p>"
