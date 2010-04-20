@@ -1,26 +1,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmworkspaceoptions\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 05:57+0100\n"
-"PO-Revision-Date: 2009-11-19 16:39+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 16:29+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #. i18n: file: mainpage.ui:20
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:3 rc.cpp:23
 msgid "Form factor:"
-msgstr ""
+msgstr "Boyut:"
 
 #. i18n: file: mainpage.ui:28
 #. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
@@ -79,3 +80,4 @@ msgstr "Marco Martin"
 #: workspaceoptions.cpp:51
 msgid "Maintainer"
 msgstr "Projeyi Yürüten"
+
