@@ -1,6 +1,6 @@
 # translation of kolourpaint.po to
 # Copyright (C) 2004, 2005, 2009 Free Software Foundation, Inc.
-#
+# 
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Görkem Çetin <gorkem@gorkemcetin.com>, 2005.
@@ -20,8 +20,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: pixmapfx/kpPixmapFX_FormatConversion.cpp:188
 msgid "Loss of Color and Translucency Information"
@@ -37,16 +37,8 @@ msgstr "Yarı Şeffalık Kaybı Bilgisi"
 
 #: pixmapfx/kpPixmapFX_ScreenDepth.cpp:60
 #, kde-format
-msgid ""
-"<qt><p>KolourPaint does not support the current screen depth of %1bpp. "
-"KolourPaint will attempt to start but may act unreliably.</p><p>To avoid "
-"this issue, please change your screen depth to 24bpp and then restart "
-"KolourPaint.</p></qt>"
-msgstr ""
-"<qt><p>KolourPaint, şuanki %1bpp ekran derinliğini desteklemiyor. "
-"KolourPaint, çalışmayı deneyecek ancak sağlıksız bir şekilde davranabilir.</"
-"p><p>Bu sorundan korunmak için, lütfen ekran derinliğinizi 24bpp olarak "
-"değiştirin ve KolourPaint'i yeniden başlatın.</p></qt>"
+msgid "<qt><p>KolourPaint does not support the current screen depth of %1bpp. KolourPaint will attempt to start but may act unreliably.</p><p>To avoid this issue, please change your screen depth to 24bpp and then restart KolourPaint.</p></qt>"
+msgstr "<qt><p>KolourPaint, şuanki %1bpp ekran derinliğini desteklemiyor. KolourPaint, çalışmayı deneyecek ancak sağlıksız bir şekilde davranabilir.</p><p>Bu sorundan korunmak için, lütfen ekran derinliğinizi 24bpp olarak değiştirin ve KolourPaint'i yeniden başlatın.</p></qt>"
 
 #: pixmapfx/kpPixmapFX_ScreenDepth.cpp:66
 msgid "Unsupported Screen Mode"
@@ -54,14 +46,8 @@ msgstr "Desteklenmeyen Ekran Kipi"
 
 #: pixmapfx/kpPixmapFX_ScreenDepth.cpp:85
 #, kde-format
-msgid ""
-"<qt><p>This effect does not support the current screen depth of %1bpp.</"
-"p><p>To avoid this issue, please change your screen depth to 24bpp and then "
-"restart KolourPaint.</p></qt>"
-msgstr ""
-"<qt><p>Bu etki, şuanki %1bpp ekran derinliğini desteklemez.</p><p>Bu "
-"sorundan korunmak için, lütfen ekran derinliğinizi 24bpp olarak değiştirin "
-"ve daha sonra KolourPaint'i yeniden başlatın.</p></qt>"
+msgid "<qt><p>This effect does not support the current screen depth of %1bpp.</p><p>To avoid this issue, please change your screen depth to 24bpp and then restart KolourPaint.</p></qt>"
+msgstr "<qt><p>Bu etki, şuanki %1bpp ekran derinliğini desteklemez.</p><p>Bu sorundan korunmak için, lütfen ekran derinliğinizi 24bpp olarak değiştirin ve daha sonra KolourPaint'i yeniden başlatın.</p></qt>"
 
 #: tools/selection/image/kpAbstractImageSelectionTool_Transparency.cpp:170
 msgid "Selection: Opaque"
@@ -296,23 +282,19 @@ msgstr "Başlangıç ve bitiş noktaları arasında sürükle."
 
 #: tools/polygonal/kpToolCurve.cpp:142
 msgid "Left drag to set the first control point or right click to finish."
-msgstr ""
-"Birinci denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
+msgstr "Birinci denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
 
 #: tools/polygonal/kpToolCurve.cpp:147
 msgid "Right drag to set the first control point or left click to finish."
-msgstr ""
-"Birinci denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
+msgstr "Birinci denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
 
 #: tools/polygonal/kpToolCurve.cpp:157
 msgid "Left drag to set the last control point or right click to finish."
-msgstr ""
-"Sonuncu denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
+msgstr "Sonuncu denetim noktasını atamak için sol sürükle, bitirmek için sağ tıkla."
 
 #: tools/polygonal/kpToolCurve.cpp:162
 msgid "Right drag to set the last control point or left click to finish."
-msgstr ""
-"Sonuncu denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
+msgstr "Sonuncu denetim noktasını atamak için sağ sürükle, bitirmek için sol tıkla."
 
 #: tools/flow/kpToolColorEraser.cpp:54 tools/flow/kpToolColorEraser.cpp:81
 msgid "Color Eraser"
@@ -448,52 +430,21 @@ msgstr "Resmi büyüt ve küçült"
 
 #: tools/kpToolZoom.cpp:120
 msgid "Click to zoom in/out or left drag to zoom into a specific area."
-msgstr ""
-"Yakınlaştırmak/uzaklaştırmak için tıklayın veya belirli bir alanı "
-"yakınlaştırmak için sol tuş ile basılı tutarak sürükleyin."
+msgstr "Yakınlaştırmak/uzaklaştırmak için tıklayın veya belirli bir alanı yakınlaştırmak için sol tuş ile basılı tutarak sürükleyin."
 
 #: mainWindow/kpMainWindow_Help.cpp:62
 msgid "Acquiring &Screenshots"
 msgstr "&Ekran görüntüleri alınıyor"
 
 #: mainWindow/kpMainWindow_Help.cpp:134
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>To acquire a screenshot, press <b>%1</b>.  The screenshot will be "
-#| "placed into the clipboard and you will be able to paste it in KolourPaint."
-#| "</p><p>You may configure the <b>Desktop Screenshot</b> shortcut in the "
-#| "KDE Control Center module <a href=\"configure kde shortcuts\">Keyboard "
-#| "Shortcuts</a>.</p><p>Alternatively, you may try the application <a href="
-#| "\"run ksnapshot\">KSnapshot</a>.</p>"
-msgid ""
-"<p>To acquire a screenshot, press <b>%1</b>.  The screenshot will be placed "
-"into the clipboard and you will be able to paste it in KolourPaint.</"
-"p><p>You may configure the <b>Desktop Screenshot</b> shortcut in the KDE "
-"System Settings module <a href=\"configure kde shortcuts\">Keyboard "
-"Shortcuts</a>.</p><p>Alternatively, you may try the application <a href="
-"\"run ksnapshot\">KSnapshot</a>.</p>"
-msgstr ""
-"<p>Ekran görüntüsü yakalamak için <b>%1</b>'e basın. Ekran görüntüsü panoya "
-"yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</"
-"p><p><b>Masaüstü Görüntüsü Yakalama</b> kısayolunu KDE Kontrol Merkezinde <a "
-"href=\"configure kde shortcuts\">Klavye Kısayolları</a> modülünde "
-"yapılandırabilirsiniz.</p><p>Alternatf olarak <a href=\"run ksnapshot"
-"\">KSnapshot</a> programını kullanabilirsiniz.</p>"
+#, kde-format
+msgid "<p>To acquire a screenshot, press <b>%1</b>.  The screenshot will be placed into the clipboard and you will be able to paste it in KolourPaint.</p><p>You may configure the <b>Desktop Screenshot</b> shortcut in the KDE System Settings module <a href=\"configure kde shortcuts\">Keyboard Shortcuts</a>.</p><p>Alternatively, you may try the application <a href=\"run ksnapshot\">KSnapshot</a>.</p>"
+msgstr "<p>Ekran görüntüsü yakalamak için <b>%1</b> tuşuna basın. Ekran görüntüsü panoya yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</p><p><b>Masaüstü Görüntüsü Yakalama</b> kısayolunu KDE Sistem Ayarları altındaki <a href=\"configure kde shortcuts\">Klavye Kısayolları</a> modülünden yapılandırabilirsiniz.</p><p>Alternatif olarak <a href=\"run ksnapshot\">KSnapshot</a> uygulamasını deneyebilirsiniz.</p>"
 
 #: mainWindow/kpMainWindow_Help.cpp:157
 #, kde-format
-msgid ""
-"<p>You do not appear to be running KDE.</p><p>Once you have loaded KDE:"
-"<br><blockquote>To acquire a screenshot, press <b>%1</b>.  The screenshot "
-"will be placed into the clipboard and you will be able to paste it in "
-"KolourPaint.</blockquote></p><p>Alternatively, you may try the application "
-"<a href=\"run ksnapshot\">KSnapshot</a>.</p>"
-msgstr ""
-"<p>KDE'yi çalıştırmıyor görünüyorsunuz..</p><p>KDE'yi yükledikten sonra:"
-"<br><blockquote>Ekran yakalamak için <b>%1</b> tuşuna basın. Ekran görüntüsü "
-"panoya yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</"
-"blockquote></p><p>Alternatf olarak <a href=\"run ksnapshot\">KSnapshot</a> "
-"programını kullanabilirsiniz.</p>"
+msgid "<p>You do not appear to be running KDE.</p><p>Once you have loaded KDE:<br><blockquote>To acquire a screenshot, press <b>%1</b>.  The screenshot will be placed into the clipboard and you will be able to paste it in KolourPaint.</blockquote></p><p>Alternatively, you may try the application <a href=\"run ksnapshot\">KSnapshot</a>.</p>"
+msgstr "<p>KDE'yi çalıştırmıyor görünüyorsunuz..</p><p>KDE'yi yükledikten sonra:<br><blockquote>Ekran yakalamak için <b>%1</b> tuşuna basın. Ekran görüntüsü panoya yerleştirilecek ve böylece KolourPaint'e yapıştırabileceksiniz.</blockquote></p><p>Alternatf olarak <a href=\"run ksnapshot\">KSnapshot</a> programını kullanabilirsiniz.</p>"
 
 #: mainWindow/kpMainWindow_Help.cpp:186
 msgid "Acquiring Screenshots"
@@ -551,12 +502,10 @@ msgstr "&Büyüt"
 #: mainWindow/kpMainWindow_View_Zoom.cpp:191
 #, kde-format
 msgid ""
-"Setting the zoom level to a value that is not a multiple of 100% results in "
-"imprecise editing and redraw glitches.\n"
+"Setting the zoom level to a value that is not a multiple of 100% results in imprecise editing and redraw glitches.\n"
 "Do you really want to set to zoom level to %1%?"
 msgstr ""
-"100% ün katları olmayan yakınlaştırma seviyesine ayarlamak kesin olmayan "
-"düzenleme işlemlerine yol açacaktır.\n"
+"100% ün katları olmayan yakınlaştırma seviyesine ayarlamak kesin olmayan düzenleme işlemlerine yol açacaktır.\n"
 "Yakınlaştırma seviyesini gerçekten %1% ayarlamak istediğinizden emin misiniz?"
 
 #: mainWindow/kpMainWindow_View_Zoom.cpp:196
@@ -629,8 +578,7 @@ msgid ""
 "Are you sure?"
 msgstr ""
 "\"%1\" belgesi değiştirildi.\n"
-"Yeniden yüklemek eski kayıdınızdan bu yana yaptığınız tüm değişiklikleri "
-"kaybettirecek.\n"
+"Yeniden yüklemek eski kayıdınızdan bu yana yaptığınız tüm değişiklikleri kaybettirecek.\n"
 "Devam etmek istiyor musunuz?"
 
 #: mainWindow/kpMainWindow_File.cpp:1020 mainWindow/kpMainWindow_File.cpp:1030
@@ -665,12 +613,10 @@ msgstr ""
 
 #: mainWindow/kpMainWindow_File.cpp:1395
 msgid ""
-"Before this image can be set as the wallpaper, you must save it as a local "
-"file.\n"
+"Before this image can be set as the wallpaper, you must save it as a local file.\n"
 "Do you want to save it?"
 msgstr ""
-"Bu resmi masaüstü resmi olarak atayabilmek için, dosyayı yerel bir dosya "
-"olarak kaydetmelisiniz.\n"
+"Bu resmi masaüstü resmi olarak atayabilmek için, dosyayı yerel bir dosya olarak kaydetmelisiniz.\n"
 "Dosyayı kaydetmek ister misiniz?"
 
 #: mainWindow/kpMainWindow_File.cpp:1401
@@ -728,15 +674,8 @@ msgstr "Araç Kutusu"
 
 #: mainWindow/kpMainWindow_Tools.cpp:625
 #, kde-format
-msgid ""
-"<qt><p>Resizing the image to %1x%2 may take a substantial amount of memory. "
-"This can reduce system responsiveness and cause other application resource "
-"problems.</p><p>Are you sure want to resize the image?</p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut "
-"hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir "
-"ve diğer programların kaynakları kullanmasında problem yaratabilir.</"
-"p><p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
+msgid "<qt><p>Resizing the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure want to resize the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
 
 #: mainWindow/kpMainWindow_Tools.cpp:635
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:717
@@ -829,8 +768,7 @@ msgid ""
 "Are you sure?"
 msgstr ""
 "Renk paleti \"%1\" değiştirildi.\n"
-"Yeniden yüklemek önceki kaydetmenizden bu yana yaptığınız tüm değişiklikleri "
-"kaybettirecek.\n"
+"Yeniden yüklemek önceki kaydetmenizden bu yana yaptığınız tüm değişiklikleri kaybettirecek.\n"
 "Emin misiniz?"
 
 #: mainWindow/kpMainWindow_Colors.cpp:355
@@ -907,16 +845,12 @@ msgid "&More Effects..."
 msgstr "Daha Faz&la Efekt..."
 
 #: mainWindow/kpMainWindow_Image.cpp:210
-msgctxt ""
-"Image/Selection Menu caption - make sure the translation has the same accel "
-"as the Select&ion translation"
+msgctxt "Image/Selection Menu caption - make sure the translation has the same accel as the Select&ion translation"
 msgid "&Image"
 msgstr "&Resim"
 
 #: mainWindow/kpMainWindow_Image.cpp:214
-msgctxt ""
-"Image/Selection Menu caption - make sure that translation has the same accel "
-"as the &Image translation"
+msgctxt "Image/Selection Menu caption - make sure that translation has the same accel as the &Image translation"
 msgid "Select&ion"
 msgstr "&Seçim"
 
@@ -946,51 +880,17 @@ msgstr "Üzeri Çizili"
 
 #: mainWindow/kpMainWindow_Edit.cpp:79
 #, kde-format
-msgid ""
-"<qt><p>The image to be pasted may have more colors than the current screen "
-"mode can support. In order to display it, some color information may be "
-"removed.</p><p><b>If you save this image, any color loss will become "
-"permanent.</b></p><p>To avoid this issue, increase your screen depth to at "
-"least %1bpp and then restart KolourPaint.</p><hr/><p>It also contains "
-"translucency which is not fully supported. The translucency data will be "
-"approximated with a 1-bit transparency mask.</p><p><b>If you save this "
-"image, this loss of translucency will become permanent.</b></p></qt>"
-msgstr ""
-"<qt><p>Yapıştırılacak resim şuanki ekran kipinin deskteleyebileceğinden daha "
-"fazla renge sahip. Resmi görüntülemek için, bazı renk bilgileri "
-"kaldırılabilir.</p><p><p>Eğer bu resmi kaydederseniz, renk kayıpları kalıcı "
-"olacaktır.</b></p><p>Bu sorundan kaçınmak için, ekran derinliğinizi en az %"
-"1bpp değerine çıkarın ve daha sonra KolourPaint'i yeniden başlatın.</p><hr/"
-"><p>Ayrıca resim tam olarak desteklenmeyen yarı şeffaflık içeriyor. Yarı "
-"şeffaflık verisi 1-bit şeffaflık maskesiyle benzeşecektir.</p><p><b>Eğer bu "
-"resmi kaydederseniz, bu yarı şeffaflık kaybı kalıcı olacaktır.</b></p></qt>"
+msgid "<qt><p>The image to be pasted may have more colors than the current screen mode can support. In order to display it, some color information may be removed.</p><p><b>If you save this image, any color loss will become permanent.</b></p><p>To avoid this issue, increase your screen depth to at least %1bpp and then restart KolourPaint.</p><hr/><p>It also contains translucency which is not fully supported. The translucency data will be approximated with a 1-bit transparency mask.</p><p><b>If you save this image, this loss of translucency will become permanent.</b></p></qt>"
+msgstr "<qt><p>Yapıştırılacak resim şuanki ekran kipinin deskteleyebileceğinden daha fazla renge sahip. Resmi görüntülemek için, bazı renk bilgileri kaldırılabilir.</p><p><p>Eğer bu resmi kaydederseniz, renk kayıpları kalıcı olacaktır.</b></p><p>Bu sorundan kaçınmak için, ekran derinliğinizi en az %1bpp değerine çıkarın ve daha sonra KolourPaint'i yeniden başlatın.</p><hr/><p>Ayrıca resim tam olarak desteklenmeyen yarı şeffaflık içeriyor. Yarı şeffaflık verisi 1-bit şeffaflık maskesiyle benzeşecektir.</p><p><b>Eğer bu resmi kaydederseniz, bu yarı şeffaflık kaybı kalıcı olacaktır.</b></p></qt>"
 
 #: mainWindow/kpMainWindow_Edit.cpp:99
 #, kde-format
-msgid ""
-"<qt><p>The image to be pasted may have more colors than the current screen "
-"mode can support. In order to display it, some color information may be "
-"removed.</p><p><b>If you save this image, any color loss will become "
-"permanent.</b></p><p>To avoid this issue, increase your screen depth to at "
-"least %1bpp and then restart KolourPaint.</p></qt>"
-msgstr ""
-"<qt><p>Yapıştırılacak resim şuanki ekran kipinin deskteleyebileceğinden daha "
-"fazla renge sahip. Resmi görüntülemek için, bazı renk bilgileri "
-"kaldırılabilir.</p><p><p>Eğer bu resmi kaydederseniz, renk kayıpları kalıcı "
-"olacaktır.</b></p><p>Bu sorundan kaçınmak için, ekran derinliğinizi en az %"
-"1bpp değerine çıkarın ve daha sonra KolourPaint'i yeniden başlatın.</p></qt>"
+msgid "<qt><p>The image to be pasted may have more colors than the current screen mode can support. In order to display it, some color information may be removed.</p><p><b>If you save this image, any color loss will become permanent.</b></p><p>To avoid this issue, increase your screen depth to at least %1bpp and then restart KolourPaint.</p></qt>"
+msgstr "<qt><p>Yapıştırılacak resim şuanki ekran kipinin deskteleyebileceğinden daha fazla renge sahip. Resmi görüntülemek için, bazı renk bilgileri kaldırılabilir.</p><p><p>Eğer bu resmi kaydederseniz, renk kayıpları kalıcı olacaktır.</b></p><p>Bu sorundan kaçınmak için, ekran derinliğinizi en az %1bpp değerine çıkarın ve daha sonra KolourPaint'i yeniden başlatın.</p></qt>"
 
 #: mainWindow/kpMainWindow_Edit.cpp:108
-msgid ""
-"<qt><p>The image to be pasted contains translucency which is not fully "
-"supported. The translucency data will be approximated with a 1-bit "
-"transparency mask.</p><p><b>If you save this image, this loss of "
-"translucency will become permanent.</b></p></qt>"
-msgstr ""
-"<qt><p>Yapıştırılacak resim tam olarak desteklenmeyen yarı şeffaflık "
-"içeriyor. Yarı şeffaflık verisi 1-bit şeffaflık maskesiyle benzeşecektir.</"
-"p><p><b>Eğer bu resmi kaydederseniz, bu yarı şeffalık kaybı kalıcı olacaktır."
-"</b></p></qt>"
+msgid "<qt><p>The image to be pasted contains translucency which is not fully supported. The translucency data will be approximated with a 1-bit transparency mask.</p><p><b>If you save this image, this loss of translucency will become permanent.</b></p></qt>"
+msgstr "<qt><p>Yapıştırılacak resim tam olarak desteklenmeyen yarı şeffaflık içeriyor. Yarı şeffaflık verisi 1-bit şeffaflık maskesiyle benzeşecektir.</p><p><b>Eğer bu resmi kaydederseniz, bu yarı şeffalık kaybı kalıcı olacaktır.</b></p></qt>"
 
 #: mainWindow/kpMainWindow_Edit.cpp:141
 msgid "Paste in &New Window"
@@ -1021,14 +921,8 @@ msgid "Text: Paste"
 msgstr "Metin: Yapıştır"
 
 #: mainWindow/kpMainWindow_Edit.cpp:755
-msgid ""
-"<qt><p>KolourPaint cannot paste the contents of the clipboard as the data "
-"unexpectedly disappeared.</p><p>This usually occurs if the application which "
-"was responsible for the clipboard contents has been closed.</p></qt>"
-msgstr ""
-"<qt><p>KolourPaint veri beklenmeyen bir şekilde kaybolduğu için pano "
-"verisini yapıştıramıyor.</p><p>Bu genellikle pano içeriğinden sorumlu olan "
-"programın kapanması sonucu olur.</p></qt>"
+msgid "<qt><p>KolourPaint cannot paste the contents of the clipboard as the data unexpectedly disappeared.</p><p>This usually occurs if the application which was responsible for the clipboard contents has been closed.</p></qt>"
+msgstr "<qt><p>KolourPaint veri beklenmeyen bir şekilde kaybolduğu için pano verisini yapıştıramıyor.</p><p>Bu genellikle pano içeriğinden sorumlu olan programın kapanması sonucu olur.</p></qt>"
 
 #: mainWindow/kpMainWindow_Edit.cpp:855
 msgid "Text: Delete Box"
@@ -1077,13 +971,8 @@ msgstr "İç Hata"
 
 #: document/kpDocument_Save.cpp:128
 #, kde-format
-msgid ""
-"<qt><p>The <b>%1</b> format may not be able to preserve all of the image's "
-"color information.</p><p>Are you sure you want to save in this format?</p></"
-"qt>"
-msgstr ""
-"<qt><p><b>%1</b> biçimi resmin tüm renk bilgisini içermeyebilir.</p><p>Bu "
-"biçimde kaydetmek istediğinize emin misiniz?</p></qt>"
+msgid "<qt><p>The <b>%1</b> format may not be able to preserve all of the image's color information.</p><p>Are you sure you want to save in this format?</p></qt>"
+msgstr "<qt><p><b>%1</b> biçimi resmin tüm renk bilgisini içermeyebilir.</p><p>Bu biçimde kaydetmek istediğinize emin misiniz?</p></qt>"
 
 #: document/kpDocument_Save.cpp:135
 msgid "Lossy File Format"
@@ -1091,14 +980,8 @@ msgstr "Kayıplı Dosya Biçimi"
 
 #: document/kpDocument_Save.cpp:144
 #, kde-format
-msgid ""
-"<qt><p>Saving the image at the low color depth of %1-bit may result in the "
-"loss of color information. Any transparency might also be removed.</p><p>Are "
-"you sure you want to save at this color depth?</p></qt>"
-msgstr ""
-"<qt><p>Resmi %1-bit düşük renk derinliğinde kaydetmek renk bilgisinin "
-"kaybıyla sonuçlanabilir. Şeffaflık kaldırılabilir.</p><p>Bu renk "
-"derinliğinde kaydetmek istediğinizden emin misiniz?</p></qtZ"
+msgid "<qt><p>Saving the image at the low color depth of %1-bit may result in the loss of color information. Any transparency might also be removed.</p><p>Are you sure you want to save at this color depth?</p></qt>"
+msgstr "<qt><p>Resmi %1-bit düşük renk derinliğinde kaydetmek renk bilgisinin kaybıyla sonuçlanabilir. Şeffaflık kaldırılabilir.</p><p>Bu renk derinliğinde kaydetmek istediğinizden emin misiniz?</p></qtZ"
 
 #: document/kpDocument_Save.cpp:154
 msgid "Low Color Depth"
@@ -1151,54 +1034,18 @@ msgstr ""
 
 #: document/kpDocument_Open.cpp:274
 #, kde-format
-msgid ""
-"<qt><p>The image \"%1\" may have more colors than the current screen mode "
-"can support. In order to display it, some color information may be removed.</"
-"p><p><b>If you save this image, any color loss will become permanent.</b></"
-"p><p>To avoid this issue, increase your screen depth to at least %2bpp and "
-"then restart KolourPaint.</p><hr/><p>It also contains translucency which is "
-"not fully supported. The translucency data will be approximated with a 1-bit "
-"transparency mask.</p><p><b>If you save this image, this loss of "
-"translucency will become permanent.</b></p></qt>"
-msgstr ""
-"<qt><p>\"%1\" resmi mevcut ekran kipinin destekleyebileceğinden daha fazla "
-"renge sahip olabilir. Resmi görüntülemek için, bazı renk bilgileri "
-"kaldırılabilir.</p><p><b>Eğer bu resmi kaydederseniz, herhangi bir renk "
-"kaybı  kalıcı olacaktır.</b></p><p>Bu sorundan korunmak için, ekran "
-"derinliğinizi en az %2bpp'ye yükseltin ve daha sonra KolourPaint'i yeniden "
-"başlatın.</p><hr/><p>Ayrıca tam olarak desteklenmeyen yarı şeffaflık içerir. "
-"Yarı şeffaflık verisi, 1-bit şeffaflık maskesine yakın olacaktır.</"
-"p><p><b>Eğer bu resmi kaydetmek isterseniz, bu yarı şeffaflık kaybı kalıcı "
-"olacaktır.</b></p></qt>"
+msgid "<qt><p>The image \"%1\" may have more colors than the current screen mode can support. In order to display it, some color information may be removed.</p><p><b>If you save this image, any color loss will become permanent.</b></p><p>To avoid this issue, increase your screen depth to at least %2bpp and then restart KolourPaint.</p><hr/><p>It also contains translucency which is not fully supported. The translucency data will be approximated with a 1-bit transparency mask.</p><p><b>If you save this image, this loss of translucency will become permanent.</b></p></qt>"
+msgstr "<qt><p>\"%1\" resmi mevcut ekran kipinin destekleyebileceğinden daha fazla renge sahip olabilir. Resmi görüntülemek için, bazı renk bilgileri kaldırılabilir.</p><p><b>Eğer bu resmi kaydederseniz, herhangi bir renk kaybı  kalıcı olacaktır.</b></p><p>Bu sorundan korunmak için, ekran derinliğinizi en az %2bpp'ye yükseltin ve daha sonra KolourPaint'i yeniden başlatın.</p><hr/><p>Ayrıca tam olarak desteklenmeyen yarı şeffaflık içerir. Yarı şeffaflık verisi, 1-bit şeffaflık maskesine yakın olacaktır.</p><p><b>Eğer bu resmi kaydetmek isterseniz, bu yarı şeffaflık kaybı kalıcı olacaktır.</b></p></qt>"
 
 #: document/kpDocument_Open.cpp:295
 #, kde-format
-msgid ""
-"<qt><p>The image \"%1\" may have more colors than the current screen mode "
-"can support. In order to display it, some color information may be removed.</"
-"p><p><b>If you save this image, any color loss will become permanent.</b></"
-"p><p>To avoid this issue, increase your screen depth to at least %2bpp and "
-"then restart KolourPaint.</p></qt>"
-msgstr ""
-"<qt><p>\"%1\" resmi mevcut ekran kipinin destekleyebileceğinden daha fazla "
-"renge sahip olabilir. Resmi görüntülemek için, bazı renk bilgileri "
-"kaldırılabilir.</p><p><b>Eğer bu resmi kaydederseniz, herhangi bir renk "
-"kaybı  kalıcı olacaktır.</b></p><p>Bu sorundan korunmak için, ekran "
-"derinliğinizi en az %2bpp'ye yükseltin ve daha sonra KolourPaint'i yeniden "
-"başlatın.</p></qt>"
+msgid "<qt><p>The image \"%1\" may have more colors than the current screen mode can support. In order to display it, some color information may be removed.</p><p><b>If you save this image, any color loss will become permanent.</b></p><p>To avoid this issue, increase your screen depth to at least %2bpp and then restart KolourPaint.</p></qt>"
+msgstr "<qt><p>\"%1\" resmi mevcut ekran kipinin destekleyebileceğinden daha fazla renge sahip olabilir. Resmi görüntülemek için, bazı renk bilgileri kaldırılabilir.</p><p><b>Eğer bu resmi kaydederseniz, herhangi bir renk kaybı  kalıcı olacaktır.</b></p><p>Bu sorundan korunmak için, ekran derinliğinizi en az %2bpp'ye yükseltin ve daha sonra KolourPaint'i yeniden başlatın.</p></qt>"
 
 #: document/kpDocument_Open.cpp:305
 #, kde-format
-msgid ""
-"<qt><p>The image \"%1\" contains translucency which is not fully supported. "
-"The translucency data will be approximated with a 1-bit transparency mask.</"
-"p><p><b>If you save this image, this loss of translucency will become "
-"permanent.</b></p></qt>"
-msgstr ""
-"<qt><p>\"%1\" resmi tam olarak desteklenmeyen şeffaflık içeriyor. "
-"Yarısaydamlık verisi 1-bitlik şeffaflık maskesine dönüştürülecektir.</"
-"p><p><b>Eğer bu resmi kaydederseniz bu şeffaflık kaybı kalıcı olacaktır.</"
-"b></p></qt>"
+msgid "<qt><p>The image \"%1\" contains translucency which is not fully supported. The translucency data will be approximated with a 1-bit transparency mask.</p><p><b>If you save this image, this loss of translucency will become permanent.</b></p></qt>"
+msgstr "<qt><p>\"%1\" resmi tam olarak desteklenmeyen şeffaflık içeriyor. Yarısaydamlık verisi 1-bitlik şeffaflık maskesine dönüştürülecektir.</p><p><b>Eğer bu resmi kaydederseniz bu şeffaflık kaybı kalıcı olacaktır.</b></p></qt>"
 
 #: document/kpDocument_Open.cpp:321
 #, kde-format
@@ -1281,22 +1128,8 @@ msgid "Operation"
 msgstr "İşlem"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:217
-msgid ""
-"<qt><ul><li><b>Resize</b>: The size of the picture will be increased by "
-"creating new areas to the right and/or bottom (filled in with the background "
-"color) or decreased by cutting it at the right and/or bottom.</"
-"li><li><b>Scale</b>: The picture will be expanded by duplicating pixels or "
-"squashed by dropping pixels.</li><li><b>Smooth Scale</b>: This is the same "
-"as <i>Scale</i> except that it blends neighboring pixels to produce a "
-"smoother looking picture.</li></ul></qt>"
-msgstr ""
-"<qt><ul><li><b>Yeniden boyutlandırma</b>: Resim sağda ve/veya aşşağıda yeni "
-"alanların oluşturulması(arka plan rengi ile doldurularak) ile büyütülecek "
-"yada sağdan ve/veya aşşağıdan kesilme ile küçültülecek.</li><li><b>Ölçek</"
-"b>: Resim beneklerin çoğaltılması ile genişletilcek yada azaltılması ile "
-"küçültülecek.</li><li><b>Yumuşak Ölçek</b>: Bu <i>Ölçek</i> ile aynıdır "
-"fakat bu sefer komşu beneklerin karıştırılması ile daha güzel gözüken bir "
-"resim yaratır.</li></ul></qt>"
+msgid "<qt><ul><li><b>Resize</b>: The size of the picture will be increased by creating new areas to the right and/or bottom (filled in with the background color) or decreased by cutting it at the right and/or bottom.</li><li><b>Scale</b>: The picture will be expanded by duplicating pixels or squashed by dropping pixels.</li><li><b>Smooth Scale</b>: This is the same as <i>Scale</i> except that it blends neighboring pixels to produce a smoother looking picture.</li></ul></qt>"
+msgstr "<qt><ul><li><b>Yeniden boyutlandırma</b>: Resim sağda ve/veya aşşağıda yeni alanların oluşturulması(arka plan rengi ile doldurularak) ile büyütülecek yada sağdan ve/veya aşşağıdan kesilme ile küçültülecek.</li><li><b>Ölçek</b>: Resim beneklerin çoğaltılması ile genişletilcek yada azaltılması ile küçültülecek.</li><li><b>Yumuşak Ölçek</b>: Bu <i>Ölçek</i> ile aynıdır fakat bu sefer komşu beneklerin karıştırılması ile daha güzel gözüken bir resim yaratır.</li></ul></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:238
 msgid "&Resize"
@@ -1354,16 +1187,8 @@ msgstr "Or&anı koru"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:695
 #, kde-format
-msgid ""
-"<qt><p>Resizing the text box to %1x%2 may take a substantial amount of "
-"memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure you want to resize the text box?</p></"
-"qt>"
-msgstr ""
-"<qt><p>Metin kutusu %1x%2 çözünürlüğüne boyutlandırılıyor. Bu sistemin daha "
-"geç cevap vermesine ve diğer programların kaynak kullanımında probleme yol "
-"açabilir.</p><p>Metin kutusunu yeniden boyutlandırmak istediğinize emin "
-"misiniz?</p></qt>"
+msgid "<qt><p>Resizing the text box to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to resize the text box?</p></qt>"
+msgstr "<qt><p>Metin kutusu %1x%2 çözünürlüğüne boyutlandırılıyor. Bu sistemin daha geç cevap vermesine ve diğer programların kaynak kullanımında probleme yol açabilir.</p><p>Metin kutusunu yeniden boyutlandırmak istediğinize emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:703
 msgid "Resize Text Box?"
@@ -1375,27 +1200,13 @@ msgstr "Metin Kutusunu &Yeniden Boyutlandır"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:709
 #, kde-format
-msgid ""
-"<qt><p>Resizing the image to %1x%2 may take a substantial amount of memory. "
-"This can reduce system responsiveness and cause other application resource "
-"problems.</p><p>Are you sure you want to resize the image?</p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut "
-"hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir "
-"ve diğer programların kaynakları kullanmasında problem yaratabilir.</"
-"p><p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
+msgid "<qt><p>Resizing the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to resize the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden boyutlandırılıyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi yeniden boyutlandırmaya emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:727
 #, kde-format
-msgid ""
-"<qt><p>Scaling the image to %1x%2 may take a substantial amount of memory. "
-"This can reduce system responsiveness and cause other application resource "
-"problems.</p><p>Are you sure you want to scale the image?</p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden ölçekleniyor, bu mevcut "
-"hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir "
-"ve diğer programların kaynakları kullanmasında problem yaratabilir.</"
-"p><p>Resmi ölçeklendirmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Scaling the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to scale the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre yeniden ölçekleniyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi ölçeklendirmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:735
 msgid "Scale Image?"
@@ -1407,16 +1218,8 @@ msgstr "Resmi Ö&lçekle"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:741
 #, kde-format
-msgid ""
-"<qt><p>Scaling the selection to %1x%2 may take a substantial amount of "
-"memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure you want to scale the selection?</p></"
-"qt>"
-msgstr ""
-"<qt><p>Seçim %1x%2 çözünürlüğüne göre ölçeklendiriliyor, bu mevcut hafızaya "
-"göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
-"programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi "
-"ölçeklendirmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Scaling the selection to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to scale the selection?</p></qt>"
+msgstr "<qt><p>Seçim %1x%2 çözünürlüğüne göre ölçeklendiriliyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi ölçeklendirmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:749
 msgid "Scale Selection?"
@@ -1428,16 +1231,8 @@ msgstr "Seçimi Ö&lçekle"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:759
 #, kde-format
-msgid ""
-"<qt><p>Smooth Scaling the image to %1x%2 may take a substantial amount of "
-"memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure you want to smooth scale the image?</"
-"p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut "
-"hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir "
-"ve diğer programların kaynakları kullanmasında problem yaratabilir.</"
-"p><p>Resmi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Smooth Scaling the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to smooth scale the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:767
 msgid "Smooth Scale Image?"
@@ -1449,16 +1244,8 @@ msgstr "Resmi Y&umuşak Ölçekle"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:773
 #, kde-format
-msgid ""
-"<qt><p>Smooth Scaling the selection to %1x%2 may take a substantial amount "
-"of memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure you want to smooth scale the selection?"
-"</p></qt>"
-msgstr ""
-"<qt><p>Seçim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut "
-"hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir "
-"ve diğer programların kaynakları kullanmasında problem yaratabilir.</"
-"p><p>Seçimi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Smooth Scaling the selection to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure you want to smooth scale the selection?</p></qt>"
+msgstr "<qt><p>Seçim %1x%2 çözünürlüğüne göre yumuşak ölçeklendiriliyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi yumuşak ölçeklendirmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformResizeScaleDialog.cpp:781
 msgid "Smooth Scale Selection?"
@@ -1501,15 +1288,8 @@ msgstr "Di&key:"
 
 #: dialogs/imagelib/transforms/kpTransformSkewDialog.cpp:252
 #, kde-format
-msgid ""
-"<qt><p>Skewing the selection to %1x%2 may take a substantial amount of "
-"memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure want to skew the selection?</p></qt>"
-msgstr ""
-"<qt><p>Seçim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun "
-"süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
-"programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi "
-"eğmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Skewing the selection to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure want to skew the selection?</p></qt>"
+msgstr "<qt><p>Seçim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi eğmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformSkewDialog.cpp:260
 msgid "Skew Selection?"
@@ -1521,15 +1301,8 @@ msgstr "Seçimi &Eğ"
 
 #: dialogs/imagelib/transforms/kpTransformSkewDialog.cpp:267
 #, kde-format
-msgid ""
-"<qt><p>Skewing the image to %1x%2 may take a substantial amount of memory. "
-"This can reduce system responsiveness and cause other application resource "
-"problems.</p><p>Are you sure want to skew the image?</p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun "
-"süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
-"programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi "
-"eğmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Skewing the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure want to skew the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre eğiliyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi eğmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformSkewDialog.cpp:275
 msgid "Skew Image?"
@@ -1598,15 +1371,8 @@ msgstr "Ö&zel:"
 
 #: dialogs/imagelib/transforms/kpTransformRotateDialog.cpp:271
 #, kde-format
-msgid ""
-"<qt><p>Rotating the selection to %1x%2 may take a substantial amount of "
-"memory. This can reduce system responsiveness and cause other application "
-"resource problems.</p><p>Are you sure want to rotate the selection?</p></qt>"
-msgstr ""
-"<qt><p>Seçim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre "
-"uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
-"programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi "
-"döndürmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Rotating the selection to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure want to rotate the selection?</p></qt>"
+msgstr "<qt><p>Seçim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Seçimi döndürmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformRotateDialog.cpp:279
 msgid "Rotate Selection?"
@@ -1618,15 +1384,8 @@ msgstr "Seçimi Dö&ndür"
 
 #: dialogs/imagelib/transforms/kpTransformRotateDialog.cpp:286
 #, kde-format
-msgid ""
-"<qt><p>Rotating the image to %1x%2 may take a substantial amount of memory. "
-"This can reduce system responsiveness and cause other application resource "
-"problems.</p><p>Are you sure want to rotate the image?</p></qt>"
-msgstr ""
-"<qt><p>Resim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre "
-"uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer "
-"programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi "
-"döndürmeye emin misiniz?</p></qt>"
+msgid "<qt><p>Rotating the image to %1x%2 may take a substantial amount of memory. This can reduce system responsiveness and cause other application resource problems.</p><p>Are you sure want to rotate the image?</p></qt>"
+msgstr "<qt><p>Resim %1x%2 çözünürlüğüne göre döndürülüyor, bu mevcut hafızaya göre uzun süre alabilir. Bu sistemin yanıt vermesini yavaşlatabilir ve diğer programların kaynakları kullanmasında problem yaratabilir.</p><p>Resmi döndürmeye emin misiniz?</p></qt>"
 
 #: dialogs/imagelib/transforms/kpTransformRotateDialog.cpp:294
 msgid "Rotate Image?"
@@ -1677,45 +1436,16 @@ msgid "Vertical:"
 msgstr "Dikey:"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:182
-msgid ""
-"<qt><p><b>Dots Per Inch</b> (DPI) specifies the number of pixels of the "
-"image that should be printed inside one inch (2.54cm).</p><p>The higher the "
-"image's DPI, the smaller the printed image. Note that your printer is "
-"unlikely to produce high quality prints if you increase this to more than "
-"300 or 600 DPI, depending on the printer.</p><p>If you would like to print "
-"the image so that it is the same size as it is displayed on the screen, set "
-"the image's DPI values to be the same as the screen's.</p><p>If either DPI "
-"value is <b>Unspecified</b>, the image will also be printed to be the same "
-"size as on the screen.</p><p>Not all image formats support DPI values.  If "
-"the format you save in does not support them, they will not be saved.</p></"
-"qt>"
-msgstr ""
-"<qt><p><b>İnç başına Nokta</b> (DPI) bir inç (2.54cm) içerisinde basılacak "
-"resmin piksel sayısını belirler.</p><p>Resmin DPI değerini ne kadar yüksek "
-"olursa, resim o kadar küçük basılacaktır. Yazıcınıza bağlı olarak, 300 veya "
-"600 DPI 'dan yüksek bir değer belirlerseniz yazıcınızın yüksek kalite baskı "
-"üretmesinin pek mümkün olmadığını göz önünde bulundurun.</p><p>Bir resmi "
-"ekrandaki aynı boyutuyla yazdırmak istiyorsanız, resmin DPI değerleri ile "
-"ekranın DPI değerlerini aynı belirleyin.</p><p>Eğer herhangi bir DPI değeri "
-"<b>Belirtilmemiş</b> ise, resim ekrandaki aynı boyutuyla yazdırılacaktır.</"
-"p><p>Tüm resim biçimleri DPI değerlerini desteklemez. Eğer kaydettiğiniz "
-"biçim DPI değerlerini desteklemiyorsa, değerler kaydedilmeyecektir.</p></qt>"
+msgid "<qt><p><b>Dots Per Inch</b> (DPI) specifies the number of pixels of the image that should be printed inside one inch (2.54cm).</p><p>The higher the image's DPI, the smaller the printed image. Note that your printer is unlikely to produce high quality prints if you increase this to more than 300 or 600 DPI, depending on the printer.</p><p>If you would like to print the image so that it is the same size as it is displayed on the screen, set the image's DPI values to be the same as the screen's.</p><p>If either DPI value is <b>Unspecified</b>, the image will also be printed to be the same size as on the screen.</p><p>Not all image formats support DPI values.  If the format you save in does not support them, they will not be saved.</p></qt>"
+msgstr "<qt><p><b>İnç başına Nokta</b> (DPI) bir inç (2.54cm) içerisinde basılacak resmin piksel sayısını belirler.</p><p>Resmin DPI değerini ne kadar yüksek olursa, resim o kadar küçük basılacaktır. Yazıcınıza bağlı olarak, 300 veya 600 DPI 'dan yüksek bir değer belirlerseniz yazıcınızın yüksek kalite baskı üretmesinin pek mümkün olmadığını göz önünde bulundurun.</p><p>Bir resmi ekrandaki aynı boyutuyla yazdırmak istiyorsanız, resmin DPI değerleri ile ekranın DPI değerlerini aynı belirleyin.</p><p>Eğer herhangi bir DPI değeri <b>Belirtilmemiş</b> ise, resim ekrandaki aynı boyutuyla yazdırılacaktır.</p><p>Tüm resim biçimleri DPI değerlerini desteklemez. Eğer kaydettiğiniz biçim DPI değerlerini desteklemiyorsa, değerler kaydedilmeyecektir.</p></qt>"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:213
 msgid "O&ffset"
 msgstr "&Yerleşim"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:246
-msgid ""
-"<qt><p>The <b>Offset</b> is the relative position where this image should be "
-"placed, compared to other images.</p><p>Not all image formats support the "
-"<b>Offset</b> feature. If the format you save in does not support it, the "
-"values specified here will not be saved.</p></qt>"
-msgstr ""
-"<qt><p><b>Göreli Konum</b>, diğer resimlerle karşılaştırılığında resmin "
-"yerleştirileceği göreceli konumdur.</p><p>Tüm resim biçimleri <b>Göreli "
-"Konum</b> özelliğini desteklemez. Eğer kaydettiğiniz biçim bu özelliği "
-"desteklemiyorsa, burada belirlediğiniz değerler kaydedilmeyecektir.</p></qt>"
+msgid "<qt><p>The <b>Offset</b> is the relative position where this image should be placed, compared to other images.</p><p>Not all image formats support the <b>Offset</b> feature. If the format you save in does not support it, the values specified here will not be saved.</p></qt>"
+msgstr "<qt><p><b>Göreli Konum</b>, diğer resimlerle karşılaştırılığında resmin yerleştirileceği göreceli konumdur.</p><p>Tüm resim biçimleri <b>Göreli Konum</b> özelliğini desteklemez. Eğer kaydettiğiniz biçim bu özelliği desteklemiyorsa, burada belirlediğiniz değerler kaydedilmeyecektir.</p></qt>"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:262
 msgid "&Text Fields"
@@ -1735,21 +1465,8 @@ msgid "&Reset"
 msgstr "&Sıfırla"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:312
-msgid ""
-"<qt><p><b>Text Fields</b> provide extra information about the image. This is "
-"probably a comment area that you can freely write any text in.</"
-"p><p>However, this is format-specific so the fields could theoretically be "
-"computer-interpreted data - that you should not modify - but this is "
-"unlikely.</p><p>Not all image formats support <b>Text Fields</b>.  If the "
-"format you save in does not support them, they will not be saved.</p></qt>"
-msgstr ""
-"<qt><p><b>Metin Alanları</b> resim hakkında ek bilgi sağlar. Bu, olasılıkla, "
-"herhangi bir metni özgürce yazabileceğini bir yorum alanıdır.</p><p>Yine de "
-"metin alanları biçim özelliklidir, böylece alanlar kuramsal olarak - "
-"düzenlememeniz gereken - bilgisayar yorumlu veri olabilirler - ancak bu pek "
-"mümkün değildir.</p><p>Tüm resim biçimleri <b>Metin Alanları</b>nı "
-"desteklemez. Eğer kaydettiğiniz biçim metin alanlarını desteklemiyorsa, bu "
-"alanlar kaydedilmeyecektir.</p></qt>"
+msgid "<qt><p><b>Text Fields</b> provide extra information about the image. This is probably a comment area that you can freely write any text in.</p><p>However, this is format-specific so the fields could theoretically be computer-interpreted data - that you should not modify - but this is unlikely.</p><p>Not all image formats support <b>Text Fields</b>.  If the format you save in does not support them, they will not be saved.</p></qt>"
+msgstr "<qt><p><b>Metin Alanları</b> resim hakkında ek bilgi sağlar. Bu, olasılıkla, herhangi bir metni özgürce yazabileceğini bir yorum alanıdır.</p><p>Yine de metin alanları biçim özelliklidir, böylece alanlar kuramsal olarak - düzenlememeniz gereken - bilgisayar yorumlu veri olabilirler - ancak bu pek mümkün değildir.</p><p>Tüm resim biçimleri <b>Metin Alanları</b>nı desteklemez. Eğer kaydettiğiniz biçim metin alanlarını desteklemiyorsa, bu alanlar kaydedilmeyecektir.</p></qt>"
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:398
 msgid "Key"
@@ -1766,12 +1483,8 @@ msgstr "%2 satırındaki \"%1\" metin değeri bir anahtar gerektiriyor."
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:512
 #, kde-format
-msgid ""
-"All text keys must be unique. The text key \"%1\" on lines %2 and %3 are "
-"identical."
-msgstr ""
-"Tüm metin anahtarları eşsiz olmalıdır. %2 ve %3 satırlarındaki \"%1\" metin "
-"anahtarı aynı."
+msgid "All text keys must be unique. The text key \"%1\" on lines %2 and %3 are identical."
+msgstr "Tüm metin anahtarları eşsiz olmalıdır. %2 ve %3 satırlarındaki \"%1\" metin anahtarı aynı."
 
 #: dialogs/imagelib/kpDocumentMetaInfoDialog.cpp:827
 msgid "Invalid Text Fields"
@@ -1995,114 +1708,21 @@ msgid_plural "%1 more items"
 msgstr[0] "Ek %1 öge"
 
 #: widgets/colorSimilarity/kpColorSimilarityHolder.cpp:72
-msgid ""
-"<qt><p><b>Color Similarity</b> is how <i>similar</i> the colors of different "
-"pixels must be, for operations to consider them to be the same.</p><p>If you "
-"set it to something other than <b>Exact Match</b>, you can work more "
-"effectively with dithered images and photos, in a comparable manner to the "
-"\"Magic Wand\" feature of other paint programs.</p><p>This feature applies "
-"to:</p><ul><li><b>Selections</b>: In <b>Transparent</b> mode, any color in "
-"the selection that is <i>similar</i> to the background color will be made "
-"transparent.</li><li><b>Flood Fill</b>: For regions with <i>similar</i> - "
-"but not identical - colored pixels, a higher setting is likely to fill more "
-"pixels.</li><li><b>Color Eraser</b>: Any pixel whose color is <i>similar</i> "
-"to the foreground color will be replaced with the background color.</"
-"li><li><b>Autocrop</b> and <b>Remove Internal Border</b>: For borders with "
-"<i>similar</i> - but not identical - colored pixels, a higher setting is "
-"more likely to crop the whole border.</li></ul><p>Higher settings mean that "
-"operations consider an increased range of colors to be sufficiently "
-"<i>similar</i> so as to be the same.  Therefore, you should increase the "
-"setting if the above operations are not affecting pixels whose colors you "
-"consider to be similar enough.</p><p>However, if they are having too much of "
-"an effect and are changing pixels whose colors you do not consider to be "
-"similar (e.g. if <b>Flood Fill</b> is changing too many pixels), you should "
-"decrease this setting.</p><p>To configure it, click on the cube.</p></qt>"
-msgstr ""
-"<qt><p><b>Renk Benzerliği</b>, farklı piksel renklerini aynı olarak ele alan "
-"işlemler için bu piksel renklerinin ne kadar <i>benzer</i> olması "
-"gerektiğini ifade eder.</p><p>Eğer <b>Birebir Eşleştirme</b>den farklı bir "
-"değer belirlerseniz, diğer boyama programlarının \"Sihirli Değnek\" özelliği "
-"ile kıyaslanabilir bir tarzda titrek resim ve fotoğraflarla çok daha etkin "
-"bir şekilde çalışabilirsiniz.</p><p>Bu özelliklik şunlara uygulanır:</"
-"p><ul><li><b>Seçimler</b>: <b>Şeffaf</b> kipte, seçim içerisinde arkaplan "
-"rengine <i>benzer</i> herhangi renk şeffaf yapılacaktır.</li><li><b>Akıcı "
-"Doldur</b>: Benzer - ancak özdeş olmayan - renkli piksellere sahip bölgeler "
-"için, yüksek bir değerin daha çok pikseli doldurması olasıdır.</"
-"li><li><b>Renk Silici</b>: Rengi önplan rengine <i>benzer</i> olan pikseller "
-"arkaplan rengiyle yer değiştirilecektir.</li><li><b>Otomatik Kırp</b> ve "
-"<b>İç Sınırı Kaldır</b>: <i>Benzer</i> - ancak özdeş olmayan - renkli "
-"piksellere sahip sınırlar için, yüksek değerin tüm sınırı kırpması daha "
-"olasıdır.</li></ul><p>Yüksek değerler, işlemlerin arttırılmış renk "
-"aralığının aynı olması amacıyla yeterince <i>benzer</i> olduğunu hesaba "
-"kattığı anlamına gelir. Bu nedenle, eğer yukarıdaki işlemlerin yeteri kadar "
-"benzer renklere sahip olduğunu düşündüğünüz pikselleri etkilemiyorsa, "
-"yapılandırma değerlerini arttırmalısınız.</p><p>Ancak, eğer çok fazla etkiye "
-"sahiplerse ve benzer renklere sahip olmadığını düşündüğünüz piksellerin "
-"renklerini değiştiriyorsa (örn, <b>Akıcı Doldur</b> işlemi çok fazla pikseli "
-"değiştiriyorsa), bu değeri düşürmelisiniz.</p><p>Değeri yapılandırmak için, "
-"küp üzerine tıklayın."
+msgid "<qt><p><b>Color Similarity</b> is how <i>similar</i> the colors of different pixels must be, for operations to consider them to be the same.</p><p>If you set it to something other than <b>Exact Match</b>, you can work more effectively with dithered images and photos, in a comparable manner to the \"Magic Wand\" feature of other paint programs.</p><p>This feature applies to:</p><ul><li><b>Selections</b>: In <b>Transparent</b> mode, any color in the selection that is <i>similar</i> to the background color will be made transparent.</li><li><b>Flood Fill</b>: For regions with <i>similar</i> - but not identical - colored pixels, a higher setting is likely to fill more pixels.</li><li><b>Color Eraser</b>: Any pixel whose color is <i>similar</i> to the foreground color will be replaced with the background color.</li><li><b>Autocrop</b> and <b>Remove Internal Border</b>: For borders with <i>similar</i> - but not identical - colored pixels, a higher setting is more likely to crop the whole border.</li></ul><p>Higher settings mean that operations consider an increased range of colors to be sufficiently <i>similar</i> so as to be the same.  Therefore, you should increase the setting if the above operations are not affecting pixels whose colors you consider to be similar enough.</p><p>However, if they are having too much of an effect and are changing pixels whose colors you do not consider to be similar (e.g. if <b>Flood Fill</b> is changing too many pixels), you should decrease this setting.</p><p>To configure it, click on the cube.</p></qt>"
+msgstr "<qt><p><b>Renk Benzerliği</b>, farklı piksel renklerini aynı olarak ele alan işlemler için bu piksel renklerinin ne kadar <i>benzer</i> olması gerektiğini ifade eder.</p><p>Eğer <b>Birebir Eşleştirme</b>den farklı bir değer belirlerseniz, diğer boyama programlarının \"Sihirli Değnek\" özelliği ile kıyaslanabilir bir tarzda titrek resim ve fotoğraflarla çok daha etkin bir şekilde çalışabilirsiniz.</p><p>Bu özelliklik şunlara uygulanır:</p><ul><li><b>Seçimler</b>: <b>Şeffaf</b> kipte, seçim içerisinde arkaplan rengine <i>benzer</i> herhangi renk şeffaf yapılacaktır.</li><li><b>Akıcı Doldur</b>: Benzer - ancak özdeş olmayan - renkli piksellere sahip bölgeler için, yüksek bir değerin daha çok pikseli doldurması olasıdır.</li><li><b>Renk Silici</b>: Rengi önplan rengine <i>benzer</i> olan pikseller arkaplan rengiyle yer değiştirilecektir.</li><li><b>Otomatik Kırp</b> ve <b>İç Sınırı Kaldır</b>: <i>Benzer</i> - ancak özdeş olmayan - renkli piksellere sahip sınırlar için, yüksek değerin tüm sınırı kırpması daha olasıdır.</li></ul><p>Yüksek değerler, işlemlerin arttırılmış renk aralığının aynı olması amacıyla yeterince <i>benzer</i> olduğunu hesaba kattığı anlamına gelir. Bu nedenle, eğer yukarıdaki işlemlerin yeteri kadar benzer renklere sahip olduğunu düşündüğünüz pikselleri etkilemiyorsa, yapılandırma değerlerini arttırmalısınız.</p><p>Ancak, eğer çok fazla etkiye sahiplerse ve benzer renklere sahip olmadığını düşündüğünüz piksellerin renklerini değiştiriyorsa (örn, <b>Akıcı Doldur</b> işlemi çok fazla pikseli değiştiriyorsa), bu değeri düşürmelisiniz.</p><p>Değeri yapılandırmak için, küp üzerine tıklayın."
 
 #: widgets/colorSimilarity/kpColorSimilarityHolder.cpp:122
-msgid ""
-"<qt><p><b>Color Similarity</b> is how <i>similar</i> the colors of different "
-"pixels must be, for operations to consider them to be the same.</p><p>If you "
-"set it to something other than <b>Exact Match</b>, you can work more "
-"effectively with dithered images and photos, in a comparable manner to the "
-"\"Magic Wand\" feature of other paint programs.</p><p>This feature applies "
-"to:</p><ul><li><b>Selections</b>: In <b>Transparent</b> mode, any color in "
-"the selection that is <i>similar</i> to the background color will be made "
-"transparent.</li><li><b>Flood Fill</b>: For regions with <i>similar</i> - "
-"but not identical - colored pixels, a higher setting is likely to fill more "
-"pixels.</li><li><b>Color Eraser</b>: Any pixel whose color is <i>similar</i> "
-"to the foreground color will be replaced with the background color.</"
-"li><li><b>Autocrop</b> and <b>Remove Internal Border</b>: For borders with "
-"<i>similar</i> - but not identical - colored pixels, a higher setting is "
-"more likely to crop the whole border.</li></ul><p>Higher settings mean that "
-"operations consider an increased range of colors to be sufficiently "
-"<i>similar</i> so as to be the same.  Therefore, you should increase the "
-"setting if the above operations are not affecting pixels whose colors you "
-"consider to be similar enough.</p><p>However, if they are having too much of "
-"an effect and are changing pixels whose colors you do not consider to be "
-"similar (e.g. if <b>Flood Fill</b> is changing too many pixels), you should "
-"decrease this setting.</p></qt>"
-msgstr ""
-"<qt><p><b>Renk Benzerliği</b>, farklı piksel renklerini aynı olarak ele alan "
-"işlemler için bu piksel renklerinin ne kadar <i>benzer</i> olması "
-"gerektiğini ifade eder.</p><p>Eğer <b>Birebir Eşleştirme</b>den farklı bir "
-"değer belirlerseniz, diğer boyama programlarının \"Sihirli Değnek\" özelliği "
-"ile kıyaslanabilir bir tarzda titrek resim ve fotoğraflarla çok daha etkin "
-"bir şekilde çalışabilirsiniz.</p><p>Bu özelliklik şunlara uygulanır:</"
-"p><ul><li><b>Seçimler</b>: <b>Şeffaf</b> kipte, seçim içerisinde arkaplan "
-"rengine <i>benzer</i> herhangi renk şeffaf yapılacaktır.</li><li><b>Akıcı "
-"Doldur</b>: Benzer - ancak özdeş olmayan - renkli piksellere sahip bölgeler "
-"için, yüksek bir değerin daha çok pikseli doldurması olasıdır.</"
-"li><li><b>Renk Silici</b>: Rengi önplan rengine <i>benzer</i> olan pikseller "
-"arkaplan rengiyle yer değiştirilecektir.</li><li><b>Otomatik Kırp</b> ve "
-"<b>İç Sınırı Kaldır</b>: <i>Benzer</i> - ancak özdeş olmayan - renkli "
-"piksellere sahip sınırlar için, yüksek değerin tüm sınırı kırpması daha "
-"olasıdır.</li></ul><p>Yüksek değerler, işlemlerin arttırılmış renk "
-"aralığının aynı olması amacıyla yeterince <i>benzer</i> olduğunu hesaba "
-"kattığı anlamına gelir. Bu nedenle, eğer yukarıdaki işlemlerin yeteri kadar "
-"benzer renklere sahip olduğunu düşündüğünüz pikselleri etkilemiyorsa, "
-"yapılandırma değerlerini arttırmalısınız.</p><p>Ancak, eğer çok fazla etkiye "
-"sahiplerse ve benzer renklere sahip olmadığını düşündüğünüz piksellerin "
-"renklerini değiştiriyorsa (örn, <b>Akıcı Doldur</b> işlemi çok fazla pikseli "
-"değiştiriyorsa), bu değeri düşürmelisiniz.</p></qt>"
+msgid "<qt><p><b>Color Similarity</b> is how <i>similar</i> the colors of different pixels must be, for operations to consider them to be the same.</p><p>If you set it to something other than <b>Exact Match</b>, you can work more effectively with dithered images and photos, in a comparable manner to the \"Magic Wand\" feature of other paint programs.</p><p>This feature applies to:</p><ul><li><b>Selections</b>: In <b>Transparent</b> mode, any color in the selection that is <i>similar</i> to the background color will be made transparent.</li><li><b>Flood Fill</b>: For regions with <i>similar</i> - but not identical - colored pixels, a higher setting is likely to fill more pixels.</li><li><b>Color Eraser</b>: Any pixel whose color is <i>similar</i> to the foreground color will be replaced with the background color.</li><li><b>Autocrop</b> and <b>Remove Internal Border</b>: For borders with <i>similar</i> - but not identical - colored pixels, a higher setting is more likely to crop the whole border.</li></ul><p>Higher settings mean that operations consider an increased range of colors to be sufficiently <i>similar</i> so as to be the same.  Therefore, you should increase the setting if the above operations are not affecting pixels whose colors you consider to be similar enough.</p><p>However, if they are having too much of an effect and are changing pixels whose colors you do not consider to be similar (e.g. if <b>Flood Fill</b> is changing too many pixels), you should decrease this setting.</p></qt>"
+msgstr "<qt><p><b>Renk Benzerliği</b>, farklı piksel renklerini aynı olarak ele alan işlemler için bu piksel renklerinin ne kadar <i>benzer</i> olması gerektiğini ifade eder.</p><p>Eğer <b>Birebir Eşleştirme</b>den farklı bir değer belirlerseniz, diğer boyama programlarının \"Sihirli Değnek\" özelliği ile kıyaslanabilir bir tarzda titrek resim ve fotoğraflarla çok daha etkin bir şekilde çalışabilirsiniz.</p><p>Bu özelliklik şunlara uygulanır:</p><ul><li><b>Seçimler</b>: <b>Şeffaf</b> kipte, seçim içerisinde arkaplan rengine <i>benzer</i> herhangi renk şeffaf yapılacaktır.</li><li><b>Akıcı Doldur</b>: Benzer - ancak özdeş olmayan - renkli piksellere sahip bölgeler için, yüksek bir değerin daha çok pikseli doldurması olasıdır.</li><li><b>Renk Silici</b>: Rengi önplan rengine <i>benzer</i> olan pikseller arkaplan rengiyle yer değiştirilecektir.</li><li><b>Otomatik Kırp</b> ve <b>İç Sınırı Kaldır</b>: <i>Benzer</i> - ancak özdeş olmayan - renkli piksellere sahip sınırlar için, yüksek değerin tüm sınırı kırpması daha olasıdır.</li></ul><p>Yüksek değerler, işlemlerin arttırılmış renk aralığının aynı olması amacıyla yeterince <i>benzer</i> olduğunu hesaba kattığı anlamına gelir. Bu nedenle, eğer yukarıdaki işlemlerin yeteri kadar benzer renklere sahip olduğunu düşündüğünüz pikselleri etkilemiyorsa, yapılandırma değerlerini arttırmalısınız.</p><p>Ancak, eğer çok fazla etkiye sahiplerse ve benzer renklere sahip olmadığını düşündüğünüz piksellerin renklerini değiştiriyorsa (örn, <b>Akıcı Doldur</b> işlemi çok fazla pikseli değiştiriyorsa), bu değeri düşürmelisiniz.</p></qt>"
 
 #: widgets/colorSimilarity/kpColorSimilarityToolBarItem.cpp:224
 #, kde-format
 msgid "<p>Color Similarity: %1%</p><p align=\"center\">Click to configure.</p>"
-msgstr ""
-"<p>Renk Benzerliği: %1%</p><p align=\"center\">Yapılandırmak için tıklayın.</"
-"p>"
+msgstr "<p>Renk Benzerliği: %1%</p><p align=\"center\">Yapılandırmak için tıklayın.</p>"
 
 #: widgets/colorSimilarity/kpColorSimilarityToolBarItem.cpp:231
-msgid ""
-"<p>Color Similarity: Exact Match</p><p align=\"center\">Click to configure.</"
-"p>"
-msgstr ""
-"<p>Renk Benzerliği: Birebir Eşleştirme</p><p align=\"center\">Yapılandırmak "
-"için tıklayın.</p>"
+msgid "<p>Color Similarity: Exact Match</p><p align=\"center\">Click to configure.</p>"
+msgstr "<p>Renk Benzerliği: Birebir Eşleştirme</p><p align=\"center\">Yapılandırmak için tıklayın.</p>"
 
 #: widgets/toolbars/options/kpToolWidgetBrush.cpp:164
 msgid "1x1"
@@ -2339,23 +1959,8 @@ msgid "24-bit Color"
 msgstr "24 Bit Renk"
 
 #: widgets/kpColorCells.cpp:196
-msgid ""
-"<qt><p>To select the foreground color that tools use to draw, left-click on "
-"a filled-in color cell. To select the background color, right-click instead."
-"</p><p>To change the color of a color cell itself, double-click on it.</"
-"p><p>You can also swap the color of a filled-in cell with any other cell "
-"using drag and drop. Also, if you hold down the <b>Ctrl</b> key, the "
-"destination cell's color will be overwritten, instead of being swapped with "
-"the color of the source cell.</p></qt>"
-msgstr ""
-"<qt><p>Araçların çizim için kullandıkları önplan rengini seçmek için, "
-"doldurulmuş bir renk hücresine farenin sol tuşu ile tıklayın. Arkaplan "
-"rengini seçmek için ise sağ tuşla tıklayın. </p><p>Bir renk hücresinin kendi "
-"rengini değiştirmek için, üzerine çift tıklayın.</p><p>Sürüle ve bırak "
-"yaparak başka bir hücrenin rengini bir diğeriyle değiştirebilirsiniz. "
-"Ayırca, eğer <b>Ctrl</b> tuşuna basılı tutarsanız, hedef hücrenin rengi "
-"kaynak hücrenin rengi ile yer değiştirmek yerine hücre renginin üzerine "
-"yazılacaktır.</p></qt>"
+msgid "<qt><p>To select the foreground color that tools use to draw, left-click on a filled-in color cell. To select the background color, right-click instead.</p><p>To change the color of a color cell itself, double-click on it.</p><p>You can also swap the color of a filled-in cell with any other cell using drag and drop. Also, if you hold down the <b>Ctrl</b> key, the destination cell's color will be overwritten, instead of being swapped with the color of the source cell.</p></qt>"
+msgstr "<qt><p>Araçların çizim için kullandıkları önplan rengini seçmek için, doldurulmuş bir renk hücresine farenin sol tuşu ile tıklayın. Arkaplan rengini seçmek için ise sağ tuşla tıklayın. </p><p>Bir renk hücresinin kendi rengini değiştirmek için, üzerine çift tıklayın.</p><p>Sürüle ve bırak yaparak başka bir hücrenin rengini bir diğeriyle değiştirebilirsiniz. Ayırca, eğer <b>Ctrl</b> tuşuna basılı tutarsanız, hedef hücrenin rengi kaynak hücrenin rengi ile yer değiştirmek yerine hücre renginin üzerine yazılacaktır.</p></qt>"
 
 #: imagelib/transforms/kpTransformAutoCrop.cpp:384
 msgid "Remove Internal B&order"
@@ -2374,9 +1979,7 @@ msgid "Autocrop"
 msgstr "Otomatik Kırp"
 
 #: imagelib/transforms/kpTransformAutoCrop.cpp:620
-msgid ""
-"KolourPaint cannot remove the selection's internal border as it could not be "
-"located."
+msgid "KolourPaint cannot remove the selection's internal border as it could not be located."
 msgstr "KolourPaint bulunamadığı için seçimin iç sınırını kaldıramadı."
 
 #: imagelib/transforms/kpTransformAutoCrop.cpp:622
@@ -2384,9 +1987,7 @@ msgid "Cannot Remove Internal Border"
 msgstr "İç Sınır Kaldırılamadı"
 
 #: imagelib/transforms/kpTransformAutoCrop.cpp:628
-msgid ""
-"KolourPaint cannot automatically crop the image as its border could not be "
-"located."
+msgid "KolourPaint cannot automatically crop the image as its border could not be located."
 msgstr "KolourPaint sınırı bulunamadığı için otomatik olarak resmi kırpamadı."
 
 #: imagelib/transforms/kpTransformAutoCrop.cpp:630
@@ -2478,10 +2079,8 @@ msgid "Scanning Support"
 msgstr "Tarama Desteği"
 
 #: kolourpaint.cpp:80
-msgid ""
-"Thanks to the many others who have helped to make this program possible."
-msgstr ""
-"Bu uygulamanın oluşturulmasında emeği geçen diğer kişilere teşekkürler."
+msgid "Thanks to the many others who have helped to make this program possible."
+msgstr "Bu uygulamanın oluşturulmasında emeği geçen diğer kişilere teşekkürler."
 
 #: kolourpaint.cpp:86
 msgid "Image file to open"
