@@ -2,7 +2,7 @@
 # translation of konsole.po to
 # Turkish translation of konsole.
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-#
+# 
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Mehmet Tarımcı <mehmet@gelecek.com.tr>, 2002.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
@@ -22,8 +22,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: BookmarkHandler.cpp:134
 #, kde-format
@@ -132,12 +132,8 @@ msgid "Color"
 msgstr "Renk"
 
 #: ColorSchemeEditor.cpp:103
-msgid ""
-"The background transparency setting will not be used because your desktop "
-"does not appear to support transparent windows."
-msgstr ""
-"Bilgisayarınız şeffaf pencereleri desteklemediğinden arkaplan şeffaflığı "
-"ayarları kullanılamayacak."
+msgid "The background transparency setting will not be used because your desktop does not appear to support transparent windows."
+msgstr "Bilgisayarınız şeffaf pencereleri desteklemediğinden arkaplan şeffaflığı ayarları kullanılamayacak."
 
 #: CopyInputDialog.cpp:35
 msgid "Copy Input"
@@ -187,12 +183,8 @@ msgid "Select Initial Directory"
 msgstr "Başlangıç Dizinini Seç"
 
 #: EditProfileDialog.cpp:430
-msgid ""
-"This color scheme uses a transparent background which does not appear to be "
-"supported on your desktop"
-msgstr ""
-"Bu renk şeması masaüstünüz tarafından desteklenmiyor görünen saydam arkaplan "
-"kullanıyor"
+msgid "This color scheme uses a transparent background which does not appear to be supported on your desktop"
+msgstr "Bu renk şeması masaüstünüz tarafından desteklenmiyor görünen saydam arkaplan kullanıyor"
 
 #: EditProfileDialog.cpp:596
 #, kde-format
@@ -244,7 +236,8 @@ msgid "Fixed size scrollback: "
 msgstr "Sabit sınırlı geçmiş: "
 
 #. i18n: file: EditProfileDialog.ui:684
-#. i18n: ectx: property (text), widget (QRadioButton, unlimitedScrollbackButton)
+#. i18n: ectx: property (text), widget (QRadioButton,
+#. unlimitedScrollbackButton)
 #: HistorySizeDialog.cpp:66 rc.cpp:199 rc.cpp:659
 msgid "Unlimited scrollback"
 msgstr "Sınırsız geçmiş"
@@ -306,12 +299,8 @@ msgid "Match regular expression"
 msgstr "Düzenli ifade eşle"
 
 #: IncrementalSearchBar.cpp:120
-msgid ""
-"Sets whether the search phrase is interpreted as normal text or as a regular "
-"expression"
-msgstr ""
-"Aranan ifadenin normal metin olarak mı düzenli ifade olarak mı "
-"yorumlanacağını ayarlar"
+msgid "Sets whether the search phrase is interpreted as normal text or as a regular expression"
+msgstr "Aranan ifadenin normal metin olarak mı düzenli ifade olarak mı yorumlanacağını ayarlar"
 
 #: IncrementalSearchBar.cpp:246
 msgid "Search reached bottom, continued from top."
@@ -346,17 +335,12 @@ msgid "List the available profiles"
 msgstr "Kullanılabilir profilleri listele"
 
 #: main.cpp:94
-msgid ""
-"Start Konsole in the background and bring to the front when the F12 key is "
-"pressed"
-msgstr ""
-"Konsole uygulamasını arkaplanda başlat ve F12 tuşuna baslınca önplana getir"
+msgid "Start Konsole in the background and bring to the front when the F12 key is pressed"
+msgstr "Konsole uygulamasını arkaplanda başlat ve F12 tuşuna baslınca önplana getir"
 
 #: main.cpp:97
-msgid ""
-"Create a new tab in an existing window rather than creating a new window"
-msgstr ""
-"Yeni bir pencere oluşturmaktansa var olan pencerede yeni bir sekme oluştur"
+msgid "Create a new tab in an existing window rather than creating a new window"
+msgstr "Yeni bir pencere oluşturmaktansa var olan pencerede yeni bir sekme oluştur"
 
 #: main.cpp:98
 msgid "Set the initial working directory of the new tab or window to 'dir'"
@@ -367,8 +351,7 @@ msgid "Disable transparent backgrounds, even if the system supports them."
 msgstr "Sistem desteklese bile saydam arkaplanları pasifleştir."
 
 #: main.cpp:101
-msgid ""
-"Try to enable transparency, even if the system does not appear to support it."
+msgid "Try to enable transparency, even if the system does not appear to support it."
 msgstr "Sistem desteklemiyor görünse bile saydamlığı etkinleştirmeyi dene."
 
 #: main.cpp:103
@@ -573,8 +556,7 @@ msgstr "Profilleri Yönet..."
 
 #: MainWindow.cpp:363
 msgid "You have multiple tabs in this window, are you sure you want to quit?"
-msgstr ""
-"Bu pencerede birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
+msgstr "Bu pencerede birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
 
 #: MainWindow.cpp:365 SessionController.cpp:633
 msgid "Confirm Close"
@@ -689,12 +671,8 @@ msgstr "Komut:"
 #. i18n: file: EditProfileDialog.ui:82
 #. i18n: ectx: property (toolTip), widget (KLineEdit, commandEdit)
 #: rc.cpp:39 rc.cpp:499
-msgid ""
-"The command to execute when new terminal sessions are created using this "
-"profile"
-msgstr ""
-"Bu profil kullanılarak oluşturulan yeni uçbirim oturumu açıldığında "
-"çalıştırılacak komut"
+msgid "The command to execute when new terminal sessions are created using this profile"
+msgstr "Bu profil kullanılarak oluşturulan yeni uçbirim oturumu açıldığında çalıştırılacak komut"
 
 #. i18n: file: EditProfileDialog.ui:92
 #. i18n: ectx: property (text), widget (QLabel, label_9)
@@ -705,11 +683,8 @@ msgstr "Başlangıç dizini:"
 #. i18n: file: EditProfileDialog.ui:102
 #. i18n: ectx: property (toolTip), widget (KLineEdit, initialDirEdit)
 #: rc.cpp:45 rc.cpp:505
-msgid ""
-"The initial working directory for new terminal sessions using this profile"
-msgstr ""
-"Bu profil kullanılarak yeni uçbirim oturumu açıldığında kullanılacak "
-"başlangıç çalışma dizini"
+msgid "The initial working directory for new terminal sessions using this profile"
+msgstr "Bu profil kullanılarak yeni uçbirim oturumu açıldığında kullanılacak başlangıç çalışma dizini"
 
 #. i18n: file: EditProfileDialog.ui:112
 #. i18n: ectx: property (toolTip), widget (QToolButton, dirSelectButton)
@@ -838,19 +813,15 @@ msgstr "Uzak sekme başlığı biçimi:"
 #. i18n: file: EditProfileDialog.ui:311
 #. i18n: ectx: property (toolTip), widget (KLineEdit, remoteTabTitleEdit)
 #: rc.cpp:102 rc.cpp:562
-msgid ""
-"Tab title format used when a remote command (e.g. connection to another "
-"computer via SSH) is being executed"
-msgstr ""
-"Bir uzak komut (örneğin SSH ile uzak bir makineye bağlanıldığında) "
-"çalıştırıldığında kullanılacak sekme başlığı biçimi"
+msgid "Tab title format used when a remote command (e.g. connection to another computer via SSH) is being executed"
+msgstr "Bir uzak komut (örneğin SSH ile uzak bir makineye bağlanıldığında) çalıştırıldığında kullanılacak sekme başlığı biçimi"
 
 #. i18n: file: EditProfileDialog.ui:318
-#. i18n: ectx: property (toolTip), widget (QPushButton, remoteTabTitleEditButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton,
+#. remoteTabTitleEditButton)
 #: rc.cpp:105 rc.cpp:565
 msgid "Edit tab title format used when executing remote commands"
-msgstr ""
-"Uzak komutlar çalıştırıldığında kullanılacak sekme başlık biçimini düzenle"
+msgstr "Uzak komutlar çalıştırıldığında kullanılacak sekme başlık biçimini düzenle"
 
 #. i18n: file: EditProfileDialog.ui:331
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -913,7 +884,8 @@ msgid "Edit the selected color scheme"
 msgstr "Seçilen renk şemasını düzenle"
 
 #. i18n: file: EditProfileDialog.ui:463
-#. i18n: ectx: property (toolTip), widget (QPushButton, removeColorSchemeButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton,
+#. removeColorSchemeButton)
 #: rc.cpp:141 rc.cpp:601
 msgid "Delete the selected color scheme"
 msgstr "Seçilen renk şemasını sil"
@@ -1001,7 +973,8 @@ msgid "Scrolling"
 msgstr "Kaydırma"
 
 #. i18n: file: EditProfileDialog.ui:619
-#. i18n: ectx: property (toolTip), widget (QRadioButton, disableScrollbackButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. disableScrollbackButton)
 #: rc.cpp:181 rc.cpp:641
 msgid "Disable scroll bar and do not remember previous output"
 msgstr "Kaydırma çubuğunu pasifleştir ve önceki çıktıyı anımsama"
@@ -1013,7 +986,8 @@ msgid "Disable scrollback"
 msgstr "Geçmişi pasifleştir"
 
 #. i18n: file: EditProfileDialog.ui:637
-#. i18n: ectx: property (toolTip), widget (QRadioButton, fixedScrollbackButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. fixedScrollbackButton)
 #: rc.cpp:187 rc.cpp:647
 msgid "Limit the remembered output to a fixed number of lines"
 msgstr "Anımsanacak çıktının satır sayısını sabit bir değerle sınırlandır"
@@ -1025,13 +999,15 @@ msgid "Fixed number of lines: "
 msgstr "Sabit satır sayısı: "
 
 #. i18n: file: EditProfileDialog.ui:647
-#. i18n: ectx: property (toolTip), widget (KIntSpinBox, scrollBackLinesSpinner)
+#. i18n: ectx: property (toolTip), widget (KIntSpinBox,
+#. scrollBackLinesSpinner)
 #: rc.cpp:193 rc.cpp:653
 msgid "Number of lines of output to remember"
 msgstr "Çıktının hatırlanacak satır sayısı"
 
 #. i18n: file: EditProfileDialog.ui:681
-#. i18n: ectx: property (toolTip), widget (QRadioButton, unlimitedScrollbackButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. unlimitedScrollbackButton)
 #: rc.cpp:196 rc.cpp:656
 msgid "Remember all output produced by the terminal"
 msgstr "Uçbirim tarafından üretilen tüm çıktıları anımsa"
@@ -1067,7 +1043,8 @@ msgid "Show on right side"
 msgstr "Sağ tarafta göster"
 
 #. i18n: file: EditProfileDialog.ui:741
-#. i18n: ectx: property (toolTip), widget (QRadioButton, scrollBarHiddenButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. scrollBarHiddenButton)
 #: rc.cpp:217 rc.cpp:677
 msgid "Hide the scroll bar"
 msgstr "Kaydırma çubuğunu gizle"
@@ -1093,11 +1070,8 @@ msgstr "Kısayollar"
 #. i18n: file: EditProfileDialog.ui:791
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: rc.cpp:229 rc.cpp:689
-msgid ""
-"Key bindings control how combinations of key presses in the terminal window "
-"are converted into the stream of characters which is sent to the current "
-"terminal program."
-msgstr ""
+msgid "Key bindings control how combinations of key presses in the terminal window are converted into the stream of characters which is sent to the current terminal program."
+msgstr "Tuş atamaları, uçbirim ekranında basılan tuş kombinasyonlarının mevcut uçbirim yazılımına nasıl gönderileceğini denetler."
 
 #. i18n: file: EditProfileDialog.ui:811
 #. i18n: ectx: property (toolTip), widget (QPushButton, newKeyBindingsButton)
@@ -1112,7 +1086,8 @@ msgid "Edit the selected key bindings list"
 msgstr "Seçilen kısayol listesini düzenle"
 
 #. i18n: file: EditProfileDialog.ui:831
-#. i18n: ectx: property (toolTip), widget (QPushButton, removeKeyBindingsButton)
+#. i18n: ectx: property (toolTip), widget (QPushButton,
+#. removeKeyBindingsButton)
 #: rc.cpp:244 rc.cpp:704
 msgid "Delete the selected key bindings list"
 msgstr "Seçilen kısayol listesini sil"
@@ -1130,7 +1105,8 @@ msgid "Terminal Features"
 msgstr "Terminal Özellikleri"
 
 #. i18n: file: EditProfileDialog.ui:887
-#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBlinkingTextButton)
+#. i18n: ectx: property (toolTip), widget (QCheckBox,
+#. enableBlinkingTextButton)
 #: rc.cpp:256 rc.cpp:716
 msgid "Allow terminal programs to create blinking sections of text"
 msgstr "Uçbirim uygulamalarının yanıp sönen metinler oluşturmasına izin ver"
@@ -1154,7 +1130,8 @@ msgid "Enable flow control using Ctrl+S, Ctrl+Q"
 msgstr "Ctrl+S kullanarak akım kontrolünü etkinleştir, Ctrl+Q"
 
 #. i18n: file: EditProfileDialog.ui:919
-#. i18n: ectx: property (toolTip), widget (QCheckBox, enableResizeWindowButton)
+#. i18n: ectx: property (toolTip), widget (QCheckBox,
+#. enableResizeWindowButton)
 #: rc.cpp:268 rc.cpp:728
 msgid "Allow terminal programs to resize the window"
 msgstr "Uçbirim uygulamalarının pencereyi boyutlandırmasına izin ver"
@@ -1166,14 +1143,11 @@ msgid "Allow programs to resize terminal window"
 msgstr "Uygulamaların uçbirim penceresini boyutlandırmasına izin ver"
 
 #. i18n: file: EditProfileDialog.ui:935
-#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBidiRenderingButton)
+#. i18n: ectx: property (toolTip), widget (QCheckBox,
+#. enableBidiRenderingButton)
 #: rc.cpp:274 rc.cpp:734
-msgid ""
-"Enable Bi-Directional display on terminals (valid for Arabic, Farsi or "
-"Hebrew only)"
-msgstr ""
-"Uçbirimlerde çift yönlü görünümü etkinleştir (Arapça, Farsça ve İbranice "
-"için geçerlidir)"
+msgid "Enable Bi-Directional display on terminals (valid for Arabic, Farsi or Hebrew only)"
+msgstr "Uçbirimlerde çift yönlü görünümü etkinleştir (Arapça, Farsça ve İbranice için geçerlidir)"
 
 #. i18n: file: EditProfileDialog.ui:938
 #. i18n: ectx: property (text), widget (QCheckBox, enableBidiRenderingButton)
@@ -1196,12 +1170,8 @@ msgstr "Çift tıklama seçimi için sözcük karakterleri: "
 #. i18n: file: EditProfileDialog.ui:969
 #. i18n: ectx: property (toolTip), widget (KLineEdit, wordCharacterEdit)
 #: rc.cpp:286 rc.cpp:746
-msgid ""
-"Characters which are considered part of a word when double-clicking to "
-"select whole words in the terminal"
-msgstr ""
-"Uçbirim penceresinde çift tıklayarak tüm sözcüğün seçilmesini sağlayacak "
-"olan, dikkate alınacak karakterler"
+msgid "Characters which are considered part of a word when double-clicking to select whole words in the terminal"
+msgstr "Uçbirim penceresinde çift tıklayarak tüm sözcüğün seçilmesini sağlayacak olan, dikkate alınacak karakterler"
 
 #. i18n: file: EditProfileDialog.ui:978
 #. i18n: ectx: property (text), widget (QCheckBox, tripleClickMode)
@@ -1212,10 +1182,8 @@ msgstr "Üç kez tıklama geçerli sözcüğün sonrasını seçer"
 #. i18n: file: EditProfileDialog.ui:981
 #. i18n: ectx: property (toolTip), widget (QCheckBox, tripleClickMode)
 #: rc.cpp:292 rc.cpp:752
-msgid ""
-"All characters from the current word to the end of line will be selected."
-msgstr ""
-"Geçerli sözcükten itibaren satırın sonuna kadar tüm karakterler seçilecek."
+msgid "All characters from the current word to the end of line will be selected."
+msgstr "Geçerli sözcükten itibaren satırın sonuna kadar tüm karakterler seçilecek."
 
 #. i18n: file: EditProfileDialog.ui:991
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_8)
@@ -1224,7 +1192,8 @@ msgid "Cursor"
 msgstr "İmleç"
 
 #. i18n: file: EditProfileDialog.ui:1006
-#. i18n: ectx: property (toolTip), widget (QCheckBox, enableBlinkingCursorButton)
+#. i18n: ectx: property (toolTip), widget (QCheckBox,
+#. enableBlinkingCursorButton)
 #: rc.cpp:298 rc.cpp:758
 msgid "Make the cursor blink regularly"
 msgstr "İmleci düzenli olarak yanıp-sönen olarak ayarla"
@@ -1269,11 +1238,11 @@ msgid "Underline"
 msgstr "Altı çizili"
 
 #. i18n: file: EditProfileDialog.ui:1068
-#. i18n: ectx: property (toolTip), widget (QRadioButton, autoCursorColorButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. autoCursorColorButton)
 #: rc.cpp:319 rc.cpp:779
 msgid "Set the cursor to match the color of the character underneath it."
-msgstr ""
-"Fare işaretçisini altındaki karakterin rengi ile eşleşmesi için ayarlayın."
+msgstr "Fare işaretçisini altındaki karakterin rengi ile eşleşmesi için ayarlayın."
 
 #. i18n: file: EditProfileDialog.ui:1071
 #. i18n: ectx: property (text), widget (QRadioButton, autoCursorColorButton)
@@ -1282,7 +1251,8 @@ msgid "Set cursor color to match current character"
 msgstr "Geçerli karakter ile eşleşmesi için imleç rengini ayarla"
 
 #. i18n: file: EditProfileDialog.ui:1086
-#. i18n: ectx: property (toolTip), widget (QRadioButton, customCursorColorButton)
+#. i18n: ectx: property (toolTip), widget (QRadioButton,
+#. customCursorColorButton)
 #: rc.cpp:325 rc.cpp:785
 msgid "Use a custom, fixed color for the cursor"
 msgstr "İmleç için özel, sabit bir renk kullan"
@@ -1294,7 +1264,8 @@ msgid "Custom cursor color:"
 msgstr "Özel imleç rengi:"
 
 #. i18n: file: EditProfileDialog.ui:1102
-#. i18n: ectx: property (toolTip), widget (KColorButton, customColorSelectButton)
+#. i18n: ectx: property (toolTip), widget (KColorButton,
+#. customColorSelectButton)
 #: rc.cpp:331 rc.cpp:791
 msgid "Select the color used to draw the cursor"
 msgstr "İmleç için kullanılacak rengi seçin"
@@ -1415,7 +1386,8 @@ msgid "Move Down"
 msgstr "Aşağı Taşı"
 
 #. i18n: file: RemoteConnectionDialog.ui:25
-#. i18n: ectx: property (windowTitle), widget (QWidget, RemoteConnectionDialog)
+#. i18n: ectx: property (windowTitle), widget (QWidget,
+#. RemoteConnectionDialog)
 #: rc.cpp:398 rc.cpp:822
 msgid "Remote Connection"
 msgstr "Uzak Bağlantı"
@@ -1600,7 +1572,7 @@ msgstr "DEC VT420 Terminali"
 
 #: SessionController.cpp:278
 msgid "Konsole does not know how to open the bookmark: "
-msgstr ""
+msgstr "Konsole belirtilen yer iminin nasıl açılacağını bilmiyor:"
 
 #: SessionController.cpp:396
 msgid "&Close Tab"
@@ -1644,7 +1616,7 @@ msgstr "Temizle && Sıfırla"
 
 #: SessionController.cpp:465
 msgid "&ZModem Upload..."
-msgstr ""
+msgstr "&ZModem Dosya Gönderimi..."
 
 #: SessionController.cpp:471
 msgid "Monitor for &Activity"
@@ -1703,43 +1675,41 @@ msgid "Enter new tab text:"
 msgstr "Yeni sekme metnini gir:"
 
 #: SessionController.cpp:627
-msgid ""
-"A program is currently running in this session.  Are you sure you want to "
-"close it?"
+msgid "A program is currently running in this session.  Are you sure you want to close it?"
 msgstr "Bu oturumda bir uygulama açık. Kapatmak istediğinizden emin misiniz?"
 
 #: SessionController.cpp:630
 #, kde-format
-msgid ""
-"The program '%1' is currently running in this session.  Are you sure you "
-"want to close it?"
-msgstr ""
-"'%1' uygulaması bu oturumda çalışıyor. Kapatmak istediğinizden emin misiniz?"
+msgid "The program '%1' is currently running in this session.  Are you sure you want to close it?"
+msgstr "'%1' uygulaması bu oturumda çalışıyor. Kapatmak istediğinizden emin misiniz?"
 
 #: SessionController.cpp:1188
 msgid "Save ZModem Download to..."
-msgstr ""
+msgstr "ZModem dosyasını kaydet..."
 
 #: SessionController.cpp:1197
 msgid ""
-"<p>A ZModem file transfer attempt has been detected, but no suitable ZModem "
-"software was found on this system.\n"
+"<p>A ZModem file transfer attempt has been detected, but no suitable ZModem software was found on this system.\n"
 "<p>You may wish to install the 'rzsz' or 'lrzsz' package.\n"
 msgstr ""
+"<p>Bir ZModem dosya aktarım isteği algılandı ancak uygun ZModem yazılımı bulunamadı.\n"
+"<p>rzsz veya lrzsz paketini kurmak isteyebilirsiniz.\n"
 
 #: SessionController.cpp:1209
 msgid "<p>The current session already has a ZModem file transfer in progress."
-msgstr ""
+msgstr "<p>Mevcut oturum zaten devam eden bir ZModem dosya transferine sahip."
 
 #: SessionController.cpp:1218
 msgid ""
 "<p>No suitable ZModem software was found on this system.\n"
 "<p>You may wish to install the 'rzsz' or 'lrzsz' package.\n"
 msgstr ""
+"<p>Uygun ZModem yazılımı bulunamadı.\n"
+"<p>rzsz veya lrzsz paketini kurmak isteyebilirsiniz.\n"
 
 #: SessionController.cpp:1224
 msgid "Select Files for ZModem Upload"
-msgstr ""
+msgstr "ZModem üzerinden gönderilecek dosyaları seçin"
 
 #: SessionController.cpp:1296
 #, kde-format
@@ -1770,12 +1740,8 @@ msgstr "Uyarı:"
 
 #: Session.cpp:383
 #, kde-format
-msgid ""
-"Could not find '%1', starting '%2' instead.  Please check your profile "
-"settings."
-msgstr ""
-"'%1' bulunamadı, onun yerine '%2' başlatılıyor. Lütfen profil ayarlarınızı "
-"kontrol edin."
+msgid "Could not find '%1', starting '%2' instead.  Please check your profile settings."
+msgstr "'%1' bulunamadı, onun yerine '%2' başlatılıyor. Lütfen profil ayarlarınızı kontrol edin."
 
 #: Session.cpp:388
 msgid "Could not find an interactive shell to start."
@@ -1869,13 +1835,8 @@ msgid "Size: %1 x %2"
 msgstr "Boyut: %1 x %2"
 
 #: TerminalDisplay.cpp:2879
-msgid ""
-"<qt>Output has been <a href=\"http://en.wikipedia.org/wiki/Flow_control"
-"\">suspended</a> by pressing Ctrl+S.  Press <b>Ctrl+Q</b> to resume.</qt>"
-msgstr ""
-"<qt>Çıktı Ctrl+S kısayolu kullanılarak <a href=\"http://en.wikipedia.org/"
-"wiki/Flow_control\">geçici olarak durduruldu</a>.  Devam etmek için <b>Ctrl"
-"+Q</b> kısayolunu kullanın.</qt>"
+msgid "<qt>Output has been <a href=\"http://en.wikipedia.org/wiki/Flow_control\">suspended</a> by pressing Ctrl+S.  Press <b>Ctrl+Q</b> to resume.</qt>"
+msgstr "<qt>Çıktı Ctrl+S kısayolu kullanılarak <a href=\"http://en.wikipedia.org/wiki/Flow_control\">geçici olarak durduruldu</a>.  Devam etmek için <b>Ctrl+Q</b> kısayolunu kullanın.</qt>"
 
 #: ViewManager.cpp:137
 msgid "Next View"
@@ -1937,12 +1898,8 @@ msgid "Switch to Tab %1"
 msgstr "%1 sekmesine geç"
 
 #: Vt102Emulation.cpp:965
-msgid ""
-"No keyboard translator available.  The information needed to convert key "
-"presses into characters to send to the terminal is missing."
-msgstr ""
-"Hiç klavye çevirmeni yok.  Uç birime gönderilecek olan tuş basmalarını "
-"karakterlere dönüştürecek bilgi yok."
+msgid "No keyboard translator available.  The information needed to convert key presses into characters to send to the terminal is missing."
+msgstr "Hiç klavye çevirmeni yok.  Uç birime gönderilecek olan tuş basmalarını karakterlere dönüştürecek bilgi yok."
 
 #: ZModemDialog.cpp:35
 msgid "&Stop"
