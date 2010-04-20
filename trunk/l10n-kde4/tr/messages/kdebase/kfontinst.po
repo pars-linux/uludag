@@ -1,18 +1,19 @@
 # translation of kfontinst.po to Turkish
 # translation of kfontinst.po to
 # Copyright (C) 2003, 2007, 2008 Free Software Foundation, Inc.
-# 
+#
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kfontinst\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-29 06:07+0100\n"
-"PO-Revision-Date: 2009-10-12 16:44+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 11:19+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,12 +23,16 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr ""
+"Serdar Soytetir "
+"Onur Küçük"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr ""
+"tulliana@gmail.com "
+"onur@pardus.org.tr"
 
 #. i18n: file: viewpart/kfontviewpart.rc:4
 #. i18n: ectx: ToolBar (mainToolBar)
@@ -81,7 +86,7 @@ msgstr "Yazı tiplerini yazdırmak için boyut indeksi"
 
 #: apps/Printer.cpp:245
 msgid "Font to print, specified as \"Family,Style\" where Style is a 24-bit decimal number composed as: <weight><width><slant>"
-msgstr ""
+msgstr "Basılacak yazı tipi, \"Aile,Stil\" şeklinde tanımlanır, burada Stil 24-bit onluk sayı olarak şu şekilde tanımlanır: <kalınlık><enine uzunluk><eğim>"
 
 #: apps/Printer.cpp:246
 msgid "File containing list of fonts to print"
@@ -1870,7 +1875,7 @@ msgstr "Tai Xuan Jing Sembolleri"
 
 #: viewpart/UnicodeBlocks.h:167
 msgid "Counting Rod Numerals"
-msgstr ""
+msgstr "Sayma Çubuklu Sayılar (Counting Rod Numerals)"
 
 #: viewpart/UnicodeBlocks.h:168
 msgid "Mathematical Alphanumeric Symbols"
