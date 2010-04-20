@@ -126,7 +126,7 @@ msgstr "Seçili verileri bir dosyaya aktar."
 #: controllers/io/export/exportdialog.cpp:49
 msgctxt "@info:whatsthis"
 msgid "If you press the <interface>Export to file</interface> button, the selected data will be copied to a file with the settings you entered above."
-msgstr ""
+msgstr "<interface>Dosyaya aktar</interface> düğmesine basarsanız, seçili veri yukarıdaki ayarlarla birlikte bir dosyaya kopyalanacak."
 
 #: controllers/io/export/exportdialog.cpp:77
 #: controllers/io/copyas/copyasdialog.cpp:78
