@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
+# Serdar Dalgıç, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kiriki\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-05-02 11:51+0200\n"
-"PO-Revision-Date: 2008-12-04 02:42+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 10:05+0300\n"
+"Last-Translator: Serdar Dalgıç\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kiriki.cpp:193
@@ -36,7 +37,7 @@ msgstr "Kiriki"
 
 #: main.cpp:19
 msgid "A Yahtzee dice game for KDE"
-msgstr ""
+msgstr "KDE için bir Yahtzee zar atma oyunu"
 
 #: main.cpp:19
 msgid "© 2005-2007 Albert Astals Cid"
@@ -151,7 +152,7 @@ msgstr "Cem"
 #: rc.cpp:60 rc.cpp:131
 msgctxt "default name of fourth player"
 msgid "Sandra"
-msgstr "Saadet"
+msgstr "Sevgi"
 
 #. i18n: file: kiriki.kcfg:47
 #: rc.cpp:64 rc.cpp:135
@@ -168,12 +169,12 @@ msgstr "Melike"
 #: rc.cpp:70
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Serdar Dalgıç"
 
 #: rc.cpp:71
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, serdar@pardus.org.tr"
 
 #: scores.cpp:63
 msgid "1s"
@@ -209,23 +210,25 @@ msgstr "Üst toplam"
 
 #: scores.cpp:72
 msgid "3 of a Kind"
-msgstr ""
+msgstr "Bir türden 3 adet"
 
 #: scores.cpp:73
 msgid "4 of a Kind"
-msgstr ""
+msgstr "Bir türden 4 adet"
 
 #: scores.cpp:74
 msgid "Full House"
 msgstr "Tüm Ev"
 
 #: scores.cpp:75
+#, fuzzy
 msgid "Small Straight"
-msgstr ""
+msgstr "Küçük Düzlük"
 
 #: scores.cpp:76
+#, fuzzy
 msgid "Large Straight"
-msgstr ""
+msgstr "Geniş Düzlük"
 
 #: scores.cpp:78
 msgid "Chance"
@@ -238,3 +241,4 @@ msgstr "Ara Toplam"
 #: scores.cpp:81
 msgid "Grand Total"
 msgstr "Ana Toplam"
+
