@@ -6,14 +6,15 @@
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # YILDIZ KARDEŞLER <turkishprogram@xposta.com>, 2003.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: khotkeys\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2009-10-12 16:44+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 16:12+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -478,6 +479,31 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Export the actions in an "
 "enabled state.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Eylemlerin hangi durumda "
+"dışa aktarılacağını ayarla.</p>\n"
+"<p style=\" margin-top:8px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Asıl Durum</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:30px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Eylemleri mevcut "
+"durumlarında dışa aktar.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Kapalı</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:30px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Eylemleri kapalı olarak "
+"dışa aktar.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Etkin</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:8px; margin-left:30px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Eylemleri etkin olarak "
+"dışa aktar.</p></body></html>"
 
 #. i18n: file: kcm_hotkeys/hotkeys_export_widget.ui:44
 #. i18n: ectx: property (text), item, widget (QComboBox, state)
@@ -513,6 +539,10 @@ msgid ""
 "A khotkeys file id is used to ensure files are not imported more than once. "
 "They are mostly used for automatic updates from the KDE developers."
 msgstr ""
+"Aynı dosyanın birden fazla içeri aktarılmasını engellemek için khotkeys "
+"dosya bilgisi "
+"sistemi kullanılmaktadır. Bu özellik genellikle otomatik güncellemeler için "
+"kullanılmaktadır."
 
 #. i18n: file: kcm_hotkeys/hotkeys_export_widget.ui:68
 #. i18n: ectx: property (text), widget (QLabel, idLabel)
@@ -552,6 +582,9 @@ msgid ""
 "importing. If merging is not allowed, there will be two directories with the "
 "same name."
 msgstr ""
+"İçeri aktarma sırasında aynı isimli bir dizin varken bilgilerin "
+"birleştirilmesine izin "
+"ver. Birleştirmeye izin verilmediğinde aynı isimde iki dizin oluşmaktadır."
 
 #. i18n: file: kcm_hotkeys/hotkeys_widget_base.ui:23
 #. i18n: ectx: attribute (title), widget (QWidget, comment_tab)
@@ -570,6 +603,9 @@ msgid ""
 "Draw the gesture you would like to record below. Press and hold the left "
 "mouse button while drawing, and release when you have finished."
 msgstr ""
+"Kaydetmek istediğiniz hareketli eylemi aşağıya çiziniz. Çizerken sol fare "
+"tuşunu "
+"basılı tutun, ve çizimi tamamladığınızda tuşu bırakın."
 
 #: kcm_hotkeys/conditions/condition_type_menu.cpp:27
 msgctxt "Condition type"
@@ -670,14 +706,12 @@ msgid "Conditions"
 msgstr "Koşullar"
 
 #: kcm_hotkeys/hotkeys_model.cpp:403
-#, fuzzy
 #| msgid "Name"
 msgctxt "action name"
 msgid "Name"
 msgstr "İsim"
 
 #: kcm_hotkeys/hotkeys_model.cpp:407
-#, fuzzy
 #| msgid "Enabled"
 msgctxt "action enabled"
 msgid "Enabled"
