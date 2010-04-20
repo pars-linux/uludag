@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: powerdevil\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:21+0200\n"
-"PO-Revision-Date: 2009-08-30 14:20+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 14:03+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: daemon/PowerDevilDaemon.cpp:135
@@ -442,6 +443,12 @@ msgid ""
 "which is useful if you have more than one user logged into your system at "
 "any one time."
 msgstr ""
+"PC'nizde ConsoleKit aktif olarak bulunamadı, ya da PowerDevil ConsoleKit'e "
+"bağlanamadı. "
+"ConsoleKit sayesinde PowerDevil mevcut oturumun aktif olup olmadığını "
+"algılamaktadır. Bu "
+"yetenek özellikle sisteminizde giriş yapmış birden fazla kullanıcı olduğunda "
+"kullanılmaktadır."
 
 #: kcmodule/CapabilitiesPage.cpp:275
 msgid "No issues found with your configuration."
@@ -706,7 +713,6 @@ msgstr ""
 #. i18n: file: kcmodule/generalPage.ui:57
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: rc.cpp:122
-#, fuzzy
 #| msgid "Settings and Profiles"
 msgid "Settings and Profile"
 msgstr "Ayarlar ve Profiller"
@@ -958,6 +964,10 @@ msgid ""
 "which is useful if you have more than one user logged into your system at "
 "any one time."
 msgstr ""
+"ConsoleKit sayesinde PowerDevil mevcut oturumun aktif olup olmadığını "
+"kontrol edebilmektedir. Bu yetenek özellikle sisteme giriş yapmış birden "
+"fazla kullanıcı "
+"olduğu durumlarda kullanılmaktadır."
 
 #. i18n: file: kcmodule/capabilitiesPage.ui:206
 #. i18n: ectx: property (text), widget (QLabel, label_6)
