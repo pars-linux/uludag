@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: keditbookmarks\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-09 01:20+0200\n"
-"PO-Revision-Date: 2009-02-14 10:47+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 15:59+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kebsearchline.cpp:273
@@ -266,28 +267,24 @@ msgid "Copy %1"
 msgstr "%1 Ögesini Kopyala"
 
 #: commands.cpp:233
-#, fuzzy
 #| msgid "%1 Change"
 msgid "Icon Change"
-msgstr "%1 Değiştir"
+msgstr "Simge Değiştir"
 
 #: commands.cpp:235
-#, fuzzy
 #| msgid "%1 Change"
 msgid "Title Change"
-msgstr "%1 Değiştir"
+msgstr "Başlık Değiştir"
 
 #: commands.cpp:237
-#, fuzzy
 #| msgid "%1 Change"
 msgid "URL Change"
-msgstr "%1 Değiştir"
+msgstr "URL Değiştir"
 
 #: commands.cpp:239
-#, fuzzy
 #| msgid "Comment"
 msgid "Comment Change"
-msgstr "Yorum"
+msgstr "Yorum Değiştir"
 
 #: commands.cpp:403
 #, kde-format
