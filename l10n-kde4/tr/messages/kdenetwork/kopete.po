@@ -16070,14 +16070,13 @@ msgstr "Google Talk Ses Çağrısı"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:2834
 msgid "Calling with:"
-msgstr ""
+msgstr "Arayanın kimliği:"
 
 #. i18n: file: protocols/jabber/googletalk/googletalkcalldialog.ui:28
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:2837
-#, fuzzy
 msgid "Call Status:"
-msgstr "Durum:"
+msgstr "Çağrı Durumu:"
 
 #. i18n: file: protocols/jabber/googletalk/googletalkcalldialog.ui:42
 #. i18n: ectx: property (text), widget (QPushButton, acceptButton)
@@ -16094,22 +16093,20 @@ msgstr "Kabul Et"
 #. i18n: file: protocols/jabber/googletalk/googletalkcalldialog.ui:49
 #. i18n: ectx: property (text), widget (QPushButton, rejectButton)
 #: rc.cpp:2843
-#, fuzzy
 msgid "Reject"
-msgstr "&Sıfırla"
+msgstr "Reddet"
 
 #. i18n: file: protocols/jabber/googletalk/googletalkcalldialog.ui:56
 #. i18n: ectx: property (text), widget (QPushButton, hangupButton)
 #: rc.cpp:2846
-#, fuzzy
 msgid "Hang up"
-msgstr "K&apat"
+msgstr "Kapat"
 
 #. i18n: file: protocols/jabber/googletalk/googletalkcalldialog.ui:63
 #. i18n: ectx: property (text), widget (QPushButton, muteButton)
 #: rc.cpp:2849
 msgid "Mute"
-msgstr ""
+msgstr "Sesi Kapat"
 
 #. i18n: file: protocols/jabber/jingle/jinglecontentdialog.ui:19
 #. i18n: ectx: property (windowTitle), widget (QDialog, jingleContentDialog)
@@ -16847,27 +16844,26 @@ msgstr "Ses çıkışı:"
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:857
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
 #: rc.cpp:3316
-#, fuzzy
 msgid "&Google Talk"
-msgstr "GoogleTalk"
+msgstr "&Google Talk"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:863
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_17)
 #: rc.cpp:3319
 msgid "Google Talk libjingle settings"
-msgstr ""
+msgstr "Google Talk libjingle ayarları"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:869
 #. i18n: ectx: property (toolTip), widget (QCheckBox, GoogleTalk)
 #: rc.cpp:3322
 msgid "This enable Google Talk libjingle voice call"
-msgstr ""
+msgstr "Google Talk libjingle sesli arama özelliğini etkinleştirir"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:872
 #. i18n: ectx: property (text), widget (QCheckBox, GoogleTalk)
 #: rc.cpp:3325
 msgid "Enable Google Talk libjingle support (only for GTalk/Gmail accounts)"
-msgstr ""
+msgstr "Google Talk libjingle desteğini etkinleştir (sadece GTalk/Gmail hesapları için)"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:890
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -16975,7 +16971,7 @@ msgstr "Gizlilik Listeleri"
 #. i18n: ectx: property (text), widget (QCheckBox, oldEncrypted)
 #: rc.cpp:3373
 msgid "Use old inline PGP format for signed and encrypted messages"
-msgstr ""
+msgstr "İmzalı ve şifreli iletiler için eski PGP biçimini (inline) kullan"
 
 #. i18n: file: protocols/jabber/ui/dlgcommand.ui:19
 #. i18n: ectx: property (windowTitle), widget (QDialog, dlgRegister)
