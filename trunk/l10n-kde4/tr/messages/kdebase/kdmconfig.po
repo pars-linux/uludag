@@ -6,18 +6,19 @@
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # serdar soytetir <tulliana@gmail.com>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdmconfig\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-21 06:19+0100\n"
-"PO-Revision-Date: 2009-04-17 13:53+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 12:23+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: background.cpp:39
@@ -104,6 +105,10 @@ msgid ""
 "Preselect the user specified in the combo box to the right. Use this if this "
 "computer is predominantly used by a certain user."
 msgstr ""
+"Sağ taraftaki seçim alanında seçili olan kullanıcıyı öntanımlı olarak seç. "
+"Bu bilgisayar "
+"çoğunlukla belli bir kullanıcı tarafından kullanılıyorsa bu seçeneği "
+"kullanabilirsiniz."
 
 #: kdm-conv.cpp:120
 msgid ""
@@ -832,7 +837,6 @@ msgid "Stephen Leaf"
 msgstr "Stephen Leaf"
 
 #: main.cpp:108
-#, fuzzy
 #| msgid ""
 #| "<h1>Login Manager</h1> In this module you can configure the various "
 #| "aspects of the KDE Login Manager. This includes the look and feel as well "
@@ -887,10 +891,13 @@ msgstr ""
 "sorulacaktır.<h2>Görünüm</h2> Bu bölümde, Sistem Giriş Yöneticisinin nasıl "
 "görüneceğini, hangi dili kullanacağını ve hangi grafik stilini kullanacağını "
 "belirleyebilirsiniz. Burada yapılan dil ayarlarının kullanıcı dil ayarlarına "
-"etkisi yoktur.<h2>Yazıtipi</h2>Buradan Sistem Giriş Yöneticisinin karşılama "
-"ve kullanıcı isimleri gibi çeşitli yerlerde kullanacağı yazı tiplerini "
-"seçebilirsiniz. <h2>Arkaplan</h2>Eğer giriş ekranı için özel bir arkaplan "
-"seçmek isterseniz, buradan yapabilirsiniz.<h2>Kapat</h2>Bilgisayarı kimin "
+"etkisi yoktur.<h2>Dialog</h2>\"Klasik\" dialog tabanlı görünümü seçtiyseniz "
+"ayarlarını"
+"buradan yapabilirsiniz. <h2>Arkaplan</h2>Eğer giriş ekranı için özel bir "
+"arkaplan "
+"seçmek isterseniz, buradan yapabilirsiniz. <h2>Temalar</h2> Giriş yöneticisi "
+"tarafından "
+"kullanılacak temayı buradan seçebilirsiniz. <h2>Kapat</h2>Bilgisayarı kimin "
 "kapatabileceğini buradan seçebilirsiniz. <h2>Kullanıcılar</h2>Bu bölümde, "
 "Sistem Giriş Yöneticisinin size girişte hangi kullanıcıları sunacağını "
 "belirleyebilirsiniz.<h2>Otomatik giriş</h2> Buradan bir kullanıcının "
