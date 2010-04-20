@@ -6,18 +6,19 @@
 # Yaşar ŞENTÜRK <yasar@dijitaltek.com>, 2004.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Eren Türkay <eren@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-09-22 05:38+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 15:43+0300\n"
+"Last-Translator: Eren Türkay <eren@pardus.org.tr>\n"
+"Language-Team: American English <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kwatchgnupg/tray.cpp:57
@@ -171,13 +172,12 @@ msgid "Log Window"
 msgstr "Günlük Kaydı Penceresi"
 
 #: kwatchgnupg/kwatchgnupgconfig.cpp:146
-#, fuzzy
 #| msgctxt "history size spinbox suffix"
 #| msgid " lines"
 msgctxt "history size spinbox suffix"
 msgid " line"
 msgid_plural " lines"
-msgstr[0] "satır"
+msgstr[0] " satır"
 
 #: kwatchgnupg/kwatchgnupgconfig.cpp:147
 msgid "unlimited"
@@ -205,12 +205,12 @@ msgstr "&Sorgu ile döndürülecek en yüksek öge sayısı:"
 
 #: conf/dirservconfigpage.cpp:191
 msgid "Automatically add &new servers discovered in CRL distribution points"
-msgstr ""
+msgstr "CRL dağtım noktalarında bulunan yeni sunucuları otomatik olarak &ekle"
 
 #: conf/dirservconfigpage.cpp:385
 #, kde-format
 msgid "Backend error: gpgconf does not seem to know the entry for %1/%2/%3"
-msgstr ""
+msgstr "Arka uç hatası: gpgconf %1/%2/%3 girdisini bilmiyor görünüyor"
 
 #: conf/dirservconfigpage.cpp:390
 #, kde-format
@@ -272,11 +272,11 @@ msgstr "Tamsayı"
 
 #: kgpgconf/configuration.cpp:351
 msgid "List of Unsigned Integers"
-msgstr ""
+msgstr "İşaretsiz Tamsayılar Listesi"
 
 #: kgpgconf/configuration.cpp:351
 msgid "Unsigned Integer "
-msgstr ""
+msgstr "İşaretsiz Tamsayı"
 
 #: kgpgconf/configuration.cpp:353
 msgid "Path List"
@@ -423,6 +423,8 @@ msgid ""
 "Could not open file %1 for writing. You might not have the permission to "
 "write to that file."
 msgstr ""
+"%1 dosyası yazmak için açılamıyor. Bu dosyaya yazmak için izniniz "
+"olmayabilir"
 
 #: kgpgconf/mainwindow.cpp:232
 #, kde-format
@@ -451,14 +453,13 @@ msgstr "Veri dosyası"
 
 #: tests/test_keylistmodels.cpp:90
 msgid "FlatKeyListModel Test"
-msgstr ""
+msgstr "FlayKeyListModel Testi"
 
 #: tests/test_keylistmodels.cpp:94
-#, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "Refresh certificate list"
 msgid "Perform flat certificate listing"
-msgstr "Sertifika listesini tazele"
+msgstr "Düz sertifika listesi görünümü"
 
 #: tests/test_keylistmodels.cpp:95
 msgid "Perform hierarchical certificate listing"
@@ -470,7 +471,7 @@ msgstr "SMIME sertifikalarını listeleme"
 
 #: tests/test_useridlistmodels.cpp:158
 msgid "UserIDListModel Test"
-msgstr ""
+msgstr "UserIDListModel Testi"
 
 #: tests/test_useridlistmodels.cpp:162
 msgid "OpenPGP certificate to look up"
@@ -490,11 +491,11 @@ msgstr "Ayrıştırma hatası"
 
 #: uiserver/assuanserverconnection.cpp:336
 msgid "Parse error: numeric session id too large"
-msgstr ""
+msgstr "Ayıklama hatası: oturum anahtarı çok büyük"
 
 #: uiserver/assuanserverconnection.cpp:349
 msgid "CAPABILITIES does not take arguments"
-msgstr ""
+msgstr "CAPABILITIES herhangi bir argüman almaz"
 
 #: uiserver/assuanserverconnection.cpp:383
 msgid "Unknown value for WHAT"
@@ -502,11 +503,11 @@ msgstr ""
 
 #: uiserver/assuanserverconnection.cpp:394
 msgid "START_KEYMANAGER does not take arguments"
-msgstr ""
+msgstr "START_KEYMANAGER herhangi bir argüman almaz"
 
 #: uiserver/assuanserverconnection.cpp:408
 msgid "START_CONFDIALOG does not take arguments"
-msgstr ""
+msgstr "START_CONFDIALOG herhangi bir argüman almaz"
 
 #: uiserver/assuanserverconnection.cpp:453
 #, kde-format
@@ -520,7 +521,7 @@ msgstr "Boş dosya yolu"
 #: uiserver/assuanserverconnection.cpp:467
 #: uiserver/assuanserverconnection.cpp:520
 msgid "Only absolute file paths are allowed"
-msgstr ""
+msgstr "Sadece tam dosya yolları geçerlidir"
 
 #: uiserver/assuanserverconnection.cpp:469
 msgid "Only files are allowed in INPUT/OUTPUT FILE"
@@ -536,11 +537,11 @@ msgstr ""
 
 #: uiserver/assuanserverconnection.cpp:591
 msgid "Argument is not a valid RFC-2822 mailbox"
-msgstr ""
+msgstr "Argüman RFC-2822 formatına uygun değil"
 
 #: uiserver/assuanserverconnection.cpp:594
 msgid "Garbage after valid RFC-2822 mailbox detected"
-msgstr ""
+msgstr "Geçerli RFC-2822 e-posta kutusundan sonra çöp tespit edildi"
 
 #: uiserver/assuanserverconnection.cpp:623
 #: uiserver/assuanserverconnection.cpp:634
@@ -550,6 +551,9 @@ msgid ""
 "<para>The sender address <email>%1</email> matches more than one "
 "cryptographic format.</para><para>Which format do you want to use?</para>"
 msgstr ""
+"<para><email>%1</email> gönderici adresi birden fazla kriptografik "
+"anahtar ile eşleşiyor.</para><para>Hangi formatı kullanmak istiyorsunuz?<"
+"/para>"
 
 #: uiserver/assuanserverconnection.cpp:625
 #: uiserver/assuanserverconnection.cpp:636
@@ -572,16 +576,17 @@ msgstr "S/MIME-İmzalı Gönder"
 #: uiserver/assuanserverconnection.cpp:1009
 #, kde-format
 msgid "Caught unexpected exception: %1"
-msgstr ""
+msgstr "Beklenmeyen bir istisna yakalandı: %1"
 
 #: uiserver/assuanserverconnection.cpp:1013
 msgid "Caught unknown exception - please report this error to the developers."
 msgstr ""
+"Bilinmeyen bir istisna yakalandı - lütfen bu hatayı geliştiricilere bildirin."
 
 #: uiserver/assuanserverconnection.cpp:1139
 #, kde-format
 msgid "Can not send \"%1\" status"
-msgstr ""
+msgstr "\"%1\" durumu gönderilemiyor"
 
 #: uiserver/assuanserverconnection.cpp:1146
 msgid "Can not send data"
@@ -589,7 +594,7 @@ msgstr "Veri gönderilemedi"
 
 #: uiserver/assuanserverconnection.cpp:1149
 msgid "Can not flush data"
-msgstr ""
+msgstr "Veri temizlenemiyor"
 
 #: uiserver/assuanserverconnection.cpp:1318
 #: uiserver/assuanserverconnection.cpp:1364
@@ -598,7 +603,7 @@ msgstr "Bilinmeyen istisna oluştu"
 
 #: uiserver/assuanserverconnection.cpp:1385
 msgid "Required --mode option missing"
-msgstr ""
+msgstr "Gerekli olan --mode seçeneği eksik"
 
 #: uiserver/assuanserverconnection.cpp:1392
 #, kde-format
@@ -607,7 +612,7 @@ msgstr "geçersiz kip: \"%1\""
 
 #: uiserver/assuanserverconnection.cpp:1413
 msgid "Required --protocol option missing"
-msgstr ""
+msgstr "Gerekli olan --protocol seçeneği eksik"
 
 #: uiserver/assuanserverconnection.cpp:1418
 msgid "--protocol is not allowed here"
@@ -623,12 +628,14 @@ msgid ""
 "Could not determine the GnuPG home directory. Consider setting the GNUPGHOME "
 "environment variable."
 msgstr ""
+"GnuPG ev dizini belirlenemiyor. GNUPGHOME çevre değişkenini ayarlamayı "
+"deneyin."
 
 #: uiserver/uiserver.cpp:219
 #, kde-format
 msgid ""
 "Cannot determine the GnuPG home directory: %1 exists but is not a directory."
-msgstr ""
+msgstr "GnuPG ev dizini belirlenemiyor. %1 var ancak bu bir dizin değil."
 
 #: uiserver/uiserver.cpp:225
 #, kde-format
@@ -638,7 +645,7 @@ msgstr "GnuPG ev dizini %1 oluşturulamadı: %2"
 #: uiserver/uiserver.cpp:237
 #, kde-format
 msgid "Detected another running gnupg UI server listening at %1."
-msgstr ""
+msgstr "%1 adresinde çalışan diğer bir gnupg UI sunucusu belirlendi."
 
 #: uiserver/uiserver_unix.cpp:70 uiserver/uiserver_win.cpp:68
 #, kde-format
@@ -666,6 +673,8 @@ msgid ""
 "Could not pass socket to Qt: %1. This should not happen, please report this "
 "bug."
 msgstr ""
+"Qt'ye soket aktarılamadı: %1. Bunun olmaması gerekiyordu, lütfen bu "
+"hatayı bildirin."
 
 #: uiserver/prepencryptcommand.cpp:81
 msgid "INPUT/OUTPUT/MESSAGE may only be given after PREP_ENCRYPT"
@@ -691,12 +700,16 @@ msgid ""
 "Caught unexpected exception in PrepEncryptCommand::Private::"
 "slotRecipientsResolved: %1"
 msgstr ""
+"PrepEncryptCommand::Private::slotRecipientsResolved içerisinde "
+"beklenmeyen bir istisna yakalandı: %1"
 
 #: uiserver/prepencryptcommand.cpp:138
 msgid ""
 "Caught unknown exception in PrepEncryptCommand::Private::"
 "slotRecipientsResolved"
 msgstr ""
+"PrepEncryptCommand::Private::slotRecipientsResolved içerisinde "
+"bilinmeyen bir istisna yakalandı: %1"
 
 #: uiserver/signencryptfilescommand.cpp:83
 #: uiserver/decryptverifycommandfilesbase.cpp:164
@@ -713,6 +726,9 @@ msgid ""
 "%1 is a filemanager mode command, connection seems to be in email mode (%2 "
 "present)"
 msgstr ""
+"%1 bir dosya yönetim kipi komutu, bağlantı e-posta kipinde gibi görünüyor. "
+"(şu an "
+"%2)"
 
 #: uiserver/signcommand.cpp:86
 msgid ""
@@ -742,21 +758,29 @@ msgid ""
 "Caught unexpected exception in SignCommand::Private::slotRecipientsResolved: "
 "%1"
 msgstr ""
+"SignCommand::Private::slotRecipientsResolved içerisinde beklenmeyen bir "
+"istisna yakalandı: %1"
 
 #: uiserver/signcommand.cpp:147
 msgid ""
 "Caught unknown exception in SignCommand::Private::slotRecipientsResolved"
 msgstr ""
+"SignCommand::Private::slotRecipientsResolved içerisinde bilinmeyen bir "
+"istisna yakalandı: %1"
 
 #: uiserver/signcommand.cpp:165 uiserver/echocommand.cpp:147
 #, kde-format
 msgid ""
 "Caught unexpected exception in SignCommand::Private::slotMicAlgDetermined: %1"
 msgstr ""
+"SignCommand::Private::slotMicAlgDetermined içerisinde beklenmeyen bir "
+"istisna yakalandı :%1"
 
 #: uiserver/signcommand.cpp:169 uiserver/echocommand.cpp:151
 msgid "Caught unknown exception in SignCommand::Private::slotMicAlgDetermined"
 msgstr ""
+"SignCommand::Private::slotMicAlgDetermined içerisinde bilinmeyen bir hata "
+"yakalandı"
 
 #: uiserver/decryptverifycommandemailbase.cpp:145
 msgid "Can not use non-info SENDER"
@@ -828,12 +852,16 @@ msgid ""
 "Caught unexpected exception in SelectCertificateCommand::Private::"
 "slotDialogAccepted: %1"
 msgstr ""
+"SelectCertificateCommand::Private::slotDialogAccepted içerisinde "
+"beklenmeyen bir istisna yakalandı: %1"
 
 #: uiserver/selectcertificatecommand.cpp:155
 msgid ""
 "Caught unknown exception in SelectCertificateCommand::Private::"
 "slotDialogAccepted"
 msgstr ""
+"SelectCertificateCommand::Private::slotDialogAccepted içerisinde "
+"bilinmeyen bir istisna yakalandı: %1"
 
 #: uiserver/encryptcommand.cpp:89
 msgid ""
@@ -870,11 +898,15 @@ msgid ""
 "Caught unexpected exception in EncryptCommand::Private::"
 "slotRecipientsResolved: %1"
 msgstr ""
+"EncryptCommand::Private::slotRecipientsResolved içerisinde "
+"beklenmeyen bir istisna yakalandı: %1"
 
 #: uiserver/encryptcommand.cpp:189
 msgid ""
 "Caught unknown exception in EncryptCommand::Private::slotRecipientsResolved"
 msgstr ""
+"EncryptCommand::Private::slotRecipientsResolved içerisinde "
+"bilinmeyen bir istisna yakalandı: %1"
 
 #: view/searchbar.cpp:90
 msgid "&Find:"
@@ -1032,7 +1064,7 @@ msgstr "Anahtar Üretimi Başarısız Oldu"
 
 #: newcertificatewizard/newcertificatewizard.cpp:647
 msgid "Key pair creation failed. Please find details about the failure below."
-msgstr ""
+msgstr "Anahtar çifti yaratılamadı. Lütfen aşağıda hatanın detaylarını bulun."
 
 #: newcertificatewizard/newcertificatewizard.cpp:649
 msgctxt "@title"
@@ -1043,7 +1075,7 @@ msgstr "Anahtar Çifti Başarılı Bir Şekilde Oluşturuldu"
 msgid ""
 "Your new key pair was created successfully. Please find details on the "
 "result and some suggested next steps below."
-msgstr ""
+msgstr "Anahtar çiftiniz başarıyla oluşturulduç"
 
 #: newcertificatewizard/newcertificatewizard.cpp:704
 msgctxt "@title"
@@ -1052,7 +1084,7 @@ msgstr "İsteği Kaydet"
 
 #: newcertificatewizard/newcertificatewizard.cpp:705
 msgid "PKCS#10 Requests (*.p10)"
-msgstr ""
+msgstr "PKCS#10 İstekleri (*.p10)"
 
 #: newcertificatewizard/newcertificatewizard.cpp:714
 #, kde-format
@@ -1061,11 +1093,13 @@ msgid ""
 "Could not copy temporary file <filename>%1</filename> to file <filename>%2</"
 "filename>: <message>%3</message>"
 msgstr ""
+"geçici <filename>%1</filename> dosyası <filename>%2</filename> dosyasına "
+"kopyalanamıyor: <message>%3</message>"
 
 #: newcertificatewizard/newcertificatewizard.cpp:717
 msgctxt "@title"
 msgid "Error Saving Request"
-msgstr ""
+msgstr "İsteği Kaydetmede Hata"
 
 #: newcertificatewizard/newcertificatewizard.cpp:721
 #, kde-format
@@ -1074,11 +1108,14 @@ msgid ""
 "<para>Successfully wrote request to <filename>%1</filename>.</para><para>You "
 "should now send the request to the Certification Authority (CA).</para>"
 msgstr ""
+"<para>İstek <filename>%1</filename> dosyasına başarılı bir şekilde yazıldı<"
+"/para> "
+"<para>Şimdi bu isteği Sertifika Otoritesi'ne göndermelisiniz.</para>"
 
 #: newcertificatewizard/newcertificatewizard.cpp:724
 msgctxt "@title"
 msgid "Request Saved"
-msgstr ""
+msgstr "İstek Kaydedildi"
 
 #: newcertificatewizard/newcertificatewizard.cpp:732
 msgid "Please process this certificate."
@@ -1091,6 +1128,11 @@ msgid ""
 "\n"
 "Thanks,\n"
 msgstr ""
+"Lütfen bu sertifikayı işleyin ve sertifikayı gönderen kişiye işlenen "
+"sertifikanın "
+"nereden alınabileceği konusunda bilgi verin.\n"
+"\n"
+"Teşekkürler,\n"
 
 #: newcertificatewizard/newcertificatewizard.cpp:757
 msgid "My new OpenPGP certificate"
@@ -1111,6 +1153,16 @@ msgid ""
 "para><para>If that does not work, either, save the request to a file, and "
 "then attach that.</para>"
 msgstr ""
+"<para><application>Kleopatra</application> öntanımlı e-posta istemciniz "
+"ile e-posta göndermeyi denedi.</para><para>Bazı e-posta istemcileri bu "
+"şekilde "
+"gönderilen ekleri desteklemiyor.</para><para>E-posta istemciniz ek "
+"gönderimini "
+"desteklemiyorsa, lütfen <application>Kelopatra</application> simgesini seçin "
+"ve e-posta istemcinizin e-posta yazma penceresine sürükleyin.</para></para>"
+"Eğer "
+"bu da çalışmaz, isteği bir dosyaya kaydedin ve bu dosyayı e-postaya ekleyin<"
+"/para>"
 
 #: newcertificatewizard/newcertificatewizard.cpp:793
 msgctxt "@title"
@@ -1123,6 +1175,8 @@ msgid ""
 "This operation will delete the certification request. Please make sure that "
 "you have sent or saved it before proceeding."
 msgstr ""
+"Bu işlem sertifika isteğini silecek. Lütfen isteği kaydettiğinizden veya "
+"gönderdiğinizden emin olun."
 
 #: newcertificatewizard/newcertificatewizard.cpp:831
 msgctxt "@title"
@@ -1254,7 +1308,7 @@ msgstr "Konu-DN:"
 
 #: newcertificatewizard/newcertificatewizard.cpp:1279
 msgid "Add. Email Address:"
-msgstr ""
+msgstr "E-posta Adresi Ekle:"
 
 #: newcertificatewizard/newcertificatewizard.cpp:1281
 msgid "DNS Name:"
@@ -1267,11 +1321,11 @@ msgstr "Adres:"
 #: crypto/gui/signencryptfileswizard.cpp:84
 msgid ""
 "You need to select an OpenPGP signing certificate to perform this operation."
-msgstr ""
+msgstr "Bu işlemi yapabilmeniz için OpenPGP imza sertifikası seçmelisiniz."
 
 #: crypto/gui/signencryptfileswizard.cpp:87
 msgid "You need to select at least one signing certificate to proceed."
-msgstr ""
+msgstr "Devam etmek için en azından bir adet imza sertifikası seçmelisiniz."
 
 #: crypto/gui/signencryptfileswizard.cpp:90
 msgid ""
@@ -1279,30 +1333,42 @@ msgid ""
 "specified a combined sign/encrypt operation that is only available for "
 "OpenPGP."
 msgstr ""
+"Sadece OpenPGP için olan imzalama/şifreleme operasyonu "
+"belirttiğiniz için seçenek olarak sadece OpenPGP sertifikaları "
+"sunulacak."
 
 #: crypto/gui/signencryptfileswizard.cpp:93
 msgid ""
 "Only OpenPGP certificates will be offered for selection because you only "
 "specified an OpenPGP signing certificate."
 msgstr ""
+"OpenPGP imzalama sertifikası seçtiğiniz için seçenek olarak sadece "
+"OpenPGP sertifikaları sunulacak."
 
 #: crypto/gui/signencryptfileswizard.cpp:96
 msgid ""
 "Only S/MIME certificates will be offered for selection because you only "
 "specified an S/MIME signing certificate."
 msgstr ""
+"Sadece S/MIME imzalama sertifikası seçtiğiniz için seçenek olarak sadece "
+"S/MIME sertifikaları sunuclacak."
 
 #: crypto/gui/signencryptfileswizard.cpp:102
 msgid ""
 "You have selected both OpenPGP and S/MIME signing certificate types, thus "
 "two signatures will be created."
 msgstr ""
+"OpenPGP ve S/MIME sertifika türlerini seçtiniz, dolayısıyla iki adet imza "
+"oluşturulacak."
 
 #: crypto/gui/signencryptfileswizard.cpp:106
 msgid ""
 "If you select both OpenPGP and S/MIME receipient certificates, two encrypted "
 "files will be created: one for OpenPGP recipients, one for S/MIME recipients."
 msgstr ""
+"OpenPGP ve S/MIME alıcı sertifikalarının her ikisini de seçerseniz, iki adet "
+"şifrelenmiş dosya oluşturulacak: bir adet OpenPGP alıcıları ve bir adet de "
+"S/MIME alıcıları için."
 
 #: crypto/gui/signencryptfileswizard.cpp:131
 #: crypto/signencryptfilescontroller.cpp:157
@@ -1342,7 +1408,7 @@ msgstr "%1 kullnarak imzala: %2"
 
 #: crypto/gui/signerresolvepage.cpp:282
 msgid "Sign and encrypt (OpenPGP only)"
-msgstr ""
+msgstr "İmzala ve şifrele (sadece OpenPGP)"
 
 #: crypto/gui/signerresolvepage.cpp:288
 msgid "Encrypt only"
@@ -1359,12 +1425,12 @@ msgstr "Şifreleme Seçenekleri"
 #: crypto/gui/signerresolvepage.cpp:301
 #: crypto/gui/newsignencryptfileswizard.cpp:347
 msgid "Text output (ASCII armor)"
-msgstr ""
+msgstr "Düz metin çıktısı"
 
 #: crypto/gui/signerresolvepage.cpp:304
 #: crypto/gui/newsignencryptfileswizard.cpp:348
 msgid "Remove unencrypted original file when done"
-msgstr ""
+msgstr "İşlem bittiğinde şifrelenmemiş özgün dosyayı sil"
 
 #: crypto/gui/signerresolvepage.cpp:310
 msgid "Signing Options"
@@ -1376,7 +1442,7 @@ msgstr "İmzalayan:"
 
 #: crypto/gui/signerresolvepage.cpp:330
 msgid "Change Signing Certificates..."
-msgstr ""
+msgstr "İmzalama Sertifikalarını Değiştir..."
 
 #: crypto/gui/signerresolvepage.cpp:489
 msgid "<b>Choose Operation to be Performed</b>"
@@ -1474,6 +1540,9 @@ msgid ""
 "<b>Warning:</b> None of the selected certificates seem to be your own. You "
 "will not be able to decrypt the encrypted data again."
 msgstr ""
+"<b>Uyarı:</b> Seçilen sertifikaların hiçbiri sizin değil gibi duruyor. "
+"Şifrelenmiş "
+"veriyi tekrar çözemeyeceksiniz."
 
 #: crypto/gui/resolverecipientspage.cpp:567
 msgid "Recipient"
@@ -1488,7 +1557,7 @@ msgstr "Alıcı (%1)"
 #: crypto/gui/resolverecipientspage.cpp:602
 #, kde-format
 msgid "<qt><p>Recipients predefined via GnuPG settings:</p>%1"
-msgstr ""
+msgstr "<qt><p>GnuPG ayarları ile önceden belirlenmiş alıcılar:</p>%1"
 
 #: crypto/gui/resolverecipientspage.cpp:612
 msgid "Sender"
@@ -1537,17 +1606,16 @@ msgstr "Daha Fazla..."
 
 #: crypto/gui/newsignencryptfileswizard.cpp:340
 msgid "Archive files with:"
-msgstr ""
+msgstr "Bunlarla beraber arşiv dosyaları:"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:342
-#, fuzzy
 #| msgid "Real name:"
 msgid "Archive name:"
-msgstr "Gerçek isim:"
+msgstr "Arşiv ismi:"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:344
 msgid "Sign and Encrypt (OpenPGP only)"
-msgstr ""
+msgstr "İmzala ve Şifrele (sadece OpenPGP)"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:351
 msgctxt "@title"
@@ -1558,17 +1626,18 @@ msgstr "Ne yapmak istiyorsunuz?"
 msgctxt "@title"
 msgid "Please select here whether you want to sign or encrypt files."
 msgstr ""
+"Lütfen burada dosyaları imzalamak veya şifrelemek isteyip istemediğinizi "
+"seçin."
 
 #: crypto/gui/newsignencryptfileswizard.cpp:434
-#, fuzzy
 #| msgid "Search"
 msgctxt "base name of an archive file, e.g. archive.zip or archive.tar.gz"
 msgid "archive"
-msgstr "Ara"
+msgstr "arşiv"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:448
 msgid "This operation is not available for S/MIME"
-msgstr ""
+msgstr "Bu işlem S/MIME için kullanılabilir değil"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:493
 msgid "Add"
@@ -1579,12 +1648,11 @@ msgid "Remove"
 msgstr "Kaldır"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:497
-#, fuzzy
 #| msgctxt "@title"
 #| msgid "What do you want to do?"
 msgctxt "@title"
 msgid "For whom do you want to encrypt?"
-msgstr "Ne yapmak istiyorsunuz?"
+msgstr "Kim için şifrelemek istiyorsunuz?"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:499
 msgctxt "@title"
@@ -1592,6 +1660,9 @@ msgid ""
 "Please select for whom you want the files to be encrypted. Do not forget to "
 "pick one of your own certificates."
 msgstr ""
+"Lütfen dosyaların kimin için şifreleneceğinizi seçin. Kendi "
+"sertifikalarınızdan "
+"bir tanesini seçmeyi unutmayın."
 
 #: crypto/gui/newsignencryptfileswizard.cpp:502
 msgctxt "@action"
@@ -1606,6 +1677,10 @@ msgid ""
 "once encrypted.</para><para>Do you want to continue, or cancel to change the "
 "recipient selection?</para>"
 msgstr ""
+"<para>Şifreleme yaptığınız alıcıların hiçbiri siz görünmüyorsunuz.</para> "
+"<para>Bu şifrelemeniz durumunda veriyi deşifre edemeyeceğiniz anlamına "
+"gelir.</para><para>Devam etmek mi, yoksa iptal edip alıcılar bölümünü "
+"değiştirmek mi istersiniz?</para>"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:599
 #: crypto/gui/newsignencryptfileswizard.cpp:610
@@ -1620,6 +1695,9 @@ msgid ""
 "</para><para>Are you really sure you do not need to access the data anymore "
 "in decrypted form?</para>"
 msgstr ""
+"<para>Şifrelemeden sonra şifrelenmemiş olan özgün dosya silinecek. "
+"</para><para>Gerçekten veriye şifrelenmemiş haliyle ulaşmak istermiyor "
+"musunuz?</para>"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:659
 msgid "Sign with OpenPGP"
@@ -1627,17 +1705,17 @@ msgstr "OpenPGP ile İmzala"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:660
 msgid "Sign with S/MIME"
-msgstr ""
+msgstr "S/MIME ile imzala"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:663
 msgctxt "@title"
 msgid "Who do you want to sign as?"
-msgstr ""
+msgstr "Kim olarak imzalamak istiyorsunuz?"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:665
 msgctxt "@title"
 msgid "Please choose an identity with which to sign the data."
-msgstr ""
+msgstr "Lütfen veriyi imzalamak için kullanılacak kimliği seçin"
 
 #: crypto/gui/newsignencryptfileswizard.cpp:740
 msgctxt "@action"
@@ -1657,7 +1735,7 @@ msgstr "Sonuçlar"
 #: crypto/gui/newsignencryptfileswizard.cpp:808
 msgctxt "@title"
 msgid "Status and progress of the crypto operations is shown here."
-msgstr ""
+msgstr "Şifreleme işleminin durumu ve ilerlemesi burada gösterilmektedir."
 
 #: crypto/gui/objectspage.cpp:77
 msgid "<b>Objects</b>"
@@ -1673,17 +1751,17 @@ msgstr "İmzalama Seritifikalarını Seç"
 
 #: crypto/gui/signemailwizard.cpp:82
 msgid "You need to select a signing certificate to proceed."
-msgstr ""
+msgstr "İlerlemek için imza sertifikası seçmelisiniz."
 
 #: crypto/gui/signemailwizard.cpp:88
 #, kde-format
 msgid "You need to select an %1 signing certificate to proceed."
-msgstr ""
+msgstr "İlerlemek için %1 imza sertifikası seçmelisiniz."
 
 #: crypto/gui/signemailwizard.cpp:90
 #, kde-format
 msgid "You need to select %1 and %2 signing certificates to proceed."
-msgstr ""
+msgstr "İlerlemek için %1 ve %2 imzalama sertifikası seçmelisiniz."
 
 #: crypto/gui/signemailwizard.cpp:118
 msgid "Sign Mail Message"
@@ -1692,11 +1770,12 @@ msgstr "E-posta İletisini İmzala"
 #: crypto/encryptemailcontroller.cpp:149
 msgid "Call to EncryptEMailController::protocolAsString() is ambiguous."
 msgstr ""
+"EncryptEMailController::protocolAsString() fonksiyonuna olan çağrı belirsiz."
 
 #: crypto/encryptemailcontroller.cpp:168 crypto/signemailcontroller.cpp:179
 #: crypto/signencryptfilescontroller.cpp:276
 msgid "User cancel"
-msgstr ""
+msgstr "Kullanıcı tarafından iptal edildi"
 
 #: crypto/task.cpp:167
 msgid "Unknown exception in Task::start()"
@@ -1704,7 +1783,7 @@ msgstr "Task::start() içerisinde bilinmeyen istisna oluştu."
 
 #: crypto/decryptverifyemailcontroller.cpp:83
 msgid "Status and progress of the crypto operations is shown here."
-msgstr ""
+msgstr "Şifreleme işleminin durumu ve ilerlemesi burada gösterilmektedir."
 
 #: crypto/decryptverifyemailcontroller.cpp:162
 #: crypto/decryptverifyfilescontroller.cpp:181
@@ -1717,15 +1796,15 @@ msgstr "E-postanın Şifrelemesini Aç/Doğrula"
 
 #: crypto/decryptverifyemailcontroller.cpp:272
 msgid "At least one input needs to be provided"
-msgstr ""
+msgstr "En azından bir girdi verilmelidir"
 
 #: crypto/decryptverifyemailcontroller.cpp:276
 msgid "Informative sender/signed data count mismatch"
-msgstr ""
+msgstr "Bilgilendirici olan gönderici/imzalanan veri miktarı eşleşmiyor"
 
 #: crypto/decryptverifyemailcontroller.cpp:281
 msgid "Signature/signed data count mismatch"
-msgstr ""
+msgstr "İmza/imzalanan veri miktarı eşleşmiyor"
 
 #: crypto/decryptverifyemailcontroller.cpp:284
 msgid "Signed data can only be given for detached signature verification"
@@ -1737,7 +1816,7 @@ msgstr "Girdi/Çıktı sayıları birbirini tutmuyor"
 
 #: crypto/decryptverifyemailcontroller.cpp:293
 msgid "Cannot use output and signed data simultaneously"
-msgstr ""
+msgstr "Aynı anda çıktı ve imzalanmış veri kullanılamıyor"
 
 #: crypto/decryptverifyemailcontroller.cpp:300
 #, kde-format
@@ -1821,11 +1900,11 @@ msgstr "Kötü imza"
 
 #: crypto/decryptverifytask.cpp:173
 msgid "Signing certificate revoked"
-msgstr ""
+msgstr "İmza sertifikası iptal edildi"
 
 #: crypto/decryptverifytask.cpp:175
 msgid "Signing certificate expired"
-msgstr ""
+msgstr "İmza sertifikası süresi doldu"
 
 #: crypto/decryptverifytask.cpp:177
 msgid "No public certificate to verify the signature"
@@ -1859,37 +1938,37 @@ msgstr "Sistem Hatası"
 msgid ""
 "The signature is valid but the trust in the certificate's validity is only "
 "marginal."
-msgstr ""
+msgstr "İmza geçerli ancak sertifikanın geçerliliği düşük."
 
 #: crypto/decryptverifytask.cpp:200
 msgid "The signature is valid and the certificate's validity is fully trusted."
-msgstr ""
+msgstr "İmza geçerli ve sertifikanın geçerliliğine tam güveniliyor."
 
 #: crypto/decryptverifytask.cpp:202
 msgid ""
 "The signature is valid and the certificate's validity is ultimately trusted."
-msgstr ""
+msgstr "İmza geçerli ve sertifikanın geçerliliğine sınırsız güveniliyor."
 
 #: crypto/decryptverifytask.cpp:204
 msgid ""
 "The signature is valid but the certificate's validity is <em>not trusted</"
 "em>."
-msgstr ""
+msgstr "İmza geçerli ancak sertifikanın geçerliliğine <em>güvenilmiyor</em>"
 
 #: crypto/decryptverifytask.cpp:206
 msgid "The signature is valid but the certificate's validity is unknown."
-msgstr ""
+msgstr "İmza geçerli ancak sertifikanın geçerliliği bilinmiyor."
 
 #: crypto/decryptverifytask.cpp:209
 msgid "The signature is valid but the certificate's validity is undefined."
-msgstr ""
+msgstr "İmza geçerli ancak sertifikanın geçerliliği belirlenemedi."
 
 #: crypto/decryptverifytask.cpp:225 crypto/decryptverifytask.cpp:231
 msgid "Unknown certificate"
 msgstr "Bilinmeyen sertifika"
 
 #: crypto/decryptverifytask.cpp:250
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Signed on %1 with unknown key %2."
 msgid "Signed on %1 with unknown certificate %2."
 msgstr "%1 üzerinde bilinmeyen %2 anahtarı ile imzalanmış."
@@ -1911,13 +1990,13 @@ msgid "Signed by %1 with certificate %2."
 msgstr "%1 tarafından %2 sertifikası ile imzalanmış."
 
 #: crypto/decryptverifytask.cpp:265
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Signed on %1 with key %2."
 msgid "Signed on %1 with certificate %2."
 msgstr "%1 üzerinde %2 anahtarı ile imzalanmış."
 
 #: crypto/decryptverifytask.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Signed with key %1."
 msgid "Signed with certificate %1."
 msgstr "%1 anahtarı ile imzalanmış."
@@ -1939,13 +2018,13 @@ msgstr "<b>Hiç imza bulunamadı.</b>"
 #, kde-format
 msgid "<b>Invalid signature.</b>"
 msgid_plural "<b>%1 invalid signatures.</b>"
-msgstr[0] ""
+msgstr[0] "<b>%1 geçersiz imza.</b>"
 
 #: crypto/decryptverifytask.cpp:363
 #, kde-format
 msgid "<b>Not enough information to check signature validity.</b>"
 msgid_plural "<b>%1 signatures could not be verified.</b>"
-msgstr[0] ""
+msgstr[0] "<b>%1 imza doğrulanamadı</b>"
 
 #: crypto/decryptverifytask.cpp:370
 msgid "<b>Signature is valid.</b>"
@@ -1966,6 +2045,8 @@ msgid ""
 "<br/><b>Warning:</b> The sender's mail address is not stored in the %1 used "
 "for signing."
 msgstr ""
+"<br/><b>Uyarı:</b> Göndericinin e-posta adresi imzalamak için kullanılan %1 "
+"sertifikasında saklanmıyor."
 
 #: crypto/decryptverifytask.cpp:377
 #, kde-format
@@ -1978,6 +2059,8 @@ msgid ""
 "<br/><b>Warning:</b> The sender's mail address is not stored in the "
 "certificates used for signing."
 msgstr ""
+"<br/><b>Uyarı:</b> Göndericinin e-posta adresi imzalamak için kullanılan "
+"sertifikalarda saklanmıyor."
 
 #: crypto/decryptverifytask.cpp:390
 msgid "<b>Decryption canceled.</b>"
@@ -2015,6 +2098,8 @@ msgstr ", "
 msgid ""
 "<p>The sender's address %1 is not stored in the certificate. Stored: %2</p>"
 msgstr ""
+"<p>Göndericinin e-posta adresi %1 sertifikada saklanmıyor. Saklandığı yer: "
+"%s</p>"
 
 #: crypto/decryptverifytask.cpp:440
 #, kde-format
@@ -2023,7 +2108,6 @@ msgid_plural "%1 unknown recipients."
 msgstr[0] "%1 bilinmeyen alıcı."
 
 #: crypto/decryptverifytask.cpp:444
-#, fuzzy
 #| msgid "Recipients:"
 #| msgid_plural "Recipients:"
 msgid "Recipient:"
@@ -2084,22 +2168,19 @@ msgid "Signing failed: %1"
 msgstr "İmzalama başarısız oldu: %1"
 
 #: crypto/signencryptfilescontroller.cpp:142
-#, fuzzy
 #| msgid "Sign Files"
 msgid "Archive and Sign Files"
-msgstr "Dosyaları İmzala"
+msgstr "Dosyaları İmzala ve Arşivle"
 
 #: crypto/signencryptfilescontroller.cpp:149
-#, fuzzy
 #| msgid "Sign/Encrypt Files"
 msgid "Archive and Encrypt Files"
-msgstr "Dosyaları İmzala/Şifrele"
+msgstr "Dosyaları Şifrele ve Arşivle"
 
 #: crypto/signencryptfilescontroller.cpp:155
-#, fuzzy
 #| msgid "Sign/Encrypt Files"
 msgid "Archive and Sign/Encrypt Files"
-msgstr "Dosyaları İmzala/Şifrele"
+msgstr "Dosyaları İmzala/Şifrele ve Arşivle"
 
 #: crypto/signencryptfilescontroller.cpp:472
 #, kde-format
@@ -2292,10 +2373,9 @@ msgid_plural ""
 msgstr[0] ""
 
 #: dialogs/deletecertificatesdialog.cpp:218
-#, fuzzy
 #| msgid "Certificate Selection"
 msgid "Secret Certificate Deletion"
-msgstr "Sertifika Seçimi"
+msgstr "Gizli Sertifika Silimi"
 
 #: dialogs/exportsecretkeydialog.cpp:103
 msgid "Secret Key Files"
@@ -2460,7 +2540,6 @@ msgid "There was an error setting the PIN: <message>%1</message>."
 msgstr ""
 
 #: dialogs/setinitialpindialog.cpp:100
-#, fuzzy
 #| msgctxt "@info"
 #| msgid "PIN set sucessfully."
 msgctxt "@info"
@@ -2530,25 +2609,21 @@ msgid "good"
 msgstr "iyi"
 
 #: models/keycache.cpp:902
-#, fuzzy
 #| msgid "Listing public X.509 keys"
 msgid "Listing public X.509 certificates"
 msgstr "X.509 genel anahtarları listeleniyor"
 
 #: models/keycache.cpp:902
-#, fuzzy
 #| msgid "Listing private X.509 keys"
 msgid "Listing private X.509 certificates"
 msgstr "X.509 gizli anahtarları listeleniyor"
 
 #: models/keycache.cpp:903
-#, fuzzy
 #| msgid "Listing public OpenPGP keys"
 msgid "Listing public OpenPGP certificates"
-msgstr "OpenPGP genel anahtarları listeleniyor"
+msgstr "penPGP genel anahtarları listeleniyor"
 
 #: models/keycache.cpp:903
-#, fuzzy
 #| msgid "Listing private OpenPGP keys"
 msgid "Listing private OpenPGP certificates"
 msgstr "OpenPGP gizli anahtarları listeleniyor"
@@ -2892,10 +2967,10 @@ msgid "File \"%1\" is already open, but not for reading"
 msgstr "\"%1\" dosyası zaten açık ama okunmak için değil"
 
 #: utils/input.cpp:234
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Could not start zip process"
 msgid "Could not start %1 process: %2"
-msgstr "Zip süreci başlatılamadı"
+msgstr "%1 süreci başlatılamadı: %2"
 
 #: utils/input.cpp:243
 #, kde-format
@@ -2904,11 +2979,11 @@ msgid "Output of %1 ..."
 msgstr ""
 
 #: utils/input.cpp:245
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Output file:"
 msgctxt "e.g. \"Output of tar xf - file\""
 msgid "Output of %1"
-msgstr "Çıktı dosyası:"
+msgstr "%1 çıktısı"
 
 #: utils/input.cpp:267
 msgid "Could not open clipboard for reading"
@@ -3097,10 +3172,10 @@ msgid "%1 %2 (%3)"
 msgstr "%1 %2 (%3)"
 
 #: utils/formatting.cpp:528
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Bad signature by unknown key %1: %2"
 msgid "Bad signature by unknown certificate %1: %2"
-msgstr "%1 bilinmeyen anahtarından hatalı imza: %2"
+msgstr " %1 bilinmeyen anahtarından hatalı imza: %2"
 
 #: utils/formatting.cpp:530
 #, kde-format
@@ -3328,16 +3403,16 @@ msgid "Could not find clipboard"
 msgstr "Pano bulunamadı"
 
 #: utils/path-helper.cpp:102
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Couldn't create directory %1: %2"
 msgid "Cannot remove directory %1"
-msgstr "%1 dizini oluşturulamadı: %2"
+msgstr "%1 dizini silinemedi"
 
 #: utils/path-helper.cpp:106
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Could not save file %1: %2"
 msgid "Cannot remove file %1: %2"
-msgstr "%1 dosyası kaydedilemedi: %2"
+msgstr "%1 dizini silinemedi: %2"
 
 #: utils/hex.cpp:55
 #, kde-format
@@ -3504,28 +3579,24 @@ msgid "Unchanged:"
 msgstr "Değiştirilmemiş:"
 
 #: commands/importcertificatescommand.cpp:271
-#, fuzzy
 #| msgid "Secret keys processed:"
 msgid "Secret certificates processed:"
-msgstr "Gizli anahtarlar işlendi:"
+msgstr "İşlenen gizli sertifikalar:"
 
 #: commands/importcertificatescommand.cpp:274
-#, fuzzy
 #| msgid "Secret keys imported:"
 msgid "Secret certificates imported:"
-msgstr "Alınan gizli anahtarlar:"
+msgstr "Alınan gizli sertifikalar:"
 
 #: commands/importcertificatescommand.cpp:278
-#, fuzzy
 #| msgid "Secret keys <em>not</em> imported:"
 msgid "Secret certificates <em>not</em> imported:"
-msgstr "<em>Alınmamış</em> gizli anahtarlar:"
+msgstr "<em>Alınmamış</em> gizli sertifikalar:"
 
 #: commands/importcertificatescommand.cpp:281
-#, fuzzy
 #| msgid "Secret keys unchanged:"
 msgid "Secret certificates unchanged:"
-msgstr "Değiştirilmemiş gizli anahtarlar:"
+msgstr "Değiştirilmemiş gizli sertifikalar:"
 
 #: commands/importcertificatescommand.cpp:294
 msgid "No imports (should not happen, please report a bug)."
@@ -3795,7 +3866,7 @@ msgstr ""
 "çıktısını kontrol edin."
 
 #: commands/learncardkeyscommand.cpp:88
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info"
 #| msgid ""
 #| "<para>An error occurred while trying to learn the smart card's keys.</"
@@ -3807,33 +3878,31 @@ msgid ""
 "</para> <para>The output from <command>%1</command> was: <message>%2</"
 "message></para>"
 msgstr ""
-"<para>Akıllı kart anahtarı alınırken bir hata oluştu.</para> <para><command>%"
+"<para>Akıllı kart sertifikasını alınırken bir hata oluştu.</para> <para><"
+"command>%"
 "1</command> komutunun çıktısı: <message>%2</message></para>"
 
 #: commands/learncardkeyscommand.cpp:94
-#, fuzzy
 #| msgid "Smart card keys successfully learned."
 msgid "Smart card certificates successfully learned."
-msgstr "Akıllı kart anahtarları başarıyla alındı."
+msgstr "Akıllı kart sertifikaları başarıyla alındı."
 
 #: commands/exportsecretkeycommand.cpp:129
-#, fuzzy
 #| msgctxt "@title:window"
 #| msgid "OpenPGP Certificate Export Error"
 msgctxt "@title:window"
 msgid "Secret Certificate Export Error"
-msgstr "Dışarıya OpenPGP Sertifika Aktarma Hatası"
+msgstr "Dışarıya Gizli Sertifika Aktarma Hatası"
 
 #: commands/exportsecretkeycommand.cpp:133
-#, fuzzy
 #| msgctxt "@title:window"
 #| msgid "OpenPGP Certificate Export Finished"
 msgctxt "@title:window"
 msgid "Secret Certificate Export Finished"
-msgstr "Dışarıya OpenPGP Sertifika Aktarma İşlemi Tamamlandı"
+msgstr "Dışarıya Gizli Sertifika Aktarma İşlemi Tamamlandı"
 
 #: commands/exportsecretkeycommand.cpp:138
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info"
 #| msgid ""
 #| "<para>The GPG or GpgSM process that tried to export the secret key ended "
@@ -3845,12 +3914,13 @@ msgid ""
 "ended prematurely because of an unexpected error.</para><para>Please check "
 "the output of <icode>%1</icode> for details.</para>"
 msgstr ""
-"<para>Gizli anahtarı dışarıya aktarmaya çalışan GPG ya da GpgSM süreci "
-"beklenmeyen bir hata sebebiyle erken sonlandı. Lütfen daha fazla bilgi "
-"<icode>%1</icode> çıktısını kontrol edin."
+"<para>Gizli sertifikaları dışarıya aktarmaya çalışan GPG ya da GpgSM süreci "
+"beklenmeyen bir hata sebebiyle erken sonlandı.</para><para>Lütfen daha fazla "
+"bilgi "
+"<icode>%1</icode> çıktısını kontrol edin.</para>"
 
 #: commands/exportsecretkeycommand.cpp:145
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info"
 #| msgid ""
 #| "<para>An error occurred while trying to export the secret key.</para> "
@@ -3862,17 +3932,16 @@ msgid ""
 "para> <para>The output from <command>%1</command> was: <message>%2</"
 "message></para>"
 msgstr ""
-"<para>Gizli anahtar dışarıya aktarılmaya çalışılırken bir hata oluştu.</"
+"<para>Gizli sertifika dışarıya aktarılmaya çalışılırken bir hata oluştu.</"
 "para> <para><command>%1</command> komutunun çıktısı: <message>%2</message></"
 "para>"
 
 #: commands/exportsecretkeycommand.cpp:151
-#, fuzzy
 #| msgctxt "@info"
 #| msgid "Secret key successfully exported."
 msgctxt "@info"
 msgid "Secret certificate successfully exported."
-msgstr "Gizli anahtar başarılı bir şekilde dışarıya aktarıldı."
+msgstr "Gizli sertifika başarılı bir şekilde dışarıya aktarıldı."
 
 #: commands/exportopenpgpcertstoservercommand.cpp:86
 msgctxt "@info"
@@ -4336,10 +4405,9 @@ msgid "Michel Boyer de la Giroday"
 msgstr "Michel Boyer de la Giroday"
 
 #: aboutdata.cpp:74
-#, fuzzy
 #| msgid "Key-state dependant colors and fonts in the key list"
 msgid "Key-state dependent colors and fonts in the certificates list"
-msgstr "Anahtar listesindeki anahtar durumuna bağlı renkler ve yazı tipleri"
+msgstr "Sertifika listesindeki anahtar durumuna bağlı renkler ve yazı tipleri"
 
 #: aboutdata.cpp:76
 msgid "Thomas Moenicke"
@@ -4388,11 +4456,10 @@ msgid ""
 msgstr ""
 
 #: aboutdata.cpp:120 aboutdata.cpp:127
-#, fuzzy
 #| msgid "Passed"
 msgctxt "Version string is a guess"
 msgid "guessed"
-msgstr "Geçti"
+msgstr ""
 
 #: aboutdata.cpp:143
 msgid "Gpg4win"
@@ -4589,10 +4656,9 @@ msgid "Export Certificates to Server..."
 msgstr "Sertifikaları Sunucuya Aktar..."
 
 #: mainwindow.cpp:400
-#, fuzzy
 #| msgid "Export Certificates..."
 msgid "Export Secret Certificate..."
-msgstr "Sertifikaları Aktar..."
+msgstr "Gizli Sertifika Aktar..."
 
 #: mainwindow.cpp:402
 msgid "Lookup Certificates on Server..."
@@ -4773,16 +4839,14 @@ msgid "SmartCard"
 msgstr "Akıllı Kart"
 
 #: systrayicon.cpp:206
-#, fuzzy
 #| msgid "Set Initial PIN..."
 msgid "Set NetKey v3 Initial PIN..."
-msgstr "Başlangıç Pinini Ayarla..."
+msgstr "Başlangıç NetKey v3 Pinini Ayarla..."
 
 #: systrayicon.cpp:207
-#, fuzzy
 #| msgid "Learn Card Certificates"
 msgid "Learn NetKey v3 Card Certificates"
-msgstr "Kart Sertifikalarını Al"
+msgstr "NetKey v3 Kart Sertifikalarını Al"
 
 #. i18n: file: kleopatra.rc:22
 #. i18n: ectx: Menu (view)
@@ -4845,7 +4909,7 @@ msgstr "Arama Araç Çubuğu"
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Yaşar Şentürk"
+msgstr "Serdar Soytetir, Yaşar Şentürk, Eren Türkay"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
@@ -5342,10 +5406,9 @@ msgstr "DSA"
 #. i18n: file: newcertificatewizard/advancedsettingsdialog.ui:136
 #. i18n: ectx: property (text), widget (QCheckBox, elgCB)
 #: rc.cpp:264
-#, fuzzy
 #| msgid "+ ElGamal"
 msgid "+ Elgamal"
-msgstr "+ ElGamal"
+msgstr "Elgamal"
 
 #. i18n: file: newcertificatewizard/advancedsettingsdialog.ui:147
 #. i18n: ectx: property (text), item, widget (QComboBox, elgKeyStrengthCB)
@@ -5775,10 +5838,9 @@ msgstr "Bu testleri başlangıçta çalıştır"
 #. i18n: file: dialogs/lookupcertificatesdialog.ui:13
 #. i18n: ectx: property (windowTitle), widget (QDialog, LookupCertificatesDialog)
 #: rc.cpp:520
-#, fuzzy
 #| msgid "Keyserver Certificate Lookup"
 msgid "Certificate Server Certificate Lookup"
-msgstr "Anahtar Sunucusu Sertifika Araması "
+msgstr "Sertifika Sunucusu Sertifika Araması "
 
 #. i18n: file: dialogs/lookupcertificatesdialog.ui:24
 #. i18n: ectx: property (text), widget (QPushButton, findPB)
@@ -5813,10 +5875,9 @@ msgstr "Bul:"
 #. i18n: file: dialogs/exportsecretkeydialog.ui:13
 #. i18n: ectx: property (windowTitle), widget (QDialog, ExportSecretKeyDialog)
 #: rc.cpp:541
-#, fuzzy
 #| msgid "Export Certificates"
 msgid "Export Secret Certificate"
-msgstr "Sertifikaları Dışarıya Aktar"
+msgstr "Gizli Sertifika Aktar"
 
 #. i18n: file: dialogs/exportsecretkeydialog.ui:26
 #. i18n: ectx: property (text), widget (QLabel, outputFileLB)
