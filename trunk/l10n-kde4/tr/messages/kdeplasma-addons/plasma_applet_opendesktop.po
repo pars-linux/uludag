@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_opendesktop\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 06:03+0100\n"
-"PO-Revision-Date: 2009-09-22 03:22+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 11:35+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: contactwidget.cpp:175
@@ -34,36 +35,34 @@ msgstr "Bilinmeyen konum"
 
 #: friendmanagementwidget.cpp:66
 msgid "<i>Accepting friendship...</i>"
-msgstr ""
+msgstr "<i>Arkadaşlık kabul ediliyor...</i>"
 
 #: friendmanagementwidget.cpp:75
 msgid "Accept friendship"
-msgstr ""
+msgstr "Arkadaşlığı kabul et"
 
 #: friendmanagementwidget.cpp:83
 msgid "Decline friendship"
-msgstr ""
+msgstr "Arkadaşlığı reddet"
 
 #: friendmanagementwidget.cpp:167
 #, kde-format
 msgid "<b>%1 %2 (%3)</b> wants to be your friend"
-msgstr ""
+msgstr "<b>%1 %2 (%3)</b> senin arkadaşın olmak istiyor"
 
 #: friendmanagementwidget.cpp:169
 #, kde-format
 msgid "<b>%1</b> wants to be your friend"
-msgstr ""
+msgstr "<b>%1</b> senin arkadaşın olmak istiyor"
 
 #: loginwidget.cpp:52
-#, fuzzy
 #| msgid "<b>openDesktop Account</b>"
 msgid "<b>Login to \"openDesktop.org\"</b>"
-msgstr "<b>openDesktop Hesabı</b>"
+msgstr "<b>\"openDesktop.org\" 'a giriş yap</b>"
 
 #. i18n: file: opendesktopConfig.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: loginwidget.cpp:56 rc.cpp:25
-#, fuzzy
 #| msgid "Username:"
 msgid "Username:"
 msgstr "Kullanıcı adı:"
@@ -72,31 +71,30 @@ msgstr "Kullanıcı adı:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: loginwidget.cpp:57 rc.cpp:19
 msgid "Password:"
-msgstr ""
+msgstr "Parola:"
 
 #: loginwidget.cpp:74 opendesktop.cpp:163
-#, fuzzy
 #| msgid "Location"
 msgid "Login"
-msgstr "Konum"
+msgstr "Giriş"
 
 #: loginwidget.cpp:84
 msgid "Register new account..."
-msgstr ""
+msgstr "Yeni kullanıcı kaydı..."
 
 #: messagewidget.cpp:56
 #, kde-format
 msgid "<i>From %1 %2 (%3)</i>"
-msgstr ""
+msgstr "<i>%1 %2 (%3) kullanıcısından</i>"
 
 #: messagewidget.cpp:58
 #, kde-format
 msgid "<i>From %1</i>"
-msgstr ""
+msgstr "<i>%1 kullanıcısından</i>"
 
 #: messagewidget.cpp:135
 msgid "Mail is unread, mark as read"
-msgstr ""
+msgstr "Posta okunmamış, okunmuş olarak işaretle"
 
 #: opendesktop.cpp:129
 msgid "Nearby"
@@ -107,10 +105,9 @@ msgid "Friends"
 msgstr "Arkadaşlar"
 
 #: opendesktop.cpp:194 opendesktop.cpp:391
-#, fuzzy
 #| msgid "Send Message"
 msgid "Messages"
-msgstr "İleti Gönder"
+msgstr "İletiler"
 
 #: opendesktop.cpp:294
 msgid "General"
@@ -123,7 +120,7 @@ msgstr "Konum"
 #: opendesktop.cpp:389
 #, kde-format
 msgid "Messages (%1)"
-msgstr ""
+msgstr "İletiler (%1)"
 
 #. i18n: file: opendesktopConfig.ui:22
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -140,11 +137,20 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Account</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"weight:600;\">Hesap</span></p></body></html>"
 
 #. i18n: file: opendesktopConfig.ui:86
 #. i18n: ectx: property (text), widget (QPushButton, registerButton)
 #: rc.cpp:10
-#, fuzzy
 #| msgid "Register"
 msgctxt "@action:button Registers a new account"
 msgid "Register"
@@ -166,7 +172,7 @@ msgstr "Gösterilecek ögelerin sayısı:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:22
 msgid "Provider:"
-msgstr ""
+msgstr "Sağlayıcı:"
 
 #. i18n: file: opendesktopLocationConfig.ui:21
 #. i18n: ectx: property (text), widget (QLabel, label_1)
@@ -199,30 +205,27 @@ msgid "Publish my Location"
 msgstr "Konumumu Yayınla"
 
 #: requestfriendshipwidget.cpp:52
-#, fuzzy
 #| msgid "Add as Friend"
 msgid "<b>Add as friend</b>"
-msgstr "Arkadaş olarak Ekle"
+msgstr "<b>Arkadaş olarak ekle</b>"
 
 #: requestfriendshipwidget.cpp:69 sendmessagewidget.cpp:75
-#, fuzzy
 #| msgid "Send Message"
 msgid "Message:"
-msgstr "İleti Gönder"
+msgstr "İleti:"
 
 #: requestfriendshipwidget.cpp:79 sendmessagewidget.cpp:85 userwidget.cpp:127
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 #: requestfriendshipwidget.cpp:87 sendmessagewidget.cpp:93
 msgid "Send"
 msgstr "Gönder"
 
 #: sendmessagewidget.cpp:53
-#, fuzzy
 #| msgid "Send Message"
 msgid "<b>Send message</b>"
-msgstr "İleti Gönder"
+msgstr "<b>İleti Gönder</b>"
 
 #: sendmessagewidget.cpp:70
 msgid "Subject:"

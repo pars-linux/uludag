@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kimpanel\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-25 06:58+0100\n"
-"PO-Revision-Date: 2009-06-30 16:16+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 11:18+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kimpanelapplet.cpp:104
@@ -30,7 +31,7 @@ msgstr "KDE Girdi Yöntemi Paneli"
 
 #: kimstatusbargraphics.cpp:52
 msgid "Icon Filter"
-msgstr ""
+msgstr "Simge Filtresi"
 
 #: kimstatusbargraphics.cpp:72 kimstatusbargraphics.cpp:290
 msgid "Expand out"
@@ -38,7 +39,7 @@ msgstr "Aç"
 
 #: kimstatusbargraphics.cpp:78 kimstatusbargraphics.cpp:292
 msgid "Expand out from the panel to a floating widget"
-msgstr ""
+msgstr "Panelin dışına doğru yüzen parçacık olarak genişlet"
 
 #: kimstatusbargraphics.cpp:81 paneldialog.cpp:67
 msgid "Reload Config"
@@ -80,13 +81,13 @@ msgstr "Durum çubuğunda gizlenen özellikler"
 #. i18n: ectx: label, entry (FloatingStatusbarPos), group (Layout)
 #: rc.cpp:9
 msgid "Position of floating status bar"
-msgstr ""
+msgstr "Yüzen durum çubuğunun konumu"
 
 #. i18n: file: kimpanelconfig.kcfg:24
 #. i18n: ectx: label, entry (FloatingStatusbarLayout), group (Layout)
 #: rc.cpp:12
 msgid "Defines how icons are positioned in the floating status bar."
-msgstr ""
+msgstr "Simgelerin yüzen durum çubuğunda nasıl konumlandığını tanımlar."
 
 #. i18n: file: kimpanelconfig.kcfg:27
 #. i18n: ectx: label, entry (FloatingStatusbarLayout), group (Layout)
@@ -140,14 +141,19 @@ msgstr "Çoklu satır/sütun, sabit sütun."
 #. i18n: ectx: label, entry (LookupTableConstraint), group (Layout)
 #: rc.cpp:39
 msgid "Restricts the layout of the list of candidate words."
-msgstr ""
+msgstr "Aday kelimeler listesinin yerleşimini kısıtlar."
 
 #: rc.cpp:40
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr ""
+"Serdar Soytetir "
+"Gökmen Göksel"
 
 #: rc.cpp:41
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr ""
+"tulliana@gmail.com "
+"gokmen@pardus.org.tr"
+
