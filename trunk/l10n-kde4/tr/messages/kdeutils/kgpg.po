@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-05 01:22+0200\n"
-"PO-Revision-Date: 2010-04-20 11:56+0300\n"
+"PO-Revision-Date: 2010-04-20 15:38+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -102,7 +102,7 @@ msgstr "Fotoğraf Yok"
 
 #: keyinfodialog.cpp:283
 msgid "<qt><b>Photo:</b><p>A photo can be included with a public key for extra security. The photo can be used as an additional method of authenticating the key. However, it should not be relied upon as the only form of authentication.</p></qt>"
-msgstr ""
+msgstr "<qt><b>Fotoğraf:</b><p>Fazladan güvenlik için açık anahtarınızla beraber bir fotoğraf bulundurabilirsiniz. Fotoğraf anahtarı yetkilendirmek için ek bir metot olarak kullanılabilir. Ancak tek başına bir yetkilendirme olarak güvenilmemelidir.</p></qt>"
 
 #: keyinfodialog.cpp:298
 msgid "Disable key"
@@ -122,7 +122,7 @@ msgstr "Parmak izi"
 
 #: keyinfodialog.cpp:373
 msgid "<qt>The requested key is not present in the keyring anymore.<br />Perhaps it was deleted by another application</qt>"
-msgstr ""
+msgstr "<qt>İstediğiniz anahtar artık anahtarlıkta bulunmuyor.<br />Başka bir uygulama tarafından silinmiş olabilir.</qt>"
 
 #: keyinfodialog.cpp:373
 msgid "Key not found"
@@ -135,11 +135,11 @@ msgstr "hiçbiri"
 
 #: keyinfodialog.cpp:402
 msgid "<qt>The left part is the algorithm used by the <b>signature</b> key. The right part is the algorithm used by the <b>encryption</b> key.</qt>"
-msgstr ""
+msgstr "<qt>Sol taraf <b>imzalama</b> anahtarı tarafından kullanılan algoritmadır. Sağ taraf <b>şifreleme</b> anahtarı tarafından kullanılan algoritmadır.</qt>"
 
 #: keyinfodialog.cpp:408
 msgid "<qt>The left part is the size of the <b>signature</b> key. The right part is the size of the <b>encryption</b> key.</qt>"
-msgstr ""
+msgstr "<qt>Sol taraf <b>imza</b> anahtarının boyutudur. Sağ taraf <b>şifreleme</b> anahtarının boyutudur.</qt>"
 
 #: keyinfodialog.cpp:412
 msgctxt "no key comment"
@@ -770,7 +770,7 @@ msgstr "<qt><b>%1</b> dosyası baskı için açılamıyor...</qt>"
 #: keysmanager.cpp:2310
 msgid "<qt>The key you are deleting is a member of the following key group. Do you want to remove it from this group?</qt>"
 msgid_plural "<qt>The key you are deleting is a member of the following key groups. Do you want to remove it from these groups?</qt>"
-msgstr[0] ""
+msgstr[0] "<qt>Sildiğiniz anahtar aşağıdaki anahtar gruplarının bir üyesi. Bu gruplardan silmek istediğinizden emin misiniz?</qt>"
 
 #: keysmanager.cpp:2314 keysmanager.cpp:2364 keysmanager.cpp:2379
 #: keysmanager.cpp:2382 keysmanager.cpp:2392 keysmanager.cpp:2406
@@ -811,7 +811,7 @@ msgid "You have selected items that are not keys. They can not be deleted with t
 msgstr "Anahtar olmayan ögeler seçtiniz. Bu dosyalar bu menü girdisi ile silinemez."
 
 #: keysmanager.cpp:2438
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt>The following are secret key pairs:<br/><b>%1</b><br/>They will not be deleted.</qt>"
 msgstr "<qt>Aşağıdakiler gizli anahtar çiftleridir:<br/><b>%1</b>Bu çiftler silinmeyecekler.</qt>"
 
@@ -963,7 +963,7 @@ msgstr "Şifre açılması işleminde hata."
 
 #: kgpgexternalactions.cpp:401
 msgid "<qt>You have not set a path to your GnuPG config file.<br />This may cause some surprising results in KGpg's execution.<br />Would you like to start KGpg's assistant to fix this problem?</qt>"
-msgstr ""
+msgstr "<qt>GnuPG yapılandırma dosyanızın yolunu ayarlamamışsınız.<br />KGpg programının çalışmasını bozabilir.<br />Bu sorunu düzeltmek için KGpg Yardımcısını başlatmak ister misiniz?</qt>"
 
 #: kgpgexternalactions.cpp:402
 msgid "Start Assistant"
@@ -1657,7 +1657,7 @@ msgstr "Ev konumu:"
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1_5_2)
 #: rc.cpp:89
 msgid "<b>Home Location</b><p>This is the directory where GnuPG stores its configuration and the keyrings. If you have not changed it this is usually <em>~/.gnupg/</em></p>"
-msgstr ""
+msgstr "<b>Ev Konumu</b><p>GnuPg'nin anahtarlıkları ve yapılandırma dosyalarını sakladığı dizindir. Değiştirmediyseniz eğer <em>~/.gnupg/</em> olarak tanımlıdır.</p>"
 
 #. i18n: file: conf_gpg.ui:42
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_5_2_2)
@@ -1669,7 +1669,7 @@ msgstr "Yapılandırma dosyası:"
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1_5_2_2)
 #: rc.cpp:95
 msgid "<b>Configuration File</b><p>This is the name of the configuration file in the directory specified above. The default is <em>gnupg.conf</em> while older versions of GnuPG used <em>options</em>.</p>"
-msgstr ""
+msgstr "<b>Yapılandırma Dosyası</b><p>Yukarıda belirtilen klasördeki yapılandırma dosyasının adıdır. Öntanımlı olarak <em>gnupg.conf</em> dosyasıdır ancak GnuPG'nin eski sürümlerinde  <em>options</em> dosyası da kullanılmaktadır.</p>"
 
 #. i18n: file: conf_gpg.ui:95
 #. i18n: ectx: property (text), widget (QPushButton, changeHome)
@@ -1687,7 +1687,7 @@ msgstr "Uygulama yolu:"
 #. i18n: ectx: property (whatsThis), widget (QLabel, textLabel1_6_2)
 #: rc.cpp:107
 msgid "<b>Program path</b><p>This is the program that will be called for all GnuPG operations. The default of <em>gpg</em> will work on most systems.</p>"
-msgstr ""
+msgstr "<b>Program yolu</b><p>Tüm GnuPG işlemleri için çağrılacak programdır. Çoğu sistemde öntanımlı olarak <em>gpg</em> komutudur.</p>"
 
 #. i18n: file: conf_gpg.ui:156
 #. i18n: ectx: property (text), widget (QCheckBox, use_agent)
@@ -1699,7 +1699,7 @@ msgstr "GnuPG programını kullan"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, use_agent)
 #: rc.cpp:113
 msgid "<b>Use GnuPG agent</b><p>The GnuPG agent stores the passwords for your secret keys in memory for a limited amount of time. If you use your secret key again while it is cached you do not have to enter it again. This is less secure than typing it every time.</p>"
-msgstr ""
+msgstr "<b>GnuPG ajanını kullan</b><p>GnuPG gizli anahtarlarınızın parolalarını bellekte sınırlı bir süreliğine saklayabilir. Eğer gizli anahtarınızı önbelleğe alındıktan sonra kullanırsanız, parolanızı tekrar girmenize gerek kalmaz. Parolanızı her seferinden yazmanızdan daha az güvenilir bir yöntemdir.</p>"
 
 #. i18n: file: conf_misc.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
@@ -2365,7 +2365,7 @@ msgstr "Sistem çekmecesi simgesini göster"
 #. i18n: ectx: label, entry (RecentFiles), group (User Interface)
 #: rc.cpp:458
 msgid "The number of recently opened files shown in the editor menu."
-msgstr ""
+msgstr "Düzenleyici menüsünde görünecek en son açılan dosyaların sayısı."
 
 #. i18n: file: kgpg.kcfg:185
 #. i18n: ectx: label, entry (ShowTipOfDay), group (TipOfDay)
@@ -2777,19 +2777,19 @@ msgstr ""
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:44
 msgid "<p>To open a file in the KGpg's editor and immediately decrypt it type: <pre>kgpg -s filename</pre></p>\n"
-msgstr ""
+msgstr "<p>KGpg'nin düzenleyicisinde bir dosya açmak ve anında deşifre etmek için şu komutu verin: <pre>kgpg -s filename</pre></p>\n"
 
 #. i18n: file: tips:47
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:49
 msgid "<p>If you want to change the password or expiration of a secret key simply double click on it to get the key properties dialog.</p>\n"
-msgstr ""
+msgstr "<p>Gizli anahtarınızın parolasını veya bitiş süresini değiştirmek istiyorsanız, anahtar özellikleri diyaloğunu açmak için çift tıklayın.</p>\n"
 
 #. i18n: file: tips:52
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:54
 msgid "<p>You can reach your default key by pressing &quot;Ctrl+Home&quot; in the key manager.</p>\n"
-msgstr ""
+msgstr "<p>Ön tanımlı anahtarınıza ulaşmak için anahtar yöneticisinde &quot;Ctrl+Home&quot; tuşlarına basabilirsiniz..</p>\n"
 
 #. i18n: file: tips:57
 #. i18n: ectx: @info:tipoftheday
@@ -3321,7 +3321,7 @@ msgstr[0] "Yeni imzası olan Anahtarlar"
 #: transactions/kgpgimport.cpp:287
 msgid "Key with new Subkeys"
 msgid_plural "Keys with new Subkeys"
-msgstr[0] ""
+msgstr[0] "Yeni Alt Anahtarlı anahtarlar"
 
 #: transactions/kgpgimport.cpp:290
 msgid "New Private Key"
