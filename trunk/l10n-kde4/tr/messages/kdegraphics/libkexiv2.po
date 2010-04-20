@@ -23,8 +23,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: libkexiv2/altlangstredit.cpp:66
 msgid "Default Language"
@@ -459,10 +459,8 @@ msgid "Kannada (India)"
 msgstr "Kannada (Hindistan)"
 
 #: libkexiv2/altlangstredit.cpp:177
-#, fuzzy
-#| msgid "Korean (Korea)"
 msgid "Korean (South Korea)"
-msgstr "Korece (Kore)"
+msgstr "Korece (Güney Kore)"
 
 #: libkexiv2/altlangstredit.cpp:178
 msgid "Kyrgyz (Kyrgyzstan)"
@@ -1735,15 +1733,11 @@ msgstr "Bilinmeyen"
 #: libkexiv2/kexiv2exif.cpp:176
 #, kde-format
 msgid "Data of size %1"
-msgstr ""
+msgstr "%1 boyutunda veri"
 
 #: libkexiv2/subjectwidget.cpp:138
-msgid ""
-"Use standard <b><a href='http://www.iptc.org/NewsCodes'>reference code</a></"
-"b>"
-msgstr ""
-"Standart <b><a href='http://www.iptc.org/NewsCodes'>referans kodu</a> "
-"kullan</b>"
+msgid "Use standard <b><a href='http://www.iptc.org/NewsCodes'>reference code</a></b>"
+msgstr "Standart <b><a href='http://www.iptc.org/NewsCodes'>referans kodu</a> kullan</b>"
 
 #: libkexiv2/subjectwidget.cpp:144
 msgid "Use custom definition"
