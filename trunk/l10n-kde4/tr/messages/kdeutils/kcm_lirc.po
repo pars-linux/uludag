@@ -1,8 +1,8 @@
 # translation of kcmlirc.po to
 # Turkish translation of kcmlirc.
 # Copyright (C) 2003, 2004, 2007, 2008, 2009 Free Software Foundation, Inc.
-#
-#
+# 
+# 
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
@@ -19,8 +19,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: addaction.cpp:53
 msgctxt "Try-Button in Wizard"
@@ -29,12 +29,8 @@ msgstr "Dene"
 
 #: addaction.cpp:181
 #, kde-format
-msgid ""
-"You did not select a mode of that remote control. Please use %1, or revert "
-"back to select a different mode."
-msgstr ""
-"Uzaktan denetleyici için bir kip seçmediniz. Lütfen %1 kullanın veya farklı "
-"bir kip seçmek için geri dönün."
+msgid "You did not select a mode of that remote control. Please use %1, or revert back to select a different mode."
+msgstr "Uzaktan denetleyici için bir kip seçmediniz. Lütfen %1 kullanın veya farklı bir kip seçmek için geri dönün."
 
 #: addaction.cpp:183
 msgid "Incorrect Remote Control Detected"
@@ -46,11 +42,8 @@ msgstr "Ana"
 
 #: addaction.cpp:190
 #, kde-format
-msgid ""
-"You are attempting to configure an action for a button on %1 (in mode %2)."
-msgstr ""
-"%1 üzerindeki bir düğme için bir eylemi ayarlamaya çalışıyorsunuz (%2 "
-"kipinde)."
+msgid "You are attempting to configure an action for a button on %1 (in mode %2)."
+msgstr "%1 üzerindeki bir düğme için bir eylemi ayarlamaya çalışıyorsunuz (%2 kipinde)."
 
 #: addaction.cpp:320 editaction.cpp:72 editaction.cpp:229
 msgid "Argument name"
@@ -87,65 +80,34 @@ msgid "Copyright (c)2003 Gav Wood"
 msgstr "Copyright (c)2003 Gav Wood"
 
 #: kcmlirc.cpp:87
-msgid ""
-"Use this to configure KDE's infrared remote control system in order to "
-"control any KDE application with your infrared remote control."
-msgstr ""
-"Herhangi bir KDE uygulamasını kızılötesi kumandayla denetleyebilmek "
-"amacıyla, KDE'nin kızılötesi kumanda denetleme sistemini yapılandırmak için "
-"bunu kullanın."
+msgid "Use this to configure KDE's infrared remote control system in order to control any KDE application with your infrared remote control."
+msgstr "Herhangi bir KDE uygulamasını kızılötesi kumandayla denetleyebilmek amacıyla, KDE'nin kızılötesi kumanda denetleme sistemini yapılandırmak için bunu kullanın."
 
 #: kcmlirc.cpp:91
-msgid ""
-"<h1>Remote Controls</h1><p>This module allows you to configure bindings "
-"between your remote controls and KDE applications. Simply select your remote "
-"control and click Add under the Actions/Buttons list. If you want KDE to "
-"attempt to automatically assign buttons to a supported application's "
-"actions, try clicking the Auto-Populate button.</p><p>To view the recognized "
-"applications and remote controls, simply select the <em>Loaded Profiles</em> "
-"tab.</p>"
-msgstr ""
-"<h1>Uzaktan Denetimler</h1><p>Bu modül KDE uygulamalarınız ile uzaktan "
-"denetim cihazınız arasındaki bağlayıcıları yapılandırmanızı sağlar. Basitçe "
-"uzaktan denetim cihazınızı seçip Eylemler/Düğmeler listesinde bulunan Ekle "
-"düğmesine tıklayın. Eğer KDE sizin için otomatik olarak atama yapsın "
-"istiyorsanız Otomatik Doldur düğmesine tıklayın.</p><p>Tanınan uygulamaları "
-"ve uzaktan denetimleri görmek için <em>Yüklü Profiller</em> sekmesini seçin."
-"</p>"
+msgid "<h1>Remote Controls</h1><p>This module allows you to configure bindings between your remote controls and KDE applications. Simply select your remote control and click Add under the Actions/Buttons list. If you want KDE to attempt to automatically assign buttons to a supported application's actions, try clicking the Auto-Populate button.</p><p>To view the recognized applications and remote controls, simply select the <em>Loaded Profiles</em> tab.</p>"
+msgstr "<h1>Uzaktan Denetimler</h1><p>Bu modül KDE uygulamalarınız ile uzaktan denetim cihazınız arasındaki bağlayıcıları yapılandırmanızı sağlar. Basitçe uzaktan denetim cihazınızı seçip Eylemler/Düğmeler listesinde bulunan Ekle düğmesine tıklayın. Eğer KDE sizin için otomatik olarak atama yapsın istiyorsanız Otomatik Doldur düğmesine tıklayın.</p><p>Tanınan uygulamaları ve uzaktan denetimleri görmek için <em>Yüklü Profiller</em> sekmesini seçin.</p>"
 
 #: kcmlirc.cpp:97
-msgid ""
-"The Infrared Remote Control software is not currently running. This "
-"configuration module will not work properly without it. Would you like to "
-"start it now?"
-msgstr ""
-"Kızıl Ötesi Uzaktan denetleyici yazılımı şuanda çalışmıyor. Bu ayarlama "
-"modülü yazılım çalıştırılmadan dügün çalışmaz. Yazılımı şimdi başlatmak "
-"ister misiniz?"
+msgid "The Infrared Remote Control software is not currently running. This configuration module will not work properly without it. Would you like to start it now?"
+msgstr "Kızıl Ötesi Uzaktan denetleyici yazılımı şuanda çalışmıyor. Bu ayarlama modülü yazılım çalıştırılmadan dügün çalışmaz. Yazılımı şimdi başlatmak ister misiniz?"
 
 #: kcmlirc.cpp:98
 msgid "Software Not Running"
 msgstr "Yazılım Çalışmıyor"
 
 #: kcmlirc.cpp:98
-#| msgid "Start"
 msgctxt "Start irkick daemon"
 msgid "Start"
 msgstr "Başlat"
 
 #: kcmlirc.cpp:99
-#| msgid "Do Not Start"
 msgctxt "Do not start irkick daemon"
 msgid "Do Not Start"
 msgstr "Başlatma"
 
 #: kcmlirc.cpp:107
-msgid ""
-"Would you like the infrared remote control software to start automatically "
-"when you begin KDE?"
-msgstr ""
-"KDE başladığında kızıl ötesi denetleyici yazılımının otomatik olarak "
-"başlatılmasını istiyor musunuz?"
+msgid "Would you like the infrared remote control software to start automatically when you begin KDE?"
+msgstr "KDE başladığında kızıl ötesi denetleyici yazılımının otomatik olarak başlatılmasını istiyor musunuz?"
 
 #: kcmlirc.cpp:108
 msgid "Automatically Start?"
@@ -265,7 +227,6 @@ msgid "A comma-separated list of Strings"
 msgstr "Virgülle ayrılmış İfadeler listesi"
 
 #: model.cpp:351
-#| msgid "Name"
 msgctxt "Remote button name"
 msgid "Name"
 msgstr "İsim"
@@ -282,7 +243,7 @@ msgstr "Açıklama"
 
 #: model.cpp:357
 msgid "Mapped remote button"
-msgstr ""
+msgstr "Tanımlanmış kumanda düğmesi"
 
 #: model.cpp:454
 msgid "Button"
@@ -293,7 +254,6 @@ msgid "Identifier"
 msgstr "Tanımlayıcı"
 
 #: model.cpp:487
-#| msgid "Remote"
 msgctxt "Remote name"
 msgid "Remote"
 msgstr "Uzak"
@@ -326,7 +286,7 @@ msgstr "Uzaktan denetleyicinin kipini değiştirmek istiyorum"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:15
 msgid " Press a button on this remote control or select one from the list."
-msgstr ""
+msgstr "Kumandada bir düğmeye basın veya listeden seçin"
 
 #. i18n: file: addactionbase.ui:129
 #. i18n: ectx: property (text), widget (QRadioButton, theNotJustStart)
@@ -377,13 +337,8 @@ msgstr "Çoklu Örnekler"
 #. i18n: file: editactionbase.ui:398
 #. i18n: ectx: property (text), widget (QLabel, theIMLabel)
 #: rc.cpp:39 rc.cpp:129
-msgid ""
-"This application may have multiple instances. In the case of having multiple "
-"instances at once when this action should be executed, choose a course of "
-"action:"
-msgstr ""
-"Bu uygulama birden çok örneğe sahip. Bu eylem çalıştırılırken bir kerede "
-"birden fazla örnek mevcut olduğunda bir eylem akışı seçin:"
+msgid "This application may have multiple instances. In the case of having multiple instances at once when this action should be executed, choose a course of action:"
+msgstr "Bu uygulama birden çok örneğe sahip. Bu eylem çalıştırılırken bir kerede birden fazla örnek mevcut olduğunda bir eylem akışı seçin:"
 
 #. i18n: file: addactionbase.ui:293
 #. i18n: ectx: property (text), widget (QRadioButton, theDontSend)
@@ -595,33 +550,17 @@ msgstr "Linux Kızıl Ötesi Uzaktan Denetim"
 #. i18n: ectx: property (text), widget (QLabel, theMainLabel)
 #: rc.cpp:165
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">There are currently no "
-"remote controls available. You must first set up LIRC correctly. Find more "
-"information on <a href=\"http://www.lirc.org\"><span style=\" text-"
-"decoration: underline; color:#3c7dbe;\">www.lirc.org</span></a>.</p></body></"
-"html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">There are currently no remote controls available. You must first set up LIRC correctly. Find more information on <a href=\"http://www.lirc.org\"><span style=\" text-decoration: underline; color:#3c7dbe;\">www.lirc.org</span></a>.</p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
-"weight:600; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Kullanılabilir uzaktan "
-"kumandalar var. Öncelikle LIRC uygulamasını doğru bir şekilde "
-"yapılandırmalısınız. Daha fazla bilgiyi <a href=\"http://www.lirc.org"
-"\"><span style=\" text-decoration: underline; color:#3c7dbe;\">www.lirc.org</"
-"span></a> adresinde bulabilirsiniz.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:600; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Kullanılabilir uzaktan kumandalar var. Öncelikle LIRC uygulamasını doğru bir şekilde yapılandırmalısınız. Daha fazla bilgiyi <a href=\"http://www.lirc.org\"><span style=\" text-decoration: underline; color:#3c7dbe;\">www.lirc.org</span></a> adresinde bulabilirsiniz.</p></body></html>"
 
 #. i18n: file: kcmlircbase.ui:60
 #. i18n: ectx: attribute (title), widget (QWidget, tab_0)
@@ -786,15 +725,15 @@ msgstr "Otomatik-Doldur"
 
 #: selectprofile.cpp:93
 msgid "Remote supports all defined buttons in selected profile"
-msgstr ""
+msgstr "Kumanda seçili profilde tüm tanımlı düğmeleri destekliyor"
 
 #: selectprofile.cpp:97
 msgid "Remote does not support all defined buttons in selected profile"
-msgstr ""
+msgstr "Kumanda seçili profilde tanımlanmış tüm düğmeleri desteklemiyor"
 
 #: selectprofile.cpp:101
 msgid "Remote supports none of the defined buttons in selected profile"
-msgstr ""
+msgstr "Kumanda seçili profilde tanımlanmış hiç bir düğmeyi desteklemiyor"
 
 #~ msgctxt "The name of a parameter"
 #~ msgid "unknown"
@@ -844,24 +783,14 @@ msgstr ""
 #~ msgid "Value of the argument"
 #~ msgstr "Argümanın değeri"
 
-#~ msgid ""
-#~ "There are currently no remote controls available. You must first set up "
-#~ "LIRC correctly; see www.lirc.org for more information."
-#~ msgstr ""
-#~ "Şu andan bir uzaktan denetim mevcut değil. İlk önce LIRC uygulamasını "
-#~ "doğru ayarlamalısınız; daha çok bilgi için www.lirc.org adresini ziyaret "
-#~ "edin."
+#~ msgid "There are currently no remote controls available. You must first set up LIRC correctly; see www.lirc.org for more information."
+#~ msgstr "Şu andan bir uzaktan denetim mevcut değil. İlk önce LIRC uygulamasını doğru ayarlamalısınız; daha çok bilgi için www.lirc.org adresini ziyaret edin."
 
-#, fuzzy
-#~| msgid "Value"
 #~ msgid "False"
 #~ msgstr "Değer"
 
-#~ msgid ""
-#~ "You may only drag the selected items onto a mode of the same remote "
-#~ "control"
-#~ msgstr ""
-#~ "Sadece aynı uzaktan denetleyicinin kipine seçili ögeleri taşıyabilirsiniz"
+#~ msgid "You may only drag the selected items onto a mode of the same remote control"
+#~ msgstr "Sadece aynı uzaktan denetleyicinin kipine seçili ögeleri taşıyabilirsiniz"
 
 #~ msgid "You May Not Drag Here"
 #~ msgstr "Buraya Sürükleyemezsiniz"
@@ -869,8 +798,6 @@ msgstr ""
 #~ msgid "Parameters"
 #~ msgstr "Parametreler"
 
-#, fuzzy
-#~| msgid "Function"
 #~ msgid "DBus functions"
 #~ msgstr "Fonksiyon"
 
@@ -893,7 +820,5 @@ msgstr ""
 #~ msgid "Parameter:"
 #~ msgstr "Parametre:"
 
-#, fuzzy
-#~| msgid "A&pplication/D-Bus options:"
 #~ msgid "A&pplication / D-Bus options:"
 #~ msgstr "Uygul&ama/D-Bus seçenekleri:"
