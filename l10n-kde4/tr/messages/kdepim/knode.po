@@ -5,18 +5,19 @@
 # Görkem Çetin <gorkem@kde.org>, 2002,2003, 2004.
 # Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Fatih Aşıcı <fatih@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: knode\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 06:01+0100\n"
-"PO-Revision-Date: 2009-09-22 05:34+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 16:56+0300\n"
+"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
+"Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: aboutdata.cpp:30
@@ -170,15 +171,15 @@ msgid "Unknown charset. Default charset is used instead."
 msgstr "Bilinmeyen karakter kümesi. Öntanımlı karakter kümesi kullanıldı."
 
 #: articlewidget.cpp:528
-#, fuzzy
 msgid ""
 "<br /><b>This article has the MIME type &quot;message/partial&quot;, which "
 "KNode cannot handle yet.<br />Meanwhile you can save the article as a text "
 "file and reassemble it by hand.</b>"
 msgstr ""
-"<br><bodyblock><b>Bu haber KNode'un henüz kullanmadığı &quot;message/"
-"partial&quot; MIME türüne sahip. <br>Haberi bir metin dosyası olarak "
-"kaydedip elle yeniden birleştirebilirsiniz.<.</b></bodyblock></qt>"
+"<br /><b>Bu yazı KNode'un henüz desteklemediği &quot;message/partial&quot; "
+"MIME türüne sahip.<br />Yine de yazıyı metin dosyası olarak kaydedip sonra "
+"elle "
+"birleştirebilirsiniz.</b>"
 
 #: articlewidget.cpp:544
 msgid ""
@@ -431,14 +432,14 @@ msgid "This article cannot be edited."
 msgstr "Bu haber değiştirilemez."
 
 #: knarticlefactory.cpp:611 knarticlefactory.cpp:911
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<qt>The signature generator program produced the following output:<br><br>"
 #| "%1</qt>"
 msgid ""
 "<qt>The signature generator program produced the following output:<br /><br /"
 ">%1</qt>"
-msgstr "<qt>İmza üretici uygulama aşağıdaki çıktıyı verdi:<br><br>%1</qt>"
+msgstr "<qt>İmza üretici program aşağıdaki çıktıyı verdi:<br /><br />%1</qt>"
 
 #: knarticlefactory.cpp:637
 msgid "Article has already been sent."
@@ -453,7 +454,6 @@ msgid "Unable to load the outbox-folder."
 msgstr "Gidenler klasörü yüklenemiyor."
 
 #: knarticlefactory.cpp:742
-#, fuzzy
 #| msgid ""
 #| "You have aborted the posting of articles. The unsent articles are stored "
 #| "in the \"Outbox\" folder."
@@ -461,8 +461,8 @@ msgid ""
 "You canceled the article posting. The unsent articles are stored in the "
 "\"Outbox\" folder."
 msgstr ""
-"Makalelerin gönderilmesi iptal edildi. Gönderilmeyen iletiler \"Gidenler\" "
-"kutusu içine yerleştirildi."
+"Makale gönderimini iptal ettiniz. Gönderilmeyen iletiler \"Gidenler\" "
+"klasöründe saklandı."
 
 #: knarticlefactory.cpp:789
 msgid ""
@@ -614,15 +614,15 @@ msgid "Delete Articles"
 msgstr "Haberleri Sil"
 
 #: knarticlemanager.cpp:923
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "The article you requested is not available on your news server.<br />You "
 "could try to get it from <a href=\"http://groups.google.com/groups?selm=%1"
 "\">groups.google.com</a>."
 msgstr ""
-"<br><br>İstediğiniz haber haber sunucunuz üzerinde mevcut değil."
-"<br>Aşağıdaki adresten almayı deneyebilirsiniz <a href=\"http://groups."
-"google.com/groups?q=msgid:%1&ic=1\">groups.google.com</a>.  "
+"İstediğiniz makale, haber sunucunuz üzerinde mevcut değil.<br /> "
+"<a href=\"http://groups.google.com/groups?selm=%1"
+"\">groups.google.com</a> adresinden almayı deneyebilirsiniz."
 
 #: knarticlemanager.cpp:1011 kngroupbrowser.cpp:426 kngroupbrowser.cpp:439
 #: knmainwidget.cpp:326
@@ -1242,7 +1242,6 @@ msgid "Email a&ddress:"
 msgstr "E-posta a&dresi:"
 
 #: knconfigwidgets.cpp:101
-#, fuzzy
 #| msgid ""
 #| "<qt><p>Your email address as it will appear to others reading your "
 #| "articles</p><p>Ex: <b>nospam@please.com</b>.</qt>"
@@ -1250,23 +1249,22 @@ msgid ""
 "<qt><p>Your email address as it will appear to others reading your articles</"
 "p><p>Ex: <b>nospam@please.com</b>.</p></qt>"
 msgstr ""
-"<qt><p>Başkalarının yazdıklarınızı okurken göreceği e-posta adresiniz</p> "
-"<p>Ör: <b>lutfen@spamyapmayın.com</b>.</qt>"
+"<qt><p>Başkalarının yazdıklarınızı okurken göreceği e-posta adresiniz</"
+"p><p>Ör: <b>spamyapmayın@lütfen.com</b>.</p></qt>"
 
 #: knconfigwidgets.cpp:108
 msgid "&Reply-to address:"
 msgstr "&Yanıtlama adresi:"
 
 #: knconfigwidgets.cpp:112
-#, fuzzy
 msgid ""
 "<qt><p>When someone reply to your article by email, this is the address the "
 "message will be sent. If you fill in this field, please do it with a real "
 "email address.</p><p>Ex: <b>john@example.com</b>.</p></qt>"
 msgstr ""
 "<qt><p>Bu adres, birisi yazdığınıza cevap vermek istediğinde iletinin "
-"gönderileceği adres olacaktır. Bu alanı dolduracaksanız lütfen gerçek bir e-"
-"posta adresi kullanınız.</p><p>Ör: <b>kullanici@uludag.org.tr</b>.</p></qt>"
+"gönderileceği adres olacaktır. Bu alanı dolduracaksanız lütfen gerçek bir "
+"e-posta adresi kullanınız.</p><p>Ör: <b>fatih@ornek.com</b>.</p></qt>"
 
 #: knconfigwidgets.cpp:120
 msgid "&Mail-copies-to:"
@@ -1389,11 +1387,10 @@ msgid "Ser&ver"
 msgstr "Sunu&cu: "
 
 #: knconfigwidgets.cpp:502
-#, fuzzy
 #| msgid "min"
 msgid " minute"
 msgid_plural " minutes"
-msgstr[0] " dk"
+msgstr[0] " dakika"
 
 #: knconfigwidgets.cpp:506
 msgid "&Identity"
@@ -1639,7 +1636,7 @@ msgid "Start Conversion..."
 msgstr "Dönüştürmeyi Başlat..."
 
 #: knconvert.cpp:82
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<b>Congratulations, you have upgraded to KNode version %1.</"
 #| "b><br>Unfortunately this version uses a different format for some data-"
@@ -1653,10 +1650,12 @@ msgid ""
 "This is now done automatically by KNode. If you want to, a backup of your "
 "existing data will be created before the conversion starts."
 msgstr ""
-"<b>Tebrikler, KNode'u %1 sürümüne yükselttiniz.</b><br>. Ancak bu sürüm "
-"öncekinden farklı bir depolama kullanıyor. Bu nedenle KNode tarafından "
-"otomatik yapılan dönüştürme işlemi gerekiyor. İsterseniz dönüşüm başlamadan "
-"şu anki verilerinizin bir yedeği oluşturulacaktır."
+"<b>Tebrikler, KNode'u %1 sürümüne yükselttiniz.</b><br />. Ancak bu sürüm "
+"bazı veri dosyaları için farklı bir biçim kullanıyor. Bu nedenle mevcut "
+"verilerinizi "
+"korumak için onları yeni biçime dönüştürmek gerekiyor. Bu, KNode tarafından "
+"otomatik olarak yapılır. İsterseniz dönüşüm başlamadan önce mevcut "
+"verilerinizin bir yedeği alınacaktır."
 
 #: knconvert.cpp:89
 msgid "Create backup of old data"
@@ -1679,7 +1678,6 @@ msgid "Processed tasks:"
 msgstr "İşlenen görevler:"
 
 #: knconvert.cpp:147
-#, fuzzy
 #| msgid ""
 #| "<b>Some errors occurred during the conversion.</b><br>You should now "
 #| "examine the log to find out what went wrong."
@@ -1687,7 +1685,7 @@ msgid ""
 "<b>Some errors occurred during the conversion.</b><br />You should now "
 "examine the log to find out what went wrong."
 msgstr ""
-"<b>Dönüştürme sırasında bazı hatalar oluştu</b><br>Neyin yanlış gittiğini "
+"<b>Dönüştürme sırasında bazı hatalar oluştu.</b><br />Neyin yanlış gittiğini "
 "anlamak için kayıt dosyasını incelemelisiniz."
 
 #: knconvert.cpp:151
@@ -2171,6 +2169,8 @@ msgid ""
 "The group %1 does not appear to exist anymore on the server.\n"
 "You may unsubscribe."
 msgstr ""
+"%1 adlı grup artık sunucuda görünmüyor.\n"
+"Üyeliği iptal edebilirsiniz."
 
 #: kngroupmanager.cpp:670
 msgid ""
@@ -2733,6 +2733,13 @@ msgid ""
 "obtained.\n"
 "Do you want to store the password for server '%1' in the configuration file?"
 msgstr ""
+"KWallet erişilebilir değil. Parolalarınızı yönetmek için KWallet kullanmanız "
+"şiddetle önerilir.\n"
+"KNode, yine de parolayı kendi yapılandırma dosyasında saklayabilir. Parola "
+"karmaşık bir biçimde saklanır; ancak yapılandırma dosyasına erişim elde "
+"edildiğinde uygulanacak şifre çözme denemelerine karşı güvenli olduğu "
+"düşünülmemelidir.\n"
+"'%1' sunucusu için parolayı yapılandırma dosyasında saklamak ister misiniz?"
 
 #: knserverinfo.cpp:102
 msgid "KWallet Not Available"
@@ -3130,9 +3137,8 @@ msgstr "Tartışmayı yoksaymak geçerli tartışmayı kapatır"
 #. i18n: file: knode.kcfg:184
 #. i18n: ectx: label, entry (leaveGroupMarkAsRead), group (READNEWS_NAVIGATION)
 #: rc.cpp:162
-#, fuzzy
 msgid "Leaving a group marks all articles as read"
-msgstr "Çapraz &gönderilen haberleri okunmuş olarak işaretle"
+msgstr "Bir grubun terk edilmesi tüm makaleleri okunmuş olarak işaretler"
 
 #. i18n: file: knode.kcfg:191
 #. i18n: ectx: label, entry (ignoredThreshold), group (SCORING)
@@ -3168,7 +3174,7 @@ msgstr "Yanıtlarken kendi karakter setini kullan"
 #. i18n: ectx: label, entry (hostname), group (POSTNEWS)
 #: rc.cpp:180
 msgid "Host name used to generate the message ID."
-msgstr ""
+msgstr "İleti kimliğini oluşturmak için kullanılan makine adı."
 
 #. i18n: file: knode.kcfg:221
 #. i18n: ectx: label, entry (generateMessageID), group (POSTNEWS)
@@ -3216,7 +3222,7 @@ msgstr "Otomatik Yazım Denetimi"
 #. i18n: ectx: label, entry (maxLineLength), group (POSTNEWS)
 #: rc.cpp:204
 msgid "Maximum line length if word wrap is enabled"
-msgstr ""
+msgstr "Satır sarmalama etkin ise izin verilecek en yüksek satır uzunluğu"
 
 #. i18n: file: knode.kcfg:253
 #. i18n: ectx: label, entry (appendOwnSignature), group (POSTNEWS)
