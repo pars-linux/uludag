@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
@@ -14,22 +14,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: kio_nepomuk.cpp:303
 #, kde-format
 msgctxt "@info"
-msgid ""
-"Please insert the removable medium <resource>%1</resource> to access this "
-"file."
-msgstr ""
-"Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı "
-"takın."
+msgid "Please insert the removable medium <resource>%1</resource> to access this file."
+msgstr "Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı takın."
 
 #: kio_nepomuk.cpp:325
-msgid ""
-"Do you really want to delete the resource and all relations to and from it?"
+msgid "Do you really want to delete the resource and all relations to and from it?"
 msgstr "Kaynağı ve tüm ilişkilerini gerçekten silmek istiyor musunuz?"
 
 #: kio_nepomuk.cpp:328
@@ -37,8 +32,7 @@ msgid "Delete Resource"
 msgstr "Kaynağı Sil"
 
 #: kio_nepomuk.cpp:618
-msgid ""
-"The Nepomuk system is not activated. Unable to answer queries without it."
+msgid "The Nepomuk system is not activated. Unable to answer queries without it."
 msgstr "Nepomuk etkin değil. Açık olmadan sorgulara yanıt verilemez."
 
 #: resourcepagegenerator.cpp:182
@@ -51,7 +45,7 @@ msgstr "İlişkiler:"
 
 #: resourcepagegenerator.cpp:212
 msgid "Backlinks:"
-msgstr ""
+msgstr "Gelen linkler:"
 
 #: resourcepagegenerator.cpp:232
 msgid "Actions:"
@@ -60,4 +54,3 @@ msgstr "Eylemler:"
 #: resourcepagegenerator.cpp:233
 msgid "Delete resource"
 msgstr "Kaynağı sil"
-
