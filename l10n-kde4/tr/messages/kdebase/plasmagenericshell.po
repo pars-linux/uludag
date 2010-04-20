@@ -152,7 +152,7 @@ msgstr "Tetikleyici Ayarla..."
 
 #: mouseinputbutton.cpp:33
 msgid "Click to change how an action is triggered"
-msgstr ""
+msgstr "Eylemlerin nasıl tetiklendiğini değiştirmek için tıklayın"
 
 #: mouseinputbutton.cpp:38
 msgid "Left-Button"
@@ -196,7 +196,7 @@ msgstr "Buraya girin..."
 
 #: mouseinputbutton.cpp:71
 msgid "Hold down the modifier keys you want, then click a mouse button or scroll a mouse wheel here"
-msgstr ""
+msgstr "İstediğiniz değiştirici tuşları basılı tutarken, burada bir fare düğmesine tıklayın veya fare tekerleğini kaydırın"
 
 #: mousepluginwidget.cpp:46
 msgid "No plugins found, check your installation."
