@@ -1,7 +1,7 @@
 # translation of kcmcolors.po to Turkish
 # translation of kcmcolors.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-#
+# 
 # Barış Metin <baris@gelecek.com.tr>, 2000.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
@@ -21,8 +21,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #. i18n: file: colorsettings.ui:254
 #. i18n: ectx: attribute (title), widget (QWidget, pageColors)
@@ -54,8 +54,7 @@ msgstr "Öntanımlı"
 
 #: colorscm.cpp:251
 msgid "Selecting another scheme will discard any changes you have made"
-msgstr ""
-"Başka bir şema seçmek yaptığınız tüm değişiklikleri kaybetmenize neden olur"
+msgstr "Başka bir şema seçmek yaptığınız tüm değişiklikleri kaybetmenize neden olur"
 
 #: colorscm.cpp:252
 msgid "Are you sure?"
@@ -77,15 +76,13 @@ msgstr "İçeriye Renk Şeması Aktar"
 msgid ""
 "The scheme you have selected appears to be a KDE3 scheme.\n"
 "\n"
-"KDE will attempt to import this scheme, however many color roles have been "
-"added since KDE3. Some manual work will likely be required.\n"
+"KDE will attempt to import this scheme, however many color roles have been added since KDE3. Some manual work will likely be required.\n"
 "\n"
 "This scheme will not be saved automatically."
 msgstr ""
 "Seçtiğiniz şema KDE3 şeması gibi görünüyor.\n"
 "\n"
-"KDE bu şemayı içeri aktarmaya çalışacak ancah KDE3 sürümünden bu yana çok "
-"fazla renk eklendi. Bazı işleri elle yapmak gerekebilir.\n"
+"KDE bu şemayı içeri aktarmaya çalışacak ancah KDE3 sürümünden bu yana çok fazla renk eklendi. Bazı işleri elle yapmak gerekebilir.\n"
 "\n"
 "Bu şema otomatik olarak kaydedilmeyecek."
 
@@ -584,7 +581,6 @@ msgstr "Etkin Olmayan Başlık Çubuğu Metni"
 #. i18n: file: colorsettings.ui:702
 #. i18n: ectx: attribute (title), widget (QWidget, pageInactice)
 #: rc.cpp:243 rc.cpp:845
-#| msgid "Inactive"
 msgctxt "@title:tab color transformations on inactive elements"
 msgid "Inactive"
 msgstr "Etkin olmayan"
@@ -610,7 +606,6 @@ msgstr "Etkin olmayan yoğunluk efekti tipi"
 #. i18n: file: colorsettings.ui:722
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveIntensityBox)
 #: rc.cpp:252 rc.cpp:854
-#| msgid "None"
 msgctxt "no inactive intensity effect"
 msgid "None"
 msgstr "Hiçbiri"
@@ -678,7 +673,6 @@ msgstr "Etkin olmayan renk efekti tipi"
 #. i18n: file: colorsettings.ui:794
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveColorBox)
 #: rc.cpp:273 rc.cpp:875
-#| msgid "None"
 msgctxt "no inactive color effect"
 msgid "None"
 msgstr "Hiçbiri"
@@ -770,7 +764,6 @@ msgstr "Etkin olmayan karşıtlık efekti tipi"
 #. i18n: file: colorsettings.ui:860
 #. i18n: ectx: property (text), item, widget (QComboBox, inactiveContrastBox)
 #: rc.cpp:297 rc.cpp:899
-#| msgid "None"
 msgctxt "no inactive contrast effect"
 msgid "None"
 msgstr "Hiçbiri"
@@ -784,7 +777,6 @@ msgstr "Etkin olmayan karşıtlık efekti toplamı"
 #. i18n: file: colorsettings.ui:952
 #. i18n: ectx: attribute (title), widget (QWidget, pageDisabled)
 #: rc.cpp:312 rc.cpp:914
-#| msgid "Disabled"
 msgctxt "@title:tab color transformations on disabled elements"
 msgid "Disabled"
 msgstr "Pasifleştirilmiş"
@@ -798,7 +790,6 @@ msgstr "Pasifleştirilmiş yoğunluk efekti tipi"
 #. i18n: file: colorsettings.ui:972
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledIntensityBox)
 #: rc.cpp:321 rc.cpp:923
-#| msgid "None"
 msgctxt "no disabled intensity effect"
 msgid "None"
 msgstr "Hiçbiri"
@@ -818,7 +809,6 @@ msgstr "Pasifleştirilmiş renk efekti tipi"
 #. i18n: file: colorsettings.ui:1044
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledColorBox)
 #: rc.cpp:342 rc.cpp:944
-#| msgid "None"
 msgctxt "no disabled color effect"
 msgid "None"
 msgstr "Hiçbiri"
@@ -844,7 +834,6 @@ msgstr "Pasifleştirilmiş karşıtlık tipi"
 #. i18n: file: colorsettings.ui:1110
 #. i18n: ectx: property (text), item, widget (QComboBox, disabledContrastBox)
 #: rc.cpp:366 rc.cpp:968
-#| msgid "None"
 msgctxt "no disabled contrast"
 msgid "None"
 msgstr "Hiçbiri"
@@ -1031,37 +1020,37 @@ msgstr "Seçili metin"
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection3)
 #: rc.cpp:441 rc.cpp:1043
 msgid "Selection Link Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Bağlantı Metni"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Bağlantı Metni"
 
 #. i18n: file: preview.ui:211
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection4)
 #: rc.cpp:447 rc.cpp:1049
 msgid "Selection Visited Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Tıklanılmış Metin"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Tıklanılmış Metin"
 
 #. i18n: file: preview.ui:221
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection2)
 #: rc.cpp:453 rc.cpp:1055
 msgid "Selection Active Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Aktif Metin"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Aktif Metin"
 
 #. i18n: file: preview.ui:231
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection1)
 #: rc.cpp:459 rc.cpp:1061
 msgid "Selection Inactive Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Aktif Olmayan Metin"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Aktif Olmayan Metin"
 
 #. i18n: file: preview.ui:241
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection5)
 #: rc.cpp:465 rc.cpp:1067
 msgid "Selection Negative Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Negatif Metin"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Negatif Metin"
 
 #. i18n: file: preview.ui:251
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection6)
 #: rc.cpp:471 rc.cpp:1073
 msgid "Selection Neutral Text against Selection Normal Background"
-msgstr "Seçili Normal Arka Plan yerine Seçili Nötr Metin"
+msgstr "Seçili Normal Arka Plan üzerine Seçili Nötr Metin"
 
 #. i18n: file: preview.ui:261
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection7)
@@ -1252,8 +1241,7 @@ msgstr "üzerine gelinmiş"
 #: rc.cpp:549 rc.cpp:1151
 msgid ""
 "Link Text on Link Background\n"
-"(Note: Link Background is derived from Link Text and cannot be separately "
-"configured at this time)"
+"(Note: Link Background is derived from Link Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:233
@@ -1261,8 +1249,7 @@ msgstr ""
 #: rc.cpp:556 rc.cpp:1158
 msgid ""
 "Visited Text on Visited Background\n"
-"(Note: Visited Background is derived from Visited Text and cannot be "
-"separately configured at this time)"
+"(Note: Visited Background is derived from Visited Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:250
@@ -1270,8 +1257,7 @@ msgstr ""
 #: rc.cpp:563 rc.cpp:1165
 msgid ""
 "Active Text on Active Background\n"
-"(Note: Active Background is derived from Active Text and cannot be "
-"separately configured at this time)"
+"(Note: Active Background is derived from Active Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:266
@@ -1292,8 +1278,7 @@ msgstr "değiştir"
 #: rc.cpp:576 rc.cpp:1178
 msgid ""
 "Negative Text on Negative Background\n"
-"(Note: Negative Background is derived from Negative Text and cannot be "
-"separately configured at this time)"
+"(Note: Negative Background is derived from Negative Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:300
@@ -1301,8 +1286,7 @@ msgstr ""
 #: rc.cpp:583 rc.cpp:1185
 msgid ""
 "Neutral Text on Neutral Background\n"
-"(Note: Neutral Background is derived from Neutral Text and cannot be "
-"separately configured at this time)"
+"(Note: Neutral Background is derived from Neutral Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:317
@@ -1310,8 +1294,7 @@ msgstr ""
 #: rc.cpp:590 rc.cpp:1192
 msgid ""
 "Positive Text on Positive Background\n"
-"(Note: Positive Background is derived from Positive Text and cannot be "
-"separately configured at this time)"
+"(Note: Positive Background is derived from Positive Text and cannot be separately configured at this time)"
 msgstr ""
 
 #. i18n: file: setpreview.ui:333
