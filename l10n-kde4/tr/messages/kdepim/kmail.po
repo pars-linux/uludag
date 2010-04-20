@@ -12472,9 +12472,8 @@ msgstr "&Sesli uyarı"
 #. i18n: file: ui/accountspagereceivingtab.ui:119
 #. i18n: ectx: property (text), widget (QCheckBox, mUseMessageIndicatorCheck)
 #: rc.cpp:1201
-#, fuzzy
 msgid "&Use message indicator"
-msgstr "&Alıntı göstergesi:"
+msgstr "&İleti göstergesi kullan"
 
 #. i18n: file: ui/accountspagereceivingtab.ui:132
 #. i18n: ectx: property (toolTip), widget (QCheckBox,
@@ -12795,9 +12794,8 @@ msgstr "Bu seçenek aktifleştirilirse, yeni posta uyarısında, yeni ulaşan il
 #. i18n: file: kmail.kcfg.cmake:127
 #. i18n: ectx: label, entry (UseMessageIndicator), group (General)
 #: rc.cpp:1536
-#, fuzzy
 msgid "Use message indicator"
-msgstr "İleti Penceresi"
+msgstr "İleti göstergesi kullan"
 
 #. i18n: file: kmail.kcfg.cmake:128
 #. i18n: ectx: whatsthis, entry (UseMessageIndicator), group (General)
