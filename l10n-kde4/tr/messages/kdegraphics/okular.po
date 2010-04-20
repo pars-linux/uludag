@@ -2,7 +2,7 @@
 # translation of kpdf.po to
 # translation of kpdf.po to
 # Copyright (C) 2004, 2005, 2008, 2009 Free Software Foundation, Inc.
-#
+# 
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2004.
@@ -23,8 +23,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: conf/dlgpresentation.cpp:28
 msgctxt "@label:listbox The current screen, for the presentation mode"
@@ -87,11 +87,9 @@ msgid ""
 "  <li>%l - the line of the file to be reached</li>\n"
 "  <li>%c - the column of the file to be reached</li>\n"
 "</ul>\n"
-"If %f is not specified, then the file name is appended to the specified "
-"command."
+"If %f is not specified, then the file name is appended to the specified command."
 msgstr ""
-"<qt>Çalıştırılmak için özel bir metin düzenleyicisinin komutunu belirleyin."
-"<br />\n"
+"<qt>Çalıştırılmak için özel bir metin düzenleyicisinin komutunu belirleyin.<br />\n"
 "Ayrıca bir kaç yer tutucu koyabilirsiniz:\n"
 "<ul>\n"
 "  <li>%f - dosya adı</li>\n"
@@ -153,28 +151,16 @@ msgid "Editor Options"
 msgstr "Düzenleyici Seçenekleri"
 
 #: conf/dlgperformance.cpp:43
-msgid ""
-"Keeps used memory as low as possible. Do not reuse anything. (For systems "
-"with low memory.)"
-msgstr ""
-"Kullanılan belleği mümkün olduğu kadar düşük tutar (Düşük bellekli sistemler "
-"için)"
+msgid "Keeps used memory as low as possible. Do not reuse anything. (For systems with low memory.)"
+msgstr "Kullanılan belleği mümkün olduğu kadar düşük tutar (Düşük bellekli sistemler için)"
 
 #: conf/dlgperformance.cpp:46
-msgid ""
-"A good compromise between memory usage and speed gain. Preload next page and "
-"boost searches. (For systems with 256MB of memory, typically.)"
-msgstr ""
-"Bellek kullanımı ile hız kazancı arasında iyi bir uzlaşma sağlar. Sonraki "
-"sayfayı önyükler ve aramaları hızlandırır. (250 MB bellekli sistemler için)."
+msgid "A good compromise between memory usage and speed gain. Preload next page and boost searches. (For systems with 256MB of memory, typically.)"
+msgstr "Bellek kullanımı ile hız kazancı arasında iyi bir uzlaşma sağlar. Sonraki sayfayı önyükler ve aramaları hızlandırır. (250 MB bellekli sistemler için)."
 
 #: conf/dlgperformance.cpp:49
-msgid ""
-"Keeps everything in memory. Preload next pages. Boost searches. (For systems "
-"with more than 512MB of memory.)"
-msgstr ""
-"Herşeyi bellekte tutar. Sonraki sayfaları önyükler. Aramaları hızlandırır. "
-"(512MB'dan fazla bellekli sistemler için)"
+msgid "Keeps everything in memory. Preload next pages. Boost searches. (For systems with more than 512MB of memory.)"
+msgstr "Herşeyi bellekte tutar. Sonraki sayfaları önyükler. Aramaları hızlandırır. (512MB'dan fazla bellekli sistemler için)"
 
 #: core/action.cpp:91
 #, kde-format
@@ -284,8 +270,7 @@ msgstr ""
 "En sondan devam etmek ister misiniz?"
 
 #: core/document.cpp:1611
-msgid ""
-"Can not find a plugin which is able to handle the document being passed."
+msgid "Can not find a plugin which is able to handle the document being passed."
 msgstr "Bu belgeyi açmak için bir eklenti bulunamadı."
 
 #: core/document.cpp:2566
@@ -298,12 +283,8 @@ msgid "Searching for %1"
 msgstr "%1 aranıyor"
 
 #: core/document.cpp:2885 core/document.cpp:2893
-msgid ""
-"The document is trying to execute an external application and, for your "
-"safety, Okular does not allow that."
-msgstr ""
-"Belge bir dış uygulama çalıştırmak istiyor, güvenliğiniz için Okular buna "
-"izin vermez."
+msgid "The document is trying to execute an external application and, for your safety, Okular does not allow that."
+msgstr "Belge bir dış uygulama çalıştırmak istiyor, güvenliğiniz için Okular buna izin vermez."
 
 #: core/document.cpp:2906
 #, kde-format
@@ -363,10 +344,8 @@ msgid "Keywords"
 msgstr "Anahtar Sözcükler"
 
 #: core/document.cpp:3871
-#, fuzzy
-#| msgid "File"
 msgid "File Path"
-msgstr "Dosya"
+msgstr "Dosya Yolu"
 
 #: core/document.cpp:3874
 msgid "File Size"
@@ -382,12 +361,8 @@ msgstr "Arka Uç Seçimi"
 
 #: core/chooseenginedialog.cpp:33
 #, kde-format
-msgid ""
-"<qt>More than one backend found for the MIME type:<br /><b>%1</b> (%2).<br /"
-"><br />Please select which one to use:</qt>"
-msgstr ""
-"<qt>MIME tipi için birden fazla arka uç bulundu:<br /><b>%1</b> (%2).<br /"
-"><br />Lütfen kullanmak için birini seçin:</qt>"
+msgid "<qt>More than one backend found for the MIME type:<br /><b>%1</b> (%2).<br /><br />Please select which one to use:</qt>"
+msgstr "<qt>MIME tipi için birden fazla arka uç bulundu:<br /><b>%1</b> (%2).<br /><br />Lütfen kullanmak için birini seçin:</qt>"
 
 #: core/generator.cpp:552
 msgid "Plain &Text..."
@@ -657,8 +632,7 @@ msgstr "Hoşgeldiniz"
 
 #: ui/pageview.cpp:3333
 msgid "Select zooming area. Right-click to zoom out."
-msgstr ""
-"Büyütülecek alanı seçin. Küçültmek için farenin sağ düğmesine tıklayın."
+msgstr "Büyütülecek alanı seçin. Küçültmek için farenin sağ düğmesine tıklayın."
 
 #: ui/pageview.cpp:3345
 msgid "Draw a rectangle around the text/graphics to copy."
@@ -753,13 +727,8 @@ msgid "Print Preview"
 msgstr "Yazdırma Önizlemesi"
 
 #: ui/side_reviews.cpp:61
-msgid ""
-"<div align=center><h3>No annotations</h3>To create new annotations press F6 "
-"or select <i>Tools -&gt; Review</i> from the menu.</div>"
-msgstr ""
-"<div align=center><h3>Dipnot Yok</h3>Yeni dipnot oluşturmak için  F6 "
-"düğmesine basın ya da <i>Araçlar -&gt; Gözden Geçir</i> menüsüne tıklayın.</"
-"div>"
+msgid "<div align=center><h3>No annotations</h3>To create new annotations press F6 or select <i>Tools -&gt; Review</i> from the menu.</div>"
+msgstr "<div align=center><h3>Dipnot Yok</h3>Yeni dipnot oluşturmak için  F6 düğmesine basın ya da <i>Araçlar -&gt; Gözden Geçir</i> menüsüne tıklayın.</div>"
 
 #: ui/side_reviews.cpp:128
 msgid "Group by Page"
@@ -1330,7 +1299,7 @@ msgstr "%1 Özellikler"
 
 #: ui/propertiesdialog.cpp:114
 msgid "Toggles between File Path and Title"
-msgstr ""
+msgstr "Dosya Yolu ve Başlık arasında geçiş yap"
 
 #: ui/propertiesdialog.cpp:126
 #, kde-format
@@ -1347,14 +1316,12 @@ msgstr "Yazı tipi bilgisi okunuyor..."
 
 #: ui/propertiesdialog.cpp:213
 #, fuzzy, kde-format
-#| msgid "%1:"
 msgctxt "%1 is \"Title\""
 msgid "%1:"
 msgstr "%1:"
 
 #: ui/propertiesdialog.cpp:217
 #, fuzzy, kde-format
-#| msgid "%1:"
 msgctxt "%1 is \"File Path\""
 msgid "%1:"
 msgstr "%1:"
@@ -1414,19 +1381,19 @@ msgstr "CID TrueType (OT)"
 
 #: ui/propertiesdialog.cpp:341
 msgid "TeX PK"
-msgstr ""
+msgstr "TeX PK"
 
 #: ui/propertiesdialog.cpp:344
 msgid "TeX virtual"
-msgstr ""
+msgstr "TeX sanal"
 
 #: ui/propertiesdialog.cpp:347
 msgid "TeX Font Metric"
-msgstr ""
+msgstr "TeX Yazıtipi Metriği"
 
 #: ui/propertiesdialog.cpp:350
 msgid "TeX FreeType-handled"
-msgstr ""
+msgstr "TeX FreeType-handled"
 
 #: ui/propertiesdialog.cpp:353
 msgctxt "Unknown font type"
@@ -1518,19 +1485,11 @@ msgid "Click to begin"
 msgstr "Başlamak için tıklayın"
 
 #: ui/presentationwidget.cpp:1279
-msgid ""
-"There are two ways of exiting presentation mode, you can press either ESC "
-"key or click with the quit button that appears when placing the mouse in the "
-"top-right corner. Of course you can cycle windows (Alt+TAB by default)"
-msgstr ""
-"Sunum yönteminden çıkmanın iki yolu var, ESC tuşuna basabilirsiniz ya da "
-"fareyi sağ üst köşeye çektiğinizde çıkan çıkış düğmesine basabilirsiniz. "
-"Elbette, pencereleri gezebilirsiniz (Öntanımlı olarak Alt+TAB)"
+msgid "There are two ways of exiting presentation mode, you can press either ESC key or click with the quit button that appears when placing the mouse in the top-right corner. Of course you can cycle windows (Alt+TAB by default)"
+msgstr "Sunum yönteminden çıkmanın iki yolu var, ESC tuşuna basabilirsiniz ya da fareyi sağ üst köşeye çektiğinizde çıkan çıkış düğmesine basabilirsiniz. Elbette, pencereleri gezebilirsiniz (Öntanımlı olarak Alt+TAB)"
 
 #: ui/presentationwidget.cpp:1401
-msgctxt ""
-"Reason for inhibiting the screensaver activation, when the presentation mode "
-"is active"
+msgctxt "Reason for inhibiting the screensaver activation, when the presentation mode is active"
 msgid "Giving a presentation"
 msgstr "Bir sunum yapmak"
 
@@ -1548,8 +1507,7 @@ msgstr "\"Biricik oturum\" denetimi"
 
 #: shell/main.cpp:48
 msgid "Document to open. Specify '-' to read from stdin."
-msgstr ""
-"Açılacak belge. Standart girdiden okuma yapmak için  '-' ifadesini belirt."
+msgstr "Açılacak belge. Standart girdiden okuma yapmak için  '-' ifadesini belirt."
 
 #: shell/shell.cpp:77
 msgid "Unable to find the Okular component."
@@ -1564,11 +1522,8 @@ msgstr ""
 "Son kullanılan dosyaları açmak için tıklayın ve bekleyin."
 
 #: shell/shell.cpp:169
-msgid ""
-"<b>Click</b> to open a file or <b>Click and hold</b> to select a recent file"
-msgstr ""
-"Bir dosya açmak için <b>tıklayın</b> veya Son kullanılan bir dosyayı açmak "
-"için <b>tıklayın ve bekleyin</b>"
+msgid "<b>Click</b> to open a file or <b>Click and hold</b> to select a recent file"
+msgstr "Bir dosya açmak için <b>tıklayın</b> veya Son kullanılan bir dosyayı açmak için <b>tıklayın ve bekleyin</b>"
 
 #: shell/shell.cpp:245
 msgid "Open Document"
@@ -1591,21 +1546,12 @@ msgid "Bookmarks"
 msgstr "Yer İmleri"
 
 #: part.cpp:342
-msgid ""
-"This document has embedded files. <a href=\"okular:/embeddedfiles\">Click "
-"here to see them</a> or go to File -> Embedded Files."
-msgstr ""
-"belgede gömülü dosyalar var. <a href=\"okular:/embeddedfiles\">Bu dosyaları "
-"görmek için uraya tıklayın</a> ya da Dosya -> Gömülü Dosyalar menüsüne "
-"tıklayın."
+msgid "This document has embedded files. <a href=\"okular:/embeddedfiles\">Click here to see them</a> or go to File -> Embedded Files."
+msgstr "belgede gömülü dosyalar var. <a href=\"okular:/embeddedfiles\">Bu dosyaları görmek için uraya tıklayın</a> ya da Dosya -> Gömülü Dosyalar menüsüne tıklayın."
 
 #: part.cpp:346
-msgid ""
-"This document has forms. Click on the button to interact with them, or use "
-"View -> Show Forms."
-msgstr ""
-"Bu belgenin formları var. Bu formlarla etkileşmek için düğmelere tıklayın ya "
-"da Görünüm -> Formları Göster menüsünü kullanın."
+msgid "This document has forms. Click on the button to interact with them, or use View -> Show Forms."
+msgstr "Bu belgenin formları var. Bu formlarla etkileşmek için düğmelere tıklayın ya da Görünüm -> Formları Göster menüsünü kullanın."
 
 #: part.cpp:404
 msgctxt "Previous page"
@@ -1745,12 +1691,8 @@ msgid "Configure Backends"
 msgstr "Arka Uçları Yapılandır"
 
 #: part.cpp:871
-msgid ""
-"The program \"ps2pdf\" was not found, so Okular can not import PS files "
-"using it."
-msgstr ""
-"\"ps2pdf\" uygulaması bulunamadı. Bu nedenle Okular PS dosyalarını içeriye "
-"aktaramayacak."
+msgid "The program \"ps2pdf\" was not found, so Okular can not import PS files using it."
+msgstr "\"ps2pdf\" uygulaması bulunamadı. Bu nedenle Okular PS dosyalarını içeriye aktaramayacak."
 
 #: part.cpp:871
 msgid "ps2pdf not found"
@@ -1789,20 +1731,12 @@ msgid "Do not allow the presentation mode"
 msgstr "Sunum kipine izin verme"
 
 #: part.cpp:1128
-msgid ""
-"This link points to a close document action that does not work when using "
-"the embedded viewer."
-msgstr ""
-"Bu bağlantı, gömülü göstericide çalışmayan, bir belgeyi kapat eylemine "
-"işaret ediyor."
+msgid "This link points to a close document action that does not work when using the embedded viewer."
+msgstr "Bu bağlantı, gömülü göstericide çalışmayan, bir belgeyi kapat eylemine işaret ediyor."
 
 #: part.cpp:1134
-msgid ""
-"This link points to a quit application action that does not work when using "
-"the embedded viewer."
-msgstr ""
-"Bu bağlantı, gömülü göstericide çalışmayan, bir uygulamadan çık eylemine "
-"işaret ediyor."
+msgid "This link points to a quit application action that does not work when using the embedded viewer."
+msgstr "Bu bağlantı, gömülü göstericide çalışmayan, bir uygulamadan çık eylemine işaret ediyor."
 
 #: part.cpp:1197
 msgid "Reloading the document..."
@@ -1867,50 +1801,26 @@ msgstr "Daha sonra bulunduğunuz yere gider"
 
 #: part.cpp:2083
 #, kde-format
-msgid ""
-"<qt><strong>File Error!</strong> Could not create temporary file "
-"<nobr><strong>%1</strong></nobr>.</qt>"
-msgstr ""
-"<qt><strong>Dosya Hatası!</strong> Geçici dosya oluşturulamadı <nobr><strong>"
-"%1</strong></nobr>.</qt>"
+msgid "<qt><strong>File Error!</strong> Could not create temporary file <nobr><strong>%1</strong></nobr>.</qt>"
+msgstr "<qt><strong>Dosya Hatası!</strong> Geçici dosya oluşturulamadı <nobr><strong>%1</strong></nobr>.</qt>"
 
 #: part.cpp:2101
 #, kde-format
-msgid ""
-"<qt><strong>File Error!</strong> Could not open the file <nobr><strong>%1</"
-"strong></nobr> for uncompression. The file will not be loaded.</qt>"
-msgstr ""
-"<qt><strong>Dosya Hatası!</strong> Sıkıştırmasını açmak için <nobr><strong>%"
-"1</strong></nobr> dosyası açılamadı. Dosya yüklenmeycek.</qt>"
+msgid "<qt><strong>File Error!</strong> Could not open the file <nobr><strong>%1</strong></nobr> for uncompression. The file will not be loaded.</qt>"
+msgstr "<qt><strong>Dosya Hatası!</strong> Sıkıştırmasını açmak için <nobr><strong>%1</strong></nobr> dosyası açılamadı. Dosya yüklenmeycek.</qt>"
 
 #: part.cpp:2104
-msgid ""
-"<qt>This error typically occurs if you do not have enough permissions to "
-"read the file. You can check ownership and permissions if you right-click on "
-"the file in the Dolphin file manager and then choose the 'Properties' tab.</"
-"qt>"
-msgstr ""
-"<qt>Bu hata genelde yeterli dosya okuma iznine sahip değilseniz meydana "
-"gelir. Dolphine dosya yöneticisinde dosyanın üzerine sağ tıklar ve daha "
-"sonra 'Özellikler' sekmesini seçerseniz, sahiplik ve izinleri kontrol "
-"edebilirsiniz.</qt>"
+msgid "<qt>This error typically occurs if you do not have enough permissions to read the file. You can check ownership and permissions if you right-click on the file in the Dolphin file manager and then choose the 'Properties' tab.</qt>"
+msgstr "<qt>Bu hata genelde yeterli dosya okuma iznine sahip değilseniz meydana gelir. Dolphine dosya yöneticisinde dosyanın üzerine sağ tıklar ve daha sonra 'Özellikler' sekmesini seçerseniz, sahiplik ve izinleri kontrol edebilirsiniz.</qt>"
 
 #: part.cpp:2128
 #, kde-format
-msgid ""
-"<qt><strong>File Error!</strong> Could not uncompress the file <nobr><strong>"
-"%1</strong></nobr>. The file will not be loaded.</qt>"
-msgstr ""
-"<qt><strong>Dosya Hatası!</strong> <nobr><strong>%1</strong></nobr> "
-"dosyasının sıkıştırması açılamadı. Dosya yüklenmeyecek.</qt>"
+msgid "<qt><strong>File Error!</strong> Could not uncompress the file <nobr><strong>%1</strong></nobr>. The file will not be loaded.</qt>"
+msgstr "<qt><strong>Dosya Hatası!</strong> <nobr><strong>%1</strong></nobr> dosyasının sıkıştırması açılamadı. Dosya yüklenmeyecek.</qt>"
 
 #: part.cpp:2131
-msgid ""
-"<qt>This error typically occurs if the file is corrupt. If you want to be "
-"sure, try to decompress the file manually using command-line tools.</qt>"
-msgstr ""
-"<qt>Bu hata genellikle dosya bozuksa meydana gelir. Emin olmak istiyorsanız, "
-"dosyayı komut satırında elle açmayı deneyin.</qt>"
+msgid "<qt>This error typically occurs if the file is corrupt. If you want to be sure, try to decompress the file manually using command-line tools.</qt>"
+msgstr "<qt>Bu hata genellikle dosya bozuksa meydana gelir. Emin olmak istiyorsanız, dosyayı komut satırında elle açmayı deneyin.</qt>"
 
 #: part.cpp:2160
 msgid "No Bookmarks"
@@ -1998,10 +1908,8 @@ msgstr "Düzenleyici:"
 #. i18n: ectx: property (whatsThis), widget (QComboBox, kcfg_ExternalEditor)
 #: rc.cpp:74
 msgctxt "@info:whatsthis"
-msgid ""
-"Choose the editor you want to launch when Okular wants to open a source file."
-msgstr ""
-"Okular bir kaynak dosya açmak istediğinde kullanılacak düzenleyiciyi seçin."
+msgid "Choose the editor you want to launch when Okular wants to open a source file."
+msgstr "Okular bir kaynak dosya açmak istediğinde kullanılacak düzenleyiciyi seçin."
 
 #. i18n: file: conf/dlgeditorbase.ui:70
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -2096,13 +2004,8 @@ msgstr "Karşıtlık:"
 #. i18n: file: conf/dlgidentitybase.ui:71
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:128
-msgid ""
-"<b>Note</b>: the information here is used only for comments and reviews. "
-"Information inserted here will not be transmitted without your knowledge."
-msgstr ""
-"<b>Not</b>: Burada kullanılan bilgiler sadece açıklamalar ve gözden "
-"geçirmeler içindir. Buraya girilen bilgiler sizin bilginiz olmadan başka bir "
-"konuma aktarılmaz."
+msgid "<b>Note</b>: the information here is used only for comments and reviews. Information inserted here will not be transmitted without your knowledge."
+msgstr "<b>Not</b>: Burada kullanılan bilgiler sadece açıklamalar ve gözden geçirmeler içindir. Buraya girilen bilgiler sizin bilginiz olmadan başka bir konuma aktarılmaz."
 
 #. i18n: file: conf/dlgperformancebase.ui:22
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -2227,7 +2130,8 @@ msgid "Show s&ummary page"
 msgstr "Öz&et sayfasını göster"
 
 #. i18n: file: conf/dlgpresentationbase.ui:153
-#. i18n: ectx: property (title), widget (QGroupBox, kcfg_SlidesTransitionsEnabled)
+#. i18n: ectx: property (title), widget (QGroupBox,
+#. kcfg_SlidesTransitionsEnabled)
 #: rc.cpp:191
 msgid "Enable transitions"
 msgstr "Geçişleri etkinleştir"
@@ -2239,109 +2143,127 @@ msgid "Default transition:"
 msgstr "Öntanımlı geçiş:"
 
 #. i18n: file: conf/dlgpresentationbase.ui:176
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:197
 msgid "Blinds Vertical"
 msgstr "Dikey Geçiş"
 
 #. i18n: file: conf/dlgpresentationbase.ui:181
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:200
 msgid "Blinds Horizontal"
 msgstr "Yatay Geçiş"
 
 #. i18n: file: conf/dlgpresentationbase.ui:186
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:203
 msgid "Box In"
 msgstr "İçte Kutu"
 
 #. i18n: file: conf/dlgpresentationbase.ui:191
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:206
 msgid "Box Out"
 msgstr "Dışta Kutu"
 
 #. i18n: file: conf/dlgpresentationbase.ui:196
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:209
 msgid "Dissolve"
 msgstr "Çözünme"
 
 #. i18n: file: conf/dlgpresentationbase.ui:201
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:212
 msgid "Glitter Down"
 msgstr "Aşağıya Doğru Parılda"
 
 #. i18n: file: conf/dlgpresentationbase.ui:206
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:215
 msgid "Glitter Right"
 msgstr "Sağa Doğru Parılda"
 
 #. i18n: file: conf/dlgpresentationbase.ui:211
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:218
 msgid "Glitter Right-Down"
 msgstr "Sağ Aşağıya Doğru Parılda"
 
 #. i18n: file: conf/dlgpresentationbase.ui:216
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:221
 msgid "Random Transition"
 msgstr "Rastgele Geçiş"
 
 #. i18n: file: conf/dlgpresentationbase.ui:221
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:224
 msgid "Replace"
 msgstr "Değiştir"
 
 #. i18n: file: conf/dlgpresentationbase.ui:226
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:227
 msgid "Split Horizontal In"
 msgstr "İçeri Yatay Ayrıl"
 
 #. i18n: file: conf/dlgpresentationbase.ui:231
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:230
 msgid "Split Horizontal Out"
 msgstr "Dışarı Yatay Ayrıl"
 
 #. i18n: file: conf/dlgpresentationbase.ui:236
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:233
 msgid "Split Vertical In"
 msgstr "İçeri Dikey Ayrıl"
 
 #. i18n: file: conf/dlgpresentationbase.ui:241
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:236
 msgid "Split Vertical Out"
 msgstr "Dışarı Dikey Ayrıl"
 
 #. i18n: file: conf/dlgpresentationbase.ui:246
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:239
 msgid "Wipe Down"
 msgstr "Aşağı Sil"
 
 #. i18n: file: conf/dlgpresentationbase.ui:251
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:242
 msgid "Wipe Right"
 msgstr "Sağa Sil"
 
 #. i18n: file: conf/dlgpresentationbase.ui:256
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:245
 msgid "Wipe Left"
 msgstr "Sola Sil"
 
 #. i18n: file: conf/dlgpresentationbase.ui:261
-#. i18n: ectx: property (text), item, widget (QComboBox, kcfg_SlidesTransition)
+#. i18n: ectx: property (text), item, widget (QComboBox,
+#. kcfg_SlidesTransition)
 #: rc.cpp:248
 msgid "Wipe Up"
 msgstr "Yukarı Sil"
@@ -2365,7 +2287,8 @@ msgid "Show scroll&bars"
 msgstr "&Kaydırma çubuğunu göster"
 
 #. i18n: file: conf/dlggeneralbase.ui:76
-#. i18n: ectx: property (text), widget (QCheckBox, kcfg_SyncThumbnailsViewport)
+#. i18n: ectx: property (text), widget (QCheckBox,
+#. kcfg_SyncThumbnailsViewport)
 #: rc.cpp:263
 msgid "Link the &thumbnails with the page"
 msgstr "&Küçük resimleri sayfaya bağla"
@@ -2570,11 +2493,8 @@ msgstr "Eugene Trounev"
 msgid "Annotations artwork"
 msgstr "Dipnot sanatsal çalışmaları"
 
-#~ msgid ""
-#~ "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
-#~ msgstr ""
-#~ "\"%1\" isminde bir dosya zaten var. Üzerine yazmak istediğinizden emin "
-#~ "misiniz?"
+#~ msgid "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
+#~ msgstr "\"%1\" isminde bir dosya zaten var. Üzerine yazmak istediğinizden emin misiniz?"
 
 #~ msgctxt "@action:button"
 #~ msgid "&Overwrite"
@@ -2589,12 +2509,9 @@ msgstr "Dipnot sanatsal çalışmaları"
 #~ msgid "Pages:"
 #~ msgstr "Sayfalar:"
 
-#~| msgctxt "pause the movie playback"
-#~| msgid "Pause"
 #~ msgid "Pause"
 #~ msgstr "Duraklat"
 
-#~| msgid "&Continuous"
 #~ msgid "Continue"
 #~ msgstr "Devam Et"
 
