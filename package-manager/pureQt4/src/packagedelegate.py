@@ -24,6 +24,7 @@ DEFAULT_ICON = ('applications-other', 'package')
 DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
+GRAY = QtGui.QColor('gray')
 TYPE_COLORS = {'critical':RED, 'security':DARKRED}
 
 DETAIL_LINE_OFFSET = 36
@@ -60,6 +61,7 @@ class PackageDelegate(QtGui.QItemDelegate):
                         'size'       : i18n("Package Size:")}
 
         self.baseWidth = fontMetric.width(max(self._titles.values(), key=len)) + ICON_SIZE
+        self.parent = parent.packageList
 
     def paint(self, painter, option, index):
         if not index.isValid():
@@ -119,6 +121,21 @@ class PackageDelegate(QtGui.QItemDelegate):
         # Package Name
         p.setFont(self.boldFont)
         p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
+
+        if self.parent.showComponents:
+            component = str(index.model().data(index, ComponentRole).toString())
+            fontMetric = QtGui.QFontMetrics(self.boldFont)
+            widthOfTitle = fontMetric.width(title) + 6 + left + textInner
+
+            p.setFont(self.tagFont)
+            rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, component)
+            p.setPen(GRAY)
+            p.setBrush(GRAY)
+            p.drawRoundRect(widthOfTitle , top + 12, rect.width() + 4, rect.height(), 10, 10)
+            p.setPen(WHITE)
+            p.drawText(widthOfTitle + 2, top + 12, rect.width(), rect.height(), Qt.AlignCenter, component)
+            p.setPen(foregroundColor)
+
         if ptype not in ('None', 'normal'):
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)

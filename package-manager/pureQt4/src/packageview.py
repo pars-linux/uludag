@@ -19,6 +19,7 @@ from pmutils import *
 class PackageView(QtGui.QTableView):
     def __init__(self, parent=None):
         QtGui.QTableView.__init__(self, parent)
+        self.showComponents = False
 
     def isIndexHidden(self, index):
         return False
