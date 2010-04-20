@@ -6883,7 +6883,7 @@ msgstr "Alıcıları dağıtım listesi olarak kaydet"
 #: recipientseditor.cpp:762
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "Se&ç..."
+msgstr "&Seç..."
 
 #: recipientseditor.cpp:765
 msgctxt "@info:tooltip"
