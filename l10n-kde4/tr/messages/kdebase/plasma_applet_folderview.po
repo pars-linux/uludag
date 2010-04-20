@@ -1,20 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_folderview\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-11 01:26+0100\n"
-"PO-Revision-Date: 2009-11-04 18:29+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 14:14+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: folderview.cpp:502
 msgctxt "Sort Icons"
@@ -413,6 +414,12 @@ msgid ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">If you have selected \"Show Files Matching\" or \"Hide Files Matching\", only the files matching BOTH the conditions will be shown or hidden respectively.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">For example, if you have \"*\" as your pattern, but have nothing selected in the MIME types, no files will be shown.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">\"Eşleşen Dosyaları Göster\" ya da \"Eşleşen Dosyaları Gizle\" seçili ise, sadece HER İKİ durumu da karşılayan dosyalar gösterilecek ya da gizlenecektir.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Örneğin, ifade olarak \"*\" tanımladıysanız, ancak MIME tiplerinden herhangi biri seçili değilse, hiç bir dosya gösterilmeyecektir.</p></body></html>"
 
 #. i18n: file: folderviewFilterConfig.ui:41
 #. i18n: ectx: property (text), item, widget (QComboBox, filterType)
@@ -452,6 +459,9 @@ msgid ""
 "only the files matching BOTH the conditions will be shown or hidden respectively.\n"
 "For example, if you have \"*\" as your pattern, but have nothing selected in the MIME types, no files will be shown."
 msgstr ""
+"\"Eşleşen Dosyaları Göster\" ya da \"Eşleşen Dosyaları Gizle\" seçili ise, sadece\n"
+"HER İKİ durumu da karşılayan dosyalar gösterilecek ya da gizlenecektir.\n"
+"Örneğin, ifade olarak \"*\" tanımladıysanız, ancak MIME tiplerinden herhangi biri seçili değilse, hiç bir dosya gösterilmeyecektir."
 
 #. i18n: file: folderviewFilterConfig.ui:115
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -493,7 +503,7 @@ msgstr "Boşluklarla ayrılmış dosya uzantısı listesi, örneğin *.txt * .od
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, filterFilesPattern)
 #: rc.cpp:161
 msgid "Pattern filter"
-msgstr "Desen filtresi"
+msgstr "Kalıp filtresi"
 
 #. i18n: file: folderviewLocationConfig.ui:16
 #. i18n: ectx: property (text), widget (QRadioButton, showDesktopFolder)
