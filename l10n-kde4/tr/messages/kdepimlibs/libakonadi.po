@@ -4,19 +4,20 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libakonadi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-26 01:23+0100\n"
-"PO-Revision-Date: 2009-11-12 13:10+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 11:07+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: agentbase.cpp:480 agentbase.cpp:481
 msgid "Akonadi Agent"
@@ -158,7 +159,6 @@ msgid "C&ancel"
 msgstr "İ&ptal"
 
 #: entitytreemodel.cpp:612
-#, fuzzy
 #| msgctxt "@title:column, name of a thing"
 #| msgid "Name"
 msgctxt "@title:column Name of a thing"
@@ -472,7 +472,6 @@ msgid "Syncing collection '%1'"
 msgstr "'%1' koleksiyonu eşzamanlanıyor"
 
 #: resourcescheduler.cpp:165 agentbase_p.h:57
-#, fuzzy
 #| msgctxt "@info:status, application ready for work"
 #| msgid "Ready"
 msgctxt "@info:status Application ready for work"
@@ -872,16 +871,14 @@ msgstr ""
 "arka ucunu kullanıyor."
 
 #: selftestdialog.cpp:438
-#, fuzzy
 #| msgid "Nepomuk search service uses inappropriate backend."
 msgid "Nepomuk search service uses an appropriate backend. "
-msgstr "Nepomuk arama servisi uyumsuz arka uç kullanıyor."
+msgstr "Nepomuk arama servisi uyumsuz bir arka uç kullanıyor. "
 
 #: selftestdialog.cpp:439
-#, fuzzy
 #| msgid "The Nepomuk search service uses the recommended Sesame2 backend."
 msgid "The Nepomuk search service uses one of the recommended backends."
-msgstr "Nepomuk arama servisi önerilen Sesame2 arka ucunu kullanıyor."
+msgstr "Nepomuk arama servisi önerilen arka uçlardan birisini kullanıyor."
 
 #: selftestdialog.cpp:448
 msgid "Protocol version check not possible."
@@ -1039,32 +1036,30 @@ msgid "Protocol version %1 found, expected at least %2"
 msgstr "%1 protokolü bulundu, beklenen ise en az %2"
 
 #: specialcollectionshelperjobs.cpp:142
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Cannot list root collection."
 msgid "Could not fetch root collection of resource %1."
-msgstr "Kök koleksiyon listelenemedi."
+msgstr "%1 kaynağının kök koleksiyonu alınamadı."
 
 #: specialcollectionshelperjobs.cpp:190
-#, fuzzy
 #| msgid "No resource agents found."
 msgid "No resource ID given."
-msgstr "Hiç kaynak temsili bulunamadı."
+msgstr "Hiç kaynak ID belirtilmedi."
 
 #: specialcollectionshelperjobs.cpp:299
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Invalid resource instance."
 msgid "Invalid resource identifier '%1'"
-msgstr "Geçersiz kaynak isteği."
+msgstr "Geçersiz kaynak tanımlayıcı '%1'"
 
 #: specialcollectionshelperjobs.cpp:315 specialcollectionshelperjobs.cpp:323
 msgid "Failed to configure default resource via D-Bus."
-msgstr ""
+msgstr "D-Bus aracılığıyla öntanımlı kaynak yapılandırması başarısız oldu."
 
 #: specialcollectionshelperjobs.cpp:382
-#, fuzzy
 #| msgid "Unable to fetch item for index"
 msgid "Failed to fetch the resource collection."
-msgstr "Bu öge indeks için getirilemedi"
+msgstr "Kaynak koleksiyonun alınması başarısız oldu."
 
 #: specialcollectionshelperjobs.cpp:576
 msgid "Timeout trying to get lock."
