@@ -2,21 +2,22 @@
 # translation of processui.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: processui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-12 01:18+0100\n"
-"PO-Revision-Date: 2009-10-04 16:56+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 16:38+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ksysguardprocesslist.cpp:159 ksysguardprocesslist.cpp:404
 msgid "Renice Process..."
@@ -40,10 +41,9 @@ msgid "Resume Stopped Process"
 msgstr "Durdurulmuş Süreçlere Devam Et"
 
 #: ksysguardprocesslist.cpp:166
-#, fuzzy
 msgid "Kill Process..."
 msgid_plural "Kill Processes..."
-msgstr[0] "Süreçleri Sonlandır"
+msgstr[0] "Süreçleri Sonlandır..."
 
 #: ksysguardprocesslist.cpp:170
 msgid "Suspend (STOP)"
@@ -78,9 +78,8 @@ msgid "User 2 (USR2)"
 msgstr "Kullanıcı 2 (USR2)"
 
 #: ksysguardprocesslist.cpp:180
-#, fuzzy
 msgid "Focus on Quick Search"
-msgstr "Hızlı arama"
+msgstr "Hızlı Aramada Odaklan"
 
 #: ksysguardprocesslist.cpp:405
 msgid "Kill Process"
@@ -230,11 +229,13 @@ msgid ""
 "See What's This for more information.\n"
 "Right click on a process to send other signals."
 msgstr ""
+"Seçili sürece SIGTERM sinyali gönder.\n"
+"Daha fazla bilgi için Bu Nedir?'e bakın.\n"
+"Farklı sinyaller göndermek için sürece sağ tıklayın."
 
 #. i18n: file: ProcessWidgetUI.ui:41
 #. i18n: ectx: property (whatsThis), widget (QPushButton, btnKillProcess)
 #: rc.cpp:8 rc.cpp:221
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -243,11 +244,12 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Attempt to kill the currently selected process by sending it the SIGTERM signal.</p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Technical information: </span><br />The SIGTERM signal is sent to the given process. If there are insufficient privillages to do so, by default a password is requested.<br />By running the program <span style=\" font-family:'Courier New,courier';\">polkit-kde-authorization</span> you can give certain (or all) users permission to kill any process, without requiring a password. </p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">En İyi Başarım Zamanlaması</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Yüksek önceliğe sahip süreçler sabit diske de erişmek için bu önceliği alırlar.  Aynı <span style=\" font-weight:600;\">En İyi Başarım/Normal</span> önceliğinde çalışan uygulamalaraöncelikler <span style=\" font-weight:600;\">Round Robin</span> tarzında sunulur.</p></body></html>"
+"</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili sürece SIGTERM sinyalli göndererek sonlandırmaya kalkış.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Teknik bilgi: </span><br />Verilen sürece SIGTERM sinyali gönderilir. Bu işlem için gerekli yetki yoksa, ön tanımlı olarak parola istenir.<br /><span style=\" font-family:'Courier New,courier';\">polkit-kde-authorization</span> programı çalıştırılarak belirli kullanıcılara (veya tümüne) parolaya gerek kalmadan herhangi bir süreci sonlandırmaya yetki verilebilir. </p></body></html>"
 
 #. i18n: file: ProcessWidgetUI.ui:44
 #. i18n: ectx: property (text), widget (QPushButton, btnKillProcess)
@@ -769,7 +771,7 @@ msgstr ""
 
 #: ProcessModel.cc:779
 msgid "<qt><i>Technical information: </i>This is from /proc/*/cmdline"
-msgstr ""
+msgstr "<qt><i>Teknik bilgi: </i>/proc/*/cmdline çıktısından alınmıştır"
 
 #: ProcessModel.cc:781
 msgid "<qt><i>Technical information: </i>For each X11 window, the X11 property _NET_WM_PID is used to map the window to a PID.  If a process' windows are not shown, then that application incorrectly is not setting _NET_WM_PID."
@@ -947,9 +949,9 @@ msgid "<br/>I/O Class: %1"
 msgstr "<br/>G/Ç Sınıfı: %1"
 
 #: ProcessModel.cc:1175
-#, fuzzy, kde-format
+#, kde-format
 msgid "<qt><p style='white-space:pre'>Process status: %1 %2<br />User CPU usage: %3%<br />System CPU usage: %4%"
-msgstr "<qt><p style='white-space:pre'>Süreç durumu: %1 %2<br />Kullanıcı işlemci kullanımı: %3%<br />Sistem işlemci kullanımı: %4%</qt>"
+msgstr "<qt><p style='white-space:pre'>Süreç durumu: %1 %2<br />Kullanıcı CPU kullanımı: %3%<br />Sistem CPU kullanımı: %4%"
 
 #: ProcessModel.cc:1186
 #, kde-format
