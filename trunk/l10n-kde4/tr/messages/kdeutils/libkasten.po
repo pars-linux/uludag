@@ -197,7 +197,7 @@ msgstr "Seçili metni panoya kopyala."
 #: controllers/io/copyas/copyasdialog.cpp:50
 msgctxt "@info:whatsthis"
 msgid "If you press the <interface>Copy to clipboard</interface> button, the selected data will be copied to the clipboard with the settings you entered above."
-msgstr ""
+msgstr "<interface>Panoya kopyala</interface> düğmesine basarsanız, seçili veri yukarıda girdiğiniz ayarlarla birlikte panoya kopyalanacak."
 
 #: controllers/io/copyas/copyascontroller.cpp:62
 msgctxt "@title:menu"
