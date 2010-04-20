@@ -1,6 +1,6 @@
 # translation of kcmsmartcard.po to Turkish
 # Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
-#
+# 
 # Görkem Çetin <gorkem@kde.org>, 2002, 2003.
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #. i18n: file: nosmartcardbase.ui:24
 #. i18n: ectx: property (text), widget (QLabel)
@@ -33,31 +33,16 @@ msgstr "Olası Nedenler"
 #. i18n: file: nosmartcardbase.ui:49
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:9 rc.cpp:65
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "1) The KDE daemon, 'kded' is not running. You can restart it by running "
-#| "the command 'kdeinit' and then try reloading the KDE Control Center to "
-#| "see if this message goes away.\n"
-#| "\n"
-#| "2) You do not appear to have smartcard support in the KDE libraries. You "
-#| "will need to recompile the kdelibs package with libpcsclite installed."
 msgid ""
 "\n"
-"1) The KDE daemon, 'kded' is not running. You can restart it by running the "
-"command 'kdeinit' and then try reloading the KDE System Settings to see if "
-"this message goes away.\n"
+"1) The KDE daemon, 'kded' is not running. You can restart it by running the command 'kdeinit' and then try reloading the KDE System Settings to see if this message goes away.\n"
 "\n"
-"2) You do not appear to have smartcard support in the KDE libraries. You "
-"will need to recompile the kdelibs package with libpcsclite installed."
+"2) You do not appear to have smartcard support in the KDE libraries. You will need to recompile the kdelibs package with libpcsclite installed."
 msgstr ""
 "\n"
-"1) KDE programı 'kded' çalışmıyor. Bunu yeniden başlatmak için 'kdeinit' "
-"komutunu girmek ve yeniden KDE Kontrol Merkezini çalıştırmak ve iletinin "
-"kaybolduğunu görmek yeterlidir.\n"
+"1) KDE hizmeti 'kded' çalışmıyor. Yeniden başlatmak için 'kdeinit' komutunu çalıştırabilir ve bu uyarının kaybolup kaybolmadığını anlamak için KDE Sistem Ayarlarını açabilirsiniz.\n"
 "\n"
-"2) KDE kitaplıklarında smartcard desteği bulunmayabilir. Kdelibs paketini "
-"libpcsclite desteği ile birlikte yeniden derlemeniz gerekebilir."
+"2) KDE kitaplıklarında akıllı kart desteği etkinleştirilmemiş. kdelibs paketini pcsc-lite desteği ile yeniden derlemeniz gerekebilir."
 
 #. i18n: file: smartcardbase.ui:31
 #. i18n: ectx: attribute (title), widget (QWidget)
@@ -80,9 +65,7 @@ msgstr "&Kart olaylarını otomatik algıla"
 #. i18n: file: smartcardbase.ui:64
 #. i18n: ectx: property (whatsThis), widget (QCheckBox)
 #: rc.cpp:24 rc.cpp:80
-msgid ""
-"In most cases you should have this enabled. It allows KDE to automatically "
-"detect card insertion and reader hotplug events."
+msgid "In most cases you should have this enabled. It allows KDE to automatically detect card insertion and reader hotplug events."
 msgstr "KDE'nin kart olaylarını otomatik algılamasına olanak tanır."
 
 #. i18n: file: smartcardbase.ui:92
@@ -94,12 +77,8 @@ msgstr "&Yeni bir kart takıldığı zaman kart yönetim aracını çalıştır"
 #. i18n: file: smartcardbase.ui:95
 #. i18n: ectx: property (whatsThis), widget (QCheckBox)
 #: rc.cpp:30 rc.cpp:86
-msgid ""
-"When you insert a smartcard, KDE can automatically launch a management tool "
-"if no other application attempts to use the card."
-msgstr ""
-"Yeni bir smartcard eklediğiniz zaman KDE otomatik olarak bir yönetim "
-"aracınıçalıştırabilir."
+msgid "When you insert a smartcard, KDE can automatically launch a management tool if no other application attempts to use the card."
+msgstr "Yeni bir smartcard eklediğiniz zaman KDE otomatik olarak bir yönetim aracınıçalıştırabilir."
 
 #. i18n: file: smartcardbase.ui:106
 #. i18n: ectx: property (text), widget (QCheckBox)
@@ -146,12 +125,8 @@ msgstr "PCSCLite Yapılandırması"
 #. i18n: file: smartcardbase.ui:251
 #. i18n: ectx: property (text), widget (QLabel)
 #: rc.cpp:54 rc.cpp:110
-msgid ""
-"To add new readers you have to modify /etc/readers.conf file and re-start "
-"pcscd"
-msgstr ""
-"Haber okuyucu eklemek için /etc/readers.conf dosyasını düzenlemeniz ve pcscd "
-"programını yeniden çalıştırmanız gereklidir"
+msgid "To add new readers you have to modify /etc/readers.conf file and re-start pcscd"
+msgstr "Haber okuyucu eklemek için /etc/readers.conf dosyasını düzenlemeniz ve pcscd programını yeniden çalıştırmanız gereklidir"
 
 #: rc.cpp:55
 msgctxt "NAME OF TRANSLATORS"
@@ -212,10 +187,5 @@ msgid "No module managing this card"
 msgstr "Bu kartı yöneten bir modül yok"
 
 #: smartcard.cpp:395
-msgid ""
-"<h1>smartcard</h1> This module allows you to configure KDE support for "
-"smartcards. These can be used for various tasks such as storing SSL "
-"certificates and logging in to the system."
-msgstr ""
-"<h1>smartcard</h1> Bu modül smartcard'lar için KDE desteği verilmesine "
-"olanak tanır."
+msgid "<h1>smartcard</h1> This module allows you to configure KDE support for smartcards. These can be used for various tasks such as storing SSL certificates and logging in to the system."
+msgstr "<h1>smartcard</h1> Bu modül smartcard'lar için KDE desteği verilmesine olanak tanır."
