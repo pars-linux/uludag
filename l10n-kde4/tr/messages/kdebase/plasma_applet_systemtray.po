@@ -140,7 +140,7 @@ msgstr "Son bildirimler"
 #: ui/applet.cpp:303
 msgctxt "Show all recent notifications"
 msgid "Recent"
-msgstr ""
+msgstr "En Son"
 
 #: ui/applet.cpp:593
 msgid "Information"
