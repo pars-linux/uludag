@@ -5,7 +5,7 @@
 # Murat Sisman <muratsisman@mailcity.com> 2000.
 # Görkem Çetin <gorkem@kde.org> 2000.
 # Serdar Cevher <scevher@anet.com.tr> 2001.
-# 
+#
 # Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
 # Görkem Çetin <gorkem@kde.org>, 2002, 2003, 2004.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
@@ -13,19 +13,20 @@
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-17 01:19+0100\n"
-"PO-Revision-Date: 2009-11-19 16:38+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 13:17+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: src/konqmainwindow.cpp:522
 #, kde-format
@@ -1544,18 +1545,18 @@ msgid "For more detailed documentation on Konqueror click <a href=\"%1\">here</a
 msgstr "Konqueror hakkında daha geniş bilgi için <a href=\"%1\">buraya</a> tıklayın."
 
 #: about/konq_aboutpage.cc:159
-#, fuzzy, kde-format
+#, kde-format
 msgid "<em>Tuning Tip:</em> If you want the Konqueror web browser to start faster, you can turn off this information screen by clicking <a href=\"%1\">here</a>. You can re-enable it by choosing the Help -> Konqueror Introduction menu option, and then pressing Settings -> Save View Profile As... -> \"Web Browsing\"."
-msgstr "<em>İnce Ayar İpucu:</em> Eğer Konqueror'un daha hızlı açılmasını istiyorsanız, başlangıçta açılan bilgi ekranını kapatmak için <A HREF=\"%1\">bu düğmeye</A> tıklayın. Tekrar etkinleştirmek için Yardım -> Konqueror'a giriş menüsünden Ayarlar -> Görünüm Profilini Kaydet \"Web Tarama\" seçeneğini seçebilirsiniz"
+msgstr "<em>İnce Ayar İpucu:</em> Eğer Konqueror Web Tarayıcısı'nın daha hızlı açılmasını istiyorsanız, başlangıçta açılan bilgi ekranını kapatmak için <a href=\"%1\">bu düğmeye</A> tıklayın. Tekrar etkinleştirmek için Yardım -> Konqueror'a giriş menüsünden Ayarlar -> Görünüm Profilini Kaydet \"Web Tarama\" seçeneğini seçebilirsiniz"
 
 #: about/konq_aboutpage.cc:164
 msgid "Next: Tips &amp; Tricks"
 msgstr "Sonraki: İpuçları ve Püf Noktaları"
 
 #: about/konq_aboutpage.cc:198
-#, fuzzy, kde-format
+#, kde-format
 msgid "Konqueror is designed to embrace and support Internet standards. The aim is to fully implement the officially sanctioned standards from organizations such as the W3 and OASIS, while also adding extra support for other common usability features that arise as de facto standards across the Internet. Along with this support, for such functions as favicons, Web Shortcuts, and <A HREF=\"%1\">XBEL bookmarks</A>, Konqueror also implements:"
-msgstr "Konqueror, İnternet standartlarını benimsemek ve desteklemek üzere tasarlanmıştır. Hedef, W3 ve OASIS tarafından belirlenen standartları uygulamak, aynı zamanda İnternet üzerinde geçerli olan kullanışlı ögelere de destek vermektedir. Bunların yanında, favicons, İnternet anahtar kelimeleri, ve <A HREF=\"%1\"> XBEL yer imleri</A> de desteklenir. Aynı zamanda Konqueror aşağıdaki özelliklere de sahiptir:"
+msgstr "Konqueror, İnternet standartlarını benimsemek ve desteklemek üzere tasarlanmıştır. Hedef, W3 ve OASIS tarafından belirlenen standartlarıyla tamamen uyumlu olmak, aynı zamanda İnternet üzerinde geçerli olan kullanışlı ögelere de destek vermektir. Bunların yanında, favicons, İnternet anahtar kelimeleri, ve <a href=\"%1\"> XBEL yer imleri</a> de desteklenir. Aynı zamanda Konqueror aşağıdaki özelliklere de sahiptir:"
 
 #: about/konq_aboutpage.cc:206
 msgid "Supported standards"
@@ -1704,9 +1705,9 @@ msgid "Tips &amp; Tricks"
 msgstr "İpucuları &amp; Püf Noktaları"
 
 #: about/konq_aboutpage.cc:295
-#, fuzzy, kde-format
+#, kde-format
 msgid "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts predefined to make searching for software or looking up certain words in an encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-Shortcuts."
-msgstr "Internet Anahtar Kelimeleri ve Web Kısayollarını Kullanın: \"gg: KDE\" yazarak, \"KDE\" kelimesini Google arama motorunu kullanarak arayabilirsiniz.  Yazılım aramak ve ansiklopedilerde araştırma yapmak için bir çok önceden tanımlanmış Web kısayolu mevcuttut Bunlara ek olarak kendi <a href=\"%1\">web kısayollarınızı</a> da oluşturabilirsiniz."
+msgstr "Internet Anahtar Kelimeleri ve Web Kısayollarını Kullanın: \"gg: KDE\" yazarak, \"KDE\" kelimesini Google arama motorunu kullanarak arayabilirsiniz.  Yazılım aramak ve ansiklopedilerde araştırma yapmak için bir çok önceden tanımlanmış Web kısayolu mevcuttur. Bunlara ek olarak kendi <a href=\"%1\">web kısayollarınızı</a> da oluşturabilirsiniz."
 
 #: about/konq_aboutpage.cc:300
 #, kde-format
@@ -2074,7 +2075,7 @@ msgstr "Dosya tipleri için önizleme göster"
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: rc.cpp:133
 msgid "Here you can control if you want the popup window to contain a larger preview for the file, when moving the mouse over it"
-msgstr ""
+msgstr "Buradan, farenizi bir dosya üzerine getirdiğinizde açılan pencerede daha büyük bir ön izleme bulunmasını ayarlayabilirsiniz"
 
 #. i18n: file: src/konqueror.kcfg:56
 #. i18n: ectx: label, entry, group (FMSettings)
@@ -2086,7 +2087,7 @@ msgstr "Çöp kutusuna göndermeden silmek için 'Sil' menü girdillerini göste
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
 #: rc.cpp:139
 msgid "Uncheck this if you do not want 'Delete' menu commands to be displayed on the desktop and in the file manager's menus and context menus. You can still delete files when hidden by holding the Shift key while calling 'Move to Trash'."
-msgstr ""
+msgstr "Dosya yöneticisi menülerinde, masaüstünde ve diğer menülerde 'Sil' girdisinin görünmesini istemiyorsanız bu seçeneği kapatabilirsiniz. Menü girdisi görünmese bile 'Çöpe Taşı' işlemi yaparken Shift tuşuna basılı tutarak silme işlemi yapabilirsiniz."
 
 #. i18n: file: src/konqueror.kcfg:149
 #. i18n: ectx: label, entry, group (FMSettings)
@@ -2124,7 +2125,7 @@ msgstr "Bir dosya silinirken sor."
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: rc.cpp:297
 msgid "This option tells Konqueror whether to ask for a confirmation when you delete a file without using the trash folder. Warning, deleted files can not be recovered, so it is recommended to leave this confirmation enabled."
-msgstr ""
+msgstr "Çöp kullanmadan dosyaları silerken Konqueror'un onay sormasını bu sçenek ile ayarlayabilirsiniz. Dikkat, silinen dosyalar geri getirilemez, bu sebeple bu seçeneğin açık olması önerilir."
 
 #. i18n: file: src/konqueror.kcfg:524
 #. i18n: ectx: label, entry, group (Trash)
@@ -2136,13 +2137,13 @@ msgstr "Çöp kutusuna atma işlemini sor"
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: rc.cpp:303
 msgid "This option tells Konqueror whether to ask for a confirmation when you move the file to your trash folder, from where it can be recovered very easily."
-msgstr ""
+msgstr "Çöpe taşıma işlemi için Konqueror'un onay sorması bu seçenek ile ayarlanır. Çöpe taşınmış dosyalar kolaylıkla geri getirilebilir."
 
 #. i18n: file: src/konqueror.kcfg:532
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: rc.cpp:309
 msgid "If true, when opening a session from within the sessions dialog the tabs will be opened inside current window."
-msgstr ""
+msgstr "Seçili ise oturum penceresinden yeni açılan oturumlar mevcut pencere içinde açılır."
 
 #~ msgid "&Save View Profile \"%1\"..."
 #~ msgstr "&Görünüm Profilini Kaydet \"%1\"..."
