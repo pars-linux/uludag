@@ -12,18 +12,19 @@
 # Adil YILDIZ <adil@kde.org.tr>, 2005.
 # Cemil MUTLU <mawilos@gmail.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Gökçen Eraslan <gokcen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdebase\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-09 23:32+0000\n"
-"PO-Revision-Date: 2009-11-16 01:08+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 13:30+0300\n"
+"Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: apps/dolphin/src/dolphin.desktop:2
@@ -417,8 +418,7 @@ msgstr "Alephone - (OpenGL yok)"
 
 #: apps/kappfinder/apps/Games/Arcade/alephone.desktop:89
 msgctxt "Comment"
-msgid ""
-"An open source version of Marathon Infinity for SDL that has OpenGL disabled"
+msgid "An open source version of Marathon Infinity for SDL that has OpenGL disabled"
 msgstr ""
 "Marathon Infinity'nin SDL için openGL desteği kaldırılmış açık kaynak kodlu "
 "sürümü"
@@ -2654,14 +2654,12 @@ msgstr "Kullanıcı Uygulaması Tanımı (Windows XP üzerinde Google Chrome 1.0
 #: apps/konqueror/settings/kio/uasproviders/firefox20oncurrent.desktop:2
 msgctxt "Name"
 msgid "UADescription (Firefox 2.0 on current)"
-msgstr ""
-"Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Firefox 2.0)"
+msgstr "Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Firefox 2.0)"
 
 #: apps/konqueror/settings/kio/uasproviders/firefox30oncurrent.desktop:2
 msgctxt "Name"
 msgid "UADescription (Firefox 3.0 on current)"
-msgstr ""
-"Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Firefox 3.0)"
+msgstr "Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Firefox 3.0)"
 
 #: apps/konqueror/settings/kio/uasproviders/googlebot.desktop:2
 msgctxt "Name"
@@ -2736,20 +2734,17 @@ msgstr "Kullanıcı Uygulaması Tanımı (NT üzerinde Opera 4.03)"
 #: apps/konqueror/settings/kio/uasproviders/op85oncurrent.desktop:2
 msgctxt "Name"
 msgid "UADescription (Opera 8.5 on current)"
-msgstr ""
-"Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 8.5)"
+msgstr "Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 8.5)"
 
 #: apps/konqueror/settings/kio/uasproviders/op90oncurrent.desktop:2
 msgctxt "Name"
 msgid "UADescription (Opera 9.00 on current)"
-msgstr ""
-"Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 9.00)"
+msgstr "Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 9.00)"
 
 #: apps/konqueror/settings/kio/uasproviders/op962oncurrent.desktop:2
 msgctxt "Name"
 msgid "UADescription (Opera 9.62 on current)"
-msgstr ""
-"Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 9.62)"
+msgstr "Kullanıcı Uygulaması Tanımı (geçerli işletim sistemi üzerinde Opera 9.62)"
 
 #: apps/konqueror/settings/kio/uasproviders/safari20.desktop:2
 msgctxt "Name"
@@ -2862,8 +2857,7 @@ msgid "Configure Konqueror AdBlocK filters"
 msgstr "Konqueror'ın AdBlocK Filtrelerini yapılandır"
 
 #: apps/konqueror/settings/konqhtml/khtml_general.desktop:13
-msgctxt ""
-"Name|Konqeuror settings relevant to both web browsing and file management."
+msgctxt "Name|Konqeuror settings relevant to both web browsing and file management."
 msgid "General"
 msgstr "Genel"
 
@@ -3355,12 +3349,12 @@ msgstr ""
 #: runtime/attica/kcm/kcm_attica.desktop:12
 msgctxt "Name"
 msgid "Open Collaboration Services provider management"
-msgstr ""
+msgstr "Açık İşbirliği Hizmetleri sağlayıcı yönetimi"
 
 #: runtime/attica/kcm/kcm_attica.desktop:58
 msgctxt "Comment"
 msgid "Manage Open Collaboration Services providers"
-msgstr ""
+msgstr "Açık İşbirliği Hizmetleri sağlayıcılarını yönet"
 
 #: runtime/desktoptheme/air/metadata.desktop:2
 #: workspace/wallpapers/Air/metadata.desktop:2
@@ -3488,10 +3482,8 @@ msgstr "Sağ üst bilgi kutucuğu için arayüzün açıklayıcı tanımı"
 
 #: runtime/kcontrol/componentchooser/windowmanagers/compiz-custom.desktop:2
 msgctxt "Name"
-msgid ""
-"Compiz custom (create wrapper script 'compiz-kde-launcher' to launch it)"
-msgstr ""
-"Compiz özel (çalıştırmak için sarıcı betik 'compiz-kde-launcher' oluştur)"
+msgid "Compiz custom (create wrapper script 'compiz-kde-launcher' to launch it)"
+msgstr "Compiz özel (çalıştırmak için sarıcı betik 'compiz-kde-launcher' oluştur)"
 
 #: runtime/kcontrol/componentchooser/windowmanagers/compiz.desktop:2
 msgctxt "Name"
@@ -3940,20 +3932,18 @@ msgid "Images"
 msgstr "Resimler"
 
 #: runtime/kioslave/thumbnail/jpegthumbnail.desktop:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "EXR Images"
 msgctxt "Name"
 msgid "JPEG Images"
-msgstr "EXR Resimleri"
+msgstr "JPEG Resimleri"
 
 #: runtime/kioslave/thumbnail/svgthumbnail.desktop:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Images"
 msgctxt "Name"
 msgid "SVG Images"
-msgstr "Resimler"
+msgstr "SVG Resimleri"
 
 #: runtime/kioslave/thumbnail/textthumbnail.desktop:3
 msgctxt "Name"
@@ -4309,7 +4299,7 @@ msgstr "Cleanlooks"
 #: runtime/kstyles/themes/qtcleanlooks.themerc:57
 msgctxt "Comment"
 msgid "Built-in unthemed style similar to Clearlooks from GNOME"
-msgstr ""
+msgstr "GNOME'daki Clearlooks'a benzer gömülü, temasız stil"
 
 #: runtime/kstyles/themes/qtgtk.themerc:2
 msgctxt "Name"
@@ -4329,7 +4319,7 @@ msgstr "Mac OS X"
 #: runtime/kstyles/themes/qtmacintosh.themerc:64
 msgctxt "Comment"
 msgid "Style that uses the Apple Appearance Manager"
-msgstr ""
+msgstr "Apple Appearance Manager kullanan stil"
 
 #: runtime/kstyles/themes/qtmotifplus.themerc:2
 msgctxt "Name"
@@ -4359,7 +4349,7 @@ msgstr "Plastik"
 #: runtime/kstyles/themes/qtplastique.themerc:62
 msgctxt "Comment"
 msgid "Built-in unthemed style similar to Plastik from KDE3"
-msgstr ""
+msgstr "KDE3'teki Plastik stiline benzer gömülü temasız stil"
 
 #: runtime/kstyles/themes/qtplatinum.themerc:2
 #: runtime/localization/currency/xpt.desktop:5
@@ -4400,7 +4390,7 @@ msgstr "MS Windows Vista"
 #: runtime/kstyles/themes/qtwindowsvista.themerc:63
 msgctxt "Comment"
 msgid "Style that uses the Windows Vista style engine"
-msgstr ""
+msgstr "Windows Vista stil motorunu kullanan stil"
 
 #: runtime/kstyles/themes/qtwindowsxp.themerc:2
 msgctxt "Name"
@@ -4410,7 +4400,7 @@ msgstr "MS Windows XP"
 #: runtime/kstyles/themes/qtwindowsxp.themerc:63
 msgctxt "Comment"
 msgid "Style that uses the Windows XP style engine"
-msgstr ""
+msgstr "Windows XP stil motorunu kullanan stil"
 
 #: runtime/kstyles/web/web.themerc:2
 msgctxt "Name"
@@ -4514,8 +4504,7 @@ msgstr "AltaVista"
 #: runtime/kurifilter-plugins/ikws/searchproviders/altavista.desktop:92
 msgctxt "Query"
 msgid "http://www.altavista.com/cgi-bin/query?pg=q&kl=XX&stype=stext&q=\\\\{@}"
-msgstr ""
-"http://www.altavista.com/cgi-bin/query?pg=q&kl=XX&stype=stext&q=\\\\{@}"
+msgstr "http://www.altavista.com/cgi-bin/query?pg=q&kl=XX&stype=stext&q=\\\\{@}"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/amg.desktop:4
 msgctxt "Name"
@@ -4646,10 +4635,8 @@ msgstr "CTAN - Detaylı TeX Arşiv Ağı"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/ctan.desktop:90
 msgctxt "Query"
-msgid ""
-"http://ctan.org/cgi-bin/filenameSearch.py?filename=\\\\{@}&Search=Search"
-msgstr ""
-"http://ctan.org/cgi-bin/filenameSearch.py?filename=\\\\{@}&Search=Search"
+msgid "http://ctan.org/cgi-bin/filenameSearch.py?filename=\\\\{@}&Search=Search"
+msgstr "http://ctan.org/cgi-bin/filenameSearch.py?filename=\\\\{@}&Search=Search"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/dbug.desktop:3
 msgctxt "Name"
@@ -5025,12 +5012,11 @@ msgid "Internet Movie Database"
 msgstr "İnternet Film Veritabanı"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/imdb.desktop:91
-#, fuzzy
 #| msgctxt "Query"
 #| msgid "http://imdb.com/Find?\\\\{@}"
 msgctxt "Query"
 msgid "http://imdb.com/find?s=all&q=\\\\{@}"
-msgstr "http://imdb.com/Find?\\\\{@}"
+msgstr "http://imdb.com/find?s=all&q=\\\\{@}"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/it2en.desktop:5
 msgctxt "Name"
@@ -5064,8 +5050,7 @@ msgstr "KataTudo"
 #: runtime/kurifilter-plugins/ikws/searchproviders/katatudo.desktop:91
 msgctxt "Query"
 msgid "http://www.katatudo.com.br/busca/resultado.php?q=\\\\{@}&onde=&b=Buscar"
-msgstr ""
-"http://www.katatudo.com.br/busca/resultado.php?q=\\\\{@}&onde=&b=Buscar"
+msgstr "http://www.katatudo.com.br/busca/resultado.php?q=\\\\{@}&onde=&b=Buscar"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/kde.desktop:6
 msgctxt "Name"
@@ -5259,14 +5244,12 @@ msgid "PHP Search"
 msgstr "PHP Arayıcı"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/php.desktop:91
-#, fuzzy
 #| msgctxt "Query"
 #| msgid ""
 #| "http://www.php.net/search.php?show=\\\\{mode,\"manual\"}&pattern=\\\\{@}"
 msgctxt "Query"
 msgid "http://www.php.net/manual-lookup.php?pattern=\\\\{@}"
-msgstr ""
-"http://www.php.net/search.php?show=\\\\{mode,\"manual\"}&pattern=\\\\{@}"
+msgstr "http://www.php.net/manual-lookup.php?pattern=\\\\{@}"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/python.desktop:5
 msgctxt "Name"
@@ -5298,12 +5281,11 @@ msgid "Latest Qt Online Documentation"
 msgstr "Güncel Qt Dökümantasyonu"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/qt.desktop:90
-#, fuzzy
 #| msgctxt "Query"
 #| msgid "http://doc.trolltech.com/latest/\\\\{@}.html"
 msgctxt "Query"
 msgid "http://doc.qt.nokia.com/latest/\\\\{@}.html"
-msgstr "http://doc.trolltech.com/latest/\\\\{@}.html"
+msgstr "http://doc.qt.nokia.com/latest/\\\\{@}.html"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/rae.desktop:5
 msgctxt "Name"
@@ -5384,10 +5366,8 @@ msgstr "Technorati"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/technorati.desktop:90
 msgctxt "Query"
-msgid ""
-"http://technorati.com/cosmos/search.html?sourceid=kde-search&url=\\\\{@}"
-msgstr ""
-"http://technorati.com/cosmos/search.html?sourceid=kde-search&url=\\\\{@}"
+msgid "http://technorati.com/cosmos/search.html?sourceid=kde-search&url=\\\\{@}"
+msgstr "http://technorati.com/cosmos/search.html?sourceid=kde-search&url=\\\\{@}"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/technoratitags.desktop:3
 msgctxt "Name"
@@ -5879,7 +5859,7 @@ msgstr "Dominik Cumhuriyeti"
 #: runtime/l10n/dz/entry.desktop:2
 msgctxt "Name"
 msgid "Algeria"
-msgstr "Algeria"
+msgstr "Cezayir"
 
 #: runtime/l10n/eastafrica.desktop:2
 msgctxt "Name"
@@ -5982,12 +5962,11 @@ msgid "Georgia"
 msgstr "Gürcistan"
 
 #: runtime/l10n/gf/entry.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "French Polynesia"
 msgctxt "Name"
 msgid "French Guiana"
-msgstr "Fransız Polinezyası"
+msgstr "Fransız Guyanası"
 
 #: runtime/l10n/gh/entry.desktop:2
 msgctxt "Name"
@@ -6042,7 +6021,7 @@ msgstr "Guam"
 #: runtime/l10n/gw/entry.desktop:2
 msgctxt "Name"
 msgid "Guinea-Bissau"
-msgstr "Gine-Bissau"
+msgstr "Gine-Biso"
 
 #: runtime/l10n/gy/entry.desktop:2
 msgctxt "Name"
@@ -6172,7 +6151,7 @@ msgstr "Güney Kore"
 #: runtime/l10n/kw/entry.desktop:2
 msgctxt "Name"
 msgid "Kuwait"
-msgstr "Kuwait"
+msgstr "Kuveyt"
 
 #: runtime/l10n/ky/entry.desktop:2
 msgctxt "Name"
@@ -6232,7 +6211,7 @@ msgstr "Lüksemburg"
 #: runtime/l10n/lv/entry.desktop:2
 msgctxt "Name"
 msgid "Latvia"
-msgstr "Litvanya"
+msgstr "Letonya"
 
 #: runtime/l10n/ly/entry.desktop:2
 msgctxt "Name"
@@ -6512,7 +6491,7 @@ msgstr "Katar"
 #: runtime/l10n/re/entry.desktop:2
 msgctxt "Name"
 msgid "Réunion"
-msgstr ""
+msgstr "Réunion"
 
 #: runtime/l10n/ro/entry.desktop:2
 msgctxt "Name"
@@ -6647,7 +6626,7 @@ msgstr "Suriye"
 #: runtime/l10n/sz/entry.desktop:2
 msgctxt "Name"
 msgid "Swaziland"
-msgstr "Swaziland"
+msgstr "Svaziland"
 
 #: runtime/l10n/tc/entry.desktop:2
 msgctxt "Name"
@@ -6712,7 +6691,7 @@ msgstr "Türkiye"
 #: runtime/l10n/tt/entry.desktop:2
 msgctxt "Name"
 msgid "Trinidad and Tobago"
-msgstr "Trinidad veTabago"
+msgstr "Trinidad ve Tobago"
 
 #: runtime/l10n/tv/entry.desktop:2
 msgctxt "Name"
@@ -6817,7 +6796,7 @@ msgstr "Yemen"
 #: runtime/l10n/yt/entry.desktop:2
 msgctxt "Name"
 msgid "Mayotte"
-msgstr ""
+msgstr "Mayotte"
 
 #: runtime/l10n/za/entry.desktop:3
 msgctxt "Name"
@@ -6835,1384 +6814,1260 @@ msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
 #: runtime/localization/currency/adf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Andorra"
 msgctxt "Name"
 msgid "Andorran Franc"
-msgstr "Andorra"
+msgstr "Andorra Frankı"
 
 #: runtime/localization/currency/adp.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Andorra"
 msgctxt "Name"
 msgid "Andorran Peseta"
-msgstr "Andorra"
+msgstr "Andorra Pesetası"
 
 #: runtime/localization/currency/aed.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "United Arab Emirates"
 msgctxt "Name"
 msgid "United Arab Emirates Dirham"
-msgstr "Birleşik Arap Emirlikleri"
+msgstr "Birleşik Arap Emirlikleri Dirhemi"
 
 #: runtime/localization/currency/afa.desktop:5
 #: runtime/localization/currency/afn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Afghanistan"
 msgctxt "Name"
 msgid "Afghan Afghani"
-msgstr "Afganistan"
+msgstr "Afgan Afganisi"
 
 #: runtime/localization/currency/all.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Albania"
 msgctxt "Name"
 msgid "Albanian Lek"
-msgstr "Arnavutluk"
+msgstr "Arnavut Levası"
 
 #: runtime/localization/currency/amd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Armenia"
 msgctxt "Name"
 msgid "Armenian Dram"
-msgstr "Ermenistan"
+msgstr "Ermeni Dramı"
 
 #: runtime/localization/currency/ang.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Netherlands Antilles"
 msgctxt "Name"
 msgid "Netherlands Antillean Guilder"
-msgstr "Hollanda Antilleri"
+msgstr "Hollanda Antilleri Guldeni"
 
 #: runtime/localization/currency/aoa.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Angola"
 msgctxt "Name"
 msgid "Angolan Kwanza"
-msgstr "Angola"
+msgstr "Angola Kuanzası"
 
 #: runtime/localization/currency/aon.desktop:5
 msgctxt "Name"
 msgid "Angolan Novo Kwanza"
-msgstr ""
+msgstr "Yeni Angola Kuanzası"
 
 #: runtime/localization/currency/ars.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Argentina"
 msgctxt "Name"
 msgid "Argentine Peso"
-msgstr "Arjantin"
+msgstr "Arjantin Pesosu"
 
 #: runtime/localization/currency/ats.desktop:5
 msgctxt "Name"
 msgid "Austrian Schilling"
-msgstr ""
+msgstr "Avusturya Şilini"
 
 #: runtime/localization/currency/aud.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Australia"
 msgctxt "Name"
 msgid "Australian Dollar"
-msgstr "Avusturalya"
+msgstr "Avusturalya Doları"
 
 #: runtime/localization/currency/awg.desktop:5
 msgctxt "Name"
 msgid "Aruban Florin"
-msgstr ""
+msgstr "Aruba Florini"
 
 #: runtime/localization/currency/azm.desktop:5
 #: runtime/localization/currency/azn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Azerbaijan"
 msgctxt "Name"
 msgid "Azerbaijani Manat"
-msgstr "Azerice"
+msgstr "Azerbaycan Manatı"
 
 #: runtime/localization/currency/bam.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bosnia and Herzegovina"
 msgctxt "Name"
 msgid "Bosnia and Herzegovina Convertible Mark"
-msgstr "Bosna Hersek"
+msgstr "Bosna Hersek Değiştirilebilir Markı"
 
 #: runtime/localization/currency/bbd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Barbados"
 msgctxt "Name"
 msgid "Barbados Dollar"
-msgstr "Barbados"
+msgstr "Barbados Doları"
 
 #: runtime/localization/currency/bdt.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bangladesh"
 msgctxt "Name"
 msgid "Bangladeshi Taka"
-msgstr "Bangladeş"
+msgstr "Bangladeş Takası"
 
 #: runtime/localization/currency/bef.desktop:5
 msgctxt "Name"
 msgid "Belgian Franc"
-msgstr ""
+msgstr "Belçika Frankı"
 
 #: runtime/localization/currency/bgl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bulgaria"
 msgctxt "Name"
 msgid "Bulgarian Lev A/99"
-msgstr "Bulgaristan"
+msgstr "Bulgar Levası A/99"
 
 #: runtime/localization/currency/bgn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bulgaria"
 msgctxt "Name"
 msgid "Bulgarian Lev"
-msgstr "Bulgaristan"
+msgstr "Bulgar Levası"
 
 #: runtime/localization/currency/bhd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bahrain"
 msgctxt "Name"
 msgid "Bahraini Dinar"
-msgstr "Bahreyn"
+msgstr "Bahreyn Dinarı"
 
 #: runtime/localization/currency/bif.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Burundi"
 msgctxt "Name"
 msgid "Burundian Franc"
-msgstr "Burundi"
+msgstr "Burundi Frankı"
 
 #: runtime/localization/currency/bmd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bermuda"
 msgctxt "Name"
 msgid "Bermuda Dollar"
-msgstr "Bermuda"
+msgstr "Bermuda Doları"
 
 #: runtime/localization/currency/bnd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Brunei Darussalam"
 msgctxt "Name"
 msgid "Brunei Dollar"
-msgstr "Brunei"
+msgstr "Brunei Doları"
 
 #: runtime/localization/currency/bob.desktop:5
 msgctxt "Name"
 msgid "Bolivian Boliviano"
-msgstr ""
+msgstr "Bolivya Bolivyanosu"
 
 #: runtime/localization/currency/bov.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Bolivia"
 msgctxt "Name"
 msgid "Bolivian Mvdol"
-msgstr "Bolivya"
+msgstr "Bolivya Mvdolu"
 
 #: runtime/localization/currency/brl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Brazil"
 msgctxt "Name"
 msgid "Brazilian Real"
-msgstr "Brezilya"
+msgstr "Brazilya Reali"
 
 #: runtime/localization/currency/bsd.desktop:5
 msgctxt "Name"
 msgid "Bahamian Dollar"
-msgstr ""
+msgstr "Bahama Doları"
 
 #: runtime/localization/currency/btn.desktop:5
 msgctxt "Name"
 msgid "Bhutanese Ngultrum"
-msgstr ""
+msgstr "Buhutan Ngultrumu"
 
 #: runtime/localization/currency/bwp.desktop:6
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Botswana"
 msgctxt "Name"
 msgid "Botswana Pula"
-msgstr "Botsvana"
+msgstr "Botsvana Pulası"
 
 #: runtime/localization/currency/byr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Belarus"
 msgctxt "Name"
 msgid "Belarusian Ruble"
-msgstr "Belarus"
+msgstr "Belarus Rublesi"
 
 #: runtime/localization/currency/bzd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Belize"
 msgctxt "Name"
 msgid "Belize Dollar"
-msgstr "Belize"
+msgstr "Belize Doları"
 
 #: runtime/localization/currency/cad.desktop:5
 msgctxt "Name"
 msgid "Canadian Dollar"
-msgstr ""
+msgstr "Kanada Doları"
 
 #: runtime/localization/currency/cdf.desktop:5
 msgctxt "Name"
 msgid "Congolese Franc"
-msgstr ""
+msgstr "Kongo Frankı"
 
 #: runtime/localization/currency/chf.desktop:5
 msgctxt "Name"
 msgid "Swiss Franc"
-msgstr ""
+msgstr "İsviçre Frankı"
 
 #: runtime/localization/currency/clf.desktop:5
 msgctxt "Name"
 msgid "Chilean Unidad de Fomento"
-msgstr ""
+msgstr "Şili Sosyal Sigortalar Fon Birimi"
 
 #: runtime/localization/currency/clp.desktop:5
 msgctxt "Name"
 msgid "Chilean Peso"
-msgstr ""
+msgstr "Şili Pezosu"
 
 #: runtime/localization/currency/cny.desktop:5
 msgctxt "Name"
 msgid "Chinese Yuan"
-msgstr ""
+msgstr "Çin Yuan"
 
 #: runtime/localization/currency/cop.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Colombia"
 msgctxt "Name"
 msgid "Colombian Peso"
-msgstr "Kolombiya"
+msgstr "Kolombiya Pesosu"
 
 #: runtime/localization/currency/cou.desktop:5
 msgctxt "Name"
 msgid "Colombian Unidad de Valor Real"
-msgstr ""
+msgstr "Kolombiya Unidad  de Valor  Real"
 
 #: runtime/localization/currency/crc.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Costa Rica"
 msgctxt "Name"
 msgid "Costa Rican Colon"
-msgstr "Kosta Rika"
+msgstr "Kosta Rika Colonu"
 
 #: runtime/localization/currency/cuc.desktop:5
 msgctxt "Name"
 msgid "Cuban Convertible Peso"
-msgstr ""
+msgstr "Küba Değiştirilebilir Pesosu"
 
 #: runtime/localization/currency/cup.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Cube Gears"
 msgctxt "Name"
 msgid "Cuban Peso"
-msgstr "Küp Dişlileri"
+msgstr "Küba Pesosu"
 
 #: runtime/localization/currency/cve.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Cape Verde"
 msgctxt "Name"
 msgid "Cape Verde Escudo"
-msgstr "Cape Verde"
+msgstr "Cape Verde Escudosu"
 
 #: runtime/localization/currency/cyp.desktop:5
 msgctxt "Name"
 msgid "Cypriot Pound"
-msgstr ""
+msgstr "Kıbrıs Poundu"
 
 #: runtime/localization/currency/czk.desktop:5
 msgctxt "Name"
 msgid "Czech Koruna"
-msgstr ""
+msgstr "Çek Korunası"
 
 #: runtime/localization/currency/dem.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Germany"
 msgctxt "Name"
 msgid "German Mark"
-msgstr "Almanya"
+msgstr "Alman Markı"
 
 #: runtime/localization/currency/djf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Djibouti"
 msgctxt "Name"
 msgid "Djibouti Franc"
-msgstr "Cibuti"
+msgstr "Cibuti Frankı"
 
 #: runtime/localization/currency/dkk.desktop:5
 msgctxt "Name"
 msgid "Danish Krone"
-msgstr ""
+msgstr "Danimarka Kronu"
 
 #: runtime/localization/currency/dop.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Dominica"
 msgctxt "Name"
 msgid "Dominican Peso"
-msgstr "Dominik"
+msgstr "Dominik Pesosu"
 
 #: runtime/localization/currency/dzd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Algeria"
 msgctxt "Name"
 msgid "Algerian Dinar"
-msgstr "Algeria"
+msgstr "Cezayir Dinarı"
 
 #: runtime/localization/currency/eek.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Estonia"
 msgctxt "Name"
 msgid "Estonian Kroon"
-msgstr "Estonya"
+msgstr "Estonya Kronu"
 
 #: runtime/localization/currency/egp.desktop:5
 msgctxt "Name"
 msgid "Egyptian Pound"
-msgstr ""
+msgstr "Mısır Poundu"
 
 #: runtime/localization/currency/ern.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Eritrea"
 msgctxt "Name"
 msgid "Eritrean Nakfa"
-msgstr "Eritre"
+msgstr "Eritre Nakfası"
 
 #: runtime/localization/currency/esp.desktop:5
 msgctxt "Name"
 msgid "Spanish Peseta"
-msgstr ""
+msgstr "İspanyol Pesetası"
 
 #: runtime/localization/currency/etb.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Ethiopia"
 msgctxt "Name"
 msgid "Ethiopian Birr"
-msgstr "Etiyopya"
+msgstr "Etiyopya Birri"
 
 #: runtime/localization/currency/eur.desktop:6
 msgctxt "Name"
 msgid "Euro"
-msgstr ""
+msgstr "Avro"
 
 #: runtime/localization/currency/fim.desktop:5
 msgctxt "Name"
 msgid "Finnish Markka"
-msgstr ""
+msgstr "Fin Markkası"
 
 #: runtime/localization/currency/fjd.desktop:5
 msgctxt "Name"
 msgid "Fijian Dollar"
-msgstr ""
+msgstr "Fiji Doları"
 
 #: runtime/localization/currency/fkp.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Falkland Islands (Malvinas)"
 msgctxt "Name"
 msgid "Falkland Islands Pound"
-msgstr "Falkland Adaları"
+msgstr "Falkland Adaları Poundu"
 
 #: runtime/localization/currency/frf.desktop:5
 msgctxt "Name"
 msgid "French Franc"
-msgstr ""
+msgstr "Fransız Frankı"
 
 #: runtime/localization/currency/gbp.desktop:5
 msgctxt "Name"
 msgid "British Pound Sterling"
-msgstr ""
+msgstr "İngiliz Sterlini"
 
 #: runtime/localization/currency/gel.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Georgia"
 msgctxt "Name"
 msgid "Georgian Lari"
-msgstr "Gürcistan"
+msgstr "Gürcü Larisi"
 
 #: runtime/localization/currency/ghc.desktop:5
 msgctxt "Name"
 msgid "Ghanaian Cedi"
-msgstr ""
+msgstr "Gana Sedisi"
 
 #: runtime/localization/currency/ghs.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Ghana"
 msgctxt "Name"
 msgid "Ghana Cedi"
-msgstr "Ghana"
+msgstr "Gana Sedisi"
 
 #: runtime/localization/currency/gip.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Gibraltar"
 msgctxt "Name"
 msgid "Gibraltar Pound"
-msgstr "Cebelitarık"
+msgstr "Cebelitarık Poundu"
 
 #: runtime/localization/currency/gmd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Gambia"
 msgctxt "Name"
 msgid "Gambian Dalasi"
-msgstr "Gambia"
+msgstr "Gambiya Dalaşı"
 
 #: runtime/localization/currency/gnf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Guinea"
 msgctxt "Name"
 msgid "Guinean Franc"
-msgstr "Gine"
+msgstr "Gine Frangı"
 
 #: runtime/localization/currency/grd.desktop:5
 msgctxt "Name"
 msgid "Greek Drachma"
-msgstr ""
+msgstr "Yunan Drahmisi"
 
 #: runtime/localization/currency/gtq.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Guatemala"
 msgctxt "Name"
 msgid "Guatemalan Quetzal"
-msgstr "Guatemala"
+msgstr "Guatemala Kuetzalı"
 
 #: runtime/localization/currency/gwp.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Guinea-Bissau"
 msgctxt "Name"
 msgid "Guinea-Bissau Peso"
-msgstr "Gine-Bissau"
+msgstr "Gine-Biso Pezosu"
 
 #: runtime/localization/currency/gyd.desktop:5
 msgctxt "Name"
 msgid "Guyanese Dollar"
-msgstr ""
+msgstr "Güyan Doları"
 
 #: runtime/localization/currency/hkd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Hong Kong SAR(China)"
 msgctxt "Name"
 msgid "Hong Kong Dollar"
-msgstr "Hong Kong SAR(China)"
+msgstr "Hong Kong Doları"
 
 #: runtime/localization/currency/hnl.desktop:5
 msgctxt "Name"
 msgid "Honduran Lempira"
-msgstr ""
+msgstr "Honduras Lempirası"
 
 #: runtime/localization/currency/hrk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Croatia"
 msgctxt "Name"
 msgid "Croatian Kuna"
-msgstr "Hırvatistan"
+msgstr "Hırvat Kunası"
 
 #: runtime/localization/currency/htg.desktop:5
 msgctxt "Name"
 msgid "Haitian Gourde"
-msgstr ""
+msgstr "Haiti Gurdesi"
 
 #: runtime/localization/currency/huf.desktop:5
 msgctxt "Name"
 msgid "Hungarian Forint"
-msgstr ""
+msgstr "Macar Forinti"
 
 #: runtime/localization/currency/idr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Indonesia"
 msgctxt "Name"
 msgid "Indonesian Rupiah"
-msgstr "İndonezya"
+msgstr "Endonezya Rupisi"
 
 #: runtime/localization/currency/iep.desktop:5
 msgctxt "Name"
 msgid "Irish Pound"
-msgstr ""
+msgstr "İrlanda Poundu"
 
 #: runtime/localization/currency/ils.desktop:5
 msgctxt "Name"
 msgid "Israeli New Sheqel"
-msgstr ""
+msgstr "İsrail Yeni Şekeli"
 
 #: runtime/localization/currency/inr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Indexing suspended"
 msgctxt "Name"
 msgid "Indian Rupee"
-msgstr "İndeksleme beklemeye alındı"
+msgstr "Hindistan Rupisi"
 
 #: runtime/localization/currency/iqd.desktop:5
 msgctxt "Name"
 msgid "Iraqi Dinar"
-msgstr ""
+msgstr "Irak Dinarı"
 
 #: runtime/localization/currency/irr.desktop:5
 msgctxt "Name"
 msgid "Iranian Rial"
-msgstr ""
+msgstr "İran Riyali"
 
 #: runtime/localization/currency/isk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Iceland"
 msgctxt "Name"
 msgid "Icelandic Krona"
-msgstr "İzlanda"
+msgstr "İzlanda Kronası"
 
 #: runtime/localization/currency/itl.desktop:5
 msgctxt "Name"
 msgid "Italian Lira"
-msgstr ""
+msgstr "İtalyan Lirası"
 
 #: runtime/localization/currency/jmd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Jamaica"
 msgctxt "Name"
 msgid "Jamaican Dollar"
-msgstr "Jamaika"
+msgstr "Jamaika Doları"
 
 #: runtime/localization/currency/jod.desktop:5
 msgctxt "Name"
 msgid "Jordanian Dinar"
-msgstr ""
+msgstr "Ürdün Dinarı"
 
 #: runtime/localization/currency/jpy.desktop:5
 msgctxt "Name"
 msgid "Japanese Yen"
-msgstr ""
+msgstr "Japon Yeni"
 
 #: runtime/localization/currency/kes.desktop:5
 msgctxt "Name"
 msgid "Kenyan Shilling"
-msgstr ""
+msgstr "Kenya Şilini"
 
 #: runtime/localization/currency/kgs.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Kyrgyzstan"
 msgctxt "Name"
 msgid "Kyrgyzstani Som"
-msgstr "Kırgızistan"
+msgstr "Kırgızistan Somu"
 
 #: runtime/localization/currency/khr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Cambodia"
 msgctxt "Name"
 msgid "Cambodian Riel"
-msgstr "Kamboçya"
+msgstr "Kamboçya Rieli"
 
 #: runtime/localization/currency/kmf.desktop:5
 msgctxt "Name"
 msgid "Comorian Franc"
-msgstr ""
+msgstr "Komoro Frankı"
 
 #: runtime/localization/currency/kpw.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "North Korea"
 msgctxt "Name"
 msgid "North Korean Won"
-msgstr "Kuzey Kore"
+msgstr "Kuzey Kore Wonu"
 
 #: runtime/localization/currency/krw.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "South Korea"
 msgctxt "Name"
 msgid "South Korean Won"
-msgstr "Güney Kore"
+msgstr "Güney Kore Wonu"
 
 #: runtime/localization/currency/kwd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Kuwait"
 msgctxt "Name"
 msgid "Kuwaiti Dinar"
-msgstr "Kuwait"
+msgstr "Kuveyt Dinarı"
 
 #: runtime/localization/currency/kyd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Cayman Islands"
 msgctxt "Name"
 msgid "Cayman Islands Dollar"
-msgstr "Cayman Adaları"
+msgstr "Cayman Adaları Doları"
 
 #: runtime/localization/currency/kzt.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Kazakhstan"
 msgctxt "Name"
 msgid "Kazakhstani Tenge"
-msgstr "Kazakistan"
+msgstr "Kazak Tengesi"
 
 #: runtime/localization/currency/lak.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Laptop"
 msgctxt "Name"
 msgid "Lao Kip"
-msgstr "Dizüstü"
+msgstr "Laos Kipi"
 
 #: runtime/localization/currency/lbp.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Lebanon"
 msgctxt "Name"
 msgid "Lebanese Pound"
-msgstr "Lebanon"
+msgstr "Lübnan Poundu"
 
 #: runtime/localization/currency/lkr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Sri Lanka"
 msgctxt "Name"
 msgid "Sri Lankan Rupee"
-msgstr "Sri Lanka"
+msgstr "Sri Lanka Rupisi"
 
 #: runtime/localization/currency/lrd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Liberia"
 msgctxt "Name"
 msgid "Liberian Dollar"
-msgstr "Liberya"
+msgstr "Liberya Doları"
 
 #: runtime/localization/currency/lsl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Lesotho"
 msgctxt "Name"
 msgid "Lesotho Loti"
-msgstr "Lesoto"
+msgstr "Lesoto Lotisi"
 
 #: runtime/localization/currency/ltl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Lithuania"
 msgctxt "Name"
 msgid "Lithuanian Litas"
-msgstr "Litvanya"
+msgstr "Litvanya Litası"
 
 #: runtime/localization/currency/luf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Luxembourg"
 msgctxt "Name"
 msgid "Luxembourgish Franc"
-msgstr "Lüksemburg"
+msgstr "Lüksemburg Frankı"
 
 #: runtime/localization/currency/lvl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Latvia"
 msgctxt "Name"
 msgid "Latvian Lats"
-msgstr "Litvanya"
+msgstr "Letonya Latsı"
 
 #: runtime/localization/currency/lyd.desktop:5
 msgctxt "Name"
 msgid "Libyan Dinar"
-msgstr ""
+msgstr "Libya Dinarı"
 
 #: runtime/localization/currency/mad.desktop:5
 msgctxt "Name"
 msgid "Moroccan Dirham"
-msgstr ""
+msgstr "Fas Dirhemi"
 
 #: runtime/localization/currency/mdl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Moldova"
 msgctxt "Name"
 msgid "Moldovan Leu"
-msgstr "Moldova"
+msgstr "Moldovya Leusu"
 
 #: runtime/localization/currency/mga.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Madagascar"
 msgctxt "Name"
 msgid "Malagasy Ariary"
-msgstr "Madagaskar"
+msgstr "Malagaskar Ariarisi"
 
 #: runtime/localization/currency/mgf.desktop:5
 msgctxt "Name"
 msgid "Malagasy Franc"
-msgstr ""
+msgstr "Malagaskar Frankı"
 
 #: runtime/localization/currency/mkd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Macedonia"
 msgctxt "Name"
 msgid "Macedonian Denar"
-msgstr "Makedonya"
+msgstr "Makedonya Dinarı"
 
 #: runtime/localization/currency/mlf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "France"
 msgctxt "Name"
 msgid "Mali Franc"
-msgstr "Fransa"
+msgstr "Mali Frankı"
 
 #: runtime/localization/currency/mmk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Myanmar"
 msgctxt "Name"
 msgid "Myanma Kyat"
-msgstr "Myanmar"
+msgstr "Myanmar Kıyatı"
 
 #: runtime/localization/currency/mnt.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Mongolia"
 msgctxt "Name"
 msgid "Mongolian Tugrik"
-msgstr "Moğolistan"
+msgstr "Moğol Tugriki"
 
 #: runtime/localization/currency/mop.desktop:5
 msgctxt "Name"
 msgid "Macanese Pataca"
-msgstr ""
+msgstr "Makau Patakası"
 
 #: runtime/localization/currency/mro.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Mauritania"
 msgctxt "Name"
 msgid "Mauritanian Ouguiya"
-msgstr "Mauritanya"
+msgstr "Mauritius Rupisi"
 
 #: runtime/localization/currency/mtl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Malaysia"
 msgctxt "Name"
 msgid "Maltese Lira"
-msgstr "Malezya"
+msgstr "Malezya Lirası"
 
 #: runtime/localization/currency/mur.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Mauritius"
 msgctxt "Name"
 msgid "Mauritius Rupee"
-msgstr "Mauritus"
+msgstr "Mauritus Rupisi"
 
 #: runtime/localization/currency/mvr.desktop:5
 msgctxt "Name"
 msgid "Maldivian Rufiyaa"
-msgstr ""
+msgstr "Maldiv Rufiyaası"
 
 #: runtime/localization/currency/mwk.desktop:5
 msgctxt "Name"
 msgid "Malawian Kwacha"
-msgstr ""
+msgstr "Malavi Kvaçası"
 
 #: runtime/localization/currency/mxn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Mexico"
 msgctxt "Name"
 msgid "Mexican Peso"
-msgstr "Meksika"
+msgstr "Meksika Pesosu"
 
 #: runtime/localization/currency/mxv.desktop:5
 msgctxt "Name"
 msgid "Mexican Unidad de Inversion"
-msgstr ""
+msgstr "Meksika Enflasyon Endeksli Hesap Birimi"
 
 #: runtime/localization/currency/myr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Malaysia"
 msgctxt "Name"
 msgid "Malaysian Ringgit"
-msgstr "Malezya"
+msgstr "Malezya Ringiti"
 
 #: runtime/localization/currency/mzm.desktop:5
 #: runtime/localization/currency/mzn.desktop:5
 msgctxt "Name"
 msgid "Mozambican Metical"
-msgstr ""
+msgstr "Mozambik Matikali"
 
 #: runtime/localization/currency/nad.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Namibia"
 msgctxt "Name"
 msgid "Namibian Dollar"
-msgstr "Namibya"
+msgstr "Namibya Doları"
 
 #: runtime/localization/currency/ngn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Nigeria"
 msgctxt "Name"
 msgid "Nigerian Naira"
-msgstr "Nijerya"
+msgstr "Nijerya Nayrası"
 
 #: runtime/localization/currency/nio.desktop:5
 msgctxt "Name"
 msgid "Nicaraguan Cordoba Oro"
-msgstr ""
+msgstr "Nikaragua Kordoba Orosu"
 
 #: runtime/localization/currency/nlg.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Netherlands Antilles"
 msgctxt "Name"
 msgid "Netherlands Guilder"
-msgstr "Hollanda Antilleri"
+msgstr "Hollanda Guldeni"
 
 #: runtime/localization/currency/nok.desktop:5
 msgctxt "Name"
 msgid "Norwegian Krone"
-msgstr ""
+msgstr "Norveç Kronu"
 
 #: runtime/localization/currency/npr.desktop:5
 msgctxt "Name"
 msgid "Nepalese Rupee"
-msgstr ""
+msgstr "Nepal Rupisi"
 
 #: runtime/localization/currency/nzd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "New Zealand"
 msgctxt "Name"
 msgid "New Zealand Dollar"
-msgstr "Yeni Zelanda"
+msgstr "Yeni Zelanda Doları"
 
 #: runtime/localization/currency/omr.desktop:5
 msgctxt "Name"
 msgid "Omani Rial"
-msgstr ""
+msgstr "Umman Riyali"
 
 #: runtime/localization/currency/pab.desktop:5
 msgctxt "Name"
 msgid "Panamanian Balboa"
-msgstr ""
+msgstr "Panama Balboası"
 
 #: runtime/localization/currency/pen.desktop:5
 msgctxt "Name"
 msgid "Peruvian Nuevo Sol"
-msgstr ""
+msgstr "Peru Yeni Solu"
 
 #: runtime/localization/currency/pgk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Papua New Guinea"
 msgctxt "Name"
 msgid "Papua New Guinean Kina"
-msgstr "Papua Yeni Gine"
+msgstr "Papua Yeni Gine Kinası"
 
 #: runtime/localization/currency/php.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Philippines"
 msgctxt "Name"
 msgid "Philippine Peso"
-msgstr "Filipinler"
+msgstr "Filipin Pezosu"
 
 #: runtime/localization/currency/pkr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Pakistan"
 msgctxt "Name"
 msgid "Pakistan Rupee"
-msgstr "Pakistan"
+msgstr "Pakistan Rupisi"
 
 #: runtime/localization/currency/pln.desktop:5
 msgctxt "Name"
 msgid "Polish Zloty"
-msgstr ""
+msgstr "Leh Zlotu"
 
 #: runtime/localization/currency/pte.desktop:5
 msgctxt "Name"
 msgid "Portuguese Escudo"
-msgstr ""
+msgstr "Portekiz Esküdosu"
 
 #: runtime/localization/currency/pyg.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Paraguay"
 msgctxt "Name"
 msgid "Paraguayan Guarani"
-msgstr "Paraguay"
+msgstr "Paraguay Guaranisi"
 
 #: runtime/localization/currency/qar.desktop:5
 msgctxt "Name"
 msgid "Qatari Riyal"
-msgstr ""
+msgstr "Katar Riyali"
 
 #: runtime/localization/currency/rol.desktop:5
 msgctxt "Name"
 msgid "Romanian Leu A/05"
-msgstr ""
+msgstr "Romanya Leyi A/05"
 
 #: runtime/localization/currency/ron.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Romania"
 msgctxt "Name"
 msgid "Romanian Leu"
-msgstr "Romanya"
+msgstr "Romanya Leyi"
 
 #: runtime/localization/currency/rsd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Serbia"
 msgctxt "Name"
 msgid "Serbian Dinar"
-msgstr "Sırbistan"
+msgstr "Sırbistan Dinarı"
 
 #: runtime/localization/currency/rub.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Russia"
 msgctxt "Name"
 msgid "Russian Ruble"
-msgstr "Rusya"
+msgstr "Rus Rublesi"
 
 #: runtime/localization/currency/rur.desktop:5
 msgctxt "Name"
 msgid "Russian Ruble A/97"
-msgstr ""
+msgstr "Rus Rublesi A/97"
 
 #: runtime/localization/currency/rwf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Rwanda"
 msgctxt "Name"
 msgid "Rwandan Franc"
-msgstr "Ruanda"
+msgstr "Ruanda Frangı"
 
 #: runtime/localization/currency/sar.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Saudi Arabia"
 msgctxt "Name"
 msgid "Saudi Riyal"
-msgstr "Suudi Arabistan"
+msgstr "Arabistan Riyali"
 
 #: runtime/localization/currency/sbd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Solomon Islands"
 msgctxt "Name"
 msgid "Solomon Islands Dollar"
-msgstr "Solomon Adaları"
+msgstr "Solomon Adaları Doları"
 
 #: runtime/localization/currency/scr.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Seychelles"
 msgctxt "Name"
 msgid "Seychellois Rupee"
-msgstr "Seyşeller"
+msgstr "Seyşeller Rupisi"
 
 #: runtime/localization/currency/sdd.desktop:5
 msgctxt "Name"
 msgid "Sudanese Dinar"
-msgstr ""
+msgstr "Sudan Dinarı"
 
 #: runtime/localization/currency/sdg.desktop:5
 msgctxt "Name"
 msgid "Sudanese Pound"
-msgstr ""
+msgstr "Sudan Poundu"
 
 #: runtime/localization/currency/sek.desktop:5
 msgctxt "Name"
 msgid "Swedish Krona"
-msgstr ""
+msgstr "İsveç Kronu"
 
 #: runtime/localization/currency/sgd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Singapore"
 msgctxt "Name"
 msgid "Singapore Dollar"
-msgstr "Singapur"
+msgstr "Singapur Doları"
 
 #: runtime/localization/currency/shp.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Saint Helena"
 msgctxt "Name"
 msgid "Saint Helena Pound"
-msgstr "Saint Helena"
+msgstr "Saint Helena Poundu"
 
 #: runtime/localization/currency/sit.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Slovenia"
 msgctxt "Name"
 msgid "Slovenian Tolar"
-msgstr "Slovenya"
+msgstr "Slovenya Toları"
 
 #: runtime/localization/currency/skk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Slovakia"
 msgctxt "Name"
 msgid "Slovak Koruna"
-msgstr "Slovakya"
+msgstr "Slovak Korunası"
 
 #: runtime/localization/currency/sll.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Sierra Leone"
 msgctxt "Name"
 msgid "Sierra Leonean Leone"
-msgstr "Sierra Leone"
+msgstr "Sierra Leone Leonesi"
 
 #: runtime/localization/currency/sos.desktop:5
 msgctxt "Name"
 msgid "Somali Shilling"
-msgstr ""
+msgstr "Somali Şilini"
 
 #: runtime/localization/currency/srd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Suriname"
 msgctxt "Name"
 msgid "Surinamese Dollar"
-msgstr "Surinam"
+msgstr "Surinam Doları"
 
 #: runtime/localization/currency/srg.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Suriname"
 msgctxt "Name"
 msgid "Surinamese Guilder"
-msgstr "Surinam"
+msgstr "Surinam Guldeni"
 
 #: runtime/localization/currency/std.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Sao Tome and Principe"
 msgctxt "Name"
 msgid "São Tomé and Príncipe Dobra"
-msgstr "Sao Tome ve Principe"
+msgstr "Sao Tome ve Principe Dobrası"
 
 #: runtime/localization/currency/svc.desktop:5
 msgctxt "Name"
 msgid "Salvadoran Colon"
-msgstr ""
+msgstr "Salvador Kolonu"
 
 #: runtime/localization/currency/syp.desktop:5
 msgctxt "Name"
 msgid "Syrian Pound"
-msgstr ""
+msgstr "Suriye Lirası"
 
 #: runtime/localization/currency/szl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Swaziland"
 msgctxt "Name"
 msgid "Swazi Lilangeni"
-msgstr "Swaziland"
+msgstr "Svaziland Lilangeni"
 
 #: runtime/localization/currency/thb.desktop:5
 msgctxt "Name"
 msgid "Thai Baht"
-msgstr ""
+msgstr "Tay Bahtı"
 
 #: runtime/localization/currency/tjs.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Tajikistan"
 msgctxt "Name"
 msgid "Tajikistani Somoni"
-msgstr "Tacikistan"
+msgstr "Tacik Somonu"
 
 #: runtime/localization/currency/tmm.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Turkmenistan"
 msgctxt "Name"
 msgid "Turkmenistani Old Manat"
-msgstr "Türkmenistan"
+msgstr "Türkmen Eski Manatı"
 
 #: runtime/localization/currency/tmt.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Turkmenistan"
 msgctxt "Name"
 msgid "Turkmenistani Manat"
-msgstr "Türkmenistan"
+msgstr "Türkmen Manatı"
 
 #: runtime/localization/currency/tnd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Tunisia"
 msgctxt "Name"
 msgid "Tunisian Dinar"
-msgstr "Tunus"
+msgstr "Tunus Dinarı"
 
 #: runtime/localization/currency/top.desktop:5
 msgctxt "Name"
 msgid "Tongan Pa'anga"
-msgstr ""
+msgstr "Tongan Pangası"
 
 #: runtime/localization/currency/tpe.desktop:5
 msgctxt "Name"
 msgid "Portuguese Timorese Escudo"
-msgstr ""
+msgstr "Portekiz Timoru Esküdosu"
 
 #: runtime/localization/currency/trl.desktop:5
 msgctxt "Name"
 msgid "Turkish Lira A/05"
-msgstr ""
+msgstr "Türk Lirası A/05"
 
 #: runtime/localization/currency/try.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Tunisia"
 msgctxt "Name"
 msgid "Turkish Lira"
-msgstr "Tunus"
+msgstr "Türk Lirası"
 
 #: runtime/localization/currency/ttd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Trinidad and Tobago"
 msgctxt "Name"
 msgid "Trinidad and Tobago Dollar"
-msgstr "Trinidad veTabago"
+msgstr "Trinidad ve Tobago Doları"
 
 #: runtime/localization/currency/twd.desktop:5
 msgctxt "Name"
 msgid "New Taiwan Dollar"
-msgstr ""
+msgstr "Yeni Tayvan Doları"
 
 #: runtime/localization/currency/tzs.desktop:5
 msgctxt "Name"
 msgid "Tanzanian Shilling"
-msgstr ""
+msgstr "Tanzanya Şilini"
 
 #: runtime/localization/currency/uah.desktop:5
 msgctxt "Name"
 msgid "Ukrainian Hryvnia"
-msgstr ""
+msgstr "Ukrayna Grivnası"
 
 #: runtime/localization/currency/ugx.desktop:5
 msgctxt "Name"
 msgid "Ugandan Shilling"
-msgstr ""
+msgstr "Uganda Şilini"
 
 #: runtime/localization/currency/usd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "United States of America"
 msgctxt "Name"
 msgid "United States Dollar"
-msgstr "Amerika Birleşik Devletleri"
+msgstr "Amerikan Doları"
 
 #: runtime/localization/currency/usn.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "United States of America"
 msgctxt "Name"
 msgid "United States Dollar (Next Day)"
-msgstr "Amerika Birleşik Devletleri"
+msgstr "Amerikan Doları (Sonraki Gün)"
 
 #: runtime/localization/currency/uss.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "United States of America"
 msgctxt "Name"
 msgid "United States Dollar (Same Day)"
-msgstr "Amerika Birleşik Devletleri"
+msgstr "Amerikan Doları (Aynı Gün)"
 
 #: runtime/localization/currency/uyu.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Uruguay"
 msgctxt "Name"
 msgid "Uruguayan Peso"
-msgstr "Uruguay"
+msgstr "Uruguay Pesosu"
 
 #: runtime/localization/currency/uzs.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Uzbekistan"
 msgctxt "Name"
 msgid "Uzbekistan Som"
-msgstr "Özbekistan"
+msgstr "Özbek Sumu"
 
 #: runtime/localization/currency/veb.desktop:5
 msgctxt "Name"
 msgid "Venezuelan Bolívar Fuerte"
-msgstr ""
+msgstr "Venezüella Bolivarı"
 
 #: runtime/localization/currency/vnd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Vietnam"
 msgctxt "Name"
 msgid "Vietnamese Dong"
-msgstr "Vietnam"
+msgstr "Vietnam Dongu"
 
 #: runtime/localization/currency/vuv.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Vanuatu"
 msgctxt "Name"
 msgid "Vanuatu Vatu"
-msgstr "Vanuatu"
+msgstr "Vanuatu Vatusu"
 
 #: runtime/localization/currency/wst.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Samoa"
 msgctxt "Name"
 msgid "Samoan Tala"
-msgstr "Samoa"
+msgstr "Samoa Talası"
 
 #: runtime/localization/currency/xaf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Central African Republic"
 msgctxt "Name"
 msgid "Central African CFA Franc"
-msgstr "Orta Afrika Cumhuriyeti"
+msgstr "Orta Afrika Mali İşbirliği Frankı"
 
 #: runtime/localization/currency/xag.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Driver"
 msgctxt "Name"
 msgid "Silver"
-msgstr "Sürücü"
+msgstr "Gümüş"
 
 #: runtime/localization/currency/xau.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Golem"
 msgctxt "Name"
 msgid "Gold"
-msgstr "Golem"
+msgstr "Altın"
 
 #: runtime/localization/currency/xcd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Caribbean"
 msgctxt "Name"
 msgid "East Caribbean Dollar"
-msgstr "Karayipler"
+msgstr "Doğu Karayip Doları"
 
 #: runtime/localization/currency/xof.desktop:5
 msgctxt "Name"
 msgid "West African CFA Franc"
-msgstr ""
+msgstr "Batı Afrika Mali İşbirliği Frankı"
 
 #: runtime/localization/currency/xpd.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Palau"
 msgctxt "Name"
 msgid "Palladium"
-msgstr "Palau"
+msgstr "Palladyum"
 
 #: runtime/localization/currency/xpf.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "France"
 msgctxt "Name"
 msgid "CFP Franc"
-msgstr "Fransa"
+msgstr "Fransız Pasifik Kolonileri Frankı"
 
 #: runtime/localization/currency/yer.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Yemen"
 msgctxt "Name"
 msgid "Yemeni Rial"
-msgstr "Yemen"
+msgstr "Yemen Riyali"
 
 #: runtime/localization/currency/yum.desktop:5
 msgctxt "Name"
 msgid "Yugoslav Dinar"
-msgstr ""
+msgstr "Yugoslav Dinarı"
 
 #: runtime/localization/currency/zar.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "South Africa"
 msgctxt "Name"
 msgid "South African Rand"
-msgstr "Güney Afrika"
+msgstr "Güney Afrika Randı"
 
 #: runtime/localization/currency/zmk.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Zambia"
 msgctxt "Name"
 msgid "Zambian Kwacha"
-msgstr "Zambia"
+msgstr "Zambiya Kvaçası"
 
 #: runtime/localization/currency/zwd.desktop:5
 msgctxt "Name"
 msgid "Zimbabwean Dollar A/06"
-msgstr ""
+msgstr "Zimbabve Doları A/06"
 
 #: runtime/localization/currency/zwl.desktop:5
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Zimbabwe"
 msgctxt "Name"
 msgid "Zimbabwean Dollar"
-msgstr "Zimbabwe"
+msgstr "Zimbabve Doları"
 
 #: runtime/menu/desktop/hidden.directory:4
 msgctxt "Name"
@@ -8461,18 +8316,16 @@ msgid "Nepomuk/Strigi Server Configuration"
 msgstr "Nepomuk/Strigi Sunucu Yapılandırması"
 
 #: runtime/nepomuk/kioslaves/search/kdedmodule/nepomuksearchmodule.desktop:8
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Nepomuk Service"
 msgctxt "Name"
 msgid "Nepomuk Search Module"
-msgstr "Nepomuk Servisi"
+msgstr "Nepomuk Arama Modülü"
 
 #: runtime/nepomuk/kioslaves/search/kdedmodule/nepomuksearchmodule.desktop:53
 msgctxt "Comment"
-msgid ""
-"Helper module for KIO to ensure automatic updates of nepomuksearch listings."
-msgstr ""
+msgid "Helper module for KIO to ensure automatic updates of nepomuksearch listings."
+msgstr "KIO'nun, nepomuksearch listelerinin otomatik güncellenmesini sağlaması için yardımcı modül."
 
 #: runtime/nepomuk/server/nepomukserver.desktop:8
 msgctxt "Name"
@@ -8523,25 +8376,22 @@ msgstr "Nepomuk Sorgulama Servisi"
 
 #: runtime/nepomuk/services/queryservice/nepomukqueryservice.desktop:80
 msgctxt "Comment"
-msgid ""
-"The Nepomuk Query Service provides an interface for persistent query folders"
-msgstr ""
-"Nepomuk Sorgulama Servisi kalıcı sorgu dizinleri için bir arayüz sağlar"
+msgid "The Nepomuk Query Service provides an interface for persistent query folders"
+msgstr "Nepomuk Sorgulama Servisi kalıcı sorgu dizinleri için bir arayüz sağlar"
 
 #: runtime/nepomuk/services/removablestorage/nepomukremovablestorageservice.desktop:7
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "The Nepomuk Storage Service"
 msgctxt "Name"
 msgid "Nepomuk Removable Storage Service"
-msgstr "Nepomuk Depolama Servisi"
+msgstr "Nepomuk Çıkarılabilir Depolama Servisi"
 
 #: runtime/nepomuk/services/removablestorage/nepomukremovablestorageservice.desktop:59
 msgctxt "Comment"
 msgid ""
 "The Nepomuk removable storage service, providing access to Nepomuk metadata "
 "on removable storage devices."
-msgstr ""
+msgstr "Nepomuk çıkarılabilir depolama servisi, çıkarılabilir depolama aygıtlarındaki Nepomuk meta verisine erişmeyi sağlar."
 
 #: runtime/nepomuk/services/storage/nepomukstorage.desktop:7
 #: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:3
@@ -8562,12 +8412,12 @@ msgstr "Nepomuk Depolama Servisi"
 #: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:150
 msgctxt "Name"
 msgid "Failed to start Nepomuk"
-msgstr ""
+msgstr "Nepomuk başlatılamadı"
 
 #: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:204
 msgctxt "Comment"
 msgid "The Nepomuk Semantic Desktop system could not be started"
-msgstr ""
+msgstr "Nepomuk Semantik Masaüstü sistemi başlatılamadı"
 
 #: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:256
 msgctxt "Name"
@@ -8635,8 +8485,7 @@ msgstr "Temel İndeksleme tamamlandı"
 
 #: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:261
 msgctxt "Comment"
-msgid ""
-"The initial indexing of local files for fast desktop searches has completed."
+msgid "The initial indexing of local files for fast desktop searches has completed."
 msgstr ""
 "Hızlı masaüstü araması için yerel dosyaların temel indeksleme işlemi "
 "tamamlandı."
@@ -8705,8 +8554,7 @@ msgstr "Ses Aygıtı Yedeği"
 
 #: runtime/phonon/platform_kde/phonon.notifyrc:229
 msgctxt "Comment"
-msgid ""
-"Notification on automatic fallback if the preferred device is unavailable"
+msgid "Notification on automatic fallback if the preferred device is unavailable"
 msgstr ""
 "Tercih edilen aygıt kullanılabilir olmadığında otomatik olarak yedek aygıta "
 "geçildiğini bildir"
@@ -8778,33 +8626,30 @@ msgstr "Solid Otomatik-çıkarma servisi"
 
 #: runtime/solidautoeject/solidautoeject.desktop:62
 msgctxt "Comment"
-msgid ""
-"Allows to automatically release drives when their eject button is pushed"
-msgstr ""
-"Çıkarma düğmesine basıldığında sürücüleri otomatik olarak ayırmayı sağlar"
+msgid "Allows to automatically release drives when their eject button is pushed"
+msgstr "Çıkarma düğmesine basıldığında sürücüleri otomatik olarak ayırmayı sağlar"
 
 #: runtime/solid-device-automounter/kcm/device_automounter_kcm.desktop:11
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Removable"
 msgctxt "Name"
 msgid "Removable Devices"
-msgstr "Çıkarılabilir"
+msgstr "Çıkarılabilir Aygıtlar"
 
 #: runtime/solid-device-automounter/kcm/device_automounter_kcm.desktop:66
 msgctxt "Comment"
 msgid "Configure automatic handling of removable storage media"
-msgstr ""
+msgstr "Çıkarılabilir depolama ortamlarının otomatik yönetimini yapılandır"
 
 #: runtime/solid-device-automounter/kded/device_automounter.desktop:9
 msgctxt "Name"
 msgid "Removable Device Automounter"
-msgstr ""
+msgstr "Otomatik Çıkarılabilir Aygıt Bağlayıcı"
 
 #: runtime/solid-device-automounter/kded/device_automounter.desktop:59
 msgctxt "Comment"
 msgid "Automatically mounts devices when they are plugged in, or at login"
-msgstr ""
+msgstr "Aygıtları takıldıklarında ya da giriş yapıldığında otomatik olarak bağlar"
 
 #: runtime/soliduiserver/soliduiserver.desktop:8
 msgctxt "Name"
@@ -8833,8 +8678,7 @@ msgstr "Bir değiştirici tuş etkinleştirildi"
 
 #: workspace/kcontrol/access/kaccess.notifyrc:163
 msgctxt "Comment"
-msgid ""
-"A modifier key (e.g. Shift or Ctrl) has changed its state and is now active"
+msgid "A modifier key (e.g. Shift or Ctrl) has changed its state and is now active"
 msgstr ""
 "Bir değiştirici tuşun (Shift ya da Control gibi) durumu değiştirildi ve "
 "etkinleştirildi"
@@ -8846,8 +8690,7 @@ msgstr "Bir değiştirici tuş pasifleştirildi"
 
 #: workspace/kcontrol/access/kaccess.notifyrc:312
 msgctxt "Comment"
-msgid ""
-"A modifier key (e.g. Shift or Ctrl) has changed its state and is now inactive"
+msgid "A modifier key (e.g. Shift or Ctrl) has changed its state and is now inactive"
 msgstr ""
 "Bir değiştirici tuşun (Shift ya da Control gibi) durumu değiştirildi ve "
 "pasifleştirildi"
@@ -9264,7 +9107,7 @@ msgstr ""
 #: workspace/kcontrol/randr/module/randrmonitor.desktop:2
 msgctxt "Name"
 msgid "Detecting RANDR (monitor) changes"
-msgstr ""
+msgstr "RANDR (monitör) değişiklikleri algılanıyor"
 
 #: workspace/kcontrol/randr/randr.desktop:14
 msgctxt "Name"
@@ -9313,8 +9156,7 @@ msgstr "Biçim"
 
 #: workspace/kcontrol/style/style.desktop:103
 msgctxt "Comment"
-msgid ""
-"Allows the manipulation of widget behavior and changing the Style for KDE"
+msgid "Allows the manipulation of widget behavior and changing the Style for KDE"
 msgstr "KDE için parçacıkların davranışlarını ve biçimini değiştirmeyi sağlar"
 
 #: workspace/kcontrol/workspaceoptions/workspaceoptions.desktop:13
@@ -9450,8 +9292,7 @@ msgstr "CTWM"
 #: workspace/kdm/kfrontend/sessions/ctwm.desktop:89
 msgctxt "Comment"
 msgid "Claude's Tab Window Manager, TWM enhanced by virtual screens, etc."
-msgstr ""
-"Claude's Sekme Pencere Yöneticisi, sanal ekranlar ile TWM genişletilmiş, vb."
+msgstr "Claude's Sekme Pencere Yöneticisi, sanal ekranlar ile TWM genişletilmiş, vb."
 
 #: workspace/kdm/kfrontend/sessions/cwwm.desktop:5
 msgctxt "Name"
@@ -9571,8 +9412,7 @@ msgstr "Ion"
 #: workspace/kdm/kfrontend/sessions/ion.desktop:89
 msgctxt "Comment"
 msgid "A keyboard-friendly window manager with tiled windows, based on PWM"
-msgstr ""
-"PWM tabanlı, klavye dostu uzatılmış pencereleriyle bir pencere yönetici"
+msgstr "PWM tabanlı, klavye dostu uzatılmış pencereleriyle bir pencere yönetici"
 
 #: workspace/kdm/kfrontend/sessions/larswm.desktop:5
 msgctxt "Name"
@@ -9592,8 +9432,7 @@ msgstr "LWM"
 #: workspace/kdm/kfrontend/sessions/lwm.desktop:89
 msgctxt "Comment"
 msgid "The Lightweight Window Manager. A non-configurable, bare window manager"
-msgstr ""
-"Lightweight Pencere Yöneticisi. Yapılandırılamayan, kaba pencere yönetici"
+msgstr "Lightweight Pencere Yöneticisi. Yapılandırılamayan, kaba pencere yönetici"
 
 #: workspace/kdm/kfrontend/sessions/matchbox.desktop:5
 msgctxt "Name"
@@ -9679,8 +9518,7 @@ msgstr "PWM"
 
 #: workspace/kdm/kfrontend/sessions/pwm.desktop:89
 msgctxt "Comment"
-msgid ""
-"A lightweight window manager able to attach multiple windows to one frame"
+msgid "A lightweight window manager able to attach multiple windows to one frame"
 msgstr ""
 "Düşük ağırlıklı bir çok pencereyi bir çerçeveye toplayabilen bir pencere "
 "yöneticisi"
@@ -9722,8 +9560,7 @@ msgstr "Sawfish"
 
 #: workspace/kdm/kfrontend/sessions/sawfish.desktop:90
 msgctxt "Comment"
-msgid ""
-"An extensible window manager scriptable with an Emacs Lisp-like language"
+msgid "An extensible window manager scriptable with an Emacs Lisp-like language"
 msgstr ""
 "Eklenti destekli Emacs Lisp benzeri bir kodlama dili kullanan kodlanabilir "
 "bir pencere yöneticisi"
@@ -9985,6 +9822,16 @@ msgid ""
 "Trolltech', so the condition will check for the active window having that "
 "title."
 msgstr ""
+"Önce \"'Merhaba' Yaz\" eylemindeki Açıklama bölümünü okuyun. \\n\\nQt Tasarımcı "
+"pencereleri kapatmak için Ctrl+F4 kullanır. KDE'de ise, Ctrl+F4 sanal masaüstü 4'e geçmek "
+"için kullanılır, dolayısıyla bu kısayol Qt Tasarımcıda çalışmaz. Dahası, Qt Tasarımcı da KDE'de "
+"pencere kapatmada kullanılan Ctrl+W kısayolunu da desteklemez. \\n\\n Bu problem etkin pencere "
+"Qt Tasarımcı iken Ctrl+W kısayolunu Ctrl+F4 ile ilişkilendirerek çözülebilir. Qt Tasarımcı etkinken, her "
+"Ctrl+W'ye basıldığında, uygulamaya Ctrl+F4 kısayolu gönderilir.Diğer uygulamalardaki Ctrl+W etkisi "
+"değişmez.\\n\\nBu aşamda 3 şeyi belirtmeliyiz: 'Ctrl+W' için yeni kısayol tetikleyici, Ctrl+F4 kısayolunu "
+"gönderen yeni klavye girdi eylemi, ve Qt Tasarımcının etkin olması koşulu.\\nQt Tasarımcı programında "
+"başlık olarak 'Qt Designer' kullanıldığından, eylemin koşulu olarak etkin pencerenin "
+"başlığı kontrol edilecektir."
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:1093
 msgctxt "Name"
@@ -10024,6 +9871,10 @@ msgid ""
 "instance, it is on a different virtual desktop.\\n\\n(Run 'xprop' and click "
 "on the XMMS window and search for WM_CLASS to see 'XMMS_Player')."
 msgstr ""
+"Önce \"'Merhaba' Yaz\" eylemindeki Açıklama bölümünü okuyun. \\n\\n\"'Merhaba' Yaz\" eylemindekine benzer şekilde "
+"bu eylem de klavye girdileri gönderir. Ctrl+Alt+B kısayolu kullanıldığında, XMMS uygulamasına B girdisi (XMMS'te B, "
+"bir sonraki şarkıya geçmek için kullanılır) gönderir. 'XMMS Player' pencere sınıfı belirtildiğinde, bu girdi her zaman XMMS "
+"penceresine gönderilir. Bu şekilde, XMMS'i başka sanal masaüstünde de olsa kontrol edebilirsiniz."
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:1547
 msgctxt "Name"
@@ -10062,6 +9913,8 @@ msgid ""
 "defined in this group. All these gestures are active only if the active "
 "window is Konqueror (class contains 'konqueror')."
 msgstr ""
+"KDE 3.1'deki Konqueror'da sekmeler var, artık onlara hareket atayabilirsiniz.\\n\\nSadece farenin orta tuşuna basın "
+"ve istediğini şekli çizip tuşu bırakın. Eğer bir seçimi yapıştırmak isterseniz, yine orta tuşu kullanabilirsiniz.\\n\\n"
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:1940
 msgctxt "Name"
@@ -10648,7 +10501,7 @@ msgstr "Redmond"
 #: workspace/kwin/clients/tabstrip/tabstrip.desktop:2
 msgctxt "Name"
 msgid "Tabstrip"
-msgstr ""
+msgstr "Tabstrip"
 
 #: workspace/kwin/clients/test/test.desktop:2
 msgctxt "Name"
@@ -10811,8 +10664,7 @@ msgstr "Dönen Seçici"
 
 #: workspace/kwin/effects/flipswitch/flipswitch.desktop:66
 msgctxt "Comment"
-msgid ""
-"Flip through windows that are in a stack for the alt+tab window switcher"
+msgid "Flip through windows that are in a stack for the alt+tab window switcher"
 msgstr "Alt-tab pencere seçicideki pencereleri çevir"
 
 #: workspace/kwin/effects/highlightwindow/highlightwindow.desktop:2
@@ -10969,10 +10821,8 @@ msgstr "Biçimler"
 
 #: workspace/kwin/effects/sheet/sheet.desktop:65
 msgctxt "Comment"
-msgid ""
-"Make modal dialogs smoothly fly in and out when they are shown or hidden"
-msgstr ""
-"Pencereler gösterilirken ve gizlenirken prüzsüz bir şekilde hareket ettir"
+msgid "Make modal dialogs smoothly fly in and out when they are shown or hidden"
+msgstr "Pencereler gösterilirken ve gizlenirken prüzsüz bir şekilde hareket ettir"
 
 #: workspace/kwin/effects/showfps/showfps_config.desktop:9
 #: workspace/kwin/effects/showfps/showfps.desktop:2
@@ -11115,7 +10965,6 @@ msgid "Slide Tabs"
 msgstr "Sekmeleri Kaydır"
 
 #: workspace/kwin/effects/_test/slidetabs/slidetabs.desktop:54
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Slide windows when switching or groupping tabs."
 msgctxt "Comment"
@@ -11126,7 +10975,7 @@ msgstr "Sekmelere geçerken veya gruplandırırken pencereleri kaydır."
 #: workspace/kwin/effects/_test/swiveltabs/swiveltabs.desktop:2
 msgctxt "Name"
 msgid "Swivel Tabs"
-msgstr ""
+msgstr "Sekmeleri Döndür"
 
 #: workspace/kwin/effects/_test/swiveltabs/swiveltabs.desktop:46
 msgctxt "Comment"
@@ -11733,10 +11582,8 @@ msgstr "Birleşiklik Başarımı Yavaş"
 
 #: workspace/kwin/kwin.notifyrc:6545
 msgctxt "Comment"
-msgid ""
-"The compositing performance was too slow and compositing has been suspended"
-msgstr ""
-"Birleşiklik (compositing) başarımı çok düşük, birleşiklik askıya alındı"
+msgid "The compositing performance was too slow and compositing has been suspended"
+msgstr "Birleşiklik (compositing) başarımı çok düşük, birleşiklik askıya alındı"
 
 #: workspace/kwin/kwin.notifyrc:6607
 msgctxt "Name"
@@ -11768,8 +11615,7 @@ msgstr "KDE Write Servisi"
 #: workspace/kwrited/kwrited.desktop:88
 msgctxt "Comment"
 msgid "Watch for messages from local users sent with write(1) or wall(1)"
-msgstr ""
-"Yerel kullanıcılarda write(1) veya wall(1) ile gönderilmiş mesajları izle"
+msgstr "Yerel kullanıcılarda write(1) veya wall(1) ile gönderilmiş mesajları izle"
 
 #: workspace/kwrited/kwrited.notifyrc:3
 msgctxt "Comment"
@@ -11824,7 +11670,7 @@ msgstr "Girdi Çıktı Zamanlayıcısını ve önceliği değiştir"
 #: workspace/libs/ksysguard/processcore/actions.actions:332
 msgctxt "Description"
 msgid "Change how the read and writes of a given process are prioritized"
-msgstr ""
+msgstr "Verilen sürecin okuma/yazmalarının nasıl önceliklendirildiğini değiştir"
 
 #: workspace/libs/ksysguard/processcore/actions.actions:381
 msgctxt "Name"
@@ -11833,9 +11679,8 @@ msgstr "İşlemci Zamanlayıcısını ve önceliği değiştir"
 
 #: workspace/libs/ksysguard/processcore/actions.actions:430
 msgctxt "Description"
-msgid ""
-"Change which CPU scheduler is to schedule the running of a given process"
-msgstr ""
+msgid "Change which CPU scheduler is to schedule the running of a given process"
+msgstr "Verilen sürecin hangi işlemci zamanlayıcısı tarafından zamanlanacağını değiştir"
 
 #: workspace/libs/solid/control/backends/fakebluetooth/solid_fakebluetooth.desktop:7
 msgctxt "Name"
@@ -11929,17 +11774,16 @@ msgid "Access to deleted items"
 msgstr "Silinen ögelere erişin"
 
 #: workspace/plasma/desktop/applets/windowlist/plasma-applet-windowlist.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Windows"
 msgctxt "Name"
 msgid "Window List"
-msgstr "Pencereler"
+msgstr "Pencere Listesi"
 
 #: workspace/plasma/desktop/applets/windowlist/plasma-applet-windowlist.desktop:58
 msgctxt "Comment"
 msgid "Plasmoid to show list of opened windows."
-msgstr ""
+msgstr "Açık pencerelerin listesini gösteren plasmoid."
 
 #: workspace/plasma/desktop/containments/desktop/plasma-containment-desktop.desktop:3
 msgctxt "Name|plasma containment"
@@ -12016,7 +11860,7 @@ msgstr "Analog Saat"
 #: workspace/plasma/generic/applets/analog-clock/plasma-applet-analogclock.desktop:83
 msgctxt "Comment"
 msgid "A clock with hands"
-msgstr ""
+msgstr "İbreli bir saat"
 
 #: workspace/plasma/generic/applets/battery/plasma-battery-default.desktop:2
 msgctxt "Name"
@@ -12209,7 +12053,7 @@ msgstr "Basit uygulama başlatıcı"
 #: workspace/plasma/generic/containmentactions/contextmenu/plasma-containmentactions-contextmenu.desktop:2
 msgctxt "Name"
 msgid "Standard Menu"
-msgstr ""
+msgstr "Standart Menü"
 
 #: workspace/plasma/generic/containmentactions/contextmenu/plasma-containmentactions-contextmenu.desktop:58
 msgctxt "Comment"
@@ -12219,7 +12063,7 @@ msgstr "Sağ tıklama ile doğal olarak gösterilen menü"
 #: workspace/plasma/generic/containmentactions/minimalcontextmenu/plasma-containmentactions-minimalcontextmenu.desktop:2
 msgctxt "Name"
 msgid "Minimal Menu"
-msgstr ""
+msgstr "Basit Menü"
 
 #: workspace/plasma/generic/containmentactions/paste/plasma-containmentactions-paste.desktop:2
 msgctxt "Name"
@@ -12537,12 +12381,12 @@ msgstr "NOAA Ulusal Hava Durumu Servisi'nden XML Verisi"
 #: workspace/plasma/generic/dataengines/weather/ions/wetter.com/ion-wettercom.desktop:2
 msgctxt "Name"
 msgid "wetter.com"
-msgstr ""
+msgstr "wetter.com"
 
 #: workspace/plasma/generic/dataengines/weather/ions/wetter.com/ion-wettercom.desktop:55
 msgctxt "Comment"
 msgid "Weather forecast by wetter.com"
-msgstr ""
+msgstr "wetter.com'dan hava tahmini"
 
 #: workspace/plasma/generic/dataengines/weather/plasma-dataengine-weather.desktop:2
 msgctxt "Name"
@@ -12587,7 +12431,7 @@ msgstr "Uygulamaları Bitir"
 #: workspace/plasma/generic/runners/kill/plasma-runner-kill.desktop:59
 msgctxt "Comment"
 msgid "Stop applications that are currently running"
-msgstr ""
+msgstr "Şu anda çalışan uygulamaları durdur"
 
 #: workspace/plasma/generic/runners/locations/plasma-runner-locations.desktop:2
 msgctxt "Name"
@@ -12656,7 +12500,6 @@ msgid "Executes shell commands"
 msgstr "Kabuk komutlarını çalıştırır"
 
 #: workspace/plasma/generic/runners/solid/plasma-runner-solid.desktop:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Devices"
 msgctxt "Name|plasma runner"
@@ -12666,7 +12509,7 @@ msgstr "Aygıtlar"
 #: workspace/plasma/generic/runners/solid/plasma-runner-solid.desktop:57
 msgctxt "Comment"
 msgid "Manage removable devices"
-msgstr ""
+msgstr "Çıkarılabilir aygıtları yönet"
 
 #: workspace/plasma/generic/runners/webshortcuts/plasma-runner-webshortcuts.desktop:3
 msgctxt "Name|plasma runner"
@@ -12729,20 +12572,18 @@ msgid "Plasma data engine support for Python"
 msgstr "Python için Plasma veri motoru desteği"
 
 #: workspace/plasma/generic/scriptengines/python/plasma-scriptengine-runner-python.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Python runner"
 msgctxt "Name"
 msgid "Python Runner"
-msgstr "Python çalıştırıcı"
+msgstr "Python Çalıştırıcı"
 
 #: workspace/plasma/generic/scriptengines/python/plasma-scriptengine-runner-python.desktop:47
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Plasma runner support for Python"
 msgctxt "Comment"
 msgid "Plasma Runner support for Python"
-msgstr "Python için Plasma çalıştırıcı desteği"
+msgstr "Python için Plasma Çalıştırıcı desteği"
 
 #: workspace/plasma/generic/scriptengines/python/plasma-scriptengine-wallpaper-python.desktop:2
 msgctxt "Name"
@@ -12890,7 +12731,7 @@ msgstr "Ara ve Çalıştır İçericisi"
 #: workspace/plasma/netbook/containments/sal/plasma-containment-sal.desktop:52
 msgctxt "Comment"
 msgid "Special Containment with Launcher"
-msgstr ""
+msgstr "Uygulama Başlatıcısı olan Özel İçerici"
 
 #: workspace/plasma/netbook/containments/sal/plasma-sal-menu.desktop:5
 msgctxt "Name"
@@ -12955,12 +12796,11 @@ msgid "System preferences and setup programs"
 msgstr "Sistem tercihleri ve ayarlama uygulamaları"
 
 #: workspace/plasma/netbook/containments/sal/services/plasma-sal-utility.desktop:91
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Notifications and access for new devices"
 msgctxt "Comment"
 msgid "Small utilities and accessories"
-msgstr "Yeni donanım bildirimleri ve yeni donanımlara erişim"
+msgstr "Küçük ve faydalı uygulamalar"
 
 #: workspace/plasma/netbook/dataengines/searchlaunch/plasma-engine-searchlaunch.desktop:2
 msgctxt "Name"
@@ -12970,7 +12810,7 @@ msgstr "Ara ve Çalıştır Motoru"
 #: workspace/plasma/netbook/dataengines/searchlaunch/plasma-engine-searchlaunch.desktop:56
 msgctxt "Comment"
 msgid "Engine to handle queries to SAL containment"
-msgstr ""
+msgstr "SAL içericisine gelen sorgular için bir motor"
 
 #: workspace/plasma/netbook/desktoptheme/air-netbook/metadata.desktop:2
 msgctxt "Name"
@@ -13356,7 +13196,7 @@ msgstr "Küçük"
 #: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:2
 msgctxt "Name"
 msgid "Has State"
-msgstr ""
+msgstr "Duruma Sahip"
 
 #: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:127
 msgctxt "Name"
@@ -13716,12 +13556,11 @@ msgid "Curls on Green"
 msgstr "Yeşil Üzerinde Kıvrımlar"
 
 #: workspace/wallpapers/Ethais/metadata.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Details"
 msgctxt "Name"
 msgid "Ethais"
-msgstr "Ayrıntılar"
+msgstr "Ethais"
 
 #: workspace/wallpapers/Evening/metadata.desktop:2
 msgctxt "Name"
@@ -13746,7 +13585,7 @@ msgstr "Taze Sabah"
 #: workspace/wallpapers/Media_Life/metadata.desktop:2
 msgctxt "Name"
 msgid "Media Life"
-msgstr ""
+msgstr "Tatlı Rüya"
 
 #: workspace/wallpapers/Plasmalicious/metadata.desktop:2
 msgctxt "Name"
@@ -13754,12 +13593,11 @@ msgid "Plasmalicious"
 msgstr "Plasmalicious"
 
 #: workspace/wallpapers/Quadros/metadata.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Quartz"
 msgctxt "Name"
 msgid "Quadros"
-msgstr "Kuartz"
+msgstr "Quadros"
 
 #: workspace/wallpapers/Red_Leaf/metadata.desktop:2
 msgctxt "Name"
