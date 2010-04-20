@@ -26,7 +26,8 @@ locales = {
     }
 
 def getKDELocale():
-    return ctx.Pds.settings('Locale/Language', ctx.Pds.settings('Locale/Country', 'en_US'))
+    return ctx.Pds.settings('Locale/Language', \
+           ctx.Pds.settings('Locale/Country', 'en_US')).split(':')[0]
 
 def getAppLocale():
     cf = path.join(ctx.Pds.config_path, 'share/config/package-managerrc')
@@ -45,7 +46,8 @@ def getAppLocale():
 def setSystemLocale():
     kdeLocale = getKDELocale()
     appLocale = getAppLocale()
-    if appLocale:
+
+    if locales.has_key(appLocale):
         systemlocale = locales[appLocale]
     elif locales.has_key(kdeLocale):
         systemlocale = locales[kdeLocale]
@@ -53,3 +55,5 @@ def setSystemLocale():
         systemlocale = getenv('LANG')
 
     locale.setlocale(locale.LC_ALL, systemlocale)
+    ctx.Pds.updatei18n(systemlocale.split('.')[0])
+
