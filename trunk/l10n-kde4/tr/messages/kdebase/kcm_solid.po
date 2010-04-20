@@ -1,7 +1,7 @@
 # translation of kcm_solid.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kcmsolid.cpp:45
 msgid "Solid Configuration Module"
@@ -33,13 +33,13 @@ msgstr "Kevin Ottens"
 #. i18n: ectx: property (toolTip), widget (MyQListWidget, listView)
 #: rc.cpp:3 rc.cpp:35
 msgid "List of backends, in order of preference."
-msgstr ""
+msgstr "Tercih sırasına göre sıralanmış arka uç listesi."
 
 #. i18n: file: backendchooser.ui:56
 #. i18n: ectx: property (whatsThis), widget (MyQListWidget, listView)
 #: rc.cpp:6 rc.cpp:38
 msgid "A list of the backends for a Solid function, in order of preference."
-msgstr ""
+msgstr "Bir Solid işlevini gerçekleyen arka uçları içeren, tercihe göre sıralanmış liste."
 
 #. i18n: file: backendchooser.ui:80
 #. i18n: ectx: property (toolTip), widget (QToolButton, upButton)
@@ -51,7 +51,7 @@ msgstr "Seçilen arka ucu tercih et."
 #. i18n: ectx: property (whatsThis), widget (QToolButton, upButton)
 #: rc.cpp:12 rc.cpp:44
 msgid "Moves the selected backend up by one in the preference list."
-msgstr ""
+msgstr "Seçili arka ucu tercih listesinde bir sıra yukarıya kaydırır."
 
 #. i18n: file: backendchooser.ui:102
 #. i18n: ectx: property (toolTip), widget (QToolButton, downButton)
@@ -63,39 +63,31 @@ msgstr "Seçilen arka uç için seçenek yok."
 #. i18n: ectx: property (whatsThis), widget (QToolButton, downButton)
 #: rc.cpp:18 rc.cpp:50
 msgid "Moves the selected backend down by one in the preference list."
-msgstr ""
+msgstr "Seçili arka ucu tercih listesinde bir sıra aşağıya kaydırır."
 
 #. i18n: file: backendchooser.ui:154
 #. i18n: ectx: property (whatsThis), widget (QLabel, iconLabel)
 #: rc.cpp:21 rc.cpp:53
-#, fuzzy
-#| msgid "No preference for the selected backend."
 msgid "Icon for the currently selected backend"
-msgstr "Seçilen arka uç için seçenek yok."
+msgstr "Seçili arka ucun simgesi."
 
 #. i18n: file: backendchooser.ui:182
 #. i18n: ectx: property (whatsThis), widget (QLabel, nameLabel)
 #: rc.cpp:24 rc.cpp:56
-#, fuzzy
-#| msgid "Prefer the selected backend."
 msgid "Name of the currently selected backend"
-msgstr "Seçilen arka ucu tercih et."
+msgstr "Seçili arka ucun ismi."
 
 #. i18n: file: backendchooser.ui:213
 #. i18n: ectx: property (whatsThis), widget (QLabel, versionLabel)
 #: rc.cpp:27 rc.cpp:59
-#, fuzzy
-#| msgid "Prefer the selected backend."
 msgid "Version of the currently selected backend"
-msgstr "Seçilen arka ucu tercih et."
+msgstr "Seçili arka ucun sürümü."
 
 #. i18n: file: backendchooser.ui:247
 #. i18n: ectx: property (whatsThis), widget (QLabel, commentLabel)
 #: rc.cpp:30 rc.cpp:62
-#, fuzzy
-#| msgid "No preference for the selected backend."
 msgid "Comment on the currently selected backend"
-msgstr "Seçilen arka uç için seçenek yok."
+msgstr "Seçili arka uç hakkında açıklama."
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
