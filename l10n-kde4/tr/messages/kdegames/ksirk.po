@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ksirk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-09-27 22:24+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 14:46+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: Dialogs/newGameDialog.ui:175
@@ -24,11 +25,11 @@ msgstr "Bir hedefe ulaş"
 
 #: Dialogs/newGameSummaryWidget.cpp:58
 msgid "World conquest"
-msgstr ""
+msgstr "Dünyanın Fethi"
 
 #: Dialogs/newGameSummaryWidget.cpp:71 Dialogs/newGameSummaryWidget.cpp:73
 msgid "Yes"
-msgstr ""
+msgstr "Evet"
 
 #: Dialogs/newGameSummaryWidget.cpp:71 Dialogs/newGameSummaryWidget.cpp:73
 msgid "No"
@@ -51,6 +52,8 @@ msgid ""
 "Skins directory not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"Tema dizini bulunamadı - Kurulumunuzu doğrulayın\n"
+"Program devam edemiyor"
 
 #: Dialogs/newGameDialogImpl.cpp:137 newgamesetup.cpp:46
 msgid "Fatal Error!"
@@ -62,10 +65,12 @@ msgid ""
 "You are invading <font color=\"blue\">%1</font> with <font color=\"red\">%2</"
 "font>!"
 msgstr ""
+"<font color=\"red\">%2</font> ile <font color=\"blue\">%1</font> 'i istila "
+"ediyorsunuz!"
 
 #: Dialogs/InvasionSlider.cpp:140
 msgid "<br><i>Choose the number of invading armies.</i>"
-msgstr ""
+msgstr "<br><i>Saldıracak ordu sayısını seçin.</i>"
 
 #: Dialogs/InvasionSlider.cpp:144
 #, kde-format
@@ -73,14 +78,16 @@ msgid ""
 "You are moving armies from <font color=\"red\">%1</font> to <font color="
 "\"blue\">%2</font>!"
 msgstr ""
+"<font color=\"blue\">%2</font> 'den <font color=\"red\">%1</font> 'e "
+"ordularınızı taşıyorsunuz !"
 
 #: Dialogs/InvasionSlider.cpp:145
 msgid "<br><i>Choose the number of armies to move.</i>"
-msgstr ""
+msgstr "<br><i>Saldırı için kaç ordu kullanacağınızı seçin.</i>"
 
 #: Dialogs/InvasionSlider.cpp:172
 msgid "Invasion"
-msgstr ""
+msgstr "Saldırı"
 
 #: Dialogs/kplayersetupwidget.cpp:248
 msgid "Name already in use. Please choose another one."
@@ -93,7 +100,7 @@ msgstr "Boş isim. Lütfen başka bir isim seçin."
 #: Dialogs/kplayersetupwidget.cpp:267
 #, kde-format
 msgid "Player Number %1, please type in your name and choose your nation:"
-msgstr ""
+msgstr "%1 Numaralı Oyuncu, lütfen adınızı girip ulusunuzu seçin: "
 
 #: SaveLoad/ksirkgamexmlloader.cpp:47
 msgid "Skin file parsing error"
@@ -106,7 +113,7 @@ msgstr "KsirK - Hata"
 #: SaveLoad/ksirkgamexmlhandler.cpp:58
 #, kde-format
 msgid "Wrong save game format. Waited %1 and got %2!"
-msgstr ""
+msgstr "Yanlış kaydedilen dosya biçimi. %1 beklenirken %2 alındı!"
 
 #: SaveLoad/ksirkgamexmlhandler.cpp:59
 msgid "KsirK - Cannot load!"
@@ -133,7 +140,7 @@ msgstr "%1 adresini işlemek için bir hesap seçin"
 #: Jabber/jabberprotocol.cpp:390
 #, kde-format
 msgid "Do you want to add '%1' to your contact list?"
-msgstr "%1 kullanıcısını bağlantı listesine almak istiyor musunuz?"
+msgstr "'%1' kullanıcısını bağlantı listesine eklemek istiyor musunuz?"
 
 #: Jabber/jabberprotocol.cpp:391
 msgid "Add"
@@ -146,7 +153,7 @@ msgstr "Ekleme"
 #: Jabber/jabberprotocol.cpp:407
 #, kde-format
 msgid "Do you want to remove '%1' from your contact list?"
-msgstr "'%1' kişisini kişi listenizden çıkartmak istiyor musunuz?"
+msgstr "'%1' kişisini bağlantı listenizden çıkartmak istiyor musunuz?"
 
 #: Jabber/jabberprotocol.cpp:408
 msgid "Remove"
@@ -193,7 +200,7 @@ msgstr "Takma adı değiştir - Jabber Eklentisi"
 #: Jabber/jabbergroupcontact.cpp:367
 #, kde-format
 msgid "Please enter the new nickname you want to have in the room <i>%1</i>"
-msgstr "Lütfen <i>%1</i> odasında kullanılacak yeni bir takma ad girin"
+msgstr "Lütfen <i>%1</i> odasında kullanmak istediğiniz yeni takma adı girin"
 
 #: Jabber/jabbercontact.cpp:137
 msgid "Authorization"
@@ -201,11 +208,11 @@ msgstr "Yetkilendirme"
 
 #: Jabber/jabbercontact.cpp:143
 msgid "(Re)send Authorization To"
-msgstr "Buna Yeniden Yetki Gönder"
+msgstr "Buna (Yeniden) Yetki Gönder"
 
 #: Jabber/jabbercontact.cpp:150
 msgid "(Re)request Authorization From"
-msgstr "Bundan Yeniden Yetki İste"
+msgstr "Bundan (Yeniden) Yetki İste"
 
 #: Jabber/jabbercontact.cpp:157
 msgid "Remove Authorization From"
@@ -217,7 +224,7 @@ msgstr "Durumu Ayarla"
 
 #: Jabber/jabbercontact.cpp:171
 msgid "Online"
-msgstr "Çevrimiçi"
+msgstr "Çevrim içi"
 
 #: Jabber/jabbercontact.cpp:172
 msgid "Free to Chat"
@@ -245,7 +252,7 @@ msgstr "Kaynak Seç"
 
 #: Jabber/jabbercontact.cpp:197
 msgid "Automatic (best/default resource)"
-msgstr "Otomatik (en iyi/öntanımlı kaynak)"
+msgstr "Otomatik (en iyi/ön tanımlı kaynak)"
 
 #: Jabber/jabbercontact.cpp:250
 msgid "Voice call"
@@ -265,7 +272,7 @@ msgid ""
 msgstr ""
 "<qt><i>%1</i> sizi konferansa davet ediyor <b>%2</b><br />%3<br / >Kabul "
 "edip katılmak istiyorsanız, sadece <b>takma adınızı girin</b> ve Tamam'a "
-"tıklayın.<br />Kabul etmek istemiyorsanız, İptal'e basın</qt>"
+"basın.<br />Kabul etmek istemiyorsanız, İptal'e basın</qt>"
 
 #: Jabber/jabbercontact.cpp:290
 msgid "Invited to a conference - Jabber Plugin"
@@ -310,7 +317,7 @@ msgid ""
 "opened chat windows."
 msgstr ""
 "Daha önce bağlantı %1 için bir kaynak seçtiniz, ama bu bağlantı için hala "
-"açık sohbet pencereleriniz var. Önce seçilmiş kaynak sadece yeni açılan "
+"açık sohbet pencereleriniz var. Önceden seçilmiş kaynak sadece yeni açılan "
 "sohbet pencerelerine uygulanacaktır."
 
 #: Jabber/jabbercontact.cpp:1114
@@ -352,7 +359,7 @@ msgstr "Sertifika sunulmadı."
 
 #: Jabber/jabberaccount.cpp:431
 msgid "The Certificate Authority rejected the certificate."
-msgstr "Sertifika Yetkisi sertifikayı reddetti."
+msgstr "Sertifika Yetkilisi sertifikayı reddetti."
 
 #: Jabber/jabberaccount.cpp:435
 msgid "The certificate is not trusted."
@@ -364,7 +371,7 @@ msgstr "İmza geçersiz."
 
 #: Jabber/jabberaccount.cpp:443
 msgid "The Certificate Authority is invalid."
-msgstr "Sertifika Yöneticisi geçersiz."
+msgstr "Sertifika Yetkilisi geçersiz."
 
 #: Jabber/jabberaccount.cpp:447
 msgid "Invalid certificate purpose."
@@ -388,7 +395,7 @@ msgstr "Sertifikanın tarihi geçmiş."
 
 #: Jabber/jabberaccount.cpp:467
 msgid "The Certificate Authority has expired."
-msgstr "Sertifika Yetkisi zaman aşımına uğramış."
+msgstr "Sertifika Yetkilisi zaman aşımına uğramış."
 
 #: Jabber/jabberaccount.cpp:471
 msgid "Validity is unknown."
@@ -410,7 +417,7 @@ msgid ""
 "<qt><p>The certificate of server %1 could not be validated for account %2: %"
 "3</p><p>Do you want to continue?</p></qt>"
 msgstr ""
-"<qt><p>%1 sunucusunun sertifikası  hesap%2 için onaylanamadı: %3</p><p>Devam "
+"<qt><p>%1 sunucusunun sertifikası hesap %2 için onaylanamadı: %3</p><p>Devam "
 "etmek istiyor musunuz?</p></qt>"
 
 #: Jabber/jabberaccount.cpp:500
@@ -460,11 +467,11 @@ msgstr "Bozulmuş paket alındı."
 
 #: Jabber/jabberaccount.cpp:770
 msgid "Policy violation in the protocol stream."
-msgstr "Protokol akımında kural ihlali."
+msgstr "İletişim kurallarında kural ihlali."
 
 #: Jabber/jabberaccount.cpp:774
 msgid "Resource constraint."
-msgstr "Baskı Kaynağı."
+msgstr "Kaynak sıkıntısı."
 
 #: Jabber/jabberaccount.cpp:778
 msgid "System shutdown."
@@ -489,11 +496,11 @@ msgstr "Bu adres kullanımda."
 
 #: Jabber/jabberaccount.cpp:799
 msgid "Cannot recreate the socket."
-msgstr "Soket oluşturulamadı."
+msgstr "Soket yeniden oluşturulamadı."
 
 #: Jabber/jabberaccount.cpp:802
 msgid "Cannot bind the socket again."
-msgstr "Soket ile iletişim kurulamadı."
+msgstr "Soket ile yeniden iletişim kurulamadı."
 
 #: Jabber/jabberaccount.cpp:805
 msgid "Socket is already connected."
@@ -516,6 +523,9 @@ msgid ""
 "The socket operation would block. You should not see this error: please use "
 "\"Report Bug\" from the Help menu."
 msgstr ""
+"Soket işlemi engelleyebilir. Bu hatayı görmemelisiniz. Lütfen Yardım "
+"menüsünden "
+"\"Hata Gir\"i kullanınız."
 
 #: Jabber/jabberaccount.cpp:820
 msgid "Connection refused."
@@ -539,7 +549,7 @@ msgstr "İşlem desteklenmiyor."
 
 #: Jabber/jabberaccount.cpp:835
 msgid "Socket timed out."
-msgstr "Sokette zaman aşımı oluştu."
+msgstr "Soket zaman aşımına uğradı."
 
 #: Jabber/jabberaccount.cpp:843
 #, kde-format
@@ -773,6 +783,8 @@ msgid ""
 "Pool filename not found\n"
 "Program cannot continue"
 msgstr ""
+"Havuz dosya ismi bulunamadı\n"
+"Program devam edemiyor"
 
 #: GameLogic/onu.cpp:131 GameLogic/onu.cpp:148 Sprites/animsprite.cpp:511
 #: Sprites/animsprite.cpp:526 kgamewin.cpp:156 kgamewin.cpp:382
@@ -787,6 +799,8 @@ msgid ""
 "Map mask image not found\n"
 "Program cannot continue"
 msgstr ""
+"Harita maske resmi bulunamadı\n"
+"Program devam edemiyor"
 
 #: GameLogic/KsirkChatModel.cpp:72 kgamewin.cpp:189
 msgid "No message..."
@@ -799,7 +813,7 @@ msgstr "<b>%1:</b> %2"
 
 #: GameLogic/goal.cpp:158
 msgid "You must conquer the World!"
-msgstr ""
+msgstr "Dünyayı ele geçirmelisin!"
 
 #: GameLogic/goal.cpp:197
 msgid "Error: no player to destroy"
@@ -813,13 +827,13 @@ msgstr "<br>%1 hâlâ yaşıyor..."
 #: GameLogic/goal.cpp:237
 #, kde-format
 msgid "<br>You now have to conquer %1"
-msgstr ""
+msgstr "<br>Şimdi %1'i ele geçirmelisin"
 
 #: GameLogic/goal.cpp:244
 #, kde-format
 msgid "<br>%2, you still have 1 country to conquer..."
 msgid_plural "<br>%2, you still have %1 countries to conquer..."
-msgstr[0] ""
+msgstr[0] "<br>%2, hala ele geçirilecek %1 ülke var..."
 
 #: GameLogic/goal.cpp:256
 #, kde-format
@@ -830,17 +844,19 @@ msgid_plural ""
 "<br>%2, you have enough countries but you still have to put more than %1 "
 "armies on %3 of them..."
 msgstr[0] ""
+"<br>%2, yeterli sayıda ülken var, ama hala %3 tanesinin üzerine %1'den fazla "
+"sayıda ordu koymak zorundasın..."
 
 #: GameLogic/goal.cpp:261
 #, kde-format
 msgid "<br>%1, you still have to conquer "
-msgstr ""
+msgstr "<br>%1, hala ele geçirmen gereken "
 
 #: GameLogic/goal.cpp:267
 #, kde-format
 msgid "1 country in %2"
 msgid_plural "%1 countries in %2"
-msgstr[0] "%2 içerisinde %1 ülke"
+msgstr[0] "%2 içerisinde %1 ülke var"
 
 #: GameLogic/goal.cpp:277
 msgid " and "
@@ -868,21 +884,22 @@ msgstr "KsirK - Ağ Yapılandırması"
 
 #: GameLogic/gameautomaton.cpp:303
 msgid "Please type in the port number on which to offer connections:"
-msgstr ""
+msgstr "Lütfen üzerinden bağlantı önerilebilecek port numaralarını girin:"
 
 #: GameLogic/gameautomaton.cpp:1191 GameLogic/gameautomaton.cpp:1219
 msgid "Do you really want to end your current game and join another?"
 msgstr ""
+"Gerçekten mevcut oyunu sonlandırıp, yeni bir oyuna başlamak istiyor musunuz?"
 
 #: GameLogic/gameautomaton.cpp:1191 GameLogic/gameautomaton.cpp:1219
 #: kgamewin.cpp:2626
 msgid "New game confirmation"
-msgstr ""
+msgstr "Yeni oyun teyidi"
 
 #: GameLogic/gameautomaton.cpp:1399
 #, kde-format
 msgid "%1 (%2) joined game ; waiting for %3 players to connect"
-msgstr ""
+msgstr "%1 (%2) oyuna katıldı; bağlanmak için %3 oyuncu bekleniyor"
 
 #: GameLogic/gameautomaton.cpp:1505
 msgid "Please choose another name"
@@ -900,7 +917,7 @@ msgstr "Oyuncu numarası %1, adınız nedir?"
 #: GameLogic/gameautomaton.cpp:1515
 #, kde-format
 msgid "Error - Player %1, you have to choose a name."
-msgstr ""
+msgstr "Hata, Oyuncu %1, bir isim seçmelisiniz."
 
 #: GameLogic/gameautomaton.cpp:1516
 msgid "Error"
@@ -914,7 +931,7 @@ msgstr "Oyuncu%1"
 
 #: GameLogic/gameautomaton.cpp:1568
 msgid "Please choose another nation"
-msgstr "Lütfen başka bir ulus seçin"
+msgstr "Lütfen başka bir millet seçin"
 
 #: GameLogic/gameautomaton.cpp:1568
 msgid "KsirK - Nation already used!"
@@ -930,7 +947,7 @@ msgstr ""
 
 #: GameLogic/gameautomaton.cpp:1661
 msgid "Starting a new game or exit."
-msgstr ""
+msgstr "Yeni bir oyun başlatılıyor ya da çıkış."
 
 #. i18n: file: Dialogs/restartOrExitDialog.ui:27
 #. i18n: ectx: property (text), widget (QPushButton, newGameButton)
@@ -954,6 +971,10 @@ msgid ""
 "For the moment, you can only save the game and start a new one or quit.\n"
 "This will be improved in a future version."
 msgstr ""
+"İstemci ile bağlantı kesildi.\n"
+"An itibariyle, sadece oyunu kaydedebilir ve yeni bir oyun başlatabilir ya da "
+"çıkabilirsiniz\n"
+"Gelecekteki sürümlerde bu durum düzeltilecektir."
 
 #: GameLogic/gameautomaton.cpp:1687
 msgid "KsirK - Lost connection to client!"
@@ -967,13 +988,14 @@ msgstr "Oyunu kaydetmek istiyor muzunuz?"
 #: kgamewin.cpp:2115 kgamewin.cpp:2212 kgamewin.cpp:2249
 #, kde-format
 msgid "%1: %2 armies to place"
-msgstr ""
+msgstr "%1: yerleştirilecek %2 ordu"
 
 #: GameLogic/gameautomaton.cpp:1856 GameLogic/gameautomaton.cpp:2268
 msgid ""
 "Now, place your armies in your countries<br>by clicking in the target "
 "countries."
 msgstr ""
+"Şimdi, hedef ülkelere tıklayarak<br> ülkelerinize ordularınızı yerleştirin."
 
 #: GameLogic/gameautomaton.cpp:1932
 #, kde-format
@@ -981,6 +1003,9 @@ msgid ""
 "%1, your goal will be displayed. Please<br>make sure that no other player "
 "can see it!"
 msgstr ""
+"%1, hedefin görüntülenecek. Lütfen<br> başka bir oyuncunun bunu "
+"göremediğinden "
+"emin olun!"
 
 #: GameLogic/gameautomaton.cpp:1934
 msgid "KsirK - Displaying Goal"
@@ -989,16 +1014,17 @@ msgstr "KsirK - Hedef Gösteriliyor"
 #: GameLogic/gameautomaton.cpp:2120
 #, kde-format
 msgid "%1 chooses its defense"
-msgstr ""
+msgstr "%1 savunmasını seçiyor"
 
 #: GameLogic/gameautomaton.cpp:2278
 #, kde-format
 msgid "%1 choose to end recycling; there are now %2 players who want so"
 msgstr ""
+"%1 geri dönüşümü bitirmeyi seçti; şu aynısını yapmak isteyen %2 oyuncu var"
 
 #: GameLogic/gameautomaton.cpp:2368
 msgid "Problem : no one destroyed"
-msgstr "Sorun: hiçkimse yok edilmedi"
+msgstr "Sorun: hiç kimse yok edilmedi"
 
 #: GameLogic/gameautomaton.cpp:2368
 msgid "Ksirk - Error!"
@@ -1022,10 +1048,12 @@ msgid ""
 "%1, you have not played anything this turn.\n"
 "Do you really want to lose your turn?"
 msgstr ""
+"%1, bu oyun sırasında hiçbir şey oynamadınız.\n"
+"Sıranızı yitirmek istiyor musunuz?"
 
 #: GameLogic/gameautomaton.cpp:2624
 msgid "Really Next Player?"
-msgstr ""
+msgstr "Gerçekten Sonraki Oyuncu mu?"
 
 #: GameLogic/aiplayer.cpp:503
 #, kde-format
@@ -1036,6 +1064,8 @@ msgid_plural ""
 "Error - No receiving country selected while computer player %2 had still %1 "
 "armies to place. This is bug probably #2232 at www.gna.org."
 msgstr[0] ""
+"Hata - Oyuncu %2 hala yerleştirilecek %1 orduya sahipken hiçbir alıcı ülke "
+"seçilmedi. Muhtemelen bu durum www.gna.org adresindeki hata #2232."
 
 #: GameLogic/aiplayer.cpp:505 Sprites/skinSpritesData.cpp:89
 #: Sprites/skinSpritesData.cpp:105
@@ -1044,19 +1074,19 @@ msgstr "Sonlandırıcı Hata"
 
 #: Sprites/skinSpritesData.cpp:88
 msgid "Error - Unknown skin int data: "
-msgstr ""
+msgstr "Hata - Bilinmeyen tema int verisi:"
 
 #: Sprites/skinSpritesData.cpp:104
 msgid "Error - Unknown skin string data: "
-msgstr ""
+msgstr "Hata - Bilinmeyen tema dizge verisi:"
 
 #: Sprites/animsprite.cpp:511
 msgid "Cannot find Max X for sprite: no background!"
-msgstr ""
+msgstr "Hareketli grafik için Maximum X bulunamadı: arka plan yok!"
 
 #: Sprites/animsprite.cpp:526
 msgid "Cannot find Max Y for sprite: no background!"
-msgstr ""
+msgstr "Hareketli grafik için Maximum Y bulunamadı: arka plan yok!"
 
 #: decoratedgameframe.cpp:99 kgamewin.cpp:446
 msgid "Next Player"
@@ -1110,12 +1140,12 @@ msgstr "Arenayı Pasifleştir"
 
 #: kgamewin.cpp:156 kgamewin.cpp:729
 msgid "Cannot load icon<br>Program cannot continue"
-msgstr ""
+msgstr "Simge yüklenemedi<br>Program devam edemiyor"
 
 #: kgamewin.cpp:382 kgamewin.cpp:399 kgamewin.cpp:416
 #, kde-format
 msgid "Cannot load button image %1<br>Program cannot continue"
-msgstr ""
+msgstr "Düğme şekli %1 yüklenemedi<br> Program devam edemiyor"
 
 #: kgamewin.cpp:385
 msgid "Play over Jabber"
@@ -1123,7 +1153,7 @@ msgstr "Jabber üzerinden oyna"
 
 #: kgamewin.cpp:386
 msgid "Play KsirK over the Jabber Network"
-msgstr ""
+msgstr "KsirK'i Jabber Ağı üzerinden Oyna"
 
 #: kgamewin.cpp:387
 msgid "Jabber"
@@ -1134,12 +1164,15 @@ msgid ""
 "Allow to connect to a KsirK Jabber Multi User Gaming Room to create new "
 "games or to join present games"
 msgstr ""
+"Yeni oyunlar yaratmak ya da mevcut oyunlara katılmak için KsirK Jabber Çoklu "
+"Kullanıcı "
+"Oyun Odası'na bağlanmaya izin ver"
 
 #. i18n: file: mainMenu.ui:111
 #. i18n: ectx: property (text), widget (KPushButton, pbNewSocketGame)
 #: kgamewin.cpp:402 rc.cpp:60 rc.cpp:478
 msgid "New Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Yeni Standart TCP/IP Ağ Oyunu"
 
 #: kgamewin.cpp:403
 msgid "New TCP/IP"
@@ -1147,27 +1180,27 @@ msgstr "Yeni TCP/IP"
 
 #: kgamewin.cpp:405
 msgid "Create a new standard TCP/IP network game"
-msgstr ""
+msgstr "Yeni bir standart TCP/IP ağ oyunu yarat"
 
 #: kgamewin.cpp:420
 msgid "Join a Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Bir Standart TCP/IP ağ oyununa katıl"
 
 #: kgamewin.cpp:421
 msgid "Join TCP/IP"
-msgstr ""
+msgstr "TCP/IP'ye katıl"
 
 #: kgamewin.cpp:423
 msgid "Join a standard TCP/IP network game"
-msgstr ""
+msgstr "Bir standart TCP/IP ağ oyununa katıl"
 
 #: kgamewin.cpp:429
 msgid "Display the Current Player's Goal"
-msgstr ""
+msgstr "Şimdiki Oyuncu'nun Hedefini Göster"
 
 #: kgamewin.cpp:432
 msgid "Display the current player's goal"
-msgstr ""
+msgstr "Şimdiki oyuncu'nun hedefini göster"
 
 #: kgamewin.cpp:438
 msgid "Contextual Help"
@@ -1175,46 +1208,48 @@ msgstr "Sağ Tıklama Yardımı"
 
 #: kgamewin.cpp:448
 msgid "Lets the next player play"
-msgstr ""
+msgstr "Sonraki oyuncusunun oynamasına izin ver"
 
 #: kgamewin.cpp:452
 msgid "Finish moves"
-msgstr ""
+msgstr "Hamleleri bitir"
 
 #: kgamewin.cpp:454
 msgid "Finish moving the current sprites"
-msgstr ""
+msgstr "Mevcut hareketli görüntülerin hamlelerini bitir"
 
 #: kgamewin.cpp:568
 msgid ""
 "World definition file not found - Verify your installation<br>Program cannot "
 "continue"
 msgstr ""
+"Dünya tanımlama dosyası bulunamadı - Kurulumunuzu doğrulayın<br> "
+"Program devam edemiyor"
 
 #: kgamewin.cpp:791
 #, kde-format
 msgid "<font color=\"red\">%1 conquered %2 from %3</font>"
-msgstr ""
+msgstr "<font color=\"red\">%1, %3 ögesinden %2 ögesini fethetti</font>"
 
 #: kgamewin.cpp:815
 #, kde-format
 msgid "%1, you are defeated! Bye, bye..."
-msgstr ""
+msgstr "%1, yenildin! Güle güle..."
 
 #: kgamewin.cpp:884
 #, kde-format
 msgid "%1: it is up to you again"
-msgstr ""
+msgstr "%1: sıra tekrar sende"
 
 #: kgamewin.cpp:896
 #, kde-format
 msgid "%1 won!"
-msgstr ""
+msgstr "%1 kazandı!"
 
 #: kgamewin.cpp:899
 #, kde-format
 msgid "<big><b>%1</b>, you won!</big>"
-msgstr ""
+msgstr "<big><b>%1</b>, kazandın!</big>"
 
 #: kgamewin.cpp:903
 #, kde-format
@@ -1222,14 +1257,16 @@ msgid ""
 "<br>Winner's goal was stated like this:<br><i>%1</i><br><br>Do you want to "
 "play again?"
 msgstr ""
+"<br>Kazananın hedefi şu şekilde açıklanmıştı:<br><i>%1</i><br><br>Tekrar "
+"oynamak istiyor musun?"
 
 #: kgamewin.cpp:909
 msgid "<br>You conquered all the world!"
-msgstr ""
+msgstr "<br>Bütün dünyayı fethettin!"
 
 #: kgamewin.cpp:913
 msgid "<br>He conquered all the world!"
-msgstr ""
+msgstr "<br>Bütün dünyayı fethetti!"
 
 #: kgamewin.cpp:1036
 msgid "Do you want to quit the game?"
@@ -1237,7 +1274,7 @@ msgstr "Oyundan çıkmak istiyor musunuz?"
 
 #: kgamewin.cpp:1046
 msgid "Before you quit, do you want to save your game?"
-msgstr ""
+msgstr "Çıkmadan önce oyunu kaydetmek istiyor musunuz?"
 
 #: kgamewin.cpp:1080
 msgid "KsirK - Load Game"
@@ -1246,7 +1283,7 @@ msgstr "Ksirk - Oyunu Yükle"
 #: kgamewin.cpp:1118
 #, kde-format
 msgid "Waiting for the connection of %1 network players."
-msgstr ""
+msgstr "%1 ağ oyuncusunun bağlanması bekleniyor."
 
 #: kgamewin.cpp:1197
 #, kde-format
@@ -1257,6 +1294,9 @@ msgid_plural ""
 "<font color=\"red\">%2</font> attacks you from <font color=\"red\">%3</font> "
 "with %1 armies!<br> How do you want to defend <font color=\"blue\">%4</font>?"
 msgstr[0] ""
+"<font color=\"red\">%2</font> <font color=\"red\">%3</font> ögesinden size "
+"%1 orduyla saldırıyor!<br> Nasıl savunmak istiyorsunuz <font color=\"blue\">"
+"%4</font> ögesini?"
 
 #: kgamewin.cpp:1227
 msgid "Defend 1"
@@ -1268,12 +1308,12 @@ msgstr "Savunma 2"
 
 #: kgamewin.cpp:1229
 msgid "Defend-Auto"
-msgstr ""
+msgstr "Otomatik Savunma"
 
 #: kgamewin.cpp:1343
 #, kde-format
 msgid "Waiting for %1 players to connect"
-msgstr ""
+msgstr "%1 oyuncunun bağlanması bekleniyor"
 
 #: kgamewin.cpp:1733 kgamewin.cpp:1773
 msgid "There is no country here!"
@@ -1282,32 +1322,32 @@ msgstr "Burada bir ülke yok!"
 #: kgamewin.cpp:1737 kgamewin.cpp:1778
 #, kde-format
 msgid "You are not the owner of the first country: %1!"
-msgstr ""
+msgstr "İlk ülkenin sahibi siz değilsiniz: %1!"
 
 #: kgamewin.cpp:1741
 #, kde-format
 msgid "You are not the owner of the second country: %1!"
-msgstr ""
+msgstr "İkinci ülkenin sahibi siz değilsiniz: %1!"
 
 #: kgamewin.cpp:1745 kgamewin.cpp:1789
 #, kde-format
 msgid "You are trying to move armies from %1 to itself!"
-msgstr ""
+msgstr "%1 ögesinden orduları kendisine taşımaya çalışıyorsunuz!"
 
 #: kgamewin.cpp:1750 kgamewin.cpp:1795
 #, kde-format
 msgid "%1 is not a neighbour of %2!"
-msgstr ""
+msgstr "%1, %2 ögesinin komşusu değil!"
 
 #: kgamewin.cpp:1756
 #, kde-format
 msgid "Moving armies from %1 to %2."
-msgstr ""
+msgstr "%1 ögesinden %2 ögesine orduları taşıyın."
 
 #: kgamewin.cpp:1784
 #, kde-format
 msgid "You are the owner of the second country: %1!"
-msgstr ""
+msgstr "İkinci ülkenin sahibisiniz: %1!"
 
 #: kgamewin.cpp:1802
 msgid "Ready to fight!"
@@ -1330,17 +1370,19 @@ msgstr "<font color=\"orange\">%2 içerisinde sadece %1 ordu var!</font>"
 #: kgamewin.cpp:2051
 #, kde-format
 msgid "%1, you defend with the only army you have in %2."
-msgstr ""
+msgstr "%1, %2 ögesindeki tek ordunuzla savunma yapıyorsunuz."
 
 #: kgamewin.cpp:2277
 msgid "Exchange armies again or continue?"
-msgstr ""
+msgstr "Orduları takas et ya da devam et?"
 
 #: kgamewin.cpp:2302
 msgid ""
 "You must distribute\n"
 "all your armies"
 msgstr ""
+"Ordularınızın\n"
+"hepsini dağıtmalısınız"
 
 #: kgamewin.cpp:2302 main.cpp:32 main.cpp:39
 msgid "KsirK"
@@ -1348,29 +1390,34 @@ msgstr "KsirK"
 
 #: kgamewin.cpp:2443
 msgid "Battle ongoing."
-msgstr ""
+msgstr "Savaş devam ediyor."
 
 #: kgamewin.cpp:2563 kgamewin.cpp:2574 kgamewin.cpp:2597
 #, kde-format
 msgid "%1, it is up to you."
-msgstr ""
+msgstr "%1, size kalmış."
 
 #: kgamewin.cpp:2626
 msgid "Do you really want to end your current game and start a new one?"
 msgstr ""
+"Gerçekten şimdiki oyunu bitirip yeni bir oyun başlatmak istiyor musunuz?"
 
 #: kgamewin.cpp:2880
 msgid "<b>KsirK quick Introduction</b>"
-msgstr ""
+msgstr "<b>KsirK Hızlı Tanıtım</b>"
 
 #: kgamewin.cpp:2884
 msgid ""
 "Attacks and moves are issued through drag & drop between neighbour countries."
 msgstr ""
+"Saldırılar ve taşımalar komşu ülkeler arasında sürükle & bırak ile "
+"sağlanmaktadır."
 
 #: kgamewin.cpp:2888
 msgid "Start a new game or join a network game with the menu or the toolbar..."
 msgstr ""
+"Menü ya da araç çubuğunu kullanarak yeni bir oyun başlat ya da bir ağ "
+"oyununa katılın..."
 
 #: kgamewin.cpp:2892
 msgid ""
@@ -1378,6 +1425,11 @@ msgid ""
 "buttons when hovering above them. You can disable bubble help in the options "
 "window."
 msgstr ""
+"sonra sistemin, düğmeler üzerinde bulunan iletilerle ya da ipucu "
+"balonlarıyla "
+"sizi yönlendirmesini sağlayın. Seçenekler penceresi üzerindeki yardım "
+"baloncuklarını "
+"isterseniz kapatabilirsiniz."
 
 #: kgamewin.cpp:2899
 msgid "Don't show messages anymore"
@@ -1392,6 +1444,8 @@ msgid ""
 "For help and user manual, please see\n"
 "the KsirK web site."
 msgstr ""
+"Yardım ve kullanım kılavuzu için, lütfen\n"
+"KsirK web sitesini ziyaret ediniz."
 
 #: main.cpp:44
 msgid "Gael de Chalendar aka Kleag"
@@ -1411,7 +1465,7 @@ msgstr "Michal Golunski (Polish translation)"
 
 #: main.cpp:48
 msgid "French students of the 'IUP ISI 2007-2008':"
-msgstr ""
+msgstr "'IUP ISI 2007-2008' bünyesindeki Fransız öğrenciler:"
 
 #: main.cpp:50
 msgid ""
@@ -1437,7 +1491,7 @@ msgstr[0] "%2, %3 ögesine ait. %1 ordu."
 
 #: kgamewinslots.cpp:456
 msgid "Cannot save when waiting for a defense."
-msgstr ""
+msgstr "Savunma için beklerken oyun kaydedilemez."
 
 #: kgamewinslots.cpp:463
 msgid "KsirK - Save Game"
@@ -1467,13 +1521,15 @@ msgstr "Oyun %1 konumuna kaydedildi"
 
 #: kgamewinslots.cpp:492
 msgid "Only game master can save the game in network playing."
-msgstr ""
+msgstr "Sadece oyun sahibi ağ oyunlarında oyunu kaydedebilir."
 
 #: kgamewinslots.cpp:816
 msgid ""
 "Attack by drag & drop between countries<br>Move armies the same way (last "
 "action of a turn)."
 msgstr ""
+"Sürükle & bırakla ülkelere saldırın<br>Aynı şekilde orduları hareket ettirin "
+"(sıranın son hareketinde)."
 
 #: ksirkConfigDialog.cpp:63
 msgid "Preferences"
@@ -1510,13 +1566,13 @@ msgstr "<i>Savaş devam ediyor...</i>"
 #, kde-format
 msgid "<font color=\"red\">Attack</font> with 1 army.<br>"
 msgid_plural "<font color=\"red\">Attack</font> with %1 armies.<br>"
-msgstr[0] ""
+msgstr[0] "%1 orduyla <font color=\"red\">saldır</font><br>"
 
 #: krightdialog.cpp:238
 #, kde-format
 msgid "<font color=\"blue\">Defend</font> with 1 army.<br>"
 msgid_plural "<font color=\"blue\">Defend</font> with %1 armies.<br>"
-msgstr[0] "<font color=\"blue\">Savunma yap</font> %1 ordu ile.<br>"
+msgstr[0] "%1 orduyla <font color=\"blue\">savunma yap</font><br>"
 
 #: krightdialog.cpp:270
 msgid "Stop Auto-Attack"
@@ -1532,7 +1588,7 @@ msgstr "Geçerli"
 
 #: krightdialog.cpp:304
 msgid "Recycle"
-msgstr ""
+msgstr "Yeniden çevrime sok"
 
 #: krightdialog.cpp:305
 msgid "Done"
@@ -1542,17 +1598,17 @@ msgstr "Tamamlandı"
 #, kde-format
 msgid "%1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
+msgstr[0] "Yerleştirilecek %1 ordu"
 
 #: krightdialog.cpp:380
 msgid "<u><b>Change some<br>placements?</b></u> "
-msgstr ""
+msgstr "<u>Bazı yerleştirmeleri <b>değiştir?<br></b></u> "
 
 #: krightdialog.cpp:395
 #, kde-format
 msgid "1 army to place"
 msgid_plural "%1 armies to place"
-msgstr[0] ""
+msgstr[0] "Yerleştirilecek %1 ordu"
 
 #: krightdialog.cpp:397
 #, kde-format
@@ -1572,31 +1628,37 @@ msgstr "<font color=\"blue\">kayıp ordular: %1</font>"
 #: gestionSprites.cpp:76 gestionSprites.cpp:110 gestionSprites.cpp:161
 #, kde-format
 msgid "Cannot move %1 armies from %2 to %3"
-msgstr ""
+msgstr "%2 ögesinden %3 ögesine %1 ordu taşınamıyor"
 
 #: gestionSprites.cpp:83
 #, kde-format
 msgid "Moving %1 armies from %2 to %3"
-msgstr ""
+msgstr "%2 ögesinden %3 ögesine %1 ordu taşınıyor"
 
 #: gestionSprites.cpp:696 gestionSprites.cpp:811 gestionSprites.cpp:1412
+#, fuzzy
 #: gestionSprites.cpp:1489
 msgid ""
 "Sound roule not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Ses roule bulunamadı - Kurulumunuzu doğrulayın<br> Program devam edemiyor"
 
 #: gestionSprites.cpp:856
+#, fuzzy
 msgid ""
 "Sound cannon not found - Verify your installation<br>Program cannot continue"
 msgstr ""
+"Ses cannon bulunamadı - Kurulumunuzu doğrulayın<br> Program devam edemiyor"
 
 #: gestionSprites.cpp:931 gestionSprites.cpp:951 gestionSprites.cpp:1052
+#, fuzzy
 #: gestionSprites.cpp:1089 gestionSprites.cpp:1124 gestionSprites.cpp:1178
 #: gestionSprites.cpp:1215 gestionSprites.cpp:1249
 msgid ""
 "Sound crash not found - Verify your installation\n"
 "Program cannot continue"
 msgstr ""
+"Ses crash bulunamadı - Kurulumunuzu doğrulayın<br> Program devam edemiyor"
 
 #: gestionSprites.cpp:931 gestionSprites.cpp:951 gestionSprites.cpp:1052
 #: gestionSprites.cpp:1089 gestionSprites.cpp:1124 gestionSprites.cpp:1178
@@ -1616,25 +1678,25 @@ msgstr "Hata: kim 0, 1 ya da 2 olacak."
 #. i18n: ectx: label, entry (spritesSpeed), group (General)
 #: rc.cpp:3
 msgid "The sprites speed: slow, normal, quick, immediate"
-msgstr ""
+msgstr "Hareketli nesnelerin hızı: yavaş, normal, hızlı, çok hızlı"
 
 #. i18n: file: ksirksettings.kcfg:11
 #. i18n: ectx: label, entry (soundEnabled), group (General)
 #: rc.cpp:6
 msgid "If true, sounds are played; they are not otherwise."
-msgstr ""
+msgstr "Eğer doğruysa, sesler çalınmıştı; değilse çalınmamıştır."
 
 #. i18n: file: ksirksettings.kcfg:15
 #. i18n: ectx: label, entry (helpEnabled), group (General)
 #: rc.cpp:9
 msgid "If true, help is displayed; they are not otherwise."
-msgstr ""
+msgstr "Eğer doğruysa, yardım gösterilmiştir; değilse gösterilmemiştir."
 
 #. i18n: file: ksirksettings.kcfg:19
 #. i18n: ectx: label, entry (showArmiesNumbers), group (General)
 #: rc.cpp:12
 msgid "If true, the number of armies is displayed on each country."
-msgstr ""
+msgstr "Eğer doğruysa, her ülke üzerinde ordu sayısı gösterilmiştir."
 
 #. i18n: file: ksirksettings.kcfg:23
 #. i18n: ectx: label, entry (Theme), group (General)
@@ -1646,31 +1708,31 @@ msgstr "Kullanılacak görsel tema."
 #. i18n: ectx: label, entry (jabberId), group (General)
 #: rc.cpp:18
 msgid "The last used Jabber Id."
-msgstr ""
+msgstr "Son kullanılan Jabber Id'si."
 
 #. i18n: file: ksirksettings.kcfg:29
 #. i18n: ectx: label, entry (jabberPassword), group (General)
 #: rc.cpp:21
 msgid "The password of the last used Jabber Id."
-msgstr ""
+msgstr "Son kullanılan Jabber Id'sinin parolası."
 
 #. i18n: file: ksirksettings.kcfg:32
 #. i18n: ectx: label, entry (roomJid), group (General)
 #: rc.cpp:24
 msgid "The last used Jabber groupchat room."
-msgstr ""
+msgstr "Son girilen Jabber grup sohbet odası."
 
 #. i18n: file: ksirksettings.kcfg:35
 #. i18n: ectx: label, entry (roomPassword), group (General)
 #: rc.cpp:27
 msgid "The password for last used Jabber groupchat room."
-msgstr ""
+msgstr "Son girilen Jabber grup sohbet odası için parola."
 
 #. i18n: file: ksirksettings.kcfg:38
 #. i18n: ectx: label, entry (nickname), group (General)
 #: rc.cpp:30
 msgid "The nickname used in the last used Jabber groupchat room."
-msgstr ""
+msgstr "Son girilen Jabber grup sohbet odasında kullanılan takma ad."
 
 #. i18n: file: ksirkui.rc:10
 #. i18n: ectx: Menu (game)
@@ -1700,7 +1762,7 @@ msgstr "Ana Araç Çubuğu"
 #. i18n: ectx: property (text), widget (QLabel, lImage1)
 #: rc.cpp:45 rc.cpp:463
 msgid "LeftImg"
-msgstr ""
+msgstr "LeftImg"
 
 #. i18n: file: mainMenu.ui:38
 #. i18n: ectx: property (text), widget (QLabel, lTitle)
@@ -1712,7 +1774,7 @@ msgstr "<h1>KsirK</h1>"
 #. i18n: ectx: property (text), widget (QLabel, lImage2)
 #: rc.cpp:51 rc.cpp:469
 msgid "RightImg"
-msgstr ""
+msgstr "RightImg"
 
 #. i18n: file: mainMenu.ui:97
 #. i18n: ectx: property (text), widget (KPushButton, pbNewGame)
@@ -1724,13 +1786,13 @@ msgstr "Yeni Yerel Oyun"
 #. i18n: ectx: property (text), widget (KPushButton, pbJabberGame)
 #: rc.cpp:57 rc.cpp:475
 msgid "Play KsirK over Jabber Network"
-msgstr ""
+msgstr "KsirK'i Jabber Ağı Üzerinden Oyna"
 
 #. i18n: file: mainMenu.ui:118
 #. i18n: ectx: property (text), widget (KPushButton, pbJoin)
 #: rc.cpp:63 rc.cpp:481
 msgid "Join Standard TCP/IP Network Game"
-msgstr ""
+msgstr "Bir Standart TCP/IP ağ oyununa katıl"
 
 #. i18n: file: mainMenu.ui:125
 #. i18n: ectx: property (text), widget (KPushButton, pbLoad)
@@ -1760,7 +1822,7 @@ msgstr "Sesler etkin"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:78 rc.cpp:496
 msgid "Sprites speed (slow, normal, rapid, immediate)"
-msgstr ""
+msgstr "Hareketli görüntü hızı (yavaş, normal, hızlı, çok hızlı)"
 
 #. i18n: file: preferences.ui:94
 #. i18n: ectx: property (text), widget (QCheckBox, helpEnabled)
@@ -1777,12 +1839,12 @@ msgstr "Ülkelerdeki ordu sayılarını göster"
 #: rc.cpp:85
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Serdar Dalgıç"
 
 #: rc.cpp:86
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, serdar@pardus.org.tr"
 
 #. i18n: file: Dialogs/newGameDialog.ui:16
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameDialog)
@@ -1800,13 +1862,13 @@ msgstr "Toplam oyuncu sayısı:"
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, playersNumberEntry)
 #: rc.cpp:95
 msgid "Spin this to choose the number of players."
-msgstr ""
+msgstr "Oyuncu sayısını belirlemek için bu fırıldağı çevirin."
 
 #. i18n: file: Dialogs/newGameDialog.ui:42
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, playersNumberEntry)
 #: rc.cpp:98
 msgid "A spin box to choose the number of players"
-msgstr ""
+msgstr "Oyuncu sayısını belirlemek için bir fırıldak."
 
 #. i18n: file: Dialogs/newGameDialog.ui:53
 #. i18n: ectx: property (text), widget (QLabel, localPlayersNumberLabel)
@@ -1818,7 +1880,7 @@ msgstr "Yerel oyuncu sayısı:"
 #. i18n: ectx: property (text), widget (QLabel, tcpPortLabel)
 #: rc.cpp:104
 msgid "TCP port on which to offer connections:"
-msgstr ""
+msgstr "Bağlantı önermek için kullanılacak TCP portu"
 
 #. i18n: file: Dialogs/newGameDialog.ui:106
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -1830,19 +1892,19 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:107 rc.cpp:319
 msgid "Skin:"
-msgstr "Arayüz:"
+msgstr "Tema:"
 
 #. i18n: file: Dialogs/newGameDialog.ui:116
 #. i18n: ectx: property (toolTip), widget (QComboBox, skinCombo)
 #: rc.cpp:110
 msgid "Choose the skin (map, nationalities, etc.) to use for this game."
-msgstr ""
+msgstr "Bu oyunda kullanmak için temayı seçin (harita, uluslar, v.s.)."
 
 #. i18n: file: Dialogs/newGameDialog.ui:119
 #. i18n: ectx: property (whatsThis), widget (QComboBox, skinCombo)
 #: rc.cpp:113
 msgid "A combo listing all the available skins."
-msgstr ""
+msgstr "Bütün müsait temaları listeleyen bir giriş kutusu."
 
 #. i18n: file: Dialogs/newGameDialog.ui:126
 #. i18n: ectx: property (text), widget (KPushButton, ghnsbutton)
@@ -1854,7 +1916,7 @@ msgstr "Yeni Temalar İndir"
 #. i18n: ectx: property (text), widget (QLabel, skinDescLabel)
 #: rc.cpp:119
 msgid "skinDescLabel"
-msgstr ""
+msgstr "skinDescLabel"
 
 #. i18n: file: Dialogs/newGameDialog.ui:150
 #. i18n: ectx: property (title), widget (QGroupBox, goalGroup)
@@ -1867,24 +1929,25 @@ msgstr "Hedef Türü"
 #: rc.cpp:125
 msgid "Choose this for players to have to conquer all the world to win."
 msgstr ""
+"Kazanmak için bütün dünyayı fethetmek zorunda olan oyuncular için bunu seçin"
 
 #. i18n: file: Dialogs/newGameDialog.ui:159
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioWorld)
 #: rc.cpp:128
 msgid "In this mode, a player will have to conquer all the world to win."
-msgstr ""
+msgstr "Bu modda, oyuncular kazanmak için bütün dünyayı fethetmek zorundalar."
 
 #. i18n: file: Dialogs/newGameDialog.ui:162
 #. i18n: ectx: property (text), widget (QRadioButton, radioWorld)
 #: rc.cpp:131
 msgid "Wor&ld conquest"
-msgstr ""
+msgstr "Dü&nya Fethi"
 
 #. i18n: file: Dialogs/newGameDialog.ui:169
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioGoal)
 #: rc.cpp:134
 msgid "Choose this to have a goal assigned to each player."
-msgstr ""
+msgstr "Bütün oyunculara bir hedef atamak için bunu seçin"
 
 #. i18n: file: Dialogs/newGameDialog.ui:172
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioGoal)
@@ -1893,6 +1956,8 @@ msgid ""
 "In this mode, a goal will be assigned to each player, which he will have to "
 "reach in order to win."
 msgstr ""
+"Bu modda her oyuncuya kazanmaları için tamamlamaları gereken bir hedef "
+"atanacak."
 
 #. i18n: file: Dialogs/newGameDialog.ui:227
 #. i18n: ectx: property (text), widget (KPushButton, cancelButton)
@@ -1974,7 +2039,7 @@ msgstr "Port:"
 #. i18n: ectx: property (text), widget (QLineEdit, hostEdit)
 #: rc.cpp:158
 msgid "localhost"
-msgstr ""
+msgstr "localhost"
 
 #. i18n: file: Dialogs/tcpconnectwidget.ui:118
 #. i18n: ectx: property (text), widget (KPushButton, previousButton)
@@ -1996,13 +2061,13 @@ msgstr "<< Önceki"
 #. i18n: ectx: property (windowTitle), widget (QDialog, QWaitedPlayerSetupDialog)
 #: rc.cpp:170
 msgid "Saved Player Selection"
-msgstr ""
+msgstr "Kaydedilen Oyuncu Seçimi"
 
 #. i18n: file: Dialogs/qwaitedplayersetupdialog.ui:23
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: rc.cpp:173
 msgid "Please select your saved player:"
-msgstr ""
+msgstr "Lütfen kaydedilen oyuncunuzu seçin:"
 
 #. i18n: file: Dialogs/qwaitedplayersetupdialog.ui:33
 #. i18n: ectx: property (toolTip), widget (QComboBox, waitedPlayersCombo)
@@ -2029,6 +2094,8 @@ msgid ""
 "A combo box that lists currently available nations.\n"
 "Choose one of them. It will be your nation during the game"
 msgstr ""
+"Giriş kutusunda şu an uygun olan uluslar listelenmekte.\n"
+"Birini seçin. Oyun boyunca ulusunuz o olacak"
 
 #. i18n: file: Dialogs/qwaitedplayersetupdialog.ui:47
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
@@ -2100,13 +2167,13 @@ msgstr "Durum:"
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:210
 msgid "Joining a KsirK Jabber Chatroom"
-msgstr ""
+msgstr "KsirK Jabber Sohbet Odasına giriliyor"
 
 #. i18n: file: Dialogs/jabbergameui.ui:146
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:213
 msgid "Room JID:"
-msgstr ""
+msgstr "Oda JID:"
 
 #. i18n: file: Dialogs/jabbergameui.ui:156
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -2158,13 +2225,17 @@ msgid ""
 "KsirK.<br/>Particularly, the distribution of armies at game beginning is "
 "very slow (expect something like one minute)."
 msgstr ""
+"<b>Not:</b>Jabber ağı üzerinden oynamak KsirK için deneysel bir özellik.<br/>"
+" "
+"Özellikle, oyunun başındaki ordu dağıtımı bayağı yavaş (bir dakika kadar "
+"bekleyebilirsiniz)."
 
 #. i18n: file: Dialogs/qplayersetupdialog.ui:23
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: rc.cpp:250
 #, no-c-format, kde-format
 msgid "Player number %1, please enter your name and choose your nation:"
-msgstr "Oyuncu numarası %1, lütfen adınızı girin ve ulusunuzu seçin:"
+msgstr "%1 numaralı oyuncu, lütfen adınızı girin ve ulusunuzu seçin:"
 
 #. i18n: file: Dialogs/qplayersetupdialog.ui:104
 #. i18n: ectx: property (text), widget (QCheckBox, isComputerCheckBox)
@@ -2206,7 +2277,7 @@ msgstr "Hiçbir Şey Yapma"
 #. i18n: ectx: property (toolTip), widget (QPushButton, doNothingButton)
 #: rc.cpp:300
 msgid "Do nothing. Game buttons will be available"
-msgstr ""
+msgstr "Hiçbir şey yapma. Oyun düğmeleri kullanılır olacak"
 
 #. i18n: file: Dialogs/restartOrExitDialog.ui:53
 #. i18n: ectx: property (toolTip), widget (QPushButton, exitButton)
@@ -2219,7 +2290,7 @@ msgstr "KsirK Oyunundan Çık"
 #: rc.cpp:310
 #, no-c-format, kde-format
 msgid "%1 won! Do you want to play again?"
-msgstr ""
+msgstr "%1 Kazandı! Yeniden oynamak istiyor musunuz?"
 
 #. i18n: file: Dialogs/newGameSummary.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget, NewGameSummary)
@@ -2267,7 +2338,7 @@ msgstr "İsim"
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
 #: rc.cpp:337
 msgid "Nationality"
-msgstr "Ülke"
+msgstr "Ulus"
 
 #. i18n: file: Dialogs/newGameSummary.ui:185
 #. i18n: ectx: property (text), widget (QTableWidget, playersTable)
@@ -2303,13 +2374,13 @@ msgstr "Sunucu"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:361
 msgid "Full JID:"
-msgstr ""
+msgstr "Tam JID:"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:62
 #. i18n: ectx: property (text), widget (QLabel, textLabel5_2)
 #: rc.cpp:364
 msgid "User (if needed):"
-msgstr ""
+msgstr "Kullanıcı (lazımsa):"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:76
 #. i18n: ectx: property (text), widget (QLabel, textLabel7_2)
@@ -2345,7 +2416,7 @@ msgstr "SOCKS5"
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_proxy)
 #: rc.cpp:382
 msgid "HTTP Polling"
-msgstr ""
+msgstr "HTTP Oylaması"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:128
 #. i18n: ectx: property (text), widget (QLabel, lb_host)
@@ -2363,7 +2434,7 @@ msgstr "Makine:Port:"
 #. i18n: ectx: property (text), widget (QCheckBox, ck_probe)
 #: rc.cpp:388
 msgid "Legacy SSL probe"
-msgstr ""
+msgstr "Miras SSL incelemesi"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:142
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -2381,7 +2452,7 @@ msgstr "Vekil Sunucu Ayarları"
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #: rc.cpp:400
 msgid "User/Pass:"
-msgstr ""
+msgstr "Kullanıcı Adı/Parola:"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:180
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
@@ -2399,7 +2470,7 @@ msgstr "/"
 #. i18n: ectx: property (text), widget (QLabel, lb_proxyurl)
 #: rc.cpp:406
 msgid "Polling URL:"
-msgstr ""
+msgstr "Oylama URLsi:"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:207
 #. i18n: ectx: property (title), widget (QGroupBox, gb_security)
@@ -2411,7 +2482,7 @@ msgstr "Güvenlik Ayarları"
 #. i18n: ectx: property (text), widget (QCheckBox, ck_plain)
 #: rc.cpp:412
 msgid "Allow plaintext login"
-msgstr ""
+msgstr "Düz Metin girişe izin ver"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:220
 #. i18n: ectx: property (text), widget (QCheckBox, ck_mutual)
@@ -2423,7 +2494,7 @@ msgstr "Karşılıklı kimlik doğrulama iste"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: rc.cpp:418
 msgid "SASL SSF min/max:"
-msgstr ""
+msgstr "SASL SSF min/max:"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:265
 #. i18n: ectx: property (text), widget (QPushButton, pb_go)
@@ -2441,13 +2512,13 @@ msgstr "&Hakkında"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox3)
 #: rc.cpp:430
 msgid "Quick XML >>"
-msgstr ""
+msgstr "Hızlı XML >>"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:324
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #: rc.cpp:433
 msgid "To:"
-msgstr ""
+msgstr "Kime:"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:341
 #. i18n: ectx: property (text), widget (QPushButton, pb_im)
@@ -2465,7 +2536,7 @@ msgstr "&İleti"
 #. i18n: ectx: property (text), widget (QPushButton, pb_iqv)
 #: rc.cpp:442
 msgid "IQ &Version"
-msgstr ""
+msgstr "IQ &Versiyonu"
 
 #. i18n: file: iris/tools/xmpptest/test.ui:376
 #. i18n: ectx: attribute (title), widget (QWidget, tab2)
@@ -3077,7 +3148,7 @@ msgstr "Yeni Zelanda"
 #: rc.cpp:598 rc.cpp:820 rc.cpp:982 rc.cpp:1207 rc.cpp:1372 rc.cpp:1597
 #, no-c-format
 msgid "Niger"
-msgstr "Nijeryaa"
+msgstr "Nijerya"
 
 #. i18n: file skins/default/Data/world.desktop line 292
 #. i18n: file skins/default/Data/world.desktop line 516
@@ -3124,7 +3195,7 @@ msgstr "Kuzey Amerika"
 #: rc.cpp:604 rc.cpp:856 rc.cpp:988 rc.cpp:1243 rc.cpp:1378 rc.cpp:1633
 #, no-c-format
 msgid "Occidental Australia"
-msgstr "Batı Avusturalya"
+msgstr "Batı Avustralya"
 
 #. i18n: file skins/default/Data/world.desktop line 307
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -3203,7 +3274,7 @@ msgstr "Pakistan"
 #: rc.cpp:616 rc.cpp:853 rc.cpp:1000 rc.cpp:1240 rc.cpp:1390 rc.cpp:1630
 #, no-c-format
 msgid "Papouasie"
-msgstr "Papouasie"
+msgstr "Papua"
 
 #. i18n: file skins/default/Data/world.desktop line 342
 #. i18n: file skins/default/Data/world.desktop line 559
@@ -3449,7 +3520,7 @@ msgstr "Zaire"
 #, no-c-format, kde-format
 msgid ""
 "%1, you'll have to conquer %2 countries and place %3 armies in each one."
-msgstr ""
+msgstr "%1, %2 ülke fethedip hepsine %3 ordu yerleştirmeniz gerekmektedir."
 
 #. i18n: file skins/default/Data/world.desktop line 510
 #. i18n: file skins/legacy/Data/world.desktop line 518
@@ -3460,7 +3531,7 @@ msgstr ""
 #: rc.cpp:661 rc.cpp:1045 rc.cpp:1435
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 countries."
-msgstr ""
+msgstr "%1, %2 ülke fethetmeniz gerekmektedir."
 
 #. i18n: file skins/default/Data/world.desktop line 517
 #. i18n: file skins/legacy/Data/world.desktop line 525
@@ -3471,7 +3542,7 @@ msgstr ""
 #: rc.cpp:670 rc.cpp:1057 rc.cpp:1447
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2, %3 and another continent at your choice."
-msgstr ""
+msgstr "%1, %2 ülke, %3 ve başka bir kıta fethetmeniz gerekmektedir."
 
 #. i18n: file skins/default/Data/world.desktop line 522
 #. i18n: file skins/default/Data/world.desktop line 527
@@ -3508,7 +3579,7 @@ msgstr ""
 #: rc.cpp:1474 rc.cpp:1483 rc.cpp:1492
 #, no-c-format, kde-format
 msgid "%1, you'll have to conquer %2 and %3."
-msgstr ""
+msgstr "%1, %2 ve %3 ögelerini fethetmeniz gerekmektedir."
 
 #. i18n: file skins/default/Data/world.desktop line 546
 #. i18n: file skins/legacy/Data/world.desktop line 554
@@ -3522,6 +3593,8 @@ msgid ""
 "%1, you'll have to eliminate %2. If it is eliminated by another player, "
 "you'll have to conquer %3 countries."
 msgstr ""
+"%1, %2 ögesini etkisiz hale getirmeniz gerekmektedir. Eğer %2 başka bir "
+"oyuncu tarafından etkisiz hale getirilse, %3 ülke fethetmelisiniz."
 
 #. i18n: file skins/default/Data/world.desktop line 560
 #: rc.cpp:862
@@ -3531,6 +3604,9 @@ msgid ""
 "nationalities\n"
 "randomly chosen and proposes various interesting goals"
 msgstr ""
+"Bu tema, rastgele seçilmiş bazı uluslarla gerçek dünyanın bir "
+"benzerini gösterip çeşitli ilginç hedefleri sunmaktadır"
+" "
 
 #. i18n: file skins/default/Data/world.desktop line 566
 #: rc.cpp:865
@@ -3568,6 +3644,9 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It looks like KsirK before vector graphics."
 msgstr ""
+"Bu tema, rastgele seçilmiş bazı uluslarla gerçek dünyanın bir "
+"benzerini gösterip çeşitli ilginç hedefleri sunmaktadır.\n"
+"Vektör grafik öncesi KsirK'e benzemektedir."
 
 #. i18n: file skins/legacy/Data/world.desktop line 574
 #: rc.cpp:1255
@@ -3584,12 +3663,16 @@ msgid ""
 "randomly chosen and proposes various interesting goals.\n"
 "It features non-animated sprites"
 msgstr ""
+"Bu tema, rastgele seçilmiş bazı uluslarla gerçek dünyanın bir\n"
+"benzerini gösterip çeşitli ilginç hedefleri sunmaktadır.\n"
+"Hareketli olmayan görseller içermektedir"
+" "
 
 #. i18n: file skins/static/Data/world.desktop line 574
 #: rc.cpp:1645
 #, no-c-format
 msgid "Less animated Earth-like"
-msgstr ""
+msgstr "Az animasyonlu Dünya-benzeri"
 
 #~ msgid "TextLabel"
 #~ msgstr "MetinEtiketi"
