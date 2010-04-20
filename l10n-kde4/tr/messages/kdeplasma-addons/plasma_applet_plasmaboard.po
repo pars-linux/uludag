@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_plasmaboard\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-23 07:00+0100\n"
-"PO-Revision-Date: 2009-10-12 17:01+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 11:14+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,7 +27,7 @@ msgstr "Gelişmiş kipe geç"
 
 #: PanelIcon.cpp:61
 msgid "Virtual Keyboard"
-msgstr ""
+msgstr "Sanal Klavye"
 
 #: PanelIcon.cpp:98
 msgid "Fewer Keys"
@@ -207,7 +208,7 @@ msgstr "Ctrl"
 #: widget.cpp:350
 msgctxt "The meta (windows) key on a keyboard"
 msgid "Super"
-msgstr ""
+msgstr "Süper"
 
 #: widget.cpp:352
 msgctxt "The alt key on a keyboard"
@@ -221,7 +222,7 @@ msgstr "Alt Gr"
 
 #: widget.cpp:357
 msgid "Super"
-msgstr ""
+msgstr "Süper"
 
 #: widget.cpp:359
 msgctxt "The menu key on a keyboard"

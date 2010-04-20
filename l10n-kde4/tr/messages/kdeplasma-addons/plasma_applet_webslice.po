@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_webslice\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-26 06:19+0100\n"
-"PO-Revision-Date: 2009-11-19 16:29+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-20 11:06+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: websliceConfig.ui:26
@@ -80,10 +81,9 @@ msgstr "<b>Ayarlar</b>"
 #: webslice.cpp:85
 msgctxt "displayed in the widget while loading"
 msgid "<h1>Loading...</h1>"
-msgstr ""
+msgstr "<h1>Yükleniyor...</h1>"
 
 #: webslice.cpp:99
-#, fuzzy
 #| msgid "General"
 msgctxt "general config page"
 msgid "General"

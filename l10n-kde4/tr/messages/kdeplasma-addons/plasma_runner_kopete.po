@@ -2,23 +2,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_krunner_kopete\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-09 01:35+0100\n"
-"PO-Revision-Date: 2009-08-17 16:04+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 11:12+0300\n"
+"Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kopeterunner.cpp:58
 msgid "Searches your Kopete buddylist for contacts matching :q:."
-msgstr ""
+msgstr ":q: ile eşleşen kişileri Kopete kişi listesinde arar."
 
 #: kopeterunner.cpp:59
 msgid "Connect all Kopete accounts"
@@ -30,7 +31,7 @@ msgstr "Tüm Kopete hesaplarının bağlantısını kes"
 
 #: kopeterunner.cpp:61
 msgid "Set Kopete accounts to a status with an optional message"
-msgstr ""
+msgstr "Kopete hesaplarının durumunu isteğe bağlı bir mesaj ile değiştirir"
 
 #: kopeterunner.cpp:62
 msgid "Set Kopete status message"
@@ -82,12 +83,16 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr ""
+"Serdar Soytetir "
+"Gökmen Göksel"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr ""
+"tulliana@gmail.com "
+"gokmen@pardus.org.tr"
 
 #~ msgid "Go Online"
 #~ msgstr "Bağlan"
