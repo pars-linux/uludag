@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
@@ -54,12 +54,8 @@ msgstr "Oluşturulmuş verilerden yeni belge oluştur."
 
 #: controllers/documentsystem/creator/createdialog.cpp:48
 msgctxt "@info:whatsthis"
-msgid ""
-"If you press the <interface>Create</interface> button, the data will be "
-"generated with the settings you entered above and inserted in a new document."
-msgstr ""
-"<interface>Oluştur</interface> düğmesine basarsanız, yukarıda girdiğiniz "
-"ayarlarla bir veri oluşturulacak ve yeni belgeye eklenecek."
+msgid "If you press the <interface>Create</interface> button, the data will be generated with the settings you entered above and inserted in a new document."
+msgstr "<interface>Oluştur</interface> düğmesine basarsanız, yukarıda girdiğiniz ayarlarla bir veri oluşturulacak ve yeni belgeye eklenecek."
 
 #: controllers/documentsystem/creator/creatorcontroller.cpp:64
 msgctxt "@title:menu create new byte arrays from different sources"
@@ -129,9 +125,7 @@ msgstr "Seçili verileri bir dosyaya aktar."
 
 #: controllers/io/export/exportdialog.cpp:49
 msgctxt "@info:whatsthis"
-msgid ""
-"If you press the <interface>Export to file</interface> button, the selected "
-"data will be copied to a file with the settings you entered above."
+msgid "If you press the <interface>Export to file</interface> button, the selected data will be copied to a file with the settings you entered above."
 msgstr ""
 
 #: controllers/io/export/exportdialog.cpp:77
@@ -167,11 +161,8 @@ msgstr "Belgeye oluşturulmuş verileri ekle."
 
 #: controllers/io/insert/insertdialog.cpp:48
 msgctxt "@info:whatsthis"
-msgid ""
-"If you press the <interface>Insert</interface> button, the data will be "
-"generated with the settings you entered above and inserted into the document "
-"at the cursor position."
-msgstr ""
+msgid "If you press the <interface>Insert</interface> button, the data will be generated with the settings you entered above and inserted into the document at the cursor position."
+msgstr "<interface>Ekle</interface> düğmesine basarsanız, veri yukarıda girdiğiniz ayarlarla birlikte belgenizin imlecin bulunduğu konumuna kopyalanacak."
 
 #: controllers/io/insert/insertcontroller.cpp:60
 msgctxt "@title:menu"
@@ -205,10 +196,7 @@ msgstr "Seçili metni panoya kopyala."
 
 #: controllers/io/copyas/copyasdialog.cpp:50
 msgctxt "@info:whatsthis"
-msgid ""
-"If you press the <interface>Copy to clipboard</interface> button, the "
-"selected data will be copied to the clipboard with the settings you entered "
-"above."
+msgid "If you press the <interface>Copy to clipboard</interface> button, the selected data will be copied to the clipboard with the settings you entered above."
 msgstr ""
 
 #: controllers/io/copyas/copyascontroller.cpp:62
@@ -345,40 +333,25 @@ msgstr "Yeniden Yükle "
 #, kde-format
 msgctxt "@info"
 msgid "There is already a file at<nl/><filename>%1</filename>.<nl/>Overwrite?"
-msgstr ""
-"<nl/><filename>%1</filename> konumunda bir dosya var.<nl/>Üzerine yazılsın "
-"mı?"
+msgstr "<nl/><filename>%1</filename> konumunda bir dosya var.<nl/>Üzerine yazılsın mı?"
 
 #: core/system/dialoghandler.cpp:55
 #, kde-format
 msgctxt "@info \"%title\" has been modified."
-msgid ""
-"There are unsaved modifications to <filename>%1</filename>. They will be "
-"lost if you reload the document.<nl/>Do you want to discard them?"
-msgstr ""
-"<filename>%1</filename> dosyasında kaydedilmemiş değişiklikler var. "
-"Belgeyi yeniden yüklerseniz bu değişiklikler kaybolacak.<nl/>Devam etmek "
-"istiyor musunuz?"
+msgid "There are unsaved modifications to <filename>%1</filename>. They will be lost if you reload the document.<nl/>Do you want to discard them?"
+msgstr "<filename>%1</filename> dosyasında kaydedilmemiş değişiklikler var. Belgeyi yeniden yüklerseniz bu değişiklikler kaybolacak.<nl/>Devam etmek istiyor musunuz?"
 
 #: core/system/dialoghandler.cpp:68
 #, kde-format
 msgctxt "@info \"%title\" has been modified."
-msgid ""
-"<filename>%1</filename> has been modified.<nl/>Do you want to save your "
-"changes or discard them?"
-msgstr ""
-"<filename>%1</filename> dosyası değiştirildi.<nl/>Kaydetmek mi, yoksa "
-"değişiklikleri silmek mi istiyorsunuz?"
+msgid "<filename>%1</filename> has been modified.<nl/>Do you want to save your changes or discard them?"
+msgstr "<filename>%1</filename> dosyası değiştirildi.<nl/>Kaydetmek mi, yoksa değişiklikleri silmek mi istiyorsunuz?"
 
 #: core/system/dialoghandler.cpp:82
 #, kde-format
 msgctxt "@info \"%title\" has been modified."
-msgid ""
-"<filename>%1</filename> has been modified.<nl/>Do you want to discard your "
-"changes?"
-msgstr ""
-"<filename>%1</filename> dosyası değiştirildi.<nl/>Değişikliklerinizi "
-"kaybetmek istiyor musunuz?"
+msgid "<filename>%1</filename> has been modified.<nl/>Do you want to discard your changes?"
+msgstr "<filename>%1</filename> dosyası değiştirildi.<nl/>Değişikliklerinizi kaybetmek istiyor musunuz?"
 
 #~ msgctxt "@info"
 #~ msgid "Problem while synching with local filesystem."
@@ -435,8 +408,7 @@ msgstr ""
 #~ msgid "Value coding:"
 #~ msgstr "Değer kodlaması:"
 
-#~ msgctxt ""
-#~ "@item:inmenu encoding of the bytes as values in the hexadecimal format"
+#~ msgctxt "@item:inmenu encoding of the bytes as values in the hexadecimal format"
 #~ msgid "Hexadecimal"
 #~ msgstr "Onaltılık"
 
@@ -571,8 +543,7 @@ msgstr ""
 #~ msgid "Selection: -"
 #~ msgstr "Seçim: -"
 
-#~ msgctxt ""
-#~ "@info:status selection: start offset - end offset (number of bytes)"
+#~ msgctxt "@info:status selection: start offset - end offset (number of bytes)"
 #~ msgid "Selection: %1 - %2 (%3)"
 #~ msgstr "Seçim: %1 - %2 (%3)"
 
@@ -674,11 +645,8 @@ msgstr ""
 #~ msgstr "Kalıp:"
 
 #~ msgctxt "@info:whatsthis"
-#~ msgid ""
-#~ "Enter a pattern to search for, or select a previous pattern from the list."
-#~ msgstr ""
-#~ "Aranacak desen'i girin veya daha önceden girilmiş bir tanesini listeden "
-#~ "seçin."
+#~ msgid "Enter a pattern to search for, or select a previous pattern from the list."
+#~ msgstr "Aranacak desen'i girin veya daha önceden girilmiş bir tanesini listeden seçin."
 
 #~ msgctxt "@label:spinbox number of times to insert the pattern"
 #~ msgid "&Number:"
@@ -751,9 +719,6 @@ msgstr ""
 #~ msgid "&Calculate"
 #~ msgstr "&Hesapla"
 
-#, fuzzy
-#~| msgctxt "@info:status offset value not available"
-#~| msgid "Selection: -"
 #~ msgctxt "@title:window of the tool to select a range"
 #~ msgid "Select"
 #~ msgstr "Seçim: -"
@@ -766,23 +731,14 @@ msgstr ""
 #~ msgid "Decimal"
 #~ msgstr "Ondalık"
 
-#, fuzzy
-#~| msgctxt "@label:listbox"
-#~| msgid "Fo&rmat:"
 #~ msgctxt "@label:listbox"
 #~ msgid "Format:"
 #~ msgstr "&Biçim:"
 
-#, fuzzy
-#~| msgctxt "@label:listbox"
-#~| msgid "O&ffset:"
 #~ msgctxt "@label:listbox"
 #~ msgid "End offset:"
 #~ msgstr "&Yerleşim:"
 
-#, fuzzy
-#~| msgctxt "@info:status offset value not available"
-#~| msgid "Selection: -"
 #~ msgctxt "@action:button"
 #~ msgid "&Select"
 #~ msgstr "Seçim: -"
@@ -799,8 +755,7 @@ msgstr ""
 #~ msgid "Octal 8-bit:"
 #~ msgstr "Sekizlik 8-bit:"
 
-#~ msgctxt ""
-#~ "@label:textbox encoding of one byte as value in the hexadecimal format"
+#~ msgctxt "@label:textbox encoding of one byte as value in the hexadecimal format"
 #~ msgid "Hexadecimal 8-bit:"
 #~ msgstr "Onaltılık 8-bit:"
 
@@ -836,8 +791,7 @@ msgstr ""
 #~ msgid "Strings"
 #~ msgstr "İfadeler"
 
-#~ msgctxt ""
-#~ "@label:spinbox minimum length for consecutive chars to be seen as a string"
+#~ msgctxt "@label:spinbox minimum length for consecutive chars to be seen as a string"
 #~ msgid "Minimum length:"
 #~ msgstr "En küçük uzunluk:"
 
@@ -924,20 +878,15 @@ msgstr ""
 #~ msgstr "Büyük küçük h&arf duyarlı"
 
 #~ msgctxt "@info:whatsthis"
-#~ msgid ""
-#~ "Perform a case sensitive search: entering the pattern 'Joe' will not "
-#~ "match 'joe' or 'JOE', only 'Joe'."
-#~ msgstr ""
-#~ "Aramayı küçük/BÜYÜK Harf duyarlı olarak yap: 'Ali' deseninde bir giriş, "
-#~ "'ali' veya 'ALİ' ile uyuşmayacak, sadece 'Ali' yi bulacaktır."
+#~ msgid "Perform a case sensitive search: entering the pattern 'Joe' will not match 'joe' or 'JOE', only 'Joe'."
+#~ msgstr "Aramayı küçük/BÜYÜK Harf duyarlı olarak yap: 'Ali' deseninde bir giriş, 'ali' veya 'ALİ' ile uyuşmayacak, sadece 'Ali' yi bulacaktır."
 
 #~ msgctxt "@option:check"
 #~ msgid "&Whole words only"
 #~ msgstr "Sadece tüm &sözcükler"
 
 #~ msgctxt "@info:whatsthis"
-#~ msgid ""
-#~ "Start searching at the current cursor location rather than at the top."
+#~ msgid "Start searching at the current cursor location rather than at the top."
 #~ msgstr "Belge başlangıcı yerine imlecin bulunduğu yerden aramaya başla."
 
 #~ msgctxt "@info:whatsthis"
@@ -948,8 +897,7 @@ msgstr ""
 #~ msgid "&Value Coding"
 #~ msgstr "Değer &Kodlaması"
 
-#~ msgctxt ""
-#~ "@item:inmenu encoding of the bytes as values in the hexadecimal format"
+#~ msgctxt "@item:inmenu encoding of the bytes as values in the hexadecimal format"
 #~ msgid "&Hexadecimal"
 #~ msgstr "On&altılık"
 
@@ -981,9 +929,7 @@ msgstr ""
 #~ msgid "&Off"
 #~ msgstr "&Kapalı"
 
-#~ msgctxt ""
-#~ "@item:inmenu  The layout will adapt to the size and fit in as much bytes "
-#~ "per line as possible."
+#~ msgctxt "@item:inmenu  The layout will adapt to the size and fit in as much bytes per line as possible."
 #~ msgid "&On"
 #~ msgstr "&Açık"
 
@@ -1039,13 +985,11 @@ msgstr ""
 #~ msgid "%1: %2"
 #~ msgstr "%1: %2"
 
-#~ msgctxt ""
-#~ "@item:inlistbox coding of the bytes as values in the hexadecimal format"
+#~ msgctxt "@item:inlistbox coding of the bytes as values in the hexadecimal format"
 #~ msgid "Hexadecimal"
 #~ msgstr "Onaltılık"
 
-#~ msgctxt ""
-#~ "@item:inlistbox coding of the bytes as values in the decimal format"
+#~ msgctxt "@item:inlistbox coding of the bytes as values in the decimal format"
 #~ msgid "Decimal"
 #~ msgstr "Ondalık"
 
@@ -1150,9 +1094,6 @@ msgstr ""
 #~ msgid "Size [bytes]: "
 #~ msgstr "Boyut [bayt]:"
 
-#, fuzzy
-#~| msgctxt "@info:status the statistic is not uptodate"
-#~| msgid "Warning: not uptodate"
 #~ msgctxt "@info:status the statistic is not uptodate"
 #~ msgid "Warning: not up-to-date"
 #~ msgstr "Uyarı: güncel değil"
@@ -1161,8 +1102,7 @@ msgstr ""
 #~ msgid "Copy as"
 #~ msgstr "Farklı kopyala"
 
-#~ msgctxt ""
-#~ "@info:status encoding of the bytes as values in the hexadecimal format"
+#~ msgctxt "@info:status encoding of the bytes as values in the hexadecimal format"
 #~ msgid "Hexadecimal"
 #~ msgstr "Onaltılık"
 
@@ -1190,29 +1130,22 @@ msgstr ""
 #~ msgid "Readonly mode"
 #~ msgstr "Salt okunur kip"
 
-#, fuzzy
-#~| msgctxt "@title:menu"
-#~| msgid "Copy as"
 #~ msgctxt "@title:window"
 #~ msgid "Copy as..."
 #~ msgstr "Farklı kopyala"
 
-#~ msgctxt ""
-#~ "@item:inlistbox encoding of the bytes as values in the hexadecimal format"
+#~ msgctxt "@item:inlistbox encoding of the bytes as values in the hexadecimal format"
 #~ msgid "Hexadecimal"
 #~ msgstr "Onaltılık"
 
-#~ msgctxt ""
-#~ "@item:inlistbox encoding of the bytes as values in the decimal format"
+#~ msgctxt "@item:inlistbox encoding of the bytes as values in the decimal format"
 #~ msgid "Decimal"
 #~ msgstr "Ondalık"
 
-#~ msgctxt ""
-#~ "@item:inlistbox encoding of the bytes as values in the octal format"
+#~ msgctxt "@item:inlistbox encoding of the bytes as values in the octal format"
 #~ msgid "Octal"
 #~ msgstr "Sekizlik"
 
-#~ msgctxt ""
-#~ "@item:inlistbox encoding of the bytes as values in the binary format"
+#~ msgctxt "@item:inlistbox encoding of the bytes as values in the binary format"
 #~ msgid "Binary"
 #~ msgstr "İkilik"
