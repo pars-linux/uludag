@@ -3,18 +3,19 @@
 #
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmview1394\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-18 06:33+0100\n"
-"PO-Revision-Date: 2008-09-15 14:59+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-20 13:59+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: view1394widget.ui:20
@@ -90,7 +91,6 @@ msgid "Generate 1394 Bus Reset"
 msgstr "1394 Bus Reset Oluştur"
 
 #: view1394.cpp:66
-#, fuzzy
 #| msgid ""
 #| "<qt>On the right hand side you can see some information about your IEEE "
 #| "1394 configuration. The meaning of the columns:<ul><li><b>Name</b>: port "
@@ -129,7 +129,7 @@ msgstr ""
 "Eğer düğüm bus yöneticisini destekliyorsa işaretlidir</li><li><b>PM</b>: "
 "Eğer güç yönetimi destekleniyorsa işaretlidir</li><li><b>Acc</b>: Düğümün "
 "devir saati kesinliği, 0'dan 100'e kadar geçerlidir</li><li><b>Hız</b>: "
-"Düğümün hızı</li></ul></qt>"
+"Düğümün hızı</li><li><b>Üretici</b>: aygıtın üreticisi</li></ul></qt>"
 
 #: view1394.cpp:200
 #, kde-format
@@ -148,3 +148,4 @@ msgstr "Hazır değil"
 #: view1394.cpp:312
 msgid "Unknown"
 msgstr "Bilinmiyor"
+
