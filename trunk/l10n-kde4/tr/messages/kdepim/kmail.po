@@ -12904,9 +12904,8 @@ msgstr "Bu seçenek işaretlendiğinde, cevaplanan ve alınan davet e-postaları
 #. i18n: ectx: whatsthis, entry (TheIMAPResourceEnabled), group (IMAP
 #. Resource)
 #: rc.cpp:1601
-#, fuzzy
 msgid "<p>Enabling this makes it possible to store the entries from the Kontact applications (KOrganizer, KAddressBook, and KNotes.)</p><p>If you want to set this option you must also set the applications to use the IMAP resource; this is done in the KDE System Settings.</p>"
-msgstr "<p>Bunu aktifleştirirseniz, Kontact uygulamaları (KOrganizer, KAddressBook ve KNotes) üzerinden girdileri saklamak mümkün olur.</p><p>Bu seçeneği ayarlamak istiyorsanız, uygulamaların IMAP kaynağını kullanmasını da ayarlamak zorundasınız; bu KDE Kontrol Merkezi'nde yapılır.</p>"
+msgstr "<p>Bunu aktifleştirirseniz, Kontact uygulamaları (KOrganizer, KAddressBook ve KNotes) üzerinden girdileri saklamak mümkün olur.</p><p>Bu seçeneği ayarlamak istiyorsanız, uygulamaların IMAP kaynağını kullanmasını da ayarlamalısınız; bunu KDE Sistem Ayarlarından yapabilirsiniz.</p>"
 
 #. i18n: file: kmail.kcfg.cmake:230
 #. i18n: ectx: whatsthis, entry (HideGroupwareFolders), group (IMAP Resource)
