@@ -5,18 +5,19 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Onur Küçük <onur@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: klipper\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-13 01:19+0100\n"
-"PO-Revision-Date: 2009-10-28 15:54+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-20 16:55+0300\n"
+"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: configdialog.cpp:39
@@ -84,16 +85,14 @@ msgid "Ignore"
 msgstr "Yoksay"
 
 #: editactiondialog.cpp:37
-#, fuzzy
 #| msgid "<empty clipboard>"
 msgid "Replace Clipboard"
-msgstr "<boş pano>"
+msgstr "Panoyu Değiştir"
 
 #: editactiondialog.cpp:39
-#, fuzzy
 #| msgid "<empty clipboard>"
 msgid "Add to Clipboard"
-msgstr "<boş pano>"
+msgstr "Panoya Ekle"
 
 #: editactiondialog.cpp:219
 msgid "Command"
@@ -101,7 +100,7 @@ msgstr "Komut"
 
 #: editactiondialog.cpp:221
 msgid "Output Handling"
-msgstr ""
+msgstr "Çıktı Yönetimi"
 
 #. i18n: file: actionsconfig.ui:54
 #. i18n: ectx: property (text), widget (ActionsTreeWidget, kcfg_ActionList)
@@ -318,10 +317,9 @@ msgstr "Eylemleri uygularken boşlukları temizle"
 #. i18n: file: actionsconfig.ui:31
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_EnableMagicMimeActions)
 #: rc.cpp:9 rc.cpp:164 rc.cpp:175
-#, fuzzy
 #| msgid "Enable Clipboard Actions"
 msgid "Enable MIME-based actions"
-msgstr "Pano Eylemlerini Etkinleştir"
+msgstr "MIME-tabanlı eylemleri etkinleştir"
 
 #. i18n: file: actionsconfig.ui:38
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -457,10 +455,9 @@ msgstr "Resimleri yoksay"
 #. i18n: file: generalconfig.ui:59
 #. i18n: ectx: property (title), widget (QGroupBox, selection_group)
 #: rc.cpp:79 rc.cpp:245
-#, fuzzy
 #| msgid "Prevent empty clipboard"
 msgid "Selection and clipboard"
-msgstr "Boş panonun kullanımını engelle"
+msgstr "Seçim ve pano"
 
 #. i18n: file: generalconfig.ui:65
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_IgnoreSelection)
@@ -469,10 +466,9 @@ msgstr "Boş panonun kullanımını engelle"
 #. i18n: file: generalconfig.ui:65
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_IgnoreSelection)
 #: rc.cpp:82 rc.cpp:115 rc.cpp:248
-#, fuzzy
 #| msgid "Ignore selection"
 msgid "Ignore Selection"
-msgstr "Seçimi yoksay"
+msgstr "Seçimi yok say"
 
 #. i18n: file: generalconfig.ui:72
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SelectionTextOnly)
@@ -536,6 +532,11 @@ msgid ""
 "entered into the clipboard history, though it is still available for pasting "
 "using the middle mouse button.</qt>"
 msgstr ""
+"<qt>Ekranda bir bölge klavye ya da fare ile işaretlenirse bu bölgeye "
+"\"seçim\" adı "
+"verilir. Bu seçenek seçili ise seçilen pano geçmişine eklenmez, ancak orta "
+"fare "
+"tuşu ile yapıştırılabilir.</qt>"
 
 #. i18n: file: klipper.kcfg:38
 #. i18n: ectx: label, entry (SyncClipboards), group (General)
