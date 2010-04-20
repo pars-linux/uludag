@@ -279,7 +279,7 @@ msgstr "S&atıların sayısı:"
 #. i18n: ectx: property (text), widget (QCheckBox, presentWindowsCheckBox)
 #: rc.cpp:33
 msgid "Use Present Windows effect to layout the windows"
-msgstr ""
+msgstr "Pencereleri yerleştirmek için Mevcut Pencereler efektini kullan."
 
 #. i18n: file: desktopgrid/desktopgrid_config.ui:200
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
