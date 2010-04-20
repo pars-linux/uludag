@@ -7,13 +7,13 @@
 [ ] kdegames          -> serdar
 [X] kdegraphics       -> fatih
 [ ] kdelibs           -> gokcen
-[ ] kdemultimedia     -> ozan
+[X] kdemultimedia     -> ozan
 [ ] kdenetwork        -> ozan
 [ ] kdepim            -> fatih
 [ ] kdepimlibs        -> ibrahim
 [ ] kdeplasma-addons  -> gokmen
 [ ] kdesdk            -> mete
-[ ] kdetoys           -> isil
+[X] kdetoys           -> isil
 [ ] kdeutils          -> ibrahim
 [ ] kdewebdev         -> serdar
 [ ] koffice           -> admins
