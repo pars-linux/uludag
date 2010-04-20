@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kcmcolors\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-21 01:22+0100\n"
-"PO-Revision-Date: 2010-04-19 15:03+0300\n"
+"PO-Revision-Date: 2010-04-20 16:50+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -82,6 +82,12 @@ msgid ""
 "\n"
 "This scheme will not be saved automatically."
 msgstr ""
+"Seçtiğiniz şema KDE3 şeması gibi görünüyor.\n"
+"\n"
+"KDE bu şemayı içeri aktarmaya çalışacak ancah KDE3 sürümünden bu yana çok "
+"fazla renk eklendi. Bazı işleri elle yapmak gerekebilir.\n"
+"\n"
+"Bu şema otomatik olarak kaydedilmeyecek."
 
 #: colorscm.cpp:308
 msgid "Notice"
@@ -286,7 +292,7 @@ msgstr "&Renkleri KDE4 dışı uygulamalara da uygula"
 #. i18n: ectx: property (toolTip), widget (QGroupBox, groupBox_5)
 #: rc.cpp:48 rc.cpp:650
 msgid "Shading of frames and lighting (\"3D\") effects"
-msgstr ""
+msgstr "Karelerin gölgelemesi ve aydınlatma (\"3B\") efektleri"
 
 #. i18n: file: colorsettings.ui:178
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
@@ -866,7 +872,7 @@ msgstr "Pencere metni"
 #. i18n: ectx: property (toolTip), widget (QLabel, labelView0)
 #: rc.cpp:387 rc.cpp:989
 msgid "View Normal Text against View Normal Background"
-msgstr "Normal Arkaplan üzerindeki Normal Metin"
+msgstr "Normal Arka Plan üzerine Normal Metin"
 
 #. i18n: file: preview.ui:66
 #. i18n: ectx: property (text), widget (QLabel, labelView0)
@@ -1012,7 +1018,7 @@ msgstr "+"
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection0)
 #: rc.cpp:435 rc.cpp:1037
 msgid "Selection Normal Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan üzerine Seçili Normal Metin"
 
 #. i18n: file: preview.ui:184
 #. i18n: ectx: property (text), widget (QLabel, labelSelection0)
@@ -1025,43 +1031,43 @@ msgstr "Seçili metin"
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection3)
 #: rc.cpp:441 rc.cpp:1043
 msgid "Selection Link Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Bağlantı Metni"
 
 #. i18n: file: preview.ui:211
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection4)
 #: rc.cpp:447 rc.cpp:1049
 msgid "Selection Visited Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Tıklanılmış Metin"
 
 #. i18n: file: preview.ui:221
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection2)
 #: rc.cpp:453 rc.cpp:1055
 msgid "Selection Active Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Aktif Metin"
 
 #. i18n: file: preview.ui:231
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection1)
 #: rc.cpp:459 rc.cpp:1061
 msgid "Selection Inactive Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Aktif Olmayan Metin"
 
 #. i18n: file: preview.ui:241
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection5)
 #: rc.cpp:465 rc.cpp:1067
 msgid "Selection Negative Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Negatif Metin"
 
 #. i18n: file: preview.ui:251
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection6)
 #: rc.cpp:471 rc.cpp:1073
 msgid "Selection Neutral Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan yerine Seçili Nötr Metin"
 
 #. i18n: file: preview.ui:261
 #. i18n: ectx: property (toolTip), widget (QLabel, labelSelection7)
 #: rc.cpp:477 rc.cpp:1079
 msgid "Selection Positive Text against Selection Normal Background"
-msgstr ""
+msgstr "Seçili Normal Arka Plan üzerine Seçili Pozitif Metin"
 
 #. i18n: file: preview.ui:293
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButton)
