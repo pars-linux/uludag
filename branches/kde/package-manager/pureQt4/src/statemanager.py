@@ -62,8 +62,7 @@ class StateManager(QObject):
             if not self._typeCaches.has_key(self._typeFilter):
                 self._typeCaches[self._typeFilter] = self.iface.filterUpdates(self.cached_packages, self._typeFilter)
             return self._typeCaches[self._typeFilter]
-        else:
-            return list(self.cached_packages)
+        return list(self.cached_packages)
 
     def onlyGuiInState(self):
         pmConfig = config.PMConfig()
