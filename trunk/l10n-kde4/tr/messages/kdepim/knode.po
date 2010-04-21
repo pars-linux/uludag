@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: knode\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 06:01+0100\n"
-"PO-Revision-Date: 2010-04-20 16:56+0300\n"
+"PO-Revision-Date: 2010-04-21 09:14+0300\n"
 "Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
 "Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3555,14 +3555,16 @@ msgstr "&Giriş paragrafı:"
 #. i18n: file: postnewscomposerwidget_base.ui:87
 #. i18n: ectx: property (text), widget (QLabel, label2)
 #: rc.cpp:403
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<qt>Placeholders: <b>%NAME</b>=sender's name, <b>%EMAIL</b>=sender's address,"
 "<br><b>%DATE</b>=date, <b>%MSID</b>=message-id, <b>%MSIDX</b>=message-id "
 "without angle brackets, <b>%GROUP</b>=group name, <b>%L</b>=line break</qt>"
 msgstr ""
-"Yer tutucular: %NAME=isim, %EMAIL=e-posta adresi,\n"
-"%DATE=tarih, %MSID=ileti-no, %GROUP=grup adı, %L=satır sonu"
+"<qt>Yer tutucular: <b>%NAME</b>=gönderen adı, <b>%EMAIL</b>=gönderen adresi,"
+"<br><b>%DATE</b>=tarih, <b>%MSID</b>=ileti kimliği, <b>%MSIDX</b>=köşeli "
+"parantezsiz "
+"ileti kimliği, <b>%GROUP</b>=grup adı, <b>%L</b>=satır sonu</qt>"
 
 #. i18n: file: postnewscomposerwidget_base.ui:102
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_rewrap)
@@ -3658,13 +3660,13 @@ msgstr "&Sil"
 #. i18n: file: postnewstechnicalwidget_base.ui:141
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:462
-#, fuzzy, no-c-format
+#, no-c-format
 msgid ""
 "<qt>Placeholders for replies: <b>%NAME</b>=sender's name, <b>%EMAIL</"
 "b>=sender's address</qt>"
 msgstr ""
-"Aşağıdaki kısaltmalar destekleniyor:\n"
-"%MYNAME=sahibinin adı, %MYEMAIL=sahibinin e-posta adresi"
+"<qt>Yanıtlar için yer tutucuları: <b>%NAME</b>=gönderen adı, <b>%EMAIL</"
+"b>=gönderen adresi</qt>"
 
 #. i18n: file: readnewsgeneralwidget_base.ui:23
 #. i18n: ectx: property (title), widget (QGroupBox, articleHandlingBox)
@@ -3802,9 +3804,8 @@ msgstr "Sonraki okunmayan &konuma git"
 #. i18n: file: readnewsnavigationwidget_base.ui:103
 #. i18n: ectx: property (title), widget (QGroupBox, leaveGroupBox)
 #: rc.cpp:543
-#, fuzzy
 msgid "Leaving Group Triggers Following Actions"
-msgstr "\"Konumu Yoksay\" Aşağıdaki İşlemleri Gerçekleştirir:"
+msgstr "Grubu Terk Etmek Aşağıdaki Eylemleri Tetikler"
 
 #. i18n: file: readnewsnavigationwidget_base.ui:115
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_leaveGroupMarkAsRead)
