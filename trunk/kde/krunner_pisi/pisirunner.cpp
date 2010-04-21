@@ -91,7 +91,7 @@ void PisiRunner::match(Plasma::RunnerContext &context)
         // Don't show redundant match if the package is already installed
         return;
 
-    if (query.length() < 3)
+    if (query.length() < 2)
         // Skip short queries
         return;
 
@@ -116,7 +116,7 @@ void PisiRunner::match(Plasma::RunnerContext &context)
 
         match.setType(Plasma::QueryMatch::ExactMatch);
         match.setIcon(KIcon("application-x-pisi"));
-        match.setText(i18n("%1", package));
+        match.setText(package);
         match.setSubtext(i18n("Install '%1' containing the application '%2'", package, query));
         match.setRelevance(0.7);
         context.addMatch(query, match);
