@@ -172,9 +172,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def searchActivated(self):
         self.packageList.resetMoreInfoRow()
         waitCursor()
-        packages = self.packageList.search(str(self.searchLine.text()).split())
-        self.packageList.model().setFilterRole(GroupRole)
-        self.packageList.model().setFilterPackages(packages)
+        sourceModel = self.packageList.model().sourceModel()
+        searchText  = str(self.searchLine.text()).split()
+        self.state.cached_packages = sourceModel.search(searchText)
+        self.initializeGroupList()
         restoreCursor()
 
     def setActionButton(self):
