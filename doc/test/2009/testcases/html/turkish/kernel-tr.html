@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea kernel-tr.tex -->
+<!--HEVEA command line is: hevea testcases/turkish/kernel-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Kernel Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Default alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Default alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -89,7 +89,11 @@ Açılış sesinin düzgün bir şekilde takılmadan çalıştığını gözleml
 </P><PRE CLASS="verbatim"># modprobe lirc_gpio
 # lircd
 # irw  
-</PRE></LI><LI CLASS="li-enumerate">module-ltmodem ve module-ltmodem-userspace kurulumu sonrası:<P>(Eğer bilgisayarınızda entegre bir modem bulunuyor ise test edebilirsiniz.)</P></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrası:
+</PRE></LI><LI CLASS="li-enumerate">module-ltmodem ve module-ltmodem-userspace kurulumu sonrası:<P>(Eğer bilgisayarınızda entegre bir Lucent Apollo (ISA) ve Mars (PCI) yonga setinde bir modem bulunuyor ise test edebilirsiniz.)</P><P>Aşağıda bulunan komutun "ltmodem" içeren bir çıktı döndürdüğünü gözlemleyin.
+</P><PRE CLASS="verbatim"> lsmod | grep ltmodem
+</PRE></LI><LI CLASS="li-enumerate">module-slmodem ve module-slmodem-userspace kurulumu sonrası:<P>(Eğer bilgisayarınızda Smart Link Modem sürücüsü bulunuyor ise test edebilirsiniz.)</P><P>Aşağıda bulunan komutun "ltmodem" içeren bir çıktı döndürdüğünü gözlemleyin.
+</P><PRE CLASS="verbatim"> lsmod | grep slmodem
+</PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrası:
 <PRE CLASS="verbatim"> module-microdia
  module-microdia-userspace
  module-ov51x-jpeg
@@ -167,6 +171,7 @@ module-pae-ndiswrapper
 module-pae-nvidia-current
 module-pae-syntekdriver   
 module-pae-vloopback
+module-pae-slmodem
 </PRE></LI></OL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
