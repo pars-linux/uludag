@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_solid_actions\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-09-11 06:36+0200\n"
-"PO-Revision-Date: 2009-09-27 22:00+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-21 11:32+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: DesktopFileGenerator.cpp:36
@@ -93,6 +94,12 @@ msgid ""
 "%d: Path to the device node - Block devices only\n"
 "%i: The identifier of the device"
 msgstr ""
+"Eylemi tetikleyecek komut\n"
+"Aşağıdakilerden birini veya hepsini kapsayabilir:\n"
+"\n"
+"%f: Aygıtın bağlanma noktası - Sadece depolama aygıtları\n"
+"%d: Aygıt düğümü konumu - Sadece blok aygıtlar\n"
+"%i: Aygıt tanımlayıcı"
 
 #. i18n: file: ActionEditor.ui:90
 #. i18n: ectx: property (text), widget (QLabel, TlPredicateTree)
@@ -231,7 +238,7 @@ msgstr "%1 Eylemi Düzenleniyor"
 
 #: SolidActions.cpp:160
 msgid "It appears that the predicate for this action is not valid."
-msgstr ""
+msgstr "Bu eylemin doğrulaması geçersiz görünüyor."
 
 #: SolidActions.cpp:160
 msgid "Error parsing device conditions"
@@ -242,6 +249,8 @@ msgid ""
 "It appears that the action name, command, icon or condition are not valid.\n"
 "Therefore, changes will not be applied."
 msgstr ""
+"Eylem adı, komut, simge veya koşul geçersiz görünüyor.\n"
+"Bu yüzden değişiklikler uygulanmayacak."
 
 #: SolidActions.cpp:205
 msgid "Invalid action"
