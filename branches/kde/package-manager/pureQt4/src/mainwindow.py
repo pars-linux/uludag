@@ -44,6 +44,7 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
+        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.centralWidget().updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         self.connect(self.app, SIGNAL("aboutToQuit()"), self.slotQuit)

@@ -48,6 +48,9 @@ class PMConfig(Config):
     def showOnlyGuiApp(self):
         return self.getBoolValue("ShowOnlyGuiApp")
 
+    def showComponents(self):
+        return self.getBoolValue("ShowComponents")
+
     def updateCheck(self):
         return self.getBoolValue("UpdateCheck")
 
@@ -74,3 +77,6 @@ class PMConfig(Config):
 
     def setShowOnlyGuiApp(self, enabled):
         self.setValue("ShowOnlyGuiApp", enabled)
+
+    def setShowComponents(self, enabled):
+        self.setValue("ShowComponents", enabled)

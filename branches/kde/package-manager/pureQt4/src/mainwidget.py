@@ -33,6 +33,7 @@ from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
 
 from pmutils import *
+import config
 
 UPDATE_TYPES = [['normal',   i18n('All Updates'), 'system-software-update'],
                 ['security', i18n('Security Updates'),    'security-medium'],
@@ -47,6 +48,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state = StateManager(self)
         self.basket = BasketDialog(self.state)
         self.initialize()
+        self.updateSettings()
         self.actionButton.setIcon(self.state.getActionIcon())
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
@@ -65,7 +67,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.searchLine.clear)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("toggled(bool)"), self.toggleSelectAll)
-        self.connect(self.checkComponents, SIGNAL("toggled(bool)"), self.showComponents)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
@@ -115,6 +116,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.setColumnWidth(0, 32)
         self.packageList.setPackages(self.state.packages())
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.statusChanged)
+
+    def updateSettings(self):
+        self.packageList.showComponents = config.PMConfig().showComponents()
+        self.packageList.setFocus()
 
     def searchLineChanged(self, text):
         self.searchButton.setEnabled(bool(text))
@@ -263,10 +268,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def setReverseAll(self, packages=None):
         if packages:
             self.packageList.selectAll(packages)
-
-    def showComponents(self, toggled):
-        self.packageList.showComponents = toggled
-        self.packageList.setFocus()
 
     def toggleSelectAll(self, toggled):
         if toggled:

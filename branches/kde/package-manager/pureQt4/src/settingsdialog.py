@@ -54,6 +54,7 @@ class GeneralSettings(SettingsTab):
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
 
         self.settings.onlyGuiApp.setChecked(self.config.showOnlyGuiApp())
+        self.settings.showComponents.setChecked(self.config.showComponents())
         self.settings.intervalCheck.setChecked(self.config.updateCheck())
         self.settings.installUpdates.setChecked(self.config.installUpdatesAutomatically())
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
@@ -73,6 +74,7 @@ class GeneralSettings(SettingsTab):
 
     def connectSignals(self):
         self.connect(self.settings.onlyGuiApp, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.showComponents, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.installUpdates, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
@@ -84,6 +86,10 @@ class GeneralSettings(SettingsTab):
         if self.settings.onlyGuiApp.isChecked() != self.config.showOnlyGuiApp():
             self.config.setShowOnlyGuiApp(self.settings.onlyGuiApp.isChecked())
             self.settings.emit(SIGNAL("packagesChanged()"))
+
+        if self.settings.showComponents.isChecked() != self.config.showComponents():
+            self.config.setShowComponents(self.settings.showComponents.isChecked())
+            self.settings.emit(SIGNAL("packageViewChanged()"))
 
         if self.settings.systemTray.isChecked() != self.config.systemTray():
             self.config.setSystemTray(self.settings.systemTray.isChecked())
