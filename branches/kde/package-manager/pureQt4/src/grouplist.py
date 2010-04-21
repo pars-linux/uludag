@@ -33,8 +33,7 @@ class GroupList(QtGui.QListWidget):
         for name in groups:
             self.createGroupItem(name)
         self.sortItems()
-        if self.state.state == StateManager.UPGRADE:
-            self.moveAllToFirstLine()
+        self.moveAllToFirstLine()
         self.ensureGroupSelected()
 
     def createGroupItem(self, name):
