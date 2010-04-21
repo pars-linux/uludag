@@ -1,3 +1,2 @@
 #! /usr/bin/env bash
-$XGETTEXT *.cpp -o $podir/plasma_runner_pisi.pot
-rm -f rc.cpp
+xgettext *.cpp --default-domain=plasma_runner_pisi --keyword=i18n -o po/plasma_runner_pisi.pot
