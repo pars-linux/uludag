@@ -30,6 +30,11 @@ module for querying system-wide policy
 
 """
 
+import fnmatch
+import ConfigParser
+import os
+import pwd
+
 import _polkit
 
 from _polkit import (
@@ -45,6 +50,8 @@ from _polkit import (
     CONSTRAINT_TYPE_REQUIRE_SELINUX_CONTEXT,
     error
     )
+
+DB_FILE = "/etc/polkit-1/localauthority/10-vendor.d/pardus.pkla"
 
 def action_list():
     """
@@ -80,7 +87,8 @@ def auth_list_uid(uid):
     returns :
         A list() of authorizations
     """
-    return _polkit.auth_list_uid(uid)
+
+    return [x for x in auth_list_all() if x["uid"] == uid]
 
 def auth_list_all():
     """
@@ -89,7 +97,36 @@ def auth_list_all():
     returns :
          A list() of authorizations
     """
-    return _polkit.auth_list_all()
+
+    authorizations = []
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(DB_FILE)
+
+    for title in cp.sections():
+        if not title.startswith("user:"):
+            continue
+        # UID
+        try:
+            _uid = pwd.getpwnam(title.split(":")[1]).pw_uid
+        except KeyError:
+            continue
+
+        # Action ID pattern (e.g.: org.example.*)
+        action_pattern = cp.get(title, "Action")
+
+        # Add a seperate entry for each action id
+        for action_id in action_list():
+            if fnmatch.fnmatch(action_id, action_pattern):
+                auth = {
+                    "action_id": action_id,
+                    "uid": _uid,
+                    "type": 3,
+                    "negative": cp.get(title, "ResultAny") == "no",
+                }
+                authorizations.append(auth)
+
+    return authorizations
 
 def auth_add(action_id, auth_type, uid, pid=None):
     """
