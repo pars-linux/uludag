@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,23 +13,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kresourceassistant.cpp:47
 msgctxt "@info"
-msgid ""
-"<title>Introduction</title><para>This assistant will guide you through the "
-"necessary steps to use a traditional KDE resource plugin to populate a "
-"folder of your Akonadi personal information setup with data otherwise not "
-"yet accessible through native Akonadi resources.</para><para>The setup "
-"process consists of three steps:</para><para><list><item>Step 1: Selecting a "
-"plugin suitable for the kind of data source you want to add;</"
-"item><item>Step 2: Providing the selected plugin with information on where "
-"to find and how to access the data;</item><item>Step 3: Naming the resulting "
-"data source so you can easily identify it in any application presenting you "
-"a choice of which data to process.</item></list></para>"
-msgstr ""
+msgid "<title>Introduction</title><para>This assistant will guide you through the necessary steps to use a traditional KDE resource plugin to populate a folder of your Akonadi personal information setup with data otherwise not yet accessible through native Akonadi resources.</para><para>The setup process consists of three steps:</para><para><list><item>Step 1: Selecting a plugin suitable for the kind of data source you want to add;</item><item>Step 2: Providing the selected plugin with information on where to find and how to access the data;</item><item>Step 3: Naming the resulting data source so you can easily identify it in any application presenting you a choice of which data to process.</item></list></para>"
+msgstr "<title>Başlangıç</title><para>Bu asistan, geleneksel bir KDE kaynak eklentisi kullanmak için gerekli adımlarda size yol gösterecek.  Kaynak eklentisi, Akonadi kişisel bilgi kurulumunu içeren bir klasörü veri ile doldurmak için kullanılır. Aksi takdirde bu bilgiler, doğal Akonadi kaynaklarından erişilemeyecektir.</para><para>Kurulum süreci üç adımdan oluşur:</para><para><list><item>Adım 1: Eklemek istediğiniz veri kaynağının türüne uygun bir eklenti seçilmesi;</item><item>Adım 2: Seçili eklentiye verinin bulunacağı yer ve erişim yöntemi ile ilgili bilgi sağlanması;</item><item>Adım 3: Sonuçta oluşacak veri kaynağına bir ad verilmesi ile işlenecek bilgiyi seçme imkanı sunan herhangi bir uygulamada kaynağın kolayca tanınacak bir hale getirilmesi.</item></list></para>"
 
 #: kresourceassistant.cpp:116
 msgctxt "@info"
@@ -49,10 +39,8 @@ msgstr "Eklentiye özel yapılandırma seçeneği yok"
 
 #: kresourceassistant.cpp:235
 msgctxt "@info"
-msgid ""
-"The settings on this page allow you to customize how the data from the "
-"plugin will fit into your personal information setup."
-msgstr ""
+msgid "The settings on this page allow you to customize how the data from the plugin will fit into your personal information setup."
+msgstr "Bu sayfadaki ayarlar, eklentiden gelen verinin kişisel bilgi kurulumunuza  uygun bir şekilde nasıl aktarılacağını belirlemenize imkan verir."
 
 #: kresourceassistant.cpp:251
 #, kde-format
@@ -114,9 +102,7 @@ msgstr "Adım 3: Hedef dizin özelliklerini seçin"
 
 #~ msgctxt "@info:status"
 #~ msgid "Initialization based on newly created configuration failed."
-#~ msgstr ""
-#~ "Yeni oluşturulan yapılandırma kullanılarak başlatma denemesi başarısız "
-#~ "oldu."
+#~ msgstr "Yeni oluşturulan yapılandırma kullanılarak başlatma denemesi başarısız oldu."
 
 #~ msgctxt "@info:status"
 #~ msgid "Loading of address book failed."
@@ -128,5 +114,4 @@ msgstr "Adım 3: Hedef dizin özelliklerini seçin"
 
 #~ msgctxt "@info:status"
 #~ msgid "Initialization based on stored configuration failed."
-#~ msgstr ""
-#~ "Kaydedilmiş yapılandırma kullanılarak başlatma denemesi başarısız oldu."
+#~ msgstr "Kaydedilmiş yapılandırma kullanılarak başlatma denemesi başarısız oldu."
