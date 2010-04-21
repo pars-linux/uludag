@@ -2099,7 +2099,7 @@ msgid ""
 "<p>The sender's address %1 is not stored in the certificate. Stored: %2</p>"
 msgstr ""
 "<p>Göndericinin e-posta adresi %1 sertifikada saklanmıyor. Saklandığı yer: "
-"%s</p>"
+"%2</p>"
 
 #: crypto/decryptverifytask.cpp:440
 #, kde-format
