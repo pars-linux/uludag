@@ -20,22 +20,6 @@
       <number>2</number>
      </property>
      <item>
-      <widget class="QComboBox" name="typeCombo">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="maximumSize">
-        <size>
-         <width>260</width>
-         <height>16777215</height>
-        </size>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="GroupList" name="groupList">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
@@ -69,7 +53,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="2">
+   <item row="0" column="3">
     <widget class="QPushButton" name="searchButton">
      <property name="enabled">
       <bool>false</bool>
@@ -79,7 +63,7 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="3">
+   <item row="0" column="4">
     <widget class="QPushButton" name="actionButton">
      <property name="text">
       <string>Install Package(s)</string>
@@ -101,7 +85,7 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="1" colspan="3">
+   <item row="2" column="1" colspan="4">
     <widget class="PackageView" name="packageList">
      <property name="minimumSize">
       <size>
@@ -169,6 +153,22 @@
      <attribute name="verticalHeaderMinimumSectionSize">
       <number>52</number>
      </attribute>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <widget class="QComboBox" name="typeCombo">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>260</width>
+       <height>16777215</height>
+      </size>
+     </property>
     </widget>
    </item>
   </layout>
