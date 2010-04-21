@@ -3,18 +3,19 @@
 #
 # Serdar Soytetir, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Gökçen Eraslan <gokcen@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pci\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 05:57+0100\n"
-"PO-Revision-Date: 2009-09-28 03:42+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-21 10:53+0300\n"
+"Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kcm_pci.cpp:51
@@ -658,7 +659,6 @@ msgid "Length"
 msgstr "Uzunluk"
 
 #: kpci.cpp:659
-#, fuzzy
 #| msgid "None"
 msgctxt "no data"
 msgid "None"
@@ -699,35 +699,30 @@ msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
 #: kpci_private.h:26
-#, fuzzy
 #| msgid "Enabled"
 msgctxt "state of PCI item"
 msgid "Enabled"
-msgstr "Etkinleştirilmiş"
+msgstr "Etkin"
 
 #: kpci_private.h:27
-#, fuzzy
 #| msgid "Disabled"
 msgctxt "state of PCI item"
 msgid "Disabled"
-msgstr "Pasifleştirilmiş"
+msgstr "Etkin değil"
 
 #: kpci_private.h:28
-#, fuzzy
 #| msgid "Yes"
 msgctxt "state of PCI item"
 msgid "Yes"
 msgstr "Evet"
 
 #: kpci_private.h:29
-#, fuzzy
 #| msgid "No"
 msgctxt "state of PCI item"
 msgid "No"
 msgstr "Hayır"
 
 #: kpci_private.h:30
-#, fuzzy
 #| msgid "Unknown"
 msgctxt "state of PCI item"
 msgid "Unknown"
@@ -1624,3 +1619,4 @@ msgstr "16 vektör"
 #: kpci_private.h:776
 msgid "32 vectors"
 msgstr "32 vektör"
+
