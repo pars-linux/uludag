@@ -2,7 +2,7 @@
 # translation of kxsconfig.po to
 # translation of kxsconfig.po to
 # Copyright (C) 2003, 2004, 2005 Free Software Foundation, Inc.
-#
+# 
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
 # Aydın Demirel <aydin@kde.org.tr>, 2005.
@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: kxsconfig.cpp:326
 msgid "KDE X Screen Saver Configuration tool"
@@ -73,7 +73,7 @@ msgstr ""
 
 #: hacks/config/abstractile.xml.h:4
 msgid "Block tiles"
-msgstr ""
+msgstr "Öbek Döşemeler"
 
 #: hacks/config/abstractile.xml.h:5 hacks/config/anemone.xml.h:3
 #: hacks/config/apollonian.xml.h:7 hacks/config/atlantis.xml.h:6
@@ -110,13 +110,11 @@ msgstr "Hızlı"
 
 #: hacks/config/abstractile.xml.h:6
 msgid "Flat tiles"
-msgstr ""
+msgstr "Yassı Döşemeler"
 
 #: hacks/config/abstractile.xml.h:7
-msgid ""
-"Generates mosaic patterns of interlocking tiles. Written by Steve Sundstrom; "
-"2004."
-msgstr ""
+msgid "Generates mosaic patterns of interlocking tiles. Written by Steve Sundstrom; 2004."
+msgstr "Birbirine bağlanmış döşemeleriden mozaik desen üretir. Steve Sundstorm tarafından 2004 yılında yazılımıştır."
 
 #: hacks/config/abstractile.xml.h:8 hacks/config/boxed.xml.h:13
 #: hacks/config/celtic.xml.h:5 hacks/config/coral.xml.h:9
@@ -126,19 +124,19 @@ msgstr ""
 #: hacks/config/rorschach.xml.h:5 hacks/config/tangram.xml.h:6
 #: hacks/config/xlyap.xml.h:4 hacks/config/xspirograph.xml.h:6
 msgid "Linger"
-msgstr ""
+msgstr "Yavaş yavaş kaybolma"
 
 #: hacks/config/abstractile.xml.h:9
 msgid "Neon tiles"
-msgstr ""
+msgstr "Neon Döşeme"
 
 #: hacks/config/abstractile.xml.h:10
 msgid "Outline tiles"
-msgstr ""
+msgstr "Anahat Döşemeler"
 
 #: hacks/config/abstractile.xml.h:11
 msgid "Random tile layout"
-msgstr ""
+msgstr "Rastgele döşeme düzen"
 
 #: hacks/config/abstractile.xml.h:12 hacks/config/anemone.xml.h:9
 #: hacks/config/anemotaxis.xml.h:12 hacks/config/antinspect.xml.h:7
@@ -250,7 +248,7 @@ msgstr ""
 #: hacks/config/xrayswarm.xml.h:5 hacks/config/xspirograph.xml.h:8
 #: hacks/config/zoom.xml.h:12
 msgid "Show frame rate"
-msgstr ""
+msgstr "Kare hızını göster"
 
 #: hacks/config/abstractile.xml.h:13 hacks/config/anemone.xml.h:10
 #: hacks/config/apollonian.xml.h:13 hacks/config/atlantis.xml.h:18
@@ -302,11 +300,11 @@ msgstr "Hız"
 
 #: hacks/config/abstractile.xml.h:15
 msgid "Thin tiles"
-msgstr ""
+msgstr "İnce Döşeme"
 
 #: hacks/config/abstractile.xml.h:16
 msgid "Tiled tiles"
-msgstr ""
+msgstr "Seramik Fayans"
 
 #: hacks/config/anemone.xml.h:1
 msgid "Anemone"
@@ -492,7 +490,7 @@ msgstr "İki"
 
 #: hacks/config/anemone.xml.h:18
 msgid "Wiggling tentacles. Written by Gabriel Finch; 2002."
-msgstr ""
+msgstr "Hareketli dokunaç"
 
 #: hacks/config/anemone.xml.h:19
 msgid "Withdraw freqency"
@@ -503,12 +501,7 @@ msgid "Anemotaxis"
 msgstr "Anemotaxis"
 
 #: hacks/config/anemotaxis.xml.h:2
-msgid ""
-"Anemotaxis demonstrates a search algorithm designed for locating a source of "
-"odor in turbulent atmosphere. The searcher is able to sense the odor and "
-"determine local instantaneous wind direction. The goal is to find the source "
-"in the shortest mean time. http://en.wikipedia.org/wiki/Anemotaxis Written "
-"by Eugene Balkovsky; 2004."
+msgid "Anemotaxis demonstrates a search algorithm designed for locating a source of odor in turbulent atmosphere. The searcher is able to sense the odor and determine local instantaneous wind direction. The goal is to find the source in the shortest mean time. http://en.wikipedia.org/wiki/Anemotaxis Written by Eugene Balkovsky; 2004."
 msgstr ""
 
 #: hacks/config/anemotaxis.xml.h:3
@@ -837,9 +830,7 @@ msgid "Draw shadows"
 msgstr "Gölgeleri çiz"
 
 #: hacks/config/antinspect.xml.h:3
-msgid ""
-"Draws a trio of ants moving their spheres around a circle. Written by Blair "
-"Tennessy; 2004."
+msgid "Draws a trio of ants moving their spheres around a circle. Written by Blair Tennessy; 2004."
 msgstr ""
 
 #: hacks/config/antmaze.xml.h:1
@@ -848,44 +839,21 @@ msgstr "AntMaze"
 
 #: hacks/config/antmaze.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Displays a few lines of text spinning around in a solid 3D font. Written "
-#| "by Jamie Zawinski."
-msgid ""
-"Draws a few views of a few ants walking around in a simple maze. Written by "
-"Blair Tennessy; 2005."
-msgstr ""
-"Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını "
-"görüntüler. Yazar Jamie Zawinski."
+msgid "Draws a few views of a few ants walking around in a simple maze. Written by Blair Tennessy; 2005."
+msgstr "Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını görüntüler. Yazar Jamie Zawinski."
 
 #: hacks/config/antspotlight.xml.h:1
 msgid "AntSpotlight"
 msgstr "AntSpotlight"
 
 #: hacks/config/antspotlight.xml.h:2
-msgid ""
-"Draws an ant (with a headlight) who walks on top of an image of your desktop "
-"or other image. Written by Blair Tennessy; 2003."
+msgid "Draws an ant (with a headlight) who walks on top of an image of your desktop or other image. Written by Blair Tennessy; 2003."
 msgstr ""
 
 #: hacks/config/ant.xml.h:2
 #, fuzzy, no-c-format
-#| msgid ""
-#| "A cellular automaton that is really a two-dimensional Turing machine: as "
-#| "the heads (``ants'') walk along the screen, they change pixel values in "
-#| "their path. Then, as they pass over changed pixels, their behavior is "
-#| "influenced. Written by David Bagley."
-msgid ""
-"A cellular automaton that is really a two-dimensional Turing machine: as the "
-"heads (\"ants\") walk along the screen, they change pixel values in their "
-"path. Then, as they pass over changed pixels, their behavior is influenced. "
-"http://en.wikipedia.org/wiki/Langton%27s_ant http://en.wikipedia.org/wiki/"
-"Turing_machine Written by David Bagley; 1997."
-msgstr ""
-"Bir hücresel otomat iki-boyutlu bir Turing makinesi gerçekliğidir. ekran "
-"boyunca yürüyen başlar gibi (''karıncalar''), onlar yolları içindeki benek "
-"değerlerini değiştirir. O zaman, onlar değişmiş benekler üzerindeki geçişi "
-"gibi, davranışları etkilenir. Yazar David Bagley."
+msgid "A cellular automaton that is really a two-dimensional Turing machine: as the heads (\"ants\") walk along the screen, they change pixel values in their path. Then, as they pass over changed pixels, their behavior is influenced. http://en.wikipedia.org/wiki/Langton%27s_ant http://en.wikipedia.org/wiki/Turing_machine Written by David Bagley; 1997."
+msgstr "Bir hücresel otomat iki-boyutlu bir Turing makinesi gerçekliğidir. ekran boyunca yürüyen başlar gibi (''karıncalar''), onlar yolları içindeki benek değerlerini değiştirir. O zaman, onlar değişmiş benekler üzerindeki geçişi gibi, davranışları etkilenir. Yazar David Bagley."
 
 #: hacks/config/ant.xml.h:3
 msgid "Ant"
@@ -1009,17 +977,8 @@ msgstr "Etiketleri çiz"
 
 #: hacks/config/apollonian.xml.h:6
 #, fuzzy, no-c-format
-#| msgid ""
-#| "Packs a large circle with smaller circles, demonstrating the Descartes "
-#| "Circle Theorem. Written by Allan R. Wilks and David Bagley."
-msgid ""
-"Draws an Apollonian gasket: a fractal packing of circles with smaller "
-"circles, demonstrating Descartes's theorem. http://en.wikipedia.org/wiki/"
-"Apollonian_gasket http://en.wikipedia.org/wiki/Descartes%27_theorem Written "
-"by Allan R. Wilks and David Bagley; 2002."
-msgstr ""
-"Sıkıştırılmış büyük çemberden daha küçük bir çembere, Decartes'in çember "
-"teoremini gösterir. Yazarlar Allan R. Wilks ve David Bagley."
+msgid "Draws an Apollonian gasket: a fractal packing of circles with smaller circles, demonstrating Descartes's theorem. http://en.wikipedia.org/wiki/Apollonian_gasket http://en.wikipedia.org/wiki/Descartes%27_theorem Written by Allan R. Wilks and David Bagley; 2002."
+msgstr "Sıkıştırılmış büyük çemberden daha küçük bir çembere, Decartes'in çember teoremini gösterir. Yazarlar Allan R. Wilks ve David Bagley."
 
 #: hacks/config/apollonian.xml.h:8
 msgid "Include alternate geometries"
@@ -1050,16 +1009,7 @@ msgid "Run basic programs"
 msgstr "Basit programları çalıştır"
 
 #: hacks/config/apple2.xml.h:7
-msgid ""
-"Simulates an original Apple ][ Plus computer in all its 1979 glory. It also "
-"reproduces the appearance of display on a color television set of the "
-"period. In \"Basic Programming Mode\", a simulated user types in a BASIC "
-"program and runs it. In \"Text Mode\", it displays the output of a program, "
-"or the contents of a file or URL. In \"Slideshow Mode\", it chooses random "
-"images and displays them within the limitations of the Apple ][ display "
-"hardware. (Six available colors in hi-res mode!) On X11 systems, This "
-"program is also a fully-functional VT100 emulator. http://en.wikipedia.org/"
-"wiki/Apple_II_series Written by Trevor Blackwell; 2003."
+msgid "Simulates an original Apple ][ Plus computer in all its 1979 glory. It also reproduces the appearance of display on a color television set of the period. In \"Basic Programming Mode\", a simulated user types in a BASIC program and runs it. In \"Text Mode\", it displays the output of a program, or the contents of a file or URL. In \"Slideshow Mode\", it chooses random images and displays them within the limitations of the Apple ][ display hardware. (Six available colors in hi-res mode!) On X11 systems, This program is also a fully-functional VT100 emulator. http://en.wikipedia.org/wiki/Apple_II_series Written by Trevor Blackwell; 2003."
 msgstr ""
 
 #: hacks/config/atlantis.xml.h:1 hacks/config/deluxe.xml.h:2
@@ -1071,16 +1021,8 @@ msgstr "20"
 
 #: hacks/config/atlantis.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "This is xfishtank writ large: a GL animation of a number of sharks, "
-#| "dolphins, and whales. The swimming motions are great. Originally written "
-#| "by Mark Kilgard."
-msgid ""
-"A 3D animation of a number of sharks, dolphins, and whales. Written by Mark "
-"Kilgard; 1998."
-msgstr ""
-"Büyük akvaryum açıklama : Köpekbalıklarının,yunusların ve balinaların GL "
-"yüzme hareketlerinin olduğu canlandırmadır. İlk yazar Mark Kilgard."
+msgid "A 3D animation of a number of sharks, dolphins, and whales. Written by Mark Kilgard; 1998."
+msgstr "Büyük akvaryum açıklama : Köpekbalıklarının,yunusların ve balinaların GL yüzme hareketlerinin olduğu canlandırmadır. İlk yazar Mark Kilgard."
 
 #: hacks/config/atlantis.xml.h:3
 msgid "Agressive"
@@ -1277,44 +1219,15 @@ msgstr "Kuyruk uzunluğu"
 
 #: hacks/config/attraction.xml.h:32
 #, fuzzy
-#| msgid ""
-#| "Like qix, this uses a simple simple motion model to generate many "
-#| "different display modes. The control points attract each other up to a "
-#| "certain distance, and then begin to repel each other. The attraction/"
-#| "repulsion is proportional to the distance between any two particles, "
-#| "similar to the strong and weak nuclear forces. One of the most "
-#| "interesting ways to watch this hack is simply as bouncing balls, because "
-#| "their motions and interactions with each other are so odd. Sometimes two "
-#| "balls will get into a tight orbit around each other, to be interrupted "
-#| "later by a third, or by the edge of the screen. It looks quite chaotic. "
-#| "Written by Jamie Zawinski, based on Lisp code by John Pezaris."
-msgid ""
-"Uses a simple simple motion model to generate many different display modes. "
-"The control points attract each other up to a certain distance, and then "
-"begin to repel each other. The attraction/repulsion is proportional to the "
-"distance between any two particles, similar to the strong and weak nuclear "
-"forces. Written by Jamie Zawinski and John Pezaris; 1992."
-msgstr ""
-"Bu qix gibi, pekçok farklı ekran kiplerini oluşturmak için basit bir devinim "
-"modeli kullanır. Kontrol noktaları kesin bir mesafede birbirine doğru "
-"çekimler ve sonra birbirine doğru geri itme yapar. Çekim/geritepki herhangi "
-"iki parçacık arasındaki mesafeye orantılıdır, zayıf ve güçlü nükleer güçlere "
-"benzerdir. Bu darbeyi izlemek için pekçok ilginç yollardan bir tanesi "
-"basitçe topların sekmesi gibidir, çünkü onların birbiri ile birlikte "
-"hareketleri ve etkileşimleri oldukça eskidir. Bazen iki top birbiri "
-"etrafında gergin bir yörüngede yer alacaktır, üçüncü bir yolla ya da ekran "
-"köşesi yoluyla sonra kesilecek. O tam olarak karmakarışık bir yapıya benzer. "
-"John Pezaris tarafından Lisp kodu üzerinde kodlandı, Jamie Zawinski "
-"tarafından yazıldı."
+msgid "Uses a simple simple motion model to generate many different display modes. The control points attract each other up to a certain distance, and then begin to repel each other. The attraction/repulsion is proportional to the distance between any two particles, similar to the strong and weak nuclear forces. Written by Jamie Zawinski and John Pezaris; 1992."
+msgstr "Bu qix gibi, pekçok farklı ekran kiplerini oluşturmak için basit bir devinim modeli kullanır. Kontrol noktaları kesin bir mesafede birbirine doğru çekimler ve sonra birbirine doğru geri itme yapar. Çekim/geritepki herhangi iki parçacık arasındaki mesafeye orantılıdır, zayıf ve güçlü nükleer güçlere benzerdir. Bu darbeyi izlemek için pekçok ilginç yollardan bir tanesi basitçe topların sekmesi gibidir, çünkü onların birbiri ile birlikte hareketleri ve etkileşimleri oldukça eskidir. Bazen iki top birbiri etrafında gergin bir yörüngede yer alacaktır, üçüncü bir yolla ya da ekran köşesi yoluyla sonra kesilecek. O tam olarak karmakarışık bir yapıya benzer. John Pezaris tarafından Lisp kodu üzerinde kodlandı, Jamie Zawinski tarafından yazıldı."
 
 #: hacks/config/atunnel.xml.h:1
 msgid "Atunnel"
 msgstr ""
 
 #: hacks/config/atunnel.xml.h:2
-msgid ""
-"Draws an animation of a textured tunnel in GL. Written by Eric Lassauge and "
-"Roman Podobedov; 2003."
+msgid "Draws an animation of a textured tunnel in GL. Written by Eric Lassauge and Roman Podobedov; 2003."
 msgstr ""
 
 #: hacks/config/atunnel.xml.h:5 hacks/config/boing.xml.h:4
@@ -1345,11 +1258,7 @@ msgid "Barcode grid"
 msgstr "Barkod ızgarası"
 
 #: hacks/config/barcode.xml.h:5
-msgid ""
-"Draws a random sequence of colorful barcodes scrolling across your screen. "
-"CONSUME! The barcodes follow the UPC-A, UPC-E, EAN-8 or EAN-13 standards. "
-"http://en.wikipedia.org/wiki/Universal_Product_Code http://en.wikipedia.org/"
-"wiki/European_Article_Number Written by Dan Bornstein; 2003."
+msgid "Draws a random sequence of colorful barcodes scrolling across your screen. CONSUME! The barcodes follow the UPC-A, UPC-E, EAN-8 or EAN-13 standards. http://en.wikipedia.org/wiki/Universal_Product_Code http://en.wikipedia.org/wiki/European_Article_Number Written by Dan Bornstein; 2003."
 msgstr ""
 
 #: hacks/config/barcode.xml.h:9
@@ -1362,18 +1271,8 @@ msgstr "Patlatan"
 
 #: hacks/config/blaster.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Draws a simulation of flying space-combat robots (cleverly disguised as "
-#| "colored circles) doing battle in front of a moving star field. Written by "
-#| "Jonathan Lin."
-msgid ""
-"Draws a simulation of flying space-combat robots (cleverly disguised as "
-"colored circles) doing battle in front of a moving star field. Written by "
-"Jonathan Lin; 1999."
-msgstr ""
-"Yürüyen bir yıldız alanını önünde mücadele ederek uçan uzay-savaş "
-"robotlarının bir benzetimini çizer (akıllıca gizlenmiş renklendirilmiş "
-"çemberler gibi). Jonathan Lin tarafından yazıldı."
+msgid "Draws a simulation of flying space-combat robots (cleverly disguised as colored circles) doing battle in front of a moving star field. Written by Jonathan Lin; 1999."
+msgstr "Yürüyen bir yıldız alanını önünde mücadele ederek uçan uzay-savaş robotlarının bir benzetimini çizer (akıllıca gizlenmiş renklendirilmiş çemberler gibi). Jonathan Lin tarafından yazıldı."
 
 #: hacks/config/blaster.xml.h:6 hacks/config/penetrate.xml.h:4
 msgid "Lasers"
@@ -1408,9 +1307,7 @@ msgid "Motion blur"
 msgstr "Hareket buanıklaştırması"
 
 #: hacks/config/blinkbox.xml.h:11
-msgid ""
-"Shows a ball contained inside of a bounding box. Colored blocks blink in "
-"when the ball hits the sides. Written by Jeremy English; 2003."
+msgid "Shows a ball contained inside of a bounding box. Colored blocks blink in when the ball hits the sides. Written by Jeremy English; 2003."
 msgstr ""
 
 #: hacks/config/blitspin.xml.h:1 hacks/config/bumps.xml.h:1
@@ -1472,33 +1369,8 @@ msgstr "Rastgele döndürme hızı"
 
 #: hacks/config/blitspin.xml.h:9
 #, fuzzy
-#| msgid ""
-#| "The ``blitspin'' hack repeatedly rotates a bitmap by 90 degrees by using "
-#| "logical operations: the bitmap is divided into quadrants, and the "
-#| "quadrants are shifted clockwise. Then the same thing is done again with "
-#| "progressively smaller quadrants, except that all sub-quadrants of a given "
-#| "size are rotated in parallel. Written by Jamie Zawinski based on some "
-#| "cool SmallTalk code seen in in Byte Magazine in 1981. As you watch it, "
-#| "the image appears to dissolve into static and then reconstitute itself, "
-#| "but rotated. You can provide the image to use, as an XBM or XPM file, or "
-#| "tell it to grab a screen image and rotate that."
-msgid ""
-"Repeatedly rotates a bitmap by 90 degrees by using logical operations: the "
-"bitmap is divided into quadrants, and the quadrants are shifted clockwise. "
-"Then the same thing is done again with progressively smaller quadrants, "
-"except that all sub-quadrants of a given size are rotated in parallel. As "
-"you watch it, the image appears to dissolve into static and then "
-"reconstitute itself, but rotated. Written by Jamie Zawinski; 1992."
-msgstr ""
-"''blitspin'' darbesi defalarca mantıksal işlemleri kullanma yoluyla 90 "
-"derece bir resmi döndürür: resim dairenin dörtte birine bölünür ve dörtte "
-"bir daireler saat yönünde yeri değiştirilir. O zaman aynı şey daha küçük "
-"dörtte bir daireleri artan bir şekilde tekrar yapılır, verilen bir boyutun "
-"tüm alt-dörtte bir daireleri hariç paralel içinde döndürülür.Yazar Jamie "
-"Zawinski. İzlediğiniz gibi, resim durağanda çözülecek gibi görünür ve sonra "
-"kendi kendine yeniden kurulur, fakat döndürülmüştür. Bir XPM ya da XBM "
-"dosyası gibi kullanacak resmi sağlayabilirsiniz ya da bir ekran resmi "
-"yakalamak için onu anlatın ve döndürün."
+msgid "Repeatedly rotates a bitmap by 90 degrees by using logical operations: the bitmap is divided into quadrants, and the quadrants are shifted clockwise. Then the same thing is done again with progressively smaller quadrants, except that all sub-quadrants of a given size are rotated in parallel. As you watch it, the image appears to dissolve into static and then reconstitute itself, but rotated. Written by Jamie Zawinski; 1992."
+msgstr "''blitspin'' darbesi defalarca mantıksal işlemleri kullanma yoluyla 90 derece bir resmi döndürür: resim dairenin dörtte birine bölünür ve dörtte bir daireler saat yönünde yeri değiştirilir. O zaman aynı şey daha küçük dörtte bir daireleri artan bir şekilde tekrar yapılır, verilen bir boyutun tüm alt-dörtte bir daireleri hariç paralel içinde döndürülür.Yazar Jamie Zawinski. İzlediğiniz gibi, resim durağanda çözülecek gibi görünür ve sonra kendi kendine yeniden kurulur, fakat döndürülmüştür. Bir XPM ya da XBM dosyası gibi kullanacak resmi sağlayabilirsiniz ya da bir ekran resmi yakalamak için onu anlatın ve döndürün."
 
 #: hacks/config/blocktube.xml.h:1
 msgid "BlockTube"
@@ -1510,19 +1382,15 @@ msgstr "Rek değiştirme zamanı"
 
 #: hacks/config/blocktube.xml.h:3
 #, fuzzy
-#| msgid "Color Gradients"
 msgid "Color hold time"
 msgstr "Renk Eğimleri"
 
 #: hacks/config/blocktube.xml.h:4
-msgid ""
-"Draws a swirling, falling tunnel of reflective slabs. They fade from hue to "
-"hue. Written by Lars R. Damerow; 2003."
+msgid "Draws a swirling, falling tunnel of reflective slabs. They fade from hue to hue. Written by Lars R. Damerow; 2003."
 msgstr ""
 
 #: hacks/config/boing.xml.h:1
 #, fuzzy
-#| msgid "Long"
 msgid "Boing"
 msgstr "Uzun"
 
@@ -1538,13 +1406,11 @@ msgstr "Meridyenler"
 
 #: hacks/config/boing.xml.h:6
 #, fuzzy
-#| msgid "Particles"
 msgid "Parallels"
 msgstr "Tanecikler"
 
 #: hacks/config/boing.xml.h:7
 #, fuzzy
-#| msgid "Splines"
 msgid "Scanlines"
 msgstr "Eğriler"
 
@@ -1560,13 +1426,7 @@ msgid "Smoothing"
 msgstr "Düzleştirme"
 
 #: hacks/config/boing.xml.h:13
-msgid ""
-"This bouncing ball is a clone of the first graphics demo for the Amiga 1000, "
-"which was written by Dale Luck and RJ Mical during a break at the 1984 "
-"Consumer Electronics Show (or so the legend goes.) This looks like the "
-"original Amiga demo if you turn off \"smoothing\" and \"lighting\" and turn "
-"on \"scanlines\", and is somewhat more modern otherwise. http://en.wikipedia."
-"org/wiki/Amiga#Boing_Ball Written by Jamie Zawinski; 2005."
+msgid "This bouncing ball is a clone of the first graphics demo for the Amiga 1000, which was written by Dale Luck and RJ Mical during a break at the 1984 Consumer Electronics Show (or so the legend goes.) This looks like the original Amiga demo if you turn off \"smoothing\" and \"lighting\" and turn on \"scanlines\", and is somewhat more modern otherwise. http://en.wikipedia.org/wiki/Amiga#Boing_Ball Written by Jamie Zawinski; 2005."
 msgstr ""
 
 #: hacks/config/boing.xml.h:14 hacks/config/boxed.xml.h:24
@@ -1588,20 +1448,11 @@ msgstr "Noktaların sayısı"
 
 #: hacks/config/bouboule.xml.h:11
 #, fuzzy
-#| msgid ""
-#| "This draws what looks like a spinning, deforming baloon with varying-"
-#| "sized spots painted on its invisible surface. Written by Jeremie Petit."
-msgid ""
-"This draws what looks like a spinning, deforming balloon with varying-sized "
-"spots painted on its invisible surface. Written by Jeremie Petit; 1997."
-msgstr ""
-"Bu onun görünmez yüzeyi üzerindeki boyanmış benekleri çeşitleme-boyutlama "
-"ile birlikte döndürme, bozulma gibi çizer.Jeremie Petit tarafından yazıldı."
+msgid "This draws what looks like a spinning, deforming balloon with varying-sized spots painted on its invisible surface. Written by Jeremie Petit; 1997."
+msgstr "Bu onun görünmez yüzeyi üzerindeki boyanmış benekleri çeşitleme-boyutlama ile birlikte döndürme, bozulma gibi çizer.Jeremie Petit tarafından yazıldı."
 
 #: hacks/config/bouncingcow.xml.h:1
-msgid ""
-"A Cow. A Trampoline. Together, they fight crime. Written by Jamie Zawinski; "
-"2003."
+msgid "A Cow. A Trampoline. Together, they fight crime. Written by Jamie Zawinski; 2003."
 msgstr ""
 
 #: hacks/config/bouncingcow.xml.h:2
@@ -1634,14 +1485,8 @@ msgstr "Kutulu"
 
 #: hacks/config/boxed.xml.h:3
 #, fuzzy
-#| msgid ""
-#| "Draws a box full of 3D bouncing balls that explode. Written by Sander van "
-#| "Grieken."
-msgid ""
-"Draws a box full of 3D bouncing balls that explode. Written by Sander van "
-"Grieken; 2002."
-msgstr ""
-"Patlayan 3B topların olduğu dolu bir kutunun çizimi. Yazar Sander vanGrieken."
+msgid "Draws a box full of 3D bouncing balls that explode. Written by Sander van Grieken; 2002."
+msgstr "Patlayan 3B topların olduğu dolu bir kutunun çizimi. Yazar Sander vanGrieken."
 
 #: hacks/config/boxed.xml.h:4
 msgid "Explosion decay"
@@ -1720,12 +1565,7 @@ msgid "Grow by"
 msgstr ""
 
 #: hacks/config/boxfit.xml.h:13
-msgid ""
-"Packs the screen with growing squares or circles, colored according to a "
-"horizontal or vertical gradient, or according to the colors of the desktop "
-"or a loaded image file. The objects grow until they touch, then stop. When "
-"the screen is full, they shrink away and the process restarts. Written by "
-"Jamie Zawinski; 2005."
+msgid "Packs the screen with growing squares or circles, colored according to a horizontal or vertical gradient, or according to the colors of the desktop or a loaded image file. The objects grow until they touch, then stop. When the screen is full, they shrink away and the process restarts. Written by Jamie Zawinski; 2005."
 msgstr ""
 
 #: hacks/config/boxfit.xml.h:14
@@ -1742,20 +1582,12 @@ msgstr "Örgü"
 
 #: hacks/config/braid.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Draws random color-cycling inter-braided concentric circles. Written by "
-#| "John Neil."
-msgid ""
-"Draws random color-cycling inter-braided concentric circles. Written by John "
-"Neil; 1997."
-msgstr ""
-"Eş merkezli çemberlerin rastgele renklendirildiği örgü çizimi. Yazar John "
-"Neil."
+msgid "Draws random color-cycling inter-braided concentric circles. Written by John Neil; 1997."
+msgstr "Eş merkezli çemberlerin rastgele renklendirildiği örgü çizimi. Yazar John Neil."
 
 #: hacks/config/braid.xml.h:6 hacks/config/epicycle.xml.h:7
 #: hacks/config/nerverot.xml.h:12
 #, fuzzy
-#| msgid "Line Thickness"
 msgid "Line thickness"
 msgstr "Çizgi Kalınlık"
 
@@ -1800,18 +1632,8 @@ msgstr "BSOD"
 
 #: hacks/config/bsod.xml.h:9
 #, fuzzy
-#| msgid ""
-#| "BSOD stands for ``Blue Screen of Death.'' The finest in personal computer "
-#| "emulation, this hack simulates popular screen savers from a number of "
-#| "less robust operating systems. Written by Jamie Zawinski."
-msgid ""
-"BSOD stands for \"Blue Screen of Death\". The finest in personal computer "
-"emulation, BSOD simulates popular screen savers from a number of less robust "
-"operating systems. Written by Jamie Zawinski; 1998."
-msgstr ""
-"BSOD ''Ölümün Mavi Ekranı'' için bekler. Bilgisayarınızdaki en güzel "
-"öykünmeyi, bu darbe daha az güçlü işletim sistemlerinin sayısından ünlü "
-"ekran koruyucuları gibi gösterir. Yazar Jamie Zawinski"
+msgid "BSOD stands for \"Blue Screen of Death\". The finest in personal computer emulation, BSOD simulates popular screen savers from a number of less robust operating systems. Written by Jamie Zawinski; 1998."
+msgstr "BSOD ''Ölümün Mavi Ekranı'' için bekler. Bilgisayarınızdaki en güzel öykünmeyi, bu darbe daha az güçlü işletim sistemlerinin sayısından ünlü ekran koruyucuları gibi gösterir. Yazar Jamie Zawinski"
 
 #: hacks/config/bsod.xml.h:11
 msgid "HPUX"
@@ -1907,16 +1729,8 @@ msgstr "Bubble3D"
 
 #: hacks/config/bubble3d.xml.h:3
 #, fuzzy
-#| msgid ""
-#| "Draws a stream of rising, undulating 3D bubbles, rising toward the top of "
-#| "the screen, with nice specular reflections. Written by Richard Jones."
-msgid ""
-"Draws a stream of rising, undulating 3D bubbles, rising toward the top of "
-"the screen, with transparency and specular reflections. Written by Richard "
-"Jones; 1998."
-msgstr ""
-"Hoş aynasal yansımalarla birlikte ekranın üstüne doğru yükselerek, 3-Boyut "
-"kabarcıkları dalgalayarak yükselen bir akıntı çizer. Yazar Richard Jones."
+msgid "Draws a stream of rising, undulating 3D bubbles, rising toward the top of the screen, with transparency and specular reflections. Written by Richard Jones; 1998."
+msgstr "Hoş aynasal yansımalarla birlikte ekranın üstüne doğru yükselerek, 3-Boyut kabarcıkları dalgalayarak yükselen bir akıntı çizer. Yazar Richard Jones."
 
 #: hacks/config/bubble3d.xml.h:8
 msgid "Transparent bubbles"
@@ -1944,7 +1758,6 @@ msgstr "Patlayan kabarcıkları gizleme"
 
 #: hacks/config/bubbles.xml.h:6
 #, fuzzy
-#| msgid "Draw circles instead of pixmap bubbles"
 msgid "Draw circles instead of bubble images"
 msgstr "Pixmap kabarcıklar yerine daireler çiz"
 
@@ -1954,23 +1767,11 @@ msgstr "Kuyrukları yoket"
 
 #: hacks/config/bubbles.xml.h:12
 #, fuzzy
-#| msgid ""
-#| "This simulates the kind of bubble formation that happens when water boils:"
-#| "small bubbles appear, and as they get closer to each other, they combine "
-#| "to form larger bubbles, which eventually pop. Written by James Macnicol."
-msgid ""
-"This simulates the kind of bubble formation that happens when water boils:"
-"small bubbles appear, and as they get closer to each other, they combine to "
-"form larger bubbles, which eventually pop. Written by James Macnicol; 1996."
-msgstr ""
-"Bu benzetimler su kaynadığın zaman meydana gelen kabarcık oluşum türüdür: "
-"küçük kabarcıklar gözükür ve onları birbirine daha yakın alır, onlar sonuçta "
-"açılan geniş kabarcıklar formuna birleştirir. Yazar James Macnicol."
+msgid "This simulates the kind of bubble formation that happens when water boils:small bubbles appear, and as they get closer to each other, they combine to form larger bubbles, which eventually pop. Written by James Macnicol; 1996."
+msgstr "Bu benzetimler su kaynadığın zaman meydana gelen kabarcık oluşum türüdür: küçük kabarcıklar gözükür ve onları birbirine daha yakın alır, onlar sonuçta açılan geniş kabarcıklar formuna birleştirir. Yazar James Macnicol."
 
 #: hacks/config/bumps.xml.h:3
-msgid ""
-"A spotlight roams across an embossed version of your desktop or other "
-"picture. Written by Shane Smit; 1999."
+msgid "A spotlight roams across an embossed version of your desktop or other picture. Written by Shane Smit; 1999."
 msgstr ""
 
 #: hacks/config/bumps.xml.h:4 hacks/config/mirrorblob.xml.h:7
@@ -1983,16 +1784,8 @@ msgstr "Kafes"
 
 #: hacks/config/cage.xml.h:6
 #, fuzzy
-#| msgid ""
-#| "This draws Escher's ``Impossible Cage,'' a 3d analog of a moebius strip, "
-#| "and rotates it in three dimensions. Written by Marcelo Vianna."
-msgid ""
-"This draws Escher's \"Impossible Cage\", a 3d analog of a moebius strip, and "
-"rotates it in three dimensions. http://en.wikipedia.org/wiki/"
-"Maurits_Cornelis_Escher Written by Marcelo Vianna; 1998."
-msgstr ""
-"Escher'in çizimi ''imkansız kafes'' 3b örneksel moebius şeriti içeride üç "
-"boyutlu döndürülür. Yazar Marcelo Vianna."
+msgid "This draws Escher's \"Impossible Cage\", a 3d analog of a moebius strip, and rotates it in three dimensions. http://en.wikipedia.org/wiki/Maurits_Cornelis_Escher Written by Marcelo Vianna; 1998."
+msgstr "Escher'in çizimi ''imkansız kafes'' 3b örneksel moebius şeriti içeride üç boyutlu döndürülür. Yazar Marcelo Vianna."
 
 #: hacks/config/carousel.xml.h:1 hacks/config/coral.xml.h:1
 #: hacks/config/deco.xml.h:1 hacks/config/helix.xml.h:1
@@ -2012,11 +1805,7 @@ msgid "Carousel"
 msgstr ""
 
 #: hacks/config/carousel.xml.h:8
-msgid ""
-"Loads several random images, and displays them flying in a circular "
-"formation. The formation changes speed and direction randomly, and images "
-"periodically drop out to be replaced by new ones. Written by Jamie Zawinski; "
-"2005."
+msgid "Loads several random images, and displays them flying in a circular formation. The formation changes speed and direction randomly, and images periodically drop out to be replaced by new ones. Written by Jamie Zawinski; 2005."
 msgstr ""
 
 #: hacks/config/carousel.xml.h:10
@@ -2077,15 +1866,8 @@ msgstr "Yoğunluk"
 
 #: hacks/config/ccurve.xml.h:8
 #, fuzzy
-#| msgid ""
-#| "Generates self-similar linear fractals, including the classic ``C "
-#| "Curve.'' Written by Rick Campbell."
-msgid ""
-"Generates self-similar linear fractals, including the classic \"C Curve\". "
-"http://en.wikipedia.org/wiki/Levy_C_curve Written by Rick Campbell; 1999."
-msgstr ""
-"Kendine benzer çizgisel fraktaller oluşturur.''C Eğrisi'' klasiği dahil. "
-"Yazar Rick Campbell."
+msgid "Generates self-similar linear fractals, including the classic \"C Curve\". http://en.wikipedia.org/wiki/Levy_C_curve Written by Rick Campbell; 1999."
+msgstr "Kendine benzer çizgisel fraktaller oluşturur.''C Eğrisi'' klasiği dahil. Yazar Rick Campbell."
 
 #: hacks/config/celtic.xml.h:1
 msgid "Celtic"
@@ -2096,17 +1878,12 @@ msgid "Draw graph"
 msgstr "Grafik çiz"
 
 #: hacks/config/celtic.xml.h:8
-msgid ""
-"Repeatedly draws random Celtic cross-stitch patterns. http://en.wikipedia."
-"org/wiki/Celtic_knot Written by Max Froumentin; 2005."
+msgid "Repeatedly draws random Celtic cross-stitch patterns. http://en.wikipedia.org/wiki/Celtic_knot Written by Max Froumentin; 2005."
 msgstr ""
 
 #: hacks/config/circuit.xml.h:1
 #, fuzzy
-#| msgid ""
-#| "Animates a number of 3D electronic components. Written by Ben Buxton."
-msgid ""
-"Animates a number of 3D electronic components. Written by Ben Buxton; 2001."
+msgid "Animates a number of 3D electronic components. Written by Ben Buxton; 2001."
 msgstr "3D elektronik bileşenlerin bir sayısını canlandırır. Yazar Ben Buxton."
 
 #: hacks/config/circuit.xml.h:2
@@ -2155,12 +1932,7 @@ msgstr "Bulut Hayatı"
 
 #: hacks/config/cloudlife.xml.h:5
 #, no-c-format
-msgid ""
-"Generates cloud-like formations based on a variant of Conway's Life. The "
-"difference is that cells have a maximum age, after which they count as 3 for "
-"populating the next generation. This makes long-lived formations explode "
-"instead of just sitting there. http://en.wikipedia.org/wiki/Conway%"
-"27s_Game_of_Life Written by Don Marti; 2003."
+msgid "Generates cloud-like formations based on a variant of Conway's Life. The difference is that cells have a maximum age, after which they count as 3 for populating the next generation. This makes long-lived formations explode instead of just sitting there. http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life Written by Don Marti; 2003."
 msgstr ""
 
 #: hacks/config/cloudlife.xml.h:7
@@ -2185,15 +1957,8 @@ msgstr "Pusula"
 
 #: hacks/config/compass.xml.h:6
 #, fuzzy
-#| msgid ""
-#| "This draws a compass, with all elements spinning about randomly, for that "
-#| "``lost and nauseous'' feeling. Written by Jamie Zawinski."
-msgid ""
-"This draws a compass, with all elements spinning about randomly, for that "
-"\"lost and nauseous\" feeling. Written by Jamie Zawinski; 1999."
-msgstr ""
-"Bu bir kumpas çizimi, bütün ögeler rasgele eğriliyor, fakat bu ''kötü ve "
-"mide bulandırıcı'' hissettiyor. Yazar Jamie Zawinski."
+msgid "This draws a compass, with all elements spinning about randomly, for that \"lost and nauseous\" feeling. Written by Jamie Zawinski; 1999."
+msgstr "Bu bir kumpas çizimi, bütün ögeler rasgele eğriliyor, fakat bu ''kötü ve mide bulandırıcı'' hissettiyor. Yazar Jamie Zawinski."
 
 #: hacks/config/coral.xml.h:2 hacks/config/deco.xml.h:2
 #: hacks/config/epicycle.xml.h:1 hacks/config/glslideshow.xml.h:1
@@ -2223,15 +1988,8 @@ msgstr ""
 
 #: hacks/config/coral.xml.h:14
 #, fuzzy
-#| msgid ""
-#| "Simulates coral growth, albeit somewhat slowly. This image doesn't really "
-#| "do it justice. Written by Frederick Roeber."
-msgid ""
-"Simulates coral growth, albeit somewhat slowly. Written by Frederick Roeber; "
-"1997."
-msgstr ""
-"Mercan rengi büyümesini yavaş olmasına rağmen taklit et.Bu şekiller onu "
-"gerçek gibi yapamazlar. .Yazar Frederick Roeber."
+msgid "Simulates coral growth, albeit somewhat slowly. Written by Frederick Roeber; 1997."
+msgstr "Mercan rengi büyümesini yavaş olmasına rağmen taklit et.Bu şekiller onu gerçek gibi yapamazlar. .Yazar Frederick Roeber."
 
 #: hacks/config/coral.xml.h:15 hacks/config/fireworkx.xml.h:12
 #: hacks/config/gflux.xml.h:17 hacks/config/glblur.xml.h:16
@@ -2263,10 +2021,7 @@ msgid "Flat shading"
 msgstr "Düz gölgelendirme"
 
 #: hacks/config/crackberg.xml.h:7
-msgid ""
-"Flies through height maps, optionally animating the creation and destruction "
-"of generated tiles; tiles `grow' into place. Written by Matus Telgarsky; "
-"2005."
+msgid "Flies through height maps, optionally animating the creation and destruction of generated tiles; tiles `grow' into place. Written by Matus Telgarsky; 2005."
 msgstr ""
 
 #: hacks/config/crackberg.xml.h:10
@@ -2319,18 +2074,8 @@ msgstr "Kritik"
 
 #: hacks/config/critical.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Draws a system of self-organizing lines. It starts out as random "
-#| "squiggles, but after a few iterations, order begins to appear. Written by "
-#| "Martin Pool."
-msgid ""
-"Draws a system of self-organizing lines. It starts out as random squiggles, "
-"but after a few iterations, order begins to appear. Written by Martin Pool; "
-"1999."
-msgstr ""
-"Kendi kendini düzenleyen çizgi çizim sistemi. Dışarı rasgele olarak "
-"kıvrılmaya başlar, fakat sonra birkaç tekrarlamanın üstüne gözükmeye başlar. "
-"Yazar Martin Pool."
+msgid "Draws a system of self-organizing lines. It starts out as random squiggles, but after a few iterations, order begins to appear. Written by Martin Pool; 1999."
+msgstr "Kendi kendini düzenleyen çizgi çizim sistemi. Dışarı rasgele olarak kıvrılmaya başlar, fakat sonra birkaç tekrarlamanın üstüne gözükmeye başlar. Yazar Martin Pool."
 
 #: hacks/config/crystal.xml.h:1
 msgid "Center on screen"
@@ -2354,16 +2099,8 @@ msgstr "Yatay simetri"
 
 #: hacks/config/crystal.xml.h:10
 #, fuzzy
-#| msgid ""
-#| "Moving polygons, similar to a kaleidescope (more like a kaleidescope than "
-#| "the hack called `kaleid,' actually.) This one by Jouk Jansen."
-msgid ""
-"Moving polygons, similar to a kaleidoscope. See also the \"Kaleidescope\" "
-"and \"GLeidescope\" screen savers. http://en.wikipedia.org/wiki/Kaleidoscope "
-"Written by Jouk Jansen; 1998."
-msgstr ""
-"Poligonları taşıma, bir kaleydoskopa benzer (aslında, 'kaleid' adında bir "
-"şeyden daha çok bir kaleydoskopa.) Yazar Jouk Jansen."
+msgid "Moving polygons, similar to a kaleidoscope. See also the \"Kaleidescope\" and \"GLeidescope\" screen savers. http://en.wikipedia.org/wiki/Kaleidoscope Written by Jouk Jansen; 1998."
+msgstr "Poligonları taşıma, bir kaleydoskopa benzer (aslında, 'kaleid' adında bir şeyden daha çok bir kaleydoskopa.) Yazar Jouk Jansen."
 
 #: hacks/config/crystal.xml.h:12
 msgid "Number of crystals"
@@ -2375,11 +2112,7 @@ msgstr "Dikey simetri"
 
 #: hacks/config/cube21.xml.h:2
 #, no-c-format
-msgid ""
-"Animates a Rubik-like puzzle known as Cube 21 or Square-1. The rotations are "
-"chosen randomly. See also the \"Rubik\" and \"GLSnake\" screen savers. "
-"http://en.wikipedia.org/wiki/Square_One_%28puzzle%29 Written by Vasek "
-"Potocek; 2005."
+msgid "Animates a Rubik-like puzzle known as Cube 21 or Square-1. The rotations are chosen randomly. See also the \"Rubik\" and \"GLSnake\" screen savers. http://en.wikipedia.org/wiki/Square_One_%28puzzle%29 Written by Vasek Potocek; 2005."
 msgstr ""
 
 #: hacks/config/cube21.xml.h:3
@@ -2456,10 +2189,7 @@ msgid "Don't rotate"
 msgstr "Döndürme"
 
 #: hacks/config/cubenetic.xml.h:4
-msgid ""
-"Draws a pulsating set of overlapping boxes with ever-chaning blobby patterns "
-"undulating across their surfaces. It's sort of a cubist Lavalite. Written by "
-"Jamie Zawinski; 2002."
+msgid "Draws a pulsating set of overlapping boxes with ever-chaning blobby patterns undulating across their surfaces. It's sort of a cubist Lavalite. Written by Jamie Zawinski; 2002."
 msgstr ""
 
 #: hacks/config/cubenetic.xml.h:12 hacks/config/glblur.xml.h:8
@@ -2532,9 +2262,7 @@ msgid "Cubes"
 msgstr "Küpler"
 
 #: hacks/config/cubestorm.xml.h:3
-msgid ""
-"Draws a series of rotating 3D boxes that intersect each other and eventually "
-"fill space. Written by Jamie Zawinski; 2003."
+msgid "Draws a series of rotating 3D boxes that intersect each other and eventually fill space. Written by Jamie Zawinski; 2003."
 msgstr ""
 
 #: hacks/config/cubestorm.xml.h:14
@@ -2558,9 +2286,7 @@ msgid "Dot spacing"
 msgstr "Nokta aralıklaması"
 
 #: hacks/config/cubicgrid.xml.h:5
-msgid ""
-"Draws the view of an observer located inside a rotating 3D lattice of "
-"colored points. Written by Vasek Potocek; 2007."
+msgid "Draws the view of an observer located inside a rotating 3D lattice of colored points. Written by Vasek Potocek; 2007."
 msgstr ""
 
 #: hacks/config/cwaves.xml.h:1
@@ -2588,24 +2314,15 @@ msgstr "Pürüzsüz"
 
 #: hacks/config/cwaves.xml.h:10
 #, fuzzy
-#| msgid ""
-#| "This repeatedly generates spirally string-art-ish patterns. Written by "
-#| "Jamie Zawinski."
-msgid ""
-"This generates a languidly-scrolling vertical field of sinusoidal colors. "
-"Written by Jamie Zawinski; 2007."
-msgstr ""
-"Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie "
-"Zawinski."
+msgid "This generates a languidly-scrolling vertical field of sinusoidal colors. Written by Jamie Zawinski; 2007."
+msgstr "Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie Zawinski."
 
 #: hacks/config/cynosure.xml.h:1
 msgid "Cynosure"
 msgstr "Kutup Yıldızı"
 
 #: hacks/config/cynosure.xml.h:9
-msgid ""
-"Random dropshadowed rectangles pop onto the screen in lockstep. Written by "
-"Ozymandias G. Desiderata, Jamie Zawinski, and Stephen Linhart; 1998."
+msgid "Random dropshadowed rectangles pop onto the screen in lockstep. Written by Ozymandias G. Desiderata, Jamie Zawinski, and Stephen Linhart; 1998."
 msgstr ""
 
 #: hacks/config/dangerball.xml.h:1
@@ -2614,15 +2331,8 @@ msgstr "Tehlikeli Top"
 
 #: hacks/config/dangerball.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Draws a ball that periodically extrudes many random spikes. Ouch! Written "
-#| "by Jamie Zawinski."
-msgid ""
-"Draws a ball that periodically extrudes many random spikes. Ouch! Written by "
-"Jamie Zawinski; 2001."
-msgstr ""
-"Pekçok rasgele çiviyi periyodik olarak presleyen bir top çizer. Yazar Jamie "
-"Zawinski."
+msgid "Draws a ball that periodically extrudes many random spikes. Ouch! Written by Jamie Zawinski; 2001."
+msgstr "Pekçok rasgele çiviyi periyodik olarak presleyen bir top çizer. Yazar Jamie Zawinski."
 
 #: hacks/config/dangerball.xml.h:8
 msgid "Number of spikes"
@@ -2701,12 +2411,7 @@ msgid "Stretchy melt"
 msgstr "Yayarak erime"
 
 #: hacks/config/decayscreen.xml.h:24
-msgid ""
-"This takes an image and makes it melt. You've no doubt seen this effect "
-"before, but no screensaver would really be complete without it. It works "
-"best if there's something colorful visible. Warning, if the effect continues "
-"after the screen saver is off, seek medical attention. Written by David "
-"Wald, Vivek Khera, Jamie Zawinski, and Vince Levey; 1993."
+msgid "This takes an image and makes it melt. You've no doubt seen this effect before, but no screensaver would really be complete without it. It works best if there's something colorful visible. Warning, if the effect continues after the screen saver is off, seek medical attention. Written by David Wald, Vivek Khera, Jamie Zawinski, and Vince Levey; 1993."
 msgstr ""
 
 #: hacks/config/deco.xml.h:3
@@ -2738,11 +2443,7 @@ msgid "Smooth colors"
 msgstr "Düz renkler"
 
 #: hacks/config/deco.xml.h:14
-msgid ""
-"Subdivides and colors rectangles randomly. It looks kind of like Brady-Bunch-"
-"era rec-room wall paneling. http://en.wikipedia.org/wiki/"
-"Piet_Mondrian#Paris_1919.E2.80.931938 Written by Jamie Zawinski and Michael "
-"Bayne; 1997."
+msgid "Subdivides and colors rectangles randomly. It looks kind of like Brady-Bunch-era rec-room wall paneling. http://en.wikipedia.org/wiki/Piet_Mondrian#Paris_1919.E2.80.931938 Written by Jamie Zawinski and Michael Bayne; 1997."
 msgstr ""
 
 #: hacks/config/deluxe.xml.h:1 hacks/config/gflux.xml.h:1
@@ -2759,15 +2460,8 @@ msgstr "Lüks"
 
 #: hacks/config/deluxe.xml.h:4
 #, fuzzy
-#| msgid ""
-#| "This draws random colored and stippled rectangles. Written by Jamie "
-#| "Zawinski."
-msgid ""
-"Draws a pulsing sequence of transparent stars, circles, and lines. Written "
-"by Jamie Zawinski; 1999."
-msgstr ""
-"Rasgele renklendirilen ve dikdörtgen noktalardan oluşan resim çizimi. Yazar "
-"Jamie Zawinski."
+msgid "Draws a pulsing sequence of transparent stars, circles, and lines. Written by Jamie Zawinski; 1999."
+msgstr "Rasgele renklendirilen ve dikdörtgen noktalardan oluşan resim çizimi. Yazar Jamie Zawinski."
 
 #: hacks/config/deluxe.xml.h:11
 msgid "Shapes"
@@ -2785,16 +2479,8 @@ msgstr "0"
 
 #: hacks/config/demon.xml.h:4
 #, fuzzy, no-c-format
-#| msgid ""
-#| "A cellular automaton that starts with a random field, and organizes it "
-#| "into stripes and spirals. Written by David Bagley."
-msgid ""
-"A cellular automaton that starts with a random field, and organizes it into "
-"stripes and spirals. http://en.wikipedia.org/wiki/Maxwell%27s_demon Written "
-"by David Bagley; 1999."
-msgstr ""
-"Alanda hücresel olarak başlayan ve çizgileri düzenleyen ve helezon çizerek "
-"giden makine. Yazar David Bagley."
+msgid "A cellular automaton that starts with a random field, and organizes it into stripes and spirals. http://en.wikipedia.org/wiki/Maxwell%27s_demon Written by David Bagley; 1999."
+msgstr "Alanda hücresel olarak başlayan ve çizgileri düzenleyen ve helezon çizerek giden makine. Yazar David Bagley."
 
 #: hacks/config/demon.xml.h:6
 msgid "Demon"
@@ -2810,16 +2496,8 @@ msgstr "Ayrık"
 
 #: hacks/config/discrete.xml.h:7
 #, fuzzy
-#| msgid ""
-#| "More ``discrete map'' systems, including new variants of Hopalong and "
-#| "Julia, and a few others. Written by Tim Auckland."
-msgid ""
-"More \"discrete map\" systems, including new variants of Hopalong and Julia, "
-"and a few others. See also the \"Hopalong\" and \"Julia\" screen savers. "
-"Written by Tim Auckland; 1998."
-msgstr ""
-"Hopalong, Julia ve birkaç diğerlerinin yeni değişikliklerini içeren, daha "
-"fazla '' ayrık harita'' sistemleri. Yazar Tim Auckland."
+msgid "More \"discrete map\" systems, including new variants of Hopalong and Julia, and a few others. See also the \"Hopalong\" and \"Julia\" screen savers. Written by Tim Auckland; 1998."
+msgstr "Hopalong, Julia ve birkaç diğerlerinin yeni değişikliklerini içeren, daha fazla '' ayrık harita'' sistemleri. Yazar Tim Auckland."
 
 #: hacks/config/distort.xml.h:3
 msgid "Black hole"
@@ -2834,9 +2512,7 @@ msgid "Distort"
 msgstr "Bükülme"
 
 #: hacks/config/distort.xml.h:8
-msgid ""
-"Grabs an image of the screen, and then lets a transparent lens wander around "
-"the screen, magnifying whatever is underneath. Written by Jonas Munsin; 1998."
+msgid "Grabs an image of the screen, and then lets a transparent lens wander around the screen, magnifying whatever is underneath. Written by Jonas Munsin; 1998."
 msgstr ""
 
 #: hacks/config/distort.xml.h:11
@@ -2872,9 +2548,7 @@ msgid "DNA Logo"
 msgstr "DNA Simgesi"
 
 #: hacks/config/dnalogo.xml.h:2
-msgid ""
-"DNA Lounge 375 Eleventh Street San Francisco, CA 94107 http://www.dnalounge."
-"com/ Written by Jamie Zawinski; 2001."
+msgid "DNA Lounge 375 Eleventh Street San Francisco, CA 94107 http://www.dnalounge.com/ Written by Jamie Zawinski; 2001."
 msgstr ""
 
 #: hacks/config/dnalogo.xml.h:3
@@ -2887,16 +2561,11 @@ msgstr "Sürükleme"
 
 #: hacks/config/drift.xml.h:2
 #, fuzzy
-#| msgid "Another iterative fractal generator. Written by Scott Draves."
-msgid ""
-"Drifting recursive fractal cosmic flames. Written by Scott Draves; 1997."
+msgid "Drifting recursive fractal cosmic flames. Written by Scott Draves; 1997."
 msgstr "Tekrarlanan kıvrım jeneratörü. Yazar Scott Draves."
 
 #: hacks/config/endgame.xml.h:1
-msgid ""
-"Black slips out of three mating nets, but the fourth one holds him tight! A "
-"brilliant composition! See also the \"Queens\" screen saver. http://en."
-"wikipedia.org/wiki/Chess_endgame Written by Blair Tennessy; 2002."
+msgid "Black slips out of three mating nets, but the fourth one holds him tight! A brilliant composition! See also the \"Queens\" screen saver. http://en.wikipedia.org/wiki/Chess_endgame Written by Blair Tennessy; 2002."
 msgstr ""
 
 #: hacks/config/endgame.xml.h:2
@@ -2928,10 +2597,7 @@ msgid "Dodge Viper (10 cylinders, V)"
 msgstr "Dodge Viper (10 silindir, V)"
 
 #: hacks/config/engine.xml.h:6
-msgid ""
-"Draws a simple model of an engine that floats around the screen. http://en."
-"wikipedia.org/wiki/Internal_combustion_engine#Operation Written by Ben "
-"Buxton and Ed Beroset; 2001."
+msgid "Draws a simple model of an engine that floats around the screen. http://en.wikipedia.org/wiki/Internal_combustion_engine#Operation Written by Ben Buxton and Ed Beroset; 2001."
 msgstr ""
 
 #: hacks/config/engine.xml.h:7
@@ -2975,12 +2641,7 @@ msgid "Harmonics"
 msgstr "Uyum Bilgisi"
 
 #: hacks/config/epicycle.xml.h:13
-msgid ""
-"This draws the path traced out by a point on the edge of a circle. That "
-"circle rotates around a point on the rim of another circle, and so on, "
-"several times. These were the basis for the pre-heliocentric model of "
-"planetary motion. http://en.wikipedia.org/wiki/Deferent_and_epicycle Written "
-"by James Youngman; 1998."
+msgid "This draws the path traced out by a point on the edge of a circle. That circle rotates around a point on the rim of another circle, and so on, several times. These were the basis for the pre-heliocentric model of planetary motion. http://en.wikipedia.org/wiki/Deferent_and_epicycle Written by James Youngman; 1998."
 msgstr ""
 
 #: hacks/config/eruption.xml.h:1
@@ -2992,9 +2653,7 @@ msgid "Eruption"
 msgstr "Patlama"
 
 #: hacks/config/eruption.xml.h:4
-msgid ""
-"Exploding fireworks. See also the \"Fireworkx\", \"XFlame\" and \"Pyro\" "
-"screen savers. Written by W.P. van Paassen; 2003."
+msgid "Exploding fireworks. See also the \"Fireworkx\", \"XFlame\" and \"Pyro\" screen savers. Written by W.P. van Paassen; 2003."
 msgstr ""
 
 #: hacks/config/eruption.xml.h:8 hacks/config/fluidballs.xml.h:8
@@ -3044,22 +2703,11 @@ msgstr "Güç"
 
 #: hacks/config/euler2d.xml.h:15
 #, fuzzy, no-c-format
-#| msgid ""
-#| "Simulates two dimensional Incompressible Inviscid Fluid Flow. Written by "
-#| "Stephen Montgomery-Smith."
-msgid ""
-"Simulates two dimensional incompressible inviscid fluid flow. http://en."
-"wikipedia.org/wiki/Euler_equations_%28fluid_dynamics%29 http://en.wikipedia."
-"org/wiki/Inviscid_flow Written by Stephen Montgomery-Smith; 2002."
-msgstr ""
-"İki boyutlu Sıkıştırılamaz Yapışmayan Akıcı Sıvı benzetimi yapar. Yazar "
-"Stephen Montgomery-Smith."
+msgid "Simulates two dimensional incompressible inviscid fluid flow. http://en.wikipedia.org/wiki/Euler_equations_%28fluid_dynamics%29 http://en.wikipedia.org/wiki/Inviscid_flow Written by Stephen Montgomery-Smith; 2002."
+msgstr "İki boyutlu Sıkıştırılamaz Yapışmayan Akıcı Sıvı benzetimi yapar. Yazar Stephen Montgomery-Smith."
 
 #: hacks/config/extrusion.xml.h:1
-msgid ""
-"Draws various rotating extruded shapes that twist around, lengthen, and turn "
-"inside out. Written by Linas Vepstas, David Konerding, and Jamie Zawinski; "
-"1999."
+msgid "Draws various rotating extruded shapes that twist around, lengthen, and turn inside out. Written by Linas Vepstas, David Konerding, and Jamie Zawinski; 1999."
 msgstr ""
 
 #: hacks/config/extrusion.xml.h:2
@@ -3080,7 +2728,6 @@ msgstr "Helis 4"
 
 #: hacks/config/extrusion.xml.h:8
 #, fuzzy
-#| msgid "Join Offset"
 msgid "Join offset"
 msgstr "Ofset birleştir"
 
@@ -3115,9 +2762,7 @@ msgid "Cycles"
 msgstr "Döngüler"
 
 #: hacks/config/fadeplot.xml.h:2
-msgid ""
-"Draws what looks like a waving ribbon following a sinusoidal path. Written "
-"by Bas van Gaalen and Charles Vidal; 1997."
+msgid "Draws what looks like a waving ribbon following a sinusoidal path. Written by Bas van Gaalen and Charles Vidal; 1997."
 msgstr ""
 
 #: hacks/config/fadeplot.xml.h:3
@@ -3126,9 +2771,7 @@ msgstr "SararmışTema"
 
 #: hacks/config/fiberlamp.xml.h:1
 #, fuzzy
-#| msgid "Draws a juggling stick-man. Written by Tim Auckland."
-msgid ""
-"Draws a groovy rotating fiber optic lamp. Written by Tim Auckland; 2005."
+msgid "Draws a groovy rotating fiber optic lamp. Written by Tim Auckland; 2005."
 msgstr "Hokkabazlık çizimleri yapan baget-adamı. Yazar Tim Auckland."
 
 #: hacks/config/fiberlamp.xml.h:3
@@ -3148,9 +2791,7 @@ msgid "Activity"
 msgstr "Etkinlik"
 
 #: hacks/config/fireworkx.xml.h:3
-msgid ""
-"Exploding fireworks. See also the \"Eruption\", \"XFlame\" and \"Pyro\" "
-"screen savers. Written by Rony B Chandran; 2004."
+msgid "Exploding fireworks. See also the \"Eruption\", \"XFlame\" and \"Pyro\" screen savers. Written by Rony B Chandran; 2004."
 msgstr ""
 
 #: hacks/config/fireworkx.xml.h:4
@@ -3178,11 +2819,7 @@ msgid "Text for flag"
 msgstr "Bayrak metni"
 
 #: hacks/config/flag.xml.h:11
-msgid ""
-"This draws a waving colored flag, that undulates its way around the screen. "
-"The flag can contain arbitrary text and images. By default, it displays "
-"either the current system name and OS type, or a picture of \"Bob\". Written "
-"by Charles Vidal and Jamie Zawinski; 1997."
+msgid "This draws a waving colored flag, that undulates its way around the screen. The flag can contain arbitrary text and images. By default, it displays either the current system name and OS type, or a picture of \"Bob\". Written by Charles Vidal and Jamie Zawinski; 1997."
 msgstr ""
 
 #: hacks/config/flame.xml.h:5
@@ -3191,7 +2828,6 @@ msgstr "Alev"
 
 #: hacks/config/flame.xml.h:8
 #, fuzzy
-#| msgid "Another iterative fractal generator. Written by Scott Draves."
 msgid "Iterative fractals. Written by Scott Draves; 1993."
 msgstr "Tekrarlanan kıvrım jeneratörü. Yazar Scott Draves."
 
@@ -3208,9 +2844,7 @@ msgid "Draw Tiles"
 msgstr "Tuğlaları Çiz"
 
 #: hacks/config/flipflop.xml.h:4
-msgid ""
-"Draws a grid of 3D colored tiles that change positions with each other. "
-"Written by Kevin Ogden and Sergio Gutierrez; 2003."
+msgid "Draws a grid of 3D colored tiles that change positions with each other. Written by Kevin Ogden and Sergio Gutierrez; 2003."
 msgstr ""
 
 #: hacks/config/flipflop.xml.h:5
@@ -3238,10 +2872,7 @@ msgid "FlipScreen3D"
 msgstr ""
 
 #: hacks/config/flipscreen3d.xml.h:3
-msgid ""
-"Grabs an image of the desktop, turns it into a GL texture map, and spins it "
-"around and deforms it in various ways. Written by Ben Buxton and Jamie "
-"Zawinski; 2001."
+msgid "Grabs an image of the desktop, turns it into a GL texture map, and spins it around and deforms it in various ways. Written by Ben Buxton and Jamie Zawinski; 2001."
 msgstr ""
 
 #: hacks/config/flipscreen3d.xml.h:6 hacks/config/gleidescope.xml.h:11
@@ -3256,19 +2887,11 @@ msgstr "Ortalanmış metin"
 
 #: hacks/config/fliptext.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Displays a few lines of text spinning around in a solid 3D font. Written "
-#| "by Jamie Zawinski."
-msgid ""
-"Draws successive pages of text. The lines flip in and out in a soothing 3D "
-"pattern. Written by Jamie Zawinski; 2005."
-msgstr ""
-"Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını "
-"görüntüler. Yazar Jamie Zawinski."
+msgid "Draws successive pages of text. The lines flip in and out in a soothing 3D pattern. Written by Jamie Zawinski; 2005."
+msgstr "Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını görüntüler. Yazar Jamie Zawinski."
 
 #: hacks/config/fliptext.xml.h:4
 #, fuzzy
-#| msgid "Text"
 msgid "FlipText"
 msgstr "Yazı"
 
@@ -3323,7 +2946,6 @@ msgstr ""
 
 #: hacks/config/flow.xml.h:13
 #, fuzzy
-#| msgid "Rotate Around Attractor"
 msgid "Periodic attractors"
 msgstr "Çekici Çevresinde Döndür"
 
@@ -3333,7 +2955,6 @@ msgstr ""
 
 #: hacks/config/flow.xml.h:15
 #, fuzzy
-#| msgid "Rotate Around Attractor"
 msgid "Rotating around attractor"
 msgstr "Çekici Çevresinde Döndür"
 
@@ -3342,12 +2963,7 @@ msgid "Search for new attractors"
 msgstr ""
 
 #: hacks/config/flow.xml.h:20
-msgid ""
-"Strange attractors formed of flows in a 3D differential equation phase "
-"space. Features the popular attractors described by Lorentz, Roessler, "
-"Birkhoff and Duffing, and can discover entirely new attractors by itself. "
-"http://en.wikipedia.org/wiki/Attractor#Strange_attractor Written by Tim "
-"Auckland; 1998."
+msgid "Strange attractors formed of flows in a 3D differential equation phase space. Features the popular attractors described by Lorentz, Roessler, Birkhoff and Duffing, and can discover entirely new attractors by itself. http://en.wikipedia.org/wiki/Attractor#Strange_attractor Written by Tim Auckland; 1998."
 msgstr ""
 
 #: hacks/config/fluidballs.xml.h:1
@@ -3375,12 +2991,7 @@ msgid "Jupiter"
 msgstr "Jüpiter"
 
 #: hacks/config/fluidballs.xml.h:15
-msgid ""
-"Models the physics of bouncing balls, or of particles in a gas or fluid, "
-"depending on the settings. If \"Shake Box\" is selected, then every now and "
-"then, the box will be rotated, changing which direction is down (in order to "
-"keep the settled balls in motion.) Written by Peter Birtles and Jamie "
-"Zawinski; 2002."
+msgid "Models the physics of bouncing balls, or of particles in a gas or fluid, depending on the settings. If \"Shake Box\" is selected, then every now and then, the box will be rotated, changing which direction is down (in order to keep the settled balls in motion.) Written by Peter Birtles and Jamie Zawinski; 2002."
 msgstr ""
 
 #: hacks/config/fluidballs.xml.h:17
@@ -3437,19 +3048,12 @@ msgid "Random"
 msgstr "Rasgele"
 
 #: hacks/config/flurry.xml.h:10
-msgid ""
-"This X11 port of the OSX screensaver of the same name draws a colourful star"
-"(fish)like flurry of particles. Original Mac version: http://homepage.mac."
-"com/calumr Written by Calum Robinson and Tobias Sargeant; 2002."
+msgid "This X11 port of the OSX screensaver of the same name draws a colourful star(fish)like flurry of particles. Original Mac version: http://homepage.mac.com/calumr Written by Calum Robinson and Tobias Sargeant; 2002."
 msgstr ""
 
 #: hacks/config/flyingtoasters.xml.h:2
 #, no-c-format
-msgid ""
-"A fleet of 3d space-age jet-powered flying toasters (and toast!) Inspired by "
-"the ancient Berkeley Systems After Dark flying toasters. http://en.wikipedia."
-"org/wiki/After_Dark_%28software%29#Flying_Toasters Written by Jamie Zawinski "
-"and Devon Dossett; 2003."
+msgid "A fleet of 3d space-age jet-powered flying toasters (and toast!) Inspired by the ancient Berkeley Systems After Dark flying toasters. http://en.wikipedia.org/wiki/After_Dark_%28software%29#Flying_Toasters Written by Jamie Zawinski and Devon Dossett; 2003."
 msgstr ""
 
 #: hacks/config/flyingtoasters.xml.h:3
@@ -3502,10 +3106,7 @@ msgid "Pages of text"
 msgstr "Metnin sayfaları"
 
 #: hacks/config/fontglide.xml.h:12
-msgid ""
-"Puts text on the screen using large characters that glide in from the edges, "
-"assemble, then disperse. Alternately, it can simply scroll whole sentences "
-"from right to left. Written by Jamie Zawinski; 2003."
+msgid "Puts text on the screen using large characters that glide in from the edges, assemble, then disperse. Alternately, it can simply scroll whole sentences from right to left. Written by Jamie Zawinski; 2003."
 msgstr ""
 
 #: hacks/config/fontglide.xml.h:13
@@ -3522,13 +3123,8 @@ msgstr "Orman"
 
 #: hacks/config/forest.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "This draws fractal trees. Written by Peter Baumung. Everybody loves "
-#| "fractals, right?"
 msgid "Fractal trees. Written by Peter Baumung; 1997."
-msgstr ""
-"Fraktal ağaçların çizer.Yazar Peter Baumung. Herkes fraktalları sever doğru "
-"değil mi?"
+msgstr "Fraktal ağaçların çizer.Yazar Peter Baumung. Herkes fraktalları sever doğru değil mi?"
 
 #: hacks/config/fuzzyflakes.xml.h:2
 msgid "Blue"
@@ -3588,10 +3184,7 @@ msgid "Rotate viewpoint"
 msgstr "Döndürme bakış açısı"
 
 #: hacks/config/galaxy.xml.h:13
-msgid ""
-"This draws spinning galaxies, which then collide and scatter their stars to "
-"the, uh, four winds or something. Written by Uli Siegmund, Harald Backert, "
-"and Hubert Feyrer; 1997."
+msgid "This draws spinning galaxies, which then collide and scatter their stars to the, uh, four winds or something. Written by Uli Siegmund, Harald Backert, and Hubert Feyrer; 1997."
 msgstr ""
 
 #: hacks/config/gears.xml.h:5
@@ -3603,11 +3196,7 @@ msgid "Gears"
 msgstr "Dişliler"
 
 #: hacks/config/gears.xml.h:13
-msgid ""
-"This draws sets of turning, interlocking gears, rotating in three "
-"dimensions. See also the \"Pinion\" and \"MoebiusGears\" screen savers. "
-"http://en.wikipedia.org/wiki/Involute_gear http://en.wikipedia.org/wiki/"
-"Epicyclic_gearing Written by Jamie Zawinski; 2007."
+msgid "This draws sets of turning, interlocking gears, rotating in three dimensions. See also the \"Pinion\" and \"MoebiusGears\" screen savers. http://en.wikipedia.org/wiki/Involute_gear http://en.wikipedia.org/wiki/Epicyclic_gearing Written by Jamie Zawinski; 2007."
 msgstr ""
 
 #: hacks/config/gflux.xml.h:2 hacks/config/lavalite.xml.h:2
@@ -3620,15 +3209,8 @@ msgstr "Dama tahtası"
 
 #: hacks/config/gflux.xml.h:6
 #, fuzzy
-#| msgid ""
-#| "Draws a rippling waves on a rotating wireframe grid, using GL. Written by "
-#| "Josiah Pease."
-msgid ""
-"Draws a rippling waves on a rotating wireframe grid. Written by Josiah "
-"Pease; 2000."
-msgstr ""
-"GL kullanarak, dönen bir telkafes ızgarası üzerinde tarama dalgaları çizer. "
-"Yazar Josiah Pease."
+msgid "Draws a rippling waves on a rotating wireframe grid. Written by Josiah Pease; 2000."
+msgstr "GL kullanarak, dönen bir telkafes ızgarası üzerinde tarama dalgaları çizer. Yazar Josiah Pease."
 
 #: hacks/config/gflux.xml.h:8
 msgid "Flat lighting"
@@ -3667,14 +3249,7 @@ msgid "GLBlur"
 msgstr "GL Bulanıklaştırması"
 
 #: hacks/config/glblur.xml.h:17
-msgid ""
-"This draws a box and a few line segments, and generates a radial blur "
-"outward from it. This creates flowing field effects. This is done by "
-"rendering the scene into a small texture, then repeatedly rendering "
-"increasingly-enlarged and increasingly-transparent versions of that texture "
-"onto the frame buffer. As such, it's quite GPU-intensive: if you don't have "
-"a very good graphics card, it will hurt your machine bad. Written by Jamie "
-"Zawinski; 2002."
+msgid "This draws a box and a few line segments, and generates a radial blur outward from it. This creates flowing field effects. This is done by rendering the scene into a small texture, then repeatedly rendering increasingly-enlarged and increasingly-transparent versions of that texture onto the frame buffer. As such, it's quite GPU-intensive: if you don't have a very good graphics card, it will hurt your machine bad. Written by Jamie Zawinski; 2002."
 msgstr ""
 
 #: hacks/config/glcells.xml.h:2
@@ -3690,9 +3265,7 @@ msgid "Cell radius"
 msgstr "Hücre yarıçapı"
 
 #: hacks/config/glcells.xml.h:5
-msgid ""
-"Cells growing, dividing and dying on your screen. Written by Matthias "
-"Toussaint; 2007."
+msgid "Cells growing, dividing and dying on your screen. Written by Matthias Toussaint; 2007."
 msgstr ""
 
 #: hacks/config/glcells.xml.h:8
@@ -3756,10 +3329,7 @@ msgid "5 minutes"
 msgstr "5 dakika"
 
 #: hacks/config/gleidescope.xml.h:3
-msgid ""
-"A kaleidoscope that operates on your desktop image, or on image files loaded "
-"from disk. http://en.wikipedia.org/wiki/Kaleidoscope Written by Andrew Dean; "
-"2003."
+msgid "A kaleidoscope that operates on your desktop image, or on image files loaded from disk. http://en.wikipedia.org/wiki/Kaleidoscope Written by Andrew Dean; 2003."
 msgstr ""
 
 #: hacks/config/gleidescope.xml.h:5
@@ -3789,9 +3359,7 @@ msgid "Desert"
 msgstr "Terket"
 
 #: hacks/config/glforestfire.xml.h:3
-msgid ""
-"Draws an animation of sprinkling fire-like 3D triangles in a landscape "
-"filled with trees. Written by Eric Lassauge; 2002."
+msgid "Draws an animation of sprinkling fire-like 3D triangles in a landscape filled with trees. Written by Eric Lassauge; 2002."
 msgstr ""
 
 #: hacks/config/glforestfire.xml.h:4 hacks/config/glmatrix.xml.h:5
@@ -3844,10 +3412,7 @@ msgid "Number of disks"
 msgstr "Disklerin sayısı"
 
 #: hacks/config/glhanoi.xml.h:11
-msgid ""
-"Solves the Towers of Hanoi puzzle. Move N disks from one pole to another, "
-"one disk at a time, with no disk ever resting on a disk smaller than itself. "
-"http://en.wikipedia.org/wiki/Tower_of_Hanoi Written by Dave Atkinson; 2005."
+msgid "Solves the Towers of Hanoi puzzle. Move N disks from one pole to another, one disk at a time, with no disk ever resting on a disk smaller than itself. http://en.wikipedia.org/wiki/Tower_of_Hanoi Written by Dave Atkinson; 2005."
 msgstr ""
 
 #: hacks/config/glknots.xml.h:4
@@ -3855,9 +3420,7 @@ msgid "GLKnots"
 msgstr "GL Düğümler"
 
 #: hacks/config/glknots.xml.h:5
-msgid ""
-"Generates some twisting 3d knot patterns. Spins 'em around. http://en."
-"wikipedia.org/wiki/Knot_theory Written by Jamie Zawinski; 2003."
+msgid "Generates some twisting 3d knot patterns. Spins 'em around. http://en.wikipedia.org/wiki/Knot_theory Written by Jamie Zawinski; 2003."
 msgstr ""
 
 #: hacks/config/glknots.xml.h:8 hacks/config/jigsaw.xml.h:10
@@ -3875,11 +3438,7 @@ msgid "Binary encoding"
 msgstr "Binary kodlaması"
 
 #: hacks/config/glmatrix.xml.h:3
-msgid ""
-"Draws 3D dropping characters similar to what is seen in the title sequence "
-"of \"The Matrix\". See also \"xmatrix\" for a 2D rendering of the similar "
-"effect that appeared on the computer monitors actually *in* the movie. "
-"Written by Jamie Zawinski; 2003."
+msgid "Draws 3D dropping characters similar to what is seen in the title sequence of \"The Matrix\". See also \"xmatrix\" for a 2D rendering of the similar effect that appeared on the computer monitors actually *in* the movie. Written by Jamie Zawinski; 2003."
 msgstr ""
 
 #: hacks/config/glmatrix.xml.h:7
@@ -3911,11 +3470,7 @@ msgid "Panning"
 msgstr ""
 
 #: hacks/config/glplanet.xml.h:1
-msgid ""
-"Draws a planet bouncing around in space. The built-in image is a map of the "
-"earth (extracted from `xearth'), but you can wrap any texture around the "
-"sphere, e.g., the planetary textures that come with `ssystem'. Written by "
-"David Konerding; 1998."
+msgid "Draws a planet bouncing around in space. The built-in image is a map of the earth (extracted from `xearth'), but you can wrap any texture around the sphere, e.g., the planetary textures that come with `ssystem'. Written by David Konerding; 1998."
 msgstr ""
 
 #: hacks/config/glplanet.xml.h:3
@@ -3940,7 +3495,6 @@ msgstr "Ortaya hizalama"
 
 #: hacks/config/glschool.xml.h:4
 #, fuzzy
-#| msgid "Draw Labels"
 msgid "Draw goal"
 msgstr "Etiketleri Çiz"
 
@@ -3957,9 +3511,7 @@ msgid "Goal following"
 msgstr ""
 
 #: hacks/config/glschool.xml.h:16
-msgid ""
-"Uses Craig Reynolds' Boids algorithm to simulate a school of fish. http://en."
-"wikipedia.org/wiki/Boids Written by David C. Lambert; 2006."
+msgid "Uses Craig Reynolds' Boids algorithm to simulate a school of fish. http://en.wikipedia.org/wiki/Boids Written by David C. Lambert; 2006."
 msgstr ""
 
 #: hacks/config/glschool.xml.h:17
@@ -3983,7 +3535,6 @@ msgstr ""
 
 #: hacks/config/glslideshow.xml.h:10
 #, fuzzy
-#| msgid "Solved Duration"
 msgid "Crossfade duration"
 msgstr "Çözülmüş Süre"
 
@@ -3992,10 +3543,7 @@ msgid "GLSlideshow"
 msgstr "GL Slayt Gösterisi"
 
 #: hacks/config/glslideshow.xml.h:15
-msgid ""
-"Loads a random sequence of images and smoothly scans and zooms around in "
-"each, fading from pan to pan. Written by Jamie Zawinski and Mike Oliphant; "
-"2003."
+msgid "Loads a random sequence of images and smoothly scans and zooms around in each, fading from pan to pan. Written by Jamie Zawinski and Mike Oliphant; 2003."
 msgstr ""
 
 #: hacks/config/glslideshow.xml.h:18
@@ -4008,16 +3556,8 @@ msgstr "Açısal hız"
 
 #: hacks/config/glsnake.xml.h:5
 #, fuzzy, no-c-format
-#| msgid ""
-#| "Draws a simulation of the Rubik's Snake puzzle. Written by Jamie "
-#| "Wilkinson, Andrew Bennetts, and Peter Aylett."
-msgid ""
-"Draws a simulation of the Rubik's Snake puzzle. See also the \"Rubik\" and "
-"\"Cube21\" screen savers. http://en.wikipedia.org/wiki/Rubik%27s_Snake "
-"Written by Jamie Wilkinson, Andrew Bennetts, and Peter Aylett; 2002."
-msgstr ""
-"Rubik'in yılan simülasyonu. Yazarlar Jamie Wilkinson, Andrew Bennetts ve "
-"Peter Aylett."
+msgid "Draws a simulation of the Rubik's Snake puzzle. See also the \"Rubik\" and \"Cube21\" screen savers. http://en.wikipedia.org/wiki/Rubik%27s_Snake Written by Jamie Wilkinson, Andrew Bennetts, and Peter Aylett; 2002."
+msgstr "Rubik'in yılan simülasyonu. Yazarlar Jamie Wilkinson, Andrew Bennetts ve Peter Aylett."
 
 #: hacks/config/glsnake.xml.h:9
 msgid "GLSnake"
@@ -4061,16 +3601,8 @@ msgstr "Sistem bilgilerini göster"
 
 #: hacks/config/gltext.xml.h:4
 #, fuzzy
-#| msgid ""
-#| "Displays a few lines of text spinning around in a solid 3D font. Written "
-#| "by Jamie Zawinski."
-msgid ""
-"Displays a few lines of text spinning around in a solid 3D font. The text "
-"can use strftime() escape codes to display the current date and time. "
-"Written by Jamie Zawinski; 2001."
-msgstr ""
-"Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını "
-"görüntüler. Yazar Jamie Zawinski."
+msgid "Displays a few lines of text spinning around in a solid 3D font. The text can use strftime() escape codes to display the current date and time. Written by Jamie Zawinski; 2001."
+msgstr "Katı 3-Boyut yazıtipi etrafındaki metin döndürmesinin birkaç satırını görüntüler. Yazar Jamie Zawinski."
 
 #: hacks/config/gltext.xml.h:7
 msgid "GLText"
@@ -4109,14 +3641,7 @@ msgid "Subtractive colors (transmitted light)"
 msgstr "Eksiltici renkler (iletilen ışık)"
 
 #: hacks/config/goop.xml.h:17
-msgid ""
-"This draws set of animating, transparent, amoeba-like blobs. The blobs "
-"change shape as they wander around the screen, and they are translucent, so "
-"you can see the lower blobs through the higher ones, and when one passes "
-"over another, their colors merge. I got the idea for this from a mouse pad I "
-"had once, which achieved the same kind of effect in real life by having "
-"several layers of plastic with colored oil between them. Written by Jamie "
-"Zawinski; 1997."
+msgid "This draws set of animating, transparent, amoeba-like blobs. The blobs change shape as they wander around the screen, and they are translucent, so you can see the lower blobs through the higher ones, and when one passes over another, their colors merge. I got the idea for this from a mouse pad I had once, which achieved the same kind of effect in real life by having several layers of plastic with colored oil between them. Written by Jamie Zawinski; 1997."
 msgstr ""
 
 #: hacks/config/goop.xml.h:18
@@ -4145,28 +3670,13 @@ msgstr "Dairesel çürüme"
 
 #: hacks/config/grav.xml.h:12
 #, fuzzy
-#| msgid ""
-#| "This program draws a simple orbital simulation. If you turn on trails, it "
-#| "looks kind of like a cloud-chamber photograph. Written by Greg Bowering."
-msgid ""
-"This draws a simple orbital simulation. With trails enabled, it looks kind "
-"of like a cloud-chamber photograph. Written by Greg Bowering; 1997."
-msgstr ""
-"Bu program basit bir yörüngesel benzetim çizer. Eğer kuyruklar üzerinde "
-"dönerseniz, o bulut-odası fotoğrafı gibi bir türe benzer. Yazar Greg "
-"Bowering."
+msgid "This draws a simple orbital simulation. With trails enabled, it looks kind of like a cloud-chamber photograph. Written by Greg Bowering; 1997."
+msgstr "Bu program basit bir yörüngesel benzetim çizer. Eğer kuyruklar üzerinde dönerseniz, o bulut-odası fotoğrafı gibi bir türe benzer. Yazar Greg Bowering."
 
 #: hacks/config/greynetic.xml.h:1
 #, fuzzy
-#| msgid ""
-#| "This draws random colored and stippled rectangles. Written by Jamie "
-#| "Zawinski."
-msgid ""
-"Draws random colored, stippled and transparent rectangles. Written by Jamie "
-"Zawinski; 1992."
-msgstr ""
-"Rasgele renklendirilen ve dikdörtgen noktalardan oluşan resim çizimi. Yazar "
-"Jamie Zawinski."
+msgid "Draws random colored, stippled and transparent rectangles. Written by Jamie Zawinski; 1992."
+msgstr "Rasgele renklendirilen ve dikdörtgen noktalardan oluşan resim çizimi. Yazar Jamie Zawinski."
 
 #: hacks/config/greynetic.xml.h:3
 msgid "Grey"
@@ -4189,11 +3699,7 @@ msgid "Dot size"
 msgstr "Nokta boyutu"
 
 #: hacks/config/halftone.xml.h:4
-msgid ""
-"Draws the gravity force in each point on the screen seen through a halftone "
-"dot pattern. The gravity force is calculated from a set of moving mass "
-"points. View it from a distance for best effect. http://en.wikipedia.org/"
-"wiki/Halftone Written by Peter Jaric; 2002."
+msgid "Draws the gravity force in each point on the screen seen through a halftone dot pattern. The gravity force is calculated from a set of moving mass points. View it from a distance for best effect. http://en.wikipedia.org/wiki/Halftone Written by Peter Jaric; 2002."
 msgstr ""
 
 #: hacks/config/halftone.xml.h:7
@@ -4225,9 +3731,7 @@ msgid "Animate circles"
 msgstr "Çemberleri canlandır"
 
 #: hacks/config/halo.xml.h:2
-msgid ""
-"Draws trippy psychedelic circular patterns that hurt to look at. http://en."
-"wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski; 1993."
+msgid "Draws trippy psychedelic circular patterns that hurt to look at. http://en.wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski; 1993."
 msgstr ""
 
 #: hacks/config/halo.xml.h:5
@@ -4256,13 +3760,8 @@ msgstr "Helis"
 
 #: hacks/config/helix.xml.h:9
 #, fuzzy
-#| msgid ""
-#| "This repeatedly generates spirally string-art-ish patterns. Written by "
-#| "Jamie Zawinski."
 msgid "Spirally string-art-ish patterns. Written by Jamie Zawinski; 1992."
-msgstr ""
-"Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie "
-"Zawinski."
+msgstr "Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie Zawinski."
 
 #: hacks/config/hopalong.xml.h:1 hacks/config/interference.xml.h:3
 #: hacks/config/qix.xml.h:3 hacks/config/wander.xml.h:1
@@ -4314,10 +3813,7 @@ msgid "Sine"
 msgstr "Sinüs"
 
 #: hacks/config/hopalong.xml.h:23
-msgid ""
-"This draws lacy fractal patterns based on iteration in the imaginary plane, "
-"from a 1986 Scientific American article. See also the \"Discrete\" screen "
-"saver. Written by Patrick Naughton; 1992."
+msgid "This draws lacy fractal patterns based on iteration in the imaginary plane, from a 1986 Scientific American article. See also the \"Discrete\" screen saver. Written by Patrick Naughton; 1992."
 msgstr ""
 
 #: hacks/config/hyperball.xml.h:5
@@ -4325,13 +3821,7 @@ msgid "HyperBall"
 msgstr "Hiper Top"
 
 #: hacks/config/hyperball.xml.h:6
-msgid ""
-"Hyperball is to hypercube as dodecahedron is to cube: this displays a 2D "
-"projection of the sequence of 3D objects which are the projections of the 4D "
-"analog to the dodecahedron. Technically, it is a \"120 cell polytope\". See "
-"also \"polytopes\" for a more general version of this using OpenGL. http://"
-"en.wikipedia.org/wiki/Hypercube http://en.wikipedia.org/wiki/"
-"Regular_polytope Written by Joe Keane; 2000."
+msgid "Hyperball is to hypercube as dodecahedron is to cube: this displays a 2D projection of the sequence of 3D objects which are the projections of the 4D analog to the dodecahedron. Technically, it is a \"120 cell polytope\". See also \"polytopes\" for a more general version of this using OpenGL. http://en.wikipedia.org/wiki/Hypercube http://en.wikipedia.org/wiki/Regular_polytope Written by Joe Keane; 2000."
 msgstr ""
 
 #: hacks/config/hyperball.xml.h:11 hacks/config/hypercube.xml.h:11
@@ -4363,17 +3853,7 @@ msgid "HyperCube"
 msgstr "Hiper Küp"
 
 #: hacks/config/hypercube.xml.h:10
-msgid ""
-"This displays 2D projections of the sequence of 3D objects which are the "
-"projections of the 4D analog to the cube: as a square is composed of four "
-"lines, each touching two others; and a cube is composed of six squares, each "
-"touching four others; a hypercube is composed of eight cubes, each touching "
-"six others. To make it easier to visualize the rotation, it uses a different "
-"color for the edges of each face. Don't think about it too long, or your "
-"brain will melt. See also \"polytopes\" for a more general version of this "
-"using OpenGL. http://en.wikipedia.org/wiki/Hypercube http://en.wikipedia.org/"
-"wiki/Regular_polytope Written by Joe Keane, Fritz Mueller, and Jamie "
-"Zawinski; 1992."
+msgid "This displays 2D projections of the sequence of 3D objects which are the projections of the 4D analog to the cube: as a square is composed of four lines, each touching two others; and a cube is composed of six squares, each touching four others; a hypercube is composed of eight cubes, each touching six others. To make it easier to visualize the rotation, it uses a different color for the edges of each face. Don't think about it too long, or your brain will melt. See also \"polytopes\" for a more general version of this using OpenGL. http://en.wikipedia.org/wiki/Hypercube http://en.wikipedia.org/wiki/Regular_polytope Written by Joe Keane, Fritz Mueller, and Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/hypertorus.xml.h:1 hacks/config/polytopes.xml.h:1
@@ -4442,13 +3922,7 @@ msgid "Solid surface"
 msgstr "Düz yüzey"
 
 #: hacks/config/hypertorus.xml.h:21
-msgid ""
-"This shows a rotating Clifford Torus: a torus lying on the \"surface\" of a "
-"4D hypersphere. Inspired by Thomas Banchoff's book \"Beyond the Third "
-"Dimension: Geometry, Computer Graphics, and Higher Dimensions\", Scientific "
-"American Library, 1990. http://en.wikipedia.org/wiki/N-sphere http://en."
-"wikipedia.org/wiki/Clifford_torus http://en.wikipedia.org/wiki/"
-"Regular_polytope Written by Carsten Steger; 2003."
+msgid "This shows a rotating Clifford Torus: a torus lying on the \"surface\" of a 4D hypersphere. Inspired by Thomas Banchoff's book \"Beyond the Third Dimension: Geometry, Computer Graphics, and Higher Dimensions\", Scientific American Library, 1990. http://en.wikipedia.org/wiki/N-sphere http://en.wikipedia.org/wiki/Clifford_torus http://en.wikipedia.org/wiki/Regular_polytope Written by Carsten Steger; 2003."
 msgstr ""
 
 #: hacks/config/hypertorus.xml.h:22 hacks/config/polytopes.xml.h:23
@@ -4496,10 +3970,7 @@ msgid "50"
 msgstr "50"
 
 #: hacks/config/hypnowheel.xml.h:5
-msgid ""
-"Draws a series of overlapping, translucent spiral patterns. The tightness of "
-"their spirals fluctuates in and out. http://en.wikipedia.org/wiki/"
-"Moire_pattern Written by Jamie Zawinski; 2008."
+msgid "Draws a series of overlapping, translucent spiral patterns. The tightness of their spirals fluctuates in and out. http://en.wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski; 2008."
 msgstr ""
 
 #: hacks/config/hypnowheel.xml.h:9
@@ -4535,11 +4006,7 @@ msgid "Scale"
 msgstr "Derece"
 
 #: hacks/config/ifs.xml.h:14
-msgid ""
-"This one draws spinning, colliding iterated-function-system images. Note "
-"that the \"Detail\" parameter is exponential. Number of points drawn is "
-"functions^detail. http://en.wikipedia.org/wiki/Iterated_function_system "
-"Written by Chris Le Sueur and Robby Griffin; 1997."
+msgid "This one draws spinning, colliding iterated-function-system images. Note that the \"Detail\" parameter is exponential. Number of points drawn is functions^detail. http://en.wikipedia.org/wiki/Iterated_function_system Written by Chris Le Sueur and Robby Griffin; 1997."
 msgstr ""
 
 #: hacks/config/ifs.xml.h:15
@@ -4571,27 +4038,15 @@ msgid "Saturation gradients"
 msgstr "Doygunluk eğimleri"
 
 #: hacks/config/imsmap.xml.h:18
-msgid ""
-"This generates random cloud-like patterns. The idea is to take four points "
-"on the edge of the image, and assign each a random \"elevation\". Then find "
-"the point between them, and give it a value which is the average of the "
-"other four, plus some small random offset. Coloration is done based on "
-"elevation. Written by Juergen Nickelsen and Jamie Zawinski; 1992."
+msgid "This generates random cloud-like patterns. The idea is to take four points on the edge of the image, and assign each a random \"elevation\". Then find the point between them, and give it a value which is the average of the other four, plus some small random offset. Coloration is done based on elevation. Written by Juergen Nickelsen and Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/interaggregate.xml.h:1
-msgid ""
-"A surface is filled with a hundred medium to small sized circles. Each "
-"circle has a different size and direction, but moves at the same slow rate. "
-"Displays the instantaneous intersections of the circles as well as the "
-"aggregate intersections of the circles. Though actually it doesn't look like "
-"circles at all! Written by Casey Reas, William Ngan, Robert Hodgin, and "
-"Jamie Zawinski; 2004."
+msgid "A surface is filled with a hundred medium to small sized circles. Each circle has a different size and direction, but moves at the same slow rate. Displays the instantaneous intersections of the circles as well as the aggregate intersections of the circles. Though actually it doesn't look like circles at all! Written by Casey Reas, William Ngan, Robert Hodgin, and Jamie Zawinski; 2004."
 msgstr ""
 
 #: hacks/config/interaggregate.xml.h:5
 #, fuzzy
-#| msgid "Interference"
 msgid "Interaggregate"
 msgstr "Müdahale Etme"
 
@@ -4604,9 +4059,7 @@ msgid "360"
 msgstr "360"
 
 #: hacks/config/interference.xml.h:4
-msgid ""
-"Color field based on computing decaying sinusoidal waves. Written by Hannu "
-"Mallat; 1998."
+msgid "Color field based on computing decaying sinusoidal waves. Written by Hannu Mallat; 1998."
 msgstr ""
 
 #: hacks/config/interference.xml.h:9
@@ -4634,16 +4087,7 @@ msgid "400"
 msgstr "400"
 
 #: hacks/config/intermomentary.xml.h:3
-msgid ""
-"A surface is filled with a hundred medium to small sized circles. Each "
-"circle has a different size and direction, but moves at the same slow rate. "
-"Displays the instantaneous intersections of the circles as well as the "
-"aggregate intersections of the circles. The circles begin with a radius of 1 "
-"pixel and slowly increase to some arbitrary size. Circles are drawn with "
-"small moving points along the perimeter. The intersections are rendered as "
-"glowing orbs. Glowing orbs are rendered only when a perimeter point moves "
-"past the intersection point. Written by Casey Reas, William Ngan, Robert "
-"Hodgin, and Jamie Zawinski; 2004."
+msgid "A surface is filled with a hundred medium to small sized circles. Each circle has a different size and direction, but moves at the same slow rate. Displays the instantaneous intersections of the circles as well as the aggregate intersections of the circles. The circles begin with a radius of 1 pixel and slowly increase to some arbitrary size. Circles are drawn with small moving points along the perimeter. The intersections are rendered as glowing orbs. Glowing orbs are rendered only when a perimeter point moves past the intersection point. Written by Casey Reas, William Ngan, Robert Hodgin, and Jamie Zawinski; 2004."
 msgstr ""
 
 #: hacks/config/intermomentary.xml.h:6
@@ -4708,14 +4152,7 @@ msgid "Tetrahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/jigglypuff.xml.h:25
-msgid ""
-"This does bad things with quasi-spherical objects. You have a tetrahedron "
-"with tesselated faces. The vertices on these faces have forces on them: one "
-"proportional to the distance from the surface of a sphere; and one "
-"proportional to the distance from the neighbors. They also have inertia. The "
-"resulting effect can range from a shape that does nothing, to a frenetic "
-"polygon storm. Somewhere in between there it usually manifests as a blob "
-"that jiggles in a kind of disturbing manner. Written by Keith Macleod; 2003."
+msgid "This does bad things with quasi-spherical objects. You have a tetrahedron with tesselated faces. The vertices on these faces have forces on them: one proportional to the distance from the surface of a sphere; and one proportional to the distance from the neighbors. They also have inertia. The resulting effect can range from a shape that does nothing, to a frenetic polygon storm. Somewhere in between there it usually manifests as a blob that jiggles in a kind of disturbing manner. Written by Keith Macleod; 2003."
 msgstr ""
 
 #: hacks/config/jigglypuff.xml.h:26
@@ -4739,10 +4176,7 @@ msgid "Puzzle pieces"
 msgstr "Bulmaca parçaları"
 
 #: hacks/config/jigsaw.xml.h:15
-msgid ""
-"This grabs a screen image, carves it up into a jigsaw puzzle, shuffles it, "
-"and then solves the puzzle. http://en.wikipedia.org/wiki/Jigsaw_puzzle "
-"http://en.wikipedia.org/wiki/Tessellation Written by Jamie Zawinski; 1997."
+msgid "This grabs a screen image, carves it up into a jigsaw puzzle, shuffles it, and then solves the puzzle. http://en.wikipedia.org/wiki/Jigsaw_puzzle http://en.wikipedia.org/wiki/Tessellation Written by Jamie Zawinski; 1997."
 msgstr ""
 
 #: hacks/config/jigsaw.xml.h:16 hacks/config/sonar.xml.h:29
@@ -4750,9 +4184,7 @@ msgid "Tilt"
 msgstr "Eğim"
 
 #: hacks/config/juggler3d.xml.h:1
-msgid ""
-"3D simulation of a juggler performing with balls, clubs and rings. http://en."
-"wikipedia.org/wiki/Siteswap Written by Brian Apps; 2005."
+msgid "3D simulation of a juggler performing with balls, clubs and rings. http://en.wikipedia.org/wiki/Siteswap Written by Brian Apps; 2005."
 msgstr ""
 
 #: hacks/config/juggler3d.xml.h:5
@@ -4797,10 +4229,7 @@ msgstr "Sinekler"
 
 #: hacks/config/juggle.xml.h:4
 #, fuzzy
-#| msgid "Draws a juggling stick-man. Written by Tim Auckland."
-msgid ""
-"Draws a juggling stick-man. See also \"Juggler3D\". http://en.wikipedia.org/"
-"wiki/Siteswap Written by Tim Auckland; 2002."
+msgid "Draws a juggling stick-man. See also \"Juggler3D\". http://en.wikipedia.org/wiki/Siteswap Written by Tim Auckland; 2002."
 msgstr "Hokkabazlık çizimleri yapan baget-adamı. Yazar Tim Auckland."
 
 #: hacks/config/juggle.xml.h:6
@@ -4832,11 +4261,7 @@ msgid "Rings"
 msgstr "Çemberler"
 
 #: hacks/config/julia.xml.h:1
-msgid ""
-"Animates the Julia set (a close relative of the Mandelbrot set). The small "
-"moving dot indicates the control point from which the rest of the image was "
-"generated. See also the \"Discrete\" screen saver. http://en.wikipedia.org/"
-"wiki/Julia_set Written by Sean McCullough; 1997."
+msgid "Animates the Julia set (a close relative of the Mandelbrot set). The small moving dot indicates the control point from which the rest of the image was generated. See also the \"Discrete\" screen saver. http://en.wikipedia.org/wiki/Julia_set Written by Sean McCullough; 1997."
 msgstr ""
 
 #: hacks/config/julia.xml.h:6 hacks/config/rorschach.xml.h:3
@@ -4856,9 +4281,7 @@ msgid "32"
 msgstr "32"
 
 #: hacks/config/kaleidescope.xml.h:3
-msgid ""
-"A simple kaleidoscope. See also \"GLeidescope\". http://en.wikipedia.org/"
-"wiki/Kaleidoscope Written by Ron Tapia; 1997."
+msgid "A simple kaleidoscope. See also \"GLeidescope\". http://en.wikipedia.org/wiki/Kaleidoscope Written by Ron Tapia; 1997."
 msgstr ""
 
 #: hacks/config/kaleidescope.xml.h:7
@@ -4882,10 +4305,7 @@ msgid "Klein"
 msgstr "Klein"
 
 #: hacks/config/klein.xml.h:10
-msgid ""
-"This draws a visualization of a Klein bottle or some other interesting "
-"parametric surfaces. http://en.wikipedia.org/wiki/Klein_bottle Written by "
-"Andrey Mirtchovski; 2003."
+msgid "This draws a visualization of a Klein bottle or some other interesting parametric surfaces. http://en.wikipedia.org/wiki/Klein_bottle Written by Andrey Mirtchovski; 2003."
 msgstr ""
 
 #: hacks/config/klein.xml.h:11
@@ -4906,22 +4326,12 @@ msgstr "Rasgele"
 
 #: hacks/config/kumppa.xml.h:9
 #, fuzzy
-#| msgid ""
-#| "Spiraling, spinning, and very, very fast splashes of color rush toward "
-#| "the screen. Written by Teemu Suutari."
-msgid ""
-"Spiraling, spinning, and very, very fast splashes of color rush toward the "
-"screen. Written by Teemu Suutari; 1998."
-msgstr ""
-"Ekrana doğru hızla akan rengi döndürerek, kıvırarak çok çok hızlı sıçratır. "
-"Yazar Teemu Suutari."
+msgid "Spiraling, spinning, and very, very fast splashes of color rush toward the screen. Written by Teemu Suutari; 1998."
+msgstr "Ekrana doğru hızla akan rengi döndürerek, kıvırarak çok çok hızlı sıçratır. Yazar Teemu Suutari."
 
 #: hacks/config/lament.xml.h:2
 #, no-c-format
-msgid ""
-"Animates a simulation of Lemarchand's Box, the Lament Configuration, "
-"repeatedly solving itself. Warning: occasionally opens doors. http://en."
-"wikipedia.org/wiki/Lemarchand%27s_box Written by Jamie Zawinski; 1998."
+msgid "Animates a simulation of Lemarchand's Box, the Lament Configuration, repeatedly solving itself. Warning: occasionally opens doors. http://en.wikipedia.org/wiki/Lemarchand%27s_box Written by Jamie Zawinski; 1998."
 msgstr ""
 
 #: hacks/config/lament.xml.h:5
@@ -4933,9 +4343,7 @@ msgid "Laser"
 msgstr "Lazer"
 
 #: hacks/config/laser.xml.h:9
-msgid ""
-"Moving radiating lines, that look vaguely like scanning laser beams. "
-"(Frankie say relax.) Written by Pascal Pensa; 1997."
+msgid "Moving radiating lines, that look vaguely like scanning laser beams. (Frankie say relax.) Written by Pascal Pensa; 1997."
 msgstr ""
 
 #: hacks/config/lavalite.xml.h:4
@@ -4951,16 +4359,7 @@ msgid "Don't Rotate"
 msgstr "Döndürme"
 
 #: hacks/config/lavalite.xml.h:8
-msgid ""
-"Draws a 3D Simulation a Lava Lite(r). Odd-shaped blobs of a mysterious "
-"substance are heated, slowly rise to the top of the bottle, and then drop "
-"back down as they cool. This simulation requires a fairly fast machine (both "
-"CPU and 3D performance.) \"LAVA LITE(r) and the configuration of the LAVA(r) "
-"brand motion lamp are registered trademarks of Haggerty Enterprises, Inc. "
-"The configuration of the globe and base of the motion lamp are registered "
-"trademarks of Haggerty Enterprises, Inc. in the U.S.A. and in other "
-"countries around the world.\" http://en.wikipedia.org/wiki/Lava_lamp http://"
-"en.wikipedia.org/wiki/Metaballs Written by Jamie Zawinski; 2002."
+msgid "Draws a 3D Simulation a Lava Lite(r). Odd-shaped blobs of a mysterious substance are heated, slowly rise to the top of the bottle, and then drop back down as they cool. This simulation requires a fairly fast machine (both CPU and 3D performance.) \"LAVA LITE(r) and the configuration of the LAVA(r) brand motion lamp are registered trademarks of Haggerty Enterprises, Inc. The configuration of the globe and base of the motion lamp are registered trademarks of Haggerty Enterprises, Inc. in the U.S.A. and in other countries around the world.\" http://en.wikipedia.org/wiki/Lava_lamp http://en.wikipedia.org/wiki/Metaballs Written by Jamie Zawinski; 2002."
 msgstr ""
 
 #: hacks/config/lavalite.xml.h:10
@@ -5009,7 +4408,6 @@ msgstr ""
 
 #: hacks/config/lcdscrub.xml.h:9
 #, fuzzy
-#| msgid "Lines"
 msgid "Line spread"
 msgstr "Satırlar"
 
@@ -5022,15 +4420,7 @@ msgid "Solid white"
 msgstr "Düz beyaz"
 
 #: hacks/config/lcdscrub.xml.h:14
-msgid ""
-"This screen saver is not meant to look pretty, but rather, to repair burn-in "
-"on LCD monitors. Believe it or not, screen burn is not a thing of the past. "
-"It can happen to LCD screens pretty easily, even in this modern age. "
-"However, leaving the screen on and displaying high contrast images can often "
-"repair the damage. That's what this screen saver does. See also: http://docs."
-"info.apple.com/article.html?artnum=88343 http://toastycode.com/"
-"blog/2008/02/05/lcd-scrub/ Inspired by the like-named program by Daniel "
-"Sandler. Written by Jamie Zawinski; 2008."
+msgid "This screen saver is not meant to look pretty, but rather, to repair burn-in on LCD monitors. Believe it or not, screen burn is not a thing of the past. It can happen to LCD screens pretty easily, even in this modern age. However, leaving the screen on and displaying high contrast images can often repair the damage. That's what this screen saver does. See also: http://docs.info.apple.com/article.html?artnum=88343 http://toastycode.com/blog/2008/02/05/lcd-scrub/ Inspired by the like-named program by Daniel Sandler. Written by Jamie Zawinski; 2008."
 msgstr ""
 
 #: hacks/config/lcdscrub.xml.h:15
@@ -5054,9 +4444,7 @@ msgid "Lisa"
 msgstr "Lisa"
 
 #: hacks/config/lisa.xml.h:9
-msgid ""
-"Lissajous loops. http://en.wikipedia.org/wiki/Lissajous_curve Written by "
-"Caleb Cullen; 1997."
+msgid "Lissajous loops. http://en.wikipedia.org/wiki/Lissajous_curve Written by Caleb Cullen; 1997."
 msgstr ""
 
 #: hacks/config/lisa.xml.h:16
@@ -5065,16 +4453,8 @@ msgstr "Adımlar"
 
 #: hacks/config/lissie.xml.h:7
 #, fuzzy
-#| msgid ""
-#| "Another Lissajous figure. This one draws the progress of circular shapes "
-#| "along a path. Written by Alexander Jolk."
-msgid ""
-"Lissajous loops. This one draws the progress of circular shapes along a "
-"path. http://en.wikipedia.org/wiki/Lissajous_curve Written by Alexander "
-"Jolk; 1997."
-msgstr ""
-"Başka bir Lissajous biçimi. Bu bir yol boyunca dairesel şekillerin "
-"ilerleyişini çizer. Yazar Alexander Jolk."
+msgid "Lissajous loops. This one draws the progress of circular shapes along a path. http://en.wikipedia.org/wiki/Lissajous_curve Written by Alexander Jolk; 1997."
+msgstr "Başka bir Lissajous biçimi. Bu bir yol boyunca dairesel şekillerin ilerleyişini çizer. Yazar Alexander Jolk."
 
 #: hacks/config/lissie.xml.h:8
 msgid "Lissie"
@@ -5113,17 +4493,11 @@ msgid "Open figures"
 msgstr "Açık şekiller"
 
 #: hacks/config/lmorph.xml.h:18
-msgid ""
-"This generates random spline-ish line drawings and morphs between them. "
-"Written by Sverre H. Huseby and Glenn T. Lines; 1995."
+msgid "This generates random spline-ish line drawings and morphs between them. Written by Sverre H. Huseby and Glenn T. Lines; 1995."
 msgstr ""
 
 #: hacks/config/lockward.xml.h:1
-msgid ""
-"A translucent spinning, blinking thing. Sort of a cross between the wards in "
-"an old combination lock and those old backlit information displays that "
-"animated and changed color via polarized light. Written by Leo L. Schwab; "
-"2007."
+msgid "A translucent spinning, blinking thing. Sort of a cross between the wards in an old combination lock and those old backlit information displays that animated and changed color via polarized light. Written by Leo L. Schwab; 2007."
 msgstr ""
 
 #: hacks/config/lockward.xml.h:2
@@ -5160,9 +4534,7 @@ msgstr ""
 
 #: hacks/config/loop.xml.h:3
 #, no-c-format
-msgid ""
-"Generates loop-shaped colonies that spawn, age, and eventually die. http://"
-"en.wikipedia.org/wiki/Langton%27s_loops Written by David Bagley; 1999."
+msgid "Generates loop-shaped colonies that spawn, age, and eventually die. http://en.wikipedia.org/wiki/Langton%27s_loops Written by David Bagley; 1999."
 msgstr ""
 
 #: hacks/config/loop.xml.h:6
@@ -5178,14 +4550,7 @@ msgid "Display time for each program"
 msgstr "Her uygulama için saati göster"
 
 #: hacks/config/m6502.xml.h:6
-msgid ""
-"This emulates a 6502 microprocessor. The family of 6502 chips were used "
-"throughout the 70's and 80's in machines such as the Atari 2600, Commodore "
-"PET, VIC20 and C64, Apple ][, and the NES. Some example programs are "
-"included, and it can also read in an assembly file as input. Original "
-"JavaScript Version by Stian Soreng: http://www.6502asm.com/. Ported to "
-"XScreenSaver by Jeremy English. Written by Stian Soreng and Jeremy English; "
-"2007."
+msgid "This emulates a 6502 microprocessor. The family of 6502 chips were used throughout the 70's and 80's in machines such as the Atari 2600, Commodore PET, VIC20 and C64, Apple ][, and the NES. Some example programs are included, and it can also read in an assembly file as input. Original JavaScript Version by Stian Soreng: http://www.6502asm.com/. Ported to XScreenSaver by Jeremy English. Written by Stian Soreng and Jeremy English; 2007."
 msgstr ""
 
 #: hacks/config/m6502.xml.h:7
@@ -5194,7 +4559,6 @@ msgstr "m6502"
 
 #: hacks/config/maze.xml.h:3
 #, fuzzy
-#| msgid "Backtracking Generator"
 msgid "Depth-first backtracking maze generator"
 msgstr "Jeneratörden Vazgeç"
 
@@ -5212,7 +4576,6 @@ msgstr "Çıkış yönünü önemseme"
 
 #: hacks/config/maze.xml.h:9
 #, fuzzy
-#| msgid "Linear Motion"
 msgid "Linger after solving"
 msgstr "Doğrusal Hareket Ettir"
 
@@ -5226,7 +4589,6 @@ msgstr "Labirent"
 
 #: hacks/config/maze.xml.h:13
 #, fuzzy
-#| msgid "Random Generator"
 msgid "Random maze generator"
 msgstr "Rastgele Jeneratör"
 
@@ -5235,12 +4597,7 @@ msgid "Set-joining maze generator (Kruskal)"
 msgstr ""
 
 #: hacks/config/maze.xml.h:16
-msgid ""
-"This generates random mazes (with three different maze-generation "
-"algorithms), and then solves them. Backtracking and look-ahead paths are "
-"displayed in different colors. http://en.wikipedia.org/wiki/"
-"Maze_generation_algorithm Written by Martin Weiss, Dave Lemke, Jim Randell, "
-"Jamie Zawinski, Johannes Keukelaar, and Zack Weinberg; 1985."
+msgid "This generates random mazes (with three different maze-generation algorithms), and then solves them. Backtracking and look-ahead paths are displayed in different colors. http://en.wikipedia.org/wiki/Maze_generation_algorithm Written by Martin Weiss, Dave Lemke, Jim Randell, Jamie Zawinski, Johannes Keukelaar, and Zack Weinberg; 1985."
 msgstr ""
 
 #: hacks/config/maze.xml.h:17
@@ -5265,14 +4622,11 @@ msgstr "Belleği dök"
 
 #: hacks/config/memscroller.xml.h:8
 #, fuzzy
-#| msgid "Scroll Speed"
 msgid "MemScroller"
 msgstr "Kaydırma Hızı"
 
 #: hacks/config/memscroller.xml.h:10
-msgid ""
-"This draws a dump of its own process memory scrolling across the screen in "
-"three windows at three different rates. Written by Jamie Zawinski; 2004."
+msgid "This draws a dump of its own process memory scrolling across the screen in three windows at three different rates. Written by Jamie Zawinski; 2004."
 msgstr ""
 
 #: hacks/config/menger.xml.h:7 hacks/config/sierpinski3d.xml.h:6
@@ -5284,18 +4638,11 @@ msgid "Menger"
 msgstr "Menger"
 
 #: hacks/config/menger.xml.h:18
-msgid ""
-"This draws the three-dimensional variant of the recursive Menger Gasket, a "
-"cube-based fractal object analagous to the Sierpinski Tetrahedron. http://en."
-"wikipedia.org/wiki/Menger_sponge http://en.wikipedia.org/wiki/"
-"Sierpinski_carpet Written by Jamie Zawinski; 2001."
+msgid "This draws the three-dimensional variant of the recursive Menger Gasket, a cube-based fractal object analagous to the Sierpinski Tetrahedron. http://en.wikipedia.org/wiki/Menger_sponge http://en.wikipedia.org/wiki/Sierpinski_carpet Written by Jamie Zawinski; 2001."
 msgstr ""
 
 #: hacks/config/metaballs.xml.h:2
-msgid ""
-"Draws two dimensional metaballs: overlapping and merging balls with fuzzy "
-"edges. http://en.wikipedia.org/wiki/Metaballs Written by W.P. van Paassen; "
-"2003."
+msgid "Draws two dimensional metaballs: overlapping and merging balls with fuzzy edges. http://en.wikipedia.org/wiki/Metaballs Written by W.P. van Paassen; 2003."
 msgstr ""
 
 #: hacks/config/metaballs.xml.h:9
@@ -5304,13 +4651,11 @@ msgstr ""
 
 #: hacks/config/metaballs.xml.h:10
 #, fuzzy
-#| msgid "Seed Radius"
 msgid "MetaBall Radius"
 msgstr "Tohum Yarıçapı"
 
 #: hacks/config/metaballs.xml.h:11
 #, fuzzy
-#| msgid "Balls"
 msgid "MetaBalls"
 msgstr "Toplar"
 
@@ -5347,9 +4692,7 @@ msgid "Clear"
 msgstr "Temizle"
 
 #: hacks/config/mirrorblob.xml.h:9
-msgid ""
-"Draws a wobbly blob that distorts the image behind it. Written by Jon "
-"Dowdall; 2003."
+msgid "Draws a wobbly blob that distorts the image behind it. Written by Jon Dowdall; 2003."
 msgstr ""
 
 #: hacks/config/mirrorblob.xml.h:10
@@ -5385,11 +4728,7 @@ msgid "Transition duration"
 msgstr "Geçiş süresi"
 
 #: hacks/config/moebiusgears.xml.h:1
-msgid ""
-"Draws a closed, interlinked chain of rotating gears. The layout of the gears "
-"follows the path of a moebius strip. See also the \"Pinion\" and \"Gears\" "
-"screen savers. http://en.wikipedia.org/wiki/Involute_gear http://en."
-"wikipedia.org/wiki/Moebius_strip Written by Jamie Zawinski; 2007."
+msgid "Draws a closed, interlinked chain of rotating gears. The layout of the gears follows the path of a moebius strip. See also the \"Pinion\" and \"Gears\" screen savers. http://en.wikipedia.org/wiki/Involute_gear http://en.wikipedia.org/wiki/Moebius_strip Written by Jamie Zawinski; 2007."
 msgstr ""
 
 #: hacks/config/moebiusgears.xml.h:6
@@ -5417,19 +4756,11 @@ msgid "Solid floor"
 msgstr "Düz döşeme"
 
 #: hacks/config/moebius.xml.h:8
-msgid ""
-"This animates a 3D rendition M.C. Escher's \"Moebius Strip II\", an image of "
-"ants walking along the surface of a moebius strip. http://en.wikipedia.org/"
-"wiki/Moebius_strip http://en.wikipedia.org/wiki/Maurits_Cornelis_Escher "
-"Written by Marcelo F. Vianna; 1997."
+msgid "This animates a 3D rendition M.C. Escher's \"Moebius Strip II\", an image of ants walking along the surface of a moebius strip. http://en.wikipedia.org/wiki/Moebius_strip http://en.wikipedia.org/wiki/Maurits_Cornelis_Escher Written by Marcelo F. Vianna; 1997."
 msgstr ""
 
 #: hacks/config/moire2.xml.h:2
-msgid ""
-"Generates fields of concentric circles or ovals, and combines the planes "
-"with various operations. The planes are moving independently of one another, "
-"causing the interference lines to spray. http://en.wikipedia.org/wiki/"
-"Moire_pattern Written by Jamie Zawinski; 1998."
+msgid "Generates fields of concentric circles or ovals, and combines the planes with various operations. The planes are moving independently of one another, causing the interference lines to spray. http://en.wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski; 1998."
 msgstr ""
 
 #: hacks/config/moire2.xml.h:6
@@ -5450,10 +4781,7 @@ msgid "Use shared memory"
 msgstr "Paylaşılan belleği kullan"
 
 #: hacks/config/moire.xml.h:13
-msgid ""
-"When the lines on the screen Make more lines in between, That's a moire'! "
-"http://en.wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski and "
-"Michael Bayne; 1997."
+msgid "When the lines on the screen Make more lines in between, That's a moire'! http://en.wikipedia.org/wiki/Moire_pattern Written by Jamie Zawinski and Michael Bayne; 1997."
 msgstr ""
 
 #: hacks/config/molecule.xml.h:3
@@ -5466,7 +4794,6 @@ msgstr "Atomik bağlar çiz"
 
 #: hacks/config/molecule.xml.h:6
 #, fuzzy
-#| msgid "Draw Atomic Bonds"
 msgid "Draw atomic nuclei"
 msgstr "Atomik Tahvilleri Çiz"
 
@@ -5476,19 +4803,8 @@ msgstr ""
 
 #: hacks/config/molecule.xml.h:10
 #, fuzzy, no-c-format
-#| msgid ""
-#| "Draws several different representations of molecules. Some common "
-#| "molecules are built in, and it can also read PDB (Protein Data Base) "
-#| "files as input. Written by Jamie Zawinski."
-msgid ""
-"Draws several different representations of molecules. Some common molecules "
-"are built in, and it can also read PDB (Protein Data Bank) files as input. "
-"http://en.wikipedia.org/wiki/Protein_Data_Bank_%28file_format%29 Written by "
-"Jamie Zawinski; 2001."
-msgstr ""
-"Moleküllerin çeşitli farklı betimlemelerini çizer. Bazı ortak moleküller PDB "
-"(Protein Veri Tabanı) içinde oluşturulur ve aynı zamanda girdi olarak PDB "
-"(Protein Veri Tabanı) dosyalarını okuyabilir. Yazar Jamie Zawinski."
+msgid "Draws several different representations of molecules. Some common molecules are built in, and it can also read PDB (Protein Data Bank) files as input. http://en.wikipedia.org/wiki/Protein_Data_Bank_%28file_format%29 Written by Jamie Zawinski; 2001."
+msgstr "Moleküllerin çeşitli farklı betimlemelerini çizer. Bazı ortak moleküller PDB (Protein Veri Tabanı) içinde oluşturulur ve aynı zamanda girdi olarak PDB (Protein Veri Tabanı) dosyalarını okuyabilir. Yazar Jamie Zawinski."
 
 #: hacks/config/molecule.xml.h:14
 msgid "Label atoms"
@@ -5527,15 +4843,11 @@ msgid "Octahedron"
 msgstr "Sekiz yüzlü"
 
 #: hacks/config/morph3d.xml.h:9
-msgid ""
-"Platonic solids that turn inside out and get spikey. http://en.wikipedia.org/"
-"wiki/Platonic_solid Written by Marcelo Vianna; 1997."
+msgid "Platonic solids that turn inside out and get spikey. http://en.wikipedia.org/wiki/Platonic_solid Written by Marcelo Vianna; 1997."
 msgstr ""
 
 #: hacks/config/mountain.xml.h:2
-msgid ""
-"Generates random 3D plots that look vaguely mountainous. Written by Pascal "
-"Pensa; 1997."
+msgid "Generates random 3D plots that look vaguely mountainous. Written by Pascal Pensa; 1997."
 msgstr ""
 
 #: hacks/config/mountain.xml.h:7
@@ -5547,14 +4859,7 @@ msgid "Peaks"
 msgstr "Doruklar"
 
 #: hacks/config/munch.xml.h:1
-msgid ""
-"DATAI 2 ADDB 1,2 ROTC 2,-22 XOR 1,2 JRST .-4 As reported by HAKMEM (MIT AI "
-"Memo 239, 1972), Jackson Wright wrote the above PDP-1 code in 1962. That "
-"code still lives on here, some 46 years later. In \"mismunch\" mode, it "
-"displays a creatively broken misimplementation of the classic munching "
-"squares algorithm instead. http://en.wikipedia.org/wiki/HAKMEM http://en."
-"wikipedia.org/wiki/Munching_square Written by Jackson Wright, Tim Showalter, "
-"Jamie Zawinski and Steven Hazel; 1997."
+msgid "DATAI 2 ADDB 1,2 ROTC 2,-22 XOR 1,2 JRST .-4 As reported by HAKMEM (MIT AI Memo 239, 1972), Jackson Wright wrote the above PDP-1 code in 1962. That code still lives on here, some 46 years later. In \"mismunch\" mode, it displays a creatively broken misimplementation of the classic munching squares algorithm instead. http://en.wikipedia.org/wiki/HAKMEM http://en.wikipedia.org/wiki/Munching_square Written by Jackson Wright, Tim Showalter, Jamie Zawinski and Steven Hazel; 1997."
 msgstr ""
 
 #: hacks/config/munch.xml.h:8
@@ -5567,7 +4872,6 @@ msgstr "Gürültüyle Çiğne"
 
 #: hacks/config/munch.xml.h:10
 #, fuzzy
-#| msgid "Munch"
 msgid "Munch only"
 msgstr "Gürültüyle Çiğne"
 
@@ -5608,10 +4912,7 @@ msgid "Crunchiness"
 msgstr "Çıtırtısız"
 
 #: hacks/config/nerverot.xml.h:6
-msgid ""
-"Draws different shapes composed of nervously vibrating squiggles, as if seen "
-"through a camera operated by a monkey on crack. Written by Dan Bornstein; "
-"2000."
+msgid "Draws different shapes composed of nervously vibrating squiggles, as if seen through a camera operated by a monkey on crack. Written by Dan Bornstein; 2000."
 msgstr ""
 
 #: hacks/config/nerverot.xml.h:10
@@ -5635,8 +4936,7 @@ msgid "Spastic"
 msgstr "Spastik"
 
 #: hacks/config/noof.xml.h:1
-msgid ""
-"Draws some rotatey patterns, using OpenGL. Written by Bill Torzewski; 2004."
+msgid "Draws some rotatey patterns, using OpenGL. Written by Bill Torzewski; 2004."
 msgstr ""
 
 #: hacks/config/noof.xml.h:5
@@ -5644,14 +4944,11 @@ msgid "Noof"
 msgstr ""
 
 #: hacks/config/noseguy.xml.h:1
-msgid ""
-"A little man with a big nose wanders around your screen saying things. "
-"Written by Dan Heller and Jamie Zawinski; 1992."
+msgid "A little man with a big nose wanders around your screen saying things. Written by Dan Heller and Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/noseguy.xml.h:2
 #, fuzzy
-#| msgid "Noseguy"
 msgid "NoseGuy"
 msgstr "Noseguy"
 
@@ -5664,9 +4961,7 @@ msgid "Player size"
 msgstr "Oyuncu boyutu"
 
 #: hacks/config/pacman.xml.h:7
-msgid ""
-"Simulates a game of Pac-Man on a randomly-created level. http://en.wikipedia."
-"org/wiki/Pac-Man Written by Edwin de Jong; 2004."
+msgid "Simulates a game of Pac-Man on a randomly-created level. http://en.wikipedia.org/wiki/Pac-Man Written by Edwin de Jong; 2004."
 msgstr ""
 
 #: hacks/config/pedal.xml.h:7
@@ -5674,10 +4969,7 @@ msgid "Pedal"
 msgstr "Ayaklık"
 
 #: hacks/config/pedal.xml.h:9
-msgid ""
-"This is sort of a combination spirograph/string-art. It generates a large, "
-"complex polygon, and renders it by filling using an even/odd winding rule. "
-"Written by Dale Moore; 1995."
+msgid "This is sort of a combination spirograph/string-art. It generates a large, complex polygon, and renders it by filling using an even/odd winding rule. Written by Dale Moore; 1995."
 msgstr ""
 
 #: hacks/config/penetrate.xml.h:1
@@ -5693,9 +4985,7 @@ msgid "Penetrate"
 msgstr "Nüfuz Et"
 
 #: hacks/config/penetrate.xml.h:7
-msgid ""
-"Simulates (something like) the classic arcade game Missile Command. http://"
-"en.wikipedia.org/wiki/Missile_Command Written by Adam Miller; 1999."
+msgid "Simulates (something like) the classic arcade game Missile Command. http://en.wikipedia.org/wiki/Missile_Command Written by Adam Miller; 1999."
 msgstr ""
 
 #: hacks/config/penetrate.xml.h:9
@@ -5707,19 +4997,7 @@ msgid "Draw ammann lines"
 msgstr ""
 
 #: hacks/config/penrose.xml.h:2
-msgid ""
-"Draws quasiperiodic tilings; think of the implications on modern formica "
-"technology. In April 1997, Sir Roger Penrose, a British math professor who "
-"has worked with Stephen Hawking on such topics as relativity, black holes, "
-"and whether time has a beginning, filed a copyright-infringement lawsuit "
-"against the Kimberly-Clark Corporation, which Penrose said copied a pattern "
-"he created (a pattern demonstrating that \"a nonrepeating pattern could "
-"exist in nature\") for its Kleenex quilted toilet paper. Penrose said he "
-"doesn't like litigation but, \"When it comes to the population of Great "
-"Britain being invited by a multinational to wipe their bottoms on what "
-"appears to be the work of a Knight of the Realm, then a last stand must be "
-"taken.\" As reported by News of the Weird #491, 4-Jul-1997. http://en."
-"wikipedia.org/wiki/Penrose_tiling Written by Timo Korvola; 1997."
+msgid "Draws quasiperiodic tilings; think of the implications on modern formica technology. In April 1997, Sir Roger Penrose, a British math professor who has worked with Stephen Hawking on such topics as relativity, black holes, and whether time has a beginning, filed a copyright-infringement lawsuit against the Kimberly-Clark Corporation, which Penrose said copied a pattern he created (a pattern demonstrating that \"a nonrepeating pattern could exist in nature\") for its Kleenex quilted toilet paper. Penrose said he doesn't like litigation but, \"When it comes to the population of Great Britain being invited by a multinational to wipe their bottoms on what appears to be the work of a Knight of the Realm, then a last stand must be taken.\" As reported by News of the Weird #491, 4-Jul-1997. http://en.wikipedia.org/wiki/Penrose_tiling Written by Timo Korvola; 1997."
 msgstr ""
 
 #: hacks/config/penrose.xml.h:9
@@ -5728,7 +5006,6 @@ msgstr "Penrose"
 
 #: hacks/config/penrose.xml.h:12 hacks/config/twang.xml.h:17
 #, fuzzy
-#| msgid "Tile Size"
 msgid "Tile size"
 msgstr "Tuğla Boy"
 
@@ -5750,43 +5027,36 @@ msgstr "Verimlilik"
 
 #: hacks/config/petri.xml.h:13
 #, fuzzy
-#| msgid "Maxium Lifespan"
 msgid "Maximum lifespan"
 msgstr "Azami Yaşam Süreci"
 
 #: hacks/config/petri.xml.h:14
 #, fuzzy
-#| msgid "Maxium Rate of Death"
 msgid "Maximum rate of death"
 msgstr "Azami Ölüm Oranı"
 
 #: hacks/config/petri.xml.h:15
 #, fuzzy
-#| msgid "Maxium Rate of Growth"
 msgid "Maximum rate of growth"
 msgstr "Azami Yetişmenin Oranı"
 
 #: hacks/config/petri.xml.h:16
 #, fuzzy
-#| msgid "Minium Lifespan"
 msgid "Minimum lifespan"
 msgstr "Minimum Yaşam Süreci"
 
 #: hacks/config/petri.xml.h:17
 #, fuzzy
-#| msgid "Minium Rate of Death"
 msgid "Minimum rate of death"
 msgstr "Minimum Ölüm Oranı"
 
 #: hacks/config/petri.xml.h:18
 #, fuzzy
-#| msgid "Minium Rate of Growth"
 msgid "Minimum rate of growth"
 msgstr "Minimum Yetişmenin Oranı"
 
 #: hacks/config/petri.xml.h:19
 #, fuzzy
-#| msgid "Mold Varieties"
 msgid "Mold varieties"
 msgstr "Küf Çeşitlilikleri"
 
@@ -5811,17 +5081,11 @@ msgid "Square"
 msgstr "Kare"
 
 #: hacks/config/petri.xml.h:28
-msgid ""
-"This simulates colonies of mold growing in a petri dish. Growing colored "
-"circles overlap and leave spiral interference in their wake. Written by Dan "
-"Bornstein; 1999."
+msgid "This simulates colonies of mold growing in a petri dish. Growing colored circles overlap and leave spiral interference in their wake. Written by Dan Bornstein; 1999."
 msgstr ""
 
 #: hacks/config/phosphor.xml.h:1
-msgid ""
-"Draws a simulation of an old terminal, with large pixels and long-sustain "
-"phosphor. On X11 systems, This program is also a fully-functional VT100 "
-"emulator! Written by Jamie Zawinski; 1999."
+msgid "Draws a simulation of an old terminal, with large pixels and long-sustain phosphor. On X11 systems, This program is also a fully-functional VT100 emulator! Written by Jamie Zawinski; 1999."
 msgstr ""
 
 #: hacks/config/phosphor.xml.h:4
@@ -5842,15 +5106,11 @@ msgstr "90 derece"
 
 #: hacks/config/photopile.xml.h:9
 #, fuzzy
-#| msgid "Image File"
 msgid "Image size"
 msgstr "Resim Dosyası"
 
 #: hacks/config/photopile.xml.h:11
-msgid ""
-"Loads several random images, and displays them as if lying in a random pile. "
-"The pile is periodically reshuffled, with new images coming in and old ones "
-"being thrown out. Written by Jens Kilian; 2008."
+msgid "Loads several random images, and displays them as if lying in a random pile. The pile is periodically reshuffled, with new images coming in and old ones being thrown out. Written by Jens Kilian; 2008."
 msgstr ""
 
 #: hacks/config/photopile.xml.h:13
@@ -5863,19 +5123,16 @@ msgstr "Fotoğraf kümesi"
 
 #: hacks/config/piecewise.xml.h:1
 #, fuzzy
-#| msgid "Colors"
 msgid "Color shift"
 msgstr "Renkler"
 
 #: hacks/config/piecewise.xml.h:10
 #, fuzzy
-#| msgid "Maxium Lifespan"
 msgid "Maximum radius"
 msgstr "Azami Yaşam Süreci"
 
 #: hacks/config/piecewise.xml.h:11
 #, fuzzy
-#| msgid "Minium Lifespan"
 msgid "Minimum radius"
 msgstr "Minimum Yaşam Süreci"
 
@@ -5884,14 +5141,11 @@ msgid "Piecewise"
 msgstr ""
 
 #: hacks/config/piecewise.xml.h:16
-msgid ""
-"This draws a bunch of moving circles which switch from visibility to "
-"invisibility at intersection points. Written by Geoffrey Irving; 2003."
+msgid "This draws a bunch of moving circles which switch from visibility to invisibility at intersection points. Written by Geoffrey Irving; 2003."
 msgstr ""
 
 #: hacks/config/pinion.xml.h:1
 #, fuzzy
-#| msgid "100%"
 msgid "100"
 msgstr "100%"
 
@@ -5900,10 +5154,7 @@ msgid "2000"
 msgstr "2000"
 
 #: hacks/config/pinion.xml.h:3
-msgid ""
-"Draws an interconnected set of gears moving across the screen. See also the "
-"\"Gears\" and \"MoebiusGears\" screen savers. http://en.wikipedia.org/wiki/"
-"Involute_gear Written by Jamie Zawinski; 2004."
+msgid "Draws an interconnected set of gears moving across the screen. See also the \"Gears\" and \"MoebiusGears\" screen savers. http://en.wikipedia.org/wiki/Involute_gear Written by Jamie Zawinski; 2004."
 msgstr ""
 
 #: hacks/config/pinion.xml.h:6
@@ -5923,9 +5174,7 @@ msgid "Scrolling speed"
 msgstr "Kaydırma hızı"
 
 #: hacks/config/pipes.xml.h:1
-msgid ""
-"A growing plumbing system, with bolts and valves. Written by Marcelo Vianna; "
-"1997."
+msgid "A growing plumbing system, with bolts and valves. Written by Marcelo Vianna; 1997."
 msgstr ""
 
 #: hacks/config/pipes.xml.h:2
@@ -5942,7 +5191,6 @@ msgstr "Top eklemleri"
 
 #: hacks/config/pipes.xml.h:5
 #, fuzzy
-#| msgid "Pipe Fittings"
 msgid "Bolted fittings"
 msgstr "Boru Provaları"
 
@@ -5952,7 +5200,6 @@ msgstr "Kavisli borular"
 
 #: hacks/config/pipes.xml.h:7
 #, fuzzy
-#| msgid "Fisheye Lens"
 msgid "Fisheye lens"
 msgstr "Fisheye Merceği"
 
@@ -5962,13 +5209,11 @@ msgstr "Cihaz"
 
 #: hacks/config/pipes.xml.h:15
 #, fuzzy
-#| msgid "Number of Circles"
 msgid "Number of pipes"
 msgstr "Daire Sayısı"
 
 #: hacks/config/pipes.xml.h:17
 #, fuzzy
-#| msgid "Trail Length"
 msgid "Pipe length"
 msgstr "Kuyruk uzunluğu"
 
@@ -5982,19 +5227,16 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:5
 #, fuzzy
-#| msgid "Octahedron"
 msgid "Cuboctahedron"
 msgstr "Sekiz yüzlü"
 
 #: hacks/config/polyhedra.xml.h:6
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Cubohemioctahedron"
 msgstr "Oniki yüzlü"
 
 #: hacks/config/polyhedra.xml.h:7
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Deltoidal hexecontahedron"
 msgstr "Oniki yüzlü"
 
@@ -6004,7 +5246,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:9
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Disdyakisdodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6017,12 +5258,7 @@ msgid "Display random polyhedron"
 msgstr ""
 
 #: hacks/config/polyhedra.xml.h:12
-msgid ""
-"Displays different 3D solids and some information about each. A new solid is "
-"chosen every few seconds. There are 75 uniform polyhedra, plus 5 infinite "
-"sets of prisms and antiprisms; including their duals brings the total to "
-"160. http://en.wikipedia.org/wiki/Uniform_polyhedra Written by Dr. Zvi "
-"Har'El and Jamie Zawinski; 2004."
+msgid "Displays different 3D solids and some information about each. A new solid is chosen every few seconds. There are 75 uniform polyhedra, plus 5 infinite sets of prisms and antiprisms; including their duals brings the total to 160. http://en.wikipedia.org/wiki/Uniform_polyhedra Written by Dr. Zvi Har'El and Jamie Zawinski; 2004."
 msgstr ""
 
 #: hacks/config/polyhedra.xml.h:13
@@ -6075,13 +5311,11 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:29
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Great dodecadodecahedron"
 msgstr "Oniki yüzlü"
 
 #: hacks/config/polyhedra.xml.h:30
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Great dodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6107,7 +5341,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:36
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Great dodecicosahedron"
 msgstr "Oniki yüzlü"
 
@@ -6129,7 +5362,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:41
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Great icosahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
@@ -6139,7 +5371,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:43
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Great icosidodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6193,7 +5424,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:56
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Great rhombidodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6203,7 +5433,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:58
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Great rhombihexahedron"
 msgstr "Tetrahedron"
 
@@ -6257,13 +5486,11 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:73
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Icosidodecadodecahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
 #: hacks/config/polyhedra.xml.h:74
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Icosidodecahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
@@ -6309,13 +5536,11 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:87
 #, fuzzy
-#| msgid "Octahedron"
 msgid "Octahemioctacron"
 msgstr "Sekiz yüzlü"
 
 #: hacks/config/polyhedra.xml.h:88
 #, fuzzy
-#| msgid "Octahedron"
 msgid "Octahemioctahedron"
 msgstr "Sekiz yüzlü"
 
@@ -6369,7 +5594,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:101
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Pentakisdodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6379,7 +5603,6 @@ msgstr "Polihedra"
 
 #: hacks/config/polyhedra.xml.h:103
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Rhombic dodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6393,25 +5616,21 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:106
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Rhombicosahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
 #: hacks/config/polyhedra.xml.h:107
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Rhombicosidodecahedron"
 msgstr "Oniki yüzlü"
 
 #: hacks/config/polyhedra.xml.h:108
 #, fuzzy
-#| msgid "Octahedron"
 msgid "Rhombicuboctahedron"
 msgstr "Sekiz yüzlü"
 
 #: hacks/config/polyhedra.xml.h:109
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Rhombidodecadodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6461,7 +5680,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:123
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Small dodecicosahedron"
 msgstr "Oniki yüzlü"
 
@@ -6507,7 +5725,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:134
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Small rhombidodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6545,13 +5762,11 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:143
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Snub dodecadodecahedron"
 msgstr "Oniki yüzlü"
 
 #: hacks/config/polyhedra.xml.h:144
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Snub dodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6565,49 +5780,41 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:149
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Tetradyakishexahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:151
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Tetrahemihexacron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:152
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Tetrahemihexahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:153
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Tetrakishexahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:154
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Triakisicosahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
 #: hacks/config/polyhedra.xml.h:155
 #, fuzzy
-#| msgid "Octahedron"
 msgid "Triakisoctahedron"
 msgstr "Sekiz yüzlü"
 
 #: hacks/config/polyhedra.xml.h:156
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Triakistetrahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:157
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Tridyakisicosahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
@@ -6625,7 +5832,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:161
 #, fuzzy
-#| msgid "Dodecahedron"
 msgid "Truncated dodecahedron"
 msgstr "Oniki yüzlü"
 
@@ -6635,7 +5841,6 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:163
 #, fuzzy
-#| msgid "Icosahedron"
 msgid "Truncated icosahedron"
 msgstr "Yirmi kenarlı sınırlandırılmış bir katı"
 
@@ -6645,25 +5850,21 @@ msgstr ""
 
 #: hacks/config/polyhedra.xml.h:165
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Truncated octahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:166
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Truncated tetrahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyhedra.xml.h:167
 #, fuzzy
-#| msgid "Tetrahedron"
 msgid "Utah teapotahedron"
 msgstr "Tetrahedron"
 
 #: hacks/config/polyominoes.xml.h:4
 #, fuzzy
-#| msgid "Identical Pieces"
 msgid "Identical pieces"
 msgstr "Özdeş Parçalar"
 
@@ -6672,10 +5873,7 @@ msgid "Polyominoes"
 msgstr "Polyominoes"
 
 #: hacks/config/polyominoes.xml.h:10
-msgid ""
-"Repeatedly attempts to completely fill a rectangle with irregularly-shaped "
-"puzzle pieces. http://en.wikipedia.org/wiki/Polyomino Written by Stephen "
-"Montgomery-Smith; 2002."
+msgid "Repeatedly attempts to completely fill a rectangle with irregularly-shaped puzzle pieces. http://en.wikipedia.org/wiki/Polyomino Written by Stephen Montgomery-Smith; 2002."
 msgstr ""
 
 #: hacks/config/polytopes.xml.h:2
@@ -6708,7 +5906,6 @@ msgstr ""
 
 #: hacks/config/polytopes.xml.h:17
 #, fuzzy
-#| msgid "Polygons"
 msgid "Polytopes"
 msgstr "Poliganlar"
 
@@ -6717,13 +5914,7 @@ msgid "Single color"
 msgstr "Tek renk"
 
 #: hacks/config/polytopes.xml.h:22
-msgid ""
-"This shows one of the six regular 4D polytopes rotating in 4D. Inspired by H."
-"S.M Coxeter's book \"Regular Polytopes\", 3rd Edition, Dover Publications, "
-"Inc., 1973, and Thomas Banchoff's book \"Beyond the Third Dimension: "
-"Geometry, Computer Graphics, and Higher Dimensions\", Scientific American "
-"Library, 1990. http://en.wikipedia.org/wiki/Hypercube http://en.wikipedia."
-"org/wiki/Regular_polytope Written by Carsten Steger; 2003."
+msgid "This shows one of the six regular 4D polytopes rotating in 4D. Inspired by H.S.M Coxeter's book \"Regular Polytopes\", 3rd Edition, Dover Publications, Inc., 1973, and Thomas Banchoff's book \"Beyond the Third Dimension: Geometry, Computer Graphics, and Higher Dimensions\", Scientific American Library, 1990. http://en.wikipedia.org/wiki/Hypercube http://en.wikipedia.org/wiki/Regular_polytope Written by Carsten Steger; 2003."
 msgstr ""
 
 #: hacks/config/pong.xml.h:1
@@ -6748,16 +5939,11 @@ msgstr "Gürültülü"
 
 #: hacks/config/pong.xml.h:7
 #, fuzzy
-#| msgid "Long"
 msgid "Pong"
 msgstr "Uzun"
 
 #: hacks/config/pong.xml.h:10
-msgid ""
-"This simulates the 1971 Pong home video game, as well as various artifacts "
-"from displaying it on a color TV set. In clock mode, the score keeps track "
-"of the current time. http://en.wikipedia.org/wiki/Pong Written by Jeremy "
-"English and Trevor Blackwell; 2003."
+msgid "This simulates the 1971 Pong home video game, as well as various artifacts from displaying it on a color TV set. In clock mode, the score keeps track of the current time. http://en.wikipedia.org/wiki/Pong Written by Jeremy English and Trevor Blackwell; 2003."
 msgstr ""
 
 #: hacks/config/popsquares.xml.h:2
@@ -6810,7 +5996,6 @@ msgstr "Açık sarı"
 
 #: hacks/config/popsquares.xml.h:18
 #, fuzzy
-#| msgid "Square"
 msgid "PopSquares"
 msgstr "Kare"
 
@@ -6819,9 +6004,7 @@ msgid "Subdivision"
 msgstr "Alt bölme"
 
 #: hacks/config/popsquares.xml.h:21
-msgid ""
-"This draws a pop-art-ish looking grid of pulsing colors. Written by Levi "
-"Burton; 2003."
+msgid "This draws a pop-art-ish looking grid of pulsing colors. Written by Levi Burton; 2003."
 msgstr ""
 
 #: hacks/config/popsquares.xml.h:22
@@ -6829,10 +6012,7 @@ msgid "Twitch"
 msgstr ""
 
 #: hacks/config/providence.xml.h:1
-msgid ""
-"\"A pyramid unfinished. In the zenith an eye in a triangle, surrounded by a "
-"glory, proper.\" http://en.wikipedia.org/wiki/Eye_of_Providence Written by "
-"Blair Tennessy; 2004."
+msgid "\"A pyramid unfinished. In the zenith an eye in a triangle, surrounded by a glory, proper.\" http://en.wikipedia.org/wiki/Eye_of_Providence Written by Blair Tennessy; 2004."
 msgstr ""
 
 #: hacks/config/providence.xml.h:2
@@ -6848,9 +6028,7 @@ msgid "Anti-alias lines"
 msgstr "Çizgileri yumuşat"
 
 #: hacks/config/pulsar.xml.h:2
-msgid ""
-"Draws some intersecting planes, making use of alpha blending, fog, textures, "
-"and mipmaps. Written by David Konerding; 1999."
+msgid "Draws some intersecting planes, making use of alpha blending, fog, textures, and mipmaps. Written by David Konerding; 1999."
 msgstr ""
 
 #: hacks/config/pulsar.xml.h:3
@@ -6867,7 +6045,6 @@ msgstr "Desen filtrelemeyi etkinleştir"
 
 #: hacks/config/pulsar.xml.h:8
 #, fuzzy
-#| msgid "Enable Texture Mipmaps"
 msgid "Enable texture mipmaps"
 msgstr "Doku Mipmapsı Etkin"
 
@@ -6884,9 +6061,7 @@ msgid "Quad count"
 msgstr "Dörtlü sayısı"
 
 #: hacks/config/pyro.xml.h:2
-msgid ""
-"Exploding fireworks. See also the \"Fireworkx\", \"Eruption\", and \"XFlame"
-"\" screen savers. Written by Jamie Zawinski; 1992."
+msgid "Exploding fireworks. See also the \"Fireworkx\", \"Eruption\", and \"XFlame\" screen savers. Written by Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/pyro.xml.h:3
@@ -6910,11 +6085,7 @@ msgid "Additive colors"
 msgstr "Katılacak renkler"
 
 #: hacks/config/qix.xml.h:2
-msgid ""
-"Bounces a series of line segments around the screen, and uses variations on "
-"this basic motion pattern to produce all sorts of different presentations: "
-"line segments, filled polygons, and overlapping translucent areas. http://en."
-"wikipedia.org/wiki/Qix Written by Jamie Zawinski; 1992."
+msgid "Bounces a series of line segments around the screen, and uses variations on this basic motion pattern to produce all sorts of different presentations: line segments, filled polygons, and overlapping translucent areas. http://en.wikipedia.org/wiki/Qix Written by Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/qix.xml.h:11
@@ -6958,11 +6129,7 @@ msgid "Queens"
 msgstr "Kraliçeler"
 
 #: hacks/config/queens.xml.h:6
-msgid ""
-"Solves the N-Queens problem (where N is between 5 and 10 queens). The "
-"problem is: how may one place N queens on an NxN chessboard such that no "
-"queen can attack a sister? See also the \"Endgame\" screen saver. http://en."
-"wikipedia.org/wiki/Eight_queens_puzzle Written by Blair Tennessy; 2002."
+msgid "Solves the N-Queens problem (where N is between 5 and 10 queens). The problem is: how may one place N queens on an NxN chessboard such that no queen can attack a sister? See also the \"Endgame\" screen saver. http://en.wikipedia.org/wiki/Eight_queens_puzzle Written by Blair Tennessy; 2002."
 msgstr ""
 
 #: hacks/config/rd-bomb.xml.h:2 hacks/config/rdbomb.xml.h:2
@@ -6975,10 +6142,7 @@ msgid "Diffusion"
 msgstr "Yayılma"
 
 #: hacks/config/rd-bomb.xml.h:6 hacks/config/rdbomb.xml.h:6
-msgid ""
-"Draws a grid of growing square-like shapes that, once they overtake each "
-"other, react in unpredictable ways. \"RD\" stands for reaction-diffusion. "
-"Written by Scott Draves; 1997."
+msgid "Draws a grid of growing square-like shapes that, once they overtake each other, react in unpredictable ways. \"RD\" stands for reaction-diffusion. Written by Scott Draves; 1997."
 msgstr ""
 
 #: hacks/config/rd-bomb.xml.h:7 hacks/config/rdbomb.xml.h:7
@@ -7059,10 +6223,7 @@ msgid "Storm"
 msgstr "Fırtına"
 
 #: hacks/config/ripples.xml.h:19
-msgid ""
-"This draws rippling interference patterns like splashing water. With the -"
-"water option, it manipulates your desktop image to look like something is "
-"dripping into it. Written by Tom Hammersley; 1999."
+msgid "This draws rippling interference patterns like splashing water. With the -water option, it manipulates your desktop image to look like something is dripping into it. Written by Tom Hammersley; 1999."
 msgstr ""
 
 #: hacks/config/rocks.xml.h:10
@@ -7074,9 +6235,7 @@ msgid "Steering"
 msgstr "Yönlendirme"
 
 #: hacks/config/rocks.xml.h:15
-msgid ""
-"This draws an animation of flight through an asteroid field, with changes in "
-"rotation and direction. Written by Jamie Zawinski; 1992."
+msgid "This draws an animation of flight through an asteroid field, with changes in rotation and direction. Written by Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/rocks.xml.h:17
@@ -7088,11 +6247,7 @@ msgid "Rorschach"
 msgstr "Rorschach"
 
 #: hacks/config/rorschach.xml.h:10
-msgid ""
-"This generates random inkblot patterns via a reflected random walk. Any deep-"
-"seated neurotic tendencies which this program reveals are your own problem. "
-"http://en.wikipedia.org/wiki/Rorschach_inkblot_test http://en.wikipedia.org/"
-"wiki/Random_walk Written by Jamie Zawinski; 1992."
+msgid "This generates random inkblot patterns via a reflected random walk. Any deep-seated neurotic tendencies which this program reveals are your own problem. http://en.wikipedia.org/wiki/Rorschach_inkblot_test http://en.wikipedia.org/wiki/Random_walk Written by Jamie Zawinski; 1992."
 msgstr ""
 
 #: hacks/config/rorschach.xml.h:11
@@ -7104,9 +6259,7 @@ msgid "With Y symmetry"
 msgstr "Y simetrisiyle"
 
 #: hacks/config/rotor.xml.h:2
-msgid ""
-"Draws a line segment moving along a complex spiraling curve. Written by Tom "
-"Lawrence; 1997."
+msgid "Draws a line segment moving along a complex spiraling curve. Written by Tom Lawrence; 1997."
 msgstr ""
 
 #: hacks/config/rotor.xml.h:5 hacks/config/skytentacles.xml.h:9
@@ -7124,15 +6277,8 @@ msgstr "Canlandır"
 
 #: hacks/config/rotzoomer.xml.h:4
 #, fuzzy
-#| msgid ""
-#| "Creates a collage of rotated and scaled portions of the screen. Written "
-#| "by Claudio Matsuoka."
-msgid ""
-"Creates a collage of rotated and scaled portions of the screen. Written by "
-"Claudio Matsuoka; 2001."
-msgstr ""
-"Ekranın ölçeklenmiş ve döndürülmüş kısımlarının yapıştırma resmini "
-"oluşturur. Yazar Claudio Matsuoka."
+msgid "Creates a collage of rotated and scaled portions of the screen. Written by Claudio Matsuoka; 2001."
+msgstr "Ekranın ölçeklenmiş ve döndürülmüş kısımlarının yapıştırma resmini oluşturur. Yazar Claudio Matsuoka."
 
 #: hacks/config/rotzoomer.xml.h:9
 msgid "Rectangle count"
@@ -7156,11 +6302,7 @@ msgstr "Dolaşan gikdörtgenler"
 
 #: hacks/config/rubik.xml.h:3
 #, no-c-format
-msgid ""
-"Draws a Rubik's Cube that rotates in three dimensions and repeatedly "
-"shuffles and solves itself. See also the \"GLSnake\" and \"Cube21\" screen "
-"savers. http://en.wikipedia.org/wiki/Rubik%27s_Cube Written by Marcelo "
-"Vianna; 1997."
+msgid "Draws a Rubik's Cube that rotates in three dimensions and repeatedly shuffles and solves itself. See also the \"GLSnake\" and \"Cube21\" screen savers. http://en.wikipedia.org/wiki/Rubik%27s_Cube Written by Marcelo Vianna; 1997."
 msgstr ""
 
 #: hacks/config/rubik.xml.h:5
@@ -7172,9 +6314,7 @@ msgid "Rubik"
 msgstr "Rubik"
 
 #: hacks/config/sballs.xml.h:3
-msgid ""
-"Draws an animation of textured balls spinning like crazy. Written by Eric "
-"Lassauge; 2002."
+msgid "Draws an animation of textured balls spinning like crazy. Written by Eric Lassauge; 2002."
 msgstr ""
 
 #: hacks/config/sballs.xml.h:9
@@ -7198,9 +6338,7 @@ msgid "ShadeBobs"
 msgstr "ShadeBobs"
 
 #: hacks/config/shadebobs.xml.h:13
-msgid ""
-"This draws smoothly-shaded oscillating oval patterns that look something "
-"like vapor trails or neon tubes. Written by Shane Smit; 1999."
+msgid "This draws smoothly-shaded oscillating oval patterns that look something like vapor trails or neon tubes. Written by Shane Smit; 1999."
 msgstr ""
 
 #: hacks/config/sierpinski3d.xml.h:9
@@ -7208,11 +6346,7 @@ msgid "Sierpinski3D"
 msgstr "3-Boyut Serpinski "
 
 #: hacks/config/sierpinski3d.xml.h:10
-msgid ""
-"This draws the Sierpinski tetrahedron fractal, the three-dimensional variant "
-"of the recursive Sierpinski triangle. http://en.wikipedia.org/wiki/"
-"Sierpinski_triangle#Analogs_in_higher_dimension Written by Jamie Zawinski "
-"and Tim Robinson; 1999."
+msgid "This draws the Sierpinski tetrahedron fractal, the three-dimensional variant of the recursive Sierpinski triangle. http://en.wikipedia.org/wiki/Sierpinski_triangle#Analogs_in_higher_dimension Written by Jamie Zawinski and Tim Robinson; 1999."
 msgstr ""
 
 #: hacks/config/sierpinski.xml.h:8 hacks/config/thornbird.xml.h:8
@@ -7225,10 +6359,7 @@ msgid "Sierpinski"
 msgstr "Sierpinski"
 
 #: hacks/config/sierpinski.xml.h:12
-msgid ""
-"This draws the two-dimensional variant of the recursive Sierpinski triangle "
-"fractal. See also the \"Sierpinski3D\" screen saver. http://en.wikipedia.org/"
-"wiki/Sierpinski_triangle Written by Desmond Daignault; 1997."
+msgid "This draws the two-dimensional variant of the recursive Sierpinski triangle fractal. See also the \"Sierpinski3D\" screen saver. http://en.wikipedia.org/wiki/Sierpinski_triangle Written by Desmond Daignault; 1997."
 msgstr ""
 
 #: hacks/config/skytentacles.xml.h:3
@@ -7252,9 +6383,7 @@ msgid "Tentacles can intersect"
 msgstr ""
 
 #: hacks/config/skytentacles.xml.h:20
-msgid ""
-"There is a tentacled abomination in the sky. From above you it devours. "
-"Written by Jamie Zawinski; 2008."
+msgid "There is a tentacled abomination in the sky. From above you it devours. Written by Jamie Zawinski; 2008."
 msgstr ""
 
 #: hacks/config/skytentacles.xml.h:24
@@ -7286,11 +6415,7 @@ msgid "SlideScreen"
 msgstr "Kayma Ekranı"
 
 #: hacks/config/slidescreen.xml.h:19
-msgid ""
-"This takes an image, divides it into a grid, and then randomly shuffles the "
-"squares around as if it was one of those \"fifteen-puzzle\" games where "
-"there is a grid of squares, one of which is missing. http://en.wikipedia.org/"
-"wiki/Fifteen_puzzle Written by Jamie Zawinski; 1994."
+msgid "This takes an image, divides it into a grid, and then randomly shuffles the squares around as if it was one of those \"fifteen-puzzle\" games where there is a grid of squares, one of which is missing. http://en.wikipedia.org/wiki/Fifteen_puzzle Written by Jamie Zawinski; 1994."
 msgstr ""
 
 #: hacks/config/slip.xml.h:10
@@ -7298,12 +6423,7 @@ msgid "Slip"
 msgstr "Kayma"
 
 #: hacks/config/slip.xml.h:12
-msgid ""
-"This throws some random bits on the screen, then sucks them through a jet "
-"engine and spews them out the other side. To avoid turning the image "
-"completely to mush, every now and then it will it interject some splashes of "
-"color into the scene, or go into a spin cycle, or stretch the image like "
-"taffy. Written by Scott Draves and Jamie Zawinski; 1997."
+msgid "This throws some random bits on the screen, then sucks them through a jet engine and spews them out the other side. To avoid turning the image completely to mush, every now and then it will it interject some splashes of color into the scene, or go into a spin cycle, or stretch the image like taffy. Written by Scott Draves and Jamie Zawinski; 1997."
 msgstr ""
 
 #: hacks/config/sonar.xml.h:1
@@ -7364,13 +6484,11 @@ msgstr "Benzeştirme (ping atma)"
 
 #: hacks/config/sonar.xml.h:23
 #, fuzzy
-#| msgid "Simulation Team Members"
 msgid "Simulation team A name"
 msgstr "Simülasyon Takım Üyeleri"
 
 #: hacks/config/sonar.xml.h:24
 #, fuzzy
-#| msgid "Simulation Team Members"
 msgid "Simulation team B name"
 msgstr "Simülasyon Takım Üyeleri"
 
@@ -7379,14 +6497,7 @@ msgid "Sonar"
 msgstr "Deniz Radarı"
 
 #: hacks/config/sonar.xml.h:28
-msgid ""
-"This draws a sonar screen that pings (get it?) the hosts on your local "
-"network, and plots their distance (response time) from you. The three rings "
-"represent ping times of approximately 2.5, 70 and 2,000 milliseconds "
-"respectively. Alternately, it can run a simulation that doesn't involve "
-"hosts. (If pinging doesn't work, you may need to make the executable be "
-"setuid.) http://en.wikipedia.org/wiki/Ping#History Written by Jamie Zawinski "
-"and Stephen Martin; 1998."
+msgid "This draws a sonar screen that pings (get it?) the hosts on your local network, and plots their distance (response time) from you. The three rings represent ping times of approximately 2.5, 70 and 2,000 milliseconds respectively. Alternately, it can run a simulation that doesn't involve hosts. (If pinging doesn't work, you may need to make the executable be setuid.) http://en.wikipedia.org/wiki/Ping#History Written by Jamie Zawinski and Stephen Martin; 1998."
 msgstr ""
 
 #: hacks/config/speedmine.xml.h:1
@@ -7395,7 +6506,6 @@ msgstr "Duvar çatışmalarına izin ver"
 
 #: hacks/config/speedmine.xml.h:2
 #, fuzzy
-#| msgid "Display Crosshair"
 msgid "Display crosshair"
 msgstr "Crosshairi Göster"
 
@@ -7412,9 +6522,7 @@ msgid "Rocky walls"
 msgstr "Kaya duvarlar"
 
 #: hacks/config/speedmine.xml.h:12
-msgid ""
-"Simulates speeding down a rocky mineshaft, or a funky dancing worm. Written "
-"by Conrad Parker; 2001."
+msgid "Simulates speeding down a rocky mineshaft, or a funky dancing worm. Written by Conrad Parker; 2001."
 msgstr ""
 
 #: hacks/config/speedmine.xml.h:14
@@ -7442,19 +6550,11 @@ msgid "Spheremonics"
 msgstr ""
 
 #: hacks/config/spheremonics.xml.h:21
-msgid ""
-"These closed objects are commonly called spherical harmonics, although they "
-"are only remotely related to the mathematical definition found in the "
-"solution to certain wave functions, most notably the eigenfunctions of "
-"angular momentum operators. http://en.wikipedia.org/wiki/"
-"Spherical_harmonics#Visualization_of_the_spherical_harmonics Written by Paul "
-"Bourke and Jamie Zawinski; 2002."
+msgid "These closed objects are commonly called spherical harmonics, although they are only remotely related to the mathematical definition found in the solution to certain wave functions, most notably the eigenfunctions of angular momentum operators. http://en.wikipedia.org/wiki/Spherical_harmonics#Visualization_of_the_spherical_harmonics Written by Paul Bourke and Jamie Zawinski; 2002."
 msgstr ""
 
 #: hacks/config/sphere.xml.h:1
-msgid ""
-"Draws shaded spheres in multiple colors. Written by Tom Duff and Jamie "
-"Zawinski; 1982, 1997."
+msgid "Draws shaded spheres in multiple colors. Written by Tom Duff and Jamie Zawinski; 1982, 1997."
 msgstr ""
 
 #: hacks/config/spiral.xml.h:8
@@ -7466,10 +6566,7 @@ msgid "Spiral"
 msgstr "Kıvrılma"
 
 #: hacks/config/spotlight.xml.h:3
-msgid ""
-"Draws a spotlight scanning across a black screen, illuminating the "
-"underlying desktop (or a picture) when it passes. Written by Rick Schultz "
-"and Jamie Zawinski; 1999."
+msgid "Draws a spotlight scanning across a black screen, illuminating the underlying desktop (or a picture) when it passes. Written by Rick Schultz and Jamie Zawinski; 1999."
 msgstr ""
 
 #: hacks/config/spotlight.xml.h:11
@@ -7486,11 +6583,7 @@ msgstr ""
 
 #: hacks/config/sproingies.xml.h:9
 #, no-c-format
-msgid ""
-"Slinky-like creatures walk down an infinite staircase and occasionally "
-"explode! http://en.wikipedia.org/wiki/Slinky http://en.wikipedia.org/wiki/Q%"
-"2Abert http://en.wikipedia.org/wiki/Marble_Madness Written by Ed Mackey; "
-"1997."
+msgid "Slinky-like creatures walk down an infinite staircase and occasionally explode! http://en.wikipedia.org/wiki/Slinky http://en.wikipedia.org/wiki/Q%2Abert http://en.wikipedia.org/wiki/Marble_Madness Written by Ed Mackey; 1997."
 msgstr ""
 
 #: hacks/config/sproingies.xml.h:10
@@ -7498,10 +6591,7 @@ msgid "Sproingies"
 msgstr "Sproingies"
 
 #: hacks/config/squiral.xml.h:3
-msgid ""
-"Draws a set of interacting, square-spiral-producing automata. The spirals "
-"grow outward until they hit something, then they go around it. Written by "
-"Jeff Epler; 1999."
+msgid "Draws a set of interacting, square-spiral-producing automata. The spirals grow outward until they hit something, then they go around it. Written by Jeff Epler; 1999."
 msgstr ""
 
 #: hacks/config/squiral.xml.h:5
@@ -7525,9 +6615,7 @@ msgid "Squiral"
 msgstr "Squiral"
 
 #: hacks/config/stairs.xml.h:1
-msgid ""
-"Escher's infinite staircase. http://en.wikipedia.org/wiki/"
-"Maurits_Cornelis_Escher Written by Marcelo Vianna; 1998."
+msgid "Escher's infinite staircase. http://en.wikipedia.org/wiki/Maurits_Cornelis_Escher Written by Marcelo Vianna; 1998."
 msgstr ""
 
 #: hacks/config/stairs.xml.h:6
@@ -7547,11 +6635,7 @@ msgid "Starfish"
 msgstr "Denizyıldızı"
 
 #: hacks/config/starfish.xml.h:17
-msgid ""
-"This generates a sequence of undulating, throbbing, star-like patterns which "
-"pulsate, rotate, and turn inside out. Another display mode uses these shapes "
-"to lay down a field of colors, which are then cycled. The motion is very "
-"organic. Written by Jamie Zawinski; 1997."
+msgid "This generates a sequence of undulating, throbbing, star-like patterns which pulsate, rotate, and turn inside out. Another display mode uses these shapes to lay down a field of colors, which are then cycled. The motion is very organic. Written by Jamie Zawinski; 1997."
 msgstr ""
 
 #: hacks/config/starwars.xml.h:1
@@ -7567,11 +6651,7 @@ msgid "Anti-aliased lines"
 msgstr "Yumuşatılmış satırlar"
 
 #: hacks/config/starwars.xml.h:5
-msgid ""
-"Draws a stream of text slowly scrolling into the distance at an angle, over "
-"a star field, like at the beginning of the movie of the same name. http://en."
-"wikipedia.org/wiki/Star_Wars_opening_crawl Written by Jamie Zawinski and "
-"Claudio Matauoka; 2001."
+msgid "Draws a stream of text slowly scrolling into the distance at an angle, over a star field, like at the beginning of the movie of the same name. http://en.wikipedia.org/wiki/Star_Wars_opening_crawl Written by Jamie Zawinski and Claudio Matauoka; 2001."
 msgstr ""
 
 #: hacks/config/starwars.xml.h:6
@@ -7603,11 +6683,7 @@ msgid "or, Text columns"
 msgstr "veya, Metin sütunları"
 
 #: hacks/config/stonerview.xml.h:1
-msgid ""
-"Chains of colorful squares dance around each other in complex spiral "
-"patterns. Inspired by David Tristram's `electropaint' screen saver, "
-"originally written for SGI computers in the late 1980s or early 1990s. "
-"Written by Andrew Plotkin; 2001."
+msgid "Chains of colorful squares dance around each other in complex spiral patterns. Inspired by David Tristram's `electropaint' screen saver, originally written for SGI computers in the late 1980s or early 1990s. Written by Andrew Plotkin; 2001."
 msgstr ""
 
 #: hacks/config/stonerview.xml.h:6
@@ -7623,10 +6699,7 @@ msgid "Strange"
 msgstr "Tuhaf"
 
 #: hacks/config/strange.xml.h:8
-msgid ""
-"This draws iterations to strange attractors: it's a colorful, unpredictably-"
-"animating swarm of dots that swoops and twists around. http://en.wikipedia."
-"org/wiki/Attractor#Strange_attractor Written by Massimino Pascal; 1997."
+msgid "This draws iterations to strange attractors: it's a colorful, unpredictably-animating swarm of dots that swoops and twists around. http://en.wikipedia.org/wiki/Attractor#Strange_attractor Written by Massimino Pascal; 1997."
 msgstr ""
 
 #: hacks/config/substrate.xml.h:2
@@ -7639,10 +6712,7 @@ msgid "Circle percentage"
 msgstr ""
 
 #: hacks/config/substrate.xml.h:6
-msgid ""
-"Crystalline lines grow on a computational substrate. A simple perpendicular "
-"growth rule creates intricate city-like structures. Written by J. Tarbell "
-"and Mike Kershaw; 2004."
+msgid "Crystalline lines grow on a computational substrate. A simple perpendicular growth rule creates intricate city-like structures. Written by J. Tarbell and Mike Kershaw; 2004."
 msgstr ""
 
 #: hacks/config/substrate.xml.h:11
@@ -7702,9 +6772,7 @@ msgid "Cycle seconds"
 msgstr "Devir saniyeleri"
 
 #: hacks/config/t3d.xml.h:6
-msgid ""
-"Draws a working analog clock composed of floating, throbbing bubbles. "
-"Written by Bernd Paysan; 1999."
+msgid "Draws a working analog clock composed of floating, throbbing bubbles. Written by Bernd Paysan; 1999."
 msgstr ""
 
 #: hacks/config/t3d.xml.h:11
@@ -7728,9 +6796,7 @@ msgid "Wobbliness"
 msgstr "Sallanma"
 
 #: hacks/config/tangram.xml.h:12
-msgid ""
-"Solves tangram puzzles. http://en.wikipedia.org/wiki/Tangram Written by "
-"Jeremy English; 2005."
+msgid "Solves tangram puzzles. http://en.wikipedia.org/wiki/Tangram Written by Jeremy English; 2005."
 msgstr ""
 
 #: hacks/config/tangram.xml.h:13
@@ -7751,14 +6817,8 @@ msgstr "Z döndürmesi"
 
 #: hacks/config/thornbird.xml.h:1
 #, fuzzy
-#| msgid ""
-#| "Displays a view of the ``Bird in a Thornbush'' fractal. Written by Tim "
-#| "Auckland."
-msgid ""
-"Displays a view of the \"Bird in a Thornbush\" fractal. Written by Tim "
-"Auckland; 2002."
-msgstr ""
-"Thornbush fractaldaki bir kuşun görünümünü gösterir. Yazar Tim Auckland."
+msgid "Displays a view of the \"Bird in a Thornbush\" fractal. Written by Tim Auckland; 2002."
+msgstr "Thornbush fractaldaki bir kuşun görünümünü gösterir. Yazar Tim Auckland."
 
 #: hacks/config/thornbird.xml.h:13
 msgid "Thornbird"
@@ -7773,9 +6833,7 @@ msgid "Draw logo"
 msgstr "Logoyu çiz"
 
 #: hacks/config/timetunnel.xml.h:4
-msgid ""
-"Draws an animation similar to the opening and closing effects on the Dr. Who "
-"TV show. Written by Sean P. Brennan; 2005."
+msgid "Draws an animation similar to the opening and closing effects on the Dr. Who TV show. Written by Sean P. Brennan; 2005."
 msgstr ""
 
 #: hacks/config/timetunnel.xml.h:5
@@ -7831,9 +6889,7 @@ msgid "Carpet size"
 msgstr "Halı boyutu"
 
 #: hacks/config/topblock.xml.h:5
-msgid ""
-"Creates a 3D world with dropping blocks that build up and up. Written by "
-"rednuht; 2006."
+msgid "Creates a 3D world with dropping blocks that build up and up. Written by rednuht; 2006."
 msgstr ""
 
 #: hacks/config/topblock.xml.h:6
@@ -7865,9 +6921,7 @@ msgid "Tunnel mode"
 msgstr "Tünel kipi"
 
 #: hacks/config/triangle.xml.h:2
-msgid ""
-"Generates random mountain ranges using iterative subdivision of triangles. "
-"Written by Tobias Gloth; 1997."
+msgid "Generates random mountain ranges using iterative subdivision of triangles. Written by Tobias Gloth; 1997."
 msgstr ""
 
 #: hacks/config/triangle.xml.h:8
@@ -7876,15 +6930,8 @@ msgstr "Üçgen"
 
 #: hacks/config/truchet.xml.h:5
 #, fuzzy
-#| msgid ""
-#| "This draws line- and arc-based Truchet patterns that tile the screen. "
-#| "Written by Adrian Likins."
-msgid ""
-"This draws line- and arc-based truchet patterns that tile the screen. http://"
-"en.wikipedia.org/wiki/Tessellation Written by Adrian Likins; 1998."
-msgstr ""
-"Çizim hatı ve ekranı döşeyen kavis-esaslı Truchet örnekleri. Yazar Adrian "
-"Likins."
+msgid "This draws line- and arc-based truchet patterns that tile the screen. http://en.wikipedia.org/wiki/Tessellation Written by Adrian Likins; 1998."
+msgstr "Çizim hatı ve ekranı döşeyen kavis-esaslı Truchet örnekleri. Yazar Adrian Likins."
 
 #: hacks/config/truchet.xml.h:6
 msgid "Truchet"
@@ -7896,14 +6943,8 @@ msgstr "Kenarlık kalınlığı"
 
 #: hacks/config/twang.xml.h:4
 #, fuzzy
-#| msgid ""
-#| "Divides the screen into a grid, and plucks them. Written by Dan Bornstein."
-msgid ""
-"Divides the screen into a grid, and plucks them. Written by Dan Bornstein; "
-"2002."
-msgstr ""
-"Kılavuz çizgileri ekranı dikey ve yatay bölmek için kullanılır. Yazar: Dan "
-"Bornstein."
+msgid "Divides the screen into a grid, and plucks them. Written by Dan Bornstein; 2002."
+msgstr "Kılavuz çizgileri ekranı dikey ve yatay bölmek için kullanılır. Yazar: Dan Bornstein."
 
 #: hacks/config/twang.xml.h:9
 msgid "Jumpy"
@@ -7923,7 +6964,6 @@ msgstr "Tıngırtı"
 
 #: hacks/config/vermiculate.xml.h:1
 #, fuzzy
-#| msgid "Draws squiggly worm-like paths. Written by Tyler Pierce."
 msgid "Draws squiggly worm-like paths. Written by Tyler Pierce; 2001."
 msgstr "Kıvrımlı solucan-yolu gibi çizer. Yazar Tyler Pierce."
 
@@ -7940,13 +6980,7 @@ msgid "Image directory"
 msgstr "Resim dizini"
 
 #: hacks/config/vidwhacker.xml.h:6
-msgid ""
-"This is a shell script that grabs a frame of video from the system's video "
-"input, and then uses some PBM filters (chosen at random) to manipulate and "
-"recombine the video frame in various ways (edge detection, subtracting the "
-"image from a rotated version of itself, etc.) Then it displays that image "
-"for a few seconds, and does it again. This works really well if you just "
-"feed broadcast television into it. Written by Jamie Zawinski; 1998."
+msgid "This is a shell script that grabs a frame of video from the system's video input, and then uses some PBM filters (chosen at random) to manipulate and recombine the video frame in various ways (edge detection, subtracting the image from a rotated version of itself, etc.) Then it displays that image for a few seconds, and does it again. This works really well if you just feed broadcast television into it. Written by Jamie Zawinski; 1998."
 msgstr ""
 
 #: hacks/config/vidwhacker.xml.h:7
@@ -7954,9 +6988,7 @@ msgid "VidWhacker"
 msgstr "VidWhacker"
 
 #: hacks/config/vines.xml.h:2
-msgid ""
-"Generates a continuous sequence of small, curvy geometric patterns. Written "
-"by Tracy Camp and David Hansen; 1997."
+msgid "Generates a continuous sequence of small, curvy geometric patterns. Written by Tracy Camp and David Hansen; 1997."
 msgstr ""
 
 #: hacks/config/vines.xml.h:9
@@ -7968,13 +7000,7 @@ msgid "50 pixels"
 msgstr "50 piksel"
 
 #: hacks/config/voronoi.xml.h:4
-msgid ""
-"Draws a randomly-colored Voronoi tessellation, and periodically zooms in and "
-"adds new points. The existing points also wander around. There are a set of "
-"control points on the plane, each at the center of a colored cell. Every "
-"pixel within that cell is closer to that cell's control point than to any "
-"other control point. That is what determines the cell's shapes. http://en."
-"wikipedia.org/wiki/Voronoi_diagram Written by Jamie Zawinski; 2007."
+msgid "Draws a randomly-colored Voronoi tessellation, and periodically zooms in and adds new points. The existing points also wander around. There are a set of control points on the plane, each at the center of a colored cell. Every pixel within that cell is closer to that cell's control point than to any other control point. That is what determines the cell's shapes. http://en.wikipedia.org/wiki/Voronoi_diagram Written by Jamie Zawinski; 2007."
 msgstr ""
 
 #: hacks/config/voronoi.xml.h:8
@@ -8003,13 +7029,8 @@ msgstr "Benekler çiz"
 
 #: hacks/config/wander.xml.h:4
 #, fuzzy
-#| msgid ""
-#| "Draws a colorful random-walk, in various forms. Written by Rick Campbell."
-msgid ""
-"Draws a colorful random-walk, in various forms. http://en.wikipedia.org/wiki/"
-"Random_walk Written by Rick Campbell; 1999."
-msgstr ""
-"Çeşitli biçimlerde rengarenk gelişigüzel-yürüyüş çizer. Yazar Rick Campbell."
+msgid "Draws a colorful random-walk, in various forms. http://en.wikipedia.org/wiki/Random_walk Written by Rick Campbell; 1999."
+msgstr "Çeşitli biçimlerde rengarenk gelişigüzel-yürüyüş çizer. Yazar Rick Campbell."
 
 #: hacks/config/webcollage.xml.h:1
 msgid "2 min"
@@ -8048,14 +7069,7 @@ msgid "Per-image filter program"
 msgstr "Her bir resmi teker teker filtreleyecek uygulama"
 
 #: hacks/config/webcollage.xml.h:14
-msgid ""
-"This makes collages out of random images pulled off of the World Wide Web. "
-"It finds these images by doing random web searches, and then extracting "
-"images from the returned pages. WARNING: THE INTERNET SOMETIMES CONTAINS "
-"PORNOGRAPHY. The Internet being what it is, absolutely anything might show "
-"up in the collage including -- quite possibly -- pornography, or even "
-"nudity. Please act accordingly. See also http://www.jwz.org/webcollage/ "
-"Written by Jamie Zawinski; 1999."
+msgid "This makes collages out of random images pulled off of the World Wide Web. It finds these images by doing random web searches, and then extracting images from the returned pages. WARNING: THE INTERNET SOMETIMES CONTAINS PORNOGRAPHY. The Internet being what it is, absolutely anything might show up in the collage including -- quite possibly -- pornography, or even nudity. Please act accordingly. See also http://www.jwz.org/webcollage/ Written by Jamie Zawinski; 1999."
 msgstr ""
 
 #: hacks/config/webcollage.xml.h:16
@@ -8063,10 +7077,7 @@ msgid "WebCollage"
 msgstr "Web Yapıştırma Resim Sanatı"
 
 #: hacks/config/whirlwindwarp.xml.h:2
-msgid ""
-"Floating stars are acted upon by a mixture of simple 2D forcefields. The "
-"strength of each forcefield changes continuously, and it is also switched on "
-"and off at random. Written by Paul 'Joey' Clark; 2001."
+msgid "Floating stars are acted upon by a mixture of simple 2D forcefields. The strength of each forcefield changes continuously, and it is also switched on and off at random. Written by Paul 'Joey' Clark; 2001."
 msgstr ""
 
 #: hacks/config/whirlwindwarp.xml.h:8
@@ -8079,13 +7090,8 @@ msgstr "Dönen Rüzgar Sapması"
 
 #: hacks/config/whirlygig.xml.h:1
 #, fuzzy
-#| msgid ""
-#| "Draws zooming chains of sinusoidal spots. Written by Ashton Trey Belew."
-msgid ""
-"Draws zooming chains of sinusoidal spots. Written by Ashton Trey Belew; 2001."
-msgstr ""
-"Sinüsoid beneklerin birden yükselen zincirlerini çizer. Yazar Ashton Trey "
-"Belew."
+msgid "Draws zooming chains of sinusoidal spots. Written by Ashton Trey Belew; 2001."
+msgstr "Sinüsoid beneklerin birden yükselen zincirlerini çizer. Yazar Ashton Trey Belew."
 
 #: hacks/config/whirlygig.xml.h:2
 msgid "Explain modes"
@@ -8196,8 +7202,7 @@ msgid "Y test"
 msgstr "Y test"
 
 #: hacks/config/wormhole.xml.h:3
-msgid ""
-"Flying through a colored wormhole in space. Written by Jon Rafkind; 2004."
+msgid "Flying through a colored wormhole in space. Written by Jon Rafkind; 2004."
 msgstr ""
 
 #: hacks/config/wormhole.xml.h:10
@@ -8213,9 +7218,7 @@ msgid "Wormhole"
 msgstr "Solucan deliği"
 
 #: hacks/config/worm.xml.h:2
-msgid ""
-"Draws multicolored worms that crawl around the screen. Written by Brad "
-"Taylor, Dave Lemke, Boris Putanec, and Henrik Theiling; 1991."
+msgid "Draws multicolored worms that crawl around the screen. Written by Brad Taylor, Dave Lemke, Boris Putanec, and Henrik Theiling; 1991."
 msgstr ""
 
 #: hacks/config/xanalogtv.xml.h:2
@@ -8223,12 +7226,7 @@ msgid "XAnalogTV"
 msgstr "XAnalogTV"
 
 #: hacks/config/xanalogtv.xml.h:3
-msgid ""
-"XAnalogTV shows a detailed simulation of an old TV set showing various test "
-"patterns, with various picture artifacts like snow, bloom, distortion, "
-"ghosting, and hash noise. It also simulates the TV warming up. It will cycle "
-"through 12 channels, some with images you give it, and some with color bars "
-"or nothing but static. Written by Trevor Blackwell; 2003."
+msgid "XAnalogTV shows a detailed simulation of an old TV set showing various test patterns, with various picture artifacts like snow, bloom, distortion, ghosting, and hash noise. It also simulates the TV warming up. It will cycle through 12 channels, some with images you give it, and some with color bars or nothing but static. Written by Trevor Blackwell; 2003."
 msgstr ""
 
 #: hacks/config/xflame.xml.h:1
@@ -8237,16 +7235,8 @@ msgstr "Resim dosyası"
 
 #: hacks/config/xflame.xml.h:2
 #, fuzzy
-#| msgid ""
-#| "Draws a simulation of pulsing fire. It can also take an arbitrary image "
-#| "and set it on fire too. Written by Carsten Haitzler, hacked on by many "
-#| "others."
-msgid ""
-"Draws a simulation of pulsing fire. It can also take an arbitrary image and "
-"set it on fire too. Written by Carsten Haitzler and many others; 1999."
-msgstr ""
-"Ateş titreşiminin bir benzetimini çizer. Aynı zamanda gelişigüzel bir resim "
-"alır ve çok fazla ateş üzerinde onu ayarlar. Yazar Carsten Haitzler."
+msgid "Draws a simulation of pulsing fire. It can also take an arbitrary image and set it on fire too. Written by Carsten Haitzler and many others; 1999."
+msgstr "Ateş titreşiminin bir benzetimini çizer. Aynı zamanda gelişigüzel bir resim alır ve çok fazla ateş üzerinde onu ayarlar. Yazar Carsten Haitzler."
 
 #: hacks/config/xflame.xml.h:3
 msgid "Enable blooming"
@@ -8258,15 +7248,8 @@ msgstr "X Alev"
 
 #: hacks/config/xjack.xml.h:5
 #, fuzzy
-#| msgid ""
-#| "This repeatedly generates spirally string-art-ish patterns. Written by "
-#| "Jamie Zawinski."
-msgid ""
-"This behaves schizophrenically and makes a lot of typos. Written by Jamie "
-"Zawinski; 1997."
-msgstr ""
-"Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie "
-"Zawinski."
+msgid "This behaves schizophrenically and makes a lot of typos. Written by Jamie Zawinski; 1997."
+msgstr "Sarmal biçimde defalarca üretilen dizgi-art-ish örnekleri. Yazar  Jamie Zawinski."
 
 #: hacks/config/xjack.xml.h:6
 msgid "XJack"
@@ -8274,28 +7257,15 @@ msgstr "XJack"
 
 #: hacks/config/xlyap.xml.h:8
 #, fuzzy
-#| msgid ""
-#| "This generates pretty fractal pictures by doing funky math involving the "
-#| "``Lyapunov exponent.'' It has a cool interactive mode, too. Written by "
-#| "Ron Record."
-msgid ""
-"This generates pretty fractal pictures via the Lyapunov exponent. http://en."
-"wikipedia.org/wiki/Lyapunov_exponent Written by Ron Record; 1997."
-msgstr ""
-"Bu ''Lyapunov üssünü'' kapsayan korkak matematik yapma yoluyla zarif "
-"kırınımlı resimler oluşturur. Bu çok fazla uygun etkileşimli kipe sahiptir. "
-"Yazar Ron Record."
+msgid "This generates pretty fractal pictures via the Lyapunov exponent. http://en.wikipedia.org/wiki/Lyapunov_exponent Written by Ron Record; 1997."
+msgstr "Bu ''Lyapunov üssünü'' kapsayan korkak matematik yapma yoluyla zarif kırınımlı resimler oluşturur. Bu çok fazla uygun etkileşimli kipe sahiptir. Yazar Ron Record."
 
 #: hacks/config/xlyap.xml.h:9
 msgid "XLyap"
 msgstr "XLyap"
 
 #: hacks/config/xmatrix.xml.h:3
-msgid ""
-"Draws dropping characters similar to what is seen on the computer monitors "
-"in \"The Matrix\". See also \"GLMatrix\" for a 3D rendering of the similar "
-"effect that appeared in the movie's title sequence. Written by Jamie "
-"Zawinski; 1999."
+msgid "Draws dropping characters similar to what is seen on the computer monitors in \"The Matrix\". See also \"GLMatrix\" for a 3D rendering of the similar effect that appeared in the movie's title sequence. Written by Jamie Zawinski; 1999."
 msgstr ""
 
 #: hacks/config/xmatrix.xml.h:4
@@ -8340,15 +7310,8 @@ msgstr "XMatrix"
 
 #: hacks/config/xrayswarm.xml.h:1
 #, fuzzy
-#| msgid ""
-#| "Draws a few swarms of critters flying around the screen, with nicely "
-#| "faded color trails behind them. Written by Chris Leger."
-msgid ""
-"Draws a few swarms of critters flying around the screen, with faded color "
-"trails behind them. Written by Chris Leger; 2000."
-msgstr ""
-"Ekran etrafında uçan mahlukların onların arkasındaki solgun renk kuyrukları "
-"ile birlikte birkaç sürüsünü güzelce çizer. Yazar Chris Leger."
+msgid "Draws a few swarms of critters flying around the screen, with faded color trails behind them. Written by Chris Leger; 2000."
+msgstr "Ekran etrafında uçan mahlukların onların arkasındaki solgun renk kuyrukları ile birlikte birkaç sürüsünü güzelce çizer. Yazar Chris Leger."
 
 #: hacks/config/xrayswarm.xml.h:6
 msgid "XRaySwarm"
@@ -8356,14 +7319,8 @@ msgstr "Röntgen Kümelenmesi"
 
 #: hacks/config/xspirograph.xml.h:9
 #, fuzzy
-#| msgid ""
-#| "Simulates that pen-in-nested-plastic-gears toy from your childhood. By "
-#| "Rohit Singh."
-msgid ""
-"Simulates that pen-in-nested-plastic-gears toy from your childhood. http://"
-"en.wikipedia.org/wiki/Spirograph Written by Rohit Singh; 2000."
-msgstr ""
-"\"İçiçe geçmiş tekerleklerdeki kalem\" olarak simule et. Yazan Rohit Singh."
+msgid "Simulates that pen-in-nested-plastic-gears toy from your childhood. http://en.wikipedia.org/wiki/Spirograph Written by Rohit Singh; 2000."
+msgstr "\"İçiçe geçmiş tekerleklerdeki kalem\" olarak simule et. Yazan Rohit Singh."
 
 #: hacks/config/xspirograph.xml.h:10
 msgid "XSpirograph"
@@ -8399,18 +7356,8 @@ msgstr "Dikey büyütme"
 
 #: hacks/config/zoom.xml.h:16
 #, fuzzy
-#| msgid ""
-#| "Zooms in on a part of the screen and then moves around. With the -lenses "
-#| "option the result is like looking through many overlapping lenses rather "
-#| "than just a simple zoom. Written by James Macnicol."
-msgid ""
-"Zooms in on a part of the screen and then moves around. With the \"Lenses\" "
-"option, the result is like looking through many overlapping lenses rather "
-"than just a simple zoom. Written by James Macnicol; 2001."
-msgstr ""
-"Ekranın bir bölümünü ölçekler ve sonra etrafında hareket ettirir. Mercekler "
-"seçeneği ile birlikte sonuç sadece basit bir ölçekleme yerine pekçok örtüşen "
-"mercekler arasından aramaya benzer. Yazar James Macnicol."
+msgid "Zooms in on a part of the screen and then moves around. With the \"Lenses\" option, the result is like looking through many overlapping lenses rather than just a simple zoom. Written by James Macnicol; 2001."
+msgstr "Ekranın bir bölümünü ölçekler ve sonra etrafında hareket ettirir. Mercekler seçeneği ile birlikte sonuç sadece basit bir ölçekleme yerine pekçok örtüşen mercekler arasından aramaya benzer. Yazar James Macnicol."
 
 #~ msgid "Show Frames-per-Second"
 #~ msgstr "Saniye başına Çerçeveleri Göster"
@@ -8421,26 +7368,14 @@ msgstr ""
 #~ msgid "Bubbles exist in three dimensions"
 #~ msgstr "Baloncuklar üç boyutta da bulunur"
 
-#~ msgid ""
-#~ "A bit like `Spotlight', except that instead of merely exposing part of "
-#~ "your desktop, it creates a bump map from it. Basically, it 3D-izes a "
-#~ "roaming section of your desktop, based on color intensity. Written by "
-#~ "Shane Smit."
-#~ msgstr ""
-#~ "Masaüstünüzün sadece sergilenen kısmının yerine 'Sahne Işığı' gibi bir "
-#~ "parçadır, bu ondan bir sarsıntı haritası oluşturur. Temelde, o "
-#~ "masaüstünüzün renk yoğunluğu üzerine temelli dolaşım kısmınının 3-"
-#~ "Boyutudur. Yazar Shane Smit."
+#~ msgid "A bit like `Spotlight', except that instead of merely exposing part of your desktop, it creates a bump map from it. Basically, it 3D-izes a roaming section of your desktop, based on color intensity. Written by Shane Smit."
+#~ msgstr "Masaüstünüzün sadece sergilenen kısmının yerine 'Sahne Işığı' gibi bir parçadır, bu ondan bir sarsıntı haritası oluşturur. Temelde, o masaüstünüzün renk yoğunluğu üzerine temelli dolaşım kısmınının 3-Boyutudur. Yazar Shane Smit."
 
 #~ msgid "Cosmos"
 #~ msgstr "Evren"
 
-#~ msgid ""
-#~ "Draws fireworks and zooming, fading flares. By Tom Campbell. You can find "
-#~ "it at &lt;http://cosmos.dnsalias.net/cosmos/&gt;"
-#~ msgstr ""
-#~ "Havai fişek gösterisinin olduğu çizim. Yazar Tom Campbell. &lt;http://"
-#~ "cosmos.dnsalias.net/cosmos/&gt; adresinde bulabilirsiniz"
+#~ msgid "Draws fireworks and zooming, fading flares. By Tom Campbell. You can find it at &lt;http://cosmos.dnsalias.net/cosmos/&gt;"
+#~ msgstr "Havai fişek gösterisinin olduğu çizim. Yazar Tom Campbell. &lt;http://cosmos.dnsalias.net/cosmos/&gt; adresinde bulabilirsiniz"
 
 #~ msgid "Display Solid Colors"
 #~ msgstr "Yoğun Renkleri Görüntüle"
@@ -8448,16 +7383,8 @@ msgstr ""
 #~ msgid "Display Surface Patterns"
 #~ msgstr "Yüzey Desenlerini Görüntüle"
 
-#~ msgid ""
-#~ "A hack similar to `greynetic', but less frenetic. The first "
-#~ "implementation was by Stephen Linhart; then Ozymandias G. Desiderata "
-#~ "wrote a Java applet clone. That clone was discovered by Jamie Zawinski, "
-#~ "and ported to C for inclusion here."
-#~ msgstr ""
-#~ "Bir hack 'greynetic' e benzerdir, fakat daha az frenetic'tir. İlk "
-#~ "gerçekleştirme Stephen Linhart tarafından olmuştur, sonra Ozymandias G. "
-#~ "Desiderata bir Java uygulamacık kopyası yazmıştır. O kopya Jamie Zawinski "
-#~ "tarafından keşfedilmiştir ve burada kapsaması için C'ye dönüştürülmüştür."
+#~ msgid "A hack similar to `greynetic', but less frenetic. The first implementation was by Stephen Linhart; then Ozymandias G. Desiderata wrote a Java applet clone. That clone was discovered by Jamie Zawinski, and ported to C for inclusion here."
+#~ msgstr "Bir hack 'greynetic' e benzerdir, fakat daha az frenetic'tir. İlk gerçekleştirme Stephen Linhart tarafından olmuştur, sonra Ozymandias G. Desiderata bir Java uygulamacık kopyası yazmıştır. O kopya Jamie Zawinski tarafından keşfedilmiştir ve burada kapsaması için C'ye dönüştürülmüştür."
 
 #~ msgid "Spike Count"
 #~ msgstr "Başak Sayısı"
@@ -8477,11 +7404,8 @@ msgstr ""
 #~ msgid "ElectricSheep"
 #~ msgstr "Elektrikli Koyun"
 
-#~ msgid ""
-#~ "Draws a simple four-stroke engine that floats around the screen. Written "
-#~ "by Ben Buxton."
-#~ msgstr ""
-#~ "Ekran etrafında kayan basit bir dört-vuruş moturu çizer. Yazar Ben Buxton."
+#~ msgid "Draws a simple four-stroke engine that floats around the screen. Written by Ben Buxton."
+#~ msgstr "Ekran etrafında kayan basit bir dört-vuruş moturu çizer. Yazar Ben Buxton."
 
 #~ msgid "Bitmap for Flag"
 #~ msgstr "Bayrak için Bitmap"
@@ -8495,12 +7419,8 @@ msgstr ""
 #~ msgid "Allow 2D Attractors"
 #~ msgstr "2-Boyut Cezbediciye İzin Ver"
 
-#~ msgid ""
-#~ "Another series of strange attractors: a flowing series of points, making "
-#~ "strange rotational shapes. Written by Jeff Butterworth."
-#~ msgstr ""
-#~ "Bilinmeyen çekiciliklerin bir başka serileri: noktaların akıcı serileri, "
-#~ "garip dönme şekilleri yapma. Yazar Jeff Butterworth."
+#~ msgid "Another series of strange attractors: a flowing series of points, making strange rotational shapes. Written by Jeff Butterworth."
+#~ msgstr "Bilinmeyen çekiciliklerin bir başka serileri: noktaların akıcı serileri, garip dönme şekilleri yapma. Yazar Jeff Butterworth."
 
 #~ msgid "Freeze Some Bees"
 #~ msgstr "Bazı Arıları Dondur"
@@ -8541,13 +7461,8 @@ msgstr ""
 #~ msgid "Goban"
 #~ msgstr "Goban"
 
-#~ msgid ""
-#~ "Replays historical games of go (aka wei-chi and baduk) on the screen. By "
-#~ "Scott Draves. You can find it at &lt;http://www.draves.org/goban/&gt;."
-#~ msgstr ""
-#~ "Ekran üzerinde giden tarihsel oyunları (baduk ve aka wei-chi) yeniden "
-#~ "oynatırç Yazar Scot Draves. Onu burada bulabilirsiniz: &lt;http://www."
-#~ "draves.org/goban/&gt;"
+#~ msgid "Replays historical games of go (aka wei-chi and baduk) on the screen. By Scott Draves. You can find it at &lt;http://www.draves.org/goban/&gt;."
+#~ msgstr "Ekran üzerinde giden tarihsel oyunları (baduk ve aka wei-chi) yeniden oynatırç Yazar Scot Draves. Onu burada bulabilirsiniz: &lt;http://www.draves.org/goban/&gt;"
 
 #~ msgid "Checkered Balls"
 #~ msgstr "Kareli Toplar"
@@ -8591,13 +7506,8 @@ msgstr ""
 #~ msgid "Use Text Below"
 #~ msgstr "Metni Altında Kullan"
 
-#~ msgid ""
-#~ "If you've ever been in the same room with a Windows NT machine, you've "
-#~ "probably seen this GL hack. This version is by Marcelo Vianna."
-#~ msgstr ""
-#~ "Eğer bir Windows NT makinesi ile aynı oda içinde bulunduysanız, "
-#~ "muhtemelen bu GL külüstürünü görmüşsünüzdür. Bu sürüm Marcelo Vianna "
-#~ "tarafındandır."
+#~ msgid "If you've ever been in the same room with a Windows NT machine, you've probably seen this GL hack. This version is by Marcelo Vianna."
+#~ msgstr "Eğer bir Windows NT makinesi ile aynı oda içinde bulunduysanız, muhtemelen bu GL külüstürünü görmüşsünüzdür. Bu sürüm Marcelo Vianna tarafındandır."
 
 #~ msgid "Number of Pipe Systems"
 #~ msgstr "Boru Sistemlerinin Sayısı"
@@ -8608,8 +7518,7 @@ msgstr ""
 #~ msgid "Texture PPM File"
 #~ msgstr "Doku PPM Dosyası"
 
-#~ msgid ""
-#~ "Pyro draws exploding fireworks. Blah blah blah. Written by Jamie Zawinski."
+#~ msgid "Pyro draws exploding fireworks. Blah blah blah. Written by Jamie Zawinski."
 #~ msgstr "Pyro patlatan havai fişekleri çizer. Yazar Jamie Zawinski."
 
 #~ msgid "Corners"
@@ -8642,12 +7551,8 @@ msgstr ""
 #~ msgid "SphereEversion"
 #~ msgstr "KüreTers "
 
-#~ msgid ""
-#~ "Moving circular patterns, by Peter Schmitzberger. Moving circular "
-#~ "patterns means moire; interference patterns, of course."
-#~ msgstr ""
-#~ "Hareket eden dairesel örnekler, Peter Schmitzberger tarafından Hareket "
-#~ "eden dairesel örnekler , örnek hareli kumaş karışması."
+#~ msgid "Moving circular patterns, by Peter Schmitzberger. Moving circular patterns means moire; interference patterns, of course."
+#~ msgstr "Hareket eden dairesel örnekler, Peter Schmitzberger tarafından Hareket eden dairesel örnekler , örnek hareli kumaş karışması."
 
 #~ msgid "Q-Bert meets Marble Madness! Written by Ed Mackey."
 #~ msgstr "Q-Bert Mermer Çılgınlığını buluşturur! Yazar Ed Mackey"
@@ -8661,24 +7566,11 @@ msgstr ""
 #~ msgid "Curviness"
 #~ msgstr "Curviness"
 
-#~ msgid ""
-#~ "Ed Mackey reports that he wrote the first version of this program in "
-#~ "BASIC on a Commodore 64 in 1987, as a 320x200 black and white wireframe. "
-#~ "Now it is GL and has specular reflections."
-#~ msgstr ""
-#~ "320x200 siyah ve beyaz bir telkafes olarak, bir 1987 model Commodore 64 "
-#~ "üzerinde BASIC dilinde bu programın ilk sürümünü yazan Ed Mackey "
-#~ "raporladı. Şimdi o GL'dir ve aynasal yansımalara sahiptir."
+#~ msgid "Ed Mackey reports that he wrote the first version of this program in BASIC on a Commodore 64 in 1987, as a 320x200 black and white wireframe. Now it is GL and has specular reflections."
+#~ msgstr "320x200 siyah ve beyaz bir telkafes olarak, bir 1987 model Commodore 64 üzerinde BASIC dilinde bu programın ilk sürümünü yazan Ed Mackey raporladı. Şimdi o GL'dir ve aynasal yansımalara sahiptir."
 
-#~ msgid ""
-#~ "More flowing, swirly patterns. This version is by M. Dobie and R. Taylor, "
-#~ "but you might have seen a Mac program similar to this called FlowFazer. "
-#~ "There is also a cool Java applet of a similar concept."
-#~ msgstr ""
-#~ "Daha fazla akıcı, fırıldayan kalıplar. Bu sürüm M. Dobie ve R. Taylor "
-#~ "tarafındandır fakat FlowFazer adında buna benzer bir Mac programını "
-#~ "görebilirsiniz. Aynı zamanda benzer bir modelin Java uygulamacığıda "
-#~ "vardır."
+#~ msgid "More flowing, swirly patterns. This version is by M. Dobie and R. Taylor, but you might have seen a Mac program similar to this called FlowFazer. There is also a cool Java applet of a similar concept."
+#~ msgstr "Daha fazla akıcı, fırıldayan kalıplar. Bu sürüm M. Dobie ve R. Taylor tarafındandır fakat FlowFazer adında buna benzer bir Mac programını görebilirsiniz. Aynı zamanda benzer bir modelin Java uygulamacığıda vardır."
 
 #~ msgid "0°"
 #~ msgstr "0°"
@@ -8695,16 +7587,8 @@ msgstr ""
 #~ msgid "XaoS"
 #~ msgstr "XaoS"
 
-#~ msgid ""
-#~ "XaoS generates fast fly-through animations of the Mandelbrot and other "
-#~ "fractal sets. Written by Thomas Marsh and Jan Hubicka. This is not "
-#~ "included with the XScreenSaver package, but if you don't have it already, "
-#~ "you can find it at &lt;http://limax.paru.cas.cz/~hubicka/XaoS/&gt;."
-#~ msgstr ""
-#~ "XaOs diğer kırınımlı ayarlar ve Mandelbrot'un canlandırmalarından hızlı "
-#~ "uçuş meydana getirir. Yazar Thomas Marsh ve Jan Hubicka. Bu X Ekran "
-#~ "Koruyucu Paketi ile birlikte kapsanmaz, eğer zaten buna sahip değilseniz, "
-#~ "&lt;http://limax.paru.cas.cz/~hubicka/XaoS/&gt; buradan bulabilirsiniz."
+#~ msgid "XaoS generates fast fly-through animations of the Mandelbrot and other fractal sets. Written by Thomas Marsh and Jan Hubicka. This is not included with the XScreenSaver package, but if you don't have it already, you can find it at &lt;http://limax.paru.cas.cz/~hubicka/XaoS/&gt;."
+#~ msgstr "XaOs diğer kırınımlı ayarlar ve Mandelbrot'un canlandırmalarından hızlı uçuş meydana getirir. Yazar Thomas Marsh ve Jan Hubicka. Bu X Ekran Koruyucu Paketi ile birlikte kapsanmaz, eğer zaten buna sahip değilseniz, &lt;http://limax.paru.cas.cz/~hubicka/XaoS/&gt; buradan bulabilirsiniz."
 
 #~ msgid "24-Hour Time"
 #~ msgstr "24 Saatli Zaman Dilimi"
@@ -8724,16 +7608,8 @@ msgstr ""
 #~ msgid "XDaliClock"
 #~ msgstr "XDaliClock"
 
-#~ msgid ""
-#~ "XDaliClock draws a large digital clock, the numbers of which change by "
-#~ "``melting'' into their new shapes. Written by Jamie Zawinski. This is not "
-#~ "included with the XScreenSaver package, but if you don't have it already, "
-#~ "you can find it at &lt;http://www.jwz.org/xdaliclock/&gt;."
-#~ msgstr ""
-#~ "X Dali Saati sayıların yeni şekilleri içindeki ''erime'' yoluyla değişen "
-#~ "sayılar geniş bir sayısal saat çizer. Yazar Jamie Zawinski. Bu X Ekran "
-#~ "Koruyucu paketi ile birlikte kapsanmaz, eğer zaten buna sahip değilseniz, "
-#~ "&lt;http://www.jwz.org/xdaliclock/&gt; buradan bulabilirsiniz."
+#~ msgid "XDaliClock draws a large digital clock, the numbers of which change by ``melting'' into their new shapes. Written by Jamie Zawinski. This is not included with the XScreenSaver package, but if you don't have it already, you can find it at &lt;http://www.jwz.org/xdaliclock/&gt;."
+#~ msgstr "X Dali Saati sayıların yeni şekilleri içindeki ''erime'' yoluyla değişen sayılar geniş bir sayısal saat çizer. Yazar Jamie Zawinski. Bu X Ekran Koruyucu paketi ile birlikte kapsanmaz, eğer zaten buna sahip değilseniz, &lt;http://www.jwz.org/xdaliclock/&gt; buradan bulabilirsiniz."
 
 #~ msgid "Bright"
 #~ msgstr "Parlak"
@@ -8777,30 +7653,14 @@ msgstr ""
 #~ msgid "Upper Right"
 #~ msgstr "Yukarı Sağ"
 
-#~ msgid ""
-#~ "XEarth draws an image of the Earth, as seen from your favorite vantage "
-#~ "point in space, correctly shaded for the current position of the Sun. "
-#~ "Written by Kirk Johnson. This is not included with the XScreenSaver "
-#~ "package, but if you don't have it already, you can find it at &lt;http://"
-#~ "www.cs.colorado.edu/~tuna/xearth/&gt;."
-#~ msgstr ""
-#~ "X Dünya Güneşin doğru konumu için doğru olarak gölgelenmiş uzaydaki sizin "
-#~ "gözde üstünlük noktanızdan görülebilen Dünyanın bir resmini çizer. Yazar "
-#~ "Kirk Johnson. Bu X Ekran Koruyucu paketi ile birlikte kapsanmaz, fakat "
-#~ "eğer zaten buna sahip değilseniz, &lt;http://www.cs.colorado.edu/~tuna/"
-#~ "xearth/&gt; buradan alabilirsiniz. "
+#~ msgid "XEarth draws an image of the Earth, as seen from your favorite vantage point in space, correctly shaded for the current position of the Sun. Written by Kirk Johnson. This is not included with the XScreenSaver package, but if you don't have it already, you can find it at &lt;http://www.cs.colorado.edu/~tuna/xearth/&gt;."
+#~ msgstr "X Dünya Güneşin doğru konumu için doğru olarak gölgelenmiş uzaydaki sizin gözde üstünlük noktanızdan görülebilen Dünyanın bir resmini çizer. Yazar Kirk Johnson. Bu X Ekran Koruyucu paketi ile birlikte kapsanmaz, fakat eğer zaten buna sahip değilseniz, &lt;http://www.cs.colorado.edu/~tuna/xearth/&gt; buradan alabilirsiniz. "
 
 #~ msgid "Fish Speed"
 #~ msgstr "Balık Hızı"
 
-#~ msgid ""
-#~ "Fish! This is not included with the XScreenSaver package, but if you "
-#~ "don't have it already, you can find it at &lt;http://metalab.unc.edu/pub/"
-#~ "Linux/X11/demos/&gt;."
-#~ msgstr ""
-#~ "Balık! Bu X Ekran Koruyucu paketi ile birlikte eklenmez, fakat zaten ona "
-#~ "sahip değilseniz, &lt;http://metalab.unc.edu/pub/Linux/X11/demos/&gt; "
-#~ "buradan alabilirsiniz."
+#~ msgid "Fish! This is not included with the XScreenSaver package, but if you don't have it already, you can find it at &lt;http://metalab.unc.edu/pub/Linux/X11/demos/&gt;."
+#~ msgstr "Balık! Bu X Ekran Koruyucu paketi ile birlikte eklenmez, fakat zaten ona sahip değilseniz, &lt;http://metalab.unc.edu/pub/Linux/X11/demos/&gt; buradan alabilirsiniz."
 
 #~ msgid "XFishTank"
 #~ msgstr "Akvaryum"
@@ -8808,19 +7668,10 @@ msgstr ""
 #~ msgid "Xflame"
 #~ msgstr "Xalevi"
 
-#~ msgid ""
-#~ "This program behaves schizophrenically and makes a lot of typos. Written "
-#~ "by Jamie Zawinski. If you haven't seen Stanley Kubrick's masterpiece, "
-#~ "``The Shining,'' you won't get it. Those who have describe this hack as "
-#~ "``inspired.''"
-#~ msgstr ""
-#~ "Bu uygulama şizofreniksel davranır ve çok fazla nitelik yapar. Yazar "
-#~ "Jamie Zawinski. Eğer Stanley Kubrick'in şaheseri ''The Shining''i "
-#~ "görmediyseniz, onu anlamayacaksınız. "
+#~ msgid "This program behaves schizophrenically and makes a lot of typos. Written by Jamie Zawinski. If you haven't seen Stanley Kubrick's masterpiece, ``The Shining,'' you won't get it. Those who have describe this hack as ``inspired.''"
+#~ msgstr "Bu uygulama şizofreniksel davranır ve çok fazla nitelik yapar. Yazar Jamie Zawinski. Eğer Stanley Kubrick'in şaheseri ''The Shining''i görmediyseniz, onu anlamayacaksınız. "
 
-#~ msgid ""
-#~ "A rendition of the text scrolls seen in the movie ``The Matrix.'' Written "
-#~ "by Jamie Zawinski."
+#~ msgid "A rendition of the text scrolls seen in the movie ``The Matrix.'' Written by Jamie Zawinski."
 #~ msgstr "'Matrix' filminde olduğu gibi metni kaydırır' Yazar Jamie Zawinski."
 
 #~ msgid "Reflections"
@@ -8832,28 +7683,11 @@ msgstr ""
 #~ msgid "Top View"
 #~ msgstr "Yukardan Görünüm"
 
-#~ msgid ""
-#~ "XMountains generates realistic-looking fractal terrains of snow-capped "
-#~ "mountains near water, with either a top view or a side view. Written by "
-#~ "Stephen Booth. This is not included with the XScreenSaver package, but if "
-#~ "you don't have it already, you can find it at &lt;http://www.epcc.ed.ac."
-#~ "uk/~spb/xmountains/&gt;. Be sure to compile it with -DVROOT or it won't "
-#~ "work right when launched by the xscreensaver daemon."
-#~ msgstr ""
-#~ "X Dağları ya üst görünüm ya da kenar görünümü ile birlikte, su yanındaki "
-#~ "kar-şapkalı dağların gerçekçi-bakan kırınımlı araziler meydana getirir. "
-#~ "Yazar Stephen Booth. Bu X Ekran Koruyucu paketini içermez, fakat eğer "
-#~ "zaten buna sahip değilseniz, &lt;http://www.epcc.ed.ac.uk/~spb/xmountains/"
-#~ "&gt; burada bulabilirsiniz. ROOT hakları ile derlediğinize emin olun ya "
-#~ "da xekrankoruyucu hayalet programı tarafından başlatıldığı zaman doğru "
-#~ "çalışmayacaktır."
+#~ msgid "XMountains generates realistic-looking fractal terrains of snow-capped mountains near water, with either a top view or a side view. Written by Stephen Booth. This is not included with the XScreenSaver package, but if you don't have it already, you can find it at &lt;http://www.epcc.ed.ac.uk/~spb/xmountains/&gt;. Be sure to compile it with -DVROOT or it won't work right when launched by the xscreensaver daemon."
+#~ msgstr "X Dağları ya üst görünüm ya da kenar görünümü ile birlikte, su yanındaki kar-şapkalı dağların gerçekçi-bakan kırınımlı araziler meydana getirir. Yazar Stephen Booth. Bu X Ekran Koruyucu paketini içermez, fakat eğer zaten buna sahip değilseniz, &lt;http://www.epcc.ed.ac.uk/~spb/xmountains/&gt; burada bulabilirsiniz. ROOT hakları ile derlediğinize emin olun ya da xekrankoruyucu hayalet programı tarafından başlatıldığı zaman doğru çalışmayacaktır."
 
-#~ msgid ""
-#~ "Draws falling snow and the occasional tiny Santa. By Rick Jansen. You can "
-#~ "find it at &lt;http://www.euronet.nl/~rja/Xsnow/&gt;."
-#~ msgstr ""
-#~ "Düşen kar ve tesadüfi minik Santayı çizer. Yazar Rick Jansen.  &lt;http://"
-#~ "www.euronet.nl/~rja/Xsnow/&gt;."
+#~ msgid "Draws falling snow and the occasional tiny Santa. By Rick Jansen. You can find it at &lt;http://www.euronet.nl/~rja/Xsnow/&gt;."
+#~ msgstr "Düşen kar ve tesadüfi minik Santayı çizer. Yazar Rick Jansen.  &lt;http://www.euronet.nl/~rja/Xsnow/&gt;."
 
 #~ msgid "Xsnow"
 #~ msgstr "Xkarı"
@@ -8873,9 +7707,5 @@ msgstr ""
 #~ msgid "XTeeVee"
 #~ msgstr "Görüntü arızaları"
 
-#~ msgid ""
-#~ "XTeeVee simulates various television problems, including static, loss of "
-#~ "vertical hold, and a test pattern. By Greg Knauss."
-#~ msgstr ""
-#~ "XTeeVee bir sınayıcı örüntüsü, düşey tutmanın yitimi ve durağan içeren "
-#~ "çeşitli televizyon sorunlarını benzetimler. Greg Knauss."
+#~ msgid "XTeeVee simulates various television problems, including static, loss of vertical hold, and a test pattern. By Greg Knauss."
+#~ msgstr "XTeeVee bir sınayıcı örüntüsü, düşey tutmanın yitimi ve durağan içeren çeşitli televizyon sorunlarını benzetimler. Greg Knauss."
