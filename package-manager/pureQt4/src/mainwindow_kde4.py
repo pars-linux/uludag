@@ -47,6 +47,7 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
+        self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.centralWidget().updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         self.connect(self.centralWidget(), SIGNAL("repositoriesUpdated()"), self.tray.updateTrayUnread)
