@@ -155,7 +155,21 @@ Aşağıda bulunan komutaları çalıştırın ve daha sonra uzaktan kumanda dü
 \end{verbatim}
 \item module-ltmodem ve module-ltmodem-userspace kurulumu sonrası:
 
-(Eğer bilgisayarınızda entegre bir modem bulunuyor ise test edebilirsiniz.)
+(Eğer bilgisayarınızda entegre bir Lucent Apollo (ISA) ve Mars (PCI) yonga setinde bir modem bulunuyor ise test edebilirsiniz.)
+
+Aşağıda bulunan komutun "ltmodem" içeren bir çıktı döndürdüğünü gözlemleyin.
+\begin{verbatim}
+ lsmod | grep ltmodem
+\end{verbatim}
+
+\item module-slmodem ve module-slmodem-userspace kurulumu sonrası:
+
+(Eğer bilgisayarınızda Smart Link Modem sürücüsü bulunuyor ise test edebilirsiniz.)
+
+Aşağıda bulunan komutun "ltmodem" içeren bir çıktı döndürdüğünü gözlemleyin.
+\begin{verbatim}
+ lsmod | grep slmodem
+\end{verbatim}
 
 
 \item Aşağıda bulunan paketlerin kurulumu sonrası:
@@ -306,6 +320,7 @@ module-pae-ndiswrapper
 module-pae-nvidia-current
 module-pae-syntekdriver   
 module-pae-vloopback
+module-pae-slmodem
 \end{verbatim}
 \end{enumerate}
 \end{document}
