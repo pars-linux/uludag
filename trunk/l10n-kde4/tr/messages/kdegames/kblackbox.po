@@ -2,18 +2,19 @@
 #
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kblackbox\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-07-01 12:45+0200\n"
-"PO-Revision-Date: 2009-10-31 21:41+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-21 16:49+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kbblevelconfigurationwidget.cpp:35
@@ -44,25 +45,28 @@ msgstr "Alan: 00 x 00"
 
 #: kbbmainwindow.cpp:100
 msgid "Start Tutorial"
-msgstr "Kılavuzu Başlat"
+msgstr "Öğretici Oyunu Başlat"
 
 #: kbbmainwindow.cpp:102
 msgid "Start tutorial"
-msgstr "Kılavuzu başlat"
+msgstr "Öğretici oyunu başlat"
 
 #: kbbmainwindow.cpp:103
 msgid ""
 "<qt>The <b>tutorial</b> is a fast, user friendly and interactive way to "
 "learn the rules of the game. Start it if you do not know them!</qt>"
 msgstr ""
+"<qt><b>Öğretici Oyun</b>, oyunun kurallarını öğrenmek için hızlı, kullanıcı "
+"dostu "
+"ve etkileşimli bir yoldur. Kuralları bilmiyorsanız kılavuzu başlatın!</qt>"
 
 #: kbbmainwindow.cpp:107
 msgid "New Sandbox Game"
-msgstr "Yeni Sandbox Oyunu"
+msgstr "Yeni Kum Havuzu Oyunu"
 
 #: kbbmainwindow.cpp:108
 msgid "Start a new sandbox game"
-msgstr ""
+msgstr "Yeni bir kum havuzu oyunu başlat"
 
 #: kbbmainwindow.cpp:109
 msgid ""
@@ -71,6 +75,10 @@ msgid ""
 "p><p>However: after a while, it is not really fun and you should try to "
 "start a real game!</p></qt>"
 msgstr ""
+"<qt><p><b>Kum havuzu oyununda</b>, çözüm oyunun başında gösterilmektedir. "
+"Bu, oyunun kurallarını anlamak için önemlidir.</p><p>Yine de: bir süre sonra "
+"keyif "
+"vermemektedir, o zaman gerçek bir oyun başlatmanız yeğdir!</p></qt>"
 
 #: kbbmainwindow.cpp:115
 msgctxt ""
@@ -87,6 +95,14 @@ msgid ""
 "li></ul><p>Note that it is only possible to click here if you have placed "
 "the correct number of balls.</p></qt>"
 msgstr ""
+"<qt><ul><li>Önce bütün topları kara kutunun üzerine yerleştirmelisiniz. "
+"Topların doğru konumlandırılıp konumlandırılmadığını tahmin etmek ve lazer "
+"ışınlarıyla nasıl etkileştiklerini görmek için kara kutunun çevresine "
+"konumlandırılmış "
+"lazerleri kullanmalısınız. </li><li><b> Hamlenizi tamamladıysanız</b>, "
+"buraya "
+"tıklamalısınız.</li></ul><p> Unutmayın, sadece doğru sayıda topu "
+"yerleştirdiyseniz buraya tıklayabilirsiniz.</p></qt>"
 
 #: kbbmainwindow.cpp:120
 msgid "Give up the game"
@@ -98,6 +114,10 @@ msgid ""
 "solution will be displayed.</p><p>If you placed all the balls and do not "
 "want to give up, choose \"Done!\".</p></qt>"
 msgstr ""
+"<qt><p>Şimdiki oyunu bırakmak istiyorsanız \"<b>Çöz</b>\"ü seçin, çözüm "
+"gösterilecektir.</p><p>Eğer topları yerleştirdiniz ve oyundan çıkmak "
+"istemiyorsanız "
+"\"Tamamlandı!\" seçeneğini seçin.</p></qt>"
 
 #: kbbmainwindow.cpp:161
 msgid "Move Down"
@@ -117,11 +137,11 @@ msgstr "Sağa Taşı"
 
 #: kbbmainwindow.cpp:185
 msgid "Switch Ball or Shoot Laser"
-msgstr ""
+msgstr "Topu değiştir ya da Lazeri ateşle"
 
 #: kbbmainwindow.cpp:191
 msgid "Switch Marker"
-msgstr ""
+msgstr "Değiştirme imi"
 
 #: kbbmainwindow.cpp:263
 msgctxt ""
@@ -131,54 +151,58 @@ msgid ""
 "Note: You can change<br />the parameters of<br />custom games in the<br /"
 ">Settings dialog."
 msgstr ""
+"Not: Ayarlar diyalogundan<br /> özel oyunların<br />parametrelerini<br / "
+">değiştirebilirsiniz."
 
 #: kbbmainwindow.cpp:297
 #, kde-format
 msgid "First, you need to remove 1 ball from the black box."
 msgid_plural "First, you need to remove %1 balls from the black box."
-msgstr[0] ""
+msgstr[0] "Önce, kara kutudan %1 topu çıkartmanız gerekiyor."
 
 #: kbbmainwindow.cpp:299
 msgid "To check if you successfully guessed the ball positions, click here!"
 msgstr ""
+"Topların konumlarını doğru tahmin edip etmediğinizi öğrenmek için buraya "
+"tıklayın!"
 
 #: kbbmainwindow.cpp:301
 #, kde-format
 msgid "You need to place 1 more ball on the black box."
 msgid_plural "You need to place %1 more balls on the black box."
-msgstr[0] ""
+msgstr[0] "Kara kutuya %1 top daha yerleştirmeniz gerekiyor."
 
 #: kbbmainwindow.cpp:305
 msgid "Game over."
-msgstr ""
+msgstr "Oyun bitti."
 
 #: kbbmainwindow.cpp:307
 msgid "Game paused."
-msgstr ""
+msgstr "Oyun duraklatıldı."
 
 #: kbbmainwindow.cpp:312 kbbtutorial.cpp:54
 msgid "Tutorial"
-msgstr "Kılavuz"
+msgstr "Öğretici Oyun"
 
 #: kbbmainwindow.cpp:316
 #, kde-format
 msgid "1 ball too many!"
 msgid_plural "%1 balls too many!"
-msgstr[0] ""
+msgstr[0] "%1 top çok fazla!"
 
 #: kbbmainwindow.cpp:318
 msgid "No more balls to place"
-msgstr ""
+msgstr "Yerleştirilecek top yok"
 
 #: kbbmainwindow.cpp:320
 #, kde-format
 msgid "1 ball to place"
 msgid_plural "%1 balls to place"
-msgstr[0] ""
+msgstr[0] "Yerleştirilecek %1 top"
 
 #: kbbmainwindow.cpp:323
 msgid "Game over"
-msgstr ""
+msgstr "Oyun bitti"
 
 #: kbbmainwindow.cpp:326
 #, kde-format
@@ -197,10 +221,15 @@ msgid ""
 "the game before you reached the last step.\n"
 "Please first finish the tutorial."
 msgstr ""
+"\"Tamamlandı!\" seçeneğine tıklamak, topların konumlarını oyunun sonunda "
+"kontrol etmek için normal yoldur. Ne var ki, öğretici oyunda son adıma "
+"gelmeden "
+"oyunu bitirmek mümkün değildir.\n"
+"Lütfen öncelikle öğretici oyunu bitirin."
 
 #: kbbmainwindow.cpp:344
 msgid "Check positions"
-msgstr ""
+msgstr "Konumları kontrol et"
 
 #: kbbmainwindow.cpp:351
 #, kde-format
@@ -215,7 +244,7 @@ msgctxt ""
 "The text may not be too wide. So please use some HTML-BR-tags to have "
 "something more or less as wide as in english. Thanks!"
 msgid "But it does not count<br />because <b>it is the sandbox!</b>"
-msgstr ""
+msgstr "Ama sayılmaz<br /> çünkü <b> kum havuzu oyunundasınız!</b>"
 
 #: kbbmainwindow.cpp:355
 #, kde-format
@@ -235,18 +264,20 @@ msgid ""
 "Do you want to cancel the current custom game and start a new one with the "
 "new parameters?"
 msgstr ""
+"Mevcut özel oyunu iptal edip, yeni parametrelerle yeni bir oyun başlatmak "
+"istiyor musunuz?"
 
 #: kbbmainwindow.cpp:406 kbbmainwindow.cpp:488
 msgid "Start new game"
-msgstr ""
+msgstr "Yeni oyun başlat"
 
 #: kbbmainwindow.cpp:420
 msgid "Custom Game"
-msgstr ""
+msgstr "Özel Oyun"
 
 #: kbbmainwindow.cpp:441
 msgid "Sorry, you may not give up during the tutorial."
-msgstr ""
+msgstr "Üzgünüm, öğretici oyun esnasında oyunu bırakamazsınız."
 
 #: kbbmainwindow.cpp:441
 msgid "Solve"
@@ -259,6 +290,10 @@ msgid ""
 "correctly.\n"
 "So, do you really want to give up this game?"
 msgstr ""
+"Bütün topları yerleştirdiniz. Güzel!\n"
+"Şimdi oyunu bitirmek için \"Tamamlandı!\" seçeneğine tıklamayın ve "
+"doğru tahmin edip etmediğinizi kontrol edin.\n"
+"Evet, gerçekten oyunu bırakmak istiyor musunuz?"
 
 #: kbbmainwindow.cpp:444 kbbmainwindow.cpp:446
 msgid "Give up"
@@ -268,13 +303,13 @@ msgstr "Bırak"
 #, kde-format
 msgid "You should place %1 ball!\n"
 msgid_plural "You should place %1 balls!\n"
-msgstr[0] ""
+msgstr[0] "%1 topu yerleştirmelisiniz!\n"
 
 #: kbbmainwindow.cpp:446
 #, kde-format
 msgid "You have placed %1.\n"
 msgid_plural "You have placed %1.\n"
-msgstr[0] ""
+msgstr[0] "%1 yerleştirdiniz.\n"
 
 #: kbbmainwindow.cpp:446
 msgid "Do you really want to give up this game?"
@@ -288,6 +323,8 @@ msgid ""
 "Note: In the sandbox mode,<br />the solution is already displayed.<br />Have "
 "fun!"
 msgstr ""
+"Not: Kum havuzu modunda, <br /> Çözüm zaten gösterilmiştir.<br /> Tadını "
+"çıkarın!"
 
 #: kbbmainwindow.cpp:488
 msgid "This will be the end of the current game!"
@@ -306,6 +343,13 @@ msgid ""
 "another entry point.</li></ul></li></ul></p><p>Your score is set to <b>999</"
 "b> at the end of the game if you make a mistake.</p></qt>"
 msgstr ""
+"<qt><p><b>Puanınız</b> budur. Mümkün olduğunca az puan almaya "
+"çalışmalısınız.</p><p>Puan artışı<ul><li>zamanla: saniyede <b>1 puan</b>. "
+"</li><li>lazer kullanımıyla<ul><li>lazer ışını bir topu ya da var olan bir "
+"noktayı "
+"vurursa<b>3 puan</b></li>,<li>başka bir noktada bulunuyorsa<b>9 puan< "
+"/b></li>.</ul></li></ul></p><p>Herhangi bir hata yaparsanız oyunun sonunda "
+"puanınız <b>999</b>'a eşitlenecektir.</p></qt>"
 
 #: kbbscalablegraphicwidget.cpp:126
 msgid ""
@@ -315,14 +359,22 @@ msgid ""
 "b> that are replaced with <b>interaction information</b> if you use them.</"
 "li></ul></qt>"
 msgstr ""
+"<qt><p>Burası <b>ana oyun alanıdır</b>.</p><ul><li><b>Kara kutu</b> "
+"merkezdedir.</li><li>Solda, kara kutunun üzerine yerleştirmeniz gereken <b> "
+"toplar</b> vardır.</li><li> Kara kutunun çevresinde kullandığınızda <b>"
+"etkileşim "
+"bilgileri</b> ile yer değiştiren <b>lazerler</b> bulunmaktadır.</li></ul><"
+"/qt>"
 
 #: kbbtutorial.cpp:71
 msgid "Displays the progress of the tutorial."
-msgstr ""
+msgstr "Öğretici oyunun ilerleyişini göster."
 
 #: kbbtutorial.cpp:93
 msgid "Describes what you should do to reach the next tutorial step."
 msgstr ""
+"Bir sonraki öğretici oyun adımına geçmek için ne yapmanız gerektiğini "
+"tanımlar."
 
 #: kbbtutorial.cpp:102
 msgctxt "Previous tutorial step"
@@ -331,7 +383,7 @@ msgstr "&Önceki"
 
 #: kbbtutorial.cpp:103
 msgid "Go back to the previous tutorial step."
-msgstr ""
+msgstr "Bir önceki öğretici oyun adımına geri dön."
 
 #: kbbtutorial.cpp:106
 msgctxt "Next tutorial step"
@@ -340,11 +392,11 @@ msgstr "&Sonraki"
 
 #: kbbtutorial.cpp:107
 msgid "Go to the next tutorial step."
-msgstr ""
+msgstr "Bir sonraki öğretici oyun adımına git."
 
 #: kbbtutorial.cpp:169
 msgid "Welcome!"
-msgstr "Hoşgeldiniz!"
+msgstr "Hoş geldiniz!"
 
 #: kbbtutorial.cpp:169
 msgid ""
@@ -353,14 +405,20 @@ msgid ""
 "It has 3 balls <b>hidden</b> inside it and 24 laser probes around it.<br /"
 "><br />The goal is to <b>find the positions of the balls.</b>"
 msgstr ""
+"Bu öğretici oyun, basit örneklerle size KBlackBox'ı nasıl oynayabileceğinizi "
+"öğretmektedir. "
+"<br /><br /> 6 satır ve 6 sütundan oluşan bir kare bir kara kutu ile "
+"oynamaktayız. "
+"Kutunun içinde 3 top, çevresinde de 24 lazer sondası bulunmaktadır.<br /"
+"><br />Hedef, <b>topların doğru konumlarını bulmaktır.</b>"
 
 #: kbbtutorial.cpp:169
 msgid "Click on \"Next\""
-msgstr ""
+msgstr "\"Sonraki\" seçeneğine tıklayınız"
 
 #: kbbtutorial.cpp:174
 msgid "Black box principles"
-msgstr ""
+msgstr "Kara kutu kuralları"
 
 #: kbbtutorial.cpp:174
 msgid ""
@@ -369,10 +427,17 @@ msgid ""
 "they do, where they come out.<br /><br />The laser beams interact with the "
 "balls in various ways."
 msgstr ""
+"Toplar görünmezdir, ama lazer ışınlarını kullanarak kutunun farklı "
+"noktalarına ateş "
+"edip lazerlerin kutudan çıkıp çıkmadıklarını gözlemleyebilir, çıkıyorlarsa "
+"nereden "
+"çıktıklarını görebiliriz.<br /><br />Lazer ışınları toplarla değişik "
+"yollarla etkileşime "
+"girebilirler."
 
 #: kbbtutorial.cpp:174
 msgid "Please click on the marked laser to shoot a beam into the black box."
-msgstr ""
+msgstr "Kara kutunun içine ışın göndermek için seçili lazere tıklayın."
 
 #: kbbtutorial.cpp:179
 msgid "No interaction"
@@ -386,10 +451,18 @@ msgid ""
 "><br />As the game progresses, each pair of entry/exit points is marked with "
 "a different number."
 msgstr ""
+"Eğer bir lazer ışını kara kutunun içinde hiç bir topla etkileşime girmezse, "
+"girdiği noktanın tam ters yönünden dışarı çıkar. <br /><br />Örnek: Farz "
+"edelim "
+"ki görüldüğü gibi kutunun içinde 3 tane topumuz olsun. \"1\" nolu lazer "
+"ışınından "
+"etkilenmeyecektir hiçbiri.<br /><br />Oyun ilerledikçe, her giriş/çıkış "
+"noktaları farklı "
+"bir numara ile işaretlenecektir."
 
 #: kbbtutorial.cpp:179
 msgid "Now shoot the marked laser to discover the first kind of interaction."
-msgstr ""
+msgstr "Şimdi ilk çeşit etkileşimi keşfetmek için işaretli lazeri ateş edin."
 
 #: kbbtutorial.cpp:187
 msgid "Hit"
@@ -402,14 +475,20 @@ msgid ""
 "might have hit a ball at the position shown, but the exact position of the "
 "hit is not certain: There are many other possibilities."
 msgstr ""
+"Topa doğru direk bir çarpışma \"<b>vuruş</b>\" olarak adlandırılmaktadır. "
+"Herhangi bir topa çarpan ışın kara kutu'dan dışarı <b>çıkmaz</b>.<br /><br />"
+" "
+"Örnek: Işın şekilde görüldüğü gibi topa vurabilir, ama tam olarak nereden "
+"vurduğu "
+"kesin değildir: Bir çok ihtimal olabilir."
 
 #: kbbtutorial.cpp:187
 msgid "Shoot the marked laser to discover the second kind of interaction."
-msgstr ""
+msgstr "İkinci çeşit etkileşimi keşfetmek için işaretli lazeri ateş edin."
 
 #: kbbtutorial.cpp:193
 msgid "Simple deflection"
-msgstr ""
+msgstr "Basit yön sapma"
 
 #: kbbtutorial.cpp:193
 msgid ""
@@ -419,16 +498,25 @@ msgid ""
 "would deflect beam \"2\" upward, as shown, but this is <b>not</b> the only "
 "possibility."
 msgstr ""
+"Aslında topa vuramayıp da topun bir yanına nişan alan ışınlara <b>\"yön "
+"sapma\"< "
+"/b> diyoruz. Bir ışının yön sapma açısı her zaman <b>90 derecedir</b>.<br /> "
+"<br />Örnek: Gösterilen top, görüldüğü üzere \"2\" numaralı ışını yukarı "
+"doğru "
+"saptırabilir, ama tek olasılık bu <b>değildir</b>."
 
 #: kbbtutorial.cpp:193
 msgid ""
 "Click on \"Next\" to see another combination of ball positions that deflects "
 "the laser beam as shown."
 msgstr ""
+"Lazer ışınını gösterildiği gibi saptıran başka bir top pozisyonunu görmek "
+"için "
+"\"Sonraki\" düğmesine basınız."
 
 #: kbbtutorial.cpp:200
 msgid "Several deflections"
-msgstr ""
+msgstr "Bir takım sapmalar"
 
 #: kbbtutorial.cpp:200
 msgid ""
@@ -436,10 +524,15 @@ msgid ""
 ">A laser beam entering and exiting at the positions \"2\" might have been "
 "deflected by this configuration of 3 balls."
 msgstr ""
+"Gördüğünüz gibi, kara kutu içindeki etkileşimler biraz karışık olabilir!<br "
+"/ "
+">\"2\" numaralı pozisyondan giren ve çıkan lazer ışıkları, 3 topun bu "
+"şekilde "
+"yerleştirilmesiyle yönünden sapabilirler."
 
 #: kbbtutorial.cpp:200
 msgid "Shoot the marked laser to discover another kind of result."
-msgstr ""
+msgstr "Başka bir çeşit sonucu keşfetmek için işaretli lazeri ateş edin."
 
 #: kbbtutorial.cpp:208
 msgid "Reflection"
@@ -452,10 +545,14 @@ msgid ""
 "placed 2 balls for you in a configuration that would lead to such a "
 "reflection."
 msgstr ""
+"Lazer ışını <b>giriş noktasından</b> kara kutudan çıkarsa, kara kutunun "
+"içine doğru tersten yansıtılır.<br /><br />Örnek: Böyle bir yansımaya sebep "
+"olabilecek şekilde 2 top yerleştirdik sizin için."
 
 #: kbbtutorial.cpp:208
 msgid "Shoot the marked laser to see another backward reflection case."
 msgstr ""
+"Bir başka geriye dönük yansıma olayı görmek için işaretli lazeri ateşleyin."
 
 #: kbbtutorial.cpp:215
 msgid "Special reflection"
@@ -468,14 +565,18 @@ msgid ""
 "reflection.<br /><br />Example: The configuration shown can cause a backward "
 "reflection."
 msgstr ""
+"Eğer bir top (çevresinde başka bir top yokken) <b>kutunun kenarındaysa</b>, "
+"Kara kutunun hemen yanından, içine doğru nişanlanmış bir ışın geriye dönük "
+"yansıma yaratacaktır.<br /><br />Örnek: Aşağıdaki şekil geriye dönük yansıma "
+"yaratabilir."
 
 #: kbbtutorial.cpp:215
 msgid "Nearly done. Click on \"Next\"."
-msgstr ""
+msgstr "Neredeyse tamamlandı. \"Sonraki\" seçeneğine tıklayın."
 
 #: kbbtutorial.cpp:222
 msgid "Marker for \"free position\""
-msgstr ""
+msgstr "\"Boş pozisyon\" için işaretleyici"
 
 #: kbbtutorial.cpp:222
 msgid ""
@@ -485,14 +586,19 @@ msgid ""
 "(see also keyboard shortcuts).<br /><br />Example: There are 12 markers in "
 "the first 2 columns."
 msgstr ""
+"İlk iki sütunda hiç top olmadığından eminiz. Eğer olsaydı, \"1\" numaralı "
+"pozisyondan giren ışın bir topa çarpabilir ya da ikinci sütundaki bir top "
+"tarafından yönünden saptırılabilirdi. Sağ fare tıkıyla \"boş pozisyon\"u "
+"işaretleyebilirsiniz (klavye kısayollarına da göz atın).<br /><br />Örnek: "
+"ilk iki sütunda 12 işaretçi vardır."
 
 #: kbbtutorial.cpp:222 kbbtutorial.cpp:231
 msgid "Click on \"Next\"."
-msgstr ""
+msgstr "\"Sonraki\"ne tıklayın."
 
 #: kbbtutorial.cpp:231
 msgid "Marking balls"
-msgstr ""
+msgstr "İşaretleyici toplar"
 
 #: kbbtutorial.cpp:231
 msgid ""
@@ -502,6 +608,15 @@ msgid ""
 "ball to mark it as \"unsure\". (See also keyboard shortcuts.)<br /><br /"
 ">Example: We marked one position as sure, the other one as unsure."
 msgstr ""
+"Bir topun nerede olduğunu kestirmeye çalıştığınızda, lütfen onu işaretlemek "
+"için farenin sol tuşunu kullanın. Bu işareti kaldırmak için de yeniden fare "
+"sol "
+"tuşuna basın. Son İpucu: Eğer konumdan emin değilseniz, topa sağ tıklayıp "
+"topu \"emin değil\" diye işaretleyebilirsiniz. (Klavye kısayollarına da göz "
+"atın.)<br /> "
+"<br />Örnek: Bir konumu emin olarak işaretleyip, bir başkasını emin değil "
+"olarak "
+"işaretliyoruz."
 
 #: kbbtutorial.cpp:238
 msgid "Let us play!"
@@ -515,10 +630,19 @@ msgid ""
 "positions of the 3 balls with certainty. Of course, you can use some more "
 "shots if needed."
 msgstr ""
+"<b>Tebrikler!</b> Şu an KBlackBox'ın <b>bütün kurallarını</b> biliyorsunuz.<"
+"br /"
+"><br /><b>Oynamaya başlayabilirsiniz.</b> Bu öğretici oyunu kendi başınıza "
+"bitirmeye çalışın!<br /><br /> İpucu: 3 topun da yerlerini doğru bir şekilde "
+"bulmak için "
+"yeterli miktarda ışın gönderdik. Tabi ki, ihtiyaç duyuyorsanız daha fazla "
+"ışın da gönderebilirsiniz."
 
 #: kbbtutorial.cpp:238
 msgid "Finish placing the balls and click on \"Done!\" when you are done!"
 msgstr ""
+"Topları konumlandırmayı sonlandırıp, işiniz bittiğinde \"Tamamlandı!\" "
+"seçeneğine tıklayın!"
 
 #: main.cpp:45
 msgid "KBlackBox"
@@ -526,7 +650,7 @@ msgstr "KBlackBox"
 
 #: main.cpp:45
 msgid "Find the balls hidden in the black box by shooting laser beams!"
-msgstr ""
+msgstr "Lazer ışınlarını ateşleyerek kara kutu içerisinde saklı topları bulun!"
 
 #: main.cpp:45
 msgid ""
@@ -542,7 +666,7 @@ msgstr "Nicolas Roffet"
 
 #: main.cpp:46
 msgid "Developer of version 0.4."
-msgstr ""
+msgstr "0.4 Versiyonunun geliştiricisi"
 
 #: main.cpp:47
 msgid "Robert Cimrman"
@@ -567,24 +691,26 @@ msgid ""
 "File of the current theme of the graphic elements. (SVGZ file with path and "
 "file extension)"
 msgstr ""
+"Grafik elemanların mevcut arayüzünün dosyası. (Dosya uzantısı ve yolu ile "
+"birlikte bir SVGZ dosyası)"
 
 #. i18n: file: kblackbox.kcfg:13
 #. i18n: ectx: label, entry (balls), group (KBlackBox Setup)
 #: rc.cpp:6
 msgid "Number of balls for custom difficulty level"
-msgstr ""
+msgstr "Özel zorluk seviyesi için top sayısı"
 
 #. i18n: file: kblackbox.kcfg:17
 #. i18n: ectx: label, entry (columns), group (KBlackBox Setup)
 #: rc.cpp:9
 msgid "Number of columns of the board for custom difficulty level"
-msgstr ""
+msgstr "Özel zorluk seviyesi için oyundaki sütun sayısı"
 
 #. i18n: file: kblackbox.kcfg:21
 #. i18n: ectx: label, entry (rows), group (KBlackBox Setup)
 #: rc.cpp:12
 msgid "Number of rows of the board for custom difficuty level"
-msgstr ""
+msgstr "Özel zorluk seviyesi için oyundaki satır sayısı"
 
 #. i18n: file: kblackbox.kcfg:25
 #. i18n: ectx: label, entry (level), group (KBlackBox Setup)
@@ -595,12 +721,12 @@ msgstr "Zorluk derecesi"
 #: rc.cpp:16
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ömer Fadıl USTA"
+msgstr "Serdar Dalgıç"
 
 #: rc.cpp:17
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "omer_fad@hotmail.com"
+msgstr "serdar@pardus.org.tr"
 
 #~ msgctxt "A number between 1 and 99 is displayed in front of it."
 #~ msgid " ball(s)"
