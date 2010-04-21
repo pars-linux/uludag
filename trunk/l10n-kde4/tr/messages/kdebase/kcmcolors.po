@@ -1,7 +1,7 @@
 # translation of kcmcolors.po to Turkish
 # translation of kcmcolors.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-# 
+#
 # Barış Metin <baris@gelecek.com.tr>, 2000.
 # Ömer Fadıl USTA <omer_fad@hotmail.com>, 2002.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: kcmcolors\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-21 01:22+0100\n"
-"PO-Revision-Date: 2010-04-20 16:50+0300\n"
+"PO-Revision-Date: 2010-04-21 11:27+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1243,6 +1243,8 @@ msgid ""
 "Link Text on Link Background\n"
 "(Note: Link Background is derived from Link Text and cannot be separately configured at this time)"
 msgstr ""
+"Bağlantı Arka Planı üzerinde Bağlantı Metni\n"
+"(Not: Bağlantı Arka Planı Bağlantı Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:233
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack4)
@@ -1251,6 +1253,8 @@ msgid ""
 "Visited Text on Visited Background\n"
 "(Note: Visited Background is derived from Visited Text and cannot be separately configured at this time)"
 msgstr ""
+"Ziyaret Edilmiş Arka Planı üzerinde Ziyaret Edilmiş Metni\n"
+"(Not: Ziyaret Edilmiş Arka Planı Ziyaret Edilmiş Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:250
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack2)
@@ -1259,6 +1263,8 @@ msgid ""
 "Active Text on Active Background\n"
 "(Note: Active Background is derived from Active Text and cannot be separately configured at this time)"
 msgstr ""
+"Aktif Arka Plan üzerinde Aktif Metni\n"
+"(Not: Aktif Arka Planı Aktif Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:266
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack1)
@@ -1280,6 +1286,8 @@ msgid ""
 "Negative Text on Negative Background\n"
 "(Note: Negative Background is derived from Negative Text and cannot be separately configured at this time)"
 msgstr ""
+"Negatif Arka Planı üzerinde Negatif Metni\n"
+"(Not: Negatif Arka Planı Negatif Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:300
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack6)
@@ -1288,6 +1296,8 @@ msgid ""
 "Neutral Text on Neutral Background\n"
 "(Note: Neutral Background is derived from Neutral Text and cannot be separately configured at this time)"
 msgstr ""
+"Nötr Arka Planı üzerinde Nötr Metni\n"
+"(Not: Nötr Arka Planı Nötr Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:317
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack7)
@@ -1296,6 +1306,8 @@ msgid ""
 "Positive Text on Positive Background\n"
 "(Note: Positive Background is derived from Positive Text and cannot be separately configured at this time)"
 msgstr ""
+"Pozitif Arka Planı üzerinde Pozitif Metni\n"
+"(Not: Pozitif Arka Planı Pozitif Metninden türemiştir ve ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:333
 #. i18n: ectx: property (toolTip), widget (QLabel, labelFore9)
