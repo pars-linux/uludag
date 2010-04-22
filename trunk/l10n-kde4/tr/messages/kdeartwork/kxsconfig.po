@@ -1387,7 +1387,7 @@ msgstr "Renk Eğimleri"
 
 #: hacks/config/blocktube.xml.h:4
 msgid "Draws a swirling, falling tunnel of reflective slabs. They fade from hue to hue. Written by Lars R. Damerow; 2003."
-msgstr ""
+msgstr "Yansıtıcı plaka tünellerinin düşüşüne benzeyen bir girdap çizer."
 
 #: hacks/config/boing.xml.h:1
 #, fuzzy
@@ -1562,7 +1562,7 @@ msgstr "Resimleri yakala"
 
 #: hacks/config/boxfit.xml.h:10
 msgid "Grow by"
-msgstr ""
+msgstr "Tarafından meydana getirildi"
 
 #: hacks/config/boxfit.xml.h:13
 msgid "Packs the screen with growing squares or circles, colored according to a horizontal or vertical gradient, or according to the colors of the desktop or a loaded image file. The objects grow until they touch, then stop. When the screen is full, they shrink away and the process restarts. Written by Jamie Zawinski; 2005."
@@ -1570,7 +1570,7 @@ msgstr ""
 
 #: hacks/config/boxfit.xml.h:14
 msgid "Peek at underlying images"
-msgstr ""
+msgstr "İmajın temel bileşenlerine göz at"
 
 #: hacks/config/boxfit.xml.h:16
 msgid "Spacing"
@@ -1985,9 +1985,8 @@ msgid "Seeds"
 msgstr "Çekiderkler"
 
 #: hacks/config/coral.xml.h:14
-#, fuzzy
 msgid "Simulates coral growth, albeit somewhat slowly. Written by Frederick Roeber; 1997."
-msgstr "Mercan rengi büyümesini yavaş olmasına rağmen taklit et.Bu şekiller onu gerçek gibi yapamazlar. .Yazar Frederick Roeber."
+msgstr "Mercan rengi büyümesini yavaş olmasına rağmen taklit et.Bu şekiller onu gerçek gibi yapamazlar.Yazar Frederick Roeber."
 
 #: hacks/config/coral.xml.h:15 hacks/config/fireworkx.xml.h:12
 #: hacks/config/gflux.xml.h:17 hacks/config/glblur.xml.h:16
@@ -2547,7 +2546,7 @@ msgstr "DNA Simgesi"
 
 #: hacks/config/dnalogo.xml.h:2
 msgid "DNA Lounge 375 Eleventh Street San Francisco, CA 94107 http://www.dnalounge.com/ Written by Jamie Zawinski; 2001."
-msgstr ""
+msgstr "Son hamle"
 
 #: hacks/config/dnalogo.xml.h:3
 msgid "Frame Rate"
@@ -2568,7 +2567,7 @@ msgstr ""
 
 #: hacks/config/endgame.xml.h:2
 msgid "Endgame"
-msgstr ""
+msgstr "Patlayan havai fişek gösterisi. Aynı zamanda \"Fireworkx\", \"XFlame\" ve \"Pyro\" ekran koruyucularını gör. Yazar W.P. van Paassen"
 
 #: hacks/config/endgame.xml.h:6
 msgid "Low resolution chess pieces"
@@ -2652,7 +2651,7 @@ msgstr "Patlama"
 
 #: hacks/config/eruption.xml.h:4
 msgid "Exploding fireworks. See also the \"Fireworkx\", \"XFlame\" and \"Pyro\" screen savers. Written by W.P. van Paassen; 2003."
-msgstr ""
+msgstr "Ofset birleştir"
 
 #: hacks/config/eruption.xml.h:8 hacks/config/fluidballs.xml.h:8
 #: hacks/config/qix.xml.h:9 hacks/config/speedmine.xml.h:5
@@ -2725,9 +2724,8 @@ msgid "Helix 4"
 msgstr "Helis 4"
 
 #: hacks/config/extrusion.xml.h:8
-#, fuzzy
 msgid "Join offset"
-msgstr "Ofset birleştir"
+msgstr "Elyaf lamba"
 
 #: hacks/config/extrusion.xml.h:10 hacks/config/morph3d.xml.h:10
 #: hacks/config/polytopes.xml.h:18
@@ -2761,7 +2759,7 @@ msgstr "Döngüler"
 
 #: hacks/config/fadeplot.xml.h:2
 msgid "Draws what looks like a waving ribbon following a sinusoidal path. Written by Bas van Gaalen and Charles Vidal; 1997."
-msgstr ""
+msgstr "Vuruşlar arasındaki süre"
 
 #: hacks/config/fadeplot.xml.h:3
 msgid "FadePlot"
@@ -2774,7 +2772,7 @@ msgstr "Hokkabazlık çizimleri yapan baget-adamı. Yazar Tim Auckland."
 
 #: hacks/config/fiberlamp.xml.h:3
 msgid "Fiberlamp"
-msgstr ""
+msgstr "Yukarıya dönük kabuklar "
 
 #: hacks/config/fiberlamp.xml.h:4
 msgid "Fibers"
@@ -2790,7 +2788,7 @@ msgstr "Etkinlik"
 
 #: hacks/config/fireworkx.xml.h:3
 msgid "Exploding fireworks. See also the \"Eruption\", \"XFlame\" and \"Pyro\" screen savers. Written by Rony B Chandran; 2004."
-msgstr ""
+msgstr "Tekrarlayıcı fractallar. Yazar: Scott Draves"
 
 #: hacks/config/fireworkx.xml.h:4
 msgid "Fireworkx"
@@ -2867,7 +2865,7 @@ msgstr "Genişlik"
 
 #: hacks/config/flipscreen3d.xml.h:1
 msgid "FlipScreen3D"
-msgstr ""
+msgstr "Metni çevir"
 
 #: hacks/config/flipscreen3d.xml.h:3
 msgid "Grabs an image of the desktop, turns it into a GL texture map, and spins it around and deforms it in various ways. Written by Ben Buxton and Jamie Zawinski; 2001."
@@ -3046,7 +3044,7 @@ msgstr "Rasgele"
 
 #: hacks/config/flurry.xml.h:10
 msgid "This X11 port of the OSX screensaver of the same name draws a colourful star(fish)like flurry of particles. Original Mac version: http://homepage.mac.com/calumr Written by Calum Robinson and Tobias Sargeant; 2002."
-msgstr ""
+msgstr "Fractal ağaçları. Yazar Peter Baumung"
 
 #: hacks/config/flyingtoasters.xml.h:2
 #, no-c-format
@@ -3137,7 +3135,7 @@ msgstr "Turkuaz"
 
 #: hacks/config/fuzzyflakes.xml.h:5
 msgid "Falling colored snowflake/flower shapes. Written by Barry Dmytro; 2004."
-msgstr ""
+msgstr "Bulanıklığı gidermek"
 
 #: hacks/config/fuzzyflakes.xml.h:9
 msgid "FuzzyFlakes"
@@ -3194,7 +3192,7 @@ msgstr "Dişliler"
 
 #: hacks/config/gears.xml.h:13
 msgid "This draws sets of turning, interlocking gears, rotating in three dimensions. See also the \"Pinion\" and \"MoebiusGears\" screen savers. http://en.wikipedia.org/wiki/Involute_gear http://en.wikipedia.org/wiki/Epicyclic_gearing Written by Jamie Zawinski; 2007."
-msgstr ""
+msgstr "Hücre bölünmesi"
 
 #: hacks/config/gflux.xml.h:2 hacks/config/lavalite.xml.h:2
 msgid "10"
@@ -3239,7 +3237,7 @@ msgstr "Tel ağ"
 
 #: hacks/config/glblur.xml.h:1
 msgid "Blur smoothness"
-msgstr ""
+msgstr "Azami besin"
 
 #: hacks/config/glblur.xml.h:5
 msgid "GLBlur"
@@ -3247,7 +3245,7 @@ msgstr "GL Bulanıklaştırması"
 
 #: hacks/config/glblur.xml.h:17
 msgid "This draws a box and a few line segments, and generates a radial blur outward from it. This creates flowing field effects. This is done by rendering the scene into a small texture, then repeatedly rendering increasingly-enlarged and increasingly-transparent versions of that texture onto the frame buffer. As such, it's quite GPU-intensive: if you don't have a very good graphics card, it will hurt your machine bad. Written by Jamie Zawinski; 2002."
-msgstr ""
+msgstr "Asgari besin"
 
 #: hacks/config/glcells.xml.h:2
 msgid "15"
@@ -3586,7 +3584,7 @@ msgstr "Z açısal hızı"
 
 #: hacks/config/gltext.xml.h:1
 msgid "Always face front"
-msgstr ""
+msgstr "Her zaman ön yüz"
 
 #: hacks/config/gltext.xml.h:2
 msgid "Display date and time"
@@ -3607,7 +3605,7 @@ msgstr "GL Yazı"
 
 #: hacks/config/gltext.xml.h:18
 msgid "Spin all the way around"
-msgstr ""
+msgstr "Her yoldan döndür"
 
 #: hacks/config/goop.xml.h:1
 msgid "Additive colors (reflected light)"
