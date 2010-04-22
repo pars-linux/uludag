@@ -12,20 +12,20 @@ Not started yet:
 ----------------
 
  - Take care of pisi's needService/SystemReboot mechanism
- - Fix update repo timeout apply problem in settings dialog
  - Catch exceptions for trying to use different arch/distro repos
  - Fix Proxy Settings screen issues
 
 In progress:
 ------------
 
- - Merge changes from corporate's package-manager (%80)
  - Show different warnings for update type (%70)
  - Fix Qt-Only mode translations (%30)
 
 Completed:
 ----------
 
+ - Merge changes from corporate's package-manager
+ - Fix update repo timeout apply problem in settings dialog
  - Filtering support for update type (critical, security ..)
  - For Qt-only mode add create menubar
  - For Qt-only mode QUniqueApp support

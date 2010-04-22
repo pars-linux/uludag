@@ -79,7 +79,7 @@ class PTray:
     def updateInterval(self, min):
         # minutes to milliseconds conversion
         interval = min * 60 * 1000
-        if interval != self.interval:
+        if not interval == self.interval:
             self.interval = interval
             self.timer.stop()
             if interval:
