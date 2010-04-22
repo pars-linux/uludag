@@ -6,29 +6,30 @@
 # Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-10-30 06:17+0100\n"
-"PO-Revision-Date: 2009-10-31 21:40+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-22 16:52+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "YILDIZ KARDEŞLER"
+msgstr "Serdar Dalgıç"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "turkishprogram@xposta.com"
+msgstr "serdar@pardus.org.tr"
 
 #. i18n: file: src/kgoldrunnerui.rc:19
 #. i18n: ectx: Menu (editor)
@@ -46,11 +47,11 @@ msgstr "&Temalar"
 #. i18n: ectx: ToolBar (editToolbar)
 #: rc.cpp:11
 msgid "Edit Toolbar"
-msgstr "Düzenleme Araç Çubuğu"
+msgstr "Araç Çubuğunu Düzenle"
 
 #: gamedata/game_CM.txt:2
 msgid "Curse of the Mummy"
-msgstr ""
+msgstr "Mumyanın Laneti"
 
 #: gamedata/game_CM.txt:3
 msgid ""
@@ -65,10 +66,19 @@ msgid ""
 "ca>, with a few Egyptian ideas and the Red Sea level contributed by Ian "
 "Wadham."
 msgstr ""
+"Eski Mısır ve mumyalar hakkında kovboy filmi simgelerini çizen bu oyun "
+"seviyeleri "
+"en iyi Eski Mısır'ın Hazinesi temasında çalıştırılır.\n"
+"Mısırolojinizi geliştirmek için ipuçlarında her seviye ile ilgili "
+"Hollywood'dan değil de Wikipedia'dan çekilen gerçek eğlencelik bilgiler "
+"bulacaksınız.\n"
+"Bu Şampiyona oyunu Steve Mann<smann at cgl uwaterloo ca> tarafından "
+"düzenlenmiştir. Bir kaç Eski Mısır fikri ve Kızlı Deniz seviyesinde ise Ian "
+"Wadham katkıda bulunmuştur."
 
 #: gamedata/game_CM.txt:10
 msgid "The Giza Plateau"
-msgstr ""
+msgstr "Gize Vadisi"
 
 #: gamedata/game_CM.txt:11
 msgid ""
@@ -81,10 +91,17 @@ msgid ""
 "too many reappear on the right, it becomes difficult to escape at the end.  "
 "To get started, you will need to use the technique of digging while falling."
 msgstr ""
+"Kahire eteklerinde bulunan Gize Vadisi, Keops(Büyük Piramid), Kefren ve "
+"Mikerinos piramitlerinin, Büyük Sfenks ve irili ufaklı birkaç binanın da "
+"bulunduğu Gize Nekropol'ünün olduğu yerdir.\n"
+"\n"
+"Vadinin derinliklerine doğru ilerlerken, mumyaları öldürmekten sakının: eğer "
+"sağda çok fazlası yeniden doğarsa, sonda kaçmak zor olacaktır. Başlangıçta, "
+"düşerken kazma tekniğini kullanmanız gerekmektedir."
 
 #: gamedata/game_CM.txt:16
 msgid "The Pyramid of Djoser"
-msgstr ""
+msgstr "Basamaklı Piramit (Djoser Piramidi)"
 
 #: gamedata/game_CM.txt:17
 msgid ""
@@ -110,10 +127,26 @@ msgid ""
 "the pyramid - if there is more than one mummy on the bottom right before the "
 "escape ladder appears, you will be unable to reach the exit."
 msgstr ""
+"Djoser(Zoser) Piramidi, ya da basamaklı piramit (Eski Mısır dilinde "
+"kbhw-ntrw) Mısır'da, Memphis şehrinin kuzeybatısındaki Sakkara Nekropol'ünün "
+"arkeolojik kalıntılarındandır.\n"
+"\n"
+"Bu bölümü bitirmek için adım adım ilerlemek önemlidir: Önce (aşağıdan) "
+"ikinci seviyenin solundaki mumyayı serbest bırakın, ki düşüp zemindeki gizli "
+"çıkıtı doldursun.\n"
+"\n"
+"Sonra, ikinci seviyenin sağına girin ve mumyanın üzerinden sırığa doğru "
+"ilerleyin, ve ortanın solundaki kiremiti kazdığınızdan emin olup, ortadaki "
+"hazine parçasını alın.\n"
+"\n"
+"Üçüncü seviyedeki mumya biraz sorunludur çünkü bir parça hazine alıp onu "
+"taşıyacaktır. Şanslıysanız mumya bir yerde hazinesini terk edebilir, ama "
+"yine de sağdaki kazılabilir bir kiremidi düzgün zamanlamayla kullanarak "
+"kıstırabilirsiniz."
 
 #: gamedata/game_CM.txt:28
 msgid "Pharaoh's Barge"
-msgstr ""
+msgstr "Firavun'un Mavnası"
 
 #: gamedata/game_CM.txt:29
 msgid ""
@@ -129,10 +162,21 @@ msgid ""
 "This is almost a simple level: good treasure and not too many mummies.  But "
 "your task is to wrest the treasure they carry."
 msgstr ""
+"Khufu gemisi, M.Ö. 2500 civarında Büyük Gize Piramidinin ayaklarındaki Gize "
+"piramid kompleksinin içinde bir çukura girmiş, Eski Mısır'dan günümüze kadar "
+"yapısı bozulmamış normal büyüklükte bir gemidir.\n"
+"\n"
+"İlk çağdan kalmış en eski, en büyük ve en iyi korunmuş gemilerden biridir. "
+"Boydan boya 43.6 m'dir. Yaşına rağmen, bugün suya konulsa yine suda "
+"yüzebilir.\n"
+"\n"
+"Bu bölüm hemen hemen daha kolay bir bölümdür: iyi hazine ve çok da fazla "
+"olmayan mumyalar. Ama sizin göreviniz mumyaların taşıdığı hazinelere el "
+"koymaktır."
 
 #: gamedata/game_CM.txt:36
 msgid "Pyramid Puzzles"
-msgstr ""
+msgstr "Piramit Bulmacaları"
 
 #: gamedata/game_CM.txt:37
 msgid ""
@@ -176,7 +220,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:54
 msgid "Three Pyramids"
-msgstr ""
+msgstr "Üç Piramitler"
 
 #: gamedata/game_CM.txt:55
 msgid ""
@@ -191,7 +235,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:60
 msgid "Tura Caves"
-msgstr ""
+msgstr "Tura Mağaraları"
 
 #: gamedata/game_CM.txt:61
 msgid ""
@@ -218,7 +262,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:68
 msgid "Pyramid Crawl"
-msgstr ""
+msgstr "Piramitlerde Emekleme"
 
 #: gamedata/game_CM.txt:69
 msgid ""
@@ -231,7 +275,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:74
 msgid "The Great Sphinx"
-msgstr ""
+msgstr "Büyük Sfenks"
 
 #: gamedata/game_CM.txt:75
 msgid ""
@@ -269,7 +313,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:88
 msgid "Ankh"
-msgstr ""
+msgstr "Ankh"
 
 #: gamedata/game_CM.txt:89
 msgid ""
@@ -282,7 +326,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:94 gamedata/game_plwv.txt:53
 msgid "Pharaoh's Tomb"
-msgstr ""
+msgstr "Firavun'un Mezarı"
 
 #: gamedata/game_CM.txt:95
 msgid ""
@@ -304,7 +348,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:102
 msgid "Cat"
-msgstr ""
+msgstr "Kedi"
 
 #: gamedata/game_CM.txt:103
 msgid ""
@@ -323,7 +367,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:110
 msgid "Pyramid Power"
-msgstr ""
+msgstr "Piramit Gücü"
 
 #: gamedata/game_CM.txt:111
 msgid ""
@@ -344,7 +388,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:118
 msgid "Eye of Horus"
-msgstr ""
+msgstr "Horus'un Gözü"
 
 #: gamedata/game_CM.txt:119
 msgid ""
@@ -363,7 +407,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:124
 msgid "Inverted Pyramid"
-msgstr ""
+msgstr "Ters Piramit"
 
 #: gamedata/game_CM.txt:125
 msgid ""
@@ -382,7 +426,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:132
 msgid "Anubis"
-msgstr ""
+msgstr "Anubis"
 
 #: gamedata/game_CM.txt:133
 msgid ""
@@ -406,7 +450,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:140
 msgid "Pyramid of Treasure"
-msgstr ""
+msgstr "Hazine Piramidi"
 
 #: gamedata/game_CM.txt:141
 msgid ""
@@ -419,7 +463,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:146
 msgid "Sarcophagus"
-msgstr ""
+msgstr "Lahit"
 
 #: gamedata/game_CM.txt:147
 msgid ""
@@ -435,7 +479,7 @@ msgstr ""
 
 #: gamedata/game_CM.txt:152
 msgid "The Parting of the Red Sea"
-msgstr ""
+msgstr "Kızıl Deniz'in İkiye Ayrılması"
 
 #: gamedata/game_CM.txt:153
 msgid ""
@@ -850,7 +894,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:2
 msgid "Mazes"
-msgstr ""
+msgstr "Labirentler"
 
 #: gamedata/game_MAZ.txt:3
 msgid ""
@@ -866,7 +910,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:8
 msgid "Dopey"
-msgstr ""
+msgstr "Kafası güzel"
 
 #: gamedata/game_MAZ.txt:9
 msgid ""
@@ -886,7 +930,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:16
 msgid "Doc"
-msgstr ""
+msgstr "Belge"
 
 #: gamedata/game_MAZ.txt:17
 msgid "A few tricks to figure out how to get the gold, but nothing too hard."
@@ -894,7 +938,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:20
 msgid "Grumpy"
-msgstr ""
+msgstr "Hırçın"
 
 #: gamedata/game_MAZ.txt:21
 msgid "Visually confusing, but otherwise a simple maze."
@@ -902,7 +946,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:24
 msgid "Sneezy"
-msgstr ""
+msgstr "Hapşırıklı"
 
 #: gamedata/game_MAZ.txt:25
 msgid ""
@@ -917,7 +961,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:28
 msgid "Bashful"
-msgstr ""
+msgstr "Utangaç"
 
 #: gamedata/game_MAZ.txt:29
 msgid ""
@@ -929,7 +973,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:34
 msgid "Happy"
-msgstr ""
+msgstr "Mutlu"
 
 #: gamedata/game_MAZ.txt:35
 msgid ""
@@ -942,7 +986,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:38
 msgid "Glorfindel"
-msgstr ""
+msgstr "Glorfindel"
 
 #: gamedata/game_MAZ.txt:39
 msgid ""
@@ -954,7 +998,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:42
 msgid "Hreidmar"
-msgstr ""
+msgstr "Hreidmar"
 
 #: gamedata/game_MAZ.txt:43
 msgid ""
@@ -969,7 +1013,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:46
 msgid "Ori"
-msgstr ""
+msgstr "Ori"
 
 #: gamedata/game_MAZ.txt:47
 msgid ""
@@ -979,7 +1023,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:50
 msgid "Nori"
-msgstr ""
+msgstr "Nori"
 
 #: gamedata/game_MAZ.txt:51
 msgid ""
@@ -991,7 +1035,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:54
 msgid "Dori"
-msgstr ""
+msgstr "Dori"
 
 #: gamedata/game_MAZ.txt:55
 msgid ""
@@ -1001,7 +1045,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:58
 msgid "Bombur"
-msgstr ""
+msgstr "Bombur"
 
 #: gamedata/game_MAZ.txt:59
 msgid ""
@@ -1015,7 +1059,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:62
 msgid "Luthien"
-msgstr ""
+msgstr "Luthien"
 
 #: gamedata/game_MAZ.txt:63
 msgid ""
@@ -1027,7 +1071,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:66
 msgid "Bofur"
-msgstr ""
+msgstr "Bofur"
 
 #: gamedata/game_MAZ.txt:67
 msgid ""
@@ -1038,7 +1082,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:70
 msgid "Bifur"
-msgstr ""
+msgstr "Bifur"
 
 #: gamedata/game_MAZ.txt:71
 msgid ""
@@ -1054,7 +1098,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:76
 msgid "Gloin"
-msgstr ""
+msgstr "Gloin"
 
 #: gamedata/game_MAZ.txt:77
 msgid ""
@@ -1066,7 +1110,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:80
 msgid "Oin"
-msgstr ""
+msgstr "Oin"
 
 #: gamedata/game_MAZ.txt:81
 msgid ""
@@ -1076,7 +1120,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:84
 msgid "Kili"
-msgstr ""
+msgstr "Kili"
 
 #: gamedata/game_MAZ.txt:85
 msgid ""
@@ -1088,7 +1132,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:88
 msgid "Fili"
-msgstr ""
+msgstr "Fili"
 
 #: gamedata/game_MAZ.txt:89
 msgid ""
@@ -1108,7 +1152,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:94
 msgid "Dwalin"
-msgstr ""
+msgstr "Dwalin"
 
 #: gamedata/game_MAZ.txt:95
 msgid ""
@@ -1119,7 +1163,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:98 gamedata/game_MAZ.txt:184
 msgid "Durin"
-msgstr ""
+msgstr "Durin"
 
 #: gamedata/game_MAZ.txt:99
 msgid ""
@@ -1130,7 +1174,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:102
 msgid "Dain"
-msgstr ""
+msgstr "Dain"
 
 #: gamedata/game_MAZ.txt:103
 msgid ""
@@ -1149,7 +1193,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:110
 msgid "Duergar "
-msgstr ""
+msgstr "Duergar "
 
 #: gamedata/game_MAZ.txt:111
 msgid ""
@@ -1162,7 +1206,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:114
 msgid "Balin"
-msgstr ""
+msgstr "Balin"
 
 #: gamedata/game_MAZ.txt:115
 msgid ""
@@ -1178,7 +1222,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:120
 msgid "Gimli"
-msgstr ""
+msgstr "Gimli"
 
 #: gamedata/game_MAZ.txt:121
 msgid ""
@@ -1198,7 +1242,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:128
 msgid "Brokkr"
-msgstr ""
+msgstr "Brokkr"
 
 #: gamedata/game_MAZ.txt:129
 msgid ""
@@ -1212,7 +1256,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:132 gamedata/game_MAZ.txt:168
 msgid "Thrain"
-msgstr ""
+msgstr "Thrain"
 
 #: gamedata/game_MAZ.txt:133
 msgid ""
@@ -1225,7 +1269,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:136
 msgid "Thorin"
-msgstr ""
+msgstr "Thorin"
 
 #: gamedata/game_MAZ.txt:137
 msgid ""
@@ -1248,7 +1292,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:144
 msgid "Telchar"
-msgstr ""
+msgstr "Telchar"
 
 #: gamedata/game_MAZ.txt:145
 msgid ""
@@ -1260,7 +1304,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:148
 msgid "Dvergar"
-msgstr ""
+msgstr "Dvergar"
 
 #: gamedata/game_MAZ.txt:149
 msgid ""
@@ -1278,7 +1322,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:154
 msgid "Thingol"
-msgstr ""
+msgstr "Thingol"
 
 #: gamedata/game_MAZ.txt:155
 msgid ""
@@ -1300,7 +1344,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:162
 msgid "Dvalin"
-msgstr ""
+msgstr "Dvalin"
 
 #: gamedata/game_MAZ.txt:163
 msgid ""
@@ -1330,7 +1374,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:172
 msgid "Rumpelstiltskin"
-msgstr ""
+msgstr "Rumpelstiltskin"
 
 #: gamedata/game_MAZ.txt:173
 msgid ""
@@ -1348,7 +1392,7 @@ msgstr ""
 
 #: gamedata/game_MAZ.txt:178
 msgid "Thror"
-msgstr ""
+msgstr "Thror"
 
 #: gamedata/game_MAZ.txt:179
 msgid ""
@@ -1434,7 +1478,7 @@ msgstr "Tuzakları Kontrol Et"
 
 #: gamedata/game_plws.txt:28
 msgid "Take It Easy!"
-msgstr ""
+msgstr "Takma kafana!"
 
 #: gamedata/game_plws.txt:31
 msgid "Fall on a Fortune"
