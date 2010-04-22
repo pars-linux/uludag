@@ -197,13 +197,16 @@ class Iface(Singleton):
             pkg = self.pdb.get_package(name)
         else:
             pkg = self.idb.get_package(name)
-
         if self.source == self.REPO and self.idb.has_package(pkg.name):
             pkg.type = self.getUpdateType(pkg)
         else:
             pkg.type = None
-
         return pkg
+
+    def getInstalledVersion(self, name):
+        if self.idb.has_package(name):
+            return self.idb.get_package(name).version
+        return ''
 
     def getDepends(self, packages):
         base = pisi.api.get_base_upgrade_order(packages)
