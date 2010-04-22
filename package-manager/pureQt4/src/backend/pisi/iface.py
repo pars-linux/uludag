@@ -267,11 +267,15 @@ class Iface(Singleton):
         print self.link.listRunning()
         return False
 
-    def search(self, terms, packages=None):
+    def search(self, terms, packages=None, tryOnce = False):
         try:
-            if self.source == self.REPO:
+            if self.source == self.REPO and packages:
                 return self.pdb.search_in_packages(packages, terms)
             else:
                 return self.idb.search_package(terms)
-        except Exception:
+        except IOError:
+            if not tryOnce:
+                self.invalidate_db_caches()
+                return self.search(terms, packages, tryOnce = True)
             return []
+
