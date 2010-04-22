@@ -83,21 +83,23 @@ class GeneralSettings(SettingsTab):
         self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
-        if self.settings.onlyGuiApp.isChecked() != self.config.showOnlyGuiApp():
+        if not self.settings.onlyGuiApp.isChecked() == self.config.showOnlyGuiApp():
             self.config.setShowOnlyGuiApp(self.settings.onlyGuiApp.isChecked())
             self.settings.emit(SIGNAL("packagesChanged()"))
 
-        if self.settings.showComponents.isChecked() != self.config.showComponents():
+        if not self.settings.showComponents.isChecked() == self.config.showComponents():
             self.config.setShowComponents(self.settings.showComponents.isChecked())
             self.settings.emit(SIGNAL("packageViewChanged()"))
 
-        if self.settings.systemTray.isChecked() != self.config.systemTray():
+        if not self.settings.systemTray.isChecked() == self.config.systemTray() or \
+           not self.settings.intervalSpin.value() == self.config.updateCheckInterval() or \
+           not self.settings.intervalCheck.isChecked() == self.config.updateCheck():
             self.config.setSystemTray(self.settings.systemTray.isChecked())
+            self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
+            self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
             self.settings.emit(SIGNAL("traySettingChanged()"))
 
         self.config.setInstallUpdatesAutomatically(self.settings.installUpdates.isChecked())
-        self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
-        self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
 
         if self.settings.useBandwidthLimit.isChecked():
             self.iface.setConfig("general", "bandwidth_limit", str(self.settings.bandwidthSpin.value()))
