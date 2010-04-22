@@ -50,17 +50,18 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
         self.boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
         self.tagFont = QtGui.QFont(self.font, 7, QtGui.QFont.Normal)
-        self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
 
-        fontMetric = QtGui.QFontMetrics(self.boldFont)
+        self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
+        self.boldFontFM = QtGui.QFontMetrics(self.boldFont)
 
         self._titles = {'description': i18n("Description:"),
                         'website'    : i18n("Website:"),
                         'release'    : i18n("Release:"),
                         'repository' : i18n("Repository:"),
-                        'size'       : i18n("Package Size:")}
+                        'size'       : i18n("Package Size:"),
+                        'installVers': i18n('Installed Version:')}
 
-        self.baseWidth = fontMetric.width(max(self._titles.values(), key=len)) + ICON_SIZE
+        self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
         self.parent = parent.packageList
 
     def paint(self, painter, option, index):
@@ -106,6 +107,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         size = index.model().data(index, SizeRole)
         homepage = index.model().data(index, HomepageRole)
         ptype = str(index.model().data(index, TypeRole).toString())
+        installedVersion = str(index.model().data(index, InstalledVersionRole).toString())
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
@@ -122,10 +124,11 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setFont(self.boldFont)
         p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
 
+        tagWidth = 0
+
         if self.parent.showComponents:
             component = str(index.model().data(index, ComponentRole).toString())
-            fontMetric = QtGui.QFontMetrics(self.boldFont)
-            widthOfTitle = fontMetric.width(title) + 6 + left + textInner
+            widthOfTitle = self.boldFontFM.width(title) + 6 + left + textInner
 
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, component)
@@ -145,10 +148,11 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.setPen(WHITE)
             p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, ptype)
             p.setPen(foregroundColor)
+            tagWidth = rect.width()
 
         # Package Summary
         p.setFont(self.normalFont)
-        elided_summary = QtGui.QFontMetrics(self.normalFont).elidedText(summary, Qt.ElideRight, width - textInner)
+        elided_summary = QtGui.QFontMetrics(self.normalFont).elidedText(summary, Qt.ElideRight, width - textInner - tagWidth - 22)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, elided_summary)
 
         if self.rowAnimator.currentRow() == index.row():
@@ -188,6 +192,16 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.setFont(self.normalDetailFont)
             rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, version.toString())
             p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, version.toString())
+
+            if not installedVersion == '':
+                position += rect.height()
+
+                p.setFont(self.boldDetailFont)
+                p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['installVers'])
+
+                p.setFont(self.normalDetailFont)
+                rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, installedVersion)
+                p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, installedVersion)
 
             # Package Detail Repository
             position += rect.height()

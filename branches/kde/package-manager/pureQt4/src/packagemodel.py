@@ -22,12 +22,14 @@ from pmutils import humanReadableSize
 from context import KIconLoader
 from context import _time
 
+from statemanager import StateManager
+
 (SummaryRole, DescriptionRole, VersionRole, GroupRole, \
     RepositoryRole, HomepageRole, SizeRole, TypeRole, \
-    ComponentRole) =\
+    ComponentRole, InstalledVersionRole) =\
 (Qt.UserRole, Qt.UserRole+1, Qt.UserRole+2, Qt.UserRole+3, \
     Qt.UserRole+4, Qt.UserRole+5, Qt.UserRole+6, Qt.UserRole+7, \
-    Qt.UserRole+8)
+    Qt.UserRole+8, Qt.UserRole+9)
 
 _variant = QVariant()
 _unknown_icons = []
@@ -41,6 +43,7 @@ class PackageModel(QAbstractTableModel):
         self.resetCachedInfos()
         self.cached_package = None
         self.packages = []
+        self.state = parent.state.state
 
     def rowCount(self, index=QModelIndex()):
         return len(self.packages)
@@ -73,6 +76,10 @@ class PackageModel(QAbstractTableModel):
             return QVariant(unicode(humanReadableSize(self.iface.getPackageSize(package.name))))
         elif role == VersionRole:
             return QVariant(unicode(package.version))
+        elif role == InstalledVersionRole:
+            if self.state == StateManager.UPGRADE:
+                return QVariant(unicode(self.iface.getInstalledVersion(package.name)))
+            return _variant
         elif role == RepositoryRole:
             return QVariant(unicode(self.iface.getPackageRepository(package.name)))
         elif role == HomepageRole:
