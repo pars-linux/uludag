@@ -60,8 +60,14 @@ class PMConfig(Config):
     def updateCheckInterval(self):
         return self.getNumValue("UpdateCheckInterval")
 
+    def hideTrayIfThereIsNoUpdate(self):
+        return self.getBoolValue("HideTrayIfThereIsNoUpdate")
+
     def systemTray(self):
         return self.getBoolValue("SystemTray")
+
+    def setHideTrayIfThereIsNoUpdate(self, enabled):
+        self.setValue("HideTrayIfThereIsNoUpdate", enabled)
 
     def setSystemTray(self, enabled):
         self.setValue("SystemTray", enabled)

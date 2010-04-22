@@ -14,6 +14,8 @@ Not started yet:
  - Take care of pisi's needService/SystemReboot mechanism
  - Catch exceptions for trying to use different arch/distro repos
  - Fix Proxy Settings screen issues
+ - #7785 Add support for setting cache_dir
+ - #7224 Add support for selecting repo for searching
 
 In progress:
 ------------
@@ -24,6 +26,7 @@ In progress:
 Completed:
 ----------
 
+ - #7217 Add Hiding support for Tray Icon if there is no updates
  - Merge changes from corporate's package-manager
  - Fix update repo timeout apply problem in settings dialog
  - Filtering support for update type (critical, security ..)

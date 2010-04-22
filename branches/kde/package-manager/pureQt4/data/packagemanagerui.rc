@@ -13,6 +13,7 @@
       <Action name="showInstallAction" />
       <Action name="showRemoveAction" />
       <Action name="showUpgradeAction" />
+      <Action name="updateRepoAction" />
       <ActionList name="dynamicActionlist" />
   </ToolBar>
 </gui>
