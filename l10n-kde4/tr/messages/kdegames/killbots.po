@@ -2,23 +2,24 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: killbots\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-05-08 22:31+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-22 12:40+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: coordinator.cpp:119
 msgid "Round:"
-msgstr "Aşama:"
+msgstr "Tur:"
 
 #: coordinator.cpp:124
 msgid "Score:"
@@ -34,7 +35,7 @@ msgstr "Enerji:"
 
 #: coordinator.cpp:471
 msgid "Round complete."
-msgstr "Aşama tamamlandı."
+msgstr "Tur tamamlandı."
 
 #: coordinator.cpp:477
 msgid ""
@@ -54,7 +55,7 @@ msgstr "Oyun bitti."
 
 #: rulesetselector.cpp:50
 msgid "A list of the Killbots rulesets installed on this computer."
-msgstr "Bu bilgisayarda yüklü olan Killbots kurallar dizilerinin listesi."
+msgstr "Bu bilgisayarda yüklü olan Killbots kural dizilerinin listesi."
 
 #: rulesetselector.cpp:52
 msgid "Game Type Details"
@@ -62,7 +63,7 @@ msgstr "Oyun Tipi Ayrıntıları"
 
 #: rulesetselector.cpp:53
 msgid "Lists information on the currently selected game type."
-msgstr ""
+msgstr "Mevcut seçili oyun tipi hakkındaki bilgileri listeler."
 
 #: rulesetselector.cpp:55
 msgid "Author:"
@@ -82,13 +83,16 @@ msgstr "Ayrıntılar..."
 
 #: rulesetselector.cpp:78
 msgid "Show the detailed parameters of the selected game type"
-msgstr ""
+msgstr "Seçili oyun tipinin detaylı parametrelerini göster"
 
 #: rulesetselector.cpp:79
 msgid ""
 "Opens a dialog listing the values of all internal parameters for the "
 "selected game type."
 msgstr ""
+"Seçili oyun tipi için bütün iç parametrelerin değerlerini listeleyen bir "
+"diyalog "
+"penceresi açar."
 
 #: main.cpp:31
 msgid "Killbots"
@@ -96,7 +100,7 @@ msgstr "Killbots"
 
 #: main.cpp:32
 msgid "A KDE game of killer robots and teleportation."
-msgstr "Öldürücü robotlar ve ışınlanma oyunu"
+msgstr "Bir KDE katil robotlar ve ışınlanma oyunu."
 
 #: main.cpp:34
 msgid "© 2006-2009, Parker Coates"
@@ -124,7 +128,7 @@ msgstr ""
 
 #: optionspage.cpp:35
 msgid "Nothing"
-msgstr "Hiçbirşey"
+msgstr "Hiçbir şey"
 
 #: optionspage.cpp:36
 msgid "Step"
@@ -148,7 +152,7 @@ msgstr "Işınla (Mümkünse Güvenli Şekilde)"
 
 #: optionspage.cpp:41 mainwindow.cpp:299
 msgid "Wait Out Round"
-msgstr "Bu Aşamada Bekle"
+msgstr "Bu Turda Bekle"
 
 #: optionspage.cpp:55
 msgid "Slow"
@@ -210,7 +214,7 @@ msgstr "Hayır"
 #: rulesetdetailsdialog.cpp:85
 #, kde-format
 msgid "Details of %1 Game Type"
-msgstr ""
+msgstr "%1 Oyun Tipinin Detayları"
 
 #: mainwindow.cpp:74
 msgid ""
@@ -218,6 +222,11 @@ msgid ""
 "current state of the game grid and allows one to control the hero using the "
 "mouse. It also displays certain statistics about the game in progress."
 msgstr ""
+"Burası Killbots ile etkileşime geçmek için kullanılan ana oyun alanıdır. "
+"Oyun "
+"ızgarasının mevcut durumunu gösterir ve fareyi kullanarak kahramanı kontrol "
+"eder. "
+"Aynı zamanda oynanmakta olan oyun hakkında bir takım istatistikler gösterir."
 
 #: mainwindow.cpp:116
 msgid "General"
@@ -241,12 +250,12 @@ msgstr "Görünüm"
 
 #: mainwindow.cpp:128
 msgid "Select a graphical theme"
-msgstr "Bir grafik tema seçin"
+msgstr "Bir grafik teması seçin"
 
 #: mainwindow.cpp:173
 msgid ""
 "A new game type has been selected, but there is already a game in progress."
-msgstr ""
+msgstr "Yeni bir oyun tipi seçildi, ama oynanmakta olan bir oyun zaten mevcut."
 
 #: mainwindow.cpp:174
 msgid "Game Type Changed"
@@ -262,7 +271,7 @@ msgstr "Yeni bir Oyun Başlat"
 
 #: mainwindow.cpp:191
 msgid "Round"
-msgstr "Aşama"
+msgstr "Tur"
 
 #: mainwindow.cpp:269
 msgctxt ""
@@ -284,11 +293,11 @@ msgstr "R"
 
 #: mainwindow.cpp:279
 msgid "Teleport to a random location"
-msgstr ""
+msgstr "Herhangi bir konuma ışınla"
 
 #: mainwindow.cpp:284
 msgid "Teleport, Safely If Possible"
-msgstr "Işınla, Mümkünse Güvenli Şekilde"
+msgstr "Işınla, Mümkünse Güvenli Bir Şekilde"
 
 #: mainwindow.cpp:285
 msgctxt ""
@@ -300,10 +309,12 @@ msgstr "Boşluk"
 #: mainwindow.cpp:287
 msgid "Teleport safely if that action is enabled, otherwise teleport randomly"
 msgstr ""
+"Bu hareket mümkünse güvenli bir şekilde ışınla, aksi taktirde herhangi bir "
+"yere ışınla"
 
 #: mainwindow.cpp:291
 msgid "Vaporizer"
-msgstr "Püskürgeç"
+msgstr "Buharlaştırıcı"
 
 #: mainwindow.cpp:292
 msgctxt ""
@@ -314,7 +325,7 @@ msgstr "F"
 
 #: mainwindow.cpp:294
 msgid "Destroy all enemies in neighboring cells"
-msgstr ""
+msgstr "Komşu hücrelerdeki bütün düşmanları yok et"
 
 #: mainwindow.cpp:300
 msgctxt ""
@@ -325,7 +336,7 @@ msgstr "V"
 
 #: mainwindow.cpp:302
 msgid "Risk remaining in place until the end of the round for bonuses"
-msgstr ""
+msgstr "Ek puan almak için turun sonuna dek mevcut konumunda kalmayı risk et"
 
 #: mainwindow.cpp:307
 msgid "Move Up and Left"
@@ -373,7 +384,7 @@ msgstr "A"
 
 #: mainwindow.cpp:331
 msgid "Stand Still"
-msgstr ""
+msgstr "Yerinde Dur"
 
 #: mainwindow.cpp:332
 msgctxt ""
@@ -406,7 +417,7 @@ msgstr "Z"
 
 #: mainwindow.cpp:349
 msgid "Move Down"
-msgstr "Aşagı Taşı"
+msgstr "Aşağı Taşı"
 
 #: mainwindow.cpp:350
 msgctxt ""
@@ -430,7 +441,7 @@ msgstr "C"
 #. i18n: ectx: tooltip, entry (MiddleClickAction), group (General)
 #: rc.cpp:3 rc.cpp:215
 msgid "The action performed on a middle-click"
-msgstr "Fare orta tuş tıklaması ile yapılacak eylem"
+msgstr "Fare orta tuş tıklaması ile yapılan eylem"
 
 #. i18n: file: killbots.kcfg:21
 #. i18n: ectx: whatsthis, entry (MiddleClickAction), group (General)
@@ -441,18 +452,22 @@ msgid ""
 "left- and right-clicking simultaneously or by left-clicking while holding "
 "the control key."
 msgstr ""
+"Ana oyun alanında farenin orta tuşuna tıklamayla yapılan eylemi seçer. Eğer "
+"orta tuşa tıklamak mümkün değilse, bu eylem farenin aynı anda sağ ve sol "
+"tuşlarına tıklamakla ya da CTRL tuşu basılı iken sol fare tuşuna tıklamakla "
+"sağlanabilir."
 
 #. i18n: file: killbots.kcfg:26
 #. i18n: ectx: tooltip, entry (RightClickAction), group (General)
 #: rc.cpp:9 rc.cpp:221
 msgid "The action performed on a right-click"
-msgstr "Sağ tıklama ile yapılacak eylem"
+msgstr "Sağ tıklama ile yapılan eylem"
 
 #. i18n: file: killbots.kcfg:27
 #. i18n: ectx: whatsthis, entry (RightClickAction), group (General)
 #: rc.cpp:12 rc.cpp:224
 msgid "Selects the action performed when right-clicking on the main game area."
-msgstr ""
+msgstr "Ana oyun alanında fareye sağ tıklamayla yapılan eylemi seçer."
 
 #. i18n: file: killbots.kcfg:33
 #. i18n: ectx: tooltip, entry (AnimationSpeed), group (General)
@@ -464,7 +479,7 @@ msgstr "Canlandırmaların gösterileceği hız"
 #. i18n: ectx: whatsthis, entry (AnimationSpeed), group (General)
 #: rc.cpp:18 rc.cpp:230
 msgid "Adjusts the speed at which the in game animations are displayed."
-msgstr "Oyunun canlandırmalarının gösterileceği hız."
+msgstr "Oyunun canlandırmalarının gösterileceği hızı ayarlar."
 
 #. i18n: file: killbots.kcfg:38
 #. i18n: ectx: tooltip, entry (PreventUnsafeMoves), group (General)
@@ -479,6 +494,9 @@ msgid ""
 "If checked, the game will ignore any move that would result in the immediate "
 "death of the hero (other than random teleports and waiting out the round)."
 msgstr ""
+"Seçildiği zaman, kahramanın (turun sonunu beklemek ya da rastgele "
+"ışınlanmalar dışında) "
+"ani ölümü ile sonuçlanabilecek herhangi bir adımı oyun yok sayacaktır."
 
 #. i18n: file: killbots.kcfg:43
 #. i18n: ectx: tooltip, entry (Ruleset), group (General)
@@ -502,7 +520,7 @@ msgstr "Seçilen oyun teması"
 #. i18n: ectx: whatsthis, entry (Theme), group (General)
 #: rc.cpp:36 rc.cpp:248
 msgid "Selects the theme used to display all in game elements."
-msgstr "Oyun ögeleri gösterilirken kullanılacak temayı seçer."
+msgstr "Oyunun elemanlarının tamamı gösterilirken kullanılacak temayı seçer."
 
 #. i18n: file: killbotsui.rc:12
 #. i18n: ectx: Menu (moveMenu)
@@ -520,37 +538,37 @@ msgstr "Ana Araç Çubuğu"
 #. i18n: ectx: label, entry (Rows), group (KillbotsRuleset)
 #: rc.cpp:45 rc.cpp:134
 msgid "Number of rows in game grid"
-msgstr ""
+msgstr "Oyun ızgarasındaki satır sayısı"
 
 #. i18n: file: rulesetbase.kcfg:24
 #. i18n: ectx: label, entry (Columns), group (KillbotsRuleset)
 #: rc.cpp:48 rc.cpp:137
 msgid "Number of columns in game grid"
-msgstr ""
+msgstr "Oyun ızgarasındaki sütun sayısı"
 
 #. i18n: file: rulesetbase.kcfg:28
 #. i18n: ectx: label, entry (EnemiesAtGameStart), group (KillbotsRuleset)
 #: rc.cpp:51 rc.cpp:140
 msgid "Number of regular enemies in first round"
-msgstr ""
+msgstr "İlk turdaki normal düşman sayısı"
 
 #. i18n: file: rulesetbase.kcfg:32
 #. i18n: ectx: label, entry (EnemiesAddedEachRound), group (KillbotsRuleset)
 #: rc.cpp:54 rc.cpp:143
 msgid "Number of regular enemies added in each new round"
-msgstr ""
+msgstr "Her yeni turda eklenen normal düşman sayısı"
 
 #. i18n: file: rulesetbase.kcfg:36
 #. i18n: ectx: label, entry (FastEnemiesAtGameStart), group (KillbotsRuleset)
 #: rc.cpp:57 rc.cpp:146
 msgid "Number of fast enemies in first round"
-msgstr ""
+msgstr "İlk turdaki hızlı düşman sayısı"
 
 #. i18n: file: rulesetbase.kcfg:40
 #. i18n: ectx: label, entry (FastEnemiesAddedEachRound), group (KillbotsRuleset)
 #: rc.cpp:60 rc.cpp:149
 msgid "Number of fast enemies added in each new round"
-msgstr ""
+msgstr "Her yeni turda eklenen hızlı düşman sayısı"
 
 #. i18n: file: rulesetbase.kcfg:44
 #. i18n: ectx: label, entry (FastEnemiesArePatient), group (KillbotsRuleset)
@@ -558,136 +576,139 @@ msgstr ""
 msgid ""
 "Fast enemies will skip their extra turn to avoid collisions with other robots"
 msgstr ""
+"Hızlı düşmanlar, diğer robotlarla çarpışmalarını engellemek için ekstra tur "
+"haklarından feragat edebilirler"
 
 #. i18n: file: rulesetbase.kcfg:48
 #. i18n: ectx: label, entry (EnergyEnabled), group (KillbotsRuleset)
 #: rc.cpp:66 rc.cpp:155
 msgid "Player can accumulate energy"
-msgstr ""
+msgstr "Oyuncu enerji biriktirebilir"
 
 #. i18n: file: rulesetbase.kcfg:53
 #. i18n: ectx: label, entry (EnergyAtGameStart), group (KillbotsRuleset)
 #: rc.cpp:69 rc.cpp:158
 msgid "Energy at start of first round"
-msgstr ""
+msgstr "İlk turun başındaki enerji"
 
 #. i18n: file: rulesetbase.kcfg:57
 #. i18n: ectx: label, entry (EnergyAddedEachRound), group (KillbotsRuleset)
 #: rc.cpp:72 rc.cpp:161
 msgid "Energy awarded for completing a round"
-msgstr ""
+msgstr "Tamamlanan her tur için enerji ödülü"
 
 #. i18n: file: rulesetbase.kcfg:62
 #. i18n: ectx: label, entry (MaxEnergyAtGameStart), group (KillbotsRuleset)
 #: rc.cpp:75 rc.cpp:164
 msgid "Maximum energy cap in first round"
-msgstr ""
+msgstr "İlk turda maksimum enerji limiti"
 
 #. i18n: file: rulesetbase.kcfg:66
 #. i18n: ectx: label, entry (MaxEnergyAddedEachRound), group (KillbotsRuleset)
 #: rc.cpp:78 rc.cpp:167
 msgid "Increase in maximum energy cap for each new round"
-msgstr ""
+msgstr "Her yeni turda maksimum enerji limitindeki artış"
 
 #. i18n: file: rulesetbase.kcfg:70
 #. i18n: ectx: label, entry (SafeTeleportEnabled), group (KillbotsRuleset)
 #: rc.cpp:81 rc.cpp:170
 msgid "Player can perform safe teleports"
-msgstr ""
+msgstr "Oyuncu güvenli ışınlamalar yapabilir"
 
 #. i18n: file: rulesetbase.kcfg:75
 #. i18n: ectx: label, entry (CostOfSafeTeleport), group (KillbotsRuleset)
 #: rc.cpp:84 rc.cpp:173
 msgid "The cost of performing a safe teleport"
-msgstr ""
+msgstr "Güvenli ışınlama yapmanın bedeli"
 
 #. i18n: file: rulesetbase.kcfg:79
 #. i18n: ectx: label, entry (VaporizerEnabled), group (KillbotsRuleset)
 #: rc.cpp:87 rc.cpp:176
 msgid "Player can use vaporizer"
-msgstr ""
+msgstr "Oyuncu buharlaştırıcı kullanabilir"
 
 #. i18n: file: rulesetbase.kcfg:84
 #. i18n: ectx: label, entry (CostOfVaporizer), group (KillbotsRuleset)
 #: rc.cpp:90 rc.cpp:179
 msgid "Cost of using vaporizer"
-msgstr ""
+msgstr "Buharlaştırıcı kullanmanın bedeli"
 
 #. i18n: file: rulesetbase.kcfg:93
 #. i18n: ectx: label, entry (PushableJunkheaps), group (KillbotsRuleset)
 #: rc.cpp:93 rc.cpp:182
 msgid "Number of junkheaps that can be pushed at once"
-msgstr ""
+msgstr "Bir kerede ittirilebilecek değersiz yığın sayısı"
 
 #. i18n: file: rulesetbase.kcfg:97
 #. i18n: ectx: label, entry (SquaskKillsEnabled), group (KillbotsRuleset)
 #: rc.cpp:96 rc.cpp:185
 msgid "Player can destroy enemies with a pushed junkheap"
-msgstr ""
+msgstr "Oyuncu düşmanlarını gereksiz yığınlarla yok edebilir"
 
 #. i18n: file: rulesetbase.kcfg:101
 #. i18n: ectx: label, entry (JunkheapsAtGameStart), group (KillbotsRuleset)
 #: rc.cpp:99 rc.cpp:188
 msgid "Junkheaps placed on grid at start of first round"
-msgstr ""
+msgstr "Birinci turun başında oyun ızgarasına yerleştirilmiş gereksiz yığınlar"
 
 #. i18n: file: rulesetbase.kcfg:105
 #. i18n: ectx: label, entry (JunkheapsAddedEachRound), group (KillbotsRuleset)
 #: rc.cpp:102 rc.cpp:191
 msgid "Junkheaps added to the grid for each new round"
-msgstr ""
+msgstr "Her yeni turda oyun ızgarasına eklenmiş gereksiz yığınlar"
 
 #. i18n: file: rulesetbase.kcfg:110
 #. i18n: ectx: label, entry (PointsPerEnemyKilled), group (KillbotsRuleset)
 #: rc.cpp:105 rc.cpp:194
 msgid "Points awarded for each regular enemy destroyed"
-msgstr ""
+msgstr "Yok edilen her normal düşman için puan ödülü"
 
 #. i18n: file: rulesetbase.kcfg:115
 #. i18n: ectx: label, entry (PointsPerFastEnemyKilled), group (KillbotsRuleset)
 #: rc.cpp:108 rc.cpp:197
 msgid "Points awarded for each fast enemy destroyed"
-msgstr ""
+msgstr "Yok edilen her hızlı düşman için puan ödülü"
 
 #. i18n: file: rulesetbase.kcfg:120
 #. i18n: ectx: label, entry (WaitKillPointBonus), group (KillbotsRuleset)
 #: rc.cpp:111 rc.cpp:200
 msgid "Points awarded for each enemy destroyed while waiting out the round"
-msgstr ""
+msgstr "Turun bitmesi beklenirken yok edilen her düşman için puan ödülü"
 
 #. i18n: file: rulesetbase.kcfg:125
 #. i18n: ectx: label, entry (WaitKillEnergyBonus), group (KillbotsRuleset)
 #: rc.cpp:114 rc.cpp:203
 msgid "Energy awarded for each enemy destroyed while waiting out the round"
-msgstr ""
+msgstr "Turun bitmesi beklenirken yok edilen her düşman için enerji ödülü"
 
 #. i18n: file: rulesetbase.kcfg:130
 #. i18n: ectx: label, entry (SquashKillPointBonus), group (KillbotsRuleset)
 #: rc.cpp:117 rc.cpp:206
 msgid "Points awarded for each enemy destroyed with a pushed junkheap"
-msgstr ""
+msgstr "İttirilen gereksiz yığınla yok edilen düşman başına puan ödülü"
 
 #. i18n: file: rulesetbase.kcfg:135
 #. i18n: ectx: label, entry (SquashKillEnergyBonus), group (KillbotsRuleset)
 #: rc.cpp:120 rc.cpp:209
 msgid "Energy awarded for each enemy destroyed with a pushed junkheap"
 msgstr ""
+"İttirilen gereksiz yığınla yok edilen düşman başına verilen enerji ödülü"
 
 #. i18n: file: rulesetbase.kcfg:140
 #. i18n: ectx: label, entry (PointsPerEnergyAboveMax), group (KillbotsRuleset)
 #: rc.cpp:123 rc.cpp:212
 msgid "Points awarded for each energy awarded above maximum energy cap"
-msgstr ""
+msgstr "Maksimum enerji limitinin üzerindeki her enerji için puan ödülü"
 
 #: rc.cpp:124
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Serdar Dalgıç"
 
 #: rc.cpp:125
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, serdar@pardus.org.tr"
 
 #~ msgid "Movement Controls"
 #~ msgstr "Hareket Denetimleri"
