@@ -994,7 +994,7 @@ msgstr "Elma2"
 
 #: hacks/config/apple2.xml.h:2
 msgid "Choose display mode randomly"
-msgstr ""
+msgstr "Ekran modunu rastgele seçin"
 
 #: hacks/config/apple2.xml.h:3
 msgid "Display images"
@@ -1224,7 +1224,7 @@ msgstr "Bu qix gibi, pekçok farklı ekran kiplerini oluşturmak için basit bir
 
 #: hacks/config/atunnel.xml.h:1
 msgid "Atunnel"
-msgstr ""
+msgstr "Atunel"
 
 #: hacks/config/atunnel.xml.h:2
 msgid "Draws an animation of a textured tunnel in GL. Written by Eric Lassauge and Roman Podobedov; 2003."
@@ -1239,7 +1239,7 @@ msgstr "Işıklandırma"
 #: hacks/config/cubenetic.xml.h:25 hacks/config/glmatrix.xml.h:19
 #: hacks/config/lament.xml.h:8 hacks/config/sballs.xml.h:16
 msgid "Textured"
-msgstr ""
+msgstr "Dokulu"
 
 #: hacks/config/barcode.xml.h:1
 msgid "Barcode"
@@ -1772,7 +1772,7 @@ msgstr "Bu benzetimler su kaynadığın zaman meydana gelen kabarcık oluşum t�
 
 #: hacks/config/bumps.xml.h:3
 msgid "A spotlight roams across an embossed version of your desktop or other picture. Written by Shane Smit; 1999."
-msgstr ""
+msgstr "Projektör ışığı masaüstünüzün ya da diğer görsellerin kabartmalı versiyonu arasında dolaşır"
 
 #: hacks/config/bumps.xml.h:4 hacks/config/mirrorblob.xml.h:7
 msgid "Bumps"
@@ -1802,15 +1802,15 @@ msgstr "Canlandırma hızı"
 
 #: hacks/config/carousel.xml.h:4
 msgid "Carousel"
-msgstr ""
+msgstr "Atlıkarınca"
 
 #: hacks/config/carousel.xml.h:8
 msgid "Loads several random images, and displays them flying in a circular formation. The formation changes speed and direction randomly, and images periodically drop out to be replaced by new ones. Written by Jamie Zawinski; 2005."
-msgstr ""
+msgstr "Birtakım rastgele görselleri yükler ve bu görselleri dairesel düzende uçuyormuş gibi gösterir. Düzen hız ve yönü rastgele olarak değişir ve görseller belirli aralıklar ile yeni bir görsel ile ile yer değiştirir.Jamie Zawinski Tarafından yazılmıştır."
 
 #: hacks/config/carousel.xml.h:10
 msgid "No tilting"
-msgstr ""
+msgstr "Yatıklık Olmasın"
 
 #: hacks/config/carousel.xml.h:11 hacks/config/photopile.xml.h:14
 msgid "Number of images"
@@ -1823,20 +1823,20 @@ msgstr "Dosya isimlerini göster"
 
 #: hacks/config/carousel.xml.h:15
 msgid "Tilt in/out and left/right"
-msgstr ""
+msgstr "Eğim içe/dışa ve sola/sağa"
 
 #: hacks/config/carousel.xml.h:16
 msgid "Tilt in/out only"
-msgstr ""
+msgstr "Eğim sadece içe/dışa"
 
 #: hacks/config/carousel.xml.h:17
 msgid "Tilt left/right only"
-msgstr ""
+msgstr "Eğim sadece sola/sağa"
 
 #: hacks/config/carousel.xml.h:18 hacks/config/glslideshow.xml.h:21
 #: hacks/config/mirrorblob.xml.h:24 hacks/config/photopile.xml.h:20
 msgid "Time until loading a new image"
-msgstr ""
+msgstr "Yeni bir görsel yüklenene kadarki süre"
 
 #: hacks/config/carousel.xml.h:19
 msgid "Zoom in/out"
@@ -1865,7 +1865,6 @@ msgid "Density"
 msgstr "Yoğunluk"
 
 #: hacks/config/ccurve.xml.h:8
-#, fuzzy
 msgid "Generates self-similar linear fractals, including the classic \"C Curve\". http://en.wikipedia.org/wiki/Levy_C_curve Written by Rick Campbell; 1999."
 msgstr "Kendine benzer çizgisel fraktaller oluşturur.''C Eğrisi'' klasiği dahil. Yazar Rick Campbell."
 
@@ -1879,12 +1878,11 @@ msgstr "Grafik çiz"
 
 #: hacks/config/celtic.xml.h:8
 msgid "Repeatedly draws random Celtic cross-stitch patterns. http://en.wikipedia.org/wiki/Celtic_knot Written by Max Froumentin; 2005."
-msgstr ""
+msgstr "Tekararlı bir şekilde rastgele Celtic çapraz-dikiş desenler çizer. Yazar Max Froumentin"
 
 #: hacks/config/circuit.xml.h:1
-#, fuzzy
 msgid "Animates a number of 3D electronic components. Written by Ben Buxton; 2001."
-msgstr "3D elektronik bileşenlerin bir sayısını canlandırır. Yazar Ben Buxton."
+msgstr "Birkaç 3D elektronik bileşeni harekete geçirir. Yazar Ben Buxton."
 
 #: hacks/config/circuit.xml.h:2
 msgid "Circuit"
@@ -1984,7 +1982,7 @@ msgstr "Yoğun"
 #: hacks/config/coral.xml.h:12 hacks/config/glcells.xml.h:28
 #: hacks/config/squiral.xml.h:13
 msgid "Seeds"
-msgstr ""
+msgstr "Çekiderkler"
 
 #: hacks/config/coral.xml.h:14
 #, fuzzy
@@ -2038,7 +2036,7 @@ msgstr "Hemen"
 
 #: hacks/config/crackberg.xml.h:13 hacks/config/glslideshow.xml.h:14
 msgid "Letterbox"
-msgstr ""
+msgstr "Posta kutusu"
 
 #: hacks/config/crackberg.xml.h:16
 msgid "Mouse hole"
@@ -2054,7 +2052,7 @@ msgstr "Alt bölümler"
 
 #: hacks/config/crackberg.xml.h:20
 msgid "Swampy coloration"
-msgstr ""
+msgstr "Kirlik renklendirme"
 
 #: hacks/config/crackberg.xml.h:21
 msgid "Visibility"
@@ -2942,7 +2940,7 @@ msgstr "Akış"
 
 #: hacks/config/flow.xml.h:8
 msgid "Length of trails"
-msgstr ""
+msgstr "Patikanın Boyu"
 
 #: hacks/config/flow.xml.h:13
 #, fuzzy
@@ -2951,16 +2949,15 @@ msgstr "Çekici Çevresinde Döndür"
 
 #: hacks/config/flow.xml.h:14
 msgid "Ride in the flow"
-msgstr ""
+msgstr "Akış içerisinde ilerle"
 
 #: hacks/config/flow.xml.h:15
-#, fuzzy
 msgid "Rotating around attractor"
 msgstr "Çekici Çevresinde Döndür"
 
 #: hacks/config/flow.xml.h:16
 msgid "Search for new attractors"
-msgstr ""
+msgstr "Yeni "
 
 #: hacks/config/flow.xml.h:20
 msgid "Strange attractors formed of flows in a 3D differential equation phase space. Features the popular attractors described by Lorentz, Roessler, Birkhoff and Duffing, and can discover entirely new attractors by itself. http://en.wikipedia.org/wiki/Attractor#Strange_attractor Written by Tim Auckland; 1998."
@@ -3467,7 +3464,7 @@ msgstr "Matrix kodlaması"
 
 #: hacks/config/glmatrix.xml.h:15
 msgid "Panning"
-msgstr ""
+msgstr "Yatay Kaydırma "
 
 #: hacks/config/glplanet.xml.h:1
 msgid "Draws a planet bouncing around in space. The built-in image is a map of the earth (extracted from `xearth'), but you can wrap any texture around the sphere, e.g., the planetary textures that come with `ssystem'. Written by David Konerding; 1998."
@@ -3692,7 +3689,7 @@ msgstr "Büyük"
 
 #: hacks/config/halftone.xml.h:2
 msgid "Dot fill factor"
-msgstr ""
+msgstr "Noktalama faktörü"
 
 #: hacks/config/halftone.xml.h:3
 msgid "Dot size"
@@ -3890,27 +3887,27 @@ msgstr "Perspektif 4D"
 
 #: hacks/config/hypertorus.xml.h:12
 msgid "See-through bands"
-msgstr ""
+msgstr "Şeffaf bant"
 
 #: hacks/config/hypertorus.xml.h:13
 msgid "See-through spirals (1 spiral)"
-msgstr ""
+msgstr "Şeffaf sarmal (1 sarmal)"
 
 #: hacks/config/hypertorus.xml.h:14
 msgid "See-through spirals (16 spirals)"
-msgstr ""
+msgstr "Şeffaf sarmal (16 sarmal)"
 
 #: hacks/config/hypertorus.xml.h:15
 msgid "See-through spirals (2 spirals)"
-msgstr ""
+msgstr "Şeffaf sarmal (2 sarmal)"
 
 #: hacks/config/hypertorus.xml.h:16
 msgid "See-through spirals (4 spirals)"
-msgstr ""
+msgstr "Şeffaf sarmal (4 sarmal)"
 
 #: hacks/config/hypertorus.xml.h:17
 msgid "See-through spirals (8 spirals)"
-msgstr ""
+msgstr "Şeffaf sarmal (8 sarmal)"
 
 #: hacks/config/hypertorus.xml.h:19
 msgid "Solid object"
@@ -3983,7 +3980,7 @@ msgstr "Simetrik kıvrılma"
 
 #: hacks/config/hypnowheel.xml.h:16
 msgid "Twistiness"
-msgstr ""
+msgstr "Kıvrımsız"
 
 #: hacks/config/ifs.xml.h:2
 msgid "6"
@@ -4060,7 +4057,7 @@ msgstr "360"
 
 #: hacks/config/interference.xml.h:4
 msgid "Color field based on computing decaying sinusoidal waves. Written by Hannu Mallat; 1998."
-msgstr ""
+msgstr "Bilgisayardaki renk sahası sinusoidal dalgaları kendine temel alır. Yazar: Hannu Mallat"
 
 #: hacks/config/interference.xml.h:9
 msgid "Hue"
@@ -4116,11 +4113,11 @@ msgstr "Çiçek kutusu"
 
 #: hacks/config/jigglypuff.xml.h:11
 msgid "Inertial damping"
-msgstr ""
+msgstr "Yavaşça yumuşatmak"
 
 #: hacks/config/jigglypuff.xml.h:12
 msgid "JigglyPuff"
-msgstr ""
+msgstr "Hafif Esinti"
 
 #: hacks/config/jigglypuff.xml.h:15
 msgid "Randomize almost everything"
@@ -4136,11 +4133,11 @@ msgstr ""
 
 #: hacks/config/jigglypuff.xml.h:21
 msgid "Spookiness"
-msgstr ""
+msgstr "Ürkütücülük"
 
 #: hacks/config/jigglypuff.xml.h:22
 msgid "Spoooooky"
-msgstr ""
+msgstr "Ürkünç"
 
 #: hacks/config/jigglypuff.xml.h:23
 msgid "Strong"
@@ -4189,11 +4186,11 @@ msgstr ""
 
 #: hacks/config/juggler3d.xml.h:5
 msgid "Juggler horizontal speed"
-msgstr ""
+msgstr "Juggler dikey hız"
 
 #: hacks/config/juggler3d.xml.h:6
 msgid "Juggler spin speed"
-msgstr ""
+msgstr "Juggler dönüş hızı"
 
 #: hacks/config/juggler3d.xml.h:7
 msgid "Juggler3D"
@@ -4234,7 +4231,7 @@ msgstr "Hokkabazlık çizimleri yapan baget-adamı. Yazar Tim Auckland."
 
 #: hacks/config/juggle.xml.h:6
 msgid "Flaming torches"
-msgstr ""
+msgstr "Yanan şelaleler"
 
 #: hacks/config/juggle.xml.h:9
 msgid "Juggle"
@@ -4242,7 +4239,7 @@ msgstr "Hokkabazlık"
 
 #: hacks/config/juggle.xml.h:10
 msgid "Juggle this pattern"
-msgstr ""
+msgstr "Bu deseni yer değiştir"
 
 #: hacks/config/juggle.xml.h:11
 msgid "Knives"
@@ -4250,7 +4247,7 @@ msgstr "Bıçaklar"
 
 #: hacks/config/juggle.xml.h:15
 msgid "Performance length"
-msgstr ""
+msgstr "Performans süresi"
 
 #: hacks/config/juggle.xml.h:16
 msgid "Print Cambridge juggling pattern descriptions"
