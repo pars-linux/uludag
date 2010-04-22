@@ -59,7 +59,7 @@ class GeneralSettings(SettingsTab):
         self.settings.installUpdates.setChecked(self.config.installUpdatesAutomatically())
         self.settings.intervalSpin.setValue(self.config.updateCheckInterval())
         self.settings.systemTray.setChecked(self.config.systemTray())
-        self.settings.updateCheckGroupBox.setEnabled(self.config.systemTray())
+        self.settings.hideIfNoUpdate.setChecked(self.config.hideTrayIfThereIsNoUpdate())
         self.__getBandwidthSettings()
 
     def __getBandwidthSettings(self):
@@ -80,6 +80,7 @@ class GeneralSettings(SettingsTab):
         self.connect(self.settings.useBandwidthLimit, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.intervalSpin, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.systemTray, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.hideIfNoUpdate, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.bandwidthSpin, SIGNAL("valueChanged(int)"), self.markChanged)
 
     def save(self):
@@ -93,10 +94,12 @@ class GeneralSettings(SettingsTab):
 
         if not self.settings.systemTray.isChecked() == self.config.systemTray() or \
            not self.settings.intervalSpin.value() == self.config.updateCheckInterval() or \
-           not self.settings.intervalCheck.isChecked() == self.config.updateCheck():
+           not self.settings.intervalCheck.isChecked() == self.config.updateCheck() or \
+           not self.settings.hideIfNoUpdate.isChecked() == self.config.hideTrayIfThereIsNoUpdate():
             self.config.setSystemTray(self.settings.systemTray.isChecked())
             self.config.setUpdateCheck(self.settings.intervalCheck.isChecked())
             self.config.setUpdateCheckInterval(self.settings.intervalSpin.value())
+            self.config.setHideTrayIfThereIsNoUpdate(self.settings.hideIfNoUpdate.isChecked())
             self.settings.emit(SIGNAL("traySettingChanged()"))
 
         self.config.setInstallUpdatesAutomatically(self.settings.installUpdates.isChecked())
