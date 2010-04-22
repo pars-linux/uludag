@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -29,13 +29,8 @@ msgid "Console Keyboard Layout:"
 msgstr "Disposition du clavier pour la console"
 
 #: .tmp/ui_main.py:159
-msgid ""
-"Note that these settings do not effect your desktop. Desktop settings can be "
-"changed in 'Regional & Language' module in System Settings."
-msgstr ""
-"Notez que ces paramètres n'affectent pas votre bureau. Les paramètres du "
-"bureau peuvent être "
-"changés dans le module 'Région & langue' de la configuration du système."
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Notez que ces paramètres n'affectent pas votre bureau. Les paramètres du bureau peuvent être changés dans le module 'Région & langue' de la configuration du système."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
@@ -46,14 +41,8 @@ msgid "First Service to Start:"
 msgstr "Premier service à lancer :"
 
 #: .tmp/ui_main.py:162
-msgid ""
-"Although services are started parallel manner in boot process, users may "
-"want to start a single service before checking dependencies."
-msgstr ""
-"Bien que les services soient lancés en parallèles pendant le démarrage de "
-"l'ordinateur, "
-"les utilisateurs peuvent souhaiter démarrer un service unique avant de "
-"vérifier les dépendances."
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Bien que les services soient lancés en parallèles pendant le démarrage de l'ordinateur, les utilisateurs peuvent souhaiter démarrer un service unique avant de vérifier les dépendances."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
@@ -85,7 +74,7 @@ msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/systemmanager/about.py:25
 msgid " "
-msgstr ""
+msgstr "1"
 
 #: .tmp/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -101,10 +90,8 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Cette application n'existe pas en version utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et "
-"configurés."
+"Merci de vous assurer que les paquets sont correctement installés et configurés."
 
 #: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Aucun"
-
