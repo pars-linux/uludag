@@ -4,18 +4,19 @@
 #
 # Osman Tosun <rainman.neu@gmail.com>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_platform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-29 06:16+0100\n"
-"PO-Revision-Date: 2009-10-31 21:49+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-23 23:41+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: platform.cpp:39
@@ -147,6 +148,8 @@ msgid ""
 "Press this and a configuration dialog will appear to allow you to configure "
 "your custom desktop shell."
 msgstr ""
+"Buna bastığınızda size özel masaüstü kabuğunuzu yapılandırmanıza izin "
+"verecek bir yapılandırma diyaloğu belirecek."
 
 #. i18n: file: platform.ui:115
 #. i18n: ectx: property (text), widget (QPushButton, btnShellSetup)
@@ -180,6 +183,11 @@ msgid ""
 "not. By default start menu entries are regenerated automatically, but you "
 "may wish to disable it if you have issues with that."
 msgstr ""
+"Bu seçenek Windows'un Başlat menüsü girdilerinin yeniden oluşturulup "
+"oluşturulmayacağını tanımlar. Ön tanımlı olarak başlatma menü girdileri "
+"otomatik olarak yeniden oluşturulurlar, ancak problem yaşıyorsanız bu "
+"seçeneği "
+"kapatmak isteyebilirsiniz"
 
 #. i18n: file: platform.ui:170
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableMenuGen)
@@ -285,6 +293,11 @@ msgid ""
 "<br> The wallpaper aspect ratio will be selected according to your current "
 "screen resolution."
 msgstr ""
+"KDE duvar kağıtlarını <i>\"Resimlerim\"</i> dizinine yükler ve Windows "
+"duvar kağıdı olarak kullanabilirsiniz. Seçim kutusu yarı-seçiliyse "
+"güncellenecek "
+"yeni duvar kağıtları var demektir. "
+"<br> Duvar kağıdı en-boy oranı ekran çözünürlüğünüze göre seçilecektir."
 
 #. i18n: file: platform.ui:231
 #. i18n: ectx: property (text), widget (QCheckBox, chkInstallWallpapers)
@@ -312,6 +325,14 @@ msgid ""
 "enable this option to make your applications launch faster for the first "
 "time.<br><b>Caution: This option tweaks your Windows registry.</b>"
 msgstr ""
+"Bu seçeneği etkinleştirmeniz KDE süreçlerini kullanıcı oturum açtığında "
+"başlatacaktır. "
+"Normalde bu süreçler siz bir KDE uygulamasını başlattığınızda başlarlar ve "
+"asıl uygulamanın "
+"açılışını geciktirirler.<br> Bu seçeneği etkinleştirmeniz uygulamalarınızı "
+"ilk açışınızda "
+"hızlandırmanız açısından önerilir. <br><br>Uyarı: Bu seçenek Windows "
+"registery dosyasını kurcalar."
 
 #. i18n: file: platform.ui:244
 #. i18n: ectx: property (text), widget (QCheckBox, chkStartAtLogin)
