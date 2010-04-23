@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: processui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-12 01:18+0100\n"
-"PO-Revision-Date: 2010-04-20 16:38+0300\n"
+"PO-Revision-Date: 2010-04-23 23:18+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: ksysguardprocesslist.cpp:159 ksysguardprocesslist.cpp:404
 msgid "Renice Process..."
 msgid_plural "Renice Processes..."
-msgstr[0] "Süreçleri İyileştir..."
+msgstr[0] "Süreçlerin Önceliğini Değiştir..."
 
 #: ksysguardprocesslist.cpp:161 ksysguardprocesslist.cpp:485
 msgid "Jump to Parent Process"
@@ -172,7 +172,7 @@ msgstr "İpuçlarını Göster"
 #: ksysguardprocesslist.cpp:974
 #, kde-format
 msgid "You do not have the permission to renice the process and there was a problem trying to run as root.  Error %1 %2"
-msgstr "Süreci sonlandırmak için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 %2"
+msgstr "Sürecin önceliğini değiştirmek için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 %2"
 
 #: ksysguardprocesslist.cpp:1000 ksysguardprocesslist.cpp:1219
 msgid "You must select a process first."
@@ -1100,7 +1100,7 @@ msgstr "%1%"
 
 #: ReniceDlg.cc:39
 msgid "Renice Process"
-msgstr "Süreci İyileştir"
+msgstr "Süreci Önceliğini Değiştir"
 
 #~ msgid "Monitoring I/O for %1 (%2)"
 #~ msgstr "%1 (%2) için G/Ç izleniyor"
