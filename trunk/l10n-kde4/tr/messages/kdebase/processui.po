@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: processui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-12 01:18+0100\n"
-"PO-Revision-Date: 2010-04-23 23:20+0300\n"
+"PO-Revision-Date: 2010-04-23 23:55+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -665,7 +665,7 @@ msgstr ""
 #: scripting.cpp:188
 #, kde-format
 msgid "Could not read script '%1'.  Error %2"
-msgstr ""
+msgstr "'%1' betiği okunamadı. Hata %2"
 
 #: ProcessModel.cc:408
 msgid "- Process is doing some work."
@@ -739,11 +739,11 @@ msgstr "Süreci tanımlayan biricik Süreç Kimliği."
 
 #: ProcessModel.cc:748
 msgid "The number of bytes read.  See What's This for more information."
-msgstr ""
+msgstr "Okunan bayt sayısı. Daha fazla bilgi için Bu Nedir'e bakın."
 
 #: ProcessModel.cc:750
 msgid "The number of bytes written.  See What's This for more information."
-msgstr ""
+msgstr "Yazılan bayt sayısı. Daha fazla bilgi için Bu Nedir'e bakın."
 
 #: ProcessModel.cc:759
 msgid "<qt><i>Technical information: </i>The kernel process name is a maximum of 8 characters long, so the full command is examined.  If the first word in the full command line starts with the process name, the first word of the command line is shown, otherwise the process name is used."
@@ -763,7 +763,7 @@ msgstr ""
 
 #: ProcessModel.cc:775
 msgid "The CPU usage of a process and all of its threads."
-msgstr ""
+msgstr "Bir sürecin ve tüm parçacıklarının (thread) CPU kullanımı"
 
 #: ProcessModel.cc:777
 msgid "<qt><i>Technical information: </i>This is the Shared memory, called SHR in top.  It is the number of pages that are backed by a file (see kernel Documentation/filesystems/proc.txt .)"
@@ -1010,7 +1010,7 @@ msgstr "Paylaşılan kitaplık bellek kullanımı: %1"
 #: ProcessModel.cc:1249
 #, kde-format
 msgid "Characters read: %1 (%2 KiB/s)<br>Characters written: %3 (%4 KiB/s)<br>Read syscalls: %5 (%6 s⁻¹)<br>Write syscalls: %7 (%8 s⁻¹)<br>Actual bytes read: %9 (%10 KiB/s)<br>Actual bytes written: %11 (%12 KiB/s)"
-msgstr ""
+msgstr "Okunan karakter: %1 (%2 KiB/s)<br>Yazılan karakter: %3 (%4 KiB/s)<br>Sistem okuma çağrıları: %5 (%6 s⁻¹)<br>Sistem yazma çağrıları: %7 (%8 s⁻¹)<br>Gerçek okunan bayt: %9 (%10 KiB/s)<br>Gerçek yazılan bayt: %11 (%12 KiB/s)"
 
 #: ProcessModel.cc:1504
 msgctxt "process heading"
