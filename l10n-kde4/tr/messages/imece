@@ -6,15 +6,15 @@
 [ ] kdeedu            -> renan
 [ ] kdegames          -> serdar
 [X] kdegraphics       -> fatih
-[ ] kdelibs           -> gokcen
+[ ] kdelibs           -> gokcen,ibrahim
 [X] kdemultimedia     -> ozan
 [ ] kdenetwork        -> ozan
-[ ] kdepim            -> fatih
+[ ] kdepim            -> fatih,ibrahim
 [ ] kdepimlibs        -> ibrahim
-[ ] kdeplasma-addons  -> gokmen
+[ ] kdeplasma-addons  -> gokmen,ibrahim
 [ ] kdesdk            -> mete
 [X] kdetoys           -> isil
 [ ] kdeutils          -> ibrahim
 [ ] kdewebdev         -> serdar
 [ ] koffice           -> admins
-[ ] qt                -> gokmen
+[X] qt                -> gokmen (kdeqt çevrilmeyecek)
