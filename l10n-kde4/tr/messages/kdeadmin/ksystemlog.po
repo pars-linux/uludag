@@ -1,7 +1,7 @@
 # translation of ksystemlog.po to Turkish
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -101,9 +101,7 @@ msgstr "Acil Durum"
 #: src/lib/processOutputLogFileReader.cpp:109
 #: src/lib/localLogFileReader.cpp:115
 msgid "This file is not valid. Please adjust it in the settings of KSystemLog."
-msgstr ""
-"Bu dosya geçerli değil. Lütfen dosyayı KSystemLog uygulamasının ayarlarına "
-"uyumlu hale getirin."
+msgstr "Bu dosya geçerli değil. Lütfen dosyayı KSystemLog uygulamasının ayarlarına uyumlu hale getirin."
 
 #: src/lib/processOutputLogFileReader.cpp:110
 #: src/lib/localLogFileReader.cpp:116 src/lib/localLogFileReader.cpp:130
@@ -148,8 +146,7 @@ msgstr[0] "Yükleniyor <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 dosya)"
 #, kde-format
 msgid "Reloading <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>)"
 msgid_plural "Reloading <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 files)"
-msgstr[0] ""
-"Yeniden yükleniyor <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 dosya)"
+msgstr[0] "Yeniden yükleniyor <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 dosya)"
 
 #: src/lib/loadingBar.cpp:105
 #, kde-format
@@ -186,8 +183,7 @@ msgid "---------------------------------------\n"
 msgstr "---------------------------------------\n"
 
 #: src/lib/logViewExport.cpp:77
-msgid ""
-"You have selected too many lines. Please only select important log lines."
+msgid "You have selected too many lines. Please only select important log lines."
 msgstr "Çok fazla satır seçtiniz. Lütfen önemli satırları seçin."
 
 #: src/lib/logViewExport.cpp:77
@@ -235,7 +231,7 @@ msgstr "'%1' dosyası yok."
 #: src/lib/localLogFileReader.cpp:149
 #, kde-format
 msgid "Unable to uncompress the '%2' format of '%1'."
-msgstr ""
+msgstr "'%1' tipindeki '%2' dosyası açılamadı."
 
 #: src/lib/localLogFileReader.cpp:150
 msgid "Unable to Uncompress File"
@@ -284,9 +280,7 @@ msgid "Choose the filtered column here"
 msgstr "Filtrelenmiş sütunu buradan seçin"
 
 #: src/lib/logViewFilterWidget.cpp:110
-msgid ""
-"Allows you to apply the item filter only on the specified column here. "
-"\"<i>All</i>\" column means no specific filter."
+msgid "Allows you to apply the item filter only on the specified column here. \"<i>All</i>\" column means no specific filter."
 msgstr ""
 
 #: src/lib/logViewFilterWidget.cpp:112 src/lib/logViewFilterWidget.cpp:129
@@ -307,16 +301,11 @@ msgid "Authentication log file:"
 msgstr "Yetkilendirme günlük kaydı dosyası:"
 
 #: src/modes/authentication/authenticationConfigurationWidget.h:67
-msgid ""
-"You can type or choose the authentication log file (example: <i>/var/log/"
-"auth.log</i>)."
+msgid "You can type or choose the authentication log file (example: <i>/var/log/auth.log</i>)."
 msgstr ""
 
 #: src/modes/authentication/authenticationConfigurationWidget.h:68
-msgid ""
-"You can type or choose here the authentication log file. This file will be "
-"analyzed when you select the <b>Authentication log</b> menu. Generally, its "
-"name is <i>/var/log/auth.log</i>"
+msgid "You can type or choose here the authentication log file. This file will be analyzed when you select the <b>Authentication log</b> menu. Generally, its name is <i>/var/log/auth.log</i>"
 msgstr ""
 
 #: src/modes/authentication/authenticationLogMode.cpp:47
@@ -324,10 +313,7 @@ msgid "Display the authentication log."
 msgstr "Kimlik Doğrulama Günlük kaydını göster."
 
 #: src/modes/authentication/authenticationLogMode.cpp:48
-msgid ""
-"Displays the authentication log in the current tab. This log displays all "
-"logins made by each user of the system, and can help you to know if someone "
-"tried to crack your system."
+msgid "Displays the authentication log in the current tab. This log displays all logins made by each user of the system, and can help you to know if someone tried to crack your system."
 msgstr ""
 
 #: src/modes/xorg/xorgConfigurationWidget.h:46
@@ -344,11 +330,7 @@ msgid "Display the X.org log."
 msgstr "X.org Günlük kaydını göster."
 
 #: src/modes/xorg/xorgLogMode.cpp:48
-msgid ""
-"Displays the X.org log in the current tab. X.org is the service which "
-"displays on screen your desktop and manage your graphical hardware. See this "
-"log if you want to know why you do not have 3D accelerations or why your "
-"input device is not recognized."
+msgid "Displays the X.org log in the current tab. X.org is the service which displays on screen your desktop and manage your graphical hardware. See this log if you want to know why you do not have 3D accelerations or why your input device is not recognized."
 msgstr ""
 
 #: src/modes/xorg/xorgAnalyzer.h:59 src/modes/samba/sambaAnalyzer.h:57
@@ -419,10 +401,7 @@ msgid "Display the ACPI log."
 msgstr "ACPI Günlük kaydını göster."
 
 #: src/modes/acpid/acpidLogMode.cpp:48
-msgid ""
-"Displays the ACPI log in the current tab. ACPI is used to manage the "
-"hardware components of your computer, like notebook batteries, reset "
-"buttons..."
+msgid "Displays the ACPI log in the current tab. ACPI is used to manage the hardware components of your computer, like notebook batteries, reset buttons..."
 msgstr ""
 
 #: src/modes/acpid/acpidAnalyzer.h:49 src/modes/kernel/kernelAnalyzer.h:58
@@ -443,10 +422,7 @@ msgid "Display the kernel log."
 msgstr "Kernel Günlük kaydını göster."
 
 #: src/modes/kernel/kernelLogMode.cpp:48
-msgid ""
-"Displays the kernel log in the current tab. This log is only useful for "
-"users who want to know why the Kernel does not detect their hardware or what "
-"is the cause of the last <i>kernel panic/oops</i>."
+msgid "Displays the kernel log in the current tab. This log is only useful for users who want to know why the Kernel does not detect their hardware or what is the cause of the last <i>kernel panic/oops</i>."
 msgstr ""
 
 #: src/modes/kernel/kernelAnalyzer.h:59
@@ -503,10 +479,7 @@ msgid "Display the Apache Access log."
 msgstr "Apache Erişim Günlük kaydını göster."
 
 #: src/modes/apache/apacheAccessLogMode.cpp:49
-msgid ""
-"Displays the Apache Access log in the current tab. Apache is the main used "
-"Web server in the world. This log saves all requests performed by the Apache "
-"web server."
+msgid "Displays the Apache Access log in the current tab. Apache is the main used Web server in the world. This log saves all requests performed by the Apache web server."
 msgstr ""
 
 #: src/modes/apache/apacheItemBuilder.h:57
@@ -554,9 +527,7 @@ msgid "Apache Log"
 msgstr "Apache Günlük Kaydı"
 
 #: src/modes/apache/apacheConfigurationWidget.h:51
-msgid ""
-"<p>These files will be analyzed to show the <b>Apache log</b> and the "
-"<b>Apache Access log</b>.</p>"
+msgid "<p>These files will be analyzed to show the <b>Apache log</b> and the <b>Apache Access log</b>.</p>"
 msgstr ""
 
 #: src/modes/apache/apacheConfigurationWidget.h:53
@@ -580,9 +551,7 @@ msgid "Display the Apache log."
 msgstr "Apache Günlük kaydını göster."
 
 #: src/modes/apache/apacheLogMode.cpp:49
-msgid ""
-"Displays the Apache log in the current tab. Apache is the main used Web "
-"server in the world."
+msgid "Displays the Apache log in the current tab. Apache is the main used Web server in the world."
 msgstr ""
 
 #: src/modes/apache/apacheAnalyzer.h:54
@@ -595,9 +564,7 @@ msgid "Cron Log"
 msgstr "Cron Günlük Kaydı"
 
 #: src/modes/cron/cronConfigurationWidget.h:55
-msgid ""
-"<p>These files will be analyzed to show the <b>Cron Logs</b> (i.e. planned "
-"tasks logs). <a href='man:/cron'>More information...</a></p>"
+msgid "<p>These files will be analyzed to show the <b>Cron Logs</b> (i.e. planned tasks logs). <a href='man:/cron'>More information...</a></p>"
 msgstr ""
 
 #: src/modes/cron/cronConfigurationWidget.h:63
@@ -613,11 +580,7 @@ msgid "Display the planned tasks log (Cron log)."
 msgstr "Planlanmış görevlerin günlük kayıtlarını göster (Cron)."
 
 #: src/modes/cron/cronLogMode.cpp:48
-msgid ""
-"Displays the planned tasks log in the current tab. Cron process is a program "
-"in charge of launching planned tasks on your system, like security checks, "
-"or auto-restarting of some services. Use this menu to see the recently "
-"launched processes."
+msgid "Displays the planned tasks log in the current tab. Cron process is a program in charge of launching planned tasks on your system, like security checks, or auto-restarting of some services. Use this menu to see the recently launched processes."
 msgstr ""
 
 #: src/modes/cron/cronAnalyzer.h:52 src/modes/base/syslogAnalyzer.cpp:59
@@ -667,10 +630,7 @@ msgid "Display the daemons' logs."
 msgstr "Servislerin Günlük kayıtlarını göster."
 
 #: src/modes/daemon/daemonLogMode.cpp:49
-msgid ""
-"Displays the daemons' logs in the current tab. The daemons are all processes "
-"launched in the background of the system. See this log if you want to know "
-"what occurs in the background of your system."
+msgid "Displays the daemons' logs in the current tab. The daemons are all processes launched in the background of the system. See this log if you want to know what occurs in the background of your system."
 msgstr ""
 
 #: src/modes/samba/sambaAnalyzer.h:55
@@ -690,9 +650,7 @@ msgid "Display the Netbios log."
 msgstr "Netbios Günlük kaydını göster."
 
 #: src/modes/samba/netbiosLogMode.cpp:48
-msgid ""
-"Displays the Netbios log in the current tab. Netbios is the file sharing "
-"protocol developed by Microsoft."
+msgid "Displays the Netbios log in the current tab. Netbios is the file sharing protocol developed by Microsoft."
 msgstr ""
 
 #: src/modes/samba/sambaFactory.cpp:58
@@ -708,9 +666,7 @@ msgid "Display the Samba Access log."
 msgstr "Samba Erişim Günlük kaydını göster."
 
 #: src/modes/samba/sambaAccessLogMode.cpp:48
-msgid ""
-"Displays the Samba Access log in the current tab. This log mode allows you "
-"to see connections between your shares and remote hosts."
+msgid "Displays the Samba Access log in the current tab. This log mode allows you to see connections between your shares and remote hosts."
 msgstr ""
 
 #: src/modes/samba/sambaItemBuilder.h:57
@@ -731,9 +687,7 @@ msgid "Samba Log"
 msgstr "Samba Günlük Kaydı"
 
 #: src/modes/samba/sambaConfigurationWidget.h:51
-msgid ""
-"<p>These files will be analyzed to show <b>Samba log</b>, <b>Samba Access "
-"log</b> and <b>Netbios log</b>.</p>"
+msgid "<p>These files will be analyzed to show <b>Samba log</b>, <b>Samba Access log</b> and <b>Netbios log</b>.</p>"
 msgstr ""
 
 #: src/modes/samba/sambaConfigurationWidget.h:53
@@ -765,9 +719,7 @@ msgid "Display the Samba log."
 msgstr "Samba Günlük kaydını göster."
 
 #: src/modes/samba/sambaLogMode.cpp:48
-msgid ""
-"Displays the Samba log in the current tab. Samba is the file sharing server "
-"which interacts with Microsoft Windows network."
+msgid "Displays the Samba log in the current tab. Samba is the file sharing server which interacts with Microsoft Windows network."
 msgstr ""
 
 #: src/modes/system/systemConfigurationWidget.h:48
@@ -784,9 +736,7 @@ msgid "Display the system log."
 msgstr "Sistem Günlük kaydını göster."
 
 #: src/modes/system/systemLogMode.cpp:49
-msgid ""
-"Displays the system log in the current tab. This log is generally used by "
-"non-specialized processes (like \"sudo\" or \"fsck\" commands)"
+msgid "Displays the system log in the current tab. This log is generally used by non-specialized processes (like \"sudo\" or \"fsck\" commands)"
 msgstr ""
 
 #: src/modes/base/parsingHelper.cpp:157
@@ -826,14 +776,11 @@ msgid "Change the level of the current file(s)"
 msgstr "Geçerli dosyaların düzeyini değiştir"
 
 #: src/modes/base/logLevelFileList.cpp:61
-msgid ""
-"Changes the level of the current file(s). See KSystemLog documentation for "
-"more information about each log level."
+msgid "Changes the level of the current file(s). See KSystemLog documentation for more information about each log level."
 msgstr ""
 
 #: src/modes/base/logLevelFileList.cpp:168
-msgid ""
-"The two arrays size are different, skipping the reading of generic paths."
+msgid "The two arrays size are different, skipping the reading of generic paths."
 msgstr ""
 
 #: src/modes/base/fileListHelper.cpp:113
@@ -898,11 +845,7 @@ msgid "Display the CUPS Web Server Access log."
 msgstr "Cups Web Sunucusu Erişimi Günlük Kaydını göster."
 
 #: src/modes/cups/cupsAccessLogMode.cpp:49
-msgid ""
-"Displays the CUPS Web Server Access log in the current tab. CUPS is the "
-"program which manages printing on your computer. This log saves all requests "
-"performed to the CUPS embedded web server (default: <i>http://localhost:631</"
-"i>)."
+msgid "Displays the CUPS Web Server Access log in the current tab. CUPS is the program which manages printing on your computer. This log saves all requests performed to the CUPS embedded web server (default: <i>http://localhost:631</i>)."
 msgstr ""
 
 #: src/modes/cups/cupsAccessAnalyzer.h:55
@@ -935,9 +878,7 @@ msgid "Cups &amp; Cups Web Server Log"
 msgstr "Cups &amp; Cups Web Sunucusu Günlük Kayıtları"
 
 #: src/modes/cups/cupsConfigurationWidget.h:51
-msgid ""
-"<p>These files will be analyzed to show the <b>Cups log</b> and the <b>Cups "
-"Web Access log</b>.</p>"
+msgid "<p>These files will be analyzed to show the <b>Cups log</b> and the <b>Cups Web Access log</b>.</p>"
 msgstr ""
 
 #: src/modes/cups/cupsConfigurationWidget.h:53
@@ -981,10 +922,7 @@ msgid "Display the CUPS PDF log."
 msgstr "Cups PDF Günlük kaydını gösterir."
 
 #: src/modes/cups/cupsPdfLogMode.cpp:49
-msgid ""
-"Displays the CUPS PDF log in the current tab. CUPS is the program which "
-"manages printing on your computer. This log saves all requests performed to "
-"the CUPS embedded web server (default: <i>http://localhost:631</i>)."
+msgid "Displays the CUPS PDF log in the current tab. CUPS is the program which manages printing on your computer. This log saves all requests performed to the CUPS embedded web server (default: <i>http://localhost:631</i>)."
 msgstr ""
 
 #: src/modes/cups/cupsPageLogMode.cpp:39
@@ -996,10 +934,7 @@ msgid "Display the CUPS Page log."
 msgstr "Cups Sayfa Günlük kaydını göster."
 
 #: src/modes/cups/cupsPageLogMode.cpp:49
-msgid ""
-"Displays the CUPS Page log in the current tab. CUPS is the program which "
-"manages printing on your computer. This log saves all requests performed to "
-"the CUPS embedded web server (default: <i>http://localhost:631</i>)."
+msgid "Displays the CUPS Page log in the current tab. CUPS is the program which manages printing on your computer. This log saves all requests performed to the CUPS embedded web server (default: <i>http://localhost:631</i>)."
 msgstr ""
 
 #: src/modes/cups/cupsLogMode.cpp:48
@@ -1007,9 +942,7 @@ msgid "Display the Cups log."
 msgstr "Cups Günlük kaydını göster"
 
 #: src/modes/cups/cupsLogMode.cpp:49
-msgid ""
-"Displays the CUPS log in the current tab. CUPS is the program which manages "
-"printing on your computer."
+msgid "Displays the CUPS log in the current tab. CUPS is the program which manages printing on your computer."
 msgstr ""
 
 #: src/modes/cups/cupsPageAnalyzer.h:54
@@ -1037,9 +970,7 @@ msgid "debug 2"
 msgstr "hata ayıklama 2"
 
 #: src/modes/cups/cupsAnalyzer.h:139
-msgid ""
-"New Log Level detected: Please send this log file to the KSystemLog "
-"developer to add it."
+msgid "New Log Level detected: Please send this log file to the KSystemLog developer to add it."
 msgstr ""
 
 #: src/modes/xsession/xsessionLogMode.cpp:38
@@ -1052,11 +983,7 @@ msgid "Display the X Session log."
 msgstr "X Oturumu Günlük kaydını göster."
 
 #: src/modes/xsession/xsessionLogMode.cpp:48
-msgid ""
-"Displays the X Session log in the current tab. X Session log is the place "
-"where graphical programs write their output. See this log if you want to "
-"know why a program has crashed, or why your display manager (KDE, Gnome,...) "
-"has not started."
+msgid "Displays the X Session log in the current tab. X Session log is the place where graphical programs write their output. See this log if you want to know why a program has crashed, or why your display manager (KDE, Gnome,...) has not started."
 msgstr ""
 
 #: src/modes/xsession/xsessionAnalyzer.h:54
@@ -1069,16 +996,11 @@ msgid "Program:"
 msgstr "Uygulama:"
 
 #: src/modes/xsession/xsessionConfigurationWidget.h:79
-msgid ""
-"You can type or choose the X Session log file (example: <i>~/.xsession-"
-"errors</i>)."
+msgid "You can type or choose the X Session log file (example: <i>~/.xsession-errors</i>)."
 msgstr ""
 
 #: src/modes/xsession/xsessionConfigurationWidget.h:80
-msgid ""
-"You can type or choose here the X Session log file. This file will be "
-"analyzed when you select the <b>X Session log</b> menu. Generally, its name "
-"is <i>~/.xsession-errors</i>"
+msgid "You can type or choose here the X Session log file. This file will be analyzed when you select the <b>X Session log</b> menu. Generally, its name is <i>~/.xsession-errors</i>"
 msgstr ""
 
 #: src/modes/xsession/xsessionConfigurationWidget.h:140
@@ -1096,9 +1018,7 @@ msgid "Display the Postfix log."
 msgstr "Postfix Günlük kaydını göster."
 
 #: src/modes/postfix/postfixLogMode.cpp:49
-msgid ""
-"Displays the Postfix log in the current tab. Postfix is the most known and "
-"used mail server in the Linux world."
+msgid "Displays the Postfix log in the current tab. Postfix is the most known and used mail server in the Linux world."
 msgstr ""
 
 #: src/modes/postfix/postfixConfigurationWidget.h:54
@@ -1182,9 +1102,7 @@ msgid "Local 7"
 msgstr "Yerel 7"
 
 #: src/loggerDialog.cpp:242
-msgid ""
-"Unable to find the 'logger' command on your system. Please type 'logger' in "
-"a Konsole to determine whether this command is installed."
+msgid "Unable to find the 'logger' command on your system. Please type 'logger' in a Konsole to determine whether this command is installed."
 msgstr ""
 
 #: src/loggerDialog.cpp:242
@@ -1261,9 +1179,7 @@ msgid "Resume the watching of the current log"
 msgstr ""
 
 #: src/mainWindow.cpp:411
-msgid ""
-"Resumes the watching of the current log. This action is only available when "
-"the user has already paused the reading."
+msgid "Resumes the watching of the current log. This action is only available when the user has already paused the reading."
 msgstr ""
 
 #: src/mainWindow.cpp:415
@@ -1275,10 +1191,7 @@ msgid "Pause the watching of the current log"
 msgstr ""
 
 #: src/mainWindow.cpp:419
-msgid ""
-"Pauses the watching of the current log. This action is particularly useful "
-"when the system is writing too many lines to log files, causing KSystemLog "
-"to reload too frequently."
+msgid "Pauses the watching of the current log. This action is particularly useful when the system is writing too many lines to log files, causing KSystemLog to reload too frequently."
 msgstr ""
 
 #: src/mainWindow.cpp:581
@@ -1298,9 +1211,7 @@ msgid "Print the selection"
 msgstr "Seçimi yazdır"
 
 #: src/mainWindow.cpp:587
-msgid ""
-"Prints the selection. Simply select the important lines and click on this "
-"menu entry to print the selection."
+msgid "Prints the selection. Simply select the important lines and click on this menu entry to print the selection."
 msgstr ""
 
 #: src/mainWindow.cpp:593
@@ -1308,9 +1219,7 @@ msgid "Save the selection to a file"
 msgstr "Seçimi bir dosyaya kaydet"
 
 #: src/mainWindow.cpp:594
-msgid ""
-"Saves the selection to a file. This action is useful if you want to create "
-"an attachment or a backup of a particular log."
+msgid "Saves the selection to a file. This action is useful if you want to create an attachment or a backup of a particular log."
 msgstr ""
 
 #: src/mainWindow.cpp:598
@@ -1326,9 +1235,7 @@ msgid "Copy the selection to the clipboard"
 msgstr "Seçimi panoya kopyala"
 
 #: src/mainWindow.cpp:603
-msgid ""
-"Copies the selection to the clipboard. This action is useful if you want to "
-"paste the selection in a chat or an email."
+msgid "Copies the selection to the clipboard. This action is useful if you want to paste the selection in a chat or an email."
 msgstr ""
 
 #: src/mainWindow.cpp:607
@@ -1340,9 +1247,7 @@ msgid "Expand all categories"
 msgstr "Tüm kategorileri genişlet"
 
 #: src/mainWindow.cpp:610
-msgid ""
-"This action opens all main categories. This is enabled only if an option has "
-"been selected in the <b>Group By</b> menu."
+msgid "This action opens all main categories. This is enabled only if an option has been selected in the <b>Group By</b> menu."
 msgstr ""
 
 #: src/mainWindow.cpp:614
@@ -1354,9 +1259,7 @@ msgid "Collapse all categories"
 msgstr "Tüm kategorileri topla"
 
 #: src/mainWindow.cpp:617
-msgid ""
-"This action closes all main categories. This is enabled only if an option "
-"has been selected in the <b>Group By</b> menu."
+msgid "This action closes all main categories. This is enabled only if an option has been selected in the <b>Group By</b> menu."
 msgstr ""
 
 #: src/mainWindow.cpp:621
@@ -1368,9 +1271,7 @@ msgid "Send the selection by mail"
 msgstr "Seçimi e-posta ile gönder"
 
 #: src/mainWindow.cpp:625
-msgid ""
-"Sends the selection by mail. Simply select the important lines and click on "
-"this menu entry to send the selection to a friend or a mailing list."
+msgid "Sends the selection by mail. Simply select the important lines and click on this menu entry to send the selection to a friend or a mailing list."
 msgstr ""
 
 #: src/mainWindow.cpp:629
@@ -1382,9 +1283,7 @@ msgid "Add a log entry to the log system"
 msgstr "Günlük kaydı sistemine yeni bir günlük ekle"
 
 #: src/mainWindow.cpp:633
-msgid ""
-"This action will open a dialog which lets you send a message to the log "
-"system."
+msgid "This action will open a dialog which lets you send a message to the log system."
 msgstr ""
 
 #: src/mainWindow.cpp:636
@@ -1392,9 +1291,7 @@ msgid "Select all lines of the current log"
 msgstr "Geçerli günlük kaydı dosyasının tüm satırlarını seç"
 
 #: src/mainWindow.cpp:637
-msgid ""
-"Selects all lines of the current log. This action is useful if you want, for "
-"example, to save all the content of the current log in a file."
+msgid "Selects all lines of the current log. This action is useful if you want, for example, to save all the content of the current log in a file."
 msgstr ""
 
 #: src/mainWindow.cpp:648
@@ -1470,9 +1367,7 @@ msgid "Reload the current log"
 msgstr "Geçerli günlük kaydını yeniden yükle"
 
 #: src/mainWindow.cpp:702
-msgid ""
-"Reloads the current log, if you want to be sure that the view is correctly "
-"updated."
+msgid "Reloads the current log, if you want to be sure that the view is correctly updated."
 msgstr ""
 
 #: src/mainWindow.cpp:711
@@ -1484,10 +1379,7 @@ msgid "Display details on the selected line"
 msgstr "Seçili satırın tüm ayrıntılarını göster"
 
 #: src/mainWindow.cpp:715
-msgid ""
-"Displays a dialog box which contains details on the selected line. You are "
-"able to navigate through the logs from this dialog box with the <b>Previous</"
-"b> and <b>Next</b> buttons."
+msgid "Displays a dialog box which contains details on the selected line. You are able to navigate through the logs from this dialog box with the <b>Previous</b> and <b>Next</b> buttons."
 msgstr ""
 
 #: src/mainWindow.cpp:719
@@ -1499,8 +1391,7 @@ msgid "Disable/Enable the tooltip on the current view"
 msgstr ""
 
 #: src/mainWindow.cpp:721
-msgid ""
-"Disables/Enables the tooltip displayed when the cursor hovers a log line."
+msgid "Disables/Enables the tooltip displayed when the cursor hovers a log line."
 msgstr ""
 
 #: src/mainWindow.cpp:727
@@ -1512,10 +1403,7 @@ msgid "Scrolls or not to the new lines when the log changes"
 msgstr ""
 
 #: src/mainWindow.cpp:729
-msgid ""
-"Scrolls or not to the new lines when the log changes. Check this option if "
-"you do not want the application to scroll automatically at the bottom of the "
-"log each time it is refreshed."
+msgid "Scrolls or not to the new lines when the log changes. Check this option if you do not want the application to scroll automatically at the bottom of the log each time it is refreshed."
 msgstr ""
 
 #: src/mainWindow.cpp:776
@@ -1551,9 +1439,7 @@ msgid "(C) 2007, Nicolas Ternisien"
 msgstr "(C) 2007, Nicolas Ternisien"
 
 #: src/main.cpp:41
-msgid ""
-"Do not hesitate to report bugs and problems to Nicolas Ternisien <a "
-"href='mailto:nicolas.ternisien@gmail.com'>nicolas.ternisien@gmail.com</a>"
+msgid "Do not hesitate to report bugs and problems to Nicolas Ternisien <a href='mailto:nicolas.ternisien@gmail.com'>nicolas.ternisien@gmail.com</a>"
 msgstr ""
 
 #: src/main.cpp:47
@@ -1617,19 +1503,16 @@ msgid "Option is true if the user wants to delete repeated log lines."
 msgstr ""
 
 #. i18n: file: src/config/ksystemlog.kcfg:28
-#. i18n: ectx: label, entry (DeleteProcessIdentifier), group (KSystemLogGeneral)
+#. i18n: ectx: label, entry (DeleteProcessIdentifier), group
+#. (KSystemLogGeneral)
 #: rc.cpp:14
-msgid ""
-"Option is true if the PID in the process column of the SystemLog is to be "
-"omitted."
+msgid "Option is true if the PID in the process column of the SystemLog is to be omitted."
 msgstr ""
 
 #. i18n: file: src/config/ksystemlog.kcfg:33
 #. i18n: ectx: label, entry (ColorizeLogLines), group (KSystemLogGeneral)
 #: rc.cpp:17
-msgid ""
-"Option is true if the log lines are to be colored depending on their log "
-"level."
+msgid "Option is true if the log lines are to be colored depending on their log level."
 msgstr ""
 
 #. i18n: file: src/config/ksystemlog.kcfg:39
@@ -1700,36 +1583,24 @@ msgstr "Günlük Kaydı Dosyaları"
 #. i18n: ectx: property (toolTip), widget (QPushButton, add)
 #: rc.cpp:56
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Choose a new file</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Choose a new file</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Yeni bir dosya seç</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Yeni bir dosya seç</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:61
 #. i18n: ectx: property (whatsThis), widget (QPushButton, add)
 #: rc.cpp:62
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Opens a dialog box to "
-"choose a new file to be added to the list.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Opens a dialog box to choose a new file to be added to the list.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:64
@@ -1752,45 +1623,29 @@ msgstr "Dosya &Düzenle..."
 #. i18n: ectx: property (toolTip), widget (QPushButton, remove)
 #: rc.cpp:74 rc.cpp:164
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Delete the current file(s)"
-"</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Delete the current file(s)</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları sil</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları sil</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:87
 #. i18n: ectx: property (whatsThis), widget (QPushButton, remove)
 #: rc.cpp:80
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Deletes the files selected "
-"on the list.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Deletes the files selected on the list.</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Listedeki seçili dosyaları "
-"siler.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Listedeki seçili dosyaları siler.</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:90
 #. i18n: ectx: property (text), widget (QPushButton, remove)
@@ -1806,45 +1661,29 @@ msgstr "&Kaldır"
 #. i18n: ectx: property (toolTip), widget (QPushButton, removeAll)
 #: rc.cpp:89 rc.cpp:179
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all files</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all files</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Tüm dosyaları sil</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Tüm dosyaları sil</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:106
 #. i18n: ectx: property (whatsThis), widget (QPushButton, removeAll)
 #: rc.cpp:95
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all the files on "
-"the list, even if they are not selected.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all the files on the list, even if they are not selected.</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Listedeki tüm dosyaları "
-"seçili olsalar da olmasalar da siler.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Listedeki tüm dosyaları seçili olsalar da olmasalar da siler.</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:109
 #. i18n: ectx: property (text), widget (QPushButton, removeAll)
@@ -1860,37 +1699,24 @@ msgstr "&Tümünü Kaldır"
 #. i18n: ectx: property (toolTip), widget (QPushButton, up)
 #: rc.cpp:104 rc.cpp:194
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Move up the current file(s)"
-"</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Move up the current file(s)</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları yukarı "
-"taşı</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları yukarı taşı</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:128
 #. i18n: ectx: property (whatsThis), widget (QPushButton, up)
 #: rc.cpp:110
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Moves the selected files "
-"up in the list. This option allows the files to be read <span style=\" font-"
-"weight:600;\">in first</span> by KSystemLog.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Moves the selected files up in the list. This option allows the files to be read <span style=\" font-weight:600;\">in first</span> by KSystemLog.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:131
@@ -1907,37 +1733,24 @@ msgstr "Y&ukarı Taşı"
 #. i18n: ectx: property (toolTip), widget (QPushButton, down)
 #: rc.cpp:119 rc.cpp:209
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Move down the current file"
-"(s)</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Move down the current file(s)</p></body></html>"
 msgstr ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları aşağı "
-"taşı</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Geçerli dosyaları aşağı taşı</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:147
 #. i18n: ectx: property (whatsThis), widget (QPushButton, down)
 #: rc.cpp:125
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Moves the selected files "
-"down in the list. This option allows the files to be read <span style=\" "
-"font-weight:600;\">in last</span> by KSystemLog.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Moves the selected files down in the list. This option allows the files to be read <span style=\" font-weight:600;\">in last</span> by KSystemLog.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:150
@@ -1951,41 +1764,27 @@ msgstr "Aşağı &Taşı"
 #. i18n: file: src/modes/base/fileListBase.ui:175
 #. i18n: ectx: property (text), widget (QLabel, notes)
 #: rc.cpp:134
-msgid ""
-"<p style='margin-top:0px;margin-bottom:0px;'><b>Notes:</b></p><ul "
-"style='margin-top:0px'><li>Files are read using the order of this list.</"
-"li><li>Compressed and plain text files are accepted <i>(*.log, *.gz, *."
-"bz2,...)</i>.</li><li>Use the <b>'*'</b> wildcard to select multiple log "
-"files when adding files.</li></ul>"
+msgid "<p style='margin-top:0px;margin-bottom:0px;'><b>Notes:</b></p><ul style='margin-top:0px'><li>Files are read using the order of this list.</li><li>Compressed and plain text files are accepted <i>(*.log, *.gz, *.bz2,...)</i>.</li><li>Use the <b>'*'</b> wildcard to select multiple log files when adding files.</li></ul>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:191
 #. i18n: ectx: property (toolTip), widget (QListWidget, fileList)
 #: rc.cpp:137
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">List of files used by this "
-"log type.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">List of files used by this log type.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:197
 #. i18n: ectx: property (whatsThis), widget (QListWidget, fileList)
 #: rc.cpp:143
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Here is a list of every "
-"file that will be read by KSystemLog to display the current log lines.</p></"
-"body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Here is a list of every file that will be read by KSystemLog to display the current log lines.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/fileListBase.ui:210
@@ -2004,73 +1803,51 @@ msgstr "1"
 #. i18n: ectx: property (whatsThis), widget (QPushButton, remove)
 #: rc.cpp:170
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Deletes the selected files "
-"of the list.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Deletes the selected files of the list.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:105
 #. i18n: ectx: property (whatsThis), widget (QPushButton, removeAll)
 #: rc.cpp:185
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all files of the "
-"list, even if they are not selected.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Remove all files of the list, even if they are not selected.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:127
 #. i18n: ectx: property (whatsThis), widget (QPushButton, up)
 #: rc.cpp:200
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Moves up the selected "
-"files in the list. This option allows the files to be read <span style=\" "
-"font-weight:600;\">in first</span> by KSystemLog.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Moves up the selected files in the list. This option allows the files to be read <span style=\" font-weight:600;\">in first</span> by KSystemLog.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:146
 #. i18n: ectx: property (whatsThis), widget (QPushButton, down)
 #: rc.cpp:215
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Moves down the selected "
-"files in the list. This option allows the files to be read <span style=\" "
-"font-weight:600;\">at last</span> by KSystemLog.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Moves down the selected files in the list. This option allows the files to be read <span style=\" font-weight:600;\">at last</span> by KSystemLog.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:174
 #. i18n: ectx: property (text), widget (QLabel, notes)
 #: rc.cpp:224
-msgid ""
-"<p style='margin-top:0px;margin-bottom:0px;'><b>Notes:</b></p><ul "
-"style='margin-top:0px'><li>Files are read using the order of this list.</"
-"li><li>Compressed and plain text files are accepted <i>(*.log, *.gz, *."
-"bz2,...)</i>.</li><li>Use the <b>'*'</b> joker to select multiple log files "
-"when adding files.</li></ul>"
+msgid "<p style='margin-top:0px;margin-bottom:0px;'><b>Notes:</b></p><ul style='margin-top:0px'><li>Files are read using the order of this list.</li><li>Compressed and plain text files are accepted <i>(*.log, *.gz, *.bz2,...)</i>.</li><li>Use the <b>'*'</b> joker to select multiple log files when adding files.</li></ul>"
 msgstr ""
 
 #. i18n: file: src/modes/base/logLevelSelectionDialogBase.ui:13
-#. i18n: ectx: property (windowTitle), widget (QDialog, LogLevelSelectionDialogBase)
+#. i18n: ectx: property (windowTitle), widget (QDialog,
+#. LogLevelSelectionDialogBase)
 #: rc.cpp:227
 msgid "Selecting File Type"
 msgstr "Dosya Tipi Seçiliyor"
@@ -2085,31 +1862,21 @@ msgstr "Lütfen bu dosyanın tipini seçin:"
 #. i18n: ectx: property (toolTip), widget (QListWidget, logLevelsList)
 #: rc.cpp:233
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">List of existing log "
-"levels</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">List of existing log levels</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/base/logLevelSelectionDialogBase.ui:42
 #. i18n: ectx: property (whatsThis), widget (QListWidget, logLevelsList)
 #: rc.cpp:239
 msgid ""
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">This is the list of all "
-"existing log levels. </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">Please select one of them "
-"to be used for the files selected on the list.</p></body></html>"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This is the list of all existing log levels. </p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Please select one of them to be used for the files selected on the list.</p></body></html>"
 msgstr ""
 
 #. i18n: file: src/modes/xsession/xsessionConfigurationWidgetBase.ui:16
@@ -2141,12 +1908,8 @@ msgstr "Xorg hatalarını yoksay"
 #. i18n: file: src/modes/xsession/xsessionConfigurationWidgetBase.ui:58
 #. i18n: ectx: property (text), widget (QLabel, xorgErrorsDescription)
 #: rc.cpp:261
-msgid ""
-"<p><b>Note:</b> Check this option to remove X.org errors.</p><p style="
-"\"margin-bottom:0px\">The following lines will be ignored:</p>"
-msgstr ""
-"<p><b>Not:</b> X.org hatalarını silmek için bu seçeneği işaretleyin.</p><p "
-"style=\"margin-bottom:0px\">Şu satırlar yoksayılacak:</p>"
+msgid "<p><b>Note:</b> Check this option to remove X.org errors.</p><p style=\"margin-bottom:0px\">The following lines will be ignored:</p>"
+msgstr "<p><b>Not:</b> X.org hatalarını silmek için bu seçeneği işaretleyin.</p><p style=\"margin-bottom:0px\">Şu satırlar yoksayılacak:</p>"
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:17
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
@@ -2169,9 +1932,7 @@ msgstr ""
 #. i18n: file: src/generalConfigurationWidgetBase.ui:36
 #. i18n: ectx: property (whatsThis), widget (QComboBox, startupLogMode)
 #: rc.cpp:273
-msgid ""
-"The log mode loaded by default at startup. Choose 'No Log Mode' if you do "
-"not want this to happen."
+msgid "The log mode loaded by default at startup. Choose 'No Log Mode' if you do not want this to happen."
 msgstr ""
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:46
@@ -2195,30 +1956,20 @@ msgstr ""
 #. i18n: file: src/generalConfigurationWidgetBase.ui:73
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, maxLines)
 #: rc.cpp:285
-msgid ""
-"You can choose here the maximum number of log lines displayed in the main "
-"view."
+msgid "You can choose here the maximum number of log lines displayed in the main view."
 msgstr ""
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:91
 #. i18n: ectx: property (toolTip), widget (QCheckBox, deleteDuplicatedLines)
 #: rc.cpp:288
-msgid ""
-"Select this option if you want to delete duplicate log lines <b>(may be slow)"
-"</b>."
-msgstr ""
-"Aynısı olan günlük kaydı satırlarını silmek için bu seçeneği işaretleyin <b>"
-"(daha yavaş olabilir)</b>."
+msgid "Select this option if you want to delete duplicate log lines <b>(may be slow)</b>."
+msgstr "Aynısı olan günlük kaydı satırlarını silmek için bu seçeneği işaretleyin <b>(daha yavaş olabilir)</b>."
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:94
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, deleteDuplicatedLines)
 #: rc.cpp:291
-msgid ""
-"Select this option if you want to delete duplicate log lines. <b>This option "
-"can slow log reading</b>."
-msgstr ""
-"Aynısı olan günlük kaydı satırlarını silmek için bu seçeneği işaretleyin. "
-"<b>Bu seçenek okumayı yavaşlatabilir</b>."
+msgid "Select this option if you want to delete duplicate log lines. <b>This option can slow log reading</b>."
+msgstr "Aynısı olan günlük kaydı satırlarını silmek için bu seçeneği işaretleyin. <b>Bu seçenek okumayı yavaşlatabilir</b>."
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:97
 #. i18n: ectx: property (text), widget (QCheckBox, deleteDuplicatedLines)
@@ -2243,11 +1994,7 @@ msgstr ""
 #. i18n: file: src/generalConfigurationWidgetBase.ui:116
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, deleteProcessId)
 #: rc.cpp:303
-msgid ""
-"Select this option if you want to remove the process identifier from the "
-"process name. For example, the <b>Process</b> column may contain entries "
-"such as <i>cron<b>[3433]</b></i>. If this option is activated, the bold part "
-"will be removed."
+msgid "Select this option if you want to remove the process identifier from the process name. For example, the <b>Process</b> column may contain entries such as <i>cron<b>[3433]</b></i>. If this option is activated, the bold part will be removed."
 msgstr ""
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:119
@@ -2259,17 +2006,13 @@ msgstr ""
 #. i18n: file: src/generalConfigurationWidgetBase.ui:126
 #. i18n: ectx: property (toolTip), widget (QCheckBox, colorizeLogLines)
 #: rc.cpp:309
-msgid ""
-"This option allows log lines to be colored depending on their log level."
+msgid "This option allows log lines to be colored depending on their log level."
 msgstr ""
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:129
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, colorizeLogLines)
 #: rc.cpp:312
-msgid ""
-"This option allows log lines to be colored depending on their log level. For "
-"example, errors will be shown in red, warnings in orange, and so on. This "
-"will help you to see problems more easily."
+msgid "This option allows log lines to be colored depending on their log level. For example, errors will be shown in red, warnings in orange, and so on. This will help you to see problems more easily."
 msgstr ""
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:132
@@ -2317,9 +2060,7 @@ msgstr "Günlük Kaydı Satır Ayrıntıları"
 #. i18n: file: src/detailDialogBase.ui:16
 #. i18n: ectx: property (whatsThis), widget (QDialog, DetailDialogBase)
 #: rc.cpp:336
-msgid ""
-"This dialog displays detailed information about the currently selected log "
-"line."
+msgid "This dialog displays detailed information about the currently selected log line."
 msgstr ""
 
 #. i18n: file: src/detailDialogBase.ui:44
@@ -2343,9 +2084,7 @@ msgstr "Önceki satıra geç"
 #. i18n: file: src/detailDialogBase.ui:93
 #. i18n: ectx: property (whatsThis), widget (KPushButton, previous)
 #: rc.cpp:351
-msgid ""
-"Moves to the previous line. This button is deactivated if there is no "
-"previous log line."
+msgid "Moves to the previous line. This button is deactivated if there is no previous log line."
 msgstr ""
 
 #. i18n: file: src/detailDialogBase.ui:96
@@ -2363,9 +2102,7 @@ msgstr "Sonraki satıra geç"
 #. i18n: file: src/detailDialogBase.ui:115
 #. i18n: ectx: property (whatsThis), widget (KPushButton, next)
 #: rc.cpp:360
-msgid ""
-"Moves to the next line. This button is deactivated if there is no next log "
-"line."
+msgid "Moves to the next line. This button is deactivated if there is no next log line."
 msgstr ""
 
 #. i18n: file: src/detailDialogBase.ui:118
@@ -2503,14 +2240,10 @@ msgstr "&İptal"
 #~ msgid "The file does not exist"
 #~ msgstr "Dosya yok"
 
-#, fuzzy
-#~| msgid "Loading <b>%1</b>...<br /><i>%2</i>"
 #~ msgid "Loading <b>%2</b>...<br /><i>%3</i>"
 #~ msgid_plural "Loading <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 files)"
 #~ msgstr[0] "Yükleniyor <b>%1</b>...<br /><i>%2</i>"
 
-#, fuzzy
-#~| msgid "Reloading <b>%1</b>...<br /><i>%2</i>"
 #~ msgid "Reloading <b>%2</b>...<br /><i>%3</i>"
 #~ msgid_plural "Reloading <b>%2</b>...<br /><i>%3</i> - (<b>%4</b>/%1 files)"
 #~ msgstr[0] "Yeniden yükleniyor <b>%1</b>...<br /><i>%2</i>"
