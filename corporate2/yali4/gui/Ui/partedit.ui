@@ -104,7 +104,7 @@
                  }
 
                  QSlider::handle:horizontal {
-                     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #5A2848, stop:1 #8f8f8f);
+                     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #628577, stop:1 #8f8f8f);
                      border: 1px solid #5c5c5c;
                      width: 18px;
                      margin: 0 0;
