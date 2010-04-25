@@ -1,19 +1,19 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Soytetir <tulliana@gmail.com>, 2008, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kubrick\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-07-28 06:37+0200\n"
-"PO-Revision-Date: 2009-08-13 23:17+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-25 17:10+0300\n"
+"Last-Translator: \n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: game.cpp:89
@@ -34,6 +34,9 @@ msgid ""
 "moves is set to zero.  Please select your number of shuffling moves in the "
 "options dialog at menu item Game->Choose Puzzle Type->Make Your Own..."
 msgstr ""
+"Üzgünüm, Küp şu an karıştırılamıyor. Karıştırma hareketlerinin sayısı sıfıra "
+"ayarlanmış durumda. Lütfen seçenekler diyalogunda  Oyun->Bulmaca Tipini Seç->"
+"Kendi Bulmacanı Yap... menü ögesinden karıştırma hareketi sayısını seçiniz."
 
 #: game.cpp:157
 msgid "New Puzzle"
@@ -53,7 +56,7 @@ msgstr "Yinele"
 
 #: game.cpp:260
 msgid "This cube has not been shuffled, so there is nothing to solve."
-msgstr "Bu küp karıştırılmadı. Bu nedenle çözülecek birşey yok."
+msgstr "Bu küp karıştırılmadı. Bu yüzden çözülebilecek bir şey yok."
 
 #: game.cpp:262
 msgid "Solve the Cube"
@@ -73,6 +76,8 @@ msgid ""
 "Sorry, could not find a valid Kubrick demo file called %1.  It should have "
 "been installed in the 'apps/kubrick' sub-directory."
 msgstr ""
+"Üzgünüm, %1 isminde geçerli bir Kubrick demo dosyası bulunamadı. "
+"'apps/kubrick' alt klasöründe kurulu olması gerekliydi. "
 
 #: game.cpp:429
 msgid "File Not Found"
@@ -80,7 +85,7 @@ msgstr "Dosya Bulunamadı"
 
 #: game.cpp:1057
 msgid "Only one of your dimensions can be one cubie wide."
-msgstr ""
+msgstr "Boyutlarınızdan sadece biri bir küp genişliğinde olabilir."
 
 #: game.cpp:1058
 msgid "Cube Options"
@@ -92,7 +97,7 @@ msgstr "Bulmacayı Kaydet"
 
 #: game.cpp:1567
 msgid "You have no moves to undo."
-msgstr "Geri alınacak hareketiniz yok."
+msgstr "Geri alınacak hamleniz yok."
 
 #: game.cpp:1597
 msgid ""
@@ -102,6 +107,11 @@ msgid ""
 "because all previously undone moves are automatically deleted whenever you "
 "make a new move using the keyboard or mouse."
 msgstr ""
+"Yinelecek hamleniz yok.\n"
+"\n"
+"Bu, hiçbir şeyi geri almadığınız, her şeyi yinelemiş olduğunuz ya da klavye "
+"veya fareyi kullanarak yeni bir hamle yaptığınızda, önceden yapılmamış bütün "
+"hamleleriniz otomatik olarak silindiğini için olmuş olabilir."
 
 #: game.cpp:1890
 msgid ""
@@ -109,6 +119,9 @@ msgid ""
 "\n"
 "Please wait or click on the cube to stop the demo."
 msgstr ""
+"Küpün sürmekte olan hamleleri mevcut ya da demo çalıştırılıyor.\n"
+"\n"
+"Lütfen bekleyin ya da demoyu durdurmak için küpe tıklayın."
 
 #: game.cpp:1893
 msgid "Sorry, too busy."
@@ -124,7 +137,7 @@ msgstr "Küp boyutları:"
 
 #: gamedialog.cpp:72
 msgid "Moves per shuffle (difficulty):"
-msgstr ""
+msgstr "Karıştırma başına hareket (zorluk derecesi):"
 
 #: gamedialog.cpp:79
 #, kde-format
@@ -134,21 +147,23 @@ msgstr "Küp boyutları: %1x%2x%3"
 #: gamedialog.cpp:85
 #, kde-format
 msgid "Moves per shuffle (difficulty): %1"
-msgstr ""
+msgstr "Karıştırma başına hareket (zorluk derecesi): %1"
 
 #: gamedialog.cpp:92
 msgid ""
 "<i>Please use <nobr>'Choose Puzzle Type->Make Your Own...'</nobr> to set the "
 "above options.</i>"
 msgstr ""
+"<i>Lütfen yukarıdaki seçenekleri ayarlamak için <nobr>'Bulmaca Tipini Seç->->"
+"Kendi Bulmacanı Yap...'</nobr> seçeneğini kullanın.</i>"
 
 #: gamedialog.cpp:110
 msgid "Watch shuffling in progress?"
-msgstr ""
+msgstr "Karıştırma işlemi yapılırken seyretmek ister misiniz?"
 
 #: gamedialog.cpp:113
 msgid "Watch your moves in progress?"
-msgstr ""
+msgstr "Hamlelerinizi hareket halinde seyretmek ister misiniz?"
 
 #: gamedialog.cpp:120
 msgid "Speed of moves:"
@@ -157,7 +172,7 @@ msgstr "Hareketlerin hızı:"
 #: gamedialog.cpp:131
 #, no-c-format
 msgid "% of bevel on edges of cubies:"
-msgstr ""
+msgstr "Küplerin kenarlarında eğim yüzdesi"
 
 #: gamedialog.cpp:186
 msgid ""
@@ -179,11 +194,11 @@ msgstr "YARDIM: Rubik'in Küp Seçenekleri"
 
 #: kubrick.cpp:83
 msgid "Welcome to Kubrick"
-msgstr "Kubrick Oyununa Hoşgeldiniz"
+msgstr "Kubrick Oyununa Hoş Geldiniz"
 
 #: kubrick.cpp:102
 msgid "2x2x1 mat, 1 move"
-msgstr ""
+msgstr "2x2x1 mat, 1 hamle"
 
 #: kubrick.cpp:103
 msgid "2x2x1 mat, 2 moves"
@@ -751,3 +766,4 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
+
