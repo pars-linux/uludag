@@ -4,19 +4,20 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: granatier\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-10-05 16:13+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-26 17:00+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: gamescene.cpp:166
 msgid "0:00"
@@ -28,7 +29,7 @@ msgstr "Arena Adı"
 
 #: gamescene.cpp:793
 msgid "Sudden Death"
-msgstr ""
+msgstr "Ani Ölüm"
 
 #: infooverlay.cpp:85
 msgid "Press Space to continue"
@@ -36,11 +37,11 @@ msgstr "Devam etmek için Boşluk tuşuna basın"
 
 #: infooverlay.cpp:94
 msgid "Press Space to start a new Game"
-msgstr "Yeni bir oyun Başlatmak için Boşluk tuşuna basın"
+msgstr "Yeni bir Oyun başlatmak için Boşluk tuşuna basın"
 
 #: infooverlay.cpp:108
 msgid "GET READY !!!"
-msgstr "HAZIRLANIN !!!"
+msgstr "HAZIR OLUN !!!"
 
 #: infooverlay.cpp:113
 msgid "Press Space to start"
@@ -119,7 +120,7 @@ msgstr "Thomas Gallinari"
 
 #: main.cpp:33 main.cpp:34 main.cpp:35 main.cpp:36 main.cpp:37
 msgid "Developer of Kapman, which was the base of Granatier"
-msgstr ""
+msgstr "Granatier'in temeli olan Kapman'ın Geliştiricisi"
 
 #: main.cpp:34
 msgid "Pierre-Benoit Besse"
@@ -141,13 +142,13 @@ msgstr "Nathalie Liesse"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_RandomArenaMode)
 #: rc.cpp:3 rc.cpp:191
 msgid "Random Mode"
-msgstr ""
+msgstr "Rastgele kipi"
 
 #. i18n: file: arenaselector.ui:34
 #. i18n: ectx: property (text), widget (QPushButton, importArenas)
 #: rc.cpp:6 rc.cpp:194
 msgid "Import Clanbomber Arenas"
-msgstr ""
+msgstr "Clanbomber Arenalarını İçe Aktar"
 
 #. i18n: file: arenaselector.ui:41
 #. i18n: ectx: property (text), widget (QPushButton, getNewButton)
@@ -165,7 +166,7 @@ msgstr "&Yeni Arenalar İndir..."
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: rc.cpp:12 rc.cpp:120 rc.cpp:200 rc.cpp:272
 msgid "Preview"
-msgstr "Önizleme"
+msgstr "Ön izleme"
 
 #. i18n: file: arenaselector.ui:82
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -213,79 +214,79 @@ msgstr "Yazar:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:27 rc.cpp:155
 msgid "Round Time in Seconds"
-msgstr ""
+msgstr "Saniye cinsinden Tur Zamanı"
 
 #. i18n: file: generalsettings.ui:47
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:30 rc.cpp:158
 msgid "Initial Speed"
-msgstr ""
+msgstr "İlk Hız"
 
 #. i18n: file: generalsettings.ui:64
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:33 rc.cpp:161
 msgid "Initial Bomb Power"
-msgstr ""
+msgstr "İlk Bomba Gücü"
 
 #. i18n: file: generalsettings.ui:81
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:36 rc.cpp:164
 msgid "Initial Bomb Armory"
-msgstr ""
+msgstr "İlk Bomba Cephanesi"
 
 #. i18n: file: generalsettings.ui:98
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: rc.cpp:39 rc.cpp:167
 msgid "Only for Artists! Won't be here at release"
-msgstr ""
+msgstr "Sadece sanatçılar için! Sürüm zamanı burada olmayacak"
 
 #. i18n: file: generalsettings.ui:104
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowAllTiles)
 #: rc.cpp:42 rc.cpp:170
 msgid " Show all tiles"
-msgstr ""
+msgstr "Bütün döşemeleri göster"
 
 #. i18n: file: generalsettings.ui:111
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:45 rc.cpp:173
 msgid "Blast Time 2"
-msgstr ""
+msgstr "2. Patlama Zamanı"
 
 #. i18n: file: generalsettings.ui:118
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: rc.cpp:48 rc.cpp:176
 msgid "Blast Time 3"
-msgstr ""
+msgstr "3. Patlama Zamanı"
 
 #. i18n: file: generalsettings.ui:159
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:51 rc.cpp:179
 msgid "Blast Time 1"
-msgstr ""
+msgstr "1. Patlama Zamanı"
 
 #. i18n: file: generalsettings.ui:166
 #. i18n: ectx: property (text), widget (QLabel, label_10)
 #: rc.cpp:54 rc.cpp:182
 msgid "Blast Time 5"
-msgstr ""
+msgstr "5. Patlama Zamanı"
 
 #. i18n: file: generalsettings.ui:187
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: rc.cpp:57 rc.cpp:185
 msgid "Blast Time 4"
-msgstr ""
+msgstr "4. Patlama Zamanı"
 
 #. i18n: file: generalsettings.ui:220
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:60 rc.cpp:188
 msgid "Points to win the game"
-msgstr ""
+msgstr "Oyunu kazanmak için gerekli olan puanlar"
 
 #. i18n: file: granatier.kcfg:9
 #. i18n: ectx: label, entry (FirstRun), group (General)
 #: rc.cpp:63 rc.cpp:215
 msgid "Check if it is the first run of the game."
-msgstr ""
+msgstr "Oyunun ilk turu olup olmadığını kontrol et"
 
 #. i18n: file: granatier.kcfg:13
 #. i18n: ectx: label, entry (Theme), group (General)
@@ -303,37 +304,37 @@ msgstr "Kullanılacak arena."
 #. i18n: ectx: label, entry (RandomArenaMode), group (General)
 #: rc.cpp:72 rc.cpp:224
 msgid "Use random arenas."
-msgstr ""
+msgstr "Rastgele arenalar kullan."
 
 #. i18n: file: granatier.kcfg:25
 #. i18n: ectx: label, entry (PointsToWin), group (General)
 #: rc.cpp:75 rc.cpp:227
 msgid "The points a user needs to win the game."
-msgstr ""
+msgstr "Oyunu kazanmak için kullanıcının ihtiyacı olan puanlar"
 
 #. i18n: file: granatier.kcfg:29
 #. i18n: ectx: label, entry (RoundTime), group (General)
 #: rc.cpp:78 rc.cpp:230
 msgid "Time for a round."
-msgstr ""
+msgstr "Bir tur için zaman."
 
 #. i18n: file: granatier.kcfg:33
 #. i18n: ectx: label, entry (InitialSpeed), group (General)
 #: rc.cpp:81 rc.cpp:233
 msgid "The initial speed."
-msgstr ""
+msgstr "İlk Hız"
 
 #. i18n: file: granatier.kcfg:37
 #. i18n: ectx: label, entry (InitialBombPower), group (General)
 #: rc.cpp:84 rc.cpp:236
 msgid "The initial bomb power."
-msgstr ""
+msgstr "İlk bomba gücü"
 
 #. i18n: file: granatier.kcfg:41
 #. i18n: ectx: label, entry (InitialBombArmory), group (General)
 #: rc.cpp:87 rc.cpp:239
 msgid "The initial bomb armory."
-msgstr ""
+msgstr "İlk bomba cephanesi"
 
 #. i18n: file: granatier.kcfg:45
 #. i18n: ectx: label, entry (Sounds), group (General)
@@ -345,13 +346,14 @@ msgstr "Ses efektlerinin çalınıp çalınmayacağı."
 #. i18n: ectx: label, entry (UseWilhelmScream), group (General)
 #: rc.cpp:93 rc.cpp:245
 msgid "Whether to use the Wilhelm Scream for dying players."
-msgstr ""
+msgstr "Ölen oyuncular için Wilhelm Çığlığı'nın kullanılıp kullanılmayacağı."
 
 #. i18n: file: granatier.kcfg:53
 #. i18n: ectx: label, entry (Dummy), group (General)
 #: rc.cpp:96 rc.cpp:248
+#, fuzzy
 msgid "This is a dummy setting for player setup."
-msgstr ""
+msgstr "Oyuncu ayarları için boş bir düzenek."
 
 #. i18n: file: granatier.kcfg:57
 #. i18n: ectx: label, entry (ShowAllTiles), group (General)
@@ -433,12 +435,12 @@ msgstr "Aşağı Taşı"
 #: rc.cpp:151
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Serdar Dalgıç"
 
 #: rc.cpp:152
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, serdar@pardus.org.tr"
 
 #~ msgid "Game Over"
 #~ msgstr "Oyun Bitti"
