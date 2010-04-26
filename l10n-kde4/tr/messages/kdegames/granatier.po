@@ -1,7 +1,7 @@
 # translation of granatier.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
 # Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
@@ -351,7 +351,6 @@ msgstr "Ölen oyuncular için Wilhelm Çığlığı'nın kullanılıp kullanılm
 #. i18n: file: granatier.kcfg:53
 #. i18n: ectx: label, entry (Dummy), group (General)
 #: rc.cpp:96 rc.cpp:248
-#, fuzzy
 msgid "This is a dummy setting for player setup."
 msgstr "Oyuncu ayarları için boş bir düzenek."
 
@@ -382,7 +381,7 @@ msgstr "Oyuncu ayarları için boş bir düzenek."
 #: rc.cpp:99 rc.cpp:102 rc.cpp:105 rc.cpp:108 rc.cpp:111 rc.cpp:114 rc.cpp:251
 #: rc.cpp:254 rc.cpp:257 rc.cpp:260 rc.cpp:263 rc.cpp:266
 msgid "This is only for the artists to make their life easier."
-msgstr ""
+msgstr "Bu kısım sadece sanatkarlar için, hayatlarını kolaylaştırmak için yapılmıştır."
 
 #. i18n: file: playerselector.ui:22
 #. i18n: ectx: property (text), widget (QPushButton, getNewButton)
