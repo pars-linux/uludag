@@ -169,7 +169,7 @@ class RepositorySettings(SettingsTab):
         self.repositories = self.iface.getRepositories()
         self.__clear()
         for name, address in self.repositories:
-            self.__insertRow(name, address)
+            self.__insertRow(unicode(name), address)
 
     def __clear(self):
         while self.settings.repoListView.rowCount():
