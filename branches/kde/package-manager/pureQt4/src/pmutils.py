@@ -21,6 +21,9 @@ def waitCursor():
     QtGui.QApplication.setOverrideCursor(QtGui.QCursor(Qt.WaitCursor))
 
 def restoreCursor():
+    # According to the Qt Documentation it should be called twice to reset 
+    # cursor to the default if one use waitCursor twice.
+    QtGui.QApplication.restoreOverrideCursor()
     QtGui.QApplication.restoreOverrideCursor()
 
 def processEvents():
