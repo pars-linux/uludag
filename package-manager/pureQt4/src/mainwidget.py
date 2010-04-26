@@ -166,6 +166,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.packageList.model().setFilterRole(GroupRole)
         waitCursor()
         self.packageList.model().setFilterPackages(packages)
+        self.packageList.scrollToTop()
         restoreCursor()
 
     def searchActivated(self):
