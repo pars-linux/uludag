@@ -62,6 +62,12 @@ Menü $\rightarrow$ digikam $\rightarrow$ İçeriye Aktar $\rightarrow$ Facebook
 
 \section{Sound alt Bileşeni}
 \begin{enumerate}
+
+\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+jack-audio-connection-kit 
+\end{verbatim}
+
 \item rosegarden paketi kurulumu sonrası:
 
 Kmenu'den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
@@ -433,7 +439,12 @@ Lake_dance_XviD.AVI
  tachyon
  graphviz-docs
  GraphicsMagick-devel
+ ufraw
 \end{verbatim}
+\item autopano-sift-C paketi kuruluu sonrası:
+
+multimedia-tr.pdf hugin testini gerçekleştirin.
+
 \item tesseract paketi kurulumu sonrası:
 
 Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde text dosyasının oluştuğunu gözlemleyin.
@@ -452,7 +463,6 @@ uniconv  drawing.svg test.ps
 \end{verbatim}
 
 
-
 \item kphotoalbum paketi kurulumu sonrası:
 
 Kmenuden uygulamayı açın, demoyu çalıştır butonuna basın. Daha sonra slideshow'u çalıştır butonuna basın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
@@ -463,10 +473,10 @@ multimedia-tr.pdf blender testini gerçekleştiriniz.
 \item jasper paketi kurulumu sonrası:
 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_jasper.jpg
- # jiv test_jasper.jpg
- # jasper --input test_jasper.jpg --output test.jp2 --output-format jp2
- # jiv test.jp2
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_jasper.jpg
+ jiv test_jasper.jpg
+ jasper --input test_jasper.jpg --output test.jp2 --output-format jp2
+ jiv test.jp2
 \end{verbatim}
 
 
@@ -692,23 +702,23 @@ Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya $\rig
 
 Aşağıda bulunan dosyayı blender ile açın ve Render butonuna basın. Resmi render edebildiğinizi gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
 \end{verbatim}
 
  \item dvd-slideshow paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın ve bir slideshow oluştuğunu gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/image.tar.gz
- # dir2slideshow -n test -s "slide test" image
- # dvd-slideshow image.txt
- # mplayer image.vob 
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/image.tar.gz
+dir2slideshow -n test -s "slide test" image
+dvd-slideshow image.txt
+mplayer image.vob 
 \end{verbatim}
 \item kdenlive paketi kurulumu sonrası:
 
 Kdenlive uygulamasını açın ve Projeler $\rightarrow$ Klip ekle yolunu izleyerek aşağıda bulunan dosyayı ekleyin ve çalıştırın sesinin ve görüntüsünün sorunsuz olduğunu gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
 \end{verbatim}
 
 \item kiconedit paketi kurulumu sonrası:

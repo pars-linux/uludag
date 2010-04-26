@@ -53,11 +53,27 @@ Bu ucuncu satirdir.
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  git-emacs
+ gnuplot-emacs
+\end{verbatim}
+
+\item pari-emacs paketi kurulumu sonrası:
+
+Ev dizini altında .emacs dosyası içerisine aşağıda bulunan satırları ekleyin. 
+\begin{verbatim}
+(autoload 'gp-mode "pari" nil t)
+(autoload 'gp-script-mode "pari" nil t)
+(autoload 'gp "pari" nil t)
+(autoload 'gpman "pari" nil t)
+\end{verbatim}
+
+Daha sonra emacs uygulamasını başlatın ve Alt+x tuşlarına basarak gp komutunu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+\begin{verbatim}
+ M-x gp
 \end{verbatim}
 
 \item cedet paketi kurulumu sonrası:
  
-Emacs uygulamasını Kmenu'den açın ve emacs konsolunda Alt-x tuşlarına basarak speedbar komutunu çalıştırın.
+Emacs uygulamasını Kmenu'den açın ve emacs konsolunda Alt+x tuşlarına basarak speedbar komutunu çalıştırın.
 \begin{verbatim}
  M-x speedbar
 \end{verbatim}

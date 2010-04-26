@@ -61,12 +61,21 @@ gvfs-smb
 desktop-tr.pdf gvfs-common testini gerçekleştirin.
 \end{itemize}
 
-\section{Look and Feel alt Bileşeni}
+\section{
+ and Feel alt Bileşeni}
 \begin{itemize}
 \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
 \begin{verbatim}
  icon-theme-oxygen-svg
+ icon-theme-milky-svg
+ icon-theme-milky-index
 \end{verbatim}
+
+\item icon-theme-milky-png paketi kurulumu sonrası:
+
+Sistem Ayarları $\rightarrow$ Görünüm $\rightarrow$ Simgeler bölümünden milky simge setini seçin ve uygula deyin, sorunsuz bir şekilde milky simge setinin uygulandığını gözlemleyin.
+
+Eğer daha önceden Milky simge seti kurulu ise güncellemelerden sonra sorunsuz olarak açıdığını gözlemleyin.
 
 \item gnome-icon-theme paketi kurulumu sonrası:
 
@@ -140,7 +149,13 @@ Kmenüden uygulamayı açın ve sorunsuz bir şekilde açılabildiğini gözleml
  iTest
  shared-mime-info
  shared-desktop-ontologies
+ strigi-devel
 \end{verbatim}
+
+\item strigi paketi kurulumu sonrası: 
+
+Sistem ayarları $\rightarrow$ Gelişmiş $\rightarrow$ Masaüstü araması $\rightarrow$  Strigi masaüstü indeksleyiciyi etkinleştir yolunu izleyin ve uygula butonuna basın. Sorunsuz bir şekilde etkinleştiğini gözlemleyin.
+
 \item xdg-user-dirs paketi kurulumu sonrası:
 
 Kullanıcı yöneticisi ile yeni bir kullanıcı yaratın ve daha sonra bu kullanıcı ile sistemi açın ve kullanıcı ev dizini altında sistemin dilinde "Belgeler", "İndirilenler", "Masaüstü" ve "Belgeler" altında da "Müzik", "Resimler", "Videolar" dizinlerinin oluştuğunu gözlemleyin.
@@ -180,7 +195,15 @@ Uygulamanın kemenüden gdüzgün bir şekilde çalıştığını gözlemleyin.
  qt-sql-ibase
  qt-sql-odbc
  qt-sql-postgresql
+ qwt-doc
+ qwtplot3d-doc
+ qwtplot3d
 \end{verbatim}
+
+\item qwt ve qwt-qt-designer paketleri kurulumu sonrası:
+
+qt-designer uygulamasını açın ve sol tarfta bulunan parçacık kutusuna "Qwt widgets" bölümünün eklendiğini gözlemleyin.
+
 \item PyQwt paketi kurulumu sonrası
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
@@ -251,6 +274,10 @@ gtk2-docs
 gtksourceview
 gtksourceview-docs
 \end{verbatim}
+
+\item gtkspell paketi kurulumu sonrası:
+
+  Pidgin uygulamasından mesaj gönderme penceresini açın ve yanlış türkçe bir kelime girin, yanlış girdiğiniz kelimenin altının kırmızı olarak çizildiğini ve üzerine sağ tıkladığınızdada doğru olabilecek elternatifleri listelediğini gözlemleyin.
 
 \item gtkhtml3 paketi kurulumu sonrası:
 
@@ -419,8 +446,13 @@ kde-l10n-zh_TW
 
 
 \subsection*{Admin alt bileşeni}
-
 \begin{enumerate} 
+\item display-settings paketi kurulumu sonrası:
+  
+Eğer yedek bir monitörünüz veya projektörünüz var ise test edebilirsiniz.
+
+Uygulamayı açın ve ilgili çıkışların algılandığını ve ilgili ekranlara görüntünün uygun şekilde geldiğini gözlemleyin.
+
 \item plasmoid-network-applet paketi kurulumu sonrası:
 
 Ağ yöneticisi programcığının masaüstünde sorunsuz bir şekilde bağlantı ile ilgili bilgileri yansıttığını gözlemleyin.
