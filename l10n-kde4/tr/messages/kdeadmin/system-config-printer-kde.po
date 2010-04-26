@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: system-config-printer-kde\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-07-04 12:17+0200\n"
-"PO-Revision-Date: 2009-10-01 16:01+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-26 09:48+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: optionwidgets.py:131
@@ -54,7 +55,7 @@ msgstr "%1 konumuna bağlanıldı"
 
 #: system-config-printer-kde.py:497
 msgid "Not connected"
-msgstr "Bağlanılmadı"
+msgstr "Bağlı değil"
 
 #: system-config-printer-kde.py:614
 msgid "Local Printers"
@@ -104,13 +105,15 @@ msgstr "Gönderildi"
 
 #: system-config-printer-kde.py:922 system-config-printer-kde.py:954
 msgid "<b>Not possible</b>"
-msgstr "<b>Olanaksız</b>"
+msgstr "<b>Mümkün değil</b>"
 
 #: system-config-printer-kde.py:923 system-config-printer-kde.py:955
 msgid ""
 "The remote server did not accept the print job, most likely because the "
 "printer is not shared."
 msgstr ""
+"Uzak sunucu yazdırma görevini kabul etmedi, büyük bir ihtimalle yazıcı "
+"paylaştırılmamış."
 
 #: system-config-printer-kde.py:944
 msgctxt "Maintenance command submitted"
@@ -120,7 +123,7 @@ msgstr "<b>Gönderildi</b>"
 #: system-config-printer-kde.py:945
 #, python-format
 msgid "Maintenance command submitted as job %d"
-msgstr ""
+msgstr "Bakım komutu %d numaralı görev olarak gönderildi"
 
 #: system-config-printer-kde.py:1070 system-config-printer-kde.py:1425
 msgid "This is the default printer"
@@ -128,11 +131,11 @@ msgstr "Bu öntanımlı yazıcıdır"
 
 #: system-config-printer-kde.py:1078 system-config-printer-kde.py:1428
 msgid "Make Default. (The current default is %1)"
-msgstr "Öntanımlı Yap. (Şimdiki öntanımlı %1)"
+msgstr "Öntanımlı Yap. (Mevcut öntanımlı %1)"
 
 #: system-config-printer-kde.py:1080 system-config-printer-kde.py:1430
 msgid "Make Default. (There is no current default)"
-msgstr ""
+msgstr "Varsayılan yap. (Şu anda varsayılan mevcut değil)"
 
 #: system-config-printer-kde.py:1156
 msgid "<b>Error</b>"
@@ -140,7 +143,7 @@ msgstr "<b>Hata</b>"
 
 #: system-config-printer-kde.py:1157
 msgid "Option '%1' has value '%2' and cannot be edited."
-msgstr ""
+msgstr "'%1' seçeneği '%2' değerine sahip ve düzenlenemez."
 
 #: system-config-printer-kde.py:1160
 msgid "Error"
@@ -199,6 +202,8 @@ msgid ""
 "The password may be incorrect, or the server may be configured to deny "
 "remote administration."
 msgstr ""
+"Parola yanlış veya sunucu uzaktan yönetimi engelleyecek şekilde "
+"yapılandırılmış."
 
 #: system-config-printer-kde.py:1865
 msgctxt "HTTP error"
@@ -213,7 +218,7 @@ msgstr "Bulunamadı"
 #: system-config-printer-kde.py:1869
 msgctxt "HTTP error"
 msgid "Request timeout"
-msgstr "İstekte zamanaşımı"
+msgstr "İstek zamanaşımına uğradı"
 
 #: system-config-printer-kde.py:1871
 msgctxt "HTTP error"
@@ -273,7 +278,7 @@ msgstr "Sürücüyü Değiştir"
 #: system-config-printer-kde.py:2323 system-config-printer-kde.py:2601
 #: system-config-printer-kde.py:2780
 msgid "<b>Searching</b>"
-msgstr "<b>Arama</b>"
+msgstr "<b>Aranıyor</b>"
 
 #: system-config-printer-kde.py:2324 system-config-printer-kde.py:2602
 msgid "Searching for drivers"
@@ -284,6 +289,8 @@ msgid ""
 "This printer supports both printing and sending faxes.  Which functionality "
 "should be used for this queue?"
 msgstr ""
+"Bu yazıcı hem yazdırma hem faks gönderme yeteneklerine sahip. Bu kuyruk "
+"için hangi işlevi kullanmak istiyorsunuz?"
 
 #: system-config-printer-kde.py:2416
 msgid "Printer"
@@ -336,12 +343,16 @@ msgid ""
 "HPLIP software driving a printer, or the printer function of a multi-"
 "function device."
 msgstr ""
+"HPLIP yazılımı bir yazıcıyı veya çok fonksiyonlu aygıtın yazdırma işlevini "
+"gerçekleştiriyor."
 
 #: system-config-printer-kde.py:3161
 msgid ""
 "HPLIP software driving a fax machine, or the fax function of a multi-"
 "function device."
 msgstr ""
+"HPLIP yazılımı bir faks makinesini veya çok fonksiyonlu aygıtın faks "
+"işlevini gerçekleştiriyor."
 
 #: system-config-printer-kde.py:3164
 msgid "Local printer detected by the Hardware Abstraction Layer (HAL)."
@@ -358,7 +369,7 @@ msgstr "Veritabanı hatası"
 
 #: system-config-printer-kde.py:3512
 msgid "You will need to install the '%1' package in order to use this driver."
-msgstr ""
+msgstr "Bu sürücüyü kullanabilmek için '%1' paketini kurmanız gerekmektedir."
 
 #: system-config-printer-kde.py:3516
 msgid "The '%1' driver cannot be used with printer '%2 %3'."
@@ -399,17 +410,19 @@ msgstr "Sürücü yükle"
 
 #: system-config-printer-kde.py:3780
 msgid "Printer '%1' requires the %2 package but it is not currently installed."
-msgstr ""
+msgstr "'%1' yazıcısı %2 paketine ihtiyaç duyuyor ancak bu paket kurulu değil."
 
 #: system-config-printer-kde.py:3786
 msgid "Missing driver"
-msgstr "Kayıp sürücü"
+msgstr "Eksik sürücü"
 
 #: system-config-printer-kde.py:3787
 msgid ""
 "Printer '%1' requires the '%2' program but it is not currently installed.  "
 "Please install it before using this printer."
 msgstr ""
+"'%1' yazıcısı '%2' programına ihtiyaç duyuyor ancak bu program kurulu değil. "
+"Lütfen kullanmadan önce kurunuz."
 
 #: system-config-printer-kde.py:3863
 msgid "Share"
@@ -425,26 +438,28 @@ msgstr "Taranıyor..."
 
 #: system-config-printer-kde.py:3918
 msgid "Not possible"
-msgstr "Olanaksız"
+msgstr "Mümkün Değil"
 
 #: system-config-printer-kde.py:3919
 #, python-format
 msgid "It is not possible to obtain a list of queues from `%s'."
-msgstr ""
+msgstr "`%s' üzerinden kuyruk listesi alınamıyor."
 
 #: system-config-printer-kde.py:3921
 msgid ""
 "Obtaining a list of queues is a CUPS extension to IPP.  Network printers do "
 "not support it."
 msgstr ""
+"Kuyruk listesinin alınması IPP protokolüne bir CUPS eklentisidir. Ağ "
+"yazıcıları tarafından desteklenmez."
 
 #: system-config-printer-kde.py:3924
 msgid "No queues"
-msgstr "Kuyrukta görev yok"
+msgstr "Kuyruk yok"
 
 #: system-config-printer-kde.py:3925
 msgid "There are no queues available."
-msgstr "Kuyruğa eklenmiş görev yok."
+msgstr "Kullanılabilir kuyruk yok"
 
 #. i18n: file: ipp-browse-dialog.ui:25
 #. i18n: ectx: property (windowTitle), widget (QDialog, IPPBrowseDialog)
@@ -458,7 +473,7 @@ msgstr "IPP Tarayıcı"
 #. i18n: ectx: property (text), widget (KPushButton, btnSMBBrowseRefresh)
 #: ui.py:6 ui.py:203
 msgid "Refresh"
-msgstr "Tazele"
+msgstr "Yenile"
 
 #. i18n: file: ipp-browse-dialog.ui:63
 #. i18n: ectx: property (text), widget (KPushButton, btnIPPBrowseOk)
@@ -578,7 +593,7 @@ msgstr "IPP Yazıcısı"
 #. i18n: ectx: property (text), widget (QPushButton, btnIPPFindQueue)
 #: ui.py:63
 msgid "Find Queue..."
-msgstr ""
+msgstr "Kuyruk Ara..."
 
 #. i18n: file: new-printer.ui:224
 #. i18n: ectx: property (text), widget (QLabel, label_15)
@@ -623,13 +638,13 @@ msgstr "localhost"
 #: ui.py:87
 msgctxt "Try to discover network printers"
 msgid "Probe"
-msgstr "&Sına"
+msgstr "Sına"
 
 #. i18n: file: new-printer.ui:379
 #. i18n: ectx: property (text), widget (QLabel, label_22)
 #: ui.py:95
 msgid "SMB Printer"
-msgstr "SMB Yazıcısı"
+msgstr "SMB Yazıcı"
 
 #. i18n: file: new-printer.ui:396
 #. i18n: ectx: property (text), widget (QPushButton, btnSMBBrowse)
@@ -661,7 +676,7 @@ msgstr "Kimlik doğrulaması gerekiyorsa kullanıcıya sor"
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnSMBAuthSet)
 #: ui.py:111
 msgid "Set authentication details now"
-msgstr ""
+msgstr "Kimlik doğrulama detaylarını ayarlayın"
 
 #. i18n: file: new-printer.ui:473
 #. i18n: ectx: property (text), widget (QLabel, label_26)
@@ -697,6 +712,14 @@ msgid ""
 "provided PPD files provide better access to the specific features of the "
 "printer."
 msgstr ""
+"Foomatic yazıcı veritabanı, üreticiler tarafından sağlanmış bir çok "
+"PostScript "
+"Yazıcı Tanım (PPD) dosyasını içerir ve aynı zamanda PostScript olmayan "
+"yazıcılar "
+"için de PPD dosyaları üretebilir. Ancak genellikle üreticiler tarafından "
+"sağlanmış "
+"PPD dosyaları yazıcının özel işlevlerinin en iyi şekilde desteklenmesini "
+"sağlarlar."
 
 #. i18n: file: new-printer.ui:608
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnNPPPD)
@@ -712,6 +735,10 @@ msgid ""
 "driver disk that comes with the printer. For PostScript printers they are "
 "often part of the Windows<sup>®</sup> driver.</qt>"
 msgstr ""
+"<qt>PostScript Yazıcı Tanım (PPD) dosyaları çoğunlukla yazıcıyla sağlanan "
+"sürücü diskinde bulunabilirler. PostScript yazıcılar için, genellikle "
+"Windows "
+"<sup>®</sup> sürücüsüne dahildirler.</qt>"
 
 #. i18n: file: new-printer.ui:638
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnNPDownloadableDriverSearch)
@@ -723,13 +750,13 @@ msgstr "İndirmek için bir yazıcı sürücüsü arayın"
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: ui.py:141
 msgid "Enter some search terms for the model of your printer."
-msgstr ""
+msgstr "Yazıcı modeliniz için arama ifadeleri girin."
 
 #. i18n: file: new-printer.ui:652
 #. i18n: ectx: property (text), widget (QLabel, label_30)
 #: ui.py:144
 msgid "Search terms:"
-msgstr "Aranacak sözcükler:"
+msgstr "Aranacak ifadeler:"
 
 #. i18n: file: new-printer.ui:662
 #. i18n: ectx: property (text), widget (QPushButton, btnNPDownloadableDriverSearch)
@@ -789,7 +816,7 @@ msgstr "Geçerli ayarları aktarmayı dene"
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnChangePPDasIs)
 #: ui.py:174
 msgid "Use the new PPD (Postscript Printer Description) as is."
-msgstr ""
+msgstr "Yeni PPD (Postscript Yazıcı Tanım) dosyasını aynen kullan."
 
 #. i18n: file: new-printer.ui:823
 #. i18n: ectx: property (text), widget (QLabel, label_37)
@@ -798,12 +825,14 @@ msgid ""
 "This way all current option settings will be lost. The default settings of "
 "the new PPD will be used. "
 msgstr ""
+"Bu seçenekle mevcut ayarlar kaybedilecek ve yeni PPD dosyasının "
+"varsayılan ayarlarına dönülecektir."
 
 #. i18n: file: new-printer.ui:833
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnChangePPDKeepSettings)
 #: ui.py:180
 msgid "Try to copy the option settings over from the old PPD. "
-msgstr ""
+msgstr "Eski PPD dosyasından ayarları yenisine kopyalamayı dene."
 
 #. i18n: file: new-printer.ui:840
 #. i18n: ectx: property (text), widget (QLabel, label_38)
@@ -813,6 +842,10 @@ msgid ""
 "meaning. Settings of options that are not present in the new PPD will be "
 "lost and options only present in the new PPD will be set to default."
 msgstr ""
+"Bu seçenekle, aynı isimdeki seçeneklerin aynı anlamlara geldiği kabul "
+"edilecek, "
+"yeni PPD dosyasında bulunmayan seçenekler yoksayılacak ve sadece yeni PPD "
+"dosyasında bulunan seçenekler varsayılan ayarlarında tutulacaktır."
 
 #. i18n: file: new-printer.ui:913
 #. i18n: ectx: property (text), widget (QPushButton, btnNPBack)
@@ -856,7 +889,7 @@ msgstr "Yeni Yerel Yazıcı"
 msgid ""
 "Add a new printer which is directly connected to your\n"
 "computer."
-msgstr ""
+msgstr "Doğrudan bilgisayarınıza bağlı yeni bir yazıcı ekleyin."
 
 #. i18n: file: system-config-printer.ui:94
 #. i18n: ectx: property (text), widget (KPushButton, btnNewPrinterNetwork)
@@ -870,7 +903,7 @@ msgstr "Yeni Ağ Yazıcısı"
 msgid ""
 "Add a new printer which is connected to your home\n"
 "network or on the Internet."
-msgstr ""
+msgstr "Ev ağınızda ya da İnternet üzerinde bulunan yeni ağ yazıcısı ekleyin."
 
 #. i18n: file: system-config-printer.ui:115
 #. i18n: ectx: property (text), widget (KPushButton, btnNewPrinterSpecial)
@@ -885,6 +918,8 @@ msgid ""
 "Add a new special printer such as a Fax or PDF by\n"
 "specifying an executable command."
 msgstr ""
+"Bir çalıştırılabilir komut belirterek Faks ya da PDF gibi\n"
+"yeni bir özel yazıcı ekleyin."
 
 #. i18n: file: system-config-printer.ui:136
 #. i18n: ectx: property (text), widget (KPushButton, btnNewClass)
@@ -899,6 +934,8 @@ msgid ""
 "Add a new printer class to specify a group of computers to\n"
 "print to."
 msgstr ""
+"Yazdırma görevi gönderilecek bir bilgisayar grubu belirlemek\n"
+"için yeni bir yazıcı sınıfı ekleyin."
 
 #. i18n: file: system-config-printer.ui:178
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -916,13 +953,13 @@ msgstr "Diğer sistemler tarafından paylaşılan yazıcıları göster"
 #. i18n: ectx: property (text), widget (QCheckBox, chkServerShare)
 #: ui.py:258
 msgid "Share published printers connected to this system"
-msgstr ""
+msgstr "Bu sisteme bağlı yayımlanan yazıcıları paylaş"
 
 #. i18n: file: system-config-printer.ui:244
 #. i18n: ectx: property (text), widget (QCheckBox, chkServerShareAny)
 #: ui.py:261
 msgid "Allow printing from the Internet"
-msgstr "İnternet'ten yazdırmaya izin ver"
+msgstr "İnternet üzerinden yazdırmaya izin ver"
 
 #. i18n: file: system-config-printer.ui:251
 #. i18n: ectx: property (text), widget (QCheckBox, chkServerRemoteAdmin)
@@ -934,13 +971,13 @@ msgstr "Uzaktan yönetime izin ver"
 #. i18n: ectx: property (text), widget (QCheckBox, chkServerAllowCancelAll)
 #: ui.py:267
 msgid "Allow users to cancel any job (not just their own)"
-msgstr ""
+msgstr "Kullanıcıların herhangi bir görevi iptal etmelerine izin ver"
 
 #. i18n: file: system-config-printer.ui:265
 #. i18n: ectx: property (text), widget (QCheckBox, chkServerLogDebug)
 #: ui.py:270
 msgid "Save debugging information for troubleshooting"
-msgstr ""
+msgstr "Hata giderme için ek bilgi kaydet"
 
 #. i18n: file: system-config-printer.ui:299
 #. i18n: ectx: property (text), widget (QLabel, printerNameLabel)
@@ -1092,13 +1129,13 @@ msgstr "Kullanıcı ve Grup İzinleri"
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnPAllow)
 #: ui.py:353
 msgid "Allow printing for everyone except these users."
-msgstr ""
+msgstr "Bu kullanıcılar dışında herkesten yazdırma görevi kabul et."
 
 #. i18n: file: system-config-printer.ui:750
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnPDeny)
 #: ui.py:356
 msgid "Deny printing for everyone except these users"
-msgstr ""
+msgstr "Bu kullanıcılar dışında hiç kimseden yazdırma görevi kabul etme."
 
 #. i18n: file: system-config-printer.ui:774
 #. i18n: ectx: property (text), widget (KPushButton, btnPAddUser)
@@ -1134,6 +1171,9 @@ msgid ""
 "arriving at this print server will have these options added\n"
 "if they are not already set by the application."
 msgstr ""
+"Bu yazıcı için öntanımlı görev ayarlarını düzenleyin.\n"
+"Bu yazıcı sunucusuna gelen görevler, uygulama tarafından\n"
+"zaten ayarlanmadıysa bu ayarlara sahip olacaklar."
 
 #. i18n: file: system-config-printer.ui:929
 #. i18n: ectx: property (text), widget (QLabel, label_13)
@@ -1238,13 +1278,13 @@ msgstr "Ters dikey (180°)"
 #. i18n: ectx: property (text), widget (QCheckBox, cbJOFitplot)
 #: ui.py:412
 msgid "Scale to fit"
-msgstr ""
+msgstr "Sığdırmak için ölçekle"
 
 #. i18n: file: system-config-printer.ui:1007
 #. i18n: ectx: property (text), widget (QLabel, label_17)
 #: ui.py:418
 msgid "Pages per slide"
-msgstr ""
+msgstr "Slayt başına sayfa"
 
 #. i18n: file: system-config-printer.ui:1020
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJONumberUp)
@@ -1280,13 +1320,13 @@ msgstr "16"
 #. i18n: ectx: property (text), widget (QLabel, label_37)
 #: ui.py:442
 msgid "Pages per side layout:"
-msgstr ""
+msgstr "Sayfa dizilimi:"
 
 #. i18n: file: system-config-printer.ui:1065
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJONumberUpLayout)
 #: ui.py:445
 msgid "Left to right, top to bottom"
-msgstr "Soldan sağa, yukardan aşağıya"
+msgstr "Soldan sağa, yukarıdan aşağıya"
 
 #. i18n: file: system-config-printer.ui:1070
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJONumberUpLayout)
@@ -1321,7 +1361,7 @@ msgstr "%"
 #. i18n: ectx: property (text), widget (QLabel, label_39)
 #: ui.py:467
 msgid "Finishings:"
-msgstr ""
+msgstr "Sonlandırmalar:"
 
 #. i18n: file: system-config-printer.ui:1122
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
@@ -1333,13 +1373,13 @@ msgstr "Hiçbiri"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:473
 msgid "Staple"
-msgstr ""
+msgstr "Zımba"
 
 #. i18n: file: system-config-printer.ui:1132
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:476
 msgid "Punch"
-msgstr ""
+msgstr "Delik"
 
 #. i18n: file: system-config-printer.ui:1137
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
@@ -1351,145 +1391,145 @@ msgstr "Kapak"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:482
 msgid "Bind"
-msgstr ""
+msgstr "Cilt"
 
 #. i18n: file: system-config-printer.ui:1147
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:485
 msgid "Saddle stitch"
-msgstr ""
+msgstr "Ortadan zımbalama"
 
 #. i18n: file: system-config-printer.ui:1152
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:488
 msgid "Edge stitch"
-msgstr ""
+msgstr "Kenardan zımbalama"
 
 #. i18n: file: system-config-printer.ui:1157
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:491
 msgid "Fold"
-msgstr ""
+msgstr "Katla"
 
 #. i18n: file: system-config-printer.ui:1162
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:494
 msgid "Trim"
-msgstr "Düzelt"
+msgstr "Kes/Düzelt"
 
 #. i18n: file: system-config-printer.ui:1167
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:497
 msgid "Bale"
-msgstr ""
+msgstr "Balyala"
 
 #. i18n: file: system-config-printer.ui:1172
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:500
 msgid "Booklet maker"
-msgstr ""
+msgstr "Kitapçık"
 
 #. i18n: file: system-config-printer.ui:1177
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:503
 msgid "Job offset"
-msgstr ""
+msgstr "Kaydırma ofseti"
 
 #. i18n: file: system-config-printer.ui:1182
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:506
 msgid "Staple (top left)"
-msgstr ""
+msgstr "Zımba (sol üst)"
 
 #. i18n: file: system-config-printer.ui:1187
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:509
 msgid "Staple (bottom left)"
-msgstr ""
+msgstr "Zımba (sol alt)"
 
 #. i18n: file: system-config-printer.ui:1192
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:512
 msgid "Staple (top right)"
-msgstr ""
+msgstr "Zımba (sağ üst)"
 
 #. i18n: file: system-config-printer.ui:1197
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:515
 msgid "Staple (bottom right)"
-msgstr ""
+msgstr "Zımba (sağ alt)"
 
 #. i18n: file: system-config-printer.ui:1202
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:518
 msgid "Edge stitch (left)"
-msgstr ""
+msgstr "Kenardan zımbala (sol)"
 
 #. i18n: file: system-config-printer.ui:1207
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:521
 msgid "Edge stitch (top)"
-msgstr ""
+msgstr "Kenardan zımbala (yukarı)"
 
 #. i18n: file: system-config-printer.ui:1212
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:524
 msgid "Edge stitch (right)"
-msgstr ""
+msgstr "Kenardan zımbala (sağ)"
 
 #. i18n: file: system-config-printer.ui:1217
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:527
 msgid "Edge stitch (bottom)"
-msgstr ""
+msgstr "Kenardan zımbala (aşağı)"
 
 #. i18n: file: system-config-printer.ui:1222
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:530
 msgid "Staple dual (left)"
-msgstr ""
+msgstr "Çift zımba (sol)"
 
 #. i18n: file: system-config-printer.ui:1227
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:533
 msgid "Staple dual (top)"
-msgstr ""
+msgstr "Çift zımba (yukarı)"
 
 #. i18n: file: system-config-printer.ui:1232
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:536
 msgid "Staple dual (right)"
-msgstr ""
+msgstr "Çift zımba (sağ)"
 
 #. i18n: file: system-config-printer.ui:1237
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:539
 msgid "Staple dual (bottom)"
-msgstr ""
+msgstr "Çift zımba (aşağı)"
 
 #. i18n: file: system-config-printer.ui:1242
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:542
 msgid "Bind (left)"
-msgstr ""
+msgstr "Cilt (sol)"
 
 #. i18n: file: system-config-printer.ui:1247
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:545
 msgid "Bind (top)"
-msgstr ""
+msgstr "Cilt (yukarı)"
 
 #. i18n: file: system-config-printer.ui:1252
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:548
 msgid "Bind (right)"
-msgstr ""
+msgstr "Cilt (sağ)"
 
 #. i18n: file: system-config-printer.ui:1257
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOFinishings)
 #: ui.py:551
 msgid "Bind (bottom)"
-msgstr ""
+msgstr "Cilt (aşağı)"
 
 #. i18n: file: system-config-printer.ui:1272
 #. i18n: ectx: property (text), widget (QLabel, label_42)
@@ -1513,25 +1553,25 @@ msgstr "Yanlar:"
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOSides)
 #: ui.py:572
 msgid "One-sided"
-msgstr "Tek Yönlü"
+msgstr "Tek taraflı"
 
 #. i18n: file: system-config-printer.ui:1319
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOSides)
 #: ui.py:575
 msgid "Two-sided (long edge)"
-msgstr "Çift yönlü (Uzun kenarlık)"
+msgstr "Çift taraflı (uzun kenar)"
 
 #. i18n: file: system-config-printer.ui:1324
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbJOSides)
 #: ui.py:578
 msgid "Two-sided (short edge)"
-msgstr "Çift yönlü (kısa kenarlık)"
+msgstr "Çift taraflı (kısa kenar)"
 
 #. i18n: file: system-config-printer.ui:1339
 #. i18n: ectx: property (text), widget (QLabel, label_43)
 #: ui.py:584
 msgid "Hold until:"
-msgstr ""
+msgstr "Şu olana kadar beklet:"
 
 #. i18n: file: system-config-printer.ui:1360
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -1549,7 +1589,7 @@ msgstr "Ayna Görüntüsü"
 #. i18n: ectx: property (text), widget (QLabel, label_18)
 #: ui.py:599
 msgid "Scaling"
-msgstr "Ölçeklendirme"
+msgstr "Ölçekleme"
 
 #. i18n: file: system-config-printer.ui:1409
 #. i18n: ectx: property (text), widget (QLabel, label_31)
@@ -1561,7 +1601,7 @@ msgstr "Doygunluk"
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #: ui.py:619
 msgid "Hue adjustment"
-msgstr "Renk ayarlaması"
+msgstr "Renk tonu ayarlaması"
 
 #. i18n: file: system-config-printer.ui:1443
 #. i18n: ectx: property (text), widget (QLabel, label_35)
@@ -1585,7 +1625,7 @@ msgstr "<b>Metin Seçenekleri</b>"
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #: ui.py:637
 msgid "Character per inch:"
-msgstr ""
+msgstr "İnç başına harf:"
 
 #. i18n: file: system-config-printer.ui:1520
 #. i18n: ectx: property (text), widget (QLabel, label_21)
@@ -1633,7 +1673,7 @@ msgstr "Alt boşluk"
 #. i18n: ectx: property (text), widget (QCheckBox, cbJOPrettyPrint)
 #: ui.py:685
 msgid "Pretty print"
-msgstr ""
+msgstr "Süslü yazdırma"
 
 #. i18n: file: system-config-printer.ui:1649
 #. i18n: ectx: property (text), widget (QCheckBox, cbJOWrap)
@@ -1651,7 +1691,7 @@ msgstr "Sütunlar"
 #. i18n: ectx: property (text), widget (QLabel, label_46)
 #: ui.py:703
 msgid "To add a new option, enter its name in the box below and click to add."
-msgstr ""
+msgstr "Yeni bir seçenek eklemek için adını aşağıdaki kutuya yazıp tıklayın."
 
 #~ msgid "TextLabel"
 #~ msgstr "MetinEtiketi"
