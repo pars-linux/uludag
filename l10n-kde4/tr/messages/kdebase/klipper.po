@@ -6,14 +6,15 @@
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: klipper\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-13 01:19+0100\n"
-"PO-Revision-Date: 2010-04-20 16:55+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-04-26 10:16+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -556,6 +557,16 @@ msgid ""
 "history, but the selection can only be pasted using the middle mouse button. "
 "Also see the 'Ignore Selection' option.</qt>"
 msgstr ""
+"<qt>Ekranın bir bölümü fare veya klavye ile seçildiğinde buna \"seçim\" adı "
+"verilir. "
+"Bu seçenek etkinleştirilirse seçim ile pano aynı tutularak, seçimdeki "
+"herhangi bir "
+"şeyin - farenin orta düğmesi de dahil - herhangi bir yöntemle anında "
+"yapıştırılabilmesi "
+"sağlanır. Aksi takdirde, seçim pano geçmişine kaydedilir ancak sadece "
+"farenin orta "
+"düğmesi kullanılarak yapıştırılabilir. 'Seçimi gözardı et' seçeneğine de "
+"gözatın.</qt>"
 
 #. i18n: file: klipper.kcfg:43
 #. i18n: ectx: label, entry (SelectionTextOnly), group (General)
@@ -571,6 +582,11 @@ msgid ""
 "called \"the selection\". If this option is selected, only text selections "
 "are stored in the history, while images and other selections are not.</qt>"
 msgstr ""
+"<qt>Ekranın bir bölümü fare veya klavye ile seçildiğinde buna \"seçim\" adı "
+"verilir. "
+"Bu seçenek etkinleştirilirse, geçmişte sadece metin seçimleri tutulur, resim "
+"ve diğer "
+"seçimler gözardı edilir.</qt>"
 
 #. i18n: file: klipper.kcfg:48
 #. i18n: ectx: label, entry (UseGUIRegExpEditor), group (General)
