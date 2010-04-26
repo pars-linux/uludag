@@ -192,7 +192,7 @@ Bir muzik veya video DVD'sini bilgisayarınızın sürücüsüne takın. Aşağ�
 
 Aşağıdaki bağlantıda bulunan iso'yu DAO modunda DVD ve CD'ye yazdırın. 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 \end{verbatim}
 
 Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir şekilde boot ettiğini gözlemleyin.
@@ -202,9 +202,9 @@ Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir ş
 
 Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/sound/sample.ogg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/sound/sample.ogg
  \end{verbatim}
 
 Daha sonra bu cd'de bulunanların okunabildiğini gözlemleyin.
@@ -212,30 +212,30 @@ Daha sonra bu cd'de bulunanların okunabildiğini gözlemleyin.
 
 Aşağıda bulunan dosyaları k3b ile bir audio cd olarak yazdırın. Yazdırabildiğinizi gözlemleyin.
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.ogg
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.wav
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.ogg
  \end{verbatim}
 
 Audio CD'yi mount edin ve daha sonra aşağıda bulunan klomutları çalıştırın:
 \begin{verbatim}
- # cdparanoia -vsQ
- # cdparanoia -B
+ cdparanoia -vsQ
+ cdparanoia -B
 \end{verbatim}
 
 \item k3b paketi kurulumu sonrası:
 \begin{itemize}
 \item Aşağıdaki bağlantıda bulunan iso'yu DVD ve CD'ye yazdırın. 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/optical/boot.iso
 \end{verbatim}
 
 Bilgisayarınızı CD/DVD sürücünüzden başlatın ve iso'nun düzgün bir şekilde boot ettiğini gözlemleyin.
 
 \item Aşağıdaki bağlantıda bulunan video ve müzikleri DVD ve CD'ye audio (ses cd'si) olarak yazdırın. (RAW mod ile)
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
 \end{verbatim}
 Yazdırdığınız CD veya DVD'den video veya müziklerinizi açın, ses ve görüntünün sorunsuz bir şekilde olduğunu gözlemleyin.
 
@@ -369,7 +369,23 @@ kdebluetooth
  \item Aşağıda bulunan uygulamalar sadece kurulum testine tabidir:
 \begin{verbatim}
   squashfs-tools
+  device-mapper
+  device-mapper-static
+  lvm2
+  lvm2-static
 \end{verbatim}
+
+\item testdisk paketi kurulumu sonrası:
+
+ "testdisk" komutunu çalıştırın ve Create $\rightarrow$ Select a Media $\rightarrow$ None $\rightarrow$ Analyse $\rightarrow$ QuickSearch yolunu izleyin ve sorunsuz bir şekilde seçilen disk içerisinde bulunan bölümlerin listelendiğini gözlemleyin.
+
+\item ddrescue paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun test2 dosyasına test_ddrescue içeriğini kopyaladığını gözlemleyin.
+ \begin{verbatim}
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/hardware/disk/test_ddrescue
+  ddrescue test_ddrescue test2
+ \end{verbatim}
 
 \item dosfstools paketi kurulumu sonrası:
 
