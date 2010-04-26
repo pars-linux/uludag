@@ -18,6 +18,7 @@ from PyQt4.QtCore import *
 import string
 import backend
 from pmutils import humanReadableSize
+from pmlogging import logger
 
 from context import KIconLoader
 from context import _time
@@ -63,7 +64,11 @@ class PackageModel(QAbstractTableModel):
             return QVariant(self.package_selections[index.row()])
 
         if role >= Qt.UserRole:
-            package = self.package(index)
+            try:
+                package = self.package(index)
+            except Exception, e:
+                logger.warning(e)
+                return _variant
 
         if role == SummaryRole:
             return QVariant(unicode(package.summary))

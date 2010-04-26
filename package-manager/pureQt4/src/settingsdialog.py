@@ -191,7 +191,7 @@ class RepositorySettings(SettingsTab):
     def __addRepository(self):
         repoName = self.repoDialog.repoName.text()
         repoAddress = self.repoDialog.repoAddress.currentText()
-        if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)):
+        if not re.match("^[0-9%s\-\\_\\.\s]*$" % str(pmutils.letters()), str(repoName)) or str(repoName) == '':
             QMessageBox.warning(self.settings, 
                                 i18n("Pisi Error"),
                                 i18n("Not a valid repository name"))
