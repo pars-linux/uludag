@@ -113,8 +113,8 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.setActionButton()
         self.setBasketLabel()
         self.connectModelSignals()
-        restoreCursor()
-        QtGui.QDialog.show(self)
+        QTimer.singleShot(0, restoreCursor)
+        QtGui.QDialog.exec_(self)
 
     def reject(self):
         self.disconnectModelSignals()
