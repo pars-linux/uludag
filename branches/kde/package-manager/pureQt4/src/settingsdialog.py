@@ -46,13 +46,18 @@ class SettingsTab(QObject):
     def save(self):
         pass
 
+    def initialize(self):
+        pass
+
 class GeneralSettings(SettingsTab):
     def setupUi(self):
         self.settings.moveUpButton.setIcon(KIcon("arrow-up"))
         self.settings.moveDownButton.setIcon(KIcon("arrow-down"))
         self.settings.addRepoButton.setIcon(KIcon("list-add"))
         self.settings.removeRepoButton.setIcon(KIcon("list-remove"))
+        self.initialize()
 
+    def initialize(self):
         self.settings.onlyGuiApp.setChecked(self.config.showOnlyGuiApp())
         self.settings.showComponents.setChecked(self.config.showComponents())
         self.settings.intervalCheck.setChecked(self.config.updateCheck())
@@ -111,9 +116,9 @@ class GeneralSettings(SettingsTab):
 
 class CacheSettings(SettingsTab):
     def setupUi(self):
-        self.__getCacheSettings()
+        self.initialize()
 
-    def __getCacheSettings(self):
+    def initialize(self):
         config = self.iface.getConfig()
 
         cache = config.get("general", "package_cache")
@@ -151,7 +156,7 @@ class RepositorySettings(SettingsTab):
         self.settings.repoListView.horizontalHeader().setStretchLastSection(True)
         self.settings.repoListView.verticalHeader().hide()
         self.settings.repoListView.setColumnWidth(0, 32)
-        self.__getRepositories()
+        self.initialize()
 
     def connectSignals(self):
         self.connect(self.settings.addRepoButton, SIGNAL("clicked()"), self.addRepository)
@@ -160,10 +165,15 @@ class RepositorySettings(SettingsTab):
         self.connect(self.settings.moveDownButton, SIGNAL("clicked()"), self.moveDown)
         self.connect(self.settings.repoListView, SIGNAL("itemChanged(QTableWidgetItem*)"), self.markChanged)
 
-    def __getRepositories(self):
-        repositories = self.iface.getRepositories()
-        for name, address in repositories:
+    def initialize(self):
+        self.repositories = self.iface.getRepositories()
+        self.__clear()
+        for name, address in self.repositories:
             self.__insertRow(name, address)
+
+    def __clear(self):
+        while self.settings.repoListView.rowCount():
+            self.settings.repoListView.removeRow(0)
 
     def __insertRow(self, repoName, repoAddress):
         currentRow = self.settings.repoListView.rowCount()
@@ -175,12 +185,12 @@ class RepositorySettings(SettingsTab):
 
         repoNameItem = QTableWidgetItem()
         repoNameItem.setText(repoName)
-        repoNameItem.setTextAlignment(Qt.AlignCenter)
+        repoNameItem.setTextAlignment(Qt.AlignLeft|Qt.AlignVCenter)
         self.settings.repoListView.setItem(currentRow, 1, repoNameItem)
 
         repoAddressItem = QTableWidgetItem()
         repoAddressItem.setText(repoAddress)
-        repoAddressItem.setTextAlignment(Qt.AlignCenter)
+        repoAddressItem.setTextAlignment(Qt.AlignLeft|Qt.AlignVCenter)
         self.settings.repoListView.setItem(currentRow, 2, repoAddressItem)
 
     def addRepository(self):
@@ -262,10 +272,10 @@ class RepositorySettings(SettingsTab):
 
 class ProxySettings(SettingsTab):
     def setupUi(self):
-        self.settings.noProxyButton.setChecked(True)
-        self.__getProxySettings()
+        self.initialize()
 
-    def __getProxySettings(self):
+    def initialize(self):
+        self.settings.noProxyButton.setChecked(True)
         config = self.iface.getConfig()
         httpProxy = httpProxyPort = ftpProxy = ftpProxyPort = httpsProxy = httpsProxyPort = None
 
@@ -366,7 +376,14 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
 
     def connectSignals(self):
         self.connect(self.buttonOk, SIGNAL("clicked()"), self.saveSettings)
+        self.connect(self.buttonCancel, SIGNAL("clicked()"), self.cancelSettings)
         self.connect(self.buttonHelp, SIGNAL("clicked()"), self.showHelp)
+
+    def cancelSettings(self):
+        for tab in (self.generalSettings, self.cacheSettings, \
+                self.repositorySettings, self.proxySettings):
+            tab.initialize()
+        self.reject()
 
     def saveSettings(self):
         for settings in [self.generalSettings, self.cacheSettings, self.repositorySettings, self.proxySettings]:
@@ -377,3 +394,4 @@ class SettingsDialog(QDialog, Ui_SettingsDialog):
     def showHelp(self):
         helpDialog = helpdialog.HelpDialog(self, helpdialog.PREFERENCES)
         helpDialog.show()
+

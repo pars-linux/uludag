@@ -738,22 +738,6 @@ This will not delete installed software or affect your system stability.</string
  </resources>
  <connections>
   <connection>
-   <sender>buttonCancel</sender>
-   <signal>clicked()</signal>
-   <receiver>SettingsDialog</receiver>
-   <slot>reject()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>694</x>
-     <y>368</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>482</x>
-     <y>356</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>buttonOk</sender>
    <signal>clicked()</signal>
    <receiver>SettingsDialog</receiver>
