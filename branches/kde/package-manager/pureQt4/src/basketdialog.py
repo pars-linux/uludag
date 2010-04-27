@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -18,6 +18,7 @@ from packagemodel import PackageModel, GroupRole
 from packagedelegate import PackageDelegate
 
 from pmutils import *
+from context import i18n
 
 from ui_basketdialog import Ui_BasketDialog
 
@@ -108,7 +109,13 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         waitCursor()
         self.showHideDownloadInfo()
         self.__updateList(self.packageList, self.model.selectedPackages())
-        self.filterExtras()
+        try:
+            self.filterExtras()
+        except Exception, e:
+            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e), QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+            QTimer.singleShot(0, restoreCursor)
+            messageBox.exec_()
+            return
         self.updateTotal()
         self.setActionButton()
         self.setBasketLabel()

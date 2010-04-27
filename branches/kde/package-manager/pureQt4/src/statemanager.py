@@ -55,7 +55,6 @@ class StateManager(QObject):
                 self._typeCaches = {}
             else:
                 self.cached_packages = self.iface.getPackageList()
-
                 if self.onlyGuiInState():
                     self.cached_packages = set(self.cached_packages).intersection(self.iface.getIsaPackages("app:gui"))
         if not self._typeFilter == 'normal' and self.state == self.UPGRADE:

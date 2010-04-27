@@ -67,6 +67,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
         self.connect(self.selectAll, SIGNAL("toggled(bool)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
+        self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(QString)"), lambda message: self.emit(SIGNAL("selectionStatusChanged(QString)"), message))
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
 
     def connectOperationSignals(self):
