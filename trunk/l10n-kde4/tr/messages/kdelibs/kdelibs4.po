@@ -12,30 +12,31 @@
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2009-11-15 23:27+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-27 16:57+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Görkem Çetin"
+msgstr "Serdar Soytetir, Görkem Çetin, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, gorkem@kde.org"
+msgstr "tulliana@gmail.com, gorkem@kde.org, ibrahim@pardus.org.tr"
 
 #. i18n: file: threadweaver/Examples/QProcessJob/MainWindowUi.ui:36
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonQuit)
@@ -628,42 +629,37 @@ msgstr "Yeni Öğeleri Paylaş"
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:31
 #. i18n: ectx: property (text), widget (QLabel, uploadingLabel)
 #: rc.cpp:273
-#, fuzzy
 #| msgid "Download"
 msgid "Uploading file:"
-msgstr "İndir"
+msgstr "Gönderilen dosya:"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:47
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:276
-#, fuzzy
 #| msgid "Server: %1"
 msgid "Server:"
-msgstr "Sunucu: %1"
+msgstr "Sunucu:"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:63
 #. i18n: ectx: property (text), widget (QLabel, mServerNameLabel)
 #: rc.cpp:279
-#, fuzzy
 #| msgid "View Frame Information"
 msgid "Loading Server Information..."
-msgstr "Çerçeve Bilgisini Göster"
+msgstr "Sunucu Bilgisi Yükleniyor..."
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:85
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: rc.cpp:282
-#, fuzzy
 #| msgid "Please give some information about yourself."
 msgid "Please fill out the information about your upload in English."
-msgstr "Lütfen hakkınızda biraz bilgi verin."
+msgstr "Lütfen gönderiminiz hakkındaki bilgileri İngilizce olarak doldurun."
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:92
 #. i18n: ectx: property (title), widget (QGroupBox, uploadGroup)
 #: rc.cpp:285 knewstuff/knewstuff3/uploaddialog.cpp:301
-#, fuzzy
 #| msgid "Reload"
 msgid "Upload"
-msgstr "Yeniden Yükle"
+msgstr "Yükle"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:98
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -717,10 +713,9 @@ msgstr "BSD"
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:165
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:306
-#, fuzzy
 #| msgid "Preview URL:"
 msgid "Preview Image:"
-msgstr "Önizleme Adresi:"
+msgstr "Resmi Önizle:"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:181
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -748,35 +743,31 @@ msgstr "Kaynak:"
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:46
 #. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
 #: rc.cpp:318
-#, fuzzy
 #| msgid "Provider: %1"
 msgid "Provider:"
-msgstr "Sağlayıcı: %1"
+msgstr "Sağlayıcı:"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:63
 #. i18n: ectx: property (text), widget (QLabel, m_categoryLabel)
 #: rc.cpp:321
-#, fuzzy
 #| msgid "Character:"
 msgid "Category:"
-msgstr "Karakter:"
+msgstr "Kategori:"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:82
 #. i18n: ectx: property (text), widget (QRadioButton, newestRadio)
 #: rc.cpp:324
-#, fuzzy
 #| msgctxt "@action"
 #| msgid "New"
 msgid "Newest"
-msgstr "Yeni"
+msgstr "En Yeni"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:92
 #. i18n: ectx: property (text), widget (QRadioButton, ratingRadio)
 #: rc.cpp:327
-#, fuzzy
 #| msgid "Rating: "
 msgid "Rating"
-msgstr "Beğeni: "
+msgstr "Beğeni"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:99
 #. i18n: ectx: property (text), widget (QRadioButton, mostDownloadsRadio)
@@ -787,18 +778,16 @@ msgstr "En Çok İndirilenler"
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:106
 #. i18n: ectx: property (text), widget (QRadioButton, installedRadio)
 #: rc.cpp:333
-#, fuzzy
 #| msgid "Install"
 msgid "Installed"
-msgstr "Yükle"
+msgstr "Yüklü"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:164
 #. i18n: ectx: property (text), widget (QLabel, orderLabel)
 #: rc.cpp:336
-#, fuzzy
 #| msgid "&Order by:"
 msgid "Order by:"
-msgstr "&Buna göre sırala:"
+msgstr "Sırala:"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:174
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -839,41 +828,39 @@ msgstr "Yazar:"
 #. i18n: ectx: property (text), widget (QLabel, homepageLabel)
 #: rc.cpp:354
 msgid "<a href=\"http://opendesktop.org\">Visit Homepage</a>"
-msgstr ""
+msgstr "<a href=\"http://opendesktop.org\">Ana sayfayı ziyaret et</a>"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:125
 #. i18n: ectx: property (title), widget (QGroupBox, previewSmallGroup)
 #: rc.cpp:357
-#, fuzzy
 #| msgid "No Preview"
 msgid "Previews"
-msgstr "Önizleme Yok"
+msgstr "Önizlemeler"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:184
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: rc.cpp:360
-#, fuzzy
 #| msgid "Comment"
 msgid "Community"
-msgstr "Yorum"
+msgstr "Topluluk"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:205
 #. i18n: ectx: property (text), widget (QPushButton, voteGoodButton)
 #: rc.cpp:363
 msgid "I like this"
-msgstr ""
+msgstr "Beğendim"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:212
 #. i18n: ectx: property (text), widget (QPushButton, voteBadButton)
 #: rc.cpp:366
 msgid "I do not like this"
-msgstr ""
+msgstr "Beğenmedim"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:221
 #. i18n: ectx: property (text), widget (QPushButton, becomeFanButton)
 #: rc.cpp:369
 msgid "Become a Fan"
-msgstr ""
+msgstr "Hayranı Ol"
 
 #. i18n: file: knewstuff/knewstuff3/ui/entrydetailsdialog.ui:251
 #. i18n: ectx: property (text), widget (QPushButton, installButton)
@@ -2151,7 +2138,6 @@ msgstr "&Arkaplanda imla denetimini etkinleştir"
 #. i18n: file: kdeui/sonnet/configui.ui:45
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkerEnabledByDefaultCB)
 #: rc.cpp:979
-#, fuzzy
 #| msgid "&Auto spell check enabled by default"
 msgid "&Automatic spell checking enabled by default"
 msgstr "&Otomatik yazım denetimini öntanımlı olarak etkinleştir"
@@ -2870,10 +2856,9 @@ msgid "Select Components"
 msgstr "Bileşenleri Seç"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:122
-#, fuzzy
 #| msgid "&Replace..."
 msgid "Upload..."
-msgstr "Değ&iştir..."
+msgstr "Yükle..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:126
 #: knewstuff/knewstuff2/ui/uploaddialog.cpp:65
@@ -2883,16 +2868,14 @@ msgid "%1 Add-On Uploader"
 msgstr "%1 Eklenti Gönderici"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:130
-#, fuzzy
 #| msgid "Provider information"
 msgid "Fetching provider information..."
-msgstr "Sağlayıcı bilgileri"
+msgstr "Sağlayıcı bilgileri alınıyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:215
-#, fuzzy
 #| msgid "The rating could not be submitted."
 msgid "Provider could not be initialized."
-msgstr "Beğeni gönderilemedi."
+msgstr "Sağlayıcı başlatılamadı."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:220
 #: knewstuff/knewstuff2/ui/uploaddialog.cpp:92
@@ -2905,20 +2888,18 @@ msgstr ""
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:268
 msgid "There was a network error."
-msgstr ""
+msgstr "Ağ hatası var."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:268
 #: knewstuff/knewstuff3/uploaddialog.cpp:273
-#, fuzzy
 #| msgid "Download"
 msgid "Uploading Failed"
-msgstr "İndir"
+msgstr "Yükleme Başarısız"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:273
-#, fuzzy
 #| msgid "Communication error"
 msgid "Authentication error."
-msgstr "İletişim hatası"
+msgstr "Yetkilendirme hatası."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:279
 #, fuzzy
@@ -2937,20 +2918,19 @@ msgid "Uploading preview image and content..."
 msgstr "Önizleme Yükleniyor"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:301
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "File %1 not found."
 msgid "File not found: %1"
-msgstr "%1 dosyası bulunamadı."
+msgstr "Dosya bulunamadı: %1"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:325
 msgid "Content Added"
-msgstr ""
+msgstr "İçerik Eklendi"
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:325
-#, fuzzy
 #| msgid "Page loaded."
 msgid "File Uploaded"
-msgstr "Sayfa yüklendi."
+msgstr "Dosya Gönderildi"
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:68
 #: knewstuff/knewstuff2/ui/downloaddialog.cpp:312
@@ -3144,13 +3124,12 @@ msgstr "Geçici dosya oluşturulamadı."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:408
 msgid "Your vote was successful."
-msgstr ""
+msgstr "Oylama başarılı."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:410
-#, fuzzy
 #| msgid "Download"
 msgid "Voting failed."
-msgstr "İndir"
+msgstr "Oylama başarısız."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:426
 msgid "You are now a fan."
@@ -3164,32 +3143,30 @@ msgstr "Geçici dosya oluşturulamadı."
 
 #: knewstuff/knewstuff3/ui/itemsmodel.cpp:144
 #: knewstuff/knewstuff3/ui/entrydetailsdialog.cpp:119
-#, fuzzy
 #| msgid "Loading Preview"
 msgid "Loading preview..."
-msgstr "Önizleme Yükleniyor"
+msgstr "Önizleme yükleniyor..."
 
 #: knewstuff/knewstuff3/ui/entrydetailsdialog.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Suggestions for %1"
 msgid "Details for %1"
-msgstr "%1 için öneriler"
+msgstr "%1 ayrıntıları"
 
 #: knewstuff/knewstuff3/ui/entrydetailsdialog.cpp:93
-#, fuzzy
 #| msgid "Homepage"
 msgctxt "A link to the description of this Get Hot New Stuff item"
 msgid "Visit homepage..."
-msgstr "Başlangıç Sayfası"
+msgstr "Ana sayfayı ziyaret et..."
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:175
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:177
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@interface/rich"
 #| msgid "<i>%1</i>"
 msgctxt "Show the author of this item in a list"
 msgid "By <i>%1</i>"
-msgstr "<i>%1</i>"
+msgstr "<i>%1</i> tarafından"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:189
 #: knewstuff/knewstuff2/ui/itemsviewdelegate.cpp:150
@@ -3198,28 +3175,24 @@ msgid "<p>Downloads: %1</p>\n"
 msgstr "<p>İndirmeler: %1</p>\n"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:223
-#, fuzzy
 #| msgid "Install"
 msgid "Install again"
-msgstr "Yükle"
+msgstr "Yeniden yükle"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:228
-#, fuzzy
 #| msgid "Install"
 msgid "Installing"
-msgstr "Yükle"
+msgstr "Yükleniyor"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:233
-#, fuzzy
 #| msgid "Update"
 msgid "Updating"
-msgstr "Güncelle"
+msgstr "Güncelleniyor"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:246
-#, fuzzy
 #| msgid "Details"
 msgid "Details..."
-msgstr "Ayrıntılar"
+msgstr "Ayrıntılar..."
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:253
 #, fuzzy, kde-format
@@ -6378,7 +6351,7 @@ msgstr "Teknik Neden: "
 
 #: khtml/khtml_part.cpp:1880
 msgid "Details of the Request:"
-msgstr "İsteğin Detayları:"
+msgstr "İsteğin Ayrıntıları:"
 
 #: khtml/khtml_part.cpp:1882
 #, kde-format
@@ -7043,7 +7016,7 @@ msgstr "Yüklenen Betikler"
 
 #: khtml/rendering/media_controls.cpp:47
 msgid "Play"
-msgstr ""
+msgstr "Oynat"
 
 #: khtml/rendering/render_form.cpp:734
 msgid "New Web Shortcut"
@@ -7853,14 +7826,14 @@ msgid_plural "but there are only %1 available"
 msgstr[0] "Eşleşen öge yok.\n"
 
 #: kjsembed/kjsembed/qobject_binding.cpp:414
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "concatenation of dates and time"
 #| msgid "%1 %2"
 msgctxt ""
 "%1 is 'the slot asked for foo arguments', %2 is 'but there are only bar "
 "available'"
 msgid "%1, %2."
-msgstr "%1 %2"
+msgstr "%1, %2."
 
 #: kjsembed/kjsembed/qobject_binding.cpp:613
 #, kde-format
