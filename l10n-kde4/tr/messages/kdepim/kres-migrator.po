@@ -166,7 +166,7 @@ msgstr ""
 #: kresmigrator.h:169
 #, kde-format
 msgid "Migration of '%1' succeeded."
-msgstr "'%1' ögesini başarılı bir şekilde taşındı."
+msgstr "'%1' ögesi başarılı bir şekilde taşındı."
 
 #: kresmigrator.h:177
 #, kde-format
