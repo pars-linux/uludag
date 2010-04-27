@@ -247,6 +247,10 @@ koffice-l10n-zh_TW
  kmymoney-docs
 \end{verbatim}
 
+\item scribus paketi kurulumu sonrası:
+
+Uygulamanın sorunsuz çalıştığını gözlemleyin.
+
 \item rst2pdf paketi kurulumu sonrası:
 
 \begin{verbatim}
@@ -287,28 +291,28 @@ rarian
 \end{verbatim}
 \item aiksaurus paketi kurulumu sonrası:
 \begin{verbatim}
- # aiksaurus <ingilizce bir kelime>
+ aiksaurus <ingilizce bir kelime>
 \end{verbatim}
 
 Verdiğiniz kelimeye benzer kelimeler bulduğunu gözlemleyin.
 
 \item antiword paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
- # antiword antiword_test.doc
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
+ antiword antiword_test.doc
 \end{verbatim}
 
 Komut çıktısının sorunsuz çalıştığını gözlemleyin.
 
 \item barcode paketi kurulumu sonrası:
 \begin{verbatim}
- # barcode
+ barcode
 \end{verbatim}
  Bu komudu çalıştırdıktan sonra bir kelime girin ve bu kelimenin barcode olarak sorunsuz bir şekilde kodlnadığını gözlemleyin.
 
 \item djview4, djvu paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
 \end{verbatim}
 
 İndirdiğiniz dosya üzerine sağ tıklayarak, birlikte aç bölümünden djview4 seçin. 
@@ -324,24 +328,31 @@ Sorunsuz bir şekilde açıldığını gözlemleyin.
 Text dosyasının sorunsuz bir şekilde dos formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)
 
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
- # mac2unix test_mac2unix.txt deneme2.txt
- # vi deneme2.txt
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
+ mac2unix test_mac2unix.txt deneme2.txt
+ vi deneme2.txt
 \end{verbatim}
 Text dosyasının sorunsuz bir şekilde mac formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)
 
 \item doxygen paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
- # doxygen -g test_doxygen.cfg test_doxygen.c
- # doxygen test_doxygen.cfg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
+ doxygen -g test_doxygen.cfg test_doxygen.c
+ doxygen test_doxygen.cfg
+\end{verbatim}
+
+\item doxygen-gui paketi kurulumu sonrası
+
+Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+\begin{verbatim}
+ doxywizard
 \end{verbatim}
 
 Bulunduğunuz dizinde bir html ve bir de latex dizinin sorunsuz bir şekilde oluştuğunu gözlemleyin.
 
 \item htmldoc paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
 \end{verbatim}
 
 Menü $\rightarrow$ Uygulamalar $\rightarrow$ Ofis yolunu izleyerek htmldoc uygulmasını açın.
@@ -353,18 +364,18 @@ Htmldoc uygulmasını kullanarak test\_htmldoc.html dosyasını pdf dosyasına d
 Düzgün bir şekilde dönüşümün gerçekleştiğini gözlemleyin.
 \item mftrace paketi kurulumu sonrası:
 \begin{verbatim}
- # mftrace cmr10
+ mftrace cmr10
 \end{verbatim}
 Sorunsuz bir şekilde cmrt10.pfa dosyasının oluştuğunu gözlemleyin.
 \item t1utils paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
- # t1ascii test_t1utils.pfa
- # t1asm test_t1utils.pfa
- # t1binary test_t1utils.pfa
- # t1disasm test_t1utils.pfa
- # t1mac test_t1utils.pfa
- # t1unmac test_t1utils.pfa
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
+  t1ascii test_t1utils.pfa
+  t1asm test_t1utils.pfa
+  t1binary test_t1utils.pfa
+  t1disasm test_t1utils.pfa
+  t1mac test_t1utils.pfa
+  t1unmac test_t1utils.pfa
 \end{verbatim}
 
 Sorunsuz bir şekilde bu komutların çalıştığını gözlemleyin. 
@@ -531,7 +542,7 @@ Düzgün bir şekilde açıldığını gözlemleyin.
  
 \item openoffice-extension-presenter-screen paketi kurulumu sonrası.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 \end{verbatim}
 
 \begin{itemize}
@@ -544,7 +555,7 @@ F5 tuşuna basın ve bu eklediğiniz notun görüntülenmediğini gözlemleyin.
 \end{itemize}
 \item openoffice-extension-report-builder paketi kurulumu sonrası.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
 \end{verbatim}
 
 \item openoffice Sunum Araçlar $\rightarrow$ Eklenti Yöneticisinden ilgili eklentinin eklenmiş olduğunu gözlemleyin.
@@ -623,9 +634,9 @@ office-tr.pdf inkscape tellico testini gerçekleştiriniz.
 
 \item a2ps paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
-# a2ps -o test_a2ps.ps test_a2ps.tex
-# a2ps test_a2ps.tex
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
+ a2ps -o test_a2ps.ps test_a2ps.tex
+ a2ps test_a2ps.tex
 \end{verbatim}
 
 Yukarıda bulunan ikinci komut çıktısının test\_a2ps.ps dosyasını sorunsuz bir şekilde oluşturduğunu gözlemleyin.
@@ -634,42 +645,41 @@ Eğer bir yazıcınınz var ise 3. komut ile sorunsuz bir şekilde çıktı alı
 
 \item ghostscript ve ghostscript-doc paketleri kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
-# gs test_ghostscript.ps
-# dvipdf  test_ghostscript.dvi test.pdf
-# eps2eps test_ghostscript.ps test.eps
-# font2c test_ghostscript.ps test.c
-# pdf2dsc test_ghostscript.pdf test.dsc
-# pdfopt test_ghostscript.pdf test.pdf
-# printafm test_ghostscript.ps
-# ps2ascii test_ghostscript.ps test
-# ps2pdf test_ghostscript.ps test.pdf
-# ps2ps test_ghostscript.ps test.ps
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
+ gs test_ghostscript.ps
+ eps2eps test_ghostscript.ps test.eps
+ font2c test_ghostscript.ps test.c
+ pdf2dsc test_ghostscript.pdf test.dsc
+ pdfopt test_ghostscript.pdf test.pdf
+ printafm test_ghostscript.ps
+ ps2ascii test_ghostscript.ps test
+ ps2pdf test_ghostscript.ps test.pdf
+ ps2ps test_ghostscript.ps test.ps
 \end{verbatim}
 
 "gs" komutu ile ilgili dosyanın sorunsuz bir şekilde görüntülenebildiğini, diğer komutların da sorunsuz bir şekilde uygun uzantılı dosyalar ürettiğini gözlemleyin. (Bu üretilen dosyalara okular ile bakabilirsiniz.)
 
 \item gv paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# gv test_gv.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+ gv test_gv.pdf
 \end{verbatim}
 
 Pdf dosyasının düzgün bir şekilde görüntülendiğini gözlemleyin.
 
 \item poppler paketi kurulumu sonrası:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
-# pdffonts test_gv.pdf
-# pdfinfo test_gv.pdf
-# pdftohtml test_gv.pdf test.html
-# pdftoppm test_gv.pdf test.ppm
-# pdftops test_gv.pdf test.ps
-# pdftotext test_gv.pdf test
-# pdfimages -f 1 test_poppler.pdf test
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
+ pdffonts test_gv.pdf
+ pdfinfo test_gv.pdf
+ pdftohtml test_gv.pdf test.html
+ pdftoppm test_gv.pdf test.ppm
+ pdftops test_gv.pdf test.ps
+ pdftotext test_gv.pdf test
+ pdfimages -f 1 test_poppler.pdf test
 \end{verbatim}
 
 Yukarıda bulunan komutların sorunsuz bir şekilde uygun çıktıları ürettiğini gözlemleyin.

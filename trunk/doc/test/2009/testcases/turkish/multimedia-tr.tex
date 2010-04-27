@@ -15,6 +15,14 @@
 
 \maketitle
 
+\section{Share}
+\begin{enumerate}
+ \item smb4k paketi kurulumu sonrası:
+
+Uygulamayı açın "Ağı tara" butonuna basın, daha sonra alt kısımda bulunan "Network neighborhood" tab'ına basın ve etrafta bulunan komşu paylaşımların listelendiğini gözlemleyin.
+
+\end{enumerate}
+
 \section{TV alt Bileşeni}
 \begin{enumerate}
  \item mlt paketi kurulumu sonrası:
@@ -67,7 +75,12 @@ Menü $\rightarrow$ digikam $\rightarrow$ İçeriye Aktar $\rightarrow$ Facebook
 \begin{verbatim}
 jack-audio-connection-kit 
 \end{verbatim}
-
+\item qmmp paketi kurulumu sonrası:
+ 
+Aşağıda bulunan tar dosyasını indirdikten sonra uygulamayı çalıştırın ve seslerin düzgün çıktığını gözlemleyin.
+ \begin{verbatim}
+  wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+ \end{verbatim}	
 \item rosegarden paketi kurulumu sonrası:
 
 Kmenu'den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.
@@ -121,7 +134,7 @@ Kmenüden uygulamanın açılabildiğini gözlemleyin.
 Uygulamayı Kmenüden açın ve daha sonra amarok ile aşağıda bulunan müzik dosyasını çalıştırın, çalma bölümünde titreşimlerin olduğunu gözlemleyin.
 Aşağıda bulunan
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
 \end{verbatim}
 
 \item jamin paketi kurulumu sonrası:
@@ -129,7 +142,7 @@ Aşağıda bulunan
 Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulunan .jam uzantılı dosyalardan birini açın ve sorunsuz olarak açıldığını gözlemleyin.
 \item frescobaldi paketi kurulumu sonrası:
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  \end{verbatim}
 Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
 \item pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
@@ -145,7 +158,7 @@ hardware-tr.pdf k3b testini gerçekleştiriniz.
  
 Aşağıda bulunan zip dosyasını indirdikten sonra seslerin düzgün çıktığını gözlemleyin.
  \begin{verbatim}
-  # wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+  wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
  \end{verbatim}	
 
 \item listen paketi kurulumu sonrası: 
@@ -154,11 +167,11 @@ Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizini
 
 \item vorbis-tools paketi kurulumu sonrası: 
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
-  # oggdec game.ogg
-  # mplayer game.wav
-  # oggenc game.wav
-  # mplqayer game.ogg
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
+   oggdec game.ogg
+   mplayer game.wav
+   oggenc game.wav
+   mplqayer game.ogg
  \end{verbatim}
 
 \item qpitch paketi kurulumu sonrası:
@@ -175,17 +188,17 @@ Başla butonuna basın, status ve mesajlardan Jack ses sunucusunun başlatılmı
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-# lame music.mp3 music.mpeg
-# mplayer music.mpeg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ lame music.mp3 music.mpeg
+ mplayer music.mpeg
 \end{verbatim}
 
 \item mpg123 paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # mpg123 sample.mp3
+   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+   mpg123 sample.mp3
  \end{verbatim}
 
 \end{enumerate}
@@ -213,7 +226,7 @@ Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.
 dvdrip uygulmasını kmenüden açın ve dvd'de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
  \item mplayer, vlc, kaffeine, smplayer, gnome-mplayer paketleri kurulumu sonrası:
  \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  \end{verbatim}
 Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya formatı ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
  \item vlc-firefox kurulumu sonrası:
@@ -440,10 +453,30 @@ Lake_dance_XviD.AVI
  graphviz-docs
  GraphicsMagick-devel
  ufraw
+ hugin-docs
+ gimp-devel
+ colorize-gimp
+ gimp-layer-effects
+ gimp-save-for-web
+ gimpfx-foundry
+ gimp-ufraw-plugin
 \end{verbatim}
 \item autopano-sift-C paketi kuruluu sonrası:
 
 multimedia-tr.pdf hugin testini gerçekleştirin.
+
+\item enblend paketi kuruluu sonrası:
+
+multimedia-tr.pdf hugin testini gerçekleştirin.
+
+\item hugin paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test\_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. 
+
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_hugin.zip
+\end{verbatim}
+
 
 \item tesseract paketi kurulumu sonrası:
 
@@ -465,7 +498,7 @@ uniconv  drawing.svg test.ps
 
 \item kphotoalbum paketi kurulumu sonrası:
 
-Kmenuden uygulamayı açın, demoyu çalıştır butonuna basın. Daha sonra slideshow'u çalıştır butonuna basın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+Kmenuden uygulamayı açın, tanıtımı yükleyi seçin butonuna basın. Daha sonra slideshow'u çalıştır butonuna basın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 
 \item yafaray ve yafaray-blender paketleri kurulumu sonrası:
 
@@ -506,6 +539,9 @@ Aşağıda bulunan komutların sorunsuz olarak çalıştığını gözlemleyin.
  \item Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde gimp uygulamasını açın ve uygulamanın ilgili dilde olduğunu gözlemleyin.
 
 Yerel dili değiştirmek için:
+
+İlgili gimp dil paketi ile glibc-locales-<lang> paketini kurun. Örneğin: gimp-i18n-es için için glibc-locales-es.
+
 \begin{verbatim}
 export LC_ALL=<lang_LANG>
 \end{verbatim}
@@ -592,7 +628,7 @@ Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalışt
    # gwenview test.eps 
   \end{verbatim}
 
- \item gimp ve gimp-devel kurulumu sonrası:
+ \item gimp paketi kurulumu sonrası:
   \begin{verbatim}
    http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   \end{verbatim}

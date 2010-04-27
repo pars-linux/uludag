@@ -204,9 +204,23 @@ testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan deği�
 
 \section{Environment alt bileşeni}
 \begin{enumerate}
- \item eclipse-pydev paketi kurulumu sonrası:
+
+\item eclipse-binary paketi kurulumu sonrası:
 
 Kmenu'den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.
+
+\item eclipse-cdt-binary paketi kurulumu sonrası:
+
+Kmenu'den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)
+
+\item eclipse-jdt-binary paketi kurulumu sonrası:
+
+Kmenu'den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)
+
+\item eclipse-pde-binary paketi kurulumu sonrası:
+
+Kmenu'den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)
+
 
  \item kdevelop paketi kurulumu sonrası: 
 
@@ -1258,6 +1272,7 @@ taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib
 \end{verbatim}
+
 \item boo paketi kurulumu sonrası:
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
@@ -1267,21 +1282,21 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 \end{verbatim}
 
 
- \item gmime, gmime-docs, gmime-sharp paketi kurulumu sonrası:
+ \item gmime, gmime-docs, gmime-sharp, gtk-sharp paketi kurulumu sonrası:
 
 Aşağıda bulunan komutun jpeg dosyasını encode ettiğini gözlemleyin.
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg
- # gmime-uuencode -m test_dcraw.jpg jpeg
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg
+ gmime-uuencode -m test_dcraw.jpg jpeg
 \end{verbatim}
 
 
  \item mono paketi kurulumu sonrası:
 Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 \begin{verbatim}
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
-# mcs test_mono.cs
-# mono test_mono.exe
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
+ mcs test_mono.cs
+ mono test_mono.exe
 \end{verbatim}
 
 \item libgdiplus paketi kurulumu sonrası:

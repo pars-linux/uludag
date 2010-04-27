@@ -191,6 +191,29 @@ Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indi
 
 \section{Chat alt Bileşeni}
 \begin{enumerate}
+
+\item quassel ve qassel-data paketleri kurulumu sonrası:
+
+quassel uygulamasını başlatın ve Başlan butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.
+
+\item quasselclient ve quasselcore paketleri kurulumu sonrası:
+
+Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.
+
+"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.
+
+Bağlantının şağlanmış olduğunu gözlemleyin.
+
+\item bitlbee paketi kurulumu sonrası:
+
+Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
+\begin{verbatim}
+ su -
+ vi /etc/xinetd.d/bitlbee
+\end{verbatim}
+
+Konversation uygulamasını çalıştırın, Dosya $\rightarrow$ Çabuk bağlan yolunu izleyerek, Sunucu bilgisayar kısmına "localhost" yazın ve "Bağlan" butonuna basın. Uygulamanın alt bölümünde bulunan kannallarda "bitlbee" kanalının açılmış olduğunu gözlemleyin.
+
 \item skype paketi kurulumu sonrası:
 
 Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
@@ -365,11 +388,22 @@ http://www.dailymotion.com/relevance/search/lorena+mckennit/video/xd9s3_princess
 
 \section{Ftp alt Bileşeni}
 \begin{enumerate}
+\item netkit-ftp paketi kurulumu sonrası:
+
+Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
+\begin{verbatim}
+ ftp ftp.waytec.com
+\end{verbatim}
+
+ \item filezilla paketi kurulumu sonrası:
+
+Uygulamayı açın, sunucu kısmına "ftp.pardus.org.tr" yazın ve "Hızlı bağlan" butonuna basın. "Uzaktaki site" penceresinde "ftp.pardus.org.tr" altında bulunan dizinlerin listelendiğini gözlemleyin.
+
  \item lftp paketi kurulumu sonrası:
 \begin{verbatim}
- # lftp http://ftp.pardus.org.tr/pub/
- # ls 
- # cd pardus
+  lftp http://ftp.pardus.org.tr/pub/
+  ls 
+  cd pardus
 \end{verbatim}
 Yukarıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
  \item ncftp paketi kurulumu sonrası:
