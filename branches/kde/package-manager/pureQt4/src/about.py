@@ -19,7 +19,7 @@ if ctx.Pds.session == ctx.pds.Kde4:
     # Application Data
     appName     = "package-manager"
     catalog     = appName
-    version     = "2.0.4"
+    version     = "2.2.0"
     programName = ki18n("Package Manager")
     description = ki18n("Package Manager")
     license     = KAboutData.License_GPL
@@ -31,5 +31,6 @@ if ctx.Pds.session == ctx.pds.Kde4:
                     description, license, copyright, text, homePage, bugEmail)
 
     # Authors
-    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Maintainer"))
+    aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Maintainer"))
+    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Old Developer"))
     aboutData.setProgramIconName(":/data/package-manager.png")

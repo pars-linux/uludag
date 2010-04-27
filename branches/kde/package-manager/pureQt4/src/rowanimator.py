@@ -44,6 +44,7 @@ class RowAnimator(object):
         self.timeLine = QTimeLine(250)
         self.timeLine.setUpdateInterval(40)
         self.t_view = updater
+
         QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), self.size)
         QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
 
