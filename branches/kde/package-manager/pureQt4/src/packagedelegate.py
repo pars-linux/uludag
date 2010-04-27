@@ -230,10 +230,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         painter.drawPixmap(option.rect.topLeft(), pixmap)
 
     def editorEvent(self, event, model, option, index):
-        __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
+        __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
             if self.rowAnimator.row == index.row():
                 if self.rowAnimator.hoverLinkFilter.link_rect.contains(event.pos()):
