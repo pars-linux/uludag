@@ -54,6 +54,8 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
         self.boldFontFM = QtGui.QFontMetrics(self.boldFont)
+        self.normalFontFM = QtGui.QFontMetrics(self.normalFont)
+        self.normalDetailFontFM = QtGui.QFontMetrics(self.normalDetailFont)
 
         self._titles = {'description': i18n("Description:"),
                         'website'    : i18n("Website:"),
@@ -61,6 +63,10 @@ class PackageDelegate(QtGui.QItemDelegate):
                         'repository' : i18n("Repository:"),
                         'size'       : i18n("Package Size:"),
                         'installVers': i18n('Installed Version:')}
+
+        self._titleFM = {}
+        for key, value in self._titles.items():
+            self._titleFM[key] = self.boldFontFM.width(value) + ICON_SIZE
 
         self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
         self.parent = parent.packageList
@@ -104,11 +110,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         title = index.model().data(index, Qt.DisplayRole).toString()
         summary = index.model().data(index, SummaryRole).toString()
-        description = index.model().data(index, DescriptionRole)
-        size = index.model().data(index, SizeRole)
-        homepage = index.model().data(index, HomepageRole)
         ptype = str(index.model().data(index, TypeRole).toString())
-        installedVersion = str(index.model().data(index, InstalledVersionRole).toString())
 
         icon = index.model().data(index, Qt.DecorationRole).toString()
         if icon:
@@ -153,37 +155,37 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Summary
         p.setFont(self.normalFont)
-        elided_summary = QtGui.QFontMetrics(self.normalFont).elidedText(summary, Qt.ElideRight, width - textInner - tagWidth - 22)
+        elided_summary = self.normalFontFM.elidedText(summary, Qt.ElideRight, width - textInner - tagWidth - 22)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, elided_summary)
 
         if self.rowAnimator.currentRow() == index.row():
-            _left = left + self.baseWidth
-            _width = width - _left - 2
+            description = index.model().data(index, DescriptionRole).toString()
+            size = index.model().data(index, SizeRole).toString()
+            homepage = index.model().data(index, HomepageRole).toString()
+            installedVersion = str(index.model().data(index, InstalledVersionRole).toString())
             version = index.model().data(index, VersionRole)
 
             # Package Detail Label
             position = top + ROW_HEIGHT
 
-            p.setFont(self.boldDetailFont)
-            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['description'])
-
             p.setFont(self.normalDetailFont)
-
-            fontMetrics = QtGui.QFontMetrics(self.normalDetailFont)
-            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, description.toString())
-            p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, description.toString())
+            baseRect = QRect(left, position, width - 8, option.rect.height())
+            rect = self.normalDetailFontFM.boundingRect(baseRect, Qt.TextWordWrap | Qt.TextDontClip, description)
+            p.drawText(left + 2, position, width - 8, rect.height(), Qt.TextWordWrap | Qt.TextDontClip, description)
 
             # Package Detail Homepage
-            position += rect.height()
+            position += rect.height() + 4
 
             p.setFont(self.boldDetailFont)
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['website'])
 
             p.setFont(self.normalDetailFont)
-            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, homepage.toString())
-            self.rowAnimator.hoverLinkFilter.link_rect = QRect(_left + 2, position + 2, rect.width(), rect.height())
+            homepage = self.normalDetailFontFM.elidedText(homepage, Qt.ElideRight, width - self._titleFM['website'])
+            rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextSingleLine, homepage)
+            self.rowAnimator.hoverLinkFilter.link_rect = QRect(left + self._titleFM['website'] + 2, position + 2, rect.width(), rect.height())
+
             p.setPen(BLUE)
-            p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, homepage.toString())
+            p.drawText(left + self._titleFM['website'], position, width, rect.height(), Qt.TextSingleLine, homepage)
             p.setPen(foregroundColor)
 
             # Package Detail Version
@@ -193,8 +195,8 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['release'])
 
             p.setFont(self.normalDetailFont)
-            rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, version.toString())
-            p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, version.toString())
+            rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextWordWrap, version.toString())
+            p.drawText(left + self._titleFM['release'], position, width, rect.height(), Qt.TextWordWrap, version.toString())
 
             if not installedVersion == '':
                 position += rect.height()
@@ -203,8 +205,8 @@ class PackageDelegate(QtGui.QItemDelegate):
                 p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['installVers'])
 
                 p.setFont(self.normalDetailFont)
-                rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, installedVersion)
-                p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, installedVersion)
+                rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextWordWrap, installedVersion)
+                p.drawText(left + self._titleFM['installVers'], position, width, rect.height(), Qt.TextWordWrap, installedVersion)
 
             # Package Detail Repository
             repository = index.model().data(index, RepositoryRole).toString()
@@ -215,7 +217,7 @@ class PackageDelegate(QtGui.QItemDelegate):
                 p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['repository'])
 
                 p.setFont(self.normalDetailFont)
-                p.drawText(_left, position, _width, itemHeight / 2, Qt.TextWordWrap, repository)
+                p.drawText(left + self._titleFM['repository'], position, width, itemHeight / 2, Qt.TextWordWrap, repository)
 
             # Package Detail Size
             position += rect.height()
@@ -224,7 +226,8 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['size'])
 
             p.setFont(self.normalDetailFont)
-            p.drawText(_left, position, _width, itemHeight / 2, Qt.TextWordWrap, size.toString())
+            p.drawText(left + self._titleFM['size'], position, width, itemHeight / 2, Qt.TextWordWrap, size)
+            self.rowAnimator.max_height = position - top
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
