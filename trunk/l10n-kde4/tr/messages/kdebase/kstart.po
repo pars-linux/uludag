@@ -6,18 +6,19 @@
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Adem Alp YILDIZ <ademalp@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kstart\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-02-02 11:20+0100\n"
-"PO-Revision-Date: 2009-09-27 21:45+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-27 16:37+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kstart.cpp:300
@@ -62,6 +63,8 @@ msgid ""
 "Alternative to <command>: desktop file to start. D-Bus service will be "
 "printed to stdout"
 msgstr ""
+"<komut> komutuna alternatif: başlatılacak masaüstü dosyası. D-Bus servisi "
+"stdout çıktırına basılacak"
 
 #: kstart.cpp:319
 msgid "Optional URL to pass <desktopfile>, when using --service"
@@ -82,6 +85,12 @@ msgid ""
 "then the very first window to appear will be taken;\n"
 "omitting both options is NOT recommended."
 msgstr ""
+"(WM_CLASS property) Pencere sınıfıyla eşleşen dizgi\n"
+"Pencere sınıfı 'xprop | grep WM_CLASS' komutu çalıştırılıp\n"
+"pencere üzerine tıklandığında bulunabilir.\n"
+"NOT: Pencere sınıfı veya pencere başlığı belirtmezseniz,\n"
+"ilk görünen pencere alınacaktır;\n"
+"her iki seçeneği de boş bırakmak tavsiye edilmez."
 
 #: kstart.cpp:329
 msgid "Desktop on which to make the window appear"
@@ -162,9 +171,10 @@ msgstr "Komut belirtilmedi"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Ömer Fadıl USTA"
+msgstr "Ömer Fadıl USTA, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "omer_fad@hotmail.com"
+msgstr "omer_fad@hotmail.com, ibrahim@pardus.org.tr"
+
