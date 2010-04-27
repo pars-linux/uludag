@@ -27,6 +27,7 @@ RED = QtGui.QColor('red')
 GRAY = QtGui.QColor('gray')
 BLUE = QtGui.QColor('blue')
 TYPE_COLORS = {'critical':RED, 'security':DARKRED}
+RECT = QRect()
 
 DETAIL_LINE_OFFSET = 36
 ICON_PADDING = 0
@@ -42,7 +43,6 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.rowAnimator = RowAnimator(parent.packageList)
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
         self.animatable = True
-        self._link_rect = None
         self._max_height = ROW_HEIGHT
         self.font = Pds.settings('font','Sans').split(',')[0]
 
@@ -181,7 +181,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
             p.setFont(self.normalDetailFont)
             rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, homepage.toString())
-            self._link_rect = QRect(_left, position, rect.width(), rect.height())
+            self.rowAnimator.hoverLinkFilter.link_rect = QRect(_left + 2, position + 2, rect.width(), rect.height())
             p.setPen(BLUE)
             p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, homepage.toString())
             p.setPen(foregroundColor)
@@ -236,7 +236,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             return model.setData(index, toggled, Qt.CheckStateRole)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
             if self.rowAnimator.row == index.row():
-                if self._link_rect.contains(event.pos()):
+                if self.rowAnimator.hoverLinkFilter.link_rect.contains(event.pos()):
                     url = QUrl(model.data(index, HomepageRole).toString())
                     QtGui.QDesktopServices.openUrl(url)
                     return __event
@@ -255,4 +255,3 @@ class PackageDelegate(QtGui.QItemDelegate):
 
     def reset(self):
         self.rowAnimator.reset()
-

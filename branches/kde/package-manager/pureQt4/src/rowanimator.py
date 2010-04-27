@@ -19,6 +19,21 @@ DEFAULT_HEIGHT = 52
 MAX_HEIGHT = DEFAULT_HEIGHT * 3
 (UP, DOWN) = range(2)
 
+class HoverLinkFilter(QObject):
+    def __init__(self, parent):
+        QObject.__init__(self)
+        self.link_rect = QRect()
+        self.parent = parent
+
+    def eventFilter(self, obj, event):
+        if event.type() == QEvent.HoverMove and self.parent.direction == UP:
+            if self.link_rect.contains(event.pos()):
+                obj.setCursor(Qt.PointingHandCursor)
+            else:
+                obj.unsetCursor()
+            return True
+        return QObject.eventFilter(self, obj, event)
+
 class RowAnimator(object):
     def __init__(self, updater=None):
         self.height = DEFAULT_HEIGHT
@@ -31,6 +46,9 @@ class RowAnimator(object):
         self.t_view = updater
         QObject.connect(self.timeLine, SIGNAL("valueChanged(qreal)"), self.size)
         QObject.connect(self.timeLine, SIGNAL("finished()"), self.finished)
+
+        self.hoverLinkFilter = HoverLinkFilter(self)
+        self.t_view.installEventFilter(self.hoverLinkFilter)
 
     def animate(self, row):
         self.setRow(row)
