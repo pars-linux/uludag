@@ -86,7 +86,9 @@ class PackageModel(QAbstractTableModel):
                 return QVariant(unicode(self.iface.getInstalledVersion(package.name)))
             return _variant
         elif role == RepositoryRole:
-            return QVariant(unicode(self.iface.getPackageRepository(package.name)))
+            if not self.state == StateManager.REMOVE:
+                return QVariant(unicode(self.iface.getPackageRepository(package.name)))
+            return _variant
         elif role == HomepageRole:
             return QVariant(unicode(package.source.homepage))
         elif role == ComponentRole:
