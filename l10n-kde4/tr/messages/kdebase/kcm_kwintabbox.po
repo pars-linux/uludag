@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_kwintabbox\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-17 05:56+0100\n"
-"PO-Revision-Date: 2009-10-12 16:27+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-27 16:41+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,11 +38,10 @@ msgid "Text Only"
 msgstr "Sadece Metin"
 
 #: main.cpp:64
-#, fuzzy
 #| msgid "Walk Through Windows Alternative"
 msgid ""
 "These settings are used by the \"Walk Through Windows Alternative\" actions."
-msgstr "Alternatif Pencereler Arasında Gezin"
+msgstr "Bu ayarlar \"Pencereler Arasında Dolaş\" eylemlerinde kullanılır."
 
 #: main.cpp:65
 msgid "Main"
@@ -55,6 +55,8 @@ msgstr "Alternatif"
 msgid ""
 "Focus policy settings limit the functionality of navigating through windows."
 msgstr ""
+"Odaklama politika ayarlraı pencereler arasında dolaşma işlevselliğini "
+"kısıtlar."
 
 #: main.cpp:82
 msgid "Walk Through Windows"
@@ -209,7 +211,7 @@ msgstr "Seçili öge yerleşimi:"
 #. i18n: ectx: property (text), widget (KTitleWidget, description)
 #: rc.cpp:65 rc.cpp:180
 msgid "These settings are used by the \"Walk Through Windows\" actions."
-msgstr ""
+msgstr "Bu ayarlar \"Pencereler Arasında Dolaş\" eylemlerinde kullanılır."
 
 #. i18n: file: main.ui:24
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -239,13 +241,13 @@ msgstr "Tüm Masaüstleri"
 #. i18n: ectx: property (text), item, widget (KComboBox, listModeCombo)
 #: rc.cpp:80 rc.cpp:195
 msgid "Current Desktop Grouped by Applications"
-msgstr ""
+msgstr "Uygulamalara göre Gruplanmış Mevcut Masaüstü"
 
 #. i18n: file: main.ui:65
 #. i18n: ectx: property (text), item, widget (KComboBox, listModeCombo)
 #: rc.cpp:83 rc.cpp:198
 msgid "All Desktops Grouped by Applications"
-msgstr ""
+msgstr "Uygulamalara göre Gruplanmış Tüm Masaüstleri"
 
 #. i18n: file: main.ui:73
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -298,6 +300,9 @@ msgid ""
 "The currently selected window will be highlighted by fading out all other "
 "windows. This option requires desktop effects to be active."
 msgstr ""
+"Seçili pencere, diğer pencerelerin karartılarak ön plana çıkarılacak. Bu "
+"seçenek "
+"masaüstü efektlerinin etkin olması halinde kullanılabilir."
 
 #. i18n: file: main.ui:165
 #. i18n: ectx: property (text), widget (QCheckBox, highlightWindowCheck)
@@ -320,3 +325,4 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
+
