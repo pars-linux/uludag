@@ -1,136 +1,138 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-27 13:47+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: atticamodule.cpp:44
 msgid "Open Collaboration Services Configuration"
-msgstr ""
+msgstr "Açık İşbirliği Hizmetleri Yapılandırması"
 
 #: atticamodule.cpp:46
 msgid "Copyright 2009 Eckhart Wörner"
-msgstr ""
+msgstr "Copyright 2009 Eckhart Wörner"
 
 #: atticamodule.cpp:47
 msgid "Eckhart Wörner"
-msgstr ""
+msgstr "Eckhart Wörner"
 
 #: atticamodule.cpp:48
 msgid "Dmitry Suzdalev"
-msgstr ""
+msgstr "Dmitry Suzdalev"
 
 #: atticamodule.cpp:88
 msgid "Loading provider list..."
-msgstr ""
+msgstr "Sağlayıcı listesi yükleniyor..."
 
 #. i18n: file: providermanagement.ui:22
 #. i18n: ectx: property (text), widget (QLabel, lblProviderList)
 #: atticamodule.cpp:117 rc.cpp:45 rc.cpp:92
 msgid "Choose a provider to manage:"
-msgstr ""
+msgstr "Yönetilecek bir sağlayıcı seçin:"
 
 #: providerconfigwidget.cpp:55
 msgid "Account details"
-msgstr ""
+msgstr "Hesap detayları"
 
 #: providerconfigwidget.cpp:57
 #, kde-format
 msgid "Account details for %1"
-msgstr ""
+msgstr "%1 için hesap detayları"
 
 #: providerconfigwidget.cpp:81
 msgid "Register new account"
-msgstr ""
+msgstr "Yeni hesap oluştur"
 
 #: providerconfigwidget.cpp:83
 #, kde-format
 msgid "Register new account at %1"
-msgstr ""
+msgstr "%1 üzerinde yeni hesap oluştur"
 
 #: providerconfigwidget.cpp:104
 msgid "Test login"
-msgstr ""
+msgstr "Girişi test et"
 
 #: providerconfigwidget.cpp:112
 msgid "Testing login..."
-msgstr ""
+msgstr "Giriş test ediliyor..."
 
 #: providerconfigwidget.cpp:124
 msgid "Success"
-msgstr ""
+msgstr "Başarılı"
 
 #: providerconfigwidget.cpp:128
 msgid "Login failed"
-msgstr ""
+msgstr "Giriş başarısız"
 
 #: providerconfigwidget.cpp:152
 msgid "Not all required fields are filled"
-msgstr ""
+msgstr "Gerekli alanların tamamı doldurulmadı"
 
 #: providerconfigwidget.cpp:154
 msgid "Passwords do not match"
-msgstr ""
+msgstr "Parolalar eşleşmiyor"
 
 #: providerconfigwidget.cpp:156
 msgid "All required information is provided"
-msgstr ""
+msgstr "Tüm gerekli bilgiler sağlandı"
 
 #: providerconfigwidget.cpp:172 providerconfigwidget.cpp:206
 msgid "Failed to register new account."
-msgstr ""
+msgstr "Yeni hesap oluşturulamadı."
 
 #: providerconfigwidget.cpp:190
 msgid "Failed to register new account: invalid password."
-msgstr ""
+msgstr "Yeni hesap oluşturulamadı: geçersiz parola."
 
 #: providerconfigwidget.cpp:194
 msgid "Failed to register new account: invalid username."
-msgstr ""
+msgstr "Yeni hesap oluşturulamadı: geçersiz kullanıcı adı."
 
 #: providerconfigwidget.cpp:198
 msgid ""
 "Failed to register new account: the requested username is already taken."
-msgstr ""
+msgstr "Yeni hesap oluşturulamadı: istenilen kullanıcı zaten mevcut."
 
 #: providerconfigwidget.cpp:202
 msgid ""
 "Failed to register new account: the specified email address is already taken."
-msgstr ""
+msgstr "Yeni hesap oluşturulamadı: belirtilen e-posta adresi zaten mevcut."
 
 #: providerconfigwidget.cpp:248
 msgid "Registration is in progress..."
-msgstr ""
+msgstr "Kayıt isteği işleniyor..."
 
 #: providerconfigwidget.cpp:261
 msgid ""
 "Registration complete. New account was successfully registered. Please "
 "<b>check your Email</b> to <b>activate</b> the account."
 msgstr ""
+"Kayıt başarıyla tamamlandı. Lütfen hesabınızı <b>etkinleştirmek</b> "
+"için <b>e-postanızı kontrol edin</b>."
 
 #. i18n: file: providerconfigwidget.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, loginTab)
 #: rc.cpp:3 rc.cpp:50
 msgid "Login"
-msgstr ""
+msgstr "Giriş"
 
 #. i18n: file: providerconfigwidget.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:6 rc.cpp:53
 msgid "&Username:"
-msgstr ""
+msgstr "&Kullanıcı adı:"
 
 #. i18n: file: providerconfigwidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -142,13 +144,13 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:9 rc.cpp:30 rc.cpp:56 rc.cpp:77
 msgid "&Password:"
-msgstr ""
+msgstr "&Parola:"
 
 #. i18n: file: providerconfigwidget.ui:68
 #. i18n: ectx: property (text), widget (QPushButton, testLoginButton)
 #: rc.cpp:12 rc.cpp:59
 msgid "&Test Login"
-msgstr ""
+msgstr "&Girişi Test Et"
 
 #. i18n: file: providerconfigwidget.ui:185
 #. i18n: ectx: property (text), widget (QLabel, infoLabelLP)
@@ -157,61 +159,64 @@ msgid ""
 "Do not have an account? Create one on the <a href=\"register\">Register tab</"
 "a>"
 msgstr ""
+"Henüz bir hesabınız yoksa <a href=\"register\">Kayıt</a> sekmesinden "
+"yaratabilirsiniz"
 
 #. i18n: file: providerconfigwidget.ui:198
 #. i18n: ectx: attribute (title), widget (QWidget, registerTab)
 #: rc.cpp:18 rc.cpp:65
 msgid "Register"
-msgstr ""
+msgstr "Kayıt"
 
 #. i18n: file: providerconfigwidget.ui:209
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: rc.cpp:21 rc.cpp:68
 msgid "Fill in the details below and click <b>Register...</b> button"
-msgstr ""
+msgstr "Aşağıdaki alanları doldurun ve <b>Kayıt...</b> düğmesine tıklayın"
 
 #. i18n: file: providerconfigwidget.ui:266
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:24 rc.cpp:71
 msgid "&User name:"
-msgstr ""
+msgstr "&Kullanıcı adı:"
 
 #. i18n: file: providerconfigwidget.ui:282
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:27 rc.cpp:74
 msgid "&Email:"
-msgstr ""
+msgstr "&Eposta:"
 
 #. i18n: file: providerconfigwidget.ui:318
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:33 rc.cpp:80
 msgid "Repeat password:"
-msgstr ""
+msgstr "Parolayı tekrar girin:"
 
 #. i18n: file: providerconfigwidget.ui:338
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: rc.cpp:36 rc.cpp:83
 msgid "&First name:"
-msgstr ""
+msgstr "&Ad:"
 
 #. i18n: file: providerconfigwidget.ui:354
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:39 rc.cpp:86
 msgid "&Last name:"
-msgstr ""
+msgstr "&Soyad:"
 
 #. i18n: file: providerconfigwidget.ui:408
 #. i18n: ectx: property (text), widget (QPushButton, registerButton)
 #: rc.cpp:42 rc.cpp:89
 msgid "&Register..."
-msgstr ""
+msgstr "&Kayıt..."
 
 #: rc.cpp:46
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Adlarınız"
 
 #: rc.cpp:47
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "E-postalarınız"
+
