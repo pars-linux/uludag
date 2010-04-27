@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -13,14 +13,13 @@
 
 import os
 import sys
+import dbus
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
 from PyKDE4.kdecore import *
-
-import dbus
 
 import backend
 from localedata import setSystemLocale
@@ -40,19 +39,29 @@ class Operation(QObject):
             signal = str(args[0])
             args = args[1:]
 
-        if signal == "finished":
-            self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", os.path.basename(self.packages[0])))
+        if signal == "finished" and "installPackage" in args[0]:
+            if len(self.packages) == 1:
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing %1", self.packages[0]))
+            else:
+                self.emit(SIGNAL("operationChanged(QString)"), i18n("Succesfully finished installing packages"))
+
             self.emit(SIGNAL("finished()"))
 
         if signal == "cancelled":
             KApplication.kApplication().quit()
 
-        elif signal in ["installing", "extracting", "configuring"]:
+        elif signal in ["installing", "extracting", "configuring", "fetching"]:
             self.statusChanges += 1
             self.updateProgress()
-            # operation = signal
-            # package = args[0]
-            # self.emit(SIGNAL("operationChanged(QString)"), "Installing %s" % package)
+            package = args[0]
+            if signal == "installing":
+                self.emit(SIGNAL("operationChanged(QString)"), "Installing %s %s" % (package, i18n("%p%")))
+            elif signal == "fetching":
+                self.emit(SIGNAL("operationChanged(QString)"), "Fetching %s %s" % (package, i18n("%p%")))
+            elif signal == "configuring":
+                self.emit(SIGNAL("operationChanged(QString)"), "Configuring %s %s" % (package, i18n("%p%")))
+            elif signal == "extracting":
+                self.emit(SIGNAL("operationChanged(QString)"), "Extracting %s %s" % (package, i18n("%p%")))
 
     def updateProgress(self):
         try:
@@ -86,7 +95,7 @@ class Operation(QObject):
 class MainWindow(KMainWindow):
     def __init__(self, parent=None):
         KMainWindow.__init__(self, parent)
-        self.setWindowTitle(i18n("Package Installer"))
+        self.setWindowFlags(Qt.FramelessWindowHint)
         widget = PMInstaller(self)
         self.resize(widget.size())
         self.setCentralWidget(widget)
@@ -106,18 +115,22 @@ class PMInstaller(QtGui.QWidget, Ui_PMInstaller):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self.parent = parent
-        self.operationText.setText("")
         self.operation = Operation()
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressBar.setValue)
-        self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.operationText.setText)
+        self.connect(self.operation, SIGNAL("operationChanged(QString)"), self.progressBar.setFormat)
         self.connect(self.operation, SIGNAL("finished()"), self.finished)
 
     def finished(self):
-        self.actionButton.setEnabled(True)
-        self.connect(self.actionButton, SIGNAL("clicked()"), self.parent.close)
+        QTimer.singleShot(2000, self.parent.close)
+        KNotification.event("Summary",
+                self.progressBar.format(),
+                QtGui.QPixmap(),
+                None,
+                KNotification.CloseOnTimeout,
+                KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
+                )
 
     def install(self, packages):
-        self.operationText.setText(i18n("Installing %1", os.path.basename(packages[0])))
         self.operation.install(packages)
 
 if __name__ == '__main__':
@@ -125,13 +138,15 @@ if __name__ == '__main__':
     appName     = "pm-install"
     catalog     = "package-manager"
     programName = ki18n("pm-install")
-    version     = "0.1"
+    version     = "0.2"
     aboutData   = KAboutData(appName, catalog, programName, version)
     aboutData.setProgramIconName("package-manager")
     KCmdLineArgs.init(sys.argv, aboutData)
 
     options = KCmdLineOptions()
-    options.add("+files", ki18n("Packages to install"))
+    options.add("from-repository", ki18n("Interpret the arguments as repository packages"))
+    #options.add("ignore-", ki18n("Interpret the arguments as repository packages"))
+    options.add("+packages", ki18n("Packages or .pisi files to install"))
     KCmdLineArgs.addCmdLineOptions(options)
 
     if not KUniqueApplication.start():
@@ -142,11 +157,10 @@ if __name__ == '__main__':
     args = KCmdLineArgs.parsedArgs()
 
     packages = []
+
     for i in range(args.count()):
-        package = str(args.url(i).toLocalFile())
-        print package
-        if package.endswith(".pisi"):
-            packages.append(package)
+        package = str(args.arg(i) if args.isSet("from-repository") else args.url(i).toLocalFile())
+        packages.append(package)
 
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
