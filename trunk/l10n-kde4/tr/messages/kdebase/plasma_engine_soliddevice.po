@@ -1,595 +1,595 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-14 06:45+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-27 14:24+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: soliddeviceengine.cpp:130
 msgid "Parent UDI"
-msgstr ""
+msgstr "Üst UDI"
 
 #: soliddeviceengine.cpp:131
 msgid "Vendor"
-msgstr ""
+msgstr "Üretici"
 
 #: soliddeviceengine.cpp:132
 msgid "Product"
-msgstr ""
+msgstr "Ürün"
 
 #: soliddeviceengine.cpp:133
 msgid "Icon"
-msgstr ""
+msgstr "Simge"
 
 #: soliddeviceengine.cpp:134 soliddeviceengine.cpp:600
 msgid "Emblems"
-msgstr ""
+msgstr "Amblemler"
 
 #: soliddeviceengine.cpp:142
 msgid "Processor"
-msgstr ""
+msgstr "İşlemci"
 
 #: soliddeviceengine.cpp:143
 msgid "Number"
-msgstr ""
+msgstr "Adet"
 
 #: soliddeviceengine.cpp:144
 msgid "Max Speed"
-msgstr ""
+msgstr "Maksimum Hız"
 
 #: soliddeviceengine.cpp:145
 msgid "Can Change Frequency"
-msgstr ""
+msgstr "Frekans değiştirebilir"
 
 #: soliddeviceengine.cpp:153
 msgid "Block"
-msgstr ""
+msgstr "Blok"
 
 #: soliddeviceengine.cpp:154
 msgid "Major"
-msgstr ""
+msgstr "Majör"
 
 #: soliddeviceengine.cpp:155
 msgid "Minor"
-msgstr ""
+msgstr "Minör"
 
 #: soliddeviceengine.cpp:156 soliddeviceengine.cpp:486
 msgid "Device"
-msgstr ""
+msgstr "Aygıt"
 
 #: soliddeviceengine.cpp:162
 msgid "Storage Access"
-msgstr ""
+msgstr "Depolama Erişimi"
 
 #: soliddeviceengine.cpp:163 soliddeviceengine.cpp:614
 msgid "Accessible"
-msgstr ""
+msgstr "Erişilebilir"
 
 #: soliddeviceengine.cpp:164
 msgid "File Path"
-msgstr ""
+msgstr "Dosya Yolu"
 
 #: soliddeviceengine.cpp:173 soliddeviceengine.cpp:569
 #: soliddeviceengine.cpp:580
 msgid "Free Space"
-msgstr ""
+msgstr "Boş Alan"
 
 #: soliddeviceengine.cpp:185
 msgid "Storage Drive"
-msgstr ""
+msgstr "Depolama Sürücüsü"
 
 #: soliddeviceengine.cpp:188
 msgid "Ide"
-msgstr ""
+msgstr "Ide"
 
 #: soliddeviceengine.cpp:188
 msgid "Usb"
-msgstr ""
+msgstr "Usb"
 
 #: soliddeviceengine.cpp:188
 msgid "Ieee1394"
-msgstr ""
+msgstr "Ieee1394"
 
 #: soliddeviceengine.cpp:188
 msgid "Scsi"
-msgstr ""
+msgstr "Scsi"
 
 #: soliddeviceengine.cpp:188
 msgid "Sata"
-msgstr ""
+msgstr "Sata"
 
 #: soliddeviceengine.cpp:188
 msgid "Platform"
-msgstr ""
+msgstr "Platform"
 
 #: soliddeviceengine.cpp:190
 msgid "Hard Disk"
-msgstr ""
+msgstr "Sabit Disk"
 
 #: soliddeviceengine.cpp:190
 msgid "Cdrom Drive"
-msgstr ""
+msgstr "Cdrom Sürücü"
 
 #: soliddeviceengine.cpp:190
 msgid "Floppy"
-msgstr ""
+msgstr "Disket Sürücü"
 
 #: soliddeviceengine.cpp:190
 msgid "Tape"
-msgstr ""
+msgstr "Teyp"
 
 #: soliddeviceengine.cpp:190
 msgid "Compact Flash"
-msgstr ""
+msgstr "Compact Flash"
 
 #: soliddeviceengine.cpp:190
 msgid "Memory Stick"
-msgstr ""
+msgstr "Memory Stick"
 
 #: soliddeviceengine.cpp:190
 msgid "Smart Media"
-msgstr ""
+msgstr "Smart Media"
 
 #: soliddeviceengine.cpp:190
 msgid "SdMmc"
-msgstr ""
+msgstr "SdMmc"
 
 #: soliddeviceengine.cpp:190
 msgid "Xd"
-msgstr ""
+msgstr "Xd"
 
 #: soliddeviceengine.cpp:192
 msgid "Bus"
-msgstr ""
+msgstr "Bus"
 
 #: soliddeviceengine.cpp:193
 msgid "Drive Type"
-msgstr ""
+msgstr "Sürücü Tipi"
 
 #: soliddeviceengine.cpp:194
 msgid "Removable"
-msgstr ""
+msgstr "Çıkarılabilir"
 
 #: soliddeviceengine.cpp:195
 msgid "Hotpluggable"
-msgstr ""
+msgstr "Tak-çalıştırılabilir"
 
 #: soliddeviceengine.cpp:205
 msgid "Optical Drive"
-msgstr ""
+msgstr "Optik Sürücü"
 
 #: soliddeviceengine.cpp:210
 msgid "CD-R"
-msgstr ""
+msgstr "CD-R"
 
 #: soliddeviceengine.cpp:213
 msgid "CD-RW"
-msgstr ""
+msgstr "CD-RW"
 
 #: soliddeviceengine.cpp:216
 msgid "DVD"
-msgstr ""
+msgstr "DVD"
 
 #: soliddeviceengine.cpp:219
 msgid "DVD-R"
-msgstr ""
+msgstr "DVD-R"
 
 #: soliddeviceengine.cpp:222
 msgid "DVD-RW"
-msgstr ""
+msgstr "DVD-RW"
 
 #: soliddeviceengine.cpp:225
 msgid "DVD-RAM"
-msgstr ""
+msgstr "DVD-RAM"
 
 #: soliddeviceengine.cpp:228
 msgid "DVD+R"
-msgstr ""
+msgstr "DVD+R"
 
 #: soliddeviceengine.cpp:231
 msgid "DVD+RW"
-msgstr ""
+msgstr "DVD+RW"
 
 #: soliddeviceengine.cpp:234
 msgid "DVD+DL"
-msgstr ""
+msgstr "DVD+DL"
 
 #: soliddeviceengine.cpp:237
 msgid "DVD+DLRW"
-msgstr ""
+msgstr "DVD+DLRW"
 
 #: soliddeviceengine.cpp:240
 msgid "BD"
-msgstr ""
+msgstr "BD"
 
 #: soliddeviceengine.cpp:243
 msgid "BD-R"
-msgstr ""
+msgstr "BD-R"
 
 #: soliddeviceengine.cpp:246
 msgid "BD-RE"
-msgstr ""
+msgstr "BD-RE"
 
 #: soliddeviceengine.cpp:249
 msgid "HDDVD"
-msgstr ""
+msgstr "HDDVD"
 
 #: soliddeviceengine.cpp:252
 msgid "HDDVD-R"
-msgstr ""
+msgstr "HDDVD-R"
 
 #: soliddeviceengine.cpp:255
 msgid "HDDVD-RW"
-msgstr ""
+msgstr "HDDVD-RW"
 
 #: soliddeviceengine.cpp:257
 msgid "Supported Media"
-msgstr ""
+msgstr "Desteklenen Ortam"
 
 #: soliddeviceengine.cpp:259
 msgid "Read Speed"
-msgstr ""
+msgstr "Okuma Hızı"
 
 #: soliddeviceengine.cpp:260
 msgid "Write Speed"
-msgstr ""
+msgstr "Yazma Hızı"
 
 #: soliddeviceengine.cpp:268
 msgid "Write Speeds"
-msgstr ""
+msgstr "Yazma Hızları"
 
 #: soliddeviceengine.cpp:277
 msgid "Storage Volume"
-msgstr ""
+msgstr "Depolama Bölümü"
 
 #: soliddeviceengine.cpp:280
 msgid "Other"
-msgstr ""
+msgstr "Diğer"
 
 #: soliddeviceengine.cpp:280
 msgid "Unused"
-msgstr ""
+msgstr "Kullanılmayan"
 
 #: soliddeviceengine.cpp:280
 msgid "File System"
-msgstr ""
+msgstr "Dosya Sistemi"
 
 #: soliddeviceengine.cpp:281
 msgid "Partition Table"
-msgstr ""
+msgstr "Disk Bölümü Tablosu"
 
 #: soliddeviceengine.cpp:281
 msgid "Raid"
-msgstr ""
+msgstr "Raid"
 
 #: soliddeviceengine.cpp:281
 msgid "Encrypted"
-msgstr ""
+msgstr "Şifreli"
 
 #: soliddeviceengine.cpp:284 soliddeviceengine.cpp:286
 msgid "Usage"
-msgstr ""
+msgstr "Kullanım"
 
 #: soliddeviceengine.cpp:286
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmeyen"
 
 #: soliddeviceengine.cpp:289
 msgid "Ignored"
-msgstr ""
+msgstr "Yoksayılmış"
 
 #: soliddeviceengine.cpp:290
 msgid "File System Type"
-msgstr ""
+msgstr "Dosya Sistemi Türü"
 
 #: soliddeviceengine.cpp:291
 msgid "Label"
-msgstr ""
+msgstr "Etiket"
 
 #: soliddeviceengine.cpp:292
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: soliddeviceengine.cpp:293
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: soliddeviceengine.cpp:301
 msgid "Encrypted Container"
-msgstr ""
+msgstr "Şifreli Taşıyıcı"
 
 #: soliddeviceengine.cpp:314
 msgid "OpticalDisc"
-msgstr ""
+msgstr "OptikDisk"
 
 #: soliddeviceengine.cpp:320
 msgid "Audio"
-msgstr ""
+msgstr "Ses"
 
 #: soliddeviceengine.cpp:323
 msgid "Data"
-msgstr ""
+msgstr "Veri"
 
 #: soliddeviceengine.cpp:326
 msgid "Video CD"
-msgstr ""
+msgstr "Video CD"
 
 #: soliddeviceengine.cpp:329
 msgid "Super Video CD"
-msgstr ""
+msgstr "Super Video CD"
 
 #: soliddeviceengine.cpp:332
 msgid "Video DVD"
-msgstr ""
+msgstr "Video DVD"
 
 #: soliddeviceengine.cpp:334
 msgid "Available Content"
-msgstr ""
+msgstr "Mevcut İçerik"
 
 #: soliddeviceengine.cpp:337
 msgid "Unknown Disc Type"
-msgstr ""
+msgstr "Bilinmeyen Disk Türü"
 
 #: soliddeviceengine.cpp:337
 msgid "CD Rom"
-msgstr ""
+msgstr "CD Rom"
 
 #: soliddeviceengine.cpp:337
 msgid "CD Recordable"
-msgstr ""
+msgstr "Kaydedilebilir CD"
 
 #: soliddeviceengine.cpp:338
 msgid "CD Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir CD"
 
 #: soliddeviceengine.cpp:338
 msgid "DVD Rom"
-msgstr ""
+msgstr "DVD Rom"
 
 #: soliddeviceengine.cpp:338
 msgid "DVD Ram"
-msgstr ""
+msgstr "DVD Ram"
 
 #: soliddeviceengine.cpp:339
 msgid "DVD Recordable"
-msgstr ""
+msgstr "Kaydedilebilir DVD"
 
 #: soliddeviceengine.cpp:339
 msgid "DVD Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir DVD"
 
 #: soliddeviceengine.cpp:339
 msgid "DVD Plus Recordable"
-msgstr ""
+msgstr "Kaydedilebilir DVD Plus"
 
 #: soliddeviceengine.cpp:340
 msgid "DVD Plus Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir DVD Plus"
 
 #: soliddeviceengine.cpp:340
 msgid "DVD Plus Recordable Duallayer"
-msgstr ""
+msgstr "Çift katmanlı kaydedilebilir DVD Plus"
 
 #: soliddeviceengine.cpp:341
 msgid "DVD Plus Rewritable Duallayer"
-msgstr ""
+msgstr "Çift katmanlı yeniden yazılabilir DVD Plus"
 
 #: soliddeviceengine.cpp:341
 msgid "Blu Ray Rom"
-msgstr ""
+msgstr "Blu Ray Rom"
 
 #: soliddeviceengine.cpp:341
 msgid "Blu Ray Recordable"
-msgstr ""
+msgstr "Kaydedilebilir Blu Ray"
 
 #: soliddeviceengine.cpp:342
 msgid "Blu Ray Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir Blu Ray"
 
 #: soliddeviceengine.cpp:342
 msgid "HD DVD Rom"
-msgstr ""
+msgstr "HD DVD Rom"
 
 #: soliddeviceengine.cpp:342
 msgid "HD DVD Recordable"
-msgstr ""
+msgstr "Kaydedilebilir HD DVD"
 
 #: soliddeviceengine.cpp:343
 msgid "HD DVD Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir HD DVD"
 
 #: soliddeviceengine.cpp:345
 msgid "Disc Type"
-msgstr ""
+msgstr "Disk Türü"
 
 #: soliddeviceengine.cpp:346
 msgid "Appendable"
-msgstr ""
+msgstr "Sonuna eklenebilir"
 
 #: soliddeviceengine.cpp:347
 msgid "Blank"
-msgstr ""
+msgstr "Boş"
 
 #: soliddeviceengine.cpp:348
 msgid "Rewritable"
-msgstr ""
+msgstr "Yeniden yazılabilir"
 
 #: soliddeviceengine.cpp:349
 msgid "Capacity"
-msgstr ""
+msgstr "Kapasite"
 
 #: soliddeviceengine.cpp:357
 msgid "Camera"
-msgstr ""
+msgstr "Kamera"
 
 #: soliddeviceengine.cpp:359 soliddeviceengine.cpp:370
 #: soliddeviceengine.cpp:506
 msgid "Supported Protocols"
-msgstr ""
+msgstr "Desteklenen Protokoller"
 
 #: soliddeviceengine.cpp:360 soliddeviceengine.cpp:371
 #: soliddeviceengine.cpp:507
 msgid "Supported Drivers"
-msgstr ""
+msgstr "Desteklenen Sürücüler"
 
 #: soliddeviceengine.cpp:368
 msgid "Portable Media Player"
-msgstr ""
+msgstr "Taşınabilir Medya Oynatıcı"
 
 #: soliddeviceengine.cpp:379
 msgid "Network Interface"
-msgstr ""
+msgstr "Ağ Arayüzü"
 
 #: soliddeviceengine.cpp:381
 msgid "Interface Name"
-msgstr ""
+msgstr "Arayüz Adı"
 
 #: soliddeviceengine.cpp:382
 msgid "Wireless"
-msgstr ""
+msgstr "Kablosuz"
 
 #: soliddeviceengine.cpp:383
 msgid "Hardware Address"
-msgstr ""
+msgstr "Donanım Adresi"
 
 #: soliddeviceengine.cpp:384
 msgid "MAC Address"
-msgstr ""
+msgstr "MAC Adresi"
 
 #: soliddeviceengine.cpp:392
 msgid "AC Adapter"
-msgstr ""
+msgstr "AC Adaptörü"
 
 #: soliddeviceengine.cpp:394 soliddeviceengine.cpp:413
 msgid "Plugged In"
-msgstr ""
+msgstr "Takılı"
 
 #: soliddeviceengine.cpp:403
 msgid "Battery"
-msgstr ""
+msgstr "Pil"
 
 #: soliddeviceengine.cpp:406
 msgid "Unknown Battery"
-msgstr ""
+msgstr "Bilinmeyen Pil"
 
 #: soliddeviceengine.cpp:406
 msgid "PDA Battery"
-msgstr ""
+msgstr "PDA Pili"
 
 #: soliddeviceengine.cpp:406
 msgid "UPS Battery"
-msgstr ""
+msgstr "UPS Pili"
 
 #: soliddeviceengine.cpp:407
 msgid "Primary Battery"
-msgstr ""
+msgstr "Birincil Pil"
 
 #: soliddeviceengine.cpp:407
 msgid "Mouse Battery"
-msgstr ""
+msgstr "Fare Pili"
 
 #: soliddeviceengine.cpp:407
 msgid "Keyboard Battery"
-msgstr ""
+msgstr "Klavye Pili"
 
 #: soliddeviceengine.cpp:408
 msgid "Keyboard Mouse Battery"
-msgstr ""
+msgstr "Klavye/Fare Pili"
 
 #: soliddeviceengine.cpp:408
 msgid "Camera Battery"
-msgstr ""
+msgstr "Kamera Pili"
 
 #: soliddeviceengine.cpp:411
 msgid "Fully Charged"
-msgstr ""
+msgstr "Tamamen Dolu"
 
 #: soliddeviceengine.cpp:411
 msgid "Charging"
-msgstr ""
+msgstr "Şarj oluyor"
 
 #: soliddeviceengine.cpp:411
 msgid "Discharging"
-msgstr ""
+msgstr "Şarj boşalıyor"
 
 #: soliddeviceengine.cpp:414 soliddeviceengine.cpp:433
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #: soliddeviceengine.cpp:415
 msgid "Charge Percent"
-msgstr ""
+msgstr "Doluluk yüzdesi"
 
 #: soliddeviceengine.cpp:416
 msgid "Rechargeable"
-msgstr ""
+msgstr "Tekrar şarj edilebilir"
 
 #: soliddeviceengine.cpp:417
 msgid "Charge State"
-msgstr ""
+msgstr "Şarj Durumu"
 
 #: soliddeviceengine.cpp:427
 msgid "Button"
-msgstr ""
+msgstr "Düğme"
 
 #: soliddeviceengine.cpp:430
 msgid "Lid Button"
-msgstr ""
+msgstr "Kapak Düğmesi"
 
 #: soliddeviceengine.cpp:430
 msgid "Power Button"
-msgstr ""
+msgstr "Güç Düğmesi"
 
 #: soliddeviceengine.cpp:430
 msgid "Sleep Button"
-msgstr ""
+msgstr "Uyku Düğmesi"
 
 #: soliddeviceengine.cpp:431
 msgid "Unknown Button Type"
-msgstr ""
+msgstr "Bilinmeyen Düğme Türü"
 
 #: soliddeviceengine.cpp:434
 msgid "Has State"
-msgstr ""
+msgstr "Durum"
 
 #: soliddeviceengine.cpp:435
 msgid "State Value"
-msgstr ""
+msgstr "Durum Değeri"
 
 #: soliddeviceengine.cpp:436
 msgid "Pressed"
-msgstr ""
+msgstr "Basılı"
 
 #: soliddeviceengine.cpp:446
 msgid "Audio Interface"
-msgstr ""
+msgstr "Ses Arayüzü"
 
 #: soliddeviceengine.cpp:449
 msgid "ALSA"
-msgstr ""
+msgstr "ALSA"
 
 #: soliddeviceengine.cpp:449
 msgid "Open Sound System"
-msgstr ""
+msgstr "Open Sound System"
 
 #: soliddeviceengine.cpp:449
 msgid "Unknown Audio Driver"
-msgstr ""
+msgstr "Bilinmeyen Ses Sürücüsü"
 
 #: soliddeviceengine.cpp:451
 msgid "Driver"
-msgstr ""
+msgstr "Sürücü"
 
 #: soliddeviceengine.cpp:452
 msgid "Driver Handle"
@@ -597,111 +597,111 @@ msgstr ""
 
 #: soliddeviceengine.cpp:453
 msgid "Name"
-msgstr ""
+msgstr "Ad"
 
 #: soliddeviceengine.cpp:459
 msgid "Unknown Audio Interface Type"
-msgstr ""
+msgstr "Bilinmeyen Ses Arayüz Türü"
 
 #: soliddeviceengine.cpp:462
 msgid "Audio Control"
-msgstr ""
+msgstr "Ses Denetimi"
 
 #: soliddeviceengine.cpp:465
 msgid "Audio Input"
-msgstr ""
+msgstr "Ses Girişi"
 
 #: soliddeviceengine.cpp:468
 msgid "Audio Output"
-msgstr ""
+msgstr "Ses Çıkışı"
 
 #: soliddeviceengine.cpp:470
 msgid "Audio Device Type"
-msgstr ""
+msgstr "Ses Aygıt Türü"
 
 #: soliddeviceengine.cpp:474
 msgid "Internal Soundcard"
-msgstr ""
+msgstr "Bütünleşik Ses Kartı"
 
 #: soliddeviceengine.cpp:474
 msgid "USB Soundcard"
-msgstr ""
+msgstr "USB Ses Kartı"
 
 #: soliddeviceengine.cpp:474
 msgid "Firewire Soundcard"
-msgstr ""
+msgstr "Firewire Ses Kartı"
 
 #: soliddeviceengine.cpp:475
 msgid "Headset"
-msgstr ""
+msgstr "Kulaklık"
 
 #: soliddeviceengine.cpp:475
 msgid "Modem"
-msgstr ""
+msgstr "Modem"
 
 #: soliddeviceengine.cpp:476
 msgid "Soundcard Type"
-msgstr ""
+msgstr "Ses Kartı Türü"
 
 #: soliddeviceengine.cpp:484
 msgid "DVB Interface"
-msgstr ""
+msgstr "DVB Arayüzü"
 
 #: soliddeviceengine.cpp:487
 msgid "Device Adapter"
-msgstr ""
+msgstr "Aygıt Adaptörü"
 
 #: soliddeviceengine.cpp:491
 msgid "DVB Unknown"
-msgstr ""
+msgstr "DVB Bilinmeyen"
 
 #: soliddeviceengine.cpp:491
 msgid "DVB Audio"
-msgstr ""
+msgstr "DVB Ses"
 
 #: soliddeviceengine.cpp:491
 msgid "DVB Ca"
-msgstr ""
+msgstr "DVB Ca"
 
 #: soliddeviceengine.cpp:492
 msgid "DVB Demux"
-msgstr ""
+msgstr "DVB Demux"
 
 #: soliddeviceengine.cpp:492
 msgid "DVB DVR"
-msgstr ""
+msgstr "DVB DVR"
 
 #: soliddeviceengine.cpp:492
 msgid "DVB Frontend"
-msgstr ""
+msgstr "DVB Önyüzü (frontend)"
 
 #: soliddeviceengine.cpp:493
 msgid "DVB Net"
-msgstr ""
+msgstr "DVB Net"
 
 #: soliddeviceengine.cpp:493
 msgid "DVB OSD"
-msgstr ""
+msgstr "DVB OSD"
 
 #: soliddeviceengine.cpp:493
 msgid "DVB Sec"
-msgstr ""
+msgstr "DVB Sec"
 
 #: soliddeviceengine.cpp:493
 msgid "DVB Video"
-msgstr ""
+msgstr "DVB Video"
 
 #: soliddeviceengine.cpp:495
 msgid "DVB Device Type"
-msgstr ""
+msgstr "DVB Aygıt Türü"
 
 #: soliddeviceengine.cpp:496
 msgid "Device Index"
-msgstr ""
+msgstr "Aygıt Endeksi"
 
 #: soliddeviceengine.cpp:504
 msgid "Video"
-msgstr ""
+msgstr "Video"
 
 #: soliddeviceengine.cpp:513
 msgid "Driver Handles"
@@ -709,12 +709,13 @@ msgstr ""
 
 #: soliddeviceengine.cpp:516
 msgid "Device Types"
-msgstr ""
+msgstr "Aygıt Türleri"
 
 #: soliddeviceengine.cpp:589
 msgid "Temperature"
-msgstr ""
+msgstr "Sıcaklık"
 
 #: soliddeviceengine.cpp:590
 msgid "Temperature Unit"
-msgstr ""
+msgstr "Sıcaklık Birimi"
+
