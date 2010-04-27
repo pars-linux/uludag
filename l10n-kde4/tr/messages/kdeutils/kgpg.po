@@ -7,13 +7,14 @@
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-05 01:22+0200\n"
-"PO-Revision-Date: 2010-04-20 15:38+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-04-27 15:31+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1044,7 +1045,7 @@ msgstr "Bitti"
 
 #: kgpgfirstassistant.cpp:240
 msgid "<qt><b>The GnuPG configuration file was not found</b>. Should KGpg try to create a config file ?</qt>"
-msgstr "<qt><b>GnuPG yapılandırma dosyası bulunamadı</b>KGpg bir yapılandırma dosyası oluşturmayı denesin mi?</qt>"
+msgstr "<qt><b>GnuPG yapılandırma dosyası bulunamadı</b>.KGpg bir yapılandırma dosyası oluşturmayı denesin mi?</qt>"
 
 #: kgpgfirstassistant.cpp:240
 msgid "Create Config"
@@ -2585,7 +2586,7 @@ msgstr "Anahtar sunucusu:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, keyIds)
 #: rc.cpp:588
 msgid "Enter the ids or fingerprints of the keys to import as space separated list."
-msgstr ""
+msgstr "İçeriye aktarılacak anahtarların ID veya parmak izlerini boşlukla ayrılmış liste olarak girin."
 
 #: rc.cpp:589
 msgctxt "NAME OF TRANSLATORS"
@@ -2624,18 +2625,18 @@ msgstr "&Seçenekler"
 
 #: selectpublickeydialog.cpp:52
 msgid "Select Public Key"
-msgstr "Açık anahtarı seç"
+msgstr "Açık anahtar seçin"
 
 #: selectpublickeydialog.cpp:55
 #, kde-format
 msgid "Select Public Key for %1"
-msgstr "%1 için Açık Anahtarı Seç"
+msgstr "%1 için Açık Anahtar Seçin"
 
 #: selectpublickeydialog.cpp:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "Select Public Key for %2 and one more file"
 msgid_plural "Select Public Key for %2 and %1 more files"
-msgstr[0] "%1 için Açık Anahtarı Seç"
+msgstr[0] "%2 ve %1 dosya için daha Açık Anahtar seçin"
 
 #: selectpublickeydialog.cpp:67
 msgid "&Search: "
@@ -2795,7 +2796,7 @@ msgstr "<p>Ön tanımlı anahtarınıza ulaşmak için anahtar yöneticisinde &q
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:59
 msgid "<p>The number of signatures is shown as a tooltip if you hover the mouse on the size column in key manager. A key has to be expanded once for this to work.</p>\n"
-msgstr ""
+msgstr "<p>İmza sayısı, fareyi anahtar yöneticisinin boyut sütununun üzerine getirdiğinizde ipucu olarak gösterilir. Bu işlev için anahtarın önce genişletilmesi gereklidir.</p>\n"
 
 #: core/convert.cpp:37
 msgctxt "Encryption algorithm"
@@ -3202,11 +3203,11 @@ msgstr "ElGamal anahtarı oluşturuluyor"
 
 #: transactions/kgpggeneratekey.cpp:128
 msgid "Waiting for entropy"
-msgstr ""
+msgstr "Entropi için bekleniyor"
 
 #: transactions/kgpggeneratekey.cpp:133
 msgid "The entropy pool ran empty. The key generation process is stalled until enough entropy is present. You can generate entropy e.g. by moving the mouse or typing at the keyboard. The easiest way is by using another application until the key generation continues."
-msgstr ""
+msgstr "Entropi havuzu boşaldı. Yeterli entropi oluşana kadar anahtar üretme süreci devam etmeyecek. Fareyi hareket ettirerek veya klavyeyi kullanarak entropi havuzunu doldurabilirsiniz."
 
 #: transactions/kgpggeneratekey.cpp:159
 #, kde-format
