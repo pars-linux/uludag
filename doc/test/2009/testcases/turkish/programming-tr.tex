@@ -86,7 +86,10 @@ quit
 \begin{verbatim}
 fcgi
 mcpp
+translate-toolkit-docs
+ctags
 \end{verbatim}
+
 \item translate-toolkit paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -132,8 +135,8 @@ gitweb
 
 Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
 \begin{verbatim}
-svk mirror //svk/trunk svn://svn.clkao.org/svkbook/trunk
-svk sync //svk/trunk
+svk mirror http://svn.ofbiz.org/svn/ofbiz/trunk //uplink
+svk sync //svk/uplink
 \end{verbatim}
 
 
@@ -170,35 +173,35 @@ gitk komutunun tüm geçmişi listelediğini gözlemleyin.
 
 Servis yöneticisinden git\_daemon başlatın, aşağıdaki komut ile başlatıldığına emin olun:
 \begin{verbatim}
- # service git_daemon status
+ service git_daemon status
 \end{verbatim}
 
 \item git paketi kurulumu sonrası:
 
 Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
 \begin{verbatim}
- # cd ~
- # mkdir test_git
- # cd test_git
- # git init
- # cd ..
- # git clone test_git test_clone
+  cd ~
+  mkdir test_git
+  cd test_git
+  git init
+  cd ..
+  git clone test_git test_clone
 \end{verbatim}
 
 \item subversion paketi kurulumu sonrası:
 
 test dizininin sorunsuz bir şekilde eklenmiş olduğunu gözlemleyin:
 \begin{verbatim}
-  # svn co http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/
-  # cd turkish
-  # svn mkdir test
-  # svn st
+   svn co http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/
+   cd turkish
+   svn mkdir test
+   svn st
  \end{verbatim}
 testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan değişiklik farkının alınabildiğini gözlemleyin:
 \begin{verbatim}
-  # vi testfile
-  # svn add testfile
-  # svn diff
+   vi testfile
+   svn add testfile
+   svn diff
  \end{verbatim}
 \end{enumerate}
 
@@ -325,8 +328,15 @@ Aşağıda bulunan komutun bir gui ekranı çıkardığını gözlemleyin.
 \subsection{Php alt bileşeni}
 \begin{enumerate}
 
+\item php-gtk paketi kurulumu sonrası:
 
- \item php-cli, php-common, mod\_php paketleri kurulumu sonrası:
+Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
+ php test_phpgtk.phpw
+\end{verbatim}
+
+\item php-cli, php-common, mod\_php paketleri kurulumu sonrası:
 
 Servis yöneticisinden apache servisini başlatın.
 
@@ -349,15 +359,24 @@ Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.ph
  perl-JSON-XS
  perl-common-sense
  perlmod
-\end{verbatim}
-
-\item perl-DBD-Pg paketi kurulumu sonrası:
-
-perl-DBI paketini kurduktan sonra:
-
-\begin{verbatim}
- wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/DBD-Pg.tar.gz
- perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+ perl-Attribute-Handlers
+ perl-DBD-Pg
+ perl-Image-ExifTool
+ perl-Image-ExifTool-docs
+ perl-XML-SAX
+ perl-AnyEvent
+ perl-Authen-SASL
+ perl-Crypt-Blowfish
+ perl-Data-Dumper
+ perl-Event-ExecFlow
+ perl-FreezeThaw
+ perl-HTML-Parser
+ perl-MIME-Types
+ perl-RPC-XML
+ perl-Time-HiRes
+ perl-URI
+ perl-Git
+ perl-Barcode-Code128
 \end{verbatim}
 
 \item perl-SDL ve perl-YAML paketleri kurulumu sonrası:
@@ -423,20 +442,20 @@ Konsoldan;
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 
-\item perl-RPC-XML paketi kurulumu sonrası:
-
-Aşağıda bulunan dosyayı indirin ve açın.
-\begin{verbatim}
-wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/RPC-XML.tar.gz
-\end{verbatim}
-
-Konsoldan;
-\begin{verbatim}
- cd RPC-XML
- perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
-\end{verbatim}
-
-Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
+% \item perl-RPC-XML paketi kurulumu sonrası:
+% 
+% Aşağıda bulunan dosyayı indirin ve açın.
+% \begin{verbatim}
+% wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/RPC-XML.tar.gz
+% \end{verbatim}
+% 
+% Konsoldan;
+% \begin{verbatim}
+%  cd RPC-XML
+%  perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+% \end{verbatim}
+% 
+% Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 
 \item perl-IP-Country paketi kurulumu sonrası:
 
@@ -453,25 +472,20 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
 
 Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 
-\item perl-HTML-Parser paketi kurulumu sonrası:
-
-Aşağıda bulunan dosyayı indirin ve açın.
-\begin{verbatim}
-wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/HTML-Parser.tar.gz
-\end{verbatim}
-
-Konsoldan;
-\begin{verbatim}
-cd HTML-Parser
-perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
-\end{verbatim}
-
-Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
-
-\item Aşağıda bulunan paketler sadece kurulum testine tabidir.
-\begin{verbatim}
- perl-Git
-\end{verbatim}
+% \item perl-HTML-Parser paketi kurulumu sonrası:
+% 
+% Aşağıda bulunan dosyayı indirin ve açın.
+% \begin{verbatim}
+% wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/HTML-Parser.tar.gz
+% \end{verbatim}
+% 
+% Konsoldan;
+% \begin{verbatim}
+% cd HTML-Parser
+% perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+% \end{verbatim}
+% 
+% Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.
 
 \item perl-Date-Calc paketi kurulumu sonrası:
 
@@ -547,8 +561,8 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
 
 \item perl-Email-MIME-Encodings paketi kurulumu sonrası:
 \begin{verbatim}
- # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
- # perl test_perl_Test_Simple.t
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
+ perl test_perl_Test_Simple.t
 \end{verbatim}
 
 Tüm sonuçların "ok" döndürdüğünü gözlemleyin. 
@@ -568,6 +582,42 @@ Tüm sonuçların "ok" döndürdüğünü gözlemleyin.
  python-extremes
  epydoc-doc
  reportlab-docs
+ pyinotify-doc 
+\end{verbatim}
+
+\item Pygments paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pygments
+\end{verbatim}
+
+\item chardet paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import chardet
+\end{verbatim}
+
+\item matplotlib paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import matplotlib
+\end{verbatim}
+
+\item paramiko paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import paramiko
+\end{verbatim}
+
+\item pydns paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import DNS
 \end{verbatim}
 
 
@@ -577,6 +627,86 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  ipython
  import reportlab
 \end{verbatim}
+
+\item pyinotify paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pyinotify
+\end{verbatim}
+
+\item pyserial  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import serial
+\end{verbatim}
+
+\item python-beautifulsoup  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import BeautifulSoup
+\end{verbatim}
+
+\item python-bsddb3  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import bsddb3
+\end{verbatim}
+
+\item python-pep8  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pep8
+\end{verbatim}
+
+\item pylint  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pylint
+\end{verbatim}
+
+\item pysvn  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import pysvn
+\end{verbatim}
+
+\item python-logilab-astng ve python-logilab-common  paketleri kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import ast
+ import logilab
+\end{verbatim}
+
+
+\item pytextile  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import textile
+\end{verbatim}
+
+\item Turbogears  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import turbogears
+\end{verbatim}
+
+\item TurboGears-mochikit  paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+\begin{verbatim}
+ ipython
+ import tgmochikit
+\end{verbatim}
+
 
 \item python-wordaxe paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -619,7 +749,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item python-prioritized-methods paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import prioritized-methods
 \end{verbatim}
 
@@ -627,21 +757,21 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item python-beaker paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import beaker
 \end{verbatim}
 
 \item Twisted paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import twisted
 \end{verbatim}
 
 \item python-mlt paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import mlt
 \end{verbatim}
 
@@ -649,14 +779,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item python-Babel paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import babel
 \end{verbatim}
 
 \item pyfits paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pyfits
 \end{verbatim}
 
@@ -664,7 +794,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item epydoc paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import epydoc
 \end{verbatim}
 
@@ -672,7 +802,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import peak
 \end{verbatim}
 
@@ -680,14 +810,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import symbol
 \end{verbatim}
 
 \item 4suite paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import Ft
 \end{verbatim}
 
@@ -713,7 +843,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item pycha paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pycha
  import chavier
 \end{verbatim}
@@ -721,28 +851,28 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item python-xlrd paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import xlrd
 \end{verbatim}
 
 \item pytz paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pytz
 \end{verbatim}
 
 \item python-Jinja2 paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import jinja2
 \end{verbatim}
 
 \item python-sphinx paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import sphinx
 \end{verbatim}
 
@@ -750,49 +880,49 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \item mysql-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import MySQLdb
 \end{verbatim}
 
 \item python-markdown paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import markdown
 \end{verbatim}
 
 \item python-preprocess paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import preprocess
 \end{verbatim}
 
 \item python-avahi paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import avahi
 \end{verbatim}
 
 \item python-tornado paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import tornado
 \end{verbatim}
 
 \item pyorbit paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import ORBit
 \end{verbatim}
 
 \item gnome-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import bonobo
 \end{verbatim}
 
@@ -801,7 +931,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import xml
 \end{verbatim}
 
@@ -809,14 +939,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import sip
 \end{verbatim}
 \item pysqlite paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import sqlite3
 \end{verbatim}
 
@@ -834,7 +964,7 @@ Aşağıdaki komutları çalıştırın ve bir pencerenin açıldığını gözl
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import sip
 \end{verbatim}
 
@@ -842,21 +972,21 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import configobj
 \end{verbatim}
 \item python-decorator paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import decorator
 \end{verbatim}
 \item python-mako paketi kurulumu sonrası:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import mako
 \end{verbatim}
 
@@ -864,7 +994,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import formencode
 \end{verbatim}
 
@@ -872,7 +1002,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import Cheetah
 \end{verbatim}
 
@@ -881,7 +1011,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import sqlobject
 \end{verbatim}
 
@@ -889,7 +1019,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import OpenGL
 \end{verbatim}
 
@@ -897,7 +1027,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import imdb
 \end{verbatim}
 
@@ -914,7 +1044,7 @@ mutagen-inspect sample.mp3
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import capng
 \end{verbatim}
 
@@ -922,7 +1052,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import twitter
 \end{verbatim}
 
@@ -931,7 +1061,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import cx_Freeze
 \end{verbatim}
 
@@ -948,14 +1078,14 @@ Aşağıda bulunan komutları çalıştırın ve küçük bir pencerenin açıld
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import bluetooth
 \end{verbatim}
 
 Eğer bluetooth aygıtınız var ise aşağıda bulunan komutları çalıştırın ve hatasız bir şekilde çalıştığını gözlemleyiniz.
 \begin{verbatim}
- # cd /usr/share/doc/pybluez/examples/advanced
- # python inquiry-with-rssi.py
+  cd /usr/share/doc/pybluez/examples/advanced
+  python inquiry-with-rssi.py
 \end{verbatim}
 
 
@@ -964,14 +1094,14 @@ Eğer bluetooth aygıtınız var ise aşağıda bulunan komutları çalıştır�
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pylirc
 \end{verbatim}
 
 Eğer infrared bir kumandanız var ise bu kumandayı aktive ettikten sonra aşağıda bulunan testi çalıştırınız ve hatasız bir şekilde çalıştığını gözlemleyiniz.
 \begin{verbatim}
-  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pylirc_test.py
-  # python pylirc_test.py
+  wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pylirc_test.py
+  python pylirc_test.py
 \end{verbatim}
 
 
@@ -979,7 +1109,7 @@ Eğer infrared bir kumandanız var ise bu kumandayı aktive ettikten sonra aşa�
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import codegen
  import gio
  import glib
@@ -988,14 +1118,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pygame
 \end{verbatim}
 
 \item gst-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import pygst
 \end{verbatim}
 
@@ -1003,7 +1133,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+ ipython
  import fltk
 \end{verbatim}
 
@@ -1089,8 +1219,8 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{itemize}
  \item Aşağıda bulunan komutu çalıştırın:
  \begin{verbatim}
- # django-admin.py startproject test
- # cd test
+  django-admin.py startproject test
+  cd test
  \end{verbatim}
  test adında bir dizinin oluştuğunu ve bu dizin altında aşağıda bulunan dosyaların oluştuğunu gözlemleyin.
   \begin{verbatim}
@@ -1101,7 +1231,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
   \end{verbatim}
  \item Aşağıdaki komutu çalıştırın ve daha sonra firefox'tan http://localhost:8080/ adresini girin ve sunucuya bağlanabildiğinizi gözlemleyin
   \begin{verbatim}
-  # python manage.py runserver 8080
+   python manage.py runserver 8080
   \end{verbatim}
  \item settings.py içerisinde DATABASE\_ENGINE DATABASE\_NAME değişkenlerini aşağıdaki database değişkenlerini atayın:
   \begin{verbatim}
@@ -1110,11 +1240,11 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
   \end{verbatim}
 \item Aşağıdaki komutu çalıştırın ve istemiş olduğu işlemleri sırasıyla gerçekleştirin ve sorunsuz bir şekilde Django onay sisteminin kurulduğunu gözlemleyin:
 \begin{verbatim}
-# python manage.py syncdb 
+python manage.py syncdb 
 \end{verbatim}
 \item Aşağıdaki komutu çalıştırın ve polls adında bir dizinin oluştuğunu gözlemleyin:
 \begin{verbatim}
-# python manage.py startapp polls 
+ python manage.py startapp polls 
 \end{verbatim}
 \item Ve dizin içerişinde aşağıdaki dosyaların oluştuğunu gözlemleyin:
 \begin{verbatim}
@@ -1220,7 +1350,7 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 \begin{verbatim}
- # ipython
+  ipython
  import simplejson
 \end{verbatim}
 
@@ -1237,12 +1367,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  sun-jdk-doc
 \end{verbatim}
 
+Oturumu kapatıp tekrar açın.
+
 Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
 \begin{verbatim}
-# java -version
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
-# javac test.java
-# java test
+ java -version
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
+ javac test.java
+ java test
 \end{verbatim}
 
 \item libmatthew, slf4j paketleri kurulumu sonrası:
@@ -1271,6 +1403,33 @@ Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
 taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib
+mono-addins
+mono-bytefx-data-mysql
+mono-data
+mono-data-firebird
+mono-data-oracle
+mono-data-postgresql
+mono-data-sqlite
+mono-devel
+mono-extras
+mono-ibm-data-db2
+mono-jay
+mono-jscript
+mono-locale-extras
+mono-nunit
+mono-runtime
+mono-sybase
+mono-wcf
+mono-web
+mono-winforms
+mono-winfxcore
+mono-zeroconf
+mono-zeroconf-docs
+monodoc-core
+webkit-sharp
+webkit-sharp-docs
+gecko-sharp
+gecko-sharp-docs
 \end{verbatim}
 
 \item boo paketi kurulumu sonrası:
@@ -1280,9 +1439,19 @@ Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
  wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/boo-test.boo
  booi boo-test.boo
 \end{verbatim}
+ \item gmime-sharp, gtk-sharp paketi kurulumu sonrası:
+
+pkgconfig paketini kurun
+
+Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin. 
+\begin{verbatim}
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_gmimesharp.cs
+ mcs -pkg:gtk-sharp-2.0 test_gmimesharp.cs
+ mono test_gmimesharp.exe
+\end{verbatim}
 
 
- \item gmime, gmime-docs, gmime-sharp, gtk-sharp paketi kurulumu sonrası:
+ \item gmime, gmime-docs paketleri kurulumu sonrası:
 
 Aşağıda bulunan komutun jpeg dosyasını encode ettiğini gözlemleyin.
 \begin{verbatim}

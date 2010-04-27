@@ -13,6 +13,15 @@
 
 Not: Bu testlerde karşılaştığınız hataları bildirirken /var/log dizini altında yer alan Xorg.0.log
 dosyasını iletmeyi unutmayınız.
+\section{Util Alt Bileşeni}
+
+\begin{itemize}
+ \item Aşağıda bulunan paketler sadece kurulum testine tabidir.
+\begin{verbatim}
+ xorg-util
+\end{verbatim}
+
+\end{itemize}
 
 \section{Server Alt Bileşeni}
 
@@ -172,6 +181,7 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
   xorg-video-nvidia-current
   xorg-video-nvidia173
   xorg-video-fglrx
+  xorg-video-geode
 \end{verbatim}
 
 \begin{itemize}
@@ -191,22 +201,22 @@ Ekran kartınızın ne olduğuna dair bilgiye aşağıda bulunan komut ile ulaş
 \begin{enumerate}
   \item rxvt-unicode paketi kurulumu sonrası:
 
-  Bir x konsol penceresi açıldığını gözlemleyin.
+  Aşağıda bulunan komutu çalıştırdığınızda bir x konsol penceresi açıldığını gözlemleyin.
   \begin{verbatim}
-  # urxvt
+   urxvt
   \end{verbatim}
 
   Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu başlatın diğer konsola geçip ikinci satırda bulunan komutu çalıştırın ve bir x konsol penceresi açıldığını gözlemleyin.
   \begin{verbatim}
-  # urxvtd (sunucuyu çalıştırın)
-  # urxvtc
+   urxvtd (sunucuyu çalıştırın)
+   urxvtc
   \end{verbatim}
 
   \item xterm paketi kurulumu sonrası:
 
   Aşağıda bulunan komutun bir konsol çalıştırdığını gözlemleyin.
   \begin{verbatim}
-  # xterm
+   xterm
   \end{verbatim}
 \end{enumerate}
 \section{Library alt Bileşeni}
