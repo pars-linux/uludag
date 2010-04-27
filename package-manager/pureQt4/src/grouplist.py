@@ -30,18 +30,25 @@ class GroupList(QtGui.QListWidget):
         self.state = state
 
     def addGroups(self, groups):
-        for name in groups:
-            self.createGroupItem(name)
+        if groups:
+            for name in groups:
+                self.createGroupItem(name)
+        else:
+            self.createGroupItem('all', (i18n('All'), 'media-optical', len(self.state.packages())))
         self.sortItems()
         self.moveAllToFirstLine()
         self.ensureGroupSelected()
 
-    def createGroupItem(self, name):
-        group = self.iface.getGroup(name)
-        localName, icon_path = unicode(group.localName), group.icon
-        package_count = len(self.state.groupPackages(name))
-        if package_count == 0:
-            return
+    def createGroupItem(self, name, content = None):
+        if not content:
+            group = self.iface.getGroup(name)
+            localName, icon_path = unicode(group.localName), group.icon
+            package_count = len(self.state.groupPackages(name))
+            if package_count == 0:
+                return
+        else:
+            localName, icon_path = content[0], content[1] #unicode(i18('All')), 'media-optical'
+            package_count = content[2] #len(self.state.packages())
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
         item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)

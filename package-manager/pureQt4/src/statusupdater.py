@@ -26,6 +26,9 @@ class StatusUpdater(QThread):
     def run(self):
         packages = len(self.model.selectedPackages())
         packagesSize = humanize(self.model.selectedPackagesSize())
-        extraPackages = len(self.model.extraPackages())
-        extraPackagesSize = humanize(self.model.extraPackagesSize())
-        self.emit(SIGNAL("selectedInfoChanged(int, QString, int, QString)"), packages, packagesSize, extraPackages, extraPackagesSize)
+        try:
+            extraPackages = len(self.model.extraPackages())
+            extraPackagesSize = humanize(self.model.extraPackagesSize())
+            self.emit(SIGNAL("selectedInfoChanged(int, QString, int, QString)"), packages, packagesSize, extraPackages, extraPackagesSize)
+        except Exception, e:
+            self.emit(SIGNAL("selectedInfoChanged(QString)"), unicode(e))
