@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-runner-windows\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-09 01:28+0100\n"
-"PO-Revision-Date: 2009-09-27 21:52+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-27 15:01+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: windowsrunner.cpp:40
@@ -23,6 +24,10 @@ msgid ""
 "keywords: activate, close, min(imize), max(imize), fullscreen, shade, keep "
 "above and keep below."
 msgstr ""
+"Adı, sınıfı veya rolü :q: ile eşleşen pencereleri getirir. Bu pencerelerle "
+"şu komutları kullanarak etkileşim sağlanabilir: etkinleştir, kapat, "
+"min(imize), "
+"maks(imize), tamekran, perdele, üstte tut ve altta tut."
 
 #: windowsrunner.cpp:43
 msgid ""
@@ -30,6 +35,10 @@ msgid ""
 "the windows by using one of the following keywords: activate, close, min"
 "(imize), max(imize), fullscreen, shade, keep above and keep below."
 msgstr ""
+":q: isimli masaüstünde bulunan pencereleri getirir. Bu pencerelerle "
+"şu komutları kullanarak etkileşim sağlanabilir: etkinleştir, kapat, "
+"min(imize), "
+"maks(imize), tamekran, perdele, üstte tut ve altta tut."
 
 #: windowsrunner.cpp:46
 msgid "Switch to desktop named :q:"
@@ -48,6 +57,12 @@ msgid ""
 "keywords: activate, close, min(imize), max(imize), fullscreen, shade, keep "
 "above and keep below."
 msgstr ""
+"Tüm pencereleri listeler ve etkinleştirilmelerini sağlar. name=, class=, "
+"role= "
+"ve desktop= ifadeleri kullanılarak liste bu kısıtları sağlayacak şekilde "
+"daraltılabilir. "
+"Bu pencerelerle şu komutları kullanarak etkileşim sağlanabilir: etkinleştir, "
+"kapat, min(imize), maks(imize), tamekran, perdele, üstte tut ve altta tut."
 
 #: windowsrunner.cpp:53 windowsrunner.cpp:179 windowsrunner.cpp:241
 msgctxt "Note this is a KRunner keyword"
@@ -73,27 +88,27 @@ msgstr "kapat"
 #: windowsrunner.cpp:135 windowsrunner.cpp:137
 msgctxt "Note this is a KRunner keyword"
 msgid "min"
-msgstr "en az"
+msgstr "min"
 
 #: windowsrunner.cpp:138 windowsrunner.cpp:140
 msgctxt "Note this is a KRunner keyword"
 msgid "minimize"
-msgstr "küçült"
+msgstr "minimize"
 
 #: windowsrunner.cpp:141 windowsrunner.cpp:143
 msgctxt "Note this is a KRunner keyword"
 msgid "max"
-msgstr "en fazla"
+msgstr "maks"
 
 #: windowsrunner.cpp:144 windowsrunner.cpp:146
 msgctxt "Note this is a KRunner keyword"
 msgid "maximize"
-msgstr "ekranı kapla"
+msgstr "maksimize"
 
 #: windowsrunner.cpp:147 windowsrunner.cpp:149
 msgctxt "Note this is a KRunner keyword"
 msgid "fullscreen"
-msgstr "tam ekran"
+msgstr "tamekran"
 
 #: windowsrunner.cpp:150 windowsrunner.cpp:152
 msgctxt "Note this is a KRunner keyword"
@@ -169,3 +184,4 @@ msgstr "%1 üzerinde çalışan pencereyi altta tut / altta tutma"
 #, kde-format
 msgid "Activate running window on %1"
 msgstr "%1 üzerinde çalışan pencereyi etkinleştir"
+
