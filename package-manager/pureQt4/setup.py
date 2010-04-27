@@ -23,7 +23,7 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 
 PROJECT = 'package-manager'
-__version = '2.1.0'
+__version = '2.2.0'
 
 def update_messages():
     # Create empty directory
