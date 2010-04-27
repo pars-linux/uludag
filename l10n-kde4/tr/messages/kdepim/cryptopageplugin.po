@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This_file_is_part_of_KDE
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: http://bugs.kde.org\n"
+"POT-Creation-Date: 2009-12-08 06:41+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cryptopageplugin.cpp:66
+msgid "Allowed Protocols"
+msgstr ""
+
+#: cryptopageplugin.cpp:81
+msgid "Preferred OpenPGP encryption key:"
+msgstr ""
+
+#: cryptopageplugin.cpp:87
+msgid "Preferred S/MIME encryption certificate:"
+msgstr ""
+
+#: cryptopageplugin.cpp:93
+msgid "Message Preference"
+msgstr ""
+
+#: cryptopageplugin.cpp:100
+msgid "Sign:"
+msgstr ""
+
+#: cryptopageplugin.cpp:112
+msgid "Encrypt:"
+msgstr ""
+
+#: cryptopageplugin.cpp:129
+msgid "Crypto Settings"
+msgstr ""
