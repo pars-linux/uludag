@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: processui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-12 01:18+0100\n"
-"PO-Revision-Date: 2010-04-23 23:55+0300\n"
+"PO-Revision-Date: 2010-04-27 16:30+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,7 +26,7 @@ msgstr[0] "Süreçlerin Önceliğini Değiştir..."
 
 #: ksysguardprocesslist.cpp:161 ksysguardprocesslist.cpp:485
 msgid "Jump to Parent Process"
-msgstr "Üst Sürece Geç"
+msgstr "Ana Sürece Geç"
 
 #: ksysguardprocesslist.cpp:163
 msgid "Jump to Process Debugging This One"
@@ -43,7 +43,7 @@ msgstr "Durdurulmuş Süreçlere Devam Et"
 #: ksysguardprocesslist.cpp:166
 msgid "Kill Process..."
 msgid_plural "Kill Processes..."
-msgstr[0] "Süreçleri Sonlandır..."
+msgstr[0] "Süreçleri Öldür..."
 
 #: ksysguardprocesslist.cpp:170
 msgid "Suspend (STOP)"
@@ -63,11 +63,11 @@ msgstr "Kes (INT)"
 
 #: ksysguardprocesslist.cpp:174
 msgid "Terminate (TERM)"
-msgstr "Terminate (TERM)"
+msgstr "Sonlandır (TERM)"
 
 #: ksysguardprocesslist.cpp:175
 msgid "Kill (KILL)"
-msgstr "Sonlandır (KILL)"
+msgstr "Öldür (KILL)"
 
 #: ksysguardprocesslist.cpp:176
 msgid "User 1 (USR1)"
@@ -79,12 +79,12 @@ msgstr "Kullanıcı 2 (USR2)"
 
 #: ksysguardprocesslist.cpp:180
 msgid "Focus on Quick Search"
-msgstr "Hızlı Aramada Odaklan"
+msgstr "Hızlı Aramaya Odaklan"
 
 #: ksysguardprocesslist.cpp:405
 msgid "Kill Process"
 msgid_plural "Kill Processes"
-msgstr[0] "Süreçleri Sonlandır"
+msgstr[0] "Süreçleri Öldür"
 
 #: ksysguardprocesslist.cpp:430
 msgid "Send Signal"
@@ -93,7 +93,7 @@ msgstr "Sinyal Gönder"
 #: ksysguardprocesslist.cpp:450
 #, kde-format
 msgid "Jump to Parent Process (%1)"
-msgstr "Üst Sürece Geç (%1)"
+msgstr "Ana Sürece Geç (%1)"
 
 #: ksysguardprocesslist.cpp:580
 #, kde-format
@@ -147,7 +147,7 @@ msgstr "İşlemci kullanımını işlemci sayısına böl"
 
 #: ksysguardprocesslist.cpp:682
 msgid "Displayed Information"
-msgstr "Görüntülenen Bilgiler"
+msgstr "Gösterilen Bilgiler"
 
 #: ksysguardprocesslist.cpp:685
 msgid "Characters read/written"
@@ -163,7 +163,7 @@ msgstr "Okunan/yazılan baytlar"
 
 #: ksysguardprocesslist.cpp:701
 msgid "Show I/O rate"
-msgstr "I/O oranını göster"
+msgstr "G/Ç oranını göster"
 
 #: ksysguardprocesslist.cpp:728
 msgid "Show Tooltips"
@@ -180,7 +180,7 @@ msgstr "Önce bir süreç seçmelisiniz."
 
 #: ksysguardprocesslist.cpp:1080
 msgid "You do not have sufficient privileges to change the CPU scheduler. Aborting."
-msgstr "İşlemci zamanlayıcısını değiştirmek için yeterli yetkiniz yok. Çıkılıyor."
+msgstr "İşlemci planlayıcısını değiştirmek için yeterli yetkiniz yok. Çıkılıyor."
 
 #: ksysguardprocesslist.cpp:1089
 msgid "You do not have sufficient privileges to change the CPU priority. Aborting."
@@ -188,38 +188,38 @@ msgstr "İşlemci önceliğini değiştirmek için yeterli yetkiniz yok. Çıkı
 
 #: ksysguardprocesslist.cpp:1096
 msgid "You do not have sufficient privileges to change the IO scheduler and priority. Aborting."
-msgstr "Girdi/Çıktı zamanlayıcısını ve önceliğini değiştirmek için yeterli yetkiniz yok. Çıkılıyor."
+msgstr "Girdi/Çıktı planlayıcısını ve önceliğini değiştirmek için yeterli yetkiniz yok. Çıkılıyor."
 
 #: ksysguardprocesslist.cpp:1133
 #, kde-format
 msgid "You do not have the permission to change the I/O priority of the process and there was a problem trying to run as root.  Error %1 %2"
-msgstr "Süreci sonlandırmak için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 %2"
+msgstr "Sürecin G/Ç önceliğini değiştirmek için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 %2"
 
 #: ksysguardprocesslist.cpp:1165
 #, kde-format
 msgid "You do not have the permission to change the CPU Scheduler for the process and there was a problem trying to run as root.  Error %1 %2"
-msgstr "Süreci sonlandırmak için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 (%2)"
+msgstr "Sürecin CPU Planlayıcısını değiştirmek için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 (%2)"
 
 #: ksysguardprocesslist.cpp:1195
 #, kde-format
 msgid "You do not have the permission to kill the process and there was a problem trying to run as root.  Error %1 %2"
-msgstr "Süreci sonlandırmak için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 (%2)"
+msgstr "Süreci öldürmek için yetkiniz yok. Ayrıca yönetici olarak çalıştırma denemesinde de bir sorun oluştu. Hata %1 (%2)"
 
 #: ksysguardprocesslist.cpp:1225
 #, kde-format
 msgid "Are you sure you want to kill this process?"
 msgid_plural "Are you sure you want to kill these %1 processes?"
-msgstr[0] "Seçilen %1 süreci sonlandırmak istiyor musunuz?"
+msgstr[0] "Seçilen %1 süreci öldürmek istiyor musunuz?"
 
 #: ksysguardprocesslist.cpp:1230
 #, kde-format
 msgid "Kill process"
 msgid_plural "Kill %1 processes"
-msgstr[0] "%1 süreci sonlandır"
+msgstr[0] "%1 sürecini öldür"
 
 #: ksysguardprocesslist.cpp:1231
 msgid "Kill"
-msgstr "Sonlandır"
+msgstr "Öldür"
 
 #. i18n: file: ProcessWidgetUI.ui:33
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnKillProcess)
@@ -248,14 +248,14 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'DejaVu Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili sürece SIGTERM sinyalli göndererek sonlandırmaya kalkış.</p>\n"
-"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Teknik bilgi: </span><br />Verilen sürece SIGTERM sinyali gönderilir. Bu işlem için gerekli yetki yoksa, ön tanımlı olarak parola istenir.<br /><span style=\" font-family:'Courier New,courier';\">polkit-kde-authorization</span> programı çalıştırılarak belirli kullanıcılara (veya tümüne) parolaya gerek kalmadan herhangi bir süreci sonlandırmaya yetki verilebilir. </p></body></html>"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili sürece SIGTERM sinyalli göndererek öldürmeye kalkış.</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-style:italic;\">Teknik bilgi: </span><br />Verilen sürece SIGTERM sinyali gönderilir. Bu işlem için gerekli yetki yoksa, ön tanımlı olarak parola istenir.<br /><span style=\" font-family:'Courier New,courier';\">polkit-kde-authorization</span> programı çalıştırılarak belirli kullanıcılara (veya tümüne) parolaya gerek kalmadan herhangi bir süreci öldürmeye yetki verilebilir. </p></body></html>"
 
 #. i18n: file: ProcessWidgetUI.ui:44
 #. i18n: ectx: property (text), widget (QPushButton, btnKillProcess)
 #: rc.cpp:16 rc.cpp:229
 msgid "&Kill Process..."
-msgstr "&Süreci Sonlandır..."
+msgstr "&Süreci Öldür..."
 
 #. i18n: file: ProcessWidgetUI.ui:62
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, txtFilter)
@@ -270,6 +270,14 @@ msgid ""
 "<tr><th>1234</th><td>Show the processes with the PID or Parent PID of <b>1234</b>.</td></th></tr>\n"
 "</table>\n"
 msgstr ""
+"Buraya yazılan metne göre gösterilecek süreçleri filtrele.  Girilen metin sürecin İsmi, Komutu veya Pencere Başlığının bir parçası olabilir.  Kullanıcı adı veya Süreç ID numarası da olabilir.<p>\n"
+"Örneğin:\n"
+"\n"
+"<table>\n"
+"<tr><th>ksys</th><td>İsminde \"<b>ksys</b>\" geçen süreçleri göster, örneğin \"<i>ksysguard</i>\" ve \"<i>ksysguardd</i>\".<td></tr>\n"
+"<tr><th>root</th><td><b>root</b> kullanıcısıyla çalıştırılan süreçleri göstr.  Örneğin <i>init</i></td></tr>\n"
+"<tr><th>1234</th><td><b>1234</b> PID veya Ana PID ile çalıştırılan süreçleri göster.</td></th></tr>\n"
+"</table>\n"
 
 #. i18n: file: ProcessWidgetUI.ui:68
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, txtFilter)
@@ -295,6 +303,19 @@ msgid ""
 "Processes with multiple threads are just shown as a single process, and not treated any differently.<br>\n"
 "Kernel threads are shown as normal processes, but are actually running inside the kernel and are not real processes.  As such, many of the fields (such as Username) do not apply.\n"
 msgstr ""
+"<qt>Süreçlerin hangilerinin görüneceğini veya nasıl göründüklerini değiştir.  Süreçler Hızlı Arama filtresinde filtrelenebilirler.<p>\n"
+"<table>\n"
+"<tr><td>Tüm Süreçler</td><td>Sistemdeki tüm süreçleri göster.</td></tr>\n"
+"<tr><td>Tüm Süreçler, ağaç yapısında</td><td>Sistemdeki tüm süreçleri ana PID bilgisini kullanarak hiyerarik düzende göster.</td></tr>\n"
+"<tr><td>Sistem Süreçleri</td><td>Oturum açamayan kullanıcıların veya root kullanıcısının süreçlerini göster.</td></tr>\n"
+"<tr><td>Kullanıcı Süreçleri</td><td>\tOturum açabilen root-olmayan kullanıcıların süreçlerini göster.</td></tr>\n"
+"<tr><td>Kendi Süreçlerim</td><td>Bu sürecin çalıştırıldığı kullacını bilgisiyle aynı bilgiye sahip süreçleri çalıştır.</td></tr>\n"
+"<tr><td>Sadece Programlar</td><td>Oturum açabilen ve TTY konsola ya da en azından bir X11 Penceresine sahip kulllanıcıların çalıştırdığı süreçleri göster.</td></tr>\n"
+"</table>\n"
+"<p>\n"
+"<i>Teknik bilgi:</i><br>\n"
+"Birden fazla thread çalıştıran süreçler tek süreç olarak görünürler.<br>\n"
+"Kernel thread'leri normal süreç olarak görünürler, fakat aslında kernel içerisinde çalışırlar ve gerçek süreç değillerdir.  Bu nedenle, bir çok alan (Kullanıcı adı gibi) bu süreçler için geçerli değildir.\n"
 
 #. i18n: file: ProcessWidgetUI.ui:107
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbFilter)
@@ -336,13 +357,13 @@ msgstr "Sadece Uygulamalar"
 #. i18n: ectx: property (text), widget (QLabel, lblMessage1)
 #: rc.cpp:67 rc.cpp:280
 msgid "Change scheduling priority for:"
-msgstr "Şunun için zamanlama önceliğini değiştir:"
+msgstr "Şunun için planlama önceliğini değiştir:"
 
 #. i18n: file: ReniceDlgUi.ui:100
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:70 rc.cpp:283
 msgid "CPU Scheduler"
-msgstr "CPU Zamanlayıcı"
+msgstr "CPU Planlayıcı"
 
 #. i18n: file: ReniceDlgUi.ui:129
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioNormal)
@@ -356,7 +377,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Süreç için özel gereksinimleri olmayan standart zaman-paylaşımı zamanlayıcısı.</p></body></html>"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Süreç için özel gereksinimleri olmayan standart zaman-paylaşımı planlayıcısı.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:136
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioNormal)
@@ -371,7 +392,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Normal Zamanlama: Öntanımlı Linux zaman-paylaşımı (Diğer)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Normal Planlama: Öntanımlı Linux zaman-paylaşımı (Diğer)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\">Normal<span style=\" font-weight:400;\"> is the standard Linux time-sharing scheduler that is intended for all processes that do not  require special static priority real-time mechanisms. The process to run is chosen from the list of other</span> Normal<span style=\" font-weight:400;\"> or </span>Batch<span style=\" font-weight:400;\"> processes based on a dynamic priority that is determined only inside this list. The dynamic priority is based on the priority level given and increased for each time-quantum the process is ready to run, but denied to run by the scheduler. This ensures fair progress among all Normal processes.</span></p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:139
@@ -398,7 +419,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">İşlemci-yoğun etkileşimsiz süreç için. Süreç, zamanlama kararları verilirken sessizce geriye atılacaktır.</p></body></html>"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">İşlemci-yoğun etkileşimsiz süreç için. Süreç, planlama kararları verilirken sessizce geriye atılacaktır.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:156
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, radioBatch)
@@ -410,6 +431,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Batch Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; font-style:italic;\">(Since Linux 2.6.16.)</span><span style=\" font-weight:400;\"> This policy is similar to </span>Normal<span style=\" font-weight:400;\">, except that this policy will cause the scheduler to always assume that the process is CPU-intensive.  Consequently, the scheduler will apply a small scheduling penalty so that this process is mildly disfavored in scheduling decisions. This policy is useful for workloads that are non-interactive, but do not want to lower their nice value, and for workloads that want a deterministic scheduling policy without interactivity causing extra preemptions (between the workload's tasks).</span></p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Batch Planlama</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-weight:600;\"><span style=\" font-weight:400; font-style:italic;\">(Since Linux 2.6.16.)</span><span style=\" font-weight:400;\"> </span>Normal<span style=\" font-weight:400;\"> politikaya benzer, ancak planlayıcı sürecin CPU yoracak türden olduğunu varsayar.  Sonuç olarak bu planlayıcı, küçük bir planlama cezası uygular ve sğreç planlama kararlarında onaylamadan geçemez. </span></p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:159
 #. i18n: ectx: property (text), widget (QRadioButton, radioBatch)
@@ -441,6 +467,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Round Robin Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Round Robin</span> is a simple enhancement of <span style=\" font-weight:600;\">FIFO</span>.  Everything described below for <span style=\" font-weight:600;\">FIFO</span> also applies to <span style=\" font-weight:600;\">Round Robin</span>, except that each process is only allowed to run for a maximum time quantum.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Round Robin Scheduling</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Round Robin</span> is a simple enhancement of <span style=\" font-weight:600;\">FIFO</span>.  Everything described below for <span style=\" font-weight:600;\">FIFO</span> also applies to <span style=\" font-weight:600;\">Round Robin</span>, except that each process is only allowed to run for a maximum time quantum.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:179
 #. i18n: ectx: property (text), widget (QRadioButton, radioRR)
@@ -472,6 +503,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">First In-First Out Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">When  a  <span style=\" font-weight:600;\">FIFO</span> process  becomes  runnable,  it  will always immediately preempt any currently running <span style=\" font-weight:600;\">Normal</span> or <span style=\" font-weight:600;\">Batch</span> process.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">First In-First Out Planlama</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bir  <span style=\" font-weight:600;\">FIFO</span> süreci çalışmaya başladığında, daima çalışan <span style=\" font-weight:600;\">Normal</span> veya <span style=\" font-weight:600;\">Batch</span> süreçlerin çalışmasını önler.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:199
 #. i18n: ectx: property (text), widget (QRadioButton, radioFIFO)
@@ -483,7 +519,7 @@ msgstr "FIFO"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:137 rc.cpp:350
 msgid "I/O Scheduler"
-msgstr "G/Ç Zamanlayıcı"
+msgstr "G/Ç Planlayıcı"
 
 #. i18n: file: ReniceDlgUi.ui:293
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioIONormal)
@@ -509,6 +545,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Normal Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">This is the same as <span style=\" font-weight:600;\">Best Effort</span> scheduling, except that the priority is calculated automatically based on the CPU priority.  Processes with a higher priority will take priority for access to the hard disk.  Programs running at the same <span style=\" font-weight:600;\">Best Effort/Normal</span> priority are served in a <span style=\" font-weight:600;\">Round Robin</span> fashion.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Normal Planlama</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">En İyi Başarım</span> planlamayla aynıdır, yalnızca öncelik, CPU önceliğine göre otomatik olarak oluşturulur.  Yüksek öncelikli bir süreç hard diske erişimde daha yüksek önceliğe sahiptir.  Aynı <span style=\" font-weight:600;\">En İyi Başarım/Normal</span> önceliğinde çalışan programlar <span style=\" font-weight:600;\">Round Robin</span> şeklinde önceliklendirilirler.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:313
 #. i18n: ectx: property (toolTip), widget (QRadioButton, radioIdle)
@@ -534,6 +575,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Idle Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A  program running with <span style=\" font-weight:600;\">Idle</span> I/O priority will only get disk time when no other program has asked for disk I/O for a defined grace period. The impact of <span style=\" font-weight:600;\">Idle</span> I/O processes on normal system activity should be zero. Priority is not applicable to this scheduling class.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Idle Planlama</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Idle</span> G/Ç önceliği ile çalışan bir program yalnızca diğer programlar belirli bir zaman aralığında disk erişimi isteğinde bulunmamışsa diske erişebilir. Normal bir sistemde <span style=\" font-weight:600;\">Idle</span> G/Ç süreçlerin etkisi sıfır olmalıdır. Bu planlama sınıfında öncelik uygulanabilir değildir.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:323
 #. i18n: ectx: property (text), widget (QRadioButton, radioIdle)
@@ -568,7 +614,7 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">En İyi Başarım Zamanlaması</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">En İyi Başarım Planlaması</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Yüksek önceliğe sahip süreçler sabit diske de erişmek için bu önceliği alırlar.  Aynı <span style=\" font-weight:600;\">En İyi Başarım/Normal</span> önceliğinde çalışan uygulamalaraöncelikler <span style=\" font-weight:600;\">Round Robin</span> tarzında sunulur.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:343
@@ -601,6 +647,11 @@ msgid ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Real Time Scheduling</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">The <span style=\" font-weight:600;\">Real Time</span> scheduling class is given first access to the disk, regardless of what else is going on in the system. Thus the <span style=\" font-weight:600;\">Real Time</span> class needs to be used with some care, as it can starve other processes. As with the <span style=\" font-weight:600;\">Best Effort</span> class, 8 priority levels are defined denoting how big a time slice a given process will receive on each scheduling window.</p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Gerçek Zamanlı Planlama</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Gerçek Zamanlı</span> planlama sınıfında sistemde ne olup bittiğine bakılmaksızın disk erişimine öncelik verilir. Bu nedenle <span style=\" font-weight:600;\">Gerçek Zamanlı</span> sınıfı diğer süreçlerin kaynak kullanımını kısacağından dikkatli kullanılmalıdır. <span style=\" font-weight:600;\">En İyi Başarım</span> sınıfında olduğu gibi, her planlama penceresinde bir sürecin ne kadar büyük bir zaman payı alacağını belirten 8 öncelik seviyesi tanımlanmıştır.</p></body></html>"
 
 #. i18n: file: ReniceDlgUi.ui:363
 #. i18n: ectx: property (text), widget (QRadioButton, radioRealTime)
@@ -636,31 +687,31 @@ msgstr "Yüksek Öncelik"
 #, kde-format
 msgid "Script error: There needs to be exactly one argument to setHtml(), but there was %1."
 msgid_plural "Script error: There needs to be exactly one argument to setHtml(), but there were %1."
-msgstr[0] ""
+msgstr[0] "Betik hatası: setHtml() fonksiyonunun sadece bir argümanı olmalı fakat şu an %1 tane var."
 
 #: scripting.cpp:79
 msgid "Script error: Argument to setHtml() was not a string"
-msgstr ""
+msgstr "Betik hatası: setHtml() fonksiyonunun argümanı bir dizgi değil"
 
 #: scripting.cpp:107
 #, kde-format
 msgid "Script error: There needs to be exactly one argument to fileExists(), but there was %1."
 msgid_plural "Script error: There needs to be exactly one argument to fileExists(), but there were %1."
-msgstr[0] ""
+msgstr[0] "Betik hatası: fileExists() fonksiyonunun sadece bir argümanı olmalı fakat şu an %1 tane var."
 
 #: scripting.cpp:112
 msgid "Script error: Argument to fileExists() was not a string"
-msgstr ""
+msgstr "Betik hatası: fileExists() fonksiyonunun argümanı bir dizgi değil"
 
 #: scripting.cpp:122
 #, kde-format
 msgid "Script error: There needs to be exactly one argument to readFile(), but there was %1."
 msgid_plural "Script error: There needs to be exactly one argument to readFile(), but there were %1."
-msgstr[0] ""
+msgstr[0] "Betik hatası: readFile() fonksiyonunun sadece bir argümanı olmalı fakat şu an %1 tane var."
 
 #: scripting.cpp:126
 msgid "Script error: Argument to readFile() was not a string"
-msgstr ""
+msgstr "Betik hatası: readFile() argümanı bir dizgi değil"
 
 #: scripting.cpp:188
 #, kde-format
@@ -681,7 +732,7 @@ msgstr "- Süreç durduruldu. Bu süreç şu anda kullanıcı girdilerine yanıt
 
 #: ProcessModel.cc:414
 msgid "- Process has finished and is now dead, but the parent process has not cleaned up."
-msgstr "- Süreç tamamlandı ve şu anda sonlandırılmış durumda ancak üst süreç temizlenmemiş."
+msgstr "- Süreç tamamlandı ve şu anda ölmüş durumda ancak ana süreç temizlenmemiş."
 
 #: ProcessModel.cc:717
 msgid "The process name."
@@ -697,7 +748,7 @@ msgstr "Sürecin üzerinde çalıştığı süreci kontrol eden uçbirim."
 
 #: ProcessModel.cc:723
 msgid "The priority with which this process is being run. Ranges from 19 (very nice, least priority) to -19 (top priority)."
-msgstr "Bu sürecin çalışmakta olduğu öncelik. 19 (çok iyi, en düşük öncelik) ile 19 (en yüksek öncelik) aralığında."
+msgstr "Bu sürecin çalışmakta olduğu öncelik. Aralık 19 (en düşük öncelik) ile -19 (en yüksek öncelik) arasında olmalıdır."
 
 #: ProcessModel.cc:726
 msgid "The current CPU usage of the process."
@@ -735,7 +786,7 @@ msgstr "<qt>Sürecin çalıştırıldığı pencerenin başlığı.</qt>"
 
 #: ProcessModel.cc:746
 msgid "The unique Process ID that identifies this process."
-msgstr "Süreci tanımlayan biricik Süreç Kimliği."
+msgstr "Süreci tanımlayan benzersiz Süreç Kimliği."
 
 #: ProcessModel.cc:748
 msgid "The number of bytes read.  See What's This for more information."
@@ -747,19 +798,21 @@ msgstr "Yazılan bayt sayısı. Daha fazla bilgi için Bu Nedir'e bakın."
 
 #: ProcessModel.cc:759
 msgid "<qt><i>Technical information: </i>The kernel process name is a maximum of 8 characters long, so the full command is examined.  If the first word in the full command line starts with the process name, the first word of the command line is shown, otherwise the process name is used."
-msgstr ""
+msgstr "<qt><i>Teknik Bilgi: </i>Çekirdek süreç ismi azami 8 karakter uzunluğundadı rbu yüzden tam komut incelenir. Eğer ilk kelime sürecin adıyla başlarsa tüm komut satırı gösterilir, diğer halde sürecin adı kullanılır."
 
 #: ProcessModel.cc:761
 msgid "<qt>The user who owns this process.  If the effective, setuid etc user is different, the user who owns the process will be shown, followed by the effective user.  The ToolTip contains the full information.  <p><table><tr><td>Login Name/Group</td><td>The username of the Real User/Group who created this process</td></tr><tr><td>Effective User/Group</td><td>The process is running with privileges of the Effective User/Group.  This is shown if different from the real user.</td></tr><tr><td>Setuid User/Group</td><td>The saved username of the binary.  The process can escalate its Effective User/Group to the Setuid User/Group.</td></tr><tr><td>File System User/Group</td><td>Accesses to the filesystem are checked with the File System User/Group.  This is a Linux specific call. See setfsuid(2) for more information.</td></tr></table>"
 msgstr ""
+"<qt>Sürecin sahibi olan kullanıcı.  Efektif, setuid vs. kullanıcıları farklıysa, sürecin sahibi olan kullanıcıyı takiben efektif kullanıcı görünecektir. Araç ipucu tam bilgiyi içerir. "
+"<p><table><tr><td>Giriş Adı/Grubu</td><td>Bu süreci oluşturan Gerçek Kullanıcının/Grubun kullanıcı adı</td></tr><tr><td>Efektif Kullanıcı/Grup</td><td>Süreç Efektif Kullanıcı/Grup yetkileriyle çalışıyor. Bu durum gerçek kullanıcıdan farklıysa gösterilir.</td></tr><tr><td>Setuid Kullanıcı/Grup</td><td>İkili dosyada kayıtlı kullanıcı adı. Süreç Efektif Kullanıcı/Grup bilgilerini aşarak Setuid Kullanıcı/Grup bilgileriyle çalışabilir.</td></tr><tr><td>Dosya Sistemi Kullanıcı/Grubu</td><td>Dosya sistemine erişim Dosya Sistemi Kullanıcı/Grubu kontrolüyle yapılır. Bu işlem Linux'a özgür bir çağrıdır. Daha fazla bilgi için setfsuid(2) bilgisine bakın.</td></tr></table>"
 
 #: ProcessModel.cc:771
 msgid "<qt>This is the size of allocated address space - not memory, but address space. This value in practice means next to nothing. When a process requests a large memory block from the system but uses only a small part of it, the real usage will be low, VIRT will be high. <p><i>Technical information: </i>This is VmSize in proc/*/status and VIRT in top."
-msgstr ""
+msgstr "<qt>Ayrılmış adres uzayı - bellek değil, adres uzayı. Pratikte bu değer neredeyse hiç bir anlam ifade etmemektedir. Bir süreç sistemden büyük bir bellek bloğu isteğinde bulunur ve bunun sadece küçük bir kısmını kullanırsa, gerçek kullanım düşük, VIRT yüksek değer olacaktır. <p><i>Teknik bilgi: </i>Bu bilgi /proc/*/status  adresindeki VmSize ve top programındaki VIRT bilgileridir."
 
 #: ProcessModel.cc:773
 msgid "<qt><i>Technical information: </i>This is the URSS - Unique Resident Set Size, calculated as VmRSS - Shared, from /proc/*/statm.  This tends to underestimate the 'true' memory usage of a process (by not including i/o backed memory pages), but is the best estimation that is fast to determine."
-msgstr ""
+msgstr "<qt><i>Teknik bilgi: </i>Bu bilgi /proc/*/statm tarafından alınan ve VmRSS - Paylaşımlı olarak hesaplanan URSS - Unique Resident Set Size bilgisidir. Sürecin 'gerçek' bellek kullanımını göstermez (G/Ç tarafından kullanılan bellek sayfalarını hesaba katmayarak) fakat bellek kullanımının elde edilmesi hızlı olan en iyi yaklaşımdır."
 
 #: ProcessModel.cc:775
 msgid "The CPU usage of a process and all of its threads."
@@ -767,7 +820,7 @@ msgstr "Bir sürecin ve tüm parçacıklarının (thread) CPU kullanımı"
 
 #: ProcessModel.cc:777
 msgid "<qt><i>Technical information: </i>This is the Shared memory, called SHR in top.  It is the number of pages that are backed by a file (see kernel Documentation/filesystems/proc.txt .)"
-msgstr ""
+msgstr "<qt><i>Teknik bilgi: </i>This is the Shared memory, called SHR in top.  It is the number of pages that are backed by a file (see kernel Documentation/filesystems/proc.txt .)"
 
 #: ProcessModel.cc:779
 msgid "<qt><i>Technical information: </i>This is from /proc/*/cmdline"
@@ -775,15 +828,17 @@ msgstr "<qt><i>Teknik bilgi: </i>/proc/*/cmdline çıktısından alınmıştır"
 
 #: ProcessModel.cc:781
 msgid "<qt><i>Technical information: </i>For each X11 window, the X11 property _NET_WM_PID is used to map the window to a PID.  If a process' windows are not shown, then that application incorrectly is not setting _NET_WM_PID."
-msgstr ""
+msgstr "<qt><i>Teknik bilgi: </i>Her X11 penceresi için, o pencereyi bir PID dosyasını gösterecek şekilde ayarlamak için bir X11 özelliği olan _NET_WM_PID X11kullanılır.  If a process' windows are not shown, then that application incorrectly is not setting _NET_WM_PID. Bir sürecin penceresi görünmüyorsa, bu uygulama _NET_WM_PID özelliğini düzgün ayarlamıyor demektir."
 
 #: ProcessModel.cc:783
 msgid "<qt><i>Technical information: </i>This is the Process ID.  A multi-threaded application is treated a single process, with all threads sharing the same PID.  The CPU usage etc will be the total, accumulated, CPU usage of all the threads."
-msgstr ""
+msgstr "<qt><i>Teknik bilgi: </i>Süreç ID numarası.  Multi-threaded bir uygulama tek süreç vardır ve tüm thread'ler aynı PID kullanırlar.  CPU kullanımı, tüm thread'lerin CPU kullanımının toplamı olarak hesaplanır."
 
 #: ProcessModel.cc:786
 msgid "<qt>This column shows the IO statistics for each process. The tooltip provides the following information:<br><table><tr><td>Characters Read</td><td>The number of bytes which this task has caused to be read from storage. This is simply the sum of bytes which this process passed to read() and pread(). It includes things like tty IO and it is unaffected by whether or not actual physical disk IO was required (the read might have been satisfied from pagecache).</td></tr><tr><td>Characters Written</td><td>The number of bytes which this task has caused, or shall cause to be written to disk. Similar caveats apply here as with Characters Read.</td></tr><tr><td>Read Syscalls</td><td>The number of read I/O operations, i.e. syscalls like read() and pread().</td></tr><tr><td>Write Syscalls</td><td>The number of write I/O operations, i.e. syscalls like write() and pwrite().</td></tr><tr><td>Actual Bytes Read</td><td>The number of bytes which this process really did cause to be fetched from the storage layer. Done at the submit_bio() level, so it is accurate for block-backed filesystems. This may not give sensible values for NFS and CIFS filesystems.</td></tr><tr><td>Actual Bytes Written</td><td>Attempt to count the number of bytes which this process caused to be sent to the storage layer. This is done at page-dirtying time.</td></table><p>The number in brackets shows the rate at which each value is changing, determined from taking the difference between the previous value and the new value, and dividing by the update interval.<p><i>Technical information: </i>This data is collected from /proc/*/io and is documented further in Documentation/accounting and Documentation/filesystems/proc.txt in the kernel source."
 msgstr ""
+"<qt>Bu sütun tüm süreçlerin IO istatistiklerini gösterir. Araç ipucu aşağıdaki bilgiyi gösterir:<br><table><tr><td>Okunan karakterler</td><td>Bu görevin bellekten okuduğu bayt sayısı. Temel olarak sürecin read() ve pread() çağrılarına geçtiğindeki toplam baytlarının toplamıdır.</td></tr><tr><td>Yazılan karakterler</td><td>Bu görevin diske yazdığı bayt sayısı. </td></tr><tr><td>Sistem Okuma Çağrıları</td><td> "
+"G/Ç okuma işlemleri sayısı, ör. read() ve pread() sistem çağrıları.</td></tr><tr><td>Sistem Yazma Çağrıları</td><td>G/Ç yazma işlemleri, ör. write() ve pwrite() sistem çağrıları.</td></tr><tr><td>Gerçekte Okunan Bayt</td><td>Bu sürecin gerçekte depolama katmanından okuduğu bayt sayısı. submit_bio() seviyesinde yapılır bu yüzden block-tabanlı dosya sistemlerinde doğru bilgi verir. NFS ve CIFS dosya sistemleri için doğru değer vermeyebilir.</td></tr><tr><td>Gerçekte Yazılan Bayt</td><td>Bu sürecin depolama katmanına yazmaya çalıştığı bayt sayısı. </td></table><p>Parantezler arasında gösterilen sayı, yeni değer ve bir önceki değerin güncellenme aralığına bölünerek elde edilen yenilenme oranını göstermektedir.<p><i>Teknik bilgi: </i>Bu veri /proc/*/io bilgisinden toplanır ve çekirdek kaynak paketinde (kernel source) Documentation/accounting ve Documentation/filesystems/proc.txt belgelerinde detaylı olarak anlatılmaktadır."
 
 #: ProcessModel.cc:873
 #, kde-format
@@ -879,7 +934,7 @@ msgstr "Bu sürecin %1 tarafından hataları ayıklanıyor (<numid>%2</numid>)"
 
 #: ProcessModel.cc:1113
 msgid "<b>Init</b> is the parent of all other processes and cannot be killed.<br/>"
-msgstr "<b>Init</b> süreci diğer tüm süreçlerin bağlı olduğu en üst süreçtir ve sonlandırılamaz.<br/>"
+msgstr "<b>Init</b> süreci diğer tüm süreçlerin bağlı olduğu ana süreçtir ve öldürülemez.<br/>"
 
 #: ProcessModel.cc:1115
 msgid "<b>KThreadd</b> manages kernel threads. The children processes run in the kernel, controlling hard disk access, etc.<br/>"
@@ -931,12 +986,12 @@ msgstr "İyi düzey: %1 (%2)"
 #: ProcessModel.cc:1159
 #, kde-format
 msgid "Scheduler priority: %1"
-msgstr "Zamanlayıcı önceliği: %1"
+msgstr "Planlayıcı önceliği: %1"
 
 #: ProcessModel.cc:1163
 #, kde-format
 msgid "<br/>Scheduler: %1"
-msgstr "<br/>Zamanlayıcı: %1"
+msgstr "<br/>Planlayıcı: %1"
 
 #: ProcessModel.cc:1167 ProcessModel.cc:1206
 #, kde-format
@@ -1025,7 +1080,7 @@ msgstr "Kullanıcı Adı"
 #: ProcessModel.cc:1506
 msgctxt "process heading"
 msgid "PID"
-msgstr "Süreç Kimliği"
+msgstr "PID"
 
 #: ProcessModel.cc:1507
 msgctxt "process heading"
@@ -1035,7 +1090,7 @@ msgstr "TTY"
 #: ProcessModel.cc:1508
 msgctxt "process heading"
 msgid "Niceness"
-msgstr "Durum"
+msgstr "Öncelik"
 
 #: ProcessModel.cc:1510
 #, no-c-format
