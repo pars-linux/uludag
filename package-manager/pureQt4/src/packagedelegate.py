@@ -158,7 +158,6 @@ class PackageDelegate(QtGui.QItemDelegate):
         if self.rowAnimator.currentRow() == index.row():
             _left = left + self.baseWidth
             _width = width - _left - 2
-            repository = index.model().data(index, RepositoryRole)
             version = index.model().data(index, VersionRole)
 
             # Package Detail Label
@@ -204,13 +203,15 @@ class PackageDelegate(QtGui.QItemDelegate):
                 p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, installedVersion)
 
             # Package Detail Repository
-            position += rect.height()
+            repository = index.model().data(index, RepositoryRole).toString()
+            if not repository == '':
+                position += rect.height()
 
-            p.setFont(self.boldDetailFont)
-            p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['repository'])
+                p.setFont(self.boldDetailFont)
+                p.drawText(left + ICON_SIZE , position, width - textInner, itemHeight / 2, Qt.AlignLeft, self._titles['repository'])
 
-            p.setFont(self.normalDetailFont)
-            p.drawText(_left, position, _width, itemHeight / 2, Qt.TextWordWrap, repository.toString())
+                p.setFont(self.normalDetailFont)
+                p.drawText(_left, position, _width, itemHeight / 2, Qt.TextWordWrap, repository)
 
             # Package Detail Size
             position += rect.height()
