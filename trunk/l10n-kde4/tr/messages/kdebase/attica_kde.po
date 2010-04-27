@@ -1,30 +1,32 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-#, fuzzy
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-31 06:13+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-04-27 13:24+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kdeplatformdependent.cpp:103
 msgid ""
 "Should the password be stored in the configuration file? This is unsafe."
 msgstr ""
+"Parola yapılandırma dosyasında saklansın mı? Bu işlem güvensizdir."
 
 #: kdeplatformdependent.cpp:104
 msgid "Social Desktop Configuration"
-msgstr ""
+msgstr "Sosyal Masaüstü Yapılandırması"
 
 #: kdeplatformdependent.cpp:197
 msgid "Open Collaboration Providers"
-msgstr ""
+msgstr "Açık İşbirliği Sağlayıcıları"
+
