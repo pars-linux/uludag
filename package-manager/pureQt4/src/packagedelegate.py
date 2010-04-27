@@ -25,6 +25,7 @@ DARKRED = QtGui.QColor('darkred')
 WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
 GRAY = QtGui.QColor('gray')
+BLUE = QtGui.QColor('blue')
 TYPE_COLORS = {'critical':RED, 'security':DARKRED}
 
 DETAIL_LINE_OFFSET = 36
@@ -41,7 +42,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.rowAnimator = RowAnimator(parent.packageList)
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
         self.animatable = True
-
+        self._link_rect = None
         self._max_height = ROW_HEIGHT
         self.font = Pds.settings('font','Sans').split(',')[0]
 
@@ -180,7 +181,10 @@ class PackageDelegate(QtGui.QItemDelegate):
 
             p.setFont(self.normalDetailFont)
             rect = fontMetrics.boundingRect(option.rect, Qt.TextWordWrap, homepage.toString())
+            self._link_rect = QRect(_left, position, rect.width(), rect.height())
+            p.setPen(BLUE)
             p.drawText(_left, position, _width, rect.height(), Qt.TextWordWrap, homepage.toString())
+            p.setPen(foregroundColor)
 
             # Package Detail Version
             position += rect.height()
@@ -226,12 +230,18 @@ class PackageDelegate(QtGui.QItemDelegate):
         painter.drawPixmap(option.rect.topLeft(), pixmap)
 
     def editorEvent(self, event, model, option, index):
+        __event = QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 0:
             toggled = Qt.Checked if model.data(index, Qt.CheckStateRole) == QVariant(Qt.Unchecked) else Qt.Unchecked
             return model.setData(index, toggled, Qt.CheckStateRole)
         if event.type() == QEvent.MouseButtonRelease and index.column() == 1 and self.animatable:
+            if self.rowAnimator.row == index.row():
+                if self._link_rect.contains(event.pos()):
+                    url = QUrl(model.data(index, HomepageRole).toString())
+                    QtGui.QDesktopServices.openUrl(url)
+                    return __event
             self.rowAnimator.animate(index.row())
-        return QtGui.QItemDelegate(self).editorEvent(event, model, option, index)
+        return __event
 
     def sizeHint(self, option, index):
         if self.rowAnimator.currentRow() == index.row():
