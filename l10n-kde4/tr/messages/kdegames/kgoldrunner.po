@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kgoldrunner\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-10-30 06:17+0100\n"
-"PO-Revision-Date: 2010-04-22 16:52+0300\n"
+"PO-Revision-Date: 2010-04-28 15:09+0300\n"
 "Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1622,7 +1622,7 @@ msgstr "Kedi Gözü"
 
 #: gamedata/game_plws.txt:136
 msgid "Keep Them Coming"
-msgstr ""
+msgstr "Gelmelerine İzin Verin"
 
 #: gamedata/game_plws.txt:139
 msgid "The Funnel"
@@ -1860,7 +1860,7 @@ msgstr "Çapraz Felaket"
 
 #: gamedata/game_plwv.txt:2
 msgid "Vengeance of Peter W"
-msgstr ""
+msgstr "Peter W'nin İntikamı"
 
 #: gamedata/game_plwv.txt:3
 msgid ""
@@ -1872,13 +1872,15 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:7
 msgid "Impossible?"
-msgstr "Mümkün mü?"
+msgstr "İmkansız mı?"
 
 #: gamedata/game_plwv.txt:8
 msgid ""
 "No, it is not impossible.  There is a trick in how you dig the bricks next "
 "to the gold nuggets."
 msgstr ""
+"Hayır, imkansız değil. Altın külçeleri yanındaki tuğlaları nasıl "
+"kazdığınızla ilgili bir katakulli mevcut."
 
 #: gamedata/game_plwv.txt:12
 msgid ""
@@ -1891,7 +1893,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:17
 msgid "Short Cut?"
-msgstr "Kısayol"
+msgstr "Kısayol?"
 
 #: gamedata/game_plwv.txt:18
 msgid ""
@@ -1916,7 +1918,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:27
 msgid "The Vault"
-msgstr "Mezar"
+msgstr "Mahzen"
 
 #: gamedata/game_plwv.txt:28
 msgid ""
@@ -1927,7 +1929,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:31
 msgid "Patchwork Quilt"
-msgstr ""
+msgstr "Kırk Yama Bohçası"
 
 #: gamedata/game_plwv.txt:32
 msgid ""
@@ -1953,7 +1955,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:43
 msgid "Stuck in Storage"
-msgstr ""
+msgstr "Mahzende Sıkışıp Kalmak"
 
 #: gamedata/game_plwv.txt:44
 msgid ""
@@ -1968,7 +1970,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:49
 msgid "So Far for So Little"
-msgstr ""
+msgstr "Çok Az için Çok Uzakta"
 
 #: gamedata/game_plwv.txt:50
 msgid ""
@@ -1988,7 +1990,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:59
 msgid "Entangled"
-msgstr ""
+msgstr "Dolaşmış"
 
 #: gamedata/game_plwv.txt:60
 msgid ""
@@ -2013,7 +2015,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:69
 msgid "Pot Hole"
-msgstr ""
+msgstr "Kavanoz Deliği"
 
 #: gamedata/game_plwv.txt:70
 msgid ""
@@ -2045,7 +2047,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:81
 msgid "The Laboratory"
-msgstr "Laboratuar"
+msgstr "Laboratuvar"
 
 #: gamedata/game_plwv.txt:82
 msgid ""
@@ -2113,7 +2115,7 @@ msgstr ""
 
 #: gamedata/game_plwv.txt:107
 msgid "Cooperation?"
-msgstr "Kordinasyon?"
+msgstr "İşbirliği?"
 
 #: gamedata/game_plwv.txt:108
 msgid ""
@@ -2187,7 +2189,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:2
 msgid "State Of Terror"
-msgstr ""
+msgstr "Terör Durumu"
 
 #: gamedata/game_sot.txt:3
 msgid ""
@@ -2212,7 +2214,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:13
 msgid "Fear of Heights"
-msgstr ""
+msgstr "Yükseklik Korkusu"
 
 #: gamedata/game_sot.txt:14
 msgid ""
@@ -2227,7 +2229,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:18
 msgid "The Spiral"
-msgstr ""
+msgstr "Sarmal"
 
 #: gamedata/game_sot.txt:19
 msgid ""
@@ -2241,7 +2243,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:23
 msgid "Crags of Fire"
-msgstr ""
+msgstr "Ateş Uçurumu"
 
 #: gamedata/game_sot.txt:24
 msgid ""
@@ -2254,7 +2256,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:28
 msgid "The Heist"
-msgstr ""
+msgstr "Soygunculuk"
 
 #: gamedata/game_sot.txt:29
 msgid ""
@@ -2286,7 +2288,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:39
 msgid "Torture Chamber"
-msgstr ""
+msgstr "İşkence Odası"
 
 #: gamedata/game_sot.txt:40
 msgid ""
@@ -2314,7 +2316,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:47
 msgid "Endless Cascade"
-msgstr ""
+msgstr "Sonsuz Şelale"
 
 #: gamedata/game_sot.txt:48
 msgid ""
@@ -2342,7 +2344,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:54
 msgid "Infiltration"
-msgstr "Giriş"
+msgstr "İçeri Süzülme"
 
 #: gamedata/game_sot.txt:55
 msgid ""
@@ -2376,7 +2378,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:66
 msgid "Tunnels (1) - The Monster"
-msgstr ""
+msgstr "Tüneller (1) - Canavar"
 
 #: gamedata/game_sot.txt:67
 msgid ""
@@ -2392,7 +2394,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:72
 msgid "Breaking and Entering"
-msgstr ""
+msgstr "Kırılma ve İçeri Giriş"
 
 #: gamedata/game_sot.txt:73
 msgid ""
@@ -2410,7 +2412,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:78
 msgid "Tunnels (2) - The Honeycomb"
-msgstr ""
+msgstr "Tüneller (2) - Petek"
 
 #: gamedata/game_sot.txt:79
 msgid ""
@@ -2431,7 +2433,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:85
 msgid "Four Chambers Suspended"
-msgstr ""
+msgstr "Asma Dört Oda"
 
 #: gamedata/game_sot.txt:86
 msgid ""
@@ -2466,7 +2468,7 @@ msgstr ""
 
 #: gamedata/game_sot.txt:94
 msgid "Ruins"
-msgstr ""
+msgstr "Harabeler"
 
 #: gamedata/game_sot.txt:95
 msgid ""
@@ -2513,7 +2515,7 @@ msgstr ""
 
 #: gamedata/game_tutea.txt:2
 msgid "Advanced Tutorial"
-msgstr "Gelişmiş Öğretici"
+msgstr "İleri Düzey Öğretici"
 
 #: gamedata/game_tutea.txt:3
 msgid ""
@@ -2580,7 +2582,7 @@ msgstr ""
 
 #: gamedata/game_tutea.txt:30 gamedata/game_tute.txt:48
 msgid "Bye ..."
-msgstr "Hoşçakal ..."
+msgstr "Hoşça kal ..."
 
 #: gamedata/game_tutea.txt:31 gamedata/game_tute.txt:49
 msgid ""
@@ -2625,7 +2627,8 @@ msgid ""
 "point the mouse where you want him to go.  At first gravity takes over and "
 "he falls ..."
 msgstr ""
-"Merhaba! KGoldRunner'a hoşgeldin!  Bu oyunun ana fikri tüm altın külçelerini "
+"Merhaba! KGoldRunner'a hoş geldin!  Bu oyunun ana fikri tüm altın "
+"külçelerini "
 "toplayıp oyun alanının en üstüne çıkıp bir sonraki seviyeye geçmektir. Son "
 "külçeyi aldıktan sonra gizli bir merdiven ortaya çıkar.\n"
 "\n"
@@ -2717,7 +2720,7 @@ msgstr ""
 
 #: gamedata/game_tute.txt:44
 msgid "False Bricks"
-msgstr "Yanlış Tuğla"
+msgstr "Yanlış Tuğlalar"
 
 #: gamedata/game_tute.txt:45
 msgid ""
@@ -2727,7 +2730,7 @@ msgstr ""
 
 #: gamedata/game_wad.txt:2
 msgid "Challenge"
-msgstr "Karşılaş"
+msgstr "Düello"
 
 #: gamedata/game_wad.txt:3
 msgid ""
@@ -2745,11 +2748,11 @@ msgstr ""
 
 #: gamedata/game_wad.txt:10
 msgid "Mobile Bricks"
-msgstr "Mobil Tuğlalar"
+msgstr "Seyyar Tuğlalar"
 
 #: gamedata/game_wad.txt:11
 msgid "Just run over the enemies' heads."
-msgstr ""
+msgstr "Direk düşmanlarının kafalarının üzerinden geç."
 
 #: gamedata/game_wad.txt:14
 msgid "The Big Haul"
@@ -2782,7 +2785,7 @@ msgstr "Kimin Düşmana İhtiyacı Var?"
 
 #: gamedata/game_wad.txt:25
 msgid "Keep digging rows of three bricks next to the ladder."
-msgstr ""
+msgstr "Merdivenin yanındaki üç tuğlanın hizasından kazmaya devam edin."
 
 #: gamedata/game_wad.txt:28
 msgid "Asymmetrical"
@@ -2867,6 +2870,7 @@ msgstr "Kutu"
 #: gamedata/game_wad.txt:63
 msgid "Dig the two bricks next to a ladder, then look for fall-through bricks."
 msgstr ""
+"Merdivenin yanındaki iki tuğlayı kazın, sonra düşen tuğlalara dikkat edin."
 
 #: gamedata/game_wad.txt:66
 msgid "Delayed Drop"
@@ -2883,7 +2887,7 @@ msgstr ""
 
 #: gamedata/game_wad.txt:72
 msgid "Maze of Ladders"
-msgstr "Meriven Labirenti"
+msgstr "Merdiven Labirenti"
 
 #: gamedata/game_wad.txt:73
 msgid ""
@@ -2930,7 +2934,7 @@ msgstr ""
 
 #: gamedata/game_wad.txt:94
 msgid "The Three Musketeers"
-msgstr ""
+msgstr "Üç Silahşörler"
 
 #: gamedata/game_wad.txt:95
 msgid ""
@@ -2981,7 +2985,7 @@ msgstr ""
 
 #: gamedata/game_wad.txt:114
 msgid "Under the Stairs"
-msgstr "Merdivenlerin Altına"
+msgstr "Merdivenlerin Altında"
 
 #: gamedata/game_wad.txt:115
 msgid ""
@@ -3019,7 +3023,7 @@ msgstr ""
 
 #: gamedata/game_wad.txt:131
 msgid "Short Circuit"
-msgstr "Kısa Çember"
+msgstr "Kısa Devre"
 
 #: gamedata/game_wad.txt:132
 msgid ""
@@ -3074,7 +3078,7 @@ msgstr "Sonraki seviyeyi oyna."
 
 #: src/kgoldrunner.cpp:208
 msgid "Try the next level in the game you are playing."
-msgstr ""
+msgstr "Oynadığınız oyunun sonraki seviyesini deneyin."
 
 #: src/kgoldrunner.cpp:215
 msgid "&Load Saved Game..."
@@ -3106,7 +3110,7 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:265
 msgid "Show a recording of the level you are currently playing."
-msgstr ""
+msgstr "Oynadığınız oyun seviyesinin bir kaydını göster."
 
 #: src/kgoldrunner.cpp:270
 msgid "Replay &Last Level"
@@ -3132,7 +3136,7 @@ msgstr "Herhangi bir seviyeyi yeniden oyna."
 
 #: src/kgoldrunner.cpp:280
 msgid "Show a recording of any level you have played so far."
-msgstr ""
+msgstr "Şimdiye kadar oynadığınız herhangi bir seviyenin kaydını seyredin."
 
 #: src/kgoldrunner.cpp:285
 msgid "&Kill Hero"
@@ -3147,6 +3151,7 @@ msgid ""
 "Kill the hero, in case he finds himself in a situation from which he cannot "
 "escape."
 msgstr ""
+"Kahramanı, eğer kaçamayacağı bir durumun içinde kendisini bulursa öldür."
 
 #: src/kgoldrunner.cpp:309
 msgid "&Create Level"
@@ -3158,7 +3163,7 @@ msgstr "Seviye oluştur."
 
 #: src/kgoldrunner.cpp:311
 msgid "Create a completely new level."
-msgstr ""
+msgstr "Tamamen yeni bir seviye oluştur."
 
 #: src/kgoldrunner.cpp:313
 msgid "Create"
@@ -3190,7 +3195,7 @@ msgstr "Düzenlemeleri kaydet..."
 
 #: src/kgoldrunner.cpp:330
 msgid "Save your level after editing..."
-msgstr ""
+msgstr "Düzenlemeden sonra seviyeyi kaydet..."
 
 #: src/kgoldrunner.cpp:332
 msgid "Save"
@@ -3206,7 +3211,7 @@ msgstr "Daha fazla seviye..."
 
 #: src/kgoldrunner.cpp:338
 msgid "Change a level's number or move it to another game..."
-msgstr ""
+msgstr "Bir seviyenin numarasını değiştir ya da başka bir oyuna taşı..."
 
 #: src/kgoldrunner.cpp:342
 msgid "&Delete Level..."
@@ -3230,7 +3235,7 @@ msgstr "Oyun oluştur..."
 
 #: src/kgoldrunner.cpp:353
 msgid "Create a completely new game..."
-msgstr ""
+msgstr "Tamamen yeni bir oyun yarat..."
 
 #: src/kgoldrunner.cpp:356
 msgid "Edit Game &Info..."
@@ -3242,7 +3247,7 @@ msgstr "Oyun bilgilerini düzenle..."
 
 #: src/kgoldrunner.cpp:358
 msgid "Change the name, rules or description of a game..."
-msgstr ""
+msgstr "Oyunun adını, kurallarını ya da açıklamasını değiştir..."
 
 #: src/kgoldrunner.cpp:386
 msgid "&Play Sounds"
@@ -3250,23 +3255,23 @@ msgstr "&Sesleri Çal"
 
 #: src/kgoldrunner.cpp:387
 msgid "Play sound effects."
-msgstr ""
+msgstr "Ses efektlerini çal."
 
 #: src/kgoldrunner.cpp:388
 msgid "Play sound effects during the game."
-msgstr ""
+msgstr "Oyun esnasında ses efektlerini çal."
 
 #: src/kgoldrunner.cpp:394
 msgid "&Demo At Start"
-msgstr ""
+msgstr "Başlangıçta &Demoyu Aç"
 
 #: src/kgoldrunner.cpp:395 src/kgoldrunner.cpp:396
 msgid "Run a demo when the game starts."
-msgstr ""
+msgstr "Oyun başladığında demoyu çalıştır."
 
 #: src/kgoldrunner.cpp:407
 msgid "&Mouse Controls Hero"
-msgstr "Kahramanımızı &Fare Yönetir"
+msgstr "Kahramanı &Fare Yönetir"
 
 #: src/kgoldrunner.cpp:408
 msgid "Mouse controls hero."
@@ -3274,7 +3279,7 @@ msgstr "Kahramanı fare yönetir."
 
 #: src/kgoldrunner.cpp:409
 msgid "Use the mouse to control the hero's moves."
-msgstr ""
+msgstr "Kahramanın hareketlerini kontrol etmek için fareyi kullanın."
 
 #: src/kgoldrunner.cpp:413
 msgid "&Keyboard Controls Hero"
@@ -3286,21 +3291,23 @@ msgstr "Kahramanı klavye yönetir."
 
 #: src/kgoldrunner.cpp:415
 msgid "Use the keyboard to control the hero's moves."
-msgstr ""
+msgstr "Kahramanın hareketlerini kontrol etmek için klavyeyi kullanın."
 
 #: src/kgoldrunner.cpp:419
 msgid "&Hybrid Control (Laptop)"
-msgstr ""
+msgstr "&Hibrid kontrol (Dizüstü)"
 
 #: src/kgoldrunner.cpp:420
 msgid "Pointer controls hero; dig using keyboard."
-msgstr ""
+msgstr "İmleç kahramanı kontrol eder; kazmak için klavyeyi kullanın."
 
 #: src/kgoldrunner.cpp:422
 msgid ""
 "Use the laptop's pointer device to control the hero's moves, and use the "
 "keyboard to dig left and right."
 msgstr ""
+"Sağa sola kazmak için klavyeyi, kahramanın hareketlerini kontrol etmek için "
+"de dizüstünün fare imlecini kullanın."
 
 #: src/kgoldrunner.cpp:441
 msgid "Normal Speed"
@@ -3340,7 +3347,7 @@ msgstr "Şampiyonların hızını ayarla (18 birim)."
 
 #: src/kgoldrunner.cpp:459
 msgid "Increase Speed"
-msgstr "Hızı Artır"
+msgstr "Hızı Arttır"
 
 #: src/kgoldrunner.cpp:460
 msgid "Increase speed."
@@ -3348,7 +3355,7 @@ msgstr "Hızı arttır."
 
 #: src/kgoldrunner.cpp:461
 msgid "Increase the game speed by one unit."
-msgstr ""
+msgstr "Oyun hızını bir birim arttır."
 
 #: src/kgoldrunner.cpp:465
 msgid "Decrease Speed"
@@ -3360,7 +3367,7 @@ msgstr "Hızı azalt."
 
 #: src/kgoldrunner.cpp:467
 msgid "Decrease the game speed by one unit."
-msgstr ""
+msgstr "Oyun hızını bir birim azalt"
 
 #: src/kgoldrunner.cpp:493
 msgid "Stop"
@@ -3396,7 +3403,7 @@ msgstr "Bir Adım Yap"
 
 #: src/kgoldrunner.cpp:528
 msgid "Test Bug Fix"
-msgstr "Böcek Düzeltimi Denemesi"
+msgstr "Hata Düzeltimi Denemesi"
 
 #: src/kgoldrunner.cpp:529
 msgid "Show Positions"
@@ -3439,26 +3446,26 @@ msgstr "   Seviye: "
 #: src/kgoldrunner.cpp:753
 #, kde-format
 msgid "Press \"%1\" to RESUME"
-msgstr ""
+msgstr "DEVAM ETMEK için \"%1\" ögesine basın"
 
 #: src/kgoldrunner.cpp:755
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to RESUME"
-msgstr ""
+msgstr "DEVAM ETMEK için \"%1\" veya \"%2\" ögesine basın"
 
 #: src/kgoldrunner.cpp:761
 #, kde-format
 msgid "Press \"%1\" to PAUSE"
-msgstr ""
+msgstr "DURDURMAK için \"%1\" ögesine basın"
 
 #: src/kgoldrunner.cpp:763
 #, kde-format
 msgid "Press \"%1\" or \"%2\" to PAUSE"
-msgstr ""
+msgstr "DURDURMAK için \"%1\" veya \"%2\" ögesine basın"
 
 #: src/kgoldrunner.cpp:773
 msgid "   Has hint   "
-msgstr ""
+msgstr "   İpucuna sahip   "
 
 #: src/kgoldrunner.cpp:776
 msgid "   No hint   "
@@ -3466,18 +3473,18 @@ msgstr "   İpucu yok   "
 
 #: src/kgoldrunner.cpp:844
 msgid "Theme Not Loaded"
-msgstr ""
+msgstr "Tema Yüklenemedi"
 
 #: src/kgoldrunner.cpp:845
 msgid ""
 "Cannot load the theme you selected.  It is not in the required graphics "
 "format (SVG)."
-msgstr ""
+msgstr "Seçtiğiniz tema yüklenemedi. Beklenen grafik biçiminde (SVG) değil."
 
 #: src/kgoldrunner.cpp:905 src/kgoldrunner.cpp:917 src/kgoldrunner.cpp:930
 #: src/kgoldrunner.cpp:939
 msgid "Get Folders"
-msgstr ""
+msgstr "Klasörleri Al"
 
 #: src/kgoldrunner.cpp:906
 #, kde-format
@@ -3509,15 +3516,15 @@ msgstr ""
 
 #: src/kgoldrunner.cpp:973
 msgid "Edit Name/Hint"
-msgstr ""
+msgstr "Ad/İpucu Düzenle"
 
 #: src/kgoldrunner.cpp:974
 msgid "Edit level name or hint"
-msgstr ""
+msgstr "Seviye ismini ve ipucunu düzenle"
 
 #: src/kgoldrunner.cpp:975
 msgid "Edit text for the name or hint of a level"
-msgstr ""
+msgstr "Seviye ismi ve ipucu için metni düzenle"
 
 #: src/kgoldrunner.cpp:978
 msgid "Name/Hint"
@@ -3529,15 +3536,15 @@ msgstr "Sil"
 
 #: src/kgoldrunner.cpp:981
 msgid "Space/Erase"
-msgstr ""
+msgstr "Boş Bırak/Sil"
 
 #: src/kgoldrunner.cpp:982
 msgid "Paint empty squares or erase"
-msgstr ""
+msgstr "Boş kareler çiz veya sil"
 
 #: src/kgoldrunner.cpp:983
 msgid "Erase objects or paint empty squares"
-msgstr ""
+msgstr "Nesneleri sil ya da boş kareler boya"
 
 #: src/kgoldrunner.cpp:986
 msgid "Hero"
@@ -3549,7 +3556,7 @@ msgstr "Kahramanı taşı"
 
 #: src/kgoldrunner.cpp:988
 msgid "Change the hero's starting position"
-msgstr ""
+msgstr "Kahramanın başlangıç konumunu değiştir"
 
 #: src/kgoldrunner.cpp:991
 msgid "Enemy"
@@ -3557,11 +3564,11 @@ msgstr "Düşman"
 
 #: src/kgoldrunner.cpp:992
 msgid "Paint enemies"
-msgstr ""
+msgstr "Düşmanları boya"
 
 #: src/kgoldrunner.cpp:993
 msgid "Paint enemies at their starting positions"
-msgstr ""
+msgstr "Düşmanları başlangıç konumlarında boya"
 
 #: src/kgoldrunner.cpp:997
 msgid "Brick"
@@ -3573,7 +3580,7 @@ msgstr "Boyalı tuğlalar (kazılabilir)"
 
 #: src/kgoldrunner.cpp:999
 msgid "Paint bricks (diggable objects)"
-msgstr ""
+msgstr "Boyalı tuğlalar (kazılabilir nesneler)"
 
 #: src/kgoldrunner.cpp:1002
 msgid "Concrete"
@@ -3581,11 +3588,11 @@ msgstr "Beton"
 
 #: src/kgoldrunner.cpp:1003
 msgid "Paint concrete (cannot dig)"
-msgstr "Boyalı beton (kazılamaz)"
+msgstr "Beton boyama (kazılamaz)"
 
 #: src/kgoldrunner.cpp:1004
 msgid "Paint concrete objects (not diggable)"
-msgstr ""
+msgstr "Beton nesnelerini boyama (kazılamaz)"
 
 #: src/kgoldrunner.cpp:1007
 msgid "Trap"
@@ -3593,7 +3600,7 @@ msgstr "Tuzak"
 
 #: src/kgoldrunner.cpp:1007
 msgid "Trap/False Brick"
-msgstr ""
+msgstr "Tuzak/Yanlış Tuğla"
 
 #: src/kgoldrunner.cpp:1008 src/kgoldrunner.cpp:1010
 msgid "Paint traps or false bricks (can fall through)"
@@ -3609,7 +3616,7 @@ msgstr "Merdivenleri boya"
 
 #: src/kgoldrunner.cpp:1016
 msgid "Paint ladders (ways to go up or down)"
-msgstr ""
+msgstr "Merdivenleri boya (yukarı ya da aşağı inmenin yolları)"
 
 #: src/kgoldrunner.cpp:1019
 msgid "H Ladder"
@@ -3625,7 +3632,7 @@ msgstr "Gizli merdivenleri boya"
 
 #: src/kgoldrunner.cpp:1021
 msgid "Paint hidden ladders, which appear when all the gold is gone"
-msgstr ""
+msgstr "Bütün altın gittiğinde gözüken gizli merdivenleri boya"
 
 #: src/kgoldrunner.cpp:1025
 msgid "Bar"
@@ -3633,15 +3640,15 @@ msgstr "Çubuk"
 
 #: src/kgoldrunner.cpp:1025
 msgid "Bar/Pole"
-msgstr ""
+msgstr "Çubuk/Sırık"
 
 #: src/kgoldrunner.cpp:1026
 msgid "Paint bars or poles"
-msgstr ""
+msgstr "Çubuk ya da sırıkları boya"
 
 #: src/kgoldrunner.cpp:1027
 msgid "Paint bars or poles (can fall from these)"
-msgstr ""
+msgstr "Çubuk ya da sırıkları boya (buralardan düşülebilir)"
 
 #: src/kgoldrunner.cpp:1031
 msgid "Gold"
@@ -3649,15 +3656,15 @@ msgstr "Altın"
 
 #: src/kgoldrunner.cpp:1031
 msgid "Gold/Treasure"
-msgstr ""
+msgstr "Altın/Hazine"
 
 #: src/kgoldrunner.cpp:1032
 msgid "Paint gold (or other treasure)"
-msgstr ""
+msgstr "Altın (ya da başka bir hazineyi) boya"
 
 #: src/kgoldrunner.cpp:1033
 msgid "Paint gold pieces (or other treasure)"
-msgstr ""
+msgstr "Altın parçaları (ya da başka bir hazineyi) boya"
 
 #: src/kgrcanvas.cpp:52
 msgid "Score: "
@@ -3669,7 +3676,7 @@ msgstr "Hak:"
 
 #: src/kgrdialog.cpp:40
 msgid "Edit Name & Hint"
-msgstr ""
+msgstr "İsim & İpucunu Düzenle"
 
 #: src/kgrdialog.cpp:52
 msgid "Name of level:"
@@ -3690,7 +3697,7 @@ msgstr "Oyun adı:"
 
 #: src/kgrdialog.cpp:116
 msgid "File name prefix:"
-msgstr "Dosya adı öneki:"
+msgstr "Dosya adı ön eki:"
 
 #: src/kgrdialog.cpp:124
 msgid "Traditional rules"
@@ -3732,7 +3739,7 @@ msgstr "Kaydedilmiş Bir Oyunu Seç"
 
 #: src/kgrdialog.cpp:244
 msgid "Game                       Level/Lives/Score   Day    Date     Time  "
-msgstr ""
+msgstr "Oyun                       Seviye/Hak/Puan   Gün    Tarih     Saat  "
 
 #: src/kgreditor.cpp:77
 msgid "Create Level"
@@ -3781,7 +3788,7 @@ msgstr "İ&ptal"
 #: src/kgrgame.cpp:1522
 #, kde-format
 msgid "Cannot open file '%1' for output."
-msgstr ""
+msgstr "'%1' dosyası çıktı için çalışmıyor."
 
 #: src/kgreditor.cpp:327 src/kgreditor.cpp:343 src/kgreditor.cpp:351
 #: src/kgreditor.cpp:366
@@ -3813,7 +3820,7 @@ msgstr ""
 
 #: src/kgreditor.cpp:367
 msgid "You must change the level or the game or both."
-msgstr ""
+msgstr "Seviyeyi, oyunu ya da her ikisini de değiştirmelisiniz."
 
 #: src/kgreditor.cpp:429 src/kgreditor.cpp:452 src/kgreditor.cpp:470
 #: src/kgrselector.cpp:265
@@ -3851,20 +3858,20 @@ msgstr "Oyun için bir isim girmelisiniz."
 
 #: src/kgreditor.cpp:531
 msgid "You must enter a filename prefix for the game."
-msgstr ""
+msgstr "Oyun için bir dosya adı ön eki girmelisiniz."
 
 #: src/kgreditor.cpp:536
 msgid "The filename prefix should not be more than 5 characters."
-msgstr ""
+msgstr "Dosya adı ön eki 5 karakterden daha fazla olmamalı."
 
 #: src/kgreditor.cpp:550
 msgid "The filename prefix should be all alphabetic characters."
-msgstr ""
+msgstr "Dosya adı ön eki bütün alfabetik karakterleri içerebilir."
 
 #: src/kgreditor.cpp:568
 #, kde-format
 msgid "The filename prefix '%1' is already in use."
-msgstr ""
+msgstr "Dosya adı ön eki '%1' şu an kullanımda."
 
 #: src/kgreditor.cpp:652
 msgid "You have not saved your work. Do you want to save it now?"
