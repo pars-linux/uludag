@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadi_singlefile_resource\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-07 06:10+0100\n"
-"PO-Revision-Date: 2009-11-12 14:03+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 10:30+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: singlefileresourceconfigdialog.ui:21
@@ -43,12 +44,17 @@ msgid ""
 "have write access to the file or the file is on a remote server that does "
 "not support write access."
 msgstr ""
+"Salt-okunur kipi etkinse, yukarıda seçili dosyada herhangi bir değişiklik "
+"yapılmayacaktır. "
+"Dosyaya yazma erişiminiz yoksa veya dosya uzak bir sunucuda ve bu dosyaya "
+"yazma "
+"erişimi yoksa, salt-okunur kipi otomatik olarak etkinleştirilecektir."
 
 #. i18n: file: singlefileresourceconfigdialog.ui:53
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: rc.cpp:15 rc.cpp:48
 msgid "Monitoring"
-msgstr ""
+msgstr "Gözlemleme"
 
 #. i18n: file: singlefileresourceconfigdialog.ui:59
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -58,6 +64,10 @@ msgid ""
 "are made by other programs. It also tries to create a backup in case of "
 "conflicts whenever possible."
 msgstr ""
+"Dosya gözlemleme etkinse, dosya, diğer programlar tarafından "
+"değiştirildiğinde "
+"özkaynak tarafından yeniden yüklenecek. Herhangi bir çakışma durumu olması "
+"ihtimaline karşı dosyanın yedeği de alınacak."
 
 #. i18n: file: singlefileresourceconfigdialog.ui:69
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_MonitorFile)
@@ -92,6 +102,10 @@ msgid ""
 "be specified, but note that monitoring for file changes will not work in "
 "this case."
 msgstr ""
+"Bu özkaynak tarafından sunulacak içeriğe sahip dosyayı seçin. Dosya "
+"mevcut değilse, oluşturulacaktır. Uzak bir dosyanın bağlantısı da "
+"belirtilebilir "
+"fakat bu durumda bu dosyanın gözlemlenmesi çalışmayacaktır."
 
 #: singlefileresourcebase.cpp:227
 #, kde-format
@@ -100,6 +114,8 @@ msgid ""
 "Akonadi. To avoid data loss, a backup of the internal changes has been "
 "created at '%2'."
 msgstr ""
+"Akonadi'de hala bekleyen değişiklikler varken '%1' dosyası diskte değişti. "
+"Veri kaybı yaşamamak için değişikliklerin bir yedeki '%2' olarak oluşturuldu."
 
 #: singlefileresourcebase.cpp:249
 #, kde-format
