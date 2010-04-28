@@ -173,7 +173,7 @@ if __name__ == '__main__':
         sys.exit(0)
     packages = args
 
-    app = QUniqueApplication(sys.argv, catalog='package-manager')
+    app = QUniqueApplication(sys.argv, catalog='pm-install')
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
