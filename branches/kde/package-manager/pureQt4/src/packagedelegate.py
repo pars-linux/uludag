@@ -227,7 +227,8 @@ class PackageDelegate(QtGui.QItemDelegate):
 
             p.setFont(self.normalDetailFont)
             p.drawText(left + self._titleFM['size'], position, width, itemHeight / 2, Qt.TextWordWrap, size)
-            self.rowAnimator.max_height = position - top
+            position += rect.height()
+            self.rowAnimator.max_height = position - top + 4
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
