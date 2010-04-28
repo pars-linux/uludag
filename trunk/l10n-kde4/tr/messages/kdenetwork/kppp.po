@@ -9,18 +9,19 @@
 # Ahmet AYGUN <ahmet@zion.gen.tr>, 2005.
 # Serdar Soytetir, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kppp\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-01 06:22+0100\n"
-"PO-Revision-Date: 2009-07-31 11:39+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-28 09:55+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: accounts.cpp:77 modems.cpp:78
@@ -695,7 +696,6 @@ msgid "PAP/CHAP"
 msgstr "PAP/CHAP"
 
 #: edit.cpp:134
-#, fuzzy
 #| msgid ""
 #| "<p>Specifies the method used to identify yourself to\n"
 #| "the PPP server. Most universities still use\n"
@@ -717,15 +717,15 @@ msgid ""
 "choose CHAP, because it is much safer. If you do not know\n"
 "whether PAP or CHAP is right, choose PAP/CHAP."
 msgstr ""
-"<p>Kendinizi PPP sunucusuna tanıtma yöntemini belirtir.\n"
-"Çoğu İSS <b>PAP</b> ve(ya) <b>CHAP</b>\n"
-"kullanmasına rağmen bazı üniversiteler halen\n"
-"<b>Uçbirim</b> ya da <b>Komut Kümesi</b>\n"
-"tabanlı onaylama kullanmaktadır.\n"
+"<p>PPP sunucuya kendizini tanıtmanız için kullanılacak \n"
+"yöntemi belirler. Çoğu üniversite hala \n"
+"<b>Terminal</b>- veya <b>Betik</b>-temelli yetkilendirme,\n"
+"kullanırken bir çok ISS <b>PAP</b> ve/veya <b>CHAP</b> \n"
+"kullanmaktadır. Eğer hangisini seçeceğinizden emin değiseniz\n"
+"ISS'nıza başvurun.\n"
 "\n"
-"Eğer PAP ve CHAP arasında bir seçim yapabiliyorsanızi\n"
-"daha güvenilir olması nedeniyle CHAP'ı seçin. Eğer PAP\n"
-"veya CHAP hakkında bilgili değilseniz PAP/CHAP'ı seçin."
+"PAP ve CHAP arasında bir seçim yapabiliyorsanız,\n"
+"CHAP seçmeniz önerilir çünkü daha güvenilirdir."
 
 #: edit.cpp:147
 msgid "Store &password"
@@ -891,7 +891,6 @@ msgid "Static IP address"
 msgstr "Statik IP Adresi"
 
 #: edit.cpp:471
-#, fuzzy
 #| msgid ""
 #| "Select this option when your computer has a\n"
 #| "fixed internet address (IP). Most computers\n"
@@ -905,11 +904,10 @@ msgid ""
 "dynamic IP addressing unless you know what you\n"
 "are doing."
 msgstr ""
-"Bilgisayarınızın sabit bir internet adresi (IP) varsa\n"
-"bu seneçeği işaretleyin. Çoğu bilgisayarda bu\n"
-"özellik olmadığından, ne yaptığınızdan emin\n"
-"olmadıkça, dinamik IP adreslemesi seçeneğini\n"
-"işaretlemelisiniz."
+"Bilgisayarınızın sabit bir internet adresi varsa (IP)\n"
+"bu seçeneği seçin. Çoğu bilgisayarın sabit internet\n"
+"adresi yoktur, bu yüzden ne yaptığınızdan emin değilseniz\n"
+"dinamik IP adresi seçmeniz önerilir."
 
 #: edit.cpp:481
 msgid "&IP address:"
@@ -968,7 +966,6 @@ msgstr ""
 "Gerçekten ihtiyacınız olmadıkça, bu seçeneği işaretlemeyin."
 
 #: edit.cpp:556
-#, fuzzy
 #| msgid ""
 #| "Selecting this option might cause some weird problems with the X-server "
 #| "and applications while kppp is connected. Don't use it until you know "
@@ -982,11 +979,12 @@ msgid ""
 "For more information take a look at the handbook (or help) in the "
 "\"Frequently asked questions\" section."
 msgstr ""
-"Bu seçeneği işaretlemek, kppp bağlıyken X-sunucusu ve uygulamalarında tuhaf "
-"sorunlar oluşturabilir. Ne yaptığınızdan emin olmadıkça, bu seçeneği "
-"işaretlemeyin!\n"
-"Daha fazla bilgi için elkitabında (ya da yardımda) \"Frequently asked "
-"questions\" kısmına gözatın."
+"Bu seçeneği seçmeniz, kppp bağlıyken X-sunucuda ve uygulamalarda garip "
+"sorunlara "
+"neden olabilir. Ne yaptığınızdan emin değilseniz bu seçeneği seçmeyin.\n"
+"Daha fazla bilgi için el kitabında (veya yardım sayfasında) \"Sık sorulan "
+"sorular\" "
+"kısmına bakın."
 
 #: edit.cpp:563
 msgid "Warning"
@@ -1865,7 +1863,6 @@ msgid "Recent Changes in KPPP"
 msgstr "Kppp'deki Son Değişiklikler"
 
 #: kpppwidget.cpp:1062
-#, fuzzy
 #| msgid ""
 #| "From version 1.4.8 on, kppp has a new feature\n"
 #| "called \"Quickhelp\". It's similar to a tooltip,\n"
@@ -1889,14 +1886,12 @@ msgid ""
 "\n"
 "To test it, right-click somewhere in this text."
 msgstr ""
-"Sürüm 1.4.8'den itibaren kppp \"Quickhelp\"\n"
-"adında yeni bir özelliğe sahip. Araç ipuçlarına\n"
-"benzer, ama bunu istediğiniz zaman etkinleştirebilirsiniz.\n"
-"\n"
-"Etkinleştirmek için, bir tuşa veya konuya sağ fare tuşuyla\n"
-"tıklayın. Eğer konunun Quickhelp desteği varsa, açılır bir\n"
-"menüden Quickhelp'e ulaşabilirsiniz.\n"
-"Denemek için bu metindeki herhangi bir yere sağ tıklayın."
+"Kppp, 1.4.8 sürümünden itibaren \"Quickhelp\"\n"
+"özelliğine sahip.\n"
+"Etkinleştirmek için bir kontrole (düğme veya etiket gibi)\n"
+"farenin sağ tuşuyla tıklayın.\n"
+"Eğer tıklanılan öğe Quickhelp destekliyorsa\n "
+"açılır pencerede açıklamaları göreceksiniz."
 
 #: kpppwidget.cpp:1074
 msgid "Do not show this hint again"
@@ -2196,7 +2191,6 @@ msgid "Select Modem Type"
 msgstr "Modem Türünü Seçin"
 
 #: modemdb.cpp:55
-#, fuzzy
 #| msgid ""
 #| "To set up your modem, first choose its vendor in the list to the left, "
 #| "and then select the model from the right list. If you don't know which "
@@ -2206,9 +2200,11 @@ msgid ""
 "then select the model from the right list. If you do not know which modem "
 "you have, you can try out one of the \"Generic\" modems."
 msgstr ""
-"Modeminizi ayarlamak için, önce soldaki listeden üreticisini seçin ve sonra "
-"sağdaki listeden modelini seçin. Modeminizin markasını bilmiyorsanız,\"Genel"
-"\" modemlerden birisini deneyebilirsiniz."
+"Modeminizi ayarlamak için, önce soldaki listeden üreticiyi ve sağdaki "
+"listeden "
+"modelinizi seçin. Modeminizin üreticisini bilmiyorsanız, \"Standart\" "
+"modemlerden "
+"birisini deneyebilirsiniz."
 
 #: modemdb.cpp:147 modemdb.cpp:149 modemdb.cpp:219 modemdb.cpp:234
 msgid "<Generic>"
