@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadicontact\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-04 01:24+0200\n"
-"PO-Revision-Date: 2009-11-12 13:14+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 15:40+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: contacteditor.cpp:155
@@ -21,6 +22,8 @@ msgid ""
 "The contact has been changed by someone else.\n"
 "What should be done?"
 msgstr ""
+"Bağlantı başka biri tarafından değiştirilmiş.\n"
+"Ne yapılmalı?"
 
 #: contacteditor.cpp:156 contactgroupeditor.cpp:167
 msgid "Take over changes"
@@ -55,6 +58,8 @@ msgid ""
 "The contact group has been changed by someone else.\n"
 "What should be done?"
 msgstr ""
+"Bağlantı grubu başkası tarafından değiştirilmiş.\n"
+"Ne yapılmalı?"
 
 #: contactgroupeditor.cpp:198
 msgid "The name of the contact group must not be empty."
@@ -79,7 +84,7 @@ msgstr "Tercih edilen e-posta adresini seç"
 #: contactgroupmodel.cpp:206
 #, kde-format
 msgid "The member with email address <b>%1</b> is missing a name"
-msgstr ""
+msgstr "<b>%1</b> e-posta adresli üyenin ismi eksik"
 
 #: contactgroupmodel.cpp:211
 #, kde-format
@@ -310,11 +315,10 @@ msgid ""
 msgstr ""
 
 #: recentcontactscollectionrequestjob.cpp:41
-#, fuzzy
 #| msgid "New Contact"
 msgctxt "recent contacts folder"
 msgid "Recent Contacts"
-msgstr "Yeni Kişi"
+msgstr "Yeni Bağlantılar"
 
 #: waitingoverlay.cpp:51
 msgid "<p style=\"color: white;\"><b>Waiting for operation</b><br/></p>"
@@ -333,18 +337,20 @@ msgid ""
 "Unable to start skype process, check that skype executable is in your PATH "
 "variable."
 msgstr ""
+"skype süreci başlatılamıyor, skype çalıştırılabilir dosyasının PATH ortam "
+"değişkeninde olduğunu kontrol edin."
 
 #: actions/qskypedialer.cpp:94
 msgid "Skype Public API (DBus) seems to be disabled."
-msgstr ""
+msgstr "Skype Açık API (DBus) etkinleştirilmemiş görünüyor."
 
 #: actions/qskypedialer.cpp:102
 msgid "Skype registration failed."
-msgstr ""
+msgstr "Skype kayıt işlemi başarılı."
 
 #: actions/qskypedialer.cpp:110
 msgid "Protocol mismatch."
-msgstr ""
+msgstr "Protokol uyuşmazlığı."
 
 #: editor/addresseditwidget.cpp:182 editor/phoneeditwidget.cpp:82
 msgctxt "@item:inlistbox Category of contact info field"
