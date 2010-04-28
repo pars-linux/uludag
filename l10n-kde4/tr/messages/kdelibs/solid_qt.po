@@ -1,20 +1,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: solid_qt\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2009-09-10 13:32+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-28 08:57+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: backends/hal/haldevice.cpp:71
 #, qt-format
@@ -395,7 +396,7 @@ msgstr "Kamera"
 #: deviceinterface.cpp:88
 msgctxt "Portable Media Player device type"
 msgid "Portable Media Player"
-msgstr "Taşınabilir Çoklu Ortam Yürütücüsü"
+msgstr "Taşınabilir Medya Oynatıcısı"
 
 #: deviceinterface.cpp:90
 msgctxt "Network Interface device type"
@@ -441,3 +442,4 @@ msgstr "Seri Port Arayüzü"
 msgctxt "Smart Card Reader device type"
 msgid "Smart Card Reader"
 msgstr "Akıllı Kart Okuyucu"
+
