@@ -8,13 +8,14 @@
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_l10n\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-10 23:33+0000\n"
-"PO-Revision-Date: 2009-10-12 16:01+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 09:01+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -45,7 +46,7 @@ msgstr "Avusturya Dili"
 #: be@latin/entry.desktop:2
 msgctxt "Name"
 msgid "Belarusian Latin"
-msgstr "Belarus Dili Latin"
+msgstr "Belarus Latincesi"
 
 #: be/messages/entry.desktop:2
 msgctxt "Name"
@@ -75,12 +76,12 @@ msgstr "Britanya Dili"
 #: ca/messages/entry.desktop:2
 msgctxt "Name"
 msgid "Catalan"
-msgstr "Katalan Dili"
+msgstr "Katalanca"
 
 #: ca@valencia/messages/entry.desktop:2
 msgctxt "Name"
 msgid "Catalan (Valencian)"
-msgstr ""
+msgstr "Katalanca (Valencia)"
 
 #: crh/messages/entry.desktop:2
 msgctxt "Name"
@@ -345,7 +346,7 @@ msgstr "Flamanca"
 #: nn/messages/entry.desktop:2
 msgctxt "Name"
 msgid "Norwegian Nynorsk"
-msgstr "Norveççe Nynorsk"
+msgstr "Norveç Nynorsk Dili"
 
 #: or/messages/entry.desktop:2
 msgctxt "Name"
@@ -408,20 +409,18 @@ msgid "Slovenian"
 msgstr "Slovence"
 
 #: sr@ijekavianlatin/messages/entry.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Serbian Latin"
 msgctxt "Name"
 msgid "Serbian Ijekavian Latin"
-msgstr "Latin Sırpça"
+msgstr "Ijekavian Latin Sırpça"
 
 #: sr@ijekavian/messages/entry.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Serbian Latin"
 msgctxt "Name"
 msgid "Serbian Ijekavian"
-msgstr "Latin Sırpça"
+msgstr "Ijekavian Sırpça"
 
 #: sr@latin/messages/entry.desktop:2
 msgctxt "Name"
