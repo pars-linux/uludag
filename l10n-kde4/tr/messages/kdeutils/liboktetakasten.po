@@ -3,13 +3,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2010-04-20 12:00+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-04-28 11:01+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -180,7 +181,7 @@ msgctxt ""
 "@option:check Encode the values in hexadecimal instead of decimal, if the "
 "datatype has the property Unsigned"
 msgid "Unsigned as hexadecimal:"
-msgstr ""
+msgstr "İşaretsizleri onaltılık göster:"
 
 #: gui/io/bytearraysourcecodestreamencoderconfigeditor.cpp:100
 msgctxt "@item name of the encoding result"
@@ -232,7 +233,7 @@ msgstr "Rastgele veri eklendi."
 #: controllers/view/gotooffset/gotooffsetcontroller.cpp:47
 msgctxt "@action:inmenu"
 msgid "&Go to Offset..."
-msgstr ""
+msgstr "&Ofsete git..."
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:53
 msgctxt "@label:listbox"
@@ -245,6 +246,7 @@ msgstr "&Yerleşim:"
 msgctxt "@info:whatsthis"
 msgid "Enter an offset to go to, or select a previous offset from the list."
 msgstr ""
+"Gidilecek bir ofset girin veya listeden önceki ofsetlerden birini seçin."
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:74
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:103
@@ -255,7 +257,7 @@ msgstr "İ&mleçten itibaren"
 #: controllers/view/gotooffset/gotooffsetview.cpp:76
 msgctxt "@info:whatsthis"
 msgid "Go relative from the current cursor location and not absolute."
-msgstr ""
+msgstr "Mevcut imleç pozisyonundan göreceli olarak ilerle."
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:78
 msgctxt "@option:check"
@@ -279,7 +281,7 @@ msgstr "&Geri"
 #: controllers/view/selectrange/selectrangeview.cpp:102
 msgctxt "@info:whatsthis"
 msgid "Go backwards from the end or the current cursor location."
-msgstr ""
+msgstr "Sondan veya mevcut imleç pozisyonundan geriye doğru git."
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:98
 msgctxt "@action:button"
@@ -289,7 +291,7 @@ msgstr "&Git"
 #: controllers/view/gotooffset/gotooffsetview.cpp:99
 msgctxt "@info:tooltip"
 msgid "Go to the Offset"
-msgstr ""
+msgstr "Ofsete Git"
 
 #: controllers/view/gotooffset/gotooffsetview.cpp:100
 msgctxt "@info:whatsthis"
@@ -619,7 +621,7 @@ msgstr "Big-endian"
 #: controllers/view/structures/structview.cpp:93
 msgctxt "@info:tooltip"
 msgid "The byte order used to decode the values."
-msgstr ""
+msgstr "Değerleri çözmek için kullanılacak bayt sırası."
 
 #: controllers/view/structures/structview.cpp:100
 #| msgctxt "@title:window of the tool to extract strings"
@@ -747,7 +749,7 @@ msgstr "Uyarı: Byte Array son güncellemeden sonra düzenlenmiş."
 #: controllers/view/stringsextract/stringsextracttool.cpp:68
 msgctxt "@title:window of the tool to extract strings"
 msgid "Strings"
-msgstr "İfadeler"
+msgstr "Dizgiler"
 
 #: controllers/view/stringsextract/containedstringtablemodel.cpp:100
 msgctxt "@title:column offset of the extracted string"
@@ -757,7 +759,7 @@ msgstr "Yerleşim"
 #: controllers/view/stringsextract/containedstringtablemodel.cpp:101
 msgctxt "@title:column string extracted from the byte array"
 msgid "String"
-msgstr "İfade"
+msgstr "Dizgi"
 
 #: controllers/view/filter/filterview.cpp:57
 msgctxt "@label:listbox operation to use by the filter"
@@ -788,7 +790,7 @@ msgstr "&Filtrele"
 #: controllers/view/filter/filterview.cpp:91
 msgctxt "@info:tooltip"
 msgid "Executes the filter for the bytes in the selected range."
-msgstr ""
+msgstr "Seçili aralıktaki baytlar için filtreyi çalıştırır."
 
 #: controllers/view/filter/filterview.cpp:93
 msgctxt "@info:whatsthis"
@@ -1069,7 +1071,7 @@ msgstr "Boyut:"
 #: controllers/view/info/infoview.cpp:59
 msgctxt "@info:tooltip"
 msgid "The number of the bytes the statistic was built for."
-msgstr ""
+msgstr "İstatistiğin temel aldığı bayt sayısı."
 
 #: controllers/view/info/infoview.cpp:68
 msgctxt "@action:button build the statistic of the byte frequency"
@@ -1080,7 +1082,7 @@ msgstr "&Derle"
 msgctxt "@info:tooltip"
 msgid ""
 "Builds the byte frequency statistic for the bytes in the selected range."
-msgstr ""
+msgstr "Seçilen aralıktaki baytlar için bayt frekans istatistiği üretir."
 
 #: controllers/view/info/infoview.cpp:72
 msgctxt "@info:whatsthis"
@@ -1112,7 +1114,7 @@ msgstr "Bitiş konumu:"
 #: controllers/view/selectrange/selectrangeview.cpp:95
 msgctxt "@option:check"
 msgid "End relative"
-msgstr ""
+msgstr "Göreli bitiş:"
 
 #: controllers/view/selectrange/selectrangeview.cpp:115
 msgctxt "@action:button"
@@ -1155,7 +1157,7 @@ msgstr "Yazdıran: %U"
 #: controllers/view/print/printtool.cpp:113
 msgctxt "advertizer in the footer of the printed page"
 msgid "Okteta, built on KDE4"
-msgstr "Okteta, KDE4 üzerinde oluşturuldu"
+msgstr "Okteta, KDE4 üzerinde derlendi"
 
 #: controllers/view/print/printtool.cpp:171
 msgctxt "@info"
@@ -1167,19 +1169,19 @@ msgctxt ""
 "name of the filter; it switches all bits from 0 to 1 and 1 to 0 respectivly, "
 "so 01111110 becomes 10000001"
 msgid "INVERT data"
-msgstr ""
+msgstr "DEĞİL veri"
 
 #: controllers/view/libbytearrayfilter/filter/xorbytearrayfilter.cpp:34
 msgctxt "name of the filter; it does a logic XOR operation"
 msgid "operand XOR data"
-msgstr ""
+msgstr "operand XOR veri"
 
 #: controllers/view/libbytearrayfilter/filter/reversebytearrayfilter.cpp:34
 msgctxt ""
 "name of the filter; it changes the order of the bytes/bits to backwards, so "
 "ABCD becomes DCBA"
 msgid "REVERSE data"
-msgstr ""
+msgstr "TERS ÇEVİR veri"
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:47
 msgctxt "@label:textbox operand to the arithmetic filter function"
@@ -1189,17 +1191,17 @@ msgstr "Operand:"
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:52
 msgctxt "@info:tooltip"
 msgid "The operand to do the operation with."
-msgstr ""
+msgstr "İşlemin yapılacağı operand."
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:55
 msgctxt "@info:whatsthis"
 msgid "Enter an operand, or select a previous operand from the list."
-msgstr ""
+msgstr "Bir operand girin veya listeden eski bir operand seçin."
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:63
 msgctxt "@option:check"
 msgid "Align at end:"
-msgstr "Sona konumlandır:"
+msgstr "Sona hizala:"
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:68
 msgctxt "@info:tooltip"
@@ -1216,12 +1218,12 @@ msgstr ""
 #: controllers/view/libbytearrayfilter/filter/shiftbytearrayfilter.cpp:38
 msgctxt "name of the filter; it moves the bits, setting freed ones to zero"
 msgid "SHIFT data"
-msgstr ""
+msgstr "veri KAYDIR"
 
 #: controllers/view/libbytearrayfilter/filter/orbytearrayfilter.cpp:34
 msgctxt "name of the filter; it does a logic OR operation"
 msgid "operand OR data"
-msgstr ""
+msgstr "operand VEYA veri"
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:49
 msgctxt "@label:spinbox number of bytes the movement is done within"
@@ -1246,7 +1248,7 @@ msgstr[0] " bit"
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:68
 msgctxt "@label:spinbox width (in number of bits) the bits are moved"
 msgid "S&hift width:"
-msgstr ""
+msgstr "&Kaydırma genişliği:"
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:71
 msgctxt "@info:tooltip"
@@ -1254,6 +1256,8 @@ msgid ""
 "The width of the shift. Positive numbers move the bits to the right, "
 "negative to the left."
 msgstr ""
+"Kaydırmanın genişliği. Pozitif sayılar bitleri sağa, negatif sayılar sola "
+"kaydırır."
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:75
 msgctxt "@info:whatsthis"
@@ -1261,28 +1265,31 @@ msgid ""
 "Control the width of the shift. Positive numbers move the bits to the right, "
 "negative to the left."
 msgstr ""
+"Kaydırmanın genişliğini denetler. Pozitif sayılar bitleri sağa, negatif "
+"sayılar "
+"sola kaydırır."
 
 #: controllers/view/libbytearrayfilter/filter/reversebytearrayfilterparametersetedit.cpp:45
 msgctxt "@option:check"
 msgid "Reverse also bits:"
-msgstr ""
+msgstr "Bitleri de ters çevir:"
 
 #: controllers/view/libbytearrayfilter/filter/reversebytearrayfilterparametersetedit.cpp:50
 msgctxt "@info:whatsthis"
 msgid "If set, the bits are arranged in reverse order as well."
-msgstr ""
+msgstr "Seçiliyse, bitler de ters sıralı olarak düzenlenir."
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilter.cpp:37
 msgctxt ""
 "name of the filter; it moves the bits and pushes the ones over the end to "
 "the begin again"
 msgid "ROTATE data"
-msgstr ""
+msgstr "DÖNDÜR veri"
 
 #: controllers/view/libbytearrayfilter/filter/andbytearrayfilter.cpp:34
 msgctxt "name of the filter; it does a logic AND operation"
 msgid "operand AND data"
-msgstr ""
+msgstr "operand VE veri"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:47
 msgctxt "@title:menu"
@@ -1323,7 +1330,7 @@ msgstr "&Yazdırılamaz Karakterleri Göster"
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:68
 msgctxt "@title:menu"
 msgid "&Dynamic Layout"
-msgstr "Devingen &Düzen"
+msgstr "Dinamik &Düzen"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:71
 msgctxt "@item:inmenu  The layout will not change on size changes."
@@ -1335,7 +1342,7 @@ msgctxt ""
 "@item:inmenu  The layout will adapt to the size, but only with complete "
 "groups of bytes."
 msgid "&Wrap Only Complete Byte Groups"
-msgstr ""
+msgstr "Sadece Tam Bayt Gruplarını &Sarmala"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:75
 msgctxt ""
@@ -1347,7 +1354,7 @@ msgstr "&Açık"
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:80
 msgctxt "@option:check"
 msgid "Show &Line Offset"
-msgstr ""
+msgstr "&Satır Ofsetini Göster"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:86
 msgctxt "@title:menu"
@@ -1382,7 +1389,7 @@ msgstr "Algoritma:"
 #: controllers/view/checksum/checksumview.cpp:68
 msgctxt "@info:whatsthis"
 msgid "Select the algorithm to use for the checksum."
-msgstr ""
+msgstr "Checksum için kullanılacak algoritmayı seçin."
 
 #: controllers/view/checksum/checksumview.cpp:89
 msgctxt "@action:button calculate the checksum"
@@ -1392,7 +1399,7 @@ msgstr "&Hesapla"
 #: controllers/view/checksum/checksumview.cpp:90
 msgctxt "@info:tooltip"
 msgid "Calculate the checksum for the bytes in the selected range."
-msgstr ""
+msgstr "Seçilen aralıktaki baytlar için checksum hesaplar."
 
 #: controllers/view/checksum/checksumview.cpp:92
 msgctxt "@info:whatsthis"
@@ -1432,19 +1439,19 @@ msgstr "Ara"
 #: controllers/view/search/searchcontroller.cpp:109
 msgctxt "@info"
 msgid "Search key not found in byte array."
-msgstr ""
+msgstr "Bayt dizisinde arama anahtarı bulunamadı."
 
 #: controllers/view/search/searchcontroller.cpp:116
 #: controllers/view/replace/replacecontroller.cpp:102
 msgctxt "@info"
 msgid "End of byte array reached.<nl/>Continue from the beginning?"
-msgstr ""
+msgstr "Bayt dizisinin sonuna gelindi.<nl/>En baştan başlanılsın mı?"
 
 #: controllers/view/search/searchcontroller.cpp:117
 #: controllers/view/replace/replacecontroller.cpp:103
 msgctxt "@info"
 msgid "Beginning of byte array reached.<nl/>Continue from the end?"
-msgstr ""
+msgstr "Bayt dizisinin başına gelindi.<nl/>En sondan devam edilsin mi?"
 
 #: controllers/view/poddecoder/typecodecs/char8codec.cpp:39
 msgctxt "@label:textbox encoding of one byte as character"
@@ -1536,7 +1543,7 @@ msgstr "UTF-16:"
 #, kde-format
 msgctxt "Edited as %datatype"
 msgid "Edited as %1"
-msgstr ""
+msgstr "%1 olarak düzenlendi"
 
 #: controllers/view/poddecoder/podtablemodel.cpp:170
 msgctxt "@title:column name of the datatype"
@@ -1556,17 +1563,17 @@ msgstr "Verinin tipi"
 #: controllers/view/poddecoder/podtablemodel.cpp:181
 msgctxt "@info:tooltip for column Value"
 msgid "The value of the bytes for the datatype"
-msgstr ""
+msgstr "Veri tipi için baytların değeri"
 
 #: controllers/view/poddecoder/podtableview.cpp:89
 msgctxt "@info:tooltip"
 msgid "The byte order to use for decoding the bytes."
-msgstr ""
+msgstr "Baytları çözmek için kullanılacak bayt sırası"
 
 #: controllers/view/poddecoder/podtableview.cpp:93
 msgctxt "@option:check"
 msgid "Unsigned as hexadecimal:"
-msgstr ""
+msgstr "İşaretsizleri onaltılık göster:"
 
 #: controllers/view/poddecoder/podtableview.cpp:103
 msgctxt "@info:tooltip"
@@ -1574,6 +1581,8 @@ msgid ""
 "Sets whether the values of the unsigned integer types are shown as "
 "hexadecimal instead of as decimal."
 msgstr ""
+"İşaretsiz tam sayı tiplerinin değerlerinin ondalık yerine onaltılık sistemde "
+"gösterilip gösterilmeyeceğini ayarlar."
 
 #: controllers/view/poddecoder/podtableview.cpp:125
 #, kde-format
@@ -1586,12 +1595,12 @@ msgstr ""
 #: controllers/view/poddecoder/podtableview.cpp:128
 msgctxt "@action:button keep the unused bytes"
 msgid "&Keep"
-msgstr ""
+msgstr "&Koru"
 
 #: controllers/view/poddecoder/podtableview.cpp:130
 msgctxt "@info:tooltip"
 msgid "Keep the unused bytes with their old values."
-msgstr ""
+msgstr "Kullanılmayan baytları eski değerlerinde tut."
 
 #: controllers/view/poddecoder/podtableview.cpp:140
 #, kde-format
@@ -1624,7 +1633,7 @@ msgstr[0] "%1 değiştirme yapıldı."
 #: controllers/view/replace/replacecontroller.cpp:90
 msgctxt "@info"
 msgid "Replace pattern not found in byte array."
-msgstr ""
+msgstr "Bayt dizisinde bulunamayan ifadeyi değiştir."
 
 #: controllers/view/replace/kreplacedialog.cpp:45
 msgctxt "@title:window"
@@ -1744,12 +1753,12 @@ msgstr "Adler-32"
 #: controllers/view/libbytearraychecksum/algorithm/modsum32bytearraychecksumalgorithm.cpp:35
 msgctxt "name of the checksum algorithm"
 msgid "Modular sum 32-bit"
-msgstr ""
+msgstr "Modüler toplam 32-bit"
 
 #: controllers/view/libbytearraychecksum/algorithm/modsum16bytearraychecksumalgorithm.cpp:35
 msgctxt "name of the checksum algorithm"
 msgid "Modular sum 16-bit"
-msgstr ""
+msgstr "Modüler toplam 16-bit"
 
 #: controllers/view/libbytearraychecksum/algorithm/crc32bytearraychecksumalgorithm.cpp:83
 msgctxt "name of the checksum algorithm, Cyclic Redundancy Check 32"
@@ -1759,7 +1768,7 @@ msgstr "CRC-32"
 #: controllers/view/libbytearraychecksum/algorithm/modsum64bytearraychecksumalgorithm.cpp:35
 msgctxt "name of the checksum algorithm"
 msgid "Modular sum 64-bit"
-msgstr ""
+msgstr "Modüler toplam 64-bit"
 
 #: controllers/view/libbytearraychecksum/algorithm/modsumbytearraychecksumparametersetedit.cpp:51
 msgctxt ""
@@ -1770,7 +1779,7 @@ msgstr "Bayt Sıralaması:"
 #: controllers/view/libbytearraychecksum/algorithm/modsumbytearraychecksumparametersetedit.cpp:54
 msgctxt "@info:tooltip"
 msgid "The byte order to use for decoding the bytes into integer values."
-msgstr ""
+msgstr "Baytları tam sayı değerlere çözmek için kullanılacak bayt sırası."
 
 #: controllers/view/libbytearraychecksum/bytearraychecksumalgorithmfactory.cpp:77
 msgctxt "name of the hash algorithm"
@@ -1937,12 +1946,12 @@ msgstr "Dosyadan yükle."
 #: core/io/filesystem/bytearrayrawfileloadthread.cpp:73
 #: core/io/filesystem/bytearrayrawfilereloadthread.cpp:62
 msgid "There is not enough working memory to load this file."
-msgstr ""
+msgstr "Bu dosyayı yüklemek için yeterli çalışma belleği mevcut değil."
 
 #: core/document/bytearraydocument.cpp:65
 msgctxt "name of the data type"
 msgid "Byte Array"
-msgstr ""
+msgstr "Bayt Dizisi"
 
 #: core/document/bytearraydocumentfactory.cpp:53
 msgctxt "The byte array was new created."
@@ -1955,12 +1964,12 @@ msgstr "Yeni oluşturuldu."
 msgctxt "numbered title for a created document without a filename"
 msgid "[New Byte Array]"
 msgid_plural "[New Byte Array %1]"
-msgstr[0] ""
+msgstr[0] "[Yeni Bayt Dizisi %1]"
 
 #: core/document/bytearraydocumentfactory.cpp:90
 msgctxt "origin of the byte array"
 msgid "Created from data."
-msgstr ""
+msgstr "Veriden oluşturuldu."
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:20
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_UnsignedDisplayBase)
@@ -2003,13 +2012,13 @@ msgstr "Onaltılık"
 #. i18n: ectx: property (text), widget (QLabel, signed_label)
 #: rc.cpp:12
 msgid "Signed values:"
-msgstr ""
+msgstr "İşaretli değerler:"
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:67
 #. i18n: ectx: property (text), widget (QLabel, unsigned_label)
 #: rc.cpp:24
 msgid "Unsigned values:"
-msgstr ""
+msgstr "İşaretsiz değerler:"
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:84
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowCharNumericalValue)
@@ -2031,53 +2040,53 @@ msgstr "Karakter değeri:"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_LocaleAwareFloatFormatting)
 #: rc.cpp:42
 msgid "Use locale-aware floating-point formatting"
-msgstr ""
+msgstr "Yerel-bağımlı kayan-noktalı biçimleme kullan"
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:131
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:45
 msgid "Floating-point precision:"
-msgstr ""
+msgstr "Kayan-nokta hassasiyeti:"
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:143
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_LocaleAwareDecimalFormatting)
 #: rc.cpp:48
 msgid "Use locale-aware integer formatting"
-msgstr ""
+msgstr "Yerel-bağımlı tam sayı biçimleme kullan"
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:8
 #. i18n: ectx: label, entry (UnsignedDisplayBase), group (ValueDisplay)
 #: rc.cpp:51
 msgid "Unsigned values display"
-msgstr ""
+msgstr "İşaretsiz değer gösterimi"
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:9
 #. i18n: ectx: tooltip, entry (UnsignedDisplayBase), group (ValueDisplay)
 #: rc.cpp:54
 msgctxt "@info:tooltip"
 msgid "The base to use when converting unsigned numbers to a string."
-msgstr ""
+msgstr "İşaretsiz sayıları "
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:18
 #. i18n: ectx: tooltip, entry (SignedDisplayBase), group (ValueDisplay)
 #: rc.cpp:57
 msgctxt "@info:tooltip"
 msgid "The base to use when converting signed numbers to a string."
-msgstr ""
+msgstr "İşaretli sayıların dizgiye dönüştürüleceği sayı tabanı."
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:27
 #. i18n: ectx: tooltip, entry (CharDisplayBase), group (ValueDisplay)
 #: rc.cpp:60
 msgctxt "@info:tooltip"
 msgid "The base to use when converting characters to a value string."
-msgstr ""
+msgstr "Karakterlerin dizgiye dönüştürüleceği sayı tabanı."
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:36
 #. i18n: ectx: tooltip, entry (ShowCharNumericalValue), group (ValueDisplay)
 #: rc.cpp:63
 msgctxt "@info:tooltip"
 msgid "Whether to show the numerical value of chars"
-msgstr ""
+msgstr "Karakterlerin sayısal değerlerinin gösterilip gösterilmeyeceği"
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:40
 #. i18n: ectx: tooltip, entry (LocaleAwareFloatFormatting), group (ValueDisplay)
