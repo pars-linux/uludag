@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: desktop_kdebase\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-09 23:32+0000\n"
-"PO-Revision-Date: 2010-04-28 13:37+0300\n"
+"PO-Revision-Date: 2010-04-28 14:02+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -92,7 +92,7 @@ msgstr "Bu servis Dolphin gezintisini yapılandırmanızı sağlar."
 #: apps/dolphin/src/kcm/kcmdolphinnavigation.desktop:142
 msgctxt "Name"
 msgid "Navigation"
-msgstr "Gezginti"
+msgstr "Gezinti"
 
 #: apps/dolphin/src/kcm/kcmdolphinnavigation.desktop:208
 msgctxt "Comment"
@@ -421,7 +421,7 @@ msgstr "Alephone - (OpenGL yok)"
 msgctxt "Comment"
 msgid "An open source version of Marathon Infinity for SDL that has OpenGL disabled"
 msgstr ""
-"Marathon Infinity'nin SDL için openGL desteği kaldırılmış açık kaynak kodlu "
+"Marathon Infinity'nin SDL için OpenGL desteği kaldırılmış açık kaynak kodlu "
 "sürümü"
 
 #: apps/kappfinder/apps/Games/Arcade/alephone-nogl.desktop:2
@@ -437,7 +437,7 @@ msgstr "Marathon Infinity'nin açık kaynak kodlu sürümü"
 #: apps/kappfinder/apps/Games/Arcade/battalion.desktop:2
 msgctxt "Name"
 msgid "Batallion"
-msgstr "Battalion"
+msgstr "Batallion"
 
 #: apps/kappfinder/apps/Games/Arcade/battalion.desktop:90
 #: apps/kappfinder/apps/Games/Arcade/ClanBomber.desktop:89
@@ -632,7 +632,7 @@ msgstr "Satranç oyunu"
 #: apps/kappfinder/apps/Games/Board/xboard.desktop:92
 msgctxt "Name"
 msgid "Xboard"
-msgstr "XBoard"
+msgstr "Xboard"
 
 #: apps/kappfinder/apps/Games/Board/Xgammon.desktop:2
 msgctxt "Name"
@@ -725,7 +725,7 @@ msgstr "Angband"
 #: apps/kappfinder/apps/Games/Roguelikes/angband.desktop:90
 msgctxt "Comment"
 msgid "Dive into Angband and defeat Morgoth"
-msgstr "Angband'a dalıp Morgoth'u mağlub edin"
+msgstr "Angband'a dalıp Morgoth'u mağlup edin"
 
 #: apps/kappfinder/apps/Games/Roguelikes/moria.desktop:2
 msgctxt "Name"
@@ -735,7 +735,7 @@ msgstr "Moria"
 #: apps/kappfinder/apps/Games/Roguelikes/moria.desktop:90
 msgctxt "Comment"
 msgid "Dive into Moria and defeat the Balrog"
-msgstr "Moria'ya dalıp Balrog'u mağlub edin"
+msgstr "Moria'ya dalıp Balrog'u mağlup edin"
 
 #: apps/kappfinder/apps/Games/Roguelikes/nethack.desktop:2
 msgctxt "Name"
@@ -756,7 +756,7 @@ msgstr "Rogue"
 #: apps/kappfinder/apps/Games/Roguelikes/rogue.desktop:89
 msgctxt "GenericName"
 msgid "The Original"
-msgstr "Orjinal"
+msgstr "Orijinal"
 
 #: apps/kappfinder/apps/Games/Roguelikes/tome.desktop:2
 msgctxt "Name"
@@ -771,7 +771,7 @@ msgstr "ZAngband"
 #: apps/kappfinder/apps/Games/Roguelikes/zangband.desktop:89
 msgctxt "GenericName"
 msgid "Defeat the Serpent of Chaos"
-msgstr "Kaos İblisini mağlub edin"
+msgstr "Kaos İblisini mağlup edin"
 
 #: apps/kappfinder/apps/Games/TacticStrategy/freeciv.desktop:3
 msgctxt "Name"
@@ -1377,7 +1377,7 @@ msgstr "X Biff"
 #: apps/kappfinder/apps/Internet/xchat.desktop:5
 msgctxt "Name"
 msgid "XChat"
-msgstr "XChart"
+msgstr "XChat"
 
 #: apps/kappfinder/apps/Internet/xchat.desktop:93
 msgctxt "GenericName"
@@ -1412,7 +1412,7 @@ msgstr "AlsaMixerGui"
 #: apps/kappfinder/apps/Multimedia/alsamixergui.desktop:90
 msgctxt "GenericName"
 msgid "Alsa Mixer Frontend"
-msgstr "Alsa Ses Karıştırıcı Önyüzü"
+msgstr "Alsa Ses Karıştırıcı Ön yüzü"
 
 #: apps/kappfinder/apps/Multimedia/ams.desktop:4
 msgctxt "Name"
@@ -1731,7 +1731,7 @@ msgstr "TV İzle!"
 #: apps/kappfinder/apps/Multimedia/xawtv.desktop:92
 msgctxt "Name"
 msgid "XawTV"
-msgstr "XawXV"
+msgstr "XawTV"
 
 #: apps/kappfinder/apps/Multimedia/xcam.desktop:2
 msgctxt "Name"
@@ -2296,7 +2296,7 @@ msgstr "G/Ç Portları"
 #: apps/kinfocenter/info/ioports.desktop:103
 msgctxt "Comment"
 msgid "IO-port information"
-msgstr "Girdi Çıktı portları hakkında bilgi"
+msgstr "GÇ-portları bilgisi"
 
 #: apps/kinfocenter/info/processor.desktop:13
 msgctxt "Name"
@@ -2517,7 +2517,7 @@ msgstr "Dosya Yönetimi"
 #: apps/konqueror/profile_filepreview.desktop:9
 msgctxt "Name"
 msgid "File Preview"
-msgstr "Dosya Önizlemesi"
+msgstr "Dosya Ön İzlemesi"
 
 #: apps/konqueror/profile_kde_devel.desktop:3
 msgctxt "Name"
@@ -2583,7 +2583,7 @@ msgstr "Yer İmleri"
 #: apps/konqueror/settings/kio/bookmarks.desktop:101
 msgctxt "Comment"
 msgid "Configure the bookmarks home page"
-msgstr "Yer imleri anasayfasını yapılandır"
+msgstr "Yer imleri ana sayfasını yapılandır"
 
 #: apps/konqueror/settings/kio/cache.desktop:12
 msgctxt "Name"
@@ -2593,7 +2593,7 @@ msgstr "Önbellek"
 #: apps/konqueror/settings/kio/cache.desktop:102
 msgctxt "Comment"
 msgid "Configure web cache settings"
-msgstr "Web önbellek ayarlarını buradan yapabilirsiniz"
+msgstr "Ağ önbellek ayarlarını buradan yapabilirsiniz"
 
 #: apps/konqueror/settings/kio/cookies.desktop:12
 msgctxt "Name"
@@ -2634,7 +2634,7 @@ msgstr "Windows Paylaşımları"
 msgctxt "Comment"
 msgid "Use to configure which windows (SMB) filesystems you can browse"
 msgstr ""
-"Gözatılabilecek Windows (SMB) dosya sistemlerini yapılandırmak için "
+"Göz atılabilecek Windows (SMB) dosya sistemlerini yapılandırmak için "
 "kullanılır"
 
 #: apps/konqueror/settings/kio/uasprovider.desktop:4
@@ -2755,12 +2755,12 @@ msgstr "Kullanıcı Uygulaması Tanımı (Safari 2.0 on MacOS X)"
 #: apps/konqueror/settings/kio/uasproviders/safari30oniphone.desktop:2
 msgctxt "Name"
 msgid "UADescription (Safari 3.0 on iPhone)"
-msgstr "Kullanıcı Uygulaması Tanımı (Safari 3.0 on MacOS X)"
+msgstr "UATanımı (iPhone üzerinde Safari 3.0)"
 
 #: apps/konqueror/settings/kio/uasproviders/safari32.desktop:2
 msgctxt "Name"
 msgid "UADescription (Safari 3.2 on MacOS X)"
-msgstr "Kullanıcı Uygulaması Tanımı (MacOS X'de Safari 1.2)"
+msgstr "UATanımı (MacOS X üzerinde Safari 3.2)"
 
 #: apps/konqueror/settings/kio/uasproviders/w3moncurrent.desktop:2
 msgctxt "Name"
@@ -2775,7 +2775,7 @@ msgstr "Kullanıcı Uygulaması Tanımı (Wget 1.11.4)"
 #: apps/konqueror/settings/kio/useragent.desktop:12
 msgctxt "Name"
 msgid "Browser Identification"
-msgstr "Web Tarayıcı Kimliği"
+msgstr "Ağ Tarayıcı Kimliği"
 
 #: apps/konqueror/settings/kio/useragent.desktop:99
 msgctxt "Comment"
@@ -2830,12 +2830,12 @@ msgstr "Biçim Dosyaları"
 #: apps/konqueror/settings/konqhtml/css/kcmcss.desktop:100
 msgctxt "Comment"
 msgid "Configure the stylesheets used to render web pages"
-msgstr "Web sayfaları hazırlanırken kullanılacak biçim ayarlarını yapılandırın"
+msgstr "Ağ sayfaları hazırlanırken kullanılacak biçim ayarlarını yapılandırın"
 
 #: apps/konqueror/settings/konqhtml/khtml_appearance.desktop:104
 msgctxt "Comment"
 msgid "Configure how to display web pages"
-msgstr "Web sayfalarının nasıl gösterileceğini yapılandır"
+msgstr "Ağ sayfalarının nasıl gösterileceğini yapılandır"
 
 #: apps/konqueror/settings/konqhtml/khtml_behavior.desktop:12
 msgctxt "Name"
@@ -2845,7 +2845,7 @@ msgstr "Web Davranışı"
 #: apps/konqueror/settings/konqhtml/khtml_behavior.desktop:99
 msgctxt "Comment"
 msgid "Configure the browser behavior"
-msgstr "Web tarayıcı davranışlarını yapılandır"
+msgstr "Ağ tarayıcı davranışlarını yapılandır"
 
 #: apps/konqueror/settings/konqhtml/khtml_filter.desktop:13
 msgctxt "Name"
@@ -3048,7 +3048,7 @@ msgstr "Kabuk"
 #: apps/konsole/data/profiles/Shell.profile:87
 msgctxt "Comment"
 msgid "Konsole default profile"
-msgstr "Konsole öntanımlı profili"
+msgstr "Konsole ön tanımlı profili"
 
 #: apps/konsole/desktop/konsole.desktop:9
 msgctxt "Name"
@@ -3344,7 +3344,7 @@ msgstr "Dizin Görünümü"
 msgctxt "Comment"
 msgid "Display the contents of folders (User's home folder as default)"
 msgstr ""
-"Dizinlerin içeriğini göster (Öntanımlı olarak kullanıcının ev dizinini "
+"Dizinlerin içeriğini göster (Ön tanımlı olarak kullanıcının ev dizinini "
 "kullan)"
 
 #: runtime/attica/kcm/kcm_attica.desktop:12
@@ -3396,12 +3396,12 @@ msgstr "kdbg"
 #: runtime/kcontrol/componentchooser/componentchooser.desktop:13
 msgctxt "Name"
 msgid "Default Applications"
-msgstr "Öntanımlı Uygulamalar"
+msgstr "Ön tanımlı Uygulamalar"
 
 #: runtime/kcontrol/componentchooser/componentchooser.desktop:95
 msgctxt "Comment"
 msgid "Choose the default components for various services"
-msgstr "Çeşitli servisler için öntanımlı bileşenleri seçin"
+msgstr "Çeşitli servisler için ön tanımlı bileşenleri seçin"
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_browser.desktop:4
 msgctxt "Name|standard desktop component"
@@ -3414,7 +3414,7 @@ msgid ""
 "Here you can configure your default web browser. All KDE applications in "
 "which you can select hyperlinks should honor this setting."
 msgstr ""
-"Burada öntanımlı web tarayıcınızı yapılandırabilirsiniz. Tüm KDE "
+"Burada ön tanımlı web tarayıcınızı yapılandırabilirsiniz. Tüm KDE "
 "uygulamalarında bulunan bağlantılar bu seçenek kullanılarak açılacaktır."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_filemanager.desktop:4
@@ -3429,7 +3429,7 @@ msgid ""
 "and all KDE applications in which you can open folders will use this file "
 "manager."
 msgstr ""
-"Buradan öntanımlı dosya yöneticinizi yapılandırabilirsiniz. K menüsünde ve "
+"Buradan ön tanımlı dosya yöneticinizi yapılandırabilirsiniz. K menüsünde ve "
 "KDE uygulamalarında bulunan tüm dizin açan uygulamalar için bu uygulama "
 "kullanılacaktır."
 
@@ -3444,7 +3444,7 @@ msgid ""
 "This service allows you to configure your default email client. All KDE "
 "applications which need access to an email client application should honor "
 "this setting."
-msgstr "Bu servis öntanımlı e-posta istemcinizi seçmenize yardımcı olur."
+msgstr "Bu servis ön tanımlı e-posta istemcinizi seçmenize yardımcı olur."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_terminal.desktop:4
 msgctxt "Name|standard desktop component"
@@ -3457,7 +3457,7 @@ msgid ""
 "This service allows you to configure your default terminal emulator. All KDE "
 "applications which invoke a terminal emulator application should honor this "
 "setting."
-msgstr "Bu servis öntanımlı uçbirim uygulamasını seçmenize yardımcı olur."
+msgstr "Bu servis ön tanımlı uçbirim uygulamasını seçmenize yardımcı olur."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_wm.desktop:4
 msgctxt "Name|standard desktop component"
@@ -3686,7 +3686,7 @@ msgstr "KDE Sıkça Sorulan Sorular"
 #: runtime/khelpcenter/plugins/info.desktop:2
 msgctxt "Name"
 msgid "Browse Info Pages"
-msgstr "Bilgi Sayfarlarını Tara"
+msgstr "Bilgi Sayfalarını Tara"
 
 #: runtime/khelpcenter/plugins/kcontrolmodules.desktop:2
 msgctxt "Name"
@@ -3706,7 +3706,7 @@ msgstr "Kioslaves"
 #: runtime/khelpcenter/plugins/links.desktop:3
 msgctxt "Name"
 msgid "KDE on the Web"
-msgstr "Web'de KDE"
+msgstr "Ağda KDE"
 
 #: runtime/khelpcenter/plugins/Manpages/.directory:2
 msgctxt "Name"
@@ -3863,7 +3863,7 @@ msgstr "KManPart"
 #: runtime/kioslave/network/ioslave/network.protocol:8
 msgctxt "Description"
 msgid "A kioslave to browse the network"
-msgstr "Ağa gözatmak için bir kioslave"
+msgstr "Ağa göz atmak için bir kioslave"
 
 #: runtime/kioslave/network/kded/networkwatcher.desktop:8
 msgctxt "Name"
@@ -3979,7 +3979,7 @@ msgstr "Çöp ayarlarını yapılandır"
 #: runtime/kioslave/trash/trash.protocol:25
 msgctxt "ExtraNames"
 msgid "Original Path,Deletion Date"
-msgstr "Orjinal Yol, Silinme Tarihi"
+msgstr "Orijinal Yol, Silinme Tarihi"
 
 #: runtime/knetattach/knetattach.desktop:2
 msgctxt "Name"
@@ -4340,7 +4340,7 @@ msgstr "Motif"
 #: runtime/kstyles/themes/qtmotif.themerc:83
 msgctxt "Comment"
 msgid "Built-in unthemed Motif style"
-msgstr "Dahili tamalandırılmamış Motif biçimi"
+msgstr "Dahili temalandırılmamış Motif biçimi"
 
 #: runtime/kstyles/themes/qtplastique.themerc:2
 msgctxt "Name"
@@ -4540,7 +4540,7 @@ msgstr "http://austronaut.at/page.php?begriff=\\\\{@}&wo=at"
 #: runtime/kurifilter-plugins/ikws/searchproviders/backports.desktop:3
 msgctxt "Name"
 msgid "Debian Backports Search"
-msgstr "Debian Arkakapı Arama"
+msgstr "Debian Backport Arama"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/backports.desktop:86
 msgctxt "Query"
@@ -4799,7 +4799,7 @@ msgstr "http://www.feedster.com/search.php?q=\\\\{@}&ie=UTF-8&oe=UTF-8"
 #: runtime/kurifilter-plugins/ikws/searchproviders/foldoc.desktop:3
 msgctxt "Name"
 msgid "Free On-Line Dictionary of Computing"
-msgstr "Ücretsiz Çevrimiçi Bilişim Sözlüğü"
+msgstr "Ücretsiz Çevrim içi Bilişim Sözlüğü"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/foldoc.desktop:91
 msgctxt "Query"
@@ -5255,7 +5255,7 @@ msgstr "http://www.php.net/manual-lookup.php?pattern=\\\\{@}"
 #: runtime/kurifilter-plugins/ikws/searchproviders/python.desktop:5
 msgctxt "Name"
 msgid "Python Reference Manual"
-msgstr "Python Başvuru Elkitabı"
+msgstr "Python Başvuru El Kitabı"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/python.desktop:91
 msgctxt "Query"
@@ -5269,7 +5269,7 @@ msgstr ""
 #: runtime/kurifilter-plugins/ikws/searchproviders/qt3.desktop:5
 msgctxt "Name"
 msgid "Qt3 Online Documentation"
-msgstr "Qt3 Çevrimiçi Dokümantasyonu"
+msgstr "Qt3 Çevrim içi Dokümantasyonu"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/qt3.desktop:86
 msgctxt "Query"
@@ -5279,7 +5279,7 @@ msgstr "http://doc.trolltech.com/3.3/\\\\{@}.html"
 #: runtime/kurifilter-plugins/ikws/searchproviders/qt.desktop:5
 msgctxt "Name"
 msgid "Latest Qt Online Documentation"
-msgstr "Güncel Qt Dökümantasyonu"
+msgstr "Güncel Qt Dokümantasyonu"
 
 #: runtime/kurifilter-plugins/ikws/searchproviders/qt.desktop:90
 #| msgctxt "Query"
@@ -5605,7 +5605,7 @@ msgstr "Avusturya"
 #: runtime/l10n/au/entry.desktop:2
 msgctxt "Name"
 msgid "Australia"
-msgstr "Avusturalya"
+msgstr "Avustralya"
 
 #: runtime/l10n/aw/entry.desktop:2
 msgctxt "Name"
@@ -5755,7 +5755,7 @@ msgstr "Merkez Avrupa"
 #: runtime/l10n/C/entry.desktop:2
 msgctxt "Name"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Ön tanımlı"
 
 #: runtime/l10n/cf/entry.desktop:2
 msgctxt "Name"
@@ -8202,7 +8202,7 @@ msgstr "Daha Fazla Uygulama"
 #: workspace/plasma/netbook/containments/sal/services/plasma-sal-multimedia.desktop:2
 msgctxt "Name"
 msgid "Multimedia"
-msgstr "Çokluortam"
+msgstr "Çoklu ortam"
 
 #: runtime/menu/desktop/kde-office.directory:4
 #: workspace/plasma/netbook/containments/sal/services/plasma-sal-office.desktop:2
@@ -8613,7 +8613,7 @@ msgstr "KDED Windows Başlat Menüsü Modülü"
 #: runtime/renamedlgplugins/audio/renaudiodlg.desktop:3
 msgctxt "Name"
 msgid "Audio Preview"
-msgstr "Ses Önizlemesi"
+msgstr "Ses Ön İzlemesi"
 
 #: runtime/renamedlgplugins/images/renimagedlg.desktop:3
 msgctxt "Name"
@@ -8681,7 +8681,7 @@ msgstr "Bir değiştirici tuş etkinleştirildi"
 msgctxt "Comment"
 msgid "A modifier key (e.g. Shift or Ctrl) has changed its state and is now active"
 msgstr ""
-"Bir değiştirici tuşun (Shift ya da Control gibi) durumu değiştirildi ve "
+"Bir değiştirici tuşun (Shift veya Ctrl gibi) durumu değiştirildi ve "
 "etkinleştirildi"
 
 #: workspace/kcontrol/access/kaccess.notifyrc:238
@@ -8693,7 +8693,7 @@ msgstr "Bir değiştirici tuş pasifleştirildi"
 msgctxt "Comment"
 msgid "A modifier key (e.g. Shift or Ctrl) has changed its state and is now inactive"
 msgstr ""
-"Bir değiştirici tuşun (Shift ya da Control gibi) durumu değiştirildi ve "
+"Bir değiştirici tuşun (Shift veya Ctrl gibi) durumu değiştirildi ve "
 "pasifleştirildi"
 
 #: workspace/kcontrol/access/kaccess.notifyrc:387
@@ -9035,7 +9035,7 @@ msgstr "Yazı Tipi Kurucu"
 #: workspace/kcontrol/kfontinst/kcmfontinst/fontinst.desktop:100
 msgctxt "Comment"
 msgid "Install, manage, and preview fonts"
-msgstr "Yazı tiplerini kur, yönet ve önizle"
+msgstr "Yazı tiplerini kur, yönet ve ön izle"
 
 #: workspace/kcontrol/kfontinst/thumbnail/fontthumbnail.desktop:3
 msgctxt "Name"
@@ -9184,7 +9184,7 @@ msgstr "KDE'yi çoklu monitör kullanmak için yapılandır"
 #: workspace/kdm/kfrontend/pics/default_blue.jpg.desktop:3
 msgctxt "Name"
 msgid "Default Blue"
-msgstr "Öntanımlı Mavi"
+msgstr "Ön tanımlı Mavi"
 
 #: workspace/kdm/kfrontend/sessions/9wm.desktop:5
 msgctxt "Name"
@@ -9194,7 +9194,7 @@ msgstr "9WM"
 #: workspace/kdm/kfrontend/sessions/9wm.desktop:91
 msgctxt "Comment"
 msgid "An emulation of the Plan 9 window manager 8-1/2"
-msgstr "Plan 9 pencere yöneticisi 8-1/2 için bir emülasyon"
+msgstr "Plan 9 pencere yöneticisi 8-1/2 için bir öykünücü"
 
 #: workspace/kdm/kfrontend/sessions/aewm.desktop:5
 msgctxt "Name"
@@ -9293,7 +9293,7 @@ msgstr "CTWM"
 #: workspace/kdm/kfrontend/sessions/ctwm.desktop:89
 msgctxt "Comment"
 msgid "Claude's Tab Window Manager, TWM enhanced by virtual screens, etc."
-msgstr "Claude's Sekme Pencere Yöneticisi, sanal ekranlar ile TWM genişletilmiş, vb."
+msgstr "Claude's Sekme Pencere Yöneticisi, sanal ekranlar ile TWM genişletilmiş, vs."
 
 #: workspace/kdm/kfrontend/sessions/cwwm.desktop:5
 msgctxt "Name"
@@ -9453,7 +9453,7 @@ msgstr "Metacity"
 #: workspace/kdm/kfrontend/sessions/metacity.desktop:90
 msgctxt "Comment"
 msgid "A lightweight GTK2 based window manager"
-msgstr "Gtk2 tabanlı hafif bir pencere yöneticisi"
+msgstr "GTK2 tabanlı hafif bir pencere yöneticisi"
 
 #: workspace/kdm/kfrontend/sessions/mwm.desktop:5
 msgctxt "Name"
@@ -9485,7 +9485,7 @@ msgstr "OLWM"
 #: workspace/kdm/kfrontend/sessions/olwm.desktop:90
 msgctxt "Comment"
 msgid "The traditional Open Look Window Manager"
-msgstr "OpenLook Pencere Yöneticisi"
+msgstr "Open Look Pencere Yöneticisi"
 
 #: workspace/kdm/kfrontend/sessions/openbox.desktop:91
 msgctxt "Comment"
@@ -9731,7 +9731,7 @@ msgid ""
 "KHotkeys. (Note that this group and all its actions are disabled by default.)"
 msgstr ""
 "Bu grup KHotkeys uygulamasının bir çok özelliğini gösteren örnekler içerir. "
-"(Bu grubun ve eylemlerinin öntanımlı olarak pasifleştirilmiş olduğunu "
+"(Bu grubun ve eylemlerinin ön tanımlı olarak pasifleştirilmiş olduğunu "
 "unutmayın.)"
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:73
@@ -9779,14 +9779,14 @@ msgid ""
 msgstr ""
 "Alt+Ctrl+H tuşlarına bastığınızda 'Hello' girdisi sanki siz yazmışsınız gibi "
 "taklit edilecek. Özellikle 'unsigned' gibi sözcükleri yazmak konusunda "
-"tembelseniz kullanışlıdır. Girdide basılan her tuş iki nokta üstüste ':' "
+"tembelseniz kullanışlıdır. Girdide basılan her tuş iki nokta üst üste ':' "
 "işareti ile ayrılmıştır. Tuşa basmanın gerçekten tuşa basmak anlamına "
-"geldiğini unutmayın, yazmak istediğiniz şeyi kalvyeye basarak yazmak "
+"geldiğini unutmayın, yazmak istediğiniz şeyi klavyeye basarak yazmak "
 "zorundasınız. Aşağıdaki tabloda sol sütun girdileri sağ sütun ise yazılacak "
-"olan şeyleri gösterir.\\n\\n\\ \"enter\" (yenisatır gibi)                "
+"olan şeyleri gösterir.\\n\\n\\ \"enter\" (yeni satır gibi)                "
 "Enter veya Return\\na (küçük a)                          A\\nA (büyük "
 "a)                       Shift+A\\n: (iki nokta "
-"üstüste)                                  Shift+;\\n' "
+"üst üste)                                  Shift+;\\n' "
 "'  (boşluk)                              Boşluk"
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:627
@@ -9829,7 +9829,7 @@ msgstr ""
 "pencere kapatmada kullanılan Ctrl+W kısayolunu da desteklemez. \\n\\n Bu problem etkin pencere "
 "Qt Tasarımcı iken Ctrl+W kısayolunu Ctrl+F4 ile ilişkilendirerek çözülebilir. Qt Tasarımcı etkinken, her "
 "Ctrl+W'ye basıldığında, uygulamaya Ctrl+F4 kısayolu gönderilir.Diğer uygulamalardaki Ctrl+W etkisi "
-"değişmez.\\n\\nBu aşamda 3 şeyi belirtmeliyiz: 'Ctrl+W' için yeni kısayol tetikleyici, Ctrl+F4 kısayolunu "
+"değişmez.\\n\\nBu aşamada 3 şeyi belirtmeliyiz: 'Ctrl+W' için yeni kısayol tetikleyici, Ctrl+F4 kısayolunu "
 "gönderen yeni klavye girdi eylemi, ve Qt Tasarımcının etkin olması koşulu.\\nQt Tasarımcı programında "
 "başlık olarak 'Qt Designer' kullanıldığından, eylemin koşulu olarak etkin pencerenin "
 "başlığı kontrol edilecektir."
@@ -10020,7 +10020,7 @@ msgid ""
 "as such is disabled by default."
 msgstr ""
 "Opera-biçimi: Bas, yukarı taşı, bırak.\\nNOT: 'Yeni Sekme' ile çakışır ve "
-"öntanımlı olarak pasifleştirilmiştir."
+"ön tanımlı olarak pasifleştirilmiştir."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:654
 msgctxt "Name"
@@ -10045,7 +10045,7 @@ msgid ""
 msgstr ""
 "Adres/dizin yapısına gitmek.\\nOpera-biçimi: Bas, yukarı taşı, sola taşı, "
 "yukarı taşı, bırak.\\nNOT: \"Önceki Sekmeyi Etkinleştir\" ile çakışır ve "
-"öntanımlı olarak pasifleştirilmiştir."
+"ön tanımlı olarak pasifleştirilmiştir."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:1124
 msgctxt "Name"
@@ -10065,7 +10065,7 @@ msgstr "Sonraki Sekmeyi Etkinleştir"
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:1535
 msgctxt "Comment"
 msgid "Press, move up, move left, release."
-msgstr "Bas, yukarıa taşı sola taşı,, bırak."
+msgstr "Bas, yukarı taşı sola taşı,, bırak."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:1609
 msgctxt "Name"
@@ -10126,8 +10126,8 @@ msgid ""
 "Press, move up, release.\\nConflicts with Opera-style 'Up #2', which is "
 "disabled by default."
 msgstr ""
-"Bas, yukarı taşı, bırak.\\nOpera-biçimi ile çakışır 'Yukarı #2', öntanımlı "
-"olrak pasifleştirilmiştir."
+"Bas, yukarı taşı, bırak.\\nOpera-biçimi ile çakışır 'Yukarı #2', ön tanımlı "
+"olarak pasifleştirilmiştir."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:3161
 msgctxt "Name"
@@ -10153,7 +10153,7 @@ msgstr "Bas, yukarı taşı, aşağı taşı, bırak."
 #: workspace/khotkeys/data/printscreen.khotkeys:5
 msgctxt "Comment"
 msgid "This group contains actions that are set up by default."
-msgstr "Bu grup öntanımlı olarak ayarlanan eylemleri içerir."
+msgstr "Bu grup ön tanımlı olarak ayarlanan eylemleri içerir."
 
 #: workspace/khotkeys/data/printscreen.khotkeys:79
 msgctxt "Name"
@@ -10215,7 +10215,7 @@ msgstr "Web-URL"
 #: workspace/klipper/klipperrc.desktop:1890
 msgctxt "Description"
 msgid "Open with &default Browser"
-msgstr "&Öntanımlı tarayıcı ile aç"
+msgstr "&Ön tanımlı tarayıcı ile aç"
 
 #: workspace/klipper/klipperrc.desktop:354
 #: workspace/klipper/klipperrc.desktop:1969
@@ -10517,7 +10517,7 @@ msgstr "Web"
 #: workspace/kwin/data/fsp_workarounds_1.kwinrules:2
 msgctxt "Description"
 msgid "(Default) Disable focus stealing prevention for XV"
-msgstr "(Öntanımlı) XV için odaklama edinimi engellemesini pasifleştir"
+msgstr "(Ön tanımlı) XV için odaklama edinimi engellemesini pasifleştir"
 
 #: workspace/kwin/effects/blur/blur.desktop:2
 msgctxt "Name"
@@ -10527,7 +10527,7 @@ msgstr "Bulanıklaştırma"
 #: workspace/kwin/effects/blur/blur.desktop:81
 msgctxt "Comment"
 msgid "Blurs the background behind semi-transparent windows"
-msgstr "Yarı şeffaf pencerelerin arkaplanını bulanıklaştırır"
+msgstr "Yarı şeffaf pencerelerin arka planını bulanıklaştırır"
 
 #: workspace/kwin/effects/boxswitch/boxswitch_config.desktop:9
 #: workspace/kwin/effects/boxswitch/boxswitch.desktop:2
@@ -10900,7 +10900,7 @@ msgstr "Masaüstüne kar yağdır"
 #: workspace/kwin/effects/taskbarthumbnail/taskbarthumbnail.desktop:2
 msgctxt "Name"
 msgid "Taskbar Thumbnails"
-msgstr "Görev Çubuğu Küçük Resim Önizlemeleri"
+msgstr "Görev Çubuğu Küçük Resim Ön İzlemeleri"
 
 #: workspace/kwin/effects/taskbarthumbnail/taskbarthumbnail.desktop:74
 msgctxt "Comment"
@@ -11029,7 +11029,7 @@ msgstr "Fareyi İzle"
 #: workspace/kwin/effects/trackmouse/trackmouse.desktop:79
 msgctxt "Comment"
 msgid "Display a mouse cursor locating effect when activated"
-msgstr "Etkinleştirildiğinde fare işaretçisinin konumlandırma efekti gösterir"
+msgstr "Etkinleştirildiğinde fare imlecinin konumlandırma efektini gösterir"
 
 #: workspace/kwin/effects/translucency/translucency_config.desktop:9
 #: workspace/kwin/effects/translucency/translucency.desktop:2
@@ -11794,7 +11794,7 @@ msgstr "Masaüstü"
 #: workspace/plasma/desktop/containments/desktop/plasma-containment-desktop.desktop:65
 msgctxt "Comment"
 msgid "Default desktop containment"
-msgstr "Öntanımlı masaüstü içeriği"
+msgstr "Ön tanımlı masaüstü içeriği"
 
 #: workspace/plasma/desktop/containments/panel/plasma-containment-panel.desktop:2
 msgctxt "Name"
@@ -11841,7 +11841,7 @@ msgstr "Ağda yeni bir gereç yayınlandı."
 #: workspace/plasma/generic/animators/default/plasma-animator-default.desktop:2
 msgctxt "Name"
 msgid "Default Plasma Animator"
-msgstr "Öntanımlı Plasma Canlandırıcısı"
+msgstr "Ön tanımlı Plasma Canlandırıcısı"
 
 #: workspace/plasma/generic/applets/activitybar/plasma-applet-activitybar.desktop:2
 msgctxt "Name"
@@ -12034,7 +12034,7 @@ msgctxt "Comment"
 msgid ""
 "Keep track of applications that want to use the D-Bus based status notifier "
 "protocol."
-msgstr "D-Bus temelli bildirim kullananmak isteyen uygulamaları izle."
+msgstr "D-Bus temelli bildirim kullanmak isteyen uygulamaları izle."
 
 #: workspace/plasma/generic/applets/webbrowser/plasma-applet-webbrowser.desktop:3
 msgctxt "Name"
@@ -12044,7 +12044,7 @@ msgstr "Web Tarayıcı"
 #: workspace/plasma/generic/applets/webbrowser/plasma-applet-webbrowser.desktop:91
 msgctxt "Comment"
 msgid "A simple web browser"
-msgstr "Basit bir Web tarayıcı"
+msgstr "Basit bir ağ tarayıcı"
 
 #: workspace/plasma/generic/containmentactions/applauncher/plasma-containmentactions-applauncher.desktop:84
 msgctxt "Comment"
@@ -12176,7 +12176,7 @@ msgstr "Site Simgeleri"
 #: workspace/plasma/generic/dataengines/favicons/plasma-dataengine-favicons.desktop:73
 msgctxt "Comment"
 msgid "Data Engine for getting favicons of web sites"
-msgstr "Web sitelerinden site simgelerini almak için bir Veri Motoru"
+msgstr "Ağ sitelerinden site simgelerini almak için bir Veri Motoru"
 
 #: workspace/plasma/generic/dataengines/filebrowser/plasma-dataengine-filebrowser.desktop:2
 msgctxt "Name"
@@ -12784,7 +12784,7 @@ msgstr ""
 #: workspace/plasma/netbook/containments/sal/services/plasma-sal-multimedia.desktop:91
 msgctxt "Comment"
 msgid "Multimedia applications, such as audio and video players"
-msgstr "Çokluortam uygulamaları, ses ve video oynatıcılar gibi"
+msgstr "Çoklu ortam uygulamaları, ses ve video oynatıcılar gibi"
 
 #: workspace/plasma/netbook/containments/sal/services/plasma-sal-office.desktop:91
 msgctxt "Comment"
@@ -12816,7 +12816,7 @@ msgstr "SAL içericisine gelen sorgular için bir motor"
 #: workspace/plasma/netbook/desktoptheme/air-netbook/metadata.desktop:2
 msgctxt "Name"
 msgid "Air for netbooks"
-msgstr "Netbooklar için air"
+msgstr "Netbooklar için Air"
 
 #: workspace/plasma/netbook/shell/plasma-netbook.desktop:4
 msgctxt "Name"
@@ -13282,7 +13282,7 @@ msgstr "Dosya Sistemi Tipi"
 #: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:66
 msgctxt "Name"
 msgid "Ignored"
-msgstr "Yoksayılmış"
+msgstr "Yok Sayılmış"
 
 #: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:449
 #: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:128
