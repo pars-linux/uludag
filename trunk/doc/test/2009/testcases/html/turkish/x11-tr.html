@@ -49,8 +49,13 @@ TD P{margin:0px;}
 <!--HEVEA command line is: hevea x11-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">X11 Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><P>Not: Bu testlerde karşılaştığınız hataları bildirirken /var/log dizini altında yer alan Xorg.0.log
-dosyasını iletmeyi unutmayınız.</P><!--TOC section Server Alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Server Alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+dosyasını iletmeyi unutmayınız.
+</P><!--TOC section Util Alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Util Alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
+Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim"> xorg-util
+</PRE></LI></UL><!--TOC section Server Alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Server Alt Bileşeni</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıdaki paketler için kurulum testi uygulanacaktır.
 <PRE CLASS="verbatim">  xorg-server-common
   xorg-server-devel
@@ -96,7 +101,7 @@ Herhangi bir medya oynatıcıyı kullanarak tam ekranda bir video dosyası açı
 Menüden Sistem Ayarları → Masaüstü yolunu izleyerek efektlerinizi açın/kapatın. Bu sırada herhangi bir sorun yaşanmadığını gözlemleyin.
 </LI></OL>
 </LI></OL></LI></UL><!--TOC section Driver Alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Driver Alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Driver Alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">  vdpau-video
   xvba-video   
@@ -140,21 +145,22 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
   xorg-video-nvidia-current
   xorg-video-nvidia173
   xorg-video-fglrx
+  xorg-video-geode
 </PRE><UL CLASS="itemize"><LI CLASS="li-itemize">
 Bilgisayarınızı yeniden başlatın, ve açtığınızda çözünürlüğün düzgün olduğunu gözlemleyin.<P>Bilgisayarınızda bir yavaşlık olmadığını gözlemleyin
 </P></LI><LI CLASS="li-itemize">Aşağıda bulunan videoyu mplayer, kaffeine gibi bir oynatıcı ile oynatın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 <PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
   </PRE></LI></UL></LI></OL><!--TOC section Terminal alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Terminal alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-rxvt-unicode paketi kurulumu sonrası:<P>Bir x konsol penceresi açıldığını gözlemleyin.
-</P><PRE CLASS="verbatim">  # urxvt
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Terminal alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+rxvt-unicode paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırdığınızda bir x konsol penceresi açıldığını gözlemleyin.
+</P><PRE CLASS="verbatim">   urxvt
   </PRE><P>Aşağıda bulunan ilk komut sunucuyu başlatmaktadır, bir konsolda sunucuyu başlatın diğer konsola geçip ikinci satırda bulunan komutu çalıştırın ve bir x konsol penceresi açıldığını gözlemleyin.
-</P><PRE CLASS="verbatim">  # urxvtd (sunucuyu çalıştırın)
-  # urxvtc
+</P><PRE CLASS="verbatim">   urxvtd (sunucuyu çalıştırın)
+   urxvtc
   </PRE></LI><LI CLASS="li-enumerate">xterm paketi kurulumu sonrası:<P>Aşağıda bulunan komutun bir konsol çalıştırdığını gözlemleyin.
-</P><PRE CLASS="verbatim">  # xterm
+</P><PRE CLASS="verbatim">   xterm
   </PRE></LI></OL><!--TOC section Library alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Library alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Library alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">libXdamage
 libXft
@@ -165,7 +171,7 @@ libva
 libxkbfile
 xcb-util
   </PRE></LI><LI CLASS="li-enumerate">libXcomposite paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın ve effektlerinizin düzgün çalıştığını gözlemleyin.</P></LI></OL><!--TOC section Misc alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Misc alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 xinit paketi kurulumu sonrası:<P>Aşağıdaki komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">   sudo pisi it xterm
    xinit -- :2

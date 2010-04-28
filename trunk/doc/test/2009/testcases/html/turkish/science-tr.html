@@ -57,8 +57,14 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
  import veusz
 </PRE></LI></OL><!--TOC section Biology alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Biology alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-clustalx paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">hmmer, hmmer-doc paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun seorunsuz bir çıktı ürettiğini gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Biology alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim"> biopython-doc
+ clustalw
+</PRE></LI><LI CLASS="li-enumerate">biopython paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import Bio
+</PRE></LI><LI CLASS="li-enumerate">clustalx paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">hmmer, hmmer-doc paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun seorunsuz bir çıktı ürettiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> cd /usr/share/doc/hmmer/tutorial
  sudo hmmbuild globins4.hmm  globins4.sto
 </PRE></LI></OL><!--TOC section Electronics alt Bileşeni-->
@@ -71,7 +77,7 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">ogdi
 proj
-</PRE></LI><LI CLASS="li-enumerate">gpsd ve libgps paketleri kurulumu sonrası:<P>Eğer gps’iniz var ise bu testi gerçekleştirebilirsiniz.</P><P>Gps’inizi takın. Servis yöneticisinden gpsd servisini başlatın.</P><P>Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">geotiff-viewer ve libgeotiff paketleri kurulumu sonrası:<P>GeoTIFF uygulamasını açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">gpsd ve libgps paketleri kurulumu sonrası:<P>Eğer gps’iniz var ise bu testi gerçekleştirebilirsiniz.</P><P>Gps’inizi takın. Servis yöneticisinden gpsd servisini başlatın.</P><P>Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> service gpsd status
 </PRE></LI></OL><!--TOC section Astronomy alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Astronomy alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -87,8 +93,11 @@ avogadropaketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın, çıkan ekra
  # babel -isdf 'aspirin.sdf' -osmi 'test.smi'
  # vi test.smi
 </PRE></LI></OL><!--TOC section Mathematics alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Mathematics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-pspp paketi kurulumu sonrası:<P>Kmenu’den uygulamanın sorunsuz açıldığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Mathematics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">gnuplot-doc
+pspp-docs
+</PRE></LI><LI CLASS="li-enumerate">gnuplot paketi kurulumu sonrası:<PRE CLASS="verbatim"> gnuplot
+ plot sin(x)
+</PRE></LI><LI CLASS="li-enumerate">pspp paketi kurulumu sonrası:<P>Kmenu’den uygulamanın sorunsuz açıldığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">octave paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # octave 
  octave:1&gt; A = [ 1, 1, 2; 3, 5, 8; 13, 21, 34 ]

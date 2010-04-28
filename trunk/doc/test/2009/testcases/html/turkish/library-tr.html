@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/library-tr.tex -->
+<!--HEVEA command line is: hevea library-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Library Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
@@ -89,7 +89,26 @@ libraw1394
 gsm
 attica
 libiodbc
-</PRE></LI><LI CLASS="li-enumerate">libnids paketi kurulumu sonrası:<P>network-tr.pdf dsniff testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">ktoblzcheck paketi kurulumu sonrası:
+libffado
+gl2ps
+linbox
+linbox-doc
+libytnef
+gtkglarea
+lablgtk2
+egenix-mx-base-doc
+</PRE></LI><LI CLASS="li-enumerate">OpenSceneGraph paketi kurulumu sonrası:<P>game-tr.pdf flightgear testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">egenix-mx-base paketi kurulumu sonrası:<P>ipython pakteni kurun ve aşğıda bulunan komutların sorusuz olarak çalıştırğını gözlemleyin.</P><PRE CLASS="verbatim"> ipython
+ import mx
+</PRE></LI><LI CLASS="li-enumerate">pari paketi kurulumu sonrası:<P>Aşağıda bulunan komutun 2*2 sonucunu bulduğunu gözlemleyin.
+</P><PRE CLASS="verbatim"> gp 
+ 2*2
+</PRE></LI><LI CLASS="li-enumerate">libpano13 paketi kurulumu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libzip paketi kurulumu sonrası:<P>Aşağıda bulunan zipcmp komutunun düzgün çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> mkdir test1
+ zip test1.zip test1
+ mkdir test2
+ zip test2.zip test2
+ zipcmp test1.zip test2.zip
+</PRE></LI><LI CLASS="li-enumerate">limprojectM paketi kurulumu sonrası:<P>multimedia-tr.pdf qmmp testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libnids paketi kurulumu sonrası:<P>network-tr.pdf dsniff testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">ktoblzcheck paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
  import ktoblzcheck
@@ -114,7 +133,7 @@ game-tr.pdf flightgear testini gerçekleştiriniz.</LI><LI CLASS="li-enumerate">
 </PRE></LI><LI CLASS="li-enumerate">taglib ve taglib-extras paketleri kurulumu sonrası:<P>multimedia-tr.pdf kid3 testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libgphoto2 ve libgphoto2-doc paketleri kurulumu sonrası:<P>multimedia-tr.pdf digikam testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libimobiledevicebtheora paketi kurulumu sonrası:<P>multimedia-tr.pdf k3b testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libquicktime paketi kurulumu sonrası:<P>multimedia-tr.pdf transcode testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libdvdread paketi kurulumu sonrası:<P>hardware-tr.pdf k3b DVD testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">libdvdnav paketi kurulumu sonrası:<P>multimedia-tr.pdf vlc testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">qimageblitz paketi kurulumu sonrası:<P>blitztest uygulaması ile aşağıda bulunan resmi açın ve effect testinin sorunsuz bir şekilde gerçekleştiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_oodraw.png
  # blitztest
-</PRE></LI><LI CLASS="li-enumerate">tre paketi kurulumu sonrası:<P>multimedia-tr.pdf streamripper testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">gstreamer, gst-plugin-ugly, gst-plugin-bad, gst-plugin-base ve gst-ffmeg paketleri kurulumu sonrası:<P>Sistem ayarları → Çokluortam → Arka uç → gstreamer seçin. </P><P>dragon player ve kaffein ile aşağıda bulunan dosyaları çalıştırın ve sesin düzgün bir şekilde çıktığını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">tre paketi kurulumu sonrası:<P>multimedia-tr.pdf streamripper testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">gstreamer, libkate, gst-plugin-ugly, gst-plugin-bad, gst-plugin-base ve gst-ffmeg paketleri kurulumu sonrası:<P>Sistem ayarları → Çokluortam → Arka uç → gstreamer seçin. </P><P>dragon player ve kaffein ile aşağıda bulunan dosyaları çalıştırın ve sesin düzgün bir şekilde çıktığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/niceday.asf
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_VCD_extensions.mpeg
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI

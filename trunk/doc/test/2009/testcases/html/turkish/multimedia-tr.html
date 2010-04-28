@@ -48,25 +48,31 @@ TD P{margin:0px;}
 <BODY >
 <!--HEVEA command line is: hevea multimedia-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Multimedia Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
-</TABLE><!--TOC section TV alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  TV alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+</TABLE><!--TOC section Share-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Share</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+smb4k paketi kurulumu sonrası:<P>Uygulamayı açın "Ağı tara" butonuna basın, daha sonra alt kısımda bulunan "Network neighborhood" tab’ına basın ve etrafta bulunan komşu paylaşımların listelendiğini gözlemleyin.</P></LI></OL><!--TOC section TV alt Bileşeni-->
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  TV alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 mlt paketi kurulumu sonrası:<P>programming-tr.pdf python-mlt testini gerçekleştiriniz.
 </P></LI></OL><!--TOC section Stream alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Stream alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Stream alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 mpeg4ip paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.</P><P>Aşağıda bulunan komutun avi wav dönüşümünü gerçekleştirdiğini gözlemleyin.
 </P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
 # avi2wav Lake_dance_XviD.AVI
 </PRE></LI><LI CLASS="li-enumerate">streamripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve bir takım şarkıları stream.mp3 adı altında birleştirdiğini gözlemleyin:
 </P><PRE CLASS="verbatim">streamripper http://yp.shoutcast.com/sbin/tunein-station.pls?id=509645 -a stream 
 </PRE><P>Daha sonra stream.mp3 dosyasını amarok, mplayer gibi uygulamalardan biri ile sorunsuz bir şekilde dinleyebildiğinizi gözlemleyin.</P></LI></OL><!--TOC section Plugin alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Plugin alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Plugin alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim"> hexter-dssi
  xsynth-dssi
 </PRE></LI><LI CLASS="li-enumerate">kipi-plugins paketi kurulumu sonrası:<P>Menü → digikam → İçeriye Aktar → Facebook’tan içeriye aktar yolunu izleyerek facebook hesabınızdan fotoğraf indirmeye çalışın. Sorunsuz bir şekilde indirebildiğinizi gözlemleyin. (Digikam uygulamasını ilk defa açıyorsanız bir albüm oluşturunuz.)
 </P></LI></OL><!--TOC section Sound alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc4">4</A>  Sound alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-rosegarden paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">faad2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun dosya ile ilgili bilgileri listelediğinii gözlemleyin. 
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Sound alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim">jack-audio-connection-kit 
+</PRE></LI><LI CLASS="li-enumerate">qmmp paketi kurulumu sonrası:<P>Aşağıda bulunan tar dosyasını indirdikten sonra uygulamayı çalıştırın ve seslerin düzgün çıktığını gözlemleyin.
+</P><PRE CLASS="verbatim">  wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+ </PRE><P>	
+</P></LI><LI CLASS="li-enumerate">rosegarden paketi kurulumu sonrası:<P>Kmenu’den uygulamayı açın ve sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">faad2 paketi kurulumu sonrası:<P>Aşağıda bulunan komutun dosya ile ilgili bilgileri listelediğinii gözlemleyin. 
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample_mpeg4.mp4
  faad sample_mpeg4.mp4
 </PRE></LI><LI CLASS="li-enumerate">faac paketi kurulumu sonrası:<P>soundconverter paketini kurun. </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
@@ -80,10 +86,10 @@ Uygulamanın sistem çekmecesine yerleştiğini gözlemleyin.
 mpck sample.mp3
 </PRE></LI><LI CLASS="li-enumerate">fluidsynth paketi kurulumu sonrası:<P>multimedia-tr.pdf vlc testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">mixxx paketi kurulumu sonrası:<P>Kmenüden uygulamanın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">pavucontrol paketi kurulumu sonrası:<P>Uygulamayı Kmenüden açın ve daha sonra amarok ile aşağıda bulunan müzik dosyasını çalıştırın, çalma bölümünde titreşimlerin olduğunu gözlemleyin.
 Aşağıda bulunan
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
 </PRE></LI><LI CLASS="li-enumerate">jamin paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve /usr/share/jamin/examples dosyası altında bulunan .jam uzantılı dosyalardan birini açın ve sorunsuz olarak açıldığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">frescobaldi paketi kurulumu sonrası:
-<PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/test_frescobaldi.ly
  </PRE>Yukarıda bulunan dosyayı frescobaldi ile açıp, uygulamanın sol tarafında bulunan Lilypond butonuna basın ve sorunsuz bir şekilde pdf dökümanının oluştuğunu gözlemleyin.
 </LI><LI CLASS="li-enumerate">pulseaudio, pulseaudio-docs, pulseaudio-gconf, pulseaudio-jack paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
@@ -93,22 +99,22 @@ multimedia-tr.pdf pavucontrol testini gerçekleştirin.
 </LI></UL>
 </LI><LI CLASS="li-enumerate">sox paketi kurulumu sonrası:<P>hardware-tr.pdf k3b testini gerçekleştiriniz.
 </P></LI><LI CLASS="li-enumerate">amarok paketi kurulumu sonrası:<P>Aşağıda bulunan zip dosyasını indirdikten sonra seslerin düzgün çıktığını gözlemleyin.
-</P><PRE CLASS="verbatim">  # wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
+</P><PRE CLASS="verbatim">  wget wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound.tar
  </PRE><P>	</P></LI><LI CLASS="li-enumerate">listen paketi kurulumu sonrası: <P>Uygulamayı açın dosya sistemi bölümünden /usr/kde/3.5/share/sounds/ dizinine girin ve sorunsuz bir şekilde müziklerin listelendiğini ve müzikleri çalabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">vorbis-tools paketi kurulumu sonrası: 
-<PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
-  # oggdec game.ogg
-  # mplayer game.wav
-  # oggenc game.wav
-  # mplqayer game.ogg
+<PRE CLASS="verbatim">   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.ogg
+   oggdec game.ogg
+   mplayer game.wav
+   oggenc game.wav
+   mplqayer game.ogg
  </PRE></LI><LI CLASS="li-enumerate">qpitch paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın düzgün bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">qjackctl paketi kurulumu sonrası: <P>Kmenüden qjackct uygulamasını açın. (Bu sırada hiçbir ses aygıtının açık olmadığından emin olun)</P><P>Başla butonuna basın, status ve mesajlardan Jack ses sunucusunun başlatılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">lame ve lame-docs paketleri kurulumu sonrası: <P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-# lame music.mp3 music.mpeg
-# mplayer music.mpeg
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+ lame music.mp3 music.mpeg
+ mplayer music.mpeg
 </PRE></LI><LI CLASS="li-enumerate">mpg123 paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
-  # mpg123 sample.mp3
+</P><PRE CLASS="verbatim">   wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
+   mpg123 sample.mp3
  </PRE></LI></OL><!--TOC section Video alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Video alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">mpgtx paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/vcd.mpg
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Video alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">mpgtx paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/vcd.mpg
  mpgsplit -10M vcd.mpg
  mplayer chunk-01.mpg
  mpgjoin chunk-01.mpg chunk-02.mpg 
@@ -116,7 +122,7 @@ multimedia-tr.pdf pavucontrol testini gerçekleştirin.
 </PRE></LI><LI CLASS="li-enumerate">gpac paketi kurulumu sonrası:<P>multimedia-tr.padf x264 testini gerçekleştirin.
 </P></LI><LI CLASS="li-enumerate">dvdrip paketi kurulumu sonrası:<P>Bir DVD albümünüz var ise bu testi gerçekleştirebilirsiniz.</P><P>dvdrip uygulmasını kmenüden açın ve dvd’de bulunan bir parçayı rip edin, sorunsuz bir şekilde .rip uzantılı dosyanın oluştuğunu gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">mplayer, vlc, kaffeine, smplayer, gnome-mplayer paketleri kurulumu sonrası:
-<PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
+<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam.tar
  </PRE>Yukarıda bulunan dosyayı indirdikten sonra, uygulamayı her türlü dosya formatı ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-enumerate">vlc-firefox kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
@@ -133,7 +139,7 @@ Firefox → Düzen → Seçenekler → Eklentileri Yönet → Yan Uygulamalar b�
  x264 -o test.mp4 example.y4m 300x300 
  mplayer test.mp4 (Kısa bir video olmalı)
 </PRE></LI></OL><!--TOC section Converter alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Converter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Converter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıdaki paketler sadece kurulum testine tabidir:
 <PRE CLASS="verbatim"> nrg2iso
  vnc2swf
@@ -228,12 +234,21 @@ hardware-tr.pdf k3b paketini test ediniz.
 # vcdxgen DVD.mpg
 # vcdxminfo -i DVD.mpg
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">vobcopy paketi kurulımu sonrası:</LI></OL><!--TOC section Graphics alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Graphics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Graphics alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler kurulum testine tabidir
 <PRE CLASS="verbatim"> gimp-data-extras
  tachyon
  graphviz-docs
  GraphicsMagick-devel
+ ufraw
+ hugin-docs
+ gimp-devel
+ colorize-gimp
+ gimp-layer-effects
+ gimp-save-for-web
+ gimpfx-foundry
+ gimp-ufraw-plugin
+</PRE></LI><LI CLASS="li-enumerate">autopano-sift-C paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">enblend paketi kuruluu sonrası:<P>multimedia-tr.pdf hugin testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">hugin paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın, daha sonra hugin uygulamasını çalıştırın. "Load Images" butonuna basın ve "test_hugin" dosyası içerisinde bulunan resimleri yükleyin. "Align" butonuna basın ve sorunsuz bir şekilde align edildiğini gözlemleyin. </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_hugin.zip
 </PRE></LI><LI CLASS="li-enumerate">tesseract paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde text dosyasının oluştuğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_tesseract.tif
  tesseract test_tesseract.tif test_tesseract
@@ -241,11 +256,11 @@ Aşağıda bulunan paketler kurulum testine tabidir
 </PRE></LI><LI CLASS="li-enumerate">uniconverter paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/drawing.svg
 uniconv  drawing.svg test.ps
-</PRE></LI><LI CLASS="li-enumerate">kphotoalbum paketi kurulumu sonrası:<P>Kmenuden uygulamayı açın, demoyu çalıştır butonuna basın. Daha sonra slideshow’u çalıştır butonuna basın ve sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">yafaray ve yafaray-blender paketleri kurulumu sonrası:<P>multimedia-tr.pdf blender testini gerçekleştiriniz.
-</P></LI><LI CLASS="li-enumerate">jasper paketi kurulumu sonrası:<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_jasper.jpg
- # jiv test_jasper.jpg
- # jasper --input test_jasper.jpg --output test.jp2 --output-format jp2
- # jiv test.jp2
+</PRE></LI><LI CLASS="li-enumerate">kphotoalbum paketi kurulumu sonrası:<P>Kmenuden uygulamayı açın, tanıtımı yükleyi seçin butonuna basın. Daha sonra slideshow’u çalıştır butonuna basın ve sorunsuz bir şekilde çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">yafaray ve yafaray-blender paketleri kurulumu sonrası:<P>multimedia-tr.pdf blender testini gerçekleştiriniz.
+</P></LI><LI CLASS="li-enumerate">jasper paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_jasper.jpg
+ jiv test_jasper.jpg
+ jasper --input test_jasper.jpg --output test.jp2 --output-format jp2
+ jiv test.jp2
 </PRE></LI><LI CLASS="li-enumerate">gocr paketi kurulumu sonrası:<P>Aşağıda bulunan komutları çalıştırın ve uygulamanın karakterleri taryabildiğini ve test adında bir dosyaya yazabildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/font1.pbm.gz
  # gocr -i font1.pbm.gz -o test
@@ -259,8 +274,7 @@ uniconv  drawing.svg test.ps
 # acyclic test.dot test_asyclic.dot
 # lneato test.dot
 # vimdot test.dot
-</PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde gimp uygulamasını açın ve uygulamanın ilgili dilde olduğunu gözlemleyin.<P>Yerel dili değiştirmek için:
-</P><PRE CLASS="verbatim">export LC_ALL=&lt;lang_LANG&gt;
+</PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde gimp uygulamasını açın ve uygulamanın ilgili dilde olduğunu gözlemleyin.<P>Yerel dili değiştirmek için:</P><P>İlgili gimp dil paketi ile glibc-locales-&lt;lang&gt; paketini kurun. Örneğin: gimp-i18n-es için için glibc-locales-es.</P><PRE CLASS="verbatim">export LC_ALL=&lt;lang_LANG&gt;
 </PRE><P>lang_LANG şeklinde yazılmış olan, pt-BT için pt_BT, diğer diller için örneğin de_DE olacaktır.</P><P>Daha sonra bu çalıştırdığınız komut dizininde gimp komutunu çalıştırın, uygulamanın sorunsuz bir şekilde istenilen dilde açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim">gimp-i18n-es
 gimp-i18n-sk
@@ -324,7 +338,7 @@ gimp-i18n-si
 </P><PRE CLASS="verbatim">   # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/bmp_24.bmp
    # autotrace bmp_24.bmp -output-file test.eps  -output-format eps
    # gwenview test.eps 
-  </PRE></LI><LI CLASS="li-enumerate">gimp ve gimp-devel kurulumu sonrası:
+  </PRE></LI><LI CLASS="li-enumerate">gimp paketi kurulumu sonrası:
 <PRE CLASS="verbatim">   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
   </PRE><P>Yukarıda bulunan farklı formattaki dosyaları gimp ile açınız, sorunsuz bir şekilde açıldıklarını gözlemleyiniz.
 </P></LI><LI CLASS="li-enumerate">digikam paketi kurulumu sonrası:<PRE CLASS="verbatim">   http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/graphics.tar
@@ -357,21 +371,21 @@ Uygulamayı açın çeşitli çizimler yapın ve kaydedin, sorunsuz bir şekilde
 </P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg 
 # dcparse test_dcraw.jpg 
 </PRE></LI></OL><!--TOC section Editor alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc8">8</A>  Editor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">python-eyeD3 paketi kurulumu sonrası:<P>Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag’inin listelediğini gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc9">9</A>  Editor alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">python-eyeD3 paketi kurulumu sonrası:<P>Aşğıda bulunan komutları çalıştırın ve sorunsuz bir şekilde id3 tag’inin listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3
  # eyeD3 linux.mp3 
 </PRE></LI><LI CLASS="li-enumerate">lilypond paketi kurulumu sonrası:<P>multimedia-tr.pdf frescobaldi testini gerçaklaştiriniz.</P></LI><LI CLASS="li-enumerate">lilycomp paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve uygulamanın yukarısında bulunan notalara basın ve alt bölümde bu notaların kodlarının basıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">kino paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı açın ve trim butonuna basarak çeşitli noktalardan kesmeye çalışın.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/sample.dv
 </PRE></LI><LI CLASS="li-enumerate">kid3 paketi kurulumu sonrası:<P>Kmenüden uygulamayı çalıştırın ve aşağıda bulunan dosyayı Dosya → Aç yolunu izleyerek açın ve tag bölümünü editlemeye çalışın, editleyebildiğinizi gözlemleyin.</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/linux.mp3 
 </PRE></LI><LI CLASS="li-enumerate">blender paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı blender ile açın ve Render butonuna basın. Resmi render edebildiğinizi gözlemleyin.
-</P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/MATtests1.blend 
 </PRE></LI><LI CLASS="li-enumerate">dvd-slideshow paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve bir slideshow oluştuğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/image.tar.gz
- # dir2slideshow -n test -s "slide test" image
- # dvd-slideshow image.txt
- # mplayer image.vob 
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/editor/image.tar.gz
+dir2slideshow -n test -s "slide test" image
+dvd-slideshow image.txt
+mplayer image.vob 
 </PRE></LI><LI CLASS="li-enumerate">kdenlive paketi kurulumu sonrası:<P>Kdenlive uygulamasını açın ve Projeler → Klip ekle yolunu izleyerek aşağıda bulunan dosyayı ekleyin ve çalıştırın sesinin ve görüntüsünün sorunsuz olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
+</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/DVD.mpg
 </PRE></LI><LI CLASS="li-enumerate">kiconedit paketi kurulumu sonrası:<P>Menüden uygulamayı açın, Dosya → Aç yolunu izleyerek /usr/kde/4/share/apps/amarok/icons/hicolor/16x16/actions/ dizini altından bir ikonu açın ve düzgün bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">dvdauthor paketi kurulumu sonrası:<P>multimedia-tr.pdf dvd-slideshow ve kdenlive testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux-common paketi kurulumu sonrası:<P>multimedia-tr.pdf avidemux testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">avidemux ve avidemux-qt paketleri kurulumu sonrası:<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/Lake_dance_XviD.AVI
  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/video/cokluortam/MPEG-1_with_
 VCD_extensions.mpeg

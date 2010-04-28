@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea turkish/system-tr.tex -->
+<!--HEVEA command line is: hevea system-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">System Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -79,6 +79,8 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
  xorg-proto
  libtool
  perl-XML-Parser
+ cmake
+ intltool
 </PRE></LI><LI CLASS="li-enumerate">automake paketi kurulumu sonrası:<P>Aşağıda bulunan paketlerin sorunsuz derlendiğini gözlemleyin.
 </P><PRE CLASS="verbatim"> sudo pisi it subversion
  2008 için
@@ -179,7 +181,7 @@ programming-tr.pdf pysqlite testini gerçekleştiriniz.</LI><LI CLASS="li-enumer
 </PRE></LI><LI CLASS="li-enumerate">pcmciautils paketi kurulumu sonrası:<P>Eğer takılı bir PCIA kartınız bulunmakta ise, aşağıda bulunan komutun bu kartı listelediğini gözlemleyiniz.
 </P><PRE CLASS="verbatim"> su -
  lspcmcia
-</PRE></LI><LI CLASS="li-enumerate">man-pages paketi kurulumu sonrası:<P>Aşağıda bulunan sayfaların sorunsuz bir şekilde çalıştırklarını gözlemleyin.
+</PRE></LI><LI CLASS="li-enumerate">man ve man-pages paketleri kurulumu sonrası:<P>Aşağıda bulunan sayfaların sorunsuz bir şekilde çalıştırklarını gözlemleyin.
 </P><PRE CLASS="verbatim"> man tcp
  man getspent
 </PRE></LI><LI CLASS="li-enumerate">less paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
@@ -249,7 +251,7 @@ Bilgisayarınızı kapatın düzgün bir şekilde kapanabildiğini gözlemleyin.
 </LI><LI CLASS="li-itemize">Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açılabildiğini gözlemleyin.
 </LI><LI CLASS="li-itemize">2009 için:
 <PRE CLASS="verbatim">   # pisi blame baselayout
-  </PRE>2008 için: http://svn.pardus.org.tr/pardus/2008/stable/system/base/baselayout/pspec.xml linkinde bulunan en son eklenmiş history tag’i yorumuna (comment) bakınız.<P>Bu her iki durumda da yorumlarda belirtilmiş olan kullanıcının /etc/passwd dosyasına eklenmiş olduğunu gözlemleyin.</P></LI></UL>
+  </PRE>2008 için: http://svn.pardus.org.tr/pardus/2008/stable/system/base/baselayout/pspec.xml linkinde bulunan en son eklenmiş history tag’i yorumuna (comment) bakınız.<P>Bu her iki durumda da yorumlarda belirtilmiş olan kullanıcının (user) /etc/passwd dosyasına eklenmiş olduğunu gözlemleyin.</P></LI></UL>
 </LI><LI CLASS="li-enumerate">libxml2 paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan komutun bir katalog oluşturduğunu gözlemleyin.
 <PRE CLASS="verbatim">   #  xmlcatalog --create
