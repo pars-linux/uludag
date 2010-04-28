@@ -12,18 +12,19 @@
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Bekir SONAT <bekirsonat@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2009-11-19 16:36+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 10:24+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kio/connection.cpp:211
@@ -1810,6 +1811,12 @@ msgid ""
 "settings in the KDE System Settings, by selecting Network Settings -> "
 "Connection Preferences."
 msgstr ""
+"Sunucuyla iletişim kurulmuş olsa da, istek için ayrılan süre zarfında "
+"bir cevap alınamadı. Aşağıda belirtilen zaman ayarları, KDE Sistem Ayarları "
+"altındaki "
+"Ağ Ayarları -> Bağlantı Tercihleri modülünden değiştirebilirsiniz: "
+"<ul><li>Bağlantı kurma zaman aşımı: %1 saniye</li><li>Cevap alma zaman "
+"aşımı: %2 saniye</li><li>Vekil sunucu erişim zaman aşımı: %3 saniye</li></ul>"
 
 #: kio/global.cpp:1083
 msgid "The server was too busy responding to other requests to respond."
@@ -2148,7 +2155,6 @@ msgstr ""
 "gönderen sunucuyla ilişkili değil. Yüklemeye devam etmek istiyor musunuz?"
 
 #: kio/tcpslavebase.cpp:897
-#, fuzzy
 #| msgid ""
 #| "SSL certificate is being rejected as requested. You can disable this in "
 #| "the KDE Control Center."
@@ -2156,7 +2162,8 @@ msgid ""
 "SSL certificate is being rejected as requested. You can disable this in the "
 "KDE System Settings."
 msgstr ""
-"SSL sertifikası geri çevrildi. Bu özelliği KDE Kontrol Merkezi'nde "
+"SSL sertifikası istenildiği gibi geri çevrildi. Bu özelliği KDE Sistem "
+"Ayarları'ndan "
 "kapatabilirsiniz."
 
 #: kio/passworddialog.cpp:62
@@ -2229,6 +2236,9 @@ msgid ""
 "Undoing the copy will delete the file, and all modifications will be lost.\n"
 "Are you sure you want to delete %4?"
 msgstr ""
+"%1 dosyası %2 dosyasından kopyalanmış ancak %3 tarihinde değiştirilmiş. "
+"Kopyalamayı geri almak dosyayı silecek ve tüm değişiklikler kaybedilecek.\n"
+"%4 dosyasını silmek istediğinizden emin misiniz?"
 
 #: kio/fileundomanager.cpp:767
 msgid "Undo File Copy Confirmation"
@@ -2602,7 +2612,7 @@ msgstr "%1 &ile Aç"
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: kio/slaveinterface.cpp:460
 msgid "The peer SSL certificate chain appears to be corrupt."
@@ -3739,6 +3749,8 @@ msgid ""
 "Could not extract executable name from '%1', please type a valid program "
 "name."
 msgstr ""
+"'%1''den çalıştırılabilir isim çıkartılamıyor, lütfen geçerli bir uygulama "
+"adı giriniz."
 
 #: kfile/kopenwithdialog.cpp:853
 #, kde-format
@@ -3912,12 +3924,18 @@ msgid ""
 "Retrieval of the CRL (Certificate Revocation List) failed. This means the "
 "CA's (Certificate Authority) CRL can not be found."
 msgstr ""
+"SİL (Sertifika İptal Listesi) alınamadı. Bu SM'nın (Sertifika Makamı) "
+"SİL'nin "
+"bulunamadığı anlamına gelir."
 
 #: kssl/ksslcertificate.cpp:1057
 msgid ""
 "The decryption of the certificate's signature failed. This means it could "
 "not even be calculated as opposed to just not matching the expected result."
 msgstr ""
+"Sertifika imzası çözülemedi. Bu, beklenen sonuçla elde edilen "
+"sonucun farklılığından ya da elde edilen sonucu sağlayacak hesapların "
+"yapılamamasından kaynaklanıyor olabilir."
 
 #: kssl/ksslcertificate.cpp:1059
 msgid ""
@@ -3925,6 +3943,10 @@ msgid ""
 "This means it could not even be calculated as opposed to just not matching "
 "the expected result."
 msgstr ""
+"SİL (Sertifika İptal Listesi) imzası çözülemedi. Bu, beklenen sonuçla elde "
+"edilen "
+"sonucun farklılığından ya da elde edilen sonucu sağlayacak hesapların "
+"yapılamamasından kaynaklanıyor olabilir."
 
 #: kssl/ksslcertificate.cpp:1061
 msgid ""
@@ -3932,6 +3954,10 @@ msgid ""
 "CA's (Certificate Authority) certificate can not be used to verify the "
 "certificate you wanted to use."
 msgstr ""
+"Sağlayıcının açık anahtarı çözülemedi. Bu, SM'nın (Sertifika Makamı) "
+"sertifikasının, kullanmak istediğiniz sertifikayı doğrulamak için "
+"kullanılamayacağı "
+"anlamına gelir."
 
 #: kssl/ksslcertificate.cpp:1063
 msgid ""
@@ -3994,18 +4020,25 @@ msgid ""
 "If you want to accept this certificate, import it into the list of trusted "
 "certificates."
 msgstr ""
+"Sertifika kendinden imzalı ve güvenilir sertifikalar listesinde değil. "
+"Bu sertifikayı kabul etmek istiyorsanız, güvenilir sertifikalar listesine "
+"aktarın."
 
 #: kssl/ksslcertificate.cpp:1088
 msgid ""
 "The certificate is self-signed. While the trust chain could be built up, the "
 "root CA's (Certificate Authority) certificate can not be found."
 msgstr ""
+"Sertifika kendinden imzalı. Güven zinciri oluşturulmuş olsa da, kök SM'nın "
+"(Sertifika Makamı) sertifikası bulunamadı."
 
 #: kssl/ksslcertificate.cpp:1090
 msgid ""
 "The CA's (Certificate Authority) certificate can not be found. Most likely, "
 "your trust chain is broken."
 msgstr ""
+"SM'nın (Sertifika Makamı) sertifikası bulunamadı. Büyük ihtimalle güven, "
+"zinciriniz kırılmış."
 
 #: kssl/ksslcertificate.cpp:1092
 msgid ""
@@ -4013,6 +4046,10 @@ msgid ""
 "trust chain and not self-signed. If you self-sign the certificate, make sure "
 "to import it into the list of trusted certificates."
 msgstr ""
+"Sertifika doğrulanamıyor çünkü güven zincirindeki tek sertifika ve kendinden "
+"imzalı değil. Eğer sertifikayı kendisiyle imzalarsanız, güvenilir "
+"sertifikalar listesine "
+"aktardığınızdan emin olun."
 
 #: kssl/ksslcertificate.cpp:1094
 msgid "The certificate chain is longer than the maximum depth specified."
@@ -4031,36 +4068,48 @@ msgid ""
 "The length of the trust chain exceeded one of the CA's (Certificate "
 "Authority) 'pathlength' parameters, making all subsequent signatures invalid."
 msgstr ""
+"Güven zincirinin uzunluğu, SM'nın (Sertifika Makamı) 'pathlength' "
+"parametrelerinden birini geçerek tüm imzaları geçersiz hale getirdi."
 
 #: kssl/ksslcertificate.cpp:1103
 msgid ""
 "The certificate has not been signed for the purpose you tried to use it for. "
 "This means the CA (Certificate Authority) does not allow this usage."
 msgstr ""
+"Sertifika, onu kullanmaya çalıştığınız amaç için imzalanmamış, yani SM "
+"(Sertifika Makamı) bu kullanıma izin vermiyor."
 
 #: kssl/ksslcertificate.cpp:1106
 msgid ""
 "The root CA (Certificate Authority) is not trusted for the purpose you tried "
 "to use this certificate for."
 msgstr ""
+"Kök SM (Sertifika Makamı), bu sertifikayı kullanmak istediğiniz amaç için "
+"güvenilir değil."
 
 #: kssl/ksslcertificate.cpp:1109
 msgid ""
 "The root CA (Certificate Authority) has been marked to be rejected for the "
 "purpose you tried to use it for."
 msgstr ""
+"Kök SM (Sertifika Makamı), kullanmaya çalıştığınız amaç için reddedilmek "
+"üzere "
+"işaretlenmiş."
 
 #: kssl/ksslcertificate.cpp:1111
 msgid ""
 "The certificate's CA (Certificate Authority) does not match the CA name of "
 "the certificate."
-msgstr ""
+msgstr "Sertifikanın SM (Sertifika Makamı), sertifikanın SM ismiyle uyuşmuyor."
 
 #: kssl/ksslcertificate.cpp:1113
 msgid ""
 "The CA (Certificate Authority) certificate's key ID does not match the key "
 "ID in the 'Issuer' section of the certificate you are trying to use."
 msgstr ""
+"SM'nın (Sertifika Makamı) sertifikasının anahtar ID'si, kullanmaya "
+"çalıştığınız "
+"sertifikanın 'Issuer' bölümündeki ID ile uyuşmuyor."
 
 #: kssl/ksslcertificate.cpp:1115
 msgid ""
@@ -4068,6 +4117,8 @@ msgid ""
 "the key ID and name in the 'Issuer' section of the certificate you are "
 "trying to use."
 msgstr ""
+"SM'nın (Sertifika Makamı) sertifikasının anahtar ID'si ve ismi, kullanmaya "
+"çalıştığınız sertifikanın 'Issuer' bölümündeki ID ve isim ile uyuşmuyor."
 
 #: kssl/ksslcertificate.cpp:1117
 msgid ""
@@ -4090,6 +4141,13 @@ msgid ""
 "are using know that he or she should use the new, more specific error "
 "messages."
 msgstr ""
+"Sertifika için imza testi başarısız. Bu, bu sertifikanın veya güven "
+"zincirindeki "
+"başka bir sertifikanın imzasının geçersiz olduğu, çözülemediği veya SİL'nin "
+"(Sertifika İptal Listesi) doğrulanamadığı anlamına gelebilir. Bu iletiyi "
+"görüyorsanız, "
+"şu an kullanmakta olduğunuz yazılımın geliştiricisine, yeni ve daha spesifik "
+"hata iletileri kullanmasını gerektiğini bildiriniz."
 
 #: kssl/ksslcertificate.cpp:1126
 msgid ""
@@ -4099,6 +4157,15 @@ msgid ""
 "author of the software you are using know that he or she should use the new, "
 "more specific error messages."
 msgstr ""
+"Bu sertifika, güven zincirindeki herhangi bir sertifika veya SM'nın "
+"(Sertifika Makamı) "
+"SİL (Sertifika İptal Listesi) geçersiz. Bunlardan herhangi biri henüz "
+"geçerli "
+"olmayabilir ya da zaten geçerli değil. Bu iletiyi görüyorsanız, şu an "
+"kullanmakta "
+"olduğunuz yazılımın geliştiricisine, yeni ve daha spesifik hata iletileri "
+"kullanmasını "
+"gerektiğini bildiriniz."
 
 #: kssl/ksslcertificate.cpp:1132
 msgid ""
@@ -4185,12 +4252,12 @@ msgid "Yes"
 msgstr "Evet"
 
 #: kssl/ksslinfodialog.cpp:223
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "folders, files"
 #| msgid "%1, %2"
 msgctxt "%1 is the effective date of the certificate, %2 is the expiry date"
 msgid "%1 to %2"
-msgstr "%1, %2"
+msgstr "%1'den %2'ye"
 
 #: kssl/ksslcertdialog.cpp:61
 msgid "Certificate"
@@ -4336,6 +4403,9 @@ msgid ""
 "on exit. Keeping the terminal emulator open allows you to retrieve this "
 "information."
 msgstr ""
+"Metin kipi uygulaması çıkışta yeterli bilgi sağlıyorsa bu seçeneği "
+"işaretleyin. "
+"Uçbirim öykünücüsünü açık bırakmak bu bilgiyi almanızı sağlar."
 
 #. i18n: file: kfile/kpropertiesdesktopadvbase.ui:56
 #. i18n: ectx: property (text), widget (QCheckBox, terminalCloseCheck)
@@ -4925,7 +4995,7 @@ msgstr "Çerez Uyarısı"
 #, kde-format
 msgid "You received a cookie from"
 msgid_plural "You received %1 cookies from"
-msgstr[0] "Şu makineden %1 çerez aldınız"
+msgstr[0] "Aşağıdaki alan adından %1 çerez alındı"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:115
 msgid " <b>[Cross Domain]</b>"
@@ -4933,7 +5003,7 @@ msgstr " <b>[Çapraz Alan Adı]</b>"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:118
 msgid "Do you want to accept or reject?"
-msgstr "Kabul mü, yoksa red mi edeceksiniz?"
+msgstr "Ne yapmak istiyorsunuz?"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:126
 msgid "Apply Choice To"
@@ -4948,7 +5018,6 @@ msgid "&Only these cookies"
 msgstr "&Sadece bu çerezler"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:132
-#, fuzzy
 #| msgid ""
 #| "Select this option to accept/reject only this cookie. You will be "
 #| "prompted if another cookie is received. <em>(see WebBrowsing/Cookies in "
@@ -4959,13 +5028,15 @@ msgid ""
 "Settings)</em>."
 msgstr ""
 "Sadece bu çerezi kabul etmek ya da reddetmek için bu seçeneği tıklayın. "
+"Başka "
+"bir çerez alındığında ne yapılacağı size sorulacak.<em>(Ayarlardan "
+"Web Tarama/Çerezler bölümüne göz atın)</em>."
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:136
 msgid "All cookies from this do&main"
-msgstr "Bu &alandan gelen tüm çerezler"
+msgstr "Bu &alan adından gelen tüm çerezler"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:139
-#, fuzzy
 #| msgid ""
 #| "Select this option to accept/reject all cookies from anywhere. Choosing "
 #| "this option will change the global cookie policy set in the Control "
@@ -4977,18 +5048,19 @@ msgid ""
 "This policy will be permanent until you manually change it from the System "
 "Settings <em>(see WebBrowsing/Cookies in the System Settings)</em>."
 msgstr ""
-"Her yerden tüm çerezleri kabul etmek ya da reddetmek için bu düğmeyi "
-"tıklayın. Bu seçeneği işaretlemek Kontrol Merkezindeki genel çerez "
-"politikasını değiştirir <em>(Kontrol Merkezindeki  Web Tarama/Çerezler "
-"ögesine bakın)</em>.Her yerden tüm çerezleri kabul etmek ya da reddetmek "
-"için bu düğmeyi tıklayın."
+"Bu adresten gelen tüm çerezleri kabul etmek ya da reddetmek için bu "
+"seçeneği işaretleyin. Bu seçeneği işaretlemek, çerezin geldiği site için "
+"yeni "
+"bir politika belirlenmesini sağlar. Bu politika, siz Sistem Ayarları'ndan "
+"değiştirene "
+"kadar kalıcı niteliktedir <em>(Ayarlardan Web Tarama/Çerezler "
+"bölümüne göz atın)</em>."
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:145
 msgid "All &cookies"
 msgstr "Tüm ç&erezler"
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:148
-#, fuzzy
 #| msgid ""
 #| "Select this option to accept/reject all cookies from anywhere. Choosing "
 #| "this option will change the global cookie policy set in the Control "
@@ -4999,11 +5071,10 @@ msgid ""
 "option will change the global cookie policy set in the System Settings for "
 "all cookies <em>(see WebBrowsing/Cookies in the System Settings)</em>."
 msgstr ""
-"Her yerden tüm çerezleri kabul etmek ya da reddetmek için bu düğmeyi "
-"tıklayın. Bu seçeneği işaretlemek Kontrol Merkezindeki genel çerez "
-"politikasını değiştirir <em>(Kontrol Merkezindeki  Web Tarama/Çerezler "
-"ögesine bakın)</em>.Her yerden tüm çerezleri kabul etmek ya da reddetmek "
-"için bu düğmeyi tıklayın."
+"Herhangi bir yerden tüm çerezleri kabul etmek ya da reddetmek için bu  "
+"seçeneği işaretleyin. Bu seçeneği işaretlemek Ayarlardaki genel çerez "
+"politikasını değiştirir <em>(Ayarlardan  Web Tarama/Çerezler bölümüne "
+"göz atın)</em>."
 
 #: ../kioslave/http/kcookiejar/kcookiewin.cpp:162
 msgid "&Accept"
@@ -5205,6 +5276,8 @@ msgid ""
 "A resource cannot be created at the destination until one or more "
 "intermediate collections (folders) have been created."
 msgstr ""
+"Bir veya daha fazla ara koleksiyon (dizin) yaratılmadan, bu özkaynak "
+"hedefte oluşturulamaz."
 
 #: ../kioslave/http/http.cpp:1648
 #, kde-format
@@ -5213,6 +5286,11 @@ msgid ""
 "the propertybehavior XML element or you attempted to overwrite a file while "
 "requesting that files are not overwritten. %1"
 msgstr ""
+"Sunucu, propertybehavior XML elemanında listelenen özelliklerin "
+"senkronizasyonunu "
+"sağlayamadı veya dosyaların üzerine yazılmamasını isterken, siz bir dosyanın "
+"üzerine "
+"yazmaya çalıştınız. %1"
 
 #: ../kioslave/http/http.cpp:1658
 #, kde-format
@@ -5247,6 +5325,8 @@ msgid ""
 "The destination resource does not have sufficient space to record the state "
 "of the resource after the execution of this method."
 msgstr ""
+"Hedef özkaynak, özkaynağın bu metodun çalıştırılmasından sonraki durumunu "
+"kaydedecek alana sahip değil."
 
 #: ../kioslave/http/http.cpp:1709
 #, kde-format
@@ -5270,10 +5350,9 @@ msgid "Server processing request, please wait..."
 msgstr "Sunucu isteği işliyor, lütfen bekleyiniz..."
 
 #: ../kioslave/http/http.cpp:3194
-#, fuzzy
 #| msgid "Authorization Dialog"
 msgid "Unknown Authorization method."
-msgstr "Kimlik Bilgisi Penceresi"
+msgstr "Bilinmeyen Yetkilendirme Yöntemi."
 
 #: ../kioslave/http/http.cpp:3223
 msgid "Authentication Failed."
@@ -5284,10 +5363,9 @@ msgid "Proxy Authentication Failed."
 msgstr "Vekil Sunucu Yetki Denetimi Başarısız."
 
 #: ../kioslave/http/http.cpp:3256
-#, fuzzy
 #| msgid "Authorization Dialog"
 msgid "Authorization failed."
-msgstr "Kimlik Bilgisi Penceresi"
+msgstr "Yetkilendirme başarısız."
 
 #: ../kioslave/http/http.cpp:3646
 msgid "Requesting data to send"
@@ -5527,6 +5605,9 @@ msgid ""
 "folders, so it is not possible to decide which one to enter. Please select "
 "only one folder to list it."
 msgstr ""
+"Birden fazla dizin seçildi ancak bu diyalog dizin kabul etmiyor, yani hangi "
+"seçime "
+"girileceğine karar verilemiyor. Lütfen sadece bir dizin seçin."
 
 #: ../kfile/kfilewidget.cpp:966
 msgid "More than one folder provided"
@@ -5570,11 +5651,10 @@ msgid "This is the name of the file to open."
 msgstr "Bu açılacak dosyanın adıdır"
 
 #: ../kfile/kfilewidget.cpp:1284
-#, fuzzy
 #| msgid "Places"
 msgctxt "@title:window"
 msgid "Places"
-msgstr "Konumlar"
+msgstr "Yerler"
 
 #: ../kfile/kfilewidget.cpp:1467
 #, kde-format
@@ -5699,7 +5779,7 @@ msgstr "Farklı bir isim girin"
 msgid ""
 "The name \"%1\" starts with a dot, so the directory will be hidden by "
 "default."
-msgstr ""
+msgstr "\"%1\" nokta ile başlıyor, dizin öntanımlı olarak gizli olacak."
 
 #: ../kfile/kdiroperator.cpp:741
 msgid "Create hidden directory?"
