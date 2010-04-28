@@ -2,27 +2,27 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_engine_weather\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-10-28 15:46+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 15:35+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ions/wetter.com/ion_wettercom.cpp:167 ions/wetter.com/ion_wettercom.cpp:168
-#, fuzzy
 #| msgctxt "weather forecast"
 #| msgid "A few clouds"
 msgctxt "weather condition"
 msgid "few clouds"
-msgstr "Az sayıda bulut"
+msgstr "az bulutlu"
 
 #. i18n: file: bbcukmet_i18n.dat:5
 #: ions/wetter.com/ion_wettercom.cpp:169 ions/wetter.com/ion_wettercom.cpp:170
@@ -32,29 +32,26 @@ msgid "cloudy"
 msgstr "bulutlu"
 
 #: ions/wetter.com/ion_wettercom.cpp:171 ions/wetter.com/ion_wettercom.cpp:172
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Overcast"
 msgctxt "weather condition"
 msgid "overcast"
-msgstr "Bulutlu"
+msgstr "bulutlu"
 
 #: ions/wetter.com/ion_wettercom.cpp:173 ions/wetter.com/ion_wettercom.cpp:174
 #: ions/wetter.com/ion_wettercom.cpp:175
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "hazy"
 msgctxt "weather condition"
 msgid "haze"
-msgstr "sisli"
+msgstr "pus"
 
 #: ions/wetter.com/ion_wettercom.cpp:176 ions/wetter.com/ion_wettercom.cpp:177
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Fog in Vicinity"
 msgctxt "weather condition"
 msgid "fog with icing"
-msgstr "Görüş Alanı içinde Sisli"
+msgstr "buzlu sisli"
 
 #. i18n: file: bbcukmet_i18n.dat:10
 #: ions/wetter.com/ion_wettercom.cpp:178 ions/wetter.com/ion_wettercom.cpp:179
@@ -64,44 +61,39 @@ msgid "drizzle"
 msgstr "çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:180
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Light Drizzle"
 msgctxt "weather condition"
 msgid "light drizzle"
-msgstr "Hafif çiselti"
+msgstr "hafif çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:182
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Heavy Drizzle"
 msgctxt "weather condition"
 msgid "heavy drizzle"
-msgstr "Şiddetli çiselti"
+msgstr "şiddetli çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:183
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Freezing drizzle"
 msgctxt "weather condition"
 msgid "freezing drizzle"
-msgstr "İnce kar"
+msgstr "dondurucu çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:184
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Heavy Freezing Drizzle"
 msgctxt "weather condition"
 msgid "heavy freezing drizzle"
-msgstr "Şiddetli Donmuş Çiseleme"
+msgstr "şiddetli dondurucu çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:185
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Rain"
 msgctxt "weather condition"
 msgid "rain"
-msgstr "Yağmur"
+msgstr "yağmur"
 
 #. i18n: file: bbcukmet_i18n.dat:25
 #: ions/wetter.com/ion_wettercom.cpp:186 ions/wetter.com/ion_wettercom.cpp:187
@@ -111,12 +103,11 @@ msgid "light rain"
 msgstr "hafif yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:188
-#, fuzzy
 #| msgctxt "visibility"
 #| msgid "Moderate"
 msgctxt "weather condition"
 msgid "moderate rain"
-msgstr "Orta"
+msgstr "yağmur"
 
 #. i18n: file: bbcukmet_i18n.dat:18
 #: ions/wetter.com/ion_wettercom.cpp:189 rc.cpp:36
@@ -125,23 +116,20 @@ msgid "heavy rain"
 msgstr "şiddetli yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:190
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Light Freezing Rain"
 msgctxt "weather condition"
 msgid "light freezing rain"
-msgstr "Hafif donan yağmur"
+msgstr "hafif donan yağmur"
 
 #: ions/wetter.com/ion_wettercom.cpp:191
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Freezing rain"
 msgctxt "weather condition"
 msgid "freezing rain"
-msgstr "Donmuş yağmur"
+msgstr "donmuş yağmur"
 
 #: ions/wetter.com/ion_wettercom.cpp:192
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "light rain shower"
 msgctxt "weather condition"
@@ -149,7 +137,6 @@ msgid "light rain snow"
 msgstr "hafif sağanak yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:193
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "heavy rain shower"
 msgctxt "weather condition"
@@ -157,12 +144,11 @@ msgid "heavy rain snow"
 msgstr "şiddetli sağanak yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:194
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Snow"
 msgctxt "weather condition"
 msgid "snow"
-msgstr "Kar"
+msgstr "kar"
 
 #. i18n: file: bbcukmet_i18n.dat:29
 #: ions/wetter.com/ion_wettercom.cpp:195 ions/wetter.com/ion_wettercom.cpp:196
@@ -172,12 +158,11 @@ msgid "light snow"
 msgstr "hafif kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:197
-#, fuzzy
 #| msgctxt "visibility"
 #| msgid "Moderate"
 msgctxt "weather condition"
 msgid "moderate snow"
-msgstr "Orta"
+msgstr "kar"
 
 #. i18n: file: bbcukmet_i18n.dat:22
 #: ions/wetter.com/ion_wettercom.cpp:198 rc.cpp:44
@@ -186,12 +171,11 @@ msgid "heavy snow"
 msgstr "şiddetli kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:199 ions/wetter.com/ion_wettercom.cpp:201
-#, fuzzy
 #| msgctxt "weather forecast"
 #| msgid "Showers"
 msgctxt "weather condition"
 msgid "showers"
-msgstr "Sağanak"
+msgstr "sağanak"
 
 #. i18n: file: bbcukmet_i18n.dat:28
 #: ions/wetter.com/ion_wettercom.cpp:200 rc.cpp:56
@@ -206,7 +190,6 @@ msgid "heavy showers"
 msgstr "şiddetli sağanak"
 
 #: ions/wetter.com/ion_wettercom.cpp:203
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "light snow showers"
 msgctxt "weather condition"
@@ -214,7 +197,6 @@ msgid "light snow rain showers"
 msgstr "hafif sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:204
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "heavy snow showers"
 msgctxt "weather condition"
@@ -228,15 +210,13 @@ msgid "light snow showers"
 msgstr "hafif sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:206
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Snow Showers"
 msgctxt "weather condition"
 msgid "snow showers"
-msgstr "Sağanak Kar yağışı"
+msgstr "sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:207 ions/wetter.com/ion_wettercom.cpp:208
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "thunder storm"
 msgctxt "weather condition"
@@ -244,28 +224,25 @@ msgid "thunderstorm"
 msgstr "gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:209
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Light Thunderstorm Rain"
 msgctxt "weather condition"
 msgid "light thunderstorm"
-msgstr "Hafif Gök Gürültülü Fırtınalı Yağmur yağışı"
+msgstr "hafif gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:210
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "Heavy Thunderstorm Rain"
 msgctxt "weather condition"
 msgid "heavy thunderstorm"
-msgstr "Şiddetli Gök Gürültülü Fırtınalı Yağmur yağışı"
+msgstr "şiddetli gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:211
-#, fuzzy
 #| msgctxt "weather condition"
 #| msgid "na"
 msgctxt "weather condition"
 msgid "n/a"
-msgstr "na"
+msgstr "n/a"
 
 #. i18n: file: bbcukmet_i18n.dat:42
 #: ions/wetter.com/ion_wettercom.cpp:219 rc.cpp:84
@@ -284,23 +261,22 @@ msgstr "açık gökyüzü"
 #, kde-format
 msgctxt "Geographical location: city, state, ISO-country-code"
 msgid "%1, %2, %3"
-msgstr ""
+msgstr "%1, %2, %3"
 
 #: ions/wetter.com/ion_wettercom.cpp:380
 #, kde-format
 msgctxt "Geographical location: quarter (city), state, ISO-country-code"
 msgid "%1 (%2), %3, %4"
-msgstr ""
+msgstr "%1 (%2), %3, %4"
 
 #: ions/wetter.com/ion_wettercom.cpp:701
-#, fuzzy
 #| msgid "day"
 msgid "Day"
-msgstr "gün"
+msgstr "Gündüz"
 
 #: ions/wetter.com/ion_wettercom.cpp:710
 msgid "Night"
-msgstr ""
+msgstr "Gece"
 
 #: ions/envcan/ion_envcan.cpp:675 ions/envcan/ion_envcan.cpp:827
 #: ions/envcan/ion_envcan.cpp:828 ions/envcan/ion_envcan.cpp:829
