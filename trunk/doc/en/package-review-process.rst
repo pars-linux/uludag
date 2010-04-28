@@ -12,10 +12,10 @@ The package reviewing process steps on `Pardus Bug Tracking System
    'playground/review' directory under pardus SVN repository.
 
 #. If a bug is reported for requesting this new package on the bug tracking system,
-   the process is starting from this point.
+   the process starts at this point.
 
 #. The developer who wants to maintain this new package, assigns the bug report
-   to himself/herself and changes the bug status to ASSIGNED. This operation
+   to (him/her)self and changes the bug status to ASSIGNED. This operation
    can only be done by the members of bugzilla "editbugs" group.
 
 #. After the developer assigns the bug to (him/her)self, A new bug report which
@@ -58,26 +58,26 @@ The package reviewing process steps on `Pardus Bug Tracking System
    by the supervisor of the package component, then by an other package
    maintainer.
 
-   In order to complete the package reviewing process two approval is necessary.
+   In order to complete the package reviewing process 2 approval is necessary.
    One of these approvals should be given by component supervisor. If the package
    maintainer is also the component supervisor, the other package maintainers
    can give these two approvals.
 
-#. If the reviewer find any problem about the package in review, he/she should
-   wait for this problem to be fixed by the maintainer. In other words the
+#. If the reviewer finds any problem about the package in review, he/she should
+   wait for this problem to be fixed by the maintainer. In other words, the
    conditional approval is forbidden.
 
    Example: Bad:    After changing the directory paths, it will be ACK.
             Good:   It should change the directory paths.
 
    After the package maintainer has fixed the problem, the reviewer verifies
-   the problem and gives an "ACK" as a approval comment.
+   the problem and gives an "ACK" as an approval comment.
 
-#. The package that takes the necessary approvals, is taken to package repositories,
+#. The package that takes the necessary approvals, is taken into the package repositories,
    removed from the review directory and the bug status is changed to
    RESOLVED/FIXED.
 
 #. After the package is merged into Pardus Repositories and the review bug report
-   is closed, package request bug will be closed too. RESOLVED/FIXED solution can 
+   is closed, package request bug will be closed too. RESOLVED/FIXED solution can
    also be applied for this bug. Ideally, closing both review and request bugs at
    the same commit is preferred.
