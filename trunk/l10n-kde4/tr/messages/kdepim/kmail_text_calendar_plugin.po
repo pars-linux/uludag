@@ -2,24 +2,25 @@
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail_text_calendar_plugin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-08 06:41+0100\n"
-"PO-Revision-Date: 2009-11-04 19:01+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 10:22+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: text_calendar.cpp:269
 #, kde-format
 msgid "No attachment named \"%1\" found in the invitation."
-msgstr ""
+msgstr "Davetiyede \"%1\" adında bir eklenti bulunamadı."
 
 #: text_calendar.cpp:277
 #, kde-format
@@ -28,6 +29,10 @@ msgid ""
 "this computer. Please ask the event organizer to resend the invitation with "
 "this attachment stored inline instead of a link."
 msgstr ""
+"\"%1\" davetiye eklentisi bir ağ bağlantısı ve bağlantıya bu bilgisayardan "
+"erişilemez. "
+"Etkinlik organizatörü ile davetiyeyi bağlantı yerine eklenti olarak "
+"göndermesini rica edin. "
 
 #: text_calendar.cpp:333
 msgid "Incidence with no summary"
@@ -151,25 +156,24 @@ msgstr "\"%1\" eklentisini aç"
 
 #: attendeeselector.cpp:31
 msgid "Select Attendees"
-msgstr ""
+msgstr "Katılımcıları Seç"
 
 #: attendeeselector.cpp:41
 msgid "Click to add a new attendee"
-msgstr ""
+msgstr "Yeni katılımcı eklemek için tıklayın"
 
 #: delegateselector.cpp:34
 msgid "Select delegate"
-msgstr ""
+msgstr "Delege seç"
 
 #: delegateselector.cpp:41
-#, fuzzy
 #| msgid "Delegated: %1"
 msgid "Delegate:"
-msgstr "Yetki Verildi: %1"
+msgstr "Yetki ver:"
 
 #: delegateselector.cpp:44
 msgid "Keep me informed about status changes of this incidence."
-msgstr ""
+msgstr "Durum değişikliklerinde beni haberdar et."
 
 #. i18n: file: ui_attendeeselector.ui:20
 #. i18n: ectx: property (text), widget (KPushButton, addButton)
