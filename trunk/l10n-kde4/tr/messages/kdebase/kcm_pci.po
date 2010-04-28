@@ -4,13 +4,14 @@
 # Serdar Soytetir, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Gökçen Eraslan <gokcen@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_pci\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 05:57+0100\n"
-"PO-Revision-Date: 2010-04-21 10:53+0300\n"
-"Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-04-28 08:48+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,7 +41,7 @@ msgstr "Helge Deller"
 
 #: kcm_pci.cpp:71
 msgid "This list displays PCI information."
-msgstr "Liste PCI bilgilerini gösterir."
+msgstr "Bu liste PCI bilgilerini gösterir."
 
 #: kcm_pci.cpp:91
 msgid ""
@@ -132,7 +133,7 @@ msgstr "Özel devir yanıtı"
 
 #: kpci.cpp:169
 msgid "Memory write and invalidate"
-msgstr "Bellek yazma ve boşaltma"
+msgstr "Bellek yazma ve geçersiz kılma"
 
 #: kpci.cpp:170
 msgid "Palette snooping"
@@ -140,7 +141,7 @@ msgstr "Palet kullanımı"
 
 #: kpci.cpp:171
 msgid "Parity checking"
-msgstr "Eşitlik denetimi"
+msgstr "Eşitlik (Parite) denetimi"
 
 #: kpci.cpp:172
 msgid "Address/data stepping"
@@ -152,7 +153,7 @@ msgstr "Sistem hatası"
 
 #: kpci.cpp:174
 msgid "Back-to-back writes"
-msgstr ""
+msgstr "Önbellekten önbelleğe (back-to-back) yazma"
 
 #: kpci.cpp:182 kpci.cpp:435 kpci.cpp:537 kpci.cpp:563
 msgid "Status"
@@ -176,7 +177,7 @@ msgstr "Kullanıcı tarafından tanımlanabilir özellikler"
 
 #: kpci.cpp:187 kpci.cpp:352 kpci.cpp:367
 msgid "Accept fast back-to-back"
-msgstr ""
+msgstr "Hızlı önbellekten önbelleğe yazmayı kabul et"
 
 #: kpci.cpp:188 kpci.cpp:353 kpci.cpp:368
 msgid "Data parity error"
@@ -188,15 +189,15 @@ msgstr "Aygıt seçme zamanlaması"
 
 #: kpci.cpp:190 kpci.cpp:355 kpci.cpp:370
 msgid "Signaled target abort"
-msgstr "Sinyal ile hedef durdurma"
+msgstr "Sinyal verilmiş hedefin iptali"
 
 #: kpci.cpp:191 kpci.cpp:356 kpci.cpp:371
 msgid "Received target abort"
-msgstr "Hedef durdurma kabulü"
+msgstr "Alınmış hedefin iptali"
 
 #: kpci.cpp:192 kpci.cpp:357 kpci.cpp:372
 msgid "Received master abort"
-msgstr ""
+msgstr "Alınmış master iptali"
 
 #: kpci.cpp:193 kpci.cpp:358 kpci.cpp:373
 msgid "Signaled system error"
@@ -204,7 +205,7 @@ msgstr "Sinyallenmiş sistem hatası"
 
 #: kpci.cpp:194 kpci.cpp:359 kpci.cpp:374
 msgid "Parity error"
-msgstr "Eşitlik hatası"
+msgstr "Eşitlik (Parite) hatası"
 
 #: kpci.cpp:201
 msgid "Latency"
@@ -304,7 +305,7 @@ msgstr "İkincil yol numarası"
 
 #: kpci.cpp:330 kpci.cpp:337
 msgid "Subordinate bus number"
-msgstr "Alt bus sayısı"
+msgstr "Alt yol sayısı"
 
 #: kpci.cpp:331
 msgid "Secondary latency timer"
@@ -374,7 +375,7 @@ msgstr "VGA yönlendirme"
 
 #: kpci.cpp:419 kpci.cpp:489
 msgid "Master abort"
-msgstr ""
+msgstr "Master iptali"
 
 #: kpci.cpp:420
 msgid "Secondary bus reset"
@@ -382,11 +383,11 @@ msgstr "İkincil bus sıfırlama"
 
 #: kpci.cpp:421
 msgid "Secondary back-to-back writes"
-msgstr ""
+msgstr "İkincil önbellekten önbelleğe yazmalar"
 
 #: kpci.cpp:422
 msgid "Primary discard timer counts"
-msgstr ""
+msgstr "Birincil iptal zamanlayıcısı sayacı"
 
 #: kpci.cpp:422 kpci.cpp:423
 msgid "2e10 PCI clocks"
@@ -398,15 +399,15 @@ msgstr "2e15 PCI saati"
 
 #: kpci.cpp:423
 msgid "Secondary discard timer counts"
-msgstr ""
+msgstr "İkincil iptal zamanlayıcısı sayacı"
 
 #: kpci.cpp:424
 msgid "Discard timer error"
-msgstr ""
+msgstr "İptal zamanlayıcısı hatası"
 
 #: kpci.cpp:425
 msgid "Discard timer system error"
-msgstr ""
+msgstr "İptal zamanlayıcısı sistem hatası"
 
 #: kpci.cpp:434
 msgid "Expansion ROM"
@@ -451,7 +452,7 @@ msgstr "Pencere 1 öneşlenebilir belleği"
 
 #: kpci.cpp:493
 msgid "Post writes"
-msgstr ""
+msgstr "Sonradan yazmalar"
 
 #: kpci.cpp:501
 msgid "Raw PCI config space"
@@ -467,7 +468,7 @@ msgstr "Sürüm"
 
 #: kpci.cpp:525
 msgid "Clock required for PME generation"
-msgstr ""
+msgstr "PME üretimi için saat gerekli"
 
 #: kpci.cpp:526
 msgid "Device-specific initialization required"
@@ -475,7 +476,7 @@ msgstr "Aygıta özel başlatma gerekiyor"
 
 #: kpci.cpp:527
 msgid "Maximum auxiliary current required in D3 cold"
-msgstr ""
+msgstr "D3 soğuk durumunda gerekli maksimum yardımcı akım"
 
 #: kpci.cpp:528
 msgid "D1 support"
@@ -535,7 +536,7 @@ msgstr "Köprü durumu"
 
 #: kpci.cpp:546
 msgid "Secondary bus state in D3 hot"
-msgstr ""
+msgstr "D3 sıcak durumunda ikincil yol durumu"
 
 #: kpci.cpp:546
 msgid "B2"
@@ -568,7 +569,7 @@ msgstr "AGP 3.0 kipi"
 
 #: kpci.cpp:566 kpci.cpp:586
 msgid "Fast Writes"
-msgstr "Hızlı Yazar"
+msgstr "Hızlı Yazmalar"
 
 #: kpci.cpp:567 kpci.cpp:588
 msgid "Address over 4 GiB"
@@ -576,7 +577,7 @@ msgstr "4 GB üzerindeki adres"
 
 #: kpci.cpp:569
 msgid "Translation of host processor access"
-msgstr ""
+msgstr "Ana işlemci erişimi çevrimi"
 
 #: kpci.cpp:570 kpci.cpp:589
 msgid "64-bit GART"
@@ -644,7 +645,7 @@ msgstr "64-bit adresi"
 
 #: kpci.cpp:629
 msgid "Per vector masking"
-msgstr ""
+msgstr "Vektör başına maskeleme"
 
 #: kpci.cpp:637 kpci.cpp:645
 msgid "Mask"
@@ -770,7 +771,7 @@ msgstr "Girdi aygıtı denetleyici"
 
 #: kpci_private.h:448 kpci_private.h:543
 msgid "Docking station"
-msgstr ""
+msgstr "Dok istasyonu"
 
 #: kpci_private.h:449
 msgid "Processor"
@@ -854,7 +855,7 @@ msgstr "Ethernet denetleyici"
 
 #: kpci_private.h:477
 msgid "Token ring network controller"
-msgstr ""
+msgstr "Simgeli halka (Token Ring) ağı denetleyicisi"
 
 #: kpci_private.h:478
 msgid "FDDI network controller"
@@ -870,7 +871,7 @@ msgstr "ISDN denetleyici"
 
 #: kpci_private.h:481
 msgid "WorldFip controller"
-msgstr ""
+msgstr "WorldFip denetleyicisi"
 
 #: kpci_private.h:482
 msgid "PICMG 2.14 multi computing"
@@ -926,7 +927,7 @@ msgstr "Bilinmeyen bellek denetleyici"
 
 #: kpci_private.h:503
 msgid "Host bridge"
-msgstr ""
+msgstr "Ana makine (Host) köprüsü"
 
 #: kpci_private.h:504
 msgid "ISA bridge"
@@ -966,7 +967,7 @@ msgstr "Yarı geçirgen PCI-PCI köprüsü"
 
 #: kpci_private.h:513
 msgid "InfiniBand to PCI host bridge"
-msgstr ""
+msgstr "Infiniband-PCI ana makine köprüsü"
 
 #: kpci_private.h:515
 msgid "Unknown bridge"
@@ -1018,7 +1019,7 @@ msgstr "RTC"
 
 #: kpci_private.h:530
 msgid "PCI Hot-plug controller"
-msgstr ""
+msgstr "PCI Tak-çalıştır (Hot-plug) denetleyicisi"
 
 #: kpci_private.h:531
 msgid "System peripheral"
@@ -1054,11 +1055,11 @@ msgstr "Bilinmeyen girdi aygıtı denetleyici"
 
 #: kpci_private.h:542
 msgid "Generic docking station"
-msgstr ""
+msgstr "Genel dok istasyonu"
 
 #: kpci_private.h:544
 msgid "Unknown docking station"
-msgstr ""
+msgstr "Bilinmeyen dok istasyonu"
 
 #: kpci_private.h:546
 msgid "386"
@@ -1110,7 +1111,7 @@ msgstr "USB denetleyici"
 
 #: kpci_private.h:559
 msgid "Fibre channel"
-msgstr ""
+msgstr "Fiber kanal"
 
 #: kpci_private.h:560
 msgid "SMBus"
@@ -1138,15 +1139,15 @@ msgstr "Bilinmeyen seri yol denetleyici"
 
 #: kpci_private.h:567
 msgid "IRDA controller"
-msgstr "Kızılötesi denetleyici"
+msgstr "IRDA denetleyici"
 
 #: kpci_private.h:568
 msgid "Consumer IR controller"
-msgstr ""
+msgstr "Kızılötesi denetleyici"
 
 #: kpci_private.h:569
 msgid "RF controller"
-msgstr ""
+msgstr "RF denetleyici"
 
 #: kpci_private.h:570
 msgid "Bluetooth"
@@ -1182,7 +1183,7 @@ msgstr "Uydu TV denetleyici"
 
 #: kpci_private.h:581
 msgid "Satellite audio communication controller"
-msgstr "Uydu iletişimi ses denetleyici"
+msgstr "Uydu ses iletişimi denetleyici"
 
 #: kpci_private.h:582
 msgid "Satellite voice communication controller"
@@ -1190,7 +1191,7 @@ msgstr "Uydu sesli iletişim denetleyici"
 
 #: kpci_private.h:583
 msgid "Satellite data communication controller"
-msgstr "Uydu iletişimi veri iletişimi denetleyici"
+msgstr "Uydu veri iletişimi denetleyici"
 
 #: kpci_private.h:584
 msgid "Unknown satellite communications controller"
@@ -1254,7 +1255,7 @@ msgstr "Normal şifreleme çözme"
 
 #: kpci_private.h:612
 msgid "Subtractive decode"
-msgstr ""
+msgstr "Çıkarmalı (Subtractive) kod çözme"
 
 #: kpci_private.h:614
 msgid "Transparent mode"
@@ -1266,11 +1267,11 @@ msgstr "Bitiş noktası kipi"
 
 #: kpci_private.h:617
 msgid "Primary bus towards host CPU"
-msgstr ""
+msgstr "Ana işlemciye doğru birincil yol"
 
 #: kpci_private.h:618
 msgid "Secondary bus towards host CPU"
-msgstr ""
+msgstr "Ana işlemciye doğru ikincil yol"
 
 #: kpci_private.h:620
 msgid "8250"
@@ -1422,7 +1423,7 @@ msgstr "Klavye denetleyici biçimi"
 
 #: kpci_private.h:671
 msgid "Block transfer"
-msgstr ""
+msgstr "Blok transferi"
 
 #: kpci_private.h:681
 msgid "Vital product data"
@@ -1430,11 +1431,11 @@ msgstr "Yaşamsal ürün verileri"
 
 #: kpci_private.h:682
 msgid "Slot identification"
-msgstr ""
+msgstr "Slot tanımlaması"
 
 #: kpci_private.h:684
 msgid "CompactPCI hot swap"
-msgstr ""
+msgstr "CompactPCI hot swap"
 
 #: kpci_private.h:685
 msgid "PCI-X"
@@ -1442,7 +1443,7 @@ msgstr "PCI-X"
 
 #: kpci_private.h:686
 msgid "HyperTransport"
-msgstr ""
+msgstr "HyperTransport"
 
 #: kpci_private.h:687
 msgid "Vendor specific"
@@ -1454,11 +1455,11 @@ msgstr "Hata ayıklama portu"
 
 #: kpci_private.h:689
 msgid "CompactPCI central resource control"
-msgstr ""
+msgstr "CompactPCI merkezi kaynak denetimi"
 
 #: kpci_private.h:690
 msgid "PCI hot-plug"
-msgstr ""
+msgstr "PCI tak-çalıştır (hot-plug)"
 
 #: kpci_private.h:691
 msgid "AGP x8"
@@ -1619,4 +1620,5 @@ msgstr "16 vektör"
 #: kpci_private.h:776
 msgid "32 vectors"
 msgstr "32 vektör"
+
 
