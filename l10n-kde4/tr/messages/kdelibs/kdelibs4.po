@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2010-04-28 08:58+0300\n"
+"PO-Revision-Date: 2010-04-28 09:23+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1402,7 +1402,6 @@ msgstr "... buradaki <b>yanlış yazılan</b> kelime ..."
 #. i18n: file: kdeui/sonnet/sonnetui.ui:98
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_addBtn)
 #: rc.cpp:625 rc.cpp:1031
-#, fuzzy
 #| msgid ""
 #| "<qt>\n"
 #| "<p>The unknown word was detected and considered unknown because it is not "
@@ -1422,14 +1421,6 @@ msgid ""
 "or <b>Ignore All</b> instead.</p>\n"
 "</qt>"
 msgstr ""
-"<qt>\n"
-"<p>Bilinmeyen kelime sözlükte bulunamadığı için bilinmeyen olarak "
-"işaretlendi.<br>\n"
-"Eğer kelimenin yanlış yazıldığını düşünmüyorsanız ve ileriki "
-"denetimlerdeyanlış olarak tanımlanmasını istemiyorsanız buraya tıklayın. "
-"Eğer kelimeyi olduğu gibi bırakmak, fakat sözlüğe eklemek istemiyorsanız, "
-"<b>Yoksay</b> veya <b>Tümünü Yoksay</b> düğmesine tıklayın.</p>\n"
-"</qt>"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:101
 #. i18n: ectx: property (text), widget (QPushButton, m_addBtn)
@@ -2508,12 +2499,12 @@ msgstr "Tüm içerilenleri listele (eski)."
 #: nepomuk/rcgen/rcgen.cpp:68
 msgid ""
 "List all header files that will be generated via the --writeall command."
-msgstr ""
+msgstr "--writeall komutuyla üretilen tüm başlık dosyalarını listele."
 
 #: nepomuk/rcgen/rcgen.cpp:69
 msgid ""
 "List all source files that will be generated via the --writeall command."
-msgstr ""
+msgstr "--writeall komutuyla üretilen tüm kaynak dosyaları listele."
 
 #: nepomuk/rcgen/rcgen.cpp:70
 msgid ""
@@ -2876,7 +2867,7 @@ msgstr "Lütfen adı giriniz."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:227
 msgid "Creating Content on Server..."
-msgstr ""
+msgstr "İçerik Sunucuda Oluşturuluyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:268
 msgid "There was a network error."
@@ -2900,7 +2891,7 @@ msgstr "Önizleme ve içerik gönderiliyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:288
 msgid "Uploading content..."
-msgstr ""
+msgstr "İçerik gönderiliyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:292
 #| msgid "Loading Preview"
@@ -3079,10 +3070,9 @@ msgstr ""
 "olduğuna emin olun, aksi takdirde kaynağı imzalamak mümkün olmayacak.</qt>"
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:339
-#, fuzzy
 #| msgid "Could not construct value"
 msgid "Could not get account balance."
-msgstr "Değer düzenlenemedi"
+msgstr ""
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:351
 #, kde-format
@@ -3092,6 +3082,8 @@ msgid ""
 "This items costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
+"Bu öğenin fiyatı %1 %2.\n"
+"Satın almak istiyor musunuz?"
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:362
 #, kde-format
@@ -3117,7 +3109,7 @@ msgstr "Oylama başarısız."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:426
 msgid "You are now a fan."
-msgstr ""
+msgstr "Hayranı oldunuz."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:428
 #| msgid "Could not create temporary file."
@@ -4098,7 +4090,7 @@ msgstr ""
 
 #: kdecore/kernel/ktoolinvocation.cpp:80
 msgid "Function must be called from the main thread."
-msgstr ""
+msgstr "Fonksiyon ana thread'de çağrılmalı."
 
 #: kdecore/kernel/ktoolinvocation.cpp:121
 #, kde-format
@@ -5884,7 +5876,6 @@ msgstr ""
 "almayacaktır.</p> </qt>"
 
 #: khtml/khtml_printsettings.cpp:56
-#, fuzzy
 #| msgid ""
 #| "<qt><p><strong>'Printerfriendly mode'</strong></p><p>If this checkbox is "
 #| "enabled, the printout of the HTML document will be black and white only, "
@@ -5905,15 +5896,6 @@ msgid ""
 "grayscale, if you use a black+white printer). Printout will possibly happen "
 "more slowly and will probably use more toner or ink.</p> </qt>"
 msgstr ""
-"<qt><p><strong>'Yazıcı-Dostu Kipi'</strong></p><p>Eğer bu onay kutucuğu "
-"etkinleştirilmişse, HTML belgenin yazıcı çıktısı sadece  siyah-beyaz olacak "
-"ve renkli arkaplan beyaz'a çevrilecektir. Çıktı daha hızlı ve daha az "
-"mürekkep veya toner tüketmiş olacaktır.</p><p>Onay kutucuğu "
-"etkisizleştirilmişse, HTML belgenin yazıcı çıktısı, uygulamanızda  göründüğü "
-"gibi kendi renk ayarlarında olacaktır. Bu, tüm sayfanın tüm alanlarının  "
-"renkli ( ya da gri-tonlamalı, -eğer siyah-beyaz yazıcı kullanıyorsanız ) "
-"yazdırılmasını  sağlar. Çıktınız muhtemelen daha yavaş olacaktır. Kesin "
-"olan, çok daha fazla mürekkep veya toner tüketmiş olacağınızdır. </p> </qt>"
 
 #: khtml/khtml_printsettings.cpp:71
 msgid "HTML Settings"
@@ -8501,7 +8483,6 @@ msgid ""
 msgstr "Rapor gönderilmeden önce bir konu ve bir açıklama belirtmelisiniz."
 
 #: kdeui/dialogs/kbugreport.cpp:428
-#, fuzzy
 #| msgid ""
 #| "<p>You chose the severity <b>Critical</b>. Please note that this severity "
 #| "is intended only for bugs that</p><ul><li>break unrelated software on the "
@@ -8519,15 +8500,8 @@ msgid ""
 "<p>Does the bug you are reporting cause any of the above damage? If it does "
 "not, please select a lower severity. Thank you.</p>"
 msgstr ""
-"<p>Önem derecesini <b>Kritik</b> olarak seçtiniz. Bu önem derecesi </"
-"p><ul><li>programın, diğer paketlerin çalışmasına etkileyeceği, ya da </"
-"li><li>programın kurulu olduğu sistemde güvenlik açıklarının oluştuğu "
-"durumlarda seçilir.</li></ul>\n"
-"<p>Raporladığınız hata yukarıdaki zararlardan birisini veriyor mu? Eğer "
-"vermiyorsa, daha düşük bir önem derecesi seçin. Teşekkürler!</p>"
 
 #: kdeui/dialogs/kbugreport.cpp:439
-#, fuzzy
 #| msgid ""
 #| "<p>You chose the severity <b>Grave</b>. Please note that this severity is "
 #| "intended only for bugs that</p><ul><li>make the package in question "
@@ -8545,12 +8519,6 @@ msgid ""
 "<p>Does the bug you are reporting cause any of the above damage? If it does "
 "not, please select a lower severity. Thank you.</p>"
 msgstr ""
-"<p>Önem derecesini <b>Önemli</b> olarak seçtiniz. Bu önem derecesi</"
-"p><ul><li>uygulamanınn kullanmı  sırasında veri kaybının yaşanabileceği,</"
-"li><li>paketin tamamen kullanılamaz durumda olduğu</li><li>ya dauygulamanınn "
-"bir güvenlik açığı oluşturduğu durumlarda seçilir.</li></ul>\n"
-"<p>Raporladığınız hata yukarıdaki zararlardan birisini veriyor mu? "
-"Eğervermiyorsa, daha düşük bir önem derecesi seçin. Teşekkürler!</p>"
 
 #: kdeui/dialogs/kbugreport.cpp:453
 #| msgid ""
@@ -8848,7 +8816,7 @@ msgstr "Hemen Yazdır"
 
 #: kdeui/dialogs/kcupsoptionsjobwidget_p.cpp:91
 msgid "Hold Indefinitely"
-msgstr ""
+msgstr "Süresiz Olarak Beklet"
 
 #: kdeui/dialogs/kcupsoptionsjobwidget_p.cpp:92
 msgid "Day (06:00 to 17:59)"
@@ -8912,7 +8880,7 @@ msgstr "Çift Sayfalar"
 
 #: kdeui/dialogs/kcupsoptionssettingswidget_p.cpp:79
 msgid "Page Set"
-msgstr ""
+msgstr "Sayfa Seç"
 
 #: kdeui/dialogs/kpixmapregionselectordialog.cpp:47
 msgid "Select Region of Image"
@@ -10611,7 +10579,7 @@ msgstr "Moğolca"
 #: kdeui/widgets/kcharselect-translation.cpp:83
 msgctxt "KCharselect unicode block name"
 msgid "Unified Canadian Aboriginal Syllabics Extended"
-msgstr ""
+msgstr "Unified Canadian Aboriginal Syllabics Extended"
 
 #: kdeui/widgets/kcharselect-translation.cpp:84
 msgctxt "KCharselect unicode block name"
@@ -11844,7 +11812,7 @@ msgid "Shortcut '%1' for action '%2'\n"
 msgstr "'%2' eylemi için %1 kısayolu\n"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:263
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "The \"%1\" shortcut is ambiguous with the following shortcuts.\n"
 #| "Do you want to assign an empty shortcut to these actions?\n"
@@ -11859,9 +11827,6 @@ msgid_plural ""
 "Do you want to assign an empty shortcut to these actions?\n"
 "%3"
 msgstr[0] ""
-"\"%1\" kısayolu aşağıdaki kısayollar nedeni ile belirsiz durumda.\n"
-"Bu eylemler için boş birer kısayol atamak ister misiniz?\n"
-"%2"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:281
 msgid "Shortcut conflict"
@@ -11881,6 +11846,8 @@ msgid ""
 "Click on the button, then enter the shortcut like you would in the program.\n"
 "Example for Ctrl+a: hold the Ctrl key and press a."
 msgstr ""
+"Düğmeye tıklayın, ardından kısayol tuşlarına basın.\n"
+"Ctrl+a örneği için: Ctrl tuşuna basılı tutun ve a tuşuna basın."
 
 #: kdeui/widgets/kkeysequencewidget.cpp:520
 msgid "Reserved Shortcut"
