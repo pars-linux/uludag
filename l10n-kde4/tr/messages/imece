@@ -11,7 +11,7 @@
 [ ] kdenetwork        -> ozan
 [ ] kdepim            -> fatih,ibrahim
 [ ] kdepimlibs        -> ibrahim
-[ ] kdeplasma-addons  -> gokmen,ibrahim
+[X] kdeplasma-addons  -> gokmen,ibrahim
 [ ] kdesdk            -> mete
 [X] kdetoys           -> isil
 [ ] kdeutils          -> ibrahim
