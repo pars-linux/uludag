@@ -54,26 +54,26 @@ The package reviewing process steps on `Pardus Bug Tracking System
      BUG:COMMENT:<Bug ID>
 
 #. In order to decide that the package is suitable for a package repository, it
-   should take necessary number of ACKs. The ACK comments will be given firstly
+   should take necessary number of approvals. The approval comments will be given firstly
    by the supervisor of the package component, then by an other package
    maintainer.
 
-   In order to complete the package reviewing process two ACKs is necessary.
-   One of these ACKs should be given by component supervisor. If the package
+   In order to complete the package reviewing process two approval is necessary.
+   One of these approvals should be given by component supervisor. If the package
    maintainer is also the component supervisor, the other package maintainers
-   can give these two ACKs.
+   can give these two approvals.
 
 #. If the reviewer find any problem about the package in review, he/she should
    wait for this problem to be fixed by the maintainer. In other words the
-   conditional ACK is forbidden.
+   conditional approval is forbidden.
 
    Example: Bad:    After changing the directory paths, it will be ACK.
             Good:   It should change the directory paths.
 
    After the package maintainer has fixed the problem, the reviewer verifies
-   the problem and gives an ACK as a comment.
+   the problem and gives an "ACK" as a approval comment.
 
-#. The package that takes the necessary ACKs, is taken to package repositories,
+#. The package that takes the necessary approvals, is taken to package repositories,
    removed from the review directory and the bug status is changed to
    RESOLVED/FIXED.
 

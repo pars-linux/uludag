@@ -44,26 +44,26 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 
    şeklinde bir satır eklenerek ilgili hataya yorum olarak iletilmesi sağlanır.
 
-#. Paketin uygun olduğuna karar verilebilmesi için yeterli sayıda ACK alması
-   gerekmektedir. ACK'ler, başta ilgili bileşen sorumluları olmak üzere diğer
+#. Paketin uygun olduğuna karar verilebilmesi için yeterli sayıda onay alması
+   gerekmektedir. Onaylar, başta ilgili bileşen sorumluları olmak üzere diğer
    geliştiriciler tarafından hata takip sisteminde yorum olarak verilir.
 
-   Süreçin tamamlanması için en az 2 (iki) ACK alınması gerekir. Bu ACK'lerden
+   Süreçin tamamlanması için en az 2 (iki) onay alınması gerekir. Bu onaylardan
    en az biri, ilgili bileşenlerin sorumlularından olmalıdır. Paket sahibinden
-   başka bileşen sorumlusu olmadığı durumda herhangi bir geliştirici ACK
+   başka bileşen sorumlusu olmadığı durumda herhangi bir geliştirici onay
    verebilir.
 
-#. Paketi gözden geçirmek isteyen geliştirici, herhangi bir hata bulursa ACK
-   vermek için hatanın düzeltilmesini beklemelidir. Şartlı ACK verilmemelidir.
+#. Paketi gözden geçirmek isteyen geliştirici, herhangi bir hata bulursa onay
+   vermek için hatanın düzeltilmesini beklemelidir. Şartlı onay verilmemelidir.
 
    Örneğin: YANLIŞ: Dosya izinlerini değiştirdikten sonra ACK.
             DOĞRU : Dosya izinlerinin düzenlenmesi gerek.
 
-   Paketçi, ACK için ön koşul olan kriteri yerine getirdikten sonra inceleme
-   yapan kişi değişikliğin doğruluğunu kontrol eder ve yorum olarak "ACK"
+   Paketçi, onay için ön koşul olan kriteri yerine getirdikten sonra inceleme
+   yapan kişi değişikliğin doğruluğunu kontrol eder ve onay yorumu olarak "ACK"
    yazar.
 
-#. Yeterli sayıda ACK alan paket, sahibi tarafından depoya alınır, review
+#. Yeterli sayıda onay alan paket, sahibi tarafından depoya alınır, review
    dizininden silinir ve hata raporunun durumu KARAR VERİLDİ/ÇÖZÜLDÜ olarak
    değiştirilir.
 
