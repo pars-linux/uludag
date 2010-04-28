@@ -439,104 +439,86 @@ msgid "Not found"
 msgstr "Bulunamadı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:93
-#, fuzzy
 msgid "Out of memory"
 msgstr "Yetersiz kaynak"
 
 #: 3rdparty/phonon/mmf/utils.cpp:95
-#, fuzzy
 msgid "Not supported"
-msgstr "Adres tipi desteklenmiyor"
+msgstr "Desteklenmiyor"
 
 #: 3rdparty/phonon/mmf/utils.cpp:97
-#, fuzzy
 msgid "Overflow"
-msgstr "Altı Çizili"
+msgstr "Taşma"
 
 #: 3rdparty/phonon/mmf/utils.cpp:99
-#, fuzzy
 msgid "Underflow"
-msgstr "Altı Çizili"
+msgstr "Taşma"
 
 #: 3rdparty/phonon/mmf/utils.cpp:101
-#, fuzzy
 msgid "Already exists"
-msgstr "%1: zaten var"
+msgstr "Zaten var"
 
 #: 3rdparty/phonon/mmf/utils.cpp:103
-#, fuzzy
 msgid "Path not found"
-msgstr "Makine bulunamadı"
+msgstr "Yol bulunamadı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:105
-#, fuzzy
 msgid "In use"
-msgstr "Ekle"
+msgstr "Kullanımda"
 
 #: 3rdparty/phonon/mmf/utils.cpp:107
-#, fuzzy
 msgid "Not ready"
-msgstr "Adres tipi desteklenmiyor"
+msgstr "Hazır değil"
 
 #: 3rdparty/phonon/mmf/utils.cpp:109
-#, fuzzy
 msgid "Access denied"
 msgstr "İzin verilmedi"
 
 #: 3rdparty/phonon/mmf/utils.cpp:111
-#, fuzzy
 msgid "Could not connect"
-msgstr "Dosya açılamadı."
+msgstr "Bağlanamadı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:113
-#, fuzzy
 msgid "Disconnected"
-msgstr "Soket bağlı değil"
+msgstr "Bağlı değil"
 
 #: 3rdparty/phonon/mmf/utils.cpp:115
 #: network/socket/qnativesocketengine.cpp:230
-#, fuzzy
 msgid "Permission denied"
 msgstr "İzin verilmedi"
 
 #: 3rdparty/phonon/mmf/utils.cpp:119
 msgid "Insufficient bandwidth"
-msgstr ""
+msgstr "Yetersiz bant genişliği"
 
 #: 3rdparty/phonon/mmf/utils.cpp:122
-#, fuzzy
 msgid "Network unavailable"
 msgstr "Ağ erişilemez durumda"
 
 #: 3rdparty/phonon/mmf/utils.cpp:126
-#, fuzzy
 msgid "Network communication error"
-msgstr "Ağ hatası"
+msgstr "Ağ bağlantı hatası"
 
 #: 3rdparty/phonon/mmf/utils.cpp:128
-#, fuzzy
 msgid "Streaming not supported"
-msgstr "İşlemi %1 üzerinde desteklenmiyor"
+msgstr "Yayınlama desteği yok"
 
 #: 3rdparty/phonon/mmf/utils.cpp:130
-#, fuzzy
 msgid "Server alert"
-msgstr "%1: ftok başarısız oldu"
+msgstr "Sunucu alarmı"
 
 #: 3rdparty/phonon/mmf/utils.cpp:132
-#, fuzzy
 msgid "Invalid protocol"
-msgstr "Geçersiz dosya adı"
+msgstr "Geçersiz protoko"
 
 #: 3rdparty/phonon/mmf/utils.cpp:134
 #: 3rdparty/webkit/WebKit/qt/tests/qwebframe/tst_qwebframe.cpp:2202
-#, fuzzy
 msgid "Invalid URL"
-msgstr "Geçersiz Adres: %1"
+msgstr "Geçersiz Adres"
 
 #: 3rdparty/phonon/mmf/utils.cpp:136
 msgid "Multicast error"
-msgstr ""
+msgstr "Çoklu yayın hatası"
 
 #: 3rdparty/phonon/mmf/utils.cpp:139
 #, fuzzy
