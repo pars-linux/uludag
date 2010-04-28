@@ -8,18 +8,19 @@
 # Ahmet Emre Aladağ <emre@emrealadag.com>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:23+0200\n"
-"PO-Revision-Date: 2009-11-15 23:28+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 10:06+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: conf/pluginselector.cpp:26 conf/preferencesdialog.cpp:78
@@ -263,6 +264,11 @@ msgid ""
 "\n"
 "Download it again?"
 msgstr ""
+"Aşağıdaki konum için zaten tamamlanmış bir indirme yapmışsınız: \n"
+"\n"
+"%1\n"
+"\n"
+"Yeniden yüklensin mi?"
 
 #: core/kget.cpp:924
 msgid "Download it again?"
@@ -277,6 +283,11 @@ msgid ""
 "\n"
 "Delete it and download again?"
 msgstr ""
+"Aşağıdaki konumdan yapılan bir indirme işleminiz şu an devam ediyor: \n"
+"\n"
+"%1\n"
+"\n"
+"Silinip tekrar yüklensin mi?"
 
 #: core/kget.cpp:937
 msgid "Delete it and download again?"
@@ -292,6 +303,9 @@ msgid ""
 "\n"
 "Download and delete the previous one?"
 msgstr ""
+"Bu dosyayı zaten başka bir konumdan indirmişsiniz.\n"
+"\n"
+"Eski indirilen silinip yeniden indirilsin mi?"
 
 #: core/kget.cpp:996
 msgid "File already downloaded. Download anyway?"
@@ -374,10 +388,9 @@ msgid "Signature"
 msgstr "İmza"
 
 #: core/kgetkjobadapter.cpp:43
-#, fuzzy
 #| msgid "KGet Transfer List"
 msgid "KGet Transfer"
-msgstr "KGet Aktarım Listesi"
+msgstr "KGet Aktarımı"
 
 #: core/verifier.cpp:410
 msgctxt "the type of the hash, e.g. MD5"
@@ -407,7 +420,7 @@ msgstr ""
 
 #: core/verifier.cpp:1193
 msgid "Signature not verified"
-msgstr ""
+msgstr "İmza doğrulanmadı"
 
 #: core/verifier.cpp:1298
 msgid ""
@@ -545,17 +558,17 @@ msgstr "Adres:"
 
 #: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:197
 #: transfer-plugins/kio/transferKio.cpp:293
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "The download (%1) could not be verfied. Do you want to repair it?"
 msgid "The download (%1) could not be verified. Do you want to repair it?"
 msgstr "İndirme (%1) doğrulanamadı. Onarmak istiyor musunuz?"
 
 #: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:200
 #: transfer-plugins/kio/transferKio.cpp:296
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "The download (%1) could not be verfied. Do you want to repair it?"
 msgid "The download (%1) could not be verified. Do you want to redownload it?"
-msgstr "İndirme (%1) doğrulanamadı. Onarmak istiyor musunuz?"
+msgstr "İndirme (%1) doğrulanamadı. Yeniden indirmek istiyor musunuz?"
 
 #: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:204
 #: transfer-plugins/kio/transferKio.cpp:300
@@ -620,12 +633,13 @@ msgid "File Selection"
 msgstr "Dosya Seçimi"
 
 #: transfer-plugins/metalink/metalink.cpp:515
-#, fuzzy
 #| msgid "The download (%1) could not be verfied. Do you want to repair it?"
 msgid ""
 "The download could not be verified, do you want to repair (if repairing does "
 "not work the download would be restarted) it?"
-msgstr "İndirme (%1) doğrulanamadı. Onarmak istiyor musunuz?"
+msgstr ""
+"İndirme doğrulanamadıi onarmak istiyor musunuz (onarma başarılı "
+"olmazsa indirme işlemi yeniden başlayacak)?"
 
 #: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:42
 msgid "Add item"
@@ -661,7 +675,7 @@ msgstr "Dosyayı sil"
 
 #: transfer-plugins/checksumsearch/checksumsearch.cpp:30
 msgid "Replace file-ending"
-msgstr ""
+msgstr "Dosya-sonlarını değiştir"
 
 #: transfer-plugins/mmsclient/mmsTransfer.cpp:38
 #: transfer-plugins/mms/mmsTransfer.cpp:36
@@ -1295,7 +1309,7 @@ msgstr "Bir yönlendirme konumu olmaksızın yeniden yönlendir"
 #: transfer-plugins/bittorrent/libbtcore/tracker/httptracker.cpp:559
 #, kde-format
 msgid "Timeout contacting tracker %1"
-msgstr ""
+msgstr "%1 izleyiciyle bağlantıda zaman aşımı"
 
 #: transfer-plugins/bittorrent/libbtcore/tracker/udptracker.cpp:331
 #, kde-format
@@ -1609,7 +1623,7 @@ msgstr "Disk Girdisi/Çıktısı"
 
 #: ui/metalinkcreator/dragdlg.cpp:67
 msgid "Import dropped files"
-msgstr ""
+msgstr "Bırakılan dosyaları içeri aktar"
 
 #: ui/metalinkcreator/dragdlg.cpp:90 ui/metalinkcreator/filedlg.cpp:61
 #: ui/metalinkcreator/filedlg.cpp:169
@@ -1737,7 +1751,6 @@ msgid "Mirror"
 msgstr "Yansı"
 
 #: ui/mirror/mirrormodel.cpp:386
-#, fuzzy
 #| msgid "Priority"
 msgctxt "The priority of the mirror"
 msgid "Priority"
@@ -1968,15 +1981,15 @@ msgstr "Sınırsız"
 msgctxt ""
 "Signature here is meant in cryptographic terms, so the signature of a file."
 msgid "Signature of %1."
-msgstr ""
+msgstr "%1 imzası."
 
 #: ui/signaturedlg.cpp:59
 msgid "This option is not supported for the current transfer."
-msgstr ""
+msgstr "Mevcut aktarım için bu seçenek desteklenmiyor."
 
 #: ui/signaturedlg.cpp:105
 msgid "You need to define a signature."
-msgstr ""
+msgstr "Bir imza tanımlamanız gerekiyor."
 
 #: ui/signaturedlg.cpp:109
 msgid ""
@@ -2018,7 +2031,7 @@ msgstr ""
 
 #: ui/signaturedlg.cpp:189
 msgid "Trust level of the key is unclear."
-msgstr ""
+msgstr "Anahtarın güven seviyesi belli değil."
 
 #: ui/signaturedlg.cpp:219
 msgid "Unlimited"
@@ -2030,14 +2043,13 @@ msgid "Verified"
 msgstr "Doğrulanmış"
 
 #: ui/signaturedlg.cpp:236
-#, fuzzy
 #| msgid "%1 %2 has been successfully added."
 msgid "The signature has been verified successfully."
-msgstr "%1 %2 başarılı bir şekilde eklendi."
+msgstr "İmza başarılı bir şekilde doğrulandı."
 
 #: ui/signaturedlg.cpp:242
 msgid "The signature has been verified successfully:"
-msgstr ""
+msgstr "İmza başarılı bir şekilde doğrulandı:"
 
 #: ui/signaturedlg.cpp:245
 msgctxt "pgp signature is not verified"
@@ -2058,7 +2070,7 @@ msgstr ""
 
 #: ui/signaturedlg.cpp:266
 msgid "Feature is not supported, as KGet is not compiled with QPGME support."
-msgstr ""
+msgstr "KGet QPGME desteği ile derlenmediğinden bu özellik desteklenmiyor."
 
 #: ui/signaturedlg.cpp:275
 msgid "Error:"
@@ -2256,11 +2268,11 @@ msgstr "Bağlantı Yok"
 
 #: extensions/konqueror/kget_plug_in.cpp:284
 msgid "Unable to communicate with the KGet download manager!"
-msgstr ""
+msgstr "KGet indirme yöneticisi ile iletişime geçilemiyor!"
 
 #: extensions/konqueror/kget_plug_in.cpp:285
 msgid "Communication Error"
-msgstr ""
+msgstr "İletişim Hatası"
 
 #: extensions/webinterface/httpserver.cpp:36
 #, kde-format
@@ -2661,6 +2673,8 @@ msgid ""
 "<p>The following file has finished downloading:</p><p style=\"font-size: "
 "small;\">                      %1</p>"
 msgstr ""
+"<p>Aşağıdaki dosyajnın indirme işlemi bitti:</p><p style=\"font-size: "
+"small;\">                      %1</p>"
 
 #: mainwindow.cpp:521
 msgid ""
@@ -3229,7 +3243,7 @@ msgstr "Tanım:"
 #. i18n: ectx: property (text), widget (KTitleWidget, ktitlewidget)
 #: rc.cpp:284
 msgid "Select the files you want to be downloaded."
-msgstr ""
+msgstr "İndirmek istediğiniz dosyaları seçin."
 
 #. i18n: file: transfer-plugins/metalink/dlgmetalink.ui:22
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -3607,6 +3621,8 @@ msgid ""
 "Automatically create checksums for the selected types. Keep in mind that "
 "this might take a while."
 msgstr ""
+"Seçili tipler için checksum dosyalarını otomatik olarak oluştur. Bu işlemin "
+"biraz vakit alacağını unutmayın."
 
 #. i18n: file: ui/metalinkcreator/dragdlg.ui:92
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -3646,7 +3662,7 @@ msgstr "Seçimlik veriler:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:514
 msgid "Enter information that all chosen files share."
-msgstr ""
+msgstr "Tüm seçili dosyaların paylaşacağı bilgileri girin."
 
 #. i18n: file: ui/metalinkcreator/filedlg.ui:24
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
@@ -3765,10 +3781,9 @@ msgstr "Dinamik:"
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:110
 #. i18n: ectx: property (title), widget (QGroupBox, publishedGroupBox)
 #: rc.cpp:574
-#, fuzzy
 #| msgid "Metalink published:"
 msgid "Metalink published"
-msgstr "Metalink yayınlandı:"
+msgstr "Metalink yayınlandı"
 
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:122
 #. i18n: ectx: property (text), widget (QLabel, label_30)
@@ -3784,7 +3799,7 @@ msgstr "Tarih ve saat:"
 #. i18n: ectx: property (text), widget (QCheckBox, use_updatedtimeoffset)
 #: rc.cpp:580 rc.cpp:592
 msgid "Timezone offset:"
-msgstr ""
+msgstr "Saat dilimi ofseti:"
 
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:149
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -3792,15 +3807,14 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: rc.cpp:583 rc.cpp:589
 msgid "Negative offset:"
-msgstr ""
+msgstr "Negatif ofset:"
 
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:178
 #. i18n: ectx: property (title), widget (QGroupBox, updatedGroupBox)
 #: rc.cpp:586
-#, fuzzy
 #| msgid "Metalink updated:"
 msgid "Metalink updated"
-msgstr "Metalink güncellendi:"
+msgstr "Metalink güncellendi"
 
 #. i18n: file: ui/metalinkcreator/commondata.ui:22
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -4043,7 +4057,7 @@ msgstr "Tercih:"
 #. i18n: ectx: property (toolTip), widget (KIntNumInput, preference)
 #: rc.cpp:733
 msgid "Optional: The preference of the mirror, 1 lowest 100 highest."
-msgstr ""
+msgstr "Seçimli: Yansı tercihi, en düşük 1 en yüksek 100."
 
 #. i18n: file: ui/mirror/mirroradddlg.ui:89
 #. i18n: ectx: property (text), widget (QLabel, labelLocation)
@@ -4112,7 +4126,7 @@ msgstr "MetinEtiketi"
 #: rc.cpp:772
 msgctxt "hash type as in md5t, sha1 etc."
 msgid "Hash type:"
-msgstr ""
+msgstr "Hash tipi:"
 
 #. i18n: file: ui/verificationadddlg.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -4125,7 +4139,7 @@ msgstr "Özet:"
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, newHash)
 #: rc.cpp:778
 msgid "Enter a hash key"
-msgstr ""
+msgstr "Hash anahtarı girin"
 
 #. i18n: file: ui/transferdetailsfrm.ui:114
 #. i18n: ectx: property (text), widget (QLabel, statusLabel)
@@ -4320,7 +4334,7 @@ msgstr "Öntanımlı dizin:"
 #. i18n: ectx: property (toolTip), widget (QLabel, label_2)
 #: rc.cpp:902
 msgid "Moves all transfers with the regular expression to this group"
-msgstr ""
+msgstr "Tüm aktarımları bu gruba düzenli ifade ile taşı"
 
 #. i18n: file: ui/groupsettingsdialog.ui:61
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -4368,7 +4382,7 @@ msgstr "Aktarım grubu:"
 #. i18n: ectx: property (toolTip), widget (KPushButton, verify)
 #: rc.cpp:941
 msgid "Verify the finished download with the selected checksum."
-msgstr ""
+msgstr "Biten indirmeleri seçili checksum ile doğrula."
 
 #. i18n: file: ui/verificationdialog.ui:42
 #. i18n: ectx: property (text), widget (KPushButton, verify)
