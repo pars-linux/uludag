@@ -9,31 +9,32 @@
 # Ayşe Genç <ayse@uludag.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalzium\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-11-16 01:46+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 12:55+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Halil Erensu, Engin ÇAĞATAY, Ayşe GENÇ, Muhammet Kara"
+msgstr "Halil Erensu, Engin ÇAĞATAY, Ayşe GENÇ, Muhammet Kara, Renan Çakırerk"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr ""
 "halilerensu@yahoo.com, engincagatay@yahoo.com, ayse@uludag.org.tr, muhammet."
-"k@gmail.com"
+"k@gmail.com, renan@pardus.org.tr"
 
 #. i18n: file: libavogadro-kalzium/src/tools/zmatrixdialog.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, ZMatrixDialog)
@@ -712,7 +713,6 @@ msgstr "Şuna dönüştür:"
 #. i18n: file: src/calculator/nuclearCalculator.ui:30
 #. i18n: ectx: property (html), widget (KTextEdit, ktextedit)
 #: rc.cpp:392
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -750,7 +750,8 @@ msgstr ""
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:12pt; font-weight:600;\">\"Hesapla\" etiketinin yanındaki kombine seçim "
-"kutusundan hesaplamak istediğinizi seçin ve hesaplanacak değerleri/birimleri "
+"kutusundan hesaplamak istediğinizi seçin ve hesaplanacak değerleri / "
+"birimleri "
 "değiştirin.</span></p></body></html>"
 
 #. i18n: file: src/calculator/nuclearCalculator.ui:37
@@ -975,14 +976,14 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:140
 #. i18n: ectx: property (whatsThis), widget (QComboBox, halfLife_unit)
 #: rc.cpp:460
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the unit of half-life. eg. years, seconds, "
 #| "etc."
 msgid ""
 "This box is used to specify the unit of half-life, e.g. years, seconds, etc."
 msgstr ""
-"Bu kutucuk, yıl, saniye, vs biçiminde yarı ömrün birimini ayarlamak için "
+"Bu kutucuk, yıl, saniye, vs biçiminde yarılanma ömrünün birimini ayarlamak "
+"için "
 "kullanılır."
 
 #. i18n: file: src/calculator/nuclearCalculator.ui:144
@@ -1196,7 +1197,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:270
 #. i18n: ectx: property (whatsThis), widget (QComboBox, mode)
 #: rc.cpp:528
-#, fuzzy
 #| msgid ""
 #| "This box is used to decide what you want to calculate, choose among "
 #| "'Time', 'Initial amount of substance' and 'Final amount of substance'."
@@ -1254,7 +1254,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:313
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, initAmt)
 #: rc.cpp:547
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -1294,7 +1293,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:316
 #. i18n: ectx: property (whatsThis), widget (QDoubleSpinBox, initAmt)
 #: rc.cpp:554
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the initial amount of the radio-active "
 #| "substance."
@@ -1359,7 +1357,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:350
 #. i18n: ectx: property (whatsThis), widget (QDoubleSpinBox, finalAmt)
 #: rc.cpp:571
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the final amount of the radio-active "
 #| "substance."
@@ -1460,7 +1457,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:407
 #. i18n: ectx: property (whatsThis), widget (QComboBox, initAmtType)
 #: rc.cpp:598
-#, fuzzy
 #| msgid ""
 #| "This box can be used to change the mode in which you want to specify the "
 #| "initial amount of substance. i.e. mass or moles."
@@ -1536,7 +1532,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:431
 #. i18n: ectx: property (whatsThis), widget (QComboBox, finalAmtType)
 #: rc.cpp:614
-#, fuzzy
 #| msgid ""
 #| "This box can be used to change the mode in which you want to specify the "
 #| "final amount of substance. i.e. mass or moles."
@@ -1550,7 +1545,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:465
 #. i18n: ectx: property (toolTip), widget (QComboBox, initAmt_unit)
 #: rc.cpp:623
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -1591,7 +1585,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:468
 #. i18n: ectx: property (whatsThis), widget (QComboBox, initAmt_unit)
 #: rc.cpp:630
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the units of the initial amount of "
 #| "substance. i.e grams, pounds, etc."
@@ -1683,7 +1676,6 @@ msgstr "altın onsu"
 #. i18n: file: src/calculator/nuclearCalculator.ui:509
 #. i18n: ectx: property (toolTip), widget (QComboBox, finalAmt_unit)
 #: rc.cpp:651
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -1721,7 +1713,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:512
 #. i18n: ectx: property (whatsThis), widget (QComboBox, finalAmt_unit)
 #: rc.cpp:658
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the units of the final amount of "
 #| "substance. i.e grams, pounds, etc."
@@ -1735,7 +1726,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:553
 #. i18n: ectx: property (toolTip), widget (QComboBox, time_unit)
 #: rc.cpp:679
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -1773,7 +1763,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:556
 #. i18n: ectx: property (whatsThis), widget (QComboBox, time_unit)
 #: rc.cpp:686
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the units of time. i.e years, seconds, etc."
 msgid ""
@@ -1850,7 +1839,6 @@ msgstr ""
 #. i18n: file: src/calculator/nuclearCalculator.ui:642
 #. i18n: ectx: property (toolTip), widget (QLabel, numHalfLives)
 #: rc.cpp:724
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -2021,7 +2009,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:64
 #. i18n: ectx: property (whatsThis), widget (QDoubleSpinBox, molarMass)
 #: rc.cpp:771
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the molar mass of the gas. eg 2 for "
 #| "Hydrogen gas."
@@ -2276,7 +2263,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:245
 #. i18n: ectx: property (whatsThis), widget (QComboBox, pressure_unit)
 #: rc.cpp:862
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the units of pressure. eg. atmospheres, "
 #| "bars, etc."
@@ -2417,7 +2403,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:328
 #. i18n: ectx: property (whatsThis), widget (QComboBox, temp_unit)
 #: rc.cpp:910
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the units of temperature. eg. Kelvin, "
 #| "Celsius, etc."
@@ -2426,7 +2411,7 @@ msgid ""
 "Celsius, etc."
 msgstr ""
 "Bu kutucuk, sıcaklık birimlerini belirtmek için kullanılabilir, örnek: "
-"Kelvin, Selsius, vs."
+"Kelvin, Santigrat, vs."
 
 #. i18n: file: src/calculator/gasCalculator.ui:332
 #. i18n: ectx: property (text), item, widget (QComboBox, temp_unit)
@@ -2545,7 +2530,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:407
 #. i18n: ectx: property (whatsThis), widget (QComboBox, volume_unit)
 #: rc.cpp:952
-#, fuzzy
 #| msgid "This box can be used to change the units of volume, eg. Liters."
 msgid "This box can be used to change the units of volume, e.g. liters."
 msgstr ""
@@ -2661,7 +2645,6 @@ msgstr "İdeal olmayan gazlar için veriler"
 #. i18n: file: src/calculator/gasCalculator.ui:512
 #. i18n: ectx: property (text), widget (QLabel, label_30)
 #: rc.cpp:1001
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -2702,7 +2685,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:526
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: rc.cpp:1008
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -2743,7 +2725,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:536
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, b)
 #: rc.cpp:1015
-#, fuzzy
 #| msgid "specify the unit of van der Waals constant b"
 msgid "Specify the units of the van der Waals constant 'b'"
 msgstr "Van der Waals sabiti b'nin birimini belirtin"
@@ -2751,7 +2732,6 @@ msgstr "Van der Waals sabiti b'nin birimini belirtin"
 #. i18n: file: src/calculator/gasCalculator.ui:539
 #. i18n: ectx: property (whatsThis), widget (QDoubleSpinBox, b)
 #: rc.cpp:1018
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify van der Waals co-efficient B for the gas. "
 #| "This is required only for a real gas. It can be marked 0.0 for an ideal "
@@ -2768,7 +2748,6 @@ msgstr ""
 #. i18n: file: src/calculator/gasCalculator.ui:552
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, a)
 #: rc.cpp:1021
-#, fuzzy
 #| msgid "Specify the unit of van der Waals constant a"
 msgid "Specify the units of the van der Waals constant 'a'"
 msgstr "Van der Waals sabiti a'nın birimini belirtin"
@@ -2776,7 +2755,6 @@ msgstr "Van der Waals sabiti a'nın birimini belirtin"
 #. i18n: file: src/calculator/gasCalculator.ui:555
 #. i18n: ectx: property (whatsThis), widget (QDoubleSpinBox, a)
 #: rc.cpp:1024
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify van der Waals co-efficient B for the gas. "
 #| "This is required only for a real gas. It can be marked 0.0 for an ideal "
@@ -2786,14 +2764,13 @@ msgid ""
 "This is required only for a real gas. It can be marked as 0.0 for an ideal "
 "gas."
 msgstr ""
-"Bu kutucuk, gaz için Van der Waals katsayısı olan b'nin belirtilmesi için "
+"Bu kutucuk, gaz için Van der Waals katsayısı olan a'nın belirtilmesi için "
 "kullanılabilir. Bu yalnızca bir gerçek gaz için gereklidir. Bir ideal gaz "
 "için 0.0 olarak işaretlenebilir."
 
 #. i18n: file: src/calculator/gasCalculator.ui:570
 #. i18n: ectx: property (toolTip), widget (QComboBox, b_unit)
 #: rc.cpp:1027
-#, fuzzy
 #| msgid "The unit of van der Waals constant b"
 msgid "The units of the van der Waals constant 'b'"
 msgstr "Van der Waals sabiti b'nin birimi"
@@ -2801,13 +2778,12 @@ msgstr "Van der Waals sabiti b'nin birimi"
 #. i18n: file: src/calculator/gasCalculator.ui:573
 #. i18n: ectx: property (whatsThis), widget (QComboBox, b_unit)
 #: rc.cpp:1030
-#, fuzzy
 #| msgid ""
 #| "This can be used to specify the units of van der Waals co-efficient B."
 msgid ""
 "This can be used to specify the units of the van der Waals constant 'b'."
 msgstr ""
-"Van derWaals katsayısı olan B'nin birimini belirtmek için kullanılabilir."
+"Van derWaals katsayısı olan b'nin birimini belirtmek için kullanılabilir."
 
 #. i18n: file: src/calculator/gasCalculator.ui:577
 #. i18n: ectx: property (text), item, widget (QComboBox, b_unit)
@@ -2837,15 +2813,13 @@ msgstr "bir molde"
 #. i18n: file: src/calculator/gasCalculator.ui:619
 #. i18n: ectx: property (toolTip), widget (QComboBox, a_unit)
 #: rc.cpp:1054
-#, fuzzy
 #| msgid "The unit of van der Waals constant b"
 msgid "The units of the van der Waals constant 'a'"
-msgstr "Van der Waals sabiti b'nin birimi"
+msgstr "Van der Waals sabiti a'nın birimi"
 
 #. i18n: file: src/calculator/gasCalculator.ui:622
 #. i18n: ectx: property (whatsThis), widget (QComboBox, a_unit)
 #: rc.cpp:1057
-#, fuzzy
 #| msgid ""
 #| "This box can be used to specify the units of van der Waals co-efficient A."
 msgid ""
@@ -2897,7 +2871,6 @@ msgstr ""
 #. i18n: file: src/calculator/calculator.ui:42
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, tree)
 #: rc.cpp:1076
-#, fuzzy
 #| msgid ""
 #| "This is the index of various calculators available, for more information "
 #| "on each calculator click on 'introduction'"
@@ -2906,7 +2879,7 @@ msgid ""
 "information on each calculator, click on 'Introduction'."
 msgstr ""
 "Bu, mevcut çeşitli hesap makinelerine ait dizindir, herhangi bir hesap "
-"makinesiyle ilgili daha fazla bilgi için 'giriş' kısmına tıklatın."
+"makinesiyle ilgili daha fazla bilgi için 'Giriş' kısmına tıklatın."
 
 #. i18n: file: src/calculator/calculator.ui:49
 #. i18n: ectx: property (text), widget (QTreeWidget, tree)
@@ -3127,7 +3100,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:27
 #. i18n: ectx: property (html), widget (KTextEdit, ktextedit)
 #: rc.cpp:1132
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -3231,7 +3203,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:74
 #. i18n: ectx: property (toolTip), widget (QComboBox, amtSltType)
 #: rc.cpp:1159
-#, fuzzy
 #| msgid "The method by which you want to specify amount of solute"
 msgid "The method by which you want to specify the amount of solute"
 msgstr "Çözünen maddenin miktarını belirlemek istediğiniz yöntem"
@@ -3239,7 +3210,6 @@ msgstr "Çözünen maddenin miktarını belirlemek istediğiniz yöntem"
 #. i18n: file: src/calculator/concCalculator.ui:77
 #. i18n: ectx: property (whatsThis), widget (QComboBox, amtSltType)
 #: rc.cpp:1162
-#, fuzzy
 #| msgid ""
 #| "This box is used to change the mode in which amount of solute is "
 #| "specified i.e. mass, moles, volume."
@@ -3510,7 +3480,6 @@ msgstr "Bu kutucuk, çözeltideki çözücü miktarını belirtmek için kullan�
 #. i18n: file: src/calculator/concCalculator.ui:240
 #. i18n: ectx: property (toolTip), widget (QComboBox, amtSlvtType)
 #: rc.cpp:1243
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -3550,7 +3519,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:243
 #. i18n: ectx: property (whatsThis), widget (QComboBox, amtSlvtType)
 #: rc.cpp:1250
-#, fuzzy
 #| msgid ""
 #| "This box is used to change the mode in which amount of solvent is "
 #| "specified i.e. mass, moles, volume."
@@ -3773,7 +3741,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:388
 #. i18n: ectx: property (whatsThis), widget (QComboBox, mode)
 #: rc.cpp:1327
-#, fuzzy
 #| msgid ""
 #| "This is the list of quantities that you can calculate. Choose one of the "
 #| "quantities and specify the other required values to calulate it."
@@ -3823,7 +3790,6 @@ msgstr "Derişim"
 #. i18n: file: src/calculator/concCalculator.ui:441
 #. i18n: ectx: property (toolTip), widget (QComboBox, densSlvt_unit)
 #: rc.cpp:1348
-#, fuzzy
 #| msgid "Specify the units of density of solvent"
 msgid "Specify the units for density of solvent"
 msgstr "Çözücünün yoğunluğuna ait birimi belirtin"
@@ -3895,7 +3861,6 @@ msgstr "yard küpte pound"
 #. i18n: file: src/calculator/concCalculator.ui:492
 #. i18n: ectx: property (toolTip), widget (QComboBox, conc_unit)
 #: rc.cpp:1375
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -3974,7 +3939,6 @@ msgstr "% ( mol )"
 #. i18n: file: src/calculator/concCalculator.ui:533
 #. i18n: ectx: property (toolTip), widget (QComboBox, amtSlvt_unit)
 #: rc.cpp:1403
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -4012,7 +3976,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:536
 #. i18n: ectx: property (whatsThis), widget (QComboBox, amtSlvt_unit)
 #: rc.cpp:1410
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the units of the amount of solvent in the "
 #| "solution."
@@ -4033,7 +3996,6 @@ msgstr "mil küp"
 #. i18n: file: src/calculator/concCalculator.ui:587
 #. i18n: ectx: property (toolTip), widget (QLabel, label_19)
 #: rc.cpp:1437
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -4116,7 +4078,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:658
 #. i18n: ectx: property (toolTip), widget (QComboBox, amtSlt_unit)
 #: rc.cpp:1481
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -4157,7 +4118,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:661
 #. i18n: ectx: property (whatsThis), widget (QComboBox, amtSlt_unit)
 #: rc.cpp:1488
-#, fuzzy
 #| msgid ""
 #| "This box is used to specify the units of the amount of solute in the "
 #| "solution."
@@ -4177,7 +4137,6 @@ msgstr "kilogram"
 #. i18n: file: src/calculator/concCalculator.ui:707
 #. i18n: ectx: property (toolTip), widget (QLabel, label_17)
 #: rc.cpp:1512
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -4215,7 +4174,6 @@ msgstr ""
 #. i18n: file: src/calculator/concCalculator.ui:724
 #. i18n: ectx: property (toolTip), widget (QLabel, label_18)
 #: rc.cpp:1522
-#, fuzzy
 #| msgid ""
 #| "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 #| "REC-html40/strict.dtd\">\n"
@@ -4314,10 +4272,9 @@ msgstr "Miktar daima kütle cinsinden belirtilir."
 #. i18n: file: src/calculator/settings_calc.ui:63
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ideal)
 #: rc.cpp:1558
-#, fuzzy
 #| msgid "Assume Gas is ideal (Do not show Van der Waals co-efficients)"
 msgid "Assume Gas is ideal (i.e. do not show Van der Waals co-efficients)."
-msgstr "Gazın ideal olduğunu varsay (Van der Waals katsayılarını gösterme)"
+msgstr "Gazın ideal olduğunu varsay (ör: Van der Waals katsayılarını gösterme)"
 
 #. i18n: file: src/calculator/settings_calc.ui:89
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
@@ -5144,7 +5101,6 @@ msgstr "Element bileşimi "
 #. i18n: file: src/molcalcwidgetbase.ui:188
 #. i18n: ectx: property (whatsThis), widget (QTableWidget, table)
 #: rc.cpp:1986
-#, fuzzy
 #| msgid ""
 #| "This table previews the elemental composition of the molecule, i.e the "
 #| "percentage of each element in the molecule."
@@ -5203,7 +5159,6 @@ msgstr "Formülde kullanılan takma isimler"
 #. i18n: file: src/molcalcwidgetbase.ui:248
 #. i18n: ectx: property (whatsThis), widget (QTableWidget, alias_list)
 #: rc.cpp:2010
-#, fuzzy
 #| msgid ""
 #| "This displays all the aliases used in the molecule.\n"
 #| "for eg. In molecule MeOH, the alias used is Me = CH3"
@@ -5247,7 +5202,6 @@ msgstr "Takma ismin kısa biçimi"
 #. i18n: file: src/molcalcwidgetbase.ui:311
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, shortForm)
 #: rc.cpp:2029
-#, fuzzy
 #| msgid ""
 #| "You can specify the short form of the alias used here.\n"
 #| "For eg. Me"
@@ -5267,7 +5221,6 @@ msgstr "Tam biçim"
 #. i18n: file: src/molcalcwidgetbase.ui:326
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, fullForm)
 #: rc.cpp:2036
-#, fuzzy
 #| msgid ""
 #| "You can enter the full form of the alias in this box\n"
 #| "eg. CH3"
@@ -7985,7 +7938,6 @@ msgid "Initial amount cannot be zero."
 msgstr "İlk miktar sıfır olamaz."
 
 #: src/calculator/nuclearCalculator.cpp:410
-#, fuzzy
 #| msgid "Final amount cannot zero."
 msgid "Final amount cannot be zero."
 msgstr "Son miktar sıfır olamaz."
@@ -8003,10 +7955,9 @@ msgid "Volume cannot be zero, please enter a valid value."
 msgstr "Hacim sıfır olamaz, lütfen sıfır olmayan bir değer girin."
 
 #: src/calculator/gasCalculator.cpp:357
-#, fuzzy
 #| msgid "Molar mass cannot be zero, please enter a non-zero value!"
 msgid "Molar mass cannot be zero, please enter a non-zero value."
-msgstr "Mol kütlesi sıfır olamaz, lütfen sıfır olmayan bir değer girin!"
+msgstr "Mol kütlesi sıfır olamaz, lütfen sıfır olmayan bir değer girin."
 
 #: src/calculator/calculator.cpp:31
 msgid "Molecular Calculator"
@@ -8051,16 +8002,14 @@ msgid "The volume of the solvent cannot be zero."
 msgstr "Çözücünün hacmi sıfır olamaz."
 
 #: src/calculator/concCalculator.cpp:956
-#, fuzzy
 #| msgid "The number of moles of the solvent cannot be zero!"
 msgid "The number of moles of the solvent cannot be zero."
-msgstr "Çözücünün mol sayısı sıfır olamaz!"
+msgstr "Çözücünün mol sayısı sıfır olamaz."
 
 #: src/calculator/concCalculator.cpp:959
-#, fuzzy
 #| msgid "The mass of the solvent cannot be zero!"
 msgid "The mass of the solvent cannot be zero."
-msgstr "Çözücünün kütlesi sıfır olamaz!"
+msgstr "Çözücünün kütlesi sıfır olamaz."
 
 #: src/calculator/concCalculator.cpp:962
 msgid ""
@@ -8069,18 +8018,17 @@ msgstr ""
 "Yetersiz veri. Gerekli hesabın yapılabilmesi için normaliteyi belirtin."
 
 #: src/calculator/concCalculator.cpp:965
-#, fuzzy
 #| msgid ""
 #| "Insufficient data, specify molarity / molefraction / molality to "
 #| "calculate!"
 msgid ""
 "Insufficient data, specify molarity / mole fraction / molality to calculate."
 msgstr ""
-"Yetersiz veri, hesaplama için molarite / mol kesri / molalite bilgisini "
-"belirtin!"
+"Yetersiz veri girdiniz, hesaplama için molarite / mol kesri / molalite "
+"bilgisini "
+"belirtin."
 
 #: src/calculator/concCalculator.cpp:968
-#, fuzzy
 #| msgid ""
 #| "amount specified in moles, cannot calculate molar/equivalent masses! "
 #| "Specify mass/volume"
@@ -8088,11 +8036,10 @@ msgid ""
 "The amount is specified in moles, cannot calculate molar/equivalent masses. "
 "Please specify mass/volume."
 msgstr ""
-"mol cinsinden belirtilmiş miktar, molar/eşdeğer kütleleri hesaplayamıyor! "
-"Kütle/hacim belirtin"
+"Miktar mol cinsinden belirtilmiş, molar/eşdeğer kütleleri hesaplanamıyor. "
+"Lütfen Kütle/hacim belirtin."
 
 #: src/calculator/concCalculator.cpp:971
-#, fuzzy
 #| msgid ""
 #| "You can calculate the molar mass of solvent only if mole fraction is "
 #| "specified!"
@@ -8100,7 +8047,7 @@ msgid ""
 "You can calculate the molar mass of solvent only if the mole fraction is "
 "specified."
 msgstr ""
-"Sadece mol kesri belirtilmiş ise çözücünün mol kütlesini hesaplayabilirsiniz!"
+"Sadece mol kesri belirtilmiş ise çözücünün mol kütlesini hesaplayabilirsiniz."
 
 #: src/calculator/concCalculator.cpp:974
 msgid "Molar mass cannot be zero, please enter a valid value."
@@ -8119,7 +8066,6 @@ msgid "%1"
 msgstr "%1"
 
 #: src/molcalcwidget.cpp:176
-#, fuzzy
 #| msgid ""
 #| "Enter a formula in the\n"
 #| "widget above and\n"
@@ -8134,13 +8080,12 @@ msgstr ""
 "Başlamak için\n"
 "aşağıya bir formül\n"
 "girin ve 'Hesapla'ya tıklayın.\n"
-"#Et#OH gibi"
+"Ör: #Et#OH"
 
 #: src/molcalcwidget.cpp:232
-#, fuzzy
 #| msgid "Molecular mass: %1 u"
 msgid "Molecular mass: "
-msgstr "Molekül kütlesi: %1 u"
+msgstr "Molekül kütlesi: "
 
 #: src/molcalcwidget.cpp:248 src/molcalcwidget.cpp:252
 #: src/molcalcwidget.cpp:253 src/molcalcwidget.cpp:254

@@ -5,18 +5,19 @@
 # İsmail Şimşek <simsek@kde.org.tr>, 2005.
 # Kaya Oğuz <kaya@kuzeykutbu.org>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kgeography\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-22 01:28+0100\n"
-"PO-Revision-Date: 2009-10-28 16:33+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 12:47+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: answersdialog.cpp:24
@@ -3079,7 +3080,7 @@ msgstr "Avustralya"
 #: mapsdatatranslation.cpp:589
 msgctxt "asia.kgm"
 msgid "Cyprus"
-msgstr " "
+msgstr "Kıbrıs "
 
 #: mapsdatatranslation.cpp:590
 msgctxt "australia.kgm"
@@ -13272,7 +13273,6 @@ msgid "Vreed en Hoop"
 msgstr "Vreed en Hoop"
 
 #: mapsdatatranslation.cpp:2771
-#, fuzzy
 #| msgctxt "guyana.kgm"
 #| msgid "Dememara-Mahaica"
 msgctxt "guyana.kgm"
@@ -13295,7 +13295,6 @@ msgid "Fort Wellington"
 msgstr "Fort Wellington"
 
 #: mapsdatatranslation.cpp:2775
-#, fuzzy
 #| msgctxt "guyana.kgm"
 #| msgid "Upper Dememara-Berbice"
 msgctxt "guyana.kgm"
@@ -18485,7 +18484,7 @@ msgstr "Kolombiya"
 #: mapsdatatranslation.cpp:3905
 msgctxt "nepal_zones.kgm"
 msgid "Nepal (Zones)"
-msgstr " "
+msgstr "Nepal (Bölgeler)"
 
 #: mapsdatatranslation.cpp:3906
 msgctxt "nepal_zones.kgm"
@@ -31198,23 +31197,23 @@ msgstr "Anakaralar"
 #, kde-format
 msgctxt "@title:group"
 msgid "What is the highest summit of %1?"
-msgstr ""
+msgstr "%1 üzerinde en yüksek tepe hangisidir?"
 
 #: mapsdatatranslation.cpp:6794
 msgctxt "@title"
 msgid "Continents by highest summit"
-msgstr ""
+msgstr "En yüksek tepelerine göre kıtalar"
 
 #: mapsdatatranslation.cpp:6795
 #, kde-format
 msgctxt "@title:group"
 msgid "Which has %1 as its highest summit?"
-msgstr ""
+msgstr "En yüksek tepesi %1 olan hangisidir?"
 
 #: mapsdatatranslation.cpp:6796
 msgctxt "@title"
 msgid "Highest summit of continents"
-msgstr ""
+msgstr "En yüksek tepe "
 
 #: mapsdatatranslation.cpp:6797
 msgctxt "world_continents.kgm"
@@ -32641,12 +32640,12 @@ msgstr "Son açılan harita"
 #: rc.cpp:4
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Renan Çakırerk"
 
 #: rc.cpp:5
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, renan@pardus.org.tr"
 
 #~ msgctxt "afghanistan.kgm"
 #~ msgid "Water"

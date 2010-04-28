@@ -10,18 +10,19 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Kunter Kutlu <kunterkutlu@gmail.com>, 2008.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: khangman\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-09-27 22:23+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-04-28 12:48+0300\n"
+"Last-Translator: Renan Cakirerk\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: data.i18n:2
@@ -670,6 +671,10 @@ msgid ""
 "            hints will be displayed only per word when the user chooses to "
 "show the hint."
 msgstr ""
+"İşaretlendiğinde ipuçlarını her zaman gösterir. İşaretlenmez ise "
+"(varsayılan) \n"
+"             kullanıcı, \"ipuçlarını göster\" opsiyonunu seçtiğinde ipuçları "
+"yalnızca kelime başına gösterilir. "
 
 #. i18n: file: khangman.kcfg:65
 #. i18n: ectx: label, entry (MissedTimer), group (General)
@@ -771,12 +776,12 @@ msgstr ""
 #: rc.cpp:153
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, renan@pardus.org.tr"
 
 #: rc.cpp:154
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, renan@pardus.org.tr"
 
 #~ msgid "Local file"
 #~ msgstr "Yerel Dosya"

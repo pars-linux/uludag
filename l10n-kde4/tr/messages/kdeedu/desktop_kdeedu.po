@@ -12,18 +12,19 @@
 # Kunter Kutlu <kunterkutlu@gmail.com>, 2008.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeedu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 23:29+0000\n"
-"PO-Revision-Date: 2009-10-31 21:57+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-22 13:16+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: blinken/src/blinken.desktop:2
@@ -50,6 +51,8 @@ msgstr "Farklılaştır"
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculating derivatives of expressions"
 msgstr ""
+"İfadelerin türevlerini hesaplamayı kolaylaştırmak için kullanılan yardımcı "
+"pencere"
 
 #: cantor/src/assistants/integrate/integrateassistant.desktop:4
 msgctxt "Name"
@@ -59,7 +62,7 @@ msgstr "Bütünleştir"
 #: cantor/src/assistants/integrate/integrateassistant.desktop:36
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculation of integrals"
-msgstr ""
+msgstr "İfadelerin integrallerini hesaplamayı kolaylaştıran yardımcı pencere"
 
 #: cantor/src/assistants/linearalgebra/creatematrix/creatematrixassistant.desktop:3
 msgctxt "Name"
@@ -69,37 +72,37 @@ msgstr "Matris Oluştur"
 #: cantor/src/assistants/linearalgebra/creatematrix/creatematrixassistant.desktop:36
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify entering of matrices"
-msgstr ""
+msgstr "Matris girişini kolaylaştıran asistan pencere"
 
 #: cantor/src/assistants/linearalgebra/eigenvalues/eigenvaluesassistant.desktop:3
 msgctxt "Name"
 msgid "Eigenvalues"
-msgstr ""
+msgstr "Eigen değerleri"
 
 #: cantor/src/assistants/linearalgebra/eigenvalues/eigenvaluesassistant.desktop:34
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculating of Eigenvalues"
-msgstr ""
+msgstr "Eigen değerlerini hesaplamayı kolaylaştırman yardımcı pencere"
 
 #: cantor/src/assistants/linearalgebra/eigenvectors/eigenvectorsassistant.desktop:3
 msgctxt "Name"
 msgid "Eigenvectors"
-msgstr ""
+msgstr "Eigen Vektörleri"
 
 #: cantor/src/assistants/linearalgebra/eigenvectors/eigenvectorsassistant.desktop:34
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculating of EigenVectors"
-msgstr ""
+msgstr "Eigen Vektörleri hesaplamayı kolaylaştıran yardımcı pencere"
 
 #: cantor/src/assistants/linearalgebra/invertmatrix/invertmatrixassistant.desktop:3
 msgctxt "Name"
 msgid "Invert Matrix"
-msgstr ""
+msgstr "Ters Matris"
 
 #: cantor/src/assistants/linearalgebra/invertmatrix/invertmatrixassistant.desktop:34
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify inverting of matrices"
-msgstr ""
+msgstr "Ters matris almayı kolaylaştıran yardımcı pencere"
 
 #: cantor/src/assistants/plot2d/plot2dassistant.desktop:3
 msgctxt "Name"
@@ -110,7 +113,7 @@ msgstr "2B Çizim"
 #: cantor/src/assistants/plot3d/plot3dassistant.desktop:34
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify plotting of 2D functions"
-msgstr ""
+msgstr "2 boyutlu fonksiyonları çizdirmeyi kolaylaştıran yardımcı pencere"
 
 #: cantor/src/assistants/plot3d/plot3dassistant.desktop:3
 msgctxt "Name"
@@ -120,12 +123,12 @@ msgstr "3B Çizim"
 #: cantor/src/assistants/runscript/runscriptassistant.desktop:4
 msgctxt "Name"
 msgid "RunScript"
-msgstr ""
+msgstr "Betiği Çalıştır"
 
 #: cantor/src/assistants/runscript/runscriptassistant.desktop:34
 msgctxt "Comment"
 msgid "An Assistant for running an external Script file"
-msgstr ""
+msgstr "Harici betik çalıştırma penceresi"
 
 #: cantor/src/assistants/solve/solveassistant.desktop:4
 msgctxt "Name"
@@ -135,7 +138,7 @@ msgstr "Çöz"
 #: cantor/src/assistants/solve/solveassistant.desktop:36
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify solving of equations"
-msgstr ""
+msgstr "Eşitlikleri çözmeye yardımcı olan asistan pencere"
 
 #: cantor/src/backends/kalgebra/kalgebrabackend.desktop:3
 #: kalgebra/plasmoid/kalgebraplasmoid.desktop:2
@@ -150,6 +153,8 @@ msgid ""
 "KAlgebra backend for Cantor. Lets you use the same language you use in the "
 "KAlgebra application in Cantor worksheets."
 msgstr ""
+"Cantor için KAlgebra arka ucu. KAlgebra uygulaması içinde Cantor "
+"çalışma sayfalarında kullanılan dille aynı dili kullanmanıza izin verir."
 
 #: cantor/src/backends/maxima/maximabackend.desktop:4
 msgctxt "Name"
@@ -159,7 +164,7 @@ msgstr "Maxima"
 #: cantor/src/backends/maxima/maximabackend.desktop:38
 msgctxt "Comment"
 msgid "Backend for the Maxima Computer Algebra System"
-msgstr ""
+msgstr "Maxima Computer Algebra System için arka uç"
 
 #: cantor/src/backends/null/nullbackend.desktop:3
 msgctxt "Name"
@@ -169,7 +174,7 @@ msgstr "belirsiz arka uç"
 #: cantor/src/backends/null/nullbackend.desktop:32
 msgctxt "Comment"
 msgid "Backend for Cantor for testing purposes"
-msgstr ""
+msgstr "Test amaçlı kullanılmak üzere Cantor arka ucu"
 
 #: cantor/src/backends/R/rbackend.desktop:4
 msgctxt "Name"
@@ -179,7 +184,7 @@ msgstr "R"
 #: cantor/src/backends/R/rbackend.desktop:38
 msgctxt "Comment"
 msgid "Backend for The R Project for Statistical Computing"
-msgstr ""
+msgstr "İstatistiksel hesaplama için R Project arka ucu"
 
 #: cantor/src/backends/sage/sagebackend.desktop:4
 msgctxt "Name"
@@ -189,7 +194,7 @@ msgstr "Sage"
 #: cantor/src/backends/sage/sagebackend.desktop:38
 msgctxt "Comment"
 msgid "Backend for the Sage Mathematics Software"
-msgstr ""
+msgstr "Sage Matematik Yazılımı için arka uç"
 
 #: cantor/src/cantor.desktop:2
 msgctxt "Name"
@@ -661,17 +666,17 @@ msgstr "Kelime Çalıştırıcı"
 #: rocs/src/rocs.desktop:2
 msgctxt "Name"
 msgid "Rocs"
-msgstr ""
+msgstr "Rocs"
 
 #: rocs/src/rocs.desktop:29
 msgctxt "GenericName"
 msgid "Rocs Graph Theory"
-msgstr ""
+msgstr "Rocs Graph Kuramı"
 
 #: rocs/src/rocs.desktop:57
 msgctxt "Comment"
 msgid "Graph Theory Tool for Professors and Students."
-msgstr ""
+msgstr "Öğretim görevlileri ve öğrenciler için Graph Kuramı araçları"
 
 #: step/step/step.desktop:8
 msgctxt "Name"
