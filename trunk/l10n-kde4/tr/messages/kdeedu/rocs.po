@@ -2,26 +2,26 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: rocs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-11-12 13:23+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 13:15+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: UndoRedo/URAddNode.cpp:38 Core/graph.cpp:47 Interface/MainWindow.cpp:88
 #: Interface/MainWindow.cpp:294
-#, fuzzy
 #| msgid "Untitled0"
 msgid "Untitled"
-msgstr "Başlıksız0"
+msgstr "Başlıksız"
 
 #: Models/model_GraphProperties.cpp:62
 msgid "Property"
@@ -34,10 +34,10 @@ msgid "Value"
 msgstr "Değer"
 
 #: Models/model_GraphLayers.cpp:83 Interface/GraphLayers.cpp:54
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Untitled0"
 msgid "Untitled%1"
-msgstr "Başlıksız0"
+msgstr "Başlıksız%1"
 
 #: Interface/MainWindow.cpp:89 Interface/MainWindow.cpp:296
 msgid "Untitled0"
@@ -48,10 +48,9 @@ msgid "Editor"
 msgstr "Düzenleyici"
 
 #: Interface/MainWindow.cpp:136
-#, fuzzy
 #| msgid "Debug"
 msgid "Debugger"
-msgstr "Hata Ayıkla"
+msgstr "Hata Ayıklayıcı"
 
 #: Interface/MainWindow.cpp:137
 msgid "Run"
@@ -59,39 +58,39 @@ msgstr "Çalıştır"
 
 #: Interface/MainWindow.cpp:173
 msgid "Align on the base"
-msgstr ""
+msgstr "Tabana hizala"
 
 #: Interface/MainWindow.cpp:174 Interface/MainWindow.cpp:177
 msgid "Align on the center"
-msgstr ""
+msgstr "Ortala"
 
 #: Interface/MainWindow.cpp:175
 msgid "Align on the top"
-msgstr ""
+msgstr "Tepeye hizala"
 
 #: Interface/MainWindow.cpp:176
 msgid "Align on the left"
-msgstr ""
+msgstr "Sola hizala"
 
 #: Interface/MainWindow.cpp:178
 msgid "Align on the right"
-msgstr ""
+msgstr "Sağa hizala"
 
 #: Interface/MainWindow.cpp:180
 msgid "New Graph"
-msgstr "Yeni Grafik"
+msgstr "Yeni Çizge"
 
 #: Interface/MainWindow.cpp:186
 msgid "Open Graph..."
-msgstr "Grafik Aç..."
+msgstr "Çizge Aç..."
 
 #: Interface/MainWindow.cpp:192
 msgid "Save Graph"
-msgstr "Grafiği Kaydet"
+msgstr "Çizgeyi Kaydet"
 
 #: Interface/MainWindow.cpp:198
 msgid "Save Graph As..."
-msgstr "Grafiği Farklı Kaydet..."
+msgstr "Çizgeyi Farklı Kaydet..."
 
 #: Interface/MainWindow.cpp:204
 msgid "New Script"
@@ -114,16 +113,16 @@ msgid ""
 "*.graph|Graph files\n"
 "*.*|All files"
 msgstr ""
-"*.graph|Grafik dosyaları\n"
+"*.graph|Çizge dosyaları\n"
 "*.*|Tüm dosyalar"
 
 #: Interface/MainWindow.cpp:280
 msgid "Graph Files"
-msgstr "Grafik Dosyaları"
+msgstr "Çizge Dosyaları"
 
 #: Interface/MainWindow.cpp:287
 msgid "This does not seem to be a graph file."
-msgstr ""
+msgstr "Belirtilen dosya bir graf dosyası değil."
 
 #: Interface/MainWindow.cpp:287
 msgid "Invalid file"
@@ -131,11 +130,11 @@ msgstr "Geçersiz dosya"
 
 #: Interface/MainWindow.cpp:335
 msgid "Do you want to save your unsaved document?"
-msgstr ""
+msgstr "Dökümanı kaydetmek ister misiniz?"
 
 #: Interface/GraphLayers.cpp:18
 msgid "Add"
-msgstr ""
+msgstr "Ekle"
 
 #: Interface/CodeEditor.cpp:17
 msgid ""
@@ -151,7 +150,7 @@ msgstr "Düğüm Ekle"
 
 #: Actions/AddNode.cpp:33
 msgid "Creates a new node at the click position on the drawing area."
-msgstr ""
+msgstr "Çizim alanında tıklanan noktada bir düğüm yaratır."
 
 #: Actions/AddNode.cpp:53
 msgid "untitled"
@@ -179,7 +178,7 @@ msgstr "Kenarlık Ekle"
 
 #: Actions/AddEdge.cpp:36
 msgid "Creates a new edge between 2 nodes"
-msgstr ""
+msgstr "İki düğüm arasında bir kenar yaratır"
 
 #: Actions/Select.cpp:37
 msgid "Select"
@@ -195,7 +194,7 @@ msgstr "Rocs"
 
 #: Main.cpp:34
 msgid "Graph Theory Tool"
-msgstr "Grafik Kuramı Aracı"
+msgstr "Çizge Kuramı Aracı"
 
 #: Main.cpp:36
 msgid "(c) 2009"
@@ -217,12 +216,11 @@ msgstr "Simgeyle birlikte metni göster"
 #. i18n: ectx: Menu (graph)
 #: rc.cpp:9 rc.cpp:254
 msgid "Graph"
-msgstr "Grafik"
+msgstr "Çizge"
 
 #. i18n: file: rocsui.rc:17
 #. i18n: ectx: Menu (Script)
 #: rc.cpp:12 rc.cpp:257
-#, fuzzy
 #| msgid " Script "
 msgid "Script"
 msgstr " Betik "
@@ -242,12 +240,12 @@ msgstr "Düzen Araç Çubuğu"
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Renan Çakırerk"
 
 #: rc.cpp:20
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, renan@pardus.org.tr"
 
 #. i18n: file: Interface/NodePropertiesWidget.ui:20
 #. i18n: ectx: property (windowTitle), widget (QWidget, NodePropertiesWidget)
@@ -345,19 +343,19 @@ msgstr " Bitiş"
 #. i18n: ectx: property (text), widget (QRadioButton, _activateGraph)
 #: rc.cpp:68
 msgid "graph name here"
-msgstr "grafik adı buraya gelecek"
+msgstr "graf adı buraya gelecek"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:59
 #. i18n: ectx: property (toolTip), widget (KPushButton, _graphDelete)
 #: rc.cpp:71
 msgid "Delete the active graph"
-msgstr "Etkin grafiği sil"
+msgstr "Etkin grafı sil"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:62
 #. i18n: ectx: property (whatsThis), widget (KPushButton, _graphDelete)
 #: rc.cpp:74
 msgid "Delete the current active graph: delete all nodes and edges"
-msgstr ""
+msgstr "Geçerli grafı sil: bütün düğüm ve kenarları sil"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:65
 #. i18n: ectx: property (text), widget (KPushButton, _graphDelete)
@@ -388,7 +386,7 @@ msgstr "Geçerli rengi tüm düğümlere uygula"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, _graphNodeColorApplyNow)
 #: rc.cpp:92
 msgid "Apply the current color to all nodes on the drawing area"
-msgstr ""
+msgstr "Geçerli rengi çizim alanındaki bütün düğümlere uygula"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:131
 #. i18n: ectx: property (text), widget (KPushButton, _graphNodeColorApplyNow)
@@ -420,19 +418,19 @@ msgstr "Geçerli rengi tüm kenarlara uygula"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, _graphEdgeColorApplyNow)
 #: rc.cpp:107
 msgid "Apply the current color to all edges on the drawing area"
-msgstr ""
+msgstr "Geçerli rengi çizim alanındaki bütün kenarlara uygula"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:192
 #. i18n: ectx: property (toolTip), widget (QToolButton, _graphOriented)
 #: rc.cpp:113
 msgid "Oriented graph"
-msgstr "Yönelimli grafik"
+msgstr "Yönelimli graf"
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:195
 #. i18n: ectx: property (whatsThis), widget (QToolButton, _graphOriented)
 #: rc.cpp:116
 msgid "Enabling this button will make the graph oriented."
-msgstr ""
+msgstr "Bu butonu etkinleştirmek grafı yönelimli yapar."
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:198
 #. i18n: ectx: property (text), widget (QToolButton, _graphOriented)
@@ -453,19 +451,16 @@ msgstr "..."
 #. i18n: file: Interface/GraphPropertiesWidget.ui:208
 #. i18n: ectx: property (toolTip), widget (QToolButton, _graphAutomate)
 #: rc.cpp:122
-#, fuzzy
 #| msgid "Automated graph"
 msgid "Automaton Graph"
-msgstr "Otomatikleştirilmiş grafik"
+msgstr "Özdevinir Çizge "
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:211
 #. i18n: ectx: property (whatsThis), widget (QToolButton, _graphAutomate)
 #: rc.cpp:125
-#, fuzzy
 #| msgid "Enabling this button will make the graph an automated graph."
 msgid "Enabling this button will make the graph an automaton graph."
-msgstr ""
-"Bu düğmeyi etkinleştirmek tüm düğümlerin isimlerinin görünmesini sağlar."
+msgstr "Bu düğmeyi etkinleştirmek grafın özdevinir olmasını sağlar."
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:224
 #. i18n: ectx: property (toolTip), widget (QToolButton, _showNodeNames)
@@ -595,7 +590,7 @@ msgstr "Kenarlık ismi"
 #. i18n: ectx: property (toolTip), widget (KPushButton, _showName)
 #: rc.cpp:212
 msgid "Show/hide edge name"
-msgstr ""
+msgstr "Kenar adını Görüntüle/Gizle"
 
 #. i18n: file: Interface/EdgePropertiesWidget.ui:127
 #. i18n: ectx: property (text), widget (KPushButton, _showName)
@@ -670,7 +665,7 @@ msgid "New File"
 msgstr "Yeni Dosya"
 
 #~ msgid " Graph "
-#~ msgstr " Grafik "
+#~ msgstr " Çizge "
 
 #~ msgctxt "X-coordinate "
 #~ msgid "x:"

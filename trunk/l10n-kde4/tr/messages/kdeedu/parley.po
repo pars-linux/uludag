@@ -8,18 +8,19 @@
 # Zerrin Cakmakkaya <zerrin@uludag.org.tr>, 2005.
 # İsmail Şimşek <simsek@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: parley\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:26+0200\n"
-"PO-Revision-Date: 2009-10-28 16:32+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 13:15+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: src/export/exportdialog.ui:13
@@ -212,16 +213,14 @@ msgid "Internet"
 msgstr "İnternet"
 
 #: src/editor/editor.cpp:377
-#, fuzzy
 #| msgid "Open Vocabulary Document"
 msgid "&Upload Vocabulary Document..."
-msgstr "Sözcük Hazinesi Belgesi Aç"
+msgstr "Sözcük Hazinesi Belgesi &Yükle"
 
 #: src/editor/editor.cpp:378
-#, fuzzy
 #| msgid "Save the active vocabulary collection with a different name"
 msgid "Share the current vocabulary collection with other users."
-msgstr "Etkin sözcük hazinesi koleksiyonunu farklı bir isimle kaydet"
+msgstr "Etkin sözcük hazinesi koleksiyonunu diğer kullanıcılarla paylaş."
 
 #: src/editor/editor.cpp:387
 msgid "&Languages..."
@@ -1570,12 +1569,12 @@ msgstr "*.kvtml|Sözcük Hazinesi Koleksiyonu"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Engin Çağatay"
+msgstr "Serdar Soytetir, Engin Çağatay, Renan Çakırerk"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, engincagatay@yahoo.com"
+msgstr "tulliana@gmail.com, engincagatay@yahoo.com, renan@pardus.org.tr"
 
 #. i18n: file: plugins/google_images.ui:49
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -2033,10 +2032,9 @@ msgstr "Sözcük tipi"
 #. i18n: file: src/editor/editorui.rc:7
 #. i18n: ectx: Menu (file)
 #: rc.cpp:260
-#, fuzzy
 #| msgid "&Fixed"
 msgid "&File"
-msgstr "&Sabit"
+msgstr "&Dosya"
 
 #. i18n: file: src/editor/editorui.rc:23
 #. i18n: ectx: Menu (view)

@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: marble\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-10-28 16:41+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 13:14+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/kdemain.cpp:63
@@ -43,7 +44,7 @@ msgstr "Patrick Spendrin"
 
 #: src/kdemain.cpp:75
 msgid "Core Developer: KML and Windows support"
-msgstr ""
+msgstr "Çekirdek Geliştirici: KML ve Windows desteği"
 
 #: src/kdemain.cpp:77
 msgid "Jens-Michael Hoffmann"
@@ -51,7 +52,7 @@ msgstr "Jens-Michael Hoffmann"
 
 #: src/kdemain.cpp:78
 msgid "OpenStreetMap Integration, OSM Namefinder, Download Management"
-msgstr ""
+msgstr "OpenStreetMap entegrasyonu, OSM Namefinder, İndirme Yönetimi"
 
 #: src/kdemain.cpp:80
 msgid "Henry de Valence"
@@ -59,7 +60,7 @@ msgstr "Henry de Valence"
 
 #: src/kdemain.cpp:81
 msgid "Core Developer: Marble Runners, World-Clock Plasmoid"
-msgstr ""
+msgstr "Çekirdek Geliştirici: Marble Runners, Dünya Saatleri Plasmoid'i"
 
 #: src/kdemain.cpp:83
 msgid "Bastian Holst"
@@ -99,7 +100,7 @@ msgstr "Dennis Nienhüser"
 
 #: src/kdemain.cpp:96
 msgid "Navigator Float Item"
-msgstr ""
+msgstr "Kılavuz Yüzen Nesne"
 
 #: src/kdemain.cpp:98
 msgid "Magnus Valle"
@@ -127,7 +128,7 @@ msgstr "Hata düzeltmeleri"
 
 #: src/kdemain.cpp:110
 msgid "Google Summer of Code 2008 Project: Vector Tiles for Marble"
-msgstr ""
+msgstr "Google Summer of Code 2008 Projesi: Marble için Vektör Döşemeleri"
 
 #: src/kdemain.cpp:113
 msgid "Shashank Singh"
@@ -138,6 +139,8 @@ msgid ""
 "Google Summer of Code 2008 Project: Panoramio / Wikipedia -photo support for "
 "Marble"
 msgstr ""
+"Google Summer of Code 2008 Projesi: Panoramio / Wikipedia - Marble için "
+"fotoğraf desteği"
 
 #: src/kdemain.cpp:117
 msgid "Carlos Licea"
@@ -147,6 +150,8 @@ msgstr "Carlos Licea"
 msgid ""
 "Google Summer of Code 2007 Project: Equirectangular Projection (\"Flat Map\")"
 msgstr ""
+"Google Summer of Code 2007 Projesi: Eşdörtegensel Projeksiyon (\"Düz "
+"Harita\")"
 
 #: src/kdemain.cpp:121
 msgid "Andrew Manson"
@@ -154,7 +159,7 @@ msgstr "Andrew Manson"
 
 #: src/kdemain.cpp:122
 msgid "Google Summer of Code 2007 Project: GPS Support for Marble"
-msgstr ""
+msgstr "Google Summer of Code 2007 Projesi: Marble için GPS Desteği"
 
 #: src/kdemain.cpp:125
 msgid "Murad Tagirov"
@@ -162,7 +167,7 @@ msgstr "Murad Tagirov"
 
 #: src/kdemain.cpp:126
 msgid "Google Summer of Code 2007 Project: KML Support for Marble"
-msgstr ""
+msgstr "Google Summer of Code 2007 Projesi: Marble için KML Desteği"
 
 #: src/kdemain.cpp:131
 msgid "Inge Wallin"
@@ -572,12 +577,12 @@ msgstr "Grafik Sistemi Değişikliği"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Renan Çakırerk"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, renan@pardus.org.tr"
 
 #. i18n: file ./tools/cloudtiles/clouds.dgml line 5
 #: rc.cpp:4
@@ -1923,6 +1928,17 @@ msgid ""
 "name in the user's language. Alternatively it can display the name in the "
 "official language and glyphs of that place. </p></body></html>"
 msgstr ""
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"> Bazı yerler değişik "
+"dillerde farklı isimlere sahip olabilirler. Haritadaki etiket kullanıcının "
+"yerel dilindeki yer ismini gösterebilir. Diğer bir seçenek ise yer isminin, "
+"yerin resmi dilinde ve kabartmalarında görünen haliyle gösterilmesidir. </p>"
+"</body></html>"
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:329
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
@@ -3725,7 +3741,7 @@ msgstr "Nehirleri / gölleri göster"
 #. i18n: ectx: property (text), widget (QCheckBox, checkBox_6)
 #: rc.cpp:1784
 msgid "Show elevation model"
-msgstr ""
+msgstr "Rakım modelini göster"
 
 #. i18n: file: examples/example2.ui:166
 #. i18n: ectx: property (text), widget (QLabel, label)

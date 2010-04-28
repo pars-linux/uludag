@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: mathematik\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-11-12 14:00+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-28 14:50+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: assistants/integrate/integrateassistant.cpp:44
@@ -30,7 +31,7 @@ msgstr "3B Çizim"
 
 #: assistants/linearalgebra/eigenvalues/eigenvaluesassistant.cpp:45
 msgid "Compute Eigenvalues"
-msgstr ""
+msgstr "Eigen değerlerini hesapla"
 
 #: assistants/linearalgebra/creatematrix/creatematrixassistant.cpp:45
 msgid "Create Matrix"
@@ -42,7 +43,7 @@ msgstr "Matrisi Tersine Çevir"
 
 #: assistants/linearalgebra/eigenvectors/eigenvectorsassistant.cpp:45
 msgid "Compute Eigenvectors"
-msgstr ""
+msgstr "Eigen vektörlerini hesapla"
 
 #: assistants/solve/solveassistant.cpp:44
 msgid "Solve equations"
@@ -115,7 +116,7 @@ msgctxt ""
 "the url to the documentation of Sage, please check if there is a translated "
 "version and use the correct url"
 msgid "http://www.sagemath.org/doc/reference/index.html"
-msgstr ""
+msgstr "http://www.sagemath.org/doc/reference/index.html"
 
 #: backends/sage/sagebackend.cpp:98
 msgid ""
@@ -123,6 +124,9 @@ msgid ""
 "GPL. <br/>It combines the power of many existing open-source packages into a "
 "common Python-based interface."
 msgstr ""
+"Sage, GPL lisanlı açık kaynaklı bir matematik yazılımıdır. <br/>"
+"Halihazırda bulunan bir çok açık kaynaklı paketin gücünü Python tabanlı bir "
+"arayüzde birleştirir."
 
 #: backends/R/rserver/main.cpp:30
 msgid "Server for the Cantor R Backend"
@@ -163,7 +167,7 @@ msgctxt ""
 "the url to the documentation of R, please check if there is a translated "
 "version and use the correct url"
 msgid "http://wiki.r-project.org/rwiki/doku.php?id=rdoc:rdoc"
-msgstr ""
+msgstr "http://wiki.r-project.org/rwiki/doku.php?id=rdoc:rdoc"
 
 #: backends/R/rbackend.cpp:92
 msgid ""
@@ -175,6 +179,14 @@ msgid ""
 "choice for research in statistical methodology, and R provides an Open "
 "Source route to participation in that activity."
 msgstr ""
+"R, S diline ve programlama arayüzüne benzeyen, istatistiksel hesaplamalar ve "
+"grafikler için kullanılan bir programlama dili ve ortamıdır. <br/>Çok "
+"çeşitli istatistiksel ve grafiksel teknikler (doğrusal ve doğrusal olmayan "
+"modelleme, klasik istatistiksel testler, zaman-dizi analizi, sınıflandırma, "
+"kümelendirme, ...)  içerir ve oldukça genişletilebilir bir yapıya sahiptir. "
+"S programalama dili sıklıkla istatistiksel metodoloji üzerine yapılan "
+"araştırmalarda kullanılan bir araçtır, R dili ise buna açık kaynaklı bir "
+"çözüm getirmektedir."
 
 #: backends/kalgebra/kalgebrasyntaxhelpobject.cpp:39
 #, kde-format
@@ -214,6 +226,8 @@ msgstr "Maxima çöktü. Yeniden başlatılıyor..."
 #: backends/maxima/maximasession.cpp:535
 msgid "Maxima crashed twice within a short time. Stopping to try starting"
 msgstr ""
+"Maxima kısa bir süre içerisinde 2 kere çöktü. Yeniden başlatılmaya "
+"çalışılıyor."
 
 #: backends/maxima/maximabackend.cpp:84
 msgctxt ""
@@ -232,6 +246,13 @@ msgid ""
 "integers, and variable precision floating point numbers. Maxima can plot "
 "functions and data in two and three dimensions. "
 msgstr ""
+"Maxima, türev, integral, Taylor serileri, Laplace dönüşümleri, adi "
+"differansiyel denklemler, doğrusal eşitlik sistemleri, polinomlar, takımlar "
+"(set), listeler, vektörler, matrisler, tensör (tensor) gibi sembolik ve "
+"sayısal ifadeleri düzenlemek için kullanılan bir sistemdir. Maxima tam "
+"kesir, rastgele hassasiyetli tamsaylar ve değişken hassasiyetli kayan "
+"noktalı sayılar  kullanarak yüksek hassasiyetli sayısal sonuçlar üretir. "
+"Maxima, fonksiyonları ve verileri iki ve üç boyutlu olarak çizebilir."
 
 #: backends/maxima/maximaextensions.cpp:46
 msgid "*.mac|Maxima batch File"
@@ -247,7 +268,7 @@ msgstr "Sonucu kaydet"
 
 #: resultcontextmenu.cpp:63
 msgid "Show Rendered"
-msgstr ""
+msgstr "Tamamlananı/Çizileni Göster"
 
 #: resultcontextmenu.cpp:65
 msgid "Show Code"
@@ -324,13 +345,13 @@ msgid "Other"
 msgstr "Diğer"
 
 #: worksheet.cpp:558
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Cannot write file %1:\n"
 #| "."
 msgid "Cannot write file %1."
 msgstr ""
-"%1 dosyasına yazılamıyor:\n"
+"%1 dosyası yazılamıyor:\n"
 "."
 
 #: worksheet.cpp:592
@@ -351,6 +372,9 @@ msgid ""
 "please check your configuration or install the needed packages.\n"
 "You will only be able to view this worksheet."
 msgstr ""
+"%1 arka ucunda sorun var,\n"
+"lütfen ayarlarınızı kontrol edin ya da gerekli paketleri tekrar yükleyin.\n"
+"Sadece bu çalışma sayfasını görüntüleyebileceksiniz."
 
 #: cantor_part.cpp:80
 #, kde-format
@@ -495,6 +519,11 @@ msgid ""
 "<li>Installing packages for one of the following programs:</li>     %1   "
 "<ul> </div> "
 msgstr ""
+"<h1>Arka uç bulunamadı</h1>\n"
+"<div>Sorunu çözmek için:\n"
+"  <ul>    <li>Ayar panelinden ayarları değiştirmeyi deneyein;</li>    "
+"<li>Şu programlardan birini yüklemeyi deneyin:</li>     %1   "
+"<ul> </div> "
 
 #: cantor.cpp:240
 msgid "Error"
@@ -541,7 +570,7 @@ msgstr "Sekme Tuşu ile Tamamlama için kullanılacak biçim"
 #. i18n: ectx: label, entry (TypesetDefault), group (Cantor)
 #: rc.cpp:15 rc.cpp:275
 msgid "Do Typesetting by default"
-msgstr ""
+msgstr "Varsayılan olarak Tip Ayarı uygula"
 
 #. i18n: file: cantor.kcfg:25
 #. i18n: ectx: label, entry (HighlightDefault), group (Cantor)
@@ -559,7 +588,7 @@ msgstr "Öntanımlı olarak Sekme Tuşu ile Tamamlamayı etkinleştir"
 #. i18n: ectx: label, entry (ExpressionNumberingDefault), group (Cantor)
 #: rc.cpp:24 rc.cpp:284
 msgid "Enable Numbering of Expressions by default"
-msgstr ""
+msgstr "İfade numaralandırmayı varsayılan olarak etkinleştir"
 
 #. i18n: file: cantor_part.rc:11
 #. i18n: ectx: Menu (view)
@@ -648,12 +677,12 @@ msgstr "Satır Numaralarını Etkinleştir"
 #: rc.cpp:67
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Renan Çakırerk"
 
 #: rc.cpp:68
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, renan@pardus.org.tr"
 
 #. i18n: file: assistants/integrate/cantor_integrate_assistant.rc:4
 #. i18n: ectx: Menu (calculate)
@@ -729,7 +758,7 @@ msgstr "Üst limit:"
 #. i18n: ectx: property (text), widget (QCheckBox, isDefinite)
 #: rc.cpp:128
 msgid "definite integral"
-msgstr ""
+msgstr "belirli intagral"
 
 #. i18n: file: assistants/plot2d/plot2ddlg.ui:31
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -831,7 +860,7 @@ msgstr "Sage uygulamasının yolu"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_integratePlots)
 #: rc.cpp:209 rc.cpp:215
 msgid "integrate Plots in Worksheet"
-msgstr ""
+msgstr "Çalışma sayfasındaki çizimlerin integralini al"
 
 #. i18n: file: backends/maxima/settings.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -863,7 +892,7 @@ msgstr "Sage çalıştırılabilir dosyasının yolu"
 #. i18n: ectx: label, entry (integratePlots), group (MaximaBackend)
 #: rc.cpp:260 rc.cpp:266
 msgid "Integrate Plots into the Worksheet"
-msgstr ""
+msgstr "Çizimlerin integralini çalışma sayfasna koy "
 
 #. i18n: file: backends/maxima/maximabackend.kcfg:10
 #. i18n: ectx: label, entry (Path), group (MaximaBackend)
