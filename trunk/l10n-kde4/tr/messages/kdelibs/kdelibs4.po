@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2010-04-27 16:57+0300\n"
+"PO-Revision-Date: 2010-04-28 08:58+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -246,7 +246,6 @@ msgstr "Düzenleyici Seçici"
 #. i18n: file: interfaces/ktexteditor/editorchooser_ui.ui:19
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1)
 #: rc.cpp:100
-#, fuzzy
 #| msgid ""
 #| "Please choose the default text editing component that you wish to use in "
 #| "this application. If you choose <B>System Default</B>, the application "
@@ -258,9 +257,10 @@ msgid ""
 "honor your changes in the System Settings. All other choices will override "
 "that setting."
 msgstr ""
-"Lütfen bu uygulama için kullanabileceğiniz bir düzenleyici belirleyin. Eğer "
-"<B>Sistem Öntanımlı</B> seçeneğine tıklarsanız, bu uygulama değişiklikleri "
-"Kontrol Merkezi'ne de uygulayacaktır."
+"Bu uygulamada kullanmak üzere istediğiniz bir ön tanımlı metin düzenleme "
+"bileşeni seçin. If you choose <B>Sistem Ön Tanımlı</B> seçerseniz, "
+"kullandığınız uygulama Sistem Ayarlarındaki seçiminize sadık kalacak. "
+"Diğer tüm seçenekler öntanımlı seçeneği geçersiz kılacak."
 
 #. i18n: file: kross/test/testguiform.ui:44
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -726,19 +726,17 @@ msgstr "Açıklama:"
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:219
 #. i18n: ectx: property (text), widget (QCheckBox, priceCheckBox)
 #: rc.cpp:312
-#, fuzzy
 #| msgid "Ne&ver store for this site"
 msgid "Set a price for this item"
-msgstr "&Bu site için asla kaydetme"
+msgstr "Bu öğe için fiyat belirleyin"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:242
 #. i18n: ectx: property (text), widget (QLabel, priceLabel)
 #: rc.cpp:315
-#, fuzzy
 #| msgctxt "The source url of a job"
 #| msgid "Source:"
 msgid "Price:"
-msgstr "Kaynak:"
+msgstr "Fiyat:"
 
 #. i18n: file: knewstuff/knewstuff3/downloaddialog.ui:46
 #. i18n: ectx: property (text), widget (QLabel, m_providerLabel)
@@ -1112,7 +1110,6 @@ msgstr "Duraklat"
 #. i18n: file: khtml/test_regression_gui.ui:147
 #. i18n: ectx: property (whatsThis), widget (QPushButton, saveLogButton)
 #: rc.cpp:501 rc.cpp:504
-#, fuzzy
 #| msgid ""
 #| "You may select a file where the log content is stored, before the "
 #| "regression testing started."
@@ -1120,7 +1117,7 @@ msgid ""
 "You may select a file where the log content is stored, before the regression "
 "testing is started."
 msgstr ""
-"Geriye uyumluluk testi başlamadan önce, günlük kaydı içeriğinin "
+"Regresyon testi başlamadan önce, günlük kaydı içeriğinin "
 "kaydedileceği bir dosya seçebilirsiniz."
 
 #. i18n: file: khtml/test_regression_gui.ui:150
@@ -2768,14 +2765,16 @@ msgid "The module %1 could not be found."
 msgstr "%1 modülü bulunamadı."
 
 #: kutils/kcmoduleloader.cpp:76
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<qt><p>The diagnostics is:<br />The desktop file %1 could not be found.</"
 #| "p></qt>"
 msgid ""
 "<qt><p>The diagnosis is:<br />The desktop file %1 could not be found.</p></"
 "qt>"
-msgstr "<qt><p>Tanı:<br />%1 desktop dosyası bulunamadı.</p></qt>"
+msgstr ""
+"<qt><p>Tanı:<br />%1 masaüstü dosyası bulunamadı.</p></"
+"qt>"
 
 #: kutils/kcmoduleloader.cpp:78
 #, kde-format
@@ -2794,22 +2793,21 @@ msgid "The module %1 is not a valid configuration module."
 msgstr "%1 geçerli bir yapılandırma modülü değil."
 
 #: kutils/kcmoduleloader.cpp:133
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<qt>The diagnostics is:<br />The desktop file %1 does not specify a "
 #| "library.</qt>"
 msgid ""
 "<qt>The diagnosis is:<br />The desktop file %1 does not specify a library.</"
 "qt>"
-msgstr ""
-"<qt>Hata nedeni:<br />%1 desktop dosyası bir kitaplık belirtmiyor.</qt>"
+msgstr "<qt>Tanı:<br />%1 masaüstü dosyası bir kitaplık belirtmiyor.</qt>"
 
 #: kutils/kcmoduleloader.cpp:152
 msgid "There was an error loading the module."
 msgstr "Modül yüklenirken bir hata oluştu."
 
 #: kutils/kcmoduleloader.cpp:152
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<qt>The diagnostics is:<br />%1<p>Possible reasons:</p><ul><li>An error "
 #| "occurred during your last KDE upgrade leaving an orphaned control module</"
@@ -2825,12 +2823,6 @@ msgid ""
 "message. If this fails, consider contacting your distributor or packager.</"
 "p></qt>"
 msgstr ""
-"<qt>Tanı:<br />%1<p>Olası nedenler:<ul><li>Son KDE güncellemenizde bir hata "
-"oluşmuş ve bir denetim modülü sahipsiz bırakılmış olabilir.</li><li>Eski bir "
-"üçüncü parti modül burada kalmış olabilir.</li></ul></p><p>Bu olasılıkları "
-"dikkatlice kontrol edin ve hata iletisinde belirtilen modülü silin. Eğer bu "
-"da başarısız olursa dağıtımınıza veya uygulamayı paketleyen geliştiriciye "
-"durumu bildirin.</p></qt>"
 
 #: kutils/kcmoduleloader.cpp:167
 msgid ""
@@ -2902,20 +2894,18 @@ msgid "Authentication error."
 msgstr "Yetkilendirme hatası."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:279
-#, fuzzy
 #| msgid "Loading Preview"
 msgid "Uploading preview and content..."
-msgstr "Önizleme Yükleniyor"
+msgstr "Önizleme ve içerik gönderiliyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:288
 msgid "Uploading content..."
 msgstr ""
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:292
-#, fuzzy
 #| msgid "Loading Preview"
 msgid "Uploading preview image and content..."
-msgstr "Önizleme Yükleniyor"
+msgstr "Resim önizlemesi ve içerik gönderiliyor..."
 
 #: knewstuff/knewstuff3/uploaddialog.cpp:301
 #, kde-format
@@ -2934,10 +2924,9 @@ msgstr "Dosya Gönderildi"
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:68
 #: knewstuff/knewstuff2/ui/downloaddialog.cpp:312
-#, fuzzy
 #| msgid "Timeout. Check Internet connection!"
 msgid "Timeout. Check Internet connection."
-msgstr "Zaman aşımı. İnternet bağlantınızı kontrol edin!"
+msgstr "Zaman aşımı. İnternet bağlantınızı kontrol edin."
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:126
 #: knewstuff/knewstuff2/ui/kdxsbutton.cpp:252
@@ -2985,16 +2974,14 @@ msgid "Get Hot New Stuff"
 msgstr "Yeni Ögeler Al"
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:198
-#, fuzzy
 #| msgid "*|All Folders"
 msgid "All Providers"
-msgstr "*|Tüm Dizinler"
+msgstr "Tüm Sağlayıcılar"
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:205
-#, fuzzy
 #| msgid "All Pages"
 msgid "All Categories"
-msgstr "Tüm Sayfalar"
+msgstr "Tüm Kategoriler"
 
 #: knewstuff/knewstuff3/downloaddialog_p.cpp:215
 #: knewstuff/knewstuff2/ui/downloaddialog.cpp:129
@@ -3009,16 +2996,14 @@ msgid "Download New Stuff..."
 msgstr "Yeni Özellikler İndir..."
 
 #: knewstuff/knewstuff3/core/installation.cpp:494
-#, fuzzy
 #| msgid "Overwrite File?"
 msgid "Overwrite existing file?"
-msgstr "Dosyanın üzerine yazılsın mı?"
+msgstr "Varolan dosyanın üzerine yazılsın mı?"
 
 #: knewstuff/knewstuff3/core/installation.cpp:494
-#, fuzzy
 #| msgid "Download"
 msgid "Download File:"
-msgstr "İndir"
+msgstr "Dosyayı İndir:"
 
 #: knewstuff/knewstuff3/core/engine.cpp:237
 #, kde-format
@@ -3037,10 +3022,10 @@ msgid "Re: %1"
 msgstr "Ynt: %1"
 
 #: knewstuff/knewstuff3/core/engine.cpp:451
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Rating: %1"
 msgid "loading %1"
-msgstr "Beğeni: %1"
+msgstr "%1 yükleniyor"
 
 #: knewstuff/knewstuff3/core/security.cpp:75
 #: knewstuff/knewstuff2/core/security.cpp:75
@@ -3117,10 +3102,9 @@ msgid ""
 msgstr ""
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:375
-#, fuzzy
 #| msgid "Could not create temporary file."
 msgid "Could not get download link."
-msgstr "Geçici dosya oluşturulamadı."
+msgstr "İndirme bağlantısı alınamadı."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:408
 msgid "Your vote was successful."
@@ -3136,10 +3120,9 @@ msgid "You are now a fan."
 msgstr ""
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:428
-#, fuzzy
 #| msgid "Could not create temporary file."
 msgid "Could not make you a fan."
-msgstr "Geçici dosya oluşturulamadı."
+msgstr ""
 
 #: knewstuff/knewstuff3/ui/itemsmodel.cpp:144
 #: knewstuff/knewstuff3/ui/entrydetailsdialog.cpp:119
@@ -3195,10 +3178,10 @@ msgid "Details..."
 msgstr "Ayrıntılar..."
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:253
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Rating: %1"
 msgid "Rating: %1%"
-msgstr "Beğeni: %1"
+msgstr "Beğeni: %1%"
 
 #: knewstuff/knewstuff3/ui/itemsviewdelegate.cpp:291
 #: knewstuff/knewstuff2/ui/itemsviewdelegate.cpp:254
@@ -3823,7 +3806,7 @@ msgid "'%1' missing."
 msgstr "'%1' bulunamadı."
 
 #: kdecore/kernel/kcmdlineargs.cpp:892
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt ""
 #| "@info:shell message on appcmd --version; %3 application name, other %n "
 #| "version strings"
@@ -3840,7 +3823,7 @@ msgid ""
 "%3: %4\n"
 msgstr ""
 "Qt: %1\n"
-"KDE: %2\n"
+"KDE Geliştirme Platformu: %2\n"
 "%3: %4\n"
 
 #: kdecore/kernel/kcmdlineargs.cpp:917
@@ -6410,7 +6393,7 @@ msgid "%1 (Link)"
 msgstr "%1 (Bağlantı)"
 
 #: khtml/khtml_part.cpp:3595
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "%2 (%1 bytes)"
 msgid "%2 (%1 byte)"
 msgid_plural "%2 (%1 bytes)"
@@ -7819,11 +7802,11 @@ msgid_plural "The slot asked for %1 arguments"
 msgstr[0] ""
 
 #: kjsembed/kjsembed/qobject_binding.cpp:413
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "There is no matching item available.\n"
 msgid "but there is only %1 available"
 msgid_plural "but there are only %1 available"
-msgstr[0] "Eşleşen öge yok.\n"
+msgstr[0] ""
 
 #: kjsembed/kjsembed/qobject_binding.cpp:414
 #, kde-format
@@ -8437,10 +8420,9 @@ msgstr ""
 "çıkmadığına emin olun"
 
 #: kdeui/dialogs/kbugreport.cpp:202
-#, fuzzy
 #| msgid "no version set (programmer error!)"
 msgid "no version set (programmer error)"
-msgstr "sürüm bilgisi yok (programcı hatası!)"
+msgstr "sürüm bilgisi yok (programcı hatası)"
 
 #: kdeui/dialogs/kbugreport.cpp:213
 msgid "OS:"
@@ -8571,7 +8553,6 @@ msgstr ""
 "Eğervermiyorsa, daha düşük bir önem derecesi seçin. Teşekkürler!</p>"
 
 #: kdeui/dialogs/kbugreport.cpp:453
-#, fuzzy
 #| msgid ""
 #| "Unable to send the bug report.\n"
 #| "Please submit a bug report manually...\n"
@@ -8582,7 +8563,7 @@ msgid ""
 "See http://bugs.kde.org/ for instructions."
 msgstr ""
 "Hata raporu gönderilemedi.\n"
-"Lütfen Hata raporunu elle gönderin...\n"
+"Lütfen hata raporunu elle gönderin....\n"
 "Bilgi için http://bugs.kde.org/ adresine bakın."
 
 #: kdeui/dialogs/kbugreport.cpp:461
@@ -8750,7 +8731,7 @@ msgstr ""
 "<html><font size=\"5\">%1</font><br /><b>Sürüm %2</b><br />&nbsp;</html>"
 
 #: kdeui/dialogs/kaboutapplicationdialog.cpp:111
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE %"
 #| "3</html>"
@@ -8761,8 +8742,8 @@ msgid ""
 "<html><font size=\"5\">%1</font><br /><b>Version %2</b><br />Using KDE "
 "Development Platform %3</html>"
 msgstr ""
-"<html><font size=\"5\">%1</font><br /><b>Sürüm %2</b><br />KDE Sürümü %3</"
-"html>"
+"<html><font size=\"5\">%1</font><br /><b>Sürüm %2</b><br />KDE "
+"Geliştirme Platformu %3</html>"
 
 #: kdeui/dialogs/kaboutapplicationdialog.cpp:145
 #, kde-format
@@ -10278,10 +10259,9 @@ msgid "You are not allowed to save the configuration"
 msgstr "Yapılandırmayı kaydetme izniniz yok"
 
 #: kdeui/widgets/khistorycombobox.cpp:317
-#, fuzzy
 #| msgid "No further item in the history."
 msgid "No further items in the history."
-msgstr "Geçmişte başka madde yok."
+msgstr "Geçmişte başka öğe yok."
 
 #: kdeui/widgets/ksqueezedtextlabel.cpp:163
 msgid "&Copy Full Text"
@@ -11833,7 +11813,7 @@ msgid "Shortcut '%1' in Application %2 for action %3\n"
 msgstr "%2 uygulamasındaki %3 eylemi için '%1' kısayol\n"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:176
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "The shortcut '%1' conflicts with the following key combinations:\n"
 msgctxt ""
 "%1 is the number of conflicts (hidden), %2 is the key sequence of the "
@@ -11841,10 +11821,9 @@ msgctxt ""
 msgid "The shortcut '%2' conflicts with the following key combination:\n"
 msgid_plural ""
 "The shortcut '%2' conflicts with the following key combinations:\n"
-msgstr[0] "'%1' kısayolu şu tuş kombinasyonları ile çakışıyor:\n"
+msgstr[0] "'%2' kısayolu aşağıdaki tuş kombinasyonları ile çakışıyor:\n"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:182
-#, fuzzy
 #| msgid "Conflict With Registered Global Shortcut"
 msgctxt "%1 is the number of shortcuts with which there is a conflict"
 msgid "Conflict with Registered Global Shortcut"
@@ -11852,18 +11831,17 @@ msgid_plural "Conflict with Registered Global Shortcuts"
 msgstr[0] "Kaydedilmiş Genel Kısayollarda Çakışma"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:254
-#, fuzzy
 #| msgid "Shortcut conflict"
 msgctxt "%1 is the number of conflicts"
 msgid "Shortcut Conflict"
 msgid_plural "Shortcut Conflicts"
-msgstr[0] "Kısayol çakışması"
+msgstr[0] "Kısayol Çakışması"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:258
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Shortcut(s) '%1' for action '%2'\n"
 msgid "Shortcut '%1' for action '%2'\n"
-msgstr "'%2' eylemi için %1 kısayol\n"
+msgstr "'%2' eylemi için %1 kısayolu\n"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:263
 #, fuzzy, kde-format
@@ -12664,7 +12642,7 @@ msgid "Named Colors"
 msgstr "İsimlendirilen Renkler"
 
 #: kdeui/colors/kcolordialog.cpp:709
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Unable to read X11 RGB color strings. The following file location(s) were "
 #| "examined:\n"
@@ -12679,7 +12657,9 @@ msgid_plural ""
 "Unable to read X11 RGB color strings. The following file locations were "
 "examined:\n"
 "%2"
-msgstr[0] "X11 renk şablonu bulunamadı. Aşağıdaki dizinler araştırıldı: \n"
+msgstr[0] ""
+"X11 RGB renk dizgileri okunamadı. Aşağıdaki dosya konumları araştırıldı:\n"
+"%2"
 
 #: kdeui/colors/kcolordialog.cpp:991
 msgid "Select Color"
