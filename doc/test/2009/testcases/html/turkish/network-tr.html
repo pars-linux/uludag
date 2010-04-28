@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/network-tr.tex -->
+<!--HEVEA command line is: hevea network-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Network Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section filter alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  filter alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -106,8 +106,10 @@ wget paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştı
 </PRE></LI><LI CLASS="li-enumerate">youtube-dl paketi kurulumu sonrası:<P>Aşağıdaki komutu çalıştırdığınızda .flv uzantılı bir dosyanın indirildiğini gözlemleyin.
 </P><PRE CLASS="verbatim"># http://www.youtube.com/watch?v=iLNngHQ_lj0
 </PRE></LI></OL><!--TOC section Chat alt Bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-skype paketi kurulumu sonrası:<P>Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc5">5</A>  Chat alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">quassel ve qassel-data paketleri kurulumu sonrası:<P>quassel uygulamasını başlatın ve Başlan butonuna basın, uygun kanalı seçerek bağlanmaya çalışın ve bağlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">quasselclient ve quasselcore paketleri kurulumu sonrası:<P>Servis yöneticisinden "quasselcore" servisini başlatın başlatılabildiğini gözlemleyin.</P><P>"quasselclient" uygulamasını açın ve "Bağlan" butonuna basın, açılacak olan pencerede ekle butonuna basın ve sunucu adı olarak "localhost" diyerek "tamam" butonuna basın.</P><P>Bağlantının şağlanmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">bitlbee paketi kurulumu sonrası:<P>Aşağıda bulunan dosyada "disable" değişkenine "no" değerini atayın. Daha sonra service yöneticisinden xinetd servisini başlatın. 
+</P><PRE CLASS="verbatim"> su -
+ vi /etc/xinetd.d/bitlbee
+</PRE><P>Konversation uygulamasını çalıştırın, Dosya → Çabuk bağlan yolunu izleyerek, Sunucu bilgisayar kısmına "localhost" yazın ve "Bağlan" butonuna basın. Uygulamanın alt bölümünde bulunan kannallarda "bitlbee" kanalının açılmış olduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">skype paketi kurulumu sonrası:<P>Eğer bir skype hesabınız mevcut ise, bu hesap ile skype açın ve test araması yapın sorunsuz bir şekilde yapabildiğinizi gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">amsn-skin-oxygen paketi kurulumu sonrası:<P>Kmenüden amsn uygulamasını açın ve okosijen teması ile açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">amsn paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve msn ayarlarınızı yapınız. Sorunsuz bir şekilde beğlanabildiğinizi gözlemleyin.</P></LI><LI CLASS="li-enumerate">psi ve psimedia paketi kurulumu sonrası:<P>Kmenüden uygulamayı açın ve eğer bir jabber hesabınız var ise bu bu hesabı ekleyin ve bağlantının şağlanabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">choqok paketi kurulumu sonrası:<P>Uygulamayı açın ve bir twitter üyeliğiniz var ise, bu üyelik bilgilerinizi kaydedin ve sorunsuz bir şekilde twitter’a bağlanabildiğinizi gözlemleyin.	
 </P></LI><LI CLASS="li-enumerate">konversation ve konversation-docs paketleri kurulumu sonrası:<P>Uygulamayı çalıştırın ve öntanımlı kanallara bağlandığınızı gözlemleyin.</P></LI><LI CLASS="li-enumerate">pidgin paketi kurulumu sonrası:
 Uygulamayı açın ve bir üyelik için bilgilerinizi kaydedin ve sorunsuz bir şekilde bağlanabildiğinizi gözlemleyin.</LI></OL><!--TOC section Web alt Bileşeni-->
@@ -188,10 +190,12 @@ Firefox → Düzen → Seçenekler → Eklentileri Yönet → Yan Uygulamalar b�
   </PRE></LI></UL>
 </LI></OL><!--TOC section Ftp alt Bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc11">11</A>  Ftp alt Bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-lftp paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # lftp http://ftp.pardus.org.tr/pub/
- # ls 
- # cd pardus
+netkit-ftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde parola sorduğunu gözlemleyin. 
+</P><PRE CLASS="verbatim"> ftp ftp.waytec.com
+</PRE></LI><LI CLASS="li-enumerate">filezilla paketi kurulumu sonrası:<P>Uygulamayı açın, sunucu kısmına "ftp.pardus.org.tr" yazın ve "Hızlı bağlan" butonuna basın. "Uzaktaki site" penceresinde "ftp.pardus.org.tr" altında bulunan dizinlerin listelendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lftp paketi kurulumu sonrası:
+<PRE CLASS="verbatim">  lftp http://ftp.pardus.org.tr/pub/
+  ls 
+  cd pardus
 </PRE>Yukarıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
 </LI><LI CLASS="li-enumerate">ncftp paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">ncftp ftp://ftp.freebsd.org/pub/FreeBSD 

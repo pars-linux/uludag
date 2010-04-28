@@ -46,7 +46,7 @@ TD P{margin:0px;}
 </STYLE>
 </HEAD>
 <BODY >
-<!--HEVEA command line is: hevea 2009/testcases/turkish/server-tr.tex -->
+<!--HEVEA command line is: hevea server-tr.tex -->
 <!--CUT DEF section 1 --><TABLE CLASS="title"><TR><TD><H1 CLASS="titlemain">Server Bileşeni Test Aşamaları</H1><H3 CLASS="titlerest">Semen Cirit</H3></TD></TR>
 </TABLE><!--TOC section Auth alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -116,7 +116,13 @@ Servis yöneticisinden apache sunucusunu başlatın. Aşağıda bulunan komutu k
 <PRE CLASS="verbatim"># apachectl -M 
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mod_php paketi kurulumu sonrası:<P>util-tr.pdf phpmyadmin testini gerçekleştiriniz.</P></LI></OL><!--TOC section Database alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>  Database alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-memcached paketi kurulumu sonrası:<P>programming-tr.pdf python-memcached testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">postgresql-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
+Aşağıda bulunan paketler sadece kurulum testine tabidir.<PRE CLASS="verbatim">virtuoso
+virtuoso-apps
+virtuoso-conductor
+virtuoso-doc
+virtuoso-java
+virtuoso-utils
+</PRE></LI><LI CLASS="li-enumerate">memcached paketi kurulumu sonrası:<P>programming-tr.pdf python-memcached testini gerçekleştirin.</P></LI><LI CLASS="li-enumerate">postgresql-python paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">  ipython
   import pgdb </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrası:
 <PRE CLASS="verbatim"> postgresql-doc

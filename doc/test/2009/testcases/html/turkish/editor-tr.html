@@ -76,7 +76,15 @@ Bu ucuncu satirdir.
 <H3 CLASS="subsection"><!--SEC ANCHOR -->Emacs</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> git-emacs
-</PRE></LI><LI CLASS="li-enumerate">cedet paketi kurulumu sonrası:<P>Emacs uygulamasını Kmenu’den açın ve emacs konsolunda Alt-x tuşlarına basarak speedbar komutunu çalıştırın.
+ gnuplot-emacs
+</PRE></LI><LI CLASS="li-enumerate">pari-emacs paketi kurulumu sonrası:<P>Ev dizini altında .emacs dosyası içerisine aşağıda bulunan satırları ekleyin. 
+</P><PRE CLASS="verbatim">(autoload 'gp-mode "pari" nil t)
+(autoload 'gp-script-mode "pari" nil t)
+(autoload 'gp "pari" nil t)
+(autoload 'gpman "pari" nil t)
+</PRE><P>Daha sonra emacs uygulamasını başlatın ve Alt+x tuşlarına basarak gp komutunu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> M-x gp
+</PRE></LI><LI CLASS="li-enumerate">cedet paketi kurulumu sonrası:<P>Emacs uygulamasını Kmenu’den açın ve emacs konsolunda Alt+x tuşlarına basarak speedbar komutunu çalıştırın.
 </P><PRE CLASS="verbatim"> M-x speedbar
 </PRE></LI><LI CLASS="li-enumerate">emacs-python paketi kurulumu sonrası:<P>Kmenüden emacs uygulamasını açın ve Alt+X tuşlarına aynı anda basın ve daha sonra python yazıp TAB tuşuna basın ve python ile ilgili modüllerin çıktığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">emacs-ipython paketi kurulumu sonrası:<P>Kmenüden emacs uygulamasını açın ve Alt+X tuşlarına aynı anda basın ve daha sonra ipython yazıp TAB tuşuna basın ve ipython ile ilgili modüllerin çıktığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">Emacs paketi kurulumu sonrası:<P>Menü → Uygulamalar → Yardımcı Programlar bölümünden Emacs’i açın.</P><P>Sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">color-theme paketi kurulumu sonrası:<P>Aşağıdaki komutu kullanarak, ev dizininizin altına .emacs dosyasını kaydedin.
 </P><PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/editor/.emacs 

@@ -150,7 +150,7 @@ koffice-l10n-zh_TW
  aqbanking
  kmymoney
  kmymoney-docs
-</PRE></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
+</PRE></LI><LI CLASS="li-enumerate">scribus paketi kurulumu sonrası:<P>Uygulamanın sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">rst2pdf paketi kurulumu sonrası:<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test.rst
  rst2pdf test.rst
  okular test.pdf
 </PRE></LI><LI CLASS="li-enumerate">docutils paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde html formatına dönüştüğünü gözlemleyin.
@@ -167,39 +167,41 @@ openclipart
 recode
 rarian
 </PRE></LI><LI CLASS="li-enumerate">aiksaurus paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # aiksaurus &lt;ingilizce bir kelime&gt;
+<PRE CLASS="verbatim"> aiksaurus &lt;ingilizce bir kelime&gt;
 </PRE><P>Verdiğiniz kelimeye benzer kelimeler bulduğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">antiword paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
- # antiword antiword_test.doc
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/antiword_test.doc
+ antiword antiword_test.doc
 </PRE><P>Komut çıktısının sorunsuz çalıştığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">barcode paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # barcode
+<PRE CLASS="verbatim"> barcode
 </PRE>Bu komudu çalıştırdıktan sonra bir kelime girin ve bu kelimenin barcode olarak sorunsuz bir şekilde kodlnadığını gözlemleyin.</LI><LI CLASS="li-enumerate">djview4, djvu paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/djvu_test.djvu
 </PRE><P>İndirdiğiniz dosya üzerine sağ tıklayarak, birlikte aç bölümünden djview4 seçin. </P><P>Sorunsuz bir şekilde açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">dos2unix paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_dos2unix.txt
  # dos2unix test_dos2unix.txt deneme1.txt
  # vi deneme1.txt
-</PRE>Text dosyasının sorunsuz bir şekilde dos formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
- # mac2unix test_mac2unix.txt deneme2.txt
- # vi deneme2.txt
+</PRE>Text dosyasının sorunsuz bir şekilde dos formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_mac2unix.txt
+ mac2unix test_mac2unix.txt deneme2.txt
+ vi deneme2.txt
 </PRE><P>Text dosyasının sorunsuz bir şekilde mac formatından unix formatına geçtiğini gözlemleyin. (İlgili satırlar uygun satırlarda olmalıdır.)</P></LI><LI CLASS="li-enumerate">doxygen paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
- # doxygen -g test_doxygen.cfg test_doxygen.c
- # doxygen test_doxygen.cfg
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_doxgen.c
+ doxygen -g test_doxygen.cfg test_doxygen.c
+ doxygen test_doxygen.cfg
+</PRE></LI><LI CLASS="li-enumerate">doxygen-gui paketi kurulumu sonrası<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> doxywizard
 </PRE><P>Bulunduğunuz dizinde bir html ve bir de latex dizinin sorunsuz bir şekilde oluştuğunu gözlemleyin.</P></LI><LI CLASS="li-enumerate">htmldoc paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_htmldoc.html
 </PRE><P>Menü → Uygulamalar → Ofis yolunu izleyerek htmldoc uygulmasını açın.</P><P>Sorunsuz bir şekilde açıldığını gözlemleyin.</P><P>Htmldoc uygulmasını kullanarak test_htmldoc.html dosyasını pdf dosyasına dönüştürün. (Input için webpage seçin daha sonra test dosyasını ekleyin. PDF kısmına geçin ve generate tuşuna basın, sizden bir dosya adı girmenizi isteyecek. PDF uzantılı bir dosya adı verin ve tekrar generate tuşuna basın)</P><P>Düzgün bir şekilde dönüşümün gerçekleştiğini gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">mftrace paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # mftrace cmr10
+<PRE CLASS="verbatim"> mftrace cmr10
 </PRE>Sorunsuz bir şekilde cmrt10.pfa dosyasının oluştuğunu gözlemleyin.
 </LI><LI CLASS="li-enumerate">t1utils paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
- # t1ascii test_t1utils.pfa
- # t1asm test_t1utils.pfa
- # t1binary test_t1utils.pfa
- # t1disasm test_t1utils.pfa
- # t1mac test_t1utils.pfa
- # t1unmac test_t1utils.pfa
+<PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/misc/test_t1utils.pfa
+  t1ascii test_t1utils.pfa
+  t1asm test_t1utils.pfa
+  t1binary test_t1utils.pfa
+  t1disasm test_t1utils.pfa
+  t1mac test_t1utils.pfa
+  t1unmac test_t1utils.pfa
 </PRE><P>Sorunsuz bir şekilde bu komutların çalıştığını gözlemleyin. 
 </P></LI><LI CLASS="li-enumerate">tellico paketi kurulumu sonrası:<UL CLASS="itemize"><LI CLASS="li-itemize">
 Kurulumdan sonra sorunsuz bir şekilde bu uygulamanın açıldığını gözlemleyin.
@@ -275,9 +277,9 @@ openoffice Sunum Araçlar → Eklenti Yöneticisinden ilgili eklentinin eklenmi�
 <PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 </PRE><UL CLASS="itemize"><LI CLASS="li-itemize">
 openoffice Sunum Araçlar → Eklenti Yöneticisinden ilgili eklentinin eklenmiş olduğunu gözlemleyin.</LI><LI CLASS="li-itemize">Yukarıda bulunan dosyayı openoffice Sunum uygulaması ile açın. Araçlar → Sunumu Küçült seçeneğine tıklayın ve gerekli aşamaları uygulayın.<P>Sorunsuz bir şekilde .mini.p uzantılı bir dosyanın oluştuğunu gözlemleyin.</P></LI><LI CLASS="li-itemize">Oluşan dosyaya sağ tıklayarak openoffice sunum uygulamasını seçin.<P>Düzgün bir şekilde açıldığını gözlemleyin.</P></LI></UL></LI><LI CLASS="li-enumerate">openoffice-extension-presenter-screen paketi kurulumu sonrası.
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
+<PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_ooimpress.odp
 </PRE><UL CLASS="itemize"><LI CLASS="li-itemize">Yukarıda bulunan dosyayı openoffice Sunum uygulaması ile açın. Notlar bölümünden bir not ekleyin. <P>F5 tuşuna basın ve bu eklediğiniz notun görüntülenmediğini gözlemleyin.</P></LI></UL></LI><LI CLASS="li-enumerate">openoffice-extension-report-builder paketi kurulumu sonrası.
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
+<PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/openoffice/test_openoffice-base.odb
 </PRE></LI><LI CLASS="li-enumerate">openoffice Sunum Araçlar → Eklenti Yöneticisinden ilgili eklentinin eklenmiş olduğunu gözlemleyin.<UL CLASS="itemize"><LI CLASS="li-itemize">
 openoffice Sunum Araçlar → Eklenti Yöneticisinden ilgili eklentinin eklenmiş olduğunu gözlemleyin.</LI><LI CLASS="li-itemize">Yukarıda bulunan dosyayı openoffice VeriTabanı uygulaması ile açın. Sol bölümde bulunan "Raporlar" seçeneğine tıklayın.<P>Sihirbaz kullanarak rapor oluşturu seçin, yeni bir rapor yazmaya çalışın, sorunsuz bir şekilde kaydedebildiğinizi gözlemleyin.</P></LI></UL></LI><LI CLASS="li-enumerate">openoffice-extension-wiki-publisher paketi kurulumu sonrası.<P>Openoffice Kelime İşlemci’yi açın. Dosya → Gönder → MediaWiki’ye seçeneğini tıklayın. Wiki sunucusu olarak http://tr.pardus-wiki.org/ adresini ekleyip bağlanmaya çalışın.</P><P>Sorunsuz bir şekilde bağlandığınız gözlemleyin.</P></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin testi için ilgili glibc-locales-x dosyasını kurduktan sonra testlerinizi gerçekleştiriniz. (x burada dilin adıdır örneğin glibc-locales-es)
 <PRE CLASS="verbatim">openoffice-help-en 
@@ -304,36 +306,35 @@ openoffice-langpack-tr
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc6">6</A>   Postscript alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 poppler-glib paketi kurulumu sonrası:<P>multimedia-tr.pdf inkscape testini gerçekleştiriniz.
 </P></LI><LI CLASS="li-enumerate">poppler-qt paketi kurulumu sonrası:<P>office-tr.pdf inkscape tellico testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">a2ps paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
-# a2ps -o test_a2ps.ps test_a2ps.tex
-# a2ps test_a2ps.tex
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_a2ps.tex
+ a2ps -o test_a2ps.ps test_a2ps.tex
+ a2ps test_a2ps.tex
 </PRE><P>Yukarıda bulunan ikinci komut çıktısının test_a2ps.ps dosyasını sorunsuz bir şekilde oluşturduğunu gözlemleyin.</P><P>Eğer bir yazıcınınz var ise 3. komut ile sorunsuz bir şekilde çıktı alınabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">ghostscript ve ghostscript-doc paketleri kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
-# gs test_ghostscript.ps
-# dvipdf  test_ghostscript.dvi test.pdf
-# eps2eps test_ghostscript.ps test.eps
-# font2c test_ghostscript.ps test.c
-# pdf2dsc test_ghostscript.pdf test.dsc
-# pdfopt test_ghostscript.pdf test.pdf
-# printafm test_ghostscript.ps
-# ps2ascii test_ghostscript.ps test
-# ps2pdf test_ghostscript.ps test.pdf
-# ps2ps test_ghostscript.ps test.ps
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.ps
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.dvi
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_ghostscript.pdf
+ gs test_ghostscript.ps
+ eps2eps test_ghostscript.ps test.eps
+ font2c test_ghostscript.ps test.c
+ pdf2dsc test_ghostscript.pdf test.dsc
+ pdfopt test_ghostscript.pdf test.pdf
+ printafm test_ghostscript.ps
+ ps2ascii test_ghostscript.ps test
+ ps2pdf test_ghostscript.ps test.pdf
+ ps2ps test_ghostscript.ps test.ps
 </PRE><P>"gs" komutu ile ilgili dosyanın sorunsuz bir şekilde görüntülenebildiğini, diğer komutların da sorunsuz bir şekilde uygun uzantılı dosyalar ürettiğini gözlemleyin. (Bu üretilen dosyalara okular ile bakabilirsiniz.)</P></LI><LI CLASS="li-enumerate">gv paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# gv test_gv.pdf
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+ gv test_gv.pdf
 </PRE><P>Pdf dosyasının düzgün bir şekilde görüntülendiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">poppler paketi kurulumu sonrası:
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
-# pdffonts test_gv.pdf
-# pdfinfo test_gv.pdf
-# pdftohtml test_gv.pdf test.html
-# pdftoppm test_gv.pdf test.ppm
-# pdftops test_gv.pdf test.ps
-# pdftotext test_gv.pdf test
-# pdfimages -f 1 test_poppler.pdf test
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_gv.pdf
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/office/postscript/test_poppler.pdf
+ pdffonts test_gv.pdf
+ pdfinfo test_gv.pdf
+ pdftohtml test_gv.pdf test.html
+ pdftoppm test_gv.pdf test.ppm
+ pdftops test_gv.pdf test.ps
+ pdftotext test_gv.pdf test
+ pdfimages -f 1 test_poppler.pdf test
 </PRE><P>Yukarıda bulunan komutların sorunsuz bir şekilde uygun çıktıları ürettiğini gözlemleyin.
 </P></LI></OL><!--TOC section  Spellcheck alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>   Spellcheck alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">

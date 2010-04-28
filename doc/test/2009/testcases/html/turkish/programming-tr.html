@@ -83,6 +83,8 @@ Aşağıda bulunan paketler kurulum testine tabidir.
 Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim">fcgi
 mcpp
+translate-toolkit-docs
+ctags
 </PRE></LI><LI CLASS="li-enumerate">translate-toolkit paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> # ipython
  import translate
@@ -107,8 +109,8 @@ gitweb
  bzr add testfile
  bzr diff
 </PRE></LI><LI CLASS="li-enumerate">SVK paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim">svk mirror //svk/trunk svn://svn.clkao.org/svkbook/trunk
-svk sync //svk/trunk
+</P><PRE CLASS="verbatim">svk mirror http://svn.ofbiz.org/svn/ofbiz/trunk //uplink
+svk sync //svk/uplink
 </PRE></LI><LI CLASS="li-enumerate">tig paketi kurulumu sonrası:<P>tig comutunun tüm geçmişi listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim">git clone git://github.com/git/hello-world.git 
 cd hello-world
@@ -122,26 +124,25 @@ tig
  cd hello-world
  gitk 
 </PRE></LI><LI CLASS="li-enumerate">git-daemon paketi kurulumu sonrası:<P>Servis yöneticisinden git_daemon başlatın, aşağıdaki komut ile başlatıldığına emin olun:
-</P><PRE CLASS="verbatim"> # service git_daemon status
+</P><PRE CLASS="verbatim"> service git_daemon status
 </PRE></LI><LI CLASS="li-enumerate">git paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın. Ve sorunsuz bir şekilde Git deposu oluşturduğunu ve klonlandığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # cd ~
- # mkdir test_git
- # cd test_git
- # git init
- # cd ..
- # git clone test_git test_clone
+</P><PRE CLASS="verbatim">  cd ~
+  mkdir test_git
+  cd test_git
+  git init
+  cd ..
+  git clone test_git test_clone
 </PRE></LI><LI CLASS="li-enumerate">subversion paketi kurulumu sonrası:<P>test dizininin sorunsuz bir şekilde eklenmiş olduğunu gözlemleyin:
-</P><PRE CLASS="verbatim">  # svn co http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/
-  # cd turkish
-  # svn mkdir test
-  # svn st
+</P><PRE CLASS="verbatim">   svn co http://svn.pardus.org.tr/uludag/trunk/doc/test/2009/testguide/turkish/
+   cd turkish
+   svn mkdir test
+   svn st
  </PRE><P>testfile dosyası içerisine bir kaç kelime yazın ve kaydedin. Yapılan değişiklik farkının alınabildiğini gözlemleyin:
-</P><PRE CLASS="verbatim">  # vi testfile
-  # svn add testfile
-  # svn diff
+</P><PRE CLASS="verbatim">   vi testfile
+   svn add testfile
+   svn diff
  </PRE></LI></OL><!--TOC section Environment alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Environment alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-eclipse-pydev paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Environment alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">eclipse-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın sorunsuz bir şekilde açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">eclipse-cdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve C/C++ geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede C/C++ Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-jdt-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve Java geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Java Development yazmalı)</P></LI><LI CLASS="li-enumerate">eclipse-pde-binary paketi kurulumu sonrası:<P>Kmenu’den eclipse uygulamasını açın ve eklenti geliştirme araçlarının eklendiğini gözlemleyin. (İlk açılan geniş pencerede Eclipse plug-in development yazmalı)</P></LI><LI CLASS="li-enumerate">kdevelop paketi kurulumu sonrası: <P>Kmenuden uygulamayı açın açılabildiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">lazarus paketi kurulumu sonrası:<P>Kmenüden programın sorunsuz açıldığını gözlemleyin.</P></LI><LI CLASS="li-enumerate">eric paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı eric uygulaması ile açın ve Start → Run Script yolunu izleyerek çalıştırın. </P><P>Sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/environment/test.py
 </PRE></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketlerin kurulumu sonrasında, yerel dilinizi değiştirip, konsoldan aynı dizinde bir open office uygulaması açın ve yardım dosyasının ilgili dilde olduğunu gözlemleyin.
 <PRE CLASS="verbatim">eric-i18n-cs
@@ -175,7 +176,10 @@ tcl, tcltk paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun bir gui ekr
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/test_tcl.tcl
  wish test_tcl.tcl
 </PRE></LI></OL><!--TOC subsection Php alt bileşeni-->
-<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">php-cli, php-common, mod_php paketleri kurulumu sonrası:<P>Servis yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.</P><PRE CLASS="verbatim"># cd /var/www/localhost/htdocs/
+<H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc11">8.3</A>  Php alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">php-gtk paketi kurulumu sonrası:<P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin.
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test_phpgtk.phpw
+ php test_phpgtk.phpw
+</PRE></LI><LI CLASS="li-enumerate">php-cli, php-common, mod_php paketleri kurulumu sonrası:<P>Servis yöneticisinden apache servisini başlatın.</P><P>Aşağıda bulunan komutları çalıştırdıktan sonra http://localhost/test.php adresine firefox ile girin ve php ile ilgili bilgilerin sayfalandığını gözlemleyin.</P><PRE CLASS="verbatim"># cd /var/www/localhost/htdocs/
 # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/php/test.php 
 </PRE></LI></OL><!--TOC subsection Perl alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc12">8.4</A>  Perl alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -185,8 +189,24 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir:
  perl-JSON-XS
  perl-common-sense
  perlmod
-</PRE></LI><LI CLASS="li-enumerate">perl-DBD-Pg paketi kurulumu sonrası:<P>perl-DBI paketini kurduktan sonra:</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/DBD-Pg.tar.gz
- perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
+ perl-Attribute-Handlers
+ perl-DBD-Pg
+ perl-Image-ExifTool
+ perl-Image-ExifTool-docs
+ perl-XML-SAX
+ perl-AnyEvent
+ perl-Authen-SASL
+ perl-Crypt-Blowfish
+ perl-Data-Dumper
+ perl-Event-ExecFlow
+ perl-FreezeThaw
+ perl-HTML-Parser
+ perl-MIME-Types
+ perl-RPC-XML
+ perl-Time-HiRes
+ perl-URI
+ perl-Git
+ perl-Barcode-Code128
 </PRE></LI><LI CLASS="li-enumerate">perl-SDL ve perl-YAML paketleri kurulumu sonrası:<P>game-tr.pdf frozen-bubble testini gerçekleştiriniz.</P></LI><LI CLASS="li-enumerate">perl-MailTools paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/MailTools.tar.gz
  perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
@@ -208,24 +228,12 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Storable.tar.gz
 </PRE><P>Konsoldan;
 </P><PRE CLASS="verbatim"># cd St
-</PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-RPC-XML paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
-</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/RPC-XML.tar.gz
-</PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim"> cd RPC-XML
- perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-IP-Country paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/IP-Country.tar.gz
 </PRE><P>Konsoldan;
 </P><PRE CLASS="verbatim">cd IP-Country
 perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
-</PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-HTML-Parser paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
-</P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/HTML-Parser.tar.gz
-</PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim">cd HTML-Parser
-perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
-</PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
-<PRE CLASS="verbatim"> perl-Git
-</PRE></LI><LI CLASS="li-enumerate">perl-Date-Calc paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
+</PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-Date-Calc paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Date-Calc.tar.gz
 </PRE><P>Konsoldan;
 </P><PRE CLASS="verbatim"># cd Date-Calc
@@ -250,8 +258,8 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
 <PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/Email-MIME-Encodings.t
  # perl Email-MIME-Encodings.t
 </PRE><P>Tüm sonuçların "ok" döndürdüğünü gözlemleyin. </P></LI><LI CLASS="li-enumerate">perl-Email-MIME-Encodings paketi kurulumu sonrası:
-<PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
- # perl test_perl_Test_Simple.t
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/test_perl_Test_Simple.t
+ perl test_perl_Test_Simple.t
 </PRE><P>Tüm sonuçların "ok" döndürdüğünü gözlemleyin. </P></LI></OL><!--TOC subsection Python alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc13">8.5</A>  Python alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
 <PRE CLASS="verbatim"> python-docs
@@ -262,10 +270,76 @@ perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/
  python-extremes
  epydoc-doc
  reportlab-docs
+ pyinotify-doc 
+</PRE></LI><LI CLASS="li-enumerate">Pygments paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import pygments
+</PRE></LI><LI CLASS="li-enumerate">chardet paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import chardet
+</PRE></LI><LI CLASS="li-enumerate">matplotlib paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import matplotlib
+</PRE></LI><LI CLASS="li-enumerate">paramiko paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import paramiko
+</PRE></LI><LI CLASS="li-enumerate">pydns paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import DNS
 </PRE></LI><LI CLASS="li-enumerate">python-reportlab paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
  import reportlab
+</PRE></LI><LI CLASS="li-enumerate">pyinotify paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import pyinotify
+</PRE></LI><LI CLASS="li-enumerate">pyserial paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import serial
+</PRE></LI><LI CLASS="li-enumerate">python-beautifulsoup paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import BeautifulSoup
+</PRE></LI><LI CLASS="li-enumerate">python-bsddb3 paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import bsddb3
+</PRE></LI><LI CLASS="li-enumerate">python-pep8 paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import pep8
+</PRE></LI><LI CLASS="li-enumerate">pylint paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import pylint
+</PRE></LI><LI CLASS="li-enumerate">pysvn paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import pysvn
+</PRE></LI><LI CLASS="li-enumerate">python-logilab-astng ve python-logilab-common paketleri kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import ast
+ import logilab
+</PRE></LI><LI CLASS="li-enumerate">pytextile paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import textile
+</PRE></LI><LI CLASS="li-enumerate">Turbogears paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import turbogears
+</PRE></LI><LI CLASS="li-enumerate">TurboGears-mochikit paketi kurulumu sonrası:
+ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
+<PRE CLASS="verbatim"> ipython
+ import tgmochikit
 </PRE></LI><LI CLASS="li-enumerate">python-wordaxe paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 <PRE CLASS="verbatim"> ipython
@@ -288,41 +362,41 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import routes
 </PRE></LI><LI CLASS="li-enumerate">python-prioritized-methods paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import prioritized-methods
 </PRE></LI><LI CLASS="li-enumerate">python-beaker paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import beaker
 </PRE></LI><LI CLASS="li-enumerate">Twisted paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import twisted
 </PRE></LI><LI CLASS="li-enumerate">python-mlt paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import mlt
 </PRE></LI><LI CLASS="li-enumerate">python-Babel paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import babel
 </PRE></LI><LI CLASS="li-enumerate">pyfits paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import pyfits
 </PRE></LI><LI CLASS="li-enumerate">epydoc paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import epydoc
 </PRE></LI><LI CLASS="li-enumerate">python-peak-rules paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import peak
 </PRE></LI><LI CLASS="li-enumerate">python-symboltype paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import symbol
 </PRE></LI><LI CLASS="li-enumerate">4suite paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import Ft
 </PRE></LI><LI CLASS="li-enumerate">setuptools paketi kurulumu sonrası:
 <PRE CLASS="verbatim"> svn co http://svn.pardus.org.tr/uludag/trunk/kde/boot-manager/manager/
@@ -338,103 +412,103 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
  import tagging
 </PRE></LI><LI CLASS="li-enumerate">pycha paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import pycha
  import chavier
 </PRE></LI><LI CLASS="li-enumerate">python-xlrd paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import xlrd
 </PRE></LI><LI CLASS="li-enumerate">pytz paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import pytz
 </PRE></LI><LI CLASS="li-enumerate">python-Jinja2 paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import jinja2
 </PRE></LI><LI CLASS="li-enumerate">python-sphinx paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import sphinx
 </PRE></LI><LI CLASS="li-enumerate">mysql-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import MySQLdb
 </PRE></LI><LI CLASS="li-enumerate">python-markdown paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import markdown
 </PRE></LI><LI CLASS="li-enumerate">python-preprocess paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import preprocess
 </PRE></LI><LI CLASS="li-enumerate">python-avahi paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import avahi
 </PRE></LI><LI CLASS="li-enumerate">python-tornado paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import tornado
 </PRE></LI><LI CLASS="li-enumerate">pyorbit paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import ORBit
 </PRE></LI><LI CLASS="li-enumerate">gnome-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import bonobo
 </PRE></LI><LI CLASS="li-enumerate">PyXML paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import xml
 </PRE></LI><LI CLASS="li-enumerate">sip paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import sip
 </PRE></LI><LI CLASS="li-enumerate">pysqlite paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import sqlite3
 </PRE></LI><LI CLASS="li-enumerate">PyQt paketi kurulumu sonrası:<P>Aşağıdaki komutları çalıştırın ve bir pencerenin açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pyqt-test.py
  python pyqt-test.py
 </PRE></LI><LI CLASS="li-enumerate">sip paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import sip
 </PRE></LI><LI CLASS="li-enumerate">python-configobj paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import configobj
 </PRE></LI><LI CLASS="li-enumerate">python-decorator paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import decorator
 </PRE></LI><LI CLASS="li-enumerate">python-mako paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import mako
 </PRE></LI><LI CLASS="li-enumerate">python-FormEncode paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import formencode
 </PRE></LI><LI CLASS="li-enumerate">cheetah paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import Cheetah
 </PRE></LI><LI CLASS="li-enumerate">SQLObject paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import sqlobject
 </PRE></LI><LI CLASS="li-enumerate">PyOpenGL paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import OpenGL
 </PRE></LI><LI CLASS="li-enumerate">imdbpy paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import imdb
 </PRE></LI><LI CLASS="li-enumerate">mutagen paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde müzik dosyası etiklerini listelediğini gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/sound/sound/sample.mp3 
 mutagen-inspect sample.mp3
 </PRE></LI><LI CLASS="li-enumerate">python-libcap-ng paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import capng
 </PRE></LI><LI CLASS="li-enumerate">python-twitter paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import twitter
 </PRE></LI><LI CLASS="li-enumerate">python-cx_freeze paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import cx_Freeze
 </PRE><P>Aşağıda bulunan komutları çalıştırın ve küçük bir pencerenin açıldığını gözlemleyin.
 </P><PRE CLASS="verbatim"> cd /usr/lib/python2.6/site-packages/cx_Freeze/samples/wx
@@ -442,31 +516,31 @@ mutagen-inspect sample.mp3
  sudo python setup.py install
  python wxapp.py
 </PRE></LI><LI CLASS="li-enumerate">pybluez paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import bluetooth
 </PRE><P>Eğer bluetooth aygıtınız var ise aşağıda bulunan komutları çalıştırın ve hatasız bir şekilde çalıştığını gözlemleyiniz.
-</P><PRE CLASS="verbatim"> # cd /usr/share/doc/pybluez/examples/advanced
- # python inquiry-with-rssi.py
+</P><PRE CLASS="verbatim">  cd /usr/share/doc/pybluez/examples/advanced
+  python inquiry-with-rssi.py
 </PRE></LI><LI CLASS="li-enumerate">pylirc paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import pylirc
 </PRE><P>Eğer infrared bir kumandanız var ise bu kumandayı aktive ettikten sonra aşağıda bulunan testi çalıştırınız ve hatasız bir şekilde çalıştığını gözlemleyiniz.
-</P><PRE CLASS="verbatim">  # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pylirc_test.py
-  # python pylirc_test.py
+</P><PRE CLASS="verbatim">  wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/python/pylirc_test.py
+  python pylirc_test.py
 </PRE></LI><LI CLASS="li-enumerate">pygobject ve pygobject-docs paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import codegen
  import gio
  import glib
 </PRE></LI><LI CLASS="li-enumerate">pygame ve pygame-doc paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import pygame
 </PRE></LI><LI CLASS="li-enumerate">gst-python paketi kurulumu sonrası:
 ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-<PRE CLASS="verbatim"> # ipython
+<PRE CLASS="verbatim"> ipython
  import pygst
 </PRE></LI><LI CLASS="li-enumerate">pyFltk paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim"> ipython
  import fltk
 </PRE></LI><LI CLASS="li-enumerate">python-turboflot paketi kurulumu sonrası:<P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </P><PRE CLASS="verbatim"> # ipython
@@ -499,30 +573,30 @@ ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
 </PRE></LI><LI CLASS="li-enumerate">Django paketi kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
 Aşağıda bulunan komutu çalıştırın:
-<PRE CLASS="verbatim"> # django-admin.py startproject test
- # cd test
+<PRE CLASS="verbatim">  django-admin.py startproject test
+  cd test
  </PRE>test adında bir dizinin oluştuğunu ve bu dizin altında aşağıda bulunan dosyaların oluştuğunu gözlemleyin.
 <PRE CLASS="verbatim">  __init__.py
   manage.py
   settings.py
   urls.py 
   </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve daha sonra firefox’tan http://localhost:8080/ adresini girin ve sunucuya bağlanabildiğinizi gözlemleyin
-<PRE CLASS="verbatim">  # python manage.py runserver 8080
+<PRE CLASS="verbatim">   python manage.py runserver 8080
   </PRE></LI><LI CLASS="li-itemize">settings.py içerisinde DATABASE_ENGINE DATABASE_NAME değişkenlerini aşağıdaki database değişkenlerini atayın:
 <PRE CLASS="verbatim">   DATABASE_ENGINE = 'sqlite3'
    DATABASE_NAME = 'sqlite3_'   
   </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve istemiş olduğu işlemleri sırasıyla gerçekleştirin ve sorunsuz bir şekilde Django onay sisteminin kurulduğunu gözlemleyin:
-<PRE CLASS="verbatim"># python manage.py syncdb 
+<PRE CLASS="verbatim">python manage.py syncdb 
 </PRE></LI><LI CLASS="li-itemize">Aşağıdaki komutu çalıştırın ve polls adında bir dizinin oluştuğunu gözlemleyin:
-<PRE CLASS="verbatim"># python manage.py startapp polls 
+<PRE CLASS="verbatim"> python manage.py startapp polls 
 </PRE></LI><LI CLASS="li-itemize">Ve dizin içerişinde aşağıdaki dosyaların oluştuğunu gözlemleyin:
 <PRE CLASS="verbatim"> __init__.py
  models.py
  views.py
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">python-memcached paketi kurulumu sonrası:<P>memcached sunucusunu servis yöneticisinden başlatın.</P><P>Aşağıdaki komutları çalıştırın ve sonucun "True" döndürdüğünü gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/
 python/test_python-memcache.py
- # python test_python-memcache.py
+ python test_python-memcache.py
 </PRE></LI><LI CLASS="li-enumerate">pygtk, pygtk-docs ve pygtk-demo paketi kurulumu sonrası: <P>Aşağıda bulunan komutu çalıştırın ve çıkan listeden bir uygulama seçip çift tıklayın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> pygtk-demo
 </PRE></LI><LI CLASS="li-enumerate">mpmath paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
@@ -553,7 +627,7 @@ python/test_python-memcache.py
 </P><PRE CLASS="verbatim"> # ipython
  import PyICU
 </PRE></LI><LI CLASS="li-enumerate">python-simplejson paketi kurulumu sonrası: <P>ipython paketini kurun ve aşağıda bulunan komutları çalıştırın:
-</P><PRE CLASS="verbatim"> # ipython
+</P><PRE CLASS="verbatim">  ipython
  import simplejson
 </PRE></LI></OL><!--TOC subsection Java alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc14">8.6</A>  Java alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -563,11 +637,11 @@ Aşağıdaki paketlerin kurulumu sonrası:
  sun-jdk-demo
  sun-jdk-samples
  sun-jdk-doc
-</PRE><P>Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
-</P><PRE CLASS="verbatim"># java -version
-# wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
-# javac test.java
-# java test
+</PRE><P>Oturumu kapatıp tekrar açın.</P><P>Aşağıda bulunan komutların düzgün bir şekilde çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> java -version
+ wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/java/test.java
+ javac test.java
+ java test
 </PRE></LI><LI CLASS="li-enumerate">libmatthew, slf4j paketleri kurulumu sonrası:<P>office-tr.pdf zemberek-openoffice testini gerçekleştirin.
 </P></LI></OL><!--TOC subsection Lisp alt bileşeni-->
 <H3 CLASS="subsection"><!--SEC ANCHOR --><A NAME="htoc15">8.7</A>  Lisp alt bileşeni</H3><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
@@ -579,17 +653,48 @@ clisp paketi kurulumu sonrası: (Warningleri önemsemeyiniz.)<P>Aşağıdaki kom
 <PRE CLASS="verbatim">taglib-sharp
 ndesk-dbus
 ndesk-dbus-glib
+mono-addins
+mono-bytefx-data-mysql
+mono-data
+mono-data-firebird
+mono-data-oracle
+mono-data-postgresql
+mono-data-sqlite
+mono-devel
+mono-extras
+mono-ibm-data-db2
+mono-jay
+mono-jscript
+mono-locale-extras
+mono-nunit
+mono-runtime
+mono-sybase
+mono-wcf
+mono-web
+mono-winforms
+mono-winfxcore
+mono-zeroconf
+mono-zeroconf-docs
+monodoc-core
+webkit-sharp
+webkit-sharp-docs
+gecko-sharp
+gecko-sharp-docs
 </PRE></LI><LI CLASS="li-enumerate">boo paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/boo-test.boo
  booi boo-test.boo
-</PRE></LI><LI CLASS="li-enumerate">gmime, gmime-docs, gmime-sharp paketi kurulumu sonrası:<P>Aşağıda bulunan komutun jpeg dosyasını encode ettiğini gözlemleyin.
-</P><PRE CLASS="verbatim"> # wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg
- # gmime-uuencode -m test_dcraw.jpg jpeg
+</PRE></LI><LI CLASS="li-enumerate">gmime-sharp, gtk-sharp paketi kurulumu sonrası:<P>pkgconfig paketini kurun</P><P>Aşağıda bulunan komutun küçük bir pencere açtığını gözlemleyin. 
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_gmimesharp.cs
+ mcs -pkg:gtk-sharp-2.0 test_gmimesharp.cs
+ mono test_gmimesharp.exe
+</PRE></LI><LI CLASS="li-enumerate">gmime, gmime-docs paketleri kurulumu sonrası:<P>Aşağıda bulunan komutun jpeg dosyasını encode ettiğini gözlemleyin.
+</P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/multimedia/graphics/test_dcraw.jpg
+ gmime-uuencode -m test_dcraw.jpg jpeg
 </PRE></LI><LI CLASS="li-enumerate">mono paketi kurulumu sonrası:
 Aşağıdaki komutların çalıştırın ve hata olmadığını gözlemleyin.
-<PRE CLASS="verbatim"># wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
-# mcs test_mono.cs
-# mono test_mono.exe
+<PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/dotnet/test_mono.cs
+ mcs test_mono.cs
+ mono test_mono.exe
 </PRE></LI><LI CLASS="li-enumerate">libgdiplus paketi kurulumu sonrası:<P>programming-tr.pdf mono testini gerçekleştiriniz.</P></LI></OL><UL CLASS="itemize"><LI CLASS="li-itemize">
 ocaml paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz bir şekilde çalıştırğını gözlemleyin.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/ocaml-test.ml 
