@@ -191,6 +191,13 @@ class Project:
         self.selected_install_image_packages = []
         self.all_install_image_packages = []
 
+    def guessReleaseFiles(self):
+        if "project-files" in self.filename:
+            # Obeys to the uludag/trunk/distribution hierarchy, nice.
+            releaseFiles = self.filename.split("project-files/")[0]+"media-content"
+            if os.path.exists(releaseFiles):
+                return releaseFiles
+
     def open(self, filename):
         # Open and parse project file filename
         try:
@@ -207,6 +214,9 @@ class Project:
         self.reset()
         self.filename = filename
 
+        # Try to guess releaseFiles location
+        self.release_files = self.guessReleaseFiles()
+
         # Fill in the properties from XML file
         self.title = doc.getTagData("Title")
         self.type = doc.getAttribute("type")
@@ -216,9 +226,9 @@ class Project:
         self.plugin_package = doc.getTagData("PluginPackage")
         if not self.plugin_package:
             self.plugin_package = ""
-        self.release_files = doc.getTagData("ReleaseFiles")
         if not self.release_files:
-            self.release_files = ""
+            self.release_files = doc.getTagData("ReleaseFiles")
+            #self.release_files = ""
         self.extra_params = doc.getTagData("ExtraParameters")
         if not self.extra_params:
             self.extra_params = ""
