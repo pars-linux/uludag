@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kstars\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-07 01:31+0100\n"
-"PO-Revision-Date: 2010-04-28 15:09+0300\n"
+"PO-Revision-Date: 2010-04-29 10:20+0300\n"
 "Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -396,6 +396,8 @@ msgid ""
 "When the horizon is switched off, refraction effects are temporarily "
 "disabled."
 msgstr ""
+"Ufuk kapatıldığı zaman, ışık kırılması etkileri de geçiçi olarak devre dışı "
+"bırakılır."
 
 #: kstarsactions.cpp:395
 msgid "Catalogs"
@@ -640,6 +642,14 @@ msgid ""
 "It appears that you setup is broken. Press Continue to run KStars without "
 "this file "
 msgstr ""
+"%1 dosyası bulunamadı. KStars bu dosya olmadan da çalışabilir. "
+"KStars bu dosyayı şu konumlarda aramaktadır:\n"
+"\n"
+"\t$(KDEDIR)/share/apps/kstars/%1\n"
+"\t~/.kde/share/apps/kstars/%1\n"
+"\n"
+"Kurulumunuzda hata var. KStars'ı bu dosya olmadan çalıştırmak için "
+"Devam Et tuşuna basınız. "
 
 #: kstarsdata.cpp:89
 #, kde-format
@@ -21513,7 +21523,7 @@ msgstr "Küba"
 #: kstars_i18n.cpp:4163
 msgctxt "Country name"
 msgid "Cyprus"
-msgstr ""
+msgstr "Kıbrıs"
 
 #: kstars_i18n.cpp:4164
 msgctxt "Country name"
@@ -24612,6 +24622,13 @@ msgid ""
 "For time steps larger than 10 minutes, frames are displayed at an interval "
 "of 'X'."
 msgstr ""
+"Simülasyon zaman akış hızını değiştirmek için bunu kullanın.\n"
+"Zaman 'X' inin 10 dakikaya kadar artırılması durumunda, zaman saniyede 'X' "
+"kadar "
+"geçecektir.\n"
+"Zaman 'X' inin 10 dakikadan büyük olması durumunda, Görüntü kareleri 'X' "
+"aralığında  "
+"görüntülenecektir."
 
 #: kstarsinit.cpp:408
 msgid "Time step control"
@@ -24900,7 +24917,7 @@ msgstr "Oturum planı ekle"
 
 #: obslistpopupmenu.cpp:43
 msgid "Add objects visible tonight to session plan"
-msgstr ""
+msgstr "Oturum planına bu gece görülebilen objeleri ekle"
 
 #. i18n: file: tools/flagmanager.ui:195
 #. i18n: ectx: property (text), widget (QPushButton, CenterButton)
@@ -26593,6 +26610,7 @@ msgid ""
 "Apply relativistic corrections due to the bending of light in sun's "
 "gravitational field"
 msgstr ""
+"Güneşin yerçekimi alanından bükülen ışık için göreceli düzeltmeleri uygula"
 
 #. i18n: file: kstars.kcfg:623
 #. i18n: ectx: whatsthis, entry (UseRelativistic), group (View)
@@ -26601,6 +26619,8 @@ msgid ""
 "Toggle whether corrections due to bending of light around the sun are taken "
 "into account"
 msgstr ""
+"Güneş etrafındaki ışığın bükülmesi dolayısıyla yapılan düzeltmelerin hesaba "
+"katılıp katılmayacağını ayarla"
 
 #. i18n: file: kstars.kcfg:627
 #. i18n: ectx: label, entry (UseAntialias), group (View)
@@ -26774,7 +26794,7 @@ msgstr ""
 #. i18n: ectx: label, entry (DeepSkyLongLabels), group (View)
 #: rc.cpp:798
 msgid "Show long names in deep-sky object name labels?"
-msgstr ""
+msgstr "Uzak gök cisimlerinin etiketlerinde uzun isimleri gösterilsin mi?"
 
 #. i18n: file: kstars.kcfg:693
 #. i18n: ectx: whatsthis, entry (DeepSkyLongLabels), group (View)
@@ -26783,6 +26803,8 @@ msgid ""
 "If true, long names (common names) for deep-sky objects are shown in the "
 "labels."
 msgstr ""
+"Eğer doğru ise uzak gök cisimlerinin tam isimlerini (sıklıkla kullanılan "
+"isimeri) etiketlerde göster."
 
 #. i18n: file: kstars.kcfg:697
 #. i18n: ectx: label, entry (MaxRadCometName), group (View)
@@ -30934,7 +30956,7 @@ msgstr "Konumu Ayarla"
 #. i18n: ectx: property (toolTip), widget (QPushButton, Update)
 #: rc.cpp:3294
 msgid "Update the table and the plot for the new date and location."
-msgstr ""
+msgstr "Yeni konum ve tarih için çizim ve tabloyu güncelle."
 
 #. i18n: file: tools/observinglist.ui:254
 #. i18n: ectx: property (toolTip), widget (KPushButton, FindButton)
@@ -30946,7 +30968,7 @@ msgstr "Arama Penceresini Aç"
 #. i18n: ectx: property (whatsThis), widget (KPushButton, FindButton)
 #: rc.cpp:3303
 msgid "Open the Find Dialog for adding objects to the list"
-msgstr ""
+msgstr "Listeye nesne eklemek için Arama Penceresini aç"
 
 #. i18n: file: tools/observinglist.ui:260
 #. i18n: ectx: property (text), widget (KPushButton, FindButton)
@@ -30967,6 +30989,8 @@ msgid ""
 "Opens the What's up tonight dialog, from which objects can be added to the "
 "list"
 msgstr ""
+"Listeye nesnelerinin eklenebileceği \"Bu gece neler oluyor\" penceresini "
+"açar."
 
 #. i18n: file: tools/observinglist.ui:279
 #. i18n: ectx: property (text), widget (KPushButton, WUTButton)
@@ -30990,7 +31014,7 @@ msgstr "Tüm resimleri Sil"
 #. i18n: ectx: property (toolTip), widget (QPushButton, saveImages)
 #: rc.cpp:3324
 msgid "Download the SDSS/DSS images of all the objects in the current list."
-msgstr ""
+msgstr "Mevcut listedeki bütün nesnelerin SDSS/DSS görsellerini indir."
 
 #. i18n: file: tools/observinglist.ui:299
 #. i18n: ectx: property (text), widget (QPushButton, saveImages)
@@ -34206,12 +34230,14 @@ msgid ""
 "Correct for the effect of sun's gravity on star positions, as predicted by "
 "General Relativity, and verified by Eddington's experiment."
 msgstr ""
+"Eddington'un deneyleri ve genel görecelik tarafından öngörülmüş, güneşin "
+"yıldız konumları üzerindeki etkisi için doğru."
 
 #. i18n: file: options/opsadvanced.ui:50
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseRelativistic)
 #: rc.cpp:4923
 msgid "General Relativity effects near the sun"
-msgstr ""
+msgstr "Güneş yakınındaki genel görecelik etkileri"
 
 #. i18n: file: options/opsadvanced.ui:57
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_UseAnimatedSlewing)
@@ -34313,6 +34339,7 @@ msgid ""
 "When the observing list, do you want the downloaded DSS/SDSS images to be "
 "saved or discarded?"
 msgstr ""
+"İndirilen DSS/SDSS görsellerinin saklanmasını mı silinmesini mi istersiniz?"
 
 #. i18n: file: options/opsadvanced.ui:169
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ObsListSaveImage)
@@ -34611,6 +34638,10 @@ msgid ""
 "These magnitude limits do not affect IC objects, as the magnitudes for many "
 "IC objects are undefined."
 msgstr ""
+"NGC / Messier nesneleri yakınlaştırıldığı ve uzaklaştırıldığı zamanki "
+"sönüklük şiddetini ayarla. \n"
+"Birçok IC nesnesinin parlaklık şiddeti tanımlı olmadığından, bu sönüklük "
+"şiddetleri IC nesnelerinin parlaklıklarını  etkilemeyecektir."
 
 #. i18n: file: options/opscatalog.ui:483
 #. i18n: ectx: property (text), widget (QLabel, LabelMagDeepSkyZoomOut)
@@ -35538,7 +35569,7 @@ msgstr "Sağlayıcı:"
 #. i18n: ectx: property (text), item, widget (KComboBox, Type)
 #: rc.cpp:5601
 msgid "Refractor"
-msgstr ""
+msgstr "Işık kırıcı"
 
 #. i18n: file: comast/equipmentwriter.ui:86
 #. i18n: ectx: property (text), item, widget (KComboBox, Type)
@@ -35610,7 +35641,7 @@ msgstr "Alanı Kaydet"
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: rc.cpp:5661
 msgid "Apparent FOV:"
-msgstr ""
+msgstr "Görüş Sahası:"
 
 #. i18n: file: comast/equipmentwriter.ui:313
 #. i18n: ectx: property (text), widget (QLabel, label_11)
@@ -35640,7 +35671,7 @@ msgstr "Yeni Ekle"
 #. i18n: ectx: property (text), widget (QPushButton, AddEyepiece)
 #: rc.cpp:5676
 msgid "Save Eyepiece"
-msgstr ""
+msgstr "Merceği Kaydet"
 
 #. i18n: file: comast/equipmentwriter.ui:390
 #. i18n: ectx: attribute (title), widget (QWidget, Lens)
@@ -35652,13 +35683,13 @@ msgstr "Mercek"
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #: rc.cpp:5685
 msgid "Enter details of Barlow/Shapley lenses"
-msgstr ""
+msgstr "Barlow/Shapley lens detaylarını giriniz"
 
 #. i18n: file: comast/equipmentwriter.ui:446
 #. i18n: ectx: property (toolTip), widget (QLabel, label5)
 #: rc.cpp:5694
 msgid "Magnification factor of the Barlow/Shapley lens"
-msgstr ""
+msgstr "Barlow/Shapley lensinin büyütme katsayısı"
 
 #. i18n: file: comast/equipmentwriter.ui:449
 #. i18n: ectx: property (text), widget (QLabel, label5)
@@ -35811,7 +35842,7 @@ msgstr "Mercek: "
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: rc.cpp:5823
 msgid "Seeing:"
-msgstr ""
+msgstr "Görünen:"
 
 #. i18n: file: comast/execute.ui:383
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -36033,7 +36064,6 @@ msgstr "Bir Önceki Yaz Saati Uygulama Zamanı değişimi (UTC)"
 #. i18n: file: tips:2
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:3
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>You can locate objects in the sky by their name.\n"
 #| "\t\t\tUse Ctrl+F, the \"Focus->Find Object\" menu item, or the \"Find\"\n"
@@ -36048,7 +36078,7 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Nesnelerin yerini gökyüzünde isimlerine saptayabilirsiniz .\n"
+"\t\t<p>Nesnelerin yerini gökyüzünde isimlerine göre saptayabilirsiniz .\n"
 "\t\t\t Ctrl+F, \"Odaklan->Nesne Bul\" seçeneği, veya \"Bul\"\n"
 "\t\t\tAraçlar düğmesini kullanın.\n"
 "\t\t</p>\n"
@@ -36057,7 +36087,6 @@ msgstr ""
 #. i18n: file: tips:10
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:12
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>To change your Geographic Location,\n"
 #| "\t\t\tuse Ctrl+G, the \"Settings->Set Geographic Location...\" menu "
@@ -36073,15 +36102,14 @@ msgid ""
 "\t\n"
 msgstr ""
 "\t\t<p>Coğrafi konumunuzu değiştirmek için,\n"
-"\t\t\tCtrl+G, \"Atarlar->Coşrafi konumu ayarla...\" seçeneği,\n"
-"\t\t\tveya \"dünya\" Araçlar çubuğu düğmesini kullanın.\n"
+"\t\t\tCtrl+G, \"Ayarlar->Coğrafi konumu ayarla...\" seçeneği,\n"
+"\t\t\tveya \"dünya\" Araç çubuğu düğmesini kullanın.\n"
 "\t\t</p>\n"
 "\t\n"
 
 #. i18n: file: tips:18
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:21
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>You can Track an object, so it will always be centered\n"
 #| "\t\t\tin the display.<br/>\n"
@@ -36102,9 +36130,9 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Bir nesneyi takip edebilirsiniz. Bu durumda nesne her zaman\n"
-"\t\t\tgörüntünün merkezinde kalır.<br/>\n"
-"\t\t\tBunun için \"Odaklanma->Nesne İzle\" Ctrl+T seçeneğini veya \"kilitlen"
+"\t\t<p>Bir nesnenin her zaman ekranın merkezinde kalması için\n"
+"\t\t\tnesneyi takip edebilirsiniz.<br/>\n"
+"\t\t\tBunun için \"İşaretleme->Nesne İzle\" Ctrl+T seçeneğini veya \"kilitlen"
 "\"\n"
 "\t\t\tAraçlar çubuğu düğmesini kullanınız. Nesneyi çift tıklayarak veya\n"
 "\t\t\taçılır nesne menüsünden \"Merkezle ve İzle\"'yi seçerek de\n"
@@ -36290,7 +36318,6 @@ msgstr ""
 #. i18n: file: tips:103
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:116
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>You can manually set the coordinates of the central Focus point.\n"
 #| "\t\t\tPress Ctrl+M, or use the \"Focus->Set Focus Manually...\" menu "
@@ -36308,7 +36335,7 @@ msgid ""
 msgstr ""
 "\t\t<p>Odak merkezi koordinatlarını el ile ayarlayabilirsiniz. Bunun için\n"
 "\t\t\tCtrl+M tuşlarına basın veya \"Odaklama->Odağı El İle Ayarla...\" "
-"menüseçeneğinden\n"
+"menü seçeneğinden\n"
 "\t\t\taçılan pencereye istediğiniz koordinatları giriniz.\n"
 "\t\t</p>\n"
 "\t\n"
@@ -36387,7 +36414,6 @@ msgstr ""
 #. i18n: file: tips:141
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:159
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>You can stop and start the clock with the \"Play/Pause\" button\n"
 #| "\t\t\tin the Toolbar, or with the \"Time->Stop/Start Clock\" menu item.\n"
@@ -36399,8 +36425,9 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Saati Araçlarçubuğundaki\"Play/Pause\" düğmesi ile durdurup\n"
-"\t\t\tbaşlatabilirsiniz, veya \"Zaman->Saati Durdur/Başlat\" seçeneği ile.\n"
+"\t\t<p>Saati Araç çubuğundaki \"Oynat/Duraklat\" düğmesi ile durdurup\n"
+"\t\t\tbaşlatabilir veya \"Zaman->Saati Durdur/Başlat\" seçeneğini "
+"kullanabilirsiniz.\n"
 "\t\t</p>\n"
 "\t\n"
 
@@ -36505,7 +36532,6 @@ msgstr ""
 #. i18n: file: tips:193
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:218
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>If you want the very latest orbital information for asteroids and\n"
 #| "\t\t\tcomets (including recently-discovered objects), check the "
@@ -36524,10 +36550,11 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Küçük gezegenler ve kuyrulu yıldızların (yakın zamanda keşfedilen "
+"\t\t<p>Asteroid ve kuyrulu yıldızların (yakın zamanda keşfedilen "
 "nesneler dahil)\n"
 "\t\t\ten son yörünge bilgilerini istiyorsanız \"Karşıdan Veri Yükle\n"
-" aracını \t\t\t(\"Dosya|Veri indir\" veya Ctrl+D) güncel gök günlüğü için "
+" aracını \t\t\t(\"Dosya->Yeni Veri İndir\" veya Ctrl+D) güncel gök günlüğü "
+"için "
 "sıkça\n"
 "\t\t\tkontrol ediniz.\n"
 "\t\t</p>\n"
@@ -36663,7 +36690,6 @@ msgstr ""
 #. i18n: file: tips:258
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:291
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>The ScriptBuilder tool allows you to construct complex DCOP\n"
 #| "\t\t\tscripts using a simple GUI.  The scripts can be played back later\n"
@@ -36677,7 +36703,7 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Betik oluşturma aracı size karışık DCOP betiklerini basit bir GUI\n"
+"\t\t<p>Betik oluşturma aracı size karışık D-Bus betiklerini basit bir GUI\n"
 "\t\t\tkullanarak oluşturma imkanı verir.  Betikler daha sonra komut "
 "satırından\n"
 "\t\t\tveya KStars'ın içinden çalıştırılabilir.\n"
@@ -36749,7 +36775,6 @@ msgstr ""
 #. i18n: file: tips:292
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:329
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>To add your own custom Object Catalogs, select\n"
 #| "\t\t\t\"Add Catalog\" from the Catalogs tab in the KStars Configuration "
@@ -36767,7 +36792,7 @@ msgid ""
 "\t\n"
 msgstr ""
 "\t\t<p>Kendi özel Nesne Kataloğunuzu eklemek için, KStars düzenleme\n"
-"\t\t\tpenceresindeki Katalog sekmesinden \"Katalog Ekle\"'yi seçiniz.\n"
+"\t\t\tpenceresindeki Katalog sekmesinden \"Katalog Yükle\"'yi seçiniz.\n"
 "\t\t\tKatalog Dosyanızı biçimlendirme ile ilgili bilgi için El Kitabına "
 "bakınız .\n"
 "\t\t</p>\n"
@@ -36868,7 +36893,6 @@ msgstr ""
 #. i18n: file: tips:342
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:386
-#, fuzzy
 #| msgid ""
 #| "\t\t<p>You can define your own Geographic Locations.  Fill in the\n"
 #| "\t\t\trequired fields in the \"Change Location\" Dialog and then press "
@@ -36887,8 +36911,9 @@ msgid ""
 "\t\n"
 msgstr ""
 "\t\t<p>Kendi coğrafi konumunuzu tanımlayabilirsiniz.  Bunun için\n"
-"\t\t\t\"Konum Değşitir\" iletişimindeki gerekli alanları doldurup sonra\n"
-"\t\t\t\"Listeye Ekle\" düğmesine basın. Artık konumunuz gelecek tüm\n"
+"\t\t\t\"Konum Değşitir\" penceresinden gerekli alanları doldurup sonra\n"
+"\t\t\t\"Şehri Listeye Ekle\" düğmesine basın. Artık konum bilginiz, "
+"açacağınız tüm\n"
 "\t\t\toturumlarda kullanılabilir olacaktır.\n"
 "\t\t</p>\n"
 "\t\n"
@@ -37551,7 +37576,7 @@ msgstr "GA"
 
 #: tools/observinglist.cpp:227
 msgid "Unnamed stars are not supported in the observing lists"
-msgstr ""
+msgstr "İsimsiz yıldızlar gözlem listesinde desteklenmemektedir"
 
 #: tools/observinglist.cpp:235
 #, kde-format
@@ -40421,6 +40446,7 @@ msgstr "Geçersiz Girdi"
 msgid ""
 "Another Observer already exists with the given Name and Surname, Overwrite?"
 msgstr ""
+"Aynı Ad ve Soyada sahip bir gözlemci zaten mevcut. Üzerine yazılsın mı?"
 
 #: comast/observeradd.cpp:58 comast/observeradd.cpp:60
 msgid "observer_"
