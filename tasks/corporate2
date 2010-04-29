@@ -136,9 +136,9 @@
     * gconf eski PolicyKit'e bağlı, yenisiyle derlenmeli (Burak Çalışkan) (+)
     * pcscd/openct sorunu (+)
     * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, mandriva yamalarının alınması (+)
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/65)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/70)
     * kdebase'deki clock yamasının yeni polkite gecirilmesi (/75)
-    * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/50)
+    * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/84)
     * bölünmüş kde paketlerinin review edilmesi (-)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
 
