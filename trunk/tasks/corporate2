@@ -75,7 +75,6 @@
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (/50)
     * libnotify API breakage (X)
-    * yeni notification temasında bazı renk/pozisyon sorunları var (-)
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
