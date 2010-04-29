@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: marble\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-11-16 01:49+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-29 13:04+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/QtMainWindow.cpp:70
@@ -59,7 +60,7 @@ msgstr "Ctrl+Y"
 
 #: src/QtMainWindow.cpp:120
 msgid "Print a screenshot of the map"
-msgstr ""
+msgstr "Ekran görüntüsünü yazdır"
 
 #: src/QtMainWindow.cpp:123
 msgid "&Quit"
@@ -83,7 +84,7 @@ msgstr "Ctrl+H"
 
 #: src/QtMainWindow.cpp:130
 msgid "Copy a screenshot of the map"
-msgstr ""
+msgstr "Ekran görüntüsünü kopyala"
 
 #: src/QtMainWindow.cpp:133 src/QtMainWindow.cpp:242
 msgid "&Settings"
@@ -99,7 +100,7 @@ msgstr "K&oordinatları Kopyala"
 
 #: src/QtMainWindow.cpp:138
 msgid "Copy the center coordinates as text"
-msgstr ""
+msgstr "Yazının merkez koordinatlarını kopyala"
 
 #: src/QtMainWindow.cpp:141
 msgid "Show &Navigation Panel"
@@ -139,7 +140,7 @@ msgstr "Konumu Kilitle"
 
 #: src/QtMainWindow.cpp:162
 msgid "Lock Position of Floating Items"
-msgstr ""
+msgstr "Yüzen cisimlerin konumlarını kilitle"
 
 #: src/QtMainWindow.cpp:165
 msgid "&Clouds"
@@ -147,7 +148,7 @@ msgstr "&Bulutlar"
 
 #: src/QtMainWindow.cpp:167
 msgid "Show Real Time Cloud Cover"
-msgstr ""
+msgstr "Gerçek zamanlı bulut kaplamasını göster"
 
 #: src/QtMainWindow.cpp:170
 msgid "&Work Offline"
@@ -191,7 +192,7 @@ msgstr "Shift+F1"
 
 #: src/QtMainWindow.cpp:190
 msgid "Show a detailed explanation of the action."
-msgstr ""
+msgstr "Eylemin detaylı açıklamasını göster."
 
 #: src/QtMainWindow.cpp:193
 msgid "&About Marble Desktop Globe"
@@ -199,7 +200,7 @@ msgstr "&Marble Hakında"
 
 #: src/QtMainWindow.cpp:194
 msgid "Show the application's About Box"
-msgstr ""
+msgstr "Uygulamanın \"Hakkında Kutucuğu\"nu göster"
 
 #: src/QtMainWindow.cpp:197
 msgid "About &Qt"
@@ -207,7 +208,7 @@ msgstr "&Qt Hakkında"
 
 #: src/QtMainWindow.cpp:198
 msgid "Show the Qt library's About box"
-msgstr ""
+msgstr "Qt Kütüphanesinin \"Hakkında Kutucuğu\"nu göster"
 
 #: src/QtMainWindow.cpp:205
 msgid "&File"
@@ -243,7 +244,7 @@ msgstr "Marble"
 
 #: src/QtMainWindow.cpp:378
 msgid "An error occurred while trying to save the file.\n"
-msgstr ""
+msgstr "Dosyayı kaydetmeye çalışırken bir hata oluştu.\n"
 
 #: src/QtMainWindow.cpp:569
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:229
@@ -269,7 +270,7 @@ msgstr "GeoClue konum sağlayıcı eklentisi"
 
 #: src/plugins/positionprovider/geoclue/GeoCluePositionProviderPlugin.cpp:36
 msgid "Reports the position via the GeoClue Location Framework."
-msgstr ""
+msgstr "GeoClue Konum Çatısı ile konumları raporlar."
 
 #: src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp:21
 msgid "Gpsd position provider Plugin"
@@ -281,7 +282,7 @@ msgstr "Gpsd konum sağlayıcı eklentisi"
 
 #: src/plugins/positionprovider/gpsd/GpsdPositionProviderPlugin.cpp:36
 msgid "Reports the position of a GPS device."
-msgstr ""
+msgstr "Bir GPS aygıtının konumunu raporlar."
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:49
 msgid "Coordinate Grid"
@@ -293,7 +294,7 @@ msgstr "&Koordinat Ekseni"
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:64
 msgid "A plugin that shows a coordinate grid."
-msgstr ""
+msgstr "Koordinat ızgarasını gösteren bir eklenti."
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:178
 msgid "Equator"
@@ -309,11 +310,11 @@ msgstr "Antimeridyen"
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:196
 msgid "Tropic of Cancer"
-msgstr ""
+msgstr "Yengeç Dönencesi"
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:197
 msgid "Tropic of Capricorn"
-msgstr ""
+msgstr "Oğlak Dönencesi"
 
 #: src/plugins/render/graticule/GraticulePlugin.cpp:200
 msgid "Arctic Circle"
@@ -337,7 +338,7 @@ msgstr "Bu basit bir test eklentisidir."
 
 #: src/plugins/render/crosshairs/CrosshairsPlugin.cpp:39
 msgid "Crosshairs"
-msgstr ""
+msgstr "Artı Göstergeler"
 
 #: src/plugins/render/crosshairs/CrosshairsPlugin.cpp:44
 msgid "Cross&hairs"
@@ -345,7 +346,7 @@ msgstr ""
 
 #: src/plugins/render/crosshairs/CrosshairsPlugin.cpp:54
 msgid "A plugin that shows crosshairs."
-msgstr ""
+msgstr "Artı göstergeleri gösteren bir eklenti."
 
 #: src/plugins/render/placemarks/PlacemarksPlugin.cpp:63
 msgid "Placemarks Plugin"
@@ -357,22 +358,22 @@ msgstr "&Placemarks Eklentisi"
 
 #: src/plugins/render/placemarks/PlacemarksPlugin.cpp:78
 msgid "A plugin that displays placemarks."
-msgstr ""
+msgstr "Yer imlerini gösteren bir eklenti."
 
 #: src/plugins/render/panoramio/PanoramioPlugin.cpp:31
 msgid "Panoramio Photos"
-msgstr ""
+msgstr "Panoramio Fotoğrafları"
 
 #: src/plugins/render/panoramio/PanoramioPlugin.cpp:36
 msgid "&Panoramio"
-msgstr ""
+msgstr "&Panoramio"
 
 #: src/plugins/render/panoramio/PanoramioPlugin.cpp:41
 #: src/plugins/render/photo/PhotoPlugin.cpp:57
 msgid ""
 "Automatically downloads images from around the world in preference to their "
 "popularity"
-msgstr ""
+msgstr "Popülerliklerine göre dünya çapından görselleri indirir"
 
 #: src/plugins/render/mapscale/MapScaleFloatItem.cpp:40
 #: src/plugins/render/mapscale/MapScaleFloatItem.cpp:168
@@ -390,7 +391,7 @@ msgstr "&Boyutlandırma Çubuğu"
 
 #: src/plugins/render/mapscale/MapScaleFloatItem.cpp:71
 msgid "This is a float item that provides a map scale."
-msgstr ""
+msgstr "Harita ölçeklendirmesi sağlayan bir yüzen nesnedir."
 
 #: src/plugins/render/mapscale/MapScaleFloatItem.cpp:172
 #: src/lib/MarbleControlBox.cpp:413
@@ -407,7 +408,7 @@ msgstr "&OSM Not Eklentisi"
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:90
 msgid "This is a render and interaction plugin used for annotating OSM data."
-msgstr ""
+msgstr "OSM verilerini not etmek için, görüntüleme ve etkileşim eklentisidir."
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:220
 #, qt-format
@@ -415,20 +416,24 @@ msgid ""
 "Error while trying to download the OSM file from the server. The error was:\n"
 " %1"
 msgstr ""
+"Sunucudan OSM dosyasını indirmeye çalışırken bir hata oluştu. Hata:\n"
+" %1"
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:231
 msgid "All Supported Files (*.osm);;Open Street Map Data (*.osm)"
-msgstr ""
+msgstr "Tüm Desteklenen Dosyalar (*.osm);;Open Street Map Verileri (*.osm)"
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:253
 msgid "Please select an area before trying to download an OSM file"
-msgstr ""
+msgstr "Lütfen OSM dosyası indirmeden önce bir bölge seçiniz"
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:276
 msgid ""
 "One of the selection points is not on the Globe. Please only select a region "
 "on the globe."
 msgstr ""
+"Seçim noktalarından bir tanesi Yeryüzü üzerinde değil. Lütfen sadece bir "
+"alan seçiniz."
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:325
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:567
@@ -477,7 +482,7 @@ msgstr "Osm Dosyası İndir"
 
 #: src/plugins/render/osmannotate/OsmAnnotatePlugin.cpp:598
 msgid "Download Osm File for selected area"
-msgstr ""
+msgstr "Seçilen bölge için Osm Dosyasını indir"
 
 #: src/plugins/render/osmannotate/TextEditor.cpp:49
 msgid "Placemark Name"
@@ -513,7 +518,7 @@ msgstr "&Yıldızlar"
 
 #: src/plugins/render/stars/StarsPlugin.cpp:63
 msgid "A plugin that shows the Starry Sky."
-msgstr ""
+msgstr "Yıldızlı gökyüzü gösteren bir eklenti."
 
 #: src/plugins/render/navigation/NavigationFloatItem.cpp:51
 #: src/lib/QtMarbleConfigDialog.cpp:121 src/lib/MarbleControlBox.cpp:461
@@ -526,7 +531,7 @@ msgstr "&Gezinme"
 
 #: src/plugins/render/navigation/NavigationFloatItem.cpp:66
 msgid "A mouse control to zoom and move the map"
-msgstr ""
+msgstr "Haritayı oynatmak ve yakınlaştırmak için kullanılan bir fare kontrolü"
 
 #: src/plugins/render/weather/WeatherItem.cpp:52
 #: src/plugins/render/weather/WeatherPlugin.cpp:74
@@ -601,6 +606,7 @@ msgstr "&Hava Durumu"
 msgid ""
 "Download weather information from many weather stations all around the world"
 msgstr ""
+"Dünya çapındaki hava durumu istasyonlarından hava durumu bilgisini indir"
 
 #: src/plugins/render/weather/WeatherPlugin.cpp:99
 #: src/plugins/render/wikipedia/WikipediaPlugin.cpp:94
@@ -621,6 +627,8 @@ msgid ""
 "Supported by backstage.bbc.co.uk.\n"
 "Weather data from UK MET Office"
 msgstr ""
+"backstage.bbc.co.uk tarafından desteklenmektedir\n"
+"Havadurumu bilgisi UK MET Office"
 
 #: src/plugins/render/weather/BBCWeatherItem.cpp:91
 msgid ""
@@ -668,7 +676,7 @@ msgstr "yağmur"
 
 #: src/plugins/render/weather/WeatherData.cpp:386
 msgid "occasionally thunderstorm"
-msgstr ""
+msgstr "bazen gök gürültülü fırtınalı"
 
 #: src/plugins/render/weather/WeatherData.cpp:388
 msgid "thunderstorm"
@@ -680,7 +688,7 @@ msgstr "dolu"
 
 #: src/plugins/render/weather/WeatherData.cpp:393
 msgid "occasionally snow"
-msgstr ""
+msgstr "bazen karlı"
 
 #: src/plugins/render/weather/WeatherData.cpp:395
 msgid "light snow"
@@ -888,7 +896,7 @@ msgstr "&twitter"
 
 #: src/plugins/render/twitter/twitterPlugin.cpp:62
 msgid "show public twitts in their places"
-msgstr ""
+msgstr "halka açık twitleri kendi konumlarında göster"
 
 #: src/plugins/render/overviewmap/OverviewMap.cpp:50
 msgid "Overview Map"
@@ -900,7 +908,7 @@ msgstr "Haritayı &Gözden Geçir"
 
 #: src/plugins/render/overviewmap/OverviewMap.cpp:65
 msgid "This is a float item that provides an overview map."
-msgstr ""
+msgstr "Haritaya genel bakış sağlayan yüzen nesnedir."
 
 #: src/plugins/render/geodata/GeoRendererPlugin.cpp:71
 msgid "GeoRenderer Plugin"
@@ -913,6 +921,8 @@ msgstr "&GeoRenderer Eklentisi"
 #: src/plugins/render/geodata/GeoRendererPlugin.cpp:86
 msgid "This plugin draws the map content (e.g. provided via a KML file)."
 msgstr ""
+"Bu eklenti harita içeriğini çizer (örneğin bir KML dosyası tarafından "
+"sağlananlar)"
 
 #: src/plugins/render/dataview/DataViewPlugin.cpp:73
 msgid "DataView Plugin"
@@ -924,7 +934,7 @@ msgstr "&DataView Eklentisi"
 
 #: src/plugins/render/dataview/DataViewPlugin.cpp:88
 msgid "A plugin that displays all the loaded data in a separate window."
-msgstr ""
+msgstr "Yüklenen tüm verileri ayrı bir pencerede gösteren bir eklenti."
 
 #: src/plugins/render/compass/CompassFloatItem.cpp:47
 msgid "Compass"
@@ -936,7 +946,7 @@ msgstr "&Pusula"
 
 #: src/plugins/render/compass/CompassFloatItem.cpp:62
 msgid "This is a float item that provides a compass."
-msgstr ""
+msgstr "Pusulayı etkinleştiren yüzen nesne."
 
 #: src/plugins/render/wikipedia/WikipediaItem.cpp:228
 #, qt-format
@@ -959,12 +969,15 @@ msgid ""
 "Automatically downloads Wikipedia articles and shows them on the right "
 "position on the map"
 msgstr ""
+"Wikipedia makalelerini otomatik olarak indirir ve haritanın sağında gösterir"
 
 #: src/plugins/render/wikipedia/WikipediaPlugin.cpp:102
 msgid ""
 "Geo positions by geonames.org\n"
 "Texts by wikipedia.org"
 msgstr ""
+"Yeryüzü konumları: geonames.org\n"
+"Yazılar: wikipedia.org"
 
 #: src/plugins/render/satellites/SatellitesPlugin.cpp:40
 msgid "Satellites"
@@ -976,7 +989,7 @@ msgstr "&Uydular"
 
 #: src/plugins/render/satellites/SatellitesPlugin.cpp:55
 msgid "This plugin displays TBD satellites."
-msgstr ""
+msgstr "Bu eklenti TBD uydularını gösterir."
 
 #: src/plugins/render/fileview/FileViewFloatItem.cpp:55
 #: src/lib/MarbleControlBox.cpp:479
@@ -1010,7 +1023,7 @@ msgstr "QHttp temelli ağ eklentisi"
 #: src/plugins/network/qhttp/QHttpNetworkPlugin.cpp:125
 msgid ""
 "This is a network plugin which is based on the now deprecated QHttp class."
-msgstr ""
+msgstr "Artık geçerli olmayan QHttp kitaplığı tabanlı bir ağ eklentisidir."
 
 #: src/plugins/network/kio/KIONetworkPlugin.cpp:93
 msgid "KIO Network Plugin"
@@ -1025,6 +1038,8 @@ msgid ""
 "A network plugin which supports HTTP pipelining to deliver a better user "
 "experience."
 msgstr ""
+"Daha iyi bir kullanıcıdeneyimi yaşatmak için HTTP pipelining destekleyen bir "
+"ağ eklentisi."
 
 #: src/plugins/network/qnam/QNamNetworkPlugin.cpp:34
 msgid "QNam Network Plugin"
@@ -1032,13 +1047,15 @@ msgstr "QNam Ağ Eklentisi"
 
 #: src/plugins/network/qnam/QNamNetworkPlugin.cpp:44
 msgid "QNetworkAccessManager based Network Plugin"
-msgstr ""
+msgstr "QNetworkAccessManager tabanlı Ağ Eklentisi"
 
 #: src/plugins/network/qnam/QNamNetworkPlugin.cpp:49
 msgid ""
 "A network plugin which keeps connected to the hosts used to deliver a better "
 "user experience."
 msgstr ""
+"Daha iyi bir kullanıcı tecrübesi için sunuculara bağlı kalmayı sağlayan bir "
+"ağ eklentisi."
 
 #: src/plugins/templates/floatitem/FITemplateFloatItem.cpp:53
 msgid "FITemplate"
@@ -1046,11 +1063,11 @@ msgstr "FITemplate"
 
 #: src/plugins/templates/floatitem/FITemplateFloatItem.cpp:58
 msgid "Float Item &Template"
-msgstr ""
+msgstr "Yüzen nesne ve Şablon"
 
 #: src/plugins/templates/floatitem/FITemplateFloatItem.cpp:68
 msgid "This is a template class for float items."
-msgstr ""
+msgstr "Bu yüzen nesneler için bir şablon sınıftır."
 
 #: src/lib/gps/GpxSax.cpp:106 src/lib/gps/GmlSax.cpp:68
 msgid "GpxSax"
@@ -1076,12 +1093,12 @@ msgstr "Gpx Dosyası(*.gpx)"
 #: src/lib/geodata/handlers/dgml/DgmlMinimumTagHandler.cpp:50
 #, qt-format
 msgid "Could not convert <minimum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "<minimum> alt kademe yazı içeriği tamsayıya çevirilemedi. İçerik: '%1'"
 
 #: src/lib/geodata/handlers/dgml/DgmlMaximumTagHandler.cpp:50
 #, qt-format
 msgid "Could not convert <maximum> child text content to integer. Was: '%1'"
-msgstr ""
+msgstr "<maximum> alt kademe yazı içeriği tamsayıya çevirilemedi. İçerik: '%1'"
 
 #: src/lib/geodata/data/GeoDataCoordinates.cpp:350
 msgctxt "The compass direction"
@@ -1278,6 +1295,10 @@ msgid ""
 "For this change to become effective, Marble has to be restarted.\n"
 "Please close the application and start Marble again."
 msgstr ""
+"Marble'ı değişik bir grafik sisteminde çalıştırmaya karar verdiniz.\n"
+"Bu değişikliğin uygulanabilmesi için Marble'ın yeniden başlatılması "
+"gerekmektedir.\n"
+"Lütfen Marble'ı kapatıp tekrar başlatın."
 
 #: src/lib/LatLonEdit.cpp:112
 msgctxt "East, the direction"
@@ -1312,7 +1333,7 @@ msgstr "Uydu Görünümü"
 #: src/lib/MapThemeSortFilterProxyModel.cpp:28
 #: src/lib/MapThemeSortFilterProxyModel.cpp:32
 msgid "OpenStreetMap"
-msgstr ""
+msgstr "OpenStreetMap"
 
 #: src/lib/PluginItemDelegate.cpp:347
 msgid "About"
@@ -1377,74 +1398,100 @@ msgid ""
 "<p>Torsten Rahn <a href=\"mailto:rahn@kde.org\">rahn@kde.org</a><br><i>Core "
 "Developer and Original Author</i></p>"
 msgstr ""
+"<p>Torsten Rahn <a href=\"mailto:rahn@kde.org\">rahn@kde.org</a><br><i>"
+"Çekirdek "
+"Geliştirici ve Asıl Yazar</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:91
 msgid ""
 "<p>Patrick Spendrin <a href=\"pspendrin@gmail.com\">pspendrin@gmail.com</"
 "a><br><i>Core Developer: KML and Windows support</i></p>"
 msgstr ""
+"<p>Patrick Spendrin <a href=\"pspendrin@gmail.com\">pspendrin@gmail.com</"
+"a><br><i>Çekirdek Geliştirici: KML ve Pencere Desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:93
 msgid ""
 "<p>Jens-Michael Hoffmann <a href=\"mailto:jensmh@gmx.de\">jensmh@gmx.de</"
 "a><br><i>Core Developer: OpenStreetMap support, Download Management</i></p>"
 msgstr ""
+"<p>Jens-Michael Hoffmann <a href=\"mailto:jensmh@gmx.de\">jensmh@gmx.de</"
+"a><br><i>Çekirdek Geliştirici: OpenStreetMap desteği, İndirme Yöneticisi</i>"
+"</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:95
 msgid ""
 "<p>Henry de Valence <a href=\"mailto:hdevalence@gmail.com\">hdevalence@gmail."
 "com</a><br><i>Core Developer: Marble Runners, World-Clock Plasmoid</i></p>"
 msgstr ""
+"<p>Henry de Valence <a href=\"mailto:hdevalence@gmail.com\">hdevalence@gmail."
+"com</a><br><i>Çekirdek Geliştirici: Marble Koşucuları, Dünya Saatleri "
+"Plasmoidi</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:97
 msgid ""
 "<p>Bastian Holst, <a href=\"mailto:bastianholst@gmx.de\">bastianholst@gmx."
 "de</a><br><i>Online Services support</i></p>"
 msgstr ""
+"<p>Bastian Holst, <a href=\"mailto:bastianholst@gmx.de\">bastianholst@gmx."
+"de</a><br><i>Çevrimiçi Servis Desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:99
 msgid ""
 "<p>Andrew Manson <a href=\"mailto:g.real.ate@gmail.com\">g.real.ate@gmail."
 "com</a><br><i>Proxy support</i></p>"
 msgstr ""
+"<p>Andrew Manson <a href=\"mailto:g.real.ate@gmail.com\">g.real.ate@gmail."
+"com</a><br><i>Vekil sunucu desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:101
 msgid ""
 "<p>Pino Toscano <a href=\"mailto:pino@kde.org\">pino@kde.org</"
 "a><br><i>Network plugins</i></p>"
 msgstr ""
+"<p>Pino Toscano <a href=\"mailto:pino@kde.org\">pino@kde.org</"
+"a><br><i>Ağ eklentileri</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:103
 msgid ""
 "<p>Harshit Jain <a href=\"mailto:sonu.itbhu@googlemail.com\">sonu."
 "itbhu@googlemail.com</a><br><i>Planet Filter, bugfixes</i></p>"
 msgstr ""
+"<p>Harshit Jain <a href=\"mailto:sonu.itbhu@googlemail.com\">sonu."
+"itbhu@googlemail.com</a><br><i>Gezegen Filtresi, hata düzeltme</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:105
 msgid ""
 "<p>M&eacute;d&eacute;ric Boquien <a href=\"mailto:mboquien@free.fr"
 "\">mboquien@free.fr</a><br><i>Astronomical Observatories</i></p>"
 msgstr ""
+"<p>M&eacute;d&eacute;ric Boquien <a href=\"mailto:mboquien@free.fr"
+"\">mboquien@free.fr</a><br><i>Gökbilimsel Rasathane</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:107
 msgid "<p> Magnus Valle<br><i>Historical Maps</i></p>"
-msgstr ""
+msgstr "<p> Magnus Valle<br><i>Tarihi Haritalar</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:108
 msgid ""
 "<p>Eckhart W&ouml;rner <a href=\"mailto:kde@ewsoftware.de\">kde@ewsoftware."
 "de</a><br><i>Bugfixes</i></p>"
 msgstr ""
+"<p>Eckhart W&ouml;rner <a href=\"mailto:kde@ewsoftware.de\">kde@ewsoftware."
+"de</a><br><i>Hata Düzeltme</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:110
 msgid "<b>Join us</b>"
-msgstr ""
+msgstr "<b>Bize katılın</b>"
 
 #: src/lib/MarbleAboutDialog.cpp:111
 msgid ""
 "<p>You can reach the developers of the Marble Project at <a href=\"mailto:"
 "marble-devel@kde.org\">marble-devel@kde.org</a></p>"
 msgstr ""
+"<p>Marble Projesinin geliştiricilerine <a href=\"mailto:"
+"marble-devel@kde.org\">marble-devel@kde.org</a> adresinden ulaşabilirsiniz.<"
+"/p>"
 
 #: src/lib/MarbleAboutDialog.cpp:112
 msgid "<b>Google Summer of Code</b>"
@@ -1455,6 +1502,8 @@ msgid ""
 "<p> The Marble Team would like to thank its members who participated in the "
 "Google Summer of Code for their successful work on Marble:</p>"
 msgstr ""
+"<p> The Marble Ekibi Google Summer of Code'da gösterdikleri başarıdan dolayı "
+"katılımcı üyelerine teşekkür eder:</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:115
 msgid "<p><b>2008</b></p>"
@@ -1465,6 +1514,8 @@ msgid ""
 "<p>Patrick Spendrin <a href=\"pspendrin@gmail.com\">pspendrin@gmail.com</"
 "a><br><i>Project: Vector Tiles for Marble</i></p>"
 msgstr ""
+"<p>Patrick Spendrin <a href=\"pspendrin@gmail.com\">pspendrin@gmail.com</"
+"a><br><i>Proje: Marble için Vektör Döşemeleri</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:118
 msgid ""
@@ -1472,6 +1523,9 @@ msgid ""
 "personal@gmail.com</a><br><i>Project: Panoramio / Wikipedia -photo support "
 "for Marble</i></p>"
 msgstr ""
+"<p>Shashank Singh <a href=\"mailto:shashank.personal@gmail.com\">shashank."
+"personal@gmail.com</a><br><i>Proje: Panoramio / Wikipedia - Marble için "
+"fotoğraf desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:120
 msgid "<b>2007</b>"
@@ -1483,24 +1537,33 @@ msgid ""
 "licea@kdemail.net</a><br><i>Project: Equirectangular Projection (\"Flat Map"
 "\")</i></p>"
 msgstr ""
+"<p>Carlos Licea <a href=\"mailto:carlos.licea@kdemail.net\">carlos."
+"licea@kdemail.net</a><br><i>Proje: Eşdörtgensel Projeksiyon (\"Düz Harita"
+"\")</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:123
 msgid ""
 "<p>Andrew Manson <a href=\"mailto:g.real.ate@gmail.com\">g.real.ate@gmail."
 "com</a><br><i>Project: GPS Support for Marble</i></p>"
 msgstr ""
+"<p>Andrew Manson <a href=\"mailto:g.real.ate@gmail.com\">g.real.ate@gmail."
+"com</a><br><i>Proje: Marble için GPS desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:125
 msgid ""
 "<p>Murad Tagirov <a href=\"mailto:tmurad@gmail.com\">tmurad@gmail.com</"
 "a><br><i>Project: KML Support for Marble</i></p>"
 msgstr ""
+"<p>Murad Tagirov <a href=\"mailto:tmurad@gmail.com\">tmurad@gmail.com</"
+"a><br><i>Proje: Marble için KLM Desteği</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:127
 msgid ""
 "<p>... and of course we'd like to thank the people at Google Inc. for making "
 "these projects possible.</p>"
 msgstr ""
+"<p>... ve tabiki Google Inc.'teki insanlara, bu projelerin "
+"gerçekleştirilmesi için sağladıkları imkanlar için teşekkür ederiz.</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:128
 msgid "<b>Developers</b>"
@@ -1511,6 +1574,8 @@ msgid ""
 "<p>Inge Wallin <a href=\"mailto:inge@lysator.liu.se\">inge@lysator.liu.se</"
 "a><br><i>Core Developer and Co-Maintainer</i></p>"
 msgstr ""
+"<p>Inge Wallin <a href=\"mailto:inge@lysator.liu.se\">inge@lysator.liu.se</"
+"a><br><i>Çekirdek Geliştirici ve Yardımcı Bakımcı</i></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:131
 msgid ""
@@ -1520,6 +1585,11 @@ msgid ""
 "Frederik Gladhorn, Fredrik H&ouml;glund, Albert Astals Cid, Thomas Zander, "
 "Joseph Wenninger, Kris Thomsen, Daniel Molkentin  </p>"
 msgstr ""
+"<p><i>Geliştirme &amp; Yamalar:</i> Simon Schmeisser, Claudiu Covaci, David "
+"Roberts, Nikolas Zimmermann, Jan Becker, Stefan Asserh&auml;ll, Laurent "
+"Montel, Prashanth Udupa, Anne-Marie Mahfouf, Josef Spillner, Frerich Raabe, "
+"Frederik Gladhorn, Fredrik H&ouml;glund, Albert Astals Cid, Thomas Zander, "
+"Joseph Wenninger, Kris Thomsen, Daniel Molkentin  </p>"
 
 #: src/lib/MarbleAboutDialog.cpp:135
 msgid ""
@@ -1527,6 +1597,9 @@ msgid ""
 "Ralf Habacker, Steffen Joeris, Marcus Czeslinski, Marcus D. Hanwell, "
 "Chitlesh Goorah.</p>"
 msgstr ""
+"<p><i>Platform &amp; Dağıtımlar:</i>Tim Sutton, Christian Ehrlicher, "
+"Ralf Habacker, Steffen Joeris, Marcus Czeslinski, Marcus D. Hanwell, "
+"Chitlesh Goorah.</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:137
 msgid "<p><i>Artwork:</i> Nuno Pinheiro, Torsten Rahn</p>"
@@ -1542,12 +1615,17 @@ msgid ""
 "Lubos Petrovic, Benoit Sigoure, Martin Konold, Matthias Welwarsky, Rainer "
 "Endres, Luis Silva, Ralf Gesellensetter, Tim Alder</p>"
 msgstr ""
+"<p><i>Çeşitli Tavsiyeler &amp; Test:</i> Stefan Jordan, Robert Scott, "
+"Lubos Petrovic, Benoit Sigoure, Martin Konold, Matthias Welwarsky, Rainer "
+"Endres, Luis Silva, Ralf Gesellensetter, Tim Alder</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:141
 msgid ""
 "<p> We'd especially like to thank John Layt who provided an important source "
 "of inspiration by creating Marble's predecessor \"Kartographer\".</p>"
 msgstr ""
+"<p> Özellikle John Layt'a, Marble'ın atası olan \"Kartographer\"ı yaratarak "
+"önemli bir ilham kaynağı olmasından dolayı teşekkür ederiz</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:152
 msgid "<b>Maps</b>"
@@ -1560,6 +1638,10 @@ msgid ""
 "Newsroom/BlueMarble/\">http://earthobservatory.nasa.gov/Newsroom/BlueMarble/"
 "</a></p>"
 msgstr ""
+"<p><i>Sonraki Nesil Blue Marble (500 m / pixel)</i><br>NASA Goddard Uzay "
+"Uçuş Merkezi ve Dünya Gözlemevi <a href=\"http://earthobservatory.nasa.gov/"
+"Newsroom/BlueMarble/\">http://earthobservatory.nasa.gov/Newsroom/BlueMarble/"
+"</a></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:157
 msgid ""
@@ -1567,6 +1649,10 @@ msgid ""
 "Christopher Elvidge of NOAA NGDC. Image by Craig Mayhew and Robert Simmon, "
 "NASA GSFC.</p>"
 msgstr ""
+"<p><i>Dünya'nın Gece Işıkları</i><br>NASA GSFC'den Marc Imhoff ve "
+" NOAA NGDC'den Christopher Elvidge izniyle. Görseller, Craig Mayhew ve "
+"Robert Simmon, "
+"NASA GSFC.</p>"
 
 #: src/lib/MarbleAboutDialog.cpp:160
 msgid ""
@@ -1574,6 +1660,9 @@ msgid ""
 "Jet Propulsion Laboratory <a href=\"http://www2.jpl.nasa.gov/srtm/\">http://"
 "www2.jpl.nasa.gov/srtm/</a></p>"
 msgstr ""
+"<p><i>Uzay Mekiği Radar Topografi Görevi (SRTM30, 1 km / pixel )</i><br>NASA "
+"Jet Propulsion Laboratory <a href=\"http://www2.jpl.nasa.gov/srtm/\">http://"
+"www2.jpl.nasa.gov/srtm/</a></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:163
 msgid ""
@@ -1595,6 +1684,20 @@ msgid ""
 "Climate Research 21.<a href=\"http://www.cru.uea.ac.uk/cru/data/hrg\">http://"
 "www.cru.uea.ac.uk/cru/data/hrg</a></li></ul></p>"
 msgstr ""
+"<p>İki veri kümesinin birleştirilmesiyle oluşturulan <i>Sıcaklık ve Yağış "
+"Haritaları(Temmuz ve Aralık)</i><br>:<ul><li>Legates, D.R. and Willmott, C.J."
+" 1989. "
+"Aylık ortalama yüzey sıcaklık ve yağış miktarı. 0.5 derecelik Coğrafik "
+"(enlem/boylam) 361x721'lik ızgarada sayısal tarama örüntüsü verisi. Boulder "
+"CO: National Center for Atmospheric "
+"Research. <a href=\"http://www.ngdc.noaa.gov/ecosys/cdroms/ged_iia/datasets/"
+"a04/lw.htm\">http://www.ngdc.noaa.gov/ecosys/cdroms/ged_iia/datasets/a04/lw."
+"htm</a></li><li>CRU CL 2.0: New, M., Lister, D., Hulme, M. and Makin, I., "
+"2002:  Küresel yer alanları üzerinde yüzey ikliminin yüksek çözünürlüklü "
+"veri kümesi. "
+"İklim Araştırması 21.<a href=\"http://www.cru.uea.ac.uk/cru/data/hrg\">"
+"http://"
+"www.cru.uea.ac.uk/cru/data/hrg</a></li></ul></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:177
 msgid "<b>Street Map</b>"
@@ -1635,6 +1738,8 @@ msgid ""
 "<p><i>Czech Statistical Office</i><br>Public database <a href=\"http://www."
 "czso.cz/eng/redakce.nsf/i/home\">http://www.czso.cz</a></p>"
 msgstr ""
+"<p><i>Çek İstatistik Ofisi</i><br>Halka açık veritabanı <a href=\"http://www."
+"czso.cz/eng/redakce.nsf/i/home\">http://www.czso.cz</a></p>"
 
 #: src/lib/MarbleAboutDialog.cpp:194
 msgid "<b>Flags</b>"
@@ -1660,6 +1765,10 @@ msgid ""
 "href=\"http://adc.gsfc.nasa.gov/adc-cgi/cat.pl?/catalogs/5/5050\"> http://"
 "adc.gsfc.nasa.gov</a></p>"
 msgstr ""
+"<p><i>The Bright Star Katologu</i><br>5th Revised Ed. (Taslak) "
+"Hoffleit D., Warren Jr W.H., Astronomical Data Center, NSSDC/ADC (1991)<a "
+"href=\"http://adc.gsfc.nasa.gov/adc-cgi/cat.pl?/catalogs/5/5050\"> http://"
+"adc.gsfc.nasa.gov</a></p>"
 
 #: src/lib/PlacemarkInfoDialog.cpp:32
 #, qt-format
@@ -1688,7 +1797,7 @@ msgstr "Dağ"
 
 #: src/lib/PlacemarkInfoDialog.cpp:79
 msgid "Elevation extreme"
-msgstr ""
+msgstr "Aşırı yükseklik"
 
 #: src/lib/PlacemarkInfoDialog.cpp:82
 msgid "Volcano"
@@ -1728,7 +1837,7 @@ msgstr "Krater"
 
 #: src/lib/PlacemarkInfoDialog.cpp:112
 msgid "Landing Site"
-msgstr ""
+msgstr "İniş Meydanı"
 
 #: src/lib/PlacemarkInfoDialog.cpp:115
 msgid "Other Place"
