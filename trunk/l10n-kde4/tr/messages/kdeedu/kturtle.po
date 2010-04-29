@@ -3,18 +3,19 @@
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Engin Çağatay <engincagatay@yahoo.com>, 2004, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Renan Cakirerk, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kturtle\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-15 01:22+0100\n"
-"PO-Revision-Date: 2009-10-28 16:32+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-04-29 13:37+0300\n"
+"Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: interpreter/executer.cpp:269
@@ -54,32 +55,32 @@ msgstr ""
 #: interpreter/executer.cpp:307
 #, kde-format
 msgid "The %1 command only accepts a number as its parameter."
-msgstr ""
+msgstr "%1 komutu parametre olarak sadece sayı kabul eder."
 
 #: interpreter/executer.cpp:309
 #, kde-format
 msgid "The %1 command only accepts numbers as its parameters."
-msgstr ""
+msgstr "%1 komutuna parametre olarak sadece sayıları kabul eder."
 
 #: interpreter/executer.cpp:314
 #, kde-format
 msgid "The %1 command only accepts an answer as its parameter."
-msgstr ""
+msgstr "%1 komutu parametre olarak sadece \"cevap\" kabul eder."
 
 #: interpreter/executer.cpp:316
 #, kde-format
 msgid "The %1 command only accepts answers as its parameters."
-msgstr ""
+msgstr "%1 komutu parametre olarak sadece cevapları kabul eder."
 
 #: interpreter/executer.cpp:394
 #, kde-format
 msgid "The variable '%1' was used without first being assigned to a value"
-msgstr ""
+msgstr "%1 değişkenine bir değer atanmadan kullanıldı"
 
 #: interpreter/executer.cpp:413
 #, kde-format
 msgid "An unknown function named '%1' was called"
-msgstr ""
+msgstr "%1 isimli fonksiyon çağırıldı"
 
 #: interpreter/executer.cpp:430 interpreter/executer.cpp:431
 #, kde-format
@@ -93,10 +94,12 @@ msgstr[0] "%1 parametre"
 #, kde-format
 msgid "The function '%1' was called with %2, while it should be called with %3"
 msgstr ""
+"%1 fonksiyonu %3 ile birlikte çağırılmalı ama %2 fonksiyonu ile birlikte "
+"çağırıldı"
 
 #: interpreter/executer.cpp:635
 msgid "ASSERT failed"
-msgstr ""
+msgstr "ASSERT başarısız oldu"
 
 #: interpreter/executer.cpp:641
 msgid "'And' needs two variables"
@@ -104,7 +107,7 @@ msgstr "'And' iki değişkene gereksinim duyar"
 
 #: interpreter/executer.cpp:650
 msgid "'Or' needs two variables"
-msgstr ""
+msgstr "'Or' iki değişkenle çalışır"
 
 #: interpreter/executer.cpp:660
 msgid "I need something to do a not on"
@@ -112,27 +115,27 @@ msgstr ""
 
 #: interpreter/executer.cpp:668
 msgid "I cannot do a '==' without 2 variables"
-msgstr ""
+msgstr "'==' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:676
 msgid "I cannot do a '!=' without 2 variables"
-msgstr ""
+msgstr "'!=' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:684
 msgid "I cannot do a '>' without 2 variables"
-msgstr ""
+msgstr "'>' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:692
 msgid "I cannot do a '<' without 2 variables"
-msgstr ""
+msgstr "'<' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:700
 msgid "I cannot do a '>=' without 2 variables"
-msgstr ""
+msgstr "'>=' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:708
 msgid "I cannot do a '<=' without 2 variables"
-msgstr ""
+msgstr "'<=' işlemi iki değişken olmadan yapılamaz"
 
 #: interpreter/executer.cpp:716
 msgid "You need two numbers or string to do an addition"
@@ -1289,7 +1292,7 @@ msgstr "Üzerine Yazma Kipi"
 
 #: mainwindow.cpp:265
 msgid "Toggle between the 'insert' and 'overwrite' mode"
-msgstr ""
+msgstr "'Ekle' ve 'Üzerine yaz' biçimleri arasında değişim yap"
 
 #: mainwindow.cpp:266
 msgid "Overwrite Mode: Toggle between the 'insert' and 'overwrite' mode"
@@ -1809,12 +1812,12 @@ msgstr "Ana Araç Çubuğu"
 #: rc.cpp:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Görkem Çetin, Engin Çağatay"
+msgstr "Görkem Çetin, Engin Çağatay, Renan Çakırerk "
 
 #: rc.cpp:35
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "gorkem@kde.org, engincagatay@yahoo.com"
+msgstr "gorkem@kde.org, engincagatay@yahoo.com, renan@pardus.org.tr"
 
 #~ msgid "Nothing to show here"
 #~ msgstr "Burada gösterilecek bir şey yok"
