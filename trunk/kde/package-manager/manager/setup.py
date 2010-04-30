@@ -177,7 +177,7 @@ setup(
       version           = __version,
       description       = unicode('Package Manager'),
       license           = unicode('GPL'),
-      author            = "",
+      author            = '',
       author_email      = 'bugs@pardus.org.tr',
       url               = 'http://www.pardus.org.tr/eng/projects',
       packages          = [''],
