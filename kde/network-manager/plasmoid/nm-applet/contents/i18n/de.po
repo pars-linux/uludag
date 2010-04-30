@@ -20,7 +20,7 @@ msgstr ""
 #: code/widgets/configIconui.py:53 code/widgets/configPopupui.py:37
 #: code/widgets/itemui.py:39 code/widgets/popupui.py:151
 msgid "Form"
-msgstr ""
+msgstr "Formblatt"
 
 #: code/widgets/configIconui.py:54
 msgid "Show connection status"
