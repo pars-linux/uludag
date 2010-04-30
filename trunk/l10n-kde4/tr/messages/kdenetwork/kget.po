@@ -9,13 +9,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:23+0200\n"
-"PO-Revision-Date: 2010-04-28 10:06+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-04-30 14:59+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -195,7 +196,7 @@ msgstr ""
 
 #: core/kget.cpp:510
 msgid "Overwrite existing file?"
-msgstr "Varolan dosyanın üzerine yazılsın mı?"
+msgstr "Var olan dosyanın üzerine yazılsın mı?"
 
 #: core/kget.cpp:523 ui/metalinkcreator/metalinkcreator.cpp:317
 #, kde-format
@@ -360,7 +361,7 @@ msgstr "Tüm aktarımlar tamamlandı, KGet uygulamasından çıkılıyor."
 
 #: core/kget.cpp:1365
 msgid "The computer will now turn off, as all downloads have completed."
-msgstr "Tüm aktarımlar tamamland, bilgisayar şimdi kapatılıyor."
+msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi kapatılıyor."
 
 #: core/filemodel.cpp:277
 msgctxt "file in a filesystem"
@@ -410,6 +411,7 @@ msgstr "Doğrulanmış"
 #: core/verifier.cpp:1174
 msgid "The key to verify the signature is missing, do you want to download it?"
 msgstr ""
+"İmzayı doğrulamak için gerekli olan anahtar eksik. İndirmek istiyor musunuz?"
 
 #: core/verifier.cpp:1192
 #, kde-format
@@ -417,6 +419,8 @@ msgid ""
 "The signature could not be verified for %1. See transfer settings for more "
 "information."
 msgstr ""
+"%1 için imza doğrulanamadı. Daha fazla bilgi için aktarım ayarlarına göz "
+"atın."
 
 #: core/verifier.cpp:1193
 msgid "Signature not verified"
@@ -426,6 +430,7 @@ msgstr "İmza doğrulanmadı"
 msgid ""
 "No server for downloading keys is specified in settings. Downloading aborted."
 msgstr ""
+"Ayarlarda anahtar indirmek için sunucu belirtilmemiş. İndirme durduruldu."
 
 #: core/verifier.cpp:1299 core/verifier.cpp:1319
 msgid "No key server"
@@ -436,6 +441,8 @@ msgid ""
 "No useful key server found, key not downloaded. Add more servers to the "
 "settings or restart KGet and retry downloading."
 msgstr ""
+"Kullanılabilir anahtar sunucusu bulunamadı, anahtar indirilmedi. Ayarlardan "
+"daha fazla sunucu ekleyin veya KGet'i tekrar başlatarak deneyin."
 
 #: core/datasourcefactory.cpp:647
 #, kde-format
@@ -638,7 +645,7 @@ msgid ""
 "The download could not be verified, do you want to repair (if repairing does "
 "not work the download would be restarted) it?"
 msgstr ""
-"İndirme doğrulanamadıi onarmak istiyor musunuz (onarma başarılı "
+"İndirme doğrulanamadı onarmak istiyor musunuz (onarma başarılı "
 "olmazsa indirme işlemi yeniden başlayacak)?"
 
 #: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:42
@@ -807,6 +814,9 @@ msgid ""
 "Whether or not the peer has choked us.  If we are choked, the peer will not "
 "send us any data."
 msgstr ""
+"Uç tarafın bizi tıkayıp tıkamadığını belirtir. Eğer tıkandıysak, uç taraf "
+"bize daha "
+"fazla bilgi gönderemeyecek."
 
 #: transfer-plugins/bittorrent/advanceddetails/peerviewmodel.cpp:334
 msgid "Snubbed means the peer has not sent us any data in the last 2 minutes"
@@ -816,7 +826,7 @@ msgstr ""
 
 #: transfer-plugins/bittorrent/advanceddetails/peerviewmodel.cpp:335
 msgid "How much of the torrent's data the peer has"
-msgstr ""
+msgstr "Uç tarafın torrent verisinin ne kadarına sahip olduğu"
 
 #: transfer-plugins/bittorrent/advanceddetails/peerviewmodel.cpp:336
 msgid "Whether or not the peer has DHT enabled"
@@ -1141,7 +1151,7 @@ msgstr "İndiriliyor...."
 
 #: transfer-plugins/bittorrent/bttransfer.cpp:274
 msgid "Cannot add a tracker to a private torrent."
-msgstr "Özel torrente izleyici eklenemiyor."
+msgstr "Özel torrent'e izleyici eklenemiyor."
 
 #: transfer-plugins/bittorrent/bttransfer.cpp:444
 msgid "Analyzing torrent...."
@@ -1649,7 +1659,7 @@ msgstr "En az bir adres girin."
 
 #: ui/metalinkcreator/filedlg.cpp:129
 msgid "Required data entered; also consider entering additional information."
-msgstr ""
+msgstr "Gerekli bilgi girildi; daha fazla bilgi vermeyi de düşünebilirsiniz."
 
 #: ui/metalinkcreator/metalinkcreator.cpp:234
 msgid "Create a Metalink"
@@ -1996,10 +2006,12 @@ msgid ""
 "No fingerprint could be found, check if the signature is correct or verify "
 "the download."
 msgstr ""
+"Parmak izi bulunamadı, imza doğru mu diye kontrol edin veya indirme "
+"işlemini doğrulayın."
 
 #: ui/signaturedlg.cpp:139
 msgid "The key has been revoked."
-msgstr ""
+msgstr "Anahtar iptal edildi."
 
 #: ui/signaturedlg.cpp:143
 msgid "The key is disabled."
@@ -2019,15 +2031,15 @@ msgstr "Anahtara güvenilmiyor."
 
 #: ui/signaturedlg.cpp:173
 msgid "The key is to be trusted marginally."
-msgstr ""
+msgstr "Anahtara marjinal olarak güvenilmeli."
 
 #: ui/signaturedlg.cpp:179
 msgid "The key is to be trusted fully."
-msgstr ""
+msgstr "Anahtara tam olarak güvenilmeli."
 
 #: ui/signaturedlg.cpp:183
 msgid "The key is to be trusted ultimately."
-msgstr ""
+msgstr "Anahtara olağanüstü şekilde güvenilmeli."
 
 #: ui/signaturedlg.cpp:189
 msgid "Trust level of the key is unclear."
@@ -2061,12 +2073,15 @@ msgid ""
 "Caution: Verification failed. Either you entered the wrong signature, or the "
 "data has been modified."
 msgstr ""
+"Uyarı: Doğrulama başarısız. Ya yanlış imza girdiniz, ya da veri değiştirildi."
 
 #: ui/signaturedlg.cpp:253
 msgid ""
 "Verification not possible. Check the entered data, whether gpg-agent is "
 "running, or whether you have an Internet connection (for retrieving keys.)"
 msgstr ""
+"Doğrulama mümkün değil. Girilen veriyi denetleyin, gpg-agent uygulamasının "
+"çalışıp çalışmadığını veya Internet bağlantınız olup olmadığını kontrol edin."
 
 #: ui/signaturedlg.cpp:266
 msgid "Feature is not supported, as KGet is not compiled with QPGME support."
@@ -2222,6 +2237,7 @@ msgstr "%1 için Aktarım Ayarları"
 msgid ""
 "Changing the destination did not work, the destination stays unmodified."
 msgstr ""
+"Hedefin değiştirilmesi başarısız, hedef değiştirilmeden önceki gibi kalacak."
 
 #: ui/transfersettingsdialog.cpp:134
 msgid "Destination unmodified"
@@ -2790,7 +2806,7 @@ msgstr "Otomatik doğrulama"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_SignatureAutomaticDownloading)
 #: rc.cpp:32
 msgid "Automatic downloading of missing keys"
-msgstr ""
+msgstr "Eksik anahtarların otomatik indirilmesi"
 
 #. i18n: file: conf/verificationpreferences.ui:122
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -3632,6 +3648,8 @@ msgid ""
 "directory. For each dropped file the URL would consist of the entered part "
 "and the filename."
 msgstr ""
+"Eğer bırakılan tüm dosyalar o sunucuda ve aynı dizindeyse buraya adreslerini "
+"girin. Her bırakılan dosya için adres, girilen kısım ve dosya adından oluşur."
 
 #. i18n: file: ui/metalinkcreator/dragdlg.ui:102
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -3717,6 +3735,11 @@ msgid ""
 "enter them if desired. The minimum is a save location, at least one file and "
 "one URL."
 msgstr ""
+"Bu sihirbaz sizin sıfırdan veya mevcut metalinkleri temel alarak yeni "
+"metalink "
+"üretmenizi sağlar. Çoğu alan zorunlu değildir. Kayıt konumu, dosya ve URL "
+"bilgileri "
+"ise verilmelidir."
 
 #. i18n: file: ui/metalinkcreator/introduction.ui:48
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -3771,6 +3794,8 @@ msgstr "Metalinkin Web adresi"
 #: rc.cpp:568
 msgid "Dynamic means that updated metalinks can be found at \"Origin\"."
 msgstr ""
+"Dinamik, güncellenen metalink'lerin \"Origin\" konumunda bulunabileceği "
+"anlamına gelir."
 
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:78
 #. i18n: ectx: property (text), widget (QLabel, labelDynamic)
@@ -3935,7 +3960,7 @@ msgstr "Yerel dosyalar ekleniyor..."
 #. i18n: ectx: property (text), widget (QLabel, needUrl)
 #: rc.cpp:661
 msgid "You need to set mirrors for the entries with an icon."
-msgstr ""
+msgstr "Simgeye sahip girdiler için yansı belirtmelisiniz."
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -4475,7 +4500,7 @@ msgstr "Kullanılabilir arama motolarının adresleri"
 #. i18n: ectx: label, entry (UrlRegexpList), group (UserScripts)
 #: rc.cpp:983
 msgid "List of the Regexp to match input URL"
-msgstr ""
+msgstr "Girdi adreslerini eşlemek için kullanılacak düzenli ifade listesi"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:21
 #. i18n: ectx: label, entry (DescriptionList), group (UserScripts)
