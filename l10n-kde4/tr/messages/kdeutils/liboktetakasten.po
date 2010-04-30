@@ -9,8 +9,13 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
+<<<<<<< .mine
+"PO-Revision-Date: 2010-04-28 11:05+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+=======
 "PO-Revision-Date: 2010-04-28 11:01+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+>>>>>>> .r29044
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -135,11 +140,11 @@ msgstr "Dizi eklendi."
 #: gui/io/bytearraypatterngenerator.cpp:49
 msgctxt "name of the generated data"
 msgid "Pattern..."
-msgstr "Desen..."
+msgstr "İfade..."
 
 #: gui/io/bytearraypatterngenerator.cpp:80
 msgid "Pattern inserted."
-msgstr "Desen eklendi."
+msgstr "İfade eklendi."
 
 #: gui/io/bytearrayvaluestreamencoder.cpp:44
 msgctxt "name of the encoding target"
@@ -169,7 +174,7 @@ msgstr "Değişkenin adı:"
 #: gui/io/bytearraysourcecodestreamencoderconfigeditor.cpp:62
 msgctxt "@label:textbox to define after how many items the list is wrapped"
 msgid "Items per line:"
-msgstr "Dosyaların ham verilerini düzenle"
+msgstr "Satır başına öge:"
 
 #: gui/io/bytearraysourcecodestreamencoderconfigeditor.cpp:73
 msgctxt "@label:listbox the type of the data: char, integer, etc."
@@ -196,14 +201,14 @@ msgstr "C Dizisi..."
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:49
 msgctxt "@label:textbox"
 msgid "Pattern:"
-msgstr "Desen:"
+msgstr "İfade:"
 
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:56
 msgctxt "@info:whatsthis"
 msgid ""
 "Enter a pattern to search for, or select a previous pattern from the list."
 msgstr ""
-"Aranacak desen'i girin veya daha önceden girilmiş bir tanesini listeden "
+"Aranacak ifadeyi girin veya daha önceden girilmiş bir tanesini listeden "
 "seçin."
 
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:64
@@ -214,12 +219,12 @@ msgstr "&Numara:"
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:71
 msgctxt "@info:whatsthis"
 msgid "Enter the number of times the pattern should be inserted."
-msgstr "Eklenecek desenin kaç kere ekleneceğini girin."
+msgstr "Eklenecek ifadenin kaç kere ekleneceğini girin."
 
 #: gui/io/bytearraypatterngeneratorconfigeditor.cpp:81
 msgctxt "@item name of the generated data"
 msgid "Pattern"
-msgstr "Desen"
+msgstr "İfade"
 
 #: gui/io/bytearrayrandomdatagenerator.cpp:54
 msgctxt "name of the generated data"
@@ -838,8 +843,8 @@ msgid ""
 "Perform a case sensitive search: entering the pattern 'Joe' will not match "
 "'joe' or 'JOE', only 'Joe'."
 msgstr ""
-"Aramayı küçük/BÜYÜK Harf duyarlı olarak yap: 'Ali' deseninde bir giriş, "
-"'ali' veya 'ALİ' ile uyuşmayacak, sadece 'Ali' yi bulacaktır."
+"Aramayı küçük/BÜYÜK Harf duyarlı olarak yap: 'Ali' ifadesi, 'ali' veya 'ALİ' "
+"ile uyuşmayacak, sadece 'Ali' ile eşleşecektir."
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:101
 msgctxt "@option:check"
