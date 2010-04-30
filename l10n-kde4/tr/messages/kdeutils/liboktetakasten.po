@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2010-04-28 11:05+0300\n"
+"PO-Revision-Date: 2010-04-30 13:24+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -299,6 +299,8 @@ msgid ""
 "If you press the <interface>Go</interface> button, the cursor will be moved "
 "in the document to or, on your option, by the offset you entered above."
 msgstr ""
+"Eğer <interface>Git/interface> düğmesine basarsanız, imleç belgenin içinde "
+"verilen ofsete göre yer değiştirecektir."
 
 #: controllers/view/gotooffset/gotooffsettool.cpp:68
 msgctxt "@title:window of the tool to set a new offset for the cursor"
@@ -690,7 +692,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Finds the strings contained in the selected range and lists them in the view "
 "below."
-msgstr ""
+msgstr "Seçili aralıkta bulunan dizgileri bulur ve aşağıda listeler."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:75
 msgctxt "@info:whatsthis"
@@ -699,6 +701,9 @@ msgid ""
 "is searched for all strings which have the set minimum length. This strings "
 "found will be listed in the view below."
 msgstr ""
+"Eğer <interface>Çıkart</interface> düğmesine basarsanız, seçili aralık "
+"en kısa uzunluğa sahip tüm dizgiler aranır. Bulunan dizgiler aşağıda "
+"listelenir."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:88
 msgctxt "@label:lineedit filter term for displayed strings"
@@ -724,6 +729,8 @@ msgid ""
 "If you press the <interface>Copy</interface> button, all strings you "
 "selected in the list are copied to the clipboard."
 msgstr ""
+"Eğer <interface>Kopyala</interface> düğmesine basarsanız, "
+"listeden seçtiğiniz tüm dizgiler panoya kopyalanır."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:147
 msgid "&Show"
@@ -740,6 +747,8 @@ msgid ""
 "If you press the <interface>Go to</interface> button, the string which was "
 "last selected is marked and shown in the view."
 msgstr ""
+"Eğer <interface>Atla</interface> düğmesine basarsanız, son seçilen dizgi "
+"işaretlenir ve görüntülenir."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:168
 msgctxt "@info:tooltip"
@@ -799,6 +808,9 @@ msgid ""
 "selected above is executed for the bytes in the selected range with the "
 "given options."
 msgstr ""
+"Eğer <interface>Filtre</interface> düğmesine basarsanız, yukarıda "
+"seçtiğiniz işlem, seçili aralıktaki baytlar için, verdiğiniz seçeneklerle "
+"çalıştırılır."
 
 #: controllers/view/filter/filtertool.cpp:54
 msgctxt "@title:window"
@@ -850,6 +862,8 @@ msgstr "Sadece tüm &sözcükler"
 msgctxt "@info:whatsthis"
 msgid "Require word boundaries in both ends of a match to succeed."
 msgstr ""
+"Başarılı eşleşme için eşleşmenin her iki tarafında da kelime "
+"sınırı (word boundaries) gerektir."
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:104
 msgctxt "@info:whatsthis"
@@ -918,7 +932,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "If you press this button, the cursor is moved to the position of the "
 "bookmark which has been last selected."
-msgstr ""
+msgstr "Bu düğmeye basarsanız, imleç son seçilen yer iminin konumuna gider."
 
 #. i18n("&Go to")
 #: controllers/view/bookmarks/bookmarksview.cpp:119
@@ -931,7 +945,7 @@ msgctxt "@info:whatsthis"
 msgid ""
 "If you press this button, the name of the bookmark which was last selected "
 "can be edited."
-msgstr ""
+msgstr "Bu düğmeye basarsanız, en son seçilen yer iminin adı düzenlenebilir."
 
 #: controllers/view/bookmarks/bookmarkstool.cpp:58
 msgctxt "@title:window"
@@ -986,6 +1000,8 @@ msgid ""
 "Choose whether you want the input to be inserted or to overwrite existing "
 "data."
 msgstr ""
+"Girdinin araya mı yerleştirileceğini yoksa var olan veriyi mi ezeceğini "
+"seçin."
 
 #: controllers/view/info/statistictablemodel.cpp:120
 #: controllers/view/bytetable/bytetablemodel.cpp:99
@@ -1090,6 +1106,8 @@ msgid ""
 "If you press the <interface>Build</interface> button, the byte frequency "
 "statistic is built for the bytes in the selected range."
 msgstr ""
+"Eğer <interface>İnşa et</interface> düğmesine basarsanız, bayt frekans "
+"seçilen aralıktaki baytlar için bayt frekans istatistiği oluşturulacaktır."
 
 #: controllers/view/info/infotool.cpp:50
 msgctxt "@title:window"
@@ -1132,6 +1150,8 @@ msgid ""
 "If you press the <interface>Select</interface> button, the cursor will be "
 "moved in the document to or, on your option, by the offset you entered above."
 msgstr ""
+"Eğer <interface>Seç</interface> düğmesine basarsanız, imleç belgenin içinde "
+"verilen ofsete göre yer değiştirecektir."
 
 #: controllers/view/selectrange/selectrangetool.cpp:75
 msgctxt "@title:window of the tool to select a range"
@@ -1208,12 +1228,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "Sets if the operation will be aligned to the end of the data instead of to "
 "the begin."
-msgstr ""
+msgstr "İşlemin, verinin başı yerine sonuna hizalanacağını ayarlar."
 
 #: controllers/view/libbytearrayfilter/filter/operandbytearrayfilterparametersetedit.cpp:71
 msgctxt "@info:whatsthis"
 msgid "If set, the operation will be aligned to the end of the data."
-msgstr ""
+msgstr "Seçiliyse, işlem verinin sonuna hizalanacaktır."
 
 #: controllers/view/libbytearrayfilter/filter/shiftbytearrayfilter.cpp:38
 msgctxt "name of the filter; it moves the bits, setting freed ones to zero"
@@ -1233,12 +1253,13 @@ msgstr "&Grup boyutu:"
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:52
 msgctxt "@info:tooltip"
 msgid "The number of bytes within which each movement is made."
-msgstr ""
+msgstr "Hareketlerin içinde gerçekleştirildiği bayt grubunun uzunluğu."
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:56
 msgctxt "@info:whatsthis"
 msgid "Control the number of bytes within which each movement is made."
 msgstr ""
+"Hareketlerin içinde gerçekleştirildiği bayt grubunun uzunluğunu denetler."
 
 #: controllers/view/libbytearrayfilter/filter/rotatebytearrayfilterparametersetedit.cpp:63
 msgid " bit"
@@ -1408,6 +1429,9 @@ msgid ""
 "updated to all strings which are contained in the selected range and have "
 "the set minimum length."
 msgstr ""
+"Eğer <interface>Hesapla</interface> düğmesine basarsanız liste, "
+"seçili aralıkta bulunan ve en kısa uzunluğa sahip dizgileri içerecek "
+"şekilde güncellenecektir."
 
 #: controllers/view/search/ksearchdialog.cpp:39
 msgctxt "@title:window"
@@ -1430,6 +1454,8 @@ msgid ""
 "If you press the <interface>Find</interface> button, the bytes you entered "
 "above are searched for within the byte array."
 msgstr ""
+"Eğer <interface>Bul</interface> düğmesine basarsanız, yukarıya yazılan "
+"baytlar, bayt dizisi içinde aranır."
 
 #: controllers/view/search/searchtool.cpp:61
 msgctxt "@title"
@@ -1591,6 +1617,8 @@ msgid ""
 "The new value needs <emphasis>fewer</emphasis> bytes (%1 instead of %2).<nl/"
 ">Keep the unused bytes or remove them?"
 msgstr ""
+"Yeni değer <emphasis>daha az</emphasis> bayt gerektiriyor (%2 yerine %1).<nl/"
+">Kullanılmayan baytlar saklansın mı kaldırılsın mı?"
 
 #: controllers/view/poddecoder/podtableview.cpp:128
 msgctxt "@action:button keep the unused bytes"
@@ -1609,6 +1637,10 @@ msgid ""
 "The new value needs <emphasis>more</emphasis> bytes (%1 instead of %2).<nl/"
 ">Overwrite the following bytes or insert new ones as needed?"
 msgstr ""
+"Yeni değer <emphasis>daha fazla</emphasis> bayt gerektiriyor (%2 yerine %1)."
+"<nl/"
+">Aşağıdaki baytların üzerine mi yazılsın yoksa gerektiği gibi yenileri mi "
+"eklensin?"
 
 #: controllers/view/replace/replacecontroller.cpp:84
 #: controllers/view/replace/replacecontroller.cpp:97
@@ -1657,6 +1689,9 @@ msgid ""
 "entered above are searched for within the byte array and any occurrence is "
 "replaced with the replacement bytes."
 msgstr ""
+"Eğer <interface>Değiştir</interface> düğmesine basarsanız, yukarıda "
+"girdiğiniz baytlar, bayt dizisinde aranır ve bulunan kümeler değiştirme "
+"baytlarıyla değiştirilir."
 
 #: controllers/view/replace/kreplacedialog.cpp:57
 #| msgctxt "@title:window prompt for iterative replacement"
@@ -1722,12 +1757,12 @@ msgctxt "@info:tooltip"
 msgid ""
 "The number with which the byte currently selected in the table will be "
 "inserted."
-msgstr ""
+msgstr "Tablodaki seçili baytın yerleştirileceği sayı."
 
 #: controllers/view/bytetable/bytetableview.cpp:94
 msgctxt "@info:tooltip"
 msgid "Inserts the byte currently selected in the table with the given number."
-msgstr ""
+msgstr "Seçili baytı, tabloda verilen sıraya yerleştirir."
 
 #: controllers/view/bytetable/bytetabletool.cpp:49
 msgctxt "@title:window"
@@ -1743,7 +1778,7 @@ msgstr[0] "%1 bayt eklendi"
 #: controllers/view/libbytearraychecksum/algorithm/modsum8bytearraychecksumalgorithm.cpp:36
 msgctxt "name of the checksum algorithm"
 msgid "Modular sum 8-bit"
-msgstr ""
+msgstr "Modüler toplam 8-bit"
 
 #: controllers/view/libbytearraychecksum/algorithm/adler32bytearraychecksumalgorithm.cpp:36
 msgctxt "name of the checksum algorithm"
@@ -1859,12 +1894,12 @@ msgstr "Üzerine yazma kipi"
 #: controllers/view/viewstatus/viewstatuscontroller.cpp:77
 msgctxt "@info:tooltip"
 msgid "Coding of the value interpretation in the current view."
-msgstr ""
+msgstr "Mevcut görünümün değer yorumlama bölümündeki kodlama."
 
 #: controllers/view/viewstatus/viewstatuscontroller.cpp:84
 msgctxt "@info:tooltip"
 msgid "Encoding in the character column of the current view."
-msgstr ""
+msgstr "Mevcut görünümün karakter sütunundaki kodlama."
 
 #: controllers/view/viewstatus/viewstatuscontroller.cpp:117
 #: controllers/view/viewstatus/viewstatuscontroller.cpp:213
@@ -2094,6 +2129,8 @@ msgstr "Karakterlerin sayısal değerlerinin gösterilip gösterilmeyeceği"
 msgctxt "@info:tooltip"
 msgid "Whether to format floating point values according to the current locale"
 msgstr ""
+"Kayan noktalı değerlerin mevcut yerele göre biçimlendirip "
+"biçimlendirilmeyeceği"
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:44
 #. i18n: ectx: tooltip, entry (LocaleAwareDecimalFormatting), group (ValueDisplay)
@@ -2103,12 +2140,15 @@ msgid ""
 "If true, integers being displayed in decimal format will be formatted "
 "according to the current locale settings"
 msgstr ""
+"Eğer etkinse, ondalık biçimde gösterilen tam sayılar, mevcut yerel "
+"ayarlarına göre biçimlendirilecek."
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:45
 #. i18n: ectx: whatsthis, entry (LocaleAwareDecimalFormatting), group (ValueDisplay)
 #: rc.cpp:72
 msgid "Whether to format integer values according to the current locale"
 msgstr ""
+"Tam sayı değerlerin mevcut yerele göre biçimlendirip biçimlendirilmeyeceği"
 
 #. i18n: file: controllers/view/structures/settings/structviewpreferences.kcfg:49
 #. i18n: ectx: tooltip, entry (FloatPrecision), group (ValueDisplay)
@@ -2118,6 +2158,8 @@ msgid ""
 "The precision used for converting floating-point numbers to strings (number "
 "of decimal digits)"
 msgstr ""
+"Kayan noktalı sayıların dizgilere dönüşümü esnasında kullanılacak hassasiyet "
+"(ondalık rakam sayısı)."
 
 #, fuzzy
 #~| msgctxt "@label:listbox"
