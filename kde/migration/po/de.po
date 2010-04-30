@@ -387,7 +387,7 @@ msgstr ""
 
 #: .tmp/ui_userFilesWidget.py:45
 msgid "Form"
-msgstr ""
+msgstr "Formblatt"
 
 #: .tmp/ui_userFilesWidget.py:46
 msgid "Do Nothing"
@@ -403,7 +403,7 @@ msgstr "Kopiere Dateien ins Verzeichnis:"
 
 #: .tmp/ui_userFilesWidget.py:49
 msgid "~/Desktop"
-msgstr ""
+msgstr "~/Desktop"
 
 #: .tmp/ui_userFilesWidget.py:50
 msgid "Directory"
