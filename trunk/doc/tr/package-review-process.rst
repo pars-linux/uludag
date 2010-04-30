@@ -10,27 +10,21 @@ aracılığıyla aşağıdaki adımlar uygulanarak gerçekleşmektedir.
 #. Paket hazır duruma geldiğinde depoda playground/review dizini altında
    girmesi düşünülen bileşene kopyalanır.
 
-#. Hata takip sisteminde, gözden geçirme sürecine girecek paket için daha önce
-   bildirilmiş bir yeni paket isteği varsa sürece bu hata raporu üzerinden
-   başlanır.
-
-#. Paketi hazırlamak isteyen geliştirici, hata raporunu kendisine atar ve hata
-   durumunu ATANDI şeklinde değiştirir. Bu işlemi sadece "editbugs" grubuna
-   dahil bir Bugzilla kullanıcısı yapabilir.
-
-#. Paketi hazırlamak isteyen geliştirici hata raporunu kendine atadıktan sonra
-   paketin gözden geçirilme sürecini başlatmak için yeni bir hata raporu açar.
-   (Bundan sonra bu yeni hata raporundan, "hata raporu" olarak bahsedilecektir.)
+#. Paketi hazırlamak isteyen geliştirici, hata kayıt sisteminde daha önceden
+   açılmış yeni paket isteği olsa dahi inceleme için yeni hata kaydı açar, hata
+   raporunu kendisine atar ve hata durumunu ATANDI şeklinde değiştirir. Bu
+   işlemi sadece "editbugs" grubuna dahil bir Bugzilla kullanıcısı yapabilir.
 
 #. Hata raporunda ürün olarak "Review", bileşen olarak paketin gireceği depo
    bileşeni seçilir. İlgili bileşen sorumluları otomatik olarak CC'ye
    eklenecektir.
 
-#. Girilmiş olan hatada, 'Özet' bölümünde paketin adı, 'Ayrıntılar' bölümünde
-   paketin pspec.xml dosyasında yazan Açıklama (description) alanı yer almalıdır.
-   Paketin depoya alınmasında özel bir neden varsa (depoda var olan bir paket
-   için gerekli olması, gözden geçirme sürecindeki başka bir paketin bağımlılığı
-   olması vb.) hatanın 'Ayrıntılar' kısmına yazılmalıdır.
+#. Girilmiş olan hatada, 'Özet' bölümüne paketin tam yolu yazılmalı (ör:
+   desktop/toolkit/gtk/gtkimageview), 'Ayrıntılar' bölümünde paketin pspec.xml
+   dosyasında yazan Açıklama (description) alanı yer almalıdır.  Paketin depoya
+   alınmasında özel bir neden varsa (depoda var olan bir paket için gerekli
+   olması, gözden geçirme sürecindeki başka bir paketin bağımlılığı olması vb.)
+   hatanın 'Ayrıntılar' kısmına yazılmalıdır.
 
 #. Paketin katkı depolarına alınması gerekiyor ise, hatanın "Ayrıntılar" bölümünde
    bu durumun açıklanması gerekmektedir.
