@@ -31,6 +31,6 @@ if ctx.Pds.session == ctx.pds.Kde4:
                     description, license, copyright, text, homePage, bugEmail)
 
     # Authors
-    aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Maintainer"))
-    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("Old Developer"))
+    aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Developer"))
+    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("First Author"))
     aboutData.setProgramIconName(":/data/package-manager.png")
