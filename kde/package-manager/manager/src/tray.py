@@ -171,6 +171,7 @@ if not Pds.session == pds.Kde4:
             self.populateRepositoryMenu()
             self.setContextMenu(self.actionMenu)
             self.contextMenu().addSeparator()
+            self.contextMenu().addAction(i18n("Quit"), QtGui.qApp.quit)
 
         def populateRepositoryMenu(self):
             self.actionMenu.clear()
