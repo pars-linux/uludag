@@ -205,6 +205,7 @@ class SecurityDialog(QtGui.QDialog):
             widget = SecurityWidget(self.ui.frameFields, key, label, _type)
             self.layout.addWidget(widget)
             self.widgets[key] = widget
+        self.updateGeometry()
 
     def setValues(self, values={}):
         for key, value in values.iteritems():
@@ -325,6 +326,9 @@ class ConnectionItemWidget(QtGui.QWidget):
         self.ui.signalStrength.hide()
 
         self.ui.labelName.setText(profile)
+
+        # Workaround for Pyuic Problem
+        self.ui.checkToggler.setText('')
 
         # Class members
         self.iface = parent.iface

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
+    <width>690</width>
     <height>634</height>
    </rect>
   </property>
@@ -123,9 +123,9 @@
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>-68</y>
-        <width>608</width>
-        <height>428</height>
+        <y>0</y>
+        <width>664</width>
+        <height>441</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_6">
@@ -195,7 +195,7 @@
             <item>
              <widget class="KSqueezedTextLabel" name="labelDeviceDescription">
               <property name="text">
-               <string notr="true">KS…el</string>
+               <string notr="true">KSque…Label</string>
               </property>
              </widget>
             </item>
@@ -689,9 +689,9 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>KComboBox</class>
-   <extends>QComboBox</extends>
-   <header>kcombobox.h</header>
+   <class>KSqueezedTextLabel</class>
+   <extends>QLabel</extends>
+   <header>ksqueezedtextlabel.h</header>
   </customwidget>
   <customwidget>
    <class>KDialogButtonBox</class>
@@ -699,24 +699,24 @@
    <header>kdialogbuttonbox.h</header>
   </customwidget>
   <customwidget>
-   <class>KLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>klineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>KPushButton</class>
    <extends>QPushButton</extends>
    <header>kpushbutton.h</header>
   </customwidget>
   <customwidget>
-   <class>KSqueezedTextLabel</class>
-   <extends>QLabel</extends>
-   <header>ksqueezedtextlabel.h</header>
+   <class>KLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>klineedit.h</header>
   </customwidget>
   <customwidget>
    <class>KUrlLabel</class>
    <extends>QLabel</extends>
    <header>kurllabel.h</header>
+  </customwidget>
+  <customwidget>
+   <class>KComboBox</class>
+   <extends>QComboBox</extends>
+   <header>kcombobox.h</header>
   </customwidget>
  </customwidgets>
  <tabstops>
