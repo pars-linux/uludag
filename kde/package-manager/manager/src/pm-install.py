@@ -49,11 +49,10 @@ class Operation(QObject):
             else:
                 self.emit(SIGNAL("operationChanged(QString)"), 
                         i18n("Succesfully finished installing packages"))
-
             self.emit(SIGNAL("finished()"))
 
         if signal == "cancelled":
-            QUniqueApplication.quit()
+            sys.exit(3)
 
         elif signal in ["installing", "extracting", "configuring", "fetching"]:
             self.statusChanges += 1
@@ -170,7 +169,7 @@ if __name__ == '__main__':
 
     if not options or not args:
         parser.print_help()
-        sys.exit(0)
+        sys.exit(3)
     packages = args
 
     app = QUniqueApplication(sys.argv, catalog='pm-install')
@@ -186,3 +185,5 @@ if __name__ == '__main__':
     installer.install(packages)
 
     app.exec_()
+    sys.exit(0)
+
