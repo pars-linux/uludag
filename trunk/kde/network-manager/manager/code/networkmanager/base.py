@@ -54,6 +54,9 @@ class MainManager(QtGui.QWidget):
             self.ui.setupUi(parent)
             self.baseWidget = parent
 
+        # Workaround for Pyuic Problem
+        self.ui.buttonCancelMini.setText('')
+
         # Set visibility of indicators
         self.ui.workingLabel.hide()
         self.ui.refreshButton.hide()
@@ -394,9 +397,9 @@ class MainManager(QtGui.QWidget):
 
         if "auth" in modes:
             self.ui.comboSecurityTypes.clear()
-            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant("none"))
+            self.ui.comboSecurityTypes.addItem(i18n("No Authentication"), QVariant(u'none'))
             for name, desc in self.iface.authMethods(package):
-                self.ui.comboSecurityTypes.addItem(desc, QVariant(name))
+                self.ui.comboSecurityTypes.addItem(desc, QVariant(unicode(name)))
 
         # Then show them by giving package
         if "net" in modes:
@@ -469,7 +472,7 @@ class MainManager(QtGui.QWidget):
             authType = self.iface.authType(package, profile)
             authInfo = self.iface.authInfo(package, profile)
             authParams = self.iface.authParameters(package, authType)
-            ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(authType)))
+            ui.comboSecurityTypes.setCurrentIndex(ui.comboSecurityTypes.findData(QVariant(unicode(authType))))
 
             if len(authParams) == 1:
                 password = authInfo.values()[0]
