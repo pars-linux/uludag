@@ -149,9 +149,13 @@
     * user-manager uygulaması + pypolkit + baselayout usermanager bacağı (-)
     * pypolkit obsolete mi edilecek, yenisine mi port edilecek? (-)
 
-* Evolution harekatı (İbrahim Güngör)
+* Evolution harekatı (H. İbrahim Güngör)
     * Temel paketlerin hazırlanması (/90)
     * MS Exchange desteği için Samba4'ün depoya alınması (/30)
+
+* Zarafa Exchange Sunucunun depoya alınması (H. İbrahim Güngör)
+    * Temel paketlerin hazırlanması (/70)
+    * Sunucunun yapılandırılması ve test edilmesi(-)
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (+)
