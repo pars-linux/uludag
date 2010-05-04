@@ -168,5 +168,5 @@
     * ksplash moodin temasında resize sorunu (+)
     * KMS (+)
     * kcm_kdm'ye sistem dili seçiminin eklenmesi (-)
-    * Radeon'da KMSye geçilmesi (-)
+    * Radeon'da KMSye geçilmesi (+)
     * nouveau sürücüsü sorunları (KMS'de gerek kalmayacak) (X)
