@@ -125,6 +125,7 @@
 
 * Depo/Paketler (Ozan Çağlayan)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (X)
+    * kdebase'deki clock yamasının yeni polkite gecirilmesi (X)
     * autostart dizinlerinin düzenlenmesi (+)
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Pulseaudio yardımcı programlarının depoya alınması (+)
@@ -136,7 +137,6 @@
     * pcscd/openct sorunu (+)
     * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, mandriva yamalarının alınması (+)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/70)
-    * kdebase'deki clock yamasının yeni polkite gecirilmesi (/75)
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/84)
     * bölünmüş kde paketlerinin review edilmesi (-)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
