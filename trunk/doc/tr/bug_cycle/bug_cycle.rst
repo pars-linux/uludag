@@ -69,6 +69,6 @@ Bu süreç Pardus Hata takip sisteminde paket hatalarının kapatılma döngüs�
 
     #. (7)Hata alınan paketlerin test sonuçları bugzilla üzerinden gönderilecektir. Eğer daha önce bugzilla'da aynı hata raporlanmış ise bu hataya yorum yapılacaktır.
 
-    #  (8)Test sorumlusu daha önce REOLVED/FIXED olarak işaretlenip, test süreci sonrasında aynı hatayı almış paketlerin hatalarını tekrar açacak (REOPENED), ve paket tekrar hata döngüsü içerisine girecektir. Aynı şekilde hatayı raporlamış olan kişi de RESOLVED/FIXED olarak işaretlenmiş hatasını tekrarlayabildiği takdirde REOPENED olarak durumunu değiştirebilmektedir.
+    #  (8)Test sorumlusu daha önce RESOLVED/FIXED olarak işaretlenip, test süreci sonrasında aynı hatayı almış paketlerin hatalarını tekrar açacak (REOPENED), ve paket tekrar hata döngüsü içerisine girecektir. Aynı şekilde hatayı raporlamış olan kişi de RESOLVED/FIXED olarak işaretlenmiş hatasını tekrarlayabildiği takdirde REOPENED olarak durumunu değiştirebilmektedir.
 
     # (9)Test süreci içerisine girmiş ve hata ile karşılaşılmamış fakat daha önce hata raporu bulunan paketler, test sorumlusu tarafından gözden geçirilecek ve eğer hataları tekrarlanamıyor ise VERIFIED (ONAYLANDI) olarak işaretlenecek ve hatanın döngüsü son bulacaktır.
