@@ -5,7 +5,7 @@ Hata Raporlama Döngüsü
 
 Bu süreç Pardus Hata takip sisteminde paket hatalarının kapatılma döngüsünü anlatmaktadır, bu sürecin içerisine Paket gözden geçirme süreci dahil değildir.
 
-    #. (1)(2)Bir hata ilk kez biri tarafından raporlandığında "New" durumunu (status) almaktadır. Hata alınan uygulamanın sahibi öntanımlı olarak atanan kısmına eklenmekte ve normal bir kullanıcı tarafından değiştirilememektedir.
+    #. (1)(2)Bir hata ilk kez biri tarafından raporlandığında "New" durumunu (status) almaktadır. Hata alınan uygulamanın sahibi ön tanımlı olarak atanan kısmına eklenmekte ve normal bir kullanıcı tarafından değiştirilememektedir.
 
     #. (1)(2)Hata alınan uygulamanın raporlanması için çeşitli ayrıntılar gerekmektedir:
 
@@ -55,7 +55,7 @@ Bu süreç Pardus Hata takip sisteminde paket hatalarının kapatılma döngüs�
             #. Medium/2: Bir sonraki sürümde düzeltilmesi gereken hatalar.
             #. Low/3,4,5: Düzelme zamanı çok önemli olmayan hatalar.
 
-        #. (4.d)Sürüm engelleyici hatalar bileşen sorumlusu veya sürüm yöneticisi tarafından sürüm'ün adı adında açılmış hataya bağlı bir hata haline getirilebilir.
+        #. (4.d)Sürüm engelleyici hatalar bileşen sorumlusu veya sürüm yöneticisi tarafından sürümün adı ile açılmış hataya bağlı bir hata haline getirilebilir.
 
     #. (5.a)(5.b)Eğer hata geliştiricisi tarafından çözülmüş ise,
 
@@ -63,12 +63,12 @@ Bu süreç Pardus Hata takip sisteminde paket hatalarının kapatılma döngüs�
 
         Hatayı kapatacak olan SVN açıklaması  BUG:FIXED:<Hata Numarası> bilgisini içermelidir.
 
-        Bu işlem ile hata otomatik olarak kapatılmaktadır.
+        Bu işlem ile hata durumu otomatik olarak ÇÖZÜLDÜ olarak işaretlenmektedir.
 
-    #. (6)Fixlenen hata diğer güncellenen paketler ile birlikte kararlı depo test sürecine girecek ve alınan geliştirici onayı "ACK/NACK" sonrasında, test sürecine dahil olacaktır.
+    #. (6)Fixlenen hata diğer güncellenen paketler ile birlikte kararlı depo test sürecine girecek ve alınan geliştirici onayı (ACK/NACK) sonrasında, test sürecine dahil olacaktır.
 
     #. (7)Hata alınan paketlerin test sonuçları bugzilla üzerinden gönderilecektir. Eğer daha önce bugzilla'da aynı hata raporlanmış ise bu hataya yorum yapılacaktır.
 
-    #. (8)Test sorumlusu daha önce RESOLVED/FIXED olarak işaretlenip, test süreci sonrasında hata almış paketlerin hatalarını tekrar açacak (REOPENED), ve paket tekrar hata döngüsü içerisine girecektir.
+    #  (8)Test sorumlusu daha önce REOLVED/FIXED olarak işaretlenip, test süreci sonrasında aynı hatayı almış paketlerin hatalarını tekrar açacak (REOPENED), ve paket tekrar hata döngüsü içerisine girecektir. Aynı şekilde hatayı raporlamış olan kişi de RESOLVED/FIXED olarak işaretlenmiş hatasını tekrarlayabildiği takdirde REOPENED olarak durumunu değiştirebilmektedir.
 
-    #. (9)Test süreci sonrasında, hata ile karşılaşılmayan fakat daha önce hata raporu bulunan paketler, test sorumlusu tarfından VERIFIED (ONAYLANDI) olarak işaretlenecek ve hatanın döngüsü son bulacaktır.
+    # (9)Test süreci içerisine girmiş ve hata ile karşılaşılmamış fakat daha önce hata raporu bulunan paketler, test sorumlusu tarafından gözden geçirilecek ve eğer hataları tekrarlanamıyor ise VERIFIED (ONAYLANDI) olarak işaretlenecek ve hatanın döngüsü son bulacaktır.
