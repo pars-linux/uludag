@@ -10,7 +10,7 @@
 [X] kdemultimedia     -> ozan
 [ ] kdenetwork        -> ozan
 [ ] kdepim            -> fatih,ibrahim
-[ ] kdepimlibs        -> ibrahim
+[X] kdepimlibs        -> ibrahim
 [X] kdeplasma-addons  -> gokmen,ibrahim
 [ ] kdesdk            -> mete
 [X] kdetoys           -> isil
