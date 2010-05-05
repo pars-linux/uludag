@@ -4,23 +4,24 @@
 # Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
 # Aydın Demirel <aydin@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Serdar Dalgıç <serdar@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: klinkstatus\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-07-04 16:59+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-05 15:54+0300\n"
+"Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: plugins/automation/automationdialog.cpp:61
 msgid "Configure Site check Automation"
-msgstr ""
+msgstr "Site kontrol Otomasyonunu Yapılandır"
 
 #: plugins/automation/automationdialog.cpp:65
 msgid "New..."
@@ -37,11 +38,11 @@ msgstr "boş"
 #: plugins/automation/automationdialog.cpp:133
 #, kde-format
 msgid "Could not delete configuration file %1"
-msgstr ""
+msgstr "Yapılandırma dosyası %1 silinemiyor"
 
 #: plugins/automation/automationdialog.cpp:153
 msgid "Recurring Check Name"
-msgstr ""
+msgstr "Yinelenen Kontrol İsmi"
 
 #: plugins/automation/automationpart.cpp:82
 msgid "Schedule Link Checks..."
@@ -57,7 +58,7 @@ msgstr "Betik Eylemlerini Sıfırla..."
 
 #: pim/pimconfigdialog.cpp:45
 msgid "Configure PIM information"
-msgstr ""
+msgstr "PIM bilgilerini yapılandır"
 
 #: pim/pimconfigdialog.cpp:50 pim/pimconfigdialog.cpp:51
 #: klinkstatus_part.cpp:139
@@ -81,7 +82,7 @@ msgstr "İçerik Yok"
 
 #: engine/linkchecker.cpp:523
 msgid "redirection"
-msgstr ""
+msgstr "yönlendirme"
 
 #: ui/documentrootdialog.cpp:36
 msgid "Choose a Document Root"
@@ -95,6 +96,11 @@ msgid ""
 "\n"
 "Please specify one:"
 msgstr ""
+"HTTP dışında bir protokol kullandığınız için,\n"
+"\"/\" ile başlayanlar gibi göreceli adresleri çözmek için, \n"
+"belge kök dizininin nerede olduğunu tahmin etmek mümkün değil.\n"
+"\n"
+"Lütfen birini seçin:"
 
 #: ui/httppostdialog.cpp:36
 msgid "Login Input"
@@ -138,11 +144,11 @@ msgstr "Filtreyi temizle"
 
 #: ui/resultssearchbar.cpp:116
 msgid "Enter the terms to filter the result link list"
-msgstr ""
+msgstr "Son bağlantı listesinde filtrelemek istediklerini girin"
 
 #: ui/resultssearchbar.cpp:117
 msgid "Choose what kind of link status to show in result list"
-msgstr ""
+msgstr "Sonuç listesinde ne tarz bir bağlantı durumu görmek istediğinizi seçin"
 
 #: ui/tabwidgetsession.cpp:58
 msgid "Open new tab"
@@ -164,7 +170,7 @@ msgstr "Kontrol ediliyor..."
 
 #: ui/sessionwidget.cpp:387
 msgid "Cowardly refusing to check an empty URL."
-msgstr "Boş bir URL kontrol etmek için korkakça reddetme"
+msgstr "Boş bir adresi(URL) kontrol etmek için korkakça reddetme"
 
 #: ui/sessionwidget.cpp:428 ui/sessionwidget.cpp:533 ui/sessionwidget.cpp:952
 msgid "Stopped"
@@ -193,21 +199,23 @@ msgstr "Seviye ekleniyor..."
 
 #: ui/sessionwidget.cpp:824
 msgid "Resuming"
-msgstr ""
+msgstr "Devam Ediliyor"
 
 #: ui/sessionwidget.cpp:885
 msgid "Export Results as HTML"
-msgstr "Sonuçları HTML olarak Dışarıya Aktar"
+msgstr "Sonuçları HTML olarak Dışarı Aktar"
 
 #: ui/sessionwidget.cpp:910
 msgid "Create XML Site Map"
-msgstr ""
+msgstr "XML Site Haritası Yarat"
 
 #: ui/sessionwidget.cpp:927
 msgid ""
 "Use a protocol other than HTTP, e.g. file, ftp, sftp, fish, etc., so the "
 "files can be saved."
 msgstr ""
+"Dosyaların kaydedilebilmesi için HTTP dışında bir protokol, ör: file, ftp, "
+"sftp, fish v.s. kullan."
 
 #: ui/sessionwidget.cpp:940
 msgid "Checking"
@@ -231,14 +239,17 @@ msgid ""
 "\n"
 "Try using file, ftp, sftp or fish, for example."
 msgstr ""
+"HTTP kullanarak dizinler gezilemiyor.\n"
+"\n"
+"file, ftp, sftp ya da fish kullanmayı deneyin."
 
 #: ui/unreferreddocumentswidget.cpp:145
 msgid "Crawling folders..."
-msgstr ""
+msgstr "Gezilen dizinler..."
 
 #: ui/unreferreddocumentswidget.cpp:191
 msgid "Matching results..."
-msgstr ""
+msgstr "Eşleşen sonuçlar..."
 
 #: ui/trayicon.cpp:47
 msgid "KLinkStatus - Link Checker"
@@ -272,7 +283,7 @@ msgstr "Adres Aç"
 
 #: ui/treeview.cpp:404
 msgid "Open Referrer URL"
-msgstr ""
+msgstr "İşaret Edilen Adresi Aç"
 
 #: ui/treeview.cpp:409
 msgid "Copy URL"
@@ -280,11 +291,11 @@ msgstr "Adresi Kopyala"
 
 #: ui/treeview.cpp:411
 msgid "Copy Referrer URL"
-msgstr "Başvurucu URL'yi kopyala"
+msgstr "İşaret Edilen Adresi Kopyala"
 
 #: ui/treeview.cpp:413
 msgid "Copy Cell Text"
-msgstr "Hücre Metni'ni Kopyala"
+msgstr "Hücre Metnini Kopyala"
 
 #: klinkstatus_part.cpp:52
 msgid "A Link Checker"
@@ -306,7 +317,7 @@ msgstr "Kimlik"
 
 #: klinkstatus_part.cpp:138
 msgid "Configure the way KLinkstatus reports itself"
-msgstr ""
+msgstr "Klinkstatus programının kendisini nasıl raporlayacağını yapılandır"
 
 #: klinkstatus_part.cpp:168 main.cpp:37
 msgid "KLinkStatus"
@@ -314,7 +325,7 @@ msgstr "KLinkStatus"
 
 #: klinkstatus_part.cpp:175
 msgid "KLinkStatus Part"
-msgstr "KBağlantıDurumu Parçası"
+msgstr "KLinkStatus Parçası"
 
 #: klinkstatus_part.cpp:177
 msgid "(C) 2004 Paulo Moura Guedes"
@@ -361,7 +372,7 @@ msgid ""
 "Could not find the KLinkStatus part; did you configure with '--prefix=/"
 "$KDEDIR' and perform 'make install'?"
 msgstr ""
-"KBağlantıDurumu parçası bulunamadı;'--prefix=/$KDEDIR' ile yapılandırıp "
+"KLinkStatus parçası bulunamadı;'--prefix=/$KDEDIR' ile yapılandırıp "
 "'make install' yaptınız mı?"
 
 #: main.cpp:31
@@ -369,7 +380,10 @@ msgid ""
 "A Link Checker.\n"
 "\n"
 "KLinkStatus belongs to the kdewebdev module from KDE."
-msgstr "KBağlantıDurumu KDE'den kdewebdev modülüne aittir."
+msgstr ""
+"Bir Bağlantı Denetleyici.\n"
+"\n"
+"KLinkStatus KDE'den kdewebdev modülüne aittir."
 
 #: main.cpp:38
 msgid "(C) 2004-2008 Paulo Moura Guedes"
@@ -397,15 +411,15 @@ msgstr "Oturumu Kapat"
 
 #: actionmanager.cpp:118
 msgid "Download New Stylesheets..."
-msgstr ""
+msgstr "Yeni Biçem Sayfaları indir..."
 
 #: actionmanager.cpp:125
 msgid "Configure KLinkStatus..."
-msgstr "KBağlantıDurumunu Yapılandır..."
+msgstr "KLinkStatus Programını Yapılandır..."
 
 #: actionmanager.cpp:132
 msgid "About KLinkStatus"
-msgstr "KBağlantıDurumu Hakkında"
+msgstr "KLinkStatus Hakkında"
 
 #: actionmanager.cpp:137 actionmanager.cpp:139
 msgid "&Report Bug..."
@@ -421,7 +435,7 @@ msgstr "Kırık..."
 
 #: actionmanager.cpp:167
 msgid "Create Site Map..."
-msgstr ""
+msgstr "Site Haritasını Çıkar..."
 
 #: actionmanager.cpp:176
 msgid "&Follow Last Link"
@@ -437,15 +451,15 @@ msgstr "Arama Panelini &Gizle"
 
 #: actionmanager.cpp:193
 msgid "&Reset Search Options"
-msgstr ""
+msgstr "Arama Seçeneklerini &Sıfırla"
 
 #: actionmanager.cpp:198
 msgid "&Disable Updates on Results Table"
-msgstr ""
+msgstr "Sonuçlar Tablosundaki &Güncellemeleri Pasifleştir"
 
 #: actionmanager.cpp:199
 msgid "Disable Updates on Results Table (faster)"
-msgstr ""
+msgstr "Sonuçlar Tablosundaki &Güncellemeleri (Hızlı Şekilde) Pasifleştir"
 
 #: actionmanager.cpp:209
 msgid "&Start Search"
@@ -461,11 +475,13 @@ msgstr "Aramayı Durdu&r"
 
 #: actionmanager.cpp:227
 msgid "Search in Background"
-msgstr "Arkaplanda Ara"
+msgstr "Arka Planda Ara"
 
 #: actionmanager.cpp:231
 msgid "Check Links in background and update results when finished (faster)"
 msgstr ""
+"Bağlantıları arka planda kontrol et ve bittiğinde sonuçları (hızlı şekilde) "
+"güncelle"
 
 #: actionmanager.cpp:234
 msgid "&Broken Links"
@@ -477,7 +493,7 @@ msgstr "&Gösterilen Bağlantılar"
 
 #: actionmanager.cpp:246
 msgid "&Unreferred Documents..."
-msgstr ""
+msgstr "İşa&ret Edilmemiş Belgeler"
 
 #: actionmanager.cpp:254
 msgid "&Fix All..."
@@ -491,7 +507,7 @@ msgstr "Bağlantıları Kontrol Et"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: actionmanager.cpp:268 rc.cpp:454
 msgid "Unreferred Documents"
-msgstr ""
+msgstr "İşaret Edilmemiş Belgeler"
 
 #: actionmanager.cpp:274
 msgid "Previous View"
@@ -631,12 +647,12 @@ msgstr "&Araçlar"
 #: rc.cpp:58
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Aydın Demirel"
+msgstr "Serdar Soytetir, Aydın Demirel, Serdar Dalgıç"
 
 #: rc.cpp:59
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, aydin@kde.org.tr"
+msgstr "tulliana@gmail.com, aydin@kde.org.tr, serdar@pardus.org.tr"
 
 #. i18n: file: plugins/automation/automationconfigpageui.ui:31
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -790,19 +806,19 @@ msgstr "E-posta adresi"
 #. i18n: ectx: label, entry, group (pim)
 #: rc.cpp:143
 msgid "Whether to use the system real name and e-mail"
-msgstr ""
+msgstr "Sistemdeki gerçek ad ve e-posta adresini kullanılıp kullanılmayacağı"
 
 #. i18n: file: cfg/klinkstatus.kcfg:13
 #. i18n: ectx: label, entry, group (pim)
 #: rc.cpp:146
 msgid "The name associated to the user"
-msgstr ""
+msgstr "Kullanıcıyla ilişkilendirilmiş isim"
 
 #. i18n: file: cfg/klinkstatus.kcfg:18
 #. i18n: ectx: label, entry, group (pim)
 #: rc.cpp:149
 msgid "The email associated to the user"
-msgstr ""
+msgstr "Kullanıcı ile ilişkilendirilmiş e-posta adresi"
 
 #. i18n: file: cfg/klinkstatus.kcfg:27
 #. i18n: ectx: label, entry, group (klinkstatus)
@@ -814,13 +830,13 @@ msgstr "Açılır url içindeki girişlerin azami sayısı."
 #. i18n: ectx: label, entry, group (klinkstatus)
 #: rc.cpp:155
 msgid "Maximum number of simultaneous connections."
-msgstr "Eşzamanlı bağlantıların azami sayısı."
+msgstr "Eş zamanlı bağlantıların azami sayısı."
 
 #. i18n: file: cfg/klinkstatus.kcfg:37
 #. i18n: ectx: label, entry, group (klinkstatus)
 #: rc.cpp:158
 msgid "Timeout on getting an URL."
-msgstr "URL alınırken zamanaşımı."
+msgstr "URL alınırken zaman aşımı."
 
 #. i18n: file: cfg/klinkstatus.kcfg:42
 #. i18n: ectx: label, entry, group (klinkstatus)
@@ -851,6 +867,7 @@ msgstr "Harici bağlantıları kontrol edip etmemek."
 #: rc.cpp:173
 msgid "Whether to remember the check settings like depth, and so on, on exit."
 msgstr ""
+"Çıkışta derinlik, v.b. gibi kontrol ayarlarının hatırlanıp hatırlanmayacağı."
 
 #. i18n: file: cfg/klinkstatus.kcfg:66
 #. i18n: ectx: label, entry, group (klinkstatus)
@@ -858,7 +875,7 @@ msgstr ""
 msgid ""
 "Whether preview prefix in Quanta project is used to set the URL to check."
 msgstr ""
-"URL kontrolünü ayarlamak için kullanılan Quanta projesinde önek önizlemesi "
+"URL kontrolünü ayarlamak için kullanılan Quanta projesinde ön ek önizlemesi "
 "yapıp yapmamak."
 
 #. i18n: file: cfg/klinkstatus.kcfg:71
@@ -893,13 +910,13 @@ msgstr ""
 #. i18n: ectx: label, entry, group (klinkstatus)
 #: rc.cpp:191
 msgid "Whether to send an User-Agent in HTTP requests."
-msgstr ""
+msgstr "HTTP isteklerinde tarayıcı bilgisini gönderip göndermemek"
 
 #. i18n: file: cfg/klinkstatus.kcfg:96
 #. i18n: ectx: label, entry (UserAgent), group (klinkstatus)
 #: rc.cpp:194
 msgid "Defines the HTTP User-Agent to send."
-msgstr ""
+msgstr "Gönderilecek tarayıcı bilgilerinin tanımlanması."
 
 #. i18n: file: cfg/klinkstatus.kcfg:100
 #. i18n: ectx: label, entry, group (klinkstatus)
@@ -908,18 +925,22 @@ msgid ""
 "Whether the user can see if the markup is valid by showing a column with an "
 "icon indicator."
 msgstr ""
+"Kullanıcının bir simge göstergesi ile sütunu göstererek markup'ın geçerli "
+"olduğunu görüp göremeyeceği."
 
 #. i18n: file: cfg/klinkstatus.kcfg:105
 #. i18n: ectx: label, entry, group (klinkstatus)
 #: rc.cpp:200
 msgid "Available Stylesheets for exporting the results in HTML"
-msgstr ""
+msgstr "Sonuçları HTML olarak dışarı aktarmak için müsait Biçem Sayfaları"
 
 #. i18n: file: cfg/klinkstatus.kcfg:110
 #. i18n: ectx: label, entry (PreferedStylesheet), group (klinkstatus)
 #: rc.cpp:203
 msgid "Defines the stylesheet to use when exporting results to HTML"
 msgstr ""
+"Sonuçları HTML olarak dışarı aktarırken kullanılacak Biçem Sayfalarını "
+"belirler"
 
 #. i18n: file: cfg/klinkstatus.kcfg:119
 #. i18n: ectx: label, entry, group (tidy)
@@ -928,12 +949,14 @@ msgid ""
 "This option specifies the number of spaces Tidy uses to indent content, when "
 "indentation is enabled."
 msgstr ""
+"Bu seçenek girintileme aktifleştirildiğinde, Tidy programının içeriği "
+"girintilerken kullanacağı boşluk sayısını belirler."
 
 #. i18n: file: cfg/klinkstatus.kcfg:124
 #. i18n: ectx: label, entry, group (tidy)
 #: rc.cpp:209
 msgid "Whether to do line wrapping."
-msgstr ""
+msgstr "Satır sarmalamanın yapılıp yapılmayacağı."
 
 #. i18n: file: cfg/klinkstatus.kcfg:129
 #. i18n: ectx: label, entry, group (tidy)
@@ -942,6 +965,9 @@ msgid ""
 "This option specifies the right margin Tidy uses for line wrapping. Tidy "
 "tries to wrap lines so that they do not exceed this length."
 msgstr ""
+"Bu seçenek Tidy programının satır sarmalamada kullanacağı sağ kenar "
+"boşluğunu belirler. Tidy programı bu uzunluğu geçen satırları sarmalamaya "
+"çalışır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:134
 #. i18n: ectx: label, entry, group (tidy)
@@ -951,6 +977,10 @@ msgid ""
 "default is no, which results in lower case tag names, except for XML input, "
 "where the original case is preserved."
 msgstr ""
+"Bu seçenek Tidy programının etiket isimlerini büyük harfle yazıp "
+"yazmayacağını belirler. Ön tanımlı değer hayırdır. Orijinal karakterlerin "
+"korunduğu XML girdileri dışında, ön tanımlı hayır seçeneğinde etiketler "
+"küçük harfle yazılır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:139
 #. i18n: ectx: label, entry, group (tidy)
@@ -960,6 +990,10 @@ msgid ""
 "The default is no, which results in lower case attribute names, except for "
 "XML input, where the original case is preserved."
 msgstr ""
+"Bu seçenek Tidy programının nitelik isimlerini büyük harfle yazıp "
+"yazmayacağını belirler. Ön tanımlı değer hayırdır. Orijinal karakterlerin "
+"korunduğu XML girdileri dışında, ön tanımlı hayır seçeneğinde nitelik "
+"isimleri küçük harfle yazılır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:146
 #. i18n: ectx: label, entry, group (tidy)
@@ -974,6 +1008,15 @@ msgid ""
 "(FPI).\n"
 "            "
 msgstr ""
+"Bu seçenek Tidy tarafından üretilen DOCTYPE ifadesini belirtmektedir. "
+"\"omit\" seçildiğinde çıktı, herhangi bir DOCTYPE ifadesi içermeyecektir. "
+"\"auto (the default)\" seçildiğinde Tidy, belgenin içeriğine göre bir "
+"tahminde bulunup onu kullanacaktır. \"strict\" seçildiğinde Tidy, DOCTYPE "
+"ifadesini sıkı DTD'ye ayarlanacaktır. \"loose\" seçildiğinde ise DOCTYPE "
+"değeri gevşek (transparan) DTD'ye ayarlanacaktır. Bunun dışında, resmi kamu "
+"tanıtıcı işaretine (formal public identifier) (FPI) uygun bir dizgi "
+"yazabilirsiniz.\n"
+"            "
 
 #. i18n: file: cfg/klinkstatus.kcfg:151
 #. i18n: ectx: label, entry, group (tidy)
@@ -984,6 +1027,12 @@ msgid ""
 "entities to allow them to be parsed by a XML parser. The original case of "
 "tags and attributes will be preserved, regardless of other options."
 msgstr ""
+"Bu seçenek Tidy programı güzel çıktı bastır özelliğini kullanıp "
+"kullanmayacağını belirtmektedir. Güzel çıktı bastır özelliğinde düzgün "
+"biçimlendirilmiş XML çıktısı şeklinde bastırılmaktadır. XML 1.0'da "
+"tanımlanmamış varlıklar XML ayrıştırıcı tarafından ayrıştırılsın diye "
+"sayısal varlıklar şeklinde yazılacaktır. Diğer seçenekleri önemsemeyerek, "
+"etiket ve özelliklerin orijinal halleri korunacaktır. "
 
 #. i18n: file: cfg/klinkstatus.kcfg:156
 #. i18n: ectx: label, entry, group (tidy)
@@ -993,6 +1042,10 @@ msgid ""
 "and attributes replacing them by style rules and structural markup as "
 "appropriate. It works well on the HTML saved by Microsoft Office products."
 msgstr ""
+"Bu seçenek, Tidy programının artık sunum etiketleri ve niteliklerini uygun "
+"yapısal işaretleme ve stil kuralları ile yer değiştirerek  ayıklayıp "
+"ayıklamayacağını belirler. Microsoft Office ürünleri tarafından kaydedilen "
+"HTML dosyalarında düzgün çalışmaktadır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:161
 #. i18n: ectx: label, entry, group (tidy)
@@ -1001,30 +1054,32 @@ msgid ""
 "This option specifies the character encoding Tidy uses for both the input "
 "and output."
 msgstr ""
+"Bu seçenek, Tidy programının girdi ve çıktı için kullandığı karakter "
+"kodlamasını belirler."
 
 #. i18n: file: engine/automationconfig.kcfg:8
 #. i18n: ectx: label, entry, group (Scheduling)
 #: rc.cpp:234
 msgid "Name of the configuration, e.g. kdewebdev"
-msgstr ""
+msgstr "Yapılandırmanın adı, ör: kdewebdev"
 
 #. i18n: file: engine/automationconfig.kcfg:13
 #. i18n: ectx: label, entry, group (Scheduling)
 #: rc.cpp:237
 msgid "Periodicity of the check"
-msgstr ""
+msgstr "Kontrolün periyodu"
 
 #. i18n: file: engine/automationconfig.kcfg:18
 #. i18n: ectx: label, entry, group (Scheduling)
 #: rc.cpp:240
 msgid "Hour in which the task will be executed"
-msgstr ""
+msgstr "Görevin yürütüleceği saatler"
 
 #. i18n: file: engine/automationconfig.kcfg:28
 #. i18n: ectx: label, entry, group (SearchOptions)
 #: rc.cpp:243
 msgid "URL of the site to check"
-msgstr ""
+msgstr "Kontrol edilecek sayfanın adresi"
 
 #. i18n: file: engine/automationconfig.kcfg:33
 #. i18n: ectx: label, entry, group (SearchOptions)
@@ -1032,49 +1087,49 @@ msgstr ""
 msgid ""
 "For protocols different than HTTP, specify the root of your files, e.g. '/"
 "var/www'"
-msgstr ""
+msgstr "HTTP dışındaki protokoller için dosya kökünü belirtin, ör: '/var/www'"
 
 #. i18n: file: engine/automationconfig.kcfg:38
 #. i18n: ectx: label, entry, group (SearchOptions)
 #: rc.cpp:249
 msgid "Depth of recursive search, -1 is unlimited"
-msgstr ""
+msgstr "Tekrarlanan arama derinliği, -1 sınırsızdır"
 
 #. i18n: file: engine/automationconfig.kcfg:43
 #. i18n: ectx: label, entry, group (SearchOptions)
 #: rc.cpp:252
 msgid "Whether to check links in parent folders"
-msgstr ""
+msgstr "Üst dizinlerde bağlantıların kontrol edilip edilmeyeceği"
 
 #. i18n: file: engine/automationconfig.kcfg:48
 #. i18n: ectx: label, entry, group (SearchOptions)
 #: rc.cpp:255
 msgid "Whether to check external links"
-msgstr ""
+msgstr "Dış bağlantıların kontrol edilip edilmeyeceği"
 
 #. i18n: file: engine/automationconfig.kcfg:53
 #. i18n: ectx: label, entry, group (SearchOptions)
 #: rc.cpp:258
 msgid "The URLs that match the regexp will not be checked"
-msgstr ""
+msgstr "Düzenli İfadeyle eşleşen adreslerin kontrol edilip edilmeyeceği"
 
 #. i18n: file: engine/automationconfig.kcfg:62
 #. i18n: ectx: label, entry, group (Results)
 #: rc.cpp:261
 msgid "Whether to include only broken links in the result"
-msgstr ""
+msgstr "Sonuçlarda sadece kırık bağlantıların içerilip içerilmeyeceği"
 
 #. i18n: file: engine/automationconfig.kcfg:67
 #. i18n: ectx: label, entry, group (Results)
 #: rc.cpp:264
 msgid "The directory where the results will be saved"
-msgstr ""
+msgstr "Sonuçların kaydedileceği dizin"
 
 #. i18n: file: engine/automationconfig.kcfg:72
 #. i18n: ectx: label, entry, group (Results)
 #: rc.cpp:267
 msgid "The e-mail address to where results will be emailed"
-msgstr ""
+msgstr "Sonuçların gönderileceği e-posta adresi"
 
 #. i18n: file: ui/settings/configresultsdialog.ui:16
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -1116,7 +1171,7 @@ msgstr "Sonuçları Dışarıya Aktar"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:288
 msgid "Preferred Style Sheet:"
-msgstr ""
+msgstr "Tercih Edilen Biçim Sayfası:"
 
 #. i18n: file: ui/settings/configsearchdialog.ui:31
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -1128,13 +1183,13 @@ msgstr "Ağ"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: rc.cpp:294
 msgid "Number of simultaneous connections:"
-msgstr "Eşzamanlı bağlantıların sayısı:"
+msgstr "Eş zamanlı bağlantıların sayısı:"
 
 #. i18n: file: ui/settings/configsearchdialog.ui:135
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2_2)
 #: rc.cpp:297
 msgid "Timeout in seconds:"
-msgstr "Saniyelerdeki zamanaşımı:"
+msgstr "Saniyelerdeki zaman aşımı:"
 
 #. i18n: file: ui/settings/configsearchdialog.ui:148
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -1181,14 +1236,14 @@ msgid ""
 "Check this one if you want to use Quanta's project preview prefix in the URL "
 "to check"
 msgstr ""
-"Eğer URL içindekini kontrol etmek için Quanta'nın proje önizleme önek'ini "
+"Eğer URL içindekini kontrol etmek için Quanta'nın proje ön izleme önekini "
 "kullanmak istiyorsanız bunun birini kontrol edin."
 
 #. i18n: file: ui/settings/configsearchdialog.ui:325
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_UseQuantaUrlPreviewPrefix)
 #: rc.cpp:324
 msgid "Use preview prefix"
-msgstr "Önek önizlemesini kullan"
+msgstr "Önek ön izlemesini kullan"
 
 #. i18n: file: ui/settings/configsearchdialog.ui:338
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_RememberCheckSettings)
@@ -1244,7 +1299,7 @@ msgstr "Adres:"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, checkBoxLogin)
 #: rc.cpp:351
 msgid "Cookie based authentication, only possible with HTTP based protocol."
-msgstr ""
+msgstr "Çerez temelli onaylama, sadece HTTP temelli protokollerde mümkündür."
 
 #. i18n: file: ui/sessionwidgetbase.ui:132
 #. i18n: ectx: property (text), widget (QCheckBox, checkBoxLogin)
@@ -1339,12 +1394,29 @@ msgid ""
 "New,courier';\">&lt;</span><span style=\" font-family:'Courier New,courier';"
 "\">form action=\"/login/login\"&gt;</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">tarayıcı bilgisinin "
+"gönderileceği URL adresi, ör: '<span style=\" font-family:'Courier "
+"New,courier';\">POST "
+"</span><span style=\" font-family:'Courier New,courier'; font-weight:600;\">/"
+"login/login</span><span style=\" font-family:'Courier New,courier';\"> "
+"HTTP/1.1</span>'. Form elemanındaki aksiyon özelliğiyle aynı olmalı ör: '<a "
+"name=\"line163\"></a><span style=\" font-family:'Courier "
+"New,courier';\">&lt;</span><span style=\" font-family:'Courier New,courier';"
+"\">form action=\"/login/login\"&gt;</span></p></body></html>"
 
 #. i18n: file: ui/httppostwidgetui.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:403
 msgid "POST URL"
-msgstr ""
+msgstr "POST URL"
 
 #. i18n: file: ui/httppostwidgetui.ui:106
 #. i18n: ectx: property (toolTip), widget (KLineEdit, lineeditPostUrl)
@@ -1364,12 +1436,24 @@ msgid ""
 "POST request, e.g. 'POST <span style=\" font-weight:600;\">/login/login</"
 "span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">HTTP POST isteğine "
+"gönderilecek URL adresi ör: 'POST <span style=\" font-weight:600;\">"
+"/login/login</"
+"span></p></body></html>"
 
 #. i18n: file: ui/httppostwidgetui.ui:143
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: rc.cpp:420
 msgid "POST Data"
-msgstr ""
+msgstr "POST Data"
 
 #. i18n: file: ui/httppostwidgetui.ui:153
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -1390,6 +1474,22 @@ msgid ""
 "style=\" font-weight:600;\">input</span> elements inside the form "
 "definition</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">POST isteğine gönderilecek "
+"alanları girin. Örnek olarak, anahtarlar şöyledir <span style=\" "
+"font-weight:600;"
+"\">kullanıcı</span>, <span style=\" font-weight:600;\">parola</span> ve <"
+"span "
+"style=\" font-weight:600;\">düğme</span> Form tanımları içerisindeki<span "
+"style=\" font-weight:600;\">girdi</span> içinde 'isim' özellikleri</p></body>"
+"</html>"
 
 #. i18n: file: ui/httppostwidgetui.ui:179
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -1417,7 +1517,7 @@ msgstr "Ekle"
 #. i18n: ectx: property (windowTitle), widget (QWidget, UnreferredDocumentsWidget)
 #: rc.cpp:445
 msgid "Unreferred DocumentsWidget"
-msgstr ""
+msgstr "İşaret edilmemiş BelgeParçacığı"
 
 #. i18n: file: ui/unreferreddocumentswidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, textlabel_url)
