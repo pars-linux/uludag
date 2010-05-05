@@ -6,18 +6,19 @@
 # Ozan Eren BİLGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkcal\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-02 06:10+0100\n"
-"PO-Revision-Date: 2009-11-12 13:12+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-05 09:15+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: attendee.cpp:137
@@ -302,7 +303,7 @@ msgstr "SÜRÜM özelliği bulunamadı"
 
 #: icalformat_p.cpp:2430
 msgid "Expected iCalendar, got vCalendar format"
-msgstr "Beklenen iCalendar biçimi, alınan vClanedar biçimi"
+msgstr "Beklenen iCalendar biçimi, alınan vCalendar biçimi"
 
 #: icalformat_p.cpp:2436
 msgid "Expected iCalendar, got unknown format"
@@ -844,7 +845,7 @@ msgstr "Gönderen bu yapılacak ögesi için gönderilen isteğe katıldı"
 
 #: incidenceformatter.cpp:1552
 msgid "The request for this to-do is now completed"
-msgstr "Bu yapılacak öges için yapılan istek tamamlandı"
+msgstr "Bu yapılacak ögesi için yapılan istek tamamlandı"
 
 #: incidenceformatter.cpp:1554 incidenceformatter.cpp:1615
 msgid "Sender is still processing the invitation"
@@ -932,7 +933,7 @@ msgstr "Boş/dolu listesine ek yapıldı"
 
 #: incidenceformatter.cpp:1650
 msgid "Reply to the free/busy list"
-msgstr ""
+msgstr "Boş/dolu listesine yanıt gönder"
 
 #: incidenceformatter.cpp:1656
 msgid "Error: Free/Busy iTIP message with unknown method"
@@ -969,7 +970,7 @@ msgstr "Özet şu şekilde değiştirildi: \"%1\""
 #: incidenceformatter.cpp:1908
 #, kde-format
 msgid "The location has been changed to: \"%1\""
-msgstr "Konum şu şekilde değiştirldi: \"%1\""
+msgstr "Konum şu şekilde değiştirildi: \"%1\""
 
 #: incidenceformatter.cpp:1913
 #, kde-format
@@ -1583,13 +1584,13 @@ msgstr " (<numid>%1</numid> oluş)"
 #, kde-format
 msgid "Recurs every minute"
 msgid_plural "Recurs every %1 minutes"
-msgstr[0] "Her %1 dakikada bir tekrarlar"
+msgstr[0] "%1 dakikada bir tekrarlar"
 
 #: incidenceformatter.cpp:2806
 #, kde-format
 msgid "Recurs hourly until %2"
 msgid_plural "Recurs every %1 hours until %2"
-msgstr[0] "%2 zamanına kadar her %1 saatte bir tekrarlar"
+msgstr[0] "%2 zamanına kadar  %1 saatte bir tekrarlar"
 
 #: incidenceformatter.cpp:2816
 #, kde-format
@@ -1601,13 +1602,13 @@ msgstr[0] "%1 saatte bir tekrarlar"
 #, kde-format
 msgid "Recurs daily until %2"
 msgid_plural "Recurs every %1 days until %2"
-msgstr[0] "%2 tarihine kadar her %1 günde bir tekrarlar"
+msgstr[0] "%2 tarihine kadar %1 günde bir tekrarlar"
 
 #: incidenceformatter.cpp:2829
 #, kde-format
 msgid "Recurs daily"
 msgid_plural "Recurs every %1 days"
-msgstr[0] "%1 günde bir tekrar eder"
+msgstr[0] "%1 günde bir tekrarlar"
 
 #: incidenceformatter.cpp:2836
 msgctxt "separator for list of days"
@@ -1647,7 +1648,7 @@ msgstr[0] ""
 msgctxt "Recurs every N months on the [2nd|3rd|...] weekdayname"
 msgid "Recurs every month on the %2 %3"
 msgid_plural "Recurs every %1 months on the %2 %3"
-msgstr[0] "Her <numid>%1</numid> ayda bir %2 %3 günlerinde tekrarlar"
+msgstr[0] "<numid>%1</numid> ayda bir %2 %3 günlerinde tekrarlar"
 
 #: incidenceformatter.cpp:2894
 #, kde-format
@@ -1661,21 +1662,21 @@ msgstr[0] "%3 tarihine kadar %1 ayda bir %2 gününde tekrarlar"
 msgctxt "Recurs monthly on the [1st|2nd|...] day"
 msgid "Recurs monthly on the %2 day"
 msgid_plural "Recurs every <numid>%1</numid> month on the %2 day"
-msgstr[0] "Her <numid>%1</numid> ayda bir %2 gününde tekrarlar"
+msgstr[0] "<numid>%1</numid> ayda bir %2 gününde tekrarlar"
 
 #: incidenceformatter.cpp:2918
 #, kde-format
 msgctxt "Recurs Every N years on month-name [1st|2nd|...] until end-date"
 msgid "Recurs yearly on %2 %3 until %4"
 msgid_plural "Recurs every %1 years on %2 %3 until %4"
-msgstr[0] ""
+msgstr[0] "%4 tarihine kadar %1 yılda bir %2 %3 aylarında tekrarlar"
 
 #: incidenceformatter.cpp:2934
 #, kde-format
 msgctxt "Recurs Every N years on month-name [1st|2nd|...]"
 msgid "Recurs yearly on %2 %3"
 msgid_plural "Recurs every %1 years on %2 %3"
-msgstr[0] ""
+msgstr[0] "%1 yılda bir %2 %3 aylarında tekrarlar"
 
 #: incidenceformatter.cpp:2943 incidenceformatter.cpp:2949
 #, kde-format
@@ -1690,13 +1691,15 @@ msgid "Recurs every year on day <numid>%2</numid> until %3"
 msgid_plural ""
 "Recurs every <numid>%1</numid> years on day <numid>%2</numid> until %3"
 msgstr[0] ""
+"%3 tarihine kadar <numid>%1</numid> yılda bir kere <numid>%2</numid>. günde "
+"tekrarlar"
 
 #: incidenceformatter.cpp:2973
 #, kde-format
 msgctxt "Recurs every N YEAR[S] on day N"
 msgid "Recurs every year on day <numid>%2</numid>"
 msgid_plural "Recurs every <numid>%1</numid> years on day <numid>%2</numid>"
-msgstr[0] ""
+msgstr[0] "<numid>%1</numid> yılda bir kere <numid>%2</numid>. günde tekrarlar"
 
 #: incidenceformatter.cpp:2983
 #, kde-format
@@ -1705,13 +1708,14 @@ msgctxt ""
 msgid "Every year on the %2 %3 of %4 until %5"
 msgid_plural "Every <numid>%1</numid> years on the %2 %3 of %4 until %5"
 msgstr[0] ""
+" %5 tarihine kadar <numid>%1</numid> yılda bir %4 ayının %2 %3 günlerinde"
 
 #: incidenceformatter.cpp:3000
 #, kde-format
 msgctxt "Every N years on the [2nd|3rd|...] weekdayname of monthname"
 msgid "Every year on the %2 %3 of %4"
 msgid_plural "Every <numid>%1</numid> years on the %2 %3 of %4"
-msgstr[0] ""
+msgstr[0] "<numid>%1</numid> yılda bir %4 ayının %2 %3 günlerinde"
 
 #: incidenceformatter.cpp:3008
 msgid "Incidence recurs"
@@ -1854,7 +1858,7 @@ msgstr "Çıktı dosyasının adı"
 #. i18n: ectx: whatsthis, entry, group ($(application)-General)
 #: rc.cpp:45
 msgid "The output file name for the HTML export."
-msgstr "HTML aktarımı için çıktı dosyasınn adı."
+msgstr "HTML aktarımı için çıktı dosyasının adı."
 
 #. i18n: file: htmlexportsettings.kcfg:49
 #. i18n: ectx: label, entry, group ($(application)-General)
@@ -2183,6 +2187,12 @@ msgid ""
 "already been deleted, or the calendar that contains it is disabled. Press "
 "'Store' to create a new one or 'Throw away' to discard this update."
 msgstr ""
+"Güncellenecek olay, yapılacaklar listesi veya günlük bulunamadı. Ya daha "
+"önce "
+"silindi veya bu ögeyi içeren takvim etkin değil. 'Kaydet' düğmesine basarak "
+"yeni "
+"bir tane yaratın veya 'Sil' düğmesini kullanarak bu güncellemeyi gözardı "
+"edin."
 
 #: scheduler.cpp:374
 msgctxt "@title"
@@ -2206,6 +2216,10 @@ msgid ""
 "already been deleted or is not owned by you. Or it might belong to a read-"
 "only or disabled calendar."
 msgstr ""
+"Olay veya görev takviminizden kaldırılamıyor. Ya daha önce silindi ya da "
+"sizin "
+"tarafından sahiplenilmemiş durumda. Salt-okunur veya etkin olmayan bir "
+"takvime de ait olabilir."
 
 #: scheduler.cpp:506
 msgctxt "@info"
@@ -2214,6 +2228,10 @@ msgid ""
 "Maybe it has already been deleted or is not owned by you. Or it might belong "
 "to a read-only or disabled calendar."
 msgstr ""
+"İptal edilecek olay veya görev takviminizden kaldırılamadı. Ya daha önce "
+"silindi "
+"ya da sizin tarafınızdan sahiplenilmemiş durumda. Salt-okunur veya etkin "
+"olmayan bir takvime de ait olabilir."
 
 #: scheduler.cpp:586
 #, kde-format
