@@ -102,6 +102,7 @@ def auth_list_all():
     authorizations = []
 
     cp = ConfigParser.ConfigParser()
+    cp.optionxform = str
     cp.read(DB_FILE)
 
     for title in cp.sections():
@@ -146,11 +147,13 @@ def auth_add(action_id, auth_type, uid, pid=None):
     user = pwd.getpwuid(uid).pw_name
 
     cp = ConfigParser.ConfigParser()
+    cp.optionxform = str
     cp.read(DB_FILE)
 
     if "user:%s:allow" % user in cp.sections():
         actions = cp.get("user:%s:allow" % user, "Action").split(":")
-        actions.append(action_id)
+        if action_id not in actions:
+            actions.append(action_id)
         cp.set("user:%s:allow" % user, "Action", ":".join(actions))
     else:
         actions = [action_id]
@@ -174,6 +177,7 @@ def auth_revoke_all(uid):
     """
 
     cp = ConfigParser.ConfigParser()
+    cp.optionxform = str
     cp.read(DB_FILE)
 
     user = pwd.getpwuid(uid).pw_name
@@ -199,6 +203,7 @@ def auth_revoke(uid, action_id):
     """
 
     cp = ConfigParser.ConfigParser()
+    cp.optionxform = str
     cp.read(DB_FILE)
 
     user = pwd.getpwuid(uid).pw_name
@@ -230,11 +235,13 @@ def auth_block(uid, action_id):
     user = pwd.getpwuid(uid).pw_name
 
     cp = ConfigParser.ConfigParser()
+    cp.optionxform = str
     cp.read(DB_FILE)
 
     if "user:%s:deny" % user in cp.sections():
         actions = cp.get("user:%s:deny" % user, "Action").split(":")
-        actions.append(action_id)
+        if action_id not in actions:
+            actions.append(action_id)
         cp.set("user:%s:deny" % user, "Action", ":".join(actions))
     else:
         actions = [action_id]
