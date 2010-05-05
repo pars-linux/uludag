@@ -11,7 +11,7 @@ Quick start guide to providing translations on Pardus
 .. #. Subscribing to the Mailing List
 
 Subscribing to the Mailing Lists
--------------------------------
+--------------------------------
 
    - Pardus uses Transifex to help translators keep track of translation
      projects. Please register yourself to Transifex at 
@@ -41,7 +41,7 @@ Introducing Yourself
 .. #. Create a Bugzilla account
 
 Creating a Bugzilla Account
--------------------------
+---------------------------
 
    * Visit http://bugs.pardus.org.tr to create a Bugzilla account. This is
      useful for translators since there could be a bug in a translation file's
