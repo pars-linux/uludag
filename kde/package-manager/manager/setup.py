@@ -45,10 +45,11 @@ def update_messages():
     os.system("rm -rf .tmp")
 
 def makeDirs(dir):
-    try:
-        os.makedirs(dir)
-    except OSError:
-        pass
+    if not os.path.exists(dir):
+        try:
+            os.makedirs(dir)
+        except OSError:
+            pass
 
 class Build(build):
     def run(self):
