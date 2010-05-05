@@ -71,20 +71,22 @@ class Build(build):
 
 class Install(install):
     def run(self):
+        install.run(self)
         os.system("./setup.py build")
+
         if self.root:
-            mime_icons_dir = "%s/usr/share/icons/hicolor" % self.root
-            icon_dir = "%s/usr/share/icons/hicolor/128x128/apps" % self.root
-            kde_dir = "%s/usr/kde/4" % self.root
+            root_dir = "%s/usr/share" % self.root
         else:
-            mime_icons_dir = "/usr/share/icons/hicolor"
-            icon_dir = "/usr/share/icons/hicolor/128x128/apps"
-            kde_dir = "/usr/kde/4"
-        bin_dir = "/usr/bin"
-        mime_dir = "/usr/share/mime/packages"
-        locale_dir = "/usr/share/locale"
-        apps_dir = "/usr/share/applications"
-        project_dir = os.path.join("/usr/share", PROJECT)
+            root_dir = "/usr/share"
+
+        mime_icons_dir = os.path.join(root_dir, "usr/share/icons/hicolor")
+        icon_dir = os.path.join(root_dir, "usr/share/icons/hicolor/128x128/apps")
+        bin_dir = os.path.join(root_dir, "usr/bin")
+        mime_dir = os.path.join(root_dir, "usr/share/mime/packages")
+        locale_dir = os.path.join(root_dir, "usr/share/locale")
+        apps_dir = os.path.join(root_dir, "usr/share/applications")
+        project_dir = os.path.join(root_dir, PROJECT)
+
         # Make directories
         print "Making directories..."
         makeDirs(mime_icons_dir)
