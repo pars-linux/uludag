@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-30 01:19+0200\n"
-"PO-Revision-Date: 2010-04-28 10:30+0300\n"
+"PO-Revision-Date: 2010-05-05 15:31+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,7 +73,7 @@ msgstr "Tamam"
 #: applet.cpp:1433
 #, kde-format
 msgid "Activate %1 Widget"
-msgstr "%1 Programcığı Ekinleştir"
+msgstr "%1 Programcığını Etkinleştir"
 
 #: applet.cpp:1595
 msgid "Widget Settings"
@@ -164,7 +164,7 @@ msgstr "Çokluortam"
 
 #: applet.cpp:1787
 msgid "Online Services"
-msgstr "Çevrimiçi Servisler"
+msgstr "Çevrimiçi Hizmetler"
 
 #: applet.cpp:1788
 msgid "System Information"
@@ -630,7 +630,7 @@ msgstr "Görev artık geçerli değil, geçersiz parametreler."
 
 #: private/remoteservicejob.cpp:172
 msgid "Timeout."
-msgstr "Zamanaşımı."
+msgstr "Zaman aşımı.."
 
 #: remote/accessappletjob.cpp:80
 #, kde-format
@@ -643,7 +643,7 @@ msgstr "Sunucu geçersiz bir Plasma programcığı gönderdi."
 
 #: remote/accessappletjob.cpp:124
 msgid "Timeout"
-msgstr "Zamanaşımı"
+msgstr "Zaman aşımı"
 
 #: remote/accessappletjob.cpp:160
 msgid ""
