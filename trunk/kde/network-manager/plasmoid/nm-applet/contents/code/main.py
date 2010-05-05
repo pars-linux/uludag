@@ -23,7 +23,6 @@ from PyKDE4.kdeui import *
 # Custom Widgets
 from widgets.popup import Popup, NmIcon, Blinker
 
-
 # Configuration widgets
 from widgets.configs import *
 
@@ -125,6 +124,18 @@ class NmApplet(plasmascript.Applet):
                 return self.chargeState != Solid.Battery.Discharging
 
         return True
+
+    _tt = Plasma.ToolTipContent()
+    def updateToolTip(self, msg, package):
+        icon = QIcon(QPixmap(":/icons/network-%s.png" % package))
+        toolTip = Plasma.ToolTipContent()
+        toolTip.setImage(icon)
+        toolTip.setMainText(QString(msg))
+        #ipstr = "IP: %s<br/>Access Point: %s" % (ip, gateway)
+        #toolTip.setSubText(QString(ipstr))
+        if toolTip.mainText().compare(self._tt.mainText()) <> 0 or toolTip.subText().compare(self._tt.subText()) <> 0:
+            Plasma.ToolTipManager.self().setContent(self.applet,  toolTip)
+            self._tt = toolTip
 
     def batteryStateChanged(self, newstate, udi):
         # print "Battery state changed to ", newstate
@@ -250,7 +261,7 @@ class NmApplet(plasmascript.Applet):
 
             # Network UP
             if (str(args[1]) == "up"):
-                msg = i18n("Connected to <b>%1</b> IP: %2" , unicode(args[0]), args[2])
+                msg = i18n("Connected to <b>%1</b> %2" , unicode(args[0]), args[2])
                 lastState = CONNECTED
 
                 if not connection in self.connectedDevices:
@@ -296,6 +307,7 @@ class NmApplet(plasmascript.Applet):
 
             # Show Notification
             self.notifyface.notify(str(msg), lastState["solid"])
+            self.updateToolTip(unicode(msg), self.lastActivePackage)
 
             # Update Icon
             self.emblem = lastState["emblem"]

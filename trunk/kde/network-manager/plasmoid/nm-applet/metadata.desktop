@@ -23,3 +23,4 @@ X-KDE-PluginInfo-Category=Utilities
 X-KDE-PluginInfo-Depends=
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-NotificationArea=true
