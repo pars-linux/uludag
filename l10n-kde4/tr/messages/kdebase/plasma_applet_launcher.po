@@ -3,21 +3,22 @@
 # translation of kickoff.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_launcher\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-13 01:23+0200\n"
-"PO-Revision-Date: 2009-10-28 15:47+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-05 16:06+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: simpleapplet/simpleapplet.cpp:191 core/favoritesmodel.cpp:48
 #: core/favoritesmodel.cpp:302 ui/launcher.cpp:116 ui/launcher.cpp:175
@@ -78,11 +79,11 @@ msgstr "Bekleme Kipine Geç"
 
 #: simpleapplet/simpleapplet.cpp:204 core/leavemodel.cpp:76
 msgid "Hibernate"
-msgstr "Uyku Kipine Geç"
+msgstr "Askıya Al"
 
 #: simpleapplet/simpleapplet.cpp:205 core/leavemodel.cpp:80
 msgid "Sleep"
-msgstr "Uyut"
+msgstr "Askıya Al"
 
 #: simpleapplet/simpleapplet.cpp:206
 msgctxt "Restart Computer"
@@ -215,7 +216,7 @@ msgstr "Başka bir kullanıcı olarak paralel oturum başlat"
 
 #: core/leavemodel.cpp:62
 msgid "Turn off computer"
-msgstr "Bilgisayarı kapat"
+msgstr "Bilgisayarı Kapat"
 
 #: core/leavemodel.cpp:64
 msgctxt "Restart computer"
@@ -236,7 +237,7 @@ msgstr "Çıkış yapmadan duraklat"
 
 #: core/leavemodel.cpp:78
 msgid "Suspend to disk"
-msgstr "Disk kullanarak askıya al"
+msgstr "Disk Kullanarak Askıya Al"
 
 #: core/leavemodel.cpp:82
 msgid "Suspend to RAM"
@@ -290,13 +291,15 @@ msgstr "Son Kullanılan Belgeleri Temizle"
 #, kde-format
 msgctxt "login name, hostname"
 msgid "User <b>%1</b> on <b>%2</b>"
-msgstr "Kullanıcı <b>%1</b> <b>%2</b> üzerinde"
+msgstr ""
+"Kullanıcı <b>%1</b> <b>%2</b> üzerinde "
+"<b>%2</b> üzerinde <b>%1</b> kullanıcısı"
 
 #: ui/launcher.cpp:530
 #, kde-format
 msgctxt "full name, login name, hostname"
 msgid "<b>%1 (%2)</b> on <b>%3</b>"
-msgstr "<b>%1 (%2)</b> <b>%3</b> üzerinde"
+msgstr "<b>%3</b> üzerinde <b>%1 (%2)</b>"
 
 #: ui/contextmenufactory.cpp:81
 msgid "Advanced"
