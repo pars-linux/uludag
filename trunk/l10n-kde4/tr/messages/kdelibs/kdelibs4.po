@@ -13,13 +13,14 @@
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2010-04-28 09:23+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-05 11:46+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -85,6 +86,8 @@ msgid ""
 "The program executes 100 jobs in 4 threads. Each job waits for a random "
 "number of milliseconds between 1 and 1000."
 msgstr ""
+"Program 4 iş parçacığı (thread) içerisinde 100 görev çalıştırıyor. Her görev "
+"rastgele bir süre (1-1000 milisaniye) boyunca bekliyor."
 
 #. i18n: file: threadweaver/Examples/Jobs/JobsBase.ui:36
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbLog)
@@ -93,18 +96,21 @@ msgid ""
 "Check to see logging information about thread activity. Watch the console "
 "output to see the log information."
 msgstr ""
+"İş parçacıklarının (thread) etkinliği ile ilgili günlük kaydı görmek için "
+"işaretleyin. "
+"Bilgileri terminal çıktısından izleyebilirsiniz."
 
 #. i18n: file: threadweaver/Examples/Jobs/JobsBase.ui:39
 #. i18n: ectx: property (text), widget (QCheckBox, cbLog)
 #: rc.cpp:23
 msgid "Log thread activity"
-msgstr "İş parçacıkları için günlük kaydı tut"
+msgstr "İş parçacıkları (thread) için günlük kaydı tut"
 
 #. i18n: file: threadweaver/Examples/Jobs/JobsBase.ui:59
 #. i18n: ectx: property (toolTip), widget (ThreadWeaver::WeaverThreadGrid, threadGrid)
 #: rc.cpp:26
 msgid "Displays Thread Activity"
-msgstr "İş Parçacıkları Etkinliklerini Gösterir"
+msgstr "İş Parçacıkları (Thread) Etkinliklerini Gösterir"
 
 #. i18n: file: threadweaver/Examples/Jobs/JobsBase.ui:77
 #. i18n: ectx: property (text), widget (QPushButton, pbStart)
@@ -126,7 +132,7 @@ msgstr "Dur"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:38
 msgid "GUI based example for the Weaver Thread Manager"
-msgstr "GUI based example for the Weaver Thread Manager"
+msgstr "Weaver İş Parçacığı (Thread) Yöneticisi için Grafik Arayüzlü Örnek"
 
 #. i18n: file: threadweaver/Examples/Jobs/JobsBase.ui:205
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -213,7 +219,7 @@ msgid ""
 "dd><dt>%a</dt><dd>Application that sent the event</dd><dt>%m</dt><dd>The "
 "message sent by the application</dd></dl></qt>"
 msgstr ""
-"<qt>KTTS uygulamasınınn olaylarda nasıl konuşması gerektiğini belirtir.  "
+"<qt>KTTS uygulamasının olaylarda nasıl konuşması gerektiğini belirtir.  "
 "Eğer \"Özel metni oku\" seçeneğini seçerseniz, metni kutucuğa girin.  Metin "
 "içinde eş değiştirme metinlerini kullanabilirsiniz:<dl><dt>%e</dt><dd>Olayın "
 "adı</dd><dt>%a</dt><dd>Olayı gönderen uygulama</dd><dt>%m</dt><dd>Uygulama "
@@ -520,6 +526,7 @@ msgstr "Hız çubuğunu göster"
 msgid ""
 "Whether the shortcut icons to the left in the file dialog should be shown"
 msgstr ""
+"Dosya diyaloğunun solundaki kısayol simgelerinin gösterilip gösterilmeyeceği"
 
 #. i18n: file: kutils/kdeglobals.kcfg:425
 #. i18n: ectx: label, entry, group (Locale)
@@ -624,7 +631,7 @@ msgstr "Pencerenin boyutu"
 #: rc.cpp:270 rc.cpp:381 knewstuff/knewstuff3/uploaddialog.cpp:118
 #: knewstuff/knewstuff2/ui/uploaddialog.cpp:58
 msgid "Share Hot New Stuff"
-msgstr "Yeni Öğeleri Paylaş"
+msgstr "Yeni Ögeleri Paylaş"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:31
 #. i18n: ectx: property (text), widget (QLabel, uploadingLabel)
@@ -728,7 +735,7 @@ msgstr "Açıklama:"
 #: rc.cpp:312
 #| msgid "Ne&ver store for this site"
 msgid "Set a price for this item"
-msgstr "Bu öğe için fiyat belirleyin"
+msgstr "Bu öge için fiyat belirleyin"
 
 #. i18n: file: knewstuff/knewstuff3/uploaddialog.ui:242
 #. i18n: ectx: property (text), widget (QLabel, priceLabel)
@@ -1302,7 +1309,7 @@ msgstr ""
 "olabilir.</p>\n"
 "<p>Eğer hatalı hecelenmiş bir sözcük değilse, <b>Sözlüğe Eklemek</b> için "
 "tıklayın. Bilinmeyen bir sözcüğü sözlüğe eklemek istemiyorsanız fakat olduğu "
-"gibi bırakılmasını istiyorsanız  <b>Yoksay</b> veya <b>Tümünü Yoksay</b>.</"
+"gibi bırakılmasını istiyorsanız  <b>Yoksay</b> veya <b>Tümünü Yoksa</b>.</"
 "p>\n"
 "<p>Bununla birlikte, eğer sözcük hatalı hecelenmişse, aşağıdaki listeden "
 "doğrusunu bularak değiştirebilirsiniz. Değiştirilecek doğru bir seçenek "
@@ -1421,6 +1428,15 @@ msgid ""
 "or <b>Ignore All</b> instead.</p>\n"
 "</qt>"
 msgstr ""
+"<qt>\n"
+"<p>Sözlükte bulunamadığı için bilinmeyen kelime bilinmeyen olarak "
+"işaretlendi.<br>\n"
+"Eğer bilinmeyen kelimenin yanlış yazılmadığını düşünüyor ve gelecekte "
+"tekrar yanlışlıkla tespit edilmesini engellemek istiyorsanız buraya tıklayın."
+" "
+"Eğer olduğu gibi bırakıp sözlüğe eklemek istemiyorsanız <b>Yoksa</b> "
+"veya <b>Tümünü Yoksa</b> düğmesine basın.</p>\n"
+"</qt>"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:101
 #. i18n: ectx: property (text), widget (QPushButton, m_addBtn)
@@ -1481,7 +1497,7 @@ msgstr ""
 "<qt>\n"
 "<p>Eğer bilinmeyen kelime hatalı olarak hecelenmişse, doğrusunun olup- "
 "olmadığını denetlemeli ve eğer varsa,-onu seçmelisiniz. Eğer listedekilerin "
-"hiçbirisi size iyi bir değiştirme gibi görünmüyorsa, yukarıdaki düzelti "
+"hiçbirisi size iyi bir değiştirme gibi görünmüyorsa, yukarıdaki düzenleme "
 "kutucuğu içine doğrusunu yazabilirsiniz.</p>\n"
 "<p>Kelimenin; Sadece bu görünümünü düzeltmek istiyorsanız <b>Değiştir</b> "
 "veya tüm tekrarlarını düzeltmek için <b>Tümünü Değiştir</b> tıklayın. </p>\n"
@@ -1507,7 +1523,7 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-"<p>Bilinmeyen kelimenin bu görünümünü, yukarıdaki düzelti kutusu içindeki "
+"<p>Bilinmeyen kelimenin bu görünümünü, yukarıdaki düzelt kutusu içindeki "
 "metin ile değiştirmek için buraya tıklayın</p>\n"
 "</qt>"
 
@@ -1538,10 +1554,10 @@ msgid ""
 "</qt>"
 msgstr ""
 "<qt>\n"
-" <p>Eğer bilinmeyensözcüke hatalı olarak hecelenmişse, aşağıdaki listede "
+" <p>Eğer bilinmeyen sözcük hatalı olarak hecelenmişse, aşağıdaki listede "
 "doğrusunun olup- olmadığını denetlemeli ve eğer yoksa,-yazmalısınız.</p>\n"
 "<p>Sözcüğün Sadece bu görünümünü düzeltmek istiyorsanız <b>Değiştir</b> veya "
-"tüm tekrarlarını düzeltmek için <b>Tümünüi Değiştir</b> düğmesine tıklayın.</"
+"tüm tekrarlarını düzeltmek için <b>Tümünü Değiştir</b> düğmesine tıklayın.</"
 "p>\n"
 "</qt> "
 
@@ -1568,7 +1584,7 @@ msgid ""
 msgstr ""
 "<qt>\n"
 "<p>Bilinmeyen kelimenin bu görünümünü olduğu gibi korumak için tıklayın</p>\n"
-"<p>Bu davranış; Eğer kelime, bir isim, akronim, yabancı veya başka bir "
+"<p>Bu davranış; Eğer kelime, bir isim, kısaltma, yabancı veya başka bir "
 "kendine özel kelime ise ve bunu kullanmak ama sözlüğünüze ekleMEmek "
 "istediğinizde yararlıdır. </p>\n"
 "</qt>"
@@ -1579,7 +1595,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_skipBtn)
 #: rc.cpp:677 rc.cpp:1100
 msgid "&Ignore"
-msgstr "&Yoksay"
+msgstr "Yoksa"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:201
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_skipAllBtn)
@@ -1611,7 +1627,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_skipAllBtn)
 #: rc.cpp:686 rc.cpp:1109
 msgid "I&gnore All"
-msgstr "Tümünü Y&oksay"
+msgstr "Tümünü Yoksa"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:221
 #. i18n: ectx: property (text), widget (QPushButton, m_suggestBtn)
@@ -2324,7 +2340,7 @@ msgstr "Seçilen betiği çalıştır."
 
 #: kross/ui/view.cpp:310
 msgid "Stop execution of the selected script."
-msgstr "Seçilen betiğ çalıştırmayı durdur."
+msgstr "Seçilen betiği çalıştırmayı durdur."
 
 #: kross/ui/view.cpp:315
 msgid "Edit..."
@@ -2480,13 +2496,15 @@ msgstr "Büyük temizlik - Projeyi yürütenin kişisel kahramanı"
 
 #: nepomuk/rcgen/rcgen.cpp:64
 msgid "Verbose output debugging mode."
-msgstr "Ayrıntılı hata ayıklma çıktısı kipi."
+msgstr "Ayrıntılı hata ayıklama çıktısı kipi."
 
 #: nepomuk/rcgen/rcgen.cpp:65
 msgid ""
 "Generate simple and fast wrapper classes not based on Nepomuk::Resource "
 "which do not provide any data integrity checking"
 msgstr ""
+"Herhangi bir veri bütünlüğü doğrulama imkanı sunmayan Nepomuk::Resource "
+"sınıfını temel almayan basit ve hızlı sarmalayıcı (wrapper) sınıflar üret."
 
 #: nepomuk/rcgen/rcgen.cpp:66
 msgid "Actually generate the code."
@@ -2511,10 +2529,13 @@ msgid ""
 "The ontology files containing the ontologies to be generated, a space "
 "separated list (deprecated: use arguments instead.)"
 msgstr ""
+"Üretilecek ontolojileri içeren ontoloji dosyaları, boşlukla ayrılmış bir "
+"liste "
+"(eski: bunun yerine argümanları kullanın)"
 
 #: nepomuk/rcgen/rcgen.cpp:71
 msgid "Include path prefix (deprecated)"
-msgstr "İçerme yolu öneki (eski)"
+msgstr "İçerme yolu ön eki (eski)"
 
 #: nepomuk/rcgen/rcgen.cpp:72
 msgid "Specify the target folder to store generated files into."
@@ -2529,12 +2550,17 @@ msgid ""
 "Optionally specify the classes to be generated. Use option multiple times "
 "(defaults to all classes)"
 msgstr ""
+"Seçimlik olarak üretilecek sınıfları belirtin. Seçeneği bir çok defa "
+"kullanın "
+"(Öntanımlısı tüm sınıflardır)"
 
 #: nepomuk/rcgen/rcgen.cpp:78
 msgid ""
 "Serialization used in the ontology files. Will default to primitive file "
 "extension detection."
 msgstr ""
+"Ontoloji dosyalarından kullanılan serileştirme. Öntanımlı olarak ilkel "
+"dosya uzantı algılaması kullanılır."
 
 #: nepomuk/rcgen/rcgen.cpp:79
 msgid ""
@@ -2542,10 +2568,16 @@ msgid ""
 "<visibility-name> will be used to construct the export macro name and the "
 "export header. By default classes will not be exported."
 msgstr ""
+"Sınıfların genel API'de kullanılacağı durum için kullanılan görünürlüğü "
+"ayarlayın. "
+"<visibility-name> dışarıya aktarılacak makro adını ve dışarıya aktarma "
+"başlığını "
+"oluşturmak için kullanılacak. Sınıflar öntanımlı olarak dışarıya "
+"aktarılmayacaktır."
 
 #: nepomuk/rcgen/rcgen.cpp:80
 msgid "The ontology files containing the ontologies to be generated."
-msgstr ""
+msgstr "Üretilecek ontolojileri içeren ontoloji dosyaları."
 
 #: kinit/klauncher.cpp:563
 #, kde-format
@@ -2581,7 +2613,7 @@ msgstr "Bilinmeyen protokol '%1'.\n"
 #: kinit/klauncher.cpp:1185
 #, kde-format
 msgid "Error loading '%1'.\n"
-msgstr "'%1' yüknenirken hata oluştu.\n"
+msgstr "'%1' yüklenirken hata oluştu.\n"
 
 #: kinit/kinit.cpp:518
 msgid ""
@@ -2631,8 +2663,8 @@ msgid ""
 "klauncher: This program is not supposed to be started manually.\n"
 "klauncher: It is started automatically by kdeinit4.\n"
 msgstr ""
-"klauncher: Bu uygulamam el ile başlatılmamalıdır.\n"
-"klauncher:Uygulamam kdeini4t tarafından otomatik olarak başlatılır.\n"
+"klauncher: Bu uygulama el ile başlatılmamalıdır.\n"
+"klauncher: kdeinit4 tarafından otomatik olarak başlatılır.\n"
 
 #: kdewidgets/makekdewidgets.cpp:84
 msgid "Builds Qt widget plugins from an ini style description file."
@@ -2777,6 +2809,8 @@ msgid ""
 "<qt><p>Either the hardware/software the module configures is not available "
 "or the module has been disabled by the administrator.</p></qt>"
 msgstr ""
+"<qt><p>Ya modülün yapılandırdığı donanım/yazılım mevcut değil ya da modül "
+"sistem yöneticisi tarafından devreden çıkartılmış.</p></qt>"
 
 #: kutils/kcmoduleloader.cpp:132
 #, kde-format
@@ -2814,6 +2848,12 @@ msgid ""
 "message. If this fails, consider contacting your distributor or packager.</"
 "p></qt>"
 msgstr ""
+"<qt>Teşhis:<br />%1<p>Olası sebepler:</p><ul><li>Son KDE güncellemeniz "
+"sırasında, öksüz bir kontrol modülü kalmasına yol açan bir hata oluştu</"
+"li><li>Eski 3. parti modüllere sahipsiniz.</li></ul><p>Bu sebepleri iyice "
+"gözden geçirin ve hata iletisinde bahsedilen modülü kaldırmayı deneyin."
+"Eğer başarısız olursanız, dağıtım paketçisiyle temasa geçin.</"
+"p></qt>"
 
 #: kutils/kcmoduleloader.cpp:167
 msgid ""
@@ -2999,12 +3039,12 @@ msgstr "Dosyayı İndir:"
 #: knewstuff/knewstuff3/core/engine.cpp:237
 #, kde-format
 msgid "Could not load get hot new stuff providers from file: %1"
-msgstr ""
+msgstr "Yeni Ögeler Al özelliği sağlayıcıları dosyadan yüklenemedi: %1"
 
 #: knewstuff/knewstuff3/core/engine.cpp:267
 #, kde-format
 msgid "Loading of providers from file: %1 failed"
-msgstr ""
+msgstr "%1 dosyasından sağlayıcılar okunamadı"
 
 #: knewstuff/knewstuff3/core/engine.cpp:396
 #: knewstuff/knewstuff2/ui/downloaddialog.cpp:195
@@ -3072,7 +3112,7 @@ msgstr ""
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:339
 #| msgid "Could not construct value"
 msgid "Could not get account balance."
-msgstr ""
+msgstr "Hesap bakiyesi alınamadı."
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:351
 #, kde-format
@@ -3082,7 +3122,7 @@ msgid ""
 "This items costs %1 %2.\n"
 "Do you want to buy it?"
 msgstr ""
-"Bu öğenin fiyatı %1 %2.\n"
+"Bu ögenin fiyatı %1 %2.\n"
 "Satın almak istiyor musunuz?"
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:362
@@ -3092,6 +3132,9 @@ msgid ""
 "Your balance: %1\n"
 "Price: %2"
 msgstr ""
+"Hesap bakiyeniz çok düşük:\n"
+"Bakiye: %1\n"
+"Fiyat: %2"
 
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:375
 #| msgid "Could not create temporary file."
@@ -3114,7 +3157,7 @@ msgstr "Hayranı oldunuz."
 #: knewstuff/knewstuff3/attica/atticaprovider.cpp:428
 #| msgid "Could not create temporary file."
 msgid "Could not make you a fan."
-msgstr ""
+msgstr "Hayran olamadınız."
 
 #: knewstuff/knewstuff3/ui/itemsmodel.cpp:144
 #: knewstuff/knewstuff3/ui/entrydetailsdialog.cpp:119
@@ -3474,7 +3517,7 @@ msgstr "Kaynak dosyalarının yükleneceği yer"
 
 #: kdecore/kde-config.cpp:86
 msgid "Installation prefix for Qt"
-msgstr "Qt için kurulum öneki"
+msgstr "Qt için kurulum ön eki"
 
 #: kdecore/kde-config.cpp:87
 msgid "Location of installed Qt binaries"
@@ -3651,7 +3694,7 @@ msgid ""
 msgstr ""
 "Eğer uygulama QApplication::ManyColor özelliğini \n"
 "kullanıyorsa, 8-bitlik bir görüntü üzerinde renk \n"
-"küpünde yeralan renklerin sayısını sınırlar"
+"küpünde yer alan renklerin sayısını sınırlar"
 
 #: kdecore/kernel/kcmdlineargs.cpp:284
 msgid "tells Qt to never grab the mouse or the keyboard"
@@ -3671,7 +3714,7 @@ msgstr "hata ayıklama için senkronize moda geçer"
 
 #: kdecore/kernel/kcmdlineargs.cpp:288
 msgid "defines the application font"
-msgstr "uygulama yazıtipini belirler"
+msgstr "uygulama yazı tipini belirler"
 
 #: kdecore/kernel/kcmdlineargs.cpp:290
 msgid ""
@@ -3773,6 +3816,8 @@ msgid ""
 "sets the client geometry of the main widget - see man X for the argument "
 "format (usually WidthxHeight+XPos+YPos)"
 msgstr ""
+"Ana parçacığın istemci geometrisini ayarlar - argüman biçimi için man X "
+"çıktısına bakın (genellikle EnxBoy+XKonum+YKonum)"
 
 #: kdecore/kernel/kcmdlineargs.cpp:436
 msgid "KDE Application"
@@ -4090,7 +4135,7 @@ msgstr ""
 
 #: kdecore/kernel/ktoolinvocation.cpp:80
 msgid "Function must be called from the main thread."
-msgstr "Fonksiyon ana thread'de çağrılmalı."
+msgstr "Fonksiyon ana iş parçacığından (thread) çağrılmalı."
 
 #: kdecore/kernel/ktoolinvocation.cpp:121
 #, kde-format
@@ -4151,7 +4196,7 @@ msgstr "Sadece 'SaltOkunur' duruma izin veriliyor"
 
 #: kdecore/sycoca/kmemfile.cpp:205
 msgid "Cannot seek past eof"
-msgstr ""
+msgstr "eof işaretinin ilerisine gidilemiyor"
 
 #: kdecore/services/kmimetype.cpp:58
 #, kde-format
@@ -5325,17 +5370,17 @@ msgctxt "SSL error"
 msgid ""
 "The certificate authority's certificate is marked to reject this "
 "certificate's purpose"
-msgstr ""
+msgstr "Sertifika makamının sertifikası, bu sertifikanın amacını reddediyor."
 
 #: kdecore/network/ktcpsocket.cpp:171
 msgctxt "SSL error"
 msgid "The peer did not present any certificate"
-msgstr ""
+msgstr "Uç herhangi bir sertifika sunmadı"
 
 #: kdecore/network/ktcpsocket.cpp:173
 msgctxt "SSL error"
 msgid "The certificate does not apply to the given host"
-msgstr "Setrifika verilen makineye uygulanmadı"
+msgstr "Sertifika verilen makineye uygulanmadı"
 
 #: kdecore/network/ktcpsocket.cpp:175
 msgctxt "SSL error"
@@ -5517,7 +5562,7 @@ msgstr "Bağlantıda zaman aşımı oluştu"
 #: kdecore/network/klocalsocket_unix.cpp:221
 #: kdecore/network/klocalsocket_unix.cpp:301
 msgid "Could not set non-blocking mode"
-msgstr ""
+msgstr "Bloke-olmayan kipe geçilemedi"
 
 #: kdecore/network/klocalsocket_unix.cpp:272
 msgid "Address is already in use"
@@ -5547,7 +5592,7 @@ msgstr "Bilinmeyen soket hatası"
 #: kdecore/auth/backends/dbus/DBusHelperProxy.cpp:100
 #, kde-format
 msgid "DBus Backend error: connection to helper failed. %1"
-msgstr ""
+msgstr "DBus arka uç hatası: Yardımcıya bağlanılamadı. %1"
 
 #: kdecore/auth/backends/dbus/DBusHelperProxy.cpp:124
 #, kde-format
@@ -5555,6 +5600,8 @@ msgid ""
 "DBus Backend error: could not contact the helper. Connection error: %1. "
 "Message error: %2"
 msgstr ""
+"DBus arka uç hatası: Yardımcıyla iletişime geçilemedi. Bağlantı hatası: %1. "
+"İleti hatası: %2"
 
 #: kdecore/auth/backends/dbus/DBusHelperProxy.cpp:134
 #, kde-format
@@ -5896,6 +5943,14 @@ msgid ""
 "grayscale, if you use a black+white printer). Printout will possibly happen "
 "more slowly and will probably use more toner or ink.</p> </qt>"
 msgstr ""
+"<qt><p><strong>'Yazıcı dostu kip'</strong></p><p>If this checkbox is "
+"enabled, the printout of the HTML document will be black and white only, and "
+"all colored background will be converted into white. Printout will be faster "
+"and use less ink or toner.</p><p>If this checkbox is disabled, the printout "
+"of the HTML document will happen in the original color settings as you see "
+"in your application. This may result in areas of full-page color (or "
+"grayscale, if you use a black+white printer). Printout will possibly happen "
+"more slowly and will probably use more toner or ink.</p> </qt>"
 
 #: khtml/khtml_printsettings.cpp:71
 msgid "HTML Settings"
@@ -5943,11 +5998,12 @@ msgstr "Sadece .html testlerini çalıştır"
 
 #: khtml/test_regression.cpp:632
 msgid "Put output in &lt;directory&gt; instead of &lt;base_dir&gt;/output"
-msgstr ""
+msgstr "Çıktıyı &lt;base_dir&gt;/output yerine &lt;directory&gt; içine koy"
 
 #: khtml/test_regression.cpp:634
 msgid "Use &lt;directory&gt; as reference instead of &lt;base_dir&gt;/baseline"
 msgstr ""
+"Referans olarak &lt;base_dir&gt;/baseline yerine &lt;directory&gt; kullan"
 
 #: khtml/test_regression.cpp:635
 msgid ""
@@ -6201,20 +6257,20 @@ msgstr "&Biçim Kağıdı Kullan"
 
 #: khtml/khtml_part.cpp:401
 msgid "Enlarge Font"
-msgstr "Yazıtipini Büyüt"
+msgstr "yazı tipini Büyüt"
 
 #: khtml/khtml_part.cpp:404
 msgid ""
 "<qt>Enlarge Font<br /><br />Make the font in this window bigger. Click and "
 "hold down the mouse button for a menu with all available font sizes.</qt>"
 msgstr ""
-"<qt>Yazı Tipini Büyüt<br /><br />Bu penceredeki yazıtipini büyütür. Farenin "
+"<qt>Yazı Tipini Büyüt<br /><br />Bu penceredeki yazı tipini büyütür. Farenin "
 "orta düğmesini tıklayıp aşağı çekerek tüm yazı tipi boyutlarını "
 "görüntüleyebilirsiniz.</qt>"
 
 #: khtml/khtml_part.cpp:408
 msgid "Shrink Font"
-msgstr "Yazıtipini Küçült"
+msgstr "Yazı Tipini Küçült"
 
 #: khtml/khtml_part.cpp:411
 msgid ""
@@ -6222,7 +6278,7 @@ msgid ""
 "hold down the mouse button for a menu with all available font sizes.</qt>"
 msgstr ""
 "<qt>Yazı Tipini Küçült<br /><br />Bu penceredeki yazı tipi boyutunu küçültür."
-"Farenin orta düğmesini tıklayıp aşağı çekerek tüm yazıtipi boyutlarını "
+"Farenin orta düğmesini tıklayıp aşağı çekerek tüm yazı tipi boyutlarını "
 "görüntüleyebilirsiniz.</qt>"
 
 #: khtml/khtml_part.cpp:429
@@ -6457,7 +6513,7 @@ msgid ""
 msgstr ""
 "Uyarı - Bu güvenli bir form, ancak size ait olan veriyi şifrelenmemiş olarak "
 "geriye göndermek istiyor. \n"
-"Başkaları bu bilgiyi yakalaybilir ve bilgileri görüntüleyebilir. \n"
+"Başkaları bu bilgiyi yakalayabilir ve bilgileri görüntüleyebilir. \n"
 "Bu işleme devam etmek istiyor musunuz?"
 
 #: khtml/khtml_part.cpp:4640 khtml/khtml_part.cpp:4649
@@ -6949,6 +7005,9 @@ msgid ""
 "Do not know where to evaluate the expression. Please pause a script or open "
 "a source file."
 msgstr ""
+"İfadenin nerede değerlendirileceği bilinmiyor. Lütfen bir betiği duraklatın "
+"veya "
+"bir kaynak dosyası açın."
 
 #: khtml/ecma/debugger/debugwindow.cpp:884
 #, kde-format
@@ -7020,26 +7079,26 @@ msgstr "Web Kısayolu Oluştur"
 #: khtml/java/kjavaapplet.cpp:224
 #, kde-format
 msgid "Initializing Applet \"%1\"..."
-msgstr "\"%1\" apleti hazırlanıyor..."
+msgstr "\"%1\" programcığı hazırlanıyor..."
 
 #: khtml/java/kjavaapplet.cpp:231
 #, kde-format
 msgid "Starting Applet \"%1\"..."
-msgstr "\"%1\" apleti başlatılıyor..."
+msgstr "\"%1\" programcığı başlatılıyor..."
 
 #: khtml/java/kjavaapplet.cpp:238
 #, kde-format
 msgid "Applet \"%1\" started"
-msgstr "\"%1\" apleti başlatıldı"
+msgstr "\"%1\" programcığı başlatıldı"
 
 #: khtml/java/kjavaapplet.cpp:244
 #, kde-format
 msgid "Applet \"%1\" stopped"
-msgstr "\"%1\" apleti durdu"
+msgstr "\"%1\" programcığı durdu"
 
 #: khtml/java/kjavaappletviewer.cpp:127
 msgid "Applet Parameters"
-msgstr "Aplet Parametreleri"
+msgstr "Programcık Parametreleri"
 
 #: khtml/java/kjavaappletviewer.cpp:138
 msgid "Parameter"
@@ -7059,11 +7118,11 @@ msgstr "Arşivler"
 
 #: khtml/java/kjavaappletviewer.cpp:475
 msgid "KDE Java Applet Plugin"
-msgstr "KDE Java Aplet Eklentisi"
+msgstr "KDE Java Programcığı Eklentisi"
 
 #: khtml/java/kjavaappletserver.cpp:146
 msgid "Loading Applet"
-msgstr "Aplet yükleniyor"
+msgstr "Programcık yükleniyor"
 
 #: khtml/java/kjavaappletserver.cpp:150
 msgid "Error: java executable not found"
@@ -7710,12 +7769,12 @@ msgstr "Geçici dosya oluşturulamadı."
 #: kjsembed/kjsembed/slotproxy.cpp:115
 #, kde-format
 msgid "Bad slot handler: Object %1 Identifier %2 Method %3 Signature: %4."
-msgstr ""
+msgstr "Yanlış slot karşılayıcısı: Nesne %1 Tanımlayıcı %2 Metod %3 İmza: %4."
 
 #: kjsembed/kjsembed/slotproxy.cpp:140
 #, kde-format
 msgid "Exception calling '%1' slot from %2:%3:%4"
-msgstr ""
+msgstr "%2:%3:%4 tarafından '%1' slotu çağrılırken istisna oluştu"
 
 #: kjsembed/kjsembed/kjsembed.cpp:273 kjsembed/kjsembed/kjsembed.cpp:295
 #, kde-format
@@ -7781,14 +7840,14 @@ msgstr "Hatalı argüman sayısı."
 #, kde-format
 msgid "The slot asked for %1 argument"
 msgid_plural "The slot asked for %1 arguments"
-msgstr[0] ""
+msgstr[0] "Slot %1 argüman istedi."
 
 #: kjsembed/kjsembed/qobject_binding.cpp:413
 #, kde-format
 #| msgid "There is no matching item available.\n"
 msgid "but there is only %1 available"
 msgid_plural "but there are only %1 available"
-msgstr[0] ""
+msgstr[0] "ancak sadece %1 adet mevcut."
 
 #: kjsembed/kjsembed/qobject_binding.cpp:414
 #, kde-format
@@ -7803,7 +7862,7 @@ msgstr "%1, %2."
 #: kjsembed/kjsembed/qobject_binding.cpp:613
 #, kde-format
 msgid "Failure to cast to %1 value from Type %2 (%3)"
-msgstr ""
+msgstr "%2 Tipinden (%3) %1 değerine cast edilemedi."
 
 #: kjsembed/kjsembed/qobject_binding.cpp:648
 #, kde-format
@@ -7838,7 +7897,7 @@ msgstr "Kötü olay yakalayıcı: Nesne %1 Tanımlayıcı %2 Yöntem %3 Tip: %4.
 #: kjsembed/kjsembed/eventproxy.cpp:135
 #, kde-format
 msgid "Exception calling '%1' function from %2:%3:%4"
-msgstr ""
+msgstr "'%1' fonksiyonu %2:%3:%4 tarafından çağrılırken istisna oluştu."
 
 #: kjsembed/kjsembed/qformbuilder_binding.cpp:59
 #, kde-format
@@ -7950,7 +8009,7 @@ msgstr "Referans hatası"
 
 #: kjs/object.cpp:589
 msgid "Syntax error"
-msgstr "Sözdizimi hatası"
+msgstr "Söz dizimi hatası"
 
 #: kjs/object.cpp:590
 msgid "Type error"
@@ -8097,7 +8156,7 @@ msgstr ""
 
 #: kded/kbuildsycoca.cpp:636
 msgid "Rebuilds the system configuration cache."
-msgstr "Sistem yapılandırma önbelleğini yeniden kurar."
+msgstr "Sistem yapılandırma ön belleğini yeniden kurar."
 
 #: kded/kbuildsycoca.cpp:637
 msgid "(c) 1999-2002 KDE Developers"
@@ -8218,7 +8277,7 @@ msgstr "Arkaplanda çalıştırma."
 
 #: kdeui/kernel/kuniqueapplication.cpp:90
 msgid "Internally added if launched from Finder"
-msgstr "Bulucudan çalıştırıldıysa içerde eklendi"
+msgstr "Bulucudan çalıştırıldıysa içeride eklendi"
 
 #: kdeui/kernel/kapplication.cpp:815
 #, kde-format
@@ -8295,6 +8354,8 @@ msgid ""
 "The '%1' shape gesture has already been allocated to the \"%2\" action.\n"
 "Do you want to reassign it from that action to the current one?"
 msgstr ""
+"'%1' fare şekli eylemi zaten \"%2\" eylemine atanmış.\n"
+"Mevcut eylemden yeni eyleme tekrar atamak ister misiniz?"
 
 #: kdeui/dialogs/kshortcutseditor.cpp:571
 #: kdeui/dialogs/kshortcutseditor.cpp:587 kdeui/shortcuts/kglobalaccel.cpp:501
@@ -8311,6 +8372,8 @@ msgid ""
 "The '%1' rocker gesture has already been allocated to the \"%2\" action.\n"
 "Do you want to reassign it from that action to the current one?"
 msgstr ""
+"'%1' rocker işareti zaten \"%2\" eylemine atanmış.\n"
+"Mevcut eylemden yeni eyleme tekrar atamak ister misiniz?"
 
 #: kdeui/dialogs/kshortcutseditor.cpp:624
 #, kde-format
@@ -8500,6 +8563,17 @@ msgid ""
 "<p>Does the bug you are reporting cause any of the above damage? If it does "
 "not, please select a lower severity. Thank you.</p>"
 msgstr ""
+"<p>Ciddiyeti <b>Kritik</b> olarak belirlediniz. Unutmayın ki bu ciddiyet "
+"seviyesi "
+"sadece:</p><ul><li>Sistemdeki (veya tüm sistemdeki) ilintisiz uygulamaları "
+"bozan "
+"</li><li>Ciddi veri kaybına yol açan</li><li>İlgili paketin kurulduğu "
+"sistemlerde "
+"güvenlik açığı oluşturan</li></ul>\n"
+"<p>hatalar için seçilmelidir. Raporladığınız hata yukarıdaki bu zararlardan "
+"herhangi birini veriyor mu? Eğer vermiyorsa lütfen daha düşük bir ciddiyet "
+"seviyesi "
+"seçiniz. Teşekkürler.</p>"
 
 #: kdeui/dialogs/kbugreport.cpp:439
 #| msgid ""
@@ -8519,6 +8593,16 @@ msgid ""
 "<p>Does the bug you are reporting cause any of the above damage? If it does "
 "not, please select a lower severity. Thank you.</p>"
 msgstr ""
+"<p>Ciddiyeti <b>Önemli</b> olarak belirlediniz. Unutmayın ki bu ciddiyet "
+"seviyesi "
+"sadece:</p><ul><li>İlgili paketi kullanılmaz(a yakın) hale getiren  "
+"</li><li>Veri kaybına yol açan</li><li>İlgili paketi kullanan kullanıcıların "
+"hesaplarına "
+"erişim hakkı tanıyan güvenlik açığı oluşturan</li></ul>\n"
+"<p>hatalar için seçilmelidir. Raporladığınız hata yukarıdaki bu zararlardan "
+"herhangi birini veriyor mu? Eğer vermiyorsa lütfen daha düşük bir ciddiyet "
+"seviyesi "
+"seçiniz. Teşekkürler.</p>"
 
 #: kdeui/dialogs/kbugreport.cpp:453
 #| msgid ""
@@ -8599,7 +8683,7 @@ msgid ""
 "called \"Wishlist\".</html>"
 msgstr ""
 "<html>Yazılım daima daha da geliştirilebilir ve KDE ekibi bunu yapmaya "
-"hazırdır. Siz kullanıcılar, birşeyler beklediğiniz gibi çalışmadığında veya "
+"hazırdır. Siz kullanıcılar, bir şeyler beklediğiniz gibi çalışmadığında veya "
 "daha iyi olabileceğini düşündüğünüzde bize bildirmelisiniz.<br /><br />KDE "
 "Masaüstü Ortamı'nın bir hata izleme sistemi vardır. Hataları bildirmek için "
 "<a href=\"http://bugs.kde.org/\">http://bugs.kde.org/</a> adresini ya da "
@@ -8992,7 +9076,7 @@ msgid ""
 "default? The changes will be applied immediately."
 msgstr ""
 "Bu uygulamanın tüm araç çubuklarını öntanımlı ayarlarına döndürmek "
-"istediğnizden emin misiniz? Değişiklikler hemen uygulanacaktır."
+"istediğinizden emin misiniz? Değişiklikler hemen uygulanacaktır."
 
 #: kdeui/dialogs/kedittoolbar.cpp:533
 msgid "Reset Toolbars"
@@ -9107,7 +9191,7 @@ msgstr "İ&leri"
 
 #: kdeui/dialogs/kcupsoptionspageswidget_p.cpp:167
 msgid "Left to Right, Top to Bottom"
-msgstr "Soldan Sağa, Yukardan Aşağıya"
+msgstr "Soldan Sağa, Yukarıdan Aşağıya"
 
 #: kdeui/dialogs/kcupsoptionspageswidget_p.cpp:168
 msgid "Left to Right, Bottom to Top"
@@ -9202,7 +9286,7 @@ msgstr "Çok Gizli"
 
 #: kdeui/fonts/kfontdialog.cpp:75
 msgid "Select Font"
-msgstr "Yazıtipi Seç"
+msgstr "Yazı Tipi Seç"
 
 #: kdeui/fonts/kfontrequester.cpp:110
 msgid "Choose..."
@@ -9210,24 +9294,24 @@ msgstr "Seç..."
 
 #: kdeui/fonts/kfontrequester.cpp:215
 msgid "Click to select a font"
-msgstr "Bir yazıtipi seçmek için tıklayın"
+msgstr "Bir yazı tipi seçmek için tıklayın"
 
 #: kdeui/fonts/kfontrequester.cpp:222
 msgid "Preview of the selected font"
-msgstr "Seçilen yazıtipinin önizlemesi"
+msgstr "Seçilen yazı tipinin önizlemesi"
 
 #: kdeui/fonts/kfontrequester.cpp:223
 msgid ""
 "This is a preview of the selected font. You can change it by clicking the "
 "\"Choose...\" button."
 msgstr ""
-"Bu seçilen yazıtipinin bir önizlemesidir. \"Seç\" düğmesine basarak onu "
+"Bu seçilen yazı tipinin bir önizlemesidir. \"Seç\" düğmesine basarak onu "
 "değiştirebilirsiniz."
 
 #: kdeui/fonts/kfontrequester.cpp:228
 #, kde-format
 msgid "Preview of the \"%1\" font"
-msgstr "\"%1\" yazıtipinin önizlemesi"
+msgstr "\"%1\" yazı tipinin önizlemesi"
 
 #: kdeui/fonts/kfontrequester.cpp:229
 #, kde-format
@@ -9235,17 +9319,17 @@ msgid ""
 "This is a preview of the \"%1\" font. You can change it by clicking the "
 "\"Choose...\" button."
 msgstr ""
-"Bu %1 yazıtipinin önizlemesidir. \"Seç...\" düğmesine tıklayarak "
+"Bu %1 yazı tipinin önizlemesidir. \"Seç...\" düğmesine tıklayarak "
 "değiştirebilirsiniz."
 
 #: kdeui/fonts/kfontchooser.cpp:162
 msgctxt "@info:whatsthis"
 msgid "Here you can choose the font to be used."
-msgstr "Buradan kullanılacak yazıtipini seçebilirsiniz."
+msgstr "Buradan kullanılacak yazı tipini seçebilirsiniz."
 
 #: kdeui/fonts/kfontchooser.cpp:184
 msgid "Requested Font"
-msgstr "İstenen Yazıtipi"
+msgstr "İstenen Yazı Tipi"
 
 #: kdeui/fonts/kfontchooser.cpp:203
 msgctxt "@option:check"
@@ -9284,7 +9368,7 @@ msgstr "Yazı tipi biçimi değiştirilsin mi?"
 
 #: kdeui/fonts/kfontchooser.cpp:228
 msgid "Font style:"
-msgstr "Yazıtipi stili:"
+msgstr "Yazı Tipi stili:"
 
 #: kdeui/fonts/kfontchooser.cpp:236
 msgctxt "@option:check"
@@ -9357,11 +9441,11 @@ msgid ""
 "Here you can switch between fixed font size and font size to be calculated "
 "dynamically and adjusted to changing environment (e.g. widget dimensions, "
 "paper size)."
-msgstr "Bu bölümden farklı yazıtiplerini seçebilirsiniz."
+msgstr "Bu bölümden farklı yazı tiplerini seçebilirsiniz."
 
 #: kdeui/fonts/kfontchooser.cpp:349
 msgid "Here you can choose the font size to be used."
-msgstr "Buradan, kullanılan yazıtipi büyüklüğünü ayarlayabilirsiniz."
+msgstr "Buradan, kullanılan yazı tipi büyüklüğünü ayarlayabilirsiniz."
 
 #. i18n: A classical test phrase, with all letters of the English alphabet.
 #. Replace it with a sample text in your language, such that it is
@@ -10069,6 +10153,10 @@ msgid ""
 "from the 'Settings' menu to solve the ambiguity.\n"
 "No action will be triggered."
 msgstr ""
+"'%1' tuş dizilimi zaten mevcut. 'Ayarlar' menüsünden 'Kısayolları "
+"Yapılandır'\n"
+"seçeneğini kullanarak bu sorunu çözebilirsiniz.\n"
+"Hiçbir eylem tetiklenmeyecek."
 
 #: kdeui/actions/kaction.cpp:124
 msgid "Ambiguous shortcut detected"
@@ -10229,7 +10317,7 @@ msgstr "Yapılandırmayı kaydetme izniniz yok"
 #: kdeui/widgets/khistorycombobox.cpp:317
 #| msgid "No further item in the history."
 msgid "No further items in the history."
-msgstr "Geçmişte başka öğe yok."
+msgstr "Geçmişte başka öge yok."
 
 #: kdeui/widgets/ksqueezedtextlabel.cpp:163
 msgid "&Copy Full Text"
@@ -10265,7 +10353,7 @@ msgstr "%1 için öneri yok"
 
 #: kdeui/widgets/ktextedit.cpp:638
 msgid "Ignore"
-msgstr "Yoksay"
+msgstr "Yoksa"
 
 #: kdeui/widgets/ktextedit.cpp:639
 msgid "Add to Dictionary"
@@ -10273,7 +10361,7 @@ msgstr "Sözlüğe Ekle"
 
 #: kdeui/widgets/ktextedit.cpp:784
 msgid "Nothing to spell check."
-msgstr "Yazım denetimi yapılacak birşey yok."
+msgstr "Yazım denetimi yapılacak bir şey yok."
 
 #: kdeui/widgets/kcharselect-translation.cpp:23
 msgctxt "KCharSelect section name"
@@ -10699,7 +10787,7 @@ msgstr "Oklar"
 #: kdeui/widgets/kcharselect-translation.cpp:107
 msgctxt "KCharselect unicode block name"
 msgid "Mathematical Operators"
-msgstr "Matematiksel İşleçler"
+msgstr "Matematiksel Operatörler"
 
 #: kdeui/widgets/kcharselect-translation.cpp:108
 msgctxt "KCharselect unicode block name"
@@ -10774,7 +10862,7 @@ msgstr "Çeşitli Matematiksel Semboller-B"
 #: kdeui/widgets/kcharselect-translation.cpp:122
 msgctxt "KCharselect unicode block name"
 msgid "Supplemental Mathematical Operators"
-msgstr "Tanımlayıcı Matematiksel İşleçler"
+msgstr "Tanımlayıcı Matematiksel Operatörler"
 
 #: kdeui/widgets/kcharselect-translation.cpp:123
 msgctxt "KCharselect unicode block name"
@@ -10899,7 +10987,7 @@ msgstr "CJK Birleşik İdeogramlar Genişleme A"
 #: kdeui/widgets/kcharselect-translation.cpp:147
 msgctxt "KCharselect unicode block name"
 msgid "Yijing Hexagram Symbols"
-msgstr "Yijing Altı Köşeli Yıldız Sembelleri"
+msgstr "Yijing Altı Köşeli Yıldız Sembolleri"
 
 #: kdeui/widgets/kcharselect-translation.cpp:148
 msgctxt "KCharselect unicode block name"
@@ -11476,7 +11564,7 @@ msgstr "&Yazı Tipi"
 #: kdeui/widgets/krichtextwidget.cpp:261
 msgctxt "@action"
 msgid "Font &Size"
-msgstr "&Yazıtipi Boyutu"
+msgstr "Yazı Tipi Boyutu"
 
 #: kdeui/widgets/krichtextwidget.cpp:271
 msgctxt "@action boldify selected text"
@@ -11606,7 +11694,7 @@ msgstr "Biçim Boyayıcı"
 #: kdeui/widgets/krichtextwidget.cpp:458
 msgctxt "@action"
 msgid "To Plain Text"
-msgstr "Düz Metnen"
+msgstr "Düz Metne"
 
 #: kdeui/widgets/krichtextwidget.cpp:469
 msgctxt "@action"
@@ -11827,6 +11915,9 @@ msgid_plural ""
 "Do you want to assign an empty shortcut to these actions?\n"
 "%3"
 msgstr[0] ""
+"\"%2\" kısayolu aşağıdaki kısayollarla çakışıyor.\n"
+"Bu eylemlere boş kısayol atamak istiyor musunuz?\n"
+"%3"
 
 #: kdeui/widgets/kkeysequencewidget.cpp:281
 msgid "Shortcut conflict"
@@ -11995,6 +12086,8 @@ msgstr "Durdur"
 #, kde-format
 msgid "Your replacement string is referencing a capture greater than '\\%1', "
 msgstr ""
+"Yerine koyma dizginiz '\\%1' ifadesinden daha geniş bir eşleşmeye  "
+"referans veriyor."
 
 #: kdeui/findreplace/kreplacedialog.cpp:156
 #, kde-format
@@ -12099,7 +12192,7 @@ msgid ""
 "replacement text.</qt>"
 msgstr ""
 "<qt>Eğer <b>Değiştir</b> düğmesine basarsanız, yukarıda girmiş olduğunuz "
-"metin, belge boyunca aranacak ve her rastlandığında değiştirme_metni ile "
+"metin, belge boyunca aranacak ve her rastlandığında değiştirme metni ile "
 "değiştirilecek.</qt>"
 
 #: kdeui/findreplace/kfinddialog.cpp:206 kdeui/util/kstandardguiitem.cpp:276
@@ -12148,6 +12241,12 @@ msgid ""
 "literal <code><b>\\N</b></code> in your replacement, put an extra backslash "
 "in front of it, like <code><b>\\\\N</b></code>.</p></qt>"
 msgstr ""
+"<qt>Etkinleştirildiğinde, <code><b>N</b></code>'nin sayı olduğu her "
+"<code><b>\\N</b></code> ifadesi, eşlenen (parantezli gruplar) ilgili "
+"ifadeyle "
+"değiştirilecektir.<p>Yer değiştirirken gerçekten <code><b>\\N</b></code> "
+"ifadesini kullanmak için önüne fazladan bir ters bölü "
+"koyun: <code><b>\\\\N</b></code></p></qt>"
 
 #: kdeui/findreplace/kfinddialog.cpp:230
 msgid "Click for a menu of available captures."
@@ -12157,6 +12256,8 @@ msgstr ""
 #: kdeui/findreplace/kfinddialog.cpp:232
 msgid "Require word boundaries in both ends of a match to succeed."
 msgstr ""
+"Bir eşleşmenin başarılı olması için iki ucunun da kelime sınırlarında "
+"(word boundaries) olmasını gerektir."
 
 #: kdeui/findreplace/kfinddialog.cpp:234
 msgid "Start searching at the current cursor location rather than at the top."
@@ -12442,7 +12543,7 @@ msgstr "&Sil"
 
 #: kdeui/util/kstandardguiitem.cpp:243
 msgid "Delete item(s)"
-msgstr "Öğeleri sil"
+msgstr "Ögeleri sil"
 
 #: kdeui/util/kstandardguiitem.cpp:248 kdeui/actions/kstandardaction_p.h:44
 msgid "&Open..."
@@ -12587,7 +12688,7 @@ msgstr "Kırk Renk"
 #: kdeui/colors/kcolordialog.cpp:101
 msgctxt "palette name"
 msgid "Oxygen Colors"
-msgstr "Oxygen Renkeri"
+msgstr "Oxygen Renkleri"
 
 #: kdeui/colors/kcolordialog.cpp:102
 msgctxt "palette name"
