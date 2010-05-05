@@ -11,18 +11,19 @@
 # Ömer Fadıl USTA <omer_fad@yahoo.com>, 2004.
 # Bülent ŞENER <bulent@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kreversi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-07 01:21+0200\n"
-"PO-Revision-Date: 2009-05-08 22:24+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-05 09:47+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: highscores.cpp:48
@@ -105,7 +106,7 @@ msgstr "Simon Hürlimann"
 
 #: main.cpp:45
 msgid "Action refactoring"
-msgstr ""
+msgstr "Eylem düzenleyicisi"
 
 #: main.cpp:46
 msgid "Mats Luthman"
@@ -261,7 +262,7 @@ msgstr "Canlandırmaların hızı"
 #. i18n: ectx: label, entry (CompetitiveGameChoice), group (Game)
 #: rc.cpp:6
 msgid "Whether to play competitively in contrast to casually."
-msgstr ""
+msgstr "Sıradan yerine rekabetçi şekilde oynanıp oynanmayacağı."
 
 #. i18n: file: kreversi.kcfg:22
 #. i18n: ectx: label, entry (level), group (Game)
