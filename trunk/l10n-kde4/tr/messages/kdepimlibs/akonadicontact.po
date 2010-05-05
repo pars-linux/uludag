@@ -3,13 +3,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadicontact\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-04 01:24+0200\n"
-"PO-Revision-Date: 2010-04-28 15:40+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-05 09:31+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,7 +32,7 @@ msgstr "Değişiklikleri yönet"
 
 #: contacteditor.cpp:157 contactgroupeditor.cpp:168
 msgid "Ignore and Overwrite changes"
-msgstr "Yoksay ve Değişikliklerin üzerine yaz"
+msgstr "Gözardı et ve değişikliklerin üzerine yaz"
 
 #: contacteditor.cpp:247 contactgroupeditor.cpp:299
 msgid "Select Address Book"
@@ -167,7 +168,7 @@ msgstr "Hızlı Mesajlaşma Adresi"
 
 #: contactviewer.cpp:249
 msgid "Anniversary"
-msgstr "Yıldönümü"
+msgstr "Yıl Dönümü"
 
 #: contactviewerdialog.cpp:42
 msgid "Show Contact"
@@ -189,13 +190,13 @@ msgstr "Kişi grubu üyeleri:"
 #. i18n: ectx: label, entry (DefaultResourceId), group (SpecialCollections)
 #: rc.cpp:9
 msgid "Id of the resource containing the default recent contacts collection."
-msgstr ""
+msgstr "ön tanımlı son erişilen kişi koleksiyonunu içeren öz kaynağın KD'si."
 
 #. i18n: file: recentcontactscollections.kcfg:10
 #. i18n: ectx: whatsthis, entry (DefaultResourceId), group (SpecialCollections)
 #: rc.cpp:12
 msgid "Id of the contacts resource containing the recent contacts collection."
-msgstr ""
+msgstr "Son erişilen kişi koleksiyonunu içeren kişi öz kaynağının KD'si."
 
 #: rc.cpp:13
 msgctxt "NAME OF TRANSLATORS"
@@ -216,6 +217,13 @@ msgid ""
 "placeholders for the single address parts. If 'External Application' is "
 "selected, a command with placeholders can be defined."
 msgstr ""
+"Harita üzerindeki bir kişinin posta adresini göstermek için kullanılması "
+"gereken "
+"uygulamayı tanımlar. Eğer 'Web Tarayıcısı' seçildiyse, yer tutucular "
+"kullanılarak bir "
+"URL adresi girilebilir. Eğer 'Harici Uygulama' seçildiyse, yer tutucular "
+"kullanılarak "
+"bir komut tanımlanabilir."
 
 #. i18n: file: actions/contactactionssettings.kcfg:21
 #. i18n: ectx: whatsthis, entry (AddressUrl), group (Show Address Settings)
@@ -224,6 +232,9 @@ msgid ""
 "This URL defines the website that shall be used to show a contact's\n"
 "                 postal address."
 msgstr ""
+"Bu URL adresiyle tanımlanan web sayfası kişilerin aşağıdaki bilgisini "
+"görüntülemek için kullanılacaktır\n"
+"                 posta adresi."
 
 #. i18n: file: actions/contactactionssettings.kcfg:27
 #. i18n: ectx: tooltip, entry (AddressUrl), group (Show Address Settings)
@@ -258,6 +269,9 @@ msgid ""
 "contact's\n"
 "                 postal address."
 msgstr ""
+"Bu komutla tanımlanan uygulama kişilerin aşağıdaki bilgisini görüntülemek "
+"için kullanılacaktır\n"
+"                 posta adresi."
 
 #. i18n: file: actions/contactactionssettings.kcfg:38
 #. i18n: ectx: tooltip, entry (AddressCommand), group (Show Address Settings)
@@ -287,6 +301,10 @@ msgid ""
 "installed on the computer) and the number is dialed. If 'External "
 "Application' is selected, a command with placeholders can be defined."
 msgstr ""
+"Bir kişinin telefon numarasının çevirmek için kullanılması gereken "
+"uygulamayı tanımlar. Eğer 'Skype' seçildiyse, kurulu olduğu takdirde Skype "
+"uygulaması çalıştırılacak ve numara çevrilecektir. Eğer 'Harici Uygulama' "
+"seçildiyse, yer tutucular kullanılarak bir komut belirtilebilir."
 
 #. i18n: file: actions/contactactionssettings.kcfg:52
 #. i18n: ectx: label, entry (PhoneCommand), group (Phone Dial Settings)
@@ -302,6 +320,8 @@ msgid ""
 "contact's\n"
 "                 phone number."
 msgstr ""
+"Bu komut bir kişinin telefon numarasını çevirmek için kullanılması "
+"gereken uygulamayı tanımlar."
 
 #. i18n: file: actions/contactactionssettings.kcfg:58
 #. i18n: ectx: tooltip, entry (PhoneCommand), group (Phone Dial Settings)
@@ -313,6 +333,10 @@ msgid ""
 "   %n: The normalized number with all non-digit characters removed.\n"
 "      "
 msgstr ""
+"Komutta aşağıdaki yer tutucular kullanılabilir:\n"
+"  %N: Adres defterinde tutulduğu biçimiyle ham sayı.\n"
+"  %n: Rakam olmayan karakterlerin çıkarıldığı normalize edilmiş sayı.\n"
+"      "
 
 #: recentcontactscollectionrequestjob.cpp:41
 #| msgid "New Contact"
@@ -554,7 +578,7 @@ msgstr "Doğum tarihi:"
 
 #: editor/contacteditorwidget.cpp:392
 msgid "Anniversary:"
-msgstr "Yıldönümü:"
+msgstr "Yıl Dönümü::"
 
 #: editor/contacteditorwidget.cpp:404
 msgid "Partner's name:"
@@ -776,7 +800,7 @@ msgstr "Bu tercih edilen telefon numarasıdır"
 
 #: editor/phoneeditwidget.cpp:348
 msgid "Types"
-msgstr "Tipler"
+msgstr "Türler"
 
 #: editor/soundeditwidget.cpp:85
 msgid "This contact's sound cannot be found."
