@@ -4,13 +4,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
 # Serdar Dalgıç, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kiriki\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-05-02 11:51+0200\n"
-"PO-Revision-Date: 2010-04-20 10:05+0300\n"
-"Last-Translator: Serdar Dalgıç\n"
+"PO-Revision-Date: 2010-05-05 09:52+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,7 +30,7 @@ msgstr "&At"
 #: lateralwidget.cpp:171
 #, kde-format
 msgid "Roll %1 of 3"
-msgstr "3 hakkının %1.sini at"
+msgstr "%1. hak (Toplam 3)"
 
 #: main.cpp:19 scores.cpp:77
 msgid "Kiriki"
@@ -202,7 +203,7 @@ msgstr "6s"
 
 #: scores.cpp:69
 msgid "Bonus if > 62"
-msgstr "Armağan ver eğer >62 ise"
+msgstr "62'den büyükse bonus"
 
 #: scores.cpp:70
 msgid "Upper total"
@@ -218,17 +219,15 @@ msgstr "Bir türden 4 adet"
 
 #: scores.cpp:74
 msgid "Full House"
-msgstr "Tüm Ev"
+msgstr "Full House"
 
 #: scores.cpp:75
-#, fuzzy
 msgid "Small Straight"
-msgstr "Küçük Düzlük"
+msgstr "Small Straight"
 
 #: scores.cpp:76
-#, fuzzy
 msgid "Large Straight"
-msgstr "Geniş Düzlük"
+msgstr "Large Straight"
 
 #: scores.cpp:78
 msgid "Chance"
@@ -241,4 +240,5 @@ msgstr "Ara Toplam"
 #: scores.cpp:81
 msgid "Grand Total"
 msgstr "Ana Toplam"
+
 
