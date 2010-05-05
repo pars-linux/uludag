@@ -1,5 +1,8 @@
 <RCC>
-  <qresource prefix="raw" >
+  <qresource prefix="raw">
+    <file>pics/arrow-left.png</file>
+    <file>pics/arrow-right.png</file>
+    <file>pics/tick.png</file>
     <file>pics/bg.png</file>
     <file>pics/package.png</file>
     <file>pics/keyboards.png</file>
