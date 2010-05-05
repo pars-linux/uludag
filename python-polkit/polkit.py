@@ -53,6 +53,7 @@ from _polkit import (
 
 DB_FILE = "/etc/polkit-1/localauthority/10-vendor.d/pardus.pkla"
 
+
 def action_list():
     """
     Lists all action_ids
@@ -112,19 +113,16 @@ def auth_list_all():
         except KeyError:
             continue
 
-        # Action ID pattern (e.g.: org.example.*)
-        action_pattern = cp.get(title, "Action")
-
-        # Add a seperate entry for each action id
-        for action_id in action_list():
-            if fnmatch.fnmatch(action_id, action_pattern):
-                auth = {
-                    "action_id": action_id,
-                    "uid": _uid,
-                    "type": 3,
-                    "negative": cp.get(title, "ResultAny") == "no",
-                }
-                authorizations.append(auth)
+        for action_id in cp.get(title, "Action").split(":"):
+            if not action_id:
+                continue
+            auth = {
+                "action_id": action_id,
+                "uid": _uid,
+                "type": 3,
+                "negative": cp.get(title, "ResultAny") == "no",
+            }
+            authorizations.append(auth)
 
     return authorizations
 
@@ -145,12 +143,27 @@ def auth_add(action_id, auth_type, uid, pid=None):
         Process ID of process to grant authorization to.
         Normally one wants to pass result of os.getpid().
     """
-    if auth_type in (SCOPE_ONE_SHOT, SCOPE_PROCESS):
-        if not pid:
-            raise error, "Process ID required"
-        return _polkit.auth_add(action_id, auth_type, uid, pid)
+    user = pwd.getpwuid(uid).pw_name
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(DB_FILE)
+
+    if "user:%s:allow" % user in cp.sections():
+        actions = cp.get("user:%s:allow" % user, "Action").split(":")
+        actions.append(action_id)
+        cp.set("user:%s:allow" % user, "Action", ":".join(actions))
     else:
-        return _polkit.auth_add(action_id, auth_type, uid)
+        actions = [action_id]
+        cp.add_section("user:%s:allow" % user)
+        cp.set("user:%s:allow" % user, "Action", ":".join(actions))
+        cp.set("user:%s:allow" % user, "Identity", "unix-user:%s" % user)
+        cp.set("user:%s:allow" % user, "ResultAny", "yes")
+        cp.set("user:%s:allow" % user, "ResultInactive", "yes")
+        cp.set("user:%s:allow" % user, "ResultActive", "yes")
+
+    with open(DB_FILE, "w") as configfile:
+        cp.write(configfile)
+
 
 def auth_revoke_all(uid):
     """
@@ -159,7 +172,19 @@ def auth_revoke_all(uid):
     uid :
         User ID
     """
-    return _polkit.auth_revoke_all(uid)
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(DB_FILE)
+
+    user = pwd.getpwuid(uid).pw_name
+
+    sections = cp.sections()
+    for title in sections:
+        if title == "user:%s:allow" % user or title == "user:%s:deny" % user:
+            cp.remove_section(title)
+
+    with open(DB_FILE, "w") as configfile:
+        cp.write(configfile)
 
 def auth_revoke(uid, action_id):
     """
@@ -172,7 +197,22 @@ def auth_revoke(uid, action_id):
     action_id :
         Action ID
     """
-    return _polkit.auth_revoke(uid, action_id)
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(DB_FILE)
+
+    user = pwd.getpwuid(uid).pw_name
+
+    sections = cp.sections()
+    for title in sections:
+        if title == "user:%s:allow" % user or title == "user:%s:deny" % user:
+            actions = cp.get(title, "Action").split(":")
+            if action_id in actions:
+                actions.remove(action_id)
+                cp.set(title, "Action", ":".join(actions))
+
+    with open(DB_FILE, "w") as configfile:
+        cp.write(configfile)
 
 def auth_block(uid, action_id):
     """
@@ -187,4 +227,23 @@ def auth_block(uid, action_id):
     action_id :
         Action ID
     """
-    return _polkit.auth_block(uid, action_id)
+    user = pwd.getpwuid(uid).pw_name
+
+    cp = ConfigParser.ConfigParser()
+    cp.read(DB_FILE)
+
+    if "user:%s:deny" % user in cp.sections():
+        actions = cp.get("user:%s:deny" % user, "Action").split(":")
+        actions.append(action_id)
+        cp.set("user:%s:deny" % user, "Action", ":".join(actions))
+    else:
+        actions = [action_id]
+        cp.add_section("user:%s:deny" % user)
+        cp.set("user:%s:deny" % user, "Action", ":".join(actions))
+        cp.set("user:%s:deny" % user, "Identity", "unix-user:%s" % user)
+        cp.set("user:%s:deny" % user, "ResultAny", "no")
+        cp.set("user:%s:deny" % user, "ResultInactive", "no")
+        cp.set("user:%s:deny" % user, "ResultActive", "no")
+
+    with open(DB_FILE, "w") as configfile:
+        cp.write(configfile)
