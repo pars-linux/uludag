@@ -22,16 +22,19 @@ Bugzilla üzerinden Pardus gönüllü takibi
     #. Daha önce herhangi bir özgür yazılım projesine katkıda bulundunuz mu? Evetse, hangi projeye, ne şekilde, ne kadar zamandır?
     #. Pardus'a neden katkı vermek istiyorsunuz?
     #. Pardus'a haftada ne kadar vakit ayırabilirsiniz?
+    #. Kısa özgeçmişin eke eklenmesi
 
-#. Aday, geliştirici olmak için başvuruyor ise hazırlamış olduğu paket(ler)i veya harhangi bir uygulama ile yaptığı değişikliği ek olarak ekleyebilir.
-#. Mentor listesi başvuran kişiye, başvurduğu görev ile ilgili quiz sorularını gönderir.
+#. Aday, geliştirici olmak için başvuruyor ise:
+    #. Hazırlamış olduğu paket(ler)i veya harhangi bir uygulama ile yaptığı değişikliği,
+    #. Pardus hata takip sisteminde çözmüş olduğu hata var ise bu kataların bağlantılarını,
+    #. Diğer özgür yazılım projelerinde yapmış olduğu yazılım katkılarının (patch, hata çözme, paket yapımı, uygulama geliştirme) bilgileirini ve bağlantılarını vermelidir.
 #. Çevirmen için quiz soruları ve mentor süreci bulunmamaktadır, çevirmenin başvurması ve yukarıda bulunan soruları cevaplaması kabul için yeterli olacaktır.
-#. Aday başvuru sırasında sorulan soruları lakayıt bir şekilde cevaplamış ise hatası kapatılabilir.
-#. Adayın başvurması sonrasında adaya ilgili quiz soruları gönderilir.
-#. Yaklaşık 20 gün gibi bir süre içerisinde adaylar quiz sorularını mentor listesine gönderirler.
-#. Eğer aday bu 20 gün içerisinde mentor listesi veya bugzilla üzerinden ulaşılabilir durumda değil ise bugzilla üzerinden pinglenir.
-#. Pinglenme sonrasında hala ulaşılabilir değil ise açmış olduğu hata kapatılır.
-#. Aday ulaşılabilir durumda ve quiz sorularını 20 gün içerisinde göndermiş ise, cevaplar mentor listesinde tüm mentorlar tarafından gözden geçirilir.
+#. Aday başvuru sırasında sorulan soruları lakayıt bir şekilde cevaplamış ise hatası direk olarak kapatılır.
+#. Adayın başvurması sonrasında adaya ilgili quiz soruları gönderilir. (Güvenlik hatalarına uygulanacak yöntem uygulanacaktır.)
+#. Geliştirici adayları soruları yaklaşık 8 gün gibi bir süre içerisinde mentor listesi mailine gönderilir.
+#. Testçi adayları soruları yaklaşık 15 gün gibi bir süre içerisinde mentor listesi mailine gönderilir.
+#. Eğer adaylara 20 gün içerisinde mentor listesi veya bugzilla üzerinden ulaşılamıyor ise hatası kapatılır.
+#. Aday ulaşılabilir durumda ve quiz sorularını ilgili gün içerisinde gönderilmiş ise, cevaplar bugzilla üzerinde mentorlar tarfından gözden geçirilip onaylanır.
 #. Gözden geçirme olumsuz sonuçlanır ise adayın açmış olduğu hata kapatılır.
 #. Aday bu aşamada reddedildiğinde; eğer test için başvurmuş ise 3 ay sonrasında, geliştirme için başvurmuş ise 6 ay sonrasında tekrar başvuru yapabilecektir.
 #. Gözden geçirme olumlu sonuçlanmış ise:
@@ -45,9 +48,6 @@ Bugzilla üzerinden Pardus gönüllü takibi
             #. Bu süre içerisinde yapmış olduğu paketlerin sahibi mentor'u olacaktır.
         #. Aday mentorun belirtmiş olduğu sürede bu verilen küçük işi yerine getiremez ise
             hatası kapatılır. (playground svn izinleri de kapatılır)
-        #. Aday verilen işi yerine getirebilir ise mentor jabber veya irc üzerinden
-            adayı ve yapmış olduklarını gözden geçirir.
-        #. Aday bu sözel gözden geçirme sürecini geçemez ise hatası mentor tarafından kapatılır. Mentor hatayı kapatırken adayın kendini geliştirdiği takdirde yeniden başvurabilmesi için belirli bir süre önerir ve aday bu süre sonrasında tekrar başvuruda bulunabilir.
         #. Aday gözden geçirme sürecini geçer ise:
             #. uludağ, devel vb. svn izinleri verilir ve geliştirici olarak kabul edilir. Adaylık sürecinde yapmış olduğu paketler ve diğer işler mentor'undan adaya devredilir.
             #. Mentor bu yeni geliştiricinin olgunluğa eriştiğine emin olana kadar yeni geliştiriciyi yakından takip eder ve geliştiricinin paketlerinin gözden geçirilme sürecine katılır.
