@@ -4,8 +4,6 @@ TODO
 Notes:
 ------
 
- - For Kde 4 .pisi package we need to create following symlink:
-   /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
  - needService/SystemReboot support for GUI depends on new Pisi Api
 
 Not started yet:
@@ -25,6 +23,9 @@ In progress:
 
 Completed:
 ----------
+
+ - For Kde 4 .pisi package we need to create following symlink:
+   .. /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
 
  - #7217 Add Hiding support for Tray Icon if there is no updates
  - Merge changes from corporate's package-manager

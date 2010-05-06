@@ -72,19 +72,18 @@ class Build(build):
 class Install(install):
     def run(self):
         install.run(self)
-        os.system("./setup.py build")
 
         if self.root:
             root_dir = "%s/usr/share" % self.root
         else:
             root_dir = "/usr/share"
 
-        mime_icons_dir = os.path.join(root_dir, "usr/share/icons/hicolor")
-        icon_dir = os.path.join(root_dir, "usr/share/icons/hicolor/128x128/apps")
-        bin_dir = os.path.join(root_dir, "usr/bin")
-        mime_dir = os.path.join(root_dir, "usr/share/mime/packages")
-        locale_dir = os.path.join(root_dir, "usr/share/locale")
-        apps_dir = os.path.join(root_dir, "usr/share/applications")
+        mime_icons_dir = os.path.join(root_dir, "icons/hicolor")
+        icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
+        bin_dir = os.path.join(root_dir, "bin")
+        mime_dir = os.path.join(root_dir, "mime/packages")
+        locale_dir = os.path.join(root_dir, "locale")
+        apps_dir = os.path.join(root_dir, "applications")
         project_dir = os.path.join(root_dir, PROJECT)
 
         # Make directories
