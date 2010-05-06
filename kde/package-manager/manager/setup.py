@@ -75,12 +75,13 @@ class Install(install):
 
         if self.root:
             root_dir = "%s/usr/share" % self.root
+            bin_dir = os.path.join(self.root, "usr/bin")
         else:
             root_dir = "/usr/share"
+            bin_dir = "/usr/bin"
 
         mime_icons_dir = os.path.join(root_dir, "icons/hicolor")
         icon_dir = os.path.join(root_dir, "icons/hicolor/128x128/apps")
-        bin_dir = os.path.join(root_dir, "bin")
         mime_dir = os.path.join(root_dir, "mime/packages")
         locale_dir = os.path.join(root_dir, "locale")
         apps_dir = os.path.join(root_dir, "applications")
