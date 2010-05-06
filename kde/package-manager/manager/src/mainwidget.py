@@ -43,6 +43,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self._selectedGroups = []
         self.searchButton.setIcon(KIcon("edit-find"))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
@@ -65,7 +66,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.typeCombo, SIGNAL("activated(int)"), self.typeFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), self.groupFilter)
         self.connect(self.groupList, SIGNAL("groupChanged()"), lambda:self.searchButton.setEnabled(False))
-        self.connect(self.selectAll, SIGNAL("toggled(bool)"), self.toggleSelectAll)
+        self.connect(self.selectAll, SIGNAL("clicked(bool)"), self.toggleSelectAll)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(int, QString, int, QString)"), self.emitStatusBarInfo)
         self.connect(self.statusUpdater, SIGNAL("selectedInfoChanged(QString)"), lambda message: self.emit(SIGNAL("selectionStatusChanged(QString)"), message))
         self.connect(self.statusUpdater, SIGNAL("finished()"), self.statusUpdated)
@@ -168,6 +169,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         waitCursor()
         self.packageList.model().setFilterPackages(packages)
         self.packageList.scrollToTop()
+        self.selectAll.setChecked(self.groupList.currentGroup() in self._selectedGroups)
         restoreCursor()
 
     def searchActivated(self):
@@ -257,6 +259,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def switchState(self, state, action=True):
         self.searchLine.clear()
         self.state.setState(state)
+        self._selectedGroups = []
         self.setActionButton()
         if action:
             self.state.stateAction()
@@ -273,13 +276,17 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.packageList.selectAll(packages)
 
     def toggleSelectAll(self, toggled):
+        self._last_packages = self.packageList.model().getFilteredPackages()
+
         if toggled:
-            if not self._last_packages:
-                self._last_packages = self.packageList.model().getFilteredPackages()
+            if self.groupList.currentGroup() not in self._selectedGroups:
+                self._selectedGroups.append(self.groupList.currentGroup())
             self.setReverseAll(self._last_packages)
         else:
-            self._last_packages = self.packageList.model().getFilteredPackages()
+            if self.groupList.currentGroup() in self._selectedGroups:
+                self._selectedGroups.remove(self.groupList.currentGroup())
             self.setSelectAll(self._last_packages)
+
         # A hacky solution to repaint the list to take care of selection changes
         # FIXME Later
         self.packageList.setFocus()
