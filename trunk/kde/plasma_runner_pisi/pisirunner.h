@@ -26,11 +26,6 @@
 
 class QWidget;
 
-
-/**
- * This class runs programs using the literal name of the binary, much as one
- * would use at a shell prompt.
- */
 class PisiRunner : public Plasma::AbstractRunner
 {
     Q_OBJECT
