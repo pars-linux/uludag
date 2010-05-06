@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kontact\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2010-05-05 16:21+0300\n"
+"PO-Revision-Date: 2010-05-06 13:04+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -465,7 +465,6 @@ msgstr "Başlamamış yapılacak ögelerini gizle"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:330
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideUnstartedBox)
 #: rc.cpp:155
-#, fuzzy
 #| msgid ""
 #| "Check this box if you don't want to see To-dos with a start date in the "
 #| "future."
@@ -473,7 +472,6 @@ msgid ""
 "Check this box if you do not want to see to-dos with a start date in the "
 "future."
 msgstr ""
-"Henüz başlamamış yapılacak ögelerini gizlemek için bu kutucuğu işaretleyin."
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:333
 #. i18n: ectx: property (text), widget (QCheckBox, mHideUnstartedBox)
@@ -639,7 +637,6 @@ msgstr "Takvimimden tatilleri göster"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:453
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHolidaysCal)
 #: rc.cpp:215
-#, fuzzy
 #| msgid ""
 #| "Enable this option to include birthdays from your calendar in the "
 #| "upcoming Events summary. This option is only available if you are using "
@@ -649,9 +646,6 @@ msgid ""
 "summary. These are events from your configured holiday region, or events "
 "with the \"Holiday\" category."
 msgstr ""
-"Yaklaşan Olaylar özetine takviminizdeki doğum günlerini dahil etmek için bu "
-"seçeneği etkinleştirin. Bu seçenek yalnızca eğer takviminizde Doğumgünleri "
-"kaynağını kullanıyorsanız işe yarar."
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:456
 #. i18n: ectx: property (text), widget (QCheckBox, mHolidaysCal)
@@ -1022,7 +1016,6 @@ msgstr "Henüz başlamamış yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:174
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideUnstartedBox)
 #: rc.cpp:422
-#, fuzzy
 #| msgid ""
 #| "Check this box if you don't want to see To-dos with a start date in the "
 #| "future."
@@ -1030,7 +1023,6 @@ msgid ""
 "Check this box if you do not want to see To-dos with a start date in the "
 "future."
 msgstr ""
-"Henüz başlamamış yapılacak ögelerini gizlemek için bu kutucuğu işaretleyin."
 
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:184
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mHideInProgressBox)
@@ -1041,7 +1033,6 @@ msgstr "Devam eden yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:187
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideInProgressBox)
 #: rc.cpp:431
-#, fuzzy
 #| msgid ""
 #| "Check this box if you don't want to see To-dos with a start date in the "
 #| "future."
@@ -1049,7 +1040,8 @@ msgid ""
 "Check this box if you do not want to see To-dos that have been started but "
 "are not yet completed."
 msgstr ""
-"Henüz başlamamış yapılacak ögelerini gizlemek için bu kutucuğu işaretleyin."
+"Başlamış fakat henüz tamamlanmamış yapılacak ögelerini görmek istemiyorsanız "
+"bu kutucuğu işaretleyin."
 
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:197
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mHideOverdueBox)
@@ -1060,7 +1052,6 @@ msgstr "Günü geçmiş yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:203
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideOverdueBox)
 #: rc.cpp:440
-#, fuzzy
 #| msgid ""
 #| "Check this box if you don't want to see To-dos with a start date in the "
 #| "future."
@@ -1068,7 +1059,8 @@ msgid ""
 "Check this box if you do not want to see To-dos that are past their due date "
 "but have not yet been completed."
 msgstr ""
-"Henüz başlamamış yapılacak ögelerini gizlemek için bu kutucuğu işaretleyin."
+"Son günü geçmiş fakat henüz tamamlanmamış yapılacak ögelerini görmek "
+"istemiyorsanız bu kutucuğu işaretleyin."
 
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:8
 #. i18n: ectx: property (windowTitle), widget (QWidget, ApptSummaryConfig_Base)
@@ -1097,7 +1089,6 @@ msgstr "Doğumgünü kaynağını kullanırken takvimdeki doğumgünlerini göst
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:131
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowBirthdaysFromCal)
 #: rc.cpp:509
-#, fuzzy
 #| msgid ""
 #| "Enable this option to include birthdays from your calendar in the "
 #| "upcoming Events summary. This option is only available if you are using "
@@ -1107,9 +1098,6 @@ msgid ""
 "events summary. This option is only available if you are using the Birthdays "
 "resource in your calendar."
 msgstr ""
-"Yaklaşan Olaylar özetine takviminizdeki doğum günlerini dahil etmek için bu "
-"seçeneği etkinleştirin. Bu seçenek yalnızca eğer takviminizde Doğumgünleri "
-"kaynağını kullanıyorsanız işe yarar."
 
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:141
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mShowAnniversariesFromCal)
@@ -1123,7 +1111,6 @@ msgstr ""
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:144
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowAnniversariesFromCal)
 #: rc.cpp:518
-#, fuzzy
 #| msgid ""
 #| "Enable this option to include anniversaries from your calendar in the "
 #| "Upcoming Events summary. This option is only available if you are using "
@@ -1133,9 +1120,6 @@ msgid ""
 "upcoming events summary. This option is only available if you are using the "
 "Birthdays resource in your calendar."
 msgstr ""
-"Yaklaşan Olaylar özetine takviminizdeki yıldönümü kutlamalarını dahil etmek "
-"için bu seçeneği etkinleştirin. Bu seçenek yalnızca eğer takviminizde "
-"Doğumgünleri kaynağını kullanıyorsanız işe yarar."
 
 #. i18n: file: plugins/summary/kontactsummary_part.rc:5
 #. i18n: ectx: Menu (settings)
@@ -1208,14 +1192,13 @@ msgid "Show sidebar items with icons and without text"
 msgstr "Yan çubuk ögelerini simgeli ve metin olmadan göster"
 
 #: src/iconsidepane.cpp:257
-#, fuzzy
 #| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid ""
 "Choose this option if you want the sidebar items to have icons without text."
 msgstr ""
-"Yapılması gereken gün bugün olan yapılacak ögelerini göstermek için bu "
-"kutucuğu işaretleyin."
+"Yan çubuk ögelerinin simgelerinde metin görünmesin istiyorsanız bu seçeneğin "
+"seçin."
 
 #: src/iconsidepane.cpp:260
 msgctxt "@action:inmenu"
@@ -1244,14 +1227,13 @@ msgid "Show sidebar items with icons and text"
 msgstr "Yan çubuk ögelerini simge ve metin ile göster"
 
 #: src/iconsidepane.cpp:281
-#, fuzzy
 #| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid ""
 "Choose this option if you want the sidebar items to have icons and text."
 msgstr ""
-"Yapılması gereken gün bugün olan yapılacak ögelerini göstermek için bu "
-"kutucuğu işaretleyin."
+"Yan çubuktaki ögelerin simgeleri ve metni olsun istiyorsanız bu seçeneği "
+"seçin."
 
 #: src/iconsidepane.cpp:289
 msgctxt "@action:inmenu"
@@ -1265,13 +1247,12 @@ msgid "Show large size sidebar icons"
 msgstr "Yan çubuktaki simgeleri büyük boyutta göster"
 
 #: src/iconsidepane.cpp:298
-#, fuzzy
 #| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be extra big."
 msgstr ""
-"Yapılması gereken gün bugün olan yapılacak ögelerini göstermek için bu "
-"kutucuğu işaretleyin."
+"Yan çubuk simgelerinin fazladan büyük olmasını istiyorsanız bu seçeneği "
+"seçin."
 
 #: src/iconsidepane.cpp:301
 msgctxt "@action:inmenu"
@@ -1285,13 +1266,12 @@ msgid "Show normal size sidebar icons"
 msgstr "Yan çubuktaki simgeleri normal boyutta göster"
 
 #: src/iconsidepane.cpp:310
-#, fuzzy
 #| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be normal size."
 msgstr ""
-"Yapılması gereken gün bugün olan yapılacak ögelerini göstermek için bu "
-"kutucuğu işaretleyin."
+"Yan çubuk simgelerinin normal boyutta olmasını istiyorsanız bu seçeneği "
+"seçin."
 
 #: src/iconsidepane.cpp:313
 msgctxt "@action:inmenu"
@@ -1305,13 +1285,12 @@ msgid "Show small size sidebar icons"
 msgstr "Yan çubuktaki simgeleri küçük boyutta göster"
 
 #: src/iconsidepane.cpp:322
-#, fuzzy
 #| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be extra small."
 msgstr ""
-"Yapılması gereken gün bugün olan yapılacak ögelerini göstermek için bu "
-"kutucuğu işaretleyin."
+"Yan çubuk simgelerinin fazladan küçük olmasını istiyorsanız bu seçeneği "
+"seçin."
 
 #: src/kcmkontact.cpp:97
 msgctxt "@title"
@@ -1340,11 +1319,10 @@ msgid "Tobias Koenig"
 msgstr "Tobias Koenig"
 
 #: src/kcmkontact.cpp:118
-#, fuzzy
 #| msgid "Select the plugin summaries to show on the summary page."
 msgctxt "@info:tooltip"
 msgid "Select the initial plugin to use on each start"
-msgstr "Özet sayfasında göstermek için özet eklentilerini seçin."
+msgstr "Her açılışta ilk kullanılacak eklentiyi seçin"
 
 #: src/kcmkontact.cpp:121
 msgctxt "@info:whatsthis"
