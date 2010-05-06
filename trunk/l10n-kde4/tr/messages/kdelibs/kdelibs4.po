@@ -1309,7 +1309,7 @@ msgstr ""
 "olabilir.</p>\n"
 "<p>Eğer hatalı hecelenmiş bir sözcük değilse, <b>Sözlüğe Eklemek</b> için "
 "tıklayın. Bilinmeyen bir sözcüğü sözlüğe eklemek istemiyorsanız fakat olduğu "
-"gibi bırakılmasını istiyorsanız  <b>Yoksay</b> veya <b>Tümünü Yoksa</b>.</"
+"gibi bırakılmasını istiyorsanız  <b>Yoksay</b> veya <b>Tümünü Yoksay</b>.</"
 "p>\n"
 "<p>Bununla birlikte, eğer sözcük hatalı hecelenmişse, aşağıdaki listeden "
 "doğrusunu bularak değiştirebilirsiniz. Değiştirilecek doğru bir seçenek "
@@ -1435,7 +1435,7 @@ msgstr ""
 "tekrar yanlışlıkla tespit edilmesini engellemek istiyorsanız buraya tıklayın."
 " "
 "Eğer olduğu gibi bırakıp sözlüğe eklemek istemiyorsanız <b>Yoksa</b> "
-"veya <b>Tümünü Yoksa</b> düğmesine basın.</p>\n"
+"veya <b>Tümünü Yoksay</b> düğmesine basın.</p>\n"
 "</qt>"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:101
@@ -1627,7 +1627,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_skipAllBtn)
 #: rc.cpp:686 rc.cpp:1109
 msgid "I&gnore All"
-msgstr "Tümünü Yoksa"
+msgstr "Tümünü Yoksay"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:221
 #. i18n: ectx: property (text), widget (QPushButton, m_suggestBtn)
