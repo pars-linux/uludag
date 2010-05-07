@@ -38,9 +38,6 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
 
     // Appear for 2 seconds and vanish
     m_osd->setTimeout(2);
-
-    // Set fake transparency opacity
-    m_osd->setOpacity(0.9f);
 }
 
 
