@@ -3,7 +3,6 @@
 # package-manager paketi için Türkçe çeviriler.
 # Copyright (C) 2005-2010 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the PiSi KGA package.
-
 # Gökmen Göksel <gokmen@pardus.org.tr>, 2010.
 # Faik Uygur <faik@pardus.org.tr>, 2009, 2010.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
@@ -18,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: .tmp/ui_appitem.py:57
 msgid "Application"
@@ -63,27 +62,17 @@ msgstr "Durum:"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:330
 msgid "&Cancel"
@@ -396,21 +385,15 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
 
 #: .tmp/statemanager.py:104 .tmp/ui_basketdialog.py:101
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
 #: .tmp/statemanager.py:105
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Seçili paket(ler)in ayrıca kaldırılacak olan ters bağımlılıkları:"
 
 #: .tmp/statemanager.py:106
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
 
 #: .tmp/statemanager.py:129 .tmp/mainwindow_kde4.py:78
@@ -419,8 +402,7 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: .tmp/statemanager.py:131
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Şu an sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: .tmp/statemanager.py:134
@@ -436,11 +418,8 @@ msgid "in your basket."
 msgstr "bulunuyor."
 
 #: .tmp/statemanager.py:159
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: .tmp/statemanager.py:160 .tmp/statemanager.py:168
 msgid "Conflict Error"
@@ -513,12 +492,8 @@ msgid "Not a valid repository name"
 msgstr "Geçerli bir depo ismi değil"
 
 #: .tmp/settingsdialog.py:212
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar "
-"deneyin.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar deneyin.</qt>"
 
 #: .tmp/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
@@ -526,7 +501,7 @@ msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
@@ -569,12 +544,8 @@ msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
 #: .tmp/mainwidget.py:210
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
-"Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. "
-"Lütfen depo bilgilerini güncellemeyi deneyin."
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. Lütfen depo bilgilerini güncellemeyi deneyin."
 
 #: .tmp/mainwindow_kde4.py:99 .tmp/mainwindow.py:112
 msgid "Show Installable Packages"
@@ -657,12 +628,8 @@ msgid "Operation Summary"
 msgstr "İşlem Özeti"
 
 #: .tmp/ui_summarydialog.py:50
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya daha sonra "
-"uygulama menüsünden çalıştırabilirsiniz."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya daha sonra uygulama menüsünden çalıştırabilirsiniz."
 
 #: .tmp/ui_summarydialog.py:51
 msgid "&Ok"
@@ -727,27 +694,17 @@ msgstr "Paket Yöneticisi Yardım"
 #~ msgstr "Sil"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-#~ "this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm "
-#~ "paketleri seç</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm paketleri seç</p></body></html>"
 
 #~ msgid "Maintainer"
 #~ msgstr "Bakıcı"
