@@ -34,7 +34,7 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
     :KDEDModule(parent)
 {
     // Create an OSD instance
-    m_kmix = new KMixOSDWidget();
+    // m_kmix = new KMixOSDWidget();
     m_kosd = new KOSDWidget();
 
     // Appear for 2 seconds and vanish
@@ -48,19 +48,20 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
 KOSD::~KOSD()
 {
     delete m_kosd;
-    delete m_kmix;
+    //delete m_kmix;
 }
 
 
 // Public slot (exposed via DBUS)
-void KOSD::showOSD(QString icon, QString label, int percent, QString type)
+//void KOSD::showOSD(QString icon, QString label, int percent, QString type)
+void KOSD::showOSD(QString icon, QString label, int percent)
 {
     if (percent < 0)
         percent = 0;
     else if (percent > 100)
         percent = 100;
 
-    if (type == "kosd")
+    //if (type == "kosd")
         m_kosd->display(icon, label, percent);
     /*
     else if (type == "kmix")
