@@ -8,18 +8,19 @@
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: katepart4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-14 01:21+0200\n"
-"PO-Revision-Date: 2009-11-04 18:18+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-07 15:14+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: dialogs/katedialogs.cpp:234 dialogs/katedialogs.cpp:639
@@ -265,7 +266,7 @@ msgstr "Kendi Başınasınız"
 #: vimode/katevinormalmode.cpp:965 vimode/katevimodebase.cpp:594
 #, kde-format
 msgid "Nothing in register %1"
-msgstr ""
+msgstr "%1 yazmacında bir şey yok"
 
 #: vimode/katevinormalmode.cpp:1234
 #, kde-format
@@ -632,13 +633,12 @@ msgstr "Arama çubuğu arka ucu ve ön ucu"
 
 #: utils/kateglobal.cpp:100
 msgid "Michel Ludwig"
-msgstr ""
+msgstr "Michel Ludwig"
 
 #: utils/kateglobal.cpp:100
-#, fuzzy
 #| msgid "On-The-Fly Spellcheck"
 msgid "On-the-fly spell checking"
-msgstr "Yazarken Yazım Denetimi"
+msgstr "Yazarken yazım denetimi"
 
 #: utils/kateglobal.cpp:102 tests/katetest.cpp:711
 msgid "Matteo Merli"
@@ -2378,7 +2378,7 @@ msgstr "Belge kaydedilirken hangi satır sonlandırmanın seçileceği"
 
 #: view/kateview.cpp:574
 msgid "Add &BOM"
-msgstr ""
+msgstr "&BOM Ekle"
 
 #: view/kateview.cpp:576
 msgid ""
@@ -3586,6 +3586,7 @@ msgstr "Otomatik dosya sonu &algılanması"
 #: rc.cpp:290
 msgid "Enable byte order marker (if not overridden by other settings)"
 msgstr ""
+"Bayt sırası işaretçisini etkinleştir (diğer ayarlarda geçersiz kılınmamışsa)"
 
 #. i18n: file: dialogs/opensaveconfigwidget.ui:108
 #. i18n: ectx: property (title), widget (QGroupBox, gbCleanups)
@@ -4132,7 +4133,7 @@ msgstr "&Otomatik tamamlama etkin"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:527
 msgid "Minimal word length to complete:"
-msgstr ""
+msgstr "Tamamlanacak olan kelimenin asgari uzunluğu:"
 
 #. i18n: file: dialogs/appearanceconfigwidget.ui:24
 #. i18n: ectx: property (text), widget (QLabel, lblDynamicWordWrapIndicators)
@@ -5499,12 +5500,11 @@ msgstr "GNU Assembler"
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/grammar.xml:6
 #: rc.cpp:1212
-#, fuzzy
 #| msgctxt "Language"
 #| msgid "KDev-PG Grammar"
 msgctxt "Language"
 msgid "KDev-PG[-Qt] Grammar"
-msgstr "KDev-PG Dilbilgisi"
+msgstr "KDev-PG[-Qt] Dil Bilgisi"
 
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/haskell.xml:4
