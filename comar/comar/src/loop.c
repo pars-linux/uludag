@@ -1,6 +1,6 @@
 /*
  *
- * Copyright (c) 2005-2009, TUBITAK/UEKAE
+ * Copyright (c) 2005-2010, TUBITAK/UEKAE
  *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
@@ -349,6 +349,9 @@ loop_exec()
 
     log_info("Listening for connections...\n");
 
+    /* This clears any pending messages avoiding weird timeouts on some systems
+     * with dbus >= 1.2.22
+     */
     while (dbus_connection_dispatch(bus_conn) == DBUS_DISPATCH_DATA_REMAINS);
 
     while (1) {
