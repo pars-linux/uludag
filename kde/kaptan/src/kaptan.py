@@ -66,13 +66,14 @@ class Kaptan(QtGui.QWidget):
         self.createWidgets(self.screens)
 
         self.screenId = []
-        for each in self.screens:
-            title = each.Widget.title.toString()
+        for screen in self.screens:
+            title = screen.Widget.title.toString()
+            desc = screen.Widget.desc.toString()
             self.screenId.append(title)
 
-            if self.screens.index(each) == 0:
+            if self.screens.index(screen) == 0:
                 self.menuText += self.putBold(title)
-                self.ui.screenTitle.setText(title)
+                self.ui.screenTitle.setText(desc)
             else:
                 self.menuText += self.putBr(title)
 
@@ -129,22 +130,39 @@ class Kaptan(QtGui.QWidget):
         if id:
             self.stackMove(id)
 
+    def getNextWidgetDesc(self, id):
+        self.ui.mainStack.setCurrentIndex(id+1)
+        print dir(self.ui.mainStack)
+        desc = self.ui.mainStack.currentWidget().desc.toString()
+        self.ui.mainStack.setCurrentIndex(id)
+        return desc
+
+    def getPreviousWidgetDesc(self, id):
+        self.ui.mainStack.setCurrentIndex(id-1)
+        print dir(self.ui.mainStack)
+        desc = self.ui.mainStack.currentWidget().desc.toString()
+        self.ui.mainStack.setCurrentIndex(id)
+        return desc
+
     # execute next step
     def slotNext(self,dryRun=False):
         self.menuText = ""
-        curIndex = self.ui.mainStack.currentIndex() +1
+        curIndex = self.ui.mainStack.currentIndex() + 1
 
         for each in self.screenId:
             i = self.screenId.index(each)
             if  curIndex < len(self.screenId):
                 if i == curIndex:
                     self.menuText += self.putBold(self.screenId[i])
+
+                    # Set screen title
+                    self.ui.screenTitle.setText(self.getNextWidgetDesc(i))
                 else:
                     self.menuText += self.putBr(self.screenId[i])
 
         self.ui.labelMenu.setText(self.menuText)
-
         _w = self.ui.mainStack.currentWidget()
+
         ret = _w.execute()
         if ret:
             self.stackMove(self.getCur(self.moveInc))
@@ -159,6 +177,9 @@ class Kaptan(QtGui.QWidget):
             if i <= len(self.screenId) and not i == 0:
                 if i == curIndex:
                     self.menuText += self.putBold(self.screenId[i -1])
+
+                    # Set screen title
+                    self.ui.screenTitle.setText(self.getPreviousWidgetDesc(i))
                 else:
                     self.menuText += self.putBr(self.screenId[i -1])
 
@@ -166,6 +187,9 @@ class Kaptan(QtGui.QWidget):
         self.ui.labelMenu.setText(self.menuText)
 
         _w = self.ui.mainStack.currentWidget()
+        # Set screen title
+        self.ui.screenTitle.setText(_w.desc.toString())
+
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
@@ -174,7 +198,8 @@ class Kaptan(QtGui.QWidget):
         return unicode("  ") + item + " "#"<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("  ") + item + " "# "</b><br>"
+        return "<b>" + unicode("  ") + item + " </b>"# "</b><br>"
+
 
     # move to id numbered stack
     def stackMove(self, id):
