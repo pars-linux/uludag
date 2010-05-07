@@ -55,8 +55,9 @@ Bugzilla üzerinden Pardus gönüllü takibi
         --
         Pardus Mentor Ekibi
 
-   #. Adaya quiz soruları gönderilirken hatası kullanıcılara görünmez hale getirilir.
+    #. Adaya quiz soruları gönderilirken hatası kullanıcılara görünmez hale getirilir.
     #. Aday kabul veya reddedilene kadar hatası gizli olarak kalır.
+
 #. Adaylar soruları çözmeye başladıklarına dair onayı buzilla'ya yorum olarak gönderirler.
 #. Onaydan yaklaşık 10 gün sonra adaylar cevaplarını bugzilla'ya yorum olarak gönderirler.
 #. Eğer adaylara bu 10 gün içerisinde bugzilla üzerinden ulaşılamıyor ise hatası GEÇERSİZ olarak işaretlenir ve ilgili stok yorum Pardus mentor ekibi tarafından yazılır..
@@ -85,6 +86,7 @@ Bugzilla üzerinden Pardus gönüllü takibi
         #. Aday mentorun belirtmiş olduğu sürede bu verilen küçük işi yerine getiremez ise hatası GEÇERSİZ olarak işaretlenir ve ilgili yorum mentoru arafından yazılır. Mentor adayın ne kadar süre sonra tekrar bşvurabileceğini de yoruma ekler. (playground svn izinleri de kapatılır)
         #. Aday verilen küçük iş(ler)i mentor'un istediği süre içerisinde yerine getirebilmiş ise:
             #. Aday çırak olarak  adlandırılacaktır:
+
             Çıraklık süreci boyunca:
                 #. Çıraklık süresinin bitimi mentoruna bağlıdır.
                 #. Sürümlerin "stable" izinleri dışında izinleri çırağa verilecektir.
