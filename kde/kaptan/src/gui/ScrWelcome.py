@@ -22,7 +22,7 @@ import subprocess
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Welcome")
-    desc = ki18n("Welcome to Kaptan")
+    desc = ki18n("Welcome to Kaptan 2009.2")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

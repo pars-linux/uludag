@@ -34,7 +34,7 @@
     </spacer>
    </item>
    <item row="1" column="1" colspan="2">
-    <widget class="QLabel" name="label">
+    <widget class="QLabel" name="title">
      <property name="font">
       <font>
        <family>URW Gothic L</family>

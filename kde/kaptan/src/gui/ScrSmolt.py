@@ -29,7 +29,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings["profileSend"] = False
 
     title = kdecore.ki18n("Smolt")
-    desc = kdecore.ki18n("Smolt Description")
+    desc = kdecore.ki18n("Help Pardus Improve!")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

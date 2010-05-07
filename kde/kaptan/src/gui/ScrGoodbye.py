@@ -23,7 +23,7 @@ sys.path.append('/usr/kde/4/share/apps/migration/')
 from migration.utils import partition
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Apply Settings")
+    title = ki18n("More")
     desc = ki18n("Congratulations!")
 
     def __init__(self, *args):

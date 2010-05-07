@@ -36,8 +36,8 @@ import gui.tools as tools
 #from urlparse import urljoin
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Welcome")
-    desc = ki18n("Welcome to Kaptan")
+    title = ki18n("Summary")
+    desc = ki18n("Save Your Settings")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

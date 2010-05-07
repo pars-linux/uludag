@@ -20,8 +20,8 @@ from gui.ScreenWidget import ScreenWidget
 from gui.networkWidget import Ui_networkWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Network Manager")
-    desc = ki18n("Network Manager")
+    title = ki18n("Network")
+    desc = ki18n("Connect to the Internet")
 
     running = False
     proc = QProcess()

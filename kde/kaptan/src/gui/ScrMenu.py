@@ -23,8 +23,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings["hasChanged"] = False
 
     # Set title and description for the information widget
-    title = ki18n("Some catchy title about styles")
-    desc = ki18n("Some catchy description about styles")
+    title = ki18n("Menu")
+    desc = ki18n("Choose a Menu Style")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
