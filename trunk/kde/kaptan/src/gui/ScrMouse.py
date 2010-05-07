@@ -26,8 +26,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings["hasChanged"] = False
 
     # title and description at the top of the dialog window
-    title = ki18n("Mouse Settings")
-    desc = ki18n("Configure your mouse")
+    title = ki18n("Mouse")
+    desc = ki18n("Setup Mouse Behavior")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

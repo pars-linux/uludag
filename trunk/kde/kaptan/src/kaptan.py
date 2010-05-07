@@ -61,15 +61,18 @@ class Kaptan(QtGui.QWidget):
         self.moveInc = 1
         self.menuText = ""
         self.config = KConfig("kaptanrc")
+
+        # Add screens to StackWidget
         self.createWidgets(self.screens)
 
         self.screenId = []
         for each in self.screens:
-            title = each.Widget().windowTitle()
+            title = each.Widget.title.toString()
             self.screenId.append(title)
 
             if self.screens.index(each) == 0:
                 self.menuText += self.putBold(title)
+                self.ui.screenTitle.setText(title)
             else:
                 self.menuText += self.putBr(title)
 
@@ -168,10 +171,10 @@ class Kaptan(QtGui.QWidget):
         self.moveInc = 1
 
     def putBr(self, item):
-        return unicode("  ") + item + "<br>"
+        return unicode("  ") + item + " "#"<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("  ") + item + "</b><br>"
+        return "<b>" + unicode("  ") + item + " "# "</b><br>"
 
     # move to id numbered stack
     def stackMove(self, id):

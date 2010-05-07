@@ -31,8 +31,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings["hasChanged"] = False
 
     # title and description at the top of the dialog window
-    title = ki18n("Insert some catchy title about wallpapers..")
-    desc = ki18n("Wonderful, awesome, superb wallpapers! \m/")
+    title = ki18n("Wallpaper")
+    desc = ki18n("Choose a Wallpaper")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)

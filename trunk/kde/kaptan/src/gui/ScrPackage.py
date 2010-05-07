@@ -26,8 +26,8 @@ import comar
 isUpdateOn = False
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = ki18n("Package Manager")
-    desc = ki18n("Configure package manager settings")
+    title = ki18n("Packages")
+    desc = ki18n("Install / Remove Programs")
 
     # min update time
     updateTime = 12

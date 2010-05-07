@@ -24,8 +24,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
     screenSettings = {}
     screenSettings["hasChanged"] = True
     # Set title and description for the information widget
-    title = ki18n("Some catchy title about desktop search")
-    desc = ki18n("Some catchy description desktop search")
+    title = ki18n("Search")
+    desc = ki18n("Easy Desktop Search")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
