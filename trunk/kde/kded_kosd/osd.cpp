@@ -59,7 +59,7 @@ using namespace std;
 OSD::OSD()
     : QWidget(0, Qt::Window | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint),
     m_backPanel(this), m_meter(this), m_timer(this),
-    m_hPos(50), m_vPos(70), m_scaleFactor(0.3f),
+    m_hPos(50), m_vPos(70), m_scaleFactor(0.3f), m_opacity(0.9f),
     m_lockPrimaryScreen(false), m_isVisible(false)
 {
     // Load theme
