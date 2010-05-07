@@ -138,6 +138,7 @@
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/84)
     * bölünmüş kde paketlerinin review edilmesi (-)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
+    * NetworkManager ailesinin entegrasyonu (/60)
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (+)
