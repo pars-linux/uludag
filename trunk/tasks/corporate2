@@ -74,7 +74,6 @@
     * aRts desteği kapalı, KDE'de ses/uyarı tonlarını denetle, harici oynatıcı (+)
     * Font ayarlarına bir kere girince ayarlar değişiyor (+) [Fatih Aşıcı]
     * QtCurve-KDE3 ile kurumsal sürüme uygun bir stil tasarlanması (/50)
-    * libnotify API breakage (X)
     * kdm temasının elden geçirilmesi (-)
 
 * KDE (Gökçen Eraslan)
@@ -104,7 +103,6 @@
     * VGA bilgilerinin doğruluğunun gözden geçirilmesi (+)
     * /etc/fstab'da yer almayan disklerin bağlanamaması sorununa çözüm (+)
     * DMI gizleyince %9 çıkıyor (+)
-    * Common folders ile disks'i birleştir (-)
 
 * 64bit (Ozan Çağlayan)
     * binutils, gcc, glibc'nin üzerinden geçilerek unknown sorunu ve lib64 pathlerinin düzeltilmesi (+) [Onur Küçük]
