@@ -349,6 +349,8 @@ loop_exec()
 
     log_info("Listening for connections...\n");
 
+    while (dbus_connection_dispatch(bus_conn) == DBUS_DISPATCH_DATA_REMAINS);
+
     while (1) {
         struct pollfd fds[MAX_FDS];
         DBusWatch *watches[MAX_WATCHES];
