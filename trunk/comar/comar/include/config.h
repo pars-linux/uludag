@@ -28,7 +28,7 @@
 #define CONFIG_H
 
 #ifndef VERSION
-#define VERSION "3.0.0"
+#define VERSION "2.9.9"
 #endif
 
 #ifndef DBUS_SERVER_ADDRESS
