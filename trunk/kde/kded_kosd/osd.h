@@ -18,8 +18,8 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#ifndef KOSDWIDGET_H
-#define KOSDWIDGET_H
+#ifndef OSD_H
+#define OSD_H
 
 #include <QTimer>
 #include <QDesktopWidget>
@@ -27,12 +27,12 @@
 
 #include <KDE/Plasma/FrameSvg>
 
-class KOSDWidget : public QWidget
+class OSD : public QWidget
 {
     Q_OBJECT
     public:
-        KOSDWidget();
-        ~KOSDWidget();
+        OSD();
+        ~OSD();
 
         void setSize(unsigned int percent);
         void setPosition(unsigned int xPercent, unsigned int yPercent);
@@ -81,4 +81,4 @@ class KOSDWidget : public QWidget
         QPixmap m_screenshot;
 };
 
-#endif // KOSDWIDGET_H
+#endif // OSD_H

@@ -34,26 +34,23 @@ KOSD::KOSD(QObject* parent, const QList<QVariant>& l)
     :KDEDModule(parent)
 {
     // Create an OSD instance
-    // m_kmix = new KMixOSDWidget();
-    m_kosd = new KOSDWidget();
+    m_osd = new OSD();
 
     // Appear for 2 seconds and vanish
-    m_kosd->setTimeout(2);
+    m_osd->setTimeout(2);
 
-    // Set painter's default opacity for non-composite desktop
-    m_kosd->setOpacity(0.9f);
+    // Set fake transparency opacity
+    m_osd->setOpacity(0.9f);
 }
 
 
 KOSD::~KOSD()
 {
-    delete m_kosd;
-    //delete m_kmix;
+    delete m_osd;
 }
 
 
 // Public slot (exposed via DBUS)
-//void KOSD::showOSD(QString icon, QString label, int percent, QString type)
 void KOSD::showOSD(QString icon, QString label, int percent)
 {
     if (percent < 0)
@@ -61,12 +58,7 @@ void KOSD::showOSD(QString icon, QString label, int percent)
     else if (percent > 100)
         percent = 100;
 
-    //if (type == "kosd")
-        m_kosd->display(icon, label, percent);
-    /*
-    else if (type == "kmix")
-        m_kmix->display(icon, label, percent);
-    */
+    m_osd->display(icon, label, percent);
 }
 
 #include "kosd.moc"

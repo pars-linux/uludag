@@ -2,28 +2,7 @@
 A kded module for displaying plasma themed OSD's on KDE4.
 
 Based on the work accomplished by Marcel Hasler, see:
+http://kde-apps.org/content/show.php/KOSD?content=81457
 
 KDED modularization and cleaning was done by Ozan Çağlayan
 
-What does it contain?
----------------------
-
-It currently contains 2 separate OSD implementations:
-
-    - kosd_osd: Nice Plasma themed with icon/label support borrowed from the KOSD project
-                (http://kde-apps.org/content/show.php/KOSD?content=81457)
-    - kmix_osd: A simple Plasma themed OSD meter with icon support borrowed from KMix
-                (http://websvn.kde.org/branches/KDE/4.4/kdemultimedia/kmix/osdwidget.cpp?view=markup)
-
-How to use it?
---------------
-
-Simply open a D-Bus session bus connection and call showOSD(string iconName, string label, int percent)
-method on the org.kde.KOSD interface:
-
-    /*
-    currentVolume = getCurrentVolume();
-    QDBusConnection dbus(QDBusConnection::sessionBus());
-    QDBusInterface iface("org.kde.kded", "/modules/kosd", "org.kde.KOSD", dbus);
-    iface.call("showOSD", "audio-volume-high", "some-label", currentVolume);
-    */
