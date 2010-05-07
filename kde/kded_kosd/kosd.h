@@ -21,8 +21,7 @@
 #ifndef KOSD_H
 #define KOSD_H
 
-#include "kosd_osd.h"
-#include "kmix_osd.h"
+#include "osd.h"
 #include <kdedmodule.h>
 
 
@@ -39,14 +38,11 @@ class KOSD: public KDEDModule
          *  @param icon determines the icon to show in the OSD widget
          *  @param label determines the label to show in the OSD widget
          *  @param percent determines the progress ratio to be showed in the OSD widget
-         *  @param type determines the OSD type (kmix or kosd)
          */
-        //Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent, QString type);
         Q_SCRIPTABLE void showOSD(QString icon, QString label, int percent);
 
     private:
-        KOSDWidget *m_kosd;     // KOSDWidget instance
-        KMixOSDWidget *m_kmix;  // KMixOSDWidget instance
+        OSD *m_osd;     // OSD instance
 };
 
 #endif // KOSD_H

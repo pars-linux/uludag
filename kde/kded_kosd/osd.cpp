@@ -18,7 +18,7 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************/
 
-#include "kosd_osd.h"
+#include "osd.h"
 
 #include <QApplication>
 #include <QWidget>
@@ -56,7 +56,7 @@ using namespace std;
 
 #define FONT_BASE_SIZE 65
 
-KOSDWidget::KOSDWidget()
+OSD::OSD()
     : QWidget(0, Qt::Window | Qt::WindowStaysOnTopHint | Qt::FramelessWindowHint | Qt::X11BypassWindowManagerHint),
     m_backPanel(this), m_meter(this), m_timer(this),
     m_hPos(50), m_vPos(70), m_scaleFactor(0.3f),
@@ -77,13 +77,13 @@ KOSDWidget::KOSDWidget()
 }
 
 
-KOSDWidget::~KOSDWidget()
+OSD::~OSD()
 {
     //
 }
 
 
-void KOSDWidget::setSize(unsigned int percent)
+void OSD::setSize(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -95,7 +95,7 @@ void KOSDWidget::setSize(unsigned int percent)
 }
 
 
-void KOSDWidget::setPosition(unsigned int xPercent, unsigned int yPercent)
+void OSD::setPosition(unsigned int xPercent, unsigned int yPercent)
 {
     if (xPercent > 100)
         xPercent = 100;
@@ -107,7 +107,7 @@ void KOSDWidget::setPosition(unsigned int xPercent, unsigned int yPercent)
 }
 
 
-void KOSDWidget::setOpacity(unsigned int percent)
+void OSD::setOpacity(unsigned int percent)
 {
     if (percent > 100)
         percent = 100;
@@ -117,13 +117,13 @@ void KOSDWidget::setOpacity(unsigned int percent)
 }
 
 
-void KOSDWidget::setPrimaryScreenLock(bool lock)
+void OSD::setPrimaryScreenLock(bool lock)
 {
     m_lockPrimaryScreen = lock;
 }
 
 
-void KOSDWidget::setTimeout(unsigned int seconds)
+void OSD::setTimeout(unsigned int seconds)
 {
     if (seconds < 1)
         seconds = 1;
@@ -132,7 +132,7 @@ void KOSDWidget::setTimeout(unsigned int seconds)
 }
 
 
-void KOSDWidget::updatePosition()
+void OSD::updatePosition()
 {
     QRect rect;
     if (m_lockPrimaryScreen)
@@ -146,7 +146,7 @@ void KOSDWidget::updatePosition()
 }
 
 
-void KOSDWidget::updateLayout()
+void OSD::updateLayout()
 {
     // OSD
     m_width = (unsigned int)(OSD_BASE_WIDTH * m_scaleFactor);
@@ -184,7 +184,7 @@ void KOSDWidget::updateLayout()
 }
 
 
-void KOSDWidget::display(QString icon, QString text, unsigned int percent)
+void OSD::display(QString icon, QString text, unsigned int percent)
 {
     this->updatePosition();
 
@@ -207,14 +207,14 @@ void KOSDWidget::display(QString icon, QString text, unsigned int percent)
 }
 
 
-void KOSDWidget::slotHide()
+void OSD::slotHide()
 {
     this->hide();
     m_isVisible = false;
 }
 
 
-void KOSDWidget::slotReloadTheme()
+void OSD::slotReloadTheme()
 {
     // Load back panel
     m_backPanel.setImagePath("dialogs/background");
@@ -230,7 +230,7 @@ void KOSDWidget::slotReloadTheme()
 }
 
 
-void KOSDWidget::paintEvent(QPaintEvent*)
+void OSD::paintEvent(QPaintEvent*)
 {
     QPainter painter(this);
     painter.setRenderHint(QPainter::Antialiasing);
@@ -255,4 +255,4 @@ void KOSDWidget::paintEvent(QPaintEvent*)
     painter.drawText(m_labelRect, Qt::AlignCenter | Qt::TextWordWrap, m_labelText);
 }
 
-#include "kosd_osd.moc"
+#include "osd.moc"
