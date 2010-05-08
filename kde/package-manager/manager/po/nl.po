@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-05 15:24+0300\n"
-"PO-Revision-Date: 12/01/10 22:19\n"
+"PO-Revision-Date: 2010-05-08 21:44+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ui_appitem.py:57
@@ -102,9 +102,8 @@ msgid "&OK"
 msgstr "&OK"
 
 #: .tmp/ui_settingsdialog.py:331
-#, fuzzy
 msgid "Package list"
-msgstr "Pakketgrootte:"
+msgstr "Pakketlijst"
 
 #: .tmp/ui_settingsdialog.py:332
 msgid "&Show only desktop applications"
@@ -112,7 +111,7 @@ msgstr "&Toon alleen desktop toepassingen"
 
 #: .tmp/ui_settingsdialog.py:333
 msgid "Show Component information "
-msgstr ""
+msgstr "Componentinformatie tonen"
 
 #: .tmp/ui_settingsdialog.py:334
 msgid "&Enable system tray icon"
@@ -132,15 +131,15 @@ msgstr " min"
 
 #: .tmp/ui_settingsdialog.py:339
 msgid "Install updates automatically"
-msgstr "Installeer updates automatisch"
+msgstr "Opwaarderingen automatisch installeren"
 
 #: .tmp/ui_settingsdialog.py:340
 msgid "Hide system tray if there is no update."
-msgstr ""
+msgstr "Systeemvakpictogram verbergen bij geen opwaarderingen."
 
 #: .tmp/ui_settingsdialog.py:341
 msgid "Enable &periodic update check"
-msgstr "&Periodieke controle van updates inschakelen"
+msgstr "&Periodieke controle van opwaarderingen inschakelen"
 
 #: .tmp/ui_settingsdialog.py:342
 msgid "Bandwidth limit"
@@ -164,7 +163,7 @@ msgstr "Al&gemene instellingen"
 
 #: .tmp/ui_settingsdialog.py:347
 msgid "Update check"
-msgstr "Controle updates"
+msgstr "Opwaaderingen controleren"
 
 #: .tmp/ui_settingsdialog.py:348
 msgid "&Use hard disk cache for downloaded software"
@@ -270,7 +269,7 @@ msgstr "Beschrijving:"
 
 #: .tmp/packagedelegate.py:61
 msgid "Website:"
-msgstr ""
+msgstr "Website:"
 
 #: .tmp/packagedelegate.py:62
 msgid "Release:"
@@ -286,7 +285,7 @@ msgstr "Pakketgrootte:"
 
 #: .tmp/packagedelegate.py:65
 msgid "Installed Version:"
-msgstr ""
+msgstr "Geïnstalleerde versie:"
 
 #: .tmp/main.py:47
 msgid "Show main window"
@@ -354,7 +353,7 @@ msgstr "Verwijder pakket(ten)"
 
 #: .tmp/statemanager.py:81
 msgid "Upgrade Package(s)"
-msgstr "Opwaardeer pakket(ten)"
+msgstr "Pakket(ten) opwaarderen"
 
 #: .tmp/statemanager.py:84
 msgid "installed"
@@ -530,17 +529,16 @@ msgstr ""
 "opnieuw.</qt>"
 
 #: .tmp/about.py:26
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Onwikkelaar"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -548,21 +546,19 @@ msgstr "Faik Uygur"
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Eerste auteur"
 
 #: .tmp/mainwidget.py:38
-#, fuzzy
 msgid "All Updates"
-msgstr "Update"
+msgstr "Alle opwaarderingen"
 
 #: .tmp/mainwidget.py:39
-#, fuzzy
 msgid "Security Updates"
-msgstr "Toon updates"
+msgstr "Beveiligingsopwaarderingen"
 
 #: .tmp/mainwidget.py:40
 msgid "Critical Updates"
-msgstr ""
+msgstr "Kritieke opwaarderingen"
 
 #: .tmp/mainwidget.py:203 .tmp/pm-install.py:90
 msgid "Network Error"
@@ -606,29 +602,27 @@ msgstr "Alles"
 
 #: .tmp/tray.py:170 .tmp/tray.py:199
 msgid "Update"
-msgstr "Update"
+msgstr "Opwaarderen"
 
 #: .tmp/tray.py:174 .tmp/mainwindow.py:99
 msgid "Quit"
-msgstr ""
+msgstr "Afsluiten"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "Updates"
-msgstr "Update"
+msgstr "Opwaarderingen"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Er zijn <b>%1</b> updates beschikbaar!"
+msgstr "Er zijn %1 opwaarderingen beschikbaar!"
 
 #: .tmp/tray.py:215
 msgid "There are <b>%1</b> updates available!"
-msgstr "Er zijn <b>%1</b> updates beschikbaar!"
+msgstr "Er zijn <b>%1</b> opwaarderingen beschikbaar!"
 
 #: .tmp/tray.py:216
 msgid "Show Updates"
-msgstr "Toon updates"
+msgstr "Opwaarderingen tonen"
 
 #: .tmp/tray.py:216
 msgid "Ignore"
@@ -684,35 +678,32 @@ msgstr "&Ok"
 
 #: .tmp/mainwindow.py:95
 msgid "File"
-msgstr ""
+msgstr "Bestand"
 
 #: .tmp/mainwindow.py:96
-#, fuzzy
 msgid "Settings"
-msgstr "uitpakken"
+msgstr "Instellingen"
 
 #: .tmp/mainwindow.py:97 .tmp/mainwindow.py:103
-#, fuzzy
 msgid "Help"
-msgstr "&Help"
+msgstr "Help"
 
 #: .tmp/pm-install.py:47
 msgid "Succesfully finished installing %1"
 msgstr "Installatie van %1 is gelukt"
 
 #: .tmp/pm-install.py:51
-#, fuzzy
 msgid "Succesfully finished installing packages"
-msgstr "Installatie van %1 is gelukt"
+msgstr "Succesvolle installatie van pakketten is beëindigd"
 
 #: .tmp/pm-install.py:63 .tmp/pm-install.py:66 .tmp/pm-install.py:69
 #: .tmp/pm-install.py:72
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: .tmp/pm-install.py:150
 msgid "Summary"
-msgstr ""
+msgstr "Samenvatting"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
