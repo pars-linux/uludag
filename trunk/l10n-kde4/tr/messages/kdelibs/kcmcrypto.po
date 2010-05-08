@@ -8,13 +8,14 @@
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Adil YILDIZ <adil_yildiztr@yahoo.com>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmcrypto\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-05-29 11:18+0200\n"
-"PO-Revision-Date: 2009-10-12 16:16+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-09 00:13+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -171,7 +172,7 @@ msgstr "SSL kipinden &ayrılırken uyar"
 
 #: crypto.cpp:326
 msgid "If selected, you will be notified when leaving an SSL based site."
-msgstr "Eğer seçilis ise SSL destekli siteden ayrılırken uyarılacaksınız"
+msgstr "Eğer seçili ise SSL destekli siteden ayrılırken uyarılacaksınız"
 
 #: crypto.cpp:330
 msgid "Warn on sending &unencrypted data"
@@ -187,7 +188,7 @@ msgstr ""
 
 #: crypto.cpp:338
 msgid "Warn on &mixed SSL/non-SSL pages"
-msgstr "SSL/SSLsiz &karışık sayfalarda uyar"
+msgstr "SSL/SSL'siz &karışık sayfalarda uyar"
 
 #: crypto.cpp:341
 msgid ""
@@ -337,7 +338,8 @@ msgstr "&Sertifikaları kullanma"
 msgid ""
 "SSL certificates cannot be managed because this module was not linked with "
 "OpenSSL."
-msgstr "SSL sertifikaları kullanılamaz ,çünkü bu modül Open SSL ilebağlanmamış"
+msgstr ""
+"SSL sertifikaları kullanılamaz ,çünkü bu modül Open SSL ile bağlanmamış"
 
 #: crypto.cpp:510
 msgid "Default Action"
@@ -476,11 +478,11 @@ msgstr "R&ed"
 
 #: crypto.cpp:706
 msgid "Select this to always accept this certificate."
-msgstr "Bu sertifikayı herzaman kabul etmek için bunu seçin."
+msgstr "Bu sertifikayı her zaman kabul etmek için bunu seçin."
 
 #: crypto.cpp:707
 msgid "Select this to always reject this certificate."
-msgstr "Bu sertifikayı herzaman reddetmek için bunu seçin."
+msgstr "Bu sertifikayı her zaman reddetmek için bunu seçin."
 
 #: crypto.cpp:708
 msgid ""
@@ -498,7 +500,7 @@ msgstr ""
 
 #: crypto.cpp:739
 msgid "Organizational Unit"
-msgstr "Organizasyonal Birim"
+msgstr "Organizasyonsal Birim"
 
 #: crypto.cpp:752
 msgid "Res&tore"
@@ -664,7 +666,7 @@ msgstr "Sertifika dosyası yüklenemedi."
 
 #: crypto.cpp:1995
 msgid "Do you want to make this certificate available to KMail as well?"
-msgstr "Bu sertifakanın KMail içinde geçerli olmasını istiyormusunuz?"
+msgstr "Bu sertifikanın KMail içinde geçerli olmasını istiyor musunuz?"
 
 #: crypto.cpp:1995
 msgid "Make Available"
@@ -679,7 +681,7 @@ msgid ""
 "Could not execute Kleopatra. You might have to install or update the kdepim "
 "package."
 msgstr ""
-"Kleopatra çalıştıırlamıyor. kdepim paketini yüklemeli veya güncellemelisiniz."
+"Kleopatra çalıştırılamıyor. Kdepim paketini yüklemeli veya güncellemelisiniz."
 
 #: crypto.cpp:2016
 msgid ""
@@ -892,12 +894,12 @@ msgstr "Bit kuvveti:"
 #: rc.cpp:52
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:53
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #: crypto.h:187
 msgid "Don't Send"
