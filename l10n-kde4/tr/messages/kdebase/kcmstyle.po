@@ -74,7 +74,7 @@ msgstr "Düşük ekran çözünürlüğü ve Yüksek İşlemci"
 
 #: kcmstyle.cpp:451
 msgid "High display resolution and High CPU"
-msgstr "Yüksel ekran çözünürlüğü ve Yüksek İşlemci"
+msgstr "Yüksek ekran çözünürlüğü ve Yüksek İşlemci"
 
 #: kcmstyle.cpp:452
 msgid "Low display resolution and Very High CPU"
