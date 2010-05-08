@@ -13,13 +13,14 @@
 # Bekir SONAT <bekirsonat@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2010-04-28 10:24+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:03+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1009,7 +1010,7 @@ msgid ""
 "<a href=\"http://kde-apps.org/\">http://kde-apps.org/</a> and <a href="
 "\"http://freshmeat.net/\">http://freshmeat.net/</a>."
 msgstr ""
-"Bu protokolü destekleyen bir KDE programı için internet üzerinde tarama "
+"Bu protokolü destekleyen bir KDE programı için Internet üzerinde tarama "
 "yapabilirsiniz. Araştırma yapılabilecek yerler <a href=\"http://www.kde-apps."
 "org/\">http://www.kde-apps.org/</a> ve <a href=\"http://freshmeat.net/"
 "\">http://freshmeat.net/</a> olabilir."
@@ -1158,7 +1159,7 @@ msgid ""
 "<strong>%1</strong>, could not be located on the Internet."
 msgstr ""
 "\"Bilinmeyen makine adı hatası\", istenen <strong>%1</strong> isimli "
-"makinenin internet üzerinden ulaşılamadığını gösterir."
+"makinenin Internet üzerinden ulaşılamadığını gösterir."
 
 #: kio/global.cpp:688
 #, kde-format
@@ -1407,7 +1408,7 @@ msgid ""
 "removable media device (i.e. no CD-ROM in a CD drive), or in the case of a "
 "peripheral/portable device, the device may not be correctly connected."
 msgstr ""
-"Aygıt hazı olmayabilir. Örneğin, CD sürücüsü içinde bir CD olmaması, ya da "
+"Aygıt hazır olmayabilir. Örneğin, CD sürücüsü içinde bir CD olmaması, ya da "
 "bir dahili/harici aygıtla ilgili bağlantı problemleri bu hatanın alınmasına "
 "yol açabilir."
 
@@ -1453,7 +1454,7 @@ msgid ""
 "user. Even such things as having an open browser window on a location on "
 "this device may cause the device to remain in use."
 msgstr ""
-"Aygıt şu anda meşgul olabilir. Bu aygıtı gösterecek şekilde bir web tarayıcı "
+"Aygıt şu anda meşgul olabilir. Bu aygıtı gösterecek şekilde bir ağ tarayıcı "
 "penceresinin açık olması bile bu aygıtın kullanımda kalmasını gerektirebilir."
 
 #: kio/global.cpp:844
@@ -1537,7 +1538,7 @@ msgid ""
 "This is a fairly technical error in which an error occurred while attempting "
 "to accept an incoming network connection."
 msgstr ""
-"Bu hata, gelen ağ bağlantıları'nın kabul edilmesi esnasında oluşanhayli "
+"Bu hata, gelen ağ bağlantıları'nın kabul edilmesi esnasında oluşan hayli "
 "teknik bir hatadır."
 
 #: kio/global.cpp:906
@@ -1717,7 +1718,7 @@ msgid ""
 "indicates that the requested name could not be located on the Internet."
 msgstr ""
 "Tanımlanmış vekil sunucu hakkındaki bilgiye erişirken, <strong>%1</strong> , "
-"sorgulanan ismin internet üzerinde bulunamadığını belirten 'Bilinmeyen Vekil "
+"sorgulanan ismin Internet üzerinde bulunamadığını belirten 'Bilinmeyen Vekil "
 "Sunucu' hatası oluştu."
 
 #: kio/global.cpp:1029
@@ -1733,7 +1734,7 @@ msgstr ""
 
 #: kio/global.cpp:1033
 msgid "Double-check your proxy settings and try again."
-msgstr "Vekil sunucu ayarlarınızı kontrol ederek tekrar teneyin."
+msgstr "Vekil sunucu ayarlarınızı kontrol ederek tekrar deneyin."
 
 #: kio/global.cpp:1038
 #, kde-format
@@ -1860,7 +1861,7 @@ msgid ""
 "strong> could not be deleted."
 msgstr ""
 "Asıl dosyanın silinmesini gerektiren işlem isteği, çoğunlukla, bir dosya "
-"taşıma işeminin sonuna gelinmesine benzer. Asıl dosya <strong>%1</strong> "
+"taşıma işleminin sonuna gelinmesine benzer. Asıl dosya <strong>%1</strong> "
 "silinemiyor."
 
 #: kio/global.cpp:1117
@@ -1874,7 +1875,7 @@ msgid ""
 "to save the new file while being downloaded. This temporary file <strong>%1</"
 "strong> could not be deleted."
 msgstr ""
-"İstenilen işlem indirilmikte olan  yeni bir dosya'yı kaydetmek için bir "
+"İstenilen işlem indirilmekte olan  yeni bir dosya'yı kaydetmek için bir "
 "geçici dosya oluşturulmasını gerektiriyor. Bu geçici dosya <strong>%1</"
 "strong> silinemiyor."
 
@@ -2616,7 +2617,7 @@ msgstr "%1"
 
 #: kio/slaveinterface.cpp:460
 msgid "The peer SSL certificate chain appears to be corrupt."
-msgstr "Eş SSL sertifka zinciri bozulmuş görünüyor."
+msgstr "Eş SSL sertifika zinciri bozulmuş görünüyor."
 
 #: kio/netaccess.cpp:105
 #, kde-format
@@ -3519,7 +3520,7 @@ msgid ""
 "If this file is an executable and the flag is set, it will be executed with "
 "the permissions of the owner."
 msgstr ""
-"Eğer bu bir çalıştırılabilir dosya ise ve bayrak açık (1) ise , bu program "
+"Eğer bu bir çalıştırılabilir dosya ise ve bayrak ayarlı ise , bu program "
 "sahibinin haklarıyla çalıştırılır."
 
 #: kfile/kpropertiesdialog.cpp:2027
@@ -3689,7 +3690,7 @@ msgid ""
 "listed, enter the name or click the browse button.</qt>"
 msgstr ""
 "<qt><b>%1</b> dosya türünü açarken kullanılması gereken programı seçin. "
-"Program listede yeralmıyorsa, adını girin ya da gözat düğmesine tıklayın.</"
+"Program listede yer almıyorsa, adını girin ya da gözat düğmesine tıklayın.</"
 "qt>"
 
 #: kfile/kopenwithdialog.cpp:536
@@ -3917,7 +3918,7 @@ msgid ""
 "Authority) certificate can not be found."
 msgstr ""
 "Sağlayıcı sertifikasının yeniden alınması işlemi başarısız oldu. Bu CA'nın "
-"(Certificate Authority) setifikasının bulunamadığı anlamına geliyor."
+"(Certificate Authority) sertifikasının bulunamadığı anlamına geliyor."
 
 #: kssl/ksslcertificate.cpp:1055
 msgid ""
@@ -4061,7 +4062,7 @@ msgstr "Sertifika feshedilmiş."
 
 #: kssl/ksslcertificate.cpp:1099
 msgid "The certificate's CA (Certificate Authority) is invalid."
-msgstr "Sertifikanın CA'sı (Certificate Authority) geçersiz."
+msgstr "Sertifikanın Sertifika Makamı geçersiz."
 
 #: kssl/ksslcertificate.cpp:1101
 msgid ""
@@ -4125,7 +4126,7 @@ msgid ""
 "The certificate's CA (Certificate Authority) is not allowed to sign "
 "certificates."
 msgstr ""
-"Sertifikanın CA'sının (Certificate Authority) sertifika imzalamak için "
+"Sertifikanın Sertifika Makamının (SM) sertifika imzalamak için "
 "yetkisi yok."
 
 #: kssl/ksslcertificate.cpp:1119
@@ -4294,7 +4295,7 @@ msgstr "KDE Sertifika İsteği"
 
 #: kssl/ksslkeygen.cpp:90
 msgid "KDE Certificate Request - Password"
-msgstr "SSL Sertifika İsteği - Parola"
+msgstr "KDE Sertifika İsteği - Parola"
 
 #: kssl/ksslkeygen.cpp:125
 msgid "Unsupported key size."
@@ -4345,7 +4346,7 @@ msgid ""
 "The remote host did not send any SSL certificates.\n"
 "Aborting because the identity of the host cannot be established."
 msgstr ""
-"Uzak makine herhangi bir SSl sertifikası göndermedi.\n"
+"Uzak makine herhangi bir SSL sertifikası göndermedi.\n"
 "Makinenin kimliğine erişilemediği için iptal ediliyor."
 
 #: kssl/ksslutils.cpp:78
@@ -4380,7 +4381,7 @@ msgid ""
 "emulator window."
 msgstr ""
 "Eğer çalıştırmak istediğiniz uygulama, bir metin kipinde uygulama ise veya "
-"terminal emülatör penceresinde sağlanacak bilgiyi istiyorsanız bu seçeneği "
+"terminal öykünücü penceresinde sağlanacak bilgiyi istiyorsanız bu seçeneği "
 "işaretleyin."
 
 #. i18n: file: kfile/kpropertiesdesktopadvbase.ui:36
@@ -4485,7 +4486,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, startupInfoCheck)
 #: rc.cpp:47
 msgid "Enable &launch feedback"
-msgstr "Ç&alıştırma geribildirimini etkinleştir"
+msgstr "Ç&alıştırma geri bildirimini etkinleştir"
 
 #. i18n: file: kfile/kpropertiesdesktopadvbase.ui:140
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, systrayCheck)
@@ -4561,7 +4562,7 @@ msgid ""
 "a dial up application (KPPP) would be \"Dial up tool\"."
 msgstr ""
 "Bu uygulama hakkında,kullanımına uyar şekilde bir açıklama yazın. Örn: "
-"Çevirmeli Ağ Uygulaması (KPPP) için \"İnternete Bağlantım\"."
+"Çevirmeli Ağ Uygulaması (KPPP) için \"Internet'e Bağlantım\"."
 
 #. i18n: file: kfile/kpropertiesdesktopbase.ui:37
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -4671,7 +4672,7 @@ msgid ""
 "qt>"
 msgstr ""
 "<qt><p> Uygulamanızın işlem yapacağı bir veya daha fazla dosya türünü "
-"buradaseçebilirsiniz. Bu liste <u>MIME-tipleri</u> tarafından yönetilir.</"
+"buradan seçebilirsiniz. Bu liste <u>MIME-tipleri</u> tarafından yönetilir.</"
 "p>\n"
 "<p>MIME, Multipurpose Internet (e)Mail Extension, ( Çok Amaçlı İnternet e-"
 "Posta Uzantısı ) protokolü, dosya adı uzantıları ve  eşdeğer <u>mime-"
@@ -4727,8 +4728,8 @@ msgid ""
 "If you want to remove a type of file (mimetype) that your application cannot "
 "handle, select the mimetype in the list above and click on this button."
 msgstr ""
-"Uygulamanızın işleyemeyeceği bir dosya tipi ( mime-tipi ) ni silmek için "
-"yukarıdaki listeden bir mime-tipi seçin ve bu düğmeye tıklayın"
+"Uygulamanızın işleyemeyeceği bir dosya tipini ( mime-tipi ) silmek için "
+"yukarıdaki listeden bir mime-tipi seçin ve bu düğmeye tıklayın."
 
 #. i18n: file: kfile/kpropertiesdesktopbase.ui:219
 #. i18n: ectx: property (text), widget (QPushButton, delFiletypeButton)
@@ -4744,7 +4745,7 @@ msgid ""
 "Bus options or to run it as a different user."
 msgstr ""
 "Uygulamanın nasıl çalışacağını ayarlamak için tıklayın, başlatma "
-"geribildirimi, D-Bus seçenekleri ya da farklı bir kullanıcı olarak "
+"geri bildirimi, D-Bus seçenekleri ya da farklı bir kullanıcı olarak "
 "çalıştırma gibi."
 
 #. i18n: file: kfile/kpropertiesdesktopbase.ui:245
@@ -5214,7 +5215,7 @@ msgstr "belirtilen dizin içerisinde ara"
 #: ../kioslave/http/http.cpp:1535
 msgctxt "request type"
 msgid "lock the specified file or folder"
-msgstr "belirtilen dizin ya da dosyayı kilitile"
+msgstr "belirtilen dizin ya da dosyayı kilitle"
 
 #: ../kioslave/http/http.cpp:1538
 msgctxt "request type"
@@ -5276,7 +5277,7 @@ msgid ""
 "A resource cannot be created at the destination until one or more "
 "intermediate collections (folders) have been created."
 msgstr ""
-"Bir veya daha fazla ara koleksiyon (dizin) yaratılmadan, bu özkaynak "
+"Bir veya daha fazla ara koleksiyon (dizin) yaratılmadan, bu öz kaynak "
 "hedefte oluşturulamaz."
 
 #: ../kioslave/http/http.cpp:1648
@@ -5325,7 +5326,7 @@ msgid ""
 "The destination resource does not have sufficient space to record the state "
 "of the resource after the execution of this method."
 msgstr ""
-"Hedef özkaynak, özkaynağın bu metodun çalıştırılmasından sonraki durumunu "
+"Hedef öz kaynak, öz kaynağın bu metodun çalıştırılmasından sonraki durumunu "
 "kaydedecek alana sahip değil."
 
 #: ../kioslave/http/http.cpp:1709
@@ -5556,7 +5557,7 @@ msgstr ""
 "<qt>Dosya iletişim kutucukları için yapılandırma menüsü. Bu menüden, "
 "aşağıdaki çeşitli seçeneklere erişebilirsiniz: <ul><li>dosyaların listelerde "
 "sıralanma biçimi</li><li>görünüm türleri,-simge ve liste dahil</li><li>gizli "
-"dosyaların gösterilmesi</li><li>Konumlar gezginme paneli</li><li>dosya "
+"dosyaların gösterilmesi</li><li>Konumlar gezinme paneli</li><li>dosya "
 "önizlemeleri</li><li>dizinlerin dosyalardan ayrılması</li></ul></qt>"
 
 #: ../kfile/kfilewidget.cpp:490
@@ -5670,7 +5671,7 @@ msgid ""
 "The chosen filenames do not\n"
 "appear to be valid."
 msgstr ""
-"Seçilen dosya adlarıı \n"
+"Seçilen dosya adları \n"
 "geçersiz görünüyor."
 
 #: ../kfile/kfilewidget.cpp:1601
@@ -5746,8 +5747,8 @@ msgstr ""
 "güncellenecektir. <br /><br /></li><li>Eğer <b>%2</b> metin alanında hiçbir "
 "uzantı tanımlamamışsanız, <b>Kaydet</b> dediğinizde, %3 dosyanın sonuna "
 "eklenecektir ( dosya adı zaten mevcut değilse). Bu uzantı, kaydedilen dosya "
-"türü temelinde olacaktır.<br /><br />Eğer KDE'nin dosyaadları için bir "
-"uzantı sağlamasını istemiyorsanız; Bu seçeneği kapatabilir veya dosyaadının "
+"türü temelinde olacaktır.<br /><br />Eğer KDE'nin dosya adları için bir "
+"uzantı sağlamasını istemiyorsanız; Bu seçeneği kapatabilir veya dosya adının "
 "sonuna bir nokta (.) ekleyerek baskılayabilirsiniz ( nokta'nızın otomatik "
 "olarak silinecektir! ). </li></ol> Emin değilseniz, bu seçeneği etkin halde "
 "tutmak, sizin için daha yararlıdır."
