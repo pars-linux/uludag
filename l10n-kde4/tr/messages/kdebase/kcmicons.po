@@ -59,7 +59,7 @@ msgstr "Masaüstü"
 
 #: icons.cpp:133
 msgid "Toolbar"
-msgstr "Araçlar paneli"
+msgstr "Araç Çubuğu"
 
 #: icons.cpp:134
 msgid "Main Toolbar"
