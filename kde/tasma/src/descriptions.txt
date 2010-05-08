@@ -28,7 +28,7 @@ Simgeler: Pardus'ta kullanılan simgeleri belirler
 Stil: Pardus'un pencere arayüz stilini düzenler
 Yazıtipleri: Yazıtiplerini ve boyutlarını düzenler
 
-İnternet ve yerel ağ
+Internet ve yerel ağ
 --------------------
 Ağ yapılandırması: Ethernet, kablosuz ağ ya da modem ayarlarını yapar
 Vekil sunucu: Konqueror için vekil sunucu ayarlarını yapar
