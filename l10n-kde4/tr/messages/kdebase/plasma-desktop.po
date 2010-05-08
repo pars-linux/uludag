@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-04 06:31+0100\n"
-"PO-Revision-Date: 2010-05-08 14:47+0300\n"
+"PO-Revision-Date: 2010-05-08 15:38+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -144,7 +144,7 @@ msgstr "Pencereler alta gider"
 
 #: panelcontroller.cpp:188
 msgid "Screen Edge"
-msgstr "Taşıma Perdesi"
+msgstr "Ekran Kenarı"
 
 #: panelcontroller.cpp:194 panelcontroller.cpp:374
 msgid "Height"
@@ -214,12 +214,12 @@ msgstr "Panel boyutunu en küçük hale getirmek için bu ayırıcıyı kullanı
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #. i18n: file: data/plasma-shell-desktop.kcfg:10
 #. i18n: ectx: label, entry, group (General)
