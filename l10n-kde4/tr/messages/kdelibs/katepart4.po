@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: katepart4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-14 01:21+0200\n"
-"PO-Revision-Date: 2010-05-07 15:14+0300\n"
+"PO-Revision-Date: 2010-05-09 00:23+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -213,7 +213,7 @@ msgid ""
 "Do nothing. Next time you focus the file, or try to save it or close it, you "
 "will be prompted again."
 msgstr ""
-"Hiçbirşey yapma. Başka bir zaman dosyaya odaklandığınızda veya kaydetmeye, "
+"Hiçbir şey yapma. Başka bir zaman dosyaya odaklandığınızda veya kaydetmeye, "
 "kapatmaya çalıştığınızda yeniden uyarılacaksınız."
 
 #: dialogs/katedialogs.cpp:1449 document/katedocument.cpp:3961
@@ -254,7 +254,7 @@ msgid ""
 "changes once more): if you save the document, you will overwrite the file on "
 "disk; if you do not save then the disk file (if present) is what you have."
 msgstr ""
-"YokSayma, bir daha bu konuda uyarılmayacağınız anlamına gelir (diskteki "
+"Yok saymak, bir daha bu konuda uyarılmayacağınız anlamına gelir (diskteki "
 "dosya bir kez daha değişmediği takdirde). Eğer belgeyi kaydederseniz, "
 "disktekinin üzerine yazılacak; Kaydetmezseniz, diskteki dosya ne ise,-o'na "
 "sahip olacaksınız."
@@ -338,7 +338,7 @@ msgstr "Ondalık/Değer"
 #: syntax/katesyntaxmanager.cpp:158
 msgctxt "@item:intable Text context"
 msgid "Base-N Integer"
-msgstr "Base-N Tamsayı"
+msgstr "Base-N Tam Sayı"
 
 #: syntax/katesyntaxmanager.cpp:159
 msgctxt "@item:intable Text context"
@@ -422,32 +422,32 @@ msgid ""
 "<b>%1</b>: Deprecated syntax. Attribute (%2) not addressed by symbolic "
 "name<br />"
 msgstr ""
-"<b>%1</b>: Eski sözdizimi. Öznitelik (%2) sembolik ismi ile "
+"<b>%1</b>: Eski söz dizimi. Öznitelik (%2) sembolik ismi ile "
 "adreslenmemiş<br />"
 
 #: syntax/katehighlight.cpp:1326
 #, kde-format
 msgid "<b>%1</b>: Deprecated syntax. Context %2 has no symbolic name<br />"
-msgstr "<b>%1</b>: Eski sözdizimi. %2 bağlamının sembolik adı yok<br />"
+msgstr "<b>%1</b>: Eski söz dizimi. %2 bağlamının sembolik adı yok<br />"
 
 #: syntax/katehighlight.cpp:1406
 #, kde-format
 msgid ""
 "<B>%1</B>:Deprecated syntax. Context %2 not addressed by a symbolic name"
 msgstr ""
-"<B>%1</B>: Eski sözdizimi. %2 bağlamı bir sembolik isim ile adreslenmemiş"
+"<B>%1</B>: Eski söz dizimi. %2 bağlamı bir sembolik isim ile adreslenmemiş"
 
 #: syntax/katehighlight.cpp:1528
 msgid ""
 "There were warning(s) and/or error(s) while parsing the syntax highlighting "
 "configuration."
 msgstr ""
-"Sözdizimi renklendirme ayrıştırması sırasında bir veya daha fazla uyarı ve/"
+"söz dizimi renklendirme ayrıştırması sırasında bir veya daha fazla uyarı ve/"
 "veya hata çıktı."
 
 #: syntax/katehighlight.cpp:1530
 msgid "Kate Syntax Highlighting Parser"
-msgstr "Kate Sözdizimi Renklendirme Ayrıştırması"
+msgstr "Kate Söz Dizimi Renklendirme Ayrıştırması"
 
 #: syntax/katehighlight.cpp:1680
 msgid ""
@@ -463,11 +463,11 @@ msgid ""
 "<b>%1</b>: Specified multiline comment region (%2) could not be resolved<br /"
 ">"
 msgstr ""
-"<b>%1</b>: Tanımlanan çoksatırlı yorum bölgesi (%2) çözümlenemedi<br />"
+"<b>%1</b>: Tanımlanan çok satırlı yorum bölgesi (%2) çözümlenemedi<br />"
 
 #: utils/kateglobal.cpp:62
 msgid "Kate Part"
-msgstr "Kate Parçaçığı"
+msgstr "Kate Parçacığı"
 
 #: utils/kateglobal.cpp:63
 msgid "Embeddable editor component"
@@ -613,7 +613,7 @@ msgstr "Mirko Stocker"
 
 #: utils/kateglobal.cpp:97
 msgid "Various bugfixes"
-msgstr "Çetşitli hata düzeltmeleri"
+msgstr "Çeşitli hata düzeltmeleri"
 
 #: utils/kateglobal.cpp:98
 msgid "Matthew Woehlke"
@@ -722,7 +722,7 @@ msgstr "Cristi Dumitrescu"
 
 #: utils/kateglobal.cpp:112 tests/katetest.cpp:721
 msgid "PHP Keyword/Datatype list"
-msgstr "PHP AnahtarKelime/VeriTipi listesi"
+msgstr "PHP Anahtar Kelime/Veri Tipi listesi"
 
 #: utils/kateglobal.cpp:113 tests/katetest.cpp:722
 msgid "Carsten Pfeiffer"
@@ -747,12 +747,14 @@ msgstr "Katkıda bulunan ve anmayı unuttuğum tüm insanlar"
 #: utils/kateglobal.cpp:118 tests/katetest.cpp:725 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Ömer Fadıl USTA, Bekir SONAT"
+msgstr "Serdar Soytetir, Ömer Fadıl USTA, Bekir SONAT, H. İbrahim Güngör"
 
 #: utils/kateglobal.cpp:118 tests/katetest.cpp:725 rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, omer_fad@hotmail.com, bekirsonat@cortex.com.tr"
+msgstr ""
+"tulliana@gmail.com, omer_fad@hotmail.com, bekirsonat@cortex.com.tr, "
+"ibrahim@pardus.org.tr"
 
 #: utils/kateglobal.cpp:272
 msgid "Configure"
@@ -764,7 +766,7 @@ msgstr "Görünüm"
 
 #: utils/kateglobal.cpp:357
 msgid "Fonts & Colors"
-msgstr "Yazıtipleri ve Renkler"
+msgstr "Yazı Tipleri ve Renkler"
 
 #: utils/kateglobal.cpp:360
 msgid "Editing"
@@ -866,7 +868,7 @@ msgid ""
 "p><p>You can unset the Background and Selected Background colors from the "
 "context menu when appropriate.</p>"
 msgstr ""
-"<p>Bu liste, mevcut sözdizimi renklendirme kipinin kapsamını gösterir ve "
+"<p>Bu liste, mevcut söz dizimi renklendirme kipinin kapsamını gösterir ve "
 "düzenlemeniz için seçenekler sağlar. Bağlam adı, güncel biçim ayarlarını "
 "yansıtır.</p><p>Tuş takımını kullanarak düzenleme yapmak için <strong>&lt;"
 "BOŞLUK TUŞU&gt;</strong> 'na basın ve açılır menüden bir özellik seçin.</"
@@ -993,7 +995,8 @@ msgid ""
 "<p>Print a box displaying typographical conventions for the document type, "
 "as defined by the syntax highlighting being used.</p>"
 msgstr ""
-"<p>Kullanılan sözdizimi renklendirm kuralları ile tanımlandığı şekilde belge "
+"<p>Kullanılan söz dizimi renklendirme kuralları ile tanımlandığı şekilde "
+"belge "
 "türü için baskı düzeni anlaşmalarını gösteren bir kutu yazdırır.</p>"
 
 #: utils/kateprinter.cpp:702
@@ -1010,7 +1013,7 @@ msgstr "&Dipnotu Yazdır"
 
 #: utils/kateprinter.cpp:717
 msgid "Header/footer font:"
-msgstr "Başlık/dipnot yazıtipi:"
+msgstr "Başlık/dipnot yazı tipi:"
 
 #: utils/kateprinter.cpp:722
 msgid "Choo&se Font..."
@@ -1109,8 +1112,8 @@ msgid ""
 "<p>If enabled, the background color of the editor will be used.</p><p>This "
 "may be useful if your color scheme is designed for a dark background.</p>"
 msgstr ""
-"<p>Etkinleştirildiğinde düzenleyicinin arkaplan rengi kullanılacak.</"
-"p><p>Eğer renk şemanız koyu bir arkaplan için tasarlandıysa yararlı olabilir."
+"<p>Etkinleştirildiğinde düzenleyicinin arkalan rengi kullanılacak.</"
+"p><p>Eğer renk şemanız koyu bir arkalan için tasarlandıysa yararlı olabilir."
 "</p>"
 
 #: utils/kateprinter.cpp:968
@@ -1248,7 +1251,7 @@ msgstr "'%1' isimli bir kip yok"
 #: utils/katecmds.cpp:254
 #, kde-format
 msgid "Failed to convert argument '%1' to integer."
-msgstr "Argüman '%1', tamsayıya dönüştürülerken hata oluştu"
+msgstr "Argüman '%1', tam sayıya dönüştürülürken hata oluştu"
 
 #: utils/katecmds.cpp:260 utils/katecmds.cpp:266
 msgid "Width must be at least 1."
@@ -1534,7 +1537,7 @@ msgstr "İsimsiz"
 
 #: tests/katetest.cpp:679
 msgid "Read the contents of stdin"
-msgstr "Sstdin içeriğini oku"
+msgstr "stdin içeriğini oku"
 
 #: tests/katetest.cpp:680
 msgid "Set encoding for the file to open"
@@ -1962,7 +1965,7 @@ msgstr "Kabuk Tamamlama"
 
 #: completion/katewordcompletion.cpp:269
 msgid "Reuse Word Above"
-msgstr "Yukardaki Sözcüğü Yeniden Kullan"
+msgstr "Yukarıdaki Sözcüğü Yeniden Kullan"
 
 #: completion/katewordcompletion.cpp:274
 msgid "Reuse Word Below"
@@ -2019,9 +2022,9 @@ msgid ""
 "whether tabs should be honored and used or replaced with spaces, in the "
 "configuration dialog."
 msgstr ""
-"Seçilen metin bloğunu girintilemek için bunu kullanın.<br /><br /"
+"Seçilen metin blokunu girintilemek için bunu kullanın.<br /><br /"
 ">Yapılandırma penceresinden sekmeler veya boşluklar ile girintileme "
-"özelliklerini ve biribirlerinin yerlerine kullanımlarını "
+"özelliklerini ve birbirlerinin yerlerine kullanımlarını "
 "yapılandırabilirsiniz."
 
 #: view/kateview.cpp:356
@@ -2030,7 +2033,7 @@ msgstr "İçeri&ye girintile"
 
 #: view/kateview.cpp:358
 msgid "Use this to unindent a selected block of text."
-msgstr "Seçilen metin bloğunun girintisini temizlemek için bunu kullanın."
+msgstr "Seçilen metin blokunun girintisini temizlemek için bunu kullanın."
 
 #: view/kateview.cpp:362
 msgid "&Clean Indentation"
@@ -2042,9 +2045,9 @@ msgid ""
 "only spaces).<br /><br />You can configure whether tabs should be honored "
 "and used or replaced with spaces, in the configuration dialog."
 msgstr ""
-"Seçilen metin bloğunun girintilemesini temizlemek için bunu kullanın.<br /"
+"Seçilen metin blokunun girintilemesini temizlemek için bunu kullanın.<br /"
 "><br />Yapılandırma penceresinden sekmeler veya boşluklar ile girintileme "
-"özelliklerini ve biribirlerinin yerlerine kullanımlarını "
+"özelliklerini ve birbirlerinin yerlerine kullanımlarını "
 "yapılandırabilirsiniz."
 
 #: view/kateview.cpp:369
@@ -2056,7 +2059,7 @@ msgid ""
 "Use this to align the current line or block of text to its proper indent "
 "level."
 msgstr ""
-"Mevcut satırı veya metin bloğunu uygun girinti seviyesine yerleştirmek için "
+"Mevcut satırı veya metin blokunu uygun girinti seviyesine yerleştirmek için "
 "bunu kullanın."
 
 #: view/kateview.cpp:374
@@ -2069,7 +2072,7 @@ msgid ""
 "><br />The characters for single/multiple line comments are defined within "
 "the language's highlighting."
 msgstr ""
-"Bu komut, bulunulan satır veya seçilmiş metin bloğunu yorum haline getirir."
+"Bu komut, bulunulan satır veya seçilmiş metin blokunu yorum haline getirir."
 "<br /><br /> Tekli/çoklu satır yorumları için kullanılan karakterler, ait "
 "olduğu dilin renklendirme kuralları içinde tanımlanmıştır."
 
@@ -2083,7 +2086,7 @@ msgid ""
 "text.<br /><br />The characters for single/multiple line comments are "
 "defined within the language's highlighting."
 msgstr ""
-"Bu komut, bulunulan satır veya seçilmiş metin bloğunu yorum halinden çıkarır."
+"Bu komut, bulunulan satır veya seçilmiş metin blokunu yorum halinden çıkarır."
 "<br /><br />Tekli/çoklu satır yorumları için kullanılan karakterler, ait "
 "olduğu dilin renklendirme kuralları içinde tanımlanmıştır."
 
@@ -2217,12 +2220,12 @@ msgid ""
 "If you have selected something within the current document, this will no "
 "longer be selected."
 msgstr ""
-"Eğer güncel belge içinde birşeyleri seçmisseniz, bundan sonra seçili "
+"Eğer güncel belge içinde bir şeyleri seçmişseniz, bundan sonra seçili "
 "olmayacak."
 
 #: view/kateview.cpp:480
 msgid "Enlarge Font"
-msgstr "Yazıtipini büyült"
+msgstr "Yazı tipini büyült"
 
 #: view/kateview.cpp:481
 msgid "This increases the display font size."
@@ -2230,7 +2233,7 @@ msgstr "Yazı tipi görünüm büyüklüğünü artırır."
 
 #: view/kateview.cpp:486
 msgid "Shrink Font"
-msgstr "Yazıtipini küçült"
+msgstr "Yazı tipini küçült"
 
 #: view/kateview.cpp:487
 msgid "This decreases the display font size."
@@ -2326,7 +2329,7 @@ msgstr "S&atır Numaralarını Göster"
 
 #: view/kateview.cpp:536
 msgid "Show/hide the line numbers on the left hand side of the view."
-msgstr "Görünümün sol yanında satır numararlarının görünüp/gizleneceği."
+msgstr "Görünümün sol yanında satır numaralarının görünüp/gizleneceği."
 
 #: view/kateview.cpp:539
 msgid "Show Scroll&bar Marks"
@@ -2670,7 +2673,7 @@ msgid ""
 "<code><b>help list</b></code><br />For help for individual commands, enter "
 "<code><b>help &lt;command&gt;</b></code></p>"
 msgstr ""
-"<p>Bu, Katepart <b> komut satırıdır</b>.<br />Sözdizimi: <code><b>komut "
+"<p>Bu, Katepart <b> komut satırıdır</b>.<br />Söz dizimi: <code><b>komut "
 "[ argümanlar ]</b></code><br />Kullanılabilecek komutların listesi için: "
 "<code><b>help list</b>girin</code><br />Kişiye özel komutlar hakkında yardım "
 "için: <code><b>help &lt;komut&gt;</b> girin</code></p>"
@@ -2705,7 +2708,7 @@ msgstr "%1İşaretleme Tipi"
 
 #: view/kateviewhelpers.cpp:1525
 msgid "Set Default Mark Type"
-msgstr "Öntanımlı Öğe Stilini kullan"
+msgstr "Öntanımlı Öge Stilini kullan"
 
 #: view/kateviewhelpers.cpp:1591
 msgid "Disable Annotation Bar"
@@ -3487,7 +3490,7 @@ msgid ""
 "Sets the number of lines to maintain visible above and below the cursor when "
 "possible."
 msgstr ""
-"İmleçin altında ve üstünde görünebilir olacak satırların sayısını ayarlar."
+"İmlecin altında ve üstünde görünebilir olacak satırların sayısını ayarlar."
 
 #. i18n: file: dialogs/cursorconfigwidget.ui:91
 #. i18n: ectx: property (title), widget (QGroupBox, gbSelectionMode)
@@ -3557,7 +3560,7 @@ msgstr "UNIX"
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbEOL)
 #: rc.cpp:278
 msgid "DOS/Windows"
-msgstr "Dos/Windows"
+msgstr "DOS/Windows"
 
 #. i18n: file: dialogs/opensaveconfigwidget.ui:78
 #. i18n: ectx: property (text), item, widget (KComboBox, cmbEOL)
@@ -3687,7 +3690,7 @@ msgstr ""
 "<p>Bu dizge, bu mime tipini kullanarak seçilmiş dosyalar için Kate'in "
 "ayarlarını yapılandırmanıza izin verir. Metin renklendirme, girintileme, "
 "kodlama vs. gibi birçok yapılandırma seçeneklerini ayarlayabilirsiniz.</"
-"p><p>Bilinen değişkenlerin tümünü listelemek için elkitabına bakınız.</p>"
+"p><p>Bilinen değişkenlerin tümünü listelemek için el kitabına bakınız.</p>"
 
 #. i18n: file: dialogs/filetypeconfigwidget.ui:123
 #. i18n: ectx: property (text), widget (QLabel, lblHl)
@@ -3784,7 +3787,7 @@ msgstr "Normal metin:"
 #. i18n: ectx: property (whatsThis), widget (KColorButton, back)
 #: rc.cpp:377
 msgid "<p>Sets the background color of the editing area.</p>"
-msgstr "<p>Düzenleme alanının arkaplan rengini ayarlar.</p>"
+msgstr "<p>Düzenleme alanının arkalan rengini ayarlar.</p>"
 
 #. i18n: file: dialogs/schemaconfigcolortab.ui:40
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -3799,7 +3802,7 @@ msgid ""
 "<p>Sets the background color of the selection.</p><p>To set the text color "
 "for selected text, use the \"<b>Configure Highlighting</b>\" dialog.</p>"
 msgstr ""
-"<p>Seçilen alanın arkaplan rengini ayarlar.</p><p>Seçilen metin için metin "
+"<p>Seçilen alanın arkalan rengini ayarlar.</p><p>Seçilen metin için metin "
 "rengini ayarlamak için \"<b>Renklendirmeyi Yapılandır</b>\" iletişimini "
 "kullanın.</p>"
 
@@ -3816,7 +3819,7 @@ msgid ""
 "<p>Sets the background color of the currently active line, which means the "
 "line where your cursor is positioned.</p>"
 msgstr ""
-"<p>Etkin satırın ( imleçinizin o an üzerinde durduğu satır) arkaplan rengini "
+"<p>Etkin satırın ( imlecinizin o an üzerinde durduğu satır) arkalan rengini "
 "ayarlar.</p>"
 
 #. i18n: file: dialogs/schemaconfigcolortab.ui:68
@@ -3832,7 +3835,7 @@ msgid ""
 "<p>Sets the background color of the selected marker type.</p><p><b>Note</b>: "
 "The marker color is displayed lightly because of transparency.</p>"
 msgstr ""
-"<p>Seçilen işaret tipinin arkaplan rengini ayarlar.</p><p><b>Not</b>: İşaret "
+"<p>Seçilen işaret tipinin arkalan rengini ayarlar.</p><p><b>Not</b>: İşaret "
 "rengi, şeffaflık nedeniyle hafif açık gösterilir.</p>"
 
 #. i18n: file: dialogs/schemaconfigcolortab.ui:85
@@ -3883,7 +3886,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:416
 msgid "Word wrap markers:"
-msgstr "Sözcük kaydırma işaretcileri:"
+msgstr "Sözcük kaydırma işaretçileri:"
 
 #. i18n: file: dialogs/schemaconfigcolortab.ui:139
 #. i18n: ectx: property (whatsThis), widget (KColorButton, wwmarker)
@@ -3894,7 +3897,7 @@ msgid ""
 "wrapped</dd><dt>Dynamic Word Wrap</dt><dd>An arrow shown to the left of "
 "visually-wrapped lines</dd></dl>"
 msgstr ""
-"<p>Sözcük kaydırma ile ilgili işaretcilerin rengini ayarlar:</"
+"<p>Sözcük kaydırma ile ilgili işaretçilerin rengini ayarlar:</"
 "p><dl><dt>Durağan Sözcük Kaydırma</dt><dd>Dikey çizgi, metnin kaydırılacağı "
 "sütunu gösterir. </dd><dt>Devingen Sözcük Kaydırma</dt><dd>Görsel olarak "
 "kaydırılmış satırların solunda bir ok işareti gösterilir</dd></dl>"
@@ -4103,7 +4106,7 @@ msgid ""
 "the right bracket (}, ), or ]) to the right of the cursor."
 msgstr ""
 "Eğer kullanıcı bir sol parantez ([,(, veya  {) yazarsa, KateView, otomatik "
-"olarak imleçin hemen sağına, sağ parantez  (}, ), veya ]) ilave edecektir."
+"olarak imlecin hemen sağına, sağ parantez  (}, ), veya ]) ilave edecektir."
 
 #. i18n: file: dialogs/editconfigwidget.ui:185
 #. i18n: ectx: property (text), widget (QCheckBox, chkAutoBrackets)
@@ -4198,7 +4201,7 @@ msgid ""
 "folding, if code folding is available."
 msgstr ""
 "Bu seçenek işaretlendiğinde, her yeni  izlemde,  kod gizlemeyi gösteren "
-"işaretler görüntülenecektir,-eğer kod gizleme etkinleştirilmise tabi."
+"işaretler görüntülenecektir,-eğer kod gizleme etkinleştirilmişse tabi."
 
 #. i18n: file: dialogs/appearanceconfigwidget.ui:88
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowFoldingMarkers)
@@ -4231,7 +4234,7 @@ msgid ""
 "If this option is checked, every new view will display line numbers on the "
 "left hand side."
 msgstr ""
-"Bu seçenek işaretlendiğinde, her yeni  izlemde,  sol yan tartafta satır "
+"Bu seçenek işaretlendiğinde, her yeni  izlemde,  sol yan tarafta satır "
 "numaraları görüntülenecektir."
 
 #. i18n: file: dialogs/appearanceconfigwidget.ui:108
@@ -5223,7 +5226,7 @@ msgstr "Cg"
 #: rc.cpp:990
 msgctxt "Language"
 msgid "ChangeLog"
-msgstr "DeğişimGünlüğü"
+msgstr "Değişiklik Bilgisi"
 
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/cisco.xml:3
@@ -5307,7 +5310,7 @@ msgstr "C"
 #: rc.cpp:1062
 msgctxt "Language"
 msgid "Debian Changelog"
-msgstr "Debian DeğişimGünlüğü"
+msgstr "Debian Değişiklik Bilgisi"
 
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/debiancontrol.xml:3
