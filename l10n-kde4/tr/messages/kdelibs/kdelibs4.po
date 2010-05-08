@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:20+0200\n"
-"PO-Revision-Date: 2010-05-08 20:53+0300\n"
+"PO-Revision-Date: 2010-05-09 00:11+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1313,7 +1313,8 @@ msgstr ""
 "p>\n"
 "<p>Bununla birlikte, eğer sözcük hatalı hecelenmişse, aşağıdaki listeden "
 "doğrusunu bularak değiştirebilirsiniz. Değiştirilecek doğru bir seçenek "
-"yoksa kutucuğa doğrusunu yazarak <b>Değiştir</b> veya <b>Tümünü Değiştir</b> "
+"yoksya kutucuğa doğrusunu yazarak <b>Değiştir</b> veya <b>Tümünü Değiştir</b>"
+" "
 "ögesini tıklayın.</p>\n"
 "</qt>"
 
@@ -1434,7 +1435,7 @@ msgstr ""
 "Eğer bilinmeyen kelimenin yanlış yazılmadığını düşünüyor ve gelecekte "
 "tekrar yanlışlıkla tespit edilmesini engellemek istiyorsanız buraya tıklayın."
 " "
-"Eğer olduğu gibi bırakıp sözlüğe eklemek istemiyorsanız <b>Yoksa</b> "
+"Eğer olduğu gibi bırakıp sözlüğe eklemek istemiyorsanız <b>Yoksay</b> "
 "veya <b>Tümünü Yoksay</b> düğmesine basın.</p>\n"
 "</qt>"
 
@@ -1595,7 +1596,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, m_skipBtn)
 #: rc.cpp:677 rc.cpp:1100
 msgid "&Ignore"
-msgstr "Yoksa"
+msgstr "Yoksay"
 
 #. i18n: file: kde3support/kdeui/k3spellui.ui:201
 #. i18n: ectx: property (whatsThis), widget (QPushButton, m_skipAllBtn)
@@ -1616,7 +1617,7 @@ msgstr ""
 "<qt>\n"
 "<p>Bilinmeyen kelimenin tüm tekrarlarını oldukları gibi bırakmak için "
 "tıklayın</p>\n"
-"<p>Bu davranış; Eğer kelime, bir isim, akronim, yabancı veya başka bir "
+"<p>Bu davranış; Eğer kelime, bir isim, kısaltma, yabancı veya başka bir "
 "kendine özel kelime ise ve bunu kullanmak ama sözlüğünüze ekleMEmek "
 "istediğinizde yararlıdır. </p>\n"
 "</qt>"
@@ -8471,7 +8472,7 @@ msgstr "sürüm bilgisi yok (programcı hatası)"
 
 #: kdeui/dialogs/kbugreport.cpp:213
 msgid "OS:"
-msgstr "İşlt. Sist:"
+msgstr "OS:"
 
 #: kdeui/dialogs/kbugreport.cpp:226
 msgid "Compiler:"
@@ -8525,7 +8526,7 @@ msgid ""
 "where you will find a form to fill in. The information displayed above will "
 "be transferred to that server.</qt>"
 msgstr ""
-"<qt>Bir hata raporu göndermek için aşağıdaki bağlantıya tıklayın. Bu bir Web "
+"<qt>Bir hata raporu göndermek için aşağıdaki bağlantıya tıklayın. Bu bir ağ "
 "tarayıcı penceresinde<a href=\"http://bugs.kde.org\">http://bugs.kde.org</a> "
 "adresinde dolduracağınız bir form açacaktır. Yukarıdaki bilgiler bu sunucuya "
 "aktarılacaktır.</qt>"
@@ -9497,7 +9498,7 @@ msgstr "Serif"
 #: kdeui/fonts/fonthelpers.cpp:38
 msgctxt "@item Font name"
 msgid "Monospace"
-msgstr "Eşaralıklı"
+msgstr "Eş aralıklı"
 
 #. i18n: Filter by which the translators can translate, or otherwise
 #. operate on the font names not put up for regular translation.
@@ -10344,7 +10345,7 @@ msgstr "Metni Oku"
 
 #: kdeui/widgets/ktextedit.cpp:539
 msgid "Starting KTTSD Failed"
-msgstr "KTTDS Başlatılamadı"
+msgstr "KTTSD Başlatılamadı"
 
 #: kdeui/widgets/ktextedit.cpp:627
 #, kde-format
@@ -10353,7 +10354,7 @@ msgstr "%1 için öneri yok"
 
 #: kdeui/widgets/ktextedit.cpp:638
 msgid "Ignore"
-msgstr "Yoksa"
+msgstr "Yoksay"
 
 #: kdeui/widgets/ktextedit.cpp:639
 msgid "Add to Dictionary"
