@@ -2,15 +2,16 @@
 # translation of plasma.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-04 06:31+0100\n"
-"PO-Revision-Date: 2009-10-12 16:39+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-08 14:47+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,11 +37,11 @@ msgstr "Masaüstü"
 
 #: desktopview.cpp:157
 msgid "Next Activity"
-msgstr "Sonraki Eylem"
+msgstr "Sonraki Etkinlik"
 
 #: desktopview.cpp:161
 msgid "Previous Activity"
-msgstr "Önceki Eylem"
+msgstr "Önceki Etkinlik"
 
 #: interactiveconsole.cpp:59
 msgid "&Execute"
@@ -183,7 +184,7 @@ msgstr "Kontrol Panelini Göster"
 
 #: plasmaapp.cpp:664
 msgid "Add Activity"
-msgstr "Eylem Ekle"
+msgstr "Etkinlik Ekle"
 
 #: plasmaapp.cpp:671
 msgid "Zoom Out"
@@ -196,7 +197,7 @@ msgstr "Ağda yeni bir programcık kullanılabilir hale geldi:<br><b>%1</b> - <i
 
 #: plasmaapp.cpp:1185
 msgid "Add to current activity"
-msgstr "Geçerli eyleme ekle"
+msgstr "Geçerli etkinliğe ekle"
 
 #: positioningruler.cpp:466
 msgid "Move this slider to set the panel position"
