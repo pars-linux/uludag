@@ -116,7 +116,7 @@
       <enum>QFrame::Raised</enum>
      </property>
      <property name="text">
-      <string>&lt;b&gt;Pardus&lt;/b&gt; is a reliable, secure, fast and user friendly operating system. &lt;br /&gt;&lt;br /&gt;With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Kaptan&lt;/b&gt; will help you personalize your Pardus workspace easily and quickly. Please click &lt;b&gt;next&lt;/b&gt; in order to begin.</string>
+      <string>&lt;b&gt;Pardus&lt;/b&gt; is a reliable, secure, fast and user friendly operating system. &lt;br /&gt;&lt;br /&gt;With Pardus, you can connect to the Internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! &lt;br /&gt;&lt;br /&gt;&lt;b&gt;Kaptan&lt;/b&gt; will help you personalize your Pardus workspace easily and quickly. Please click &lt;b&gt;next&lt;/b&gt; in order to begin.</string>
      </property>
      <property name="wordWrap">
       <bool>true</bool>
