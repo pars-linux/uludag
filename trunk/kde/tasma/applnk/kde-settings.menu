@@ -32,7 +32,7 @@
 		</Include>
 	</Menu>
 	<Menu>
-		<Name>İnternet ve Yerel Ağ</Name>
+		<Name>Internet ve Yerel Ağ</Name>
 		<Directory>tasma-network.directory</Directory>
 		<Include>
 			<Category>X-KDE-tasma-network</Category>
