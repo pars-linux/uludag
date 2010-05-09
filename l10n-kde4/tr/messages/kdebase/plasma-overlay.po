@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-overlay\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-21 06:07+0100\n"
-"PO-Revision-Date: 2009-05-24 12:56+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:38+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: backgrounddialog.cpp:45
@@ -50,7 +51,7 @@ msgstr "Chani Armitage"
 
 #: main.cpp:39
 msgid "Author and maintainer"
-msgstr "Author and maintainer"
+msgstr "Yazar ve bakıcı"
 
 #: main.cpp:41
 msgid "Aaron J. Seigo"
@@ -86,7 +87,7 @@ msgstr "Programcık Şeffaflığı"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:6 rc.cpp:26
 msgid "User activity:"
-msgstr "Kullanıcı eylemi:"
+msgstr "Kullanıcı etkinliği:"
 
 #. i18n: file: BackgroundDialog.ui:89
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -110,17 +111,17 @@ msgstr "Tip:"
 #. i18n: ectx: property (text), widget (QLabel, m_monitor)
 #: rc.cpp:18 rc.cpp:38
 msgid "Monitor"
-msgstr "Mönitör"
+msgstr "Monitör"
 
 #: rc.cpp:19
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:20
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #: savercorona.cpp:70 savercorona.cpp:131
 msgid "Lock Screen"
