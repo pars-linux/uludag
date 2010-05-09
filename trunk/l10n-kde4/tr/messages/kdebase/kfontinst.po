@@ -6,14 +6,15 @@
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kfontinst\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-29 06:07+0100\n"
-"PO-Revision-Date: 2010-04-20 11:19+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:48+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,16 +24,12 @@ msgstr ""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
-"Serdar Soytetir "
-"Onur Küçük"
+msgstr "Serdar Soytetir, Onur Küçük, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
-"tulliana@gmail.com "
-"onur@pardus.org.tr"
+msgstr "tulliana@gmail.com, onur@pardus.org.tr, ibrahim@pardus.org.tr"
 
 #. i18n: file: viewpart/kfontviewpart.rc:4
 #. i18n: ectx: ToolBar (mainToolBar)
@@ -500,7 +497,7 @@ msgstr "İşlem sırasında beklenmeyen hata: <i>%1</i>"
 
 #: kcmfontinst/KCmFontInst.cpp:189
 msgid "KDE Font Installer"
-msgstr "KDE Yazıtipi Kurucusu"
+msgstr "KDE Yazı Tipi Kurucusu"
 
 #: kcmfontinst/KCmFontInst.cpp:190
 msgid "(C) Craig Drummond, 2000 - 2009"
@@ -556,12 +553,12 @@ msgstr "Önizleme Metnini Değiştir..."
 
 #: kcmfontinst/KCmFontInst.cpp:424
 msgid "<h1>Font Installer</h1><p> This module allows you to install TrueType, Type1, and Bitmap fonts.</p><p>You may also install fonts using Konqueror: type fonts:/ into Konqueror's location bar and this will display your installed fonts. To install a font, simply copy one into the folder.</p>"
-msgstr "<h1>Yazı Tipi Kurucu</h1><p> Bu modül TrueType, Type1ve Resim yazı tiplerini kurmanızı sağlar.</p><p>Ayrıca Konqueror adres çubuğuna fonts:/ yazarak erişebileceğiniz ve kurulu yazı tiplerinizi listeleyen konumdan da yazı tiplerini kurabilirsiniz. Bir yazı tipini yüklemek için yazı tipini bu konumdaki dizinin içerisine kopyalayın.</p>"
+msgstr "<h1>Yazı Tipi Kurucu</h1><p> Bu modül TrueType, Type1 ve Resim yazı tiplerini kurmanızı sağlar.</p><p>Ayrıca Konqueror adres çubuğuna fonts:/ yazarak erişebileceğiniz ve kurulu yazı tiplerinizi listeleyen konumdan da yazı tiplerini kurabilirsiniz. Bir yazı tipini yüklemek için yazı tipini bu konumdaki dizinin içerisine kopyalayın.</p>"
 
 #: kcmfontinst/KCmFontInst.cpp:430
 #, kde-format
 msgid "<h1>Font Installer</h1><p> This module allows you to install TrueType, Type1, and Bitmap fonts.</p><p>You may also install fonts using Konqueror: type fonts:/ into Konqueror's location bar and this will display your installed fonts. To install a font, simply copy it into the appropriate folder -  \"%1\" for fonts available to just yourself, or  \"%2\" for system-wide fonts (available to all).</p>"
-msgstr "<h1>Yazı Tipi Kurucu</h1><p> Bu modül TrueType, Type1ve Resim yazı tiplerini kurmanızı sağlar.</p><p>Ayrıca Konqueror adres çubuğuna fonts:/ yazarak erişebileceğiniz ve kurulu yazı tiplerinizi listeleyen konumdan da yazı tiplerini kurabilirsiniz. Bir yazı tipini uygun dizine yüklemek için - sadece kendiniz kullanmak için  \"%1\" dizinine, sistem genelinde kullanılabilir olarak yüklemek için  \"%2\" dizinine yazı tipini kopyalayın.</p>"
+msgstr "<h1>Yazı Tipi Kurucu</h1><p> Bu modül TrueType, Type1 ve Resim yazı tiplerini kurmanızı sağlar.</p><p>Ayrıca Konqueror adres çubuğuna fonts:/ yazarak erişebileceğiniz ve kurulu yazı tiplerinizi listeleyen konumdan da yazı tiplerini kurabilirsiniz. Bir yazı tipini uygun dizine yüklemek için - sadece kendiniz kullanmak için  \"%1\" dizinine, sistem genelinde kullanılabilir olarak yüklemek için  \"%2\" dizinine yazı tipini kopyalayın.</p>"
 
 #: kcmfontinst/KCmFontInst.cpp:483
 msgid "Add Fonts"
@@ -737,19 +734,19 @@ msgstr "Yazı Tip(ler)i kuruluyor..."
 
 #: kcmfontinst/KCmFontInst.cpp:1133
 msgid "You did not select anything to enable."
-msgstr "Etkinleştirmek için birşey seçmediniz."
+msgstr "Etkinleştirmek için bir şey seçmediniz."
 
 #: kcmfontinst/KCmFontInst.cpp:1134
 msgid "You did not select anything to disable."
-msgstr "Pasifleştirmek için birşey seçmediniz."
+msgstr "Pasifleştirmek için bir şey seçmediniz."
 
 #: kcmfontinst/KCmFontInst.cpp:1135
 msgid "Nothing to Enable"
-msgstr "Etkinleştirilecek Birşey Yok"
+msgstr "Etkinleştirilecek Bir Şey Yok"
 
 #: kcmfontinst/KCmFontInst.cpp:1135
 msgid "Nothing to Disable"
-msgstr "Pasifleştirilecek Birşey Yok"
+msgstr "Pasifleştirilecek Bir Şey Yok"
 
 #: kcmfontinst/KCmFontInst.cpp:1152
 #, kde-format
@@ -963,7 +960,7 @@ msgstr "0123456789.:,;(*!?'/\\\")£$€%^&-+@~#<>{}[]"
 
 #: lib/FcEngine.cpp:1342
 msgid "ERROR: Could not determine font's name."
-msgstr "HATA: Yazıtipi adı okunamadı."
+msgstr "HATA: Yazı tipi adı okunamadı."
 
 #: lib/FcEngine.cpp:1346
 #, kde-format
@@ -1699,7 +1696,7 @@ msgstr "CJK Birleşik İdeogramlar Genişleme A"
 
 #: viewpart/UnicodeBlocks.h:123
 msgid "Yijing Hexagram Symbols"
-msgstr "Yijing Altı Köşeli Yıldız Sembelleri"
+msgstr "Yijing Altı Köşeli Yıldız Sembolleri"
 
 #: viewpart/UnicodeBlocks.h:124
 msgid "CJK Unified Ideographs"
