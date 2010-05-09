@@ -14,14 +14,15 @@
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-17 01:19+0100\n"
-"PO-Revision-Date: 2010-04-20 13:17+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 01:09+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -43,7 +44,7 @@ msgid ""
 "Protocol not supported\n"
 "%1"
 msgstr ""
-"Prokol desteklenmiyor\n"
+"Protokol desteklenmiyor\n"
 "%1"
 
 #: src/konqmainwindow.cpp:566
@@ -285,7 +286,7 @@ msgstr "Eklentileri Yapılandır..."
 
 #: src/konqmainwindow.cpp:3640
 msgid "Configure Spell Checking..."
-msgstr "Yazım DenetiminiYapılandır..."
+msgstr "Yazım Denetimini Yapılandır..."
 
 #: src/konqmainwindow.cpp:3646
 msgid "Split View &Left/Right"
@@ -374,7 +375,7 @@ msgstr "Konum Çubuğu"
 
 #: src/konqmainwindow.cpp:3800
 msgid "<html>Location Bar<br /><br />Enter a web address or search term.</html>"
-msgstr "<html>Konum Çubuğu<br /><br />Bir Web adresi ya da aranacak sözcük girin.</html>"
+msgstr "<html>Konum Çubuğu<br /><br />Bir ağ adresi ya da aranacak sözcük girin.</html>"
 
 #: src/konqmainwindow.cpp:3804
 msgid "Clear Location Bar"
@@ -483,7 +484,7 @@ msgstr "Pano içeriğini yapıştır"
 
 #: src/konqmainwindow.cpp:3899
 msgid "<html>Print the currently displayed document<br /><br />You will be presented with a dialog where you can set various options, such as the number of copies to print and which printer to use.<br /><br />This dialog also provides access to special KDE printing services such as creating a PDF file from the current document.</html>"
-msgstr "<html>Şimdi gösterilen belgeyi yazdırır<br /><br />Kopya sayısı ve hangi yazıcıyı kullanmak istediğiniz gibi seçenekler çeşitli seçenekler kısmında sunulmaktadır.<br /><br />Bu pencere ayrıca, güncel belgeden PDF oluşturmak gibi, KDE özel yazdırma servisleri ile de iletişim kuarabilir.</html>"
+msgstr "<html>Şimdi gösterilen belgeyi yazdırır<br /><br />Kopya sayısı ve hangi yazıcıyı kullanmak istediğiniz gibi seçenekler çeşitli seçenekler kısmında sunulmaktadır.<br /><br />Bu pencere ayrıca, güncel belgeden PDF oluşturmak gibi, KDE özel yazdırma servisleri ile de iletişim kurabilir.</html>"
 
 #: src/konqmainwindow.cpp:3905
 msgid "Print the current document"
@@ -712,7 +713,7 @@ msgstr "%1 Sakla"
 
 #: src/konqview.cpp:1233
 msgid "The page you are trying to view is the result of posted form data. If you resend the data, any action the form carried out (such as search or online purchase) will be repeated. "
-msgstr "İncelemeye çalıştığın sayfa form ile gönderilen veri sonucudur.Tekrar gönderilen veri, formdaki bilgileri tekrar gönderecektir.(Arama ya da çevrimiçi alışveriş sonuçları gibi)"
+msgstr "İncelemeye çalıştığın sayfa form ile gönderilen veri sonucudur.Tekrar gönderilen veri, formdaki bilgileri tekrar gönderecektir.(Arama ya da çevrim içi alışveriş sonuçları gibi)"
 
 #: src/konqview.cpp:1235
 msgid "Warning"
@@ -780,7 +781,7 @@ msgstr "Açılacak konum"
 
 #: src/konqframestatusbar.cpp:107
 msgid "Checking this box on at least two views sets those views as 'linked'. Then, when you change directories in one view, the other views linked with it will automatically update to show the current directory. This is especially useful with different types of views, such as a directory tree with an icon view or detailed view, and possibly a terminal emulator window."
-msgstr "En azından iki görünümde bu kutuyu işaretlerseniz, sözkonusu görünümler birbirine 'bağlanır'. Böylece bir görünümde dizin değiştirdiğinizde ona bağlı olan diğer görünümler de otomatik olarak o dizini göstermek üzere güncellenir. Bu seçenek, özellikle farklı görünüm türleri, mesela simge görünümlü bir dizin ağacı ya da ayrıntılı görünüm kullanırken yararlı olur."
+msgstr "En azından iki görünümde bu kutuyu işaretlerseniz, söz konusu görünümler birbirine 'bağlanır'. Böylece bir görünümde dizin değiştirdiğinizde ona bağlı olan diğer görünümler de otomatik olarak o dizini göstermek üzere güncellenir. Bu seçenek, özellikle farklı görünüm türleri, mesela simge görünümlü bir dizin ağacı ya da ayrıntılı görünüm kullanırken yararlı olur."
 
 #: src/konqframestatusbar.cpp:166
 msgid "Close View"
@@ -1044,7 +1045,7 @@ msgid ""
 " and other major improvements to applet support)"
 msgstr ""
 "Geliştirici (Java 2 güvenlik yöneticisi desteği,\n"
-" ve diğer önemli aplet desteği geliştirmeleri)"
+" ve diğer önemli programcık desteği geliştirmeleri)"
 
 #: src/konqfactory.cpp:263
 msgid "Stefan Schimanski"
@@ -1328,7 +1329,7 @@ msgstr "Web Yan Çubuğu Modülü"
 #: sidebar/web_module/web_module.cpp:301
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "Web yan çubuğu modülü ekle"
+msgstr "Ağ yan çubuğu modülü ekle"
 
 #: sidebar/history_module/history_module.cpp:126
 msgctxt "@action:inmenu Add"
@@ -1461,7 +1462,7 @@ msgstr "Özgür olun."
 #: about/konq_aboutpage.cc:82 about/konq_aboutpage.cc:138
 #: about/konq_aboutpage.cc:192 about/konq_aboutpage.cc:289
 msgid "Konqueror is a web browser, file manager and universal document viewer."
-msgstr "Konqueror bir Web tarayıcı, dosya yöneticisi  ve evrensel belge görüntüleyicidir."
+msgstr "Konqueror bir ağ tarayıcı, dosya yöneticisi  ve evrensel belge görüntüleyicidir."
 
 #: about/konq_aboutpage.cc:83 about/konq_aboutpage.cc:139
 #: about/konq_aboutpage.cc:193 about/konq_aboutpage.cc:290
@@ -1519,7 +1520,7 @@ msgstr "Sonraki: Konqueror'a Giriş"
 
 #: about/konq_aboutpage.cc:109
 msgid "Search the Web"
-msgstr "Web'de Ara"
+msgstr "Ağda Ara"
 
 #: about/konq_aboutpage.cc:143
 msgid "Konqueror makes working with and managing your files easy. You can browse both local and networked folders while enjoying advanced features such as the powerful sidebar and file previews."
@@ -1527,7 +1528,7 @@ msgstr "Konqueror dosyalarla çalışmayı ve dosyaları yönetmeyi oldukça kol
 
 #: about/konq_aboutpage.cc:147
 msgid "Konqueror is also a full featured and easy to use web browser which you can use to explore the Internet. Enter the address (e.g. <a href=\"http://www.kde.org\">http://www.kde.org</a>) of a web page you would like to visit in the location bar and press Enter, or choose an entry from the Bookmarks menu."
-msgstr "Konqueror aynı zamanda İnternet'te gezinmek için kullanabileceğiniz kolay kullanımlı ve tam özellikli bir Web tarayıcıdır. Gitmek istediğiniz bir İnternet adresini yukarıdaki adres çubuğuna girin (örneğin <a href=\"http://www.kde.org\">http://www.kde.org</a>) ve Enter tuşuna basın veya Yer İmleri menüsünden bir adres seçin."
+msgstr "Konqueror aynı zamanda İnternet'te gezinmek için kullanabileceğiniz kolay kullanımlı ve tam özellikli bir ağ tarayıcıdır. Gitmek istediğiniz bir İnternet adresini yukarıdaki adres çubuğuna girin (örneğin <a href=\"http://www.kde.org\">http://www.kde.org</a>) ve Enter tuşuna basın veya Yer İmleri menüsünden bir adres seçin."
 
 #: about/konq_aboutpage.cc:152
 #, kde-format
@@ -1569,7 +1570,7 @@ msgstr "Ek gereksinimler*"
 #: about/konq_aboutpage.cc:208
 #, kde-format
 msgid "<A HREF=\"%1\">DOM</A> (Level 1, partially Level 2) based <A HREF=\"%2\">HTML 4.01</A>"
-msgstr "<a href=\"%1\">DOM</a> (1. Seviye, geçici seyice 2) tabanlı <a href=\"%2\">HTML 4.01</a>"
+msgstr "<a href=\"%1\">DOM</a> (1. Seviye, geçici seviye 2) tabanlı <a href=\"%2\">HTML 4.01</a>"
 
 #: about/konq_aboutpage.cc:210 about/konq_aboutpage.cc:212
 #: about/konq_aboutpage.cc:224 about/konq_aboutpage.cc:229
@@ -1580,12 +1581,12 @@ msgstr "hazır"
 #: about/konq_aboutpage.cc:211
 #, kde-format
 msgid "<A HREF=\"%1\">Cascading Style Sheets</A> (CSS 1, partially CSS 2)"
-msgstr "<a href=\"%1\">Döşenmiş Stil kağıtları</a>(CSS 1,geçici CSS2)"
+msgstr "<a href=\"%1\">Döşenmiş Stil kağıtları</a>(CSS 1,geçici CSS 2)"
 
 #: about/konq_aboutpage.cc:213
 #, kde-format
 msgid "<A HREF=\"%1\">ECMA-262</A> Edition 3 (roughly equals JavaScript 1.5)"
-msgstr "<a href=\"%1\">ECMA-262</a> Sürüm 3 (Yaklaşık olark Javascript 1.5 eşit.)"
+msgstr "<a href=\"%1\">ECMA-262</a> Sürüm 3 (Yaklaşık olarak JavaScript 1.5 eşit.)"
 
 #: about/konq_aboutpage.cc:214
 #, kde-format
@@ -1707,12 +1708,12 @@ msgstr "İpucuları &amp; Püf Noktaları"
 #: about/konq_aboutpage.cc:295
 #, kde-format
 msgid "Use Web-Shortcuts: by typing \"gg: KDE\" one can search the Internet, using Google, for the search phrase \"KDE\". There are a lot of Web-Shortcuts predefined to make searching for software or looking up certain words in an encyclopedia a breeze. You can even <a href=\"%1\">create your own</a> Web-Shortcuts."
-msgstr "Internet Anahtar Kelimeleri ve Web Kısayollarını Kullanın: \"gg: KDE\" yazarak, \"KDE\" kelimesini Google arama motorunu kullanarak arayabilirsiniz.  Yazılım aramak ve ansiklopedilerde araştırma yapmak için bir çok önceden tanımlanmış Web kısayolu mevcuttur. Bunlara ek olarak kendi <a href=\"%1\">web kısayollarınızı</a> da oluşturabilirsiniz."
+msgstr "Internet Anahtar Kelimeleri ve Web Kısayollarını Kullanın: \"gg: KDE\" yazarak, \"KDE\" kelimesini Google arama motorunu kullanarak arayabilirsiniz.  Yazılım aramak ve ansiklopedilerde araştırma yapmak için bir çok önceden tanımlanmış Web kısayolu mevcuttur. Bunlara ek olarak kendi <a href=\"%1\">ağ kısayollarınızı</a> da oluşturabilirsiniz."
 
 #: about/konq_aboutpage.cc:300
 #, kde-format
 msgid "Use the magnifier button <img width='16' height='16' src=\"%1\"></img> in the toolbar to increase the font size on your web page."
-msgstr "Web sayfasındaki yazı tiplerinin boyutunu büyütmek için araç çubuğundakibüyüteç düğmesini <img width='16' height='16' src=\"%1\"></img> kullanın."
+msgstr "Ağ sayfasındaki yazı tiplerinin boyutunu büyütmek için araç çubuğundaki büyüteç düğmesini <img width='16' height='16' src=\"%1\"></img> kullanın."
 
 #: about/konq_aboutpage.cc:302
 #, kde-format
@@ -1731,12 +1732,12 @@ msgstr "Ayarlar menüsünden <img width='16' height='16' src=\"%1\" /> \"Tam Ekr
 #: about/konq_aboutpage.cc:312
 #, kde-format
 msgid "Divide et impera (lat. \"Divide and conquer\") - by splitting a window into two parts (e.g. Window -> <img width='16' height='16' src=\"%1\" /> Split View Left/Right) you can make Konqueror appear the way you like. You can even load some example view-profiles (e.g. Midnight Commander), or create your own ones."
-msgstr "Divide et impera (latince: Böl ve Keşfet) - pencereyi ikiye bölerek (örn. Pencere -> <img width='16' height='16' src=\"%1\" /> Görünümü Sol/Sağ Böl) Konqueror uygulamasının sevdiğiniz şekilde görünmesini sağlayabilirsiniz. Aynı zamanda bazı örnek görünüm profillerini yükleyebilir (örn. Midnight-Commander), veya kendi profillerinizi oluşturabilirsiniz."
+msgstr "Divide et impera (Latince: Böl ve Keşfet) - pencereyi ikiye bölerek (örn. Pencere -> <img width='16' height='16' src=\"%1\" /> Görünümü Sol/Sağ Böl) Konqueror uygulamasının sevdiğiniz şekilde görünmesini sağlayabilirsiniz. Aynı zamanda bazı örnek görünüm profillerini yükleyebilir (örn. Midnight-Commander), veya kendi profillerinizi oluşturabilirsiniz."
 
 #: about/konq_aboutpage.cc:317
 #, kde-format
 msgid "Use the <a href=\"%1\">user-agent</a> feature if the website you are visiting asks you to use a different browser (and do not forget to send a complaint to the webmaster!)"
-msgstr "Ziyaret ettiğiniz sayfanın eğer tarayıcınız tarafından desteği yoksa <a href=\"%1\">kullanıcı-ajanı</a> özelliğini kullanının (site yöneticisine bir şikayet göndermeyi de unutmayın!)"
+msgstr "Ziyaret ettiğiniz sayfanın eğer tarayıcınız tarafından desteği yoksa <a href=\"%1\">kullanıcı-ajanı</a> özelliğini kullanın (site yöneticisine bir şikayet göndermeyi de unutmayın!)"
 
 #: about/konq_aboutpage.cc:320
 #, kde-format
@@ -1775,7 +1776,7 @@ msgstr "<td>MIME Türü</td><td>Açıklama</td><td>Sonek</td><td>Eklenti</td>"
 
 #: about/konq_aboutpage.cc:462
 msgid "Do you want to disable showing the introduction in the webbrowsing profile?"
-msgstr "Web tarama profilindeki giriş sayfasının gösterilmemesini istiyor musunuz?"
+msgstr "Ağ tarama profilindeki giriş sayfasının gösterilmemesini istiyor musunuz?"
 
 #: about/konq_aboutpage.cc:464
 msgid "Faster Startup?"
@@ -1821,12 +1822,12 @@ msgstr "Komut çıktısı: \"%1\""
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Görkem Çetin"
+msgstr "Serdar Soytetir, Görkem Çetin, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, gorkem@kde.org"
+msgstr "tulliana@gmail.com, gorkem@kde.org, ibrahim@pardus.org.tr"
 
 #. i18n: file: src/konqueror.rc:5
 #. i18n: ectx: Menu (file)
@@ -1983,7 +1984,7 @@ msgstr "&Maksimum URL sayısı:"
 #. i18n: ectx: property (title), widget (QGroupBox, gbFonts)
 #: rc.cpp:77
 msgid "Custom Fonts For"
-msgstr "Özel Yazıtipi:"
+msgstr "Özel Yazı Tipi:"
 
 #. i18n: file: sidebar/history_module/history_dlg.ui:82
 #. i18n: ectx: property (text), widget (QLabel, lbNewer)
@@ -1997,7 +1998,7 @@ msgstr "Bu tarihten daha yeni URL'ler"
 #. i18n: ectx: property (text), widget (QPushButton, btnFontNewer)
 #: rc.cpp:83 rc.cpp:89
 msgid "Choose Font..."
-msgstr "Yazıtipini Seç..."
+msgstr "Yazı Tipini Seç..."
 
 #. i18n: file: sidebar/history_module/history_dlg.ui:105
 #. i18n: ectx: property (text), widget (QLabel, lbOlder)
@@ -2081,7 +2082,7 @@ msgstr "Buradan, farenizi bir dosya üzerine getirdiğinizde açılan pencerede 
 #. i18n: ectx: label, entry, group (FMSettings)
 #: rc.cpp:136
 msgid "Show 'Delete' menu entries which bypass the trashcan"
-msgstr "Çöp kutusuna göndermeden silmek için 'Sil' menü girdillerini göster"
+msgstr "Çöp kutusuna göndermeden silmek için 'Sil' menü girdilerini göster"
 
 #. i18n: file: src/konqueror.kcfg:57
 #. i18n: ectx: whatsthis, entry, group (FMSettings)
@@ -2125,7 +2126,7 @@ msgstr "Bir dosya silinirken sor."
 #. i18n: ectx: whatsthis, entry, group (Trash)
 #: rc.cpp:297
 msgid "This option tells Konqueror whether to ask for a confirmation when you delete a file without using the trash folder. Warning, deleted files can not be recovered, so it is recommended to leave this confirmation enabled."
-msgstr "Çöp kullanmadan dosyaları silerken Konqueror'un onay sormasını bu sçenek ile ayarlayabilirsiniz. Dikkat, silinen dosyalar geri getirilemez, bu sebeple bu seçeneğin açık olması önerilir."
+msgstr "Çöp kullanmadan dosyaları silerken Konqueror'un onay sormasını bu seçenek ile ayarlayabilirsiniz. Dikkat, silinen dosyalar geri getirilemez, bu sebeple bu seçeneğin açık olması önerilir."
 
 #. i18n: file: src/konqueror.kcfg:524
 #. i18n: ectx: label, entry, group (Trash)
