@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kcm_kwintabbox\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-17 05:56+0100\n"
-"PO-Revision-Date: 2010-04-27 16:41+0300\n"
+"PO-Revision-Date: 2010-05-09 01:17+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -55,7 +55,7 @@ msgstr "Alternatif"
 msgid ""
 "Focus policy settings limit the functionality of navigating through windows."
 msgstr ""
-"Odaklama politika ayarlraı pencereler arasında dolaşma işlevselliğini "
+"Odaklama politika ayarları pencereler arasında dolaşma işlevselliğini "
 "kısıtlar."
 
 #: main.cpp:82
@@ -284,7 +284,8 @@ msgstr "Efekt:"
 #: rc.cpp:101 rc.cpp:216
 msgid "The effect to replace the list window when desktop effects are active."
 msgstr ""
-"Masaüstü efektleri açıkken penceleri listele efektinin yerine kullanılacak "
+"Masaüstü efektleri açıkken pencereleri listele efektinin yerine "
+"kullanılacak "
 "efekt."
 
 #. i18n: file: main.ui:153
@@ -325,4 +326,5 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
+
 
