@@ -14,29 +14,30 @@ Subscribing to the Mailing Lists
 --------------------------------
 
    - Pardus uses Transifex to help translators keep track of translation
-     projects. Please register yourself to Transifex at 
-     http://translate.pardus.org.tr
+     projects. Please register yourself to Transifex at
+     http://translate.pardus.org.tr. Please, do not forget to update your
+     Transifex account page. It's mandatory to fill the Name and Surname
+     informations. These informations are going to be shown in commit log.
 
    - Visit http://lists.pardus.org.tr/mailman/listinfo/pardus-translators and
-     subscribe to this mailing list.
+     subscribe to this mailing list. pardus-translators [at] pardus.org.tr
+     e-mail address is the unique channel that we communicate each other.
+     Developers are announcing the string freeze date or an urgent translation
+     state on this address. So, it's better to follow this mailing address
+     *reqularly* to be aware of any translation related topics.
 
    - It is better to subscribe to development mailing list in order to keep
      syncronized with other developers. Use the link below:
      http://lists.pardus.org.tr/mailman/listinfo/pardus-devel.
 
-   - Wait for the confirmation emails from you've just registered and
+   - If you want to see your translation commit, visit
+     http://lists.pardus.org.tr/mailman/listinfo/uludag-commits. You can follow
+     all translation updates ( and other technical commit mails as well) from
+     this mailing address.
+
+   - Wait for the confirmation emails from you've just registered or
      subscribed services. These e-mails contains a link to confirm your
      subscription, click the link to confirm your subscription.
-
-.. #. Introducing Yourself
-
-Introducing Yourself
---------------------
-
-   - Post a short self introduction to the pardus-translators mailing list.
-     Please remember to include your Transifex user name and your language.
-     With this information, language coordinator can identify you for language
-     team joining approval.
 
 .. #. Create a Bugzilla account
 
@@ -51,6 +52,28 @@ Creating a Bugzilla Account
    * You are now a fully recognized member of Pardus community, capable of
      submitting contributions, submitting bugs and following the discussions of
      our groups.
+
+.. #. Introducing Yourself
+
+Introducing Yourself
+--------------------
+
+   - Post a short self introduction to the pardus-translators mailing list.
+     Please remember to include your Transifex user name and your language.
+     With this information, language coordinator can identify you for language
+     team joining approval.
+
+Requesting Team Membership
+--------------------------
+
+   - After you've successfully accomplished the steps above, you are ready to
+     translate Pardus to a language that you want. Just click the "Join This
+     Team" button at the language page that you want to join. If you filled the
+     needed information on your Transifex account page and done the steps
+     above, the language coordinator will approve you membership request and
+     you'll be able to ready to translate.
+
+..      ..  image:: images/join-this-team.png
 
 .. #. Obtaining and Translating Projects
 
@@ -88,10 +111,7 @@ Obtaining and Translating Projects
       to unlock it when the translation is done and commited.
 
    #. Now you are aware of the workflow and begin translating. Translate the po file for your
-      language in a po editor such as Lokalize, or by using Transifex' online po
-      editor. Just click the button below and start translating.
-
-      .. image:: images/edit.png
+      language in a PO editor such as Lokalize.
 
    #. Check the integrity of your file before you commit it.
 
@@ -117,8 +137,8 @@ Committing Projects
 
 .. #. Adding New Translation File
 
-Adding New Translation File
----------------------------
+Adding Non-Existing Translation File
+------------------------------------
 
    If there is no translation file for your language, please do the following
    steps:
