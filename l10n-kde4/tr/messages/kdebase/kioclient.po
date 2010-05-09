@@ -4,13 +4,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Gökçen Eraslan <gokcen@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kioclient\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-07 06:19+0100\n"
-"PO-Revision-Date: 2010-04-21 10:30+0300\n"
-"Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:41+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -199,7 +200,7 @@ msgid ""
 "\n"
 msgstr ""
 "  kioclient exec file:/root/Desktop/emacs.desktop\n"
-"             // Emacs uygulamasını başlatır\n"
+"             // emacs uygulamasını başlatır\n"
 "\n"
 
 #: kioclient.cpp:100
@@ -260,7 +261,7 @@ msgstr "Söz Dizimi Hatası: Çok fazla argüman\n"
 
 #: kioclient.cpp:312
 msgid "Unable to download from an invalid URL."
-msgstr "Geçersiz bir adrsten indirilemedi."
+msgstr "Geçersiz bir adresten indirilemedi."
 
 #: kioclient.cpp:355
 #, kde-format
