@@ -29,6 +29,7 @@ def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
 if __name__ == '__main__':
+    setSystemLocale()
 
     signal.signal(signal.SIGINT, signal.SIG_DFL)
     if not dbus.get_default_main_loop():

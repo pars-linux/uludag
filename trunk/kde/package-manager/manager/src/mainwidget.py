@@ -35,10 +35,6 @@ from statusupdater import StatusUpdater
 from pmutils import *
 import config
 
-UPDATE_TYPES = [['normal',   i18n('All Updates'), 'system-software-update'],
-                ['security', i18n('Security Updates'),    'security-medium'],
-                ['critical', i18n('Critical Updates'),    'security-low']]
-
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
@@ -97,6 +93,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def initializeUpdateTypeList(self):
         self.typeCombo.clear()
+        UPDATE_TYPES = [['normal', i18n('All Updates'), 'system-software-update'],
+                        ['security', i18n('Security Updates'), 'security-medium'],
+                        ['critical', i18n('Critical Updates'), 'security-low']]
+
         for type in UPDATE_TYPES:
             self.typeCombo.addItem(KIcon(type[2], KIconLoader.SizeSmallMedium), type[1], QVariant(type[0]))
 
