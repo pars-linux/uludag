@@ -8,14 +8,15 @@
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkonqhtml\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:27+0100\n"
-"PO-Revision-Date: 2010-04-20 11:49+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 01:26+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -174,8 +175,8 @@ msgid ""
 "resources.</li></ul></html>"
 msgstr ""
 "<html>Konqueror'un HTML sayfalarını aralıksız basamaklama ile mi tam "
-"basamaklama ile mi kaydıracağını belirler:<br /><ul><li><b>Herzaman</b>: "
-"Herzaman aralıksız kaydırma kullan.</li><li><b>Asla</b>: Hiçbir zaman "
+"basamaklama ile mi kaydıracağını belirler:<br /><ul><li><b>Her zaman</b>: "
+"Her zaman aralıksız kaydırma kullan.</li><li><b>Asla</b>: Hiçbir zaman "
 "aralıksız kaydırma kullanma.</li><li><b>Etkili Olduğunda</b>: Sadece düşük "
 "sistem kaynağı kullanan sayfalar üzerinde aralıksız kaydırma kullan.</li></"
 "ul></html>"
@@ -191,16 +192,16 @@ msgstr ""
 
 #: appearance.cpp:154
 msgid "Font Si&ze"
-msgstr "Yazıtipi &Boyutu"
+msgstr "yazı tipi &Boyutu"
 
 #: appearance.cpp:157 appearance.cpp:173
 msgid "This is the relative font size Konqueror uses to display web sites."
 msgstr ""
-"Konqueror'un web sitelerini göstermek için kullandığı yazitipi boyutudur."
+"Konqueror'un web sitelerini göstermek için kullandığı yazı tipi boyutudur."
 
 #: appearance.cpp:160
 msgid "M&inimum font size:"
-msgstr "&En küçük yazıtipi boyutu:"
+msgstr "&En küçük yazı tipi boyutu:"
 
 #: appearance.cpp:164
 msgid ""
@@ -212,71 +213,70 @@ msgstr ""
 
 #: appearance.cpp:168
 msgid "&Medium font size:"
-msgstr "&Orta yazıtipi boyutu:"
+msgstr "&Orta yazı tipi boyutu:"
 
 #: appearance.cpp:183
 msgid "S&tandard font:"
-msgstr "S&tandart yazıtipi:"
+msgstr "S&tandart yazı tipi:"
 
 #: appearance.cpp:184
 msgid "This is the font used to display normal text in a web page."
-msgstr ""
-"Bu, web sayfasındaki normal metinleri göstermek için kullanılan yazitipidir."
+msgstr "Bu, web sayfasındaki normal metinleri göstermek için kullanılan ."
 
 #: appearance.cpp:189
 msgid "&Fixed font:"
-msgstr "&Sabit yazıtipi:"
+msgstr "&Sabit yazı tipi:"
 
 #: appearance.cpp:190
 msgid ""
 "This is the font used to display fixed-width (i.e. non-proportional) text."
 msgstr ""
 "Bu, sabit-genişlikli (yani, orantılanamaz) metinleri göstermek için "
-"kullanılan yazitipidir."
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:195
 msgid "S&erif font:"
-msgstr "S&erif yazıtipi:"
+msgstr "S&erif yazı tipi:"
 
 #: appearance.cpp:196
 msgid "This is the font used to display text that is marked up as serif."
 msgstr ""
-"Bu, web sayfasındaki serif olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazitipidir."
+"Bu, ağ sayfasındaki serif olarak işaretlenmiş metinleri göstermek için "
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:202
 msgid "Sa&ns serif font:"
-msgstr "S&ans serif yazıtipi:"
+msgstr "S&ans serif yazı tipi:"
 
 #: appearance.cpp:203
 msgid "This is the font used to display text that is marked up as sans-serif."
 msgstr ""
-"Bu, web sayfasındaki sans-serif olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazitipidir."
+"Bu, ağ sayfasındaki sans-serif olarak işaretlenmiş metinleri göstermek için "
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:208
 msgid "C&ursive font:"
-msgstr "&Cursive yazıtipi:"
+msgstr "&Cursive yazı tipi:"
 
 #: appearance.cpp:209
 msgid "This is the font used to display text that is marked up as italic."
 msgstr ""
-"Bu, web sayfasındaki italik metinleri göstermek için kullanılan yazitipidir."
+"Bu, ağ sayfasındaki italik metinleri göstermek için kullanılan yazı tipidir."
 
 #: appearance.cpp:214
 msgid "Fantas&y font:"
-msgstr "&Fantazi yazıtipi:"
+msgstr "&Fantazi yazı tipi:"
 
 #: appearance.cpp:215
 msgid ""
 "This is the font used to display text that is marked up as a fantasy font."
 msgstr ""
-"Web sayfasındaki fantazi olarak işaretlenmiş metinleri göstermek için "
-"kullanılan yazitipidir."
+"Ağ sayfasındaki fantezi olarak işaretlenmiş metinleri göstermek için "
+"kullanılan yazı tipidir."
 
 #: appearance.cpp:229
 msgid "Font &size adjustment for this encoding:"
-msgstr "&Bu kodlama için yazıtipi boyutu ayarları:"
+msgstr "&Bu kodlama için yazı tipi boyutu ayarları:"
 
 #: appearance.cpp:240 appearance.cpp:440
 msgid "Use Language Encoding"
@@ -296,7 +296,7 @@ msgstr ""
 
 #: domainlistview.cpp:48
 msgid "Host/Domain"
-msgstr "Makine/Etkialanı"
+msgstr "Makine/Etki Alanı"
 
 #: domainlistview.cpp:48
 msgid "Policy"
@@ -490,8 +490,8 @@ msgid ""
 "are either discarded or replaced with a placeholder image. "
 msgstr ""
 "<h1>Konqueror AdBlocK</h1> Konqueror AdBlocK, dış bağlantılı resimler ve "
-"çerçeveler içerip içermediğini konrtol etmek istediğiniz bir adres listesi "
-"oluşturmanıza izin verir. Bu tür bağlantılar içeren adresler yoksayılır ya "
+"çerçeveler içerip içermediğini kontrol etmek istediğiniz bir adres listesi "
+"oluşturmanıza izin verir. Bu tür bağlantılar içeren adresler yok sayılır ya "
 "da bir yer tutucu resmi ile değiştirilir."
 
 #: generalopts.cpp:53
@@ -511,7 +511,7 @@ msgstr "Giriş Sayfasını Göster"
 #: generalopts.cpp:85
 msgctxt "@item:inlistbox"
 msgid "Show My Home Page"
-msgstr "Anasayfamı Göster"
+msgstr "Ana Sayfamı Göster"
 
 #: generalopts.cpp:86
 msgctxt "@item:inlistbox"
@@ -529,7 +529,7 @@ msgstr "Anasayfa:"
 
 #: generalopts.cpp:101
 msgid "Select Home Page"
-msgstr "Web Sayfasını Seç"
+msgstr "Ağ Sayfasını Seç"
 
 #: generalopts.cpp:108
 msgid ""
@@ -549,10 +549,10 @@ msgid ""
 "some settings how Konqueror should handle the HTML code in the web pages it "
 "loads. It is usually not necessary to change anything here."
 msgstr ""
-"<h1>Konqueror Web Tarayıcı</h1> Bu bölümde Konqueror'un web tarayıcı "
+"<h1>Konqueror Ağ Tarayıcı</h1> Bu bölümde Konqueror'un web tarayıcı "
 "özelliğini yapılandırabilirsiniz. Programın dosya yöneticisi olarak "
 "çalışırken kullandığı özellikler \"Dosya Yöneticisi\" yapılandırma "
-"modülünden yapılandırılabilir. Konqueror'un internetten yüklediği web "
+"modülünden yapılandırılabilir. Konqueror'un Internet'ten yüklediği web "
 "sayfalarını nasıl görüntüleyeceğini buradan ayarlamak mümkündür. Genellikle "
 "bu kısımda değişiklik yapmaya gerek yoktur."
 
@@ -621,7 +621,7 @@ msgid ""
 "If this option is set, the shape of the cursor will change (usually to a "
 "hand) if it is moved over a hyperlink."
 msgstr ""
-"Eğer bu seçenek seçilirse, imlecin şekli (genelde bir el) bir hiperbağın "
+"Eğer bu seçenek seçilirse, imlecin şekli (genelde bir el) bir hiperlink "
 "üzerindeyken değişecektir."
 
 #: htmlopts.cpp:102
@@ -672,8 +672,8 @@ msgid ""
 "Unchecking this box will disable this accessibility feature. (Konqueror "
 "needs to be restarted for this change to take effect.)"
 msgstr ""
-"Web sayfaları gösterilirken Ctrl tuşuna basmak Erişim tuşlarını "
-"etkinleştirir. Bu kutucuğun işaretini kaldırmak sözkonusu erişebilirlik "
+"Ağ sayfaları gösterilirken Ctrl tuşuna basmak Erişim tuşlarını "
+"etkinleştirir. Bu kutucuğun işaretini kaldırmak söz konusu erişebilirlik "
 "özelliğini pasifleştirir. (Değişikliğin etkinleştirilebilmesi için "
 "Konqueror'un yeniden başlatılması gerekir.)"
 
@@ -715,7 +715,7 @@ msgid ""
 "HTML pages. Note that, as with any browser, enabling active contents can be "
 "a security problem."
 msgstr ""
-"HTML sayfalarında yeralması muhtemel olan Java'da yazılmış betiklerin "
+"HTML sayfalarında yer alması muhtemel olan Java'da yazılmış betiklerin "
 "çalıştırılmasını sağlar. Unutmayın, her tarayıcıda olduğu gibi, betik "
 "dillerinin etkin kılınması güvenlik sorununa yol açabilir."
 
@@ -780,7 +780,7 @@ msgstr ""
 "Yöneticisi ile birlikte çalışmasına imkan verir. Bu işlem, programcıkların "
 "sistemdeki dosyalara yazması ve bu dosyaları okumasını engeller. Bu seçeneği "
 "kapatmadan önce iki kez düşünmenizi öneririz. Ayrıca $HOME/.java.policy "
-"dosyasını Java policytool aracı kullanarak düzenleyerbilir ve bazı sitelere "
+"dosyasını Java policytool aracı kullanarak düzenleyebilir ve bazı sitelere "
 "daha fazla izin verilmesini sağlayabilirsiniz."
 
 #: javaopts.cpp:166
@@ -819,7 +819,8 @@ msgid ""
 msgstr ""
 "Tüm Java programcıkları yok olduklarında, programcık sunucusu kapanacaktır. "
 "Ancak, jvm'in yeniden başlatılması belli bir süre ister. Eğer "
-"internettegezinirken çalışan Java programlarını korumak isterseniz, gecikme "
+"Internet'te gezinirken çalışan Java programlarını korumak isterseniz, "
+"gecikme "
 "süresini istediğiniz bir değere ayarlayabilirsiniz. Eğer Konqueror'un o anki "
 "çalışan süreçleri sonlandırmamasını istiyorsanız aktif değilken Applet "
 "Sunucusunu Kapat seçeneğini işaretsiz bırakın."
@@ -839,7 +840,7 @@ msgstr "Java Politikasını Değiştir"
 
 #: javaopts.cpp:328
 msgid "&Java policy:"
-msgstr "&Java politiksı:"
+msgstr "&Java politikası:"
 
 #: javaopts.cpp:329
 msgid "Select a Java policy for the above host or domain."
@@ -855,7 +856,7 @@ msgid ""
 "JavaScript) that can be contained in HTML pages. Note that, as with any "
 "browser, enabling scripting languages can be a security problem."
 msgstr ""
-"HTML sayfalarında yeralması muhtemel olan ECMA-Script (JavaScript kadar "
+"HTML sayfalarında yer alması muhtemel olan ECMA-Script (JavaScript kadar "
 "yaygın olan) dilinde yazılmış betiklerin çalıştırılmasını mümkün kılar.  "
 "Unutmayın, her tarayıcıda olduğu gibi, betik dillerinin etkin kılınması "
 "güvenlik sorununa yol açabilir."
@@ -1041,7 +1042,7 @@ msgstr "Pencereyi yeniden boyutlandır:"
 
 #: jspolicies.cpp:222
 msgid "Allow scripts to change the window size."
-msgstr "JavaScript programlarının pencere boyutunu düzenlemesine izin ver."
+msgstr "Betiklerin pencere boyutunu düzenlemesine izin ver."
 
 #: jspolicies.cpp:227 jspolicies.cpp:264 jspolicies.cpp:301 jspolicies.cpp:341
 msgid "Ignore"
@@ -1052,7 +1053,7 @@ msgid ""
 "Ignore attempts of scripts to change the window size. The web page will "
 "<i>think</i> it changed the size but the actual window is not affected."
 msgstr ""
-"JavaScript programlarının pencere boyutlarını düzenlemesine izin ver. Web "
+"Betiklerin pencere boyutlarını düzenlemesine izin ver. Ağ "
 "sayfası, tarayıcının penceresinin değiştiğini düşünecek, ama aslında "
 "değiştiremeyecektir."
 
@@ -1072,14 +1073,14 @@ msgstr "Pencereyi taşı:"
 
 #: jspolicies.cpp:259
 msgid "Allow scripts to change the window position."
-msgstr "JavaScript programlarının pencere konumunu değiştirmesine izin ver."
+msgstr "Betiklerin pencere konumunu değiştirmesine izin ver."
 
 #: jspolicies.cpp:265
 msgid ""
 "Ignore attempts of scripts to change the window position. The web page will "
 "<i>think</i> it moved the window but the actual position is not affected."
 msgstr ""
-"Pencere yerini değiştirmeye çalışan kodları yoksay. Web sayfası pencerenin "
+"Pencere yerini değiştirmeye çalışan kodları yoksay. Ağ sayfası pencerenin "
 "yerinin değiştiğini <i>zanneder</i> fakat yeri değişmez."
 
 #: jspolicies.cpp:272
@@ -1098,7 +1099,7 @@ msgstr "Pencereyi odakla:"
 
 #: jspolicies.cpp:296
 msgid "Allow scripts to focus the window."
-msgstr "JavaScript programlarının pencereyi odaklamasına izin verir."
+msgstr "Betiklerin pencereyi odaklamasına izin verir."
 
 #: jspolicies.cpp:302
 msgid ""
@@ -1106,7 +1107,7 @@ msgid ""
 "i> it brought the focus to the window but the actual focus will remain "
 "unchanged."
 msgstr ""
-"Pencereyi etkin hale getirmeye çalışan kodları yoksay. Web sayfası "
+"Pencereyi etkin hale getirmeye çalışan kodları yoksay. Ağ sayfası "
 "pencerenin etkinleştiğini <i>zanneder</i> fakat gerçekte pencere durumu "
 "değişmez."
 
@@ -1119,7 +1120,7 @@ msgid ""
 msgstr ""
 "Bazı web siteleri tarayıcı penceresini arkaya geçtiğinde yeniden öne alma "
 "gibi pencere etkinleştirme işlemlerini <i>window.focus()</i> kodu ile yapar. "
-"Bu kullanıcı ne yapıor olursa olsun pencerenin en öne gelmesine neden olur. "
+"Bu kullanıcı ne yapıyor olursa olsun pencerenin en öne gelmesine neden olur. "
 "Bu seçenek bu tür durumlarda nasıl davranılacağını belirler."
 
 #: jspolicies.cpp:321
@@ -1128,15 +1129,14 @@ msgstr "Durum çubuğu metnini düzenle:"
 
 #: jspolicies.cpp:336
 msgid "Allow scripts to change the text of the status bar."
-msgstr ""
-"JavaScript yazılımlarının durum çubuğundaki metni değiştirmesine izin ver."
+msgstr "Betiklerin durum çubuğundaki metni değiştirmesine izin ver."
 
 #: jspolicies.cpp:342
 msgid ""
 "Ignore attempts of scripts to change the status bar text. The web page will "
 "<i>think</i> it changed the text but the actual text will remain unchanged."
 msgstr ""
-"Durum çubuğu metnini değiştirmek isteyen kodları yoksay. Web sayfası metnin "
+"Durum çubuğu metnini değiştirmek isteyen kodları yoksay. Ağ sayfası metnin "
 "değiştiğini <i>zanneder</i> fakat gerçekte metin değişmez."
 
 #: jspolicies.cpp:350
@@ -1388,7 +1388,7 @@ msgid ""
 "The nspluginscan executable cannot be found. Netscape plugins will not be "
 "scanned."
 msgstr ""
-"nsplugin çalıştırılabiliri bulunamadı. Netscape eklentileri taranamayacak."
+"nsplugin çalıştırılabilir bulunamadı. Netscape eklentileri taranamayacak."
 
 #: pluginopts.cpp:342
 msgid "Scanning for plugins"
@@ -1680,12 +1680,12 @@ msgstr "Değer"
 #: rc.cpp:97
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Murat ŞİŞMAN"
+msgstr "Serdar Soytetir, Murat ŞİŞMAN, H. İbrahim Güngör"
 
 #: rc.cpp:98
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, muratsisman@mynet.com"
+msgstr "tulliana@gmail.com, muratsisman@mynet.com, ibrahim@pardus.org.tr"
 
 #. i18n: file: css/csscustom.ui:13
 #. i18n: ectx: property (whatsThis), widget (QWidget, CSSCustomDialog)
@@ -1707,8 +1707,8 @@ msgid ""
 "another, with family members that are e.g. bold, italic, or any number of "
 "the above.</p>"
 msgstr ""
-"<b>Yazıtipi ailesi</b><p>Yazıtipi ailesi diğer ailelere benzer. Ailenin "
-"üyeler kalın, yassı veya herhangi bir numarada belitrilmiş gibi.</p>"
+"<b>Yazı tipi ailesi</b><p>Yazı tipi ailesi diğer ailelere benzer. Ailenin "
+"üyeler kalın, yassı veya herhangi bir numarada belirtilmiş gibi.</p>"
 
 #. i18n: file: css/csscustom.ui:24
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox7)
@@ -1726,7 +1726,7 @@ msgstr "Temel aile:"
 #. i18n: ectx: property (whatsThis), widget (KFontComboBox, fontFamily)
 #: rc.cpp:113
 msgid "<p>This is the currently selected font family</p>"
-msgstr "<p>Şimdiki seçilen yazıtipi ailesini gösterir</p>"
+msgstr "<p>Şimdiki seçilen yazı tipi ailesini gösterir</p>"
 
 #. i18n: file: css/csscustom.ui:509
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sameFamily)
@@ -1736,7 +1736,8 @@ msgid ""
 "fonts everywhere in favor of the base font.</p>"
 msgstr ""
 "<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel "
-"yazıtiplerinin yerine temel yazıtiplerini kullanmak için seçebilirsiniz.</p>"
+"yazı tiplerinin yerine temel yazı tiplerini kullanmak için seçebilirsiniz.<"
+"/p>"
 
 #. i18n: file: css/csscustom.ui:512
 #. i18n: ectx: property (text), widget (QCheckBox, sameFamily)
@@ -1843,7 +1844,8 @@ msgid ""
 "displayed in the same size.</p>"
 msgstr ""
 "<b>Tüm metinlerde aynı aileyi kullan</b><p>Bu seçeneği her yerdeki özel "
-"yazıtiplerinin yerine temel yazıtiplerini kullanmak için seçebilirsiniz.</p>"
+"yazı tiplerinin yerine temel yazı tiplerini kullanmak için seçebilirsiniz.<"
+"/p>"
 
 #. i18n: file: css/csscustom.ui:616
 #. i18n: ectx: property (text), widget (QCheckBox, dontScale)
@@ -1888,7 +1890,7 @@ msgid ""
 "<b>Custom</b><p>Select this option to define a custom color for the default "
 "font.</p>"
 msgstr ""
-"<b>Özel</b><p>Bu ayarla öntanımlı yazıtipi rengini belirleyebilirsiniz.</p>"
+"<b>Özel</b><p>Bu ayarla öntanımlı yazı tipi rengini belirleyebilirsiniz.</p>"
 
 #. i18n: file: css/csscustom.ui:674
 #. i18n: ectx: property (text), widget (QRadioButton, customColor)
@@ -1929,7 +1931,7 @@ msgid ""
 "stylesheet.</p>"
 msgstr ""
 "<b>Bütün metinde aynı rengi kullan</b><p>Bu ayarı seçtiğinizde öntanımlı "
-"yazıtipinde bu renk kullanılır.</p>"
+"yazı tipinde bu renk kullanılır.</p>"
 
 #. i18n: file: css/csscustom.ui:716
 #. i18n: ectx: property (text), widget (QCheckBox, sameColor)
@@ -2039,9 +2041,9 @@ msgid ""
 "style sheets).</p>"
 msgstr ""
 "<b>Kullanıcı tanımlı stylesheet kullan </b> <p>Eğer bu seçenek seçilirse, "
-"konqueror bu CSS ile kullanılacak. CSS sayesinde web sayfalarının "
-"tarayıcınızda nasıl görüntüleneceğini belirleyebilrisiniz. Verilen dosya "
-"geçerli bir CSS olmak zorundadır. (geniş blgi için bkz: http://www.w3.org/"
+"Konqueror bu CSS ile kullanılacak. CSS sayesinde web sayfalarının "
+"tarayıcınızda nasıl görüntüleneceğini belirleyebilirsiniz. Verilen dosya "
+"geçerli bir CSS olmak zorundadır. (geniş bilgi için bkz: http://www.w3.org/"
 "Style/CSS )</p>"
 
 #. i18n: file: css/cssconfig.ui:42
@@ -2060,7 +2062,7 @@ msgid ""
 "your desired options.</p>"
 msgstr ""
 "<b>Erişebilirlik biçim sayfasını kullanma</b> <p> Bu seçenek öntanımlı bir "
-"yazıtipi, yazıtipi boyutu ve yazıtipi rengini birkaç fare tıklaması ile "
+"yazı tipi, yazı tipi boyutu ve yazı tipi rengini birkaç fare tıklaması ile "
 "kullanmanıza olanak sağlar. İstenen seçenekleri Özelleştir sekmesinden "
 "ayarlayın. </p>"
 
