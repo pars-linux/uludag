@@ -5,18 +5,19 @@
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Uğur Çetin <jnmbk@users.sourceforge.net>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmscreensaver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-08 05:59+0100\n"
-"PO-Revision-Date: 2009-11-04 18:32+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-09 00:41+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: advanceddialog.cpp:21
@@ -83,7 +84,7 @@ msgstr "Uçan Nesneler"
 #: category_list.cpp:10
 msgctxt "Screen saver category"
 msgid "Fractals"
-msgstr "Fraktaller"
+msgstr "Fraktallar"
 
 #: category_list.cpp:11
 msgctxt "Screen saver category"
