@@ -2,13 +2,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-22 01:20+0100\n"
-"PO-Revision-Date: 2010-04-27 13:36+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 01:00+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,7 +57,7 @@ msgid ""
 "One or more files on this disc are open within an application."
 msgstr ""
 "Disk çıkartılamadı. "
-"Disteki bir veya daha fazla dosya bir uygulama tarafından kullanılıyor."
+"Diskteki bir veya daha fazla dosya bir uygulama tarafından kullanılıyor."
 
 #: devicewrapper.cpp:228
 msgid "Could not mount the disc."
@@ -105,4 +106,5 @@ msgstr "çıkart"
 msgid "Lists all devices which can be ejected, and allows them to be ejected."
 msgstr ""
 "Çıkartılabilecek durumdaki aygıtları listeler ve çıkartılmalarını sağlar."
+
 
