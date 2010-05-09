@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: krunner_shellrunner\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-08-25 07:08+0200\n"
-"PO-Revision-Date: 2009-09-12 13:59+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:57+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: shellOptions.ui:61
@@ -26,7 +27,7 @@ msgstr ""
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, leUsername)
 #: rc.cpp:3 rc.cpp:24 rc.cpp:33 rc.cpp:54
 msgid "Enter the user you want to run the application as here."
-msgstr "Uygulamayı çalıştırmak istediğiniz kulanıcı adını buraya girin."
+msgstr "Uygulamayı çalıştırmak istediğiniz kullanıcı adını buraya girin."
 
 #. i18n: file: shellOptions.ui:64
 #. i18n: ectx: property (text), widget (QLabel, lbUsername)
@@ -60,7 +61,7 @@ msgid ""
 "application. The application will then be run in a terminal emulator window."
 msgstr ""
 "Eğer çalıştırmak istediğiniz uygulama text tabanlı ise bu özelliği seçin. "
-"Uygulama bir terminal emilasyon penceresinde çalıştırılacak."
+"Uygulama bir terminal öykünücü penceresinde çalıştırılacak."
 
 #. i18n: file: shellOptions.ui:118
 #. i18n: ectx: property (text), widget (QCheckBox, cbRunInTerminal)
@@ -90,7 +91,7 @@ msgstr "&Farklı kullanıcı ile çalıştır"
 
 #: shellrunner.cpp:48
 msgid "Finds commands that match :q:, using common shell syntax"
-msgstr "Genel kabuk sözdizimini kullanarak :q: ile eşleşen komutları bulur"
+msgstr "Genel kabuk söz dizimini kullanarak :q: ile eşleşen komutları bulur"
 
 #: shellrunner.cpp:68
 #, kde-format
