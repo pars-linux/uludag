@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_emoticons\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-08-25 07:07+0200\n"
-"PO-Revision-Date: 2009-07-31 11:08+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:44+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: emoticonslist.cpp:66
@@ -64,7 +65,7 @@ msgstr "Yeni Duygu Simgesi Teması"
 
 #: emoticonslist.cpp:364
 msgid "Enter the name of the new emoticon theme:"
-msgstr "Yeni duygu simgesi temasınınn adın girin:"
+msgstr "Yeni duygu simgesi temasının adın girin:"
 
 #: emoticonslist.cpp:370
 #, kde-format
@@ -73,7 +74,7 @@ msgstr "%1 tema zaten var"
 
 #: emoticonslist.cpp:387
 msgid "Choose the type of emoticon theme to create"
-msgstr "Oluşturulacak duygu simgesi temasınınn türünü seçin"
+msgstr "Oluşturulacak duygu simgesi temasının türünü seçin"
 
 #. i18n: file: emoticonslist.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, EmoticonsManager)
@@ -103,13 +104,13 @@ msgstr "Ekle..."
 #. i18n: ectx: property (toolTip), widget (KPushButton, btEdit)
 #: rc.cpp:15
 msgid "Modify the selected emoticon icon or text "
-msgstr "Seçilen duygu simgesininin simgesini ya da metnini düzenle"
+msgstr "Seçilen duygu simgesinin simgesini ya da metnini düzenle"
 
 #. i18n: file: emoticonslist.ui:60
 #. i18n: ectx: property (whatsThis), widget (KPushButton, btEdit)
 #: rc.cpp:18
 msgid "Edit the selected emoticon to change its icon or its text"
-msgstr "Seçilen duygu simgesininin simgesini ya da metnini düzenle"
+msgstr "Seçilen duygu simgesinin simgesini ya da metnini düzenle"
 
 #. i18n: file: emoticonslist.ui:63
 #. i18n: ectx: property (text), widget (KPushButton, btEdit)
@@ -231,12 +232,12 @@ msgstr "Tema Sil"
 #: rc.cpp:70
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:71
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #~ msgid ""
 #~ "Could not find a suitable place in which to install the emoticon theme."
