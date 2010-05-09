@@ -3,14 +3,15 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: powerdevil\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:21+0200\n"
-"PO-Revision-Date: 2010-04-20 14:03+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 01:00+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -420,7 +421,7 @@ msgid ""
 "display this warning again\"."
 msgstr ""
 "Hiçbir ölçekleme yöntemi bulunamadı. Eğer işlemciniz gerçekten yeni ise "
-"muhtemelen smoke çekirdek modüllerini yüklemediniz. Ölçekleme modülleri "
+"muhtemelen bazı çekirdek modüllerini yüklemediniz. Ölçekleme modülleri "
 "genellikle cpufreq_ondemand'a benzer isimler taşır. Ölçekleme işlemi pil "
 "kullanımını azaltmak için kullanışlıdır. \"Modülleri Yüklemeyi Dene\" "
 "düğmesine tıklarsanız PowerDevil uygulaması gerekli modülleri yüklemeyi "
@@ -443,7 +444,8 @@ msgid ""
 "which is useful if you have more than one user logged into your system at "
 "any one time."
 msgstr ""
-"PC'nizde ConsoleKit aktif olarak bulunamadı, ya da PowerDevil ConsoleKit'e "
+"Bilgisayarınızda ConsoleKit aktif olarak bulunamadı, ya da PowerDevil "
+"ConsoleKit'e "
 "bağlanamadı. "
 "ConsoleKit sayesinde PowerDevil mevcut oturumun aktif olup olmadığını "
 "algılamaktadır. Bu "
@@ -469,12 +471,12 @@ msgstr "Modüller bulunamadı"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #. i18n: file: kcmodule/profileEditPage.ui:23
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_6)
@@ -872,7 +874,7 @@ msgstr "Kritik pil seviyesi"
 #. i18n: ectx: property (whatsThis), widget (KIntSpinBox, criticalSpin)
 #: rc.cpp:205
 msgid "Battery will be considered critical when it reaches this level"
-msgstr "Pil seviyesi bu düzeye geldiğinde kiritik olarak değerlendirilecek"
+msgstr "Pil seviyesi bu düzeye geldiğinde kritik olarak değerlendirilecek"
 
 #. i18n: file: kcmodule/capabilitiesPage.ui:23
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_5)
