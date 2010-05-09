@@ -8,13 +8,14 @@
 # Koray Löker <loker@pardus.org.tr>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Gökçen Eraslan <gokcen@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: drkonqi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 01:21+0200\n"
-"PO-Revision-Date: 2010-04-20 16:35+0300\n"
-"Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 01:16+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -149,7 +150,7 @@ msgstr "uygulama ayarlarının detayları"
 #: aboutbugreportingdialog.cpp:83
 msgctxt "@info/rich crash situation example"
 msgid "or other strange things you notice before or after the crash. "
-msgstr "ya da çökmeden önce ya da sonra farkettiğiniz olağandışı durumlar. "
+msgstr "ya da çökmeden önce ya da sonra fark ettiğiniz olağan dışı durumlar. "
 
 #: aboutbugreportingdialog.cpp:85
 msgctxt "@info/rich"
@@ -283,7 +284,7 @@ msgid ""
 msgstr ""
 "Kullanıcı adınızı ve parolanızı girin ve Giriş düğmesine basın. Daha sonra "
 "KDE hata takip sistemine doğrudan erişmek için yine bu bilgileri "
-"kullnabilirsiniz."
+"kullanabilirsiniz."
 
 #: aboutbugreportingdialog.cpp:133
 msgctxt "@info/rich"
@@ -490,7 +491,7 @@ msgid ""
 "useful if you want to take a look at it or to report the bug later."
 msgstr ""
 "Çökme bilgilerini (geri iz) bir dosyaya kaydetmek için bu düğmeyi kullanın. "
-"Bu çökme bilgilerine gözatmanız ya da hatayı daha sonra raporlamanız için "
+"Bu çökme bilgilerine göz atmanız ya da hatayı daha sonra raporlamanız için "
 "faydalı bir yoldur."
 
 #: backtracewidget.cpp:97 reportassistantpages_bugzilla_duplicates.cpp:549
@@ -996,7 +997,7 @@ msgstr "<strong>Lütfen hangi ek bilgiyi iletebileceğiniz seçin:</strong>"
 msgctxt ""
 "@option:check kind of information the user can provide about the crash"
 msgid "Unusual desktop behavior I noticed"
-msgstr "Masaüstünün olağandışı bir hareketi"
+msgstr "Masaüstünün olağan dışı bir hareketi"
 
 #. i18n: file: ui/assistantpage_bugawareness.ui:226
 #. i18n: ectx: property (text), widget (QCheckBox, m_appSpecificDetails)
@@ -1131,7 +1132,7 @@ msgstr "Parola:"
 #: rc.cpp:79
 msgctxt "@option:check"
 msgid "Save login information using the KDE Wallet system"
-msgstr "Giriş bilgilerini KDE Cüzdan Yönetici kullarak kaydet"
+msgstr "Giriş bilgilerini KDE Cüzdan Yönetici kullanarak kaydet"
 
 #. i18n: file: ui/assistantpage_bugzilla_preview.ui:18
 #. i18n: ectx: property (text), widget (QLabel, m_previewDescriptionLabel)
@@ -1305,7 +1306,7 @@ msgid ""
 msgstr ""
 "Masaüstü ve panel(ler)inizdeki (yüklü gelen ya da elle kurduğunuz) "
 "programcıklar, "
-"masaüstü ayarlarınız (duvarkağıdı, eklenti ve temalar), eylemler ve kontrol "
+"masaüstü ayarlarınız (duvar kağıdı, eklenti ve temalar), eylemler ve kontrol "
 "paneli "
 "yapılandırması."
 
@@ -1950,7 +1951,7 @@ msgstr "Arama Tamamlandı. Hiç hata raporu bulunamadı."
 #: reportassistantpages_bugzilla_duplicates.cpp:352
 msgctxt "@info:status"
 msgid "Error fetching the bug report list"
-msgstr "Hata rapoları listesini alırken hata oluştu"
+msgstr "Hata raporları listesini alırken hata oluştu"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:354
 #, kde-format
@@ -2061,7 +2062,7 @@ msgstr ""
 #: reportassistantpages_bugzilla_duplicates.cpp:591
 msgctxt "@title:window"
 msgid "Nested duplicate detected"
-msgstr "İçiçe geçmiş aynı hatalar algılandı"
+msgstr "İç içe geçmiş aynı hatalar algılandı"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:614
 msgctxt "@info bug status"
