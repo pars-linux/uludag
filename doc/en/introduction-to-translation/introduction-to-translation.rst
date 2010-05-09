@@ -70,7 +70,7 @@ Obtaining and Translating Projects
    #. Scroll down the page to find the table of all projects available for that
       release.
 
-      ..  image:: dl.png
+      ..  image:: images/dl.png
 
       Use the marked button or similar next to each project to download the po
       file.
@@ -80,7 +80,7 @@ Obtaining and Translating Projects
       this kind of conflicts with an icon indicating that a translator is working
       on the file. See the marked icon below:
 
-      ..  image:: locked.png
+      ..  image:: images/locked.png
 
    #. If noone is working on the file, as indicated by the icon, you can
       safely translate the file. First step is to lock the file by clicking the
@@ -91,7 +91,7 @@ Obtaining and Translating Projects
       language in a po editor such as Lokalize, or by using Transifex' online po
       editor. Just click the button below and start translating.
 
-      .. image:: edit.png
+      .. image:: images/edit.png
 
    #. Check the integrity of your file before you commit it.
 
@@ -107,7 +107,7 @@ Committing Projects
    Use the upload button marked below for your language next to each project,
    then click the browse button to locate your translated file.
 
-   .. image:: ul.png
+   .. image:: images/ul.png
 
    Select the Send to commit your translated file.
 
@@ -125,19 +125,19 @@ Adding New Translation File
 
    * Download the POT file and copy it as your own language's **po** file.
 
-      .. image:: dl-pot.png
+      .. image:: images/dl-pot.png
 
    * Once you finish the translation, click on the button marked below at
      project page.
 
-      .. image:: add-new.png
+      .. image:: images/add-new.png
 
    * Type your new file name in the field marked replacing the file name with
      your locale. See the image:
 
        **po/your_lang.po**
 
-      .. image:: add-new2.png
+      .. image:: images/add-new2.png
 
 .. #. Being Aware of Translation Updates
 
@@ -148,7 +148,7 @@ Being Aware of Translation Updates
    If you want to receive notifications when a project developer updates
    translation files, you should click the *Watch* button, as seen below:
 
-      .. image:: watch.png
+      .. image:: images/watch.png
 
    You can watch every languages po file updates or may want to watch only your
    language's translation updates, it's up to you. 
@@ -158,5 +158,5 @@ Being Aware of Translation Updates
    a translator joins a team or a new project is added etc., click the related
    project's *Watch* button. See the image:
 
-      .. image:: watch-project.png
+      .. image:: images/watch-project.png
 
