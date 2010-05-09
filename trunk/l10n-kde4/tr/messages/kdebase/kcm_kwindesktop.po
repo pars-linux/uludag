@@ -4,14 +4,15 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_kwindesktop\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-14 01:22+0200\n"
-"PO-Revision-Date: 2010-04-20 13:56+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-09 00:58+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -35,7 +36,7 @@ msgstr "Masaüstü %1"
 
 #: main.cpp:87
 msgid "<h1>Multiple Desktops</h1>In this module, you can configure how many virtual desktops you want and how these should be labeled."
-msgstr "<h1>Çoklu Masaüstü</h1>Buradan kaç tane sanal masaüstü istediğinizibelirleyebilir ve masaüstlerinin nasıl görüneceğini ayarlayabilirsiniz."
+msgstr "<h1>Çoklu Masaüstü</h1>Buradan kaç tane sanal masaüstü istediğinizi belirleyebilir ve masaüstlerinin nasıl görüneceğini ayarlayabilirsiniz."
 
 #: main.cpp:101
 msgid "Switch to Next Desktop"
@@ -212,12 +213,12 @@ msgstr "Tüm masaüstleri için kısayolları göster"
 #: rc.cpp:61
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:62
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #~ msgid "Mouse wheel over desktop background switches desktop"
 #~ msgstr "Masaüstü arkaplanı üzerinde farenin orta düğmesi masaüstlerini değiştirsin"
