@@ -6,14 +6,15 @@
 # Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Fatih Aşıcı <fatih@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: knode\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-02 06:01+0100\n"
-"PO-Revision-Date: 2010-04-21 10:05+0300\n"
-"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
-"Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-05-10 15:19+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -75,7 +76,7 @@ msgstr "&Haberin Yerine Başkasını Yerleştir"
 
 #: articlewidget.cpp:185
 msgid "U&se Fixed Font"
-msgstr "&Sabit genişlikli yazıtipi kullan"
+msgstr "&Sabit genişlikli yazı tipi kullan"
 
 #: articlewidget.cpp:189
 msgid "Fancy Formatting"
@@ -328,7 +329,7 @@ msgid ""
 "The account cannot be deleted at the moment."
 msgstr ""
 "Kullanımdaki bu hesap için en az bir grup vardır.\n"
-"Bu hesap bir süre silinemeaz"
+"Bu hesap bir süre silinemez"
 
 #: knarticlecollection.cpp:53
 msgid ""
@@ -503,7 +504,7 @@ msgstr ""
 
 #: knarticlefactory.cpp:947
 msgid "This article has already been canceled or superseded."
-msgstr "Bu haber zaten iptal edilemiş ya da üzerine yazılmış."
+msgstr "Bu haber zaten iptal edilmiş ya da üzerine yazılmış."
 
 #: knarticlefactory.cpp:954
 msgid ""
@@ -647,7 +648,7 @@ msgstr " %1: %2 görüntülendi"
 #: kncleanup.cpp:62
 #, kde-format
 msgid "Deleting expired articles in <b>%1</b>"
-msgstr "<b>%1</b> 'deki süresü dolan haberler siliniyor"
+msgstr "<b>%1</b> 'deki süresi dolan haberler siliniyor"
 
 #: kncleanup.cpp:68
 #, kde-format
@@ -818,7 +819,7 @@ msgid ""
 "and remove groups in which your article is off-topic.\n"
 "Do you want to re-edit the article or send it anyway?"
 msgstr ""
-"5'den fazla haber grubuna yollamaktasınız.\n"
+"Beşten fazla haber grubuna yollamaktasınız.\n"
 "Lütfen konuyla doğrudan ilgisi olmayan haber gruplarını kaldırınız!\n"
 "Haberi yeniden düzenlemek mi istersiniz, yoksa yollamak mı?"
 
@@ -840,7 +841,7 @@ msgid ""
 "into one group.\n"
 "Do you want to re-edit the article or send it anyway?"
 msgstr ""
-"2'den fazla haber grubuna yollamaktasınız.\n"
+"İkiden fazla haber grubuna yollamaktasınız.\n"
 "\"Followup-To\" başlığını kullanarak haberlerinize\n"
 "yanıtları bir gruba toplayınız.\n"
 "Haberi yeniden düzenlemek mi istersiniz, yoksa yollamak mı?"
@@ -859,7 +860,7 @@ msgid ""
 "Please reconsider whether this is really useful.\n"
 "Do you want to re-edit the article or send it anyway?"
 msgstr ""
-"5'den fazla haber grubuna yollamaktasınız.\n"
+"Beşten fazla haber grubuna yollamaktasınız.\n"
 "Lütfen bunun gerçekten kullanışlı olup olmadığını tekrar düşünün.\n"
 "Haberi değiştirmek mi, yoksa göndermek mi istersiniz?"
 
@@ -932,7 +933,7 @@ msgid ""
 "The article will be sent unsigned."
 msgstr ""
 "Tercih edilen imzalama anahtarınızı henüz yapılandırmadınız.\n"
-"Lütfen onu genel kimlik yapılandıma ayarları,\n"
+"Lütfen onu genel kimlik yapılandırma ayarları,\n"
 "hesap özellikleri veya grup özellikleri içinde belirtiniz.\n"
 "Bu haber imzasız gönderilecek."
 
@@ -1112,7 +1113,7 @@ msgid ""
 msgstr ""
 "Düz metin yazısı olmayan ekin mime tipini değiştirdiniz.\n"
 "Bu dosyanın yüklenmesinde ya da yüklenmesinde hatalara sebep olabilir.\n"
-"Bunu istiyormusunuz?"
+"Bunu istiyor musunuz?"
 
 #: kncomposerview.cpp:51
 msgid "T&o:"
@@ -1224,7 +1225,7 @@ msgid ""
 "<qt><p>Your name as it will appear to others reading your articles.</"
 "p><p>Ex: <b>John Stuart Masterson III</b>.</p></qt>"
 msgstr ""
-"<qt><p>Başkalarının gönderdiklerinizi okurkern görecekleri isim.</p><p>Ör: "
+"<qt><p>Başkalarının gönderdiklerinizi okurken görecekleri isim.</p><p>Ör: "
 "<b>Yılmaz Yerindedurmaz</b>.</p></qt>"
 
 #: knconfigwidgets.cpp:86
@@ -1417,7 +1418,7 @@ msgstr "&Değiştir..."
 
 #: knconfigwidgets.cpp:673
 msgid "Use custom &fonts"
-msgstr "Özel &yazıtipleri kullan"
+msgstr "Özel &yazı tipleri kullan"
 
 #: knconfigwidgets.cpp:678
 msgctxt "@action:button Run a font selection dialog"
@@ -1908,7 +1909,7 @@ msgstr ""
 
 #: knfilterconfigwidget.cpp:43
 msgid "Subject && &From"
-msgstr "Başlık + &Kimden"
+msgstr "Başlık && &Kimden"
 
 #: knfilterconfigwidget.cpp:49
 msgid "Message-ID"
@@ -2140,7 +2141,7 @@ msgid ""
 "from these groups?"
 msgstr ""
 "Bu gruplardan gerçekten çıkmak \n"
-"istiyormusun?"
+"istiyor musunuz?"
 
 #: kngroupmanager.cpp:425 knmainwidget.cpp:1513
 msgid "Unsubscribe"
@@ -2271,7 +2272,7 @@ msgstr "Yeni haberler"
 
 #: kngrouppropdlg.cpp:149
 msgid "Threads with unread articles:"
-msgstr "Okunmayan haberlerleri sırala:"
+msgstr "Okunmayan haberleri sırala:"
 
 #: kngrouppropdlg.cpp:154
 msgid "Threads with new articles:"
@@ -3044,7 +3045,7 @@ msgstr ""
 "<li>yy - yıl, İki haneli (00-99)</li>\n"
 "<li>yyyy - yıl, dört haneli (0000-9999)</li>\n"
 "</ul>\n"
-"<p><strong>Zaman için şu ifadeler kullanılabilir:</string></p>\n"
+"<p><strong>Zaman için şu ifadeler kullanılabilir:</strong></p>\n"
 "<ul>\n"
 "<li>h - saat, sıfır yok (0-23 veya  ÖÖ/ÖS gösteriminde 1-12)</li>\n"
 "<li>hh - saat, sıfır var (00-23 veya ÖÖ/ÖS gösteriminde 01-12)</li>\n"
