@@ -24,6 +24,12 @@ from distutils.command.install import install
 
 PROJECT = 'package-manager'
 __version = '2.2.0'
+FOR_KDE_4 = False
+
+if 'kde4' in sys.argv:
+    sys.argv.remove('kde4')
+    FOR_KDE_4 = True
+    print 'UI files will be created for KDE 4.. '
 
 def update_messages():
     # Create empty directory
@@ -31,7 +37,11 @@ def update_messages():
     os.makedirs(".tmp")
     # Collect UI files
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/bin/pyuic4 -o .tmp/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+        if FOR_KDE_4:
+            os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        else:
+            os.system("/usr/bin/pyuic4 -o .tmp/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+
     # Collect Python files
     os.system("cp -R src/* .tmp/")
     # Generate POT file
@@ -64,7 +74,11 @@ class Build(build):
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
-            os.system("/usr/bin/pyuic4 -o build/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+            if FOR_KDE_4:
+                os.system("/usr/kde/4/bin/pykde4uic -o build/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            else:
+                os.system("/usr/bin/pyuic4 -o build/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
+
         print "Generating RCs..."
         for filename in glob.glob1("data", "*.qrc"):
             os.system("/usr/bin/pyrcc4 data/%s -o build/%s_rc.py" % (filename, filename.split(".")[0]))

@@ -23,9 +23,10 @@ from localedata import setSystemLocale
 from ui_pminstaller import Ui_PMInstaller
 
 from pds.quniqueapp import QUniqueApplication
-from context import i18n
 from context import Pds
 import pds
+
+i18n = Pds.i18n
 
 class Operation(QObject):
     def __init__(self):
