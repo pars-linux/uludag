@@ -3,18 +3,19 @@
 # Görkem Çetin <gorkem@gorkemcetin.com>, 2004.
 # Yaşar ŞENTÜRK <yasar@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkleopatra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-16 06:18+0100\n"
-"PO-Revision-Date: 2009-03-23 05:17+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-10 15:51+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
@@ -143,7 +144,7 @@ msgid ""
 "dialog."
 msgstr ""
 "Şu anda seçili olan dizin hizmetini kaldırmak için bu düğmeyi tıklayın. "
-"Değişiklik yalnızca ana yapılandırma diyalogunu onayladığınızda "
+"Değişiklik yalnızca ana yapılandırma diyaloğunu onayladığınızda "
 "gerçekleşecektir."
 
 #. i18n: file: ui/directoryserviceswidget.ui:89
@@ -171,7 +172,7 @@ msgstr "Kullanıcı ve parola bilgilerini göster"
 #: kleo/cryptobackendfactory.cpp:173
 #, kde-format
 msgid "While scanning for %1 support in backend %2:"
-msgstr "%2 arkaucunda %1 desteği taranırken:"
+msgstr "%2 arka ucunda %1 desteği taranırken:"
 
 #: kleo/cryptplugwrapper.cpp:490
 msgid "(Unknown Protocol)"
@@ -200,7 +201,7 @@ msgstr "Konum"
 
 #: kleo/dn.cpp:458
 msgid "Title"
-msgstr "Ünvan"
+msgstr "Unvan"
 
 #: kleo/dn.cpp:459
 msgid "Organizational unit"
@@ -360,7 +361,7 @@ msgstr "%1 (%2)"
 
 #: ui/backendconfigwidget.cpp:211
 msgid "Available Backends"
-msgstr "Kullanılabilir Arkauçlar"
+msgstr "Kullanılabilir Arka Uçlar"
 
 #: ui/backendconfigwidget.cpp:225
 msgid "Confi&gure..."
@@ -601,7 +602,7 @@ msgstr ""
 msgid ""
 "Check this column if this directory service is providing OpenPGP "
 "certificates."
-msgstr "Dizin hizmeti OpenPGP sertifakaları sağlıyorsa bu sütunu kontrol edin."
+msgstr "Dizin hizmeti OpenPGP sertifikaları sağlıyorsa bu sütunu kontrol edin."
 
 #: ui/dnattributeorderconfigwidget.cpp:71
 msgid "Description"
@@ -657,7 +658,7 @@ msgstr "Daima Bu Anahtarla Şifrele"
 
 #: ui/keyapprovaldialog.cpp:89
 msgid "Encrypt Whenever Encryption is Possible"
-msgstr "Şifreleme Mükün Olduğunda Şifrele"
+msgstr "Şifreleme Mümkün Olduğunda Şifrele"
 
 #: ui/keyapprovaldialog.cpp:90
 msgid "Always Ask"
@@ -710,7 +711,7 @@ msgid ""
 "<qt><p>An error occurred while fetching the keys from the backend:</p><p><b>%"
 "1</b></p></qt>"
 msgstr ""
-"<qt><p>Arkauçtan anahtarlar alınırken bir hata oluştu:</p><p><b>%1</b></p></"
+"<qt><p>Arka uçtan anahtarlar alınırken bir hata oluştu:</p><p><b>%1</b></p></"
 "qt>"
 
 #: ui/keyrequester.cpp:236 ui/keyrequester.cpp:265 ui/keyrequester.cpp:289
@@ -722,14 +723,14 @@ msgstr "Anahtarla Listeleme Başarısız"
 msgid ""
 "The OpenPGP backend does not support listing keys. Check your installation."
 msgstr ""
-"OpenPGP arkayüzü anahtar listelemeyi desteklemiyor. Kurulumunuzu gözden "
+"OpenPGP ara ucu anahtar listelemeyi desteklemiyor. Kurulumunuzu gözden "
 "geçirin."
 
 #: ui/keyrequester.cpp:287
 msgid ""
 "The S/MIME backend does not support listing keys. Check your installation."
 msgstr ""
-"S/MIME arkayüzü anahtar listelemeyi desteklemiyor. Kurulumunuzu gözden "
+"S/MIME ara ucu anahtar listelemeyi desteklemiyor. Kurulumunuzu gözden "
 "geçirin."
 
 #: ui/keyrequester.cpp:392
@@ -785,7 +786,7 @@ msgstr ""
 "%1 için OpenPGP anahtarı\n"
 "Oluşturma: %2\n"
 "Sona Eriş: %3\n"
-"Parmakizi: %4"
+"Parmak izi: %4"
 
 #: ui/keyselectiondialog.cpp:259
 #, kde-format
@@ -799,7 +800,7 @@ msgstr ""
 "%1 için S/MIME anahtarı\n"
 "Oluşturma: %2\n"
 "Sona Eriş: %3\n"
-"Parmakizi: %4\n"
+"Parmak izi: %4\n"
 "Sağlayan: %5"
 
 #: ui/keyselectiondialog.cpp:378
@@ -815,7 +816,7 @@ msgid ""
 "<qt><p>If you check this box your choice will be stored and you will not be "
 "asked again.</p></qt>"
 msgstr ""
-"<qt> <p>Eğer bu onay kutusunu işartlerseniz, seçiminiz kaydedilecek ve size "
+"<qt> <p>Eğer bu onay kutusunu işaretlerseniz, seçiminiz kaydedilecek ve size "
 "tekrar sorulmayacak.</p></qt>"
 
 #: ui/keyselectiondialog.cpp:420
@@ -829,7 +830,7 @@ msgstr "&Sertifika Yöneticisini Başlat"
 #: ui/keyselectiondialog.cpp:522
 msgid "No backends found for listing keys. Check your installation."
 msgstr ""
-"Anahtarları listelemek için arkauç bulunamadı. Kurulumunuzu gözden geçirin."
+"Anahtarları listelemek için arka uç bulunamadı. Kurulumunuzu gözden geçirin."
 
 #: ui/keyselectiondialog.cpp:540
 msgid "Could not start certificate manager; please check your installation."
@@ -856,7 +857,7 @@ msgid_plural ""
 "<qt>%1 backends returned truncated output.<p>Not all available keys are "
 "shown</p></qt>"
 msgstr[0] ""
-"<qt>%1 arkauç, kesik çıktıyı geri gönderdi.<p>Mevcut tüm anahtarlar "
+"<qt>%1 arka uç, kesik çıktıyı geri gönderdi.<p>Mevcut tüm anahtarlar "
 "gösterilmiyor</p></qt>"
 
 #: ui/keyselectiondialog.cpp:618
@@ -1013,7 +1014,7 @@ msgid ""
 "The following was received on stderr:\n"
 "%1"
 msgstr ""
-"stderr'den alındı:\n"
+"Aşağıdaki stderr çıktısından alındı:\n"
 "%1"
 
 #: backends/chiasmus/chiasmuslibrary.cpp:75
@@ -1053,7 +1054,7 @@ msgstr "Motor %1 sürüm %2 kuruldu, ancak en azından sürüm %3 gereklidir."
 #: backends/qgpgme/qgpgmebackend.cpp:333
 #, kde-format
 msgid "Unknown problem with engine for protocol %1."
-msgstr "%1 protokulü için bilinmeyen motor hatası."
+msgstr "%1 protokolü için bilinmeyen motor hatası."
 
 #: backends/qgpgme/qgpgmecryptoconfig.cpp:111
 msgid "program terminated unexpectedly"
@@ -1080,7 +1081,7 @@ msgstr ""
 #: backends/qgpgme/qgpgmecryptoconfig.cpp:372
 #, kde-format
 msgid "Error from gpgconf while saving configuration: %1"
-msgstr "Ayarı kaydederken gpgpconf' dan hata: %1"
+msgstr "Ayarı kaydederken gpgconf' dan hata: %1"
 
 #: backends/qgpgme/qgpgmeprogresstokenmapper.cpp:50
 msgid "Generating DSA key..."
@@ -1099,7 +1100,7 @@ msgid ""
 "Waiting for new entropy from random number generator (you might want to "
 "exercise the harddisks or move the mouse)..."
 msgstr ""
-"Rasgele numara üretecinden yeni bir dağıntı bekleniyor (Sabit diskleri "
+"Rastgele numara üretecinden yeni bir entropi bekleniyor (Sabit diskleri "
 "kullanmak veya fareyi hareket ettirmek isteyebilirsiniz)..."
 
 #: backends/qgpgme/qgpgmeprogresstokenmapper.cpp:67
