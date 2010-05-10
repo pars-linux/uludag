@@ -9,19 +9,20 @@
 # Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdepim\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-03 23:29+0000\n"
-"PO-Revision-Date: 2009-11-04 18:41+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-10 16:12+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: akonadiconsole/akonadiconsole.desktop:2
 msgctxt "Name"
@@ -103,17 +104,17 @@ msgstr "Akregator için Eklenti"
 #: akregator/plugins/onlinesync/akregator_config_onlinesync.desktop:14
 msgctxt "Name"
 msgid "Online Readers"
-msgstr "Çevrimiçi Okuyucular"
+msgstr "Çevrim içi Okuyucular"
 
 #: akregator/plugins/onlinesync/akregator_config_onlinesync.desktop:53
 msgctxt "Comment"
 msgid "Configure Online Readers"
-msgstr "Çevrimiçi Okuyucuları Yapılandır"
+msgstr "Çevrim içi Okuyucuları Yapılandır"
 
 #: akregator/plugins/onlinesync/akregator_onlinesync_plugin.desktop:3
 msgctxt "Name"
 msgid "Akregator Online Feed Reader Support"
-msgstr "Akregator Çevrimiçi Kaynak Okuyucu Desteği"
+msgstr "Akregator Çevrim içi Kaynak Okuyucu Desteği"
 
 #: akregator/src/akregator.desktop:2
 msgctxt "Name"
@@ -269,7 +270,7 @@ msgstr "KAlarm Takvim Dosyası"
 #: kalarm/akonadi/kalarmresource.desktop:36
 msgctxt "Comment"
 msgid "Loads data from a KAlarm calendar file"
-msgstr "Kalarm takvim dosyasından veri yükler"
+msgstr "KAlarm takvim dosyasından veri yükler"
 
 #: kalarm/akonadi/kalarmresource_template.desktop:2
 msgctxt "Name"
@@ -319,7 +320,7 @@ msgstr "Yerel Dizindeki Alarmlar"
 #: kalarm/resources/localdir.desktop:46
 msgctxt "Comment"
 msgid "Provides access to an alarm calendar stored in a local directory, in which each calendar item is stored in a separate file"
-msgstr "Her takvim öğesinin ayrı bir dosyada depolandığı yerel bir dizinde depolanmış bir alarm takvimine erişim sağlar"
+msgstr "Her takvim ögesinin ayrı bir dosyada depolandığı yerel bir dizinde depolanmış bir alarm takvimine erişim sağlar"
 
 #: kalarm/resources/remote.desktop:2
 msgctxt "Name"
@@ -616,7 +617,7 @@ msgstr "İmzalama/Doğruluma"
 #: knode/knode_config_privacy.desktop:69
 msgctxt "Comment"
 msgid "Protect your privacy by signing and verifying postings"
-msgstr "Gönderilen iletilerinizi imzalayarak ve doğrulayarak güvenirliliğinizi sağlayın"
+msgstr "Gönderilen iletilerinizi imzalayarak ve doğrulayarak güvenilirliğinizi sağlayın"
 
 #: knode/knode_config_read_news.desktop:15
 msgctxt "Name"
@@ -983,7 +984,7 @@ msgstr "DBUSCalendar"
 #: korganizer/dbuscalendar.desktop:44
 msgctxt "Comment"
 msgid "Organizer with a D-Bus interface"
-msgstr "D-BUS arayüzü kullanan Düzenleyici"
+msgstr "D-Bus arayüzü kullanan Düzenleyici"
 
 #: korganizer/interfaces/calendar/calendardecoration.desktop:2
 msgctxt "Name"
@@ -1151,7 +1152,7 @@ msgstr "Takvimler için Wikipedia Günün Resmi Eklentisi"
 #: korganizer/plugins/picoftheday/picoftheday.desktop:44
 msgctxt "Comment"
 msgid "This plugin provides the Wikipedia Picture of the Day"
-msgstr "Bu eklenti Wikipedia'dan Günün Resmini getirir"
+msgstr "Bu eklenti Wikipedia Günün Resmini getirir"
 
 #: korganizer/plugins/printing/journal/journalprint.desktop:3
 msgctxt "Name"
@@ -1201,7 +1202,7 @@ msgstr "Wikipedia 'Tarihte Bugün' Eklentisi"
 #: korganizer/plugins/thisdayinhistory/thisdayinhistory.desktop:41
 msgctxt "Comment"
 msgid "This plugin provides links to Wikipedia's 'This Day in History' pages"
-msgstr "Bu eklenti, Wikipedia'nın 'Tarihte Bugün' sayfalarına bağlantı sağlar"
+msgstr "Bu eklenti, Wikipedia 'Tarihte Bugün' sayfalarına bağlantı sağlar"
 
 #: kresources/birthdays/kabc.desktop:2
 msgctxt "Name"
@@ -1211,7 +1212,7 @@ msgstr "KDE Adres Defterinden Doğum Günleri"
 #: kresources/birthdays/kabc.desktop:60
 msgctxt "Comment"
 msgid "Provides access to birthday dates of contacts in the KDE address book as calendar events"
-msgstr "KDE Adres defterindeki kişilerin doğumgünü günlerine takvim olayları olarak erişmeyi sağlar"
+msgstr "KDE Adres defterindeki kişilerin doğum günü günlerine takvim olayları olarak erişmeyi sağlar"
 
 #: kresources/blog/blog.desktop:2
 msgctxt "Name"
@@ -1238,7 +1239,7 @@ msgstr "GroupDAV etkinleştirilmiş olan sunucular üzerinde bulunan adres defte
 #: kresources/groupware/kcal_groupware.desktop:2
 msgctxt "Name"
 msgid "Groupware Server"
-msgstr "Grupyazılımı(Groupware) Sunucusu"
+msgstr "Groupware Sunucusu"
 
 #: kresources/groupware/kabc_groupware.desktop:55
 msgctxt "Comment"
@@ -1259,7 +1260,7 @@ msgstr "KMail Aracılığı ile IMAP Sunucusunda Adres Defteri"
 #: kresources/kolab/kabc/kolab.desktop:37
 msgctxt "Comment"
 msgid "Provides access to contacts stored on a Kolab server using IMAP via KMail or Kontact"
-msgstr "KMail ya da KOntact IMAP kullanarak Kolab sunucusu üzerindeki kişilere erişim sağlar"
+msgstr "KMail ya da Kontact IMAP kullanarak Kolab sunucusu üzerindeki kişilere erişim sağlar"
 
 #: kresources/kolab/kcal/kolab.desktop:2
 msgctxt "Name"
@@ -1289,7 +1290,7 @@ msgstr "KDE'nin ağ çatısı KIO'yu kullanarak uzak bir dosyadaki bir takvime e
 #: kresources/slox/kabc_ox.desktop:2 kresources/slox/kcal_ox.desktop:2
 msgctxt "Name"
 msgid "OpenXchange Server"
-msgstr "Openexchange Sunucusu"
+msgstr "OpenXchange Sunucusu"
 
 #: kresources/slox/kabc_ox.desktop:53
 msgctxt "Comment"
@@ -1566,12 +1567,12 @@ msgstr "Mini günlükler için bir Akonadi sıralandırıcı"
 #: runtime/resources/birthdays/birthdaysresource.desktop:2
 msgctxt "Name"
 msgid "Birthdays & Anniversaries"
-msgstr "Doğumgünleri & Yıldönümleri"
+msgstr "Doğum günleri & Yıl dönümleri"
 
 #: runtime/resources/birthdays/birthdaysresource.desktop:38
 msgctxt "Comment"
 msgid "Provides access to birthday and anniversary dates of contacts in your address book as calendar events"
-msgstr "Adres defterindeki kişilerin doğumgünleri ve yıldönümlerine takvim olayları olarak erişmeyi sağlar"
+msgstr "Adres defterindeki kişilerin doğum günleri ve yıl dönümlerine takvim olayları olarak erişmeyi sağlar"
 
 #: runtime/resources/contacts/contactsresource.desktop:2
 msgctxt "Name"
