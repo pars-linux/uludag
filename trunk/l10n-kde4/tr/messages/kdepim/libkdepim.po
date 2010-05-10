@@ -6,14 +6,15 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
 # Fatih Aşıcı <fatih@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkdepim\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-07 01:23+0200\n"
-"PO-Revision-Date: 2010-04-20 14:29+0300\n"
-"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
-"Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-05-10 15:46+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +27,7 @@ msgstr "Tamamlama Sıralamasını Düzenle..."
 
 #: addresseeview.cpp:75
 msgid "Show Birthday"
-msgstr "Doğumgününü Göster"
+msgstr "Doğum Gününü Göster"
 
 #: addresseeview.cpp:76
 msgid "Show Postal Addresses"
@@ -67,7 +68,7 @@ msgstr "Ev Sayfası"
 
 #: addresseeview.cpp:275
 msgid "Blog Feed"
-msgstr "Web Günlüğü (RSS) Bağlantısı"
+msgstr "Ağ Günlüğü (RSS) Bağlantısı"
 
 #: addresseeview.cpp:325
 msgid "Notes"
@@ -104,7 +105,7 @@ msgstr "Hızlı Mesajlaşma Adresi"
 
 #: addresseeview.cpp:339
 msgid "Anniversary"
-msgstr "Yıldönümü"
+msgstr "Yıl dönümü"
 
 #: addresseeview.cpp:466
 #, kde-format
@@ -298,7 +299,7 @@ msgstr "Düzenleyici"
 
 #: calendardiffalgo.cpp:131
 msgid "UID"
-msgstr "Kullanıcı No"
+msgstr "UID"
 
 #: calendardiffalgo.cpp:135
 msgid "Is all-day"
@@ -371,7 +372,7 @@ msgstr "Oluşturulma zamanı"
 
 #: calendardiffalgo.cpp:203
 msgid "Related Uid"
-msgstr "İlgili Kullanıcı No"
+msgstr "İlgili Uid"
 
 #: calendardiffalgo.cpp:211
 msgid "Has End Date"
@@ -618,7 +619,7 @@ msgstr "Qt Designer Alanları İletişim Kutusu"
 
 #: kcmdesignerfields.cpp:150
 msgid "(c), 2004 Tobias Koenig"
-msgstr "(c), 2004 Tobias Koening"
+msgstr "(c), 2004 Tobias Koenig"
 
 #: kcmdesignerfields.cpp:152
 msgid "Tobias Koenig"
@@ -675,17 +676,21 @@ msgid ""
 "name to be edited, set the widget name in Qt Designer.</p></qt>"
 msgstr ""
 "<qt><p>Bu bölüm %1 alanına kendi değerlerinizi kaydetmeniz için, kendi GUI "
-"Bileşenlerinizi (<i>Widget</i>) eklemenize olanak tanır. Aşağıdaki yönergeyi "
+"Bileşenlerinizi (<i>Parçacık</i>) eklemenize olanak tanır. Aşağıdaki "
+"yönergeyi "
 "takip edin:</p><ol><li>'<i>Qt Tasarımcı ile Düzenle</i>'yi tıklayın,</"
-"li><li>İletişim penceresinde, '<i>Widget</i>' seçin ve <i>Tamam</i>'a basın</"
+"li><li>İletişim penceresinde, '<i>Parçacık</i>' seçin ve <i>Tamam</i>'a "
+"basın</"
 "li><li>Dosyayı Qt Tasarımcı'nın önerdiği dizine kaydedin</li><li>Qt "
 "Tasarımcı'yı kapatın</li></ol><p>Eğer diskinizde halihazırda bir designer "
 "dosyası (*.ui) varsa, '<i>Sayfayı İçeriye Aktar</i>'ı seçin.</p><p><b>Önemli:"
-"</b> Formla eklediğiniz tüm widget'lerin ismi '<i>X_</i>' ile başlamalıdır. "
-"Eğer '<i>X-Foo</i>' özel girdisine karşılık gelecek widget arıyorsanız, "
-"widget'in <i>isim</i> özniteliğini '<i>X_Foo</i>' yapınız.</p><p><b>Önemli:</"
-"b> Widget özel alanları %2 adlı bir uygulamayla düzenleyecektir. "
-"Düzenlenecek uygulamanın adını değiştirmek için, Qt Tasarımcı'da widget'in "
+"</b> Formla eklediğiniz tüm programcıkların ismi '<i>X_</i>' ile "
+"başlamalıdır. "
+"Eğer '<i>X-Foo</i>' özel girdisine karşılık gelecek parçacık arıyorsanız, "
+"parçacığın <i>isim</i> öz niteliğini '<i>X_Foo</i>' yapınız.</p><p><b>"
+"Önemli:</"
+"b> Parçacık özel alanları %2 adlı bir uygulamayla düzenleyecektir. "
+"Düzenlenecek uygulamanın adını değiştirmek için, Qt Tasarımcı'da parçacığın "
 "ismini yapılandırın.</p></qt>"
 
 #: kcmdesignerfields.cpp:353
@@ -1106,7 +1111,7 @@ msgid ""
 "Press this button to apply the selected preference to all future conflicts "
 "that might occur during this sync."
 msgstr ""
-"Bu eşzamanlama sırasında oluşacak ileriki tüm çakışmalarda seçili tercihi "
+"Bu eşzamanlama sırasında oluşacak ileri ki tüm çakışmalarda seçili tercihi "
 "uygulamak için bu düğmeye basın."
 
 #: kincidencechooser.cpp:308
@@ -1299,7 +1304,7 @@ msgstr "Toplanan Notlar"
 
 #: kscoring.cpp:491
 msgid "Contains Substring"
-msgstr "Altdizge İçeriyor"
+msgstr "Altdizgi İçeriyor"
 
 #: kscoring.cpp:493
 msgid "Matches Regular Expression"
