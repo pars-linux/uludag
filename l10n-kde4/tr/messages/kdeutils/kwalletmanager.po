@@ -248,11 +248,11 @@ msgstr "KDE Cüzdanı"
 
 #: kwalletmanager.cpp:68 kwalletmanager.cpp:334
 msgid "No wallets open."
-msgstr "Açık çüzdan yok."
+msgstr "Açık cüzdan yok."
 
 #: kwalletmanager.cpp:75 kwalletmanager.cpp:188
 msgid "A wallet is open."
-msgstr "Bir çüzdan açık."
+msgstr "Bir cüzdan açık."
 
 #: kwalletmanager.cpp:119 kwalletpopup.cpp:40
 msgid "&New Wallet..."
