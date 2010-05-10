@@ -10,19 +10,20 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <serdar@kde.org.tr>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: korganizer\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:24+0200\n"
-"PO-Revision-Date: 2009-10-29 17:07+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-10 15:56+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: printing/calprintdefaultplugins.cpp:134
 #: printing/calprintdefaultplugins.cpp:163
@@ -524,7 +525,7 @@ msgstr "Tüm yapılacakları bir liste halinde (ağaç görünümü gibi) yazdı
 
 #: tests/korgplugins.cpp:37
 msgid "KOrgPlugins"
-msgstr "Korganizer Eklentileri"
+msgstr "KOrganizer Eklentileri"
 
 #: korgac/tests/testalarmdlg.cpp:41
 msgid "TestKabc"
@@ -533,7 +534,7 @@ msgstr "TestKabc"
 #: korgac/alarmdockwindow.cpp:49
 msgctxt "@title:window"
 msgid "KOrganizer Reminder Daemon"
-msgstr "Korganizer Anımsatma Servisi"
+msgstr "KOrganizer Anımsatma Servisi"
 
 #: korgac/alarmdockwindow.cpp:60
 msgctxt "@info"
@@ -580,7 +581,7 @@ msgstr "KOrganizer anımsatma servisinden çıkmak istiyor musunuz? <nl/><note> 
 #: korgac/alarmdockwindow.cpp:175 korgac/alarmdockwindow.cpp:186
 msgctxt "@title:window"
 msgid "Close KOrganizer Reminder Daemon"
-msgstr "Korganizer Anımsatma Servisini Kapat"
+msgstr "KOrganizer Anımsatma Servisini Kapat"
 
 #: korgac/alarmdockwindow.cpp:184
 msgctxt "@info"
@@ -599,7 +600,7 @@ msgstr "Başlatma"
 
 #: korgac/korgacmain.cpp:60 korgac/korgacmain.cpp:61
 msgid "KOrganizer Reminder Daemon"
-msgstr "Korganizer Anımsatma Servisi"
+msgstr "KOrganizer Anımsatma Servisi"
 
 #: korgac/korgacmain.cpp:63
 msgid "(c) 2003 Cornelius Schumacher"
@@ -765,7 +766,7 @@ msgstr "\"%1\" salt-okunur olduğundan düzenlemek mümkün değil."
 #: korgac/alarmdialog.cpp:414
 msgctxt "@info"
 msgid "Could not start KOrganizer so editing is not possible."
-msgstr "Korganizer başlatılamadığından düzenlemek mümkün değil."
+msgstr "KOrganizer başlatılamadığından düzenlemek mümkün değil."
 
 #: korgac/alarmdialog.cpp:426
 #, kde-format
@@ -2498,7 +2499,7 @@ msgstr "Yukarıdaki listede seçili katılımcının rolünü düzenler."
 #: koattendeeeditor.cpp:110
 msgctxt "@label"
 msgid "Ro&le:"
-msgstr "&Ünvan:"
+msgstr "&Unvan:"
 
 #: koattendeeeditor.cpp:115
 msgctxt "@info:tooltip"
@@ -2789,7 +2790,7 @@ msgstr "ta&mamlanma zamanı"
 #: koeditordetails.cpp:180
 msgctxt "@info:whatsthis"
 msgid "Displays information about current attendees. To edit an attendee, select it in this list and modify the values in the area below. Clicking on a column title will sort the list according to that column. The RSVP column indicates whether or not a response is requested from the attendee."
-msgstr "Şu andaki katılımcılar hakkında bilgi görüntüler. Bir katılımcı bilgisi değiştirmek için, bu listeden seçin ve aşağıdaki alanda değerleri değşitirin. Bir sütun başlığı üzerine tıklarsanız o sütuna göre liste sıralanacaktır. LCV sütunu, katılımcıdan cevap beklenip beklenmediğini gösterir."
+msgstr "Şu andaki katılımcılar hakkında bilgi görüntüler. Bir katılımcı bilgisi değiştirmek için, bu listeden seçin ve aşağıdaki alanda değerleri değiştirin. Bir sütun başlığı üzerine tıklarsanız o sütuna göre liste sıralanacaktır. LCV sütunu, katılımcıdan cevap beklenip beklenmediğini gösterir."
 
 #: koeditordetails.cpp:187
 msgctxt "@title:column attendee name"
@@ -2804,7 +2805,7 @@ msgstr "E-posta"
 #: koeditordetails.cpp:189
 msgctxt "@title:column attendee role"
 msgid "Role"
-msgstr "Ünvan"
+msgstr "Unvan"
 
 #: koeditordetails.cpp:190
 msgctxt "@title:column attendee status"
@@ -3326,7 +3327,7 @@ msgstr "İçeriye Takvim &Aktar..."
 
 #: actionmanager.cpp:287
 msgid "Merge the contents of another iCalendar"
-msgstr "Başka bir iTakvim'in içeriğiyle birleştir"
+msgstr "Başka bir iCalendar içeriğiyle birleştir"
 
 #: actionmanager.cpp:289
 msgid "Select this menu entry if you would like to merge the contents of another iCalendar into your current calendar."
@@ -3653,7 +3654,7 @@ msgstr "Biçim Dönüştürme"
 
 #: actionmanager.cpp:1073 calendarview.cpp:1884
 msgid "Proceed"
-msgstr "Devam EtDevam et"
+msgstr "Devam et"
 
 #: actionmanager.cpp:1101
 #, kde-format
@@ -5832,7 +5833,7 @@ msgstr "Gerçekten iptal etmek istiyor musunuz?"
 #: koincidenceeditor.cpp:115
 msgctxt "@title:window"
 msgid "KOrganizer Confirmation"
-msgstr "Korganizer Doğrulaması"
+msgstr "KOrganizer Doğrulaması"
 
 #: koincidenceeditor.cpp:131
 msgctxt "@title:tab"
