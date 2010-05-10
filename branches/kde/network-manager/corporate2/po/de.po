@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-06 08:20+0200\n"
+"POT-Creation-Date: 2010-05-10 15:27+0300\n"
 "PO-Revision-Date: 2009-01-11 13:50+0100\n"
 "Last-Translator: Mustafa Ölcerman <m.oelcerman@pardus-linux.de>\n"
 "Language-Team: Deutsch <pardus-translation-de@pardus.org.tr>\n"
@@ -19,11 +19,110 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: comariface.py:214
+#: browser.py:51
+msgid "Name:"
+msgstr "Name:"
+
+#: browser.py:58 connection.py:269
+msgid "Authentication"
+msgstr "Authentifizierung"
+
+#: browser.py:61 connection.py:507
+msgid "Address:"
+msgstr "Adresse:"
+
+#: browser.py:64 connection.py:548
+msgid "Automatic"
+msgstr "Automatisch"
+
+#: browser.py:71
+msgid "Mod:"
+msgstr "Modus:"
+
+#: browser.py:100
+msgid "Turn on/off connection"
+msgstr "Verbindung de-/aktivieren"
+
+#: browser.py:113
+msgid "Configure connection"
+msgstr "Verbindung konfigurieren"
+
+#: browser.py:116
+msgid "Delete connection"
+msgstr "Verbindung löschen"
+
+#: browser.py:138
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Soll die Verbindung\n"
+"'%s'\n"
+"gelöscht werden?"
+
+#: browser.py:139
+msgid "Delete connection?"
+msgstr "Verbindung löschen?"
+
+#: browser.py:226
+msgid "No device!"
+msgstr "Kein Gerät!"
+
+#: browser.py:405 network-applet.py:587
+msgid "New connection"
+msgstr "Neue Verbindung"
+
+#: browser.py:410 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "Name Service-Einstellungen"
+
+#: browser.py:415 network-applet.py:327
+msgid "Connect Automatically"
+msgstr "Automatisch verbinden"
+
+#: browser.py:434
+msgid "Try Auto Connect on startup"
+msgstr "Beim Systemstart versuchen die Verbindung automatisch herzustellen"
+
+#: browser.py:491
+msgid "Network Connections Help"
+msgstr "Netzwerkverbindungen-Hilfe"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Computer"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Hostname:"
+
+#: nameconf.py:45 connection.py:539
+msgid "Name servers"
+msgstr "Name-Server"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Nach oben"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Nach unten"
+
+#: nameconf.py:156
+msgid "Add Name Server"
+msgstr "Name-Server hinzufügen"
+
+#: nameconf.py:157
+msgid "Name server:"
+msgstr "Name-Server:"
+
+#: comariface.py:177
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht berechtigt."
 
-#: comariface.py:216
+#: comariface.py:179
 msgid ""
 "Network Manager was not able to communicate with your network device. If "
 "it's\n"
@@ -31,11 +130,14 @@ msgid ""
 "usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
-"Netzwerk-Manager konnte mit Ihrem Netzwerk-Gerät nicht kommunizieren. Falls es\n"
-"eine drahtlose Schnittstelle ist, stellen Sie sicher, dass es aktiviert ist. Üblicherweise\n"
-"kann es durch ein Schalter oder durch die Fn-Tasten am Notebook (meistens in neuen vorhanden) aktiviert werden."
+"Netzwerk-Manager konnte mit Ihrem Netzwerk-Gerät nicht kommunizieren. Falls "
+"es\n"
+"eine drahtlose Schnittstelle ist, stellen Sie sicher, dass es aktiviert ist. "
+"Üblicherweise\n"
+"kann es durch ein Schalter oder durch die Fn-Tasten am Notebook (meistens in "
+"neuen vorhanden) aktiviert werden."
 
-#: comariface.py:221
+#: comariface.py:184
 msgid ""
 "The DHCP service was not able to assign an IP address to your network "
 "interface.\n"
@@ -44,36 +146,98 @@ msgid ""
 "through its DHCP service. Otherwise, you have to manually assign an IP "
 "address."
 msgstr ""
-"Der DHCP-Dienst konnte Ihrer Netzwerk-Schnittstelle keine IP-Adresse zuweisen.\n"
-"Stellen Sie sicher, dass das Netzwerk, mit dem Sie versuchen sich zu verbinden,\n"
-"durch den DHCP-Dienst IP-Adressen zuweisen kann. Andernfalls vergeben Sie manuell eine IP-Adresse."
+"Der DHCP-Dienst konnte Ihrer Netzwerk-Schnittstelle keine IP-Adresse "
+"zuweisen.\n"
+"Stellen Sie sicher, dass das Netzwerk, mit dem Sie versuchen sich zu "
+"verbinden,\n"
+"durch den DHCP-Dienst IP-Adressen zuweisen kann. Andernfalls vergeben Sie "
+"manuell eine IP-Adresse."
 
-#: comariface.py:227
+#: comariface.py:190
 msgid "Network Manager - Error"
 msgstr "Netzwerk-Manager-Fehler"
 
-#: comariface.py:235 network-applet.py:176
-msgid "Waiting DBus..."
-msgstr "Wartend auf DBus..."
-
-#: comariface.py:235 network-applet.py:176
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr ""
-"Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut zu "
-"verbinden..."
-
-#: comariface.py:251 network-applet.py:192
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, dann "
-"sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus start' "
-"ausführen."
-
-#: comariface.py:419
+#: comariface.py:353
 msgid "new connection"
 msgstr "neue Verbindung"
+
+#: connsharing.py:99
+msgid "Internet Connection Sharing"
+msgstr "Internet-Verbindungsfreigabe"
+
+#: connsharing.py:100
+msgid "Share Internet Connection"
+msgstr "Internetverbindung freigeben"
+
+#: connsharing.py:102
+msgid "Interface that goes to internet"
+msgstr "Schnittstelle, die die Internetverbindung herstellt"
+
+#: connsharing.py:103
+msgid "Interface that will share connection"
+msgstr "Schnittstelle, die die Verbindung freigeben wird"
+
+#: connsharing.py:119
+msgid "D-Bus Error"
+msgstr "D-Bus-Fehler"
+
+#: connsharing.py:123
+msgid "COMAR Error"
+msgstr "COMAR-Fehler"
+
+#: connsharing.py:127
+msgid "Changing States of Interfaces Failed"
+msgstr "Zustandsänderungen von Schnittstellen ist fehlgeschlagen"
+
+#: connsharing.py:129
+msgid "DHCP Server Error"
+msgstr "DHCP-Serverfehler:"
+
+#: connsharing.py:156
+msgid ""
+"The interfaces that you have selected must be different to share internet "
+"connection"
+msgstr ""
+"Die ausgewählte Schnittstelle muss unterschiedlich sein, um die "
+"Internetverbindung freizugeben"
+
+#: connsharing.py:156
+msgid "Check Selected Interfaces"
+msgstr "Gewählte Schnittstellen überprüfen"
+
+#: connsharing.py:166
+msgid "The sharing of your connection has been successfully done."
+msgstr "Die Freigabe Ihrer Verbindung ist erfolgreich fertiggestellt worden."
+
+#: connsharing.py:166
+msgid "Sharing is OK"
+msgstr "Freigabe ist OK"
+
+#: connsharing.py:267
+msgid "You do not have an ip address for the interface that goes to internet"
+msgstr ""
+"Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine "
+"IP-Adresse"
+
+#: connsharing.py:267
+msgid "IP address not found"
+msgstr "IP-Adresse nicht gefunden"
+
+#: network-manager.py:37 network-manager.py:98 network-manager.py:108
+#: autoswitch.py:34 autoswitch.py:36 network-applet.py:541
+#: network-applet.py:555
+msgid "Network Manager"
+msgstr "Netzwerk-Manager"
+
+#: network-manager.py:90
+msgid "Network manager module is already started!"
+msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
+
+#: network-manager.py:98
+msgid ""
+"Current networking backend is set to GNOME NetworkManager. You should switch "
+"back to COMAR backend for being able to use this network applet."
+msgstr ""
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -98,108 +262,6 @@ msgstr "Netzwerk-Pakete installieren!"
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Bisher ist kein Paket mit COMAR-Netzwerkskripten installiert."
-
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
-msgid "Network Manager"
-msgstr "Netzwerk-Manager"
-
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Am suchen..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> zusammengestellt."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Es gibt keine zusammenpassende Profile"
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Keine Suchergebnisse"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "Verbindungsaufbau zu <b>%s</b> ..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "Name:"
-
-#: browser.py:59 connection.py:269
-msgid "Authentication"
-msgstr "Authentifizierung"
-
-#: browser.py:62 connection.py:507
-msgid "Address:"
-msgstr "Adresse:"
-
-#: browser.py:65 connection.py:548
-msgid "Automatic"
-msgstr "Automatisch"
-
-#: browser.py:72
-msgid "Mod:"
-msgstr "Modus:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Verbindung de-/aktivieren"
-
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Verbindung konfigurieren"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Verbindung löschen"
-
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Soll die Verbindung\n"
-"'%s'\n"
-"gelöscht werden?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Verbindung löschen?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Kein Gerät!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Neue Verbindung"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Name Service-Einstellungen"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Automatisch verbinden"
-
-#: browser.py:423
-msgid "Share Connection"
-msgstr "Verbindung freigeben"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Beim Systemstart versuchen die Verbindung automatisch herzustellen"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Netzwerkverbindungen-Hilfe"
 
 #: connection.py:28
 msgid "Channel"
@@ -341,141 +403,72 @@ msgstr "Netzmaske:"
 msgid "Gateway:"
 msgstr "Gateway:"
 
-#: connection.py:539 nameconf.py:45
-msgid "Name servers"
-msgstr "Name-Server"
-
-#: connection.py:819
+#: connection.py:805
 msgid "Configure network connection"
 msgstr "Netzwerkverbindungen konfigurieren"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Computer"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Hostname:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Nach oben"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Nach unten"
-
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "Name-Server hinzufügen"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "Name-Server:"
-
-#: connsharing.py:99
-msgid "Internet Connection Sharing"
-msgstr "Internet-Verbindungsfreigabe"
-
-#: connsharing.py:100
-msgid "Share Internet Connection"
-msgstr "Internetverbindung freigeben"
-
-#: connsharing.py:102
-msgid "Interface that goes to internet"
-msgstr "Schnittstelle, die die Internetverbindung herstellt"
-
-#: connsharing.py:103
-msgid "Interface that will share connection"
-msgstr "Schnittstelle, die die Verbindung freigeben wird"
-
-#: connsharing.py:119
-msgid "D-Bus Error"
-msgstr "D-Bus-Fehler"
-
-#: connsharing.py:123
-msgid "COMAR Error"
-msgstr "COMAR-Fehler"
-
-#: connsharing.py:127
-msgid "Changing States of Interfaces Failed"
-msgstr "Zustandsänderungen von Schnittstellen ist fehlgeschlagen"
-
-#: connsharing.py:129
-msgid "DHCP Server Error"
-msgstr "DHCP-Serverfehler:"
-
-#: connsharing.py:156
+#: autoswitch.py:71
 msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
+"Your wireless interface has been disabled by kill switch. Please activate it "
+"first."
 msgstr ""
-"Die ausgewählte Schnittstelle muss unterschiedlich sein, um die "
-"Internetverbindung freizugeben"
 
-#: connsharing.py:156
-msgid "Check Selected Interfaces"
-msgstr "Gewählte Schnittstellen überprüfen"
+#: autoswitch.py:79
+msgid "Scanning..."
+msgstr "Am suchen..."
 
-#: connsharing.py:166
-msgid "The sharing of your connection has been successfully done."
-msgstr "Die Freigabe Ihrer Verbindung ist erfolgreich fertiggestellt worden."
+#: autoswitch.py:100
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> zusammengestellt."
 
-#: connsharing.py:166
-msgid "Sharing is OK"
-msgstr "Freigabe ist OK"
+#: autoswitch.py:104
+msgid "There is no matched profile"
+msgstr "Es gibt keine zusammenpassende Profile"
 
-#: connsharing.py:267
-msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
-"Sie haben für die Schnittstelle, die die Internetverbindung herstellt, keine "
-"IP-Adresse"
+#: autoswitch.py:106
+msgid "No scan result"
+msgstr "Keine Suchergebnisse"
 
-#: connsharing.py:267
-msgid "IP address not found"
-msgstr "IP-Adresse nicht gefunden"
+#: autoswitch.py:116
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "Verbindungsaufbau zu <b>%s</b> ..."
 
-#: network-manager.py:83
-msgid "Just try to connect automatically"
-msgstr "Versuchen automatisch zu verbinden"
-
-#: network-manager.py:98
-msgid "Network manager module is already started!"
-msgstr "Netzwerk-Manager Modul wurde bereits gestartet!"
-
-#: network-applet.py:399
+#: network-applet.py:325
 msgid "Firewall..."
 msgstr "Firewall..."
 
-#: network-applet.py:400
+#: network-applet.py:326
 msgid "Edit Connections..."
 msgstr "Verbindungen bearbeiten..."
 
-#: network-applet.py:403
+#: network-applet.py:329
 msgid "Show Notifications"
 msgstr "Meldungen anzeigen"
 
-#: network-applet.py:405
+#: network-applet.py:331
 msgid "Icon Per Device"
 msgstr "Ikon je Gerät"
 
-#: network-applet.py:406
+#: network-applet.py:332
 msgid "Single Icon"
 msgstr "Einzelnes Ikon"
 
-#: network-applet.py:477
+#: network-applet.py:403
 msgid "Should network-applet start automatically when you login?"
-msgstr "Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
+msgstr ""
+"Soll der Netzwerk-Applet automatisch bei Ihrer Anmeldung gestartet werden?"
 
-#: network-applet.py:592
+#: network-applet.py:518
 msgid "Connecting to <b>%1</b> ..."
 msgstr "Verbindungsaufbau zu <b>%1</b> ..."
 
-#: network-applet.py:597
+#: network-applet.py:523
 msgid "Connected to <b>%1</b>"
 msgstr "Verbunden mit <b>%1</b>"
 
-#: network-applet.py:603
+#: network-applet.py:529
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
@@ -483,11 +476,32 @@ msgstr ""
 "Verbindung fehlgeschlagen \n"
 "<b>%1</b>"
 
-#: network-applet.py:605
+#: network-applet.py:531
 msgid "You are offline now"
 msgstr "Sie sind momentan offline"
 
-#: network-applet.py:699
+#: network-applet.py:624
 msgid "Network Applet"
 msgstr "Netzwerk-Applet"
 
+#~ msgid "Waiting DBus..."
+#~ msgstr "Wartend auf DBus..."
+
+#~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+#~ msgstr ""
+#~ "Verbindung zu DBus wurde unerwartet geschlossen, es wird versucht erneut "
+#~ "zu verbinden..."
+
+#~ msgid ""
+#~ "Cannot connect to the DBus! If it is not running you should start it with "
+#~ "the 'service dbus start' command in a root console."
+#~ msgstr ""
+#~ "Kann nicht mit DBus verbunden werden! Falls es nicht ausgeführt wird, "
+#~ "dann sollten Sie es in einer Root-Konsole mit dem Befehl 'service dbus "
+#~ "start' ausführen."
+
+#~ msgid "Share Connection"
+#~ msgstr "Verbindung freigeben"
+
+#~ msgid "Just try to connect automatically"
+#~ msgstr "Versuchen automatisch zu verbinden"
