@@ -107,7 +107,7 @@ class PTray:
 
         if config.PMConfig().hideTrayIfThereIsNoUpdate() and unread == 0:
             self.hide()
-        else:
+        elif config.PMConfig().systemTray():
             self.show()
 
         if self.unread == unread:
