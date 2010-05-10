@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 11:50+0200\n"
+"POT-Creation-Date: 2010-05-10 13:17+0300\n"
 "PO-Revision-Date: 2009-12-01 11:11+0200\n"
 "Last-Translator: Faik Uygur <faik@pardus.org.tr>\n"
 "Language-Team: Türkçe <tr@li.org>\n"
@@ -64,16 +64,16 @@ msgstr "<qt>Paketler yapılandırılıyor. Bu işlemin bitmesi uzun sürebilir</
 msgid ""
 "<qt>Following packages are obsoleted and are not maintained anymore in "
 "Pardus 2009 repositories. These packages are going to be removed from your "
-"system:<br><br> %1"
+"system."
 msgstr ""
 "<qt>Aşağıdaki paketler eski ve artık Pardus 2009 depolarında bakımı "
-"yapılmıyor. Bu paketler sisteminizden kaldırılacak:<br><br> %1"
+"yapılmıyor. Bu paketler sisteminizden kaldırılacak."
 
-#: src/state.py:77 src/maindialog.py:61
+#: src/state.py:77 src/maindialog.py:64
 msgid "<br><br>Do you want to continue?</qt>"
 msgstr "<br><br>Devam etmek istiyor musunuz?</qt>"
 
-#: src/state.py:100
+#: src/state.py:101
 msgid "Resolving dependencies..."
 msgstr "Bağımlılıklar hesaplanıyor..."
 
@@ -121,11 +121,11 @@ msgstr "COMAR Hatası"
 msgid "You are not authorized for this operation."
 msgstr "Bu işlem için yetkili değilsiniz."
 
-#: src/maindialog.py:43
+#: src/maindialog.py:46
 msgid "Upgrading from %1 to version 2009.1"
 msgstr "%1 sürümünden 2009.1 sürümüne yükseltiliyor"
 
-#: src/maindialog.py:60
+#: src/maindialog.py:63
 msgid ""
 "<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
 "system."
@@ -133,7 +133,7 @@ msgstr ""
 "<qt>Pardus 2009.1 sürümüne yükseltme tamamlandı. Yükseltme-yöneticisi şimdi "
 "sisteminizi yeniden başlatacak."
 
-#: src/maindialog.py:67
+#: src/maindialog.py:70
 msgid "Restart Later"
 msgstr "Yeniden Başlatmayı Ertele"
 
