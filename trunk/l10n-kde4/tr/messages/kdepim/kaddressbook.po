@@ -1,20 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcontactmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-12 01:22+0200\n"
-"PO-Revision-Date: 2009-11-12 14:02+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-10 15:59+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: printing/ringbinderstyle.cpp:142
 msgid "Ring Binder Printing Style - Appearance"
@@ -169,7 +170,7 @@ msgid ""
 "Choose the style that suits your needs below."
 msgstr ""
 "Baskı nasıl görünmeli?\n"
-"KadressBook değişik amaçlar için hazırlanmış bazı baskı biçimlerine sahiptir.\n"
+"KAddressBook değişik amaçlar için hazırlanmış bazı baskı biçimlerine sahiptir.\n"
 "İhtiyaçlarınıza uygun olan biçimi aşağıdan seçin."
 
 #: printing/stylepage.cpp:132
@@ -711,7 +712,7 @@ msgstr "İçeri aktarılan kişilerin saklanacağı adres defterini seçin:"
 
 #: xxportmanager.cpp:124
 msgid "Which contact do you want to export?"
-msgstr "Hangi kişyi dışarıya aktarmak istiyorsunuz?"
+msgstr "Hangi kişiyi dışarıya aktarmak istiyorsunuz?"
 
 #: xxportmanager.cpp:131
 msgid "You have not selected any contacts to export."
@@ -727,7 +728,7 @@ msgstr "KDE Adres Defteri Uygulaması"
 
 #: aboutdata.cpp:30
 msgid "(c) 2007-2009 The KDE PIM Team"
-msgstr "(c) 1997-2009, KDE PIM Takımı"
+msgstr "(c) 2007-2009, KDE PIM Takımı"
 
 #: aboutdata.cpp:32
 msgid "Current maintainer"
@@ -1111,7 +1112,7 @@ msgstr "Tanımlanmamış"
 
 #: contactfields.cpp:37
 msgid "Anniversary"
-msgstr "Yıldönümü"
+msgstr "Yıl dönümü"
 
 #: contactfields.cpp:58
 msgid "EMail (preferred)"
@@ -1174,12 +1175,12 @@ msgstr "Ana Araç Çubuğu"
 #: rc.cpp:22
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:23
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #. i18n: file: printing/rbs_appearance.ui:14
 #. i18n: ectx: property (windowTitle), widget (QWidget,
@@ -1216,7 +1217,7 @@ msgstr "Posta adresleri"
 #. i18n: ectx: property (text), widget (QCheckBox, cbBirthday)
 #: rc.cpp:44
 msgid "Birthday"
-msgstr "Doğumgünü"
+msgstr "Doğum günü"
 
 #. i18n: file: printing/rbs_appearance.ui:76
 #. i18n: ectx: property (text), widget (QCheckBox, cbNote)
