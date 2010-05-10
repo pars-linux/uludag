@@ -217,7 +217,7 @@ msgstr "Bağlantı Adresini Kopyala"
 
 #: Filter.cpp:521
 msgid "Send Email To..."
-msgstr "E-posta olarak Gönder..."
+msgstr "Adrese E-posta Gönder..."
 
 #: Filter.cpp:522
 msgid "Copy Email Address"
