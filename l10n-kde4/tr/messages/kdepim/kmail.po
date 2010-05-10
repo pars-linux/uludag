@@ -8,14 +8,15 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
 # Fatih Aşıcı <fatih@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-07 01:23+0200\n"
-"PO-Revision-Date: 2010-04-21 10:07+0300\n"
-"Last-Translator: Fatih Aşıcı <fatih@pardus.org.tr>\n"
-"Language-Team: l10n-kde4 <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2010-05-10 15:40+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -146,7 +147,7 @@ msgstr "Kmail D-Bus arayüzü için test"
 
 #: vcardviewer.cpp:39
 msgid "VCard Viewer"
-msgstr "Kartvizit(vCard) İzleyici"
+msgstr "Kartvizit (vCard) İzleyici"
 
 #: vcardviewer.cpp:43
 msgid "&Import"
@@ -162,7 +163,7 @@ msgstr "&Önceki Kartvizit"
 
 #: vcardviewer.cpp:64
 msgid "Failed to parse vCard."
-msgstr "VCard dosyası ayrıştırılamadı."
+msgstr "vCard dosyası ayrıştırılamadı."
 
 #: kmfilterdlg.cpp:63
 msgid "<qt><p>This is the list of defined filters. They are processed top-to-bottom.</p><p>Click on any filter to edit it using the controls in the right-hand half of the dialog.</p></qt>"
@@ -182,15 +183,15 @@ msgstr "<qt><p>Seçili filtreyi silmek için <em>Sil</em> düğmesine tıklayın
 
 #: kmfilterdlg.cpp:87
 msgid "<qt><p>Click this button to move the currently-selected filter <em>up</em> one in the list above.</p><p>This is useful since the order of the filters in the list determines the order in which they are tried on messages: The topmost filter gets tried first.</p><p>If you have clicked this button accidentally, you can undo this by clicking on the <em>Down</em> button.</p></qt>"
-msgstr "<qt><p>Bu düğmeye basmak seçili süzgeçi yukarıdaki liste içinde bir <em>yukarı</em> taşır.</p><p>Süzgeçlerin liste içindeki sıraları onların iletilerle uğraşma sıralarını belirlediği için kullanışlıdır: En üstteki süzgeç ilk önce denenir.</p><p>Eğer bu düğmeye yanlışlıkla bastıysanız <em>Aşağı</em> düğmesine basarak işlemi geri alabilirsiniz.</p></qt>"
+msgstr "<qt><p>Bu düğmeye basmak seçili süzgeci yukarıdaki liste içinde bir <em>yukarı</em> taşır.</p><p>Süzgeçlerin liste içindeki sıraları onların iletilerle uğraşma sıralarını belirlediği için kullanışlıdır: En üstteki süzgeç ilk önce denenir.</p><p>Eğer bu düğmeye yanlışlıkla bastıysanız <em>Aşağı</em> düğmesine basarak işlemi geri alabilirsiniz.</p></qt>"
 
 #: kmfilterdlg.cpp:95
 msgid "<qt><p>Click this button to move the currently-selected filter <em>down</em> one in the list above.</p><p>This is useful since the order of the filters in the list determines the order in which they are tried on messages: The topmost filter gets tried first.</p><p>If you have clicked this button accidentally, you can undo this by clicking on the <em>Up</em> button.</p></qt>"
-msgstr "<qt><p>Bu düğmeye basmak seçili süzgeçi yukarıdaki liste içinde bir <em>Aşağı</em> taşır.</p><p>Süzgeçlerin liste içindeki sıraları onların iletilerle uğraşma sıralarını belirlediği için kullanışlıdır: En üstteki süzgeç ilk önce denenir.</p><p>Eğer bu düğmeye yanlışlıkla bastıysanız <em>Yukarı</em> düğmesine basarak geri alabilirsiniz.</p></qt>"
+msgstr "<qt><p>Bu düğmeye basmak seçili süzgeç yukarıdaki liste içinde bir <em>Aşağı</em> taşır.</p><p>Süzgeçlerin liste içindeki sıraları onların iletilerle uğraşma sıralarını belirlediği için kullanışlıdır: En üstteki süzgeç ilk önce denenir.</p><p>Eğer bu düğmeye yanlışlıkla bastıysanız <em>Yukarı</em> düğmesine basarak geri alabilirsiniz.</p></qt>"
 
 #: kmfilterdlg.cpp:103
 msgid "<qt><p>Click this button to rename the currently-selected filter.</p><p>Filters are named automatically, as long as they start with \"&lt;\".</p><p>If you have renamed a filter accidentally and want automatic naming back, click this button and select <em>Clear</em> followed by <em>OK</em> in the appearing dialog.</p></qt>"
-msgstr "<qt><p>Seçili filtreyi yeniden isimlendirmek için bu düğmeye basın.</p><p>Filtreler otomatik olarak \"&lt;\" ile başlayacak şekilde isimlendirilirler.</p><p>Eğer bir filteyi yanlışlıkla yeniden isimlendirdiyseniz ve geri almak istiyorsanız, bu düğmeye basın ve görünen pencerede <em>Temizle</em> ve <em>Tamam</em> düğmelerine tıklayın.</p></qt>"
+msgstr "<qt><p>Seçili filtreyi yeniden isimlendirmek için bu düğmeye basın.</p><p>Filtreler otomatik olarak \"&lt;\" ile başlayacak şekilde isimlendirilirler.</p><p>Eğer bir süzgeci yanlışlıkla yeniden isimlendirdiyseniz ve geri almak istiyorsanız, bu düğmeye basın ve görünen pencerede <em>Temizle</em> ve <em>Tamam</em> düğmelerine tıklayın.</p></qt>"
 
 #: kmfilterdlg.cpp:110
 msgid "<qt><p>Check this button to force the confirmation dialog to be displayed.</p><p>This is useful if you have defined a ruleset that tags messages to be downloaded later. Without the possibility to force the dialog popup, these messages could never be downloaded if no other large messages were waiting on the server, or if you wanted to change the ruleset to tag the messages differently.</p></qt>"
@@ -240,7 +241,7 @@ msgstr "Genel Seçenekler"
 
 #: kmfilterdlg.cpp:198
 msgid "Always &show matched 'Download Later' messages in confirmation dialog"
-msgstr "Onaylama kutusunda herzaman uygun olan 'Sonra İndir' iletisini gö&ster."
+msgstr "Onaylama kutusunda her zaman uygun olan 'Sonra İndir' iletisini gö&ster."
 
 #: kmfilterdlg.cpp:205
 msgid "Filter Actions"
@@ -260,7 +261,7 @@ msgstr "Tüm hesaplardan"
 
 #: kmfilterdlg.cpp:227
 msgid "from all but online IMAP accounts"
-msgstr "Çevrimiçi olan tüm IMAP hesaplarından"
+msgstr "Çevrim içi olan tüm IMAP hesaplarından"
 
 #: kmfilterdlg.cpp:230
 msgid "from checked accounts only"
@@ -357,7 +358,7 @@ msgstr "isimsiz"
 
 #: kmfilterdlg.cpp:817
 msgid "At least one filter targets a folder on an online IMAP account. Such filters will only be applied when manually filtering and when filtering incoming online IMAP mail."
-msgstr "Çevrimiçi bir IMAP hesabı üzerinde en az bir filtre hedefine ulaşıyor. Böyle filtreler yalnızca elle filtreleme yaparken ve gelen çevrimiçi IMAP postasını filtrelerken uygulanacaktır."
+msgstr "Çevrim içi bir IMAP hesabı üzerinde en az bir filtre hedefine ulaşıyor. Böyle filtreler yalnızca elle filtreleme yaparken ve gelen çevrim içi IMAP postasını filtrelerken uygulanacaktır."
 
 #: kmfilterdlg.cpp:849
 msgid "The following filters are invalid (e.g. containing no actions or no search rules). Discard or edit invalid filters?"
@@ -406,11 +407,11 @@ msgstr "Bu iletiyi HTML biçiminde göster."
 
 #: urlhandlermanager.cpp:474
 msgid "Load external references from the Internet for this message."
-msgstr "Bu e-posta için dış referansların internetten yüklenmesine izin ver"
+msgstr "Bu e-posta için dış referansların Internet'ten yüklenmesine izin ver"
 
 #: urlhandlermanager.cpp:476
 msgid "Work online."
-msgstr "Çevrimiçi çalış."
+msgstr "Çevrim içi çalış."
 
 #: urlhandlermanager.cpp:478
 msgid "Decrypt message."
@@ -635,7 +636,7 @@ msgstr ""
 
 #: accountdialog.cpp:734 accountdialog.cpp:764
 msgid "Please specify a server and port on the General tab first."
-msgstr "Lütfen önce Genel sekmesinde bir sunucu ve port numarsası tanımlayınız."
+msgstr "Lütfen önce Genel sekmesinde bir sunucu ve port numarası tanımlayınız."
 
 #: accountdialog.cpp:833
 msgid ""
@@ -651,7 +652,7 @@ msgid ""
 "Since some servers do not correctly announce their capabilities you still have the possibility to turn leaving fetched messages on the server on."
 msgstr ""
 "Bu sunucu benzersiz (tekil) ileti numaralarını desteklemiyor, fakat bu özellik iletileri sunucu üzerinde bırakmak için gereklidir; bu yüzden özellik kullanılmayacak.\n"
-"Bazı sunucular yeteneklerini doğru olarak bildirmedikleri için, yine de alınmış iletileri sunucuda bırakma özelliğini aktif hale getireblirsiniz."
+"Bazı sunucular yeteneklerini doğru olarak bildirmedikleri için, yine de alınmış iletileri sunucuda bırakma özelliğini aktif hale getirebilirsiniz."
 
 #: accountdialog.cpp:869
 msgid ""
@@ -932,7 +933,7 @@ msgstr "%1 açılırken hata oluştu; böyle bir dizin yok."
 #: kmfoldermaildir.cpp:103
 #, kde-format
 msgid "Error opening %1; either this is not a valid maildir folder, or you do not have sufficient access permissions."
-msgstr "Açılış hatası %1. Yeterli erişim izinlerine sahipdeğilsiniz veya bu geçerli bir dizin olmayabilir."
+msgstr "Açılış hatası %1. Yeterli erişim izinlerine sahip değilsiniz veya bu geçerli bir dizin olmayabilir."
 
 #: kmfoldermaildir.cpp:221
 msgid "Could not sync maildir folder."
@@ -1260,7 +1261,7 @@ msgstr "&Makine adı ve giriş bilgilerini tekrar kullan"
 
 #: sieveconfig.cpp:95
 msgid "Managesieve &port:"
-msgstr "Managesive &portu:"
+msgstr "Managesieve &portu:"
 
 #: sieveconfig.cpp:104
 msgid "&Alternate URL:"
@@ -1601,7 +1602,7 @@ msgstr "E-posta Adresi:"
 
 #: templatesconfiguration.cpp:66
 msgid "<p>Here you can create and manage templates to use when composing new messages, replies or forwarded messages.</p><p>The message templates support substitution commands, either simply type them or select them from the <i>Insert command</i> menu.</p>"
-msgstr "<p>Burada yeni iletileri ve cevapları ya da yönlendirilmiş iletileri düzenlerken kullanılacak şablonları oluşturabilir ve yönetebilirsiniz.</p><p>İleti şablonları yerdeğiştirme komutlarını desteklemektedir, bunları basitçe yazabilir veya <i>komut ekle</i> menüsü üzerinden seçebilirsiniz.</p>"
+msgstr "<p>Burada yeni iletileri ve cevapları ya da yönlendirilmiş iletileri düzenlerken kullanılacak şablonları oluşturabilir ve yönetebilirsiniz.</p><p>İleti şablonları yer değiştirme komutlarını desteklemektedir, bunları basitçe yazabilir veya <i>komut ekle</i> menüsü üzerinden seçebilirsiniz.</p>"
 
 #: templatesconfiguration.cpp:73
 msgid "<p>Templates specified here are folder-specific. They override both global templates and per-identity templates.</p>"
@@ -1975,15 +1976,15 @@ msgstr "Anti-Virüs Sihirbazı"
 
 #: antispamwizard.cpp:112
 msgid "Welcome to the KMail Anti-Spam Wizard"
-msgstr "KMail Çöp Posta Engelleme Sihirbazına Hoşgeldiniz"
+msgstr "KMail Çöp Posta Engelleme Sihirbazına Hoş Geldiniz"
 
 #: antispamwizard.cpp:113
 msgid "Welcome to the KMail Anti-Virus Wizard"
-msgstr "KMail Anti Virüs Sihirbazına Hoşgeldiniz"
+msgstr "KMail Anti Virüs Sihirbazına Hoş Geldiniz"
 
 #: antispamwizard.cpp:119
 msgid "Options to fine-tune the handling of spam messages"
-msgstr "Gelişmiş Spam ileti belirleme ayarları"
+msgstr "Gelişmiş spam ileti belirleme ayarları"
 
 #: antispamwizard.cpp:125
 msgid "Options to fine-tune the handling of virus messages"
@@ -2129,7 +2130,7 @@ msgstr "Bulunan virüslü iletileri seçilen dizine taşı"
 
 #: antispamwizard.cpp:1121
 msgid "A filter to detect messages classified as virus-infected and to move those messages into a predefined folder is created. The default folder is the trash folder, but you may change that in the folder view."
-msgstr "Virüslü olarak sınıflandırılmış iletileri bulmak ve önceden belirlenen bir dizine taşımak içn bir filtre oluşturuldu. Ön tanımlı dizin çöp dizinidir, fakat bunu dizin görünümünde değiştirebilirsiniz."
+msgstr "Virüslü olarak sınıflandırılmış iletileri bulmak ve önceden belirlenen bir dizine taşımak için bir filtre oluşturuldu. Ön tanımlı dizin çöp dizinidir, fakat bunu dizin görünümünde değiştirebilirsiniz."
 
 #: antispamwizard.cpp:1127
 msgid "Additionally, mark detected viral messages as read"
@@ -2223,7 +2224,7 @@ msgstr "Yeni ileti listesi ve dizin ağacı"
 
 #: aboutdata.cpp:178
 msgid "Anti-virus support"
-msgstr "Antivirüs desteği"
+msgstr "Anti-virüs desteği"
 
 #: aboutdata.cpp:187 aboutdata.cpp:234
 msgid "POP filters"
@@ -2497,7 +2498,7 @@ msgstr "KMail çevrimdışı olarak ayarlanmış, tüm ağ işleri beklemede"
 
 #: kmkernel.cpp:1224
 msgid "KMail is set to be online; all network jobs resumed"
-msgstr "KMail çevrimiçi olarak ayarlandı; tüm ağ işlemleri devam ettiriliyor"
+msgstr "KMail çevrim içi olarak ayarlandı; tüm ağ işlemleri devam ettiriliyor"
 
 #: kmkernel.cpp:1251
 msgid "KMail is currently in offline mode. How do you want to proceed?"
@@ -2505,11 +2506,11 @@ msgstr "KMail şu anda çevrim dışı çalışıyor. İşlemi nasıl gerçekle�
 
 #: kmkernel.cpp:1253 kmcomposewin.cpp:3475
 msgid "Online/Offline"
-msgstr "Çevrimiçi/Çevrimdışı"
+msgstr "Çevrim içi/Çevrimdışı"
 
 #: kmkernel.cpp:1254 kmmainwidget.cpp:2734
 msgid "Work Online"
-msgstr "Çevrimiçi Çalış"
+msgstr "Çevrim içi Çalış"
 
 #: kmkernel.cpp:1255 kmmainwidget.cpp:2730
 msgid "Work Offline"
@@ -2658,7 +2659,7 @@ msgstr "Gerçekten tüm hesapların çöp kutularındaki iletileri silmek istiyo
 #, kde-format
 msgid "This identity has been changed to use the default transport:"
 msgid_plural "These %1 identities have been changed to use the default transport:"
-msgstr[0] "Aşağıdaki %1 adet kimlik, varsayılan taşıyıcıyıcı kullanacak şekilde değiştirildi:"
+msgstr[0] "Aşağıdaki %1 adet kimlik, varsayılan taşıyıcıyı kullanacak şekilde değiştirildi:"
 
 #: kmkernel.cpp:2579
 #, kde-format
@@ -2792,7 +2793,7 @@ msgstr "Yapılacak Ögesi Oluştur"
 
 #: messageactions.cpp:93
 msgid "Allows you to create a calendar to-do or reminder from this message"
-msgstr "Bu mesajdan bir yapılacak öğesi veya hatırlatıcı oluşturmanızı sağlar"
+msgstr "Bu mesajdan bir yapılacak ögesi veya hatırlatıcı oluşturmanızı sağlar"
 
 #: messageactions.cpp:94
 msgid "This option starts the KOrganizer to-do editor with initial values taken from the currently selected message. Then you can edit the to-do to your liking before saving it to your calendar."
@@ -2873,7 +2874,7 @@ msgstr "E-posta &Listesi"
 
 #: messageactions.cpp:270
 msgid "Open Message in List Archive"
-msgstr "Liste Arşinindeki İletiyi Aç"
+msgstr "Liste Arşivindeki İletiyi Aç"
 
 #: messageactions.cpp:272
 msgid "Post New Message"
@@ -2993,7 +2994,7 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
-"%3% güvenlirlikle çöp posta olma olasılığı%1%.\n"
+"%3% güvenirlikle çöp posta olma olasılığı%1%.\n"
 "\n"
 "Tam rapor:\n"
 "Olasılık=%2\n"
@@ -3304,7 +3305,7 @@ msgstr "URL panoya kopyalandı."
 #, kde-format
 msgctxt "@info"
 msgid "File <filename>%1</filename> exists.<nl/>Do you want to replace it?"
-msgstr "<qt><b>%1</b> dosyası zaten var.<nl/>Üzerine yazmak istiyor musunuz?</qt>"
+msgstr "<filename>%1</filename> dosyası zaten var.<nl/>Üzerine yazmak istiyor musunuz?"
 
 #: kmcommands.cpp:769
 msgid "Message as Plain Text"
@@ -3346,7 +3347,7 @@ msgid ""
 "\n"
 msgstr ""
 "\n"
-"Bu MIME özet yönlendirmedir. İletinin içeriği ekte yeralır.\n"
+"Bu MIME özet yönlendirmedir. İletinin içeriği ekte yer alır.\n"
 "\n"
 "\n"
 
@@ -3401,7 +3402,7 @@ msgstr "Ekleri Farklı Kaydet"
 #: kmcommands.cpp:2549
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
-msgstr "elkenti.1"
+msgstr "eklenti.1"
 
 #: kmcommands.cpp:2556
 msgid "Save Attachment"
@@ -3795,7 +3796,7 @@ msgstr "Bağlantıyı Farklı Kaydet..."
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
 #: kmreaderwin.cpp:668 kmcomposewin.cpp:1223 rc.cpp:1671
 msgid "Use Fi&xed Font"
-msgstr "S&abit Yazıtipi Kullan"
+msgstr "S&abit Yazı Tipi Kullan"
 
 #: kmreaderwin.cpp:674
 msgid "Show Message Structure"
@@ -3835,7 +3836,7 @@ msgstr "<h2 style='margin-top: 0px;'>Dizin içeriği okunuyor</h2><p>Lütfen bek
 
 #: kmreaderwin.cpp:1379
 msgid "<h2 style='margin-top: 0px;'>Offline</h2><p>KMail is currently in offline mode. Click <a href=\"kmail:goOnline\">here</a> to go online . . .</p>&nbsp;"
-msgstr "<h2 style='margin-top: 0px;'>Çevrimdışı</h2><p>KMail şu anda çevrimdışı kipinde çalışıyor. Çevrimiçi kipine geçmek için <a href=\"kmail:goOnline\">tıklayınız</a> . . .</p>&nbsp;"
+msgstr "<h2 style='margin-top: 0px;'>Çevrimdışı</h2><p>KMail şu anda çevrimdışı kipinde çalışıyor. Çevrim içi kipine geçmek için <a href=\"kmail:goOnline\">tıklayınız</a> . . .</p>&nbsp;"
 
 #: kmreaderwin.cpp:1395
 #, kde-format
@@ -3851,9 +3852,9 @@ msgid ""
 "<p>Thank you,</p>\n"
 "<p style='margin-bottom: 0px'>&nbsp; &nbsp; The KMail Team</p>"
 msgstr ""
-"<h2 style='margin-top: 0px;'>KMail %1 Sürümüne Hoşgeldiniz</h2><p>KMail, K Masaüstü Ortamı'nın e-posta istemcisidir. KMail, MIME, SMTP, POP3 ve IMAP gibi Internet posta standartları ile uyumlu şekilde tasarlandı.</p>\n"
+"<h2 style='margin-top: 0px;'>KMail %1 Sürümüne Hoş Geldiniz</h2><p>KMail, K Masaüstü Ortamı'nın e-posta istemcisidir. KMail, MIME, SMTP, POP3 ve IMAP gibi Internet posta standartları ile uyumlu şekilde tasarlandı.</p>\n"
 "<ul><li>KMail <a href=\"%2\">belgelerinde</a> anlatıldığı gibi KMail'in bir çok güçlü özelliği vardır.</li>\n"
-"<li><a href=\"%3\">KMail anasayfasında</A> KMail uygulamasının yeni sürümleri ile ilgili bilgiler bulabilirsiniz</li></ul>\n"
+"<li><a href=\"%3\">KMail ana sayfasında</A> KMail uygulamasının yeni sürümleri ile ilgili bilgiler bulabilirsiniz</li></ul>\n"
 "%6\n"
 "%4\n"
 "%5\n"
@@ -4224,7 +4225,7 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
-"Bu alıclar için çakışan şifreleme referansları var.\n"
+"Bu alıcılar için çakışan şifreleme referansları var.\n"
 "Bu ileti şifrelensin mi?"
 
 #: messagecomposer.cpp:944
@@ -4287,7 +4288,7 @@ msgstr ""
 #: messagecomposer.cpp:2370
 #, kde-format
 msgid "<qt>Not all characters fit into the chosen encoding '%1'.<br /><br />Send the message anyway and lose some characters or let Kmail try to automatically find a suitable encoding?</qt>"
-msgstr "<qt>Bazı kararakterler '%1' bu karakter kümesi ile uyuşmuyor.<br /><br />İleti bazı karakterler kaybedilerek yine de gönderilsin mi yoksa Kmail uygun bir karakter kodlamasını otomatik olarak bulmayı denesin mi?</qt>"
+msgstr "<qt>Bazı karakterler '%1' bu karakter kümesi ile uyuşmuyor.<br /><br />İleti bazı karakterler kaybedilerek yine de gönderilsin mi yoksa Kmail uygun bir karakter kodlamasını otomatik olarak bulmayı denesin mi?</qt>"
 
 #: messagecomposer.cpp:2373
 msgid "Some Characters Will Be Lost"
@@ -4528,7 +4529,7 @@ msgstr "Sunucu üzerinde alt dizinler açılıyor"
 #: kmfoldercachedimap.cpp:1658
 #, kde-format
 msgid "<qt><p>Mails on the server in folder <b>%1</b> were deleted. Do you want to delete them locally?</p><p>UIDs: %2</p></qt>"
-msgstr "<qt><p> Sunucu üzerindeki <b>%1</b> dizinindeki iletiler silinmiş. Bu dizini yerel olarak da silmek ister misniz?</p><p>UIDs: %2</p></qt>"
+msgstr "<qt><p> Sunucu üzerindeki <b>%1</b> dizinindeki iletiler silinmiş. Bu dizini yerel olarak da silmek ister misiniz?</p><p>UIDs: %2</p></qt>"
 
 #: kmfoldercachedimap.cpp:1671
 msgid "Deleting removed messages from server"
@@ -4550,7 +4551,7 @@ msgstr "%1 isimlendirmesi için dizin listesi alınıyor"
 #: kmfoldercachedimap.cpp:2303
 #, kde-format
 msgid "<qt><p>It seems that the folder <b>%1</b> was deleted. Do you want to delete it from the server?</p></qt>"
-msgstr "<qt><p><b>%1</b> dizini silinmiş gibi görünüyor. Bu dizini sunucudan da silmek ister misniz?</p></qt>"
+msgstr "<qt><p><b>%1</b> dizini silinmiş gibi görünüyor. Bu dizini sunucudan da silmek ister misiniz?</p></qt>"
 
 #: kmfoldercachedimap.cpp:2615
 msgid "Canceled"
@@ -4844,7 +4845,7 @@ msgstr "Alıntılanmış Metin - Üçüncü Seviye"
 
 #: configuredialog.cpp:1172
 msgid "Fixed Width Font"
-msgstr "Sabit Yazıtipi Genişliği"
+msgstr "Sabit Yazı Tipi Genişliği"
 
 #: configuredialog.cpp:1173 kmcomposewin.cpp:323
 msgid "Composer"
@@ -4856,7 +4857,7 @@ msgstr "Yazıcı Çıktısı"
 
 #: configuredialog.cpp:1191
 msgid "&Use custom fonts"
-msgstr "Ö&zel yazıtipi kullan"
+msgstr "Ö&zel yazı tipi kullan"
 
 #: configuredialog.cpp:1209
 msgid "Apply &to:"
@@ -4916,7 +4917,7 @@ msgstr "HTML İletilerin Başına Eklenen Uyarı için Kenarlık"
 
 #: configuredialog.cpp:1334
 msgid "Folder Name and Size When Close to Quota"
-msgstr "Dizin İsmi ve Boyutu Kotanın Doolmasına Yaklaşınca"
+msgstr "Dizin İsmi ve Boyutu Kotanın Dolmasına Yaklaşınca"
 
 #: configuredialog.cpp:1335
 msgid "HTML Status Bar Background - No HTML Message"
@@ -5083,7 +5084,7 @@ msgstr "Arkaplan rengini &değiştir:"
 
 #: configuredialog.cpp:2198
 msgid "Change fo&nt:"
-msgstr "Yazı tTipini&dDeğişti:r"
+msgstr "Yazı Tipini &Değiştir:"
 
 #: configuredialog.cpp:2217
 msgid "Message tag &icon:"
@@ -5339,7 +5340,7 @@ msgstr "Bu seçenek dirmngr >= 0.9.0 gerektirir"
 #. i18n: ectx: property (text), widget (QLabel, systemHTTPProxy)
 #: configuredialog.cpp:4005 rc.cpp:1282
 msgid "no proxy"
-msgstr "vekil sunucus yok"
+msgstr "vekil sunucu yok"
 
 #: configuredialog.cpp:4006
 #, kde-format
@@ -5899,7 +5900,7 @@ msgstr "&Tüm İletileri Okunmuş Olarak İşaretle"
 
 #: kmmainwidget.cpp:3728
 msgid "&Expiration Settings"
-msgstr "&Zamanaşımı Ayarları"
+msgstr "Zaman Aşımı Ayarları"
 
 #: kmmainwidget.cpp:3732
 msgid "&Compact Folder"
@@ -6189,7 +6190,7 @@ msgstr "KMail Uygulamasına &Giriş"
 
 #: kmmainwidget.cpp:4074
 msgid "Display KMail's Welcome Page"
-msgstr "KMail'in Hoşgeldiniz ekranını göster"
+msgstr "KMail'in hoş geldiniz ekranını göster"
 
 #: kmmainwidget.cpp:4083
 msgid "Configure &Notifications..."
@@ -6229,7 +6230,7 @@ msgstr "İleti Etiketi %1"
 #, kde-format
 msgid "Removed %1 duplicate message."
 msgid_plural "Removed %1 duplicate messages."
-msgstr[0] "%1 tane çift ileti sillindi."
+msgstr[0] "%1 tane çift ileti silindi."
 
 #: kmmainwidget.cpp:4688
 msgid "No duplicate messages found."
@@ -6421,7 +6422,7 @@ msgstr "Lütfen ismi girin:"
 #, kde-format
 msgctxt "@info"
 msgid "<para>Distribution list with the given name <resource>%1</resource> already exists. Please select a different name.</para>"
-msgstr "<qt><resource>%1</resource> adına sahip bir gönderim listesi zaten var. Lütfen başka bir isim seçin.</qt>"
+msgstr "<para><resource>%1</resource> adına sahip bir gönderim listesi zaten var. Lütfen başka bir isim seçin.</para>"
 
 #: distributionlistdialog.cpp:218
 msgid "Select the address book folder to store the contact group in:"
@@ -6646,7 +6647,7 @@ msgstr[0] "<p align=\"center\"><b>%2</b> olarak işaretli (seri numarası %3)</p
 
 #: keyresolver.cpp:809
 msgid "OpenPGP Key Expires Soon"
-msgstr "OpenPGP Anaktarının Süresi Doluyor"
+msgstr "OpenPGP Anahtarının Süresi Doluyor"
 
 #: keyresolver.cpp:810
 msgid "S/MIME Certificate Expires Soon"
@@ -6657,7 +6658,7 @@ msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME certificates is not usable for encryption. Please reconfigure your encryption keys and certificates for this identity in the identity configuration dialog.\n"
 "If you choose to continue, and the keys are needed later on, you will be prompted to specify the keys to use."
 msgstr ""
-"Ayarlanmış <OpenPGP şifreleme anahtarlarınızın veya S/MIME sertifikalarınızın biri veya daha fazlası şifreleme için kullanılamıyor. Lütfen şifreleme anahtarlarınızı ve sertifikalarınızı bu kimlik için, kimlik düzenleme iletişim kutusunda tekrar düzenleyin.\n"
+"Ayarlanmış OpenPGP şifreleme anahtarlarınızın veya S/MIME sertifikalarınızın biri veya daha fazlası şifreleme için kullanılamıyor. Lütfen şifreleme anahtarlarınızı ve sertifikalarınızı bu kimlik için, kimlik düzenleme iletişim kutusunda tekrar düzenleyin.\n"
 "Devam etmeyi seçerseniz ve sonrasında anahtarlara ihtiyaç duyarsanız, kullanılacak anahtarları belirlemek için uyarılacaksınız."
 
 #: keyresolver.cpp:853 keyresolver.cpp:1182 keyresolver.cpp:1209
@@ -6749,7 +6750,7 @@ msgstr "Bu iletinin hiçbir alıcısı için şifreleme anahtarı belirlemediniz
 
 #: keyresolver.cpp:1504
 msgid "You did not select an encryption key for one of the recipients: this person will not be able to decrypt the message if you encrypt it."
-msgstr "Bu iletinin alıcılarından hiçbiri için şifreleme anahtarı belirlemediniz:; buyüzden ilgili kişi şifreli gönderirseniz iletinin şifresini çözemeyecek."
+msgstr "Bu iletinin alıcılarından hiçbiri için şifreleme anahtarı belirlemediniz:; bu yüzden ilgili kişi şifreli gönderirseniz iletinin şifresini çözemeyecek."
 
 #: keyresolver.cpp:1507
 msgid "You did not select encryption keys for some of the recipients: these persons will not be able to decrypt the message if you encrypt it."
@@ -7003,7 +7004,7 @@ msgstr "Bu eylem uygulanırken bir problem bulundu."
 #: kmfilter.cpp:281
 #, kde-format
 msgid "<qt>Too many filter actions in filter rule <b>%1</b>.</qt>"
-msgstr "`%1' filtre kuralında çok fazla filtre eylemi var "
+msgstr "<qt><b>%1</b> filtre kuralında çok fazla filtre eylemi var.</qt>"
 
 #: kmfilter.cpp:306
 #, kde-format
@@ -7137,7 +7138,7 @@ msgstr "Boş/&meşgul oluştur ve alarmları etkinleştir:"
 
 #: kmfolderdialog.cpp:527
 msgid "Nobody"
-msgstr "Hiçkimse"
+msgstr "Hiç kimse"
 
 #: kmfolderdialog.cpp:528
 msgid "Admins of This Folder"
@@ -7201,7 +7202,7 @@ msgstr "İleti Listesinde Gönderen/Alıcı Sütununu Göster"
 
 #: kmfolderdialog.cpp:817
 msgid "Sho&w column:"
-msgstr "Sütünu &göster:"
+msgstr "Sütunu &göster:"
 
 #: kmfolderdialog.cpp:821
 msgctxt "@item:inlistbox Show default value."
@@ -7357,7 +7358,7 @@ msgstr "Gelen sunucu:"
 
 #: accountwizard.cpp:205
 msgid "Welcome to KMail's account wizard"
-msgstr "KMail hesap oluşturma sihirbazına hoşgeldiniz"
+msgstr "KMail hesap oluşturma sihirbazına hoş geldiniz"
 
 #: accountwizard.cpp:212
 msgid "<qt>It seems you have started KMail for the first time.<br/>You can use this wizard to setup your mail accounts. Just enter the connection data that you received from your email provider into the following pages.</qt>"
@@ -7494,12 +7495,12 @@ msgstr[0] "%2'den toplam %1 ileti alındı. İletişim sonlandırılıyor..."
 #: popaccount.cpp:948
 #, kde-format
 msgid "Fetching message %1 of %2 (%3 of %4 KB) for %5@%6 (%7 KB remain on the server)."
-msgstr "%5@%6 adresinden iletiler alınıyor %1 / %2 (%3/%4 Kb) (Sunucuda %7 KB dosya kaldı)."
+msgstr "%5@%6 adresinden iletiler alınıyor %1 / %2 (%3/%4 KB) (Sunucuda %7 KB dosya kaldı)."
 
 #: popaccount.cpp:957
 #, kde-format
 msgid "Fetching message %1 of %2 (%3 of %4 KB) for %5@%6."
-msgstr "%5@%6 adresinden iletiler alınıyor: %1/%2 (%3/%4 Kb)."
+msgstr "%5@%6 adresinden iletiler alınıyor: %1/%2 (%3/%4 KB)."
 
 #: popaccount.cpp:1005
 msgid "Unable to complete LIST operation."
@@ -7722,7 +7723,7 @@ msgstr "&Kurum:"
 
 #: identitydialog.cpp:151
 msgid "<qt><h3>Organization</h3><p>This field should have the name of your organization if you would like it to be shown in the email header that is sent out.</p><p>It is safe (and normal) to leave this blank.</p></qt>"
-msgstr "<qt><h3>Kurum</h3><p>Bu alan gönderilen iletilerde gözlükmesini isterseniz, kurumunuzun adını içermelidir.</p><p>Genellikle bu alanı boş bırakmak normaldir.</p></qt>"
+msgstr "<qt><h3>Kurum</h3><p>Bu alan gönderilen iletilerde gözükmesini isterseniz, kurumunuzun adını içermelidir.</p><p>Genellikle bu alanı boş bırakmak normaldir.</p></qt>"
 
 #: identitydialog.cpp:164
 msgid "&Email address:"
@@ -7828,7 +7829,7 @@ msgstr "&BCC adresleri:"
 
 #: identitydialog.cpp:352
 msgid "<qt><h3>BCC (Blind Carbon Copy) addresses</h3><p>The addresses that you enter here will be added to each outgoing mail that is sent with this identity. They will not be visible to other recipients.</p><p>This is commonly used to send a copy of each sent message to another account of yours.</p><p>To specify more than one address, use commas to separate the list of BCC recipients.</p><p>If in doubt, leave this field blank.</p></qt>"
-msgstr "<qt><h3>BCC (Fotokopi Kopya) adresleri</h3><p>Buraya girdiğiniz adreslere bu kimlik ile gönderilen her iletinin bir kopyası gönderilecektir. Bu iletiler diğer alıcılara gösterilmeyecektir.</p><p>Bu genellikle göndeilen her iletiyi kendinize ait başka ir hesaba da göndermek için kullanılır.</p><p>Birden fazla BCC alıcısı belirlemek için e-posta adreslerinin arasına virgül koyun.</p><p>Eğer emin değilseniz bu alanı boş bırakın.</p></qt>"
+msgstr "<qt><h3>BCC (Fotokopi Kopya) adresleri</h3><p>Buraya girdiğiniz adreslere bu kimlik ile gönderilen her iletinin bir kopyası gönderilecektir. Bu iletiler diğer alıcılara gösterilmeyecektir.</p><p>Bu genellikle gönderilen her iletiyi kendinize ait başka bir hesaba da göndermek için kullanılır.</p><p>Birden fazla BCC alıcısı belirlemek için e-posta adreslerinin arasına virgül koyun.</p><p>Eğer emin değilseniz bu alanı boş bırakın.</p></qt>"
 
 #: identitydialog.cpp:368
 msgid "D&ictionary:"
@@ -8417,7 +8418,7 @@ msgstr "&Şifreli İleti Biçimi"
 
 #: kmcomposewin.cpp:1415
 msgid "Reset Font Settings"
-msgstr "Yazıtipi Ayarlarını Sıfırla"
+msgstr "Yazı Tipi Ayarlarını Sıfırla"
 
 #: kmcomposewin.cpp:1416
 msgid "Reset Font"
@@ -8548,7 +8549,7 @@ msgstr "KMail dosyayı sıkıştıramıyor."
 
 #: kmcomposewin.cpp:2791
 msgid "The compressed file is larger than the original. Do you want to keep the original one?"
-msgstr "Sıkıştırılmış dosya orjinalinden daha büyük. Orjinal dosyayı kullanmayı ister misiniz?"
+msgstr "Sıkıştırılmış dosya özgün halinden daha büyük. Orijinal dosyayı kullanmayı ister misiniz?"
 
 #: kmcomposewin.cpp:2794
 msgctxt "Do not compress"
@@ -8603,7 +8604,7 @@ msgstr "Tanımlanmamış İmzalama Anahtarı"
 
 #: kmcomposewin.cpp:3473
 msgid "KMail is currently in offline mode. Your messages will be kept in the outbox until you go online."
-msgstr "KMail şu anda çevrim dışı çalışıyor. İletileriniz çevrimiçi olana kadar giden kutusunda saklanacak."
+msgstr "KMail şu anda çevrim dışı çalışıyor. İletileriniz çevrim içi olana kadar giden kutusunda saklanacak."
 
 #: kmcomposewin.cpp:3490
 msgid "You must enter your email address in the From: field. You should also set your email address for all identities, so that you do not have to enter it for each message."
@@ -8651,15 +8652,15 @@ msgstr "Biçimlemeyi &koru, imzalama"
 
 #: kmcomposewin.cpp:3583
 msgid "Sign/Encrypt (delete markup)"
-msgstr "İmzala/Şifrele (biçimlemeyi yoket)"
+msgstr "İmzala/Şifrele (biçimlemeyi yok et)"
 
 #: kmcomposewin.cpp:3584
 msgid "Encrypt (delete markup)"
-msgstr "Şifrele (biçimlemeyi yoket)"
+msgstr "Şifrele (biçimlemeyi yok et)"
 
 #: kmcomposewin.cpp:3585
 msgid "Sign (delete markup)"
-msgstr "İmzala (biçimlemeyi yoket)"
+msgstr "İmzala (biçimlemeyi yok et)"
 
 #: kmcomposewin.cpp:3587
 msgid "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do you want to delete your markup?</p></qt>"
@@ -8729,7 +8730,7 @@ msgstr "Libkleopatra, Chiasmus desteği olmadan derlenmiş gibi görünüyor. --
 
 #: kmcomposewin.cpp:4323
 msgid "No Chiasmus Backend Configured"
-msgstr "Hiç Chaismus Arka Ucu Yapılandırılmamış"
+msgstr "Hiç Chiasmus Arka Ucu Yapılandırılmamış"
 
 #: kmcomposewin.cpp:4354
 msgid "No Chiasmus Keys Found"
@@ -9089,7 +9090,7 @@ msgstr "Geçerli İleti"
 
 #: templatesinsertcommand.cpp:181
 msgid "Process with External Programs"
-msgstr "Dış Uygulamalarla bBirlikte Çalış"
+msgstr "Dış Uygulamalarla Birlikte Çalış"
 
 #: templatesinsertcommand.cpp:191
 msgctxt "Miscellaneous template commands menu"
@@ -9154,12 +9155,12 @@ msgstr "Dizin için Kısayol Seç"
 
 #: foldershortcutdialog.cpp:68
 msgid "<qt>To choose a key or a combination of keys which select the current folder, click the button below and then press the key(s) you wish to associate with this folder.</qt>"
-msgstr "<qt>Geçerli dizini seçecek bir tuş veya tuş kombinasonu atamak için, aşağıdaki düğmeye tıklayın ve bu dizine atayacağınız tuş(lar)a basın.</qt>"
+msgstr "<qt>Geçerli dizini seçecek bir tuş veya tuş kombinasyonu atamak için, aşağıdaki düğmeye tıklayın ve bu dizine atayacağınız tuş(lar)a basın.</qt>"
 
 #: compactionjob.cpp:105
 #, kde-format
 msgid "For safety reasons, compaction has been disabled for %1"
-msgstr "Güvenlik nedenleri ile, %1 için sıkıştıma iptal edildi"
+msgstr "Güvenlik nedenleri ile, %1 için sıkıştırma iptal edildi"
 
 #: compactionjob.cpp:188 compactionjob.cpp:277
 #, kde-format
@@ -9228,7 +9229,7 @@ msgstr ""
 
 #: kmfoldermbox.cpp:333
 msgid "Internal error. Please copy down the details and report a bug."
-msgstr "İçsel hata. Lüften detayları yazın ve bir hata raporu yapın."
+msgstr "İçsel hata. Lütfen detayları yazın ve bir hata raporu yapın."
 
 #: kmfoldermbox.cpp:333
 #, kde-format
@@ -9309,7 +9310,7 @@ msgstr "Filtreleri Dışarıya Aktar"
 #: kmfolderindex_common.cpp:91
 #, kde-format
 msgid "<qt><p>The index of folder '%2' seems to be out of date. To prevent message corruption the index will be regenerated. As a result deleted messages might reappear and status flags might be lost.</p><p>Please read the corresponding entry in the <a href=\"%1\">FAQ section of the manual of KMail</a> for information about how to prevent this problem from happening again.</p></qt>"
-msgstr "<qt><p>'%2' dizininin indeksinin süresi geçmiş gözüküyor. İletilerin zarar görmesini engellemek için, indeks yeniden oluşturulacaktır. Bunun sonucu olarak silinmiş iletiler tekrar gözükebilir ve durum bayrakları kaybolabilir.</p><p>Lütfen <a href=\"%1\"> adresindeki, KMail elkitabındaki SSS kısmından </a> ilgili uyarıyı gözden geçirin ve bu sorunun tekrarlanmaması için ne yapmanız gerektiğini öğrenin.</p></qt>"
+msgstr "<qt><p>'%2' dizininin indeksinin süresi geçmiş gözüküyor. İletilerin zarar görmesini engellemek için, indeks yeniden oluşturulacaktır. Bunun sonucu olarak silinmiş iletiler tekrar gözükebilir ve durum bayrakları kaybolabilir.</p><p>Lütfen <a href=\"%1\"> adresindeki, KMail el kitabındaki SSS kısmından </a> ilgili uyarıyı gözden geçirin ve bu sorunun tekrarlanmaması için ne yapmanız gerektiğini öğrenin.</p></qt>"
 
 #: kmfolderindex_common.cpp:115 kmfolderindex_common.cpp:120
 msgid "Index Out of Date"
@@ -9636,7 +9637,7 @@ msgstr "Bu şablonu kullandığınız zaman, buraya girdiğiniz alıcılar bu il
 
 #: customtemplates.cpp:138
 msgid "<qt><p>Here you can add, edit, and delete custom message templates to use when you compose a reply or forwarding message. Create the custom template by selecting it using the right mouse  button menu or toolbar menu. Also, you can bind a keyboard combination to the template for faster operations.</p><p>Message templates support substitution commands, by simply typing them or selecting them from the <i>Insert command</i> menu.</p><p>There are four types of custom templates: used to <i>Reply</i>, <i>Reply to All</i>, <i>Forward</i>, and <i>Universal</i> which can be used for all kinds of operations. You cannot bind a keyboard shortcut to <i>Universal</i> templates.</p></qt>"
-msgstr "<qt><p>Burada, bir yanıt veya yönlendirilen iletiyi düzenlerken kullanılacak özel ileti şablonlarını ekleyebilir, düzenleyebilir ve silebilirsiniz. Özel şablonu oluşturmak için sağ fare tuşu menüsünü kullanarak seçebilir veya araç çubuğu menüsünü kullanabilirsiniz. Aynı zamanda, daha hızlı işlem yapmak için şablona bir klavye kombinasyonu atayabilirsiniz.</p><p>İleti şablonları yerdeğiştirme komutlarını destekler, basitçe bunları yazabilir veya <i>Komut ekle</i> menüsünden seçebilirsiniz.</p><p>Dört tane özel şablon bulunmaktadır, bunlar <i>Yanıtla</i>, <i>Tümünü Yanıtla</i>, <i>İlet</i> ve bütün işlemler için kullanılabilecek <i>Evrensel</i> şablonlarıdır. <i>Evrensel</i> şablonları için bir klavye kısayolu atayamazsınız.</p></qt>"
+msgstr "<qt><p>Burada, bir yanıt veya yönlendirilen iletiyi düzenlerken kullanılacak özel ileti şablonlarını ekleyebilir, düzenleyebilir ve silebilirsiniz. Özel şablonu oluşturmak için sağ fare tuşu menüsünü kullanarak seçebilir veya araç çubuğu menüsünü kullanabilirsiniz. Aynı zamanda, daha hızlı işlem yapmak için şablona bir klavye kombinasyonu atayabilirsiniz.</p><p>İleti şablonları yer değiştirme komutlarını destekler, basitçe bunları yazabilir veya <i>Komut ekle</i> menüsünden seçebilirsiniz.</p><p>Dört tane özel şablon bulunmaktadır, bunlar <i>Yanıtla</i>, <i>Tümünü Yanıtla</i>, <i>İlet</i> ve bütün işlemler için kullanılabilecek <i>Evrensel</i> şablonlarıdır. <i>Evrensel</i> şablonları için bir klavye kısayolu atayamazsınız.</p></qt>"
 
 #: customtemplates.cpp:181
 msgctxt "Message->"
@@ -9822,7 +9823,7 @@ msgstr "İmzalama için farklı sonuçlar"
 
 #: objecttreeparser.cpp:678
 msgid "The crypto engine returned no cleartext data."
-msgstr "Şifreleme motoru, hiçbir düzmetin geri döndürmedi."
+msgstr "Şifreleme motoru, hiçbir düz metin geri döndürmedi."
 
 #: objecttreeparser.cpp:681 objecttreeparser.cpp:2641
 #: objecttreeparser.cpp:2684
@@ -10380,7 +10381,7 @@ msgstr[0] "%1 ileti filtrelenmek için bekliyor"
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
 #: rc.cpp:3 rc.cpp:1364
 msgid "Template content"
-msgstr "Şalon içeriği"
+msgstr "Şablon içeriği"
 
 #. i18n: file: customtemplates_kfg.kcfg:17
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
@@ -10605,7 +10606,7 @@ msgstr "Serdar Soytetir, Görkem Çetin, Barış Metin, Yaşar Şentürk, H. İb
 #: rc.cpp:145
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, gorkem@kde.org, baris@uludag.org.tr, yasar@kde.org.tr, h.ibrahim.gungor@gmail.com"
+msgstr "tulliana@gmail.com, gorkem@kde.org, baris@uludag.org.tr, yasar@kde.org.tr, ibrahim@pardus.org.tr"
 
 #. i18n: file: ui/snippetdlgbase.ui:14
 #. i18n: ectx: property (windowTitle), widget (QDialog, SnippetDlgBase)
@@ -10735,7 +10736,7 @@ msgstr "Port: Posta sunucusuyla iletişim portunu tanımlar. Posta sağlayıcın
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, loginEdit)
 #: rc.cpp:200 rc.cpp:209 rc.cpp:498 rc.cpp:534
 msgid "Your Internet Service Provider gave you a <em>user name</em> which is used to authenticate you with their servers. It usually is the first part of your email address (the part before <em>@</em>)."
-msgstr "Kimliğinizi sınamak üzere internet servis sağlayıcınızın size vermiş olduğu <em>kullanıcı adı</em>  genellikle e-posta adresinizin ilk kısmıdır.(<em>@</em> işaretinden önceki kısmı)."
+msgstr "Kimliğinizi sınamak üzere Internet servis sağlayıcınızın size vermiş olduğu <em>kullanıcı adı</em>  genellikle e-posta adresinizin ilk kısmıdır.(<em>@</em> işaretinden önceki kısmı)."
 
 #. i18n: file: ui/imapsettings.ui:120
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -10799,7 +10800,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, storePasswordCheck)
 #: rc.cpp:229
 msgid "Sto&re IMAP Password"
-msgstr "IMAP Paralosını &Kaydet"
+msgstr "IMAP Parolasını &Kaydet"
 
 #. i18n: file: ui/imapsettings.ui:180
 #. i18n: ectx: property (toolTip), widget (QCheckBox, includeInCheck)
@@ -10881,7 +10882,7 @@ msgstr "&Sadece yerel olarak üye olunan dizinleri göster"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, loadOnDemandCheck)
 #: rc.cpp:265
 msgid "Activate this to load attachments not automatically when you select the email but only when you click on the attachment. This way also big emails are shown instantly."
-msgstr "E-posta eklerini, e-posta göründülendiğinde değil de, eke tıkladığınızda yüklemek için bu özelliği aktif hale getirin. Bu şekilde büyük e-postalar daha hızlı bir şekilde yüklenecektir."
+msgstr "E-posta eklerini, e-posta görüntülendiğinde değil de, eke tıkladığınızda yüklemek için bu özelliği aktif hale getirin. Bu şekilde büyük e-postalar daha hızlı bir şekilde yüklenecektir."
 
 #. i18n: file: ui/imapsettings.ui:278
 #. i18n: ectx: property (text), widget (QCheckBox, loadOnDemandCheck)
@@ -11229,7 +11230,7 @@ msgstr "Bu hesap için sadece &grup paylaşımı dizinlerini göster"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mSyncImmediately)
 #: rc.cpp:438
 msgid "Synchronize groupware changes in disconnected IMAP folders immediately when being online."
-msgstr "Bağlantısı kesilmiş IMAP dizinlerindeki grup çalışması değişikliklerini çevrimiçi olunduğunda hemen eşzamanla."
+msgstr "Bağlantısı kesilmiş IMAP dizinlerindeki grup çalışması değişikliklerini çevrim içi olunduğunda hemen eşzamanla."
 
 #. i18n: file: ui/miscpagegroupwaretab.ui:168
 #. i18n: ectx: property (text), widget (QCheckBox, mSyncImmediately)
@@ -11351,7 +11352,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, storePasswordCheck)
 #: rc.cpp:553
 msgid "Sto&re POP password"
-msgstr "POP paralosını &sakla"
+msgstr "POP parolasını &sakla"
 
 #. i18n: file: ui/popsettings.ui:182
 #. i18n: ectx: property (text), widget (QCheckBox, includeInCheck)
@@ -11467,7 +11468,7 @@ msgstr " MB"
 #. filterOnServerSizeSpin)
 #: rc.cpp:619 rc.cpp:625
 msgid "If you select this option, POP Filters will be used to decide what to do with messages. You can then select to download, delete or keep them on the server."
-msgstr "Bu seçeneği seçerseniz, POP filtreleri iletiye ne yapılacağına karar verir. Sunucudan iletiyi indirmeyi, silmeyi veya saklamayı ayarlıyabilirsiniz."
+msgstr "Bu seçeneği seçerseniz, POP filtreleri iletiye ne yapılacağına karar verir. Sunucudan iletiyi indirmeyi, silmeyi veya saklamayı ayarlayabilirsiniz."
 
 #. i18n: file: ui/popsettings.ui:355
 #. i18n: ectx: property (text), widget (QCheckBox, filterOnServerCheck)
@@ -11660,7 +11661,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QCheckBox, mShowKeyApprovalDlg)
 #: rc.cpp:755
 msgid "Always show the encryption keys &for approval"
-msgstr "Onaylamak için şifreleme anahtarlarını &herzaman göster"
+msgstr "Onaylamak için şifreleme anahtarlarını her zaman göster"
 
 #. i18n: file: ui/composercryptoconfiguration.ui:85
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowKeyApprovalDlg)
@@ -12021,7 +12022,7 @@ msgstr "Gönderme kuralı:"
 #: rc.cpp:946 rc.cpp:952 rc.cpp:958 rc.cpp:964 rc.cpp:973 rc.cpp:979
 #: rc.cpp:985
 msgid "<qt><h3>Message Disposition Notification Policy</h3><p>MDNs are a generalization of what is commonly called <b>read receipt</b>. The message author requests a disposition notification to be sent and the receiver's mail program generates a reply from which the author can learn what happened to his message. Common disposition types include <b>displayed</b> (i.e. read), <b>deleted</b> and <b>dispatched</b> (e.g. forwarded).</p><p>The following options are available to control KMail's sending of MDNs:</p><ul><li><em>Ignore</em>: Ignores any request for disposition notifications. No MDN will ever be sent automatically (recommended).</li><li><em>Ask</em>: Answers requests only after asking the user for permission. This way, you can send MDNs for selected messages while denying or ignoring them for others.</li><li><em>Deny</em>: Always sends a <b>denied</b> notification. This is only <em>slightly</em> better than always sending MDNs. The author will still know that the messages has been acted upon, he just cannot tell whether it was deleted or read etc.</li><li><em>Always send</em>: Always sends the requested disposition notification. That means that the author of the message gets to know when the message was acted upon and, in addition, what happened to it (displayed, deleted, etc.). This option is strongly discouraged, but since it makes much sense e.g. for customer relationship management, it has been made available.</li></ul></qt>"
-msgstr "<qt><h3>İleti Durum Uyarı Politikası</h3><p>İDU'lar, yaygın olarak <b>okuma bildirimi</b> şeklinde bildiğimiz şeyin genelleşmiş halidir. İletinin yazarı bir ileti işleme uyarısının gönderilmesini ister ve alıcının posta programı bir cevap oluşturarak gönderen kişinin iletisine ne olduğunu söyler. Yaygın işleme türleri arasında <b>görüntülendi</b> (yani okundu), <b>silindi</b> ve <b>gönderildi</b> (yani iletildi) yer almaktadır.</p><p>KMail'in İDU'ları gönderme işlevini kontrol etmek için aşağıdaki seçenekler bulunmaktadır:</p><ul><li><em>Yoksay</em>: İşleme uyarıları ile ilgili herhangi bir isteği yok sayar. Otomatik olarak hiçbir İDU gönderilmeyecektir (tavsiye edilir).</li><li><em>Sor</em>: Kullanıcıdan izin istedikten sonra isteğe cevap verir. Bu yolla, seçilmiş iletiler için İDU'ları gönderirken başkaları için reddetmek veya yoksaymak mümkündür.</li><li><em>Reddet</em>: Her zaman <b>reddedildi</b> uyarısını yollar. Bu İDU'ları her zaman göndermekten sadece <em>biraz</em> daha iyidir. Gönderen kişi iletisi üzerinde işlem yapıldığını bilecektir, ancak silindiğine veya okunduğuna, vs emin olamayacaktır.</li><li><em>Her zaman gönder</em>Her zaman istenen durum uyarısını gönderir. Bunun anlamı, iletinin yazarına iletinin işlendiği ve buna ilaveten ne yapıldığı (görüntülendi, silindi, vs) bildirilir. Bu seçenek sakıncalıdır, ancak müşteri ilişkileri yönetimi gibi durumlarda çok anlamlı olduğu için buraya konulmuştur.</li></ul></qt>"
+msgstr "<qt><h3>İleti Durum Uyarı Politikası</h3><p>İDU'lar, yaygın olarak <b>okuma bildirimi</b> şeklinde bildiğimiz şeyin genelleşmiş halidir. İletinin yazarı bir ileti işleme uyarısının gönderilmesini ister ve alıcının posta programı bir cevap oluşturarak gönderen kişinin iletisine ne olduğunu söyler. Yaygın işleme türleri arasında <b>görüntülendi</b> (yani okundu), <b>silindi</b> ve <b>gönderildi</b> (yani iletildi) yer almaktadır.</p><p>KMail'in  gönderme işlevini kontrol etmek için aşağıdaki seçenekler bulunmaktadır:</p><ul><li><em>Yoksay</em>: İşleme uyarıları ile ilgili herhangi bir isteği yok sayar. Otomatik olarak hiçbir İDU gönderilmeyecektir (tavsiye edilir).</li><li><em>Sor</em>: Kullanıcıdan izin istedikten sonra isteğe cevap verir. Bu yolla, seçilmiş iletiler için  gönderirken başkaları için reddetmek veya yoksaymak mümkündür.</li><li><em>Reddet</em>: Her zaman <b>reddedildi</b> uyarısını yollar. Bu  her zaman göndermekten sadece <em>biraz</em> daha iyidir. Gönderen kişi iletisi üzerinde işlem yapıldığını bilecektir, ancak silindiğine veya okunduğuna, vs emin olamayacaktır.</li><li><em>Her zaman gönder</em>Her zaman istenen durum uyarısını gönderir. Bunun anlamı, iletinin yazarına iletinin işlendiği ve buna ilaveten ne yapıldığı (görüntülendi, silindi, vs) bildirilir. Bu seçenek sakıncalıdır, ancak müşteri ilişkileri yönetimi gibi durumlarda çok anlamlı olduğu için buraya konulmuştur.</li></ul></qt>"
 
 #. i18n: file: ui/securitypagegeneraltab.ui:101
 #. i18n: ectx: property (text), widget (QRadioButton, radioAsk)
@@ -12045,13 +12046,13 @@ msgstr "Her zaman gönder"
 #. i18n: ectx: property (text), widget (QLabel, labelQuote)
 #: rc.cpp:970
 msgid "Quote original message:"
-msgstr "Orjinal iletiden alıntı yap:"
+msgstr "Orijinal iletiden alıntı yap:"
 
 #. i18n: file: ui/securitypagegeneraltab.ui:138
 #. i18n: ectx: property (text), widget (QRadioButton, radioNothing)
 #: rc.cpp:976
 msgid "Nothing"
-msgstr "Hiçbirşey"
+msgstr "Hiçbir şey"
 
 #. i18n: file: ui/securitypagegeneraltab.ui:148
 #. i18n: ectx: property (text), widget (QRadioButton, radioFull)
@@ -12237,7 +12238,7 @@ msgid ""
 msgstr ""
 "<qt>\n"
 "<h1>İmzalama Sertifikası Sona Eriyorsa Uyar</h1>\n"
-"Uyarı yayınlanmadan önce en az ne kadar gün imzalamasertifikasının geçerli olduğunu seç\n"
+"Uyarı yayınlanmadan önce en az ne kadar gün imzalama sertifikasının geçerli olduğunu seç\n"
 "<p>\n"
 "Tavsiye edilen SPHINX ayarı 14 gündür.\n"
 "</qt>"
@@ -12331,7 +12332,7 @@ msgstr "Kök sertifikalar için:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: rc.cpp:1123
 msgid "For intermediate CA certificates:"
-msgstr "Orta seviye CA sertivikaları için:"
+msgstr "Orta seviye CA sertifikaları için:"
 
 #. i18n: file: ui/warningconfiguration.ui:338
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -12386,7 +12387,7 @@ msgid ""
 msgstr ""
 "Microsoft Outlook, bir Microsoft Exchange sunucusuyla birlikte kullanıldığında,\n"
 "standarda uygun grup e-postalarını anlamakta sorun yaşamaktadır.\n"
-"Bu seçeneği açık duruma getirerek, Microsof Exchange'nin anlayacağı biçimde grup davetlerini gönderebilirsiniz."
+"Bu seçeneği açık duruma getirerek, Microsoft Exchange'in anlayacağı biçimde grup davetlerini gönderebilirsiniz."
 
 #. i18n: file: ui/miscpageinvitetab.ui:48
 #. i18n: ectx: property (text), widget (QCheckBox,
@@ -12511,7 +12512,7 @@ msgstr "Sertifikaları CRL'ler kullanarak doğrula"
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, OCSPRB)
 #: rc.cpp:1219
 msgid "If this option is selected, S/MIME certificates are validated online using the Online Certificates Status Protocol (OCSP). Fill in the URL of the OCSP responder below."
-msgstr "Bu seçenek seçilirse, S/MIME sertifikaları Çevrimiçi Sertifika Durum Protokolü (OÇSP) kullanılarak çevrimiçi şekilde doğrulanır. Aşağıya, OCSP'ye cevap verecek yere ait URL'yi girin."
+msgstr "Bu seçenek seçilirse, S/MIME sertifikaları Çevrim içi Sertifika Durum Protokolü (OÇSP) kullanılarak çevrim içi şekilde doğrulanır. Aşağıya, OCSP'ye cevap verecek yere ait URL'yi girin."
 
 #. i18n: file: ui/smimeconfiguration.ui:32
 #. i18n: ectx: property (text), widget (QRadioButton, OCSPRB)
@@ -12541,7 +12542,7 @@ msgstr "OCSP yanıtlayıcı imzası:"
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, OCSPResponderURL)
 #: rc.cpp:1234
 msgid "Enter here the address of the server for online validation of certificates (OCSP responder). The URL is usually starting with http://."
-msgstr "Sertifikaların çevrimiçi olarak doğrulanması için sunucunun adresini buraya girin (OCSP cevapçısı). URL genellikle http:// ile başlar."
+msgstr "Sertifikaların çevrim içi olarak doğrulanması için sunucunun adresini buraya girin (OCSP cevapçısı). URL genellikle http:// ile başlar."
 
 #. i18n: file: ui/smimeconfiguration.ui:87
 #. i18n: ectx: property (text), widget (QCheckBox, ignoreServiceURLCB)
@@ -12638,7 +12639,7 @@ msgstr "HTTP istemleri için bu vekil sunucusunu kullan: "
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, customHTTPProxy)
 #: rc.cpp:1285
 msgid "Enter here the location of your HTTP Proxy, which will be used for all HTTP requests relating to S/MIME. The syntax is host:port, for instance myproxy.nowhere.com:3128."
-msgstr "S/MIME ile ilgili tüm HTTP istemleri için kullanılacak olan HTTP verkil sunucuznuzun konumunu buraya girin. makine_adı:bağlantı_noktası şeklinde yazılır, örneğin vekilsunucum.biryer.com:3128."
+msgstr "S/MIME ile ilgili tüm HTTP istemleri için kullanılacak olan HTTP vekil sunucunuzun konumunu buraya girin. makine_adı:bağlantı_noktası şeklinde yazılır, örneğin vekilsunucum.biryer.com:3128."
 
 #. i18n: file: ui/smimeconfiguration.ui:217
 #. i18n: ectx: attribute (title), widget (QWidget, tabLDAP)
@@ -12684,7 +12685,7 @@ msgid ""
 "The syntax is \"HOST\" or \"HOST:PORT\". If PORT is omitted, port 389 (standard LDAP port) is used."
 msgstr ""
 "Buraya bir LDAP sunucusu girilirse bütün LDAP istekleri öncelikle bu sunucuya gider. Daha doğru olarak, bu ayar LDAP URL'deki belirlenmiş herhangi bir sahip ve port kısmını değiştirir. Diğer LDAP sunucuları, \"proxy\" bağlantısı başarısız olduğunda kullanılacaktır.\n"
-"Sözdizimi \"HOST\" veya \"HOST.PORT\" şeklindedir. PORT kısmı yazılmazsa, standart LDAP portu olan 389 kullanılır."
+"Söz dizimi \"HOST\" veya \"HOST.PORT\" şeklindedir. PORT kısmı yazılmazsa, standart LDAP portu olan 389 kullanılır."
 
 #. i18n: file: ui/maildirsettings.ui:22
 #. i18n: ectx: property (text), widget (QLabel, titleLabel)
@@ -12876,7 +12877,7 @@ msgstr "Exchange uyumlu davet isimlendirmesi"
 #. (Groupware)
 #: rc.cpp:1578
 msgid "Microsoft Outlook, when used in combination with a Microsoft Exchange server, has a problem understanding standards-compliant groupware email. Turn this option on to send groupware invitations in a way that Microsoft Exchange understands."
-msgstr "Microsoft Outlook, bir Microsoft Exchange sunucusuyla birlikte kullanıldığında, standarda uygun grup e-postalarını anlamakta sorun yaşamaktadır. Bu seçeneği açık duruma getirerek, Microsof Exchange'nin anlayacağı biçimde grup davetlerini gönderebilirsiniz."
+msgstr "Microsoft Outlook, bir Microsoft Exchange sunucusuyla birlikte kullanıldığında, standarda uygun grup e-postalarını anlamakta sorun yaşamaktadır. Bu seçeneği açık duruma getirerek, Microsoft Exchange'in anlayacağı biçimde grup davetlerini gönderebilirsiniz."
 
 #. i18n: file: kmail.kcfg.cmake:194
 #. i18n: ectx: whatsthis, entry (OutlookCompatibleInvitationReplyComments),
@@ -12895,7 +12896,7 @@ msgstr "Otomatik davet gönderimi"
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Groupware)
 #: rc.cpp:1590
 msgid "When this is checked, you will not see the mail composer window. Instead, all invitation mails are sent automatically. If you want to see the mail before sending it, you can uncheck this option. However, be aware that the text in the composer window is in iCalendar syntax, and you should not try modifying it by hand."
-msgstr "Bu seçenek işaretlenirse, posta düzenleme penceresini görmeyeceksiniz, bunun yerine bütün davet postaları otomatik olarak gönderilecektir. Göndermeden önce postayı görmek istiyorsanız, bu seçeneği işaretlemeyin. Ancak, pencere içindeki metnin iCalendar sözdizimine uygun olduğuna dikkat edin ve elle değiştirmemeye çalışın."
+msgstr "Bu seçenek işaretlenirse, posta düzenleme penceresini görmeyeceksiniz, bunun yerine bütün davet postaları otomatik olarak gönderilecektir. Göndermeden önce postayı görmek istiyorsanız, bu seçeneği işaretlemeyin. Ancak, pencere içindeki metnin iCalendar söz dizimine uygun olduğuna dikkat edin ve elle değiştirmemeye çalışın."
 
 #. i18n: file: kmail.kcfg.cmake:206
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply),
@@ -12922,7 +12923,7 @@ msgstr "<p>Genellikle IMAP kaynaklarını tutan dizinleri görmek için hiçbir 
 #. group (IMAP Resource)
 #: rc.cpp:1607
 msgid "<p>If the account used for storing groupware information is not used to manage normal mail, set this option to make KMail only show groupware folders in it. This is useful if you are handling regular mail via an additional online IMAP account.</p>"
-msgstr "<p>Grup bilgisini saklamak için kullanılan hesap normal postayı yönetmek için kullanılmaz ise, bu seçeneği işaretleyerek KMail'in sadece grup dizinlerini göstermesini sağlayabilirsiniz. Bu, ilave çevrimiçi IMAP hesabı üzerinden normal postaların işlenmesinde kullanışlıdır.</p>"
+msgstr "<p>Grup bilgisini saklamak için kullanılan hesap normal postayı yönetmek için kullanılmaz ise, bu seçeneği işaretleyerek KMail'in sadece grup dizinlerini göstermesini sağlayabilirsiniz. Bu, ilave çevrim içi IMAP hesabı üzerinden normal postaların işlenmesinde kullanışlıdır.</p>"
 
 #. i18n: file: kmail.kcfg.cmake:240
 #. i18n: ectx: whatsthis, entry (TheIMAPResourceStorageFormat), group (IMAP
@@ -12969,7 +12970,7 @@ msgstr "Grup çalışması dizinlerine alınan iletileri de filtrele."
 #. (IMAP Resource)
 #: rc.cpp:1628
 msgid "Synchronize groupware changes in DIMAP folders immediately when being online."
-msgstr "Bağlantısı kesilmiş DIMAP dizinlerindeki grup çalışması değişikliklerini çevrimiçi olunduğunda hemen eşzamanla."
+msgstr "Bağlantısı kesilmiş DIMAP dizinlerindeki grup çalışması değişikliklerini çevrim içi olunduğunda hemen eşzamanla."
 
 #. i18n: file: kmail.kcfg.cmake:283
 #. i18n: ectx: whatsthis, entry (PreviousNewFeaturesMD5), group (Internal)
@@ -13110,7 +13111,7 @@ msgstr "Otomatik kaydetme aralığı:"
 #. i18n: ectx: whatsthis, entry (AutosaveInterval), group (Composer)
 #: rc.cpp:1709
 msgid "A backup copy of the text in the composer window can be created regularly. The interval used to create the backups is set here. You can disable autosaving by setting it to the value 0."
-msgstr "Düzenleyici penceresindeki mentin yedek kopyası düzenli olarak oluşturulabilir. Burada yedek oluşturma sıklığını ayarlayabilirsiniz. Değeri 0 yaparak otomatik kaydetmeyi devre dışı bırakabilirsiniz."
+msgstr "Düzenleyici penceresindeki metnin yedek kopyası düzenli olarak oluşturulabilir. Burada yedek oluşturma sıklığını ayarlayabilirsiniz. Değeri 0 yaparak otomatik kaydetmeyi devre dışı bırakabilirsiniz."
 
 #. i18n: file: kmail.kcfg.cmake:436
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
@@ -13268,13 +13269,13 @@ msgstr "Otomatik genişletme düzeyi:"
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: rc.cpp:1792
 msgid "Reduce font size for quoted text"
-msgstr "Alıntılanan metnin yazıtipini küçült"
+msgstr "Alıntılanan metnin yazı tipini küçült"
 
 #. i18n: file: kmail.kcfg.cmake:617
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: rc.cpp:1795
 msgid "Enable this option to show quoted text with a smaller font."
-msgstr "Alıntılanan metni daha küçük yazıtipi ile göstermek için bu seçeneği işaretleyin."
+msgstr "Alıntılanan metni daha küçük yazı tipi ile göstermek için bu seçeneği işaretleyin."
 
 #. i18n: file: kmail.kcfg.cmake:628
 #. i18n: ectx: label, entry (ShowUserAgent), group (Reader)
@@ -13286,13 +13287,13 @@ msgstr "Süslü başlıklarda kullanıcı istemcisini göster"
 #. i18n: ectx: whatsthis, entry (ShowUserAgent), group (Reader)
 #: rc.cpp:1801
 msgid "Enable this option to get the User-Agent and X-Mailer header lines displayed when using fancy headers."
-msgstr "Bu seçeneği aktif yaparsanız, gözalıcı başlıklar (fancy header) kullanılırken User-Agent ve X-Mailer başlık satırları gösterilir."
+msgstr "Bu seçeneği aktif yaparsanız, göz alıcı başlıklar (fancy header) kullanılırken User-Agent ve X-Mailer başlık satırları gösterilir."
 
 #. i18n: file: kmail.kcfg.cmake:634
 #. i18n: ectx: label, entry (AllowAttachmentDeletion), group (Reader)
 #: rc.cpp:1804
 msgid "Allow to delete attachments of existing mails."
-msgstr "Varolan iletilerin eklentilerinin silinmsine izin ver."
+msgstr "Varolan iletilerin eklentilerinin silinmesine izin ver."
 
 #. i18n: file: kmail.kcfg.cmake:638
 #. i18n: ectx: label, entry (AllowAttachmentEditing), group (Reader)
@@ -13376,7 +13377,7 @@ msgstr "İleti Durum Bildirimlerini boş bir gönderen ismi ile gönder."
 #. i18n: ectx: whatsthis, entry (SendMDNsWithEmptySender), group (MDN)
 #: rc.cpp:1856
 msgid "Send Message Disposition Notifications with an empty sender string. Some servers might be configure to reject such messages, so if you are experiencing problems sending MDNs, uncheck this option."
-msgstr "İleti Durum Bildirimlerini boş bir gönderen katarı ile göner. Bazı sunucular böyle iletileri reddedecek şekilde ayarlanmıştır, bu yüzden MDN gönderiminde sorun yaşıyorsanız bu seçeneği pasif hale getirin."
+msgstr "İleti Durum Bildirimlerini boş bir gönderen metni ile gönder. Bazı sunucular böyle iletileri reddedecek şekilde ayarlanmıştır, bu yüzden MDN gönderiminde sorun yaşıyorsanız bu seçeneği pasif hale getirin."
 
 #. i18n: file: kmail.kcfg.cmake:724
 #. i18n: ectx: label, entry (TemplateNewMessage), group (GlobalTemplates)
@@ -13557,8 +13558,8 @@ msgid ""
 "<pre>&quot;Content-type&quot; contains &quot;text/html&quot;?</pre>\n"
 "</p>\n"
 msgstr ""
-"<p>...<pre>&quot;Contnet-type&quot; içerir &quot;text/html&quot;</pre>\n"
-"kuralı ile yalnızca HTML içeren iletileri filtreyelebileceğinizi?\n"
+"<p>...<pre>&quot;Content-type&quot; içerir &quot;text/html&quot;</pre>\n"
+"kuralı ile yalnızca HTML içeren iletileri filtreleyebileceğiniz?\n"
 "</p>\n"
 
 #. i18n: file: tips:69
