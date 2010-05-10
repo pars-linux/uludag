@@ -9,18 +9,19 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2004.
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kjots\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-09-30 06:52+0200\n"
-"PO-Revision-Date: 2009-11-04 18:58+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-10 15:14+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: aboutdata.cpp:32
@@ -407,7 +408,7 @@ msgstr "1 dakika"
 msgid ""
 "This is the number of minutes KJots will wait before automatically saving "
 "changes."
-msgstr "Bu KJots'un otomatik olarak kaydetmeden önce bekliyeceği süredir."
+msgstr "Bu KJots'un otomatik olarak kaydetmeden önce bekleyeceği süredir."
 
 #. i18n: file: confpagemisc.ui:41
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -428,7 +429,7 @@ msgid ""
 "When \"Enable autosave\" is checked, KJots will automatically save changes "
 "made to books at the interval defined below."
 msgstr ""
-"\"Otokayıt Aktif\" seçili olduğunda, KJots seçilen sürede bir kitabı "
+"\"Otomatik Kayıt Aktif\" seçili olduğunda, KJots seçilen sürede bir kitabı "
 "otomatik olarak kaydeder."
 
 #. i18n: file: confpagemisc.ui:118
@@ -463,7 +464,7 @@ msgstr "Defter veya sayfa zaten açık."
 #. i18n: ectx: label, entry (Font), group (kjots)
 #: rc.cpp:39
 msgid "The font used to display the contents of books."
-msgstr "Defterlerin içeriğini göstermekte kullanılan yazıtipi."
+msgstr "Defterlerin içeriğini göstermekte kullanılan yazı tipi."
 
 #. i18n: file: kjots.kcfg:20
 #. i18n: ectx: label, entry (AutoSave), group (kjots)
@@ -549,12 +550,12 @@ msgstr "Biçimlendirme Araç Çubuğu"
 #: rc.cpp:88
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:89
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #~ msgid ""
 #~ "<qt>Are you sure you want to delete the <strong>%1</strong> page?</qt>"
