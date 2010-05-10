@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: upgrade-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 11:50+0200\n"
+"POT-Creation-Date: 2010-05-10 13:17+0300\n"
 "PO-Revision-Date: 2009-12-01 21:27+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -64,14 +64,14 @@ msgstr ""
 msgid ""
 "<qt>Following packages are obsoleted and are not maintained anymore in "
 "Pardus 2009 repositories. These packages are going to be removed from your "
-"system:<br><br> %1"
+"system."
 msgstr ""
 
-#: src/state.py:77 src/maindialog.py:61
+#: src/state.py:77 src/maindialog.py:64
 msgid "<br><br>Do you want to continue?</qt>"
 msgstr "<br><br>Vill du fortsätta?</qt>"
 
-#: src/state.py:100
+#: src/state.py:101
 msgid "Resolving dependencies..."
 msgstr "Löser beroenden..."
 
@@ -120,17 +120,17 @@ msgstr "COMAR fel"
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: src/maindialog.py:43
+#: src/maindialog.py:46
 msgid "Upgrading from %1 to version 2009.1"
 msgstr ""
 
-#: src/maindialog.py:60
+#: src/maindialog.py:63
 msgid ""
 "<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
 "system."
 msgstr ""
 
-#: src/maindialog.py:67
+#: src/maindialog.py:70
 msgid "Restart Later"
 msgstr "Starta om senare"
 

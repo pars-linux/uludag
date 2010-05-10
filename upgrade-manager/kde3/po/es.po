@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-03-09 11:50+0200\n"
+"POT-Creation-Date: 2010-05-10 13:17+0300\n"
 "PO-Revision-Date: 2009-12-07 11:14-0400\n"
 "Last-Translator: Klemens Häckel <click3d (at) linuxmail dot org>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -63,20 +63,21 @@ msgstr ""
 "<qt>Configurando paquetes. Esta operación puede tardar algunos minutos.</qt>"
 
 #: src/state.py:76
+#, fuzzy
 msgid ""
 "<qt>Following packages are obsoleted and are not maintained anymore in "
 "Pardus 2009 repositories. These packages are going to be removed from your "
-"system:<br><br> %1"
+"system."
 msgstr ""
 "<qt>Los siguientes paquetes son obsoletos y ya no se proveen en los "
 "repositorios de Pardus 2009. Se removerán los siguientes paquetes del "
 "sistema:<br><br> %1"
 
-#: src/state.py:77 src/maindialog.py:61
+#: src/state.py:77 src/maindialog.py:64
 msgid "<br><br>Do you want to continue?</qt>"
 msgstr "<br><br>Desea continuar ?</qt>"
 
-#: src/state.py:100
+#: src/state.py:101
 msgid "Resolving dependencies..."
 msgstr "Resolviendo dependencias..."
 
@@ -125,11 +126,11 @@ msgstr "Error COMAR"
 msgid "You are not authorized for this operation."
 msgstr "No tiene autorización para ejecutar esta operación."
 
-#: src/maindialog.py:43
+#: src/maindialog.py:46
 msgid "Upgrading from %1 to version 2009.1"
 msgstr "Actualizando de %1 a la versión 2009.1"
 
-#: src/maindialog.py:60
+#: src/maindialog.py:63
 msgid ""
 "<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
 "system."
@@ -137,7 +138,7 @@ msgstr ""
 "<qt>Se completó la actualización a Pardus 2009.1. El Gerenciador de "
 "actualizaciones reiniciará ahora su sistema."
 
-#: src/maindialog.py:67
+#: src/maindialog.py:70
 msgid "Restart Later"
 msgstr "Reiniciar más adelante"
 
