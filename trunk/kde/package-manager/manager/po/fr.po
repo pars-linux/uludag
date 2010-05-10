@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .tmp/ui_appitem.py:57
 msgid "Application"
@@ -58,27 +58,17 @@ msgstr "Statut :"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- Ko/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- Ko/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:330
 msgid "&Cancel"
@@ -101,9 +91,8 @@ msgid "&OK"
 msgstr "&OK"
 
 #: .tmp/ui_settingsdialog.py:331
-#, fuzzy
 msgid "Package list"
-msgstr "Taille du paquet :"
+msgstr "Liste des paquets"
 
 #: .tmp/ui_settingsdialog.py:332
 msgid "&Show only desktop applications"
@@ -111,7 +100,7 @@ msgstr "&Montrer uniquement les applications de bureau"
 
 #: .tmp/ui_settingsdialog.py:333
 msgid "Show Component information "
-msgstr ""
+msgstr "Afficher l'information sur le composant"
 
 #: .tmp/ui_settingsdialog.py:334
 msgid "&Enable system tray icon"
@@ -135,7 +124,7 @@ msgstr "Installer les mises à jour automatiquement"
 
 #: .tmp/ui_settingsdialog.py:340
 msgid "Hide system tray if there is no update."
-msgstr ""
+msgstr "Cacher barre d'état système s'il n'y a pas de mise à jour."
 
 #: .tmp/ui_settingsdialog.py:341
 msgid "Enable &periodic update check"
@@ -191,8 +180,7 @@ msgid ""
 "This will not delete installed software or affect your system stability."
 msgstr ""
 "Effacer le cache du disque supprimera tous les logiciels téléchargés. \n"
-"Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de "
-"votre système."
+"Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de votre système."
 
 #: .tmp/ui_settingsdialog.py:355
 msgid "C&lean disk cache now"
@@ -269,7 +257,7 @@ msgstr "Description :"
 
 #: .tmp/packagedelegate.py:61
 msgid "Website:"
-msgstr ""
+msgstr "Site Web :"
 
 #: .tmp/packagedelegate.py:62
 msgid "Release:"
@@ -285,7 +273,7 @@ msgstr "Taille du paquet :"
 
 #: .tmp/packagedelegate.py:65
 msgid "Installed Version:"
-msgstr ""
+msgstr "Version installée :"
 
 #: .tmp/main.py:47
 msgid "Show main window"
@@ -392,28 +380,16 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Vous avez sélectionné les paquets suivants pour mise à jour :"
 
 #: .tmp/statemanager.py:104 .tmp/ui_basketdialog.py:101
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont également être "
-"installés :"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont également être installés :"
 
 #: .tmp/statemanager.py:105
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont être également "
-"désinstallés :"
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également désinstallés :"
 
 #: .tmp/statemanager.py:106
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
-msgstr ""
-"Des paquets dépendants de ceux que vous avez choisis vont être également mis-"
-"à-jour :"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgstr "Des paquets dépendants de ceux que vous avez choisis vont être également mis-à-jour :"
 
 #: .tmp/statemanager.py:129 .tmp/mainwindow_kde4.py:78
 #: .tmp/mainwindow_kde4.py:83 .tmp/mainwindow.py:73 .tmp/mainwindow.py:78
@@ -421,11 +397,8 @@ msgid "Currently your basket is empty."
 msgstr "Votre panier est actuellement vide."
 
 #: .tmp/statemanager.py:131
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille "
-"totale de <b>%2</b>"
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actuellement il y a <b>%1</b> paquet(s) sélectionné(s) pour une taille totale de <b>%2</b>"
 
 #: .tmp/statemanager.py:134
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -440,12 +413,8 @@ msgid "in your basket."
 msgstr "dans votre panier."
 
 #: .tmp/statemanager.py:159
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Les paquets sélectionnés [%1] sont en conflit les uns avec les autres. Ils "
-"ne peuvent être installés ensemble."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Les paquets sélectionnés [%1] sont en conflit les uns avec les autres. Ils ne peuvent être installés ensemble."
 
 #: .tmp/statemanager.py:160 .tmp/statemanager.py:168
 msgid "Conflict Error"
@@ -518,25 +487,20 @@ msgid "Not a valid repository name"
 msgstr "Nom de dépôt invalide"
 
 #: .tmp/settingsdialog.py:212
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'adresse du dépôt doit se terminer par xml ou xml.bz2.<p>Merci de "
-"corriger.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>L'adresse du dépôt doit se terminer par xml ou xml.bz2.<p>Merci de corriger.</qt>"
 
 #: .tmp/about.py:26
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Développeur"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -544,21 +508,19 @@ msgstr "Faik Uygur"
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Premier auteur"
 
 #: .tmp/mainwidget.py:38
-#, fuzzy
 msgid "All Updates"
-msgstr "Mise à jour"
+msgstr "Toutes les mises à jour"
 
 #: .tmp/mainwidget.py:39
-#, fuzzy
 msgid "Security Updates"
-msgstr "Montrer les mises à jour"
+msgstr "Mises à jour de sécurité"
 
 #: .tmp/mainwidget.py:40
 msgid "Critical Updates"
-msgstr ""
+msgstr "Mises à jour critiques"
 
 #: .tmp/mainwidget.py:203 .tmp/pm-install.py:90
 msgid "Network Error"
@@ -577,12 +539,8 @@ msgid "You are not authorized for this operation."
 msgstr "Vous n'êtes pas autorisé à faire cette opération."
 
 #: .tmp/mainwidget.py:210
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
-"Paquet introuvable. Il peut être mis à jour ou supprimé du dépôt. Essayez de "
-"mettre à jour les informations du dépôt."
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Paquet introuvable. Il peut être mis à jour ou supprimé du dépôt. Essayez de mettre à jour les informations du dépôt."
 
 #: .tmp/mainwindow_kde4.py:99 .tmp/mainwindow.py:112
 msgid "Show Installable Packages"
@@ -606,17 +564,15 @@ msgstr "Mise à jour"
 
 #: .tmp/tray.py:174 .tmp/mainwindow.py:99
 msgid "Quit"
-msgstr ""
+msgstr "Quitter"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "Updates"
-msgstr "Mise à jour"
+msgstr "Mises à jour"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Il y a <b>%1</b> mises à jour disponibles !"
+msgstr "Il y a %1 mises à jour disponibles !"
 
 #: .tmp/tray.py:215
 msgid "There are <b>%1</b> updates available!"
@@ -667,12 +623,8 @@ msgid "Operation Summary"
 msgstr "Résumé des opérations"
 
 #: .tmp/ui_summarydialog.py:50
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Vous pouvez lancer l'application que vous venez d'installer en double-"
-"cliquant dans la liste ci-dessous ou plus tard, à partir du menu général."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "Vous pouvez lancer l'application que vous venez d'installer en double-cliquant dans la liste ci-dessous ou plus tard, à partir du menu général."
 
 #: .tmp/ui_summarydialog.py:51
 msgid "&Ok"
@@ -680,35 +632,32 @@ msgstr "&Ok"
 
 #: .tmp/mainwindow.py:95
 msgid "File"
-msgstr ""
+msgstr "Fichier"
 
 #: .tmp/mainwindow.py:96
-#, fuzzy
 msgid "Settings"
-msgstr "extraction"
+msgstr "Paramètres"
 
 #: .tmp/mainwindow.py:97 .tmp/mainwindow.py:103
-#, fuzzy
 msgid "Help"
-msgstr "&Aide"
+msgstr "Aide"
 
 #: .tmp/pm-install.py:47
 msgid "Succesfully finished installing %1"
 msgstr "L'installation de %1 a réussi."
 
 #: .tmp/pm-install.py:51
-#, fuzzy
 msgid "Succesfully finished installing packages"
-msgstr "L'installation de %1 a réussi."
+msgstr "Installation des paquets terminée avec succès"
 
 #: .tmp/pm-install.py:63 .tmp/pm-install.py:66 .tmp/pm-install.py:69
 #: .tmp/pm-install.py:72
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: .tmp/pm-install.py:150
 msgid "Summary"
-msgstr ""
+msgstr "Résumé"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
@@ -740,27 +689,17 @@ msgstr "Aide du gestionnaire de paquets"
 #~ msgstr "Effacer"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-#~ "this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les "
-#~ "paquets de ce groupe</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les paquets de ce groupe</p></body></html>"
 
 #~ msgid "Maintainer"
 #~ msgstr "Mainteneur"
