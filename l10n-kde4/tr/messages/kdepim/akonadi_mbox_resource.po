@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadi_mbox_resource\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-20 06:13+0100\n"
-"PO-Revision-Date: 2010-05-06 13:46+0300\n"
+"PO-Revision-Date: 2010-05-10 15:12+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "'%1' uid ile ileti okuma başarısız."
 
 #: mboxresource.cpp:183
 msgid "Only email messages can be added to the MBox resource."
-msgstr "MBox özkaynağına sadece e-posta iletileri eklenebilir."
+msgstr "MBox öz kaynağına sadece e-posta iletileri eklenebilir."
 
 #: mboxresource.cpp:189
 msgid "Mail message not added to the MBox."
@@ -96,7 +96,7 @@ msgid ""
 "Failed to update the changed item because the old item could not be deleted "
 "Reason: %1"
 msgstr ""
-"Seçili öğe, eski öğe silinemediği için güncellemedi "
+"Seçili öge, eski öge silinemediği için güncellemedi "
 "Sebebi: %1"
 
 #. i18n: file: compactpage.ui:23
