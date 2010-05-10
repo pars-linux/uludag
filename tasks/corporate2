@@ -42,7 +42,7 @@
 * PiSi (Fatih Aşıcı)
     * groups.xml tango simge teması düzeltmesi (+)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
-    * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (/75)
+    * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (+)
     * Global needsServiceRestart, needsReboot (?)
 
 * PiSi (Serdar Dalgıç)
@@ -51,7 +51,6 @@
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (+)
 
 * Paket Yöneticisi (Gökmen Göksel)
-    * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (-)
     * needsServiceRestart, needsReboot desteği. GUI'ye reboot/restart uyarıları (-)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * Proxy ayar arayüzünün elden geçmesi, libproxy desteği ile KDE'den de alabilecek hale gelmesi (-)
@@ -59,10 +58,8 @@
     * Pisi/PM'in belli bazı paketleri önce güncelleyip güncellemeyi tekrar başlatması (?)
     * Paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (+)
+    * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (+)
     * QT4 ile baştan yazılması (+)
-
-* Müdür (Ozan Çağlayan)
-    * needsServiceRestart listesinin açılışta temizlenmesi (+)          [Bahadır Kandemir, Faik Uygur]
 
 * Stil/KDE (Ozan Çağlayan)
     * Paket yöneticisinin eksik notification bağımlılıkları (+)
@@ -124,6 +121,7 @@
 * Depo/Paketler (Ozan Çağlayan)
     * translations.xml'lerin tamamlanarak tam Türkçe açıklamalı depo desteği (X)
     * kdebase'deki clock yamasının yeni polkite gecirilmesi (X)
+
     * autostart dizinlerinin düzenlenmesi (+)
     * component.xml'lerin temizlenerek sadece isim bırakılması (+)
     * Pulseaudio yardımcı programlarının depoya alınması (+)
@@ -134,11 +132,13 @@
     * gconf eski PolicyKit'e bağlı, yenisiyle derlenmeli (Burak Çalışkan) (+)
     * pcscd/openct sorunu (+)
     * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, mandriva yamalarının alınması (+)
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/70)
+    * OpenVPN için COMAR servisi yazılması (+)
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/84)
-    * bölünmüş kde paketlerinin review edilmesi (-)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/80)
+    * NetworkManager ailesinin entegrasyonu (/75)
+    * NTP paketinin elden geçirilmesi (/75)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
-    * NetworkManager ailesinin entegrasyonu (/60)
+    * bölünmüş kde paketlerinin review edilmesi (-)
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (+)
@@ -149,7 +149,7 @@
     * pypolkit obsolete mi edilecek, yenisine mi port edilecek? (-)
 
 * Evolution harekatı (H. İbrahim Güngör)
-    * Temel paketlerin hazırlanması (/90)
+    * Temel paketlerin hazırlanması (+)
     * MS Exchange desteği için Samba4'ün depoya alınması (/30)
 
 * Zarafa Exchange Sunucunun depoya alınması (H. İbrahim Güngör)
@@ -158,7 +158,7 @@
 
 * Yazıcı altyapısı (Ozan Çağlayan)
     * Otomatik tanımada UDEV tabanlı mimariye geçilmesi (+)
-    * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (/80)
+    * system-config-printer-gtk'nın derlenerek depoya alınması, test edilmesi (+)
     * foo2zjs-firmware paketine gereksinim duyulduğunda kullanıcının uyarılması (-)
 
 * X/DRM/locales (Fatih Aşıcı)
