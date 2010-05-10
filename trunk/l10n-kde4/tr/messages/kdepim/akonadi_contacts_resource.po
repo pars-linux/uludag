@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: akonadi_contacts_resource\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-13 06:18+0100\n"
-"PO-Revision-Date: 2010-04-28 10:48+0300\n"
+"PO-Revision-Date: 2010-05-10 16:17+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -67,12 +67,12 @@ msgstr "Salt okunur bir dosyaya yazılmaya çalışılıyor: '%1'."
 #: contactsresource.cpp:302
 #, kde-format
 msgid "Received item with unknown payload %1"
-msgstr "%1 bilinmeyen veri içeren öğe alındı"
+msgstr "%1 bilinmeyen veri içeren öge alındı"
 
 #: contactsresource.cpp:327
 #, kde-format
 msgid "Unable to remove file '%1'"
-msgstr "'%1' dosyası silinedi"
+msgstr "'%1' dosyası silinemedi"
 
 #: contactsresource.cpp:344
 #, kde-format
@@ -120,7 +120,7 @@ msgid ""
 "Select the directory whose contents should be represented by this resource. "
 "If the directory does not exist, it will be created."
 msgstr ""
-"Bu özkaynak tarafından sağlanacak içeriğin bulunduğu dizini seçin. "
+"Bu öz kaynak tarafından sağlanacak içeriğin bulunduğu dizini seçin. "
 "Dizin mevcut değilse, oluşturulacaktır."
 
 #. i18n: file: settingsdialog.ui:53
