@@ -228,7 +228,7 @@ msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 msgid ""
 "Current networking backend is set to GNOME NetworkManager. You should switch "
 "back to COMAR backend for being able to use this network applet."
-msgstr "Mevcut ağ altyapısı GNOME NetworkManager. Bu ağ programcığını "
+msgstr "Mevcut ağ altyapısı GNOME NetworkManager olarak ayarlanmış. Bu ağ programcığını "
 "kullanabilmek için COMAR altyapısına geri dönmeniz gerekiyor."
 
 #: newconn.py:26
