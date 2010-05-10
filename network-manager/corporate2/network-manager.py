@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2006, TUBITAK/UEKAE
+# Copyright (C) 2005-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -9,6 +9,8 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import os
+import re
 import sys
 
 from qt import *
@@ -23,7 +25,7 @@ from dbus.mainloop.qt3 import DBusQtMainLoop
 def I18N_NOOP(x):
     return x
 
-mod_version = "2.1.6"
+mod_version = "2.1.7"
 mod_app = "network-manager"
 
 
@@ -34,7 +36,7 @@ def AboutData():
         mod_version,
         I18N_NOOP("Network Manager"),
         KAboutData.License_GPL,
-        "(C) 2005-2006 UEKAE/TÜBİTAK",
+        "(C) 2005-2010 UEKAE/TÜBİTAK",
         None,
         None,
         "bugs@pardus.org.tr"
@@ -60,7 +62,7 @@ class Module(KCModule):
         self.setButtons(0)
         self.aboutdata = AboutData()
         attachMainWidget(self)
-    
+
     def aboutData(self):
         return self.aboutdata
 
@@ -68,7 +70,7 @@ class Module(KCModule):
 # KCModule factory
 def create_network_manager(parent, name):
     global kapp
-    
+
     kapp = KApplication.kApplication()
     if not dbus.get_default_main_loop():
         DBusQtMainLoop(set_as_default=True)
@@ -77,36 +79,32 @@ def create_network_manager(parent, name):
 # Standalone
 def main():
     global kapp
-    
+
     about = AboutData()
     KCmdLineArgs.init(sys.argv, about)
-    KCmdLineArgs.addCmdLineOptions ([("auto-connect", I18N_NOOP("Just try to connect automatically"))])
+    #KCmdLineArgs.addCmdLineOptions ([("auto-connect", I18N_NOOP("Just try to connect automatically"))])
     KUniqueApplication.addCmdLineOptions()
     args = KCmdLineArgs.parsedArgs()
-    
-    """
-    if args.isSet("auto-connect"):
-        # Import module after setting DBus mainloop
-        # This module makes async. calls on startup
-        import autoswitch
-        autoSwitch = autoswitch.autoSwitch(notifier = False)
-        autoSwitch.scanAndConnect(force=True)
-        sys.exit()
-    """
-    
+
     if not KUniqueApplication.start():
         print i18n("Network manager module is already started!")
         return
-    
+
     kapp = KUniqueApplication(True, True, True)
     win = QDialog()
-    
+
+    # Check backend and exit if GNOME NetworkManager is in use
+    if os.path.exists("/etc/conf.d/NetworkManager") and re.search('DEFAULT="True"', open("/etc/conf.d/NetworkManager", "r").read().strip()):
+        KMessageBox.error(None, i18n("Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."), i18n("Network Manager"))
+        sys.exit(1)
+
+
     DBusQtMainLoop(set_as_default=True)
-    
+
     # PolicyKit Agent requires window ID
     from comariface import comlink
     comlink.winID = win.winId()
-    
+
     win.setCaption(i18n("Network Manager"))
     win.setMinimumSize(500, 440)
     win.resize(620, 440)

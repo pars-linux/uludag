@@ -1,5 +1,5 @@
 # translation of tr.po to
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2005-2010
 # This file is distributed under the same license as the net-kga package.
 #
 # Gürer Özen <gurer@uludag.org.tr>, 2005.
@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-06 08:20+0200\n"
+"POT-Creation-Date: 2010-05-10 15:27+0300\n"
 "PO-Revision-Date: 2009-07-14 13:27+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -19,11 +19,109 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: comariface.py:214
+#: browser.py:51
+msgid "Name:"
+msgstr "İsim:"
+
+#: browser.py:58 connection.py:269
+msgid "Authentication"
+msgstr "Kimlik doğrulama"
+
+#: browser.py:61 connection.py:507
+msgid "Address:"
+msgstr "Adres:"
+
+#: browser.py:64 connection.py:548
+msgid "Automatic"
+msgstr "Otomatik"
+
+#: browser.py:71
+msgid "Mod:"
+msgstr "Mod:"
+
+#: browser.py:100
+msgid "Turn on/off connection"
+msgstr "Bağlantıyı aç/kapa"
+
+#: browser.py:113
+msgid "Configure connection"
+msgstr "Bağlantıyı yapılandır"
+
+#: browser.py:116
+msgid "Delete connection"
+msgstr "Bağlantıyı sil"
+
+#: browser.py:138
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"'%s'\n"
+"bağlantısı kaldırılsın mı?"
+
+#: browser.py:139
+msgid "Delete connection?"
+msgstr "Bağlantıyı kaldır?"
+
+#: browser.py:226
+msgid "No device!"
+msgstr "Aygıt yok!"
+
+#: browser.py:405 network-applet.py:587
+msgid "New connection"
+msgstr "Yeni bağlantı"
+
+#: browser.py:410 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "İsim Servisi Ayarları"
+
+#: browser.py:415 network-applet.py:327
+msgid "Connect Automatically"
+msgstr "Otomatik Bağlan"
+
+#: browser.py:434
+msgid "Try Auto Connect on startup"
+msgstr "Açılışta Otomatik Bağlanmayı Dene"
+
+#: browser.py:491
+msgid "Network Connections Help"
+msgstr "Ağ Bağlantıları Yardımı"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Bilgisayar"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Makine adı:"
+
+#: nameconf.py:45 connection.py:539
+msgid "Name servers"
+msgstr "İsim sunucuları"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Yukarı"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Aşağı"
+
+#: nameconf.py:156
+msgid "Add Name Server"
+msgstr "İsim Sunucusu Ekle"
+
+#: nameconf.py:157
+msgid "Name server:"
+msgstr "İsim sunucusu:"
+
+#: comariface.py:177
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi yapmaya yetkili değilsiniz."
 
-#: comariface.py:216
+#: comariface.py:179
 msgid ""
 "Network Manager was not able to communicate with your network device. If "
 "it's\n"
@@ -35,7 +133,7 @@ msgstr ""
 "aygıtın açık olduğundan emin olun. Dizüstü bilgisayarlarda, genellikle\n"
 "Fn tuşları ya da bir açma/kapama tuşu ile yapılabilir."
 
-#: comariface.py:221
+#: comariface.py:184
 msgid ""
 "The DHCP service was not able to assign an IP address to your network "
 "interface.\n"
@@ -48,29 +146,90 @@ msgstr ""
 "ağ üzerinde bir DHCP sunucu bulunduğundan emin olun. Değilse, el ile\n"
 "IP vermeyi deneyin."
 
-#: comariface.py:227
+#: comariface.py:190
 msgid "Network Manager - Error"
 msgstr "Ağ Yöneticisi - Hata"
 
-#: comariface.py:235 network-applet.py:176
-msgid "Waiting DBus..."
-msgstr "DBus Bekleniyor..."
-
-#: comariface.py:235 network-applet.py:176
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "DBus bağlantısı sonlandı, tekrar bağlanılıyor..."
-
-#: comariface.py:251 network-applet.py:192
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root "
-"konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
-
-#: comariface.py:419
+#: comariface.py:353
 msgid "new connection"
 msgstr "yeni bağlantı"
+
+#: connsharing.py:99
+msgid "Internet Connection Sharing"
+msgstr "Internet Bağlantısı Paylaşımı"
+
+#: connsharing.py:100
+msgid "Share Internet Connection"
+msgstr "Internet Bağlantısını Paylaştır"
+
+#: connsharing.py:102
+msgid "Interface that goes to internet"
+msgstr "Internet'e açılan arayüz"
+
+#: connsharing.py:103
+msgid "Interface that will share connection"
+msgstr "Bağlantının paylaştırılacağı arayüz"
+
+#: connsharing.py:119
+msgid "D-Bus Error"
+msgstr "D-Bus Hatası"
+
+#: connsharing.py:123
+msgid "COMAR Error"
+msgstr "COMAR Hatası"
+
+#: connsharing.py:127
+msgid "Changing States of Interfaces Failed"
+msgstr "Arayüz Bağlantı Durumu Değiştirilemedi"
+
+#: connsharing.py:129
+msgid "DHCP Server Error"
+msgstr "DHCP Sunucu Hatası"
+
+#: connsharing.py:156
+msgid ""
+"The interfaces that you have selected must be different to share internet "
+"connection"
+msgstr ""
+"Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı "
+"olmalı"
+
+#: connsharing.py:156
+msgid "Check Selected Interfaces"
+msgstr "Seçilen Arayüzleri Dene"
+
+#: connsharing.py:166
+msgid "The sharing of your connection has been successfully done."
+msgstr "Bağlantı paylaşımı tamamlandı."
+
+#: connsharing.py:166
+msgid "Sharing is OK"
+msgstr "Bağlantı paylaşımı tamam."
+
+#: connsharing.py:267
+msgid "You do not have an ip address for the interface that goes to internet"
+msgstr "Internet'e açılan arayüz IP alamadı"
+
+#: connsharing.py:267
+msgid "IP address not found"
+msgstr "IP adresi bulunamadı"
+
+#: network-manager.py:37 network-manager.py:98 network-manager.py:108
+#: autoswitch.py:34 autoswitch.py:36 network-applet.py:541
+#: network-applet.py:555
+msgid "Network Manager"
+msgstr "Ağ Yöneticisi"
+
+#: network-manager.py:90
+msgid "Network manager module is already started!"
+msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
+
+#: network-manager.py:98
+msgid ""
+"Current networking backend is set to GNOME NetworkManager. You should switch "
+"back to COMAR backend for being able to use this network applet."
+msgstr "Mevcut ağ altyapısı GNOME NetworkManager. Bu ağ programcığını "
+"kullanabilmek için COMAR altyapısına geri dönmeniz gerekiyor."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -95,107 +254,6 @@ msgstr "Ağ paketlerini kurun!"
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "ÇOMAR ağ betiği sağlayan hiç bir paket kurulu değil."
-
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
-msgid "Network Manager"
-msgstr "Ağ Yöneticisi"
-
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Taranıyor..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> bulundu."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Eşleşen bir profil bulunamadı"
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Herhangi bir ağ bulunamadı"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "<b>%s</b> profiline bağlanıyor..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "İsim:"
-
-#: browser.py:59 connection.py:269
-msgid "Authentication"
-msgstr "Kimlik doğrulama"
-
-#: browser.py:62 connection.py:507
-msgid "Address:"
-msgstr "Adres:"
-
-#: browser.py:65 connection.py:548
-msgid "Automatic"
-msgstr "Otomatik"
-
-#: browser.py:72
-msgid "Mod:"
-msgstr "Mod:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Bağlantıyı aç/kapa"
-
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Bağlantıyı yapılandır"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Bağlantıyı sil"
-
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"'%s'\n"
-"bağlantısını sileyim mi?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Bağlantıyı sil?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Aygıt yok!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Yeni bağlantı"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "İsim Servisi Ayarları"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Otomatik Bağlan"
-
-#: browser.py:423
-msgid "Share Connection"
-msgstr "Bağlantı Paylaştır"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Açılışta Otomatik Bağlanmayı dene"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Ağ Bağlantıları Yardımı"
 
 #: connection.py:28
 msgid "Channel"
@@ -337,139 +395,71 @@ msgstr "Ağ maskesi:"
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
 
-#: connection.py:539 nameconf.py:45
-msgid "Name servers"
-msgstr "İsim sunucuları"
-
-#: connection.py:819
+#: connection.py:805
 msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Bilgisayar"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Makina adı:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Yukarı"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Aşağı"
-
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "İsim Sunucusu Ekle"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "İsim sunucusu:"
-
-#: connsharing.py:99
-msgid "Internet Connection Sharing"
-msgstr "Internet Bağlantısı Paylaşımı"
-
-#: connsharing.py:100
-msgid "Share Internet Connection"
-msgstr "Internet Bağlantısını Paylaştır"
-
-#: connsharing.py:102
-msgid "Interface that goes to internet"
-msgstr "Internet'e açılan arayüz"
-
-#: connsharing.py:103
-msgid "Interface that will share connection"
-msgstr "Bağlantının paylaştırılacağı arayüz"
-
-#: connsharing.py:119
-msgid "D-Bus Error"
-msgstr "D-Bus Hatası"
-
-#: connsharing.py:123
-msgid "COMAR Error"
-msgstr "COMAR Hatası"
-
-#: connsharing.py:127
-msgid "Changing States of Interfaces Failed"
-msgstr "Arayüz Bağlantı Durumu Değiştirilemedi"
-
-#: connsharing.py:129
-msgid "DHCP Server Error"
-msgstr "DHCP Sunucu Hatası"
-
-#: connsharing.py:156
+#: autoswitch.py:71
 msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
+"Your wireless interface has been disabled by kill switch. Please activate it "
+"first."
 msgstr ""
-"Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı "
-"olmalı"
 
-#: connsharing.py:156
-msgid "Check Selected Interfaces"
-msgstr "Seçilen Arayüzleri Dene"
+#: autoswitch.py:79
+msgid "Scanning..."
+msgstr "Taranıyor..."
 
-#: connsharing.py:166
-msgid "The sharing of your connection has been successfully done."
-msgstr "Bağlantı paylaşımı tamamlandı."
+#: autoswitch.py:100
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> bulundu."
 
-#: connsharing.py:166
-msgid "Sharing is OK"
-msgstr "Bağlantı paylaşımı tamam."
+#: autoswitch.py:104
+msgid "There is no matched profile"
+msgstr "Eşleşen bir profil bulunamadı"
 
-#: connsharing.py:267
-msgid "You do not have an ip address for the interface that goes to internet"
-msgstr "Internet'e açılan arayüz IP alamadı"
+#: autoswitch.py:106
+msgid "No scan result"
+msgstr "Herhangi bir ağ bulunamadı"
 
-#: connsharing.py:267
-msgid "IP address not found"
-msgstr "IP adresi bululanamadı"
+#: autoswitch.py:116
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "<b>%s</b> profiline bağlanıyor..."
 
-#: network-manager.py:83
-msgid "Just try to connect automatically"
-msgstr "Sadece otomatik bağlanmayı dene"
-
-#: network-manager.py:98
-msgid "Network manager module is already started!"
-msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
-
-#: network-applet.py:399
+#: network-applet.py:325
 msgid "Firewall..."
 msgstr "Güvenlik Duvarı..."
 
-#: network-applet.py:400
+#: network-applet.py:326
 msgid "Edit Connections..."
 msgstr "Bağlantıları Düzenle..."
 
-#: network-applet.py:403
+#: network-applet.py:329
 msgid "Show Notifications"
 msgstr "Uyarıları Göster"
 
-#: network-applet.py:405
+#: network-applet.py:331
 msgid "Icon Per Device"
 msgstr "Her Aygıtın Kendi Simgesi"
 
-#: network-applet.py:406
+#: network-applet.py:332
 msgid "Single Icon"
 msgstr "Tek Simge"
 
-#: network-applet.py:477
+#: network-applet.py:403
 msgid "Should network-applet start automatically when you login?"
 msgstr "Ağ programcığı açılışta otomatik çalışsın mı?"
 
-#: network-applet.py:592
+#: network-applet.py:518
 msgid "Connecting to <b>%1</b> ..."
 msgstr "<b>%1</b> profiline bağlanıyor..."
 
-#: network-applet.py:597
+#: network-applet.py:523
 msgid "Connected to <b>%1</b>"
 msgstr "<b>%1</b> profiline bağlandı"
 
-#: network-applet.py:603
+#: network-applet.py:529
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
@@ -477,13 +467,32 @@ msgstr ""
 "Bağlantı başarısız \n"
 "<b>%1</b>"
 
-#: network-applet.py:605
+#: network-applet.py:531
 msgid "You are offline now"
 msgstr "Şu anda bağlı değilsiniz"
 
-#: network-applet.py:699
+#: network-applet.py:624
 msgid "Network Applet"
 msgstr "Ağ Programcığı"
+
+#~ msgid "Waiting DBus..."
+#~ msgstr "DBus Bekleniyor..."
+
+#~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+#~ msgstr "DBus bağlantısı sonlandı, tekrar bağlanılıyor..."
+
+#~ msgid ""
+#~ "Cannot connect to the DBus! If it is not running you should start it with "
+#~ "the 'service dbus start' command in a root console."
+#~ msgstr ""
+#~ "DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root "
+#~ "konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
+
+#~ msgid "Share Connection"
+#~ msgstr "Bağlantı Paylaştır"
+
+#~ msgid "Just try to connect automatically"
+#~ msgstr "Sadece otomatik bağlanmayı dene"
 
 #~ msgid "SettingsWindow"
 #~ msgstr "SettingsWindow"

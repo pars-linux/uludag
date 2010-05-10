@@ -9,13 +9,16 @@
 # option) any later version. Please read the COPYING file.
 #
 
+import re
 import os
 import sys
 import time
+
 from qt import *
 from kdecore import *
 from kdeui import *
-import  dcopext
+
+import dcopext
 import autoswitch
 import pynotify
 
@@ -622,7 +625,7 @@ def main():
         "0.5",
         None,
         KAboutData.License_GPL,
-        "(C) 2006 UEKAE/TÜBİTAK",
+        "(C) 2006-2010 UEKAE/TÜBİTAK",
         None,
         None,
         "bugs@pardus.org.tr"
@@ -630,6 +633,10 @@ def main():
     KCmdLineArgs.init(sys.argv, about)
     KUniqueApplication.addCmdLineOptions()
     app = KUniqueApplication(True, True, True)
+
+    # Check backend and exit if GNOME NetworkManager is in use
+    if os.path.exists("/etc/conf.d/NetworkManager") and re.search('DEFAULT="True"', open("/etc/conf.d/NetworkManager", "r").read().strip()):
+        sys.exit(1)
 
     DBusQtMainLoop(set_as_default=True)
 

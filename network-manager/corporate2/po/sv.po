@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-01-06 08:20+0200\n"
+"POT-Creation-Date: 2010-05-10 15:27+0300\n"
 "PO-Revision-Date: 2009-01-06 11:04+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team:  <sv@li.org>\n"
@@ -17,11 +17,109 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: comariface.py:214
+#: browser.py:51
+msgid "Name:"
+msgstr "Namn:"
+
+#: browser.py:58 connection.py:269
+msgid "Authentication"
+msgstr "Autentisering"
+
+#: browser.py:61 connection.py:507
+msgid "Address:"
+msgstr "Adress:"
+
+#: browser.py:64 connection.py:548
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: browser.py:71
+msgid "Mod:"
+msgstr "Mod:"
+
+#: browser.py:100
+msgid "Turn on/off connection"
+msgstr "Slå på/av anslutning"
+
+#: browser.py:113
+msgid "Configure connection"
+msgstr "Anpassa anslutning"
+
+#: browser.py:116
+msgid "Delete connection"
+msgstr "Ta bort anslutning"
+
+#: browser.py:138
+#, python-format
+msgid ""
+"Should I delete the\n"
+"'%s'\n"
+"connection?"
+msgstr ""
+"Ska jag radera anslutningen\n"
+"'%s'?"
+
+#: browser.py:139
+msgid "Delete connection?"
+msgstr "Ta bort anslutning?"
+
+#: browser.py:226
+msgid "No device!"
+msgstr "Ingen enhet!"
+
+#: browser.py:405 network-applet.py:587
+msgid "New connection"
+msgstr "Ny anslutning"
+
+#: browser.py:410 nameconf.py:28
+msgid "Name Service Settings"
+msgstr "Namninställningar"
+
+#: browser.py:415 network-applet.py:327
+msgid "Connect Automatically"
+msgstr "Anslut automatiskt"
+
+#: browser.py:434
+msgid "Try Auto Connect on startup"
+msgstr "Försök ansluta vid uppstart"
+
+#: browser.py:491
+msgid "Network Connections Help"
+msgstr "Hjälp för nätverksanslutningar"
+
+#: nameconf.py:35
+msgid "Computer"
+msgstr "Dator"
+
+#: nameconf.py:41
+msgid "Host name:"
+msgstr "Värddatornamn:"
+
+#: nameconf.py:45 connection.py:539
+msgid "Name servers"
+msgstr "Namnservrar"
+
+#: nameconf.py:56
+msgid "Up"
+msgstr "Upp"
+
+#: nameconf.py:59
+msgid "Down"
+msgstr "Ner"
+
+#: nameconf.py:156
+msgid "Add Name Server"
+msgstr "Lägg till namnserver"
+
+#: nameconf.py:157
+msgid "Name server:"
+msgstr "Namnserver:"
+
+#: comariface.py:177
 msgid "You are not authorized for this operation."
 msgstr "Du saknar behörighet för denna åtgärd."
 
-#: comariface.py:216
+#: comariface.py:179
 msgid ""
 "Network Manager was not able to communicate with your network device. If "
 "it's\n"
@@ -34,7 +132,7 @@ msgstr ""
 "vanligen\n"
 "med en knapp eller någon Fn-tangent på moderna bärbara datorer."
 
-#: comariface.py:221
+#: comariface.py:184
 msgid ""
 "The DHCP service was not able to assign an IP address to your network "
 "interface.\n"
@@ -47,29 +145,88 @@ msgstr ""
 "Se till att nätverket du försöker ansluta till kan dela ut IP-adresser\n"
 "med en DHCP-server. I annat fall får du ange en IP-adress på egen hand."
 
-#: comariface.py:227
+#: comariface.py:190
 msgid "Network Manager - Error"
 msgstr "Nätverkshanteraren - Fel"
 
-#: comariface.py:235 network-applet.py:176
-msgid "Waiting DBus..."
-msgstr "Väntar på D-Bus..."
-
-#: comariface.py:235 network-applet.py:176
-msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-msgstr "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
-
-#: comariface.py:251 network-applet.py:192
-msgid ""
-"Cannot connect to the DBus! If it is not running you should start it with "
-"the 'service dbus start' command in a root console."
-msgstr ""
-"Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med "
-"kommandot 'service dbus start' som root."
-
-#: comariface.py:419
+#: comariface.py:353
 msgid "new connection"
 msgstr "ny anslutning"
+
+#: connsharing.py:99
+msgid "Internet Connection Sharing"
+msgstr "Internetanslutningsdelning"
+
+#: connsharing.py:100
+msgid "Share Internet Connection"
+msgstr "Dela Internetanslutning"
+
+#: connsharing.py:102
+msgid "Interface that goes to internet"
+msgstr "Gränssnitt till Internet"
+
+#: connsharing.py:103
+msgid "Interface that will share connection"
+msgstr "Gränssnitt som kommer att dela anslutning"
+
+#: connsharing.py:119
+msgid "D-Bus Error"
+msgstr "D-Bus-fel"
+
+#: connsharing.py:123
+msgid "COMAR Error"
+msgstr "COMAR-fel"
+
+#: connsharing.py:127
+msgid "Changing States of Interfaces Failed"
+msgstr "Ändring av gränssnittets tillstånd misslyckades"
+
+#: connsharing.py:129
+msgid "DHCP Server Error"
+msgstr "DHCP-serverfel"
+
+#: connsharing.py:156
+msgid ""
+"The interfaces that you have selected must be different to share internet "
+"connection"
+msgstr "Du måste välja ett annat gränssnitt för att dela Internetanslutning"
+
+#: connsharing.py:156
+msgid "Check Selected Interfaces"
+msgstr "Kontrollera valda gränssnitt"
+
+#: connsharing.py:166
+msgid "The sharing of your connection has been successfully done."
+msgstr "Anslutningsdelningen utfördes med lyckat resultat."
+
+#: connsharing.py:166
+msgid "Sharing is OK"
+msgstr "Delning är ok"
+
+#: connsharing.py:267
+msgid "You do not have an ip address for the interface that goes to internet"
+msgstr ""
+"Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+
+#: connsharing.py:267
+msgid "IP address not found"
+msgstr "Kunde inte hitta IP-adress"
+
+#: network-manager.py:37 network-manager.py:98 network-manager.py:108
+#: autoswitch.py:34 autoswitch.py:36 network-applet.py:541
+#: network-applet.py:555
+msgid "Network Manager"
+msgstr "Nätverkshanteraren"
+
+#: network-manager.py:90
+msgid "Network manager module is already started!"
+msgstr "Nätverkshanteraren körs redan!"
+
+#: network-manager.py:98
+msgid ""
+"Current networking backend is set to GNOME NetworkManager. You should switch "
+"back to COMAR backend for being able to use this network applet."
+msgstr ""
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -94,107 +251,6 @@ msgstr "Installera nätverkspaket!"
 #: newconn.py:121
 msgid "No package with COMAR network scripts are installed yet."
 msgstr "Inga paket med COMAR nätverksskript är installerade."
-
-#: autoswitch.py:33 autoswitch.py:35 network-manager.py:35
-#: network-manager.py:110 network-applet.py:615 network-applet.py:629
-msgid "Network Manager"
-msgstr "Nätverkshanteraren"
-
-#: autoswitch.py:63
-msgid "Scanning..."
-msgstr "Skannar..."
-
-#: autoswitch.py:84
-#, python-format
-msgid "Profile <b>%s</b> matched."
-msgstr "Profil <b>%s</b> matchade."
-
-#: autoswitch.py:88
-msgid "There is no matched profile"
-msgstr "Det finns inte någon matchande profil."
-
-#: autoswitch.py:90
-msgid "No scan result"
-msgstr "Inga skanningsresultat"
-
-#: autoswitch.py:100
-#, python-format
-msgid "Connecting to <b>%s</b> ..."
-msgstr "Ansluter till <b>%s</b> ..."
-
-#: browser.py:52
-msgid "Name:"
-msgstr "Namn:"
-
-#: browser.py:59 connection.py:269
-msgid "Authentication"
-msgstr "Autentisering"
-
-#: browser.py:62 connection.py:507
-msgid "Address:"
-msgstr "Adress:"
-
-#: browser.py:65 connection.py:548
-msgid "Automatic"
-msgstr "Automatisk"
-
-#: browser.py:72
-msgid "Mod:"
-msgstr "Mod:"
-
-#: browser.py:101
-msgid "Turn on/off connection"
-msgstr "Slå på/av anslutning"
-
-#: browser.py:114
-msgid "Configure connection"
-msgstr "Anpassa anslutning"
-
-#: browser.py:117
-msgid "Delete connection"
-msgstr "Ta bort anslutning"
-
-#: browser.py:139
-#, python-format
-msgid ""
-"Should I delete the\n"
-"'%s'\n"
-"connection?"
-msgstr ""
-"Ska jag radera anslutningen\n"
-"'%s'?"
-
-#: browser.py:140
-msgid "Delete connection?"
-msgstr "Ta bort anslutning?"
-
-#: browser.py:228
-msgid "No device!"
-msgstr "Ingen enhet!"
-
-#: browser.py:407 network-applet.py:661
-msgid "New connection"
-msgstr "Ny anslutning"
-
-#: browser.py:412 nameconf.py:28
-msgid "Name Service Settings"
-msgstr "Namninställningar"
-
-#: browser.py:417 network-applet.py:401
-msgid "Connect Automatically"
-msgstr "Anslut automatiskt"
-
-#: browser.py:423
-msgid "Share Connection"
-msgstr "Dela anslutning"
-
-#: browser.py:442
-msgid "Try Auto Connect on startup"
-msgstr "Försök ansluta vid uppstart"
-
-#: browser.py:499
-msgid "Network Connections Help"
-msgstr "Hjälp för nätverksanslutningar"
 
 #: connection.py:28
 msgid "Channel"
@@ -336,137 +392,71 @@ msgstr "Nätmask:"
 msgid "Gateway:"
 msgstr "Förmedlingsnod:"
 
-#: connection.py:539 nameconf.py:45
-msgid "Name servers"
-msgstr "Namnservrar"
-
-#: connection.py:819
+#: connection.py:805
 msgid "Configure network connection"
 msgstr "Anpasa nätverksanslutning"
 
-#: nameconf.py:35
-msgid "Computer"
-msgstr "Dator"
-
-#: nameconf.py:41
-msgid "Host name:"
-msgstr "Värddatornamn:"
-
-#: nameconf.py:56
-msgid "Up"
-msgstr "Upp"
-
-#: nameconf.py:59
-msgid "Down"
-msgstr "Ner"
-
-#: nameconf.py:171
-msgid "Add Name Server"
-msgstr "Lägg till namnserver"
-
-#: nameconf.py:172
-msgid "Name server:"
-msgstr "Namnserver:"
-
-#: connsharing.py:99
-msgid "Internet Connection Sharing"
-msgstr "Internetanslutningsdelning"
-
-#: connsharing.py:100
-msgid "Share Internet Connection"
-msgstr "Dela Internetanslutning"
-
-#: connsharing.py:102
-msgid "Interface that goes to internet"
-msgstr "Gränssnitt till Internet"
-
-#: connsharing.py:103
-msgid "Interface that will share connection"
-msgstr "Gränssnitt som kommer att dela anslutning"
-
-#: connsharing.py:119
-msgid "D-Bus Error"
-msgstr "D-Bus-fel"
-
-#: connsharing.py:123
-msgid "COMAR Error"
-msgstr "COMAR-fel"
-
-#: connsharing.py:127
-msgid "Changing States of Interfaces Failed"
-msgstr "Ändring av gränssnittets tillstånd misslyckades"
-
-#: connsharing.py:129
-msgid "DHCP Server Error"
-msgstr "DHCP-serverfel"
-
-#: connsharing.py:156
+#: autoswitch.py:71
 msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
-msgstr "Du måste välja ett annat gränssnitt för att dela Internetanslutning"
+"Your wireless interface has been disabled by kill switch. Please activate it "
+"first."
+msgstr ""
 
-#: connsharing.py:156
-msgid "Check Selected Interfaces"
-msgstr "Kontrollera valda gränssnitt"
+#: autoswitch.py:79
+msgid "Scanning..."
+msgstr "Skannar..."
 
-#: connsharing.py:166
-msgid "The sharing of your connection has been successfully done."
-msgstr "Anslutningsdelningen utfördes med lyckat resultat."
+#: autoswitch.py:100
+#, python-format
+msgid "Profile <b>%s</b> matched."
+msgstr "Profil <b>%s</b> matchade."
 
-#: connsharing.py:166
-msgid "Sharing is OK"
-msgstr "Delning är ok"
+#: autoswitch.py:104
+msgid "There is no matched profile"
+msgstr "Det finns inte någon matchande profil."
 
-#: connsharing.py:267
-msgid "You do not have an ip address for the interface that goes to internet"
-msgstr "Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+#: autoswitch.py:106
+msgid "No scan result"
+msgstr "Inga skanningsresultat"
 
-#: connsharing.py:267
-msgid "IP address not found"
-msgstr "Kunde inte hitta IP-adress"
+#: autoswitch.py:116
+#, python-format
+msgid "Connecting to <b>%s</b> ..."
+msgstr "Ansluter till <b>%s</b> ..."
 
-#: network-manager.py:83
-msgid "Just try to connect automatically"
-msgstr "Försök ansluta automatiskt"
-
-#: network-manager.py:98
-msgid "Network manager module is already started!"
-msgstr "Nätverkshanteraren körs redan!"
-
-#: network-applet.py:399
+#: network-applet.py:325
 msgid "Firewall..."
 msgstr "Brandvägg..."
 
-#: network-applet.py:400
+#: network-applet.py:326
 msgid "Edit Connections..."
 msgstr "Redigera anslutningar..."
 
-#: network-applet.py:403
+#: network-applet.py:329
 msgid "Show Notifications"
 msgstr "Visa underrättelser"
 
-#: network-applet.py:405
+#: network-applet.py:331
 msgid "Icon Per Device"
 msgstr "En ikon per enhet"
 
-#: network-applet.py:406
+#: network-applet.py:332
 msgid "Single Icon"
 msgstr "En ikon"
 
-#: network-applet.py:477
+#: network-applet.py:403
 msgid "Should network-applet start automatically when you login?"
 msgstr "Ska nätverksminiprogrammet startas automatiskt när du loggar in?"
 
-#: network-applet.py:592
+#: network-applet.py:518
 msgid "Connecting to <b>%1</b> ..."
 msgstr "Ansluter till <b>%1</b> ..."
 
-#: network-applet.py:597
+#: network-applet.py:523
 msgid "Connected to <b>%1</b>"
 msgstr "Ansluten till <b>%1</b>"
 
-#: network-applet.py:603
+#: network-applet.py:529
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
@@ -474,11 +464,30 @@ msgstr ""
 "Anslutningen misslyckades\n"
 "<b>%1</b>"
 
-#: network-applet.py:605
+#: network-applet.py:531
 msgid "You are offline now"
 msgstr "Du är nu frånkopplad"
 
-#: network-applet.py:699
+#: network-applet.py:624
 msgid "Network Applet"
 msgstr "Nätverksminiprogram"
 
+#~ msgid "Waiting DBus..."
+#~ msgstr "Väntar på D-Bus..."
+
+#~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
+#~ msgstr ""
+#~ "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
+
+#~ msgid ""
+#~ "Cannot connect to the DBus! If it is not running you should start it with "
+#~ "the 'service dbus start' command in a root console."
+#~ msgstr ""
+#~ "Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med "
+#~ "kommandot 'service dbus start' som root."
+
+#~ msgid "Share Connection"
+#~ msgstr "Dela anslutning"
+
+#~ msgid "Just try to connect automatically"
+#~ msgstr "Försök ansluta automatiskt"

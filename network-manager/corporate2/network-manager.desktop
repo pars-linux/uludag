@@ -8,7 +8,7 @@ Name[pt_BR]=Gerenciador de Rede
 Name[fr]=Gestionnaire Réseau
 Name[it]=Gestore della rete
 Name[sv]=Nätverkshanteraren
-GenericName[en]=Network Manager
+GenericName=Network Manager
 GenericName[tr]=Ağ Yöneticisi
 GenericName[es]=Configuración de Red
 GenericName[nl]=Netwerkbeheer
@@ -26,3 +26,4 @@ X-Tasma-Fork=true
 Type=Application
 Exec=network-manager
 Categories=Qt;KDE;System;X-KDE-settings-system;X-KDE-tasma-network;
+Hidden[$e]=$(grep -q 'DEFAULT="True"' /etc/conf.d/NetworkManager && echo true || echo false)
