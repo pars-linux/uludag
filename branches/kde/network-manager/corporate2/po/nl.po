@@ -6,18 +6,19 @@
 # Willem Gielen <w.gielen@gmail.com>, 2006, 2007, 2008, 2009.
 # Rinse de Vries <rinsedevries@kde.nl>, 2006.
 # W.P.M.H.I.A. Gielen <w.gielen@gmail.com>, 2008.
+# Antoon Tolboom <atolboo@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-10 15:27+0300\n"
-"PO-Revision-Date: 2009-01-14 18:37+0100\n"
-"Last-Translator: Willem Gielen <w.gielen@gmail.com>\n"
-"Language-Team: Nederlands <nl@li.org>\n"
+"PO-Revision-Date: 2010-05-10 15:16+0200\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: browser.py:51
@@ -243,6 +244,8 @@ msgid ""
 "Current networking backend is set to GNOME NetworkManager. You should switch "
 "back to COMAR backend for being able to use this network applet."
 msgstr ""
+"GNOME Netwerkbeheer is ingesteld als netwerk-backend. Schakel terug naar de "
+"COMAR-backend om dit netwerk-applet te gebruiken."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -420,6 +423,7 @@ msgid ""
 "Your wireless interface has been disabled by kill switch. Please activate it "
 "first."
 msgstr ""
+"De draadloze interface is door de schakelaar uitgeschakeld. Activeer het."
 
 #: autoswitch.py:79
 msgid "Scanning..."
