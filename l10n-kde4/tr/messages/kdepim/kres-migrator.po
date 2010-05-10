@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kres-migrator\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-18 01:30+0100\n"
-"PO-Revision-Date: 2009-05-10 13:27+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-10 16:07+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kabcmigrator.cpp:53
@@ -28,7 +29,7 @@ msgstr ""
 #: kabcmigrator.cpp:57
 #, kde-format
 msgid "File format '%1' is not yet supported natively."
-msgstr ""
+msgstr "'%1' dosya biçimi henüz desteklenmiyor."
 
 #: kabcmigrator.cpp:67 kcalmigrator.cpp:54
 #, kde-format
@@ -37,17 +38,17 @@ msgstr "Kaynak oluşturulamadı: %1"
 
 #: kabcmigrator.cpp:78 kcalmigrator.cpp:65 kcalmigrator.cpp:89
 msgid "Failed to obtain D-Bus interface for remote configuration."
-msgstr ""
+msgstr "Uzak yapılandırma için D-Bus arayüzü alınamadı."
 
 #: kcalmigrator.cpp:77
 #, kde-format
 msgid "Failed to create birthdays resource: %1"
-msgstr "Doğumgünü kaynağı oluşturulamadı: %1"
+msgstr "Doğum günü kaynağı oluşturulamadı: %1"
 
 #: kresmigratorbase.cpp:55
 #, kde-format
 msgid "Trying to migrate '%1' to compatibility bridge..."
-msgstr ""
+msgstr "'%1' uyumluluk katmanına göç ettirilmeye çalışıyor..."
 
 #: kresmigratorbase.cpp:64
 #, kde-format
@@ -57,7 +58,7 @@ msgstr "Uyumluluk köprüsü oluşturulamadı: %1"
 #: kresmigratorbase.cpp:100
 #, kde-format
 msgid "Migration of '%1' to compatibility bridge failed: %2"
-msgstr ""
+msgstr "'%1' uyumluluk katmanına göç işlemi başarısız: %2"
 
 #: kresmigratorbase.cpp:103
 #, kde-format
@@ -70,7 +71,7 @@ msgstr "KResource Göç Aracı"
 
 #: main.cpp:48
 msgid "Migration of KResource settings and application to Akonadi"
-msgstr ""
+msgstr "KResource ayarları ve uygulaması Akonadi programına göçü"
 
 #: main.cpp:50
 msgid "(c) 2008 the Akonadi developers"
@@ -171,7 +172,7 @@ msgstr "'%1' ögesi başarılı bir şekilde taşındı."
 #: kresmigrator.h:177
 #, kde-format
 msgid "Migration of '%1' to compatibility bridge succeeded."
-msgstr "'%1' ögesi başarılı bir şekilde uymluluk köprüsüne taşındı."
+msgstr "'%1' ögesi başarılı bir şekilde uyumluluk köprüsüne taşındı."
 
 #: kresmigrator.h:199
 msgid "Setting up client-side bridge..."
