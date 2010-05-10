@@ -3,18 +3,19 @@
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Ozan Eren BILGEN <oebilgen@uekae.tubitak.gov.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkpgp\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-01-13 07:19+0100\n"
-"PO-Revision-Date: 2009-03-23 05:14+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-10 15:40+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kpgpbase2.cpp:137 kpgpbaseG.cpp:150
@@ -471,9 +472,9 @@ msgstr ""
 "sadece bir kere belirtmeniz yeterlidir.</p><p>Bunun bir güvenlik tehdidi "
 "yaratabileceğini göz önünde bulundurunuz. Eğer bilgisayarınızın başından "
 "ayrılırsanız, başkaları imzalı iletiler gönderebildiği gibi şifreli "
-"iletilerinizi de okuyabilir. Eğer bellek dökümü olursa, parola cümelenizle "
+"iletilerinizi de okuyabilir. Eğer bellek dökümü olursa, parola cümlenizle "
 "birlikte RAM'inizin içeriği diske yazılır.</p><p>KMail kullanırken, bu "
-"yapılandırma sadece gpg-agent kulanmazken geçerlidir. Şifreleme eklentileri "
+"yapılandırma sadece gpg-agent kullanmazken geçerlidir. Şifreleme eklentileri "
 "kullanırken, bu seçenek yine önemsenmez.</p></qt>"
 
 #: kpgpui.cpp:169
@@ -532,7 +533,7 @@ msgstr "A&ra"
 
 #: kpgpui.cpp:344
 msgid "Key ID"
-msgstr "Anathar &ID"
+msgstr "Anahtar &ID"
 
 #: kpgpui.cpp:345
 msgid "User ID"
