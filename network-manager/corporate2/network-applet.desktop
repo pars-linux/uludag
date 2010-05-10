@@ -25,3 +25,4 @@ X-KDE-StartupNotify=false
 X-KDE-UniqueApplet=true
 X-KDE-autostart-condition=network-appletrc:General:AutoStart:true
 Categories=Qt;KDE;System;
+Hidden[$e]=$(grep -q 'DEFAULT="True"' /etc/conf.d/NetworkManager && echo true || echo false)
