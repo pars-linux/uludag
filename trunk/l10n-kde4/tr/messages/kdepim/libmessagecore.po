@@ -1,14 +1,15 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-10-09 06:32+0200\n"
-"PO-Revision-Date: 2009-10-13 20:21+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-10 15:42+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -28,7 +29,7 @@ msgstr "Eklenti sıkıştırılamadı."
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
-msgstr "bilnmeyen %1"
+msgstr "bilinmeyen %1"
 
 #: attachmentfromurljob.cpp:136
 #, kde-format
@@ -137,9 +138,10 @@ msgstr "Bu eklentiyi imzala"
 #: rc.cpp:30
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:31
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
+
