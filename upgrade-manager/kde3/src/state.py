@@ -11,7 +11,7 @@
 # Please read the COPYING .
 #
 
-from qt import QObject, PYSIGNAL, QTimer
+from qt import QObject, PYSIGNAL, QTimer, QStringList
 from kdecore import i18n
 from kdeui import KMessageBox, KGuiItem
 
@@ -73,11 +73,12 @@ class State(QObject):
 
     def checkObsoletes(self):
         obsoletes = pisiiface.getObsoletedList()
-        message = i18n("<qt>Following packages are obsoleted and are not maintained anymore in Pardus 2009 repositories. These packages are going to be removed from your system:<br><br> %1").arg(", ".join(obsoletes))
+        message = i18n("<qt>Following packages are obsoleted and are not maintained anymore in Pardus 2009 repositories. These packages are going to be removed from your system.")
         message += i18n("<br><br>Do you want to continue?</qt>")
 
-        if KMessageBox.Yes == KMessageBox.warningYesNo(self.parent,
+        if KMessageBox.Yes == KMessageBox.warningYesNoList(self.parent,
                                                        message,
+                                                       QStringList.fromStrList(obsoletes),
                                                        i18n("Warning"),
                                                        KGuiItem(i18n("Continue"), "ok"),
                                                        KGuiItem(i18n("Cancel"), "no"),
