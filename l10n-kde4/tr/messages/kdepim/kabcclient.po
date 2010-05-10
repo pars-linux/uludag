@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kabcclient\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-03-23 04:56+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-10 16:01+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/kabcclient.cpp:48
@@ -49,7 +50,7 @@ msgid ""
 "Warning: using codec '%1' with input format vcard, but vCards are usually "
 "expected to be in UTF-8."
 msgstr ""
-"Uyarı: Vcard girdi biçimi kodlaması olarak '%1' kodlaması kullanılıyor ama "
+"Uyarı: vCard girdi biçimi kodlaması olarak '%1' kodlaması kullanılıyor ama "
 "vCard dosyalarının genellikle UTF-8 kullanması beklenir."
 
 #: src/inputformatimpls.cpp:180
@@ -107,7 +108,7 @@ msgid ""
 "Warning: using codec '%1' with output format vcard, but vCards are usually "
 "expected to be in UTF-8."
 msgstr ""
-"Uyarı: Vcard çıktı biçimi kodlaması olarak '%1' kodlaması kullanılıyor ama "
+"Uyarı: vCard çıktı biçimi kodlaması olarak '%1' kodlaması kullanılıyor ama "
 "vCard dosyalarının genellikle UTF-8 kullanması beklenir."
 
 #: src/outputformatimpls.cpp:250
@@ -140,7 +141,7 @@ msgstr "Çıktıyı e-posta istemcisi mutt'un istediği şekilde biçimlendirir"
 msgid ""
 "Comma separated list of: allemails, query, alias, altkeys. Default is alias"
 msgstr ""
-"Virgülle ayrılmış listeler: tüm epostalar, sorgu, takma ad, alternatif "
+"Virgülle ayrılmış listeler: tüm e-postalar, sorgu, takma ad, alternatif "
 "tuşlar. Varsayılan takma ad"
 
 #: src/outputformatimpls.cpp:432
@@ -375,7 +376,7 @@ msgid ""
 "for western european languages, including the Euro sign"
 msgstr ""
 "Diğer kodlayıcılar ISO kodlarıyla belirlenebilirler, örneğin Avro işaretini "
-"de içeren batı avrupa dilleri için 'ISO 8859-15'"
+"de içeren batı Avrupa dilleri için 'ISO 8859-15'"
 
 #: src/main.cpp:421
 msgid "kabc2mutt"
@@ -406,8 +407,8 @@ msgid ""
 "Default format is 'alias'. 'query' returns email[tab]name[tab], as needed by "
 "mutt's query_command"
 msgstr ""
-"Varsayılan biçim, 'takma ad'. 'sorgu', mutt sorgu_komutu'nun istediği "
-"şekilde eposta[tab]isim[tab] alanlarını geri getirir."
+"Varsayılan biçim, 'takma ad'. 'sorgu', mutt sorgu komutunun istediği "
+"şekilde e-posta[tab]isim[tab] alanlarını geri getirir."
 
 #: src/main.cpp:437
 msgid "Default key format is 'JohDoe', this option turns it into 'jdoe'"
@@ -434,9 +435,10 @@ msgstr "KDE Adres defterinde eşleşme bulunamadı"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
+
