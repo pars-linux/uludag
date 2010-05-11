@@ -211,7 +211,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # Actions
         for name, (label, mandatory, optional) in self.systems.iteritems():
             action_user = QtGui.QAction(label, self)
-            action_user.setData(QtCore.QVariant(name))
+            action_user.setData(QtCore.QVariant(unicode(name)))
             menu.addAction(action_user)
 
     def showEditBox(self, id_, type_=None):
