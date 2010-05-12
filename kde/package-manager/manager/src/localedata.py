@@ -59,6 +59,10 @@ def setSystemLocale():
         else:
             systemlocale = locales['en_US']
 
-    locale.setlocale(locale.LC_ALL, systemlocale)
+    try:
+        locale.setlocale(locale.LC_ALL, systemlocale)
+    except:
+        locale.setlocale(locale.LC_ALL, locales['en_US'])
+
     ctx.Pds.updatei18n(systemlocale.split('.')[0])
 
