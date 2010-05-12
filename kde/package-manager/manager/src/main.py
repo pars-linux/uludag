@@ -62,6 +62,12 @@ if __name__ == '__main__':
         from mainwindow import MainWindow
         from pds.quniqueapp import QUniqueApplication
 
+        # Fork MainApplication
+        import os
+        pid = os.fork()
+        if pid:
+            os._exit(0)
+
         app = QUniqueApplication(sys.argv, catalog='package-manager')
 
         setSystemLocale()
@@ -80,6 +86,5 @@ if __name__ == '__main__':
         manager.show()
 
     sys.excepthook = handleException
-
     ctx._time()
     app.exec_()
