@@ -31,6 +31,10 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.initExtraList()
         self.connect(self.actionButton, SIGNAL("clicked()"), self.action)
 
+        # We need to setSelectionMode after setting model for qt-only mode.
+        self.packageList.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
+        self.extraList.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
+
     def connectModelSignals(self):
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
         self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
