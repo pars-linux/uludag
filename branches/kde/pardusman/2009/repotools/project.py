@@ -120,6 +120,7 @@ default_install_glob_excludes = (
     ( "usr/qt/4/lib/", "libQtDesignerComponents.so*" ),
     ( "usr/qt/4/lib/", "libQtDesigner.so*" ),
     ( "usr/qt/4/lib/", "libQtHelp.so*" ),
+    ( "usr/qt/4/lib/", "libQtMultimedia*" ),
     ( "usr/qt/4/lib/", "libQtNetwork.so*" ),
     ( "usr/qt/4/lib/", "libQtOpenGL.so*" ),
     ( "usr/qt/4/lib/", "libQtScript.so*" ),
