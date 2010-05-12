@@ -1,0 +1,40 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
+
+class DrawPie(QWidget):
+    def __init__(self,totalPiece, currentPiece, parent=None):
+        QWidget.__init__(self, parent)
+        self.setGeometry(0, 0, 100, 40)
+        self.step = 360 / totalPiece
+        self.currentPiece = currentPiece
+
+    def paintEvent(self, event):
+        painter = QPainter()
+        painter.begin(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        # pen sets the edge color of the circles
+        painter.setPen(QColor(20,20,20, 0))
+        w = self.size().width()
+        h = self.size().height()
+
+        painter.setBrush(QBrush(QColor(255, 255, 255, 170)))
+        x = 5
+        y = 5
+        r = 32
+        rect = QRect(x, y, r, r)
+
+        painter.drawEllipse(rect)
+
+
+        painter.setBrush(QBrush(QColor(20, 20, 20)))
+
+        startAngle = 90 * 16;
+        spanAngle = -((self.currentPiece * self.step) * 16);
+
+        painter.drawPie(rect, startAngle, spanAngle);
+
+        painter.end()
+

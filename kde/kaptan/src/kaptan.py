@@ -25,6 +25,8 @@ import gui.ScrSmolt as smoltWidget
 
 import gui.tools as tools
 
+from gui.progressPie import DrawPie
+
 def loadFile(_file):
     try:
         f = file(_file)
@@ -64,6 +66,10 @@ class Kaptan(QtGui.QWidget):
         self.config = KConfig("kaptanrc")
         self.titles = []
         self.descriptions = []
+
+        # Draww progress pie
+        self.countScreens = len(self.screens)
+        DrawPie(self.countScreens, 3, self.ui.labelProgress)
 
         # Add screens to StackWidget
         self.createWidgets(self.screens)
