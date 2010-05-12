@@ -4,19 +4,20 @@
 # S.Çağlar Onur <caglar@uludag.org.tr>, 2005.
 # Ahmet AYGÜN <ahmet@zion.gen.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kfileshare\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:28+0100\n"
-"PO-Revision-Date: 2009-08-15 21:06+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-12 10:45+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #. i18n: file: advanced/kcm_sambaconf/userselectdlg.ui:16
 #. i18n: ectx: property (windowTitle), widget (QDialog)
@@ -815,7 +816,7 @@ msgstr "Gü&venilmiş alan adlarına izin ver"
 #. i18n: ectx: property (text), widget (QCheckBox, paranoidServerSecurityChk)
 #: rc.cpp:347
 msgid "Paranoid server security"
-msgstr "Paronayak sunucu güvenliği"
+msgstr "Paranoyak sunucu güvenliği"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:1386
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox68)
@@ -927,7 +928,7 @@ msgstr "Smb parola dosyası:"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_5_3_2)
 #: rc.cpp:404
 msgid "Passdb bac&kend:"
-msgstr "Parola veritabanı arkayüzü:"
+msgstr "Parola veritabanı arka ucu:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:1707
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_5_3)
@@ -987,7 +988,7 @@ msgstr "Sn"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_5_3_3)
 #: rc.cpp:416
 msgid "Passwd chat timeout:"
-msgstr "Parola iletişimi zamanaşımı"
+msgstr "Parola iletişimi zaman aşımı"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:1766
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox74)
@@ -1440,7 +1441,7 @@ msgstr "Kere"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2_5)
 #: rc.cpp:623
 msgid "Change notify timeout:"
-msgstr "Uyarı zamanaşımını değiştir:"
+msgstr "Uyarı zaman aşımını değiştir:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:2877
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2_3_4)
@@ -1471,7 +1472,7 @@ msgstr "Lp&q önbellek süresi:"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2_3_2_4_2)
 #: rc.cpp:650
 msgid "&Name cache timeout:"
-msgstr "&Name önbellek zamanaşımı:"
+msgstr "&Name önbellek zaman aşımı:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:3007
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox46)
@@ -1718,7 +1719,7 @@ msgstr "&En az WINS ttl:"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox36)
 #: rc.cpp:782
 msgid "WINS Server IP or DNS Name"
-msgstr "WINS Suunucu IP ya da DNS İsmi"
+msgstr "WINS Sunucu IP ya da DNS İsmi"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:3863
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox37)
@@ -2174,7 +2175,7 @@ msgstr "SSL"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, sslChk)
 #: rc.cpp:995
 msgid "Enables or disables the entire SSL mode"
-msgstr "SSL kipini aktive ya da deaktive eder"
+msgstr "SSL kipini açar veya kapatır"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:5220
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, sslChk)
@@ -2252,7 +2253,7 @@ msgstr "SSL uyumluluğ&u"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_4)
 #: rc.cpp:1033
 msgid "SSL CA certDir:"
-msgstr "SSL CA serDizini:"
+msgstr "SSL SM sertDizini:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:5449
 #. i18n: ectx: property (text), widget (QLabel, TextLabel11_2_2)
@@ -2330,7 +2331,7 @@ msgstr "Za&man sunucusu"
 #. i18n: ectx: property (text), widget (QCheckBox, largeReadWriteChk)
 #: rc.cpp:1075
 msgid "Lar&ge readwrite"
-msgstr "Bü&yük okumayazma"
+msgstr "Bü&yük okuma-yazma"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:5652
 #. i18n: ectx: property (text), widget (QCheckBox, unixExtensionsChk)
@@ -2768,7 +2769,7 @@ msgstr "LDAP &grup eki:"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_2_2_2_4)
 #: rc.cpp:1312
 msgid "LDAP idmap suffix:"
-msgstr "LDAP idmap önadı:"
+msgstr "LDAP idmap ön adı:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:6788
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_2_2_2_5)
@@ -2786,13 +2787,13 @@ msgstr "LDAP Yönetici &dn:"
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_4_2)
 #: rc.cpp:1321
 msgid "Idmap bac&kend:"
-msgstr "Idmap ar&kayüzü:"
+msgstr "Idmap &arka ucu"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:6857
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_4_2_2)
 #: rc.cpp:1324
 msgid "LDAP replication sleep:"
-msgstr "LDAP geriyanıt beklemesi:"
+msgstr "LDAP geri yanıt beklemesi:"
 
 #. i18n: file: advanced/kcm_sambaconf/kcminterface.ui:6900
 #. i18n: ectx: property (text), widget (QLabel, TextLabel3_5_4)
@@ -3592,25 +3593,25 @@ msgstr "DOS Niteliklerini Haritalama"
 #. i18n: ectx: property (text), widget (QCheckBox, mapArchiveChk)
 #: rc.cpp:1757
 msgid "Map DOS archi&ve to UNIX owner execute"
-msgstr "Dos arşivini UNIX sahibi çalıştırabilire haritala"
+msgstr "Dos arşivini UNIX sahibi çalıştırabilir haritala"
 
 #. i18n: file: advanced/kcm_sambaconf/share.ui:1535
 #. i18n: ectx: property (text), widget (QCheckBox, mapHiddenChk)
 #: rc.cpp:1760
 msgid "Map DOS hidden to UNI&X world execute"
-msgstr "DOS gizli özelliğini UNI&X herkes çalıştırabilire haritala"
+msgstr "DOS gizli özelliğini UNI&X herkes çalıştırabilir haritala"
 
 #. i18n: file: advanced/kcm_sambaconf/share.ui:1542
 #. i18n: ectx: property (text), widget (QCheckBox, mapSystemChk)
 #: rc.cpp:1763
 msgid "Map DOS system to UNIX &group execute"
-msgstr "DOS sistemi UNIX &grup çalıştırabilire haritala"
+msgstr "DOS sistemi UNIX &grup çalıştırabilir haritala"
 
 #. i18n: file: advanced/kcm_sambaconf/share.ui:1549
 #. i18n: ectx: property (text), widget (QCheckBox, storeDosAttributesChk)
 #: rc.cpp:1766
 msgid "Store DOS attributes onto extended attribute"
-msgstr "DOS niteliklerini uzatılmıl niteliklerin üzeirne sakla"
+msgstr "DOS niteliklerini uzatılmış niteliklerin üzerine sakla"
 
 #. i18n: file: advanced/kcm_sambaconf/share.ui:1562
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox76)
@@ -3682,7 +3683,7 @@ msgstr "Blo&k boyutu:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: rc.cpp:1805
 msgid "Client-side cachin&g policy:"
-msgstr "İstenmi tara&fı önbellekleme yöntemi:"
+msgstr "İstemci tara&fı önbellekleme yöntemi:"
 
 #. i18n: file: advanced/kcm_sambaconf/share.ui:1719
 #. i18n: ectx: property (text), item, widget (QComboBox, cscPolicyCombo)
@@ -4270,7 +4271,7 @@ msgid ""
 "Here you can see a list of hosts which are allowed to access this directory via NFS.\n"
 "The first column shows the name or address of the host, the second column shows the access parameters. The name '*' donates public access."
 msgstr ""
-"Bu klasöre NFS ile erişimi olan istemiclerin listesini görüyorsunuz \n"
+"Bu klasöre NFS ile erişimi olan istemcilerin listesini görüyorsunuz \n"
 "İlk sütun isim ya da adres bilgisini, ikinci sütun ise erişim haklarını gösteriyor. '*' karakteri herkesin erişebileceği anlamına geliyor"
 
 #. i18n: file: advanced/nfs/nfsdialoggui.ui:44
@@ -4361,7 +4362,7 @@ msgstr ""
 "\n"
 "<i>wildcard'lar</i>\n"
 "<p>\n"
-" Makine isimleri * ve ? wildcard karakterleri içerebilir. Bunlar dışarı verilen dosyayı daha sıkı hale getirmek için kullanılabilir; örneğin, *.cs.foo.edu girdisi, cs.foo.edu domain'indeki bütün sunucuları eşleştirir. ancak, bu wildcard karakterleri bir domain ismindeki noktaları eşleştirmez, dolayısı ile yukarıdaki sistemle a.b.cs.foo.edu gibi sunucular bulunamaz.\n"
+" Makine isimleri * ve ? wildcard karakterleri içerebilir. Bunlar dışarı verilen dosyayı daha sıkı hale getirmek için kullanılabilir; örneğin, *.cs.foo.edu girdisi, cs.foo.edu alan adındaki bütün sunucuları eşleştirir. ancak, bu wildcard karakterleri bir domain ismindeki noktaları eşleştirmez, dolayısı ile yukarıdaki sistemle a.b.cs.foo.edu gibi sunucular bulunamaz.\n"
 "</p>\n"
 "\n"
 "<i>IP ağları</i>\n"
@@ -4387,7 +4388,7 @@ msgid ""
 msgstr ""
 "<b>Genel erişim</b>\n"
 "<p>\n"
-"Eğer bunu seçerseniz, bilgisayar adresi, bütün bilgisayarlarin erişebileceği anlamına gelen tek bir karakter olacak.\n"
+"Eğer bunu seçerseniz, bilgisayar adresi, bütün bilgisayarların erişebileceği anlamına gelen tek bir karakter olacak.\n"
 "Bu, aynı karakteri adres satırına sizin yazmanızla aynı şey.\n"
 "</p>"
 
@@ -4497,7 +4498,7 @@ msgid ""
 msgstr ""
 "<b>Wdelay yok</b>\n"
 "<p>\n"
-"Bu seçenek sadece sync seçeneği aktifleştirilmişse etkili olur. NFS sunucusu bir yazma isteğini, eğer bir başka ilişkili yazma isteğinin işlenmekte olduğundan ya da kısa bir zaman sonra ulaşacağındna şüphelenirse bekletir. Bu da birden fazla yazma isteğinin tek bir seferde diske yazılmasını sağlar ve verimi arttırır. Eğer NFS sunucusu küçük ve diğerleri ile ilişkisiz istekler alırsa bu yaklaşım verimi düşürebilir, wdelay yok özelliği bunu kapatabilmeye olanak sağlar. </p> "
+"Bu seçenek sadece sync seçeneği aktifleştirilmişse etkili olur. NFS sunucusu bir yazma isteğini, eğer bir başka ilişkili yazma isteğinin işlenmekte olduğundan ya da kısa bir zaman sonra ulaşacağında şüphelenirse bekletir. Bu da birden fazla yazma isteğinin tek bir seferde diske yazılmasını sağlar ve verimi arttırır. Eğer NFS sunucusu küçük ve diğerleri ile ilişkisiz istekler alırsa bu yaklaşım verimi düşürebilir, wdelay yok özelliği bunu kapatabilmeye olanak sağlar. </p> "
 
 #. i18n: file: advanced/nfs/hostprops.ui:224
 #. i18n: ectx: property (text), widget (QCheckBox)
@@ -4531,7 +4532,7 @@ msgstr ""
 "Bu seçenek yine bu isimle IRIX NFS'te bulunan seçenek ile aynı işlevi sunar. Eğer bir sunucu birisi diğer üzerine bağlanan iki dosya sistemini sunuyorsa, istemci normal olarak doğru erişim için ikisini birden bağlamalıdır. Sadece ana dosya sistemini bağlarsa diğer dosya sisteminin bağlı olması gereken yerde boş bir dizin görür. Bu dosya sistemi \"gizli\"dir.\n"
 "</p>\n"
 "<p>\n"
-"Bir dosya sistemi için gizleme yok seçeneğinin seçilmesi onun gizli olmamasını sağlar ve hak sahibi istemci ana dosya sisteminden buraya herhangi bir değişiklik farketmeden geçebilir.\n"
+"Bir dosya sistemi için gizleme yok seçeneğinin seçilmesi onun gizli olmamasını sağlar ve hak sahibi istemci ana dosya sisteminden buraya herhangi bir değişiklik fark etmeden geçebilir.\n"
 "</p>\n"
 "<p>\n"
 "Bununla beraber bazı NFS istemcileri bu durumu yeterince iyi başaramamaktadır, örneğin tek bir dosya sistemi gibi görünen kısımda aynı inode numarasına sahip iki dosya görünebilmektedir.\n"
@@ -4540,7 +4541,7 @@ msgstr ""
 "Gizleme yok seçeneği şu an için sadece tek bilgisayar paylaşımları için etkilidir. Netgroup, subnet ya da düzenli ifadeler yoluyla yapılmış paylaşımlar ile güvenilir şekilde çalışmamaktadır.\n"
 "</p>\n"
 "<p>\n"
-"Bu seçenek kimi durumlarda çok kullanışlı olabilir, fakat dikkatli bir şekilde kullanılmalıdır ve istemci sisteminin bu özelliği doğru şekilde kullanabidiğinden emin olunmalıdır.\n"
+"Bu seçenek kimi durumlarda çok kullanışlı olabilir, fakat dikkatli bir şekilde kullanılmalıdır ve istemci sisteminin bu özelliği doğru şekilde kullanabildiğinden emin olunmalıdır.\n"
 "</p>"
 
 #. i18n: file: advanced/nfs/hostprops.ui:250
@@ -4610,7 +4611,7 @@ msgstr ""
 "Bu seçenek NFS sunucuya kilitleme isteklerinin kimlik doğrulamasını yapmamasını söyler (NLM protokolünü kullanan istekler). Normalde NFS sunucu, dosyayı okuma izni olan bir kullanıcı için kimlik bilgisi tutmak için kilit isteği gönderir. Bu seçenekle birlikte hiçbir erişim denetimi uygulanmayacaktır.\n"
 "</p>\n"
 "<p>\n"
-"Eski NFS istemci gerçeklemeleri, kimlik bilgilerini kilit isteğiyle göndermezler ve güncel NFS istemcilerinin bir kısmı halen bu eski gerçeklemeyi temel alır. Sadece tüm kullanıcılar tarafından okunabilen dosyaları kilitleyebildiğinizi farkederseniz bu seçeneği kullanın.\n"
+"Eski NFS istemci gerçeklemeleri, kimlik bilgilerini kilit isteğiyle göndermezler ve güncel NFS istemcilerinin bir kısmı halen bu eski gerçeklemeyi temel alır. Sadece tüm kullanıcılar tarafından okunabilen dosyaları kilitleyebildiğinizi fark ederseniz bu seçeneği kullanın.\n"
 "</p>"
 
 #. i18n: file: advanced/nfs/hostprops.ui:303
@@ -4905,7 +4906,7 @@ msgstr "D&eğiştir..."
 msgid ""
 "<p>The SAMBA configuration file <strong>'smb.conf'</strong> could not be found;</p>make sure you have SAMBA installed.\n"
 "\n"
-msgstr "<p>SAMBA yapılandırma dosyası olan <strong>'smb.conf'</strong> bulunmamadı;</p>SAMBA'nın kurulu olduğundan emin olunuz.\n"
+msgstr "<p>SAMBA yapılandırma dosyası olan <strong>'smb.conf'</strong> bulunamadı;</p>SAMBA'nın kurulu olduğundan emin olunuz.\n"
 
 #: advanced/kcm_sambaconf/smbconfconfigwidget.cpp:56
 msgid "Specify Location"
@@ -4954,7 +4955,7 @@ msgstr "<qt><b>%1</b> kullanıcısı Samba kullanıcı veritabanına eklenemedi.
 #: advanced/kcm_sambaconf/kcmsambaconf.cpp:1277
 #, kde-format
 msgid "Removing the user %1 from the Samba user database failed."
-msgstr "<qt><b>%1</b> kullanıcısı Samba kullanıcı veritabanından çıkarılamadı.</qt>"
+msgstr "%1 kullanıcısı Samba kullanıcı veritabanından çıkarılamadı."
 
 #: advanced/kcm_sambaconf/kcmsambaconf.cpp:1299
 #, kde-format
@@ -4973,7 +4974,7 @@ msgstr "<h1>Samba Yapılandırma</h1> buradan SAMBA sunucunuzu yapılandırabili
 #: advanced/kcm_sambaconf/kcminterface.cpp:74
 #: advanced/kcm_sambaconf/kcminterface.ui.h:63
 msgid "Use the <i>share</i> security level if you have a home network or a small office network.<br /> It allows everyone to read the list of all your shared directories and printers before a login is required."
-msgstr "Ev ağınız veya küçük bir ofis ağınız var ise <i>paylaş</i> güvenlik seviyesini kullanın. <br /> Böylece bir girişe ihtiyaç duyulmadan önce herkesin bütün paylaşılmış dizinlerinizi ve yazıcılarınızın listesini okulması mümkün olur."
+msgstr "Ev ağınız veya küçük bir ofis ağınız var ise <i>paylaş</i> güvenlik seviyesini kullanın. <br /> Böylece bir girişe ihtiyaç duyulmadan önce herkesin bütün paylaşılmış dizinlerinizi ve yazıcılarınızın listesini okunması mümkün olur."
 
 #: advanced/kcm_sambaconf/kcminterface.cpp:82
 #: advanced/kcm_sambaconf/kcminterface.ui.h:71
@@ -5039,7 +5040,7 @@ msgstr "Gizli Olanı Koru"
 #: advanced/kcm_sambaconf/hiddenfileview.cpp:409
 #, kde-format
 msgid "<b></b>Some files you have selected are matched by the wildcarded string <b>'%1'</b>; do you want to uncheck all files matching <b>'%1'</b>?"
-msgstr "<b></b>Seçtiğiniz bazı dosyalar wildcard katarı olan <b>%1'<b> ile eşleştirildi; <b>%1</b> ile eşleşen bütün dosyaların seçimini temizlemek ister misiniz?"
+msgstr "<b></b>Seçtiğiniz bazı dosyalar wildcard dizgisi olan <b>%1'<b> ile eşleştirildi; <b>%1</b> ile eşleşen bütün dosyaların seçimini temizlemek ister misiniz?"
 
 #: advanced/kcm_sambaconf/hiddenfileview.cpp:411
 msgid "Wildcarded String"
