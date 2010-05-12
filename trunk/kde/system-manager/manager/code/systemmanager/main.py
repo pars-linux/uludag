@@ -78,28 +78,28 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         # All languages
         self.comboLanguage.clear()
         for code, label in self.iface.listLanguages():
-            self.comboLanguage.addItem(label, QtCore.QVariant(code))
+            self.comboLanguage.addItem(label, QtCore.QVariant(unicode(code)))
         # Selected language
-        language = QtCore.QVariant(self.iface.getLanguage())
+        language = QtCore.QVariant(unicode(self.iface.getLanguage()))
         index = self.comboLanguage.findData(language)
         if index != -1:
             self.comboLanguage.setCurrentIndex(index)
         # All Keymaps
         self.comboKeyboard.clear()
         for code in self.iface.listKeymaps():
-            self.comboKeyboard.addItem(code, QtCore.QVariant(code))
+            self.comboKeyboard.addItem(code, QtCore.QVariant(unicode(code)))
         # Selected keymap
-        keymap = QtCore.QVariant(self.iface.getKeymap())
+        keymap = QtCore.QVariant(unicode(self.iface.getKeymap()))
         index = self.comboKeyboard.findData(keymap)
         if index != -1:
             self.comboKeyboard.setCurrentIndex(index)
         # All services
         self.comboHeadStart.clear()
-        self.comboHeadStart.addItem(kdecore.i18n("None"), QtCore.QVariant(""))
+        self.comboHeadStart.addItem(kdecore.i18n("None"), QtCore.QVariant(u""))
         for package, label in self.iface.listServices():
-            self.comboHeadStart.addItem("%s (%s)" % (label, package), QtCore.QVariant(package))
+            self.comboHeadStart.addItem("%s (%s)" % (label, package), QtCore.QVariant(unicode(package)))
         # Head start
-        service = QtCore.QVariant(self.iface.getHeadStart())
+        service = QtCore.QVariant(unicode(self.iface.getHeadStart()))
         index = self.comboHeadStart.findData(service)
         if index != -1:
             self.comboHeadStart.setCurrentIndex(index)
