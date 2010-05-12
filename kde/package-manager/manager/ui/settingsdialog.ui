@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>564</width>
-    <height>409</height>
+    <width>535</width>
+    <height>431</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -62,7 +62,7 @@
    <item row="0" column="0">
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_1">
       <attribute name="title">
@@ -82,7 +82,7 @@
             </property>
            </widget>
           </item>
-          <item row="0" column="1">
+          <item row="1" column="0">
            <widget class="QCheckBox" name="showComponents">
             <property name="text">
              <string>Show Component information </string>
@@ -93,7 +93,7 @@
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QGroupBox" name="systemTray">
+        <widget class="QGroupBox" name="systemTrayGroup">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -101,76 +101,98 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>&amp;Enable system tray icon</string>
+          <string>System tray icon</string>
+         </property>
+         <property name="flat">
+          <bool>false</bool>
          </property>
          <property name="checkable">
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
          <property name="checked">
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="3" column="0">
-           <widget class="QLabel" name="intervalLabel">
+          <item row="0" column="0">
+           <widget class="QCheckBox" name="systemTray">
+            <property name="text">
+             <string>Enable system tray icon</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="hideIfNoUpdate">
             <property name="enabled">
              <bool>false</bool>
-            </property>
-            <property name="styleSheet">
-             <string>padding-left:15px;</string>
             </property>
             <property name="text">
-             <string>Check interval:</string>
+             <string>Hide system tray if there is no update.</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QSpinBox" name="intervalSpin">
+          <item row="2" column="0">
+           <widget class="QCheckBox" name="intervalCheck">
             <property name="enabled">
              <bool>false</bool>
             </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="suffix">
-             <string> min</string>
-            </property>
-            <property name="minimum">
-             <number>1</number>
-            </property>
-            <property name="maximum">
-             <number>10000</number>
-            </property>
-            <property name="value">
-             <number>15</number>
+            <property name="text">
+             <string>Enable &amp;periodic update check</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="2">
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>305</width>
-              <height>24</height>
-             </size>
-            </property>
-           </spacer>
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="intervalLabel">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="styleSheet">
+               <string>padding-left:15px;</string>
+              </property>
+              <property name="text">
+               <string>Check interval :</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSpinBox" name="intervalSpin">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="suffix">
+               <string> min</string>
+              </property>
+              <property name="minimum">
+               <number>1</number>
+              </property>
+              <property name="maximum">
+               <number>10000</number>
+              </property>
+              <property name="value">
+               <number>15</number>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>305</width>
+                <height>24</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
           </item>
-          <item row="4" column="0" colspan="2">
+          <item row="4" column="0">
            <widget class="QCheckBox" name="installUpdates">
             <property name="enabled">
              <bool>false</bool>
@@ -183,20 +205,6 @@
             </property>
            </widget>
           </item>
-          <item row="1" column="0" colspan="3">
-           <widget class="QCheckBox" name="hideIfNoUpdate">
-            <property name="text">
-             <string>Hide system tray if there is no update.</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QCheckBox" name="intervalCheck">
-            <property name="text">
-             <string>Enable &amp;periodic update check</string>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -206,7 +214,7 @@
           <string>Bandwidth limit</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="1" column="2">
+          <item row="1" column="3">
            <spacer name="horizontalSpacer_2">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -219,7 +227,7 @@
             </property>
            </spacer>
           </item>
-          <item row="2" column="1">
+          <item row="2" column="1" colspan="2">
            <spacer name="verticalSpacer_2">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
@@ -232,14 +240,7 @@
             </property>
            </spacer>
           </item>
-          <item row="0" column="0" colspan="3">
-           <widget class="QCheckBox" name="useBandwidthLimit">
-            <property name="text">
-             <string>Use bandwidth limit</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
+          <item row="1" column="2">
            <widget class="QSpinBox" name="bandwidthSpin">
             <property name="enabled">
              <bool>false</bool>
@@ -274,12 +275,9 @@
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QLabel" name="bandwidthLabel">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
+           <widget class="QCheckBox" name="useBandwidthLimit">
             <property name="text">
-             <string>Bandwidth limit:</string>
+             <string>Use bandwidth limit :</string>
             </property>
            </widget>
           </item>
@@ -302,13 +300,16 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>Update check</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="0" column="0" colspan="4">
+          <item row="0" column="0" colspan="3">
            <widget class="QCheckBox" name="useCacheCheck">
             <property name="text">
              <string>&amp;Use hard disk cache for downloaded software</string>
@@ -319,6 +320,9 @@
            <widget class="QLabel" name="useCacheLabel">
             <property name="enabled">
              <bool>false</bool>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">padding-left:15px;</string>
             </property>
             <property name="text">
              <string>Maximum cache size:</string>
@@ -339,8 +343,14 @@
             <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
+            <property name="specialValueText">
+             <string>Un-Limited</string>
+            </property>
+            <property name="accelerated">
+             <bool>true</bool>
+            </property>
             <property name="suffix">
-             <string> Mb</string>
+             <string> Mib</string>
             </property>
             <property name="minimum">
              <number>0</number>
@@ -354,37 +364,14 @@
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLabel" name="useCacheLimitTip">
-            <property name="enabled">
-             <bool>false</bool>
-            </property>
-            <property name="text">
-             <string>(use 0 for no limit)</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>330</width>
-              <height>24</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="1">
-           <spacer name="verticalSpacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
+              <width>206</width>
+              <height>23</height>
              </size>
             </property>
            </spacer>
@@ -401,13 +388,16 @@
           </sizepolicy>
          </property>
          <property name="title">
-          <string>Clear Cache</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
          </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
          <layout class="QGridLayout" name="gridLayout_6">
-          <item row="0" column="0" colspan="2">
+          <item row="0" column="0" colspan="3">
            <widget class="QLabel" name="clearCacheDesc">
             <property name="text">
              <string>Clearing the disk cache will remove all downloaded software. 
@@ -415,14 +405,27 @@ This will not delete installed software or affect your system stability.</string
             </property>
            </widget>
           </item>
-          <item row="1" column="0">
+          <item row="2" column="1">
            <widget class="QPushButton" name="clearCacheButton">
             <property name="text">
              <string>C&amp;lean disk cache now</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
+          <item row="3" column="1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="2" column="0">
            <spacer name="horizontalSpacer">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
@@ -435,15 +438,18 @@ This will not delete installed software or affect your system stability.</string
             </property>
            </spacer>
           </item>
-          <item row="2" column="0">
-           <spacer name="verticalSpacer">
+          <item row="1" column="1">
+           <spacer name="verticalSpacer_5">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>40</height>
+              <height>10</height>
              </size>
             </property>
            </spacer>
@@ -730,7 +736,6 @@ This will not delete installed software or affect your system stability.</string
   <tabstop>tabWidget</tabstop>
   <tabstop>onlyGuiApp</tabstop>
   <tabstop>intervalSpin</tabstop>
-  <tabstop>useBandwidthLimit</tabstop>
   <tabstop>bandwidthSpin</tabstop>
  </tabstops>
  <resources>
@@ -744,8 +749,8 @@ This will not delete installed software or affect your system stability.</string
    <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>586</x>
-     <y>364</y>
+     <x>479</x>
+     <y>403</y>
     </hint>
     <hint type="destinationlabel">
      <x>548</x>
@@ -760,12 +765,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>130</x>
-     <y>138</y>
+     <x>147</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
-     <x>140</x>
-     <y>157</y>
+     <x>336</x>
+     <y>229</y>
     </hint>
    </hints>
   </connection>
@@ -776,12 +781,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>88</x>
-     <y>132</y>
+     <x>105</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
-     <x>96</x>
-     <y>161</y>
+     <x>113</x>
+     <y>229</y>
     </hint>
    </hints>
   </connection>
@@ -808,12 +813,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>111</x>
-     <y>64</y>
+     <x>128</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
-     <x>111</x>
-     <y>64</y>
+     <x>128</x>
+     <y>120</y>
     </hint>
    </hints>
   </connection>
@@ -824,28 +829,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>196</x>
-     <y>280</y>
+     <x>213</x>
+     <y>322</y>
     </hint>
     <hint type="destinationlabel">
-     <x>212</x>
-     <y>310</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>useCacheCheck</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>useCacheLimitTip</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>111</x>
-     <y>64</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>111</x>
-     <y>64</y>
+     <x>225</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>
@@ -856,28 +845,12 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>111</x>
-     <y>64</y>
+     <x>128</x>
+     <y>90</y>
     </hint>
     <hint type="destinationlabel">
-     <x>131</x>
-     <y>64</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>useBandwidthLimit</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>bandwidthLabel</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>91</x>
-     <y>280</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>88</x>
-     <y>310</y>
+     <x>278</x>
+     <y>120</y>
     </hint>
    </hints>
   </connection>
@@ -888,12 +861,76 @@ This will not delete installed software or affect your system stability.</string
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>218</x>
-     <y>136</y>
+     <x>232</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
-     <x>238</x>
-     <y>185</y>
+     <x>255</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>systemTray</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>hideIfNoUpdate</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>79</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>79</x>
+     <y>165</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>systemTray</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>intervalCheck</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>60</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>59</x>
+     <y>193</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>systemTray</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>intervalCheck</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>203</x>
+     <y>145</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>140</x>
+     <y>200</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>systemTray</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>installUpdates</receiver>
+   <slot>setChecked(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>47</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>51</x>
+     <y>241</y>
     </hint>
    </hints>
   </connection>
