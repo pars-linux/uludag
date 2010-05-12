@@ -11,19 +11,20 @@
 # Ahmet AYGÜN <ahmet@zion.gen.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kopete\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-05 01:23+0200\n"
-"PO-Revision-Date: 2009-11-13 17:05+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-12 11:21+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: plugins/pipes/pipesplugin.cpp:303
 #, kde-format
@@ -100,7 +101,7 @@ msgstr "KULLANIM: /media - Mevcut şarkı üzerinde bilgileri gösterir"
 #: plugins/nowlistening/nowlisteningplugin.cpp:171
 msgctxt "Message from Kopete user to another user; used when sending media information even though there are no songs playing or no media players running"
 msgid "Now Listening for Kopete - it would tell you what I am listening to, if I was listening to something on a supported media player."
-msgstr "Kopete için Şimdi Dinlenen - desteklenen bir ortam yürütücüsünde birşeyler dinliyorsam, ne dinlemekte olduğumu söyler."
+msgstr "Kopete için Şimdi Dinlenen - desteklenen bir ortam yürütücüsünde bir şeyler dinliyorsam, ne dinlemekte olduğumu söyler."
 
 #: plugins/nowlistening/nowlisteningplugin.cpp:445
 #: plugins/nowlistening/nlquodlibet.cpp:69
@@ -127,11 +128,11 @@ msgstr "Ortam Bilgisi Gönder"
 
 #: plugins/nowlistening/nowlisteningguiclient.cpp:64
 msgid "None of the supported media players (Amarok, KsCD, JuK, Kaffeine, or Quod Libet) are playing anything."
-msgstr "Desteklenen ortam yürütücülerinizden (Amarok, KsCD, JuK, Kaffeine veya Quod Libet) hiçbiri birşey çalmıyor."
+msgstr "Desteklenen ortam yürütücülerinizden (Amarok, KsCD, JuK, Kaffeine veya Quod Libet) hiçbiri bir şey çalmıyor."
 
 #: plugins/nowlistening/nowlisteningguiclient.cpp:65
 msgid "Nothing to Send"
-msgstr "Hiçbirşey Gönderme"
+msgstr "Hiçbir şey Gönderme"
 
 #: plugins/translator/translatorlanguages.cpp:33
 #: protocols/groupwise/gwprotocol.cpp:66
@@ -142,7 +143,7 @@ msgstr "Hiçbirşey Gönderme"
 #: protocols/oscar/icq/icqstatusmanager.cpp:37
 #: protocols/skype/libskype/skype.cpp:402 libkopete/kopeteonlinestatus.cpp:174
 msgid "Unknown"
-msgstr "Bilnmeyen"
+msgstr "Bilinmeyen"
 
 #: plugins/translator/translatorlanguages.cpp:34
 msgid "English"
@@ -868,7 +869,7 @@ msgstr "Benim var"
 #, kde-format
 msgctxt "@info:label I have..."
 msgid "verified that this is in fact the correct fingerprint for %1"
-msgstr "bunun %1 kişisi için gerçekten doğru parmakizi olduğu onaylandı"
+msgstr "bunun %1 kişisi için gerçekten doğru parmak izi olduğu onaylandı"
 
 #: plugins/otr/authenticationwizard.cpp:308
 msgid "Authentication successful"
@@ -895,7 +896,7 @@ msgstr "Kimlik doğrulama işlemi başarısız oldu"
 #: plugins/otr/authenticationwizard.cpp:326
 #, kde-format
 msgid "The authentication with %1 failed. To make sure you are not talking to an imposter, try again using the manual fingerprint verification method. Note that the conversation is now insecure."
-msgstr "%1 kişisinin onaylanması başarısız oldu. Bir hileci ile konuşmadığınızdan emin olmak için, elle parmakizi doğrulama yöntemini tekrar deneyin. Görüşmenin şu anda güvenli olmadığına dikkat edin."
+msgstr "%1 kişisinin onaylanması başarısız oldu. Bir hileci ile konuşmadığınızdan emin olmak için, elle parmak izi doğrulama yöntemini tekrar deneyin. Görüşmenin şu anda güvenli olmadığına dikkat edin."
 
 #: plugins/otr/authenticationwizard.cpp:344
 msgid "Authentication aborted"
@@ -919,7 +920,7 @@ msgstr "Sadece siz ve %1 kişisi arasında bilinen bir gizli soru seçin. Bu sor
 #: plugins/otr/authenticationwizard.cpp:356
 #, kde-format
 msgid "Verify %1's fingerprint manually. For example via a phone call or signed (and verified) email."
-msgstr "%1 kişisinin parmakizini elle onaylayın. Örneğin bir telefon çağrısı veya işaretli (ve doğrulanmış) bir e-posta gibi."
+msgstr "%1 kişisinin parmak izini elle onaylayın. Örneğin bir telefon çağrısı veya işaretli (ve doğrulanmış) bir e-posta gibi."
 
 #: plugins/otr/authenticationwizard.cpp:373
 msgctxt "@title"
@@ -1093,7 +1094,7 @@ msgstr "İleti şifrelenirken bir hata oluştu."
 #: plugins/otr/otrplugin.cpp:191
 msgctxt "@info:status"
 msgid "Your policy settings do not allow encrypted sessions to this contact."
-msgstr "Kural ayarlarınız bu kişi için şifreli otumurlara izin vermiyor."
+msgstr "Kural ayarlarınız bu kişi için şifreli oturumlara izin vermiyor."
 
 #: plugins/otr/otrplugin.cpp:200
 #, kde-format
@@ -1194,7 +1195,7 @@ msgstr "%1 kişisinden gelen mesaj düştü çünkü bu kişi sizin izinliler li
 #: plugins/privacy/privacyplugin.cpp:170
 #, kde-format
 msgid "A message from %1 was dropped, because this contact is on your blacklist."
-msgstr "%1 kişisinden gelen mesaj düştü çünkü bu kişi sizin karalistenizde bulunuyor."
+msgstr "%1 kişisinden gelen mesaj düştü çünkü bu kişi sizin kara listenizde bulunuyor."
 
 #: plugins/privacy/privacyplugin.cpp:180
 #, kde-format
@@ -1204,7 +1205,7 @@ msgstr "%1 kişisinden gelen mesaj düştü çünkü bu kişi sizin kişi listen
 #: plugins/privacy/privacyplugin.cpp:197
 #, kde-format
 msgid "A message from %1 was dropped, because it contained a blacklisted word."
-msgstr "%1 kişisinden gelen mesaj düştü çünkü mesajda karalisteye alınmış bir kelime geçiyordu."
+msgstr "%1 kişisinden gelen mesaj düştü çünkü mesajda kara listeye alınmış bir kelime geçiyordu."
 
 #: plugins/privacy/privacyplugin.cpp:221
 #, kde-format
@@ -1221,12 +1222,12 @@ msgstr "Yazdığınız ileti LaTeX içermiyor. Bir LaTeX formülü iki çift dol
 
 #: plugins/latex/latexguiclient.cpp:64
 msgid "No LaTeX Formula"
-msgstr "Hiç Latex formülü Yok"
+msgstr "Hiç LaTeX Formülü Yok"
 
 #: plugins/latex/latexguiclient.cpp:70
 #, kde-format
 msgid "<b>Preview of the LaTeX message :</b> <br />%1"
-msgstr "<b>Latex iletinin önizlemesi: </b> <br />%1"
+msgstr "<b>LaTeX iletinin önizlemesi: </b> <br />%1"
 
 #: plugins/latex/latexplugin.cpp:96
 msgid ""
@@ -1235,7 +1236,7 @@ msgid ""
 "Please get the software from www.imagemagick.org or from your distribution's package manager."
 msgstr ""
 "Magick 'dönüştürme' uygulaması bulunamadı.\n"
-"convert Latex formüllerini gösterebilmek için gereklidir.\n"
+"convert LaTeX formüllerini gösterebilmek için gereklidir.\n"
 "Lütfen www.imagemagick.org adresinden veya dağıtımınızın paket yöneticisinden doğru paketi alın."
 
 #: protocols/wlm/ui/wlmaddcontactpage.cpp:57
@@ -1303,7 +1304,7 @@ msgstr "Kaydetmeyi durdu&r"
 
 #: protocols/wlm/wlmchatsession.cpp:286
 msgid "The other contact needs to be online to receive voice clips."
-msgstr "Ses klibini almak için diğer kişinin çevrimiçi olması gerekir."
+msgstr "Ses klibini almak için diğer kişinin çevrim içi olması gerekir."
 
 #: protocols/wlm/wlmchatsession.cpp:298
 msgid "You cannot send voice clips in invisible status"
@@ -1644,13 +1645,13 @@ msgid ""
 "\n"
 "Please relogin and try again."
 msgstr ""
-"%1 kullanıcısına web kamerası bağlantısı sağlanamadı.\n"
+"%1 kullanıcısına ağ kamerası bağlantısı sağlanamadı.\n"
 "\n"
 "Lütfen yeniden giriş yaparak deneyin."
 
 #: protocols/yahoo/libkyahoo/webcamtask.cpp:541
 msgid "An error occurred closing the webcam session. "
-msgstr "Web kamerası oturumu kapatılırken hata oluştu. "
+msgstr "Ağ kamerası oturumu kapatılırken hata oluştu. "
 
 #: protocols/yahoo/libkyahoo/webcamtask.cpp:541
 msgid "You tried to close a connection that did not exist."
@@ -1731,7 +1732,7 @@ msgstr "Davet Et"
 #: protocols/qq/ui/qqwebcamdialog.cpp:33
 #, kde-format
 msgid "Webcam for %1"
-msgstr "%1 için web kamerası"
+msgstr "%1 için ağ kamerası"
 
 #: protocols/yahoo/ui/yahoowebcamdialog.cpp:50
 #: protocols/qq/ui/qqwebcamdialog.cpp:50
@@ -1902,7 +1903,7 @@ msgstr "Özel Ülke"
 
 #: protocols/yahoo/yahooprotocol.cpp:87
 msgid "Private URL"
-msgstr "Özel Web Adresi"
+msgstr "Özel Ağ Adresi"
 
 #: protocols/yahoo/yahooprotocol.cpp:88
 msgid "Corporation"
@@ -1931,7 +1932,7 @@ msgstr "Çalışılan Ülke"
 
 #: protocols/yahoo/yahooprotocol.cpp:95
 msgid "Work URL"
-msgstr "İş Web Adresi"
+msgstr "İş Ağ Adresi"
 
 #. i18n: file: protocols/oscar/icq/ui/icqgeneralinfo.ui:206
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
@@ -1942,7 +1943,7 @@ msgstr "Doğum günü"
 
 #: protocols/yahoo/yahooprotocol.cpp:97
 msgid "Anniversary"
-msgstr "Yıldönümü"
+msgstr "Yıl dönümü"
 
 #: protocols/yahoo/yahooprotocol.cpp:98
 msgid "Notes"
@@ -2199,7 +2200,7 @@ msgstr "%1 sizi web kamerasını görüntülemeye davet etti. Kabul ediyor musun
 #: protocols/yahoo/yahooaccount.cpp:1618
 #, kde-format
 msgid "Webcam for %1 is not available."
-msgstr "%1 için web kamerası kullanılabilir değil."
+msgstr "%1 için ağ kamerası kullanılabilir değil."
 
 #: protocols/yahoo/yahooaccount.cpp:1731
 msgid "An error occurred when trying to change the display picture."
@@ -2246,7 +2247,7 @@ msgstr "Gelişmiş Ara&ma..."
 
 #: protocols/gadu/gadupubdir.cpp:110
 msgid "Gadu-Gadu Public Directory"
-msgstr "Gadu-Gadu Denel Dizini"
+msgstr "Gadu-Gadu Genel Dizini"
 
 #: protocols/gadu/gadupubdir.cpp:119
 msgid "&New Search"
@@ -2359,7 +2360,7 @@ msgstr "Kayıt işlemi başarısız oldu, lütfen tekrar deneyin."
 
 #: protocols/gadu/gadueditcontact.cpp:51 protocols/gadu/gadueditcontact.cpp:72
 msgid "Edit Contact's Properties"
-msgstr "Bağlatının Özelliklerini Düzenle"
+msgstr "Bağlantının Özelliklerini Düzenle"
 
 #. i18n: file: protocols/gadu/ui/gaduawayui.ui:17
 #. i18n: ectx: property (windowTitle), widget (QWidget, GaduAwayUI)
@@ -2462,7 +2463,7 @@ msgstr "Konum Hatası"
 
 #: protocols/gadu/gaducommands.cpp:395
 msgid "Password changing finished prematurely due to a session related problem (try again later)."
-msgstr "Oturumla ilgili bir hatadan dolayı şifre değiştirme tamamlanamdı (lütfen daha sonra tekrar deneyin)."
+msgstr "Oturumla ilgili bir hatadan dolayı şifre değiştirme tamamlanamadı (lütfen daha sonra tekrar deneyin)."
 
 #: protocols/gadu/gaducommands.cpp:402
 msgid "Changed Password"
@@ -2601,7 +2602,7 @@ msgstr "Sunucuya bağlan."
 
 #: protocols/gadu/gadusession.cpp:662
 msgid "Server sent incorrect data. Protocol error."
-msgstr "Sunucu hatalı veri gönderidi. Protokol hatası."
+msgstr "Sunucu hatalı veri gönderildi. Protokol hatası."
 
 #: protocols/gadu/gadusession.cpp:664
 msgid "Problem reading data from server."
@@ -2812,7 +2813,7 @@ msgstr "Ev Adresi"
 
 #: protocols/qq/qqprotocol.cpp:47
 msgid "Zipcode"
-msgstr "Posta kKodu"
+msgstr "Posta kodu"
 
 #: protocols/qq/qqprotocol.cpp:48
 msgid "Age"
@@ -2999,7 +3000,7 @@ msgid ""
 "Connection to localhost failed.\n"
 "Is your samba server running?"
 msgstr ""
-"Localhost konumunaa bağlantı başarısız old.!\n"
+"Localhost konumuna bağlantı başarısız oldu.!\n"
 "Samba sunucunuz çalışıyor mu?"
 
 #: protocols/winpopup/libwinpopup/libwinpopup.cpp:323
@@ -3007,7 +3008,7 @@ msgid ""
 "A message file could not be removed; maybe the permissions are incorrect.\n"
 "Fix this (may require the root password)?"
 msgstr ""
-"xBir mesaj dosyası silinemedi; belki izinler hatalıdır.\n"
+"Bir mesaj dosyası silinemedi; belki izinler hatalıdır.\n"
 "Düzeltilsin mi? (root parolası gerekebilir)"
 
 #: protocols/winpopup/libwinpopup/libwinpopup.cpp:331
@@ -3109,7 +3110,7 @@ msgstr "%1 Ayarları"
 #: protocols/sms/services/smssend.cpp:243
 #, kde-format
 msgid "<qt>SMSSend is a program for sending SMS through gateways on the web. It can be found on <a href=\"%1\">%2</a></qt>"
-msgstr "<qt>SMSSend (SMS gönder) web'deki kapılardan SMS gönderme uygulamasıdır. Bu uygulama <a href=\"%1\">%2</a> adresinde bulunabilir.</qt>"
+msgstr "<qt>SMSSend (SMS gönder) ağdaki kapılardan SMS gönderme uygulamasıdır. Bu uygulama <a href=\"%1\">%2</a> adresinde bulunabilir.</qt>"
 
 #: protocols/sms/services/gsmlib.cpp:448
 #, kde-format
@@ -3221,7 +3222,7 @@ msgstr "Nesne bulunamadı"
 
 #: protocols/groupwise/libgroupwise/gwerror.cpp:68
 msgid "Directory update"
-msgstr "Dizini günecelle"
+msgstr "Dizini güncelle"
 
 #: protocols/groupwise/libgroupwise/gwerror.cpp:71
 msgid "Duplicate folder"
@@ -3229,7 +3230,7 @@ msgstr "Dizini ikile"
 
 #: protocols/groupwise/libgroupwise/gwerror.cpp:74
 msgid "Contact list entry already exists"
-msgstr "Kişi listesi girdisi zatan var"
+msgstr "Kişi listesi girdisi zaten var"
 
 #: protocols/groupwise/libgroupwise/gwerror.cpp:77
 msgid "User not allowed"
@@ -3645,7 +3646,7 @@ msgstr "<qt><p>%1 sunucusunun sertifikası  hesap%2 için onaylanamadı: %3</p><
 
 #: protocols/groupwise/gwaccount.cpp:821
 msgid "GroupWise Connection Certificate Problem"
-msgstr "Groupwise Bağlantısı Sertifika Sorunu"
+msgstr "GroupWise Bağlantısı Sertifika Sorunu"
 
 #: protocols/groupwise/gwaccount.cpp:871
 #, kde-format
@@ -3731,7 +3732,7 @@ msgstr "Uyandırılmış"
 
 #: protocols/jabber/tasks/mood.cpp:91
 msgid "Ashamed"
-msgstr "Mahçup"
+msgstr "Mahcup"
 
 #: protocols/jabber/tasks/mood.cpp:93
 msgid "Bored"
@@ -4452,7 +4453,7 @@ msgid ""
 "The server rejected the registration form.\n"
 "Reason: \"%1\""
 msgstr ""
-"Sunucu kayıt işlemini redetti.\n"
+"Sunucu kayıt işlemini reddetti.\n"
 "Neden: \"%1\""
 
 #: protocols/jabber/ui/jabberchooseserver.cpp:40
@@ -5101,7 +5102,7 @@ msgstr "Hiç uygun yetkilendirme mekanizması yok."
 
 #: protocols/jabber/jabberaccount.cpp:935
 msgid "Bad SASL authentication protocol."
-msgstr "Kötü SASL doğrulama lletişim kuralı."
+msgstr "Kötü SASL yetkilendirme protokolü."
 
 #: protocols/jabber/jabberaccount.cpp:938
 msgid "Server failed mutual authentication."
@@ -5317,11 +5318,11 @@ msgstr "Hatalı İstek"
 
 #: protocols/oscar/liboscar/tasks/filetransfertask.cpp:557
 msgid "Request Timed Out"
-msgstr "İstek Zamanaşımına Uğradı"
+msgstr "İstek Zaman Aşımına Uğradı"
 
 #: protocols/oscar/liboscar/tasks/filetransfertask.cpp:560
 msgid "Acceptance Period Timed Out"
-msgstr "Kabul Etme Süresi Zamanaşımına Uğradı"
+msgstr "Kabul Etme Süresi Zaman Aşımına Uğradı"
 
 #: protocols/oscar/liboscar/tasks/filetransfertask.cpp:563
 msgid "Unknown Error: "
@@ -5334,7 +5335,7 @@ msgstr "kayıp IP ya da port"
 #: protocols/oscar/liboscar/tasks/filetransfertask.cpp:757
 #: protocols/oscar/liboscar/tasks/filetransfertask.cpp:767
 msgid "Timeout"
-msgstr "Zamanaşımı"
+msgstr "Zaman Aşımı"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:514
 #. i18n: ectx: property (text), widget (QLineEdit, mResource)
@@ -5560,7 +5561,7 @@ msgstr "Yetki İster"
 
 #: protocols/oscar/icq/ui/icqsearchdialog.cpp:98
 msgid "You must be online to search the ICQ Whitepages."
-msgstr "ICQ Beyazsayfaları aramak için bağlı olmalısınız."
+msgstr "ICQ Beyaz sayfaları aramak için bağlı olmalısınız."
 
 #: protocols/oscar/icq/ui/icqsearchdialog.cpp:123
 msgid "You must enter a valid UIN."
@@ -5568,7 +5569,7 @@ msgstr "Geçerli bir UIN girmelisiniz."
 
 #: protocols/oscar/icq/ui/icqsearchdialog.cpp:162
 msgid "You must enter search criteria."
-msgstr "<qt>Geçerli bir parola girmelisiniz.</qt>"
+msgstr "Geçerli bir parola girmelisiniz."
 
 #: protocols/oscar/icq/ui/icqsearchdialog.cpp:193
 msgid "You must be online to display user info."
@@ -6323,7 +6324,7 @@ msgstr "Eğlence"
 
 #: protocols/oscar/icq/icqprotocol.cpp:650
 msgid "Consumer Electronics"
-msgstr "Eletronik Ürünler"
+msgstr "Elektronik Ürünler"
 
 #: protocols/oscar/icq/icqprotocol.cpp:651
 msgid "Retail Stores"
@@ -6478,7 +6479,7 @@ msgstr "Hayır Kurumu"
 
 #: protocols/oscar/icq/icqprotocol.cpp:703
 msgid "Club/Social Org."
-msgstr "Klüp/Sosyal Organizasyon"
+msgstr "Kulüp/Sosyal Organizasyon"
 
 #: protocols/oscar/icq/icqprotocol.cpp:704
 msgid "Community Org."
@@ -6967,7 +6968,7 @@ msgstr "Kopete: %1 bağlantısı kesildi"
 
 #: protocols/oscar/oscaraccount.cpp:1056
 msgid "There was an error in the protocol handling; it was not fatal, so you will not be disconnected."
-msgstr "Protokol yönetimindee bir hata oluştu. Önemli bir hata değil, bu yüzdenbağlantınız kesilmeyecek."
+msgstr "Protokol yönetiminde bir hata oluştu. Önemli bir hata değil, bu yüzden bağlantınız kesilmeyecek."
 
 #: protocols/oscar/oscaraccount.cpp:1058
 msgid "There was an error in the protocol handling; automatic reconnection occurring."
@@ -7108,7 +7109,7 @@ msgstr "Skype bu uygulamayı kabul etmedi"
 
 #: protocols/skype/libskype/skypedbus/skypeconnection.cpp:122
 msgid "Skype API syntax error"
-msgstr "Skype API sözdizimi hatası"
+msgstr "Skype API söz dizimi hatası"
 
 #: protocols/skype/libskype/skypedbus/skypeconnection.cpp:131
 msgid "Skype API not ready yet, wait a bit longer"
@@ -7123,7 +7124,7 @@ msgid ""
 "Could not launch Skype.\n"
 "You need to install the original dynamic linked Skype version 2.0 binary from http://www.skype.com"
 msgstr ""
-"Skype'yi çalıştırılamadı.\n"
+"Skype çalıştırılamadı.\n"
 "Orijinal dinamik bağlantılı Skype sürüm 2.0 ikili dosyasını, http://www.skype.com adresinden kurmanız gerekiyor"
 
 #: protocols/skype/libskype/skypedbus/skypeconnection.cpp:215
@@ -7142,9 +7143,9 @@ msgid ""
 "Maybe Skype not running.\n"
 "Error while sending a message to Skype (%1)."
 msgstr ""
-"Skype'ye ping atılamadı.\n"
+"Skype'a ping atılamadı.\n"
 "Skype çalışmıyor olabilir.\n"
-"Skype'ye ileti gönderilirken hata oluştu (%1)."
+"Skype'a ileti gönderilirken hata oluştu (%1)."
 
 #: protocols/skype/libskype/skypedbus/skypeconnection.cpp:264
 #, kde-format
@@ -7156,8 +7157,8 @@ msgid ""
 "Could not ping Skype.\n"
 "You are logged out from Skype, please log in."
 msgstr ""
-"Skype'ye ping atılamadı.\n"
-"Skype'ye bağlı değilsiniz, lütfen bağlanın."
+"Skype'a ping atılamadı.\n"
+"Skype'a bağlı değilsiniz, lütfen bağlanın."
 
 #: protocols/skype/libskype/skypedbus/skypeconnection.cpp:325
 msgid "Please login to Skype first"
@@ -7307,7 +7308,7 @@ msgstr ""
 
 #: protocols/skype/skypeconference.cpp:44
 msgid "Conference Call"
-msgstr "Konferasn Görüşmesi"
+msgstr "Konferans Görüşmesi"
 
 #: protocols/skype/skypedetails.cpp:71
 #, kde-format
@@ -7467,7 +7468,7 @@ msgstr "Kabul edilen boyut beklenen dosya boyutundan büyük"
 #, kde-format
 msgid "There is 1 operator online."
 msgid_plural "There are %1 operators online."
-msgstr[0] "Çevrimiçi durumda %1 yönetici var."
+msgstr[0] "Çevrim içi durumda %1 yönetici var."
 
 #: protocols/irc/libkirc/client/tasks/kirci18ntask.cpp:374
 #, kde-format
@@ -7554,7 +7555,7 @@ msgstr "Parola Hatalı"
 #, kde-format
 msgid "There is one operator online."
 msgid_plural "There are %1 operators online."
-msgstr[0] "Çevrimiçi durumda %1 yönetici var."
+msgstr[0] "Çevrim içi durumda %1 yönetici var."
 
 #: protocols/irc/libkirc/kircengine_numericreplies.cpp:180
 #, kde-format
@@ -7862,7 +7863,7 @@ msgstr "%1 (%2/%3)"
 #: kopete/contactlist/kopeteaddrbookexport.cpp:100
 #: kopete/contactlist/kopeteaddrbookexport.cpp:120
 msgid "<Not Set>"
-msgstr "<Tanınlanmadı>"
+msgstr "<Tanımlı Değil>"
 
 #: kopete/contactlist/kopeteaddrbookexport.cpp:179
 msgid "Export to Address Book"
@@ -8120,11 +8121,11 @@ msgstr "İsim"
 #: kopete/addaccountwizard/addaccountwizard.cpp:77
 msgctxt "1st message shown to users on first run of Kopete. Please keep the formatting."
 msgid "<h2>Welcome to Kopete</h2><p>Which messaging service do you want to connect to?</p>"
-msgstr "<h2>Kopete'ye Hoşgeldiniz</h2><p>Hangi mesajlaşma servisine bağlanmak istiyorsunuz?</p>"
+msgstr "<h2>Kopete'ye Hoş Geldiniz</h2><p>Hangi mesajlaşma servisine bağlanmak istiyorsunuz?</p>"
 
 #: kopete/addaccountwizard/addaccountwizard.cpp:83
 msgid "Step Two: Account Information"
-msgstr "Adım 2: Hesap Bilgisi"
+msgstr "Adım İki: Hesap Bilgisi"
 
 #: kopete/addaccountwizard/addaccountwizard.cpp:89
 msgctxt "2nd message shown to users on first run of Kopete. Please keep the formatting."
@@ -8318,7 +8319,7 @@ msgstr "Kişi Listesi"
 #: kopete/config/appearance/appearanceconfig.cpp:116
 #: kopete/config/chatwindow/chatwindowconfig.cpp:220
 msgid "Colors && Fonts"
-msgstr "Renkler ve Yazıtipleri"
+msgstr "Renkler ve Yazı Tipleri"
 
 #: kopete/config/appearance/appearanceconfig.cpp:124
 msgid "Advanced"
@@ -8417,7 +8418,7 @@ msgid ""
 "Make sure that the archive is a valid ZIP or TAR archive."
 msgstr ""
 "Verilen arşiv dosyası açılamadı.\n"
-"Bu arşivin geçerli  bir ZIP ya da TAR arşivi oldupundan emin olun."
+"Bu arşivin geçerli  bir ZIP ya da TAR arşivi olduğundan emin olun."
 
 #: kopete/config/chatwindow/chatwindowconfig.cpp:413
 msgid "Cannot Open Archive"
@@ -8459,7 +8460,7 @@ msgstr "Bilinmeyen Hata"
 #, kde-format
 msgctxt "@info"
 msgid "The Chat Window Style <resource>%1</resource> was successfully deleted."
-msgstr "Sohbet Penceresi Biçimi <resource>%1</resource> başarılı bir şekilide silindi."
+msgstr "Sohbet Penceresi Biçimi <resource>%1</resource> başarılı bir şekilde silindi."
 
 #: kopete/config/chatwindow/chatwindowconfig.cpp:472
 #, kde-format
@@ -8481,7 +8482,7 @@ msgid ""
 "Make sure that the archive is a valid ZIP or TAR archive."
 msgstr ""
 "<filename>%1</filename> arşiv dosyası açılamadı.\n"
-"Bu arşivin geçerli  bir ZIP ya da TAR arşivi oldğpundan emin olun."
+"Bu arşivin geçerli  bir ZIP ya da TAR arşivi olduğundan emin olun."
 
 #: kopete/config/chatwindow/chatwindowconfig.cpp:515
 #, kde-format
@@ -8595,7 +8596,7 @@ msgstr "הודעות טקסט"
 
 #: kopete/config/chatwindow/chatwindowconfig.cpp:644
 msgid "Bye"
-msgstr "Hoşçakal"
+msgstr "Hoşça kal"
 
 #: kopete/config/chatwindow/chatwindowconfig.cpp:723
 msgid "Configure Emoticon Themes"
@@ -8620,7 +8621,7 @@ msgstr "Farklı kaydet"
 #: kopete/chatwindow/kopeterichtextwidget.cpp:142
 #: kopete/chatwindow/kopetechatwindow.cpp:464
 msgid "Automatic Spell Checking"
-msgstr "Otomatik Sözdizimi Denetimi"
+msgstr "Otomatik Söz Dizimi Denetimi"
 
 #: kopete/chatwindow/kopeterichtextwidget.cpp:151
 msgid "Enable &Rich Text"
@@ -8893,7 +8894,7 @@ msgstr "(0) İleri >>"
 
 #: kopete/chatwindow/kopeteemailwindow.cpp:232
 msgid "&Set Font..."
-msgstr "&Yazıtipi..."
+msgstr "&Yazı Tipi..."
 
 #: kopete/chatwindow/kopeteemailwindow.cpp:236
 msgid "Set Text &Color..."
@@ -9019,7 +9020,7 @@ msgstr "IRC eklentisini sürdüren"
 
 #: kopete/main.cpp:47
 msgid "Lead Developer, Telepathy and Messenger plugin maintainer"
-msgstr "Ana Geliştirici, Telepathy ve MessengerN eklentisini sürdüren"
+msgstr "Ana Geliştirici, Telepathy ve Messenger eklentisini sürdüren"
 
 #: kopete/main.cpp:48
 msgid "Olivier Goffart"
@@ -9035,7 +9036,7 @@ msgstr "Ollivier Lapeyre Johann"
 
 #: kopete/main.cpp:49
 msgid "Artist / Developer, Artwork maintainer"
-msgstr "Sanatçı / Geliştirici, Sanatsal işeri sürdüren"
+msgstr "Sanatçı / Geliştirici, Sanatsal işleri sürdüren"
 
 #: kopete/main.cpp:50
 msgid "Richard Smith"
@@ -9155,7 +9156,7 @@ msgstr "Tom Linsky"
 
 #: kopete/main.cpp:66
 msgid "OscarSocket author"
-msgstr "OscarSoket yazarı"
+msgstr "OscarSocket yazarı"
 
 #: kopete/main.cpp:67
 msgid "Olaf Lueg"
@@ -9212,7 +9213,7 @@ msgstr "Zack Rusin"
 
 #: kopete/main.cpp:75
 msgid "Former developer, original Gadu plugin author"
-msgstr "Biçimlendirici Geliştirici, orjinal Gadu eklentisi yazarı"
+msgstr "Biçimlendirici Geliştirici, orijinal Gadu eklentisi yazarı"
 
 #: kopete/main.cpp:76
 msgid "Richard Stellingwerff"
@@ -9232,7 +9233,7 @@ msgstr "Chris TenHarmsel"
 
 #: kopete/main.cpp:78
 msgid "Former developer, Oscar plugin"
-msgstr "Önceki geliştirici, Jabber eklenti yazarı"
+msgstr "Önceki geliştirici, Oscar eklenti yazarı"
 
 #: kopete/main.cpp:79
 msgid "Hendrik vom Lehn"
@@ -9244,7 +9245,7 @@ msgstr "Gav Wood"
 
 #: kopete/main.cpp:80
 msgid "Former developer and WinPopup maintainer"
-msgstr "Winpopup eklentisi yazarı"
+msgstr "WinPopup eklentisi yazarı"
 
 #: kopete/main.cpp:82 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
@@ -9254,7 +9255,7 @@ msgstr "Serdar Soytetir, H. İbrahim Güngör"
 #: kopete/main.cpp:83 rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, h.ibrahim.gungor@gmail.com"
+msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
 
 #: kopete/main.cpp:88
 msgid "Do not load plugins. This option overrides all other options."
@@ -9584,7 +9585,7 @@ msgid ""
 "This can be because either your internet access went down, the service is experiencing problems, or the service disconnected you because you tried to connect with the same account from another location. Try connecting again later."
 msgstr ""
 "Kopete ile mesajlaşma servisi arasındaki bağlantı koptu.\n"
-"İnternet bağlantınız kesilmiş ya da mesajlaşma servisi bazı sorunlar yaşıyor olabilir. Aynı hesapla başka bi  bilgisayardan bağlanmayı denemek d bağlantının kopmasınanedenp olabilir. Lütfen daha sonra tekrar bağlanmayı deneyin."
+"Internet bağlantınız kesilmiş ya da mesajlaşma servisi bazı sorunlar yaşıyor olabilir. Aynı hesapla başka bir  bilgisayardan bağlanmayı denemek bağlantının kopmasına neden olabilir. Lütfen daha sonra tekrar bağlanmayı deneyin."
 
 #: libkopete/kopeteutils.cpp:49
 msgid "Cannot connect with the instant messaging server or peers."
@@ -9706,7 +9707,7 @@ msgstr "<br /><b>Boşta süresi:</b>&nbsp;<nobr>%1</nobr>"
 #, kde-format
 msgctxt "@label:textbox formatted url"
 msgid "<br /><b>Home Page:</b>&nbsp;<a href=\"%1\"><nobr>%2</nobr></a>"
-msgstr "<br /><b>Web Sayfası:</b>&nbsp;<a href=\"%1\"><nobr>%2</nobr></a>"
+msgstr "<br /><b>Ağ Sayfası:</b>&nbsp;<a href=\"%1\"><nobr>%2</nobr></a>"
 
 #: libkopete/kopetecontact.cpp:648
 #, kde-format
@@ -9750,15 +9751,15 @@ msgstr "Şimdi uzaktayım, fakat geri geleceğim"
 
 #: libkopete/kopetestatusmanager.cpp:285
 msgid "Sorry, I am busy right now"
-msgstr "Üzgünüm, şu anda meşgulum"
+msgstr "Üzgünüm, şu anda meşgulüm"
 
 #: libkopete/kopetestatusmanager.cpp:344
 msgid "Going Online - Kopete"
-msgstr "Çevrimiçi Duruma Geçiliyor - Kopete"
+msgstr "Çevrim içi Duruma Geçiliyor - Kopete"
 
 #: libkopete/kopetestatusmanager.cpp:352
 msgid "Do You Want to Change Status to Available?"
-msgstr "Durumunuzu Çevrimiçi olarak Değiştirmek İstiyor musunuz?"
+msgstr "Durumunuzu Çevrim içi olarak Değiştirmek İstiyor musunuz?"
 
 #: libkopete/kopeteaddedinfoevent.cpp:122
 msgid "You have been added"
@@ -11352,7 +11353,7 @@ msgstr "&Oluştur"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:547
 msgid "Fingerprint:"
-msgstr "Parmakizi:"
+msgstr "Parmak izi:"
 
 #. i18n: file: plugins/otr/otrprefs.ui:78
 #. i18n: ectx: property (text), widget (QLabel, tlFingerprint)
@@ -11454,13 +11455,13 @@ msgstr "İletişim Kuralları"
 #. i18n: ectx: property (text), widget (QPushButton, btVerify)
 #: rc.cpp:598
 msgid "&Verify Fingerprint"
-msgstr "Parmakizini &Doğrula"
+msgstr "Parmak İzini &Doğrula"
 
 #. i18n: file: plugins/otr/otrprefs.ui:242
 #. i18n: ectx: property (text), widget (QPushButton, btForget)
 #: rc.cpp:601
 msgid "F&orget Fingerprint"
-msgstr "Parmakizini &Unut"
+msgstr "Parmak İzini &Unut"
 
 #. i18n: file: plugins/otr/kopete_otr.kcfg:7
 #. i18n: ectx: label, entry (rbAlways), group (Policy)
@@ -11666,7 +11667,7 @@ msgstr "Gönderene göre Filtrele"
 #. i18n: ectx: property (text), widget (QRadioButton, radioOnlyWhiteList)
 #: rc.cpp:736
 msgid "Allow messages only from contacts on the whitelist"
-msgstr "Sadece izin verilen kişiler listesindeki kullanıcılarardan ileti almaya izin ver"
+msgstr "Sadece izin verilen kişiler listesindeki kullanıcılardan ileti almaya izin ver"
 
 #. i18n: file: plugins/privacy/privacydialog.ui:99
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -11684,7 +11685,7 @@ msgstr "Tüm iletilere izin ver"
 #. i18n: ectx: property (text), widget (QRadioButton, radioOnlyContactList)
 #: rc.cpp:754
 msgid "Allow messages only from contacts on my contact list"
-msgstr "Sadece kişi listesindeki kullanıcılarardan ileti almaya izin ver"
+msgstr "Sadece kişi listesindeki kullanıcılardan ileti almaya izin ver"
 
 #. i18n: file: plugins/privacy/privacydialog.ui:142
 #. i18n: ectx: property (text), widget (QRadioButton, radioAllButBlackList)
@@ -11727,7 +11728,7 @@ msgstr "Herkesin size ileti göndermesine izin verin."
 #. Plugin)
 #: rc.cpp:784
 msgid "Allow nobody to send you messages, except the contacts on the whitelist."
-msgstr "Sadece izin verilen kişiler listesindeki kullanıcılarardan ileti almaya izin ver."
+msgstr "Sadece izin verilen kişiler listesindeki kullanıcılardan ileti almaya izin ver."
 
 #. i18n: file: plugins/privacy/privacyconfig.kcfg:19
 #. i18n: ectx: label, entry (Sender_AllowAllButBlackList), group (Privacy
@@ -11808,7 +11809,7 @@ msgid ""
 "The KopeteTeX plugin allows Kopete to render LaTeX formulas in the chat window. The sender must enclose the formula between two pairs of $ signs. ie: $$formula$$\n"
 "This plugin requires that the ImageMagick convert program be installed in order to work."
 msgstr ""
-"KopeTeX eklentisi Kopete'nin sohbet penceresinde LaTeX formüllerini işletebilmesine izin verir. Gönderici formülü iki $ işareti arasına almalıdır. Örn: $$formül$$\n"
+"KopeteTex eklentisi Kopete'nin sohbet penceresinde LaTeX formüllerini işletebilmesine izin verir. Gönderici formülü iki $ işareti arasına almalıdır. Örn: $$formül$$\n"
 "Bu eklentinin çalışabilmesi için ImageMagick dönüştürme programının kurulu olmasını gerekir."
 
 #. i18n: file: plugins/latex/latexprefsbase.ui:31
@@ -12419,7 +12420,7 @@ msgstr "po&rt:"
 #: rc.cpp:977 rc.cpp:980 rc.cpp:986 rc.cpp:989 rc.cpp:2021 rc.cpp:2024
 #: rc.cpp:2027 rc.cpp:2030
 msgid "Only modify these values if you want to use a special IM proxy server, like SIMP"
-msgstr "Bu değerleri sadece SIMP gibi özel bir IM vekil sunucusu kullanmak istediğnizde değiştirin"
+msgstr "Bu değerleri sadece SIMP gibi özel bir IM vekil sunucusu kullanmak istediğinizden değiştirin"
 
 #. i18n: file: protocols/wlm/ui/wlmaccountpreferences.ui:349
 #. i18n: ectx: property (text), widget (KLineEdit, m_serverName)
@@ -12745,7 +12746,7 @@ msgstr "Ekler:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel10_2)
 #: rc.cpp:1118 rc.cpp:3891
 msgid "&Homepage:"
-msgstr "Web &sayfası:"
+msgstr "Ağ &sayfası:"
 
 #. i18n: file: protocols/yahoo/ui/yahoogeneralinfowidget.ui:212
 #. i18n: ectx: property (text), widget (QLabel, textLabel6_2)
@@ -12869,7 +12870,7 @@ msgstr "Soyadı:"
 #. i18n: ectx: property (text), widget (QLabel, birthdayLabel_2)
 #: rc.cpp:1148
 msgid "Anniversary:"
-msgstr "Yıldönümü:"
+msgstr "Yıl dönümü:"
 
 #. i18n: file: protocols/yahoo/ui/yahoogeneralinfowidget.ui:480
 #. i18n: ectx: property (text), widget (QLabel, fullNameLabel_2)
@@ -13111,7 +13112,7 @@ msgstr "Ö&ntanımlı sunucu bilgisinin üzerine yaz"
 #. i18n: ectx: property (toolTip), widget (QLineEdit, editServerAddress)
 #: rc.cpp:1223 rc.cpp:1232
 msgid "The IP address or hostmask of the Yahoo server you wish to connect to."
-msgstr "Bağlanmak istediğiniz ICQ sunucusunun IP adresi ya da bilgisayar adı."
+msgstr "Bağlanmak istediğiniz Yahoo sunucusunun IP adresi ya da bilgisayar adı."
 
 #. i18n: file: protocols/yahoo/ui/yahooeditaccountbase.ui:349
 #. i18n: ectx: property (whatsThis), widget (QLabel, lblServer)
@@ -13414,7 +13415,7 @@ msgstr "Şehir:"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: rc.cpp:1313 rc.cpp:1905 rc.cpp:2996 rc.cpp:4169 rc.cpp:4554
 msgid "Homepage:"
-msgstr "Web sayfası:"
+msgstr "Ağ sayfası:"
 
 #. i18n: file: protocols/yahoo/ui/yahooworkinfowidget.ui:190
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -13741,7 +13742,7 @@ msgid ""
 "So all you need to do is just to type in your description. \n"
 "Choosing Offline status will disconnect you, with given description."
 msgstr ""
-"Bir durum seçin, öntanımlı olarak Çevrimiçi durumu seçili.\n"
+"Bir durum seçin, öntanımlı olarak Çevrim içi durumu seçili.\n"
 "Yapmanız gereken tek şey açıklamanızı yazmak.\n"
 "Bağlı Değil durumunu seçmek, girilen açıklamayla bağlantınızı kapatacak."
 
@@ -13779,7 +13780,7 @@ msgstr "Durumunuzu görünmeze kurun, böylece diğer kullanıcılar sizi görem
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, invisibleButton_)
 #: rc.cpp:1503
 msgid "Set status to invisible, which will hide your presence from other users (who will see you as offline).  However you may still chat, and see the online presence of others."
-msgstr "Durumunuzu görünmeze ayarlayın,, böylece diğer kullanıcılar sizi göreme  sSizibağlı değil zannederler). Yine de sohbet edebilir ve bağlı ola  diğerkullanıcıları görebilirsiniz."
+msgstr "Durumunuzu görünmeze ayarlayın, böylece diğer kullanıcılar sizi göremez. Ancak hala sohbet edebilir ve diğer kişilerin durumunu görebilirsiniz."
 
 #. i18n: file: protocols/gadu/ui/gaduawayui.ui:110
 #. i18n: ectx: property (toolTip), widget (QRadioButton, offlineButton_)
@@ -13851,7 +13852,7 @@ msgstr "Kullanmayı istediğiniz parolayı doğrulayın."
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, valuePasswordVerify)
 #: rc.cpp:1541 rc.cpp:1595
 msgid "A confirmation of the password you would like to use for this account."
-msgstr "Bu hesap için kullanmakı istediğiniz parolayı doğrulayın."
+msgstr "Bu hesap için kullanmak istediğiniz parolayı doğrulayın."
 
 #. i18n: file: protocols/gadu/ui/gaduregisteraccountui.ui:69
 #. i18n: ectx: property (text), widget (QLabel, labelPasswordVerify)
@@ -14646,7 +14647,7 @@ msgstr "Genel QQ Seçenekleri"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
 #: rc.cpp:2039
 msgid "<qt><b>Note:</b> These settings are applicable to all QQ accounts"
-msgstr "<qt><b>Not:</b> Bunlar bütün QQ hasapları için uygulanabilir"
+msgstr "<qt><b>Not:</b> Bunlar bütün QQ hesapları için uygulanabilir"
 
 #. i18n: file: protocols/qq/ui/qqeditaccountui.ui:503
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, NotifyNewChat)
@@ -14672,7 +14673,7 @@ msgstr ""
 "<qt><p>Kopete kişilerin resimlerini indireceği zaman göster</p>\n"
 "<dl><dt>Sadece elle</dt><dd>Resim otomatik olarak indirilmez, sadece kullanıcı isterse indirilir.</dd>\n"
 "<dt>Bir sohbet açık iken</dt><dd>Bir sohbet soketi açıksa resim indirilir, örn: Bir sohbet penceresi açtığınızda</dd>\n"
-"<dt>Otomatik</dt><dd>Eğer bağlantının bir resmi varsa her zaman indirmeyeçalışılır. <bNot:</b> Bu bir soket açacak ve kullancının  resmini indirdiğinizi bilmesini sağlayacaktır.</dd></dl>"
+"<dt>Otomatik</dt><dd>Eğer bağlantının bir resmi varsa her zaman indirmeye çalışır. <Not:</b> Bu bir soket açacak ve kullanıcının  resmini indirdiğinizi bilmesini sağlayacaktır.</dd></dl>"
 
 #. i18n: file: protocols/qq/ui/qqeditaccountui.ui:536
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
@@ -14689,8 +14690,8 @@ msgid ""
 "<dt>When a chat is open</dt><dd>The picture is downloaded when a conversation socket is opened, i.e. when you open a chat window</dd>\n"
 "<dt>Automatically</dt><dd>Always try to download the picture if the contact has one.  <b>Note:</b> this will open a socket, and let the user know you are downloading their picture.</dd></dl>"
 msgstr ""
-"<qt><p>Kopete kişilerinn resimlerini indireceği zaman göster</p>\n"
-"<dl><dt>Sadece elle</dt><dd>Resim otomatik olarak indirilmez, sadece kullanıc isterse indirilir.</dd>\n"
+"<qt><p>Kopete kişilerin resimlerini indireceği zaman göster</p>\n"
+"<dl><dt>Sadece elle</dt><dd>Resim otomatik olarak indirilmez, sadece kullanıcı isterse indirilir.</dd>\n"
 "<dt>Bir sohbet açık iken</dt><dd>Bir sohbet soketi açıksa resim indirilir, örn: Bir sohbet penceresi açtığınızda</dd>\n"
 "<dt>Otomatik</dt><dd>Eğer bağlantının bir resmi varsa her zaman indirmeye çalışılır.<b>Not :</b> Bu bir soket açacak ve kullanıcının resmini indirebilmenizi sağlayacaktır.</dd></dl>"
 
@@ -14800,7 +14801,7 @@ msgstr "&Sambaya Kur"
 #. i18n: ectx: property (text), widget (QLabel, textLabel12)
 #: rc.cpp:2123
 msgid "To receive WinPopup messages sent from other machines, the hostname above must be set to this machine's hostname."
-msgstr "<i> Diğer bilgisayarlardan gönderilen BelirenPencere mesajlarını alabilmek için, yukarıdaki bilgisayar adı bu bilgisayarın adı olarak ayarlanmalıdır.</i>"
+msgstr "Diğer bilgisayarlardan gönderilen BelirenPencere mesajlarını alabilmek için, yukarıdaki bilgisayar adı bu bilgisayarın adı olarak ayarlanmalıdır."
 
 #. i18n: file: protocols/winpopup/ui/wpeditaccountbase.ui:162
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
@@ -15234,7 +15235,7 @@ msgstr "Mesajınızın bir SMS mesajına sığmayacak kadar uzun olduğu durumla
 #. i18n: ectx: property (whatsThis), item, widget (QComboBox)
 #: rc.cpp:2339 rc.cpp:2354
 msgid "What should happen if you type a message that is too long to fit in a single SMS message.  You can either choose to break it up into smaller messages automatically, cancel the message from being sent entirely, or have Kopete prompt you each time you enter a message that is too long."
-msgstr "Mesajınızın bir SMS mesajına sığmayacak kadar uzun olduğu durumlarda ne yapılacağı. Bu mesajların otomatik olarak daha küçük mesajlara bölünmesini, tüm parça olarak gönderilmemesini, ya da Kopete'nin mesajın her uzun olduğu durumda sizi uyarmasını seçebilirisiniz."
+msgstr "Mesajınızın bir SMS mesajına sığmayacak kadar uzun olduğu durumlarda ne yapılacağı. Bu mesajların otomatik olarak daha küçük mesajlara bölünmesini, tüm parça olarak gönderilmemesini, ya da Kopete'nin mesajın her uzun olduğu durumda sizi uyarmasını seçebilirsiniz."
 
 #. i18n: file: protocols/sms/ui/smsactprefs.ui:268
 #. i18n: ectx: property (text), item, widget (QComboBox)
@@ -15320,7 +15321,7 @@ msgstr "1234567890+"
 #. i18n: ectx: property (toolTip), widget (QLineEdit)
 #: rc.cpp:2390 rc.cpp:2405
 msgid "The telephone number of the contact you would like to add."
-msgstr "Eklemek istediğiniz bağlanının telefon numarası."
+msgstr "Eklemek istediğiniz bağlantının telefon numarası."
 
 #. i18n: file: protocols/sms/ui/smsadd.ui:63
 #. i18n: ectx: property (whatsThis), widget (QLabel)
@@ -15332,7 +15333,7 @@ msgstr "Eklemek istediğiniz bağlanının telefon numarası."
 #. i18n: ectx: property (whatsThis), widget (QLineEdit)
 #: rc.cpp:2393 rc.cpp:2408
 msgid "The telephone number of the contact you would like to add.  This should be a number with SMS service available."
-msgstr "Eklemek istediğiniz bağlanının telefon numarası. Bu numara, SMS servisinin mevcut olduğu bir numara olmalıdır."
+msgstr "Eklemek istediğiniz bağlantının telefon numarası. Bu numara, SMS servisinin mevcut olduğu bir numara olmalıdır."
 
 #. i18n: file: protocols/sms/ui/smsadd.ui:71
 #. i18n: ectx: property (text), widget (QLabel)
@@ -15380,7 +15381,7 @@ msgstr "&Tazele"
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:2438
 msgid "Users who can see my online status and send me messages:"
-msgstr "Bağlantı durumumu görebiliren ve bana ileti gönderebilen kullanıcılar:"
+msgstr "Bağlantı durumumu görebilen ve bana ileti gönderebilen kullanıcılar:"
 
 #. i18n: file: protocols/groupwise/ui/gwprivacy.ui:75
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -16923,7 +16924,7 @@ msgstr "Her zaman uyarıları &gönder"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, cbSendDeliveredEvent)
 #: rc.cpp:3349
 msgid "<qt>Check this box to send the <b>Delivered notification</b> to your contacts : when a message is delivered to Kopete, Kopete can notify your contact that it has received the message.</qt>"
-msgstr "<qt>Kişilere <b>İletildi bildirimleriniı</b> göndermek için bu kutuyu işaretleyin :Kopete'ye bir ileti ulaştığında, Kopete iletiyi gönderen kişiyi iletinin alındığı konusunda bilgilendirebilir.</qt>"
+msgstr "<qt>Kişilere <b>İletildi bildirimlerini</b> göndermek için bu kutuyu işaretleyin :Kopete'ye bir ileti ulaştığında, Kopete iletiyi gönderen kişiyi iletinin alındığı konusunda bilgilendirebilir.</qt>"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:1009
 #. i18n: ectx: property (text), widget (QCheckBox, cbSendDeliveredEvent)
@@ -16953,7 +16954,7 @@ msgstr "<qt>Kişilere <b>İleti yazılıyor bildirimlerini</b> göndermek için 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSendComposingEvent)
 #: rc.cpp:3364
 msgid "Always send &typing notifications"
-msgstr "Her zaman yazma uyarılırını gönder"
+msgstr "Her zaman yazma uyarılarını gönder"
 
 #. i18n: file: protocols/jabber/ui/dlgjabbereditaccountwidget.ui:1051
 #. i18n: ectx: property (text), widget (QCheckBox, cbSendGoneEvent)
@@ -17008,7 +17009,7 @@ msgstr "Jabber-Hesabına Kayıt Ol"
 #. i18n: ectx: property (text), widget (QLabel, lblJID)
 #: rc.cpp:3412
 msgid "Desired Jabber &ID:"
-msgstr "İstenenJabber K&imliği:"
+msgstr "İstenen Jabber K&imliği:"
 
 #. i18n: file: protocols/jabber/ui/dlgjabberregisteraccount.ui:93
 #. i18n: ectx: property (text), widget (KPushButton, btnChooseServer)
@@ -18033,7 +18034,7 @@ msgstr "&IP adresini gizle"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkWebAware)
 #: rc.cpp:4043
 msgid "Check this box to enable Web Aware functionality."
-msgstr "Bu kutuyu işaretlerseniz kullanıcılar bir web sitesinden bağlantı durumunuzu öğrenebilirler (Web Aware functionality)."
+msgstr "Bu kutuyu işaretlerseniz kullanıcılar bir ağ sitesinden bağlantı durumunuzu öğrenebilirler (Web Aware functionality)."
 
 #. i18n: file: protocols/oscar/icq/ui/icqeditaccountui.ui:484
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, chkWebAware)
@@ -18406,7 +18407,7 @@ msgstr "&Bağlantı"
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, groupBox3_2)
 #: rc.cpp:4385
 msgid "Each application that wants to use Skype must provide its name to it, and the user is asked whether to allow said application to access Skype.<br>By default, kopete provides kopete as its name, but if you suspect another application is accessing Skype with this name, you can change the name Kopete uses here, and then within Skype disallow applications that refer to themselves as kopete."
-msgstr "Skype'yi kullanmak isteyen her uygulama, ona bir isim atamalıdır, ve kullanıcının Skype'Ye erişmek için belirtilen uygulamalara izin verip vermeyeceği sorulmaktadır.<br>Varsayılan ayar olarak, Kopete, kopete ismini atar, ancak başka bir uygulamanın Skype'ye bu isimle eriştiğinden kuşku duyuyorsanız, burada Kopete'nin kullandığı ismi değiştirebilirsiniz ve sonra kendilerini kopete olarak tanıtan uygulamaları Skype içinden kapatabilirsiniz."
+msgstr "Skype'ı kullanmak isteyen her uygulama, ona bir isim atamalıdır, ve kullanıcının Skype'a erişmek için belirtilen uygulamalara izin verip vermeyeceği sorulmaktadır.<br>Varsayılan ayar olarak, Kopete, kopete ismini atar, ancak başka bir uygulamanın Skypeıe bu isimle eriştiğinden kuşku duyuyorsanız, burada Kopete'nin kullandığı ismi değiştirebilirsiniz ve sonra kendilerini kopete olarak tanıtan uygulamaları Skype içinden kapatabilirsiniz."
 
 #. i18n: file: protocols/skype/ui/skypeeditaccountbase.ui:325
 #. i18n: ectx: property (text), widget (QCheckBox, AuthorCheck)
@@ -18526,13 +18527,13 @@ msgstr "Bu seçenek, arama bittiğinde arama kontrol penceresini otomatik olarak
 #. i18n: ectx: property (text), widget (QCheckBox, AutoCloseCallCheck)
 #: rc.cpp:4451
 msgid "Autoc&lose"
-msgstr "Otomatik&kapat"
+msgstr "Otomatik &kapat"
 
 #. i18n: file: protocols/skype/ui/skypeeditaccountbase.ui:544
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
 #: rc.cpp:4454
 msgid "Timeout:"
-msgstr "Zamanaşımı:"
+msgstr "Zaman Aşımı:"
 
 #. i18n: file: protocols/skype/ui/skypeeditaccountbase.ui:607
 #. i18n: ectx: property (toolTip), widget (QCheckBox, PingsCheck)
@@ -19444,7 +19445,7 @@ msgstr ""
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:'Sans Serif'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">Bonjour protokolü, kişi eklemenize izin vermez. </p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">Kişiler çevrimiçi olduklarında gözükecektir.</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">Kişiler çevrim içi olduklarında gözükecektir.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">Bir kişi görmeyi bekliyorsanız, ancak gözükmüyor iseler</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">1) Yerel mDNS sunucusu olan avahi-daemon'un düzgün çalıştığını kontrol ediniz.</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:9pt;\">2) konsole'den aşağıdaki komutu çalıştırın ve kişiyi görüp görmediğinize bakın:\"<span style=\" font-style:italic;\">avahi-browse _presence._tcp -t\"</span> </p>\n"
@@ -19695,7 +19696,7 @@ msgid ""
 "<h2>Welcome to the Add Account Wizard</h2>\n"
 "<p>Select the messaging service from the list below.</p>"
 msgstr ""
-"<h2>Hesap Oluşturma Sihirbazına Hoşgeldiniz</h2>\n"
+"<h2>Hesap Oluşturma Sihirbazına Hoş Geldiniz</h2>\n"
 "<p>Aşağıdaki listeden istediğiniz bir mesajlaşma servisini seçin.</p>"
 
 #. i18n: file: kopete/addaccountwizard/addaccountwizardpage2.ui:44
@@ -19862,7 +19863,7 @@ msgid ""
 "\n"
 "The priority is used to determine which contact to use when you click on a metacontact: Kopete will use the contact of the account with the greatest priority (if all contacts have the same online status)."
 msgstr ""
-"Hesapların önceliğinideğiştirmek için sürükle bırak özelliğini kullanın, üstteki hesaplar en yüksek önceliğe sahiptir.\n"
+"Hesapların önceliğini değiştirmek için sürükle bırak özelliğini kullanın, üstteki hesaplar en yüksek önceliğe sahiptir.\n"
 "\n"
 "Öncelik, bir üst bağlantıya tıklandığında hesabın hangi bağlantısının kullanılacağını belirler: Kopete, hesabın en yüksek önceliğe sahip bağlantısını kullanacaktır ( eğer bütün kişiler bağlıysalar)."
 
@@ -20026,7 +20027,7 @@ msgstr "Ö&ntanımlı Olarak Ayarla"
 #. i18n: ectx: property (whatsThis), widget (QToolButton, tbDown)
 #: rc.cpp:5350
 msgid "Use this arrow to reorder the items in the list."
-msgstr "Listedeki öğeleri sıralamak için bu oku kullanın."
+msgstr "Listedeki ögeleri sıralamak için bu oku kullanın."
 
 #. i18n: file: kopete/config/appearance/tooltipeditwidget.ui:69
 #. i18n: ectx: property (text), widget (QToolButton, tbDown)
@@ -20081,13 +20082,13 @@ msgstr "Özel &Yazı Tipleri"
 #. i18n: ectx: property (text), widget (QLabel, mNormalFontLabel)
 #: rc.cpp:5377
 msgid "Base font:"
-msgstr "Temel yazıtipi:"
+msgstr "Temel yazı tipi:"
 
 #. i18n: file: kopete/config/appearance/appearanceconfig_colors.ui:58
 #. i18n: ectx: property (text), widget (QLabel, mSmallFontLabel)
 #: rc.cpp:5380
 msgid "Small font:"
-msgstr "Küçük yazıtipi:"
+msgstr "Küçük yazı tipi:"
 
 #. i18n: file: kopete/config/appearance/appearanceconfig_colors.ui:90
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_greyIdleMetaContacts)
@@ -20189,7 +20190,7 @@ msgstr "imleç pencereden ayrıldıktan sonra"
 #. kcfg_contactListResizeAnchor)
 #: rc.cpp:5429
 msgid "&Automatically resize contact list window to fit number of contacts onscreen"
-msgstr "Ekrandaki kişi listesinin sığabilmesi için kişi lsitesi penceresini &otomatik olarak yeniden boyutlandır"
+msgstr "Ekrandaki kişi listesinin sığabilmesi için kişi listesi penceresini &otomatik olarak yeniden boyutlandır"
 
 #. i18n: file: kopete/config/appearance/appearanceconfig_advanced.ui:186
 #. i18n: ectx: property (text), widget (QRadioButton, top)
@@ -20380,7 +20381,7 @@ msgstr "Yen bir ileti geldiğinde sistem çekmecesi simgesini canlandır"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_trayflashNotify)
 #: rc.cpp:5543
 msgid "Animate the system tray icon whenever a message comes in."
-msgstr "Her yeni ileti gelidğinde sistem çekmecesi simgesini  canlandır."
+msgstr "Her yeni ileti geldiğinde sistem çekmecesi simgesini  canlandır."
 
 #. i18n: file: kopete/config/behavior/behaviorconfig_events.ui:32
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_trayflashNotify)
@@ -20709,7 +20710,7 @@ msgstr "Başlangıç durumunu ayarla"
 #. i18n: ectx: property (whatsThis), widget (QComboBox, kcfg_initialStatus)
 #: rc.cpp:5691
 msgid "When starting Kopete, and whenever your computer is online, all your accounts will go into the status selected here. You can exclude accounts individually in their properties."
-msgstr "Kopete'yi başlattığınızda ve bilgisayarınız çevrimiçi ise, bütün hesaplarınız burada seçilen durumu alacaktır. Hesapları teker teker, özellikleri içinden hariç tutabilirsiniz."
+msgstr "Kopete'yi başlattığınızda ve bilgisayarınız çevrim içi ise, bütün hesaplarınız burada seçilen durumu alacaktır. Hesapları teker teker, özellikleri içinden hariç tutabilirsiniz."
 
 #. i18n: file: kopete/config/behavior/behaviorconfig_chat.ui:20
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_showEvents)
@@ -20835,13 +20836,13 @@ msgstr "Kategori:"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: rc.cpp:5781
 msgid "Online Status Menu"
-msgstr "Çevrimiçi Durum Menüsü"
+msgstr "Çevrim İçi Durum Menüsü"
 
 #. i18n: file: kopete/config/status/statusconfig_general.ui:23
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:5784
 msgid "Protocol's online status menu:"
-msgstr "Protokolün çevrimiçi durum menüsü:"
+msgstr "Protokolün çevrim içi durum menüsü:"
 
 #. i18n: file: kopete/config/status/statusconfig_general.ui:31
 #. i18n: ectx: property (text), item, widget (QComboBox,
@@ -20974,7 +20975,7 @@ msgstr "Doygunluk:"
 #. i18n: ectx: property (text), widget (QLabel, whitenessLabel)
 #: rc.cpp:5853
 msgid "Whiteness:"
-msgstr "Bayazlık:"
+msgstr "Beyazlık:"
 
 #. i18n: file: kopete/config/avdevice/avdeviceconfig_videodevice.ui:425
 #. i18n: ectx: property (text), widget (QLabel, hueLabel)
@@ -21042,7 +21043,7 @@ msgstr "Biçim değişkeni:"
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnGetStyles)
 #: rc.cpp:5886
 msgid "Get new Chat Window styles over the Internet"
-msgstr "İnternetten Sohbet Penceresi stillerini indir"
+msgstr "Internet'ten Sohbet Penceresi stillerini indir"
 
 #. i18n: file: kopete/config/chatwindow/chatwindowconfig_style.ui:127
 #. i18n: ectx: property (text), widget (KPushButton, btnGetStyles)
@@ -21711,7 +21712,7 @@ msgstr "Kişileri grubuna göre gruplandır."
 #. i18n: ectx: label, entry, group (ContactList)
 #: rc.cpp:6296
 msgid "Use custom fonts for contact list."
-msgstr "Kişi listesindeki öğeler için özel yazı tipi kullan."
+msgstr "Kişi listesindeki ögeleri için özel yazı tipi kullan."
 
 #. i18n: file: libkopete/kopeteappearancesettings.kcfg:174
 #. i18n: ectx: label, entry, group (ContactList)
@@ -21777,7 +21778,7 @@ msgstr "Kişi listesindeki dikey kaydırma çubuğunu bir süre sonra otomatik o
 #. i18n: ectx: label, entry, group (ContactList)
 #: rc.cpp:6329
 msgid "Auto-hide timeout"
-msgstr "Otomatik gizleme zamanaşımı"
+msgstr "Otomatik gizleme zaman aşımı"
 
 #. i18n: file: libkopete/kopeteappearancesettings.kcfg:244
 #. i18n: ectx: label, entry, group (ContactList)
