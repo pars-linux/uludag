@@ -75,8 +75,8 @@
 
 * KDE (Gökçen Eraslan)
     * Qt/KDE -DNDEBUG/disable-debug, enable-final ile derlenmesinin sağlanması (X)
+    * tulliana2'nin fallback simge seti yapılması (X)
     * Managerların üzerinden geçilmesi (/50) [Bahadır Kandemir]
-    * tulliana2'nin fallback simge seti yapılması (-)
 
 * KDE (Renan Çakırerk)
     * Kaptan'ın gözden geçirilmesi (/80)
@@ -133,7 +133,7 @@
     * pcscd/openct sorunu (+)
     * yeni pulseaudio'a geçilip, HAL bağımlılığının atılması, mandriva yamalarının alınması (+)
     * OpenVPN için COMAR servisi yazılması (+)
-    * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (/84)
+    * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (+)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/80)
     * NetworkManager ailesinin entegrasyonu (/75)
     * NTP paketinin elden geçirilmesi (/75)
@@ -142,11 +142,11 @@
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (+)
+    * user-manager uygulaması + pypolkit + baselayout usermanager bacağı (/80)
+    * pypolkit'in yeni polkit'e geçirilmesi (+)
 
 * PolKit (Gökçen Eraslan)
     * PolicyKit-kde'nin polkit-1'e geçirilmesi (veya polkit-gnome) (+)
-    * user-manager uygulaması + pypolkit + baselayout usermanager bacağı (-)
-    * pypolkit obsolete mi edilecek, yenisine mi port edilecek? (-)
 
 * Evolution harekatı (H. İbrahim Güngör)
     * Temel paketlerin hazırlanması (+)
