@@ -102,7 +102,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
                 item = QtGui.QListWidgetItem(self.ui.listStyles)
                 widget = StyleItemWidget(unicode(styleName), unicode(styleDesc), styleThumb, self.ui.listStyles)
                 self.ui.listStyles.setItemWidget(item, widget)
-                item.setSizeHint(QSize(38,110))
+                item.setSizeHint(QSize(120,170))
                 item.setStatusTip(styleName)
             except:
                 print "Warning! Invalid syntax in ", desktopFiles

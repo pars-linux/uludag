@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>468</height>
+    <width>805</width>
+    <height>524</height>
    </rect>
   </property>
   <property name="font">
@@ -20,75 +20,20 @@
    <string>Themes</string>
   </property>
   <property name="styleSheet">
-   <string>color: rgb(234, 225, 228);</string>
+   <string notr="true">QListWidget{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
+border: 1px solid rgb(236, 236, 236, 80);
+color: rgb(234, 225, 228);
+}</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="1">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>18</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="1" colspan="2">
+   <property name="margin">
+    <number>20</number>
+   </property>
+   <item row="0" column="0" colspan="2">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QLabel" name="label">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>URW Gothic L</family>
-         <pointsize>25</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>color: rgb(234, 225, 228);</string>
-       </property>
-       <property name="text">
-        <string>Customize Your Desktop</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_5">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>30</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMouseDesc">
+      <widget class="QLabel" name="description">
        <property name="minimumSize">
         <size>
          <width>300</width>
@@ -97,14 +42,14 @@
        </property>
        <property name="font">
         <font>
-         <family>URW Gothic L</family>
-         <pointsize>11</pointsize>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(234, 225, 228);</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes.</string>
@@ -132,6 +77,9 @@
      </item>
      <item>
       <widget class="QListWidget" name="listStyles">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="minimumSize">
         <size>
          <width>0</width>
@@ -141,19 +89,66 @@
        <property name="font">
         <font>
          <family>URW Gothic L</family>
-         <pointsize>11</pointsize>
+         <pointsize>8</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string>#listStyles{
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
+        <string notr="true">#listStyles{padding:10px;}
 
-border: 1px solid rgb(236, 236, 236, 80);
+ QListWidget::item{
+height: 170px
 
-color: rgb(234, 225, 228);
-}</string>
+}
+
+ QListWidget::item:selected {
+     border: 1px solid #6a6ea9;
+ }
+
+ QListWidget::item:selected:!active {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #ABAFE5, stop: 1 #8588B2);
+ }</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="verticalScrollBarPolicy">
+        <enum>Qt::ScrollBarAlwaysOn</enum>
+       </property>
+       <property name="movement">
+        <enum>QListView::Static</enum>
+       </property>
+       <property name="isWrapping" stdset="0">
+        <bool>true</bool>
+       </property>
+       <property name="resizeMode">
+        <enum>QListView::Adjust</enum>
+       </property>
+       <property name="layoutMode">
+        <enum>QListView::Batched</enum>
+       </property>
+       <property name="spacing">
+        <number>170</number>
+       </property>
+       <property name="gridSize">
+        <size>
+         <width>130</width>
+         <height>170</height>
+        </size>
+       </property>
+       <property name="viewMode">
+        <enum>QListView::IconMode</enum>
+       </property>
+       <property name="uniformItemSizes">
+        <bool>true</bool>
+       </property>
+       <property name="batchSize">
+        <number>170</number>
+       </property>
+       <property name="selectionRectVisible">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -181,14 +176,14 @@ color: rgb(234, 225, 228);
           <widget class="QLabel" name="labelDesktopType">
            <property name="font">
             <font>
-             <family>URW Gothic L</family>
+             <family>Sans Serif</family>
              <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">color: rgb(234, 225, 228);</string>
            </property>
            <property name="text">
             <string>Desktop Type</string>
@@ -199,7 +194,7 @@ color: rgb(234, 225, 228);
           <widget class="QComboBox" name="comboBoxDesktopType">
            <property name="font">
             <font>
-             <family>URW Gothic L</family>
+             <family>Sans Serif</family>
              <pointsize>10</pointsize>
             </font>
            </property>
@@ -242,14 +237,14 @@ color: rgb(234, 225, 228);
           <widget class="QLabel" name="labelDesktopNumbers">
            <property name="font">
             <font>
-             <family>URW Gothic L</family>
+             <family>Sans Serif</family>
              <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
            </property>
            <property name="styleSheet">
-            <string notr="true"/>
+            <string notr="true">color: rgb(234, 225, 228);</string>
            </property>
            <property name="text">
             <string>Number of Desktops</string>
@@ -260,7 +255,7 @@ color: rgb(234, 225, 228);
           <widget class="QSpinBox" name="spinBoxDesktopNumbers">
            <property name="font">
             <font>
-             <family>URW Gothic L</family>
+             <family>Sans Serif</family>
              <pointsize>10</pointsize>
             </font>
            </property>
@@ -286,54 +281,6 @@ color: rgb(234, 225, 228);
       <layout class="QHBoxLayout" name="horizontalLayout_2"/>
      </item>
     </layout>
-   </item>
-   <item row="2" column="2">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>17</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="0">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>30</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="3">
-    <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
    </item>
   </layout>
  </widget>

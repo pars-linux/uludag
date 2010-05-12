@@ -4,6 +4,7 @@
 import sys
 from PyQt4 import QtCore, QtGui
 from PyKDE4 import kdeui
+from PyQt4.QtCore import QTimeLine
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
 import gui, subprocess, os, dbus
@@ -61,6 +62,8 @@ class Kaptan(QtGui.QWidget):
         self.moveInc = 1
         self.menuText = ""
         self.config = KConfig("kaptanrc")
+        self.titles = []
+        self.descriptions = []
 
         # Add screens to StackWidget
         self.createWidgets(self.screens)
@@ -130,20 +133,6 @@ class Kaptan(QtGui.QWidget):
         if id:
             self.stackMove(id)
 
-    def getNextWidgetDesc(self, id):
-        self.ui.mainStack.setCurrentIndex(id+1)
-        print dir(self.ui.mainStack)
-        desc = self.ui.mainStack.currentWidget().desc.toString()
-        self.ui.mainStack.setCurrentIndex(id)
-        return desc
-
-    def getPreviousWidgetDesc(self, id):
-        self.ui.mainStack.setCurrentIndex(id-1)
-        print dir(self.ui.mainStack)
-        desc = self.ui.mainStack.currentWidget().desc.toString()
-        self.ui.mainStack.setCurrentIndex(id)
-        return desc
-
     # execute next step
     def slotNext(self,dryRun=False):
         self.menuText = ""
@@ -156,7 +145,7 @@ class Kaptan(QtGui.QWidget):
                     self.menuText += self.putBold(self.screenId[i])
 
                     # Set screen title
-                    self.ui.screenTitle.setText(self.getNextWidgetDesc(i))
+                    #self.ui.screenTitle.setText(self.descriptions[i])
                 else:
                     self.menuText += self.putBr(self.screenId[i])
 
@@ -176,19 +165,14 @@ class Kaptan(QtGui.QWidget):
             i = self.screenId.index(each)
             if i <= len(self.screenId) and not i == 0:
                 if i == curIndex:
-                    self.menuText += self.putBold(self.screenId[i -1])
-
-                    # Set screen title
-                    self.ui.screenTitle.setText(self.getPreviousWidgetDesc(i))
+                    self.menuText += self.putBold(self.screenId[i - 1])
                 else:
-                    self.menuText += self.putBr(self.screenId[i -1])
+                    self.menuText += self.putBr(self.screenId[i - 1])
 
         self.menuText += self.putBr(self.screenId[-1])
         self.ui.labelMenu.setText(self.menuText)
 
         _w = self.ui.mainStack.currentWidget()
-        # Set screen title
-        self.ui.screenTitle.setText(_w.desc.toString())
 
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
@@ -198,13 +182,17 @@ class Kaptan(QtGui.QWidget):
         return unicode("  ") + item + " "#"<br>"
 
     def putBold(self, item):
-        return "<b>" + unicode("  ") + item + " </b>"# "</b><br>"
+        return "<b style='font-size:13pt'>" + unicode("  ") + item + " </b>"# "</b><br>"
 
 
     # move to id numbered stack
     def stackMove(self, id):
         if not id == self.ui.mainStack.currentIndex() or id==0:
             self.ui.mainStack.setCurrentIndex(id)
+
+            # Set screen title
+            self.ui.screenTitle.setText(self.descriptions[id])
+
             _w = self.ui.mainStack.currentWidget()
             _w.update()
             _w.shown()
@@ -226,6 +214,11 @@ class Kaptan(QtGui.QWidget):
         self.ui.mainStack.removeWidget(self.ui.page)
         for screen in screens:
             _scr = screen.Widget()
+
+            # Append screen descriptions to list
+            self.descriptions.append(_scr.desc.toString())
+
+            # Append screens to stack widget
             self.ui.mainStack.addWidget(_scr)
 
         self.stackMove(0)

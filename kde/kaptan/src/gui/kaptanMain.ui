@@ -58,6 +58,9 @@
 	background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(61, 22, 34, 255), stop:1 rgba(175, 111, 130, 255));
 }
 
+#description {
+	color:rgb(234, 225, 228);
+}
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout_4">
@@ -226,10 +229,14 @@ border-bottom: 1px solid rgba(0,0,0,10)</string>
            </sizepolicy>
           </property>
           <property name="styleSheet">
-           <string notr="true">QStackedWidget#mainStack{background-color:rgba(255, 255, 255,0);
+           <string notr="true">QStackedWidget#mainStack{
+/*background-color:rgba(255, 255, 255,0);*/
 margin: 0px;
 border-radius: 0px;
 color: white;
+}
+QLineEdit {
+border: 1px solid gray;
 }</string>
           </property>
           <property name="frameShape">
@@ -431,8 +438,8 @@ QPushButton:flat:pressed{
        <widget class="QLabel" name="labelMenu">
         <property name="font">
          <font>
-          <family>URW Gothic L</family>
-          <pointsize>11</pointsize>
+          <family>Sans Serif</family>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="autoFillBackground">
@@ -451,7 +458,7 @@ padding: 10px;
          <string/>
         </property>
         <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+         <set>Qt::AlignHCenter|Qt::AlignTop</set>
         </property>
         <property name="wordWrap">
          <bool>true</bool>
