@@ -36,32 +36,31 @@ Süreç:
         #. Diğer özgür yazılım projelerinde yapmış olduğu yazılım katkılarının (patch, hata çözme, paket yapımı, uygulama geliştirme) bilgilerini ve bağlantılarını vermelidir.
 #. Başvuru sahibi başvuru sırasında sorulan soruları özensiz bir şekilde cevaplamış ise hatası "GEÇERSİZ" olarak işaretlenir.
 
-::
+    ::
 
-    Başvuru red stok yorum:
-        Başvurunuz olumsuz sonuçlanmıştır. Pardus'a katkı vermeye başladığınız ve kendinizi geliştirdiğiniz takdirde yaklaşık x ay sonra tekrar başvuruda bulunabilirsiniz.
-        --
-        Pardus Mentor Ekibi
+        Başvuru red stok yorum:
+            Başvurunuz olumsuz sonuçlanmıştır. Pardus'a katkı vermeye başladığınız ve kendinizi geliştirdiğiniz takdirde yaklaşık x ay sonra tekrar başvuruda bulunabilirsiniz.
+            --
+            Pardus Mentor Ekibi
 
 #. Başvuru sahibine ilgili quiz sorularının gönderilmesi:
     #. Başvuru sahibine quiz soruları gönderilirken hatası mentor listesinde bulunan kişiler ve başvuru sahibi hariç tüm kullanıcılara görünmez hale getirilir.
 
-::
+    ::
 
-    Quiz sorusu stok yorum:
-        Merhabalar,
-        Öncelikle x üyesi adaylığınızı kutlar ve Pardus'a katkıda bulunmak istediğiniz için teşekkür ederiz.
-        x ekibi üyeliği sürecinin ilk aşaması olan ve Pardus Linux Dağıtımı alt yapısı ve x süreçleri ile ilgili bilgilendirici nitelikte sorulara sahip olan sınavımızı ekte bulabilirsiniz.
+        Quiz sorusu stok yorum:
+            Merhabalar,
+            Öncelikle x üyesi adaylığınızı kutlar ve Pardus'a katkıda bulunmak istediğiniz için teşekkür ederiz.
+            x ekibi üyeliği sürecinin ilk aşaması olan ve Pardus Linux Dağıtımı alt yapısı ve x süreçleri ile ilgili bilgilendirici nitelikte sorulara sahip olan sınavımızı ekte bulabilirsiniz.
 
-        Kaynaklar,
-        x
-        y
-        z
+            Kaynaklar,
+            x
+            y
+            z
 
-        Kolay Gelsin,
-        --
-        Pardus Mentor Ekibi
-
+            Kolay Gelsin,
+            --
+            Pardus Mentor Ekibi
 
 #. Başvuru sahibi soruları çözmeye başladıklarına dair onayı buzilla'ya yorum olarak gönderirler.
 #. Onaydan yaklaşık 10 gün sonra başvuru sahibi cevaplarını bugzilla'ya yorum olarak gönderirler.
