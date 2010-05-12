@@ -5,18 +5,19 @@
 # Rıdvan CAN <ridvancan@linux-sevenler.org>, 2004.
 # Adem Alp YILDIZ <ademalp@kde.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_krfb\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2008-08-25 09:07+0200\n"
-"PO-Revision-Date: 2008-02-20 03:10+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <tr@li.org>\n"
+"PO-Revision-Date: 2010-05-12 10:40+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kcm_krfb.cpp:60
@@ -136,7 +137,7 @@ msgid ""
 "If enabled, a dialog will appear when somebody attempts to connect, asking "
 "you whether you want to accept the connection."
 msgstr ""
-"Eğer tıklı ise, bir kişinin bilgisayarınıza bağlanması durumunda önceden "
+"Etkinse, bir kişinin bilgisayarınıza bağlanması durumunda önceden "
 "onay isteyecektir."
 
 #. i18n: file: configurationwidget.ui:167
@@ -228,7 +229,7 @@ msgid ""
 "example because of a firewall."
 msgstr ""
 "Otomatik olarak ağ portunu atamak için bu seçeneği kontrol ediniz. Ağ "
-"düzeniniz bunu gerektiyorsa bunu kullanın, örneğin güvenlik duvarı "
+"düzeniniz bunu gerekiyorsa bunu kullanın, örneğin güvenlik duvarı "
 "kullananlar için."
 
 #. i18n: file: configurationwidget.ui:404
@@ -257,7 +258,7 @@ msgid ""
 msgstr ""
 "Masaüstü paylaşım servisi için statik port küme alanı kullanın. Şuna dikkat "
 "et eğer daha önce Masaüstü Paylaşımı için bu port kullanılmışsa onu kolay "
-"ulaşalımaz yapın. Eğer ne yaptığınızı biliyorsanız otomatik port atama "
+"ulaşılamaz yapın. Eğer ne yaptığınızı biliyorsanız otomatik port atama "
 "önerilir.\n"
 "Birçok VNC istemcisi güncel port yerine bir gösterim sayısı kullanırlar. Bu "
 "gösterim sayısı 5900 numaralı portu işaret eder, sayı 1 olarak gösterilen "
@@ -272,3 +273,4 @@ msgstr "Görkem Çetin"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "gorkem@kde.org"
+
