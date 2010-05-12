@@ -12,19 +12,20 @@
 # Ahmet Emre Aladağ <emre@emrealadag.com>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <h.ibrahim.gungor@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdenetwork\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-05 23:30+0000\n"
-"PO-Revision-Date: 2009-10-28 16:23+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-12 11:25+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: filesharing/advanced/kcm_sambaconf/kcmsambaconf.desktop:20
 msgctxt "Comment"
@@ -74,7 +75,7 @@ msgstr "DNS-SD Servisi İzleyicisi"
 #: kdnssd/kdedmodule/dnssdwatcher.desktop:62
 msgctxt "Comment"
 msgid "Keeps track of DNS-SD services and updates directory listings"
-msgstr "DNS-SD servisi ve klasör listesini güncelleyisi"
+msgstr "DNS-SD servislerini takip eder ve dizin listelerini günceller"
 
 #: kget/core/plugin/kget_plugin.desktop:4
 msgctxt "Name"
@@ -556,7 +557,7 @@ msgstr "Düşük Öncelikli İletiler"
 #: kopete/kopete/kopete.notifyrc:1273
 msgctxt "Comment"
 msgid "A message marked with a low priority has been received"
-msgstr "Önceliği düşük olarak işaretlenmiş bir rmesaj alındı"
+msgstr "Önceliği düşük olarak işaretlenmiş bir mesaj alındı"
 
 #: kopete/kopete/kopete.notifyrc:1336
 msgctxt "Name"
@@ -586,7 +587,7 @@ msgstr "ICQ İzni"
 #: kopete/kopete/kopete.notifyrc:1636
 msgctxt "Comment"
 msgid "An ICQ user has authorized/declined your authorization request"
-msgstr "ICQ kullanısı izin isteğinizi onayladı/onaylamadı"
+msgstr "ICQ kullanıcısı izin isteğinizi onayladı/onaylamadı"
 
 #: kopete/kopete/kopete.notifyrc:1694
 msgctxt "Name"
@@ -864,7 +865,7 @@ msgstr "İstatistikler"
 #: kopete/plugins/statistics/kopete_statistics.desktop:83
 msgctxt "Comment"
 msgid "Gather some meaningful statistics"
-msgstr "Anlamlı istatistlikler topla"
+msgstr "Anlamlı istatistikler topla"
 
 #: kopete/plugins/texteffect/kopete_texteffect_config.desktop:10
 #: kopete/plugins/texteffect/kopete_texteffect.desktop:16
@@ -938,7 +939,7 @@ msgstr "Bonjour"
 #: kopete/protocols/bonjour/kopete_bonjour.desktop:69
 msgctxt "Comment"
 msgid "Serverless Link Local XMPP Messaging"
-msgstr "Sunucusuz Yerel XMMP Mesajlaşması"
+msgstr "Sunucusuz Yerel XMPP Mesajlaşması"
 
 #: kopete/protocols/gadu/kopete_gadu.desktop:17
 msgctxt "Name"
@@ -973,7 +974,7 @@ msgstr "İnternet Üzerinden Sohbet"
 #: kopete/protocols/jabber/kioslave/jabberdisco.protocol:12
 msgctxt "Description"
 msgid "A KIO slave for Jabber Service Discovery"
-msgstr "Jabber Servis Bulucu için KIOSlave"
+msgstr "Jabber Servis Bulucu için KIO slave"
 
 #: kopete/protocols/jabber/kopete_jabber.desktop:17
 msgctxt "Name"
@@ -1168,7 +1169,7 @@ msgstr "Ukrayna"
 #: kppp/DB/Provider/United_Kingdom/.directory:2
 msgctxt "Name"
 msgid "United Kingdom"
-msgstr "Birleşik Kırallık"
+msgstr "Birleşik Krallık"
 
 #: kppp/DB/Provider/Yugoslavia/.directory:2
 msgctxt "Name"
@@ -1313,12 +1314,12 @@ msgstr "KDE İnternet Programı"
 #: krfb/kinetd/kinetd.desktop:80
 msgctxt "Comment"
 msgid "An Internet daemon that starts network services on demand"
-msgstr "Başlangıçta ağ servisleri tarafından istenen internet hayalet programı"
+msgstr "Başlangıçta ağ servisleri tarafından istenen Internet hayalet programı"
 
 #: krfb/kinetd/kinetdmodule.desktop:6
 msgctxt "Name"
 msgid "KInetD Module Type"
-msgstr "KDED Modül Türü"
+msgstr "KInetD Modül Türü"
 
 #: krfb/kinetd/kinetd.notifyrc:3
 msgctxt "Comment"
@@ -1413,7 +1414,7 @@ msgstr "Geçersiz Parola Daveti"
 #: krfb/krfb.notifyrc:598
 msgctxt "Comment"
 msgid "The invited party sent an invalid password. Connection refused."
-msgstr "Davet edilenden gönderilmiş geçersiz parola. Bağlantı rededildi."
+msgstr "Davet edilenden gönderilmiş geçersiz parola. Bağlantı reddedildi."
 
 #: krfb/krfb.notifyrc:662
 msgctxt "Name"
@@ -1443,7 +1444,7 @@ msgstr "Çok Fazla Bağlantı"
 #: krfb/krfb.notifyrc:948
 msgctxt "Comment"
 msgid "Busy, connection refused"
-msgstr "Meşgul, bağlantı rededildi"
+msgstr "Meşgul, bağlantı reddedildi"
 
 #: krfb/krfb.notifyrc:1016
 msgctxt "Name"
@@ -1453,7 +1454,7 @@ msgstr "Beklenmeyen Bağlantı"
 #: krfb/krfb.notifyrc:1068
 msgctxt "Comment"
 msgid "Received unexpected connection, abort"
-msgstr "Babul edilmiş beklenmedik bağlantı, durdur"
+msgstr "Beklenmeyen bir bağlantı alındı, vazgeçiliyor"
 
 #~ msgctxt "Name"
 #~ msgid "Telepathy"
