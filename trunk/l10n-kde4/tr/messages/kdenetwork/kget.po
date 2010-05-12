@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-16 01:23+0200\n"
-"PO-Revision-Date: 2010-04-30 14:59+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-12 10:48+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1198,7 +1198,7 @@ msgstr "Beklenmeyen girdi sonu"
 #: transfer-plugins/bittorrent/libbtcore/bcodec/bdecoder.cpp:197
 #, kde-format
 msgid "Cannot convert %1 to an int"
-msgstr "%1 int'e dönüştüremiyor"
+msgstr "%1 tam sayıya dönüştüremiyor"
 
 #: transfer-plugins/bittorrent/libbtcore/bcodec/bdecoder.cpp:202
 msgid "Torrent is incomplete."
@@ -1331,7 +1331,7 @@ msgstr "%1 makine adı çözümlenemedi"
 #: transfer-plugins/bittorrent/libbtcore/tracker/httptracker.cpp:342
 #: transfer-plugins/bittorrent/libbtcore/tracker/httptracker.cpp:461
 msgid "Invalid response from tracker"
-msgstr "İzleyiciden geçersiz yanıtp"
+msgstr "İzleyiciden geçersiz yanıt"
 
 #: transfer-plugins/bittorrent/libbtcore/tracker/httptracker.cpp:295
 msgid "Invalid data from tracker"
@@ -1344,7 +1344,7 @@ msgstr "Geçersiz izleyici adresi"
 #: transfer-plugins/bittorrent/libbtcore/tracker/udptrackersocket.cpp:66
 #, kde-format
 msgid "Cannot bind to udp port %1 or the 10 following ports."
-msgstr "%1 ve sonraki 10 bağlantı portlarına erişilemiliyor."
+msgstr "%1 ve sonraki 10 bağlantı portlarına erilişemiyor."
 
 #: transfer-plugins/bittorrent/libbtcore/peer/peerid.cpp:203
 msgid "Unknown client"
@@ -1502,7 +1502,7 @@ msgstr "Bağlanıldı"
 
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:155
 msgid "Error: Failed to connect to webseed"
-msgstr "Hata: Web paylaşımına bağlanılamadı"
+msgstr "Hata: Ağ paylaşımına bağlanılamadı"
 
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:220
 msgid "Connecting"
@@ -1510,11 +1510,11 @@ msgstr "Bağlanılıyor"
 
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:231
 msgid "Failed to connect to webseed"
-msgstr "Web paylaşımına bağlanılamadı"
+msgstr "Ağ paylaşımına bağlanılamadı"
 
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:238
 msgid "Failed to resolve hostname of webseed"
-msgstr "Web paylaşımının makine adı çözümlenemedi"
+msgstr "Ağ paylaşımının makine adı çözümlenemedi"
 
 #: transfer-plugins/bittorrent/libbtcore/download/httpconnection.cpp:318
 msgid "Error: failed to connect, server not responding"
@@ -1602,7 +1602,7 @@ msgstr "Dosya boyutu hesaplanamıyor : %1"
 #: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:394
 #, kde-format
 msgid "Cannot expand file: %1"
-msgstr "Ddosya genişletilemedi : %1"
+msgstr "Dosya genişletilemedi : %1"
 
 #: transfer-plugins/bittorrent/libbtcore/util/fileops.cpp:427
 #, kde-format
@@ -1828,19 +1828,19 @@ msgstr "Uzun bir zaman önce"
 
 #: ui/history/transferhistorycategorizeddelegate.cpp:77
 msgid "Under 10MiB"
-msgstr "10MB aşağısı"
+msgstr "10MiB aşağısı"
 
 #: ui/history/transferhistorycategorizeddelegate.cpp:80
 msgid "Between 10MiB and 50MiB"
-msgstr "10MB 50MB arası"
+msgstr "10MiB 50MiB arası"
 
 #: ui/history/transferhistorycategorizeddelegate.cpp:84
 msgid "Between 50MiB and 100MiB"
-msgstr "50MB 100MB Arası"
+msgstr "50MiB 100MiB Arası"
 
 #: ui/history/transferhistorycategorizeddelegate.cpp:89
 msgid "More than 100MiB"
-msgstr "100MB Yukarısı"
+msgstr "100MiB Yukarısı"
 
 #: ui/history/transferhistory.cpp:48
 msgid "Transfer History"
@@ -1888,23 +1888,23 @@ msgstr "Dosya Boyutu"
 
 #: ui/history/transferhistory.cpp:255
 msgid "Less than 1MiB"
-msgstr "1MB Aşağısı"
+msgstr "1MiB Aşağısı"
 
 #: ui/history/transferhistory.cpp:257
 msgid "Between 1MiB-10MiB"
-msgstr "1MB-10MB Arası"
+msgstr "1MiB-10MiB Arası"
 
 #: ui/history/transferhistory.cpp:259
 msgid "Between 10MiB-100MiB"
-msgstr "10MB-100MB Arası"
+msgstr "10MiB-100MiB Arası"
 
 #: ui/history/transferhistory.cpp:261
 msgid "Between 100MiB-1GiB"
-msgstr "100MB-1GB Arası"
+msgstr "100MiB-1GiB Arası"
 
 #: ui/history/transferhistory.cpp:263
 msgid "More than 1GiB"
-msgstr "1GB Yukarısı"
+msgstr "1GiB Yukarısı"
 
 #: ui/history/transferhistory.cpp:268
 msgid "Last month"
@@ -2276,7 +2276,7 @@ msgstr "Seçilen Bağlantıları Listele"
 
 #: extensions/konqueror/kget_plug_in.cpp:271
 msgid "There are no links in the active frame of the current HTML page."
-msgstr "Geçerli HTML sayfasının aktif çetçevesinde bağlantı yoktur."
+msgstr "Geçerli HTML sayfasının aktif çerçevesinde bağlantı yoktur."
 
 #: extensions/konqueror/kget_plug_in.cpp:272
 msgid "No Links"
@@ -2453,7 +2453,7 @@ msgstr "Manolo Valdes"
 
 #: main.cpp:153
 msgid "Core Developer, Multithreaded Plugin Author"
-msgstr "Çekirdek Geliştirici, Çokluiş Eklenti Yazarı"
+msgstr "Çekirdek Geliştirici, Çoklu iş Eklenti Yazarı"
 
 #: main.cpp:154
 msgid "Matthias Fuchs"
@@ -2689,7 +2689,7 @@ msgid ""
 "<p>The following file has finished downloading:</p><p style=\"font-size: "
 "small;\">                      %1</p>"
 msgstr ""
-"<p>Aşağıdaki dosyajnın indirme işlemi bitti:</p><p style=\"font-size: "
+"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: "
 "small;\">                      %1</p>"
 
 #: mainwindow.cpp:521
@@ -2698,7 +2698,7 @@ msgid ""
 "Are you sure you want to close KGet?"
 msgstr ""
 "Bazı aktarımlar hala çalışıyor.\n"
-"Kget uygulamasını kapatmak istediğinizden emin misiniz?"
+"KGet uygulamasını kapatmak istediğinizden emin misiniz?"
 
 #: mainwindow.cpp:523
 msgid "Confirm Quit"
@@ -2715,7 +2715,7 @@ msgstr "Grup ismi:"
 #: mainwindow.cpp:655
 msgid "Are you sure you want to delete the selected transfer?"
 msgid_plural "Are you sure you want to delete the selected transfers?"
-msgstr[0] "Seçili %1 aktarımı silmek istediğinizden emin misiniz?"
+msgstr[0] "Seçili aktarımları silmek istediğinizden emin misiniz?"
 
 #: mainwindow.cpp:657
 msgid "Confirm transfer delete"
@@ -3114,7 +3114,7 @@ msgstr "İş parçacıklarının sayısı:"
 #. i18n: ectx: property (text), widget (QCheckBox, enginesCheckBox)
 #: rc.cpp:206
 msgid "Use search engines"
-msgstr "Arama motolarını kullan"
+msgstr "Arama motorlarını kullan"
 
 #. i18n: file: transfer-plugins/multisegmentkio/dlgmultisegkio.ui:58
 #. i18n: ectx: property (text), widget (QCheckBox, verificationCheckBox)
@@ -4015,7 +4015,7 @@ msgstr "&Arşivler"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, textFilter)
 #: rc.cpp:693
 msgid "You can use wildcards for filtering."
-msgstr "Filtreleme için özel/joker karekterler kullanabilirsiniz."
+msgstr "Filtreleme için özel/joker karakterler kullanabilirsiniz."
 
 #. i18n: file: ui/linkview/importlinkdialog.ui:148
 #. i18n: ectx: property (clickMessage), widget (KLineEdit, textFilter)
@@ -4052,7 +4052,7 @@ msgstr "&Seçileni İşaretle"
 #. i18n: ectx: property (text), widget (QCheckBox, showWebContent)
 #: rc.cpp:717
 msgid "Show &web content"
-msgstr "&Web içeriğini göster"
+msgstr "&Ağ içeriğini göster"
 
 #. i18n: file: ui/mirror/mirroradddlg.ui:29
 #. i18n: ectx: property (text), widget (QLabel, labelMirror)
@@ -4335,7 +4335,7 @@ msgstr "Güvenilirlik:"
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: rc.cpp:890
 msgid "Fingerprint:"
-msgstr "Parmakizi:"
+msgstr "Parmak izi:"
 
 #. i18n: file: ui/signaturedlg.ui:257
 #. i18n: ectx: property (text), widget (KPushButton, verify)
@@ -4482,7 +4482,7 @@ msgstr "Geçmiş görünümündeki sütunların genişliği"
 #. i18n: ectx: label, entry (SearchStrings), group (ChecksumSearch)
 #: rc.cpp:977 rc.cpp:999
 msgid "List of the available search engines"
-msgstr "Kullanılabilir arama motolarının listesi"
+msgstr "Kullanılabilir arama motorlarının listesi"
 
 #. i18n: file: transfer-plugins/mirrorsearch/kget_mirrorsearchfactory.kcfg:16
 #. i18n: ectx: label, entry (SearchEnginesUrlList), group (SearchEngines)
@@ -4494,7 +4494,7 @@ msgstr "Kullanılabilir arama motolarının listesi"
 #. i18n: ectx: label, entry (ChecksumTypeList), group (ChecksumSearch)
 #: rc.cpp:980 rc.cpp:986 rc.cpp:1002 rc.cpp:1005
 msgid "List of the available search engine URLs"
-msgstr "Kullanılabilir arama motolarının adresleri"
+msgstr "Kullanılabilir arama motorlarının adresleri"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:9
 #. i18n: ectx: label, entry (UrlRegexpList), group (UserScripts)
