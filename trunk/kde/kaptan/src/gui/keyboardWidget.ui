@@ -14,39 +14,10 @@
    <string>Keyboard</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_3">
-   <item row="0" column="2">
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="0">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>30</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="2" column="1" colspan="2">
+   <property name="margin">
+    <number>20</number>
+   </property>
+   <item row="1" column="0" colspan="2">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <layout class="QGridLayout" name="gridLayout_2">
@@ -55,16 +26,29 @@
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>200</height>
+           <height>20</height>
           </size>
          </property>
          <property name="font">
           <font>
            <family>URW Gothic L</family>
-           <pointsize>11</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">#listWidgetKeyboard {background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
+color: white;
+
+border: 1px solid rgb(236, 236, 236, 80);
+}</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="alternatingRowColors">
+          <bool>false</bool>
          </property>
         </widget>
        </item>
@@ -113,88 +97,10 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="3">
-    <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Fixed</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="3" column="1">
-    <spacer name="verticalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeType">
-      <enum>QSizePolicy::Expanding</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>58</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="1" column="1" colspan="2">
+   <item row="0" column="0" colspan="2">
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
-      <widget class="QLabel" name="label_3">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>50</height>
-        </size>
-       </property>
-       <property name="font">
-        <font>
-         <family>URW Gothic L</family>
-         <pointsize>25</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string>color: rgb(234, 225, 228);</string>
-       </property>
-       <property name="text">
-        <string>Keyboard Layout Language</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer name="verticalSpacer_5">
-       <property name="orientation">
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
-       <property name="sizeHint" stdset="0">
-        <size>
-         <width>20</width>
-         <height>30</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="labelMouseDesc">
+      <widget class="QLabel" name="description">
        <property name="minimumSize">
         <size>
          <width>300</width>
@@ -203,12 +109,12 @@
        </property>
        <property name="font">
         <font>
-         <family>URW Gothic L</family>
-         <pointsize>11</pointsize>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color:rgb(234, 225, 228)</string>
+        <string notr="true"/>
        </property>
        <property name="text">
         <string>Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly.</string>
@@ -229,7 +135,7 @@
        <property name="sizeHint" stdset="0">
         <size>
          <width>30</width>
-         <height>30</height>
+         <height>20</height>
         </size>
        </property>
       </spacer>
