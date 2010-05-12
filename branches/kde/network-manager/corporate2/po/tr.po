@@ -1,7 +1,7 @@
 # translation of tr.po to
 # Copyright (C) 2005-2010
 # This file is distributed under the same license as the net-kga package.
-#
+# 
 # Gürer Özen <gurer@uludag.org.tr>, 2005.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2008.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: browser.py:51
 msgid "Name:"
@@ -123,10 +123,8 @@ msgstr "Bu işlemi yapmaya yetkili değilsiniz."
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
 "Ağ yöneticisi, ağ aygıtı ile bağlantı kuramadı. Kablosuz bir aygıt ise,\n"
@@ -135,12 +133,9 @@ msgstr ""
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
 "DHCP servisinden IP adresi alınamadı. Ağın erişilebilir olduğundan ve\n"
 "ağ üzerinde bir DHCP sunucu bulunduğundan emin olun. Değilse, el ile\n"
@@ -187,12 +182,8 @@ msgid "DHCP Server Error"
 msgstr "DHCP Sunucu Hatası"
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
-msgstr ""
-"Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı "
-"olmalı"
+msgid "The interfaces that you have selected must be different to share internet connection"
+msgstr "Internete açılan ve bağlantının paylaştırıldığı arayüzler birbirinden farklı olmalı"
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
@@ -225,11 +216,8 @@ msgid "Network manager module is already started!"
 msgstr "Ağ ayarlama arayüzü zaten çalışıyor!"
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
-msgstr "Mevcut ağ altyapısı GNOME NetworkManager olarak ayarlanmış. Bu ağ programcığını "
-"kullanabilmek için COMAR altyapısına geri dönmeniz gerekiyor."
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
+msgstr "Mevcut ağ altyapısı GNOME NetworkManager olarak ayarlanmış. Bu ağ programcığını kullanabilmek için COMAR altyapısına geri dönmeniz gerekiyor."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -400,10 +388,8 @@ msgid "Configure network connection"
 msgstr "Ağ bağlantısını ayarla"
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
-msgstr ""
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
+msgstr "Kablosuz arayüz anahtar tarafından pasifleştirilmiş. Lütfen önce etkinleştirin."
 
 #: autoswitch.py:79
 msgid "Scanning..."
@@ -481,12 +467,8 @@ msgstr "Ağ Programcığı"
 #~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 #~ msgstr "DBus bağlantısı sonlandı, tekrar bağlanılıyor..."
 
-#~ msgid ""
-#~ "Cannot connect to the DBus! If it is not running you should start it with "
-#~ "the 'service dbus start' command in a root console."
-#~ msgstr ""
-#~ "DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root "
-#~ "konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
+#~ msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+#~ msgstr "DBus hizmetine bağlanılamadı! Eğer bu hizmet çalışmıyorsa, bir root konsolunda 'service dbus start' komutunu vererek hizmeti başlatın."
 
 #~ msgid "Share Connection"
 #~ msgstr "Bağlantı Paylaştır"
