@@ -4,13 +4,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Renan Cakirerk, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: marble\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2010-04-28 13:14+0300\n"
-"Last-Translator: Renan Cakirerk\n"
+"PO-Revision-Date: 2010-05-12 09:27+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -363,23 +364,23 @@ msgstr ""
 
 #: src/kdemain.cpp:222
 msgid "Make a time measurement to check performance"
-msgstr ""
+msgstr "Performansı denetlemek için zaman ölçümü gerçekleştir"
 
 #: src/kdemain.cpp:223
 msgid "Check speed of gps drawing"
-msgstr ""
+msgstr "gps çiziminin hızını denetle"
 
 #: src/kdemain.cpp:224
 msgid "Show frame rate"
-msgstr ""
+msgstr "Kare oranını göster"
 
 #: src/kdemain.cpp:225
 msgid "Enable tab to show the current location"
-msgstr ""
+msgstr "Mevcut konumu göstermek için sekmeyi etkinleştir"
 
 #: src/kdemain.cpp:227
 msgid "Enable tab to see gpxFileView"
-msgstr ""
+msgstr "gpxFileView görüntülemek için sekmeyi etkinleştir"
 
 #: src/kdemain.cpp:228
 msgid "Show tile id's"
@@ -527,7 +528,7 @@ msgstr ""
 #: src/marble_part.cpp:895
 msgctxt "Action for toggling"
 msgid "Show Download Progress Bar"
-msgstr ""
+msgstr "İndirme İlerleme Çubuğunu Göster"
 
 #: src/marble_part.cpp:952
 msgid "View"
@@ -653,7 +654,7 @@ msgstr "Yüzey"
 #: rc.cpp:18 rc.cpp:40 rc.cpp:74 rc.cpp:116 rc.cpp:170 rc.cpp:246 rc.cpp:342
 #: rc.cpp:400 rc.cpp:442 rc.cpp:498 rc.cpp:562
 msgid "Places of Interest"
-msgstr ""
+msgstr "İlgilenilen Yerler"
 
 #. i18n: file ./data/maps/earth/schagen1689/schagen1689.dgml line 200
 #: rc.cpp:20
@@ -1062,7 +1063,7 @@ msgstr "-11000 m"
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 6
 #: rc.cpp:238
 msgid "OpenStreetMap"
-msgstr ""
+msgstr "OpenStreetMap"
 
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 11
 #: rc.cpp:240
@@ -1075,7 +1076,7 @@ msgstr ""
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 88
 #: rc.cpp:242
 msgid "Transportation"
-msgstr ""
+msgstr "Ulaşım"
 
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 172
 #: rc.cpp:244
@@ -1105,7 +1106,7 @@ msgstr "İkincil yol"
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 108
 #: rc.cpp:258
 msgid "Unclassified road"
-msgstr ""
+msgstr "Sınıflandırılmamış yol"
 
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 112
 #: rc.cpp:260
@@ -1150,7 +1151,7 @@ msgstr "Metro"
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 144
 #: rc.cpp:276
 msgid "Lightrail, tram"
-msgstr ""
+msgstr "Hafif metro, tramvay"
 
 #. i18n: file ./data/maps/earth/openstreetmap/openstreetmap.dgml line 148
 #: rc.cpp:278
@@ -1305,7 +1306,7 @@ msgstr "Sıcaklık (Temmuz)"
 #. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 15
 #: rc.cpp:338
 msgid "A map which shows the average temperature in July."
-msgstr ""
+msgstr "Temmuz ayındaki ortalama sıcaklığı gösteren bir harita."
 
 #. i18n: file ./data/maps/earth/temp-july/temp-july.dgml line 257
 #. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 256
@@ -1412,7 +1413,7 @@ msgstr "Yağış (Aralık)"
 #. i18n: file ./data/maps/earth/precip-dec/precip-dec.dgml line 15
 #: rc.cpp:438
 msgid "A map which shows the average precipitation in December."
-msgstr ""
+msgstr "Aralık ayındaki ortalama yağış oranını gösteren harita."
 
 #. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 5
 #: rc.cpp:492
@@ -1422,7 +1423,7 @@ msgstr "Sıcaklık (Aralık Ayı)"
 #. i18n: file ./data/maps/earth/temp-dec/temp-dec.dgml line 15
 #: rc.cpp:494
 msgid "A map which shows the average temperature in December."
-msgstr ""
+msgstr "Aralık ayındaki ortalama sıcaklığı gösteren harita."
 
 #. i18n: file ./data/maps/moon/clementine/clementine.dgml line 5
 #: rc.cpp:550
@@ -1490,7 +1491,7 @@ msgstr ""
 #. i18n: file ./data/maps/moon/clementine/clementine.dgml line 155
 #: rc.cpp:578
 msgid "Vallis, valley"
-msgstr ""
+msgstr "Vadi"
 
 #. i18n: file ./data/maps/moon/clementine/clementine.dgml line 159
 #: rc.cpp:580
@@ -1636,7 +1637,7 @@ msgstr "Ev Konumunu Göster"
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_onStartup)
 #: rc.cpp:640
 msgid "Return to Last Location Visited"
-msgstr ""
+msgstr "Son Ziyaret Edilen Konuma Dön"
 
 #. i18n: file: src/lib/MarbleNavigationSettingsWidget.ui:114
 #. i18n: ectx: property (toolTip), widget (QCheckBox, kcfg_animateTargetVoyage)
@@ -1792,7 +1793,7 @@ msgstr "Harita &Kalitesi"
 #. i18n: ectx: property (text), widget (QLabel, label_stillQuality)
 #: rc.cpp:709
 msgid "&Still image:"
-msgstr ""
+msgstr "&Resim:"
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:147
 #. i18n: ectx: property (toolTip), widget (QComboBox, kcfg_stillQuality)
@@ -1888,12 +1889,16 @@ msgid ""
 "Changing this setting might be a good idea if there are performance issues "
 "with the system's graphics drivers."
 msgstr ""
+"Qt'nin haritaları çizerken kullanacağı grafik sistemini belirtir.\n"
+"Sistemin grafik sürücüleriyle ilgili sorun varsa bu ayarı değiştirmek iyi "
+"bir "
+"fikir olabilir."
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:257
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
 #: rc.cpp:768
 msgid "Raster (Software rendering)"
-msgstr ""
+msgstr "Raster (Software rendering)"
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:262
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
@@ -2006,6 +2011,9 @@ msgid ""
 "Marble needs to create this map. This only needs to be done once and may "
 "take a few seconds."
 msgstr ""
+"Marble'ın bu haritayı yaratması gerekiyor. Bu işlem sadece bir defa "
+"gerçekleştirilir "
+"ve sadece bir kaç saniye sürer."
 
 #. i18n: file: src/lib/TileCreatorDialog.ui:555
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)
@@ -2147,7 +2155,7 @@ msgstr "Yukarı"
 #. i18n: ectx: property (whatsThis), widget (QToolButton, moveUpButton)
 #: rc.cpp:879 rc.cpp:1138 rc.cpp:1462
 msgid "Tilts the earth's axis towards the user."
-msgstr ""
+msgstr "Dünya'nın eksenini kullanıcıya doğru kaydırır."
 
 #. i18n: file: src/lib/MarbleNavigator.ui:68
 #. i18n: ectx: property (text), widget (QToolButton, moveUpButton)
@@ -2218,7 +2226,7 @@ msgstr "Sol"
 #. i18n: ectx: property (whatsThis), widget (QToolButton, moveLeftButton)
 #: rc.cpp:888 rc.cpp:1174 rc.cpp:1498
 msgid "Rotates the earth counterclockwise around its axis."
-msgstr ""
+msgstr "Dünya'yı kendi ekseni etrafında saat yönünün tersine döndürür."
 
 #. i18n: file: src/lib/MarbleNavigator.ui:97
 #. i18n: ectx: property (toolTip), widget (QToolButton, goHomeButton)
@@ -2235,6 +2243,8 @@ msgstr "Görünümü Sıfırla"
 #: rc.cpp:900 rc.cpp:1117 rc.cpp:1441
 msgid "Click this button to restore the original zoom level and view angle."
 msgstr ""
+"Öntanımlı yakınlaştırma seviyesine ve görüş açısına dönmek için düğmeyi "
+"tıklayın."
 
 #. i18n: file: src/lib/MarbleNavigator.ui:109
 #. i18n: ectx: property (shortcut), widget (QToolButton, goHomeButton)
@@ -2805,13 +2815,13 @@ msgstr "Gezinme Kipi"
 #. i18n: ectx: property (toolTip), widget (QLabel, speedLabel)
 #: rc.cpp:1228 rc.cpp:1237
 msgid "Your current speed"
-msgstr ""
+msgstr "Şu anki hızınız"
 
 #. i18n: file: src/lib/MarbleControlBox.ui:683
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, speedGroupBox)
 #: rc.cpp:1231
 msgid "Your current speed (measured e.g. via a GPS device)"
-msgstr ""
+msgstr "Şu anki hızınız (GPS aygıtıyla ölçülen)"
 
 #. i18n: file: src/lib/MarbleControlBox.ui:686
 #. i18n: ectx: property (title), widget (QGroupBox, speedGroupBox)
@@ -2855,7 +2865,7 @@ msgstr "Şimdiki konumunuz"
 #. i18n: ectx: property (whatsThis), widget (QGroupBox, positionGroupBox)
 #: rc.cpp:1250
 msgid "Your current position (measured e.g. via a GPS device)"
-msgstr ""
+msgstr "Şimdiki konumunuz (GPS aygıtıyla ölçülen)"
 
 #. i18n: file: src/lib/MarbleControlBox.ui:742
 #. i18n: ectx: property (title), widget (QGroupBox, positionGroupBox)
@@ -2987,7 +2997,7 @@ msgstr "Rol"
 #. i18n: ectx: property (whatsThis), widget (QLabel, role_val_lbl)
 #: rc.cpp:1319
 msgid "Role of the location."
-msgstr ""
+msgstr "Konumun rolü."
 
 #. i18n: file: src/lib/PlacemarkInfoDialog.ui:104
 #. i18n: ectx: property (text), widget (QLabel, role_val_lbl)
@@ -3415,7 +3425,7 @@ msgstr "Küçük resimleri göster"
 #. i18n: ectx: property (text), widget (QLabel, m_itemNumberLabel)
 #: rc.cpp:1604
 msgid "Number of items on the screen"
-msgstr ""
+msgstr "Ekrandaki öge sayısı"
 
 #. i18n: file: src/plasmoid/worldclockConfig.ui:34
 #. i18n: ectx: property (windowTitle), widget (QWidget, worldclockConfig)
@@ -3475,13 +3485,13 @@ msgstr "Özel zaman dilimi seçimini kullan"
 #. i18n: ectx: label, entry, group (View)
 #: rc.cpp:1637
 msgid "The unit chosen to measure distances."
-msgstr ""
+msgstr "Mesafe ölçümünde kullanılan birim."
 
 #. i18n: file: src/marble.kcfg:63
 #. i18n: ectx: label, entry, group (View)
 #: rc.cpp:1640
 msgid "The unit chosen to measure angles."
-msgstr ""
+msgstr "Açı ölçümünde kullanılan birim."
 
 #. i18n: file: src/marble.kcfg:72
 #. i18n: ectx: label, entry, group (View)

@@ -7,13 +7,14 @@
 # Kunter Kutlu <kunterkutlu@gmail.com>, 2008.
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2008.
 # Renan Cakirerk, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kalgebra\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-12-09 07:57+0100\n"
-"PO-Revision-Date: 2010-04-28 12:55+0300\n"
-"Last-Translator: Renan Cakirerk\n"
+"PO-Revision-Date: 2010-05-12 09:19+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,7 +50,7 @@ msgstr "<ul class='error'>Hata: %1<li>%2</li></ul>"
 #: src/consolehtml.cpp:220
 #, kde-format
 msgid "Paste \"%1\" to input"
-msgstr ""
+msgstr "\"%1\" metnini girdiye yapıştır"
 
 #: src/dictionary.cpp:47
 msgid "Information"
@@ -171,7 +172,7 @@ msgstr "%1..."
 
 #: src/functionedit.cpp:247
 msgid "The options you specified are not correct"
-msgstr ""
+msgstr "Verdiğiniz seçenek doğru değil"
 
 #: src/functionedit.cpp:252
 msgid "Downlimit cannot be greater than uplimit"
@@ -180,17 +181,17 @@ msgstr "Alt sınır üst sınırdan büyük olamaz"
 #: src/functionparametric.cpp:102
 msgctxt "if the specified function is not a vector"
 msgid "The parametric function does not return a vector"
-msgstr ""
+msgstr "Parametrik fonksiyon vektör döndürmüyor"
 
 #: src/functionparametric.cpp:107
 msgctxt "If it is a vector but the wrong size. We work in R2 here"
 msgid "A two-dimensional vector is needed"
-msgstr ""
+msgstr "İki boyutlu bir vektör gerekli"
 
 #: src/functionparametric.cpp:110
 msgctxt "The vector has to be composed by integer members"
 msgid "The parametric function items should be scalars"
-msgstr ""
+msgstr "Parametrik fonksiyon ögeleri skalar olmalı"
 
 #: src/functionpolar.cpp:64
 msgid "Cannot have downlimit ≥ uplimit"
@@ -763,7 +764,7 @@ msgstr "Bir taşıyıcıdan bir öge seçin"
 
 #: analitzagui/operatorsmodel.cpp:338
 msgid "Joins several items of the same type"
-msgstr ""
+msgstr "Aynı türden bir çok ögeyi birleştirir"
 
 #: analitza/analitza.cpp:80 analitza/analitza.cpp:91
 msgid "Must specify a correct operation"
@@ -794,10 +795,9 @@ msgid "Type not supported for bounding."
 msgstr ""
 
 #: analitza/analitza.cpp:815
-#, fuzzy
 #| msgid "Incorrect uplimit or downlimit."
 msgid "Incorrect domain."
-msgstr "Yanlış üst veya alt sınır."
+msgstr "Geçersiz alan."
 
 #: analitza/analitza.cpp:840
 msgid "The downlimit is greater than the uplimit"
@@ -813,7 +813,7 @@ msgstr "Sadece fonksiyonlar çağrılabilir"
 
 #: analitza/analitza.cpp:894
 msgid "Wrong parameter count"
-msgstr ""
+msgstr "Yanlış parametre sayısı"
 
 #: analitza/analitza.cpp:1690
 msgctxt "By a cycle i mean a variable that depends on itself"
@@ -848,18 +848,18 @@ msgstr "<em>%1</em> %2 parametre gerektirir"
 #: analitza/expression.cpp:163
 #, kde-format
 msgid "Missing boundary for '%1'"
-msgstr ""
+msgstr "'%1' için eksik sınır"
 
 #: analitza/expression.cpp:168
 #, kde-format
 msgid "<em>%1</em> missing bounds on '%2'"
-msgstr ""
+msgstr "'%2' üzerinde <em>%1</em> eksik sınır"
 
 #: analitza/expression.cpp:181
 #, kde-format
 msgid "Wrong parameter count, had 1 parameter for '%2'"
 msgid_plural "Wrong parameter count, had %1 parameters for '%2'"
-msgstr[0] ""
+msgstr[0] "Yanlış parametre sayısı, '%2' için %1 adet parametre verildi"
 
 #: analitza/expression.cpp:191
 msgid "Wrong declare"
@@ -996,7 +996,7 @@ msgstr ""
 #: analitza/operations.cpp:281
 #, kde-format
 msgid "Could not calculate a value %1"
-msgstr ""
+msgstr "%1 değeri hesaplanamıyor"
 
 #: analitza/operations.cpp:301
 #, kde-format
@@ -1009,17 +1009,17 @@ msgstr "Bir taşıyıcı için geçersiz endeks"
 
 #: analitza/operations.cpp:366
 msgid "Cannot operate on different sized vectors."
-msgstr ""
+msgstr "Farklı boyuttaki vektörler üzerinde işlem yapılamıyor."
 
 #: analitza/operations.cpp:391
 #, kde-format
 msgid "Could not calculate a vector's %1"
-msgstr ""
+msgstr "Vektörün %1'i hesaplanamıyor"
 
 #: analitza/operations.cpp:414 analitza/operations.cpp:429
 #, kde-format
 msgid "Could not calculate a list's %1"
-msgstr ""
+msgstr "Listenin %1'i hesaplanamıyor"
 
 #~ msgid "Trying to call an invalid function"
 #~ msgstr "Geçersiz bir fonksiyon çağrılmaya çalışıldı"
