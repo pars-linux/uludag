@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kabc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-11-14 06:16+0100\n"
-"PO-Revision-Date: 2009-11-15 23:05+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-13 14:23+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: addressbook.cpp:358 addressbook.cpp:377
@@ -124,11 +125,11 @@ msgstr "Ek Adlar"
 
 #: addressee.cpp:447
 msgid "Honorific Prefixes"
-msgstr "Ünvan Önekleri"
+msgstr "Unvan Önekleri"
 
 #: addressee.cpp:465
 msgid "Honorific Suffixes"
-msgstr "Ünvan Sonekleri"
+msgstr "Unvan Sonekleri"
 
 #: addressee.cpp:483
 msgid "Nick Name"
@@ -250,7 +251,7 @@ msgstr "Başlık"
 #: addressee.cpp:729
 msgctxt "of a person in an organization"
 msgid "Role"
-msgstr "Ünvan"
+msgstr "Unvan"
 
 #: addressee.cpp:747 field.cpp:223
 msgid "Organization"
@@ -683,3 +684,4 @@ msgstr "Öntanımlı Adres Defteri"
 #, kde-format
 msgid "Unable to save to resource '%1'. It is locked."
 msgstr "'%1' kaynağı kaydedilemedi. Kilitli."
+
