@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 10:09+0200\n"
-"PO-Revision-Date: 2010-04-21 21:03+0200\n"
+"PO-Revision-Date: 2010-05-13 22:38+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -49,9 +49,8 @@ msgid "I will choose the target"
 msgstr ""
 
 #: yali4/gui/Ui/autopartquestion.py:83
-#, fuzzy
 msgid "Use Selected"
-msgstr "Elimina l'utente selezionato"
+msgstr "Usa Selezionato"
 
 #: yali4/gui/Ui/autopartwidget.py:109 yali4/gui/Ui/bootloaderwidget.py:75
 #: yali4/gui/Ui/checkcdwidget.py:80 yali4/gui/Ui/keyboardwidget.py:59
@@ -77,12 +76,26 @@ msgid ""
 "\" font-size:12pt; font-weight:600;\">Partitioning method</span></p></body></"
 "html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Metodo di Partizionamento</span></p><"
+"/body></"
+"html>"
 
 #: yali4/gui/Ui/autopartwidget.py:115
 msgid ""
 "Please choose a partitioning method and then a device to partition."
 "<br>Device list will be updated based on the selected method."
 msgstr ""
+"Per favore, scegli un metodo di partizionamento e partiziona un hard disk. "
+"<br>La lista verrà aggiornata in base al metodo selezionato."
 
 #: yali4/gui/Ui/autopartwidget.py:116
 msgid "Automatic"
@@ -121,7 +134,7 @@ msgstr "Elimina tutte le partizioni"
 
 #: yali4/gui/Ui/autopartwidget.py:121
 msgid "This option allows partitioning the disk to your wishes."
-msgstr ""
+msgstr "Questa opzione di permette di partizionare come preferisci."
 
 #: yali4/gui/Ui/autopartwidget.py:122
 msgid "No, I'll partition my disk manually."
@@ -140,6 +153,17 @@ msgid ""
 "right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
 "\" font-size:12pt; font-weight:600;\">Disk selection</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;\"><span style="
+"\" font-size:12pt; font-weight:600;\">Selezione Disco</span></p></body><"
+"/html>"
 
 #: yali4/gui/Ui/autopartwidget.py:128
 msgid "&nbsp;"
@@ -174,13 +198,12 @@ msgid "First bootable disk (recommended)"
 msgstr "Installa nel primo disco avviabile (consigliato)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:78
-#, fuzzy
 msgid "Pardus installed partition"
-msgstr "Pardus sarà installato qui"
+msgstr "Partizione di Pardus"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:79
 msgid "Selected disk below"
-msgstr ""
+msgstr "Disco selezionato qui sotto"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
@@ -210,6 +233,8 @@ msgid ""
 "To use PiSi History support, you may need to be online. You can use a "
 "connection profile from the list below."
 msgstr ""
+"Per usare la cronologia PiSi hai bisogno di una connessione Internet. Puoi "
+"scegliere un profilo qui sotto."
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
@@ -217,7 +242,7 @@ msgstr "Connetti"
 
 #: yali4/gui/Ui/datetimewidget.py:90
 msgid "The current time"
-msgstr ""
+msgstr "L'ora corrente"
 
 #: yali4/gui/Ui/datetimewidget.py:91 yali4/gui/Ui/datetimewidget.py:92
 msgid ":"
@@ -245,6 +270,18 @@ msgid ""
 "at <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> "
 "attaching the following backtrace.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Per favore, compila un bug "
+"report su <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span>"
+" "
+"includendo il seguente backtrace.</p></body></html>"
 
 #: yali4/gui/Ui/exception.py:65
 msgid "Show Backtrace"
@@ -266,7 +303,7 @@ msgstr "pix"
 
 #: yali4/gui/Ui/installwidget.py:73
 msgid "Desc"
-msgstr ""
+msgstr "Descrizione"
 
 #: yali4/gui/Ui/installwidget.py:74
 msgid "Installing Package: "
@@ -282,15 +319,15 @@ msgstr "Prova la tastiera scelta qui sotto:"
 
 #: yali4/gui/Ui/main.py:181
 msgid "Yali4"
-msgstr ""
+msgstr "Yali4"
 
 #: yali4/gui/Ui/main.py:183
 msgid "Screen Name"
-msgstr ""
+msgstr "Nome schermo"
 
 #: yali4/gui/Ui/main.py:185
 msgid "Details about the screen"
-msgstr ""
+msgstr "Dettagli schermo"
 
 #: yali4/gui/Ui/main.py:186 yali4/gui/YaliWindow.py:269
 msgid "Release Notes"
@@ -395,6 +432,37 @@ msgid ""
 "\"> </span><span style=\" font-weight:600;\">Note that this operation cannot "
 "be undone.</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:"
+"#ffffff;\">Le modifiche verranno applicate quando cliccherai su \"</span><"
+"span style=\" "
+"text-decoration: underline; color:#ffffff;\">Ridimensiona</span><span "
+"style=\" "
+"color:#ffffff;\">\". Per annullare le modifiche clicca su \"</span><span "
+"style=\" "
+"text-decoration: underline; color:#ffffff;\">Annulla</span><span style=\" "
+"color:#ffffff;\">\".</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+"color:#ffffff;\"></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><span style="
+"\" font-weight:600; text-decoration: underline;\">ATTENZIONE:</span> "
+"Un'operazione "
+" di ridimensionamento può corrompere la partizione, rendendo i dati su di "
+"essa "
+" irraggiungibili. Assicurati di avere una copia dei dati. <span style=\" "
+"font-weight:600;"
+"\"> </span><span style=\" font-weight:600;\">Questa operazione non può "
+"essere "
+"annullata.</span></p></body></html>"
 
 #: yali4/gui/Ui/partresize.py:90 yali4/gui/Ui/setupuserswidget.py:190
 #: yali4/gui/Ui/summarywidget.py:68
@@ -407,7 +475,7 @@ msgstr "Ridimensiona"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:102
 msgid "User to change password of:"
-msgstr ""
+msgstr "Utente di cui cambiare la password:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:103
 msgid "New password:"
@@ -434,15 +502,16 @@ msgid ""
 "To use PiSi's history feature, you may need to be online. Select connection "
 "profile."
 msgstr ""
+"Per usare la cronologia PiSi hai bisogno di una connessione Internet. Puoi "
+"scegliere un profilo qui sotto."
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
-#, fuzzy
 msgid "Select Connection"
-msgstr "Non connesso"
+msgstr "Seleziona connessione"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "Operation to undo:"
-msgstr ""
+msgstr "Operazione da annullare:"
 
 #: yali4/gui/Ui/rescuewidget.py:84
 msgid "Select the partition Pardus is installed on"
@@ -450,15 +519,15 @@ msgstr "Seleziona la partizione sulla quale è installato Pardus"
 
 #: yali4/gui/Ui/rescuewidget.py:85
 msgid "Select operation and click <b>Next</b>..."
-msgstr ""
+msgstr "Seleziona l'oprazione e premi <b>Avanti</b>..."
 
 #: yali4/gui/Ui/rescuewidget.py:86
 msgid "Reinstall GRUB (boot problems)"
-msgstr ""
+msgstr "Reinstalla GRUB (problemi di boot)"
 
 #: yali4/gui/Ui/rescuewidget.py:87
 msgid "PiSi history (undo package operations)"
-msgstr ""
+msgstr "Cronologia PiSi (annulla operazioni pacchetti)"
 
 #: yali4/gui/Ui/rescuewidget.py:88
 msgid "Change password (lost password)"
@@ -519,7 +588,7 @@ msgstr "Non consigliato"
 
 #: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Do not ask any password to this user"
-msgstr ""
+msgstr "Non chiedere nessuna password a questo utente"
 
 #: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Advanced"
@@ -602,6 +671,9 @@ msgid ""
 "installation. It is now time to relax and learn about some of the features "
 "of Pardus 2009.1 while it is being installed."
 msgstr ""
+"Ciao, benvenuto in Yali, l'installer di Pardus. Adesso è il momento di "
+"rilassarsi e conoscere alcune funzioni di Pardus 2009.1 durante "
+"l'installazione."
 
 #: yali4/gui/descSlide.py:19
 msgid ""
@@ -610,13 +682,13 @@ msgid ""
 "with other operating systems. With its fast, secure and stable "
 "infrastructure, Pardus opens the path to software libre."
 msgstr ""
-"Pardus 2009.1 è una distro linux che chiunque può installare facilmente e "
+"Pardus 2009.1 è una distribuzione Linux che chiunque può facilmente "
+"installare e "
 "usare. Con Pardus 2009.1, puoi fare  tutto quello che faresti altrimenti con "
-"altri sistemi operativi. Con la sua velocità, sicurezza, e una base solida,  "
+"altri sistemi operativi. Con la sua velocità, sicurezza, e una base solida, "
 "Pardus apre la strada al mondo del software libero."
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Pardus 2009.1 comes preinstalled with the open source desktop environment "
 "KDE 4.3. You will have a much better desktop experience compared to what you "
@@ -825,7 +897,6 @@ msgstr ""
 "stampante e collegarla."
 
 #: yali4/gui/descSlide.py:35
-#, fuzzy
 msgid ""
 "We have a support portal to help improve your Pardus experience and help "
 "with problems you encounter. In the OzgurlukIcin portal, where content is "
@@ -841,7 +912,7 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
-msgstr ""
+msgstr "Partizionamento manuale selezionato."
 
 #: yali4/gui/DiskWidgets.py:192
 #, python-format
@@ -880,6 +951,8 @@ msgid ""
 "Partition <b>%(partition)s (%(size)s)</b> <b>deleted</b> from device <b>%"
 "(device)s</b>."
 msgstr ""
+"Partizione <b>%(partition)s (%(size)s)</b> <b>eliminata</b> eliminata <b>%"
+"(device)s</b>."
 
 #: yali4/gui/DiskWidgets.py:326 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
@@ -890,11 +963,14 @@ msgstr ""
 msgid ""
 "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
+"La partizione <b>%(partition)s</b> sarà <b>formattata</b> come <b>"
+"%(fsType)s</b>."
 
 #: yali4/gui/DiskWidgets.py:364 yali4/gui/ScrSummary.py:163
 #, python-format
 msgid "Partition <b>%(partition)s</b> <b>selected</b> as <b>%(type)s</b>."
 msgstr ""
+"Partizione <b>%(partition)s</b> <b>selezionata</b> come <b>%(type)s</b>."
 
 #: yali4/gui/DiskWidgets.py:382
 msgid ""
@@ -911,6 +987,9 @@ msgid ""
 "You need to delete one of the primary or extended(if exists) partition from "
 "your disk table !"
 msgstr ""
+"Troppe partizioni primarie: elimina una partizione primaria o estesa dalla "
+"tua "
+"tavola delle partizioni."
 
 #: yali4/gui/DiskWidgets.py:418
 msgid "Error !"
@@ -922,6 +1001,9 @@ msgid ""
 "Partition <b>%(partition)s</b> <b>added</b> to device <b>%(device)s</b> with "
 "<b>%(size)s MB</b> as <b>%(fs)s</b>."
 msgstr ""
+"Partizione <b>%(partition)s</b> <b>aggiunta</b> al disco <b>%(device)s</b> "
+"con"
+"<b>%(size)s MB</b> come <b>%(fs)s</b>."
 
 #: yali4/gui/DiskWidgets.py:454
 msgid "Delete All Partitions"
@@ -1018,11 +1100,11 @@ msgstr "Impossibile aprire il file delle note di rilascio!"
 
 #: yali4/gui/runner.py:152
 msgid "Error occured !"
-msgstr ""
+msgstr "Errore!"
 
 #: yali4/gui/runner.py:168
 msgid "Unhandled exception occured!"
-msgstr ""
+msgstr "Eccezione non gestita!"
 
 #: yali4/gui/ScrAdmin.py:30
 msgid "Set Administrator"
@@ -1030,7 +1112,7 @@ msgstr "Setta come amministratore"
 
 #: yali4/gui/ScrAdmin.py:31
 msgid "Admins have important rights on the system..."
-msgstr ""
+msgstr "Gli amministratori hanno diritti importanti sul sistema."
 
 #: yali4/gui/ScrAdmin.py:33
 msgid ""
@@ -1060,6 +1142,32 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Hostname e password di root (amministratore)</font>\n"
+"\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Devi specificare una password per l'utente \"root\", che ha il controllo "
+"totale sul sistema.\n"
+"La password deve essere facile da ricordare (per te) e difficile da "
+"indovinare "
+"(per gli altri). \n"
+"Puoi usare maiuscole e minuscole, numeri e segni di punteggiatura "
+"all'interno della punteggiatura. \n"
+"Cerca di non usare lettere che non compaiano nell'alfabeto inglese "
+"per evitare incompatibilità con altri sistemi.\n"
+"</p>\n"
+"<p>\n"
+"Qui puoi inserire un nome per il tuo computer. Poiché il nome "
+"sarà usato \n"
+"dal tuo computer sulla rete, inserisci un testo che sia"
+"il più descrittivo possibile.\n"
+"Procedi con l'installazione dopo aver scelto.\n"
+"</p>\n"
+"<p>\n"
+"Clicca su avanti per procedere.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrAdmin.py:66
 msgid "<center>Caps Lock is on!</center>"
@@ -1088,11 +1196,11 @@ msgstr ""
 
 #: yali4/gui/ScrBootloader.py:38
 msgid "Bootloader Choice"
-msgstr ""
+msgstr "Scelta bootloader"
 
 #: yali4/gui/ScrBootloader.py:39
 msgid "Configure the system boot..."
-msgstr ""
+msgstr "Configura il boot del sistema"
 
 #: yali4/gui/ScrBootloader.py:41 yali4/gui/ScrRescueGrub.py:35
 msgid ""
@@ -1142,7 +1250,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:29
 msgid "Check your media"
-msgstr ""
+msgstr "Controlla il CD"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore media corruptions you can check your media integrity..."
@@ -1158,6 +1266,13 @@ msgid ""
 "making sure for a problem-free installation. If the test fails, try re-"
 "burning the ISO image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Controlla l'integrità del CD!</font>\n"
+"<font size=\"+1\"><p>\n"
+"Puoi controllare se i pacchetti sono stati salvati correttamente "
+"nel CD. Se hai problemi con l'installazione, questo dovrebbe essere "
+"la prima cosa da fare. Se il test fallisce prova a rimasterizzare"
+"il file ISO ad una velocità minore (es. 12x o minore).</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
@@ -1165,15 +1280,15 @@ msgstr "<font color=\"#FFF\">Attendi durante la verifica del CD...</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
-msgstr ""
+msgstr "Annulla Controllo"
 
 #: yali4/gui/ScrDateTime.py:28
 msgid "Set your timezone"
-msgstr ""
+msgstr "Imposta fuso orario"
 
 #: yali4/gui/ScrDateTime.py:29
 msgid "You can change your timezone, time or date settings..."
-msgstr ""
+msgstr "Qui puoi modificare il tuo fuso orario e la data."
 
 #: yali4/gui/ScrDateTime.py:31
 msgid ""
@@ -1195,11 +1310,11 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:43
 msgid "Goodbye from YALI"
-msgstr ""
+msgstr "Arrivederci da Yali"
 
 #: yali4/gui/ScrGoodbye.py:44
 msgid "Enjoy your fresh Pardus !..."
-msgstr ""
+msgstr "Divertiti con Pardus!"
 
 #: yali4/gui/ScrGoodbye.py:45
 msgid ""
