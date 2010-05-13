@@ -120,10 +120,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
             wallpaperName = os.path.splitext(os.path.split(str(selectedFile))[1])[0]
             widget = WallpaperItemWidget(unicode(wallpaperName), unicode("Unknown"), selectedFile, self.ui.listWallpaper)
-            self.ui.listWallpaper.setItemWidget(item, widget)
             item.setSizeHint(QSize(120,170))
+            self.ui.listWallpaper.setItemWidget(item, widget)
             item.setStatusTip(selectedFile)
             self.ui.listWallpaper.setCurrentItem(item)
+            self.resize(100,200)
 
     def shown(self):
         pass
