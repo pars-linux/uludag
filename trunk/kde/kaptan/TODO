@@ -8,16 +8,25 @@ Legend:
 / In progress
 + Accomplished
 
-
-+ Welcome Screen
-+ Mouse Screen
-+ Style Screen
-+ Wallpaper Screen
-+ Package Screen
-+ Network Screen
-? Keyboard Screen
-+ Goodbye Screen
-+ Summary Screen
-+ Desktop Search Screen
-+ Menu Screen
-- Smolt Screen (Fethican)
+background ekle: cizgiler
+sharp kaptan logosu!!!
+mouse: kutucuk ba$lik: koyu
+mouse: kutucuk padding top:azalt
+piechart activation
+menu animation triple
+themes: scroll: smooth
+themes: preview ortala
+themes: selection background olayini resetle
+themes: desktoptype, no of desk: fontsize 10
+menu: aciklama kuculunce: scrollbar ciksin screenshotu da icine alacak
+menu: aciklama arkaplani degistir seffaf?
+wallpaper scroll: smooth
+wallpaper ortala
+wallpaper: desc: font-size garip
+strigi: Allow... font kucul sans serif yap
+network: groupbox: stili sifirla: border: 0px;
+smolt: aciklama scroll tu$lari: color beyaz olmali
+packages: groupbox: border:0px
+packages: checkbox: fontsize: 10pt sansserif
+goodbyescreen: butun groupboxlari: sifirla
+goodbye: listeyi scrollbox'a al
