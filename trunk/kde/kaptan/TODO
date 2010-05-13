@@ -30,3 +30,15 @@ packages: groupbox: border:0px
 packages: checkbox: fontsize: 10pt sansserif
 goodbyescreen: butun groupboxlari: sifirla
 goodbye: listeyi scrollbox'a al
+depo linklerini degistir
+if possible optimize more
+
+test
+----
+test on 5 different computers
+
+cd mode:
+dark, light theme, functions
+
+normal mode:
+dark, light theme, functions
