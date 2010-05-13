@@ -7,13 +7,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
 # Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkcal\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-02 06:10+0100\n"
-"PO-Revision-Date: 2010-05-05 09:15+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 14:25+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -112,7 +113,7 @@ msgstr "Özet"
 
 #: confirmsavedialog.cpp:69
 msgid "UID"
-msgstr "Kullanıcı No"
+msgstr "UID"
 
 #: exceptions.cpp:55
 #, kde-format
@@ -427,7 +428,7 @@ msgstr "Saat:"
 
 #: incidenceformatter.cpp:479
 msgid "Anniversary:"
-msgstr "Yıldönümü:"
+msgstr "Yıl dönümü:"
 
 #: incidenceformatter.cpp:481
 msgid "Birthday:"
@@ -1648,7 +1649,7 @@ msgstr[0] ""
 msgctxt "Recurs every N months on the [2nd|3rd|...] weekdayname"
 msgid "Recurs every month on the %2 %3"
 msgid_plural "Recurs every %1 months on the %2 %3"
-msgstr[0] "<numid>%1</numid> ayda bir %2 %3 günlerinde tekrarlar"
+msgstr[0] "%1 ayda bir %2 %3 günlerinde tekrarlar"
 
 #: incidenceformatter.cpp:2894
 #, kde-format
