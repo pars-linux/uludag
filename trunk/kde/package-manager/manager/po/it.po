@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-13 16:35+0300\n"
-"PO-Revision-Date: 2010-05-13 15:11+0200\n"
+"PO-Revision-Date: 2010-05-13 20:40+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -108,14 +108,12 @@ msgid "Show Component information "
 msgstr "Visualizza informazioni componente "
 
 #: .tmp/ui_settingsdialog.py:363
-#, fuzzy
 msgid "System tray icon"
-msgstr "A&bilita icona nel vassoio di sistema."
+msgstr "Abilita icona nel vassoio di sistema."
 
 #: .tmp/ui_settingsdialog.py:364
-#, fuzzy
 msgid "Enable system tray icon"
-msgstr "A&bilita icona nel vassoio di sistema."
+msgstr "Abilita icona nel vassoio di sistema."
 
 #: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
@@ -130,7 +128,6 @@ msgid "padding-left:15px;"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:368
-#, fuzzy
 msgid "Check interval :"
 msgstr "Intervallo di controllo:"
 
@@ -151,7 +148,6 @@ msgid " kb/s"
 msgstr " kb/s"
 
 #: .tmp/ui_settingsdialog.py:374
-#, fuzzy
 msgid "Use bandwidth limit :"
 msgstr "Usa limite di banda"
 
@@ -169,23 +165,21 @@ msgstr "Dimensione massima cache:"
 
 #: .tmp/ui_settingsdialog.py:378
 msgid "Unlimited"
-msgstr ""
+msgstr "Illimitato"
 
 #: .tmp/ui_settingsdialog.py:379
-#, fuzzy
 msgid " Mib"
 msgstr " Mb"
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Directory cache corrente:"
 
 #: .tmp/ui_settingsdialog.py:381
 msgid "Select..."
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:382
-#, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. This will not "
 "delete installed software or affect your system stability."
@@ -253,7 +247,6 @@ msgid "FTP proxy server:"
 msgstr "Proxy FTP:"
 
 #: .tmp/ui_settingsdialog.py:399
-#, fuzzy
 msgid "No proxy server"
 msgstr "Nessun proxy"
 
