@@ -8,18 +8,19 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Ayhan YALÇINSOY <dellpardus@hotmail.com>, 2008.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kscd111\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 20:29+0100\n"
-"PO-Revision-Date: 2009-07-04 16:12+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 13:41+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: kscd.cpp:41
@@ -298,7 +299,7 @@ msgstr "Paneldeki metin biçimini değiştir"
 #. i18n: ectx: label, entry (url), group (Appearance)
 #: rc.cpp:39
 msgid "The skin that will be use for the application"
-msgstr "LCD ekranında görüntülenecek yazıtipi."
+msgstr "Uygulamada kullanılacak tema"
 
 #. i18n: file: kscd.kcfg:35
 #. i18n: ectx: whatsthis, entry (url), group (Appearance)
@@ -423,7 +424,7 @@ msgstr "sonraki"
 
 #: gui/panel.cpp:57
 msgid "WELCOME!"
-msgstr "Hoşgeldiniz!"
+msgstr "HOŞ GELDİNİZ!"
 
 #: gui/panel.cpp:72
 msgid ":"
