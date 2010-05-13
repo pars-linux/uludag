@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-05 15:24+0300\n"
+"POT-Creation-Date: 2010-05-13 16:35+0300\n"
 "PO-Revision-Date: 2010-05-13 15:11+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -83,7 +83,7 @@ msgstr ""
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:330
+#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:404
 msgid "&Cancel"
 msgstr "A&nnulla"
 
@@ -91,180 +91,187 @@ msgstr "A&nnulla"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/ui_settingsdialog.py:327 .tmp/mainwindow.py:144
+#: .tmp/ui_settingsdialog.py:359 .tmp/mainwindow.py:144
 msgid "Package Manager Settings"
 msgstr "Impostazioni package manager"
 
-#: .tmp/ui_settingsdialog.py:328
-msgid "&Help"
-msgstr "&Aiuto"
-
-#: .tmp/ui_settingsdialog.py:329
-msgid "&OK"
-msgstr "&OK"
-
-#: .tmp/ui_settingsdialog.py:331
+#: .tmp/ui_settingsdialog.py:360
 msgid "Package list"
 msgstr "Lista pacchetti"
 
-#: .tmp/ui_settingsdialog.py:332
+#: .tmp/ui_settingsdialog.py:361
 msgid "&Show only desktop applications"
 msgstr "&Mostra solo le applicazioni desktop"
 
-#: .tmp/ui_settingsdialog.py:333
+#: .tmp/ui_settingsdialog.py:362
 msgid "Show Component information "
 msgstr "Visualizza informazioni componente "
 
-#: .tmp/ui_settingsdialog.py:334
-msgid "&Enable system tray icon"
+#: .tmp/ui_settingsdialog.py:363
+#, fuzzy
+msgid "System tray icon"
 msgstr "A&bilita icona nel vassoio di sistema."
 
-#: .tmp/ui_settingsdialog.py:335 .tmp/ui_settingsdialog.py:338
-msgid "padding-left:15px;"
-msgstr ""
+#: .tmp/ui_settingsdialog.py:364
+#, fuzzy
+msgid "Enable system tray icon"
+msgstr "A&bilita icona nel vassoio di sistema."
 
-#: .tmp/ui_settingsdialog.py:336
-msgid "Check interval:"
-msgstr "Intervallo di controllo:"
-
-#: .tmp/ui_settingsdialog.py:337
-msgid " min"
-msgstr " min"
-
-#: .tmp/ui_settingsdialog.py:339
-msgid "Install updates automatically"
-msgstr "Installa aggiornamenti automaticamente"
-
-#: .tmp/ui_settingsdialog.py:340
+#: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
 msgstr "Nascondi l'icona di sistema se non ci sono aggiornamenti."
 
-#: .tmp/ui_settingsdialog.py:341
+#: .tmp/ui_settingsdialog.py:366
 msgid "Enable &periodic update check"
 msgstr "Abilita controllo &periodico aggiornamenti"
 
-#: .tmp/ui_settingsdialog.py:342
+#: .tmp/ui_settingsdialog.py:367 .tmp/ui_settingsdialog.py:370
+msgid "padding-left:15px;"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:368
+#, fuzzy
+msgid "Check interval :"
+msgstr "Intervallo di controllo:"
+
+#: .tmp/ui_settingsdialog.py:369
+msgid " min"
+msgstr " min"
+
+#: .tmp/ui_settingsdialog.py:371
+msgid "Install updates automatically"
+msgstr "Installa aggiornamenti automaticamente"
+
+#: .tmp/ui_settingsdialog.py:372
 msgid "Bandwidth limit"
 msgstr "Limite di banda"
 
-#: .tmp/ui_settingsdialog.py:343
-msgid "Use bandwidth limit"
-msgstr "Usa limite di banda"
-
-#: .tmp/ui_settingsdialog.py:344
+#: .tmp/ui_settingsdialog.py:373
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:345
-msgid "Bandwidth limit:"
-msgstr "Limite di banda:"
+#: .tmp/ui_settingsdialog.py:374
+#, fuzzy
+msgid "Use bandwidth limit :"
+msgstr "Usa limite di banda"
 
-#: .tmp/ui_settingsdialog.py:346
+#: .tmp/ui_settingsdialog.py:375
 msgid "&General Settings"
 msgstr "&Impostazioni Generali"
 
-#: .tmp/ui_settingsdialog.py:347
-msgid "Update check"
-msgstr "Controllo aggiornamenti"
-
-#: .tmp/ui_settingsdialog.py:348
+#: .tmp/ui_settingsdialog.py:376
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Usa cache hard disk per il software scaricato"
 
-#: .tmp/ui_settingsdialog.py:349
+#: .tmp/ui_settingsdialog.py:377
 msgid "Maximum cache size:"
 msgstr "Dimensione massima cache:"
 
-#: .tmp/ui_settingsdialog.py:350
-msgid " Mb"
+#: .tmp/ui_settingsdialog.py:378
+msgid "Unlimited"
+msgstr ""
+
+#: .tmp/ui_settingsdialog.py:379
+#, fuzzy
+msgid " Mib"
 msgstr " Mb"
 
-#: .tmp/ui_settingsdialog.py:351
-msgid "(use 0 for no limit)"
-msgstr "(usa 0 per non imporre nessun limite)"
+#: .tmp/ui_settingsdialog.py:380
+msgid "Current cache dir:"
+msgstr ""
 
-#: .tmp/ui_settingsdialog.py:352
-msgid "Clear Cache"
-msgstr " Pulisci cache"
+#: .tmp/ui_settingsdialog.py:381
+msgid "Select..."
+msgstr ""
 
-#: .tmp/ui_settingsdialog.py:353
+#: .tmp/ui_settingsdialog.py:382
+#, fuzzy
 msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
-"This will not delete installed software or affect your system stability."
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
 msgstr ""
 "Svuotare la cache sul disco rimuoverà tutti i pacchetti dei software "
 "scaricati. \n"
 "Questa operazione non rimuoverà il software installato e non influenzerà la "
 "stabilità del sistema."
 
-#: .tmp/ui_settingsdialog.py:355
+#: .tmp/ui_settingsdialog.py:383
 msgid "C&lean disk cache now"
 msgstr "&Pulisci cache su disco ora"
 
-#: .tmp/ui_settingsdialog.py:356
+#: .tmp/ui_settingsdialog.py:384
 msgid "C&ache"
 msgstr "Ca&che"
 
-#: .tmp/ui_settingsdialog.py:357 .tmp/ui_repodialog.py:57
+#: .tmp/ui_settingsdialog.py:385 .tmp/ui_repodialog.py:57
 msgid "Repository Name"
 msgstr "Nome repository"
 
-#: .tmp/ui_settingsdialog.py:358 .tmp/ui_repodialog.py:58
+#: .tmp/ui_settingsdialog.py:386 .tmp/ui_repodialog.py:58
 msgid "Repository Address"
 msgstr "Indirizzo repository"
 
-#: .tmp/ui_settingsdialog.py:359
+#: .tmp/ui_settingsdialog.py:387
 msgid "&Add New Repository"
 msgstr "A&ggiungi nuovo repository"
 
-#: .tmp/ui_settingsdialog.py:360
+#: .tmp/ui_settingsdialog.py:388
 msgid "Remove Repository"
 msgstr "Rimuovi Repository"
 
-#: .tmp/ui_settingsdialog.py:361
+#: .tmp/ui_settingsdialog.py:389
 msgid "Move &Up"
 msgstr "Sposta &Su"
 
-#: .tmp/ui_settingsdialog.py:362
+#: .tmp/ui_settingsdialog.py:390
 msgid "Move &Down"
 msgstr "Sposta &Giù"
 
-#: .tmp/ui_settingsdialog.py:363
+#: .tmp/ui_settingsdialog.py:391
 msgid "&Repositories"
 msgstr "&Repository"
 
-#: .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:392
 msgid "HTTP proxy server:"
 msgstr "Proxy HTTP:"
 
-#: .tmp/ui_settingsdialog.py:365 .tmp/ui_settingsdialog.py:368
-#: .tmp/ui_settingsdialog.py:370
+#: .tmp/ui_settingsdialog.py:393 .tmp/ui_settingsdialog.py:396
+#: .tmp/ui_settingsdialog.py:398
 msgid "Port:"
 msgstr "Porta:"
 
-#: .tmp/ui_settingsdialog.py:366
+#: .tmp/ui_settingsdialog.py:394
 msgid "Use this proxy server for all protocols"
 msgstr "Usa questo proxy per tutti i protocolli"
 
-#: .tmp/ui_settingsdialog.py:367
+#: .tmp/ui_settingsdialog.py:395
 msgid "HTTPS proxy server:"
 msgstr "Proxy HTTPS:"
 
-#: .tmp/ui_settingsdialog.py:369
+#: .tmp/ui_settingsdialog.py:397
 msgid "FTP proxy server:"
 msgstr "Proxy FTP:"
 
-#: .tmp/ui_settingsdialog.py:371
-msgid "No  proxy server"
+#: .tmp/ui_settingsdialog.py:399
+#, fuzzy
+msgid "No proxy server"
 msgstr "Nessun proxy"
 
-#: .tmp/ui_settingsdialog.py:372
+#: .tmp/ui_settingsdialog.py:400
 msgid "Use proxy server"
 msgstr "Usa proxy"
 
-#: .tmp/ui_settingsdialog.py:373
+#: .tmp/ui_settingsdialog.py:401
 msgid "&Proxy"
 msgstr "&Proxy"
+
+#: .tmp/ui_settingsdialog.py:402
+msgid "&Help"
+msgstr "&Aiuto"
+
+#: .tmp/ui_settingsdialog.py:403
+msgid "&OK"
+msgstr "&OK"
 
 #: .tmp/packagedelegate.py:60
 msgid "Description:"
@@ -290,7 +297,7 @@ msgstr "Dimensione pacchetto:"
 msgid "Installed Version:"
 msgstr "Versione Installata:"
 
-#: .tmp/main.py:47
+#: .tmp/main.py:48
 msgid "Show main window"
 msgstr "Mostra finestra principale"
 
@@ -320,9 +327,9 @@ msgstr "Seleziona tutti i pacchetti di questo gruppo."
 msgid "downloading"
 msgstr "download in corso"
 
-#: .tmp/basketdialog.py:115 .tmp/settingsdialog.py:206
-#: .tmp/settingsdialog.py:211 .tmp/mainwidget.py:209 .tmp/mainwidget.py:212
-#: .tmp/pm-install.py:98
+#: .tmp/basketdialog.py:119 .tmp/settingsdialog.py:219
+#: .tmp/settingsdialog.py:224 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
+#: .tmp/pm-install.py:99
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
 
@@ -469,7 +476,7 @@ msgstr ""
 "Rimuovere i pacchetti in conflitto dal sistema?"
 
 #: .tmp/ui_mainwindow.py:33 .tmp/about.py:23 .tmp/about.py:24
-#: .tmp/mainwidget.py:245
+#: .tmp/mainwidget.py:247
 msgid "Package Manager"
 msgstr "Gestore di Pacchetti"
 
@@ -506,19 +513,23 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Annullamento operazione...</b>"
 
-#: .tmp/settingsdialog.py:146
+#: .tmp/settingsdialog.py:149
+msgid "Open Directory"
+msgstr ""
+
+#: .tmp/settingsdialog.py:158
 msgid "Warning"
 msgstr "Avviso"
 
-#: .tmp/settingsdialog.py:147
+#: .tmp/settingsdialog.py:159
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Tutti i pacchetti nella cache verranno eliminati. Sei sicuro?"
 
-#: .tmp/settingsdialog.py:207
+#: .tmp/settingsdialog.py:220
 msgid "Not a valid repository name"
 msgstr "Nome repository non valido"
 
-#: .tmp/settingsdialog.py:212
+#: .tmp/settingsdialog.py:225
 msgid ""
 "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
 "again.</qt>"
@@ -546,35 +557,35 @@ msgstr "Faik Uygur"
 msgid "First Author"
 msgstr "Primo autore"
 
-#: .tmp/mainwidget.py:38
+#: .tmp/mainwidget.py:96
 msgid "All Updates"
 msgstr "Tutti gli aggiornamenti"
 
-#: .tmp/mainwidget.py:39
+#: .tmp/mainwidget.py:97
 msgid "Security Updates"
 msgstr "Aggiornamenti di sicurezza"
 
-#: .tmp/mainwidget.py:40
+#: .tmp/mainwidget.py:98
 msgid "Critical Updates"
 msgstr "Aggiornamenti critici"
 
-#: .tmp/mainwidget.py:203 .tmp/pm-install.py:90
+#: .tmp/mainwidget.py:205 .tmp/pm-install.py:91
 msgid "Network Error"
 msgstr "Errore di rete"
 
-#: .tmp/mainwidget.py:204 .tmp/pm-install.py:92
+#: .tmp/mainwidget.py:206 .tmp/pm-install.py:93
 msgid "Please check your network connections and try again."
 msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
-#: .tmp/mainwidget.py:206 .tmp/pm-install.py:95
+#: .tmp/mainwidget.py:208 .tmp/pm-install.py:96
 msgid "Authorization Error"
 msgstr "Errore di autorizzazione"
 
-#: .tmp/mainwidget.py:207 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:209 .tmp/pm-install.py:97
 msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
-#: .tmp/mainwidget.py:210
+#: .tmp/mainwidget.py:212
 msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
@@ -686,20 +697,20 @@ msgstr "Impostazioni"
 msgid "Help"
 msgstr "Aiuto"
 
-#: .tmp/pm-install.py:47
+#: .tmp/pm-install.py:48
 msgid "Succesfully finished installing %1"
 msgstr "Installazione di %1 completata con successo"
 
-#: .tmp/pm-install.py:51
+#: .tmp/pm-install.py:52
 msgid "Succesfully finished installing packages"
 msgstr "I pacchetti sono stati installati con successo"
 
-#: .tmp/pm-install.py:63 .tmp/pm-install.py:66 .tmp/pm-install.py:69
-#: .tmp/pm-install.py:72
+#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
+#: .tmp/pm-install.py:73
 msgid "%p%"
 msgstr "%p%"
 
-#: .tmp/pm-install.py:150
+#: .tmp/pm-install.py:151
 msgid "Summary"
 msgstr "Sommario"
 
@@ -722,6 +733,18 @@ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 #: .tmp/helpdialog.py:32
 msgid "Package Manager Help"
 msgstr "Guida del Gestore Pacchetti"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite di banda:"
+
+#~ msgid "Update check"
+#~ msgstr "Controllo aggiornamenti"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(usa 0 per non imporre nessun limite)"
+
+#~ msgid "Clear Cache"
+#~ msgstr " Pulisci cache"
 
 #, fuzzy
 #~ msgid "Ok"

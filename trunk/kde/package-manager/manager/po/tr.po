@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-05 15:24+0300\n"
+"POT-Creation-Date: 2010-05-13 16:35+0300\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -62,19 +62,29 @@ msgstr "Durum:"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:330
+#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:404
 msgid "&Cancel"
 msgstr "&İptal"
 
@@ -82,179 +92,179 @@ msgstr "&İptal"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/ui_settingsdialog.py:327 .tmp/mainwindow.py:144
+#: .tmp/ui_settingsdialog.py:359 .tmp/mainwindow.py:144
 msgid "Package Manager Settings"
 msgstr "Paket Yöneticisi Ayarları"
 
-#: .tmp/ui_settingsdialog.py:328
-msgid "&Help"
-msgstr "&Yardım"
-
-#: .tmp/ui_settingsdialog.py:329
-msgid "&OK"
-msgstr "&Tamam"
-
-#: .tmp/ui_settingsdialog.py:331
+#: .tmp/ui_settingsdialog.py:360
 msgid "Package list"
 msgstr "Paket listesi"
 
-#: .tmp/ui_settingsdialog.py:332
+#: .tmp/ui_settingsdialog.py:361
 msgid "&Show only desktop applications"
 msgstr "&Sadece masaüstü uygulamalarını göster"
 
-#: .tmp/ui_settingsdialog.py:333
+#: .tmp/ui_settingsdialog.py:362
 msgid "Show Component information "
 msgstr "Bileşen bilgisini göster"
 
-#: .tmp/ui_settingsdialog.py:334
-msgid "&Enable system tray icon"
-msgstr "Sistem çekmecesi simgesini &aç"
+#: .tmp/ui_settingsdialog.py:363
+msgid "System tray icon"
+msgstr "Sistem çekmecesi"
 
-#: .tmp/ui_settingsdialog.py:335 .tmp/ui_settingsdialog.py:338
-msgid "padding-left:15px;"
-msgstr "padding-left:15px;"
+#: .tmp/ui_settingsdialog.py:364
+msgid "Enable system tray icon"
+msgstr "Sistem çekmecesi simgesini aç"
 
-#: .tmp/ui_settingsdialog.py:336
-msgid "Check interval:"
-msgstr "Kontrol aralığı:"
-
-#: .tmp/ui_settingsdialog.py:337
-msgid " min"
-msgstr " dk"
-
-#: .tmp/ui_settingsdialog.py:339
-msgid "Install updates automatically"
-msgstr "Güncellemeleri otomatik kur"
-
-#: .tmp/ui_settingsdialog.py:340
+#: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
 msgstr "Güncelleme olmadığında sistem çekmecesini gizle"
 
-#: .tmp/ui_settingsdialog.py:341
+#: .tmp/ui_settingsdialog.py:366
 msgid "Enable &periodic update check"
 msgstr "Aralıklı &güncelleme kontrolünü aç"
 
-#: .tmp/ui_settingsdialog.py:342
+#: .tmp/ui_settingsdialog.py:367 .tmp/ui_settingsdialog.py:370
+msgid "padding-left:15px;"
+msgstr "padding-left:15px;"
+
+#: .tmp/ui_settingsdialog.py:368
+msgid "Check interval :"
+msgstr "Kontrol aralığı :"
+
+#: .tmp/ui_settingsdialog.py:369
+msgid " min"
+msgstr " dk"
+
+#: .tmp/ui_settingsdialog.py:371
+msgid "Install updates automatically"
+msgstr "Güncellemeleri otomatik kur"
+
+#: .tmp/ui_settingsdialog.py:372
 msgid "Bandwidth limit"
 msgstr "Bant genişliği sınırı"
 
-#: .tmp/ui_settingsdialog.py:343
-msgid "Use bandwidth limit"
-msgstr "Bant genişliği kullanımını sınırlandır"
-
-#: .tmp/ui_settingsdialog.py:344
+#: .tmp/ui_settingsdialog.py:373
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:345
-msgid "Bandwidth limit:"
-msgstr "Bant genişliği sınırı:"
+#: .tmp/ui_settingsdialog.py:374
+msgid "Use bandwidth limit :"
+msgstr "Bant genişliği kullanımını sınırlandır :"
 
-#: .tmp/ui_settingsdialog.py:346
+#: .tmp/ui_settingsdialog.py:375
 msgid "&General Settings"
 msgstr "Genel &Ayarlar"
 
-#: .tmp/ui_settingsdialog.py:347
-msgid "Update check"
-msgstr "Güncelleme kontrolü"
-
-#: .tmp/ui_settingsdialog.py:348
+#: .tmp/ui_settingsdialog.py:376
 msgid "&Use hard disk cache for downloaded software"
 msgstr "İndirilen yazılımlar için sabit disk önbelleği &kullan"
 
-#: .tmp/ui_settingsdialog.py:349
+#: .tmp/ui_settingsdialog.py:377
 msgid "Maximum cache size:"
 msgstr "Azami önbellek boyutu:"
 
-#: .tmp/ui_settingsdialog.py:350
-msgid " Mb"
-msgstr " Mb"
+#: .tmp/ui_settingsdialog.py:378
+msgid "Unlimited"
+msgstr "Sınırsız"
 
-#: .tmp/ui_settingsdialog.py:351
-msgid "(use 0 for no limit)"
-msgstr "(Sınırı kaldırmak için 0 kullanın)"
+#: .tmp/ui_settingsdialog.py:379
+msgid " Mib"
+msgstr " Mib"
 
-#: .tmp/ui_settingsdialog.py:352
-msgid "Clear Cache"
-msgstr "Önbelleği Temizle"
+#: .tmp/ui_settingsdialog.py:380
+msgid "Current cache dir:"
+msgstr "Seçili önbellek dizini:"
 
-#: .tmp/ui_settingsdialog.py:353
+#: .tmp/ui_settingsdialog.py:381
+msgid "Select..."
+msgstr "Seç..."
+
+#: .tmp/ui_settingsdialog.py:382
 msgid ""
-"Clearing the disk cache will remove all downloaded software. \n"
-"This will not delete installed software or affect your system stability."
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
 msgstr ""
-"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan \n"
-"tüm paketler silinecektir. Bu işlem sistemde kurulu olan paketleri \n"
-"silmeyecek veya bilgisayarınızın çalışmasını etkilemeyecektir."
+"Sabit disk önbelleğinin temizlenmesi ile indirilen ve depolanan tüm paketler "
+"silinecektir. Bu işlem sistemde kurulu olan paketleri silmeyecek veya "
+"bilgisayarınızın çalışmasını etkilemeyecektir."
 
-#: .tmp/ui_settingsdialog.py:355
+#: .tmp/ui_settingsdialog.py:383
 msgid "C&lean disk cache now"
 msgstr "Önbelleği şimdi &temizle"
 
-#: .tmp/ui_settingsdialog.py:356
+#: .tmp/ui_settingsdialog.py:384
 msgid "C&ache"
 msgstr "&Önbellek"
 
-#: .tmp/ui_settingsdialog.py:357 .tmp/ui_repodialog.py:57
+#: .tmp/ui_settingsdialog.py:385 .tmp/ui_repodialog.py:57
 msgid "Repository Name"
 msgstr "Depo İsmi"
 
-#: .tmp/ui_settingsdialog.py:358 .tmp/ui_repodialog.py:58
+#: .tmp/ui_settingsdialog.py:386 .tmp/ui_repodialog.py:58
 msgid "Repository Address"
 msgstr "Depo Adresi"
 
-#: .tmp/ui_settingsdialog.py:359
+#: .tmp/ui_settingsdialog.py:387
 msgid "&Add New Repository"
 msgstr "Yeni Depo &Ekle"
 
-#: .tmp/ui_settingsdialog.py:360
+#: .tmp/ui_settingsdialog.py:388
 msgid "Remove Repository"
 msgstr "Depoyu Kaldır"
 
-#: .tmp/ui_settingsdialog.py:361
+#: .tmp/ui_settingsdialog.py:389
 msgid "Move &Up"
 msgstr "&Yukarı Taşı"
 
-#: .tmp/ui_settingsdialog.py:362
+#: .tmp/ui_settingsdialog.py:390
 msgid "Move &Down"
 msgstr "&Aşağı Taşı"
 
-#: .tmp/ui_settingsdialog.py:363
+#: .tmp/ui_settingsdialog.py:391
 msgid "&Repositories"
 msgstr "&Depolar"
 
-#: .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:392
 msgid "HTTP proxy server:"
 msgstr "HTTP vekil sunucu:"
 
-#: .tmp/ui_settingsdialog.py:365 .tmp/ui_settingsdialog.py:368
-#: .tmp/ui_settingsdialog.py:370
+#: .tmp/ui_settingsdialog.py:393 .tmp/ui_settingsdialog.py:396
+#: .tmp/ui_settingsdialog.py:398
 msgid "Port:"
 msgstr "Port:"
 
-#: .tmp/ui_settingsdialog.py:366
+#: .tmp/ui_settingsdialog.py:394
 msgid "Use this proxy server for all protocols"
 msgstr "Tüm protokoller için bu vekil sunucuyu kullan"
 
-#: .tmp/ui_settingsdialog.py:367
+#: .tmp/ui_settingsdialog.py:395
 msgid "HTTPS proxy server:"
 msgstr "HTTPS vekil sunucu:"
 
-#: .tmp/ui_settingsdialog.py:369
+#: .tmp/ui_settingsdialog.py:397
 msgid "FTP proxy server:"
 msgstr "FTP vekil sunucu:"
 
-#: .tmp/ui_settingsdialog.py:371
-msgid "No  proxy server"
+#: .tmp/ui_settingsdialog.py:399
+msgid "No proxy server"
 msgstr "Vekil sunucu yok"
 
-#: .tmp/ui_settingsdialog.py:372
+#: .tmp/ui_settingsdialog.py:400
 msgid "Use proxy server"
 msgstr "Vekil sunucu kullan"
 
-#: .tmp/ui_settingsdialog.py:373
+#: .tmp/ui_settingsdialog.py:401
 msgid "&Proxy"
 msgstr "&Vekil sunucu"
+
+#: .tmp/ui_settingsdialog.py:402
+msgid "&Help"
+msgstr "&Yardım"
+
+#: .tmp/ui_settingsdialog.py:403
+msgid "&OK"
+msgstr "&Tamam"
 
 #: .tmp/packagedelegate.py:60
 msgid "Description:"
@@ -280,7 +290,7 @@ msgstr "Paket Boyutu:"
 msgid "Installed Version:"
 msgstr "Kurulu Sürüm:"
 
-#: .tmp/main.py:47
+#: .tmp/main.py:48
 msgid "Show main window"
 msgstr "Ana pencereyi göster"
 
@@ -310,9 +320,9 @@ msgstr "Bu gruptaki tüm paketleri seç"
 msgid "downloading"
 msgstr "indiriliyor"
 
-#: .tmp/basketdialog.py:115 .tmp/settingsdialog.py:206
-#: .tmp/settingsdialog.py:211 .tmp/mainwidget.py:209 .tmp/mainwidget.py:212
-#: .tmp/pm-install.py:98
+#: .tmp/basketdialog.py:119 .tmp/settingsdialog.py:219
+#: .tmp/settingsdialog.py:224 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
+#: .tmp/pm-install.py:99
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
@@ -385,15 +395,21 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
 
 #: .tmp/statemanager.py:104 .tmp/ui_basketdialog.py:101
-msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
 msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
 #: .tmp/statemanager.py:105
-msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
 msgstr "Seçili paket(ler)in ayrıca kaldırılacak olan ters bağımlılıkları:"
 
 #: .tmp/statemanager.py:106
-msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
 msgstr "Seçili paket(ler)in ayrıca güncellenecek olan ek bağımlılıkları:"
 
 #: .tmp/statemanager.py:129 .tmp/mainwindow_kde4.py:78
@@ -402,7 +418,8 @@ msgid "Currently your basket is empty."
 msgstr "Şu anda sepetiniz boş."
 
 #: .tmp/statemanager.py:131
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Şu an sepetinizde toplam <b>%2</b> boyutunda seçilmiş <b>%1</b> paket "
 
 #: .tmp/statemanager.py:134
@@ -418,8 +435,11 @@ msgid "in your basket."
 msgstr "bulunuyor."
 
 #: .tmp/statemanager.py:159
-msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"Seçili paketler [%1] birbirleriyle çakışıyor. Bu paketler birlikte kurulamaz."
 
 #: .tmp/statemanager.py:160 .tmp/statemanager.py:168
 msgid "Conflict Error"
@@ -442,7 +462,7 @@ msgstr ""
 "Çakışan paketler sistemden kaldırılsın mı?"
 
 #: .tmp/ui_mainwindow.py:33 .tmp/about.py:23 .tmp/about.py:24
-#: .tmp/mainwidget.py:245
+#: .tmp/mainwidget.py:247
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
@@ -479,21 +499,29 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>İşlem iptal ediliyor...</b>"
 
-#: .tmp/settingsdialog.py:146
+#: .tmp/settingsdialog.py:149
+msgid "Open Directory"
+msgstr "Dizin Aç"
+
+#: .tmp/settingsdialog.py:158
 msgid "Warning"
 msgstr "Uyarı"
 
-#: .tmp/settingsdialog.py:147
+#: .tmp/settingsdialog.py:159
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Önbellekteki tüm paketler silinecek. Emin misiniz? "
 
-#: .tmp/settingsdialog.py:207
+#: .tmp/settingsdialog.py:220
 msgid "Not a valid repository name"
 msgstr "Geçerli bir depo ismi değil"
 
-#: .tmp/settingsdialog.py:212
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar deneyin.</qt>"
+#: .tmp/settingsdialog.py:225
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>Depo adresleri xml veya xml.bz2 uzantısı ile bitmelidir.<p>Lütfen tekrar "
+"deneyin.</qt>"
 
 #: .tmp/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
@@ -515,37 +543,41 @@ msgstr "Faik Uygur"
 msgid "First Author"
 msgstr "İlk Geliştirici"
 
-#: .tmp/mainwidget.py:38
+#: .tmp/mainwidget.py:96
 msgid "All Updates"
 msgstr "Tüm Güncellemeler"
 
-#: .tmp/mainwidget.py:39
+#: .tmp/mainwidget.py:97
 msgid "Security Updates"
 msgstr "Güvenlik Güncellemeleri"
 
-#: .tmp/mainwidget.py:40
+#: .tmp/mainwidget.py:98
 msgid "Critical Updates"
 msgstr "Kritik Güncellemeler"
 
-#: .tmp/mainwidget.py:203 .tmp/pm-install.py:90
+#: .tmp/mainwidget.py:205 .tmp/pm-install.py:91
 msgid "Network Error"
 msgstr "Ağ Hatası"
 
-#: .tmp/mainwidget.py:204 .tmp/pm-install.py:92
+#: .tmp/mainwidget.py:206 .tmp/pm-install.py:93
 msgid "Please check your network connections and try again."
 msgstr "Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
-#: .tmp/mainwidget.py:206 .tmp/pm-install.py:95
+#: .tmp/mainwidget.py:208 .tmp/pm-install.py:96
 msgid "Authorization Error"
 msgstr "Yetkilendirme Hatası"
 
-#: .tmp/mainwidget.py:207 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:209 .tmp/pm-install.py:97
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
-#: .tmp/mainwidget.py:210
-msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
-msgstr "Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. Lütfen depo bilgilerini güncellemeyi deneyin."
+#: .tmp/mainwidget.py:212
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+"Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. "
+"Lütfen depo bilgilerini güncellemeyi deneyin."
 
 #: .tmp/mainwindow_kde4.py:99 .tmp/mainwindow.py:112
 msgid "Show Installable Packages"
@@ -628,8 +660,12 @@ msgid "Operation Summary"
 msgstr "İşlem Özeti"
 
 #: .tmp/ui_summarydialog.py:50
-msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya daha sonra uygulama menüsünden çalıştırabilirsiniz."
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya daha sonra "
+"uygulama menüsünden çalıştırabilirsiniz."
 
 #: .tmp/ui_summarydialog.py:51
 msgid "&Ok"
@@ -647,20 +683,20 @@ msgstr "Ayarlar"
 msgid "Help"
 msgstr "Yardım"
 
-#: .tmp/pm-install.py:47
+#: .tmp/pm-install.py:48
 msgid "Succesfully finished installing %1"
 msgstr "%1 başarılı bir şekilde kuruldu"
 
-#: .tmp/pm-install.py:51
+#: .tmp/pm-install.py:52
 msgid "Succesfully finished installing packages"
 msgstr "Paketlerin kurulumu tamamlandı"
 
-#: .tmp/pm-install.py:63 .tmp/pm-install.py:66 .tmp/pm-install.py:69
-#: .tmp/pm-install.py:72
+#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
+#: .tmp/pm-install.py:73
 msgid "%p%"
 msgstr "%%p"
 
-#: .tmp/pm-install.py:150
+#: .tmp/pm-install.py:151
 msgid "Summary"
 msgstr "Özet"
 
@@ -684,6 +720,18 @@ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgid "Package Manager Help"
 msgstr "Paket Yöneticisi Yardım"
 
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
+
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Önbelleği Temizle"
+
 #~ msgid "TextLabel"
 #~ msgstr "TextLabel"
 
@@ -694,17 +742,27 @@ msgstr "Paket Yöneticisi Yardım"
 #~ msgstr "Sil"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+#~ "this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm paketleri seç</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm "
+#~ "paketleri seç</p></body></html>"
 
 #~ msgid "Maintainer"
 #~ msgstr "Bakıcı"
