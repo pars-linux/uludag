@@ -4,18 +4,20 @@
 #
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
+# Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-05 15:24+0300\n"
-"PO-Revision-Date: 2009-07-04 14:42+0200\n"
-"Last-Translator: Siciliano Edivad <edivad95@gmail.com>\n"
-"Language-Team: italiano <it@li.org>\n"
+"PO-Revision-Date: 2010-05-13 15:11+0200\n"
+"Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
+"Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ui_appitem.py:57
 msgid "Application"
@@ -70,6 +72,16 @@ msgid ""
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:330
 msgid "&Cancel"
@@ -92,9 +104,8 @@ msgid "&OK"
 msgstr "&OK"
 
 #: .tmp/ui_settingsdialog.py:331
-#, fuzzy
 msgid "Package list"
-msgstr "Gestore di Pacchetti"
+msgstr "Lista pacchetti"
 
 #: .tmp/ui_settingsdialog.py:332
 msgid "&Show only desktop applications"
@@ -102,7 +113,7 @@ msgstr "&Mostra solo le applicazioni desktop"
 
 #: .tmp/ui_settingsdialog.py:333
 msgid "Show Component information "
-msgstr ""
+msgstr "Visualizza informazioni componente "
 
 #: .tmp/ui_settingsdialog.py:334
 msgid "&Enable system tray icon"
@@ -126,7 +137,7 @@ msgstr "Installa aggiornamenti automaticamente"
 
 #: .tmp/ui_settingsdialog.py:340
 msgid "Hide system tray if there is no update."
-msgstr ""
+msgstr "Nascondi l'icona di sistema se non ci sono aggiornamenti."
 
 #: .tmp/ui_settingsdialog.py:341
 msgid "Enable &periodic update check"
@@ -261,7 +272,7 @@ msgstr "Descrizione:"
 
 #: .tmp/packagedelegate.py:61
 msgid "Website:"
-msgstr ""
+msgstr "Sito web:"
 
 #: .tmp/packagedelegate.py:62
 msgid "Release:"
@@ -272,17 +283,16 @@ msgid "Repository:"
 msgstr "Repository:"
 
 #: .tmp/packagedelegate.py:64
-#, fuzzy
 msgid "Package Size:"
-msgstr "Gestore di Pacchetti"
+msgstr "Dimensione pacchetto:"
 
 #: .tmp/packagedelegate.py:65
 msgid "Installed Version:"
-msgstr ""
+msgstr "Versione Installata:"
 
 #: .tmp/main.py:47
 msgid "Show main window"
-msgstr ""
+msgstr "Mostra finestra principale"
 
 #: .tmp/ui_mainwidget_kde4.py:86 .tmp/ui_mainwidget_x11.py:75
 #: .tmp/ui_pminstaller.py:33
@@ -397,12 +407,14 @@ msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
+"I seguenti pacchetti in conflitto con i pacchetti selezionati verranno "
+"rimossi:"
 
 #: .tmp/statemanager.py:106
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
+msgstr "Le dipendenze extra dei pacchetti selezionati saranno aggiornati:"
 
 #: .tmp/statemanager.py:129 .tmp/mainwindow_kde4.py:78
 #: .tmp/mainwindow_kde4.py:83 .tmp/mainwindow.py:73 .tmp/mainwindow.py:78
@@ -446,7 +458,7 @@ msgstr "I seguenti pacchetti conflittano:\n"
 
 #: .tmp/statemanager.py:166
 msgid "%1 conflicts with: [%2]\n"
-msgstr ""
+msgstr "%1 è in conflitto con: [%2]\n"
 
 #: .tmp/statemanager.py:167
 msgid ""
@@ -462,9 +474,9 @@ msgid "Package Manager"
 msgstr "Gestore di Pacchetti"
 
 #: .tmp/progressdialog.py:39
-#, fuzzy, python-format
+#, python-format
 msgid "Operation - %1%"
-msgstr "Operazione"
+msgstr "Operazione - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:16
 msgid "configuring"
@@ -503,9 +515,8 @@ msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Tutti i pacchetti nella cache verranno eliminati. Sei sicuro?"
 
 #: .tmp/settingsdialog.py:207
-#, fuzzy
 msgid "Not a valid repository name"
-msgstr "Nome repository"
+msgstr "Nome repository non valido"
 
 #: .tmp/settingsdialog.py:212
 msgid ""
@@ -516,17 +527,16 @@ msgstr ""
 "<p>Prova di nuovo.</qt>"
 
 #: .tmp/about.py:26
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Sviluppatore"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -534,43 +544,43 @@ msgstr "Faik Uygur"
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Primo autore"
 
 #: .tmp/mainwidget.py:38
-#, fuzzy
 msgid "All Updates"
-msgstr "Aggiorna"
+msgstr "Tutti gli aggiornamenti"
 
 #: .tmp/mainwidget.py:39
-#, fuzzy
 msgid "Security Updates"
-msgstr "Mostra aggiornamenti"
+msgstr "Aggiornamenti di sicurezza"
 
 #: .tmp/mainwidget.py:40
 msgid "Critical Updates"
-msgstr ""
+msgstr "Aggiornamenti critici"
 
 #: .tmp/mainwidget.py:203 .tmp/pm-install.py:90
 msgid "Network Error"
-msgstr ""
+msgstr "Errore di rete"
 
 #: .tmp/mainwidget.py:204 .tmp/pm-install.py:92
 msgid "Please check your network connections and try again."
-msgstr ""
+msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
 #: .tmp/mainwidget.py:206 .tmp/pm-install.py:95
 msgid "Authorization Error"
-msgstr ""
+msgstr "Errore di autorizzazione"
 
 #: .tmp/mainwidget.py:207 .tmp/pm-install.py:96
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Non sei autorizzato per eseguire questa operazione."
 
 #: .tmp/mainwidget.py:210
 msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
 msgstr ""
+"Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. "
+"Prova ad aggiornare le informazioni sui repository."
 
 #: .tmp/mainwindow_kde4.py:99 .tmp/mainwindow.py:112
 msgid "Show Installable Packages"
@@ -594,15 +604,13 @@ msgstr "Aggiorna"
 
 #: .tmp/tray.py:174 .tmp/mainwindow.py:99
 msgid "Quit"
-msgstr ""
+msgstr "Esci"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "Updates"
-msgstr "Aggiorna"
+msgstr "Aggiornamenti"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "There are %1 updates available!"
 msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
@@ -620,7 +628,7 @@ msgstr "Ignora"
 
 #: .tmp/ui_basketdialog.py:99
 msgid "Basket"
-msgstr "cestino"
+msgstr "Cestino"
 
 #: .tmp/ui_basketdialog.py:100
 msgid "Selected package(s) for install:"
@@ -635,14 +643,12 @@ msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
 #: .tmp/ui_basketdialog.py:105
-#, fuzzy
 msgid "Download Size:"
-msgstr "download in corso"
+msgstr "Dimensione file da scaricare:"
 
 #: .tmp/ui_basketdialog.py:106
-#, fuzzy
 msgid "<b>2.0 MB</"
-msgstr "<b>2.2 MB</b>"
+msgstr "<b>2.0 MB</b>"
 
 #: .tmp/commontext.py:16
 msgid "removing"
@@ -670,34 +676,32 @@ msgstr "&Ok"
 
 #: .tmp/mainwindow.py:95
 msgid "File"
-msgstr ""
+msgstr "File"
 
 #: .tmp/mainwindow.py:96
-#, fuzzy
 msgid "Settings"
-msgstr "estrazione"
+msgstr "Impostazioni"
 
 #: .tmp/mainwindow.py:97 .tmp/mainwindow.py:103
-#, fuzzy
 msgid "Help"
-msgstr "&Aiuto"
+msgstr "Aiuto"
 
 #: .tmp/pm-install.py:47
 msgid "Succesfully finished installing %1"
-msgstr ""
+msgstr "Installazione di %1 completata con successo"
 
 #: .tmp/pm-install.py:51
 msgid "Succesfully finished installing packages"
-msgstr ""
+msgstr "I pacchetti sono stati installati con successo"
 
 #: .tmp/pm-install.py:63 .tmp/pm-install.py:66 .tmp/pm-install.py:69
 #: .tmp/pm-install.py:72
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: .tmp/pm-install.py:150
 msgid "Summary"
-msgstr ""
+msgstr "Sommario"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
@@ -717,7 +721,7 @@ msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #: .tmp/helpdialog.py:32
 msgid "Package Manager Help"
-msgstr ""
+msgstr "Guida del Gestore Pacchetti"
 
 #, fuzzy
 #~ msgid "Ok"
