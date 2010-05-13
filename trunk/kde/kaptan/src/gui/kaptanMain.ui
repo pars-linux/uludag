@@ -237,32 +237,6 @@ color: white;
 }
 QLineEdit {
 border: 1px solid gray;
-}
-
-QPushButton{
-	padding: 3px 10px 3px 10px;
-	color: white;
-	border:0px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(122, 44, 67, 255), stop:0.521739 rgba(182, 103, 126, 255), stop:0.527174 rgba(205, 130, 152, 255), stop:0.983696 rgba(234, 179, 195, 255), stop:1 rgba(255, 200, 216, 255))
-}
-
-QPushButton:flat:hover{
-	border:1px solid  rgba(175, 111, 130, 150);
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(122, 44, 67, 255), stop:0.521739 rgba(182, 103, 126, 255), stop:0.527174 rgba(205, 130, 152, 255), stop:0.983696 rgba(234, 179, 195, 255), stop:1 rgba(255, 200, 216, 255))
-}
-
-QPushButton:flat{
-	border:1px solid  rgba(175, 111, 130, 150);
-	border-radius:2px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(175, 111, 130, 255), stop:0.983696 rgba(204, 156, 170, 255), stop:1 rgba(240, 188, 203, 255));
-}
-
-QPushButton:flat:pressed{
-	border:1px solid  rgba(175, 111, 130, 150);
-	border-radius:2px;
-	padding: 3px 10px 3px 10px;
-	background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(71, 25, 39, 255), stop:0.521739 rgba(132, 74, 91, 255), stop:0.527174 rgba(135, 85, 100, 255), stop:0.983696 rgba(164, 125, 137, 255), stop:1 rgba(200, 157, 169, 255));
 }</string>
           </property>
           <property name="frameShape">
