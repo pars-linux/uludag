@@ -4,18 +4,19 @@
 #
 # Osman Tosun <rainman.neu@gmail.com>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_systemstatus\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-04 20:07+0100\n"
-"PO-Revision-Date: 2009-11-02 18:30+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-13 13:56+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: coloursconfig.ui:14
@@ -157,17 +158,17 @@ msgstr "İşlemci Kullanımı: %1%  %2 MHz<br />"
 #: systemloadviewer.cpp:648
 #, kde-format
 msgid "CPU Usage: %1%<br />"
-msgstr "İşlemci Kullanımı: %1%z<br />"
+msgstr "İşlemci Kullanımı: %1%<br />"
 
 #: systemloadviewer.cpp:655
 #, kde-format
 msgid "Ram Usage: %1% of %2 MiB<br />"
-msgstr "Bellek Kullanımı: %1% of %2 MB<br />"
+msgstr "Bellek Kullanımı: %1% of %2 MiB<br />"
 
 #: systemloadviewer.cpp:661
 #, kde-format
 msgid "Swap Usage: %1% of %2 MiB"
-msgstr "Takas Alanı Kullanımı: %1% of %2 MB"
+msgstr "Takas Alanı Kullanımı: %1% of %2 MiB"
 
 #: systemloadviewer.cpp:663
 msgctxt "not available means the system does not have swap"
