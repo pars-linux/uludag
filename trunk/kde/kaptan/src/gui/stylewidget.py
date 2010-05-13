@@ -28,5 +28,5 @@ class StyleItemWidget(QtGui.QWidget):
 
         self.ui.styleName.setText(title)
         self.ui.styleDesc.setText(desc)
-        #self.ui.stylePreview.setPixmap(QtGui.QPixmap(pic))
+        self.ui.stylePreview.setPixmap(QtGui.QPixmap(pic))
 
