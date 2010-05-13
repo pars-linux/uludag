@@ -4,13 +4,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkblog\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-26 01:26+0100\n"
-"PO-Revision-Date: 2009-10-12 17:05+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-05-13 14:25+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -61,7 +62,7 @@ msgstr "Profil Kimliği düzenli ifadesi oluşturulamadı"
 
 #: gdata.cpp:542
 msgid "Could not get blogs."
-msgstr "Günlük girdileri alnamadı."
+msgstr "Günlük girdileri alınamadı."
 
 #: gdata.cpp:564 gdata.cpp:784
 msgid "Could not regexp the blog id path."
@@ -98,7 +99,7 @@ msgstr "Sonuç dışındaki güncelleme zamanı düzenli ifadesi oluşturulamad�
 
 #: livejournal.cpp:344 livejournal.cpp:453 livejournal.cpp:478
 msgid "Could not read the post ID, result not a map."
-msgstr "Göneri kimliği okunamadı, bir harita değil."
+msgstr "Gönderi kimliği okunamadı, bir harita değil."
 
 #: livejournal.cpp:491
 msgid "The returned post ID did not match the sent one: "
