@@ -12,7 +12,7 @@
 
 import re
 
-from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox
+from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox, QFileDialog
 from PyQt4.QtCore import *
 
 from context import *
@@ -124,6 +124,8 @@ class CacheSettings(SettingsTab):
         cache = config.get("general", "package_cache")
         cache_limit = config.get("general", "package_cache_limit")
         cache_limit = int(cache_limit) if cache_limit else 0
+        cache_dir = config.get("directories", "cached_packages_dir")
+        cache_dir = str(cache_dir) if cache_dir else '/var/cache/pisi/packages'
 
         # If pisi.conf does not have it yet, default is use package cache
         if not cache or cache == "True":
@@ -135,11 +137,21 @@ class CacheSettings(SettingsTab):
         self.cacheSize = cache_limit
         self.settings.useCacheCheck.setChecked(enableCache)
         self.settings.useCacheSpin.setValue(cache_limit)
+        self.settings.cacheDirPath.setText(cache_dir)
 
     def connectSignals(self):
         self.connect(self.settings.clearCacheButton, SIGNAL("clicked()"), self.clearCache)
+        self.connect(self.settings.selectCacheDir, SIGNAL("clicked()"), self.selectCacheDir)
         self.connect(self.settings.useCacheCheck, SIGNAL("toggled(bool)"), self.markChanged)
         self.connect(self.settings.useCacheSpin, SIGNAL("valueChanged(int)"), self.markChanged)
+
+    def selectCacheDir(self):
+        selected_dir = QFileDialog.getExistingDirectory(self.settings, i18n("Open Directory"), "/",
+                                                        QFileDialog.ShowDirsOnly | QFileDialog.DontResolveSymlinks)
+        if not selected_dir == '':
+            if not selected_dir == self.settings.cacheDirPath.text():
+                self.settings.cacheDirPath.setText(selected_dir)
+                self.markChanged()
 
     def clearCache(self):
         if QMessageBox.Yes == QMessageBox.warning(self.settings,
@@ -150,6 +162,7 @@ class CacheSettings(SettingsTab):
 
     def save(self):
         self.iface.setCacheLimit(self.settings.useCacheCheck.isChecked(), self.settings.useCacheSpin.value())
+        self.iface.setConfig("directories", "cached_packages_dir", unicode(self.settings.cacheDirPath.text()))
 
 class RepositorySettings(SettingsTab):
     def setupUi(self):

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -98,8 +98,10 @@ class Iface(Singleton):
         self.link.System.Manager["pisi"].removeRepository(repo, async=self.handler, timeout=2**16-1)
 
     def clearCache(self, limit):
-        logger.debug("Clearing cache with limit: %s" % limit)
-        self.link.System.Manager["pisi"].clearCache("/var/cache/pisi/packages", limit)
+        config = self.getConfig()
+        cache_dir = config.get("directories", "cached_packages_dir")
+        logger.debug("Clearing cache %s with limit: %s" % (cache_dir, limit))
+        self.link.System.Manager["pisi"].clearCache(cache_dir, limit)
 
     def setRepositories(self,  repos):
         logger.debug("Re-setting repositories: %s" % repos)
