@@ -1,7 +1,7 @@
 # translation of juk.po to Turkish
 # translation of juk.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-# 
+#
 # Salih Giray <salih.giray@gelecek.com.tr>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
@@ -13,19 +13,20 @@
 # Onur Küçük <onur@uludag.org.tr>, 2005.
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: juk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-22 01:26+0100\n"
-"PO-Revision-Date: 2009-09-17 01:34+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 13:43+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: advancedsearchdialog.cpp:43
 msgid "Create Search Playlist"
@@ -161,7 +162,7 @@ msgstr "Hiçbir dosya seçilmemiş ya da seçili dosyanın imleri yok."
 
 #: filerenamer.cpp:807
 msgid "Hide Renamer Test Dialog"
-msgstr "Yeniden İsimlendiriciTest Diyaloğunu Sakla"
+msgstr "Yeniden İsimlendirici Test Diyaloğunu Sakla"
 
 #. i18n: file: filerenamerbase.ui:212
 #. i18n: ectx: property (text), widget (KPushButton, m_showExample)
@@ -187,7 +188,7 @@ msgstr "%1 Seçenekleri"
 #: filerenameroptions.cpp:39
 #, kde-format
 msgid "%1 Format"
-msgstr "%1 Formatı"
+msgstr "%1 Biçemi"
 
 #: filerenameroptions.cpp:40
 #, kde-format
@@ -340,7 +341,7 @@ msgstr "Sistem Çubuğuna Yerleş"
 
 #: k3bexporter.cpp:105
 msgid "Add Selected Items to Audio or Data CD"
-msgstr "Seçili Öğeleri Bir Ses ya da Veri CD'sine ekle"
+msgstr "Seçili Ögeleri Bir Ses ya da Veri CD'sine ekle"
 
 #: k3bexporter.cpp:177
 msgid "Unable to start K3b."
@@ -352,7 +353,7 @@ msgstr "K3b ile birlikte bir DCOP iletişim hatası vardı."
 
 #: k3bexporter.cpp:245
 msgid "Create an audio mode CD suitable for CD players, or a data mode CD suitable for computers and other digital music players?"
-msgstr "Diğer dijital müzik oynatıcıları ve bilgisayarlar için uygun bir data CD modu yaratmak mı ya da CD oynatıcılar için uygun bir müzik CD modu yaratmak mı?"
+msgstr "Diğer dijital müzik oynatıcıları ve bilgisayarlar için uygun bir data CD kipi yaratmak mı ya da CD oynatıcılar için uygun bir müzik CD kipi yaratmak mı?"
 
 #: k3bexporter.cpp:248
 msgid "Create K3b Project"
@@ -360,11 +361,11 @@ msgstr "K3b Projesi yarat"
 
 #: k3bexporter.cpp:249
 msgid "Audio Mode"
-msgstr "Modu Göster"
+msgstr "Ses Kipi"
 
 #: k3bexporter.cpp:250
 msgid "Data Mode"
-msgstr "Data Modu"
+msgstr "Data Kipi"
 
 #: k3bexporter.cpp:276
 msgid "Add Playlist to Audio or Data CD"
@@ -422,7 +423,7 @@ msgstr "GStreamer aktarımı"
 
 #: main.cpp:33
 msgid "Global keybindings support"
-msgstr "Genel tuştakımı desteği"
+msgstr "Genel tuş takımı desteği"
 
 #: main.cpp:34
 msgid "Track announcement popups"
@@ -449,7 +450,7 @@ msgid ""
 "Making JuK friendlier to people with\n"
 "terabytes of music"
 msgstr ""
-"Terabytelarca müzikle birlikte insanlara\n"
+"Terabaytlarca müzikle birlikte insanlara\n"
 "daha dostça JuK yapma"
 
 #: main.cpp:40
@@ -585,7 +586,7 @@ msgstr "JuK <filename>%1</filename> ses dosyasını şu sebepten dolayı oynatam
 
 #: playlistbox.cpp:109
 msgid "View Modes"
-msgstr "Modları Göster"
+msgstr "Kipleri Göster"
 
 #: playlistbox.cpp:162
 msgid "Show &History"
@@ -610,7 +611,7 @@ msgstr "Bu dosyalar silinemedi."
 
 #: playlistbox.cpp:351
 msgid "Are you sure you want to remove these playlists from your collection?"
-msgstr "Bu parça listesini kollaksiyonunuzdani silmek istediğinize emin misiniz?"
+msgstr "Bu parça listesini koleksiyonunuzdan silmek istediğinize emin misiniz?"
 
 #: playlistbox.cpp:354
 msgid "Remove Items?"
@@ -849,7 +850,7 @@ msgstr "Uzunluk"
 
 #: playlist.cpp:1517
 msgid "Bitrate"
-msgstr "Bitoranı"
+msgstr "Bit oranı"
 
 #: playlist.cpp:1518
 msgid "Comment"
@@ -879,7 +880,7 @@ msgstr "Düzenle"
 
 #: playlist.cpp:2143
 msgid "Create Playlist From Selected Items..."
-msgstr "Seçilen Öğelerden Çalma Listesi Oluştur..."
+msgstr "Seçilen Ögelerden Çalma Listesi Oluştur..."
 
 #: playlist.cpp:2164
 #, kde-format
@@ -920,7 +921,7 @@ msgstr "Bu ögeleri silmek istiyor musunuz?"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ddShouldDelete)
 #: rc.cpp:15
 msgid "If checked, files will be permanently removed instead of being placed in the Trash Bin"
-msgstr "Seçilmesi halinde reriyodik olarak çöplükteki dosyalar silinir"
+msgstr "Seçilmesi halinde periyodik olarak çöplükteki dosyalar silinir"
 
 #. i18n: file: deletedialogbase.ui:116
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, ddShouldDelete)
@@ -932,7 +933,7 @@ msgid ""
 msgstr ""
 "<qt><p>Bu kutunun seçilmesi halinde, çöplükteki dosyalar <b>düzenli olarak </b>·silinir..</p>\n"
 "\n"
-"<p><em>Bu seçimi çok dikkatli yapın:</em>:·Bazı dosya sistemleri silinen dosyaları·tekrar geri oluşturma desteği vermeyebilir.</p></qt>"
+"<p><em>Bu seçimi çok dikkatli yapın:</em>:·Bazı dosya sistemleri silinen dosyaları tekrar geri oluşturma desteği vermeyebilir.</p></qt>"
 
 #. i18n: file: deletedialogbase.ui:119
 #. i18n: ectx: property (text), widget (QCheckBox, ddShouldDelete)
@@ -1284,7 +1285,8 @@ msgid ""
 "For example, the file name scheme \"[%T] %a - %t\" would match \"[01] Deep Purple - Smoke on the water\" but not \"(Deep Purple) Smoke on the water\". For that second name, you would use the scheme \"(%a) %t\".<p/>\n"
 "Note that the order in which the schemes appear in the list is relevant, since the tag guesser will go through the list from the top to the bottom, and use the first matching scheme."
 msgstr ""
-"Burada bir dosya isminden başlık bilgisini açmada kullanılan başlık editörü içinde \"Önerilen\" buton olan ayarlanmış dosya ismi şablonlarını şu anda görebilirsiniz. Her karakter aşağıdaki paketyerlerinden birini içerebilir:<ul>\n"
+"Burada bir dosya isminden başlık bilgisini açmada kullanılan başlık editörü içinde \"Önerilen\" buton olan ayarlanmış dosya ismi şablonlarını şu anda görebilirsiniz. Her karakter aşağıdaki paket yerlerinden birini içerebilir:<ul>"
+"\n"
 "<li>%t: Başlık</li>\n"
 "<li>%a: Sanatçı</li>\n"
 "<li>%A: Albüm</li>\n"
@@ -1475,7 +1477,7 @@ msgstr "Uzunluk:"
 
 #: tageditor.cpp:618
 msgid "Bitrate:"
-msgstr "Bitoranı:"
+msgstr "Bit oranı:"
 
 #: tageditor.cpp:628
 msgid "&Comment:"
