@@ -11,18 +11,19 @@
 # Onur Küçük <onur@uludag.org.tr>, 2005.
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdemultimedia\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-02-03 06:20+0000\n"
-"PO-Revision-Date: 2009-08-08 15:01+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 13:40+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: dragonplayer/misc/dragonplayer.desktop:4
@@ -53,7 +54,7 @@ msgstr "Gömülebilir Video Oynatıcı"
 #: dragonplayer/misc/dragonplayer_play_dvd.desktop:8
 msgctxt "Name"
 msgid "Play DVD with Dragon Player"
-msgstr "DVDyi Dragon Player ile Oynat"
+msgstr "DVD'yi Dragon Player ile Oynat"
 
 #: juk/juk.desktop:10 juk/juk.notifyrc:51
 msgctxt "Name"
@@ -216,7 +217,7 @@ msgstr "MP3 Bilgisi"
 #: strigi-analyzer/mpc/kfile_mpc.desktop:3
 msgctxt "Name"
 msgid "Musepack Info"
-msgstr "MusePack Bilgisi"
+msgstr "Musepack Bilgisi"
 
 #: strigi-analyzer/ogg/kfile_ogg.desktop:3
 msgctxt "Name"
