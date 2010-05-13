@@ -1,7 +1,7 @@
 # translation of kmix.po to Turkish
 # translation of kmix.po to
 # Copyright (C) 2003, 2004, 2005, 2007, 2008 Free Software Foundation, Inc.
-# 
+#
 #  Tuncay YENİAY <tuncayyeniay@mynet.com>,2002.
 # Rıdvan CAN <ridvan@geleceklinux.org>, 2003.
 # Görkem Çetin <gorkem@kde.org>, 2003.
@@ -11,19 +11,20 @@
 # Ayşe Genç <ayse@uludag.org.tr>, 2005.
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-03-10 01:21+0100\n"
-"PO-Revision-Date: 2009-07-08 23:38+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 13:45+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: dialogselectmaster.cpp:40
 msgid "Select Master Channel"
@@ -376,7 +377,7 @@ msgid ""
 "Please check your operating systems manual to allow the access."
 msgstr ""
 "kmix:Karıştırıcı aygıtına erişim izniniz yok.\n"
-"Erişim izni için lütfen işletim sisteminizin dökümanlarına başvurun."
+"Erişim izni için lütfen işletim sisteminizin dokümanlarına başvurun."
 
 #: mixer_backend.cpp:190
 msgid "kmix: Could not write to mixer."
@@ -528,7 +529,7 @@ msgstr "Telefon İçeri"
 
 #: mixer_oss.cpp:65
 msgid "PhoneOut"
-msgstr "Telefom Dışarı"
+msgstr "Telefon Dışarı"
 
 #: mixer_oss.cpp:65
 msgid "Video"
@@ -677,12 +678,12 @@ msgstr "&Yardım"
 #: rc.cpp:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir, Onur Küçük, Ayşe Genç"
+msgstr "Serdar Soytetir, Onur Küçük, Ayşe Genç, H. İbrahim Güngör"
 
 #: rc.cpp:35
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr"
+msgstr "tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr, ibrahim@pardus.org.tr"
 
 #: viewbase.cpp:76
 msgid "&Channels"
