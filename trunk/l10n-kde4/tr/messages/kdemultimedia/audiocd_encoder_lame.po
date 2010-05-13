@@ -4,37 +4,38 @@
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Onur Küçük <onur@uludag.org.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: audiocd_encoder_lame\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2009-07-20 11:36+0200\n"
-"PO-Revision-Date: 2009-07-31 11:34+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-13 13:47+0300\n"
+"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:11
 #. i18n: ectx: label, entry (bitrate_constant), group (Lame)
 #: rc.cpp:3
 msgid "Constant Bitrate"
-msgstr "Sabit Bithızı"
+msgstr "Sabit Bit oranı"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:15
 #. i18n: ectx: label, entry (bitrate_variable), group (Lame)
 #: rc.cpp:6
 msgid "Variable Bitrate"
-msgstr "Değişken Bithızı"
+msgstr "Değişken Bit oranı"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:20
 #. i18n: ectx: label, entry (stereo), group (Lame)
 #: rc.cpp:9
 msgid "Stereo Mode"
-msgstr "Stereo Modu"
+msgstr "Stereo Kipi"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:24
 #. i18n: ectx: label, entry (quality), group (Lame)
@@ -84,13 +85,13 @@ msgstr "ID3 Bilgisi Yaz"
 #. i18n: ectx: property (title), widget (QGroupBox, cbr_settings)
 #: rc.cpp:33 rc.cpp:315
 msgid "Constant Bitrate Settings"
-msgstr "Sabit Bithızı Ayarları"
+msgstr "Sabit Bit Oranı Ayarları"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:70
 #. i18n: ectx: label, entry (vbr_min_br), group (Lame)
 #: rc.cpp:36
 msgid "Minimal bitrate"
-msgstr "En düşük bithızı"
+msgstr "En düşük Bit oranı"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:74
 #. i18n: ectx: label, entry (vbr_min_hard), group (Lame)
@@ -102,13 +103,13 @@ msgstr "En Düşük Değer sabit sınırdır"
 #. i18n: ectx: label, entry (vbr_max_br), group (Lame)
 #: rc.cpp:42
 msgid "Maximal bitrate"
-msgstr "En yüksek bithızı"
+msgstr "En yüksek bit oranı"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:82
 #. i18n: ectx: label, entry (vbr_average_br), group (Lame)
 #: rc.cpp:45
 msgid "Average bitrate"
-msgstr "Ortalama bithızı"
+msgstr "Ortalama bit oranı"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:86
 #. i18n: ectx: label, entry (vbr_xing_tag), group (Lame)
@@ -120,19 +121,19 @@ msgstr "Xing VBR bilgisi yaz"
 #. i18n: ectx: label, entry (vbr_min_brate), group (Lame)
 #: rc.cpp:51
 msgid "Minimal bitrate value"
-msgstr "En düşük bithızı değeri"
+msgstr "En düşük bit oranı değeri"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:97
 #. i18n: ectx: label, entry (vbr_max_brate), group (Lame)
 #: rc.cpp:54
 msgid "Maximal bitrate value"
-msgstr "En yüksek bithızı değeri"
+msgstr "En yüksek bit oranı değeri"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:103
 #. i18n: ectx: label, entry (vbr_mean_brate), group (Lame)
 #: rc.cpp:57
 msgid "Average bitrate value"
-msgstr "Ortalama bithızı değeri"
+msgstr "Ortalama bit oranı değeri"
 
 #. i18n: file: audiocd_lame_encoder.kcfg:112
 #. i18n: ectx: label, entry (enable_lowpass), group (Lame)
@@ -238,7 +239,7 @@ msgstr "Katı ISO kodlaması kullanmaya çalış"
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_vbr_max_br)
 #: rc.cpp:111 rc.cpp:213
 msgid "This selects the maximal bitrate used for encoding."
-msgstr "Kodlama için kullanılacak en yüksek bithızı değerini belirler."
+msgstr "Kodlama için kullanılacak en yüksek bit oranı değerini belirler."
 
 #. i18n: file: encoderlameconfig.ui:70
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_crc)
@@ -325,31 +326,31 @@ msgstr "Tek Kanal"
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_bitrate_constant)
 #: rc.cpp:153
 msgid "Constant bitrate"
-msgstr "Sabit bithızı"
+msgstr "Sabit bit oranı"
 
 #. i18n: file: encoderlameconfig.ui:211
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_bitrate_variable)
 #: rc.cpp:156
 msgid "Variable bitrate"
-msgstr "Değişken bithızı"
+msgstr "Değişken bit oranı"
 
 #. i18n: file: encoderlameconfig.ui:272
 #. i18n: ectx: property (title), widget (QGroupBox, vbr_settings)
 #: rc.cpp:159
 msgid "Variable Bitrate Settings"
-msgstr "Değişken Bithızı Ayarları"
+msgstr "Değişken Bit Oranı Ayarları"
 
 #. i18n: file: encoderlameconfig.ui:284
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_vbr_average_br)
 #: rc.cpp:162
 msgid "Avera&ge bitrate:"
-msgstr "Ortalama &bithızı:"
+msgstr "Ortalama &bit oranı:"
 
 #. i18n: file: encoderlameconfig.ui:287
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_vbr_average_br)
 #: rc.cpp:165
 msgid "This selects the average bitrate used for encoding."
-msgstr "Kodlama için kullanılacak ortalama bithızı değerini seçer."
+msgstr "Kodlama için kullanılacak ortalama bit oranı değerini seçer."
 
 #. i18n: file: encoderlameconfig.ui:301
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_vbr_max_brate)
@@ -523,7 +524,7 @@ msgstr "320 kbs"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_vbr_max_br)
 #: rc.cpp:210
 msgid "Maximal bi&trate:"
-msgstr "En yüksek bi&thızı:"
+msgstr "En yüksek bi&t oranı:"
 
 #. i18n: file: encoderlameconfig.ui:387
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_vbr_xing_tag)
@@ -548,26 +549,27 @@ msgstr "En düşük değer &sabit bir sınırdır"
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_vbr_min_br)
 #: rc.cpp:267
 msgid "Minimal &bitrate:"
-msgstr "En düşük &bithızı:"
+msgstr "En düşük &bit oranı:"
 
 #. i18n: file: encoderlameconfig.ui:496
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_vbr_min_br)
 #: rc.cpp:270
 msgid "This selects the minimal bitrate used for encoding."
-msgstr "Kodlama için kullanılacak en düşük bithızını seçer."
+msgstr "Kodlama için kullanılacak en düşük bit oranı seçer."
 
 #. i18n: file: encoderlameconfig.ui:598
 #. i18n: ectx: property (text), widget (QLabel, TextLabel4_2)
 #: rc.cpp:318
 msgid "Bitrate:"
-msgstr "Bithızı:"
+msgstr "Bit oranı:"
 
 #. i18n: file: encoderlameconfig.ui:614
 #. i18n: ectx: property (whatsThis), widget (QComboBox, kcfg_cbr_bitrate)
 #: rc.cpp:321
 msgid "The higher the bitrate, the better the quality and the larger the file."
 msgstr ""
-"Bithızı ne kadar yüksek olursa kalite de dosya boyutu da o kadar büyük olur."
+"Bit oranı ne kadar yüksek olursa kalite de dosya boyutu da o kadar büyük "
+"olur."
 
 #. i18n: file: encoderlameconfig.ui:694
 #. i18n: ectx: property (title), widget (QGroupBox, GroupBox83_2)
