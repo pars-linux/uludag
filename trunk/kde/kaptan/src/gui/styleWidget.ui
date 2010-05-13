@@ -127,10 +127,10 @@ height: 170px
         <enum>QListView::Adjust</enum>
        </property>
        <property name="layoutMode">
-        <enum>QListView::Batched</enum>
+        <enum>QListView::SinglePass</enum>
        </property>
        <property name="spacing">
-        <number>170</number>
+        <number>0</number>
        </property>
        <property name="gridSize">
         <size>
@@ -145,7 +145,10 @@ height: 170px
         <bool>true</bool>
        </property>
        <property name="batchSize">
-        <number>170</number>
+        <number>1</number>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
        </property>
        <property name="selectionRectVisible">
         <bool>true</bool>
