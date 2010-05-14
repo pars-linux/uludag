@@ -8,37 +8,37 @@ Legend:
 / In progress
 + Accomplished
 
-    background ekle: cizgiler
-    sharp kaptan logosu!!!
-+   mouse: kutucuk ba$lik: koyu
-+   mouse: kutucuk padding top:azalt
-+   piechart activation
-+   menu animation triple
-+   themes: scroll: smooth
-+   themes: preview ortala
-+   themes: selection background olayini resetle
-+   themes: desktoptype, no of desk: fontsize 10
-+   menu: aciklama kuculunce: scrollbar ciksin screenshotu da icine alacak
-+   menu: aciklama arkaplani degistir seffaf?
-+   wallpaper scroll: smooth
-+   wallpaper ortala
-+   wallpaper: desc: font-size garip
-+   strigi: Allow... font kucul sans serif yap
-+   network: groupbox: stili sifirla: border: 0px;
-+   smolt: aciklama scroll tu$lari: color beyaz olmali
-+   packages: groupbox: border:0px
-+   packages: checkbox: fontsize: 10pt sansserif
-+   goodbyescreen: butun groupboxlari: sifirla
-+   goodbye: listeyi scrollbox'a al
-    depo linklerini degistir
-    if possible optimize more
+background ekle: cizgiler
+sharp kaptan logosu!!!
+mouse: kutucuk ba$lik: koyu
+mouse: kutucuk padding top:azalt
+piechart activation
+menu animation triple
+themes: scroll: smooth
+themes: preview ortala
+themes: selection background olayini resetle
+themes: desktoptype, no of desk: fontsize 10
+menu: aciklama kuculunce: scrollbar ciksin screenshotu da icine alacak
+menu: aciklama arkaplani degistir seffaf?
+wallpaper scroll: smooth
+wallpaper ortala
+wallpaper: desc: font-size garip
+strigi: Allow... font kucul sans serif yap
+network: groupbox: stili sifirla: border: 0px;
+smolt: aciklama scroll tu$lari: color beyaz olmali
+packages: groupbox: border:0px
+packages: checkbox: fontsize: 10pt sansserif
+goodbyescreen: butun groupboxlari: sifirla
+goodbye: listeyi scrollbox'a al
+depo linklerini degistir
+if possible optimize more
 
-    test
-    ----
-    test on 5 different computers
+test
+----
+test on 5 different computers
 
-    cd mode:
-    dark, light theme, functions
+cd mode:
+dark, light theme, functions
 
-    normal mode:
-    dark, light theme, functions
+normal mode:
+dark, light theme, functions

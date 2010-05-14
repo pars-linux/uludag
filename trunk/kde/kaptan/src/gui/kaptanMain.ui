@@ -445,13 +445,13 @@ QPushButton::flat:pressed{
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>43</height>
+            <height>40</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>50</width>
-            <height>43</height>
+            <height>16777215</height>
            </size>
           </property>
           <property name="font">
@@ -489,69 +489,14 @@ background-color: rgba(0, 0, 0, 100);
          <widget class="QLabel" name="labelMenu">
           <property name="minimumSize">
            <size>
-            <width>300</width>
-            <height>43</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>43</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Sans Serif</family>
-            <pointsize>6</pointsize>
-           </font>
-          </property>
-          <property name="autoFillBackground">
-           <bool>false</bool>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: white;
-background-color: rgba(0, 0, 0, 100);
-padding: 10px;
-</string>
-          </property>
-          <property name="lineWidth">
-           <number>2</number>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="scaledContents">
-           <bool>false</bool>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-          </property>
-          <property name="wordWrap">
-           <bool>false</bool>
-          </property>
-          <property name="indent">
-           <number>0</number>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="labelMenu_2">
-          <property name="minimumSize">
-           <size>
             <width>0</width>
-            <height>43</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>43</height>
+            <height>0</height>
            </size>
           </property>
           <property name="font">
            <font>
             <family>Sans Serif</family>
-            <pointsize>6</pointsize>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="autoFillBackground">
@@ -570,13 +515,13 @@ padding: 10px;
            <string/>
           </property>
           <property name="scaledContents">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
           </property>
           <property name="wordWrap">
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="indent">
            <number>0</number>

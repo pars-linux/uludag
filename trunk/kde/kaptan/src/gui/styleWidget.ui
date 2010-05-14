@@ -21,6 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QListWidget{
+background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
 border: 1px solid rgb(236, 236, 236, 80);
 color: rgb(234, 225, 228);
 }</string>
@@ -94,19 +95,27 @@ color: rgb(234, 225, 228);
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">#listStyles{padding:10px;background-color: rgba(0, 0, 0, 100);}</string>
+        <string notr="true">#listStyles{padding:10px;}
+
+ QListWidget::item{
+height: 170px
+
+}
+
+ QListWidget::item:selected {
+     border: 1px solid #6a6ea9;
+ }
+
+ QListWidget::item:selected:!active {
+     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                 stop: 0 #ABAFE5, stop: 1 #8588B2);
+ }</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
        </property>
        <property name="verticalScrollBarPolicy">
         <enum>Qt::ScrollBarAlwaysOn</enum>
-       </property>
-       <property name="verticalScrollMode">
-        <enum>QAbstractItemView::ScrollPerPixel</enum>
-       </property>
-       <property name="horizontalScrollMode">
-        <enum>QAbstractItemView::ScrollPerPixel</enum>
        </property>
        <property name="movement">
         <enum>QListView::Static</enum>
@@ -125,7 +134,7 @@ color: rgb(234, 225, 228);
        </property>
        <property name="gridSize">
         <size>
-         <width>140</width>
+         <width>130</width>
          <height>170</height>
         </size>
        </property>
@@ -171,7 +180,7 @@ color: rgb(234, 225, 228);
            <property name="font">
             <font>
              <family>Sans Serif</family>
-             <pointsize>10</pointsize>
+             <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>
@@ -232,7 +241,7 @@ color: rgb(234, 225, 228);
            <property name="font">
             <font>
              <family>Sans Serif</family>
-             <pointsize>10</pointsize>
+             <pointsize>11</pointsize>
              <weight>75</weight>
              <bold>true</bold>
             </font>

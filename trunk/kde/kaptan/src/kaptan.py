@@ -26,7 +26,7 @@ import gui.ScrSmolt as smoltWidget
 import gui.tools as tools
 
 from gui.progressPie import DrawPie
-from gui.kaptanMenu import Menu
+from gui.menuAnimator import Animator
 
 def loadFile(_file):
     try:
@@ -48,7 +48,7 @@ def profileSended():
     return False
 
 if tools.isLiveCD():
-    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, summaryWidget, goodbyeWidget]
+    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, smoltWidget, summaryWidget, goodbyeWidget]
 elif profileSended():
     availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
 else:
@@ -75,14 +75,20 @@ class Kaptan(QtGui.QWidget):
         # Add screens to StackWidget
         self.createWidgets(self.screens)
 
-        # Get Screen Titles
+        self.screenId = []
         for screen in self.screens:
             title = screen.Widget.title.toString()
+            desc = screen.Widget.desc.toString()
+            self.screenId.append(title)
             self.titles.append(title)
+            if self.screens.index(screen) == 0:
+                self.menuText += self.putBold(title)
+                self.ui.screenTitle.setText(desc)
+            else:
+                self.menuText += self.putBr(title)
 
-        # Initialize Menu
-        self.menu = Menu(self.titles, self.ui.labelMenu)
-        self.menu.start()
+        self.menuAnimator = Animator(self.titles, self.ui.labelMenu)
+        self.ui.labelMenu.setText(self.menuText)
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
@@ -144,7 +150,7 @@ class Kaptan(QtGui.QWidget):
         self.pie.updatePie(curIndex)
 
         # animate menu
-        self.menu.next()
+        self.menuAnimator.next()
 
         _w = self.ui.mainStack.currentWidget()
 
@@ -162,7 +168,7 @@ class Kaptan(QtGui.QWidget):
         self.pie.updatePie(curIndex-1)
 
         # animate menu
-        self.menu.prev()
+        self.menuAnimator.prev()
 
 
         _w = self.ui.mainStack.currentWidget()
@@ -170,6 +176,12 @@ class Kaptan(QtGui.QWidget):
         _w.backCheck()
         self.stackMove(self.getCur(self.moveInc * -1))
         self.moveInc = 1
+
+    def putBr(self, item):
+        return unicode("  ") + item + " "#"<br>"
+
+    def putBold(self, item):
+        return "<b style='font-size:13pt'>" + unicode("  ") + item + " </b>"# "</b><br>"
 
 
     # move to id numbered stack
