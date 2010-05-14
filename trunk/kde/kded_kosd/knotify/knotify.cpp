@@ -27,7 +27,7 @@
 #include <kglobal.h>
 #include <klocale.h>
 
-#include <config-runtime.h>
+//#include <config-runtime.h>
 
 #include "knotifyconfig.h"
 #include "notifybysound.h"

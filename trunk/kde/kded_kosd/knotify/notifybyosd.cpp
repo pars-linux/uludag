@@ -36,7 +36,6 @@
 #include <QTextDocument>
 #include <QApplication>
 #include <QVBoxLayout>
-#include <QBuffer>
 #include <QImage>
 #include <QLabel>
 
@@ -81,8 +80,14 @@ NotifyByOsd::NotifyByOsd(QObject *parent)
     m_timer->setSingleShot(true);
     connect(m_timer, SIGNAL(timeout()), this, SLOT(slotHideOsd()));
 
-    m_meter->setValue(100);
+    // FIXME: Give an initial progress value
+    QFont meterFont;
+    meterFont.setPixelSize((int)(18 / 7.0f * 4.0f));
+    meterFont.setBold(true);
+    m_meter->setFont(meterFont);
+    m_meter->setValue(75);
 
+    // Setup layout
     initLayout();
 }
 
@@ -93,9 +98,17 @@ NotifyByOsd::~NotifyByOsd()
 
 void NotifyByOsd::initLayout()
 {
-    m_layout->addWidget(m_osdIcon, 0, 0);
-    m_layout->addWidget(m_osdText, 0, 1);
-    m_layout->addWidget(m_meter, 1, 0);
+    // Create spacers
+    QSpacerItem *hSpacer = new QSpacerItem(72, 29, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_layout->addItem(hSpacer, 0, 0, 1, 1);
+
+    m_layout->addWidget(m_osdIcon, 0, 1, 1, 1);
+    m_layout->addWidget(m_osdText, 0, 2, 1, 1);
+
+    QSpacerItem *hSpacer2 = new QSpacerItem(72, 29, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    m_layout->addItem(hSpacer2, 0, 3, 1, 1);
+
+    m_layout->addWidget(m_meter, 1, 0, 1, 4);
 
     m_dialog->setLayout(m_layout);
 }
@@ -132,9 +145,9 @@ void NotifyByOsd::fillOsd(int id, KNotifyConfig * config)
 
 void NotifyByOsd::notify(int id, KNotifyConfig * config)
 {
-    kDebug(300) << id << "  active notifications:" << m_popups.keys() << m_idMap.keys();
+    kDebug(300) << id << "  active notifications:" << m_dialogs.keys() << m_idMap.keys();
 
-    if(m_popups.contains(id) || m_idMap.contains(id))
+    if(m_dialogs.contains(id) || m_idMap.contains(id))
     {
         kDebug(300) << "the popup is already shown";
         finish(id);
@@ -162,7 +175,7 @@ void NotifyByOsd::notify(int id, KNotifyConfig * config)
 
 void NotifyByOsd::close(int id)
 {
-    delete m_popups.take(id);
+    delete m_dialogs.take(id);
 
     if (m_dbusServiceExists) {
         closeNotificationDBus(id);
@@ -171,11 +184,9 @@ void NotifyByOsd::close(int id)
 
 void NotifyByOsd::update(int id, KNotifyConfig * config)
 {
-    Q_UNUSED(id)
-    Q_UNUSED(config)
     /*
-    if (m_popups.contains(id)) {
-        KPassivePopup *p = m_popups[id];
+    if (m_dialogs.contains(id)) {
+        Plasma::Dialog *p = m_dialogs[id];
         fillPopup(p, id, config);
         return;
     }
@@ -202,6 +213,29 @@ void NotifyByOsd::slotHideOsd()
     m_dialog->hide();
     m_isVisible = false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void NotifyByOsd::slotDBusNotificationClosed(uint dbus_id, uint reason)
 {

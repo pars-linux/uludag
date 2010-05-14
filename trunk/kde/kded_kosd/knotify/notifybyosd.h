@@ -33,8 +33,6 @@
 #include <Plasma/Meter>
 #include <Plasma/Dialog>
 
-#include <KPassivePopup>
-
 class NotifyByOsd : public KNotifyPlugin
 {
     Q_OBJECT
@@ -47,8 +45,7 @@ class NotifyByOsd : public KNotifyPlugin
         virtual void close(int id);
         virtual void update(int id, KNotifyConfig *config);
     private:
-        //QMap<int, Plasma::Dialog * > m_dialogs;
-        QMap<int, KPassivePopup * > m_popups;
+        QMap<int, Plasma::Dialog * > m_dialogs;
 
         // Plasma::Dialog
         Plasma::Dialog *m_dialog;
@@ -76,7 +73,7 @@ class NotifyByOsd : public KNotifyPlugin
         // Specifies if DBus Notifications interface exists on session bus
         bool m_dbusServiceExists;
 
-        // 
+        // Visualization stuff
         bool m_lockPrimaryScreen;
         bool m_isVisible;
 
@@ -91,6 +88,9 @@ class NotifyByOsd : public KNotifyPlugin
          */
         void fillOsd(int id, KNotifyConfig* config);
 
+        /**
+         * Initializes OSD visual layout.
+         */
         void initLayout();
 
         /**
@@ -114,21 +114,15 @@ class NotifyByOsd : public KNotifyPlugin
          */
         void getAppCaptionAndIconName(KNotifyConfig *config, QString *appCaption, QString *iconName);
 
-    /*
-    protected:
-        void timerEvent(QTimerEvent *event);
-        */
 
     private Q_SLOTS:
         // slot to catch appearance or dissapearance of Notifications DBus service
         void slotServiceOwnerChanged(const QString &, const QString &, const QString &);
 
-        // slot which is called when DBus signals that some notification action was invoked
-        //void slotDBusNotificationActionInvoked(uint, const QString&);
-
         // slot which gets called when DBus signals that some notification was closed
         void slotDBusNotificationClosed(uint, uint);
 
+        // slot which hides the OSD dialog
         void slotHideOsd();
 
     private:
