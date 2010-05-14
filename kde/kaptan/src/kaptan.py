@@ -26,6 +26,7 @@ import gui.ScrSmolt as smoltWidget
 import gui.tools as tools
 
 from gui.progressPie import DrawPie
+from gui.menuAnimator import Animator
 
 def loadFile(_file):
     try:
@@ -67,9 +68,9 @@ class Kaptan(QtGui.QWidget):
         self.titles = []
         self.descriptions = []
 
-        # Draww progress pie
+        # Draw progress pie
         self.countScreens = len(self.screens)
-        DrawPie(self.countScreens, 3, self.ui.labelProgress)
+        self.pie = DrawPie(self.countScreens, self.ui.labelProgress)
 
         # Add screens to StackWidget
         self.createWidgets(self.screens)
@@ -79,13 +80,14 @@ class Kaptan(QtGui.QWidget):
             title = screen.Widget.title.toString()
             desc = screen.Widget.desc.toString()
             self.screenId.append(title)
-
+            self.titles.append(title)
             if self.screens.index(screen) == 0:
                 self.menuText += self.putBold(title)
                 self.ui.screenTitle.setText(desc)
             else:
                 self.menuText += self.putBr(title)
 
+        self.menuAnimator = Animator(self.titles, self.ui.labelMenu)
         self.ui.labelMenu.setText(self.menuText)
 
         QtCore.QObject.connect(self.ui.buttonNext, QtCore.SIGNAL("clicked()"), self.slotNext)
@@ -144,18 +146,12 @@ class Kaptan(QtGui.QWidget):
         self.menuText = ""
         curIndex = self.ui.mainStack.currentIndex() + 1
 
-        for each in self.screenId:
-            i = self.screenId.index(each)
-            if  curIndex < len(self.screenId):
-                if i == curIndex:
-                    self.menuText += self.putBold(self.screenId[i])
+        # update pie progress
+        self.pie.updatePie(curIndex)
 
-                    # Set screen title
-                    #self.ui.screenTitle.setText(self.descriptions[i])
-                else:
-                    self.menuText += self.putBr(self.screenId[i])
+        # animate menu
+        self.menuAnimator.next()
 
-        self.ui.labelMenu.setText(self.menuText)
         _w = self.ui.mainStack.currentWidget()
 
         ret = _w.execute()
@@ -167,16 +163,13 @@ class Kaptan(QtGui.QWidget):
     def slotBack(self):
         self.menuText = ""
         curIndex = self.ui.mainStack.currentIndex()
-        for each in self.screenId:
-            i = self.screenId.index(each)
-            if i <= len(self.screenId) and not i == 0:
-                if i == curIndex:
-                    self.menuText += self.putBold(self.screenId[i - 1])
-                else:
-                    self.menuText += self.putBr(self.screenId[i - 1])
 
-        self.menuText += self.putBr(self.screenId[-1])
-        self.ui.labelMenu.setText(self.menuText)
+        # update pie progress
+        self.pie.updatePie(curIndex-1)
+
+        # animate menu
+        self.menuAnimator.prev()
+
 
         _w = self.ui.mainStack.currentWidget()
 
