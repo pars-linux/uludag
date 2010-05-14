@@ -43,7 +43,8 @@
     * groups.xml tango simge teması düzeltmesi (+)
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
     * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (+)
-    * Global needsServiceRestart, needsReboot (?)
+    * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
+    * Global needsServiceRestart, needsReboot (+)
 
 * PiSi (Serdar Dalgıç)
     * Depo bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (+) [Faik Uygur]
@@ -51,11 +52,10 @@
     * component.xml yok ise 'bilinmeyen' bileşene düşüp uyarı verilmesi (+)
 
 * Paket Yöneticisi (Gökmen Göksel)
-    * needsServiceRestart, needsReboot desteği. GUI'ye reboot/restart uyarıları (-)
     * Güvenlik güncellemelerinin system.base'e davranıldığı gibi doğrudan sepete alınması olanağı (-)
     * Proxy ayar arayüzünün elden geçmesi, libproxy desteği ile KDE'den de alabilecek hale gelmesi (-)
-    * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (?)
     * Pisi/PM'in belli bazı paketleri önce güncelleyip güncellemeyi tekrar başlatması (?)
+    * needsServiceRestart, needsReboot desteği. GUI'ye reboot/restart uyarıları (+)
     * Paket seçim ekranına güncelleme tipine göre simge veya başka bir uyarı konulması (+)
     * COMAR'dan ağ bağlantı durumunu alarak kullanıcıya ilgili bir uyarı çıkarılabilir (+)
     * Ana ekranda güncelleme tipinin seçilebileceği bir filtre (+)
