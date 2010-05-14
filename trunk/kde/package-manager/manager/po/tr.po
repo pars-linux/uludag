@@ -34,7 +34,7 @@ msgid ""
 "following package(s) to take effect:"
 msgstr ""
 "Aşağıdaki güncellemelerin geçerli olabilmesi için bilgisayarınızı <b>yeniden"
-"başlatmanız</b> gerekiyor:"
+" başlatmanız</b> gerekiyor:"
 
 #: .tmp/basketdialog.py:132
 msgid ""
