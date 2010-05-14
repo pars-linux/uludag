@@ -22,7 +22,6 @@ from statemanager import StateManager
 class GroupList(QtGui.QListWidget):
     def __init__(self, parent=None):
         QtGui.QListWidget.__init__(self, parent)
-        self.lastSelected = None
         self.iface = backend.pm.Iface()
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
 
@@ -37,7 +36,7 @@ class GroupList(QtGui.QListWidget):
             self.createGroupItem('all', (i18n('All'), 'media-optical', len(self.state.packages())))
         self.sortItems()
         self.moveAllToFirstLine()
-        self.ensureGroupSelected()
+        self.setCurrentItem(self.itemAt(0, 0))
 
     def createGroupItem(self, name, content = None):
         if not content:
@@ -55,12 +54,6 @@ class GroupList(QtGui.QListWidget):
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 
-        if str(self.lastSelected) == name:
-            self.selectLastSelected(item)
-
-    def selectLastSelected(self, item):
-        self.setCurrentItem(item)
-
     def moveAllToFirstLine(self):
         if not self.count():
             return
@@ -71,15 +64,10 @@ class GroupList(QtGui.QListWidget):
                 item = self.takeItem(i)
                 self.insertItem(0, item)
 
-    def ensureGroupSelected(self):
-        if self.currentRow() == -1 and self.count():
-            self.selectLastSelected(self.itemAt(0, 0))
-
     def currentGroup(self):
         if not self.count():
             return None
         return unicode(self.currentItem().data(Qt.UserRole).toString())
 
     def groupChanged(self):
-        self.lastSelected = self.currentGroup()
         self.emit(SIGNAL("groupChanged()"))
