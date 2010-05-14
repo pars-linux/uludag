@@ -58,6 +58,12 @@ color: rgb(234, 225, 228);
        <property name="alternatingRowColors">
         <bool>false</bool>
        </property>
+       <property name="verticalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
+       <property name="horizontalScrollMode">
+        <enum>QAbstractItemView::ScrollPerPixel</enum>
+       </property>
        <property name="movement">
         <enum>QListView::Static</enum>
        </property>
@@ -75,7 +81,7 @@ color: rgb(234, 225, 228);
        </property>
        <property name="gridSize">
         <size>
-         <width>120</width>
+         <width>140</width>
          <height>170</height>
         </size>
        </property>
@@ -207,7 +213,7 @@ color: rgb(234, 225, 228);
      </property>
      <property name="font">
       <font>
-       <family>URW Gothic L</family>
+       <family>Sans Serif</family>
        <pointsize>10</pointsize>
       </font>
      </property>
