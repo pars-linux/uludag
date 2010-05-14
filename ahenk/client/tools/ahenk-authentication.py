@@ -193,16 +193,17 @@ def ldapConfig(host, domain, dryrun=False):
     else:
         file("/etc/security/ldap.conf", "w").write(conf_ldap)
 
-def domainConfig(host, domain, workgroup, dryrun=False):
+def domainConfig(host, domain, dryrun=False):
     """
         Builds Samba and Kerberos configuration for AD authentication.
 
         Parameters:
             host: Hostname
             domain: Domain name
-            workgroup: Workgroup
             dryrun: Does nothing, just prints configuration if True
     """
+
+    workgroup = domain.split(".")[0]
 
     conf_samba = CONF_SAMBA % {"domain": domain, "workgroup": workgroup}
     conf_krb = CONF_KRB % {"domain": domain, "host": host}
@@ -263,8 +264,6 @@ if __name__ == '__main__':
                       help="Hostname for LDAP or Active Directory authentication.")
     parser.add_option("-d", "--domain", dest="domain",
                       help="Domain name for LDAP or Active Directory authentication.")
-    parser.add_option("-w", "--workgroup", dest="workgroup",
-                      help="Workgroup for Active Directory authentication.")
     parser.add_option("-n", "--dry-run", action="store_true", dest="dryrun",
                       help="Do nothing, just tell.")
     parser.add_option("-v", "--verbose", dest="verbose", action="store_true",
@@ -301,15 +300,15 @@ if __name__ == '__main__':
         # LDAP configuration for NS and PAM
         ldapConfig(options.host, options.domain, options.dryrun)
     elif options.type == "ad":
-        if not options.host or not options.domain or not options.workgroup:
-            print "Host, domain name and workgroup is required. See --help"
+        if not options.host or not options.domain:
+            print "Host and domain name arte required. See --help"
             sys.exit(1)
         # Use WinBind (AD) module as authentication source
         pamSetSource("ad", options.dryrun)
         # Use WinBind (AD) as Name Service source
         nsSwitchSetSource("ad", options.dryrun)
         # Kerberos and SAMBA configuration
-        domainConfig(options.host, options.domain, options.workgroup, options.dryrun)
+        domainConfig(options.host, options.domain, options.dryrun)
         serviceConfig("samba", "winbind", "yes", options.dryrun)
         # FIXME: Start Samba
 
