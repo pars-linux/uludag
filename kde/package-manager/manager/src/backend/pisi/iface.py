@@ -242,11 +242,9 @@ class Iface(Singleton):
 
     def getUpdateType(self, pkg):
         (version, release, build) = self.idb.get_version(pkg.name)
-        update_types = [i.type for i in pkg.history if pisi.version.Version(i.release) > pisi.version.Version(release)]
-        if "security" in update_types:
-            return "security"
-        elif "critical" in update_types:
-            return "critical"
+        for type_name in ("security", "critical"):
+            if pkg.has_update_type(type_name, release):
+                return type_name
         return "normal"
 
     def getPackageSize(self, name):
@@ -264,6 +262,16 @@ class Iface(Singleton):
 
     def checkDistributionAndArchitecture(self, repo):
         return self.rdb.check_distribution(repo) and self.rdb.check_architecture(repo)
+
+    def checkUpdateActions(self, packages):
+        actions = {'systemRestart':[], 'serviceRestart':[]}
+        for package in packages:
+            package = self.pdb.get_package(package)
+            package_actions = package.get_update_actions()
+            for action in actions:
+                if action in package_actions:
+                    actions[action].extend(package_actions[action])
+        return (set(actions['systemRestart']), set(actions['serviceRestart']))
 
     def cancel(self):
         self.link.cancel()
