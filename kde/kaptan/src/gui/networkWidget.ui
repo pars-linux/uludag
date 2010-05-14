@@ -85,6 +85,7 @@ color: rgb(234, 225, 228);
 }*/
 #groupBox{
 margin:0px;
+border:0px;
 }</string>
      </property>
      <property name="title">
