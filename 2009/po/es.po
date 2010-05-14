@@ -248,7 +248,6 @@ msgid "Test selected layout:"
 msgstr "Probar el teclado:"
 
 #: yali4/gui/Ui/main.py:181
-#, fuzzy
 msgid "Yali4"
 msgstr "Yali4"
 
