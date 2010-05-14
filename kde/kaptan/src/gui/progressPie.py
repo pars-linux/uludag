@@ -8,7 +8,7 @@ class DrawPie(QWidget):
     def __init__(self, totalPiece, parent=None):
         QWidget.__init__(self, parent)
         self.setGeometry(0, 0, 100, 40)
-        self.step = 360 / (totalPiece + 1)
+        self.step = 360 / (totalPiece)
         self.currentPiece = 1
 
     def paintEvent(self, event):
@@ -20,7 +20,7 @@ class DrawPie(QWidget):
         w = self.size().width()
         h = self.size().height()
 
-        painter.setBrush(QBrush(QColor(255, 255, 255, 220)))
+        painter.setBrush(QBrush(QColor(255, 255, 255, 170)))
         x = 9
         y = 5
         r = 32
@@ -29,7 +29,7 @@ class DrawPie(QWidget):
         painter.drawEllipse(rect)
 
 
-        painter.setBrush(QBrush(QColor(20, 20, 20, 100)))
+        painter.setBrush(QBrush(QColor(20, 20, 20)))
 
         startAngle = 90 * 16;
         spanAngle = -((self.currentPiece * self.step) * 16);

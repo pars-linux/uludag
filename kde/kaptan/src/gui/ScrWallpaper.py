@@ -88,7 +88,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
             # Each wallpaper item is a widget. Look at widgets.py for more information.
             widget = WallpaperItemWidget(unicode(wallpaperTitle), unicode(wallpaperDesc), wallpaperThumb, self.ui.listWallpaper)
-            item.setSizeHint(QSize(140,170))
+            item.setSizeHint(QSize(120,170))
             self.ui.listWallpaper.setItemWidget(item, widget)
             # Add a hidden value to each item for detecting selected wallpaper's path.
             item.setStatusTip(wallpaperFile)
@@ -120,7 +120,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             item = QtGui.QListWidgetItem(self.ui.listWallpaper)
             wallpaperName = os.path.splitext(os.path.split(str(selectedFile))[1])[0]
             widget = WallpaperItemWidget(unicode(wallpaperName), unicode("Unknown"), selectedFile, self.ui.listWallpaper)
-            item.setSizeHint(QSize(140,170))
+            item.setSizeHint(QSize(120,170))
             self.ui.listWallpaper.setItemWidget(item, widget)
             item.setStatusTip(selectedFile)
             self.ui.listWallpaper.setCurrentItem(item)
