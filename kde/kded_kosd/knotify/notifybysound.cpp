@@ -44,7 +44,7 @@
 #include <kstandarddirs.h>
 #include <kconfiggroup.h>
 #include <kurl.h>
-#include <config-runtime.h>
+//#include <config-runtime.h>
 #include <kcomponentdata.h>
 
 // Phonon headers
