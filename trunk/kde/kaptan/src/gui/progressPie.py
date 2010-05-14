@@ -5,11 +5,11 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 class DrawPie(QWidget):
-    def __init__(self,totalPiece, currentPiece, parent=None):
+    def __init__(self, totalPiece, parent=None):
         QWidget.__init__(self, parent)
         self.setGeometry(0, 0, 100, 40)
-        self.step = 360 / totalPiece
-        self.currentPiece = currentPiece
+        self.step = 360 / (totalPiece)
+        self.currentPiece = 1
 
     def paintEvent(self, event):
         painter = QPainter()
@@ -21,7 +21,7 @@ class DrawPie(QWidget):
         h = self.size().height()
 
         painter.setBrush(QBrush(QColor(255, 255, 255, 170)))
-        x = 5
+        x = 9
         y = 5
         r = 32
         rect = QRect(x, y, r, r)
@@ -37,4 +37,10 @@ class DrawPie(QWidget):
         painter.drawPie(rect, startAngle, spanAngle);
 
         painter.end()
+
+
+    def updatePie(self, currentIndex):
+        self.currentPiece = currentIndex + 1
+        self.update()
+        #qApp.processEvents()
 
