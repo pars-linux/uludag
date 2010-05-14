@@ -169,6 +169,9 @@ class StateManager(QObject):
 
         return True
 
+    def checkUpdateActions(self, packages):
+        return self.iface.checkUpdateActions(packages)
+
     def inInstall(self):
         return self.state == self.INSTALL
 

@@ -19,6 +19,7 @@ from packagedelegate import PackageDelegate
 
 from pmutils import *
 from context import i18n
+import context as ctx
 
 from ui_basketdialog import Ui_BasketDialog
 
@@ -36,12 +37,20 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         self.extraList.setSelectionMode(QtGui.QAbstractItemView.NoSelection)
 
     def connectModelSignals(self):
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
-        self.connect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
+        self.connect(self.packageList.model(),
+                SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                self.filterExtras)
+        self.connect(self.packageList.model(),
+                SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                self.updateTotal)
 
     def disconnectModelSignals(self):
-        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.filterExtras)
-        self.disconnect(self.packageList.model(), SIGNAL("dataChanged(QModelIndex,QModelIndex)"), self.updateTotal)
+        self.disconnect(self.packageList.model(),
+                SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                self.filterExtras)
+        self.disconnect(self.packageList.model(),
+                SIGNAL("dataChanged(QModelIndex,QModelIndex)"),
+                self.updateTotal)
 
     def __initList(self, packageList):
         packageList.setModel(PackageProxy(self))
@@ -80,7 +89,8 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
 
     def updateTotal(self):
         selectedSize, extraSize = self.model.selectedPackagesSize(), self.model.extraPackagesSize()
-        self.totalSize.setText("<b>%s</b>" % humanReadableSize(selectedSize + extraSize))
+        self.totalSize.setText("<b>%s</b>" % humanReadableSize(
+                                                    selectedSize + extraSize))
         downloadSize = self.model.downloadSize()
         if not downloadSize:
             downloadSize = selectedSize + extraSize
@@ -97,7 +107,33 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
     def setActionEnabled(self, enabled):
         self.actionButton.setEnabled(enabled)
 
+    def askForActions(self, packages, reason):
+        text = reason + '<br>'
+        for package in packages:
+            text += '<br> - <b>%s</b>' % package
+        text += '<br><br>' + i18n("Do you want to continue ?")
+        return QtGui.QMessageBox.question(self, i18n("Update Requirements"),
+                text, QtGui.QMessageBox.Yes | QtGui.QMessageBox.No)
+
     def action(self):
+        if self.state.inUpgrade():
+            answer = QtGui.QMessageBox.Yes
+            actions = self.state.checkUpdateActions(
+                    self.model.selectedPackages())
+            if actions[0]:
+                answer = self.askForActions(actions[0],
+                       i18n("You must <b>restart</b> your system in order the "
+                            "updated versions of the following package(s) to "
+                            "take effect:"))
+            if not answer == QtGui.QMessageBox.Yes:
+                return
+            if actions[1]:
+                answer = self.askForActions(actions[1],
+                       i18n("You must restart following system services in "
+                            "order the updated versions of the selected "
+                            "package(s) to take effect:"))
+            if not answer == QtGui.QMessageBox.Yes:
+                return
         self.state.operationAction(self.model.selectedPackages())
         self.close()
 
@@ -116,7 +152,8 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         try:
             self.filterExtras()
         except Exception, e:
-            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e), QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+            messageBox = QtGui.QMessageBox(i18n("Pisi Error"), unicode(e), 
+                    QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
             QTimer.singleShot(0, restoreCursor)
             messageBox.exec_()
             return
