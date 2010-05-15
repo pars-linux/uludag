@@ -1,0 +1,267 @@
+# Translation of pt_BR.po to Brazilian Portuguese
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Diogo Lima <diogo.urb@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-15 18:48-0300\n"
+"PO-Revision-Date: 2010-05-15 18:48-0300\n"
+"Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
+"listinfo/pardus-translation-ptbr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
+msgid "Signal Strength"
+msgstr "Força do Sinal"
+
+#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+msgid "Network Manager"
+msgstr "Gerenciador de Rede"
+
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor Atual"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Desenvolvedor"
+
+#: .tmp/networkmanager/base.py:186
+msgid "Available Profiles"
+msgstr "Perfis Disponíveis"
+
+#: .tmp/networkmanager/base.py:208
+msgid "All Profiles"
+msgstr "Todos os Perfis"
+
+#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+msgid "No Device Found"
+msgstr "Nenhum Dispositivo Encontrado"
+
+#: .tmp/networkmanager/base.py:396
+msgid "No Authentication"
+msgstr "Nenhuma Autenticação"
+
+#: .tmp/networkmanager/base.py:624
+msgid "Do you really want to remove profile %1?"
+msgstr "Você realmente quer remover o perfil %1?"
+
+#: .tmp/networkmanager/widgets.py:74
+msgid "Enter PIN"
+msgstr "Insira o PIN"
+
+#: .tmp/networkmanager/widgets.py:75
+msgid "Please Enter PIN Code for"
+msgstr "Por favor insira o código PIN para"
+
+#: .tmp/networkmanager/widgets.py:158
+msgid "You've typed the wrong PIN code for 3 times"
+msgstr "Você digitou o código PIN incorreto por 3 vezes"
+
+#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+msgid "Refresh"
+msgstr "Recarregar"
+
+#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+msgid "Scanning..."
+msgstr "Procurando..."
+
+#: .tmp/networkmanager/widgets.py:378
+msgid "Disconnected"
+msgstr "Desconectado"
+
+#: .tmp/networkmanager/widgets.py:383
+#, python-format
+msgid "Connected: %s"
+msgstr "Conectado: %s"
+
+#: .tmp/networkmanager/widgets.py:388
+msgid "Connecting"
+msgstr "Conectando"
+
+#: .tmp/networkmanager/widgets.py:396
+msgid "Cable or device is unplugged"
+msgstr "O cabo ou dispositivo está desplugado"
+
+#: .tmp/networkmanager/widgets.py:412
+msgid "Access denied"
+msgstr "Acesso negado"
+
+#: .tmp/ui_main.py:334
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_main.py:335
+msgid "Create Profile"
+msgstr "Criar Perfis"
+
+#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr "Configurações do Servidor de Nomes"
+
+#: .tmp/ui_main.py:339
+msgid "Profile Name :"
+msgstr "Nome do Perfil :"
+
+#: .tmp/ui_main.py:340
+msgid "Device : "
+msgstr "Dispositivo :"
+
+#: .tmp/ui_main.py:341
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .tmp/ui_main.py:342
+msgid "Network Settings"
+msgstr "Configurações da Rede"
+
+#: .tmp/ui_main.py:343
+msgid "Use DHCP"
+msgstr "Usar DHCP"
+
+#: .tmp/ui_main.py:344
+msgid "Use Manual Settings"
+msgstr "Usar Configurações Manuais"
+
+#: .tmp/ui_main.py:345
+msgid "Address :"
+msgstr "Endereço :"
+
+#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+msgid "Custom"
+msgstr "Personalizado"
+
+#: .tmp/ui_main.py:347
+msgid "Network Mask :"
+msgstr "Máscara de Rede :"
+
+#: .tmp/ui_main.py:348
+msgid "Default Gateway :"
+msgstr "Endereço de Gateway Padrão:"
+
+#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr "Servidores de Nomes:"
+
+#: .tmp/ui_main.py:351
+msgid "Default"
+msgstr "Padrão"
+
+#: .tmp/ui_main.py:352
+msgid "Automatic"
+msgstr "Automático"
+
+#: .tmp/ui_main.py:353
+msgid "Custom :"
+msgstr "Personalizado :"
+
+#: .tmp/ui_main.py:354
+msgid "Remote"
+msgstr "Remoto"
+
+#: .tmp/ui_main.py:355
+msgid "Network Name (ESSID) :"
+msgstr "Nome da Rede (ESSID) :"
+
+#: .tmp/ui_main.py:356
+msgid "Scan"
+msgstr "Procurar"
+
+#: .tmp/ui_main.py:357
+msgid "Security Type :"
+msgstr "Tipo de Chave de Segurança :"
+
+#: .tmp/ui_main.py:358
+msgid "Settings"
+msgstr "Configurações"
+
+#: .tmp/ui_main.py:359
+msgid "Key :"
+msgstr "Chave :"
+
+#: .tmp/ui_main.py:360
+msgid "Hide Password"
+msgstr "Esconder Senha"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Dialog"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Detalhes"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Dispositivo"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Dispositivo:"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Selecionar uma operadora"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Operadora:"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN:"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "Lembrar o PIN para essa conexão"
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Configurações de Segurança"
+
+#: .tmp/ui_item.py:103
+msgid "Set connection state."
+msgstr "Mudar estado da conexão."
+
+#: .tmp/ui_item.py:104
+msgid "Edit connection"
+msgstr "Editar conexão"
+
+#: .tmp/ui_item.py:105
+msgid "Delete connection"
+msgstr "Deletar conexão"
+
+#: .tmp/ui_item.py:107
+msgid "  %p %"
+msgstr " %p %"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Nome da Máquina"
