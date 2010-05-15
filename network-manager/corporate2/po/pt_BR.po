@@ -201,7 +201,7 @@ msgstr "Você não tem um endereço de IP para a interface que vai para a intern
 
 #: connsharing.py:267
 msgid "IP address not found"
-msgstr ""
+msgstr "Endereço de IP não encontrado"
 
 #: network-manager.py:37 network-manager.py:98 network-manager.py:108
 #: autoswitch.py:34 autoswitch.py:36 network-applet.py:541
@@ -215,7 +215,7 @@ msgstr "O módulo do Gerenciador de rede já está iniciado!"
 
 #: network-manager.py:98
 msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
-msgstr ""
+msgstr "O suporte para rede está configurado para o NetworkManager do GNOME. Você deve mudar de volta para o suporte do COMAR para usar esse gerenciador de rede."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -243,20 +243,19 @@ msgstr "Nenhum pacote com os scripts de rede COMAR estão instalados ainda."
 
 #: connection.py:28
 msgid "Channel"
-msgstr ""
+msgstr "Canal"
 
 #: connection.py:29
-#, fuzzy
 msgid "Mode"
-msgstr "Modo:"
+msgstr "Modo"
 
 #: connection.py:30
 msgid "Protocol"
-msgstr ""
+msgstr "Protocolo"
 
 #: connection.py:42
 msgid "No remotes found"
-msgstr ""
+msgstr "Nenhum remoto achado"
 
 #: connection.py:62
 msgid "<hidden>"
@@ -283,7 +282,6 @@ msgid "Connection"
 msgstr "Conexão"
 
 #: connection.py:214
-#, fuzzy
 msgid "Device:"
 msgstr "Dispositivo:"
 
@@ -297,60 +295,55 @@ msgstr "Examinar"
 
 #: connection.py:277
 msgid "Security:"
-msgstr ""
+msgstr "Segurança:"
 
 #: connection.py:280
 msgid "No authentication"
 msgstr "Sem autenticação"
 
 #: connection.py:284
-#, fuzzy
 msgid "Authentication:"
-msgstr "Autenticação"
+msgstr "Autenticação:"
 
 #: connection.py:290
-#, fuzzy
 msgid "Inner Authentication:"
-msgstr "Autenticação"
+msgstr "Autenticação Interna:"
 
 #: connection.py:302
 msgid "Anonymous Identity:"
-msgstr ""
+msgstr "Identificação Anônima:"
 
 #: connection.py:307
 msgid "User/Identity"
-msgstr ""
+msgstr "Usuário/Identidade"
 
 #: connection.py:312
-#, fuzzy
 msgid "Password:"
 msgstr "Senha:"
 
 #: connection.py:318
 msgid "Client Certificate:"
-msgstr ""
+msgstr "Certificado do Cliente:"
 
 #: connection.py:319 connection.py:325 connection.py:331
 msgid "browse"
-msgstr ""
+msgstr "browse"
 
 #: connection.py:324
 msgid "CA Certificate:"
-msgstr ""
+msgstr "Certificado do CA:"
 
 #: connection.py:330
-#, fuzzy
 msgid "Private Key File:"
-msgstr "Senha:"
+msgstr "Arquivo de Chave Privada:"
 
 #: connection.py:336
-#, fuzzy
 msgid "Private Key Password:"
-msgstr "Senha:"
+msgstr "Senha da Chave Privada:"
 
 #: connection.py:369 connection.py:375 connection.py:381
 msgid "*|Certificates"
-msgstr ""
+msgstr "*|Certificados"
 
 #: connection.py:369
 msgid "Select CA Certificate File"
