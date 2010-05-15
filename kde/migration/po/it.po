@@ -310,7 +310,7 @@ msgstr "Selezione File"
 
 #: .tmp/ScrUserFiles.py:177
 msgid "My Documents"
-msgstr "Miei Documenti"
+msgstr "Documenti"
 
 #: .tmp/ScrUserFiles.py:178
 msgid "Desktop"
