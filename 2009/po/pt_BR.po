@@ -53,7 +53,6 @@ msgid "No network connection, skipping remote mount."
 msgstr "Nenhuma conectividade com a rede, pulando a montagem de discos remotos."
 
 #: bin/mudur.py:637
-#, fuzzy
 msgid "Cannot connect to DBus, services won't be started"
 msgstr "Não é possível se conectar ao DBus, os serviços não serão iniciados"
 
@@ -79,12 +78,12 @@ msgid "Stopping services"
 msgstr "Parando os serviços"
 
 #: bin/mudur.py:718 bin/mudur.py:738 bin/service.py:161 bin/service.py:270
-#, fuzzy, python-format
+#, python-format
 msgid "Starting %s"
 msgstr "Iniciando %s"
 
 #: bin/mudur.py:728 bin/mudur.py:745 bin/service.py:174 bin/service.py:282
-#, fuzzy, python-format
+#, python-format
 msgid "Stopping %s"
 msgstr "Parando %s"
 
@@ -133,7 +132,6 @@ msgid "Filesystem repaired, but reboot needed!"
 msgstr "Sistema de arquivos reparado, porém é necessário reiniciar!"
 
 #: bin/mudur.py:911
-#, fuzzy
 msgid "Rebooting in 10 seconds..."
 msgstr "Reiniciando em 10 segundos..."
 
@@ -142,7 +140,6 @@ msgid "Rebooting..."
 msgstr "Reiniciando..."
 
 #: bin/mudur.py:917
-#, fuzzy
 msgid "Filesystem could not be repaired"
 msgstr "Sistema de arquivos não pôde ser consertado"
 
@@ -193,12 +190,10 @@ msgid "Mounting local filesystems"
 msgstr "Montando sistemas de arquivos locais"
 
 #: bin/mudur.py:1018
-#, fuzzy
 msgid "Starting portmap service for NFS"
 msgstr "Iniciando os serviços portmap para o NFS"
 
 #: bin/mudur.py:1021
-#, fuzzy
 msgid "Mounting remote filesystems (CTRL-C stops trying)"
 msgstr "Montando o sistema de arquivos remoto (Aperte CTRL-C para parar de tentar)"
 
@@ -216,12 +211,10 @@ msgid "Setting disk parameters"
 msgstr "Ajustando parâmetros do disco"
 
 #: bin/mudur.py:1125
-#, fuzzy
 msgid "Activating swap space"
 msgstr "Ativando a memória de troca (swap)"
 
 #: bin/mudur.py:1134
-#, fuzzy
 msgid "Deactivating swap space"
 msgstr "Desativando a memória de troca (swap)"
 
@@ -238,7 +231,6 @@ msgid "Setting system clock to hardware clock"
 msgstr "Ajustando o relógio do sistema para no relógio do hardware"
 
 #: bin/mudur.py:1205
-#, fuzzy
 msgid "Failed to adjust systematic drift of the hardware clock"
 msgstr "Falhou em ajustar o relógio do sistema no relógio do hardware"
 
@@ -251,7 +243,6 @@ msgid "Syncing system clock to hardware clock"
 msgstr "Sincronizando o relógio do sistema para o relógio do hardware"
 
 #: bin/mudur.py:1223
-#, fuzzy
 msgid "Failed to synchronize clocks"
 msgstr "Falhou em sincronizar relógios"
 
@@ -361,7 +352,7 @@ msgid "Service '%s' won't be auto started."
 msgstr "Serviço '%s' não será iniciado automaticamente."
 
 #: bin/service.py:192
-#, fuzzy, python-format
+#, python-format
 msgid "Service '%s' will be started if required."
 msgstr "Serviço '%s' será iniciado automaticamente."
 
@@ -371,7 +362,7 @@ msgid "Unable to reload %s:"
 msgstr "Não é possível reiniciar %s:"
 
 #: bin/service.py:205
-#, fuzzy, python-format
+#, python-format
 msgid "Reloading %s"
 msgstr "Reiniciando %s"
 
@@ -388,12 +379,10 @@ msgid "DBus is not running."
 msgstr "DBus não está executando."
 
 #: bin/service.py:294
-#, fuzzy
 msgid "DBus is running."
 msgstr "DBus está em execução."
 
 #: bin/service.py:299
-#, fuzzy
 msgid ""
 "usage: service [<options>] [<service>] <command>\n"
 "where command is:\n"
