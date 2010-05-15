@@ -1,7 +1,7 @@
 # Translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) 2006 TUBITAK/UEKAE
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Pedro Leite <pedro.leite@gmail.com>, 2007.
 msgid ""
 msgstr ""
@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2010-05-10 15:27+0300\n"
 "PO-Revision-Date: 2007-02-28 23:13-0300\n"
 "Last-Translator: Pedro Leite <pedro.leite@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -77,13 +76,12 @@ msgid "Name Service Settings"
 msgstr "Preferências do Serviço de Nomes"
 
 #: browser.py:415 network-applet.py:327
-#, fuzzy
 msgid "Connect Automatically"
-msgstr "Automático"
+msgstr "Conectar Automaticamente"
 
 #: browser.py:434
 msgid "Try Auto Connect on startup"
-msgstr ""
+msgstr "Tentar conectar automaticamente na inicialização"
 
 #: browser.py:491
 msgid "Network Connections Help"
@@ -119,31 +117,31 @@ msgstr "Servidor de nomes:"
 
 #: comariface.py:177
 msgid "You are not authorized for this operation."
-msgstr ""
+msgstr "Você não está autorizado para essa operação"
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
+"O Gerenciador de Rede não conseguiu se comunicar com o seu dispositivo de rede. Se ele é \n"
+"uma interface de rede sem fio, tenha certeza que a chave do rádio está ligada. Isto é usualmente \n"
+" feito através de uma chave ou tecla de função (Fn) nos laptops modernos."
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
+"O serviço DHCP não conseguiu assinalar um endereço de IP para a sua interface de rede.\n"
+"Tenha certeza de que a rede que você está tentando conectar está habilitada a fornecer endereços de IP\n"
+" através do serviço DHCP. Caso contrário, você deve configurar um endereço de IP manualmente."
 
 #: comariface.py:190
-#, fuzzy
 msgid "Network Manager - Error"
-msgstr "Gerenciador de Rede"
+msgstr "Gerenciador de Rede - Error"
 
 #: comariface.py:353
 msgid "new connection"
@@ -151,59 +149,55 @@ msgstr "nova conexão"
 
 #: connsharing.py:99
 msgid "Internet Connection Sharing"
-msgstr ""
+msgstr "Compartilhamento de Conexão de Internet"
 
 #: connsharing.py:100
-#, fuzzy
 msgid "Share Internet Connection"
-msgstr "Criar uma nova conexão"
+msgstr "Compartilhar Conexão de Internet"
 
 #: connsharing.py:102
 msgid "Interface that goes to internet"
-msgstr ""
+msgstr "Interface que vai para a internet"
 
 #: connsharing.py:103
-#, fuzzy
 msgid "Interface that will share connection"
-msgstr "Criar uma nova conexão"
+msgstr "Interface que irá compartilhar a conexão"
 
 #: connsharing.py:119
 msgid "D-Bus Error"
-msgstr ""
+msgstr "Erro do D-Bus"
 
 #: connsharing.py:123
 msgid "COMAR Error"
-msgstr ""
+msgstr "Erro do COMAR"
 
 #: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
-msgstr ""
+msgstr "Falha ao mudar o estado das interfaces"
 
 #: connsharing.py:129
 msgid "DHCP Server Error"
-msgstr ""
+msgstr "Erro no Servidor de DHCP"
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
-msgstr ""
+msgid "The interfaces that you have selected must be different to share internet connection"
+msgstr "As interfaces que você selecionou devem ser diferentes para que possa compartilhar a conectividade de rede"
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
-msgstr ""
+msgstr "Checar Interfaces Selecionadas"
 
 #: connsharing.py:166
 msgid "The sharing of your connection has been successfully done."
-msgstr ""
+msgstr "O compartilhamento da sua conexão foi feito com sucesso"
 
 #: connsharing.py:166
 msgid "Sharing is OK"
-msgstr ""
+msgstr "Compartilhamento está OK"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
+msgstr "Você não tem um endereço de IP para a interface que vai para a internet"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -220,9 +214,7 @@ msgid "Network manager module is already started!"
 msgstr "O módulo do Gerenciador de rede já está iniciado!"
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
 msgstr ""
 
 #: newconn.py:26
@@ -362,15 +354,15 @@ msgstr ""
 
 #: connection.py:369
 msgid "Select CA Certificate File"
-msgstr ""
+msgstr "Selecionar Arquivo de Certificado CA"
 
 #: connection.py:375
 msgid "Select Client Certificate File"
-msgstr ""
+msgstr "Selecionar Arquivo de Certificado do Cliente"
 
 #: connection.py:381
 msgid "Select Private Key File"
-msgstr ""
+msgstr "Selecionar Arquivo de Chave Privada"
 
 #: connection.py:488
 msgid "Network settings"
@@ -389,12 +381,10 @@ msgid "Custom"
 msgstr "Personalizado"
 
 #: connection.py:519
-#, fuzzy
 msgid "Net mask:"
 msgstr "Máscara de rede:"
 
 #: connection.py:530
-#, fuzzy
 msgid "Gateway:"
 msgstr "Gateway:"
 
@@ -403,20 +393,17 @@ msgid "Configure network connection"
 msgstr "Configurar conexão de rede"
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
-msgstr ""
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
+msgstr "Sua interface de rede sem fio foi desabilitada pela chave de rádio. Por favor ative-a primeiro"
 
 #: autoswitch.py:79
-#, fuzzy
 msgid "Scanning..."
-msgstr "Editar conexões..."
+msgstr "Procurando..."
 
 #: autoswitch.py:100
 #, python-format
 msgid "Profile <b>%s</b> matched."
-msgstr ""
+msgstr "Perfil <b>%s</b> combinou."
 
 #: autoswitch.py:104
 msgid "There is no matched profile"
@@ -481,51 +468,36 @@ msgstr ""
 msgid "Network Applet"
 msgstr "Applet de Rede"
 
-#, fuzzy
 #~ msgid "Waiting DBus..."
 #~ msgstr "Esperando COMAR..."
 
-#, fuzzy
 #~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
 #~ msgstr "Conexão com COMAR fechou inesperadamente, tentando reconectar-se..."
 
-#, fuzzy
-#~ msgid ""
-#~ "Cannot connect to the DBus! If it is not running you should start it with "
-#~ "the 'service dbus start' command in a root console."
-#~ msgstr ""
-#~ "Não é possível se conectar ao COMAR! Se ele não estiver executando você "
-#~ "deve iniciá-lo com o comando 'service comar start' num console como root."
+#~ msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+#~ msgstr "Não é possível se conectar ao COMAR! Se ele não estiver executando você deve iniciá-lo com o comando 'service comar start' num console como root."
 
-#, fuzzy
 #~ msgid "Share Connection"
 #~ msgstr "Conexão"
 
-#, fuzzy
 #~ msgid "Name Server Settings"
 #~ msgstr "Preferências do Serviço de Nomes"
 
-#, fuzzy
 #~ msgid "Name"
 #~ msgstr "Nome:"
 
-#, fuzzy
 #~ msgid "Address :"
 #~ msgstr "Endereço:"
 
-#, fuzzy
 #~ msgid "NameConf"
 #~ msgstr "Nome:"
 
-#, fuzzy
 #~ msgid "Name Server"
 #~ msgstr "Servidores de nome"
 
-#, fuzzy
 #~ msgid "Name :"
 #~ msgstr "Nome:"
 
-#, fuzzy
 #~ msgid "Device Mode"
 #~ msgstr "Dispositivo:"
 
@@ -535,14 +507,11 @@ msgstr "Applet de Rede"
 #~ msgid "User name:"
 #~ msgstr "Nome do usuário:"
 
-#, fuzzy
 #~ msgid "Connected to <b>%s</b>"
 #~ msgstr "Editar conexões..."
 
-#, fuzzy
 #~ msgid "Already connected to <b>%s</b>"
 #~ msgstr "Editar conexões..."
 
-#, fuzzy
 #~ msgid "Connecting to <b>%s</b>"
 #~ msgstr "Editar conexões..."
