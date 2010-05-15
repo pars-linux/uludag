@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -28,20 +28,12 @@ msgid "Update Requirements"
 msgstr "Requisiti Aggiornamento"
 
 #: .tmp/basketdialog.py:125
-msgid ""
-"You must <b>restart</b> your system in order the updated versions of the "
-"following package(s) to take effect:"
-msgstr ""
-"Devi <b>riavviare</b> il tuo sistema per fare in modo che gli aggiornamenti "
-"di questi pacchetti abbiano effetto:"
+msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgstr "Devi <b>riavviare</b> il tuo sistema per fare in modo che gli aggiornamenti di questi pacchetti abbiano effetto:"
 
 #: .tmp/basketdialog.py:132
-msgid ""
-"You must restart following system services in order the updated versions of "
-"the selected package(s) to take effect:"
-msgstr ""
-"Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti "
-"selezionati abbiano efetto:"
+msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
+msgstr "Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti selezionati abbiano efetto:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
 #: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
@@ -57,12 +49,8 @@ msgid "Selected package(s) for install:"
 msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 
 #: .tmp/ui_basketdialog.py:101 .tmp/statemanager.py:104
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-"Verranno installate anche delle dipendenze extra per il/i pacchetto/i "
-"selezionato/i:"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgstr "Verranno installate anche delle dipendenze extra per il/i pacchetto/i selezionato/i:"
 
 #: .tmp/ui_basketdialog.py:102
 msgid "Total Size:"
@@ -156,12 +144,8 @@ msgid "Operation Summary"
 msgstr "Riepilogo operazioni"
 
 #: .tmp/ui_summarydialog.py:50
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto e "
-"scegliendola dal menù."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "Puoi avviare un' applicazione facendo doppio click sulla lista qui sotto e scegliendola dal menù."
 
 #: .tmp/ui_summarydialog.py:51
 msgid "&Ok"
@@ -209,27 +193,17 @@ msgstr "Stato:"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:404
 msgid "&Cancel"
@@ -268,12 +242,8 @@ msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
 #: .tmp/mainwidget.py:212
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
-"Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. "
-"Prova ad aggiornare le informazioni sui repository."
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Pacchetto non trovato. Può essere stato aggiornato o rimosso dal repository. Prova ad aggiornare le informazioni sui repository."
 
 #: .tmp/mainwidget.py:247 .tmp/ui_mainwindow.py:33 .tmp/about.py:23
 #: .tmp/about.py:24
@@ -334,12 +304,8 @@ msgid "Not a valid repository name"
 msgstr "Nome repository non valido"
 
 #: .tmp/settingsdialog.py:225
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2."
-"<p>Prova di nuovo.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>L'indirizzo del repository deve finire con il suffisso xml o xml.bz2.<p>Prova di nuovo.</qt>"
 
 #: .tmp/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
@@ -470,25 +436,16 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "Hai selezionato i seguenti pacchetti per l'aggiornamento:"
 
 #: .tmp/statemanager.py:105
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
-msgstr ""
-"I seguenti pacchetti in conflitto con i pacchetti selezionati verranno "
-"rimossi:"
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgstr "I seguenti pacchetti in conflitto con i pacchetti selezionati verranno rimossi:"
 
 #: .tmp/statemanager.py:106
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Le dipendenze extra dei pacchetti selezionati saranno aggiornati:"
 
 #: .tmp/statemanager.py:131
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Al momento ci sono <b>%1</b> pacchetto/i selezionato/i per un totale di <b>%"
-"2</b>."
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Al momento ci sono <b>%1</b> pacchetto/i selezionato/i per un totale di <b>%2</b>."
 
 #: .tmp/statemanager.py:134
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -503,12 +460,8 @@ msgid "in your basket."
 msgstr "nel tuo cestino."
 
 #: .tmp/statemanager.py:159
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono "
-"essere installati insieme."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "I pacchetti selezionati [%1] sono in conflitto. Questi pacchetti non possono essere installati insieme."
 
 #: .tmp/statemanager.py:160 .tmp/statemanager.py:168
 msgid "Conflict Error"
@@ -567,8 +520,9 @@ msgid "Enable &periodic update check"
 msgstr "Abilita controllo &periodico aggiornamenti"
 
 #: .tmp/ui_settingsdialog.py:367 .tmp/ui_settingsdialog.py:370
+#, fuzzy
 msgid "padding-left:15px;"
-msgstr ""
+msgstr "padding-left:15px;"
 
 #: .tmp/ui_settingsdialog.py:368
 msgid "Check interval :"
@@ -623,14 +577,10 @@ msgid "Select..."
 msgstr "Seleziona..."
 
 #: .tmp/ui_settingsdialog.py:382
-msgid ""
-"Clearing the disk cache will remove all downloaded software. This will not "
-"delete installed software or affect your system stability."
+msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
 msgstr ""
-"Svuotare la cache sul disco rimuoverà tutti i pacchetti dei software "
-"scaricati. \n"
-"Questa operazione non rimuoverà il software installato e non influenzerà la "
-"stabilità del sistema."
+"Svuotare la cache sul disco rimuoverà tutti i pacchetti dei software scaricati. \n"
+"Questa operazione non rimuoverà il software installato e non influenzerà la stabilità del sistema."
 
 #: .tmp/ui_settingsdialog.py:383
 msgid "C&lean disk cache now"
@@ -762,7 +712,6 @@ msgstr "Mostra finestra principale"
 #~ msgid "Clear Cache"
 #~ msgstr " Pulisci cache"
 
-#, fuzzy
 #~ msgid "Ok"
 #~ msgstr "&Ok"
 
@@ -770,44 +719,30 @@ msgstr "Mostra finestra principale"
 #~ msgstr "Elimina"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-#~ "this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i "
-#~ "pacchetti in questo gruppo</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleziona tutti i pacchetti in questo gruppo</p></body></html>"
 
 #~ msgid "Maintainer"
 #~ msgstr "Maintainer"
 
-#, fuzzy
 #~ msgid "Package Installer"
 #~ msgstr "Gestore di Pacchetti"
 
-#, fuzzy
 #~ msgid "Installing %1"
 #~ msgstr "installazione in corso"
 
-#, fuzzy
 #~ msgid "pm-install"
 #~ msgstr "installato"
 
-#, fuzzy
 #~ msgid "Packages to install"
 #~ msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 
@@ -817,6 +752,5 @@ msgstr "Mostra finestra principale"
 #~ msgid "12 new packages are installed  succesfully."
 #~ msgstr "12 nuovi pacchetti installati con successo."
 
-#, fuzzy
 #~ msgid "Cancel"
 #~ msgstr "A&nnulla"
