@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-14 14:31+0300\n"
-"PO-Revision-Date: 2010-05-13 20:40+0200\n"
+"PO-Revision-Date: 2010-05-15 13:17+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -21,23 +21,27 @@ msgstr ""
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Vuoi continuare?"
 
 #: .tmp/basketdialog.py:115
 msgid "Update Requirements"
-msgstr ""
+msgstr "Requisiti Aggiornamento"
 
 #: .tmp/basketdialog.py:125
 msgid ""
 "You must <b>restart</b> your system in order the updated versions of the "
 "following package(s) to take effect:"
 msgstr ""
+"Devi <b>riavviare</b> il tuo sistema per fare in modo che gli aggiornamenti "
+"di questi pacchetti abbiano effetto:"
 
 #: .tmp/basketdialog.py:132
 msgid ""
 "You must restart following system services in order the updated versions of "
 "the selected package(s) to take effect:"
 msgstr ""
+"Devi riavviare i seguenti servizi affinché gli aggiornamenti dei pacchetti "
+"selezionati abbiano efetto:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
 #: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
@@ -319,7 +323,7 @@ msgstr ""
 
 #: .tmp/settingsdialog.py:158
 msgid "Warning"
-msgstr "Avviso"
+msgstr "Attenzione"
 
 #: .tmp/settingsdialog.py:159
 msgid "All the cached packages will be deleted. Are you sure? "
@@ -616,7 +620,7 @@ msgstr "Directory cache corrente:"
 
 #: .tmp/ui_settingsdialog.py:381
 msgid "Select..."
-msgstr ""
+msgstr "Seleziona..."
 
 #: .tmp/ui_settingsdialog.py:382
 msgid ""
