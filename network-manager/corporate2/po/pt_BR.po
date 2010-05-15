@@ -33,7 +33,6 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: browser.py:71
-#, fuzzy
 msgid "Mod:"
 msgstr "Modo:"
 
@@ -400,17 +399,16 @@ msgstr "Perfil <b>%s</b> combinou."
 
 #: autoswitch.py:104
 msgid "There is no matched profile"
-msgstr ""
+msgstr "Não existe perfil que combine"
 
 #: autoswitch.py:106
-#, fuzzy
 msgid "No scan result"
-msgstr "Resultado da examinação:"
+msgstr "Sem resultado da procura"
 
 #: autoswitch.py:116
-#, fuzzy, python-format
+#, python-format
 msgid "Connecting to <b>%s</b> ..."
-msgstr "Editar conexões..."
+msgstr "Conectando a <b>%s</b> ..."
 
 #: network-applet.py:325
 msgid "Firewall..."
@@ -422,7 +420,7 @@ msgstr "Editar conexões..."
 
 #: network-applet.py:329
 msgid "Show Notifications"
-msgstr ""
+msgstr "Mostrar Notificações"
 
 #: network-applet.py:331
 msgid "Icon Per Device"
@@ -437,25 +435,24 @@ msgid "Should network-applet start automatically when you login?"
 msgstr "O applet de rede deve iniciar automaticamente quando você se logar?"
 
 #: network-applet.py:518
-#, fuzzy
 msgid "Connecting to <b>%1</b> ..."
-msgstr "Editar conexões..."
+msgstr "Conectando a <b>%1</b> ..."
 
 #: network-applet.py:523
-#, fuzzy
 msgid "Connected to <b>%1</b>"
-msgstr "Editar conexões..."
+msgstr "Conectado a <b>%1</b> ..."
 
 #: network-applet.py:529
-#, fuzzy
 msgid ""
 "Connection failed \n"
 "<b>%1</b>"
-msgstr "Editar conexões..."
+msgstr ""
+"Conexão falhou \n"
+"<b>%1</b>"
 
 #: network-applet.py:531
 msgid "You are offline now"
-msgstr ""
+msgstr "Agora você está desconectado"
 
 #: network-applet.py:624
 msgid "Network Applet"
