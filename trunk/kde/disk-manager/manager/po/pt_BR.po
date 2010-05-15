@@ -1,0 +1,102 @@
+# Translation of pt_BR.po to Brazilian Portuguese
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Diogo Lima <diogo.urb@gmail.com>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: pt_BR\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-15 19:29-0300\n"
+"PO-Revision-Date: 2010-05-15 19:29-0300\n"
+"Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
+"listinfo/pardus-translation-ptbr>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Montar Disco Automaticamente"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Ponto de Montage"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Tipo de Sistema de Arquivos:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Opções:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Opções Padrões"
+
+#: .tmp/ui_item.py:65
+msgid "Mount or unmount disk."
+msgstr "Montar ou desmontar disco."
+
+#: .tmp/ui_item.py:66
+msgid "Edit"
+msgstr "Editar"
+
+#: .tmp/ui_item.py:67
+msgid "Delete"
+msgstr "Deletar"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Adicionar Novo"
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Configurações"
+
+#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+msgid "Disk Manager"
+msgstr "Gerenciador de Disco"
+
+#: .tmp/diskmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/diskmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/diskmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/diskmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantenedor Atual"
+
+#: .tmp/diskmanager/main.py:86
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Não existem pacotes que forneçam suporte para esta aplicação.\n"
+"Por favor tenha certeza de que todos os pacotes estão instalados e configurados corretamente."
+
+#: .tmp/diskmanager/main.py:175
+msgid "Mounted at %1"
+msgstr "Montado em %1"
+
+#: .tmp/diskmanager/main.py:194
+msgid "All Items"
+msgstr "Todos os Itens"
+
+#: .tmp/diskmanager/main.py:205
+msgid "Add"
+msgstr "Adicionar"
+
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:321
+msgid "Access denied."
+msgstr "Acesso negado."
