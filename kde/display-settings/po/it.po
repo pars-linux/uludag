@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-12-03 14:06+0200\n"
-"PO-Revision-Date: 2010-04-03 16:11+0200\n"
+"PO-Revision-Date: 2010-05-15 21:21+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -213,7 +213,6 @@ msgstr "Monitor:"
 
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
-#, fuzzy
 msgid "Auto"
 msgstr "Automatico"
 
@@ -270,9 +269,8 @@ msgid "Choose..."
 msgstr "Scegli"
 
 #: .tmp/ui_output.py:233
-#, fuzzy
 msgid "Horizontal sync:"
-msgstr "Sync orizzontale"
+msgstr "Frequenza Orizzontale:"
 
 #: .tmp/ui_output.py:234
 msgid "kHz"
@@ -364,4 +362,5 @@ msgstr "Configura"
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Output:"
+
 
