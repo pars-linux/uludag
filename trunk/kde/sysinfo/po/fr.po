@@ -2,7 +2,7 @@
 # Copyright (C) 2005 SUSE Linux Products GmbH.
 # Copyright (C) 2002, 2003 SuSE Linux AG.
 # Copyright (C) 2000, 2001 SuSE GmbH.
-#
+# 
 # Patricia Vaz <patricia@suse.de>, 2003.
 # Francoise Lermen <flermen@suse.de>, 2000, 2001, 2002.
 # Karine Nguyen <karine@suse.de>, 2001.
@@ -136,7 +136,7 @@ msgstr "%1 Mhz"
 
 #: src/sysinfo.cpp:298
 msgid " core"
-msgstr "coeur"
+msgstr "cœur"
 
 # TLABEL mail_2002_03_14_2340__41
 #: src/sysinfo.cpp:309
@@ -145,11 +145,11 @@ msgstr "Affichage"
 
 #: src/sysinfo.cpp:540
 msgid "3D Not Supported"
-msgstr "%1 (3D non supportée)"
+msgstr "3D non supportée"
 
 #: src/sysinfo.cpp:542
 msgid "3D Supported"
-msgstr "%1 (3D supportée)"
+msgstr "3D supportée"
 
 #: src/sysinfo.cpp:558
 msgid "Mounted on %1"
@@ -163,17 +163,12 @@ msgstr "Non monté"
 msgid "%1 free of %2"
 msgstr "%1 libre sur %2"
 
-#~ msgid ""
-#~ "Folders, Harddisks, Removable Devices, System Information and more..."
-#~ msgstr ""
-#~ "Dossiers, disques durs, périphériques amovibles, informations système, "
-#~ "etc."
+#~ msgid "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgstr "Dossiers, disques durs, périphériques amovibles, informations système, etc."
 
-#, fuzzy
 #~ msgid "Driver: "
 #~ msgstr "Pilote :"
 
-# TLABEL rpm-groups_2002_03_14_2340__25
 #~ msgid "My Computer"
 #~ msgstr "Poste de travail"
 
@@ -183,7 +178,6 @@ msgstr "%1 libre sur %2"
 #~ msgid "KSysinfo"
 #~ msgstr "KSysinfo"
 
-# TLABEL backup_2002_03_14_2340__99
 #~ msgid "Looking for CPU information..."
 #~ msgstr "Recherche d'informations relatives au processeur..."
 
@@ -196,37 +190,30 @@ msgstr "%1 libre sur %2"
 #~ msgid "OS:"
 #~ msgstr "SE :"
 
-# TLABEL nis_server_2002_01_04_0147__18
 #~ msgid "Current user:"
 #~ msgstr "Utilisateur actuel :"
 
-# TLABEL rpm-groups_2002_01_04_0147__37
 #~ msgid "KDE:"
 #~ msgstr "KDE :"
 
-# TLABEL autoinst_2002_08_07_0216__427
 #~ msgid "Vendor:"
 #~ msgstr "Fabricant :"
 
 #~ msgid "Model:"
 #~ msgstr "Modèle :"
 
-# TLABEL general_2002_01_04_0147__25
 #~ msgid "Getting OS information...."
 #~ msgstr "Obtention des informations relatives au SE...."
 
-# TLABEL packages_2002_01_04_0147__66
 #~ msgid "My Documents"
 #~ msgstr "Mes documents"
 
-# TLABEL profile-manager_2002_08_07_0216__8
 #~ msgid "Looking up network status..."
 #~ msgstr "Recherche de l'état du réseau..."
 
 #~ msgid "CPU Information"
 #~ msgstr "Informations relatives au processeur"
 
-# TLABEL backup_2002_03_14_2340__76
 #~ msgid "Speed:"
 #~ msgstr "Vitesse :"
 
@@ -236,47 +223,36 @@ msgstr "%1 libre sur %2"
 #~ msgid "Temperature:"
 #~ msgstr "Température :"
 
-# TLABEL backup_2002_03_14_2340__99
 #~ msgid "Looking for memory information..."
 #~ msgstr "Recherche d'informations relatives à la mémoire..."
 
-# TLABEL online_update_2002_01_04_0147__18
 #~ msgid "Memory Information"
 #~ msgstr "Informations relatives à la mémoire"
 
 #~ msgid "Total memory (RAM):"
 #~ msgstr "Mémoire totale (RAM) :"
 
-# TLABEL hwinfo_2002_01_04_0147__86
 #~ msgid "Free memory:"
 #~ msgstr "Mémoire disponible :"
 
-# TLABEL packages_2002_01_04_0147__205
 #~ msgid "Total swap:"
 #~ msgstr "Taille totale de l'espace d'échange en mémoire :"
 
-# TLABEL partitioning_2002_03_14_2340__11
 #~ msgid "Free swap:"
 #~ msgstr "Taille de l'espace d'échange disponible :"
 
 #~ msgid "Device"
 #~ msgstr "Périphérique"
 
-# TLABEL rpm-groups_2002_03_14_2340__40
 #~ msgid "Filesystem"
 #~ msgstr "Système de fichiers"
 
-# TLABEL backup_2002_03_14_2340__86
 #~ msgid "Total space"
 #~ msgstr "Espace total"
 
 #~ msgid "Press the right mouse button for more options like Mount or Eject"
-#~ msgstr ""
-#~ "Appuyez sur le bouton droit de la souris pour accéder à d'autres options, "
-#~ "telles que Monter ou Éjecter"
+#~ msgstr "Appuyez sur le bouton droit de la souris pour accéder à d'autres options, telles que Monter ou Éjecter"
 
-# #-#-#-#-#  libsusehwhelper.po (libsusehwhelper)  #-#-#-#-#
-# TLABEL autoinst_2002_08_07_0216__168
 #~ msgid "Unknown"
 #~ msgstr "Inconnu"
 
