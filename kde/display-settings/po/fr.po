@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -19,7 +19,7 @@ msgstr ""
 #: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
-msgstr "Gestionnaire de l'affichage"
+msgstr "Paramètres d'affichage"
 
 #: .tmp/ui_screens.py:84
 msgid "Outputs"
@@ -140,19 +140,15 @@ msgid ""
 "Please be sure that packages are installed and configured correctly."
 msgstr ""
 "Cette application n'existe pas en version utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et "
-"configurés."
+"Merci de vous assurer que les paquets sont correctement installés et configurés."
 
 #: .tmp/displaysettings/deviceswidget.py:86
 #: .tmp/displaysettings/screenswidget.py:77
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Impossible de trouver une configuration valide. Le gestionnaire de "
-"l'affichage ne sera pas activé tant que vous n'aurez pas créé une nouvelle "
-"configuration.\n"
+"Impossible de trouver une configuration valide. Le gestionnaire de l'affichage ne sera pas activé tant que vous n'aurez pas créé une nouvelle configuration.\n"
 "Voulez-vous essayer de créer une meilleure configuration ?"
 
 #: .tmp/displaysettings/deviceswidget.py:95
@@ -163,24 +159,12 @@ msgid "Access denied."
 msgstr "Accès refusé."
 
 #: .tmp/displaysettings/deviceswidget.py:120
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté "
-"d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. "
-"Voulez-vous utiliser ce pilote ?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. Voulez-vous utiliser ce pilote ?</p></qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:136
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté "
-"d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. "
-"Pour ce faire, vous devez installer le paquet <b>%2</b> et choisir <b>%1</b> "
-"à partir des options de la carte vidéo.</qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>Afin d'obtenir de meilleures performances, vous pourriez être tenté d'utiliser <b>%1</b> pilote fourni par le fabricant de la carte graphique. Pour ce faire, vous devez installer le paquet <b>%2</b> et choisir <b>%1</b> à partir des options de la carte vidéo.</qt>"
 
 #: .tmp/displaysettings/deviceswidget.py:141
 msgid "Start Package Manager"
@@ -188,9 +172,7 @@ msgstr "Lancer le gestionnaire de paquets"
 
 #: .tmp/displaysettings/deviceswidget.py:252
 msgid "You must restart your X session for the changes to take effect."
-msgstr ""
-"Vous devez redémarrer votre session X (Menu général -> Quitter -> "
-"Déconnexion) pour que les changements prennent effet."
+msgstr "Vous devez redémarrer votre session X (Menu général -> Quitter -> Déconnexion) pour que les changements prennent effet."
 
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
@@ -202,9 +184,7 @@ msgstr "Moniteur personnalisé"
 
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
-"<qt><i>Cliquer sur le bouton \"Choisir...\" pour sélectionner un moniteur</"
-"i></qt>"
+msgstr "<qt><i>Cliquer sur le bouton \"Choisir...\" pour sélectionner un moniteur</i></qt>"
 
 #: .tmp/displaysettings/monitorbrowser.py:41
 msgid "Type:"
@@ -225,23 +205,15 @@ msgstr "Propriétés de la sortie - %1"
 
 #: .tmp/displaysettings/screenswidget.py:359
 msgid "You must restart your X session for all the changes to take effect."
-msgstr ""
-"Vous devez redémarrer votre session pour que les changements prennent effet."
+msgstr "Vous devez redémarrer votre session pour que les changements prennent effet."
 
 #: .tmp/ui_output.py:224
 msgid "Output Configuration"
 msgstr "Configuration de la sortie"
 
 #: .tmp/ui_output.py:225
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
-"Si l'éventail des fréquences que votre moniteur supporte n'est pas détecté "
-"pour une raison ou pour une autre, vous pouvez en spécifier un ici. Soyez "
-"prudent avec ces valeurs, car une valeur inappropriée peut endommager votre "
-"moniteur, surtout s'il est ancien."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Si l'éventail des fréquences que votre moniteur supporte n'est pas détecté pour une raison ou pour une autre, vous pouvez en spécifier un ici. Soyez prudent avec ces valeurs, car une valeur inappropriée peut endommager votre moniteur, surtout s'il est ancien."
 
 #: .tmp/ui_output.py:226
 msgid "Specify Ranges"
@@ -292,15 +264,8 @@ msgid "Frequency Ranges"
 msgstr "Éventail de fréquences"
 
 #: .tmp/ui_output.py:238
-msgid ""
-"If your monitor's dimensions are not correctly detected, fonts and other "
-"visual objects might seem larger or smaller than normal. In order to fix "
-"this problem, you can specify your monitor's dimensions here."
-msgstr ""
-"Si les dimensions de votre moniteur ne sont pas détectées correctement, il "
-"se peut que les polices et autres objets visuels semblent plus grands ou "
-"plus petits que la normale. Pour remédier à ce problème, vous pouvez "
-"spécifier les dimensions du moniteur ici."
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+msgstr "Si les dimensions de votre moniteur ne sont pas détectées correctement, il se peut que les polices et autres objets visuels semblent plus grands ou plus petits que la normale. Pour remédier à ce problème, vous pouvez spécifier les dimensions du moniteur ici."
 
 #: .tmp/ui_output.py:239
 msgid "Specify Display Size"
@@ -365,4 +330,3 @@ msgstr "Configurer..."
 #: .tmp/ui_devices.py:70
 msgid "Outputs:"
 msgstr "Sorties :"
-
