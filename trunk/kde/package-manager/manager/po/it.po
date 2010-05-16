@@ -16,8 +16,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -136,8 +136,9 @@ msgstr "Impostazioni package manager"
 
 #: .tmp/ui_pminstaller.py:33 .tmp/ui_mainwidget_kde4.py:86
 #: .tmp/ui_mainwidget_x11.py:75
+#, fuzzy
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_summarydialog.py:49
 msgid "Operation Summary"
@@ -449,11 +450,11 @@ msgstr "Al momento ci sono <b>%1</b> pacchetto/i selezionato/i per un totale di 
 
 #: .tmp/statemanager.py:134
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "con <b>%1</b> pacchetti in conflitto per un totale di <b>%2</b>"
 
 #: .tmp/statemanager.py:136
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "con <b>%1</b> dipendenze extra per un totale di <b>%2</b>"
 
 #: .tmp/statemanager.py:137
 msgid "in your basket."
@@ -520,7 +521,6 @@ msgid "Enable &periodic update check"
 msgstr "Abilita controllo &periodico aggiornamenti"
 
 #: .tmp/ui_settingsdialog.py:367 .tmp/ui_settingsdialog.py:370
-#, fuzzy
 msgid "padding-left:15px;"
 msgstr "padding-left:15px;"
 
