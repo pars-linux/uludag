@@ -13,12 +13,12 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
 msgid "Boot Manager"
-msgstr "Gestionnaire de démarrage"
+msgstr "Démarrage du système"
 
 #: .tmp/bootmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -26,7 +26,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/bootmanager/about.py:25
 msgid " "
-msgstr "1"
+msgstr " "
 
 #: .tmp/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
