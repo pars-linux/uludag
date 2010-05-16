@@ -542,7 +542,6 @@ msgid "Check interval :"
 msgstr "Intervalo de comprobación :"
 
 #: .tmp/ui_settingsdialog.py:369
-#, fuzzy
 msgid " min"
 msgstr " min"
 
@@ -556,7 +555,6 @@ msgid "Bandwidth limit"
 msgstr "Limitar ancho de banda"
 
 #: .tmp/ui_settingsdialog.py:373
-#, fuzzy
 msgid " kb/s"
 msgstr " kb/s"
 
@@ -578,7 +576,7 @@ msgstr "Tamaño máximo del cache:"
 
 #: .tmp/ui_settingsdialog.py:378
 msgid "Unlimited"
-msgstr ""
+msgstr "ilimiatado"
 
 #: .tmp/ui_settingsdialog.py:379
 msgid " Mib"
@@ -586,18 +584,15 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Directorio actual de cache:"
 
 #: .tmp/ui_settingsdialog.py:381
 msgid "Select..."
-msgstr ""
+msgstr "Seleccionar.."
 
 #: .tmp/ui_settingsdialog.py:382
-#, fuzzy
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr ""
-"Al vaciar el cache en disco se removerán todos los paquetes descargadas con los instaladores de los programas. \n"
-"Esto no afectará a los programas instalados y la estabilidad del sistema."
+msgstr "Al vaciar el cache en disco se eliminarán todos los paquetes descargadas. Esto no eliminará los programas instalados y no afectará la estabilidad del sistema."
 
 #: .tmp/ui_settingsdialog.py:383
 msgid "C&lean disk cache now"
