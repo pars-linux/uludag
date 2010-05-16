@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-13 15:42+0200\n"
-"PO-Revision-Date: 2010-05-13 18:18+0200\n"
+"PO-Revision-Date: 2010-05-15 13:27+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -75,9 +75,9 @@ msgid ""
 "Lancelot is an advanced and highly customizable menu for Pardus.<br><br>The "
 "program shortcuts are easy to access and well organized."
 msgstr ""
-"Lancelot è un menù avanzato ed altamente personalizzabile per Pardus. <br><"
-"br>I "
-"collegamenti dei programmi sono ben organizzati e facilmente accessibili."
+"Lancelot è un menù avanzato ed altamente personalizzabile per Pardus. "
+"<br><br>I collegamenti dei programmi sono ben organizzati e facilmente "
+"accessibili."
 
 #: .tmp/ScrMouse.py:29 .tmp/ScrSummary.py:63
 msgid "Mouse Settings"
@@ -133,11 +133,11 @@ msgstr "Off"
 
 #: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:118
 msgid "Smolt"
-msgstr ""
+msgstr "Smolt"
 
 #: .tmp/ScrSmolt.py:32
 msgid "Smolt Description"
-msgstr ""
+msgstr "Descrizione Smolt"
 
 #: .tmp/ScrSmolt.py:69
 msgid "Label"
@@ -217,15 +217,15 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:130
 msgid "Kernel"
-msgstr ""
+msgstr "Kernel"
 
 #: .tmp/ScrSmolt.py:131
 msgid "SELinux Enabled"
-msgstr ""
+msgstr "SELinux Abilitato"
 
 #: .tmp/ScrSmolt.py:132
 msgid "SELinux Policy"
-msgstr ""
+msgstr "Politiche SELinux"
 
 #: .tmp/ScrSmolt.py:133
 msgid "SELinux Enforce"
@@ -233,11 +233,11 @@ msgstr ""
 
 #: .tmp/ScrSmolt.py:146
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 #: .tmp/ScrSmolt.py:148
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #: .tmp/ScrSummary.py:39 .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:58
 msgid "Welcome"
@@ -340,10 +340,9 @@ msgid ""
 "for help and support. Don't forget to <b>join our community!</b>"
 msgstr ""
 "<b>Le tue preferenze sono state applicate.</b> Adesso puoi divertirti con "
-"Pardus o "
-"visitare questi link e questi programmi per ulteriori personalizzazioni e "
-"supporto. "
-"Non dimenticare di <b>unirti alla nostra community!</b>"
+"Pardus o visitare questi link e questi programmi per ulteriori "
+"personalizzazioni e supporto. Non dimenticare di <b>unirti alla nostra "
+"community!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:256 .tmp/ui_goodbyeWidget.py:258
 msgid "My Smolt Page"
@@ -425,8 +424,8 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
-"Kaptan seleziona automaticamente la tastiera in base alla lingua. "
-"Se vuoi usare un'altro tipo di tastiera, selezionane uno qui e provalo."
+"Kaptan seleziona automaticamente la tastiera in base alla lingua. Se vuoi "
+"usare un'altro tipo di tastiera, selezionane uno qui e provalo."
 
 #: .tmp/ui_menuWidget.py:144
 msgid "Menu"
@@ -450,6 +449,9 @@ msgid ""
 "border: 1px solid rgb(255, 255, 255);\n"
 "}"
 msgstr ""
+"#pictureMenuStyles{\n"
+"border: 1px solid rgb(255, 255, 255);\n"
+"}"
 
 #: .tmp/ui_menuWidget.py:152
 msgid "Menu Styles"
@@ -520,10 +522,10 @@ msgid ""
 "point. After saving your profile click the checkbox to establish the "
 "connection."
 msgstr ""
-"Per creare una nuova connessione clicca su <b>Crea profilo</b> e "
-"seleziona la tua scheda dalla lista. Se la connessione è wireless, scegli "
-"un access point. Dopo aver salvato il tuo profilo metti la spunta per "
-"stabilire la connessione."
+"Per creare una nuova connessione clicca su <b>Crea profilo</b> e seleziona "
+"la tua scheda dalla lista. Se la connessione è wireless, scegli un access "
+"point. Dopo aver salvato il tuo profilo metti la spunta per stabilire la "
+"connessione."
 
 #: .tmp/ui_packageWidget.py:141
 msgid "Packages"
@@ -543,7 +545,7 @@ msgstr "Controlla nuovi aggiornamenti ogni:"
 
 #: .tmp/ui_packageWidget.py:146
 msgid "color: #642437;"
-msgstr ""
+msgstr "color: #642437;"
 
 #: .tmp/ui_packageWidget.py:147
 msgid " hours"
@@ -567,10 +569,9 @@ msgid ""
 "Manager also can automatically install the latest updates available. You can "
 "set the period for checking new updates."
 msgstr ""
-"Per installare e rimuovere programmi, usa il Gestore Pacchetti. "
-"Esso può inoltre installare gli ultimi aggiornamenti disponibili. "
-"Qui puoi impostare ogni quanto tempo il Gestore Pacchetti controllerà gli "
-"aggiornamenti."
+"Per installare e rimuovere programmi, usa il Gestore Pacchetti. Esso può "
+"inoltre installare gli ultimi aggiornamenti disponibili. Qui puoi impostare "
+"ogni quanto tempo il Gestore Pacchetti controllerà gli aggiornamenti."
 
 #: .tmp/ui_packageWidget.py:152
 msgid "Install / Remove Programs"
@@ -591,9 +592,8 @@ msgid ""
 "their contents."
 msgstr ""
 "Strigi indicizza i file che usi spesso. Questo renderà molto veloci le "
-"ricerche dei file. "
-"Strigi è inoltre in grado di cercare file in grado di cercare dei file in "
-"base al loro tipo."
+"ricerche dei file. Strigi è inoltre in grado di cercare file in grado di "
+"cercare dei file in base al loro tipo."
 
 #: .tmp/ui_searchWidget.py:78
 msgid "Allow Strigi to index my files"
@@ -605,11 +605,11 @@ msgstr "I&nvia il mio profilo"
 
 #: .tmp/ui_smoltWidget.py:122
 msgid "color:rgb(95, 34, 52)"
-msgstr ""
+msgstr "color:rgb(95, 34, 52)"
 
 #: .tmp/ui_smoltWidget.py:124 .tmp/ui_smoltWidget.py:125
 msgid "color: rgb(95, 34, 52);"
-msgstr ""
+msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:126
 msgid ""
@@ -713,17 +713,17 @@ msgid ""
 "and sends it to us for which lets us improve Pardus according to the user "
 "profile statistics."
 msgstr ""
-"<b>Smolt</b> è uno strumento che raccoglie le informazioni "
-"contenute nella seguente tabella e le invia agli sviluppatori di "
-"Pardus, per migliorarlo in basa alle statistiche."
+"<b>Smolt</b> è uno strumento che raccoglie le informazioni contenute nella "
+"seguente tabella e le invia agli sviluppatori di Pardus, per migliorarlo in "
+"basa alle statistiche."
 
 #: .tmp/ui_styleitem.py:60 .tmp/ui_uiitem.py:56 .tmp/ui_wallpaperuiitem.py:46
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_styleitem.py:61 .tmp/ui_uiitem.py:57
 msgid "border: 1px solid rgb(236, 236, 236, 100);"
-msgstr ""
+msgstr "border: 1px solid rgb(236, 236, 236, 100);"
 
 #: .tmp/ui_styleitem.py:62
 msgid "styleName"
@@ -746,6 +746,8 @@ msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
 msgstr ""
+"Sceglio il tipo di Desktop e il tema che preferito. Personalizza Pardus con "
+"stili e temi colorati!"
 
 #: .tmp/ui_styleWidget.py:137
 msgid ""
@@ -759,28 +761,35 @@ msgid ""
 "color: rgb(234, 225, 228);\n"
 "}"
 msgstr ""
+"#listStyles{\n"
+"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 "
+"rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, "
+"213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"\n"
+"color: rgb(234, 225, 228);\n"
+"}"
 
 #: .tmp/ui_styleWidget.py:144
-#, fuzzy
 msgid "Desktop Type"
-msgstr "<b>Tipo di desktop:</b>"
+msgstr "Tipo di desktop"
 
 #: .tmp/ui_styleWidget.py:145
 msgid "Desktop view (KDE4 Style)"
-msgstr ""
+msgstr "Vista Scrivania (Stile KDE4)"
 
 #: .tmp/ui_styleWidget.py:146
 msgid "Folder view (KDE3 Style)"
-msgstr ""
+msgstr "Vista cartelle (Stile KDE3)"
 
 #: .tmp/ui_styleWidget.py:147
-#, fuzzy
 msgid "Number of Desktops"
-msgstr "<b>Numero di Desktop:</b>"
+msgstr "Numero di Desktop:"
 
 #: .tmp/ui_styleWidget.py:148
 msgid "color: rgb(100, 36, 55);"
-msgstr ""
+msgstr "color: rgb(100, 36, 55);"
 
 #: .tmp/ui_summaryWidget.py:68
 msgid "Summary"
@@ -795,11 +804,16 @@ msgid ""
 "border: 1px solid rgb(236, 236, 236, 80);\n"
 "padding: 20px}\n"
 msgstr ""
+"#textSummary{background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, "
+"y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 "
+"rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);\n"
+"padding: 20px}\n"
 
 #: .tmp/ui_summaryWidget.py:75
-#, fuzzy
 msgid "Save Your Settings"
-msgstr "Preferenze di ricerca"
+msgstr "Salva personalizzazioni"
 
 #: .tmp/ui_summaryWidget.py:76
 msgid ""
@@ -807,6 +821,8 @@ msgid ""
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
 "ready to enjoy Pardus!"
 msgstr ""
+"Hai completato tutti i passi. Ecco un riassunto dei cambiamenti. Clicca su <"
+"b>Applica Impostazioni</b> per salvarli. Divertiti con Pardus!"
 
 #: .tmp/ui_uiitem.py:58 .tmp/ui_wallpaperuiitem.py:47
 msgid "wallPaperName"
@@ -828,11 +844,15 @@ msgid ""
 "\n"
 "border: 1px solid rgb(236, 236, 236, 80);}"
 msgstr ""
+"#listWallpaper{background-color: qlineargradient(spread:pad, x1:0, y1:0, "
+"x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), "
+"stop:1 rgba(255, 213, 230, 80));\n"
+"\n"
+"border: 1px solid rgb(236, 236, 236, 80);}"
 
 #: .tmp/ui_wallpaperWidget.py:110
-#, fuzzy
 msgid "Choose wallpaper from file"
-msgstr "Scegli sfondo"
+msgstr "Scegli sfondo da un file"
 
 #: .tmp/ui_wallpaperWidget.py:111
 msgid "Don't change wallpaper"
@@ -843,6 +863,8 @@ msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
+"Scegli lo sfondo che preferisci. Non dimenticare di controllare <b>"
+"Impostazioni Desktop</b> per scaricare nuovi sfondi."
 
 #: .tmp/ui_wallpaperWidget.py:113
 msgid "Choose a Wallpaper"
@@ -863,10 +885,9 @@ msgid ""
 msgstr ""
 "Pardus è un sistema operativo sicuro, veloce e user friendly. <br /><br /> "
 "Con Pardus puoi connetterti a Internet, leggere e-mail, lavorare, fruire di "
-"contenuti multimediali, sviluppare apllicazioni, giocare e molto altro! <br "
-"/> "
-"<br /><br /><b>Kaptan</b> ti aiuterà a personalizzare Pardus "
-"semplicemente e con velocità. Fai click su Avanti per cominciare."
+"contenuti multimediali, sviluppare apllicazioni, giocare e molto altro! <br /"
+"> <br /><br /><b>Kaptan</b> ti aiuterà a personalizzare Pardus semplicemente "
+"e con velocità. Fai click su Avanti per cominciare."
 
 #, fuzzy
 #~ msgid ""
