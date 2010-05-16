@@ -1217,6 +1217,22 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Particionando seu disco rígido</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Nesta tela, você pode particionar seu disco manualmente. Você pode selecionar \n"
+"partições existentes e redimensionar ou excluí-los. Você pode criar novas \n"
+"partições nas partes vazias, fazer Pardus usá-los para arquivos de sistema, \n"
+"diretórios pessoais dos usuários, espaço de swap ou de uso geral. As mudanças que você \n"
+"fazer não serão aplicadas até que você continue com a instalação, \n"
+"o que significa que você pode-las reverter, se você fizer alguma alteração indesejada ou alterar a sua configuração.\n"
+"</p>\n"
+"<p>\n"
+"Por favor, consulte a guia de Instalação e Uso do Pardus para obter mais informações \n"
+"sobre o particionamento de disco.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrPartitionManual.py:80
 msgid "All changes that you made will be removed."
@@ -1657,8 +1673,8 @@ msgstr "Tetris"
 msgid "Hide Help"
 msgstr "Esconder Ajuda"
 
-#: yali4/bootloader.py:235 yali4/bootloader.py:240
 # O sistema operacional windows é windows
+#: yali4/bootloader.py:235 yali4/bootloader.py:240
 msgid "Windows"
 msgstr "Windows"
 
