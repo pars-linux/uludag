@@ -58,7 +58,7 @@ msgstr "Paramètres"
 
 #: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
-msgstr "Gestionnaire de disques"
+msgstr "Gestionnaire de partitions de disques durs"
 
 #: .tmp/diskmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -66,7 +66,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/diskmanager/about.py:25
 msgid " "
-msgstr "1"
+msgstr " "
 
 #: .tmp/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
