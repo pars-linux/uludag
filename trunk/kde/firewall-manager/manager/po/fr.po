@@ -54,7 +54,7 @@ msgstr "Le pare-feu est désactivé."
 
 #: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
-msgstr "Gestionnaire de Pare-feu"
+msgstr "Pare-feu"
 
 #: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -62,7 +62,7 @@ msgstr "(c) 2006-2009 TUBITAK/UEKAE "
 
 #: .tmp/firewallmanager/about.py:25
 msgid " "
-msgstr "1"
+msgstr " "
 
 #: .tmp/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
