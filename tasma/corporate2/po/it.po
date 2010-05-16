@@ -2,44 +2,77 @@
 # Copyright (C) 2007 Free Software Foundation, Inc.
 #
 # Andrea Decorte <adecorte@gmail.com>, 2007.
+# Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-01-04 16:45+0200\n"
-"PO-Revision-Date: 2007-03-11 16:36+0200\n"
-"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
-"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-16 14:48+0200\n"
+"Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
+"Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/tmoduleview.cpp:86
-msgid "&Administrator Mode"
-msgstr "&Modalità amministratore"
+#: modules/tasmatv/tuners-db.cpp:173 modules/tasmatv/cards-db.cpp:99
+msgid "Other"
+msgstr "Altro"
 
-#: src/tmoduleview.cpp:73
-msgid "&Back"
-msgstr "&Indietro"
+#: modules/tasmatv/tvconfigui.moc.cpp:34 modules/tasmatv/tvconfigui.moc.cpp:42
+msgid "TvConfigUI"
+msgstr "Interfaccia di configurazione TV"
 
-#: src/tmoduleview.cpp:83
-msgid "&Reset"
-msgstr "&Annulla"
+#: modules/tasmatv/tvconfigui.cpp:136 modules/tasmatv/tvconfigui.cpp:146
+#: rc.cpp:9 rc.cpp:30
+#, no-c-format
+msgid "Model"
+msgstr "Modello"
 
-#: src/tasmamainwin.cpp:83
-msgid "&Show Extra Modules"
-msgstr ""
+#: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:145
+#: rc.cpp:12 rc.cpp:27
+#, no-c-format
+msgid "Manufacturer"
+msgstr "Produttore"
 
-#: modules/tasmatv/tasmatv.cpp:42
-msgid "(c) 2005-2006, TUBITAK - UEKAE"
-msgstr "(c) 2005-2006, TUBITAK - UEKAE"
+#: modules/tasmatv/tvconfigui.cpp:139 modules/tasmatv/tvconfigui.cpp:141
+#: modules/tasmatv/tvconfigui.cpp:144 modules/tasmatv/tvconfigui.cpp:148
+#: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
+#, no-c-format
+msgid "New Item"
+msgstr "Nuovo elemento"
 
-#: src/main.cpp:64
-#, fuzzy
-msgid "(c) 2005-2007, TUBITAK - UEKAE"
-msgstr "(c) 2005-2006, TUBITAK - UEKAE"
+#: modules/tasmatv/tvconfigui.cpp:142 rc.cpp:6
+#, no-c-format
+msgid "Tv Card"
+msgstr "Scheda TV"
+
+#: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
+#, no-c-format
+msgid "Tuner"
+msgstr "Sintonizzatore"
+
+#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:39
+#, no-c-format
+msgid "Addons"
+msgstr "Estensioni"
+
+#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:42
+#, no-c-format
+msgid "Radio Card"
+msgstr "Scheda radio"
+
+#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:45
+#, no-c-format
+msgid "Phase Locked Loop (PLL)"
+msgstr "Phase Locked Loop (PLL)"
+
+#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
+#, no-c-format
+msgid "Do not use PLL"
+msgstr "Non usare PLL"
 
 #: modules/tasmatv/tvconfigui.cpp:154 rc.cpp:51
 #, no-c-format
@@ -51,45 +84,99 @@ msgstr "28 Mhz Crystal"
 msgid "35 Mhz Crystal"
 msgstr "35 Mhz Crystal"
 
-#: src/tmoduleview.cpp:150
-msgid "<big>Loading...</big>"
-msgstr "<big>Caricamento in corso..</big>"
+#: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
+msgid "TASMA Tv Card Configuration Module"
+msgstr "Modulo per la configurazione della scheda TV per TASMA"
 
-#: src/tasmamainwin.cpp:86
-msgid "About Current Module"
-msgstr "Informazioni sul modulo corrente"
-
-#: modules/tasmatv/tvconfigui.cpp:150 rc.cpp:39
-#, no-c-format
-msgid "Addons"
-msgstr "Caratteristiche aggiuntive"
-
-#: src/aboutview.cpp:68
-msgid "Configuration Center"
-msgstr "Centro di configurazione"
+#: modules/tasmatv/tasmatv.cpp:42
+msgid "(c) 2005-2006, TUBITAK - UEKAE"
+msgstr "(c) 2005-2006, TUBITAK - UEKAE"
 
 #: modules/tasmatv/tasmatv.cpp:44 src/main.cpp:65
 msgid "Current Maintainer"
 msgstr "Responsabile corrente"
 
+#: modules/tasmatv/tasmatv.cpp:81
+msgid "Tv card configuration module for TASMA."
+msgstr "Modulo per la configurazione della scheda TV all'interno di TASMA."
+
+#: src/main.cpp:62
+msgid "TASMA - Pardus Configuration Center"
+msgstr "TASMA - Centro di configurazione di Pardus"
+
+#: src/main.cpp:63
+msgid "Pardus Configuration Center"
+msgstr "Centro di configurazione di Pardus"
+
+#: src/main.cpp:64
+msgid "(c) 2005-2007, TUBITAK - UEKAE"
+msgstr "(c) 2005-2007, TUBITAK - UEKAE"
+
+#: src/main.cpp:66
+msgid "Developer"
+msgstr "Sviluppatore"
+
+#: src/main.cpp:67
+msgid "Old Maintainer & Original Author"
+msgstr "Vecchio responsabile & autore originale"
+
+#: src/main.cpp:68
+msgid "Module Developers"
+msgstr "Sviluppatori del modulo"
+
+#: src/main.cpp:68
+msgid "KDE Developers"
+msgstr "Sviluppatori KDE"
+
+#: src/kfile-plugins/pisi/kfile_pisi.cpp:38
+msgid "PiSi Package Info"
+msgstr "Informazioni pacchetto PiSi"
+
+#: src/kfile-plugins/pisi/kfile_pisi.cpp:42
+msgid "Name"
+msgstr "Nome"
+
 #: src/kfile-plugins/pisi/kfile_pisi.cpp:44
 msgid "Description"
 msgstr "Descrizione"
 
-#: src/main.cpp:66
-#, fuzzy
-msgid "Developer"
-msgstr "Sviluppatori KDE"
+#: src/kfile-plugins/pisi/kfile_pisi.cpp:45
+msgid "Size"
+msgstr "Dimensione"
 
-#: src/tasmamainwin.cpp:89
-#, fuzzy
-msgid "Displays Information About Current Module"
-msgstr "Informazioni sul modulo corrente"
+#: src/tmoduleview.cpp:73
+msgid "&Back"
+msgstr "&Indietro"
 
-#: modules/tasmatv/tvconfigui.cpp:153 rc.cpp:48
-#, no-c-format
-msgid "Do not use PLL"
-msgstr "Non usare PLL"
+#: src/tmoduleview.cpp:83
+msgid "&Reset"
+msgstr "&Annulla"
+
+#: src/tmoduleview.cpp:86
+msgid "&Administrator Mode"
+msgstr "&Modalità amministratore"
+
+#: src/tmoduleview.cpp:150
+msgid "<big>Loading...</big>"
+msgstr "<big>Caricamento in corso..</big>"
+
+#: src/aboutview.cpp:68
+msgid "Configuration Center"
+msgstr "Centro di configurazione"
+
+#: src/aboutview.cpp:86
+msgid "Welcome to TASMA"
+msgstr "Benvenuto in Tasma"
+
+#: src/aboutview.cpp:88
+msgid ""
+"TASMA is a configuration application for Pardus Operating System. You can "
+"tweak the systems default configuration settings by using the modules "
+"presented in TASMA. "
+msgstr ""
+"TASMA è una applicazione di configurazione per il sistema operativo Pardus. "
+"Qui puoi personalizzare la configurazione attraverso i moduli predefiniti "
+"del sistema e i moduli personalizzati presenti in TASMA "
 
 #: src/aboutview.cpp:99
 msgid ""
@@ -103,120 +190,17 @@ msgstr ""
 "verrà mostrato sotto forma di icona nel pannello di destra. Puoi avviare un "
 "modulo di configurazione cliccando una o due volte sulla sua icona."
 
-#: src/main.cpp:68
-msgid "KDE Developers"
-msgstr "Sviluppatori KDE"
+#: src/tasmamainwin.cpp:83
+msgid "&Show Extra Modules"
+msgstr "M&ostra moduli extra"
 
-#: modules/tasmatv/tvconfigui.cpp:137 modules/tasmatv/tvconfigui.cpp:145
-#: rc.cpp:12 rc.cpp:27
-#, no-c-format
-msgid "Manufacturer"
-msgstr "Produttore"
+#: src/tasmamainwin.cpp:86
+msgid "About Current Module"
+msgstr "Informazioni sul modulo corrente"
 
-#: modules/tasmatv/tvconfigui.cpp:136 modules/tasmatv/tvconfigui.cpp:146
-#: rc.cpp:9 rc.cpp:30
-#, no-c-format
-msgid "Model"
-msgstr "Modello"
-
-#: src/main.cpp:68
-msgid "Module Developers"
-msgstr "Sviluppatori del modulo"
-
-#: src/kfile-plugins/pisi/kfile_pisi.cpp:42
-msgid "Name"
-msgstr "Nome"
-
-#: modules/tasmatv/tvconfigui.cpp:139 modules/tasmatv/tvconfigui.cpp:141
-#: modules/tasmatv/tvconfigui.cpp:144 modules/tasmatv/tvconfigui.cpp:148
-#: rc.cpp:15 rc.cpp:18 rc.cpp:24 rc.cpp:33
-#, no-c-format
-msgid "New Item"
-msgstr "Nuovo elemento"
-
-#: src/main.cpp:67
-msgid "Old Maintainer & Original Author"
-msgstr "Vecchio responsabile & autore originale"
-
-#: modules/tasmatv/tuners-db.cpp:173 modules/tasmatv/cards-db.cpp:99
-msgid "Other"
-msgstr "Altro"
-
-#: src/main.cpp:63
-msgid "Pardus Configuration Center"
-msgstr "Centro di configurazione di Pardus"
-
-#: modules/tasmatv/tvconfigui.cpp:152 rc.cpp:45
-#, no-c-format
-msgid "Phase Locked Loop (PLL)"
-msgstr "Phase Locked Loop (PLL)"
-
-#: src/kfile-plugins/pisi/kfile_pisi.cpp:38
-msgid "PiSi Package Info"
-msgstr "Informazioni pacchetto PiSi"
-
-#: modules/tasmatv/tvconfigui.cpp:151 rc.cpp:42
-#, no-c-format
-msgid "Radio Card"
-msgstr "Scheda radio"
-
-#: rc.cpp:3
-#, no-c-format
-msgid "Settings"
-msgstr ""
-
-#: src/kfile-plugins/pisi/kfile_pisi.cpp:45
-msgid "Size"
-msgstr "Dimensione"
-
-#: src/main.cpp:62
-msgid "TASMA - Pardus Configuration Center"
-msgstr "TASMA - Centro di configurazione di Pardus"
-
-#: modules/tasmatv/tasmatv.cpp:39 modules/tasmatv/tasmatv.cpp:40
-msgid "TASMA Tv Card Configuration Module"
-msgstr "Modulo per la configurazione della scheda TV per TASMA"
-
-#: src/aboutview.cpp:88
-#, fuzzy
-msgid ""
-"TASMA is a configuration application for Pardus Operating System. You can "
-"tweak the systems default configuration settings by using the modules "
-"presented in TASMA. "
-msgstr ""
-"TASMA è una applicazione di configurazione per il sistema operativo Pardus. "
-"Qui puoi personalizzare la configurazione attraverso i moduli predefiniti "
-"del sistema e i moduli personalizzati presenti in TASMA "
-
-#: modules/tasmatv/tvconfigui.cpp:149 rc.cpp:21
-#, no-c-format
-msgid "Tuner"
-msgstr "Sintonizzatore"
-
-#: modules/tasmatv/tvconfigui.cpp:142 rc.cpp:6
-#, no-c-format
-msgid "Tv Card"
-msgstr "Scheda TV"
-
-#: modules/tasmatv/tasmatv.cpp:81
-msgid "Tv card configuration module for TASMA."
-msgstr "Modulo per la configurazione della scheda TV all'interno di TASMA."
-
-#: modules/tasmatv/tvconfigui.moc.cpp:34 modules/tasmatv/tvconfigui.moc.cpp:42
-msgid "TvConfigUI"
-msgstr "Interfaccia di configurazione TV"
-
-#: src/aboutview.cpp:86
-msgid "Welcome to TASMA"
-msgstr "Benvenuto in Tasma"
-
-#: _translatorinfo.cpp:3
-msgid ""
-"_: EMAIL OF TRANSLATORS\n"
-"Your emails"
-msgstr ""
-"_: EMAIL OF TRANSLATORS\n"
-"adecorte@gmail.com"
+#: src/tasmamainwin.cpp:89
+msgid "Displays Information About Current Module"
+msgstr "Informazioni sul modulo corrente"
 
 #: _translatorinfo.cpp:1
 msgid ""
@@ -224,7 +208,22 @@ msgid ""
 "Your names"
 msgstr ""
 "_: NAME OF TRANSLATORS\n"
-"Andrea Decorte"
+"Andrea Decorte "
+"Davide Siciliano"
+
+#: _translatorinfo.cpp:3
+msgid ""
+"_: EMAIL OF TRANSLATORS\n"
+"Your emails"
+msgstr ""
+"_: EMAIL OF TRANSLATORS\n"
+"adecorte@gmail.com "
+"edivad95@gmail.com"
+
+#: rc.cpp:3
+#, no-c-format
+msgid "Settings"
+msgstr "Impostazioni"
 
 #~ msgid "(c) 2005, TUBITAK - UEKAE"
 #~ msgstr "(c) 2005, TUBITAK - UEKAE"
