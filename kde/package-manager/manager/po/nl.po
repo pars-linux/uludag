@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-14 14:31+0300\n"
-"PO-Revision-Date: 2010-05-08 21:44+0200\n"
+"PO-Revision-Date: 2010-05-16 09:14+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -19,23 +19,27 @@ msgstr ""
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Wilt u doorgaan?"
 
 #: .tmp/basketdialog.py:115
 msgid "Update Requirements"
-msgstr ""
+msgstr "Vereisten voor opwaarderen"
 
 #: .tmp/basketdialog.py:125
 msgid ""
 "You must <b>restart</b> your system in order the updated versions of the "
 "following package(s) to take effect:"
 msgstr ""
+"<b>Herstart</b> het systeem voor het actief maken van de volgende "
+"bijgewerkte pakketversie(s):"
 
 #: .tmp/basketdialog.py:132
 msgid ""
 "You must restart following system services in order the updated versions of "
 "the selected package(s) to take effect:"
 msgstr ""
+"Voor het actief maken van de bijgewerkte versies van de geselecteerde "
+"pakketten herstart de volgende diensten :"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
 #: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
@@ -313,7 +317,7 @@ msgstr "<b>Annuleren operatie...</b>"
 
 #: .tmp/settingsdialog.py:149
 msgid "Open Directory"
-msgstr ""
+msgstr "Map openen"
 
 #: .tmp/settingsdialog.py:158
 msgid "Warning"
@@ -550,14 +554,12 @@ msgid "Show Component information "
 msgstr "Componentinformatie tonen"
 
 #: .tmp/ui_settingsdialog.py:363
-#, fuzzy
 msgid "System tray icon"
-msgstr "Systeemvakpictogram inschak&elen"
+msgstr "Systeemvakpictogram"
 
 #: .tmp/ui_settingsdialog.py:364
-#, fuzzy
 msgid "Enable system tray icon"
-msgstr "Systeemvakpictogram inschak&elen"
+msgstr "Systeemvakpictogram inschakelen"
 
 #: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
@@ -572,9 +574,8 @@ msgid "padding-left:15px;"
 msgstr "opvullen-links:15px;"
 
 #: .tmp/ui_settingsdialog.py:368
-#, fuzzy
 msgid "Check interval :"
-msgstr "Controle interval:"
+msgstr "Controle-interval:"
 
 #: .tmp/ui_settingsdialog.py:369
 msgid " min"
@@ -593,9 +594,8 @@ msgid " kb/s"
 msgstr " kb/s"
 
 #: .tmp/ui_settingsdialog.py:374
-#, fuzzy
 msgid "Use bandwidth limit :"
-msgstr "Bandbreedtelimiet gebruiken"
+msgstr "Bandbreedtelimiet gebruiken:"
 
 #: .tmp/ui_settingsdialog.py:375
 msgid "&General Settings"
@@ -611,28 +611,26 @@ msgstr "Maximum buffergrootte:"
 
 #: .tmp/ui_settingsdialog.py:378
 msgid "Unlimited"
-msgstr ""
+msgstr "Onbeperkt"
 
 #: .tmp/ui_settingsdialog.py:379
-#, fuzzy
 msgid " Mib"
-msgstr " Mb"
+msgstr " Mib"
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Huidige buffermap:"
 
 #: .tmp/ui_settingsdialog.py:381
 msgid "Select..."
-msgstr ""
+msgstr "Selecteren..."
 
 #: .tmp/ui_settingsdialog.py:382
-#, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. This will not "
 "delete installed software or affect your system stability."
 msgstr ""
-"Legen van schijfbuffer zal alle gedownloade software verwijderen. \n"
+"Leeg maken van het schijfbuffer zal alle gedownloade software verwijderen. "
 "Het zal geen geïnstalleerde software verwijderen of de stabiliteit van uw "
 "systeem beïnvloeden."
 
@@ -686,7 +684,6 @@ msgid "FTP proxy server:"
 msgstr "FTP-proxyserver:"
 
 #: .tmp/ui_settingsdialog.py:399
-#, fuzzy
 msgid "No proxy server"
 msgstr "Geen proxyserver"
 
