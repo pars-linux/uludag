@@ -158,7 +158,9 @@
        <item row="0" column="0">
         <widget class="QTextEdit" name="textEdit">
          <property name="styleSheet">
-          <string>color: rgb(95, 34, 52);</string>
+          <string notr="true">#textEdit{
+color: rgb(95, 34, 52);
+}</string>
          </property>
          <property name="html">
           <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
