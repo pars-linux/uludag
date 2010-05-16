@@ -191,7 +191,7 @@ msgstr "Voulez-vous supprimer le groupe '%1' ?"
 
 #: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
 msgid "User Manager"
-msgstr "Gestionnaire des utilisateurs"
+msgstr "Configuration des utilisateurs"
 
 #: .tmp/usermanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
