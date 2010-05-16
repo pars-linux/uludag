@@ -117,7 +117,7 @@ msgstr "Ayuda"
 
 #: .tmp/mainwindow.py:99 .tmp/tray.py:174
 msgid "Quit"
-msgstr ""
+msgstr "Salir"
 
 # favor revisar, paquetes o programas
 # maybe here we shoud speak about programs or applications ? the fact that it
@@ -297,7 +297,7 @@ msgstr "<b>Cancelando operación...</b>"
 
 #: .tmp/settingsdialog.py:149
 msgid "Open Directory"
-msgstr ""
+msgstr "Abrir directorio"
 
 #: .tmp/settingsdialog.py:158
 msgid "Warning"
@@ -325,7 +325,7 @@ msgstr ""
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Desarrollador"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -333,7 +333,7 @@ msgstr ""
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Autor inicial"
 
 # i translated as "Write here to search", i think this is the idea
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
@@ -357,14 +357,12 @@ msgid "Update"
 msgstr "Actualizar"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "Updates"
-msgstr "Actualizar"
+msgstr "Actualizaciones"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Hay <b>%1</b> actualizaciones disponibles!"
+msgstr "Hay %1 actualizaciones disponibles!"
 
 #: .tmp/tray.py:215
 msgid "There are <b>%1</b> updates available!"
@@ -508,9 +506,8 @@ msgstr "instalando"
 
 # i shortened this, it does not fit otherwise
 #: .tmp/ui_settingsdialog.py:360
-#, fuzzy
 msgid "Package list"
-msgstr "Descarga:"
+msgstr "Lista de paquetes"
 
 #: .tmp/ui_settingsdialog.py:361
 msgid "&Show only desktop applications"
@@ -518,7 +515,7 @@ msgstr "&Mostrar solamente programas de escritorio"
 
 #: .tmp/ui_settingsdialog.py:362
 msgid "Show Component information "
-msgstr ""
+msgstr "Mostrar información de componente"
 
 #: .tmp/ui_settingsdialog.py:363
 #, fuzzy
