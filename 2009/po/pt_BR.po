@@ -1704,6 +1704,10 @@ msgid ""
 "this partition properly!After this operation, start Pardus \n"
 "installation again!"
 msgstr ""
+"O sistema de arquivos da '%s' partição é NTFS, e esta partição \n"
+"não foi fechada apropiadamente.Por favor, reinicie o sistema e feche \n"
+"esta partição apropiadamente!Após esta operação, inicie novamente a \n"
+"instalação do pardus!>"
 
 #: yali4/filesystem.py:477
 #, python-format
