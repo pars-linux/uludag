@@ -292,7 +292,6 @@ msgid "Width:"
 msgstr "Ancho:"
 
 #: .tmp/ui_output.py:244 .tmp/ui_output.py:246
-#, fuzzy
 msgid " mm"
 msgstr " mm"
 
