@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-15 10:07+0200\n"
-"PO-Revision-Date: 2010-05-16 16:57+0200\n"
+"PO-Revision-Date: 2010-05-16 18:06+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -630,7 +630,6 @@ msgid ""
 msgstr ""
 
 #: yali4/gui/descSlide.py:19
-#, fuzzy
 msgid ""
 "Pardus Corporate 2 is a Linux distribution that everybody can easily install "
 "and use. With Pardus Corporate 2, you can do anything that you could "
@@ -643,7 +642,6 @@ msgstr ""
 "una base solida,  Pardus apre la strada al mondo del software libero."
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Pardus Corporate 2 comes preinstalled with the open source desktop "
 "environment KDE 3.5. You will have a much better desktop experience compared "
@@ -676,7 +674,6 @@ msgstr ""
 "bisogno per visualizzare file e cartelle, c'è Dolphin."
 
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "With Pardus Corporate 2, Kpdf is replaced with Okular. Okular supports many "
 "file formats and you can view all your files without any additional "
@@ -1617,8 +1614,11 @@ msgid "Password changed"
 msgstr "Password cambiata."
 
 #: yali4/gui/ScrRescuePassword.py:97
+#, fuzzy
 msgid "Info"
 msgstr ""
+"\340\275\226\340\275\242\340\276\241\340\274\213\340\275\221\340\275\274\340"
+"\275\223\340\274\215(&f)"
 
 #: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
