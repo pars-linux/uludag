@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -518,18 +518,16 @@ msgid "Show Component information "
 msgstr "Mostrar información de componente"
 
 #: .tmp/ui_settingsdialog.py:363
-#, fuzzy
 msgid "System tray icon"
-msgstr "&Habilitar ícono en la barra del sistema"
+msgstr "Icono en la barra del sistema"
 
 #: .tmp/ui_settingsdialog.py:364
-#, fuzzy
 msgid "Enable system tray icon"
-msgstr "&Habilitar ícono en la barra del sistema"
+msgstr "Habilitar ícono en la barra del sistema"
 
 #: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
-msgstr ""
+msgstr "Ocultar ícono en barra del sistema, si no hay actualizaciones pendientes"
 
 #: .tmp/ui_settingsdialog.py:366
 msgid "Enable &periodic update check"
@@ -540,13 +538,13 @@ msgid "padding-left:15px;"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:368
-#, fuzzy
 msgid "Check interval :"
-msgstr "Intervalo de comprobación:"
+msgstr "Intervalo de comprobación :"
 
 #: .tmp/ui_settingsdialog.py:369
+#, fuzzy
 msgid " min"
-msgstr ""
+msgstr " min"
 
 #: .tmp/ui_settingsdialog.py:371
 msgid "Install updates automatically"
@@ -558,13 +556,13 @@ msgid "Bandwidth limit"
 msgstr "Limitar ancho de banda"
 
 #: .tmp/ui_settingsdialog.py:373
+#, fuzzy
 msgid " kb/s"
-msgstr ""
+msgstr " kb/s"
 
 #: .tmp/ui_settingsdialog.py:374
-#, fuzzy
 msgid "Use bandwidth limit :"
-msgstr "Limitar ancho de banda"
+msgstr "Limitar ancho de banda :"
 
 #: .tmp/ui_settingsdialog.py:375
 msgid "&General Settings"
@@ -651,7 +649,6 @@ msgid "FTP proxy server:"
 msgstr "Servidor proxy FTP:"
 
 #: .tmp/ui_settingsdialog.py:399
-#, fuzzy
 msgid "No proxy server"
 msgstr "Sin servidor proxy"
 
@@ -677,7 +674,7 @@ msgstr "Descripción:"
 
 #: .tmp/packagedelegate.py:61
 msgid "Website:"
-msgstr ""
+msgstr "Sitio web:"
 
 #: .tmp/packagedelegate.py:62
 msgid "Release:"
@@ -694,7 +691,7 @@ msgstr "Descarga:"
 
 #: .tmp/packagedelegate.py:65
 msgid "Installed Version:"
-msgstr ""
+msgstr "Versión instalada:"
 
 #: .tmp/helpdialog.py:32
 msgid "Package Manager Help"
@@ -707,9 +704,8 @@ msgstr "Instalación de %1 terminado con éxito"
 
 # favor revisar contexto..
 #: .tmp/pm-install.py:52
-#, fuzzy
 msgid "Succesfully finished installing packages"
-msgstr "Instalación de %1 terminado con éxito"
+msgstr "Instalación terminada con éxito"
 
 #: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
 #: .tmp/pm-install.py:73
@@ -718,7 +714,7 @@ msgstr ""
 
 #: .tmp/pm-install.py:151
 msgid "Summary"
-msgstr ""
+msgstr "Resumen"
 
 #: .tmp/main.py:48
 msgid "Show main window"
