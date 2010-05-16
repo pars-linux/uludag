@@ -48,7 +48,7 @@ msgstr "Yapılandır"
 
 #: dialogviewconfiguration.cpp:167
 msgid "Configuration of the channels."
-msgstr "Kanalların yapılandırılması."
+msgstr "Kanalların yapılandırması."
 
 #: dialogviewconfiguration.cpp:228
 msgid "Available channels"
