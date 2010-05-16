@@ -1,20 +1,22 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Siciliano Davide <edivad95@gmail.com>, 2009.
+# Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-29 23:11+0300\n"
-"PO-Revision-Date: 2009-06-22 14:20+0200\n"
-"Last-Translator: Siciliano Davide <edivad95@gmail.com>\n"
-"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-16 11:14+0200\n"
+"Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
+"Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/ui_configure.py:44
 msgid "Options"
@@ -25,53 +27,47 @@ msgid "Startup Load :"
 msgstr ""
 
 #: .tmp/ui_configure.py:46
-#, fuzzy
 msgid " Operations"
-msgstr "Dettagli"
+msgstr " Operazioni"
 
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr ""
+msgstr "Gestore cronologia"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Mantainer corrente"
 
 #: .tmp/historymanager/window.py:76
-#, fuzzy
 msgid "%1 Operations Loaded"
-msgstr "Dettagli"
+msgstr "%1 Operazioni caricate"
 
 #: .tmp/historymanager/window.py:118
-#, fuzzy
 msgid "Loading operation details.."
-msgstr "Dettagli"
+msgstr "Caricamento dettagli operazione..."
 
 #: .tmp/historymanager/window.py:124
 msgid "Details for operation on %1 at %2"
 msgstr ""
 
 #: .tmp/historymanager/window.py:130
-#, fuzzy
 msgid "There are %1 packages in this snapshot."
-msgstr "Ci sono %1 pacchetti in questo punto di ripristino"
+msgstr "Ci sono %1 pacchetti in questo punto di ripristino."
 
 #: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
-#, fuzzy
 msgid "Ready .."
 msgstr "Pronto"
 
 #: .tmp/historymanager/window.py:156
-#, fuzzy
 msgid "Loading Operation Plan"
 msgstr "Caricamento del piano di ripristino..."
 
@@ -88,9 +84,8 @@ msgid "<br> These package(s) will be <b>removed</b> :<br>"
 msgstr "<br>Questi pacchetti verranno<b>rimossi</b> :<br>"
 
 #: .tmp/historymanager/window.py:192
-#, fuzzy
 msgid "Takeback plan for Operation on %1 at %2"
-msgstr "Piano di ripristino per %1 operazione su %2 <br><br>"
+msgstr "Piano di ripristino per %1 operazione su %2"
 
 #: .tmp/historymanager/window.py:224
 msgid "Takeback operation verification"
@@ -129,31 +124,27 @@ msgid "Finished succesfully"
 msgstr "Operazione completata con successo."
 
 #: .tmp/historymanager/window.py:262
-#, fuzzy, python-format
+#, python-format
 msgid "Taking Snapshot : <b>%s</b>/100"
-msgstr "Creazione punto di ripristino..."
+msgstr "Creazione punto di ripristino: <b>%s</b>/100"
 
 #: .tmp/historymanager/listitem.py:12
-#, fuzzy
 msgid "Upgrade"
 msgstr "Aggiornamento"
 
 #: .tmp/historymanager/listitem.py:12
-#, fuzzy
 msgid "Removal"
 msgstr "Rimozione"
 
 #: .tmp/historymanager/listitem.py:12
 msgid "Emerge"
-msgstr ""
+msgstr "Costruzione pacchetto"
 
 #: .tmp/historymanager/listitem.py:13
-#, fuzzy
 msgid "Installation"
 msgstr "Installazione"
 
 #: .tmp/historymanager/listitem.py:13
-#, fuzzy
 msgid "Snapshot"
 msgstr "Punto di ripristino"
 
@@ -163,21 +154,19 @@ msgstr "Ripristino"
 
 #: .tmp/historymanager/listitem.py:14
 msgid "Repository Update"
-msgstr ""
+msgstr "Aggiornamento Repository"
 
 #: .tmp/historymanager/listitem.py:54
-#, fuzzy
 msgid "No: %1   Type: %2"
-msgstr "Tipo:"
+msgstr "Numero: %1  Tipo: %2"
 
 #: .tmp/ui_uiitem.py:85
 msgid "History Date - Time /Label"
 msgstr ""
 
 #: .tmp/ui_uiitem.py:86
-#, fuzzy
 msgid "No: Type:"
-msgstr "Tipo:"
+msgstr "Numero: Tipo:"
 
 #: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
@@ -185,11 +174,11 @@ msgstr "Ripristina a questa situazione"
 
 #: .tmp/ui_uiitem.py:88
 msgid "Details"
-msgstr ""
+msgstr "Dettagli"
 
 #: .tmp/ui_uiitem.py:89
 msgid "Show operation plan"
-msgstr ""
+msgstr "Mostra piano operazioni"
 
 #: .tmp/ui_mainwindow.py:130
 msgid "New Snapshot"
@@ -197,7 +186,7 @@ msgstr "Nuovo punto di ripristino"
 
 #: .tmp/ui_mainwindow.py:131
 msgid "History Settings"
-msgstr ""
+msgstr "Impostazioni cronologia"
 
 #: .tmp/ui_mainwindow.py:133
 msgid "Alias :"
@@ -205,7 +194,7 @@ msgstr ""
 
 #: .tmp/ui_mainwindow.py:134
 msgid "Cancel"
-msgstr ""
+msgstr "Annulla"
 
 #: .tmp/ui_mainwindow.py:135
 msgid "- Loading Pisi History"
