@@ -32,14 +32,15 @@
        </property>
        <property name="font">
         <font>
-         <family>URW Gothic L</family>
-         <pointsize>11</pointsize>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
        </property>
        <property name="styleSheet">
-        <string notr="true">color: rgb(234, 225, 228);</string>
+        <string notr="true">color: rgb(234, 225, 228);
+</string>
        </property>
        <property name="title">
         <string>Updates</string>
@@ -52,8 +53,8 @@
          <widget class="QCheckBox" name="showTray">
           <property name="font">
            <font>
-            <family>URW Gothic L</family>
-            <pointsize>11</pointsize>
+            <family>Sans Serif</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="styleSheet">
@@ -70,8 +71,8 @@
            <widget class="QCheckBox" name="checkUpdate">
             <property name="font">
              <font>
-              <family>URW Gothic L</family>
-              <pointsize>11</pointsize>
+              <family>Sans Serif</family>
+              <pointsize>10</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -89,7 +90,7 @@
             </property>
             <property name="font">
              <font>
-              <family>URW Gothic L</family>
+              <family>Sans Serif</family>
               <pointsize>10</pointsize>
              </font>
             </property>
@@ -117,8 +118,8 @@
       <widget class="QGroupBox" name="groupBoxRepo">
        <property name="font">
         <font>
-         <family>URW Gothic L</family>
-         <pointsize>11</pointsize>
+         <family>Sans Serif</family>
+         <pointsize>10</pointsize>
          <weight>75</weight>
          <bold>true</bold>
         </font>
@@ -137,8 +138,8 @@
          <widget class="QLabel" name="label_3">
           <property name="font">
            <font>
-            <family>URW Gothic L</family>
-            <pointsize>11</pointsize>
+            <family>Sans Serif</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="styleSheet">
@@ -153,8 +154,8 @@
          <widget class="QCheckBox" name="checkBoxContrib">
           <property name="font">
            <font>
-            <family>URW Gothic L</family>
-            <pointsize>11</pointsize>
+            <family>Sans Serif</family>
+            <pointsize>10</pointsize>
            </font>
           </property>
           <property name="styleSheet">
