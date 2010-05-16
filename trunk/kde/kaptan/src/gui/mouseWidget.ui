@@ -55,6 +55,7 @@ border-bottom-right-radius: 4px;
           <widget class="QLabel" name="label">
            <property name="font">
             <font>
+             <family>URW Gothic L</family>
              <pointsize>9</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -79,6 +80,18 @@ border-top-right-radius: 4px;</string>
          </item>
          <item>
           <widget class="QGroupBox" name="groupBox">
+           <property name="minimumSize">
+            <size>
+             <width>200</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>100</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">color:#411926;</string>
            </property>
@@ -89,7 +102,7 @@ border-top-right-radius: 4px;</string>
             <property name="margin">
              <number>10</number>
             </property>
-            <item row="2" column="0">
+            <item row="3" column="0">
              <widget class="QRadioButton" name="singleClick">
               <property name="enabled">
                <bool>true</bool>
@@ -111,7 +124,7 @@ border-top-right-radius: 4px;</string>
               </property>
              </widget>
             </item>
-            <item row="1" column="0">
+            <item row="2" column="0">
              <widget class="QRadioButton" name="DoubleClick">
               <property name="font">
                <font>
@@ -132,6 +145,35 @@ border-top-right-radius: 4px;</string>
                <bool>true</bool>
               </property>
              </widget>
+            </item>
+            <item row="4" column="0">
+             <spacer name="verticalSpacer">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="1" column="0">
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Expanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>40</height>
+               </size>
+              </property>
+             </spacer>
             </item>
            </layout>
           </widget>
@@ -160,7 +202,7 @@ border-top-right-radius: 4px;</string>
           <enum>Qt::Horizontal</enum>
          </property>
          <property name="sizeType">
-          <enum>QSizePolicy::Expanding</enum>
+          <enum>QSizePolicy::Fixed</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -179,6 +221,7 @@ border-top-right-radius: 4px;</string>
           <widget class="QLabel" name="label_2">
            <property name="font">
             <font>
+             <family>URW Gothic L</family>
              <pointsize>9</pointsize>
              <weight>75</weight>
              <bold>true</bold>
@@ -203,6 +246,18 @@ border-top-right-radius: 4px;</string>
          </item>
          <item>
           <widget class="QGroupBox" name="groupBox_2">
+           <property name="minimumSize">
+            <size>
+             <width>260</width>
+             <height>100</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>100</height>
+            </size>
+           </property>
            <property name="styleSheet">
             <string notr="true">color:#411926;</string>
            </property>
