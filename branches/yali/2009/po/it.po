@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 10:09+0200\n"
-"PO-Revision-Date: 2010-05-13 22:38+0200\n"
+"PO-Revision-Date: 2010-05-16 10:06+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
 "MIME-Version: 1.0\n"
@@ -23,9 +23,8 @@ msgstr ""
 #: yali4/gui/Ui/datetimewidget.py:89 yali4/gui/Ui/exception.py:57
 #: yali4/gui/Ui/goodbyewidget.py:46 yali4/gui/Ui/partedit.py:153
 #: yali4/gui/Ui/summarywidget.py:67
-#, fuzzy
 msgid "Form"
-msgstr "Form1"
+msgstr "Form"
 
 #: yali4/gui/Ui/autopartquestion.py:79
 msgid ""
@@ -46,7 +45,7 @@ msgstr "Scegli automaticamente la partizione da ridimensionare (consigliato)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
-msgstr ""
+msgstr "Sceglierò io"
 
 #: yali4/gui/Ui/autopartquestion.py:83
 msgid "Use Selected"
@@ -956,7 +955,7 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:326 yali4/partitionrequest.py:181
 msgid "There is a request for the same Partition Type."
-msgstr ""
+msgstr "C'è gia una richiesta per lo stesso tipo di partizione."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
@@ -977,6 +976,8 @@ msgid ""
 "GPT Disk tables does not support for extended partitions.\n"
 "You need to delete one of primary partition from your disk table !"
 msgstr ""
+"Le tavole GPT non supportano le partizioni estese.\n"
+"Devi eliminare una partizione primaria dalla tavola!"
 
 #: yali4/gui/DiskWidgets.py:384 yali4/gui/DiskWidgets.py:407
 msgid "Too many primary partitions !"
@@ -1355,11 +1356,11 @@ msgstr ""
 
 #: yali4/gui/ScrGoodbye.py:71
 msgid "Running post install operations.."
-msgstr ""
+msgstr "Esecuzione delle operazioni post-installazione..."
 
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 msgid "Press <b>Reboot</b> button to restart your system."
-msgstr ""
+msgstr "Premi <b>Riavvia</b> per riavviare il sistema."
 
 #: yali4/gui/ScrGoodbye.py:87 yali4/gui/ScrRescueFinish.py:89
 msgid "<b>Rebooting system. Please wait!</b>"
@@ -1373,7 +1374,7 @@ msgstr "Installazione del sistema in corso..."
 
 #: yali4/gui/ScrInstall.py:65
 msgid "Installing takes approximately 20 minutes depending on your hardware..."
-msgstr ""
+msgstr "L'installazione richiede circa 20 minuti a seconda dell'hardware."
 
 #: yali4/gui/ScrInstall.py:67
 msgid ""
@@ -1423,7 +1424,7 @@ msgstr ""
 
 #: yali4/gui/ScrInstall.py:124
 msgid "Packages are being installed.."
-msgstr ""
+msgstr "Installazione pacchetti in corso..."
 
 #: yali4/gui/ScrInstall.py:139
 #, python-format
@@ -1442,15 +1443,15 @@ msgstr "Avviso"
 #: yali4/gui/ScrInstall.py:168
 #, python-format
 msgid "Package install failed : <b>%s</b>"
-msgstr ""
+msgstr "Installazione pacchetto <b>%s</b> fallita!"
 
 #: yali4/gui/ScrInstall.py:169
 msgid "Do you want to retry ?"
-msgstr ""
+msgstr "Vuoi riprovare?"
 
 #: yali4/gui/ScrInstall.py:190
 msgid "Creating baselayout for your system!"
-msgstr ""
+msgstr "Creazione della base del sistema!"
 
 #: yali4/gui/ScrInstall.py:202
 msgid "Configuring packages.."
@@ -1476,11 +1477,11 @@ msgstr ""
 
 #: yali4/gui/ScrKahyaCheck.py:54
 msgid "Kahya is working..."
-msgstr ""
+msgstr "Kahya sta lavorando..."
 
 #: yali4/gui/ScrKahyaCheck.py:55
 msgid "Kahya will automatically install your system..."
-msgstr ""
+msgstr "Kahya installerà automaticamente il tuo sistema."
 
 #: yali4/gui/ScrKahyaCheck.py:56
 msgid ""
@@ -1512,10 +1513,20 @@ msgid ""
 "</p>\n"
 "</font>\n"
 msgstr ""
+"\n"
+"<font size=\"+2\">Configurazione tastiera</font>\n"
+"<font size=\"+1\">\n"
+"<p>\n"
+"Qui puoi selezionare il tipo di tastiera e la sua lingua. Puoi provare il "
+"layout scelto "
+"nella casella di testo.\n"
+"Procedi con l'installazione dopo aver scelto.\n"
+"</p>\n"
+"</font>\n"
 
 #: yali4/gui/ScrPartitionAuto.py:37
 msgid "Choose Partitioning"
-msgstr ""
+msgstr "Scegli il metodo di partizionamento"
 
 #: yali4/gui/ScrPartitionAuto.py:38
 msgid "Auto or Manual partitioning..."
@@ -1585,7 +1596,7 @@ msgstr "Partizionamento manuale..."
 
 #: yali4/gui/ScrPartitionManual.py:32
 msgid "You can easily configure your partitions..."
-msgstr ""
+msgstr "Puoi configurare con facilità le partizioni."
 
 #: yali4/gui/ScrPartitionManual.py:34
 msgid ""
@@ -1610,15 +1621,15 @@ msgstr ""
 
 #: yali4/gui/ScrPartitionManual.py:80
 msgid "All changes that you made will be removed."
-msgstr ""
+msgstr "Tutte le modifiche che hai fatto verranno annullate."
 
 #: yali4/gui/ScrRescueFinish.py:33 yali4/gui/ScrRescue.py:30
 msgid "Rescue Mode"
-msgstr ""
+msgstr "Modalità di recupero"
 
 #: yali4/gui/ScrRescueFinish.py:34
 msgid "Final step of Rescue operations..."
-msgstr ""
+msgstr "Ultimo passo delle operazioni di recupero..."
 
 #: yali4/gui/ScrRescueFinish.py:35
 msgid ""
@@ -1636,27 +1647,27 @@ msgstr "Installazione del bootloader..."
 
 #: yali4/gui/ScrRescueFinish.py:67
 msgid "Taking back Pisi operation..."
-msgstr ""
+msgstr "Anullamento operazioni PiSi..."
 
 #: yali4/gui/ScrRescueFinish.py:70
 msgid "Running rescue operations.."
-msgstr ""
+msgstr "Esecuzione operazioni di ripristino..."
 
 #: yali4/gui/ScrRescueGrub.py:32
 msgid "Rescue Mode for Bootlooader"
-msgstr ""
+msgstr "Ripristino Bootloader"
 
 #: yali4/gui/ScrRescueGrub.py:33
 msgid "You can fix your bootloader..."
-msgstr ""
+msgstr "Puoi ripare il tuo bootloader..."
 
 #: yali4/gui/ScrRescuePassword.py:42
 msgid "Rescue Mode for Password Recovery"
-msgstr ""
+msgstr "Recupero password"
 
 #: yali4/gui/ScrRescuePassword.py:43
 msgid "You can recover your password ..."
-msgstr ""
+msgstr "Puoi recuperare la tua password."
 
 #: yali4/gui/ScrRescuePassword.py:45
 msgid ""
@@ -1670,7 +1681,7 @@ msgstr ""
 
 #: yali4/gui/ScrRescuePassword.py:57 yali4/gui/ScrUsers.py:72
 msgid "Caps Lock is on!"
-msgstr ""
+msgstr "Bloc Maiusc Attivo!"
 
 #: yali4/gui/ScrRescuePassword.py:62 yali4/gui/ScrRescuePisi.py:53
 msgid "Starting DBUS..."
