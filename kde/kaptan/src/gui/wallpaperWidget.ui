@@ -14,11 +14,7 @@
    <string>Wallpaper</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QListWidget{
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 81), stop:0.00537634 rgba(95, 34, 52, 80), stop:1 rgba(255, 213, 230, 80));
-border: 1px solid rgb(236, 236, 236, 80);
-color: rgb(234, 225, 228);
-}</string>
+   <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <property name="margin">
@@ -26,6 +22,36 @@ color: rgb(234, 225, 228);
    </property>
    <item row="2" column="0">
     <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="font">
+        <font>
+         <family>URW Gothic L</family>
+         <pointsize>9</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <underline>false</underline>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+border: 1px solid rgba(255,255,255,50);
+color:white;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;</string>
+       </property>
+       <property name="text">
+        <string>Wallpapers</string>
+       </property>
+       <property name="margin">
+        <number>5</number>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QListWidget" name="listWallpaper">
        <property name="sizePolicy">
@@ -44,7 +70,13 @@ color: rgb(234, 225, 228);
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">#listWallpaper{padding:10px;}</string>
+        <string notr="true">#listWallpaper{
+padding:10px;
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+border: 1px solid rgba(255,255,255,50);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+}</string>
        </property>
        <property name="frameShape">
         <enum>QFrame::NoFrame</enum>
@@ -172,7 +204,7 @@ color: rgb(234, 225, 228);
          <property name="font">
           <font>
            <family>Sans Serif</family>
-           <pointsize>10</pointsize>
+           <pointsize>9</pointsize>
           </font>
          </property>
          <property name="styleSheet">

@@ -58,6 +58,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         # control if we already have contrib repo
         # if so, hide configuration box
         if self.repodb.has_repo_url(self.repoAddress) or self.repodb.has_repo_url(self.repoAddress2):
+            self.ui.label_2.hide()
             self.ui.groupBoxRepo.hide()
         else:
             # control if we already have the same repo name

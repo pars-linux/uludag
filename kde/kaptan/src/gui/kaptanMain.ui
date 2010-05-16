@@ -501,7 +501,7 @@ background-color: rgba(0, 0, 0, 100);
           </property>
           <property name="font">
            <font>
-            <family>Sans Serif</family>
+            <family>URW Gothic L</family>
             <pointsize>6</pointsize>
            </font>
           </property>

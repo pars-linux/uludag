@@ -237,7 +237,7 @@ if __name__ == "__main__":
     appName     = "kaptan"
     catalog     = ""
     programName = ki18n("kaptan")
-    version     = "4.0"
+    version     = "4.5"
     description = ki18n("Kaptan is a welcome wizard for Pardus")
     license     = KAboutData.License_GPL
     copyright   = ki18n("(c) 2009 Pardus")

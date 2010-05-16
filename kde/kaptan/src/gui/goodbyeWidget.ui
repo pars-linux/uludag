@@ -17,6 +17,9 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout_5">
+   <property name="horizontalSpacing">
+    <number>0</number>
+   </property>
    <property name="margin">
     <number>20</number>
    </property>
@@ -67,10 +70,10 @@
      </property>
     </spacer>
    </item>
-   <item row="2" column="0">
+   <item row="3" column="0">
     <widget class="QScrollArea" name="scrollArea">
      <property name="styleSheet">
-      <string notr="true">#scrollArea {background-color: rgba(0, 0, 0, 100);;border: 1px solid rgb(236, 236, 236, 80);}</string>
+      <string notr="true">#scrollArea {background-color: rgba(0, 0, 0, 0);border: 0px}</string>
      </property>
      <property name="widgetResizable">
       <bool>true</bool>
@@ -80,14 +83,47 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>582</width>
-        <height>501</height>
+        <width>584</width>
+        <height>503</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">#scrollAreaWidgetContents{background-color: rgba(0, 0, 0, 0);}</string>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="margin">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+border: 1px solid rgba(255,255,255,50);
+color:white;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>My Smolt Page</string>
+         </property>
+         <property name="margin">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QGroupBox" name="smoltGroupBox">
          <property name="font">
@@ -101,10 +137,15 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: rgb(234, 225, 228);</string>
+          <string notr="true">#smoltGroupBox{
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+border: 1px solid rgba(255,255,255,50);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+}</string>
          </property>
          <property name="title">
-          <string>My Smolt Page</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -116,46 +157,9 @@
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="labelSystemSettings_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Sans Serif</family>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
-            <property name="styleSheet">
-             <string notr="true"/>
-            </property>
-            <property name="text">
-             <string>Go to your Smolt page and rate your hardware components.</string>
-            </property>
-            <property name="scaledContents">
-             <bool>true</bool>
-            </property>
-            <property name="wordWrap">
-             <bool>true</bool>
-            </property>
-            <property name="margin">
-             <number>0</number>
-            </property>
-            <property name="indent">
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
+          <property name="margin">
+           <number>10</number>
+          </property>
           <item row="0" column="1">
            <spacer name="horizontalSpacer_5">
             <property name="orientation">
@@ -202,11 +206,51 @@
             </property>
            </widget>
           </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="labelSystemSettings_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Sans Serif</family>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">color:#411926;</string>
+            </property>
+            <property name="text">
+             <string>Go to your Smolt page and rate your hardware components.</string>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
+            </property>
+            <property name="wordWrap">
+             <bool>true</bool>
+            </property>
+            <property name="margin">
+             <number>0</number>
+            </property>
+            <property name="indent">
+             <number>0</number>
+            </property>
+           </widget>
+          </item>
          </layout>
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_2">
+        <spacer name="verticalSpacer_7">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -216,10 +260,37 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>5</height>
+           <height>20</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+border: 1px solid rgba(255,255,255,50);
+color:white;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>Migration Wizard</string>
+         </property>
+         <property name="margin">
+          <number>5</number>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QGroupBox" name="migrationGroupBox">
@@ -234,10 +305,15 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:rgb(234, 225, 228)</string>
+          <string notr="true">#migrationGroupBox{
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+border: 1px solid rgba(255,255,255,50);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+}</string>
          </property>
          <property name="title">
-          <string>Migration Wizard</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -249,6 +325,9 @@
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
+          <property name="margin">
+           <number>10</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="labelSystemSettings_3">
             <property name="sizePolicy">
@@ -270,7 +349,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color:#411926;</string>
             </property>
             <property name="text">
              <string>A wizard to transfer files and settings from existing operating systems (e.g. Windows) to Pardus.</string>
@@ -285,7 +364,7 @@
              <number>0</number>
             </property>
             <property name="indent">
-             <number>10</number>
+             <number>0</number>
             </property>
            </widget>
           </item>
@@ -339,7 +418,7 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_3">
+        <spacer name="verticalSpacer_8">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -349,10 +428,37 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>5</height>
+           <height>20</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+border: 1px solid rgba(255,255,255,50);
+color:white;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>System Settings</string>
+         </property>
+         <property name="margin">
+          <number>5</number>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QGroupBox" name="groupBox">
@@ -367,10 +473,15 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:rgb(234, 225, 228)</string>
+          <string notr="true">#groupBox{
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+border: 1px solid rgba(255,255,255,50);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+}</string>
          </property>
          <property name="title">
-          <string>System Settings</string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
@@ -382,6 +493,9 @@
           <bool>false</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
+          <property name="margin">
+           <number>10</number>
+          </property>
           <item row="0" column="1">
            <spacer name="horizontalSpacer">
             <property name="orientation">
@@ -419,7 +533,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color:#411926;</string>
             </property>
             <property name="text">
              <string>Configuration tools for Pardus such as the display, firewall, keyboard, user manager...</string>
@@ -434,7 +548,7 @@
              <number>0</number>
             </property>
             <property name="indent">
-             <number>10</number>
+             <number>0</number>
             </property>
            </widget>
           </item>
@@ -472,7 +586,7 @@
         </widget>
        </item>
        <item>
-        <spacer name="verticalSpacer_4">
+        <spacer name="verticalSpacer_9">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
          </property>
@@ -482,10 +596,37 @@
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
-           <height>5</height>
+           <height>20</height>
           </size>
          </property>
         </spacer>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="font">
+          <font>
+           <family>URW Gothic L</family>
+           <pointsize>9</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+           <underline>false</underline>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
+/*background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));*/
+border: 1px solid rgba(255,255,255,50);
+color:white;
+border-top-left-radius: 4px;
+border-top-right-radius: 4px;</string>
+         </property>
+         <property name="text">
+          <string>Help and Support</string>
+         </property>
+         <property name="margin">
+          <number>5</number>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QGroupBox" name="groupBox_2">
@@ -498,15 +639,23 @@
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color:rgb(234, 225, 228)</string>
+          <string notr="true">#groupBox_2{
+background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(219, 219, 219, 100), stop:1 rgba(255, 255, 255, 100));
+border: 1px solid rgba(255,255,255,50);
+border-bottom-left-radius: 4px;
+border-bottom-right-radius: 4px;
+}</string>
          </property>
          <property name="title">
-          <string>Help and Support</string>
+          <string/>
          </property>
          <property name="flat">
           <bool>true</bool>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
+          <property name="margin">
+           <number>10</number>
+          </property>
           <item row="0" column="0">
            <widget class="QLabel" name="labelHelpPages">
             <property name="sizePolicy">
@@ -528,7 +677,7 @@
              </font>
             </property>
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">color:#411926;</string>
             </property>
             <property name="text">
              <string>Pardus community, mailing lists, chat rooms, wiki's, help and support pages...</string>
@@ -543,7 +692,7 @@
              <number>0</number>
             </property>
             <property name="indent">
-             <number>10</number>
+             <number>0</number>
             </property>
            </widget>
           </item>
