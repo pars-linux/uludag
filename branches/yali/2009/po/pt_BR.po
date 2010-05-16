@@ -1516,6 +1516,10 @@ msgid ""
 "                                        Make sure that you have a backup for this partition.<br>\n"
 "                                        <b>Note that this operation cannot be undone.</b></p>"
 msgstr ""
+"<p><b><u>Atenção</u></b>: Existe uma operação de redimensionamento e pode danificar sua partição, <br>\n"
+" tornando seus dados inacessíveis.<br>\n"
+" Certifique-se que ter um backup para esta partição.<br>\n"
+" <b> Note que esta operação não pode ser desfeita.</b> </ p>"
 
 #: yali4/gui/ScrSummary.py:267 yali4/gui/ScrSummary.py:278
 #: yali4/gui/ScrSummary.py:294
