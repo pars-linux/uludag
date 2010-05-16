@@ -1,7 +1,7 @@
 # Translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Diogo Lima <diogo.urb@gmail.com>, 2010.
 msgid ""
 msgstr ""
@@ -10,8 +10,7 @@ msgstr ""
 "POT-Creation-Date: 2010-05-15 19:06-0300\n"
 "PO-Revision-Date: 2010-05-15 19:06-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,10 +28,8 @@ msgid "Console Keyboard Layout:"
 msgstr "Layout do Teclado no Console:"
 
 #: .tmp/ui_main.py:159
-msgid ""
-"Note that these settings do not effect your desktop. Desktop settings can be "
-"changed in 'Regional & Language' module in System Settings."
-msgstr ""
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Note que essas configurações não fazem efeito na sua área de trabalho. As configurações para a área de trabalho devem ser modificadas no módulo 'Regional & Idioma' das Configurações do Sistema."
 
 #: .tmp/ui_main.py:160
 msgid "Service Settings"
@@ -43,13 +40,8 @@ msgid "First Service to Start:"
 msgstr "Primeiro Serviço a Iniciar:"
 
 #: .tmp/ui_main.py:162
-msgid ""
-"Although services are started parallel manner in boot process, users may "
-"want to start a single service before checking dependencies."
-msgstr ""
-"Ainda que os serviços sejam executados de forma paralela no processo de inicialização, os usuários podem "
-"quere executar um serviço antes de checar as dependências."
-
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Ainda que os serviços sejam executados de forma paralela no processo de inicialização, os usuários podem quere executar um serviço antes de checar as dependências."
 
 #: .tmp/ui_main.py:163
 msgid "Clock Settings"
