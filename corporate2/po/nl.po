@@ -12,13 +12,13 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-17 11:41+0300\n"
-"PO-Revision-Date: 15/01/10 13:23\n"
+"PO-Revision-Date: 2010-05-17 11:43+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: yali4/gui/Ui/autoinstallationwidget.py:70
@@ -229,18 +229,16 @@ msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr "Automatisch andere besturingssystemen aan het GRUB-menu toevoegen"
 
 #: yali4/gui/Ui/checkcdwidget.py:82
-#, fuzzy
 msgid ""
 "You can check the integrity of the packages in installation media. Although "
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
 "U kunt de integriteit van de pakketten op de installatie-CD controleren. "
-"Ondanks dat dit een optionele stap is raden wij dit aan om mogelijke fouten "
+"Ondanks dat dit een optionele stap is, raden wij dit aan om mogelijke fouten "
 "bij de installatie te vermijden."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
-#, fuzzy
 msgid "Check Packages Integrity"
 msgstr "CD-integriteit controleren"
 
@@ -347,7 +345,7 @@ msgstr "Details over het scherm"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -1247,17 +1245,16 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your medium"
 msgstr "Controlleer uw media"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
 msgid "To ignore medium corruptions you can check your packages integrity..."
-msgstr "Om mediaproblemen te vermijden kun u uw media-integriteit testen..."
+msgstr ""
+"Om mediaproblemen te vermijden kun u de integriteit van de pakketten testen.."
+"."
 
 #: yali4/gui/ScrCheckCD.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Check Packages Integrity!</font>\n"
@@ -1268,19 +1265,21 @@ msgid ""
 "image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">CD-integriteit controleren!</font>\n"
+"<font size=\"+2\">Integriteit van pakketten controleren!</font>\n"
 "<font size=\"+1\"><p>\n"
-"U kunt controleren of de pakketten op de installatie-CD correct zijn "
-"opgeslagen op de CD. Het uitvoeren van deze test is een uiterst belangrijke "
-"stap om er zeker van te zijn dat u zonder problemen kunt installeren. Als de "
+"U kunt controleren of de pakketten op het medium voor installatie correct "
+"zijn "
+"opgeslagen. Het uitvoeren van deze test is een uiterst belangrijke "
+"stap om er zeker van te zijn dat u zonder problemen kunt installeren. "
+"Wanneer de "
 "test mislukt, probeer het ISO-bestand dan op een lagere snelheid (bijv. 12x "
 "of minder) te branden.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
 msgstr ""
-"<font color=\"#FFF\">Ogenblik geduld terwijl de CD gecontroleerd wordt.</"
+"<font color=\"#FFF\">Ogenblik geduld terwijl de pakketten gecontroleerd "
+"worden.</"
 "font>"
 
 #: yali4/gui/ScrCheckCD.py:51
@@ -1370,9 +1369,8 @@ msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Systeem wordt herstart. Ogenblik geduld!</b>"
 
 #: yali4/gui/ScrInstallationAuto.py:35
-#, fuzzy
 msgid "Choose Collections"
-msgstr "Installatie kiezen"
+msgstr "Verzamelingen kiezen"
 
 #: yali4/gui/ScrInstallationAuto.py:36
 msgid "Auto or Manual installation..."
@@ -1850,9 +1848,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Installatie start na: <b>%s seconden</b>"
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Automatische installatie"
+msgstr "Installatie starten"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -1958,14 +1955,13 @@ msgid "Package Installation Settings"
 msgstr "Pakketinstalatie-instellingen"
 
 #: yali4/gui/ScrSummary.py:235
-#, fuzzy
 msgid "Auto installation selected."
-msgstr "Automatisch installatie verzameling geselecteerd."
+msgstr "Automatisch installatie geselecteerd."
 
 #: yali4/gui/ScrSummary.py:237
-#, fuzzy, python-format
+#, python-format
 msgid "Manual Installation ( %s ) selected"
-msgstr "Handmatig installatie %s verzameling geselecteerd"
+msgstr "Handmatig installatie ( %s ) geselecteerd"
 
 #: yali4/gui/ScrSummary.py:240
 msgid "Default Kernel selected"
@@ -2170,15 +2166,15 @@ msgstr "Help tonen"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Computer uitschakelen"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Computer herstarten"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "YALI herstarten"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:192
@@ -2209,18 +2205,24 @@ msgid ""
 "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"De computer zal nu worden <b>uitgeschakeld</b>.<br/><br/><b>Deze actie kan "
+"schade aan de computer toebrengen indien de installatie nog bezig is.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid ""
 "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"De computer zal nu <b>herstarten</b>.<br/><br/><b>Deze actie kan schade aan "
+"de computer toebrengen indien de installatie nog bezig is.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
 "computer if the installation is in progress."
 msgstr ""
+"YALI zal nu <b>herstarten</b><br/><br/><b>Deze actie kan schade aan de "
+"computer toebrengen indien de installatie nog bezig is.</b"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"
