@@ -44,43 +44,14 @@
          <attribute name="headerVisible">
           <bool>true</bool>
          </attribute>
+         <attribute name="headerVisible">
+          <bool>true</bool>
+         </attribute>
          <column>
           <property name="text">
            <string>Component</string>
           </property>
          </column>
-        </widget>
-       </item>
-       <item>
-        <widget class="QFrame" name="frame">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label">
-            <property name="maximumSize">
-             <size>
-              <width>100</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>Total Size:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="labelTotalSize">
-            <property name="text">
-             <string>0 MB</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
       </layout>
@@ -156,8 +127,15 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_2">
+          <item row="1" column="1">
+           <widget class="QLabel" name="labelTotalSize">
+            <property name="text">
+             <string>0 MB</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label">
             <property name="maximumSize">
              <size>
               <width>100</width>
@@ -165,14 +143,7 @@
              </size>
             </property>
             <property name="text">
-             <string>Size:</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QLabel" name="labelPackageSize">
-            <property name="text">
-             <string>0 MB</string>
+             <string>Total Size:</string>
             </property>
            </widget>
           </item>
