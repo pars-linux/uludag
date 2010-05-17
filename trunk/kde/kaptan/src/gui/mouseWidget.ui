@@ -99,7 +99,16 @@ border-top-right-radius: 4px;</string>
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
-            <property name="margin">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>15</number>
+            </property>
+            <property name="bottomMargin">
              <number>10</number>
             </property>
             <item row="3" column="0">
@@ -265,7 +274,16 @@ border-top-right-radius: 4px;</string>
             <string/>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
-            <property name="margin">
+            <property name="leftMargin">
+             <number>10</number>
+            </property>
+            <property name="topMargin">
+             <number>10</number>
+            </property>
+            <property name="rightMargin">
+             <number>15</number>
+            </property>
+            <property name="bottomMargin">
              <number>10</number>
             </property>
             <item row="0" column="0">

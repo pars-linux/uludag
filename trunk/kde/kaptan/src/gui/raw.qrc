@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="raw">
+    <file>pics/menu-arrow-left.png</file>
+    <file>pics/menu-arrow-right.png</file>
     <file>pics/arrow-left.png</file>
     <file>pics/arrow-right.png</file>
     <file>pics/cross.png</file>
