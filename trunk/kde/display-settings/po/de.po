@@ -49,9 +49,8 @@ msgid "Refresh Rate:"
 msgstr "Wiederholungsrate:"
 
 #: .tmp/ui_screens.py:90
-#, fuzzy
 msgid "Rotation:"
-msgstr "Rotation:"
+msgstr ""
 
 #: .tmp/ui_screens.py:91
 msgid "No Rotation"
@@ -200,9 +199,8 @@ msgstr "Monitore:"
 
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
-#, fuzzy
 msgid "Auto"
-msgstr "Auto"
+msgstr ""
 
 #: .tmp/displaysettings/screenswidget.py:259
 msgid "Output Properties - %1"
@@ -243,9 +241,8 @@ msgid "Enter ranges manually"
 msgstr "Geben Sie die Frequenzen manuell ein"
 
 #: .tmp/ui_output.py:231
-#, fuzzy
 msgid "Monitor:"
-msgstr "Monitor:"
+msgstr ""
 
 #: .tmp/ui_output.py:232
 msgid "Choose..."
