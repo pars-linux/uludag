@@ -20,38 +20,25 @@ from gui.welcomeWidget import Ui_welcomeWidget
 
 import subprocess
 
+def getRelease():
+    p = subprocess.Popen(["lsb_release", "-irs"], stdout=subprocess.PIPE)
+    release, err = p.communicate()
+    return release.replace("\n", "")
+
+
 class Widget(QtGui.QWidget, ScreenWidget):
+
     title = ki18n("Welcome")
-    desc = ki18n("Welcome to Pardus 2009.2")
+    desc = ki18n("Welcome to %s" % getRelease())
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
 
-        """
-        self.release = self.getRelease().split()[0] + " " + self.getRelease().split()[1]
-        self.ext = ""
-
-        if self.release.__len__() > 2:
-            self.ext = self.getRelease().split()[2]
-
-        welcomeStr = "Welcome to " + self.release + " " + self.ext
-        self.ui.label.setText(welcomeStr)
-
-        def getRelease(self):
-            try:
-                p = subprocess.Popen(["cat","/etc/pardus-release"], stdout=subprocess.PIPE)
-                release, err = p.communicate()
-                return str(release)
-
-            except:
-                return "Pardus"
-        """
     def shown(self):
         pass
 
     def execute(self):
         return True
-
 
