@@ -43,6 +43,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
         users = partition.allUsers()
         if not users:
             self.ui.migrationGroupBox.hide()
+            self.ui.label_2.hide()
 
         self.ui.buttonSystemSettings_2.connect(self.ui.buttonSystemSettings_2, SIGNAL("clicked()"), self.startSmolt)
         self.ui.buttonMigration.connect(self.ui.buttonMigration, SIGNAL("clicked()"), self.startMigration)
@@ -69,7 +70,8 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def setSmolt(self):
         if not self.smoltSettings["profileSend"]:
-            self.ui.smoltGroupBox.setVisible(False)
+            self.ui.smoltGroupBox.hide()
+            self.ui.label.hide()
 
     def shown(self):
        self.smoltSettings = smoltWidget.Widget.screenSettings
