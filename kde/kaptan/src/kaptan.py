@@ -240,7 +240,7 @@ if __name__ == "__main__":
     version     = "4.5"
     description = ki18n("Kaptan is a welcome wizard for Pardus")
     license     = KAboutData.License_GPL
-    copyright   = ki18n("(c) 2009 Pardus")
+    copyright   = ki18n("(c) 2010 Pardus")
     text        = ki18n("none")
     homePage    = "www.pardus.org.tr"
     bugEmail    = "renan@pardus.org.tr"
