@@ -9,7 +9,7 @@ Legend:
 + Accomplished
 
     background ekle: cizgiler
-    sharp kaptan logosu!!!
++   sharp kaptan logosu!!!
 +   mouse: kutucuk ba$lik: koyu
 +   mouse: kutucuk padding top:azalt
 +   piechart activation
@@ -30,9 +30,9 @@ Legend:
 +   packages: checkbox: fontsize: 10pt sansserif
 +   goodbyescreen: butun groupboxlari: sifirla
 +   goodbye: listeyi scrollbox'a al
-    depo linklerini degistir
++   depo linklerini degistir
     if possible optimize more
-    update po files
++    update po files
 
     test
     ----
