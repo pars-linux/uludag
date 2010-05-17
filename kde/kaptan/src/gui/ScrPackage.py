@@ -122,11 +122,11 @@ class Widget(QtGui.QWidget, ScreenWidget):
 
     def applySettings(self):
         # write selected configurations to future package-managerrc
-        config = KConfig("package-managerrc")
-        group = config.group("General")
-        group.writeEntry("SystemTray", str(self.ui.showTray.isChecked()))
-        group.writeEntry("UpdateCheck", str(self.ui.checkUpdate.isChecked()))
-        group.writeEntry("UpdateCheckInterval", str(self.ui.updateInterval.value() * 60))
+        config = QSettings("Pardus", "Package-Manager")
+        config.setValue("SystemTray", QVariant(self.ui.showTray.isChecked()))
+        config.setValue("UpdateCheck", QVariant(self.ui.checkUpdate.isChecked()))
+        config.setValue("UpdateCheckInterval", QVariant(self.ui.updateInterval.value() * 60))
+
         config.sync()
 
         if self.ui.showTray.isChecked():
