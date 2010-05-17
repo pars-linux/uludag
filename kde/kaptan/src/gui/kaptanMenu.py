@@ -7,11 +7,14 @@ from PyQt4.QtCore import QObject, SIGNAL
 class Menu:
 
     def __init__(self, titles, labelWidget):
-        self.zoom = 5
-        self.defaultFontSize = 8
+        self.bold = "font-weight:bold"
+        self.normal = "font-weight:normal"
+        self.defaultFontSize = 10 #8
         self.position = 0
         self.menuText = ""
-        self.menuNode = " <span style='font-size:%spt;'>%s</span> "
+        self.menuNode = " <span style='font-size:%spt; %s'>%s</span> "
+        self.seperatorL = "<span style='font-size:11pt'><img src=':/raw/pics/menu-arrow-left.png'></span>"
+        self.seperatorR = "<span style='font-size:11pt'><img src=':/raw/pics/menu-arrow-right.png'></span>"
 
         # get titles
         self.titles = titles
@@ -22,15 +25,32 @@ class Menu:
     def move(self):
         self.menuText = ""
         lastItemIndex = len(self.titles)
+        seperatorL = ""
+        seperatorR = ""
 
         for index in range(0, lastItemIndex):
             menuItemText = self.titles[index]
+
+            # set seperators
+            print "BOK ", self.position
+            if self.position == 0:
+                seperatorL = ""
+                seperatorR = self.seperatorR
+            elif self.position == lastItemIndex - 1:
+                seperatorL = self.seperatorL
+                seperatorR = ""
+            else:
+                seperatorL = self.seperatorL
+                seperatorR = self.seperatorR
+
             if index == (self.position - 1):
-                self.menuText += self.menuNode % (self.defaultFontSize, menuItemText)
-            if index == (self.position):
-                self.menuText += self.menuNode % (self.defaultFontSize + self.zoom, menuItemText)
+                self.menuText += self.menuNode % (self.defaultFontSize, self.normal, menuItemText)
+            if index == self.position:
+                self.menuText += seperatorL
+                self.menuText += self.menuNode % (self.defaultFontSize, self.bold, menuItemText)
+                self.menuText += seperatorR
             if index == (self.position + 1):
-                self.menuText += self.menuNode % (self.defaultFontSize, menuItemText)
+                self.menuText += self.menuNode % (self.defaultFontSize, self.normal, menuItemText)
 
         self.label.setText(self.menuText)
 

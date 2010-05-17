@@ -95,6 +95,11 @@
             <height>50</height>
            </size>
           </property>
+          <property name="font">
+           <font>
+            <family>Liberation Sans</family>
+           </font>
+          </property>
           <property name="styleSheet">
            <string notr="true">padding: 5px 5px 5px 5px; 
 border:0px;
@@ -501,7 +506,7 @@ background-color: rgba(0, 0, 0, 100);
           </property>
           <property name="font">
            <font>
-            <family>URW Gothic L</family>
+            <family>Sans Serif</family>
             <pointsize>6</pointsize>
            </font>
           </property>
@@ -524,7 +529,7 @@ padding: 10px;
            <bool>false</bool>
           </property>
           <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
           <property name="wordWrap">
            <bool>false</bool>
@@ -573,7 +578,7 @@ padding: 10px;
            <bool>false</bool>
           </property>
           <property name="alignment">
-           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
           </property>
           <property name="wordWrap">
            <bool>false</bool>
