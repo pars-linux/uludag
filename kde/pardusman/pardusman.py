@@ -29,11 +29,9 @@ def maker(op, project_file):
     start = time.time()
 
     if op == "make" or op == "make-repo":
-        print "make ilke girdi...."
         update_repo = True
         while True:
             try:
-                print "get_repo çağrıldı..."
                 project.get_repo(update_repo=update_repo)
             except packages.ExIndexBogus, e:
                 print "ERROR: Unable to load package index. URL is wrong, or file is corrupt."
@@ -45,9 +43,7 @@ def maker(op, project_file):
             except packages.ExPackageMissing, e:
                 print "ERROR: Package index has errors. '%s' depends on non-existing '%s'." % e.args
                 return
-            print "get_missing çağrıldı"
             missing_components, missing_packages = project.get_missing()
-            print "missing_component"
 
             if len(missing_components):
                 print "WARNING: There are missing components. Removing."
@@ -61,7 +57,6 @@ def maker(op, project_file):
                         if component in project.selected_components:
                             project.selected_components.remove(component)
                 update_repo=False
-            print "missing_packages"
             if len(missing_packages):
                 print "WARNING: There are missing packages. Removing."
                 if project.package_collections:
@@ -75,22 +70,17 @@ def maker(op, project_file):
                             project.selected_packages.remove(package)
                 update_repo=False
             break
-        print "make_repos yaptı"
         maker.make_repos(project)
 
     if op == "check-repo":
-        print "print check_repo"
         maker.check_repo_files(project)
     if op == "make" or op == "make-live":
-        print "print make_image"
         maker.make_image(project)
     # install-live
     # configure-live
     if op == "make" or op == "pack-live":
-        print "squash_image"
         maker.squash_image(project)
     if op == "make" or op == "make-iso":
-        print "make_iso"
         maker.make_iso(project)
 
     end = time.time()
