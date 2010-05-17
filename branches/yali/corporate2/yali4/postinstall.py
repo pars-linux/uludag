@@ -257,6 +257,7 @@ def setPackages():
         try:
             obj = bus.get_object("tr.org.pardus.comar", "/package/yali4")
             obj.setState("off", dbus_interface="tr.org.pardus.comar.System.Service")
+            #FIXME: We no longer have kdebase package in 2009!!
             obj = bus.get_object("tr.org.pardus.comar", "/package/kdebase")
             obj.setState("on", dbus_interface="tr.org.pardus.comar.System.Service")
             os.unlink("%s/etc/yali-is-firstboot" % ctx.consts.target_dir)
@@ -291,3 +292,13 @@ def writeInitramfsConf(parameters=[]):
             raise IOError
 
     initramfsConf.close()
+
+def setPartitionPrivileges(request, mode, uid, gid):
+    path = os.path.join(consts.target_dir, request.partitionType().mountpoint)
+    if os.path.exists(path):
+        try:
+            os.chmod(path, mode)
+            os.chown(path, uid, gid)
+        except OSError, msg:
+                ctx.debugger.log("Unexpected error: %s" % msg)
+
