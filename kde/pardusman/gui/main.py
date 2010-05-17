@@ -42,11 +42,10 @@ import gettext
 _ = lambda x:gettext.ldgettext("pardusman", x)
 
 class PackageCollectionListItem(QListWidgetItem):
-    def __init__(self, parent, collection):
+    def __init__(self, parent, collection, language):
         QListWidgetItem.__init__(self, parent)
         self.collection = collection
-        print "list item collection.title%s" % collection.title
-        self.setText(collection.title)
+        self.setText(collection.translations[language][0])
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, args):
@@ -157,7 +156,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
             "Save As..." menu item fires this function.
         """
-        filename = QFileDialog.getSaveFileName(self, _("Save project"), "", "*.xml")
+        filename = QFileDialog.getSaveFileName(self, _("Save project"), os.getcwd(), "*.xml")
         if filename:
             self.project.filename = unicode(filename)
             self.slotSave()
@@ -201,13 +200,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         if not self.repo:
             self.initializeRepo()
 
-        dialog = PackageCollectionDialog(self, self.repo)
+        if not self.project.selected_languages:
+            QMessageBox.warning(self, self.title, _("Installation Languages is not selected."))
+
+        dialog = PackageCollectionDialog(self, self.repo, self.project)
         if dialog.exec_():
-            item = PackageCollectionListItem(self.listPackageCollection, dialog.collection)
+            item = PackageCollectionListItem(self.listPackageCollection, dialog.collection, self.project.default_language)
             self.project.package_collections.append(item.collection)
 
             if self.listPackageCollection.count() == 1:
-                item.collection.setDefault("True")
+                item.collection.default = "True"
 
 
         self.updateCollection()
@@ -215,16 +217,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def slotModifyPackageCollection(self):
         index = self.listPackageCollection.currentRow()
         item = self.listPackageCollection.item(index)
-        #print "self.repo:%s" % self.repo.base_uri
-        #print "item.collection"
         if not self.repo:
             self.initializeRepo()
 
-        dialog = PackageCollectionDialog(self, self.repo, item.collection)
+        dialog = PackageCollectionDialog(self, self.repo, self.project, item.collection)
         if dialog.exec_():
-            if not item.collection.uniqueTag.__eq__(dialog.collection.uniqueTag):
-                print "item.setText"
-                item.setText(dialog.collection.title)
+            if not item.collection._id == dialog.collection._id:
+                item.setText(dialog.collection.translations[self.project.default_language][0])
             item.collection = dialog.collection
 
         self.updateCollection()
@@ -236,14 +235,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.updateCollection()
 
     def slotClickedCollection(self, item):
-#        if not self.listPackageCollection.count():
-#            self.pushSetDefaultCollection.setEnabled(False)
-#        elif self.listPackageCollection.count() == 1:
-#            self.listPackageCollection.currentRow().collection.setDefault("True")
-#            self.pushSetDefaultCollection.setChecked(False)
-#        else:
-        print "item.collection.name %s is default:%s" % (item.collection.title, item.collection.default)
-
         if item.collection.default == "True":
             if not self.pushSetDefaultCollection.isChecked():
                 self.pushSetDefaultCollection.setChecked(True)
@@ -252,8 +243,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.pushSetDefaultCollection.setChecked(False)
 
     def slotSetDefaultCollection(self):
-        if not self.listPackageCollection.currentItem().collection.default:
-            self.listPackageCollection.currentItem().collection.setDefault("True")
+        if self.listPackageCollection.currentItem() and not self.listPackageCollection.currentItem().collection.default:
+            self.listPackageCollection.currentItem().collection.default = "True"
             currentIndex = self.listPackageCollection.currentRow()
             for index in xrange(self.listPackageCollection.count()):
                 if index == currentIndex:
@@ -350,11 +341,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         self.terminal.setFocus()
 
     def updateCollection(self):
-        #if not self.project.package_collections:
-        #    print "cd kurulumu"
-        #    self.listPackageCollection.clear()
-        if not self.project.media.__eq__("dvd"):
-            print "dvd kurulum degil clear"
+        if not self.project.media == "dvd":
             self.listPackageCollection.clear()
         else:
             self.project.package_collections = []
@@ -407,10 +394,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         self.listPackageCollection.clear()
         if self.project.package_collections:
-            print "loadProject package_collections"
-            print "project.media:%s" % self.project.media
-            for collection in self.project.package_collections:
-                PackageCollectionListItem(self.listPackageCollection, collection)
+            for index, collection in enumerate(self.project.package_collections):
+                PackageCollectionListItem(self.listPackageCollection, collection, self.project.default_language)
+                if collection.default:
+                    self.listPackageCollection.setCurrentRow(index)
 
     def updateRepo(self, update_repo=True):
         """
@@ -436,6 +423,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.progress.finished()
             QMessageBox.warning(self, self.title, _("Package index has errors. '%s' depends on non-existing '%s'.") % e.args)
             return False
+        else:
+            self.progress.finished()
+
         missing_components, missing_packages = self.project.get_missing()
         if len(missing_components):
             QMessageBox.warning(self, self.title, _("There are missing components. Removing."))
@@ -443,10 +433,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if component in self.project.selected_components:
                     self.project.selected_components.remove(component)
             return self.updateRepo(update_repo=False)
+            self.updateRepo(update_repo=False)
+
         if len(missing_packages):
             QMessageBox.warning(self, self.title, _("There are missing packages. Removing."))
             for package in missing_packages:
                 if package in self.project.selected_packages:
                     self.project.selected_packages.remove(package)
             return self.updateRepo(update_repo=False)
+
+        self.progress.finished()
+
         return True
