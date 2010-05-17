@@ -53,7 +53,7 @@ class ApplicationItemWidget(QtGui.QWidget, Ui_ApplicationItem):
         self.appName.hide()
 
     def mouseDoubleClickEvent(self, event):
-        os.popen(self.item.command)
+        os.popen('%s&' % self.item.command)
 
 class SummaryDialog(QtGui.QDialog, Ui_SummaryDialog):
     def __init__(self, parent=None):
