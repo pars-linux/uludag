@@ -9,7 +9,7 @@ class Menu:
     def __init__(self, titles, labelWidget):
         self.bold = "font-weight:bold"
         self.normal = "font-weight:normal"
-        self.defaultFontSize = 10 #8
+        self.defaultFontSize = 10
         self.position = 0
         self.menuText = ""
         self.menuNode = " <span style='font-size:%spt; %s'>%s</span> "
@@ -32,7 +32,6 @@ class Menu:
             menuItemText = self.titles[index]
 
             # set seperators
-            print "BOK ", self.position
             if self.position == 0:
                 seperatorL = ""
                 seperatorR = self.seperatorR
@@ -43,6 +42,7 @@ class Menu:
                 seperatorL = self.seperatorL
                 seperatorR = self.seperatorR
 
+            # prepare menu text
             if index == (self.position - 1):
                 self.menuText += self.menuNode % (self.defaultFontSize, self.normal, menuItemText)
             if index == self.position:
@@ -52,6 +52,7 @@ class Menu:
             if index == (self.position + 1):
                 self.menuText += self.menuNode % (self.defaultFontSize, self.normal, menuItemText)
 
+        # set menu text
         self.label.setText(self.menuText)
 
     def next(self):

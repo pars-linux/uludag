@@ -21,13 +21,12 @@ class DrawPie(QWidget):
         h = self.size().height()
 
         painter.setBrush(QBrush(QColor(255, 255, 255, 220)))
-        x = 9
-        y = 5
-        r = 32
+        x = 13
+        y = 6
+        r = 23
         rect = QRect(x, y, r, r)
 
         painter.drawEllipse(rect)
-
 
         painter.setBrush(QBrush(QColor(20, 20, 20, 100)))
 
