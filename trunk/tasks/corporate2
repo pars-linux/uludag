@@ -44,7 +44,7 @@
     * revdepRebuild/replaces düzeltmelerinin test edilmesi (+)
     * needsServiceRestart, needsReboot desteği. CLI'ye reboot/restart uyarıları (+)
     * Pisi'ye eklenen mimari/dağıtım denetimi exceptionlarının yakalanıp uyarı verilmesi (-)
-    * Global needsServiceRestart, needsReboot (+)
+    * Global needsServiceRestart, needsReboot (-)
 
 * PiSi (Serdar Dalgıç)
     * Depo bazında mimari ve dağıtım denetlemesi, add-repo'ya --ignore-check eklenmesi (+) [Faik Uygur]
