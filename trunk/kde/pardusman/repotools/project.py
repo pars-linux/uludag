@@ -13,9 +13,10 @@
 
 import os
 import piksemel
+import hashlib
 
 import packages
-from repotools.selections import PackageCollection, PackageSelection, CollectionDescription, LanguageSelection
+from repotools.packages import PackageCollection, PackageSet
 
 # no i18n yet
 def _(x):
@@ -162,7 +163,6 @@ class ExProjectMissing(Exception):
 class ExProjectBogus(Exception):
     pass
 
-
 # Project class
 
 class Project:
@@ -176,13 +176,13 @@ class Project:
         self.release_files = ""
         self.repo_uri = ""
         self.type = "install"
-        self.squashfs_comp_type = "gzip"
+        self.squashfs_comp_type = "lzma"
         self.media = "cd"
         self.extra_params = ""
         self.plugin_package = ""
         self.default_language = None
-        self.selected_components = []
         self.selected_languages = []
+        self.selected_components = []
         self.selected_packages = []
         self.all_packages = []
         self.package_collections = []
@@ -243,7 +243,6 @@ class Project:
             selectedComponents = [ ]
             selectedPackages = [ ]
             allPackages = [ ]
-
             if node:
                 repoURI = node.getAttribute("repo_uri")
                 for tag in node.tags("SelectedComponent"):
@@ -255,14 +254,14 @@ class Project:
                 return (repoURI, selectedComponents, selectedPackages, allPackages)
             return None
 
-        def __collectionDescription(node):
-            # Fill collection description
+        def __collectionTranslations(node):
+            # Fill collection translations
             translations = {}
             if node:
-                description = node.getTagData("Description")
-                for tag in node.tags("Translation"):
-                    translations[tag.getAttribute("code")]= tag.firstChild().data()
-                return (description, translations)
+                for translation in node.tags("Translation"):
+                    translations[translation.getAttribute("language")]= (translation.getTagData("Title"),
+                                                                         translation.getTagData("Description"))
+                return translations
             return None
 
         def __languageSelection(node):
@@ -289,45 +288,40 @@ class Project:
                 if not default:
                     default = ""
 
-                # Reads Saved Collection identifiers
-                name = collection.getTagData("Name")
+                # Reads Collection identifiers
+                id = collection.getTagData("Id")
                 icon = collection.getTagData("Icon")
-                title = collection.getTagData("Title")
 
-                # Reads Saved Collection Description
-                description, translations = __collectionDescription(collection.getTag("DescriptionSelection"))
-                collectionDescription = CollectionDescription(description, translations)
+                # Reads Collection Translations
+                translations = __collectionTranslations(collection.getTag("Translations"))
 
-                # Reads Selected Packages
+                # Reads Collection Selected Packages
                 uri, selectedcomponents, selectedpackages, allPackages = __packageSelection(collection.getTag("PackageSelection"))
-                packageselection = PackageSelection(uri, selectedcomponents, selectedpackages, allPackages)
+                packages = PackageSet(uri, selectedcomponents, selectedpackages, allPackages)
 
-                # Reads Selected Languages
-                defaultLanguage, selectedLanguages = __languageSelection(collection.getTag("LanguageSelection"))
-                languageselection = LanguageSelection(defaultLanguage, selectedLanguages)
-
-                self.package_collections.append(PackageCollection(name, icon, title, collectionDescription, packageselection, languageselection, default))
-                print "secilen paketlerin uzunluğu:%s" % len(packageselection.selectedPackages)
+                self.package_collections.append(PackageCollection(id, icon, translations, packages, default))
 
             # Hack for now.Change After multi repository support
-            self.repo_uri = self.package_collections[0].packageSelection.repoURI
+            self.repo_uri = self.package_collections[0].packages.repoURI
 
             for collection in self.package_collections:
-                collection.packageSelection.selectedComponents.sort()
-                collection.packageSelection.selectedPackages.sort()
-                collection.packageSelection.allPackages.sort()
+                collection.packages.selectedComponents.sort()
+                collection.packages.selectedPackages.sort()
+                collection.packages.allPackages.sort()
         else:
             packageSelectionTag = doc.getTag("PackageSelection")
             if packageSelectionTag:
-                self.repo_uri, self.selected_components, self.selected_packages, self.all_packages= __packageSelection(packageSelectionTag)
-
-            languageSelectionTag = doc.getTag("LanguageSelection")
-            if languageSelectionTag:
-                self.default_language, self.selected_languages = __languageSelection(languageSelectionTag)
+                self.repo_uri, self.selected_components,
+                self.selected_packages, self.all_packages= __packageSelection(packageSelectionTag)
 
             self.selected_components.sort()
             self.selected_packages.sort()
             self.all_packages.sort()
+
+        languageSelectionTag = doc.getTag("LanguageSelection")
+        if languageSelectionTag:
+            self.default_language, self.selected_languages = __languageSelection(languageSelectionTag)
+
 
         installImagePackagesTag = doc.getTag("InstallImagePackages")
         if installImagePackagesTag:
@@ -363,45 +357,31 @@ class Project:
             collections = doc.insertTag("PackageCollections")
             for collection in self.package_collections:
                 packageCollection = collections.insertTag("PackageCollection")
-                print "collection.name:%s" % collection.uniqueTag
-                print "collection.icon:%s" % collection.icon
-                print "collection.Title:%s" % collection.title
-                print "collection.Description:%s" % collection.descriptionSelection.description
-                print "collection.packageSelection.repoURI:%s" % collection.packageSelection.repoURI
-
                 # Writes if collection is default
                 if collection.default:
                     packageCollection.setAttribute("default", collection.default)
 
                 # Writes Collection identifiers
-                packageCollection.insertTag("Name").insertData(collection.uniqueTag)
+                packageCollection.insertTag("Id").insertData(collection._id)
                 packageCollection.insertTag("Icon").insertData(collection.icon)
-                packageCollection.insertTag("Title").insertData(collection.title)
 
-                # Writes Description
-                collectionDescription = packageCollection.insertTag("DescriptionSelection")
-                collectionDescription.insertTag("Description").insertData(collection.descriptionSelection.description)
-                for languageCode, translation in collection.descriptionSelection.translations.items():
-                    collectionTranslation = collectionDescription.insertTag("Translation")
-                    collectionTranslation.setAttribute("code", languageCode)
-                    collectionTranslation.insertData(translation)
+                # Writes Translations
+                translations = packageCollection.insertTag("Translations")
+                for key, item in collection.translations.items():
+                    translation = translations.insertTag("Translation")
+                    translation.setAttribute("language", key)
+                    translation.insertTag("Title").insertData(item[0])
+                    translation.insertTag("Description").insertData(item[1])
 
                 # Writes Packages
                 packageSelection = packageCollection.insertTag("PackageSelection")
-                packageSelection.setAttribute("repo_uri", collection.packageSelection.repoURI)
-                for item in collection.packageSelection.selectedComponents:
+                packageSelection.setAttribute("repo_uri", collection.packages.repoURI)
+                for item in collection.packages.selectedComponents:
                     packageSelection.insertTag("SelectedComponent").insertData(item)
-                for item in collection.packageSelection.selectedPackages:
+                for item in collection.packages.selectedPackages:
                     packageSelection.insertTag("SelectedPackage").insertData(item)
-                for item in collection.packageSelection.allPackages:
+                for item in collection.packages.allPackages:
                     packageSelection.insertTag("Package").insertData(item)
-
-                # Writes Languages
-                languageSelection = packageCollection.insertTag("LanguageSelection")
-                if collection.languageSelection.defaultLanguage:
-                    languageSelection.setAttribute("default_language", collection.languageSelection.defaultLanguage)
-                for language in collection.languageSelection.languages:
-                    languageSelection.insertTag("Language").insertData(language)
 
         else:
             self.selected_components.sort()
@@ -515,7 +495,7 @@ class Project:
         if self.package_collections:
             for collection in self.package_collections:
                 packages = []
-                for component in collection.packageSelection.selectedComponents:
+                for component in collection.packages.selectedComponents:
                     if component not in repo.components:
                         if component not in self.missing_components:
                             self.missing_components.append(component)
@@ -523,11 +503,11 @@ class Project:
                     for package in repo.components[component]:
                         collect(package)
 
-                for package in collection.packageSelection.selectedPackages:
+                for package in collection.packages.selectedPackages:
                     collect(package)
 
                 packages.sort()
-                collection.packageSelection.allPackages = packages
+                collection.packages.allPackages = packages
             #self.all_packages.extend(packages)
         else:
             for component in self.selected_components:

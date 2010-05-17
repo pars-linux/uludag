@@ -15,6 +15,9 @@ import os
 import sys
 import urllib2
 import piksemel
+import random
+import string
+import random
 
 from utility import xterm_title
 
@@ -54,24 +57,78 @@ def fetch_uri(base_uri, cache_dir, filename, console=None, update_repo=False):
         if console:
             console.started("Fetching '%s'..." % filename)
         try:
-            conn = urllib2.urlopen(os.path.join(base_uri, filename))
+            connection = urllib2.urlopen(os.path.join(base_uri, filename))
         except ValueError:
             raise ExIndexBogus
         output = file(path, "w")
-        total_size = int(conn.info()['Content-Length'])
+        total_size = int(connection.info()['Content-Length'])
         size = 0
         while size < total_size:
-            data = conn.read(4096)
+            data = connection.read(4096)
             output.write(data)
             size += len(data)
             if console:
                 console.progress("Downloaded %d of %d bytes" % (size, total_size), 100 * size / total_size)
         output.close()
-        conn.close()
+        connection.close()
         if console:
             console.finished()
     return path
 
+def random_id():
+     """ Create an id of random length between 8 and 16
+             characters long, made up of numbers and letters.
+     """
+     return "".join(random.choice(string.ascii_letters + string.digits) for x in range(random.randint(8, 16)))
+
+class PackageCollection(object):
+
+    _id = ""
+
+    def __init__(self, id=None, icon=None, translations={}, packages=None, default=""):
+        if id:
+            self._id = id
+        else:
+            self._id = random_id()
+        self.icon = icon
+        self.translations = translations
+        self.packages = packages
+        self.default =  default
+
+    def __eq__(self, collection):
+        return self._id == collection._id and \
+               self.translations == collection.translations and \
+               self.icon == collection.icon and \
+               self.packages == collection.packages
+
+    def __str__(self):
+        return """"Collection:
+id: %s
+icon: %s
+translations: %s
+default: %s
+""" % (self._id, self.icon, self.translations, self.default)
+
+class PackageSet(object):
+    def __init__(self, repoURI, selectedComponents=[], selectedPackages=[], allPackages=[]):
+        self.repoURI = repoURI
+        self.selectedComponents = selectedComponents
+        self.selectedPackages = selectedPackages
+        self.allPackages = allPackages
+
+    def __eq__(self, packages):
+        return self.repoURI == packages.repoURI and \
+                self.selectedComponents == packages.selectedComponents and \
+                self.selectedPackages == packages.selectedPackages and \
+                self.allPackages == packages.allPackages
+
+    def __str__(self):
+        return """PackageSet: (%s)
+selected components: %s
+selected packages: %s
+all packages: %s
+""" % (self.repoURI, self.selectedComponents,
+                        self.selectedPackages, self.allPackages)
 
 class Package:
     def __init__(self, node):
@@ -109,12 +166,12 @@ class Package:
 
     def __str__(self):
         return """Package: %s (%s)
-Version %s, release %s, build %s
-Size: %d, installed %d
-Part of: %s
-Dependencies: %s
-Reverse dependencies: %s
-Summary: %s""" % (
+                  Version %s, release %s, build %s
+                  Size: %d, installed %d
+                  Part of: %s
+                  Dependencies: %s
+                  Reverse dependencies: %s
+                  Summary: %s""" % (
             self.name, self.uri,
             self.version, self.release, self.build,
             self.size, self.inst_size,
@@ -211,13 +268,10 @@ class Repository:
     def make_local_repo(self, path, package_list, index_name="pisi"):
         index = 0
         for name in package_list:
-            p = self.packages[name]
+            package = self.packages[name]
             xterm_title("Fetching : %s - %s of %s" % (name, index, len(package_list)))
-            con = Console()
-            cached = fetch_uri(self.base_uri, self.cache_dir, p.uri, con)
-#            print "cached:%s" % cached
-#            print "diger:%s" % os.path.join(path, os.path.basename(cached))
-            print "os.symlink(%s, %s)" % (cached, os.path.join(path, os.path.basename(cached)))
+            console = Console()
+            cached = fetch_uri(self.base_uri, self.cache_dir, package.uri, console)
             if not os.path.exists(os.path.join(path, os.path.basename(cached))):
                 os.symlink(cached, os.path.join(path, os.path.basename(cached)))
             index += 1
@@ -234,21 +288,21 @@ class Repository:
         f.write(s.hexdigest())
         f.close()
 
-    def make_collection_index(self, path, projectCollections):
+    def make_collection_index(self, path, projectCollections, default_language):
         doc = piksemel.newDocument("YALI")
         for collection in projectCollections:
             collectionTag = doc.insertTag("Collection")
             if collection.default:
                 collectionTag.setAttribute("default", collection.default)
-            collectionTag.insertTag("name").insertData(collection.uniqueTag)
+            collectionTag.insertTag("id").insertData(collection._id)
             collectionTag.insertTag("icon").insertData(os.path.basename(collection.icon))
-            collectionTag.insertTag("title").insertData(collection.title)
-            descriptionTag = collectionTag.insertTag("description")
-            descriptionTag.insertTag("content").insertData(collection.descriptionSelection.description)
-            for languageCode, translation in collection.descriptionSelection.translations.items():
-                translationTag = descriptionTag.insertTag("translation")
-                translationTag.setAttribute("code", languageCode)
-                translationTag.insertData(translation)
+            translationsTag = collectionTag.insertTag("translations")
+            translationsTag.setAttribute("default", default_language)
+            for languageCode, translation in collection.translations.items():
+                translationTag = translationsTag.insertTag("translation")
+                translationTag.setAttribute("language", languageCode)
+                translationTag.insertTag("title").insertData(translation[0])
+                translationTag.insertTag("description").insertData(translation[1])
 
         f = file(os.path.join(path, "collection.xml"), "w")
         f.write(doc.toPrettyString())
@@ -282,9 +336,9 @@ class Repository:
 
     def __str__(self):
         return """Repository: %s
-Number of packages: %d
-Total package size: %d
-Total installed size: %d""" % (
+                  Number of packages: %d
+                  Total package size: %d
+                  Total installed size: %d""" % (
             self.base_uri,
             len(self.packages),
             self.size,
