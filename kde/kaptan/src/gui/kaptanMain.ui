@@ -193,7 +193,7 @@ color:rgb(240, 240, 240)</string>
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">padding: 10px 10px -10px 10px; 
+           <string notr="true">padding: 13px 15px 13px 15px;
 border:0px;
 background-color: qlineargradient(spread:pad, x1:0.5, y1:1, x2:0.5, y2:0, stop:0 rgba(183, 100, 124, 255), stop:0.0212465 rgba(91, 33, 50, 255), stop:0.521739 rgba(152, 86, 105, 255), stop:0.527174 rgba(155, 98, 115, 255), stop:0.983696 rgba(184, 141, 153, 255), stop:1 rgba(220, 173, 186, 255));
 border-bottom: 1px solid rgba(0,0,0,10)</string>
@@ -450,13 +450,13 @@ QPushButton::flat:pressed{
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>43</height>
+            <height>30</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>50</width>
-            <height>43</height>
+            <height>35</height>
            </size>
           </property>
           <property name="font">
@@ -495,19 +495,19 @@ background-color: rgba(0, 0, 0, 100);
           <property name="minimumSize">
            <size>
             <width>300</width>
-            <height>43</height>
+            <height>35</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>300</width>
-            <height>43</height>
+            <height>35</height>
            </size>
           </property>
           <property name="font">
            <font>
             <family>Sans Serif</family>
-            <pointsize>6</pointsize>
+            <pointsize>9</pointsize>
            </font>
           </property>
           <property name="autoFillBackground">
@@ -515,9 +515,7 @@ background-color: rgba(0, 0, 0, 100);
           </property>
           <property name="styleSheet">
            <string notr="true">color: white;
-background-color: rgba(0, 0, 0, 100);
-padding: 10px;
-</string>
+background-color: rgba(0, 0, 0, 100);</string>
           </property>
           <property name="lineWidth">
            <number>2</number>
@@ -544,13 +542,13 @@ padding: 10px;
           <property name="minimumSize">
            <size>
             <width>0</width>
-            <height>43</height>
+            <height>35</height>
            </size>
           </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>43</height>
+            <height>35</height>
            </size>
           </property>
           <property name="font">
