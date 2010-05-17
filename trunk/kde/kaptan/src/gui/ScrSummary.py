@@ -13,6 +13,7 @@
 
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
+from PyQt4.QtGui import QMessageBox
 from PyKDE4.kdecore import ki18n, KConfig
 import subprocess,os, dbus
 from gui.ScreenWidget import ScreenWidget
@@ -28,12 +29,6 @@ import gui.ScrSearch  as searchWidget
 import gui.ScrSmolt  as smoltWidget
 
 import gui.tools as tools
-
-# Smolt related headers
-#import sys
-#sys.path.append('/usr/share/smolt/client')
-#import smolt
-#from urlparse import urljoin
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Summary")
@@ -110,19 +105,24 @@ class Widget(QtGui.QWidget, ScreenWidget):
         self.ui.textSummary.setHtml(content)
 
     def killPlasma(self):
-        p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
-        out, err = p.communicate()
-        pidOfPlasma = int(out)
-
         try:
-            os.kill(pidOfPlasma, 15)
-        except OSError, e:
-            print 'WARNING: failed os.kill: %s' % e
-            print "Trying SIGKILL"
-            os.kill(pidOfPlasma, 9)
+            p = subprocess.Popen(["pidof", "-s", "plasma-desktop"], stdout=subprocess.PIPE)
+            out, err = p.communicate()
+            pidOfPlasma = int(out)
 
-        finally:
-            self.startPlasma()
+            try:
+                os.kill(pidOfPlasma, 15)
+            except OSError, e:
+                print 'WARNING: failed os.kill: %s' % e
+                print "Trying SIGKILL"
+                os.kill(pidOfPlasma, 9)
+
+            finally:
+                self.startPlasma()
+        except:
+            QMessageBox.critical(self, ki18n("Error").toString(), ki18n("Cannot restart plasma-desktop. Kaptan will now shutdown.").toString())
+            from PyKDE4 import kdeui
+            kdeui.KApplication.kApplication().quit()
 
     def startPlasma(self):
         p = subprocess.Popen(["plasma-desktop"], stdout=subprocess.PIPE)
