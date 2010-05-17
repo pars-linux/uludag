@@ -12,140 +12,127 @@
  #
 import hashlib
 import os
+import copy
 
 from PyQt4.QtCore import SIGNAL
 from PyQt4.QtGui import QDialog, QFileDialog, QListWidgetItem, QMessageBox, QPixmap
 
 from gui.ui.packagecollection import Ui_PackageCollectionDialog
 from gui.packages import PackagesDialog
-from gui.languages import LanguagesDialog
-from gui.translation import TranslationDialog
-from repotools.selections import PackageCollection, PackageSelection, CollectionDescription, LanguageSelection
+from gui.languages import LANGUAGES
+from repotools.packages import PackageCollection, PackageSet, random_id
 
 import gettext
 _ = lambda x:gettext.ldgettext("pardusman", x)
 
-
 class PackageCollectionDialog(QDialog, Ui_PackageCollectionDialog):
-    def __init__(self, parent, repo,  collection=None):
+    def __init__(self, parent, repo, project=None, collection=None):
         QDialog.__init__(self, parent)
         self.setupUi(self)
+        self.project = project
         self.parent = parent
         self.repo = repo
-        self.repoURI = "%s/%s" % (repo.base_uri, repo.index_name)
-        self.collection = collection
+        self.repo_uri = os.path.join(repo.base_uri, repo.index_name)
+        self.collection = None
+        self.origCollection = None
         self.tmpCollection = None
 
-        if not self.collection:
-            self.tmpCollection = PackageCollection()
-        self.tmpPackageSelection = None
-        self.tmpLanguageSelection = None
-        self.tmpDescription = None
-        self.tmpIconPath = None
+        if collection:
+            self.origCollection = collection
+            self.tmpCollection = copy.deepcopy(collection)
+        else:
+            self.tmpCollection = PackageCollection(packages=PackageSet(self.repo_uri))
 
-        self.connect(self.pushSelectPackages, SIGNAL("clicked()"), self.slotSelectPackages)
-        self.connect(self.pushSelectLanguages, SIGNAL("clicked()"), self.slotSelectLanguages)
-        self.connect(self.pushSelectTranslations, SIGNAL("clicked()"), self.slotSelectTranslations)
-        self.connect(self.toolSelectIcon, SIGNAL("clicked()"), self.slotSelectIcon)
-        self.connect(self.toolClearIcon, SIGNAL("clicked()"), self.slotClearIcon)
+        self.connect(self.languagesCombo, SIGNAL("currentIndexChanged(int)"), self.updateTranslations)
+        self.connect(self.saveButton, SIGNAL("clicked()"), self.saveTranslations)
+        self.connect(self.packagesButton, SIGNAL("clicked()"), self.slotSelectPackages)
+        self.connect(self.selectIcon, SIGNAL("clicked()"), self.slotSelectIcon)
+        self.connect(self.clearIcon, SIGNAL("clicked()"), self.slotClearIcon)
 
         self.connect(self.buttonBox, SIGNAL("accepted()"), self.accept)
         self.connect(self.buttonBox, SIGNAL("rejected()"), self.reject)
-        self.debugCollection()
-        self.initialize()
+        self.fillContent()
 
-    def debugCollection(self):
-        if self.collection:
-            print "collection.uniqueTag:%s" % self.collection.uniqueTag
-            print "collection.iconPath:%s" % self.collection.icon
-            print "collection.title:%s" % self.collection.title
-            if self.collection.packageSelection:
-                print "collection.tmpPackageSelection.repoURI:%s" % self.collection.packageSelection.repoURI
+    def fillContent(self):
+        self.titleText.clear()
+        self.descriptionText.clear()
+        if self.project.selected_languages:
+            missingTranslations = set(self.project.selected_languages) - set(self.tmpCollection.translations)
+            if  missingTranslations:
+                for code in missingTranslations:
+                    self.tmpCollection.translations[code] = ("", "")
+            for code in self.project.selected_languages:
+                self.languagesCombo.addItem(LANGUAGES[code], unicode(code))
         else:
-            print "collection yok debug!"
-    def initialize(self):
-        if self.collection:
-            self.lineTitle.setText(self.collection.title)
-            if os.path.exists(self.collection.icon):
-                self.labelIcon.setPixmap(QPixmap(self.collection.icon))
-            else:
-                self.labelIcon.setText(_("Icon file not found!"))
-            if self.collection.descriptionSelection:
-                self.textDescription.setPlainText(self.collection.descriptionSelection.description)
+            self.project.default_language = "en_US"
+            self.project.selected_languages.append("en_US")
+            self.tmpCollection.translations["en_US"] = ("", "")
+            self.languagesCombo.addItem(LANGUAGES["en_US"], unicode("en_US"))
 
-    def __getUniqueID(self, title):
-        return hashlib.sha1(title).hexdigest()
+        if self.tmpCollection.translations and self.tmpCollection.translations[self.project.default_language]:
+            self.titleText.setText(unicode(self.tmpCollection.translations[self.project.default_language][0]))
+            self.descriptionText.setPlainText(unicode(self.tmpCollection.translations[self.project.default_language][1]))
 
-    def __setSelectedPackagesText(self, packages, components):
-        self.linePackages.setText( _("%s Selected Components and %s Selected Packages") % (len(components), len(packages)))
+        if self.tmpCollection.icon:
+            if os.path.exists(self.tmpCollection.icon):
+                self.icon.setPixmap(QPixmap(self.tmpCollection.icon))
+
+        if self.tmpCollection.packages:
+            self.packagesLabel.setText("Selected Components:%s \n Selected Packages:%s" %
+                                    (len(self.tmpCollection.packages.selectedComponents), len(self.tmpCollection.packages.selectedPackages)))
+        else:
+            self.packagesLabel.setText("ID:YOK" )
+
+    def updateTranslations(self, currentIndex):
+        code = unicode(self.languagesCombo.itemData(currentIndex).toString())
+        if code and self.tmpCollection.translations[code]:
+            self.titleText.setText(unicode(self.tmpCollection.translations[code][0]))
+            self.descriptionText.setPlainText(unicode(self.tmpCollection.translations[code][1]))
+
+    def saveTranslations(self):
+        code = unicode(self.languagesCombo.itemData(self.languagesCombo.currentIndex()).toString())
+        self.tmpCollection.translations[code] = (unicode(self.titleText.text()), unicode(self.descriptionText.toPlainText()))
 
     def accept(self):
-        title = unicode(self.lineTitle.text())
-        #iconPath = self.tmpIconPath)
-        #description = unicode(self.textDescription.toPlainText())
-        uniqueTag = unicode(self.__getUniqueID(title))
-        if not self.collection:
-            self.collection = PackageCollection(uniqueTag, self.tmpIconPath, title, self.tmpDescription, self.tmpPackageSelection, self.tmpLanguageSelection)
-        else:
-            self.collection.title = title
-            self.collection.uniqueTag = uniqueTag
+        if self.origCollection:
+            if self.origCollection != self.tmpCollection:
+                self.tmpCollection._id = random_id()
 
-        #self.debugCollection()
-
+        self.collection = self.tmpCollection
+        self.titleText.clear()
+        self.descriptionText.clear()
         QDialog.accept(self)
 
     def slotSelectIcon(self):
-        filename = QFileDialog.getOpenFileName(self, _("Select Collection Icon"), "./icons/", "*.png")
-        if filename:
-            if self.collection:
-                self.collection.icon = unicode(filename)
-            else:
-                self.tmpCollection.icon = unicode(filename)
-                self.tmpIconPath = unicode(filename)
-
-            self.labelIcon.setPixmap(QPixmap(filename))
+        iconPath = QFileDialog.getOpenFileName(self, _("Select Collection Icon"),
+                                               os.path.join(os.getcwd(), "icons"),
+                                               "*.png")
+        if iconPath:
+            if self.tmpCollection:
+                self.tmpCollection.icon = unicode(iconPath)
+            self.icon.setPixmap(QPixmap(iconPath))
 
     def slotClearIcon(self):
-        self.labelIcon.setPixmap(None)
+        self.icon.setPixmap(QPixmap(0, 0))
 
     def slotSelectPackages(self):
-        if self.collection:
-            if self.collection.packageSelection and self.collection.packageSelection.selectedPackages and self.collection.packageSelection.selectedComponents:
-                dialog = PackagesDialog(self, self.repo, self.collection.packageSelection.selectedPackages, self.collection.packageSelection.selectedComponents)
-                if dialog.exec_():
-                    self.collection.packageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
+        if self.tmpCollection.packages.selectedPackages and self.tmpCollection.packages.selectedComponents:
+            dialog = PackagesDialog(self,
+                                    self.repo,
+                                    self.tmpCollection.packages.selectedPackages,
+                                    self.tmpCollection.packages.selectedComponents)
 
-            else:
-                dialog = PackagesDialog(self, self.repo)
-                if dialog.exec_():
-                    self.tmpCollection.packageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
-                    self.tmpPackageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
+            if dialog.exec_():
+                self.tmpCollection.packages = PackageSet(self.repo_uri,\
+                                                         dialog.components,\
+                                                         dialog.packages,\
+                                                         dialog.all_packages)
+
         else:
             dialog = PackagesDialog(self, self.repo)
             if dialog.exec_():
-                self.tmpCollection.packageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
-                self.tmpPackageSelection = PackageSelection(self.repoURI, dialog.components, dialog.packages, dialog.all_packages)
+                self.tmpCollection.packages = PackageSet(self.repo_uri,\
+                                                         dialog.components,\
+                                                         dialog.packages,\
+                                                         dialog.all_packages)
 
-    def slotSelectLanguages(self):
-        if self.collection:
-            dialog = LanguagesDialog(self, self.collection.languageSelection.languages)
-            if dialog.exec_():
-                self.collectionLanguageSelection = LanguageSelection(dialog.languages[0], dialog.languages)
-        else:
-            dialog = LanguagesDialog(self)
-            if dialog.exec_():
-                self.tmpCollection.languageSelection = LanguageSelection(dialog.languages[0], dialog.languages)
-                self.tmpLanguageSelection = LanguageSelection(dialog.languages[0], dialog.languages)
-
-    def slotSelectTranslations(self):
-        if self.collection and self.collection.languageSelection:
-            dialog = TranslationDialog(self, unicode(self.textDescription.toPlainText()), self.collection)
-            if dialog.exec_():
-                self.collection.descriptionSelection = CollectionDescription(unicode(self.textDescription.toPlainText()), dialog.translations)
-        elif self.tmpCollection and self.tmpCollection.languageSelection:
-            dialog = TranslationDialog(self, unicode(self.textDescription.toPlainText()), self.tmpCollection)
-            if dialog.exec_():
-                self.tmpCollection.descriptionSelection = CollectionDescription(unicode(self.textDescription.toPlainText()), dialog.translations)
-                self.tmpDescription = CollectionDescription(unicode(self.textDescription.toPlainText()), dialog.translations)
-        else:
-            QMessageBox.warning(self, self.windowTitle(),  _("Select Language for Collection at first..."))
