@@ -33,6 +33,9 @@
     <file>gui/pics/windows.png</file>
     <file>gui/pics/helpback.png</file>
     <file>gui/pics/pardusman-icon.png</file>
+    <file>images/system-reboot.png</file>
+    <file>images/system-shutdown.png</file>
+    <file>images/system-yali-reboot.png</file>
     <file>images/checkbox_checked.png</file>
     <file>images/checkbox_checked_hover.png</file>
     <file>images/checkbox_unchecked.png</file>

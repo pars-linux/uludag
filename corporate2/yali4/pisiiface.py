@@ -27,19 +27,14 @@ from yali4.gui.installdata import *
 repodb = pisi.db.repodb.RepoDB()
 
 class PackageCollection(object):
-    def __init__(self, uniqueTag, icon, title, description, default=""):
+    def __init__(self, id, title, description, icon, translations, default=False):
         self.default = default
-        self.uniqueTag = uniqueTag
+        self.id = id
         self.title = title
-        self.icon =  os.path.join(consts.pisi_collection_dir, icon)
         self.description = description
-        self.index =  os.path.join(consts.source_dir, "repo/%s-index.xml.bz2" % uniqueTag)
-
-class Description(object):
-    def __init__(self, description, translations={}):
-        self.content = description
+        self.icon =  os.path.join(consts.pisi_collection_dir, icon)
         self.translations = translations
-
+        self.index =  os.path.join(consts.source_dir, "repo/%s-index.xml.bz2" % id)
 
 def initialize(ui, with_comar = False, nodestDir = False):
     options = pisi.config.Options()
@@ -107,24 +102,42 @@ def takeBack(operation):
 
 def getCollection():
     packageCollection = []
+    default = False
+    piksemelObj = None
     translations = {}
 
-    piksemelObj = piksemel.parse(consts.pisi_collection_file)
-    for collection in piksemelObj.tags("Collection"):
-        default = collection.getAttribute("default")
-        if not default:
-            default = ""
+    def __setLocale(id, translations):
+        title = ""
+        description = ""
+        locale = os.environ["LANG"].split(".")[0]
+        if not translations.has_key(locale):
+            ctx.debugger.log("Collection (%s) has no translation in %s locale. Default language (%s) is setting ..." %
+                                                            (id, locale, translations["default"]))
+            locale = translations["default"]
 
-        name = collection.getTagData("name")
-        icon = collection.getTagData("icon")
-        title = collection.getTagData("title")
-        descriptionTag = collection.getTag("description")
-        content = descriptionTag.getTagData("content")
-        for translation in descriptionTag.tags("translation"):
-            translations[translation.getAttribute("code")] = translation.firstChild().data()
+        title = translations[locale][0]
+        description = translations[locale][1]
+        return (title, description)
 
-        description = Description(content, translations)
-        packageCollection.append(PackageCollection(name, icon, title, description, default))
+    try:
+        piksemelObj = piksemel.parse(consts.pisi_collection_file)
+    except OSError, msg:
+        ctx.debugger.log("Unexcepted error:%s" % msg)
+    else:
+        for collection in piksemelObj.tags("Collection"):
+            default = collection.getAttribute("default")
+            if default:
+                default = True
+
+            id = collection.getTagData("id")
+            icon = collection.getTagData("icon")
+            translationsTag = collection.getTag("translations")
+            translations["default"] = translationsTag.getAttribute("default")
+            for translation in translationsTag.tags("translation"):
+                translations[translation.getAttribute("language")]= (translation.getTagData("title"),
+                                                                     translation.getTagData("description"))
+            title, description = __setLocale(id, translations)
+            packageCollection.append(PackageCollection(id, title, description, icon, translations, default))
 
     return packageCollection
 
