@@ -143,16 +143,8 @@ def generate_isolinux_conf(project):
     image_dir = project.image_dir()
     iso_dir = project.iso_dir()
 
-    # Hack for DVD Collections
-    if not project.package_collections:
-        lang_default = project.default_language
-        lang_all = project.selected_languages
-    else:
-        for collection in project.package_collections:
-            if collection.default:
-                lang_default = collection.languageSelection.defaultLanguage
-                lang_all =  collection.languageSelection.languages
-
+    lang_default = project.default_language
+    lang_all = project.selected_languages
 
     if project.type != "live":
         dict["rescue_template"] = """
@@ -330,14 +322,14 @@ def copyPisiIndex(project):
         run('sha1sum "%s" > "%s"' % (collectionFile, "%s.sha1sum" % collectionFile))
 
         for collection in project.package_collections:
-            source = os.path.join(project.install_repo_dir(), "%s-index.xml.bz2" % collection.uniqueTag)
+            source = os.path.join(project.install_repo_dir(), "%s-index.xml.bz2" % collection._id)
             run('cp -PR "%s" "%s"' % (source, collectionDir))
             run('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
             run('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
 
-            print('cp -PR "%s" "%s"' % (source, collectionDir))
-            print('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
-            print('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
+            #print('cp -PR "%s" "%s"' % (source, collectionDir))
+            #print('sha1sum "%s" > "%s"' % (source, "%s.sha1sum" % os.path.join(collectionDir,os.path.basename(source))))
+            #print('cp -PR "%s" "%s"' % (collection.icon, collectionDir))
 
         copyCollectionIcon(project)
 
@@ -408,12 +400,13 @@ def make_repos(project):
             if project.package_collections:
                 all_packages = []
                 for collection in project.package_collections:
-                    all_packages.extend(collection.packageSelection.allPackages)
-                    repo.make_local_repo(repo_dir, collection.packageSelection.allPackages, collection.uniqueTag)
-                    print "make_collection_index on repo_dir:%s" % repo_dir
-                repo.make_local_repo(repo_dir, all_packages)
+                    all_packages.extend(collection.packages.allPackages)
+                    # Making repos and index files per collection
+                    repo.make_local_repo(repo_dir, collection.packages.allPackages, collection._id)
 
-                repo.make_collection_index(repo_dir, project.package_collections)
+                repo.make_local_repo(repo_dir, all_packages)
+                repo.make_collection_index(repo_dir, project.package_collections, project.default_language)
+                print "Preparing collections project file"
             else:
                 repo.make_local_repo(repo_dir, project.all_packages)
 
