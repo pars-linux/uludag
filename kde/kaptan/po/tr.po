@@ -441,7 +441,7 @@ msgid ""
 "system language. If you want to use another layout other than the default "
 "keyboard layout, you can make your selection and test it instantly."
 msgstr ""
-"Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer.Eğer "
+"Kaptan, sistem dilinize en uygun olan klavye düzenini otomatik seçer. Eğer "
 "varsayılan düzenden başka bir düzen seçmek istiyorsanız aşağıda bulunan "
 "listeden uygun olan düzeni seçip hemen test edebilirsiniz."
 
@@ -508,7 +508,7 @@ msgstr ""
 
 #: .tmp/ui_networkWidget.py:96
 msgid "Network Manager (Press Apply to save your settings)"
-msgstr ""
+msgstr "Ağ Yöneticisi (Ayarları kaydetmek için Uygula tuşuna basınız)"
 
 #: .tmp/ui_packageWidget.py:176
 msgid "Show updates in the system tray"
@@ -734,7 +734,7 @@ msgstr ""
 
 #: .tmp/ui_summaryWidget.py:73
 msgid "The following settings will be applied"
-msgstr ""
+msgstr "Aşağıdaki ayarlar uygulanacaktır"
 
 #: .tmp/ui_uiitem.py:69 .tmp/ui_wallpaperuiitem.py:49
 msgid "wallPaperName"
@@ -780,60 +780,3 @@ msgstr ""
 "yapabilirsiniz!<br /><br /><b>Kaptan</b>, Pardus çalışma ortamınızı hızlı ve "
 "kolayca kişiselleştirmenize yardımcı olan bir uygulamadır. Lütfen başlamak "
 "için <b>İleri</b>'ye tıklayın."
-
-#~ msgid "Welcome to Kaptan 2009.2"
-#~ msgstr "Kaptan 2009.2'ye Hoş Geldiniz"
-
-#~ msgid "Apply Settings"
-#~ msgstr "Ayarları Kaydet"
-
-#~ msgid "Insert some catchy title about keyboards.."
-#~ msgstr "Klavyeler hakkında bir başlık ekle.."
-
-#~ msgid "Select your keyboard layout"
-#~ msgstr "Klavye düzeninizi seçin"
-
-#~ msgid "Some catchy title about styles"
-#~ msgstr "Biçemler hakkında bir başlık ekle"
-
-#~ msgid "Some catchy description about styles"
-#~ msgstr "Biçemler hakkında güzel bir açıklama"
-
-#~ msgid "Configure your mouse"
-#~ msgstr "Farenizi yapılandırın"
-
-#~ msgid "Network Manager"
-#~ msgstr "Ağ Yöneticisi"
-
-#~ msgid "Package Manager"
-#~ msgstr "Paket Yöneticisi"
-
-#~ msgid "Configure package manager settings"
-#~ msgstr "Paket yöneticinizi yapılandırın"
-
-#~ msgid "Some catchy title about desktop search"
-#~ msgstr "Masaüstü araması hakkında güzel bir başlık"
-
-#~ msgid "Some catchy description desktop search"
-#~ msgstr "Masaüstü araması hakkında güzel bir açıklama"
-
-#~ msgid "Smolt Description"
-#~ msgstr "Smolt Açıklaması"
-
-#~ msgid "Insert some catchy title about wallpapers.."
-#~ msgstr "Duvar kâğıtları hakkında güzel bir başlık"
-
-#~ msgid "Wonderful, awesome, superb wallpapers! \\m/"
-#~ msgstr "Muhteşem duvar kâğıtları!\\m/"
-
-#~ msgid ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-#~ msgstr ""
-#~ "#pictureMenuStyles{\n"
-#~ "border: 1px solid rgb(255, 255, 255);\n"
-#~ "}"
-
-#~ msgid "Menu Styles"
-#~ msgstr "Menü Stilleri"
