@@ -29,18 +29,19 @@ import config
 from context import *
 
 class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
-    def __init__(self, app = None):
-        QtGui.QMainWindow.__init__(self, None)
+    def __init__(self, app = None, silence = False):
+        QtGui.QMainWindow.__init__(self)
         self.setupUi(self)
         self.app = app
         self.iface = backend.pm.Iface()
         self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
-        self.setCentralWidget(MainWidget(self))
+        self.setCentralWidget(MainWidget(self, silence))
         self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
-        self.initializeStatusBar()
-        self.initializeTray()
-        self.connectMainSignals()
+        if not silence:
+            self.initializeStatusBar()
+            self.initializeTray()
+            self.connectMainSignals()
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
