@@ -56,7 +56,7 @@ if __name__ == '__main__':
         font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
         app.setFont(QtGui.QFont(font[0], int(font[1])))
         # manager.show()
-        manager.centralWidget().state.operationAction(args)
+        manager.centralWidget().state.operationAction(args, silence = True)
         manager.centralWidget().progressDialog.show()
 
     else:

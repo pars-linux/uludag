@@ -32,13 +32,14 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
     def __init__(self, app = None, silence = False):
         QtGui.QMainWindow.__init__(self)
         self.setupUi(self)
-        self.app = app
         self.iface = backend.pm.Iface()
         self.setWindowIcon(QtGui.QIcon(":/data/package-manager.png"))
+        self.connect(app, SIGNAL("aboutToQuit()"), self.slotQuit)
         self.setCentralWidget(MainWidget(self, silence))
-        self.settingsDialog = SettingsDialog(self)
         self.initializeActions()
+
         if not silence:
+            self.settingsDialog = SettingsDialog(self)
             self.initializeStatusBar()
             self.initializeTray()
             self.connectMainSignals()
@@ -48,7 +49,6 @@ class MainWindow(QtGui.QMainWindow, Ui_MainWindow):
         self.connect(self.settingsDialog, SIGNAL("packageViewChanged()"), self.centralWidget().updateSettings)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
-        self.connect(self.app, SIGNAL("aboutToQuit()"), self.slotQuit)
 
     def initializeTray(self):
         self.tray = Tray(self, self.iface)
