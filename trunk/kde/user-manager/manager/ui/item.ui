@@ -76,7 +76,7 @@
       <string>Edit</string>
      </property>
      <property name="text">
-      <string notr="true"/>
+      <string/>
      </property>
     </widget>
    </item>
@@ -86,7 +86,7 @@
       <string>Delete</string>
      </property>
      <property name="text">
-      <string notr="true"/>
+      <string/>
      </property>
     </widget>
    </item>
