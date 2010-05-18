@@ -138,9 +138,10 @@ class StateManager(QObject):
 
         return text
 
-    def operationAction(self, packages):
-        if self.state is not self.REMOVE and not self.conflictCheckPasses(packages):
-            return
+    def operationAction(self, packages, silence = False):
+        if not silence:
+            if self.state is not self.REMOVE and not self.conflictCheckPasses(packages):
+                return
         return {self.INSTALL:self.iface.installPackages,
                 self.REMOVE:self.iface.removePackages,
                 self.UPGRADE:self.iface.upgradePackages}[self.state](packages)
