@@ -6,9 +6,9 @@ description = A blue and gray colored shiny theme with a panel on bottom
 description[tr]= Paneli altta olan mavi ve gri renkli parlak bir tema
 
 panelPosition = 4
-widgetStyle = qtc_klearlooks
+widgetStyle = oxygen
 colorScheme = Steel
 desktopTheme = Aya
 thumbnail = north.png
 iconTheme = milky
-windowDecoration = kwin3_qtcurve
+windowDecoration = kwin3_oxygen
