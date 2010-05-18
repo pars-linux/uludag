@@ -65,10 +65,9 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
         self.configureCardButton.clicked.connect(self.cardDialog.show)
 
         self.outputDialogs = {}
+        self.firstLoad = True
 
         self.configChanged.connect(self.slotConfigChanged)
-
-        QtCore.QTimer.singleShot(0, self.suggestDriver)
 
     def checkBackend(self):
         """
@@ -244,6 +243,10 @@ class MainWidget(QtGui.QWidget, Ui_devicesWidget):
 
         # Output list
         self.refreshOutputList()
+
+        if self.firstLoad:
+            self.firstLoad = False
+            self.suggestDriver()
 
     def save(self):
         try:
