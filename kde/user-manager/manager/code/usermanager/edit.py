@@ -214,6 +214,9 @@ class EditUserWidget(QtGui.QWidget, Ui_EditUserWidget):
         return groups
 
     def setAuthorizations(self, authorizations):
+        for action_id in self.actionItems:
+            item = self.actionItems[action_id]
+            item.setType(0)
         for action_id, scope, description, policy_active, negative in authorizations:
             if action_id in self.actionItems:
                 item = self.actionItems[action_id]
