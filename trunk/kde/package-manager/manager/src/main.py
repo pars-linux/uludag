@@ -36,54 +36,78 @@ if __name__ == '__main__':
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
-    if ctx.Pds.session == ctx.pds.Kde4:
-        from PyKDE4.kdeui import KUniqueApplication
-        from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
+    from optparse import OptionParser
 
-        from about import aboutData
-        from mainwindow_kde4 import MainWindow
+    usage = "usage: %prog [options]"
+    parser = OptionParser(usage=usage)
+    parser.add_option("-i", "--install-package", dest="install_package",
+                      action="store_true", default=False,
+                      help="packages to install")
 
-        KCmdLineArgs.init(sys.argv, aboutData)
-        options = KCmdLineOptions()
-        options.add("show-mainwindow", ki18n("Show main window"))
-        KCmdLineArgs.addCmdLineOptions(options)
+    (options, args) = parser.parse_args()
+    if options.install_package:
 
-        app = KUniqueApplication(True, True)
-
-        # It should set just before MainWindow call
-        setSystemLocale()
-
-        manager = MainWindow()
-        args = KCmdLineArgs.parsedArgs()
-        if args.isSet("show-mainwindow"):
-            manager.show()
-
-    else:
         from mainwindow import MainWindow
-        from pds.quniqueapp import QUniqueApplication
-
-        # Fork MainApplication
-        import os
-        pid = os.fork()
-        if pid:
-            os._exit(0)
-
-        app = QUniqueApplication(sys.argv, catalog='package-manager')
-
+        app = QtGui.QApplication(sys.argv)
         setSystemLocale()
-
-        manager = MainWindow(app)
-        app.setMainWindow(manager)
+        manager = MainWindow(app, silence = True)
 
         # Set application font from system
         font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
         app.setFont(QtGui.QFont(font[0], int(font[1])))
+        # manager.show()
+        manager.centralWidget().state.operationAction(args)
+        manager.centralWidget().progressDialog.show()
 
-        if config.PMConfig().systemTray():
-            app.setQuitOnLastWindowClosed(False)
+    else:
+        if ctx.Pds.session == ctx.pds.Kde4:
+            from PyKDE4.kdeui import KUniqueApplication
+            from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
 
-    if not config.PMConfig().systemTray():
-        manager.show()
+            from about import aboutData
+            from mainwindow_kde4 import MainWindow
+
+            KCmdLineArgs.init(sys.argv, aboutData)
+            options = KCmdLineOptions()
+            options.add("show-mainwindow", ki18n("Show main window"))
+            KCmdLineArgs.addCmdLineOptions(options)
+
+            app = KUniqueApplication(True, True)
+
+            # It should set just before MainWindow call
+            setSystemLocale()
+
+            manager = MainWindow()
+            args = KCmdLineArgs.parsedArgs()
+            if args.isSet("show-mainwindow"):
+                manager.show()
+
+        else:
+            from mainwindow import MainWindow
+            from pds.quniqueapp import QUniqueApplication
+
+            # Fork MainApplication
+            import os
+            pid = os.fork()
+            if pid:
+                os._exit(0)
+
+            app = QUniqueApplication(sys.argv, catalog='package-manager')
+
+            setSystemLocale()
+
+            manager = MainWindow(app)
+            app.setMainWindow(manager)
+
+            # Set application font from system
+            font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
+            app.setFont(QtGui.QFont(font[0], int(font[1])))
+
+            if config.PMConfig().systemTray():
+                app.setQuitOnLastWindowClosed(False)
+
+        if not config.PMConfig().systemTray():
+            manager.show()
 
     sys.excepthook = handleException
     ctx._time()

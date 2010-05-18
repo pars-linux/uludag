@@ -36,21 +36,23 @@ from pmutils import *
 import config
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, silence = False):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
         self._selectedGroups = []
-        self.searchButton.setIcon(KIcon("edit-find"))
-        self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
-        self.basket = BasketDialog(self.state)
-        self.initialize()
-        self.updateSettings()
-        self.actionButton.setIcon(self.state.getActionIcon())
+        self.silence = silence
+        if not silence:
+            self.searchButton.setIcon(KIcon("edit-find"))
+            self.statusUpdater = StatusUpdater()
+            self.basket = BasketDialog(self.state)
+            self.initialize()
+            self.updateSettings()
+            self.actionButton.setIcon(self.state.getActionIcon())
+            self.connectMainSignals()
         self.operation = OperationManager(self.state)
         self.progressDialog = ProgressDialog(self.state)
         self.summaryDialog = SummaryDialog()
-        self.connectMainSignals()
         self.connectOperationSignals()
 
     def connectMainSignals(self):
@@ -188,7 +190,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def actionStarted(self, operation):
-        totalPackages = self.packageList.packageCount()
+        if self.silence:
+            totalPackages = 1
+        else:
+            totalPackages = self.packageList.packageCount()
         self.operation.setTotalPackages(totalPackages)
         self.progressDialog.reset()
         self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
@@ -200,7 +205,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def exceptionCaught(self, message):
         self.progressDialog.hide()
-
         if "urlopen error" in message or "Socket Error" in message:
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
@@ -218,16 +222,19 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.messageBox.show()
 
     def actionFinished(self, operation):
-        self.searchLine.clear()
-        self.state.reset()
-        self.progressDialog.hide()
         if operation == "System.Manager.installPackage":
             self.showSummary()
         if operation in ("System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"):
             self.notifyFinished()
-        if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
-            self.emit(SIGNAL("repositoriesUpdated()"))
-        self.initialize()
+        if not self.silence:
+            self.searchLine.clear()
+            self.state.reset()
+            self.progressDialog.hide()
+            if operation in ("System.Manager.updateRepository", "System.Manager.updateAllRepositories"):
+                self.emit(SIGNAL("repositoriesUpdated()"))
+            self.initialize()
+        else:
+            QtGui.qApp.exit()
 
     def notifyFinished(self):
         # Since we can not identify the caller yet
