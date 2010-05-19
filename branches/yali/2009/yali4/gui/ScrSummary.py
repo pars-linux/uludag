@@ -61,8 +61,8 @@ Here you can see your install options before installation starts.
 
         # Handle translators tool problems ..
         try:
-            self.connect(self.ui.install, SIGNAL("clicked()"), ctx.mainScreen.slotNext)
-            self.connect(self.ui.cancel, SIGNAL("clicked()"), self.slotReboot)
+            #self.connect(self.ui.install, SIGNAL("clicked()"), ctx.mainScreen.slotNext)
+            #self.connect(self.ui.cancel, SIGNAL("clicked()"), self.slotReboot)
             self.connect(self.timer, SIGNAL("timeout()"), self.updateCounter)
         except:
             pass
@@ -80,6 +80,7 @@ Here you can see your install options before installation starts.
     def backCheck(self):
         self.timer.stop()
         ctx.yali.info.hide()
+        ctx.mainScreen.ui.buttonNext.setText(_("Next"))
         return True
 
     def updateCounter(self):
@@ -90,7 +91,8 @@ Here you can see your install options before installation starts.
             ctx.mainScreen.slotNext()
 
     def shown(self):
-        ctx.mainScreen.disableNext()
+        #ctx.mainScreen.disableNext()
+        ctx.mainScreen.ui.buttonNext.setText(_("Start Installation"))
         if ctx.installData.isKahyaUsed:
             self.startBombCounter()
         self.fillContent()
@@ -247,8 +249,8 @@ Here you can see your install options before installation starts.
                 ctx.mainScreen.moveInc = 0
                 return
 
-        self.ui.install.setEnabled(False)
-        self.ui.cancel.setEnabled(False)
+        #self.ui.install.setEnabled(False)
+        #self.ui.cancel.setEnabled(False)
         ctx.installData.installAllLangPacks = self.ui.installAllLangPacks.isChecked()
         ctx.mainScreen.processEvents()
 
@@ -318,5 +320,6 @@ Here you can see your install options before installation starts.
         ctx.debugger.log("GRUB will be installed to %s" % ctx.installData.bootLoaderDev)
 
         ctx.mainScreen.moveInc = 1
+        ctx.mainScreen.ui.buttonNext.setText(_("Next"))
         return True
 
