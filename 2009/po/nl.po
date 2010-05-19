@@ -12,13 +12,13 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-01-14 10:09+0200\n"
-"PO-Revision-Date: 14/01/10 11:42\n"
+"PO-Revision-Date: 2010-05-19 21:21+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
@@ -44,7 +44,8 @@ msgstr "X"
 
 #: yali4/gui/Ui/autopartquestion.py:81
 msgid "Automatically choose the partition to resize (recommended)"
-msgstr "Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
+msgstr ""
+"Automatisch de in grootte aan te passen partitie selecteren (aanbevolen)"
 
 #: yali4/gui/Ui/autopartquestion.py:82
 msgid "I will choose the target"
@@ -113,13 +114,15 @@ msgstr ""
 
 #: yali4/gui/Ui/autopartwidget.py:118
 msgid "Try to use free space or resize current partitions"
-msgstr "Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
+msgstr ""
+"Probeer vrije ruimte te gebruiken of pas huidige partities in grootte aan"
 
 #: yali4/gui/Ui/autopartwidget.py:119
 msgid ""
 "This option will erase the entire disk. All the data on the disk will be "
 "lost."
-msgstr "Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
+msgstr ""
+"Deze optie zal de gehele schijf wissen. Alle gegevens zullen verloren gaan."
 
 #: yali4/gui/Ui/autopartwidget.py:120
 msgid "Delete all partitions"
@@ -362,7 +365,7 @@ msgstr " MB"
 
 #: yali4/gui/Ui/partedit.py:158
 msgid "Format :"
-msgstr "Formateren:"
+msgstr "Formatteren:"
 
 #: yali4/gui/Ui/partedit.py:159
 msgid "Yes, format this partition"
@@ -608,7 +611,8 @@ msgid "Begin Install"
 msgstr "Installatie starten"
 
 #: yali4/gui/Ui/summarywidget.py:70
-msgid "If you check this, Yalı will install all language packages in this release"
+msgid ""
+"If you check this, Yalı will install all language packages in this release"
 msgstr "Markeer dit om alle taalpakketten te installeren"
 
 #: yali4/gui/Ui/summarywidget.py:71
@@ -953,7 +957,8 @@ msgstr "Er is een verzoek voor een gelijke partitietype."
 
 #: yali4/gui/DiskWidgets.py:349
 #, python-format
-msgid "Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
+msgid ""
+"Partition <b>%(partition)s</b> will be <b>formatted</b> as <b>%(fsType)s</b>."
 msgstr ""
 "Partitie <b>%(partition)s</b> <b>zal geformateerd worden</b> als <b>%(fsType)"
 "s</b>."
@@ -1253,11 +1258,11 @@ msgstr ""
 "\n"
 "<font size=\"+2\">CD-integriteit controleren!</font>\n"
 "<font size=\"+1\"><p>\n"
-"U kunt controleren of de pakketten op de installatie-CD correct op de CD zijn "
-"opgeslagen. Het uitvoeren van deze test is een uiterst belangrijke "
-"stap om er zeker van te zijn dat u zonder problemen kunt installeren. Als de "
-"test mislukt, probeer het ISO bestand dan op een lagere snelheid (bijv. 12x "
-"of minder) te branden.</p></font>\n"
+"U kunt controleren of de pakketten op de installatie-CD correct op de CD "
+"zijn opgeslagen. Het uitvoeren van deze test is een uiterst belangrijke stap "
+"om er zeker van te zijn dat u zonder problemen kunt installeren. Als de test "
+"mislukt, probeer het ISO bestand dan op een lagere snelheid (bijv. 12x of "
+"minder) te branden.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking CD.</font>"
@@ -1887,7 +1892,8 @@ msgstr ""
 #: yali4/gui/ScrSummary.py:199
 #, python-format
 msgid "Partition <b>%(newPartition)s</b> <b>selected</b> as <b>%(type)s</b>."
-msgstr "Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
+msgstr ""
+"Partitie <b>%(newPartition)s</b> <b>geselecteerd</b> als <b>%(type)s</b>."
 
 #: yali4/gui/ScrSummary.py:214
 msgid "Bootloader Settings"
@@ -2044,9 +2050,9 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Welkom !</font>\n"
 "<font size=\"+1\"><p>Welkom bij Pardus 2009.1 met veel gemakkelijk te "
-"gebruiken software. U kunt hiermee werkelijk alles doen inclusief (maar "
-"niet beperkt tot) gebruikmaken van internet, creëren van documenten, "
-"spelletjes spelen, en muziek luisteren met Pardus 2009.1. </p>\n"
+"gebruiken software. U kunt hiermee werkelijk alles doen inclusief (maar niet "
+"beperkt tot) gebruikmaken van internet, creëren van documenten, spelletjes "
+"spelen, en muziek luisteren met Pardus 2009.1. </p>\n"
 "<p>Deze toepassing zal u, in enkele makkelijke stappen helpen met de "
 "installatie van Pardus 2009.1 op uw computer en zal al het noodzakelijke "
 "doen om uw hardware te identificeren. Wij raden u aan uw gegevens op te "
