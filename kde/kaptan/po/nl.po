@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-07-15 09:43+0300\n"
-"PO-Revision-Date: 07/01/10 21:35\n"
+"PO-Revision-Date: 2010-05-19 21:33+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:368
@@ -167,9 +167,8 @@ msgid "OS"
 msgstr "OS"
 
 #: .tmp/ScrSmolt.py:117
-#, fuzzy
 msgid "Default Run Level"
-msgstr "Standaard runlevel"
+msgstr "Standaard niveau van uitvoeren"
 
 #: .tmp/ScrSmolt.py:118
 msgid "Language"
@@ -193,16 +192,15 @@ msgstr "CPU-model"
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Stepping"
-msgstr ""
+msgstr "CPU Stepping"
 
 #: .tmp/ScrSmolt.py:124
 msgid "CPU Family"
-msgstr ""
+msgstr "CPU-familie"
 
 #: .tmp/ScrSmolt.py:125
-#, fuzzy
 msgid "CPU Model Num"
-msgstr "CPU-model"
+msgstr "CPU-model num"
 
 #: .tmp/ScrSmolt.py:126
 msgid "Number of CPUs"
@@ -508,7 +506,7 @@ msgstr ""
 
 #: .tmp/ui_networkWidget.py:96
 msgid "Network Manager (Press Apply to save your settings)"
-msgstr ""
+msgstr "Netwerkbeheerder (activeer Toepassen voor opslaan instellingen)"
 
 #: .tmp/ui_packageWidget.py:176
 msgid "Show updates in the system tray"
@@ -584,7 +582,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:106
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -693,9 +690,8 @@ msgid "styleDesc"
 msgstr "Stijlbeschrijving"
 
 #: .tmp/ui_styleWidget.py:155
-#, fuzzy
 msgid "KDE Themes"
-msgstr "Thema's"
+msgstr "KDE-thema's"
 
 #: .tmp/ui_styleWidget.py:156
 msgid "Desktop Type"
@@ -737,7 +733,7 @@ msgstr ""
 
 #: .tmp/ui_summaryWidget.py:73
 msgid "The following settings will be applied"
-msgstr ""
+msgstr "De volgende instellingen zullen toegepast worden"
 
 #: .tmp/ui_uiitem.py:69 .tmp/ui_wallpaperuiitem.py:49
 msgid "wallPaperName"
@@ -748,9 +744,8 @@ msgid "wallpaperDesc"
 msgstr "Achtergrondbeschrijving"
 
 #: .tmp/ui_wallpaperWidget.py:118
-#, fuzzy
 msgid "Wallpapers"
-msgstr "Achtergrond"
+msgstr "Achtergrondafbeeldingen"
 
 #: .tmp/ui_wallpaperWidget.py:120
 msgid "Choose wallpaper from file"
