@@ -8,8 +8,18 @@ Legend:
 / In progress
 + Accomplished
 
+    optional:
     background ekle: cizgiler
     if possible optimize more
+    notification setter
+    detach network manager
+
+    must:
+    summary screen => kaptan is now applying settings please wait
+    update po => correct turkish welcome note
+    smolt default screen => table, not privacy policy
+    clicking behavior minimum size
+
 
     test
     ----
