@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 Anthropoides virgo International</Title>
+    <Title>Pardus 2009.2 Beta International</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -100,6 +100,9 @@
         <SelectedPackage>rdesktop</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
+        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
+        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
+        <SelectedPackage>PyKDE</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
         <SelectedPackage>ppp</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
@@ -113,6 +116,7 @@
         <SelectedPackage>paprefs</SelectedPackage>
         <SelectedPackage>package-manager</SelectedPackage>
         <SelectedPackage>p7zip</SelectedPackage>
+        <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
         <SelectedPackage>openoffice-langpack-sv</SelectedPackage>
         <SelectedPackage>openoffice-langpack-pt-BR</SelectedPackage>
         <SelectedPackage>openoffice-langpack-nl</SelectedPackage>
@@ -154,23 +158,18 @@
         <SelectedPackage>liberation-fonts</SelectedPackage>
         <SelectedPackage>kwin-crystal-style</SelectedPackage>
         <SelectedPackage>ktorrent</SelectedPackage>
+        <SelectedPackage>kmozillahelper</SelectedPackage>
         <SelectedPackage>kipi-plugins</SelectedPackage>
+        <SelectedPackage>kffmpegthumbnailer</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>kdeutils</SelectedPackage>
+        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
         <SelectedPackage>kdepim</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
-        <SelectedPackage>kdegraphics</SelectedPackage>
-        <SelectedPackage>kdebluetooth</SelectedPackage>
-        <SelectedPackage>kdebase-emoticons</SelectedPackage>
-        <SelectedPackage>kdeartwork-styles</SelectedPackage>
-        <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
-        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
-        <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
-        <SelectedPackage>kdeadmin</SelectedPackage>
-        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
+        <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kde-l10n-sv</SelectedPackage>
         <SelectedPackage>kde-l10n-pt_BR</SelectedPackage>
         <SelectedPackage>kde-l10n-pl</SelectedPackage>
@@ -180,6 +179,14 @@
         <SelectedPackage>kde-l10n-es</SelectedPackage>
         <SelectedPackage>kde-l10n-de</SelectedPackage>
         <SelectedPackage>kde-l10n-ca</SelectedPackage>
+        <SelectedPackage>kdegraphics</SelectedPackage>
+        <SelectedPackage>kdebluetooth</SelectedPackage>
+        <SelectedPackage>kdebase-emoticons</SelectedPackage>
+        <SelectedPackage>kdeartwork-styles</SelectedPackage>
+        <SelectedPackage>kdeartwork-screensavers</SelectedPackage>
+        <SelectedPackage>kdeartwork-emoticons</SelectedPackage>
+        <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
+        <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kaudiocreator</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>k3b</SelectedPackage>
@@ -212,6 +219,7 @@
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>history-manager</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
+        <SelectedPackage>gtk-qt-engine</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gst-plugins-ugly</SelectedPackage>
         <SelectedPackage>gst-plugins-farsight</SelectedPackage>
@@ -284,9 +292,6 @@
         <SelectedPackage>acpi4asus</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
-        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
-        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
-        <SelectedPackage>PyKDE</SelectedPackage>
         <Package>zorg</Package>
         <Package>zlib</Package>
         <Package>zip</Package>
@@ -311,10 +316,10 @@
         <Package>wireless-tools</Package>
         <Package>wireless-regdb</Package>
         <Package>which</Package>
-        <Package>webkitkde</Package>
         <Package>wavpack</Package>
         <Package>vorbis-tools</Package>
         <Package>vixie-cron</Package>
+        <Package>virtuoso</Package>
         <Package>vigra</Package>
         <Package>vcdimager</Package>
         <Package>vbetool</Package>
@@ -340,7 +345,6 @@
         <Package>tcltk</Package>
         <Package>tcl</Package>
         <Package>tar</Package>
-        <Package>tapioca-qt</Package>
         <Package>taglib</Package>
         <Package>sysvinit</Package>
         <Package>system-manager</Package>
@@ -357,10 +361,12 @@
         <Package>soundtouch</Package>
         <Package>soprano</Package>
         <Package>smolt</Package>
+        <Package>slv2</Package>
         <Package>slf4j</Package>
         <Package>slang</Package>
         <Package>sip</Package>
         <Package>shared-mime-info</Package>
+        <Package>shared-desktop-ontologies</Package>
         <Package>shadow</Package>
         <Package>sg3_utils</Package>
         <Package>setserial</Package>
@@ -375,6 +381,7 @@
         <Package>rp-pppoe</Package>
         <Package>reportlab</Package>
         <Package>redland</Package>
+        <Package>recode</Package>
         <Package>readline</Package>
         <Package>rasqal</Package>
         <Package>raptor</Package>
@@ -395,8 +402,10 @@
         <Package>python</Package>
         <Package>pysqlite</Package>
         <Package>pysmbc</Package>
+        <Package>PyQt</Package>
         <Package>pypolkit</Package>
         <Package>pyparted</Package>
+        <Package>PyKDE</Package>
         <Package>pygtk</Package>
         <Package>pygobject</Package>
         <Package>pycurl</Package>
@@ -415,6 +424,7 @@
         <Package>poppler-glib</Package>
         <Package>poppler</Package>
         <Package>polkit-qt</Package>
+        <Package>PolicyKit</Package>
         <Package>pnm2ppa</Package>
         <Package>pm-utils</Package>
         <Package>plasmoid-service-applet</Package>
@@ -432,6 +442,7 @@
         <Package>pciutils</Package>
         <Package>parted</Package>
         <Package>pardus-python</Package>
+        <Package>pardus-desktop-services</Package>
         <Package>pangomm</Package>
         <Package>pango</Package>
         <Package>pam</Package>
@@ -456,10 +467,11 @@
         <Package>nss-mdns</Package>
         <Package>nss</Package>
         <Package>nspr</Package>
+        <Package>normalize</Package>
         <Package>network-manager</Package>
-        <Package>netpbm</Package>
         <Package>net-tools</Package>
         <Package>net-snmp</Package>
+        <Package>netpbm</Package>
         <Package>neon</Package>
         <Package>ncurses</Package>
         <Package>ncompress</Package>
@@ -505,6 +517,7 @@
         <Package>madplay</Package>
         <Package>lzo</Package>
         <Package>lzma</Package>
+        <Package>lv2core</Package>
         <Package>lua</Package>
         <Package>lsb-release</Package>
         <Package>lpsolve</Package>
@@ -514,12 +527,37 @@
         <Package>lirc</Package>
         <Package>linux-atm</Package>
         <Package>libzip</Package>
+        <Package>libXxf86vm</Package>
+        <Package>libXxf86dga</Package>
+        <Package>libXvMC</Package>
+        <Package>libXv</Package>
+        <Package>libXtst</Package>
+        <Package>libXt</Package>
         <Package>libxslt</Package>
+        <Package>libXScrnSaver</Package>
+        <Package>libXrender</Package>
+        <Package>libXrandr</Package>
+        <Package>libXpm</Package>
+        <Package>libXmu</Package>
+        <Package>libxmlpp</Package>
         <Package>libxml2</Package>
         <Package>libxklavier</Package>
         <Package>libxkbfile</Package>
+        <Package>libXinerama</Package>
+        <Package>libXi</Package>
+        <Package>libXft</Package>
+        <Package>libXfont</Package>
+        <Package>libXfixes</Package>
+        <Package>libXext</Package>
+        <Package>libXdmcp</Package>
+        <Package>libXdamage</Package>
+        <Package>libXcursor</Package>
+        <Package>libXcomposite</Package>
         <Package>libxcb</Package>
+        <Package>libXaw</Package>
+        <Package>libXau</Package>
         <Package>libx86</Package>
+        <Package>libX11</Package>
         <Package>libwww</Package>
         <Package>libwps</Package>
         <Package>libwpg</Package>
@@ -534,7 +572,6 @@
         <Package>libuuid</Package>
         <Package>libusb</Package>
         <Package>libtool-ltdl</Package>
-        <Package>libtool</Package>
         <Package>libtheora</Package>
         <Package>libtdb</Package>
         <Package>libtasn1</Package>
@@ -543,6 +580,7 @@
         <Package>libspectre</Package>
         <Package>libsoup</Package>
         <Package>libsndfile</Package>
+        <Package>libSM</Package>
         <Package>libsigc++</Package>
         <Package>libshout</Package>
         <Package>libsdl</Package>
@@ -550,6 +588,7 @@
         <Package>librsvg</Package>
         <Package>libraw1394</Package>
         <Package>libquicktime</Package>
+        <Package>libqalculate</Package>
         <Package>libproxy</Package>
         <Package>libpng</Package>
         <Package>libpcre</Package>
@@ -582,14 +621,19 @@
         <Package>liblqr</Package>
         <Package>liblazy</Package>
         <Package>libksba</Package>
+        <Package>libkate</Package>
         <Package>libjingle</Package>
+        <Package>libiodbc</Package>
+        <Package>libindicate-qt</Package>
+        <Package>libindicate</Package>
         <Package>libieee1284</Package>
         <Package>libiec61883</Package>
         <Package>libidn</Package>
         <Package>libid3tag</Package>
         <Package>libical</Package>
+        <Package>libIDL</Package>
+        <Package>libICE</Package>
         <Package>libgsf</Package>
-        <Package>libgps</Package>
         <Package>libgpod</Package>
         <Package>libgphoto2</Package>
         <Package>libgpg-error</Package>
@@ -604,9 +648,11 @@
         <Package>libgcc</Package>
         <Package>libgadu</Package>
         <Package>libftdi</Package>
+        <Package>libFS</Package>
         <Package>libfreebob</Package>
         <Package>libfontenc</Package>
         <Package>libffi</Package>
+        <Package>libffado</Package>
         <Package>libfame</Package>
         <Package>libexif</Package>
         <Package>libevent</Package>
@@ -620,6 +666,7 @@
         <Package>libdiscid</Package>
         <Package>libdca</Package>
         <Package>libdc1394</Package>
+        <Package>libdbusmenu-glib</Package>
         <Package>libdaemon</Package>
         <Package>libcroco</Package>
         <Package>libconfig</Package>
@@ -635,38 +682,11 @@
         <Package>libbonobo</Package>
         <Package>libavc1394</Package>
         <Package>libassuan</Package>
+        <Package>libass</Package>
         <Package>libart_lgpl</Package>
         <Package>libarchive</Package>
         <Package>libao</Package>
         <Package>libacpi</Package>
-        <Package>libXxf86vm</Package>
-        <Package>libXxf86dga</Package>
-        <Package>libXvMC</Package>
-        <Package>libXv</Package>
-        <Package>libXtst</Package>
-        <Package>libXt</Package>
-        <Package>libXrender</Package>
-        <Package>libXrandr</Package>
-        <Package>libXpm</Package>
-        <Package>libXmu</Package>
-        <Package>libXinerama</Package>
-        <Package>libXi</Package>
-        <Package>libXft</Package>
-        <Package>libXfont</Package>
-        <Package>libXfixes</Package>
-        <Package>libXext</Package>
-        <Package>libXdmcp</Package>
-        <Package>libXdamage</Package>
-        <Package>libXcursor</Package>
-        <Package>libXcomposite</Package>
-        <Package>libXaw</Package>
-        <Package>libXau</Package>
-        <Package>libXScrnSaver</Package>
-        <Package>libX11</Package>
-        <Package>libSM</Package>
-        <Package>libIDL</Package>
-        <Package>libICE</Package>
-        <Package>libFS</Package>
         <Package>less</Package>
         <Package>lensfun</Package>
         <Package>lcms</Package>
@@ -674,14 +694,13 @@
         <Package>lame</Package>
         <Package>ladspa-sdk</Package>
         <Package>ksplash-pardus-theme</Package>
-        <Package>kosd</Package>
         <Package>kipi-plugins</Package>
         <Package>keyutils</Package>
         <Package>kernel</Package>
         <Package>kdm-pardus-theme</Package>
+        <Package>kdepim-runtime</Package>
         <Package>kdepimlibs</Package>
         <Package>kdemultimedia</Package>
-        <Package>kdelibs-experimental</Package>
         <Package>kdelibs</Package>
         <Package>kdegraphics</Package>
         <Package>kdeedu-marble</Package>
@@ -738,6 +757,7 @@
         <Package>groff</Package>
         <Package>grep</Package>
         <Package>graphviz</Package>
+        <Package>gpsd</Package>
         <Package>gpm</Package>
         <Package>gpgme</Package>
         <Package>gperf</Package>
@@ -782,6 +802,7 @@
         <Package>findutils</Package>
         <Package>file</Package>
         <Package>fftw3</Package>
+        <Package>ffmpegthumbnailer</Package>
         <Package>ffmpeg</Package>
         <Package>faad2</Package>
         <Package>faac</Package>
@@ -790,6 +811,7 @@
         <Package>exempi</Package>
         <Package>enscript</Package>
         <Package>enchant</Package>
+        <Package>enca</Package>
         <Package>elfutils</Package>
         <Package>eject</Package>
         <Package>eina</Package>
@@ -806,13 +828,13 @@
         <Package>display-settings</Package>
         <Package>disktype</Package>
         <Package>disk-manager</Package>
+        <Package>DirectFB</Package>
         <Package>diffutils</Package>
         <Package>dialog</Package>
         <Package>dhcpcd</Package>
         <Package>dhcp</Package>
         <Package>device-mapper</Package>
         <Package>dejavu-fonts</Package>
-        <Package>decibel</Package>
         <Package>dbus-python</Package>
         <Package>dbus-java</Package>
         <Package>dbus-glib</Package>
@@ -830,9 +852,11 @@
         <Package>cpio</Package>
         <Package>coreutils</Package>
         <Package>coolplug</Package>
+        <Package>ConsoleKit</Package>
         <Package>comar-api</Package>
         <Package>comar</Package>
         <Package>clucene</Package>
+        <Package>cln</Package>
         <Package>chmlib</Package>
         <Package>check</Package>
         <Package>cdrtools</Package>
@@ -858,6 +882,7 @@
         <Package>audit</Package>
         <Package>audiofile</Package>
         <Package>attr</Package>
+        <Package>attica</Package>
         <Package>atk</Package>
         <Package>amrwb</Package>
         <Package>amrnb</Package>
@@ -869,14 +894,10 @@
         <Package>acl</Package>
         <Package>aalib</Package>
         <Package>a52dec</Package>
-        <Package>PyQt</Package>
-        <Package>PyKDE</Package>
-        <Package>PolicyKit</Package>
-        <Package>DirectFB</Package>
-        <Package>ConsoleKit</Package>
     </PackageSelection>
     <LanguageSelection default_language="en_US">
         <Language>en_US</Language>
+        <Language>tr_TR</Language>
         <Language>ca_ES</Language>
         <Language>de_DE</Language>
         <Language>es_ES</Language>
