@@ -2,7 +2,7 @@
 # translation of mudur.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2008, 2009, 2010.
 msgid ""
 msgstr ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: bin/mudur.py:207
 msgid "Cannot write mudur.log, read-only file system"
@@ -256,12 +256,8 @@ msgid "Remounting remaining filesystems read-only"
 msgstr "Återmonterar återstående filsystem skrivskyddade"
 
 #: bin/mudur.py:1298
-msgid ""
-"An internal error occured. Please report to the bugs.pardus.org.tr with "
-"following information:"
-msgstr ""
-"Ett internt fel har uppstått. Vänligen rapportera följande fel till bugs."
-"pardus.org.tr:"
+msgid "An internal error occured. Please report to the bugs.pardus.org.tr with following information:"
+msgstr "Ett internt fel har uppstått. Vänligen rapportera följande fel till bugs.pardus.org.tr:"
 
 #: bin/mudur.py:1359
 msgid "Mounting /sys"
@@ -328,19 +324,19 @@ msgid "Description"
 msgstr "Beskrivning"
 
 #: bin/service.py:147 bin/service.py:157
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to start %s:"
-msgstr "Kan inte starta D-Bus"
+msgstr "Kan inte starta %s: "
 
 #: bin/service.py:170
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to stop %s:"
-msgstr "Kan inte starta D-Bus"
+msgstr "Kan inte stoppa %s: "
 
 #: bin/service.py:183
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to set %s state:"
-msgstr "Kan inte starta D-Bus"
+msgstr "Kan inte ändra tillstånd för %s: "
 
 #: bin/service.py:188
 #, python-format
@@ -358,9 +354,9 @@ msgid "Service '%s' will be started if required."
 msgstr "Tjänsten '%s' kommer att startas vid behov."
 
 #: bin/service.py:201
-#, fuzzy, python-format
+#, python-format
 msgid "Unable to reload %s:"
-msgstr "Kunde inte aktivera %s"
+msgstr "Kan inte starta om %s: "
 
 #: bin/service.py:205
 #, python-format
