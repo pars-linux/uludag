@@ -2,39 +2,44 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Patrik Karlsson <patrik@pardus.nu>, 2009, 2010.
+# Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-14 14:31+0300\n"
-"PO-Revision-Date: 2010-01-09 20:01+0100\n"
-"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"PO-Revision-Date: 2010-05-19 08:13+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Vill du fortsätta?"
 
 #: .tmp/basketdialog.py:115
 msgid "Update Requirements"
-msgstr ""
+msgstr "Uppdateringskrav"
 
 #: .tmp/basketdialog.py:125
 msgid ""
 "You must <b>restart</b> your system in order the updated versions of the "
 "following package(s) to take effect:"
 msgstr ""
+"Du måste <b>starta om</b> ditt system för att uppdatering av följande paket "
+"skall träda i kraft:"
 
 #: .tmp/basketdialog.py:132
 msgid ""
 "You must restart following system services in order the updated versions of "
 "the selected package(s) to take effect:"
 msgstr ""
+"Du måste starta om följande systemtjänster för att uppdateringen skall träda "
+"i kraft:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:211 .tmp/mainwidget.py:214
 #: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
@@ -107,21 +112,19 @@ msgstr "För närvarande är din korg tom."
 
 #: .tmp/mainwindow.py:95
 msgid "File"
-msgstr ""
+msgstr "Arkiv"
 
 #: .tmp/mainwindow.py:96
-#, fuzzy
 msgid "Settings"
-msgstr "Packar upp"
+msgstr "Inställningar"
 
 #: .tmp/mainwindow.py:97 .tmp/mainwindow.py:103
-#, fuzzy
 msgid "Help"
-msgstr "&Hjälp"
+msgstr "Hjälp"
 
 #: .tmp/mainwindow.py:99 .tmp/tray.py:174
 msgid "Quit"
-msgstr ""
+msgstr "Avsluta"
 
 #: .tmp/mainwindow.py:112 .tmp/mainwindow_kde4.py:99
 msgid "Show Installable Packages"
@@ -233,18 +236,16 @@ msgid "Alt+C"
 msgstr "Alt+C"
 
 #: .tmp/mainwidget.py:96
-#, fuzzy
 msgid "All Updates"
-msgstr "Uppdatera"
+msgstr "Alla uppdateringar"
 
 #: .tmp/mainwidget.py:97
-#, fuzzy
 msgid "Security Updates"
-msgstr "Visa uppdateringar"
+msgstr "Säkerhetsuppdateringar"
 
 #: .tmp/mainwidget.py:98
 msgid "Critical Updates"
-msgstr ""
+msgstr "Kritiska uppdateringar"
 
 #: .tmp/mainwidget.py:205 .tmp/pm-install.py:91
 msgid "Network Error"
@@ -314,7 +315,7 @@ msgstr "<b>Avbryter åtgärd...</b>"
 
 #: .tmp/settingsdialog.py:149
 msgid "Open Directory"
-msgstr ""
+msgstr "Öppna katalog"
 
 #: .tmp/settingsdialog.py:158
 msgid "Warning"
@@ -336,17 +337,16 @@ msgstr ""
 "<qt>Förrådsadresser måste sluta på xml eller xml.bz2.<p>Försök igen.</qt>"
 
 #: .tmp/about.py:26
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Utvecklare"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -354,7 +354,7 @@ msgstr "Faik Uygur"
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Ursprunglig utvecklare"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Click to search"
@@ -377,14 +377,12 @@ msgid "Update"
 msgstr "Uppdatera"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "Updates"
-msgstr "Uppdatera"
+msgstr "Uppdateringar"
 
 #: .tmp/tray.py:184
-#, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Det finns <b>%1</b> tillgängliga uppdateringar!"
+msgstr "Det finns %1 tillgängliga uppdateringar!"
 
 #: .tmp/tray.py:215
 msgid "There are <b>%1</b> updates available!"
@@ -532,9 +530,8 @@ msgid "installing"
 msgstr "Installerar"
 
 #: .tmp/ui_settingsdialog.py:360
-#, fuzzy
 msgid "Package list"
-msgstr "Paketstorlek:"
+msgstr "Paketlista"
 
 #: .tmp/ui_settingsdialog.py:361
 msgid "&Show only desktop applications"
@@ -542,21 +539,19 @@ msgstr "Vi&sa enbart skrivbordsprogram"
 
 #: .tmp/ui_settingsdialog.py:362
 msgid "Show Component information "
-msgstr ""
+msgstr "Visa komponentinformation "
 
 #: .tmp/ui_settingsdialog.py:363
-#, fuzzy
 msgid "System tray icon"
-msgstr "Aktivera &systembrickan"
+msgstr "Ikon i systembrickan"
 
 #: .tmp/ui_settingsdialog.py:364
-#, fuzzy
 msgid "Enable system tray icon"
-msgstr "Aktivera &systembrickan"
+msgstr "Aktivera ikon i systembrickan"
 
 #: .tmp/ui_settingsdialog.py:365
 msgid "Hide system tray if there is no update."
-msgstr ""
+msgstr "Dölj i systembrickan när uppdateringar saknas."
 
 #: .tmp/ui_settingsdialog.py:366
 msgid "Enable &periodic update check"
@@ -567,9 +562,8 @@ msgid "padding-left:15px;"
 msgstr "padding-left:15px;"
 
 #: .tmp/ui_settingsdialog.py:368
-#, fuzzy
 msgid "Check interval :"
-msgstr "Intervall:"
+msgstr "Kontrollintervall:"
 
 #: .tmp/ui_settingsdialog.py:369
 msgid " min"
@@ -588,9 +582,8 @@ msgid " kb/s"
 msgstr " kb/s"
 
 #: .tmp/ui_settingsdialog.py:374
-#, fuzzy
 msgid "Use bandwidth limit :"
-msgstr "Begränsa bandbredd"
+msgstr "Använd bandbreddsbegränsning:"
 
 #: .tmp/ui_settingsdialog.py:375
 msgid "&General Settings"
@@ -606,28 +599,26 @@ msgstr "Cachestorlek på disk:"
 
 #: .tmp/ui_settingsdialog.py:378
 msgid "Unlimited"
-msgstr ""
+msgstr "Obegränsad"
 
 #: .tmp/ui_settingsdialog.py:379
-#, fuzzy
 msgid " Mib"
-msgstr " Mb"
+msgstr " Mib"
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Aktuell cachekatalog"
 
 #: .tmp/ui_settingsdialog.py:381
 msgid "Select..."
-msgstr ""
+msgstr "Välj..."
 
 #: .tmp/ui_settingsdialog.py:382
-#, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. This will not "
 "delete installed software or affect your system stability."
 msgstr ""
-"Genom att tömma cachen tas alla hämtade paket bort. \n"
+"Genom att tömma cachen tas alla hämtade paket bort."
 "Detta påverkar varken installerade paket eller systemets stabilitet."
 
 #: .tmp/ui_settingsdialog.py:383
@@ -680,9 +671,8 @@ msgid "FTP proxy server:"
 msgstr "FTP:"
 
 #: .tmp/ui_settingsdialog.py:399
-#, fuzzy
 msgid "No proxy server"
-msgstr "Anslut till internet direkt"
+msgstr "Ingen proxyserver"
 
 #: .tmp/ui_settingsdialog.py:400
 msgid "Use proxy server"
@@ -706,7 +696,7 @@ msgstr "Beskrivning:"
 
 #: .tmp/packagedelegate.py:61
 msgid "Website:"
-msgstr ""
+msgstr "Webbplats:"
 
 #: .tmp/packagedelegate.py:62
 msgid "Release:"
@@ -722,7 +712,7 @@ msgstr "Paketstorlek:"
 
 #: .tmp/packagedelegate.py:65
 msgid "Installed Version:"
-msgstr ""
+msgstr "Installerad version:"
 
 #: .tmp/helpdialog.py:32
 msgid "Package Manager Help"
@@ -733,18 +723,17 @@ msgid "Succesfully finished installing %1"
 msgstr "Installerade %1 framgångsrikt"
 
 #: .tmp/pm-install.py:52
-#, fuzzy
 msgid "Succesfully finished installing packages"
-msgstr "Installerade %1 framgångsrikt"
+msgstr "Paketinstallation avslutatdes framgångsrikt"
 
 #: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
 #: .tmp/pm-install.py:73
 msgid "%p%"
-msgstr ""
+msgstr "%p%"
 
 #: .tmp/pm-install.py:151
 msgid "Summary"
-msgstr ""
+msgstr "Sammanställning"
 
 #: .tmp/main.py:48
 msgid "Show main window"
