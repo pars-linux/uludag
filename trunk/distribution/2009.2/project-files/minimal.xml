@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.1 Anthropoides virgo minimal</Title>
+    <Title>Pardus 2009.2 Beta</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
         <SelectedComponent>system.base</SelectedComponent>
@@ -38,6 +38,7 @@
         <Package>psmisc</Package>
         <Package>procps</Package>
         <Package>popt</Package>
+        <Package>PolicyKit</Package>
         <Package>pisi</Package>
         <Package>piksemel</Package>
         <Package>perl</Package>
@@ -65,24 +66,24 @@
         <Package>lsb-release</Package>
         <Package>libxslt</Package>
         <Package>libxml2</Package>
+        <Package>libXdmcp</Package>
         <Package>libxcb</Package>
+        <Package>libXau</Package>
+        <Package>libX11</Package>
         <Package>libuuid</Package>
         <Package>libusb</Package>
         <Package>libtool-ltdl</Package>
         <Package>libssh2</Package>
+        <Package>libSM</Package>
         <Package>libpng</Package>
         <Package>libpcre</Package>
         <Package>libmng</Package>
         <Package>libidn</Package>
+        <Package>libICE</Package>
         <Package>libgpg-error</Package>
         <Package>libgcrypt</Package>
         <Package>libgcc</Package>
         <Package>libcap</Package>
-        <Package>libXdmcp</Package>
-        <Package>libXau</Package>
-        <Package>libX11</Package>
-        <Package>libSM</Package>
-        <Package>libICE</Package>
         <Package>less</Package>
         <Package>lcms</Package>
         <Package>kbd</Package>
@@ -119,6 +120,7 @@
         <Package>cpio</Package>
         <Package>coreutils</Package>
         <Package>coolplug</Package>
+        <Package>ConsoleKit</Package>
         <Package>comar-api</Package>
         <Package>comar</Package>
         <Package>bzip2</Package>
@@ -130,8 +132,6 @@
         <Package>audit</Package>
         <Package>attr</Package>
         <Package>acl</Package>
-        <Package>PolicyKit</Package>
-        <Package>ConsoleKit</Package>
     </PackageSelection>
     <LanguageSelection default_language="tr_TR">
         <Language>tr_TR</Language>
