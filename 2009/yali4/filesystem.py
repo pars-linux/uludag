@@ -504,7 +504,9 @@ class NTFSFileSystem(FileSystem):
         _min = 0
         for l in lines:
             if l.startswith("You might resize"):
-                _min = int(l.split()[4]) / parteddata.MEGABYTE + 140
+                # ntfsresize bytes conversion to megabytes isn't as same as us. Huppps!
+                # Shouldn't use own conversion, rely on ntfsresize information for megabytes
+                _min = int(l.split()[7])
 
         return _min
 
