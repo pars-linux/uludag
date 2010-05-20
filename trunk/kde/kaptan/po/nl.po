@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 16:45+0300\n"
+"POT-Creation-Date: 2010-05-20 22:33+0000\n"
 "PO-Revision-Date: 2010-05-20 17:35+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -354,7 +354,7 @@ msgstr "Achtergrond"
 msgid "Choose a Wallpaper"
 msgstr "Achtergrondafbeelding kiezen"
 
-#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:50
+#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:71
 msgid "Welcome"
 msgstr "Welkom"
 
@@ -415,30 +415,29 @@ msgid ""
 "support pages..."
 msgstr ""
 "Pardus-gemeenschap, email-lijsten, chat-clubs, Wiki-documenten en pagina's "
-"voor "
-"ondersteuning..."
+"voor ondersteuning..."
 
-#: .tmp/ui_kaptanMain.py:303
+#: .tmp/ui_kaptanMain.py:304
 msgid "Kaptan"
 msgstr "Kaptan"
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Welcome to Pardus 2009.2"
 msgstr "Welkom bij Pardus 2009.2"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Back"
 msgstr "Terug"
 
-#: .tmp/ui_kaptanMain.py:307
+#: .tmp/ui_kaptanMain.py:308
 msgid "Next"
 msgstr "Volgende"
 
-#: .tmp/ui_kaptanMain.py:308
+#: .tmp/ui_kaptanMain.py:309
 msgid "Finish"
 msgstr "Voltooien"
 
@@ -664,10 +663,10 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:9pt;\">   De informatie die naar de smoltserver verstuurd wordt is "
 "openbaar en kan door iedereen ingezien worden. De informatie zal "
-"hoofdzakelijk door "
-"hardware fabrikanten en andere gebruikt worden. En kan ook gebruikt worden "
-"om een betere ondersteuning van open-source stuurprogramma's en betere "
-"ondersteuning in het algemeen te verkrijgen.</span></p>\n"
+"hoofdzakelijk door hardware fabrikanten en andere gebruikt worden. En kan "
+"ook gebruikt worden om een betere ondersteuning van open-source "
+"stuurprogramma's en betere ondersteuning in het algemeen te verkrijgen.</"
+"span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:9pt; text-decoration: underline;\">IP-loggen:</span><span style=\" font-"
@@ -681,10 +680,10 @@ msgstr ""
 "size:9pt;\">   Indien U niet eens bent met dit beleid, gebruik smolt dan "
 "niet.  Voor vragen over dit beleid kunt u contact opnemen met het Pardus "
 "Infrastructure Team op admin [at] pardus.org.tr  Denk er ook aan dat het "
-"verwijderen van het profiel op ieder moment kan door het starten van "
-"\"&quot;</"
-"span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</"
-"span><span style=\" font-size:9pt;\">&quot;</span></p></body></html>"
+"verwijderen van het profiel op ieder moment kan door het starten van \"&quot;"
+"</span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span><span style=\" font-size:9pt;\">&quot;</span></"
+"p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "color: rgb(234, 225, 228);"
@@ -785,7 +784,11 @@ msgstr "Achtergrond uit een bestand kiezen"
 msgid "Don't change wallpaper"
 msgstr "Achtergrond niet wijzigen"
 
-#: .tmp/ui_welcomeWidget.py:51
+#: .tmp/ui_welcomeWidget.py:72
+msgid "What is Pardus?"
+msgstr ""
+
+#: .tmp/ui_welcomeWidget.py:73
 msgid ""
 "<b>Pardus</b> is a reliable, secure, fast and user friendly operating "
 "system. <br /><br />With Pardus, you can connect to the internet, read your "

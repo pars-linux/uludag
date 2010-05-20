@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 16:45+0300\n"
+"POT-Creation-Date: 2010-05-20 22:33+0000\n"
 "PO-Revision-Date: 2010-05-15 23:37-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
@@ -353,7 +353,7 @@ msgstr "Papel de Parede"
 msgid "Choose a Wallpaper"
 msgstr "Escolha um Papel de Parede"
 
-#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:50
+#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:71
 msgid "Welcome"
 msgstr "Bem Vindo"
 
@@ -418,28 +418,28 @@ msgstr ""
 "Comunidade do Pardus, lista de emails, chats, wikis, ajuda e páginas de "
 "suporte"
 
-#: .tmp/ui_kaptanMain.py:303
+#: .tmp/ui_kaptanMain.py:304
 #, fuzzy
 msgid "Kaptan"
 msgstr "Dados"
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Welcome to Pardus 2009.2"
 msgstr "Bem Vindo ao Pardus 2009.2"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Back"
 msgstr "Voltar"
 
-#: .tmp/ui_kaptanMain.py:307
+#: .tmp/ui_kaptanMain.py:308
 msgid "Next"
 msgstr "Próximo"
 
-#: .tmp/ui_kaptanMain.py:308
+#: .tmp/ui_kaptanMain.py:309
 msgid "Finish"
 msgstr "Finalizar"
 
@@ -791,7 +791,11 @@ msgstr "Escolha o papel de parede de um arquivo"
 msgid "Don't change wallpaper"
 msgstr "Não modificar o papel de parede"
 
-#: .tmp/ui_welcomeWidget.py:51
+#: .tmp/ui_welcomeWidget.py:72
+msgid "What is Pardus?"
+msgstr ""
+
+#: .tmp/ui_welcomeWidget.py:73
 msgid ""
 "<b>Pardus</b> is a reliable, secure, fast and user friendly operating "
 "system. <br /><br />With Pardus, you can connect to the internet, read your "
