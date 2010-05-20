@@ -13,7 +13,6 @@
         <SelectedPackage>acpid</SelectedPackage>
         <SelectedPackage>aircrack-ng</SelectedPackage>
         <SelectedPackage>alsa-firmware</SelectedPackage>
-        <SelectedPackage>alsa-headers</SelectedPackage>
         <SelectedPackage>alsa-plugins</SelectedPackage>
         <SelectedPackage>alsa-plugins-pulseaudio</SelectedPackage>
         <SelectedPackage>alsa-utils</SelectedPackage>
@@ -42,7 +41,6 @@
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
         <SelectedPackage>dejavu-fonts</SelectedPackage>
-        <SelectedPackage>digikam</SelectedPackage>
         <SelectedPackage>display-settings</SelectedPackage>
         <SelectedPackage>djview4</SelectedPackage>
         <SelectedPackage>djvu-plugin</SelectedPackage>
@@ -154,8 +152,6 @@
         <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
         <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
         <SelectedPackage>openoffice-extension-presenter-screen</SelectedPackage>
-        <SelectedPackage>openoffice-extension-report-builder</SelectedPackage>
-        <SelectedPackage>openoffice-extension-wiki-publisher</SelectedPackage>
         <SelectedPackage>openoffice-kde</SelectedPackage>
         <SelectedPackage>openoffice-langpack-tr</SelectedPackage>
         <SelectedPackage>p7zip</SelectedPackage>
@@ -466,13 +462,11 @@
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>keyutils</Package>
-        <Package>kipi-plugins</Package>
         <Package>ksplash-pardus-theme</Package>
         <Package>ladspa-sdk</Package>
         <Package>lame</Package>
         <Package>lapack</Package>
         <Package>lcms</Package>
-        <Package>lensfun</Package>
         <Package>less</Package>
         <Package>libFS</Package>
         <Package>libICE</Package>
@@ -565,7 +559,6 @@
         <Package>libksba</Package>
         <Package>liblastfm</Package>
         <Package>liblazy</Package>
-        <Package>liblqr</Package>
         <Package>libmad</Package>
         <Package>libmal</Package>
         <Package>libmatroska</Package>
@@ -768,7 +761,6 @@
         <Package>qimageblitz</Package>
         <Package>qt</Package>
         <Package>qt-sql-mysql</Package>
-        <Package>qt-sql-sqlite</Package>
         <Package>qtscriptgenerator</Package>
         <Package>qzion</Package>
         <Package>raptor</Package>
