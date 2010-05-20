@@ -29,7 +29,7 @@ def getRelease():
 class Widget(QtGui.QWidget, ScreenWidget):
 
     title = ki18n("Welcome")
-    desc = ki18n("Welcome to %s" % getRelease())
+    desc = ki18n("Welcome to %s") % getRelease()
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
