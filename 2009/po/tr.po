@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 12:14+0300\n"
+"POT-Creation-Date: 2010-05-20 15:10+0300\n"
 "PO-Revision-Date: 2009-07-17 01:41+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -213,9 +213,9 @@ msgid ""
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
-"Bu ekranda, kurulum ortamı içerisindeki paketlerin doğruluğunu kontrol edebilirsiniz. Bu "
-"seçimli bir işlem olsa da kurulum sırasında bir sorun ile karşılaşmamanız "
-"için bu doğrulamayı yapmanızı öneririz."
+"Bu ekranda, kurulum ortamı içerisindeki paketlerin doğruluğunu kontrol "
+"edebilirsiniz. Bu seçimli bir işlem olsa da kurulum sırasında bir sorun ile "
+"karşılaşmamanız için bu doğrulamayı yapmanızı öneririz."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
 msgid "Check Packages Integrity"
@@ -1222,14 +1222,14 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
-msgid "Check your medium"
-msgstr "CD Sürücüyü kontrol edin"
+msgid "Check your installation medium"
+msgstr "Kurulum Kaynağınızı kontrol edin"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
 msgid "To ignore medium corruptions you can check your packages integrity..."
-msgstr "CD Sürücü hatalarından kaçınmak için kontrol yapabilirsiniz..."
+msgstr ""
+"Kurulum hatalarından kaçınmak için paketlerin doğruluğunu kontrol "
+"yapabilirsiniz..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1252,7 +1252,8 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:50
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
-msgstr "<font color=\"#FFF\">Paketler kontrol edilirken lütfen bekleyiniz.</font>"
+msgstr ""
+"<font color=\"#FFF\">Paketler kontrol edilirken lütfen bekleyiniz.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1537,7 +1538,7 @@ msgstr ""
 "Otomatik bölümlendirme seçeneği, seçtiğiniz alanda bulunan tüm verileri "
 "otomatik olarak biçimlendirip bu alana Pardus 2009.2'u kuracaktır. Eğer "
 "isterseniz disk bölümlendirmenizi kendiniz yapabilir ya da boş alanda Pardus "
-"2009 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz.<p>Daha "
+"2009.2 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz.<p>Daha "
 "fazla bilgi için Pardus Kurulum ve Kullanım Kılavuzu'na \n"
 "başvurabilirsiniz. \n"
 "</p> \n"
@@ -2020,7 +2021,7 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Hoş Geldiniz !</font>\n"
 "<font size=\"+1\"><p>Kullanımı kolay pek çok yazılım bileşeni içeren Pardus "
-"2009'a hoşgeldiniz. Pardus 2009.2 ile Internet'e bağlanmaktan belgeler "
+"2009.2'e hoşgeldiniz. Pardus 2009.2 ile Internet'e bağlanmaktan belgeler "
 "oluşturmaya, oyun oynamaktan müzik dinlemeye kadar ihtiyacınız olan her şeyi "
 "yapabilirsiniz.</p>\n"
 "<p>Bu program, kullanım kolaylığı ile Pardus 2009.2'u bilgisayarınıza "
@@ -2073,15 +2074,15 @@ msgstr "Yardımı Göster"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Bilgisayarı Kapat"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Bilgisayarı Yeniden Başlat"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "YALI'yı tekrar başlat"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:181

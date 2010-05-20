@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 12:14+0300\n"
+"POT-Creation-Date: 2010-05-20 15:10+0300\n"
 "PO-Revision-Date: 2010-01-15 00:04+0100\n"
 "Last-Translator: Stefan Wilhelm <sw 1976 de {at} google mail dot com>\n"
 "Language-Team: German <de@li.org>\n"
@@ -1295,7 +1295,7 @@ msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:29
 #, fuzzy
-msgid "Check your medium"
+msgid "Check your installation medium"
 msgstr "Überprüfen Sie Ihre Medien"
 
 #: yali4/gui/ScrCheckCD.py:30
@@ -1584,6 +1584,7 @@ msgid "Auto or Manual partitioning..."
 msgstr "Automatische oder manuelle Partitionierung..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
+#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1597,9 +1598,9 @@ msgid ""
 "</p>\n"
 "<p>Auto-partitioning will automatically format the select disk part/"
 "partition \n"
-"and install Pardus 2009.1. If you like, you can do the partitioning manually "
+"and install Pardus 2009.2. If you like, you can do the partitioning manually "
 "or make \n"
-"Pardus 2009.1 create a new partition for installation.</p>\n"
+"Pardus 2009.2 create a new partition for installation.</p>\n"
 "<p>\n"
 "Please refer to Pardus Installing and Using Guide for more information\n"
 "about disk partitioning.\n"
