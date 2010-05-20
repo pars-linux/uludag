@@ -27,6 +27,7 @@ class StateManager(QObject):
     def __init__(self, parent=None):
         QObject.__init__(self)
         self.state = self.INSTALL
+        self.silence = False
         self.iface = backend.pm.Iface()
         self.cached_packages = None
         self._typeFilter = 'normal'

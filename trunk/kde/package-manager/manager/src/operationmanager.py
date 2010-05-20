@@ -68,6 +68,8 @@ class OperationManager(QObject):
         else:
             self.curPkgDownloaded = int(pkgDownSize)
 
+        if self.state.silence:
+           self.totalSize = pkgTotalSize
         completed = humanReadableSize(self.totalDownloaded + self.curPkgDownloaded, ".2")
         total = humanReadableSize(self.totalSize, ".2")
 

@@ -41,7 +41,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setupUi(self)
         self._selectedGroups = []
         self.state = StateManager(self)
-        self.silence = silence
+        self.state.silence = silence
         if not silence:
             self.searchButton.setIcon(KIcon("edit-find"))
             self.statusUpdater = StatusUpdater()
@@ -190,7 +190,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def actionStarted(self, operation):
-        if self.silence:
+        if self.state.silence:
             totalPackages = 1
         else:
             totalPackages = self.packageList.packageCount()
@@ -226,7 +226,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.showSummary()
         if operation in ("System.Manager.installPackage", "System.Manager.removePackage", "System.Manager.updatePackage"):
             self.notifyFinished()
-        if not self.silence:
+        if not self.state.silence:
             self.searchLine.clear()
             self.state.reset()
             self.progressDialog.hide()
