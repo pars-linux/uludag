@@ -23,16 +23,35 @@
    <string notr="true"/>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <property name="horizontalSpacing">
-    <number>0</number>
-   </property>
-   <property name="verticalSpacing">
-    <number>2</number>
-   </property>
    <property name="margin">
     <number>20</number>
    </property>
-   <item row="0" column="0" colspan="3">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QLabel" name="label">
+     <property name="minimumSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="raw.qrc">:/raw/pics/kde.png</pixmap>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
     <widget class="QLabel" name="description">
      <property name="font">
       <font>
@@ -48,6 +67,9 @@
      </property>
      <property name="wordWrap">
       <bool>true</bool>
+     </property>
+     <property name="indent">
+      <number>10</number>
      </property>
     </widget>
    </item>
@@ -67,6 +89,34 @@
      </property>
     </spacer>
    </item>
+   <item row="2" column="0" colspan="2">
+    <widget class="QComboBox" name="menuStyles">
+     <property name="font">
+      <font>
+       <family>Sans Serif</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(95, 34, 52);</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Kick-off Menu</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Simple Menu</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Lancelot Menu</string>
+      </property>
+     </item>
+    </widget>
+   </item>
    <item row="3" column="1">
     <spacer name="verticalSpacer">
      <property name="orientation">
@@ -83,7 +133,7 @@
      </property>
     </spacer>
    </item>
-   <item row="4" column="0" colspan="3">
+   <item row="4" column="0" colspan="2">
     <widget class="QGroupBox" name="groupBox">
      <property name="minimumSize">
       <size>
@@ -201,7 +251,7 @@ border: 1px solid rgb(255, 255, 255);
      </layout>
     </widget>
    </item>
-   <item row="5" column="0" colspan="3">
+   <item row="5" column="0" colspan="2">
     <spacer name="verticalSpacer_5">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -217,36 +267,10 @@ border: 1px solid rgb(255, 255, 255);
      </property>
     </spacer>
    </item>
-   <item row="2" column="0" colspan="3">
-    <widget class="QComboBox" name="menuStyles">
-     <property name="font">
-      <font>
-       <family>Sans Serif</family>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">color: rgb(95, 34, 52);</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>Kick-off Menu</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Simple Menu</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Lancelot Menu</string>
-      </property>
-     </item>
-    </widget>
-   </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="raw.qrc"/>
+ </resources>
  <connections/>
 </ui>
