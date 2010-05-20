@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 15:18+0300\n"
+"POT-Creation-Date: 2010-07-18 16:45+0300\n"
 "PO-Revision-Date: 2010-05-19 21:33+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -417,28 +417,28 @@ msgstr ""
 "Pardus-gemeenschap, email-lijsten, chat-clubs, Wiki-help en pagina's voor "
 "ondersteuning..."
 
-#: .tmp/ui_kaptanMain.py:302
+#: .tmp/ui_kaptanMain.py:303
 #, fuzzy
 msgid "Kaptan"
 msgstr "Gegevens"
 
-#: .tmp/ui_kaptanMain.py:303
+#: .tmp/ui_kaptanMain.py:304
 msgid "Welcome to Pardus 2009.2"
 msgstr "Welkom bij Pardus 2009.2"
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Cancel"
 msgstr "Annuleren"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Back"
 msgstr "Terug"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Next"
 msgstr "Volgende"
 
-#: .tmp/ui_kaptanMain.py:307
+#: .tmp/ui_kaptanMain.py:308
 msgid "Finish"
 msgstr "Voltooien"
 
