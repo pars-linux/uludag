@@ -368,6 +368,9 @@ QPushButton::flat:pressed{
          </item>
          <item row="0" column="4">
           <widget class="QPushButton" name="buttonNext">
+           <property name="layoutDirection">
+            <enum>Qt::RightToLeft</enum>
+           </property>
            <property name="text">
             <string>Next</string>
            </property>
