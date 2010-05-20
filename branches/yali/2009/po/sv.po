@@ -3,18 +3,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Patrik Karlsson <patrik@pardus.nu>, 2008, 2009, 2010.
+# Patrik Karlsson <patrik@trixon.se>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-19 22:40+0300\n"
-"PO-Revision-Date: 2010-01-14 17:27+0100\n"
-"Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
+"PO-Revision-Date: 2010-05-20 07:14+0200\n"
+"Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
@@ -201,20 +202,19 @@ msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr "Lägg automatiskt till andra operativsystem till GRUB-menyn."
 
 #: yali4/gui/Ui/checkcdwidget.py:82
-#, fuzzy
 msgid ""
 "You can check the integrity of the packages in installation media. Although "
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
-"Du kan kontrollera paketens integritet på cd-skivan. Även om det här är ett "
+"Du kan kontrollera paketens integritet på installationsmediat. Även om det "
+"här är ett "
 "frivilligt steg uppmuntras du att göra det för att undvika problem under "
 "installationen."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
-#, fuzzy
 msgid "Check Packages Integrity"
-msgstr "Kontrollera cd-skivans integritet"
+msgstr "Kontrollera paket"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid ""
@@ -318,7 +318,7 @@ msgstr "Detaljer om steget"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -644,7 +644,6 @@ msgid "Debug"
 msgstr "Felsök"
 
 #: yali4/gui/descSlide.py:18
-#, fuzzy
 msgid ""
 "Hello, there. The easiest-ever install tool YALI has begun Pardus "
 "installation. It is now time to relax and learn about some of the features "
@@ -652,23 +651,21 @@ msgid ""
 msgstr ""
 "Hejsan. Det enklaste installationsverktyget någonsin, YALI, har påbörjat "
 "Pardusinstallationen. Det är dags att koppla av och ta del av några nyheter "
-"i Pardus 2009.1 under tiden som installationen pågår."
+"i Pardus 2009.2 under tiden som installationen pågår."
 
 #: yali4/gui/descSlide.py:19
-#, fuzzy
 msgid ""
 "Pardus 2009.2 is a Linux distribution that everybody can easily install and "
 "use. With Pardus 2009.2, you can do anything that you could otherwise do "
 "with other operating systems. With its fast, secure and stable "
 "infrastructure, Pardus opens the path to software libre."
 msgstr ""
-"Pardus 2009.1 är en Linuxdistribution som alla med lätthet kan installera "
-"och använda. Med Pardus 2009.1 kan du göra vad som helst som du kunnat göra "
+"Pardus 2009.2 är en Linuxdistribution som alla med lätthet kan installera "
+"och använda. Med Pardus 2009.2 kan du göra vad som helst som du kunnat göra "
 "med andra operativsystem. Med sin snabba, säkra och stabila infrastruktur "
 "leder Pardus vägen till programvarufrihet."
 
 #: yali4/gui/descSlide.py:20
-#, fuzzy
 msgid ""
 "Pardus 2009.2 comes preinstalled with the open source desktop environment "
 "KDE 4.4. You will have a much better desktop experience compared to what you "
@@ -679,7 +676,7 @@ msgid ""
 "your desktop; even more, you can have a real-time weather report, your notes "
 "and RSS feeds right on your desktop."
 msgstr ""
-"Pardus 2009.1 kommer förinstallerad med den fria skrivbordsmiljön KDE 4.3. "
+"Pardus 2009.2 kommer förinstallerad med den fria skrivbordsmiljön KDE 4.4. "
 "Du får en mycket bättre skrivbordsupplevelse jämfört med vad du sett "
 "hitintills. Under installationen kan du välja att använda den klassiska "
 "skrivbordsvyn som innehåller ikoner till filer och mappar, eller så kan du "
@@ -689,7 +686,6 @@ msgstr ""
 "anteckningar och RSS-flöden direkt på skrivbordet."
 
 #: yali4/gui/descSlide.py:21
-#, fuzzy
 msgid ""
 "With the arrival of KDE 4.4, Konqueror is replaced with a new and very "
 "talented file manager, Dolphin. Dolphin is easy to use, and when it comes to "
@@ -697,25 +693,23 @@ msgid ""
 "functionality like grouping and detailed information right on the spot. "
 "Anything you may need on viewing folders, you have it with Dolphin."
 msgstr ""
-"Med utgivningen av KDE 4.3, är Konqueror ersatt av den nya och talangfulla "
+"Med utgivningen av KDE 4.4, är Konqueror ersatt av den nya och talangfulla "
 "filhanteraren Dolphin. Dolphin är enkel att använda och när det kommer till "
 "att visa kataloger kan du sortera dem på olika sätt, lägga till "
 "funktionalitet som gruppering och detaljerad informationsvisning. Allt du "
 "kan tänkas behöva vid katalogvisning kan Dolphin utföra."
 
 #: yali4/gui/descSlide.py:22
-#, fuzzy
 msgid ""
 "With Pardus 2009.2, Kpdf is replaced with Okular. Okular supports many file "
 "formats and you can view all your files without any additional software, "
 "take notes on bookmarks on them."
 msgstr ""
-"I Pardus 2009.1 är Kpdf ersatt av Okular. Okular har stöd för många format "
+"I Pardus 2009.2 är Kpdf ersatt av Okular. Okular har stöd för många format "
 "och du kan visa alla dina filer utan ytterligare program, skapa anteckningar "
 "och bokmärken."
 
 #: yali4/gui/descSlide.py:23
-#, fuzzy
 msgid ""
 "Pardus includes many genuine technologies aiming for an easier use and "
 "management. TASMA has been replaced with System Manager in Pardus 2009.2, "
@@ -724,7 +718,7 @@ msgid ""
 msgstr ""
 "Pardus innehåller flera genuina teknologier som syftar till att underlätta "
 "användning och hantering. TASMA har blivit ersatt av Systeminställningar i "
-"Pardus 2009.1, men du hittar fortfarande dessa hanteringsverktyg integrerade "
+"Pardus 2009.2, men du hittar fortfarande dessa hanteringsverktyg integrerade "
 "i Systeminställningar."
 
 #: yali4/gui/descSlide.py:24
@@ -772,7 +766,6 @@ msgstr ""
 "skrivbordet."
 
 #: yali4/gui/descSlide.py:27
-#, fuzzy
 msgid ""
 "To connect to a wireless or 'wired' network is as easy as choosing a "
 "connection profile with Pardus 2009.2. With the network manager's advanced "
@@ -780,14 +773,13 @@ msgid ""
 "server) for different connections with the profiles you create. Choosing a "
 "different connection profile requires just two clicks."
 msgstr ""
-"Att ansluta till ett trådlöst eller trådbundet nätverk i Pardus 2009.1 är "
+"Att ansluta till ett trådlöst eller trådbundet nätverk i Pardus 2009.2 är "
 "lika enkelt som att välja en anslutningsprofil. Med Nätverkshanterarens "
 "avancerade alternativ har du olika inställningar (t.ex. statisk IP, olika "
 "DNS-servrar) för olika anslutningar med den profil du skapade. Att välja en "
 "annan anslutning kräver bara två tryckningar."
 
 #: yali4/gui/descSlide.py:28
-#, fuzzy
 msgid ""
 "With Pardus 2009.2, Amarok has not only shed skin, but also changed "
 "internally. It provides much more than listening to music. You now have the "
@@ -797,7 +789,7 @@ msgid ""
 "player devices, you can drag and drop songs to your players without the need "
 "for any external device drivers."
 msgstr ""
-"I Pardus 2009.1 har Amarok inte bara ömsat skinn utan också förändrats på "
+"I Pardus 2009.2 har Amarok inte bara ömsat skinn utan också förändrats på "
 "insidan. Det möjliggör mer än att bara lyssna på musik. Nu har du "
 "möjligheten att läsa texten och läsa om artisten eller kompositören på "
 "Wikipedia under tiden musiken spelas, eller använda den smarta spellistans "
@@ -806,7 +798,6 @@ msgstr ""
 "behöva extra drivrutiner."
 
 #: yali4/gui/descSlide.py:29
-#, fuzzy
 msgid ""
 "Mozilla Firefox is the preferred browser with its speed, security and "
 "flexibility. With its addon support and a *very* rich addon repository, you "
@@ -820,10 +811,9 @@ msgstr ""
 "tillägg kan du lägga till ny funktionalitet till Mozilla Firefox. Du kommer "
 "att hitta många av de mest besökta sidorna tillsammans med Pardusrelaterade "
 "webbplatser i dina bokmärken efter en standardinstallation av Pardus. Njut "
-"av internet snabbt och säkert med den nya Mozilla Firefox 3.5.7."
+"av internet snabbt och säkert med den nya Mozilla Firefox 3.6.3."
 
 #: yali4/gui/descSlide.py:30
-#, fuzzy
 msgid ""
 "Connecting to your friends and contacts is really easy and seamlessly "
 "integrated into the desktop with Pardus 2009.2. Using Kontact, you can send "
@@ -832,7 +822,7 @@ msgid ""
 "MSN and GTalk, and chat online with your friends."
 msgstr ""
 "Ansluta till sina vänner och kontakter är verkligen enkelt och sömlöst "
-"integrerat med skrivbordet i Pardus 2009.1. Med Kontact kan du skicka och ta "
+"integrerat med skrivbordet i Pardus 2009.2. Med Kontact kan du skicka och ta "
 "emot epost, hantera dina möten, skapa adressböcker, föra anteckningar och "
 "följa RSS-flöden. Med Kopete kan du ansluta till populära nätverk som MSN "
 "och GTalk, och chatta med dina vänner."
@@ -875,7 +865,6 @@ msgstr ""
 "ger timmar av nöje med olika typer av spel tillgängliga via Pakethanteraren."
 
 #: yali4/gui/descSlide.py:34
-#, fuzzy
 msgid ""
 "Pardus 2009.2 is set to support most hardware right away. At the end of the "
 "installation, when you start with Pardus, the graphics card and sound "
@@ -885,7 +874,7 @@ msgid ""
 "printer in, and it is set. Pardus will install the correct driver and set "
 "everything accordingly right away."
 msgstr ""
-"Pardus 2009.1 är gjord för att ha stöd för den mesta hårdvaran direkt. I "
+"Pardus 2009.2 är gjord för att ha stöd för den mesta hårdvaran direkt. I "
 "slutet av installationen, när du startar Pardus blir grafik- och ljudkort "
 "automatiskt igenkända, och nätverksenheter blir förberedda för anslutning, "
 "oavsett om det är trådlöst eller inte. Att lägga till en ny skrivare är "
@@ -1240,18 +1229,14 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your medium"
 msgstr "Kontrollera ditt media"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
 msgid "To ignore medium corruptions you can check your packages integrity..."
-msgstr ""
-"Undvik installationsproblem genom att kontrollera cd-skivans integritet..."
+msgstr "Undvik installationsproblem genom att kontrollera paketen..."
 
 #: yali4/gui/ScrCheckCD.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Check Packages Integrity!</font>\n"
@@ -1262,7 +1247,7 @@ msgid ""
 "image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">Kontrollera cd-skivans integritet!</font>\n"
+"<font size=\"+2\">Kontrollera paketen!</font>\n"
 "<font size=\"+1\"><p>\n"
 "Du kan kontrollera att paketen på installationsskivan har skrivits korrekt. "
 "Att utföra detta test är ett mycket viktigt steg till att vara säker på en "
@@ -1270,9 +1255,8 @@ msgstr ""
 "en lägre (12x eller mindre) hastighet.</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
-msgstr "<font color=\"#FFF\">Vänta medans cd kontrolleras.</font>"
+msgstr "<font color=\"#FFF\">Vänta medans paketen kontrolleras.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1813,9 +1797,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Installationen startar om <b>%s sekunder</b>"
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Starthanterarens inställningar"
+msgstr "Starta installationen"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -2102,15 +2085,15 @@ msgstr "Visa hjälp"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Stäng av datorn"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Starta om datorn"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Starta om YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:181
@@ -2141,18 +2124,24 @@ msgid ""
 "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Ditt system kommer nu att <b>stängas av</b>.<br/><br/><b>Det kan orsaka "
+"skada om installationen pågår.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid ""
 "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Ditt system kommer nu att <b>startas om</b>.<br/><br/><b>Det kan orsaka "
+"skada om installationen pågår.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
 "computer if the installation is in progress."
 msgstr ""
+"YALI kommer nu att <b>startas om</b>.<br/><br/><b>Det kan orsaka skada om "
+"installationen pågår.</b>"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"
