@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 14:46+0300\n"
+"POT-Creation-Date: 2010-07-18 15:03+0300\n"
 "PO-Revision-Date: 2010-05-15 13:27+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -413,9 +413,10 @@ msgid "Help and Support"
 msgstr "Aiuto e Supporto"
 
 #: .tmp/ui_goodbyeWidget.py:422
+#, fuzzy
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages..."
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
 msgstr "La comunità di Pardus, mailing list, canali IRC, wiki e molto altro."
 
 #: .tmp/ui_kaptanMain.py:302
