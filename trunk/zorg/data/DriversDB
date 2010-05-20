@@ -1,11 +1,13 @@
 10026880 fglrx
 10026888 fglrx
 10026889 fglrx
+1002688a fglrx
 10026890 fglrx
 10026898 fglrx
 10026899 fglrx
 1002689c fglrx
 1002689d fglrx
+1002689e fglrx
 100268a0 fglrx
 100268a1 fglrx
 100268a8 fglrx
@@ -23,7 +25,19 @@
 100268d1 fglrx
 100268d8 fglrx
 100268d9 fglrx
+100268da fglrx
 100268de fglrx
+100268e0 fglrx
+100268e1 fglrx
+100268e4 fglrx
+100268e5 fglrx
+100268e8 fglrx
+100268e9 fglrx
+100268f0 fglrx
+100268f1 fglrx
+100268f8 fglrx
+100268f9 fglrx
+100268fe fglrx
 10029400 fglrx
 10029401 fglrx
 10029402 fglrx
@@ -50,6 +64,7 @@
 10029456 fglrx
 1002945a fglrx
 1002945b fglrx
+1002945e fglrx
 10029460 fglrx
 10029462 fglrx
 1002946a fglrx
@@ -60,6 +75,7 @@
 10029487 fglrx
 10029488 fglrx
 10029489 fglrx
+1002948a fglrx
 1002948f fglrx
 10029490 fglrx
 10029491 fglrx
@@ -109,6 +125,7 @@
 10029553 fglrx
 10029555 fglrx
 10029557 fglrx
+1002955f fglrx
 10029580 fglrx
 10029581 fglrx
 10029583 fglrx
@@ -154,6 +171,7 @@
 10029712 fglrx
 10029713 fglrx
 10029714 fglrx
+10029715 fglrx
 10de0040 nvidia-current
 10de0041 nvidia-current
 10de0042 nvidia-current
