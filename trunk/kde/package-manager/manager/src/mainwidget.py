@@ -190,13 +190,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.actionButton.setIcon(self.state.getActionIcon())
 
     def actionStarted(self, operation):
-        if self.state.silence:
-            totalPackages = 1
-        else:
-            totalPackages = self.packageList.packageCount()
-        self.operation.setTotalPackages(totalPackages)
+        totalPackages = 1
         self.progressDialog.reset()
-        self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
+        if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
+            totalPackages = self.packageList.packageCount()
+            self.operation.setTotalPackages(totalPackages)
+            self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
             if operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
                 self.progressDialog.repoOperationView()
@@ -239,7 +238,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def actionCancelled(self):
         self.progressDialog.hide()
         self.state.reset()
-        QtGui.qApp.exit()
+        if self.state.silence:
+            QtGui.qApp.exit()
 
     def notifyFinished(self):
         # Since we can not identify the caller yet
