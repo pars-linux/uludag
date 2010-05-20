@@ -74,7 +74,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.connect(self.operation, SIGNAL("finished(QString)"), self.actionFinished)
         self.connect(self.operation, SIGNAL("started(QString)"), self.actionStarted)
         self.connect(self.operation, SIGNAL("started(QString)"), self.progressDialog.updateActionLabel)
-        self.connect(self.operation, SIGNAL("operationCancelled()"), self.progressDialog.hide)
+        self.connect(self.operation, SIGNAL("operationCancelled()"), self.actionCancelled)
         self.connect(self.operation, SIGNAL("progress(int)"), self.progressDialog.updateProgress)
         self.connect(self.operation, SIGNAL("operationChanged(QString,QString)"), self.progressDialog.updateOperation)
         self.connect(self.operation, SIGNAL("packageChanged(int, int, QString)"), self.progressDialog.updateStatus)
@@ -235,6 +235,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.initialize()
         else:
             QtGui.qApp.exit()
+
+    def actionCancelled(self):
+        self.progressDialog.hide()
+        self.state.reset()
+        QtGui.qApp.exit()
 
     def notifyFinished(self):
         # Since we can not identify the caller yet
