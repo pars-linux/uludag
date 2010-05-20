@@ -193,7 +193,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         totalPackages = 1
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
-            totalPackages = self.packageList.packageCount()
+            if not self.state.silence:
+                totalPackages = self.packageList.packageCount()
             self.operation.setTotalPackages(totalPackages)
             self.progressDialog.updateStatus(0, totalPackages, self.state.toBe())
         if self.isVisible():
