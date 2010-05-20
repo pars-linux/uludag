@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="raw">
+    <file>pics/bg2.png</file>
     <file>pics/basket.png</file>
     <file>pics/kde.png</file>
     <file>pics/nepomuk.png</file>
