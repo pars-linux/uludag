@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-07-18 16:45+0300\n"
-"PO-Revision-Date: 2010-05-19 21:33+0200\n"
+"PO-Revision-Date: 2010-05-20 17:35+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -339,11 +339,12 @@ msgstr "Verstuur mijn profiel: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:123
 msgid "Error"
-msgstr ""
+msgstr "Fout"
 
 #: .tmp/ScrSummary.py:123
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
 msgstr ""
+"Kan het Plasma-bureaublad niet herstarten. Kaptan zal nu afgesloten worden."
 
 #: .tmp/ScrWallpaper.py:34 .tmp/ui_wallpaperWidget.py:126
 msgid "Wallpaper"
@@ -358,9 +359,9 @@ msgid "Welcome"
 msgstr "Welkom"
 
 #: .tmp/ScrWelcome.py:32
-#, fuzzy, python-format
+#, python-format
 msgid "Welcome to %s"
-msgstr "Welkom"
+msgstr "Welkom bij %s"
 
 #: .tmp/ui_goodbyeWidget.py:411
 msgid ""
@@ -409,18 +410,17 @@ msgid "Help and Support"
 msgstr "Help en ondersteuning"
 
 #: .tmp/ui_goodbyeWidget.py:422
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, Wiki documents, help and "
 "support pages..."
 msgstr ""
-"Pardus-gemeenschap, email-lijsten, chat-clubs, Wiki-help en pagina's voor "
+"Pardus-gemeenschap, email-lijsten, chat-clubs, Wiki-documenten en pagina's "
+"voor "
 "ondersteuning..."
 
 #: .tmp/ui_kaptanMain.py:303
-#, fuzzy
 msgid "Kaptan"
-msgstr "Gegevens"
+msgstr "Kaptan"
 
 #: .tmp/ui_kaptanMain.py:304
 msgid "Welcome to Pardus 2009.2"
@@ -595,7 +595,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:112
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -664,7 +663,8 @@ msgstr ""
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "size:9pt;\">   De informatie die naar de smoltserver verstuurd wordt is "
-"openbaar en kan door iedereen ingezien worden. Het zal hoofdzakelijk door "
+"openbaar en kan door iedereen ingezien worden. De informatie zal "
+"hoofdzakelijk door "
 "hardware fabrikanten en andere gebruikt worden. En kan ook gebruikt worden "
 "om een betere ondersteuning van open-source stuurprogramma's en betere "
 "ondersteuning in het algemeen te verkrijgen.</span></p>\n"
@@ -681,9 +681,10 @@ msgstr ""
 "size:9pt;\">   Indien U niet eens bent met dit beleid, gebruik smolt dan "
 "niet.  Voor vragen over dit beleid kunt u contact opnemen met het Pardus "
 "Infrastructure Team op admin [at] pardus.org.tr  Denk er ook aan dat het "
-"verwijderen van het profiel op ieder moment kan door het starten van \"</"
+"verwijderen van het profiel op ieder moment kan door het starten van "
+"\"&quot;</"
 "span><span style=\" font-size:9pt; font-style:italic;\">smoltDeleteProfile</"
-"span><span style=\" font-size:9pt;\">\"</span></p></body></html>"
+"span><span style=\" font-size:9pt;\">&quot;</span></p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "color: rgb(234, 225, 228);"
