@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-15 09:43+0300\n"
+"POT-Creation-Date: 2010-07-18 14:46+0300\n"
 "PO-Revision-Date: 2010-05-15 13:27+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:368
+#: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:410
 msgid "More"
 msgstr ""
 
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Congratulations!"
 msgstr "Congratulazioni!"
 
-#: .tmp/ScrKeyboard.py:32 .tmp/ui_keyboardWidget.py:79
+#: .tmp/ScrKeyboard.py:32 .tmp/ui_keyboardWidget.py:87
 msgid "Keyboard"
 msgstr "Tastiera"
 
@@ -34,7 +34,7 @@ msgstr "Tastiera"
 msgid "Keyboard Layout Language"
 msgstr "Tipo di tastiera"
 
-#: .tmp/ScrMenu.py:26 .tmp/ui_menuWidget.py:111
+#: .tmp/ScrMenu.py:26 .tmp/ui_menuWidget.py:118
 msgid "Menu"
 msgstr "Menu"
 
@@ -42,7 +42,7 @@ msgstr "Menu"
 msgid "Choose a Menu Style"
 msgstr "Scegli un tipo di menù"
 
-#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:114
+#: .tmp/ScrMenu.py:41 .tmp/ui_menuWidget.py:120
 msgid "Kick-off Menu"
 msgstr "Menù Kick-off"
 
@@ -54,7 +54,7 @@ msgstr ""
 "Il menu Kick-off è il menù predefinito di Pardus.<br><br>I collegamenti dei "
 "programmi sono ben organizzati."
 
-#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:115
+#: .tmp/ScrMenu.py:47 .tmp/ui_menuWidget.py:121
 msgid "Simple Menu"
 msgstr "Menù Semplice"
 
@@ -66,7 +66,7 @@ msgstr ""
 "Il menù semplice è il vecchio menù di KDE 3.<br><br>È molto leggero, quindi "
 "il menù ideale per i computer più lenti."
 
-#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:116
+#: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:122
 msgid "Lancelot Menu"
 msgstr "Menù Lancelot"
 
@@ -79,7 +79,7 @@ msgstr ""
 "<br><br>I collegamenti dei programmi sono ben organizzati e facilmente "
 "accessibili."
 
-#: .tmp/ScrMouse.py:29 .tmp/ui_mouseWidget.py:171
+#: .tmp/ScrMouse.py:29 .tmp/ui_mouseWidget.py:197
 msgid "Mouse"
 msgstr "Mouse"
 
@@ -103,7 +103,7 @@ msgstr "Click singolo"
 msgid "Double Click"
 msgstr "Doppio click"
 
-#: .tmp/ScrNetwork.py:23 .tmp/ui_networkWidget.py:94
+#: .tmp/ScrNetwork.py:23 .tmp/ui_networkWidget.py:105
 msgid "Network"
 msgstr "Rete"
 
@@ -111,7 +111,7 @@ msgstr "Rete"
 msgid "Connect to the Internet"
 msgstr "Connessione Internet"
 
-#: .tmp/ScrPackage.py:29 .tmp/ui_packageWidget.py:175
+#: .tmp/ScrPackage.py:29 .tmp/ui_packageWidget.py:185
 msgid "Packages"
 msgstr "Pacchetti"
 
@@ -119,7 +119,7 @@ msgstr "Pacchetti"
 msgid "Install / Remove Programs"
 msgstr "Aggiungi e rimuovi programmi"
 
-#: .tmp/ScrSearch.py:27 .tmp/ui_searchWidget.py:52
+#: .tmp/ScrSearch.py:27 .tmp/ui_searchWidget.py:58
 msgid "Search"
 msgstr "Ricerca"
 
@@ -135,7 +135,7 @@ msgstr "On"
 msgid "Off"
 msgstr "Off"
 
-#: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:100
+#: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:109
 msgid "Smolt"
 msgstr "Smolt"
 
@@ -155,7 +155,7 @@ msgstr "Dati"
 msgid "&Back"
 msgstr "&Indietro"
 
-#: .tmp/ScrSmolt.py:112 .tmp/ui_smoltWidget.py:104
+#: .tmp/ScrSmolt.py:112 .tmp/ui_smoltWidget.py:124
 msgid "&Privacy policy"
 msgstr "Informazioni sulla &privacy"
 
@@ -257,7 +257,7 @@ msgstr "Si"
 msgid "No"
 msgstr "No"
 
-#: .tmp/ScrStyle.py:34 .tmp/ui_styleWidget.py:154
+#: .tmp/ScrStyle.py:34 .tmp/ui_styleWidget.py:163
 msgid "Themes"
 msgstr "Temi"
 
@@ -265,82 +265,90 @@ msgstr "Temi"
 msgid "Customize Your Desktop"
 msgstr "Personalizza il tuo Desktop"
 
-#: .tmp/ScrSummary.py:39 .tmp/ui_summaryWidget.py:71
+#: .tmp/ScrSummary.py:34 .tmp/ui_summaryWidget.py:79
 msgid "Summary"
 msgstr "Riepilogo"
 
-#: .tmp/ScrSummary.py:40
+#: .tmp/ScrSummary.py:35
 msgid "Save Your Settings"
 msgstr "Salva personalizzazioni"
 
-#: .tmp/ScrSummary.py:63
+#: .tmp/ScrSummary.py:58
 msgid "Mouse Settings"
 msgstr "Impostazioni Mouse"
 
-#: .tmp/ScrSummary.py:65
+#: .tmp/ScrSummary.py:60
 #, python-format
 msgid "Selected Mouse configuration: <b>%s</b>"
 msgstr "Configurazione mouse selezionata: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:66
+#: .tmp/ScrSummary.py:61
 #, python-format
 msgid "Selected clicking behaviour: <b>%s</b>"
 msgstr "Comportamento del mouse selezionato: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:70
+#: .tmp/ScrSummary.py:65
 msgid "Menu Settings"
 msgstr "Impostazioni Menu"
 
-#: .tmp/ScrSummary.py:71
+#: .tmp/ScrSummary.py:66
 #, python-format
 msgid "Selected Menu: <b>%s</b>"
 msgstr "Menu selezionato: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:75
+#: .tmp/ScrSummary.py:70
 msgid "Wallpaper Settings"
 msgstr "Impostazioni sfondo"
 
-#: .tmp/ScrSummary.py:77
+#: .tmp/ScrSummary.py:72
 msgid "You haven't selected any wallpaper."
 msgstr "Non hai selezionato nessuno sfondo."
 
-#: .tmp/ScrSummary.py:79
+#: .tmp/ScrSummary.py:74
 #, python-format
 msgid "Selected Wallpaper: <b>%s</b>"
 msgstr "Sfondo selezionato: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:83
+#: .tmp/ScrSummary.py:78
 msgid "Style Settings"
 msgstr "Impostazioni stile"
 
-#: .tmp/ScrSummary.py:86
+#: .tmp/ScrSummary.py:81
 msgid "You haven't selected any style."
 msgstr "Non hai selezionato nessuno stile."
 
-#: .tmp/ScrSummary.py:88
+#: .tmp/ScrSummary.py:83
 #, python-format
 msgid "Selected Style: <b>%s</b>"
 msgstr "Stile selezionato: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:95
+#: .tmp/ScrSummary.py:90
 msgid "Search Settings"
 msgstr "Preferenze di ricerca"
 
-#: .tmp/ScrSummary.py:96
+#: .tmp/ScrSummary.py:91
 #, python-format
 msgid "Desktop search: <b>%s</b>"
 msgstr "Ricerca files: <b>%s</b>"
 
-#: .tmp/ScrSummary.py:102
+#: .tmp/ScrSummary.py:97
 msgid "Smolt Settings"
 msgstr "Impostazioni smolt"
 
-#: .tmp/ScrSummary.py:103
+#: .tmp/ScrSummary.py:98
 #, python-format
 msgid "Send my profile: <b>%s</b>"
 msgstr "Invia il mio profilo: <b>%s</b>"
 
-#: .tmp/ScrWallpaper.py:34 .tmp/ui_wallpaperWidget.py:117
+#: .tmp/ScrSummary.py:123
+msgid "Error"
+msgstr ""
+
+#: .tmp/ScrSummary.py:123
+msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
+msgstr ""
+
+#: .tmp/ScrWallpaper.py:34 .tmp/ui_wallpaperWidget.py:126
 msgid "Wallpaper"
 msgstr "Sfondo"
 
@@ -348,15 +356,16 @@ msgstr "Sfondo"
 msgid "Choose a Wallpaper"
 msgstr "Scegli sfondo"
 
-#: .tmp/ScrWelcome.py:24 .tmp/ui_welcomeWidget.py:50
+#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:50
 msgid "Welcome"
 msgstr "Benvenuto"
 
-#: .tmp/ScrWelcome.py:25 .tmp/ui_kaptanMain.py:302
-msgid "Welcome to Pardus 2009.2"
-msgstr "Benvenuto in Pardus 2009.2"
+#: .tmp/ScrWelcome.py:32
+#, fuzzy, python-format
+msgid "Welcome to %s"
+msgstr "Benvenuto"
 
-#: .tmp/ui_goodbyeWidget.py:369
+#: .tmp/ui_goodbyeWidget.py:411
 msgid ""
 "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or "
 "you can checkout the following links and applications for more settings or "
@@ -367,19 +376,19 @@ msgstr ""
 "personalizzazioni e supporto. Non dimenticare di <b>unirti alla nostra "
 "community!</b>"
 
-#: .tmp/ui_goodbyeWidget.py:370 .tmp/ui_goodbyeWidget.py:371
+#: .tmp/ui_goodbyeWidget.py:412 .tmp/ui_goodbyeWidget.py:413
 msgid "My Smolt Page"
 msgstr "La mia pagina Smolt"
 
-#: .tmp/ui_goodbyeWidget.py:372
+#: .tmp/ui_goodbyeWidget.py:414
 msgid "Go to your Smolt page and rate your hardware components."
 msgstr "Visita la tua pagina Smolt"
 
-#: .tmp/ui_goodbyeWidget.py:373 .tmp/ui_goodbyeWidget.py:375
+#: .tmp/ui_goodbyeWidget.py:415 .tmp/ui_goodbyeWidget.py:417
 msgid "Migration Wizard"
 msgstr "Wizard Migrazione"
 
-#: .tmp/ui_goodbyeWidget.py:374
+#: .tmp/ui_goodbyeWidget.py:416
 msgid ""
 "A wizard to transfer files and settings from existing operating systems (e."
 "g. Windows) to Pardus."
@@ -387,11 +396,11 @@ msgstr ""
 "Un wizard per trasferire file ed impostazioni da sistemi operativi esistenti "
 "(ad esempio Windows) a Pardus."
 
-#: .tmp/ui_goodbyeWidget.py:376 .tmp/ui_goodbyeWidget.py:378
+#: .tmp/ui_goodbyeWidget.py:418 .tmp/ui_goodbyeWidget.py:420
 msgid "System Settings"
 msgstr "Impostazioni di Sistema"
 
-#: .tmp/ui_goodbyeWidget.py:377
+#: .tmp/ui_goodbyeWidget.py:419
 msgid ""
 "Configuration tools for Pardus such as the display, firewall, keyboard, user "
 "manager..."
@@ -399,41 +408,42 @@ msgstr ""
 "Strumenti di configurazione per Pardus per il monitor, firewall, tastiera, "
 "gestione utenti e molto altro..."
 
-#: .tmp/ui_goodbyeWidget.py:379 .tmp/ui_goodbyeWidget.py:381
+#: .tmp/ui_goodbyeWidget.py:421 .tmp/ui_goodbyeWidget.py:423
 msgid "Help and Support"
 msgstr "Aiuto e Supporto"
 
-#: .tmp/ui_goodbyeWidget.py:380
+#: .tmp/ui_goodbyeWidget.py:422
 msgid ""
 "Pardus community, mailing lists, chat rooms, wiki's, help and support "
 "pages..."
 msgstr "La comunità di Pardus, mailing list, canali IRC, wiki e molto altro."
 
-#: .tmp/ui_kaptanMain.py:301
-msgid "Kaptan Desktop"
-msgstr "Kaptan Desktop"
+#: .tmp/ui_kaptanMain.py:302
+#, fuzzy
+msgid "Kaptan"
+msgstr "Dati"
 
 #: .tmp/ui_kaptanMain.py:303
+msgid "Welcome to Pardus 2009.2"
+msgstr "Benvenuto in Pardus 2009.2"
+
+#: .tmp/ui_kaptanMain.py:304
 msgid "Cancel"
 msgstr "Annulla"
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Back"
 msgstr "Indietro"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Next"
 msgstr "Avanti"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Finish"
 msgstr "Fine"
 
-#: .tmp/ui_keyboardWidget.py:80
-msgid "Test Layout"
-msgstr "Prova il tipo di tastiera"
-
-#: .tmp/ui_keyboardWidget.py:81
+#: .tmp/ui_keyboardWidget.py:88
 msgid ""
 "Kaptan automatically selects the best keyboard layout according to your "
 "system language. If you want to use another layout other than the default "
@@ -442,7 +452,11 @@ msgstr ""
 "Kaptan seleziona automaticamente la tastiera in base alla lingua. Se vuoi "
 "usare un'altro tipo di tastiera, selezionane uno qui e provalo."
 
-#: .tmp/ui_menuWidget.py:112
+#: .tmp/ui_keyboardWidget.py:89
+msgid "Test Layout"
+msgstr "Prova il tipo di tastiera"
+
+#: .tmp/ui_menuWidget.py:119
 msgid ""
 "You can also customize your <b>KDE menu</b> as you like. Please choose one "
 "from the following styles."
@@ -450,39 +464,11 @@ msgstr ""
 "Puoi anche personalizzare il menù di KDE come preferisci. Per favore, scegli "
 "uno stile qui."
 
-#: .tmp/ui_menuWidget.py:113
+#: .tmp/ui_menuWidget.py:123
 msgid "Sample"
 msgstr "Esempio"
 
-#: .tmp/ui_mouseWidget.py:172
-msgid "Clicking Behaviour"
-msgstr "Comportamento mouse"
-
-#: .tmp/ui_mouseWidget.py:173
-msgid "Single-click to open files and folders"
-msgstr "Click singolo per aprire file e cartelle"
-
-#: .tmp/ui_mouseWidget.py:174
-msgid "Dou&ble-click to open files and folders"
-msgstr "Do&ppio click per aprire files e cartelle"
-
-#: .tmp/ui_mouseWidget.py:175
-msgid "Button Order"
-msgstr "Ordine pulsanti"
-
-#: .tmp/ui_mouseWidget.py:176
-msgid "Right Hand"
-msgstr "Mano destra"
-
-#: .tmp/ui_mouseWidget.py:177
-msgid "Left Hand"
-msgstr "Mano sinistra"
-
-#: .tmp/ui_mouseWidget.py:178
-msgid "Reverse scrolling"
-msgstr "Scrolling inverso"
-
-#: .tmp/ui_mouseWidget.py:179
+#: .tmp/ui_mouseWidget.py:198
 msgid ""
 "The <b>clicking behavior</b> defines how many times you want to click when "
 "you are opening a file. If you are <b>left handed</b>, you may prefer to "
@@ -492,7 +478,35 @@ msgstr ""
 "aprire un file. Se sei <b>mancino</b>, potresti preferire invertire i "
 "pulsanti del tuo mouse."
 
-#: .tmp/ui_networkWidget.py:95
+#: .tmp/ui_mouseWidget.py:199
+msgid "Clicking Behaviour"
+msgstr "Comportamento mouse"
+
+#: .tmp/ui_mouseWidget.py:200
+msgid "Single-click to open files and folders"
+msgstr "Click singolo per aprire file e cartelle"
+
+#: .tmp/ui_mouseWidget.py:201
+msgid "Dou&ble-click to open files and folders"
+msgstr "Do&ppio click per aprire files e cartelle"
+
+#: .tmp/ui_mouseWidget.py:202
+msgid "Button Order"
+msgstr "Ordine pulsanti"
+
+#: .tmp/ui_mouseWidget.py:203
+msgid "Right Hand"
+msgstr "Mano destra"
+
+#: .tmp/ui_mouseWidget.py:204
+msgid "Left Hand"
+msgstr "Mano sinistra"
+
+#: .tmp/ui_mouseWidget.py:205
+msgid "Reverse scrolling"
+msgstr "Scrolling inverso"
+
+#: .tmp/ui_networkWidget.py:106
 msgid ""
 "To create a new connection click on <b>Create Profile</b> and select your "
 "adapter from the list. If your connection is wireless then choose and access "
@@ -504,35 +518,35 @@ msgstr ""
 "point. Dopo aver salvato il tuo profilo metti la spunta per stabilire la "
 "connessione."
 
-#: .tmp/ui_networkWidget.py:96
+#: .tmp/ui_networkWidget.py:107
 msgid "Network Manager (Press Apply to save your settings)"
 msgstr ""
 
-#: .tmp/ui_packageWidget.py:176
+#: .tmp/ui_packageWidget.py:186
 msgid "Show updates in the system tray"
 msgstr "Mostra nel vassoio di sistema"
 
-#: .tmp/ui_packageWidget.py:177
+#: .tmp/ui_packageWidget.py:187
 msgid "Check updates automatically every"
 msgstr "Controlla nuovi aggiornamenti ogni:"
 
-#: .tmp/ui_packageWidget.py:178
+#: .tmp/ui_packageWidget.py:188
 msgid "color: #642437;"
 msgstr "color: #642437;"
 
-#: .tmp/ui_packageWidget.py:179
+#: .tmp/ui_packageWidget.py:189
 msgid " hours"
 msgstr "ore"
 
-#: .tmp/ui_packageWidget.py:180
+#: .tmp/ui_packageWidget.py:190
 msgid "Contrib repository includes extra and handy programs."
 msgstr "Il repository contrib include pacchetti extra."
 
-#: .tmp/ui_packageWidget.py:181
+#: .tmp/ui_packageWidget.py:191
 msgid "Add contrib repository"
 msgstr "Aggiungi repository contrib"
 
-#: .tmp/ui_packageWidget.py:182
+#: .tmp/ui_packageWidget.py:192
 msgid ""
 "To install and remove programs to Pardus, use Package-Manager. Package-"
 "Manager also can automatically install the latest updates available. You can "
@@ -542,15 +556,15 @@ msgstr ""
 "inoltre installare gli ultimi aggiornamenti disponibili. Qui puoi impostare "
 "ogni quanto tempo il Gestore Pacchetti controllerà gli aggiornamenti."
 
-#: .tmp/ui_packageWidget.py:183
+#: .tmp/ui_packageWidget.py:193
 msgid "Updates"
 msgstr "Aggiornamenti"
 
-#: .tmp/ui_packageWidget.py:184
+#: .tmp/ui_packageWidget.py:194
 msgid "Repositories"
 msgstr "Repository"
 
-#: .tmp/ui_searchWidget.py:53
+#: .tmp/ui_searchWidget.py:59
 msgid ""
 "Strigi Desktop Search indexes your frequently used files. This gives you "
 "very fast file search results. Strigi also can search for files based on "
@@ -560,27 +574,25 @@ msgstr ""
 "ricerche dei file. Strigi è inoltre in grado di cercare file in grado di "
 "cercare dei file in base al loro tipo."
 
-#: .tmp/ui_searchWidget.py:54
+#: .tmp/ui_searchWidget.py:60
 msgid "Allow Strigi to index my files"
 msgstr "Permetti a Strigi di indicizzare i miei files."
 
-#: .tmp/ui_smoltWidget.py:101
-msgid "color: rgb(234, 225, 228);"
-msgstr "colore: rgb(234, 225, 228);"
+#: .tmp/ui_smoltWidget.py:110
+msgid ""
+"<b>Smolt</b> is a tool that collects the information in the following table "
+"and sends it to us for which lets us improve Pardus according to the user "
+"profile statistics."
+msgstr ""
+"<b>Smolt</b> è uno strumento che raccoglie le informazioni contenute nella "
+"seguente tabella e le invia agli sviluppatori di Pardus, per migliorarlo in "
+"basa alle statistiche."
 
-#: .tmp/ui_smoltWidget.py:102
-msgid "&Send my profile"
-msgstr "I&nvia il mio profilo"
-
-#: .tmp/ui_smoltWidget.py:103
-msgid "color:rgb(95, 34, 52)"
-msgstr "color:rgb(95, 34, 52)"
-
-#: .tmp/ui_smoltWidget.py:105
+#: .tmp/ui_smoltWidget.py:111
 msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
-#: .tmp/ui_smoltWidget.py:106
+#: .tmp/ui_smoltWidget.py:112
 #, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
@@ -588,41 +600,45 @@ msgid ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Smolt will only send "
-"hardware and basic operating system information to the Pardus smolt server "
-"(smoon).  The only tie from the database to a submitters machine is the "
-"UUID.  As long as the submitter does not give out this UUID the submission "
-"is anonymous.  If at any point in time a user wants to delete their profile "
-"from the database they need only run</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Smolt will only send hardware and basic operating system "
+"information to the Pardus smolt server (smoon).  The only tie from the "
+"database to a submitters machine is the UUID.  As long as the submitter does "
+"not give out this UUID the submission is anonymous.  If at any point in time "
+"a user wants to delete their profile from the database they need only run</"
+"span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
-"style:italic;\">smoltDeleteProfile</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   The information sent to "
-"the smolt database server should be considered public in that anyone can "
-"view the statistics, data and share machine profiles.  In  many ways smolt "
-"is designed to get hardware vendors and other 3rd parties attention.  As "
-"such, not only will this information be shared with 3rd parties, we will be "
-"using smolt as leverage to gain better support for open source drivers and "
-"better support in general.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   The information sent to the smolt database server should be "
+"considered public in that anyone can view the statistics, data and share "
+"machine profiles.  In  many ways smolt is designed to get hardware vendors "
+"and other 3rd parties attention.  As such, not only will this information be "
+"shared with 3rd parties, we will be using smolt as leverage to gain better "
+"support for open source drivers and better support in general.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span>  In Pardus's smolt install all "
-"web traffic goes through a proxy server first.  This is the only place IP "
-"addresses are being logged and they are kept on that server for a period of "
-"4 weeks at which time log rotation removes these logs.  The Pardus Project "
-"does not aggregate ip addresses in the smolt database.  These logs are "
-"private and will not be available to the general public.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" "
+"font-size:9pt;\">  In Pardus's smolt install all web traffic goes through a "
+"proxy server first.  This is the only place IP addresses are being logged "
+"and they are kept on that server for a period of 4 weeks at which time log "
+"rotation removes these logs.  The Pardus Project does not aggregate ip "
+"addresses in the smolt database.  These logs are private and will not be "
+"available to the general public.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this "
-"policy should simply not use smolt.  Users with questions about this policy "
-"should contact the Pardus Infrastructure Team at admin [at] pardus.org.tr  "
-"Also remember that users can delete their profiles at any time using &quot;"
-"<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Users unhappy with this policy should simply not use smolt.  "
+"Users with questions about this policy should contact the Pardus "
+"Infrastructure Team at admin [at] pardus.org.tr  Also remember that users "
+"can delete their profiles at any time using &quot;</span><span style=\" font-"
+"size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-"
+"size:9pt;\">&quot;</span></p></body></html>"
 msgstr ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -669,15 +685,17 @@ msgstr ""
 "size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-"
 "size:9pt;\">\"</span></p></body></html>"
 
-#: .tmp/ui_smoltWidget.py:115
-msgid ""
-"<b>Smolt</b> is a tool that collects the information in the following table "
-"and sends it to us for which lets us improve Pardus according to the user "
-"profile statistics."
-msgstr ""
-"<b>Smolt</b> è uno strumento che raccoglie le informazioni contenute nella "
-"seguente tabella e le invia agli sviluppatori di Pardus, per migliorarlo in "
-"basa alle statistiche."
+#: .tmp/ui_smoltWidget.py:121
+msgid "color: rgb(234, 225, 228);"
+msgstr "colore: rgb(234, 225, 228);"
+
+#: .tmp/ui_smoltWidget.py:122
+msgid "&Send my profile"
+msgstr "I&nvia il mio profilo"
+
+#: .tmp/ui_smoltWidget.py:123
+msgid "color:rgb(95, 34, 52)"
+msgstr "color:rgb(95, 34, 52)"
 
 #: .tmp/ui_styleitem.py:65 .tmp/ui_uiitem.py:68 .tmp/ui_wallpaperuiitem.py:48
 msgid "Form"
@@ -691,32 +709,7 @@ msgstr ""
 msgid "styleDesc"
 msgstr ""
 
-#: .tmp/ui_styleWidget.py:155
-#, fuzzy
-msgid "KDE Themes"
-msgstr "Temi"
-
-#: .tmp/ui_styleWidget.py:156
-msgid "Desktop Type"
-msgstr "Tipo di desktop"
-
-#: .tmp/ui_styleWidget.py:157
-msgid "Desktop view (KDE4 Style)"
-msgstr "Vista Scrivania (Stile KDE4)"
-
-#: .tmp/ui_styleWidget.py:158
-msgid "Folder view (KDE3 Style)"
-msgstr "Vista cartelle (Stile KDE3)"
-
-#: .tmp/ui_styleWidget.py:159
-msgid "Number of Desktops"
-msgstr "Numero di Desktop:"
-
-#: .tmp/ui_styleWidget.py:160
-msgid "color: rgb(100, 36, 55);"
-msgstr "color: rgb(100, 36, 55);"
-
-#: .tmp/ui_styleWidget.py:161
+#: .tmp/ui_styleWidget.py:164
 msgid ""
 "Choose your favorite theme and desktop type. Customize Pardus with colorful "
 "styles and themes."
@@ -724,7 +717,32 @@ msgstr ""
 "Sceglio il tipo di Desktop e il tema che preferito. Personalizza Pardus con "
 "stili e temi colorati!"
 
-#: .tmp/ui_summaryWidget.py:72
+#: .tmp/ui_styleWidget.py:165
+#, fuzzy
+msgid "KDE Themes"
+msgstr "Temi"
+
+#: .tmp/ui_styleWidget.py:166
+msgid "Desktop Type"
+msgstr "Tipo di desktop"
+
+#: .tmp/ui_styleWidget.py:167
+msgid "Desktop view (KDE4 Style)"
+msgstr "Vista Scrivania (Stile KDE4)"
+
+#: .tmp/ui_styleWidget.py:168
+msgid "Folder view (KDE3 Style)"
+msgstr "Vista cartelle (Stile KDE3)"
+
+#: .tmp/ui_styleWidget.py:169
+msgid "Number of Desktops"
+msgstr "Numero di Desktop:"
+
+#: .tmp/ui_styleWidget.py:170
+msgid "color: rgb(100, 36, 55);"
+msgstr "color: rgb(100, 36, 55);"
+
+#: .tmp/ui_summaryWidget.py:80
 msgid ""
 "You have successfully finished all steps. Here's a summary of the settings "
 "you want to apply. Click <b>Apply Settings</b> to save them now. You are now "
@@ -733,7 +751,7 @@ msgstr ""
 "Hai completato tutti i passi. Ecco un riassunto dei cambiamenti. Clicca su "
 "<b>Applica Impostazioni</b> per salvarli. Divertiti con Pardus!"
 
-#: .tmp/ui_summaryWidget.py:73
+#: .tmp/ui_summaryWidget.py:81
 msgid "The following settings will be applied"
 msgstr ""
 
@@ -745,26 +763,26 @@ msgstr ""
 msgid "wallpaperDesc"
 msgstr ""
 
-#: .tmp/ui_wallpaperWidget.py:118
-#, fuzzy
-msgid "Wallpapers"
-msgstr "Sfondo"
-
-#: .tmp/ui_wallpaperWidget.py:120
-msgid "Choose wallpaper from file"
-msgstr "Scegli sfondo da un file"
-
-#: .tmp/ui_wallpaperWidget.py:121
-msgid "Don't change wallpaper"
-msgstr "Non cambiare lo sfondo"
-
-#: .tmp/ui_wallpaperWidget.py:122
+#: .tmp/ui_wallpaperWidget.py:127
 msgid ""
 "Choose your favorite wallpaper for Pardus. Don't forget to check out "
 "<b>Desktop Settings</b> for downloading new and cool wallpapers."
 msgstr ""
 "Scegli lo sfondo che preferisci. Non dimenticare di controllare "
 "<b>Impostazioni Desktop</b> per scaricare nuovi sfondi."
+
+#: .tmp/ui_wallpaperWidget.py:128
+#, fuzzy
+msgid "Wallpapers"
+msgstr "Sfondo"
+
+#: .tmp/ui_wallpaperWidget.py:130
+msgid "Choose wallpaper from file"
+msgstr "Scegli sfondo da un file"
+
+#: .tmp/ui_wallpaperWidget.py:131
+msgid "Don't change wallpaper"
+msgstr "Non cambiare lo sfondo"
 
 #: .tmp/ui_welcomeWidget.py:51
 msgid ""
@@ -780,6 +798,9 @@ msgstr ""
 "contenuti multimediali, sviluppare apllicazioni, giocare e molto altro! <br /"
 "> <br /><br /><b>Kaptan</b> ti aiuterà a personalizzare Pardus semplicemente "
 "e con velocità. Fai click su Avanti per cominciare."
+
+#~ msgid "Kaptan Desktop"
+#~ msgstr "Kaptan Desktop"
 
 #, fuzzy
 #~ msgid "Welcome to Kaptan 2009.2"
