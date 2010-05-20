@@ -93,8 +93,14 @@ class OperationManager(QObject):
     def addDesktopFile(self, desktopFile):
         if not self.state.inInstall():
             return
-        if desktopFile.startswith("usr/share/applications/") or desktopFile.startswith("usr/kde/4/share/applications/kde4/"):
-            self.desktopFiles.append(desktopFile)
+
+        places = ('usr/share/applications/', 
+                  'usr/kde/4/share/applications/kde4/',
+                  'usr/kde/3.5/share/applications/kde/')
+
+        for place in places:
+            if desktopFile.startswith(place):
+                self.desktopFiles.append(desktopFile)
 
     def exceptionHandler(self, exception):
         self.emit(SIGNAL("exception(QString)"), str(exception))
