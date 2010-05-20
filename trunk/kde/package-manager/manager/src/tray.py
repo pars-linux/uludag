@@ -92,8 +92,7 @@ class PTray:
             QTimer.singleShot(1, self.updateTrayUnread)
         else:
             self.hide()
-        if self.appWindow.app:
-            self.appWindow.app.setQuitOnLastWindowClosed(not cfg.systemTray())
+        QtGui.qApp.setQuitOnLastWindowClosed(not cfg.systemTray())
         self.updateInterval(cfg.updateCheckInterval())
 
     def updateTrayUnread(self):
