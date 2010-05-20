@@ -10,7 +10,6 @@
     <file>pics/applications-internet.png</file>
     <file>pics/preferences-desktop-peripherals.png</file>
     <file>pics/kde-windows.png</file>
-    <file>pics/bg2.png</file>
     <file>pics/system-help.png</file>
     <file>pics/view-pim-contacts.png</file>
     <file>pics/preferences-system.png</file>
@@ -20,9 +19,6 @@
     <file>pics/arrow-right.png</file>
     <file>pics/cross.png</file>
     <file>pics/tick.png</file>
-    <file>pics/bg.png</file>
-    <file>pics/package.png</file>
-    <file>pics/keyboards.png</file>
     <file>pics/kaptan-left.png</file>
     <file>pics/kaptan_settings.png</file>
     <file>pics/kaptan-logo.png</file>
@@ -30,7 +26,6 @@
     <file>pics/cr64-app-kaptan.png</file>
     <file>pics/multiple.png</file>
     <file>pics/lancelot.png</file>
-    <file>pics/mouse.png</file>
     <file>pics/simple.png</file>
     <file>pics/kaptan_welcome.png</file>
     <file>pics/kickoff.png</file>
