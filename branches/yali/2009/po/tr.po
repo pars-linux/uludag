@@ -208,20 +208,18 @@ msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr "Diğer işletim sistemlerini açılış menüsüne ekle"
 
 #: yali4/gui/Ui/checkcdwidget.py:82
-#, fuzzy
 msgid ""
 "You can check the integrity of the packages in installation media. Although "
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
-"Bu ekranda, CD içerisindeki paketlerin doğruluğunu kontrol edebilirsiniz. Bu "
+"Bu ekranda, kurulum ortamı içerisindeki paketlerin doğruluğunu kontrol edebilirsiniz. Bu "
 "seçimli bir işlem olsa da kurulum sırasında bir sorun ile karşılaşmamanız "
 "için bu doğrulamayı yapmanızı öneririz."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
-#, fuzzy
 msgid "Check Packages Integrity"
-msgstr "CD Doğruluğunu Kontrol Et"
+msgstr "Paketlerin Doğruluğunu Kontrol Et"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid ""
@@ -1187,13 +1185,12 @@ msgid "Configure the system boot..."
 msgstr "Sistem açılışını ayarlayın.."
 
 #: yali4/gui/ScrBootloader.py:41 yali4/gui/ScrRescueGrub.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Boot loader setup</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009.1 uses a boot manager called GRUB to start the operating system "
+"Pardus 2009.2 uses a boot manager called GRUB to start the operating system "
 "you choose.\n"
 "</p>\n"
 "<p>If there are multiple operating systems in your computer, you can start "
@@ -1235,7 +1232,6 @@ msgid "To ignore medium corruptions you can check your packages integrity..."
 msgstr "CD Sürücü hatalarından kaçınmak için kontrol yapabilirsiniz..."
 
 #: yali4/gui/ScrCheckCD.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Check Packages Integrity!</font>\n"
@@ -1246,7 +1242,7 @@ msgid ""
 "image in a lower (e.g. 12x or less) speed.</p></font>\n"
 msgstr ""
 "\n"
-"<font size=\"+2\">CD Doğruluğunu Kontrol edin !</font>\n"
+"<font size=\"+2\">Paketlerin Doğruluğunu Kontrol edin !</font>\n"
 "<font size=\"+1\"><p>\n"
 "Bu ekranda kurulum CD'sinde yer alan paketlerin doğru olarak yazılıp "
 "yazılmadığını kontrol edebilirsiniz. Bu testi yapmanız işletim sisteminin "
@@ -1255,9 +1251,8 @@ msgstr ""
 "yazdırmayı deneyin</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
-msgstr "<font color=\"#FFF\">CD kontrol edilirken lütfen bekleyiniz.</font>"
+msgstr "<font color=\"#FFF\">Paketler kontrol edilirken lütfen bekleyiniz.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1507,7 +1502,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Otomatik ya da Elle bölümlendirme yapabilirsiniz..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1521,9 +1515,9 @@ msgid ""
 "</p>\n"
 "<p>Auto-partitioning will automatically format the select disk part/"
 "partition \n"
-"and install Pardus 2009.1. If you like, you can do the partitioning manually "
+"and install Pardus 2009.2. If you like, you can do the partitioning manually "
 "or make \n"
-"Pardus 2009.1 create a new partition for installation.</p>\n"
+"Pardus 2009.2 create a new partition for installation.</p>\n"
 "<p>\n"
 "Please refer to Pardus Installing and Using Guide for more information\n"
 "about disk partitioning.\n"
@@ -1794,9 +1788,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Kurulum <b>%s saniye</b> içinde başlayacak."
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Açılış Yöneticisi Ayarları"
+msgstr "Kurulumu Başlat!"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -1942,13 +1935,12 @@ msgid "Create users to use Pardus..."
 msgstr "Pardus'u kullanmak için kullanıcılarınızı tanımlayın..."
 
 #: yali4/gui/ScrUsers.py:35
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">User setup</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009.1 allows multiple users to share the same computer.\n"
+"Pardus 2009.2 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
 "configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
@@ -2010,15 +2002,14 @@ msgid "Welcome to the Pardus installer..."
 msgstr "Pardus kurulum programına hoşgeldiniz..."
 
 #: yali4/gui/ScrWelcome.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome !</font>\n"
-"<font size=\"+1\"><p>Welcome to Pardus 2009.1 that contains many easy-to-use "
+"<font size=\"+1\"><p>Welcome to Pardus 2009.2 that contains many easy-to-use "
 "software components. You can do everything you need to, including, but not "
 "limited to, connecting to the Internet, creating documents, playing games, "
-"listening to music using Pardus 2009.1.</p>\n"
-"<p>This application will help you with the installation of Pardus 2009.1 to "
+"listening to music using Pardus 2009.2.</p>\n"
+"<p>This application will help you with the installation of Pardus 2009.2 to "
 "your computer in few and easy steps and then do what is necessary to "
 "identify and configure your hardware. We advise you to backup your data in "
 "your disk(s) before starting with the installation.</p>\n"
