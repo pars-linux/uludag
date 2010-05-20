@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 16:45+0300\n"
+"POT-Creation-Date: 2010-05-20 22:33+0000\n"
 "PO-Revision-Date: 2010-01-11 21:59-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -357,7 +357,7 @@ msgstr ""
 msgid "Choose a Wallpaper"
 msgstr "Bilddatei für Hintergrundbild auswählen"
 
-#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:50
+#: .tmp/ScrWelcome.py:31 .tmp/ui_welcomeWidget.py:71
 msgid "Welcome"
 msgstr "Willkommen"
 
@@ -422,28 +422,28 @@ msgid ""
 msgstr ""
 "Pardus Community, Listen, Mailing-Listen, Chat, Wikis, Hilfe und Support..."
 
-#: .tmp/ui_kaptanMain.py:303
+#: .tmp/ui_kaptanMain.py:304
 #, fuzzy
 msgid "Kaptan"
 msgstr "Wert"
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Welcome to Pardus 2009.2"
 msgstr "Willkommen zu Pardus 2009.2"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Back"
 msgstr "Zurück"
 
-#: .tmp/ui_kaptanMain.py:307
+#: .tmp/ui_kaptanMain.py:308
 msgid "Next"
 msgstr "Weiter"
 
-#: .tmp/ui_kaptanMain.py:308
+#: .tmp/ui_kaptanMain.py:309
 msgid "Finish"
 msgstr "Beenden"
 
@@ -789,7 +789,11 @@ msgstr "Bilddatei als Hintergrundbild"
 msgid "Don't change wallpaper"
 msgstr "Hintergrundbild nicht ändern"
 
-#: .tmp/ui_welcomeWidget.py:51
+#: .tmp/ui_welcomeWidget.py:72
+msgid "What is Pardus?"
+msgstr ""
+
+#: .tmp/ui_welcomeWidget.py:73
 msgid ""
 "<b>Pardus</b> is a reliable, secure, fast and user friendly operating "
 "system. <br /><br />With Pardus, you can connect to the internet, read your "
