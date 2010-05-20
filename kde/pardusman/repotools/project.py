@@ -311,7 +311,7 @@ class Project:
         else:
             packageSelectionTag = doc.getTag("PackageSelection")
             if packageSelectionTag:
-                self.repo_uri, self.selected_components,
+                self.repo_uri, self.selected_components, \
                 self.selected_packages, self.all_packages= __packageSelection(packageSelectionTag)
 
             self.selected_components.sort()
