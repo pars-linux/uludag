@@ -96,9 +96,9 @@ class PackageDelegate(QtGui.QItemDelegate):
         PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
     def paintInfoColumn(self, painter, option, index):
-        left = option.rect.left()
+        left = max(option.rect.left(), 5)
         top = option.rect.top()
-        width = option.rect.width()
+        width = option.rect.width() - 20
 
         pixmap = QtGui.QPixmap(option.rect.size())
         pixmap.fill(Qt.transparent)
