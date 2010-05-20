@@ -41,15 +41,18 @@
      <property name="spacing">
       <number>0</number>
      </property>
+     <property name="leftMargin">
+      <number>20</number>
+     </property>
      <property name="bottomMargin">
-      <number>39</number>
+      <number>0</number>
      </property>
      <item>
       <widget class="QLabel" name="label_3">
        <property name="font">
         <font>
          <family>URW Gothic L</family>
-         <pointsize>31</pointsize>
+         <pointsize>28</pointsize>
          <weight>50</weight>
          <bold>false</bold>
         </font>
