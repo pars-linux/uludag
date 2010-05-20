@@ -78,10 +78,13 @@ class PackageDelegate(QtGui.QItemDelegate):
     def paint(self, painter, option, index):
         if not index.isValid():
             return
-        if index.flags() & Qt.ItemIsUserCheckable and index.column() == 0:
-            self.paintCheckBoxColumn(painter, option, index)
+        if index.flags() & Qt.ItemIsUserCheckable:
+            if index.column() == 0:
+                self.paintCheckBoxColumn(painter, option, index)
+            else:
+                self.paintInfoColumn(painter, option, index)
         else:
-            self.paintInfoColumn(painter, option, index)
+            self.paintInfoColumn(painter, option, index, width_limit = 10)
 
     def paintCheckBoxColumn(self, painter, option, index):
         opt = QtGui.QStyleOptionViewItemV4(option)
@@ -95,10 +98,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         buttonStyle.rect = opt.rect.adjusted(4, -opt.rect.height() + 54, 0, -2)
         PackageDelegate.AppStyle().drawControl(QtGui.QStyle.CE_CheckBox, buttonStyle, painter, None)
 
-    def paintInfoColumn(self, painter, option, index):
-        left = max(option.rect.left(), 5)
+    def paintInfoColumn(self, painter, option, index, width_limit = 0):
+        left = option.rect.left() + 3
         top = option.rect.top()
-        width = option.rect.width() - 20
+        width = option.rect.width() - width_limit
 
         pixmap = QtGui.QPixmap(option.rect.size())
         pixmap.fill(Qt.transparent)
