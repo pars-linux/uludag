@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 14:46+0300\n"
+"POT-Creation-Date: 2010-07-18 15:03+0300\n"
 "PO-Revision-Date: 2010-01-11 21:59-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -415,9 +415,10 @@ msgid "Help and Support"
 msgstr "Hilfe und Support"
 
 #: .tmp/ui_goodbyeWidget.py:422
+#, fuzzy
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages..."
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
 msgstr ""
 "Pardus Community, Listen, Mailing-Listen, Chat, Wikis, Hilfe und Support..."
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 14:46+0300\n"
+"POT-Creation-Date: 2010-07-18 15:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -395,8 +395,8 @@ msgstr ""
 
 #: .tmp/ui_goodbyeWidget.py:422
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages..."
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
 msgstr ""
 
 #: .tmp/ui_kaptanMain.py:302

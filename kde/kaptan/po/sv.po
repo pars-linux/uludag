@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 14:46+0300\n"
+"POT-Creation-Date: 2010-07-18 15:03+0300\n"
 "PO-Revision-Date: 2010-05-19 08:22+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -408,9 +408,10 @@ msgid "Help and Support"
 msgstr "Hjälp och stöd"
 
 #: .tmp/ui_goodbyeWidget.py:422
+#, fuzzy
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages..."
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
 msgstr "Pardus gemenskap, sändlistor, IRC-kanaler, wikis och hjälpsidor..."
 
 #: .tmp/ui_kaptanMain.py:302

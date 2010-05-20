@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 14:46+0300\n"
+"POT-Creation-Date: 2010-07-18 15:03+0300\n"
 "PO-Revision-Date: 2009-09-08 12:09+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -401,8 +401,8 @@ msgstr ""
 #: .tmp/ui_goodbyeWidget.py:422
 #, fuzzy
 msgid ""
-"Pardus community, mailing lists, chat rooms, wiki's, help and support "
-"pages..."
+"Pardus community, mailing lists, chat rooms, Wiki documents, help and "
+"support pages..."
 msgstr "Pardus fllesskabet, bruger lister, IRC kanaler, wikier og mere"
 
 #: .tmp/ui_kaptanMain.py:302
