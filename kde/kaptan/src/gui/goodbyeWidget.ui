@@ -733,7 +733,7 @@ border-bottom-right-radius: 4px;
                <string notr="true">color:#411926;</string>
               </property>
               <property name="text">
-               <string>Pardus community, mailing lists, chat rooms, wiki's, help and support pages...</string>
+               <string>Pardus community, mailing lists, chat rooms, Wiki documents, help and support pages...</string>
               </property>
               <property name="scaledContents">
                <bool>true</bool>
