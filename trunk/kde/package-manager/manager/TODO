@@ -11,12 +11,12 @@ Not started yet:
 ----------------
 
  - Fix Proxy Settings screen issues
- - Get security updates directly to the basket like system.base packages
 
 In progress:
 ------------
 
- ~~ resting now.
+ - Get security updates directly to the basket like system.base packages
+ - PMInstall refactoring
 
 Completed:
 ----------
