@@ -83,8 +83,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>584</width>
-        <height>503</height>
+        <width>566</width>
+        <height>544</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -165,7 +165,7 @@ border-bottom-right-radius: 4px;
             <property name="margin">
              <number>10</number>
             </property>
-            <item row="0" column="1">
+            <item row="0" column="2">
              <spacer name="horizontalSpacer_5">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -181,7 +181,7 @@ border-bottom-right-radius: 4px;
               </property>
              </spacer>
             </item>
-            <item row="0" column="2">
+            <item row="0" column="3">
              <widget class="QPushButton" name="buttonSystemSettings_2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -211,7 +211,7 @@ border-bottom-right-radius: 4px;
               </property>
              </widget>
             </item>
-            <item row="0" column="0">
+            <item row="0" column="1">
              <widget class="QLabel" name="labelSystemSettings_2">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -247,7 +247,32 @@ border-bottom-right-radius: 4px;
                <number>0</number>
               </property>
               <property name="indent">
-               <number>0</number>
+               <number>7</number>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_5">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="raw.qrc">:/raw/pics/view-pim-contacts.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -324,7 +349,7 @@ border-bottom-right-radius: 4px;
             <property name="margin">
              <number>10</number>
             </property>
-            <item row="0" column="0">
+            <item row="0" column="2">
              <widget class="QLabel" name="labelSystemSettings_3">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -360,11 +385,11 @@ border-bottom-right-radius: 4px;
                <number>0</number>
               </property>
               <property name="indent">
-               <number>0</number>
+               <number>7</number>
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
+            <item row="0" column="3">
              <spacer name="horizontalSpacer_6">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -380,7 +405,7 @@ border-bottom-right-radius: 4px;
               </property>
              </spacer>
             </item>
-            <item row="0" column="2">
+            <item row="0" column="4">
              <widget class="QPushButton" name="buttonMigration">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -407,6 +432,31 @@ border-bottom-right-radius: 4px;
               </property>
               <property name="text">
                <string>Migration Wizard</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="label_7">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="raw.qrc">:/raw/pics/kde-windows.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -483,7 +533,7 @@ border-bottom-right-radius: 4px;
             <property name="margin">
              <number>10</number>
             </property>
-            <item row="0" column="1">
+            <item row="0" column="2">
              <spacer name="horizontalSpacer">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -499,7 +549,7 @@ border-bottom-right-radius: 4px;
               </property>
              </spacer>
             </item>
-            <item row="0" column="0">
+            <item row="0" column="1">
              <widget class="QLabel" name="labelSystemSettings">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -535,11 +585,11 @@ border-bottom-right-radius: 4px;
                <number>0</number>
               </property>
               <property name="indent">
-               <number>0</number>
+               <number>7</number>
               </property>
              </widget>
             </item>
-            <item row="0" column="2">
+            <item row="0" column="3">
              <widget class="QPushButton" name="buttonSystemSettings">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -566,6 +616,31 @@ border-bottom-right-radius: 4px;
               </property>
               <property name="text">
                <string>System Settings</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_6">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="raw.qrc">:/raw/pics/preferences-system.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -634,7 +709,7 @@ border-bottom-right-radius: 4px;
             <property name="margin">
              <number>10</number>
             </property>
-            <item row="0" column="0">
+            <item row="0" column="1">
              <widget class="QLabel" name="labelHelpPages">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -670,11 +745,11 @@ border-bottom-right-radius: 4px;
                <number>0</number>
               </property>
               <property name="indent">
-               <number>0</number>
+               <number>7</number>
               </property>
              </widget>
             </item>
-            <item row="0" column="1">
+            <item row="0" column="2">
              <spacer name="horizontalSpacer_2">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
@@ -690,7 +765,7 @@ border-bottom-right-radius: 4px;
               </property>
              </spacer>
             </item>
-            <item row="0" column="2">
+            <item row="0" column="3">
              <widget class="QPushButton" name="buttonHelpPages">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -717,6 +792,31 @@ border-bottom-right-radius: 4px;
               </property>
               <property name="text">
                <string>Help and Support</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="0">
+             <widget class="QLabel" name="label_8">
+              <property name="minimumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>64</width>
+                <height>64</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+              <property name="pixmap">
+               <pixmap resource="raw.qrc">:/raw/pics/system-help.png</pixmap>
+              </property>
+              <property name="scaledContents">
+               <bool>false</bool>
               </property>
              </widget>
             </item>
@@ -747,6 +847,8 @@ border-bottom-right-radius: 4px;
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="raw.qrc"/>
+ </resources>
  <connections/>
 </ui>

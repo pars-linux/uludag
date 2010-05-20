@@ -194,6 +194,37 @@ border-bottom-right-radius: 4px;
    </item>
    <item row="0" column="0">
     <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="minimumSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>64</width>
+         <height>64</height>
+        </size>
+       </property>
+       <property name="sizeIncrement">
+        <size>
+         <width>0</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap resource="raw.qrc">:/raw/pics/applications-other.png</pixmap>
+       </property>
+      </widget>
+     </item>
      <item>
       <widget class="QLabel" name="description">
        <property name="minimumSize">
@@ -219,6 +250,9 @@ border-bottom-right-radius: 4px;
        </property>
        <property name="wordWrap">
         <bool>true</bool>
+       </property>
+       <property name="indent">
+        <number>10</number>
        </property>
       </widget>
      </item>
@@ -328,6 +362,8 @@ border-top-right-radius: 4px;</string>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="raw.qrc"/>
+ </resources>
  <connections/>
 </ui>

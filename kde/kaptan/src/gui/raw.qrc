@@ -1,5 +1,19 @@
 <RCC>
   <qresource prefix="raw">
+    <file>pics/basket.png</file>
+    <file>pics/kde.png</file>
+    <file>pics/nepomuk.png</file>
+    <file>pics/preferences-desktop-color.png</file>
+    <file>pics/preferences-desktop-keyboard.png</file>
+    <file>pics/preferences-desktop-wallpaper.png</file>
+    <file>pics/applications-other.png</file>
+    <file>pics/applications-internet.png</file>
+    <file>pics/preferences-desktop-peripherals.png</file>
+    <file>pics/kde-windows.png</file>
+    <file>pics/bg2.png</file>
+    <file>pics/system-help.png</file>
+    <file>pics/view-pim-contacts.png</file>
+    <file>pics/preferences-system.png</file>
     <file>pics/menu-arrow-left.png</file>
     <file>pics/menu-arrow-right.png</file>
     <file>pics/arrow-left.png</file>

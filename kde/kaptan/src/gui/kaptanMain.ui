@@ -35,7 +35,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Kaptan Desktop</string>
+   <string>Kaptan</string>
   </property>
   <property name="windowIcon">
    <iconset resource="raw.qrc">
@@ -43,7 +43,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#kaptan{
-	/*background-image:url(':/raw/pics/bg.png');*/
+	/*background-image:url(':/raw/pics/bg2.png');*/
     background-repeat: no-repeat;
     background-position: left top;
     background-color: #642437;
