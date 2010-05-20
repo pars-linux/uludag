@@ -26,7 +26,7 @@ WHITE = QtGui.QColor('white')
 RED = QtGui.QColor('red')
 GRAY = QtGui.QColor('gray')
 BLUE = QtGui.QColor('blue')
-TYPE_COLORS = {'critical':RED, 'security':DARKRED}
+
 RECT = QRect()
 
 DETAIL_LINE_OFFSET = 36
@@ -44,6 +44,10 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.defaultIcon = KIcon(DEFAULT_ICON, 32)
         self.animatable = True
         self._max_height = ROW_HEIGHT
+
+        self.types = {'critical':(RED,     i18n('critical')),
+                      'security':(DARKRED, i18n('security'))}
+
         self.font = Pds.settings('font','Sans').split(',')[0]
 
         self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
@@ -62,7 +66,7 @@ class PackageDelegate(QtGui.QItemDelegate):
                         'release'    : i18n("Release:"),
                         'repository' : i18n("Repository:"),
                         'size'       : i18n("Package Size:"),
-                        'installVers': i18n('Installed Version:')}
+                        'installVers': i18n("Installed Version:")}
 
         self._titleFM = {}
         for key, value in self._titles.items():
@@ -145,11 +149,11 @@ class PackageDelegate(QtGui.QItemDelegate):
         if ptype not in ('None', 'normal'):
             p.setFont(self.tagFont)
             rect = self.tagFontFM.boundingRect(option.rect, Qt.TextWordWrap, ptype)
-            p.setPen(TYPE_COLORS[ptype])
-            p.setBrush(TYPE_COLORS[ptype])
+            p.setPen(self.types[ptype][0])
+            p.setBrush(self.types[ptype][0])
             p.drawRoundRect(width - rect.width() - 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width() + 4, rect.height(), 10, 10)
             p.setPen(WHITE)
-            p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, ptype)
+            p.drawText(width - rect.width() + 1, top + (itemHeight / 2) - (rect.height() / 2), rect.width(), rect.height(), Qt.AlignCenter, self.types[ptype][1])
             p.setPen(foregroundColor)
             tagWidth = rect.width()
 
