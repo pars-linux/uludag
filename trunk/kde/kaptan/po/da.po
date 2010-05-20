@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-07-18 15:18+0300\n"
+"POT-Creation-Date: 2010-07-18 16:45+0300\n"
 "PO-Revision-Date: 2009-09-08 12:09+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -405,28 +405,28 @@ msgid ""
 "support pages..."
 msgstr "Pardus fllesskabet, bruger lister, IRC kanaler, wikier og mere"
 
-#: .tmp/ui_kaptanMain.py:302
+#: .tmp/ui_kaptanMain.py:303
 #, fuzzy
 msgid "Kaptan"
 msgstr "Kaptan Desktop"
 
-#: .tmp/ui_kaptanMain.py:303
+#: .tmp/ui_kaptanMain.py:304
 msgid "Welcome to Pardus 2009.2"
 msgstr ""
 
-#: .tmp/ui_kaptanMain.py:304
+#: .tmp/ui_kaptanMain.py:305
 msgid "Cancel"
 msgstr "Fortryd"
 
-#: .tmp/ui_kaptanMain.py:305
+#: .tmp/ui_kaptanMain.py:306
 msgid "Back"
 msgstr "Tilbage"
 
-#: .tmp/ui_kaptanMain.py:306
+#: .tmp/ui_kaptanMain.py:307
 msgid "Next"
 msgstr "Nste"
 
-#: .tmp/ui_kaptanMain.py:307
+#: .tmp/ui_kaptanMain.py:308
 msgid "Finish"
 msgstr "Frdig"
 

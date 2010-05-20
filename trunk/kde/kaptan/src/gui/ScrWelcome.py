@@ -14,6 +14,7 @@
 from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
+from PyKDE4.kdecore import i18n
 
 from gui.ScreenWidget import ScreenWidget
 from gui.welcomeWidget import Ui_welcomeWidget
@@ -23,18 +24,19 @@ import subprocess
 def getRelease():
     p = subprocess.Popen(["lsb_release", "-irs"], stdout=subprocess.PIPE)
     release, err = p.communicate()
-    return release.replace("\n", "")
-
+    return unicode(release.replace("\n", ""))
 
 class Widget(QtGui.QWidget, ScreenWidget):
 
     title = ki18n("Welcome")
-    desc = ki18n("Welcome to %s") % getRelease()
+    desc = ki18n("Welcome to %s")
 
     def __init__(self, *args):
         QtGui.QWidget.__init__(self,None)
         self.ui = Ui_welcomeWidget()
         self.ui.setupUi(self)
+        # We love ki18n...
+        Widget.desc = QVariant(unicode(Widget.desc.toString()) % getRelease())
 
     def shown(self):
         pass
