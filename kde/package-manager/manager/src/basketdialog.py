@@ -119,7 +119,7 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
         if self.state.inUpgrade():
             answer = QtGui.QMessageBox.Yes
             actions = self.state.checkUpdateActions(
-                    self.model.selectedPackages())
+                    self.model.selectedPackages() + self.model.extraPackages())
             if actions[0]:
                 answer = self.askForActions(actions[0],
                        i18n("You must <b>restart</b> your system in order the "
