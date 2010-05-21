@@ -67,7 +67,9 @@ class GroupList(QtGui.QListWidget):
     def currentGroup(self):
         if not self.count():
             return None
-        return unicode(self.currentItem().data(Qt.UserRole).toString())
+        if self.currentItem():
+           return unicode(self.currentItem().data(Qt.UserRole).toString())
+        return None
 
     def groupChanged(self):
         self.emit(SIGNAL("groupChanged()"))
