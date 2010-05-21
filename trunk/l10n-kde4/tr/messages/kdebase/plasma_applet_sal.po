@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -49,7 +49,8 @@ msgid "Unlock Page"
 msgstr "Sayfanın Kilidini Aç"
 
 #: sal.cpp:757
-msgctxt "Title of the page that lets the user choose the loaded krunner plugins"
+msgctxt ""
+"Title of the page that lets the user choose the loaded krunner plugins"
 msgid "Search plugins"
 msgstr "Eklenti ara"
 

@@ -1942,8 +1942,6 @@ msgstr "İtalyanca (otomatik-oluşturulmuş)"
 
 #. i18n: file: training/hungarian.expert.ktouch.xml:3
 #: rc.cpp:974
-#| msgctxt "Lesson Name"
-#| msgid "Hungarian (expert)"
 msgctxt "Lesson Name"
 msgid "Hungarian Expert"
 msgstr "Macarca (uzman)"

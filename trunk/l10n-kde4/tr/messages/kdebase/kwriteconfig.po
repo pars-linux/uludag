@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kwriteconfig\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-12-29 06:16+0100\n"
+"POT-Creation-Date: 2010-05-01 01:20+0200\n"
 "PO-Revision-Date: 2008-07-19 16:57+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
@@ -42,25 +42,25 @@ msgstr "Bernhard Rosenkraenzer"
 msgid "Wrote kreadconfig on which this is based"
 msgstr "Kreadconfig bu temel alınarak yazıldı"
 
-#: kwriteconfig.cpp:45
+#: kwriteconfig.cpp:47
 msgid "Use <file> instead of global config"
 msgstr "Genel yapılandırma yerine <dosya> kullan."
 
-#: kwriteconfig.cpp:46
+#: kwriteconfig.cpp:48
 msgid "Group to look in. Use repeatedly for nested groups."
 msgstr "Bakılacak grup. Yerleştirilmiş gruplar için tekrar tekrar kullan."
 
-#: kwriteconfig.cpp:47
+#: kwriteconfig.cpp:49
 msgid "Key to look for"
 msgstr "Aranacak anahtar"
 
-#: kwriteconfig.cpp:48
+#: kwriteconfig.cpp:50
 msgid ""
 "Type of variable. Use \"bool\" for a boolean, otherwise it is treated as a "
 "string"
 msgstr "Değişkenin türü. Bool değişkenler için \"bool\" kullanın."
 
-#: kwriteconfig.cpp:49
+#: kwriteconfig.cpp:51
 msgid "The value to write. Mandatory, on a shell use '' for empty"
 msgstr "Yazdırılacak olan değer. Boş değer için '' belirtin."
 

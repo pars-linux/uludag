@@ -2,13 +2,13 @@
 # translation of libphonon.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""
 "Project-Id-Version: libphonon\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-31 01:28+0200\n"
+"POT-Creation-Date: 2010-05-13 01:26+0200\n"
 "PO-Revision-Date: 2008-06-17 18:56+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -22,25 +22,37 @@ msgstr ""
 msgid "PulseAudio Sound Server"
 msgstr "PulseAudio Ses Sunucusu"
 
-#: audiooutput.cpp:481 audiooutput.cpp:515
+#: audiooutput.cpp:484 audiooutput.cpp:522
 #, qt-format
-msgid "<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to <b>%2</b>.</html>"
-msgstr "<html>Ses çalma aygıtı <b>%1</b> çalışmıyor.<br/>Şimdi <b>%2</b> aygıtına geçiliyor.</html>"
+msgid ""
+"<html>The audio playback device <b>%1</b> does not work.<br/>Falling back to "
+"<b>%2</b>.</html>"
+msgstr ""
+"<html>Ses çalma aygıtı <b>%1</b> çalışmıyor.<br/>Şimdi <b>%2</b> aygıtına "
+"geçiliyor.</html>"
 
-#: audiooutput.cpp:494
+#: audiooutput.cpp:497
 #, qt-format
-msgid "<html>Switching to the audio playback device <b>%1</b><br/>which just became available and has higher preference.</html>"
-msgstr "<html>Henüz kullanılabilir duruma gelen ve tercih sıralamasında önceliği olan<br/> <b>%1</b> Ses çalma aygıtına geçiliyor.</html>"
+msgid ""
+"<html>Switching to the audio playback device <b>%1</b><br/>which just became "
+"available and has higher preference.</html>"
+msgstr ""
+"<html>Henüz kullanılabilir duruma gelen ve tercih sıralamasında önceliği "
+"olan<br/> <b>%1</b> Ses çalma aygıtına geçiliyor.</html>"
 
-#: audiooutput.cpp:497 audiooutput.cpp:511
+#: audiooutput.cpp:500 audiooutput.cpp:518
 #, qt-format
 msgid "Revert back to device '%1'"
 msgstr "'%1' aygıtına geri döndür"
 
-#: audiooutput.cpp:508
+#: audiooutput.cpp:515
 #, qt-format
-msgid "<html>Switching to the audio playback device <b>%1</b><br/>which has higher preference or is specifically configured for this stream.</html>"
-msgstr "<html>Bu ses akışı için yapılandırılmış veya önceliği <br/>diğerlerinden yüksek olan <b>%1</b> ses aygıtına geçiliyor.</html>"
+msgid ""
+"<html>Switching to the audio playback device <b>%1</b><br/>which has higher "
+"preference or is specifically configured for this stream.</html>"
+msgstr ""
+"<html>Bu ses akışı için yapılandırılmış veya önceliği <br/>diğerlerinden "
+"yüksek olan <b>%1</b> ses aygıtına geçiliyor.</html>"
 
 #: phononnamespace.cpp:55
 msgctxt "Phonon::"
@@ -80,8 +92,12 @@ msgstr "Ses Düzeyi: %1%"
 
 #: volumeslider.cpp:45 volumeslider.cpp:63 volumeslider.cpp:117
 #, qt-format
-msgid "Use this slider to adjust the volume. The leftmost position is 0%, the rightmost is %1%"
-msgstr "Ses düzeyini ayarlamak için bu kaydırıcıyı kullanın. En sol konum 0%, en sağ konum ise %1%"
+msgid ""
+"Use this slider to adjust the volume. The leftmost position is 0%, the "
+"rightmost is %1%"
+msgstr ""
+"Ses düzeyini ayarlamak için bu kaydırıcıyı kullanın. En sol konum 0%, en sağ "
+"konum ise %1%"
 
 #: volumeslider.cpp:184
 msgid "Muted"

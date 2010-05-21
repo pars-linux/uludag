@@ -409,15 +409,11 @@ msgid "Slovenian"
 msgstr "Slovence"
 
 #: sr@ijekavianlatin/messages/entry.desktop:2
-#| msgctxt "Name"
-#| msgid "Serbian Latin"
 msgctxt "Name"
 msgid "Serbian Ijekavian Latin"
 msgstr "Ijekavian Latin Sırpça"
 
 #: sr@ijekavian/messages/entry.desktop:2
-#| msgctxt "Name"
-#| msgid "Serbian Latin"
 msgctxt "Name"
 msgid "Serbian Ijekavian"
 msgstr "Ijekavian Sırpça"

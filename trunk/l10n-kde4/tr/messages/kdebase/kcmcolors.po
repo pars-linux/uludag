@@ -54,7 +54,8 @@ msgstr "Öntanımlı"
 
 #: colorscm.cpp:251
 msgid "Selecting another scheme will discard any changes you have made"
-msgstr "Başka bir şema seçmek yaptığınız tüm değişiklikleri kaybetmenize neden olur"
+msgstr ""
+"Başka bir şema seçmek yaptığınız tüm değişiklikleri kaybetmenize neden olur"
 
 #: colorscm.cpp:252
 msgid "Are you sure?"
@@ -76,13 +77,15 @@ msgstr "İçeriye Renk Şeması Aktar"
 msgid ""
 "The scheme you have selected appears to be a KDE3 scheme.\n"
 "\n"
-"KDE will attempt to import this scheme, however many color roles have been added since KDE3. Some manual work will likely be required.\n"
+"KDE will attempt to import this scheme, however many color roles have been "
+"added since KDE3. Some manual work will likely be required.\n"
 "\n"
 "This scheme will not be saved automatically."
 msgstr ""
 "Seçtiğiniz şema KDE3 şeması gibi görünüyor.\n"
 "\n"
-"KDE bu şemayı içeri aktarmaya çalışacak ancah KDE3 sürümünden bu yana çok fazla renk eklendi. Bazı işleri elle yapmak gerekebilir.\n"
+"KDE bu şemayı içeri aktarmaya çalışacak ancah KDE3 sürümünden bu yana çok "
+"fazla renk eklendi. Bazı işleri elle yapmak gerekebilir.\n"
 "\n"
 "Bu şema otomatik olarak kaydedilmeyecek."
 
@@ -1241,27 +1244,32 @@ msgstr "üzerine gelinmiş"
 #: rc.cpp:549 rc.cpp:1151
 msgid ""
 "Link Text on Link Background\n"
-"(Note: Link Background is derived from Link Text and cannot be separately configured at this time)"
+"(Note: Link Background is derived from Link Text and cannot be separately "
+"configured at this time)"
 msgstr ""
 "Bağlantı Arka Planı üzerinde Bağlantı Metni\n"
-"(Not: Bağlantı Arka Planı Bağlantı Metninden türemiştir ve ayrıca yapılandırılamaz)"
+"(Not: Bağlantı Arka Planı Bağlantı Metninden türemiştir ve ayrıca "
+"yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:233
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack4)
 #: rc.cpp:556 rc.cpp:1158
 msgid ""
 "Visited Text on Visited Background\n"
-"(Note: Visited Background is derived from Visited Text and cannot be separately configured at this time)"
+"(Note: Visited Background is derived from Visited Text and cannot be "
+"separately configured at this time)"
 msgstr ""
 "Ziyaret Edilmiş Arka Planı üzerinde Ziyaret Edilmiş Metni\n"
-"(Not: Ziyaret Edilmiş Arka Planı Ziyaret Edilmiş Metninden türemiştir ve ayrıca yapılandırılamaz)"
+"(Not: Ziyaret Edilmiş Arka Planı Ziyaret Edilmiş Metninden türemiştir ve "
+"ayrıca yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:250
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack2)
 #: rc.cpp:563 rc.cpp:1165
 msgid ""
 "Active Text on Active Background\n"
-"(Note: Active Background is derived from Active Text and cannot be separately configured at this time)"
+"(Note: Active Background is derived from Active Text and cannot be "
+"separately configured at this time)"
 msgstr ""
 "Aktif Arka Plan üzerinde Aktif Metni\n"
 "(Not: Aktif Arka Planı Aktif Metninden türemiştir ve ayrıca yapılandırılamaz)"
@@ -1284,17 +1292,20 @@ msgstr "değiştir"
 #: rc.cpp:576 rc.cpp:1178
 msgid ""
 "Negative Text on Negative Background\n"
-"(Note: Negative Background is derived from Negative Text and cannot be separately configured at this time)"
+"(Note: Negative Background is derived from Negative Text and cannot be "
+"separately configured at this time)"
 msgstr ""
 "Negatif Arka Planı üzerinde Negatif Metni\n"
-"(Not: Negatif Arka Planı Negatif Metninden türemiştir ve ayrıca yapılandırılamaz)"
+"(Not: Negatif Arka Planı Negatif Metninden türemiştir ve ayrıca "
+"yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:300
 #. i18n: ectx: property (toolTip), widget (QLabel, labelBack6)
 #: rc.cpp:583 rc.cpp:1185
 msgid ""
 "Neutral Text on Neutral Background\n"
-"(Note: Neutral Background is derived from Neutral Text and cannot be separately configured at this time)"
+"(Note: Neutral Background is derived from Neutral Text and cannot be "
+"separately configured at this time)"
 msgstr ""
 "Nötr Arka Planı üzerinde Nötr Metni\n"
 "(Not: Nötr Arka Planı Nötr Metninden türemiştir ve ayrıca yapılandırılamaz)"
@@ -1304,10 +1315,12 @@ msgstr ""
 #: rc.cpp:590 rc.cpp:1192
 msgid ""
 "Positive Text on Positive Background\n"
-"(Note: Positive Background is derived from Positive Text and cannot be separately configured at this time)"
+"(Note: Positive Background is derived from Positive Text and cannot be "
+"separately configured at this time)"
 msgstr ""
 "Pozitif Arka Planı üzerinde Pozitif Metni\n"
-"(Not: Pozitif Arka Planı Pozitif Metninden türemiştir ve ayrıca yapılandırılamaz)"
+"(Not: Pozitif Arka Planı Pozitif Metninden türemiştir ve ayrıca "
+"yapılandırılamaz)"
 
 #. i18n: file: setpreview.ui:333
 #. i18n: ectx: property (toolTip), widget (QLabel, labelFore9)

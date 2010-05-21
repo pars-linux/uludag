@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FormulaShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-28 14:15+0100\n"
 "PO-Revision-Date: 2009-09-18 03:30+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -28,19 +28,19 @@ msgstr "Satırları değiştir"
 msgid "Add text"
 msgstr "Metin ekle"
 
-#: FormulaEditor.cpp:120 KoFormulaTool.cpp:445
+#: FormulaEditor.cpp:120 KoFormulaTool.cpp:443
 msgid "Insert row"
 msgstr "Satır ekle"
 
-#: FormulaEditor.cpp:125 KoFormulaTool.cpp:459
+#: FormulaEditor.cpp:125 KoFormulaTool.cpp:457
 msgid "Remove row"
 msgstr "Satırı sil"
 
-#: FormulaEditor.cpp:133 KoFormulaTool.cpp:452
+#: FormulaEditor.cpp:133 KoFormulaTool.cpp:450
 msgid "Insert column"
 msgstr "Sütun ekle"
 
-#: FormulaEditor.cpp:138 KoFormulaTool.cpp:466
+#: FormulaEditor.cpp:138 KoFormulaTool.cpp:464
 msgid "Remove column"
 msgstr "Sütunu sil"
 
@@ -80,65 +80,61 @@ msgstr "Formül"
 msgid "A formula"
 msgstr "Bir formül"
 
-#: KoFormulaTool.cpp:410
+#: KoFormulaTool.cpp:408
 msgid "Insert fenced element"
 msgstr ""
 
-#: KoFormulaTool.cpp:411
+#: KoFormulaTool.cpp:409
 msgid "Insert enclosed element"
 msgstr ""
 
-#: KoFormulaTool.cpp:413
+#: KoFormulaTool.cpp:411
 msgid "Insert root"
 msgstr "Kök ekle"
 
-#: KoFormulaTool.cpp:414
+#: KoFormulaTool.cpp:412
 msgid "Insert square root"
 msgstr "Kare kök ekle"
 
-#: KoFormulaTool.cpp:416
+#: KoFormulaTool.cpp:414
 msgid "Insert fraction"
 msgstr "Kesir ekle"
 
-#: KoFormulaTool.cpp:417
+#: KoFormulaTool.cpp:415
 msgid "Insert bevelled fraction"
 msgstr ""
 
-#: KoFormulaTool.cpp:419
+#: KoFormulaTool.cpp:417
 msgid "Insert 3x3 table"
 msgstr "3x3 tablo ekle"
 
-#: KoFormulaTool.cpp:423
+#: KoFormulaTool.cpp:421
 msgid "Insert 2 dimensional vector"
 msgstr "2 boyutlu vektörel çizim ekle"
 
-#: KoFormulaTool.cpp:426
+#: KoFormulaTool.cpp:424
 msgid "Insert subscript"
 msgstr "Alt karakter ekle"
 
-#: KoFormulaTool.cpp:428
+#: KoFormulaTool.cpp:426
 msgid "Insert superscript"
 msgstr "Üst karakter ekle"
 
-#: KoFormulaTool.cpp:430
+#: KoFormulaTool.cpp:428
 msgid "Insert sub- and superscript"
 msgstr "Alt ve üst karakter ekle"
 
-#: KoFormulaTool.cpp:432
+#: KoFormulaTool.cpp:430
 msgid "Insert overscript"
 msgstr ""
 
-#: KoFormulaTool.cpp:434
+#: KoFormulaTool.cpp:432
 msgid "Insert underscript"
 msgstr ""
 
-#: KoFormulaTool.cpp:436
+#: KoFormulaTool.cpp:434
 msgid "Insert under- and overscript"
 msgstr ""
-
-#: KoFormulaToolFactory.cpp:27
-msgid "Formula tool"
-msgstr "Formül aracı"
 
 #: KoFormulaToolFactory.cpp:29
 msgid "Formula editing tool"
@@ -228,6 +224,9 @@ msgstr "Sütunlar:"
 #: rc.cpp:42 rc.cpp:84
 msgid "View MathML"
 msgstr ""
+
+#~ msgid "Formula tool"
+#~ msgstr "Formül aracı"
 
 #~ msgid "Insert 2x2 table"
 #~ msgstr "2x2 tablo ekle"

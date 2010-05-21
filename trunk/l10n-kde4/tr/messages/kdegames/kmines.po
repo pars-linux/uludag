@@ -1,6 +1,6 @@
 # translation of kmines.po to
 # Copyright (C) 2003, 2004, 2008 Free Software Foundation, Inc.
-# 
+#
 # Ömer Fadıl USTA <omer_fad@hotmail.com> , 2002,2003.
 # Serdar Cevher <scevher@anet.com.tr>, 2001.
 # Görkem Çetin <gorkem@kde.org>, 2003.
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmines\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-11-28 06:14+0100\n"
+"POT-Creation-Date: 2010-05-07 01:21+0200\n"
 "PO-Revision-Date: 2008-10-22 03:43+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -78,44 +78,45 @@ msgstr "Thomas Capricelli"
 msgid "Magic reveal mode"
 msgstr "Sihirli açma kipi"
 
-#: mainwindow.cpp:90
+#: mainwindow.cpp:106
 msgid "Mines: 0/0"
 msgstr "Mayınlar: 0/0"
 
-#: mainwindow.cpp:91 mainwindow.cpp:171
+#: mainwindow.cpp:107 mainwindow.cpp:187
 msgid "Time: 00:00"
 msgstr "Süre: 00:00"
 
-#: mainwindow.cpp:122
+#: mainwindow.cpp:138
 #, kde-format
 msgid "Mines: %1/%2"
 msgstr "Mayınlar: %1/%2"
 
-#: mainwindow.cpp:188
+#: mainwindow.cpp:204
 msgid "Custom"
 msgstr "Özel"
 
-#: mainwindow.cpp:205
+#: mainwindow.cpp:221
 #, kde-format
 msgid "Time: %1"
 msgstr "Zaman: %1"
 
-#: mainwindow.cpp:232
+#: mainwindow.cpp:248
 msgid "General"
 msgstr "Genel"
 
-#: mainwindow.cpp:233
+#: mainwindow.cpp:249
 msgid "Theme"
 msgstr "Tema"
 
-#: mainwindow.cpp:234
+#: mainwindow.cpp:250
 msgid "Custom Game"
 msgstr "Özel Oyun"
 
-#: mainwindow.cpp:253
+#: mainwindow.cpp:269
 #, kde-format
 msgid "Failed to load \"%1\" theme. Please check your installation."
-msgstr "\"%1\" temasının yüklenmesi başarısız oldu. Lütfen kurulumunuzu kontrol edin."
+msgstr ""
+"\"%1\" temasının yüklenmesi başarısız oldu. Lütfen kurulumunuzu kontrol edin."
 
 #. i18n: file: customgame.ui:16
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -171,7 +172,7 @@ msgstr "Oyun alanının yüksekliği."
 msgid "The number of mines in the playing field."
 msgstr "Oyun alanındaki mayın sayıcı."
 
-#. i18n: file: kmines.kcfg:35
+#. i18n: file: kmines.kcfg:36
 #. i18n: ectx: label, entry (level), group (Options)
 #: rc.cpp:30
 msgid "The difficulty level."
@@ -205,5 +206,9 @@ msgstr "Tebrikler! Kazandınız!"
 msgid "You have lost."
 msgstr "Kaybettiniz."
 
-#~ msgid "Custom game can not be started.<br />Number of mines is too big for current field."
-#~ msgstr "Özel oyun başlatılamıyor.<br />Mayınların sayısı geçerli alan için çok büyük."
+#~ msgid ""
+#~ "Custom game can not be started.<br />Number of mines is too big for "
+#~ "current field."
+#~ msgstr ""
+#~ "Özel oyun başlatılamıyor.<br />Mayınların sayısı geçerli alan için çok "
+#~ "büyük."

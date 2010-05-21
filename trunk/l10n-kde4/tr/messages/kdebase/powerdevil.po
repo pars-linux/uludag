@@ -445,12 +445,9 @@ msgid ""
 "any one time."
 msgstr ""
 "Bilgisayarınızda ConsoleKit aktif olarak bulunamadı, ya da PowerDevil "
-"ConsoleKit'e "
-"bağlanamadı. "
-"ConsoleKit sayesinde PowerDevil mevcut oturumun aktif olup olmadığını "
-"algılamaktadır. Bu "
-"yetenek özellikle sisteminizde giriş yapmış birden fazla kullanıcı olduğunda "
-"kullanılmaktadır."
+"ConsoleKit'e bağlanamadı. ConsoleKit sayesinde PowerDevil mevcut oturumun "
+"aktif olup olmadığını algılamaktadır. Bu yetenek özellikle sisteminizde "
+"giriş yapmış birden fazla kullanıcı olduğunda kullanılmaktadır."
 
 #: kcmodule/CapabilitiesPage.cpp:275
 msgid "No issues found with your configuration."
@@ -715,7 +712,6 @@ msgstr ""
 #. i18n: file: kcmodule/generalPage.ui:57
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: rc.cpp:122
-#| msgid "Settings and Profiles"
 msgid "Settings and Profile"
 msgstr "Ayarlar ve Profiller"
 
@@ -968,8 +964,7 @@ msgid ""
 msgstr ""
 "ConsoleKit sayesinde PowerDevil mevcut oturumun aktif olup olmadığını "
 "kontrol edebilmektedir. Bu yetenek özellikle sisteme giriş yapmış birden "
-"fazla kullanıcı "
-"olduğu durumlarda kullanılmaktadır."
+"fazla kullanıcı olduğu durumlarda kullanılmaktadır."
 
 #. i18n: file: kcmodule/capabilitiesPage.ui:206
 #. i18n: ectx: property (text), widget (QLabel, label_6)

@@ -153,5 +153,3 @@ msgstr "Serdar Soytetir, Gökmen Göksel"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com, gokmen@pardus.org.tr"
-
-

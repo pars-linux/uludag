@@ -47,4 +47,3 @@ msgstr "Stream"
 #: rc.cpp:9 rc.cpp:18
 msgid "Filename"
 msgstr "Dosya adı"
-

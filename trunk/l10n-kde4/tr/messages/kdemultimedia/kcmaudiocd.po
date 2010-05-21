@@ -72,8 +72,8 @@ msgstr ""
 "çalıştırmak için Konqueror içinden <i>\"audiocd:/\"</i> komutunu vermeniz "
 "yeterlidir. Bu kontrol modülü sayesinde programların kodlamasını yapabilir "
 "ve aynı zamanda CDDB taleplerini ve aygıt ayarlarını yapabilirsiniz. Yalnız, "
-"MP3 ve Ogg Vorbis kodlamasının sadece KDE yeni sürümlerinde Lame veya "
-"Ogg Vorbis kitaplıkları ile mümkün olduğunu unutmayın."
+"MP3 ve Ogg Vorbis kodlamasının sadece KDE yeni sürümlerinde Lame veya Ogg "
+"Vorbis kitaplıkları ile mümkün olduğunu unutmayın."
 
 #. i18n: file: audiocdconfig.ui:25
 #. i18n: ectx: attribute (title), widget (QWidget, tab)

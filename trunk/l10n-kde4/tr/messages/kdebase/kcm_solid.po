@@ -1,7 +1,7 @@
 # translation of kcm_solid.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 msgid ""
 msgstr ""
@@ -39,7 +39,9 @@ msgstr "Tercih sırasına göre sıralanmış arka uç listesi."
 #. i18n: ectx: property (whatsThis), widget (MyQListWidget, listView)
 #: rc.cpp:6 rc.cpp:38
 msgid "A list of the backends for a Solid function, in order of preference."
-msgstr "Bir Solid işlevini gerçekleyen arka uçları içeren, tercihe göre sıralanmış liste."
+msgstr ""
+"Bir Solid işlevini gerçekleyen arka uçları içeren, tercihe göre sıralanmış "
+"liste."
 
 #. i18n: file: backendchooser.ui:80
 #. i18n: ectx: property (toolTip), widget (QToolButton, upButton)

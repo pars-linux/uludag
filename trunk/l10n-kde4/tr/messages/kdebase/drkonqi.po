@@ -65,22 +65,15 @@ msgid "Bug Reporting Assistant Guide"
 msgstr "Hata Bildirme Yardımcısı Kılavuzu"
 
 #: aboutbugreportingdialog.cpp:60
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "This assistant will guide you through the crash reporting process for the "
-#| "KDE Bug Reports Database Site. All the information you enter on the bug "
-#| "report must be in English, if possible, as KDE is developed "
-#| "internationally."
 msgctxt "@info/rich"
 msgid ""
 "This assistant will guide you through the crash reporting process for the "
 "KDE Bug Reports Database Site. All the information you enter on the bug "
 "report must be in English, if possible, as KDE is formed internationally."
 msgstr ""
-"Bu araç, KDE Hata Bildirimleri Veritabanı sitesine hata "
-"bildirmeniz için size yardımcı olacaktır. KDE uluslararası bir proje "
-"olduğundan, hata ile ilgili verdiğiniz tüm bilgilerin mümkünse İngilizce "
-"olması gerekmektedir."
+"Bu araç, KDE Hata Bildirimleri Veritabanı sitesine hata bildirmeniz için "
+"size yardımcı olacaktır. KDE uluslararası bir proje olduğundan, hata ile "
+"ilgili verdiğiniz tüm bilgilerin mümkünse İngilizce olması gerekmektedir."
 
 #: aboutbugreportingdialog.cpp:67 aboutbugreportingdialog.cpp:170
 #: reportassistantdialog.cpp:71
@@ -98,11 +91,6 @@ msgstr ""
 "kadar iyi tarif edebileceğinizi belirtmeniz gerekiyor."
 
 #: aboutbugreportingdialog.cpp:72
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "If you can, describe in as much detail as possible, the crash "
-#| "circumstances, and what you were doing when the application crashed. You "
-#| "can mention: "
 msgctxt "@info/rich"
 msgid ""
 "If you can, describe in as much detail as possible the crash circumstances, "
@@ -110,9 +98,8 @@ msgid ""
 "going to be requested later.) You can mention: "
 msgstr ""
 "Mümkün olduğu kadar detaylı bir şekilde, çökmenin nasıl gerçekleştiğini ve "
-"uygulama çöktüğü esnada ne yaptığınızı "
-"yazın (bu bilgi daha sonra istenecektir). Örneğin, şunlardan "
-"bahsedebilirsiniz: "
+"uygulama çöktüğü esnada ne yaptığınızı yazın (bu bilgi daha sonra "
+"istenecektir). Örneğin, şunlardan bahsedebilirsiniz: "
 
 #: aboutbugreportingdialog.cpp:75
 msgctxt "@info/rich crash situation example"
@@ -136,8 +123,6 @@ msgid "widgets that you were running"
 msgstr "çalıştırdığınız gereçler"
 
 #: aboutbugreportingdialog.cpp:81
-#| msgctxt "@info/rich crash situation example"
-#| msgid "the url of a web site you were browsing"
 msgctxt "@info/rich crash situation example"
 msgid "the URL of a web site you were browsing"
 msgstr "gezinmekte olduğunuz web sitesinin adresi"
@@ -185,11 +170,9 @@ msgid ""
 "missing information.)"
 msgstr ""
 "Eğer hata bildirimi yeterince detaylı değilse, bazı hata ayıklama paketleri "
-"kurup, "
-"geri izi yeniden yükleyebilirsiniz (Eğer <interface>Hata Ayıklama "
-"Sembollerini Yükle</interface> "
-"düğmesi etkinse, eksik olan bilgiyi otomatik olarak yüklemek için o düğmeyi "
-"kullanabilirsiniz.)."
+"kurup, geri izi yeniden yükleyebilirsiniz (Eğer <interface>Hata Ayıklama "
+"Sembollerini Yükle</interface> düğmesi etkinse, eksik olan bilgiyi otomatik "
+"olarak yüklemek için o düğmeyi kullanabilirsiniz.)."
 
 #: aboutbugreportingdialog.cpp:99
 #, kde-format
@@ -227,12 +210,6 @@ msgstr ""
 "raporlanabilmesi için yeterli kriterlere sahip olup olmadığını bildirecek."
 
 #: aboutbugreportingdialog.cpp:111
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "If the crash is worth reporting, and the application is supported in the "
-#| "KDE bug tracking system, you can click <interface>Next</interface>. "
-#| "However, if it is not supported, you will need to directly contact the "
-#| "maintainer of the application."
 msgctxt "@info/rich"
 msgid ""
 "If the crash is worth reporting but the application is not supported in the "
@@ -325,8 +302,8 @@ msgid ""
 "reported, you can set your information to be attached to the existing report."
 msgstr ""
 "Eğer bildirdiğiniz hatanın daha önceden bildirilmiş bir hata ile aynı "
-"olduğunundan eminseniz, "
-"göndereceğiniz bilgileri var olan hata raporuna ekleyebilirsiniz."
+"olduğunundan eminseniz, göndereceğiniz bilgileri var olan hata raporuna "
+"ekleyebilirsiniz."
 
 #: aboutbugreportingdialog.cpp:151
 msgctxt "@info/rich"
@@ -362,10 +339,8 @@ msgid ""
 "assistant."
 msgstr ""
 "Eğer ilgili bir hata kaydı bulamadıysanız, hata raporunuz yeterli değilse ve "
-"hatanın "
-"ne şekilde gerçekleştiği ile ilgili bilgi veremiyorsanız, hata raporu "
-"açmadan bu uygulamadan çıkmanız "
-"daha yerinde olacaktır."
+"hatanın ne şekilde gerçekleştiği ile ilgili bilgi veremiyorsanız, hata "
+"raporu açmadan bu uygulamadan çıkmanız daha yerinde olacaktır."
 
 #: aboutbugreportingdialog.cpp:165
 msgctxt "@title"
@@ -387,8 +362,8 @@ msgid ""
 "You can also specify your distribution method (GNU/Linux distribution or "
 "packaging system) or if you compiled the KDE Platform from sources."
 msgstr ""
-"Dağıtımınızı (GNU/Linux dağıtımının ya da paket yönetim sisteminin ismi) "
-"ya da KDE Platformunu kaynaktan derleyip derlemediğinizi belirtebilirsiniz."
+"Dağıtımınızı (GNU/Linux dağıtımının ya da paket yönetim sisteminin ismi) ya "
+"da KDE Platformunu kaynaktan derleyip derlemediğinizi belirtebilirsiniz."
 
 #: aboutbugreportingdialog.cpp:174
 msgctxt "@info/rich"
@@ -414,10 +389,6 @@ msgstr ""
 "verilecektir."
 
 #: aboutbugreportingdialog.cpp:184
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "If the process fails, you can click <interface>Retry</interface> to try "
-#| "sending the bug report again."
 msgctxt "@info/rich"
 msgid ""
 "If the process fails, you can click <interface>Retry</interface> to try "
@@ -428,12 +399,9 @@ msgstr ""
 "Eğer işlem başarısız olursa, raporu tekrar göndermeyi denemek için "
 "<interface>Yeniden dene</interface> düğmesine basabilirsiniz. Eğer raporunuz "
 "hata raporlama sistemindeki bir problemden dolayı gönderilemiyorsa, hatayı "
-"daha "
-"sonra raporlamak için bir dosyaya kaydedebilirsiniz."
+"daha sonra raporlamak için bir dosyaya kaydedebilirsiniz."
 
 #: aboutbugreportingdialog.cpp:190
-#| msgctxt "@info/rich"
-#| msgid "Thank you for contributing to KDE!"
 msgctxt "@info/rich"
 msgid "Thank you for being part of KDE!"
 msgstr "KDE'ye katkıda bulunduğunuz için teşekkür ederiz!"
@@ -446,9 +414,8 @@ msgid ""
 "on FreeNode IRC) "
 msgstr ""
 "Eğer bize, geliştiricilerin gerçek hataları düzeltmeye odaklanmasını "
-"sağlamak için "
-"hata raporlarını organize etmekte yardımcı olmak isterseniz, BugSquad'a "
-"katılın (FreeNode IRC'deki #kde-bugs)"
+"sağlamak için hata raporlarını organize etmekte yardımcı olmak isterseniz, "
+"BugSquad'a katılın (FreeNode IRC'deki #kde-bugs)"
 
 #: backtracewidget.cpp:60
 msgctxt "@action:button"
@@ -519,12 +486,6 @@ msgid "The crash information could not be fetched."
 msgstr "Çökme bilgileri getirilemedi."
 
 #: backtracewidget.cpp:152
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "Another debugging process is attached to the crashed application. "
-#| "Therefore, the DrKonqi debugger cannot fetch the backtrace. Please close "
-#| "the other debugger and click <interface>Reload Crash Information</"
-#| "interface>."
 msgctxt "@info/rich"
 msgid ""
 "Another debugging process is attached to the crashed application. Therefore, "
@@ -533,8 +494,7 @@ msgid ""
 msgstr ""
 "Çöken uygulamayı başka bir hata ayıklama süreci inceliyor. Bu nedenle "
 "DrKonqi hata ayıklayıcısı geri iz alamaz. Lütfen diğer hata ayıklayıcıyı "
-"kapatın ve <interface>Yeniden Yükle</interface> ögesine "
-"tıklayın."
+"kapatın ve <interface>Yeniden Yükle</interface> ögesine tıklayın."
 
 #: backtracewidget.cpp:174
 msgctxt "@info"
@@ -562,8 +522,7 @@ msgid ""
 "The rating of this crash information is invalid. This is a bug in drkonqi "
 "itself."
 msgstr ""
-"Çökme bilgileri puanı geçerli değil. Bu drkonqi'nin kendisine ait "
-"bir hata."
+"Çökme bilgileri puanı geçerli değil. Bu drkonqi'nin kendisine ait bir hata."
 
 #: backtracewidget.cpp:198
 #, kde-format
@@ -575,12 +534,12 @@ msgid ""
 "useful crash reports</link> to learn how to get a useful backtrace; install "
 "the needed packages and click the <interface>Reload</interface> button."
 msgstr ""
-"Eksik hata ayıklama paketlerini otomatik olarak yüklemek için <interface>"
-"Hata Ayıklama Sembollerini Yükle</interface> düğmesine "
-"tıklayın. Eğer bu yöntem çalışmazsa: lütfen düzgün geri iz almayı öğrenmek "
-"için <link url='%1'>Nasıl faydalı hata raporları gönderebilirim</link> "
-" yazısını okuyun; gerekli paketleri kurun ve <interface>Yeniden Yükle<"
-"/interface> düğmesine basın."
+"Eksik hata ayıklama paketlerini otomatik olarak yüklemek için "
+"<interface>Hata Ayıklama Sembollerini Yükle</interface> düğmesine tıklayın. "
+"Eğer bu yöntem çalışmazsa: lütfen düzgün geri iz almayı öğrenmek için <link "
+"url='%1'>Nasıl faydalı hata raporları gönderebilirim</link>  yazısını "
+"okuyun; gerekli paketleri kurun ve <interface>Yeniden Yükle</interface> "
+"düğmesine basın."
 
 #: backtracewidget.cpp:219
 msgctxt "@info:status"
@@ -593,10 +552,6 @@ msgid "The crash information could not be generated."
 msgstr "Çökme bilgileri oluşturulamadı."
 
 #: backtracewidget.cpp:225
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "You could try to regenerate the backtrace by clicking the "
-#| "<interface>Reload Crash Information</interface> button."
 msgctxt "@info/rich"
 msgid ""
 "You could try to regenerate the backtrace by clicking the <interface>Reload</"
@@ -612,17 +567,13 @@ msgstr "Hata ayıklayıcı uygulama bulunamadı ya da çalıştırılamadı."
 
 #: backtracewidget.cpp:237
 #, kde-format
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "You need to install the debugger package (%1) and click the "
-#| "<interface>Reload Crash Information</interface> button."
 msgctxt "@info/rich"
 msgid ""
 "You need to install the debugger package (%1) and click the "
 "<interface>Reload</interface> button."
 msgstr ""
-"Hata ayıklayıcı paketini (%1) kurun ve <interface>Yeniden "
-"Yükle</interface> düğmesine basın."
+"Hata ayıklayıcı paketini (%1) kurun ve <interface>Yeniden Yükle</interface> "
+"düğmesine basın."
 
 #: backtracewidget.cpp:291
 msgctxt "@title:window"
@@ -734,18 +685,10 @@ msgid ""
 "(including the backtrace from the Developer Information tab.)</para>"
 msgstr ""
 "<para>Çökme denetim diyaloğu güvenli kipte başlatıldığı için raporlama "
-"yardımcısı "
-"etkin değil.<nl />Bu hatayı kendiniz %1 adresine (Geliştirici Bilgileri "
-"sekmesindeki geri "
-"iz ile birlikte) bildirebilirsiniz.</para>"
+"yardımcısı etkin değil.<nl />Bu hatayı kendiniz %1 adresine (Geliştirici "
+"Bilgileri sekmesindeki geri iz ile birlikte) bildirebilirsiniz.</para>"
 
 #: drkonqidialog.cpp:110
-#| msgctxt "@info"
-#| msgid ""
-#| "<para>You can help us improve KDE by reporting this error.<nl /><link "
-#| "url='#aboutbugreporting'>Learn more about bug reporting.</link></"
-#| "para><para><note>It is safe to close this dialog if you do not want to "
-#| "report this bug.</note></para>"
 msgctxt "@info"
 msgid ""
 "<para>You can help us improve KDE Software by reporting this error.<nl /"
@@ -756,8 +699,8 @@ msgstr ""
 "<para>Bu hatayı raporlayarak, KDE'yi geliştirmemiz için bize yardım "
 "edebilirsiniz.<nl /><link url='#aboutbugreporting'>Hata raporlamayla ilgili "
 "daha çok şey öğrenin.</link></para><para><note>Bu hatayı raporlamak "
-"istemiyorsanız, bu pencereyi kapatmanızda herhangi bir sakınca yoktur.</note>"
-"</para>"
+"istemiyorsanız, bu pencereyi kapatmanızda herhangi bir sakınca yoktur.</"
+"note></para>"
 
 #: drkonqidialog.cpp:117
 msgctxt "@info"
@@ -766,8 +709,7 @@ msgid ""
 "a bug reporting address.</para>"
 msgstr ""
 "<para>Uygulama herhangi bir hata bildirim adresi sağlamadığı için, bu "
-"uygulama "
-"için hata bildiremezsiniz.</para>"
+"uygulama için hata bildiremezsiniz.</para>"
 
 #: drkonqidialog.cpp:127
 msgctxt "@label"
@@ -828,8 +770,6 @@ msgid "Debug in <application>%1</application>"
 msgstr "<application>%1</application> içerisinde hata ayıkla"
 
 #: main.cpp:41
-#| msgid ""
-#| "The KDE crash handler gives the user feedback if a program has crashed."
 msgid "The KDE Crash Handler gives the user feedback if a program has crashed."
 msgstr ""
 "KDE Çökme Denetimi bir uygulama çöktüğünde kullanıcının geri bildirimini "
@@ -931,8 +871,6 @@ msgstr "eroloz@bilgi.edu.tr, gokcen@pardus.org.tr"
 #. i18n: file: ui/assistantpage_bugawareness.ui:20
 #. i18n: ectx: property (text), widget (QLabel, m_rememberLabel)
 #: rc.cpp:5
-#| msgctxt "@option:check"
-#| msgid "Yes, I can give information about the crash."
 msgid ""
 "<strong>Do you remember what you were doing prior to the crash?</strong>"
 msgstr ""
@@ -974,7 +912,6 @@ msgstr "Hiçbir zaman"
 #. i18n: file: ui/assistantpage_bugawareness.ui:132
 #. i18n: ectx: property (text), item, widget (QComboBox, m_reproducibleBox)
 #: rc.cpp:25
-#| msgid "Name of the program"
 msgid "Sometimes"
 msgstr "Bazen"
 
@@ -1018,11 +955,6 @@ msgstr "Gönderdiğim hatanın geri izi:"
 #. i18n: file: ui/assistantpage_bugzilla_duplicates.ui:17
 #. i18n: ectx: property (text), widget (QLabel, m_explanationLabel)
 #: rc.cpp:43
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "See if your bug is already been reported. If there are search results, "
-#| "double click a report in the list and compare it to yours. You can "
-#| "suggest that your crash is a duplicate of that report."
 msgctxt "@info/rich"
 msgid ""
 "See if your bug has already been reported. Double click a report in the list "
@@ -1032,10 +964,8 @@ msgstr ""
 "Gözlemlediğiniz hatanın daha önceden raporlanıp raporlanmadığını kontrol "
 "edin. Eğer arama sonuçları gelirse, listedeki bir rapora çift tıklayın ve "
 "gözlemlediğiniz hatayla aynı olup olmadığına karar verin. Raporladığınız "
-"hatanın "
-"daha önce bildirilmiş olan bir hata ile aynı olduğuna karar verebilir ya da "
-"doğrudan "
-"bilgilerinizi o hataya ekleyebilirsiniz."
+"hatanın daha önce bildirilmiş olan bir hata ile aynı olduğuna karar "
+"verebilir ya da doğrudan bilgilerinizi o hataya ekleyebilirsiniz."
 
 #. i18n: file: ui/assistantpage_bugzilla_duplicates.ui:72
 #. i18n: ectx: property (text), widget (QTreeWidget, m_bugListWidget)
@@ -1062,13 +992,10 @@ msgstr "Olası aynısı olanlar:"
 #. i18n: file: ui/assistantpage_bugzilla_information.ui:17
 #. i18n: ectx: property (text), widget (QLabel, m_explanationLabel)
 #: rc.cpp:55
-#| msgctxt "@info/rich"
-#| msgid "Complete the bug report fields: <nl /><note>Use English.</note>"
 msgctxt "@info/rich"
 msgid "Complete the bug report fields: <note>Use English.</note>"
 msgstr ""
-"Hata raporu için gereken boşlukları doldurun: <note>İngilizce yazın.</"
-"note>"
+"Hata raporu için gereken boşlukları doldurun: <note>İngilizce yazın.</note>"
 
 #. i18n: file: ui/assistantpage_bugzilla_information.ui:27
 #. i18n: ectx: property (text), widget (QLabel, m_titleLabel)
@@ -1080,8 +1007,6 @@ msgstr "<strong>Hatanın başlığı:</strong> (<a href=\"#\">örnekler</a>)"
 #. i18n: file: ui/assistantpage_bugzilla_information.ui:37
 #. i18n: ectx: property (text), widget (QLabel, m_detailsLabel)
 #: rc.cpp:61
-#| msgctxt "@option:check"
-#| msgid "Yes, I can give information about the crash."
 msgctxt "@label:textbox"
 msgid "<strong>Information about the crash:</strong>"
 msgstr "<strong>Çökme ile ilgili bilgi:</strong>"
@@ -1096,8 +1021,6 @@ msgstr "Dağıtım yöntemi:"
 #. i18n: file: ui/assistantpage_bugzilla_information.ui:62
 #. i18n: ectx: property (text), widget (QCheckBox, m_compiledSourcesCheckBox)
 #: rc.cpp:67
-#| msgctxt "@option:check"
-#| msgid "KDE compiled from sources"
 msgctxt "@option:check"
 msgid "KDE Platform is compiled from sources"
 msgstr "KDE Platformu kaynaktan derlenmiştir"
@@ -1186,11 +1109,9 @@ msgid ""
 "free to close this dialog if you do not accept this.</p>"
 msgstr ""
 "<p><note>Sizinle geliştiriciler arasındaki iletişim etkin hata giderme için "
-"gerekli olduğundan "
-"bu hatayı raporlamaya devam etmek için <strong>geliştiricilerin sizinle "
-"iletişime geçmesini "
-"onaylamanız gerekmektedir.</strong></note></p><p>Bunu onaylamıyorsanız bu "
-"pencereyi "
+"gerekli olduğundan bu hatayı raporlamaya devam etmek için "
+"<strong>geliştiricilerin sizinle iletişime geçmesini onaylamanız "
+"gerekmektedir.</strong></note></p><p>Bunu onaylamıyorsanız bu pencereyi "
 "kapatabilirsiniz.</p>"
 
 #: reportassistantdialog.cpp:48
@@ -1199,8 +1120,6 @@ msgid "Crash Reporting Assistant"
 msgstr "Çökme Raporlama Yardımcısı"
 
 #: reportassistantdialog.cpp:61
-#| msgctxt "@title:window"
-#| msgid "Close the Reporting Assistant"
 msgctxt "@title"
 msgid "Welcome to the Reporting Assistant"
 msgstr "Raporlama Yardımcısına Hoş Geldiniz"
@@ -1305,10 +1224,8 @@ msgid ""
 "configuration."
 msgstr ""
 "Masaüstü ve panel(ler)inizdeki (yüklü gelen ya da elle kurduğunuz) "
-"programcıklar, "
-"masaüstü ayarlarınız (duvar kağıdı, eklenti ve temalar), eylemler ve kontrol "
-"paneli "
-"yapılandırması."
+"programcıklar, masaüstü ayarlarınız (duvar kağıdı, eklenti ve temalar), "
+"eylemler ve kontrol paneli yapılandırması."
 
 #: reportassistantpages_base.cpp:185
 msgctxt "@info examples about information the user can provide"
@@ -1495,11 +1412,6 @@ msgstr "İsterseniz geri dönüp yanıtlarınızı değiştirebilirsiniz. "
 
 #: reportassistantpages_base.cpp:412
 #, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This application is supported in the KDE bug tracking system. You can "
-#| "manually report this bug at <link>%1</link>. Click <interface>Finish</"
-#| "interface> to close the assistant."
 msgctxt "@info"
 msgid ""
 "You can manually report this bug at <link>%1</link>. Click "
@@ -1511,19 +1423,14 @@ msgstr ""
 
 #: reportassistantpages_base.cpp:418
 #, kde-format
-#| msgctxt "@info"
-#| msgid ""
-#| "This application is not supported in the KDE bug tracking system. You can "
-#| "manually report this bug to its maintainer at <link>%1</link>. Click "
-#| "<interface>Finish</interface> to close the assistant."
 msgctxt "@info"
 msgid ""
 "You can manually report this bug to its maintainer at <link>%1</link>. Click "
 "<interface>Finish</interface> to close the assistant."
 msgstr ""
 "Bu hatayı uygulama sorumlusuna bildirmek için <link>%1</link> bağlantısını "
-"kullanın."
-"Yardımcıdan çıkmak için <interface>Bitir</interface> düğmesine basın."
+"kullanın.Yardımcıdan çıkmak için <interface>Bitir</interface> düğmesine "
+"basın."
 
 #: reportassistantpages_base.cpp:437
 #, kde-format
@@ -1715,12 +1622,9 @@ msgid ""
 "developers' time. Can you tell us more?"
 msgstr ""
 "Eğer yeterli düzeyde bilgi veremiyorsanız, geliştiricilerin vaktini boşuna "
-"harcamış "
-"olabilirsiniz. Daha fazla bilgi verebilir misiniz?"
+"harcamış olabilirsiniz. Daha fazla bilgi verebilir misiniz?"
 
 #: reportassistantpages_bugzilla.cpp:398
-#| msgctxt "@title:window"
-#| msgid "We need more information"
 msgid "Yes, let me add more information"
 msgstr "Evet, daha fazla bilgi ekleyebilirim"
 
@@ -1768,10 +1672,6 @@ msgstr "Çökme raporu gönderiliyor...(lütfen bekleyin)"
 
 #: reportassistantpages_bugzilla.cpp:528
 #, kde-format
-#| msgctxt "@info/rich"
-#| msgid ""
-#| "Crash report sent.<nl/>URL: <link>%1</link><nl/>Thanks for contributing "
-#| "to KDE. You can now close this window."
 msgctxt "@info/rich"
 msgid ""
 "Crash report sent.<nl/>URL: <link>%1</link><nl/>Thank you for being part of "
@@ -1788,8 +1688,6 @@ msgstr "Çökme raporu gönderilemedi:  <message>%1.</message>"
 
 #: reportassistantpages_bugzilla.cpp:560
 #, kde-format
-#| msgctxt "@info/plain"
-#| msgid "Report to %1"
 msgctxt "@info/plain report to KDE bugtracker address"
 msgid "Report to %1"
 msgstr "%1 konumuna raporla"
@@ -1863,8 +1761,6 @@ msgid "There are no real duplicates"
 msgstr "Hatanın aynısına rastlanmadı"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:170
-#| msgctxt "@action:button"
-#| msgid "Search for more reports"
 msgid "Let me check more reports"
 msgstr "Daha fazla rapor ara"
 
@@ -1876,9 +1772,8 @@ msgid ""
 "confirm that there are no real duplicates?"
 msgstr ""
 "Olası aynılardan birini ya da çökme bilginizi ekleyebileceğiniz bir hata "
-"kaydı seçmediniz. "
-"Tüm hata kayıtlarını okudunuz ve gerçekten aynı hatanın raporlanmadığına "
-"emin misiniz?"
+"kaydı seçmediniz. Tüm hata kayıtlarını okudunuz ve gerçekten aynı hatanın "
+"raporlanmadığına emin misiniz?"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:177
 msgctxt "@title:window"
@@ -1989,8 +1884,6 @@ msgid "Bug Description"
 msgstr "Hata Açıklaması"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:493
-#| msgctxt "@info:tooltip"
-#| msgid "Use this button to view the information of the selected bug report."
 msgctxt "@info:tooltip"
 msgid "Use this button to retry loading the bug report."
 msgstr "Seçilen hata kaydını yeniden yüklemek için bu düğmeyi kullanın."
@@ -2056,8 +1949,8 @@ msgid ""
 "(recommended)"
 msgstr ""
 "Seçtiğiniz hata raporu (hata <numid>%1</numid>) zaten <numid>%2</numid> "
-"numaralı hatanın "
-"aynısı olarak işaretlenmiş. Bu raporu okumak ister misiniz? (tavsiye edilir)"
+"numaralı hatanın aynısı olarak işaretlenmiş. Bu raporu okumak ister misiniz? "
+"(tavsiye edilir)"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:591
 msgctxt "@title:window"
@@ -2110,8 +2003,6 @@ msgstr ""
 
 #: reportassistantpages_bugzilla_duplicates.cpp:639
 #, kde-format
-#| msgctxt "@info bug status, %1 is the resolutin"
-#| msgid "Closed (%1)"
 msgctxt "@info bug status, %1 is the resolution"
 msgid "Closed (%1)"
 msgstr "Kapatılmış (%1)"
@@ -2173,12 +2064,9 @@ msgid ""
 msgstr ""
 "Bu hata raporu '%1' açıklamasıyla 'kapatılmış' olarak işaretlenmiş. Eğer "
 "bildireceğiniz çökmenin aynı olduğu düşünüyorsanız, daha fazla bilgi "
-"vermeniz "
-"ya da yeni hata kaydı açmanızın bir faydası olmayacaktır ve geliştiricilerin "
-"boşa vakit "
-"harcamasına neden olacaktır. Bildireceğiniz ile bununla aynı olup olmadığına "
-"emin "
-"olabilir misiniz?"
+"vermeniz ya da yeni hata kaydı açmanızın bir faydası olmayacaktır ve "
+"geliştiricilerin boşa vakit harcamasına neden olacaktır. Bildireceğiniz ile "
+"bununla aynı olup olmadığına emin olabilir misiniz?"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:694
 msgctxt "@title:window"
@@ -2194,10 +2082,8 @@ msgid ""
 "attach your report to bug <numid>%1</numid> ?"
 msgstr ""
 "Eğer mevcut bir hataya yeni bir bilgi eklemek istiyorsanız, hatanın önceden "
-"bildirilenle "
-"aynı olduğuna emin olmanız gerekmektedir. <nl />Raporunuzu <numid>%1</numid> "
-"numaralı "
-"hataya eklemek istediğinizden emin misiniz?"
+"bildirilenle aynı olduğuna emin olmanız gerekmektedir. <nl />Raporunuzu "
+"<numid>%1</numid> numaralı hataya eklemek istediğinizden emin misiniz?"
 
 #: reportassistantpages_bugzilla_duplicates.cpp:737
 #, kde-format

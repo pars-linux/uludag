@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-16 01:20+0100\n"
+"POT-Creation-Date: 2010-05-20 01:20+0200\n"
 "PO-Revision-Date: 2010-04-19 16:41+0300\n"
 "Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1068,12 +1068,12 @@ msgctxt "@label:textbox"
 msgid "Search..."
 msgstr "Ara..."
 
-#: versioncontrol/versioncontrolobserver.cpp:190
+#: versioncontrol/versioncontrolobserver.cpp:192
 msgctxt "@info:status"
 msgid "Update of version information failed."
 msgstr "Sürüm bilgileri güncellenemedi."
 
-#: versioncontrol/versioncontrolobserver.cpp:243
+#: versioncontrol/versioncontrolobserver.cpp:245
 msgctxt "@info:status"
 msgid "Updating version information..."
 msgstr "Sürüm bilgileri güncelleniyor..."
@@ -1103,78 +1103,78 @@ msgctxt "@item:inmenu"
 msgid "SVN Delete"
 msgstr "SVN Delete"
 
-#: versioncontrol/fileviewsvnplugin.cpp:248
+#: versioncontrol/fileviewsvnplugin.cpp:249
 msgctxt "@info:status"
 msgid "Updating SVN repository..."
 msgstr "SVN deposu güncelleniyor..."
 
-#: versioncontrol/fileviewsvnplugin.cpp:249
+#: versioncontrol/fileviewsvnplugin.cpp:250
 msgctxt "@info:status"
 msgid "Update of SVN repository failed."
 msgstr "SVN deposu güncellenemedi."
 
-#: versioncontrol/fileviewsvnplugin.cpp:250
+#: versioncontrol/fileviewsvnplugin.cpp:251
 msgctxt "@info:status"
 msgid "Updated SVN repository."
 msgstr "SVN deposu güncellendi."
 
-#: versioncontrol/fileviewsvnplugin.cpp:269
+#: versioncontrol/fileviewsvnplugin.cpp:270
 msgctxt "@label"
 msgid "Description:"
 msgstr "Açıklama:"
 
-#: versioncontrol/fileviewsvnplugin.cpp:273
+#: versioncontrol/fileviewsvnplugin.cpp:274
 msgctxt "@title:window"
 msgid "SVN Commit"
 msgstr "SVN Commit"
 
-#: versioncontrol/fileviewsvnplugin.cpp:276
+#: versioncontrol/fileviewsvnplugin.cpp:277
 msgctxt "@action:button"
 msgid "Commit"
 msgstr "Commit"
 
-#: versioncontrol/fileviewsvnplugin.cpp:288
-#: versioncontrol/fileviewsvnplugin.cpp:299
+#: versioncontrol/fileviewsvnplugin.cpp:289
+#: versioncontrol/fileviewsvnplugin.cpp:300
 msgctxt "@info:status"
 msgid "Commit of SVN changes failed."
 msgstr "SVN değişiklikleri uygulanamadı."
 
-#: versioncontrol/fileviewsvnplugin.cpp:298
+#: versioncontrol/fileviewsvnplugin.cpp:299
 msgctxt "@info:status"
 msgid "Committing SVN changes..."
 msgstr "Yerel SVN değişiklikleri depoya uygulanıyor..."
 
-#: versioncontrol/fileviewsvnplugin.cpp:300
+#: versioncontrol/fileviewsvnplugin.cpp:301
 msgctxt "@info:status"
 msgid "Committed SVN changes."
 msgstr "Yerel SVN değişikleri depoya uygulandı."
 
-#: versioncontrol/fileviewsvnplugin.cpp:309
+#: versioncontrol/fileviewsvnplugin.cpp:310
 msgctxt "@info:status"
 msgid "Adding files to SVN repository..."
 msgstr "Dosyalar SVN deposuna ekleniyor..."
 
-#: versioncontrol/fileviewsvnplugin.cpp:310
+#: versioncontrol/fileviewsvnplugin.cpp:311
 msgctxt "@info:status"
 msgid "Adding of files to SVN repository failed."
 msgstr "Dosyalar SVN deposuna eklenemedi."
 
-#: versioncontrol/fileviewsvnplugin.cpp:311
+#: versioncontrol/fileviewsvnplugin.cpp:312
 msgctxt "@info:status"
 msgid "Added files to SVN repository."
 msgstr "SVN deposuna eklendi."
 
-#: versioncontrol/fileviewsvnplugin.cpp:317
+#: versioncontrol/fileviewsvnplugin.cpp:318
 msgctxt "@info:status"
 msgid "Removing files from SVN repository..."
 msgstr "Dosyalar SVN deposundan siliniyor..."
 
-#: versioncontrol/fileviewsvnplugin.cpp:318
+#: versioncontrol/fileviewsvnplugin.cpp:319
 msgctxt "@info:status"
 msgid "Removing of files from SVN repository failed."
 msgstr "Dosyalar SVN deposundan silinemedi."
 
-#: versioncontrol/fileviewsvnplugin.cpp:319
+#: versioncontrol/fileviewsvnplugin.cpp:320
 msgctxt "@info:status"
 msgid "Removed files from SVN repository."
 msgstr "SVN deposundan silindi."
@@ -1552,8 +1552,6 @@ msgid "&Edit File Type..."
 msgstr "&Dosya Tipini Düzenle..."
 
 #: dolphinpart.cpp:169
-#| msgctxt "@info:tooltip"
-#| msgid "Select Item"
 msgctxt "@action:inmenu Edit"
 msgid "Select Items Matching..."
 msgstr "Uyuşan Ögeleri Seç..."
@@ -1564,8 +1562,6 @@ msgid "Unselect Items Matching..."
 msgstr "Uyuşan Ögeleri Bırak..."
 
 #: dolphinpart.cpp:180
-#| msgctxt "@action:inmenu Edit"
-#| msgid "Select All"
 msgctxt "@action:inmenu Edit"
 msgid "Unselect All"
 msgstr "Tümünü Bırak"
@@ -1611,8 +1607,6 @@ msgid "Dolphin Part"
 msgstr "Dolphin Part"
 
 #: dolphinpart.cpp:519
-#| msgctxt "@label"
-#| msgid "Select..."
 msgctxt "@title:window"
 msgid "Select"
 msgstr "Seç"
@@ -2055,55 +2049,55 @@ msgctxt "@info:tooltip"
 msgid "Select Item"
 msgstr "Ögeyi Seç"
 
-#: dolphinview.cpp:562
+#: dolphinview.cpp:560
 #, kde-format
 msgctxt "@info:status"
 msgid "<filename>%1</filename> selected"
 msgstr "<filename>%1</filename> seçildi"
 
-#: dolphinview.cpp:563
+#: dolphinview.cpp:561
 #, kde-format
 msgctxt "@info:status"
 msgid "<filename>%1</filename> selected (%2)"
 msgstr "<filename>%1</filename> seçildi (%2)"
 
-#: dolphinview.cpp:567
+#: dolphinview.cpp:565
 #, kde-format
 msgctxt "@info:status"
 msgid "1 Folder selected"
 msgid_plural "%1 Folders selected"
 msgstr[0] "%1 Dizin seçildi"
 
-#: dolphinview.cpp:568
+#: dolphinview.cpp:566
 #, kde-format
 msgctxt "@info:status"
 msgid "1 File selected"
 msgid_plural "%1 Files selected"
 msgstr[0] "%1 Dosya seçildi"
 
-#: dolphinview.cpp:570
+#: dolphinview.cpp:568
 #, kde-format
 msgctxt "@info:status folders, files (size)"
 msgid "%1, %2 (%3)"
 msgstr "%1, %2 (%3)"
 
-#: dolphinview.cpp:573
+#: dolphinview.cpp:571
 #, kde-format
 msgctxt "@info:status files (size)"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
-#: dolphinview.cpp:1178
+#: dolphinview.cpp:1176
 msgctxt "@info:status"
 msgid "Delete operation completed."
 msgstr "Silme işlemi tamamlandı."
 
-#: dolphinview.cpp:1270
+#: dolphinview.cpp:1262
 msgctxt "@info:status"
 msgid "The location is empty."
 msgstr "Bu konum boş."
 
-#: dolphinview.cpp:1272
+#: dolphinview.cpp:1264
 #, kde-format
 msgctxt "@info:status"
 msgid "The location '%1' is invalid."
@@ -2161,8 +2155,6 @@ msgstr "&Düzen"
 #. i18n: file: dolphinpart.rc:14
 #. i18n: ectx: Menu (selection)
 #: rc.cpp:6 rc.cpp:278
-#| msgctxt "@action:inmenu Edit"
-#| msgid "Invert Selection"
 msgctxt "@title:menu"
 msgid "Selection"
 msgstr "Seçim"
@@ -2225,8 +2217,6 @@ msgstr "Paneller"
 #. i18n: file: dolphinui.rc:67
 #. i18n: ectx: Menu (navigation_bar)
 #: rc.cpp:39 rc.cpp:266
-#| msgctxt "@label:textbox"
-#| msgid "Location:"
 msgctxt "@title:menu"
 msgid "Location Bar"
 msgstr "Konum Çubuğu"
@@ -2629,16 +2619,12 @@ msgstr "Bu özelliklerin kullanıcı tarafından değiştirildiği son tarih."
 #. i18n: file: search/dolphin_searchsettings.kcfg:7
 #. i18n: ectx: label, entry (Location), group (Search)
 #: rc.cpp:245
-#| msgctxt "@label:textbox"
-#| msgid "Location:"
 msgid "Location"
 msgstr "Konum"
 
 #. i18n: file: search/dolphin_searchsettings.kcfg:11
 #. i18n: ectx: label, entry (What), group (Search)
 #: rc.cpp:248
-#| msgctxt "@label"
-#| msgid "What:"
 msgid "What"
 msgstr "Ne"
 

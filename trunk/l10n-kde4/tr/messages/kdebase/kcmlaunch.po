@@ -95,4 +95,3 @@ msgstr "&Görev çubuğu bildirimlerini etkinleştir "
 #: kcmlaunch.cpp:116
 msgid "Start&up indication timeout:"
 msgstr "&Başlangıç gösterici zaman aşımı: "
-

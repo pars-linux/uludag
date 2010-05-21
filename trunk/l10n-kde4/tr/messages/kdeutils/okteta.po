@@ -30,7 +30,6 @@ msgid "KDE byte editor"
 msgstr "KDE bayt düzenleyici"
 
 #: about.cpp:43
-#| msgid "Copyright 2006-2009 Friedrich W. H. Kossebau"
 msgid "Copyright 2006-2010 Friedrich W. H. Kossebau"
 msgstr "Telif Hakkı 2006-2010 Friedrich W. H. Kossebau"
 

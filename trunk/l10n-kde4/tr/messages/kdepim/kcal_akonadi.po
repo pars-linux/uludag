@@ -34,12 +34,11 @@ msgid ""
 "calendar source through <interface>%1</interface></note></para>"
 msgstr ""
 "<para>Öntanımlı olarak, yeni bir Olay, Yapılacak İş veya Günlük girdisi "
-"eklediğiniz "
-"sırada nereye koymak istediğiniz sorulur.</para><para>Kolaylık sağlamak için "
-"her üç veri ögesi için öntanımlı bir klasör tanımlamak da mümkündür.</"
-"para><para><note>Eğer aşağıdaki klasör listesi boş ise <interface>%1<"
-"/interface> "
-"arayüzünden bir takvim kaynağı ekleyebilirsiniz.</note></para>"
+"eklediğiniz sırada nereye koymak istediğiniz sorulur.</para><para>Kolaylık "
+"sağlamak için her üç veri ögesi için öntanımlı bir klasör tanımlamak da "
+"mümkündür.</para><para><note>Eğer aşağıdaki klasör listesi boş ise "
+"<interface>%1</interface> arayüzünden bir takvim kaynağı ekleyebilirsiniz.</"
+"note></para>"
 
 #: resourceakonadiconfig.cpp:56
 msgctxt "@item:inlistbox, calendar entries"
@@ -119,5 +118,3 @@ msgstr "Lütfen bu takvim girdisi için bir depolama dizini seçin"
 msgctxt "@label"
 msgid "Please select a storage folder"
 msgstr "Lütfen bir depolama dizini seçin"
-
-

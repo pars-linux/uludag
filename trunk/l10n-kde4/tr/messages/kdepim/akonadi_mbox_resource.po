@@ -80,10 +80,8 @@ msgid ""
 msgstr ""
 "MBox dosyası başka bir program tarafından değiştirilmiş. Yeni dosyaların bir "
 "kopyası oluşturuldu ve bekleyen değişiklikler bu kopyaya eklendi. Bu "
-"işlemden kaçınmak "
-"için kilitlemeyi kullanın ve mbox dosyasına erişen tüm programların aynı "
-"kilitleme "
-"yöntemini kullandığından emin olun."
+"işlemden kaçınmak için kilitlemeyi kullanın ve mbox dosyasına erişen tüm "
+"programların aynı kilitleme yöntemini kullandığından emin olun."
 
 #: mboxresource.cpp:296
 #, kde-format
@@ -95,9 +93,7 @@ msgstr "Mbox dosyası %1 konumuna kaydedilemedi"
 msgid ""
 "Failed to update the changed item because the old item could not be deleted "
 "Reason: %1"
-msgstr ""
-"Seçili öge, eski öge silinemediği için güncellemedi "
-"Sebebi: %1"
+msgstr "Seçili öge, eski öge silinemediği için güncellemedi Sebebi: %1"
 
 #. i18n: file: compactpage.ui:23
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -136,8 +132,7 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Bir Mbox dosyasından bir "
 "postayı silmenin yolu o dosyayı asıl dosyadan silmektir. Bu ağır bir işlem "
 "olduğundan, mbox öz kaynağı silinen iletilerin bir listesini tutar. Bu "
-"listedeki "
-"dosyalar uygun bir zamanda sistemden silinirler.</p>\n"
+"listedeki dosyalar uygun bir zamanda sistemden silinirler.</p>\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
 "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"></"
 "p>\n"
@@ -145,8 +140,8 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
 "weight:600;\">Note:</span> Bu işlemin kötü bir yanı dosyanın başka bir "
 "program tarafından silinmesidir. Silinen iletilerin bulunduğu liste artık "
-"güvenilmez olabilir ve silinen iletiler tekrar ortaya çıkabilir.</p></body><"
-"/html>"
+"güvenilmez olabilir ve silinen iletiler tekrar ortaya çıkabilir.</p></body></"
+"html>"
 
 #. i18n: file: compactpage.ui:49
 #. i18n: ectx: property (text), widget (QPushButton, compactButton)
@@ -260,11 +255,9 @@ msgid ""
 "locking method."
 msgstr ""
 "Öntanımlı yapılandırma, hiçbiri, çoğu durum için en güvenilir olanıdır. "
-"Ancak, "
-"akonadi kullanmayan programlar yapılandırılmış mbox dosyasına erişiyorsa, bu "
-"işlem için uygun bir kilitleme yöntemi ayarlamalısınız. Özkaynağın ve tüm "
-"programların "
-"aynı kilitleme yöntemini kullanmalıdırlar."
+"Ancak, akonadi kullanmayan programlar yapılandırılmış mbox dosyasına "
+"erişiyorsa, bu işlem için uygun bir kilitleme yöntemi ayarlamalısınız. "
+"Özkaynağın ve tüm programların aynı kilitleme yöntemini kullanmalıdırlar."
 
 #. i18n: file: mboxresource.kcfg:10
 #. i18n: ectx: label, entry (Path), group (General)

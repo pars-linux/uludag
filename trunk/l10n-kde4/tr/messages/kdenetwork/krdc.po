@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krdc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-15 01:27+0100\n"
+"POT-Creation-Date: 2010-04-30 01:24+0200\n"
 "PO-Revision-Date: 2010-05-12 10:57+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -111,164 +111,164 @@ msgstr ""
 msgid "URLs to connect after startup"
 msgstr "Açılıştan sonra bağlanılacak adresler"
 
-#: mainwindow.cpp:134
+#: mainwindow.cpp:135
 msgid "KDE Remote Desktop Client started"
 msgstr "KDE Uzak Masaüstü İstemcisi başlatıldı"
 
-#: mainwindow.cpp:154 mainwindow.cpp:963
+#: mainwindow.cpp:155 mainwindow.cpp:994
 msgid "New Connection"
 msgstr "Yeni Bağlantı"
 
-#: mainwindow.cpp:159
+#: mainwindow.cpp:160
 msgid "Copy Screenshot to Clipboard"
 msgstr "Ekran Görüntüsünü Panoya Kopyala"
 
-#: mainwindow.cpp:160
+#: mainwindow.cpp:161
 msgid "Screenshot"
 msgstr "Ekran Görüntüsü"
 
-#: mainwindow.cpp:165 mainwindow.cpp:502
+#: mainwindow.cpp:166 mainwindow.cpp:508
 msgid "Switch to Full Screen Mode"
 msgstr "Tam Ekran Kipine Geç"
 
-#: mainwindow.cpp:166 mainwindow.cpp:503
+#: mainwindow.cpp:167 mainwindow.cpp:509
 msgid "Full Screen"
 msgstr "Tam Ekran"
 
-#: mainwindow.cpp:173
+#: mainwindow.cpp:174
 msgid "View Only"
 msgstr "Sadece Görüntüle"
 
-#: mainwindow.cpp:178
+#: mainwindow.cpp:179
 msgid "Disconnect"
 msgstr "Bağlantıyı Kes"
 
-#: mainwindow.cpp:186
+#: mainwindow.cpp:187
 msgid "Show Local Cursor"
 msgstr "Yerel Fare İmlecini Göster"
 
-#: mainwindow.cpp:187
+#: mainwindow.cpp:188
 msgid "Local Cursor"
 msgstr "Yerel Fare İmleci"
 
-#: mainwindow.cpp:193
+#: mainwindow.cpp:194
 msgid "Grab All Possible Keys"
 msgstr "Mümkün Olan Tüm Tuşları Yakala"
 
-#: mainwindow.cpp:194
+#: mainwindow.cpp:195
 msgid "Grab Keys"
 msgstr "Tuşları Yakala"
 
-#: mainwindow.cpp:200
+#: mainwindow.cpp:201
 msgid "Scale Remote Screen to Fit Window Size"
 msgstr "Uzak Ekranı Pencere Boyutuna Uydur"
 
-#: mainwindow.cpp:201
+#: mainwindow.cpp:202
 msgid "Scale"
 msgstr "Ölçeklendir"
 
-#: mainwindow.cpp:213
+#: mainwindow.cpp:214
 msgid "Bookmarks"
 msgstr "Yer İmleri"
 
-#: mainwindow.cpp:301
+#: mainwindow.cpp:302
 msgid "The entered address does not have the required form."
 msgstr "Girilen adres gerekli biçimde değil."
 
-#: mainwindow.cpp:302
+#: mainwindow.cpp:303
 msgid "Malformed URL"
 msgstr "Bozulmuş Adres"
 
-#: mainwindow.cpp:322
+#: mainwindow.cpp:323
 msgid "The entered address cannot be handled."
 msgstr "Girilen adres kullanılamaz."
 
-#: mainwindow.cpp:323 mainwindow.cpp:641 config/hostpreferenceslist.cpp:119
+#: mainwindow.cpp:324 mainwindow.cpp:661 config/hostpreferenceslist.cpp:119
 msgid "Unusable URL"
 msgstr "Kullanılamaz URL"
 
-#: mainwindow.cpp:436
+#: mainwindow.cpp:441
 #, kde-format
 msgid "Connecting to %1"
 msgstr "%1 konumuna bağlanılıyor%1'e bağlanılıyor."
 
-#: mainwindow.cpp:440
+#: mainwindow.cpp:445
 #, kde-format
 msgid "Authenticating at %1"
 msgstr "%1 konumunda kimlik doğrulaması yapılıyor"
 
-#: mainwindow.cpp:444
+#: mainwindow.cpp:449
 #, kde-format
 msgid "Preparing connection to %1"
 msgstr "%1 konumuna bağlanılmaya çalışılıyor"
 
-#: mainwindow.cpp:448
+#: mainwindow.cpp:453
 #, kde-format
 msgid "Connected to %1"
 msgstr "%1 konumuna bağlanıldı"
 
-#: mainwindow.cpp:511
+#: mainwindow.cpp:517
 msgctxt ""
 "window title when in full screen mode (for example displayed in tasklist)"
 msgid "KDE Remote Desktop Client (Full Screen)"
 msgstr "KDE Uzak Masaüstü İstemcisi (Tam ekran)"
 
-#: mainwindow.cpp:640 config/hostpreferenceslist.cpp:118
+#: mainwindow.cpp:660 config/hostpreferenceslist.cpp:118
 msgid "The selected host cannot be handled."
 msgstr "Seçilen makine kullanılmaz."
 
-#: mainwindow.cpp:657
+#: mainwindow.cpp:677
 msgid "Add Bookmark"
 msgstr "Yer İmi Ekle"
 
-#: mainwindow.cpp:658
+#: mainwindow.cpp:678
 msgid "Close Tab"
 msgstr "Sekmeyi Kapat"
 
-#: mainwindow.cpp:720
+#: mainwindow.cpp:740
 msgid "Switch to Window Mode"
 msgstr "Pencere Kipine Geç"
 
-#: mainwindow.cpp:721
+#: mainwindow.cpp:741
 msgid "Window Mode"
 msgstr "Pencere Kipi"
 
-#: mainwindow.cpp:741
+#: mainwindow.cpp:761
 msgid "Minimize Full Screen Window"
 msgstr "Tam Ekran Pencereyi Küçült"
 
-#: mainwindow.cpp:755
+#: mainwindow.cpp:775
 msgid "Stick Toolbar"
 msgstr "Araç Çubuğuna Yapış"
 
-#: mainwindow.cpp:871
+#: mainwindow.cpp:892
 msgid "Are you sure you want to quit the KDE Remote Desktop Client?"
 msgstr "KDE Uzak Masaüstü İstemcisininden çıkmak istediğinizden emin misiniz?"
 
-#: mainwindow.cpp:872
+#: mainwindow.cpp:893
 msgid "Confirm Quit"
 msgstr "Çıkışı Doğrula"
 
-#: mainwindow.cpp:979
+#: mainwindow.cpp:1010
 msgid ""
 "<h1>KDE Remote Desktop Client</h1><br /><br />What would you like to do?<br /"
 ">"
 msgstr ""
 "<h1>KDE Uzak Masaüstü İstemcisi</h1><br /><br />Ne yapmak istersiniz?<br />"
 
-#: mainwindow.cpp:1004
+#: mainwindow.cpp:1035
 msgid "Connect to:"
 msgstr "Şuna bağlan:"
 
-#: mainwindow.cpp:1007
+#: mainwindow.cpp:1038
 msgid "Goto Address"
 msgstr "Adrese Git"
 
-#: mainwindow.cpp:1032 mainwindow.cpp:1127
+#: mainwindow.cpp:1063 mainwindow.cpp:1158
 msgid "Filter"
 msgstr "Filtrele"
 
-#: mainwindow.cpp:1104
+#: mainwindow.cpp:1135
 msgid "Remote Desktops"
 msgstr "Uzak Masaüstleri"
 
@@ -1135,7 +1135,7 @@ msgstr "Düşük Kalite (Modem, ISDN veya yavaş İnternet)"
 msgid "Sessions"
 msgstr "Oturumlar"
 
-#: systemtrayicon.cpp:41
+#: systemtrayicon.cpp:42
 msgid "KDE Remote Desktop Client"
 msgstr "KDE Uzak Masaüstü İstemcisi"
 

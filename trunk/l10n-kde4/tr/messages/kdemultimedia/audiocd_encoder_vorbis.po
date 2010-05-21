@@ -279,4 +279,3 @@ msgstr ""
 "kolaylıkla şarkı ile ilgili detaylı bilgi edinmesini ve bu bilginin ortam "
 "yürütücüsünde görünmesini sağlar. Bu bilgiyi otomatik olarak Internet'ten "
 "edinebilirsiniz. Detaylar için <i>\"CDDB Alma\"</i> modülünü inceleyiniz."
-

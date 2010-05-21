@@ -107,7 +107,6 @@ msgid "Show B&it Edit"
 msgstr "B&it Düzenlemeyi Göster"
 
 #: kcalc.cpp:357
-#| msgid "M+"
 msgctxt "Add display to memory"
 msgid "M+"
 msgstr "M+"
@@ -117,7 +116,6 @@ msgid "Add display to memory"
 msgstr "Görüntüyü hafızaya ekle"
 
 #: kcalc.cpp:358
-#| msgid "M"
 msgctxt "Subtract from memory"
 msgid "M-"
 msgstr "M-"
@@ -137,7 +135,6 @@ msgid "Cube root"
 msgstr "Küp kök"
 
 #: kcalc.cpp:493
-#| msgid "Sin"
 msgctxt "Sine"
 msgid "Sin"
 msgstr "Sin"
@@ -149,7 +146,6 @@ msgid "Sine"
 msgstr "Sinüs"
 
 #: kcalc.cpp:494
-#| msgid "Arc sine"
 msgctxt "Arc sine"
 msgid "Asin"
 msgstr "Asin"
@@ -159,7 +155,6 @@ msgid "Arc sine"
 msgstr "Ark sinüs"
 
 #: kcalc.cpp:495
-#| msgid "Sin"
 msgctxt "Hyperbolic sine"
 msgid "Sinh"
 msgstr "Sinh"
@@ -169,7 +164,6 @@ msgid "Hyperbolic sine"
 msgstr "Hiperbolik Sinüs"
 
 #: kcalc.cpp:497
-#| msgid "Arc sine"
 msgctxt "Inverse hyperbolic sine"
 msgid "Asinh"
 msgstr "Asinh"
@@ -179,7 +173,6 @@ msgid "Inverse hyperbolic sine"
 msgstr "Ters hiperbolik sinüs"
 
 #: kcalc.cpp:504
-#| msgid "Cos"
 msgctxt "Cosine"
 msgid "Cos"
 msgstr "Cos"
@@ -200,7 +193,6 @@ msgid "Arc cosine"
 msgstr "Ark kosinüs"
 
 #: kcalc.cpp:506
-#| msgid "Cos"
 msgctxt "Hyperbolic cosine"
 msgid "Cosh"
 msgstr "Cosh"
@@ -219,7 +211,6 @@ msgid "Inverse hyperbolic cosine"
 msgstr "Ters hiperbolik kosinüs"
 
 #: kcalc.cpp:515
-#| msgid "Tan"
 msgctxt "Tangent"
 msgid "Tan"
 msgstr "Tan"
@@ -240,7 +231,6 @@ msgid "Arc tangent"
 msgstr "Ark tanjant"
 
 #: kcalc.cpp:517
-#| msgid "Tan"
 msgctxt "Hyperbolic tangent"
 msgid "Tanh"
 msgstr "Tanh"
@@ -259,7 +249,6 @@ msgid "Inverse hyperbolic tangent"
 msgstr "Ters hiperbolik tanjant"
 
 #: kcalc.cpp:526
-#| msgid "Log"
 msgctxt "Logarithm to base 10"
 msgid "Log"
 msgstr "Log"
@@ -280,7 +269,6 @@ msgid "10 to the power of x"
 msgstr "10'un x kuvveti"
 
 #: kcalc.cpp:533
-#| msgid "Ln"
 msgctxt "Natural log"
 msgid "Ln"
 msgstr "Ln"
@@ -301,7 +289,6 @@ msgid "Exponential function"
 msgstr "Üssel fonksiyon"
 
 #: kcalc.cpp:550
-#| msgid "N"
 msgctxt "Number of data entered"
 msgid "N"
 msgstr "N"
@@ -317,7 +304,6 @@ msgid "Sum of all data items"
 msgstr "Tüm veri ögelerinin toplamı"
 
 #: kcalc.cpp:559
-#| msgid "Mea"
 msgctxt "Mean"
 msgid "Mea"
 msgstr "Mea"
@@ -343,7 +329,6 @@ msgid "Sample standard deviation"
 msgstr "Örnek standart sapma"
 
 #: kcalc.cpp:583
-#| msgid "Dat"
 msgctxt "Enter data"
 msgid "Dat"
 msgstr "Dat"
@@ -355,7 +340,6 @@ msgid "Enter data"
 msgstr "Veri girin"
 
 #: kcalc.cpp:584
-#| msgid "Dat"
 msgctxt "Delete last data item"
 msgid "CDat"
 msgstr "CDat"
@@ -365,7 +349,6 @@ msgid "Delete last data item"
 msgstr "Son veri ögesini sil"
 
 #: kcalc.cpp:650
-#| msgid "Mod"
 msgctxt "Modulo"
 msgid "Mod"
 msgstr "Mod"
@@ -377,7 +360,6 @@ msgid "Modulo"
 msgstr "Mod"
 
 #: kcalc.cpp:651
-#| msgid "Inv"
 msgctxt "Integer division"
 msgid "IntDiv"
 msgstr "IntDiv"
@@ -387,7 +369,6 @@ msgid "Integer division"
 msgstr "Tamsayı bölmesi"
 
 #: kcalc.cpp:659
-#| msgid "1/X"
 msgctxt "Reciprocal"
 msgid "1/x"
 msgstr "1/x"
@@ -399,7 +380,6 @@ msgid "Reciprocal"
 msgstr "Evrik değer"
 
 #: kcalc.cpp:660
-#| msgid "Cmp"
 msgctxt "n Choose m"
 msgid "nCm"
 msgstr "nCm"
@@ -409,7 +389,6 @@ msgid "n Choose m"
 msgstr "n Seç m"
 
 #: kcalc.cpp:667
-#| msgid "x!"
 msgctxt "Factorial"
 msgid "x!"
 msgstr "x!"
@@ -997,42 +976,36 @@ msgstr "Kullanıcının programlayabileceği sabitlerin listesi"
 
 #. i18n: file: kcalc.kcfg:146
 #: rc.cpp:225
-#| msgid "C1"
 msgctxt "Name of the user programmable constant"
 msgid "C1"
 msgstr "C1"
 
 #. i18n: file: kcalc.kcfg:147
 #: rc.cpp:227
-#| msgid "C2"
 msgctxt "Name of the user programmable constant"
 msgid "C2"
 msgstr "C2"
 
 #. i18n: file: kcalc.kcfg:148
 #: rc.cpp:229
-#| msgid "C3"
 msgctxt "Name of the user programmable constant"
 msgid "C3"
 msgstr "C3"
 
 #. i18n: file: kcalc.kcfg:149
 #: rc.cpp:231
-#| msgid "C4"
 msgctxt "Name of the user programmable constant"
 msgid "C4"
 msgstr "C4"
 
 #. i18n: file: kcalc.kcfg:150
 #: rc.cpp:233
-#| msgid "C5"
 msgctxt "Name of the user programmable constant"
 msgid "C5"
 msgstr "C5"
 
 #. i18n: file: kcalc.kcfg:151
 #: rc.cpp:235
-#| msgid "C6"
 msgctxt "Name of the user programmable constant"
 msgid "C6"
 msgstr "C6"

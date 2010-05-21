@@ -1995,4 +1995,3 @@ msgstr "Psabbaton"
 msgctxt "Coptic weekday 7 - LongDayName"
 msgid "Tkyriakē"
 msgstr "Tkyriakē"
-

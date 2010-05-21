@@ -32,10 +32,8 @@ msgid ""
 msgstr ""
 "%1 ile uyuşan man sayfası bulunamadı.<br /><br /> İstediğiniz sayfanın adını "
 "yanlış yazmadığınızı kontrol edin.<br />Büyük ve küçük harfler aramayı "
-"etkileyecektir. "
-"<br />Her şey doğru görünüyorsa, man sayfalarının aranacağı yolu MANPATH "
-"ortam "
-"değişkeni ile genişletmeniz gerekebilir."
+"etkileyecektir. <br />Her şey doğru görünüyorsa, man sayfalarının aranacağı "
+"yolu MANPATH ortam değişkeni ile genişletmeniz gerekebilir."
 
 #: kio_man.cpp:525
 #, kde-format
@@ -156,4 +154,3 @@ msgstr "Rıdvan CAN"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ridvan@geleceklinux.org"
-

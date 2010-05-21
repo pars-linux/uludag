@@ -43,4 +43,3 @@ msgstr "Şifrele:"
 #: cryptopageplugin.cpp:129
 msgid "Crypto Settings"
 msgstr "Kripto Ayarları"
-

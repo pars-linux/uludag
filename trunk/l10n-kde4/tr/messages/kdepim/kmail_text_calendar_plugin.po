@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail_text_calendar_plugin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-12-08 06:41+0100\n"
+"POT-Creation-Date: 2010-05-06 01:23+0200\n"
 "PO-Revision-Date: 2010-05-10 15:48+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -30,9 +30,8 @@ msgid ""
 "this attachment stored inline instead of a link."
 msgstr ""
 "\"%1\" davetiye eklentisi bir ağ bağlantısı ve bağlantıya bu bilgisayardan "
-"erişilemez. "
-"Etkinlik organizatörü ile davetiyeyi bağlantı yerine eklenti olarak "
-"göndermesini rica edin. "
+"erişilemez. Etkinlik organizatörü ile davetiyeyi bağlantı yerine eklenti "
+"olarak göndermesini rica edin. "
 
 #: text_calendar.cpp:333
 msgid "Incidence with no summary"
@@ -58,27 +57,27 @@ msgstr "Yönlendirilmiş: %1"
 msgid "Declined Counter Proposal: %1"
 msgstr "Kabul Edilmemiş Sayaç Önerisi: %1"
 
-#: text_calendar.cpp:396
+#: text_calendar.cpp:398
 msgid "Could not save file to KOrganizer"
 msgstr "Dosya KOrganizer uygulamasına kaydedilemedi"
 
-#: text_calendar.cpp:426
+#: text_calendar.cpp:428
 msgid "Reaction to Invitation"
 msgstr "Davete Tepki"
 
-#: text_calendar.cpp:427 text_calendar.cpp:648
+#: text_calendar.cpp:429 text_calendar.cpp:650
 msgid "Comment:"
 msgstr "Açıklama:"
 
-#: text_calendar.cpp:461
+#: text_calendar.cpp:463
 msgid "Delegation to organizer is not possible."
 msgstr "Düzenleyiciyi yetkilendirme mümkün değil."
 
-#: text_calendar.cpp:583
+#: text_calendar.cpp:585
 msgid "Save Invitation Attachment"
 msgstr "Davet Eklentisini Kaydet"
 
-#: text_calendar.cpp:590
+#: text_calendar.cpp:592
 #, kde-format
 msgctxt "@info"
 msgid "File <filename>%1</filename> exists.<nl/> Do you want to replace it?"
@@ -86,71 +85,71 @@ msgstr ""
 "<filename>%1</filename> dosyası zaten var.<nl/> Üzerine yazmak istiyor "
 "musunuz?"
 
-#: text_calendar.cpp:647
+#: text_calendar.cpp:649
 msgid "Decline Counter Proposal"
 msgstr "Sayaç Önerisini Kabul Etme"
 
-#: text_calendar.cpp:697
+#: text_calendar.cpp:699
 msgid "No writable calendar found."
 msgstr "Yazılabilir takvim bulunamadı."
 
-#: text_calendar.cpp:783
+#: text_calendar.cpp:785
 msgid "Open Attachment"
 msgstr "Eklentiyi Aç"
 
-#: text_calendar.cpp:785
+#: text_calendar.cpp:787
 msgid "Save Attachment As..."
 msgstr "Eklentiyi Farklı Kaydet..."
 
-#: text_calendar.cpp:801
+#: text_calendar.cpp:803
 msgid "Accept invitation"
 msgstr "Daveti kabul et"
 
-#: text_calendar.cpp:803
+#: text_calendar.cpp:805
 msgid "Accept invitation conditionally"
 msgstr "Daveti koşullu olarak kabul et"
 
-#: text_calendar.cpp:805
+#: text_calendar.cpp:807
 msgid "Accept counter proposal"
 msgstr "Sayaç önerisini kabul et"
 
-#: text_calendar.cpp:807
+#: text_calendar.cpp:809
 msgid "Create a counter proposal..."
 msgstr "Bir sayaç önerisi oluştur..."
 
-#: text_calendar.cpp:809
+#: text_calendar.cpp:811
 msgid "Throw mail away"
 msgstr "E-postayı sil"
 
-#: text_calendar.cpp:811
+#: text_calendar.cpp:813
 msgid "Decline invitation"
 msgstr "Daveti reddet"
 
-#: text_calendar.cpp:813
+#: text_calendar.cpp:815
 msgid "Decline counter proposal"
 msgstr "Sayaç önerisini kabul etme"
 
-#: text_calendar.cpp:815
+#: text_calendar.cpp:817
 msgid "Check my calendar..."
 msgstr "Takvimi kontrol et..."
 
-#: text_calendar.cpp:817
+#: text_calendar.cpp:819
 msgid "Record response into my calendar"
 msgstr "Yanıtı takvimime kaydet"
 
-#: text_calendar.cpp:819
+#: text_calendar.cpp:821
 msgid "Delegate invitation"
 msgstr "Davete temsilci gönder"
 
-#: text_calendar.cpp:821
+#: text_calendar.cpp:823
 msgid "Forward invitation"
 msgstr "Daveti yönlendir"
 
-#: text_calendar.cpp:823
+#: text_calendar.cpp:825
 msgid "Remove invitation from my calendar"
 msgstr "Daveti takvimimden sil"
 
-#: text_calendar.cpp:826
+#: text_calendar.cpp:828
 #, kde-format
 msgid "Open attachment \"%1\""
 msgstr "\"%1\" eklentisini aç"
@@ -168,7 +167,6 @@ msgid "Select delegate"
 msgstr "Delege seç"
 
 #: delegateselector.cpp:41
-#| msgid "Delegated: %1"
 msgid "Delegate:"
 msgstr "Yetki ver:"
 

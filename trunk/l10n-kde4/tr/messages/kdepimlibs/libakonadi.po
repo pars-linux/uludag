@@ -160,8 +160,6 @@ msgid "C&ancel"
 msgstr "İ&ptal"
 
 #: entitytreemodel.cpp:612
-#| msgctxt "@title:column, name of a thing"
-#| msgid "Name"
 msgctxt "@title:column Name of a thing"
 msgid "Name"
 msgstr "İsim"
@@ -473,8 +471,6 @@ msgid "Syncing collection '%1'"
 msgstr "'%1' koleksiyonu eşzamanlanıyor"
 
 #: resourcescheduler.cpp:165 agentbase_p.h:57
-#| msgctxt "@info:status, application ready for work"
-#| msgid "Ready"
 msgctxt "@info:status Application ready for work"
 msgid "Ready"
 msgstr "Hazır"
@@ -872,12 +868,10 @@ msgstr ""
 "arka ucunu kullanıyor."
 
 #: selftestdialog.cpp:438
-#| msgid "Nepomuk search service uses inappropriate backend."
 msgid "Nepomuk search service uses an appropriate backend. "
 msgstr "Nepomuk arama servisi uyumsuz bir arka uç kullanıyor. "
 
 #: selftestdialog.cpp:439
-#| msgid "The Nepomuk search service uses the recommended Sesame2 backend."
 msgid "The Nepomuk search service uses one of the recommended backends."
 msgstr "Nepomuk arama servisi önerilen arka uçlardan birisini kullanıyor."
 
@@ -1038,18 +1032,15 @@ msgstr "%1 protokolü bulundu, beklenen ise en az %2"
 
 #: specialcollectionshelperjobs.cpp:142
 #, kde-format
-#| msgid "Cannot list root collection."
 msgid "Could not fetch root collection of resource %1."
 msgstr "%1 kaynağının kök koleksiyonu alınamadı."
 
 #: specialcollectionshelperjobs.cpp:190
-#| msgid "No resource agents found."
 msgid "No resource ID given."
 msgstr "Hiç kaynak ID belirtilmedi."
 
 #: specialcollectionshelperjobs.cpp:299
 #, kde-format
-#| msgid "Invalid resource instance."
 msgid "Invalid resource identifier '%1'"
 msgstr "Geçersiz kaynak tanımlayıcı '%1'"
 
@@ -1058,7 +1049,6 @@ msgid "Failed to configure default resource via D-Bus."
 msgstr "D-Bus aracılığıyla öntanımlı kaynak yapılandırması başarısız oldu."
 
 #: specialcollectionshelperjobs.cpp:382
-#| msgid "Unable to fetch item for index"
 msgid "Failed to fetch the resource collection."
 msgstr "Kaynak koleksiyonun alınması başarısız oldu."
 

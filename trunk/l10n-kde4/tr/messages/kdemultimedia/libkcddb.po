@@ -809,4 +809,3 @@ msgstr "Kodlama"
 #: rc.cpp:57
 msgid "Preview"
 msgstr "Önizleme"
-

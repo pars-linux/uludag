@@ -22,34 +22,27 @@ msgid "Amarok"
 msgstr "Amarok"
 
 #: audioplayercontrolrunner_config.cpp:90 audioplayercontrolrunner.cpp:304
-#| msgid "Play"
 msgid "play"
 msgstr "Oynat"
 
 #: audioplayercontrolrunner_config.cpp:91 audioplayercontrolrunner.cpp:305
-#| msgid "Append"
 msgid "append"
 msgstr "ekle"
 
 #: audioplayercontrolrunner_config.cpp:92 audioplayercontrolrunner.cpp:306
-#| msgid "Queue"
 msgid "queue"
 msgstr "kuyruk"
 
 #: audioplayercontrolrunner_config.cpp:93 audioplayercontrolrunner.cpp:307
-#| msgid "Pause"
 msgid "pause"
 msgstr "Duraklat"
 
 #: audioplayercontrolrunner_config.cpp:94
-#| msgctxt "next song"
-#| msgid "Next"
 msgctxt "next song"
 msgid "next"
 msgstr "sonraki"
 
 #: audioplayercontrolrunner_config.cpp:95 audioplayercontrolrunner.cpp:309
-#| msgid "Mute"
 msgid "mute"
 msgstr "sessiz"
 
@@ -59,32 +52,25 @@ msgid "up"
 msgstr "yukarı"
 
 #: audioplayercontrolrunner_config.cpp:98
-#| msgctxt "decrease the sound volume"
-#| msgid "Down"
 msgctxt "decrease the sound volume"
 msgid "down"
 msgstr "Alçalt"
 
 #: audioplayercontrolrunner_config.cpp:100
-#| msgctxt "previous song"
-#| msgid "Prev"
 msgctxt "previous song"
 msgid "prev"
 msgstr "önceki"
 
 #: audioplayercontrolrunner_config.cpp:101 audioplayercontrolrunner.cpp:315
-#| msgid "Stop"
 msgid "stop"
 msgstr "Durdur"
 
 #: audioplayercontrolrunner_config.cpp:102
-#| msgid "Volume="
 msgctxt "set the sound volume"
 msgid "volume"
 msgstr "ses="
 
 #: audioplayercontrolrunner_config.cpp:103
-#| msgid "Quit"
 msgctxt "quit media player"
 msgid "quit"
 msgstr "Çık"
@@ -191,32 +177,26 @@ msgid "Append to playlist"
 msgstr "Parça listesine ekle"
 
 #: audioplayercontrolrunner.cpp:308
-#| msgid "Next"
 msgid "next"
 msgstr "sonraki"
 
 #: audioplayercontrolrunner.cpp:310
-#| msgid "Increase"
 msgid "increase"
 msgstr "yükselt"
 
 #: audioplayercontrolrunner.cpp:312
-#| msgid "Decrease"
 msgid "decrease"
 msgstr "Alçalt"
 
 #: audioplayercontrolrunner.cpp:314
-#| msgid "Prev"
 msgid "prev"
 msgstr "önceki"
 
 #: audioplayercontrolrunner.cpp:316
-#| msgid "Volume="
 msgid "volume"
 msgstr "Ses="
 
 #: audioplayercontrolrunner.cpp:317
-#| msgid "Quit"
 msgid "quit"
 msgstr "Çık"
 
@@ -226,8 +206,7 @@ msgid ""
 "play them"
 msgstr ""
 "Seçili şarkıyı çalar. Eğer :q: tanımlanmış ise, oynatmak üzere :q: ile "
-"eşleşen "
-"şarkıları listeler"
+"eşleşen şarkıları listeler"
 
 #: audioplayercontrolrunner.cpp:326
 msgid "Displays songs matching :q: for appending the selected to the playlist"
@@ -260,8 +239,7 @@ msgid ""
 "value"
 msgstr ""
 "Sesi :q: kadar arttırır. Eğer :q: tanımlanmamışsa daha önceden belirlenmiş "
-"şekilde "
-"arttırır"
+"şekilde arttırır"
 
 #: audioplayercontrolrunner.cpp:339
 msgid ""
@@ -269,8 +247,7 @@ msgid ""
 "value"
 msgstr ""
 "Sesi :q: kadar azaltır. Eğer :q: tanımlanmamışsa daha önceden belirlenmiş "
-"şekilde "
-"azaltır"
+"şekilde azaltır"
 
 #: audioplayercontrolrunner.cpp:340
 msgid "Plays the previous song if one is available"
@@ -325,7 +302,6 @@ msgstr ""
 #. i18n: file: audioplayercontrolrunner_config.ui:48
 #. i18n: ectx: property (text), widget (QCheckBox, searchCollection)
 #: rc.cpp:13
-#| msgid "Seach &collection"
 msgid "Search &collection"
 msgstr "&Koleksiyon ara"
 

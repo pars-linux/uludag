@@ -38,7 +38,6 @@ msgid "Text Only"
 msgstr "Sadece Metin"
 
 #: main.cpp:64
-#| msgid "Walk Through Windows Alternative"
 msgid ""
 "These settings are used by the \"Walk Through Windows Alternative\" actions."
 msgstr "Bu ayarlar \"Pencereler Arasında Dolaş\" eylemlerinde kullanılır."
@@ -284,8 +283,7 @@ msgstr "Efekt:"
 #: rc.cpp:101 rc.cpp:216
 msgid "The effect to replace the list window when desktop effects are active."
 msgstr ""
-"Masaüstü efektleri açıkken pencereleri listele efektinin yerine "
-"kullanılacak "
+"Masaüstü efektleri açıkken pencereleri listele efektinin yerine kullanılacak "
 "efekt."
 
 #. i18n: file: main.ui:153
@@ -302,8 +300,7 @@ msgid ""
 "windows. This option requires desktop effects to be active."
 msgstr ""
 "Seçili pencere, diğer pencerelerin karartılarak ön plana çıkarılacak. Bu "
-"seçenek "
-"masaüstü efektlerinin etkin olması halinde kullanılabilir."
+"seçenek masaüstü efektlerinin etkin olması halinde kullanılabilir."
 
 #. i18n: file: main.ui:165
 #. i18n: ectx: property (text), widget (QCheckBox, highlightWindowCheck)
@@ -326,5 +323,3 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
-
-

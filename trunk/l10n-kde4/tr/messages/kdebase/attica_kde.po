@@ -19,8 +19,7 @@ msgstr ""
 #: kdeplatformdependent.cpp:103
 msgid ""
 "Should the password be stored in the configuration file? This is unsafe."
-msgstr ""
-"Parola yapılandırma dosyasında saklansın mı? Bu işlem güvensizdir."
+msgstr "Parola yapılandırma dosyasında saklansın mı? Bu işlem güvensizdir."
 
 #: kdeplatformdependent.cpp:104
 msgid "Social Desktop Configuration"
@@ -29,4 +28,3 @@ msgstr "Sosyal Masaüstü Yapılandırması"
 #: kdeplatformdependent.cpp:197
 msgid "Open Collaboration Providers"
 msgstr "Açık İşbirliği Sağlayıcıları"
-

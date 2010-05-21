@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-17 01:22+0200\n"
+"POT-Creation-Date: 2010-05-10 01:22+0200\n"
 "PO-Revision-Date: 2010-04-19 16:01+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -253,26 +253,25 @@ msgstr "Şu dosyalar açılamadı:"
 msgid "There was an error during extraction."
 msgstr "Açma sırasında bir hata oluştu."
 
-#: kerfuffle/cliinterface.cpp:490 kerfuffle/cliinterface.cpp:510
+#: kerfuffle/cliinterface.cpp:487 kerfuffle/cliinterface.cpp:507
 msgid "Incorrect password."
 msgstr "Yanlış parola."
 
-#: kerfuffle/cliinterface.cpp:498 kerfuffle/cliinterface.cpp:518
+#: kerfuffle/cliinterface.cpp:495 kerfuffle/cliinterface.cpp:515
 msgid "Extraction failed because of an unexpected error."
 msgstr "Açma işlemi beklenmeyen bir hata sebebiyle başarısız oldu."
 
-#: kerfuffle/cliinterface.cpp:536
+#: kerfuffle/cliinterface.cpp:533
 #, kde-format
 msgid "Failed to locate program '%1' in PATH."
 msgstr "'%1' uygulaması PATH (komut erişimi yolu) içerisinde bulunamadı."
 
-#: kerfuffle/cliinterface.cpp:541
+#: kerfuffle/cliinterface.cpp:538
 #, kde-format
 msgid "Found program '%1', but failed to initialize the process."
 msgstr "'%1' uygulaması bulundu ancak süreç başlatılamadı."
 
 #: kerfuffle/extractiondialog.cpp:60
-#| msgid "Extract"
 msgctxt "@title:window"
 msgid "Extract"
 msgstr "Çıkart"
@@ -294,7 +293,7 @@ msgstr "'%1' dizini var. Arşivi buraya açmak istediğinizden emin misiniz?"
 msgid "Folder exists"
 msgstr "Dizin var"
 
-#: kerfuffle/extractiondialog.cpp:111 part/part.cpp:343 part/part.cpp:721
+#: kerfuffle/extractiondialog.cpp:111 part/part.cpp:342 part/part.cpp:723
 msgid "Cancel"
 msgstr "İptal"
 
@@ -419,15 +418,15 @@ msgctxt "Unnamed column"
 msgid "??"
 msgstr "??"
 
-#: part/arkviewer.cpp:60
+#: part/arkviewer.cpp:61
 msgid "Closing preview"
 msgstr "Önizleme kapatılıyor"
 
-#: part/arkviewer.cpp:61
+#: part/arkviewer.cpp:62
 msgid "Please wait while the preview is being closed..."
 msgstr "Önizleme kapatılırken lütfen bekleyin..."
 
-#: part/arkviewer.cpp:79 part/arkviewer.cpp:86
+#: part/arkviewer.cpp:80 part/arkviewer.cpp:87
 msgid "The internal viewer cannot preview this file."
 msgstr "Dahili gösterici bu dosyanın önizlemesini gösteremiyor."
 
@@ -483,24 +482,24 @@ msgstr "<b>Parola korumalı:</b> Evet<br/>"
 msgid "Operation finished."
 msgstr "İşlem tamamlandı."
 
-#: part/part.cpp:211
+#: part/part.cpp:210
 msgid "Show information panel"
 msgstr "Bilgi çubuğunu göster"
 
-#: part/part.cpp:220
+#: part/part.cpp:219
 msgctxt "to preview a file inside an archive"
 msgid "Pre&view"
 msgstr "&Önizleme"
 
-#: part/part.cpp:222
+#: part/part.cpp:221
 msgid "Click to preview the selected file"
 msgstr "Seçilen dosyayı önizlemek için tıklayın"
 
-#: part/part.cpp:227
+#: part/part.cpp:226
 msgid "E&xtract"
 msgstr "&Aç"
 
-#: part/part.cpp:229
+#: part/part.cpp:228
 msgid ""
 "Click to open an extraction dialog, where you can choose to extract either "
 "all files or just the selected ones"
@@ -508,70 +507,70 @@ msgstr ""
 "Bir açma penceresi açmak için tıklayın, bu pencereden tüm dosyaları ya da "
 "seçtiğiniz dosyaları nereye açacağınızı belirleyebilirsiniz"
 
-#: part/part.cpp:236
+#: part/part.cpp:235
 msgid "Add &File..."
 msgstr "Dosya &Ekle..."
 
-#: part/part.cpp:237
+#: part/part.cpp:236
 msgid "Click to add files to the archive"
 msgstr "Arşive dosya eklemek için tıklayın"
 
-#: part/part.cpp:243
+#: part/part.cpp:242
 msgid "Add Fo&lder..."
 msgstr "Dizin &Ekle..."
 
-#: part/part.cpp:244
+#: part/part.cpp:243
 msgid "Click to add a folder to the archive"
 msgstr "Arşive bir dizin eklemek için tıklayın"
 
-#: part/part.cpp:250
+#: part/part.cpp:249
 msgid "De&lete"
 msgstr "&Sil"
 
-#: part/part.cpp:252
+#: part/part.cpp:251
 msgid "Click to delete the selected files"
 msgstr "Seçili dosyaları silmek için tıklayın"
 
-#: part/part.cpp:273
+#: part/part.cpp:272
 msgid "Recent folders"
 msgstr "Son Dizinler"
 
-#: part/part.cpp:277
+#: part/part.cpp:276
 msgid "Quick Extract To..."
 msgstr "Buraya Hızlı Aç..."
 
-#: part/part.cpp:334
+#: part/part.cpp:333
 msgid "ArkPart"
 msgstr "Ark Parçacığı"
 
-#: part/part.cpp:343
+#: part/part.cpp:342
 #, kde-format
 msgid "The file '%1' already exists. Would you like to open it instead?"
 msgstr ""
 "'%1' dosyası var. Bu işlemi yapmak yerine o dosyayı açmak ister misiniz?"
 
-#: part/part.cpp:343
+#: part/part.cpp:342
 msgid "File Exists"
 msgstr "Dosya Var"
 
-#: part/part.cpp:343
+#: part/part.cpp:342
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: part/part.cpp:350
+#: part/part.cpp:349
 #, kde-format
 msgid "Error opening archive: the file '%1' was not found."
 msgstr "Arşiv açma hatası: '%1' dosyası bulunamadı."
 
-#: part/part.cpp:350 part/part.cpp:394 part/part.cpp:430
+#: part/part.cpp:349 part/part.cpp:393 part/part.cpp:429
 msgid "Error Opening Archive"
 msgstr "Arşiv Açılamadı"
 
-#: part/part.cpp:380
+#: part/part.cpp:379
 msgid "Unable to Determine Archive Type"
 msgstr "Arşiv Tipi Belirlenemedi"
 
-#: part/part.cpp:381
+#: part/part.cpp:380
 msgid ""
 "Ark was unable to determine the archive type of the filename.\n"
 "\n"
@@ -581,7 +580,7 @@ msgstr ""
 "\n"
 "Lütfen aşağıdan doğru arşiv tipini seçin."
 
-#: part/part.cpp:394
+#: part/part.cpp:393
 #, kde-format
 msgid ""
 "Ark was not able to open the archive '%1'. No library capable of handling "
@@ -589,48 +588,48 @@ msgid ""
 msgstr ""
 "Ark '%1' arşivini açamadı. Bu dosyayı işlemek için bir kitaplık bulunamadı."
 
-#: part/part.cpp:430
+#: part/part.cpp:429
 #, kde-format
 msgid "Reading the archive '%1' failed with the error '%2'"
 msgstr "'%1' arşiv dosyası okunamadı, hata '%2'"
 
-#: part/part.cpp:686
+#: part/part.cpp:688
 msgid "Add Files"
 msgstr "Dosya Ekle"
 
-#: part/part.cpp:694
+#: part/part.cpp:696
 msgid "Add Folder"
 msgstr "Dizin Ekle"
 
-#: part/part.cpp:721
+#: part/part.cpp:723
 msgid "Deleting these files is not undoable. Are you sure you want to do this?"
 msgstr ""
 "Bu dosyalar silme işlemi geri alınamaz. Bunu yapmak istediğinizden emin "
 "misiniz?"
 
-#: part/part.cpp:721
+#: part/part.cpp:723
 msgid "Delete files"
 msgstr "Dosyaları sil"
 
-#: part/part.cpp:762
+#: part/part.cpp:764
 #, kde-format
 msgid ""
 "A file named <b>%1</b> already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "<b>%1</b> isminde bir dosya zaten var. Bunun üzerine yazmak istiyor musunuz?"
 
-#: part/part.cpp:764
+#: part/part.cpp:766
 msgid "Overwrite"
 msgstr "Üzerine Yaz"
 
-#: part/part.cpp:776
+#: part/part.cpp:778
 #, kde-format
 msgid ""
 "The file <b>%1</b> cannot be copied to the specified location. The archive "
 "does not exist anymore."
 msgstr "<b>%1</b> dosyası belirtilen konuma kopyalanamadı. Arşiv artık yok."
 
-#: part/part.cpp:788
+#: part/part.cpp:790
 #, kde-format
 msgid ""
 "The archive could not be saved as <b>%1</b>. Try to save it in another "
@@ -668,22 +667,22 @@ msgstr "%1 dizini arşive eklenemedi"
 msgid "Could not add the file %1 to the archive."
 msgstr "%1 dosyası arşive eklenemedi."
 
-#: plugins/libarchive/libarchivehandler.cpp:79
+#: plugins/libarchive/libarchivehandler.cpp:80
 #, kde-format
 msgid "Could not open the file '%1', libarchive cannot handle it."
 msgstr "'%1' dosyası açılamadı, libarchive bu dosyayı işleyemedi."
 
-#: plugins/libarchive/libarchivehandler.cpp:95
+#: plugins/libarchive/libarchivehandler.cpp:96
 #, kde-format
 msgid "The archive reading failed with message: %1"
 msgstr "Arşiv okunamadı, oluşan hata: %1"
 
-#: plugins/libarchive/libarchivehandler.cpp:138
+#: plugins/libarchive/libarchivehandler.cpp:139
 #, kde-format
 msgid "Unable to open the file '%1', libarchive cannot handle it."
 msgstr "'%1' dosyası açılamadı, libarchive bu dosyayı işleyemedi."
 
-#: plugins/libarchive/libarchivehandler.cpp:178
+#: plugins/libarchive/libarchivehandler.cpp:179
 msgid ""
 "This archive contains archive entries with absolute paths, which are not yet "
 "supported by ark."
@@ -691,41 +690,41 @@ msgstr ""
 "Arşiv tam yolu verilmiş girdiler içeriyor ki bu özellik henüz Ark tarafından "
 "desteklenmiyor."
 
-#: plugins/libarchive/libarchivehandler.cpp:315
-#: plugins/libarchive/libarchivehandler.cpp:488
+#: plugins/libarchive/libarchivehandler.cpp:316
+#: plugins/libarchive/libarchivehandler.cpp:489
 msgid "The archive reader could not be initialized."
 msgstr "Arşiv okuyucu başlatılamadı."
 
-#: plugins/libarchive/libarchivehandler.cpp:323
-#: plugins/libarchive/libarchivehandler.cpp:496
+#: plugins/libarchive/libarchivehandler.cpp:324
+#: plugins/libarchive/libarchivehandler.cpp:497
 msgid "The source file could not be read."
 msgstr "Kaynak dosya okunamadı."
 
-#: plugins/libarchive/libarchivehandler.cpp:331
-#: plugins/libarchive/libarchivehandler.cpp:503
+#: plugins/libarchive/libarchivehandler.cpp:332
+#: plugins/libarchive/libarchivehandler.cpp:504
 msgid "The archive writer could not be initialized."
 msgstr "Arşiv oluşturucu başlatılamadı."
 
-#: plugins/libarchive/libarchivehandler.cpp:364
-#: plugins/libarchive/libarchivehandler.cpp:398
-#: plugins/libarchive/libarchivehandler.cpp:536
+#: plugins/libarchive/libarchivehandler.cpp:365
+#: plugins/libarchive/libarchivehandler.cpp:399
+#: plugins/libarchive/libarchivehandler.cpp:537
 #, kde-format
 msgid "Setting compression failed with the error '%1'"
 msgstr "Sıkıştırma ayarlanamadı, hata '%1'"
 
-#: plugins/libarchive/libarchivehandler.cpp:369
+#: plugins/libarchive/libarchivehandler.cpp:370
 #, kde-format
 msgid "Setting format failed with the error '%1'"
 msgstr "Biçimi ayarlama işlemi başarısız oldu, hata '%1'"
 
-#: plugins/libarchive/libarchivehandler.cpp:394
-#: plugins/libarchive/libarchivehandler.cpp:531
+#: plugins/libarchive/libarchivehandler.cpp:395
+#: plugins/libarchive/libarchivehandler.cpp:532
 #, kde-format
 msgid "The compression type '%1' is not supported by Ark."
 msgstr "'%1' sıkıştırma biçimi Ark tarafından desteklenmiyor."
 
-#: plugins/libarchive/libarchivehandler.cpp:405
-#: plugins/libarchive/libarchivehandler.cpp:542
+#: plugins/libarchive/libarchivehandler.cpp:406
+#: plugins/libarchive/libarchivehandler.cpp:543
 #, kde-format
 msgid "Opening the archive for writing failed with error message '%1'"
 msgstr "Arşiv dosyası yazılmak için açılamadı, %1 hatasını verdi"
@@ -890,7 +889,6 @@ msgstr "Alt dizinleri &otomatik olarak oluştur"
 #. i18n: file: kerfuffle/extractiondialog.ui:161
 #. i18n: ectx: property (title), widget (QGroupBox, filesToExtractGroupBox)
 #: rc.cpp:70
-#| msgid "Extract"
 msgctxt "@title:group"
 msgid "Extract"
 msgstr "Çıkar"

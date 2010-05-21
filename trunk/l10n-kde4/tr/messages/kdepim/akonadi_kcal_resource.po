@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -38,7 +38,8 @@ msgstr "Henüz hiçbir KDE takvim eklentisi yapılandırılmamış"
 #: kcalresource.cpp:124
 msgctxt "@info:status"
 msgid "Initialization based on newly created configuration failed."
-msgstr "Yeni oluşturulan yapılandırma kullanılarak başlatma denemesi başarısız oldu."
+msgstr ""
+"Yeni oluşturulan yapılandırma kullanılarak başlatma denemesi başarısız oldu."
 
 #: kcalresource.cpp:130 kcalresource.cpp:616
 msgctxt "@info:status"
@@ -47,13 +48,18 @@ msgstr "Takvim yükleniyor"
 
 #: kcalresource.cpp:278
 msgctxt "@info:status"
-msgid "Request for data of a specific calendar entry failed because there is no such entry"
-msgstr "Takvim girdisine ait veri istenirken hata oluştu; çünkü böyle bir girdi bulunmuyor."
+msgid ""
+"Request for data of a specific calendar entry failed because there is no "
+"such entry"
+msgstr ""
+"Takvim girdisine ait veri istenirken hata oluştu; çünkü böyle bir girdi "
+"bulunmuyor."
 
 #: kcalresource.cpp:610
 msgctxt "@info:status"
 msgid "Initialization based on stored configuration failed."
-msgstr "Kaydedilmiş yapılandırma kullanılarak başlatma denemesi başarısız oldu."
+msgstr ""
+"Kaydedilmiş yapılandırma kullanılarak başlatma denemesi başarısız oldu."
 
 #: kcalresource.cpp:662
 #, kde-format

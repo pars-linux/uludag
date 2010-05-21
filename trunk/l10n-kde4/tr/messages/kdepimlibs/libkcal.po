@@ -2189,11 +2189,9 @@ msgid ""
 "'Store' to create a new one or 'Throw away' to discard this update."
 msgstr ""
 "Güncellenecek olay, yapılacaklar listesi veya günlük bulunamadı. Ya daha "
-"önce "
-"silindi veya bu ögeyi içeren takvim etkin değil. 'Kaydet' düğmesine basarak "
-"yeni "
-"bir tane yaratın veya 'Sil' düğmesini kullanarak bu güncellemeyi gözardı "
-"edin."
+"önce silindi veya bu ögeyi içeren takvim etkin değil. 'Kaydet' düğmesine "
+"basarak yeni bir tane yaratın veya 'Sil' düğmesini kullanarak bu "
+"güncellemeyi gözardı edin."
 
 #: scheduler.cpp:374
 msgctxt "@title"
@@ -2218,8 +2216,7 @@ msgid ""
 "only or disabled calendar."
 msgstr ""
 "Olay veya görev takviminizden kaldırılamıyor. Ya daha önce silindi ya da "
-"sizin "
-"tarafından sahiplenilmemiş durumda. Salt-okunur veya etkin olmayan bir "
+"sizin tarafından sahiplenilmemiş durumda. Salt-okunur veya etkin olmayan bir "
 "takvime de ait olabilir."
 
 #: scheduler.cpp:506
@@ -2230,9 +2227,8 @@ msgid ""
 "to a read-only or disabled calendar."
 msgstr ""
 "İptal edilecek olay veya görev takviminizden kaldırılamadı. Ya daha önce "
-"silindi "
-"ya da sizin tarafınızdan sahiplenilmemiş durumda. Salt-okunur veya etkin "
-"olmayan bir takvime de ait olabilir."
+"silindi ya da sizin tarafınızdan sahiplenilmemiş durumda. Salt-okunur veya "
+"etkin olmayan bir takvime de ait olabilir."
 
 #: scheduler.cpp:586
 #, kde-format

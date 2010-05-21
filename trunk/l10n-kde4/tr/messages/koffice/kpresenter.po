@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kpresenter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"POT-Creation-Date: 2010-04-24 01:33+0200\n"
 "PO-Revision-Date: 2009-05-23 14:29+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -24,17 +24,29 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:102
+#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:94
 msgid "Change sound action"
 msgstr "Ses eylemini değiştir"
 
-#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:125
+#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:117
 msgid "No sound"
 msgstr "Ses yok"
 
-#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:126
+#: plugins/eventactions/sound/KPrSoundEventActionWidget.cpp:118
 msgid "Import..."
 msgstr "İçeriye aktar..."
+
+#: plugins/variable/PresentationVariableFactory.cpp:39
+#, fuzzy
+#| msgid "Heart"
+msgid "Header"
+msgstr "Kalp"
+
+#: plugins/variable/PresentationVariableFactory.cpp:47
+#, fuzzy
+#| msgid "Form"
+msgid "Footer"
+msgstr "Biçim"
 
 #: plugins/pageeffects/clockwipe/windshieldwipe/KPrWindShieldWipeEffectFactory.cpp:28
 #, fuzzy
@@ -131,13 +143,13 @@ msgstr "Yatay Ters"
 #: plugins/pageeffects/matrixwipe/waterfallwipe/KPrWaterfallWipeEffectFactory.cpp:64
 #: plugins/pageeffects/matrixwipe/boxsnakes/KPrBoxSnakesWipeEffectFactory.cpp:69
 #: plugins/pageeffects/iriswipe/ellipseWipe/KPrEllipseWipeEffectFactory.cpp:77
-#: plugins/pageeffects/iriswipe/triangleWipe/KPrTriangleWipeEffectFactory.cpp:100
 #: plugins/pageeffects/iriswipe/roundRectWipe/KPrRoundRectWipeEffectFactory.cpp:68
+#: plugins/pageeffects/iriswipe/triangleWipe/KPrTriangleWipeEffectFactory.cpp:100
 #: plugins/pageeffects/iriswipe/irisWipe/KPrIrisWipeEffectFactory.cpp:71
 #: plugins/pageeffects/iriswipe/starWipe/KPrStarWipeEffectFactory.cpp:116
 #: plugins/pageeffects/iriswipe/pentagonWipe/KPrPentagonWipeEffectFactory.cpp:77
-#: plugins/pageeffects/iriswipe/miscShapeWipe/KPrMiscShapeWipeEffectFactory.cpp:73
 #: plugins/pageeffects/iriswipe/arrowHeadWipe/KPrArrowHeadWipeEffectFactory.cpp:103
+#: plugins/pageeffects/iriswipe/miscShapeWipe/KPrMiscShapeWipeEffectFactory.cpp:73
 #: plugins/pageeffects/iriswipe/eyeWipe/KPrEyeWipeEffectFactory.cpp:72
 #: plugins/pageeffects/iriswipe/hexagonWipe/KPrHexagonWipeEffectFactory.cpp:89
 msgid "Unknown subtype"
@@ -935,6 +947,12 @@ msgstr "Çember"
 msgid "Circle Reverse"
 msgstr "Çember Ters"
 
+#: plugins/pageeffects/iriswipe/roundRectWipe/KPrRoundRectWipeEffectFactory.cpp:32
+#, fuzzy
+#| msgid "Slide Wipe Effect"
+msgid "RoundRect"
+msgstr "Slayt Temizleme Efekti"
+
 #: plugins/pageeffects/iriswipe/triangleWipe/KPrTriangleWipeEffectFactory.cpp:31
 msgid "Triangle"
 msgstr "Üçgen"
@@ -960,12 +978,6 @@ msgstr "Sola"
 #: plugins/pageeffects/iriswipe/arrowHeadWipe/KPrArrowHeadWipeEffectFactory.cpp:95
 msgid "Left Reverse"
 msgstr "Sola Ters"
-
-#: plugins/pageeffects/iriswipe/roundRectWipe/KPrRoundRectWipeEffectFactory.cpp:32
-#, fuzzy
-#| msgid "Slide Wipe Effect"
-msgid "RoundRect"
-msgstr "Slayt Temizleme Efekti"
 
 #: plugins/pageeffects/iriswipe/irisWipe/KPrIrisWipeEffectFactory.cpp:30
 msgid "Iris"
@@ -1019,6 +1031,10 @@ msgstr "Altı Nokta Yıldız Ters"
 msgid "Pentagon"
 msgstr "Beşgen"
 
+#: plugins/pageeffects/iriswipe/arrowHeadWipe/KPrArrowHeadWipeEffectFactory.cpp:31
+msgid "ArrowHead"
+msgstr "Ok Başı"
+
 #: plugins/pageeffects/iriswipe/miscShapeWipe/KPrMiscShapeWipeEffectFactory.cpp:30
 #, fuzzy
 msgid "Misc"
@@ -1040,10 +1056,6 @@ msgstr "Anahtar Deliği"
 msgid "Keyhole Reverse"
 msgstr "Anahtar Deliği Ters"
 
-#: plugins/pageeffects/iriswipe/arrowHeadWipe/KPrArrowHeadWipeEffectFactory.cpp:31
-msgid "ArrowHead"
-msgstr "Ok Başı"
-
 #: plugins/pageeffects/iriswipe/eyeWipe/KPrEyeWipeEffectFactory.cpp:32
 msgid "Eye"
 msgstr "Göz"
@@ -1060,36 +1072,31 @@ msgstr "Efekt Yok"
 msgid " sec"
 msgstr " sn"
 
-#: part/tools/animationtool/KPrAnimationToolFactory.cpp:30
-msgid "Animation Tool"
-msgstr "Canlandırma Aracı"
-
 #: part/tools/animationtool/KPrAnimationToolFactory.cpp:32
 msgid "Animation tool"
 msgstr "Canlandırma aracı"
 
-#: part/tools/animationtool/KPrAnimationTool.cpp:84
+#: part/tools/animationtool/KPrAnimationTool.cpp:85
 msgid "Transitions"
 msgstr "Geçişler"
 
-#: part/tools/animationtool/KPrAnimationTool.cpp:85
+#: part/tools/animationtool/KPrAnimationTool.cpp:86
 msgid "Click Actions"
 msgstr "Tıklama Eylemleri"
 
-#: part/tools/animationtool/KPrAnimationTool.cpp:86
+#: part/tools/animationtool/KPrAnimationTool.cpp:87
 msgid "Not implemented in 2.0"
 msgstr "2.0 sürümünde henüz tamamlanmadı"
 
-#: part/tools/animationtool/KPrAnimationTool.cpp:89
+#: part/tools/animationtool/KPrAnimationTool.cpp:90
 msgid "Shape Animation"
 msgstr "Şekil Canlandırması"
 
-#: part/tools/KPrPlaceholderToolFactory.cpp:26
 #: part/tools/KPrPlaceholderToolFactory.cpp:28
 msgid "Layout Tool"
 msgstr "Düzen Aracı"
 
-#: part/tools/KPrPlaceholderTool.cpp:91
+#: part/tools/KPrPlaceholderTool.cpp:92
 msgid "Edit Shape"
 msgstr "Şekli Düzenle"
 
@@ -1125,7 +1132,7 @@ msgstr "Düzen"
 msgid "Set Layout"
 msgstr "Düzeni Ayarla"
 
-#: part/dockers/KPrPageLayoutDocker.cpp:45
+#: part/dockers/KPrPageLayoutDocker.cpp:46
 msgid "Slide Layouts"
 msgstr "Slayt Düzenleri"
 
@@ -1187,9 +1194,107 @@ msgstr ""
 msgid "Confirm action"
 msgstr "Eylemi doğrula"
 
-#: part/KPrPresenterViewInterface.cpp:67 part/KPrView.cpp:78
+#: part/KPrView.cpp:65
+msgid "Show Master Slides"
+msgstr "Ana Slaytları Göster"
+
+#: part/KPrView.cpp:66
+#, fuzzy
+#| msgid "Configure Slide Show..."
+msgid "Import Slideshow..."
+msgstr "Slayt Gösterisini Yapılandır..."
+
+#: part/KPrView.cpp:67
+msgid "Insert Slide"
+msgstr "Slayt Ekle"
+
+#: part/KPrView.cpp:68 part/KPrView.cpp:69
+msgid "Insert a new slide after the current one"
+msgstr "Geçerli slaytın sonrasına bir slayt ekleyin"
+
+#: part/KPrView.cpp:70
+msgid "Copy Slide"
+msgstr "Slaytı Kopyala"
+
+#: part/KPrView.cpp:71 part/KPrView.cpp:72
+msgid "Copy the current slide"
+msgstr "Geçerli slaytı kopyala"
+
+#. i18n: file: part/ui/KPrCustomSlideShowsDialog.ui:136
+#. i18n: ectx: property (text), widget (QPushButton, deleteSlideButton)
+#: part/KPrView.cpp:73 rc.cpp:206
+msgid "Delete Slide"
+msgstr "Slayt Sil"
+
+#: part/KPrView.cpp:74 part/KPrView.cpp:75
+msgid "Delete the current slide"
+msgstr "Geçerli slaytı sil"
+
+#: part/KPrView.cpp:76
+msgid "Master Slide..."
+msgstr "Kılavuz Slayt..."
+
+#: part/KPrView.cpp:77
+msgid "Previous Slide"
+msgstr "Önceki Slayt"
+
+#: part/KPrView.cpp:78 part/KPrPresenterViewInterface.cpp:67
 msgid "Next Slide"
 msgstr "Sonraki Slayt"
+
+#: part/KPrView.cpp:79
+msgid "First Slide"
+msgstr "İlk Slayt"
+
+#: part/KPrView.cpp:80
+msgid "Last Slide"
+msgstr "Son Slayt"
+
+#: part/KPrView.cpp:81
+#, fuzzy
+#| msgid "Configure Presenter View..."
+msgid "Configure KPresenter..."
+msgstr "Slayt Göstericinin Görünümünü Yapılandır..."
+
+#: part/KPrView.cpp:142
+msgid "Normal"
+msgstr "Normal"
+
+#: part/KPrView.cpp:148
+msgid "Notes"
+msgstr "Notlar"
+
+#: part/KPrView.cpp:157
+msgid "Create Appear Animation"
+msgstr "Ortaya Çıkma Canlandırması Oluştur"
+
+#: part/KPrView.cpp:161
+msgid "Edit Custom Slide Shows..."
+msgstr "Özel Slayt Gösterilerini Yapılandır..."
+
+#: part/KPrView.cpp:165
+msgid "Start Presentation"
+msgstr "Sunumu Başlat"
+
+#: part/KPrView.cpp:168
+msgid "From Current Slide"
+msgstr "Geçerli Slayttan"
+
+#: part/KPrView.cpp:173
+msgid "From First Slide"
+msgstr "İlk Slayttan"
+
+#: part/KPrView.cpp:178
+msgid "Configure Slide Show..."
+msgstr "Slayt Gösterisini Yapılandır..."
+
+#: part/KPrView.cpp:182
+msgid "Configure Presenter View..."
+msgstr "Slayt Göstericinin Görünümünü Yapılandır..."
+
+#: part/KPrPlaceholderShapeFactory.cpp:31
+msgid "Placeholder shape"
+msgstr ""
 
 #: part/KPrPresenterViewInterface.cpp:77
 msgid "Speaker Notes"
@@ -1203,10 +1308,6 @@ msgstr "Geçerli Slayt %2 slayttan %1."
 #: part/KPrPresenterViewInterface.cpp:109
 msgid "End of Slide Show"
 msgstr "Slayt Gösterisinin Sonu"
-
-#: part/KPrPlaceholderShapeFactory.cpp:30
-msgid "Placeholder shape"
-msgstr ""
 
 #: part/KPrAboutData.h:27
 msgid "KOffice Presentation Tool"
@@ -1344,137 +1445,43 @@ msgstr "Bir nesne eklemek için çift tıklayın"
 msgid "File to open"
 msgstr "Açılacak Dosya"
 
-#: part/KPrPresentationDrawWidget.cpp:100
+#: part/KPrEndOfSlideShowPage.cpp:68
+msgid "End of presentation. Click to exit."
+msgstr "Sunum bitti. Çıkmak için tıklayın."
+
+#: part/KPrPresentationDrawWidget.cpp:102
 msgid "Pen Color"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:101
+#: part/KPrPresentationDrawWidget.cpp:103
 msgid "Pen Size"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:103
+#: part/KPrPresentationDrawWidget.cpp:105
 #, fuzzy
 #| msgid "Clock"
 msgid "Black"
 msgstr "Saat"
 
-#: part/KPrPresentationDrawWidget.cpp:104
+#: part/KPrPresentationDrawWidget.cpp:106
 msgid "White"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:105
+#: part/KPrPresentationDrawWidget.cpp:107
 msgid "Green"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:106
+#: part/KPrPresentationDrawWidget.cpp:108
 msgid "Red"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:107
+#: part/KPrPresentationDrawWidget.cpp:109
 msgid "Blue"
 msgstr ""
 
-#: part/KPrPresentationDrawWidget.cpp:108
+#: part/KPrPresentationDrawWidget.cpp:110
 msgid "Yellow"
 msgstr ""
-
-#: part/KPrEndOfSlideShowPage.cpp:70
-msgid "End of presentation. Click to exit."
-msgstr "Sunum bitti. Çıkmak için tıklayın."
-
-#: part/KPrView.cpp:65
-msgid "Show Master Slides"
-msgstr "Ana Slaytları Göster"
-
-#: part/KPrView.cpp:66
-#, fuzzy
-#| msgid "Configure Slide Show..."
-msgid "Import Slideshow..."
-msgstr "Slayt Gösterisini Yapılandır..."
-
-#: part/KPrView.cpp:67
-msgid "Insert Slide"
-msgstr "Slayt Ekle"
-
-#: part/KPrView.cpp:68 part/KPrView.cpp:69
-msgid "Insert a new slide after the current one"
-msgstr "Geçerli slaytın sonrasına bir slayt ekleyin"
-
-#: part/KPrView.cpp:70
-msgid "Copy Slide"
-msgstr "Slaytı Kopyala"
-
-#: part/KPrView.cpp:71 part/KPrView.cpp:72
-msgid "Copy the current slide"
-msgstr "Geçerli slaytı kopyala"
-
-#. i18n: file: part/ui/KPrCustomSlideShowsDialog.ui:136
-#. i18n: ectx: property (text), widget (QPushButton, deleteSlideButton)
-#: part/KPrView.cpp:73 rc.cpp:206
-msgid "Delete Slide"
-msgstr "Slayt Sil"
-
-#: part/KPrView.cpp:74 part/KPrView.cpp:75
-msgid "Delete the current slide"
-msgstr "Geçerli slaytı sil"
-
-#: part/KPrView.cpp:76
-msgid "Master Slide..."
-msgstr "Kılavuz Slayt..."
-
-#: part/KPrView.cpp:77
-msgid "Previous Slide"
-msgstr "Önceki Slayt"
-
-#: part/KPrView.cpp:79
-msgid "First Slide"
-msgstr "İlk Slayt"
-
-#: part/KPrView.cpp:80
-msgid "Last Slide"
-msgstr "Son Slayt"
-
-#: part/KPrView.cpp:81
-#, fuzzy
-#| msgid "Configure Presenter View..."
-msgid "Configure KPresenter..."
-msgstr "Slayt Göstericinin Görünümünü Yapılandır..."
-
-#: part/KPrView.cpp:142
-msgid "Normal"
-msgstr "Normal"
-
-#: part/KPrView.cpp:148
-msgid "Notes"
-msgstr "Notlar"
-
-#: part/KPrView.cpp:157
-msgid "Create Appear Animation"
-msgstr "Ortaya Çıkma Canlandırması Oluştur"
-
-#: part/KPrView.cpp:161
-msgid "Edit Custom Slide Shows..."
-msgstr "Özel Slayt Gösterilerini Yapılandır..."
-
-#: part/KPrView.cpp:165
-msgid "Start Presentation"
-msgstr "Sunumu Başlat"
-
-#: part/KPrView.cpp:168
-msgid "From Current Slide"
-msgstr "Geçerli Slayttan"
-
-#: part/KPrView.cpp:172
-msgid "From First Slide"
-msgstr "İlk Slayttan"
-
-#: part/KPrView.cpp:176
-msgid "Configure Slide Show..."
-msgstr "Slayt Gösterisini Yapılandır..."
-
-#: part/KPrView.cpp:180
-msgid "Configure Presenter View..."
-msgstr "Slayt Göstericinin Görünümünü Yapılandır..."
 
 #. i18n: file: kpresenter.rc:3
 #. i18n: ectx: Menu (file)
@@ -1933,6 +1940,9 @@ msgstr ""
 msgid "&Slide"
 msgstr "&Slayt"
 
+#~ msgid "Animation Tool"
+#~ msgstr "Canlandırma Aracı"
+
 #~ msgid "&Cancel"
 #~ msgstr "&İptal"
 
@@ -2032,9 +2042,6 @@ msgstr "&Slayt"
 
 #~ msgid "Box Wipe Effect"
 #~ msgstr "Kutu Temizleme Efekti"
-
-#~ msgid "Form"
-#~ msgstr "Biçim"
 
 #, fuzzy
 #~| msgid "Navigation"

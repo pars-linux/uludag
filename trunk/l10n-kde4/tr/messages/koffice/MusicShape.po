@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: MusicShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:30+0100\n"
+"POT-Creation-Date: 2010-04-24 01:34+0200\n"
 "PO-Revision-Date: 2009-08-15 12:48+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -93,10 +93,6 @@ msgstr "Silgi"
 msgid "Remove bar"
 msgstr "Ölçüyü sil"
 
-#: actions/SelectionAction.cpp:44
-msgid "Select"
-msgstr "Seç"
-
 #: actions/SetClefAction.cpp:50
 msgctxt "Treble clef"
 msgid "Treble"
@@ -130,6 +126,10 @@ msgstr "Satır %1 üzerinde Do anahtarı"
 #: actions/SetClefAction.cpp:60
 msgid "Unknown clef"
 msgstr "Bilinmeyen anahtar"
+
+#: actions/SelectionAction.cpp:44
+msgid "Select"
+msgstr "Seç"
 
 #: actions/NoteEntryAction.cpp:67
 msgid "rest"
@@ -244,6 +244,10 @@ msgstr "Ölçüler ekle"
 msgid "Convert chord to rest"
 msgstr "Akoru susku'ya dönüştür"
 
+#: commands/ToggleTiedNoteCommand.cpp:32
+msgid "Toggle Note Tie"
+msgstr "Nota Uzatma Bağını Değiştir"
+
 #: commands/RemoveChordCommand.cpp:32
 msgid "Remove rest"
 msgstr "Susku'yu sil"
@@ -251,10 +255,6 @@ msgstr "Susku'yu sil"
 #: commands/RemoveChordCommand.cpp:34
 msgid "Remove chord"
 msgstr "Akoru sil"
-
-#: commands/ToggleTiedNoteCommand.cpp:32
-msgid "Toggle Note Tie"
-msgstr "Nota Uzatma Bağını Değiştir"
 
 #: commands/AddNoteCommand.cpp:42
 msgid "Set chord duration"
@@ -288,10 +288,6 @@ msgstr "Anahtarı değiştir"
 msgid "Change time signature"
 msgstr "Ölçü birimini değiştir"
 
-#: MusicToolFactory.cpp:28 SimpleEntryToolFactory.cpp:28
-msgid "Music Tool"
-msgstr "Müzik Aracı"
-
 #: MusicToolFactory.cpp:30
 msgid "Music editing tool, parts"
 msgstr "Müzik işleme aracı, partiler"
@@ -324,7 +320,7 @@ msgstr "Ölçü birimi"
 msgid "Key signature"
 msgstr "Tonalite"
 
-#: MusicTool.cpp:103
+#: MusicTool.cpp:101
 msgid "Parts"
 msgstr "Partiler"
 
@@ -439,3 +435,6 @@ msgstr "Dizekler"
 #: rc.cpp:63 rc.cpp:66 rc.cpp:69
 msgid "..."
 msgstr "..."
+
+#~ msgid "Music Tool"
+#~ msgstr "Müzik Aracı"

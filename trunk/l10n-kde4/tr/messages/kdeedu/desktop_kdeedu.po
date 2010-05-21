@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeedu\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 23:29+0000\n"
+"POT-Creation-Date: 2010-05-01 23:31+0000\n"
 "PO-Revision-Date: 2010-04-22 13:16+0300\n"
 "Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -79,7 +79,7 @@ msgctxt "Name"
 msgid "Eigenvalues"
 msgstr "Eigen değerleri"
 
-#: cantor/src/assistants/linearalgebra/eigenvalues/eigenvaluesassistant.desktop:34
+#: cantor/src/assistants/linearalgebra/eigenvalues/eigenvaluesassistant.desktop:35
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculating of Eigenvalues"
 msgstr "Eigen değerlerini hesaplamayı kolaylaştırman yardımcı pencere"
@@ -89,7 +89,7 @@ msgctxt "Name"
 msgid "Eigenvectors"
 msgstr "Eigen Vektörleri"
 
-#: cantor/src/assistants/linearalgebra/eigenvectors/eigenvectorsassistant.desktop:34
+#: cantor/src/assistants/linearalgebra/eigenvectors/eigenvectorsassistant.desktop:35
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify calculating of EigenVectors"
 msgstr "Eigen Vektörleri hesaplamayı kolaylaştıran yardımcı pencere"
@@ -99,7 +99,7 @@ msgctxt "Name"
 msgid "Invert Matrix"
 msgstr "Ters Matris"
 
-#: cantor/src/assistants/linearalgebra/invertmatrix/invertmatrixassistant.desktop:34
+#: cantor/src/assistants/linearalgebra/invertmatrix/invertmatrixassistant.desktop:35
 msgctxt "Comment"
 msgid "An Assistant dialog to simplify inverting of matrices"
 msgstr "Ters matris almayı kolaylaştıran yardımcı pencere"
@@ -125,7 +125,7 @@ msgctxt "Name"
 msgid "RunScript"
 msgstr "Betiği Çalıştır"
 
-#: cantor/src/assistants/runscript/runscriptassistant.desktop:34
+#: cantor/src/assistants/runscript/runscriptassistant.desktop:36
 msgctxt "Comment"
 msgid "An Assistant for running an external Script file"
 msgstr "Harici betik çalıştırma penceresi"
@@ -153,8 +153,8 @@ msgid ""
 "KAlgebra backend for Cantor. Lets you use the same language you use in the "
 "KAlgebra application in Cantor worksheets."
 msgstr ""
-"Cantor için KAlgebra arka ucu. KAlgebra uygulaması içinde Cantor "
-"çalışma sayfalarında kullanılan dille aynı dili kullanmanıza izin verir."
+"Cantor için KAlgebra arka ucu. KAlgebra uygulaması içinde Cantor çalışma "
+"sayfalarında kullanılan dille aynı dili kullanmanıza izin verir."
 
 #: cantor/src/backends/maxima/maximabackend.desktop:4
 msgctxt "Name"
@@ -171,7 +171,7 @@ msgctxt "Name"
 msgid "nullbackend"
 msgstr "belirsiz arka uç"
 
-#: cantor/src/backends/null/nullbackend.desktop:32
+#: cantor/src/backends/null/nullbackend.desktop:33
 msgctxt "Comment"
 msgid "Backend for Cantor for testing purposes"
 msgstr "Test amaçlı kullanılmak üzere Cantor arka ucu"
@@ -668,12 +668,12 @@ msgctxt "Name"
 msgid "Rocs"
 msgstr "Rocs"
 
-#: rocs/src/rocs.desktop:29
+#: rocs/src/rocs.desktop:30
 msgctxt "GenericName"
 msgid "Rocs Graph Theory"
 msgstr "Rocs Graph Kuramı"
 
-#: rocs/src/rocs.desktop:57
+#: rocs/src/rocs.desktop:59
 msgctxt "Comment"
 msgid "Graph Theory Tool for Professors and Students."
 msgstr "Öğretim görevlileri ve öğrenciler için Graph Kuramı araçları"

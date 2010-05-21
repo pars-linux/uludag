@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-16 01:23+0200\n"
+"POT-Creation-Date: 2010-05-19 01:23+0200\n"
 "PO-Revision-Date: 2010-05-12 10:48+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -203,8 +203,8 @@ msgstr "Var olan dosyanın üzerine yazılsın mı?"
 msgid "Unable to save to: %1"
 msgstr "Buraya kaydedilemiyor: %1"
 
-#: core/kget.cpp:524 core/kget.cpp:903 core/kget.cpp:912
-#: core/datasourcefactory.cpp:647 transfer-plugins/metalink/metalink.cpp:204
+#: core/kget.cpp:524 core/kget.cpp:893 core/kget.cpp:902
+#: core/datasourcefactory.cpp:626 transfer-plugins/metalink/metalink.cpp:208
 #: transfer-plugins/bittorrent/bttransfer.cpp:500
 #: transfer-plugins/bittorrent/bttransfer.cpp:511
 #: ui/metalinkcreator/metalinkcreator.cpp:300
@@ -226,19 +226,19 @@ msgstr "Protokol desteklenmiyor"
 
 #. i18n: file: ui/newtransferwidget.ui:25
 #. i18n: ectx: property (text), widget (KTitleWidget, titleWidget)
-#: core/kget.cpp:846 ui/newtransferdialog.cpp:256 rc.cpp:929
+#: core/kget.cpp:836 ui/newtransferdialog.cpp:256 rc.cpp:929
 msgid "New Download"
 msgstr "Yeni Aktarım"
 
-#: core/kget.cpp:846
+#: core/kget.cpp:836
 msgid "Enter URL:"
 msgstr "Adres Gir:"
 
-#: core/kget.cpp:879
+#: core/kget.cpp:869
 msgid "Save As"
 msgstr "Farklı Kaydet"
 
-#: core/kget.cpp:902
+#: core/kget.cpp:892
 #, kde-format
 msgid ""
 "Malformed URL:\n"
@@ -247,7 +247,7 @@ msgstr ""
 "Bozuk Adres:\n"
 "%1"
 
-#: core/kget.cpp:911
+#: core/kget.cpp:901
 #, kde-format
 msgid ""
 "Malformed URL, protocol missing:\n"
@@ -256,7 +256,7 @@ msgstr ""
 "Bozuk adres, protokol yok:\n"
 "%1"
 
-#: core/kget.cpp:923
+#: core/kget.cpp:913
 #, kde-format
 msgid ""
 "You have already completed a download from the location: \n"
@@ -271,11 +271,11 @@ msgstr ""
 "\n"
 "Yeniden yüklensin mi?"
 
-#: core/kget.cpp:924
+#: core/kget.cpp:914
 msgid "Download it again?"
 msgstr "Yeniden indirilsin mi?"
 
-#: core/kget.cpp:936
+#: core/kget.cpp:926
 #, kde-format
 msgid ""
 "You have a download in progress from the location: \n"
@@ -290,15 +290,15 @@ msgstr ""
 "\n"
 "Silinip tekrar yüklensin mi?"
 
-#: core/kget.cpp:937
+#: core/kget.cpp:927
 msgid "Delete it and download again?"
 msgstr "Silinip yeniden indirilsin mi?"
 
-#: core/kget.cpp:960 core/kget.cpp:967
+#: core/kget.cpp:950 core/kget.cpp:957
 msgid "Directory is not writable"
 msgstr "Dizin yazılamaz durumda"
 
-#: core/kget.cpp:995
+#: core/kget.cpp:985
 msgid ""
 "You have already downloaded that file from another location.\n"
 "\n"
@@ -308,26 +308,27 @@ msgstr ""
 "\n"
 "Eski indirilen silinip yeniden indirilsin mi?"
 
-#: core/kget.cpp:996
+#: core/kget.cpp:986
 msgid "File already downloaded. Download anyway?"
 msgstr "Dosya zaten indirilmiş. Yine de indirilsin mi?"
 
-#: core/kget.cpp:1005
+#: core/kget.cpp:995
 msgid "You are already downloading the same file"
 msgstr "Aynı dosya zaten indiriliyor"
 
-#: core/kget.cpp:1009 core/kget.cpp:1012
+#: core/kget.cpp:999 core/kget.cpp:1002
+#: transfer-plugins/metalink/metalink.cpp:734
 msgid "File already exists"
 msgstr "Dosya zaten var"
 
-#: core/kget.cpp:1112
+#: core/kget.cpp:1102
 #, kde-format
 msgid ""
 "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></html>"
 msgstr ""
 "<html><p>Eklenti yükleyici şu eklentiyi yükleyemedi:<br/><i>%1</i></p></html>"
 
-#: core/kget.cpp:1130
+#: core/kget.cpp:1120
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -338,7 +339,7 @@ msgstr ""
 "%1\n"
 "bu bir dizin."
 
-#: core/kget.cpp:1140
+#: core/kget.cpp:1130
 #, kde-format
 msgid ""
 "Not deleting\n"
@@ -351,45 +352,44 @@ msgstr ""
 
 #. i18n: file: conf/dlgadvanced.ui:40
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_AfterFinishAction)
-#: core/kget.cpp:1354 core/kget.cpp:1364 ui/droptarget.cpp:94 rc.cpp:140
+#: core/kget.cpp:1344 core/kget.cpp:1354 ui/droptarget.cpp:94 rc.cpp:140
 msgid "Quit KGet"
 msgstr "KGet Uygulamasından Çık"
 
-#: core/kget.cpp:1355
+#: core/kget.cpp:1345
 msgid "KGet is now closing, as all downloads have completed."
 msgstr "Tüm aktarımlar tamamlandı, KGet uygulamasından çıkılıyor."
 
-#: core/kget.cpp:1365
+#: core/kget.cpp:1355
 msgid "The computer will now turn off, as all downloads have completed."
 msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi kapatılıyor."
 
-#: core/filemodel.cpp:277
+#: core/filemodel.cpp:276
 msgctxt "file in a filesystem"
 msgid "File"
 msgstr "Dosya"
 
-#: core/filemodel.cpp:277
+#: core/filemodel.cpp:276
 msgctxt "status of the download"
 msgid "Status"
 msgstr "Durum"
 
-#: core/filemodel.cpp:277
+#: core/filemodel.cpp:276
 msgctxt "size of the download"
 msgid "Size"
 msgstr "Boyut"
 
-#: core/filemodel.cpp:277
+#: core/filemodel.cpp:276
 msgctxt "checksum of a file"
 msgid "Checksum"
 msgstr "Sağlama"
 
-#: core/filemodel.cpp:277
+#: core/filemodel.cpp:276
 msgctxt "signature of a file"
 msgid "Signature"
 msgstr "İmza"
 
 #: core/kgetkjobadapter.cpp:43
-#| msgid "KGet Transfer List"
 msgid "KGet Transfer"
 msgstr "KGet Aktarımı"
 
@@ -444,7 +444,7 @@ msgstr ""
 "Kullanılabilir anahtar sunucusu bulunamadı, anahtar indirilmedi. Ayarlardan "
 "daha fazla sunucu ekleyin veya KGet'i tekrar başlatarak deneyin."
 
-#: core/datasourcefactory.cpp:647
+#: core/datasourcefactory.cpp:626
 #, kde-format
 msgctxt "A mirror is removed when the file has the wrong download size"
 msgid "%1 removed as it did report a wrong file size."
@@ -566,14 +566,12 @@ msgstr "Adres:"
 #: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:197
 #: transfer-plugins/kio/transferKio.cpp:293
 #, kde-format
-#| msgid "The download (%1) could not be verfied. Do you want to repair it?"
 msgid "The download (%1) could not be verified. Do you want to repair it?"
 msgstr "İndirme (%1) doğrulanamadı. Onarmak istiyor musunuz?"
 
 #: transfer-plugins/multisegmentkio/transfermultisegkio.cpp:200
 #: transfer-plugins/kio/transferKio.cpp:296
 #, kde-format
-#| msgid "The download (%1) could not be verfied. Do you want to repair it?"
 msgid "The download (%1) could not be verified. Do you want to redownload it?"
 msgstr "İndirme (%1) doğrulanamadı. Yeniden indirmek istiyor musunuz?"
 
@@ -619,34 +617,25 @@ msgctxt "Transfer State: Aborted"
 msgid "Aborted"
 msgstr "İptal edildi"
 
-#: transfer-plugins/metalink/metalink.cpp:87
+#: transfer-plugins/metalink/metalink.cpp:88
 msgid "Downloading Metalink File...."
 msgstr "Metalink Dosyası İndiriliyor...."
 
-#: transfer-plugins/metalink/metalink.cpp:204
+#: transfer-plugins/metalink/metalink.cpp:208
 msgid "Download failed, no working URLs were found."
 msgstr "İndirme işlemi başarısız oldu, çalışan bir adres bulunamadı."
 
-#: transfer-plugins/metalink/metalink.cpp:205
-#: transfer-plugins/bittorrent/bttransfer.cpp:440
-#: transfer-plugins/bittorrent/bttransfer.cpp:459
-#: transfer-plugins/bittorrent/bttransfer.cpp:499
-#: transfer-plugins/bittorrent/bttransfer.cpp:510
-msgid "An error occurred...."
-msgstr "Bir hata oluştu...."
-
-#: transfer-plugins/metalink/metalink.cpp:229
-msgid "File Selection"
-msgstr "Dosya Seçimi"
-
-#: transfer-plugins/metalink/metalink.cpp:515
-#| msgid "The download (%1) could not be verfied. Do you want to repair it?"
+#: transfer-plugins/metalink/metalink.cpp:511
 msgid ""
 "The download could not be verified, do you want to repair (if repairing does "
 "not work the download would be restarted) it?"
 msgstr ""
-"İndirme doğrulanamadı onarmak istiyor musunuz (onarma başarılı "
-"olmazsa indirme işlemi yeniden başlayacak)?"
+"İndirme doğrulanamadı onarmak istiyor musunuz (onarma başarılı olmazsa "
+"indirme işlemi yeniden başlayacak)?"
+
+#: transfer-plugins/metalink/fileselectiondlg.cpp:31
+msgid "File Selection"
+msgstr "Dosya Seçimi"
 
 #: transfer-plugins/checksumsearch/dlgchecksumsearch.cpp:42
 msgid "Add item"
@@ -815,8 +804,7 @@ msgid ""
 "send us any data."
 msgstr ""
 "Uç tarafın bizi tıkayıp tıkamadığını belirtir. Eğer tıkandıysak, uç taraf "
-"bize daha "
-"fazla bilgi gönderemeyecek."
+"bize daha fazla bilgi gönderemeyecek."
 
 #: transfer-plugins/bittorrent/advanceddetails/peerviewmodel.cpp:334
 msgid "Snubbed means the peer has not sent us any data in the last 2 minutes"
@@ -1152,6 +1140,13 @@ msgstr "İndiriliyor...."
 #: transfer-plugins/bittorrent/bttransfer.cpp:274
 msgid "Cannot add a tracker to a private torrent."
 msgstr "Özel torrent'e izleyici eklenemiyor."
+
+#: transfer-plugins/bittorrent/bttransfer.cpp:440
+#: transfer-plugins/bittorrent/bttransfer.cpp:459
+#: transfer-plugins/bittorrent/bttransfer.cpp:499
+#: transfer-plugins/bittorrent/bttransfer.cpp:510
+msgid "An error occurred...."
+msgstr "Bir hata oluştu...."
 
 #: transfer-plugins/bittorrent/bttransfer.cpp:444
 msgid "Analyzing torrent...."
@@ -1761,7 +1756,6 @@ msgid "Mirror"
 msgstr "Yansı"
 
 #: ui/mirror/mirrormodel.cpp:386
-#| msgid "Priority"
 msgctxt "The priority of the mirror"
 msgid "Priority"
 msgstr "Öncelik"
@@ -2006,8 +2000,8 @@ msgid ""
 "No fingerprint could be found, check if the signature is correct or verify "
 "the download."
 msgstr ""
-"Parmak izi bulunamadı, imza doğru mu diye kontrol edin veya indirme "
-"işlemini doğrulayın."
+"Parmak izi bulunamadı, imza doğru mu diye kontrol edin veya indirme işlemini "
+"doğrulayın."
 
 #: ui/signaturedlg.cpp:139
 msgid "The key has been revoked."
@@ -2055,7 +2049,6 @@ msgid "Verified"
 msgstr "Doğrulanmış"
 
 #: ui/signaturedlg.cpp:236
-#| msgid "%1 %2 has been successfully added."
 msgid "The signature has been verified successfully."
 msgstr "İmza başarılı bir şekilde doğrulandı."
 
@@ -2099,11 +2092,11 @@ msgstr "Sorunlar:"
 msgid "Information:"
 msgstr "Bilgiler:"
 
-#: ui/transfersview.cpp:149
+#: ui/transfersview.cpp:125
 msgid "Select columns"
 msgstr "Sütunları seç"
 
-#: ui/transfersview.cpp:310
+#: ui/transfersview.cpp:303
 msgid "Transfer Details"
 msgstr "Aktarım Ayrıntıları"
 
@@ -2302,107 +2295,107 @@ msgctxt "@item speed of transfer per seconds"
 msgid "%1/s"
 msgstr "%1/s"
 
-#: extensions/webinterface/httpserver.cpp:173
+#: extensions/webinterface/httpserver.cpp:175
 msgctxt "@label"
 msgid "KGet Web Interface"
 msgstr "KGet Web Arayüzü"
 
-#: extensions/webinterface/httpserver.cpp:174
+#: extensions/webinterface/httpserver.cpp:176
 msgctxt "@label number"
 msgid "Nr"
 msgstr "No"
 
-#: extensions/webinterface/httpserver.cpp:175
+#: extensions/webinterface/httpserver.cpp:177
 msgctxt "@label"
 msgid "File name"
 msgstr "Dosya adı"
 
-#: extensions/webinterface/httpserver.cpp:176
+#: extensions/webinterface/httpserver.cpp:178
 msgctxt "@label Progress of transfer"
 msgid "Finished"
 msgstr "Tamamlandı"
 
-#: extensions/webinterface/httpserver.cpp:177
+#: extensions/webinterface/httpserver.cpp:179
 msgctxt "@label Speed of transfer"
 msgid "Speed"
 msgstr "Hız"
 
-#: extensions/webinterface/httpserver.cpp:178
+#: extensions/webinterface/httpserver.cpp:180
 msgctxt "@label Status of transfer"
 msgid "Status"
 msgstr "Durum"
 
-#: extensions/webinterface/httpserver.cpp:179
+#: extensions/webinterface/httpserver.cpp:181
 msgctxt "@action:button start a transfer"
 msgid "Start"
 msgstr "Başlat"
 
-#: extensions/webinterface/httpserver.cpp:180
+#: extensions/webinterface/httpserver.cpp:182
 msgctxt "@action:button"
 msgid "Stop"
 msgstr "Durdur"
 
-#: extensions/webinterface/httpserver.cpp:181
+#: extensions/webinterface/httpserver.cpp:183
 msgctxt "@action:button"
 msgid "Remove"
 msgstr "Sil"
 
-#: extensions/webinterface/httpserver.cpp:182
+#: extensions/webinterface/httpserver.cpp:184
 msgctxt "@label Download from"
 msgid "Source:"
 msgstr "Kaynak:"
 
-#: extensions/webinterface/httpserver.cpp:183
+#: extensions/webinterface/httpserver.cpp:185
 msgctxt "@label Save download to"
 msgid "Saving to:"
 msgstr "Kaydediliyor:"
 
-#: extensions/webinterface/httpserver.cpp:184
+#: extensions/webinterface/httpserver.cpp:186
 msgctxt "@label Title in header"
 msgid "Web Interface"
 msgstr "Web Arayüzü"
 
-#: extensions/webinterface/httpserver.cpp:185
+#: extensions/webinterface/httpserver.cpp:187
 msgctxt "@action"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: extensions/webinterface/httpserver.cpp:186
+#: extensions/webinterface/httpserver.cpp:188
 msgctxt "@action"
 msgid "Refresh"
 msgstr "Yenile"
 
-#: extensions/webinterface/httpserver.cpp:187
+#: extensions/webinterface/httpserver.cpp:189
 msgctxt "@action"
 msgid "Enter URL: "
 msgstr "Adres Gir: "
 
-#: extensions/webinterface/httpserver.cpp:188
+#: extensions/webinterface/httpserver.cpp:190
 msgctxt "@action:button"
 msgid "OK"
 msgstr "Tamam"
 
-#: extensions/webinterface/httpserver.cpp:190
+#: extensions/webinterface/httpserver.cpp:192
 msgctxt "@action Refresh download list every x (seconds)"
 msgid "Refresh download list every"
 msgstr "İndirme listesini yenileme aralığı"
 
-#: extensions/webinterface/httpserver.cpp:191
+#: extensions/webinterface/httpserver.cpp:193
 msgctxt "@action (Refresh very x )seconds"
 msgid "seconds"
 msgstr "saniye"
 
-#: extensions/webinterface/httpserver.cpp:192
+#: extensions/webinterface/httpserver.cpp:194
 msgctxt "@action:button"
 msgid "Save Settings"
 msgstr "Ayarları Kaydet"
 
-#: extensions/webinterface/httpserver.cpp:193
+#: extensions/webinterface/httpserver.cpp:195
 msgctxt "@title"
 msgid "Downloads"
 msgstr "İndirmeler"
 
-#: extensions/webinterface/httpserver.cpp:195
+#: extensions/webinterface/httpserver.cpp:197
 msgctxt "@label text in footer"
 msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
 msgstr "KGet Web Arayüzü | Valid XHTML 1.0 Strict &amp; CSS"
@@ -2689,8 +2682,8 @@ msgid ""
 "<p>The following file has finished downloading:</p><p style=\"font-size: "
 "small;\">                      %1</p>"
 msgstr ""
-"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: "
-"small;\">                      %1</p>"
+"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: small;"
+"\">                      %1</p>"
 
 #: mainwindow.cpp:521
 msgid ""
@@ -3736,10 +3729,8 @@ msgid ""
 "one URL."
 msgstr ""
 "Bu sihirbaz sizin sıfırdan veya mevcut metalinkleri temel alarak yeni "
-"metalink "
-"üretmenizi sağlar. Çoğu alan zorunlu değildir. Kayıt konumu, dosya ve URL "
-"bilgileri "
-"ise verilmelidir."
+"metalink üretmenizi sağlar. Çoğu alan zorunlu değildir. Kayıt konumu, dosya "
+"ve URL bilgileri ise verilmelidir."
 
 #. i18n: file: ui/metalinkcreator/introduction.ui:48
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -3806,7 +3797,6 @@ msgstr "Dinamik:"
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:110
 #. i18n: ectx: property (title), widget (QGroupBox, publishedGroupBox)
 #: rc.cpp:574
-#| msgid "Metalink published:"
 msgid "Metalink published"
 msgstr "Metalink yayınlandı"
 
@@ -3837,7 +3827,6 @@ msgstr "Negatif ofset:"
 #. i18n: file: ui/metalinkcreator/generalwidget.ui:178
 #. i18n: ectx: property (title), widget (QGroupBox, updatedGroupBox)
 #: rc.cpp:586
-#| msgid "Metalink updated:"
 msgid "Metalink updated"
 msgstr "Metalink güncellendi"
 
@@ -4403,19 +4392,19 @@ msgstr "Hedef:"
 msgid "Transfer group:"
 msgstr "Aktarım grubu:"
 
-#. i18n: file: ui/verificationdialog.ui:39
+#. i18n: file: ui/verificationdialog.ui:42
 #. i18n: ectx: property (toolTip), widget (KPushButton, verify)
 #: rc.cpp:941
 msgid "Verify the finished download with the selected checksum."
 msgstr "Biten indirmeleri seçili checksum ile doğrula."
 
-#. i18n: file: ui/verificationdialog.ui:42
+#. i18n: file: ui/verificationdialog.ui:45
 #. i18n: ectx: property (text), widget (KPushButton, verify)
 #: rc.cpp:944
 msgid "&Verify"
 msgstr "&Doğrula"
 
-#. i18n: file: ui/verificationdialog.ui:68
+#. i18n: file: ui/verificationdialog.ui:71
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:947
 msgid "Verifying:"
@@ -4457,22 +4446,16 @@ msgstr "Ana Araç Çubuğu"
 msgid "&Tools"
 msgstr "Ara&çlar"
 
-#. i18n: file: conf/kget.kcfg:34
+#. i18n: file: conf/kget.kcfg:33
 #. i18n: ectx: label, entry (ShowSplashscreen), group (Appearance)
 #: rc.cpp:968
 msgid "Sets to show the splashscreen while KGet is loading"
 msgstr ""
 "KGet başlatılırken açılış resminin gösterilip gösterilmeyeceğini ayarlar"
 
-#. i18n: file: conf/kget.kcfg:170
-#. i18n: ectx: label, entry (ColumnWidths), group (Geometry)
-#: rc.cpp:971
-msgid "The width of the columns in the main view"
-msgstr "Ana görünümdeki sütunların genişliği"
-
-#. i18n: file: conf/kget.kcfg:173
+#. i18n: file: conf/kget.kcfg:169
 #. i18n: ectx: label, entry (HistoryColumnWidths), group (Geometry)
-#: rc.cpp:974
+#: rc.cpp:971
 msgid "The width of the columns in the history view"
 msgstr "Geçmiş görünümündeki sütunların genişliği"
 
@@ -4480,7 +4463,7 @@ msgstr "Geçmiş görünümündeki sütunların genişliği"
 #. i18n: ectx: label, entry (SearchEnginesNameList), group (SearchEngines)
 #. i18n: file: transfer-plugins/checksumsearch/kget_checksumsearchfactory.kcfg:9
 #. i18n: ectx: label, entry (SearchStrings), group (ChecksumSearch)
-#: rc.cpp:977 rc.cpp:999
+#: rc.cpp:974 rc.cpp:996
 msgid "List of the available search engines"
 msgstr "Kullanılabilir arama motorlarının listesi"
 
@@ -4492,27 +4475,30 @@ msgstr "Kullanılabilir arama motorlarının listesi"
 #. i18n: ectx: label, entry (UrlChangeModeList), group (ChecksumSearch)
 #. i18n: file: transfer-plugins/checksumsearch/kget_checksumsearchfactory.kcfg:17
 #. i18n: ectx: label, entry (ChecksumTypeList), group (ChecksumSearch)
-#: rc.cpp:980 rc.cpp:986 rc.cpp:1002 rc.cpp:1005
+#: rc.cpp:977 rc.cpp:983 rc.cpp:999 rc.cpp:1002
 msgid "List of the available search engine URLs"
 msgstr "Kullanılabilir arama motorlarının adresleri"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:9
 #. i18n: ectx: label, entry (UrlRegexpList), group (UserScripts)
-#: rc.cpp:983
+#: rc.cpp:980
 msgid "List of the Regexp to match input URL"
 msgstr "Girdi adreslerini eşlemek için kullanılacak düzenli ifade listesi"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:21
 #. i18n: ectx: label, entry (DescriptionList), group (UserScripts)
-#: rc.cpp:989
+#: rc.cpp:986
 msgid "List of descriptions for user scripts"
 msgstr "Kullanıcı betiklerinin tanımlamalarının listesi"
 
 #. i18n: file: transfer-plugins/contentfetch/kget_contentfetchfactory.kcfg:25
 #. i18n: ectx: label, entry (EnableList), group (UserScripts)
-#: rc.cpp:992
+#: rc.cpp:989
 msgid "List of whether the script is enabled"
 msgstr "Etkinleştirilecek betiklerin listesi"
+
+#~ msgid "The width of the columns in the main view"
+#~ msgstr "Ana görünümdeki sütunların genişliği"
 
 #~ msgid "License:"
 #~ msgstr "Lisans:"

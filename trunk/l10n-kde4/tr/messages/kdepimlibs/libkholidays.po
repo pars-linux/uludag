@@ -167,4 +167,3 @@ msgstr "kova"
 msgctxt "zodiac symbol for Pices"
 msgid "fish"
 msgstr "balık"
-

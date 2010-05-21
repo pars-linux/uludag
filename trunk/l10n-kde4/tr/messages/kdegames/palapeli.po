@@ -60,8 +60,6 @@ msgstr "Serdar Soytetir, Serdar Dalgıç"
 
 #: src/file-io/collection-delegate.cpp:79
 #, kde-format
-#| msgctxt "Puzzle description, %1 = name string, %2 = piece count"
-#| msgid "%1 (%2 pieces)"
 msgctxt "Puzzle description, %2 = name string, %1 = piece count"
 msgid "%2 (%1 piece)"
 msgid_plural "%2 (%1 pieces)"
@@ -271,8 +269,8 @@ msgid ""
 "Import the given puzzle file into the local collection (does nothing if no "
 "puzzle file is given)"
 msgstr ""
-"Verilen bulmaca dosyasını yerel koleksiyona aktar (eğer herhangi bir "
-"bulmaca dosyası verilmediyse hiçbir şey yapmaz)"
+"Verilen bulmaca dosyasını yerel koleksiyona aktar (eğer herhangi bir bulmaca "
+"dosyası verilmediyse hiçbir şey yapmaz)"
 
 #: src/main.cpp:38
 msgid ""

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: khelpcenter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-11-16 06:13+0100\n"
+"POT-Creation-Date: 2010-05-10 01:20+0200\n"
 "PO-Revision-Date: 2009-09-27 21:41+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Poedit-Language: Turkish\n"
 
-#: application.cpp:57 navigator.cpp:470
+#: application.cpp:57 navigator.cpp:447
 msgid "KDE Help Center"
 msgstr "KDE Yardım Merkezi"
 
@@ -451,23 +451,23 @@ msgstr "Arama Seçenekleri"
 msgid "G&lossary"
 msgstr "&Sözlük"
 
-#: navigator.cpp:469
+#: navigator.cpp:446
 msgid "Start Page"
 msgstr "Başlangıç Sayfası"
 
-#: navigator.cpp:557
+#: navigator.cpp:534
 msgid "Unable to run search program."
 msgstr "Arama programı çalıştırılamadı."
 
-#: navigator.cpp:597
+#: navigator.cpp:574
 msgid "A search index does not yet exist. Do you want to create the index now?"
 msgstr "Bir arama indeksi henüz yapılmadı. İndeks şimdi yaratılsın mı?"
 
-#: navigator.cpp:601
+#: navigator.cpp:578
 msgid "Create"
 msgstr "Oluştur"
 
-#: navigator.cpp:602
+#: navigator.cpp:579
 msgid "Do Not Create"
 msgstr "Oluşturma"
 
@@ -633,7 +633,7 @@ msgctxt "Label for Unknown search scope, that should never appear"
 msgid "unknown"
 msgstr "bilinmeyen"
 
-#: view.cpp:209
+#: view.cpp:210
 msgid "Copy Link Address"
 msgstr "Bağlantı Adresini Kopyala"
 

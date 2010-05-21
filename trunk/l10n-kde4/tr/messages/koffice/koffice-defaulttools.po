@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: koffice-defaulttools\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:30+0100\n"
+"POT-Creation-Date: 2010-04-06 04:51+0200\n"
 "PO-Revision-Date: 2009-09-28 01:46+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -24,20 +24,20 @@ msgstr "°"
 
 #. i18n: file: defaulttool/DefaultToolTransformWidget.ui:38
 #. i18n: ectx: property (text), widget (QPushButton, rotateButton)
-#: rc.cpp:6 defaulttool/DefaultToolTransformWidget.cpp:108
-#: defaulttool/ShapeRotateStrategy.cpp:146
+#: rc.cpp:6 defaulttool/DefaultToolTransformWidget.cpp:107
+#: defaulttool/ShapeRotateStrategy.cpp:147
 msgid "Rotate"
 msgstr "Döndür"
 
 #. i18n: file: defaulttool/DefaultToolTransformWidget.ui:64
 #. i18n: ectx: property (text), widget (QPushButton, shearXButton)
-#: rc.cpp:9 defaulttool/DefaultToolTransformWidget.cpp:141
+#: rc.cpp:9 defaulttool/DefaultToolTransformWidget.cpp:140
 msgid "Shear X"
 msgstr "Kırp X"
 
 #. i18n: file: defaulttool/DefaultToolTransformWidget.ui:90
 #. i18n: ectx: property (text), widget (QPushButton, shearYButton)
-#: rc.cpp:12 defaulttool/DefaultToolTransformWidget.cpp:174
+#: rc.cpp:12 defaulttool/DefaultToolTransformWidget.cpp:173
 msgid "Shear Y"
 msgstr "Kırp Y"
 
@@ -70,29 +70,29 @@ msgstr "Görünüm oranını koru"
 
 #. i18n: file: defaulttool/DefaultToolTransformWidget.ui:174
 #. i18n: ectx: property (text), widget (QPushButton, resetButton)
-#: rc.cpp:32 defaulttool/DefaultToolTransformWidget.cpp:270
+#: rc.cpp:32 defaulttool/DefaultToolTransformWidget.cpp:269
 msgid "Reset Transformations"
 msgstr "Değişiklikleri Sıfırla"
 
-#. i18n: file: defaulttool/DefaultToolWidget.ui:42
+#. i18n: file: defaulttool/DefaultToolWidget.ui:29
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:35
 msgid "X:"
 msgstr "X:"
 
-#. i18n: file: defaulttool/DefaultToolWidget.ui:94
+#. i18n: file: defaulttool/DefaultToolWidget.ui:91
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:38
 msgid "Y:"
 msgstr "Y:"
 
-#. i18n: file: connectionTool/KoConnectionToolWidget.ui:13
-#. i18n: ectx: property (windowTitle), widget (QWidget, KoConnectionToolWidget)
+#. i18n: file: connectionTool/ConnectionToolWidget.ui:14
+#. i18n: ectx: property (windowTitle), widget (QWidget, ConnectionToolWidget)
 #: rc.cpp:41
 msgid "Connection Shape"
 msgstr "Bağlantı Şekli"
 
-#. i18n: file: connectionTool/KoConnectionToolWidget.ui:19
+#. i18n: file: connectionTool/ConnectionToolWidget.ui:20
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:44
 msgid "Type:"
@@ -122,12 +122,59 @@ msgstr "Ekle"
 msgid "Remove"
 msgstr "Sil"
 
-#: connectionTool/KoConnectionToolFactory.cpp:27
-#: connectionTool/KoConnectionToolFactory.cpp:29
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:25
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_verticalCheckBox)
+#: rc.cpp:59
+msgid "Insert this number of vertical equally spaced guides."
+msgstr ""
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:31
+#. i18n: ectx: property (text), widget (QCheckBox, m_verticalCheckBox)
+#: rc.cpp:62 guidestool/GuidesToolOptionWidget.cpp:31
+msgid "Vertical"
+msgstr "Dikey"
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:61
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_horizontalCheckBox)
+#: rc.cpp:65
+msgid "Insert this number of horizontal equally spaced guides."
+msgstr ""
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:67
+#. i18n: ectx: property (text), widget (QCheckBox, m_horizontalCheckBox)
+#: rc.cpp:68 guidestool/GuidesToolOptionWidget.cpp:30
+msgid "Horizontal"
+msgstr "Yatay"
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:97
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_erasePreviousCheckBox)
+#: rc.cpp:71
+msgid "Erase previous guides."
+msgstr ""
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:110
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_verticalEdgesCheckBox)
+#: rc.cpp:74
+msgid "Insert guides at the vertical edges."
+msgstr ""
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:123
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_horizontalEdgesCheckBox)
+#: rc.cpp:77
+msgid "Insert guides at the horizontal edges."
+msgstr ""
+
+#. i18n: file: guidestool/InsertGuidesToolOptionWidget.ui:149
+#. i18n: ectx: property (text), widget (KPushButton, m_createButton)
+#: rc.cpp:80
+msgid "Create"
+msgstr ""
+
+#: connectionTool/ConnectionToolFactory.cpp:29
 msgid "Connect shapes"
 msgstr "Şekilleri bağla"
 
-#: connectionTool/KoConnectionToolWidget.cpp:32
+#: connectionTool/ConnectionToolWidget.cpp:32
 msgid "Standard"
 msgstr "Standart"
 
@@ -207,40 +254,36 @@ msgstr ""
 "Seçimi yeniden boyutlandırmak için tıklayın ve sürükleyin. Vurgulanmış konum "
 "için farenin orta tuşu ile tıklayın."
 
-#: defaulttool/DefaultTool.cpp:963
+#: defaulttool/DefaultTool.cpp:968
 msgid "Group shapes"
 msgstr "Şekilleri gruplandır"
 
-#: defaulttool/DefaultTool.cpp:991
+#: defaulttool/DefaultTool.cpp:996
 msgid "Ungroup shapes"
 msgstr "Şekillerin gruplandırmasını kaldır"
 
-#: defaulttool/DefaultTool.cpp:1080
+#: defaulttool/DefaultTool.cpp:1085
 msgid "Arrange"
 msgstr "Düzenle"
 
-#: defaulttool/DefaultTool.cpp:1081
+#: defaulttool/DefaultTool.cpp:1086
 msgid "Geometry"
 msgstr "Yerleşim"
 
-#: defaulttool/DefaultTool.cpp:1082
+#: defaulttool/DefaultTool.cpp:1087
 msgid "Snapping"
 msgstr "Kopma"
-
-#: defaulttool/DefaultToolFactory.cpp:27
-msgid "Default Tool"
-msgstr "Öntanımlı Araç"
 
 #: defaulttool/DefaultToolFactory.cpp:29
 msgid "Default tool"
 msgstr "Öntanımlı araç"
 
-#: defaulttool/DefaultToolTransformWidget.cpp:211
-#: defaulttool/DefaultToolTransformWidget.cpp:243
+#: defaulttool/DefaultToolTransformWidget.cpp:210
+#: defaulttool/DefaultToolTransformWidget.cpp:242
 msgid "Scale"
 msgstr "Ölçekle"
 
-#: defaulttool/DefaultToolWidget.cpp:221
+#: defaulttool/DefaultToolWidget.cpp:227
 #: defaulttool/ShapeResizeStrategy.cpp:240
 msgid "Resize"
 msgstr "Yeniden Boyutlandır"
@@ -253,7 +296,7 @@ msgstr ""
 msgid "Press CTRL to resize from center."
 msgstr "Merkezden başlayarak yeniden boyutlandırmak için CTRL tuşuna basın."
 
-#: defaulttool/ShapeRotateStrategy.cpp:60
+#: defaulttool/ShapeRotateStrategy.cpp:61
 msgid "Press ALT to rotate in 45 degree steps."
 msgstr "45 derecelik basamaklarla döndürmek için ALT tuşuna basın."
 
@@ -261,18 +304,12 @@ msgstr "45 derecelik basamaklarla döndürmek için ALT tuşuna basın."
 msgid "Shear"
 msgstr "Kırp"
 
-#: guidestool/GuidesToolFactory.cpp:25
-msgid "Edit Guidelines"
-msgstr "Kılavuz Çizgilerini Düzenle"
-
 #: guidestool/GuidesToolFactory.cpp:27
 msgid "Edit guidelines"
 msgstr "Kılavuz çizgilerini düzenle"
 
-#: guidestool/GuidesToolOptionWidget.cpp:31
-msgid "Horizontal"
-msgstr "Yatay"
+#~ msgid "Default Tool"
+#~ msgstr "Öntanımlı Araç"
 
-#: guidestool/GuidesToolOptionWidget.cpp:32
-msgid "Vertical"
-msgstr "Dikey"
+#~ msgid "Edit Guidelines"
+#~ msgstr "Kılavuz Çizgilerini Düzenle"

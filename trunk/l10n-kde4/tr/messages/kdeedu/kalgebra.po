@@ -795,7 +795,6 @@ msgid "Type not supported for bounding."
 msgstr ""
 
 #: analitza/analitza.cpp:815
-#| msgid "Incorrect uplimit or downlimit."
 msgid "Incorrect domain."
 msgstr "Geçersiz alan."
 

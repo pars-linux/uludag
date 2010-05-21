@@ -218,12 +218,9 @@ msgid ""
 "selected, a command with placeholders can be defined."
 msgstr ""
 "Harita üzerindeki bir kişinin posta adresini göstermek için kullanılması "
-"gereken "
-"uygulamayı tanımlar. Eğer 'Web Tarayıcısı' seçildiyse, yer tutucular "
-"kullanılarak bir "
-"URL adresi girilebilir. Eğer 'Harici Uygulama' seçildiyse, yer tutucular "
-"kullanılarak "
-"bir komut tanımlanabilir."
+"gereken uygulamayı tanımlar. Eğer 'Web Tarayıcısı' seçildiyse, yer tutucular "
+"kullanılarak bir URL adresi girilebilir. Eğer 'Harici Uygulama' seçildiyse, "
+"yer tutucular kullanılarak bir komut tanımlanabilir."
 
 #. i18n: file: actions/contactactionssettings.kcfg:21
 #. i18n: ectx: whatsthis, entry (AddressUrl), group (Show Address Settings)
@@ -320,8 +317,8 @@ msgid ""
 "contact's\n"
 "                 phone number."
 msgstr ""
-"Bu komut bir kişinin telefon numarasını çevirmek için kullanılması "
-"gereken uygulamayı tanımlar."
+"Bu komut bir kişinin telefon numarasını çevirmek için kullanılması gereken "
+"uygulamayı tanımlar."
 
 #. i18n: file: actions/contactactionssettings.kcfg:58
 #. i18n: ectx: tooltip, entry (PhoneCommand), group (Phone Dial Settings)
@@ -339,7 +336,6 @@ msgstr ""
 "      "
 
 #: recentcontactscollectionrequestjob.cpp:41
-#| msgid "New Contact"
 msgctxt "recent contacts folder"
 msgid "Recent Contacts"
 msgstr "Yeni Bağlantılar"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplatowork\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-30 01:24+0200\n"
+"POT-Creation-Date: 2010-04-18 04:52+0200\n"
 "PO-Revision-Date: 2009-09-28 01:36+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -48,8 +48,9 @@ msgid "Could not extract document from storage:<br>%1"
 msgstr ""
 
 #: part.cpp:187
-#, kde-format
-msgid "Invalid url:<br>%1"
+#, fuzzy, kde-format
+#| msgid "Invalid url:<br>%1"
+msgid "Invalid URL:<br>%1"
 msgstr "Geçersiz adres:<br>%1"
 
 #: part.cpp:199
@@ -274,21 +275,26 @@ msgid "Modify task completion"
 msgstr "Görevin tamamlanma durumunu değiştir"
 
 #: taskworkpackagemodel.cpp:313
-#, no-c-format
-msgid "Modify % Completed"
-msgstr "% Tamamlanma Oranını Değiştir"
+#, fuzzy, no-c-format
+#| msgid "Modify task completion"
+msgid "Modify completion"
+msgstr "Görevin tamamlanma durumunu değiştir"
 
 #: taskworkpackagemodel.cpp:342
 msgid "Set finished"
 msgstr "Tamamlandı olarak ayarla"
 
 #: taskworkpackagemodel.cpp:363
-msgid "Modify Remaining Effort"
-msgstr ""
+#, fuzzy
+#| msgid "Remaining effort"
+msgid "Modify remaining effort"
+msgstr "Gereken başarım"
 
 #: taskworkpackagemodel.cpp:376
-msgid "Modify Actual Effort"
-msgstr ""
+#, fuzzy
+#| msgid "Actual Effort"
+msgid "Modify actual effort"
+msgstr "Şimdiki Başarım"
 
 #: taskworkpackagemodel.cpp:467
 msgid "Name"
@@ -403,23 +409,23 @@ msgstr "İlerlemeyi Düzenle..."
 msgid "View Description..."
 msgstr "Açıklamayı Göster..."
 
-#: view.cpp:313
+#: view.cpp:314
 msgid "This file is not editable"
 msgstr "Bu dosya düzenlenebilir değil"
 
-#: view.cpp:345
+#: view.cpp:346
 msgid "No node selected"
 msgstr "Hiç düğüm seçilmedi"
 
-#: view.cpp:351
+#: view.cpp:352
 msgid "Cannot find work package"
 msgstr "Çalışma paketi bulunamadı"
 
-#: view.cpp:366
+#: view.cpp:367
 msgid "Could not open temporary file. Sending is aborted."
 msgstr "Geçici dosya açılamadı. Gönderim iptal edildi."
 
-#: view.cpp:379
+#: view.cpp:380
 #, kde-format
 msgid "Work Package: %1"
 msgstr "Çalışma Paketi: %1"
@@ -526,6 +532,9 @@ msgstr "(c) 1998-2009, KPlato Takımı"
 #: aboutdata.h:42
 msgid "Dag Andersen"
 msgstr "Dag Andersen"
+
+#~ msgid "Modify % Completed"
+#~ msgstr "% Tamamlanma Oranını Değiştir"
 
 #~ msgid ""
 #~ "Document is already open:\n"

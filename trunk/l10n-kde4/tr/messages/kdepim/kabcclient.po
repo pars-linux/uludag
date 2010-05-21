@@ -407,8 +407,8 @@ msgid ""
 "Default format is 'alias'. 'query' returns email[tab]name[tab], as needed by "
 "mutt's query_command"
 msgstr ""
-"Varsayılan biçim, 'takma ad'. 'sorgu', mutt sorgu komutunun istediği "
-"şekilde e-posta[tab]isim[tab] alanlarını geri getirir."
+"Varsayılan biçim, 'takma ad'. 'sorgu', mutt sorgu komutunun istediği şekilde "
+"e-posta[tab]isim[tab] alanlarını geri getirir."
 
 #: src/main.cpp:437
 msgid "Default key format is 'JohDoe', this option turns it into 'jdoe'"
@@ -441,4 +441,3 @@ msgstr "Serdar Soytetir, H. İbrahim Güngör"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com, ibrahim@pardus.org.tr"
-

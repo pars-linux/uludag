@@ -636,7 +636,6 @@ msgid "Michel Ludwig"
 msgstr "Michel Ludwig"
 
 #: utils/kateglobal.cpp:100
-#| msgid "On-The-Fly Spellcheck"
 msgid "On-the-fly spell checking"
 msgstr "Yazarken yazım denetimi"
 
@@ -996,8 +995,7 @@ msgid ""
 "as defined by the syntax highlighting being used.</p>"
 msgstr ""
 "<p>Kullanılan söz dizimi renklendirme kuralları ile tanımlandığı şekilde "
-"belge "
-"türü için baskı düzeni anlaşmalarını gösteren bir kutu yazdırır.</p>"
+"belge türü için baskı düzeni anlaşmalarını gösteren bir kutu yazdırır.</p>"
 
 #: utils/kateprinter.cpp:702
 msgid "Hea&der && Footer"
@@ -5503,8 +5501,6 @@ msgstr "GNU Assembler"
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/grammar.xml:6
 #: rc.cpp:1212
-#| msgctxt "Language"
-#| msgid "KDev-PG Grammar"
 msgctxt "Language"
 msgid "KDev-PG[-Qt] Grammar"
 msgstr "KDev-PG[-Qt] Dil Bilgisi"

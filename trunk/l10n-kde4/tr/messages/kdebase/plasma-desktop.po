@@ -192,8 +192,10 @@ msgstr "Küçült"
 
 #: plasmaapp.cpp:1183
 #, kde-format
-msgid "A new widget has become available on the network:<br><b>%1</b> - <i>%2</i>"
-msgstr "Ağda yeni bir programcık kullanılabilir hale geldi:<br><b>%1</b> - <i>%2</i>"
+msgid ""
+"A new widget has become available on the network:<br><b>%1</b> - <i>%2</i>"
+msgstr ""
+"Ağda yeni bir programcık kullanılabilir hale geldi:<br><b>%1</b> - <i>%2</i>"
 
 #: plasmaapp.cpp:1185
 msgid "Add to current activity"
@@ -230,8 +232,11 @@ msgstr "Masaüstünde kullanılacak yazı tipi"
 #. i18n: file: data/plasma-shell-desktop.kcfg:15
 #. i18n: ectx: label, entry, group (General)
 #: rc.cpp:8
-msgid "Set to true if each virtual desktop should get its own, unique Plasma view."
-msgstr "Her masaüstü kendi biricik Plasma görünümünü kullansın istiyorsanız doğru seçeneğini işaretleyin."
+msgid ""
+"Set to true if each virtual desktop should get its own, unique Plasma view."
+msgstr ""
+"Her masaüstü kendi biricik Plasma görünümünü kullansın istiyorsanız doğru "
+"seçeneğini işaretleyin."
 
 #: scripting/containment.cpp:175
 msgid "widgetById requires an id"
@@ -294,8 +299,12 @@ msgstr ""
 #~ msgid "Activity"
 #~ msgstr "Eylem"
 
-#~ msgid "This picture of a monitor contains a preview of what the current settings will look like on your desktop."
-#~ msgstr "Bu monitör resmi geçerli ayarların masaüstünüzde nasıl görüneceğini gösteren bir önizleme içerir."
+#~ msgid ""
+#~ "This picture of a monitor contains a preview of what the current settings "
+#~ "will look like on your desktop."
+#~ msgstr ""
+#~ "Bu monitör resmi geçerli ayarların masaüstünüzde nasıl görüneceğini "
+#~ "gösteren bir önizleme içerir."
 
 #~ msgid "Mouse Plugins"
 #~ msgstr "Fare Eklentileri"
@@ -388,7 +397,9 @@ msgstr ""
 #~ msgstr "Yeni Tema..."
 
 #~ msgid "Starts plasma as an ordinary window rather than as the desktop."
-#~ msgstr "Plasma uygulamasını bir masaüstünün aksine alışılmış bir pencere olarak başlatır."
+#~ msgstr ""
+#~ "Plasma uygulamasını bir masaüstünün aksine alışılmış bir pencere olarak "
+#~ "başlatır."
 
 #~ msgid "Align panel to left"
 #~ msgstr "Paneli sola hizala"

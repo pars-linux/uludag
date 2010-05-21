@@ -119,8 +119,8 @@ msgid ""
 "Registration complete. New account was successfully registered. Please "
 "<b>check your Email</b> to <b>activate</b> the account."
 msgstr ""
-"Kayıt başarıyla tamamlandı. Lütfen hesabınızı <b>etkinleştirmek</b> "
-"için <b>e-postanızı kontrol edin</b>."
+"Kayıt başarıyla tamamlandı. Lütfen hesabınızı <b>etkinleştirmek</b> için "
+"<b>e-postanızı kontrol edin</b>."
 
 #. i18n: file: providerconfigwidget.ui:21
 #. i18n: ectx: attribute (title), widget (QWidget, loginTab)
@@ -219,4 +219,3 @@ msgstr "Adlarınız"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "E-postalarınız"
-

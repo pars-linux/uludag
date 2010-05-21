@@ -142,4 +142,3 @@ msgstr "Stil dosyası uygulanıyor"
 #: xslt.cpp:205
 msgid "Writing document"
 msgstr "Belge yazılıyor"
-

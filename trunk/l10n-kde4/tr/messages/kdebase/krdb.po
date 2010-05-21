@@ -1,5 +1,5 @@
 # Copyright (C).
-# 
+#
 # Ömer Fadıl USTA <omer_fad@hotmail.com>,2002.
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
 msgid ""
@@ -31,6 +31,7 @@ msgstr ""
 "#\n"
 "# Eğer KDE'nin GTK ayarlarınızın üzerine yazmasını istemiyorsanız\n"
 "# Sistem Ayarlarından Görünüm -> Renkler bileşeninden\n"
-"# \"Renkleri KDE dışı uygulamalara uygula\" işaretleme kutusunun işaretini kaldırın.\n"
+"# \"Renkleri KDE dışı uygulamalara uygula\" işaretleme kutusunun işaretini "
+"kaldırın.\n"
 " #\n"
 "#\n"

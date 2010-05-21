@@ -443,5 +443,3 @@ msgstr "Seri Port Arayüzü"
 msgctxt "Smart Card Reader device type"
 msgid "Smart Card Reader"
 msgstr "Akıllı Kart Okuyucu"
-
-

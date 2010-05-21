@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AutocorrectPlugin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2009-11-30 07:09+0100\n"
 "PO-Revision-Date: 2008-12-21 13:09+0200\n"
 "Last-Translator: Server Acim <sacim@kde.org.tr>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: AutocorrectConfigDialog.cpp:289
+#: AutocorrectConfigDialog.cpp:290
 msgid "&Modify"
 msgstr "&Düzenle"
 
@@ -26,18 +26,18 @@ msgstr "&Düzenle"
 #. i18n: ectx: property (text), widget (QPushButton, addButton)
 #. i18n: file: AutocorrectConfig.ui:558
 #. i18n: ectx: property (text), widget (QPushButton, add1)
-#: AutocorrectConfigDialog.cpp:293 rc.cpp:119 rc.cpp:146
+#: AutocorrectConfigDialog.cpp:294 rc.cpp:119 rc.cpp:146
 msgid "&Add"
 msgstr "&Ekle"
 
 #. i18n: file: AutocorrectConfig.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, AutocorrectConfig)
-#: AutocorrectConfigDialog.cpp:374 Autocorrect.cpp:43 Autocorrect.cpp:92
+#: AutocorrectConfigDialog.cpp:375 Autocorrect.cpp:43 Autocorrect.cpp:92
 #: rc.cpp:3
 msgid "Autocorrection"
 msgstr "Otomatik Düzeltme"
 
-#: AutocorrectConfigDialog.cpp:388
+#: AutocorrectConfigDialog.cpp:389
 msgid "Select Character"
 msgstr "Karakter Seç"
 

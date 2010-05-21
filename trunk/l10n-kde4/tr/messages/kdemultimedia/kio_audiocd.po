@@ -19,7 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: audiocd.cpp:65
-#| msgid "Information"
 msgid "CDDB Information"
 msgstr "CDDB Bilgisi"
 
@@ -76,11 +75,11 @@ msgid ""
 msgstr ""
 "Bilinmeyen hata.  İçeride CD var ise cdparanoia -vsQ komutunu kendiniz "
 "olarak (root değil) çalıştırınız. Parça listesi görüyor musunuz? "
-"Görmüyorsanız CD aygıtına erişim yetkiniz olduğuna emin olun. SCSI "
-"öykünücü  kullanıyorsanız (IDE CD yazıcınız var ise olabilir) genel SCSI "
-"aygıtına (/dev/sg0, /dev/sg1 vs.) okuma ve yazma yetkiniz olduğundan emin "
-"olun. Hala çalışmıyor ise kio_audiocd'ye CD-Rom aygıtınızın hangisi olduğunu "
-"anlatmak için audiocd:/?device=/dev/sg0 komutunu yazın."
+"Görmüyorsanız CD aygıtına erişim yetkiniz olduğuna emin olun. SCSI öykünücü  "
+"kullanıyorsanız (IDE CD yazıcınız var ise olabilir) genel SCSI aygıtına (/"
+"dev/sg0, /dev/sg1 vs.) okuma ve yazma yetkiniz olduğundan emin olun. Hala "
+"çalışmıyor ise kio_audiocd'ye CD-Rom aygıtınızın hangisi olduğunu anlatmak "
+"için audiocd:/?device=/dev/sg0 komutunu yazın."
 
 #: audiocd.cpp:843
 msgid "AudioCD: Disk damage detected on this track, risk of data corruption."
@@ -110,4 +109,3 @@ msgstr "Onur Küçük"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "onur@uludag.org.tr"
-

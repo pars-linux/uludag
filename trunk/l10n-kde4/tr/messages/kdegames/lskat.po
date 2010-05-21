@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lskat\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-08-01 06:23+0200\n"
+"POT-Creation-Date: 2010-05-07 01:21+0200\n"
 "PO-Revision-Date: 2009-08-13 23:25+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -225,117 +225,117 @@ msgstr "Kurulum hatası: Tema listesi bulunamadı."
 msgid "Installation error: Theme file error."
 msgstr "Kurulum hatası: Tema dosyası hatası."
 
-#: mainwindow.cpp:173
+#: mainwindow.cpp:171
 msgid "Welcome to Skat! Please start a new game."
 msgstr "Skat Oyununa Hoşgeldiniz! Lütfen yeni bir oyun başlatın."
 
-#: mainwindow.cpp:372
+#: mainwindow.cpp:370
 msgid "Game Over. Please start a new game."
 msgstr "Oyun Bitti. Lütfen yeni bir oyun başlatın."
 
-#: mainwindow.cpp:387
+#: mainwindow.cpp:385
 #, kde-format
 msgctxt "Player name and number"
 msgid "Next move for %1 (player %2)"
 msgstr "%1 için sonraki hareket (oyuncu %2)"
 
-#: mainwindow.cpp:402
+#: mainwindow.cpp:400
 msgid "Clears the all time statistics which is kept in all sessions."
 msgstr "Bütün sezonların içinde tutulan zaman istatistiklerini temizler."
 
-#: mainwindow.cpp:407
+#: mainwindow.cpp:405
 msgid "Ends a currently played game. No winner will be declared."
 msgstr "Oynanan oyunu bitirir. Kimse kazanmayacak."
 
-#: mainwindow.cpp:413
+#: mainwindow.cpp:411
 msgid "Quits the program."
 msgstr "Programdan çıkar."
 
-#: mainwindow.cpp:416
+#: mainwindow.cpp:414
 msgid "Starting Player"
 msgstr "Oyuncuyu Başlatıyor"
 
-#: mainwindow.cpp:419
+#: mainwindow.cpp:417
 msgid "Changing starting player..."
 msgstr "Başlangıç oyuncusu değiştiriliyor..."
 
-#: mainwindow.cpp:420
+#: mainwindow.cpp:418
 msgid "Chooses which player begins the next game."
 msgstr "Birsonraki oyuna hangi oyuncunun başlayacağını seçer."
 
-#: mainwindow.cpp:423
+#: mainwindow.cpp:421
 msgid "Player &1"
 msgstr "Oyuncu &1"
 
-#: mainwindow.cpp:424
+#: mainwindow.cpp:422
 msgid "Player &2"
 msgstr "Oyuncu &2"
 
-#: mainwindow.cpp:430
+#: mainwindow.cpp:428
 msgid "Player &1 Played By"
 msgstr "Oyuncu &1' i oynayan:"
 
-#: mainwindow.cpp:433
+#: mainwindow.cpp:431
 msgid "Changing who plays player 1..."
 msgstr "Kimin oyuncu 1'i oynayacağı değiştiriliyor..."
 
-#: mainwindow.cpp:434
+#: mainwindow.cpp:432
 msgid "Changing who plays player 1."
 msgstr "Kimin 1. oyuncuyu oynayacağı değiştiriliyor."
 
-#: mainwindow.cpp:436
+#: mainwindow.cpp:434
 msgid "&Mouse"
 msgstr "&Fare"
 
-#: mainwindow.cpp:437
+#: mainwindow.cpp:435
 msgid "&Computer"
 msgstr "&Bilgisayar"
 
-#: mainwindow.cpp:442
+#: mainwindow.cpp:440
 msgid "Player &2 Played By"
 msgstr "Oyuncu &2 'yi oynayan:"
 
-#: mainwindow.cpp:445
+#: mainwindow.cpp:443
 msgid "Changing who plays player 2..."
 msgstr "Kimin oyuncu 2'yi oynayacağı değiştiriliyor..."
 
-#: mainwindow.cpp:446
+#: mainwindow.cpp:444
 msgid "Changing who plays player 2."
 msgstr "Kimin 2. oyuncuyu oynayacağı değiştiriliyor."
 
-#: mainwindow.cpp:454
+#: mainwindow.cpp:452
 msgid "&Theme"
 msgstr "&Tema"
 
-#: mainwindow.cpp:460
+#: mainwindow.cpp:458
 msgid "Changing theme..."
 msgstr "Tema değiştiriliyor..."
 
-#: mainwindow.cpp:461
+#: mainwindow.cpp:459
 msgid "Changing theme."
 msgstr "Tema değiştiriliyor."
 
-#: mainwindow.cpp:465
+#: mainwindow.cpp:463
 msgid "Select &Card Deck..."
 msgstr "Kart &Destesini Seç..."
 
-#: mainwindow.cpp:468
+#: mainwindow.cpp:466
 msgid "Configure card decks..."
 msgstr "Kart destesini düzenle..."
 
-#: mainwindow.cpp:469
+#: mainwindow.cpp:467
 msgid "Choose how the cards should look."
 msgstr "Kartların nasıl görüneceğini seçin."
 
-#: mainwindow.cpp:473
+#: mainwindow.cpp:471
 msgid "&Change Player Names..."
 msgstr "Oyuncu İsimlerini &Değiştir..."
 
-#: mainwindow.cpp:555
+#: mainwindow.cpp:553
 msgid "Do you really want to clear the all time statistical data?"
 msgstr "Tüm istatistikleri temizlemek istediğinizden emin misiniz?"
 
-#: mainwindow.cpp:626
+#: mainwindow.cpp:624
 msgid "Dealing cards..."
 msgstr "Kartlar dağıtılıyor..."
 

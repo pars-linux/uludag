@@ -109,4 +109,3 @@ msgstr "Ortalama Bit oranı"
 #: kfile_ogg.cpp:147
 msgid "Length"
 msgstr "Uzunluk"
-

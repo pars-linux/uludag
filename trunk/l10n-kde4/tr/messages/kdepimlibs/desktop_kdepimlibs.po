@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdepimlibs\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-02 23:30+0000\n"
+"POT-Creation-Date: 2010-05-19 23:28+0000\n"
 "PO-Revision-Date: 2010-05-13 14:22+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -21,7 +21,7 @@ msgctxt "Name"
 msgid "Contact Actions"
 msgstr "Kişi Eylemleri"
 
-#: akonadi/contact/kcm/akonadicontact_actions.desktop:48
+#: akonadi/contact/kcm/akonadicontact_actions.desktop:47
 msgctxt "Comment"
 msgid "Configure the Contact Actions"
 msgstr "Kişi Eylemlerini Yapılandır"
@@ -49,9 +49,8 @@ msgid ""
 "availability of plugins."
 msgstr ""
 "Verilen bir dizin içerisindeki her biri bir dosya içerisinde bulunan "
-"kişilere "
-"erişmeyi sağlar. VCard dosyalarını ve eklentilere uygun diğer biçimleri "
-"destekler."
+"kişilere erişmeyi sağlar. VCard dosyalarını ve eklentilere uygun diğer "
+"biçimleri destekler."
 
 #: kabc/plugins/file/file.desktop:2
 msgctxt "Name"
@@ -132,12 +131,12 @@ msgctxt "Name"
 msgid "Kontact Plugin"
 msgstr "Kontact Eklentisi"
 
-#: kresources/kresources.desktop:11
+#: kresources/kresources.desktop:12
 msgctxt "Name"
 msgid "KDE Resources"
 msgstr "KDE Kaynakları"
 
-#: kresources/kresources.desktop:58
+#: kresources/kresources.desktop:59
 msgctxt "Comment"
 msgid "Configure KDE Resources"
 msgstr "KDE Kaynaklarını Yapılandır"

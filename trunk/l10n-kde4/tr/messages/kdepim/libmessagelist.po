@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"POT-Creation-Date: 2010-05-21 01:23+0200\n"
 "PO-Revision-Date: 2010-05-10 16:12+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -54,7 +54,7 @@ msgstr "Doldurma görünüm stratejisi:"
 msgid "Customize Themes"
 msgstr "Temaları Özelleştir"
 
-#: utils/configurethemesdialog.cpp:106 utils/configurethemesdialog.cpp:320
+#: utils/configurethemesdialog.cpp:106 utils/configurethemesdialog.cpp:321
 msgid "New Theme"
 msgstr "Yeni Tema"
 
@@ -66,11 +66,11 @@ msgstr "Temayı Kopyala"
 msgid "Delete Theme"
 msgstr "Temayı Sil"
 
-#: utils/configurethemesdialog.cpp:303
+#: utils/configurethemesdialog.cpp:304
 msgid "Unnamed Theme"
 msgstr "İsimsiz Tema"
 
-#: utils/configurethemesdialog.cpp:322 utils/themeeditor.cpp:1228
+#: utils/configurethemesdialog.cpp:323 utils/themeeditor.cpp:1228
 msgid "New Column"
 msgstr "Yeni Sütun"
 
@@ -1312,4 +1312,3 @@ msgstr ""
 "ise sekme çubuğu görüntülenecektir. Bu seçenek pasif yapılırsa, sekme çubuğu "
 "her zaman görüntülenir. Sekme çubuğu gizli ise orta fare tuşu ile "
 "tıklatıldığında, dizin her zaman yeni bir sekme içinde açılır."
-

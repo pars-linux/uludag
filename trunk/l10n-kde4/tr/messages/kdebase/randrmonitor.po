@@ -45,5 +45,3 @@ msgstr "Yapılan&dır"
 #: randrmonitor.cpp:130
 msgid "&Ignore"
 msgstr "&Yok say"
-
-

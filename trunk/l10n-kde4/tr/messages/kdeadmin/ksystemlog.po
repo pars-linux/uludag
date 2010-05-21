@@ -288,8 +288,8 @@ msgid ""
 "Allows you to apply the item filter only on the specified column here. "
 "\"<i>All</i>\" column means no specific filter."
 msgstr ""
-"Sadece belirli sütunlara filtrenin uygulanmasına izin verir. "
-"\"<i>Tamamı</i>\" Filtre olmayan sütun anlamına gelir."
+"Sadece belirli sütunlara filtrenin uygulanmasına izin verir. \"<i>Tamamı</i>"
+"\" Filtre olmayan sütun anlamına gelir."
 
 #: src/lib/logViewFilterWidget.cpp:112 src/lib/logViewFilterWidget.cpp:129
 msgid "All"
@@ -313,8 +313,8 @@ msgid ""
 "You can type or choose the authentication log file (example: <i>/var/log/"
 "auth.log</i>)."
 msgstr ""
-"Yazabilir  veya Kimlik doğrulama günlük kaydı dosyası seçebilirsiniz "
-"(Örn: <i>/var/log/auth.log</i>)."
+"Yazabilir  veya Kimlik doğrulama günlük kaydı dosyası seçebilirsiniz (Örn: "
+"<i>/var/log/auth.log</i>)."
 
 #: src/modes/authentication/authenticationConfigurationWidget.h:68
 msgid ""
@@ -323,9 +323,8 @@ msgid ""
 "name is <i>/var/log/auth.log</i>"
 msgstr ""
 "Yazabilir veya Kimlik doğrulama günlük kaydı dosyası seçebilirsiniz. Bu "
-"dosya sizin  "
-"<b>Kimlik Doğrulama günlük kaydı</b> menüsünü seçtiğinizde analiz  edilecek. "
-"Dosya adı genellikle <i>/var/log/auth.log</i>"
+"dosya sizin  <b>Kimlik Doğrulama günlük kaydı</b> menüsünü seçtiğinizde "
+"analiz  edilecek. Dosya adı genellikle <i>/var/log/auth.log</i>"
 
 #: src/modes/authentication/authenticationLogMode.cpp:47
 msgid "Display the authentication log."
@@ -338,10 +337,8 @@ msgid ""
 "tried to crack your system."
 msgstr ""
 "Aktif sekmede kimlik doğrulama günlük kaydını göster. Bu günlük kaydı "
-"sisteme "
-"giriş yapan her  kullanıcıyı gösterir ve sistemi kırmayı deneyenleri tespit "
-"etmeye "
-"yardımcı olur."
+"sisteme giriş yapan her  kullanıcıyı gösterir ve sistemi kırmayı deneyenleri "
+"tespit etmeye yardımcı olur."
 
 #: src/modes/xorg/xorgConfigurationWidget.h:46
 #: src/modes/xorg/xorgLogMode.cpp:38
@@ -364,10 +361,10 @@ msgid ""
 "log if you want to know why you do not have 3D accelerations or why your "
 "input device is not recognized."
 msgstr ""
-"Güncel sekmede X.org günlük kaydını göster. X.org grafik donanımı "
-"yöneten ve ekranda görüntü gösteren servistir. Neden 3D hızlandırmanın "
-"olmadığını veya giriş aygıtınızın tanınmama sebebini öğrenmek için bu "
-"günlük kaydına bakın.   "
+"Güncel sekmede X.org günlük kaydını göster. X.org grafik donanımı yöneten ve "
+"ekranda görüntü gösteren servistir. Neden 3D hızlandırmanın olmadığını veya "
+"giriş aygıtınızın tanınmama sebebini öğrenmek için bu günlük kaydına "
+"bakın.   "
 
 #: src/modes/xorg/xorgAnalyzer.h:59 src/modes/samba/sambaAnalyzer.h:57
 #: src/modes/xsession/xsessionAnalyzer.h:53
@@ -444,8 +441,8 @@ msgid ""
 "buttons..."
 msgstr ""
 "ACPI Günlük kaydını güncel sekmede göster. ACPI bilgisayar donanım "
-"elemanlarının (dizüstü pili, sıfırlama düğmesi vb.) yönetimi için kullanılır."
-".."
+"elemanlarının (dizüstü pili, sıfırlama düğmesi vb.) yönetimi için "
+"kullanılır..."
 
 #: src/modes/acpid/acpidAnalyzer.h:49 src/modes/kernel/kernelAnalyzer.h:58
 #: src/modes/apache/apacheAccessAnalyzer.h:53
@@ -470,9 +467,9 @@ msgid ""
 "users who want to know why the Kernel does not detect their hardware or what "
 "is the cause of the last <i>kernel panic/oops</i>."
 msgstr ""
-"Kernel günlük kaydını güncel sekmede göster. Bu günlük kaydı "
-"Kernel'in donanımı algılamaması veya en son <i>kernel panic/oops</i> "
-"sebebini öğrenmeye yardımcı olabilir."
+"Kernel günlük kaydını güncel sekmede göster. Bu günlük kaydı Kernel'in "
+"donanımı algılamaması veya en son <i>kernel panic/oops</i> sebebini "
+"öğrenmeye yardımcı olabilir."
 
 #: src/modes/kernel/kernelAnalyzer.h:59
 msgid "Component"
@@ -587,8 +584,7 @@ msgid ""
 "<b>Apache Access log</b>.</p>"
 msgstr ""
 "<p>Bu dosyalar analiz edilerek  <b>Apache günlük kaydı</b> ve <b>Apache "
-"Erişim günlük kaydı<"
-"/b>gösterilecektir.</p>"
+"Erişim günlük kaydı</b>gösterilecektir.</p>"
 
 #: src/modes/apache/apacheConfigurationWidget.h:53
 msgid "Apache Log Files"
@@ -655,9 +651,9 @@ msgid ""
 "launched processes."
 msgstr ""
 "Planlanmış görevlerin günlük kaydını güncel sekmede göster. Cron süreci "
-"sisteminizde planlanmış görevlerin çalışmaya başlamasını sağlar "
-"(örn. güvenlik güncelleme kontrolü veya bazı servislerin otomatik olarak "
-"yeniden başlaması). Menüyü kullanarak yakın zamanda çalıştırılmış süreçleri "
+"sisteminizde planlanmış görevlerin çalışmaya başlamasını sağlar (örn. "
+"güvenlik güncelleme kontrolü veya bazı servislerin otomatik olarak yeniden "
+"başlaması). Menüyü kullanarak yakın zamanda çalıştırılmış süreçleri "
 "görebilirsiniz."
 
 #: src/modes/cron/cronAnalyzer.h:52 src/modes/base/syslogAnalyzer.cpp:59
@@ -701,8 +697,8 @@ msgstr "Servislerin Günlük Kayıtları"
 #: src/modes/daemon/daemonConfigurationWidget.h:53
 msgid "<p>These files will be analyzed to show the <b>Daemons' Logs</b>.</p>"
 msgstr ""
-"<p>Bu dosyalar analiz edilerek <b>Artalan süreci günlük kaydı</b>"
-"gösterilecektir.</p>"
+"<p>Bu dosyalar analiz edilerek <b>Artalan süreci günlük kaydı</"
+"b>gösterilecektir.</p>"
 
 #: src/modes/daemon/daemonLogMode.cpp:48
 msgid "Display the daemons' logs."
@@ -716,8 +712,7 @@ msgid ""
 msgstr ""
 "Daemon günlük kaydını güncel sekmede göster. Daemon sistemin artalanda "
 "çalıştırılan süreçleridir.  Bu günlük kaydına eğer sistem artalanında neler "
-"olduğunu "
-"öğrenmek isterseniz bakın."
+"olduğunu öğrenmek isterseniz bakın."
 
 #: src/modes/samba/sambaAnalyzer.h:55
 msgid "Source File"
@@ -966,10 +961,8 @@ msgid ""
 msgstr ""
 "CUPS Web Sunucu Erişim günlük kaydını güncel sekmede göster. CUPS "
 "bilgisayarınızda yazıcı işlemlerini yöneten programdır. Bu günlük kaydına  "
-"gömülü CUPS "
-"web sunucusu (varsayılan: <i>http://localhost:631</i>) tarafından işlenen "
-"talepler "
-"kaydedilir."
+"gömülü CUPS web sunucusu (varsayılan: <i>http://localhost:631</i>) "
+"tarafından işlenen talepler kaydedilir."
 
 #: src/modes/cups/cupsAccessAnalyzer.h:55
 msgid "Group"
@@ -1054,10 +1047,10 @@ msgid ""
 "manages printing on your computer. This log saves all requests performed to "
 "the CUPS embedded web server (default: <i>http://localhost:631</i>)."
 msgstr ""
-"CUPS PDF günlük kaydını güncel sekmede göster. CUPS bilgisayarınızda "
-"yazıcı işlemlerini yöneten programdır. Bu günlük kaydına  gömülü CUPS "
-"web sunucusu (varsayılan: <i>http://localhost:631</i>) tarafından işlenen "
-"talepler kaydedilir."
+"CUPS PDF günlük kaydını güncel sekmede göster. CUPS bilgisayarınızda yazıcı "
+"işlemlerini yöneten programdır. Bu günlük kaydına  gömülü CUPS web sunucusu "
+"(varsayılan: <i>http://localhost:631</i>) tarafından işlenen talepler "
+"kaydedilir."
 
 #: src/modes/cups/cupsPageLogMode.cpp:39
 msgid "Cups Page Log"
@@ -1074,8 +1067,8 @@ msgid ""
 "the CUPS embedded web server (default: <i>http://localhost:631</i>)."
 msgstr ""
 "CUPS Sayfa günlük kaydını güncel sekmede göster. CUPS bilgisayarınızda "
-"yazıcı işlemlerini yöneten programdır. Bu günlük kaydına  gömülü CUPS "
-"web sunucusu (varsayılan: <i>http://localhost:631</i>) tarafından işlenen "
+"yazıcı işlemlerini yöneten programdır. Bu günlük kaydına  gömülü CUPS web "
+"sunucusu (varsayılan: <i>http://localhost:631</i>) tarafından işlenen "
 "talepler kaydedilir."
 
 #: src/modes/cups/cupsLogMode.cpp:48
@@ -1140,9 +1133,8 @@ msgid ""
 msgstr ""
 "X Oturum günlük kaydını güncel sekmede göster. X Oturum günlük kaydına "
 "grafiksel programların çıktıları yazılır. Bu günlük kaydına görüntü "
-"yöneticisi (KDE, "
-"Gnome ...) gibi programların çökme veya başlamama nedenlerini öğrenmek "
-"için bakabilirsiniz"
+"yöneticisi (KDE, Gnome ...) gibi programların çökme veya başlamama "
+"nedenlerini öğrenmek için bakabilirsiniz"
 
 #: src/modes/xsession/xsessionAnalyzer.h:54
 msgid "Program"
@@ -1158,8 +1150,8 @@ msgid ""
 "You can type or choose the X Session log file (example: <i>~/.xsession-"
 "errors</i>)."
 msgstr ""
-"X Oturumu günlük kayıt dosyasını seçiniz veya yazınız "
-"(Örn: <i>~/.xsession-errors</i>)."
+"X Oturumu günlük kayıt dosyasını seçiniz veya yazınız (Örn: <i>~/.xsession-"
+"errors</i>)."
 
 #: src/modes/xsession/xsessionConfigurationWidget.h:80
 msgid ""
@@ -1167,9 +1159,9 @@ msgid ""
 "analyzed when you select the <b>X Session log</b> menu. Generally, its name "
 "is <i>~/.xsession-errors</i>"
 msgstr ""
-"X oturumu günlük kaydını buradan seçebilir veya yazabilirsiniz. Bu dosya "
-"<b> X oturumu günlük kaydı</b> menüsünü seçtiğinizde analiz edilecek. "
-"Genellikle bu <i>~/.xsession-errors</i> dosyasıdır."
+"X oturumu günlük kaydını buradan seçebilir veya yazabilirsiniz. Bu dosya <b> "
+"X oturumu günlük kaydı</b> menüsünü seçtiğinizde analiz edilecek. Genellikle "
+"bu <i>~/.xsession-errors</i> dosyasıdır."
 
 #: src/modes/xsession/xsessionConfigurationWidget.h:140
 #, kde-format
@@ -1191,14 +1183,13 @@ msgid ""
 "used mail server in the Linux world."
 msgstr ""
 "Postfix günlük kaydını güncel sekmede göster. Postfix Linux dünyasında "
-"yaygın olarak bilinen "
-"ve kullanılan posta sunucusudur."
+"yaygın olarak bilinen ve kullanılan posta sunucusudur."
 
 #: src/modes/postfix/postfixConfigurationWidget.h:54
 msgid "<p>These files will be analyzed to show the <b>Postfix Logs</b>.</p>"
 msgstr ""
-"<p>Bu dosyalar analiz edilerek <b>Postfix günlük kaydı</b>gösterilecektir.<"
-"/p>"
+"<p>Bu dosyalar analiz edilerek <b>Postfix günlük kaydı</b>gösterilecektir.</"
+"p>"
 
 #: src/loggerDialog.cpp:114
 msgid "Authentication"
@@ -1281,9 +1272,8 @@ msgid ""
 "Unable to find the 'logger' command on your system. Please type 'logger' in "
 "a Konsole to determine whether this command is installed."
 msgstr ""
-"\"logger\" komutu sisteminizde bulunamadı. Lütfen Konsole içerisinde "
-"\"logger\" yazarak "
-"komutun kurulu olup olmadığı tespit edin."
+"\"logger\" komutu sisteminizde bulunamadı. Lütfen Konsole içerisinde \"logger"
+"\" yazarak komutun kurulu olup olmadığı tespit edin."
 
 #: src/loggerDialog.cpp:242
 msgid "Command not found"
@@ -1364,8 +1354,7 @@ msgid ""
 "the user has already paused the reading."
 msgstr ""
 "Güncel günlük kaydını izlemeyi devam ettirin. Bu işlem sadece kullanıcı "
-"izlemeyi "
-"duraklattığında mümkün olabilir."
+"izlemeyi duraklattığında mümkün olabilir."
 
 #: src/mainWindow.cpp:415
 msgid "S&top"
@@ -1382,10 +1371,8 @@ msgid ""
 "to reload too frequently."
 msgstr ""
 "Güncel günlük kaydını izlemeyi duraklat. Bu işlem sistemin günlük kaydı "
-"dosyasına "
-"çok fazla satır girdisi olduğunda ve bunun sonucunda KSystemLog çok sık "
-"yeniden "
-"yükleme yaparken kullanışlı olabilir."
+"dosyasına çok fazla satır girdisi olduğunda ve bunun sonucunda KSystemLog "
+"çok sık yeniden yükleme yaparken kullanışlı olabilir."
 
 #: src/mainWindow.cpp:581
 msgid "Open a file in KSystemLog"
@@ -1421,8 +1408,7 @@ msgid ""
 "an attachment or a backup of a particular log."
 msgstr ""
 "Seçimi dosyaya kaydet. Bu işlem eğer eklenti veya günlük kaydının bir "
-"kısmını "
-"yedeklemek isterseniz kullanışlı olabilir."
+"kısmını yedeklemek isterseniz kullanışlı olabilir."
 
 #: src/mainWindow.cpp:598
 msgid "Quit KSystemLog"
@@ -1457,8 +1443,8 @@ msgid ""
 "This action opens all main categories. This is enabled only if an option has "
 "been selected in the <b>Group By</b> menu."
 msgstr ""
-"Bu işlem bütün temel kategorileri açar. Bu seçenek sadece menüden "
-"<b>Group By</b> seçildiğinde kullanılabilir."
+"Bu işlem bütün temel kategorileri açar. Bu seçenek sadece menüden <b>Group "
+"By</b> seçildiğinde kullanılabilir."
 
 #: src/mainWindow.cpp:614
 msgid "Col&lapse All"
@@ -1490,8 +1476,7 @@ msgid ""
 "this menu entry to send the selection to a friend or a mailing list."
 msgstr ""
 "Seçimi posta ile gönder. Seçimi arkadaşına veya posta listesine göndermek "
-"için "
-"önemli satırları seç ve bu menü girdisini kullan. "
+"için önemli satırları seç ve bu menü girdisini kullan. "
 
 #: src/mainWindow.cpp:629
 msgid "&Add Log Entry..."
@@ -1599,8 +1584,8 @@ msgid ""
 "Reloads the current log, if you want to be sure that the view is correctly "
 "updated."
 msgstr ""
-"Eğer güncellemenin doğru olmasından emin olmak isterseniz, güncel "
-"günlük kaydını yeniden yükler. "
+"Eğer güncellemenin doğru olmasından emin olmak isterseniz, güncel günlük "
+"kaydını yeniden yükler. "
 
 #: src/mainWindow.cpp:711
 msgid "&Details"
@@ -1617,8 +1602,8 @@ msgid ""
 "b> and <b>Next</b> buttons."
 msgstr ""
 "Seçilen satırlar ile ilgili detayları içeren diyaloğu gösterir. Günlük "
-"kaydında "
-"diyalogdaki <b>Önceki</b> ve <b>Sonraki</b> düğmeleri ile gezinebilirsiniz."
+"kaydında diyalogdaki <b>Önceki</b> ve <b>Sonraki</b> düğmeleri ile "
+"gezinebilirsiniz."
 
 #: src/mainWindow.cpp:719
 msgid "&Enable Detailed Tooltips"
@@ -1691,8 +1676,7 @@ msgid ""
 "href='mailto:nicolas.ternisien@gmail.com'>nicolas.ternisien@gmail.com</a>"
 msgstr ""
 "Tereddüt etmede hata ve problemleri Nicolas Ternisien<a href='mailto:nicolas."
-"ternisien@gmail.com'> "
-"nicolas.ternisien@gmail.com</a>'e raporlayın."
+"ternisien@gmail.com'> nicolas.ternisien@gmail.com</a>'e raporlayın."
 
 #: src/main.cpp:47
 msgid "Nicolas Ternisien"
@@ -1880,8 +1864,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Listeye eklenmesi için "
-"açılacak "
-"dosya seçimi için diyalog kutusu açar.</p></body></html>"
+"açılacak dosya seçimi için diyalog kutusu açar.</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:64
 #. i18n: ectx: property (text), widget (QPushButton, add)
@@ -2050,8 +2033,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili dosyaları listede "
-"üst "
-"sıraya taşı. Bu seçenek ile KSystemLog dosyaları  <span style=\" font-"
+"üst sıraya taşı. Bu seçenek ile KSystemLog dosyaları  <span style=\" font-"
 "weight:600;\">ilk sırada </span> okur.</p></body></html> "
 
 #. i18n: file: src/modes/base/fileListBase.ui:131
@@ -2107,9 +2089,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili dosyaları listede "
-"alt sıraya "
-"taşır. Bu seçenek ile KSystemLog dosyaları <span style=\" "
-"font-weight:600;\">en son sırada</span>okur.</p></body></html>"
+"alt sıraya taşır. Bu seçenek ile KSystemLog dosyaları <span style=\" font-"
+"weight:600;\">en son sırada</span>okur.</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:150
 #. i18n: ectx: property (text), widget (QPushButton, down)
@@ -2131,9 +2112,9 @@ msgid ""
 msgstr ""
 "<p style='margin-top:0px;margin-bottom:0px;'><b>Notlar:</b></p><ul "
 "style='margin-top:0px'><li>Dosyalar listedeki sıraya göre okunur.</"
-"li><li>Sıkıştırılmış ve yalın metin kullanılabilir<i>(*.log, *.gz, *."
-"bz2,...)</i>.</li><li>Çoklu günlük kaydı dosyası seçimi ve eklenmesi için "
-"<b>'*'</b> kullanın.</li></ul>"
+"li><li>Sıkıştırılmış ve yalın metin kullanılabilir<i>(*.log, *.gz, *.bz2,...)"
+"</i>.</li><li>Çoklu günlük kaydı dosyası seçimi ve eklenmesi için <b>'*'</b> "
+"kullanın.</li></ul>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:191
 #. i18n: ectx: property (toolTip), widget (QListWidget, fileList)
@@ -2155,8 +2136,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Bu günlük kayıt tipi için "
-"kullanılan "
-"dosya listesi.</p></body></html>"
+"kullanılan dosya listesi.</p></body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:197
 #. i18n: ectx: property (whatsThis), widget (QListWidget, fileList)
@@ -2179,8 +2159,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Güncel günlük kaydı "
-"satırlarını "
-"göstermek için KSystemLog'un okuduğu dosyaların listesi.</p></"
+"satırlarını göstermek için KSystemLog'un okuduğu dosyaların listesi.</p></"
 "body></html>"
 
 #. i18n: file: src/modes/base/fileListBase.ui:210
@@ -2260,8 +2239,7 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili dosyaları listede "
-"üst "
-"sıraya taşı. Bu seçenek ile KSystemLog dosyaları  <span style=\" font-"
+"üst sıraya taşı. Bu seçenek ile KSystemLog dosyaları  <span style=\" font-"
 "weight:600;\">ilk sırada </span> okur.</p></body></html> "
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:146
@@ -2285,9 +2263,8 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Seçili dosyaları listede "
-"alt sıraya "
-"taşır. Bu seçenek ile KSystemLog dosyaları <span style=\" "
-"font-weight:600;\">en son sırada</span>okur.</p></body></html>"
+"alt sıraya taşır. Bu seçenek ile KSystemLog dosyaları <span style=\" font-"
+"weight:600;\">en son sırada</span>okur.</p></body></html>"
 
 #. i18n: file: src/modes/base/multipleFileListBase.ui:174
 #. i18n: ectx: property (text), widget (QLabel, notes)
@@ -2301,9 +2278,9 @@ msgid ""
 msgstr ""
 "<p style='margin-top:0px;margin-bottom:0px;'><b>Notlar:</b></p><ul "
 "style='margin-top:0px'><li>Dosyalar listedeki sıraya göre okunur.</"
-"li><li>Sıkıştırılmış ve yalın metin kullanılabilir<i>(*.log, *.gz, *."
-"bz2,...)</i>.</li><li>Çoklu günlük kaydı dosyası seçimi ve eklenmesi için "
-"<b>'*'</b> kullanın.</li></ul>"
+"li><li>Sıkıştırılmış ve yalın metin kullanılabilir<i>(*.log, *.gz, *.bz2,...)"
+"</i>.</li><li>Çoklu günlük kaydı dosyası seçimi ve eklenmesi için <b>'*'</b> "
+"kullanın.</li></ul>"
 
 #. i18n: file: src/modes/base/logLevelSelectionDialogBase.ui:13
 #. i18n: ectx: property (windowTitle), widget (QDialog, LogLevelSelectionDialogBase)
@@ -2362,11 +2339,10 @@ msgstr ""
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Tanımlanmış tüm günlük "
-"kaydı "
-"seviyelerinin listesi.</p>\n <p style=\" margin-top:0px; margin-bottom:0px; "
-"margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">"
-"Lütfen "
-"dosyalar için kullanılacak olanı listeden seçiniz.</p></body></html>"
+"kaydı seviyelerinin listesi.</p>\n"
+" <p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+"right:0px; -qt-block-indent:0; text-indent:0px;\">Lütfen dosyalar için "
+"kullanılacak olanı listeden seçiniz.</p></body></html>"
 
 #. i18n: file: src/modes/xsession/xsessionConfigurationWidgetBase.ui:16
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -2538,9 +2514,8 @@ msgid ""
 "will help you to see problems more easily."
 msgstr ""
 "Bu seçenek günlük kayıt seviyelerine göre satırların renklendirilmesini "
-"sağlar. "
-"Örn: Hatalar kırmızı, uyarılar turuncu vb. böylece problemler daha kolay "
-"görülebilir. "
+"sağlar. Örn: Hatalar kırmızı, uyarılar turuncu vb. böylece problemler daha "
+"kolay görülebilir. "
 
 #. i18n: file: src/generalConfigurationWidgetBase.ui:132
 #. i18n: ectx: property (text), widget (QCheckBox, colorizeLogLines)
@@ -2619,8 +2594,8 @@ msgid ""
 "Moves to the previous line. This button is deactivated if there is no "
 "previous log line."
 msgstr ""
-"Önceki satıra geçirir. Günlük kaydında bulunulan satır öncesinde başka "
-"satır yoksa bu düğme kullanım dışı olur. "
+"Önceki satıra geçirir. Günlük kaydında bulunulan satır öncesinde başka satır "
+"yoksa bu düğme kullanım dışı olur. "
 
 #. i18n: file: src/detailDialogBase.ui:96
 #. i18n: ectx: property (text), widget (KPushButton, previous)

@@ -172,5 +172,3 @@ msgstr "Kurları başlangıçta güncelle"
 msgctxt "Currency"
 msgid "Currency Settings"
 msgstr "Para Birimi Ayarları"
-
-

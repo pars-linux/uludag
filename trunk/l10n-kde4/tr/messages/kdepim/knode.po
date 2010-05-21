@@ -179,8 +179,7 @@ msgid ""
 msgstr ""
 "<br /><b>Bu yazı KNode'un henüz desteklemediği &quot;message/partial&quot; "
 "MIME türüne sahip.<br />Yine de yazıyı metin dosyası olarak kaydedip sonra "
-"elle "
-"birleştirebilirsiniz.</b>"
+"elle birleştirebilirsiniz.</b>"
 
 #: articlewidget.cpp:544
 msgid ""
@@ -434,9 +433,6 @@ msgstr "Bu haber değiştirilemez."
 
 #: knarticlefactory.cpp:611 knarticlefactory.cpp:911
 #, kde-format
-#| msgid ""
-#| "<qt>The signature generator program produced the following output:<br><br>"
-#| "%1</qt>"
 msgid ""
 "<qt>The signature generator program produced the following output:<br /><br /"
 ">%1</qt>"
@@ -455,9 +451,6 @@ msgid "Unable to load the outbox-folder."
 msgstr "Gidenler klasörü yüklenemiyor."
 
 #: knarticlefactory.cpp:742
-#| msgid ""
-#| "You have aborted the posting of articles. The unsent articles are stored "
-#| "in the \"Outbox\" folder."
 msgid ""
 "You canceled the article posting. The unsent articles are stored in the "
 "\"Outbox\" folder."
@@ -621,9 +614,9 @@ msgid ""
 "could try to get it from <a href=\"http://groups.google.com/groups?selm=%1"
 "\">groups.google.com</a>."
 msgstr ""
-"İstediğiniz makale, haber sunucunuz üzerinde mevcut değil.<br /> "
-"<a href=\"http://groups.google.com/groups?selm=%1"
-"\">groups.google.com</a> adresinden almayı deneyebilirsiniz."
+"İstediğiniz makale, haber sunucunuz üzerinde mevcut değil.<br /> <a href="
+"\"http://groups.google.com/groups?selm=%1\">groups.google.com</a> adresinden "
+"almayı deneyebilirsiniz."
 
 #: knarticlemanager.cpp:1011 kngroupbrowser.cpp:426 kngroupbrowser.cpp:439
 #: knmainwidget.cpp:326
@@ -1243,9 +1236,6 @@ msgid "Email a&ddress:"
 msgstr "E-posta a&dresi:"
 
 #: knconfigwidgets.cpp:101
-#| msgid ""
-#| "<qt><p>Your email address as it will appear to others reading your "
-#| "articles</p><p>Ex: <b>nospam@please.com</b>.</qt>"
 msgid ""
 "<qt><p>Your email address as it will appear to others reading your articles</"
 "p><p>Ex: <b>nospam@please.com</b>.</p></qt>"
@@ -1264,8 +1254,8 @@ msgid ""
 "email address.</p><p>Ex: <b>john@example.com</b>.</p></qt>"
 msgstr ""
 "<qt><p>Bu adres, birisi yazdığınıza cevap vermek istediğinde iletinin "
-"gönderileceği adres olacaktır. Bu alanı dolduracaksanız lütfen gerçek bir "
-"e-posta adresi kullanınız.</p><p>Ör: <b>fatih@ornek.com</b>.</p></qt>"
+"gönderileceği adres olacaktır. Bu alanı dolduracaksanız lütfen gerçek bir e-"
+"posta adresi kullanınız.</p><p>Ör: <b>fatih@ornek.com</b>.</p></qt>"
 
 #: knconfigwidgets.cpp:120
 msgid "&Mail-copies-to:"
@@ -1388,7 +1378,6 @@ msgid "Ser&ver"
 msgstr "Sunu&cu: "
 
 #: knconfigwidgets.cpp:502
-#| msgid "min"
 msgid " minute"
 msgid_plural " minutes"
 msgstr[0] " dakika"
@@ -1638,12 +1627,6 @@ msgstr "Dönüştürmeyi Başlat..."
 
 #: knconvert.cpp:82
 #, kde-format
-#| msgid ""
-#| "<b>Congratulations, you have upgraded to KNode version %1.</"
-#| "b><br>Unfortunately this version uses a different format for some data-"
-#| "files, so in order to keep your existing data it is necessary to convert "
-#| "it first. This is now done automatically by KNode. If you want to, a "
-#| "backup of your existing data will be created before the conversion starts."
 msgid ""
 "<b>Congratulations, you have upgraded to KNode version %1.</b><br /"
 ">Unfortunately this version uses a different format for some data-files, so "
@@ -1653,10 +1636,9 @@ msgid ""
 msgstr ""
 "<b>Tebrikler, KNode'u %1 sürümüne yükselttiniz.</b><br />. Ancak bu sürüm "
 "bazı veri dosyaları için farklı bir biçim kullanıyor. Bu nedenle mevcut "
-"verilerinizi "
-"korumak için onları yeni biçime dönüştürmek gerekiyor. Bu, KNode tarafından "
-"otomatik olarak yapılır. İsterseniz dönüşüm başlamadan önce mevcut "
-"verilerinizin bir yedeği alınacaktır."
+"verilerinizi korumak için onları yeni biçime dönüştürmek gerekiyor. Bu, "
+"KNode tarafından otomatik olarak yapılır. İsterseniz dönüşüm başlamadan önce "
+"mevcut verilerinizin bir yedeği alınacaktır."
 
 #: knconvert.cpp:89
 msgid "Create backup of old data"
@@ -1679,9 +1661,6 @@ msgid "Processed tasks:"
 msgstr "İşlenen görevler:"
 
 #: knconvert.cpp:147
-#| msgid ""
-#| "<b>Some errors occurred during the conversion.</b><br>You should now "
-#| "examine the log to find out what went wrong."
 msgid ""
 "<b>Some errors occurred during the conversion.</b><br />You should now "
 "examine the log to find out what went wrong."
@@ -3055,14 +3034,14 @@ msgstr ""
 "<li>ss - saniye, sıfır var (00-59)</li>\n"
 "<li>z - milisaniye, sıfır yok (0-999)</li>\n"
 "<li>zzz - milisaniye, sıfır var (000-999)</li>\n"
-"<li>AP - ÖÖ/ÖS gösterimine geç. AP, \"ÖÖ\" veya \"ÖS\" ile değiştirilir.</li>"
-"\n"
-"<li>ap - ÖÖ/ÖS gösterimine geç. ap \"öö\" veya \"ös\" ile değiştirilir.</li>"
-"\n"
+"<li>AP - ÖÖ/ÖS gösterimine geç. AP, \"ÖÖ\" veya \"ÖS\" ile değiştirilir.</"
+"li>\n"
+"<li>ap - ÖÖ/ÖS gösterimine geç. ap \"öö\" veya \"ös\" ile değiştirilir.</"
+"li>\n"
 "<li>Z - saat aralığını sayısal biçimde gösterir (-0500)</li>\n"
 "</ul>\n"
-"<p><strong>Diğer bütün girdi karakterleri göz ardı edilecektir.</strong></p>"
-"</qt>\n"
+"<p><strong>Diğer bütün girdi karakterleri göz ardı edilecektir.</strong></"
+"p></qt>\n"
 "      "
 
 #. i18n: file: knode.kcfg:116
@@ -3597,8 +3576,7 @@ msgid ""
 msgstr ""
 "<qt>Yer tutucular: <b>%NAME</b>=gönderen adı, <b>%EMAIL</b>=gönderen adresi,"
 "<br><b>%DATE</b>=tarih, <b>%MSID</b>=ileti kimliği, <b>%MSIDX</b>=köşeli "
-"parantezsiz "
-"ileti kimliği, <b>%GROUP</b>=grup adı, <b>%L</b>=satır sonu</qt>"
+"parantezsiz ileti kimliği, <b>%GROUP</b>=grup adı, <b>%L</b>=satır sonu</qt>"
 
 #. i18n: file: postnewscomposerwidget_base.ui:102
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_rewrap)

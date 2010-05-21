@@ -115,9 +115,9 @@ msgid ""
 "this module)."
 msgstr ""
 "Uzaktaki kullanıcılar tarafından açılan dosyalar kapandığında oluşan "
-"olayları "
-"görmek istiyorsanız bu seçeneği işaretleyiniz. Açma/kapatma olayları, samba "
-"kayıt seviyesi en azından 2 olarak ayarlanmadıkça kaydedilmez."
+"olayları görmek istiyorsanız bu seçeneği işaretleyiniz. Açma/kapatma "
+"olayları, samba kayıt seviyesi en azından 2 olarak ayarlanmadıkça "
+"kaydedilmez."
 
 #: kcmsambalog.cpp:80
 msgid ""
@@ -360,4 +360,3 @@ msgstr "Görkem Çetin"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "gorkem@kde.org"
-

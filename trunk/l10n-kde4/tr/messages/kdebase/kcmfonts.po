@@ -77,49 +77,41 @@ msgstr ""
 "sağlayan bir işlemdir."
 
 #: fonts.cpp:501
-#| msgid "General"
 msgctxt "font usage"
 msgid "General"
 msgstr "Genel"
 
 #: fonts.cpp:502
-#| msgid "Fixed width"
 msgctxt "font usage"
 msgid "Fixed width"
 msgstr "Sabit genişlik"
 
 #: fonts.cpp:503
-#| msgid "Small"
 msgctxt "font usage"
 msgid "Small"
 msgstr "Küçük"
 
 #: fonts.cpp:504
-#| msgid "Toolbar"
 msgctxt "font usage"
 msgid "Toolbar"
 msgstr "Araç çubuğu"
 
 #: fonts.cpp:505
-#| msgid "Menu"
 msgctxt "font usage"
 msgid "Menu"
 msgstr "Menü"
 
 #: fonts.cpp:506
-#| msgid "Window title"
 msgctxt "font usage"
 msgid "Window title"
 msgstr "Pencere başlığı"
 
 #: fonts.cpp:507
-#| msgid "Taskbar"
 msgctxt "font usage"
 msgid "Taskbar"
 msgstr "Görev çubuğu"
 
 #: fonts.cpp:508
-#| msgid "Desktop"
 msgctxt "font usage"
 msgid "Desktop"
 msgstr "Masaüstü"
@@ -261,7 +253,6 @@ msgstr ""
 "etkileyecektir.</p>"
 
 #: kxftconfig.cpp:456
-#| msgid "None"
 msgctxt "no subpixel rendering"
 msgid "None"
 msgstr "Hiçbiri"
@@ -287,7 +278,6 @@ msgid "Medium"
 msgstr "Orta"
 
 #: kxftconfig.cpp:496
-#| msgid "None"
 msgctxt "no hinting"
 msgid "None"
 msgstr "Hiçbiri"
@@ -299,4 +289,3 @@ msgstr "Zayıf"
 #: kxftconfig.cpp:500
 msgid "Full"
 msgstr "Tam"
-

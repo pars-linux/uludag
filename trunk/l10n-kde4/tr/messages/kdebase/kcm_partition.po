@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
@@ -141,8 +141,12 @@ msgid "Unknown Type"
 msgstr "Bilinmeyen Tip"
 
 #: kcm_partition.cpp:225
-msgid "This display shows information about partitions and hard disks of your system."
-msgstr "Sisteminizdeki sabit diskler ve sabit disk bölümleri hakkındaki bilgileri gösterir."
+msgid ""
+"This display shows information about partitions and hard disks of your "
+"system."
+msgstr ""
+"Sisteminizdeki sabit diskler ve sabit disk bölümleri hakkındaki bilgileri "
+"gösterir."
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"

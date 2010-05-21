@@ -36,8 +36,8 @@ msgid ""
 "options dialog at menu item Game->Choose Puzzle Type->Make Your Own..."
 msgstr ""
 "Üzgünüm, Küp şu an karıştırılamıyor. Karıştırma hareketlerinin sayısı sıfıra "
-"ayarlanmış durumda. Lütfen seçenekler diyaloğunda  Oyun->Bulmaca Tipini Seç->"
-"Kendi Bulmacanı Yap... menü ögesinden karıştırma hareketi sayısını seçiniz."
+"ayarlanmış durumda. Lütfen seçenekler diyaloğunda  Oyun->Bulmaca Tipini Seç-"
+">Kendi Bulmacanı Yap... menü ögesinden karıştırma hareketi sayısını seçiniz."
 
 #: game.cpp:157
 msgid "New Puzzle"
@@ -77,8 +77,8 @@ msgid ""
 "Sorry, could not find a valid Kubrick demo file called %1.  It should have "
 "been installed in the 'apps/kubrick' sub-directory."
 msgstr ""
-"Üzgünüm, %1 isminde geçerli bir Kubrick demo dosyası bulunamadı. "
-"'apps/kubrick' alt klasöründe kurulu olması gerekliydi. "
+"Üzgünüm, %1 isminde geçerli bir Kubrick demo dosyası bulunamadı. 'apps/"
+"kubrick' alt klasöründe kurulu olması gerekliydi. "
 
 #: game.cpp:429
 msgid "File Not Found"
@@ -155,8 +155,8 @@ msgid ""
 "<i>Please use <nobr>'Choose Puzzle Type->Make Your Own...'</nobr> to set the "
 "above options.</i>"
 msgstr ""
-"<i>Lütfen yukarıdaki seçenekleri ayarlamak için <nobr>'Bulmaca Tipini Seç->->"
-"Kendi Bulmacanı Yap...'</nobr> seçeneğini kullanın.</i>"
+"<i>Lütfen yukarıdaki seçenekleri ayarlamak için <nobr>'Bulmaca Tipini Seç->-"
+">Kendi Bulmacanı Yap...'</nobr> seçeneğini kullanın.</i>"
 
 #: gamedialog.cpp:110
 msgid "Watch shuffling in progress?"
@@ -821,5 +821,3 @@ msgstr "Serdar Soytetir, Serdar Dalgıç"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com, serdar@pardus.org.tr"
-
-

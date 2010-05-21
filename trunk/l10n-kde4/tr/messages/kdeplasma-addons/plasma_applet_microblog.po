@@ -152,4 +152,3 @@ msgstr "Kullanıcı adı:"
 #: rc.cpp:27
 msgid "Service URL:"
 msgstr "Servis adresi:"
-

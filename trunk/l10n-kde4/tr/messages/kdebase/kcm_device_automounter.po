@@ -77,8 +77,13 @@ msgstr "Ayrılmış Aygıtlar"
 #. i18n: file: DeviceAutomounterKCM.ui:17
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, automountEnabled)
 #: rc.cpp:3
-msgid "When this is unchecked, no device automounting of any kind will happen, regardless of anything selected in the \"Device Overrides\" section."
-msgstr "Bu seçenek işaretli değilse, \"Aygıta Özel Ayarlar\" bölümünde yapılan ayarlardan bağımsız olarak, hiç bir şekilde otomatik aygıt bağlama yapılmayacaktır."
+msgid ""
+"When this is unchecked, no device automounting of any kind will happen, "
+"regardless of anything selected in the \"Device Overrides\" section."
+msgstr ""
+"Bu seçenek işaretli değilse, \"Aygıta Özel Ayarlar\" bölümünde yapılan "
+"ayarlardan bağımsız olarak, hiç bir şekilde otomatik aygıt bağlama "
+"yapılmayacaktır."
 
 #. i18n: file: DeviceAutomounterKCM.ui:20
 #. i18n: ectx: property (text), widget (QCheckBox, automountEnabled)
@@ -87,24 +92,44 @@ msgid "Enable automatic mounting of removable media"
 msgstr "Çıkarılabilir aygıtı otomatik olarak bağlanmayı etkinleştir"
 
 #. i18n: file: DeviceAutomounterKCM.ui:45
-#. i18n: ectx: property (whatsThis), widget (QCheckBox,
-#. automountUnknownDevices)
+#. i18n: ectx: property (whatsThis), widget (QCheckBox, automountUnknownDevices)
 #: rc.cpp:9
-msgid "When this is checked, KDE will only automatically mount devices it remembers. A device is 'remembered' if it has ever been mounted before. e.g. plugging in a USB media player to charge. If the files are not accessed, KDE will not automatically mount the player next time it is seen. Once they have been accessed, however, KDE will remember to automatically make the contents accessible to your system."
+msgid ""
+"When this is checked, KDE will only automatically mount devices it "
+"remembers. A device is 'remembered' if it has ever been mounted before. e.g. "
+"plugging in a USB media player to charge. If the files are not accessed, KDE "
+"will not automatically mount the player next time it is seen. Once they have "
+"been accessed, however, KDE will remember to automatically make the contents "
+"accessible to your system."
 msgstr ""
-"Bu seçenek işaretliyse, KDE sadece hatırladığı aygıtları otomatik olarak bağlayacaktır. Bir aygıt, eğer daha önce bağlandıysa 'hatırlanacaktır'. Örneğin bir USB müzik çaları, şarj etmek için bağlayıp dosyalarına erişmediyseniz, KDE bir sonraki takılışında müzik çaları otomatik bağlamayacaktır. Fakat, bir kere dosyalarına eriştiğinizde, KDE aygıtı hatırlar ve otomatik olarak dosyaları erişilebilir yapar."
+"Bu seçenek işaretliyse, KDE sadece hatırladığı aygıtları otomatik olarak "
+"bağlayacaktır. Bir aygıt, eğer daha önce bağlandıysa 'hatırlanacaktır'. "
+"Örneğin bir USB müzik çaları, şarj etmek için bağlayıp dosyalarına "
+"erişmediyseniz, KDE bir sonraki takılışında müzik çaları otomatik "
+"bağlamayacaktır. Fakat, bir kere dosyalarına eriştiğinizde, KDE aygıtı "
+"hatırlar ve otomatik olarak dosyaları erişilebilir yapar."
 
 #. i18n: file: DeviceAutomounterKCM.ui:48
 #. i18n: ectx: property (text), widget (QCheckBox, automountUnknownDevices)
 #: rc.cpp:12
-msgid "Only automatically mount removable media that has been manually mounted before"
-msgstr "Sadece daha önce takılmış olan çıkarılabilir ortamları takıldıklarında otomatik olarak bağla"
+msgid ""
+"Only automatically mount removable media that has been manually mounted "
+"before"
+msgstr ""
+"Sadece daha önce takılmış olan çıkarılabilir ortamları takıldıklarında "
+"otomatik olarak bağla"
 
 #. i18n: file: DeviceAutomounterKCM.ui:55
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, automountOnLogin)
 #: rc.cpp:15
-msgid "If any removable storage devices are connected to your system when you login to your desktop, KDE will automatically make the contents available to your system for other programs to read."
-msgstr "Eğer sisteme giriş yaptığınızda herhangi bir depolama aygıtı bağlıysa, KDE uygulamaların aygıttaki içeriğe erişebilmesi için otomatik olarak aygıtı bağlar."
+msgid ""
+"If any removable storage devices are connected to your system when you login "
+"to your desktop, KDE will automatically make the contents available to your "
+"system for other programs to read."
+msgstr ""
+"Eğer sisteme giriş yaptığınızda herhangi bir depolama aygıtı bağlıysa, KDE "
+"uygulamaların aygıttaki içeriğe erişebilmesi için otomatik olarak aygıtı "
+"bağlar."
 
 #. i18n: file: DeviceAutomounterKCM.ui:58
 #. i18n: ectx: property (text), widget (QCheckBox, automountOnLogin)
@@ -115,8 +140,13 @@ msgstr "Tüm çıkarılabilir ortamları girişte otomatik olarak bağla"
 #. i18n: file: DeviceAutomounterKCM.ui:65
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, automountOnPlugin)
 #: rc.cpp:21
-msgid "When this is checked, KDE will automatically make the contents of any storage device available to the system when it is plugged in or attached."
-msgstr "Bu seçenek işaretliyse, KDE tüm depolama aygıtlarının içeriklerini, takıldıkları ya da eklendikleri anda sistem tarafından erişilebilir hale getirir."
+msgid ""
+"When this is checked, KDE will automatically make the contents of any "
+"storage device available to the system when it is plugged in or attached."
+msgstr ""
+"Bu seçenek işaretliyse, KDE tüm depolama aygıtlarının içeriklerini, "
+"takıldıkları ya da eklendikleri anda sistem tarafından erişilebilir hale "
+"getirir."
 
 #. i18n: file: DeviceAutomounterKCM.ui:68
 #. i18n: ectx: property (text), widget (QCheckBox, automountOnPlugin)
@@ -134,19 +164,39 @@ msgstr "Aygıta Özel Ayarlar"
 #. i18n: ectx: property (whatsThis), widget (QTreeView, deviceView)
 #: rc.cpp:30
 msgid ""
-"This list contains the storage devices known to KDE. If \"Automount on Login\" is checked, the device will be automatically mounted even though \"Mount all removable media at login\" is unchecked. The same applies for \"Automount on Attach\".\n"
+"This list contains the storage devices known to KDE. If \"Automount on Login"
+"\" is checked, the device will be automatically mounted even though \"Mount "
+"all removable media at login\" is unchecked. The same applies for "
+"\"Automount on Attach\".\n"
 "\n"
-"If \"Enable automatic mounting of removable media\" is unchecked, the overrides do not apply and no devices will be automatically mounted."
+"If \"Enable automatic mounting of removable media\" is unchecked, the "
+"overrides do not apply and no devices will be automatically mounted."
 msgstr ""
-"Bu liste, KDE tarafından bilinen depolama aygıtlarını gösterir. Eğer, \"Girişte otomatik bağla\" seçiliyse, \"Tüm çıkarılabilir ortamları girişte otomatik olarak bağla\" seçili olmasa dahi aygıt otomatik olarak bağlanacaktır. Aynı şey \"Takıldığında otomatik bağla\" seçeneği için de geçerlidir.\n"
+"Bu liste, KDE tarafından bilinen depolama aygıtlarını gösterir. Eğer, "
+"\"Girişte otomatik bağla\" seçiliyse, \"Tüm çıkarılabilir ortamları girişte "
+"otomatik olarak bağla\" seçili olmasa dahi aygıt otomatik olarak "
+"bağlanacaktır. Aynı şey \"Takıldığında otomatik bağla\" seçeneği için de "
+"geçerlidir.\n"
 "\n"
-"Eğer \"Çıkarılabilir aygıtı otomatik olarak bağlanmayı etkinleştir\" seçili değilse, aygıtlara özel seçenekler uygulanmaz ve hiç bir aygıt otomatik olarak bağlanmaz."
+"Eğer \"Çıkarılabilir aygıtı otomatik olarak bağlanmayı etkinleştir\" seçili "
+"değilse, aygıtlara özel seçenekler uygulanmaz ve hiç bir aygıt otomatik "
+"olarak bağlanmaz."
 
 #. i18n: file: DeviceAutomounterKCM.ui:134
 #. i18n: ectx: property (whatsThis), widget (QPushButton, forgetDevice)
 #: rc.cpp:35
-msgid "Clicking this button causes KDE to 'forget' that the selected devices ever existed. This is only useful if \"Only automatically mount removable media that has been manually mounted before\" is checked. Once a device is forgotten and KDE is set to only automatically mount familiar devices, the device will not be automatically mounted."
-msgstr "Bu düğmeye tıklandığında, KDE seçili olan aygıtı 'unutur'. Bu eylem sadece \"Sadece daha önce takılmış olan çıkarılabilir ortamları takıldıklarında otomatik olarak bağla\" seçildiğinde işe yarar. Bir aygıt bir kere unutulduysa ve KDE sadece daha önceden takılı aygıtları bağlayacak şekilde ayarlandıysa, aygıt otomatik bağlanmayacaktır."
+msgid ""
+"Clicking this button causes KDE to 'forget' that the selected devices ever "
+"existed. This is only useful if \"Only automatically mount removable media "
+"that has been manually mounted before\" is checked. Once a device is "
+"forgotten and KDE is set to only automatically mount familiar devices, the "
+"device will not be automatically mounted."
+msgstr ""
+"Bu düğmeye tıklandığında, KDE seçili olan aygıtı 'unutur'. Bu eylem sadece "
+"\"Sadece daha önce takılmış olan çıkarılabilir ortamları takıldıklarında "
+"otomatik olarak bağla\" seçildiğinde işe yarar. Bir aygıt bir kere "
+"unutulduysa ve KDE sadece daha önceden takılı aygıtları bağlayacak şekilde "
+"ayarlandıysa, aygıt otomatik bağlanmayacaktır."
 
 #. i18n: file: DeviceAutomounterKCM.ui:137
 #. i18n: ectx: property (text), widget (QPushButton, forgetDevice)
@@ -173,15 +223,21 @@ msgstr "tulliana@gmail.com"
 #~ msgid "Enter the device's system identifier"
 #~ msgstr "Aygıtın sistem kimliğini girin"
 
-#~ msgctxt "@title:column The device's internal UDI if not attached, user-friendly name reported by Solid otherwise."
+#~ msgctxt ""
+#~ "@title:column The device's internal UDI if not attached, user-friendly "
+#~ "name reported by Solid otherwise."
 #~ msgid "Name"
 #~ msgstr "İsim"
 
 #~ msgid "Always Automount"
 #~ msgstr "Her Zaman Otomatik Bağla"
 
-#~ msgid "Enabling \"Always Automount\" for a device in this list overrides any other setting."
-#~ msgstr "Bu listedeki bir aygıtı \"Herzaman Otomatik Bağla\" seçeneğini etkinleştirmek diğer ayarların üzerine yazar."
+#~ msgid ""
+#~ "Enabling \"Always Automount\" for a device in this list overrides any "
+#~ "other setting."
+#~ msgstr ""
+#~ "Bu listedeki bir aygıtı \"Herzaman Otomatik Bağla\" seçeneğini "
+#~ "etkinleştirmek diğer ayarların üzerine yazar."
 
 #~ msgid "Add Device..."
 #~ msgstr "Aygıt Ekle..."

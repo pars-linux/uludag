@@ -89,4 +89,3 @@ msgstr "<b>Göster</b>"
 #: rc.cpp:12
 msgid "refresh interval:"
 msgstr "tazeleme aralığı:"
-

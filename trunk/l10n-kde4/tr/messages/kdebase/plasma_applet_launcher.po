@@ -174,8 +174,12 @@ msgid "Kickoff Application Launcher"
 msgstr "Kickoff Uygulama Çalıştırıcı"
 
 #: applet/applet.cpp:84
-msgid "Favorites, applications, computer places, recently used items and desktop sessions"
-msgstr "Yer imleri, uygulamalar, bilgisayar konumları, son kullanılan ögeler ve masaüstü oturumları"
+msgid ""
+"Favorites, applications, computer places, recently used items and desktop "
+"sessions"
+msgstr ""
+"Yer imleri, uygulamalar, bilgisayar konumları, son kullanılan ögeler ve "
+"masaüstü oturumları"
 
 #: applet/applet.cpp:116
 msgid "Switch to Classic Menu Style"
@@ -292,8 +296,8 @@ msgstr "Son Kullanılan Belgeleri Temizle"
 msgctxt "login name, hostname"
 msgid "User <b>%1</b> on <b>%2</b>"
 msgstr ""
-"Kullanıcı <b>%1</b> <b>%2</b> üzerinde "
-"<b>%2</b> üzerinde <b>%1</b> kullanıcısı"
+"Kullanıcı <b>%1</b> <b>%2</b> üzerinde <b>%2</b> üzerinde <b>%1</b> "
+"kullanıcısı"
 
 #: ui/launcher.cpp:530
 #, kde-format

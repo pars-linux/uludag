@@ -129,5 +129,3 @@ msgstr "Sonuç öge içerisine kaydedilemedi."
 #: storeresultjob.cpp:70
 msgid "Failed to fetch item."
 msgstr "Öge getirilemedi."
-
-

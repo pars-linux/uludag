@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChartShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-04-18 04:52+0200\n"
 "PO-Revision-Date: 2009-09-18 03:26+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -18,83 +18,83 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ChartConfigWidget.cpp:229
+#: ChartConfigWidget.cpp:231
 msgid "Bar Chart"
 msgstr "Çubuk Grafiği"
-
-#: ChartConfigWidget.cpp:230 ChartConfigWidget.cpp:236
-#: ChartConfigWidget.cpp:242 ChartConfigWidget.cpp:286
-#: ChartConfigWidget.cpp:291 ChartConfigWidget.cpp:296
-msgid "Normal"
-msgstr "Normal"
-
-#: ChartConfigWidget.cpp:231 ChartConfigWidget.cpp:237
-#: ChartConfigWidget.cpp:243 ChartConfigWidget.cpp:287
-#: ChartConfigWidget.cpp:292 ChartConfigWidget.cpp:297
-msgid "Stacked"
-msgstr "Kümelenmiş"
 
 #: ChartConfigWidget.cpp:232 ChartConfigWidget.cpp:238
 #: ChartConfigWidget.cpp:244 ChartConfigWidget.cpp:288
 #: ChartConfigWidget.cpp:293 ChartConfigWidget.cpp:298
+msgid "Normal"
+msgstr "Normal"
+
+#: ChartConfigWidget.cpp:233 ChartConfigWidget.cpp:239
+#: ChartConfigWidget.cpp:245 ChartConfigWidget.cpp:289
+#: ChartConfigWidget.cpp:294 ChartConfigWidget.cpp:299
+msgid "Stacked"
+msgstr "Kümelenmiş"
+
+#: ChartConfigWidget.cpp:234 ChartConfigWidget.cpp:240
+#: ChartConfigWidget.cpp:246 ChartConfigWidget.cpp:290
+#: ChartConfigWidget.cpp:295 ChartConfigWidget.cpp:300
 msgid "Percent"
 msgstr "Yüzde"
 
-#: ChartConfigWidget.cpp:235
+#: ChartConfigWidget.cpp:237
 msgid "Line Chart"
 msgstr "Çizgi Grafiği"
 
-#: ChartConfigWidget.cpp:241
+#: ChartConfigWidget.cpp:243
 msgid "Area Chart"
 msgstr "Alan Grafiği"
 
-#: ChartConfigWidget.cpp:249 ChartConfigWidget.cpp:300
+#: ChartConfigWidget.cpp:251 ChartConfigWidget.cpp:302
 msgid "Pie Chart"
 msgstr "Pasta Grafiği"
 
-#: ChartConfigWidget.cpp:250 ChartConfigWidget.cpp:301
+#: ChartConfigWidget.cpp:252 ChartConfigWidget.cpp:303
 msgid "Ring Chart"
 msgstr "Çember Çizelge"
 
-#: ChartConfigWidget.cpp:255 ChartConfigWidget.cpp:302
+#: ChartConfigWidget.cpp:257 ChartConfigWidget.cpp:304
 msgid "Polar Chart"
 msgstr "Kutupsal Grafik"
 
-#: ChartConfigWidget.cpp:260 ChartConfigWidget.cpp:304
+#: ChartConfigWidget.cpp:262 ChartConfigWidget.cpp:306
 msgid "Scatter Chart"
 msgstr "Dağılım Grafiği"
 
-#: ChartConfigWidget.cpp:261
+#: ChartConfigWidget.cpp:263
 msgid "Bubble Chart"
 msgstr "Kabarcık Çizelge"
 
-#: ChartConfigWidget.cpp:266
+#: ChartConfigWidget.cpp:268
 msgid "Stock Chart"
 msgstr "Stok Çizelgesi"
 
-#: ChartConfigWidget.cpp:268
+#: ChartConfigWidget.cpp:270
 msgid "Surface Chart"
 msgstr "Yüzeysel Çizelge"
 
-#: ChartConfigWidget.cpp:270
+#: ChartConfigWidget.cpp:272
 msgid "Gantt Chart"
 msgstr "Gantt Çizelgesi"
 
-#: ChartConfigWidget.cpp:441
+#: ChartConfigWidget.cpp:444
 msgid "Data Ranges..."
 msgstr "Veri Aralıkları..."
 
-#: ChartConfigWidget.cpp:830
+#: ChartConfigWidget.cpp:848
 #, kde-format
 msgid "Axis %1"
 msgstr "Eksen %1"
 
-#: ChartConfigWidget.cpp:998
+#: ChartConfigWidget.cpp:1013
 #, kde-format
 msgid "Data Set %1"
 msgstr "Veri Seti %1"
 
-#: ChartConfigWidget.cpp:1519
+#: ChartConfigWidget.cpp:1535
 msgid ""
 "Are you sure you want to remove this axis? All settings specific to this "
 "axis will be lost."
@@ -102,22 +102,22 @@ msgstr ""
 "Bu ekseni silmek istediğinize emin misiniz? Bu eksene ait tüm ayarlarınız "
 "silinecektir."
 
-#: ChartConfigWidget.cpp:1520
+#: ChartConfigWidget.cpp:1536
 msgid "Axis Removal Confirmation"
 msgstr "Eksen Kaldırma Doğrulaması"
 
-#: ChartShape.cpp:415
+#: ChartShape.cpp:407
 msgid ""
 "The plugin needed for displaying text labels in a chart is not available."
 msgstr ""
 "Metin etiketlerinin bir grafikte gösterilmesini sağlayan eklentiye "
 "bulunamıyor."
 
-#: ChartShape.cpp:415
+#: ChartShape.cpp:407
 msgid "Plugin Missing"
 msgstr "Eklenti Kayıp"
 
-#: ChartShape.cpp:418
+#: ChartShape.cpp:410
 msgid ""
 "The plugin needed for displaying text labels is not compatible with the "
 "current version of the chart Flake shape."
@@ -125,7 +125,7 @@ msgstr ""
 "Metin etiketlerini gösteren eklenti şu anki grafik pul şekli ile uyumlu "
 "değildir."
 
-#: ChartShape.cpp:419
+#: ChartShape.cpp:411
 msgid "Plugin Incompatible"
 msgstr "Eklenti Uyumsuz"
 
@@ -133,23 +133,23 @@ msgstr "Eklenti Uyumsuz"
 #. i18n: ectx: property (text), widget (QCheckBox, showTitle)
 #. i18n: file: ChartConfigWidget.ui:542
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: ChartShape.cpp:429 rc.cpp:12 rc.cpp:109
+#: ChartShape.cpp:425 rc.cpp:12 rc.cpp:109
 msgid "Title"
 msgstr "Başlık"
 
 #. i18n: file: ChartConfigWidget.ui:107
 #. i18n: ectx: property (text), widget (QCheckBox, showSubTitle)
-#: ChartShape.cpp:449 rc.cpp:15
+#: ChartShape.cpp:446 rc.cpp:15
 msgid "Subtitle"
 msgstr "Alt başlık"
 
 #. i18n: file: ChartConfigWidget.ui:120
 #. i18n: ectx: property (text), widget (QCheckBox, showFooter)
-#: ChartShape.cpp:470 rc.cpp:18
+#: ChartShape.cpp:469 rc.cpp:18
 msgid "Footer"
 msgstr "Dipnot"
 
-#: ChartShape.cpp:959
+#: ChartShape.cpp:1025
 #, kde-format
 msgid ""
 "This document contains an external link to a remote document\n"
@@ -158,15 +158,15 @@ msgstr ""
 "Bu belge uzaktaki bir belgeye dış bağ içeriyor\n"
 "%1"
 
-#: ChartShape.cpp:960
+#: ChartShape.cpp:1026
 msgid "Confirmation Required"
 msgstr "Doğrulama Gerekiyor"
 
-#: ChartShape.cpp:960
+#: ChartShape.cpp:1026
 msgid "Download"
 msgstr "İndir"
 
-#: ChartShape.cpp:960
+#: ChartShape.cpp:1026
 msgid "Skip"
 msgstr "Atla"
 
@@ -212,15 +212,11 @@ msgstr "Bir şey yap"
 msgid "Do something else"
 msgstr "Başka bir şey daha yap"
 
-#: ChartToolFactory.cpp:36
-msgid "Chart Tool"
-msgstr "Grafik Aracı"
-
 #: ChartToolFactory.cpp:38
 msgid "Chart Editing Tool"
 msgstr "Grafik Düzenleme Aracı"
 
-#: DataSet.cpp:551
+#: DataSet.cpp:724
 #, kde-format
 msgid "Series %1"
 msgstr "Seriler %1"
@@ -608,25 +604,25 @@ msgstr "Eylemler"
 
 #. i18n: file: dialogs/ChartTableEditor.ui:75
 #. i18n: ectx: property (text), widget (QPushButton, insertRow)
-#: rc.cpp:188 dialogs/TableEditorDialog.cpp:92
+#: rc.cpp:188 dialogs/TableEditorDialog.cpp:64
 msgid "Insert Rows"
 msgstr "Satır Ekle"
 
 #. i18n: file: dialogs/ChartTableEditor.ui:85
 #. i18n: ectx: property (text), widget (QPushButton, deleteRow)
-#: rc.cpp:191 dialogs/TableEditorDialog.cpp:93
+#: rc.cpp:191 dialogs/TableEditorDialog.cpp:65
 msgid "Delete Rows"
 msgstr "Satırları Sil"
 
 #. i18n: file: dialogs/ChartTableEditor.ui:95
 #. i18n: ectx: property (text), widget (QPushButton, insertColumn)
-#: rc.cpp:194 dialogs/TableEditorDialog.cpp:94
+#: rc.cpp:194 dialogs/TableEditorDialog.cpp:66
 msgid "Insert Columns"
 msgstr "Sütun Ekle"
 
 #. i18n: file: dialogs/ChartTableEditor.ui:105
 #. i18n: ectx: property (text), widget (QPushButton, deleteColumn)
-#: rc.cpp:197 dialogs/TableEditorDialog.cpp:95
+#: rc.cpp:197 dialogs/TableEditorDialog.cpp:67
 msgid "Delete Columns"
 msgstr "Sütunları Sil"
 
@@ -671,6 +667,9 @@ msgstr "Sol"
 #: rc.cpp:218
 msgid "Right"
 msgstr "Sağ"
+
+#~ msgid "Chart Tool"
+#~ msgstr "Grafik Aracı"
 
 #~ msgid "Cut Rows"
 #~ msgstr "Satırları Kes"

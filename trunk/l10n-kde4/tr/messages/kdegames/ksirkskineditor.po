@@ -745,8 +745,8 @@ msgid ""
 "<p>Eliminate a given player. If it is eliminated by another one, you will "
 "fall back to a <emphasis>Countries</emphasis> type of goal.</p>"
 msgstr ""
-"<p>Verilen oyuncuyu ele. Başkası tarafından elendiyse, <emphasis> "
-"Ülke</emphasis> tipi bir hedefe dön."
+"<p>Verilen oyuncuyu ele. Başkası tarafından elendiyse, <emphasis> Ülke</"
+"emphasis> tipi bir hedefe dön."
 
 #. i18n: file: ksirkgoaldefinition.ui:60
 #. i18n: ectx: property (text), widget (QRadioButton, playertype)
@@ -795,8 +795,8 @@ msgid ""
 "Conquer a given list of continents. You can also let the player choose one "
 "of their target continents."
 msgstr ""
-"Listesi verilen kıtaları fethet. Ayrıca oyunculara hedef ülkelerinden "
-"birini seçmelerine izin verebilirsiniz."
+"Listesi verilen kıtaları fethet. Ayrıca oyunculara hedef ülkelerinden birini "
+"seçmelerine izin verebilirsiniz."
 
 #. i18n: file: ksirkgoaldefinition.ui:88
 #. i18n: ectx: property (text), widget (QRadioButton, continentstype)
@@ -834,13 +834,11 @@ msgid ""
 "ul>"
 msgstr ""
 "<p>Hedefi tanımlayan metin. Hedef tipine göre çeşitli veri saklayan yerleri "
-"de "
-"içermelidir:</p><ul><li><i>Dünya Fethi</i>:Hiç</li><li><i>Oyuncu</i>: "
-"Oyuncu isimleri için bir adet, fallback ülke sayısı için de bir adet</li><li>"
-"<i>Ülkeler</i>: "
-"ülke sayısı için bir ve muhtemelen bir ikincisi de her ülkeye konulacak ordu "
-"sayısı için</li><li><i>Kıtalar</i>: fethedilecek her kıta için bir adet</li>"
-"</ul>"
+"de içermelidir:</p><ul><li><i>Dünya Fethi</i>:Hiç</li><li><i>Oyuncu</i>: "
+"Oyuncu isimleri için bir adet, fallback ülke sayısı için de bir adet</"
+"li><li><i>Ülkeler</i>: ülke sayısı için bir ve muhtemelen bir ikincisi de "
+"her ülkeye konulacak ordu sayısı için</li><li><i>Kıtalar</i>: fethedilecek "
+"her kıta için bir adet</li></ul>"
 
 #. i18n: file: ksirkgoaldefinition.ui:125
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -868,8 +866,8 @@ msgid ""
 "<p>Number of countries to conquer in a <i>Countries</i> goal or as a "
 "fallback in a <i>Player</i> goal.</p>"
 msgstr ""
-"<p><i>Ülke</i> hedefinde ya da <i>Oyuncu</i> hedefinin fallback'inde"
-"fethedilecek ülke sayısı.</p>"
+"<p><i>Ülke</i> hedefinde ya da <i>Oyuncu</i> hedefinin "
+"fallback'indefethedilecek ülke sayısı.</p>"
 
 #. i18n: file: ksirkgoaldefinition.ui:149
 #. i18n: ectx: property (toolTip), widget (KIntSpinBox, armiesbycountry)
@@ -1225,8 +1223,7 @@ msgstr ""
 "değiştirebilirsiniz\n"
 "\n"
 "Oyun esnasında her oyuncu bir ulus seçmelidir. Bu nedenle, tema için en az, "
-"tanımlı "
-"maksimum oyuncu sayısı kadar ulus eklemelisiniz."
+"tanımlı maksimum oyuncu sayısı kadar ulus eklemelisiniz."
 
 #. i18n: file: ksirkskindefinition.ui:264
 #. i18n: ectx: property (toolTip), widget (KPushButton, newCountryButton)
@@ -2045,4 +2042,3 @@ msgstr "Sonlandırıcı Hata"
 #: skinSpritesData.cpp:101
 msgid "Error - Unknown skin string data: "
 msgstr "Hata - Bilinmeyen tema kelime verisi: "
-

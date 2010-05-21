@@ -660,7 +660,6 @@ msgid "Length"
 msgstr "Uzunluk"
 
 #: kpci.cpp:659
-#| msgid "None"
 msgctxt "no data"
 msgid "None"
 msgstr "Hiçbiri"
@@ -700,31 +699,26 @@ msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
 #: kpci_private.h:26
-#| msgid "Enabled"
 msgctxt "state of PCI item"
 msgid "Enabled"
 msgstr "Etkin"
 
 #: kpci_private.h:27
-#| msgid "Disabled"
 msgctxt "state of PCI item"
 msgid "Disabled"
 msgstr "Etkin değil"
 
 #: kpci_private.h:28
-#| msgid "Yes"
 msgctxt "state of PCI item"
 msgid "Yes"
 msgstr "Evet"
 
 #: kpci_private.h:29
-#| msgid "No"
 msgctxt "state of PCI item"
 msgid "No"
 msgstr "Hayır"
 
 #: kpci_private.h:30
-#| msgid "Unknown"
 msgctxt "state of PCI item"
 msgid "Unknown"
 msgstr "Bilinmeyen"
@@ -1620,5 +1614,3 @@ msgstr "16 vektör"
 #: kpci_private.h:776
 msgid "32 vectors"
 msgstr "32 vektör"
-
-

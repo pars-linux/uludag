@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -106,7 +106,9 @@ msgstr "Yeni Plasma Gereçleri İndir"
 
 #: widgetsexplorer/appletsfiltering.cpp:334
 #, kde-format
-msgctxt "%1 is a type of widgets, as defined by e.g. some plasma-packagestructure-*.desktop files"
+msgctxt ""
+"%1 is a type of widgets, as defined by e.g. some plasma-packagestructure-*."
+"desktop files"
 msgid "Download New %1"
 msgstr "Yeni %1 İndir"
 
@@ -139,8 +141,11 @@ msgid "Activity"
 msgstr "Eylem"
 
 #: backgrounddialog.cpp:226
-msgid "This picture of a monitor contains a preview of what the current settings will look like on your desktop."
-msgstr "Bu ekran resmi güncel ayarların masaüstünde nasıl görüntüleneceğini gösterir."
+msgid ""
+"This picture of a monitor contains a preview of what the current settings "
+"will look like on your desktop."
+msgstr ""
+"Bu ekran resmi güncel ayarların masaüstünde nasıl görüntüleneceğini gösterir."
 
 #: backgrounddialog.cpp:246
 msgid "Mouse Actions"
@@ -195,8 +200,12 @@ msgid "Input here..."
 msgstr "Buraya girin..."
 
 #: mouseinputbutton.cpp:71
-msgid "Hold down the modifier keys you want, then click a mouse button or scroll a mouse wheel here"
-msgstr "İstediğiniz değiştirici tuşları basılı tutarken, burada bir fare düğmesine tıklayın veya fare tekerleğini kaydırın"
+msgid ""
+"Hold down the modifier keys you want, then click a mouse button or scroll a "
+"mouse wheel here"
+msgstr ""
+"İstediğiniz değiştirici tuşları basılı tutarken, burada bir fare düğmesine "
+"tıklayın veya fare tekerleğini kaydırın"
 
 #: mousepluginwidget.cpp:46
 msgid "No plugins found, check your installation."
@@ -287,7 +296,9 @@ msgstr "tulliana@gmail.com"
 #~ msgid "Configure..."
 #~ msgstr "Yapılandır..."
 
-#~ msgctxt "%1 is the entity (person, staff, organization...) which recommends the widget"
+#~ msgctxt ""
+#~ "%1 is the entity (person, staff, organization...) which recommends the "
+#~ "widget"
 #~ msgid "Recommended by %1"
 #~ msgstr "%1 tarafından önerildi"
 
@@ -306,17 +317,31 @@ msgstr "tulliana@gmail.com"
 #~ msgid "Close the dialog"
 #~ msgstr "Pencereyi kapat"
 
-#~ msgid "<qt>When clicking <b>Close</b>, this dialog will be closed with no further action taken.</qt>"
-#~ msgstr "<qt><b>Kapat</b> düğmesine tıkladığınızda pencere kapatılacak ve daha fazla işlem yapılmayacak.</qt>"
+#~ msgid ""
+#~ "<qt>When clicking <b>Close</b>, this dialog will be closed with no "
+#~ "further action taken.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Kapat</b> düğmesine tıkladığınızda pencere kapatılacak ve daha "
+#~ "fazla işlem yapılmayacak.</qt>"
 
 #~ msgid "Add selected widgets"
 #~ msgstr "Seçilen programcıkları ekle"
 
-#~ msgid "<qt>When clicking <b>Add Widget</b>, the selected widgets will be added to your desktop.</qt>"
-#~ msgstr "<qt><b>Programcık Ekle</b> düğmesine tıkladığınızda seçilen programcık masaüstünüze eklenecek.</qt>"
+#~ msgid ""
+#~ "<qt>When clicking <b>Add Widget</b>, the selected widgets will be added "
+#~ "to your desktop.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Programcık Ekle</b> düğmesine tıkladığınızda seçilen programcık "
+#~ "masaüstünüze eklenecek.</qt>"
 
 #~ msgid "Install new widgets"
 #~ msgstr "Yeni programcıklar kur"
 
-#~ msgid "<qt>Selecting <b>Get New Widgets</b> will show a window that allows you to download new widgets directly from the Internet, while Install From File allows you to add new widgets from files you have on disk.</qt>"
-#~ msgstr "<qt><b>Yeni Programcıklar Al</b> düğmesine tıkladığınızda İnternet'ten yeni programcıklar alanızı sağlayacak bir pencere açılacak. Dosyadan Kur seçeneği ise diskinizde kayıtlı olan programcıkları kurmanızı sağlar.</qt>"
+#~ msgid ""
+#~ "<qt>Selecting <b>Get New Widgets</b> will show a window that allows you "
+#~ "to download new widgets directly from the Internet, while Install From "
+#~ "File allows you to add new widgets from files you have on disk.</qt>"
+#~ msgstr ""
+#~ "<qt><b>Yeni Programcıklar Al</b> düğmesine tıkladığınızda İnternet'ten "
+#~ "yeni programcıklar alanızı sağlayacak bir pencere açılacak. Dosyadan Kur "
+#~ "seçeneği ise diskinizde kayıtlı olan programcıkları kurmanızı sağlar.</qt>"

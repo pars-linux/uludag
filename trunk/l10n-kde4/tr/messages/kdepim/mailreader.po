@@ -138,10 +138,9 @@ msgstr ""
 "font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Buraya tıklayarak <span "
-"style=\" "
-"font-weight:600;\">arkaplanı</span> değiştirin ve yeni "
-"<span style=\" color:#ff0000;\">rengini</span> <span style=\" font-"
-"style:italic;\">renk seçim penceresinden</span> seçin.</p></body></html>"
+"style=\" font-weight:600;\">arkaplanı</span> değiştirin ve yeni <span style="
+"\" color:#ff0000;\">rengini</span> <span style=\" font-style:italic;\">renk "
+"seçim penceresinden</span> seçin.</p></body></html>"
 
 #. i18n: file: prefs_base.ui:42
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -183,10 +182,9 @@ msgstr ""
 "font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
 "right:0px; -qt-block-indent:0; text-indent:0px;\">Buraya tıklayarak <span "
-"style=\" "
-"font-weight:600;\">önplan</span> rengini değiştirin ve yeni "
-"<span style=\" color:#ff0000;\">rengini</span> <span style=\" font-"
-"style:italic;\">renk seçim penceresinden</span> seçin.</p></body></html>"
+"style=\" font-weight:600;\">önplan</span> rengini değiştirin ve yeni <span "
+"style=\" color:#ff0000;\">rengini</span> <span style=\" font-style:italic;"
+"\">renk seçim penceresinden</span> seçin.</p></body></html>"
 
 #. i18n: file: prefs_base.ui:110
 #. i18n: ectx: property (toolTip), widget (QSpinBox, kcfg_val_time)
@@ -305,4 +303,3 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
-

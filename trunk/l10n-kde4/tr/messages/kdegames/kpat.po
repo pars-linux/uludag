@@ -265,12 +265,16 @@ msgstr "Oyun aralığı başlangıcı (ön tanımlı 0:INT_MAX)"
 
 #: main.cpp:209
 msgid "Game range end (default start:start if start given)"
-msgstr "Oyun aralığı bitişi (ön tanımlı başlangıç:başlangıç eğer başlatma verildiyse)"
+msgstr ""
+"Oyun aralığı bitişi (ön tanımlı başlangıç:başlangıç eğer başlatma verildiyse)"
 
 #: main.cpp:210
 #, kde-format
-msgid "Skip the selection screen and load a particular game type. Valid values are: %1"
-msgstr "Seçim ekranını geç ve belirli bir oyun tipi yükle. Geçerli değerler: %1"
+msgid ""
+"Skip the selection screen and load a particular game type. Valid values are: "
+"%1"
+msgstr ""
+"Seçim ekranını geç ve belirli bir oyun tipi yükle. Geçerli değerler: %1"
 
 #: main.cpp:210
 msgctxt "List separator"
@@ -308,7 +312,8 @@ msgid "Statistics"
 msgstr "İstatistikler"
 
 #: mainwindow.cpp:182
-msgctxt "Take one or more cards from the deck, flip them, and place them in play"
+msgctxt ""
+"Take one or more cards from the deck, flip them, and place them in play"
 msgid "Dra&w"
 msgstr "Çi&z"
 
@@ -361,8 +366,12 @@ msgid "Help &with Current Game"
 msgstr "Mevcut &Oyun için Yardım"
 
 #: mainwindow.cpp:571
-msgid "Enter a deal number (Freecell deals are numbered the same as those in the Freecell FAQ):"
-msgstr "Bir dağıtım numarası girin (Freecell dağıtımları, Freecell SSS içindekilerle aynı şekilde numaralandırılmıştır):"
+msgid ""
+"Enter a deal number (Freecell deals are numbered the same as those in the "
+"Freecell FAQ):"
+msgstr ""
+"Bir dağıtım numarası girin (Freecell dağıtımları, Freecell SSS içindekilerle "
+"aynı şekilde numaralandırılmıştır):"
 
 #: mainwindow.cpp:572
 msgid "Enter a deal number:"
@@ -537,17 +546,22 @@ msgstr "Yukon"
 #~ msgstr "Bu oyun kaybedildi. Yapılacak hareket kalmadı."
 
 #~ msgid ""
-#~ "You are already running an unfinished game. If you abort the old game to start a new one, the old game will be registered as a loss in the statistics file.\n"
+#~ "You are already running an unfinished game. If you abort the old game to "
+#~ "start a new one, the old game will be registered as a loss in the "
+#~ "statistics file.\n"
 #~ "What do you want to do?"
 #~ msgstr ""
-#~ "Henüz bitmemiş bir oyunu çalıştırıyorsunuz. Eğer eski oyundan vazgeçip yeni bir oyun başlatırsanız, eski oyun istatistiklere kaybedilmiş olarak işlenecektir.\n"
+#~ "Henüz bitmemiş bir oyunu çalıştırıyorsunuz. Eğer eski oyundan vazgeçip "
+#~ "yeni bir oyun başlatırsanız, eski oyun istatistiklere kaybedilmiş olarak "
+#~ "işlenecektir.\n"
 #~ "Ne yapmak istersiniz?"
 
 #~ msgid "This game can still be won! Good luck to you."
 #~ msgstr "Bu oyun hala kazanılabilir! İyi şanslar."
 
 #~ msgid "Timeout while playing - unknown if it can be won"
-#~ msgstr "Oynanırken zamanaşımı oluştu - kazanılıp kazanılamayacağı bilinmiyor"
+#~ msgstr ""
+#~ "Oynanırken zamanaşımı oluştu - kazanılıp kazanılamayacağı bilinmiyor"
 
 #~ msgid "Options"
 #~ msgstr "Seçenekler"
@@ -618,8 +632,12 @@ msgstr "Yukon"
 #~ msgid "&Animation on Startup"
 #~ msgstr "&Açılışta Canlandırma Göster"
 
-#~ msgid "The cards you have chosen have a different size than the ones you are currently using. This requires the current game to be restarted."
-#~ msgstr "Yüklemek istediğiniz kard şu anda kullanmakta olduğunuz kart boyutundan faklı bir boyutta. Bu istek Oyunun Yeniden başlatılmasını Gerektiriyor!"
+#~ msgid ""
+#~ "The cards you have chosen have a different size than the ones you are "
+#~ "currently using. This requires the current game to be restarted."
+#~ msgstr ""
+#~ "Yüklemek istediğiniz kard şu anda kullanmakta olduğunuz kart boyutundan "
+#~ "faklı bir boyutta. Bu istek Oyunun Yeniden başlatılmasını Gerektiriyor!"
 
 #~ msgid "<qt>Couldn't load wallpaper<br/>%1</qt>"
 #~ msgstr "<qt>Duvar kağıdı yüklenemedi<br/>%1</qt>"

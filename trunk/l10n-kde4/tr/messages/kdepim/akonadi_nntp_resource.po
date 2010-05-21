@@ -229,4 +229,3 @@ msgstr "Haber gruplarını yerel olarak yeniden adlandırmaya izin ver"
 #: rc.cpp:102
 msgid "Last update of the newsgroup list"
 msgstr "Haber grubu listesinin en son güncellendiği zaman"
-

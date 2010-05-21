@@ -71,10 +71,9 @@ msgid ""
 "you have entered are incomplete. Please review your email settings and try "
 "again."
 msgstr ""
-"freedb gönderimlerde HTTP kullanmaya ayarlandı çünkü girmiş olduğunuz "
-"e-posta "
-"detayları tamamlanmamış. Lütfen e-posta ayarlarınızı tekrar kontrol edin ve "
-"yeniden deneyin."
+"freedb gönderimlerde HTTP kullanmaya ayarlandı çünkü girmiş olduğunuz e-"
+"posta detayları tamamlanmamış. Lütfen e-posta ayarlarınızı tekrar kontrol "
+"edin ve yeniden deneyin."
 
 #: kcmcddb.cpp:93
 msgid "Incorrect Email Settings"

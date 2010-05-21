@@ -60,4 +60,3 @@ msgstr "Genel"
 msgid " minute"
 msgid_plural " minutes"
 msgstr[0] " dakika"
-

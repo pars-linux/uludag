@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-10 01:21+0100\n"
+"POT-Creation-Date: 2010-05-20 01:22+0200\n"
 "PO-Revision-Date: 2010-05-13 13:45+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgstr "Yapılandır"
 
 #: dialogviewconfiguration.cpp:167
 msgid "Configuration of the channels."
-msgstr "Kanalların yapılandırması."
+msgstr "Kanalların yapılandırılması."
 
 #: dialogviewconfiguration.cpp:228
 msgid "Available channels"
@@ -58,44 +58,48 @@ msgstr "Kullanılabilir kanallar"
 msgid "Visible channels"
 msgstr "Görünür kanallar"
 
-#: kmix.cpp:122
+#: kmix.cpp:121
 msgid "Hardware &Information"
 msgstr "Donanım &Bilgisi"
 
-#: kmix.cpp:125 kmixdockwidget.cpp:382
+#: kmix.cpp:124 kmixdockwidget.cpp:382
 msgid "Hide Mixer Window"
 msgstr "Karıştırıcı Penceresini Gizle"
 
-#: kmix.cpp:129
+#: kmix.cpp:128
 msgid "Configure &Channels..."
 msgstr "&Kanalları Yapılandır..."
 
-#: kmix.cpp:132 kmixdockwidget.cpp:103
+#: kmix.cpp:131 kmixdockwidget.cpp:103
 msgid "Select Master Channel..."
 msgstr "Ana Kanalı Seçin..."
 
-#: kmix.cpp:136 mdwslider.cpp:111
+#: kmix.cpp:135 mdwslider.cpp:111
 msgid "Increase Volume"
 msgstr "Sesi Yükselt"
 
-#: kmix.cpp:141 mdwslider.cpp:122
+#: kmix.cpp:140 mdwslider.cpp:122
 msgid "Decrease Volume"
 msgstr "Sesi Alçalt"
 
-#: kmix.cpp:146 mdwslider.cpp:365
+#: kmix.cpp:145 mdwslider.cpp:365
 msgid "Mute"
 msgstr "Sessiz"
 
-#: kmix.cpp:494
+#: kmix.cpp:493
 #, kde-format
-msgid "The soundcard containing the master device was unplugged. Changing to control %1 on card %2."
-msgstr "Ana aygıtı içeren ses kartı çıkarıldı. %2 kartının üzerindeki %1 kontrolüne geçiliyor."
+msgid ""
+"The soundcard containing the master device was unplugged. Changing to "
+"control %1 on card %2."
+msgstr ""
+"Ana aygıtı içeren ses kartı çıkarıldı. %2 kartının üzerindeki %1 kontrolüne "
+"geçiliyor."
 
-#: kmix.cpp:503
+#: kmix.cpp:502
 msgid "The last soundcard was unplugged."
 msgstr "Son ses kartı çıkartıldı."
 
-#: kmix.cpp:772
+#: kmix.cpp:771
 msgid "Mixer Hardware Information"
 msgstr "Karıştırıcı Donanım Bilgisi"
 
@@ -287,7 +291,8 @@ msgid "Mute and volume preview, other fixes"
 msgstr "Diğer güçlükler, sessiz ve ses önizlemesi"
 
 #: main.cpp:58
-msgid "Inhibits the unhiding of the KMix main window, if KMix is already running."
+msgid ""
+"Inhibits the unhiding of the KMix main window, if KMix is already running."
 msgstr "KMix çalışıyorsa KMix ana penceresinin gösterilmesini engeller."
 
 #: mdwenum.cpp:60 mdwslider.cpp:79 mdwswitch.cpp:58
@@ -399,23 +404,43 @@ msgstr ""
 
 #: mixer_backend.cpp:201
 msgid "kmix: Unknown error. Please report how you produced this error."
-msgstr "kmix: Bilinmeyen hata. Lütfen bu hatayı nasıl meydana getirdiğinizi bildiriniz."
+msgstr ""
+"kmix: Bilinmeyen hata. Lütfen bu hatayı nasıl meydana getirdiğinizi "
+"bildiriniz."
 
 #: mixer_backend_i18n.cpp:24
 msgid "Recording level of the microphone input."
 msgstr "Mikrofon girişinin kayıt seviyesi"
 
 #: mixer_backend_i18n.cpp:25
-msgid "Controls the volume of the front speakers or all speakers (depending on your soundcard model). If you use a digital output, you might need to also use other controls like ADC or DAC. For headphones, soundcards often supply a Headphone control."
-msgstr "Ses kartı modelinize bağlı olarak, ön veya tüm hoparlörlerin ses seviyesini denetler. Sayısal bir çıkış kullanıyorsanız, ADC veya DAC gibi diğer denetimleri de kullanmanız gerekebilir. Kulaklıklar için, ses kartları genellikle ayrı bir Kulaklık denetimi sunmaktadır."
+msgid ""
+"Controls the volume of the front speakers or all speakers (depending on your "
+"soundcard model). If you use a digital output, you might need to also use "
+"other controls like ADC or DAC. For headphones, soundcards often supply a "
+"Headphone control."
+msgstr ""
+"Ses kartı modelinize bağlı olarak, ön veya tüm hoparlörlerin ses seviyesini "
+"denetler. Sayısal bir çıkış kullanıyorsanız, ADC veya DAC gibi diğer "
+"denetimleri de kullanmanız gerekebilir. Kulaklıklar için, ses kartları "
+"genellikle ayrı bir Kulaklık denetimi sunmaktadır."
 
 #: mixer_backend_i18n.cpp:26
-msgid "Most media, such as MP3s or Videos, are played back using the PCM channel. As such, the playback volume of such media is controlled by both this and the Master or Headphone channels."
-msgstr "MP3 veya video gibi çoğu ortam, PCM kanalı kullanılarak oynatılır. Bu ortamların yürütme ses seviyesi, hem PCM kanalı hem de Ana kanal (Master) veya Kulaklık kanalı tarafından denetlenir."
+msgid ""
+"Most media, such as MP3s or Videos, are played back using the PCM channel. "
+"As such, the playback volume of such media is controlled by both this and "
+"the Master or Headphone channels."
+msgstr ""
+"MP3 veya video gibi çoğu ortam, PCM kanalı kullanılarak oynatılır. Bu "
+"ortamların yürütme ses seviyesi, hem PCM kanalı hem de Ana kanal (Master) "
+"veya Kulaklık kanalı tarafından denetlenir."
 
 #: mixer_backend_i18n.cpp:27
-msgid "Controls the headphone volume. Some soundcards include a switch that must be manually activated to enable the headphone output."
-msgstr "Kulaklık ses seviyesini denetler. Bazı ses kartlarında, kulaklık çıkışının kullanılabilmesi için, elle etkinleştirilmesi gereken bir anahtar mevcuttur."
+msgid ""
+"Controls the headphone volume. Some soundcards include a switch that must be "
+"manually activated to enable the headphone output."
+msgstr ""
+"Kulaklık ses seviyesini denetler. Bazı ses kartlarında, kulaklık çıkışının "
+"kullanılabilmesi için, elle etkinleştirilmesi gereken bir anahtar mevcuttur."
 
 #: mixer_backend_i18n.cpp:28
 msgid "---"
@@ -601,11 +626,11 @@ msgstr ""
 "kmix: Karıştırıcı aygıtına erişim izniniz yok.\n"
 "/dev/audioctl'ye erişim izni için lütfen sistem yöneticinize başvurun."
 
-#: mixertoolbox.cpp:200
+#: mixertoolbox.cpp:203
 msgid "Sound drivers supported:"
 msgstr "Desteklenen ses sürücüleri:"
 
-#: mixertoolbox.cpp:201
+#: mixertoolbox.cpp:204
 msgid "Sound drivers used:"
 msgstr "Kullanılan ses sürücüleri:"
 
@@ -683,7 +708,9 @@ msgstr "Serdar Soytetir, Onur Küçük, Ayşe Genç, H. İbrahim Güngör"
 #: rc.cpp:35
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr, ibrahim@pardus.org.tr"
+msgstr ""
+"tulliana@gmail.com, onur@uludag.org.tr, ayse@uludag.org.tr, ibrahim@pardus."
+"org.tr"
 
 #: viewbase.cpp:76
 msgid "&Channels"
@@ -716,8 +743,12 @@ msgstr "Karıştırıcı"
 #~ msgid "Select Mixer"
 #~ msgstr "Karıştırıcı Seç"
 
-#~ msgid "For detailed credits, please refer to the About information of the KMix program"
-#~ msgstr "Ayrıntılı bilgi için, lütfen Kmix uygulamasının Hakkında bilgisine başvurun"
+#~ msgid ""
+#~ "For detailed credits, please refer to the About information of the KMix "
+#~ "program"
+#~ msgstr ""
+#~ "Ayrıntılı bilgi için, lütfen Kmix uygulamasının Hakkında bilgisine "
+#~ "başvurun"
 
 #~ msgid "Mixers"
 #~ msgstr "Karıştırıcılar"

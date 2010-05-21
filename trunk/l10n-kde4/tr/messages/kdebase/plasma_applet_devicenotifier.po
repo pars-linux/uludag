@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_devicenotifier\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-12 01:18+0100\n"
+"POT-Creation-Date: 2010-05-18 01:24+0200\n"
 "PO-Revision-Date: 2010-05-09 00:37+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: deviceitem.cpp:272
+#: deviceitem.cpp:271
 msgid "Click to safely remove this device from the computer."
 msgstr "Bu aygıtı güvenli bir şekilde kaldırmak için tıklayın."
 
-#: deviceitem.cpp:273
+#: deviceitem.cpp:272
 msgid "Device is plugged in and can be accessed by applications."
 msgstr "Aygıt takıldı ve uygulamalar tarafından erişilebilir durumda."
 
-#: deviceitem.cpp:275
+#: deviceitem.cpp:274
 msgid "Click to access this device from other applications."
 msgstr "Bu aygıta diğer uygulamalardan erişmek için tıklayın."
 
-#: deviceitem.cpp:276
+#: deviceitem.cpp:275
 msgid "Device is plugged in, but not mounted for access yet."
 msgstr "Aygıt takıldı ama erişilmek üzere bağlanmadı."
 
-#: deviceitem.cpp:367
+#: deviceitem.cpp:366
 #, kde-format
 msgctxt "@info:status Free disk space"
 msgid "%1 free"

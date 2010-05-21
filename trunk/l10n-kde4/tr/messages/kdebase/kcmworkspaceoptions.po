@@ -81,5 +81,3 @@ msgstr "Marco Martin"
 #: workspaceoptions.cpp:51
 msgid "Maintainer"
 msgstr "Projeyi Yürüten"
-
-

@@ -1,12 +1,12 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_systemtray\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-19 01:23+0100\n"
+"POT-Creation-Date: 2010-05-07 01:21+0200\n"
 "PO-Revision-Date: 2009-11-19 16:39+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -95,7 +95,8 @@ msgstr "%1 (%2 kaldı)"
 
 #: ui/jobwidget.cpp:186
 #, kde-format
-msgctxt "%1 is the name of the job, can be things like Copying, deleting, moving"
+msgctxt ""
+"%1 is the name of the job, can be things like Copying, deleting, moving"
 msgid "%1 [Paused]"
 msgstr "%1 [Duraklatıldı]"
 
@@ -105,7 +106,8 @@ msgstr "Duraklatıldı"
 
 #: ui/jobwidget.cpp:191
 #, kde-format
-msgctxt "%1 is the name of the job, can be things like Copying, deleting, moving"
+msgctxt ""
+"%1 is the name of the job, can be things like Copying, deleting, moving"
 msgid "%1 [Finished]"
 msgstr "%1 [Tamamlandı]"
 
@@ -173,12 +175,12 @@ msgctxt "Item is always visible in the systray"
 msgid "Always Visible"
 msgstr "Her Zaman Görünür"
 
-#: ui/applet.cpp:938
+#: ui/applet.cpp:935
 #, kde-format
 msgid "%1 [Finished]"
 msgstr "%1 [Tamamlandı]"
 
-#: ui/applet.cpp:976
+#: ui/applet.cpp:973
 msgid "Recently Completed Jobs"
 msgstr "Son Tamamlanan Görevler"
 
@@ -289,16 +291,21 @@ msgstr "Donanım denetimi"
 #~ msgid "clear all"
 #~ msgstr "tümünü temizle"
 
-#~ msgctxt "%1 is the name of the job, can be things like Copying, deleting, moving"
+#~ msgctxt ""
+#~ "%1 is the name of the job, can be things like Copying, deleting, moving"
 #~ msgid "(paused) %1"
 #~ msgstr "(duraklatıldı) %1"
 
-#~ msgctxt "%1 is the name of the job, can be things like Copying, deleting, moving"
+#~ msgctxt ""
+#~ "%1 is the name of the job, can be things like Copying, deleting, moving"
 #~ msgid "(finished) %1"
 #~ msgstr "(tamamlandı) %1"
 
-#~ msgid "Select the types of application feedback that should be integrated with the system tray:"
-#~ msgstr "Sistem çekmecesi ile bütünleştirilecek uygulama geribildirimlerini seç:"
+#~ msgid ""
+#~ "Select the types of application feedback that should be integrated with "
+#~ "the system tray:"
+#~ msgstr ""
+#~ "Sistem çekmecesi ile bütünleştirilecek uygulama geribildirimlerini seç:"
 
 #~ msgid "Notifications"
 #~ msgstr "Bildirimler"
