@@ -56,8 +56,7 @@ class Widget(QtGui.QWidget, ScreenWidget):
             self.setRowColor(self.ui.tableWidget, labelItem)
             self.ui.tableWidget.setItem(row, 0, labelItem)
 
-            _value = QtCore.QVariant(value).toString()
-            dataItem = QtGui.QTableWidgetItem(_value)
+            dataItem = QtGui.QTableWidgetItem(value.__str__())
             self.setRowColor(self.ui.tableWidget, dataItem)
             self.ui.tableWidget.setItem(row, 1, dataItem)
 
