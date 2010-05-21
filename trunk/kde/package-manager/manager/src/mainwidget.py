@@ -246,6 +246,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             QtGui.qApp.exit()
 
     def notifyFinished(self):
+        # FIXME for silence mode in Kde 4
         # Since we can not identify the caller yet
         if not self.operation.totalPackages:
             return
