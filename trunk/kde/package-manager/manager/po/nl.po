@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 09:36+0300\n"
+"POT-Creation-Date: 2010-05-21 10:03+0300\n"
 "PO-Revision-Date: 2010-05-20 20:35+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -42,7 +42,7 @@ msgstr ""
 "pakketten herstart de volgende diensten :"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:215 .tmp/mainwidget.py:218
-#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
+#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224
 msgid "Pisi Error"
 msgstr "Pisi-fout"
 
@@ -249,19 +249,19 @@ msgstr "Beveiligingsopwaarderingen"
 msgid "Critical Updates"
 msgstr "Kritieke opwaarderingen"
 
-#: .tmp/mainwidget.py:209 .tmp/pm-install.py:91
+#: .tmp/mainwidget.py:209
 msgid "Network Error"
 msgstr "Netwerkfout"
 
-#: .tmp/mainwidget.py:210 .tmp/pm-install.py:93
+#: .tmp/mainwidget.py:210
 msgid "Please check your network connections and try again."
 msgstr "Controleer de netwerkverbinding en probeer het opnieuw."
 
-#: .tmp/mainwidget.py:212 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:212
 msgid "Authorization Error"
 msgstr "Autorisatiefout"
 
-#: .tmp/mainwidget.py:213 .tmp/pm-install.py:97
+#: .tmp/mainwidget.py:213
 msgid "You are not authorized for this operation."
 msgstr "Geen autorisatie voor deze operatie."
 
@@ -739,26 +739,26 @@ msgstr "Geïnstalleerde versie:"
 msgid "Package Manager Help"
 msgstr "Pakketbeheer help"
 
-#: .tmp/pm-install.py:48
-msgid "Succesfully finished installing %1"
-msgstr "Installatie van %1 is gelukt"
-
-#: .tmp/pm-install.py:52
-msgid "Succesfully finished installing packages"
-msgstr "Succesvolle installatie van pakketten is beëindigd"
-
-#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
-#: .tmp/pm-install.py:73
-msgid "%p%"
-msgstr "%p%"
-
-#: .tmp/pm-install.py:151
-msgid "Summary"
-msgstr "Samenvatting"
+#: .tmp/pm-install.py:47
+#, fuzzy
+msgid "%prog packages_to_install"
+msgstr "Te installeren pakketten"
 
 #: .tmp/main.py:79
 msgid "Show main window"
 msgstr "Hoofdvenster tonen"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installatie van %1 is gelukt"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Samenvatting"
 
 #~ msgid "Bandwidth limit:"
 #~ msgstr "Bandbreedtelimiet:"
@@ -815,9 +815,6 @@ msgstr "Hoofdvenster tonen"
 
 #~ msgid "pm-install"
 #~ msgstr "pm-installeer"
-
-#~ msgid "Packages to install"
-#~ msgstr "Te installeren pakketten"
 
 #~ msgid "Package Installer is already started!"
 #~ msgstr "Pakket-installeerder is reeds gestart!"

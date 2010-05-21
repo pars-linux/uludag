@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 09:36+0300\n"
+"POT-Creation-Date: 2010-05-21 10:03+0300\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgstr ""
 "servisleriniyeniden başlatmanız gerekiyor:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:215 .tmp/mainwidget.py:218
-#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
+#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
 
@@ -250,19 +250,19 @@ msgstr "Güvenlik Güncellemeleri"
 msgid "Critical Updates"
 msgstr "Kritik Güncellemeler"
 
-#: .tmp/mainwidget.py:209 .tmp/pm-install.py:91
+#: .tmp/mainwidget.py:209
 msgid "Network Error"
 msgstr "Ağ Hatası"
 
-#: .tmp/mainwidget.py:210 .tmp/pm-install.py:93
+#: .tmp/mainwidget.py:210
 msgid "Please check your network connections and try again."
 msgstr "Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
-#: .tmp/mainwidget.py:212 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:212
 msgid "Authorization Error"
 msgstr "Yetkilendirme Hatası"
 
-#: .tmp/mainwidget.py:213 .tmp/pm-install.py:97
+#: .tmp/mainwidget.py:213
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
@@ -730,26 +730,25 @@ msgstr "Kurulu Sürüm:"
 msgid "Package Manager Help"
 msgstr "Paket Yöneticisi Yardım"
 
-#: .tmp/pm-install.py:48
-msgid "Succesfully finished installing %1"
-msgstr "%1 başarılı bir şekilde kuruldu"
-
-#: .tmp/pm-install.py:52
-msgid "Succesfully finished installing packages"
-msgstr "Paketlerin kurulumu tamamlandı"
-
-#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
-#: .tmp/pm-install.py:73
-msgid "%p%"
-msgstr "%%p"
-
-#: .tmp/pm-install.py:151
-msgid "Summary"
-msgstr "Özet"
+#: .tmp/pm-install.py:47
+msgid "%prog packages_to_install"
+msgstr "%prog kurulacak_paketler"
 
 #: .tmp/main.py:79
 msgid "Show main window"
 msgstr "Ana pencereyi göster"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
+
+#~ msgid "%p%"
+#~ msgstr "%%p"
+
+#~ msgid "Summary"
+#~ msgstr "Özet"
 
 #~ msgid "Bandwidth limit:"
 #~ msgstr "Bant genişliği sınırı:"
@@ -806,9 +805,6 @@ msgstr "Ana pencereyi göster"
 
 #~ msgid "pm-install"
 #~ msgstr "pm-install"
-
-#~ msgid "Packages to install"
-#~ msgstr "Kurulacak paketler"
 
 #~ msgid "Package Installer is already started!"
 #~ msgstr "Paket Kurucusu zaten çalışıyor!"

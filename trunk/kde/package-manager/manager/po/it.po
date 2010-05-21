@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 09:36+0300\n"
+"POT-Creation-Date: 2010-05-21 10:03+0300\n"
 "PO-Revision-Date: 2010-05-16 14:44+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -44,7 +44,7 @@ msgstr ""
 "selezionati abbiano efetto:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:215 .tmp/mainwidget.py:218
-#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
+#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224
 msgid "Pisi Error"
 msgstr "Errore PiSi!"
 
@@ -251,19 +251,19 @@ msgstr "Aggiornamenti di sicurezza"
 msgid "Critical Updates"
 msgstr "Aggiornamenti critici"
 
-#: .tmp/mainwidget.py:209 .tmp/pm-install.py:91
+#: .tmp/mainwidget.py:209
 msgid "Network Error"
 msgstr "Errore di rete"
 
-#: .tmp/mainwidget.py:210 .tmp/pm-install.py:93
+#: .tmp/mainwidget.py:210
 msgid "Please check your network connections and try again."
 msgstr "Per favore, controlla la tua connessione internet e prova nuovamente."
 
-#: .tmp/mainwidget.py:212 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:212
 msgid "Authorization Error"
 msgstr "Errore di autorizzazione"
 
-#: .tmp/mainwidget.py:213 .tmp/pm-install.py:97
+#: .tmp/mainwidget.py:213
 msgid "You are not authorized for this operation."
 msgstr "Non sei autorizzato per eseguire questa operazione."
 
@@ -737,26 +737,26 @@ msgstr "Versione Installata:"
 msgid "Package Manager Help"
 msgstr "Guida del Gestore Pacchetti"
 
-#: .tmp/pm-install.py:48
-msgid "Succesfully finished installing %1"
-msgstr "Installazione di %1 completata con successo"
-
-#: .tmp/pm-install.py:52
-msgid "Succesfully finished installing packages"
-msgstr "I pacchetti sono stati installati con successo"
-
-#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
-#: .tmp/pm-install.py:73
-msgid "%p%"
-msgstr "%p%"
-
-#: .tmp/pm-install.py:151
-msgid "Summary"
-msgstr "Sommario"
+#: .tmp/pm-install.py:47
+#, fuzzy
+msgid "%prog packages_to_install"
+msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 
 #: .tmp/main.py:79
 msgid "Show main window"
 msgstr "Mostra finestra principale"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installazione di %1 completata con successo"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "I pacchetti sono stati installati con successo"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Sommario"
 
 #~ msgid "Bandwidth limit:"
 #~ msgstr "Limite di banda:"
@@ -810,9 +810,6 @@ msgstr "Mostra finestra principale"
 
 #~ msgid "pm-install"
 #~ msgstr "installato"
-
-#~ msgid "Packages to install"
-#~ msgstr "Seleziona il/i pacchetto/i per l'installazione:"
 
 #~ msgid "Reverse package selections"
 #~ msgstr "Inverti selezione pacchetti"

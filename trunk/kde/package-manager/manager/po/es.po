@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 09:36+0300\n"
+"POT-Creation-Date: 2010-05-21 10:03+0300\n"
 "PO-Revision-Date: 2010-01-08 21:32-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -43,7 +43,7 @@ msgstr ""
 "actualizaciones de los siguientes paquetes tengan efecto:"
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:215 .tmp/mainwidget.py:218
-#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
+#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224
 msgid "Pisi Error"
 msgstr "Error Pisi"
 
@@ -248,19 +248,19 @@ msgstr "Actualizaciones de seguridad"
 msgid "Critical Updates"
 msgstr "Actualizaciones críticas"
 
-#: .tmp/mainwidget.py:209 .tmp/pm-install.py:91
+#: .tmp/mainwidget.py:209
 msgid "Network Error"
 msgstr "Error de red"
 
-#: .tmp/mainwidget.py:210 .tmp/pm-install.py:93
+#: .tmp/mainwidget.py:210
 msgid "Please check your network connections and try again."
 msgstr "Por favor verifique su conexión de red y luego intente de nuevo."
 
-#: .tmp/mainwidget.py:212 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:212
 msgid "Authorization Error"
 msgstr "Error de autenticación"
 
-#: .tmp/mainwidget.py:213 .tmp/pm-install.py:97
+#: .tmp/mainwidget.py:213
 msgid "You are not authorized for this operation."
 msgstr "No tiene los permisos para esta operación."
 
@@ -747,28 +747,25 @@ msgstr "Versión instalada:"
 msgid "Package Manager Help"
 msgstr "Ayuda del Administrador de Paquetes"
 
-# favor revisar contexto..
-#: .tmp/pm-install.py:48
-msgid "Succesfully finished installing %1"
-msgstr "Instalación de %1 terminado con éxito"
-
-# favor revisar contexto..
-#: .tmp/pm-install.py:52
-msgid "Succesfully finished installing packages"
-msgstr "Instalación terminada con éxito"
-
-#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
-#: .tmp/pm-install.py:73
-msgid "%p%"
-msgstr ""
-
-#: .tmp/pm-install.py:151
-msgid "Summary"
-msgstr "Resumen"
+#: .tmp/pm-install.py:47
+#, fuzzy
+msgid "%prog packages_to_install"
+msgstr "Paquetes a instalar"
 
 #: .tmp/main.py:79
 msgid "Show main window"
 msgstr "Mostrar Ventana principal"
+
+# favor revisar contexto..
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Instalación de %1 terminado con éxito"
+
+# favor revisar contexto..
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Instalación terminada con éxito"
+
+#~ msgid "Summary"
+#~ msgstr "Resumen"
 
 #~ msgid "Bandwidth limit:"
 #~ msgstr "Ancho de banda máximo:"
@@ -819,9 +816,6 @@ msgstr "Mostrar Ventana principal"
 
 #~ msgid "Installing %1"
 #~ msgstr "Instalando %1"
-
-#~ msgid "Packages to install"
-#~ msgstr "Paquetes a instalar"
 
 #~ msgid "Package Installer is already started!"
 #~ msgstr "Instalador de Paquetes ya se está ejecutando !"
