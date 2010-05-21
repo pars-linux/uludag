@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     from optparse import OptionParser
 
-    usage = ctx.i18n("%prog packages_to_install")
+    usage = ctx.Pds.i18n("%prog packages_to_install")
     parser = OptionParser(usage=usage)
     args = filter(lambda x: not x.startswith('-'), sys.argv[1:])
     if len(sys.argv) > 1:
