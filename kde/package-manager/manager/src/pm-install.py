@@ -61,6 +61,7 @@ if __name__ == '__main__':
         setSystemLocale()
         manager = MainWindow(app, silence = True)
 
+        manager.centralWidget().state._selected_packages = args
         manager.centralWidget().state.operationAction(args, silence = True)
         manager.centralWidget().progressDialog.show()
 
