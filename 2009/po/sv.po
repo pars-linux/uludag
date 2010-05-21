@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-20 15:10+0300\n"
-"PO-Revision-Date: 2010-05-20 07:14+0200\n"
+"PO-Revision-Date: 2010-05-21 15:39+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -1228,9 +1228,8 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your installation medium"
-msgstr "Kontrollera ditt media"
+msgstr "Kontrollera ditt installationsmedia"
 
 #: yali4/gui/ScrCheckCD.py:30
 msgid "To ignore medium corruptions you can check your packages integrity..."
@@ -1506,7 +1505,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Automatisk eller manuell partitionering..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1540,8 +1538,8 @@ msgstr ""
 "</p>\n"
 "<p>Automatisk partitionering formaterar automatiskt det valda området och "
 "installerar\n"
-"Pardus 2009.1. Om du vill kan du partitionera för hand eller låta Pardus "
-"2009.1 skapa\n"
+"Pardus 2009.2. Om du vill kan du partitionera för hand eller låta Pardus "
+"2009.2 skapa\n"
 "en ny partition för installationen.</p>\n"
 "<p>\n"
 "Se Pardus installations- och användarguide för mer information om "
