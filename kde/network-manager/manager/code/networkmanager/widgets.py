@@ -290,7 +290,7 @@ class APPopup(QtGui.QMenu):
         self.hide()
         data = self.listWidget.itemWidget(item).data
         self.parent.ui.lineRemote.setText(data['remote'])
-        self.parent.ui.comboSecurityTypes.setCurrentIndex(self.parent.ui.comboSecurityTypes.findData(QVariant(data['encryption'])))
+        self.parent.ui.comboSecurityTypes.setCurrentIndex(self.parent.ui.comboSecurityTypes.findData(QVariant(unicode(data['encryption']))))
 
     def fillList(self, package, exception, args):
         if not exception:
