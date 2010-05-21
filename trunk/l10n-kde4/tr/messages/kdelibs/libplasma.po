@@ -450,7 +450,7 @@ msgid ""
 "Click to access configuration options and controls, or to add more widgets "
 "to the %1."
 msgstr ""
-"%1'e daha fazla programcık eklemek veya yapılandırma seçenekleri ve "
+"%1'ne daha fazla programcık eklemek veya yapılandırma seçenekleri ve "
 "denetimlerine ulaşmak için tıklayın."
 
 #: private/packages.cpp:42 private/packages.cpp:168
