@@ -177,4 +177,3 @@ msgstr "Ömer Fadıl USTA, H. İbrahim Güngör"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "omer_fad@hotmail.com, ibrahim@pardus.org.tr"
-

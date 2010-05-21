@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdegames\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 23:29+0000\n"
+"POT-Creation-Date: 2010-05-01 23:31+0000\n"
 "PO-Revision-Date: 2010-04-28 14:21+0300\n"
 "Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -104,55 +104,49 @@ msgctxt "Name"
 msgid "Arena"
 msgstr "Arena"
 
-#: granatier/arenas/clanbomber_Arena.desktop:43
-#: granatier/arenas/clanbomber_Big_Block.desktop:33
-#: granatier/arenas/clanbomber_Big_Standard.desktop:30
-#: granatier/arenas/clanbomber_Blast_Matrix.desktop:32
-#: granatier/arenas/clanbomber_Bloody_Ring.desktop:32
-#: granatier/arenas/clanbomber_Boiling_Egg.desktop:32
-#: granatier/arenas/clanbomber_Bomb_Attack.desktop:32
-#: granatier/arenas/clanbomber_Broken_Heart.desktop:32
-#: granatier/arenas/clanbomber_Crammed.desktop:32
-#: granatier/arenas/clanbomber_Death_Corridor.desktop:32
-#: granatier/arenas/clanbomber_Dilemma.desktop:32
-#: granatier/arenas/clanbomber_FearCircle.desktop:32
-#: granatier/arenas/clanbomber_FearCircle_Remix.desktop:32
-#: granatier/arenas/clanbomber_FireWheels.desktop:32
-#: granatier/arenas/clanbomber_Football.desktop:32
-#: granatier/arenas/clanbomber_Four_Instance.desktop:32
-#: granatier/arenas/clanbomber_Ghostbear.desktop:32
-#: granatier/arenas/clanbomber_Hard_Work.desktop:33
-#: granatier/arenas/clanbomber_Hole_Run.desktop:32
-#: granatier/arenas/clanbomber_Huge_Standard.desktop:31
-#: granatier/arenas/clanbomber_Juicy_Lucy.desktop:32
-#: granatier/arenas/clanbomber_Kitchen.desktop:32
-#: granatier/arenas/clanbomber_Meeting.desktop:32
-#: granatier/arenas/clanbomber_MungoBane.desktop:32
-#: granatier/arenas/clanbomber_Obstacle_Race.desktop:32
-#: granatier/arenas/clanbomber_Overkill.desktop:32
-#: granatier/arenas/clanbomber_Prison_Cells.desktop:32
-#: granatier/arenas/clanbomber_Redirection.desktop:32
-#: granatier/arenas/clanbomber_Sixty_Nine.desktop:32
-#: granatier/arenas/clanbomber_Small_Standard.desktop:31
-#: granatier/arenas/clanbomber_Snake_Race.desktop:32
-#: granatier/arenas/clanbomber_Tiny_Standard.desktop:30
-#: granatier/arenas/clanbomber_Whole_Mess.desktop:31
-#| msgctxt "Name"
-#| msgid "Clanbomber"
+#: granatier/arenas/clanbomber_Arena.desktop:44
+#: granatier/arenas/clanbomber_Big_Block.desktop:34
+#: granatier/arenas/clanbomber_Big_Standard.desktop:31
+#: granatier/arenas/clanbomber_Blast_Matrix.desktop:33
+#: granatier/arenas/clanbomber_Bloody_Ring.desktop:33
+#: granatier/arenas/clanbomber_Boiling_Egg.desktop:34
+#: granatier/arenas/clanbomber_Bomb_Attack.desktop:33
+#: granatier/arenas/clanbomber_Broken_Heart.desktop:33
+#: granatier/arenas/clanbomber_Crammed.desktop:33
+#: granatier/arenas/clanbomber_Death_Corridor.desktop:34
+#: granatier/arenas/clanbomber_Dilemma.desktop:34
+#: granatier/arenas/clanbomber_FearCircle.desktop:33
+#: granatier/arenas/clanbomber_FearCircle_Remix.desktop:33
+#: granatier/arenas/clanbomber_FireWheels.desktop:33
+#: granatier/arenas/clanbomber_Football.desktop:33
+#: granatier/arenas/clanbomber_Four_Instance.desktop:33
+#: granatier/arenas/clanbomber_Ghostbear.desktop:33
+#: granatier/arenas/clanbomber_Hard_Work.desktop:34
+#: granatier/arenas/clanbomber_Hole_Run.desktop:33
+#: granatier/arenas/clanbomber_Huge_Standard.desktop:32
+#: granatier/arenas/clanbomber_Juicy_Lucy.desktop:33
+#: granatier/arenas/clanbomber_Kitchen.desktop:34
+#: granatier/arenas/clanbomber_Meeting.desktop:33
+#: granatier/arenas/clanbomber_MungoBane.desktop:33
+#: granatier/arenas/clanbomber_Obstacle_Race.desktop:33
+#: granatier/arenas/clanbomber_Overkill.desktop:33
+#: granatier/arenas/clanbomber_Prison_Cells.desktop:33
+#: granatier/arenas/clanbomber_Redirection.desktop:33
+#: granatier/arenas/clanbomber_Sixty_Nine.desktop:34
+#: granatier/arenas/clanbomber_Small_Standard.desktop:32
+#: granatier/arenas/clanbomber_Snake_Race.desktop:33
+#: granatier/arenas/clanbomber_Tiny_Standard.desktop:31
+#: granatier/arenas/clanbomber_Whole_Mess.desktop:32
 msgctxt "Description"
 msgid "Clanbomber Import"
 msgstr "Clanbomber İçe Aktar"
 
 #: granatier/arenas/clanbomber_Big_Block.desktop:2
-#| msgctxt "Name"
-#| msgid "KBlocks"
 msgctxt "Name"
 msgid "Big Block"
 msgstr "KBlock"
 
 #: granatier/arenas/clanbomber_Big_Standard.desktop:2
-#| msgctxt "Name"
-#| msgid "Clanbomber"
 msgctxt "Name"
 msgid "Clanbomber Big Standard"
 msgstr "Clanbomber Büyük Standardı"
@@ -183,8 +177,6 @@ msgid "Broken Heart"
 msgstr "Kırık Kalp"
 
 #: granatier/arenas/clanbomber_Crammed.desktop:2
-#| msgctxt "GenericName"
-#| msgid "Card Game"
 msgctxt "Name"
 msgid "Crammed"
 msgstr "Tıka basa"
@@ -220,8 +212,6 @@ msgid "Football"
 msgstr "Futbol"
 
 #: granatier/arenas/clanbomber_Four_Instance.desktop:2
-#| msgctxt "Name"
-#| msgid "KFourInLine"
 msgctxt "Name"
 msgid "Four Instance"
 msgstr "KFourInLine"
@@ -232,15 +222,11 @@ msgid "Ghostbear"
 msgstr "Ghostbear"
 
 #: granatier/arenas/clanbomber_Hard_Work.desktop:2
-#| msgctxt "Name"
-#| msgid "Hard Course"
 msgctxt "Name"
 msgid "Hard Work"
 msgstr "Zor İş"
 
 #: granatier/arenas/clanbomber_Hole_Run.desktop:2
-#| msgctxt "Name"
-#| msgid "Hole"
 msgctxt "Name"
 msgid "Hole Run"
 msgstr "Deliğin Peşinde"
@@ -286,8 +272,6 @@ msgid "Prison Cells"
 msgstr "Hapis Hücreleri"
 
 #: granatier/arenas/clanbomber_Redirection.desktop:2
-#| msgctxt "Name"
-#| msgid "True Reflection"
 msgctxt "Name"
 msgid "Redirection"
 msgstr "Yeniden Yönlendirme"
@@ -303,8 +287,6 @@ msgid "Clanbomber Small Standard"
 msgstr "Clanbomber Küçük Standardı"
 
 #: granatier/arenas/clanbomber_Snake_Race.desktop:2
-#| msgctxt "GenericName"
-#| msgid "Snake-like Game"
 msgctxt "Name"
 msgid "Snake Race"
 msgstr "Yılan Oyunu"
@@ -365,7 +347,7 @@ msgctxt "Name"
 msgid "Player1"
 msgstr "Oyuncu1"
 
-#: granatier/players/player1.desktop:33
+#: granatier/players/player1.desktop:34
 msgctxt "Description"
 msgid "This is Player1"
 msgstr "Bu 1. Oyuncu"
@@ -375,7 +357,7 @@ msgctxt "Name"
 msgid "Player2"
 msgstr "Oyuncu2"
 
-#: granatier/players/player2.desktop:33
+#: granatier/players/player2.desktop:34
 msgctxt "Description"
 msgid "This is Player2"
 msgstr "Bu 2. Oyuncu"
@@ -385,7 +367,7 @@ msgctxt "Name"
 msgid "Player3"
 msgstr "Oyuncu3"
 
-#: granatier/players/player3.desktop:33
+#: granatier/players/player3.desktop:34
 msgctxt "Description"
 msgid "This is Player3"
 msgstr "Bu 3. Oyuncu"
@@ -395,7 +377,7 @@ msgctxt "Name"
 msgid "Player4"
 msgstr "Oyuncu4"
 
-#: granatier/players/player4.desktop:33
+#: granatier/players/player4.desktop:34
 msgctxt "Description"
 msgid "This is Player4"
 msgstr "Bu 4. Oyuncu"
@@ -405,7 +387,7 @@ msgctxt "Name"
 msgid "Player5"
 msgstr "Oyuncu5"
 
-#: granatier/players/player5.desktop:33
+#: granatier/players/player5.desktop:34
 msgctxt "Description"
 msgid "This is Player5"
 msgstr "Bu 5. Oyuncu"
@@ -520,409 +502,409 @@ msgctxt "Description"
 msgid "This is the original collection of KAtomic levels."
 msgstr "Bu, KAtomic seviyelerinin özgün bir koleksiyonudur. "
 
-#: katomic/levels/default_levels.dat:64
+#: katomic/levels/default_levels.dat:65
 msgctxt "Name"
 msgid "Water"
 msgstr "Su"
 
-#: katomic/levels/default_levels.dat:118
+#: katomic/levels/default_levels.dat:120
 msgctxt "Name"
 msgid "Formic Acid"
 msgstr "Formik Asit"
 
-#: katomic/levels/default_levels.dat:173
+#: katomic/levels/default_levels.dat:175
 msgctxt "Name"
 msgid "Acetic Acid"
 msgstr "Asetik asit"
 
-#: katomic/levels/default_levels.dat:231
+#: katomic/levels/default_levels.dat:234
 msgctxt "Name"
 msgid "trans-Butene"
 msgstr "Trans-Büten"
 
-#: katomic/levels/default_levels.dat:290
+#: katomic/levels/default_levels.dat:294
 msgctxt "Name"
 msgid "cis-Butene"
 msgstr "Cis-Büten"
 
-#: katomic/levels/default_levels.dat:348
+#: katomic/levels/default_levels.dat:353
 msgctxt "Name"
 msgid "Dimethyl ether"
 msgstr "Dimetil eter"
 
-#: katomic/levels/default_levels.dat:405
+#: katomic/levels/default_levels.dat:410
 msgctxt "Name"
 msgid "Butanol"
 msgstr "Bütanol"
 
-#: katomic/levels/default_levels.dat:464
+#: katomic/levels/default_levels.dat:469
 msgctxt "Name"
 msgid "2-Methyl-2-Propanol"
 msgstr "2-Metil-2-Propanol"
 
-#: katomic/levels/default_levels.dat:524
+#: katomic/levels/default_levels.dat:530
 msgctxt "Name"
 msgid "Glycerin"
 msgstr "Gliserin"
 
-#: katomic/levels/default_levels.dat:583
+#: katomic/levels/default_levels.dat:589
 msgctxt "Name"
 msgid "Poly-Tetra-Fluoro-Ethene"
 msgstr "Poli-Tetra-Floro-Eten"
 
-#: katomic/levels/default_levels.dat:637
+#: katomic/levels/default_levels.dat:644
 msgctxt "Name"
 msgid "Oxalic Acid"
 msgstr "Okzalik Asit"
 
-#: katomic/levels/default_levels.dat:694
+#: katomic/levels/default_levels.dat:701
 msgctxt "Name"
 msgid "Methane"
 msgstr "Metan"
 
-#: katomic/levels/default_levels.dat:750
+#: katomic/levels/default_levels.dat:758
 msgctxt "Name"
 msgid "Formaldehyde"
 msgstr "Formaldehit"
 
-#: katomic/levels/default_levels.dat:805
+#: katomic/levels/default_levels.dat:813
 msgctxt "Name"
 msgid "Crystal 1"
 msgstr "Kristal 1"
 
-#: katomic/levels/default_levels.dat:866
+#: katomic/levels/default_levels.dat:874
 msgctxt "Name"
 msgid "Acetic acid ethyl ester"
 msgstr "Asetik asit etil ester"
 
-#: katomic/levels/default_levels.dat:924
+#: katomic/levels/default_levels.dat:933
 msgctxt "Name"
 msgid "Ammonia"
 msgstr "Amonyak"
 
-#: katomic/levels/default_levels.dat:978
+#: katomic/levels/default_levels.dat:988
 msgctxt "Name"
 msgid "3-Methyl-Pentane"
 msgstr "2-Metil-Pentan"
 
-#: katomic/levels/default_levels.dat:1036
+#: katomic/levels/default_levels.dat:1047
 msgctxt "Name"
 msgid "Propanal"
 msgstr "Propanal"
 
-#: katomic/levels/default_levels.dat:1093
-#: katomic/levels/default_levels.dat:2485
+#: katomic/levels/default_levels.dat:1105
+#: katomic/levels/default_levels.dat:2509
 msgctxt "Name"
 msgid "Propyne"
 msgstr "Propin"
 
-#: katomic/levels/default_levels.dat:1151
+#: katomic/levels/default_levels.dat:1164
 msgctxt "Name"
 msgid "Furanal"
 msgstr "Furanal"
 
-#: katomic/levels/default_levels.dat:1214
+#: katomic/levels/default_levels.dat:1228
 msgctxt "Name"
 msgid "Pyran"
 msgstr "Pyran"
 
-#: katomic/levels/default_levels.dat:1277
+#: katomic/levels/default_levels.dat:1291
 msgctxt "Name"
 msgid "Cyclo-Pentane"
 msgstr "Siklo Pentan"
 
-#: katomic/levels/default_levels.dat:1339
+#: katomic/levels/default_levels.dat:1353
 msgctxt "Name"
 msgid "Methanol"
 msgstr "Metanol"
 
-#: katomic/levels/default_levels.dat:1396
+#: katomic/levels/default_levels.dat:1410
 msgctxt "Name"
 msgid "Nitro-Glycerin"
 msgstr "Nitrogliserin"
 
-#: katomic/levels/default_levels.dat:1467
+#: katomic/levels/default_levels.dat:1481
 msgctxt "Name"
 msgid "Ethane"
 msgstr "Etan"
 
-#: katomic/levels/default_levels.dat:1527
+#: katomic/levels/default_levels.dat:1542
 msgctxt "Name"
 msgid "Crystal 2"
 msgstr "Kristal 2"
 
-#: katomic/levels/default_levels.dat:1589
+#: katomic/levels/default_levels.dat:1604
 msgctxt "Name"
 msgid "Ethylene-Glycol"
 msgstr "Etilen-Glikol"
 
-#: katomic/levels/default_levels.dat:1647
+#: katomic/levels/default_levels.dat:1662
 msgctxt "Name"
 msgid "L-Alanine"
 msgstr "L-Alanin"
 
-#: katomic/levels/default_levels.dat:1710
+#: katomic/levels/default_levels.dat:1726
 msgctxt "Name"
 msgid "Cyanoguanidine"
 msgstr "Siyanoguanidin"
 
-#: katomic/levels/default_levels.dat:1771
+#: katomic/levels/default_levels.dat:1788
 msgctxt "Name"
 msgid "Prussic Acid (Cyanic Acid)"
 msgstr "Prusik Asit (Siyanik Asit)"
 
-#: katomic/levels/default_levels.dat:1824
+#: katomic/levels/default_levels.dat:1842
 msgctxt "Name"
 msgid "Anthracene"
 msgstr "Antrasen"
 
-#: katomic/levels/default_levels.dat:1895
+#: katomic/levels/default_levels.dat:1914
 msgctxt "Name"
 msgid "Thiazole"
 msgstr "Tiyazol"
 
-#: katomic/levels/default_levels.dat:1956
+#: katomic/levels/default_levels.dat:1976
 msgctxt "Name"
 msgid "Saccharin"
 msgstr "Sakkarin"
 
-#: katomic/levels/default_levels.dat:2026
+#: katomic/levels/default_levels.dat:2047
 msgctxt "Name"
 msgid "Ethylene"
 msgstr "Etilen"
 
-#: katomic/levels/default_levels.dat:2083
+#: katomic/levels/default_levels.dat:2104
 msgctxt "Name"
 msgid "Styrene"
 msgstr "Stiren"
 
-#: katomic/levels/default_levels.dat:2150
+#: katomic/levels/default_levels.dat:2172
 msgctxt "Name"
 msgid "Melamine"
 msgstr "Melamin"
 
-#: katomic/levels/default_levels.dat:2215
+#: katomic/levels/default_levels.dat:2237
 msgctxt "Name"
 msgid "Cyclobutane"
 msgstr "Siklobütan"
 
-#: katomic/levels/default_levels.dat:2271
+#: katomic/levels/default_levels.dat:2294
 msgctxt "Name"
 msgid "Nicotine"
 msgstr "Nikotin"
 
-#: katomic/levels/default_levels.dat:2345
+#: katomic/levels/default_levels.dat:2369
 msgctxt "Name"
 msgid "Acetyle salicylic acid"
 msgstr "Asetil salisilik asit"
 
-#: katomic/levels/default_levels.dat:2419
+#: katomic/levels/default_levels.dat:2443
 msgctxt "Name"
 msgid "Meta-Di-Nitro-Benzene"
 msgstr "Meta-Di-Nitro-Benzen"
 
-#: katomic/levels/default_levels.dat:2545
-#: katomic/levels/default_levels.dat:4906
+#: katomic/levels/default_levels.dat:2570
+#: katomic/levels/default_levels.dat:4944
 msgctxt "Name"
 msgid "Malonic Acid"
 msgstr "Malonik Asit"
 
-#: katomic/levels/default_levels.dat:2608
+#: katomic/levels/default_levels.dat:2633
 msgctxt "Name"
 msgid "2,2-Dimethylpropane"
 msgstr "2,2-Dimetilpropan"
 
-#: katomic/levels/default_levels.dat:2672
+#: katomic/levels/default_levels.dat:2698
 msgctxt "Name"
 msgid "Ethyl-Benzene"
 msgstr "Etil-Benzen"
 
-#: katomic/levels/default_levels.dat:2738
+#: katomic/levels/default_levels.dat:2765
 msgctxt "Name"
 msgid "Propene"
 msgstr "Propan"
 
-#: katomic/levels/default_levels.dat:2796
+#: katomic/levels/default_levels.dat:2824
 msgctxt "Name"
 msgid "L-Asparagine"
 msgstr "L-Asparajin"
 
-#: katomic/levels/default_levels.dat:2865
+#: katomic/levels/default_levels.dat:2893
 msgctxt "Name"
 msgid "1,3,5,7-Cyclooctatetraene"
 msgstr "1,3,5,7-Siklooktatetraen"
 
-#: katomic/levels/default_levels.dat:2926
+#: katomic/levels/default_levels.dat:2954
 msgctxt "Name"
 msgid "Vanillin"
 msgstr "Vanillin"
 
-#: katomic/levels/default_levels.dat:2998
+#: katomic/levels/default_levels.dat:3026
 msgctxt "Name"
 msgid "Crystal 3"
 msgstr "Kristal 3"
 
-#: katomic/levels/default_levels.dat:3059
+#: katomic/levels/default_levels.dat:3087
 msgctxt "Name"
 msgid "Uric Acid"
 msgstr "Ürik Asit"
 
-#: katomic/levels/default_levels.dat:3129
+#: katomic/levels/default_levels.dat:3157
 msgctxt "Name"
 msgid "Thymine"
 msgstr "Timin"
 
-#: katomic/levels/default_levels.dat:3196
+#: katomic/levels/default_levels.dat:3225
 msgctxt "Name"
 msgid "Aniline"
 msgstr "Aniline"
 
-#: katomic/levels/default_levels.dat:3265
+#: katomic/levels/default_levels.dat:3295
 msgctxt "Name"
 msgid "Chloroform"
 msgstr "Kloroform"
 
-#: katomic/levels/default_levels.dat:3321
+#: katomic/levels/default_levels.dat:3351
 msgctxt "Name"
 msgid "Carbonic acid"
 msgstr "Karbonik Asit"
 
-#: katomic/levels/default_levels.dat:3380
+#: katomic/levels/default_levels.dat:3410
 msgctxt "Name"
 msgid "Crystal 4"
 msgstr "Kristal 4"
 
-#: katomic/levels/default_levels.dat:3450
+#: katomic/levels/default_levels.dat:3480
 msgctxt "Name"
 msgid "Ethanol"
 msgstr "Ethanol"
 
-#: katomic/levels/default_levels.dat:3507
+#: katomic/levels/default_levels.dat:3538
 msgctxt "Name"
 msgid "Acrylo-Nitril"
 msgstr "Akrilo-Nitril"
 
-#: katomic/levels/default_levels.dat:3566
+#: katomic/levels/default_levels.dat:3597
 msgctxt "Name"
 msgid "Furan"
 msgstr "Furan"
 
-#: katomic/levels/default_levels.dat:3628
+#: katomic/levels/default_levels.dat:3659
 msgctxt "Name"
 msgid "l-Lactic acid"
 msgstr "l-Laktik Asit"
 
-#: katomic/levels/default_levels.dat:3690
+#: katomic/levels/default_levels.dat:3721
 msgctxt "Name"
 msgid "Maleic Acid"
 msgstr "Maleik Asit"
 
-#: katomic/levels/default_levels.dat:3755
+#: katomic/levels/default_levels.dat:3786
 msgctxt "Name"
 msgid "meso-Tartaric acid"
 msgstr "meso-Tartaric acid"
 
-#: katomic/levels/default_levels.dat:3820
+#: katomic/levels/default_levels.dat:3851
 msgctxt "Name"
 msgid "Crystal 5"
 msgstr "Kristal 5"
 
-#: katomic/levels/default_levels.dat:3890
+#: katomic/levels/default_levels.dat:3921
 msgctxt "Name"
 msgid "Formic acid ethyl ester"
 msgstr "Formik Asit Etil Ester"
 
-#: katomic/levels/default_levels.dat:3951
+#: katomic/levels/default_levels.dat:3982
 msgctxt "Name"
 msgid "1,4-Cyclohexadiene"
 msgstr "1,4-Sikloheksadien"
 
-#: katomic/levels/default_levels.dat:4010
+#: katomic/levels/default_levels.dat:4041
 msgctxt "Name"
 msgid "Squaric acid"
 msgstr "Skuarik asit"
 
-#: katomic/levels/default_levels.dat:4073
+#: katomic/levels/default_levels.dat:4104
 msgctxt "Name"
 msgid "Ascorbic acid"
 msgstr "Askorbik asit"
 
-#: katomic/levels/default_levels.dat:4142
+#: katomic/levels/default_levels.dat:4174
 msgctxt "Name"
 msgid "Isopropanol"
 msgstr "Isopropanol"
 
-#: katomic/levels/default_levels.dat:4200
+#: katomic/levels/default_levels.dat:4232
 msgctxt "Name"
 msgid "Phosgene"
 msgstr "Fosgen"
 
-#: katomic/levels/default_levels.dat:4255
+#: katomic/levels/default_levels.dat:4287
 msgctxt "Name"
 msgid "Thiophene"
 msgstr "Tiofen"
 
-#: katomic/levels/default_levels.dat:4316
+#: katomic/levels/default_levels.dat:4348
 msgctxt "Name"
 msgid "Urea"
 msgstr "Üre"
 
-#: katomic/levels/default_levels.dat:4377
+#: katomic/levels/default_levels.dat:4409
 msgctxt "Name"
 msgid "Pyruvic Acid"
 msgstr "Piruvik Asit"
 
-#: katomic/levels/default_levels.dat:4438
+#: katomic/levels/default_levels.dat:4470
 msgctxt "Name"
 msgid "Ethylene oxide"
 msgstr "Etilen oksit"
 
-#: katomic/levels/default_levels.dat:4497
+#: katomic/levels/default_levels.dat:4529
 msgctxt "Name"
 msgid "Phosphoric Acid"
 msgstr "Fosforik Asit"
 
-#: katomic/levels/default_levels.dat:4556
+#: katomic/levels/default_levels.dat:4588
 msgctxt "Name"
 msgid "Diacetyl"
 msgstr "Diasetil"
 
-#: katomic/levels/default_levels.dat:4617
+#: katomic/levels/default_levels.dat:4650
 msgctxt "Name"
 msgid "trans-Dichloroethene"
 msgstr "trans-Dikloroeten"
 
-#: katomic/levels/default_levels.dat:4673
+#: katomic/levels/default_levels.dat:4707
 msgctxt "Name"
 msgid "Allylisothiocyanate"
 msgstr "Alilizotiyosiyanad"
 
-#: katomic/levels/default_levels.dat:4730
+#: katomic/levels/default_levels.dat:4765
 msgctxt "Name"
 msgid "Diketene"
 msgstr "Diketen"
 
-#: katomic/levels/default_levels.dat:4791
+#: katomic/levels/default_levels.dat:4827
 msgctxt "Name"
 msgid "Ethanal"
 msgstr "Etanal"
 
-#: katomic/levels/default_levels.dat:4847
+#: katomic/levels/default_levels.dat:4884
 msgctxt "Name"
 msgid "Acroleine"
 msgstr "Akrolein"
 
-#: katomic/levels/default_levels.dat:4969
+#: katomic/levels/default_levels.dat:5007
 msgctxt "Name"
 msgid "Uracil"
 msgstr "Urasil"
 
-#: katomic/levels/default_levels.dat:5034
+#: katomic/levels/default_levels.dat:5073
 msgctxt "Name"
 msgid "Caffeine"
 msgstr "Kafein"
 
-#: katomic/levels/default_levels.dat:5111
+#: katomic/levels/default_levels.dat:5150
 msgctxt "Name"
 msgid "Acetone"
 msgstr "Aseton"
@@ -969,7 +951,7 @@ msgctxt "Name"
 msgid "Egyptian"
 msgstr "Mısırlı"
 
-#: kblocks/themes/default.desktop:40
+#: kblocks/themes/default.desktop:41
 msgctxt "Description"
 msgid "KBlocks, Egyptian style."
 msgstr "KBlocks, Mısırlı stili."
@@ -999,7 +981,7 @@ msgctxt "Name"
 msgid "Egyptian Bounce"
 msgstr "Egyptian Bounce"
 
-#: kbounce/themes/default.desktop:36
+#: kbounce/themes/default.desktop:37
 msgctxt "Description"
 msgid "KBounce, Egyptian style."
 msgstr "KBounce, Mısırlı stili."
@@ -1009,7 +991,7 @@ msgctxt "Name"
 msgid "Strange Geometry"
 msgstr "Garip Geometri"
 
-#: kbounce/themes/geometry.desktop:43
+#: kbounce/themes/geometry.desktop:44
 msgctxt "Description"
 msgid "A simple high-contrast theme for those who like it clean."
 msgstr "Temiz iş sevenleri için basit bir yüksek kontrast teması"
@@ -1027,7 +1009,7 @@ msgctxt "Name"
 msgid "Roads"
 msgstr "Yollar"
 
-#: kbounce/themes/roads.desktop:41
+#: kbounce/themes/roads.desktop:42
 msgctxt "Description"
 msgid "Roads, cones and wheels."
 msgstr "Yollar, koniler ve tekerlekler."
@@ -1072,7 +1054,7 @@ msgctxt "Name"
 msgid "Egyptian Breakout"
 msgstr "Egyptian Breakout"
 
-#: kbreakout/themes/default.desktop:36
+#: kbreakout/themes/default.desktop:37
 msgctxt "Description"
 msgid "Egyptian style breakout theme."
 msgstr "Mısırlı stili breakout teması."
@@ -1137,37 +1119,37 @@ msgctxt "Comment"
 msgid "Sounds that appear during a game"
 msgstr "Oyun esnasında çıkan sesler"
 
-#: kdiamond/src/kdiamond.notifyrc:138
+#: kdiamond/src/kdiamond.notifyrc:139
 msgctxt "Name"
 msgid "Diamonds removed"
 msgstr "Kaldırılan elmaslar"
 
-#: kdiamond/src/kdiamond.notifyrc:180
+#: kdiamond/src/kdiamond.notifyrc:182
 msgctxt "Comment"
 msgid "Diamonds were removed."
 msgstr "Elmaslar kaldırılmıştı."
 
-#: kdiamond/src/kdiamond.notifyrc:227
+#: kdiamond/src/kdiamond.notifyrc:230
 msgctxt "Name"
 msgid "Diamonds moving"
 msgstr "Hareket ettirilen elmaslar"
 
-#: kdiamond/src/kdiamond.notifyrc:268
+#: kdiamond/src/kdiamond.notifyrc:272
 msgctxt "Comment"
 msgid "Diamonds are moving."
 msgstr "Elmaslar hareket etmekte."
 
-#: kdiamond/src/kdiamond.notifyrc:314
+#: kdiamond/src/kdiamond.notifyrc:319
 msgctxt "Name"
 msgid "Game over"
 msgstr "Oyun bitti"
 
-#: kdiamond/src/kdiamond.notifyrc:360
+#: kdiamond/src/kdiamond.notifyrc:365
 msgctxt "Comment"
 msgid "Time is up."
 msgstr "Süre doldu."
 
-#: kdiamond/themes/default.desktop:41
+#: kdiamond/themes/default.desktop:42
 msgctxt "Description"
 msgid "Egyptian style theme."
 msgstr "Mısırlı stili tema"
@@ -1266,7 +1248,7 @@ msgctxt "Name"
 msgid "The Treasure of Egypt"
 msgstr "Mısır'ın Hazineleri"
 
-#: kgoldrunner/themes/egypt.desktop:46
+#: kgoldrunner/themes/egypt.desktop:47
 msgctxt "Description"
 msgid "Help Matt Goldrunner escape the traps of ancient Egypt."
 msgstr ""
@@ -1277,7 +1259,7 @@ msgctxt "Name"
 msgid "Geek City"
 msgstr "Geek Şehri"
 
-#: kgoldrunner/themes/kgr_geek.desktop:45
+#: kgoldrunner/themes/kgr_geek.desktop:46
 msgctxt "Description"
 msgid "The hero is trapped inside a computer."
 msgstr "Bir kahraman bilgisayarın içinde mahsur kaldı."
@@ -1360,7 +1342,7 @@ msgctxt "Name"
 msgid "Daleks"
 msgstr "Daleks"
 
-#: killbots/rulesets/daleks.desktop:40
+#: killbots/rulesets/daleks.desktop:41
 msgctxt "Description"
 msgid ""
 "<qt><p>An approximation of the rules used in Daleks, a robots-like game for "
@@ -1380,8 +1362,8 @@ msgid ""
 "safe teleports, fast enemies and pushable junkheaps.</p></qt>"
 msgstr ""
 "<qt><p>Ön tanımlı Killbots oyun tipi.</p><p>Orta boy bir oyun alanı, güvenli "
-"ışınlamalar, hızlı düşmanlar ve itilebilir değersiz yığınlar içermekte.</p><"
-"/qt>"
+"ışınlamalar, hızlı düşmanlar ve itilebilir değersiz yığınlar içermekte.</p></"
+"qt>"
 
 #: killbots/rulesets/easy.desktop:2
 msgctxt "Name"
@@ -1397,8 +1379,8 @@ msgid ""
 msgstr ""
 "<qt><p>\"Killbots\" oyun tipinin kolay bir versiyonu.</p><p>Değersiz "
 "yığınlarla doldurulmuş, görece daha büyük bir oyun alanı, başlangıçta "
-"depolanmış bir miktar enerji ve artan enerji üst limiti içermektedir.</p><"
-"/qt>"
+"depolanmış bir miktar enerji ve artan enerji üst limiti içermektedir.</p></"
+"qt>"
 
 #: killbots/rulesets/energycrisis.desktop:2
 msgctxt "Name"
@@ -1436,7 +1418,7 @@ msgctxt "Name"
 msgid "Mummy Madness"
 msgstr "Mumya Çılgınlığı"
 
-#: killbots/themes/mummymadness.desktop:37
+#: killbots/themes/mummymadness.desktop:38
 msgctxt "Description"
 msgid "Egyptian style theme with mad mummies."
 msgstr "Çılgın mumyalarla Eski Mısır stili tema"
@@ -1446,7 +1428,7 @@ msgctxt "Name"
 msgid "Robot Kill"
 msgstr "Öldür Robotu"
 
-#: killbots/themes/robotkill.desktop:40
+#: killbots/themes/robotkill.desktop:41
 msgctxt "Description"
 msgid "The default Killbots theme."
 msgstr "Ön tanımlı Killbots teması"
@@ -1496,7 +1478,7 @@ msgctxt "Name"
 msgid "Crystal"
 msgstr "Kristal"
 
-#: klines/themes/egyptian.desktop:41
+#: klines/themes/egyptian.desktop:42
 msgctxt "Description"
 msgid "An Egyptian style theme for klines."
 msgstr "Klines için Eski Mısır stili bir tema."
@@ -1507,13 +1489,11 @@ msgid "Gems for Kolor Lines"
 msgstr "Renkli Çizgiler Oyunu için Cevherler"
 
 #: klines/themes/metal.desktop:3
-#| msgctxt "Name"
-#| msgid "Methanol"
 msgctxt "Name"
 msgid "Metal"
 msgstr "Metal"
 
-#: klines/themes/metal.desktop:33
+#: klines/themes/metal.desktop:34
 msgctxt "Description"
 msgid "A metal style theme with bouncing balls"
 msgstr "Zıplayan toplarla bir metal stili tema"
@@ -1533,7 +1513,7 @@ msgctxt "Name"
 msgid "4 Winds"
 msgstr "4 Rüzgar"
 
-#: kmahjongg/layouts/4_winds.desktop:39
+#: kmahjongg/layouts/4_winds.desktop:40
 msgctxt "Description"
 msgid "A layout resembling a fortress"
 msgstr "Kaleyi andıran bir yerleşim"
@@ -1543,7 +1523,7 @@ msgctxt "Name"
 msgid "Alien"
 msgstr "Uzaylı"
 
-#: kmahjongg/layouts/alien.desktop:40
+#: kmahjongg/layouts/alien.desktop:41
 msgctxt "Description"
 msgid "A humanoid made up of Mahjongg tiles"
 msgstr "Mahjongg döşemelerinden yapılmış bir insansı robot"
@@ -1558,7 +1538,7 @@ msgctxt "Description"
 msgid "An elevated surface with stairs and columns aside"
 msgstr "Merdivenler ve kenarda kolonlarıyla yerden yükseltilmiş bir yüzey"
 
-#: kmahjongg/layouts/arena.desktop:43
+#: kmahjongg/layouts/arena.desktop:44
 msgctxt "Description"
 msgid "Circular-aligned seats around a performance area"
 msgstr "Gösteri alanı çevresinde daire şeklinde dizilmiş oturaklar"
@@ -1608,7 +1588,7 @@ msgctxt "Name"
 msgid "Bat"
 msgstr "Yarasa"
 
-#: kmahjongg/layouts/bat.desktop:41
+#: kmahjongg/layouts/bat.desktop:42
 msgctxt "Description"
 msgid "A bat-shaped layout"
 msgstr "Yarasa şeklinde bir yerleşim"
@@ -1668,7 +1648,7 @@ msgctxt "Name"
 msgid "Checkered"
 msgstr "Damalı"
 
-#: kmahjongg/layouts/checkered.desktop:38
+#: kmahjongg/layouts/checkered.desktop:39
 msgctxt "Description"
 msgid "What if the chess board was not square?"
 msgstr "Peki ya satranç tahtası kare olmasaydı ne olurdu?"
@@ -1733,7 +1713,7 @@ msgctxt "Name"
 msgid "Dragon"
 msgstr "Ejderha"
 
-#: kmahjongg/layouts/dragon.desktop:44
+#: kmahjongg/layouts/dragon.desktop:45
 msgctxt "Description"
 msgid "Vista-styled dragon layout"
 msgstr "Manzara-stili ejderha yerleşimi"
@@ -1743,7 +1723,7 @@ msgctxt "Name"
 msgid "Eagle"
 msgstr "Kartal"
 
-#: kmahjongg/layouts/eagle.desktop:42
+#: kmahjongg/layouts/eagle.desktop:43
 msgctxt "Description"
 msgid "A large carnivore bird in Mahjongg tiles"
 msgstr "Mahjongg döşemelerinde bulunan büyük etobur bir kuş"
@@ -1758,7 +1738,7 @@ msgctxt "Description"
 msgid "A layout for Star Trek fans"
 msgstr "Star Trek meraklıları için bir yerleşim"
 
-#: kmahjongg/layouts/explosion.desktop:2 kmines/data/kmines.notifyrc:449
+#: kmahjongg/layouts/explosion.desktop:2 kmines/data/kmines.notifyrc:451
 msgctxt "Name"
 msgid "Explosion"
 msgstr "Patlama"
@@ -1773,7 +1753,7 @@ msgctxt "Name"
 msgid "Flowers"
 msgstr "Çiçekler"
 
-#: kmahjongg/layouts/flowers.desktop:61
+#: kmahjongg/layouts/flowers.desktop:62
 msgctxt "Description"
 msgid "A layout consisting of six flowers"
 msgstr "Altı çiçekten oluşan bir yerleşim"
@@ -1784,7 +1764,7 @@ msgctxt "Name"
 msgid "Future"
 msgstr "Gelecek"
 
-#: kmahjongg/layouts/future.desktop:42
+#: kmahjongg/layouts/future.desktop:43
 msgctxt "Description"
 msgid "An abstract image resembling an asterisk"
 msgstr "Yıldız işareti(asteriks) şeklinde bir yerleşim planı"
@@ -1794,7 +1774,7 @@ msgctxt "Name"
 msgid "Galaxy"
 msgstr "Galaksi"
 
-#: kmahjongg/layouts/galaxy.desktop:43
+#: kmahjongg/layouts/galaxy.desktop:44
 msgctxt "Description"
 msgid "Diversely sized piles of matter"
 msgstr "Muhtelif boyutlarda madde yığınları"
@@ -1804,7 +1784,7 @@ msgctxt "Name"
 msgid "Garden"
 msgstr "Bahçe"
 
-#: kmahjongg/layouts/garden.desktop:44
+#: kmahjongg/layouts/garden.desktop:45
 msgctxt "Description"
 msgid "Regular patterns resembling a classical garden"
 msgstr "Klasik bir bahçeyi andıran düzenli desenler"
@@ -1814,7 +1794,7 @@ msgctxt "Name"
 msgid "Girl"
 msgstr "Kız"
 
-#: kmahjongg/layouts/girl.desktop:43
+#: kmahjongg/layouts/girl.desktop:44
 msgctxt "Description"
 msgid "A layout resembling a girl's face"
 msgstr "Bir kızın yüzünü andıran bir yerleşim"
@@ -1824,7 +1804,7 @@ msgctxt "Name"
 msgid "Glade"
 msgstr "Açık Hava Alanı"
 
-#: kmahjongg/layouts/glade.desktop:38
+#: kmahjongg/layouts/glade.desktop:39
 msgctxt "Description"
 msgid "A small piece of empty space surrounded by a forest"
 msgstr "Ormanlarla çevrilmiş ufak bir açık hava alanı"
@@ -1864,7 +1844,7 @@ msgctxt "Name"
 msgid "Inner Circle"
 msgstr "Gizli Daire"
 
-#: kmahjongg/layouts/inner_circle.desktop:38
+#: kmahjongg/layouts/inner_circle.desktop:39
 msgctxt "Description"
 msgid "Concentric boxes with openings pointing in opposite directions"
 msgstr "Ters yönleri gösteren boşlukları olan eş merkezli kutular"
@@ -1899,7 +1879,7 @@ msgctxt "Name"
 msgid "Mask"
 msgstr "Maske"
 
-#: kmahjongg/layouts/mask.desktop:41
+#: kmahjongg/layouts/mask.desktop:42
 msgctxt "Description"
 msgid "A scary embossed pagan mask"
 msgstr "Korkunç şekilde süslenmiş bir putperest maskesi"
@@ -1919,7 +1899,7 @@ msgctxt "Name"
 msgid "Maze"
 msgstr "Labirent"
 
-#: kmahjongg/layouts/maze.desktop:41
+#: kmahjongg/layouts/maze.desktop:42
 msgctxt "Description"
 msgid "An extremely twisted maze. Beware of minotaurs!"
 msgstr ""
@@ -1941,7 +1921,7 @@ msgctxt "Name"
 msgid "Moth"
 msgstr "Güve"
 
-#: kmahjongg/layouts/moth.desktop:38
+#: kmahjongg/layouts/moth.desktop:39
 msgctxt "Description"
 msgid "A layout representing a small flying insect"
 msgstr "Küçük uçan bir böceği temsilen bir yerleşim"
@@ -1991,7 +1971,7 @@ msgctxt "Name"
 msgid "Pirates"
 msgstr "Korsanlar"
 
-#: kmahjongg/layouts/pirates.desktop:41
+#: kmahjongg/layouts/pirates.desktop:42
 msgctxt "Description"
 msgid "A sailing boat under the sun"
 msgstr "Güneşin altında yüzen bir gemi"
@@ -2011,7 +1991,7 @@ msgctxt "Name"
 msgid "Rocket"
 msgstr "Roket"
 
-#: kmahjongg/layouts/rocket.desktop:40
+#: kmahjongg/layouts/rocket.desktop:41
 msgctxt "Description"
 msgid "A rocket for you to launch off the board"
 msgstr "Bordadan ateşlemeniz için bir roket"
@@ -2021,7 +2001,7 @@ msgctxt "Name"
 msgid "Shield"
 msgstr "Kalkan"
 
-#: kmahjongg/layouts/shield.desktop:39
+#: kmahjongg/layouts/shield.desktop:41
 msgctxt "Description"
 msgid "A shield and a sword made up of Mahjongg tiles"
 msgstr "Mahjongg döşemelerinden yapılmış bir kalkan ve bir kılıç"
@@ -2031,7 +2011,7 @@ msgctxt "Name"
 msgid "Spider"
 msgstr "Örümcek"
 
-#: kmahjongg/layouts/spider.desktop:40
+#: kmahjongg/layouts/spider.desktop:41
 msgctxt "Description"
 msgid "Vista-styled spider layout"
 msgstr "Manzara-stili örümcek yerleşimi"
@@ -2051,7 +2031,7 @@ msgctxt "Name"
 msgid "Squaring"
 msgstr "Kareleme"
 
-#: kmahjongg/layouts/squaring.desktop:39
+#: kmahjongg/layouts/squaring.desktop:40
 msgctxt "Description"
 msgid "Who said squares are flat?"
 msgstr "Kim karelerin düz olduğunu iddia etti ki?"
@@ -2061,7 +2041,7 @@ msgctxt "Name"
 msgid "Stadion"
 msgstr "Stadyum"
 
-#: kmahjongg/layouts/stadion.desktop:38
+#: kmahjongg/layouts/stadion.desktop:40
 msgctxt "Description"
 msgid "A layout representing a football field"
 msgstr "Futbol sahasını temsilen bir yerleşim "
@@ -2071,7 +2051,7 @@ msgctxt "Name"
 msgid "Stairs"
 msgstr "Merdiven Basamakları"
 
-#: kmahjongg/layouts/stairs.desktop:41
+#: kmahjongg/layouts/stairs.desktop:42
 msgctxt "Description"
 msgid "A staircase for those who dislike taking the same path twice"
 msgstr "Aynı yolu iki kere kat etmeyi sevmeyenler için bir merdiven"
@@ -2081,7 +2061,7 @@ msgctxt "Name"
 msgid "Star"
 msgstr "Yıldız"
 
-#: kmahjongg/layouts/star.desktop:42
+#: kmahjongg/layouts/star.desktop:43
 msgctxt "Description"
 msgid "An asterisk-shaped embossed layout"
 msgstr "Yıldız şeklinde süslenmiş bir yerleşim"
@@ -2121,7 +2101,7 @@ msgctxt "Name"
 msgid "Temple"
 msgstr "Tapınak"
 
-#: kmahjongg/layouts/temple.desktop:41
+#: kmahjongg/layouts/temple.desktop:42
 msgctxt "Description"
 msgid "A temple-shaped layout"
 msgstr "Tapınak şeklinde bir yerleşim"
@@ -2131,7 +2111,7 @@ msgctxt "Name"
 msgid "Theatre"
 msgstr "Tiyatro"
 
-#: kmahjongg/layouts/theatre.desktop:40
+#: kmahjongg/layouts/theatre.desktop:41
 msgctxt "Description"
 msgid "A rectangular building with empty space in the middle"
 msgstr "Ortada boş bir alanı olan dikdörtgen bir bina"
@@ -2216,7 +2196,7 @@ msgctxt "Name"
 msgid "Well"
 msgstr "Kuyu"
 
-#: kmahjongg/layouts/well.desktop:38
+#: kmahjongg/layouts/well.desktop:39
 msgctxt "Description"
 msgid "A rectangular well with stairs at all sides"
 msgstr "Her yanında yıldızlar olan dikdörtgen şeklinde bir kuyu"
@@ -2226,7 +2206,7 @@ msgctxt "Name"
 msgid "X-shaped"
 msgstr "X-şeklinde"
 
-#: kmahjongg/layouts/X_shaped.desktop:37
+#: kmahjongg/layouts/X_shaped.desktop:38
 msgctxt "Description"
 msgid "A large letter X made of mahjongg tiles"
 msgstr "Mahjongg döşemelerinden yapılmış büyük bir X harfi"
@@ -2251,83 +2231,83 @@ msgctxt "Name"
 msgid "Reveal Case"
 msgstr "Kutuyu Açıkla"
 
-#: kmines/data/kmines.notifyrc:104
+#: kmines/data/kmines.notifyrc:105
 msgctxt "Comment"
 msgid "Reveal case"
 msgstr "Kutuyu açıkla"
 
-#: kmines/data/kmines.notifyrc:158
+#: kmines/data/kmines.notifyrc:160
 msgctxt "Name"
 msgid "Autoreveal Case"
 msgstr "Kutuyu Otomatik Aç"
 
-#: kmines/data/kmines.notifyrc:200
+#: kmines/data/kmines.notifyrc:202
 msgctxt "Comment"
 msgid "Autoreveal case"
 msgstr "Kutuyu otomatik aç"
 
-#: kmines/data/kmines.notifyrc:255
+#: kmines/data/kmines.notifyrc:257
 msgctxt "Name"
 msgid "Mark Case"
 msgstr "Kutuyu İşaretle"
 
-#: kmines/data/kmines.notifyrc:297
+#: kmines/data/kmines.notifyrc:299
 msgctxt "Comment"
 msgid "Mark case"
 msgstr "Kutuyu işaretle"
 
-#: kmines/data/kmines.notifyrc:352
+#: kmines/data/kmines.notifyrc:354
 msgctxt "Name"
 msgid "Unmark Case"
 msgstr "Kutudaki İşareti Kaldır"
 
-#: kmines/data/kmines.notifyrc:394
+#: kmines/data/kmines.notifyrc:396
 msgctxt "Comment"
 msgid "Unmark case"
 msgstr "Kutudaki işareti kaldır"
 
-#: kmines/data/kmines.notifyrc:509
+#: kmines/data/kmines.notifyrc:511
 msgctxt "Comment"
 msgid "Explosion"
 msgstr "Patlama"
 
-#: kmines/data/kmines.notifyrc:570 kreversi/sounds/kreversi.notifyrc:182
+#: kmines/data/kmines.notifyrc:572 kreversi/sounds/kreversi.notifyrc:182
 msgctxt "Name"
 msgid "Game Won"
 msgstr "Oyun Kazanıldı"
 
-#: kmines/data/kmines.notifyrc:616 knetwalk/src/knetwalk.notifyrc:346
+#: kmines/data/kmines.notifyrc:618 knetwalk/src/knetwalk.notifyrc:346
 #: kreversi/sounds/kreversi.notifyrc:228
 msgctxt "Comment"
 msgid "Game won"
 msgstr "Oyun Kazanıldı"
 
-#: kmines/data/kmines.notifyrc:676 kreversi/sounds/kreversi.notifyrc:289
+#: kmines/data/kmines.notifyrc:678 kreversi/sounds/kreversi.notifyrc:289
 msgctxt "Name"
 msgid "Game Lost"
 msgstr "Oyun Kaybedildi"
 
-#: kmines/data/kmines.notifyrc:722 kreversi/sounds/kreversi.notifyrc:335
+#: kmines/data/kmines.notifyrc:724 kreversi/sounds/kreversi.notifyrc:335
 msgctxt "Comment"
 msgid "Game lost"
 msgstr "Oyun kaybedildi"
 
-#: kmines/data/kmines.notifyrc:782
+#: kmines/data/kmines.notifyrc:784
 msgctxt "Name"
 msgid "Set Question Mark"
 msgstr "Soru İşareti Ekle"
 
-#: kmines/data/kmines.notifyrc:827
+#: kmines/data/kmines.notifyrc:829
 msgctxt "Comment"
 msgid "Set question mark"
 msgstr "Soru işareti ekle"
 
-#: kmines/data/kmines.notifyrc:884
+#: kmines/data/kmines.notifyrc:886
 msgctxt "Name"
 msgid "Unset Question Mark"
 msgstr "Soru İşaretini Kaldır"
 
-#: kmines/data/kmines.notifyrc:929
+#: kmines/data/kmines.notifyrc:931
 msgctxt "Comment"
 msgid "Unset question mark"
 msgstr "Soru işaretini kaldır"
@@ -2347,7 +2327,7 @@ msgctxt "Name"
 msgid "Graveyard Mayhem"
 msgstr "Mezarlık Kargaşası"
 
-#: kmines/themes/graveyard-mayhem.desktop:30
+#: kmines/themes/graveyard-mayhem.desktop:31
 msgctxt "Description"
 msgid ""
 "A spooky theme for KMines. Don't get caught by the zombies in the graveyard!"
@@ -2509,7 +2489,7 @@ msgctxt "Comment"
 msgid "Las Vegas, NV"
 msgstr "Las Vegas, NV"
 
-#: kolf/courses/USApro:887 kolf/courses/USApro:1535
+#: kolf/courses/USApro:887 kolf/courses/USApro:1536
 msgctxt "Comment"
 msgid "San Francisco, CA"
 msgstr "San Francisco, CA"
@@ -2519,22 +2499,22 @@ msgctxt "Comment"
 msgid "Grand Canyon"
 msgstr "Büyük Kanyon"
 
-#: kolf/courses/USApro:1162
+#: kolf/courses/USApro:1163
 msgctxt "Comment"
 msgid "Lake Tahoe, CA/NV"
 msgstr "Tahoe Gölü, CA/NV"
 
-#: kolf/courses/USApro:1342
+#: kolf/courses/USApro:1343
 msgctxt "Comment"
 msgid "Florida Keys, FL"
 msgstr "Florida Keys, FL"
 
-#: kolf/courses/USApro:1725
+#: kolf/courses/USApro:1726
 msgctxt "Comment"
 msgid "Washington DC"
 msgstr "Washington DC"
 
-#: kolf/courses/USApro:1982
+#: kolf/courses/USApro:1983
 msgctxt "Comment"
 msgid "Niagara Falls, NY"
 msgstr "Niagara Şelalesi, NY"
@@ -2568,7 +2548,7 @@ msgstr ""
 "Topa vurmak için Alt Tuşu ya da sol fare tuşuna basılı tutun. Tuşlara ne "
 "kadar uzun basarsanız vuruşunuz da o kadar kuvvetli olacaktır."
 
-#: kolf/tutorial.kolf:150
+#: kolf/tutorial.kolf:151
 msgctxt "Comment"
 msgid ""
 "To aim the putter, press the Left (rotate counterclockwise) and Right "
@@ -2577,7 +2557,7 @@ msgstr ""
 "Gol sopasıyla nişan almak için, Sol (saat yönünün tersine) ya da Sağ (saat "
 "yönüne) Ok tuşlarına basabilirsiniz."
 
-#: kolf/tutorial.kolf:246
+#: kolf/tutorial.kolf:248
 msgctxt "Comment"
 msgid ""
 "<h3>Bridges</h3>Bridges can have walls on the top, bottom, left, or right."
@@ -2585,7 +2565,7 @@ msgstr ""
 "<h3>Köprüler</h3>Köprülerin üst, alt, sol veya sağ taraflarında duvarlar "
 "olabilir."
 
-#: kolf/tutorial.kolf:357
+#: kolf/tutorial.kolf:359
 msgctxt "Comment"
 msgid ""
 "<h3>Everything</h3>Here's a hole that has it all. Have fun with Kolf!"
@@ -2594,7 +2574,7 @@ msgstr ""
 "<h3>Herşey</h3>Burada tümünü barındıran bir delik var. Kolf ile eğlenin!"
 "<br><center>-- Jason Katz-Brown</center>"
 
-#: kolf/tutorial.kolf:459
+#: kolf/tutorial.kolf:461
 msgctxt "Comment"
 msgid ""
 "<h3>Slopes</h3>Slopes are slanted areas of ground that push the ball in the "
@@ -2605,17 +2585,17 @@ msgstr ""
 "top eğimlerin yönünde hareket eder. Bu yön <u>Delik->Bilgi Göster</u> "
 "seçtiğinizde gösterilir."
 
-#: kolf/tutorial.kolf:503
+#: kolf/tutorial.kolf:505
 msgctxt "Comment"
 msgid "Hit the ball onto the slope and let it roll into cup."
 msgstr "Eğimdeki topa vurun ve fincana düşmesini sağlayın."
 
-#: kolf/tutorial.kolf:566
+#: kolf/tutorial.kolf:568
 msgctxt "Comment"
 msgid "Try out these different types of slopes."
 msgstr "Farklı tür eğimleri de denemelisiniz."
 
-#: kolf/tutorial.kolf:694
+#: kolf/tutorial.kolf:696
 msgctxt "Comment"
 msgid ""
 "The steepness of a slope is shown when you choose <u>Hole->Show Info</u>. "
@@ -2624,17 +2604,17 @@ msgstr ""
 "<u>Delik->Bilgi Göster</u> seçeneğini seçtiğinizde eğimin dikliği size "
 "gösterilir. Diklik ayarı 8'den (en dik) 1'e (en sığ) kadar gitmektedir."
 
-#: kolf/tutorial.kolf:765
+#: kolf/tutorial.kolf:768
 msgctxt "Comment"
 msgid "<h3>Walls</h3>Bounce the ball off of the red walls."
 msgstr "<h3>Duvarlar</h3> Topları kırmızı duvardan sektirin."
 
-#: kolf/tutorial.kolf:862
+#: kolf/tutorial.kolf:865
 msgctxt "Comment"
 msgid "<h3>Sand</h3>Sand is yellow, and slows your ball down."
 msgstr "<h3>Kum</h3> Sarı renkli kumluk bölgeler topunuzu yavaşlatır."
 
-#: kolf/tutorial.kolf:906
+#: kolf/tutorial.kolf:909
 msgctxt "Comment"
 msgid ""
 "<h3>Puddles (Water)</h3>Hitting into a puddle (blue) adds a penalty stroke "
@@ -2643,7 +2623,7 @@ msgstr ""
 "<h3>Birikinti (Su)</h3>Bir birikintiye (mavi) çarpmak skorunuza bir ceza "
 "puanı eklenmesine yol açar, ve topunuz birikinti dışına çıkartılır."
 
-#: kolf/tutorial.kolf:965
+#: kolf/tutorial.kolf:968
 msgctxt "Comment"
 msgid ""
 "<h3>Windmills</h3>Windmills (brown base with moving arm) have brown walls "
@@ -2653,7 +2633,7 @@ msgstr ""
 "cisimler) kahverengi duvarlara (veya yarım duvarlara) sahiptir.  Yel "
 "değirmeninin kolunun hızı her deliğe göre değişir."
 
-#: kolf/tutorial.kolf:1035
+#: kolf/tutorial.kolf:1038
 msgctxt "Comment"
 msgid ""
 "<h3>Black Holes</h3>Black Holes transport the ball to their exit, and eject "
@@ -2663,11 +2643,10 @@ msgid ""
 msgstr ""
 "<h3>Kara delikler</h3>Kara delikler topu çıkışlarına taşırlar ve topunuzun "
 "hızıyla doğru orantılı bir hızda dışarı atarlar. <u>Delik->Bilgi Göster</u> "
-"seçerek "
-"hangi kara deliğin hangi çıkışa sahip olduğunu ve topun çıkış yönünü "
+"seçerek hangi kara deliğin hangi çıkışa sahip olduğunu ve topun çıkış yönünü "
 "öğrenebilirsiniz."
 
-#: kolf/tutorial.kolf:1108
+#: kolf/tutorial.kolf:1111
 msgctxt "Comment"
 msgid ""
 "<h3>Floaters</h3>Floaters are moving platforms that carry a ball that lands "
@@ -2871,7 +2850,7 @@ msgctxt "Name"
 msgid "Abstraction"
 msgstr "Soyutlama"
 
-#: ksudoku/src/themes/abstraction.desktop:32
+#: ksudoku/src/themes/abstraction.desktop:33
 msgctxt "Description"
 msgid "A ksudoku theme with abstract artwork."
 msgstr "Soyuta resimlerle bir ksudoku teması"
@@ -2911,7 +2890,7 @@ msgctxt "GenericName"
 msgid "Tron-like Game"
 msgstr "Tron-benzeri bir Oyun"
 
-#: ktron/ktron.desktop:44
+#: ktron/ktron.desktop:45
 msgctxt "Name"
 msgid "KTron"
 msgstr "KTron"
@@ -3025,8 +3004,8 @@ msgctxt "Name"
 msgid "Jolly Royal"
 msgstr "Jolly Royal"
 
-#: libkdegames/carddecks/decks/deck12.desktop:37
-#: libkdegames/carddecks/svg-jolly-royal/index.desktop:37
+#: libkdegames/carddecks/decks/deck12.desktop:38
+#: libkdegames/carddecks/svg-jolly-royal/index.desktop:38
 msgctxt "Comment"
 msgid "A clean and easy style with a distinctively royal touch."
 msgstr "Tipik kraliyet ailesi cinsi dokunuşlarıyla temiz ve basit bir stil"
@@ -3036,12 +3015,12 @@ msgctxt "Name"
 msgid "Diamond Tree"
 msgstr "Elmas Ağacı"
 
-#: libkdegames/carddecks/decks/deck14.desktop:38
+#: libkdegames/carddecks/decks/deck14.desktop:39
 msgctxt "Comment"
 msgid "Simple, yet visually pleasing card back"
 msgstr "Basit ve şimdilik tatmin edici bir kart arkası"
 
-#: libkdegames/carddecks/decks/deck14.desktop:74
+#: libkdegames/carddecks/decks/deck14.desktop:76
 msgctxt "Comment"
 msgid "Simple, yet visually pleasing card back."
 msgstr "Basit ve şimdilik tatmin edici bir kart arkası."
@@ -3058,7 +3037,7 @@ msgctxt "Comment"
 msgid "Egyptian style card back."
 msgstr "Eski Mısır stili kart arkası"
 
-#: libkdegames/carddecks/decks/deck16.desktop:42
+#: libkdegames/carddecks/decks/deck16.desktop:43
 msgctxt "Comment"
 msgid "Futuristic, minimal card design."
 msgstr "Fütüristik, minimal bir kart dizaynı"
@@ -3193,7 +3172,7 @@ msgctxt "Name"
 msgid "Fourteen Segment Sample"
 msgstr "On dört Parça Örneği"
 
-#: libkdegames/digits/themes/fourteen-segment-sample.desktop:42
+#: libkdegames/digits/themes/fourteen-segment-sample.desktop:43
 msgctxt "Comment"
 msgid ""
 "This file holds metadata, configuration settings, and the mappings "
@@ -3209,7 +3188,7 @@ msgctxt "Name"
 msgid "Individual Digit Sample"
 msgstr "Yalnız Basamak Örneği"
 
-#: libkdegames/digits/themes/individual-digit-sample.desktop:40
+#: libkdegames/digits/themes/individual-digit-sample.desktop:41
 msgctxt "Comment"
 msgid ""
 "This file holds metadata, configuration settings, and the mappings between "
@@ -3224,7 +3203,7 @@ msgctxt "Name"
 msgid "Chinese Landscape"
 msgstr "Çin Manzarası"
 
-#: libkmahjongg/backgrounds/chinese_landscape.desktop:49
+#: libkmahjongg/backgrounds/chinese_landscape.desktop:50
 msgctxt "Description"
 msgid "Chinese landscape with mountains and a waterfall"
 msgstr "Dağlar ve bir şelale içeren çin manzarası"
@@ -3234,7 +3213,7 @@ msgctxt "Name"
 msgid "Plain Color"
 msgstr "Düz Renk"
 
-#: libkmahjongg/backgrounds/default.desktop:40
+#: libkmahjongg/backgrounds/default.desktop:41
 msgctxt "Description"
 msgid "A Egyptian style background"
 msgstr "Eski Mısır stili arka plan"
@@ -3249,7 +3228,7 @@ msgctxt "Name"
 msgid "Summer Field"
 msgstr "Yazlık Çayır Çimen"
 
-#: libkmahjongg/backgrounds/summerfield.desktop:43
+#: libkmahjongg/backgrounds/summerfield.desktop:44
 msgctxt "Description"
 msgid "The Summertime Greens"
 msgstr "Yaz Zamanı Yeşillikleri"
@@ -3259,7 +3238,7 @@ msgctxt "Name"
 msgid "Light Wood"
 msgstr "Aydınlık Tahta"
 
-#: libkmahjongg/backgrounds/wood_light.desktop:47
+#: libkmahjongg/backgrounds/wood_light.desktop:48
 msgctxt "Description"
 msgid "Resembles the surface of a wood table"
 msgstr "Tahta masanın yüzeyini göstermektedir"
@@ -3342,13 +3321,11 @@ msgid "Palapeli puzzles"
 msgstr "Palapeli bulmacaları"
 
 #: palapeli/puzzles/castle-maintenon.desktop:2
-#| msgctxt "Name"
-#| msgid "Castle View"
 msgctxt "Name"
 msgid "Castle of Maintenon"
 msgstr "Maintenon Kalesi"
 
-#: palapeli/puzzles/castle-maintenon.desktop:29
+#: palapeli/puzzles/castle-maintenon.desktop:30
 msgctxt "Comment"
 msgid "Eure-et-Loir département, France"
 msgstr "Eure-et-Loir Bölgesi, Fransa"
@@ -3358,7 +3335,7 @@ msgctxt "Name"
 msgid "Roebling Suspension Bridge"
 msgstr "Roebling Asma Köprüsü"
 
-#: palapeli/puzzles/cincinnati-bridge.desktop:28
+#: palapeli/puzzles/cincinnati-bridge.desktop:29
 msgctxt "Comment"
 msgid "in Cincinnati"
 msgstr "Cincinnati'de"
@@ -3378,7 +3355,7 @@ msgctxt "Name"
 msgid "Furcifer pardalis"
 msgstr "Panter Bukalemun"
 
-#: palapeli/puzzles/panther-chameleon-female.desktop:28
+#: palapeli/puzzles/panther-chameleon-female.desktop:29
 msgctxt "Comment"
 msgid "Female panther chameleon"
 msgstr "Dişi panter bukalemunu"
@@ -3398,7 +3375,7 @@ msgctxt "Name"
 msgid "Palapeli"
 msgstr "Palapeli"
 
-#: palapeli/src/palapeli.desktop:35
+#: palapeli/src/palapeli.desktop:36
 msgctxt "GenericName"
 msgid "Jigsaw puzzle game"
 msgstr "Yapboz bulmaca oyunu"
@@ -3408,17 +3385,17 @@ msgctxt "Comment"
 msgid "Palapeli"
 msgstr "Palapeli"
 
-#: palapeli/src/palapeli.notifyrc:34
+#: palapeli/src/palapeli.notifyrc:35
 msgctxt "Name"
 msgid "File management operations"
 msgstr "Dosya yönetimi işlemleri"
 
-#: palapeli/src/palapeli.notifyrc:63
+#: palapeli/src/palapeli.notifyrc:65
 msgctxt "Name"
 msgid "Importing puzzle"
 msgstr "Bulmaca İçe Aktarılıyor"
 
-#: palapeli/src/palapeli.notifyrc:90
+#: palapeli/src/palapeli.notifyrc:93
 msgctxt "Comment"
 msgid "A puzzle is being imported into the local puzzle collection"
 msgstr "Yerel bulmaca koleksiyonuna bulmaca aktarılıyor"

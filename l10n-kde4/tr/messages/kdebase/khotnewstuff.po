@@ -2,7 +2,7 @@
 # translation of khotnewstuff.po to
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008.
 msgid ""
 msgstr ""

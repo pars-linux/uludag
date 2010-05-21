@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -76,8 +76,12 @@ msgid "Lists all power saving schemes and allows them to be activated"
 msgstr "Tüm güç koruma şemalarını listeler ve etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:80
-msgid "Lists system suspend (e.g. sleep, hibernate) options and allows them to be activated"
-msgstr "Sistem askıya alma (uyku kipi, bekleme kipi vs.) seçeneklerini listeler ve etkinleştirilmelerine izin verir"
+msgid ""
+"Lists system suspend (e.g. sleep, hibernate) options and allows them to be "
+"activated"
+msgstr ""
+"Sistem askıya alma (uyku kipi, bekleme kipi vs.) seçeneklerini listeler ve "
+"etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:85
 msgid "Suspends the system to RAM"
@@ -88,13 +92,20 @@ msgid "Suspends the system to disk"
 msgstr "Sistemi disk kullanarak askıya alır"
 
 #: PowerDevilRunner.cpp:98
-msgid "Lists all CPU frequency scaling policies and allows them to be activated"
-msgstr "Tüm İşlemci frekans ölçekleme politikalarını listeler ve etkinleştirilmelerine izin verir"
+msgid ""
+"Lists all CPU frequency scaling policies and allows them to be activated"
+msgstr ""
+"Tüm İşlemci frekans ölçekleme politikalarını listeler ve "
+"etkinleştirilmelerine izin verir"
 
 #: PowerDevilRunner.cpp:104
 #, no-c-format
-msgid "Lists screen brightness options or sets it to the brightness defined by :q:; e.g. screen brightness 50 would dim the screen to 50% maximum brightness"
-msgstr "Ekran parlaklığı seçeneklerini listeler veya parlaklığı :q: ile belirlenen değere ayarlar, 50 değeri ekran parlaklığını en fazla %50 olarak ayarlar"
+msgid ""
+"Lists screen brightness options or sets it to the brightness defined by :q:; "
+"e.g. screen brightness 50 would dim the screen to 50% maximum brightness"
+msgstr ""
+"Ekran parlaklığı seçeneklerini listeler veya parlaklığı :q: ile belirlenen "
+"değere ayarlar, 50 değeri ekran parlaklığını en fazla %50 olarak ayarlar"
 
 #: PowerDevilRunner.cpp:201
 msgid "Suspend to RAM"

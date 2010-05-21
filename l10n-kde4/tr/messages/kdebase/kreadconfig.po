@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kreadconfig\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-12-29 06:16+0100\n"
+"POT-Creation-Date: 2010-05-01 01:20+0200\n"
 "PO-Revision-Date: 2008-06-25 18:11+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -36,23 +36,23 @@ msgstr "(c) 2001 Red Hat, Inc."
 msgid "Bernhard Rosenkraenzer"
 msgstr "Bernhard Rosenkraenzer"
 
-#: kreadconfig.cpp:63
+#: kreadconfig.cpp:65
 msgid "Use <file> instead of global config"
 msgstr "Genel ayarlar yerine <file> kullan"
 
-#: kreadconfig.cpp:64
+#: kreadconfig.cpp:66
 msgid "Group to look in. Use repeatedly for nested groups."
 msgstr "Bakılacak grup. Yerleştirilmiş gruplar için tekrar tekrar kullan."
 
-#: kreadconfig.cpp:65
+#: kreadconfig.cpp:67
 msgid "Key to look for"
 msgstr "Aranacak anahtar"
 
-#: kreadconfig.cpp:66
+#: kreadconfig.cpp:68
 msgid "Default value"
 msgstr "Öntanımlı değer"
 
-#: kreadconfig.cpp:67
+#: kreadconfig.cpp:69
 msgid "Type of variable"
 msgstr "Değişkenin türü"
 

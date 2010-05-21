@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kstars\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:31+0100\n"
+"POT-Creation-Date: 2010-04-25 01:26+0200\n"
 "PO-Revision-Date: 2010-04-29 10:20+0300\n"
 "Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,6 @@ msgid "Star Name"
 msgstr "Yıldız Adı"
 
 #: colorscheme.cpp:49
-#| msgid "Object Name"
 msgid "Deep Sky Object Name"
 msgstr "Uzak Gök Cismi Adı"
 
@@ -280,39 +279,53 @@ msgstr "Dosyanın Üstüne Yazılsın mı?"
 msgid "Saving of the image %1 failed."
 msgstr "%1 resmi kaydedilemedi."
 
-#: kspopupmenu.cpp:73
+#: kspopupmenu.cpp:75
 #, kde-format
 msgid "Rise time: %1"
 msgstr "Doğma Zamanı: %1"
 
-#: kspopupmenu.cpp:75
+#: kspopupmenu.cpp:76
+#, kde-format
+msgctxt "the time at which an object falls below the horizon"
+msgid "Set time: %1"
+msgstr "Batma Zamanı: %1"
+
+#: kspopupmenu.cpp:79
 msgid "No rise time: Circumpolar"
 msgstr "Doğma zamanı yok: Kutup yöresi"
 
-#: kspopupmenu.cpp:77
+#: kspopupmenu.cpp:79
+msgid "No set time: Circumpolar"
+msgstr "Batma zamanı yok: Kutup yöresi"
+
+#: kspopupmenu.cpp:81
 msgid "No rise time: Never rises"
 msgstr "Doğma zamanı yok: Hiç doğmaz"
 
-#: kspopupmenu.cpp:86
+#: kspopupmenu.cpp:81
+msgid "No set time: Never rises"
+msgstr "Batma zamanı yok: Hiç doğmaz"
+
+#: kspopupmenu.cpp:90
 #, kde-format
 msgid "Transit time: %1"
 msgstr "Geçiş Zamanı: %1"
 
-#: kspopupmenu.cpp:104 kspopupmenu.cpp:178 skymapevents.cpp:711
+#: kspopupmenu.cpp:108 kspopupmenu.cpp:182 skymapevents.cpp:711
 msgid "Empty sky"
 msgstr "Boş gökyüzü"
 
-#: kspopupmenu.cpp:106 kspopupmenu.cpp:128 kspopupmenu.cpp:283
+#: kspopupmenu.cpp:110 kspopupmenu.cpp:132 kspopupmenu.cpp:287
 msgctxt "Sloan Digital Sky Survey"
 msgid "Show SDSS Image"
 msgstr "SDSS Resmini Göster"
 
-#: kspopupmenu.cpp:107 kspopupmenu.cpp:129 kspopupmenu.cpp:284
+#: kspopupmenu.cpp:111 kspopupmenu.cpp:133 kspopupmenu.cpp:288
 msgctxt "Digitized Sky Survey"
 msgid "Show DSS Image"
 msgstr "DSS Resmini Göster"
 
-#: kspopupmenu.cpp:123 kspopupmenu.cpp:176 kstarsdata.cpp:118
+#: kspopupmenu.cpp:127 kspopupmenu.cpp:180 kstarsdata.cpp:118
 #: kstarsdata.cpp:119 kstarsinit.cpp:569 tools/observinglist.cpp:509
 #: tools/wutdialog.cpp:261 skycomponents/starcomponent.cpp:487
 #: dialogs/detaildialog.cpp:133 skyobjects/starobject.cpp:663
@@ -321,69 +334,69 @@ msgstr "DSS Resmini Göster"
 msgid "star"
 msgstr "yıldız"
 
-#: kspopupmenu.cpp:123
+#: kspopupmenu.cpp:127
 #, kde-format
 msgid "%1<sup>m</sup>, %2"
 msgstr "%1<sup>m</sup>, %2"
 
-#: kspopupmenu.cpp:163
+#: kspopupmenu.cpp:167
 msgid "Solar system object"
 msgstr "Güneş sistemi nesnesi"
 
-#: kspopupmenu.cpp:200
+#: kspopupmenu.cpp:204
 msgid "Center && Track"
 msgstr "Ortala && İzle"
 
-#: kspopupmenu.cpp:207
+#: kspopupmenu.cpp:211
 msgid "Angular Distance To...            ["
 msgstr ".... Cismine olan Açısal Uzaklık            ["
 
-#: kspopupmenu.cpp:210
+#: kspopupmenu.cpp:214
 msgid "Compute Angular Distance          ]"
 msgstr "Açısal Uzaklığı Hesapla          ]"
 
-#: kspopupmenu.cpp:218 obslistpopupmenu.cpp:54
+#: kspopupmenu.cpp:222 obslistpopupmenu.cpp:54
 msgctxt "Show Detailed Information Dialog"
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: kspopupmenu.cpp:225
+#: kspopupmenu.cpp:229
 msgid "Remove Label"
 msgstr "Etiketi Kaldır"
 
-#: kspopupmenu.cpp:227
+#: kspopupmenu.cpp:231
 msgid "Attach Label"
 msgstr "Etiket İliştir"
 
-#: kspopupmenu.cpp:233
+#: kspopupmenu.cpp:237
 msgid "Remove From Observing WishList"
 msgstr "Gözlemleme İsteği Listesinden Kaldır"
 
-#: kspopupmenu.cpp:235
+#: kspopupmenu.cpp:239
 msgid "Add to Observing WishList"
 msgstr "Gözlemleme İsteği Listesine Ekle"
 
-#: kspopupmenu.cpp:240
+#: kspopupmenu.cpp:244
 msgid "Add Trail"
 msgstr "Yol Ekle"
 
-#: kspopupmenu.cpp:242
+#: kspopupmenu.cpp:246
 msgid "Remove Trail"
 msgstr "Yol Sil"
 
-#: kspopupmenu.cpp:251
+#: kspopupmenu.cpp:255
 msgid "Print Xplanet view"
 msgstr "Xplanet görünümünü yazdır"
 
-#: kspopupmenu.cpp:252
+#: kspopupmenu.cpp:256
 msgid "To screen"
 msgstr "Ekrana"
 
-#: kspopupmenu.cpp:253
+#: kspopupmenu.cpp:257
 msgid "To file..."
 msgstr "Dosyaya..."
 
-#: kspopupmenu.cpp:373
+#: kspopupmenu.cpp:377
 msgid "Track Crosshair"
 msgstr "Hedef Göstergesini izle"
 
@@ -642,14 +655,14 @@ msgid ""
 "It appears that you setup is broken. Press Continue to run KStars without "
 "this file "
 msgstr ""
-"%1 dosyası bulunamadı. KStars bu dosya olmadan da çalışabilir. "
-"KStars bu dosyayı şu konumlarda aramaktadır:\n"
+"%1 dosyası bulunamadı. KStars bu dosya olmadan da çalışabilir. KStars bu "
+"dosyayı şu konumlarda aramaktadır:\n"
 "\n"
 "\t$(KDEDIR)/share/apps/kstars/%1\n"
 "\t~/.kde/share/apps/kstars/%1\n"
 "\n"
-"Kurulumunuzda hata var. KStars'ı bu dosya olmadan çalıştırmak için "
-"Devam Et tuşuna basınız. "
+"Kurulumunuzda hata var. KStars'ı bu dosya olmadan çalıştırmak için Devam Et "
+"tuşuna basınız. "
 
 #: kstarsdata.cpp:89
 #, kde-format
@@ -24624,11 +24637,9 @@ msgid ""
 msgstr ""
 "Simülasyon zaman akış hızını değiştirmek için bunu kullanın.\n"
 "Zaman 'X' inin 10 dakikaya kadar artırılması durumunda, zaman saniyede 'X' "
-"kadar "
-"geçecektir.\n"
+"kadar geçecektir.\n"
 "Zaman 'X' inin 10 dakikadan büyük olması durumunda, Görüntü kareleri 'X' "
-"aralığında  "
-"görüntülenecektir."
+"aralığında  görüntülenecektir."
 
 #: kstarsinit.cpp:408
 msgid "Time step control"
@@ -26384,27 +26395,22 @@ msgstr "Gökyüzü haritasında yıldız parlaklıkları etiketlensin mi?"
 #. i18n: file: kstars.kcfg:543
 #. i18n: ectx: whatsthis, entry (ShowDeepSkyMagnitudes), group (View)
 #: rc.cpp:630
-#| msgid ""
-#| "Toggle whether star magnitude (brightness) labels are shown in the sky "
-#| "map."
 msgid ""
 "Toggle whether deep-sky object magnitude (brightness) labels are shown in "
 "the sky map."
 msgstr ""
-"Gökyüzü haritasında uzak gök cismi parlaklık şiddeti etiketlerini "
-"göster/gizle."
+"Gökyüzü haritasında uzak gök cismi parlaklık şiddeti etiketlerini göster/"
+"gizle."
 
 #. i18n: file: kstars.kcfg:547
 #. i18n: ectx: label, entry (ShowDeepSkyNames), group (View)
 #: rc.cpp:633
-#| msgid "Draw extra deep-sky objects in the sky map?"
 msgid "Label deep-sky objects in the sky map?"
 msgstr "Gökyüzü haritasında uzak gök cisimleri etiketlensin mi?"
 
 #. i18n: file: kstars.kcfg:548
 #. i18n: ectx: whatsthis, entry (ShowDeepSkyNames), group (View)
 #: rc.cpp:636
-#| msgid "Toggle whether star name labels are shown in the sky map."
 msgid "Toggle whether deep-sky object name labels are shown in the sky map."
 msgstr " Gökyüzü haritasında uzak gök cismi isim etiketlerini göster/gizle."
 
@@ -26775,7 +26781,6 @@ msgstr "Yıldız isim ve parlaklık etiketlerinin gösterimi için bağıl yoğu
 #. i18n: file: kstars.kcfg:687
 #. i18n: ectx: label, entry (DeepSkyLabelDensity), group (View)
 #: rc.cpp:792
-#| msgid "Relative density for star name labels and/or magnitudes"
 msgid "Relative density for deep-sky object name labels and/or magnitudes"
 msgstr ""
 "Uzak gök cisimleri için göreceli yoğunluklu isim ve/veya parlaklık şiddeti "
@@ -26784,7 +26789,6 @@ msgstr ""
 #. i18n: file: kstars.kcfg:688
 #. i18n: ectx: whatsthis, entry (DeepSkyLabelDensity), group (View)
 #: rc.cpp:795
-#| msgid "The relative density for drawing star name and magnitude labels."
 msgid ""
 "The relative density for drawing deep-sky object name and magnitude labels."
 msgstr ""
@@ -27098,14 +27102,12 @@ msgstr "Yıldız isim etiketleri için renk."
 #. i18n: file: kstars.kcfg:817
 #. i18n: ectx: label, entry (DeepSkyNameColor), group (Colors)
 #: rc.cpp:942
-#| msgid "Color of planet name labels"
 msgid "Color of deep-sky object name labels"
 msgstr "Uzak gök cisimlerinin isim etiketlerinin rengi"
 
 #. i18n: file: kstars.kcfg:818
 #. i18n: ectx: whatsthis, entry (DeepSkyNameColor), group (Colors)
 #: rc.cpp:945
-#| msgid "The color for star name labels."
 msgid "The color for deep-sky object name labels."
 msgstr "Uzak gök cisimleri isim etiketi rengi."
 
@@ -35802,7 +35804,6 @@ msgstr "Nesne için gözlem notlarını ayarlayın:"
 #. i18n: file: comast/execute.ui:296
 #. i18n: ectx: property (text), widget (QPushButton, Slew)
 #: rc.cpp:5802
-#| msgid "Telescope"
 msgctxt "Move the telescope to an object or location"
 msgid "Slew Telescope"
 msgstr "Teleskopu Çevir"
@@ -35822,7 +35823,6 @@ msgstr "Gözlemci"
 #. i18n: file: comast/execute.ui:331
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: rc.cpp:5811
-#| msgid "Telescopes:"
 msgid "Telescope:"
 msgstr "Teleskop:"
 
@@ -36064,12 +36064,6 @@ msgstr "Bir Önceki Yaz Saati Uygulama Zamanı değişimi (UTC)"
 #. i18n: file: tips:2
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:3
-#| msgid ""
-#| "\t\t<p>You can locate objects in the sky by their name.\n"
-#| "\t\t\tUse Ctrl+F, the \"Focus->Find Object\" menu item, or the \"Find\"\n"
-#| "\t\t\tToolbar button.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can locate objects in the sky by their name.\n"
 "\t\t\tUse Ctrl+F, the \"Pointing->Find Object\" menu item, or the \"Find "
@@ -36087,13 +36081,6 @@ msgstr ""
 #. i18n: file: tips:10
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:12
-#| msgid ""
-#| "\t\t<p>To change your Geographic Location,\n"
-#| "\t\t\tuse Ctrl+G, the \"Settings->Set Geographic Location...\" menu "
-#| "item,\n"
-#| "\t\t\tor the \"globe\" Toolbar button.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>To change your Geographic Location,\n"
 "\t\t\tuse Ctrl+G, the \"Settings->Geographic...\" menu item,\n"
@@ -36110,15 +36097,6 @@ msgstr ""
 #. i18n: file: tips:18
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:21
-#| msgid ""
-#| "\t\t<p>You can Track an object, so it will always be centered\n"
-#| "\t\t\tin the display.<br/>\n"
-#| "\t\t\tUse Ctrl+T, the \"Focus->Track Object\" menu item, or the \"lock\"\n"
-#| "\t\t\tToolbar button. You can also simply center the object by\n"
-#| "\t\t\tdouble-clicking on it or selecting \"Center and Track\" from the\n"
-#| "\t\t\tobject's popup menu.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can Track an object, so it will always be centered\n"
 "\t\t\tin the display.<br/>\n"
@@ -36318,13 +36296,6 @@ msgstr ""
 #. i18n: file: tips:103
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:116
-#| msgid ""
-#| "\t\t<p>You can manually set the coordinates of the central Focus point.\n"
-#| "\t\t\tPress Ctrl+M, or use the \"Focus->Set Focus Manually...\" menu "
-#| "item, and enter\n"
-#| "\t\t\tthe desired coordinates in the popup window.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can manually set the coordinates of the central Focus point.\n"
 "\t\t\tPress Ctrl+M, or use the \"Pointing->Set Focus Manually...\" menu "
@@ -36334,8 +36305,8 @@ msgid ""
 "\t\n"
 msgstr ""
 "\t\t<p>Odak merkezi koordinatlarını el ile ayarlayabilirsiniz. Bunun için\n"
-"\t\t\tCtrl+M tuşlarına basın veya \"Odaklama->Odağı El İle Ayarla...\" "
-"menü seçeneğinden\n"
+"\t\t\tCtrl+M tuşlarına basın veya \"Odaklama->Odağı El İle Ayarla...\" menü "
+"seçeneğinden\n"
 "\t\t\taçılan pencereye istediğiniz koordinatları giriniz.\n"
 "\t\t</p>\n"
 "\t\n"
@@ -36414,11 +36385,6 @@ msgstr ""
 #. i18n: file: tips:141
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:159
-#| msgid ""
-#| "\t\t<p>You can stop and start the clock with the \"Play/Pause\" button\n"
-#| "\t\t\tin the Toolbar, or with the \"Time->Stop/Start Clock\" menu item.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can stop and start the clock with the \"Play/Pause\" button\n"
 "\t\t\tin the Toolbar, or with the \"Time->Stop Clock\" menu item.\n"
@@ -36532,15 +36498,6 @@ msgstr ""
 #. i18n: file: tips:193
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:218
-#| msgid ""
-#| "\t\t<p>If you want the very latest orbital information for asteroids and\n"
-#| "\t\t\tcomets (including recently-discovered objects), check the "
-#| "\"Download\n"
-#| "\t\t\tData\" tool (\"File|Download Data\" or Ctrl+D) frequently for "
-#| "updated\n"
-#| "\t\t\tephemerides.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>If you want the very latest orbital information for asteroids and\n"
 "\t\t\tcomets (including recently-discovered objects), check the \"Download\n"
@@ -36550,12 +36507,11 @@ msgid ""
 "\t\t</p>\n"
 "\t\n"
 msgstr ""
-"\t\t<p>Asteroid ve kuyrulu yıldızların (yakın zamanda keşfedilen "
-"nesneler dahil)\n"
+"\t\t<p>Asteroid ve kuyrulu yıldızların (yakın zamanda keşfedilen nesneler "
+"dahil)\n"
 "\t\t\ten son yörünge bilgilerini istiyorsanız \"Karşıdan Veri Yükle\n"
 " aracını \t\t\t(\"Dosya->Yeni Veri İndir\" veya Ctrl+D) güncel gök günlüğü "
-"için "
-"sıkça\n"
+"için sıkça\n"
 "\t\t\tkontrol ediniz.\n"
 "\t\t</p>\n"
 "\t\n"
@@ -36690,12 +36646,6 @@ msgstr ""
 #. i18n: file: tips:258
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:291
-#| msgid ""
-#| "\t\t<p>The ScriptBuilder tool allows you to construct complex DCOP\n"
-#| "\t\t\tscripts using a simple GUI.  The scripts can be played back later\n"
-#| "\t\t\tfrom the command line, or from within KStars.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>The ScriptBuilder tool allows you to construct complex D-Bus\n"
 "\t\t\tscripts using a simple GUI.  The scripts can be played back later\n"
@@ -36775,13 +36725,6 @@ msgstr ""
 #. i18n: file: tips:292
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:329
-#| msgid ""
-#| "\t\t<p>To add your own custom Object Catalogs, select\n"
-#| "\t\t\t\"Add Catalog\" from the Catalogs tab in the KStars Configuration "
-#| "window.\n"
-#| "\t\t\tSee the Handbook for instructions on formatting your catalog file.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>To add your own custom Object Catalogs, select \"Import Catalog\" "
 "or \n"
@@ -36893,14 +36836,6 @@ msgstr ""
 #. i18n: file: tips:342
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:386
-#| msgid ""
-#| "\t\t<p>You can define your own Geographic Locations.  Fill in the\n"
-#| "\t\t\trequired fields in the \"Change Location\" Dialog and then press "
-#| "the\n"
-#| "\t\t\t\"Add to List\" button. Your Locations will be available in all\n"
-#| "\t\t\tfuture sessions.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can define your own Geographic Locations.  Fill in the\n"
 "\t\t\trequired fields in the \"Set Geographic Location\" Dialog and then "
@@ -36941,13 +36876,6 @@ msgstr ""
 #. i18n: file: tips:360
 #. i18n: ectx: @info:tipoftheday
 #: tips.cpp:406
-#| msgid ""
-#| "\t\t<p>You can construct your own field-of-view (FOV) symbols, using the\n"
-#| "\t\t\tFOV Editor under the Tools menu.  You can set the angular size, "
-#| "the\n"
-#| "\t\t\tshape, and the color of your new symbols.\n"
-#| "\t\t</p>\n"
-#| "\t\n"
 msgid ""
 "\t\t<p>You can construct your own field-of-view (FOV) symbols, using the\n"
 "\t\t\tFOV Editor from the Settings->FOV Symbols menu.  You can set the "
@@ -40383,25 +40311,21 @@ msgid "Define Equipment"
 msgstr "Ekipmanı Tanımla"
 
 #: comast/equipmentwriter.cpp:75 comast/equipmentwriter.cpp:77
-#| msgid "scope_"
 msgctxt "prefix for ID number identifying a telescope (optional)"
 msgid "scope"
 msgstr "kapsam"
 
 #: comast/equipmentwriter.cpp:127 comast/equipmentwriter.cpp:129
-#| msgid "Eyepiece"
 msgctxt "prefix for ID number identifying an eyepiece (optional)"
 msgid "eyepiece"
 msgstr "mercek"
 
 #: comast/equipmentwriter.cpp:184 comast/equipmentwriter.cpp:186
-#| msgid "lens_"
 msgctxt "prefix for ID number identifying a lens (optional)"
 msgid "lens"
 msgstr "mercek"
 
 #: comast/equipmentwriter.cpp:237 comast/equipmentwriter.cpp:239
-#| msgid "filter_"
 msgctxt "prefix for ID number identifying a filter (optional)"
 msgid "filter"
 msgstr "filtre"
@@ -40500,16 +40424,6 @@ msgstr "Yazma Hatası"
 
 #~ msgid "Magellanic Clouds"
 #~ msgstr "Macellan Bulutları"
-
-#~ msgctxt "the time at which an object falls below the horizon"
-#~ msgid "Set time: %1"
-#~ msgstr "Batma Zamanı: %1"
-
-#~ msgid "No set time: Circumpolar"
-#~ msgstr "Batma zamanı yok: Kutup yöresi"
-
-#~ msgid "No set time: Never rises"
-#~ msgstr "Batma zamanı yok: Hiç doğmaz"
 
 #~ msgid "Object type"
 #~ msgstr "Nesne tipi"

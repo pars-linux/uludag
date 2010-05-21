@@ -535,8 +535,7 @@ msgid ""
 "server and delete all older."
 msgstr ""
 "Eğer sunucuda sadece son iletileri tutmak istiyor ve eskilerini silmek "
-"istiyorsanız "
-"bu seçeneği işaretleyin."
+"istiyorsanız bu seçeneği işaretleyin."
 
 #. i18n: file: popsettings.ui:299
 #. i18n: ectx: property (text), widget (QCheckBox, leaveOnServerCountCheck)

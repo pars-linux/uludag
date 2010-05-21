@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SpellCheckPlugin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-21 06:54+0100\n"
 "PO-Revision-Date: 2008-06-27 21:51+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Lokalize 0.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: SpellCheck.cpp:45
+#: SpellCheck.cpp:46
 msgid "Configure &Spell Checking..."
 msgstr "&Yazım Denetimini Yapılandır..."
 

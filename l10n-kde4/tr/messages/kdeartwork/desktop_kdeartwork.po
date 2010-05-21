@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeartwork\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-01 23:30+0000\n"
+"POT-Creation-Date: 2010-05-15 23:30+0000\n"
 "PO-Revision-Date: 2010-05-05 11:08+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -27,7 +27,7 @@ msgctxt "Name"
 msgid "Aya"
 msgstr "Aya"
 
-#: desktopthemes/Aya/metadata.desktop:47
+#: desktopthemes/Aya/metadata.desktop:48
 msgctxt "Comment"
 msgid "Theme that matches current system colors (Optimized with Oxygen style)"
 msgstr ""
@@ -39,7 +39,7 @@ msgctxt "Name"
 msgid "Blend"
 msgstr "Blend"
 
-#: desktopthemes/Clean-Blend/metadata.desktop:43
+#: desktopthemes/Clean-Blend/metadata.desktop:44
 msgctxt "Comment"
 msgid "A consistent looking theme with an elegant touch."
 msgstr "Şık bir kalıcı tema."
@@ -49,7 +49,7 @@ msgctxt "Name"
 msgid "Elegance"
 msgstr "Elegance"
 
-#: desktopthemes/Elegance/metadata.desktop:47
+#: desktopthemes/Elegance/metadata.desktop:48
 msgctxt "Comment"
 msgid "An elegant theme for plasma"
 msgstr "Plasma için şık bir tema"
@@ -59,7 +59,7 @@ msgctxt "Name"
 msgid "Heron"
 msgstr "Heron"
 
-#: desktopthemes/heron/metadata.desktop:45
+#: desktopthemes/heron/metadata.desktop:46
 msgctxt "Comment"
 msgid "Simple, smooth theme"
 msgstr "Basit, düz tema"
@@ -69,7 +69,7 @@ msgctxt "Name"
 msgid "Silicon"
 msgstr "Silicon"
 
-#: desktopthemes/Silicon/metadata.desktop:46
+#: desktopthemes/Silicon/metadata.desktop:47
 msgctxt "Comment"
 msgid "Transparent slim theme"
 msgstr "Şeffaf ince tema"
@@ -79,7 +79,7 @@ msgctxt "Name"
 msgid "Slim Glow"
 msgstr "Slim Glow"
 
-#: desktopthemes/slim-glow/metadata.desktop:45
+#: desktopthemes/slim-glow/metadata.desktop:46
 msgctxt "Comment"
 msgid "Slick theme for dark wallpapers"
 msgstr "Koyu duvar kağıtları için Slick teması"
@@ -99,7 +99,7 @@ msgctxt "Name"
 msgid "Nuvola theme"
 msgstr "Nuvola teması"
 
-#: IconThemes/nuvola/index.theme:55
+#: IconThemes/nuvola/index.theme:56
 msgctxt "Comment"
 msgid "Icon Theme by David Vignoni ( icon-king.com ) - 2003-2004"
 msgstr "Icon Theme by David Vignoni ( icon-king.com ) - 2003-2004"
@@ -119,17 +119,17 @@ msgctxt "Name"
 msgid "Asciiquarium"
 msgstr "Asciiquarium"
 
-#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:55
+#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:56
 msgctxt "Name"
 msgid "Display in specified window"
 msgstr "Belirtilen pencerede göster"
 
-#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:107
+#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:109
 msgctxt "Name"
 msgid "Display in root window"
 msgstr "Kök pencerede göster"
 
-#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:159
+#: kscreensaver/kdesavers/asciiquarium/asciiquarium.desktop:162
 msgctxt "Name"
 msgid "Display setup dialog"
 msgstr "Ekran ayarlama penceresi"
@@ -158,12 +158,12 @@ msgstr "Afiş"
 #: kscreensaver/kdesavers/KVm.desktop:76
 #: kscreensaver/kdesavers/KWave.desktop:76
 #: kscreensaver/kpartsaver/kpartsaver.desktop:75
-#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:45
+#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:48
 #: kscreensaver/kxsconfig/ScreenSavers/anemone.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/anemotaxis.desktop:68
 #: kscreensaver/kxsconfig/ScreenSavers/ant.desktop:78
 #: kscreensaver/kxsconfig/ScreenSavers/antinspect.desktop:72
-#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:53
+#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:54
 #: kscreensaver/kxsconfig/ScreenSavers/antspotlight.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/apollonian.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/apple2.desktop:73
@@ -175,32 +175,32 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/blinkbox.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/blitspin.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/blocktube.desktop:71
-#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:52
+#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:53
 #: kscreensaver/kxsconfig/ScreenSavers/bouboule.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/bouncingcow.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/boxed.desktop:73
-#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:47
+#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:49
 #: kscreensaver/kxsconfig/ScreenSavers/braid.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/bsod.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/bubble3d.desktop:78
 #: kscreensaver/kxsconfig/ScreenSavers/bubbles.desktop:77
 #: kscreensaver/kxsconfig/ScreenSavers/bumps.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/cage.desktop:78
-#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:51
+#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:53
 #: kscreensaver/kxsconfig/ScreenSavers/ccurve.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/celtic.desktop:51
 #: kscreensaver/kxsconfig/ScreenSavers/circuit.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/cloudlife.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/compass.desktop:77
 #: kscreensaver/kxsconfig/ScreenSavers/coral.desktop:76
-#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:48
+#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:50
 #: kscreensaver/kxsconfig/ScreenSavers/critical.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/crystal.desktop:77
-#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:48
+#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:49
 #: kscreensaver/kxsconfig/ScreenSavers/cubenetic.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/cubestorm.desktop:70
-#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:45
-#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:44
+#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:46
+#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:45
 #: kscreensaver/kxsconfig/ScreenSavers/cynosure.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/dangerball.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/decayscreen.desktop:72
@@ -217,13 +217,13 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/euler2d.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/extrusion.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/fadeplot.desktop:72
-#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:48
+#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:50
 #: kscreensaver/kxsconfig/ScreenSavers/fireworkx.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/flag.desktop:78
 #: kscreensaver/kxsconfig/ScreenSavers/flame.desktop:78
 #: kscreensaver/kxsconfig/ScreenSavers/flipflop.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/flipscreen3d.desktop:71
-#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:49
+#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:51
 #: kscreensaver/kxsconfig/ScreenSavers/flow.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/fluidballs.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/flurry.desktop:71
@@ -235,14 +235,14 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/gears.desktop:76
 #: kscreensaver/kxsconfig/ScreenSavers/gflux.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/glblur.desktop:72
-#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:44
+#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:46
 #: kscreensaver/kxsconfig/ScreenSavers/gleidescope.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/glforestfire.desktop:73
-#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:51
+#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:52
 #: kscreensaver/kxsconfig/ScreenSavers/glknots.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/glmatrix.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/glplanet.desktop:74
-#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:46
+#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:47
 #: kscreensaver/kxsconfig/ScreenSavers/glslideshow.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/glsnake.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/gltext.desktop:73
@@ -256,16 +256,16 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/hyperball.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/hypercube.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/hypertorus.desktop:71
-#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:45
+#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:46
 #: kscreensaver/kxsconfig/ScreenSavers/ifs.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/imsmap.desktop:74
-#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:47
+#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:48
 #: kscreensaver/kxsconfig/ScreenSavers/interference.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/intermomentary.desktop:66
 #: kscreensaver/kxsconfig/ScreenSavers/jigglypuff.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/jigsaw.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/juggle.desktop:73
-#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:51
+#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:53
 #: kscreensaver/kxsconfig/ScreenSavers/julia.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/kaleidescope.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/klein.desktop:71
@@ -273,14 +273,14 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/lament.desktop:74
 #: kscreensaver/kxsconfig/ScreenSavers/laser.desktop:76
 #: kscreensaver/kxsconfig/ScreenSavers/lavalite.desktop:72
-#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:43
+#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:44
 #: kscreensaver/kxsconfig/ScreenSavers/lightning.desktop:76
 #: kscreensaver/kxsconfig/ScreenSavers/lisa.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/lissie.desktop:75
 #: kscreensaver/kxsconfig/ScreenSavers/lmorph.desktop:74
-#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:44
+#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:45
 #: kscreensaver/kxsconfig/ScreenSavers/loop.desktop:74
-#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:46
+#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:47
 #: kscreensaver/kxsconfig/ScreenSavers/maze.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/memscroller.desktop:65
 #: kscreensaver/kxsconfig/ScreenSavers/menger.desktop:72
@@ -288,7 +288,7 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/mirrorblob.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/mismunch.desktop:65
 #: kscreensaver/kxsconfig/ScreenSavers/moebius.desktop:74
-#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:48
+#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:49
 #: kscreensaver/kxsconfig/ScreenSavers/moire2.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/moire.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/molecule.desktop:77
@@ -330,7 +330,7 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/shadebobs.desktop:69
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski3d.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski.desktop:70
-#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:45
+#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:46
 #: kscreensaver/kxsconfig/ScreenSavers/slidescreen.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/slip.desktop:71
 #: kscreensaver/kxsconfig/ScreenSavers/sonar.desktop:72
@@ -350,9 +350,9 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/superquadrics.desktop:73
 #: kscreensaver/kxsconfig/ScreenSavers/swirl.desktop:72
 #: kscreensaver/kxsconfig/ScreenSavers/t3d.desktop:75
-#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:50
+#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:51
 #: kscreensaver/kxsconfig/ScreenSavers/thornbird.desktop:68
-#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:46
+#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:47
 #: kscreensaver/kxsconfig/ScreenSavers/topblock.desktop:46
 #: kscreensaver/kxsconfig/ScreenSavers/triangle.desktop:76
 #: kscreensaver/kxsconfig/ScreenSavers/truchet.desktop:72
@@ -360,7 +360,7 @@ msgstr "Afiş"
 #: kscreensaver/kxsconfig/ScreenSavers/vermiculate.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/vidwhacker.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/vines.desktop:70
-#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:47
+#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:49
 #: kscreensaver/kxsconfig/ScreenSavers/wander.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/webcollage.desktop:70
 #: kscreensaver/kxsconfig/ScreenSavers/whirlwindwarp.desktop:69
@@ -402,12 +402,12 @@ msgstr "Kurulum..."
 #: kscreensaver/kdesavers/KVm.desktop:146
 #: kscreensaver/kdesavers/KWave.desktop:146
 #: kscreensaver/kpartsaver/kpartsaver.desktop:145
-#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:114
+#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:117
 #: kscreensaver/kxsconfig/ScreenSavers/anemone.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/anemotaxis.desktop:137
 #: kscreensaver/kxsconfig/ScreenSavers/ant.desktop:148
 #: kscreensaver/kxsconfig/ScreenSavers/antinspect.desktop:141
-#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:122
+#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:123
 #: kscreensaver/kxsconfig/ScreenSavers/antspotlight.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/apollonian.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/apple2.desktop:142
@@ -419,32 +419,32 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/blinkbox.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/blitspin.desktop:139
 #: kscreensaver/kxsconfig/ScreenSavers/blocktube.desktop:140
-#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:121
+#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:122
 #: kscreensaver/kxsconfig/ScreenSavers/bouboule.desktop:145
 #: kscreensaver/kxsconfig/ScreenSavers/bouncingcow.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/boxed.desktop:142
-#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:116
+#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:118
 #: kscreensaver/kxsconfig/ScreenSavers/braid.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/bsod.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/bubble3d.desktop:148
 #: kscreensaver/kxsconfig/ScreenSavers/bubbles.desktop:147
 #: kscreensaver/kxsconfig/ScreenSavers/bumps.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/cage.desktop:148
-#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:120
+#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:122
 #: kscreensaver/kxsconfig/ScreenSavers/ccurve.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/celtic.desktop:120
 #: kscreensaver/kxsconfig/ScreenSavers/circuit.desktop:143
 #: kscreensaver/kxsconfig/ScreenSavers/cloudlife.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/compass.desktop:147
 #: kscreensaver/kxsconfig/ScreenSavers/coral.desktop:146
-#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:117
+#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:119
 #: kscreensaver/kxsconfig/ScreenSavers/critical.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/crystal.desktop:147
-#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:117
+#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:118
 #: kscreensaver/kxsconfig/ScreenSavers/cubenetic.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/cubestorm.desktop:139
-#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:114
-#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:113
+#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:115
+#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:114
 #: kscreensaver/kxsconfig/ScreenSavers/cynosure.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/dangerball.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/decayscreen.desktop:141
@@ -461,13 +461,13 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/euler2d.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/extrusion.desktop:143
 #: kscreensaver/kxsconfig/ScreenSavers/fadeplot.desktop:142
-#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:117
+#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:119
 #: kscreensaver/kxsconfig/ScreenSavers/fireworkx.desktop:139
 #: kscreensaver/kxsconfig/ScreenSavers/flag.desktop:148
 #: kscreensaver/kxsconfig/ScreenSavers/flame.desktop:148
 #: kscreensaver/kxsconfig/ScreenSavers/flipflop.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/flipscreen3d.desktop:140
-#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:118
+#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:120
 #: kscreensaver/kxsconfig/ScreenSavers/flow.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/fluidballs.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/flurry.desktop:140
@@ -479,14 +479,14 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/gears.desktop:146
 #: kscreensaver/kxsconfig/ScreenSavers/gflux.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/glblur.desktop:141
-#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:113
+#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:115
 #: kscreensaver/kxsconfig/ScreenSavers/gleidescope.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/glforestfire.desktop:142
-#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:120
+#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:121
 #: kscreensaver/kxsconfig/ScreenSavers/glknots.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/glmatrix.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/glplanet.desktop:144
-#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:115
+#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:116
 #: kscreensaver/kxsconfig/ScreenSavers/glslideshow.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/glsnake.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/gltext.desktop:142
@@ -500,16 +500,16 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/hyperball.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/hypercube.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/hypertorus.desktop:140
-#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:114
+#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:115
 #: kscreensaver/kxsconfig/ScreenSavers/ifs.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/imsmap.desktop:144
-#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:116
+#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:117
 #: kscreensaver/kxsconfig/ScreenSavers/interference.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/intermomentary.desktop:135
 #: kscreensaver/kxsconfig/ScreenSavers/jigglypuff.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/jigsaw.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/juggle.desktop:142
-#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:120
+#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:122
 #: kscreensaver/kxsconfig/ScreenSavers/julia.desktop:143
 #: kscreensaver/kxsconfig/ScreenSavers/kaleidescope.desktop:143
 #: kscreensaver/kxsconfig/ScreenSavers/klein.desktop:140
@@ -517,14 +517,14 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/lament.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/laser.desktop:146
 #: kscreensaver/kxsconfig/ScreenSavers/lavalite.desktop:141
-#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:112
+#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:113
 #: kscreensaver/kxsconfig/ScreenSavers/lightning.desktop:146
 #: kscreensaver/kxsconfig/ScreenSavers/lisa.desktop:144
 #: kscreensaver/kxsconfig/ScreenSavers/lissie.desktop:145
 #: kscreensaver/kxsconfig/ScreenSavers/lmorph.desktop:144
-#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:113
+#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:114
 #: kscreensaver/kxsconfig/ScreenSavers/loop.desktop:143
-#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:115
+#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:116
 #: kscreensaver/kxsconfig/ScreenSavers/maze.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/memscroller.desktop:134
 #: kscreensaver/kxsconfig/ScreenSavers/menger.desktop:141
@@ -532,7 +532,7 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/mirrorblob.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/mismunch.desktop:134
 #: kscreensaver/kxsconfig/ScreenSavers/moebius.desktop:144
-#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:117
+#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:118
 #: kscreensaver/kxsconfig/ScreenSavers/moire2.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/moire.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/molecule.desktop:146
@@ -574,7 +574,7 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/shadebobs.desktop:138
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski3d.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski.desktop:139
-#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:114
+#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:115
 #: kscreensaver/kxsconfig/ScreenSavers/slidescreen.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/slip.desktop:141
 #: kscreensaver/kxsconfig/ScreenSavers/sonar.desktop:142
@@ -594,9 +594,9 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/superquadrics.desktop:143
 #: kscreensaver/kxsconfig/ScreenSavers/swirl.desktop:142
 #: kscreensaver/kxsconfig/ScreenSavers/t3d.desktop:145
-#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:119
+#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:120
 #: kscreensaver/kxsconfig/ScreenSavers/thornbird.desktop:137
-#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:115
+#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:116
 #: kscreensaver/kxsconfig/ScreenSavers/topblock.desktop:115
 #: kscreensaver/kxsconfig/ScreenSavers/triangle.desktop:146
 #: kscreensaver/kxsconfig/ScreenSavers/truchet.desktop:141
@@ -604,7 +604,7 @@ msgstr "Kurulum..."
 #: kscreensaver/kxsconfig/ScreenSavers/vermiculate.desktop:139
 #: kscreensaver/kxsconfig/ScreenSavers/vidwhacker.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/vines.desktop:140
-#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:116
+#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:118
 #: kscreensaver/kxsconfig/ScreenSavers/wander.desktop:139
 #: kscreensaver/kxsconfig/ScreenSavers/webcollage.desktop:140
 #: kscreensaver/kxsconfig/ScreenSavers/whirlwindwarp.desktop:138
@@ -646,12 +646,12 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kdesavers/KVm.desktop:212
 #: kscreensaver/kdesavers/KWave.desktop:212
 #: kscreensaver/kpartsaver/kpartsaver.desktop:211
-#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:180
+#: kscreensaver/kxsconfig/ScreenSavers/abstractile.desktop:183
 #: kscreensaver/kxsconfig/ScreenSavers/anemone.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/anemotaxis.desktop:203
 #: kscreensaver/kxsconfig/ScreenSavers/ant.desktop:214
 #: kscreensaver/kxsconfig/ScreenSavers/antinspect.desktop:207
-#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:188
+#: kscreensaver/kxsconfig/ScreenSavers/antmaze.desktop:189
 #: kscreensaver/kxsconfig/ScreenSavers/antspotlight.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/apollonian.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/apple2.desktop:208
@@ -663,32 +663,32 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/blinkbox.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/blitspin.desktop:205
 #: kscreensaver/kxsconfig/ScreenSavers/blocktube.desktop:206
-#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:187
+#: kscreensaver/kxsconfig/ScreenSavers/boing.desktop:188
 #: kscreensaver/kxsconfig/ScreenSavers/bouboule.desktop:211
 #: kscreensaver/kxsconfig/ScreenSavers/bouncingcow.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/boxed.desktop:208
-#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:182
+#: kscreensaver/kxsconfig/ScreenSavers/boxfit.desktop:184
 #: kscreensaver/kxsconfig/ScreenSavers/braid.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/bsod.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/bubble3d.desktop:214
 #: kscreensaver/kxsconfig/ScreenSavers/bubbles.desktop:213
 #: kscreensaver/kxsconfig/ScreenSavers/bumps.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/cage.desktop:214
-#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:186
+#: kscreensaver/kxsconfig/ScreenSavers/carousel.desktop:188
 #: kscreensaver/kxsconfig/ScreenSavers/ccurve.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/celtic.desktop:186
 #: kscreensaver/kxsconfig/ScreenSavers/circuit.desktop:209
 #: kscreensaver/kxsconfig/ScreenSavers/cloudlife.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/compass.desktop:213
 #: kscreensaver/kxsconfig/ScreenSavers/coral.desktop:212
-#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:183
+#: kscreensaver/kxsconfig/ScreenSavers/crackberg.desktop:185
 #: kscreensaver/kxsconfig/ScreenSavers/critical.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/crystal.desktop:213
-#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:183
+#: kscreensaver/kxsconfig/ScreenSavers/cube21.desktop:184
 #: kscreensaver/kxsconfig/ScreenSavers/cubenetic.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/cubestorm.desktop:205
-#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:180
-#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:179
+#: kscreensaver/kxsconfig/ScreenSavers/cubicgrid.desktop:181
+#: kscreensaver/kxsconfig/ScreenSavers/cwaves.desktop:180
 #: kscreensaver/kxsconfig/ScreenSavers/cynosure.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/dangerball.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/decayscreen.desktop:207
@@ -705,13 +705,13 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/euler2d.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/extrusion.desktop:209
 #: kscreensaver/kxsconfig/ScreenSavers/fadeplot.desktop:208
-#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:183
+#: kscreensaver/kxsconfig/ScreenSavers/fiberlamp.desktop:185
 #: kscreensaver/kxsconfig/ScreenSavers/fireworkx.desktop:205
 #: kscreensaver/kxsconfig/ScreenSavers/flag.desktop:214
 #: kscreensaver/kxsconfig/ScreenSavers/flame.desktop:214
 #: kscreensaver/kxsconfig/ScreenSavers/flipflop.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/flipscreen3d.desktop:206
-#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:184
+#: kscreensaver/kxsconfig/ScreenSavers/fliptext.desktop:186
 #: kscreensaver/kxsconfig/ScreenSavers/flow.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/fluidballs.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/flurry.desktop:206
@@ -723,14 +723,14 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/gears.desktop:212
 #: kscreensaver/kxsconfig/ScreenSavers/gflux.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/glblur.desktop:207
-#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:179
+#: kscreensaver/kxsconfig/ScreenSavers/glcells.desktop:181
 #: kscreensaver/kxsconfig/ScreenSavers/gleidescope.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/glforestfire.desktop:208
-#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:186
+#: kscreensaver/kxsconfig/ScreenSavers/glhanoi.desktop:187
 #: kscreensaver/kxsconfig/ScreenSavers/glknots.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/glmatrix.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/glplanet.desktop:210
-#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:181
+#: kscreensaver/kxsconfig/ScreenSavers/glschool.desktop:182
 #: kscreensaver/kxsconfig/ScreenSavers/glslideshow.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/glsnake.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/gltext.desktop:208
@@ -744,16 +744,16 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/hyperball.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/hypercube.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/hypertorus.desktop:206
-#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:180
+#: kscreensaver/kxsconfig/ScreenSavers/hypnowheel.desktop:181
 #: kscreensaver/kxsconfig/ScreenSavers/ifs.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/imsmap.desktop:210
-#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:182
+#: kscreensaver/kxsconfig/ScreenSavers/interaggregate.desktop:183
 #: kscreensaver/kxsconfig/ScreenSavers/interference.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/intermomentary.desktop:201
 #: kscreensaver/kxsconfig/ScreenSavers/jigglypuff.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/jigsaw.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/juggle.desktop:208
-#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:186
+#: kscreensaver/kxsconfig/ScreenSavers/juggler3d.desktop:188
 #: kscreensaver/kxsconfig/ScreenSavers/julia.desktop:209
 #: kscreensaver/kxsconfig/ScreenSavers/kaleidescope.desktop:209
 #: kscreensaver/kxsconfig/ScreenSavers/klein.desktop:206
@@ -761,14 +761,14 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/lament.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/laser.desktop:212
 #: kscreensaver/kxsconfig/ScreenSavers/lavalite.desktop:207
-#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:178
+#: kscreensaver/kxsconfig/ScreenSavers/lcdscrub.desktop:179
 #: kscreensaver/kxsconfig/ScreenSavers/lightning.desktop:212
 #: kscreensaver/kxsconfig/ScreenSavers/lisa.desktop:210
 #: kscreensaver/kxsconfig/ScreenSavers/lissie.desktop:211
 #: kscreensaver/kxsconfig/ScreenSavers/lmorph.desktop:210
-#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:179
+#: kscreensaver/kxsconfig/ScreenSavers/lockward.desktop:180
 #: kscreensaver/kxsconfig/ScreenSavers/loop.desktop:209
-#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:181
+#: kscreensaver/kxsconfig/ScreenSavers/m6502.desktop:182
 #: kscreensaver/kxsconfig/ScreenSavers/maze.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/memscroller.desktop:200
 #: kscreensaver/kxsconfig/ScreenSavers/menger.desktop:207
@@ -776,7 +776,7 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/mirrorblob.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/mismunch.desktop:200
 #: kscreensaver/kxsconfig/ScreenSavers/moebius.desktop:210
-#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:183
+#: kscreensaver/kxsconfig/ScreenSavers/moebiusgears.desktop:184
 #: kscreensaver/kxsconfig/ScreenSavers/moire2.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/moire.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/molecule.desktop:212
@@ -818,7 +818,7 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/shadebobs.desktop:204
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski3d.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/sierpinski.desktop:205
-#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:180
+#: kscreensaver/kxsconfig/ScreenSavers/skytentacles.desktop:181
 #: kscreensaver/kxsconfig/ScreenSavers/slidescreen.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/slip.desktop:207
 #: kscreensaver/kxsconfig/ScreenSavers/sonar.desktop:208
@@ -838,9 +838,9 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/superquadrics.desktop:209
 #: kscreensaver/kxsconfig/ScreenSavers/swirl.desktop:208
 #: kscreensaver/kxsconfig/ScreenSavers/t3d.desktop:211
-#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:185
+#: kscreensaver/kxsconfig/ScreenSavers/tangram.desktop:186
 #: kscreensaver/kxsconfig/ScreenSavers/thornbird.desktop:203
-#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:181
+#: kscreensaver/kxsconfig/ScreenSavers/timetunnel.desktop:182
 #: kscreensaver/kxsconfig/ScreenSavers/topblock.desktop:181
 #: kscreensaver/kxsconfig/ScreenSavers/triangle.desktop:212
 #: kscreensaver/kxsconfig/ScreenSavers/truchet.desktop:207
@@ -848,7 +848,7 @@ msgstr "Belirtilen Pencerede Göster"
 #: kscreensaver/kxsconfig/ScreenSavers/vermiculate.desktop:205
 #: kscreensaver/kxsconfig/ScreenSavers/vidwhacker.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/vines.desktop:206
-#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:182
+#: kscreensaver/kxsconfig/ScreenSavers/voronoi.desktop:184
 #: kscreensaver/kxsconfig/ScreenSavers/wander.desktop:205
 #: kscreensaver/kxsconfig/ScreenSavers/webcollage.desktop:206
 #: kscreensaver/kxsconfig/ScreenSavers/whirlwindwarp.desktop:204

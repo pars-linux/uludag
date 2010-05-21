@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kocolorspaces\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-28 14:16+0100\n"
 "PO-Revision-Date: 2008-11-21 05:27+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -16,61 +16,222 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: cmyk_u16/kis_cmyk_u16_colorspace.h:51
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:33
-msgid "CMYK (16-bit integer/channel)"
-msgstr "CMYK (16-bit integer/channel)"
+#: lcms/compositeops/RgbCompositeOpValue.h:38
+msgid "Value"
+msgstr ""
 
-#: cmyk_u8/kis_cmyk_colorspace.h:48 cmyk_u8/kis_cmyk_colorspace.cc:34
+#: lcms/compositeops/RgbCompositeOpColor.h:38
+msgid "Color"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpBumpmap.h:34
+msgid "Bumpmap"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpHue.h:38
+msgid "Hue"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpDarken.h:34
+msgid "Darken"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpClear.h:34
+msgid "Clear"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpIn.h:37
+msgid "In"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpOut.h:37
+msgid "Out"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpDiff.h:36
+msgid "Diff"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpDissolve.h:34
+msgid "Dissolve"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpSaturation.h:38
+msgid "Saturation"
+msgstr ""
+
+#: lcms/compositeops/RgbCompositeOpLighten.h:34
+msgid "Lighten"
+msgstr ""
+
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.h:56
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:34
 msgid "CMYK (8-bit integer/channel)"
 msgstr "CMYK (8-bit integer/channel)"
 
-#: gray_u16/kis_gray_u16_colorspace.h:47
-#: gray_u16/kis_gray_u16_colorspace.cc:36
-msgid "Grayscale (16-bit integer/channel)"
-msgstr "Grayscale (16-bit integer/channel)"
-
-#: gray_u8/kis_gray_colorspace.h:48 gray_u8/kis_gray_colorspace.cc:36
-msgid "Grayscale (8-bit integer/channel)"
-msgstr "Grayscale (8-bit integer/channel)"
-
-#: cmyk_u16/cmyk_u16_plugin.cc:43
-msgid "CMYK16 Histogram"
-msgstr "CMYK16 Histogram"
-
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:35 cmyk_u8/kis_cmyk_colorspace.cc:36
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:36
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:35
 msgid "Cyan"
 msgstr "Cyan"
 
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:36 cmyk_u8/kis_cmyk_colorspace.cc:37
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:37
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:36
 msgid "Magenta"
 msgstr "Macenta"
 
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:37 cmyk_u8/kis_cmyk_colorspace.cc:38
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:38
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:37
 msgid "Yellow"
 msgstr "Sarı"
 
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:38 cmyk_u8/kis_cmyk_colorspace.cc:39
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:39
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:38
 msgid "Black"
 msgstr "Siyah"
 
-#: cmyk_u16/kis_cmyk_u16_colorspace.cc:39 cmyk_u8/kis_cmyk_colorspace.cc:40
-#: gray_u16/kis_gray_u16_colorspace.cc:39 gray_u8/kis_gray_colorspace.cc:39
+#: lcms/colorspaces/cmyk_u8/CmykU8ColorSpace.cpp:40
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.cpp:37
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.cpp:38
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.cpp:71
+#: lcms/colorspaces/lab_u16/LabColorSpace.cpp:38
+#: lcms/colorspaces/gray_u16/GrayU16ColorSpace.cpp:39
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:39
+#: lcms/colorspaces/gray_u8/GrayU8ColorSpace.cpp:38
 msgid "Alpha"
 msgstr "Alpha"
 
-#: cmyk_u8/cmyk_plugin.cc:43
-msgid "CMYK8 Histogram"
-msgstr "CMYK8 Histogram"
+#: lcms/colorspaces/gray_u8_no_alpha/GrayU8NoAlphaColorSpace.h:56
+#: lcms/colorspaces/gray_u8/GrayU8ColorSpace.h:55
+#: lcms/colorspaces/gray_u8/GrayU8ColorSpace.cpp:35
+msgid "Grayscale (8-bit integer/channel)"
+msgstr "Grayscale (8-bit integer/channel)"
 
-#: gray_u16/gray_u16_plugin.cc:43
-msgid "GRAY/Alpha16 Histogram"
-msgstr "GRAY/Alpha16 Histogram"
+#: lcms/colorspaces/gray_u8_no_alpha/GrayU8NoAlphaColorSpace.cpp:34
+#, fuzzy
+#| msgid "Grayscale (8-bit integer/channel)"
+msgid "Grayscale without alpha (8-bit integer/channel)"
+msgstr "Grayscale (8-bit integer/channel)"
 
-#: gray_u16/kis_gray_u16_colorspace.cc:38 gray_u8/kis_gray_colorspace.cc:38
+#: lcms/colorspaces/gray_u8_no_alpha/GrayU8NoAlphaColorSpace.cpp:36
+#: lcms/colorspaces/gray_u16/GrayU16ColorSpace.cpp:38
+#: lcms/colorspaces/gray_u16_no_alpha/GrayU16NoAlphaColorSpace.cpp:35
+#: lcms/colorspaces/gray_u8/GrayU8ColorSpace.cpp:37
 msgid "Gray"
 msgstr "Gri"
 
-#: gray_u8/gray_plugin.cc:49
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.cpp:32
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.h:59
+#, fuzzy
+#| msgid "CMYK (16-bit integer/channel)"
+msgid "RGB (16-bit integer/channel)"
+msgstr "CMYK (16-bit integer/channel)"
+
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.cpp:34
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.cpp:68
+msgid "Red"
+msgstr ""
+
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.cpp:35
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.cpp:69
+msgid "Green"
+msgstr ""
+
+#: lcms/colorspaces/rgb_u16/RgbU16ColorSpace.cpp:36
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.cpp:70
+msgid "Blue"
+msgstr ""
+
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.cpp:33
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.h:57
+#, fuzzy
+#| msgid "CMYK (16-bit integer/channel)"
+msgid "XYZ (16-bit integer/channel)"
+msgstr "CMYK (16-bit integer/channel)"
+
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.cpp:35
+msgid "X"
+msgstr ""
+
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.cpp:36
+msgid "Y"
+msgstr ""
+
+#: lcms/colorspaces/xyz_u16/XyzU16ColorSpace.cpp:37
+msgid "Z"
+msgstr ""
+
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.cpp:66
+#: lcms/colorspaces/rgb_u8/RgbU8ColorSpace.h:68
+#, fuzzy
+#| msgid "CMYK (8-bit integer/channel)"
+msgid "RGB (8-bit integer/channel)"
+msgstr "CMYK (8-bit integer/channel)"
+
+#: lcms/colorspaces/lab_u16/LabColorSpace.h:73
+#: lcms/colorspaces/lab_u16/LabColorSpace.cpp:33
+#, fuzzy
+#| msgid "CMYK (16-bit integer/channel)"
+msgid "L*a*b* (16-bit integer/channel)"
+msgstr "CMYK (16-bit integer/channel)"
+
+#: lcms/colorspaces/lab_u16/LabColorSpace.cpp:35
+msgid "Lightness"
+msgstr ""
+
+#: lcms/colorspaces/lab_u16/LabColorSpace.cpp:36
+msgid "a*"
+msgstr ""
+
+#: lcms/colorspaces/lab_u16/LabColorSpace.cpp:37
+msgid "b*"
+msgstr ""
+
+#: lcms/colorspaces/gray_u16/GrayU16ColorSpace.h:54
+#: lcms/colorspaces/gray_u16/GrayU16ColorSpace.cpp:36
+#: lcms/colorspaces/gray_u16_no_alpha/GrayU16NoAlphaColorSpace.h:55
+#: lcms/colorspaces/gray_u16_no_alpha/GrayU16NoAlphaColorSpace.cpp:33
+msgid "Grayscale (16-bit integer/channel)"
+msgstr "Grayscale (16-bit integer/channel)"
+
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.h:58
+#: lcms/colorspaces/cmyk_u16/CmykU16ColorSpace.cpp:33
+msgid "CMYK (16-bit integer/channel)"
+msgstr "CMYK (16-bit integer/channel)"
+
+#: lcms/IccColorSpaceEngine.cpp:107
+msgid "ICC Engine"
+msgstr ""
+
+#: lcms/LcmsEnginePlugin.cpp:106
+#, fuzzy
+#| msgid "CMYK8 Histogram"
+msgid "L*a*b* Histogram"
+msgstr "CMYK8 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:116
+#, fuzzy
+#| msgid "CMYK8 Histogram"
+msgid "RGB8 Histogram"
+msgstr "CMYK8 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:140 lcms/LcmsEnginePlugin.cpp:156
+msgid "GRAY/Alpha16 Histogram"
+msgstr "GRAY/Alpha16 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:148
 msgid "GRAY/Alpha8 Histogram"
 msgstr "GRAY/Alpha8 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:164
+msgid "CMYK16 Histogram"
+msgstr "CMYK16 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:172
+msgid "CMYK8 Histogram"
+msgstr "CMYK8 Histogram"
+
+#: lcms/LcmsEnginePlugin.cpp:183
+#, fuzzy
+#| msgid "CMYK16 Histogram"
+msgid "XYZ16 Histogram"
+msgstr "CMYK16 Histogram"

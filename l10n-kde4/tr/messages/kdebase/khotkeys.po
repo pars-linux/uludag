@@ -540,9 +540,8 @@ msgid ""
 "They are mostly used for automatic updates from the KDE developers."
 msgstr ""
 "Aynı dosyanın birden fazla içeri aktarılmasını engellemek için khotkeys "
-"dosya bilgisi "
-"sistemi kullanılmaktadır. Bu özellik genellikle otomatik güncellemeler için "
-"kullanılmaktadır."
+"dosya bilgisi sistemi kullanılmaktadır. Bu özellik genellikle otomatik "
+"güncellemeler için kullanılmaktadır."
 
 #. i18n: file: kcm_hotkeys/hotkeys_export_widget.ui:68
 #. i18n: ectx: property (text), widget (QLabel, idLabel)
@@ -583,8 +582,8 @@ msgid ""
 "same name."
 msgstr ""
 "İçeri aktarma sırasında aynı isimli bir dizin varken bilgilerin "
-"birleştirilmesine izin "
-"ver. Birleştirmeye izin verilmediğinde aynı isimde iki dizin oluşmaktadır."
+"birleştirilmesine izin ver. Birleştirmeye izin verilmediğinde aynı isimde "
+"iki dizin oluşmaktadır."
 
 #. i18n: file: kcm_hotkeys/hotkeys_widget_base.ui:23
 #. i18n: ectx: attribute (title), widget (QWidget, comment_tab)
@@ -604,8 +603,7 @@ msgid ""
 "mouse button while drawing, and release when you have finished."
 msgstr ""
 "Kaydetmek istediğiniz hareketli eylemi aşağıya çiziniz. Çizerken sol fare "
-"tuşunu "
-"basılı tutun, ve çizimi tamamladığınızda tuşu bırakın."
+"tuşunu basılı tutun, ve çizimi tamamladığınızda tuşu bırakın."
 
 #: kcm_hotkeys/conditions/condition_type_menu.cpp:27
 msgctxt "Condition type"
@@ -706,13 +704,11 @@ msgid "Conditions"
 msgstr "Koşullar"
 
 #: kcm_hotkeys/hotkeys_model.cpp:403
-#| msgid "Name"
 msgctxt "action name"
 msgid "Name"
 msgstr "İsim"
 
 #: kcm_hotkeys/hotkeys_model.cpp:407
-#| msgid "Enabled"
 msgctxt "action enabled"
 msgid "Enabled"
 msgstr "Etkin"

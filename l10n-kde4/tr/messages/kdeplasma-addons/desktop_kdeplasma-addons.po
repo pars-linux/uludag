@@ -16,19 +16,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeplasma-addons\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 23:29+0000\n"
+"POT-Creation-Date: 2010-04-25 23:28+0000\n"
 "PO-Revision-Date: 2010-05-13 14:02+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"#-#-#-#-#  desktop_kdeplasmoids_applets.po "
-"(desktop_extragear-plasma_applets)  #-#-#-#-#\n"
+"#-#-#-#-#  desktop_kdeplasmoids_applets.po (desktop_extragear-"
+"plasma_applets)  #-#-#-#-#\n"
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"#-#-#-#-#  desktop_kdeplasmoids_dataengines.po "
-"(desktop_extragear-plasma_dataengines)  #-#-#-#-#\n"
+"#-#-#-#-#  desktop_kdeplasmoids_dataengines.po (desktop_extragear-"
+"plasma_dataengines)  #-#-#-#-#\n"
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "#-#-#-#-#  desktop_kdeplasmoids_desktopthemes.po (desktop files)  #-#-#-#-#\n"
@@ -177,7 +177,7 @@ msgctxt "Name"
 msgid "KDE Observatory"
 msgstr "KDE Gözlem Evi"
 
-#: applets/kdeobservatory/plasma-applet-kdeobservatory.desktop:36
+#: applets/kdeobservatory/plasma-applet-kdeobservatory.desktop:38
 msgctxt "Comment"
 msgid "Visualize the KDE ecosystem"
 msgstr "KDE ekosistemini canlandır"
@@ -187,7 +187,7 @@ msgctxt "Name"
 msgid "Input Method Panel"
 msgstr "Giriş Yöntemi Paneli"
 
-#: applets/kimpanel/src/plasma-applet-kimpanel.desktop:36
+#: applets/kimpanel/src/plasma-applet-kimpanel.desktop:37
 msgctxt "Comment"
 msgid "A generic input method panel for Oriental languages"
 msgstr "Doğu dilleri için ortak giriş yöntemi paneli"
@@ -387,7 +387,7 @@ msgctxt "Comment"
 msgid "Stay informed with the Social Desktop"
 msgstr "Sosyal Masaüstünü kullan, haberin olsun"
 
-#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.desktop:88
+#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.desktop:89
 #: applets/opendesktop/plasma-applet-opendesktop.desktop:100
 msgctxt "Keywords"
 msgid "Utilities"
@@ -484,7 +484,7 @@ msgctxt "Name"
 msgid "Qalculate!"
 msgstr "Qalculate!"
 
-#: applets/qalculate/plasma-applet-qalculate.desktop:40
+#: applets/qalculate/plasma-applet-qalculate.desktop:41
 msgctxt "Comment"
 msgid "A powerful mathematical equation solver"
 msgstr "Gelişmiş bir matematiksel eşitlik çözücü"
@@ -525,13 +525,11 @@ msgid "Show the Plasma desktop"
 msgstr "Plasma masaüstünü göster"
 
 #: applets/spellcheck/plasma-applet-spellcheck.desktop:2
-#| msgctxt "Name"
-#| msgid "Spell Checker Runner"
 msgctxt "Name"
 msgid "Spell Check"
 msgstr "İmla Denetimi"
 
-#: applets/spellcheck/plasma-applet-spellcheck.desktop:40
+#: applets/spellcheck/plasma-applet-spellcheck.desktop:41
 msgctxt "Comment"
 msgid "Fast spell checking"
 msgstr "Hızlı imla denetimi"
@@ -592,7 +590,7 @@ msgctxt "Name"
 msgid "Web Slice"
 msgstr "Web Dilimi"
 
-#: applets/webslice/plasma/plasma-applet-webslice.desktop:35
+#: applets/webslice/plasma/plasma-applet-webslice.desktop:37
 msgctxt "Comment"
 msgid "Show a part of a webpage"
 msgstr "Bir web sayfasının belirli bir bölümünü göster"
@@ -657,7 +655,7 @@ msgctxt "Name"
 msgid "Earth Science Picture of the Day"
 msgstr "Günün Dünya Bilimi Resmi"
 
-#: dataengines/potd/epodprovider.desktop:43
+#: dataengines/potd/epodprovider.desktop:44
 msgctxt "Comment"
 msgid "Epod Provider"
 msgstr "Epod Sağlayıcı"
@@ -727,7 +725,7 @@ msgctxt "Name"
 msgid "Control Audio Player"
 msgstr "Müzik Çaları Yönet"
 
-#: runners/audioplayercontrol/plasma-runner-audioplayercontrol.desktop:35
+#: runners/audioplayercontrol/plasma-runner-audioplayercontrol.desktop:37
 msgctxt "Comment"
 msgid ""
 "Allows to control MPRIS audio players (it is able to search through Amarok's "
@@ -796,7 +794,7 @@ msgctxt "Name"
 msgid "Kopete Contact Runner"
 msgstr "Kopete Kişi Çalıştırıcı"
 
-#: runners/kopete/plasma-runner-kopete.desktop:34
+#: runners/kopete/plasma-runner-kopete.desktop:36
 msgctxt "Comment"
 msgid "Kopete Contact runner"
 msgstr "Kopete Kişi çalıştırıcı"
@@ -806,7 +804,7 @@ msgctxt "Name"
 msgid "TechBase"
 msgstr "TechBase"
 
-#: runners/mediawiki/plasma-runner-techbase.desktop:38
+#: runners/mediawiki/plasma-runner-techbase.desktop:39
 msgctxt "Comment"
 msgid "Search on KDE's TechBase"
 msgstr "KDE TechBase'de ara"
@@ -816,7 +814,7 @@ msgctxt "Name"
 msgid "KDE Documentation"
 msgstr "KDE Belgelendirmesi"
 
-#: runners/mediawiki/plasma-runner-userbase.desktop:38
+#: runners/mediawiki/plasma-runner-userbase.desktop:39
 msgctxt "Comment"
 msgid "Search on KDE's Userbase"
 msgstr "KDE Userbase'de ara"
@@ -826,7 +824,7 @@ msgctxt "Name"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: runners/mediawiki/plasma-runner-wikipedia.desktop:41
+#: runners/mediawiki/plasma-runner-wikipedia.desktop:42
 msgctxt "Comment"
 msgid "Search on Wikipedia"
 msgstr "Wikipedia'da ara"
@@ -836,7 +834,7 @@ msgctxt "Name"
 msgid "Wikitravel"
 msgstr "Wikitravel"
 
-#: runners/mediawiki/plasma-runner-wikitravel.desktop:38
+#: runners/mediawiki/plasma-runner-wikitravel.desktop:39
 msgctxt "Comment"
 msgid "Search on Wikitravel"
 msgstr "Wikitravel'da ara"

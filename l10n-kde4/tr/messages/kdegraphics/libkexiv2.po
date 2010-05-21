@@ -1736,8 +1736,12 @@ msgid "Data of size %1"
 msgstr "%1 boyutunda veri"
 
 #: libkexiv2/subjectwidget.cpp:138
-msgid "Use standard <b><a href='http://www.iptc.org/NewsCodes'>reference code</a></b>"
-msgstr "Standart <b><a href='http://www.iptc.org/NewsCodes'>referans kodu</a> kullan</b>"
+msgid ""
+"Use standard <b><a href='http://www.iptc.org/NewsCodes'>reference code</a></"
+"b>"
+msgstr ""
+"Standart <b><a href='http://www.iptc.org/NewsCodes'>referans kodu</a> "
+"kullan</b>"
 
 #: libkexiv2/subjectwidget.cpp:144
 msgid "Use custom definition"

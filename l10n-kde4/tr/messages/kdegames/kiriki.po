@@ -240,5 +240,3 @@ msgstr "Ara Toplam"
 #: scores.cpp:81
 msgid "Grand Total"
 msgstr "Ana Toplam"
-
-

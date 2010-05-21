@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ArtisticTextShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-28 14:16+0100\n"
 "PO-Revision-Date: 2009-09-18 03:32+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -28,29 +28,51 @@ msgstr "Sanatsal Metin Şekli"
 msgid "A shape which shows a single text line"
 msgstr "Tek bir metin satırı gösteren bir şekil"
 
-#: ArtisticTextTool.cpp:48 AttachTextToPathCommand.cpp:28
+#: ArtisticTextTool.cpp:57
+msgid "Add text range"
+msgstr "Metin aralığı ekle"
+
+#: ArtisticTextTool.cpp:116
+msgid "Remove text range"
+msgstr "Metin aralığı sil"
+
+#: ArtisticTextTool.cpp:176 AttachTextToPathCommand.cpp:28
 msgid "Attach Path"
 msgstr "Yol Ekle"
 
-#: ArtisticTextTool.cpp:52 DetachTextFromPathCommand.cpp:27
+#: ArtisticTextTool.cpp:180 DetachTextFromPathCommand.cpp:27
 msgid "Detach Path"
 msgstr "Yolu Ayır"
 
-#: ArtisticTextTool.cpp:56 ArtisticTextTool.cpp:303
+#: ArtisticTextTool.cpp:184 ArtisticTextTool.cpp:438
 msgid "Convert to Path"
 msgstr "Yola Dönüştür"
 
-#: ArtisticTextTool.cpp:233
+#: ArtisticTextTool.cpp:368
 msgid "Press return to finish editing."
 msgstr "Düzenlemeyi bitirmek için enter tuşuna basın."
 
-#: ArtisticTextToolFactory.cpp:27
-msgid "Artistic Text Tool"
-msgstr "Sanatsal Metin Aracı"
+#: ArtisticTextTool.cpp:471
+#, fuzzy
+#| msgid "Detach Path"
+msgid "Text On Path"
+msgstr "Yolu Ayır"
+
+#: ArtisticTextTool.cpp:483
+msgid "Text Properties"
+msgstr ""
 
 #: ArtisticTextToolFactory.cpp:29
 msgid "Artistic Text Editing Tool"
 msgstr "Sanatsal Metin Düzenleme Aracı"
+
+#: ChangeTextAnchorCommand.cpp:27
+msgid "Change text anchor"
+msgstr "Metin hedefini değiştir"
+
+#: ChangeTextFontCommand.cpp:28
+msgid "Change font"
+msgstr "Yazı tipini değiştir"
 
 #: ChangeTextOffsetCommand.cpp:28
 msgid "Change Text Offset"
@@ -74,22 +96,8 @@ msgstr "Boyut:"
 msgid "Offset:"
 msgstr "Yerleşim:"
 
-#: ArtisticTextShapeConfigWidget.h:57
-msgid "Change font"
-msgstr "Yazı tipini değiştir"
+#~ msgid "Artistic Text Tool"
+#~ msgstr "Sanatsal Metin Aracı"
 
-#: ArtisticTextShapeConfigWidget.h:87
-msgid "Change text"
-msgstr "Metni değiştir"
-
-#: ArtisticTextShapeConfigWidget.h:117
-msgid "Change text anchor"
-msgstr "Metin hedefini değiştir"
-
-#: ArtisticTextTool.h:83
-msgid "Add text range"
-msgstr "Metin aralığı ekle"
-
-#: ArtisticTextTool.h:128
-msgid "Remove text range"
-msgstr "Metin aralığı sil"
+#~ msgid "Change text"
+#~ msgstr "Metni değiştir"

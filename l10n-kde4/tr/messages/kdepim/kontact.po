@@ -61,10 +61,6 @@ msgstr "Her başlangıçta ilk çalıştırılacak eklenti"
 #. i18n: file: src/kontact.kcfg:18
 #. i18n: ectx: whatsthis, entry (ForceStartupPlugin), group (View)
 #: rc.cpp:17
-#| msgid ""
-#| "Usually Kontact will come up with the component used before shutdown. "
-#| "Check this box if you would like a specific component to come up on start "
-#| "instead."
 msgid ""
 "Usually Kontact will come up with the plugin used before shutdown. Check "
 "this box if you would like the specified plugin to come up on start instead."
@@ -100,7 +96,6 @@ msgstr "Tekrarlanan ögeyi gösteren bir simge göster"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:41
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowRecurrence)
 #: rc.cpp:32
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid ""
 "Check this box if you want to see an icon that indicates an event or to-do "
 "is recurring."
@@ -123,14 +118,12 @@ msgstr ""
 #. i18n: file: plugins/planner/plannerconfig_base.ui:57
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowReminder)
 #: rc.cpp:41
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid ""
 "Check this box if you want to see an icon indicating that the event or to-do "
 "has a reminder."
 msgstr ""
 "Bir etkinlik veya yapılacak öğesinin hatırlatıcısı varsa, bu durumu belirten "
-"bir "
-"simge görmek için bu kutucuğu işaretleyin."
+"bir simge görmek için bu kutucuğu işaretleyin."
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:60
 #. i18n: ectx: property (text), widget (QCheckBox, mShowReminder)
@@ -141,14 +134,12 @@ msgstr "Anımsatıcı simgesini göster"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:70
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mUnderline)
 #: rc.cpp:47
-#| msgid "Underline links"
 msgid "Underline links in descriptions"
 msgstr "Açıklamalardaki bağlantıların altını çiz"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:73
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mUnderline)
 #: rc.cpp:50
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you want URL links to be underlined."
 msgstr "Bağlantıların altını çizmek istiyorsanız bu kutucuğu işaretleyin."
 
@@ -161,14 +152,12 @@ msgstr "Bağlantıların altını çiz"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:86
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mTodo)
 #: rc.cpp:56
-#| msgid "Show to-dos in planner"
 msgid "Show to-dos in the summary"
 msgstr "Yapılacak ögelerini özette göster"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:89
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mTodo)
 #: rc.cpp:59
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you want to see to-dos in the summary."
 msgstr ""
 "Yapılacak öğelerini özette görmek istiyorsanız bu kutucuğu işaretleyin."
@@ -182,14 +171,12 @@ msgstr "Yapılacak ögelerini planlayıcıda göster"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:102
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mSd)
 #: rc.cpp:65
-#| msgid "Show special dates in planner"
 msgid "Show special dates in the summary"
 msgstr "Özel günleri özette göster"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:105
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mSd)
 #: rc.cpp:68
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you want to see special dates in the summary."
 msgstr "Özel günleri özette görmek istiyorsanız bu kutucuğu işaretleyin."
 
@@ -208,7 +195,6 @@ msgstr "Olaylar"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:141
 #. i18n: ectx: property (title), widget (QGroupBox, mDaysGroup)
 #: rc.cpp:77
-#| msgid "Show Calendar Days"
 msgid "Show Calendar Events"
 msgstr "Takvim Etkinliklerini Göster"
 
@@ -217,7 +203,6 @@ msgstr "Takvim Etkinliklerini Göster"
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:20
 #. i18n: ectx: property (toolTip), widget (QRadioButton, mDateTodayButton)
 #: rc.cpp:80 rc.cpp:464
-#| msgid "Show Events for today only"
 msgid "Show events for today only"
 msgstr "Sadece bugünün etkinliklerini göster"
 
@@ -226,7 +211,6 @@ msgstr "Sadece bugünün etkinliklerini göster"
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:23
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateTodayButton)
 #: rc.cpp:83 rc.cpp:467
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you want to see events occurring on this date only."
 msgstr ""
 "Sadece bu tarihte olan etkinlikleri görmek istiyorsanız bu kutucuğu "
@@ -249,7 +233,6 @@ msgstr "Sade&ce bugün"
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:36
 #. i18n: ectx: property (toolTip), widget (QRadioButton, mDateMonthButton)
 #: rc.cpp:89 rc.cpp:473
-#| msgid "Show Events starting within the next month"
 msgid "Show events starting within the next month"
 msgstr "Gelecek ay başlayacak etkinlikleri göster"
 
@@ -258,9 +241,6 @@ msgstr "Gelecek ay başlayacak etkinlikleri göster"
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:39
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateMonthButton)
 #: rc.cpp:92 rc.cpp:476
-#| msgid ""
-#| "Check this box if you want to see Events that start sometime during the "
-#| "next 31 days."
 msgid ""
 "Check this box if you want to see events that start sometime during the next "
 "31 days."
@@ -293,9 +273,6 @@ msgstr ""
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:60
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateRangeButton)
 #: rc.cpp:101 rc.cpp:485
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you want to specify the number of days in the future for "
 "upcoming events."
@@ -365,7 +342,6 @@ msgstr " gün"
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:163
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mShowMineOnly)
 #: rc.cpp:119 rc.cpp:338 rc.cpp:527
-#| msgid "Show Events belonging to my calendars only"
 msgid "Show events belonging to my calendars only"
 msgstr "Sadece benim takvimime ait etkinlikleri göster"
 
@@ -415,9 +391,6 @@ msgstr "Tamamlanmış yapılacak ögelerini gizle"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:298
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideCompletedBox)
 #: rc.cpp:137
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see to-dos that have already been "
 "completed."
@@ -442,7 +415,6 @@ msgstr "Yapılması gereken günü olmayan yapılacak ögelerini gizle"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:314
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideOpenEndedBox)
 #: rc.cpp:146
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you do not want to see open-ended to-dos."
 msgstr ""
 "Ucu açık yapılacak ögelerini görmek istemiyorsanız bu kutucuğu işaretleyin."
@@ -458,16 +430,12 @@ msgstr "&Sonu-açık (tamamlanma tarihi yok)"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:327
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mHideUnstartedBox)
 #: rc.cpp:152
-#| msgid "Hide unstarted To-dos"
 msgid "Hide unstarted to-dos"
 msgstr "Başlamamış yapılacak ögelerini gizle"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:330
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideUnstartedBox)
 #: rc.cpp:155
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see to-dos with a start date in the "
 "future."
@@ -484,22 +452,18 @@ msgstr "&Başlamamış (başlama zamanı gelecekte)"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:340
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mHideInProgressBox)
 #: rc.cpp:161
-#| msgid "Hide in-progress To-dos"
 msgid "Hide in-progress to-dos"
 msgstr "Devam eden yapılacak ögelerini gizle"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:343
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideInProgressBox)
 #: rc.cpp:164
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see to-dos that have been started but "
 "are not yet completed."
 msgstr ""
-"Başlamış fakat tamamlanmamış yapılacak ögelerini görmek istemiyorsanız "
-"bu kutucuğu işaretleyin."
+"Başlamış fakat tamamlanmamış yapılacak ögelerini görmek istemiyorsanız bu "
+"kutucuğu işaretleyin."
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:346
 #. i18n: ectx: property (text), widget (QCheckBox, mHideInProgressBox)
@@ -512,16 +476,12 @@ msgstr "&Devam eden (başlamış ancak bitmemiş)"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:353
 #. i18n: ectx: property (toolTip), widget (QCheckBox, mHideOverdueBox)
 #: rc.cpp:170
-#| msgid "Hide overdue To-dos"
 msgid "Hide overdue to-dos"
 msgstr "Günü geçmiş yapılacak ögelerini gizle"
 
 #. i18n: file: plugins/planner/plannerconfig_base.ui:356
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideOverdueBox)
 #: rc.cpp:173
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see to-dos that are past their due date "
 "but have not yet been completed."
@@ -550,9 +510,6 @@ msgstr "Sadece benim takvimime ait yapılacak ögelerini göster"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:225
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowMineOnly)
 #: rc.cpp:182 rc.cpp:452
-#| msgid ""
-#| "Check this box if you want the summary to show to-dos belonging to your "
-#| "calendars only."
 msgid ""
 "Check this box if you want the summary to show To-dos belonging to your "
 "calendars only."
@@ -599,7 +556,6 @@ msgstr ""
 #. i18n: file: plugins/planner/plannerconfig_base.ui:424
 #. i18n: ectx: property (text), widget (QCheckBox, mBirthdayConList)
 #: rc.cpp:200
-#| msgid "Show birthdays from KAddressBook"
 msgid "Show birthdays from address book"
 msgstr "Adres defterindeki doğum günlerini göster"
 
@@ -622,7 +578,6 @@ msgstr ""
 #. i18n: file: plugins/planner/plannerconfig_base.ui:440
 #. i18n: ectx: property (text), widget (QCheckBox, mAnniversariesConList)
 #: rc.cpp:209
-#| msgid "Show anniversaries from KAddressBook"
 msgid "Show anniversaries from address book"
 msgstr "Adres defterindeki yıl dönümlerini göster."
 
@@ -637,10 +592,6 @@ msgstr "Takvimimden tatilleri göster"
 #. i18n: file: plugins/planner/plannerconfig_base.ui:453
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHolidaysCal)
 #: rc.cpp:215
-#| msgid ""
-#| "Enable this option to include birthdays from your calendar in the "
-#| "upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include holidays from your calendar in the planner "
 "summary. These are events from your configured holiday region, or events "
@@ -692,14 +643,12 @@ msgstr "Özel Günlerin Başlangıcını Göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:28
 #. i18n: ectx: property (toolTip), widget (QRadioButton, mDateTodayButton)
 #: rc.cpp:236
-#| msgid "Show special occasions from calendar"
 msgid "Show special occasions for today only"
 msgstr ""
 
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:31
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateTodayButton)
 #: rc.cpp:239
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid ""
 "Check this box if you want to see special occasions occurring on this date "
 "only."
@@ -708,16 +657,12 @@ msgstr ""
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:44
 #. i18n: ectx: property (toolTip), widget (QRadioButton, mDateMonthButton)
 #: rc.cpp:245
-#| msgid "Show Events starting within the next month"
 msgid "Show special occasions starting within the next month"
 msgstr ""
 
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:47
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateMonthButton)
 #: rc.cpp:248
-#| msgid ""
-#| "Check this box if you want to see Events that start sometime during the "
-#| "next 31 days."
 msgid ""
 "Check this box if you want to see special occasions that start sometime "
 "during the next 31 days."
@@ -732,9 +677,6 @@ msgstr ""
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:68
 #. i18n: ectx: property (whatsThis), widget (QRadioButton, mDateRangeButton)
 #: rc.cpp:257
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you want to specify the number of days in the future for "
 "upcoming special occasions."
@@ -749,9 +691,6 @@ msgstr ""
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:87
 #. i18n: ectx: property (whatsThis), widget (QSpinBox, mCustomDays)
 #: rc.cpp:266
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Use this spinbox to set the number of days to show upcoming special "
 "occasions up to one year in the future."
@@ -772,10 +711,6 @@ msgstr "Takvimimden doğum günlerini göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:139
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowBirthdaysFromCalBox)
 #: rc.cpp:281
-#| msgid ""
-#| "Enable this option to include birthdays from your calendar in the "
-#| "upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include birthdays from your calendar in the upcoming "
 "special occasions summary. Typically, these are events with the \"Birthday\" "
@@ -799,10 +734,6 @@ msgstr "Takvimimden yıldönümlerini göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:155
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowAnniversariesFromCalBox)
 #: rc.cpp:290
-#| msgid ""
-#| "Enable this option to include anniversaries from your calendar in the "
-#| "Upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include anniversaries from your calendar in the "
 "upcoming special occasions summary. Typically, these are events with the "
@@ -820,10 +751,6 @@ msgstr "&Yıldönümlerini göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:171
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowHolidaysFromCalBox)
 #: rc.cpp:299
-#| msgid ""
-#| "Enable this option to include birthdays from your calendar in the "
-#| "upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include holidays from your calendar in the upcoming "
 "special occasions summary. These are events from your configured holiday "
@@ -851,10 +778,6 @@ msgstr "Kişi Listesinden Bu Özel Günleri Göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:212
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowBirthdaysFromKABBox)
 #: rc.cpp:320
-#| msgid ""
-#| "Enable this option to include birthdays from your calendar in the "
-#| "upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include birthdays from your address book in the "
 "upcoming special occasions summary."
@@ -869,10 +792,6 @@ msgstr "&Doğumgünlerini göster"
 #. i18n: file: plugins/specialdates/sdsummaryconfig_base.ui:228
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowAnniversariesFromKABBox)
 #: rc.cpp:329
-#| msgid ""
-#| "Enable this option to include anniversaries from your calendar in the "
-#| "Upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include anniversaries from your address book in the "
 "upcoming special occasions summary."
@@ -1002,7 +921,6 @@ msgstr "Yapılması gereken günü olmayan yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:158
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideOpenEndedBox)
 #: rc.cpp:413
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgid "Check this box if you do not want to see open-ended To-dos."
 msgstr ""
 "Ucu açık yapılacak ögelerini görmek istemiyorsanız bu kutucuğu işaretleyin."
@@ -1016,9 +934,6 @@ msgstr "Henüz başlamamış yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:174
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideUnstartedBox)
 #: rc.cpp:422
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see To-dos with a start date in the "
 "future."
@@ -1033,9 +948,6 @@ msgstr "Devam eden yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:187
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideInProgressBox)
 #: rc.cpp:431
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see To-dos that have been started but "
 "are not yet completed."
@@ -1052,9 +964,6 @@ msgstr "Günü geçmiş yapılacak ögelerini gizle"
 #. i18n: file: plugins/korganizer/todosummaryconfig_base.ui:203
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mHideOverdueBox)
 #: rc.cpp:440
-#| msgid ""
-#| "Check this box if you don't want to see To-dos with a start date in the "
-#| "future."
 msgid ""
 "Check this box if you do not want to see To-dos that are past their due date "
 "but have not yet been completed."
@@ -1089,10 +998,6 @@ msgstr "Doğumgünü kaynağını kullanırken takvimdeki doğumgünlerini göst
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:131
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowBirthdaysFromCal)
 #: rc.cpp:509
-#| msgid ""
-#| "Enable this option to include birthdays from your calendar in the "
-#| "upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include birthdays from your calendar in the upcoming "
 "events summary. This option is only available if you are using the Birthdays "
@@ -1111,10 +1016,6 @@ msgstr ""
 #. i18n: file: plugins/korganizer/apptsummaryconfig_base.ui:144
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, mShowAnniversariesFromCal)
 #: rc.cpp:518
-#| msgid ""
-#| "Enable this option to include anniversaries from your calendar in the "
-#| "Upcoming Events summary. This option is only available if you are using "
-#| "the Birthdays resource in your calendar."
 msgid ""
 "Enable this option to include anniversaries from your calendar in the "
 "upcoming events summary. This option is only available if you are using the "
@@ -1192,7 +1093,6 @@ msgid "Show sidebar items with icons and without text"
 msgstr "Yan çubuk ögelerini simgeli ve metin olmadan göster"
 
 #: src/iconsidepane.cpp:257
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid ""
 "Choose this option if you want the sidebar items to have icons without text."
@@ -1227,7 +1127,6 @@ msgid "Show sidebar items with icons and text"
 msgstr "Yan çubuk ögelerini simge ve metin ile göster"
 
 #: src/iconsidepane.cpp:281
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid ""
 "Choose this option if you want the sidebar items to have icons and text."
@@ -1241,13 +1140,11 @@ msgid "Big Icons"
 msgstr "Büyük Simgeler"
 
 #: src/iconsidepane.cpp:295
-#| msgid "Show reminder icon"
 msgctxt "@info:status"
 msgid "Show large size sidebar icons"
 msgstr "Yan çubuktaki simgeleri büyük boyutta göster"
 
 #: src/iconsidepane.cpp:298
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be extra big."
 msgstr ""
@@ -1260,13 +1157,11 @@ msgid "Normal Icons"
 msgstr "Normal Simgeler"
 
 #: src/iconsidepane.cpp:307
-#| msgid "Show reminder icon"
 msgctxt "@info:status"
 msgid "Show normal size sidebar icons"
 msgstr "Yan çubuktaki simgeleri normal boyutta göster"
 
 #: src/iconsidepane.cpp:310
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be normal size."
 msgstr ""
@@ -1279,13 +1174,11 @@ msgid "Small Icons"
 msgstr "Küçük Simgeler"
 
 #: src/iconsidepane.cpp:319
-#| msgid "Show reminder icon"
 msgctxt "@info:status"
 msgid "Show small size sidebar icons"
 msgstr "Yan çubuktaki simgeleri küçük boyutta göster"
 
 #: src/iconsidepane.cpp:322
-#| msgid "Check this box if you want to see To-dos due on this date only."
 msgctxt "@info:whatsthis"
 msgid "Choose this option if you want the sidebar icons to be extra small."
 msgstr ""
@@ -1319,7 +1212,6 @@ msgid "Tobias Koenig"
 msgstr "Tobias Koenig"
 
 #: src/kcmkontact.cpp:118
-#| msgid "Select the plugin summaries to show on the summary page."
 msgctxt "@info:tooltip"
 msgid "Select the initial plugin to use on each start"
 msgstr "Her açılışta ilk kullanılacak eklentiyi seçin"
@@ -1472,13 +1364,11 @@ msgid "&Kontact Introduction"
 msgstr "&Kontact Uygulamasına Giriş"
 
 #: src/mainwindow.cpp:452
-#| msgid "&Kontact Introduction"
 msgctxt "@info:status"
 msgid "Show the Kontact Introduction page"
 msgstr "Kontact giriş sayfasını göster"
 
 #: src/mainwindow.cpp:455
-#| msgid "&Kontact Introduction"
 msgctxt "@info:whatsthis"
 msgid "Choose this option to see the Kontact Introduction page."
 msgstr "Kontact giriş sayfasını görmek için bu seçeneği seçin."
@@ -1519,7 +1409,6 @@ msgstr "Uygulama tek başına çalıştırılıyor. Arka plana atılıyor..."
 
 #: src/mainwindow.cpp:785
 #, kde-format
-#| msgid "Cannot load part for %1."
 msgctxt "@info"
 msgid "Cannot load part for %1."
 msgstr "%1 bölümü yüklenemedi."
@@ -1532,17 +1421,6 @@ msgstr "%1 - Kontact"
 
 #: src/mainwindow.cpp:1185
 #, kde-format
-#| msgid ""
-#| "<h2 style='text-align:center; margin-top: 0px;'>Welcome to Kontact %1</"
-#| "h2><p align=\"center\">%2</p><table align=\"center\"><tr><td><a href=\"%3"
-#| "\"><img width=\"%4\" height=\"%5\" src=\"%6\" /></a></td><td><a href=\"%7"
-#| "\">%8</a><br /><span id=\"subtext\"><nobr>%9</nobr></span></td></"
-#| "tr><tr><td><a href=\"%10\"><img width=\"%11\" height=\"%12\" src=\"%13\" /"
-#| "></a></td><td><a href=\"%14\">%15</a><br /><span id=\"subtext\"><nobr>%"
-#| "16</nobr></span></td></tr><tr><td><a href=\"%17\"><img width=\"%18\" "
-#| "height=\"%19\" src=\"%20\" /></a></td><td><a href=\"%21\">%22</a><br /"
-#| "><span id=\"subtext\"><nobr>%23</nobr></span></td></tr></table><p style="
-#| "\"margin-bottom: 0px\"> <a href=\"%24\">Skip this introduction</a></p>"
 msgctxt "@info"
 msgid ""
 "<h2 style='text-align:center; margin-top: 0px;'>Welcome to Kontact %1</h2><p "
@@ -1557,27 +1435,23 @@ msgid ""
 "\">Skip this introduction</a></p>"
 msgstr ""
 "<h2 style='text-align:center; margin-top: 0px;'>Kontact %1 uygulamasına hoş "
-"geldiniz.</h2><p "
-"align=\"center\">%2</p><table align=\"center\"><tr><td><a href=\"%3\"><img "
-"width=\"%4\" height=\"%5\" src=\"%6\" /></a></td><td><a href=\"%7\">%8</"
-"a><br /><span id=\"subtext\"><nobr>%9</nobr></span></td></tr><tr><td><a href="
-"\"%10\"><img width=\"%11\" height=\"%12\" src=\"%13\" /></a></td><td><a href="
-"\"%14\">%15</a><br /><span id=\"subtext\"><nobr>%16</nobr></span></td></"
-"tr><tr><td><a href=\"%17\"><img width=\"%18\" height=\"%19\" src=\"%20\" /></"
-"a></td><td><a href=\"%21\">%22</a><br /><span id=\"subtext\"><nobr>%23</"
-"nobr></span></td></tr></table><p style=\"margin-bottom: 0px\"> <a href=\"%24"
-"\">Tanıtımı geç</a></p>"
+"geldiniz.</h2><p align=\"center\">%2</p><table align=\"center\"><tr><td><a "
+"href=\"%3\"><img width=\"%4\" height=\"%5\" src=\"%6\" /></a></td><td><a "
+"href=\"%7\">%8</a><br /><span id=\"subtext\"><nobr>%9</nobr></span></td></"
+"tr><tr><td><a href=\"%10\"><img width=\"%11\" height=\"%12\" src=\"%13\" /></"
+"a></td><td><a href=\"%14\">%15</a><br /><span id=\"subtext\"><nobr>%16</"
+"nobr></span></td></tr><tr><td><a href=\"%17\"><img width=\"%18\" height=\"%19"
+"\" src=\"%20\" /></a></td><td><a href=\"%21\">%22</a><br /><span id=\"subtext"
+"\"><nobr>%23</nobr></span></td></tr></table><p style=\"margin-bottom: 0px\"> "
+"<a href=\"%24\">Tanıtımı geç</a></p>"
 
 #: src/mainwindow.cpp:1198
-#| msgid ""
-#| "Kontact handles your e-mail, address book, calendar, to-do list and more."
 msgctxt "@item:intext"
 msgid ""
 "Kontact handles your e-mail, address book, calendar, to-do list and more."
 msgstr ""
 "Kontact e-posta, adres defteri, takvim, yapılacak ögeleri listesi ve daha "
-"fazlasını "
-"düzenlemenizi sağlar."
+"fazlasını düzenlemenizi sağlar."
 
 #: src/mainwindow.cpp:1204
 msgctxt "@item:intext"
@@ -1615,7 +1489,6 @@ msgid "New Feed..."
 msgstr "Yeni Haber Kaynağı..."
 
 #: plugins/akregator/akregator_plugin.cpp:50
-#| msgid "New Contact Group..."
 msgctxt "@info:status"
 msgid "Create a new feed"
 msgstr "Yeni besleme oluştur"
@@ -1662,13 +1535,11 @@ msgid "Sync Contacts"
 msgstr "Kişileri Eşzamanla"
 
 #: plugins/kaddressbook/kaddressbook_plugin.cpp:73
-#| msgid "Synchronize Contacts"
 msgctxt "@info:status"
 msgid "Synchronize groupware contacts"
 msgstr "Groupware bağlantılarını eşleştir"
 
 #: plugins/kaddressbook/kaddressbook_plugin.cpp:76
-#| msgid "Synchronize Contacts"
 msgctxt "@info:whatsthis"
 msgid "Choose this option to synchronize your groupware contacts."
 msgstr "Groupware bağlantılarınızı eşleştirmek için bu seçeneği seçin."
@@ -1737,7 +1608,6 @@ msgid "Show full path for folders"
 msgstr "Dizinler için tam yolu göster"
 
 #: plugins/kmail/kcmkmailsummary.cpp:91
-#| msgid "Show full path for folders"
 msgctxt "@info:tooltip"
 msgid "Show full path for each folder"
 msgstr "Her klasör için tam yolu göster"
@@ -1761,7 +1631,6 @@ msgid "New Message..."
 msgstr "Yeni İleti..."
 
 #: plugins/kmail/kmail_plugin.cpp:62
-#| msgid "New Contact Group..."
 msgctxt "@info:status"
 msgid "Create a new mail message"
 msgstr "Yeni posta iletisi oluştur"
@@ -1779,13 +1648,11 @@ msgid "Sync Mail"
 msgstr "E-postaları Eşzamanla"
 
 #: plugins/kmail/kmail_plugin.cpp:74
-#| msgid "Synchronize Mail"
 msgctxt "@info:status"
 msgid "Synchronize groupware mail"
 msgstr "Groupware postasını eşleştir"
 
 #: plugins/kmail/kmail_plugin.cpp:77
-#| msgid "Synchronize Mail"
 msgctxt "@info:whatsthis"
 msgid "Choose this option to synchronize your groupware email."
 msgstr "Groupware e-postanızı eşleştirmek için bu seçeneği seçin."
@@ -1820,7 +1687,6 @@ msgid "New Article..."
 msgstr "Yeni Yazı..."
 
 #: plugins/knode/knode_plugin.cpp:49
-#| msgid "New Contact Group..."
 msgctxt "@info:status"
 msgid "Create a new Usenet article"
 msgstr "Yeni Usenet yazısı oluştur"
@@ -1838,7 +1704,6 @@ msgid "&New"
 msgstr "&Yeni"
 
 #: plugins/knotes/knotes_part.cpp:77
-#| msgid "Read Popup Note: \"%1\""
 msgctxt "@info:status"
 msgid "Create a new popup note"
 msgstr "Yeni açılır not oluştur"
@@ -1973,7 +1838,6 @@ msgid "Synchronize groupware notes"
 msgstr "Grup çalışması notlarını eşzamanla"
 
 #: plugins/knotes/knotes_plugin.cpp:76
-#| msgid "Synchronize Contacts"
 msgctxt "@info:whatsthis"
 msgid "Choose this option to synchronize your groupware notes."
 msgstr "Groupware notlarınızı eşleştirmek için bu seçeneği seçin."
@@ -2275,7 +2139,6 @@ msgid "Synchronize groupware to-do list"
 msgstr "Grup çalışması yapılacak ögelerini eşzamanla"
 
 #: plugins/korganizer/todoplugin.cpp:80
-#| msgid "Synchronize Contacts"
 msgctxt "@info:whatsthis"
 msgid "Choose this option to synchronize your groupware to-do list."
 msgstr "Groupware yapılacaklar listenizi eşleştirmek için bu seçeneği seçin."

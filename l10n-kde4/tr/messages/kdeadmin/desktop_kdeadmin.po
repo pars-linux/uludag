@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeadmin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-01 23:30+0000\n"
+"POT-Creation-Date: 2010-04-24 23:31+0000\n"
 "PO-Revision-Date: 2009-04-29 16:25+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -92,7 +92,7 @@ msgctxt "Name"
 msgid "Printer Configuration"
 msgstr "Yazıcı Yapılandırması"
 
-#: system-config-printer-kde/system-config-printer-kde.desktop:62
+#: system-config-printer-kde/system-config-printer-kde.desktop:61
 msgctxt "Comment"
 msgid "Configure local and remote Printers"
 msgstr "Yerel ve uzak Yazıcıları yapılandır"

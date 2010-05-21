@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KarbonTools\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:32+0100\n"
+"POT-Creation-Date: 2010-02-24 07:21+0100\n"
 "PO-Revision-Date: 2009-09-28 01:50+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -18,7 +18,7 @@ msgstr ""
 
 #. i18n: file: ../../ui/widgets/KarbonPatternOptionsWidget.ui:19
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:3 ../../ui/widgets/KarbonGradientEditWidget.cpp:188
+#: rc.cpp:3 ../../ui/widgets/KarbonGradientEditWidget.cpp:174
 msgid "Repeat:"
 msgstr "Tekrarla:"
 
@@ -38,7 +38,7 @@ msgstr "Referans Noktasının Yeri"
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: file: ../../ui/widgets/KarbonPatternOptionsWidget.ui:73
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: rc.cpp:12 rc.cpp:21
+#: rc.cpp:12 rc.cpp:21 filterEffectTool/KarbonFilterEffectsTool.cpp:461
 msgid "X:"
 msgstr "X:"
 
@@ -46,7 +46,7 @@ msgstr "X:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: file: ../../ui/widgets/KarbonPatternOptionsWidget.ui:83
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: rc.cpp:15 rc.cpp:24
+#: rc.cpp:15 rc.cpp:24 filterEffectTool/KarbonFilterEffectsTool.cpp:467
 msgid "Y:"
 msgstr "Y:"
 
@@ -64,19 +64,19 @@ msgstr "Desen Boyutu"
 
 #. i18n: file: ../../ui/widgets/KarbonPatternOptionsWidget.ui:100
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:30
+#: rc.cpp:30 filterEffectTool/KarbonFilterEffectsTool.cpp:473
 msgid "W:"
 msgstr "G:"
 
 #. i18n: file: ../../ui/widgets/KarbonPatternOptionsWidget.ui:110
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: rc.cpp:33
+#: rc.cpp:33 filterEffectTool/KarbonFilterEffectsTool.cpp:479
 msgid "H:"
 msgstr "Y:"
 
 #. i18n: file: filterEffectTool/FilterEffectEditWidget.ui:32
 #. i18n: ectx: property (windowTitle), widget (QWidget, FilterEffectEditWidget)
-#: rc.cpp:36 filterEffectTool/KarbonFilterEffectsTool.cpp:219
+#: rc.cpp:36 filterEffectTool/KarbonFilterEffectsTool.cpp:319
 msgid "Filter Effect Editor"
 msgstr "Filtre Efekti Düzenleyici"
 
@@ -110,90 +110,78 @@ msgstr "Tanımlanmış Filtre Ayarları"
 
 #. i18n: file: filterEffectTool/FilterEffectEditWidget.ui:116
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:63 filterEffectTool/KarbonFilterEffectsTool.cpp:307
+#: rc.cpp:63 filterEffectTool/KarbonFilterEffectsTool.cpp:450
 msgid "Effect Properties"
 msgstr "Efekt Özellikleri"
 
-#: KarbonGradientTool.cpp:226
+#: KarbonGradientTool.cpp:207
 msgid "Drag to move gradient position."
 msgstr ""
 
-#: KarbonGradientTool.cpp:236
+#: KarbonGradientTool.cpp:216
 msgid "Drag to move color stop. Double click to remove color stop."
 msgstr ""
 
-#: KarbonGradientTool.cpp:238
+#: KarbonGradientTool.cpp:218
 msgid "Drag to move color stop."
 msgstr ""
 
-#: KarbonGradientTool.cpp:246
+#: KarbonGradientTool.cpp:225
 msgid "Drag to move gradient position. Double click to insert color stop."
 msgstr ""
 
-#: KarbonGradientTool.cpp:554
+#: KarbonGradientTool.cpp:503
 msgid "Edit Gradient"
 msgstr "Gradyanı Düzenle"
 
-#: KarbonGradientTool.cpp:555
+#: KarbonGradientTool.cpp:504
 msgid "Predefined Gradients"
 msgstr ""
-
-#: KarbonGradientToolFactory.cpp:29
-msgid "Gradient tool"
-msgstr "Gradyan aracı"
 
 #: KarbonGradientToolFactory.cpp:31
 msgid "Gradient Editing Tool"
 msgstr "Gradyan Düzenleme Aracı"
 
-#: KarbonPatternTool.cpp:306
+#: KarbonPatternTool.cpp:285
 msgid "Pattern Options"
 msgstr "Desen Seçenekleri"
 
-#: KarbonPatternTool.cpp:307
+#: KarbonPatternTool.cpp:286
 msgid "Patterns"
 msgstr "Desenler"
-
-#: KarbonPatternToolFactory.cpp:29
-msgid "Pattern tool"
-msgstr "Desen aracı"
 
 #: KarbonPatternToolFactory.cpp:31
 msgid "Pattern Editing Tool"
 msgstr "Desen Düzenleme Aracı"
 
-#: KarbonPencilTool.cpp:333
+#: KarbonPencilTool.cpp:321
 msgid "Precision:"
 msgstr "Duyarlılık:"
 
-#: KarbonPencilTool.cpp:335
+#: KarbonPencilTool.cpp:323
 msgctxt "The raw line data"
 msgid "Raw"
 msgstr "Ham"
 
-#: KarbonPencilTool.cpp:336
+#: KarbonPencilTool.cpp:324
 msgid "Curve"
 msgstr "Kıvrım"
 
-#: KarbonPencilTool.cpp:337
+#: KarbonPencilTool.cpp:325
 msgid "Straight"
 msgstr "Düz çizgi"
 
-#: KarbonPencilTool.cpp:346 KarbonPencilTool.cpp:352
+#: KarbonPencilTool.cpp:334 KarbonPencilTool.cpp:340
 msgid "Optimize"
 msgstr "En İyileştir"
 
-#: KarbonPencilTool.cpp:354
+#: KarbonPencilTool.cpp:342
 msgid "Exactness:"
 msgstr "Tamlık:"
 
-#: KarbonPencilTool.cpp:363
+#: KarbonPencilTool.cpp:351
 msgid "Combine angle:"
 msgstr "Açıyı birleştir:"
-
-#: KarbonPencilToolFactory.cpp:29
-msgid "Pencil tool"
-msgstr "Kalem aracı"
 
 #: KarbonPencilToolFactory.cpp:31
 msgid "Freehand Path Drawing Tool"
@@ -269,48 +257,44 @@ msgstr "Profil adı"
 msgid "Please insert the name by which you want to save this profile:"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:227
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:226
 msgid "Sorry, the name you entered is invalid."
 msgstr "Üzgünüm, girdiğiniz isim geçerli değil."
 
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:228
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:227
 msgctxt "invalid profile name"
 msgid "Invalid name."
 msgstr "Geçersiz isim."
 
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:237
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:235
 msgid ""
 "A profile with that name already exists.\n"
 "Do you want to overwrite it?"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:375
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:400
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:371
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:396
 msgid "Mouse"
 msgstr "Fare"
 
-#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:388
+#: CalligraphyTool/KarbonCalligraphyOptionWidget.cpp:384
 msgid "Graphics Pen"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyTool.cpp:407
+#: CalligraphyTool/KarbonCalligraphyTool.cpp:382
 msgid "Calligraphy: increase width"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyTool.cpp:412
+#: CalligraphyTool/KarbonCalligraphyTool.cpp:387
 msgid "Calligraphy: decrease width"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyTool.cpp:417
+#: CalligraphyTool/KarbonCalligraphyTool.cpp:392
 msgid "Calligraphy: increase angle"
 msgstr ""
 
-#: CalligraphyTool/KarbonCalligraphyTool.cpp:422
+#: CalligraphyTool/KarbonCalligraphyTool.cpp:397
 msgid "Calligraphy: decrease angle"
-msgstr ""
-
-#: CalligraphyTool/KarbonCalligraphyToolFactory.cpp:29
-msgid "Calligraphy tool"
 msgstr ""
 
 #: CalligraphyTool/KarbonCalligraphyToolFactory.cpp:31
@@ -333,11 +317,11 @@ msgstr "Filtre öntanımlı değerlerine ekle"
 msgid "Remove filter preset"
 msgstr "Filtre öntanımlı değerini sil"
 
-#: filterEffectTool/FilterEffectEditWidget.cpp:336
+#: filterEffectTool/FilterEffectEditWidget.cpp:341
 msgid "Effect name"
 msgstr "Efekt adı"
 
-#: filterEffectTool/FilterEffectEditWidget.cpp:337
+#: filterEffectTool/FilterEffectEditWidget.cpp:342
 msgid "Please enter a name for the filter effect"
 msgstr "Lütfen filtre efekti için yeni isim girin"
 
@@ -349,152 +333,166 @@ msgstr "Filtre efektini kaldır"
 msgid "Set filter stack"
 msgstr "Filtre yığınını ayarla"
 
-#: filterEffectTool/KarbonFilterEffectsTool.cpp:288
+#: filterEffectTool/KarbonFilterEffectsTool.cpp:420
+#, fuzzy
+#| msgid "Effect name"
+msgid "Effects"
+msgstr "Efekt adı"
+
+#: filterEffectTool/KarbonFilterEffectsTool.cpp:430
 msgid "View and edit filter"
 msgstr "Filtreyi göster ve düzenle"
 
-#: filterEffectTool/KarbonFilterEffectsTool.cpp:292
+#: filterEffectTool/KarbonFilterEffectsTool.cpp:434
 msgid "Add Filter"
 msgstr "Filtre Ekle"
 
-#: filterEffectTool/KarbonFilterEffectsToolFactory.cpp:28
-msgid "Filter effects tool"
-msgstr "Filtre efektleri aracı"
+#: filterEffectTool/KarbonFilterEffectsTool.cpp:485
+#, fuzzy
+#| msgid "Effect name"
+msgid "Effect Region"
+msgstr "Efekt adı"
 
 #: filterEffectTool/KarbonFilterEffectsToolFactory.cpp:30
 msgid "Filter Effects Editing Tool"
 msgstr "Filtre Efektleri Düzenleme Aracı"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:34
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:33
 msgid "Original"
 msgstr "Orjinal"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:35
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:34
 msgid "Tiled"
 msgstr "Döşenmiş"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:36
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:35
 msgid "Stretched"
 msgstr "Gergin"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:38
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:37
 msgid "Top Left"
 msgstr "Üst Sol"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:39
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:38
 msgid "Top"
 msgstr "Üst"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:40
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:39
 msgid "Top Right"
 msgstr "Üst Sağ"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:41
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:40
 msgid "Left"
 msgstr "Sol"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:42
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:41
 msgid "Center"
 msgstr "Ortala"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:43
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:42
 msgid "Right"
 msgstr "Sağ"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:44
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:43
 msgid "Bottom Left"
 msgstr "Alt Sol"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:45
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:44
 msgid "Bottom"
 msgstr "Alt"
 
-#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:46
+#: ../../ui/widgets/KarbonPatternOptionsWidget.cpp:45
 msgid "Bottom Right"
 msgstr "Alt Sağ"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:181
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:167
 msgid "Type:"
 msgstr "Tip:"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:183
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:169
 msgctxt "Linear gradient type"
 msgid "Linear"
 msgstr "Doğrusal"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:184
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:170
 msgctxt "Radial gradient type"
 msgid "Radial"
 msgstr "Merkezden çevreye"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:185
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:171
 msgctxt "Conical gradient type"
 msgid "Conical"
 msgstr "Konik"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:190
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:176
 msgctxt "No gradient spread"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:191
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:177
 msgid "Reflect"
 msgstr "Yansıt"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:192
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:178
 msgid "Repeat"
 msgstr "Tekrarla"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:195
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:181
 msgid "Target:"
 msgstr "Hedef:"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:197
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:183
 msgid "Stroke"
 msgstr "Darbe"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:198
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:184
 msgid "Fill"
 msgstr "Doldur"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:206
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:192
 msgid "Overall opacity:"
 msgstr "Baştan başa matlık:"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:211
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:197
 msgid "Stop color:"
 msgstr "Durma rengi:"
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:215
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:201
 msgid "Stop color."
 msgstr "Durma rengi."
 
-#: ../../ui/widgets/KarbonGradientEditWidget.cpp:218
+#: ../../ui/widgets/KarbonGradientEditWidget.cpp:204
 msgid "&Add to Predefined Gradients"
 msgstr ""
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:287
-msgctxt "No stroke or fill"
-msgid "None"
-msgstr "Hiçbiri"
+#~ msgid "Gradient tool"
+#~ msgstr "Gradyan aracı"
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:293
-msgctxt "Solid color stroke or fill"
-msgid "Solid"
-msgstr "Düz"
+#~ msgid "Pattern tool"
+#~ msgstr "Desen aracı"
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:299
-msgid "Gradient"
-msgstr "Gradyan"
+#~ msgid "Pencil tool"
+#~ msgstr "Kalem aracı"
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:305
-msgid "Pattern"
-msgstr "Desen"
+#~ msgid "Filter effects tool"
+#~ msgstr "Filtre efektleri aracı"
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:311
-msgid "Even-Odd Fill"
-msgstr "Tek-Çift Dolgu"
+#~ msgctxt "No stroke or fill"
+#~ msgid "None"
+#~ msgstr "Hiçbiri"
 
-#: ../../ui/widgets/KarbonStyleButtonBox.cpp:317
-msgid "Winding Fill"
-msgstr "Sarmal Dolgu"
+#~ msgctxt "Solid color stroke or fill"
+#~ msgid "Solid"
+#~ msgstr "Düz"
+
+#~ msgid "Gradient"
+#~ msgstr "Gradyan"
+
+#~ msgid "Pattern"
+#~ msgstr "Desen"
+
+#~ msgid "Even-Odd Fill"
+#~ msgstr "Tek-Çift Dolgu"
+
+#~ msgid "Winding Fill"
+#~ msgstr "Sarmal Dolgu"

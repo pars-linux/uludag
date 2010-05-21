@@ -1,7 +1,7 @@
 # translation of ktexteditorkabcbridge_plugin.po to Turkish
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -18,8 +18,13 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 
 #: ktexteditorkabcbridge.cpp:42
-msgid "The template needs information about you, but it looks as if you have not yet provided that information. Do you want to provide it now?"
-msgstr "Bu şablon sizin hakkınızda bazı bilgilere gerek duyuyor. Bu bilgileri adres defterine girmemişsiniz gibi görünüyor. Şimdi bilgilerinizi girmek ister misiniz?"
+msgid ""
+"The template needs information about you, but it looks as if you have not "
+"yet provided that information. Do you want to provide it now?"
+msgstr ""
+"Bu şablon sizin hakkınızda bazı bilgilere gerek duyuyor. Bu bilgileri adres "
+"defterine girmemişsiniz gibi görünüyor. Şimdi bilgilerinizi girmek ister "
+"misiniz?"
 
 #: ktexteditorkabcbridge.cpp:43
 msgid "Missing personal information"

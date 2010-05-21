@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplato\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-30 01:24+0200\n"
+"POT-Creation-Date: 2010-05-11 01:27+0200\n"
 "PO-Revision-Date: 2009-09-28 01:38+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -24,21 +24,21 @@ msgstr "Ağ Zamanlayıcı"
 msgid "Built-in network based scheduler"
 msgstr ""
 
-#: kptinsertfiledlg.cpp:42
+#: kptinsertfiledlg.cpp:43
 msgid "Insert File"
 msgstr "Dosya Ekle"
 
-#: kptpart.cpp:183 kptpart.cpp:437
+#: kptpart.cpp:195 kptpart.cpp:449
 msgid "Invalid document. No mimetype specified."
 msgstr "Geçersiz belge. Mime tipi belirtilmedi."
 
-#: kptpart.cpp:187
+#: kptpart.cpp:199
 #, kde-format
 msgid ""
 "Invalid document. Expected mimetype application/x-vnd.kde.kplato, got %1"
 msgstr ""
 
-#: kptpart.cpp:194
+#: kptpart.cpp:206
 #, kde-format
 msgid ""
 "This document was created with a newer version of KPlato (syntax version: %"
@@ -46,35 +46,35 @@ msgid ""
 "Opening it in this version of KPlato will lose some information."
 msgstr ""
 
-#: kptpart.cpp:196 kptpart.cpp:450
+#: kptpart.cpp:208 kptpart.cpp:462
 msgid "File-Format Mismatch"
 msgstr "Dosya-Biçimi Uyuşmazlığı"
 
-#: kptpart.cpp:196 kptpart.cpp:450
+#: kptpart.cpp:208 kptpart.cpp:462
 msgid "Continue"
 msgstr "Devam Et"
 
-#: kptpart.cpp:339
+#: kptpart.cpp:352
 #, kde-format
 msgid "Could not create the workpackage file for saving: %1"
 msgstr ""
 
-#: kptpart.cpp:347
+#: kptpart.cpp:360
 #, kde-format
 msgid "Not able to write '%1'. Partition full?"
 msgstr "'%1' yazılamadı. Disk bölümü dolu olabilir mi?"
 
-#: kptpart.cpp:374
+#: kptpart.cpp:387
 msgid "Saving..."
 msgstr "Kaydediliyor..."
 
-#: kptpart.cpp:441
+#: kptpart.cpp:453
 #, kde-format
 msgid ""
 "Invalid document. Expected mimetype application/x-vnd.kde.kplato.work, got %1"
 msgstr ""
 
-#: kptpart.cpp:448
+#: kptpart.cpp:460
 #, kde-format
 msgid ""
 "This document was created with a newer version of KPlatoWork (syntax "
@@ -82,18 +82,18 @@ msgid ""
 "Opening it in this version of KPlatoWork will lose some information."
 msgstr ""
 
-#: kptpart.cpp:695
+#: kptpart.cpp:694
 #, kde-format
 msgid ""
 "The package owner '%1' is not a resource in this project. You must handle "
 "this manually."
 msgstr ""
 
-#: kptpart.cpp:717 kptpart.cpp:729
+#: kptpart.cpp:716 kptpart.cpp:727
 msgid "Nothing to save from this package"
 msgstr ""
 
-#: kptpart.cpp:861
+#: kptpart.cpp:880
 msgid "Insert project nodes"
 msgstr "Proje düğümleri ekle"
 
@@ -101,364 +101,483 @@ msgstr "Proje düğümleri ekle"
 msgid "Schedule Selector"
 msgstr ""
 
-#: kptview.cpp:193
+#: kptview.cpp:211
 msgid "&Create Template From Document..."
 msgstr "&Belgeden Şablon Oluştur..."
 
-#: kptview.cpp:204
+#: kptview.cpp:223
 msgid "Show Selector"
 msgstr "Seçiciyi Göster"
 
-#: kptview.cpp:211
+#: kptview.cpp:230
 msgid "Edit Main Project..."
 msgstr "Ana Projeyi Düzenle..."
 
-#: kptview.cpp:215
+#: kptview.cpp:234
 msgid "Define Estimate Conversions..."
 msgstr ""
 
-#: kptview.cpp:221
+#: kptview.cpp:240
 msgid "Define WBS Pattern..."
 msgstr ""
 
-#: kptview.cpp:225
+#: kptview.cpp:244
 msgid "Insert Project File..."
 msgstr "Proje Dosyası Ekle..."
 
-#: kptview.cpp:230
+#: kptview.cpp:249
 msgid "Configure KPlato..."
 msgstr "KPlato Uygulamasını Yapılandır..."
 
-#: kptview.cpp:234
+#: kptview.cpp:253
 msgid "Define Currency..."
 msgstr ""
 
-#: kptview.cpp:239
+#: kptview.cpp:257
+msgid "Create Report..."
+msgstr ""
+
+#: kptview.cpp:261
+msgid "Open File..."
+msgstr ""
+
+#: kptview.cpp:266
 msgid "KPlato Introduction"
 msgstr "KPlato'ya Giriş"
 
-#: kptview.cpp:244
+#: kptview.cpp:271
 msgid "Edit..."
 msgstr "Düzenle..."
 
-#: kptview.cpp:247
+#: kptview.cpp:274
 msgid "Progress..."
 msgstr "İlerleme..."
 
-#: kptview.cpp:250 kptview.cpp:1906 kptview.cpp:1926 kptview.cpp:1950
+#: kptview.cpp:277
 msgid "Delete Task"
 msgstr "Görevi Sil"
 
-#: kptview.cpp:253
+#: kptview.cpp:280
 msgid "Description..."
 msgstr "Açıklama..."
 
-#: kptview.cpp:256 kptview.cpp:1969
+#: kptview.cpp:283
 msgid "Indent Task"
 msgstr "Görevi Girintile"
 
-#: kptview.cpp:259 kptview.cpp:1983
+#: kptview.cpp:286
 msgid "Unindent Task"
 msgstr "Görevin Girintisini Al"
 
-#: kptview.cpp:262 kptview.cpp:2005
+#: kptview.cpp:289
 msgid "Move Task Up"
 msgstr "Görevi Yukarı Taşı"
 
-#: kptview.cpp:265 kptview.cpp:2026
+#: kptview.cpp:292
 msgid "Move Task Down"
 msgstr "Görevi AşağıTaşı"
 
-#: kptview.cpp:269
-msgid "Send Work Package..."
-msgstr "Çalışma Paketi Gönder..."
-
-#: kptview.cpp:273
+#: kptview.cpp:296
 msgid "Edit Resource..."
 msgstr "Kaynağı Düzenle..."
 
-#: kptview.cpp:277
+#: kptview.cpp:300
 msgid "Edit Dependency..."
 msgstr "Bağımlılığı Düzenle..."
 
-#: kptview.cpp:280
+#: kptview.cpp:303
 msgid "Delete Dependency"
 msgstr "Bağımlılığı Sil"
 
-#: kptview.cpp:459 kptview.cpp:506
+#: kptview.cpp:445 kptview.cpp:548
 msgid "Editors"
 msgstr "Düzenleyiciler"
 
-#: kptview.cpp:475 kptview.cpp:508
+#: kptview.cpp:461 kptview.cpp:550
 msgid "Views"
 msgstr "Görünümler"
 
-#: kptview.cpp:518
+#: kptview.cpp:482
+#, fuzzy
+#| msgid "Resources"
+msgid "Reports"
+msgstr "Kaynaklar"
+
+#: kptview.cpp:484
+#, fuzzy
+#| msgid "Task Status"
+msgid "Task Status Report"
+msgstr "Görev Durumu"
+
+#: kptview.cpp:560
 msgid "Work & Vacation"
 msgstr "Çalışma Zamanı & Boş Zaman"
 
-#: kptview.cpp:519
+#: kptview.cpp:561
 msgid "Edit working- and vacation days for resources"
 msgstr ""
 
-#: kptview.cpp:521
+#: kptview.cpp:563
 msgid "Cost Breakdown Structure"
 msgstr ""
 
-#: kptview.cpp:522
+#: kptview.cpp:564
 msgid "Edit cost breakdown structure."
 msgstr ""
 
-#: kptview.cpp:524
+#: kptview.cpp:566
 msgid "Resources"
 msgstr "Kaynaklar"
 
-#: kptview.cpp:525
+#: kptview.cpp:567
 msgid "Edit resource breakdown structure"
 msgstr ""
 
-#: kptview.cpp:527
+#: kptview.cpp:569
 msgid "Tasks"
 msgstr "Görevler"
 
-#: kptview.cpp:528
+#: kptview.cpp:570
 msgid "Edit work breakdown structure"
 msgstr ""
 
-#: kptview.cpp:530
+#: kptview.cpp:572
 msgid "Dependencies (Graphic)"
 msgstr "Bağımlılıklar (Grafik)"
 
-#: kptview.cpp:531 kptview.cpp:534
+#: kptview.cpp:573 kptview.cpp:576
 msgid "Edit task dependencies"
 msgstr "Görevin bağımlılıklarını düzenle"
 
-#: kptview.cpp:533
+#: kptview.cpp:575
 msgid "Dependencies (List)"
 msgstr "Bağımlılıklar (Liste)"
 
-#: kptview.cpp:537 kptview.cpp:540
+#: kptview.cpp:579 kptview.cpp:582
 msgid "Schedules"
 msgstr "Zamanlamalar"
 
-#: kptview.cpp:541
+#: kptview.cpp:583
 msgid "Calculate and analyze project schedules"
 msgstr ""
 
-#: kptview.cpp:543 kptviewlistdialog.cpp:108
+#: kptview.cpp:585 kptviewlistdialog.cpp:116
 msgid "Project Performance Chart"
 msgstr "Proje Başarım Çizelgesi"
 
-#: kptview.cpp:544
+#: kptview.cpp:586
 msgid "View project status information"
 msgstr "Projenin durum bilgilerini göster"
 
-#: kptview.cpp:546 kptviewlistdialog.cpp:100
+#: kptview.cpp:588 kptviewlistdialog.cpp:108
 msgid "Task Status"
 msgstr "Görev Durumu"
 
-#: kptview.cpp:547
+#: kptview.cpp:589
 msgid "View task progress information"
 msgstr "Görevin ilerleme bilgilerini göster"
 
-#: kptview.cpp:549
+#: kptview.cpp:591
 msgid "Task Execution"
 msgstr ""
 
-#: kptview.cpp:550
+#: kptview.cpp:592
 msgid "View task execution information"
 msgstr ""
 
-#: kptview.cpp:552 kptviewlistdialog.cpp:102
+#: kptview.cpp:594 kptviewlistdialog.cpp:110
 msgid "Work Package View"
 msgstr "Çalışma Paketi Görünümü"
 
-#: kptview.cpp:553
+#: kptview.cpp:595
 msgid "View task work package information"
 msgstr "Görev çalışma paketinin bilgilerini göster"
 
-#: kptview.cpp:555
+#: kptview.cpp:597
 msgid "Gantt"
 msgstr "Gantt"
 
-#: kptview.cpp:556
+#: kptview.cpp:598
 msgid "View gantt chart"
 msgstr "Gantt çizelgesini göster"
 
-#: kptview.cpp:558
+#: kptview.cpp:600
 msgid "Milestone Gantt"
 msgstr ""
 
-#: kptview.cpp:559
+#: kptview.cpp:601
 msgid "View milestone gantt chart"
 msgstr ""
 
-#: kptview.cpp:561 kptviewlistdialog.cpp:105
+#: kptview.cpp:603 kptviewlistdialog.cpp:113
 msgid "Resource Assignments"
 msgstr "Kaynak Atamaları"
 
-#: kptview.cpp:562
+#: kptview.cpp:604
 msgid "View resource assignments"
 msgstr "Kaynak atamalarını göster"
 
-#: kptview.cpp:564 kptviewlistdialog.cpp:106
+#: kptview.cpp:606 kptviewlistdialog.cpp:114
 msgid "Resource Assignments (Gantt)"
 msgstr "Kaynak Atamaları (Gantt)"
 
-#: kptview.cpp:565
+#: kptview.cpp:607
 msgid "View resource assignments in gantt chart"
 msgstr "Kaynak atamalarını gantt içerisinde göster"
 
-#: kptview.cpp:567 kptviewlistdialog.cpp:107
+#: kptview.cpp:609 kptviewlistdialog.cpp:115
 msgid "Cost Breakdown"
 msgstr ""
 
-#: kptview.cpp:568
+#: kptview.cpp:610
 msgid "View planned and actual cost"
 msgstr ""
 
-#: kptview.cpp:570 kptviewlistdialog.cpp:109
+#: kptview.cpp:612 kptviewlistdialog.cpp:117
 msgid "Tasks Performance Chart"
 msgstr "Görev Başarım Çizelgesi"
 
-#: kptview.cpp:571
+#: kptview.cpp:613
 msgid "View tasks performance status information"
 msgstr "Projenin başarım durumuna ait bilgileri göster"
 
-#: kptview.cpp:1473
-#, kde-format
-msgid "%1: Calculating..."
-msgstr "%1: Hesaplıyor..."
+#: kptview.cpp:615 kptviewlistdialog.cpp:524
+msgid "Report"
+msgstr ""
 
-#: kptview.cpp:1481
-#, kde-format
+#: kptview.cpp:616
+#, fuzzy
+#| msgid "View Selector"
+msgid "View report"
+msgstr "Seçiciyi Göster"
+
+#: kptview.cpp:1567
+#, fuzzy, kde-format
+#| msgid "Calculate %1"
+msgctxt "@info:status 1=schedule name"
 msgid "Calculate %1"
 msgstr "Hesapla %1"
 
-#: kptview.cpp:1485
-#, kde-format
+#: kptview.cpp:1589
+#, fuzzy, kde-format
+#| msgid "%1: Calculating..."
+msgctxt "@info:status 1=schedule name"
+msgid "%1: Calculating..."
+msgstr "%1: Hesaplıyor..."
+
+#: kptview.cpp:1604
+#, fuzzy, kde-format
+#| msgid "%1: Calculating done"
+msgctxt "@info:status 1=schedule name"
+msgid "%1: Calculation stopped"
+msgstr "%1: Hesaplama tamamlandı"
+
+#: kptview.cpp:1607
+#, fuzzy, kde-format
+#| msgid "%1: Calculating done"
+msgctxt "@info:status 1=schedule name"
+msgid "%1: Calculation canceled"
+msgstr "%1: Hesaplama tamamlandı"
+
+#: kptview.cpp:1610
+#, fuzzy, kde-format
+#| msgid "%1: Calculating done"
+msgctxt "@info:status 1=schedule name"
+msgid "%1: Calculation error"
+msgstr "%1: Hesaplama tamamlandı"
+
+#: kptview.cpp:1613
+#, fuzzy, kde-format
+#| msgid "%1: Calculating done"
+msgctxt "@info:status 1=schedule name"
 msgid "%1: Calculating done"
 msgstr "%1: Hesaplama tamamlandı"
 
-#: kptview.cpp:1512
+#: kptview.cpp:1667
 msgid "Cannot baseline. The project is already baselined."
 msgstr ""
 
-#: kptview.cpp:1517
+#: kptview.cpp:1672
 msgid "This schedule is baselined. Do you want to remove the baseline?"
 msgstr ""
 
-#: kptview.cpp:1521
+#: kptview.cpp:1676
 #, kde-format
-msgid "Reset Baseline %1"
+msgid "Reset baseline %1"
 msgstr ""
 
-#: kptview.cpp:1523
+#: kptview.cpp:1678
 #, kde-format
 msgid "Baseline %1"
 msgstr ""
 
-#: kptview.cpp:1534
-#, kde-format
-msgid "Add Schedule %1"
+#: kptview.cpp:1689
+#, fuzzy, kde-format
+#| msgid "Add Schedule %1"
+msgid "Add schedule %1"
 msgstr "Zamanlama Ekle %1"
 
-#: kptview.cpp:1543
-#, kde-format
-msgid "Delete Schedule %1"
+#: kptview.cpp:1698
+#, fuzzy, kde-format
+#| msgid "Delete Schedule %1"
+msgid "Delete schedule %1"
 msgstr "Zamanlamayı Sil %1"
 
-#: kptview.cpp:1560
-msgid "Add Subtask"
-msgstr "Alt Görev Ekle"
+#: kptview.cpp:1767
+#, fuzzy
+#| msgid "Add Relation"
+msgid "Add milestone"
+msgstr "İlişki Ekle"
 
-#: kptview.cpp:1581
-msgid "Add Task"
-msgstr "Görev Ekle"
-
-#: kptview.cpp:1604
-msgid "Add Milestone"
+#: kptview.cpp:1793
+msgid "Add sub-milestone"
 msgstr ""
 
-#: kptview.cpp:1640
+#: kptview.cpp:1834
 msgid "Task Defaults"
 msgstr "Görev için Öntanımlı Değerler"
 
-#: kptview.cpp:1641
+#: kptview.cpp:1835
 msgid "Work Package"
 msgstr "Çalışma Paketi"
 
-#: kptview.cpp:1898
+#: kptview.cpp:2158
 msgid ""
 "A task that has been scheduled will be deleted. This will invalidate the "
 "schedule."
 msgstr ""
 
-#: kptview.cpp:1910
-msgid "Delete Tasks"
-msgstr "Görevleri Sil"
+#: kptview.cpp:2166 kptview.cpp:2170 kptview.cpp:2186 kptview.cpp:2210
+#, fuzzy
+#| msgid "Delete Task"
+msgid "Delete task"
+msgid_plural "Delete tasks"
+msgstr[0] "Görevi Sil"
 
-#: kptview.cpp:1945
+#: kptview.cpp:2205
 msgid "This task has been scheduled. This will invalidate the schedule."
 msgstr ""
 
-#: kptview.cpp:2053
-msgid "Add Relation"
-msgstr "İlişki Ekle"
+#: kptview.cpp:2229
+#, fuzzy
+#| msgid "Indent Task"
+msgid "Indent task"
+msgstr "Görevi Girintile"
 
-#: kptview.cpp:2065
-msgid "Delete Relation"
-msgstr "İlişki Sil"
+#: kptview.cpp:2243
+#, fuzzy
+#| msgid "Unindent Task"
+msgid "Unindent task"
+msgstr "Görevin Girintisini Al"
 
-#: kptview.cpp:2108
-msgid "Delete Task Dependency"
+#: kptview.cpp:2265
+#, fuzzy
+#| msgid "Move Task Up"
+msgid "Move task up"
+msgstr "Görevi Yukarı Taşı"
+
+#: kptview.cpp:2286
+#, fuzzy
+#| msgid "Move Task Down"
+msgid "Move task down"
+msgstr "Görevi AşağıTaşı"
+
+#: kptview.cpp:2324
+#, fuzzy
+#| msgid "Edit task dependencies"
+msgid "Add task dependency"
+msgstr "Görevin bağımlılıklarını düzenle"
+
+#: kptview.cpp:2387
+#, fuzzy
+#| msgid "Delete Task Dependency"
+msgid "Delete task dependency"
 msgstr "Görev Bağımlılığını Sil"
 
-#: kptview.cpp:2121
-msgid "Add resource"
-msgstr "Kaynak ekle"
+#: kptview.cpp:2422 kptview.cpp:2483
+#, fuzzy
+#| msgid "Delete Resource"
+msgid "Delete resource"
+msgid_plural "Delete resources"
+msgstr[0] "Kaynağı Sil"
 
-#: kptview.cpp:2153
-msgid "Delete Resource"
-msgstr "Kaynağı Sil"
+#: kptview.cpp:2427 kptview.cpp:2485
+#, fuzzy
+#| msgid "Delete Resourcegroup"
+msgid "Delete resourcegroup"
+msgid_plural "Delete resourcegroups"
+msgstr[0] "Kaynak Grubunu Sil"
 
-#: kptview.cpp:2158
-msgid "Delete Resourcegroup"
-msgstr "Kaynak Grubunu Sil"
-
-#: kptview.cpp:2167 kptview.cpp:2175
+#: kptview.cpp:2436 kptview.cpp:2444
 msgid ""
 "A resource that has been scheduled will be deleted. This will invalidate the "
 "schedule."
 msgstr ""
 
-#: kptview.cpp:2210
-msgid "Delete Resource Objects"
-msgstr "Kaynak Nesnelerini Sil"
+#: kptview.cpp:2481
+#, fuzzy
+#| msgid "Delete Resourcegroup"
+msgid "Delete resourcegroups and resources"
+msgstr "Kaynak Grubunu Sil"
 
-#: kptview.cpp:2374
-msgid "Modify Name"
+#: kptview.cpp:2655
+#, kde-format
+msgctxt "@info"
+msgid "Cannot open file:</br><filename>%1</filename>"
+msgstr ""
+
+#: kptview.cpp:2775
+#, fuzzy
+#| msgid "Modify Name"
+msgid "Modify name"
 msgstr "İsmi Düzenle"
 
-#: kptview.cpp:2459
+#: kptview.cpp:2777
+#, fuzzy
+#| msgid "Modify Name"
+msgid "Modify task name"
+msgstr "İsmi Düzenle"
+
+#: kptview.cpp:2778
+#, fuzzy
+#| msgid "Modify Name"
+msgid "Modify milestone name"
+msgstr "İsmi Düzenle"
+
+#: kptview.cpp:2779
+msgid "Modify summarytask name"
+msgstr ""
+
+#: kptview.cpp:2780
+#, fuzzy
+#| msgid "Project name:"
+msgid "Modify project name"
+msgstr "Proje adı:"
+
+#: kptview.cpp:2866
+#, fuzzy
+#| msgid "Not scheduled"
+msgctxt "@info:status"
 msgid "Not scheduled"
 msgstr "Zamanlanmamış"
 
-#: kptview.cpp:2475 kptview.cpp:2515
+#: kptview.cpp:2882 kptview.cpp:2922
 msgid "Failed to open temporary file"
 msgstr "Geçici dosya açılamadı"
 
-#: kptview.cpp:2482 kptview.cpp:2522
-#, kde-format
-msgid "Failed to save to temporary file: %1"
+#: kptview.cpp:2889
+#, fuzzy, kde-format
+#| msgid "Failed to save to temporary file: %1"
+msgctxt "@info"
+msgid "Failed to save to temporary file:<br/> <filename>%1</filename>"
 msgstr "Geçici dosya kaydedilemedi: %1"
 
-#: kptview.cpp:2490
+#: kptview.cpp:2897
 #, kde-format
 msgid "Work Package: %1"
 msgstr "Çalışma Paketi: %1"
 
-#: kptview.cpp:2491
+#: kptview.cpp:2898
 #, kde-format
 msgctxt "1=project name, 2=task name"
 msgid ""
@@ -468,90 +587,165 @@ msgstr ""
 "%1\n"
 "%2"
 
-#: kptview.cpp:2505
+#: kptview.cpp:2912
 #, kde-format
 msgid "Work Package for project: %1"
 msgstr ""
 
-#: kptviewlist.cpp:544
+#: kptview.cpp:2929
+#, fuzzy, kde-format
+#| msgid "Failed to save to temporary file: %1"
+msgctxt "@info"
+msgid "Failed to save to temporary file:<br><filename>%1</filename>"
+msgstr "Geçici dosya kaydedilemedi: %1"
+
+#: kptviewlist.cpp:195
+msgctxt "@info:whatsthis"
+msgid ""
+"<para>This is the list of available views and editors.</para><para>You can "
+"configure the list by using the context menu:<list><item>Rename categories "
+"or views</item><item>Configure. Move, remove, rename or edit tool tip for "
+"categories or views</item><item>Insert categories and views</item></list>"
+msgstr ""
+
+#: kptviewlist.cpp:554
 msgid "Removing this category will also remove all its views."
 msgstr ""
 
-#: kptviewlist.cpp:653 kptviewlist.cpp:670
+#: kptviewlist.cpp:682
+#, fuzzy
+#| msgid "Rename"
+msgctxt "@action:inmenu rename view"
 msgid "Rename"
 msgstr "Yeniden Adlandır"
 
-#: kptviewlist.cpp:657 kptviewlist.cpp:674
+#: kptviewlist.cpp:686
+#, fuzzy
+#| msgid "Configure..."
+msgctxt "@action:inmenu configure view"
 msgid "Configure..."
 msgstr "Yapılandır..."
 
-#: kptviewlist.cpp:661 kptviewlist.cpp:678
+#: kptviewlist.cpp:690
+#, fuzzy
+#| msgid "Remove"
+msgctxt "@action:inmenu remove view"
 msgid "Remove"
 msgstr "Kaldır"
 
-#: kptviewlist.cpp:687
-msgctxt "@action Insert View"
+#: kptviewlist.cpp:699
+#, fuzzy
+#| msgid "Rename"
+msgctxt "@action:inmenu rename view category"
+msgid "Rename"
+msgstr "Yeniden Adlandır"
+
+#: kptviewlist.cpp:703
+#, fuzzy
+#| msgid "Configure..."
+msgctxt "@action:inmenu configure view category"
+msgid "Configure..."
+msgstr "Yapılandır..."
+
+#: kptviewlist.cpp:707
+#, fuzzy
+#| msgid "Remove"
+msgctxt "@action:inmenu Remove view category"
+msgid "Remove"
+msgstr "Kaldır"
+
+#: kptviewlist.cpp:716
+#, fuzzy
+#| msgctxt "@action Insert View"
+#| msgid "Insert..."
+msgctxt "@action:inmenu Insert View"
 msgid "Insert..."
 msgstr "Ekle..."
 
-#: kptviewlistdialog.cpp:40
+#: kptviewlistdialog.cpp:41
+#, fuzzy
+#| msgid "Add View"
+msgctxt "@title:window"
 msgid "Add View"
 msgstr "Görünüm Ekle"
 
-#: kptviewlistdialog.cpp:93
+#: kptviewlistdialog.cpp:101
 msgid "Resource Editor"
 msgstr "Kaynak Düzenleyici"
 
-#: kptviewlistdialog.cpp:94
+#: kptviewlistdialog.cpp:102
 msgid "Task Editor"
 msgstr "Görev Düzenleyici"
 
-#: kptviewlistdialog.cpp:95
+#: kptviewlistdialog.cpp:103
 msgid "Work & Vacation Editor"
 msgstr "Çalışma Zamanı & Boz Zaman Düzenleyici"
 
-#: kptviewlistdialog.cpp:96
+#: kptviewlistdialog.cpp:104
 msgid "Accounts Editor"
 msgstr "Hesap Düzenleyici"
 
-#: kptviewlistdialog.cpp:97
+#: kptviewlistdialog.cpp:105
 msgid "Dependency Editor (Graphic)"
 msgstr "Bağımlılık Düzenleyici (Grafik)"
 
-#: kptviewlistdialog.cpp:98
+#: kptviewlistdialog.cpp:106
 msgid "Dependency Editor (List)"
 msgstr "Bağımlılık Düzenleyici (Liste)"
 
-#: kptviewlistdialog.cpp:99
+#: kptviewlistdialog.cpp:107
 msgid "Schedule Handler"
 msgstr ""
 
-#: kptviewlistdialog.cpp:101
+#: kptviewlistdialog.cpp:109
 msgid "Task View"
 msgstr "Görev Görünümü"
 
-#: kptviewlistdialog.cpp:103
+#: kptviewlistdialog.cpp:111
 msgid "Gantt View"
 msgstr "Gantt Görünümü"
 
-#: kptviewlistdialog.cpp:104
+#: kptviewlistdialog.cpp:112
 msgid "Milestone Gantt View"
 msgstr ""
 
-#: kptviewlistdialog.cpp:180 kptviewlistdialog.cpp:366
-#: kptviewlistdialog.cpp:447
+#: kptviewlistdialog.cpp:185 kptviewlistdialog.cpp:378
+#: kptviewlistdialog.cpp:465 kptviewlistdialog.cpp:589
 msgid "Top"
 msgstr "Üst"
 
-#: kptviewlistdialog.cpp:277
+#: kptviewlistdialog.cpp:283
+#, fuzzy
+#| msgid "Configure View"
+msgctxt "@title:window"
 msgid "Configure View"
 msgstr "Görünümünü Yapılandır"
 
-#: kptviewlistdialog.cpp:384
+#: kptviewlistdialog.cpp:396
+#, fuzzy
+#| msgid "Configure Category"
+msgctxt "@title:window"
 msgid "Configure Category"
 msgstr "Kategoriyi Yapılandır"
 
-#: kptviewlistdocker.cpp:38
+#: kptviewlistdialog.cpp:483
+#, fuzzy
+#| msgid "Add Relation"
+msgctxt "@title:window"
+msgid "Add Report"
+msgstr "İlişki Ekle"
+
+#: kptviewlistdocker.cpp:63 kptviewlistdocker.cpp:69
+#, fuzzy
+#| msgid "View Selector"
+msgctxt "@title:window"
+msgid "View Selector [modified]"
+msgstr "Seçiciyi Göster"
+
+#: kptviewlistdocker.cpp:71
+#, fuzzy
+#| msgid "View Selector"
+msgctxt "@title:window"
 msgid "View Selector"
 msgstr "Seçiciyi Göster"
 
@@ -571,7 +765,7 @@ msgstr "&Dosya"
 msgid "&Edit"
 msgstr "Dü&zen"
 
-#. i18n: file: kplato.rc:35
+#. i18n: file: kplato.rc:33
 #. i18n: ectx: Menu (view)
 #. i18n: file: kplato_readonly.rc:3
 #. i18n: ectx: Menu (view)
@@ -579,37 +773,37 @@ msgstr "Dü&zen"
 msgid "&View"
 msgstr "&Görünüm"
 
-#. i18n: file: kplato.rc:41
+#. i18n: file: kplato.rc:39
 #. i18n: ectx: Menu (project)
 #: rc.cpp:12
 msgid "&Project"
 msgstr "&Proje"
 
-#. i18n: file: kplato.rc:48
+#. i18n: file: kplato.rc:46
 #. i18n: ectx: Menu (tools)
 #: rc.cpp:15
 msgid "&Tools"
 msgstr "&Araçlar"
 
-#. i18n: file: kplato.rc:54
-#. i18n: ectx: Menu (settings)
+#. i18n: file: kplato.rc:51
+#. i18n: ectx: Menu (reports)
 #: rc.cpp:18
+msgid "&Reports"
+msgstr ""
+
+#. i18n: file: kplato.rc:58
+#. i18n: ectx: Menu (settings)
+#: rc.cpp:21
 msgid "&Settings"
 msgstr "Ayarla&r"
 
-#. i18n: file: kplato.rc:57
+#. i18n: file: kplato.rc:61
 #. i18n: ectx: Menu (help)
-#: rc.cpp:21
+#: rc.cpp:24
 msgid "&Help"
 msgstr "&Yardım"
 
-#. i18n: file: kplato.rc:61
-#. i18n: ectx: ToolBar (view)
-#: rc.cpp:24
-msgid "View"
-msgstr "Görünüm"
-
-#. i18n: file: kplato.rc:69
+#. i18n: file: kplato.rc:65
 #. i18n: ectx: ToolBar (project)
 #: rc.cpp:27
 msgid "Project"
@@ -617,164 +811,174 @@ msgstr "Proje"
 
 #. i18n: file: kplatosettings.kcfg:9
 #. i18n: ectx: label, entry (Leader), group (Task defaults)
-#: rc.cpp:33 rc.cpp:533
+#: rc.cpp:33 rc.cpp:541
 msgid "Name of task responsible"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:12
 #. i18n: ectx: label, entry (ConstraintType), group (Task defaults)
-#: rc.cpp:36 rc.cpp:536
+#: rc.cpp:36 rc.cpp:544
 msgid "Scheduling constraint type"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:24
 #. i18n: ectx: label, entry (StartTimeUsage), group (Task defaults)
-#: rc.cpp:39 rc.cpp:539
+#: rc.cpp:39 rc.cpp:547
 msgid "Defines how start constraint time is used"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:32
 #. i18n: ectx: label, entry (ConstraintStartTime), group (Task defaults)
-#: rc.cpp:42 rc.cpp:542
-msgid "Constraint start datetime"
+#: rc.cpp:42 rc.cpp:550
+#, fuzzy
+#| msgid "Constraint start datetime"
+msgid "Constraint start date and time"
 msgstr "Başlama tarihini/saatini kısıtla"
 
 #. i18n: file: kplatosettings.kcfg:35
 #. i18n: ectx: label, entry (EndTimeUsage), group (Task defaults)
-#: rc.cpp:45 rc.cpp:545
+#: rc.cpp:45 rc.cpp:553
 msgid "Defines how end constraint time is used"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:43
 #. i18n: ectx: label, entry (ConstraintEndTime), group (Task defaults)
-#: rc.cpp:48 rc.cpp:548
-msgid "Constraint end datetime"
-msgstr ""
+#: rc.cpp:48 rc.cpp:556
+#, fuzzy
+#| msgid "Constraint end time:"
+msgid "Constraint end date and time"
+msgstr "Kısıtlanmış bitiş zamanı:"
 
 #. i18n: file: kplatosettings.kcfg:47
 #. i18n: ectx: label, entry (EstimateType), group (Task defaults)
-#: rc.cpp:51 rc.cpp:551
+#: rc.cpp:51 rc.cpp:559
 msgid "Type of estimate"
 msgstr "Tahmin tipi"
 
 #. i18n: file: kplatosettings.kcfg:55
 #. i18n: ectx: label, entry (Unit), group (Task defaults)
-#: rc.cpp:54 rc.cpp:554
+#: rc.cpp:54 rc.cpp:562
 msgid "Estimate time unit"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:68
 #. i18n: ectx: label, entry (ExpectedEstimate), group (Task defaults)
-#: rc.cpp:57 rc.cpp:557
+#: rc.cpp:57 rc.cpp:565
 msgid "Expected estimate"
 msgstr "Beklenen tahmin"
 
 #. i18n: file: kplatosettings.kcfg:71
 #. i18n: ectx: label, entry (OptimisticRatio), group (Task defaults)
-#: rc.cpp:60 rc.cpp:560
+#: rc.cpp:60 rc.cpp:568
 msgid "Optimistic estimate"
 msgstr "İyimser tahmin"
 
 #. i18n: file: kplatosettings.kcfg:74
 #. i18n: ectx: label, entry (PessimisticRatio), group (Task defaults)
-#: rc.cpp:63 rc.cpp:563
+#: rc.cpp:63 rc.cpp:571
 msgid "Pessimistic estimate"
 msgstr "Kötümser tahmin"
 
 #. i18n: file: kplatosettings.kcfg:78
 #. i18n: ectx: label, entry (Description), group (Task defaults)
-#: rc.cpp:66 rc.cpp:566
+#: rc.cpp:66 rc.cpp:574
 msgid "Task description"
 msgstr "Görev açıklaması"
 
 #. i18n: file: kplatosettings.kcfg:84
 #. i18n: ectx: label, entry (CheckForWorkPackages), group (Work Package)
-#: rc.cpp:69 rc.cpp:569
+#: rc.cpp:69 rc.cpp:577
 msgid "Automatically check for new work packages"
 msgstr "Yeni çalışma paketlerini otomatik olarak denetle"
 
 #. i18n: file: kplatosettings.kcfg:87
 #. i18n: ectx: label, entry (RetrieveUrl), group (Work Package)
-#: rc.cpp:72 rc.cpp:572
+#: rc.cpp:72 rc.cpp:580
 msgid "Directory where kplato retrieves work packages from project members"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:90
 #. i18n: ectx: label, entry (DeleteFile), group (Work Package)
-#: rc.cpp:75 rc.cpp:575
+#: rc.cpp:75 rc.cpp:583
 msgid "If set, kplato will delete the file after it has been read"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:93
 #. i18n: ectx: label, entry (SaveFile), group (Work Package)
-#: rc.cpp:78 rc.cpp:578
+#: rc.cpp:78 rc.cpp:586
 msgid "If set, kplato will save the file after it has been read"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:96
 #. i18n: ectx: label, entry (LeaveFile), group (Work Package)
-#: rc.cpp:81 rc.cpp:581
+#: rc.cpp:81 rc.cpp:589
 msgid "If set, kplato will leave where it is the file after it has been read"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:99
 #. i18n: ectx: label, entry (SaveUrl), group (Work Package)
-#: rc.cpp:84 rc.cpp:584
+#: rc.cpp:84 rc.cpp:592
 msgid ""
 "Directory where kplato saves work packages when the package has been read"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:105
 #. i18n: ectx: label, entry (MinimumDurationUnit), group (Miscellaneous)
-#: rc.cpp:87 rc.cpp:587
+#: rc.cpp:87 rc.cpp:595
 msgid "The smallest duration unit allowed"
 msgstr ""
 
 #. i18n: file: kplatosettings.kcfg:109
 #. i18n: ectx: label, entry (MaximumDurationUnit), group (Miscellaneous)
-#: rc.cpp:90 rc.cpp:590
+#: rc.cpp:90 rc.cpp:598
 msgid "The largest duration unit allowed"
 msgstr ""
 
 #. i18n: file: kptconfigbehaviorpanelbase.ui:25
 #. i18n: ectx: property (title), widget (QButtonGroup)
-#: rc.cpp:93 rc.cpp:314
+#: rc.cpp:93 rc.cpp:318
 msgid "Calculation"
 msgstr "Hesaplama"
 
 #. i18n: file: kptconfigbehaviorpanelbase.ui:36
 #. i18n: ectx: property (text), widget (QRadioButton)
-#: rc.cpp:96 rc.cpp:317
+#: rc.cpp:96 rc.cpp:321
 msgid "Manual"
 msgstr "El İle"
 
 #. i18n: file: kptconfigbehaviorpanelbase.ui:44
 #. i18n: ectx: property (text), widget (QRadioButton)
-#: rc.cpp:99 rc.cpp:320
+#: rc.cpp:99 rc.cpp:324
 msgid "Immediate on change"
 msgstr ""
 
 #. i18n: file: kptconfigbehaviorpanelbase.ui:54
 #. i18n: ectx: property (title), widget (QGroupBox)
-#: rc.cpp:102 rc.cpp:323
+#: rc.cpp:102 rc.cpp:327
 msgid "Constraints"
 msgstr "Kısıtlamalar"
 
 #. i18n: file: kptconfigbehaviorpanelbase.ui:65
 #. i18n: ectx: property (text), widget (QCheckBox)
-#: rc.cpp:105 rc.cpp:326
+#: rc.cpp:105 rc.cpp:330
 msgid "Allow overbooking of resources"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:31
+#. i18n: file: kptconfigtaskpanelbase.ui:25
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: rc.cpp:108 rc.cpp:333
+msgid "General"
+msgstr "Genel"
+
+#. i18n: file: kptconfigtaskpanelbase.ui:41
 #. i18n: ectx: property (whatsThis), widget (QLabel, leaderlabel)
-#. i18n: file: kptconfigtaskpanelbase.ui:55
+#. i18n: file: kptconfigtaskpanelbase.ui:65
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_Leader)
-#. i18n: file: kptconfigtaskpanelbase.ui:31
+#. i18n: file: kptconfigtaskpanelbase.ui:41
 #. i18n: ectx: property (whatsThis), widget (QLabel, leaderlabel)
-#. i18n: file: kptconfigtaskpanelbase.ui:55
+#. i18n: file: kptconfigtaskpanelbase.ui:65
 #. i18n: ectx: property (whatsThis), widget (KLineEdit, kcfg_Leader)
-#: rc.cpp:108 rc.cpp:116 rc.cpp:329 rc.cpp:337
+#: rc.cpp:111 rc.cpp:119 rc.cpp:336 rc.cpp:344
 msgid ""
 "The person responsible for this task.\n"
 "\n"
@@ -783,214 +987,220 @@ msgid ""
 "button."
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:34
+#. i18n: file: kptconfigtaskpanelbase.ui:44
 #. i18n: ectx: property (text), widget (QLabel, leaderlabel)
-#: rc.cpp:113 rc.cpp:334
+#: rc.cpp:116 rc.cpp:341
 msgid "Responsible:"
 msgstr "Sorumlu:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:62
+#. i18n: file: kptconfigtaskpanelbase.ui:72
 #. i18n: ectx: property (toolTip), widget (QPushButton, chooseLeader)
-#: rc.cpp:121 rc.cpp:342
+#: rc.cpp:124 rc.cpp:349
 msgid "Insert a person from your address book"
 msgstr "Adres defterinizden bir kişi ekleyin"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:65
+#. i18n: file: kptconfigtaskpanelbase.ui:75
 #. i18n: ectx: property (whatsThis), widget (QPushButton, chooseLeader)
-#: rc.cpp:124 rc.cpp:345
+#: rc.cpp:127 rc.cpp:352
 msgid "Insert a person from your address book."
 msgstr "Adres defterinizden bir kişi ekleyin."
 
-#. i18n: file: kptconfigtaskpanelbase.ui:68
+#. i18n: file: kptconfigtaskpanelbase.ui:78
 #. i18n: ectx: property (text), widget (QPushButton, chooseLeader)
-#: rc.cpp:127 rc.cpp:348
+#: rc.cpp:130 rc.cpp:355
 msgid "Choose..."
 msgstr "Seç..."
 
-#. i18n: file: kptconfigtaskpanelbase.ui:93
+#. i18n: file: kptconfigtaskpanelbase.ui:96
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: rc.cpp:130 rc.cpp:351
+#: rc.cpp:133 rc.cpp:358
 msgid "Scheduling constraint:"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:113
+#. i18n: file: kptconfigtaskpanelbase.ui:116
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:133 rc.cpp:354
+#: rc.cpp:136 rc.cpp:361
 msgid "As Soon as Possible"
 msgstr "Mümkün Oldukça Çabuk"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:118
+#. i18n: file: kptconfigtaskpanelbase.ui:121
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:136 rc.cpp:357
+#: rc.cpp:139 rc.cpp:364
 msgid "As Late as Possible"
 msgstr "Mümkün Oldukça Geç"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:123
+#. i18n: file: kptconfigtaskpanelbase.ui:126
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:139 rc.cpp:360
+#: rc.cpp:142 rc.cpp:367
 msgid "Must Start On"
 msgstr "Başlamak Zorunda Olduğu Zaman"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:128
+#. i18n: file: kptconfigtaskpanelbase.ui:131
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:142 rc.cpp:363
+#: rc.cpp:145 rc.cpp:370
 msgid "Must Finish On"
 msgstr "Bitmek Zorunda Olduğu Zaman"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:133
+#. i18n: file: kptconfigtaskpanelbase.ui:136
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:145 rc.cpp:366
+#: rc.cpp:148 rc.cpp:373
 msgid "Start Not Earlier Than"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:138
+#. i18n: file: kptconfigtaskpanelbase.ui:141
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:148 rc.cpp:369
+#: rc.cpp:151 rc.cpp:376
 msgid "Finish Not Later Than"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:143
+#. i18n: file: kptconfigtaskpanelbase.ui:146
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_ConstraintType)
-#: rc.cpp:151 rc.cpp:372
+#: rc.cpp:154 rc.cpp:379
 msgid "Fixed Interval"
 msgstr "Sabit Aralık"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:157
+#. i18n: file: kptconfigtaskpanelbase.ui:160
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_5)
-#: rc.cpp:154 rc.cpp:375
+#: rc.cpp:157 rc.cpp:382
 msgid "Constraint Start time usage:"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:177
+#. i18n: file: kptconfigtaskpanelbase.ui:180
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:247
+#. i18n: file: kptconfigtaskpanelbase.ui:250
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:177
+#. i18n: file: kptconfigtaskpanelbase.ui:180
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:247
+#. i18n: file: kptconfigtaskpanelbase.ui:250
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#: rc.cpp:157 rc.cpp:172 rc.cpp:378 rc.cpp:393
-msgid "Current datetime"
+#: rc.cpp:160 rc.cpp:175 rc.cpp:385 rc.cpp:400
+#, fuzzy
+#| msgid "Current datetime"
+msgid "Current date and time"
 msgstr "Geçerli tarih/saat"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:182
+#. i18n: file: kptconfigtaskpanelbase.ui:185
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:252
+#. i18n: file: kptconfigtaskpanelbase.ui:255
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:182
+#. i18n: file: kptconfigtaskpanelbase.ui:185
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:252
+#. i18n: file: kptconfigtaskpanelbase.ui:255
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#: rc.cpp:160 rc.cpp:175 rc.cpp:381 rc.cpp:396
+#: rc.cpp:163 rc.cpp:178 rc.cpp:388 rc.cpp:403
 msgid "Current date, specified time"
 msgstr "Geçerli tarih, belirlenmiş saat"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:187
+#. i18n: file: kptconfigtaskpanelbase.ui:190
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:257
+#. i18n: file: kptconfigtaskpanelbase.ui:260
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:187
+#. i18n: file: kptconfigtaskpanelbase.ui:190
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_StartTimeUsage)
-#. i18n: file: kptconfigtaskpanelbase.ui:257
+#. i18n: file: kptconfigtaskpanelbase.ui:260
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EndTimeUsage)
-#: rc.cpp:163 rc.cpp:178 rc.cpp:384 rc.cpp:399
-msgid "Specified datetime"
+#: rc.cpp:166 rc.cpp:181 rc.cpp:391 rc.cpp:406
+#, fuzzy
+#| msgid "Specified datetime"
+msgid "Specified date and time"
 msgstr "Belirlenmiş tarih/saat"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:201
+#. i18n: file: kptconfigtaskpanelbase.ui:204
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_3)
-#: rc.cpp:166 rc.cpp:387
+#: rc.cpp:169 rc.cpp:394
 msgid "Constraint start time:"
 msgstr "Kısıtlanmış başlama zamanı:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:227
+#. i18n: file: kptconfigtaskpanelbase.ui:230
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_6)
-#: rc.cpp:169 rc.cpp:390
+#: rc.cpp:172 rc.cpp:397
 msgid "Constraint End time usage:"
 msgstr ""
 
-#. i18n: file: kptconfigtaskpanelbase.ui:271
+#. i18n: file: kptconfigtaskpanelbase.ui:274
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_4)
-#: rc.cpp:181 rc.cpp:402
+#: rc.cpp:184 rc.cpp:409
 msgid "Constraint end time:"
 msgstr "Kısıtlanmış bitiş zamanı:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:304
+#. i18n: file: kptconfigtaskpanelbase.ui:307
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_7)
-#: rc.cpp:184 rc.cpp:405
+#: rc.cpp:187 rc.cpp:412
 msgid "Estimate type:"
 msgstr "Tahmin tipi:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:327
+#. i18n: file: kptconfigtaskpanelbase.ui:330
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EstimateType)
-#: rc.cpp:187 rc.cpp:408
+#: rc.cpp:190 rc.cpp:415
 msgid "Effort"
 msgstr "Başarım"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:332
+#. i18n: file: kptconfigtaskpanelbase.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_EstimateType)
-#: rc.cpp:190 rc.cpp:411
+#: rc.cpp:193 rc.cpp:418
 msgid "Duration"
 msgstr "Süre"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:346
+#. i18n: file: kptconfigtaskpanelbase.ui:349
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_8)
-#: rc.cpp:193 rc.cpp:414
+#: rc.cpp:196 rc.cpp:421
 msgid "Expected estimate:"
 msgstr "Beklenen tahmin:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:375
+#. i18n: file: kptconfigtaskpanelbase.ui:378
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_3)
-#: rc.cpp:196 rc.cpp:417
+#: rc.cpp:199 rc.cpp:424
 msgid "Optimistic estimate:"
 msgstr "İyimser tahmin:"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:388
+#. i18n: file: kptconfigtaskpanelbase.ui:391
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_OptimisticRatio)
-#. i18n: file: kptconfigtaskpanelbase.ui:423
+#. i18n: file: kptconfigtaskpanelbase.ui:426
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_PessimisticRatio)
-#. i18n: file: kptconfigtaskpanelbase.ui:388
+#. i18n: file: kptconfigtaskpanelbase.ui:391
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_OptimisticRatio)
-#. i18n: file: kptconfigtaskpanelbase.ui:423
+#. i18n: file: kptconfigtaskpanelbase.ui:426
 #. i18n: ectx: property (suffix), widget (QSpinBox, kcfg_PessimisticRatio)
-#: rc.cpp:200 rc.cpp:207 rc.cpp:421 rc.cpp:428
+#: rc.cpp:203 rc.cpp:210 rc.cpp:428 rc.cpp:435
 #, no-c-format
 msgid "%"
 msgstr "%"
 
-#. i18n: file: kptconfigtaskpanelbase.ui:407
+#. i18n: file: kptconfigtaskpanelbase.ui:410
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
-#: rc.cpp:203 rc.cpp:424
+#: rc.cpp:206 rc.cpp:431
 msgid "Pessimistic estimate:"
 msgstr "Kötümser tahmin:"
 
+#. i18n: file: kptconfigtaskpanelbase.ui:457
+#. i18n: ectx: attribute (title), widget (QWidget, )
+#: rc.cpp:213 rc.cpp:438
+#, fuzzy
+#| msgid "Description..."
+msgid "Description"
+msgstr "Açıklama..."
+
 #. i18n: file: kptinsertfilepanel.ui:40
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:210 rc.cpp:431
+#: rc.cpp:216 rc.cpp:441
 msgid "Current node:"
 msgstr "Geçerli düğüm:"
 
-#. i18n: file: kptinsertfilepanel.ui:53
-#. i18n: ectx: property (text), widget (QLabel, ui_name)
-#: rc.cpp:213 rc.cpp:434
-msgid "TextLabel"
-msgstr "MetinEtiketi"
-
 #. i18n: file: kptinsertfilepanel.ui:75
 #. i18n: ectx: property (text), widget (QRadioButton, ui_useProject)
-#: rc.cpp:216 rc.cpp:437
+#: rc.cpp:220 rc.cpp:445
 msgid "Insert on top level"
 msgstr ""
 
 #. i18n: file: kptinsertfilepanel.ui:82
 #. i18n: ectx: property (text), widget (QRadioButton, ui_isParent)
-#: rc.cpp:219 rc.cpp:440
+#: rc.cpp:223 rc.cpp:448
 msgid "Insert as children to current node"
 msgstr ""
 
 #. i18n: file: kptinsertfilepanel.ui:89
 #. i18n: ectx: property (text), widget (QRadioButton, ui_isAfter)
-#: rc.cpp:222 rc.cpp:443
+#: rc.cpp:226 rc.cpp:451
 msgid "Insert after current node"
 msgstr "Şimdiki düğümden sonra ekle"
 
@@ -1002,7 +1212,7 @@ msgstr "Şimdiki düğümden sonra ekle"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: file: kptviewlisteditview.ui:16
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: rc.cpp:225 rc.cpp:282 rc.cpp:446 rc.cpp:503
+#: rc.cpp:229 rc.cpp:286 rc.cpp:454 rc.cpp:511
 msgid "Category:"
 msgstr "Kategori:"
 
@@ -1018,13 +1228,13 @@ msgstr "Kategori:"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: file: kptviewlisteditview.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:228 rc.cpp:273 rc.cpp:285 rc.cpp:449 rc.cpp:494 rc.cpp:506
+#: rc.cpp:232 rc.cpp:277 rc.cpp:289 rc.cpp:457 rc.cpp:502 rc.cpp:514
 msgid "After"
 msgstr "Sonra"
 
 #. i18n: file: kptviewlistaddview.ui:62
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:231 rc.cpp:452
+#: rc.cpp:235 rc.cpp:460
 msgid "View type:"
 msgstr "Görünüm tipi:"
 
@@ -1040,7 +1250,7 @@ msgstr "Görünüm tipi:"
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: file: kptviewlisteditview.ui:56
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: rc.cpp:234 rc.cpp:276 rc.cpp:288 rc.cpp:455 rc.cpp:497 rc.cpp:509
+#: rc.cpp:238 rc.cpp:280 rc.cpp:292 rc.cpp:463 rc.cpp:505 rc.cpp:517
 msgid "Name:"
 msgstr "İsim:"
 
@@ -1056,160 +1266,164 @@ msgstr "İsim:"
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: file: kptviewlisteditview.ui:69
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: rc.cpp:237 rc.cpp:279 rc.cpp:291 rc.cpp:458 rc.cpp:500 rc.cpp:512
+#: rc.cpp:241 rc.cpp:283 rc.cpp:295 rc.cpp:466 rc.cpp:508 rc.cpp:520
 msgid "Tip:"
 msgstr "İpucu:"
 
 #. i18n: file: kptviewlistdocker.ui:22
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:240 rc.cpp:461
+#: rc.cpp:244 rc.cpp:469
 msgid "Words"
 msgstr "Sözcükler"
 
 #. i18n: file: kptviewlistdocker.ui:27
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:243 rc.cpp:464
+#: rc.cpp:247 rc.cpp:472
 msgid "Sentences"
 msgstr "Cümleler"
 
 #. i18n: file: kptviewlistdocker.ui:32
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:246 rc.cpp:467
+#: rc.cpp:250 rc.cpp:475
 msgid "Syllables"
 msgstr "Heceler"
 
 #. i18n: file: kptviewlistdocker.ui:37
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:249 rc.cpp:470
+#: rc.cpp:253 rc.cpp:478
 msgid "Lines"
 msgstr "Çizgiler"
 
 #. i18n: file: kptviewlistdocker.ui:42
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:252 rc.cpp:473
+#: rc.cpp:256 rc.cpp:481
 msgid "Characters incl. spaces"
 msgstr "Boşluk içeren karakterler"
 
 #. i18n: file: kptviewlistdocker.ui:47
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:255 rc.cpp:476
+#: rc.cpp:259 rc.cpp:484
 msgid "Characters without spaces"
 msgstr "Boşluksuz karakterler"
 
 #. i18n: file: kptviewlistdocker.ui:52
 #. i18n: ectx: property (text), item, widget (QComboBox, statistics)
-#: rc.cpp:258 rc.cpp:479
+#: rc.cpp:262 rc.cpp:487
 msgid "Flesch reading ease"
 msgstr "Flesch okuma kolaylığı"
 
 #. i18n: file: kptviewlistdocker.ui:63
 #. i18n: ectx: property (text), widget (QLineEdit, count)
-#: rc.cpp:261 rc.cpp:482
+#: rc.cpp:265 rc.cpp:490
 msgid "0"
 msgstr "0"
 
 #. i18n: file: kptviewlistdocker.ui:73
 #. i18n: ectx: property (text), widget (QToolButton, refresh)
-#: rc.cpp:264 rc.cpp:485
+#: rc.cpp:268 rc.cpp:493
 msgid "..."
 msgstr "..."
 
 #. i18n: file: kptviewlistdocker.ui:84
 #. i18n: ectx: property (text), widget (QCheckBox, footEndNotes)
-#: rc.cpp:267 rc.cpp:488
+#: rc.cpp:271 rc.cpp:496
 msgid "Include text from foot- and endnotes"
 msgstr "Dipnotlardaki ve son notlardaki metni de ekle"
 
 #. i18n: file: kptviewlistdocker.ui:91
 #. i18n: ectx: property (text), widget (QCheckBox, autoRefresh)
-#: rc.cpp:270 rc.cpp:491
+#: rc.cpp:274 rc.cpp:499
 msgid "Automatically refresh data"
 msgstr "Verileri otomatik olarak tazele"
 
 #. i18n: file: kptworkpackageconfigpanel.ui:20
 #. i18n: ectx: property (title), widget (QGroupBox, kcfg_CheckForWorkPackages)
-#: rc.cpp:294 rc.cpp:515
+#: rc.cpp:298 rc.cpp:523
 msgid "Check for work packages"
 msgstr ""
 
 #. i18n: file: kptworkpackageconfigpanel.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: rc.cpp:297 rc.cpp:518
-msgid "Retrieve url:"
+#: rc.cpp:301 rc.cpp:526
+#, fuzzy
+#| msgid "Retrieve url:"
+msgid "Retrieve URL:"
 msgstr "Adresi getir:"
 
 #. i18n: file: kptworkpackageconfigpanel.ui:42
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_DeleteFile)
-#: rc.cpp:300 rc.cpp:521
+#: rc.cpp:304 rc.cpp:529
 msgid "Delete file after it has been retrieved"
 msgstr "İndirildikten sonra dosyayı sil"
 
 #. i18n: file: kptworkpackageconfigpanel.ui:49
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_SaveFile)
-#: rc.cpp:303 rc.cpp:524
+#: rc.cpp:307 rc.cpp:532
 msgid "Save file after it has been retrieved"
 msgstr "İndirildikten sonra dosyayı kaydet"
 
 #. i18n: file: kptworkpackageconfigpanel.ui:56
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: rc.cpp:306 rc.cpp:527
-msgid "Save url:"
+#: rc.cpp:310 rc.cpp:535
+#, fuzzy
+#| msgid "Save url:"
+msgid "Save URL:"
 msgstr "Adresi kaydet:"
 
 #. i18n: file: kptworkpackageconfigpanel.ui:79
 #. i18n: ectx: property (text), widget (QRadioButton, kcfg_LeaveFile)
-#: rc.cpp:309 rc.cpp:530
+#: rc.cpp:313 rc.cpp:538
 msgid "Leave file after it has been retrieved"
 msgstr ""
 
-#: rc.cpp:310
+#: rc.cpp:314
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Serdar Soytetir"
 
-#: rc.cpp:311
+#: rc.cpp:315
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
 
-#: about/aboutpage.cpp:63 kptaboutdata.h:37
+#: about/aboutpage.cpp:62 kptaboutdata.h:37
 msgid "KPlato"
 msgstr "KPlato"
 
-#: about/aboutpage.cpp:64
+#: about/aboutpage.cpp:63
 msgctxt "KDE 4 tag line, see http://kde.org/img/kde40.png"
 msgid "Be free."
 msgstr "Özgür olun."
 
-#: about/aboutpage.cpp:65 about/aboutpage.cpp:97
+#: about/aboutpage.cpp:64 about/aboutpage.cpp:95
 msgid "KPlato is a Project Planning and Management application."
 msgstr "KPlato bir Proje Planlama ve Yönetme uygulamasıdır."
 
-#: about/aboutpage.cpp:67
+#: about/aboutpage.cpp:66
 msgid ""
 "<b>Welcome to KPlato.</b><br>These introductory pages should give you an "
 "idea of how to use KPlato and what you can use it for."
 msgstr ""
 
-#: about/aboutpage.cpp:70
+#: about/aboutpage.cpp:69
 msgid "A short introduction."
 msgstr "Kısa bir giriş."
 
-#: about/aboutpage.cpp:71
+#: about/aboutpage.cpp:70
 msgid "Tips on how to manipulate and inspect data."
 msgstr ""
 
-#: about/aboutpage.cpp:72
+#: about/aboutpage.cpp:71
 msgid "A small tutorial to get you started."
 msgstr "Başlangıç için küçük bir giriş belgesi."
 
-#: about/aboutpage.cpp:74
+#: about/aboutpage.cpp:73
 msgid ""
 "<em>Note:</em> To view these pages when you are in other parts of KPlato, "
 "choose the menu option <em>Help -> KPlato Introduction</em>."
 msgstr ""
 
-#: about/aboutpage.cpp:99
+#: about/aboutpage.cpp:97
 msgid ""
 "KPlato is intended for managing moderately large projects with multiple "
 "resources. To enable you to model your project adequately, KPlato offers "
@@ -1221,15 +1435,15 @@ msgid ""
 "koffice.org/kplato\">http://www.koffice.org/kplato</a></p>"
 msgstr ""
 
-#: about/aboutpage.cpp:104
+#: about/aboutpage.cpp:102
 msgid "Next: Tips"
 msgstr "Sonraki: İpuçları"
 
-#: about/aboutpage.cpp:141
+#: about/aboutpage.cpp:139
 msgid "Editing tips."
 msgstr "Düzenleme ipuçları."
 
-#: about/aboutpage.cpp:143
+#: about/aboutpage.cpp:141
 msgid ""
 "<br><b>To</b> edit project data, different views and editors can be selected "
 "in the View Selector docker.<br><b>The</b> views are generally used to "
@@ -1240,15 +1454,15 @@ msgid ""
 "dialog using the context menu.</ul>"
 msgstr ""
 
-#: about/aboutpage.cpp:149
+#: about/aboutpage.cpp:147
 msgid "Next: Create a simple project"
 msgstr "Sonraki: Basit bir proje oluştur"
 
-#: about/aboutpage.cpp:184
+#: about/aboutpage.cpp:182
 msgid "Create the simplest project ever."
 msgstr "En basit projeyi oluştur."
 
-#: about/aboutpage.cpp:186
+#: about/aboutpage.cpp:184
 #, kde-format
 msgctxt "1=datetime"
 msgid ""
@@ -1264,15 +1478,15 @@ msgid ""
 "<em>Views->Gantt</em>."
 msgstr ""
 
-#: about/aboutpage.cpp:202
+#: about/aboutpage.cpp:200
 msgid "Next: Resource allocation"
 msgstr ""
 
-#: about/aboutpage.cpp:213
+#: about/aboutpage.cpp:211
 msgid "Allocate a resource to the task."
 msgstr ""
 
-#: about/aboutpage.cpp:215
+#: about/aboutpage.cpp:213
 #, kde-format
 msgctxt "1=datetime"
 msgid ""
@@ -1287,7 +1501,7 @@ msgid ""
 "chart <em>Views->Gantt</em>.<p>"
 msgstr ""
 
-#: about/aboutpage.cpp:226
+#: about/aboutpage.cpp:224
 msgid "Next: Introduction"
 msgstr "Sonraki: Giriş"
 
@@ -1330,6 +1544,33 @@ msgstr "Nuno Pinheiro and Danny Allen"
 msgid "Application icon for kplato"
 msgstr "Kplato uygulama simgesi"
 
+#~ msgid "Send Work Package..."
+#~ msgstr "Çalışma Paketi Gönder..."
+
+#~ msgid "Add Subtask"
+#~ msgstr "Alt Görev Ekle"
+
+#~ msgid "Add Task"
+#~ msgstr "Görev Ekle"
+
+#~ msgid "Delete Tasks"
+#~ msgstr "Görevleri Sil"
+
+#~ msgid "Delete Relation"
+#~ msgstr "İlişki Sil"
+
+#~ msgid "Add resource"
+#~ msgstr "Kaynak ekle"
+
+#~ msgid "Delete Resource Objects"
+#~ msgstr "Kaynak Nesnelerini Sil"
+
+#~ msgid "View"
+#~ msgstr "Görünüm"
+
+#~ msgid "TextLabel"
+#~ msgstr "MetinEtiketi"
+
 #~ msgid "Edit task dependenies"
 #~ msgstr "Görevin bağımlılıklarını düzenle"
 
@@ -1341,9 +1582,6 @@ msgstr "Kplato uygulama simgesi"
 
 #~ msgid "Note:"
 #~ msgstr "Not:"
-
-#~ msgid "General"
-#~ msgstr "Genel"
 
 #~ msgid "Documents"
 #~ msgstr "Belgeler"
@@ -1376,9 +1614,6 @@ msgstr "Kplato uygulama simgesi"
 
 #~ msgid "List of Resources"
 #~ msgstr "Kaynakların Listesi"
-
-#~ msgid "Project name:"
-#~ msgstr "Proje adı:"
 
 #~ msgid "Project manager:"
 #~ msgstr "Proje yöneticisi:"

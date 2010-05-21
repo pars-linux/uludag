@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: system-config-printer-kde\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-07-04 12:17+0200\n"
+"POT-Creation-Date: 2010-05-17 01:24+0200\n"
 "PO-Revision-Date: 2010-04-26 09:48+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -56,6 +56,16 @@ msgstr "%1 konumuna bağlanıldı"
 #: system-config-printer-kde.py:497
 msgid "Not connected"
 msgstr "Bağlı değil"
+
+#: system-config-printer-kde.py:607 system-config-printer-kde.py:2201
+msgid "New Printer"
+msgstr "Yeni Yazıcı"
+
+#: system-config-printer-kde.py:608
+#, fuzzy
+#| msgid "Basic Server Settings"
+msgid "Server Settings"
+msgstr "Temel Sunucu Ayarları"
 
 #: system-config-printer-kde.py:614
 msgid "Local Printers"
@@ -259,10 +269,6 @@ msgstr "Testleri İptal Et"
 msgid "Print Test Page"
 msgstr "Deneme Sayfası Yazdır"
 
-#: system-config-printer-kde.py:2201
-msgid "New Printer"
-msgstr "Yeni Yazıcı"
-
 #: system-config-printer-kde.py:2210
 msgid "New Class"
 msgstr "Yeni Sınıf"
@@ -289,8 +295,8 @@ msgid ""
 "This printer supports both printing and sending faxes.  Which functionality "
 "should be used for this queue?"
 msgstr ""
-"Bu yazıcı hem yazdırma hem faks gönderme yeteneklerine sahip. Bu kuyruk "
-"için hangi işlevi kullanmak istiyorsunuz?"
+"Bu yazıcı hem yazdırma hem faks gönderme yeteneklerine sahip. Bu kuyruk için "
+"hangi işlevi kullanmak istiyorsunuz?"
 
 #: system-config-printer-kde.py:2416
 msgid "Printer"
@@ -713,13 +719,10 @@ msgid ""
 "printer."
 msgstr ""
 "Foomatic yazıcı veritabanı, üreticiler tarafından sağlanmış bir çok "
-"PostScript "
-"Yazıcı Tanım (PPD) dosyasını içerir ve aynı zamanda PostScript olmayan "
-"yazıcılar "
-"için de PPD dosyaları üretebilir. Ancak genellikle üreticiler tarafından "
-"sağlanmış "
-"PPD dosyaları yazıcının özel işlevlerinin en iyi şekilde desteklenmesini "
-"sağlarlar."
+"PostScript Yazıcı Tanım (PPD) dosyasını içerir ve aynı zamanda PostScript "
+"olmayan yazıcılar için de PPD dosyaları üretebilir. Ancak genellikle "
+"üreticiler tarafından sağlanmış PPD dosyaları yazıcının özel işlevlerinin en "
+"iyi şekilde desteklenmesini sağlarlar."
 
 #. i18n: file: new-printer.ui:608
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnNPPPD)
@@ -737,8 +740,7 @@ msgid ""
 msgstr ""
 "<qt>PostScript Yazıcı Tanım (PPD) dosyaları çoğunlukla yazıcıyla sağlanan "
 "sürücü diskinde bulunabilirler. PostScript yazıcılar için, genellikle "
-"Windows "
-"<sup>®</sup> sürücüsüne dahildirler.</qt>"
+"Windows <sup>®</sup> sürücüsüne dahildirler.</qt>"
 
 #. i18n: file: new-printer.ui:638
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnNPDownloadableDriverSearch)
@@ -825,8 +827,8 @@ msgid ""
 "This way all current option settings will be lost. The default settings of "
 "the new PPD will be used. "
 msgstr ""
-"Bu seçenekle mevcut ayarlar kaybedilecek ve yeni PPD dosyasının "
-"varsayılan ayarlarına dönülecektir."
+"Bu seçenekle mevcut ayarlar kaybedilecek ve yeni PPD dosyasının varsayılan "
+"ayarlarına dönülecektir."
 
 #. i18n: file: new-printer.ui:833
 #. i18n: ectx: property (text), widget (QRadioButton, rbtnChangePPDKeepSettings)
@@ -843,9 +845,8 @@ msgid ""
 "lost and options only present in the new PPD will be set to default."
 msgstr ""
 "Bu seçenekle, aynı isimdeki seçeneklerin aynı anlamlara geldiği kabul "
-"edilecek, "
-"yeni PPD dosyasında bulunmayan seçenekler yoksayılacak ve sadece yeni PPD "
-"dosyasında bulunan seçenekler varsayılan ayarlarında tutulacaktır."
+"edilecek, yeni PPD dosyasında bulunmayan seçenekler yoksayılacak ve sadece "
+"yeni PPD dosyasında bulunan seçenekler varsayılan ayarlarında tutulacaktır."
 
 #. i18n: file: new-printer.ui:913
 #. i18n: ectx: property (text), widget (QPushButton, btnNPBack)

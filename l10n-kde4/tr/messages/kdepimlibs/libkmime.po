@@ -62,8 +62,8 @@ msgid ""
 "The message sent on ${date} to ${to} with subject \"${subject}\" has been "
 "dispatched. This is no guarantee that the message will not be read later on."
 msgstr ""
-"${date} tarihinde ${to} adresine gönderilen \"${subject}\" konulu ileti "
-"sevk edilmiştir. İletinin ileride okunup okunmayacağının garantisi yoktur."
+"${date} tarihinde ${to} adresine gönderilen \"${subject}\" konulu ileti sevk "
+"edilmiştir. İletinin ileride okunup okunmayacağının garantisi yoktur."
 
 #: kmime_mdn.cpp:69
 msgid ""
@@ -92,4 +92,3 @@ msgstr ""
 "${date} tarihinde ${to} adresine gönderilen \"${subject}\" konulu iletinin "
 "ileti dağıtım bilgisi yaratılamamıştır. Nedeni aşağıdaki Failure: başlığında "
 "belirtilmiştir."
-

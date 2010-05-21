@@ -199,4 +199,3 @@ msgstr "Bulunan konumlar:"
 #: weathervalidator.cpp:102
 msgid "Timeout happened when trying to connect to weather server."
 msgstr "Hava durumu sunucusuna bağlanmaya çalışılırken zaman aşımı oluştu."
-

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kio_nepomuk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-18 01:25+0100\n"
+"POT-Creation-Date: 2010-05-10 01:20+0200\n"
 "PO-Revision-Date: 2010-04-19 16:28+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -20,37 +20,43 @@ msgstr ""
 #: kio_nepomuk.cpp:303
 #, kde-format
 msgctxt "@info"
-msgid "Please insert the removable medium <resource>%1</resource> to access this file."
-msgstr "Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı takın."
+msgid ""
+"Please insert the removable medium <resource>%1</resource> to access this "
+"file."
+msgstr ""
+"Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı "
+"takın."
 
 #: kio_nepomuk.cpp:325
-msgid "Do you really want to delete the resource and all relations to and from it?"
+msgid ""
+"Do you really want to delete the resource and all relations to and from it?"
 msgstr "Kaynağı ve tüm ilişkilerini gerçekten silmek istiyor musunuz?"
 
 #: kio_nepomuk.cpp:328
 msgid "Delete Resource"
 msgstr "Kaynağı Sil"
 
-#: kio_nepomuk.cpp:618
-msgid "The Nepomuk system is not activated. Unable to answer queries without it."
+#: kio_nepomuk.cpp:621
+msgid ""
+"The Nepomuk system is not activated. Unable to answer queries without it."
 msgstr "Nepomuk etkin değil. Açık olmadan sorgulara yanıt verilemez."
 
-#: resourcepagegenerator.cpp:182
+#: resourcepagegenerator.cpp:191
 msgid "Resource does not exist"
 msgstr "Kaynak yok"
 
-#: resourcepagegenerator.cpp:184
+#: resourcepagegenerator.cpp:193
 msgid "Relations:"
 msgstr "İlişkiler:"
 
-#: resourcepagegenerator.cpp:212
+#: resourcepagegenerator.cpp:233
 msgid "Backlinks:"
 msgstr "Gelen linkler:"
 
-#: resourcepagegenerator.cpp:232
+#: resourcepagegenerator.cpp:253
 msgid "Actions:"
 msgstr "Eylemler:"
 
-#: resourcepagegenerator.cpp:233
+#: resourcepagegenerator.cpp:254
 msgid "Delete resource"
 msgstr "Kaynağı sil"

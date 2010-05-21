@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: karbon\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"POT-Creation-Date: 2010-04-24 01:33+0200\n"
 "PO-Revision-Date: 2009-09-28 01:48+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -165,24 +165,84 @@ msgstr "Özellikler"
 msgid "Radius:"
 msgstr "Yarıçap:"
 
-#: plugins/filtereffects/OffsetEffect.cpp:30
+#: plugins/filtereffects/FloodEffect.cpp:30
+#: plugins/filtereffects/FloodEffectFactory.cpp:27
+msgid "Flood fill"
+msgstr ""
+
+#: plugins/filtereffects/ColorMatrixEffectFactory.cpp:27
+msgid "Color matrix"
+msgstr ""
+
+#: plugins/filtereffects/FloodEffectConfigWidget.cpp:37
+#, fuzzy
+#| msgid "Stop color:"
+msgid "Flood color"
+msgstr "Durma rengi:"
+
+#: plugins/filtereffects/ComponentTransferEffectFactory.cpp:27
+#: plugins/filtereffects/ComponentTransferEffect.cpp:30
+msgid "Component transfer"
+msgstr ""
+
+#: plugins/filtereffects/ImageEffect.cpp:35
+#: plugins/filtereffects/ImageEffectFactory.cpp:26
+msgid "Image"
+msgstr ""
+
+#: plugins/filtereffects/BlendEffectFactory.cpp:27
+#: plugins/filtereffects/BlendEffect.cpp:30
+#, fuzzy
+#| msgid "Tiled"
+msgid "Blend"
+msgstr "Döşenmiş"
+
+#: plugins/filtereffects/ImageEffectConfigWidget.cpp:37
+msgid "Select image..."
+msgstr ""
+
+#: plugins/filtereffects/ImageEffectConfigWidget.cpp:70
+msgid "Select image"
+msgstr ""
+
+#: plugins/filtereffects/OffsetEffect.cpp:31
 #: plugins/filtereffects/OffsetEffectFactory.cpp:26
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:120
 msgid "Offset"
 msgstr "Yerleşim"
 
-#: plugins/filtereffects/MergeEffectFactory.cpp:27
-#: plugins/filtereffects/MergeEffect.cpp:30
-msgid "Merge"
-msgstr "Birleştir"
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:35
+#, fuzzy
+#| msgid "View mode"
+msgid "Blend mode"
+msgstr "Görünüm kipi"
 
-#: plugins/filtereffects/BlurEffectFactory.cpp:27
-#: plugins/filtereffects/BlurEffect.cpp:275
-msgid "Gaussian blur"
-msgstr "Gaussian bulanıklığı"
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:37
+msgid "Normal"
+msgstr ""
 
-#: plugins/filtereffects/BlurEffectConfigWidget.cpp:35
-msgid "Radius"
-msgstr "Yarıçap"
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:38
+msgid "Multiply"
+msgstr ""
+
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:39
+msgid "Screen"
+msgstr ""
+
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:40
+msgid "Darken"
+msgstr ""
+
+#: plugins/filtereffects/BlendEffectConfigWidget.cpp:41
+#, fuzzy
+#| msgid "Right"
+msgid "Lighten"
+msgstr "Sağ"
+
+#: plugins/filtereffects/CompositeEffectFactory.cpp:27
+#: plugins/filtereffects/CompositeEffect.cpp:32
+msgid "Composite"
+msgstr ""
 
 #: plugins/filtereffects/OffsetEffectConfigWidget.cpp:35
 msgid "dx"
@@ -192,7 +252,208 @@ msgstr "dx"
 msgid "dy"
 msgstr "dy"
 
-#: plugins/refinepath/KarbonPathRefineCommand.cpp:42
+#: plugins/filtereffects/MorphologyEffectConfigWidget.cpp:38
+msgid "Erode"
+msgstr ""
+
+#: plugins/filtereffects/MorphologyEffectConfigWidget.cpp:39
+#, fuzzy
+#| msgctxt "Duplicate selection"
+#| msgid "&Duplicate"
+msgid "Dilate"
+msgstr "Çoğal&t"
+
+#: plugins/filtereffects/MorphologyEffectConfigWidget.cpp:42
+#, fuzzy
+#| msgid "Repeat:"
+msgid "Operator:"
+msgstr "Tekrarla:"
+
+#: plugins/filtereffects/MorphologyEffectConfigWidget.cpp:46
+#, fuzzy
+#| msgid "Radius:"
+msgid "Radius x:"
+msgstr "Yarıçap:"
+
+#: plugins/filtereffects/MorphologyEffectConfigWidget.cpp:51
+#, fuzzy
+#| msgid "Radius:"
+msgid "Radius y:"
+msgstr "Yarıçap:"
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:41
+msgid "Apply color matrix"
+msgstr ""
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:42
+#, fuzzy
+#| msgid "Stop color:"
+msgid "Saturate colors"
+msgstr "Durma rengi:"
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:43
+#, fuzzy
+#| msgid "Rotate"
+msgid "Rotate hue"
+msgstr "Döndür"
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:44
+msgid "Luminance to alpha"
+msgstr ""
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:63
+msgid "Saturate value"
+msgstr ""
+
+#: plugins/filtereffects/ColorMatrixEffectConfigWidget.cpp:73
+#, fuzzy
+#| msgid "Angle:"
+msgid "Angle"
+msgstr "Dönme Açısı:"
+
+#: plugins/filtereffects/BlurEffectFactory.cpp:27
+#: plugins/filtereffects/BlurEffect.cpp:276
+msgid "Gaussian blur"
+msgstr "Gaussian bulanıklığı"
+
+#: plugins/filtereffects/MorphologyEffect.cpp:32
+#: plugins/filtereffects/MorphologyEffectFactory.cpp:27
+msgid "Morphology"
+msgstr ""
+
+#: plugins/filtereffects/CompositeEffectConfigWidget.cpp:37
+#, fuzzy
+#| msgid "Boolean Operation"
+msgid "Operation"
+msgstr "Bool İşlemi"
+
+#: plugins/filtereffects/MergeEffect.cpp:30
+#: plugins/filtereffects/MergeEffectFactory.cpp:27
+msgid "Merge"
+msgstr "Birleştir"
+
+#: plugins/filtereffects/BlurEffectConfigWidget.cpp:35
+msgid "Radius"
+msgstr "Yarıçap"
+
+#: plugins/filtereffects/ColorMatrixEffect.cpp:34
+msgid "Color Matrix"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectFactory.cpp:27
+#: plugins/filtereffects/ConvolveMatrixEffect.cpp:32
+msgid "Convolve Matrix"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:43
+#, fuzzy
+#| msgctxt "Duplicate selection"
+#| msgid "&Duplicate"
+msgid "Duplicate"
+msgstr "Çoğal&t"
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:44
+msgid "Wrap"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:45
+#, fuzzy
+#| msgctxt "No stroke or fill"
+#| msgid "None"
+msgid "None"
+msgstr "Hiçbiri"
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:46
+#, fuzzy
+#| msgid "View mode"
+msgid "Edge mode:"
+msgstr "Görünüm kipi"
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:53
+msgid "Kernel size:"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:62
+#, fuzzy
+#| msgid "Target:"
+msgid "Target point:"
+msgstr "Hedef:"
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:69
+msgid "Divisor:"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:71
+msgid "Bias:"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:74
+msgid "Preserve alpha"
+msgstr ""
+
+#: plugins/filtereffects/ConvolveMatrixEffectConfigWidget.cpp:77
+#, fuzzy
+#| msgid "Pattern"
+msgid "Edit kernel"
+msgstr "Desen"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:58
+msgid "Function"
+msgstr ""
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:60
+msgid "Identity"
+msgstr ""
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:61
+#, fuzzy
+#| msgid "Tiled"
+msgid "Table"
+msgstr "Döşenmiş"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:62
+#, fuzzy
+#| msgid "&Distribute"
+msgid "Discrete"
+msgstr "&Dağıt"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:63
+#, fuzzy
+#| msgctxt "Linear gradient type"
+#| msgid "Linear"
+msgid "Linear"
+msgstr "Doğrusal"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:64
+msgid "Gamma"
+msgstr ""
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:77
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:87
+msgid "Values"
+msgstr ""
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:97
+#, fuzzy
+#| msgid "Shape"
+msgid "Slope"
+msgstr "Şekil"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:101
+#, fuzzy
+#| msgid "Interface"
+msgid "Intercept"
+msgstr "Arayüz"
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:112
+msgid "Amplitude"
+msgstr ""
+
+#: plugins/filtereffects/ComponentTransferEffectConfigWidget.cpp:116
+msgid "Exponent"
+msgstr ""
+
+#: plugins/refinepath/KarbonPathRefineCommand.cpp:41
 msgid "Refine path"
 msgstr "Yolu iyileştir"
 
@@ -208,7 +469,7 @@ msgstr "Yolu İyileştir"
 msgid "Subdivisions:"
 msgstr "Alt bölümler:"
 
-#: plugins/whirlpinch/KarbonWhirlPinchCommand.cpp:109
+#: plugins/whirlpinch/KarbonWhirlPinchCommand.cpp:108
 msgid "Whirl & pinch"
 msgstr "Burgaç Etkisi"
 
@@ -240,7 +501,7 @@ msgstr "Dönme Açısı:"
 msgid "Pinch:"
 msgstr "Etki Miktarı:"
 
-#: plugins/flattenpath/KarbonPathFlattenCommand.cpp:170
+#: plugins/flattenpath/KarbonPathFlattenCommand.cpp:165
 msgid "Flatten path"
 msgstr "Yolu düzleştir"
 
@@ -256,7 +517,7 @@ msgstr "Yolu Düzleştir"
 msgid "Flatness:"
 msgstr "Yassılık:"
 
-#: common/commands/KarbonBooleanCommand.cpp:68 ui/KarbonView.cpp:722
+#: common/commands/KarbonBooleanCommand.cpp:68 ui/KarbonView.cpp:698
 msgid "Boolean Operation"
 msgstr "Bool İşlemi"
 
@@ -270,342 +531,310 @@ msgstr "Katmanı Yükselt"
 msgid "Lower Layer"
 msgstr "Katmanı Alçalt"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:53
+#: ui/dialogs/KarbonConfigureDialog.cpp:54
 msgid "Configure"
 msgstr "Yapılandır"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:58
 #: ui/dialogs/KarbonConfigureDialog.cpp:59
-#: ui/dialogs/KarbonConfigureDialog.cpp:119
+#: ui/dialogs/KarbonConfigureDialog.cpp:60
+#: ui/dialogs/KarbonConfigureDialog.cpp:121
 msgid "Interface"
 msgstr "Arayüz"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:63
 #: ui/dialogs/KarbonConfigureDialog.cpp:64
-#: ui/dialogs/KarbonConfigureDialog.cpp:249
+#: ui/dialogs/KarbonConfigureDialog.cpp:65
 msgid "Misc"
 msgstr "Çeşitli"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:68
 #: ui/dialogs/KarbonConfigureDialog.cpp:69
+#: ui/dialogs/KarbonConfigureDialog.cpp:70
 msgid "Grid"
 msgstr "Izgara"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:75
+#: ui/dialogs/KarbonConfigureDialog.cpp:76
 msgctxt "@title:tab Document settings page"
 msgid "Document"
 msgstr "Belge"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:76
+#: ui/dialogs/KarbonConfigureDialog.cpp:77
 msgid "Document Settings"
 msgstr "Belge Ayarları"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:136
+#: ui/dialogs/KarbonConfigureDialog.cpp:137
 msgid "Show status bar"
 msgstr "Durum çubuğunu göster"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:143
+#: ui/dialogs/KarbonConfigureDialog.cpp:144
 msgid "Number of recent files:"
 msgstr "Son kullanılan dosyaların sayısı:"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:149
+#: ui/dialogs/KarbonConfigureDialog.cpp:150
 msgid "Copy offset:"
 msgstr "Kopyalama konumu:"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:155
+#: ui/dialogs/KarbonConfigureDialog.cpp:156
 msgid "Palette font size:"
 msgstr "Palet yazı tipi boyutu:"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:158
+#: ui/dialogs/KarbonConfigureDialog.cpp:159
 msgid "Canvas color:"
 msgstr "Tuval rengi:"
 
-#: ui/dialogs/KarbonConfigureDialog.cpp:260
-msgid "Units:"
-msgstr "Birimler:"
-
-#: ui/dialogs/KarbonConfigureDialog.cpp:268
-msgid "Handle radius:"
-msgstr ""
-
-#: ui/dialogs/KarbonConfigureDialog.cpp:276
-msgid "Grab sensitivity:"
-msgstr ""
-
-#: ui/dockers/KarbonLayerDocker.cpp:85
+#: ui/dockers/KarbonLayerDocker.cpp:84
 msgid "Layer view"
 msgstr "Katman görünümü"
 
-#: ui/dockers/KarbonLayerDocker.cpp:96
+#: ui/dockers/KarbonLayerDocker.cpp:95
 msgid "Add a new layer"
 msgstr "Yeni bir katman ekle"
 
-#: ui/dockers/KarbonLayerDocker.cpp:102
+#: ui/dockers/KarbonLayerDocker.cpp:101
 msgid "Delete selected objects"
 msgstr "Seçilen nesneleri sil"
 
-#: ui/dockers/KarbonLayerDocker.cpp:108
+#: ui/dockers/KarbonLayerDocker.cpp:107
 msgid "Raise selected objects"
 msgstr "Seçilen nesneleri yükselt"
 
-#: ui/dockers/KarbonLayerDocker.cpp:114
+#: ui/dockers/KarbonLayerDocker.cpp:113
 msgid "Lower selected objects"
 msgstr "Seçilen nesneleri alçalt"
 
-#: ui/dockers/KarbonLayerDocker.cpp:123
+#: ui/dockers/KarbonLayerDocker.cpp:122
 msgid "Minimal View"
 msgstr "En Küçük Görünüm"
 
-#: ui/dockers/KarbonLayerDocker.cpp:125
+#: ui/dockers/KarbonLayerDocker.cpp:124
 msgid "Detailed View"
 msgstr "Ayrıntılı Görünüm"
 
-#: ui/dockers/KarbonLayerDocker.cpp:127
+#: ui/dockers/KarbonLayerDocker.cpp:126
 msgid "Thumbnail View"
 msgstr "Küçük Resim Görünümü"
 
-#: ui/dockers/KarbonLayerDocker.cpp:137
+#: ui/dockers/KarbonLayerDocker.cpp:136
 msgid "View mode"
 msgstr "Görünüm kipi"
 
-#: ui/dockers/KarbonLayerDocker.cpp:282
+#: ui/dockers/KarbonLayerDocker.cpp:276
 msgid "New Layer"
 msgstr "Yeni Katman"
 
-#: ui/dockers/KarbonLayerDocker.cpp:283
+#: ui/dockers/KarbonLayerDocker.cpp:277
 msgid "Enter the name of the new layer:"
 msgstr "Yeni katmanın adı:"
 
-#: ui/dockers/KarbonLayerDocker.cpp:284
+#: ui/dockers/KarbonLayerDocker.cpp:278
 msgid "New layer"
 msgstr "Yeni katman"
 
-#: ui/dockers/KarbonLayerDocker.cpp:291
+#: ui/dockers/KarbonLayerDocker.cpp:284
 msgid "Create Layer"
 msgstr "Katman Oluştur"
 
-#: ui/dockers/KarbonLayerDocker.cpp:318
+#: ui/dockers/KarbonLayerDocker.cpp:308
 msgid "Delete Layer"
 msgstr "Katmanı Sil"
 
-#: ui/dockers/KarbonLayerDocker.cpp:322
+#: ui/dockers/KarbonLayerDocker.cpp:310
 msgid "Could not delete all layers. At least one layer is required."
 msgstr "Katmanlar silinemedi. Silme işlemi için en az bir katman gerekir."
 
-#: ui/dockers/KarbonLayerDocker.cpp:322
+#: ui/dockers/KarbonLayerDocker.cpp:310
 msgid "Error deleting layers"
 msgstr "Katmanlar silinirken hata"
 
-#: ui/dockers/KarbonLayerModel.cpp:175
+#: ui/dockers/KarbonLayerModel.cpp:171
 msgid "Layer"
 msgstr "Katman"
 
-#: ui/dockers/KarbonLayerModel.cpp:177
+#: ui/dockers/KarbonLayerModel.cpp:173
 msgctxt "A group of shapes"
 msgid "Group"
 msgstr "Gruplandır"
 
-#: ui/dockers/KarbonLayerModel.cpp:179
+#: ui/dockers/KarbonLayerModel.cpp:175
 msgid "Shape"
 msgstr "Şekil"
 
-#: ui/dockers/KarbonLayerModel.cpp:274
+#: ui/dockers/KarbonLayerModel.cpp:265
 msgctxt "Visibility state of the shape"
 msgid "Visible"
 msgstr "Görünür"
 
-#: ui/dockers/KarbonLayerModel.cpp:275
+#: ui/dockers/KarbonLayerModel.cpp:266
 msgctxt "Lock state of the shape"
 msgid "Locked"
 msgstr "Kilitli"
 
-#: ui/dockers/KarbonLayerModel.cpp:276
+#: ui/dockers/KarbonLayerModel.cpp:267
 msgctxt "The z-index of the shape"
 msgid "zIndex"
 msgstr "zİndeksi"
 
-#: ui/dockers/KarbonLayerModel.cpp:450 ui/dockers/KarbonLayerModel.cpp:473
+#: ui/dockers/KarbonLayerModel.cpp:268
+#, fuzzy
+#| msgid "Opacity"
+msgctxt "The opacity of the shape"
+msgid "Opacity"
+msgstr "Matlık"
+
+#: ui/dockers/KarbonLayerModel.cpp:434 ui/dockers/KarbonLayerModel.cpp:454
 msgid "Reparent shapes"
 msgstr "Şekilleri tekrar bağlantılandır"
 
-#: ui/widgets/KarbonStyleButtonBox.cpp:287
-msgctxt "No stroke or fill"
-msgid "None"
-msgstr "Hiçbiri"
-
-#: ui/widgets/KarbonStyleButtonBox.cpp:293
-msgctxt "Solid color stroke or fill"
-msgid "Solid"
-msgstr "Katı"
-
-#: ui/widgets/KarbonStyleButtonBox.cpp:299
-msgid "Gradient"
-msgstr "Gökkuşağı"
-
-#: ui/widgets/KarbonStyleButtonBox.cpp:305
-msgid "Pattern"
-msgstr "Desen"
-
-#: ui/widgets/KarbonStyleButtonBox.cpp:311
-msgid "Even-Odd Fill"
-msgstr "Tek-Çift Dolgu"
-
-#: ui/widgets/KarbonStyleButtonBox.cpp:317
-msgid "Winding Fill"
-msgstr "Sarmal Dolgu"
-
-#: ui/widgets/KarbonGradientEditWidget.cpp:181
+#: ui/widgets/KarbonGradientEditWidget.cpp:167
 msgid "Type:"
 msgstr "Tip:"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:183
+#: ui/widgets/KarbonGradientEditWidget.cpp:169
 msgctxt "Linear gradient type"
 msgid "Linear"
 msgstr "Doğrusal"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:184
+#: ui/widgets/KarbonGradientEditWidget.cpp:170
 msgctxt "Radial gradient type"
 msgid "Radial"
 msgstr "Merkezden çevreye"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:185
+#: ui/widgets/KarbonGradientEditWidget.cpp:171
 msgctxt "Conical gradient type"
 msgid "Conical"
 msgstr "Konik"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:188
+#: ui/widgets/KarbonGradientEditWidget.cpp:174
 msgid "Repeat:"
 msgstr "Tekrarla:"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:190
+#: ui/widgets/KarbonGradientEditWidget.cpp:176
 msgctxt "No gradient spread"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:191
+#: ui/widgets/KarbonGradientEditWidget.cpp:177
 msgid "Reflect"
 msgstr "Yansıt"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:192
+#: ui/widgets/KarbonGradientEditWidget.cpp:178
 msgid "Repeat"
 msgstr "Tekrarla"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:195
+#: ui/widgets/KarbonGradientEditWidget.cpp:181
 msgid "Target:"
 msgstr "Hedef:"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:197
+#: ui/widgets/KarbonGradientEditWidget.cpp:183
 msgid "Stroke"
 msgstr "Darbe"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:198
+#: ui/widgets/KarbonGradientEditWidget.cpp:184
 msgid "Fill"
 msgstr "Doldur"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:206
+#: ui/widgets/KarbonGradientEditWidget.cpp:192
 msgid "Overall opacity:"
 msgstr "Baştan başa matlık:"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:211
+#: ui/widgets/KarbonGradientEditWidget.cpp:197
 msgid "Stop color:"
 msgstr "Durma rengi:"
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:215
+#: ui/widgets/KarbonGradientEditWidget.cpp:201
 msgid "Stop color."
 msgstr "Durma rengi."
 
-#: ui/widgets/KarbonGradientEditWidget.cpp:218
+#: ui/widgets/KarbonGradientEditWidget.cpp:204
 msgid "&Add to Predefined Gradients"
 msgstr ""
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:58
+#: ui/widgets/KarbonSmallStylePreview.cpp:56
 msgid "Press to apply fill to selection"
 msgstr "Seçimi doldurmak için basın"
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:115
+#: ui/widgets/KarbonSmallStylePreview.cpp:103
 msgctxt "The style has no fill"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:135
+#: ui/widgets/KarbonSmallStylePreview.cpp:121
 msgid "Press to apply stroke to selection"
 msgstr ""
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:193
+#: ui/widgets/KarbonSmallStylePreview.cpp:166
 msgctxt "The style has a custom stroking"
 msgid "Custom"
 msgstr "Özel"
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:201
+#: ui/widgets/KarbonSmallStylePreview.cpp:172
 msgctxt "The style has no stroking"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:221
+#: ui/widgets/KarbonSmallStylePreview.cpp:192
 msgid "Stroke:"
 msgstr "Darbe:"
 
-#: ui/widgets/KarbonSmallStylePreview.cpp:226
+#: ui/widgets/KarbonSmallStylePreview.cpp:197
 msgid "Fill:"
 msgstr "Doldur:"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:34
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:33
 msgid "Original"
 msgstr "Özgün"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:35
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:34
 msgid "Tiled"
 msgstr "Döşenmiş"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:36
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:35
 msgid "Stretched"
 msgstr "Gergin"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:38
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:37
 msgid "Top Left"
 msgstr "Üst Sol"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:39
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:38
 msgid "Top"
 msgstr "Üst"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:40
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:39
 msgid "Top Right"
 msgstr "Üst Sağ"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:41
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:40
 msgid "Left"
 msgstr "Sol"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:42
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:41
 msgid "Center"
 msgstr "Merkez"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:43
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:42
 msgid "Right"
 msgstr "Sağ"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:44
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:43
 msgid "Bottom Left"
 msgstr "Alt Sol"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:45
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:44
 msgid "Bottom"
 msgstr "Alt"
 
-#: ui/widgets/KarbonPatternOptionsWidget.cpp:46
+#: ui/widgets/KarbonPatternOptionsWidget.cpp:45
 msgid "Bottom Right"
 msgstr "Alt Sağ"
 
-#: ui/KarbonPart.cpp:216
+#: ui/KarbonPart.cpp:213
 msgid "Invalid OASIS document. No office:body tag found."
 msgstr "Geçersiz OASIS belgesi. Office:body etiketi bulunamadı."
 
-#: ui/KarbonPart.cpp:224
+#: ui/KarbonPart.cpp:220
 msgid "Invalid OASIS document. No office:drawing tag found."
 msgstr "Geçersiz OASIS belgesi. Office:drawing etiketi bulunamadı."
 
-#: ui/KarbonPart.cpp:232
+#: ui/KarbonPart.cpp:227
 msgid "Invalid OASIS document. No draw:page tag found."
 msgstr "Geçersiz OASIS belgesi. Draw:page etiketi bulunamadı."
 
@@ -678,152 +907,158 @@ msgstr "Alan Horkan"
 msgid "Helpful patches and advice"
 msgstr "Faydalı yamalar ve öneriler"
 
-#: ui/KarbonView.cpp:308
+#: ui/KarbonView.cpp:292
 msgid "Tools"
 msgstr "Araçlar"
 
-#: ui/KarbonView.cpp:434
+#: ui/KarbonView.cpp:397
 msgid "Choose Graphic to Add"
 msgstr "Eklenecek Grafiği Seçin"
 
-#: ui/KarbonView.cpp:840
+#: ui/KarbonView.cpp:439
+msgid "Could not load image."
+msgstr ""
+
+#: ui/KarbonView.cpp:439 ui/KarbonView.cpp:444 ui/KarbonView.cpp:451
+#, fuzzy
+#| msgid "&Import Graphic..."
+msgid "Import graphic"
+msgstr "İçeriye Grafik &Aktar..."
+
+#: ui/KarbonView.cpp:444 ui/KarbonView.cpp:451
+msgid "Could not create image shape."
+msgstr ""
+
+#: ui/KarbonView.cpp:468 ui/KarbonDocumentMergeCommand.cpp:59
+msgid "Insert graphics"
+msgstr "Grafik ekle"
+
+#: ui/KarbonView.cpp:809
 msgid "Outline &Mode"
 msgstr ""
 
-#: ui/KarbonView.cpp:844
+#: ui/KarbonView.cpp:813
 msgid "Show Page Margins"
 msgstr "Sayfanın Kenar Boşluklarını Göster"
 
-#: ui/KarbonView.cpp:847
+#: ui/KarbonView.cpp:816
 msgid "Hide Page Margins"
 msgstr "Sayfanın Kenar Boşluklarını Gizle"
 
-#: ui/KarbonView.cpp:863
+#: ui/KarbonView.cpp:832
 msgid "&Import Graphic..."
 msgstr "İçeriye Grafik &Aktar..."
 
-#: ui/KarbonView.cpp:867
+#: ui/KarbonView.cpp:836
 msgid "D&elete"
 msgstr "&Sil"
 
-#: ui/KarbonView.cpp:875
+#: ui/KarbonView.cpp:844
 msgctxt "Duplicate selection"
 msgid "&Duplicate"
 msgstr "Çoğal&t"
 
-#: ui/KarbonView.cpp:880
+#: ui/KarbonView.cpp:849
 msgid "Distribute Center (Horizontal)"
 msgstr ""
 
-#: ui/KarbonView.cpp:884
+#: ui/KarbonView.cpp:853
 msgid "Distribute Gaps (Horizontal)"
 msgstr ""
 
-#: ui/KarbonView.cpp:888
+#: ui/KarbonView.cpp:857
 msgid "Distribute Left Borders"
 msgstr "Sol Kenarlıkları Dağıt"
 
-#: ui/KarbonView.cpp:892
+#: ui/KarbonView.cpp:861
 msgid "Distribute Right Borders"
 msgstr ""
 
-#: ui/KarbonView.cpp:896
+#: ui/KarbonView.cpp:865
 msgid "Distribute Center (Vertical)"
 msgstr ""
 
-#: ui/KarbonView.cpp:900
+#: ui/KarbonView.cpp:869
 msgid "Distribute Gaps (Vertical)"
 msgstr ""
 
-#: ui/KarbonView.cpp:904
+#: ui/KarbonView.cpp:873
 msgid "Distribute Bottom Borders"
 msgstr "Alt Kenarlıkları Dağıt"
 
-#: ui/KarbonView.cpp:908
+#: ui/KarbonView.cpp:877
 msgid "Distribute Top Borders"
 msgstr "Üst Kenarlıkları &Dağıt"
 
-#: ui/KarbonView.cpp:912
+#: ui/KarbonView.cpp:881
 msgid "Show Rulers"
 msgstr "Kılavuzları Göster"
 
-#: ui/KarbonView.cpp:914
+#: ui/KarbonView.cpp:883
 msgid "Hide Rulers"
 msgstr "Cetveli Gizle"
 
-#: ui/KarbonView.cpp:915
+#: ui/KarbonView.cpp:884
 msgid "Shows or hides rulers"
 msgstr "Cetveli saklar ya da gösterir"
 
-#: ui/KarbonView.cpp:922
-msgid "Show Guides"
-msgstr "Izgarayı Göster"
-
-#: ui/KarbonView.cpp:924
-msgid "Hide Guides"
-msgstr "Kılavuzları Gizle"
-
-#: ui/KarbonView.cpp:925
-msgid "Shows or hides guides"
-msgstr "Kılavuzları gösterir veya gizler"
-
-#: ui/KarbonView.cpp:929
+#: ui/KarbonView.cpp:895
 msgid "Snap to Grid"
 msgstr "Izgaraya Uydur"
 
-#: ui/KarbonView.cpp:931
+#: ui/KarbonView.cpp:897
 msgid "Snaps to grid"
 msgstr "Izgaraya uydurur"
 
-#: ui/KarbonView.cpp:946
+#: ui/KarbonView.cpp:912
 msgid "&Close Path"
 msgstr "&Yolu Kapat"
 
-#: ui/KarbonView.cpp:952
+#: ui/KarbonView.cpp:918
 msgid "Com&bine Path"
 msgstr "Yolu &Birleştir"
 
-#: ui/KarbonView.cpp:958
+#: ui/KarbonView.cpp:924
 msgid "Se&parate Path"
 msgstr "Yolu &Ayır"
 
-#: ui/KarbonView.cpp:964
+#: ui/KarbonView.cpp:930
 msgid "Re&verse Path"
 msgstr "Yolu &Tersine Çevir"
 
-#: ui/KarbonView.cpp:970
+#: ui/KarbonView.cpp:936
 msgid "Intersect Paths"
 msgstr ""
 
-#: ui/KarbonView.cpp:976
+#: ui/KarbonView.cpp:942
 msgid "Subtract Paths"
 msgstr ""
 
-#: ui/KarbonView.cpp:982
+#: ui/KarbonView.cpp:948
 msgid "Unite Paths"
 msgstr ""
 
-#: ui/KarbonView.cpp:988
+#: ui/KarbonView.cpp:954
 msgid "Exclude Paths"
 msgstr ""
 
-#: ui/KarbonView.cpp:994
+#: ui/KarbonView.cpp:960
 msgid "Snap Path to Grid"
 msgstr ""
 
-#: ui/KarbonView.cpp:1001
+#: ui/KarbonView.cpp:967
 msgid "Configure Karbon..."
 msgstr "Karbon Uygulamasını Yapılandır..."
 
-#: ui/KarbonView.cpp:1005
+#: ui/KarbonView.cpp:971
 msgid "Page &Layout..."
 msgstr "&Sayfa Düzeni..."
 
-#: ui/KarbonView.cpp:1010
+#: ui/KarbonView.cpp:976
 msgid "Zoom to Selection"
 msgstr "Seçimi Büyüt"
 
-#: ui/KarbonView.cpp:1014
+#: ui/KarbonView.cpp:980
 msgid "Zoom to Drawing"
 msgstr "Çizime Sığdır"
 
@@ -831,13 +1066,37 @@ msgstr "Çizime Sığdır"
 msgid "Zoom"
 msgstr "Büyüt"
 
-#: ui/KarbonDocumentMergeCommand.cpp:59
-msgid "Insert graphics"
-msgstr "Grafik ekle"
-
 #: main.cc:43
 msgid "File to open"
 msgstr "Açılacak dosya"
+
+#~ msgid "Units:"
+#~ msgstr "Birimler:"
+
+#~ msgctxt "Solid color stroke or fill"
+#~ msgid "Solid"
+#~ msgstr "Katı"
+
+#~ msgid "Gradient"
+#~ msgstr "Gökkuşağı"
+
+#~ msgid "Pattern"
+#~ msgstr "Desen"
+
+#~ msgid "Even-Odd Fill"
+#~ msgstr "Tek-Çift Dolgu"
+
+#~ msgid "Winding Fill"
+#~ msgstr "Sarmal Dolgu"
+
+#~ msgid "Show Guides"
+#~ msgstr "Izgarayı Göster"
+
+#~ msgid "Hide Guides"
+#~ msgstr "Kılavuzları Gizle"
+
+#~ msgid "Shows or hides guides"
+#~ msgstr "Kılavuzları gösterir veya gizler"
 
 #~ msgid "Group shapes"
 #~ msgstr "Şekilleri gruplandır"
@@ -1014,14 +1273,6 @@ msgstr "Açılacak dosya"
 #~ msgid "Show details >>"
 #~ msgstr "Durum çubuğunu göster"
 
-#~ msgid "Opacity"
-#~ msgstr "Matlık"
-
-#, fuzzy
-#~| msgid "Pattern"
-#~ msgid "Edit Pattern"
-#~ msgstr "Desen"
-
 #~ msgid "Transform"
 #~ msgstr "Dönüştür"
 
@@ -1057,9 +1308,6 @@ msgstr "Açılacak dosya"
 
 #~ msgid "Shear"
 #~ msgstr "Kırp"
-
-#~ msgid "Rotate"
-#~ msgstr "Döndür"
 
 #~ msgid "Simple Text"
 #~ msgstr "Basit Metin"

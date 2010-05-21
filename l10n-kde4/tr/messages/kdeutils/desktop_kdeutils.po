@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeutils\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-10 23:33+0000\n"
+"POT-Creation-Date: 2010-04-29 23:30+0000\n"
 "PO-Revision-Date: 2010-04-19 16:01+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -48,7 +48,7 @@ msgctxt "Name"
 msgid "As ZIP/TAR Archive"
 msgstr "ZIP/TAR Arşivi Olarak"
 
-#: ark/app/ark_addtoservicemenu.desktop:252
+#: ark/app/ark_addtoservicemenu.desktop:251
 msgctxt "Name"
 msgid "Compress To..."
 msgstr "Farklı Sıkıştır..."
@@ -228,22 +228,22 @@ msgctxt "Comment"
 msgid "Irkick global notification event"
 msgstr "Irkick genel bildirim olayı"
 
-#: kdelirc/irkick/irkick.notifyrc:135
+#: kdelirc/irkick/irkick.notifyrc:136
 msgctxt "Name"
 msgid "Mode event"
 msgstr "Kip olayı"
 
-#: kdelirc/irkick/irkick.notifyrc:174
+#: kdelirc/irkick/irkick.notifyrc:176
 msgctxt "Comment"
 msgid "Mode has changed"
 msgstr "Kip değiştirildi"
 
-#: kdelirc/irkick/irkick.notifyrc:216
+#: kdelirc/irkick/irkick.notifyrc:219
 msgctxt "Name"
 msgid "Application event"
 msgstr "Uygulama olayı"
 
-#: kdelirc/irkick/irkick.notifyrc:256
+#: kdelirc/irkick/irkick.notifyrc:260
 msgctxt "Comment"
 msgid "Irkick has triggered an application"
 msgstr "Irkick bir uygulama tarafında çalıştırıldı"
@@ -374,7 +374,7 @@ msgctxt "Name"
 msgid "Testing dynamic length arrays"
 msgstr "Dinamik uzunluklu diziler sınanıyor"
 
-#: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:37
+#: okteta/kasten/controllers/view/structures/schema/example/dynamic/dynamic.desktop:39
 msgctxt "Comment"
 msgid "A test structure for dynamic arrays"
 msgstr "Dinamik diziler için test yapısı"
@@ -384,7 +384,7 @@ msgctxt "Name"
 msgid "ELF structure"
 msgstr "ELF yapısı"
 
-#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:36
+#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:38
 msgctxt "Comment"
 msgid "Structure for Executable Linking Format (ELF)"
 msgstr "Executable Linking Format (ELF) Yapısı"
@@ -394,7 +394,7 @@ msgctxt "Name"
 msgid "Testing enums"
 msgstr "Enum'lar test ediliyor"
 
-#: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:37
+#: okteta/kasten/controllers/view/structures/schema/example/enum/enum.desktop:39
 msgctxt "Comment"
 msgid "A test structure for enums"
 msgstr "Enum'lar için test yapısı"
@@ -404,21 +404,20 @@ msgctxt "Name"
 msgid "PNG file header"
 msgstr "PNG dosya başlığı"
 
-#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:42
+#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:44
 msgctxt "Comment"
 msgid ""
 "A test structure containing the PNG file header (file must be set to big-"
 "endian)"
 msgstr ""
-"PNG dosya başlığı içeren test yapısı (dosya big-endian olarak "
-"ayarlanmalı)"
+"PNG dosya başlığı içeren test yapısı (dosya big-endian olarak ayarlanmalı)"
 
 #: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:7
 msgctxt "Name"
 msgid "Another simple test"
 msgstr "Bir diğer basit test"
 
-#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:40
+#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:41
 msgctxt "Comment"
 msgid "A few more test structures"
 msgstr "Bir kaç test yapısı daha"
@@ -428,7 +427,7 @@ msgctxt "Name"
 msgid "Simple test"
 msgstr "Basit test"
 
-#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:41
+#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:42
 msgctxt "Comment"
 msgid "A few test structures"
 msgstr "Bir kaç test yapısı"

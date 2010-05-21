@@ -45,10 +45,9 @@ msgid ""
 "not support write access."
 msgstr ""
 "Salt-okunur kipi etkinse, yukarıda seçili dosyada herhangi bir değişiklik "
-"yapılmayacaktır. "
-"Dosyaya yazma erişiminiz yoksa veya dosya uzak bir sunucuda ve bu dosyaya "
-"yazma "
-"erişimi yoksa, salt-okunur kipi otomatik olarak etkinleştirilecektir."
+"yapılmayacaktır. Dosyaya yazma erişiminiz yoksa veya dosya uzak bir sunucuda "
+"ve bu dosyaya yazma erişimi yoksa, salt-okunur kipi otomatik olarak "
+"etkinleştirilecektir."
 
 #. i18n: file: singlefileresourceconfigdialog.ui:53
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
@@ -65,9 +64,8 @@ msgid ""
 "conflicts whenever possible."
 msgstr ""
 "Dosya gözlemleme etkinse, dosya, diğer programlar tarafından "
-"değiştirildiğinde "
-"öz kaynak tarafından yeniden yüklenecek. Herhangi bir çakışma durumu olması "
-"ihtimaline karşı dosyanın yedeği de alınacak."
+"değiştirildiğinde öz kaynak tarafından yeniden yüklenecek. Herhangi bir "
+"çakışma durumu olması ihtimaline karşı dosyanın yedeği de alınacak."
 
 #. i18n: file: singlefileresourceconfigdialog.ui:69
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_MonitorFile)
@@ -102,9 +100,8 @@ msgid ""
 "be specified, but note that monitoring for file changes will not work in "
 "this case."
 msgstr ""
-"Bu öz kaynak tarafından sunulacak içeriğe sahip dosyayı seçin. Dosya "
-"mevcut değilse, oluşturulacaktır. Uzak bir dosyanın bağlantısı da "
-"belirtilebilir "
+"Bu öz kaynak tarafından sunulacak içeriğe sahip dosyayı seçin. Dosya mevcut "
+"değilse, oluşturulacaktır. Uzak bir dosyanın bağlantısı da belirtilebilir "
 "fakat bu durumda bu dosyanın gözlemlenmesi çalışmayacaktır."
 
 #: singlefileresourcebase.cpp:227

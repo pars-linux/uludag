@@ -86,4 +86,3 @@ msgstr "&Kategorilere göre filtrele"
 #: rc.cpp:18 rc.cpp:36
 msgid "Categories"
 msgstr "Kategoriler"
-

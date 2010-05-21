@@ -51,7 +51,6 @@ msgstr ""
 "ile bağlantıyı sağlayın"
 
 #: logitechmouse.cpp:360
-#| msgid "none"
 msgctxt "no cordless mouse"
 msgid "none"
 msgstr "hiçbiri"
@@ -672,4 +671,3 @@ msgstr "Temanın Üzerine Yazılsın mı?"
 #: xcursor/xcursortheme.cpp:39
 msgid "No description available"
 msgstr "Açıklama yok"
-

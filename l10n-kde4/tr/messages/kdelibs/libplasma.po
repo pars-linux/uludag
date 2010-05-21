@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-30 01:19+0200\n"
+"POT-Creation-Date: 2010-05-05 01:20+0200\n"
 "PO-Revision-Date: 2010-05-08 20:58+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -194,42 +194,42 @@ msgstr "%2 üzerinde %1"
 msgid "Share"
 msgstr "Paylaş"
 
-#: applet.cpp:2598
+#: applet.cpp:2603
 #, kde-format
 msgctxt "Package file, name of the widget"
 msgid "Could not locate the %1 package required for the %2 widget."
 msgstr "%2 programcığı için gereken %1 paketi konumlandırılamadı."
 
-#: applet.cpp:2618
+#: applet.cpp:2623
 #, kde-format
 msgctxt ""
 "API or programming language the widget was written in, name of the widget"
 msgid "Could not create a %1 ScriptEngine for the %2 widget."
 msgstr "%2 programcığı için gereken %1 Betik Motoru oluşturulamadı."
 
-#: applet.cpp:2623
+#: applet.cpp:2628
 #, kde-format
 msgctxt "Package file, name of the widget"
 msgid "Could not open the %1 package required for the %2 widget."
 msgstr "%2 programcığı için gereken %1 paketi açılamadı."
 
-#: applet.cpp:2644 containment.cpp:173
+#: applet.cpp:2649 containment.cpp:173
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "Remove this %1"
 msgstr "%1 ögesini kaldır"
 
-#: applet.cpp:2649 containment.cpp:178
+#: applet.cpp:2654 containment.cpp:178
 #, kde-format
 msgctxt "%1 is the name of the applet"
 msgid "%1 Settings"
 msgstr "%1 Ayarları"
 
-#: applet.cpp:2800
+#: applet.cpp:2805
 msgid "This object could not be created."
 msgstr "Bu nesne oluşturulamadı."
 
-#: applet.cpp:2802
+#: applet.cpp:2807
 #, kde-format
 msgid ""
 "This object could not be created for the following reason:<p><b>%1</b></p>"
@@ -326,7 +326,7 @@ msgstr "Kısayol Ayarları"
 msgid "Unlock Widgets"
 msgstr "Programcıkların Kilidini Aç"
 
-#: dataengine.cpp:512 dataengine.cpp:518
+#: dataengine.cpp:515 dataengine.cpp:521
 msgid "Unnamed"
 msgstr "İsimsiz"
 
@@ -345,8 +345,7 @@ msgid ""
 "Enter a password below. Enter the same password on the device to which you "
 "are trying to connect."
 msgstr ""
-"Bir parola girin. Bağlanmak istediğiniz diğer aygıtta da aynı parolayı "
-"girin."
+"Bir parola girin. Bağlanmak istediğiniz diğer aygıtta da aynı parolayı girin."
 
 #. i18n: file: private/pinpairing.ui:64
 #. i18n: ectx: property (text), widget (QCheckBox, allServicesCheckbox)
@@ -609,8 +608,8 @@ msgid ""
 "Click to access size, location and hiding controls as well as to add new "
 "widgets to the panel."
 msgstr ""
-"Boyut, konum ve gizleme denetimlerine ulaşmak ve panele yeni "
-"programcıklar eklemek için tıklayın."
+"Boyut, konum ve gizleme denetimlerine ulaşmak ve panele yeni programcıklar "
+"eklemek için tıklayın."
 
 #: private/pinpairingdialog.cpp:44
 msgid "Incoming connection request"
@@ -650,8 +649,7 @@ msgid ""
 "Your system does not provide support for the 'remote widgets' feature. "
 "Access Failed."
 msgstr ""
-"Sisteminiz 'uzak programcıklar' özelliğini desteklemiyor. "
-"Erişim başarısız."
+"Sisteminiz 'uzak programcıklar' özelliğini desteklemiyor. Erişim başarısız."
 
 #: remote/authorizationrule.cpp:98
 #, kde-format

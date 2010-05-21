@@ -151,8 +151,8 @@ msgstr "Carlos Licea"
 msgid ""
 "Google Summer of Code 2007 Project: Equirectangular Projection (\"Flat Map\")"
 msgstr ""
-"Google Summer of Code 2007 Projesi: Eşdörtegensel Projeksiyon (\"Düz "
-"Harita\")"
+"Google Summer of Code 2007 Projesi: Eşdörtegensel Projeksiyon (\"Düz Harita"
+"\")"
 
 #: src/kdemain.cpp:121
 msgid "Andrew Manson"
@@ -1891,8 +1891,7 @@ msgid ""
 msgstr ""
 "Qt'nin haritaları çizerken kullanacağı grafik sistemini belirtir.\n"
 "Sistemin grafik sürücüleriyle ilgili sorun varsa bu ayarı değiştirmek iyi "
-"bir "
-"fikir olabilir."
+"bir fikir olabilir."
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:257
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_graphicsSystem)
@@ -1942,8 +1941,8 @@ msgstr ""
 "right:0px; -qt-block-indent:0; text-indent:0px;\"> Bazı yerler değişik "
 "dillerde farklı isimlere sahip olabilirler. Haritadaki etiket kullanıcının "
 "yerel dilindeki yer ismini gösterebilir. Diğer bir seçenek ise yer isminin, "
-"yerin resmi dilinde ve kabartmalarında görünen haliyle gösterilmesidir. </p>"
-"</body></html>"
+"yerin resmi dilinde ve kabartmalarında görünen haliyle gösterilmesidir. </"
+"p></body></html>"
 
 #. i18n: file: src/lib/MarbleViewSettingsWidget.ui:329
 #. i18n: ectx: property (text), item, widget (QComboBox, kcfg_labelLocalization)
@@ -2012,8 +2011,7 @@ msgid ""
 "take a few seconds."
 msgstr ""
 "Marble'ın bu haritayı yaratması gerekiyor. Bu işlem sadece bir defa "
-"gerçekleştirilir "
-"ve sadece bir kaç saniye sürer."
+"gerçekleştirilir ve sadece bir kaç saniye sürer."
 
 #. i18n: file: src/lib/TileCreatorDialog.ui:555
 #. i18n: ectx: property (text), widget (QPushButton, cancelButton)

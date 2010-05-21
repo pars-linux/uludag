@@ -202,4 +202,3 @@ msgstr "Dizin sunucusu içeriği başarıyla indirildi."
 #, kde-format
 msgid "An error occurred downloading directory server contents into file %1."
 msgstr "Dizin hizmetçisi içeriği, %1 dosyası içine indirilirken hata oluştu."
-

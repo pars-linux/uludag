@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TableShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-28 14:16+0100\n"
 "PO-Revision-Date: 2009-04-25 13:37+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -16,27 +16,27 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: SheetsEditor.cpp:68 SheetsEditor.cpp:130
+#: SheetsEditor.cpp:69 SheetsEditor.cpp:131
 msgid "Rename"
 msgstr "Yeniden Adlandır"
 
-#: SheetsEditor.cpp:72
+#: SheetsEditor.cpp:73
 msgid "Add"
 msgstr "Ekle"
 
-#: SheetsEditor.cpp:76
+#: SheetsEditor.cpp:77
 msgid "Remove"
 msgstr "Sil"
 
-#: SheetsEditor.cpp:130
+#: SheetsEditor.cpp:131
 msgid "Enter Name:"
 msgstr "İsim Girin:"
 
-#: TableShapeFactory.cpp:57
+#: TableShapeFactory.cpp:52
 msgid "Table"
 msgstr "Tablo"
 
-#: TableShapeFactory.cpp:60
+#: TableShapeFactory.cpp:54
 msgid "Table Shape"
 msgstr "Tablo Şekli"
 
@@ -56,38 +56,37 @@ msgstr "OpenDocument Hesap Tablosu Dosyasını Dışarıya Aktar"
 msgid "Export"
 msgstr "Dışarıya Aktar"
 
-#: TableTool.cpp:228
+#: TableTool.cpp:226
 msgid "Sheets"
 msgstr "Sayfalar"
 
-#: TableTool.cpp:270
+#: TableTool.cpp:268
 msgid "Sheet:"
 msgstr "Sayfa:"
 
-#: TableTool.cpp:272
+#: TableTool.cpp:270
 msgid "Selected Sheet"
 msgstr "Seçili Sayfa"
 
-#: TableTool.cpp:281
+#: TableTool.cpp:279
 msgid "Columns:"
 msgstr "Sütunlar:"
 
-#: TableTool.cpp:283
+#: TableTool.cpp:281
 msgid "Number of columns"
 msgstr "Sütun sayısı"
 
-#: TableTool.cpp:292
+#: TableTool.cpp:290
 msgid "Rows:"
 msgstr "Satır:"
 
-#: TableTool.cpp:294
+#: TableTool.cpp:292
 msgid "Number of rows"
 msgstr "Satır sayısı"
-
-#: TableToolFactory.cpp:31
-msgid "Table tool"
-msgstr "Tablo aracı"
 
 #: TableToolFactory.cpp:33
 msgid "Table editing tool"
 msgstr "Tablo düzenleme aracı"
+
+#~ msgid "Table tool"
+#~ msgstr "Tablo aracı"

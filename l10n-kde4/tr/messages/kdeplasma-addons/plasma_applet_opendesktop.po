@@ -56,14 +56,12 @@ msgid "<b>%1</b> wants to be your friend"
 msgstr "<b>%1</b> senin arkadaşın olmak istiyor"
 
 #: loginwidget.cpp:52
-#| msgid "<b>openDesktop Account</b>"
 msgid "<b>Login to \"openDesktop.org\"</b>"
 msgstr "<b>\"openDesktop.org\" 'a giriş yap</b>"
 
 #. i18n: file: opendesktopConfig.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: loginwidget.cpp:56 rc.cpp:25
-#| msgid "Username:"
 msgid "Username:"
 msgstr "Kullanıcı adı:"
 
@@ -74,7 +72,6 @@ msgid "Password:"
 msgstr "Parola:"
 
 #: loginwidget.cpp:74 opendesktop.cpp:163
-#| msgid "Location"
 msgid "Login"
 msgstr "Giriş"
 
@@ -105,7 +102,6 @@ msgid "Friends"
 msgstr "Arkadaşlar"
 
 #: opendesktop.cpp:194 opendesktop.cpp:391
-#| msgid "Send Message"
 msgid "Messages"
 msgstr "İletiler"
 
@@ -151,7 +147,6 @@ msgstr ""
 #. i18n: file: opendesktopConfig.ui:86
 #. i18n: ectx: property (text), widget (QPushButton, registerButton)
 #: rc.cpp:10
-#| msgid "Register"
 msgctxt "@action:button Registers a new account"
 msgid "Register"
 msgstr "Kayıt ol"
@@ -205,12 +200,10 @@ msgid "Publish my Location"
 msgstr "Konumumu Yayınla"
 
 #: requestfriendshipwidget.cpp:52
-#| msgid "Add as Friend"
 msgid "<b>Add as friend</b>"
 msgstr "<b>Arkadaş olarak ekle</b>"
 
 #: requestfriendshipwidget.cpp:69 sendmessagewidget.cpp:75
-#| msgid "Send Message"
 msgid "Message:"
 msgstr "İleti:"
 
@@ -223,7 +216,6 @@ msgid "Send"
 msgstr "Gönder"
 
 #: sendmessagewidget.cpp:53
-#| msgid "Send Message"
 msgid "<b>Send message</b>"
 msgstr "<b>İleti Gönder</b>"
 

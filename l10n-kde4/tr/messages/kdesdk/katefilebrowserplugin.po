@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: katefilebrowserplugin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-16 01:31+0100\n"
+"POT-Creation-Date: 2010-05-11 01:23+0200\n"
 "PO-Revision-Date: 2009-08-20 23:42+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -54,8 +54,8 @@ msgstr "Seçenekler"
 msgid "Automatically synchronize with current document"
 msgstr "Geçerli belge ile otomatik olarak eşzamanla"
 
-#: katefilebrowserplugin.cpp:37 katefilebrowserplugin.cpp:68
-#: katefilebrowserplugin.cpp:92
+#: katefilebrowserplugin.cpp:37 katefilebrowserplugin.cpp:69
+#: katefilebrowserplugin.cpp:93
 msgid "Filesystem Browser"
 msgstr "Dosya Sistemi Tarayıcı"
 
@@ -63,7 +63,7 @@ msgstr "Dosya Sistemi Tarayıcı"
 msgid "Browse through the filesystem"
 msgstr "Dosya sistemine gözat"
 
-#: katefilebrowserplugin.cpp:74
+#: katefilebrowserplugin.cpp:75
 msgid "Filesystem Browser Settings"
 msgstr "Dosya Sistemi Tarayıcısı Ayarları"
 

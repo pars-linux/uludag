@@ -244,10 +244,9 @@ msgid ""
 "checked, you will fail to complete a game if you remove the tiles in the "
 "wrong order!</p>"
 msgstr ""
-"<b>Çözülemeyen oyunlara izin ver</b><p>Seçildiğinde çözümü olmayan "
-"oyunlarla karşılaşma riskiniz olacaktır.</p><p>Not: Seçilmese bile, eğer "
-"döşemeleri yanlış sırada kaldırırsanız, oyunu bitirmeyi başaramayacaksınız!<"
-"/p>"
+"<b>Çözülemeyen oyunlara izin ver</b><p>Seçildiğinde çözümü olmayan oyunlarla "
+"karşılaşma riskiniz olacaktır.</p><p>Not: Seçilmese bile, eğer döşemeleri "
+"yanlış sırada kaldırırsanız, oyunu bitirmeyi başaramayacaksınız!</p>"
 
 #. i18n: file: src/settings.ui:36
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_Solvable)
@@ -266,12 +265,10 @@ msgid ""
 "checked.</p>"
 msgstr ""
 "<b>Çin Stili Kullan: herhangi bir çiçek herhangi bir çiçeğe, herhangi bir "
-"sezon "
-"herhangi bir sezona</b><p> Döşemeleri eşleştirmek için geleneksel kuralları "
-"kullan. Oyunun önceki versiyonu sadece tam eşleşen döşemelere izin "
-"veriyordu, "
-"bu da Mah-jongg kurallarına aykırıydı. Bu seçeneğin seçili tutulması tavsiye "
-"edilir.</p>"
+"sezon herhangi bir sezona</b><p> Döşemeleri eşleştirmek için geleneksel "
+"kuralları kullan. Oyunun önceki versiyonu sadece tam eşleşen döşemelere izin "
+"veriyordu, bu da Mah-jongg kurallarına aykırıydı. Bu seçeneğin seçili "
+"tutulması tavsiye edilir.</p>"
 
 #. i18n: file: src/settings.ui:46
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ChineseStyle)
@@ -299,15 +296,13 @@ msgid ""
 msgstr ""
 "<b> Döşemeler kayabilir, ama 3 yerine sadece 2 çizgiye bağlanabilirsiniz</b> "
 "<p>Bu seçenek oyunu neredeyse tamamı ile değiştirmektedir. Etkin olduğunda, "
-"döşemeleri, geleneksel üçlü yerine sadece iki parçadan oluşan bir satırla"
-"birleştiklerinde kaldırabilirsiniz. Yine de, eğer bulundukları satır ya da "
-"sütunun "
-"boşlukları varsa, döşemeleri bu boşluklara kaydırabilirsiniz. Kayma hareketi "
-"yapmak için, önce kayabilecek satır ya da sütunun bulunduğu döşemeye, sonra "
-"da "
-"eşleşen döşemeye tıklamalısınız. Eğer iki adet kayma hareketi mümkünse, "
-"tercih ettiğiniz hareketi seçmek için bitişik iki satırdan birine "
-"tıklamalısınız."
+"döşemeleri, geleneksel üçlü yerine sadece iki parçadan oluşan bir "
+"satırlabirleştiklerinde kaldırabilirsiniz. Yine de, eğer bulundukları satır "
+"ya da sütunun boşlukları varsa, döşemeleri bu boşluklara kaydırabilirsiniz. "
+"Kayma hareketi yapmak için, önce kayabilecek satır ya da sütunun bulunduğu "
+"döşemeye, sonra da eşleşen döşemeye tıklamalısınız. Eğer iki adet kayma "
+"hareketi mümkünse, tercih ettiğiniz hareketi seçmek için bitişik iki "
+"satırdan birine tıklamalısınız."
 
 #. i18n: file: src/settings.ui:56
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_TilesCanSlide)
@@ -349,8 +344,8 @@ msgid ""
 "<b>Piece Removal Speed</b><p>Adjusting this slider alters the speed at which "
 "the pieces are removed from the screen after a match has been made.</p>"
 msgstr ""
-"<b>Parça Kaybolma Hızı</b><p>Sürgüyü ayarlamak, eşleşen parçaların "
-"ekrandan kaybolma hızını değiştirir.</p>"
+"<b>Parça Kaybolma Hızı</b><p>Sürgüyü ayarlamak, eşleşen parçaların ekrandan "
+"kaybolma hızını değiştirir.</p>"
 
 #. i18n: file: src/settings.ui:120
 #. i18n: ectx: property (title), widget (QGroupBox, speed_groupBox)
@@ -379,8 +374,8 @@ msgid ""
 "</p>"
 msgstr ""
 "<b>Tahta Boyutu</b><p>Bu sürgü, tahta üzerindeki döşeme sayısını "
-"değiştirmenize "
-"izin verir. Ne kadar çok döşeme varsa oyun o kadar zor (ve uzun) olacaktır."
+"değiştirmenize izin verir. Ne kadar çok döşeme varsa oyun o kadar zor (ve "
+"uzun) olacaktır."
 
 #. i18n: file: src/settings.ui:174
 #. i18n: ectx: property (title), widget (QGroupBox, size_groupBox)
@@ -427,7 +422,6 @@ msgstr "14x6"
 #. i18n: file: src/kshisen.kcfg:9
 #. i18n: ectx: label, entry (TileSet), group (General)
 #: rc.cpp:80
-#| msgid "The tile-set to use."
 msgid "The tile set to use."
 msgstr "Kullanılacak döşeme."
 

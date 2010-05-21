@@ -31,4 +31,3 @@ msgstr "'%1' dosyası ikili (binary) biçimde değil."
 #, kde-format
 msgid "File '%1' is the wrong version."
 msgstr "'%1' dosyasının sürümü yanlış."
-

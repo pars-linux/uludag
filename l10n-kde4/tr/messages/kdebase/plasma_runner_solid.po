@@ -48,16 +48,16 @@ msgid ""
 "Could not unmount the device.\n"
 "One or more files on this device are open within an application."
 msgstr ""
-"Aygıt ayrılamadı. "
-"Aygıttaki bir veya daha fazla dosya bir uygulama tarafından kullanılıyor."
+"Aygıt ayrılamadı. Aygıttaki bir veya daha fazla dosya bir uygulama "
+"tarafından kullanılıyor."
 
 #: devicewrapper.cpp:223
 msgid ""
 "Could not eject the disc.\n"
 "One or more files on this disc are open within an application."
 msgstr ""
-"Disk çıkartılamadı. "
-"Diskteki bir veya daha fazla dosya bir uygulama tarafından kullanılıyor."
+"Disk çıkartılamadı. Diskteki bir veya daha fazla dosya bir uygulama "
+"tarafından kullanılıyor."
 
 #: devicewrapper.cpp:228
 msgid "Could not mount the disc."
@@ -106,5 +106,3 @@ msgstr "çıkart"
 msgid "Lists all devices which can be ejected, and allows them to be ejected."
 msgstr ""
 "Çıkartılabilecek durumdaki aygıtları listeler ve çıkartılmalarını sağlar."
-
-

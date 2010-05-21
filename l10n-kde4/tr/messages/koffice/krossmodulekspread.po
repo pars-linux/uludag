@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krossmodulekspread\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2009-12-12 06:16+0100\n"
 "PO-Revision-Date: 2009-09-28 01:40+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ScriptingWriter.h:243
+#: ScriptingWriter.h:245
 msgid "Set Values"
 msgstr "Değerleri Ayarla"
 
@@ -435,7 +435,7 @@ msgstr ""
 msgid "Ruby Snippets"
 msgstr "Ruby Parçacıkları"
 
-#: ScriptingFunction.cpp:58
+#: ScriptingFunction.cpp:57
 msgid "No such script."
 msgstr "Böyle bir betik yok."
 
@@ -447,8 +447,8 @@ msgstr "Böyle bir betik fonksiyonu yok."
 msgid "No return value."
 msgstr "Dönüş değeri yok."
 
-#: ScriptingFunction.cpp:156 ScriptingFunction.cpp:157
-#: ScriptingFunction.cpp:164
+#: ScriptingFunction.cpp:155 ScriptingFunction.cpp:156
+#: ScriptingFunction.cpp:163
 msgid "Scripts"
 msgstr "Betikler"
 
@@ -464,17 +464,17 @@ msgid ""
 "that file."
 msgstr ""
 
-#: ScriptingPart.cpp:85
+#: ScriptingPart.cpp:86
 #, kde-format
 msgid "Scriptfile \"%1\" is in a temporary directory. Execution denied."
 msgstr ""
 
-#: ScriptingPart.cpp:90
+#: ScriptingPart.cpp:91
 #, kde-format
 msgid "Failed to execute scriptfile \"%1\""
 msgstr "\"%1\" betik dosyası çalıştırılamadı"
 
-#: ScriptingPart.cpp:93
+#: ScriptingPart.cpp:94
 msgid "Errors on execution of scripts."
 msgstr "Betik çalıştırma hataları."
 

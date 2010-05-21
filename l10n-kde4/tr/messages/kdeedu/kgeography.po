@@ -13274,8 +13274,6 @@ msgid "Vreed en Hoop"
 msgstr "Vreed en Hoop"
 
 #: mapsdatatranslation.cpp:2771
-#| msgctxt "guyana.kgm"
-#| msgid "Dememara-Mahaica"
 msgctxt "guyana.kgm"
 msgid "Demerara-Mahaica"
 msgstr "Dememara-Mahaica"
@@ -13296,8 +13294,6 @@ msgid "Fort Wellington"
 msgstr "Fort Wellington"
 
 #: mapsdatatranslation.cpp:2775
-#| msgctxt "guyana.kgm"
-#| msgid "Upper Dememara-Berbice"
 msgctxt "guyana.kgm"
 msgid "Upper Demerara-Berbice"
 msgstr "Yukarı Dememara-Berbice"

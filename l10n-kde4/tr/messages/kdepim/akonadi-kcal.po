@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -18,8 +18,12 @@ msgstr ""
 
 #: kcalmodel.cpp:125
 #, kde-format
-msgid "This model can only handle event, task, journal or free-busy list folders. The current collection holds mimetypes: %1"
-msgstr "Bu model sadece olay, görev, günlük ve uygun-meşgul listesi klasörlerini destekler. Geçerli koleksiyon şu mime tiplerini içeriyor: %1"
+msgid ""
+"This model can only handle event, task, journal or free-busy list folders. "
+"The current collection holds mimetypes: %1"
+msgstr ""
+"Bu model sadece olay, görev, günlük ve uygun-meşgul listesi klasörlerini "
+"destekler. Geçerli koleksiyon şu mime tiplerini içeriyor: %1"
 
 #: kcalmodel.cpp:186
 msgctxt "@title:column, calendar event summary"

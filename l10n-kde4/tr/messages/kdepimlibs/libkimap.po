@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -126,7 +126,9 @@ msgstr "Düz giriş sunucu tarafından pasifleştirildiği için giriş yapılam
 #: loginjob.cpp:281
 #, kde-format
 msgid "Login failed, authentication mode %1 is not supported by the server."
-msgstr "%1 kimlik doğrulama yöntemi sunucu tarafından desteklenmediğinden giriş başarısız oldu."
+msgstr ""
+"%1 kimlik doğrulama yöntemi sunucu tarafından desteklenmediğinden giriş "
+"başarısız oldu."
 
 #: loginjob.cpp:293
 msgid "Login failed, client cannot initialize the SASL library."

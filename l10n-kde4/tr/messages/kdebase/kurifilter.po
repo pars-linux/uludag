@@ -201,10 +201,11 @@ msgid ""
 "nothing matches from the left of the reference list.\n"
 "</qt>"
 msgstr ""
-"<qt>\nArama işleminde kullanmak istediğiniz arama motoru adresini buraya "
-"yazın.<br/> "
-"Metnin tamamını aramak için \\{@} veya \\{0} gibi yazılabilir.<br/>\n  \\{@} "
-"tavsiye edilir.\n</qt>"
+"<qt>\n"
+"Arama işleminde kullanmak istediğiniz arama motoru adresini buraya yazın.<br/"
+"> Metnin tamamını aramak için \\{@} veya \\{0} gibi yazılabilir.<br/>\n"
+"  \\{@} tavsiye edilir.\n"
+"</qt>"
 
 #. i18n: file: searchproviderdlg_ui.ui:52
 #. i18n: ectx: property (text), widget (QLabel, lbQuery)

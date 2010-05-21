@@ -125,9 +125,9 @@ msgid ""
 "GPL. <br/>It combines the power of many existing open-source packages into a "
 "common Python-based interface."
 msgstr ""
-"Sage, GPL lisanlı açık kaynaklı bir matematik yazılımıdır. <br/>"
-"Halihazırda bulunan bir çok açık kaynaklı paketin gücünü Python tabanlı bir "
-"arayüzde birleştirir."
+"Sage, GPL lisanlı açık kaynaklı bir matematik yazılımıdır. <br/>Halihazırda "
+"bulunan bir çok açık kaynaklı paketin gücünü Python tabanlı bir arayüzde "
+"birleştirir."
 
 #: backends/R/rserver/main.cpp:30
 msgid "Server for the Cantor R Backend"
@@ -347,9 +347,6 @@ msgstr "Diğer"
 
 #: worksheet.cpp:558
 #, kde-format
-#| msgid ""
-#| "Cannot write file %1:\n"
-#| "."
 msgid "Cannot write file %1."
 msgstr ""
 "%1 dosyası yazılamıyor:\n"
@@ -522,9 +519,8 @@ msgid ""
 msgstr ""
 "<h1>Arka uç bulunamadı</h1>\n"
 "<div>Sorunu çözmek için:\n"
-"  <ul>    <li>Ayar panelinden ayarları değiştirmeyi deneyein;</li>    "
-"<li>Şu programlardan birini yüklemeyi deneyin:</li>     %1   "
-"<ul> </div> "
+"  <ul>    <li>Ayar panelinden ayarları değiştirmeyi deneyein;</li>    <li>Şu "
+"programlardan birini yüklemeyi deneyin:</li>     %1   <ul> </div> "
 
 #: cantor.cpp:240
 msgid "Error"

@@ -54,4 +54,3 @@ msgstr "%1 yıl dönümü"
 #: resourcekabc.cpp:315
 msgid "Anniversary"
 msgstr "Yıl dönümü"
-

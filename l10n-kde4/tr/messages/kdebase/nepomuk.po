@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nepomukserver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-11 01:21+0200\n"
+"POT-Creation-Date: 2010-05-10 01:20+0200\n"
 "PO-Revision-Date: 2010-04-23 23:49+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -26,16 +26,28 @@ msgid "Query Results"
 msgstr "Sorgu Sonuçları"
 
 #: kioslaves/search/kio_nepomuksearch.cpp:125
-#: kioslaves/nepomuk/kio_nepomuk.cpp:618
-msgid "The Nepomuk system is not activated. Unable to answer queries without it."
-msgstr "Nepomuk sistemi etkinleştirilmemiş durumda. Nepomuk etkinleştirilmeden sorgulara yanıt verilemez."
+#: kioslaves/nepomuk/kio_nepomuk.cpp:621
+msgid ""
+"The Nepomuk system is not activated. Unable to answer queries without it."
+msgstr ""
+"Nepomuk sistemi etkinleştirilmemiş durumda. Nepomuk etkinleştirilmeden "
+"sorgulara yanıt verilemez."
 
 #: kioslaves/search/kio_nepomuksearch.cpp:131
-msgid "The Nepomuk query service is not running. Unable to answer queries without it."
-msgstr "Nepomuk sorgulama servisi şu anda çalışmıyor. Servis çalıştırılmadan sorgulara yanıt verilemez."
+msgid ""
+"The Nepomuk query service is not running. Unable to answer queries without "
+"it."
+msgstr ""
+"Nepomuk sorgulama servisi şu anda çalışmıyor. Servis çalıştırılmadan "
+"sorgulara yanıt verilemez."
 
 #: kioslaves/timeline/kio_timeline.cpp:107
-msgctxt "Month and year used in a tree above the actual days. Have a look at http://api.kde.org/4.x-api/kdelibs-apidocs/kdecore/html/classKCalendarSystem.html#a560204439a4b670ad36c16c404f292b4 to see which variables you can use and ask kde-i18n-doc@kde.org if you have problems understanding how to translate this"
+msgctxt ""
+"Month and year used in a tree above the actual days. Have a look at http://"
+"api.kde.org/4.x-api/kdelibs-apidocs/kdecore/html/classKCalendarSystem."
+"html#a560204439a4b670ad36c16c404f292b4 to see which variables you can use "
+"and ask kde-i18n-doc@kde.org if you have problems understanding how to "
+"translate this"
 msgid "%B %Y"
 msgstr "%B %Y"
 
@@ -51,34 +63,41 @@ msgstr "Takvim"
 #: kioslaves/nepomuk/kio_nepomuk.cpp:303
 #, kde-format
 msgctxt "@info"
-msgid "Please insert the removable medium <resource>%1</resource> to access this file."
-msgstr "Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı takın."
+msgid ""
+"Please insert the removable medium <resource>%1</resource> to access this "
+"file."
+msgstr ""
+"Bu dosyaya erişmek için lütfen <resource>%1</resource> taşınabilir ortamı "
+"takın."
 
 #: kioslaves/nepomuk/kio_nepomuk.cpp:325
-msgid "Do you really want to delete the resource and all relations to and from it?"
-msgstr "Kaynağı ve bu kaynak ile olan tüm bağlantıları silmek istediğinizden emin misiniz?"
+msgid ""
+"Do you really want to delete the resource and all relations to and from it?"
+msgstr ""
+"Kaynağı ve bu kaynak ile olan tüm bağlantıları silmek istediğinizden emin "
+"misiniz?"
 
 #: kioslaves/nepomuk/kio_nepomuk.cpp:328
 msgid "Delete Resource"
 msgstr "Kaynağı Sil"
 
-#: kioslaves/nepomuk/resourcepagegenerator.cpp:182
+#: kioslaves/nepomuk/resourcepagegenerator.cpp:191
 msgid "Resource does not exist"
 msgstr "Kaynak mevcut değil"
 
-#: kioslaves/nepomuk/resourcepagegenerator.cpp:184
+#: kioslaves/nepomuk/resourcepagegenerator.cpp:193
 msgid "Relations:"
 msgstr "Bağlantılar:"
 
-#: kioslaves/nepomuk/resourcepagegenerator.cpp:212
+#: kioslaves/nepomuk/resourcepagegenerator.cpp:233
 msgid "Backlinks:"
 msgstr "Backlink:"
 
-#: kioslaves/nepomuk/resourcepagegenerator.cpp:232
+#: kioslaves/nepomuk/resourcepagegenerator.cpp:253
 msgid "Actions:"
 msgstr "Eylemler:"
 
-#: kioslaves/nepomuk/resourcepagegenerator.cpp:233
+#: kioslaves/nepomuk/resourcepagegenerator.cpp:254
 msgid "Delete resource"
 msgstr "Kaynağı Sil"
 
@@ -88,7 +107,7 @@ msgid "Parsing of file %1 failed (%2)"
 msgstr "%1 dosyasının ayrıştırılması başarısız oldu (%2)"
 
 #: services/strigi/systray.cpp:41 services/strigi/systray.cpp:44
-#: services/strigi/systray.cpp:77
+#: services/strigi/systray.cpp:88
 msgid "Search Service"
 msgstr "Arama Servisi"
 
@@ -141,7 +160,8 @@ msgstr[0] "İndekste %1 dosya var"
 
 #: services/strigi/eventmonitor.cpp:70
 msgid "Indexing files for fast searching. This process may take a while."
-msgstr "Hızlı arama için dosyalar indeksleniyor. Bu işlem biraz zaman alabilir."
+msgstr ""
+"Hızlı arama için dosyalar indeksleniyor. Bu işlem biraz zaman alabilir."
 
 #: services/strigi/eventmonitor.cpp:99 services/strigi/eventmonitor.cpp:131
 msgid "Resuming indexing of files for fast searching."
@@ -154,7 +174,8 @@ msgstr "Kaynakları korumak için dosya indeksleme işlemi askıya alınıyor."
 #: services/strigi/eventmonitor.cpp:122
 #, kde-format
 msgid "Disk space is running low (%1 left). Suspending indexing of files."
-msgstr "Boş disk alanı azalıyor (kalan %1). Dosya indeksleme işlemi askıya alınıyor."
+msgstr ""
+"Boş disk alanı azalıyor (kalan %1). Dosya indeksleme işlemi askıya alınıyor."
 
 #: services/strigi/eventmonitor.cpp:148
 #, kde-format
@@ -162,33 +183,56 @@ msgctxt "@info %1 is a duration formatted using KLocale::formatDuration"
 msgid "Initial indexing of files for fast searching finished in %1"
 msgstr "Hızlı arama için ilk dosya indeksleme işlemi tamamlandı, geçen süre %1"
 
-#: services/storage/repository.cpp:94
+#: services/storage/repository.cpp:96
 msgctxt "@info - notification message"
-msgid "Nepomuk Semantic Desktop needs the Virtuoso RDF server to store its data. Installing the Virtuoso Soprano plugin is mandatory for using Nepomuk."
-msgstr "Nepomuk Semantik Masaüstü verilerini saklamak için Virtuoso RDF sunucusuna ihtiyaç duyuyor. Nepomuk kullanmak için Virtuoso Soprano eklentisini yüklemek gerekmektedir."
+msgid ""
+"Nepomuk Semantic Desktop needs the Virtuoso RDF server to store its data. "
+"Installing the Virtuoso Soprano plugin is mandatory for using Nepomuk."
+msgstr ""
+"Nepomuk Semantik Masaüstü verilerini saklamak için Virtuoso RDF sunucusuna "
+"ihtiyaç duyuyor. Nepomuk kullanmak için Virtuoso Soprano eklentisini "
+"yüklemek gerekmektedir."
 
-#: services/storage/repository.cpp:106
+#: services/storage/repository.cpp:108
 msgctxt "@info - notification message"
-msgid "Nepomuk Semantic Desktop needs the Virtuoso RDF server to store its data. Installing the Virtuoso server and ODBC driver is mandatory for using Nepomuk."
-msgstr "Nepomuk Semantik Masaüstü verilerini saklamak için Virtuoso RDF sunucusuna ihtiyaç duyuyor. Nepomuk kullanmak için Virtuoso sunucu ve ODBC sürücü yüklemek gerekmektedir."
+msgid ""
+"Nepomuk Semantic Desktop needs the Virtuoso RDF server to store its data. "
+"Installing the Virtuoso server and ODBC driver is mandatory for using "
+"Nepomuk."
+msgstr ""
+"Nepomuk Semantik Masaüstü verilerini saklamak için Virtuoso RDF sunucusuna "
+"ihtiyaç duyuyor. Nepomuk kullanmak için Virtuoso sunucu ve ODBC sürücü "
+"yüklemek gerekmektedir."
 
-#: services/storage/repository.cpp:220
+#: services/storage/repository.cpp:223
 #, kde-format
 msgctxt "@info - notification message"
-msgid "Nepomuk was not able to find the configured database backend '%1'. Existing data can thus not be accessed. For data security reasons Nepomuk will be disabled until the situation has been resolved manually."
-msgstr "Nepomuk '%1' yapılandırılmış veritabanını bulamadı. Mevcut verilere de erişilemedi. Veri güvenliği nedenleriyle bu durum elle düzeltilinceye kadar Nepomuk servisi devre dışı bırakılacak."
+msgid ""
+"Nepomuk was not able to find the configured database backend '%1'. Existing "
+"data can thus not be accessed. For data security reasons Nepomuk will be "
+"disabled until the situation has been resolved manually."
+msgstr ""
+"Nepomuk '%1' yapılandırılmış veritabanını bulamadı. Mevcut verilere de "
+"erişilemedi. Veri güvenliği nedenleriyle bu durum elle düzeltilinceye kadar "
+"Nepomuk servisi devre dışı bırakılacak."
 
-#: services/storage/repository.cpp:254
+#: services/storage/repository.cpp:257
 msgctxt "@info - notification message"
 msgid "Converting Nepomuk data to a new backend. This might take a while."
-msgstr "Nepomuk verileri yeni bir arka uca dönüştürülüyor. Bu işlem biraz zaman alabilir."
+msgstr ""
+"Nepomuk verileri yeni bir arka uca dönüştürülüyor. Bu işlem biraz zaman "
+"alabilir."
 
-#: services/storage/repository.cpp:267
+#: services/storage/repository.cpp:270
 msgctxt "@info - notification message"
-msgid "Converting Nepomuk data to the new backend failed. For data security reasons Nepomuk will be disabled until the situation has been resolved manually."
-msgstr "Nepomuk verileri yeni arka uca dönüştürülemedi. Veri kaybını engellemek için bu sorun el ile halledilene kadar Nepomuk pasifleştirilecek."
+msgid ""
+"Converting Nepomuk data to the new backend failed. For data security reasons "
+"Nepomuk will be disabled until the situation has been resolved manually."
+msgstr ""
+"Nepomuk verileri yeni arka uca dönüştürülemedi. Veri kaybını engellemek için "
+"bu sorun el ile halledilene kadar Nepomuk pasifleştirilecek."
 
-#: services/storage/repository.cpp:281
+#: services/storage/repository.cpp:284
 msgctxt "@info - notification message"
 msgid "Successfully converted Nepomuk data to the new backend."
 msgstr "Nepomuk verileri yeni arka uca başarılı bir şekilde dönüştürüldü."
@@ -236,23 +280,33 @@ msgstr "Telif hakları 2007 Sebastian Trüg"
 
 #: kcm/nepomukserverkcm.cpp:143
 msgid "No Soprano Database backend available. Please check your installation."
-msgstr "Hiçbir Soprano Veritabanı arka ucu mevcut değil. Lütfen kurulumunuzu kontrol edin."
+msgstr ""
+"Hiçbir Soprano Veritabanı arka ucu mevcut değil. Lütfen kurulumunuzu kontrol "
+"edin."
 
 #: kcm/nepomukserverkcm.cpp:144
 msgid "Nepomuk cannot be started"
 msgstr "Nepomuk başlatılamadı"
 
 #: kcm/nepomukserverkcm.cpp:152
-msgid "The Nepomuk Server is not running. The settings will be used the next time the server is started."
-msgstr "Nepomuk Sunucusu çalışmıyor. Ayarlar sunucu tekrar başlatıldığında kulanılacak."
+msgid ""
+"The Nepomuk Server is not running. The settings will be used the next time "
+"the server is started."
+msgstr ""
+"Nepomuk Sunucusu çalışmıyor. Ayarlar sunucu tekrar başlatıldığında "
+"kulanılacak."
 
 #: kcm/nepomukserverkcm.cpp:154 kcm/nepomukserverkcm.cpp:231
 msgid "Nepomuk server not running"
 msgstr "Nepomuk sunucusu çalışmıyor"
 
 #: kcm/nepomukserverkcm.cpp:229
-msgid "The Nepomuk Server is not running. The settings have been saved and will be used the next time the server is started."
-msgstr "Nepomuk Sunucusu çalışmıyor. Ayarlar kaydedildi ve sunucu tekrar başlatıldığında kulanılacak."
+msgid ""
+"The Nepomuk Server is not running. The settings have been saved and will be "
+"used the next time the server is started."
+msgstr ""
+"Nepomuk Sunucusu çalışmıyor. Ayarlar kaydedildi ve sunucu tekrar "
+"başlatıldığında kulanılacak."
 
 #: kcm/nepomukserverkcm.cpp:258
 #, kde-format
@@ -262,8 +316,11 @@ msgstr "Strigi indeksleyici (%1) ile iletişim kurulamadı"
 
 #: kcm/nepomukserverkcm.cpp:268
 msgctxt "@info:status"
-msgid "Strigi service failed to initialize, most likely due to an installation problem."
-msgstr "Strigi servisi başlatılamadı, bir kurulum hatası yapılmış gibi görünüyor."
+msgid ""
+"Strigi service failed to initialize, most likely due to an installation "
+"problem."
+msgstr ""
+"Strigi servisi başlatılamadı, bir kurulum hatası yapılmış gibi görünüyor."
 
 #: kcm/nepomukserverkcm.cpp:272
 msgctxt "@info:status"
@@ -279,8 +336,12 @@ msgstr "<filename>%1</filename><nl/>(masaüstü araması için indekslenecek)"
 #: kcm/folderselectionmodel.cpp:112
 #, kde-format
 msgctxt "@info:tooltip %1 is the path of the folder in a listview"
-msgid "<filename>%1</filename><nl/> (will <emphasis>not</emphasis> be indexed for desktop search)"
-msgstr "<filename>%1</filename><nl/> (masaüstü araması için <emphasis>indekslenmeyecek</emphasis>)"
+msgid ""
+"<filename>%1</filename><nl/> (will <emphasis>not</emphasis> be indexed for "
+"desktop search)"
+msgstr ""
+"<filename>%1</filename><nl/> (masaüstü araması için "
+"<emphasis>indekslenmeyecek</emphasis>)"
 
 #: servicestub/main.cpp:67 servicestub/main.cpp:69
 msgid "Nepomuk Service Stub"
@@ -362,8 +423,12 @@ msgstr "Nepomuk Semantik Masaüstü"
 #. i18n: file: kcm/nepomukconfigwidget.ui:26
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:32
-msgid "Nepomuk Semantic Desktop enables tagging and rating of files integrated with the Desktop Search."
-msgstr "Nepomuk Semantik Masaüstü, Masaüstü Arama Motoru ile bütünleşik çalışarak dosya etiketlemeyi ve beğeni belirlemeyi etkinleştirir."
+msgid ""
+"Nepomuk Semantic Desktop enables tagging and rating of files integrated with "
+"the Desktop Search."
+msgstr ""
+"Nepomuk Semantik Masaüstü, Masaüstü Arama Motoru ile bütünleşik çalışarak "
+"dosya etiketlemeyi ve beğeni belirlemeyi etkinleştirir."
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:36
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkEnableNepomuk)
@@ -380,8 +445,12 @@ msgstr "Strigi Masaüstü Dosya İndeksleyici"
 #. i18n: file: kcm/nepomukconfigwidget.ui:52
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:41
-msgid "Strigi desktop search allows searching for files by content instead of just by name."
-msgstr "Strigi masaüstü arama motoru, dosyaları sadece ismiyle değil içeriğiyle de aramanıza izin verir."
+msgid ""
+"Strigi desktop search allows searching for files by content instead of just "
+"by name."
+msgstr ""
+"Strigi masaüstü arama motoru, dosyaları sadece ismiyle değil içeriğiyle de "
+"aramanıza izin verir."
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:62
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkEnableStrigi)
@@ -404,12 +473,14 @@ msgstr "Strigi İndeks Dizinleri"
 #. i18n: file: kcm/nepomukconfigwidget.ui:135
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:53
-msgid "Select the local folders that contain files to be indexed for fast desktop searches"
-msgstr "Hızlı masaüstü araması için indekslenecek dosyaları içeren dizinleri seçin"
+msgid ""
+"Select the local folders that contain files to be indexed for fast desktop "
+"searches"
+msgstr ""
+"Hızlı masaüstü araması için indekslenecek dosyaları içeren dizinleri seçin"
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:148
-#. i18n: ectx: property (toolTip), widget (QCheckBox,
-#. m_checkShowHiddenFolders)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkShowHiddenFolders)
 #: rc.cpp:56
 msgid "Check to be able to select hidden folders"
 msgstr "Gizli dizinleri seçebilmek için işaretleyin"
@@ -421,11 +492,13 @@ msgid "Show hidden folders"
 msgstr "Gizli dizinleri göster"
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:158
-#. i18n: ectx: property (toolTip), widget (QCheckBox,
-#. m_checkIndexRemovableMedia)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, m_checkIndexRemovableMedia)
 #: rc.cpp:62
-msgid "Index the files on removable media like USB sticks when they are mounted"
-msgstr "USB çubuk benzeri çıkarılabilir ortamlar takıldığında içlerindeki dosyaları indeksle."
+msgid ""
+"Index the files on removable media like USB sticks when they are mounted"
+msgstr ""
+"USB çubuk benzeri çıkarılabilir ortamlar takıldığında içlerindeki dosyaları "
+"indeksle."
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:161
 #. i18n: ectx: property (text), widget (QCheckBox, m_checkIndexRemovableMedia)
@@ -434,15 +507,13 @@ msgid "Index Files on Removable Media"
 msgstr "Taşınabilir Ortamdaki Dosyaları İndeksle"
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:171
-#. i18n: ectx: property (toolTip), widget (KEditListBox,
-#. m_editStrigiExcludeFilters)
+#. i18n: ectx: property (toolTip), widget (KEditListBox, m_editStrigiExcludeFilters)
 #: rc.cpp:68
 msgid "Filters which define the files that Strigi should ignore"
 msgstr "Strigi uygulamasının gözardı edeceği dosyaları belirleyen süzgeçler"
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:177
-#. i18n: ectx: property (title), widget (KEditListBox,
-#. m_editStrigiExcludeFilters)
+#. i18n: ectx: property (title), widget (KEditListBox, m_editStrigiExcludeFilters)
 #: rc.cpp:71
 msgid "Strigi Index Exclude Filters"
 msgstr "Strigi İndeksi Hariç Tutma Süzgeçleri"
@@ -462,8 +533,12 @@ msgstr "Bellek Kullanımı"
 #. i18n: file: kcm/nepomukconfigwidget.ui:197
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: rc.cpp:80
-msgid "The maximum amount of memory the Nepomuk database should use. The more memory Nepomuk has the more performant it will be."
-msgstr "Nepomuk veritabanının kullanacağı azami bellek miktarı. Daha fazla bellek Nepomuk'un daha performanslı çalışması anlamına gelir."
+msgid ""
+"The maximum amount of memory the Nepomuk database should use. The more "
+"memory Nepomuk has the more performant it will be."
+msgstr ""
+"Nepomuk veritabanının kullanacağı azami bellek miktarı. Daha fazla bellek "
+"Nepomuk'un daha performanslı çalışması anlamına gelir."
 
 #. i18n: file: kcm/nepomukconfigwidget.ui:225
 #. i18n: ectx: property (suffix), widget (QSpinBox, m_editMemoryUsage)
@@ -474,21 +549,35 @@ msgstr " MB"
 #~ msgid "KSqueezedTextLabel"
 #~ msgstr "KSqueezedTextLabel"
 
-#~ msgctxt "Boolean AND keyword in desktop search strings. You can add several variants separated by spaces, e.g. retain the English one alongside the translation; keywords are not case sensitive. Make sure there is no conflict with the OR keyword."
+#~ msgctxt ""
+#~ "Boolean AND keyword in desktop search strings. You can add several "
+#~ "variants separated by spaces, e.g. retain the English one alongside the "
+#~ "translation; keywords are not case sensitive. Make sure there is no "
+#~ "conflict with the OR keyword."
 #~ msgid "and"
 #~ msgstr "ve"
 
-#~ msgctxt "Boolean OR keyword in desktop search strings. You can add several variants separated by spaces, e.g. retain the English one alongside the translation; keywords are not case sensitive. Make sure there is no conflict with the AND keyword."
+#~ msgctxt ""
+#~ "Boolean OR keyword in desktop search strings. You can add several "
+#~ "variants separated by spaces, e.g. retain the English one alongside the "
+#~ "translation; keywords are not case sensitive. Make sure there is no "
+#~ "conflict with the AND keyword."
 #~ msgid "or"
 #~ msgstr "veya"
 
 #~ msgctxt "@info - notification message"
 #~ msgid "Rebuilding Nepomuk full text search index for new features done."
-#~ msgstr "Nepomuk tam metin arama indeksinin yeni özellikler için yeniden oluşturulması tamamlandı."
+#~ msgstr ""
+#~ "Nepomuk tam metin arama indeksinin yeni özellikler için yeniden "
+#~ "oluşturulması tamamlandı."
 
 #~ msgctxt "@info - notification message"
-#~ msgid "Rebuilding Nepomuk full text search index for new features. This will only be done once and might take a while."
-#~ msgstr "Nepomuk tam metin arama indeksi yeni özellikler için yeniden oluşturuluyor. Bu işlem sadece bir kez yapılır ve biraz zaman alabilir."
+#~ msgid ""
+#~ "Rebuilding Nepomuk full text search index for new features. This will "
+#~ "only be done once and might take a while."
+#~ msgstr ""
+#~ "Nepomuk tam metin arama indeksi yeni özellikler için yeniden "
+#~ "oluşturuluyor. Bu işlem sadece bir kez yapılır ve biraz zaman alabilir."
 
 #~ msgid "All Music Files"
 #~ msgstr "Tüm Müzik Dosyaları"
@@ -539,15 +628,30 @@ msgstr " MB"
 #~ msgstr "Strigi'nin indekslenebilir dosyaları tarayacağı dizinler"
 
 #~ msgid ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select the folders that Strigi should scan for files to index. The files in these folders will be searchable through Strigi Desktop Search.</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select the folders that "
+#~ "Strigi should scan for files to index. The files in these folders will be "
+#~ "searchable through Strigi Desktop Search.</p></body></html>"
 #~ msgstr ""
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Strigi'nin dosyaları indekslemek için tarayacağı dizinleri seçin. Bu dizinler içerisindeki dosyalar Strigi Masaüstü Arama Motoru ile aranabilir olacaktır.</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Strigi'nin dosyaları "
+#~ "indekslemek için tarayacağı dizinleri seçin. Bu dizinler içerisindeki "
+#~ "dosyalar Strigi Masaüstü Arama Motoru ile aranabilir olacaktır.</p></"
+#~ "body></html>"
 
-#~ msgid "Strigi (the desktop file indexer) crashed repeatedly. It will not be started again."
-#~ msgstr "Strigi (masaüstü dosya indeksleyicisi) birkaç kez çöktü. Yeniden başlatılmayacak."
+#~ msgid ""
+#~ "Strigi (the desktop file indexer) crashed repeatedly. It will not be "
+#~ "started again."
+#~ msgstr ""
+#~ "Strigi (masaüstü dosya indeksleyicisi) birkaç kez çöktü. Yeniden "
+#~ "başlatılmayacak."

@@ -19,7 +19,6 @@ msgstr ""
 
 #: UndoRedo/URAddNode.cpp:38 Core/graph.cpp:47 Interface/MainWindow.cpp:88
 #: Interface/MainWindow.cpp:294
-#| msgid "Untitled0"
 msgid "Untitled"
 msgstr "Başlıksız"
 
@@ -35,7 +34,6 @@ msgstr "Değer"
 
 #: Models/model_GraphLayers.cpp:83 Interface/GraphLayers.cpp:54
 #, kde-format
-#| msgid "Untitled0"
 msgid "Untitled%1"
 msgstr "Başlıksız%1"
 
@@ -48,7 +46,6 @@ msgid "Editor"
 msgstr "Düzenleyici"
 
 #: Interface/MainWindow.cpp:136
-#| msgid "Debug"
 msgid "Debugger"
 msgstr "Hata Ayıklayıcı"
 
@@ -221,7 +218,6 @@ msgstr "Çizge"
 #. i18n: file: rocsui.rc:17
 #. i18n: ectx: Menu (Script)
 #: rc.cpp:12 rc.cpp:257
-#| msgid " Script "
 msgid "Script"
 msgstr " Betik "
 
@@ -451,14 +447,12 @@ msgstr "..."
 #. i18n: file: Interface/GraphPropertiesWidget.ui:208
 #. i18n: ectx: property (toolTip), widget (QToolButton, _graphAutomate)
 #: rc.cpp:122
-#| msgid "Automated graph"
 msgid "Automaton Graph"
 msgstr "Özdevinir Çizge "
 
 #. i18n: file: Interface/GraphPropertiesWidget.ui:211
 #. i18n: ectx: property (whatsThis), widget (QToolButton, _graphAutomate)
 #: rc.cpp:125
-#| msgid "Enabling this button will make the graph an automated graph."
 msgid "Enabling this button will make the graph an automaton graph."
 msgstr "Bu düğmeyi etkinleştirmek grafın özdevinir olmasını sağlar."
 

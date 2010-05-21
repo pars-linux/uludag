@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kchart\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-05 02:49+0100\n"
 "PO-Revision-Date: 2009-09-18 03:33+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -19,16 +19,16 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: KChartPart.cpp:606
+#: KChartPart.cpp:599
 msgid "Invalid OpenDocument file. No office:body tag found."
 msgstr "Geçersiz  OpenDocument dosyası. office:body etiketi bulunamadı."
 
-#: KChartPart.cpp:622
+#: KChartPart.cpp:615
 msgid "Invalid OpenDocument file. No tag found inside office:body."
 msgstr ""
 "Geçersiz  OpenDocument dosyası. office:body içerinde etiket bulunamadı."
 
-#: KChartPart.cpp:624 KChartPart.cpp:691
+#: KChartPart.cpp:617 KChartPart.cpp:684
 #, kde-format
 msgid ""
 "This document is not a chart, but %1. Please try opening it with the "
@@ -37,46 +37,46 @@ msgstr ""
 "Bu belge bir çizelge değil, bu belge bir %1. Lütfen belgeyi uygun bir "
 "uygulama ile açın."
 
-#: KChartPart.cpp:633
+#: KChartPart.cpp:626
 msgid "No chart found in the file"
 msgstr "Bu dosyada çizelge bulunamadı"
 
-#: KChartPart.cpp:673
+#: KChartPart.cpp:666
 msgid "Invalid OASIS OpenDocument file. No office:body tag found."
 msgstr "Geçersiz OASIS OpenDocument dosyası. office:body etiketi bulunamadı."
 
-#: KChartPart.cpp:689
+#: KChartPart.cpp:682
 msgid "Invalid OASIS OpenDocument file. No tag found inside office:body."
 msgstr ""
 "Geçersiz OASIS OpenDocument dosyası. office:body içerisinde etiket "
 "bulunamadı."
 
-#: KChartPart.cpp:699
+#: KChartPart.cpp:692
 msgid "Invalid OASIS OpenDocument file. No chart:chart tag found."
 msgstr ""
 "Geçersiz OASIS OpenDocument dosyası. Çizelge yok:çizelge etiketi bulundu."
 
-#: KChartView.cpp:100
+#: KChartView.cpp:101
 msgid "Import Data..."
 msgstr "Veri Ekle..."
 
-#: KChartView.cpp:103
+#: KChartView.cpp:104
 msgid "&Create Template From Document..."
 msgstr "&Belgeden Şablon Oluştur..."
 
-#: KChartView.cpp:107
+#: KChartView.cpp:108
 msgid "Edit &Data..."
 msgstr "Veri &Düzenle..."
 
-#: KChartView.cpp:170
+#: KChartView.cpp:172
 msgid "Tools"
 msgstr "Araçlar"
 
-#: KChartView.cpp:336
+#: KChartView.cpp:339
 msgid "Import Data"
 msgstr "Veri Ekle"
 
-#: KChartView.cpp:344
+#: KChartView.cpp:347
 #, kde-format
 msgid "The file %1 could not be read."
 msgstr "%1 dosyası okunamadı."

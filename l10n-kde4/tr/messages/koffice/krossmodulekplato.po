@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krossmodulekplato\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-03-04 04:15+0100\n"
 "PO-Revision-Date: 2009-09-28 01:32+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -16,31 +16,31 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#. i18n: file: ScriptingDataQueryView.ui:21
+#. i18n: file: ScriptingDataQueryView.ui:22
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:3
 msgid "Select from:"
 msgstr "Buradan seç:"
 
-#. i18n: file: ScriptingDataQueryView.ui:29
+#. i18n: file: ScriptingDataQueryView.ui:30
 #. i18n: ectx: property (text), item, widget (QComboBox, ui_objectType)
 #: rc.cpp:6
-msgid "Nodes"
-msgstr "Düğümler"
+msgid "Tasks"
+msgstr ""
 
-#. i18n: file: ScriptingDataQueryView.ui:34
+#. i18n: file: ScriptingDataQueryView.ui:35
 #. i18n: ectx: property (text), item, widget (QComboBox, ui_objectType)
 #: rc.cpp:9
 msgid "Resources"
 msgstr "Kaynaklar"
 
-#. i18n: file: ScriptingDataQueryView.ui:39
+#. i18n: file: ScriptingDataQueryView.ui:40
 #. i18n: ectx: property (text), item, widget (QComboBox, ui_objectType)
 #: rc.cpp:12
 msgid "Accounts"
 msgstr "Hesaplar"
 
-#. i18n: file: ScriptingDataQueryView.ui:62
+#. i18n: file: ScriptingDataQueryView.ui:63
 #. i18n: ectx: property (text), widget (QCheckBox, ui_includeHeaders)
 #: rc.cpp:15
 msgid "Include headers"
@@ -303,3 +303,6 @@ msgstr "Takvim zaten var: %1"
 #: scripts/resourcesimport.py:100
 msgid "Unable to create copy of calendar: %1"
 msgstr "Takvimin kopyası oluşturulamadı: %1"
+
+#~ msgid "Nodes"
+#~ msgstr "Düğümler"

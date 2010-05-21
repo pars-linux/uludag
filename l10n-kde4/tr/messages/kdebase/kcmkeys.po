@@ -114,10 +114,8 @@ msgid ""
 "settings when they are next started."
 msgstr ""
 "Bileşen '%1' için kayıtlı olan kısayolları silmek istediğinizden emin "
-"misiniz ? "
-"Bileşenler ve kısayollar ayarları bir sonraki açılışlarında ön tanımlı "
-"değerleri ile "
-"tekrar kayıt olacaklar."
+"misiniz ? Bileşenler ve kısayollar ayarları bir sonraki açılışlarında ön "
+"tanımlı değerleri ile tekrar kayıt olacaklar."
 
 #. i18n: file: export_scheme_dialog.ui:17
 #. i18n: ectx: property (text), widget (QLabel, components_label)

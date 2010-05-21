@@ -185,9 +185,8 @@ msgid ""
 "Install button associated with a theme will install this theme locally."
 msgstr ""
 "Bu eylemi gerçekleştirebilmek için İnternet'e bağlı olmanız gerekir. http://"
-"www.kde.org web sitesinde bulunan duygu simgelerini gösteren bir "
-"pencere açılacak. Kur düğmesine bastığınızda tema yerel olarak diskinize "
-"kurulacak."
+"www.kde.org web sitesinde bulunan duygu simgelerini gösteren bir pencere "
+"açılacak. Kur düğmesine bastığınızda tema yerel olarak diskinize kurulacak."
 
 #: iconthemes.cpp:112
 msgid "Remove Theme"

@@ -201,4 +201,3 @@ msgstr ""
 "Bunlar farklı veriler için öntanımlı hedeflerdir\n"
 "tipler aşağıdaki sıradadır\n"
 "Olay, Yapılacak, Günlük, Bağlantı, Bütün, Bilinmeyen"
-

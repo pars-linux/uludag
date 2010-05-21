@@ -380,14 +380,12 @@ msgstr "&Araçlar"
 #. i18n: file: exporter/ktexteditor_exporterui.rc:5
 #. i18n: ectx: Menu (file)
 #: rc.cpp:8
-#| msgid "&File mask:"
 msgid "&File"
 msgstr "&Dosya"
 
 #. i18n: file: exporter/ktexteditor_exporterui.rc:9
 #. i18n: ectx: Menu (edit)
 #: rc.cpp:11
-#| msgid "&Edit..."
 msgid "&Edit"
 msgstr "&Düzenle"
 

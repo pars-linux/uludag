@@ -19,8 +19,6 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ions/wetter.com/ion_wettercom.cpp:167 ions/wetter.com/ion_wettercom.cpp:168
-#| msgctxt "weather forecast"
-#| msgid "A few clouds"
 msgctxt "weather condition"
 msgid "few clouds"
 msgstr "az bulutlu"
@@ -33,23 +31,17 @@ msgid "cloudy"
 msgstr "bulutlu"
 
 #: ions/wetter.com/ion_wettercom.cpp:171 ions/wetter.com/ion_wettercom.cpp:172
-#| msgctxt "weather condition"
-#| msgid "Overcast"
 msgctxt "weather condition"
 msgid "overcast"
 msgstr "bulutlu"
 
 #: ions/wetter.com/ion_wettercom.cpp:173 ions/wetter.com/ion_wettercom.cpp:174
 #: ions/wetter.com/ion_wettercom.cpp:175
-#| msgctxt "weather condition"
-#| msgid "hazy"
 msgctxt "weather condition"
 msgid "haze"
 msgstr "pus"
 
 #: ions/wetter.com/ion_wettercom.cpp:176 ions/wetter.com/ion_wettercom.cpp:177
-#| msgctxt "weather condition"
-#| msgid "Fog in Vicinity"
 msgctxt "weather condition"
 msgid "fog with icing"
 msgstr "buzlu sisli"
@@ -62,36 +54,26 @@ msgid "drizzle"
 msgstr "çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:180
-#| msgctxt "weather condition"
-#| msgid "Light Drizzle"
 msgctxt "weather condition"
 msgid "light drizzle"
 msgstr "hafif çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:182
-#| msgctxt "weather condition"
-#| msgid "Heavy Drizzle"
 msgctxt "weather condition"
 msgid "heavy drizzle"
 msgstr "şiddetli çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:183
-#| msgctxt "weather condition"
-#| msgid "Freezing drizzle"
 msgctxt "weather condition"
 msgid "freezing drizzle"
 msgstr "dondurucu çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:184
-#| msgctxt "weather condition"
-#| msgid "Heavy Freezing Drizzle"
 msgctxt "weather condition"
 msgid "heavy freezing drizzle"
 msgstr "şiddetli dondurucu çiseleme"
 
 #: ions/wetter.com/ion_wettercom.cpp:185
-#| msgctxt "weather condition"
-#| msgid "Rain"
 msgctxt "weather condition"
 msgid "rain"
 msgstr "yağmur"
@@ -104,8 +86,6 @@ msgid "light rain"
 msgstr "hafif yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:188
-#| msgctxt "visibility"
-#| msgid "Moderate"
 msgctxt "weather condition"
 msgid "moderate rain"
 msgstr "yağmur"
@@ -117,36 +97,26 @@ msgid "heavy rain"
 msgstr "şiddetli yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:190
-#| msgctxt "weather condition"
-#| msgid "Light Freezing Rain"
 msgctxt "weather condition"
 msgid "light freezing rain"
 msgstr "hafif donan yağmur"
 
 #: ions/wetter.com/ion_wettercom.cpp:191
-#| msgctxt "weather condition"
-#| msgid "Freezing rain"
 msgctxt "weather condition"
 msgid "freezing rain"
 msgstr "donmuş yağmur"
 
 #: ions/wetter.com/ion_wettercom.cpp:192
-#| msgctxt "weather condition"
-#| msgid "light rain shower"
 msgctxt "weather condition"
 msgid "light rain snow"
 msgstr "hafif sağanak yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:193
-#| msgctxt "weather condition"
-#| msgid "heavy rain shower"
 msgctxt "weather condition"
 msgid "heavy rain snow"
 msgstr "şiddetli sağanak yağmur yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:194
-#| msgctxt "weather condition"
-#| msgid "Snow"
 msgctxt "weather condition"
 msgid "snow"
 msgstr "kar"
@@ -159,8 +129,6 @@ msgid "light snow"
 msgstr "hafif kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:197
-#| msgctxt "visibility"
-#| msgid "Moderate"
 msgctxt "weather condition"
 msgid "moderate snow"
 msgstr "kar"
@@ -172,8 +140,6 @@ msgid "heavy snow"
 msgstr "şiddetli kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:199 ions/wetter.com/ion_wettercom.cpp:201
-#| msgctxt "weather forecast"
-#| msgid "Showers"
 msgctxt "weather condition"
 msgid "showers"
 msgstr "sağanak"
@@ -191,15 +157,11 @@ msgid "heavy showers"
 msgstr "şiddetli sağanak"
 
 #: ions/wetter.com/ion_wettercom.cpp:203
-#| msgctxt "weather condition"
-#| msgid "light snow showers"
 msgctxt "weather condition"
 msgid "light snow rain showers"
 msgstr "hafif sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:204
-#| msgctxt "weather condition"
-#| msgid "heavy snow showers"
 msgctxt "weather condition"
 msgid "heavy snow rain showers"
 msgstr "şiddetli sağanak kar yağışı"
@@ -211,36 +173,26 @@ msgid "light snow showers"
 msgstr "hafif sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:206
-#| msgctxt "weather condition"
-#| msgid "Snow Showers"
 msgctxt "weather condition"
 msgid "snow showers"
 msgstr "sağanak kar yağışı"
 
 #: ions/wetter.com/ion_wettercom.cpp:207 ions/wetter.com/ion_wettercom.cpp:208
-#| msgctxt "weather condition"
-#| msgid "thunder storm"
 msgctxt "weather condition"
 msgid "thunderstorm"
 msgstr "gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:209
-#| msgctxt "weather condition"
-#| msgid "Light Thunderstorm Rain"
 msgctxt "weather condition"
 msgid "light thunderstorm"
 msgstr "hafif gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:210
-#| msgctxt "weather condition"
-#| msgid "Heavy Thunderstorm Rain"
 msgctxt "weather condition"
 msgid "heavy thunderstorm"
 msgstr "şiddetli gök gürültülü fırtına"
 
 #: ions/wetter.com/ion_wettercom.cpp:211
-#| msgctxt "weather condition"
-#| msgid "na"
 msgctxt "weather condition"
 msgid "n/a"
 msgstr "n/a"
@@ -271,7 +223,6 @@ msgid "%1 (%2), %3, %4"
 msgstr "%1 (%2), %3, %4"
 
 #: ions/wetter.com/ion_wettercom.cpp:701
-#| msgid "day"
 msgid "Day"
 msgstr "Gündüz"
 

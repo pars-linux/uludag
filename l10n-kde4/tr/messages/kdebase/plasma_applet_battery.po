@@ -120,8 +120,7 @@ msgid "Show charge &information"
 msgstr "Şa&rj bilgilerini göster"
 
 #. i18n: file: batteryConfig.ui:33
-#. i18n: ectx: property (text), widget (QCheckBox,
-#. showMultipleBatteriesCheckBox)
+#. i18n: ectx: property (text), widget (QCheckBox, showMultipleBatteriesCheckBox)
 #: rc.cpp:9 rc.cpp:18
 msgid "Show the state for &each battery present"
 msgstr "Takılı olan &her pil için pil durumunu göster"

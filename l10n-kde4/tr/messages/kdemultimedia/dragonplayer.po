@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dragonplayer\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:28+0100\n"
+"POT-Creation-Date: 2010-04-29 01:23+0200\n"
 "PO-Revision-Date: 2009-07-31 11:35+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -25,35 +25,35 @@ msgstr "&DVD Altyazı Seçimi"
 msgid "&Auto"
 msgstr "&Otomatik"
 
-#: src/app/mainWindow.cpp:148
+#: src/app/mainWindow.cpp:149
 msgid "Aspect &Ratio"
 msgstr "Görünüm &Oranı"
 
-#: src/app/mainWindow.cpp:149
+#: src/app/mainWindow.cpp:150
 msgid "&Audio Channels"
 msgstr "&Ses Kanalları"
 
-#: src/app/mainWindow.cpp:150
+#: src/app/mainWindow.cpp:151
 msgid "&Subtitles"
 msgstr "&Altyazılar"
 
-#: src/app/mainWindow.cpp:166
+#: src/app/mainWindow.cpp:167
 msgid "Determine &Automatically"
 msgstr "Otomatik Olar&ak Belirle"
 
-#: src/app/mainWindow.cpp:167
+#: src/app/mainWindow.cpp:168
 msgid "&4:3"
 msgstr "&4:3"
 
-#: src/app/mainWindow.cpp:168
+#: src/app/mainWindow.cpp:169
 msgid "Ana&morphic (16:9)"
 msgstr "Ana&morphic (16:9)"
 
-#: src/app/mainWindow.cpp:169
+#: src/app/mainWindow.cpp:170
 msgid "&Window Size"
 msgstr "&Pencere Boyutu"
 
-#: src/app/mainWindow.cpp:218
+#: src/app/mainWindow.cpp:219
 msgid ""
 "<qt>xine could not be successfully initialised. Dragon Player will now exit. "
 "You can try to identify what is wrong with your xine installation using the "
@@ -63,87 +63,83 @@ msgstr ""
 "uygulamasından çıkılıyor. Xine kurulumunuzla ilgili sorunu anlayabilmek için "
 "komut satırından <b>xine-check</b> komutunu kullanabilirsiniz.</qt>"
 
-#: src/app/mainWindow.cpp:292
+#: src/app/mainWindow.cpp:293
 msgid "Play &Media..."
 msgstr "Ortamı &Oynat..."
 
-#: src/app/mainWindow.cpp:306
+#: src/app/mainWindow.cpp:307
 msgid "Stop"
 msgstr "Dur"
 
-#: src/app/mainWindow.cpp:312
+#: src/app/mainWindow.cpp:313
 msgctxt "Mute the sound output"
 msgid "Mute"
 msgstr "Sessiz"
 
-#: src/app/mainWindow.cpp:318
+#: src/app/mainWindow.cpp:319
 msgid "Reset Video Scale"
 msgstr "Video Boyutunu Sıfırla"
 
-#: src/app/mainWindow.cpp:324
+#: src/app/mainWindow.cpp:325
 msgid "Menu Toggle"
 msgstr "Menüyü Aç / Kapat"
 
-#: src/app/mainWindow.cpp:330 src/app/part.cpp:66
+#: src/app/mainWindow.cpp:331 src/app/part.cpp:66
 msgid "Position Slider"
 msgstr "Konum Çubuğu"
 
-#: src/app/mainWindow.cpp:335
+#: src/app/mainWindow.cpp:336
 msgid "Video Settings"
 msgstr "Video Ayarları"
 
-#: src/app/mainWindow.cpp:341
+#: src/app/mainWindow.cpp:342
 msgid "Previous Chapter"
 msgstr "Önceki Bölüm"
 
-#: src/app/mainWindow.cpp:347
+#: src/app/mainWindow.cpp:348
 msgid "Next Chapter"
 msgstr "Sonraki Bölüm"
 
-#: src/app/mainWindow.cpp:354
+#: src/app/mainWindow.cpp:355
 #, no-c-format
 msgid "Return 10% Back"
 msgstr "10% Geri Git"
 
-#: src/app/mainWindow.cpp:361
+#: src/app/mainWindow.cpp:362
 #, no-c-format
 msgid "Go 10% Forward"
 msgstr "10% İleri Git"
 
-#: src/app/mainWindow.cpp:367
+#: src/app/mainWindow.cpp:368
 msgid "Return 10 Seconds Back"
 msgstr "10 Saniye Geri Git"
 
-#: src/app/mainWindow.cpp:373
+#: src/app/mainWindow.cpp:374
 msgid "Go 10 Seconds Forward"
 msgstr "10 Saniye İleri Git"
 
-#: src/app/mainWindow.cpp:459
+#: src/app/mainWindow.cpp:460
 msgctxt "Mute the sound output"
 msgid "Mute "
 msgstr "Sessiz "
 
-#: src/app/mainWindow.cpp:536
+#: src/app/mainWindow.cpp:537
 msgid "Dragon Player was asked to open an empty URL; it cannot."
 msgstr "Dragon uygulamasına boş bir adres açması önerildi, bu yapılamaz."
 
-#: src/app/mainWindow.cpp:557
-msgid "There was an internal error with the media slave..."
-msgstr "Media aracısı ile ilgili bir hata oluştu..."
-
-#: src/app/mainWindow.cpp:607
+#: src/app/mainWindow.cpp:608
 msgid "Select File to Play"
 msgstr "Oynatılacak Dosyayı Seçin"
 
-#: src/app/mainWindow.cpp:750
+#: src/app/mainWindow.cpp:751
 msgid "Sorry, no media was found in the drop"
 msgstr "Üzgünüm, hiç ortam yok"
 
-#: src/app/mainWindow.cpp:788
+#: src/app/mainWindow.cpp:789
 msgid "No media loaded"
 msgstr "Hiç ortam yüklenmedi"
 
-#: src/app/mainWindow.cpp:792
+#: src/app/mainWindow.cpp:793
 msgid "Paused"
 msgstr "Duraklatılmış"
 
@@ -416,6 +412,9 @@ msgstr "&Ayarlar"
 #: rc.cpp:35
 msgid "Main Toolbar"
 msgstr "Ana Araç Çubuğu"
+
+#~ msgid "There was an internal error with the media slave..."
+#~ msgstr "Media aracısı ile ilgili bir hata oluştu..."
 
 #~ msgid "Show Additional Debug Output"
 #~ msgstr "Ek Hata Ayıklama Çıktılarını Göster"

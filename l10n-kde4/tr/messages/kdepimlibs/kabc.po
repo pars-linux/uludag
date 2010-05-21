@@ -684,4 +684,3 @@ msgstr "Öntanımlı Adres Defteri"
 #, kde-format
 msgid "Unable to save to resource '%1'. It is locked."
 msgstr "'%1' kaynağı kaydedilemedi. Kilitli."
-

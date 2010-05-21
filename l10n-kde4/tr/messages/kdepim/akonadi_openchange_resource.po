@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -78,8 +78,12 @@ msgid "Authentication domain"
 msgstr "Yetkilendirme alan adı"
 
 #: profileeditdialog.cpp:99
-msgid "The authentication domain (also known as realm) to use for this account. Ask your exchange server administrator if you are do not know about this."
-msgstr "Bu hesap için kullanılacak yetkilendirme alan adı (realm olarak da bilinir). Eğer bu konu hakkında bilginiz yoksa exchange sunucu yöneticinize danışın."
+msgid ""
+"The authentication domain (also known as realm) to use for this account. Ask "
+"your exchange server administrator if you are do not know about this."
+msgstr ""
+"Bu hesap için kullanılacak yetkilendirme alan adı (realm olarak da bilinir). "
+"Eğer bu konu hakkında bilginiz yoksa exchange sunucu yöneticinize danışın."
 
 #: profileeditdialog.cpp:106
 msgid "OK"

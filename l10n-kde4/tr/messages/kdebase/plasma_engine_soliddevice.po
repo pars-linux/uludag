@@ -718,5 +718,3 @@ msgstr "Sıcaklık"
 #: soliddeviceengine.cpp:590
 msgid "Temperature Unit"
 msgstr "Sıcaklık Birimi"
-
-

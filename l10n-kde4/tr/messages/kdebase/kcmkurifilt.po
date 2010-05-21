@@ -1,7 +1,7 @@
 # translation of kcmkurifilt.po to Türkçe
 # translation of kcmkurifilt.po to Turkish
 # Copyright (C) 2003, 2004 Free Software Foundation, Inc.
-# 
+#
 # Erol Öz <eroloz@bilgi.edu.tr>, YEAR.
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
@@ -21,8 +21,21 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 
 #: main.cpp:46
-msgid "<h1>Enhanced Browsing</h1> In this module you can configure some enhanced browsing features of KDE. <h2>Web Shortcuts</h2>Web Shortcuts are a quick way of using Web search engines. For example, type \"altavista:frobozz\" or \"av:frobozz\" and Konqueror will do a search on AltaVista for \"frobozz\". Even easier: just press Alt+F2 (if you have not changed this shortcut) and enter the shortcut in the KDE Run Command dialog."
-msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama özelliklerini yapılandırabilirsiniz. <h2>Web Kısayolları</h2>Web kısayolları, web arama motorlarını kullanmanın hızlı bir yoludur. Örneğin, \"altavista:frobozz\" veya \"av:frobozz\" yazarak Konqueror tarayıcısının AltaVista üzerinde \"frobozz\" kelimesini aramasını sağlayabilirsiniz. Daha da kolayı, ALT+F2'ye basın (Eğer bu kısayola değiştirmediyseniz) ve aynı web kısayolunu bu komut çalıştırma ekranında kullanın."
+msgid ""
+"<h1>Enhanced Browsing</h1> In this module you can configure some enhanced "
+"browsing features of KDE. <h2>Web Shortcuts</h2>Web Shortcuts are a quick "
+"way of using Web search engines. For example, type \"altavista:frobozz\" or "
+"\"av:frobozz\" and Konqueror will do a search on AltaVista for \"frobozz\". "
+"Even easier: just press Alt+F2 (if you have not changed this shortcut) and "
+"enter the shortcut in the KDE Run Command dialog."
+msgstr ""
+"<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama "
+"özelliklerini yapılandırabilirsiniz. <h2>Web Kısayolları</h2>Web "
+"kısayolları, web arama motorlarını kullanmanın hızlı bir yoludur. Örneğin, "
+"\"altavista:frobozz\" veya \"av:frobozz\" yazarak Konqueror tarayıcısının "
+"AltaVista üzerinde \"frobozz\" kelimesini aramasını sağlayabilirsiniz. Daha "
+"da kolayı, ALT+F2'ye basın (Eğer bu kısayola değiştirmediyseniz) ve aynı web "
+"kısayolunu bu komut çalıştırma ekranında kullanın."
 
 #~ msgid "Under construction..."
 #~ msgstr "Yapım aşamasında..."
@@ -35,17 +48,23 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 
 #~ msgid ""
 #~ "<qt>\n"
-#~ "Enable shortcuts that allow you to quickly search for information on the web. For example, entering the shortcut <b>gg:KDE</b> will result in a search of the word <b>KDE</b> on the Google(TM) search engine.\n"
+#~ "Enable shortcuts that allow you to quickly search for information on the "
+#~ "web. For example, entering the shortcut <b>gg:KDE</b> will result in a "
+#~ "search of the word <b>KDE</b> on the Google(TM) search engine.\n"
 #~ "</qt>"
 #~ msgstr ""
 #~ "<qt>\n"
-#~ "Eğer bu kutucuk işaretli ise, KDE İnternet üzerinde arama yapmak için kısayolları kullanmanıza olanak tanıyacaktır. Örnek olarak, <b>gg:KDE</b> yazılırsa <b>KDE</b> kelimesi Google arama motoru içinde aratılacaktır.\n"
+#~ "Eğer bu kutucuk işaretli ise, KDE İnternet üzerinde arama yapmak için "
+#~ "kısayolları kullanmanıza olanak tanıyacaktır. Örnek olarak, <b>gg:KDE</b> "
+#~ "yazılırsa <b>KDE</b> kelimesi Google arama motoru içinde aratılacaktır.\n"
 #~ "</qt>"
 
 #~ msgid "&Keyword delimiter:"
 #~ msgstr "&Anahtar kelime ayracı:"
 
-#~ msgid "Choose the delimiter that separates the keyword from the phrase or word to be searched."
+#~ msgid ""
+#~ "Choose the delimiter that separates the keyword from the phrase or word "
+#~ "to be searched."
 #~ msgstr "Aranacak kelimeden anahtar kelimeyi ayıracak olan ayracı seçin."
 
 #~ msgid "Default &search engine:"
@@ -53,11 +72,15 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 
 #~ msgid ""
 #~ "<qt>\n"
-#~ "Select the search engine to use for input boxes that provide automatic lookup services when you type in normal words and phrases instead of a URL. To disable this feature select <b>None</b> from the list.\n"
+#~ "Select the search engine to use for input boxes that provide automatic "
+#~ "lookup services when you type in normal words and phrases instead of a "
+#~ "URL. To disable this feature select <b>None</b> from the list.\n"
 #~ "</qt>"
 #~ msgstr ""
 #~ "<qt>\n"
-#~ "Normal kelime veya cümle girdiğinizde otomatik arama yapılacak arama motorunu seçin. Bu özelliği iptal etmek için listeden <b>Yok</b>'u seçin.\n"
+#~ "Normal kelime veya cümle girdiğinizde otomatik arama yapılacak arama "
+#~ "motorunu seçin. Bu özelliği iptal etmek için listeden <b>Yok</b>'u "
+#~ "seçin.\n"
 #~ "</qt>"
 
 #~ msgid "None"
@@ -87,8 +110,11 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 #~ msgid "Shortcuts"
 #~ msgstr "Kısayollar"
 
-#~ msgid "List of search providers, their associated shortcuts and whether they shall be listed in menus."
-#~ msgstr "Bu liste KDE'nin kullandığı arama motorlarını ve kısayollarını gösterir."
+#~ msgid ""
+#~ "List of search providers, their associated shortcuts and whether they "
+#~ "shall be listed in menus."
+#~ msgstr ""
+#~ "Bu liste KDE'nin kullandığı arama motorlarını ve kısayollarını gösterir."
 
 #~ msgid "Colon"
 #~ msgstr "Sütun"
@@ -102,7 +128,8 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 #~ msgid "&Charset:"
 #~ msgstr "&Karakter Kümesi:"
 
-#~ msgid "Select the character set that will be used to encode your search query"
+#~ msgid ""
+#~ "Select the character set that will be used to encode your search query"
 #~ msgstr "Arama işleminde kullanılacak karakter kümesini girin"
 
 #~ msgid "Search &URI:"
@@ -113,16 +140,21 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 
 #~ msgid ""
 #~ "<qt>\n"
-#~ "The shortcuts entered here can be used as a pseudo-URI scheme in KDE. For example, the shortcut <b>av</b> can be used as in <b>av</b>:<b>my search</b>\n"
+#~ "The shortcuts entered here can be used as a pseudo-URI scheme in KDE. For "
+#~ "example, the shortcut <b>av</b> can be used as in <b>av</b>:<b>my search</"
+#~ "b>\n"
 #~ "</qt>"
 #~ msgstr ""
-#~ "<qt>Buraya girilen kısayollar KDE içinde de kullanılabilir. Örnek olarak <b>av</b> kısayolu aynı zamanda <b>av</b>:<b>arama satırım</b> olarak da kullanılabilir.\n"
+#~ "<qt>Buraya girilen kısayollar KDE içinde de kullanılabilir. Örnek olarak "
+#~ "<b>av</b> kısayolu aynı zamanda <b>av</b>:<b>arama satırım</b> olarak da "
+#~ "kullanılabilir.\n"
 #~ "</qt>"
 
 #~ msgid "UR&I shortcuts:"
 #~ msgstr "&URI kısayolları:"
 
-#~ msgid "Select the character set that will be used to encode your search query."
+#~ msgid ""
+#~ "Select the character set that will be used to encode your search query."
 #~ msgstr "Arama işleminde kullanılacak karakter kümesini girin."
 
 #~ msgid "Search F&ilters"
@@ -136,10 +168,12 @@ msgstr "<h1>Gelişmiş Tarama</h1> Bu modülde KDE'nin bazı gelişmiş tarama �
 
 #~ msgid ""
 #~ "The URI does not contain a \\{...} placeholder for the user query.\n"
-#~ "This means that the same page is always going to be visited, regardless of what the user types."
+#~ "This means that the same page is always going to be visited, regardless "
+#~ "of what the user types."
 #~ msgstr ""
 #~ "URI kullanıcı sorgusu için bir \\{...} yertutucu içermiyor.\n"
-#~ "Bu, kullanıcı ne yazarsa yazsın aynı sayfaların herzaman ziyaret edileceği anlamına gelir."
+#~ "Bu, kullanıcı ne yazarsa yazsın aynı sayfaların herzaman ziyaret "
+#~ "edileceği anlamına gelir."
 
 #~ msgid "Keep It"
 #~ msgstr "Tut"

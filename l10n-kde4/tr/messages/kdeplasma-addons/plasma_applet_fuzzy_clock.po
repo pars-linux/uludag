@@ -437,4 +437,3 @@ msgstr "Bulanıklık derecesi:"
 #: rc.cpp:99
 msgid "1: least fuzzy"
 msgstr "1: en az bulanıklık"
-

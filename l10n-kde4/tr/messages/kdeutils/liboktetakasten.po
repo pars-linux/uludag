@@ -45,8 +45,6 @@ msgid "Char"
 msgstr "Char"
 
 #: gui/liboktetawidgets/bytearraycombobox_p.cpp:48
-#| msgctxt "@label:textbox"
-#| msgid "UTF-8"
 msgctxt ""
 "@item:inlistbox coding of the bytes as UTF-8 characters with the values"
 msgid "UTF-8"
@@ -372,8 +370,6 @@ msgid "true (%1)"
 msgstr "doğru (%1)"
 
 #: controllers/view/structures/datatypes/int8datainformation.h:38
-#| msgid " byte"
-#| msgid_plural " bytes"
 msgctxt "Data type"
 msgid "byte"
 msgstr "byte"
@@ -389,8 +385,6 @@ msgid "double"
 msgstr "double"
 
 #: controllers/view/structures/datatypes/int32datainformation.h:39
-#| msgctxt "@item:inlistbox coding of the bytes as values in the binary format"
-#| msgid "Bin"
 msgctxt "Data type"
 msgid "int"
 msgstr "int"
@@ -406,8 +400,6 @@ msgid "long"
 msgstr "long"
 
 #: controllers/view/structures/datatypes/uint8datainformation.h:38
-#| msgctxt "@label:textbox"
-#| msgid "Unsigned 8-bit"
 msgctxt "Data type"
 msgid "unsigned byte"
 msgstr "unsigned byte"
@@ -422,8 +414,6 @@ msgid_plural "%1 bytes"
 msgstr[0] "%1 bayt"
 
 #: controllers/view/structures/datatypes/chardatainformation.h:54
-#| msgctxt "@title:column short for Character"
-#| msgid "Char"
 msgctxt "Data type"
 msgid "char"
 msgstr "char"
@@ -455,8 +445,6 @@ msgstr "Boş dizi"
 
 #: controllers/view/structures/datatypes/abstractarraydatainformation.cpp:36
 #, kde-format
-#| msgctxt "@item description of bookmark"
-#| msgid "%1: %2"
 msgctxt "array type then length"
 msgid "%1[%2]"
 msgstr "%1[%2]"
@@ -469,8 +457,6 @@ msgstr "%1[%2] (%3)"
 
 #: controllers/view/structures/datatypes/enumdatainformation.cpp:59
 #, kde-format
-#| msgctxt "@item description of bookmark"
-#| msgid "%1: %2"
 msgid "%1 (%2)"
 msgstr "%1 (%2)"
 
@@ -520,8 +506,6 @@ msgid "bool (8 bytes)"
 msgstr "bool (8 bayt)"
 
 #: controllers/view/structures/datatypes/bool8datainformation.h:38
-#| msgid "1 byte"
-#| msgid_plural "%1 bytes"
 msgctxt "Data type"
 msgid "bool (1 byte)"
 msgstr "bool (1 byte)"
@@ -532,22 +516,16 @@ msgid "union"
 msgstr "union"
 
 #: controllers/view/structures/datatypes/uint32datainformation.h:38
-#| msgctxt "@label:textbox"
-#| msgid "Unsigned 8-bit"
 msgctxt "Data type"
 msgid "unsigned int"
 msgstr "unsigned int"
 
 #: controllers/view/structures/datatypes/uint16datainformation.h:38
-#| msgctxt "@label:textbox"
-#| msgid "Unsigned 8-bit"
 msgctxt "Data type"
 msgid "unsigned short"
 msgstr "unsigned short"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:80
-#| msgctxt "@title:column description of the change"
-#| msgid "Changes"
 msgid "Apply Changes"
 msgstr "Değişiklikleri Uygula"
 
@@ -580,15 +558,11 @@ msgid "You do not have permission to delete that structure definition."
 msgstr "Bu yapı tanımlamasını silmeye yetkiniz yok."
 
 #: controllers/view/structures/settings/structureaddremovewidget.cpp:56
-#| msgctxt "@option:check"
-#| msgid "&Selected bytes"
 msgctxt "@info:label"
 msgid "Installed structures:"
 msgstr "Yüklenen yapılar:"
 
 #: controllers/view/structures/settings/structureaddremovewidget.cpp:66
-#| msgctxt "@option:check"
-#| msgid "&Selected bytes"
 msgctxt "@info:label"
 msgid "Used structures:"
 msgstr "Kullanılan yapılar"
@@ -626,8 +600,6 @@ msgid "The byte order used to decode the values."
 msgstr "Değerleri çözmek için kullanılacak bayt sırası."
 
 #: controllers/view/structures/structview.cpp:100
-#| msgctxt "@title:window of the tool to extract strings"
-#| msgid "Strings"
 msgid "Settings"
 msgstr "Ayarlar"
 
@@ -637,14 +609,10 @@ msgid "Open settings."
 msgstr "Ayarları aç."
 
 #: controllers/view/structures/structview.cpp:132
-#| msgctxt "@item name of the encoding result"
-#| msgid "Values"
 msgid "Value Display"
 msgstr "Değer Görüntüsü"
 
 #: controllers/view/structures/structview.cpp:142
-#| msgctxt "@option:check"
-#| msgid "&Selected bytes"
 msgid "Structures"
 msgstr "Yapılar"
 
@@ -663,15 +631,11 @@ msgid "Name"
 msgstr "İsim"
 
 #: controllers/view/structures/structtool.cpp:189
-#| msgctxt "@title:column name of the datatype"
-#| msgid "Type"
 msgctxt "type of a data structure"
 msgid "Type"
 msgstr "Tip"
 
 #: controllers/view/structures/structtool.cpp:191
-#| msgctxt "@title:column value of the bytes for the datatype"
-#| msgid "Value"
 msgctxt "value of a data structure (primitive type)"
 msgid "Value"
 msgstr "Değer"
@@ -701,9 +665,8 @@ msgid ""
 "is searched for all strings which have the set minimum length. This strings "
 "found will be listed in the view below."
 msgstr ""
-"Eğer <interface>Çıkart</interface> düğmesine basarsanız, seçili aralık "
-"en kısa uzunluğa sahip tüm dizgiler aranır. Bulunan dizgiler aşağıda "
-"listelenir."
+"Eğer <interface>Çıkart</interface> düğmesine basarsanız, seçili aralık en "
+"kısa uzunluğa sahip tüm dizgiler aranır. Bulunan dizgiler aşağıda listelenir."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:88
 msgctxt "@label:lineedit filter term for displayed strings"
@@ -729,8 +692,8 @@ msgid ""
 "If you press the <interface>Copy</interface> button, all strings you "
 "selected in the list are copied to the clipboard."
 msgstr ""
-"Eğer <interface>Kopyala</interface> düğmesine basarsanız, "
-"listeden seçtiğiniz tüm dizgiler panoya kopyalanır."
+"Eğer <interface>Kopyala</interface> düğmesine basarsanız, listeden "
+"seçtiğiniz tüm dizgiler panoya kopyalanır."
 
 #: controllers/view/stringsextract/stringsextractview.cpp:147
 msgid "&Show"
@@ -808,9 +771,8 @@ msgid ""
 "selected above is executed for the bytes in the selected range with the "
 "given options."
 msgstr ""
-"Eğer <interface>Filtre</interface> düğmesine basarsanız, yukarıda "
-"seçtiğiniz işlem, seçili aralıktaki baytlar için, verdiğiniz seçeneklerle "
-"çalıştırılır."
+"Eğer <interface>Filtre</interface> düğmesine basarsanız, yukarıda seçtiğiniz "
+"işlem, seçili aralıktaki baytlar için, verdiğiniz seçeneklerle çalıştırılır."
 
 #: controllers/view/filter/filtertool.cpp:54
 msgctxt "@title:window"
@@ -825,9 +787,6 @@ msgid "Find"
 msgstr "Bul"
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:71
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Enter a pattern to search for, or select a previous pattern from the list."
 msgctxt "@info:tooltip"
 msgid ""
 "Enter the bytes to search for, or select bytes previously searched for from "
@@ -862,8 +821,8 @@ msgstr "Sadece tüm &sözcükler"
 msgctxt "@info:whatsthis"
 msgid "Require word boundaries in both ends of a match to succeed."
 msgstr ""
-"Başarılı eşleşme için eşleşmenin her iki tarafında da kelime "
-"sınırı (word boundaries) gerektir."
+"Başarılı eşleşme için eşleşmenin her iki tarafında da kelime sınırı (word "
+"boundaries) gerektir."
 
 #: controllers/view/libfinddialog/kabstractfinddialog.cpp:104
 msgctxt "@info:whatsthis"
@@ -1287,8 +1246,7 @@ msgid ""
 "negative to the left."
 msgstr ""
 "Kaydırmanın genişliğini denetler. Pozitif sayılar bitleri sağa, negatif "
-"sayılar "
-"sola kaydırır."
+"sayılar sola kaydırır."
 
 #: controllers/view/libbytearrayfilter/filter/reversebytearrayfilterparametersetedit.cpp:45
 msgctxt "@option:check"
@@ -1429,9 +1387,9 @@ msgid ""
 "updated to all strings which are contained in the selected range and have "
 "the set minimum length."
 msgstr ""
-"Eğer <interface>Hesapla</interface> düğmesine basarsanız liste, "
-"seçili aralıkta bulunan ve en kısa uzunluğa sahip dizgileri içerecek "
-"şekilde güncellenecektir."
+"Eğer <interface>Hesapla</interface> düğmesine basarsanız liste, seçili "
+"aralıkta bulunan ve en kısa uzunluğa sahip dizgileri içerecek şekilde "
+"güncellenecektir."
 
 #: controllers/view/search/ksearchdialog.cpp:39
 msgctxt "@title:window"
@@ -1638,9 +1596,8 @@ msgid ""
 ">Overwrite the following bytes or insert new ones as needed?"
 msgstr ""
 "Yeni değer <emphasis>daha fazla</emphasis> bayt gerektiriyor (%2 yerine %1)."
-"<nl/"
-">Aşağıdaki baytların üzerine mi yazılsın yoksa gerektiği gibi yenileri mi "
-"eklensin?"
+"<nl/>Aşağıdaki baytların üzerine mi yazılsın yoksa gerektiği gibi yenileri "
+"mi eklensin?"
 
 #: controllers/view/replace/replacecontroller.cpp:84
 #: controllers/view/replace/replacecontroller.cpp:97
@@ -1694,16 +1651,11 @@ msgstr ""
 "baytlarıyla değiştirilir."
 
 #: controllers/view/replace/kreplacedialog.cpp:57
-#| msgctxt "@title:window prompt for iterative replacement"
-#| msgid "Replace"
 msgctxt "@title:group"
 msgid "Replace With"
 msgstr "Değiştir"
 
 #: controllers/view/replace/kreplacedialog.cpp:64
-#| msgctxt "@info:whatsthis"
-#| msgid ""
-#| "Enter a pattern to search for, or select a previous pattern from the list."
 msgctxt "@info:tooltip"
 msgid ""
 "Enter the bytes to replace with, or select bytes previously replaced with "
@@ -2013,8 +1965,6 @@ msgstr "Veriden oluşturuldu."
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:102
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_CharDisplayBase)
 #: rc.cpp:3 rc.cpp:15 rc.cpp:33
-#| msgctxt "@item:inmenu encoding of the bytes as values in the binary format"
-#| msgid "Binary"
 msgid "Binary"
 msgstr "İkilik"
 
@@ -2025,8 +1975,6 @@ msgstr "İkilik"
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:107
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_CharDisplayBase)
 #: rc.cpp:6 rc.cpp:18 rc.cpp:36
-#| msgctxt "@item:inmenu encoding of the bytes as values in the decimal format"
-#| msgid "Decimal"
 msgid "Decimal"
 msgstr "Ondalık"
 
@@ -2037,9 +1985,6 @@ msgstr "Ondalık"
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:112
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_CharDisplayBase)
 #: rc.cpp:9 rc.cpp:21 rc.cpp:39
-#| msgctxt ""
-#| "@item:inmenu encoding of the bytes as values in the hexadecimal format"
-#| msgid "Hexadecimal"
 msgid "Hexadecimal"
 msgstr "Onaltılık"
 
@@ -2058,16 +2003,12 @@ msgstr "İşaretsiz değerler:"
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:84
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowCharNumericalValue)
 #: rc.cpp:27
-#| msgctxt "@title:menu"
-#| msgid "&Show Values or Chars"
 msgid "Show numerical value of chars"
 msgstr "Karakterlerin sayısal değerini göster"
 
 #. i18n: file: controllers/view/structures/settings/structviewdisplaysettingswidget.ui:91
 #. i18n: ectx: property (text), widget (QLabel, char_label)
 #: rc.cpp:30
-#| msgctxt "@info:tooltip column contains the character with the value"
-#| msgid "Character"
 msgid "Character value:"
 msgstr "Karakter değeri:"
 

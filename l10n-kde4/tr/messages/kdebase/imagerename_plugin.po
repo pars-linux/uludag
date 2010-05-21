@@ -1,6 +1,6 @@
 # translation of imagerename_plugin.po to Türkçe
 # Copyright (C) 2004, 2007 Free Software Foundation, Inc.
-# 
+#
 # Görkem Çetin <gorkem@kde.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""

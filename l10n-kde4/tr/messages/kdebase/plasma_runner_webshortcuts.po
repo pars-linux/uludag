@@ -33,10 +33,12 @@ msgstr "%1: %2 %3"
 #: webshortcutrunner.cpp:102
 #, kde-format
 msgid ""
-"Opens the location associated with \"shortcut\" in a web browser with the query :q:. Known shortcuts include:\n"
+"Opens the location associated with \"shortcut\" in a web browser with the "
+"query :q:. Known shortcuts include:\n"
 "%1"
 msgstr ""
-"\"kısayol\" ile ilişkilendirilmiş konumu :q: sorgusu ile birlikte ağ tarayıcıda açar. Bilinen kısayollar:\n"
+"\"kısayol\" ile ilişkilendirilmiş konumu :q: sorgusu ile birlikte ağ "
+"tarayıcıda açar. Bilinen kısayollar:\n"
 "%1"
 
 #: webshortcutrunner.cpp:167

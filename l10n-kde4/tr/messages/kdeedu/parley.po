@@ -213,12 +213,10 @@ msgid "Internet"
 msgstr "İnternet"
 
 #: src/editor/editor.cpp:377
-#| msgid "Open Vocabulary Document"
 msgid "&Upload Vocabulary Document..."
 msgstr "Sözcük Hazinesi Belgesi &Yükle"
 
 #: src/editor/editor.cpp:378
-#| msgid "Save the active vocabulary collection with a different name"
 msgid "Share the current vocabulary collection with other users."
 msgstr "Etkin sözcük hazinesi koleksiyonunu diğer kullanıcılarla paylaş."
 
@@ -2032,7 +2030,6 @@ msgstr "Sözcük tipi"
 #. i18n: file: src/editor/editorui.rc:7
 #. i18n: ectx: Menu (file)
 #: rc.cpp:260
-#| msgid "&Fixed"
 msgid "&File"
 msgstr "&Dosya"
 

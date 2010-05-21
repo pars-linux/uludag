@@ -91,8 +91,7 @@ msgid ""
 "selected game type."
 msgstr ""
 "Seçili oyun tipi için bütün iç parametrelerin değerlerini listeleyen bir "
-"diyalog "
-"penceresi açar."
+"diyalog penceresi açar."
 
 #: main.cpp:31
 msgid "Killbots"
@@ -223,10 +222,9 @@ msgid ""
 "mouse. It also displays certain statistics about the game in progress."
 msgstr ""
 "Burası Killbots ile etkileşime geçmek için kullanılan ana oyun alanıdır. "
-"Oyun "
-"ızgarasının mevcut durumunu gösterir ve fareyi kullanarak kahramanı kontrol "
-"eder. "
-"Aynı zamanda oynanmakta olan oyun hakkında bir takım istatistikler gösterir."
+"Oyun ızgarasının mevcut durumunu gösterir ve fareyi kullanarak kahramanı "
+"kontrol eder. Aynı zamanda oynanmakta olan oyun hakkında bir takım "
+"istatistikler gösterir."
 
 #: mainwindow.cpp:116
 msgid "General"
@@ -495,8 +493,8 @@ msgid ""
 "death of the hero (other than random teleports and waiting out the round)."
 msgstr ""
 "Seçildiği zaman, kahramanın (turun sonunu beklemek ya da rastgele "
-"ışınlanmalar dışında) "
-"ani ölümü ile sonuçlanabilecek herhangi bir adımı oyun yok sayacaktır."
+"ışınlanmalar dışında) ani ölümü ile sonuçlanabilecek herhangi bir adımı oyun "
+"yok sayacaktır."
 
 #. i18n: file: killbots.kcfg:43
 #. i18n: ectx: tooltip, entry (Ruleset), group (General)

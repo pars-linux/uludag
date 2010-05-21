@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_extragear-network_ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-03-14 00:27+0000\n"
+"POT-Creation-Date: 2010-05-18 23:29+0000\n"
 "PO-Revision-Date: 2009-04-25 14:12+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -33,12 +33,12 @@ msgctxt "Name"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: ktorrent/ktorrent.desktop:51
+#: ktorrent/ktorrent.desktop:54
 msgctxt "GenericName"
 msgid "BitTorrent Client"
 msgstr "BitTorrent İstemcisi"
 
-#: ktorrent/ktorrent.desktop:105
+#: ktorrent/ktorrent.desktop:111
 msgctxt "Comment"
 msgid "A BitTorrent program for KDE"
 msgstr "KDE için BitTorrent uygulaması"
@@ -48,62 +48,67 @@ msgctxt "Comment"
 msgid "KTorrent"
 msgstr "KTorrent"
 
-#: ktorrent/ktorrent.notifyrc:51
+#: ktorrent/ktorrent.notifyrc:54
 msgctxt "Name"
 msgid "Torrent stopped by error"
 msgstr "Torrent bir hata tarafından durduruldu"
 
-#: ktorrent/ktorrent.notifyrc:95
+#: ktorrent/ktorrent.notifyrc:100
 msgctxt "Name"
 msgid "Torrent has finished downloading"
 msgstr "Torrent indirme işlemi tamamlandı"
 
-#: ktorrent/ktorrent.notifyrc:139
+#: ktorrent/ktorrent.notifyrc:146
 msgctxt "Name"
 msgid "Maximum share ratio reached"
 msgstr "En yüksek paylaşım oranına ulaşıldı"
 
-#: ktorrent/ktorrent.notifyrc:182
+#: ktorrent/ktorrent.notifyrc:191
 msgctxt "Name"
 msgid "Maximum seed time reached"
 msgstr "En yüksek paylaşım süresine ulaşıldı"
 
-#: ktorrent/ktorrent.notifyrc:225
+#: ktorrent/ktorrent.notifyrc:236
 msgctxt "Name"
 msgid "Disk space is running low"
 msgstr "Disk alanı azalıyor"
 
-#: ktorrent/ktorrent.notifyrc:269
+#: ktorrent/ktorrent.notifyrc:282
 msgctxt "Name"
 msgid "Corrupted data has been found"
 msgstr "Bozuk veri bulundu"
 
-#: ktorrent/ktorrent.notifyrc:312
+#: ktorrent/ktorrent.notifyrc:327
 msgctxt "Name"
 msgid "Torrent cannot be enqueued"
 msgstr "Torrent bekletilemez"
 
-#: ktorrent/ktorrent.notifyrc:355
+#: ktorrent/ktorrent.notifyrc:372
 msgctxt "Name"
 msgid "Torrent cannot be started"
 msgstr "Torrent başlatılamadı"
 
-#: ktorrent/ktorrent.notifyrc:398
+#: ktorrent/ktorrent.notifyrc:417
 msgctxt "Name"
 msgid "Torrent cannot be loaded silently"
 msgstr "Torrent sessizce yüklenemedi"
+
+#: ktorrent/ktorrent.notifyrc:462
+msgctxt "Name"
+msgid "DHT is not enabled"
+msgstr ""
 
 #: ktorrent/ktorrentplugin.desktop:4
 msgctxt "Name"
 msgid "KTorrent Plugin"
 msgstr "KTorrent Eklentisi"
 
-#: plasma/applet/plasma-applet-ktorrent.desktop:53
+#: plasma/applet/plasma-applet-ktorrent.desktop:56
 msgctxt "Comment"
 msgid "Plasmoid to keep track of a single torrent"
 msgstr "Tekil bir torrentin bilgilerini takip eden Plasma Programcığı"
 
-#: plasma/dataengine/plasma-dataengine-ktorrent.desktop:51
+#: plasma/dataengine/plasma-dataengine-ktorrent.desktop:54
 msgctxt "Comment"
 msgid "KTorrent data engine, for getting information from ktorrent"
 msgstr "KTorrent'ten bilgi almaya yarayan veri motoru"
@@ -113,7 +118,7 @@ msgctxt "Name"
 msgid "Bandwidth Scheduler"
 msgstr "Bantgenişliği Zamanlayıcısı"
 
-#: plugins/bwscheduler/ktbwschedulerplugin.desktop:41
+#: plugins/bwscheduler/ktbwschedulerplugin.desktop:43
 msgctxt "Comment"
 msgid "Schedule upload and download limits over a period of a week"
 msgstr "Bir hataflık periyodlarla gönderme ve indirme sınırlarını zamanla"
@@ -123,7 +128,7 @@ msgctxt "Name"
 msgid "Download Order"
 msgstr "İndirme Sırası"
 
-#: plugins/downloadorder/ktdownloadorderplugin.desktop:41
+#: plugins/downloadorder/ktdownloadorderplugin.desktop:43
 msgctxt "Comment"
 msgid "Specify the download order of a multi-file torrent"
 msgstr "Birden fazla dosyaya sahip bir torrentin indirme sırasını belirler"
@@ -133,7 +138,7 @@ msgctxt "Name"
 msgid "Information Widget"
 msgstr "Bilgi Penceresi"
 
-#: plugins/infowidget/ktinfowidgetplugin.desktop:40
+#: plugins/infowidget/ktinfowidgetplugin.desktop:42
 msgctxt "Comment"
 msgid "Displays general information about a torrent in several tabs"
 msgstr "Çeşitli sekmelerde bir torrent hakkındaki genel bilgileri gösterir"
@@ -143,7 +148,7 @@ msgctxt "Name"
 msgid "IP Filter"
 msgstr "IP Süzgeci"
 
-#: plugins/ipfilter/ktipfilterplugin.desktop:41
+#: plugins/ipfilter/ktipfilterplugin.desktop:44
 msgctxt "Comment"
 msgid "Filter IP addresses through a blocklist"
 msgstr "Bir engel listesiyle IP adreslerini süzgeçten geçirir"
@@ -153,17 +158,27 @@ msgctxt "Name"
 msgid "Log Viewer"
 msgstr "Günlük İzleyicisi"
 
-#: plugins/logviewer/ktlogviewerplugin.desktop:42
+#: plugins/logviewer/ktlogviewerplugin.desktop:45
 msgctxt "Comment"
 msgid "Displays the logging output"
 msgstr "Günlük kaydı çıktısını görüntüler"
+
+#: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:2
+msgctxt "Name"
+msgid "Magnet Generator"
+msgstr ""
+
+#: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:26
+msgctxt "Comment"
+msgid "Generates magnet links"
+msgstr ""
 
 #: plugins/mediaplayer/ktmediaplayerplugin.desktop:2
 msgctxt "Name"
 msgid "Media Player"
 msgstr "Çokluortam Oynatıcısı"
 
-#: plugins/mediaplayer/ktmediaplayerplugin.desktop:42
+#: plugins/mediaplayer/ktmediaplayerplugin.desktop:45
 msgctxt "Comment"
 msgid "Phonon-based media player"
 msgstr "Phonon temelli çokluortam oynatıcısı"
@@ -173,7 +188,7 @@ msgctxt "Name"
 msgid "Scan Folder"
 msgstr "Dizin Tara"
 
-#: plugins/scanfolder/ktscanfolderplugin.desktop:42
+#: plugins/scanfolder/ktscanfolderplugin.desktop:45
 msgctxt "Comment"
 msgid "Scan folders for torrent files and load them"
 msgstr "Dizinleri torrent dosyaları için tarar ve bulunan dosyaları yükler"
@@ -183,7 +198,7 @@ msgctxt "Name"
 msgid "Scripting"
 msgstr "Betikleme"
 
-#: plugins/scripting/ktscriptingplugin.desktop:41
+#: plugins/scripting/ktscriptingplugin.desktop:43
 msgctxt "Comment"
 msgid "Enables Kross scripting support"
 msgstr "Kross betikleme desteğini etkinleştirir"
@@ -193,7 +208,7 @@ msgctxt "Name"
 msgid "Automatic Remove"
 msgstr "Otomatik Silme"
 
-#: plugins/scripting/scripts/auto_remove/auto_remove.desktop:40
+#: plugins/scripting/scripts/auto_remove/auto_remove.desktop:41
 msgctxt "Comment"
 msgid ""
 "Script to automatically remove torrents when they finish downloading or "
@@ -207,10 +222,15 @@ msgctxt "Name"
 msgid "Automatic Resume"
 msgstr "Otomatik Devam Et"
 
-#: plugins/scripting/scripts/auto_resume/auto_resume.desktop:43
+#: plugins/scripting/scripts/auto_resume/auto_resume.desktop:44
+#, fuzzy
+#| msgctxt "Comment"
+#| msgid ""
+#| "Script to automatically resume after some time, when the paused state is "
+#| "enabled"
 msgctxt "Comment"
 msgid ""
-"Script to automatically resume after some time, when the paused state is "
+"Script to automatically resume after some time, when the suspended state is "
 "enabled"
 msgstr ""
 "Duraklatılmış bir torrenti bir süre sonra otomatik olarak başlatmaya yarayan "
@@ -221,7 +241,7 @@ msgctxt "Name"
 msgid "E-Mail Notifications"
 msgstr "E-posta Bildirimleri"
 
-#: plugins/scripting/scripts/email_notifications/email_notifications.desktop:44
+#: plugins/scripting/scripts/email_notifications/email_notifications.desktop:45
 msgctxt "Comment"
 msgid "Script to notify you of events via e-mail"
 msgstr "Olaylar hakkında sizi e-posta ile bilgilendiren bir betik"
@@ -231,7 +251,7 @@ msgctxt "Name"
 msgid "Tracker Grouping"
 msgstr "İzleyici Gruplandırması"
 
-#: plugins/scripting/scripts/tracker_groups/tracker_groups.desktop:42
+#: plugins/scripting/scripts/tracker_groups/tracker_groups.desktop:43
 msgctxt "Comment"
 msgid "Script to create automatic groups based upon tracker URL's"
 msgstr "İzleyici adreslerini temel alarak otomatik gruplar oluşturan bir betik"
@@ -241,7 +261,7 @@ msgctxt "Name"
 msgid "Search"
 msgstr "Ara"
 
-#: plugins/search/ktsearchplugin.desktop:42
+#: plugins/search/ktsearchplugin.desktop:45
 msgctxt "Comment"
 msgid "Search for torrents"
 msgstr "Torrentleri ara"
@@ -251,7 +271,7 @@ msgctxt "Name"
 msgid "Shutdown"
 msgstr "Kapat"
 
-#: plugins/shutdown/ktshutdownplugin.desktop:41
+#: plugins/shutdown/ktshutdownplugin.desktop:43
 msgctxt "Comment"
 msgid "Allows you to shutdown your computer when torrents finish"
 msgstr ""
@@ -263,7 +283,7 @@ msgctxt "Name"
 msgid "Statistics"
 msgstr "İstatistik"
 
-#: plugins/stats/ktstatsplugin.desktop:43
+#: plugins/stats/ktstatsplugin.desktop:47
 msgctxt "Comment"
 msgid "Shows statistics about torrents in several graphs"
 msgstr "Çeşitli grafiklerde torrentlerle ilgili istatistikleri gösterir"
@@ -273,7 +293,7 @@ msgctxt "Name"
 msgid "Syndication"
 msgstr "Dayanışma"
 
-#: plugins/syndication/ktsyndicationplugin.desktop:40
+#: plugins/syndication/ktsyndicationplugin.desktop:42
 msgctxt "Comment"
 msgid "Syndication plugin for KTorrent, supporting RSS and Atom feeds"
 msgstr "KTorrent için dayanışma eklentisi, RSS ve Atom kaynakları destekler"
@@ -283,7 +303,7 @@ msgctxt "Name"
 msgid "UPnP"
 msgstr "UPnP"
 
-#: plugins/upnp/ktupnpplugin.desktop:41
+#: plugins/upnp/ktupnpplugin.desktop:46
 msgctxt "Comment"
 msgid "Forward ports using UPnP"
 msgstr "UPnP kullanarak portları yönlendirir"
@@ -293,7 +313,7 @@ msgctxt "Name"
 msgid "Web Interface"
 msgstr "Web Arayüzü"
 
-#: plugins/webinterface/ktwebinterfaceplugin.desktop:41
+#: plugins/webinterface/ktwebinterfaceplugin.desktop:44
 msgctxt "Comment"
 msgid "Allows control of KTorrent via a web interface"
 msgstr "Bir web arayüzüyle KTorrent'in kontrol edilmesine izin verir"
@@ -303,7 +323,7 @@ msgctxt "Name"
 msgid "Zeroconf"
 msgstr "ZeroConf"
 
-#: plugins/zeroconf/ktzeroconfplugin.desktop:41
+#: plugins/zeroconf/ktzeroconfplugin.desktop:44
 msgctxt "Comment"
 msgid "Discover peers on the local network using the Zeroconf protocol"
 msgstr "Zeroconf protokolünü kullanarak yerel ağdaki paylaşımcıları bulur"

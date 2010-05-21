@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PictureShape\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2010-02-28 14:16+0100\n"
 "PO-Revision-Date: 2009-08-15 12:47+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -28,17 +28,16 @@ msgstr "Resim"
 msgid "Image shape that can display jpg, png etc."
 msgstr "Jpg, png gibi resim biçimlerini içeren resim şekli."
 
-#: PictureTool.cpp:78
+#: PictureTool.cpp:76
 msgid "Open"
 msgstr "Aç"
-
-#: PictureToolFactory.cpp:29
-msgid "Picture Tool"
-msgstr "Resim Aracı"
 
 #: PictureToolFactory.cpp:31
 msgid "Picture editing tool"
 msgstr "Resim düzenleme aracı"
+
+#~ msgid "Picture Tool"
+#~ msgstr "Resim Aracı"
 
 #~ msgid "Picture Shape"
 #~ msgstr "Resim Şekli"

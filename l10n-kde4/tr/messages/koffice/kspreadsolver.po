@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kspreadsolver\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-07 01:33+0100\n"
+"POT-Creation-Date: 2009-12-12 06:16+0100\n"
 "PO-Revision-Date: 2008-06-27 22:01+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -70,7 +70,7 @@ msgstr "Fonksiyon:"
 msgid "&Tools"
 msgstr "&Araçlar"
 
-#: Solver.cpp:70
+#: Solver.cpp:69
 msgid "Function Optimizer..."
 msgstr "Fonksiyon Eniyileştirici..."
 

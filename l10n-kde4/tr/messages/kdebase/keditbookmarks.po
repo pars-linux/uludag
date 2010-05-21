@@ -267,22 +267,18 @@ msgid "Copy %1"
 msgstr "%1 Ögesini Kopyala"
 
 #: commands.cpp:233
-#| msgid "%1 Change"
 msgid "Icon Change"
 msgstr "Simge Değiştir"
 
 #: commands.cpp:235
-#| msgid "%1 Change"
 msgid "Title Change"
 msgstr "Başlık Değiştir"
 
 #: commands.cpp:237
-#| msgid "%1 Change"
 msgid "URL Change"
 msgstr "URL Değiştir"
 
 #: commands.cpp:239
-#| msgid "Comment"
 msgid "Comment Change"
 msgstr "Yorum Değiştir"
 

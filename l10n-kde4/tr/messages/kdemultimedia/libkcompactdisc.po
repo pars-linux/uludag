@@ -59,4 +59,3 @@ msgstr "Bilinmeyen Başlık"
 #, kde-format
 msgid "Track %1"
 msgstr "Parça %1"
-

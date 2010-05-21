@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -57,8 +57,12 @@ msgstr "Etkin Ekran Kenarlığı Eylemleri"
 #. i18n: file: main.ui:36
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: rc.cpp:6 rc.cpp:57
-msgid "To trigger an action push your mouse cursor against the edge of the screen in the action's direction."
-msgstr "Bir eylemi tetiklemek için fare imlecinizi ekranın kenarına eylemin yönüne doğru itin."
+msgid ""
+"To trigger an action push your mouse cursor against the edge of the screen "
+"in the action's direction."
+msgstr ""
+"Bir eylemi tetiklemek için fare imlecinizi ekranın kenarına eylemin yönüne "
+"doğru itin."
 
 #. i18n: file: main.ui:52
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -87,7 +91,8 @@ msgstr "Diğer Ayarlar"
 #. i18n: file: main.ui:90
 #. i18n: ectx: property (toolTip), widget (QLabel, desktopSwitchLabel)
 #: rc.cpp:21 rc.cpp:72
-msgid "Change desktop when the mouse cursor is pushed against the edge of the screen"
+msgid ""
+"Change desktop when the mouse cursor is pushed against the edge of the screen"
 msgstr "Fare imleci ekran kenarlığına doğru itildiğinde masaüstünü değiştir"
 
 #. i18n: file: main.ui:93
@@ -118,8 +123,12 @@ msgstr "Her Zaman Etkin"
 #. i18n: file: main.ui:122
 #. i18n: ectx: property (toolTip), widget (QLabel, label)
 #: rc.cpp:36 rc.cpp:87
-msgid "Amount of time required for the mouse cursor to be pushed against the edge of the screen before the action is triggered"
-msgstr "Eylem tetiklenmeden önce fare imlecinin ekran kenarlığına itilmesi gereken sürenin miktarı"
+msgid ""
+"Amount of time required for the mouse cursor to be pushed against the edge "
+"of the screen before the action is triggered"
+msgstr ""
+"Eylem tetiklenmeden önce fare imlecinin ekran kenarlığına itilmesi gereken "
+"sürenin miktarı"
 
 #. i18n: file: main.ui:125
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -142,8 +151,12 @@ msgstr " ms"
 #. i18n: file: main.ui:154
 #. i18n: ectx: property (toolTip), widget (QLabel, label_2)
 #: rc.cpp:45 rc.cpp:96
-msgid "Amount of time required after triggering an action until the next trigger can occur"
-msgstr "Bir eylemi tetikledikten sonra sonraki tetikleme için geçmesi gereken en fazla süre miktarı"
+msgid ""
+"Amount of time required after triggering an action until the next trigger "
+"can occur"
+msgstr ""
+"Bir eylemi tetikledikten sonra sonraki tetikleme için geçmesi gereken en "
+"fazla süre miktarı"
 
 #. i18n: file: main.ui:157
 #. i18n: ectx: property (text), widget (QLabel, label_2)

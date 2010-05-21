@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdewebdev\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-01-26 05:30+0000\n"
+"POT-Creation-Date: 2010-04-21 19:44+0000\n"
 "PO-Revision-Date: 2009-07-31 10:53+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -76,7 +76,7 @@ msgctxt "Name"
 msgid "Automation plugin"
 msgstr "Otomasyon eklentisi"
 
-#: klinkstatus/src/plugins/automation/klinkstatus_automation.desktop:36
+#: klinkstatus/src/plugins/automation/klinkstatus_automation.desktop:37
 msgctxt "Comment"
 msgid "Allow configuration of automated tasks"
 msgstr "Otomatik görevlerin yapılandırılmasına izin ver"
@@ -86,7 +86,7 @@ msgctxt "Name"
 msgid "Scripting plugin"
 msgstr "Betik desteği eklentisi"
 
-#: klinkstatus/src/plugins/scripting/krossmoduleklinkstatus.desktop:36
+#: klinkstatus/src/plugins/scripting/krossmoduleklinkstatus.desktop:37
 msgctxt "Comment"
 msgid "Allow execution of scripts"
 msgstr "Betik çalıştırmaya izin ver"
