@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,6 +11,7 @@
 # Please read the COPYING file.
 #
 
+import os
 import sys
 import traceback
 import context as ctx
@@ -24,6 +25,13 @@ from localedata import setSystemLocale
 from pmlogging import logger
 import config
 import signal
+
+if ctx.Pds.session == ctx.pds.Kde4:
+    from PyKDE4.kdeui import KUniqueApplication, KApplication
+    from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
+    from about import aboutData
+else:
+    from pds.quniqueapp import QUniqueApplication
 
 def handleException(exception, value, tb):
     logger.error("".join(traceback.format_exception(exception, value, tb)))
@@ -47,19 +55,12 @@ if __name__ == '__main__':
     (options, args) = parser.parse_args()
     if options.install_package:
 
+        from mainwindow import MainWindow
         if ctx.Pds.session == ctx.pds.Kde4:
-            from PyKDE4.kdeui import KUniqueApplication
-            from about import aboutData
-            from mainwindow_kde4 import MainWindow
-
-            KCmdLineArgs.init(sys.argv, aboutData)
+            KCmdLineArgs.init([], aboutData)
             app = KApplication()
-
         else:
-            from mainwindow import MainWindow
             app = QtGui.QApplication(sys.argv)
-
-            # Set application font from system
             font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
             app.setFont(QtGui.QFont(font[0], int(font[1])))
 
@@ -71,10 +72,6 @@ if __name__ == '__main__':
 
     else:
         if ctx.Pds.session == ctx.pds.Kde4:
-            from PyKDE4.kdeui import KUniqueApplication
-            from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
-
-            from about import aboutData
             from mainwindow_kde4 import MainWindow
 
             KCmdLineArgs.init(sys.argv, aboutData)
@@ -94,10 +91,7 @@ if __name__ == '__main__':
 
         else:
             from mainwindow import MainWindow
-            from pds.quniqueapp import QUniqueApplication
 
-            # Fork MainApplication
-            import os
             pid = os.fork()
             if pid:
                 os._exit(0)
