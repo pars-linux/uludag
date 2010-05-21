@@ -47,15 +47,25 @@ if __name__ == '__main__':
     (options, args) = parser.parse_args()
     if options.install_package:
 
-        from mainwindow import MainWindow
-        app = QtGui.QApplication(sys.argv)
+        if ctx.Pds.session == ctx.pds.Kde4:
+            from PyKDE4.kdeui import KUniqueApplication
+            from about import aboutData
+            from mainwindow_kde4 import MainWindow
+
+            KCmdLineArgs.init(sys.argv, aboutData)
+            app = KApplication()
+
+        else:
+            from mainwindow import MainWindow
+            app = QtGui.QApplication(sys.argv)
+
+            # Set application font from system
+            font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
+            app.setFont(QtGui.QFont(font[0], int(font[1])))
+
         setSystemLocale()
         manager = MainWindow(app, silence = True)
 
-        # Set application font from system
-        font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
-        app.setFont(QtGui.QFont(font[0], int(font[1])))
-        # manager.show()
         manager.centralWidget().state.operationAction(args, silence = True)
         manager.centralWidget().progressDialog.show()
 
