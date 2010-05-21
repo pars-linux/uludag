@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-20 20:38+0300\n"
-"PO-Revision-Date: 2010-05-16 09:14+0200\n"
+"PO-Revision-Date: 2010-05-20 20:35+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -265,11 +265,11 @@ msgstr "&OK"
 
 #: .tmp/packagedelegate.py:29
 msgid "critical"
-msgstr ""
+msgstr "kritiek"
 
 #: .tmp/packagedelegate.py:30
 msgid "security"
-msgstr ""
+msgstr "veiligheid"
 
 #: .tmp/packagedelegate.py:62
 msgid "Description:"
