@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-21 09:36+0300\n"
+"POT-Creation-Date: 2010-05-21 10:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 
 #: .tmp/basketdialog.py:155 .tmp/mainwidget.py:215 .tmp/mainwidget.py:218
-#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224 .tmp/pm-install.py:99
+#: .tmp/settingsdialog.py:219 .tmp/settingsdialog.py:224
 msgid "Pisi Error"
 msgstr ""
 
@@ -230,19 +230,19 @@ msgstr ""
 msgid "Critical Updates"
 msgstr ""
 
-#: .tmp/mainwidget.py:209 .tmp/pm-install.py:91
+#: .tmp/mainwidget.py:209
 msgid "Network Error"
 msgstr ""
 
-#: .tmp/mainwidget.py:210 .tmp/pm-install.py:93
+#: .tmp/mainwidget.py:210
 msgid "Please check your network connections and try again."
 msgstr ""
 
-#: .tmp/mainwidget.py:212 .tmp/pm-install.py:96
+#: .tmp/mainwidget.py:212
 msgid "Authorization Error"
 msgstr ""
 
-#: .tmp/mainwidget.py:213 .tmp/pm-install.py:97
+#: .tmp/mainwidget.py:213
 msgid "You are not authorized for this operation."
 msgstr ""
 
@@ -700,21 +700,8 @@ msgstr ""
 msgid "Package Manager Help"
 msgstr ""
 
-#: .tmp/pm-install.py:48
-msgid "Succesfully finished installing %1"
-msgstr ""
-
-#: .tmp/pm-install.py:52
-msgid "Succesfully finished installing packages"
-msgstr ""
-
-#: .tmp/pm-install.py:64 .tmp/pm-install.py:67 .tmp/pm-install.py:70
-#: .tmp/pm-install.py:73
-msgid "%p%"
-msgstr ""
-
-#: .tmp/pm-install.py:151
-msgid "Summary"
+#: .tmp/pm-install.py:47
+msgid "%prog packages_to_install"
 msgstr ""
 
 #: .tmp/main.py:79
