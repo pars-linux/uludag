@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: system-config-printer-kde\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-17 01:24+0200\n"
-"PO-Revision-Date: 2010-04-26 09:48+0300\n"
+"PO-Revision-Date: 2010-05-21 11:26+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -62,10 +62,9 @@ msgid "New Printer"
 msgstr "Yeni Yazıcı"
 
 #: system-config-printer-kde.py:608
-#, fuzzy
 #| msgid "Basic Server Settings"
 msgid "Server Settings"
-msgstr "Temel Sunucu Ayarları"
+msgstr "Sunucu Ayarları"
 
 #: system-config-printer-kde.py:614
 msgid "Local Printers"
