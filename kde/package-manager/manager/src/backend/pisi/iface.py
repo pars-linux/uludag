@@ -266,11 +266,12 @@ class Iface(Singleton):
     def checkUpdateActions(self, packages):
         actions = {'systemRestart':[], 'serviceRestart':[]}
         for package in packages:
-            package = self.pdb.get_package(package)
-            package_actions = package.get_update_actions()
-            for action in actions:
-                if action in package_actions:
-                    actions[action].extend(package_actions[action])
+            if self.idb.has_package(package):
+                package = self.pdb.get_package(package)
+                package_actions = package.get_update_actions()
+                for action in actions:
+                    if action in package_actions:
+                        actions[action].extend(package_actions[action])
         return (set(actions['systemRestart']), set(actions['serviceRestart']))
 
     def cancel(self):
