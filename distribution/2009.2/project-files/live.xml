@@ -164,7 +164,6 @@
         <SelectedPackage>plasmoid-adjustable-clock</SelectedPackage>
         <SelectedPackage>plasmoid-daisy</SelectedPackage>
         <SelectedPackage>plasmoid-network-applet</SelectedPackage>
-        <SelectedPackage>plasmoid-qalculate-applet</SelectedPackage>
         <SelectedPackage>plasmoid-service-applet</SelectedPackage>
         <SelectedPackage>plasmoid-translatoid</SelectedPackage>
         <SelectedPackage>plasmoid-yawp</SelectedPackage>
@@ -287,7 +286,6 @@
         <Package>agg</Package>
         <Package>akonadi</Package>
         <Package>alsa-lib</Package>
-        <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
@@ -377,7 +375,6 @@
         <Package>foomatic-filters</Package>
         <Package>freetype</Package>
         <Package>fuse</Package>
-        <Package>fxload</Package>
         <Package>gawk</Package>
         <Package>gconf</Package>
         <Package>gconfmm</Package>
@@ -601,6 +598,7 @@
         <Package>libsoup</Package>
         <Package>libspectre</Package>
         <Package>libspiro</Package>
+        <Package>libssh</Package>
         <Package>libssh2</Package>
         <Package>libtasn1</Package>
         <Package>libtdb</Package>
