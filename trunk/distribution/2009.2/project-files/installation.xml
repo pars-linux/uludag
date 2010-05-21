@@ -3,8 +3,11 @@
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
-        <SelectedComponent>system.base</SelectedComponent>
         <SelectedComponent>desktop.kde.admin</SelectedComponent>
+        <SelectedComponent>system.base</SelectedComponent>
+        <SelectedPackage>PyKDE</SelectedPackage>
+        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
+        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>accessrunner-firmware</SelectedPackage>
         <SelectedPackage>acpi</SelectedPackage>
         <SelectedPackage>acpi4asus</SelectedPackage>
@@ -85,6 +88,8 @@
         <SelectedPackage>k3b</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kaudiocreator</SelectedPackage>
+        <SelectedPackage>kde-l10n-tr</SelectedPackage>
+        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
         <SelectedPackage>kdeaccessibility</SelectedPackage>
         <SelectedPackage>kdeadmin</SelectedPackage>
         <SelectedPackage>kdeartwork-colorschemes</SelectedPackage>
@@ -94,11 +99,9 @@
         <SelectedPackage>kdebase-emoticons</SelectedPackage>
         <SelectedPackage>kdebluetooth</SelectedPackage>
         <SelectedPackage>kdegraphics</SelectedPackage>
-        <SelectedPackage>kde-l10n-tr</SelectedPackage>
         <SelectedPackage>kdenetwork</SelectedPackage>
         <SelectedPackage>kdepim</SelectedPackage>
         <SelectedPackage>kdeplasma-addons</SelectedPackage>
-        <SelectedPackage>kde-servicemenu-rootactions</SelectedPackage>
         <SelectedPackage>kdeutils</SelectedPackage>
         <SelectedPackage>kdm</SelectedPackage>
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
@@ -154,14 +157,12 @@
         <SelectedPackage>pavucontrol</SelectedPackage>
         <SelectedPackage>phonon-gstreamer</SelectedPackage>
         <SelectedPackage>phonon-xine</SelectedPackage>
+        <SelectedPackage>plasma-runner-pisi</SelectedPackage>
         <SelectedPackage>plasmoid-network-applet</SelectedPackage>
         <SelectedPackage>plasmoid-service-applet</SelectedPackage>
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>ppp</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
-        <SelectedPackage>PyKDE</SelectedPackage>
-        <SelectedPackage>QtCurve-Gtk2</SelectedPackage>
-        <SelectedPackage>QtCurve-KDE4</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rdesktop</SelectedPackage>
@@ -258,13 +259,17 @@
         <SelectedPackage>zd1201-firmware</SelectedPackage>
         <SelectedPackage>zd1211-firmware</SelectedPackage>
         <SelectedPackage>zemberek-openoffice</SelectedPackage>
+        <Package>ConsoleKit</Package>
+        <Package>DirectFB</Package>
+        <Package>PolicyKit</Package>
+        <Package>PyKDE</Package>
+        <Package>PyQt</Package>
         <Package>a52dec</Package>
         <Package>aalib</Package>
         <Package>acl</Package>
         <Package>agg</Package>
         <Package>akonadi</Package>
         <Package>alsa-lib</Package>
-        <Package>alsa-tools</Package>
         <Package>alsa-utils</Package>
         <Package>amrnb</Package>
         <Package>amrwb</Package>
@@ -287,10 +292,10 @@
         <Package>bootsplash</Package>
         <Package>bootsplash-theme-pardus</Package>
         <Package>bzip2</Package>
+        <Package>c-ares</Package>
         <Package>cairo</Package>
         <Package>cairomm</Package>
         <Package>capseo</Package>
-        <Package>c-ares</Package>
         <Package>cdparanoia</Package>
         <Package>cdrdao</Package>
         <Package>cdrtools</Package>
@@ -300,7 +305,7 @@
         <Package>clucene</Package>
         <Package>comar</Package>
         <Package>comar-api</Package>
-        <Package>ConsoleKit</Package>
+        <Package>command-not-found</Package>
         <Package>coolplug</Package>
         <Package>coreutils</Package>
         <Package>cpio</Package>
@@ -324,7 +329,6 @@
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
-        <Package>DirectFB</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>display-settings</Package>
@@ -362,7 +366,6 @@
         <Package>foomatic-filters</Package>
         <Package>freetype</Package>
         <Package>fuse</Package>
-        <Package>fxload</Package>
         <Package>gawk</Package>
         <Package>gconf</Package>
         <Package>gconfmm</Package>
@@ -444,8 +447,8 @@
         <Package>kdegraphics</Package>
         <Package>kdelibs</Package>
         <Package>kdemultimedia</Package>
-        <Package>kdepimlibs</Package>
         <Package>kdepim-runtime</Package>
+        <Package>kdepimlibs</Package>
         <Package>kdm-pardus-theme</Package>
         <Package>kernel</Package>
         <Package>keyutils</Package>
@@ -457,6 +460,34 @@
         <Package>lcms</Package>
         <Package>lensfun</Package>
         <Package>less</Package>
+        <Package>libFS</Package>
+        <Package>libICE</Package>
+        <Package>libIDL</Package>
+        <Package>libSM</Package>
+        <Package>libX11</Package>
+        <Package>libXScrnSaver</Package>
+        <Package>libXau</Package>
+        <Package>libXaw</Package>
+        <Package>libXcomposite</Package>
+        <Package>libXcursor</Package>
+        <Package>libXdamage</Package>
+        <Package>libXdmcp</Package>
+        <Package>libXext</Package>
+        <Package>libXfixes</Package>
+        <Package>libXfont</Package>
+        <Package>libXft</Package>
+        <Package>libXi</Package>
+        <Package>libXinerama</Package>
+        <Package>libXmu</Package>
+        <Package>libXpm</Package>
+        <Package>libXrandr</Package>
+        <Package>libXrender</Package>
+        <Package>libXt</Package>
+        <Package>libXtst</Package>
+        <Package>libXv</Package>
+        <Package>libXvMC</Package>
+        <Package>libXxf86dga</Package>
+        <Package>libXxf86vm</Package>
         <Package>libacpi</Package>
         <Package>libao</Package>
         <Package>libarchive</Package>
@@ -494,7 +525,6 @@
         <Package>libffi</Package>
         <Package>libfontenc</Package>
         <Package>libfreebob</Package>
-        <Package>libFS</Package>
         <Package>libftdi</Package>
         <Package>libgadu</Package>
         <Package>libgcc</Package>
@@ -510,8 +540,6 @@
         <Package>libgphoto2</Package>
         <Package>libgpod</Package>
         <Package>libgsf</Package>
-        <Package>libICE</Package>
-        <Package>libIDL</Package>
         <Package>libical</Package>
         <Package>libid3tag</Package>
         <Package>libidn</Package>
@@ -561,11 +589,11 @@
         <Package>libsdl</Package>
         <Package>libshout</Package>
         <Package>libsigc++</Package>
-        <Package>libSM</Package>
         <Package>libsndfile</Package>
         <Package>libsoup</Package>
         <Package>libspectre</Package>
         <Package>libspiro</Package>
+        <Package>libssh</Package>
         <Package>libssh2</Package>
         <Package>libtasn1</Package>
         <Package>libtdb</Package>
@@ -584,37 +612,13 @@
         <Package>libwpg</Package>
         <Package>libwps</Package>
         <Package>libwww</Package>
-        <Package>libX11</Package>
         <Package>libx86</Package>
-        <Package>libXau</Package>
-        <Package>libXaw</Package>
         <Package>libxcb</Package>
-        <Package>libXcomposite</Package>
-        <Package>libXcursor</Package>
-        <Package>libXdamage</Package>
-        <Package>libXdmcp</Package>
-        <Package>libXext</Package>
-        <Package>libXfixes</Package>
-        <Package>libXfont</Package>
-        <Package>libXft</Package>
-        <Package>libXi</Package>
-        <Package>libXinerama</Package>
         <Package>libxkbfile</Package>
         <Package>libxklavier</Package>
         <Package>libxml2</Package>
         <Package>libxmlpp</Package>
-        <Package>libXmu</Package>
-        <Package>libXpm</Package>
-        <Package>libXrandr</Package>
-        <Package>libXrender</Package>
-        <Package>libXScrnSaver</Package>
         <Package>libxslt</Package>
-        <Package>libXt</Package>
-        <Package>libXtst</Package>
-        <Package>libXv</Package>
-        <Package>libXvMC</Package>
-        <Package>libXxf86dga</Package>
-        <Package>libXxf86vm</Package>
         <Package>libzip</Package>
         <Package>linux-atm</Package>
         <Package>lirc</Package>
@@ -670,9 +674,9 @@
         <Package>ncompress</Package>
         <Package>ncurses</Package>
         <Package>neon</Package>
-        <Package>netpbm</Package>
         <Package>net-snmp</Package>
         <Package>net-tools</Package>
+        <Package>netpbm</Package>
         <Package>network-manager</Package>
         <Package>normalize</Package>
         <Package>nspr</Package>
@@ -717,7 +721,6 @@
         <Package>plasmoid-service-applet</Package>
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
-        <Package>PolicyKit</Package>
         <Package>polkit-qt</Package>
         <Package>poppler</Package>
         <Package>poppler-glib</Package>
@@ -736,10 +739,8 @@
         <Package>pycurl</Package>
         <Package>pygobject</Package>
         <Package>pygtk</Package>
-        <Package>PyKDE</Package>
         <Package>pyparted</Package>
         <Package>pypolkit</Package>
-        <Package>PyQt</Package>
         <Package>pysmbc</Package>
         <Package>pysqlite</Package>
         <Package>python</Package>
@@ -754,9 +755,9 @@
         <Package>qedje</Package>
         <Package>qimageblitz</Package>
         <Package>qt</Package>
-        <Package>qtscriptgenerator</Package>
         <Package>qt-sql-mysql</Package>
         <Package>qt-sql-sqlite</Package>
+        <Package>qtscriptgenerator</Package>
         <Package>qzion</Package>
         <Package>raptor</Package>
         <Package>rasqal</Package>
