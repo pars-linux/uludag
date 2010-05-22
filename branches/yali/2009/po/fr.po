@@ -255,7 +255,7 @@ msgstr "Détails à propos de l'écran"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -1415,7 +1415,6 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "L'installation dans <b>%s secondes</b>"
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
 msgstr "Démarrer l'installation"
 
@@ -1668,15 +1667,15 @@ msgstr "Afficher l'aide"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Arrêter l'ordinateur"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Redémarrer l'ordinateur"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Redémarrez YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:181
@@ -1704,15 +1703,15 @@ msgstr "Voulez-vous utiliser une souris pour <b>%s</b> ?"
 
 #: yali4/gui/YaliWindow.py:142
 msgid "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress.</b>"
-msgstr ""
+msgstr "Votre système va maintenant <b>s'arrêter</b>. <br/><br/> <b>Cette action peut nuire à votre ordinateur si l'installation est en cours.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress.</b>"
-msgstr ""
+msgstr "Votre système va maintenant <b>redémarrer</b>. <br/><br/> <b>Cette action peut nuire à votre ordinateur si l'installation est en cours.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress."
-msgstr ""
+msgstr "YALI va maintenant <b>redémarrer</b>. <br/><br/> <b>Cette action peut nuire à votre ordinateur si l'installation est en cours.</b>"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"
