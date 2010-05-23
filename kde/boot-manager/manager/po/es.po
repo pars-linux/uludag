@@ -2,7 +2,7 @@
 # Boot Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the Boot Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 msgid ""
@@ -44,8 +44,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay aplicativo que respalda las funciones de esta pantalla.\n"
-"Por favor asegúrese que los paquetes respectivos estén instalados y "
-"configurados de manera correcta."
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de manera correcta."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
@@ -99,14 +98,14 @@ msgstr "Opciones de Arranque"
 msgid "Boot options for operating system."
 msgstr "Opciones de arranque para el sistema operativo."
 
-#: .tmp/ui_item.py:65
 # favor revisar - o sencillamente "arranque por omision" ?
+#: .tmp/ui_item.py:65
 msgid "Set or unset entry as default boot entry."
 msgstr "Marcar como arranque por omisión."
 
 #: .tmp/ui_item.py:66
 msgid "Edit"
-msgstr "Modificar"
+msgstr "Modificar "
 
 #: .tmp/ui_item.py:67
 msgid "Delete"
@@ -119,4 +118,3 @@ msgstr "Agregar Nuevo"
 #: .tmp/ui_options.py:36
 msgid "Boot menu display time:"
 msgstr "Duración de presentación del menú:"
-
