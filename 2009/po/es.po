@@ -945,9 +945,8 @@ msgstr ""
 # spanish !!
 # could be set to: "Verificando CD, por favor espere."
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
-msgstr "<font color=\"#FFF\">Favor espere mientras se está verificando el CD.</font>"
+msgstr "<font color=\"#FFF\">Favor espere mientras se están verificandolos paquetes.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1194,7 +1193,6 @@ msgid "Auto or Manual partitioning..."
 msgstr "Particionamiento automático o manual..."
 
 #: yali4/gui/ScrPartitionAuto.py:40
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Automatic Partitioning</font>\n"
@@ -1225,9 +1223,9 @@ msgstr ""
 "Le recomendamos realizar una copia de seguridad para prevenir pérdida de los datos.\n"
 "</p>\n"
 "<p>\n"
-"El particionamiento automático formateará el disco o la partición seleccionada e instalará Pardus 2009.1. \n"
+"El particionamiento automático formateará el disco o la partición seleccionada e instalará Pardus 2009.2. \n"
 "Si lo prefiere, puede realizar el particionamiento manualmente o solicitar que\n"
-" Pardus 2009.1 crea automáticamente una nueva partición para la instalación.</p>\n"
+" Pardus 2009.2 crea automáticamente una nueva partición para la instalación.</p>\n"
 "<p>\n"
 "Favor consulte la guía de instalación de pardus por más información\n"
 "acerca de particionamiento de disco.\n"
@@ -1475,9 +1473,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Instalación comienza en: <b>%s segundos</b>"
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Partición raíz (/) de Pardus"
+msgstr "Comenzar la instalación"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -1714,7 +1711,7 @@ msgstr "Expulsar CD"
 
 #: yali4/gui/YaliDialog.py:180 yali4/gui/YaliDialog.py:197
 msgid "Ok"
-msgstr ""
+msgstr "Listo"
 
 #: yali4/gui/YaliDialog.py:181
 msgid "Please insert a new CD and then click Ok"
@@ -1734,15 +1731,15 @@ msgstr "Mostrar Ayuda"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Apagar la computadora"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Reiniciar la computadora"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Reiniciar YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:181
@@ -1775,15 +1772,15 @@ msgstr "Desea usar la configuración de ratón para mano <b>%s</b> ?"
 
 #: yali4/gui/YaliWindow.py:142
 msgid "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress.</b>"
-msgstr ""
+msgstr "Su sistema ahora se <b>apagará</b>.<br/><br/><b>Esta acción puede dañar la instalación de su computadora, si la instalación está en progreso.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress.</b>"
-msgstr ""
+msgstr "Su sistema ahora se <b>reiniciará</b>.<br/><br/><b>Esta acción puede dañar la instalación de su computadora, si la instalación está en progreso.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your computer if the installation is in progress."
-msgstr ""
+msgstr "El asistente de instalación YALI ahora se <b>reiniciará</b>.<br/><br/><b>Esta acción puede dañar la instalación de su computadora, si la instalación está en progreso.</b>"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"
