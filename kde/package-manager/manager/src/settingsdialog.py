@@ -16,6 +16,7 @@ from PyQt4.QtGui import QMessageBox, QDialog, QTableWidgetItem, QCheckBox, QFile
 from PyQt4.QtCore import *
 
 from context import *
+from os import path
 
 from ui_settingsdialog import Ui_SettingsDialog
 
@@ -310,7 +311,9 @@ class ProxySettings(SettingsTab):
             self.settings.ftpProxy.setText(ftpProxy)
             self.settings.ftpProxyPort.setValue(int(ftpProxyPort))
 
-        if httpProxy or ftpProxy or httpsProxy:
+        if self.config.useKdeProxy():
+            self.settings.useKdeButton.setChecked(True)
+        elif httpProxy or ftpProxy or httpsProxy:
             self.settings.useProxyButton.setChecked(True)
             if (httpProxy == httpsProxy == ftpProxy) and (httpProxyPort == httpsProxyPort == ftpProxyPort):
                 self.settings.useHttpForAll.setChecked(True)
@@ -324,15 +327,18 @@ class ProxySettings(SettingsTab):
         self.connect(self.settings.ftpProxy, SIGNAL("textChanged(const QString&)"), self.markChanged)
         self.connect(self.settings.ftpProxyPort, SIGNAL("valueChanged(int)"), self.markChanged)
         self.connect(self.settings.noProxyButton, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.useKdeButton, SIGNAL("toggled(bool)"), self.markChanged)
+        self.connect(self.settings.useKdeButton, SIGNAL("toggled(bool)"), self.getSettingsFromKde)
 
     def useHttpToggled(self, enabled):
+        controls = (self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort)
         if enabled:
             self.settings.httpsProxy.setText(self.settings.httpProxy.text())
             self.settings.httpsProxyPort.setValue(self.settings.httpProxyPort.value())
             self.settings.ftpProxy.setText(self.settings.httpProxy.text())
             self.settings.ftpProxyPort.setValue(self.settings.httpProxyPort.value())
 
-            for control in [self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort]:
+            for control in controls:
                 control.setEnabled(False)
 
             self.connect(self.settings.httpProxy, SIGNAL("textChanged(const QString&)"), self.settings.httpsProxy, SLOT("setText(const QString&)"))
@@ -345,13 +351,32 @@ class ProxySettings(SettingsTab):
             self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.httpsProxyPort, SLOT("setValue(int)"))
             self.disconnect(self.settings.httpProxyPort, SIGNAL("valueChanged(int)"), self.settings.ftpProxyPort, SLOT("setValue(int)"))
 
-            for control in [self.settings.httpsProxy, self.settings.httpsProxyPort, self.settings.ftpProxy, self.settings.ftpProxyPort]:
+            for control in controls:
                 control.setEnabled(True)
 
             self.settings.httpsProxy.setText("")
             self.settings.httpsProxyPort.setValue(0)
             self.settings.ftpProxy.setText("")
             self.settings.ftpProxyPort.setValue(0)
+
+    def getSettingsFromKde(self, toggled):
+        if toggled:
+            cf = path.join(Pds.config_path, 'share/config/kioslaverc')
+            config = Pds.parse(cf, force=True)
+            proxyType = int(config.value('Proxy Settings/ProxyType').toString())
+
+            if proxyType > 0:
+                http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
+                self.settings.httpsProxy.setText(http[0])
+                self.settings.httpsProxyPort.setValue(int(http[1]))
+
+                https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
+                self.settings.httpProxy.setText(https[0])
+                self.settings.httpProxyPort.setValue(int(https[1]))
+
+                ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
+                self.settings.ftpProxy.setText(ftp[0])
+                self.settings.ftpProxyPort.setValue(int(ftp[1]))
 
     def save(self):
         httpProxy, httpProxyPort = self.settings.httpProxy.text(), self.settings.httpProxyPort.value()
@@ -360,6 +385,8 @@ class ProxySettings(SettingsTab):
 
         if self.settings.noProxyButton.isChecked():
             httpProxy = httpsProxy = ftpProxy = None
+
+        self.config.setUseKdeProxy(self.settings.useKdeButton.isChecked())
 
         if httpProxy:
             self.iface.setConfig("general", "http_proxy", "http://%s:%s" % (httpProxy, httpProxyPort))

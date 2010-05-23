@@ -10,17 +10,20 @@ Notes:
 Not started yet:
 ----------------
 
- - Fix Proxy Settings screen issues
+ - Get security updates directly to the basket like system.base packages
+   It should be done in Pisi APi
 
 In progress:
 ------------
 
- - Get security updates directly to the basket like system.base packages
+ - Need to check proxy settings changes from KDE at start
  - PMInstall refactoring
+   Needs notification support for Kde 4 mode
 
 Completed:
 ----------
 
+ - Fix Proxy Settings screen issues (Support for getting Proxy Settings from KDE)
  - Take care of pisi's needService/SystemReboot mechanism
  - For Kde 4 .pisi package we need to create following symlink:
    .. /usr/kde/4/share/apps/package-manager/package-manager.notifyrc
