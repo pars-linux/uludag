@@ -330,12 +330,13 @@ msgid "Send my profile: <b>%s</b>"
 msgstr "Enviar mi perfil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:123
+#, fuzzy
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: .tmp/ScrSummary.py:123
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-msgstr ""
+msgstr "No posible reiniciar plasma-desktop. Kaptan terminará ahora."
 
 #: .tmp/ScrWallpaper.py:34 .tmp/ui_wallpaperWidget.py:126
 msgid "Wallpaper"
@@ -637,7 +638,7 @@ msgstr "No cambiar imagen de fondo"
 
 #: .tmp/ui_welcomeWidget.py:72
 msgid "What is Pardus?"
-msgstr ""
+msgstr "Que es Pardus ?"
 
 #: .tmp/ui_welcomeWidget.py:73
 msgid "<b>Pardus</b> is a reliable, secure, fast and user friendly operating system. <br /><br />With Pardus, you can connect to the internet, read your e-mails, work with your office documents, watch movies, play music, develop applications, play games and much more! <br /><br /><b>Kaptan</b> will help you personalize your Pardus workspace easily and quickly. Please click <b>next</b> in order to begin."
