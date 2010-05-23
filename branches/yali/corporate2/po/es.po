@@ -1803,7 +1803,7 @@ msgstr "Reiniciar la computadora"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr "Reiniciar"
+msgstr "Reiniciar YALI"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:192
