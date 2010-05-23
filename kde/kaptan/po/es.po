@@ -330,7 +330,6 @@ msgid "Send my profile: <b>%s</b>"
 msgstr "Enviar mi perfil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:123
-#, fuzzy
 msgid "Error"
 msgstr "Error"
 
