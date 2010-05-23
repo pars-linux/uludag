@@ -66,6 +66,9 @@ class PMConfig(Config):
     def systemTray(self):
         return self.getBoolValue("SystemTray")
 
+    def useKdeProxy(self):
+        return self.getBoolValue("UseKdeProxy")
+
     def setHideTrayIfThereIsNoUpdate(self, enabled):
         self.setValue("HideTrayIfThereIsNoUpdate", enabled)
 
@@ -86,3 +89,7 @@ class PMConfig(Config):
 
     def setShowComponents(self, enabled):
         self.setValue("ShowComponents", enabled)
+
+    def setUseKdeProxy(self, enabled):
+        self.setValue("UseKdeProxy", enabled)
+

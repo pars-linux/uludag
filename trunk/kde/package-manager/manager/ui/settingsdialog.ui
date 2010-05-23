@@ -601,7 +601,7 @@
          </property>
         </spacer>
        </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <spacer name="horizontalSpacer_5">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -614,7 +614,7 @@
          </property>
         </spacer>
        </item>
-       <item row="2" column="0" colspan="2">
+       <item row="3" column="0" colspan="2">
         <widget class="QGroupBox" name="httpSettingsGroupBox">
          <property name="enabled">
           <bool>false</bool>
@@ -749,10 +749,17 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="2" column="0">
         <widget class="QRadioButton" name="useProxyButton">
          <property name="text">
-          <string>Use proxy server</string>
+          <string>Use manual settings</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QRadioButton" name="useKdeButton">
+         <property name="text">
+          <string>Use Desktop Enviorenment's settings</string>
          </property>
         </widget>
        </item>
@@ -853,8 +860,8 @@
      <y>51</y>
     </hint>
     <hint type="destinationlabel">
-     <x>171</x>
-     <y>91</y>
+     <x>179</x>
+     <y>177</y>
     </hint>
    </hints>
   </connection>
@@ -897,12 +904,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>66</y>
+     <x>90</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>145</x>
-     <y>96</y>
+     <x>43</x>
+     <y>43</y>
     </hint>
    </hints>
   </connection>
@@ -929,12 +936,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>66</y>
+     <x>90</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>300</x>
-     <y>96</y>
+     <x>167</x>
+     <y>43</y>
     </hint>
    </hints>
   </connection>
@@ -993,12 +1000,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>91</x>
-     <y>51</y>
+     <x>90</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>70</x>
-     <y>116</y>
+     <x>44</x>
+     <y>47</y>
     </hint>
    </hints>
   </connection>
@@ -1009,12 +1016,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>106</x>
-     <y>59</y>
+     <x>90</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>175</x>
-     <y>110</y>
+     <x>46</x>
+     <y>47</y>
     </hint>
    </hints>
   </connection>
@@ -1025,12 +1032,28 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>220</x>
-     <y>56</y>
+     <x>90</x>
+     <y>43</y>
     </hint>
     <hint type="destinationlabel">
-     <x>275</x>
-     <y>109</y>
+     <x>89</x>
+     <y>46</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>useKdeButton</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>httpSettingsGroupBox</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>76</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>75</x>
+     <y>117</y>
     </hint>
    </hints>
   </connection>
