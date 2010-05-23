@@ -1517,7 +1517,7 @@ msgstr "Instalación comienza en: <b>%s segundos</b>"
 
 #: yali4/gui/ScrSummary.py:95
 msgid "Start Installation"
-msgstr "IComenzar instalación"
+msgstr "Comenzar instalación"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
