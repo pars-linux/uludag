@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: kaptan\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-20 22:33+0000\n"
-"PO-Revision-Date: 2010-05-19 08:22+0200\n"
+"PO-Revision-Date: 2010-05-23 11:31+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -338,11 +338,11 @@ msgstr "Skicka min profil: <b>%s</b>"
 
 #: .tmp/ScrSummary.py:123
 msgid "Error"
-msgstr ""
+msgstr "Fel"
 
 #: .tmp/ScrSummary.py:123
 msgid "Cannot restart plasma-desktop. Kaptan will now shutdown."
-msgstr ""
+msgstr "Kan inte start om plasmaskrivbordet. Kaptan avslutas."
 
 #: .tmp/ScrWallpaper.py:34 .tmp/ui_wallpaperWidget.py:126
 msgid "Wallpaper"
@@ -357,9 +357,9 @@ msgid "Welcome"
 msgstr "Välkommen"
 
 #: .tmp/ScrWelcome.py:32
-#, fuzzy, python-format
+#, python-format
 msgid "Welcome to %s"
-msgstr "Välkommen"
+msgstr "Välkommen till %s"
 
 #: .tmp/ui_goodbyeWidget.py:411
 msgid ""
@@ -408,16 +408,14 @@ msgid "Help and Support"
 msgstr "Hjälp och stöd"
 
 #: .tmp/ui_goodbyeWidget.py:422
-#, fuzzy
 msgid ""
 "Pardus community, mailing lists, chat rooms, Wiki documents, help and "
 "support pages..."
-msgstr "Pardus gemenskap, sändlistor, IRC-kanaler, wikis och hjälpsidor..."
+msgstr "Pardus gemenskap, sändlistor, IRC-kanaler, Wikis och hjälpsidor..."
 
 #: .tmp/ui_kaptanMain.py:304
-#, fuzzy
 msgid "Kaptan"
-msgstr "Data"
+msgstr "Kaptan"
 
 #: .tmp/ui_kaptanMain.py:305
 msgid "Welcome to Pardus 2009.2"
@@ -590,7 +588,6 @@ msgid "color: rgb(95, 34, 52);"
 msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:112
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -642,41 +639,46 @@ msgstr ""
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
 "\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-"
+"</style></head><body style=\" font-family:'Sans Serif'; font-size:8pt; font-"
 "weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">      Smolt kommer bara "
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">         Smolt kommer bara "
 "att skickahårdvaru- och grundläggande operativsystemet information till "
 "Pardus smolt server (smoon). Det enda koppling från databasen till en "
 "klientmaskin är UUID. Så länge klienten inte ger ut detta UUID är datat "
 "anonymt. Om en användare vid något tillfälle vill ta bort sin profilfrån "
-"databasen behöver denne bara köra</p>\n"
+"databasen behöver denne bara köra</"
+"span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">    <span style=\" font-"
-"style:italic;\">smoltDeleteProfile</span></p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">    </span><span style=\" font-size:9pt; font-style:italic;"
+"\">smoltDeleteProfile</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   The information sent to "
-"the smolt database server should be considered public in that anyone can "
-"view the statistics, data and share machine profiles.  In  many ways smolt "
-"is designed to get hardware vendors and other 3rd parties attention.  As "
-"such, not only will this information be shared with 3rd parties, we will be "
-"using smolt as leverage to gain better support for open source drivers and "
-"better support in general.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   The information sent to the smolt database server should be "
+"considered public in that anyone can view the statistics, data and share "
+"machine profiles.  In  many ways smolt is designed to get hardware vendors "
+"and other 3rd parties attention.  As such, not only will this information be "
+"shared with 3rd parties, we will be using smolt as leverage to gain better "
+"support for open source drivers and better support in general.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" text-"
-"decoration: underline;\">IP Logging:</span>  In Pardus's smolt install all "
-"web traffic goes through a proxy server first.  This is the only place IP "
-"addresses are being logged and they are kept on that server for a period of "
-"4 weeks at which time log rotation removes these logs.  The Pardus Project "
-"does not aggregate ip addresses in the smolt database.  These logs are "
-"private and will not be available to the general public.</p>\n"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt; text-decoration: underline;\">IP Logging:</span><span style=\" "
+"font-size:9pt;\">  In Pardus's smolt install all web traffic goes through a "
+"proxy server first.  This is the only place IP addresses are being logged "
+"and they are kept on that server for a period of 4 weeks at which time log "
+"rotation removes these logs.  The Pardus Project does not aggregate ip "
+"addresses in the smolt database.  These logs are private and will not be "
+"available to the general public.</span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\">   Users unhappy with this "
-"policy should simply not use smolt.  Users with questions about this policy "
-"should contact the Pardus Infrastructure Team at admin [at] pardus.org.tr  "
-"Also remember that users can delete their profiles at any time using &quot;"
-"<span style=\" font-style:italic;\">smoltDeleteProfile</span>&quot;</p></"
-"body></html>"
+"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
+"size:9pt;\">   Users unhappy with this policy should simply not use smolt.  "
+"Users with questions about this policy should contact the Pardus "
+"Infrastructure Team at admin [at] pardus.org.tr  Also remember that users "
+"can delete their profiles at any time using &quot;</span><span style=\" font-"
+"size:9pt; font-style:italic;\">smoltDeleteProfile</span><span style=\" font-"
+"size:9pt;\">&quot;</span></p></body></html>"
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "color: rgb(234, 225, 228);"
@@ -778,7 +780,7 @@ msgstr "Ändra inte skrivbordsunderlägg"
 
 #: .tmp/ui_welcomeWidget.py:72
 msgid "What is Pardus?"
-msgstr ""
+msgstr "Vad är Pardus?"
 
 #: .tmp/ui_welcomeWidget.py:73
 msgid ""
@@ -793,7 +795,7 @@ msgstr ""
 "operativsystem.  <br /><br />Med Pardus kan du enkelt surfa, eposta, använda "
 "kontorsprogram, se filmer, spela musik, utveckla program, spela spel och "
 "mycket mer! <br /><br /> <b>Kaptan</b> låter dig enkelt och snabbt anpassa "
-"Pardus till att möta dina behov. Klicka <b>Nästa</b> för att börja."
+"Pardus för att möta dina behov. Klicka <b>Nästa</b> för att börja."
 
 #~ msgid "Kaptan Desktop"
 #~ msgstr "Kaptan Skrivbord"
