@@ -8,6 +8,7 @@ Name[x-test]=xxNetwork Manager Appletxx
 Comment=Manage and track your network connections
 Comment[tr]=Ağ bağlantılarınızı yönetin ve izleyin
 Comment[de]=Netzwerkverbindung konfigurieren
+Comment[sv]=Hantera dina nätverksinställningar
 Type=Service
 ServiceTypes=Plasma/Applet
 X-Plasma-API=python
