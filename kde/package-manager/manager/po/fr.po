@@ -670,9 +670,8 @@ msgid "Help"
 msgstr "Aide"
 
 #: .tmp/pm-install.py:47
-#, fuzzy
 msgid "%prog packages_to_install"
-msgstr "%prog packages_to_install"
+msgstr "%prog paquets_à_installer"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
