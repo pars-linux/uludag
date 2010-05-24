@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-23 13:30+0300\n"
-"PO-Revision-Date: 2010-05-20 20:35+0200\n"
+"PO-Revision-Date: 2010-05-24 20:38+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,7 @@ msgstr "Firefox"
 
 #: .tmp/ui_progressdialog.py:153
 msgid "Operation"
-msgstr "Operatie"
+msgstr "Bewerking"
 
 #: .tmp/ui_progressdialog.py:154 .tmp/progressdialog.py:71
 msgid "<h3>Preparing PiSi...</h3>"
@@ -51,7 +51,7 @@ msgstr "--:--:--"
 
 #: .tmp/ui_progressdialog.py:158
 msgid "Operation:"
-msgstr "Operatie:"
+msgstr "Bewerking:"
 
 #: .tmp/ui_progressdialog.py:159 .tmp/progressdialog.py:75
 msgid "Status:"
@@ -248,13 +248,12 @@ msgid "No proxy server"
 msgstr "Geen proxyserver"
 
 #: .tmp/ui_settingsdialog.py:404
-#, fuzzy
 msgid "Use manual settings"
-msgstr "Al&gemene instellingen"
+msgstr "Handmatige instellingen gebruiken"
 
 #: .tmp/ui_settingsdialog.py:405
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Bureaubladinstellingen gebruiken"
 
 #: .tmp/ui_settingsdialog.py:406
 msgid "&Proxy"
@@ -514,7 +513,7 @@ msgstr "Pakketbeheer"
 #: .tmp/progressdialog.py:39
 #, python-format
 msgid "Operation - %1%"
-msgstr "Operatie - %1%"
+msgstr "Bewerking - %1%"
 
 #: .tmp/progressdialog.py:42 .tmp/commontext.py:16
 msgid "configuring"
@@ -542,7 +541,7 @@ msgstr "<p align='center'>%1 / %2, %3</p>"
 
 #: .tmp/progressdialog.py:82
 msgid "<b>Cancelling operation...</b>"
-msgstr "<b>Annuleren operatie...</b>"
+msgstr "<b>Bewerking annuleren...</b>"
 
 #: .tmp/settingsdialog.py:150
 msgid "Open Directory"
@@ -614,7 +613,7 @@ msgstr "Autorisatiefout"
 
 #: .tmp/mainwidget.py:216
 msgid "You are not authorized for this operation."
-msgstr "Geen autorisatie voor deze operatie."
+msgstr "U bent niet gemachtigd om deze handeling uit te voeren."
 
 #: .tmp/mainwidget.py:219
 msgid ""
@@ -702,7 +701,7 @@ msgstr "installeren"
 
 #: .tmp/ui_summarydialog.py:49
 msgid "Operation Summary"
-msgstr "Operatie samenvatting"
+msgstr "Samenvatting van bewerking"
 
 #: .tmp/ui_summarydialog.py:50
 msgid ""
@@ -729,9 +728,8 @@ msgid "Help"
 msgstr "Help"
 
 #: .tmp/pm-install.py:47
-#, fuzzy
 msgid "%prog packages_to_install"
-msgstr "Te installeren pakketten"
+msgstr "%prog te_installeren_pakketten"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
