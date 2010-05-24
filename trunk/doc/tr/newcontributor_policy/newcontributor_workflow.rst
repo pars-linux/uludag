@@ -14,7 +14,7 @@ Bugzilla Katkıcı Adayı Takibi
 
 - Bu izleme süreci için "Yeni Katkıcı / New Contributor" ürünü bulunmaktadır.
 - Bu ürün altında "Geliştirici / Developer", "Testçi / Tester" bileşenleri bulunmaktadır.
-- Çeviri başvuruları transifex.pardus.org.tr üzerinden yapılmaktadır.
+- Çeviri başvuruları translate.pardus.org.tr üzerinden yapılmaktadır.
 - Bugzilla izinleri:
     - Bugzilla'da bulunan "Yeni Katkıcı / New Contributor" ürünü için bir mentor grubu bulunmaktadır.
     - Bu grubun dışında bulunan kişiler hata açabilecek fakat hata durumunda bir değişiklik yapamayacaktır.
