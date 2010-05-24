@@ -95,9 +95,8 @@ msgid "Show Component information "
 msgstr "Afficher l'information sur le composant"
 
 #: .tmp/ui_settingsdialog.py:367
-#, fuzzy
 msgid "System tray icon"
-msgstr "&Afficher l'icône dans le tableau de bord"
+msgstr "Icône dans le tableau de bord"
 
 #: .tmp/ui_settingsdialog.py:368
 #, fuzzy
