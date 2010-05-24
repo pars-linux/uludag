@@ -99,9 +99,8 @@ msgid "System tray icon"
 msgstr "Icône dans le tableau de bord"
 
 #: .tmp/ui_settingsdialog.py:368
-#, fuzzy
 msgid "Enable system tray icon"
-msgstr "&Afficher l'icône dans le tableau de bord"
+msgstr "Afficher l'icône dans le tableau de bord"
 
 #: .tmp/ui_settingsdialog.py:369
 msgid "Hide system tray if there is no update."
@@ -116,7 +115,6 @@ msgid "padding-left:15px;"
 msgstr "padding-left:15px;"
 
 #: .tmp/ui_settingsdialog.py:372
-#, fuzzy
 msgid "Check interval :"
 msgstr "Intervalle de vérification :"
 
@@ -137,9 +135,8 @@ msgid " kb/s"
 msgstr "ko/s"
 
 #: .tmp/ui_settingsdialog.py:378
-#, fuzzy
 msgid "Use bandwidth limit :"
-msgstr "Utilisez la limite de bande passante"
+msgstr "Utilisez la limite de bande passante :"
 
 #: .tmp/ui_settingsdialog.py:379
 msgid "&General Settings"
@@ -158,24 +155,20 @@ msgid "Unlimited"
 msgstr "Illimité"
 
 #: .tmp/ui_settingsdialog.py:383
-#, fuzzy
 msgid " Mib"
 msgstr "Mo"
 
 #: .tmp/ui_settingsdialog.py:384
 msgid "Current cache dir:"
-msgstr ""
+msgstr "Dossier de cache actuel :"
 
 #: .tmp/ui_settingsdialog.py:385
 msgid "Select..."
-msgstr ""
+msgstr "Choisissez..."
 
 #: .tmp/ui_settingsdialog.py:386
-#, fuzzy
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr ""
-"Effacer le cache du disque supprimera tous les logiciels téléchargés. \n"
-"Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de votre système."
+msgstr "Effacer le cache du disque supprimera tous les logiciels téléchargés. Cela n'effacera pas les logiciels installés ni n'affectera la stabilité de votre système."
 
 #: .tmp/ui_settingsdialog.py:387
 msgid "C&lean disk cache now"
@@ -235,18 +228,16 @@ msgid "FTP proxy server:"
 msgstr "Serveur proxy FTP"
 
 #: .tmp/ui_settingsdialog.py:403
-#, fuzzy
 msgid "No proxy server"
 msgstr "Aucun serveur proxy"
 
 #: .tmp/ui_settingsdialog.py:404
-#, fuzzy
 msgid "Use manual settings"
-msgstr "&Paramètres généraux"
+msgstr "Utiliser les paramètres manuels"
 
 #: .tmp/ui_settingsdialog.py:405
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Utiliser les paramètres de l'environnement de bureau"
 
 #: .tmp/ui_settingsdialog.py:406
 msgid "&Proxy"
@@ -262,11 +253,11 @@ msgstr "&OK"
 
 #: .tmp/packagedelegate.py:48
 msgid "critical"
-msgstr ""
+msgstr "critique"
 
 #: .tmp/packagedelegate.py:49
 msgid "security"
-msgstr ""
+msgstr "sécurité"
 
 #: .tmp/packagedelegate.py:64
 msgid "Description:"
@@ -324,19 +315,19 @@ msgstr "téléchargement"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Voulez-vous continuer?"
 
 #: .tmp/basketdialog.py:115
 msgid "Update Requirements"
-msgstr ""
+msgstr "Requis par la mise à jour"
 
 #: .tmp/basketdialog.py:125
 msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
-msgstr ""
+msgstr "Vous devez <b>redémarrer</b> votre système pour que les versions à jour des paquets suivants prennent effet :"
 
 #: .tmp/basketdialog.py:132
 msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
-msgstr ""
+msgstr "Vous devez redémarrer les services du système suivants  afin que les versions mises à jour des paquets sélectionnés prennent effet :"
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
 #: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:218 .tmp/mainwidget.py:221
@@ -508,7 +499,7 @@ msgstr "<b>Annulation de l'opération...</b>"
 
 #: .tmp/settingsdialog.py:150
 msgid "Open Directory"
-msgstr ""
+msgstr "Ouvrir le dossier"
 
 #: .tmp/settingsdialog.py:159
 msgid "Warning"
@@ -681,7 +672,7 @@ msgstr "Aide"
 #: .tmp/pm-install.py:47
 #, fuzzy
 msgid "%prog packages_to_install"
-msgstr "Paquets à installer"
+msgstr "%prog packages_to_install"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
