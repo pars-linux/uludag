@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 15:10+0300\n"
+"POT-Creation-Date: 2010-05-25 00:44+0300\n"
 "PO-Revision-Date: 2009-07-17 01:41+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:57
+#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:58
 #: yali4/gui/Ui/goodbyewidget.py:48 yali4/gui/Ui/partedit.py:166
 #: yali4/gui/Ui/summarywidget.py:53
 msgid "Form"
@@ -245,11 +245,11 @@ msgstr ":"
 msgid "Time Zone"
 msgstr "Zaman Dilimi"
 
-#: yali4/gui/Ui/exception.py:59 yali4/__init__.py:69
+#: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
 msgstr "Hata"
 
-#: yali4/gui/Ui/exception.py:60
+#: yali4/gui/Ui/exception.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -275,11 +275,11 @@ msgstr ""
 "weight:600;\">http://hata.pardus.org.tr</span> adresine aşağıdaki geri iz "
 "bilgilerini de ekleyerek bu hatayı bildirin.</p></body></html>"
 
-#: yali4/gui/Ui/exception.py:65
+#: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
 msgstr "Geri İz Göster"
 
-#: yali4/gui/Ui/exception.py:66 yali4/gui/Ui/rescuewidget.py:94
+#: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:701
 msgid "Reboot"
@@ -346,7 +346,7 @@ msgid "Next Screen"
 msgstr "Sonraki Ekran"
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
-#: yali4/gui/ScrSummary.py:323
+#: yali4/gui/ScrSummary.py:326
 msgid "Next"
 msgstr "İleri"
 
@@ -1538,8 +1538,8 @@ msgstr ""
 "Otomatik bölümlendirme seçeneği, seçtiğiniz alanda bulunan tüm verileri "
 "otomatik olarak biçimlendirip bu alana Pardus 2009.2'u kuracaktır. Eğer "
 "isterseniz disk bölümlendirmenizi kendiniz yapabilir ya da boş alanda Pardus "
-"2009.2 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz.<p>Daha "
-"fazla bilgi için Pardus Kurulum ve Kullanım Kılavuzu'na \n"
+"2009.2 kurulumu için yeni bir bölüm oluşturulmasını sağlayabilirsiniz."
+"<p>Daha fazla bilgi için Pardus Kurulum ve Kullanım Kılavuzu'na \n"
 "başvurabilirsiniz. \n"
 "</p> \n"
 "</font>\n"
@@ -1914,16 +1914,16 @@ msgstr ""
 "                                        <b>Bu işlemin geri alınamaz bir "
 "işlem olduğunu unutmayın.</b></p>"
 
-#: yali4/gui/ScrSummary.py:269 yali4/gui/ScrSummary.py:280
-#: yali4/gui/ScrSummary.py:296
+#: yali4/gui/ScrSummary.py:272 yali4/gui/ScrSummary.py:283
+#: yali4/gui/ScrSummary.py:299
 msgid "Formatting..."
 msgstr "Biçimlendiriliyor..."
 
-#: yali4/gui/ScrSummary.py:275 yali4/gui/ScrSummary.py:287
+#: yali4/gui/ScrSummary.py:278 yali4/gui/ScrSummary.py:290
 msgid "Writing disk tables..."
 msgstr "Disk tablosu yazılıyor..."
 
-#: yali4/gui/ScrSummary.py:277
+#: yali4/gui/ScrSummary.py:280
 msgid "Resizing..."
 msgstr "Yeniden boyutlandırıyor..."
 
@@ -2489,6 +2489,43 @@ msgstr "<b>%s</b> kullanıcısının ev dizini ayarlanıyor.."
 msgid "Not enough free space on %s to create new partition"
 msgstr ""
 "%s aygıtı üzerinde yeni bir disk bölümü yaratmak için yeterli boş alan yok"
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Boot loader setup</font>\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus 2009.1 uses a boot manager called GRUB to start the operating "
+#~ "system you choose.\n"
+#~ "</p>\n"
+#~ "<p>If there are multiple operating systems in your computer, you can "
+#~ "start the one \n"
+#~ "you like using GRUB. Installing GRUB to the beginning of the boot disk is "
+#~ "the advised \n"
+#~ "option to avoid boot problems.  If you are sure you know what you are "
+#~ "doing, \n"
+#~ "you can change boot loader settings.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using \n"
+#~ "Guide for more information about GRUB boot \n"
+#~ "loader.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Açılış Yöneticisi Ayarları</font>\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus 2009.2, istediğiniz bir işletim sistemini başlangıçta açmak için "
+#~ "GRUB adı verilen bir açılış yöneticisi kullanır. Bilgisayarınızda birden "
+#~ "fazla işletim sistemi varsa GRUB aracılığı ile istediğiniz işletim "
+#~ "sistemini çalıştırabilirsiniz. GRUB'ı açılış diskinizin başına kurmak "
+#~ "herhangi bir problemle karşılaşmadan sisteminizi kullanmak için önerilen "
+#~ "bir seçenektir. Eğer ne yaptığınızdan eminseniz sistem yükleyicisi ile "
+#~ "ilgili diğer seçenekleri de seçebilirsiniz.</p>\n"
+#~ "</font>\n"
 
 #~ msgid "Begin Install"
 #~ msgstr "Kuruluma Başla"
