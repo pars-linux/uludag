@@ -1,44 +1,49 @@
 <html>
 <head>
-<title>Pardus Corporate 2 Release Notes</title>
+<title>Pardus Corporate 2 Alpha Release Notes</title>
 <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
 
-<h1>Pardus Corporate 2 Release Notes</h1>
+<h1>Pardus Corporate 2 Alpha Release Notes</h1>
 
-<h2>1. Welcome to Pardus Corporate 2</h2>
+<h2>1. Welcome to Pardus Corporate 2 Alpha</h2>
 
-Welcome to Pardus Corporate 2, another great Pardus release from Pardus developers, translators, artists and documentation writers.
+Welcome to Pardus Corporate 2 Alpha, another greate Pardus release from Pardus developers, translators, artists and documentation writers.
+<br><br>
+
 <br>We kindly invite you to visit <a href="http://www.pardus.org.tr/eng">http://www.pardus.org.tr/eng</a> for more information.
 
-<h3>1.1. Feedback</h3>
+<h3>1.1. What is Pardus?</h3>
+
+Pardus is a Linux distribution developed as a product of the Pardus Project, by Turkish National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana.
+<br><br>
+
+Pardus consists of a Linux based operating system, open source applications and related data files necessary for desktop and server environments, aiming to give its users an easy to use and feature rich experience.
+
+<h3>1.2 Feedback</h3>
 
 You can use <a href="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</a>, (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release.
 
-<h2>2. What is new ?</h2>
+<h2>2. What is new?</h2>
+
 <h3>2.1. Updates in Pardus Technologies</h3>
 
-With the release of Pardus Corporate 2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support.
+With the release of Pardus Corporate 2 Alpha, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support.
 <br><br>
 
-A new manager <strong>System Manager</strong> has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc.
+<strong>Package Manager</strong> and <strong>PiSi</strong> are now a lot faster than before, thanks to the new caching mechanism. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily.
 <br><br>
 
-<strong>Package Manager</strong> and <strong>PiSi</strong> are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily.
-<br><br>
-
-Installation system <strong>YALI</strong> has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc.
+Installation system <strong>YALI</strong> has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to YALI, which can be used to take back previous package updates, restore bootloader etc.
 
 <h3>2.2. Graphical Enhancements</h3>
 
-Pardus Corporate 2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc.
-
-<!--<h3>2.3. KDE Desktop Environment</h3>-->
+Pardus Corporate 2 Alpha comes with a lot of graphical enhancements. The default icon theme is a Tango flavour polished for KDE called BCTango. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc.
 
 <h3>2.3. Updated Components</h3>
 
-Pardus Corporate 2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:
+Pardus Corporate 2 Alpha includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:
 <br>
 
 <ul>
@@ -54,19 +59,57 @@ Pardus Corporate 2 includes a lot of package updates besides Pardus Technologies
     <li>GLIBC 2.9</li>
 </ul>
 
-<h3>2.5. New Filesystems</h3>
+<h4>2.3.1 Base System</h4>
+<ul>
+    <li>PolicyKit is upgraded to 0.96, polkit-gnome is now the default authentication agent,</li>
+    <li>D-Bus is upgraded to the latest non-permissive 1.2.24 version which includes various important bug fixes,</li>
+    <li>procps is adjusted so that its tools provides kernel control groups related informations,</li>
+    <li>curl now gracefully handles anonymous login attempts using a less generic identity,</li>
+    <li>dhcpcd is updated to the latest stable 5.2 branch,</li>
+    <li>The default kernel and the PAE flavour are all updated to 2.6.32.13,</li>
+    <li>libcgroup is packaged for further systemd integration attempts</li>
+</ul>
 
-Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte.
-<br><br>
+<h4>2.3.2 Hardware</h4>
+<ul>
+    <li>hplip is updated to 3.10.5 to support more printers,</li>
+    <li>ntfs_3g is updated to the latest stable version,</li>
+    <li>All ALSA components are updated to a recent snapshot for better hardware support and stability,</li>
+    <li>Smart card support is improved, serious problems with OpenCT and pcsc-lite are fixed,</li>
+    <li>CUPS is updated to 1.4.3, PHP binding for the libcups is enabled,</li>
+    <li>bluez is updated to 4.63</li>
+</ul>
 
-XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı.
-<br><br>
+<h4>2.3.3 Networking</h4>
+<ul>
+    <li>GNOME NetworkManager, 4 VPN plugins, network-manager-applet and ModemManager are now available in the repository. Users can switch to NetworkManager backend by tweaking the /et/conf.d/NetworkManager file,</li>
+    <li>OpenAFS client/server and kernel modules are now available in the repository,</li>
+    <li>PPP is updated to 2.4.5 which includes serious DNS related bug fixes</li>
+</ul>
 
-For more information about updates and new features on Pardus Corporate 2, you can take a look at the <a href="http://www.pardus.org.tr/eng/">Pardus website</a>.<br>
+<h4>2.3.4 Desktop</h4>
+<ul>
+    <li>Mozilla Firefox is updated to 3.6.3,</li>
+    <li>Mozilla Thunderbird 3.0.4 is now bundled within the installation image,</li>
+    <li>notification-daemon now uses the nodoka theme by default,</li>
+    <li>Qt is updated to 4.6.2, Gtk+ to 2.20.1,</li>
+    <li>Package Manager is refactored and polished with many new features and improvements,</li>
+    <li>The default BCTango icon theme is improved,</li>
+    <li>evolution as an alternative e-mail client is available in the repository</li>
+</ul>
+
+<h4>2.3.5 Server</h4>
+<ul>
+    <li>mit-kerberos is compiled with LDAP support,</li>
+    <li>ntp is updated to 4.2.6_p1 and the package is splitted into client and server sub packages,</li>
+    <li>Various openldap server startup issues has been fixed</li>
+</ul>
+
+For more information about updates and new features on Pardus Corporate 2 Alpha, you can take a look at the <a href="http://www.pardus.org.tr/eng/">Pardus web site</a>.<br>
 
 <h2>3. Installation requirements</h2>
 
-You can run Pardus Corporate 2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus Corporate 2 are mentioned below:
+You can run Pardus Corporate 2 Alpha on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus Corporate 2 Alpha are mentioned below:
 
 <ul>
     <li>256 MB memory (1GB or more recommended)</li>
