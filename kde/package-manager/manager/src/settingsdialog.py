@@ -354,34 +354,42 @@ class ProxySettings(SettingsTab):
             for control in controls:
                 control.setEnabled(True)
 
-            self.settings.httpsProxy.setText("")
-            self.settings.httpsProxyPort.setValue(0)
-            self.settings.ftpProxy.setText("")
-            self.settings.ftpProxyPort.setValue(0)
+            self.clear(all=False)
+
+    def clear(self, all=True):
+        if all:
+            self.settings.httpProxy.setText("")
+            self.settings.httpProxyPort.setValue(0)
+        self.settings.httpsProxy.setText("")
+        self.settings.httpsProxyPort.setValue(0)
+        self.settings.ftpProxy.setText("")
+        self.settings.ftpProxyPort.setValue(0)
 
     def getSettingsFromKde(self, toggled):
         if toggled:
             cf = path.join(Pds.config_path, 'share/config/kioslaverc')
             config = Pds.parse(cf, force=True)
-            proxyType = int(config.value('Proxy Settings/ProxyType').toString())
+            proxyType = config.value('Proxy Settings/ProxyType').toString()
+            if proxyType:
+                if int(proxyType) > 0:
+                    http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
+                    self.settings.httpsProxy.setText(http[0])
+                    self.settings.httpsProxyPort.setValue(int(http[1]))
 
-            if proxyType > 0:
-                http = str(config.value('Proxy Settings/httpProxy').toString()).rsplit(':', 1)
-                self.settings.httpsProxy.setText(http[0])
-                self.settings.httpsProxyPort.setValue(int(http[1]))
+                    https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
+                    self.settings.httpProxy.setText(https[0])
+                    self.settings.httpProxyPort.setValue(int(https[1]))
 
-                https = str(config.value('Proxy Settings/httpsProxy').toString()).rsplit(':', 1)
-                self.settings.httpProxy.setText(https[0])
-                self.settings.httpProxyPort.setValue(int(https[1]))
-
-                ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
-                self.settings.ftpProxy.setText(ftp[0])
-                self.settings.ftpProxyPort.setValue(int(ftp[1]))
+                    ftp = str(config.value('Proxy Settings/ftpProxy').toString()).rsplit(':', 1)
+                    self.settings.ftpProxy.setText(ftp[0])
+                    self.settings.ftpProxyPort.setValue(int(ftp[1]))
+            else:
+                self.clear()
 
     def save(self):
-        httpProxy, httpProxyPort = self.settings.httpProxy.text(), self.settings.httpProxyPort.value()
-        httpsProxy, httpsProxyPort = self.settings.httpsProxy.text(), self.settings.httpsProxyPort.value()
-        ftpProxy, ftpProxyPort = self.settings.ftpProxy.text(), self.settings.ftpProxyPort.value()
+        httpProxy, httpProxyPort = self.settings.httpProxy.text().split('://')[-1], self.settings.httpProxyPort.value()
+        httpsProxy, httpsProxyPort = self.settings.httpsProxy.text().split('://')[-1], self.settings.httpsProxyPort.value()
+        ftpProxy, ftpProxyPort = self.settings.ftpProxy.text().split('://')[-1], self.settings.ftpProxyPort.value()
 
         if self.settings.noProxyButton.isChecked():
             httpProxy = httpsProxy = ftpProxy = None
