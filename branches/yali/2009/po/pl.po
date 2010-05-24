@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-20 15:10+0300\n"
+"POT-Creation-Date: 2010-05-25 00:44+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:57
+#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:58
 #: yali4/gui/Ui/goodbyewidget.py:48 yali4/gui/Ui/partedit.py:166
 #: yali4/gui/Ui/summarywidget.py:53
 #, fuzzy
@@ -226,12 +226,12 @@ msgstr ""
 msgid "Time Zone"
 msgstr ""
 
-#: yali4/gui/Ui/exception.py:59 yali4/__init__.py:69
+#: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 #, fuzzy
 msgid "Error"
 msgstr "Błąd!"
 
-#: yali4/gui/Ui/exception.py:60
+#: yali4/gui/Ui/exception.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -246,12 +246,12 @@ msgid ""
 "attaching the following backtrace.</p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/exception.py:65
+#: yali4/gui/Ui/exception.py:66
 #, fuzzy
 msgid "Show Backtrace"
 msgstr "Log:"
 
-#: yali4/gui/Ui/exception.py:66 yali4/gui/Ui/rescuewidget.py:94
+#: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:701
 msgid "Reboot"
@@ -320,7 +320,7 @@ msgid "Next Screen"
 msgstr ""
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
-#: yali4/gui/ScrSummary.py:323
+#: yali4/gui/ScrSummary.py:326
 msgid "Next"
 msgstr ""
 
@@ -1046,7 +1046,7 @@ msgid ""
 "<font size=\"+2\">Boot loader setup</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009.1 uses a boot manager called GRUB to start the operating system "
+"Pardus 2009.2 uses a boot manager called GRUB to start the operating system "
 "you choose.\n"
 "</p>\n"
 "<p>If there are multiple operating systems in your computer, you can start "
@@ -1787,17 +1787,17 @@ msgid ""
 "be undone.</b></p>"
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:269 yali4/gui/ScrSummary.py:280
-#: yali4/gui/ScrSummary.py:296
+#: yali4/gui/ScrSummary.py:272 yali4/gui/ScrSummary.py:283
+#: yali4/gui/ScrSummary.py:299
 #, fuzzy
 msgid "Formatting..."
 msgstr "Formatuję!"
 
-#: yali4/gui/ScrSummary.py:275 yali4/gui/ScrSummary.py:287
+#: yali4/gui/ScrSummary.py:278 yali4/gui/ScrSummary.py:290
 msgid "Writing disk tables..."
 msgstr ""
 
-#: yali4/gui/ScrSummary.py:277
+#: yali4/gui/ScrSummary.py:280
 msgid "Resizing..."
 msgstr ""
 
@@ -1816,7 +1816,7 @@ msgid ""
 "<font size=\"+2\">User setup</font>\n"
 "<font size=\"+1\">\n"
 "<p>\n"
-"Pardus 2009.1 allows multiple users to share the same computer.\n"
+"Pardus 2009.2 allows multiple users to share the same computer.\n"
 "You can assign management rights to the users you create; you can also\n"
 "configure permissions to users for various operations through User Manager.\n"
 "</p>\n"
@@ -1874,11 +1874,11 @@ msgstr "Zainstaluj w partycji Pardusa"
 msgid ""
 "\n"
 "<font size=\"+2\">Welcome !</font>\n"
-"<font size=\"+1\"><p>Welcome to Pardus 2009.1 that contains many easy-to-use "
+"<font size=\"+1\"><p>Welcome to Pardus 2009.2 that contains many easy-to-use "
 "software components. You can do everything you need to, including, but not "
 "limited to, connecting to the Internet, creating documents, playing games, "
-"listening to music using Pardus 2009.1.</p>\n"
-"<p>This application will help you with the installation of Pardus 2009.1 to "
+"listening to music using Pardus 2009.2.</p>\n"
+"<p>This application will help you with the installation of Pardus 2009.2 to "
 "your computer in few and easy steps and then do what is necessary to "
 "identify and configure your hardware. We advise you to backup your data in "
 "your disk(s) before starting with the installation.</p>\n"
@@ -2345,6 +2345,52 @@ msgstr ""
 #, python-format
 msgid "Not enough free space on %s to create new partition"
 msgstr ""
+
+#, fuzzy
+#~ msgid ""
+#~ "\n"
+#~ "<font size=\"+2\">Boot loader setup</font>\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Pardus 2009.1 uses a boot manager called GRUB to start the operating "
+#~ "system you choose.\n"
+#~ "</p>\n"
+#~ "<p>If there are multiple operating systems in your computer, you can "
+#~ "start the one \n"
+#~ "you like using GRUB. Installing GRUB to the beginning of the boot disk is "
+#~ "the advised \n"
+#~ "option to avoid boot problems.  If you are sure you know what you are "
+#~ "doing, \n"
+#~ "you can change boot loader settings.\n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using \n"
+#~ "Guide for more information about GRUB boot \n"
+#~ "loader.\n"
+#~ "</p>\n"
+#~ "</font>\n"
+#~ msgstr ""
+#~ "\n"
+#~ "<font size=\"+2\">Ustawienie programu ładującego</font>\n"
+#~ "\n"
+#~ "<font size=\"+1\">\n"
+#~ "<p>\n"
+#~ "Linux korzysta z programu ładującego GRUB, który\n"
+#~ "pozwala uruchomić wybrany przez Ciebie system operacyjny\n"
+#~ "podczas rozruchu \n"
+#~ "</p>\n"
+#~ "<p>\n"
+#~ "Jeśli masz więcej niż jeden system,\n"
+#~ "możesz wybrać który system operacyjny\n"
+#~ "uruchomić\n"
+#~ "</p>\n"
+#~ "\n"
+#~ "<p>\n"
+#~ "Please refer to Pardus Installing and Using \n"
+#~ "Guide for more information about GRUB boot \n"
+#~ "loader.\n"
+#~ "</p>\n"
+#~ "</font>\n"
 
 #, fuzzy
 #~ msgid "Add More Users"
