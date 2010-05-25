@@ -9,11 +9,12 @@
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2007, 2009.
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2008.
 # Gökmen GÖKSEL <gokmen@pardus.org.tr>, 2009.
+# Mete Alpaslan <mete@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: YALI-tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-17 11:41+0300\n"
+"POT-Creation-Date: 2010-05-25 13:49+0300\n"
 "PO-Revision-Date: 2009-07-17 01:41+0300\n"
 "Last-Translator: Necmettin Begiter <necmettin.begiter@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -25,7 +26,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autoinstallationwidget.py:70
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:57
+#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:58
 #: yali4/gui/Ui/goodbyewidget.py:48 yali4/gui/Ui/partedit.py:166
 #: yali4/gui/Ui/summarywidget.py:53
 msgid "Form"
@@ -229,20 +230,18 @@ msgid "Automatically add other operating systems to the GRUB Menu"
 msgstr "Diğer işletim sistemlerini açılış menüsüne ekle"
 
 #: yali4/gui/Ui/checkcdwidget.py:82
-#, fuzzy
 msgid ""
 "You can check the integrity of the packages in installation media. Although "
 "this is an optional step, we encourage you to do it in order to avoid any "
 "possible errors in the installation process."
 msgstr ""
-"Bu ekranda, CD içerisindeki paketlerin doğruluğunu kontrol edebilirsiniz. Bu "
-"seçimli bir işlem olsa da kurulum sırasında bir sorun ile karşılaşmamanız "
-"için bu doğrulamayı yapmanızı öneririz."
+"Bu ekranda, kurulum kaynağı içerisindeki paketlerin doğruluğunu kontrol "
+"edebilirsiniz. Bu seçimli bir işlem olsa da kurulum sırasında bir sorun ile "
+"karşılaşmamanız için bu doğrulamayı yapmanızı öneririz."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
-#, fuzzy
 msgid "Check Packages Integrity"
-msgstr "CD Doğruluğunu Kontrol Et"
+msgstr "Paketlerin Doğruluğunu Kontrol Et"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid ""
@@ -268,11 +267,11 @@ msgstr ":"
 msgid "Time Zone"
 msgstr "Zaman Dilimi"
 
-#: yali4/gui/Ui/exception.py:59 yali4/__init__.py:69
+#: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
 msgstr "Hata"
 
-#: yali4/gui/Ui/exception.py:60
+#: yali4/gui/Ui/exception.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -298,11 +297,11 @@ msgstr ""
 "weight:600;\">http://hata.pardus.org.tr</span> adresine aşağıdaki geri iz "
 "bilgilerini de ekleyerek bu hatayı bildirin.</p></body></html>"
 
-#: yali4/gui/Ui/exception.py:65
+#: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
 msgstr "Geri İz Göster"
 
-#: yali4/gui/Ui/exception.py:66 yali4/gui/Ui/rescuewidget.py:94
+#: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:719
 msgid "Reboot"
@@ -346,7 +345,7 @@ msgstr "Ekran detayları"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -1229,17 +1228,16 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
-msgid "Check your medium"
-msgstr "CD Sürücüyü kontrol edin"
+msgid "Check your installation medium"
+msgstr "Kurulum kaynağını kontrol edin"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
-msgid "To ignore medium corruptions you can check your packages integrity..."
-msgstr "CD Sürücü hatalarından kaçınmak için kontrol yapabilirsiniz..."
+msgid ""
+"To ignore installation medium corruptions you can check your packages "
+"integrity..."
+msgstr "Kurulum ortamı hatalarından kaçınmak için kontrol yapabilirsiniz..."
 
 #: yali4/gui/ScrCheckCD.py:32
-#, fuzzy
 msgid ""
 "\n"
 "<font size=\"+2\">Check Packages Integrity!</font>\n"
@@ -1252,16 +1250,16 @@ msgstr ""
 "\n"
 "<font size=\"+2\">CD Doğruluğunu Kontrol edin !</font>\n"
 "<font size=\"+1\"><p>\n"
-"Bu ekranda kurulum CD'sinde yer alan paketlerin doğru olarak yazılıp "
+"Bu ekranda kurulum ortamında yer alan paketlerin doğru olarak yazılıp "
 "yazılmadığını kontrol edebilirsiniz. Bu testi yapmanız işletim sisteminin "
 "doğru kurulması için son derecede önemlidir. Eğer testi geçemiyorsanız, "
 "lütfen kalıbı CD'ye daha düşük (Örneğin 12X ve aşağısı) bir hızda tekrar "
 "yazdırmayı deneyin</p></font>\n"
 
 #: yali4/gui/ScrCheckCD.py:50
-#, fuzzy
 msgid "<font color=\"#FFF\">Please wait while checking Packages.</font>"
-msgstr "<font color=\"#FFF\">CD kontrol edilirken lütfen bekleyiniz.</font>"
+msgstr ""
+"<font color=\"#FFF\">Paketler kontrol edilirken lütfen bekleyiniz.</font>"
 
 #: yali4/gui/ScrCheckCD.py:51
 msgid "Stop Checking"
@@ -1353,9 +1351,8 @@ msgid "<b>Rebooting system. Please wait!</b>"
 msgstr "<b>Yeniden başlatılıyor. Lütfen bekleyin!</b>"
 
 #: yali4/gui/ScrInstallationAuto.py:35
-#, fuzzy
 msgid "Choose Collections"
-msgstr "Kurulumu seçiniz"
+msgstr "Kolleksiyon seçiniz"
 
 #: yali4/gui/ScrInstallationAuto.py:36
 msgid "Auto or Manual installation..."
@@ -1822,9 +1819,8 @@ msgid "Install starts in: <b>%s seconds</b>"
 msgstr "Kurulum <b>%s saniye</b> içinde başlayacak."
 
 #: yali4/gui/ScrSummary.py:95
-#, fuzzy
 msgid "Start Installation"
-msgstr "Otomatik kurulum"
+msgstr "Kuruluma Başla!"
 
 #: yali4/gui/ScrSummary.py:124
 msgid "Keyboard Settings"
@@ -1930,14 +1926,13 @@ msgid "Package Installation Settings"
 msgstr "Paket Kurulumu Ayarları"
 
 #: yali4/gui/ScrSummary.py:235
-#, fuzzy
 msgid "Auto installation selected."
-msgstr "Otomatik Paket Kurulumu seçildi."
+msgstr "Otomatik Kurulum seçildi."
 
 #: yali4/gui/ScrSummary.py:237
-#, fuzzy, python-format
+#, python-format
 msgid "Manual Installation ( %s ) selected"
-msgstr "%s Paket Koleksiyonun manual kurulumu için seçildi."
+msgstr "%s Paket Koleksiyonu manual kurulumu için seçildi."
 
 #: yali4/gui/ScrSummary.py:240
 msgid "Default Kernel selected"
@@ -2169,18 +2164,24 @@ msgid ""
 "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Sisteminiz şimdi <b>kapatılacaktır</b>.<br/><br/><b>Bu eylem kurulum devam "
+"ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid ""
 "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Sisteminiz şimdi <b>yeniden başlatılacaktır</b>.<br/><br/><b>Bu eylem kurulum "
+"devam ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
 "computer if the installation is in progress."
 msgstr ""
+"YALI şimdi <b>yeniden başlatılacak</b>.<br/><br/><b>Bu eylem kurulum devam "
+"ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"

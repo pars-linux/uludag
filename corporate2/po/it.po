@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: File di testo_1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-17 11:41+0300\n"
+"POT-Creation-Date: 2010-05-25 13:49+0300\n"
 "PO-Revision-Date: 2010-05-16 18:06+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
@@ -22,7 +22,7 @@ msgstr ""
 
 #: yali4/gui/Ui/autoinstallationwidget.py:70
 #: yali4/gui/Ui/autopartquestion.py:78 yali4/gui/Ui/connectionlist.py:70
-#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:57
+#: yali4/gui/Ui/datetimewidget.py:90 yali4/gui/Ui/exception.py:58
 #: yali4/gui/Ui/goodbyewidget.py:48 yali4/gui/Ui/partedit.py:166
 #: yali4/gui/Ui/summarywidget.py:53
 msgid "Form"
@@ -247,11 +247,11 @@ msgstr ":"
 msgid "Time Zone"
 msgstr "Fuso orario"
 
-#: yali4/gui/Ui/exception.py:59 yali4/__init__.py:69
+#: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
 msgstr "Errore!"
 
-#: yali4/gui/Ui/exception.py:60
+#: yali4/gui/Ui/exception.py:61
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
 "REC-html40/strict.dtd\">\n"
@@ -266,11 +266,11 @@ msgid ""
 "attaching the following backtrace.</p></body></html>"
 msgstr ""
 
-#: yali4/gui/Ui/exception.py:65
+#: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
 msgstr "Mostra Backtrace"
 
-#: yali4/gui/Ui/exception.py:66 yali4/gui/Ui/rescuewidget.py:94
+#: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:719
 msgid "Reboot"
@@ -1149,11 +1149,14 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-msgid "Check your medium"
-msgstr ""
+#, fuzzy
+msgid "Check your installation medium"
+msgstr "Scegli metodo di installazione"
 
 #: yali4/gui/ScrCheckCD.py:30
-msgid "To ignore medium corruptions you can check your packages integrity..."
+msgid ""
+"To ignore installation medium corruptions you can check your packages "
+"integrity..."
 msgstr ""
 
 #: yali4/gui/ScrCheckCD.py:32
@@ -1612,9 +1615,7 @@ msgstr "Password cambiata."
 #: yali4/gui/ScrRescuePassword.py:97
 #, fuzzy
 msgid "Info"
-msgstr ""
-"\340\275\226\340\275\242\340\276\241\340\274\213\340\275\221\340\275\274\340"
-"\275\223\340\274\215(&f)"
+msgstr "བརྡ་དོན།(&f)"
 
 #: yali4/gui/ScrRescuePassword.py:108 yali4/gui/ScrUsers.py:190
 msgid "Don't use your user name or name as a password."
