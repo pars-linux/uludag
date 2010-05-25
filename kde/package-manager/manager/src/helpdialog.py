@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2005-2009 TUBITAK/UEKAE
+# Copyright (C) 2005-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,7 +12,6 @@
 import os
 
 from PyQt4 import QtGui
-from PyQt4 import QtWebKit
 from PyQt4.QtCore import QUrl
 
 from localedata import *
@@ -31,13 +30,13 @@ class HelpDialog(QtGui.QDialog):
         self.setModal(True)
         self.setWindowTitle(i18n("Package Manager Help"))
         self.layout = QtGui.QGridLayout(self)
-        self.htmlPart = QtWebKit.QWebView(self)
+        self.htmlPart = QtGui.QTextBrowser(self)
         self.resize(700,500)
         self.layout.addWidget(self.htmlPart,1,1)
 
         locale = getKDELocale()
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
-            self.htmlPart.load(QUrl("/usr/share/package-manager/help/%s/%s" % (locale, help_files[help])))
+            self.htmlPart.setSource(QUrl("/usr/share/package-manager/help/%s/%s" % (locale, help_files[help])))
         else:
-            self.htmlPart.load(QUrl("/usr/share/package-manager/help/en/%s" % help_files[help]))
+            self.htmlPart.setSource(QUrl("/usr/share/package-manager/help/en/%s" % help_files[help]))
