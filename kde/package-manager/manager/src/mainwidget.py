@@ -247,11 +247,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             QtGui.qApp.exit()
 
     def notifyFinished(self):
-        # FIXME for silence mode in Kde 4
-        # Since we can not identify the caller yet
         if not self.operation.totalPackages:
             return
-        if Pds.session == pds.Kde4:
+        if self.state.silence:
+            Pds.notify(i18n('Package Manager'), self.state.getSummaryInfo(self.operation.totalPackages))
+        elif Pds.session == pds.Kde4:
             from PyKDE4.kdeui import KNotification
             from PyKDE4.kdecore import KComponentData
             KNotification.event("Summary",
