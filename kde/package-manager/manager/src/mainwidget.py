@@ -192,8 +192,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def actionStarted(self, operation):
         if self.state.silence:
             totalPackages = len(self.state._selected_packages)
-
-            if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+            if not all(package.endswith('.pisi') for package in self.state._selected_packages):
                 totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
 
         self.progressDialog.reset()
