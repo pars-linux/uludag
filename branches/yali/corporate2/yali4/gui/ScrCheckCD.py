@@ -26,8 +26,8 @@ import yali4.gui.context as ctx
 from yali4.gui.YaliDialog import Dialog
 
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = _('Check your medium')
-    desc = _('To ignore medium corruptions you can check your packages integrity...')
+    title = _('Check your installation medium')
+    desc = _('To ignore installation medium corruptions you can check your packages integrity...')
     icon = "iconCD"
     help = _('''
 <font size="+2">Check Packages Integrity!</font>
