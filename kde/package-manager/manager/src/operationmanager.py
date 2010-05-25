@@ -154,7 +154,7 @@ class OperationManager(QObject):
             self.addDesktopFile(str(args[0]))
 
         elif signal == "cached":
-            self.totalSize = int(args[0]) - int(args[1])
+            self.totalSize = int(args[0])
 
         elif signal in ["removed", "installed", "upgraded"]:
             # Bug 4030
