@@ -267,6 +267,9 @@ Here you can see your install options before installation starts.
                 ctx.mainScreen.moveInc = 0
                 return
 
+        # User may try to click while partioning or installing
+        ctx.mainScreen.ui.toolButton.setEnabled(False)
+
         #self.ui.install.setEnabled(False)
         #self.ui.cancel.setEnabled(False)
         ctx.installData.installAllLangPacks = self.ui.installAllLangPacks.isChecked()
