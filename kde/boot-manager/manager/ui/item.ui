@@ -20,7 +20,7 @@
       <string>Set or unset entry as default boot entry.</string>
      </property>
      <property name="text">
-      <string notr="true"/>
+      <string/>
      </property>
     </widget>
    </item>

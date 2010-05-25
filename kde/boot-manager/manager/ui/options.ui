@@ -47,7 +47,7 @@
    <item>
     <widget class="QPushButton" name="pushApply">
      <property name="text">
-      <string notr="true"/>
+      <string/>
      </property>
     </widget>
    </item>
