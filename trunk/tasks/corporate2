@@ -136,7 +136,7 @@
     * PolicyKit ve PolicyKit-devel paketleri atılacak (replaces) (+)
     * NTP paketinin elden geçirilmesi (+)
     * NetworkManager ailesinin entegrasyonu (/95)
-    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/80)
+    * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/85)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
     * bölünmüş kde paketlerinin review edilmesi (-)
 
