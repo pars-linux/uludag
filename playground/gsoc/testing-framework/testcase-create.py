@@ -1,68 +1,39 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# This is a code sample of the XML test file creation that will be implemented fully under the GSoC 2010 project.
-# Please note that this is a prototype and not the final code. 
-# As expected, it is incomplete and lacks the required features. 
-# You need the lxml package installed. 
-# You can do that by compiling it, or installing easy_install and then issuing the command: easy_install lxml
-
 try:
-  from lxml import etree
+    from lxml import etree
 except ImportError:
-  print 'lxml not found, please install the lxml library.'
-  sys.exit('Now quitting.')
+    import sys
+    sys.stderr.write('Error importing the \'lxml\' library.\nYou need the lxml library package installed to run this software.\nExit')
+    sys.exit(1)
+    
+def tagInputOutput(question):
+    """ Print the formatted prompt and accept the input """
+    
+    formattedQuestion = question + ':' + '\n'
+    answer = raw_input(formattedQuestion)
+    return answer
 
-print 'Pardus Testing Framework - Automated Test Creation'
-
-print '1. Name of the test: '
-testName = raw_input()
-
-print '2. Package: '
-package = raw_input()
-if package == '':
-    print 'No package selected.\n'
-
-print '3. Display text: '
-text = raw_input()
-
-print '4. Command:  '
-command = raw_input()
-
-print '5. Expected Output: '
-expected = raw_input()
-
-print 'Enter the name of the XML file: '
-fileName = raw_input()
-
-# XML generation starts here
-
-root = etree.Element('document')
-
-testcaseElt = etree.SubElement(root, 'testcase', test = 'automated')
-
-nameElt = etree.SubElement(testcaseElt, 'name')
-nameElt.text = testName
-
-if(package != ''):
-    packageElt = etree.SubElement(testcaseElt, 'package')
-    packageElt.text = package
-
-textElt = etree.SubElement(testcaseElt, 'text')
-textElt.text = text
-
-commandElt = etree.SubElement(testcaseElt, 'command')
-commandElt.text = command
-
-expectedOutput = etree.SubElement(testcaseElt, 'expected')
-expectedOutput.text = expected
-
-# XML file output goes here
-
-outFile = open(fileName, 'w')
-
-rootTree = etree.ElementTree(root)
-
-rootTree.write(outFile, pretty_print = True)
-
-outFile.close()
+def testcaseOutput():
+    """ Ask the user for the type of test case """
+    
+    while True:
+        
+        print 'What type of a test case do you want?'
+        print '1. Install\t2. GUI\n3. Shell\t4. Automated'
+        
+        try:
+            answer = int(raw_input('Enter a value (1 - 4) >. ')) 
+        except ValueError:
+            print '\nInvalid input. Enter a value between (1 - 4).\n'
+            continue
+        
+        if not answer in range(1, 5):
+            print '\nInvalid input. Enter a value between (1 - 4).\n'
+            continue 
+            
+        testcases = {1 : "install", 2 : "gui", 3 : "shell", 4 : "automated"}
+        return testcases[answer]
+    
+testcaseType = testcaseOutput()
