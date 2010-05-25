@@ -323,7 +323,7 @@ msgstr "Ekran detayları"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
@@ -2113,18 +2113,24 @@ msgid ""
 "Your system will now <b>shutdown</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Sisteminiz şimdi <b>kapatılacaktır</b>.<br/><br/><b>Bu eylem kurulum devam "
+"ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:147
 msgid ""
 "Your system will now <b>reboot</b>.<br/><br/><b>This action can cause harm "
 "to your computer if the installation is in progress.</b>"
 msgstr ""
+"Sisteminiz şimdi <b>yeniden başlatılacaktır</b>.<br/><br/><b>Bu eylem kurulum "
+"devam ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
 "computer if the installation is in progress."
 msgstr ""
+"YALI şimdi <b>yeniden başlatılacak</b>.<br/><br/><b>Bu eylem kurulum devam "
+"ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:165
 msgid "Terminal"
