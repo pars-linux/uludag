@@ -68,6 +68,7 @@ Süreç:
             #. Başvuru sahibi bu noktadan itibaren çırak olarak adlandırılacaktır.
             #. Çırağa mentor'un isteğine göre birden fazla iş verilebilir.
             #. Bu süreç içerisinde çırağa playground için svn izinleri verilir. (playground svn izni verilmesi uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
+            #. SVN izinlerinin verilebilmesi için, mentor tarafından `SVN Hesabı Açma Hazır Yorumu`_  yapılır. Çırak gerekli bilgiyi yorum olarak hataya gönderecektir.
             #. Bu süre içerisinde yapmış olduğu paketlerin sahibi mentor'u olacaktır.
         #.  Mentorun belirtmiş olduğu sürede bu verilen küçük işi yerine getiremez ise hatası mentoru tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve ilgili yorum yazılır. Mentor çırağın ne kadar süre sonra tekrar başvurabileceğini de yoruma ekler. (playground svn izni kaldırılması uyarı maili mentor'u tarafından Pardus Sys. Admin'e yapılacaktır.)
         #. Çırak verilen küçük iş(ler)i mentor'un istediği süre içerisinde yerine getirebilmiş ise:
@@ -155,3 +156,16 @@ Mentor Atama Hazır Yorumu
         Bu aşamada yapacağınız çalışmalar için şimdiden kolaylıklar dileriz.
         --
         Pardus Mentor Koordinatörleri
+
+SVN Hesabı Açma Hazır Yorumu
+----------------------------
+
+    ::
+
+        Merhabalar,
+
+        SVN hesabı açabilmemiz için, aşağıda bulunan bağlantı doğrultusunda elde ettiğiniz çıktıyı bize göndermeniz gerekmektedir
+
+        http://developer.pardus.org.tr/newcontributor/creating-svn-account.html
+        Teşekkürler,
+
