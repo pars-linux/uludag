@@ -192,8 +192,10 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def actionStarted(self, operation):
         if self.state.silence:
             totalPackages = len(self.state._selected_packages)
-            # FIXME add extra repo packages 
-            # self.iface.getExtras(self.state.selected_packages)
+
+            if not any(package.endswith('.pisi') for package in self.state._selected_packages):
+                totalPackages += len(self.state.iface.getExtras(self.state._selected_packages))
+
         self.progressDialog.reset()
         if not operation in ["System.Manager.updateRepository", "System.Manager.updateAllRepositories"]:
             if not self.state.silence:
