@@ -42,7 +42,7 @@ def getAppLocale():
 # package-manager uses KDE locale info, pisi.api uses system locale info. We need
 # to map KDE locale info to system locale info to make dynamic KDE system language
 # changes from Tasma visible to package-manager.
-def setSystemLocale():
+def setSystemLocale(justGet = False):
     kdeLocale = getKDELocale()
     appLocale = getAppLocale()
 
@@ -59,10 +59,12 @@ def setSystemLocale():
         else:
             systemlocale = locales['en_US']
 
+    if justGet:
+        return systemlocale.split('.')[0][:2]
+
     try:
         locale.setlocale(locale.LC_ALL, systemlocale)
     except:
         locale.setlocale(locale.LC_ALL, locales['en_US'])
 
     ctx.Pds.updatei18n(systemlocale.split('.')[0])
-

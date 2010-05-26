@@ -34,7 +34,7 @@ class HelpDialog(QtGui.QDialog):
         self.resize(700,500)
         self.layout.addWidget(self.htmlPart,1,1)
 
-        locale = getKDELocale()
+        locale = setSystemLocale(justGet = True)
 
         if locale in ["tr", "es", "en", "fr", "nl", "de", "sv"]:
             self.htmlPart.setSource(QUrl("/usr/share/package-manager/help/%s/%s" % (locale, help_files[help])))
