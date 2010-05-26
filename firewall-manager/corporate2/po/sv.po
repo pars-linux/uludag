@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: sv\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-12 20:08+0300\n"
+"POT-Creation-Date: 2010-05-26 14:33+0300\n"
 "PO-Revision-Date: 2008-09-03 22:43+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Svenska <sv@li.org>\n"
@@ -17,122 +17,9 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: src/firewall-config.py:37
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Pardus brandväggsinställning"
-
-#: src/firewall-config.py:53
-msgid "GUI Design & Usability"
-msgstr "GUI Design & Usability"
-
-#: src/firewall-config.py:54
-msgid "Help with IPTables"
-msgstr "Hjälp med IPTables"
-
-#: src/firewall-config.py:55
-msgid "Help with KDE stuff"
-msgstr "Hjälp med KDE-prylar"
-
-#: src/firewall-config.py:91
-#, python-format
-msgid "Accept all incoming connection through ports %s"
-msgstr "Tillåt alla inkommande anslutningar genom port %s"
-
-#: src/firewall-config.py:93
-#, python-format
-msgid "Reject all incoming connection through ports %s"
-msgstr "Avslå alla inkommande anslutningar genom port %s"
-
-#: src/firewall-config.py:96
-#, python-format
-msgid "Accept all outgoing connection through ports %s"
-msgstr "Tillåt alla utgående anslutningar genom port %s"
-
-#: src/firewall-config.py:98
-#, python-format
-msgid "Reject all outgoing connection through ports %s"
-msgstr "Avslå alla utgående anslutningar genom port %s"
-
-#: src/firewall-config.py:127
-msgid "Invalid port range."
-msgstr "Ogiltigt portintervall"
-
-#: src/firewall-config.py:150 src/firewall.py:188
+#: src/firewall.py:188 src/firewall-config.py:133
 msgid "Firewall Configuration"
 msgstr "Brandväggskonfiguration"
-
-#: src/firewall-config.py:195
-#, python-format
-msgid "Ports: %s"
-msgstr "Port: %s"
-
-#: src/firewall-config.py:238
-msgid "&Stop Firewall"
-msgstr "&Stoppa brandväggen"
-
-#: src/firewall-config.py:239
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>Brandväggen är aktiverad</font></b>"
-
-#: src/firewall-config.py:241
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr "Klicka här för att stoppa brandväggen och därmed tillåta alla inkommande och utgående anslutningar."
-
-#: src/firewall-config.py:246
-msgid "&Start Firewall"
-msgstr "&Starta brandväggen"
-
-#: src/firewall-config.py:247
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr "<b><font size='+1'>Brandväggen är inaktiverad</font></b>"
-
-#: src/firewall-config.py:249
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr "Klicka här för att starta brandväggen och därmed endast tillåta anslutningar till specificerade tjänster."
-
-#: src/firewall-config.py:345
-msgid "You are not allowed to edit firewall settings."
-msgstr "Du är inte behörig att ändra brandväggens inställningar."
-
-#: src/firewall-config.py:345
-msgid "Access Denied"
-msgstr "Åtkomst nekas"
-
-#: src/firewall-config.py:439
-msgid "Pardus Firewall Interface is already running!"
-msgstr "Pardus brandväggsinställning körs redan!"
-
-#: src/rules.py:16
-msgid "Mail services"
-msgstr "Eposttjänst"
-
-#: src/rules.py:21
-msgid "Web services"
-msgstr "Webbtjänst"
-
-#: src/rules.py:26
-msgid "Remote login service"
-msgstr "Fjärrinloggningstjänst"
-
-#: src/rules.py:35
-msgid "Windows file sharing service"
-msgstr "Windows fildelningstjänst"
-
-#: src/rules.py:40
-msgid "Internet relay chat service"
-msgstr "IRC-tjänst"
-
-#: src/rules.py:45
-msgid "File transfer service"
-msgstr "Filöverföringstjänst"
-
-#: src/rules.py:50
-msgid "Desktop Sharing"
-msgstr "Skrivbordsdelning"
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
@@ -148,14 +35,19 @@ msgstr "Alt+S"
 
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr "Klicka här för att stoppa brandväggen och tillåta alla inkommande anslutningar."
+msgstr ""
+"Klicka här för att stoppa brandväggen och tillåta alla inkommande "
+"anslutningar."
 
 #: src/firewall.py:196
 msgid ""
 "All incoming connections are <b>rejected</b> by default. If you want to "
 "allow other computers to access services on this computer, check the service "
 "below:"
-msgstr "Alla inkommande anslutningar <b>avvisas</b> som standard. Om du vill tillåta andra datorer att utnyttja tjänster på den här datorn, markera tjänsterna nedan:"
+msgstr ""
+"Alla inkommande anslutningar <b>avvisas</b> som standard. Om du vill tillåta "
+"andra datorer att utnyttja tjänster på den här datorn, markera tjänsterna "
+"nedan:"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
@@ -165,11 +57,15 @@ msgstr "Inkommande anslutningar"
 msgid ""
 "In this tab, you can create your own firewall rules. Use '+' button to "
 "create rules, and uncheck rules from list to remove them."
-msgstr "Under den här fliken kan du skapa egna regler för brandväggen. Använd '+'-knappen för att skapa en regel, avmarkera regler i listan för att ta bort dem."
+msgstr ""
+"Under den här fliken kan du skapa egna regler för brandväggen. Använd '+'-"
+"knappen för att skapa en regel, avmarkera regler i listan för att ta bort "
+"dem."
 
 #: src/firewall.py:201
-msgid "Advanced"
-msgstr "Avancerat"
+#, fuzzy
+msgid "Outgoing Connections"
+msgstr "Inkommande anslutningar"
 
 #: src/firewall.py:204
 msgid "Alt+H"
@@ -191,47 +87,150 @@ msgstr "Alt+O"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/dialog.py:105
+#: src/firewall-config.py:41
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Pardus brandväggsinställning"
+
+#: src/firewall-config.py:57
+msgid "GUI Design & Usability"
+msgstr "GUI Design & Usability"
+
+#: src/firewall-config.py:58
+msgid "Help with IPTables"
+msgstr "Hjälp med IPTables"
+
+#: src/firewall-config.py:59
+msgid "Help with KDE stuff"
+msgstr "Hjälp med KDE-prylar"
+
+#: src/firewall-config.py:82
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr "Avslå alla utgående anslutningar genom port %s"
+
+#: src/firewall-config.py:113
+msgid "Invalid port range."
+msgstr "Ogiltigt portintervall"
+
+#: src/firewall-config.py:176
+#, python-format
+msgid "Ports: %s"
+msgstr "Port: %s"
+
+#: src/firewall-config.py:259
+msgid "&Stop Firewall"
+msgstr "&Stoppa brandväggen"
+
+#: src/firewall-config.py:260
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr "<b><font size='+1'>Brandväggen är aktiverad</font></b>"
+
+#: src/firewall-config.py:262
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Klicka här för att stoppa brandväggen och därmed tillåta alla inkommande och "
+"utgående anslutningar."
+
+#: src/firewall-config.py:267
+msgid "&Start Firewall"
+msgstr "&Starta brandväggen"
+
+#: src/firewall-config.py:268
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr "<b><font size='+1'>Brandväggen är inaktiverad</font></b>"
+
+#: src/firewall-config.py:270
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Klicka här för att starta brandväggen och därmed endast tillåta anslutningar "
+"till specificerade tjänster."
+
+#: src/firewall-config.py:384
+msgid "Pardus Firewall Interface is already running!"
+msgstr "Pardus brandväggsinställning körs redan!"
+
+#: src/dialog.py:64
 msgid "New Rule"
 msgstr "Ny regel"
 
-#: src/dialog.py:106
-msgid "Connections"
-msgstr "Anslutningar"
-
-#: src/dialog.py:107
-msgid "Incoming"
-msgstr "Inkommande"
-
-#: src/dialog.py:108
-msgid "Outgoing"
-msgstr "Utgående"
-
-#: src/dialog.py:109
+#: src/dialog.py:65
 msgid "Port Range"
 msgstr "Portintervall"
 
-#: src/dialog.py:110
+#: src/dialog.py:66
 msgid "Example: 100-200,300"
 msgstr "Exempel: 100-200,300"
 
-#: src/dialog.py:112
-msgid "TCP"
-msgstr "TCP"
+#: src/rules.py:7
+msgid "Mail services"
+msgstr "Eposttjänst"
 
-#: src/dialog.py:113
-msgid "UDP"
-msgstr "UDP"
+#: src/rules.py:11
+msgid "Web services"
+msgstr "Webbtjänst"
 
-#: src/dialog.py:114
-msgid "Action"
-msgstr "Åtgärd"
+#: src/rules.py:15
+msgid "Remote login service"
+msgstr "Fjärrinloggningstjänst"
 
-#: src/dialog.py:115
-msgid "Accept"
-msgstr "Tillåt"
+#: src/rules.py:19
+msgid "Windows file sharing service"
+msgstr "Windows fildelningstjänst"
 
-#: src/dialog.py:116
-msgid "Reject"
-msgstr "Avvisa"
+#: src/rules.py:23
+msgid "Internet relay chat service"
+msgstr "IRC-tjänst"
 
+#: src/rules.py:27
+msgid "File transfer service"
+msgstr "Filöverföringstjänst"
+
+#: src/rules.py:31
+msgid "Desktop Sharing"
+msgstr "Skrivbordsdelning"
+
+#~ msgid "Accept all incoming connection through ports %s"
+#~ msgstr "Tillåt alla inkommande anslutningar genom port %s"
+
+#~ msgid "Reject all incoming connection through ports %s"
+#~ msgstr "Avslå alla inkommande anslutningar genom port %s"
+
+#~ msgid "Accept all outgoing connection through ports %s"
+#~ msgstr "Tillåt alla utgående anslutningar genom port %s"
+
+#~ msgid "You are not allowed to edit firewall settings."
+#~ msgstr "Du är inte behörig att ändra brandväggens inställningar."
+
+#~ msgid "Access Denied"
+#~ msgstr "Åtkomst nekas"
+
+#~ msgid "Advanced"
+#~ msgstr "Avancerat"
+
+#~ msgid "Connections"
+#~ msgstr "Anslutningar"
+
+#~ msgid "Incoming"
+#~ msgstr "Inkommande"
+
+#~ msgid "Outgoing"
+#~ msgstr "Utgående"
+
+#~ msgid "TCP"
+#~ msgstr "TCP"
+
+#~ msgid "UDP"
+#~ msgstr "UDP"
+
+#~ msgid "Action"
+#~ msgstr "Åtgärd"
+
+#~ msgid "Accept"
+#~ msgstr "Tillåt"
+
+#~ msgid "Reject"
+#~ msgstr "Avvisa"

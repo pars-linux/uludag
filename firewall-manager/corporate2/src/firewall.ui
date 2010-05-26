@@ -309,7 +309,7 @@
                     <cstring>TabPage</cstring>
                 </property>
                 <attribute name="title">
-                    <string>Advanced</string>
+                    <string>Outgoing Connections</string>
                 </attribute>
                 <grid>
                     <property name="name">
