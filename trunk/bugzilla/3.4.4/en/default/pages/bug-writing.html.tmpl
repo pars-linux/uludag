@@ -74,39 +74,37 @@ no-one else appears to have reported it, then:</p>
     Click the word "Component" to see a description of each 
     component. If none seems appropriate, look for a "General" component.</p>
 
-    <p><b>OS:</b> On which operating system (OS) did you find 
-          it?
-    (e.g. Linux, Windows XP, Mac OS X.)<br>
-    If you know the [% terms.bug %] happens on more than one type of 
-    operating system, choose "All". 
-    If your OS isn't listed, choose Other.</p>
-
     <p><b>Summary:</b> How would you describe the [% terms.bug %], in 
     approximately 60 or fewer characters?<br>
      A good summary should <b>quickly and uniquely identify [% terms.abug %]
     report</b>. It should explain the problem, not your suggested solution.<br>
     <ul>
-     <li>Good: "<tt>Cancelling a File Copy dialog crashes 
+     <li>Good Example: "<tt>Cancelling a File Copy dialog crashes 
      File Manager</tt>"</li>
-     <li>Bad: "<tt>Software crashes</tt>"</li>
-     <li>Bad: "<tt>Browser should work with my web site</tt>"</li>
+     <li>Bad Example: "<tt>Software crashes</tt>"</li>
+     <li>Bad Example: "<tt>Browser should work with my web site</tt>"</li>
     </ul>
     
-    <b>Description:</b>
+    <b>Details:</b>
     The details of your problem report, including:</p>
 
-    <blockquote>
-      <p><b>Overview:</b> More detailed restatement of
-      summary.</p>
+      <p><b>Overview:</b> More detailed restatement of summary.</p>
 
       <blockquote>
-<pre>
-Drag-selecting any page crashes Mac builds in the NSGetFactory function.
-</pre>
-      </blockquote>
+        <pre>
+        Drag-selecting any page crashes Mac builds in the NSGetFactory function.
+        </pre>
 
-      <p><b>Steps to Reproduce:</b> Minimized, easy-to-follow steps that
-      will trigger the [% terms.bug %]. Include any special setup steps.</p>
+      <p><b>Reporoducibilty</b> You should choose the repeatability frequency of the bug.
+
+      <ul>
+      <li>Happens every time.</li>
+      <li>Happens sometimes, but not always.</li>
+      <li>Haven't tried to reproduce it.</li>
+      <li>Tried, but couldn't reproduce it.</li>
+      </ul>
+
+      <p><b>Steps to Reproduce:</b> Minimized, easy-to-follow steps that  will trigger the [% terms.bug %]. Include any special setup steps.</p>
 
       <blockquote>
 <pre>
@@ -118,58 +116,32 @@ the mouse button, drag the mouse pointer downwards from any
 point in the browser's content region to the bottom of the 
 browser's content region.)
 </pre>
-      </blockquote>
 
-      <p><b>Actual Results:</b> What the application did after performing
-      the above steps.</p>
+      <p><b>Actual Results:</b> What the application did after performing the above steps.</p>
 
       <blockquote>
 <pre>
 The application crashed.
 </pre>
-      </blockquote>
 
-      <p><b>Expected Results:</b> What the application should have done,
-      were the [% terms.bug %] not present.</p>
+      <p><b>Expected Results:</b> What the application should have done, were the [% terms.bug %] not present.</p>
 
       <blockquote>
 <pre>
 The window should scroll downwards. Scrolled content should be selected. 
 (Or, at least, the application should not crash.)
 </pre>
-      </blockquote>
 
-      <p><b>Build Date &amp; Platform:</b> Date and platform of the build
-      in which you first encountered the [% terms.bug %].</p>
+      <p><b>Additional Information:</b> Any other useful information. 
+      Add any additional information you feel may be relevant to this [% terms.Bug %], such as your system information, stack trace, or a testcase. Any information longer than a few lines, should be      added using the <b>Add an Attachment</b> link on the [% terms.Bug %].
 
-      <blockquote>
-<pre>
-Build 2006-08-10 on Mac OS 10.4.3
-</pre>
-      </blockquote>
-
-      <p><b>Additional Builds and Platforms:</b> Whether or not 
-      the [% terms.bug %] takes place on other platforms (or browsers, 
-      if applicable).</p>
-
-      <blockquote>
-<pre>
-Doesn't Occur On Build 2006-08-10 on Windows XP Home (Service Pack 2)
-</pre>
-      </blockquote>
-
-      <p><b>Additional Information:</b> Any other useful information.
-      <br><br>For crashing [% terms.bugs %]:</p>
-
-      <ul>
-        <li><b>Windows:</b> Note the type of the crash, and the module that the
-        application crashed in (e.g. access violation in apprunner.exe).</li>
-
-        <li><b>Mac OS X:</b> Attach the "Crash Reporter" log that appears
-        upon crash.
-        Only include the section directly below the crashing thread, usually 
-        titled "Thread 0 Crashed". Please do not paste the entire log!</li>
-      </ul>
+    <p><b>Severity</b> Say how serious the problem is, or if your [% terms.Bug %] is a request for a new feature.
+    <ul>
+        <li>Happens every time.</li>
+        <li>Happens sometimes, but not always.</li>
+        <li>Haven't tried to reproduce it.</li>
+        <li>Tried, but couldn't reproduce it.</li>
+    </ul>
     </blockquote>
 
   <p>Double-check your report for errors and omissions, then press "Commit".
