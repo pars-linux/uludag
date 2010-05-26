@@ -8,19 +8,20 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_extragear-network_ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-18 23:29+0000\n"
-"PO-Revision-Date: 2009-04-25 14:12+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-05-26 08:41+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "#-#-#-#-#  desktop_kdeextragear-1.po (desktop_kdeextragear-1)  #-#-#-#-#\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "#-#-#-#-#  desktop_kdeextragear-2.po (desktop_kdeextragear-2)  #-#-#-#-#\n"
 "X-Generator: Lokalize 0.3\n"
 "#-#-#-#-#  desktop_kdeextragear-3.po (desktop_kdeextragear-3)  #-#-#-#-#\n"
@@ -96,7 +97,7 @@ msgstr "Torrent sessizce yüklenemedi"
 #: ktorrent/ktorrent.notifyrc:462
 msgctxt "Name"
 msgid "DHT is not enabled"
-msgstr ""
+msgstr "DHT etkin değil"
 
 #: ktorrent/ktorrentplugin.desktop:4
 msgctxt "Name"
@@ -166,12 +167,12 @@ msgstr "Günlük kaydı çıktısını görüntüler"
 #: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:2
 msgctxt "Name"
 msgid "Magnet Generator"
-msgstr ""
+msgstr "Magnet Üretici"
 
 #: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:26
 msgctxt "Comment"
 msgid "Generates magnet links"
-msgstr ""
+msgstr "Magnet bağlantıları oluşturur"
 
 #: plugins/mediaplayer/ktmediaplayerplugin.desktop:2
 msgctxt "Name"
@@ -223,7 +224,6 @@ msgid "Automatic Resume"
 msgstr "Otomatik Devam Et"
 
 #: plugins/scripting/scripts/auto_resume/auto_resume.desktop:44
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid ""
 #| "Script to automatically resume after some time, when the paused state is "
@@ -327,3 +327,4 @@ msgstr "ZeroConf"
 msgctxt "Comment"
 msgid "Discover peers on the local network using the Zeroconf protocol"
 msgstr "Zeroconf protokolünü kullanarak yerel ağdaki paylaşımcıları bulur"
+
