@@ -2125,15 +2125,15 @@ msgstr "Yardımı Göster"
 
 #: yali4/gui/YaliWindow.py:77
 msgid "Turn off Computer"
-msgstr ""
+msgstr "Bilgisayarı Kapat"
 
 #: yali4/gui/YaliWindow.py:78
 msgid "Restart Computer"
-msgstr ""
+msgstr "Bilgisayarı Yeniden Başlat"
 
 #: yali4/gui/YaliWindow.py:79
 msgid "Restart YALI"
-msgstr ""
+msgstr "Yalı'yı Tekrar Başlat"
 
 #: yali4/gui/YaliWindow.py:99 yali4/gui/YaliWindow.py:107
 #: yali4/sysutils.py:192
