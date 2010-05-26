@@ -68,31 +68,41 @@
     Bu alan zorunludur.
     Her bileşenle ilgili bir açıklama görmek için "Bileşen" kelimesine tıklayın. Eğer mevcut bileşen seçenekleri uygun gelmediyse, "Genel" bileşenini seçin.</p>
 
-    <p><b>İşletim Sistemi:</b> Bu problemi hangi işletim sisteminde yaşıyorsunuz? (örn. Linux, Windows XP, Mac OS X.)<br>
-    Eğer [% terms.bugGen %] birden fazla işletim sisteminde yaşandığını biliyorsanız "Tümü"nü seçin. 
-    If your OS isn't listed, choose Other.</p>
 
     <p><b>Özet:</b> [% terms.BugAcc %] en fazla 60 karakterde nasıl açıklarsınız?<br>
      İyi bir özet <b>[% terms.abug %] raporunu hızlı ve benzersiz şekilde açıklar</b>. Önerdiğiniz çözümü değil, problemi açıklamalıdır.<br>
+     Olabildiğince ipucu kelime kullanmaya özen göstererek yaşadığınız problemi özetleyen bir cümle kullanılmalıdır.
     <ul>
-     <li>Güzel: "<tt>Bir dosya kopyalama diyaloğunda iptâl Dosya Yöneticisi'nin çakılmasına neden oluyor</tt>"</li>
-     <li>Kötü: "<tt>Yazılım çakılıyor</tt>"</li>
-     <li>Kötü: "<tt>Tarayıcı benim sitemi düzgün görüntülemeli</tt>"</li>
+     <li>İyi Örnek: "<tt>Bir dosya kopyalama diyaloğunda iptâl Dosya Yöneticisi'nin çakılmasına neden oluyor</tt>"</li>
+     <li>Kötü Örnek: "<tt>Yazılım çakılıyor</tt>"</li>
+     <li>Kötü Örnek: "<tt>Tarayıcı benim sitemi düzgün görüntülemeli</tt>"</li>
     </ul>
-    
-    <b>Açıklama:</b>
-    Problemin detayları:</p>
+
+    <p><b>Mimari:</b> Hatanın alındığı sistemin mimarisi seçilmelidir.
+        <pre>
+            x86 veya x86_64
+        </pre>
+    <p><b>Ayrıntılar:</b>
+    Problemin detayları:
+
+       Özetin daha kapsamlı şekilde yazılmış halidir, bu açıklamanın hataya özgü olmasına lütfen özen gösterilmelidir.
+
+        <pre>
+        Bir sayfayı sürükleyerek seçmek Mac'lerde NSGetFactory fonksiyonunun çakılmasına neden oluyor.
+        </pre>
+
+    <p><b>Tekrarlanabilirlik:</b> Hatanın tekrarlanma sıklığını bu bölümde seçmeniz gerekmektedir.
 
     <blockquote>
-      <p><b>Genel Bakış:</b> Özetin daha kapsamlı şekilde yazılmış hali.</p>
+    Seçenekler:
+    <ul>
+    <li>Her zaman tekrarlanabiliyor,</li> 
+    <li>Bazen tekrarlanabiliyor,</li> 
+    <li>Hatayı tekrarlamayı denemedim,</li>
+    <li>Hatayı tekrarlayamıyorum.</li>
+    </ul>
 
-      <blockquote>
-<pre>
-Bir sayfayı sürükleyerek seçmek Mac'lerde NSGetFactory fonksiyonunun çakılmasına neden oluyor.
-</pre>
-      </blockquote>
-
-      <p><b>Tekrarlama Aşamaları:</b> [% terms.BugGen %] tekrar edilebilmesi için yapılması gerekenler, mümkün olduğunca kısa olarak. Özel kurulum adımlarını da burada belirtmelisiniz.</p>
+    <p><b>Tekrarlamak için gerekli adımlar:</b> [% terms.BugGen %] tekrar edilebilmesi için yapılması gerekenler, mümkün olduğunca kısa olarak sırası ile yazılmalıdır. Özel kurulum adımlarını da burada belirtmelisiniz.</p>
 
       <blockquote>
 <pre>
@@ -105,7 +115,7 @@ içerik alanının alt kısmına doğru sürükleyin.)
 </pre>
       </blockquote>
 
-      <p><b>Oluşan Sonuçlar:</b> Uygulama yukarıda verdiğiniz adımlar tamamlandığında ne yaptı?</p>
+      <p><b>Güncel Sonuç:</b> Uygulama yukarıda verdiğiniz adımlar tamamlandığında ne yaptı?</p>
 
       <blockquote>
 <pre>
@@ -113,42 +123,28 @@ Uygulama çakıldı.
 </pre>
       </blockquote>
 
-      <p><b>Beklenen Sonuçlar:</b> [% terms.Bug %] olmasaydı uygulamanın ne yapması gerekiyordu?</p>
+      <p><b>Beklenen Sonuç:</b> [% terms.Bug %] olmasaydı uygulamanın ne yapması gerekiyordu?</p>
 
       <blockquote>
-<pre>
-Pencere aşağıya doğru kaymalıydı. 
-Kayan içerik seçilmeliydi. 
-(Ya da en azından, uygulama çakılmamalıydı.)
-</pre>
-      </blockquote>
+    <pre>
+    Pencere aşağıya doğru kaymalıydı. 
+    Kayan içerik seçilmeliydi. 
+    (Ya da en azından, uygulama çakılmamalıydı.)
+    </pre>
 
-      <p><b>İnşa Tarihi ve Platform:</b> Bu [% terms.bug %] ile ilk karşılaştığınız inşanın tarihi ve platformu</p>
+      <p><b>Ek Açıklamalar:</b> Hata için gerekli olduğunu düşündüğünüz her türlü bilgi buraya eklenebilmektedir. Bu bilgi bilgisayarınız ile ilgili bir donanım bilgisi veya herhangi bir ayar olabilir.
+      Eğer bu açıklama birkaç satırdan fazla ise, eklentiler bölümünden bir dosya halinde girilmelidir.
 
-      <blockquote>
-<pre>
-Mac OS 10.4.3 üzerinde inşa 2006-08-10.
-</pre>
-      </blockquote>
-
-      <p><b>Ek İnşalar ve Platformlar:</b> [% terms.BugGen %] diğer platformlarda (veya ortama göre, tarayıcılarda) tekrarlanıp tekrarlanmadığı.</p>
-
-      <blockquote>
-<pre>
-Pardus 2008.2 üzerinde tekrarlanmıyor.
-</pre>
-      </blockquote>
-
-      <p><b>Ek Bilgi:</b> Diğer faydalı bilgi.
       <br><br>Çakılma [% terms.bugsAcc %] ile ilgili olarak:</p>
 
-      <ul>
-        <li><b>Windows:</b> Çakılmanın türünü ve uygulamanın çakıldığı bileşenin adını verin (örn. "access violation in apprunner.exe").</li>
+    <p><b>Önem:</b> Karşılaştığınız problemin dağıtım için ne kadar önemli olduğu belirtilmelidir.
 
-        <li><b>Mac OS X:</b> Çakılmalarda çıkan "Çakılma Raporu"nu ekleyin.
-        Sadece çakılma metninin altında bulunan ve "Thread 0 Crashed" başlıklı olan bölümü ekleyin. Tüm raporu buraya yapıştırmayın!</li>
-      </ul>
-    </blockquote>
+    <ul>
+    <li> Acil: Tüm sistemi kullanılmaz hale getiren hatalar</li>
+    <li> Büyük: Uygulamayı kullanılmaz hale getiren hatalar</li>
+    <li> Normal: Uygulamanın bir kısmını kullanılmaz hale getiren hatalar</li>
+    <li> Küçük: Yeni bir özellik isteği, çeviri eksikliği, kozmetik problem</li>
+    </ul>
 
   <p>Raporunuzu hatalara ve eksik kalan noktalara karşı iki kez kontrol edin, sonra "Gönder"e basın.
   Artık [% terms.bug %] raporunuz [% terms.Bugzilla %] veritabanına eklenmiş durumdadır.<br>
