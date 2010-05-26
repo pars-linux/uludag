@@ -88,20 +88,20 @@ msgstr "Einstellungen des Paket Managers"
 #: .tmp/ui_settingsdialog.py:364
 #, fuzzy
 msgid "Package list"
-msgstr "Paketgrösse:"
+msgstr "Paket Liste"
 
 #: .tmp/ui_settingsdialog.py:365
 msgid "&Show only desktop applications"
 msgstr "&Nur Desktop-Anwendungen zeigen"
 
 #: .tmp/ui_settingsdialog.py:366
-msgid "Show Component information "
-msgstr ""
+msgid "Show Component information"
+msgstr "Zeige Komponenten Informationen"
 
 #: .tmp/ui_settingsdialog.py:367
 #, fuzzy
 msgid "System tray icon"
-msgstr "&System-Tray-Icon aktivieren"
+msgstr "&System-Tray-Icon"
 
 #: .tmp/ui_settingsdialog.py:368
 #, fuzzy
@@ -109,8 +109,8 @@ msgid "Enable system tray icon"
 msgstr "&System-Tray-Icon aktivieren"
 
 #: .tmp/ui_settingsdialog.py:369
-msgid "Hide system tray if there is no update."
-msgstr ""
+msgid "Hide system tray icon if there is no update."
+msgstr "Zeige nicht das System-Tray Icon, wenn keine Updates verfügbar sind"
 
 #: .tmp/ui_settingsdialog.py:370
 msgid "Enable &periodic update check"
@@ -131,7 +131,7 @@ msgstr ""
 
 #: .tmp/ui_settingsdialog.py:375
 msgid "Install updates automatically"
-msgstr "Installiere updates automatisch"
+msgstr "Installiere Updates automatisch"
 
 #: .tmp/ui_settingsdialog.py:376
 msgid "Bandwidth limit"
@@ -254,7 +254,7 @@ msgstr "&Allgemeine Einstellungen"
 
 #: .tmp/ui_settingsdialog.py:405
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Desktop Einstellingen verwenden"
 
 #: .tmp/ui_settingsdialog.py:406
 msgid "&Proxy"
@@ -270,11 +270,11 @@ msgstr "&OK"
 
 #: .tmp/packagedelegate.py:48
 msgid "critical"
-msgstr ""
+msgstr "kritisch"
 
 #: .tmp/packagedelegate.py:49
 msgid "security"
-msgstr ""
+msgstr "Sicherheit"
 
 #: .tmp/packagedelegate.py:64
 msgid "Description:"
@@ -282,7 +282,7 @@ msgstr "Beschreibung:"
 
 #: .tmp/packagedelegate.py:65
 msgid "Website:"
-msgstr ""
+msgstr "Webseite"
 
 # oder Version?
 #: .tmp/packagedelegate.py:66
@@ -299,7 +299,7 @@ msgstr "Paketgrösse:"
 
 #: .tmp/packagedelegate.py:69
 msgid "Installed Version:"
-msgstr ""
+msgstr "Installierte Version"
 
 #: .tmp/main.py:52
 msgid "Show main window"
@@ -308,7 +308,7 @@ msgstr "Hauptfenster zeigen"
 #: .tmp/ui_mainwidget_kde4.py:86 .tmp/ui_mainwidget_x11.py:75
 #: .tmp/ui_pminstaller.py:33
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Click to search"
@@ -333,28 +333,28 @@ msgstr "wird heruntergeladen"
 
 #: .tmp/basketdialog.py:114
 msgid "Do you want to continue ?"
-msgstr ""
+msgstr "Möchten Sie fortfahren ?"
 
 #: .tmp/basketdialog.py:115
 msgid "Update Requirements"
-msgstr ""
+msgstr "Update Anforderungen"
 
 #: .tmp/basketdialog.py:125
 msgid ""
 "You must <b>restart</b> your system in order the updated versions of the "
 "following package(s) to take effect:"
-msgstr ""
+msgstr "Sie müssen Ihr System neu starten, damit die folgenden aktualisierten Pakete Wirkung zeigen."
 
 #: .tmp/basketdialog.py:132
 msgid ""
 "You must restart following system services in order the updated versions of "
 "the selected package(s) to take effect:"
-msgstr ""
+msgstr "Sie müssen die folgenden System-Services neu starten, damit diese Wirkung zeigen"
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
 #: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:218 .tmp/mainwidget.py:221
 msgid "Pisi Error"
-msgstr "Pisi Error"
+msgstr "Pisi Fehler"
 
 #: .tmp/statemanager.py:73
 msgid "Installing Package(s)"
@@ -414,15 +414,15 @@ msgstr "%1 neue Paket(e) wurden mit Erfolg aktualisiert."
 
 #: .tmp/statemanager.py:101
 msgid "You have selected the following package(s) to install:"
-msgstr "Ausgewählte Pakete zu installieren:"
+msgstr "Ausgewählte Pakete sind zu installieren:"
 
 #: .tmp/statemanager.py:102
 msgid "You have selected the following package(s) to removal:"
-msgstr "Ausgewählte Pakete zu entfernen:"
+msgstr "Ausgewählte Pakete sind zu entfernen:"
 
 #: .tmp/statemanager.py:103
 msgid "You have selected the following package(s) to upgrade:"
-msgstr "Ausgewählte Pakete zu aktualisieren:"
+msgstr "Ausgewählte Pakete sind zu aktualisieren:"
 
 #: .tmp/statemanager.py:106 .tmp/ui_basketdialog.py:101
 msgid ""
@@ -538,7 +538,7 @@ msgstr "<b>Vorgang wird abgebrochen...</b>"
 
 #: .tmp/settingsdialog.py:150
 msgid "Open Directory"
-msgstr ""
+msgstr "Öffne Verzeichnis"
 
 #: .tmp/settingsdialog.py:159
 msgid "Warning"
@@ -571,7 +571,7 @@ msgstr ""
 
 #: .tmp/about.py:34
 msgid "Developer"
-msgstr ""
+msgstr "Entwickler"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
@@ -584,16 +584,16 @@ msgstr ""
 #: .tmp/mainwidget.py:98
 #, fuzzy
 msgid "All Updates"
-msgstr "Aktualisieren"
+msgstr "Alle Updates"
 
 #: .tmp/mainwidget.py:99
 #, fuzzy
 msgid "Security Updates"
-msgstr "Updates anzeigen"
+msgstr "Sicherheits Updates"
 
 #: .tmp/mainwidget.py:100
 msgid "Critical Updates"
-msgstr ""
+msgstr "Kritische Updates"
 
 #: .tmp/mainwidget.py:212
 msgid "Network Error"
@@ -610,7 +610,7 @@ msgstr "Authorisationsfehler"
 
 #: .tmp/mainwidget.py:216
 msgid "You are not authorized for this operation."
-msgstr "Sie sind nicht für diesen Vorgang nicht autorisiert."
+msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 
 #: .tmp/mainwidget.py:219
 msgid ""
@@ -643,7 +643,7 @@ msgstr "Aktualisieren"
 
 #: .tmp/tray.py:173 .tmp/mainwindow.py:100
 msgid "Quit"
-msgstr ""
+msgstr "Verlassen"
 
 #: .tmp/tray.py:183
 #, fuzzy
@@ -653,11 +653,11 @@ msgstr "Aktualisieren"
 #: .tmp/tray.py:183
 #, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Es sind <b>%1</b> updates verfügbar!"
+msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
 #: .tmp/tray.py:214
 msgid "There are <b>%1</b> updates available!"
-msgstr "Es sind <b>%1</b> updates verfügbar!"
+msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
 #: .tmp/tray.py:215
 msgid "Show Updates"
@@ -735,7 +735,7 @@ msgstr "&Hilfe"
 #: .tmp/pm-install.py:47
 #, fuzzy
 msgid "%prog packages_to_install"
-msgstr "Pakete zu installaieren:"
+msgstr "Pakete zu installieren:"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
