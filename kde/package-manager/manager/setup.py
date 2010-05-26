@@ -86,6 +86,11 @@ class Build(build):
 class Install(install):
     def run(self):
         install.run(self)
+        def rst2doc(lang):
+            if os.path.exists(os.path.join('help', lang)):
+                for doc in ('main_help', 'preferences_help'):
+                    if os.path.exists(os.path.join('help',lang,'%s.rst' % doc)):
+                        os.system("rst2html --stylesheet help/help.css help/%s/%s.rst > help/%s/%s.html" % (lang,doc,lang,doc))
 
         if self.root:
             root_dir = "%s/usr/share" % self.root
@@ -133,12 +138,14 @@ class Install(install):
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
             lang = filename.rsplit(".", 1)[0]
+            rst2doc(lang)
             os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
             try:
                 os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             except OSError:
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+        rst2doc('en')
         # Rename
         print "Renaming application.py..."
         shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
@@ -165,7 +172,7 @@ class Uninstall(Command):
         pass
     def run(self):
         print 'Uninstalling ...'
-        data_dir    = '/usr/share/%s' % PROJECT
+        data_dir = '/usr/share/%s' % PROJECT
         if os.path.exists(data_dir):
             print ' removing: ', data_dir
             shutil.rmtree(data_dir)
