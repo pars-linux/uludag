@@ -21,9 +21,9 @@
 
 [% PROCESS global/variables.none.tmpl %]
 
-Kimden: [% Param('mailfrom') %]
-Kime: [% emailaddress %]
-Konu: [% terms.Bugzilla %] Eposta Adresi Değiştirme İsteği
+From: [% Param('mailfrom') %]
+To: [% emailaddress %]
+Subject: [% terms.Bugzilla %] Eposta Adresi Değiştirme İsteği
 X-Bugzilla-Type: admin
 
 [%+ terms.BugzillaDat %] [% oldemailaddress %] hesabınızın eposta adresini değiştirmek için bir istekt aldı.
