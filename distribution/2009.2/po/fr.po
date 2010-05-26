@@ -230,7 +230,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "."
-msgstr ""
+msgstr "."
 
 #: ../media-content/release-notes/releasenotes-en.html:56
 msgid "3. Installation requirements"
