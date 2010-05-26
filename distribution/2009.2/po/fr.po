@@ -130,7 +130,7 @@ msgstr "Yali"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
 msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-msgstr ""
+msgstr "a un coup de pouce avec la refonte et de nouvelles fonctionnalités pisi, doubler la vitesse d'installation de Pardus. Pardus installe maintenant tout en 15 minutes sur un ordinateur moyen d'aujourd'hui. Un support de nouvelle fonctionnalité mode de secours est également ajouté au Yali, qui peut être utilisé pour reprendre package met à jour précédentes, la restauration du chargeur de démarrage, etc"
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid "2.2. Graphical Enhancements"
@@ -166,7 +166,7 @@ msgstr "2.4. Composants mis à jour"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Pardus 2009.2 Beta includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:"
-msgstr ""
+msgstr "Pardus 2009.2 bêta comprend un grand nombre de mises à jour de paquets en plus de celles des technologies Pardus. En voici les principales :"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid "KDE 4.4.3"
