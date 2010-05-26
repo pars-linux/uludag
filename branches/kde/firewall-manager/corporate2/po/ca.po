@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-config\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-12 20:08+0300\n"
+"POT-Creation-Date: 2010-05-26 14:33+0300\n"
 "PO-Revision-Date: 2007-03-18 19:53+0100\n"
 "Last-Translator: Pau Amaro-Seoane <pau@aei.mpg.de>\n"
 "Language-Team: Catala <pardus-translation-ca@ns1.uludag.org.tr>\n"
@@ -16,126 +16,9 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: src/firewall-config.py:37
-msgid "Pardus Firewall Graphical User Interface"
-msgstr "Interfície gràfica de tallafocs de Pardus"
-
-#: src/firewall-config.py:53
-msgid "GUI Design & Usability"
-msgstr "Disseny d'interfície gràfica d'usuari i usabilitat"
-
-#: src/firewall-config.py:54
-msgid "Help with IPTables"
-msgstr "Ajut amb taules d'IP"
-
-#: src/firewall-config.py:55
-msgid "Help with KDE stuff"
-msgstr "Ajut relatzionat amb el KDE"
-
-#: src/firewall-config.py:91
-#, python-format
-msgid "Accept all incoming connection through ports %s"
-msgstr "Accepta totes les connexions d'entrada a travès dels ports %s"
-
-#: src/firewall-config.py:93
-#, python-format
-msgid "Reject all incoming connection through ports %s"
-msgstr "Rebutja totes les connexions d'entrada a travès dels ports %s"
-
-#: src/firewall-config.py:96
-#, python-format
-msgid "Accept all outgoing connection through ports %s"
-msgstr "Accepta totes les connexions d'eixida a travès dels ports %s"
-
-#: src/firewall-config.py:98
-#, python-format
-msgid "Reject all outgoing connection through ports %s"
-msgstr "REbutja totes les connexions d'eixida a travès dels ports %s"
-
-#: src/firewall-config.py:127
-msgid "Invalid port range."
-msgstr "Rang de port invàlid"
-
-#: src/firewall-config.py:150 src/firewall.py:188
+#: src/firewall.py:188 src/firewall-config.py:133
 msgid "Firewall Configuration"
 msgstr "Configuració del tallafocs"
-
-#: src/firewall-config.py:195
-#, python-format
-msgid "Ports: %s"
-msgstr ""
-
-#: src/firewall-config.py:238
-msgid "&Stop Firewall"
-msgstr "&Atura el talalfocs"
-
-#: src/firewall-config.py:239
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr "<b><font size='+1'>El tallafocs està en marxa</font></b>"
-
-#: src/firewall-config.py:241
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Pica ací per a aturar el tallafocs i permetre totes les connexions d'entrada "
-"i eixida."
-
-#: src/firewall-config.py:246
-msgid "&Start Firewall"
-msgstr "&Engega el tallafocs"
-
-#: src/firewall-config.py:247
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr "<b><font size='+1'>El tallafocs no està en marxa</font></b>"
-
-#: src/firewall-config.py:249
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Pica ací per a engegar el tallafocs i permetre connexions als serveis "
-"especificats."
-
-#: src/firewall-config.py:345
-msgid "You are not allowed to edit firewall settings."
-msgstr ""
-
-#: src/firewall-config.py:345
-msgid "Access Denied"
-msgstr ""
-
-#: src/firewall-config.py:439
-msgid "Pardus Firewall Interface is already running!"
-msgstr "La interfície del tallafocs de Pardus ja està en marxa"
-
-#: src/rules.py:16
-msgid "Mail services"
-msgstr "Serveis de correu"
-
-#: src/rules.py:21
-msgid "Web services"
-msgstr "Serveis de xarxa"
-
-#: src/rules.py:26
-msgid "Remote login service"
-msgstr "Servei d'identificació remota"
-
-#: src/rules.py:35
-msgid "Windows file sharing service"
-msgstr "Servei de compartició de fitxers de finestres"
-
-#: src/rules.py:40
-msgid "Internet relay chat service"
-msgstr "Servei de sistema de xat i missatgeria instantània (IRC)"
-
-#: src/rules.py:45
-msgid "File transfer service"
-msgstr "Servei de transmissió de fitxers"
-
-#: src/rules.py:50
-msgid "Desktop Sharing"
-msgstr ""
 
 #: src/firewall.py:191
 msgid "<b><font size=\"+1\">Firewall is running</font></b>"
@@ -178,8 +61,9 @@ msgstr ""
 "eliminar."
 
 #: src/firewall.py:201
-msgid "Advanced"
-msgstr "Avançat"
+#, fuzzy
+msgid "Outgoing Connections"
+msgstr "Connexions d'entrada"
 
 #: src/firewall.py:204
 msgid "Alt+H"
@@ -201,46 +85,144 @@ msgstr "Alt+O"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: src/dialog.py:105
+#: src/firewall-config.py:41
+msgid "Pardus Firewall Graphical User Interface"
+msgstr "Interfície gràfica de tallafocs de Pardus"
+
+#: src/firewall-config.py:57
+msgid "GUI Design & Usability"
+msgstr "Disseny d'interfície gràfica d'usuari i usabilitat"
+
+#: src/firewall-config.py:58
+msgid "Help with IPTables"
+msgstr "Ajut amb taules d'IP"
+
+#: src/firewall-config.py:59
+msgid "Help with KDE stuff"
+msgstr "Ajut relatzionat amb el KDE"
+
+#: src/firewall-config.py:82
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr "REbutja totes les connexions d'eixida a travès dels ports %s"
+
+#: src/firewall-config.py:113
+msgid "Invalid port range."
+msgstr "Rang de port invàlid"
+
+#: src/firewall-config.py:176
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:259
+msgid "&Stop Firewall"
+msgstr "&Atura el talalfocs"
+
+#: src/firewall-config.py:260
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr "<b><font size='+1'>El tallafocs està en marxa</font></b>"
+
+#: src/firewall-config.py:262
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+"Pica ací per a aturar el tallafocs i permetre totes les connexions d'entrada "
+"i eixida."
+
+#: src/firewall-config.py:267
+msgid "&Start Firewall"
+msgstr "&Engega el tallafocs"
+
+#: src/firewall-config.py:268
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr "<b><font size='+1'>El tallafocs no està en marxa</font></b>"
+
+#: src/firewall-config.py:270
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+"Pica ací per a engegar el tallafocs i permetre connexions als serveis "
+"especificats."
+
+#: src/firewall-config.py:384
+msgid "Pardus Firewall Interface is already running!"
+msgstr "La interfície del tallafocs de Pardus ja està en marxa"
+
+#: src/dialog.py:64
 msgid "New Rule"
 msgstr "Nova regla"
 
-#: src/dialog.py:106
-msgid "Connections"
-msgstr "Connexions"
-
-#: src/dialog.py:107
-msgid "Incoming"
-msgstr "Entrada"
-
-#: src/dialog.py:108
-msgid "Outgoing"
-msgstr "Eixida"
-
-#: src/dialog.py:109
+#: src/dialog.py:65
 msgid "Port Range"
 msgstr "Rang del port"
 
-#: src/dialog.py:110
+#: src/dialog.py:66
 msgid "Example: 100-200,300"
 msgstr "Exemple: 100-200,300"
 
-#: src/dialog.py:112
-msgid "TCP"
-msgstr "TCP"
+#: src/rules.py:7
+msgid "Mail services"
+msgstr "Serveis de correu"
 
-#: src/dialog.py:113
-msgid "UDP"
-msgstr "UDP"
+#: src/rules.py:11
+msgid "Web services"
+msgstr "Serveis de xarxa"
 
-#: src/dialog.py:114
-msgid "Action"
-msgstr "Acció"
+#: src/rules.py:15
+msgid "Remote login service"
+msgstr "Servei d'identificació remota"
 
-#: src/dialog.py:115
-msgid "Accept"
-msgstr "Accepta"
+#: src/rules.py:19
+msgid "Windows file sharing service"
+msgstr "Servei de compartició de fitxers de finestres"
 
-#: src/dialog.py:116
-msgid "Reject"
-msgstr "Rebutja"
+#: src/rules.py:23
+msgid "Internet relay chat service"
+msgstr "Servei de sistema de xat i missatgeria instantània (IRC)"
+
+#: src/rules.py:27
+msgid "File transfer service"
+msgstr "Servei de transmissió de fitxers"
+
+#: src/rules.py:31
+msgid "Desktop Sharing"
+msgstr ""
+
+#~ msgid "Accept all incoming connection through ports %s"
+#~ msgstr "Accepta totes les connexions d'entrada a travès dels ports %s"
+
+#~ msgid "Reject all incoming connection through ports %s"
+#~ msgstr "Rebutja totes les connexions d'entrada a travès dels ports %s"
+
+#~ msgid "Accept all outgoing connection through ports %s"
+#~ msgstr "Accepta totes les connexions d'eixida a travès dels ports %s"
+
+#~ msgid "Advanced"
+#~ msgstr "Avançat"
+
+#~ msgid "Connections"
+#~ msgstr "Connexions"
+
+#~ msgid "Incoming"
+#~ msgstr "Entrada"
+
+#~ msgid "Outgoing"
+#~ msgstr "Eixida"
+
+#~ msgid "TCP"
+#~ msgstr "TCP"
+
+#~ msgid "UDP"
+#~ msgstr "UDP"
+
+#~ msgid "Action"
+#~ msgstr "Acció"
+
+#~ msgid "Accept"
+#~ msgstr "Accepta"
+
+#~ msgid "Reject"
+#~ msgstr "Rebutja"

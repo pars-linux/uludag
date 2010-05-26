@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-07-12 20:08+0300\n"
+"POT-Creation-Date: 2010-05-26 14:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,121 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: src/firewall-config.py:37
-msgid "Pardus Firewall Graphical User Interface"
-msgstr ""
-
-#: src/firewall-config.py:53
-msgid "GUI Design & Usability"
-msgstr ""
-
-#: src/firewall-config.py:54
-msgid "Help with IPTables"
-msgstr ""
-
-#: src/firewall-config.py:55
-msgid "Help with KDE stuff"
-msgstr ""
-
-#: src/firewall-config.py:91
-#, python-format
-msgid "Accept all incoming connection through ports %s"
-msgstr ""
-
-#: src/firewall-config.py:93
-#, python-format
-msgid "Reject all incoming connection through ports %s"
-msgstr ""
-
-#: src/firewall-config.py:96
-#, python-format
-msgid "Accept all outgoing connection through ports %s"
-msgstr ""
-
-#: src/firewall-config.py:98
-#, python-format
-msgid "Reject all outgoing connection through ports %s"
-msgstr ""
-
-#: src/firewall-config.py:127
-msgid "Invalid port range."
-msgstr ""
-
-#: src/firewall-config.py:150 src/firewall.py:188
+#: src/firewall.py:188 src/firewall-config.py:133
 msgid "Firewall Configuration"
-msgstr ""
-
-#: src/firewall-config.py:195
-#, python-format
-msgid "Ports: %s"
-msgstr ""
-
-#: src/firewall-config.py:238
-msgid "&Stop Firewall"
-msgstr ""
-
-#: src/firewall-config.py:239
-msgid "<b><font size='+1'>Firewall is running</font></b>"
-msgstr ""
-
-#: src/firewall-config.py:241
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-
-#: src/firewall-config.py:246
-msgid "&Start Firewall"
-msgstr ""
-
-#: src/firewall-config.py:247
-msgid "<b><font size='+1'>Firewall is not running</font></b>"
-msgstr ""
-
-#: src/firewall-config.py:249
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-
-#: src/firewall-config.py:345
-msgid "You are not allowed to edit firewall settings."
-msgstr ""
-
-#: src/firewall-config.py:345
-msgid "Access Denied"
-msgstr ""
-
-#: src/firewall-config.py:439
-msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-
-#: src/rules.py:16
-msgid "Mail services"
-msgstr ""
-
-#: src/rules.py:21
-msgid "Web services"
-msgstr ""
-
-#: src/rules.py:26
-msgid "Remote login service"
-msgstr ""
-
-#: src/rules.py:35
-msgid "Windows file sharing service"
-msgstr ""
-
-#: src/rules.py:40
-msgid "Internet relay chat service"
-msgstr ""
-
-#: src/rules.py:45
-msgid "File transfer service"
-msgstr ""
-
-#: src/rules.py:50
-msgid "Desktop Sharing"
 msgstr ""
 
 #: src/firewall.py:191
@@ -167,7 +54,7 @@ msgid ""
 msgstr ""
 
 #: src/firewall.py:201
-msgid "Advanced"
+msgid "Outgoing Connections"
 msgstr ""
 
 #: src/firewall.py:204
@@ -190,46 +77,104 @@ msgstr ""
 msgid "Alt+C"
 msgstr ""
 
-#: src/dialog.py:105
+#: src/firewall-config.py:41
+msgid "Pardus Firewall Graphical User Interface"
+msgstr ""
+
+#: src/firewall-config.py:57
+msgid "GUI Design & Usability"
+msgstr ""
+
+#: src/firewall-config.py:58
+msgid "Help with IPTables"
+msgstr ""
+
+#: src/firewall-config.py:59
+msgid "Help with KDE stuff"
+msgstr ""
+
+#: src/firewall-config.py:82
+#, python-format
+msgid "Reject all outgoing connection through ports %s"
+msgstr ""
+
+#: src/firewall-config.py:113
+msgid "Invalid port range."
+msgstr ""
+
+#: src/firewall-config.py:176
+#, python-format
+msgid "Ports: %s"
+msgstr ""
+
+#: src/firewall-config.py:259
+msgid "&Stop Firewall"
+msgstr ""
+
+#: src/firewall-config.py:260
+msgid "<b><font size='+1'>Firewall is running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:262
+msgid ""
+"Click here to stop the firewall and allow all incoming and outgoing "
+"connections."
+msgstr ""
+
+#: src/firewall-config.py:267
+msgid "&Start Firewall"
+msgstr ""
+
+#: src/firewall-config.py:268
+msgid "<b><font size='+1'>Firewall is not running</font></b>"
+msgstr ""
+
+#: src/firewall-config.py:270
+msgid ""
+"Click here to start the firewall and allow connections only to specified "
+"services."
+msgstr ""
+
+#: src/firewall-config.py:384
+msgid "Pardus Firewall Interface is already running!"
+msgstr ""
+
+#: src/dialog.py:64
 msgid "New Rule"
 msgstr ""
 
-#: src/dialog.py:106
-msgid "Connections"
-msgstr ""
-
-#: src/dialog.py:107
-msgid "Incoming"
-msgstr ""
-
-#: src/dialog.py:108
-msgid "Outgoing"
-msgstr ""
-
-#: src/dialog.py:109
+#: src/dialog.py:65
 msgid "Port Range"
 msgstr ""
 
-#: src/dialog.py:110
+#: src/dialog.py:66
 msgid "Example: 100-200,300"
 msgstr ""
 
-#: src/dialog.py:112
-msgid "TCP"
+#: src/rules.py:7
+msgid "Mail services"
 msgstr ""
 
-#: src/dialog.py:113
-msgid "UDP"
+#: src/rules.py:11
+msgid "Web services"
 msgstr ""
 
-#: src/dialog.py:114
-msgid "Action"
+#: src/rules.py:15
+msgid "Remote login service"
 msgstr ""
 
-#: src/dialog.py:115
-msgid "Accept"
+#: src/rules.py:19
+msgid "Windows file sharing service"
 msgstr ""
 
-#: src/dialog.py:116
-msgid "Reject"
+#: src/rules.py:23
+msgid "Internet relay chat service"
+msgstr ""
+
+#: src/rules.py:27
+msgid "File transfer service"
+msgstr ""
+
+#: src/rules.py:31
+msgid "Desktop Sharing"
 msgstr ""
