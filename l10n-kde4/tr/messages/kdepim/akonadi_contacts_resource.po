@@ -3,13 +3,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: akonadi_contacts_resource\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-17 01:25+0200\n"
-"PO-Revision-Date: 2010-05-10 16:17+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-05-26 08:42+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -89,15 +90,15 @@ msgid "Unable to delete folder '%1'."
 msgstr "'%1' dizini silinemedi."
 
 #: contactsresource.cpp:437
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Unable to remove file '%1'"
 msgid "Unable to move file '%1' to '%2', '%2' already exists."
-msgstr "'%1' dosyası silinemedi"
+msgstr "'%1' dosyası '%2' konumuna taşınamadı, '%2' zaten mevcut."
 
 #: contactsresource.cpp:449
 #, kde-format
 msgid "Unable to move directory '%1' to '%2', '%2' already exists."
-msgstr ""
+msgstr "'%1' dizini '%2' konumuna taşınamadı, '%2' zaten mevcut."
 
 #. i18n: file: contactsresource.kcfg:9
 #. i18n: ectx: label, entry (Path), group (General)
