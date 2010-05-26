@@ -584,7 +584,7 @@ def startNetwork():
         try:
             linkInfo = link.Network.Link[package].linkInfo()
         except dbus.DBusException:
-            break
+            continue
         if linkInfo["type"] == "net":
             for name, info in getConnections(package).iteritems():
                 if info.get("state", "down").startswith("up"):
@@ -600,7 +600,7 @@ def startNetwork():
                     for point in link.Network.Link[package].scanRemote(deviceId):
                         devices[deviceId].append(unicode(point["remote"]))
             except dbus.DBusException:
-                break
+                continue
             # Try to connect last connected profile
             skip = False
             for name, info in getConnections(package).iteritems():
