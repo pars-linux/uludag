@@ -41,6 +41,7 @@ class StateManager(QObject):
             self.iface.setSource(self.iface.SYSTEM)
         else:
             self.iface.setSource(self.iface.REPO)
+        self.emit(SIGNAL("repositoriesChanged()"))
 
     def reset(self):
         self.cached_packages = None
