@@ -10,5 +10,5 @@ Icon=package-manager
 Type=Application
 StartupNotify=False
 MimeType=application/x-pisi
-Exec=pm-install %u
+Exec=pm-install %U
 NoDisplay=true
