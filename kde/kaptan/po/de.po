@@ -356,7 +356,7 @@ msgstr "Willkommen"
 
 #: .tmp/ui_goodbyeWidget.py:411
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
-msgstr "<b>Ihre Einstellungen sind übernommen worden.</b> Jetzt könne Sie beginnen Pardus zu benutzen oder eines der folgenden Links oder Programmen für die weitere Konfiguration des Systems oder für Hilfe und Support ausprobieren. Bitte beteiligen Sie sich auch <b>an unserer Comminity!</b>"
+msgstr "<b>Ihre Einstellungen sind übernommen worden.</b> Nun können Sie Pardus benutzen, oder einen der folgenden Links für Hilfe und Support anwählen. Sie können auch eines der folgenden Programme für weitere Konfiguration des Systems nutzen. Bitte beteiligen Sie sich auch <b>an unserer Comminity!</b>"
 
 #: .tmp/ui_goodbyeWidget.py:412 .tmp/ui_goodbyeWidget.py:413
 msgid "My Smolt Page"
@@ -466,12 +466,11 @@ msgstr "entgegengesetztes Scrollen"
 
 #: .tmp/ui_networkWidget.py:106
 msgid "To create a new connection click on <b>Create Profile</b> and select your adapter from the list. If your connection is wireless then choose and access point. After saving your profile click the checkbox to establish the connection."
-msgstr "Um eine neue Internetverbingung zu erstellen klicken Sie <b>Profil erstellen</b> und wählen Sie einen Netzwerkadapter aus der Liste. Wenn Ihre Verbindung kabellos ist, wählen Sie den access point. Nachdem Sie das Verbindungsprofil gespeichert haben, klicken Sie auf das Markierfeld um die Verbindung zu aktivieren."
+msgstr "Um eine neue Internetverbingung zu erstellen, klicken Sie <b>Profil erstellen</b> und wählen Sie einen Netzwerkadapter aus der Liste. Wenn Ihre Verbindung kabellos ist, wählen Sie den Access-Point. Nachdem Sie das Verbindungsprofil gespeichert haben, klicken Sie auf das Markierfeld um die Verbindung zu aktivieren."
 
 #: .tmp/ui_networkWidget.py:107
-#, fuzzy
 msgid "Network Manager (Press Apply to save your settings)"
-msgstr "Netzwerkverbindungen (klicke Übernehmen, um die Einstellungen zu speichern)"
+msgstr "Netzwerkverbindungen (klicken Sie auf Okay, um die Einstellungen zu speichern)"
 
 #: .tmp/ui_packageWidget.py:186
 msgid "Show updates in the system tray"
@@ -602,7 +601,7 @@ msgstr ""
 
 #: .tmp/ui_summaryWidget.py:80
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
-msgstr "Sie haben alle Schritte erfolgreich ausgeführt. Hier ist eine Zusammenfassung der Konfiguration die jetzt übernommen wird. Klicken Sie <b>Einstellungen übernehmen</b> um sie jetzt zu speichern. Jetzt sind Sie bereit um Pardus zu benutzen!"
+msgstr "Sie haben alle Schritte erfolgreich ausgeführt. Hier ist eine Zusammenfassung der Konfiguration die jetzt übernommen wird. Klicken Sie <b>Weiter</b> um sie jetzt zu speichern. Jetzt sind Sie bereit um Pardus zu benutzen!"
 
 #: .tmp/ui_summaryWidget.py:81
 msgid "The following settings will be applied"
