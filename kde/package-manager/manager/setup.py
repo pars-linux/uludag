@@ -132,8 +132,6 @@ class Install(install):
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
-        print "Installing help files..."
-        os.system("cp -R help %s/" % project_dir)
         # Install locales
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
@@ -146,6 +144,8 @@ class Install(install):
                 pass
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
         rst2doc('en')
+        print "Installing help files..."
+        os.system("cp -R help %s/" % project_dir)
         # Rename
         print "Renaming application.py..."
         shutil.move(os.path.join(project_dir, "main.py"), os.path.join(project_dir, "%s.py" % PROJECT))
