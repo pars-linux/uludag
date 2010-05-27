@@ -40,11 +40,11 @@ msgstr "Intervall der Aktualisierung :"
 
 #: code/widgets/configIconui.py:58
 msgid " sec."
-msgstr " sek."
+msgstr " Sek."
 
 #: code/widgets/configIconui.py:59
 msgid "Dont poll anything while battery is discharging"
-msgstr "Abfragen nicht pollen, wenn Batterie entladen wird"
+msgstr "Nichts abfragen, während Batterie entladen wird"
 
 #: code/widgets/configPopupui.py:38
 msgid "Show all profiles"
@@ -60,7 +60,7 @@ msgstr "Druckknopf"
 
 #: code/widgets/notify.py:63
 msgid "Network Manager"
-msgstr "Netzwerk-manager"
+msgstr "Netzwerkverbindungen"
 
 #: code/widgets/popupui.py:152
 msgid "Ethernet"
@@ -80,7 +80,7 @@ msgstr "Kein Profil angegeben"
 
 #: code/widgets/popupui.py:157 code/main.py:117
 msgid "Open Network Manager"
-msgstr "Network Manager öffnen"
+msgstr "Netzwerkverbindungen öffnen"
 
 #: code/main.py:46
 msgid "Connected"
