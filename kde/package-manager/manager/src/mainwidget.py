@@ -211,7 +211,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def exceptionCaught(self, message):
         self.progressDialog.hide()
-        if "urlopen error" in message or "Socket Error" in message:
+        if any(warning in message for warning in ('urlopen error','Socket Error', 'PYCURL ERROR')):
             errorTitle = i18n("Network Error")
             errorMessage = i18n("Please check your network connections and try again.")
         elif "Access denied" in message or "tr.org.pardus.comar.Comar.PolicyKit" in message:
