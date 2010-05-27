@@ -23,7 +23,7 @@ class KonfigTracker(KMainWindow):
         a directory using this path, and initialize a git repository there
         '''
         #path is hardcoded for fedora 13. remember to change it.
-        path = os.environ['HOME'] + "/.kde/konfigtracker-repo"
+        path = os.environ['HOME'] + "/konfigtracker-repo"
 
         if not os.access(path,os.F_OK):
             os.mkdir(path)
@@ -36,29 +36,32 @@ class KonfigTracker(KMainWindow):
         '''
         gitRepo = git.Git(path)
         gitRepo.init()
-        
+            
     def slotMessage(self):
         print "Copied!"
+        repo = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
+        result = repo.execute(["git","add","."])
+        self.commit()
 
+    def commit(self):
+        rep = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
+        res = rep.execute(["git","commit","-a","-m","Root Backup"])
+    
     def performInitImport(self,path):
         """
         This will perform the initial import of config files from
         .kde4/share/config to .kde4/konfigtracker-repo.
         """
-        srcPath = "file://" + os.environ['HOME'] + "/.kde/share/config/"
-        destPath = KUrl("file://" + os.environ['HOME'] + "/.kde/konfigtracker-repo/")
+        srcPath = os.environ['HOME'] + "/.kde/share/config/"
+        destPath = os.environ['HOME'] + "/konfigtracker-repo/"
         dir = QDir(os.environ['HOME'] + "/.kde/share/config/")
         entryList = dir.entryList()
-        for i in entryList:
-            i = srcPath+i
-            print i
         #copying the files from source to destination.
         app = self.app
         for i in entryList:
-            src = KUrl(i)
-            job = KIO.copy(src, destPath)
-            app.connect(app, SIGNAL("result(KJob*)"),self.slotMessage)
-            
-    
-        
-        
+            if not i in [".","..",]:
+                i = srcPath + i
+                src = KUrl(i)
+                dest = KUrl(destPath)
+                job = KIO.copy(src, dest)
+                app.connect(job, SIGNAL("finished(KJob*)"),self.slotMessage)
