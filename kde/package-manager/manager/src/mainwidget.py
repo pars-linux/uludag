@@ -252,6 +252,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.state.reset()
         if self.state.silence:
             QtGui.qApp.exit()
+        self.initialize()
 
     def notifyFinished(self):
         if not self.operation.totalPackages:
