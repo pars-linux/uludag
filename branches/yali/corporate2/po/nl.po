@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-25 13:49+0300\n"
-"PO-Revision-Date: 2010-05-17 11:43+0200\n"
+"PO-Revision-Date: 2010-05-27 22:18+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -1245,17 +1245,16 @@ msgstr ""
 "</font>\n"
 
 #: yali4/gui/ScrCheckCD.py:29
-#, fuzzy
 msgid "Check your installation medium"
-msgstr "Controlleer uw media"
+msgstr "Installatiemedium controleren"
 
 #: yali4/gui/ScrCheckCD.py:30
-#, fuzzy
 msgid ""
 "To ignore installation medium corruptions you can check your packages "
 "integrity..."
 msgstr ""
-"Om mediaproblemen te vermijden kun u de integriteit van de pakketten "
+"Om problemen met het installatiemedium te vermijden kun u de integriteit van "
+"de pakketten "
 "testen..."
 
 #: yali4/gui/ScrCheckCD.py:32
