@@ -92,6 +92,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.initializeGroupList()
         self.initializeStatusUpdater()
         self.statusChanged()
+        self._selectedGroups = []
+        self.selectAll.setChecked(False)
         restoreCursor()
         QTimer.singleShot(1, self.initializeBasket)
 
