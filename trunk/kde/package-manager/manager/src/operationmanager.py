@@ -96,7 +96,7 @@ class OperationManager(QObject):
         if not self.state.inInstall():
             return
 
-        places = ('usr/share/applications/', 
+        places = ('usr/share/applications/',
                   'usr/kde/4/share/applications/kde4/',
                   'usr/kde/3.5/share/applications/kde/')
 
