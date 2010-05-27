@@ -1,5 +1,5 @@
 <PardusmanProject type="install" media="cd" compression="lzma">
-    <Title>Pardus 2009.2 Beta</Title>
+    <Title>Pardus 2009.2 RC</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -40,7 +40,6 @@
         <SelectedPackage>cursor-theme-oxygen-white</SelectedPackage>
         <SelectedPackage>cursor-theme-oxygen-zion</SelectedPackage>
         <SelectedPackage>dejavu-fonts</SelectedPackage>
-        <SelectedPackage>digikam</SelectedPackage>
         <SelectedPackage>disk-manager</SelectedPackage>
         <SelectedPackage>djview4</SelectedPackage>
         <SelectedPackage>djvu-plugin</SelectedPackage>
@@ -107,7 +106,6 @@
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>kffmpegthumbnailer</SelectedPackage>
-        <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmozillahelper</SelectedPackage>
         <SelectedPackage>krename</SelectedPackage>
         <SelectedPackage>ksplash-pardus-theme</SelectedPackage>
@@ -358,7 +356,6 @@
         <Package>dhcpcd</Package>
         <Package>dialog</Package>
         <Package>diffutils</Package>
-        <Package>digikam</Package>
         <Package>disk-manager</Package>
         <Package>disktype</Package>
         <Package>display-settings</Package>
@@ -535,7 +532,6 @@
         <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
         <Package>kffmpegthumbnailer</Package>
-        <Package>kipi-plugins</Package>
         <Package>kmozillahelper</Package>
         <Package>krename</Package>
         <Package>ksplash-pardus-theme</Package>
@@ -544,7 +540,6 @@
         <Package>lame</Package>
         <Package>lapack</Package>
         <Package>lcms</Package>
-        <Package>lensfun</Package>
         <Package>less</Package>
         <Package>libFS</Package>
         <Package>libICE</Package>
@@ -639,7 +634,6 @@
         <Package>libksba</Package>
         <Package>liblastfm</Package>
         <Package>liblazy</Package>
-        <Package>liblqr</Package>
         <Package>libmad</Package>
         <Package>libmal</Package>
         <Package>libmatroska</Package>
@@ -800,7 +794,6 @@
         <Package>obex-data-server</Package>
         <Package>openal</Package>
         <Package>opencore-amr</Package>
-        <Package>opencv</Package>
         <Package>openexr</Package>
         <Package>openjpeg</Package>
         <Package>openldap-client</Package>
@@ -884,7 +877,6 @@
         <Package>qimageblitz</Package>
         <Package>qt</Package>
         <Package>qt-sql-mysql</Package>
-        <Package>qt-sql-sqlite</Package>
         <Package>qtscriptgenerator</Package>
         <Package>qzion</Package>
         <Package>ralink-firmware</Package>
