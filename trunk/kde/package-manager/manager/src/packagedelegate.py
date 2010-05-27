@@ -52,6 +52,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
         self.boldFont = QtGui.QFont(self.font, 10, QtGui.QFont.Bold)
+        self.boldTitleFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
         self.normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
         self.boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
         self.tagFont = QtGui.QFont(self.font, 7, QtGui.QFont.Normal)
@@ -131,7 +132,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setPen(foregroundColor)
 
         # Package Name
-        p.setFont(self.boldFont)
+        p.setFont(self.boldTitleFont)
         p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
 
         tagWidth = 0
@@ -162,8 +163,10 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Summary
         p.setFont(self.normalFont)
+        p.setPen(QtGui.QColor(0,0,0,160))
         elided_summary = self.normalFontFM.elidedText(summary, Qt.ElideRight, width - textInner - tagWidth - 22)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, elided_summary)
+        p.setPen(foregroundColor)
 
         if self.rowAnimator.currentRow() == index.row():
             description = index.model().data(index, DescriptionRole).toString()

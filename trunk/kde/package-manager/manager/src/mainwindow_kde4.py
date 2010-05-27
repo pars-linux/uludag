@@ -100,13 +100,11 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.showInstallAction.setChecked(True)
         self.actionCollection().addAction("showInstallAction", self.showInstallAction)
         self.connect(self.showInstallAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.INSTALL))
-        self.connect(self.showInstallAction, SIGNAL("triggered()"), self.centralWidget().initialize)
         actionGroup.addAction(self.showInstallAction)
 
         self.showRemoveAction = KToggleAction(KIcon("list-remove"), i18n("Show Installed Packages"), self)
         self.actionCollection().addAction("showRemoveAction", self.showRemoveAction)
         self.connect(self.showRemoveAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.REMOVE))
-        self.connect(self.showRemoveAction, SIGNAL("triggered()"), self.centralWidget().initialize)
         actionGroup.addAction(self.showRemoveAction)
 
         self.showUpgradeAction = KToggleAction(KIcon("view-refresh"), i18n("Show Upgradable Packages"), self)
