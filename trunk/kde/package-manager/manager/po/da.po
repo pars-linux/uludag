@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-23 13:30+0300\n"
+"POT-Creation-Date: 2010-05-27 11:37+0300\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -80,7 +80,7 @@ msgstr ""
 "left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
 "style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:409
+#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
 msgid "&Cancel"
 msgstr "&Fortryd"
 
@@ -88,101 +88,97 @@ msgstr "&Fortryd"
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/ui_settingsdialog.py:363 .tmp/mainwindow.py:145
+#: .tmp/ui_settingsdialog.py:370 .tmp/mainwindow.py:142
 msgid "Package Manager Settings"
 msgstr "Instillinger for pakke håndtering"
 
-#: .tmp/ui_settingsdialog.py:364
+#: .tmp/ui_settingsdialog.py:371
 #, fuzzy
 msgid "Package list"
 msgstr "Pakke størrelse:"
 
-#: .tmp/ui_settingsdialog.py:365
+#: .tmp/ui_settingsdialog.py:372
 msgid "&Show only desktop applications"
 msgstr "&VIs kun skrivebords programmer"
 
-#: .tmp/ui_settingsdialog.py:366
+#: .tmp/ui_settingsdialog.py:373
 msgid "Show Component information "
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:367
+#: .tmp/ui_settingsdialog.py:374
 #, fuzzy
 msgid "System tray icon"
 msgstr "&Benyt ikon i statusfeltet"
 
-#: .tmp/ui_settingsdialog.py:368
+#: .tmp/ui_settingsdialog.py:375
 #, fuzzy
 msgid "Enable system tray icon"
 msgstr "&Benyt ikon i statusfeltet"
 
-#: .tmp/ui_settingsdialog.py:369
+#: .tmp/ui_settingsdialog.py:376
 msgid "Hide system tray if there is no update."
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:370
+#: .tmp/ui_settingsdialog.py:377
 msgid "Enable &periodic update check"
 msgstr "Benyt &periodisk tjek af opdateringer"
 
-#: .tmp/ui_settingsdialog.py:371 .tmp/ui_settingsdialog.py:374
-msgid "padding-left:15px;"
-msgstr "padding-left:15px;"
-
-#: .tmp/ui_settingsdialog.py:372
+#: .tmp/ui_settingsdialog.py:378
 #, fuzzy
 msgid "Check interval :"
 msgstr "Opdaterings Interval:"
 
-#: .tmp/ui_settingsdialog.py:373
+#: .tmp/ui_settingsdialog.py:379
 msgid " min"
 msgstr "min"
 
-#: .tmp/ui_settingsdialog.py:375
+#: .tmp/ui_settingsdialog.py:380
 msgid "Install updates automatically"
 msgstr "Installer opdateringer automatisk"
 
-#: .tmp/ui_settingsdialog.py:376
+#: .tmp/ui_settingsdialog.py:381
 msgid "Bandwidth limit"
 msgstr "Båndbredde begrænsning"
 
-#: .tmp/ui_settingsdialog.py:377
+#: .tmp/ui_settingsdialog.py:382
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:378
+#: .tmp/ui_settingsdialog.py:383
 #, fuzzy
 msgid "Use bandwidth limit :"
 msgstr "Benyt båndbredde begrænsning"
 
-#: .tmp/ui_settingsdialog.py:379
+#: .tmp/ui_settingsdialog.py:384
 msgid "&General Settings"
 msgstr "&Generelle indstillinger"
 
-#: .tmp/ui_settingsdialog.py:380
+#: .tmp/ui_settingsdialog.py:385
 msgid "&Use hard disk cache for downloaded software"
 msgstr "Benyt harddisk mellemlager til downloadet software"
 
-#: .tmp/ui_settingsdialog.py:381
+#: .tmp/ui_settingsdialog.py:386
 msgid "Maximum cache size:"
 msgstr "Maximal mellemlager størrelse:"
 
-#: .tmp/ui_settingsdialog.py:382
+#: .tmp/ui_settingsdialog.py:387
 msgid "Unlimited"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:383
+#: .tmp/ui_settingsdialog.py:388
 #, fuzzy
 msgid " Mib"
 msgstr "Mb"
 
-#: .tmp/ui_settingsdialog.py:384
+#: .tmp/ui_settingsdialog.py:389
 msgid "Current cache dir:"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:385
+#: .tmp/ui_settingsdialog.py:390
 msgid "Select..."
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:386
+#: .tmp/ui_settingsdialog.py:391
 #, fuzzy
 msgid ""
 "Clearing the disk cache will remove all downloaded software. This will not "
@@ -192,86 +188,86 @@ msgstr ""
 "Dette vil ikke slette installeret software eller påvirke systemets "
 "stabilitet. "
 
-#: .tmp/ui_settingsdialog.py:387
+#: .tmp/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
 msgstr "R&yd disk mellemlageret nu"
 
-#: .tmp/ui_settingsdialog.py:388
+#: .tmp/ui_settingsdialog.py:393
 msgid "C&ache"
 msgstr "M&ellemlager"
 
-#: .tmp/ui_settingsdialog.py:389 .tmp/ui_repodialog.py:57
+#: .tmp/ui_settingsdialog.py:394 .tmp/ui_repodialog.py:57
 msgid "Repository Name"
 msgstr "Navn på pakkearkiv"
 
-#: .tmp/ui_settingsdialog.py:390 .tmp/ui_repodialog.py:58
+#: .tmp/ui_settingsdialog.py:395 .tmp/ui_repodialog.py:58
 msgid "Repository Address"
 msgstr "Adresse til pakkearkiv"
 
-#: .tmp/ui_settingsdialog.py:391
+#: .tmp/ui_settingsdialog.py:396
 msgid "&Add New Repository"
 msgstr "&Tilføj nyt pakkearkiv"
 
-#: .tmp/ui_settingsdialog.py:392
+#: .tmp/ui_settingsdialog.py:397
 msgid "Remove Repository"
 msgstr "Fjern pakkearkiv"
 
-#: .tmp/ui_settingsdialog.py:393
+#: .tmp/ui_settingsdialog.py:398
 msgid "Move &Up"
 msgstr "Ryk &Op"
 
-#: .tmp/ui_settingsdialog.py:394
+#: .tmp/ui_settingsdialog.py:399
 msgid "Move &Down"
 msgstr "Ryk &Ned"
 
-#: .tmp/ui_settingsdialog.py:395
+#: .tmp/ui_settingsdialog.py:400
 msgid "&Repositories"
 msgstr "&Pakkearkiv"
 
-#: .tmp/ui_settingsdialog.py:396
+#: .tmp/ui_settingsdialog.py:401
 msgid "HTTP proxy server:"
 msgstr "HTTP proxy server:"
 
-#: .tmp/ui_settingsdialog.py:397 .tmp/ui_settingsdialog.py:400
-#: .tmp/ui_settingsdialog.py:402
+#: .tmp/ui_settingsdialog.py:402 .tmp/ui_settingsdialog.py:405
+#: .tmp/ui_settingsdialog.py:407
 msgid "Port:"
 msgstr "Port:"
 
-#: .tmp/ui_settingsdialog.py:398
+#: .tmp/ui_settingsdialog.py:403
 msgid "Use this proxy server for all protocols"
 msgstr "Benyt denne proxy server til alle protokoller "
 
-#: .tmp/ui_settingsdialog.py:399
+#: .tmp/ui_settingsdialog.py:404
 msgid "HTTPS proxy server:"
 msgstr "HTTPS proxy server:"
 
-#: .tmp/ui_settingsdialog.py:401
+#: .tmp/ui_settingsdialog.py:406
 msgid "FTP proxy server:"
 msgstr "FTP proxy server:"
 
-#: .tmp/ui_settingsdialog.py:403
+#: .tmp/ui_settingsdialog.py:408
 #, fuzzy
 msgid "No proxy server"
 msgstr "Ingen proxy server"
 
-#: .tmp/ui_settingsdialog.py:404
+#: .tmp/ui_settingsdialog.py:409
 #, fuzzy
 msgid "Use manual settings"
 msgstr "&Generelle indstillinger"
 
-#: .tmp/ui_settingsdialog.py:405
+#: .tmp/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:406
+#: .tmp/ui_settingsdialog.py:411
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/ui_settingsdialog.py:407
+#: .tmp/ui_settingsdialog.py:412
 msgid "&Help"
 msgstr "&Hjælp"
 
-#: .tmp/ui_settingsdialog.py:408
+#: .tmp/ui_settingsdialog.py:413
 msgid "&OK"
 msgstr "&OK"
 
@@ -283,27 +279,27 @@ msgstr ""
 msgid "security"
 msgstr ""
 
-#: .tmp/packagedelegate.py:64
+#: .tmp/packagedelegate.py:65
 msgid "Description:"
 msgstr "Beskrivelse:"
 
-#: .tmp/packagedelegate.py:65
+#: .tmp/packagedelegate.py:66
 msgid "Website:"
 msgstr ""
 
-#: .tmp/packagedelegate.py:66
+#: .tmp/packagedelegate.py:67
 msgid "Release:"
 msgstr "Udgivelse:"
 
-#: .tmp/packagedelegate.py:67
+#: .tmp/packagedelegate.py:68
 msgid "Repository:"
 msgstr "Pakkearkiv:"
 
-#: .tmp/packagedelegate.py:68
+#: .tmp/packagedelegate.py:69
 msgid "Package Size:"
 msgstr "Pakke størrelse:"
 
-#: .tmp/packagedelegate.py:69
+#: .tmp/packagedelegate.py:70
 msgid "Installed Version:"
 msgstr ""
 
@@ -317,21 +313,53 @@ msgid "Form"
 msgstr "Formular"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
-msgid "Click to search"
-msgstr "Klik for at søge"
+msgid "Category Panel"
+msgstr ""
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
-msgid "Search"
+#, fuzzy
+msgid "Search Bar"
 msgstr "Søg"
 
 #: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
-#: .tmp/statemanager.py:81 .tmp/ui_basketdialog.py:104
+msgid "Click to search"
+msgstr "Klik for at søge"
+
+#: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
+#, fuzzy
+msgid "Search Button"
+msgstr "Søg"
+
+#: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
+msgid "Search"
+msgstr "Søg"
+
+#: .tmp/ui_mainwidget_kde4.py:92 .tmp/ui_mainwidget_x11.py:81
+msgid "Action Button for current states action"
+msgstr ""
+
+#: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
+#: .tmp/statemanager.py:82 .tmp/ui_basketdialog.py:104
 msgid "Install Package(s)"
 msgstr "Installer Pakke(r)"
 
-#: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
+#: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
+msgid "Toggler for selection all packages in Package List"
+msgstr ""
+
+#: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
 msgstr "Vælg alle pakker i denne gruppe"
+
+#: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
+#, fuzzy
+msgid "Package List"
+msgstr "Pakke størrelse:"
+
+#: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
+#, fuzzy
+msgid "Update Types"
+msgstr "Opdater"
 
 #: .tmp/operationmanager.py:130 .tmp/commontext.py:15
 msgid "downloading"
@@ -358,86 +386,86 @@ msgid ""
 msgstr ""
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
-#: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:218 .tmp/mainwidget.py:221
+#: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:223 .tmp/mainwidget.py:226
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
 
-#: .tmp/statemanager.py:73
+#: .tmp/statemanager.py:74
 msgid "Installing Package(s)"
 msgstr "Installerer pakke(r)"
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:75
 msgid "Removing Package(s)"
 msgstr "Fjerner pakke(r)"
 
-#: .tmp/statemanager.py:75
+#: .tmp/statemanager.py:76
 msgid "Upgrading Package(s)"
 msgstr "Opgraderer pakke(r)"
 
-#: .tmp/statemanager.py:76
+#: .tmp/statemanager.py:77
 msgid "Applying Repository Changes"
 msgstr "Anvender ændringer i pakkearkiv"
 
-#: .tmp/statemanager.py:77
+#: .tmp/statemanager.py:78
 msgid "Updating Repository"
 msgstr "Opdaterer pakkearkiv"
 
-#: .tmp/statemanager.py:78
+#: .tmp/statemanager.py:79
 msgid "Updating Repository(s)"
 msgstr "Opdater Programarkiv(er)"
 
-#: .tmp/statemanager.py:82
+#: .tmp/statemanager.py:83
 msgid "Remove Package(s)"
 msgstr "Fjern pakke(r)"
 
-#: .tmp/statemanager.py:83
+#: .tmp/statemanager.py:84
 msgid "Upgrade Package(s)"
 msgstr "Opgrader pakke(r)"
 
-#: .tmp/statemanager.py:86
+#: .tmp/statemanager.py:87
 msgid "installed"
 msgstr "installeret "
 
-#: .tmp/statemanager.py:87
+#: .tmp/statemanager.py:88
 msgid "removed"
 msgstr "fjernet"
 
-#: .tmp/statemanager.py:88
+#: .tmp/statemanager.py:89
 msgid "upgraded"
 msgstr "opgraderet"
 
-#: .tmp/statemanager.py:96
+#: .tmp/statemanager.py:97
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 nye pakker blev installeret succesfuldt."
 
-#: .tmp/statemanager.py:97
+#: .tmp/statemanager.py:98
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 pakker blev fjernet succesfuldt."
 
-#: .tmp/statemanager.py:98
+#: .tmp/statemanager.py:99
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 pakker blev opgraderet succesfuldt"
 
-#: .tmp/statemanager.py:101
+#: .tmp/statemanager.py:102
 msgid "You have selected the following package(s) to install:"
 msgstr "Du har valgt følgende pakke(r) til installation:"
 
-#: .tmp/statemanager.py:102
+#: .tmp/statemanager.py:103
 msgid "You have selected the following package(s) to removal:"
 msgstr "Du har valgt følgende pakke(r) til fjernelse:"
 
-#: .tmp/statemanager.py:103
+#: .tmp/statemanager.py:104
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Du har valgt følgende pakke(r) til opgradering:"
 
-#: .tmp/statemanager.py:106 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:107 .tmp/ui_basketdialog.py:101
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
 msgstr ""
 "Ekstra afhængigheder krævet af de valgte pakker vil også blive installeret:"
 
-#: .tmp/statemanager.py:107
+#: .tmp/statemanager.py:108
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
@@ -445,40 +473,40 @@ msgstr ""
 "Tilbageblivende afhængigheder fra den/de valgte pakke(r) vil også blive "
 "fjernet:"
 
-#: .tmp/statemanager.py:108
+#: .tmp/statemanager.py:109
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 "Ekstra afhængigheder fra den/de valgte pakke(r) vil også blive opgraderet:"
 
-#: .tmp/statemanager.py:131 .tmp/mainwindow_kde4.py:78
+#: .tmp/statemanager.py:132 .tmp/mainwindow_kde4.py:78
 #: .tmp/mainwindow_kde4.py:83 .tmp/mainwindow.py:74 .tmp/mainwindow.py:79
 msgid "Currently your basket is empty."
 msgstr "Din kurv er i øjeblikket tom."
 
-#: .tmp/statemanager.py:133
+#: .tmp/statemanager.py:134
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 "Der er i øjeblikket <b>%1</b> valgte pakker med en total størrelse på <b>%2</"
 "b>"
 
-#: .tmp/statemanager.py:136
+#: .tmp/statemanager.py:137
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 "hvoraf <b>%1</b> tilbageblivende afhængigheder har en total størrelse på <b>%"
 "2</b>"
 
-#: .tmp/statemanager.py:138
+#: .tmp/statemanager.py:139
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "med <b>%1</b> ekstra afhængigheder med en total størrelse på <b>%2</b>"
 
-#: .tmp/statemanager.py:139
+#: .tmp/statemanager.py:140
 msgid "in your basket."
 msgstr "i din kurv"
 
-#: .tmp/statemanager.py:162
+#: .tmp/statemanager.py:163
 #, fuzzy
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
@@ -487,22 +515,22 @@ msgstr ""
 "Valgte pakker [%1] er i konflikt med hinanden. Disse pakker kan ikke "
 "installeres sammen."
 
-#: .tmp/statemanager.py:163 .tmp/statemanager.py:171
+#: .tmp/statemanager.py:164 .tmp/statemanager.py:172
 #, fuzzy
 msgid "Conflict Error"
 msgstr "Konflikt fejl"
 
-#: .tmp/statemanager.py:167
+#: .tmp/statemanager.py:168
 #, fuzzy
 msgid "The following packages conflicts:\n"
 msgstr "Følgende pakker er i konflikt med:\n"
 
-#: .tmp/statemanager.py:169
+#: .tmp/statemanager.py:170
 #, fuzzy
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 er i konflikt med: [%2]\n"
 
-#: .tmp/statemanager.py:170
+#: .tmp/statemanager.py:171
 #, fuzzy
 msgid ""
 "\n"
@@ -512,7 +540,7 @@ msgstr ""
 "Fjern "
 
 #: .tmp/ui_mainwindow.py:33 .tmp/about.py:23 .tmp/about.py:24
-#: .tmp/mainwidget.py:264
+#: .tmp/mainwidget.py:263 .tmp/mainwidget.py:275
 msgid "Package Manager"
 msgstr "Pakke håndtering"
 
@@ -595,37 +623,37 @@ msgstr "Faik Uygur"
 msgid "First Author"
 msgstr ""
 
-#: .tmp/mainwidget.py:98
+#: .tmp/mainwidget.py:102
 #, fuzzy
 msgid "All Updates"
 msgstr "Opdater"
 
-#: .tmp/mainwidget.py:99
+#: .tmp/mainwidget.py:103
 #, fuzzy
 msgid "Security Updates"
 msgstr "VIs opdateringer"
 
-#: .tmp/mainwidget.py:100
+#: .tmp/mainwidget.py:104
 msgid "Critical Updates"
 msgstr ""
 
-#: .tmp/mainwidget.py:212
+#: .tmp/mainwidget.py:217
 msgid "Network Error"
 msgstr "Netværks fejl"
 
-#: .tmp/mainwidget.py:213
+#: .tmp/mainwidget.py:218
 msgid "Please check your network connections and try again."
 msgstr "Kontroller venligst dine netværks indstillinger og forsøg igen."
 
-#: .tmp/mainwidget.py:215
+#: .tmp/mainwidget.py:220
 msgid "Authorization Error"
 msgstr "Godkendelses fejl"
 
-#: .tmp/mainwidget.py:216
+#: .tmp/mainwidget.py:221
 msgid "You are not authorized for this operation."
 msgstr "Du har ikke rettigheder til at foretage denne handling"
 
-#: .tmp/mainwidget.py:219
+#: .tmp/mainwidget.py:224
 msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
@@ -635,11 +663,11 @@ msgstr ""
 msgid "Show Installable Packages"
 msgstr "Vis pakker der kan installeres"
 
-#: .tmp/mainwindow_kde4.py:106 .tmp/mainwindow.py:124
+#: .tmp/mainwindow_kde4.py:105 .tmp/mainwindow.py:123
 msgid "Show Installed Packages"
 msgstr "Vis installerede pakker"
 
-#: .tmp/mainwindow_kde4.py:112 .tmp/mainwindow.py:134
+#: .tmp/mainwindow_kde4.py:110 .tmp/mainwindow.py:132
 msgid "Show Upgradable Packages"
 msgstr "Vis pakker der kan opdateres "
 
@@ -760,9 +788,12 @@ msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#: .tmp/helpdialog.py:32
+#: .tmp/helpdialog.py:31
 msgid "Package Manager Help"
 msgstr "Pakke håndtering hjælp"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
 #~ msgid "Use proxy server"
 #~ msgstr "Benyt proxy server"
