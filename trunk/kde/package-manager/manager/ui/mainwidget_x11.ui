@@ -33,12 +33,18 @@
          <height>16777215</height>
         </size>
        </property>
+       <property name="whatsThis">
+        <string>Category Panel</string>
+       </property>
       </widget>
      </item>
     </layout>
    </item>
    <item row="0" column="1">
     <widget class="QLineEdit" name="searchLine">
+     <property name="whatsThis">
+      <string>Search Bar</string>
+     </property>
      <property name="clickMessage" stdset="0">
       <string>Click to search</string>
      </property>
@@ -52,6 +58,9 @@
      <property name="enabled">
       <bool>false</bool>
      </property>
+     <property name="whatsThis">
+      <string>Search Button</string>
+     </property>
      <property name="text">
       <string>Search</string>
      </property>
@@ -59,6 +68,9 @@
    </item>
    <item row="0" column="4">
     <widget class="QPushButton" name="actionButton">
+     <property name="whatsThis">
+      <string>Action Button for current states action</string>
+     </property>
      <property name="text">
       <string>Install Package(s)</string>
      </property>
@@ -70,6 +82,9 @@
       <font>
        <pointsize>8</pointsize>
       </font>
+     </property>
+     <property name="whatsThis">
+      <string>Toggler for selection all packages in Package List</string>
      </property>
      <property name="text">
       <string>Select all packages in this group</string>
@@ -83,6 +98,9 @@
        <width>450</width>
        <height>0</height>
       </size>
+     </property>
+     <property name="whatsThis">
+      <string>Package List</string>
      </property>
      <property name="horizontalScrollBarPolicy">
       <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -153,6 +171,9 @@
        <width>260</width>
        <height>16777215</height>
       </size>
+     </property>
+     <property name="whatsThis">
+      <string>Update Types</string>
      </property>
     </widget>
    </item>
