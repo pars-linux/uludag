@@ -72,6 +72,7 @@
         <SelectedPackage>hping</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
         <SelectedPackage>hunspell-dict-en</SelectedPackage>
+        <SelectedPackage>hydra</SelectedPackage>
         <SelectedPackage>icon-theme-milky-png</SelectedPackage>
         <SelectedPackage>ifplugd</SelectedPackage>
         <SelectedPackage>iotop</SelectedPackage>
@@ -111,7 +112,6 @@
         <SelectedPackage>kdm-pardus-theme</SelectedPackage>
         <SelectedPackage>kernel-firmware</SelectedPackage>
         <SelectedPackage>kffmpegthumbnailer</SelectedPackage>
-        <SelectedPackage>kipi-plugins</SelectedPackage>
         <SelectedPackage>kmozillahelper</SelectedPackage>
         <SelectedPackage>knazar</SelectedPackage>
         <SelectedPackage>konversation</SelectedPackage>
@@ -148,6 +148,7 @@
         <SelectedPackage>nmap</SelectedPackage>
         <SelectedPackage>ntfsprogs</SelectedPackage>
         <SelectedPackage>ntp-client</SelectedPackage>
+        <SelectedPackage>opencv</SelectedPackage>
         <SelectedPackage>openoffice</SelectedPackage>
         <SelectedPackage>openoffice-extension-pdfimport</SelectedPackage>
         <SelectedPackage>openoffice-extension-presentation-minimizer</SelectedPackage>
@@ -170,6 +171,7 @@
         <SelectedPackage>poster</SelectedPackage>
         <SelectedPackage>ppp</SelectedPackage>
         <SelectedPackage>psutils</SelectedPackage>
+        <SelectedPackage>qt-sql-sqlite</SelectedPackage>
         <SelectedPackage>ralink-firmware</SelectedPackage>
         <SelectedPackage>rdate</SelectedPackage>
         <SelectedPackage>rdesktop</SelectedPackage>
@@ -312,7 +314,6 @@
         <Package>audiofile</Package>
         <Package>audit</Package>
         <Package>aufs-progs</Package>
-        <Package>autopano-sift-C</Package>
         <Package>avahi</Package>
         <Package>avahi-glib</Package>
         <Package>avahi-qt</Package>
@@ -396,7 +397,6 @@
         <Package>eina</Package>
         <Package>eject</Package>
         <Package>elfutils</Package>
-        <Package>enblend</Package>
         <Package>enca</Package>
         <Package>encfs</Package>
         <Package>enchant</Package>
@@ -439,7 +439,6 @@
         <Package>ghostscript</Package>
         <Package>giflib</Package>
         <Package>gimp</Package>
-        <Package>glew</Package>
         <Package>glib2</Package>
         <Package>glibc</Package>
         <Package>glibmm</Package>
@@ -487,9 +486,9 @@
         <Package>hping</Package>
         <Package>hplip</Package>
         <Package>hsqldb-lib</Package>
-        <Package>hugin</Package>
         <Package>hunspell</Package>
         <Package>hunspell-dict-en</Package>
+        <Package>hydra</Package>
         <Package>icon-theme-milky-index</Package>
         <Package>icon-theme-milky-png</Package>
         <Package>icon-theme-oxygen-index</Package>
@@ -556,7 +555,6 @@
         <Package>kernel-firmware</Package>
         <Package>keyutils</Package>
         <Package>kffmpegthumbnailer</Package>
-        <Package>kipi-plugins</Package>
         <Package>kmozillahelper</Package>
         <Package>knazar</Package>
         <Package>konversation</Package>
@@ -684,7 +682,6 @@
         <Package>liboldX</Package>
         <Package>libopenraw</Package>
         <Package>libotr</Package>
-        <Package>libpano13</Package>
         <Package>libpaper</Package>
         <Package>libpcap</Package>
         <Package>libpciaccess</Package>
@@ -854,7 +851,6 @@
         <Package>perl-Crypt-PasswdMD5</Package>
         <Package>perl-Digest-Base</Package>
         <Package>perl-Digest-SHA1</Package>
-        <Package>perl-Image-ExifTool</Package>
         <Package>perl-MIME-Base64</Package>
         <Package>perl-XML-Parser</Package>
         <Package>phonon</Package>
@@ -871,7 +867,6 @@
         <Package>plasmoid-service-applet</Package>
         <Package>plasmoid-translatoid</Package>
         <Package>plasmoid-yawp</Package>
-        <Package>plotutils</Package>
         <Package>pm-utils</Package>
         <Package>pnm2ppa</Package>
         <Package>polkit-qt</Package>
@@ -911,6 +906,7 @@
         <Package>qimageblitz</Package>
         <Package>qt</Package>
         <Package>qt-sql-mysql</Package>
+        <Package>qt-sql-sqlite</Package>
         <Package>qtscriptgenerator</Package>
         <Package>qzion</Package>
         <Package>ralink-firmware</Package>
@@ -1016,7 +1012,6 @@
         <Package>wireless-tools</Package>
         <Package>wpa_supplicant</Package>
         <Package>wvdial</Package>
-        <Package>wxGTK</Package>
         <Package>x264</Package>
         <Package>x2x</Package>
         <Package>xcb-proto</Package>
