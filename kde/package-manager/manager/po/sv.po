@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-27 11:37+0300\n"
-"PO-Revision-Date: 2010-05-23 11:22+0200\n"
+"PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -243,13 +243,12 @@ msgid "No proxy server"
 msgstr "Ingen proxyserver"
 
 #: .tmp/ui_settingsdialog.py:409
-#, fuzzy
 msgid "Use manual settings"
-msgstr "&Allmänna inställningar"
+msgstr "Använd manuella inställningar"
 
 #: .tmp/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Använd skrivbordsmiljöns inställningar"
 
 #: .tmp/ui_settingsdialog.py:411
 msgid "&Proxy"
@@ -306,21 +305,19 @@ msgstr "Form"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Category Panel"
-msgstr ""
+msgstr "Kategoripanel"
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
-#, fuzzy
 msgid "Search Bar"
-msgstr "Sök"
+msgstr "Sökfält"
 
 #: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
 msgid "Click to search"
 msgstr "Sök"
 
 #: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
-#, fuzzy
 msgid "Search Button"
-msgstr "Sök"
+msgstr "Sökknapp"
 
 #: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
 msgid "Search"
@@ -328,7 +325,7 @@ msgstr "Sök"
 
 #: .tmp/ui_mainwidget_kde4.py:92 .tmp/ui_mainwidget_x11.py:81
 msgid "Action Button for current states action"
-msgstr ""
+msgstr "Åtgärdsknapp"
 
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 #: .tmp/statemanager.py:82 .tmp/ui_basketdialog.py:104
@@ -337,21 +334,19 @@ msgstr "Installera paket"
 
 #: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
-msgstr ""
+msgstr "Växlare för paketval"
 
 #: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
 msgstr "Välj alla paket i den här gruppen"
 
 #: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
-#, fuzzy
 msgid "Package List"
 msgstr "Paketlista"
 
 #: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
-#, fuzzy
 msgid "Update Types"
-msgstr "Uppdateringar"
+msgstr "Uppdateringstyper"
 
 #: .tmp/operationmanager.py:130 .tmp/commontext.py:15
 msgid "downloading"
