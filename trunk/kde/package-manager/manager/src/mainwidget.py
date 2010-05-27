@@ -39,6 +39,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None, silence = False):
         QtGui.QWidget.__init__(self, parent)
         self.setupUi(self)
+        self.parent = parent
         self._selectedGroups = []
         self.state = StateManager(self)
         self.state.silence = silence
@@ -85,6 +86,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         waitCursor()
         self._last_packages = None
         self.state.reset()
+        self.lastStateHasAction = False
         self.initializeUpdateTypeList()
         self.initializePackageList()
         self.initializeGroupList()
@@ -225,6 +227,11 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.messageBox = QtGui.QMessageBox(errorTitle, errorMessage, QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
         self.messageBox.show()
 
+        if self.lastStateHasAction:
+            self.parent.showInstallAction.setChecked(True)
+            self.switchState(self.state.INSTALL)
+            self.initialize()
+
     def actionFinished(self, operation):
         if operation == "System.Manager.installPackage":
             self.showSummary()
@@ -277,6 +284,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def switchState(self, state, action=True):
         self.searchLine.clear()
         self.state.setState(state)
+        if state == StateManager.UPGRADE:
+            self.lastStateHasAction = True
         self._selectedGroups = []
         self.setActionButton()
         if action:
