@@ -1,9 +1,9 @@
 # translation of de.po to German
 # @TITLE@
 # Copyright (C) 2006, SUSE Linux GmbH, Nuremberg
-#
+# 
 # This file is distributed under the same license as @PACKAGE@ package. FIRST
-#
+# 
 # Michael Skiba <trans@michael-skiba.de>, 2007,2008.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: src/sysinfo.cpp:83 src/sysinfo.cpp:352
 msgid "%1 GB"
@@ -71,11 +71,11 @@ msgstr "Gemeinsame Ordner"
 
 #: src/sysinfo.cpp:246
 msgid "My Home Folder"
-msgstr "Persönlicher Home-Ordner"
+msgstr "Persönliches Home-Verzeichnis"
 
 #: src/sysinfo.cpp:247
 msgid "Root Folder"
-msgstr "Root-Ordner"
+msgstr "Wurzelverzeichnis"
 
 #: src/sysinfo.cpp:248
 msgid "Network Folders"
@@ -101,7 +101,8 @@ msgstr "Swap: %1 frei von %2"
 msgid "Swap: Not in use"
 msgstr "Swap: Wird nicht benutzt"
 
-# Disks din allemein und Festplatten sind zu genau deklariert - es gibt ja auch SSD´s
+# Disks din allemein und Festplatten sind zu genau deklariert - es gibt ja
+# auch SSD´s
 #: src/sysinfo.cpp:273
 msgid "Disks"
 msgstr "Speichermedien"
@@ -150,8 +151,7 @@ msgstr "Nicht eingehängt"
 msgid "%1 free of %2"
 msgstr "%1 frei von %2"
 
-#~ msgid ""
-#~ "Folders, Harddisks, Removable Devices, System Information and more..."
+#~ msgid "Folders, Harddisks, Removable Devices, System Information and more..."
 #~ msgstr "Ordner, Festplatten, Wechselmedien, Systeminformation und mehr..."
 
 #~ msgid "Driver: "
