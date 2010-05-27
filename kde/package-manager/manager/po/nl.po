@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-27 11:37+0300\n"
-"PO-Revision-Date: 2010-05-24 20:38+0200\n"
+"PO-Revision-Date: 2010-05-27 22:12+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -306,21 +306,19 @@ msgstr "Form"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Category Panel"
-msgstr ""
+msgstr "Categoriepaneel"
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
-#, fuzzy
 msgid "Search Bar"
-msgstr "Zoeken"
+msgstr "Zoekbalk"
 
 #: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
 msgid "Click to search"
 msgstr "Klik om te zoeken"
 
 #: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
-#, fuzzy
 msgid "Search Button"
-msgstr "Zoeken"
+msgstr "Zoeken-knop"
 
 #: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
 msgid "Search"
@@ -328,30 +326,28 @@ msgstr "Zoeken"
 
 #: .tmp/ui_mainwidget_kde4.py:92 .tmp/ui_mainwidget_x11.py:81
 msgid "Action Button for current states action"
-msgstr ""
+msgstr "Actie-knop voor huidige bewerkingen "
 
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 #: .tmp/statemanager.py:82 .tmp/ui_basketdialog.py:104
 msgid "Install Package(s)"
-msgstr "Installeer pakket(ten)"
+msgstr "Pakket(ten) installeren"
 
 #: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
-msgstr ""
+msgstr "Omschakelen van geselecteerde pakketten in de pakketlijst"
 
 #: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
 msgstr "Selecteer alle pakketten in deze groep"
 
 #: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
-#, fuzzy
 msgid "Package List"
 msgstr "Pakketlijst"
 
 #: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
-#, fuzzy
 msgid "Update Types"
-msgstr "Opwaarderingen"
+msgstr "Opwaardeertypen"
 
 #: .tmp/operationmanager.py:130 .tmp/commontext.py:15
 msgid "downloading"
