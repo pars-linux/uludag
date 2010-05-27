@@ -23,7 +23,7 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 
 PROJECT = 'package-manager'
-__version = '2.2.1'
+__version = '2.2.2'
 FOR_KDE_4 = False
 
 if 'kde4' in sys.argv:

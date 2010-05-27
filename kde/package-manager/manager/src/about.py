@@ -19,7 +19,7 @@ if ctx.Pds.session == ctx.pds.Kde4:
     # Application Data
     appName     = "package-manager"
     catalog     = appName
-    version     = "2.2.1"
+    version     = "2.2.2"
     programName = ki18n("Package Manager")
     description = ki18n("Package Manager")
     license     = KAboutData.License_GPL
