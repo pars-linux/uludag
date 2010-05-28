@@ -29,9 +29,9 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
     def startAnimation(self):
-        self.movie = QtGui.QMovie(self)
+        self.movie = QtGui.QMovie(":/data/pisianime.mng")
+        self.movie.setCacheMode(QtGui.QMovie.CacheAll)
         self.animeLabel.setMovie(self.movie)
-        self.movie.setFileName(":/data/pisianime.gif")
         self.movie.start()
 
     def updateProgress(self, progress):
