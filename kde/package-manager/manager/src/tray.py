@@ -21,7 +21,9 @@ import backend
 
 class PTray:
     def __init__(self, iface):
-        self.defaultIcon = QtGui.QIcon(":/data/package-manager.png")
+        self.defaultIcon = QtGui.QIcon(":/data/tray-zero.png")
+        self.countIcon = QtGui.QIcon(":/data/tray-count.png")
+        self.clip = QtGui.QMovie(":/data/animated-tray.mng")
         self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
@@ -30,6 +32,18 @@ class PTray:
         self.initializeTimer()
         self.initializePopup()
         self.settingsChanged()
+
+    def animate(self):
+        self.connect(self.clip, SIGNAL("frameChanged(int)"), self.slotAnimate)
+        self.clip.setCacheMode(QtGui.QMovie.CacheAll)
+        self.clip.start()
+
+    def stop(self):
+        self.clip.stop()
+        self.setIcon(self.defaultIcon)
+
+    def slotAnimate(self, scene):
+        self.setIcon(QtGui.QIcon(self.clip.currentPixmap()))
 
     def initializeTimer(self):
         self.timer = QTimer()
@@ -128,7 +142,7 @@ class PTray:
                 pointSize *= float(19) / float(w)
                 f.setPointSizeF(pointSize)
 
-            overlayImg = QtGui.QPixmap(self.defaultIcon.pixmap(22))
+            overlayImg = QtGui.QPixmap(self.countIcon.pixmap(22))
             p = QtGui.QPainter(overlayImg)
             p.setFont(f)
             scheme = QtGui.QBrush()

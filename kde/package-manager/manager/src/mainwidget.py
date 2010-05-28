@@ -251,7 +251,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def actionCancelled(self):
         self.progressDialog.hide()
-        self.state.reset()
         if self.state.silence:
             QtGui.qApp.exit()
         self.initialize()

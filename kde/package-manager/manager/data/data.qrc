@@ -1,7 +1,11 @@
 <RCC>
   <qresource prefix="data" >
     <file>package-manager.png</file>
+    <file>tray-count.png</file>
+    <file>tray-zero.png</file>
     <file>pisianime.gif</file>
     <file>wheel.mng</file>
+    <file>pisianime.mng</file>
+    <file>animated-tray.mng</file>
   </qresource>
 </RCC>
