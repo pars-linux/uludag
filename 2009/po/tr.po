@@ -2125,7 +2125,6 @@ msgstr ""
 "kurulum devam ederken sisteminize zarar verebilir.</b>"
 
 #: yali4/gui/YaliWindow.py:152
-#, fuzzy
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
 "computer if the installation is in progress.</b>"
