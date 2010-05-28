@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YALI-pl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 00:44+0300\n"
+"POT-Creation-Date: 2010-05-28 11:44+0300\n"
 "PO-Revision-Date: 2006-04-08 12:19+0900\n"
 "Last-Translator: Piotr Maliński <riklaunim@gmail.com>\n"
 "Language-Team: Polish <translation-team-pl@lists.sourceforge.net>\n"
@@ -253,7 +253,7 @@ msgstr "Log:"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:701
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:702
 msgid "Reboot"
 msgstr "Restart"
 
@@ -1979,7 +1979,7 @@ msgstr ""
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
-"computer if the installation is in progress."
+"computer if the installation is in progress.</b>"
 msgstr ""
 
 #: yali4/gui/YaliWindow.py:165

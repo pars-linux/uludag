@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 00:44+0300\n"
+"POT-Creation-Date: 2010-05-28 11:44+0300\n"
 "PO-Revision-Date: 2010-01-13 23:01-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -288,7 +288,7 @@ msgstr "Mostrar trazo inverso"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:701
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:702
 msgid "Reboot"
 msgstr "Reiniciar"
 
@@ -2244,9 +2244,10 @@ msgstr ""
 "la instalación de su computadora, si la instalación está en progreso.</b>"
 
 #: yali4/gui/YaliWindow.py:152
+#, fuzzy
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
-"computer if the installation is in progress."
+"computer if the installation is in progress.</b>"
 msgstr ""
 "El asistente de instalación YALI ahora se <b>reiniciará</b>.<br/><br/"
 "><b>Esta acción puede dañar la instalación de su computadora, si la "

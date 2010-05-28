@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 00:44+0300\n"
+"POT-Creation-Date: 2010-05-28 11:44+0300\n"
 "PO-Revision-Date: 2010-05-26 12:54+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -282,7 +282,7 @@ msgstr "Backtrace tonen"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:701
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:702
 msgid "Reboot"
 msgstr "Herstarten"
 
@@ -2163,9 +2163,10 @@ msgstr ""
 "de computer toebrengen indien de installatie nog bezig is.</b>"
 
 #: yali4/gui/YaliWindow.py:152
+#, fuzzy
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
-"computer if the installation is in progress."
+"computer if the installation is in progress.</b>"
 msgstr ""
 "YALI zal nu <b>herstarten</b><br/><br/><b>Deze actie kan schade aan de "
 "computer toebrengen indien de installatie nog bezig is.</b"
