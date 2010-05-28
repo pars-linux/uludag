@@ -50,7 +50,7 @@ msgstr "Wiederholungsrate:"
 
 #: .tmp/ui_screens.py:90
 msgid "Rotation:"
-msgstr ""
+msgstr "Wechsel/Drehung:"
 
 #: .tmp/ui_screens.py:91
 msgid "No Rotation"
@@ -94,11 +94,11 @@ msgstr "Vom Treiber vorgegeben"
 
 #: .tmp/ui_videocard.py:83
 msgid "16 Bit"
-msgstr ""
+msgstr "16 Bit"
 
 #: .tmp/ui_videocard.py:84
 msgid "24 Bit"
-msgstr ""
+msgstr "24 Bit"
 
 #: .tmp/displaysettings/about.py:22
 msgid "Display Configuration Tool"
@@ -106,11 +106,11 @@ msgstr "Bildschirmeinstellungs-Tool"
 
 #: .tmp/displaysettings/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/displaysettings/about.py:32
 msgid "Fatih Aşıcı"
-msgstr ""
+msgstr "Fatih Aşıc"
 
 #: .tmp/displaysettings/about.py:32
 msgid "Current Maintainer"
@@ -200,7 +200,7 @@ msgstr "Monitore:"
 #: .tmp/displaysettings/screenswidget.py:189
 #: .tmp/displaysettings/screenswidget.py:264
 msgid "Auto"
-msgstr ""
+msgstr "Automatisch"
 
 #: .tmp/displaysettings/screenswidget.py:259
 msgid "Output Properties - %1"
@@ -242,7 +242,7 @@ msgstr "Geben Sie die Frequenzen manuell ein"
 
 #: .tmp/ui_output.py:231
 msgid "Monitor:"
-msgstr ""
+msgstr "Monitor:WEs"
 
 #: .tmp/ui_output.py:232
 msgid "Choose..."
