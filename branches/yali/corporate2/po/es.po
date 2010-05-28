@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 13:49+0300\n"
+"POT-Creation-Date: 2010-05-28 11:54+0300\n"
 "PO-Revision-Date: 2010-01-15 15:18-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -311,7 +311,7 @@ msgstr "Mostrar trazo inverso"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:719
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:720
 msgid "Reboot"
 msgstr "Reiniciar"
 
@@ -379,7 +379,7 @@ msgid "Next Screen"
 msgstr "Pantalla siguiente"
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
-#: yali4/gui/ScrSummary.py:341
+#: yali4/gui/ScrSummary.py:344
 msgid "Next"
 msgstr "Siguiente"
 
@@ -2073,16 +2073,16 @@ msgstr ""
 "                                        <b>Tenga en cuenta que esta "
 "operación no se puede deshacer !</b></p>"
 
-#: yali4/gui/ScrSummary.py:287 yali4/gui/ScrSummary.py:298
-#: yali4/gui/ScrSummary.py:314
+#: yali4/gui/ScrSummary.py:290 yali4/gui/ScrSummary.py:301
+#: yali4/gui/ScrSummary.py:317
 msgid "Formatting..."
 msgstr "Formateando..."
 
-#: yali4/gui/ScrSummary.py:293 yali4/gui/ScrSummary.py:305
+#: yali4/gui/ScrSummary.py:296 yali4/gui/ScrSummary.py:308
 msgid "Writing disk tables..."
 msgstr "Guardando tablas de particiones..."
 
-#: yali4/gui/ScrSummary.py:295
+#: yali4/gui/ScrSummary.py:298
 msgid "Resizing..."
 msgstr "Redimensionando..."
 
@@ -2296,7 +2296,7 @@ msgstr ""
 #: yali4/gui/YaliWindow.py:152
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
-"computer if the installation is in progress."
+"computer if the installation is in progress.</b>"
 msgstr ""
 
 #: yali4/gui/YaliWindow.py:165
