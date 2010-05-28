@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-25 13:49+0300\n"
+"POT-Creation-Date: 2010-05-28 11:54+0300\n"
 "PO-Revision-Date: 2010-05-27 22:18+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -303,7 +303,7 @@ msgstr "Backtrace tonen"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
-#: yali4/gui/ScrSummary.py:71 yali4/installer.py:719
+#: yali4/gui/ScrSummary.py:71 yali4/installer.py:720
 msgid "Reboot"
 msgstr "Herstarten"
 
@@ -368,7 +368,7 @@ msgid "Next Screen"
 msgstr "Volgend scherm"
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
-#: yali4/gui/ScrSummary.py:341
+#: yali4/gui/ScrSummary.py:344
 msgid "Next"
 msgstr "Volgende"
 
@@ -1254,8 +1254,7 @@ msgid ""
 "integrity..."
 msgstr ""
 "Om problemen met het installatiemedium te vermijden kun u de integriteit van "
-"de pakketten "
-"testen..."
+"de pakketten testen..."
 
 #: yali4/gui/ScrCheckCD.py:32
 msgid ""
@@ -1995,16 +1994,16 @@ msgstr ""
 "                                        <b>Let op dat deze handeling niet "
 "ongedaan gemaakt kan worden.</b></p>"
 
-#: yali4/gui/ScrSummary.py:287 yali4/gui/ScrSummary.py:298
-#: yali4/gui/ScrSummary.py:314
+#: yali4/gui/ScrSummary.py:290 yali4/gui/ScrSummary.py:301
+#: yali4/gui/ScrSummary.py:317
 msgid "Formatting..."
 msgstr "Formatteren..."
 
-#: yali4/gui/ScrSummary.py:293 yali4/gui/ScrSummary.py:305
+#: yali4/gui/ScrSummary.py:296 yali4/gui/ScrSummary.py:308
 msgid "Writing disk tables..."
 msgstr "Schijftabellen scrijven..."
 
-#: yali4/gui/ScrSummary.py:295
+#: yali4/gui/ScrSummary.py:298
 msgid "Resizing..."
 msgstr "Grootte aanpassen..."
 
@@ -2217,9 +2216,10 @@ msgstr ""
 "de computer toebrengen indien de installatie nog bezig is.</b>"
 
 #: yali4/gui/YaliWindow.py:152
+#, fuzzy
 msgid ""
 "YALI will now <b>restart</b>.<br/><br/><b>This action can cause harm to your "
-"computer if the installation is in progress."
+"computer if the installation is in progress.</b>"
 msgstr ""
 "YALI zal nu <b>herstarten</b><br/><br/><b>Deze actie kan schade aan de "
 "computer toebrengen indien de installatie nog bezig is.</b"
