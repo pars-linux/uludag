@@ -114,7 +114,7 @@ msgstr "Überprüfugsintervall:"
 
 #: .tmp/ui_settingsdialog.py:379
 msgid " min"
-msgstr ""
+msgstr "Minimum"
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Install updates automatically"
@@ -292,7 +292,7 @@ msgstr "Form"
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Category Panel"
-msgstr ""
+msgstr "Kategorie Feld"
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
 msgid "Search Bar"
@@ -303,9 +303,8 @@ msgid "Click to search"
 msgstr "Geben Sie Ihre Suche ein"
 
 #: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
-#, fuzzy
 msgid "Search Button"
-msgstr "Suche"
+msgstr "Suchleiste"
 
 #: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
 msgid "Search"
@@ -525,7 +524,7 @@ msgstr "Paket %1 / %2: %3"
 
 #: .tmp/progressdialog.py:59
 msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
+msgstr "<p align='center'>%1 / %2, %3</p>"
 
 #: .tmp/progressdialog.py:82
 msgid "<b>Cancelling operation...</b>"
@@ -553,11 +552,11 @@ msgstr "<qt>Die Adresse des Depots sollte mit xml oder xml.bz2 enden. <p>Bitte e
 
 #: .tmp/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: .tmp/about.py:34
 msgid "Gökmen Göksel"
-msgstr ""
+msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:34
 msgid "Developer"
@@ -565,11 +564,11 @@ msgstr "Entwickler"
 
 #: .tmp/about.py:35
 msgid "Faik Uygur"
-msgstr ""
+msgstr "Faik Uygur"
 
 #: .tmp/about.py:35
 msgid "First Author"
-msgstr ""
+msgstr "Erster Author"
 
 #: .tmp/mainwidget.py:102
 #, fuzzy
@@ -664,7 +663,7 @@ msgstr "Gesamtgrösse:"
 
 #: .tmp/ui_basketdialog.py:103
 msgid "<b>2.2 MB</b>"
-msgstr ""
+msgstr "<b>2.2 MB</b>"
 
 # Zweifel..
 #: .tmp/ui_basketdialog.py:105
@@ -672,8 +671,9 @@ msgid "Download Size:"
 msgstr "Download Grösse:"
 
 #: .tmp/ui_basketdialog.py:106
+#, fuzzy
 msgid "<b>2.0 MB</"
-msgstr ""
+msgstr "<b>2.0 MB</"
 
 #: .tmp/commontext.py:16
 msgid "removing"
@@ -722,12 +722,14 @@ msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Name des Depots, z.B. <b>pardus-devel</b>"
 
 #: .tmp/ui_repodialog.py:59
+#, fuzzy
 msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
-msgstr ""
+msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
 #: .tmp/ui_repodialog.py:60
+#, fuzzy
 msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
+msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #: .tmp/helpdialog.py:31
 msgid "Package Manager Help"
