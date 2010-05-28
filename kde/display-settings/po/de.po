@@ -250,19 +250,19 @@ msgstr "Wähle..."
 
 #: .tmp/ui_output.py:233
 msgid "Horizontal sync:"
-msgstr ""
+msgstr "Horizontal synchronisieren"
 
 #: .tmp/ui_output.py:234
 msgid "kHz"
-msgstr ""
+msgstr "kHz"
 
 #: .tmp/ui_output.py:235
 msgid "Vertical refresh:"
-msgstr ""
+msgstr "Vertikal auffrischen"
 
 #: .tmp/ui_output.py:236
 msgid "Hz"
-msgstr ""
+msgstr "Hz"
 
 #: .tmp/ui_output.py:237
 msgid "Frequency Ranges"
@@ -282,7 +282,7 @@ msgstr "Displaygröße:"
 
 #: .tmp/ui_output.py:241
 msgid "15.4\" Wide Screen"
-msgstr ""
+msgstr "15.4\" Wide Screen"
 
 #: .tmp/ui_output.py:242
 msgid "Custom"
@@ -294,7 +294,7 @@ msgstr "Breite:"
 
 #: .tmp/ui_output.py:244 .tmp/ui_output.py:246
 msgid " mm"
-msgstr ""
+msgstr "mm"
 
 #: .tmp/ui_output.py:245
 msgid "Height:"
