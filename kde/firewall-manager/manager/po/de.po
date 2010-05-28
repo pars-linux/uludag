@@ -59,7 +59,7 @@ msgstr "Firewall-Manager"
 
 #: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/firewallmanager/about.py:25
 msgid " "
@@ -67,7 +67,7 @@ msgstr " "
 
 #: .tmp/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/firewallmanager/about.py:32
 msgid "Current Maintainer"
