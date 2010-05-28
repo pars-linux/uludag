@@ -2,7 +2,7 @@
 # Network Manager.
 # Copyright (C) 2009, TUBITAK/UEKAE
 # This file is distributed under the same license as the Network-Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
 msgid "Signal Strength"
@@ -26,15 +26,15 @@ msgstr "Signalstärke"
 
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
-msgstr ""
+msgstr "Netzwerk Manager"
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/networkmanager/about.py:32
 msgid "Current Maintainer"
@@ -42,7 +42,7 @@ msgstr "Aktueller Betreuer"
 
 #: .tmp/networkmanager/about.py:33
 msgid "Gökmen GÖKSEL"
-msgstr ""
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/networkmanager/about.py:33
 msgid "Developer"
@@ -209,15 +209,15 @@ msgstr "Passwort unsichtbar"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
-msgstr ""
+msgstr "Dialog"
 
 #: .tmp/ui_nmwizard.py:93
 msgid "Details"
-msgstr ""
+msgstr "Details"
 
 #: .tmp/ui_nmwizard.py:94
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: .tmp/ui_nmwizard.py:95
 msgid "Device"
