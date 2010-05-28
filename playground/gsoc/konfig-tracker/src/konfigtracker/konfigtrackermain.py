@@ -3,7 +3,7 @@ import os
 import git
 
 #Qt modules
-from PyQt4.QtCore import QDir, SIGNAL
+from PyQt4.QtCore import QDir, SIGNAL, QStringList
 
 #PyKDE4 modules
 from PyKDE4.kio import KIO
@@ -17,36 +17,41 @@ class KonfigTracker(KMainWindow):
         self.resize (640, 480)
         self.app = app
         self.initialize()
+            
         
     def initialize(self):
         ''' if there exist no path, it will create
         a directory using this path, and initialize a git repository there
         '''
-        #path is hardcoded for fedora 13. remember to change it.
+        #path is hardcoded. remember to change it.
         path = os.environ['HOME'] + "/konfigtracker-repo"
 
         if not os.access(path,os.F_OK):
             os.mkdir(path)
             self.createRepo(path)
             self.performInitImport(path)
+        return True
             
     def createRepo(self,path):
         '''
-        this will initialize a git repository in path.
+        Initialize a git repository in path.
         '''
         gitRepo = git.Git(path)
         gitRepo.init()
             
     def slotMessage(self):
-        print "Copied!"
+        """
+        Perform the commit to repository
+        """
         repo = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
-        result = repo.execute(["git","add","."])
+        repo.execute(["git","add","."])
         self.commit()
-
+        print "Initial Backup done."
+        
     def commit(self):
-        rep = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
-        res = rep.execute(["git","commit","-a","-m","Root Backup"])
-    
+        repo = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
+        repo.execute(["git","commit","-a","-m","Initial Backup"])   
+        
     def performInitImport(self,path):
         """
         This will perform the initial import of config files from
@@ -56,12 +61,15 @@ class KonfigTracker(KMainWindow):
         destPath = os.environ['HOME'] + "/konfigtracker-repo/"
         dir = QDir(os.environ['HOME'] + "/.kde/share/config/")
         entryList = dir.entryList()
+        
         #copying the files from source to destination.
         app = self.app
+        srcList = QStringList()
         for i in entryList:
             if not i in [".","..",]:
-                i = srcPath + i
-                src = KUrl(i)
-                dest = KUrl(destPath)
-                job = KIO.copy(src, dest)
-                app.connect(job, SIGNAL("finished(KJob*)"),self.slotMessage)
+                srcList.append(srcPath + i)
+        
+        src = KUrl.List(srcList)
+        dest = KUrl(destPath)
+        job = KIO.copy(src, dest, KIO.HideProgressInfo)
+        app.connect(job, SIGNAL("finished(KJob*)"),self.slotMessage)
