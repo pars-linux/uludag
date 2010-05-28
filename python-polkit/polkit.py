@@ -121,6 +121,7 @@ def auth_list_all():
                 "action_id": action_id,
                 "uid": _uid,
                 "type": 3,
+                "scope": 0,
                 "negative": cp.get(title, "ResultAny") == "no",
             }
             authorizations.append(auth)
