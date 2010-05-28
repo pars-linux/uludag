@@ -2,7 +2,7 @@
 # History Manager Application for Pardus Linux.
 # Copyright (C) 2009 İşbaran Akçayır
 # This file is distributed under the same license as the History Manager package.
-#
+# 
 # İşbaran Akçayır <isbaran@gmail.com>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
@@ -34,19 +34,18 @@ msgstr "Startlast :"
 msgid " Operations"
 msgstr "Operationen"
 
-#: .tmp/historymanager/about.py:21
-#: .tmp/historymanager/about.py:23
+#: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr ""
+msgstr "Historie Manager"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/historymanager/about.py:32
 msgid "İşbaran Akçayır"
-msgstr ""
+msgstr "İşbaran Akçayır"
 
 #: .tmp/historymanager/about.py:32
 msgid "Current Maintainer"
@@ -69,8 +68,7 @@ msgstr "Operationdetails an %1 auf %2"
 msgid "There are %1 packages in this snapshot."
 msgstr "Es sind %1 Pakete in dieser Momentaufnahme."
 
-#: .tmp/historymanager/window.py:146
-#: .tmp/historymanager/window.py:198
+#: .tmp/historymanager/window.py:146 .tmp/historymanager/window.py:198
 msgid "Ready .."
 msgstr "Fertig .."
 
@@ -181,8 +179,7 @@ msgstr "Datum - Zeit /Label"
 msgid "No: Type:"
 msgstr "Nein: Typ:"
 
-#: .tmp/ui_uiitem.py:87
-#: .tmp/ui_mainwindow.py:137
+#: .tmp/ui_uiitem.py:87 .tmp/ui_mainwindow.py:137
 msgid "Take back to this point"
 msgstr "Bis zu diesem Punkt zurückgehen"
 
@@ -225,4 +222,3 @@ msgstr "Kopiere"
 
 #~ msgid "Form"
 #~ msgstr "Form"
-
