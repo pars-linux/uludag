@@ -28,8 +28,9 @@ msgid "Web Tarayıcı"
 msgstr "Webbrowser"
 
 #: .tmp/ui_appitem.py:59
+#, fuzzy
 msgid "Firefox"
-msgstr ""
+msgstr "Firefox"
 
 #: .tmp/ui_progressdialog.py:153
 msgid "Operation"
@@ -44,12 +45,14 @@ msgid "Time remaining:"
 msgstr "Verbleibende Zeit:"
 
 #: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:76
+#, fuzzy
 msgid "--  / --"
-msgstr ""
+msgstr "--  / --"
 
 #: .tmp/ui_progressdialog.py:157 .tmp/progressdialog.py:78
+#, fuzzy
 msgid "--:--:--"
-msgstr ""
+msgstr "--:--:--"
 
 #: .tmp/ui_progressdialog.py:158
 msgid "Operation:"
@@ -60,6 +63,7 @@ msgid "Status:"
 msgstr "Status:"
 
 #: .tmp/ui_progressdialog.py:160
+#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -67,6 +71,11 @@ msgid ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
 msgid "&Cancel"
