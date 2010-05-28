@@ -5,7 +5,7 @@ import sys
 from PyQt4.QtCore import SIGNAL
 
 #PyKDE4 stuffs
-from PyKDE4.kdeui import KUniqueApplication
+from PyKDE4.kdeui import KApplication
 from PyKDE4.kdecore import KCmdLineArgs
 
 if __name__ == "__main__":
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     KCmdLineArgs.init(sys.argv,aboutData)
     
     #creating a kapplication instance
-    app = KUniqueApplication()
+    app = KApplication()
     
     MainWindow = KonfigTracker(app)
     MainWindow.show()
