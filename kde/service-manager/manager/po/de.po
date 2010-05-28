@@ -20,15 +20,15 @@ msgstr ""
 
 #: .tmp/ui_item.py:99 .tmp/ui_main.py:55
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_item.py:100
 msgid "serviceName"
-msgstr ""
+msgstr "Service Name"
 
 #: .tmp/ui_item.py:101
 msgid "serviceDesc"
-msgstr ""
+msgstr "Service Desc"
 
 #: .tmp/ui_item.py:102
 msgid "Start service"
