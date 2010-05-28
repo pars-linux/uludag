@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -51,19 +51,17 @@ msgstr "Löschen"
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
-#: .tmp/diskmanager/pagedialog.py:31
-#: .tmp/diskmanager/pagedialog.py:34
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: .tmp/diskmanager/about.py:20
-#: .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
-msgstr ""
+msgstr "Festplatten Manager"
 
 #: .tmp/diskmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/diskmanager/about.py:25
 msgid " "
@@ -71,7 +69,7 @@ msgstr " "
 
 #: .tmp/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/diskmanager/about.py:32
 msgid "Current Maintainer"
@@ -97,9 +95,7 @@ msgstr "Alle Objekte"
 msgid "Add"
 msgstr "Hinzufügen"
 
-#: .tmp/diskmanager/main.py:272
-#: .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Zugriff verweigert"
-
