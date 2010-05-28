@@ -11,7 +11,7 @@ from distutils.core import setup, Extension
 import subprocess as S
 
 setup(name="pypolkit",
-      version="1.0.0",
+      version="1.0.1",
       description="Python bindings for polkit-1",
       long_description="Python bindings for polkit-1",
       license="GNU GPL2",
