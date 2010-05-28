@@ -1,19 +1,19 @@
 # Header entry was created by KBabel!
 #
-#: ../media-content/release-notes/releasenotes-en.html:1
 # Antoon Tolboom <atolboo@gmail.com>, 2010.
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-28 08:44+0300\n"
+"PO-Revision-Date: 2010-05-27 21:50+0200\n"
+"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Mime-Version: 1.0\n"
-"PO-Revision-Date: 2010-05-27 21:50+0200\n"
-"Project-Id-Version: \n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "X-Generator: Lokalize 1.0\n"
-"MIME-Version: 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
 msgctxt "../media-content/release-notes/releasenotes-en.html:1"
@@ -54,12 +54,14 @@ msgid "1.1. What is Pardus?"
 msgstr "1.1. Wat is Pardus?"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
+#, fuzzy
 msgid ""
 "Pardus is a Linux distribution developed as a product of the Pardus Project, "
 "by Turkish National Research Institute of Electronics and Cryptology "
 "(UEKAE), which is under the Scientific and Technological Research Council of "
-"Turkey (TBTAK) and by volunteered contributors. It is named after the Latin "
-"(and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
+"Turkey (TÜBİTAK) and by volunteered contributors. It is named after the "
+"Latin (and scientific) name for the Anatolian leopard, Panthera pardus "
+"tulliana."
 msgstr ""
 "Pardus is een Linux-distributie, ontwikkeld door het Pardus-project van de "
 "het Turkse Nationale Instituut voor Elektronica en Cryptologie (UEKAE), dat "
@@ -217,8 +219,7 @@ msgid ""
 "Technologies. Some of the highlights are as follows:"
 msgstr ""
 "Pardus  Corporate 2 Alpha bevat technologieën van Pardus en vele bijgewerkte "
-"pakketten. "
-"Enkele hoogtepunten zijn:"
+"pakketten. Enkele hoogtepunten zijn:"
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid "KDE 3.5.10"
@@ -349,15 +350,16 @@ msgid "2.4.3 Networking"
 msgstr "2.4.3 Netwerken"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
+#, fuzzy
 msgid ""
 "GNOME NetworkManager, 4 VPN plugins, network-manager-applet and ModemManager "
 "are now available in the repository. Users can switch to NetworkManager "
-"backend by tweaking the /et/conf.d/NetworkManager file,"
+"backend by tweaking the /etc/conf.d/NetworkManager file,"
 msgstr ""
 "GNOME-netwerkbeheer, 4 VPN plug-ins, netwerkbeheer-applet en modembeheer "
 "zijn nu beschikbaar in de softwarebronnen. Gebruikers kunnen nu naar de "
-"netwerkbeheerder schakelen door het aanpassen van het bestand /etc/conf."
-"d/NetworkManager,"
+"netwerkbeheerder schakelen door het aanpassen van het bestand /etc/conf.d/"
+"NetworkManager,"
 
 #: ../media-content/release-notes/releasenotes-en.html:58
 msgid ""
@@ -472,5 +474,3 @@ msgstr "1000 MHz Intel of AMD processor (1400 MHz aanbevolen)"
 #: ../media-content/release-notes/releasenotes-en.html:79
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr "Ten minste 4 GB vrije ruimte op de harde schijf (10 GB aanbevolen)"
-
-

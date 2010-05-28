@@ -279,7 +279,7 @@ msgstr ""
 msgid ""
 "GNOME NetworkManager, 4 VPN plugins, network-manager-applet and ModemManager "
 "are now available in the repository. Users can switch to NetworkManager "
-"backend by tweaking the /et/conf.d/NetworkManager file,"
+"backend by tweaking the /etc/conf.d/NetworkManager file,"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:58
