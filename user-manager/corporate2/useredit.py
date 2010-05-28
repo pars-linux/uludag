@@ -727,7 +727,7 @@ class PolicyTab(QVBox):
     def reset(self):
         it = self.policyview.firstChild()
         while it:
-            it.setOpen(False)
+            #it.setOpen(False)
             it = it.nextSibling()
         self.setPolicyButtonsEnabled(False)
         self.policyview.clearSelection()
@@ -843,20 +843,15 @@ class PolicyTab(QVBox):
 
         def listUserAuthorizations(package, exception, auths):
             if exception:
-                item.setOpen(False)
+                print exception
+                #item.setOpen(False)
                 return
-            auths = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, auths)
+            auths = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, auths)
             setIcons(auths)
 
         if not self.edit:
             setIcons([])
             return
-
-        #try:
-        #    auths = polkit.auth_list_uid(int(self.uid.text()))
-        #    setIcons(auths)
-        #except:
-        #call COMAR see different users' auths
 
         self.mainwidget.link.User.Manager["baselayout"].listUserAuthorizations(int(self.uid.text()), async=listUserAuthorizations)
 
@@ -898,7 +893,7 @@ class PolicyTab(QVBox):
             self.inOperation = True
 
             # convert comar answer to pypolkit call structure
-            authList = map(lambda x: {"action_id": str(x[0]), "negative": bool(x[4])}, authList)
+            authList = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, authList)
             self.selectRightButtons(authList, actionItem)
 
         #try:
