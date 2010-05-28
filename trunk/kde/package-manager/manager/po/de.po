@@ -28,7 +28,6 @@ msgid "Web Tarayıcı"
 msgstr "Webbrowser"
 
 #: .tmp/ui_appitem.py:59
-#, fuzzy
 msgid "Firefox"
 msgstr "Firefox"
 
@@ -45,9 +44,8 @@ msgid "Time remaining:"
 msgstr "Verbleibende Zeit:"
 
 #: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:76
-#, fuzzy
 msgid "--  / --"
-msgstr "--  / --"
+msgstr "- / -"
 
 #: .tmp/ui_progressdialog.py:157 .tmp/progressdialog.py:78
 #, fuzzy
@@ -680,7 +678,6 @@ msgid "Download Size:"
 msgstr "Download Grösse:"
 
 #: .tmp/ui_basketdialog.py:106
-#, fuzzy
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
