@@ -26,7 +26,7 @@ msgstr "Boot-Menü"
 
 #: .tmp/bootmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/bootmanager/about.py:25
 msgid " "
@@ -34,7 +34,7 @@ msgstr " "
 
 #: .tmp/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/bootmanager/about.py:32
 msgid "Current Maintainer"
