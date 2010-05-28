@@ -635,9 +635,8 @@ msgid "Updates"
 msgstr "Updates"
 
 #: .tmp/tray.py:183
-#, fuzzy
 msgid "There are %1 updates available!"
-msgstr "Es sind <b>%1</b> Updates verfügbar!"
+msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
 
 #: .tmp/tray.py:214
 msgid "There are <b>%1</b> updates available!"
