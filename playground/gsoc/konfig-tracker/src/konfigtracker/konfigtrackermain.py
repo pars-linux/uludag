@@ -7,7 +7,7 @@ from PyQt4.QtCore import QDir, SIGNAL, QStringList
 
 #PyKDE4 modules
 from PyKDE4.kio import KIO
-from PyKDE4.kdecore import KUrl
+from PyKDE4.kdecore import KUrl, KStandardDirs
 from PyKDE4.kdeui import *
 
 class KonfigTracker(KMainWindow):
@@ -17,20 +17,22 @@ class KonfigTracker(KMainWindow):
         self.resize (640, 480)
         self.app = app
         self.initialize()
-            
+        
+    def getLocalDir(self):
+        kdir = KStandardDirs()
+        return kdir.localkdedir()
         
     def initialize(self):
-        ''' if there exist no path, it will create
-        a directory using this path, and initialize a git repository there
+        ''' If there exist no database in this path, this function will create
+        one, and initialize a git repository there.
         '''
-        #path is hardcoded. remember to change it.
-        path = os.environ['HOME'] + "/konfigtracker-repo"
+        
+        path = self.getLocalDir()  + "/konfigtracker-repo"
 
         if not os.access(path,os.F_OK):
             os.mkdir(path)
             self.createRepo(path)
             self.performInitImport(path)
-        return True
             
     def createRepo(self,path):
         '''
@@ -43,13 +45,13 @@ class KonfigTracker(KMainWindow):
         """
         Perform the commit to repository
         """
-        repo = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
+        repo = git.Git( self.getLocalDir()+ "/konfigtracker-repo/")
         repo.execute(["git","add","."])
         self.commit()
         print "Initial Backup done."
         
     def commit(self):
-        repo = git.Git(os.environ['HOME'] + "/konfigtracker-repo/")
+        repo = git.Git(self.getLocalDir() + "/konfigtracker-repo/")
         repo.execute(["git","commit","-a","-m","Initial Backup"])   
         
     def performInitImport(self,path):
@@ -57,9 +59,9 @@ class KonfigTracker(KMainWindow):
         This will perform the initial import of config files from
         .kde4/share/config to .kde4/konfigtracker-repo.
         """
-        srcPath = os.environ['HOME'] + "/.kde/share/config/"
-        destPath = os.environ['HOME'] + "/konfigtracker-repo/"
-        dir = QDir(os.environ['HOME'] + "/.kde/share/config/")
+        srcPath = self.getLocalDir() + "/share/config/"
+        destPath = self.getLocalDir() + "/konfigtracker-repo/"
+        dir = QDir(self.getLocalDir() + "/share/config/")
         entryList = dir.entryList()
         
         #copying the files from source to destination.
