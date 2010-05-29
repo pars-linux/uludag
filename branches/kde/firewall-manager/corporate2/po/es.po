@@ -1,7 +1,7 @@
 # translation of es.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Christian Faure <christian.faurebouvard@laposte.net>, 2007.
 # klemens <click3d at linuxmail org>, 2007.
 msgid ""
@@ -11,7 +11,7 @@ msgstr ""
 "POT-Creation-Date: 2010-05-26 14:33+0300\n"
 "PO-Revision-Date: 2007-07-15 19:42-0400\n"
 "Last-Translator: \n"
-"Language-Team:  <es@li.org>\n"
+"Language-Team: <es@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,36 +36,23 @@ msgstr "Alt+S"
 # shouldn't it be as above: "allow all incoming AND OUTGOING connections." ??
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-"Presione aquí para detener el cortafuegos y permitir toda clase de "
-"conexiones entrantes."
+msgstr "Presione aquí para detener el cortafuegos y permitir toda clase de conexiones entrantes."
 
 #: src/firewall.py:196
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere "
-"permitir que otras computadoras puedan acceder a servicios locales aquí, "
-"marque el servicio abajo:"
+msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
+msgstr "Todas las conexiones entrantes <b>se rechazan</b> por defecto. Si quiere permitir que otras computadoras puedan acceder a servicios locales aquí, marque el servicio abajo:"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Conexiones entrantes"
 
 #: src/firewall.py:198
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-"En esta pestaña puede crear sus propias reglas de cortafuegos. Use el botón "
-"'+' para crear reglas, y desmarque reglas de la lista para removerlas."
+msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
+msgstr "En esta pestaña puede crear sus propias reglas de cortafuegos. Use el botón '+' para crear reglas, y desmarque reglas de la lista para removerlas."
 
 #: src/firewall.py:201
-#, fuzzy
 msgid "Outgoing Connections"
-msgstr "Conexiones entrantes"
+msgstr "Conexiones salientes"
 
 #: src/firewall.py:204
 msgid "Alt+H"
@@ -126,12 +113,8 @@ msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está activo</font></b>"
 
 #: src/firewall-config.py:262
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Presione aquí para detener el cortafuegos y permitir toda clase de "
-"conexiones entrantes y salientes."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
+msgstr "Presione aquí para detener el cortafuegos y permitir toda clase de conexiones entrantes y salientes."
 
 #: src/firewall-config.py:267
 msgid "&Start Firewall"
@@ -142,17 +125,12 @@ msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Cortafuegos está desactivado</font></b>"
 
 #: src/firewall-config.py:270
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Presione aquí para activar el cortafuegos y permitir conexiones solamente a "
-"servicios especificados."
+msgid "Click here to start the firewall and allow connections only to specified services."
+msgstr "Presione aquí para activar el cortafuegos y permitir conexiones solamente a servicios especificados."
 
 #: src/firewall-config.py:384
 msgid "Pardus Firewall Interface is already running!"
-msgstr ""
-"Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
+msgstr "Interfaz de Administración de Cortafuegos Pardus ya se está ejecutando !"
 
 #: src/dialog.py:64
 msgid "New Rule"
@@ -209,9 +187,7 @@ msgstr "Escritorio compartido"
 #~ msgstr "Aceptar todas las conexiones salientes por puertos %s"
 
 #~ msgid "You are not allowed to edit firewall settings."
-#~ msgstr ""
-#~ "No tiene permisos suficientes para modificar la configuración del "
-#~ "cortafuegos."
+#~ msgstr "No tiene permisos suficientes para modificar la configuración del cortafuegos."
 
 #~ msgid "Access Denied"
 #~ msgstr "Acceso Denegado"
