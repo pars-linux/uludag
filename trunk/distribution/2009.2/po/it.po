@@ -1,49 +1,54 @@
+# Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-29 21:11+0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2010-05-26 13:47+0300\n"
+"PO-Revision-Date: 2010-05-29 20:58+0200\n"
+"Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
+"Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.7.0\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
-msgid "Pardus 2009.2 release notes"
-msgstr ""
+msgid "Pardus 2009.2 Beta release notes"
+msgstr "Note di Rilascio di Pardus 2009.2 Beta"
 
 #: ../media-content/release-notes/releasenotes-en.html:2
-msgid "Pardus 2009.2 Release Notes"
-msgstr ""
+msgid "Pardus 2009.2 Beta Release Notes"
+msgstr "Note di Rilascio di Pardus 2009.2 Beta"
 
 #: ../media-content/release-notes/releasenotes-en.html:3
-msgid "1. Welcome to Pardus 2009.2 !"
-msgstr ""
+msgid "1. Welcome to Pardus 2009.2 Beta!"
+msgstr "1. Benvenuto su Pardus 2009.2 Beta!"
 
 #: ../media-content/release-notes/releasenotes-en.html:4
 msgid ""
-"Welcome to Pardus 2009.2, another great Pardus release from Pardus "
+"Welcome to Pardus 2009.2 Beta, another great Pardus release from Pardus "
 "developers, translators, artists and documentation writers."
 msgstr ""
+"Benvenuto su Pardus 2009.2 Beta, una fantastica release di Pardus creata "
+"dagli "
+"sviluppatori, traduttori, grafici e scrittori di documentazione di Pardus."
 
 #: ../media-content/release-notes/releasenotes-en.html:5
 msgid "We kindly invite you to visit"
-msgstr ""
+msgstr "Ti inviatiamo a visitare"
 
 #: ../media-content/release-notes/releasenotes-en.html:6
 msgid "http://www.pardus.org.tr/eng"
-msgstr ""
+msgstr "http://www.pardus.org.tr/eng"
 
 #: ../media-content/release-notes/releasenotes-en.html:7
 msgid "for more information."
-msgstr ""
+msgstr "per ulteriori informazioni."
 
 #: ../media-content/release-notes/releasenotes-en.html:8
 msgid "1.1. What is Pardus"
-msgstr ""
+msgstr "1.1. Cos'è Pardus?"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
 msgid ""
@@ -54,6 +59,13 @@ msgid ""
 "Latin (and scientific) name for the Anatolian leopard, Panthera pardus "
 "tulliana."
 msgstr ""
+"Pardus è una distriuzione Linux facente parte del Progetto Pardus,sviluppata "
+"dall'Istituto di Ricerca Elettronica e Criptologica Nazionale Turco(UEKAE), "
+"che "
+"fa parte del Concilio Turco della Ricerca Scientifica e Tecnologica(TÜBİTAK)."
+" "
+"Viene inoltre sviluppata da volontari. Il nome deriva dal  nome scientifico "
+"del leopardo antoliano, Panthera Pardus Tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
 msgid ""
@@ -61,10 +73,15 @@ msgid ""
 "and related data files necesary for desktop and server environments, aiming "
 "to give its users easy to use and feature rich experience."
 msgstr ""
+"Pardus è una distribuzione Linux, che include applicazioni Open Source "
+"ideali per "
+"ambiente desktop e server. Il fine di Pardus è quello di offrire ai suoi "
+"utenti un "
+"sistema semplice da usare e ricco di caratteristiche al tempo stesso."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
-msgstr ""
+msgstr "1.2. Come Usare Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
 msgid ""
@@ -75,18 +92,28 @@ msgid ""
 "related media in your computer, reboot the system and set up your computer "
 "BIOS to boot from the Pardus media."
 msgstr ""
+"Pardus è disponibile in due versioni. La Kurulan, che serve ad installare "
+"Pardus "
+"sul tuo computer, e la Çalışan, che è una versione live, in grado di avviare "
+"Pardus "
+"su dispositivo come CD, DVD, memorie USB ecc., che puoi usare senza bisogno "
+"di "
+"installazione, a patto di rinunciare ad un po' di velocità. "
+"Per avviare entrambe versioni devi inserire il dipositivo nel computer, "
+"riavviare e "
+"fare in modo che il BIOS avvii il dispositivo sul quale si trova Pardus."
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "1.3. Feedback"
-msgstr ""
+msgstr "1.3. Feedback"
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "You can use"
-msgstr ""
+msgstr "Puoi usare"
 
 #: ../media-content/release-notes/releasenotes-en.html:15
 msgid "http://bugs.pardus.org.tr"
-msgstr ""
+msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:16
 msgid ""
@@ -95,22 +122,28 @@ msgid ""
 "for their bug reports, fixes, new package or feature suggestions for this "
 "release."
 msgstr ""
+", il Bug tracking system di Pardus, per segnalare un bug, inviare dei bug "
+"fix o "
+"proporre dei cambiamenti relativi a Pardus. "
+"Intendiamo ringraziare i nostri utenti e i nostri sviluppatori per i loro "
+"report, "
+"bugfix e altri suggerimenti relativi a questa release."
 
 #: ../media-content/release-notes/releasenotes-en.html:17
 msgid "2. What is new ?"
-msgstr ""
+msgstr "2. Cosa c'è di nuovo?"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
 msgid "2.1. Updates in Pardus Technologies"
-msgstr ""
+msgstr "2.1 Miglioramenti delle Tecnologie di Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid ""
-"With the release of Pardus 2009.2, core technologies like PiSi and COMAR are "
-"updated to provide new features. YALI is also updated to offer a smoother "
-"and more reliable installation experience. The enhancements in Mudur "
-"initialization system provide a faster and more robust startup process along "
-"with a better remote file system support."
+"With the release of Pardus 2009.2 Beta, core technologies like PiSi and "
+"COMAR are updated to provide new features. YALI is also updated to offer a "
+"smoother and more reliable installation experience. The enhancements in "
+"Mudur initialization system provide a faster and more robust startup process "
+"along with a better remote file system support."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:20
@@ -181,7 +214,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid ""
-"Pardus 2009.2 comes with a lot of graphical enhancements. With this new "
+"Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new "
 "release, Pardus users will meet the Milky icon theme of Pardus, consisting "
 "of about 1000 icons. We also have a wide variety of graphical enhancements, "
 "from wallpapers of nature photographs to 3D rendered images, splash images "
@@ -203,7 +236,7 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid ""
 "that has been the choice of many Pardus users for a while now, is now the "
-"default desktop environment. Pardus 2009.2 includes the latest stable "
+"default desktop environment. Pardus 2009.2 Beta includes the latest stable "
 "release of KDE that has been enhanced and modified for Pardus. All the KDE "
 "programs in Pardus repositories have been updated to or replaced by their "
 "latest KDE 4 versions."
@@ -225,8 +258,8 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid ""
-"Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. "
-"Some of the highlights are as follows:"
+"Pardus 2009.2 Beta includes a lot of package updates besides Pardus "
+"Technologies. Some of the highlights are as follows:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:40
@@ -289,8 +322,8 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:53
 msgid ""
-"For more information about updates and new features on Pardus 2009.2 , you "
-"can take a look at the"
+"For more information about updates and new features on Pardus 2009.2 Beta, "
+"you can take a look at the"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:54
@@ -307,10 +340,10 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid ""
-"You can run Pardus 2009.2 on an average hardware. We suggest to use at least "
-"512 MB RAM (memory) and a 1400 MHz processor to get a good performance. "
-"Minimum and recommended hardware requirements for Pardus 2009.2 are "
-"mentioned below:"
+"You can run Pardus 2009.2 Beta on an average hardware. We suggest to use at "
+"least 512 MB RAM (memory) and a 1400 MHz processor to get a good "
+"performance. Minimum and recommended hardware requirements for Pardus 2009.2 "
+"are mentioned below:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:58
@@ -324,3 +357,4 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:60
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr ""
+
