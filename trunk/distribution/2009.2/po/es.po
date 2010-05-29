@@ -154,19 +154,19 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "that has been the choice of many Pardus users for a while now, is now the default desktop environment. Pardus 2009.2 Beta includes the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions."
-msgstr ""
+msgstr "era hace tiempo la preferencia de muchos usuarios de Pardus y ahora es el entorno de escritorio predeterminado. Pardus 2009.2 Beta incluye la última versión estable de KDE, con mejoras y adaptaciones para Pardus. Todos los programas de KDE fueron actualizados o reemplazados por sus versiones más recientes compatibles con el KDE 4."
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
-msgstr ""
+msgstr "Con la nueva versión de KDE Pardus brinda una nueva experiencia para los usuarios. El escritorio con su sistema basado en plasmoides, que permite colocar cada componente en cualquier parte del escritorio, la búsuqeda de escritorio Strigi integrada completamente con el entorno de escritorio, efectos de escritorio como parte de KDE, el administrador de archivos Dolphin de la última generación con soporte para muchos protocolos de red son solamente algunos ejemplos de las nuevas características para nuestros usuarios."
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid "2.4. Updated Components"
-msgstr ""
+msgstr "2.4. Componentes Actualizados"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Pardus 2009.2 Beta includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:"
-msgstr ""
+msgstr "Pardus 2009.2 Beta incluye una serie de actualizaciones de paquetes, aparte de ajustes en las tecnologías de Pardus. Algunas novedades destacados son:"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid "KDE 4.4.3"
@@ -210,7 +210,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "2.5. New Filesystems"
-msgstr ""
+msgstr "2.5. Nuevos Sistemas de Archivos"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
 msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
