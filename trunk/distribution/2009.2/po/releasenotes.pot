@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-26 13:47+0300\n"
+"POT-Creation-Date: 2010-05-29 21:11+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -12,20 +12,20 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
-msgid "Pardus 2009.2 Beta release notes"
+msgid "Pardus 2009.2 release notes"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:2
-msgid "Pardus 2009.2 Beta Release Notes"
+msgid "Pardus 2009.2 Release Notes"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:3
-msgid "1. Welcome to Pardus 2009.2 Beta!"
+msgid "1. Welcome to Pardus 2009.2 !"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:4
 msgid ""
-"Welcome to Pardus 2009.2 Beta, another great Pardus release from Pardus "
+"Welcome to Pardus 2009.2, another great Pardus release from Pardus "
 "developers, translators, artists and documentation writers."
 msgstr ""
 
@@ -106,11 +106,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid ""
-"With the release of Pardus 2009.2 Beta, core technologies like PiSi and "
-"COMAR are updated to provide new features. YALI is also updated to offer a "
-"smoother and more reliable installation experience. The enhancements in "
-"Mudur initialization system provide a faster and more robust startup process "
-"along with a better remote file system support."
+"With the release of Pardus 2009.2, core technologies like PiSi and COMAR are "
+"updated to provide new features. YALI is also updated to offer a smoother "
+"and more reliable installation experience. The enhancements in Mudur "
+"initialization system provide a faster and more robust startup process along "
+"with a better remote file system support."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:20
@@ -181,7 +181,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid ""
-"Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new "
+"Pardus 2009.2 comes with a lot of graphical enhancements. With this new "
 "release, Pardus users will meet the Milky icon theme of Pardus, consisting "
 "of about 1000 icons. We also have a wide variety of graphical enhancements, "
 "from wallpapers of nature photographs to 3D rendered images, splash images "
@@ -203,7 +203,7 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid ""
 "that has been the choice of many Pardus users for a while now, is now the "
-"default desktop environment. Pardus 2009.2 Beta includes the latest stable "
+"default desktop environment. Pardus 2009.2 includes the latest stable "
 "release of KDE that has been enhanced and modified for Pardus. All the KDE "
 "programs in Pardus repositories have been updated to or replaced by their "
 "latest KDE 4 versions."
@@ -225,8 +225,8 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid ""
-"Pardus 2009.2 Beta includes a lot of package updates besides Pardus "
-"Technologies. Some of the highlights are as follows:"
+"Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. "
+"Some of the highlights are as follows:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:40
@@ -289,8 +289,8 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:53
 msgid ""
-"For more information about updates and new features on Pardus 2009.2 Beta, "
-"you can take a look at the"
+"For more information about updates and new features on Pardus 2009.2 , you "
+"can take a look at the"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:54
@@ -307,10 +307,10 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid ""
-"You can run Pardus 2009.2 Beta on an average hardware. We suggest to use at "
-"least 512 MB RAM (memory) and a 1400 MHz processor to get a good "
-"performance. Minimum and recommended hardware requirements for Pardus 2009.2 "
-"are mentioned below:"
+"You can run Pardus 2009.2 on an average hardware. We suggest to use at least "
+"512 MB RAM (memory) and a 1400 MHz processor to get a good performance. "
+"Minimum and recommended hardware requirements for Pardus 2009.2 are "
+"mentioned below:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:58
