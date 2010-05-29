@@ -252,7 +252,7 @@ msgstr "Temas"
 
 #: .tmp/ScrStyle.py:35
 msgid "Customize Your Desktop"
-msgstr "Personalice sy Escritorio"
+msgstr "Personalice su Escritorio"
 
 #: .tmp/ScrSummary.py:34 .tmp/ui_summaryWidget.py:79
 msgid "Summary"
