@@ -74,7 +74,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:16
 msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release."
-msgstr ""
+msgstr ", (sistema de seguimiento de bugs de Pardus) para reportar un error, enviar una corrección o enviar cualquier sugerencia relacionado a Pardus. Agradecemos a nuestros usuarios y desarrolladores por sus reportes de errores, correcciones y sugerencias para la presente versión."
 
 #: ../media-content/release-notes/releasenotes-en.html:17
 msgid "2. What is new ?"
@@ -86,31 +86,31 @@ msgstr "2.1. Actualizaciones en tecnologías Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid "With the release of Pardus 2009.2 Beta, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-msgstr ""
+msgstr "Con el lanzamiento de Pardus 2009.2 Beta, tecnologías clave como PiSi y COMAR se actualizaron para brindar nuevas características. YALI se actualizó para brindar una experiencia de instalación más suave y confiable. Las mejoras en el sistema de inicialización Mudur brindan un proceso de arranque más veloz y confiable, junto con un mejor soporte para sistemas de archivos remotos."
 
 #: ../media-content/release-notes/releasenotes-en.html:20
 msgid "All of the Pardus managers have been refactored and optimized for KDE4. New Pardus tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are now available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
-msgstr ""
+msgstr "Todas las herramientas administrativas de Pardus fueron rediseñados y optimizados para KDE4. Nuevas herramientas de sistema están disponibles en los repositorios de Pardus: Plasmoid de Red para un sencillo cambio de perfiles de red, Plasmoid de Servicios para una sencilla administración de servicios. Estos plasmoids se puede colocar en el escritorio o en cualquier barra de sistema para su fácil acceso."
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "A new manager"
-msgstr ""
+msgstr "Una nueva herramienta de administración"
 
 #: ../media-content/release-notes/releasenotes-en.html:22
 msgid "System Manager"
-msgstr ""
+msgstr "Administrador de Sistema"
 
 #: ../media-content/release-notes/releasenotes-en.html:23
 msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-msgstr ""
+msgstr "fue añadido para facilitar la configuración de parámetros globales del sistema, como locale predeterminada, distribución de teclado, zona horaria, etc."
 
 #: ../media-content/release-notes/releasenotes-en.html:24
 msgid "Package Manager"
-msgstr ""
+msgstr "Administrador de Paquetes"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "and"
-msgstr ""
+msgstr "y"
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "PiSi"
@@ -118,11 +118,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:27
 msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-msgstr ""
+msgstr "son más veloces que antes, gracias al nuevo mecanismo de cache. Muchos cambios se aplicaron al sistema de paquetes PiSi, resultando en una reducción de los paquetes PiSi por ca. 20%, además predeterminado será desde ahora en adelante el soporte de paquetes delta. La instalación y actualización de paquetes será así mucho más rápido y requiere menos ancho de banda. También el arbol de componentes (categorías de programas) fue rediseñado para mejorar la busqueda de los paquetes deseados."
 
 #: ../media-content/release-notes/releasenotes-en.html:28
 msgid "Installation system"
-msgstr ""
+msgstr "Sistema de Instalación"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "Yalı"
@@ -130,23 +130,23 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:30
 msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-msgstr ""
+msgstr "fue rediseñado y aprovecha las nuevas funcionalidades de PiSi, duplicando la velocidad de instalación del sistema Pardus. Pardus ahora instala todo en ca. 15 minutos en una computadora promedia de hoy. Una nueva modalidad de recuperación fue agregado a YALI, permitiendo retroceder actualizaciones de paquetes, restaurar el arranque etc."
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid "2.2. Graphical Enhancements"
-msgstr ""
+msgstr "2.2. Mejoras Visuales"
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid "Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
-msgstr ""
+msgstr "Pardus 2009.2 Beta viene con muchas mejoras visuales. En esta nueva versión de Pardus se encuentra el nuevo tema de iconos Milky, que consiste de acerca de 1000 íconos. Además hay una amplia gama de mejoras gráficos, desde fondos de pantalla con fotografías de naturaleza a imágenes rederizados 3D, imagenes splash etc."
 
 #: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.3. KDE 4 Desktop Enviroment"
-msgstr ""
+msgstr "2.3. Entorno de Escritorio KDE 4"
 
 #: ../media-content/release-notes/releasenotes-en.html:34
 msgid "New member of the KDE family"
-msgstr ""
+msgstr "Nuevo miembro de la familia KDE"
 
 #: ../media-content/release-notes/releasenotes-en.html:35
 msgid "KDE4"
