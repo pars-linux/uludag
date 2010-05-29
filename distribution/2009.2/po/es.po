@@ -214,19 +214,19 @@ msgstr "2.5. Nuevos Sistemas de Archivos"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
 msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
-msgstr ""
+msgstr "Pardus viene como sistema de archivos predeteminado con el sistema de archivos Ext4, el sucesor del Ext3. Ext4 es mucho más rápido que Ext3 y tiene muchas nuevas características relacionado con capacidad y extension. Por ejemplo Ext4 soporta tamaños de particiones hasta 1 exabyte y tamaños de archivos hasta 16 terrabyte."
 
 #: ../media-content/release-notes/releasenotes-en.html:52
 msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
-msgstr ""
+msgstr "XFS, ReiserFS y el sistema experimental Btrfs también están disponibles en nuestro sistema de instalación, Yalı."
 
 #: ../media-content/release-notes/releasenotes-en.html:53
 msgid "For more information about updates and new features on Pardus 2009.2 Beta, you can take a look at the"
-msgstr ""
+msgstr "Por más informaciones acerca de actualizaciones y nuevas características de Pardus 2009.2 Beta, le recomendamos entrar a visitar "
 
 #: ../media-content/release-notes/releasenotes-en.html:54
 msgid "Pardus website"
-msgstr ""
+msgstr "Sitio web de Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "."
