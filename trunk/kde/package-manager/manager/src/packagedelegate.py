@@ -51,14 +51,14 @@ class PackageDelegate(QtGui.QItemDelegate):
         self.font = Pds.settings('font','Sans').split(',')[0]
 
         self.normalFont = QtGui.QFont(self.font, 10, QtGui.QFont.Normal)
-        self.boldFont = QtGui.QFont(self.font, 10, QtGui.QFont.Bold)
-        self.boldTitleFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
+        self.boldFont = QtGui.QFont(self.font, 11, QtGui.QFont.Bold)
         self.normalDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Normal)
         self.boldDetailFont = QtGui.QFont(self.font, 9, QtGui.QFont.Bold)
         self.tagFont = QtGui.QFont(self.font, 7, QtGui.QFont.Normal)
 
         self.tagFontFM = QtGui.QFontMetrics(self.tagFont)
         self.boldFontFM = QtGui.QFontMetrics(self.boldFont)
+        self.boldDetailFontFM = QtGui.QFontMetrics(self.boldDetailFont)
         self.normalFontFM = QtGui.QFontMetrics(self.normalFont)
         self.normalDetailFontFM = QtGui.QFontMetrics(self.normalDetailFont)
 
@@ -71,7 +71,7 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         self._titleFM = {}
         for key, value in self._titles.items():
-            self._titleFM[key] = self.boldFontFM.width(value) + ICON_SIZE
+            self._titleFM[key] = self.boldDetailFontFM.width(value) + ICON_SIZE + 3
 
         self.baseWidth = self.boldFontFM.width(max(self._titles.values(), key=len)) + ICON_SIZE
         self.parent = parent.packageList
@@ -132,7 +132,7 @@ class PackageDelegate(QtGui.QItemDelegate):
         p.setPen(foregroundColor)
 
         # Package Name
-        p.setFont(self.boldTitleFont)
+        p.setFont(self.boldFont)
         p.drawText(left + textInner, top, width - textInner, itemHeight / 2, Qt.AlignBottom | Qt.AlignLeft, title)
 
         tagWidth = 0
@@ -163,9 +163,11 @@ class PackageDelegate(QtGui.QItemDelegate):
 
         # Package Summary
         p.setFont(self.normalFont)
-        p.setPen(QtGui.QColor(0,0,0,160))
+        foregroundColor.setAlpha(160)
+        p.setPen(foregroundColor)
         elided_summary = self.normalFontFM.elidedText(summary, Qt.ElideRight, width - textInner - tagWidth - 22)
         p.drawText(left + textInner, top + itemHeight / 2, width - textInner, itemHeight / 2, Qt.TextDontClip, elided_summary)
+        foregroundColor.setAlpha(255)
         p.setPen(foregroundColor)
 
         if self.rowAnimator.currentRow() == index.row():
@@ -194,7 +196,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             rect = self.normalDetailFontFM.boundingRect(option.rect, Qt.TextSingleLine, homepage)
             self.rowAnimator.hoverLinkFilter.link_rect = QRect(left + self._titleFM['website'] + 2, position + 2, rect.width(), rect.height())
 
-            p.setPen(BLUE)
+            p.setPen(option.palette.color(QtGui.QPalette.Link))
             p.drawText(left + self._titleFM['website'], position, width, rect.height(), Qt.TextSingleLine, homepage)
             p.setPen(foregroundColor)
 
@@ -238,7 +240,7 @@ class PackageDelegate(QtGui.QItemDelegate):
             p.setFont(self.normalDetailFont)
             p.drawText(left + self._titleFM['size'], position, width, itemHeight / 2, Qt.TextWordWrap, size)
             position += rect.height()
-            self.rowAnimator.max_height = position - top + 4
+            self.rowAnimator.max_height = position - top + 8
 
         p.end()
         painter.drawPixmap(option.rect.topLeft(), pixmap)
