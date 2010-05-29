@@ -293,7 +293,7 @@ msgstr ""
 
 #: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
 msgid "Category Panel"
-msgstr ""
+msgstr "Panel de categorías"
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
 msgid "Search Bar"
@@ -714,9 +714,8 @@ msgid "Help"
 msgstr "Ayuda"
 
 #: .tmp/pm-install.py:47
-#, fuzzy
 msgid "%prog packages_to_install"
-msgstr "Paquetes a instalar"
+msgstr "%prog paquetes_a_instalar"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
