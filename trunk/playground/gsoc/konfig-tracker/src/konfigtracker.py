@@ -21,6 +21,7 @@ if __name__ == "__main__":
     
     MainWindow = KonfigTracker(app)
     MainWindow.show()
+    MainWindow.Monitor()
     
     app.connect(app, SIGNAL('lastWindowClosed()'), app.quit)
     
