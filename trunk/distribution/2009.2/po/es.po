@@ -250,4 +250,4 @@ msgstr "Procesador 450 MHz Intel o AMD (recomendado 1000 MHz)"
 
 #: ../media-content/release-notes/releasenotes-en.html:60
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
-msgstr ""
+msgstr "Espacio de 4 GB disponible en disco (recomendado 10 GB)"
