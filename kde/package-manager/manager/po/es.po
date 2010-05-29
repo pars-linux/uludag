@@ -1,7 +1,7 @@
 # translation of es.po to spanish
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2009, 2010.
 msgid ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_appitem.py:57
 msgid "Application"
@@ -63,16 +63,11 @@ msgstr "Estado:"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
@@ -110,8 +105,7 @@ msgstr "Habilitar ícono en la barra del sistema"
 
 #: .tmp/ui_settingsdialog.py:376
 msgid "Hide system tray if there is no update."
-msgstr ""
-"Ocultar ícono en barra del sistema, si no hay actualizaciones pendientes"
+msgstr "Ocultar ícono en barra del sistema, si no hay actualizaciones pendientes"
 
 #: .tmp/ui_settingsdialog.py:377
 msgid "Enable &periodic update check"
@@ -171,13 +165,8 @@ msgid "Select..."
 msgstr "Seleccionar.."
 
 #: .tmp/ui_settingsdialog.py:391
-msgid ""
-"Clearing the disk cache will remove all downloaded software. This will not "
-"delete installed software or affect your system stability."
-msgstr ""
-"Al vaciar el cache en disco se eliminarán todos los paquetes descargadas. "
-"Esto no eliminará los programas instalados y no afectará la estabilidad del "
-"sistema."
+msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
+msgstr "Al vaciar el cache en disco se eliminarán todos los paquetes descargadas. Esto no eliminará los programas instalados y no afectará la estabilidad del sistema."
 
 #: .tmp/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
@@ -241,13 +230,12 @@ msgid "No proxy server"
 msgstr "Sin servidor proxy"
 
 #: .tmp/ui_settingsdialog.py:409
-#, fuzzy
 msgid "Use manual settings"
-msgstr "Configuración &General"
+msgstr "Configuración manual"
 
 #: .tmp/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
-msgstr ""
+msgstr "Usar configuración del entorno del escritorio"
 
 #: .tmp/ui_settingsdialog.py:411
 msgid "&Proxy"
@@ -263,11 +251,11 @@ msgstr "&OK"
 
 #: .tmp/packagedelegate.py:48
 msgid "critical"
-msgstr ""
+msgstr "crítico"
 
 #: .tmp/packagedelegate.py:49
 msgid "security"
-msgstr ""
+msgstr "seguridad"
 
 #: .tmp/packagedelegate.py:65
 msgid "Description:"
@@ -308,9 +296,8 @@ msgid "Category Panel"
 msgstr ""
 
 #: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
-#, fuzzy
 msgid "Search Bar"
-msgstr "Buscar"
+msgstr "Barra de búsqueda"
 
 # i translated as "Write here to search", i think this is the idea
 #: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
@@ -318,9 +305,8 @@ msgid "Click to search"
 msgstr "Escriba aquí para buscar"
 
 #: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
-#, fuzzy
 msgid "Search Button"
-msgstr "Buscar"
+msgstr "Botón de búsqueda"
 
 #: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
 msgid "Search"
@@ -337,7 +323,7 @@ msgstr "Instalar Paquete(s)"
 
 #: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
-msgstr ""
+msgstr "Invertir selección de paquetes en la lista"
 
 #: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
@@ -345,14 +331,12 @@ msgstr "Seleccionar todos los paquetes de éste grupo"
 
 # i shortened this, it does not fit otherwise
 #: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
-#, fuzzy
 msgid "Package List"
 msgstr "Lista de paquetes"
 
 #: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
-#, fuzzy
 msgid "Update Types"
-msgstr "Actualizaciones"
+msgstr "Tipos de actualizaciones"
 
 #: .tmp/operationmanager.py:130 .tmp/commontext.py:15
 msgid "downloading"
@@ -367,20 +351,12 @@ msgid "Update Requirements"
 msgstr "Requisitos para la actualización"
 
 #: .tmp/basketdialog.py:125
-msgid ""
-"You must <b>restart</b> your system in order the updated versions of the "
-"following package(s) to take effect:"
-msgstr ""
-"Debe <b>reiniciar</b> el sistema para que las actualizaciones de los "
-"siguientes paquetes tengan efecto:"
+msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgstr "Debe <b>reiniciar</b> el sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
 
 #: .tmp/basketdialog.py:132
-msgid ""
-"You must restart following system services in order the updated versions of "
-"the selected package(s) to take effect:"
-msgstr ""
-"Debe reiniciar los siguientes servicios del sistema para que las "
-"actualizaciones de los siguientes paquetes tengan efecto:"
+msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
+msgstr "Debe reiniciar los siguientes servicios del sistema para que las actualizaciones de los siguientes paquetes tengan efecto:"
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
 #: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:223 .tmp/mainwidget.py:226
@@ -458,21 +434,15 @@ msgstr "Paquetes a actualizar:"
 
 # favor revisar, creo que breve es mejor, hay que ver las pantallas..
 #: .tmp/statemanager.py:107 .tmp/ui_basketdialog.py:101
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
+msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Dependencias adicionales a instalar:"
 
 #: .tmp/statemanager.py:108
-msgid ""
-"Reverse dependencies of the selected package(s) that are also going to be "
-"removed:"
+msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Dependencias reversas, que también se removerán:"
 
 #: .tmp/statemanager.py:109
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"upgraded:"
+msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Dependencias, que se actualizarán también:"
 
 #: .tmp/statemanager.py:132 .tmp/mainwindow_kde4.py:78
@@ -481,36 +451,27 @@ msgid "Currently your basket is empty."
 msgstr "Actualmente el carrito está vacío."
 
 #: .tmp/statemanager.py:134
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
-"Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</"
-"b>"
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Actualmente <b>%1</b> paquetes seleccionados, con un tamaño total de <b>%2</b>"
 
 # favor revisar si necesario colocar "total" de nuevo ?? porque esto aquí es
 # adicional ..
 # please check if necessary use "total" again ?? because THIS is additional..
 #: .tmp/statemanager.py:137
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias reversas, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:139
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
-"y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
+msgstr "y además <b>%1</b> dependencias adicionales, con un tamaño total de <b>%2</b>"
 
 #: .tmp/statemanager.py:140
 msgid "in your basket."
 msgstr "En su carrito."
 
 #: .tmp/statemanager.py:163
-msgid ""
-"Selected packages [%1] are in conflict with each other. These packages can "
-"not be installed together."
-msgstr ""
-"Algunos paquetes seleccionados [%1] están creando conflictos. No se puede "
-"tener instalado estos paquetes juntos."
+msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
+msgstr "Algunos paquetes seleccionados [%1] están creando conflictos. No se puede tener instalado estos paquetes juntos."
 
 #: .tmp/statemanager.py:164 .tmp/statemanager.py:172
 msgid "Conflict Error"
@@ -591,12 +552,8 @@ msgid "Not a valid repository name"
 msgstr "Nombre de Repositorio no válido"
 
 #: .tmp/settingsdialog.py:226
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-"<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2."
-"<p>Por favor intente de nuevo.</qt>"
+msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
+msgstr "<qt>Dirección del repositorio debe tener una terminación xml o xml.bz2.<p>Por favor intente de nuevo.</qt>"
 
 #: .tmp/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
@@ -647,13 +604,8 @@ msgid "You are not authorized for this operation."
 msgstr "No tiene los permisos para esta operación."
 
 #: .tmp/mainwidget.py:224
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
-"Paquete no encontrado. Puede ser que el paquete fue actualizado o removido "
-"del repositorio. Por favor intente actualizar sus informaciones del "
-"contenido de los repositorios."
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Paquete no encontrado. Puede ser que el paquete fue actualizado o removido del repositorio. Por favor intente actualizar sus informaciones del contenido de los repositorios."
 
 # favor revisar, paquetes o programas
 # maybe here we shoud speak about programs or applications ? the fact that it
@@ -742,12 +694,8 @@ msgstr "Resumen de la operación"
 
 # favor revisar - application menu, mejor traduccion ?
 #: .tmp/ui_summarydialog.py:50
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-"Puede ejecutar los programas recientemente instalados con un doble-clic en "
-"la lista abajo, o desde el menú del sistema."
+msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
+msgstr "Puede ejecutar los programas recientemente instalados con un doble-clic en la lista abajo, o desde el menú del sistema."
 
 #: .tmp/ui_summarydialog.py:51
 msgid "&Ok"
@@ -793,11 +741,9 @@ msgstr "Ayuda del Administrador de Paquetes"
 #~ msgid "Use proxy server"
 #~ msgstr "Usar servidor proxy"
 
-# favor revisar contexto..
 #~ msgid "Succesfully finished installing %1"
 #~ msgstr "Instalación de %1 terminado con éxito"
 
-# favor revisar contexto..
 #~ msgid "Succesfully finished installing packages"
 #~ msgstr "Instalación terminada con éxito"
 
@@ -823,27 +769,17 @@ msgstr "Ayuda del Administrador de Paquetes"
 #~ msgstr "Eliminar"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
-#~ "this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los "
-#~ "paquetes de éste grupo</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Seleccionar todos los paquetes de éste grupo</p></body></html>"
 
 #~ msgid "Maintainer"
 #~ msgstr "Mantenedor"
