@@ -147,7 +147,7 @@ msgstr "Desinstallation"
 # Zweifel
 #: .tmp/historymanager/listitem.py:12
 msgid "Emerge"
-msgstr ""
+msgstr "Entstehen"
 
 # prüfen in welchem Zusammenhang
 #: .tmp/historymanager/listitem.py:13
