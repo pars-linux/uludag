@@ -24,11 +24,11 @@ msgstr "Form"
 
 #: .tmp/ui_item.py:100
 msgid "serviceName"
-msgstr "Service Name"
+msgstr "serviceName"
 
 #: .tmp/ui_item.py:101
 msgid "serviceDesc"
-msgstr "Service Desc"
+msgstr "serviceDesc"
 
 #: .tmp/ui_item.py:102
 msgid "Start service"
@@ -77,7 +77,7 @@ msgstr "Suche Information des Dienstes... %p%"
 
 #: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
 msgid "Service Manager"
-msgstr "Dienste - Manager"
+msgstr "Dienste"
 
 #: .tmp/servicemanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
