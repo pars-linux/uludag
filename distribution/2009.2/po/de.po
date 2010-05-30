@@ -1,3 +1,4 @@
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -13,113 +14,84 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:1
 msgid "Pardus 2009.2 release notes"
-msgstr ""
+msgstr "Anmerkung: Die Aufteilung der Satzbausteine ist wirklich sehr seltsam. Ich werde Morgen weiterübersetzen und mal fragen, ob man die Blocksätze künfitg nicht besser zusammenfassen kann. So zuerpflückt macht es eigentlich keinen Sinn!  :-("
 
 #: ../media-content/release-notes/releasenotes-en.html:2
 msgid "Pardus 2009.2 Release Notes"
-msgstr ""
+msgstr "Pardus 2009.2 Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:3
 msgid "1. Welcome to Pardus 2009.2 !"
-msgstr ""
+msgstr "1. Willkommen zu Pardus 2009.2 !"
 
 #: ../media-content/release-notes/releasenotes-en.html:4
-msgid ""
-"Welcome to Pardus 2009.2, another great Pardus release from Pardus "
-"developers, translators, artists and documentation writers."
+msgid "Welcome to Pardus 2009.2, another great Pardus release from Pardus developers, translators, artists and documentation writers."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:5
 msgid "We kindly invite you to visit"
-msgstr ""
+msgstr "Wir laden Sie herzlich dazu ein "
 
 #: ../media-content/release-notes/releasenotes-en.html:6
 msgid "http://www.pardus.org.tr/eng"
-msgstr ""
+msgstr "http://www.pardus.org.tr/eng"
 
 #: ../media-content/release-notes/releasenotes-en.html:7
 msgid "for more information."
-msgstr ""
+msgstr "für weitere Informationen zu besuchen."
 
 #: ../media-content/release-notes/releasenotes-en.html:8
 msgid "1.1. What is Pardus"
-msgstr ""
+msgstr "1.1 Was ist Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
-msgid ""
-"Pardus is a Linux distribution developed as a product of the Pardus Project, "
-"by Turkish National Research Institute of Electronics and Cryptology "
-"(UEKAE), which is under the Scientific and Technological Research Council of "
-"Turkey (TÜBİTAK) and by volunteered contributors. It is named after the "
-"Latin (and scientific) name for the Anatolian leopard, Panthera pardus "
-"tulliana."
+msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by Turkish National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid ""
-"Pardus consists of a Linux based operating system, opensource applications "
-"and related data files necesary for desktop and server environments, aiming "
-"to give its users easy to use and feature rich experience."
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to give its users easy to use and feature rich experience."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
-msgstr ""
+msgstr "1.2 Wie kann ich Pardus benutzen"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
-msgid ""
-"Pardus comes with two flavours, Kurulan (which installs Pardus to your "
-"computer) or Çalışan (live media, which runs on the media only, slower but "
-"does not install on your computer) and can be started from a CD / DVD / USB "
-"stick etc. media. To start your Pardus experience, you need to insert the "
-"related media in your computer, reboot the system and set up your computer "
-"BIOS to boot from the Pardus media."
+msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, which runs on the media only, slower but does not install on your computer) and can be started from a CD / DVD / USB stick etc. media. To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:13
+#, fuzzy
 msgid "1.3. Feedback"
-msgstr ""
+msgstr "1.3. Feedback"
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "You can use"
-msgstr ""
+msgstr "Sie können"
 
 #: ../media-content/release-notes/releasenotes-en.html:15
+#, fuzzy
 msgid "http://bugs.pardus.org.tr"
-msgstr ""
+msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:16
-msgid ""
-", (Pardus bug tracking system) to report a bug, send a bug fix or suggest "
-"anything related to Pardus. We would like to thank our users and developers "
-"for their bug reports, fixes, new package or feature suggestions for this "
-"release."
-msgstr ""
+msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release."
+msgstr "nutzen, um"
 
 #: ../media-content/release-notes/releasenotes-en.html:17
 msgid "2. What is new ?"
-msgstr ""
+msgstr "2. Was ist neu ?"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
 msgid "2.1. Updates in Pardus Technologies"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:19
-msgid ""
-"With the release of Pardus 2009.2, core technologies like PiSi and COMAR are "
-"updated to provide new features. YALI is also updated to offer a smoother "
-"and more reliable installation experience. The enhancements in Mudur "
-"initialization system provide a faster and more robust startup process along "
-"with a better remote file system support."
+msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:20
-msgid ""
-"All of the Pardus managers have been refactored and optimized for KDE4. New "
-"Pardus tools, Network Plasmoid for easy network profile switching and "
-"Service Plasmoid for easy service management are now available in our "
-"repositories. These plasmoids can be placed either on the desktop, or any of "
-"the panels on the desktop for easier access."
+msgid "All of the Pardus managers have been refactored and optimized for KDE4. New Pardus tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are now available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:21
@@ -131,9 +103,7 @@ msgid "System Manager"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:23
-msgid ""
-"has been added to provide easy configuration of system wide settings, like "
-"the default locale, keymap, timezone etc."
+msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:24
@@ -149,13 +119,7 @@ msgid "PiSi"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:27
-msgid ""
-"are now a lot faster than before, thanks to the new caching mechanizm. Many "
-"changes have been made to the packaging system of PiSi, making PiSi packages "
-"about 20% smaller, and also delta package support will be on by default from "
-"now on. Package installing and updating will be a lot faster and will "
-"require much less bandwidth. Package component tree has also been "
-"refactored, letting users find their preferred packages even more easily."
+msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:28
@@ -167,12 +131,7 @@ msgid "Yalı"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:30
-msgid ""
-"has a boost with refactoring and new PiSi features, doubling the "
-"installation speed of Pardus. Pardus now installs everything in about 15 "
-"minutes on an average computer of today. A new feature rescue mode support "
-"is also added to Yalı, which can be used to take back previous package "
-"updates, restore bootloader etc."
+msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:31
@@ -180,12 +139,7 @@ msgid "2.2. Graphical Enhancements"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:32
-msgid ""
-"Pardus 2009.2 comes with a lot of graphical enhancements. With this new "
-"release, Pardus users will meet the Milky icon theme of Pardus, consisting "
-"of about 1000 icons. We also have a wide variety of graphical enhancements, "
-"from wallpapers of nature photographs to 3D rendered images, splash images "
-"etc."
+msgid "Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:33
@@ -201,22 +155,11 @@ msgid "KDE4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:36
-msgid ""
-"that has been the choice of many Pardus users for a while now, is now the "
-"default desktop environment. Pardus 2009.2 includes the latest stable "
-"release of KDE that has been enhanced and modified for Pardus. All the KDE "
-"programs in Pardus repositories have been updated to or replaced by their "
-"latest KDE 4 versions."
+msgid "that has been the choice of many Pardus users for a while now, is now the default desktop environment. Pardus 2009.2 includes the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-msgid ""
-"With the new version KDE, Pardus provides a new look and feel for users. "
-"Plasmoid based desktop system, where every component can be placed on "
-"anywhere on the desktop, Strigi desktop search fully integrated to desktop "
-"environment, desktop effects coming as a part of KDE, Dolphin the next "
-"generation file manager with many remote protocol support are just a few "
-"examples of the new desktop experience for our users."
+msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:38
@@ -224,9 +167,7 @@ msgid "2.4. Updated Components"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:39
-msgid ""
-"Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. "
-"Some of the highlights are as follows:"
+msgid "Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:40
@@ -274,23 +215,15 @@ msgid "2.5. New Filesystems"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:51
-msgid ""
-"Pardus now comes with Ext4 filesystem, successor of Ext3, as the default "
-"filesystem. Ext4 is a lot faster than Ext3 and has many new features in "
-"terms of capacity and extensions. For example, Ext4 supports partition sizes "
-"up to 1 exabyte and file sizes up to 16 terrabyte."
+msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:52
-msgid ""
-"XFS, ReiserFS and the experimental Btrfs are also available in our "
-"installation system, Yalı."
+msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:53
-msgid ""
-"For more information about updates and new features on Pardus 2009.2 , you "
-"can take a look at the"
+msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:54
@@ -306,11 +239,7 @@ msgid "3. Installation requirements"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:57
-msgid ""
-"You can run Pardus 2009.2 on an average hardware. We suggest to use at least "
-"512 MB RAM (memory) and a 1400 MHz processor to get a good performance. "
-"Minimum and recommended hardware requirements for Pardus 2009.2 are "
-"mentioned below:"
+msgid "You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:58
