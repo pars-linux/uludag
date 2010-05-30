@@ -228,31 +228,31 @@ msgstr "GLIBC 2.9"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "2.5. New Filesystems"
-msgstr ""
+msgstr "2.5. Neue Dateisysteme"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
 msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
-msgstr ""
+msgstr "Das Standard Dateisystem von Pardus 2009.2 ist Ext4, eine verbesserte Nachfolgeversion von Ext3. Ext4 ist deutlich schneller als Ext3 und bietet außerdem viele Verbesserungen was die maximale Dateigröße und Erweiterungen betrifft. Zum Beispiel kann Ext4 Partitionsgrößen bis zu 1 Exabyte und Dateien bis zu einer Größe von 16 Terabyte verwalten."
 
 #: ../media-content/release-notes/releasenotes-en.html:52
 msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
-msgstr ""
+msgstr "XFS, ReiserFS und das experimentelle Btrfs sind auch im Installationssystem verfügbar."
 
 #: ../media-content/release-notes/releasenotes-en.html:53
 msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
-msgstr ""
+msgstr "Wenn Sie weitere Informationen über Updates und neuen Funktionen von Pardus 2009.1 wünschen, können sie die"
 
 #: ../media-content/release-notes/releasenotes-en.html:54
 msgid "Pardus website"
-msgstr ""
+msgstr "Pardus Webseite"
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "."
-msgstr ""
+msgstr "besuchen. Im offiziellen Pardus Wiki findet man weitere Anlaufstellen und auch deutschsprachige private Foren."
 
 #: ../media-content/release-notes/releasenotes-en.html:56
 msgid "3. Installation requirements"
-msgstr ""
+msgstr "3. Installationsvoraussetzungen"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid "You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
