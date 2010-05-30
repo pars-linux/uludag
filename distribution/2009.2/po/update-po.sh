@@ -19,7 +19,7 @@ elif [ $1 = "po" ];then
     for lang in $LANGUAGES
     do
         html2po -u --keepcomments ../media-content/release-notes/releasenotes-en.html -P releasenotes.pot
-        msgmerge -q -o $TEMP $lang.po releasenotes.pot
+        msgmerge --no-wrap --sort-by-file -q -o $TEMP $lang.po releasenotes.pot
         cat $TEMP > $lang.po
     done
     rm -f $TEMP
