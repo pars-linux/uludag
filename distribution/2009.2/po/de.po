@@ -74,7 +74,7 @@ msgstr "1.3. Rückmeldung"
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "You can use"
-msgstr "Sie können"
+msgstr "Im Pardus Bugtracking-System"
 
 #: ../media-content/release-notes/releasenotes-en.html:15
 msgid "http://bugs.pardus.org.tr"
@@ -82,7 +82,9 @@ msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:16
 msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release."
-msgstr "nutzen, um"
+msgstr ""
+"können Sie Fehler melden, Lösungsvorschläge senden, oder auch neue Funktionen vorschlagen. Wir möchten an dieser Stelle den Pardus Anwendern und den Pardus Entwicklern für ihre Fehlermeldungen, Lösungen, neue Programmpakete und\r\n"
+"Funktionsvorschläge zu dieser Version danken."
 
 #: ../media-content/release-notes/releasenotes-en.html:17
 msgid "2. What is new ?"
