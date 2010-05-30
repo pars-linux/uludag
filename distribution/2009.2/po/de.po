@@ -49,7 +49,7 @@ msgstr "1.1 Was ist Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
 msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by Turkish National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
-msgstr ""
+msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des Türkischen Nationalen Forschungsinstituts für Elektronik und Kryptologie (UEKAE), welches mit Hilfe des wissenschaftlichen und technologischen Forschungskonzils der Türkei (TÜBİTAK) und von freiwilligen Mitarbeitern entwickelt worden ist. Der Name stammt von dem lateinischen Namen (wissenschaftliche Bezeichnung) des Anatolischen Leopards: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to give its users easy to use and feature rich experience."
