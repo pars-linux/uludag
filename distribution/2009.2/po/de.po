@@ -256,16 +256,16 @@ msgstr "3. Installationsvoraussetzungen"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid "You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
-msgstr ""
+msgstr "Pardus stellt relativ geringe Anforderungen an die Hardware. Sie können Pardus 2009.1 auf einem durchschnittlichen Computer installieren. Um ein flüssiges Arbeiten zu gewährleisten, empfehlen wir wenigstens einen Arbeitsspeicher mit 512MB RAM und einen Prozessor mit 1400MHz einzusetzen. Die minimalen und empfohlenen Systemvoraussetzungen sind:"
 
 #: ../media-content/release-notes/releasenotes-en.html:58
 msgid "256 MB memory (1GB or more recommended)"
-msgstr ""
+msgstr "256 MB Arbeitsspeicher (1GB oder mehr werden empfohlen)"
 
 #: ../media-content/release-notes/releasenotes-en.html:59
 msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
-msgstr ""
+msgstr "450 MHz Intel oder AMD Prozessor (1000 MHz oder mehr werden empfohlen)"
 
 #: ../media-content/release-notes/releasenotes-en.html:60
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
-msgstr ""
+msgstr "Wenigstens 4 GB freier Speicherplatz auf dem Installationsmedium (10 GB werden empfohlen)"
