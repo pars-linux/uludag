@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-26 13:47+0300\n"
-"PO-Revision-Date: 2010-05-29 20:58+0200\n"
+"PO-Revision-Date: 2010-05-30 15:22+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -145,6 +145,12 @@ msgid ""
 "Mudur initialization system provide a faster and more robust startup process "
 "along with a better remote file system support."
 msgstr ""
+"Con il rilascio di Pardus 2009.2 Beta, alcune tecnologie come PiSi e COMAR "
+"sono state aggiornate per offrire nuove caratteristiche. YALI è stato "
+"aggiornato "
+"per offrire un'installazione più semplice e lineare. I miglioramenti in "
+"Mudur "
+"offrono un avvio più veloce e un migliore supporto per i filesystem remoti."
 
 #: ../media-content/release-notes/releasenotes-en.html:20
 msgid ""
@@ -154,32 +160,39 @@ msgid ""
 "repositories. These plasmoids can be placed either on the desktop, or any of "
 "the panels on the desktop for easier access."
 msgstr ""
+"Tutti i programmi di gestione di Pardus sono stati migliorati e ottimizzati "
+"specificamente per KDE4. I nuovi strumenti di Pardus, il Plasmoide di Rete e "
+"il Plasmoide Servizi sono disponibili nei repository. Questi Plasmoidi "
+"possono "
+"essere posizionati ovunque sul desktop o sui pannelli."
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "A new manager"
-msgstr ""
+msgstr "Un nuovo Gestore"
 
 #: ../media-content/release-notes/releasenotes-en.html:22
 msgid "System Manager"
-msgstr ""
+msgstr "Il Gestore di Sistema"
 
 #: ../media-content/release-notes/releasenotes-en.html:23
 msgid ""
 "has been added to provide easy configuration of system wide settings, like "
 "the default locale, keymap, timezone etc."
 msgstr ""
+"è stato aggiunto per fornire una configurazione semplice e veloce del "
+"sistema in generale, come la lingua, la tastiera, il fuso orario."
 
 #: ../media-content/release-notes/releasenotes-en.html:24
 msgid "Package Manager"
-msgstr ""
+msgstr "Il Gestore Pacchetti"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "and"
-msgstr ""
+msgstr "e"
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "PiSi"
-msgstr ""
+msgstr "PiSi"
 
 #: ../media-content/release-notes/releasenotes-en.html:27
 msgid ""
@@ -190,14 +203,22 @@ msgid ""
 "require much less bandwidth. Package component tree has also been "
 "refactored, letting users find their preferred packages even more easily."
 msgstr ""
+"adesso sono molto più veloci, grazie ad un nuovo meccanismo di caching. Il "
+"sistema di pacchettizzazione PiSi ha subito molte modifiche, rendendo i già "
+"leggerissimi pacchetti circa il 20% più piccoli, e il supporto per pacchetti "
+"delta d'ora in poi sarà attivato per default. L'installazione e "
+"l'aggiornamento "
+"di pacchetti sarà molto più veloce e richiederà meno banda. Inoltre l'albero "
+"dei componenti dei pacchetti è stato rifatto, in modo da rendere la ricerca "
+"di un pacchetto ancora più semplice."
 
 #: ../media-content/release-notes/releasenotes-en.html:28
 msgid "Installation system"
-msgstr ""
+msgstr "Sistema di installazione"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "Yalı"
-msgstr ""
+msgstr "Yali"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
 msgid ""
@@ -207,10 +228,16 @@ msgid ""
 "is also added to Yalı, which can be used to take back previous package "
 "updates, restore bootloader etc."
 msgstr ""
+"adesso è più veloce grazie alle nuove caratteristiche di PiSi, "
+"dimezzando i tempi di installazione. Adesso Yali è in grado di installare "
+"Pardus "
+"in circa 15 minuti su un computer di fascia media. Inoltre sono state "
+"aggiunte "
+"alcune caratteristiche alla modalità di ripristino."
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid "2.2. Graphical Enhancements"
-msgstr ""
+msgstr "2.2. Miglioramenti Grafici"
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid ""
@@ -220,18 +247,23 @@ msgid ""
 "from wallpapers of nature photographs to 3D rendered images, splash images "
 "etc."
 msgstr ""
+"Pardus 2009.2 Beta contiene un gran numero di miglioramenti grafici, come il "
+"nuovo "
+"tema di icone Milky, che comprende circa 1000 icone. Sono inoltre stati "
+"aggiunti nuovi "
+"sfondi per il desktop, immagini 3D, splash e molto altro."
 
 #: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.3. KDE 4 Desktop Enviroment"
-msgstr ""
+msgstr "2.3. L'ambiente Desktop KDE4"
 
 #: ../media-content/release-notes/releasenotes-en.html:34
 msgid "New member of the KDE family"
-msgstr ""
+msgstr "Il nuovo membro della famiglia KDE"
 
 #: ../media-content/release-notes/releasenotes-en.html:35
 msgid "KDE4"
-msgstr ""
+msgstr "KDE4"
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid ""
@@ -241,6 +273,13 @@ msgid ""
 "programs in Pardus repositories have been updated to or replaced by their "
 "latest KDE 4 versions."
 msgstr ""
+"è stata la scelta di molti utenti di Pardus, ed adesso è l'ambiente desktop "
+"di "
+"default. Pardus 2009.2 Beta include l'ultima release stabile di KDE4, "
+"modificata "
+"e migliorata per integrarsi con Pardus. Tutti i programmi KDE nei repository "
+"sono "
+"stati aggiornati o sostituiti dalle loro versioni KDE4"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgid ""
@@ -254,7 +293,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid "2.4. Updated Components"
-msgstr ""
+msgstr "2.4. Componenti Aggiornati"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid ""
@@ -264,47 +303,47 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid "KDE 4.4.3"
-msgstr ""
+msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Linux Kernel 2.6.31.13"
-msgstr ""
+msgstr "Kernel Linux 2.6.31.13"
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "OpenOffice.org Office Suite 3.2.1.1"
-msgstr ""
+msgstr "Suite OpenOffice.org 3.2.1.1"
 
 #: ../media-content/release-notes/releasenotes-en.html:43
 msgid "Firefox Web Browser 3.6.3"
-msgstr ""
+msgstr "Browser Firefox 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
 msgid "Gimp 2.6.8"
-msgstr ""
+msgstr "Gimp 2.6.8"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgid "Xorg 1.6.5"
-msgstr ""
+msgstr "Xorg 1.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
 msgid "Python 2.6.5"
-msgstr ""
+msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:47
 msgid "Texlive 2008"
-msgstr ""
+msgstr "Texlive 2008"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
 msgid "GCC 4.3.3"
-msgstr ""
+msgstr "GCC 4.3.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
 msgid "GLIBC 2.9"
-msgstr ""
+msgstr "GLIBC 2.9"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "2.5. New Filesystems"
-msgstr ""
+msgstr "2.5 Nuovi Filesystem"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
 msgid ""
@@ -332,11 +371,11 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "."
-msgstr ""
+msgstr "."
 
 #: ../media-content/release-notes/releasenotes-en.html:56
 msgid "3. Installation requirements"
-msgstr ""
+msgstr "3. Requisiti di Installazione"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid ""
@@ -348,13 +387,14 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:58
 msgid "256 MB memory (1GB or more recommended)"
-msgstr ""
+msgstr "256 MB di RAM (almeno 1GB consigliata)"
 
 #: ../media-content/release-notes/releasenotes-en.html:59
 msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
-msgstr ""
+msgstr "Processore Intel o AMD 450 MHz (1GHz consigliata)"
 
 #: ../media-content/release-notes/releasenotes-en.html:60
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
-msgstr ""
+msgstr "Almeno 4 GB di spazio sul disco (10 GB consigliati)"
+
 
