@@ -22,7 +22,7 @@ msgstr ""
 #: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
 #: .tmp/ui_devices.py:66
 msgid "Display Settings"
-msgstr "Bildschirm Einstellungen"
+msgstr "Bildschirm"
 
 #: .tmp/ui_screens.py:84
 msgid "Outputs"
@@ -250,7 +250,7 @@ msgstr "Wähle..."
 
 #: .tmp/ui_output.py:233
 msgid "Horizontal sync:"
-msgstr "Horizontal synchronisieren"
+msgstr "Horizontal sync:"
 
 #: .tmp/ui_output.py:234
 msgid "kHz"
@@ -258,7 +258,7 @@ msgstr "kHz"
 
 #: .tmp/ui_output.py:235
 msgid "Vertical refresh:"
-msgstr "Vertikal auffrischen"
+msgstr "Vertikaler refresh:"
 
 #: .tmp/ui_output.py:236
 msgid "Hz"
@@ -278,7 +278,7 @@ msgstr "Geben Sie die Displaygröße an"
 
 #: .tmp/ui_output.py:240
 msgid "Display size:"
-msgstr "Displaygröße:"
+msgstr "Bildschirmgröße:"
 
 #: .tmp/ui_output.py:241
 msgid "15.4\" Wide Screen"
