@@ -253,7 +253,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.progressDialog.hide()
         if self.state.silence:
             QtGui.qApp.exit()
-        self.initialize()
+        self.groupFilter()
 
     def notifyFinished(self):
         if not self.operation.totalPackages:
