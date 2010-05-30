@@ -12,6 +12,7 @@ Not started yet:
 
  - Get security updates directly to the basket like system.base packages
    It should be done in Pisi APi
+ - Tray animation does not work while package update
 
 In progress:
 ------------
@@ -22,6 +23,7 @@ Completed:
 ----------
 
  - PMInstall refactoring
+ - SearchLine clear issues fixed
  - Fix Proxy Settings screen issues (Support for getting Proxy Settings from KDE)
  - Take care of pisi's needService/SystemReboot mechanism
  - For Kde 4 .pisi package we need to create following symlink:

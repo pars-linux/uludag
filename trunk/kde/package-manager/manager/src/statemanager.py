@@ -30,9 +30,7 @@ class StateManager(QObject):
         self.silence = False
         self._selected_packages = []
         self.iface = backend.pm.Iface()
-        self.cached_packages = None
-        self._typeFilter = 'normal'
-        self._typeCaches = {}
+        self.reset()
 
     def setState(self, state):
         self.state = state
