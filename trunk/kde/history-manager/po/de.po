@@ -37,7 +37,7 @@ msgstr "Operationen"
 #: .tmp/historymanager/about.py:21 .tmp/historymanager/about.py:23
 #: .tmp/ui_mainwindow.py:129
 msgid "History Manager"
-msgstr "Historie Manager"
+msgstr "Systemwiederherstellung"
 
 #: .tmp/historymanager/about.py:25
 msgid "(c) 2009 TUBITAK/UEKAE"
