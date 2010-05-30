@@ -1,9 +1,9 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-29 21:11+0300\n"
+"POT-Creation-Date: 2010-05-30 23:46+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -13,15 +13,20 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
-msgid "Pardus 2009.2 release notes"
-msgstr "Anmerkung: Die Aufteilung der Satzbausteine ist wirklich sehr seltsam. Ich werde Morgen weiterübersetzen und mal fragen, ob man die Blocksätze künfitg nicht besser zusammenfassen kann. So zuerpflückt macht es eigentlich keinen Sinn!  :-("
+#, fuzzy
+msgctxt "../media-content/release-notes/releasenotes-en.html:1"
+msgid "Release Notes"
+msgstr "Pardus 2009.2 Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:2
-msgid "Pardus 2009.2 Release Notes"
+#, fuzzy
+msgctxt "../media-content/release-notes/releasenotes-en.html:2"
+msgid "Release Notes"
 msgstr "Pardus 2009.2 Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:3
-msgid "1. Welcome to Pardus 2009.2 !"
+#, fuzzy
+msgid "1. Welcome to Pardus"
 msgstr "1. Willkommen zu Pardus 2009.2 !"
 
 #: ../media-content/release-notes/releasenotes-en.html:4
@@ -48,11 +53,13 @@ msgid "1.1. What is Pardus"
 msgstr "1.1 Was ist Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:9
-msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by Turkish National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
+#, fuzzy
+msgid "Pardus is a Linux distribution developed as a product of the Pardus Project, by National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana."
 msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des Türkischen Nationalen Forschungsinstituts für Elektronik und Kryptologie (UEKAE), welches mit Hilfe des wissenschaftlichen und technologischen Forschungskonzils der Türkei (TÜBİTAK) und von freiwilligen Mitarbeitern entwickelt worden ist. Der Name stammt von dem lateinischen Namen (wissenschaftliche Bezeichnung) des Anatolischen Leopards: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to give its users easy to use and feature rich experience."
+#, fuzzy
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr ""
 "Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource\r\n"
 "Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung, mit dem Ziel den Anwendern ein benutzerfreundliches und funktionsreiches System zur Verfügung zu stellen."
@@ -62,210 +69,274 @@ msgid "1.2. How Can I Use Pardus"
 msgstr "1.2 Wie benutze ich Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
-msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, which runs on the media only, slower but does not install on your computer) and can be started from a CD / DVD / USB stick etc. media. To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
+#, fuzzy
+msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference."
 msgstr ""
 "Pardus gibt es in 2 Vaianten: Kurulan zur Installation auf dem Computer oder Çalışan. Çalışan ist ein Live-System und wird direkt auf dem Wechselmedium ausgeführt. Es ist etwas langsamer,\r\n"
 "benötigt aber keine Installation und kann von CD / DVD / USB-Stick\r\n"
 "etc. gestartet werden. Um Pardus erleben zu können, brauchen Sie nur das entsprechende Medium in Ihren Computer einlegen, im BIOS sicherstellen, daß Ihr System von dem eingelegten Medium aus starten kann und den PC neu starten."
 
 #: ../media-content/release-notes/releasenotes-en.html:13
+msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:14
+msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:15
 msgid "1.3. Feedback"
 msgstr "1.3. Rückmeldung"
 
-#: ../media-content/release-notes/releasenotes-en.html:14
+#: ../media-content/release-notes/releasenotes-en.html:16
 msgid "You can use"
 msgstr "Im Pardus Bugtracking-System"
 
-#: ../media-content/release-notes/releasenotes-en.html:15
+#: ../media-content/release-notes/releasenotes-en.html:17
 msgid "http://bugs.pardus.org.tr"
 msgstr "http://bugs.pardus.org.tr"
 
-#: ../media-content/release-notes/releasenotes-en.html:16
-msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release."
+#: ../media-content/release-notes/releasenotes-en.html:18
+#, fuzzy
+msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is."
 msgstr ""
 "können Sie Fehler melden, Lösungsvorschläge senden, oder auch neue Funktionen vorschlagen. Wir möchten an dieser Stelle den Pardus Anwendern und den Pardus Entwicklern für ihre Fehlermeldungen, Lösungen, neue Programmpakete und\r\n"
 "Funktionsvorschläge zu dieser Version danken."
 
-#: ../media-content/release-notes/releasenotes-en.html:17
+#: ../media-content/release-notes/releasenotes-en.html:19
 msgid "2. What is new ?"
 msgstr "2. Was ist neu ?"
 
-#: ../media-content/release-notes/releasenotes-en.html:18
+#: ../media-content/release-notes/releasenotes-en.html:20
 msgid "2.1. Updates in Pardus Technologies"
 msgstr "2.1. Updates der Pardus Technologieen"
 
-#: ../media-content/release-notes/releasenotes-en.html:19
-msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-msgstr "Um neue Funktionen zur Verfügung zu stellen, wurden bei Pardus 2009.2 Kerntechnologien wie PiSi und COMAR aktualisiert. YALI wurde ebenso aktualisiert, um die Installation noch einfacher ablaufen zu lassen und dem Anwender schon während der Installation einen vertrauenserweckenden Eindruck zu geben. Die Verbesserungen im Mudur Initialisierungssystem sorgen für einen schnelleren und stabileren Startvorgang zusammen mit einer besseren Unterstuetzung für entfernte Systeme (remote)."
+#: ../media-content/release-notes/releasenotes-en.html:21
+msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
+msgstr ""
 
-#: ../media-content/release-notes/releasenotes-en.html:20
-msgid "All of the Pardus managers have been refactored and optimized for KDE4. New Pardus tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are now available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
+#: ../media-content/release-notes/releasenotes-en.html:22
+#, fuzzy
+msgid "Pardus manager family has been refactored and optimized for new KDE 4.4 / Qt 4.6 environments. Pardus KDE tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
 msgstr ""
 "Alle Pardus Systemtools wurden komplett überarbeitet und für KDE4\r\n"
 "optimiert. Auch wurde Pardus mit neuen \"Plasmoids\" angereichert. Mit dem Netzwerk Plasmoid kann man schnell die Netzwerkprofile wechseln, und mit dem Service Plasmoid hat man schnell Zugriff auf die Systemdienste. Diese Plasmoids können entweder auf\r\n"
 "dem Desktop oder in jedes beliebige Panel platziert werden."
 
-#: ../media-content/release-notes/releasenotes-en.html:21
-msgid "A new manager"
-msgstr "Ein neuer"
-
-#: ../media-content/release-notes/releasenotes-en.html:22
-msgid "System Manager"
-msgstr "System-Manager"
-
 #: ../media-content/release-notes/releasenotes-en.html:23
-msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-msgstr "wurde integriert, um eine einfache Gundkonfiguration des gesamten Systems zu ermöglichen."
+msgid "A new KDE tool"
+msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:24
+msgid "plasma-runner-pisi"
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:25
+msgid "has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:26
 msgid "Package Manager"
 msgstr "Paket-Manager"
 
-#: ../media-content/release-notes/releasenotes-en.html:25
+#: ../media-content/release-notes/releasenotes-en.html:27
 msgid "and"
 msgstr "und"
 
-#: ../media-content/release-notes/releasenotes-en.html:26
+#: ../media-content/release-notes/releasenotes-en.html:28
 msgid "PiSi"
 msgstr "PiSi"
 
-#: ../media-content/release-notes/releasenotes-en.html:27
-msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-msgstr "sind dank dem neuen Speichermechanismus deutlich schneller geworden. Am Paketsystem PiSi wurden viele Änderungen durchgeführt, so daß PiSi Pakete nun rund 20% kleiner sind und von nun an werden Delta-Pakete standardmäßig unterstützt. Die Installation und das Update von Paketen wird damit ein vielfaches schneller sein und zugleich wird weniger Bandbreite benötigt. Damit die Anwender ihre bevorzugten Pakete einfacher finden können, wurde der das Paketverzeichnis neu strukturiert."
-
-#: ../media-content/release-notes/releasenotes-en.html:28
-msgid "Installation system"
-msgstr "Das Installations-System"
-
 #: ../media-content/release-notes/releasenotes-en.html:29
-msgid "Yalı"
-msgstr "Yalı"
+msgid "have been optimized for better performance and improved stability. PiSi interface has been refactored for easier use. Package Manager went through heavy refactoring and is now using"
+msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:30
-msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-msgstr "hat durch die Überarbeitung und durch neue PiSi Funktionen eine Beschleunigung erfahren, was eine Halbierung der Installationsdauer zur Folge hat. Pardus installiert sich nun auf durchschnittlich schnellen Computern in ca. 15 Minuten. Um schon getätigte Paketupdates zurückzunehmen und den Bootloader wiederherstellen zu können, wurde ein neuer Rettungsmodus in Yali integriert."
+msgid "Pardus Desktop Services"
+msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:31
+msgid ", which allows the GUI to run on desktop environments other than KDE 4 without the necessity of any KDE library. Among performance enhancements on the GUI, Package Manager now supports update types. Type of the updates are shown next to packages and users can select group of updates (security for example) easily from the Package Manager GUI."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:32
+msgid "Pardus welcome wizard Kaptan has also been refactored for the new Pardus release. With new graphical changes, Kaptan is more user friendly then ever, especially on small displays like netbooks."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.2. Graphical Enhancements"
 msgstr "2.2. Graphische Verbesserungen"
 
-#: ../media-content/release-notes/releasenotes-en.html:32
-msgid "Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
+#: ../media-content/release-notes/releasenotes-en.html:34
+msgid "Like other Pardus releases, this new release comes with the theme and name of species that is in danger of extinction. With new packages added to repositories, GTK and KDE integration is improved from notifications to user dialogs. Milky icon theme of Pardus is also updated with new icons. Older wallpapers released withing Pardus 2009 family can also be installed from package repositories."
 msgstr ""
-"Pardus 2009.2 hat eine Vielzahl graphischer Verbesserungen erfahren. In der neuen Ausgabe von Pardus wird der Anwender mit dem neuen Milky Ikon-Dekor begrüßt, welches aus etwa 1000 Ikonen besteht. Außerdem haben wir eine Vielfalt von verbesserten\r\n"
-"Bildschirmhintergründen mit Natur-Fotos, 3D Render-Bildern, Splash\r\n"
-"Bildern etc. integriert."
 
-#: ../media-content/release-notes/releasenotes-en.html:33
+#: ../media-content/release-notes/releasenotes-en.html:35
 msgid "2.3. KDE 4 Desktop Enviroment"
 msgstr "2.3. KDE 4 Desktopumgebung"
 
-#: ../media-content/release-notes/releasenotes-en.html:34
-msgid "New member of the KDE family"
-msgstr " "
-
-#: ../media-content/release-notes/releasenotes-en.html:35
-msgid "KDE4"
-msgstr "KDE4"
-
 #: ../media-content/release-notes/releasenotes-en.html:36
-msgid "that has been the choice of many Pardus users for a while now, is now the default desktop environment. Pardus 2009.2 includes the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions."
+msgid "Default desktop environment is updated to"
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:37
+#, fuzzy
+msgctxt "../media-content/release-notes/releasenotes-en.html:37"
+msgid "KDE 4.4.3"
+msgstr "KDE 4.4.3"
+
+#: ../media-content/release-notes/releasenotes-en.html:38
+#, fuzzy
+msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
 msgstr ""
 "- das neue Mitglied der KDE Familie, welches\r\n"
 "schon von vielen Pardus Anwendern seit einiger Zeit eingesetzt wird, ist ab sofort die voreingestellte Arbeitsumgebung. Pardus 2009.2 nutzt die letzte stabile Version von KDE4. Diese Version wurde für den Einsatz in Pardus angepaßt und erweitert. Die im Pardus Depot verfügbaren KDE Programme wurden auf ihre aktuelle KDE4 Version aktualisiert."
 
-#: ../media-content/release-notes/releasenotes-en.html:37
+#: ../media-content/release-notes/releasenotes-en.html:39
+msgid "Netbook Mode"
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:40
+msgid ", optimized for small displays."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:41
+msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
 msgstr "Mit der neuen KDE-Version bringt Pardus ein neues Look-And-Feel auf den Desktop. Der auf Plasmoiden basierende Desktop, auf welchem die Pardus-Werkzeuge an jeder beliebigen Stalle platziert werden können, die vollständig integrierte Desktop-Suche \"Strigi\", die neuen KDE Desktop Effekte und auch Dolphin, der neue verbesserte Dateimanager, der mehr Netzwerkprotokolle unterstützt, sind nur einige Beispiele für das neue Benutzerererlebnis von Pardus."
 
-#: ../media-content/release-notes/releasenotes-en.html:38
+#: ../media-content/release-notes/releasenotes-en.html:43
 msgid "2.4. Updated Components"
 msgstr "2.4. Aktualisierte Komponenten"
 
-#: ../media-content/release-notes/releasenotes-en.html:39
-msgid "Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:"
+#: ../media-content/release-notes/releasenotes-en.html:44
+#, fuzzy
+msgid "New release includes many updated packages. Some of the highlights are as follows:"
 msgstr "Die Pakete von Pardus 2009.1 wurden zusammen mit den Pardus Technologien umfangreich aktualisiert. Hier einige der Highlights:"
 
-#: ../media-content/release-notes/releasenotes-en.html:40
+#: ../media-content/release-notes/releasenotes-en.html:45
+#, fuzzy
+msgctxt "../media-content/release-notes/releasenotes-en.html:45"
 msgid "KDE 4.4.3"
 msgstr "KDE 4.4.3"
 
-#: ../media-content/release-notes/releasenotes-en.html:41
-msgid "Linux Kernel 2.6.31.13"
-msgstr "Linux Kernel 2.6.31.13"
-
-#: ../media-content/release-notes/releasenotes-en.html:42
-msgid "OpenOffice.org Office Suite 3.2.1.1"
-msgstr "OpenOffice.org Office Suite 3.2.1.1"
-
-#: ../media-content/release-notes/releasenotes-en.html:43
-msgid "Firefox Web Browser 3.6.3"
-msgstr "Firefox Web Browser 3.6.3"
-
-#: ../media-content/release-notes/releasenotes-en.html:44
-msgid "Gimp 2.6.8"
-msgstr "Gimp 2.6.8"
-
-#: ../media-content/release-notes/releasenotes-en.html:45
-msgid "Xorg 1.6.5"
-msgstr "Xorg 1.6.5"
-
 #: ../media-content/release-notes/releasenotes-en.html:46
+msgid "Qt 4.6.2"
+msgstr ""
+
+#: ../media-content/release-notes/releasenotes-en.html:47
 msgid "Python 2.6.5"
 msgstr "Python 2.6.5"
 
-#: ../media-content/release-notes/releasenotes-en.html:47
-msgid "Texlive 2008"
-msgstr "Texlive 2008"
-
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "GCC 4.3.3"
-msgstr "GCC 4.3.3"
+msgid "OpenOffice.org Office Suite 3.2.1.1"
+msgstr "OpenOffice.org Office Suite 3.2.1.1"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
-msgid "GLIBC 2.9"
-msgstr "GLIBC 2.9"
+msgid "Firefox Web Browser 3.6.3"
+msgstr "Firefox Web Browser 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
-msgid "2.5. New Filesystems"
-msgstr "2.5. Neue Dateisysteme"
+msgid "Thunderbird 3.0.4"
+msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:51
-msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
-msgstr "Das Standard Dateisystem von Pardus 2009.2 ist Ext4, eine verbesserte Nachfolgeversion von Ext3. Ext4 ist deutlich schneller als Ext3 und bietet außerdem viele Verbesserungen was die maximale Dateigröße und Erweiterungen betrifft. Zum Beispiel kann Ext4 Partitionsgrößen bis zu 1 Exabyte und Dateien bis zu einer Größe von 16 Terabyte verwalten."
+msgid "Gimp 2.6.8"
+msgstr "Gimp 2.6.8"
 
 #: ../media-content/release-notes/releasenotes-en.html:52
-msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
-msgstr "XFS, ReiserFS und das experimentelle Btrfs sind auch im Installationssystem verfügbar."
+msgid "Linux Kernel 2.6.31.13"
+msgstr "Linux Kernel 2.6.31.13"
 
 #: ../media-content/release-notes/releasenotes-en.html:53
-msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
-msgstr "Wenn Sie weitere Informationen über Updates und neuen Funktionen von Pardus 2009.1 wünschen, können sie die"
-
-#: ../media-content/release-notes/releasenotes-en.html:54
-msgid "Pardus website"
-msgstr "Pardus Webseite"
-
-#: ../media-content/release-notes/releasenotes-en.html:55
-msgid "."
-msgstr "besuchen. Im offiziellen Pardus Wiki findet man weitere Anlaufstellen und auch deutschsprachige private Foren."
-
-#: ../media-content/release-notes/releasenotes-en.html:56
 msgid "3. Installation requirements"
 msgstr "3. Installationsvoraussetzungen"
 
-#: ../media-content/release-notes/releasenotes-en.html:57
-msgid "You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
+#: ../media-content/release-notes/releasenotes-en.html:54
+#, fuzzy
+msgid "You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
 msgstr "Pardus stellt relativ geringe Anforderungen an die Hardware. Sie können Pardus 2009.1 auf einem durchschnittlichen Computer installieren. Um ein flüssiges Arbeiten zu gewährleisten, empfehlen wir wenigstens einen Arbeitsspeicher mit 512MB RAM und einen Prozessor mit 1400MHz einzusetzen. Die minimalen und empfohlenen Systemvoraussetzungen sind:"
 
-#: ../media-content/release-notes/releasenotes-en.html:58
+#: ../media-content/release-notes/releasenotes-en.html:55
 msgid "256 MB memory (1GB or more recommended)"
 msgstr "256 MB Arbeitsspeicher (1GB oder mehr werden empfohlen)"
 
-#: ../media-content/release-notes/releasenotes-en.html:59
+#: ../media-content/release-notes/releasenotes-en.html:56
 msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
 msgstr "450 MHz Intel oder AMD Prozessor (1000 MHz oder mehr werden empfohlen)"
 
-#: ../media-content/release-notes/releasenotes-en.html:60
+#: ../media-content/release-notes/releasenotes-en.html:57
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr "Wenigstens 4 GB freier Speicherplatz auf dem Installationsmedium (10 GB werden empfohlen)"
+
+#~ msgid "."
+#~ msgstr "besuchen. Im offiziellen Pardus Wiki findet man weitere Anlaufstellen und auch deutschsprachige private Foren."
+
+#~ msgid "Pardus website"
+#~ msgstr "Pardus Webseite"
+
+#~ msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
+#~ msgstr "Wenn Sie weitere Informationen über Updates und neuen Funktionen von Pardus 2009.1 wünschen, können sie die"
+
+#~ msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
+#~ msgstr "XFS, ReiserFS und das experimentelle Btrfs sind auch im Installationssystem verfügbar."
+
+#~ msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
+#~ msgstr "Das Standard Dateisystem von Pardus 2009.2 ist Ext4, eine verbesserte Nachfolgeversion von Ext3. Ext4 ist deutlich schneller als Ext3 und bietet außerdem viele Verbesserungen was die maximale Dateigröße und Erweiterungen betrifft. Zum Beispiel kann Ext4 Partitionsgrößen bis zu 1 Exabyte und Dateien bis zu einer Größe von 16 Terabyte verwalten."
+
+#~ msgid "2.5. New Filesystems"
+#~ msgstr "2.5. Neue Dateisysteme"
+
+#~ msgid "GLIBC 2.9"
+#~ msgstr "GLIBC 2.9"
+
+#~ msgid "GCC 4.3.3"
+#~ msgstr "GCC 4.3.3"
+
+#~ msgid "Texlive 2008"
+#~ msgstr "Texlive 2008"
+
+#~ msgid "Xorg 1.6.5"
+#~ msgstr "Xorg 1.6.5"
+
+#~ msgid "KDE4"
+#~ msgstr "KDE4"
+
+#~ msgid "New member of the KDE family"
+#~ msgstr " "
+
+#~ msgid "Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
+#~ msgstr ""
+#~ "Pardus 2009.2 hat eine Vielzahl graphischer Verbesserungen erfahren. In der neuen Ausgabe von Pardus wird der Anwender mit dem neuen Milky Ikon-Dekor begrüßt, welches aus etwa 1000 Ikonen besteht. Außerdem haben wir eine Vielfalt von verbesserten\r\n"
+#~ "Bildschirmhintergründen mit Natur-Fotos, 3D Render-Bildern, Splash\r\n"
+#~ "Bildern etc. integriert."
+
+#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
+#~ msgstr "hat durch die Überarbeitung und durch neue PiSi Funktionen eine Beschleunigung erfahren, was eine Halbierung der Installationsdauer zur Folge hat. Pardus installiert sich nun auf durchschnittlich schnellen Computern in ca. 15 Minuten. Um schon getätigte Paketupdates zurückzunehmen und den Bootloader wiederherstellen zu können, wurde ein neuer Rettungsmodus in Yali integriert."
+
+#~ msgid "Yalı"
+#~ msgstr "Yalı"
+
+#~ msgid "Installation system"
+#~ msgstr "Das Installations-System"
+
+#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
+#~ msgstr "sind dank dem neuen Speichermechanismus deutlich schneller geworden. Am Paketsystem PiSi wurden viele Änderungen durchgeführt, so daß PiSi Pakete nun rund 20% kleiner sind und von nun an werden Delta-Pakete standardmäßig unterstützt. Die Installation und das Update von Paketen wird damit ein vielfaches schneller sein und zugleich wird weniger Bandbreite benötigt. Damit die Anwender ihre bevorzugten Pakete einfacher finden können, wurde der das Paketverzeichnis neu strukturiert."
+
+#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
+#~ msgstr "wurde integriert, um eine einfache Gundkonfiguration des gesamten Systems zu ermöglichen."
+
+#~ msgid "System Manager"
+#~ msgstr "System-Manager"
+
+#~ msgid "A new manager"
+#~ msgstr "Ein neuer"
+
+#~ msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
+#~ msgstr "Um neue Funktionen zur Verfügung zu stellen, wurden bei Pardus 2009.2 Kerntechnologien wie PiSi und COMAR aktualisiert. YALI wurde ebenso aktualisiert, um die Installation noch einfacher ablaufen zu lassen und dem Anwender schon während der Installation einen vertrauenserweckenden Eindruck zu geben. Die Verbesserungen im Mudur Initialisierungssystem sorgen für einen schnelleren und stabileren Startvorgang zusammen mit einer besseren Unterstuetzung für entfernte Systeme (remote)."
+
+#~ msgid "Pardus 2009.2 release notes"
+#~ msgstr "Anmerkung: Die Aufteilung der Satzbausteine ist wirklich sehr seltsam. Ich werde Morgen weiterübersetzen und mal fragen, ob man die Blocksätze künfitg nicht besser zusammenfassen kann. So zuerpflückt macht es eigentlich keinen Sinn!  :-("
