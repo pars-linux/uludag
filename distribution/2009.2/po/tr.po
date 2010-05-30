@@ -40,7 +40,7 @@ msgstr "Daha fazla bilgi için"
 
 #: ../media-content/release-notes/releasenotes-en.html:6
 msgid "http://www.pardus.org.tr/eng"
-msgstr "http://www.pardus.org.tr/eng"
+msgstr "http://www.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:7
 msgid "for more information."
@@ -119,7 +119,7 @@ msgid ""
 "for their bug reports, fixes, new package or feature suggestions for this "
 "release."
 msgstr ""
-"adresinde bulunan hata bildirim sistemine iletebilirsiniz. Göndereceğiniz "
+" adresinde bulunan hata bildirim sistemine iletebilirsiniz. Göndereceğiniz "
 "hata bildirimleri ve öneriler Pardus geliştiricileri tarafından incelenecek "
 "ve "
 "çözümler güncellemeyle kullanıcılara sunulacaktır. Şimdiden destek olan "
