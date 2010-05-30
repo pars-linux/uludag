@@ -176,39 +176,39 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Linux Kernel 2.6.31.13"
-msgstr ""
+msgstr "Linux Kernel 2.6.31.13"
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "OpenOffice.org Office Suite 3.2.1.1"
-msgstr ""
+msgstr "OpenOffice.org Office Suite 3.2.1.1"
 
 #: ../media-content/release-notes/releasenotes-en.html:43
 msgid "Firefox Web Browser 3.6.3"
-msgstr ""
+msgstr "Firefox Web Browser 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
 msgid "Gimp 2.6.8"
-msgstr ""
+msgstr "Gimp 2.6.8"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgid "Xorg 1.6.5"
-msgstr ""
+msgstr "Xorg 1.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
 msgid "Python 2.6.5"
-msgstr ""
+msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:47
 msgid "Texlive 2008"
-msgstr ""
+msgstr "Texlive 2008"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
 msgid "GCC 4.3.3"
-msgstr ""
+msgstr "GCC 4.3.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
 msgid "GLIBC 2.9"
-msgstr ""
+msgstr "GLIBC 2.9"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "2.5. New Filesystems"
