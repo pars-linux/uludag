@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: katepart4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-04-14 01:21+0200\n"
-"PO-Revision-Date: 2010-05-09 00:23+0300\n"
+"PO-Revision-Date: 2010-05-23 14:50+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,7 +27,7 @@ msgstr ""
 #: dialogs/katedialogs.cpp:643
 msgid " character"
 msgid_plural " characters"
-msgstr[0] " karakterler"
+msgstr[0] " karakter"
 
 #. i18n: file: dialogs/completionconfigtab.ui:12
 #. i18n: ectx: property (title), widget (QGroupBox, gbGeneral)
