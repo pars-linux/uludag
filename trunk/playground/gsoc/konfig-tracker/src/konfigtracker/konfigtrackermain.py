@@ -3,14 +3,13 @@
 #===============================================================================
 
 
-
-
 #necessary modules
 import os,git
 from time import strftime,localtime
 
 #Qt modules
-from PyQt4.QtCore import QDir, SIGNAL, QStringList
+from PyQt4.QtCore import *
+from PyQt4.QtGui import *
 
 #PyKDE4 modules
 from PyKDE4.kio import KIO, KDirWatch
@@ -24,6 +23,7 @@ class KonfigTracker(KMainWindow):
         self.resize (640, 480)
         self.app = app
         self.initialize()
+        self.Monitor()
         
     def getLocalDir(self):
         """
@@ -43,10 +43,7 @@ class KonfigTracker(KMainWindow):
         if not os.access(path,os.F_OK):
             os.mkdir(path)
             self.createRepo(path)
-            self.performInitImport()
-            
-        else:
-            print "Database Exists!"
+            self.performImport()
             
     def createRepo(self,path):
         '''
@@ -70,7 +67,7 @@ class KonfigTracker(KMainWindow):
         repo.execute(["git","commit","-a","-m",message])
         print message
         
-    def performInitImport(self):
+    def performImport(self):
         """
         This will perform the initial import of config files from
         .kde4/share/config to .kde4/konfigtracker-repo.
@@ -89,21 +86,17 @@ class KonfigTracker(KMainWindow):
         
         src = KUrl.List(srcList)
         dest = KUrl(destPath)
-        job = KIO.copy(src, dest, KIO.HideProgressInfo)
+        job = KIO.copy(src, dest, KIO.Overwrite)
         app.connect(job, SIGNAL("finished(KJob*)"),self.slotMessage)
         
     def Monitor(self):
         """
         Setting up a KDirWatch in the source directory
         """
-        print "I am here"
-        monitor = KDirWatch()
-        path = self.getLocalDir() + "/share/config/"
-        monitor.addDir(path, KDirWatch.WatchFiles)
-        app = self.app
-        app.connect(monitor, SIGNAL("dirty(QString)"), self.slotprintme)
-        
-    def slotprintme(self):
-        print "Changed"
-        
-        
+        app=self.app
+        dw = KDirWatch()
+        path = self.getLocalDir() + "share/config/"
+        print path
+        dw.addDir(path)
+        print dw.isStopped()
+        app.connect(dw, SIGNAL("dirty(QString)"), self.performImport)    
