@@ -27,6 +27,9 @@ msgstr "1. Willkommen zu Pardus 2009.2 !"
 #: ../media-content/release-notes/releasenotes-en.html:4
 msgid "Welcome to Pardus 2009.2, another great Pardus release from Pardus developers, translators, artists and documentation writers."
 msgstr ""
+"Willkommen zu Pardus 2009.2, einer weiteren großartigen Pardus\r\n"
+"Version von den Pardus Entwicklern, Übersetzern, Künstlern und\r\n"
+"Dokumentenerstellern."
 
 #: ../media-content/release-notes/releasenotes-en.html:5
 msgid "We kindly invite you to visit"
@@ -61,7 +64,6 @@ msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your co
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:13
-#, fuzzy
 msgid "1.3. Feedback"
 msgstr "1.3. Feedback"
 
@@ -70,7 +72,6 @@ msgid "You can use"
 msgstr "Sie können"
 
 #: ../media-content/release-notes/releasenotes-en.html:15
-#, fuzzy
 msgid "http://bugs.pardus.org.tr"
 msgstr "http://bugs.pardus.org.tr"
 
