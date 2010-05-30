@@ -176,19 +176,19 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
-msgstr ""
+msgstr "Mit der neuen KDE-Version bringt Pardus ein neues Look-And-Feel auf den Desktop. Der auf Plasmoiden basierende Desktop, auf welchem die Pardus-Werkzeuge an jeder beliebigen Stalle platziert werden können, die vollständig integrierte Desktop-Suche \"Strigi\", die neuen KDE Desktop Effekte und auch Dolphin, der neue verbesserte Dateimanager, der mehr Netzwerkprotokolle unterstützt, sind nur einige Beispiele für das neue Benutzerererlebnis von Pardus."
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid "2.4. Updated Components"
-msgstr ""
+msgstr "2.4. Aktualisierte Komponenten"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:"
-msgstr ""
+msgstr "Die Pakete von Pardus 2009.1 wurden zusammen mit den Pardus Technologien umfangreich aktualisiert. Hier einige der Highlights:"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid "KDE 4.4.3"
-msgstr ""
+msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Linux Kernel 2.6.31.13"
