@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 0.3\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
 msgid "Signal Strength"
@@ -78,7 +78,7 @@ msgstr "Bitte PIN Code eingeben für"
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr "Sie haben 3 Mal einen falschen PIN eingegeben"
+msgstr "Sie haben 3 Mal einen falsche PIN eingegeben"
 
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
 msgid "Refresh"
@@ -155,7 +155,7 @@ msgstr "Benutzerdefiniert"
 
 #: .tmp/ui_main.py:347
 msgid "Network Mask :"
-msgstr "Netzmaske :"
+msgstr "Netzwerkmaske :"
 
 #: .tmp/ui_main.py:348
 msgid "Default Gateway :"
@@ -205,7 +205,7 @@ msgstr "Schlüssel :"
 
 #: .tmp/ui_main.py:360
 msgid "Hide Password"
-msgstr "Passwort unsichtbar"
+msgstr "Passwort verbergen"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
@@ -249,7 +249,7 @@ msgstr "PIN für diese Verbindung speichern"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
-msgstr "Sicherheit"
+msgstr "Sicherheitseinstellungen"
 
 #: .tmp/ui_item.py:103
 msgid "Set connection state."
