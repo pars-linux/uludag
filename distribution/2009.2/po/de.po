@@ -59,15 +59,18 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
-msgstr "1.2 Wie kann ich Pardus benutzen"
+msgstr "1.2 Wie benutze ich Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
 msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, which runs on the media only, slower but does not install on your computer) and can be started from a CD / DVD / USB stick etc. media. To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
 msgstr ""
+"Pardus gibt es in 2 Vaianten: Kurulan zur Installation auf dem Computer oder Çalışan. Çalışan ist ein Live-System und wird direkt auf dem Wechselmedium ausgeführt. Es ist etwas langsamer,\r\n"
+"benötigt aber keine Installation und kann von CD / DVD / USB-Stick\r\n"
+"etc. gestartet werden. Um Pardus erleben zu können, brauchen Sie nur das entsprechende Medium in Ihren Computer einlegen, im BIOS sicherstellen, daß Ihr System von dem eingelegten Medium aus starten kann und den PC neu starten."
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "1.3. Feedback"
-msgstr "1.3. Feedback"
+msgstr "1.3. Rückmeldung"
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "You can use"
