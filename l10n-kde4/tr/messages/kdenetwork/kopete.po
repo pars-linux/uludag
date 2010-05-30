@@ -1583,7 +1583,7 @@ msgid ""
 "<qt>The display name you entered is too long. Please use a shorter name.\n"
 "Your display name has <b>not</b> been changed.</qt>"
 msgstr ""
-"<qt>Girdiğiniz görünüm ismi çok uzun.Lütfen daha kısa bir isim girin.\n"
+"<qt>Girdiğiniz görünüm ismi çok uzun. Lütfen daha kısa bir isim girin.\n"
 "Görünüm isminiz <b>değiştirilmedi</b></qt>"
 
 #: protocols/wlm/wlmaccount.cpp:1172
