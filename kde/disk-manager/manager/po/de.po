@@ -57,7 +57,7 @@ msgstr "Einstellungen"
 
 #: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
-msgstr "Festplatten Manager"
+msgstr "Datenträgerverwaltung"
 
 #: .tmp/diskmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
