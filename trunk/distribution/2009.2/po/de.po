@@ -92,15 +92,18 @@ msgstr "2. Was ist neu ?"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
 msgid "2.1. Updates in Pardus Technologies"
-msgstr ""
+msgstr "2.1. Updates der Pardus Technologieen"
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-msgstr ""
+msgstr "Um neue Funktionen zur Verfügung zu stellen, wurden bei Pardus 2009.2 Kerntechnologien wie PiSi und COMAR aktualisiert. YALI wurde ebenso aktualisiert, um die Installation noch einfacher ablaufen zu lassen und dem Anwender schon während der Installation einen vertrauenserweckenden Eindruck zu geben. Die Verbesserungen im Mudur Initialisierungssystem sorgen für einen schnelleren und stabileren Startvorgang zusammen mit einer besseren Unterstuetzung für entfernte Systeme (remote)."
 
 #: ../media-content/release-notes/releasenotes-en.html:20
 msgid "All of the Pardus managers have been refactored and optimized for KDE4. New Pardus tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are now available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
 msgstr ""
+"Alle Pardus Systemtools wurden komplett überarbeitet und für KDE4\r\n"
+"optimiert. Auch wurde Pardus mit neuen \"Plasmoids\" angereichert. Mit dem Netzwerk Plasmoid kann man schnell die Netzwerkprofile wechseln, und mit dem Service Plasmoid hat man schnell Zugriff auf die Systemdienste. Diese Plasmoids können entweder auf\r\n"
+"dem Desktop oder in jedes beliebige Panel platziert werden."
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "A new manager"
