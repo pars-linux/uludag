@@ -1,13 +1,13 @@
 <html>
 <head>
-<title>Pardus 2009.2 release notes</title>
+<title>Release Notes</title>
 <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
 
-<h1>Pardus 2009.2 Release Notes</h1>
+    <center><h1>Release Notes</h1></center>
 
-<h2>1. Welcome to Pardus 2009.2 !</h2>
+<h2>1. Welcome to Pardus</h2>
 
 Welcome to Pardus 2009.2, another great Pardus release from Pardus developers, translators, artists and documentation writers.
 <br><br>
@@ -16,78 +16,76 @@ We kindly invite you to visit <a href="http://www.pardus.org.tr/eng">http://www.
 
 <h3>1.1. What is Pardus</h3>
 
-Pardus is a Linux distribution developed as a product of the Pardus Project, by Turkish National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana.
+Pardus is a Linux distribution developed as a product of the Pardus Project, by National Research Institute of Electronics and Cryptology (UEKAE), which is under the Scientific and Technological Research Council of Turkey (TÜBİTAK) and by volunteered contributors. It is named after the Latin (and scientific) name for the Anatolian leopard, Panthera pardus tulliana.
 <br><br>
 
-Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to give its users easy to use and feature rich experience.
+Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience.
 
 <h3>1.2. How Can I Use Pardus</h3>
 
-Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, which runs on the media only, slower but does not install on your computer) and can be started from a CD / DVD / USB stick etc. media. To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media.
+Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference.
+<br><br>
+
+Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick.
+<br><br>
+
+To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media.
 
 <h3>1.3. Feedback</h3>
 
-You can use <a href="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</a>, (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions for this release.
+You can use <a href="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</a>, (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is.
 
 <h2>2. What is new ?</h2>
 <h3>2.1. Updates in Pardus Technologies</h3>
 
-With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support.
+Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features.
 <br><br>
 
-All of the Pardus managers have been refactored and optimized for KDE4. New Pardus tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are now available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access.
+Pardus manager family has been refactored and optimized for new KDE 4.4 / Qt 4.6 environments. Pardus KDE tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access.
 <br><br>
 
-A new manager <strong>System Manager</strong> has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc.
+A new KDE tool <strong>plasma-runner-pisi</strong> has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package.
 <br><br>
 
-<strong>Package Manager</strong> and <strong>PiSi</strong> are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily.
+<strong>Package Manager</strong> and <strong>PiSi</strong> have been optimized for better performance and improved stability. PiSi interface has been refactored for easier use. Package Manager went through heavy refactoring and is now using <strong>Pardus Desktop Services</strong>, which allows the GUI to run on desktop environments other than KDE 4 without the necessity of any KDE library. Among performance enhancements on the GUI, Package Manager now supports update types. Type of the updates are shown next to packages and users can select group of updates (security for example) easily from the Package Manager GUI.
 <br><br>
 
-Installation system <strong>Yalı</strong> has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc.
+Pardus welcome wizard Kaptan has also been refactored for the new Pardus release. With new graphical changes, Kaptan is more user friendly then ever, especially on small displays like netbooks.
 
 <h3>2.2. Graphical Enhancements</h3>
 
-Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc.
+Like other Pardus releases, this new release comes with the theme and name of species that is in danger of extinction. With new packages added to repositories, GTK and KDE integration is improved from notifications to user dialogs. Milky icon theme of Pardus is also updated with new icons. Older wallpapers released withing Pardus 2009 family can also be installed from package repositories.
 
 <h3>2.3. KDE 4 Desktop Enviroment</h3>
 
-New member of the KDE family <strong>KDE4</strong> that has been the choice of many Pardus users for a while now, is now the default desktop environment. Pardus 2009.2 includes the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions.
+Default desktop environment is updated to <strong>KDE 4.4.3</strong>, the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new <strong>Netbook Mode</strong>, optimized for small displays.
+<br><br>
+
+Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release.
 <br><br>
 
 With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users.
 
 <h3>2.4. Updated Components</h3>
 
-Pardus 2009.2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:
+New release includes many updated packages. Some of the highlights are as follows:
 <br>
 
 <ul>
     <li>KDE 4.4.3</li>
-    <li>Linux Kernel 2.6.31.13</li>
+    <li>Qt 4.6.2</li>
+    <li>Python 2.6.5</li>
     <li>OpenOffice.org Office Suite 3.2.1.1</li>
     <li>Firefox Web Browser 3.6.3</li>
+    <li>Thunderbird 3.0.4</li>
     <li>Gimp 2.6.8</li>
-    <li>Xorg 1.6.5</li>
-    <li>Python 2.6.5</li>
-    <li>Texlive 2008</li>
-    <li>GCC 4.3.3</li>
-    <li>GLIBC 2.9</li>
+    <li>Linux Kernel 2.6.31.13</li>
 </ul>
 
-<h3>2.5. New Filesystems</h3>
-
-Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte.
-<br><br>
-
-XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı.
-<br><br>
-
-For more information about updates and new features on Pardus 2009.2 , you can take a look at the <a href="http://www.pardus.org.tr/eng/">Pardus website</a>.<br>
 
 <h2>3. Installation requirements</h2>
 
-You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:
+You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:
 
 <ul>
     <li>256 MB memory (1GB or more recommended)</li>
@@ -95,6 +93,7 @@ You can run Pardus 2009.2 on an average hardware. We suggest to use at least 512
     <li>At least 4 GB of free hard disk space (10 GB recommended)</li>
 </ul>
 
-<br>
+<br><br>
+
 </body>
 </html>
