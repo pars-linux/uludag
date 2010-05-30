@@ -107,67 +107,72 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "A new manager"
-msgstr ""
+msgstr "Ein neuer"
 
 #: ../media-content/release-notes/releasenotes-en.html:22
 msgid "System Manager"
-msgstr ""
+msgstr "System-Manager"
 
 #: ../media-content/release-notes/releasenotes-en.html:23
 msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-msgstr ""
+msgstr "wurde integriert, um eine einfache Gundkonfiguration des gesamten Systems zu ermöglichen."
 
 #: ../media-content/release-notes/releasenotes-en.html:24
 msgid "Package Manager"
-msgstr ""
+msgstr "Paket-Manager"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "and"
-msgstr ""
+msgstr "und"
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "PiSi"
-msgstr ""
+msgstr "PiSi"
 
 #: ../media-content/release-notes/releasenotes-en.html:27
 msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-msgstr ""
+msgstr "sind dank dem neuen Speichermechanismus deutlich schneller geworden. Am Paketsystem PiSi wurden viele Änderungen durchgeführt, so daß PiSi Pakete nun rund 20% kleiner sind und von nun an werden Delta-Pakete standardmäßig unterstützt. Die Installation und das Update von Paketen wird damit ein vielfaches schneller sein und zugleich wird weniger Bandbreite benötigt. Damit die Anwender ihre bevorzugten Pakete einfacher finden können, wurde der das Paketverzeichnis neu strukturiert."
 
 #: ../media-content/release-notes/releasenotes-en.html:28
 msgid "Installation system"
-msgstr ""
+msgstr "Das Installations-System"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "Yalı"
-msgstr ""
+msgstr "Yalı"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
 msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-msgstr ""
+msgstr "hat durch die Überarbeitung und durch neue PiSi Funktionen eine Beschleunigung erfahren, was eine Halbierung der Installationsdauer zur Folge hat. Pardus installiert sich nun auf durchschnittlich schnellen Computern in ca. 15 Minuten. Um schon getätigte Paketupdates zurückzunehmen und den Bootloader wiederherstellen zu können, wurde ein neuer Rettungsmodus in Yali integriert."
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid "2.2. Graphical Enhancements"
-msgstr ""
+msgstr "2.2. Graphische Verbesserungen"
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid "Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
 msgstr ""
+"Pardus 2009.2 hat eine Vielzahl graphischer Verbesserungen erfahren. In der neuen Ausgabe von Pardus wird der Anwender mit dem neuen Milky Ikon-Dekor begrüßt, welches aus etwa 1000 Ikonen besteht. Außerdem haben wir eine Vielfalt von verbesserten\r\n"
+"Bildschirmhintergründen mit Natur-Fotos, 3D Render-Bildern, Splash\r\n"
+"Bildern etc. integriert."
 
 #: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.3. KDE 4 Desktop Enviroment"
-msgstr ""
+msgstr "2.3. KDE 4 Desktopumgebung"
 
 #: ../media-content/release-notes/releasenotes-en.html:34
 msgid "New member of the KDE family"
-msgstr ""
+msgstr " "
 
 #: ../media-content/release-notes/releasenotes-en.html:35
 msgid "KDE4"
-msgstr ""
+msgstr "KDE4"
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "that has been the choice of many Pardus users for a while now, is now the default desktop environment. Pardus 2009.2 includes the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions."
 msgstr ""
+"- das neue Mitglied der KDE Familie, welches\r\n"
+"schon von vielen Pardus Anwendern seit einiger Zeit eingesetzt wird, ist ab sofort die voreingestellte Arbeitsumgebung. Pardus 2009.2 nutzt die letzte stabile Version von KDE4. Diese Version wurde für den Einsatz in Pardus angepaßt und erweitert. Die im Pardus Depot verfügbaren KDE Programme wurden auf ihre aktuelle KDE4 Version aktualisiert."
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
