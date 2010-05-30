@@ -2000,7 +2000,7 @@ msgstr "Hoş Geldiniz !!"
 
 #: yali4/gui/ScrWelcome.py:31
 msgid "Welcome to the Pardus installer..."
-msgstr "Pardus kurulum programına hoşgeldiniz..."
+msgstr "Pardus kurulum programına hoş geldiniz..."
 
 #: yali4/gui/ScrWelcome.py:32
 msgid ""
@@ -2021,7 +2021,7 @@ msgstr ""
 "\n"
 "<font size=\"+2\">Hoş Geldiniz !</font>\n"
 "<font size=\"+1\"><p>Kullanımı kolay pek çok yazılım bileşeni içeren Pardus "
-"2009.2'e hoşgeldiniz. Pardus 2009.2 ile Internet'e bağlanmaktan belgeler "
+"2009.2'e hoş geldiniz. Pardus 2009.2 ile Internet'e bağlanmaktan belgeler "
 "oluşturmaya, oyun oynamaktan müzik dinlemeye kadar ihtiyacınız olan her şeyi "
 "yapabilirsiniz.</p>\n"
 "<p>Bu program, kullanım kolaylığı ile Pardus 2009.2'u bilgisayarınıza "
