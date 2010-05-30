@@ -43,7 +43,7 @@ msgstr "Einstellungen"
 
 #: .tmp/firewallmanager/service.py:38
 msgid "Firewall is activated."
-msgstr "Firewall ist aktiviert"
+msgstr "Firewall ist aktiviert."
 
 #: .tmp/firewallmanager/service.py:41
 msgid "Stop"
@@ -55,7 +55,7 @@ msgstr "Firewall ist deaktiviert."
 
 #: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
 msgid "Firewall Manager"
-msgstr "Firewall-Manager"
+msgstr "Firewall"
 
 #: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
