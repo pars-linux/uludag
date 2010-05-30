@@ -54,6 +54,8 @@ msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des 
 #: ../media-content/release-notes/releasenotes-en.html:10
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to give its users easy to use and feature rich experience."
 msgstr ""
+"Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource\r\n"
+"Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung, mit dem Ziel den Anwendern ein benutzerfreundliches und funktionsreiches System zur Verfügung zu stellen."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
