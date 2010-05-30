@@ -48,6 +48,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             self.searchButton.setIcon(KIcon("edit-find"))
             self.statusUpdater = StatusUpdater()
             self.basket = BasketDialog(self.state)
+            self.searchUsed = False
             self.initialize()
             self.updateSettings()
             self.actionButton.setIcon(self.state.getActionIcon())
@@ -130,6 +131,8 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
     def searchLineChanged(self, text):
         self.searchButton.setEnabled(bool(text))
+        if text == '' and self.searchUsed:
+            self.searchActivated()
 
     def statusUpdated(self):
         if self.statusUpdater.needsUpdate:
@@ -181,10 +184,16 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def searchActivated(self):
         self.packageList.resetMoreInfoRow()
         waitCursor()
-        sourceModel = self.packageList.model().sourceModel()
         searchText  = str(self.searchLine.text()).split()
-        self.state.cached_packages = sourceModel.search(searchText)
-        self.groupList.lastSelected = None
+        if searchText:
+            sourceModel = self.packageList.model().sourceModel()
+            self.state.cached_packages = sourceModel.search(searchText)
+            self.groupList.lastSelected = None
+            self.searchUsed = True
+        else:
+            self.state.cached_packages = None
+            self.state.packages()
+            self.searchUsed = False
         self.initializeGroupList()
         restoreCursor()
 
