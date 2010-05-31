@@ -132,7 +132,6 @@ msgid "have been optimized for better performance and improved stability. PiSi i
 msgstr "wurden für bessere Leistung und Stabilität optimiert. Die PiSi Oberfläche wurde zugunsten einer einfacheren Bedienung umgestaltet. Das Gerüst vom Paket-Manager stark überarbeitet und nutzt nun"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
-#, fuzzy
 msgid "Pardus Desktop Services"
 msgstr "Pardus Desktop Services"
 
