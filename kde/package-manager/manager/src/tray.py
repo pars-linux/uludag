@@ -24,6 +24,7 @@ class PTray:
         self.defaultIcon = QtGui.QIcon(":/data/tray-zero.png")
         self.countIcon = QtGui.QIcon(":/data/tray-count.png")
         self.clip = QtGui.QMovie(":/data/animated-tray.mng")
+        self.lastIcon = self.defaultIcon
         self.setIcon(self.defaultIcon)
         self.lastUpgrades = []
         self.unread = 0
@@ -40,7 +41,7 @@ class PTray:
 
     def stop(self):
         self.clip.stop()
-        self.setIcon(self.defaultIcon)
+        self.setIcon(self.lastIcon)
 
     def slotAnimate(self, scene):
         self.setIcon(QtGui.QIcon(self.clip.currentPixmap()))
@@ -130,6 +131,7 @@ class PTray:
 
         if unread == 0:
             self.setIcon(self.defaultIcon)
+            self.lastIcon = self.defaultIcon
         else:
             countStr = "%s" % unread
             f = QtGui.QFont(Pds.settings('font','Dejavu Sans'))
@@ -158,8 +160,8 @@ class PTray:
             p.drawText(overlayImg.rect(), Qt.AlignCenter, countStr)
 
             p.end()
-
-            self.setIcon(QtGui.QIcon(overlayImg))
+            self.lastIcon = QtGui.QIcon(overlayImg)
+            self.setIcon(self.lastIcon)
 
 if not Pds.session == pds.Kde4:
 
