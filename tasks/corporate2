@@ -139,11 +139,11 @@
     * NetworkManager ailesinin entegrasyonu (/95)
     * Kurumsal sürüm gereklerine uygun paket listesinin çıkartılması ve depoya alınması (/85)
     * mit-kerberos 1.8 geçişi + COMAR servislerinin yazılması (/10)
-    * bölünmüş kde paketlerinin review edilmesi (-)
+    * bölünmüş kde paketlerinin review edilmesi (/5)
 
 * COMAR/PolKit (Bahadır Kandemir)
     * polkit 0.96 geçişi, paketlenip test edilip, depoya alınması (+)
-    * user-manager uygulaması + pypolkit + baselayout usermanager bacağı (/80)
+    * user-manager uygulaması + pypolkit + baselayout usermanager bacağı (+)
     * pypolkit'in yeni polkit'e geçirilmesi (+)
 
 * PolKit (Gökçen Eraslan)
