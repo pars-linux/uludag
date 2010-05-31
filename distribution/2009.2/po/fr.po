@@ -160,7 +160,6 @@ msgid "Default desktop environment is updated to"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-#, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.3"
 msgstr "KDE 4.4.3"
@@ -171,7 +170,7 @@ msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
-msgstr ""
+msgstr "Mode pour netbooks"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
@@ -190,9 +189,8 @@ msgid "2.4. Updated Components"
 msgstr "2.4. Composants mis à jour"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
-#, fuzzy
 msgid "New release includes many updated packages. Some of the highlights are as follows:"
-msgstr "Pardus 2009.2 bêta comprend un grand nombre de mises à jour de paquets en plus de celles des technologies Pardus. En voici les principales :"
+msgstr "Ce nouvel opus comprend un grand nombre de mises à jour de paquets dont voici les principales :"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 #, fuzzy
@@ -202,7 +200,7 @@ msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
 msgid "Qt 4.6.2"
-msgstr ""
+msgstr "Qt 4.6.2"
 
 #: ../media-content/release-notes/releasenotes-en.html:47
 msgid "Python 2.6.5"
@@ -218,7 +216,7 @@ msgstr "Navigateur Web Firefox 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "Thunderbird 3.0.4"
-msgstr ""
+msgstr "Thunderbird 3.0.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:51
 msgid "Gimp 2.6.8"
