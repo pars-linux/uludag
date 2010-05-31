@@ -1,4 +1,4 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -13,10 +13,9 @@ msgstr ""
 "X-Generator: Translate Toolkit 1.7.0\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
-#, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:1"
 msgid "Release Notes"
-msgstr "Pardus 2009.2 Release Notes"
+msgstr "Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:2
 #, fuzzy
@@ -25,9 +24,8 @@ msgid "Release Notes"
 msgstr "Pardus 2009.2 Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:3
-#, fuzzy
 msgid "1. Welcome to Pardus"
-msgstr "1. Willkommen zu Pardus 2009.2 !"
+msgstr "1. Willkommen zu Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:4
 msgid "Welcome to Pardus 2009.2, another great Pardus release from Pardus developers, translators, artists and documentation writers."
@@ -58,35 +56,30 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des Türkischen Nationalen Forschungsinstituts für Elektronik und Kryptologie (UEKAE), welches mit Hilfe des wissenschaftlichen und technologischen Forschungskonzils der Türkei (TÜBİTAK) und von freiwilligen Mitarbeitern entwickelt worden ist. Der Name stammt von dem lateinischen Namen (wissenschaftliche Bezeichnung) des Anatolischen Leopards: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-#, fuzzy
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
-msgstr ""
-"Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource\r\n"
-"Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung, mit dem Ziel den Anwendern ein benutzerfreundliches und funktionsreiches System zur Verfügung zu stellen."
+msgstr "Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource-Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung. Pardus verfolgt das Ziel den Anwendern ein funktionsreiches und benutzerfreundliches System zur Verfügung zu stellen."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
 msgstr "1.2 Wie benutze ich Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
-#, fuzzy
 msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference."
 msgstr ""
-"Pardus gibt es in 2 Vaianten: Kurulan zur Installation auf dem Computer oder Çalışan. Çalışan ist ein Live-System und wird direkt auf dem Wechselmedium ausgeführt. Es ist etwas langsamer,\r\n"
-"benötigt aber keine Installation und kann von CD / DVD / USB-Stick\r\n"
-"etc. gestartet werden. Um Pardus erleben zu können, brauchen Sie nur das entsprechende Medium in Ihren Computer einlegen, im BIOS sicherstellen, daß Ihr System von dem eingelegten Medium aus starten kann und den PC neu starten."
+"Pardus gibt es in 2 Vaianten: Kurulan zur Installation auf dem Computer und Çalışan. Çalışan ist ein Live-System und wird direkt auf dem Wechselmedium ausgeführt. Es ist zwar etwas langsamer, benötigt aber keine Installation und kann von CD / DVD / USB-Stick\r"
+" etc. gestartet werden. Um Pardus erleben zu können, brauchen Sie nur das entsprechende Medium in Ihren Computer einlegen, im BIOS sicherstellen, dass Ihr System von dem eingelegten Medium aus starten kann und den PC neu starten."
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
-msgstr ""
+msgstr "Çalışan (Live-Image) und Kurulan (Installations-Image) beinhalten die englischen und türkischen Sprachpackete und finden auf einer einzigen CD Platz. Das internationale Installationsabbild ist ein multilinguales Image (inkl. Türkisch), welches zusätzliche Sprachpakete, Programme, und Illustrationen beinhaltet, die nicht in dem Kurulan-Image integriert wurden. Das internationale Image ist ungefähr 1GB groß und passt deswegen nicht mehr auf eine CD. Zur Installation auf eine Festplatte kann das Abbild stattdessen auf eine DVD oder ein anderes Installationsmedium geschrieben werden (z.B. USB-Stick)."
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
-msgstr ""
+msgstr "Um Pardus erleben zu können, müssen Sie nur das erstellte Medium in den Computer einlegen, im BIOS sicherstellen, dass der PC von dem Installations- bzw Live-Medium bootet und den Rechner neu starten."
 
 #: ../media-content/release-notes/releasenotes-en.html:15
 msgid "1.3. Feedback"
-msgstr "1.3. Rückmeldung"
+msgstr "1.3. Feedback"
 
 #: ../media-content/release-notes/releasenotes-en.html:16
 msgid "You can use"
@@ -97,7 +90,6 @@ msgid "http://bugs.pardus.org.tr"
 msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
-#, fuzzy
 msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is."
 msgstr ""
 "können Sie Fehler melden, Lösungsvorschläge senden, oder auch neue Funktionen vorschlagen. Wir möchten an dieser Stelle den Pardus Anwendern und den Pardus Entwicklern für ihre Fehlermeldungen, Lösungen, neue Programmpakete und\r\n"
@@ -113,27 +105,23 @@ msgstr "2.1. Updates der Pardus Technologieen"
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
-msgstr ""
+msgstr "Pardus Kerntechnologieen wurden auf den neuesten Stand gebracht und beinhalten nicht nur Fehlerkorrekturen und Optimierungen, sondern auch neue Funktionen."
 
 #: ../media-content/release-notes/releasenotes-en.html:22
-#, fuzzy
 msgid "Pardus manager family has been refactored and optimized for new KDE 4.4 / Qt 4.6 environments. Pardus KDE tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
-msgstr ""
-"Alle Pardus Systemtools wurden komplett überarbeitet und für KDE4\r\n"
-"optimiert. Auch wurde Pardus mit neuen \"Plasmoids\" angereichert. Mit dem Netzwerk Plasmoid kann man schnell die Netzwerkprofile wechseln, und mit dem Service Plasmoid hat man schnell Zugriff auf die Systemdienste. Diese Plasmoids können entweder auf\r\n"
-"dem Desktop oder in jedes beliebige Panel platziert werden."
+msgstr "Alle Pardus Systemtools wurden komplett überarbeitet und für KDE4.4 / Qt 4.6 optimiert. Auch wurde Pardus mit neuen \"Plasmoiden\" (kleine grafische Hilfsprogramme) angereichert. Mit dem Netzwerk Plasmoid kann man schnell die Netzwerkprofile wechseln und mit dem Service Plasmoid hat man schnellen Zugriff auf die Systemdienste. Diese Plasmoids können entweder auf dem Desktop oder in jedem beliebigen Panel platziert werden."
 
 #: ../media-content/release-notes/releasenotes-en.html:23
 msgid "A new KDE tool"
-msgstr ""
+msgstr "Ein neues KDE-Tool,"
 
 #: ../media-content/release-notes/releasenotes-en.html:24
 msgid "plasma-runner-pisi"
-msgstr ""
+msgstr "plasma-runner-pisi"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package."
-msgstr ""
+msgstr ", wurde hinzugefügt, um einfach und leicht neue Pakete in die KDE Arbeitsumgebung einbinden zu können. Wird in den KDE Schnellstarter krunner ( Alt+F2) ein Kommando eingegeben welches von dem System nicht erkannt wird, aber von einem Paket im Pardus Depot ermöglicht wird, erscheint sogleich ein Eintrag der die Installation des benötigten Programmpakets ermöglicht. Das einfache auswählen des Eintrags wird das benötigte Paket automatisch installieren."
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "Package Manager"
@@ -149,15 +137,16 @@ msgstr "PiSi"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "have been optimized for better performance and improved stability. PiSi interface has been refactored for easier use. Package Manager went through heavy refactoring and is now using"
-msgstr ""
+msgstr "wurden für bessere Leistung und Stabilität optimiert. Die PiSi Oberfläche wurde zugunsten einer einfacheren Bedienung umgestaltet. Das Gerüst vom Paket-Manager stark überarbeitet und nutzt nun"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
+#, fuzzy
 msgid "Pardus Desktop Services"
-msgstr ""
+msgstr "Pardus Desktop Services"
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid ", which allows the GUI to run on desktop environments other than KDE 4 without the necessity of any KDE library. Among performance enhancements on the GUI, Package Manager now supports update types. Type of the updates are shown next to packages and users can select group of updates (security for example) easily from the Package Manager GUI."
-msgstr ""
+msgstr ". Dies ermöglicht nun der grafischen Benutzeroberfläche (GUI) des Paket-Managers auch ohne die bisher notwendigen KDE4 Bibliotheken auf anderen Desktopumgebungen zu laufen. Neben den Geschwindigkeitsverbesserungen der GUI unterstützt der Paket-Manager nun verschiedene Updatevarianten. Die verschiedenen Varianten der Updatemöglichkeiten (z.B. Sicherheit) sind direkt neben den Paketen aufgelistet und können einfach durch den Anwender ausgewählt werden."
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid "Pardus welcome wizard Kaptan has also been refactored for the new Pardus release. With new graphical changes, Kaptan is more user friendly then ever, especially on small displays like netbooks."
@@ -177,28 +166,24 @@ msgstr "2.3. KDE 4 Desktopumgebung"
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "Default desktop environment is updated to"
-msgstr ""
+msgstr "Die voreingestellte Desktopumgebung ist aktualisiert worden auf"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-#, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.3"
 msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
-#, fuzzy
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
-msgstr ""
-"- das neue Mitglied der KDE Familie, welches\r\n"
-"schon von vielen Pardus Anwendern seit einiger Zeit eingesetzt wird, ist ab sofort die voreingestellte Arbeitsumgebung. Pardus 2009.2 nutzt die letzte stabile Version von KDE4. Diese Version wurde für den Einsatz in Pardus angepaßt und erweitert. Die im Pardus Depot verfügbaren KDE Programme wurden auf ihre aktuelle KDE4 Version aktualisiert."
+msgstr ". Die aktuellste stabile Version von KDE  wurde für den Einsatz in Pardus angepaßt und erweitert. Die im Depot verfügbaren KDE Programme wurden auf ihre aktuelle KDE4 Version aktualisiert. Mit dem neuen KDE Desktop können die Benutzer zwischen dem Standard Mode, dem \"alten\" KDE-Mode und dem neuen"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
-msgstr ""
+msgstr "Netbook Mode"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
-msgstr ""
+msgstr ", welcher für kleine Bildschirme optimiert wurde, wählen."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
