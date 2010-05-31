@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-27 11:37+0300\n"
-"PO-Revision-Date: 2010-05-27 22:12+0200\n"
+"PO-Revision-Date: 2010-05-31 21:25+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -408,7 +408,7 @@ msgstr "Bijwerken van softwarebron(nen)"
 
 #: .tmp/statemanager.py:83
 msgid "Remove Package(s)"
-msgstr "Verwijder pakket(ten)"
+msgstr "Pakket(ten) verwijderen"
 
 #: .tmp/statemanager.py:84
 msgid "Upgrade Package(s)"
