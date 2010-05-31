@@ -64,7 +64,7 @@ msgstr "Pardus viene en 2 modalidades, Kurulan (instalador) o Çalışan (liveCD
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
-msgstr ""
+msgstr "Las imagenes ISO Çalışan (live) y Kurulan (instalador) contienen soporte para los idiomas Inglés y Turco y entran en un solo CD. La imágen ISO international contiene multiples idiomas (también turco), y algunos programas y diseños artísticos que no están en la imágen Kurulan. La imagen ISO internacional tiene alrededor de 1GB, y se puede grabar en un DVD, o un medio de disco como Pendrive."
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
@@ -136,11 +136,11 @@ msgstr "Servicios de Escritorio de Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid ", which allows the GUI to run on desktop environments other than KDE 4 without the necessity of any KDE library. Among performance enhancements on the GUI, Package Manager now supports update types. Type of the updates are shown next to packages and users can select group of updates (security for example) easily from the Package Manager GUI."
-msgstr ""
+msgstr ", que permite la ejecución de la interfaz gráfica directamente en entornos de escritorio diferente a KDE 4, sin la necesidad de alguna librería de KDE. Entre las mejoras de la interfaz del Administrador de Paquetes están los tipos de actualizaciones. El tipo de actualización está mostrado al lado de cada paquete, y el usuario puede filtrar facilmente en la interfaz del Administrador de Paquetes grupos de actualizaciones (por ejemplo de seguridad)."
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid "Pardus welcome wizard Kaptan has also been refactored for the new Pardus release. With new graphical changes, Kaptan is more user friendly then ever, especially on small displays like netbooks."
-msgstr ""
+msgstr "Kaptan, el Asistente de Bienvenida, también fue adaptado a la nueva versión de Pardus. Con las modificaciones gráficos Kaptan ahora es más amigable, especialmente en pantallas chicas como en Netbooks."
 
 #: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.2. Graphical Enhancements"
@@ -148,7 +148,7 @@ msgstr "2.2. Mejoras Visuales"
 
 #: ../media-content/release-notes/releasenotes-en.html:34
 msgid "Like other Pardus releases, this new release comes with the theme and name of species that is in danger of extinction. With new packages added to repositories, GTK and KDE integration is improved from notifications to user dialogs. Milky icon theme of Pardus is also updated with new icons. Older wallpapers released withing Pardus 2009 family can also be installed from package repositories."
-msgstr ""
+msgstr "Como los otros lanzamientos de Pardus, también el lanzamiento actual viene acompañado de un tema y nombre de una especie que está en peligro de extinción. Hay nuevos paquetes en los repositorios para mejorar la integración de GTK y KDE, desde mensajes de otificación hasta diálogos de usuario. También el tema de íconos Milky de Pardus fue actualizado y complementado con nuevos íconos. Fondos de pantalla de versiones anteriores de Pardus se pueden bajar de los repositorios."
 
 #: ../media-content/release-notes/releasenotes-en.html:35
 msgid "2.3. KDE 4 Desktop Enviroment"
@@ -156,7 +156,7 @@ msgstr "2.3. Entorno de Escritorio KDE 4"
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "Default desktop environment is updated to"
-msgstr ""
+msgstr "El entorno de escritorio predeterminado está actualizado a"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
@@ -164,21 +164,20 @@ msgid "KDE 4.4.3"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:38
-#, fuzzy
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
-msgstr "era hace tiempo la preferencia de muchos usuarios de Pardus y ahora es el entorno de escritorio predeterminado. Pardus 2009.2 Beta incluye la última versión estable de KDE, con mejoras y adaptaciones para Pardus. Todos los programas de KDE fueron actualizados o reemplazados por sus versiones más recientes compatibles con el KDE 4."
+msgstr ", la última versión estable de KDE, con mejoras y adaptaciones para Pardus. Todos los programas KDE en los repositorios fueron actualizados o reemplazados por sus versiones más recientes compatibles con el KDE 4. Con el nuevo KDE, el usuario puede elegir entre el Modo Predeterminado, Modo KDE Antiguo y el nuevo "
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
-msgstr ""
+msgstr "Modo de Netbook"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
-msgstr ""
+msgstr ", optimizado para pantallas chicas."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
-msgstr ""
+msgstr "El equipo de Pardus integró en el nuevo KDE el módulo Kosd kded, un indicador hermoso para estado y nivel de volumen de sonido y de luminosidad de la pantalla."
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
@@ -189,9 +188,8 @@ msgid "2.4. Updated Components"
 msgstr "2.4. Componentes Actualizados"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
-#, fuzzy
 msgid "New release includes many updated packages. Some of the highlights are as follows:"
-msgstr "Pardus 2009.2 Beta incluye una serie de actualizaciones de paquetes, aparte de ajustes en las tecnologías de Pardus. Algunas novedades destacados son:"
+msgstr "La nueva versión incluye una serie de actualizaciones de paquetes. Algunos destacados son:"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgctxt "../media-content/release-notes/releasenotes-en.html:45"
