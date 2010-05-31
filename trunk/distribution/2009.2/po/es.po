@@ -229,9 +229,8 @@ msgid "3. Installation requirements"
 msgstr "3. Requisitos de Instalación"
 
 #: ../media-content/release-notes/releasenotes-en.html:54
-#, fuzzy
 msgid "You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
-msgstr "Puede ejecutar Pardus 2009.2 Beta en un hardware promedio. Recomendamos al menos 512 MB de memoria RAM y un procesador de 1400 MHz para un rendimiento aceptable. Los requisitos de hardware mínimos y recomendados para Pardus 2009.2 son los siguientes:"
+msgstr "Puede ejecutar Pardus en un hardware x86 promedio. Recomendamos al menos 512 MB de memoria RAM y un procesador de 1400 MHz para un rendimiento aceptable. Los requisitos de hardware mínimos y recomendados para Pardus 2009.2 son los siguientes:"
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "256 MB memory (1GB or more recommended)"
