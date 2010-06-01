@@ -113,7 +113,7 @@ msgstr "plasma-runner-pisi"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package."
-msgstr ""
+msgstr "a été ajoutée pour fournir une installation de paquets facile dans l'environnement KDE. Sous l'environnement KDE, lorsque vous démarrez KRunner (par défaut en appuyant sur ALT-F2) et écrivez une commande qui n'est pas disponible sur votre système, mais qui est fournie par un paquet dans les dépôts de Pardus, une entrée pour installer les paquets nécessaires apparaîtra. Il suffit de sélectionner l'entrée pour automatiquement installer le paquet nécessaire."
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "Package Manager"
