@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 23:46+0300\n"
+"POT-Creation-Date: 2010-06-01 09:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:11

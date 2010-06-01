@@ -1,9 +1,9 @@
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 23:46+0300\n"
+"POT-Creation-Date: 2010-06-01 09:21+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -52,7 +52,8 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des Türkischen Nationalen Forschungsinstituts für Elektronik und Kryptologie (UEKAE), welches mit Hilfe des wissenschaftlichen und technologischen Forschungskonzils der Türkei (TÜBİTAK) und von freiwilligen Mitarbeitern entwickelt worden ist. Der Name stammt von dem lateinischen Namen (wissenschaftliche Bezeichnung) des Anatolischen Leopards: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
+#, fuzzy
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr "Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource-Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung. Pardus verfolgt das Ziel den Anwendern ein funktionsreiches und benutzerfreundliches System zur Verfügung zu stellen."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
@@ -246,41 +247,32 @@ msgstr "450 MHz Intel oder AMD Prozessor (1000 MHz oder mehr werden empfohlen)"
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr "Wenigstens 4 GB freier Speicherplatz auf dem Installationsmedium (10 GB werden empfohlen)"
 
-#~ msgid "."
-#~ msgstr "besuchen. Im offiziellen Pardus Wiki findet man weitere Anlaufstellen und auch deutschsprachige private Foren."
+#~ msgid "Pardus 2009.2 release notes"
+#~ msgstr "Anmerkung: Die Aufteilung der Satzbausteine ist wirklich sehr seltsam. Ich werde Morgen weiterübersetzen und mal fragen, ob man die Blocksätze künfitg nicht besser zusammenfassen kann. So zuerpflückt macht es eigentlich keinen Sinn!  :-("
 
-#~ msgid "Pardus website"
-#~ msgstr "Pardus Webseite"
+#~ msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
+#~ msgstr "Um neue Funktionen zur Verfügung zu stellen, wurden bei Pardus 2009.2 Kerntechnologien wie PiSi und COMAR aktualisiert. YALI wurde ebenso aktualisiert, um die Installation noch einfacher ablaufen zu lassen und dem Anwender schon während der Installation einen vertrauenserweckenden Eindruck zu geben. Die Verbesserungen im Mudur Initialisierungssystem sorgen für einen schnelleren und stabileren Startvorgang zusammen mit einer besseren Unterstuetzung für entfernte Systeme (remote)."
 
-#~ msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
-#~ msgstr "Wenn Sie weitere Informationen über Updates und neuen Funktionen von Pardus 2009.1 wünschen, können sie die"
+#~ msgid "A new manager"
+#~ msgstr "Ein neuer"
 
-#~ msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
-#~ msgstr "XFS, ReiserFS und das experimentelle Btrfs sind auch im Installationssystem verfügbar."
+#~ msgid "System Manager"
+#~ msgstr "System-Manager"
 
-#~ msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
-#~ msgstr "Das Standard Dateisystem von Pardus 2009.2 ist Ext4, eine verbesserte Nachfolgeversion von Ext3. Ext4 ist deutlich schneller als Ext3 und bietet außerdem viele Verbesserungen was die maximale Dateigröße und Erweiterungen betrifft. Zum Beispiel kann Ext4 Partitionsgrößen bis zu 1 Exabyte und Dateien bis zu einer Größe von 16 Terabyte verwalten."
+#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
+#~ msgstr "wurde integriert, um eine einfache Gundkonfiguration des gesamten Systems zu ermöglichen."
 
-#~ msgid "2.5. New Filesystems"
-#~ msgstr "2.5. Neue Dateisysteme"
+#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
+#~ msgstr "sind dank dem neuen Speichermechanismus deutlich schneller geworden. Am Paketsystem PiSi wurden viele Änderungen durchgeführt, so daß PiSi Pakete nun rund 20% kleiner sind und von nun an werden Delta-Pakete standardmäßig unterstützt. Die Installation und das Update von Paketen wird damit ein vielfaches schneller sein und zugleich wird weniger Bandbreite benötigt. Damit die Anwender ihre bevorzugten Pakete einfacher finden können, wurde der das Paketverzeichnis neu strukturiert."
 
-#~ msgid "GLIBC 2.9"
-#~ msgstr "GLIBC 2.9"
+#~ msgid "Installation system"
+#~ msgstr "Das Installations-System"
 
-#~ msgid "GCC 4.3.3"
-#~ msgstr "GCC 4.3.3"
+#~ msgid "Yalı"
+#~ msgstr "Yalı"
 
-#~ msgid "Texlive 2008"
-#~ msgstr "Texlive 2008"
-
-#~ msgid "Xorg 1.6.5"
-#~ msgstr "Xorg 1.6.5"
-
-#~ msgid "KDE4"
-#~ msgstr "KDE4"
-
-#~ msgid "New member of the KDE family"
-#~ msgstr " "
+#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
+#~ msgstr "hat durch die Überarbeitung und durch neue PiSi Funktionen eine Beschleunigung erfahren, was eine Halbierung der Installationsdauer zur Folge hat. Pardus installiert sich nun auf durchschnittlich schnellen Computern in ca. 15 Minuten. Um schon getätigte Paketupdates zurückzunehmen und den Bootloader wiederherstellen zu können, wurde ein neuer Rettungsmodus in Yali integriert."
 
 #~ msgid "Pardus 2009.2 comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
 #~ msgstr ""
@@ -288,29 +280,38 @@ msgstr "Wenigstens 4 GB freier Speicherplatz auf dem Installationsmedium (10 GB 
 #~ "Bildschirmhintergründen mit Natur-Fotos, 3D Render-Bildern, Splash\r\n"
 #~ "Bildern etc. integriert."
 
-#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-#~ msgstr "hat durch die Überarbeitung und durch neue PiSi Funktionen eine Beschleunigung erfahren, was eine Halbierung der Installationsdauer zur Folge hat. Pardus installiert sich nun auf durchschnittlich schnellen Computern in ca. 15 Minuten. Um schon getätigte Paketupdates zurückzunehmen und den Bootloader wiederherstellen zu können, wurde ein neuer Rettungsmodus in Yali integriert."
+#~ msgid "New member of the KDE family"
+#~ msgstr " "
 
-#~ msgid "Yalı"
-#~ msgstr "Yalı"
+#~ msgid "KDE4"
+#~ msgstr "KDE4"
 
-#~ msgid "Installation system"
-#~ msgstr "Das Installations-System"
+#~ msgid "Xorg 1.6.5"
+#~ msgstr "Xorg 1.6.5"
 
-#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-#~ msgstr "sind dank dem neuen Speichermechanismus deutlich schneller geworden. Am Paketsystem PiSi wurden viele Änderungen durchgeführt, so daß PiSi Pakete nun rund 20% kleiner sind und von nun an werden Delta-Pakete standardmäßig unterstützt. Die Installation und das Update von Paketen wird damit ein vielfaches schneller sein und zugleich wird weniger Bandbreite benötigt. Damit die Anwender ihre bevorzugten Pakete einfacher finden können, wurde der das Paketverzeichnis neu strukturiert."
+#~ msgid "Texlive 2008"
+#~ msgstr "Texlive 2008"
 
-#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-#~ msgstr "wurde integriert, um eine einfache Gundkonfiguration des gesamten Systems zu ermöglichen."
+#~ msgid "GCC 4.3.3"
+#~ msgstr "GCC 4.3.3"
 
-#~ msgid "System Manager"
-#~ msgstr "System-Manager"
+#~ msgid "GLIBC 2.9"
+#~ msgstr "GLIBC 2.9"
 
-#~ msgid "A new manager"
-#~ msgstr "Ein neuer"
+#~ msgid "2.5. New Filesystems"
+#~ msgstr "2.5. Neue Dateisysteme"
 
-#~ msgid "With the release of Pardus 2009.2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-#~ msgstr "Um neue Funktionen zur Verfügung zu stellen, wurden bei Pardus 2009.2 Kerntechnologien wie PiSi und COMAR aktualisiert. YALI wurde ebenso aktualisiert, um die Installation noch einfacher ablaufen zu lassen und dem Anwender schon während der Installation einen vertrauenserweckenden Eindruck zu geben. Die Verbesserungen im Mudur Initialisierungssystem sorgen für einen schnelleren und stabileren Startvorgang zusammen mit einer besseren Unterstuetzung für entfernte Systeme (remote)."
+#~ msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
+#~ msgstr "Das Standard Dateisystem von Pardus 2009.2 ist Ext4, eine verbesserte Nachfolgeversion von Ext3. Ext4 ist deutlich schneller als Ext3 und bietet außerdem viele Verbesserungen was die maximale Dateigröße und Erweiterungen betrifft. Zum Beispiel kann Ext4 Partitionsgrößen bis zu 1 Exabyte und Dateien bis zu einer Größe von 16 Terabyte verwalten."
 
-#~ msgid "Pardus 2009.2 release notes"
-#~ msgstr "Anmerkung: Die Aufteilung der Satzbausteine ist wirklich sehr seltsam. Ich werde Morgen weiterübersetzen und mal fragen, ob man die Blocksätze künfitg nicht besser zusammenfassen kann. So zuerpflückt macht es eigentlich keinen Sinn!  :-("
+#~ msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
+#~ msgstr "XFS, ReiserFS und das experimentelle Btrfs sind auch im Installationssystem verfügbar."
+
+#~ msgid "For more information about updates and new features on Pardus 2009.2 , you can take a look at the"
+#~ msgstr "Wenn Sie weitere Informationen über Updates und neuen Funktionen von Pardus 2009.1 wünschen, können sie die"
+
+#~ msgid "Pardus website"
+#~ msgstr "Pardus Webseite"
+
+#~ msgid "."
+#~ msgstr "besuchen. Im offiziellen Pardus Wiki findet man weitere Anlaufstellen und auch deutschsprachige private Foren."
