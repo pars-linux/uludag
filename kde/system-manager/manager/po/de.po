@@ -2,14 +2,14 @@
 # System Manager.
 # Copyright (C) 2009 TÜBİTAK/UEKAE
 # This file is distributed under the same license as the System Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-25 15:31+0300\n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
 "PO-Revision-Date: 2009-07-01 22:18+0100\n"
 "Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: German <es@li.org>\n"
@@ -66,14 +66,13 @@ msgstr "Einstellungen"
 msgid "Number of Real Consoles:"
 msgstr "Anzahl der echten Konsolen:"
 
-#: .tmp/systemmanager/about.py:20
-#: .tmp/systemmanager/about.py:22
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
 msgstr "System - Manager"
 
 #: .tmp/systemmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/systemmanager/about.py:25
 msgid " "
@@ -81,13 +80,13 @@ msgstr " "
 
 #: .tmp/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/systemmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: .tmp/systemmanager/main.py:73
+#: .tmp/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -95,7 +94,6 @@ msgstr ""
 "Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
 "Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
 
-#: .tmp/systemmanager/main.py:101
+#: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Keine"
-
