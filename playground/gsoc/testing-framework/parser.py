@@ -3,64 +3,46 @@
 
 import sys
 import os
-import glob
+
+from optparse import OptionParser
 
 try:
     from lxml import etree
 except ImportError:
-    sys.stderr.write('Error importing the \'lxml\' library.\nYou need the lxml library package installed to run this software.')
-    sys.exit(1)
+    sys.exit("""Error importing the 'lxml' library.\nYou need the 'lxml' library package installed to run this software.""")
 
-def showXMLFiles(path):
+def check_xml_file(file):
+    """Load a XML file and check for validity of the syntax."""
+    fileExtension = os.path.splitext(file)
+    fileAbsolutePath = os.path.abspath(file)
     
-    print 'Listing XML files in \'{0}\': \n'.format(path)
+    if not os.path.isfile(file): 
+        sys.exit('The file \'{0}\' is not a valid file or the file does not exist.'.format(file))
+    if not '.xml' in fileExtension:
+        sys.exit('Error: Only XML files are supported.\nThe file \'{0}\' has the extension \'{1}\' and \
+is an invalid test case file.'.format(file, fileExtension[1]))
     
-    filePath = os.path.join(path, '*.xml')
+    # We have a proper XML file now, let us parse it!
+    print '- Pardus GNU/ Linux Testing Framework -'
+    print 'Parsing file:\t[{0}]'.format(fileAbsolutePath)
+
+def main():
+    """Handle the command line arguments."""
+    parser = OptionParser(usage = 'usage: %prog [options] arguments')
+    parser.add_option('-f', '--file',
+                      dest='filename',
+                      metavar='FILE',
+                      help='Specifies the testcase XML file for input.')
+    (options, args) = parser.parse_args()
     
-    pathList = glob.glob(filePath)
-    
-    fileList = [os.path.basename(x) for x in pathList]
-    
-    if not fileList:
-        sys.stderr.write('No XML files were found in the current location. Restart this program with the \'--help\' switch for more information.\n\n')
+    if not options.filename:
+        parser.print_help()
+        sys.exit(1)
+    if len(args) != 0:
+        parser.error('Invalid number of arguments.')
         sys.exit(1)
         
-    fileListDict = dict((enumerate(fileList, 1)))
+    check_xml_file(options.filename)
     
-    for number, element in enumerate(fileList, 1):
-        print number, element
-    
-    while True:
-        
-        try:
-            choice = int(raw_input('\nEnter your choice > '))
-        except ValueError:
-            print 'Please enter a valid choice between (1 - {0})'.format(len(fileList))
-            continue
-                   
-        if not (choice > 0 and choice <= len(fileList)):
-            print 'Please enter a valid choice between (1 - {0})'.format(len(fileList))
-            continue
-        
-        print 'Parsing file: {0}'.format(fileListDict[choice])
-        sys.exit(1)
-    
-def argCheck():
-    
-    if len(sys.argv) == 1:
-        showXMLFiles(os.getcwd())
-    elif os.path.isdir(sys.argv[1]):
-        currentDirectory = sys.argv[1]
-        showXMLFiles(currentDirectory)
-    elif sys.argv[1] == '--help':
-        print """Usage: parser.py [path]
-                
-[path] is the path location where the XML files are saved.
-If no argument is specified, the parser will use the current working directory.\n"""
-    else:
-        sys.stderr.write('Invalid directory. Restart this program with \'--help\' for more information.\n')
-        sys.exit(1)
-
-print '\nPardus GNU/ Linux Testing Framework.\n'
-
-argCheck()    
+if __name__ == '__main__':
+    main()
