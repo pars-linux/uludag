@@ -97,7 +97,7 @@ msgstr "2.1. Mises à jour des technologies de Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
-msgstr ""
+msgstr "Les technologies Pardus sont disponibles dans leurs nouvelles versions, comprenant de nombreuses corrections de bogues, des optimisations ainsi que de nouvelles fonctionnalités."
 
 #: ../media-content/release-notes/releasenotes-en.html:22
 msgid "Pardus manager family has been refactored and optimized for new KDE 4.4 / Qt 4.6 environments. Pardus KDE tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
