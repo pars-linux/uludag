@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -28,11 +28,17 @@ class ProgressDialog(QtGui.QDialog, Ui_ProgressDialog):
         self.startAnimation()
         self.connect(self.cancelButton, SIGNAL("clicked()"), self.cancel)
 
+    def show(self):
+        self.movie.start()
+        QtGui.QDialog.show(self)
+
+    def hide(self):
+        self.movie.stop()
+        QtGui.QDialog.hide(self)
+
     def startAnimation(self):
         self.movie = QtGui.QMovie(":/data/pisianime.mng")
-        self.movie.setCacheMode(QtGui.QMovie.CacheAll)
         self.animeLabel.setMovie(self.movie)
-        self.movie.start()
 
     def updateProgress(self, progress):
         self.progressBar.setValue(progress)
