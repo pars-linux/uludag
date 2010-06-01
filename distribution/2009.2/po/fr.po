@@ -149,7 +149,7 @@ msgstr "2.2. Améliorations graphiques"
 
 #: ../media-content/release-notes/releasenotes-en.html:34
 msgid "Like other Pardus releases, this new release comes with the theme and name of species that is in danger of extinction. With new packages added to repositories, GTK and KDE integration is improved from notifications to user dialogs. Milky icon theme of Pardus is also updated with new icons. Older wallpapers released withing Pardus 2009 family can also be installed from package repositories."
-msgstr ""
+msgstr "Comme pour les précédentes versions de Pardus, cette nouvelle mouture adopte un thème et le nom d'une espèce en voie de disparition. Avec de nouveaux paquets ajoutés dans les dépôts, l'intégration de GTK et de KDE est améliorée, des notifications aux boîtes de dialogue avec l'utilisateur. Le thème d'icônes Milky de Pardus est également mis à jour avec de nouvelles icônes. Les fonds d'écran de la famille de Pardus 2009 peuvent également être installés à partir des dépôts de paquets."
 
 #: ../media-content/release-notes/releasenotes-en.html:35
 msgid "2.3. KDE 4 Desktop Enviroment"
@@ -157,7 +157,7 @@ msgstr "2.3. Environnement de bureau KDE 4"
 
 #: ../media-content/release-notes/releasenotes-en.html:36
 msgid "Default desktop environment is updated to"
-msgstr ""
+msgstr "L'environnement de bureau par défaut est mis à jour"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
@@ -166,7 +166,7 @@ msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
-msgstr ""
+msgstr " vers la dernière version stable de KDE qui a été améliorée et modifiée pour Pardus. Tous les programmes KDE dans les dépôts de Pardus ont été mis à jour ou remplacés par leurs dernières versions de KDE 4. Avec le nouveau bureau, les utilisateurs peuvent choisir entre le mode par défaut, l'ancien mode de KDE, et le nouveau"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
@@ -174,15 +174,15 @@ msgstr "Mode pour netbooks"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
-msgstr ""
+msgstr ", optimisé pour les petits écrans."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
-msgstr ""
+msgstr "L'équipe Pardus a intégré le module Kosd kded, un visionneur d'état fantaisie, un afficheur du volume sonore, et un contrôleur de luminosité."
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
-msgstr ""
+msgstr "Avec la nouvelle version de KDE, Pardus offre un nouveau visage aux utilisateurs. Le système de bureau basé sur les plasmoïdes, où chaque composant peut être placé sur n'importe où sur le bureau, La recherche de bureau Strigi pleinement intégrée à l'environnement de bureau, les effets de bureau de KDE, Dolphin le gestionnaire de fichiers moderne avec support de plusieurs protocoles distants ne sont que quelques-uns des exemples de la nouvelle expérience de bureau offerte gratuitement à nos utilisateurs."
 
 #: ../media-content/release-notes/releasenotes-en.html:43
 msgid "2.4. Updated Components"
