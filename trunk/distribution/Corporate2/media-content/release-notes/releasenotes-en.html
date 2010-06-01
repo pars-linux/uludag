@@ -1,15 +1,15 @@
 <html>
 <head>
-<title>Pardus Corporate 2 Alpha Release Notes</title>
+<title>Pardus Corporate 2 Alpha 2 Release Notes</title>
 <meta HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
 </head>
 <body>
 
-<h1>Pardus Corporate 2 Alpha Release Notes</h1>
+<h1>Pardus Corporate 2 Alpha 2 Release Notes</h1>
 
-<h2>1. Welcome to Pardus Corporate 2 Alpha</h2>
+<h2>1. Welcome to Pardus Corporate 2 Alpha 2</h2>
 
-Welcome to Pardus Corporate 2 Alpha, another great Pardus release from Pardus developers, translators, artists and documentation writers.
+Welcome to Pardus Corporate 2 Alpha 2, another great Pardus release from Pardus developers, translators, artists and documentation writers.
 <br><br>
 
 <br>We kindly invite you to visit <a href="http://www.pardus.org.tr/eng">http://www.pardus.org.tr/eng</a> for more information.
@@ -28,9 +28,24 @@ You can use <a href="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</a>, (
 
 <h2>2. What is new?</h2>
 
-<h3>2.1. Updates in Pardus Technologies</h3>
+<h2>2.1. List of bugs fixed since Pardus Corporate 2 Alpha 1</h2>
 
-With the release of Pardus Corporate 2 Alpha, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support.
+<ul>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=4213">#4213</a> - Turkish translations for shadow/pam are updated to avoid misunderstandings</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=12517">#12517</a> - User-manager is not able to modify user informations</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=12520">#12520</a> - GRUB Error 15 is triggered when the user wants boot-manager to remember the last booted entry</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13051">#13051</a> - Users are not able to write in archive partitions created from YALI</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13118">#13118</a> - Turkish translation for mouse configuration in Kaptan is ambigious</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13119">#13119</a> - package-manager still renders Pardus 2009 icon during installation</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13122">#13122</a> - Advanced should be renamed to outgoing connections in firewall-manager</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13126">#13126</a> - Help instructions for package-manager should be updated</li>
+    <li><a href="http://bugs.pardus.org.tr/show_bug.cgi?id=13141">#13141</a> - Newly introduced strings in YALI are untranslated</li>
+</ul>
+
+
+<h3>2.2. Updates in Pardus Technologies</h3>
+
+With the release of Pardus Corporate 2 Alpha 2, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support.
 <br><br>
 
 <strong>Package Manager</strong> and <strong>PiSi</strong> are now a lot faster than before, thanks to the new caching mechanism. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily.
@@ -38,24 +53,23 @@ With the release of Pardus Corporate 2 Alpha, core technologies like PiSi and CO
 
 Installation system <strong>YALI</strong> has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to YALI, which can be used to take back previous package updates, restore bootloader etc.
 
-<h3>2.2. Graphical Enhancements</h3>
+<h3>2.3. Graphical Enhancements</h3>
 
-Pardus Corporate 2 Alpha comes with a lot of graphical enhancements. The default icon theme is a Tango flavour polished for KDE called BCTango. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc.
+Pardus Corporate 2 Alpha 2 comes with a lot of graphical enhancements. The default icon theme is a Tango flavour polished for KDE called BCTango. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc.
 
-<h3>2.3. KDE Desktop Environment</h3>
+<h3>2.4. KDE Desktop Environment</h3>
 
-Pardus Corporate 2 Alpha uses KDE Desktop Environment 3.5.10 which fully satisfies the needs of enterprise users in terms of performance and stability.
+Pardus Corporate 2 Alpha 2 uses KDE Desktop Environment 3.5.10 which fully satisfies the needs of enterprise users in terms of performance and stability.
 <br><br>
 
+<h3>2.5. Updated Components</h3>
 
-<h3>2.4. Updated Components</h3>
-
-Pardus Corporate 2 Alpha includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:
+Pardus Corporate 2 Alpha 2 includes a lot of package updates besides Pardus Technologies. Some of the highlights are as follows:
 <br>
 
 <ul>
     <li>KDE 3.5.10</li>
-    <li>Linux Kernel 2.6.32.13</li>
+    <li>Linux Kernel 2.6.32.14</li>
     <li>Openoffice Office Suite 3.1.1.5</li>
     <li>Firefox Web Browser 3.6.3</li>
     <li>Gimp 2.6.8</li>
@@ -66,35 +80,52 @@ Pardus Corporate 2 Alpha includes a lot of package updates besides Pardus Techno
     <li>GLIBC 2.9</li>
 </ul>
 
-<h4>2.4.1 Base System</h4>
+<h4>2.5.0 New Packages</h4>
+<ul>
+    <li>filezilla: FTP client,</li>
+    <li>hydra: network analyzer,</li>
+    <li>mod_python: Python interpreter for httpd,</li>
+    <li>numactl: NUMA node controller utility,</li>
+    <li>libcgroup: kernel cgroups management tools,</li>
+    <li>e3: A very small editor vith vi/emacs modes written in assembly.</li>
+</ul>
+
+<h4>2.5.1 Base System</h4>
 <ul>
     <li>PolicyKit is upgraded to 0.96, polkit-gnome is now the default authentication agent,</li>
     <li>D-Bus is upgraded to the latest non-permissive 1.2.24 version which includes various important bug fixes,</li>
     <li>procps is adjusted so that its tools provides kernel control groups related informations,</li>
     <li>curl now gracefully handles anonymous login attempts using a less generic identity,</li>
     <li>dhcpcd is updated to the latest stable 5.2 branch,</li>
-    <li>The default kernel and the PAE flavour are all updated to 2.6.32.13,</li>
+    <li>dhcpcd now workarounds a bug in Zyxel ADSL routers provided by TTNET in Turkey,</li>
+    <li>The default kernel and the PAE flavour are all updated to 2.6.32.14,</li>
+    <li>Fixed man raising assertions on some man pages,</li>
     <li>libcgroup is packaged for further systemd integration attempts</li>
 </ul>
 
-<h4>2.4.2 Hardware</h4>
+<h4>2.5.2 Hardware</h4>
 <ul>
     <li>hplip is updated to 3.10.5 to support more printers,</li>
     <li>ntfs_3g is updated to the latest stable version,</li>
+    <li>KVM module is updated to 2.6.34,</li>
+    <li>qemu is updated to 0.12.4,</li>
     <li>All ALSA components are updated to a recent snapshot for better hardware support and stability,</li>
     <li>Smart card support is improved, serious problems with OpenCT and pcsc-lite are fixed,</li>
     <li>CUPS is updated to 1.4.3, PHP binding for the libcups is enabled,</li>
-    <li>bluez is updated to 4.63</li>
+    <li>cdrtools is updated to 2.01.01_alpha79,</li>
+    <li>obexd is updated to 0.24,</li>
+    <li>bluez is updated to 4.65</li>
 </ul>
 
-<h4>2.4.3 Networking</h4>
+<h4>2.5.3 Networking</h4>
 <ul>
     <li>GNOME NetworkManager, 4 VPN plugins, network-manager-applet and ModemManager are now available in the repository. Users can switch to NetworkManager backend by tweaking the /etc/conf.d/NetworkManager file,</li>
     <li>OpenAFS client/server and kernel modules are now available in the repository,</li>
+    <li>Samba is updated to 3.5.3,</li>
     <li>PPP is updated to 2.4.5 which includes serious DNS related bug fixes</li>
 </ul>
 
-<h4>2.4.4 Desktop</h4>
+<h4>2.5.4 Desktop</h4>
 <ul>
     <li>Mozilla Firefox is updated to 3.6.3,</li>
     <li>Mozilla Thunderbird 3.0.4 is now bundled within the installation image,</li>
@@ -102,21 +133,28 @@ Pardus Corporate 2 Alpha includes a lot of package updates besides Pardus Techno
     <li>Qt is updated to 4.6.2, Gtk+ to 2.20.1,</li>
     <li>Package Manager is refactored and polished with many new features and improvements,</li>
     <li>The default BCTango icon theme is improved,</li>
-    <li>evolution as an alternative e-mail client is available in the repository</li>
+    <li>evolution as an alternative e-mail client is available in the repository along with the exchange plugin</li>
 </ul>
 
-<h4>2.4.5 Server</h4>
+<h4>2.5.5 Server</h4>
 <ul>
     <li>mit-kerberos is compiled with LDAP support,</li>
     <li>ntp is updated to 4.2.6_p1 and the package is splitted into client and server sub packages,</li>
     <li>Various openldap server startup issues has been fixed</li>
 </ul>
 
-For more information about updates and new features on Pardus Corporate 2 Alpha, you can take a look at the <a href="http://www.pardus.org.tr/eng/">Pardus web site</a>.<br>
+<h4>2.5.6 Multimedia</h4>
+<ul>
+    <li>x264 is updated,</li>
+    <li>All mplayer family members are updated to improve VDPAU support,</li>
+</ul>
+
+
+For more information about updates and new features on Pardus Corporate 2 Alpha 2, you can take a look at the <a href="http://www.pardus.org.tr/eng/">Pardus web site</a>.<br>
 
 <h2>3. Installation requirements</h2>
 
-You can run Pardus Corporate 2 Alpha on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus Corporate 2 Alpha are mentioned below:
+You can run Pardus Corporate 2 Alpha 2 on an average hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus Corporate 2 Alpha 2 are mentioned below:
 
 <ul>
     <li>256 MB memory (1GB or more recommended)</li>
