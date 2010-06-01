@@ -10,8 +10,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: ../media-content/release-notes/releasenotes-en.html:1
 msgctxt "../media-content/release-notes/releasenotes-en.html:1"
@@ -52,7 +52,6 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Pardus è una distriuzione Linux facente parte del Progetto Pardus,sviluppata dall'Istituto di Ricerca Elettronica e Criptologica Nazionale Turco(UEKAE), che fa parte del Concilio Turco della Ricerca Scientifica e Tecnologica(TÜBİTAK). Viene inoltre sviluppata da volontari. Il nome deriva dal  nome scientifico del leopardo antoliano, Panthera Pardus Tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-#, fuzzy
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr "Pardus è una distribuzione Linux, che include applicazioni Open Source ideali per ambiente desktop e server. Il fine di Pardus è quello di offrire ai suoi utenti un sistema semplice da usare e ricco di caratteristiche al tempo stesso."
 
