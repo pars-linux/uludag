@@ -97,7 +97,7 @@ msgstr "2.1. Mises à jour des technologies de Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:21
 msgid "Core Pardus technologies are updated to new versions, including many bugfixes, optimizations and new features."
-msgstr "Les technologies Pardus sont disponibles dans leurs nouvelles versions, comprenant de nombreuses corrections de bogues, des optimisations ainsi que de nouvelles fonctionnalités."
+msgstr "Les technologies Pardus sont disponibles dans leurs nouvelles livrées, comprenant de nombreuses corrections de bogues, des optimisations ainsi que de nouvelles fonctionnalités."
 
 #: ../media-content/release-notes/releasenotes-en.html:22
 msgid "Pardus manager family has been refactored and optimized for new KDE 4.4 / Qt 4.6 environments. Pardus KDE tools, Network Plasmoid for easy network profile switching and Service Plasmoid for easy service management are available in our repositories. These plasmoids can be placed either on the desktop, or any of the panels on the desktop for easier access."
@@ -129,19 +129,19 @@ msgstr "PiSi"
 
 #: ../media-content/release-notes/releasenotes-en.html:29
 msgid "have been optimized for better performance and improved stability. PiSi interface has been refactored for easier use. Package Manager went through heavy refactoring and is now using"
-msgstr ""
+msgstr "ont été optimisés pour une meilleure performance et une stabilité accrue. L'interface de PiSi a été remaniée pour en faciliter encore l'usage. Le gestionnaire de paquets a subi une lourde ingénierie et utilise dorénavant"
 
 #: ../media-content/release-notes/releasenotes-en.html:30
 msgid "Pardus Desktop Services"
-msgstr "Services du bureau de Pardus"
+msgstr "Les services du bureau de Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:31
 msgid ", which allows the GUI to run on desktop environments other than KDE 4 without the necessity of any KDE library. Among performance enhancements on the GUI, Package Manager now supports update types. Type of the updates are shown next to packages and users can select group of updates (security for example) easily from the Package Manager GUI."
-msgstr ""
+msgstr ", qui permettent à l'interface graphique de tourner sur des environnements de bureau autres que KDE 4 sans la nécessité d'installer les bibliothèques de KDE. Parmi les améliorations de l'interface graphique, il y a maintenant la possibilité de voir et d'installer les mises à jour par type. Cela permet par exemple de n'installer que les mises à jour de sécurité."
 
 #: ../media-content/release-notes/releasenotes-en.html:32
 msgid "Pardus welcome wizard Kaptan has also been refactored for the new Pardus release. With new graphical changes, Kaptan is more user friendly then ever, especially on small displays like netbooks."
-msgstr ""
+msgstr "L'Assistant Kaptan a également été remanié pour la nouvelle version de Pardus. Dans son nouvel habillage graphique, Kaptan est plus convivial que jamais, en particulier sur les petits écrans, comme ceux des netbooks."
 
 #: ../media-content/release-notes/releasenotes-en.html:33
 msgid "2.2. Graphical Enhancements"
