@@ -206,8 +206,8 @@ msgid "Python 2.6.5"
 msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "OpenOffice.org Office Suite 3.2.1.1"
-msgstr "Suite bureautique OpenOffice.org 3.2.1.1"
+msgid "OpenOffice.org Office Suite 3.2.1.3"
+msgstr "Suite bureautique OpenOffice.org 3.2.1.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
 msgid "Firefox Web Browser 3.6.3"
