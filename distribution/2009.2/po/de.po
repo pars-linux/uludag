@@ -15,7 +15,7 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:1
 msgctxt "../media-content/release-notes/releasenotes-en.html:1"
 msgid "Release Notes"
-msgstr ""
+msgstr "Release Notes"
 
 #: ../media-content/release-notes/releasenotes-en.html:2
 #, fuzzy
@@ -65,7 +65,7 @@ msgstr "Pardus gibt es in 2 Vaianten: Kurulan zur Installation auf dem Computer 
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
-msgstr "Çalışan (Live-Image) und Kurulan (Installations-Image) beinhalten die englischen und türkischen Sprachpackete und finden auf einer einzigen CD Platz. Das internationale Installationsabbild ist ein multilinguales Image (inkl. türkisch), welches zusätzliche Sprachpakete, Programme, und Illustrationen beinhaltet, die nicht in dem Kurulan-Image integriert wurden. Das internationale Image ist ungefähr 1GB groß und passt deswegen nicht mehr auf eine CD. Zur Installation auf eine Festplatte kann das Abbild stattdessen auf eine DVD oder ein anderes Festplattenähnliches Medium geschrieben werden (z.B. USB-Stick)."
+msgstr "Çalışan (Live-Image) und Kurulan (Installations-Image) beinhalten die englischen und türkischen Sprachpackete und finden auf einer einzigen CD Platz. Das internationale Installationsabbild ist ein multilinguales Image (inkl. türkisch), welches zusätzliche Sprachpakete, Programme, und Illustrationen beinhaltet, die nicht in dem Kurulan-Image integriert wurden. Das internationale Image ist ungefähr 1GB groß und passt deswegen nicht mehr auf eine CD. Zur Installation auf eine Festplatte kann das Abbild stattdessen auf eine DVD oder ein anderes festplattenähnliches Medium geschrieben werden (z.B. USB-Stick)."
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
@@ -190,7 +190,7 @@ msgstr "2.4. Aktualisierte Komponenten"
 
 #: ../media-content/release-notes/releasenotes-en.html:44
 msgid "New release includes many updated packages. Some of the highlights are as follows:"
-msgstr "Die Pakete von Pardus 2009.1 wurden zusammen mit den Pardus Technologien umfangreich aktualisiert. Hier einige der Highlights:"
+msgstr "Die Programmpakete der neuen Version wurden zusammen mit den Pardus Technologien umfangreich aktualisiert. Hier einige der Highlights:"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 #, fuzzy
