@@ -168,7 +168,7 @@ msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
-msgstr "sürümüne güncellendi. Pardus depolarındaki tüm KDE programları KDE 4 sürümlerine güncellendi. Yeni KDE ile birlikte kullanıcılar masaüstü kipleri olan Öntanımlı Kip, Eski KDE Kipi ve yeni"
+msgstr " sürümüne güncellendi. Pardus depolarındaki tüm KDE programları KDE 4 sürümlerine güncellendi. Yeni KDE ile birlikte kullanıcılar masaüstü kipleri olan Öntanımlı Kip, Eski KDE Kipi ve yeni"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
