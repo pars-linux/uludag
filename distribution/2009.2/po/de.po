@@ -1,4 +1,4 @@
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -52,7 +52,6 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Die Linux-Distribution Pardus ist ein Ergebnis des Pardus Projekts, des Türkischen Nationalen Forschungsinstituts für Elektronik und Kryptologie (UEKAE), welches mit Hilfe des wissenschaftlichen und technologischen Forschungskonzils der Türkei (TÜBİTAK) und von freiwilligen Mitarbeitern entwickelt worden ist. Der Name stammt von dem lateinischen Namen (wissenschaftliche Bezeichnung) des Anatolischen Leopards: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-#, fuzzy
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr "Pardus ist ein Betriebssystem mit Linux-Kernel, OpenSource-Programmen und allen nötigen Daten für eine Desktop- oder Serverumgebung. Pardus verfolgt das Ziel den Anwendern ein funktionsreiches und benutzerfreundliches System zur Verfügung zu stellen."
 
@@ -179,7 +178,7 @@ msgstr ", welcher für kleine Bildschirme optimiert wurde, wählen."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
-msgstr "Das Pardus-Team integrierte das KOSD und das KDED Modul mit denen man sehr einfach Zugriff auf die Lautsprecherlautstärke und die Bildschirmhelligkeit hat. Die beiden Module schmeicheln außerdem den Augen schmeichelt."
+msgstr "Das Pardus-Team integrierte das KOSD und das KDED Modul mit denen man sehr einfach Zugriff auf die Lautsprecherlautstärke und die Bildschirmhelligkeit hat. Die beiden Module schmeicheln außerdem den Augen."
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
