@@ -65,7 +65,7 @@ msgstr "Pardus est livré avec deux saveurs, Kurulan (qui installe sur votre ord
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
-msgstr ""
+msgstr "Les images Çalışan (live) et Kurulan (installation) proposent les langues anglaise et turque, et tient sur seul CD. L'image internationale est multilingue (dont le français) contient les paquets de langues, certaines applications et des thèmes graphiques qui ne sont pas dans l'image Kurulan. L'image internationale occupe environ 1 Go, et peut être gravée sur un DVD ou un disque dur ou une clef USB."
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
