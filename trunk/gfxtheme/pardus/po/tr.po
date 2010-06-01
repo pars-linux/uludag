@@ -442,7 +442,7 @@ msgstr "Açılış"
 
 #. txt_mudur_forcefsck
 msgid "FS check"
-msgstr "Diski kurtar"
+msgstr "Diski onar"
 
 #. txt_mainmenu
 msgid "Main menu"
