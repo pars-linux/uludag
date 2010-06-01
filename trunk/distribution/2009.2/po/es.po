@@ -161,7 +161,7 @@ msgstr "El entorno de escritorio predeterminado está actualizado a"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
-msgid "KDE 4.4.3"
+msgid "KDE 4.4.4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:38
@@ -194,7 +194,7 @@ msgstr "La nueva versión incluye una serie de actualizaciones de paquetes. Algu
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
+msgid "KDE 4.4.4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:46

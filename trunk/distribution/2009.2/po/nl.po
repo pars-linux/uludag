@@ -162,8 +162,8 @@ msgstr "Standaard bureaubladomgeving is bijgewerkt tot"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
-msgid "KDE 4.4.3"
-msgstr "KDE 4.4.3"
+msgid "KDE 4.4.4"
+msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
@@ -195,8 +195,8 @@ msgstr "De nieuwe uitgave bevat vele bijgewerkte pakketten. Enkele hoogtepunten 
 
 #: ../media-content/release-notes/releasenotes-en.html:45
 msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
-msgstr "KDE 4.4.3"
+msgid "KDE 4.4.4"
+msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
 msgid "Qt 4.6.2"
