@@ -49,7 +49,7 @@ def update_messages():
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
-            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, PROJECT))
+            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, PROJECT))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
     os.system("rm -rf .tmp")
