@@ -170,8 +170,8 @@ msgstr ""
 #: ../media-content/release-notes/releasenotes-en.html:37
 #, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:37"
-msgid "KDE 4.4.3"
-msgstr "KDE 4.4.3"
+msgid "KDE 4.4.4"
+msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
 #, fuzzy
@@ -206,8 +206,8 @@ msgstr "Pardus 2009.2 sürümü, Pardus teknolojilerindeki yeniliklerin yanında
 #: ../media-content/release-notes/releasenotes-en.html:45
 #, fuzzy
 msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
-msgstr "KDE 4.4.3"
+msgid "KDE 4.4.4"
+msgstr "KDE 4.4.4"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
 msgid "Qt 4.6.2"
