@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-01 09:21+0300\n"
+"POT-Creation-Date: 2010-06-01 10:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -158,7 +158,6 @@ msgid "Default desktop environment is updated to"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.3"
 msgstr ""
 
@@ -191,8 +190,7 @@ msgid "New release includes many updated packages. Some of the highlights are as
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:45
-msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
+msgid "KDE 4.4.4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:46
@@ -204,7 +202,7 @@ msgid "Python 2.6.5"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "OpenOffice.org Office Suite 3.2.1.1"
+msgid "OpenOffice.org Office Suite 3.2.1.3"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:49

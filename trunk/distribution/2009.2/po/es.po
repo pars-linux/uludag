@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-01 09:21+0300\n"
+"POT-Creation-Date: 2010-06-01 10:29+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -160,7 +160,6 @@ msgid "Default desktop environment is updated to"
 msgstr "El entorno de escritorio predeterminado está actualizado a"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-msgctxt "../media-content/release-notes/releasenotes-en.html:37"
 msgid "KDE 4.4.3"
 msgstr ""
 
@@ -193,8 +192,7 @@ msgid "New release includes many updated packages. Some of the highlights are as
 msgstr "La nueva versión incluye una serie de actualizaciones de paquetes. Algunos destacados son:"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
-msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
+msgid "KDE 4.4.4"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:46
@@ -206,7 +204,7 @@ msgid "Python 2.6.5"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "OpenOffice.org Office Suite 3.2.1.1"
+msgid "OpenOffice.org Office Suite 3.2.1.3"
 msgstr ""
 
 #: ../media-content/release-notes/releasenotes-en.html:49
@@ -245,50 +243,50 @@ msgstr "Procesador 450 MHz Intel o AMD (recomendado 1000 MHz)"
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr "Espacio de 4 GB disponible en disco (recomendado 10 GB)"
 
-#~ msgid "Pardus 2009.2 Beta release notes"
-#~ msgstr "Pardus 2009.2 Beta notas de lanzamiento"
-
-#~ msgid "Pardus 2009.2 Beta Release Notes"
-#~ msgstr "Pardus 2009.2 Beta notas de lanzamiento"
-
-#~ msgid "With the release of Pardus 2009.2 Beta, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-#~ msgstr "Con el lanzamiento de Pardus 2009.2 Beta, tecnologías clave como PiSi y COMAR se actualizaron para brindar nuevas características. YALI se actualizó para brindar una experiencia de instalación más suave y confiable. Las mejoras en el sistema de inicialización Mudur brindan un proceso de arranque más veloz y confiable, junto con un mejor soporte para sistemas de archivos remotos."
-
-#~ msgid "A new manager"
-#~ msgstr "Una nueva herramienta de administración"
-
-#~ msgid "System Manager"
-#~ msgstr "Administrador de Sistema"
-
-#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-#~ msgstr "fue añadido para facilitar la configuración de parámetros globales del sistema, como locale predeterminada, distribución de teclado, zona horaria, etc."
-
-#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-#~ msgstr "son más veloces que antes, gracias al nuevo mecanismo de cache. Muchos cambios se aplicaron al sistema de paquetes PiSi, resultando en una reducción de los paquetes PiSi por ca. 20%, además predeterminado será desde ahora en adelante el soporte de paquetes delta. La instalación y actualización de paquetes será así mucho más rápido y requiere menos ancho de banda. También el arbol de componentes (categorías de programas) fue rediseñado para mejorar la busqueda de los paquetes deseados."
-
-#~ msgid "Installation system"
-#~ msgstr "Sistema de Instalación"
-
-#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-#~ msgstr "fue rediseñado y aprovecha las nuevas funcionalidades de PiSi, duplicando la velocidad de instalación del sistema Pardus. Pardus ahora instala todo en ca. 15 minutos en una computadora promedia de hoy. Una nueva modalidad de recuperación fue agregado a YALI, permitiendo retroceder actualizaciones de paquetes, restaurar el arranque etc."
-
-#~ msgid "Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
-#~ msgstr "Pardus 2009.2 Beta viene con muchas mejoras visuales. En esta nueva versión de Pardus se encuentra el nuevo tema de iconos Milky, que consiste de acerca de 1000 íconos. Además hay una amplia gama de mejoras gráficos, desde fondos de pantalla con fotografías de naturaleza a imágenes rederizados 3D, imagenes splash etc."
-
-#~ msgid "New member of the KDE family"
-#~ msgstr "Nuevo miembro de la familia KDE"
-
-#~ msgid "2.5. New Filesystems"
-#~ msgstr "2.5. Nuevos Sistemas de Archivos"
-
-#~ msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
-#~ msgstr "Pardus viene como sistema de archivos predeteminado con el sistema de archivos Ext4, el sucesor del Ext3. Ext4 es mucho más rápido que Ext3 y tiene muchas nuevas características relacionado con capacidad y extension. Por ejemplo Ext4 soporta tamaños de particiones hasta 1 exabyte y tamaños de archivos hasta 16 terrabyte."
-
-#~ msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
-#~ msgstr "XFS, ReiserFS y el sistema experimental Btrfs también están disponibles en nuestro sistema de instalación, Yalı."
+#~ msgid "Pardus website"
+#~ msgstr "Sitio web de Pardus"
 
 #~ msgid "For more information about updates and new features on Pardus 2009.2 Beta, you can take a look at the"
 #~ msgstr "Por más informaciones acerca de actualizaciones y nuevas características de Pardus 2009.2 Beta, le recomendamos entrar a visitar "
 
-#~ msgid "Pardus website"
-#~ msgstr "Sitio web de Pardus"
+#~ msgid "XFS, ReiserFS and the experimental Btrfs are also available in our installation system, Yalı."
+#~ msgstr "XFS, ReiserFS y el sistema experimental Btrfs también están disponibles en nuestro sistema de instalación, Yalı."
+
+#~ msgid "Pardus now comes with Ext4 filesystem, successor of Ext3, as the default filesystem. Ext4 is a lot faster than Ext3 and has many new features in terms of capacity and extensions. For example, Ext4 supports partition sizes up to 1 exabyte and file sizes up to 16 terrabyte."
+#~ msgstr "Pardus viene como sistema de archivos predeteminado con el sistema de archivos Ext4, el sucesor del Ext3. Ext4 es mucho más rápido que Ext3 y tiene muchas nuevas características relacionado con capacidad y extension. Por ejemplo Ext4 soporta tamaños de particiones hasta 1 exabyte y tamaños de archivos hasta 16 terrabyte."
+
+#~ msgid "2.5. New Filesystems"
+#~ msgstr "2.5. Nuevos Sistemas de Archivos"
+
+#~ msgid "New member of the KDE family"
+#~ msgstr "Nuevo miembro de la familia KDE"
+
+#~ msgid "Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
+#~ msgstr "Pardus 2009.2 Beta viene con muchas mejoras visuales. En esta nueva versión de Pardus se encuentra el nuevo tema de iconos Milky, que consiste de acerca de 1000 íconos. Además hay una amplia gama de mejoras gráficos, desde fondos de pantalla con fotografías de naturaleza a imágenes rederizados 3D, imagenes splash etc."
+
+#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
+#~ msgstr "fue rediseñado y aprovecha las nuevas funcionalidades de PiSi, duplicando la velocidad de instalación del sistema Pardus. Pardus ahora instala todo en ca. 15 minutos en una computadora promedia de hoy. Una nueva modalidad de recuperación fue agregado a YALI, permitiendo retroceder actualizaciones de paquetes, restaurar el arranque etc."
+
+#~ msgid "Installation system"
+#~ msgstr "Sistema de Instalación"
+
+#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
+#~ msgstr "son más veloces que antes, gracias al nuevo mecanismo de cache. Muchos cambios se aplicaron al sistema de paquetes PiSi, resultando en una reducción de los paquetes PiSi por ca. 20%, además predeterminado será desde ahora en adelante el soporte de paquetes delta. La instalación y actualización de paquetes será así mucho más rápido y requiere menos ancho de banda. También el arbol de componentes (categorías de programas) fue rediseñado para mejorar la busqueda de los paquetes deseados."
+
+#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
+#~ msgstr "fue añadido para facilitar la configuración de parámetros globales del sistema, como locale predeterminada, distribución de teclado, zona horaria, etc."
+
+#~ msgid "System Manager"
+#~ msgstr "Administrador de Sistema"
+
+#~ msgid "A new manager"
+#~ msgstr "Una nueva herramienta de administración"
+
+#~ msgid "With the release of Pardus 2009.2 Beta, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
+#~ msgstr "Con el lanzamiento de Pardus 2009.2 Beta, tecnologías clave como PiSi y COMAR se actualizaron para brindar nuevas características. YALI se actualizó para brindar una experiencia de instalación más suave y confiable. Las mejoras en el sistema de inicialización Mudur brindan un proceso de arranque más veloz y confiable, junto con un mejor soporte para sistemas de archivos remotos."
+
+#~ msgid "Pardus 2009.2 Beta Release Notes"
+#~ msgstr "Pardus 2009.2 Beta notas de lanzamiento"
+
+#~ msgid "Pardus 2009.2 Beta release notes"
+#~ msgstr "Pardus 2009.2 Beta notas de lanzamiento"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-01 09:21+0300\n"
+"POT-Creation-Date: 2010-06-01 10:29+0300\n"
 "PO-Revision-Date: 2010-05-31 23:25+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
@@ -161,7 +161,7 @@ msgid "Default desktop environment is updated to"
 msgstr "L'ambiente desktop di default è satto aggiornato a"
 
 #: ../media-content/release-notes/releasenotes-en.html:37
-msgctxt "../media-content/release-notes/releasenotes-en.html:37"
+#, fuzzy
 msgid "KDE 4.4.3"
 msgstr "KDE 4.4.3"
 
@@ -194,8 +194,8 @@ msgid "New release includes many updated packages. Some of the highlights are as
 msgstr "La nuova release include molti programmi aggiornati:"
 
 #: ../media-content/release-notes/releasenotes-en.html:45
-msgctxt "../media-content/release-notes/releasenotes-en.html:45"
-msgid "KDE 4.4.3"
+#, fuzzy
+msgid "KDE 4.4.4"
 msgstr "KDE 4.4.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:46
@@ -207,7 +207,8 @@ msgid "Python 2.6.5"
 msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "OpenOffice.org Office Suite 3.2.1.1"
+#, fuzzy
+msgid "OpenOffice.org Office Suite 3.2.1.3"
 msgstr "Suite OpenOffice.org 3.2.1.1"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
@@ -246,59 +247,63 @@ msgstr "Processore Intel o AMD 450 MHz (1GHz consigliata)"
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
 msgstr "Almeno 4 GB di spazio sul disco (10 GB consigliati)"
 
-#~ msgid "Pardus 2009.2 Beta release notes"
-#~ msgstr "Note di Rilascio di Pardus 2009.2 Beta"
-
-#~ msgid "Pardus 2009.2 Beta Release Notes"
-#~ msgstr "Note di Rilascio di Pardus 2009.2 Beta"
-
-#~ msgid "With the release of Pardus 2009.2 Beta, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
-#~ msgstr "Con il rilascio di Pardus 2009.2 Beta, alcune tecnologie come PiSi e COMAR sono state aggiornate per offrire nuove caratteristiche. YALI è stato aggiornato per offrire un'installazione più semplice e lineare. I miglioramenti in Mudur offrono un avvio più veloce e un migliore supporto per i filesystem remoti."
-
-#~ msgid "A new manager"
-#~ msgstr "Un nuovo Gestore"
-
-#~ msgid "System Manager"
-#~ msgstr "Il Gestore di Sistema"
-
-#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
-#~ msgstr "è stato aggiunto per fornire una configurazione semplice e veloce del sistema in generale, come la lingua, la tastiera, il fuso orario."
-
-#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
-#~ msgstr "adesso sono molto più veloci, grazie ad un nuovo meccanismo di caching. Il sistema di pacchettizzazione PiSi ha subito molte modifiche, rendendo i già leggerissimi pacchetti circa il 20% più piccoli, e il supporto per pacchetti delta d'ora in poi sarà attivato per default. L'installazione e l'aggiornamento di pacchetti sarà molto più veloce e richiederà meno banda. Inoltre l'albero dei componenti dei pacchetti è stato rifatto, in modo da rendere la ricerca di un pacchetto ancora più semplice."
-
-#~ msgid "Installation system"
-#~ msgstr "Sistema di installazione"
-
-#~ msgid "Yalı"
-#~ msgstr "Yali"
-
-#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
-#~ msgstr "adesso è più veloce grazie alle nuove caratteristiche di PiSi, dimezzando i tempi di installazione. Adesso Yali è in grado di installare Pardus in circa 15 minuti su un computer di fascia media. Inoltre sono state aggiunte alcune caratteristiche alla modalità di ripristino."
-
-#~ msgid "Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
-#~ msgstr "Pardus 2009.2 Beta contiene un gran numero di miglioramenti grafici, come il nuovo tema di icone Milky, che comprende circa 1000 icone. Sono inoltre stati aggiunti nuovi sfondi per il desktop, immagini 3D, splash e molto altro."
-
-#~ msgid "New member of the KDE family"
-#~ msgstr "Il nuovo membro della famiglia KDE"
-
-#~ msgid "KDE4"
-#~ msgstr "KDE4"
-
-#~ msgid "Xorg 1.6.5"
-#~ msgstr "Xorg 1.6.5"
-
-#~ msgid "Texlive 2008"
-#~ msgstr "Texlive 2008"
-
-#~ msgid "GCC 4.3.3"
-#~ msgstr "GCC 4.3.3"
-
-#~ msgid "GLIBC 2.9"
-#~ msgstr "GLIBC 2.9"
+#~ msgid "."
+#~ msgstr "."
 
 #~ msgid "2.5. New Filesystems"
 #~ msgstr "2.5 Nuovi Filesystem"
 
-#~ msgid "."
-#~ msgstr "."
+#~ msgid "GLIBC 2.9"
+#~ msgstr "GLIBC 2.9"
+
+#~ msgid "GCC 4.3.3"
+#~ msgstr "GCC 4.3.3"
+
+#~ msgid "Texlive 2008"
+#~ msgstr "Texlive 2008"
+
+#~ msgid "Xorg 1.6.5"
+#~ msgstr "Xorg 1.6.5"
+
+#~ msgid "KDE4"
+#~ msgstr "KDE4"
+
+#~ msgid "New member of the KDE family"
+#~ msgstr "Il nuovo membro della famiglia KDE"
+
+#~ msgid "Pardus 2009.2 Beta comes with a lot of graphical enhancements. With this new release, Pardus users will meet the Milky icon theme of Pardus, consisting of about 1000 icons. We also have a wide variety of graphical enhancements, from wallpapers of nature photographs to 3D rendered images, splash images etc."
+#~ msgstr "Pardus 2009.2 Beta contiene un gran numero di miglioramenti grafici, come il nuovo tema di icone Milky, che comprende circa 1000 icone. Sono inoltre stati aggiunti nuovi sfondi per il desktop, immagini 3D, splash e molto altro."
+
+#~ msgid "has a boost with refactoring and new PiSi features, doubling the installation speed of Pardus. Pardus now installs everything in about 15 minutes on an average computer of today. A new feature rescue mode support is also added to Yalı, which can be used to take back previous package updates, restore bootloader etc."
+#~ msgstr "adesso è più veloce grazie alle nuove caratteristiche di PiSi, dimezzando i tempi di installazione. Adesso Yali è in grado di installare Pardus in circa 15 minuti su un computer di fascia media. Inoltre sono state aggiunte alcune caratteristiche alla modalità di ripristino."
+
+#~ msgid "Yalı"
+#~ msgstr "Yali"
+
+#~ msgid "Installation system"
+#~ msgstr "Sistema di installazione"
+
+#~ msgid "are now a lot faster than before, thanks to the new caching mechanizm. Many changes have been made to the packaging system of PiSi, making PiSi packages about 20% smaller, and also delta package support will be on by default from now on. Package installing and updating will be a lot faster and will require much less bandwidth. Package component tree has also been refactored, letting users find their preferred packages even more easily."
+#~ msgstr "adesso sono molto più veloci, grazie ad un nuovo meccanismo di caching. Il sistema di pacchettizzazione PiSi ha subito molte modifiche, rendendo i già leggerissimi pacchetti circa il 20% più piccoli, e il supporto per pacchetti delta d'ora in poi sarà attivato per default. L'installazione e l'aggiornamento di pacchetti sarà molto più veloce e richiederà meno banda. Inoltre l'albero dei componenti dei pacchetti è stato rifatto, in modo da rendere la ricerca di un pacchetto ancora più semplice."
+
+#~ msgid "has been added to provide easy configuration of system wide settings, like the default locale, keymap, timezone etc."
+#~ msgstr "è stato aggiunto per fornire una configurazione semplice e veloce del sistema in generale, come la lingua, la tastiera, il fuso orario."
+
+#~ msgid "System Manager"
+#~ msgstr "Il Gestore di Sistema"
+
+#~ msgid "A new manager"
+#~ msgstr "Un nuovo Gestore"
+
+#~ msgid "With the release of Pardus 2009.2 Beta, core technologies like PiSi and COMAR are updated to provide new features. YALI is also updated to offer a smoother and more reliable installation experience. The enhancements in Mudur initialization system provide a faster and more robust startup process along with a better remote file system support."
+#~ msgstr "Con il rilascio di Pardus 2009.2 Beta, alcune tecnologie come PiSi e COMAR sono state aggiornate per offrire nuove caratteristiche. YALI è stato aggiornato per offrire un'installazione più semplice e lineare. I miglioramenti in Mudur offrono un avvio più veloce e un migliore supporto per i filesystem remoti."
+
+#~ msgid "Pardus 2009.2 Beta Release Notes"
+#~ msgstr "Note di Rilascio di Pardus 2009.2 Beta"
+
+#~ msgid "Pardus 2009.2 Beta release notes"
+#~ msgstr "Note di Rilascio di Pardus 2009.2 Beta"
+
+#~ msgctxt "../media-content/release-notes/releasenotes-en.html:45"
+#~ msgid "KDE 4.4.3"
+#~ msgstr "KDE 4.4.3"
