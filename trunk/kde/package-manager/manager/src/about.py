@@ -13,13 +13,14 @@
 
 import context as ctx
 
+version = "2.2.3"
+
 if ctx.Pds.session == ctx.pds.Kde4:
     from PyKDE4.kdecore import ki18n, KAboutData
 
     # Application Data
     appName     = "package-manager"
     catalog     = appName
-    version     = "2.2.2"
     programName = ki18n("Package Manager")
     description = ki18n("Package Manager")
     license     = KAboutData.License_GPL

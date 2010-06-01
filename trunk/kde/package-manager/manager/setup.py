@@ -16,6 +16,8 @@ import glob
 import shutil
 import sys
 
+from src import about
+
 from distutils.core import setup
 from distutils.cmd import Command
 from distutils.command.build import build
@@ -23,7 +25,6 @@ from distutils.command.clean import clean
 from distutils.command.install import install
 
 PROJECT = 'package-manager'
-__version = '2.2.2'
 FOR_KDE_4 = False
 
 if 'kde4' in sys.argv:
@@ -198,7 +199,7 @@ if "update_messages" in sys.argv:
 
 setup(
       name              = PROJECT,
-      version           = __version,
+      version           = about.version,
       description       = unicode('Package Manager'),
       license           = unicode('GPL'),
       author            = '',
