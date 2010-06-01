@@ -89,7 +89,7 @@ msgstr "(Système de suivi des bogues de Pardus) pour signaler un bug, envoyer u
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid "2. What is new ?"
-msgstr "2. Ce qui est nouveau"
+msgstr "2. Les nouveautés"
 
 #: ../media-content/release-notes/releasenotes-en.html:20
 msgid "2.1. Updates in Pardus Technologies"
@@ -178,7 +178,7 @@ msgstr ", optimisé pour les petits écrans."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
-msgstr "L'équipe Pardus a intégré le module Kosd kded, un visionneur d'état fantaisie, un afficheur du volume sonore, et un contrôleur de luminosité."
+msgstr "L'équipe de Pardus a intégré le module Kosd de KDED, un visionneur d'état fantaisie, un afficheur du volume sonore, et un contrôleur de luminosité."
 
 #: ../media-content/release-notes/releasenotes-en.html:42
 msgid "With the new version KDE, Pardus provides a new look and feel for users. Plasmoid based desktop system, where every component can be placed on anywhere on the desktop, Strigi desktop search fully integrated to desktop environment, desktop effects coming as a part of KDE, Dolphin the next generation file manager with many remote protocol support are just a few examples of the new desktop experience for our users."
@@ -231,7 +231,7 @@ msgstr "3. Requis pour l'installation"
 
 #: ../media-content/release-notes/releasenotes-en.html:54
 msgid "You can run Pardus on an average x86 compatible hardware. We suggest to use at least 512 MB RAM (memory) and a 1400 MHz processor to get a good performance. Minimum and recommended hardware requirements for Pardus 2009.2 are mentioned below:"
-msgstr "Vous pouvez exécuter Pardus sur du matériel compatible x86. Nous vous suggérons d'utiliser au moins 512 Mo de RAM (mémoire) et un processeur 1400 MHz pour obtenir une bonne performance. Les configurations matérielles minimale et recommandée pour Pardus 2009.2 sont mentionnées ci-dessous :"
+msgstr "Vous pouvez exécuter Pardus sur du matériel compatible x86. Nous vous suggérons d'utiliser au moins 512 Mo de RAM (mémoire) et un processeur 1 400 MHz pour obtenir une bonne performance. Les configurations matérielles minimale et recommandée pour Pardus 2009.2 sont mentionnées ci-dessous :"
 
 #: ../media-content/release-notes/releasenotes-en.html:55
 msgid "256 MB memory (1GB or more recommended)"
@@ -239,7 +239,7 @@ msgstr "256 Mo de mémoire (1 Go ou plus recommandé)"
 
 #: ../media-content/release-notes/releasenotes-en.html:56
 msgid "450 MHz Intel or AMD processor (1000 MHz recommended)"
-msgstr "Processeur Intel ou AMD 450 MHz (1000 MHz recommandé)"
+msgstr "Processeur Intel ou AMD 450 MHz (1 000 MHz recommandé)"
 
 #: ../media-content/release-notes/releasenotes-en.html:57
 msgid "At least 4 GB of free hard disk space (10 GB recommended)"
