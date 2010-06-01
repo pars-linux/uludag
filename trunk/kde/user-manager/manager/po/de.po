@@ -2,7 +2,7 @@
 # User Manager.
 # Copyright (C) 2006-2009, TÜBİTAK/UEKAE
 # This file is distributed under the same license as the User Manager package.
-#
+# 
 # Bahadır Kandemir <bahadir@pardus.org.tr>, 2009.
 # Klemens Häckel <click3d at linuxmail dot org>, 2009.
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
@@ -53,7 +53,7 @@ msgstr "Homeverzeichnis:"
 
 #: .tmp/ui_edituser.py:192
 msgid "Shell:"
-msgstr ""
+msgstr "Shell:"
 
 #: .tmp/ui_edituser.py:193
 msgid "Give administrator rights."
@@ -113,8 +113,7 @@ msgstr "Sie müssen mindestens eine Gruppe auswählen."
 
 #: .tmp/usermanager/edit.py:320
 msgid "Start with typing this user's full name."
-msgstr ""
-"Beginnen Sie mit der Eingabe des vollständigen Namens dieses Benutzers."
+msgstr "Beginnen Sie mit der Eingabe des vollständigen Namens dieses Benutzers."
 
 #: .tmp/usermanager/edit.py:323
 msgid "You should enter a password for this user."
@@ -126,9 +125,7 @@ msgstr "Das Passwort muss länger sein."
 
 #: .tmp/usermanager/edit.py:332
 msgid "Don't use your full name or user name as a password."
-msgstr ""
-"Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als "
-"Passwort."
+msgstr "Bitte verwenden Sie nicht Ihren vollständigen Namen oder Benutzernamen als Passwort."
 
 #: .tmp/usermanager/edit.py:335
 msgid "Passwords don't match."
@@ -151,10 +148,8 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm "
-"ausführt.\n"
-"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und "
-"korrekt konfiguriert wurden."
+"Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
+"Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
 
 #: .tmp/usermanager/main.py:195
 msgid "Users"
@@ -183,7 +178,7 @@ msgstr "Zugriff verboten."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
+msgstr "Kann nicht gelöscht werden. <b>%1</b>. Der Benutzer ist noch angemeldet."
 
 #: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -203,7 +198,7 @@ msgstr "Benutzer-Manager"
 
 #: .tmp/usermanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr ""
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
 #: .tmp/usermanager/about.py:25
 msgid " "
@@ -211,7 +206,7 @@ msgstr " "
 
 #: .tmp/usermanager/about.py:32
 msgid "Bahadır Kandemir"
-msgstr ""
+msgstr "Bahadır Kandemir"
 
 #: .tmp/usermanager/about.py:32
 msgid "Current Maintainer"
