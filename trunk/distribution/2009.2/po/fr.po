@@ -69,7 +69,7 @@ msgstr "Les images Çalışan (live) et Kurulan (installation) proposent les lan
 
 #: ../media-content/release-notes/releasenotes-en.html:14
 msgid "To start your Pardus experience, you need to insert the related media in your computer, reboot the system and set up your computer BIOS to boot from the Pardus media."
-msgstr ""
+msgstr "Pour commencer votre expérience de Pardus, vous devez insérer le média (CD, clef USB) dans votre ordinateur, redémarrez le système et configurer votre BIOS de l'ordinateur pour démarrer à partir du support de Pardus (CD, USB)."
 
 #: ../media-content/release-notes/releasenotes-en.html:15
 msgid "1.3. Feedback"
