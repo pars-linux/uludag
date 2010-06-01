@@ -374,7 +374,7 @@ class EntryEditor:
         if res and len(res) == 1:
             self.bugs_atom = res[0].strip()
 
-        title = self.bugs_atom + ": DESCR (" + self.bugs_unify_cvenames(cvelist) + ")"
+        title = self.bugs_atom + ":  (" + self.bugs_unify_cvenames(cvelist) + ")"
         description = ""
 
         bug_url = ""
