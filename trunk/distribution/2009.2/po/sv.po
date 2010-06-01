@@ -52,7 +52,6 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Pardus är en Linuxdistribution utvecklad som en produkt av Pardusprojektet, av Turkish National Research Institute of Electronics and Cryptology (UEKAE), som hör till Scientific and Technological Research Council of Turkey (TÜBİTAK), och av frivilliga bidragsgivare. Det är döpt efter det latinska (och vetenskapliga) namnet för den Anatoliska leoparden, Panthera pardus tulliana. "
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-#, fuzzy
 msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr "Pardus består av ett Linuxbaserat operativsystem, programvara under öppen källkod och tillhörande filer nödvändiga för skrivbords- och servermiljöer, med sikte på att ge användaren en enkel och rik upplevelse."
 
@@ -62,7 +61,7 @@ msgstr "1.2. Hur kan jag använda Pardus"
 
 #: ../media-content/release-notes/releasenotes-en.html:12
 msgid "Pardus comes with two flavours, Kurulan (which installs Pardus to your computer) or Çalışan (live media, running on the media only, slower but does not install on your computer) and can be started from a CD / DVD / External storage (USB stick for example) or can be installed to internal harddisk depending on your preference."
-msgstr "Pardus finns i två varianter, Kurulan, som installerar Pardus på datorn, och Çalışan (live-media som körs från mediat direkt utan att installera, men är långsammare) som kan köras från CD / DVD / USB-minne etc. För att påbörja din Pardusupplevelse sätter du in vald variant i din dator, startar om systemet och ställer in BIOS till att starta från önskat media."
+msgstr "Pardus finns i två varianter, Kurulan, som installerar Pardus på datorn, och Çalışan (live-media som körs direkt från mediat utan att installera, men är långsammare) som kan köras från CD / DVD / USB-minne etc. För att påbörja din Pardusupplevelse sätter du in vald variant i din dator, startar om systemet och ställer in BIOS till att starta från önskat media."
 
 #: ../media-content/release-notes/releasenotes-en.html:13
 msgid "Çalışan (live) image and Kurulan (installation) images contain support for English and Turkish languages, and can fit on one CD. International image is a multilanguage image (including Turkish) contains language packages, some applications and artwork that are not included in Kurulan image. International image is about 1GB in size, and can be written on a DVD or harddisk like media like a USB stick."
@@ -86,7 +85,7 @@ msgstr "http://bugs.pardus.org.tr"
 
 #: ../media-content/release-notes/releasenotes-en.html:18
 msgid ", (Pardus bug tracking system) to report a bug, send a bug fix or suggest anything related to Pardus. We would like to thank our users and developers for their bug reports, fixes, new package or feature suggestions, which makes up Pardus what it is."
-msgstr ", (Pardus felhanteringssystem) för att rapportera fel, rätta fel, eller ge förslag relaterade till Pardus. Vi vill tacka våra användare och utvecklare för deras bidrag med felrapporter, fixar, nya paket och förslag på nya finesser till den här versionen."
+msgstr ", (Pardus felhanteringssystem) för att rapportera fel, rätta fel, eller ge förslag relaterade till Pardus. Vi vill tacka våra användare och utvecklare för deras bidrag med felrapporter, felrättningar, nya paket och förslag på nya finesser till den här versionen."
 
 #: ../media-content/release-notes/releasenotes-en.html:19
 msgid "2. What is new ?"
@@ -114,7 +113,7 @@ msgstr "plasma-runner-pisi"
 
 #: ../media-content/release-notes/releasenotes-en.html:25
 msgid "has been added to provide easy package installation in KDE environment. Under KDE environment, when you start up krunner (default by pressing ALT-F2) and write a command that is not available on the running system but provided by a package in Pardus repositories, an entry to install the necessary package will appear. Simply selecting the entry will automatically install the required package."
-msgstr "har skapats för att förenkla paketinstallation i KDE. När man startar krunner (ALT+F2)i KDE, och skriver ett program som inte är installerat men som finns i förrådet, ges man möjlighet att enkelt installera programmet."
+msgstr "har skapats för att förenkla paketinstallation i KDE. När man startar krunner (ALT+F2) i KDE, och skriver ett program som inte är installerat men som finns i förrådet, ges man möjlighet att enkelt installera programmet."
 
 #: ../media-content/release-notes/releasenotes-en.html:26
 msgid "Package Manager"
@@ -171,11 +170,11 @@ msgstr ", den senaste stabila utgåvan av KDE som har modifierats och förbättr
 
 #: ../media-content/release-notes/releasenotes-en.html:39
 msgid "Netbook Mode"
-msgstr "Netbook-läge"
+msgstr "Netbook-läget"
 
 #: ../media-content/release-notes/releasenotes-en.html:40
 msgid ", optimized for small displays."
-msgstr ", optimerad för små skärmar."
+msgstr ", optimerat för små skärmar."
 
 #: ../media-content/release-notes/releasenotes-en.html:41
 msgid "Pardus team has integrated Kosd kded module, an eye candy status and level display for sound volume and monitor brightness with the new KDE release."
@@ -208,11 +207,11 @@ msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
 msgid "OpenOffice.org Office Suite 3.2.1.3"
-msgstr "OpenOffice.org Kontorspaket 3.2.1.3"
+msgstr "OpenOffice.org kontorspaket 3.2.1.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
 msgid "Firefox Web Browser 3.6.3"
-msgstr "Firefox Webbläsare 3.6.3"
+msgstr "Firefox webbläsare 3.6.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:50
 msgid "Thunderbird 3.0.4"
