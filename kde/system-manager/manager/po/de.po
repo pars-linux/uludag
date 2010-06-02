@@ -56,7 +56,7 @@ msgstr "Die Hardware-clock ist auf UTC eingestellt"
 
 #: .tmp/ui_main.py:165
 msgid "Normalize systematic drift of the hardware clock"
-msgstr "Systematische Zeitdrift der hardware-clock ausgleichen"
+msgstr "Systematische Zeitdrift der Hardware-Uhr ausgleichen"
 
 #: .tmp/ui_main.py:166
 msgid "Console Settings"
