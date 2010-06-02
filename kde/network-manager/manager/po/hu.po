@@ -1,0 +1,266 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Daniel Kovács <bicskas9323@gmail.com>, 2010.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-12-16 15:55+0200\n"
+"PO-Revision-Date: 2010-06-02 09:15+0100\n"
+"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
+msgid "Signal Strength"
+msgstr "Jelerősség"
+
+#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+msgid "Network Manager"
+msgstr "Hálózat menedzser"
+
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Fejlesztő"
+
+#: .tmp/networkmanager/base.py:186
+msgid "Available Profiles"
+msgstr "Elérhető profilok"
+
+#: .tmp/networkmanager/base.py:208
+msgid "All Profiles"
+msgstr "Minden profil"
+
+#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+msgid "No Device Found"
+msgstr "Nem található eszköz"
+
+#: .tmp/networkmanager/base.py:396
+msgid "No Authentication"
+msgstr "Nincs hitelesítve"
+
+#: .tmp/networkmanager/base.py:624
+msgid "Do you really want to remove profile %1?"
+msgstr "Valóban el akarod távolítani a profil %1?"
+
+#: .tmp/networkmanager/widgets.py:74
+msgid "Enter PIN"
+msgstr "PIN bekérés"
+
+#: .tmp/networkmanager/widgets.py:75
+msgid "Please Enter PIN Code for"
+msgstr "Kérlek írd be a PIN kódod"
+
+#: .tmp/networkmanager/widgets.py:158
+msgid "You've typed the wrong PIN code for 3 times"
+msgstr "Három(3) alkalommal rossz PIN kódot adtál meg"
+
+#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+msgid "Refresh"
+msgstr "Frissítés"
+
+#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+msgid "Scanning..."
+msgstr "Letapogatás..."
+
+#: .tmp/networkmanager/widgets.py:378
+msgid "Disconnected"
+msgstr "Szétkapcsolva"
+
+#: .tmp/networkmanager/widgets.py:383
+#, python-format
+msgid "Connected: %s"
+msgstr "Kapcsolódva: %s"
+
+#: .tmp/networkmanager/widgets.py:388
+msgid "Connecting"
+msgstr "Kapcsolódás"
+
+#: .tmp/networkmanager/widgets.py:396
+msgid "Cable or device is unplugged"
+msgstr "Kábel vagy eszköz nincs csatlakoztatva"
+
+#: .tmp/networkmanager/widgets.py:412
+msgid "Access denied"
+msgstr "Hozzáférés megtagadva"
+
+#: .tmp/ui_main.py:334
+msgid "Form"
+msgstr "Forma"
+
+#: .tmp/ui_main.py:335
+msgid "Create Profile"
+msgstr "Profil készítése"
+
+#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+msgid "Nameserver Settings"
+msgstr "Névszerver beállítások"
+
+#: .tmp/ui_main.py:339
+msgid "Profile Name :"
+msgstr "Profil név:"
+
+#: .tmp/ui_main.py:340
+msgid "Device : "
+msgstr "Eszköz : "
+
+#: .tmp/ui_main.py:341
+msgid "Cancel"
+msgstr "Mégse"
+
+#: .tmp/ui_main.py:342
+msgid "Network Settings"
+msgstr "Hálózati beállítások"
+
+#: .tmp/ui_main.py:343
+msgid "Use DHCP"
+msgstr "DHCP használata"
+
+#: .tmp/ui_main.py:344
+msgid "Use Manual Settings"
+msgstr "Kézi beállítás használata"
+
+#: .tmp/ui_main.py:345
+msgid "Address :"
+msgstr "Cím :"
+
+#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+msgid "Custom"
+msgstr "Egyedi"
+
+#: .tmp/ui_main.py:347
+msgid "Network Mask :"
+msgstr "Hálózata maszk :"
+
+#: .tmp/ui_main.py:348
+msgid "Default Gateway :"
+msgstr "Alapértelmezett hozzáférés :"
+
+#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+msgid "Name Servers"
+msgstr "Névszerverek"
+
+#: .tmp/ui_main.py:351
+msgid "Default"
+msgstr "Alapértelmezett"
+
+#: .tmp/ui_main.py:352
+msgid "Automatic"
+msgstr "Automatikus"
+
+#: .tmp/ui_main.py:353
+msgid "Custom :"
+msgstr "Egyedi :"
+
+#: .tmp/ui_main.py:354
+msgid "Remote"
+msgstr "Távoli"
+
+#: .tmp/ui_main.py:355
+msgid "Network Name (ESSID) :"
+msgstr "Hálózati név (ESSID) :"
+
+#: .tmp/ui_main.py:356
+msgid "Scan"
+msgstr "Letapogatás"
+
+#: .tmp/ui_main.py:357
+msgid "Security Type :"
+msgstr "Biztonsági típus :"
+
+#: .tmp/ui_main.py:358
+msgid "Settings"
+msgstr "Beállítás"
+
+#: .tmp/ui_main.py:359
+msgid "Key :"
+msgstr "Kulcs :"
+
+#: .tmp/ui_main.py:360
+msgid "Hide Password"
+msgstr "Jelszó elrejtése"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Párbeszéd"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Részletek"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Eszköz"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Eszköz:"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Válassz egy operátort"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Operátor:"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN:"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "A PIN megjegyzése ehhez a kapcsolathoz"
+
+#: .tmp/ui_security.py:35
+msgid "Security Settings"
+msgstr "Biztonsági beállítások"
+
+#: .tmp/ui_item.py:103
+msgid "Set connection state."
+msgstr "Kapcsolat státuszának beállítása."
+
+#: .tmp/ui_item.py:104
+msgid "Edit connection"
+msgstr "Kapcsolat szerkesztése"
+
+#: .tmp/ui_item.py:105
+msgid "Delete connection"
+msgstr "Kapcsolat törlése"
+
+#: .tmp/ui_item.py:107
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Gépnév"
