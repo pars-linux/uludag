@@ -34,8 +34,21 @@ def update_messages():
     # Collect Python files
     os.system("cp -R code/* .tmp/")
 
+    # Collect desktop files
+    os.system("cp -R data/*.desktop.in .tmp/")
+
+    # Generate headers for desktop files
+    for filename in glob.glob(".tmp/*.desktop.in"):
+        os.system("intltool-extract --type=gettext/ini %s" % filename)
+
     # Generate POT file
-    os.system("find .tmp -name '*.py' | xargs xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot" % (about.catalog, about.catalog))
+    os.system("find .tmp -name '*.py' -o -name '*.h' | "
+              "xargs xgettext --default-domain=%s \
+                              --keyword=_ \
+                              --keyword=N_ \
+                              --keyword=i18n \
+                              --keyword=ki18n \
+                              -o po/%s.pot" % (about.catalog, about.catalog))
 
     # Update PO files
     for item in os.listdir("po"):
@@ -102,6 +115,10 @@ class Install(install):
 
         # Install desktop files
         print "Installing desktop files..."
+
+        for filename in glob.glob("data/*.desktop.in"):
+            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
+
         self.copy_file("data/kcm_%s.desktop" % about.modName, service_dir)
         self.copy_file("data/kcm_displaydevices.desktop", service_dir)
         self.copy_file("data/%s.desktop" % about.modName, apps_dir)
