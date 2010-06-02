@@ -23,7 +23,7 @@ msgstr "Tercihler"
 #: .tmp/ScrOptions.py:24 .tmp/ScrProgress.py:206 .tmp/ScrSummary.py:26
 #: .tmp/ScrUserFiles.py:143 .tmp/ScrWelcome.py:23
 msgid "Welcome to Migration Tool Wizard :)"
-msgstr "Göç Aracına hoşgeldiniz"
+msgstr "Göç Aracına Hoş Geldiniz :)"
 
 #: .tmp/ScrOptions.py:61
 msgid "Keep current wallpaper"
@@ -71,7 +71,7 @@ msgstr "Internet Explorer sık kullanılanları"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
-msgstr "Eski Internet Explorer sık kullanılanlarınzı Pardus'daki Firefox'a kopyalar."
+msgstr "Eski Internet Explorer sık kullanılanlarınızı Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
@@ -83,7 +83,7 @@ msgstr "Windows Mail hesaplar"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
 msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
-msgstr "Eski posta ve haber grubu hesaplarnz KMail ve KNode uygulamalarna kopyalar."
+msgstr "Eski posta ve haber grubu hesaplarınızı KMail ve KNode uygulamalarına kopyalar."
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
@@ -91,11 +91,11 @@ msgstr "Thunderbird hesapları"
 
 #: .tmp/ScrOptions.py:168
 msgid "Copy e-mail messages from e-mail accounts"
-msgstr "E-posta hesaplarndaki epostalar kopyala"
+msgstr "E-posta hesaplarındaki e-postalar kopyala"
 
 #: .tmp/ScrOptions.py:170
 msgid "Copies your e-mail messages to KMail from selected applications above."
-msgstr "Yukarıda seçili olan uygulamalardaki epostalar KMail'e kopyalar."
+msgstr "Yukarıda seçili olan uygulamalardaki e-postalar KMail'e kopyalar."
 
 #: .tmp/ScrOptions.py:179 .tmp/ScrProgress.py:377
 msgid "Instant Messenger Accounts"
