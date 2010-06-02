@@ -20,7 +20,7 @@ msgstr ""
 #: code/widgets/configIconui.py:53 code/widgets/configPopupui.py:37
 #: code/widgets/itemui.py:39 code/widgets/popupui.py:151
 msgid "Form"
-msgstr "Formblatt"
+msgstr "Form"
 
 #: code/widgets/configIconui.py:54
 msgid "Show connection status"
@@ -28,7 +28,7 @@ msgstr "Verbindungsstatus zeigen"
 
 #: code/widgets/configIconui.py:55
 msgid "Show traffic lights"
-msgstr "Lichter bei Datenverkehr anzeigen"
+msgstr "Signalichter anzeigen"
 
 #: code/widgets/configIconui.py:56
 msgid "Update wifi signal quality"
@@ -55,8 +55,9 @@ msgid "Show selected profiles from list"
 msgstr "Ausgewählte Profile anzeigen"
 
 #: code/widgets/itemui.py:40
+#, fuzzy
 msgid "PushButton"
-msgstr "Druckknopf"
+msgstr "PushButton"
 
 #: code/widgets/notify.py:63
 msgid "Network Manager"
