@@ -1,5 +1,5 @@
 <PardusmanProject type="live" media="cd" compression="lzma">
-    <Title>Pardus Calisan 2009.2 RC</Title>
+    <Title>Pardus Calisan 2009.2 Geronticus eremita</Title>
     <WorkDir>/tmp/iso</WorkDir>
     <ReleaseFiles>/tmp/pardusman/distribution/media-content</ReleaseFiles>
     <PackageSelection repo_uri="http://buildfarm/pardus-2009-test/pisi-index.xml.bz2">
@@ -389,6 +389,7 @@
         <Package>droid-fonts</Package>
         <Package>dsniff</Package>
         <Package>e2fsprogs</Package>
+        <Package>e3</Package>
         <Package>eagle-firmware</Package>
         <Package>ebook-tools</Package>
         <Package>eciadsl</Package>
@@ -750,6 +751,7 @@
         <Package>mdadm</Package>
         <Package>mdbtools</Package>
         <Package>meanwhile</Package>
+        <Package>mediastreamer2</Package>
         <Package>memtest86</Package>
         <Package>mesa</Package>
         <Package>microcode-ctl</Package>
