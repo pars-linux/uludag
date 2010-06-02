@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 10:11+0300\n"
+"POT-Creation-Date: 2010-06-02 11:48+0300\n"
 "PO-Revision-Date: 2010-06-01 17:02+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -15,86 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_screens.py:83 .tmp/displaysettings/about.py:20
-#: .tmp/displaysettings.desktop.in.h:2 .tmp/ui_devices.py:67
+#: .tmp/displaysettings.desktop.in.h:1 .tmp/kcm_displaydevices.desktop.in.h:1
+msgid "Configure display devices"
+msgstr "Kijelző eszközök konfigurálása"
+
+#: .tmp/displaysettings.desktop.in.h:2 .tmp/displaysettings/about.py:20
+#: .tmp/ui_devices.py:67 .tmp/ui_screens.py:83
 msgid "Display Settings"
 msgstr "Kijelző beállítások"
-
-#: .tmp/ui_screens.py:84
-msgid "Outputs"
-msgstr "Kimenet"
-
-#: .tmp/ui_screens.py:85
-msgid "Extend desktop to all displays"
-msgstr "Asztal kiterjesztése az összes kijelzőre"
-
-#: .tmp/ui_screens.py:86
-msgid "Detect Outputs"
-msgstr "Kimenet észlelése"
-
-#: .tmp/ui_screens.py:87
-msgid "Output Properties"
-msgstr "Kimenet tulajdonsága"
-
-#: .tmp/ui_screens.py:88
-msgid "Size:"
-msgstr "Méret:"
-
-#: .tmp/ui_screens.py:89
-msgid "Refresh Rate:"
-msgstr "Frissítési frekvencia:"
-
-#: .tmp/ui_screens.py:90
-msgid "Rotation:"
-msgstr "Forgatás:"
-
-#: .tmp/ui_screens.py:91
-msgid "No Rotation"
-msgstr "Nincs forgatás"
-
-#: .tmp/ui_screens.py:92
-msgid "Left (90 degrees)"
-msgstr "Bal (90 fok)"
-
-#: .tmp/ui_screens.py:93
-msgid "Upside-Down (180 degrees)"
-msgstr "Felfordítva (180 fok)"
-
-#: .tmp/ui_screens.py:94
-msgid "Right (270 degrees)"
-msgstr "Jobb (270 fok)"
-
-#: .tmp/ui_videocard.py:76
-msgid "Video Card Configuration"
-msgstr "Videokártya konfigurálás"
-
-#: .tmp/ui_videocard.py:77
-msgid "Video Driver"
-msgstr "Grafikus meghajtó"
-
-#: .tmp/ui_videocard.py:78
-msgid "Use the default driver for the detected card."
-msgstr "Az alapértelemezett meghajtó használata az észlelt kártyánál."
-
-#: .tmp/ui_videocard.py:79 .tmp/ui_videocard.py:82
-msgid "Select from the list:"
-msgstr "Válassz a listából:"
-
-#: .tmp/ui_videocard.py:80
-msgid "Color Depth"
-msgstr "Színmélység"
-
-#: .tmp/ui_videocard.py:81
-msgid "Determined by the driver"
-msgstr "A meghajtó által determinálva"
-
-#: .tmp/ui_videocard.py:83
-msgid "16 Bit"
-msgstr "16 Bit"
-
-#: .tmp/ui_videocard.py:84
-msgid "24 Bit"
-msgstr "24 Bit"
 
 #: .tmp/displaysettings/about.py:22
 msgid "Display Configuration Tool"
@@ -105,12 +33,12 @@ msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/displaysettings/about.py:32
-msgid "Fatih Aşıcı"
-msgstr "Fatih Aşıcı"
-
-#: .tmp/displaysettings/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
+
+#: .tmp/displaysettings/about.py:32
+msgid "Fatih Aşıcı"
+msgstr "Fatih Aşıcı"
 
 #: .tmp/displaysettings/device.py:60
 msgid "Default Output"
@@ -169,6 +97,14 @@ msgstr "Csomagkezelő indítása"
 msgid "You must restart your X session for the changes to take effect."
 msgstr "Újra kell indítanod az X-szervert, hogy a beállításod érvénybe lépjen."
 
+#: .tmp/displaysettings/monitorbrowser.py:41
+msgid "Type:"
+msgstr "Típus:"
+
+#: .tmp/displaysettings/monitorbrowser.py:42
+msgid "Monitors:"
+msgstr "Monitorok:"
+
 #: .tmp/displaysettings/outputdialog.py:43
 msgid "Settings for Output %1"
 msgstr "A kiement beállításai %1"
@@ -180,14 +116,6 @@ msgstr "Egyedi monitor"
 #: .tmp/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Kattints a \"Válassz...\" gombra a monitor kiválasztásához</i></qt>"
-
-#: .tmp/displaysettings/monitorbrowser.py:41
-msgid "Type:"
-msgstr "Típus:"
-
-#: .tmp/displaysettings/monitorbrowser.py:42
-msgid "Monitors:"
-msgstr "Monitorok:"
 
 #: .tmp/displaysettings/screenswidget.py:193
 #: .tmp/displaysettings/screenswidget.py:268
@@ -202,9 +130,50 @@ msgstr "Kimeneti tulajdonságok - %1"
 msgid "You must restart your X session for all the changes to take effect."
 msgstr "Újra kell indítanod az X-szervert, hogy a beállításod érvénybe lépjen."
 
-#: .tmp/displaysettings.desktop.in.h:1 .tmp/kcm_displaydevices.desktop.in.h:1
-msgid "Configure display devices"
-msgstr "Kijelző eszközök konfigurálása"
+#: .tmp/kcm_displaydevices.desktop.in.h:2
+msgid "Devices"
+msgstr "Eszközök"
+
+#: .tmp/kcm_displaydevices.desktop.in.h:3
+#: .tmp/kcm_displaysettings.desktop.in.h:3
+msgid "python display screen video monitor manager"
+msgstr "Python kijelző képernyő videó monitor menedzser"
+
+#: .tmp/kcm_displaysettings.desktop.in.h:1
+msgid "Resize and rotate displays"
+msgstr "Kijelző forgatása és átméretezése"
+
+#: .tmp/kcm_displaysettings.desktop.in.h:2
+msgid "Screens"
+msgstr "Képernyők"
+
+#: .tmp/ui_devices.py:68
+msgid "Video Card:"
+msgstr "Videokártya:"
+
+#: .tmp/ui_devices.py:69
+msgid "Card Info"
+msgstr "Kártya információ"
+
+#: .tmp/ui_devices.py:70
+msgid "Configure..."
+msgstr "Beállítás..."
+
+#: .tmp/ui_devices.py:71
+msgid "Outputs:"
+msgstr "Kimenetek:"
+
+#: .tmp/ui_monitorbrowser.py:48
+msgid "Browse Monitors"
+msgstr "Tallózás a monitorok között"
+
+#: .tmp/ui_monitorbrowser.py:49
+msgid "Vendors:"
+msgstr "Gyártók:"
+
+#: .tmp/ui_monitorbrowser.py:50
+msgid "Models:"
+msgstr "Modellek:"
 
 #: .tmp/ui_output.py:225
 msgid "Output Configuration"
@@ -302,47 +271,78 @@ msgstr "Dimenziók"
 msgid "Ignore this output"
 msgstr "Ezen kimenet mellőzése"
 
-#: .tmp/kcm_displaysettings.desktop.in.h:1
-msgid "Resize and rotate displays"
-msgstr "Kijelző forgatása és átméretezése"
+#: .tmp/ui_screens.py:84
+msgid "Outputs"
+msgstr "Kimenet"
 
-#: .tmp/kcm_displaysettings.desktop.in.h:2
-msgid "Screens"
-msgstr "Képernyők"
+#: .tmp/ui_screens.py:85
+msgid "Extend desktop to all displays"
+msgstr "Asztal kiterjesztése az összes kijelzőre"
 
-#: .tmp/kcm_displaysettings.desktop.in.h:3
-#: .tmp/kcm_displaydevices.desktop.in.h:3
-msgid "python display screen video monitor manager"
-msgstr "Python kijelző képernyő videó monitor menedzser"
+#: .tmp/ui_screens.py:86
+msgid "Detect Outputs"
+msgstr "Kimenet észlelése"
 
-#: .tmp/ui_monitorbrowser.py:48
-msgid "Browse Monitors"
-msgstr "Tallózás a monitorok között"
+#: .tmp/ui_screens.py:87
+msgid "Output Properties"
+msgstr "Kimenet tulajdonsága"
 
-#: .tmp/ui_monitorbrowser.py:49
-msgid "Vendors:"
-msgstr "Gyártók:"
+#: .tmp/ui_screens.py:88
+msgid "Size:"
+msgstr "Méret:"
 
-#: .tmp/ui_monitorbrowser.py:50
-msgid "Models:"
-msgstr "Modellek:"
+#: .tmp/ui_screens.py:89
+msgid "Refresh Rate:"
+msgstr "Frissítési frekvencia:"
 
-#: .tmp/kcm_displaydevices.desktop.in.h:2
-msgid "Devices"
-msgstr "Eszközök"
+#: .tmp/ui_screens.py:90
+msgid "Rotation:"
+msgstr "Forgatás:"
 
-#: .tmp/ui_devices.py:68
-msgid "Video Card:"
-msgstr "Videokártya:"
+#: .tmp/ui_screens.py:91
+msgid "No Rotation"
+msgstr "Nincs forgatás"
 
-#: .tmp/ui_devices.py:69
-msgid "Card Info"
-msgstr "Kártya információ"
+#: .tmp/ui_screens.py:92
+msgid "Left (90 degrees)"
+msgstr "Bal (90 fok)"
 
-#: .tmp/ui_devices.py:70
-msgid "Configure..."
-msgstr "Beállítás..."
+#: .tmp/ui_screens.py:93
+msgid "Upside-Down (180 degrees)"
+msgstr "Felfordítva (180 fok)"
 
-#: .tmp/ui_devices.py:71
-msgid "Outputs:"
-msgstr "Kimenetek:"
+#: .tmp/ui_screens.py:94
+msgid "Right (270 degrees)"
+msgstr "Jobb (270 fok)"
+
+#: .tmp/ui_videocard.py:76
+msgid "Video Card Configuration"
+msgstr "Videokártya konfigurálás"
+
+#: .tmp/ui_videocard.py:77
+msgid "Video Driver"
+msgstr "Grafikus meghajtó"
+
+#: .tmp/ui_videocard.py:78
+msgid "Use the default driver for the detected card."
+msgstr "Az alapértelemezett meghajtó használata az észlelt kártyánál."
+
+#: .tmp/ui_videocard.py:79 .tmp/ui_videocard.py:82
+msgid "Select from the list:"
+msgstr "Válassz a listából:"
+
+#: .tmp/ui_videocard.py:80
+msgid "Color Depth"
+msgstr "Színmélység"
+
+#: .tmp/ui_videocard.py:81
+msgid "Determined by the driver"
+msgstr "A meghajtó által determinálva"
+
+#: .tmp/ui_videocard.py:83
+msgid "16 Bit"
+msgstr "16 Bit"
+
+#: .tmp/ui_videocard.py:84
+msgid "24 Bit"
+msgstr "24 Bit"
