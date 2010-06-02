@@ -68,7 +68,7 @@ msgstr "Anzahl der echten Konsolen:"
 
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
-msgstr "System - Manager"
+msgstr "Grundeinstellungen"
 
 #: .tmp/systemmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
