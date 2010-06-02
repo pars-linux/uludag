@@ -324,7 +324,7 @@ msgstr "Installa pacchetto/i"
 
 #: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
-msgstr ""
+msgstr "Spunta per selezionare tutti i pacchetti nella lista"
 
 #: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
@@ -528,7 +528,7 @@ msgstr "<b>Annullamento operazione...</b>"
 
 #: .tmp/settingsdialog.py:150
 msgid "Open Directory"
-msgstr ""
+msgstr "Apri Cartella"
 
 #: .tmp/settingsdialog.py:159
 msgid "Warning"
@@ -699,9 +699,8 @@ msgid "Help"
 msgstr "Aiuto"
 
 #: .tmp/pm-install.py:47
-#, fuzzy
 msgid "%prog packages_to_install"
-msgstr "Seleziona il/i pacchetto/i per l'installazione:"
+msgstr "%prog pacchetti_da_installare"
 
 #: .tmp/ui_repodialog.py:55
 msgid "Add New Repository"
