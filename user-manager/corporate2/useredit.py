@@ -846,7 +846,7 @@ class PolicyTab(QVBox):
                 print exception
                 #item.setOpen(False)
                 return
-            auths = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, auths)
+            auths = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, auths[0])
             setIcons(auths)
 
         if not self.edit:
@@ -893,7 +893,7 @@ class PolicyTab(QVBox):
             self.inOperation = True
 
             # convert comar answer to pypolkit call structure
-            authList = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, authList)
+            authList = map(lambda x: {"action_id": str(x[0][0]), "negative": bool(x[0][4])}, authList[0])
             self.selectRightButtons(authList, actionItem)
 
         #try:
