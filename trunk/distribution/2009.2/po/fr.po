@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 23:46+0300\n"
+"POT-Creation-Date: 2010-06-01 09:21+0300\n"
 "PO-Revision-Date: 2010-05-31 13:57+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -52,8 +52,8 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "Pardus est une distribution Linux développée comme un produit du projet Pardus, par l'Institut National turc de Recherche en Électronique et Cryptologie (UEKAE), qui est affilié au Conseil de Recherche Scientifique et Technologique de Turquie (TUBITAK). Pardus vient du nom latin (et scientifique) du léopard d'Anatolie, Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
-msgstr "Pardus se compose d'un système d'exploitation Linux et des applications d'environnements de bureau et de serveurs, visant à satisfaire les besoins de ses utilisateurs."
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
+msgstr "Pardus se compose d'un système d'exploitation Linux et des applications d'environnements de bureau et de serveurs, visant à fournir aux utilisateurs la stabilité, la fiabilité et la facilité d'utilisation qu'ils attendent."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
 msgid "1.2. How Can I Use Pardus"
