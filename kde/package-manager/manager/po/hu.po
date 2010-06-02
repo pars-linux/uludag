@@ -56,16 +56,11 @@ msgstr "Státusz"
 
 #: .tmp/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
 
 #: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
@@ -161,11 +156,8 @@ msgid "Select..."
 msgstr "Válassz..."
 
 #: .tmp/ui_settingsdialog.py:391
-msgid ""
-"Clearing the disk cache will remove all downloaded software."
-"This will not delete installed software or affect your system stability."
-msgstr "A merevlemez-gyorsítótár kiürítése folytán az összes letöltött program törlődik."
-"Ez a művelet nem törli a már telepített alkalmazásaidat és nem befolyásolja a rendszer stabilitását."
+msgid "Clearing the disk cache will remove all downloaded software.This will not delete installed software or affect your system stability."
+msgstr "A merevlemez-gyorsítótár kiürítése folytán az összes letöltött program törlődik.Ez a művelet nem törli a már telepített alkalmazásaidat és nem befolyásolja a rendszer stabilitását."
 
 #: .tmp/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
@@ -351,9 +343,7 @@ msgid "You must <b>restart</b> your system in order the updated versions of the 
 msgstr "<b>Újra kell indítanod</b> a rendszered, hogy a frissítés a következő csomag(okra) hatással legyen:"
 
 #: .tmp/basketdialog.py:132
-msgid ""
-"You must restart following system services in order the updated versions of "
-"the selected package(s) to take effect:"
+msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
 msgstr "Újra kell indítanod a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verzióira hatással legyen:"
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
@@ -447,17 +437,16 @@ msgid "Currently your basket is empty."
 msgstr "A kosarad jelenleg üres."
 
 #: .tmp/statemanager.py:134
-msgid ""
-"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr ""
+msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr "Az aktuális csomag <b>%1</b> a kiválasztott csomag(ok) <b>%2</b> a teljes méretének "
 
 #: .tmp/statemanager.py:137
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "<b>%1</b> az ellenkező függőségekkel a teljes méret <b>%2</b> "
 
 #: .tmp/statemanager.py:139
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr ""
+msgstr "<b>%1</b> az extra függőségekkel a teljes méret <b>%2</b> "
 
 #: .tmp/statemanager.py:140
 msgid "in your basket."
