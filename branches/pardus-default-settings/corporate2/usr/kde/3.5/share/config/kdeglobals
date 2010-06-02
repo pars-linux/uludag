@@ -7,3 +7,7 @@ XftSubPixel=rgb
 
 [Icons]
 Theme=BCTango
+
+[Paths]
+Desktop[$e]=$(xdg-user-dir DESKTOP)
+Documents[$e]=$(xdg-user-dir DOCUMENTS)
