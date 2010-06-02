@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ScrOptions.py:23
 msgid "Selecting Options"
@@ -42,10 +42,8 @@ msgid "Use my old wallpaper"
 msgstr "Eski duvar kağıdı kullan"
 
 #: .tmp/ScrOptions.py:85
-msgid ""
-"Copies your old wallpaper to Pardus and sets it as new background image."
-msgstr ""
-"Eski duvar kağıdınızı Pardus'a kopyalar ve onu yeni duvar kağıdı olarak atar."
+msgid "Copies your old wallpaper to Pardus and sets it as new background image."
+msgstr "Eski duvar kağıdınızı Pardus'a kopyalar ve onu yeni duvar kağıdı olarak atar."
 
 #: .tmp/ScrOptions.py:93 .tmp/ScrProgress.py:296
 msgid "Bookmarks"
@@ -73,8 +71,7 @@ msgstr "Internet Explorer sık kullanılanları"
 
 #: .tmp/ScrOptions.py:129
 msgid "Copies your old Internet Explorer favorites to Firefox under Pardus."
-msgstr ""
-"Eski Internet Explorer sık kullanılanlarınzı Pardus'daki Firefox'a kopyalar."
+msgstr "Eski Internet Explorer sık kullanılanlarınzı Pardus'daki Firefox'a kopyalar."
 
 #: .tmp/ScrOptions.py:138
 msgid "E-Mail and News Accounts"
@@ -85,10 +82,8 @@ msgid "Windows Mail accounts"
 msgstr "Windows Mail hesaplar"
 
 #: .tmp/ScrOptions.py:151 .tmp/ScrOptions.py:162
-msgid ""
-"Copies your old mail and newsgroup accounts to KMail and KNode applications."
-msgstr ""
-"Eski posta ve haber grubu hesaplarnz KMail ve KNode uygulamalarna kopyalar."
+msgid "Copies your old mail and newsgroup accounts to KMail and KNode applications."
+msgstr "Eski posta ve haber grubu hesaplarnz KMail ve KNode uygulamalarna kopyalar."
 
 #: .tmp/ScrOptions.py:160
 msgid "Thunderbird accounts"
@@ -229,19 +224,13 @@ msgstr "'%s' klasör oluşturulamadı, lütfen başka bir klasör seçin."
 
 #: .tmp/ScrProgress.py:400
 #, python-format
-msgid ""
-"You don't have permission to write to folder '%s', please choose another "
-"folder!"
+msgid "You don't have permission to write to folder '%s', please choose another folder!"
 msgstr "'%s' klasörüne yazma izniniz yok, lütfen başka bir klasör seçin."
 
 #: .tmp/ScrProgress.py:411
 #, python-format
-msgid ""
-"Total size of files you've selected is %(size)d MB, but you have only %(free)"
-"d MB of free space!"
-msgstr ""
-"Seçtiğiniz dosyalarn toplam boyutu %(size)d MB, fakat sadece %(free)d MB boş "
-"yer var."
+msgid "Total size of files you've selected is %(size)d MB, but you have only %(free)d MB of free space!"
+msgstr "Seçtiğiniz dosyalarn toplam boyutu %(size)d MB, fakat sadece %(free)d MB boş yer var."
 
 #: .tmp/ScrProgress.py:425
 msgid "Wallpaper changed."
@@ -348,12 +337,8 @@ msgid "User Profiles"
 msgstr "Kullanıcı Profilleri"
 
 #: .tmp/ScrUser.py:101
-msgid ""
-"There aren't any Microsoft Windows partitions to migrate! Please check your "
-"mounted partitions..."
-msgstr ""
-"Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi "
-"kontrol edin..."
+msgid "There aren't any Microsoft Windows partitions to migrate! Please check your mounted partitions..."
+msgstr "Göç ettirilecek Microsoft Window bölümü bulunmamakta! Bağlı bölümlerinizi kontrol edin..."
 
 #: .tmp/ScrUser.py:111
 msgid "There isn't any selected user on User Selection Window!"
@@ -385,29 +370,17 @@ msgstr "Bitir"
 
 #: .tmp/ui_summaryWidget.py:55
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Your settings will be applied in next screen..."
-"</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Your settings will be applied in next screen...</span></p></body></html>"
 msgstr ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-"right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-"size:12pt; font-weight:600;\">Ayarlarnz bir sonraki ekranda uygulanacak.</"
-"span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Ayarlarnz bir sonraki ekranda uygulanacak.</span></p></body></html>"
 
 #: .tmp/ui_userFilesWidget.py:45
 msgid "Form"
@@ -439,9 +412,7 @@ msgstr "Boyut"
 
 #: .tmp/ui_usersItemWidget.py:59
 msgid "Set or unset entry as default boot entry."
-msgstr ""
-"Kaydı öntanımlı açılış girişi olarak olarak ata ya da öntanımlı durumunu "
-"kaldır."
+msgstr "Kaydı öntanımlı açılış girişi olarak olarak ata ya da öntanımlı durumunu kaldır."
 
 #: .tmp/ui_usersWidget.py:36
 msgid "Users"
@@ -449,39 +420,26 @@ msgstr "Kullanıcılar"
 
 #: .tmp/ui_welcomeWidget.py:45
 msgid ""
-"This application, called Migration Tool, helps you transfer files and "
-"settings from other operating systems to Pardus. Please click Next to "
-"transfer your files. \n"
+"This application, called Migration Tool, helps you transfer files and settings from other operating systems to Pardus. Please click Next to transfer your files. \n"
 "\n"
-"Pardus is a GNU/Linux distribution, targeting at computer literate users' "
-"basic desktop needs; helps you connect to Internet, read e-mails, work with "
-"office documents and more!"
+"Pardus is a GNU/Linux distribution, targeting at computer literate users' basic desktop needs; helps you connect to internet, read e-mails, work with office documents and more!"
 msgstr ""
-"Göç Aracı diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a "
-"aktarmanıza yardımcı olur. İşleme başlamak için İleri'ye tıklayın."
+"Göç Aracı olarak adlandırılan bu uygulama, diğer işletim sistemlerindeki dosya ve ayarlarınızı Pardus'a aktarmanıza yardımcı olur. Lütfen dosyalarınızı aktarmak için İleri'ye tıklayın. \n"
+"\n"
+"Pardus, bilgisayar okuryazarlarının basit masaüstü ihtiyaçlarını karşılamayı hedeflemiş; size İnternet'e bağlanma, e-postaları okuma, ofis dosyalarıyla çalışma ve daha birçok alanda yardımcı olan bir GNU/Linux dağıtımıdır."
 
 #~ msgid "Selected Destination: <b>Copy Destination to %s</b>"
 #~ msgstr "Seili Hedef: <b>Hedefi %s konumuna kopyala</b>"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Welcome to Migration Tool!</span></p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-#~ "REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
-#~ "css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; "
-#~ "font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
-#~ "right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-"
-#~ "weight:600;\">G Arac'na Ho Geldiniz</span></p></body></html>"
+#~ "</style></head><body style=\" font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">G Arac'na Ho Geldiniz</span></p></body></html>"
