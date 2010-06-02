@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-27 11:37+0300\n"
+"POT-Creation-Date: 2010-06-02 23:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -32,19 +32,19 @@ msgstr ""
 msgid "Operation"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:154 .tmp/progressdialog.py:71
+#: .tmp/ui_progressdialog.py:154 .tmp/progressdialog.py:77
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:77
+#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:83
 msgid "Time remaining:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:76
+#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:82
 msgid "--  / --"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:157 .tmp/progressdialog.py:78
+#: .tmp/ui_progressdialog.py:157 .tmp/progressdialog.py:84
 msgid "--:--:--"
 msgstr ""
 
@@ -52,7 +52,7 @@ msgstr ""
 msgid "Operation:"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:159 .tmp/progressdialog.py:75
+#: .tmp/ui_progressdialog.py:159 .tmp/progressdialog.py:81
 msgid "Status:"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgid "Action Button for current states action"
 msgstr ""
 
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
-#: .tmp/statemanager.py:82 .tmp/ui_basketdialog.py:104
+#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
 msgid "Install Package(s)"
 msgstr ""
 
@@ -360,177 +360,177 @@ msgid ""
 msgstr ""
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
-#: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:223 .tmp/mainwidget.py:226
+#: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
 msgid "Pisi Error"
 msgstr ""
 
-#: .tmp/statemanager.py:74
+#: .tmp/statemanager.py:72
 msgid "Installing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:75
+#: .tmp/statemanager.py:73
 msgid "Removing Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:76
+#: .tmp/statemanager.py:74
 msgid "Upgrading Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:77
+#: .tmp/statemanager.py:75
 msgid "Applying Repository Changes"
 msgstr ""
 
-#: .tmp/statemanager.py:78
+#: .tmp/statemanager.py:76
 msgid "Updating Repository"
 msgstr ""
 
-#: .tmp/statemanager.py:79
+#: .tmp/statemanager.py:77
 msgid "Updating Repository(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:83
+#: .tmp/statemanager.py:81
 msgid "Remove Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:84
+#: .tmp/statemanager.py:82
 msgid "Upgrade Package(s)"
 msgstr ""
 
-#: .tmp/statemanager.py:87
+#: .tmp/statemanager.py:85
 msgid "installed"
 msgstr ""
 
-#: .tmp/statemanager.py:88
+#: .tmp/statemanager.py:86
 msgid "removed"
 msgstr ""
 
-#: .tmp/statemanager.py:89
+#: .tmp/statemanager.py:87
 msgid "upgraded"
 msgstr ""
 
-#: .tmp/statemanager.py:97
+#: .tmp/statemanager.py:95
 msgid "%1 new package(s) have been installed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:98
+#: .tmp/statemanager.py:96
 msgid "%1 package(s) have been removed succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:99
+#: .tmp/statemanager.py:97
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr ""
 
-#: .tmp/statemanager.py:102
+#: .tmp/statemanager.py:100
 msgid "You have selected the following package(s) to install:"
 msgstr ""
 
-#: .tmp/statemanager.py:103
+#: .tmp/statemanager.py:101
 msgid "You have selected the following package(s) to removal:"
 msgstr ""
 
-#: .tmp/statemanager.py:104
+#: .tmp/statemanager.py:102
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: .tmp/statemanager.py:107 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "installed:"
 msgstr ""
 
-#: .tmp/statemanager.py:108
+#: .tmp/statemanager.py:106
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
 "removed:"
 msgstr ""
 
-#: .tmp/statemanager.py:109
+#: .tmp/statemanager.py:107
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
 msgstr ""
 
-#: .tmp/statemanager.py:132 .tmp/mainwindow_kde4.py:78
-#: .tmp/mainwindow_kde4.py:83 .tmp/mainwindow.py:74 .tmp/mainwindow.py:79
+#: .tmp/statemanager.py:130 .tmp/mainwindow_kde4.py:81
+#: .tmp/mainwindow_kde4.py:86 .tmp/mainwindow.py:74 .tmp/mainwindow.py:79
 msgid "Currently your basket is empty."
 msgstr ""
 
-#: .tmp/statemanager.py:134
+#: .tmp/statemanager.py:132
 msgid ""
 "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:137
+#: .tmp/statemanager.py:135
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:139
+#: .tmp/statemanager.py:137
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr ""
 
-#: .tmp/statemanager.py:140
+#: .tmp/statemanager.py:138
 msgid "in your basket."
 msgstr ""
 
-#: .tmp/statemanager.py:163
+#: .tmp/statemanager.py:161
 msgid ""
 "Selected packages [%1] are in conflict with each other. These packages can "
 "not be installed together."
 msgstr ""
 
-#: .tmp/statemanager.py:164 .tmp/statemanager.py:172
+#: .tmp/statemanager.py:162 .tmp/statemanager.py:170
 msgid "Conflict Error"
 msgstr ""
 
-#: .tmp/statemanager.py:168
+#: .tmp/statemanager.py:166
 msgid "The following packages conflicts:\n"
 msgstr ""
 
-#: .tmp/statemanager.py:170
+#: .tmp/statemanager.py:168
 msgid "%1 conflicts with: [%2]\n"
 msgstr ""
 
-#: .tmp/statemanager.py:171
+#: .tmp/statemanager.py:169
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
 msgstr ""
 
-#: .tmp/ui_mainwindow.py:33 .tmp/about.py:23 .tmp/about.py:24
-#: .tmp/mainwidget.py:263 .tmp/mainwidget.py:275
+#: .tmp/ui_mainwindow.py:33 .tmp/about.py:24 .tmp/about.py:25
+#: .tmp/mainwidget.py:285 .tmp/mainwidget.py:297
 msgid "Package Manager"
 msgstr ""
 
-#: .tmp/progressdialog.py:39
+#: .tmp/progressdialog.py:45
 #, python-format
 msgid "Operation - %1%"
 msgstr ""
 
-#: .tmp/progressdialog.py:42 .tmp/commontext.py:16
+#: .tmp/progressdialog.py:48 .tmp/commontext.py:16
 msgid "configuring"
 msgstr ""
 
-#: .tmp/progressdialog.py:42 .tmp/commontext.py:15
+#: .tmp/progressdialog.py:48 .tmp/commontext.py:15
 msgid "extracting"
 msgstr ""
 
-#: .tmp/progressdialog.py:46
+#: .tmp/progressdialog.py:52
 msgid "Downloading package list of %1"
 msgstr ""
 
-#: .tmp/progressdialog.py:48
+#: .tmp/progressdialog.py:54
 msgid "%1 %2"
 msgstr ""
 
-#: .tmp/progressdialog.py:53
+#: .tmp/progressdialog.py:59
 msgid "%1 / %2 package %3"
 msgstr ""
 
-#: .tmp/progressdialog.py:59
+#: .tmp/progressdialog.py:65
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr ""
 
-#: .tmp/progressdialog.py:82
+#: .tmp/progressdialog.py:88
 msgid "<b>Cancelling operation...</b>"
 msgstr ""
 
@@ -556,101 +556,105 @@ msgid ""
 "again.</qt>"
 msgstr ""
 
-#: .tmp/about.py:26
+#: .tmp/about.py:27
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr ""
 
-#: .tmp/about.py:34
+#: .tmp/about.py:35
 msgid "Gökmen Göksel"
 msgstr ""
 
-#: .tmp/about.py:34
+#: .tmp/about.py:35
 msgid "Developer"
 msgstr ""
 
-#: .tmp/about.py:35
+#: .tmp/about.py:36
 msgid "Faik Uygur"
 msgstr ""
 
-#: .tmp/about.py:35
+#: .tmp/about.py:36
 msgid "First Author"
 msgstr ""
 
-#: .tmp/mainwidget.py:102
+#: .tmp/mainwidget.py:64
+msgid "All Packages are up to date"
+msgstr ""
+
+#: .tmp/mainwidget.py:116
 msgid "All Updates"
 msgstr ""
 
-#: .tmp/mainwidget.py:103
+#: .tmp/mainwidget.py:117
 msgid "Security Updates"
 msgstr ""
 
-#: .tmp/mainwidget.py:104
+#: .tmp/mainwidget.py:118
 msgid "Critical Updates"
 msgstr ""
 
-#: .tmp/mainwidget.py:217
+#: .tmp/mainwidget.py:239
 msgid "Network Error"
 msgstr ""
 
-#: .tmp/mainwidget.py:218
+#: .tmp/mainwidget.py:240
 msgid "Please check your network connections and try again."
 msgstr ""
 
-#: .tmp/mainwidget.py:220
+#: .tmp/mainwidget.py:242
 msgid "Authorization Error"
 msgstr ""
 
-#: .tmp/mainwidget.py:221
+#: .tmp/mainwidget.py:243
 msgid "You are not authorized for this operation."
 msgstr ""
 
-#: .tmp/mainwidget.py:224
+#: .tmp/mainwidget.py:246
 msgid ""
 "Package not found. It may be upgraded in or removed from the repository. "
 "Please try upgrading repository informations."
 msgstr ""
 
-#: .tmp/mainwindow_kde4.py:99 .tmp/mainwindow.py:113
+#: .tmp/mainwindow_kde4.py:102 .tmp/mainwindow.py:113
 msgid "Show Installable Packages"
 msgstr ""
 
-#: .tmp/mainwindow_kde4.py:105 .tmp/mainwindow.py:123
+#: .tmp/mainwindow_kde4.py:108 .tmp/mainwindow.py:123
 msgid "Show Installed Packages"
 msgstr ""
 
-#: .tmp/mainwindow_kde4.py:110 .tmp/mainwindow.py:132
+#: .tmp/mainwindow_kde4.py:113 .tmp/mainwindow.py:132
 msgid "Show Upgradable Packages"
 msgstr ""
 
-#: .tmp/tray.py:54 .tmp/tray.py:179 .tmp/tray.py:207 .tmp/grouplist.py:36
+#: .tmp/tray.py:69 .tmp/tray.py:195 .tmp/tray.py:223 .tmp/grouplist.py:36
 msgid "All"
 msgstr ""
 
-#: .tmp/tray.py:169 .tmp/tray.py:198
+#: .tmp/tray.py:185 .tmp/tray.py:214
 msgid "Update"
 msgstr ""
 
-#: .tmp/tray.py:173 .tmp/mainwindow.py:100
+#: .tmp/tray.py:189 .tmp/mainwindow.py:100
 msgid "Quit"
 msgstr ""
 
-#: .tmp/tray.py:183
+#: .tmp/tray.py:199
 msgid "Updates"
 msgstr ""
 
-#: .tmp/tray.py:183
+#: .tmp/tray.py:199
 msgid "There are %1 updates available!"
 msgstr ""
 
-#: .tmp/tray.py:214
+#: .tmp/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr ""
 
-#: .tmp/tray.py:215
+#: .tmp/tray.py:231
 msgid "Show Updates"
 msgstr ""
 
-#: .tmp/tray.py:215
+#: .tmp/tray.py:231
 msgid "Ignore"
 msgstr ""
 
@@ -725,11 +729,11 @@ msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr ""
 
 #: .tmp/ui_repodialog.py:59
-msgid "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 msgstr ""
 
 #: .tmp/ui_repodialog.py:60
-msgid "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr ""
 
 #: .tmp/helpdialog.py:31
