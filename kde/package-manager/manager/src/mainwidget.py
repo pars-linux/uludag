@@ -58,6 +58,19 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.summaryDialog = SummaryDialog()
         self.connectOperationSignals()
 
+        # An info label to show a proper information,
+        # if there is no updates available.
+        self.info = QtGui.QLabel(self)
+        self.info.setText(i18n("All Packages are up to date"))
+        self.info.setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
+        self.info.setStyleSheet("background-color:rgba(0,0,0,220);color:white;")
+        self.info.hide()
+
+    def resizeEvent(self, event):
+        # info label should be resized automatically,
+        # if the mainwindow resized.
+        self.info.resize(self.size())
+
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
         self.connect(self.searchButton, SIGNAL("clicked()"), self.searchActivated)
@@ -301,7 +314,15 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.setActionButton()
         if action:
             self.state.stateAction()
+
         self.initialize()
+
+        # Show the info label if there are updates available
+        # otherwise hide it.
+        if self.state.inUpgrade() and self.groupList.count() == 0:
+            self.info.show()
+        else:
+            self.info.hide()
 
     def emitStatusBarInfo(self, packages, packagesSize, extraPackages, extraPackagesSize):
         self.emit(SIGNAL("selectionStatusChanged(QString)"), self.state.statusText(packages, packagesSize, extraPackages, extraPackagesSize))
