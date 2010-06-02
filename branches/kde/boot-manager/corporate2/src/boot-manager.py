@@ -23,7 +23,7 @@ import dbus
 
 mod_name = 'Boot Manager'
 mod_app = 'boot-manager'
-mod_version = '1.0.1'
+mod_version = '1.0.3'
 
 def AboutData():
     about_data = KAboutData(
