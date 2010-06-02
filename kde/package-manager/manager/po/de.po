@@ -119,7 +119,7 @@ msgstr "Überprüfugsintervall:"
 
 #: .tmp/ui_settingsdialog.py:379
 msgid " min"
-msgstr "Minimum"
+msgstr "min"
 
 #: .tmp/ui_settingsdialog.py:380
 msgid "Install updates automatically"
@@ -238,7 +238,7 @@ msgstr "Verwende manuelle Einstellungen"
 
 #: .tmp/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
-msgstr "Desktop Einstellingen verwenden"
+msgstr "Desktop Einstellung verwenden"
 
 #: .tmp/ui_settingsdialog.py:411
 msgid "&Proxy"
@@ -357,7 +357,7 @@ msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden aktualisi
 
 #: .tmp/basketdialog.py:132
 msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
-msgstr "Sie müssen die folgenden System-Services <b>neu starten</b>, damit diese Wirkung zeigen:"
+msgstr "Sie müssen die folgenden System-Dienste <b>neu starten</b>, damit diese Wirkung zeigen:"
 
 #: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
 #: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:223 .tmp/mainwidget.py:226
@@ -378,7 +378,7 @@ msgstr "Paket(e) werden aktualisiert"
 
 #: .tmp/statemanager.py:77
 msgid "Applying Repository Changes"
-msgstr "Depot-Änderungen werden vorgenommen"
+msgstr "Änderungen werden vorgenommen"
 
 #: .tmp/statemanager.py:78
 msgid "Updating Repository"
@@ -434,7 +434,7 @@ msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 
 #: .tmp/statemanager.py:107 .tmp/ui_basketdialog.py:101
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
-msgstr "Zusätzlich erforderliche Pakete:"
+msgstr "Erforderliche Pakete, die zusätzlich installiert werden:"
 
 # Zweifel - hier is das "reverse" nicht korekt ausgedrückt, ist vielleicht
 # auch nicht so wichtig..
@@ -444,7 +444,7 @@ msgstr "Zu gewähltem Paket abhängige(s) Paket(e), die auch entfernt werden:"
 
 #: .tmp/statemanager.py:109
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
-msgstr "Abhängige(s) Paket(e), die zu(m) gewählten Paket(en) auch installiert werden:"
+msgstr "Abhängige Paket(e), die zusätzlich zum gewählten Paket aktualisiert werden:"
 
 #: .tmp/statemanager.py:132 .tmp/mainwindow_kde4.py:78
 #: .tmp/mainwindow_kde4.py:83 .tmp/mainwindow.py:74 .tmp/mainwindow.py:79
@@ -453,16 +453,16 @@ msgstr "Im Augenblick ist Ihr Korb leer."
 
 #: .tmp/statemanager.py:134
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Momentan <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
+msgstr "Momentan sind <b>%1</b> Paket(e) ausgewählt mit einer Gesamtgrösse von <b>%2</b> "
 
 # zweifel reverse, "gegen" (original Tasma), "rückwärts", "höheren.." ?
 #: .tmp/statemanager.py:137
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
-msgstr "und <b>%1</b> rückwärts abhängige Pakete mit Gesamtgrösse <b>%2</b>"
+msgstr "und <b>%1</b> rückwärtig abhängige Pakete mit einer Grösse von <b>%2</b>"
 
 #: .tmp/statemanager.py:139
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
-msgstr "und <b>%1</b> abhängige Pakete mit Gesamtgrösse <b>%2</b>"
+msgstr "und <b>%1</b> zusätzlich abhängige Pakete mit einer Gesamtgrösse von <b>%2</b>"
 
 #: .tmp/statemanager.py:140
 msgid "in your basket."
@@ -496,7 +496,7 @@ msgstr ""
 #: .tmp/ui_mainwindow.py:33 .tmp/about.py:23 .tmp/about.py:24
 #: .tmp/mainwidget.py:263 .tmp/mainwidget.py:275
 msgid "Package Manager"
-msgstr "Paket Manager"
+msgstr "Paket-Manager"
 
 #: .tmp/progressdialog.py:39
 #, python-format
