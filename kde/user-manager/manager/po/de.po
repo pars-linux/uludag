@@ -33,7 +33,7 @@ msgstr "Passwort:"
 
 #: .tmp/ui_edituser.py:187
 msgid "Password (Again):"
-msgstr "Passwort (wiederholen):"
+msgstr "Passwort wiederholen:"
 
 #: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
 msgid "No.:"
@@ -69,7 +69,7 @@ msgstr "Benutzer autorisieren."
 
 #: .tmp/ui_edituser.py:196
 msgid "Deny user."
-msgstr "Benutzer sperren."
+msgstr "Benutzer verweigern."
 
 #: .tmp/ui_edituser.py:197
 msgid "Apply this policy to all actions."
@@ -174,7 +174,7 @@ msgstr "Neue Gruppe"
 #: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
 #: .tmp/usermanager/main.py:395
 msgid "Access denied."
-msgstr "Zugriff verboten."
+msgstr "Zugriff verweigert."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
@@ -194,7 +194,7 @@ msgstr "möchten Sie die Gruppe '%1' löschen ?"
 
 #: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
 msgid "User Manager"
-msgstr "Benutzer-Manager"
+msgstr "Benutzerverwaltung"
 
 #: .tmp/usermanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
