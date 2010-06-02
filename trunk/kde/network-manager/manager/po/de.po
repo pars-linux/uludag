@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
 msgid "Signal Strength"
@@ -26,7 +26,7 @@ msgstr "Signalstärke"
 
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
-msgstr "Netzwerk Manager"
+msgstr "Netzwerkverbindungen"
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -78,7 +78,7 @@ msgstr "Bitte PIN Code eingeben für"
 
 #: .tmp/networkmanager/widgets.py:158
 msgid "You've typed the wrong PIN code for 3 times"
-msgstr "Sie haben 3 Mal einen falsche PIN eingegeben"
+msgstr "Sie haben 3 Mal eine falsche PIN eingegeben"
 
 #: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
 msgid "Refresh"
@@ -135,7 +135,7 @@ msgstr "Abbrechen"
 
 #: .tmp/ui_main.py:342
 msgid "Network Settings"
-msgstr "Netzwerk Einstellungen"
+msgstr "Netzwerkeinstellungen"
 
 #: .tmp/ui_main.py:343
 msgid "Use DHCP"
@@ -163,7 +163,7 @@ msgstr "Gateway :"
 
 #: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
 msgid "Name Servers"
-msgstr "Name Server"
+msgstr "Name-Server"
 
 #: .tmp/ui_main.py:351
 msgid "Default"
