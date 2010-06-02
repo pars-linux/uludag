@@ -18,8 +18,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: .tmp/ScrGoodbye.py:26 .tmp/ui_goodbyeWidget.py:410
 msgid "More"
@@ -27,7 +27,7 @@ msgstr "Mehr"
 
 #: .tmp/ScrGoodbye.py:27
 msgid "Congratulations!"
-msgstr "Herzlichen Glückwunsch !"
+msgstr "Herzlichen Glückwunsch!"
 
 #: .tmp/ScrKeyboard.py:32 .tmp/ui_keyboardWidget.py:87
 msgid "Keyboard"
@@ -59,7 +59,7 @@ msgstr "Einfaches Menü"
 
 #: .tmp/ScrMenu.py:49
 msgid "Simple menu is an old style menu from KDE 3.<br><br>It is a very lightweight menu thus it is recommended for slower PC's."
-msgstr "Das einfache Menü ist das traditionelle Menü von KDE 3.<br><br>Es ist sehr leichtgewichtig und daher für langsamere PCs zu empfehlen."
+msgstr "Das einfache Menü ist das traditionelle Menü von KDE 3.<br><br>Es ist sehr leichtgewichtig und daher für langsame PCs zu empfehlen."
 
 #: .tmp/ScrMenu.py:53 .tmp/ui_menuWidget.py:122
 msgid "Lancelot Menu"
@@ -127,7 +127,7 @@ msgstr "Aus"
 
 #: .tmp/ScrSmolt.py:31 .tmp/ui_smoltWidget.py:109
 msgid "Smolt"
-msgstr ""
+msgstr "Smolt"
 
 #: .tmp/ScrSmolt.py:32
 msgid "Help Pardus Improve!"
@@ -151,7 +151,7 @@ msgstr "&Private Politik-Einstellungen"
 
 #: .tmp/ScrSmolt.py:115
 msgid "UUID"
-msgstr ""
+msgstr "UUID"
 
 #: .tmp/ScrSmolt.py:116
 msgid "OS"
@@ -171,7 +171,7 @@ msgstr "Plattform"
 
 #: .tmp/ScrSmolt.py:120
 msgid "BogoMIPS"
-msgstr ""
+msgstr "BogoMIPS"
 
 #: .tmp/ScrSmolt.py:121
 msgid "CPU Vendor"
@@ -183,7 +183,7 @@ msgstr "CPU-Modell"
 
 #: .tmp/ScrSmolt.py:123
 msgid "CPU Stepping"
-msgstr ""
+msgstr "CPU Stepping"
 
 #: .tmp/ScrSmolt.py:124
 msgid "CPU Family"
@@ -191,11 +191,11 @@ msgstr "CPU Familie"
 
 #: .tmp/ScrSmolt.py:125
 msgid "CPU Model Num"
-msgstr "CPU Modellnummer"
+msgstr "CPU Modell"
 
 #: .tmp/ScrSmolt.py:126
 msgid "Number of CPUs"
-msgstr "Anzahl der CPUs"
+msgstr "CPU-Kerne"
 
 #: .tmp/ScrSmolt.py:127
 msgid "CPU Speed"
@@ -203,7 +203,7 @@ msgstr "CPU Geschwindigkeit"
 
 #: .tmp/ScrSmolt.py:128
 msgid "System Memory"
-msgstr "Systemspeicher"
+msgstr "RAM"
 
 #: .tmp/ScrSmolt.py:129
 msgid "System Swap"
@@ -259,7 +259,7 @@ msgstr "Zusammenfassung"
 
 #: .tmp/ScrSummary.py:35
 msgid "Save Your Settings"
-msgstr "Einstellungen Speichern"
+msgstr "Einstellungen speichern"
 
 #: .tmp/ScrSummary.py:58
 msgid "Mouse Settings"
@@ -413,7 +413,7 @@ msgstr "Weiter"
 
 #: .tmp/ui_kaptanMain.py:309
 msgid "Finish"
-msgstr "Beenden"
+msgstr "Fertigstellen"
 
 #: .tmp/ui_keyboardWidget.py:88
 msgid "Kaptan automatically selects the best keyboard layout according to your system language. If you want to use another layout other than the default keyboard layout, you can make your selection and test it instantly."
@@ -482,7 +482,7 @@ msgstr "Automatisch nach updates suchen, alle"
 
 #: .tmp/ui_packageWidget.py:188
 msgid "color: #642437;"
-msgstr ""
+msgstr "color: #642437;"
 
 #: .tmp/ui_packageWidget.py:189
 msgid " hours"
@@ -503,7 +503,7 @@ msgstr "Benutzen Sie den Paket-Manager, um Software in Pardus zu installieren un
 
 #: .tmp/ui_packageWidget.py:193
 msgid "Updates"
-msgstr "Aktualisierung"
+msgstr "Updates"
 
 #: .tmp/ui_packageWidget.py:194
 msgid "Repositories"
@@ -523,7 +523,7 @@ msgstr "<b>Smolt</b> ist ein Werkzeug, das die gesamelten Informationen der verw
 
 #: .tmp/ui_smoltWidget.py:111
 msgid "color: rgb(95, 34, 52);"
-msgstr ""
+msgstr "color: rgb(95, 34, 52);"
 
 #: .tmp/ui_smoltWidget.py:112
 msgid ""
@@ -549,7 +549,7 @@ msgstr ""
 
 #: .tmp/ui_smoltWidget.py:121
 msgid "color: rgb(234, 225, 228);"
-msgstr ""
+msgstr "color: rgb(234, 225, 228);"
 
 #: .tmp/ui_smoltWidget.py:122
 msgid "&Send my profile"
@@ -557,19 +557,19 @@ msgstr "Mein Profil &senden"
 
 #: .tmp/ui_smoltWidget.py:123
 msgid "color:rgb(95, 34, 52)"
-msgstr ""
+msgstr "color:rgb(95, 34, 52)"
 
 #: .tmp/ui_styleitem.py:65 .tmp/ui_uiitem.py:68 .tmp/ui_wallpaperuiitem.py:48
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
 #: .tmp/ui_styleitem.py:66
 msgid "styleName"
-msgstr ""
+msgstr "styleName"
 
 #: .tmp/ui_styleitem.py:67
 msgid "styleDesc"
-msgstr ""
+msgstr "styleDesc"
 
 #: .tmp/ui_styleWidget.py:164
 msgid "Choose your favorite theme and desktop type. Customize Pardus with colorful styles and themes."
@@ -597,7 +597,7 @@ msgstr "Anzahl der Desktops"
 
 #: .tmp/ui_styleWidget.py:170
 msgid "color: rgb(100, 36, 55);"
-msgstr ""
+msgstr "color: rgb(100, 36, 55);"
 
 #: .tmp/ui_summaryWidget.py:80
 msgid "You have successfully finished all steps. Here's a summary of the settings you want to apply. Click <b>Apply Settings</b> to save them now. You are now ready to enjoy Pardus!"
@@ -609,11 +609,11 @@ msgstr "Die folgenden Einstellungen werden übernommen"
 
 #: .tmp/ui_uiitem.py:69 .tmp/ui_wallpaperuiitem.py:49
 msgid "wallPaperName"
-msgstr ""
+msgstr "wallPaperName"
 
 #: .tmp/ui_uiitem.py:70 .tmp/ui_wallpaperuiitem.py:50
 msgid "wallpaperDesc"
-msgstr ""
+msgstr "wallpaperDesc"
 
 #: .tmp/ui_wallpaperWidget.py:127
 msgid "Choose your favorite wallpaper for Pardus. Don't forget to check out <b>Desktop Settings</b> for downloading new and cool wallpapers."
