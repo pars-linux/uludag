@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xcb header="nvctrl" extension-xname="NV-CONTROL" extension-name="NV-CONTROL"
+    major-version="1" minor-version="16">
+
+	<enum name="Attributes">
+		<item name="PROBE_DISPLAYS"><value>234</value></item>
+	</enum>
+
+	<request name="QueryExtension" opcode="0">
+		<reply>
+			<pad bytes="1" />
+			<field type="CARD16" name="major_version" />
+			<field type="CARD16" name="minor_version" />
+			<pad bytes="20" />
+		</reply>
+	</request>
+	
+	<request name="IsNv" opcode="1">
+		<field type="CARD32" name="screen" />
+		<reply>
+			<pad bytes="1" />
+			<field type="CARD32" name="isnv" />
+			<pad bytes="20" />
+		</reply>
+	</request>
+	
+	<request name="QueryAttribute" opcode="2">
+		<field type="CARD16" name="target_id" />
+		<field type="CARD16" name="target_type" />
+		<field type="CARD32" name="display_mask" />
+		<field type="CARD32" name="attribute" />
+		<reply>
+			<pad bytes="1" />
+			<field type="CARD32" name="flags" />
+			<field type="INT32" name="value" />
+			<pad bytes="16" />
+		</reply>
+	</request>
+</xcb>
