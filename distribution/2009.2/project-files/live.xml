@@ -64,10 +64,14 @@
         <SelectedPackage>gfxtheme-base</SelectedPackage>
         <SelectedPackage>gfxtheme-pardus-install</SelectedPackage>
         <SelectedPackage>gimp</SelectedPackage>
+        <SelectedPackage>gparted</SelectedPackage>
+        <SelectedPackage>gptsync</SelectedPackage>
+        <SelectedPackage>grsync</SelectedPackage>
         <SelectedPackage>gst-plugins-farsight</SelectedPackage>
         <SelectedPackage>gst-plugins-ugly</SelectedPackage>
         <SelectedPackage>gtk-engines</SelectedPackage>
         <SelectedPackage>gtk-qt-engine</SelectedPackage>
+        <SelectedPackage>gutenprint</SelectedPackage>
         <SelectedPackage>hal-cups-utils</SelectedPackage>
         <SelectedPackage>hping</SelectedPackage>
         <SelectedPackage>hplip</SelectedPackage>
@@ -75,6 +79,7 @@
         <SelectedPackage>hydra</SelectedPackage>
         <SelectedPackage>icon-theme-milky-png</SelectedPackage>
         <SelectedPackage>ifplugd</SelectedPackage>
+        <SelectedPackage>iftop</SelectedPackage>
         <SelectedPackage>iotop</SelectedPackage>
         <SelectedPackage>iproute2</SelectedPackage>
         <SelectedPackage>iptraf</SelectedPackage>
@@ -85,12 +90,16 @@
         <SelectedPackage>irqbalance</SelectedPackage>
         <SelectedPackage>iscan</SelectedPackage>
         <SelectedPackage>iscan-firmware</SelectedPackage>
+        <SelectedPackage>iwlwifi1000-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi3945-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi4965-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi5000-ucode</SelectedPackage>
         <SelectedPackage>iwlwifi5150-ucode</SelectedPackage>
+        <SelectedPackage>iwlwifi6000-ucode</SelectedPackage>
         <SelectedPackage>jack-audio-connection-kit</SelectedPackage>
         <SelectedPackage>jfsutils</SelectedPackage>
+        <SelectedPackage>johntheripper</SelectedPackage>
+        <SelectedPackage>kaffeine</SelectedPackage>
         <SelectedPackage>kaptan</SelectedPackage>
         <SelectedPackage>kaudiocreator</SelectedPackage>
         <SelectedPackage>kde-l10n-tr</SelectedPackage>
@@ -334,6 +343,7 @@
         <Package>bootsplash-theme-pardus</Package>
         <Package>br2684ctl</Package>
         <Package>bridge-utils</Package>
+        <Package>btrfs-progs</Package>
         <Package>bzip2</Package>
         <Package>c-ares</Package>
         <Package>cairo</Package>
@@ -386,6 +396,7 @@
         <Package>dmapi</Package>
         <Package>dmidecode</Package>
         <Package>dnsmasq</Package>
+        <Package>dosfstools</Package>
         <Package>droid-fonts</Package>
         <Package>dsniff</Package>
         <Package>e2fsprogs</Package>
@@ -457,13 +468,16 @@
         <Package>google-gadgets</Package>
         <Package>google-gadgets-qt</Package>
         <Package>gpac</Package>
+        <Package>gparted</Package>
         <Package>gperf</Package>
         <Package>gpgme</Package>
         <Package>gpm</Package>
         <Package>gpsd</Package>
+        <Package>gptsync</Package>
         <Package>graphviz</Package>
         <Package>grep</Package>
         <Package>groff</Package>
+        <Package>grsync</Package>
         <Package>grub</Package>
         <Package>gsl</Package>
         <Package>gsm</Package>
@@ -478,6 +492,7 @@
         <Package>gtk2</Package>
         <Package>gtkmm</Package>
         <Package>guile</Package>
+        <Package>gutenprint</Package>
         <Package>gzip</Package>
         <Package>hal</Package>
         <Package>hal-cups-utils</Package>
@@ -496,6 +511,7 @@
         <Package>icon-theme-oxygen-png</Package>
         <Package>icu4c</Package>
         <Package>ifplugd</Package>
+        <Package>iftop</Package>
         <Package>ilmbase</Package>
         <Package>imagemagick</Package>
         <Package>imlib2</Package>
@@ -513,17 +529,21 @@
         <Package>iscan-firmware</Package>
         <Package>iso-codes</Package>
         <Package>iw</Package>
+        <Package>iwlwifi1000-ucode</Package>
         <Package>iwlwifi3945-ucode</Package>
         <Package>iwlwifi4965-ucode</Package>
         <Package>iwlwifi5000-ucode</Package>
         <Package>iwlwifi5150-ucode</Package>
+        <Package>iwlwifi6000-ucode</Package>
         <Package>jack-audio-connection-kit</Package>
         <Package>jasper</Package>
         <Package>jbigkit</Package>
         <Package>jfsutils</Package>
+        <Package>johntheripper</Package>
         <Package>jpeg</Package>
         <Package>jrtplib</Package>
         <Package>jthread</Package>
+        <Package>kaffeine</Package>
         <Package>kaptan</Package>
         <Package>kaudiocreator</Package>
         <Package>kbd</Package>
@@ -1022,6 +1042,7 @@
         <Package>xdg-user-dirs</Package>
         <Package>xdg-utils</Package>
         <Package>xdm</Package>
+        <Package>xfsdump</Package>
         <Package>xfsprogs</Package>
         <Package>xine-lib</Package>
         <Package>xinit</Package>
