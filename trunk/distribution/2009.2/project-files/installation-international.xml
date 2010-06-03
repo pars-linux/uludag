@@ -263,6 +263,7 @@
         <SelectedPackage>tvtime</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
+        <SelectedPackage>usb-modeswitch</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
         <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
         <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
@@ -1153,6 +1154,7 @@
         <Package>unrar</Package>
         <Package>unzip</Package>
         <Package>urlgrabber</Package>
+        <Package>usb-modeswitch</Package>
         <Package>usbutils</Package>
         <Package>user-manager</Package>
         <Package>utempter</Package>
