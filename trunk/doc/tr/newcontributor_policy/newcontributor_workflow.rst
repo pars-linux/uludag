@@ -48,7 +48,7 @@ Süreç:
     #. Quiz soruları mentor koordinatörleri tarafından `Quiz Gönderme Hazır Yorumu`_ ile gönderilir.
 
 #. Başvuru sahibi soruları çözmeye başladıklarına dair onayı buzilla'ya yorum olarak gönderir.
-#. Onaydan yaklaşık 10 gün içerisinde başvuru sahibi cevaplarını bugzilla'ya yorum olarak gönderir.
+#. Onaydan yaklaşık 10 gün içerisinde başvuru sahibi cevaplarını bugzilla'da yoruma ek olarak gönderir.
 #. Eğer başvuru sahibi bu 10 gün içerisinde bugzilla üzerinden ulaşılamıyor ise hatası KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve `Başvuru Red Hazır Yorumu`_ mentor koordinatörleri tarafından yazılır.
 #. Başvuru sahibi ulaşılabilir durumda ve quiz sorularını ilgili gün içerisinde göndermiş ise, cevaplar mentorlar tarafından gözden geçirilip bugzilla üzerinde yorumları yapılarak onaylanır.
 #. Gözden geçirme olumsuz sonuçlanır ise başvuru sahibinin açmış olduğu hata mentor koordinatörleri tarafından KARAR VERİLDİ/GEÇERSİZ olarak işaretlenir ve `Başvuru Red Hazır Yorumu`_ yapılır.
