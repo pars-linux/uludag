@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-30 23:46+0300\n"
+"POT-Creation-Date: 2010-06-03 08:55+0300\n"
 "PO-Revision-Date: 2010-06-02 11:30+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@Agmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgid "Pardus is a Linux distribution developed as a product of the Pardus Proje
 msgstr "A Pardus egy Linux disztribúció, amit az Elektronikai és Kriptográfiai Nemzeti Kutatóintézete (UEKAE) a Pardus Projekt keretein belül fejleszt önkéntes munkatársakkal karöltve, alárendelve a Török Tudományos és Technológia Tanácsnak (TÜBİTAK). A név az anatóliai leopárd latin (és tudományos) nevéből ered: Panthera pardus tulliana."
 
 #: ../media-content/release-notes/releasenotes-en.html:10
-msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necesary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
+msgid "Pardus consists of a Linux based operating system, opensource applications and related data files necessary for desktop and server environments, aiming to provide users stable, reliable, easy to use and feature rich computer experience."
 msgstr "A Pardus konzisztens Linux-alapú operációs rendszer, nyílt forrású alkalmazásaival egyszerre kívánja kiszolgálni az asztali és a szerver igényeket, megcélozva azt, hogy a felhasználók egy stabil, megbízható és könnyen használható számítógép élményét élhessék át."
 
 #: ../media-content/release-notes/releasenotes-en.html:11
@@ -163,8 +163,7 @@ msgid "KDE 4.4.4"
 msgstr "KDE 4.4.4-as verzióra"
 
 #: ../media-content/release-notes/releasenotes-en.html:38
-msgid ""
-", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
+msgid ", the latest stable release of KDE that has been enhanced and modified for Pardus. All the KDE programs in Pardus repositories have been updated to or replaced by their latest KDE 4 versions. With the new KDE desktop users can select between Default Mode, Old KDE Mode and the new"
 msgstr ", amely jelen állás szerint az utolsó stabil kiadása a Pardus-hoz módosított KDE környezetnek. Minden KDE alkalmazás a Pardus tárolókban frissítve lett, vagy le lett cserélve a legutolsó KDE 4-es változatra. Az új KDE felhasználói szabadon választhatnak a hagyományos megjelenés, régi KDE-mód és az új"
 
 #: ../media-content/release-notes/releasenotes-en.html:39
@@ -205,8 +204,8 @@ msgid "Python 2.6.5"
 msgstr "Python 2.6.5"
 
 #: ../media-content/release-notes/releasenotes-en.html:48
-msgid "OpenOffice.org Office Suite 3.2.1.1"
-msgstr "OpenOffice.org Irodai csomag 3.2.1.1"
+msgid "OpenOffice.org Office Suite 3.2.1.3"
+msgstr "OpenOffice.org Irodai csomag 3.2.1.3"
 
 #: ../media-content/release-notes/releasenotes-en.html:49
 msgid "Firefox Web Browser 3.6.3"
