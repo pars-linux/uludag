@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Daniel Kovács <bicskas9323@gmail.com>, 2010.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"PO-Revision-Date: 2010-06-03 11:21+0100\n"
+"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
+"Language-Team: HUNGARIAN <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/ui_main.py:156
+msgid "Language Settings"
+msgstr "Nyelvi beállítások"
+
+#: .tmp/ui_main.py:157
+msgid "System Language:"
+msgstr "A rendszer nyelve:"
+
+#: .tmp/ui_main.py:158
+msgid "Console Keyboard Layout:"
+msgstr "A konzol billentyűzet kiosztása:"
+
+#: .tmp/ui_main.py:159
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Jegyezd meg, ez a beállítás nem érvényes az asztalodra. Az asztali beállításokat a 'Régió & Nyelv' modul alatt találod a Rendszerbeállításoknál."
+
+#: .tmp/ui_main.py:160
+msgid "Service Settings"
+msgstr "Szolgáltatás beállítások"
+
+#: .tmp/ui_main.py:161
+msgid "First Service to Start:"
+msgstr "Első szolgáltatás indulásnál:"
+
+#: .tmp/ui_main.py:162
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Annak ellenére, hogy a szolgáltatások párhuzamosan indulnak a boot során, néhány felhasználó szeretne egy adott szolgáltatást indítani a függőségek ellenőrzése előtt."
+
+#: .tmp/ui_main.py:163
+msgid "Clock Settings"
+msgstr "Óra beállítások"
+
+#: .tmp/ui_main.py:164
+msgid "Keep the hardware clock in UTC"
+msgstr "Hangold a hardware-órát UTC-hez"
+
+#: .tmp/ui_main.py:165
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Hardware-óra szisztematikus normalizálása"
+
+#: .tmp/ui_main.py:166
+msgid "Console Settings"
+msgstr "Konzol beállítások"
+
+#: .tmp/ui_main.py:167
+msgid "Number of Real Consoles:"
+msgstr "Valódi konzolok száma:"
+
+#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+msgid "System Manager"
+msgstr "Rendszermenedzser"
+
+#: .tmp/systemmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/systemmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/systemmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/systemmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
+
+#: .tmp/systemmanager/main.py:70
+msgid "There are no packages that provide backend for this application. Please make sure that packages are installed and configured correctly."
+msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+
+#: .tmp/systemmanager/main.py:98
+msgid "None"
+msgstr "Semmi"
