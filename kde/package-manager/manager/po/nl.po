@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 23:17+0300\n"
+"POT-Creation-Date: 2010-06-03 09:47+0300\n"
 "PO-Revision-Date: 2010-05-31 21:25+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -51,14 +51,14 @@ msgid "Update Requirements"
 msgstr "Vereisten voor opwaarderen"
 
 #: .tmp/basketdialog.py:125
-msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
 msgstr "<b>Herstart</b> het systeem voor het actief maken van de volgende bijgewerkte pakketversie(s):"
 
 #: .tmp/basketdialog.py:132
-msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
-msgstr "Voor het actief maken van de bijgewerkte versies van de geselecteerde pakketten herstart de volgende diensten :"
+msgid "You must restart following system services for the updated package(s) to take effect:"
+msgstr "Voor het actief maken van de bijgewerkte versies van de geselecteerde pakketten herstart de volgende diensten:"
 
-#: .tmp/basketdialog.py:155 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi-fout"
@@ -724,23 +724,44 @@ msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaan
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Keer pakketselectie om"
+#~ msgid "padding-left:15px;"
+#~ msgstr "opvullen-links:15px;"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakket-installeerder is reeds gestart!"
+#~ msgid "Use proxy server"
+#~ msgstr "Gebruik proxyserver"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installeer"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installatie van %1 is gelukt"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installeren van %1"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakket-installeerder"
+#~ msgid "%p%"
+#~ msgstr "%p%"
 
-#~ msgid "Maintainer"
-#~ msgstr "Onderhouder"
+#~ msgid "Summary"
+#~ msgstr "Samenvatting"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bandbreedtelimiet:"
+
+#~ msgid "Update check"
+#~ msgstr "Opwaaderingen controleren"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(gebruik 0 voor geen limiet)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Buffer wissen"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -755,41 +776,20 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten in deze groep</p></body></html>"
 
-#~ msgid "Delete"
-#~ msgstr "Verwijderen"
+#~ msgid "Maintainer"
+#~ msgstr "Onderhouder"
 
-#~ msgid "Ok"
-#~ msgstr "Ok"
+#~ msgid "Package Installer"
+#~ msgstr "Pakket-installeerder"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Installing %1"
+#~ msgstr "Installeren van %1"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Buffer wissen"
+#~ msgid "pm-install"
+#~ msgstr "pm-installeer"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(gebruik 0 voor geen limiet)"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakket-installeerder is reeds gestart!"
 
-#~ msgid "Update check"
-#~ msgstr "Opwaaderingen controleren"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bandbreedtelimiet:"
-
-#~ msgid "Summary"
-#~ msgstr "Samenvatting"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installatie van %1 is gelukt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Gebruik proxyserver"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "opvullen-links:15px;"
+#~ msgid "Reverse package selections"
+#~ msgstr "Keer pakketselectie om"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 23:17+0300\n"
+"POT-Creation-Date: 2010-06-03 09:47+0300\n"
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -49,14 +49,14 @@ msgid "Update Requirements"
 msgstr "Atualizar Requerimentos"
 
 #: .tmp/basketdialog.py:125
-msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
 msgstr "Você deve <b>reinicializar</b> o seu sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
 
 #: .tmp/basketdialog.py:132
-msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
+msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Você deve reinicializar os seguintes serviços de sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
 
-#: .tmp/basketdialog.py:155 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Erro do PiSi"
@@ -727,20 +727,20 @@ msgstr "Você pode iniciar a nova aplicação instalado com um clique duplo na l
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Summary"
-#~ msgstr "Resumo"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Finalizou com sucesso a instalação de %1"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
 #~ msgid "Use proxy server"
 #~ msgstr "Usar servidor de proxy"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Finalizou com sucesso a instalação de %1"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Resumo"

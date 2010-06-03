@@ -122,16 +122,15 @@ class BasketDialog(QtGui.QDialog, Ui_BasketDialog):
                     self.model.selectedPackages() + self.model.extraPackages())
             if actions[0]:
                 answer = self.askForActions(actions[0],
-                       i18n("You must <b>restart</b> your system in order the "
-                            "updated versions of the following package(s) to "
-                            "take effect:"))
+                       i18n("You must <b>restart</b> your system for the "
+                            "updates in the following package(s) to take "
+                            "effect:"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
             if actions[1]:
                 answer = self.askForActions(actions[1],
-                       i18n("You must restart following system services in "
-                            "order the updated versions of the selected "
-                            "package(s) to take effect:"))
+                       i18n("You must restart following system services for "
+                            "the updated package(s) to take effect:"))
             if not answer == QtGui.QMessageBox.Yes:
                 return
         self.state.operationAction(self.model.selectedPackages())

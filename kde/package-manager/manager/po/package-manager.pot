@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 23:17+0300\n"
+"POT-Creation-Date: 2010-06-03 09:47+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,66 +16,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_appitem.py:57
-msgid "Application"
+#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:285
+#: .tmp/mainwidget.py:297 .tmp/ui_mainwindow.py:33
+msgid "Package Manager"
 msgstr ""
 
-#: .tmp/ui_appitem.py:58
-msgid "Web Tarayıcı"
+#: .tmp/about.py:27
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr ""
 
-#: .tmp/ui_appitem.py:59
-msgid "Firefox"
+#: .tmp/about.py:35
+msgid "Gökmen Göksel"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:153
-msgid "Operation"
+#: .tmp/about.py:35
+msgid "Developer"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:154 .tmp/progressdialog.py:77
-msgid "<h3>Preparing PiSi...</h3>"
+#: .tmp/about.py:36
+msgid "Faik Uygur"
 msgstr ""
 
-#: .tmp/ui_progressdialog.py:155 .tmp/progressdialog.py:83
-msgid "Time remaining:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:156 .tmp/progressdialog.py:82
-msgid "--  / --"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:157 .tmp/progressdialog.py:84
-msgid "--:--:--"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:158
-msgid "Operation:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:159 .tmp/progressdialog.py:81
-msgid "Status:"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:160
-msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
-"REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
-"\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
-"weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
-"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
-"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
-msgid "&Cancel"
-msgstr ""
-
-#: .tmp/ui_progressdialog.py:166
-msgid "Alt+C"
+#: .tmp/about.py:36
+msgid "First Author"
 msgstr ""
 
 #: .tmp/ui_settingsdialog.py:370 .tmp/mainwindow.py:142
@@ -249,6 +212,211 @@ msgstr ""
 msgid "&OK"
 msgstr ""
 
+#: .tmp/ui_settingsdialog.py:414 .tmp/ui_progressdialog.py:165
+msgid "&Cancel"
+msgstr ""
+
+#: .tmp/main.py:52
+msgid "Show main window"
+msgstr ""
+
+#: .tmp/tray.py:69 .tmp/tray.py:195 .tmp/tray.py:223 .tmp/grouplist.py:36
+msgid "All"
+msgstr ""
+
+#: .tmp/tray.py:185 .tmp/tray.py:214
+msgid "Update"
+msgstr ""
+
+#: .tmp/tray.py:189 .tmp/mainwindow.py:100
+msgid "Quit"
+msgstr ""
+
+#: .tmp/tray.py:199
+msgid "Updates"
+msgstr ""
+
+#: .tmp/tray.py:199
+msgid "There are %1 updates available!"
+msgstr ""
+
+#: .tmp/tray.py:230
+msgid "There are <b>%1</b> updates available!"
+msgstr ""
+
+#: .tmp/tray.py:231
+msgid "Show Updates"
+msgstr ""
+
+#: .tmp/tray.py:231
+msgid "Ignore"
+msgstr ""
+
+#: .tmp/ui_appitem.py:57
+msgid "Application"
+msgstr ""
+
+#: .tmp/ui_appitem.py:58
+msgid "Web Tarayıcı"
+msgstr ""
+
+#: .tmp/ui_appitem.py:59
+msgid "Firefox"
+msgstr ""
+
+#: .tmp/ui_pminstaller.py:33 .tmp/ui_mainwidget_x11.py:75
+#: .tmp/ui_mainwidget_kde4.py:86
+msgid "Form"
+msgstr ""
+
+#: .tmp/settingsdialog.py:150
+msgid "Open Directory"
+msgstr ""
+
+#: .tmp/settingsdialog.py:159
+msgid "Warning"
+msgstr ""
+
+#: .tmp/settingsdialog.py:160
+msgid "All the cached packages will be deleted. Are you sure? "
+msgstr ""
+
+#: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
+#: .tmp/mainwidget.py:245 .tmp/mainwidget.py:248 .tmp/basketdialog.py:154
+msgid "Pisi Error"
+msgstr ""
+
+#: .tmp/settingsdialog.py:221
+msgid "Not a valid repository name"
+msgstr ""
+
+#: .tmp/settingsdialog.py:226
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:49
+msgid "Operation Summary"
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:50
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+
+#: .tmp/ui_summarydialog.py:51
+msgid "&Ok"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:55
+msgid "Add New Repository"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:56
+msgid "Name of the repository, e.g <b>pardus-devel</b>"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:59
+msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/ui_repodialog.py:60
+msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr ""
+
+#: .tmp/progressdialog.py:45
+#, python-format
+msgid "Operation - %1%"
+msgstr ""
+
+#: .tmp/progressdialog.py:48 .tmp/commontext.py:16
+msgid "configuring"
+msgstr ""
+
+#: .tmp/progressdialog.py:48 .tmp/commontext.py:15
+msgid "extracting"
+msgstr ""
+
+#: .tmp/progressdialog.py:52
+msgid "Downloading package list of %1"
+msgstr ""
+
+#: .tmp/progressdialog.py:54
+msgid "%1 %2"
+msgstr ""
+
+#: .tmp/progressdialog.py:59
+msgid "%1 / %2 package %3"
+msgstr ""
+
+#: .tmp/progressdialog.py:65
+msgid "<p align='center'>%1 / %2, %3</p>"
+msgstr ""
+
+#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:154
+msgid "<h3>Preparing PiSi...</h3>"
+msgstr ""
+
+#: .tmp/progressdialog.py:81 .tmp/ui_progressdialog.py:159
+msgid "Status:"
+msgstr ""
+
+#: .tmp/progressdialog.py:82 .tmp/ui_progressdialog.py:156
+msgid "--  / --"
+msgstr ""
+
+#: .tmp/progressdialog.py:83 .tmp/ui_progressdialog.py:155
+msgid "Time remaining:"
+msgstr ""
+
+#: .tmp/progressdialog.py:84 .tmp/ui_progressdialog.py:157
+msgid "--:--:--"
+msgstr ""
+
+#: .tmp/progressdialog.py:88
+msgid "<b>Cancelling operation...</b>"
+msgstr ""
+
+#: .tmp/mainwidget.py:64
+msgid "All Packages are up to date"
+msgstr ""
+
+#: .tmp/mainwidget.py:116
+msgid "All Updates"
+msgstr ""
+
+#: .tmp/mainwidget.py:117
+msgid "Security Updates"
+msgstr ""
+
+#: .tmp/mainwidget.py:118
+msgid "Critical Updates"
+msgstr ""
+
+#: .tmp/mainwidget.py:239
+msgid "Network Error"
+msgstr ""
+
+#: .tmp/mainwidget.py:240
+msgid "Please check your network connections and try again."
+msgstr ""
+
+#: .tmp/mainwidget.py:242
+msgid "Authorization Error"
+msgstr ""
+
+#: .tmp/mainwidget.py:243
+msgid "You are not authorized for this operation."
+msgstr ""
+
+#: .tmp/mainwidget.py:246
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+
 #: .tmp/packagedelegate.py:48
 msgid "critical"
 msgstr ""
@@ -281,57 +449,73 @@ msgstr ""
 msgid "Installed Version:"
 msgstr ""
 
-#: .tmp/main.py:52
-msgid "Show main window"
+#: .tmp/pm-install.py:47
+msgid "%prog packages_to_install"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:86 .tmp/ui_mainwidget_x11.py:75
-#: .tmp/ui_pminstaller.py:33
-msgid "Form"
+#: .tmp/helpdialog.py:31
+msgid "Package Manager Help"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
+#: .tmp/mainwindow_kde4.py:81 .tmp/mainwindow_kde4.py:86 .tmp/mainwindow.py:74
+#: .tmp/mainwindow.py:79 .tmp/statemanager.py:130
+msgid "Currently your basket is empty."
+msgstr ""
+
+#: .tmp/mainwindow_kde4.py:102 .tmp/mainwindow.py:113
+msgid "Show Installable Packages"
+msgstr ""
+
+#: .tmp/mainwindow_kde4.py:108 .tmp/mainwindow.py:123
+msgid "Show Installed Packages"
+msgstr ""
+
+#: .tmp/mainwindow_kde4.py:113 .tmp/mainwindow.py:132
+msgid "Show Upgradable Packages"
+msgstr ""
+
+#: .tmp/ui_mainwidget_x11.py:76 .tmp/ui_mainwidget_kde4.py:87
 msgid "Category Panel"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
+#: .tmp/ui_mainwidget_x11.py:77 .tmp/ui_mainwidget_kde4.py:88
 msgid "Search Bar"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
+#: .tmp/ui_mainwidget_x11.py:78 .tmp/ui_mainwidget_kde4.py:89
 msgid "Click to search"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
+#: .tmp/ui_mainwidget_x11.py:79 .tmp/ui_mainwidget_kde4.py:90
 msgid "Search Button"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
+#: .tmp/ui_mainwidget_x11.py:80 .tmp/ui_mainwidget_kde4.py:91
 msgid "Search"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:92 .tmp/ui_mainwidget_x11.py:81
+#: .tmp/ui_mainwidget_x11.py:81 .tmp/ui_mainwidget_kde4.py:92
 msgid "Action Button for current states action"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
+#: .tmp/ui_mainwidget_x11.py:82 .tmp/ui_basketdialog.py:104
+#: .tmp/ui_mainwidget_kde4.py:93 .tmp/statemanager.py:80
 msgid "Install Package(s)"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
+#: .tmp/ui_mainwidget_x11.py:83 .tmp/ui_mainwidget_kde4.py:94
 msgid "Toggler for selection all packages in Package List"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
+#: .tmp/ui_mainwidget_x11.py:84 .tmp/ui_mainwidget_kde4.py:95
 msgid "Select all packages in this group"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
+#: .tmp/ui_mainwidget_x11.py:85 .tmp/ui_mainwidget_kde4.py:96
 msgid "Package List"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
+#: .tmp/ui_mainwidget_x11.py:86 .tmp/ui_mainwidget_kde4.py:97
 msgid "Update Types"
 msgstr ""
 
@@ -349,19 +533,90 @@ msgstr ""
 
 #: .tmp/basketdialog.py:125
 msgid ""
-"You must <b>restart</b> your system in order the updated versions of the "
-"following package(s) to take effect:"
+"You must <b>restart</b> your system for the updates in the following package"
+"(s) to take effect:"
 msgstr ""
 
 #: .tmp/basketdialog.py:132
 msgid ""
-"You must restart following system services in order the updated versions of "
-"the selected package(s) to take effect:"
+"You must restart following system services for the updated package(s) to "
+"take effect:"
 msgstr ""
 
-#: .tmp/basketdialog.py:155 .tmp/settingsdialog.py:220
-#: .tmp/settingsdialog.py:225 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
-msgid "Pisi Error"
+#: .tmp/mainwindow.py:96
+msgid "File"
+msgstr ""
+
+#: .tmp/mainwindow.py:97
+msgid "Settings"
+msgstr ""
+
+#: .tmp/mainwindow.py:98 .tmp/mainwindow.py:104
+msgid "Help"
+msgstr ""
+
+#: .tmp/commontext.py:16
+msgid "removing"
+msgstr ""
+
+#: .tmp/commontext.py:17
+msgid "installing"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:153
+msgid "Operation"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:158
+msgid "Operation:"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:160
+msgid ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+msgstr ""
+
+#: .tmp/ui_progressdialog.py:166
+msgid "Alt+C"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:99
+msgid "Basket"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:100
+msgid "Selected package(s) for install:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:101 .tmp/statemanager.py:105
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:102
+msgid "Total Size:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:103
+msgid "<b>2.2 MB</b>"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:105
+msgid "Download Size:"
+msgstr ""
+
+#: .tmp/ui_basketdialog.py:106
+msgid "<b>2.0 MB</"
 msgstr ""
 
 #: .tmp/statemanager.py:72
@@ -432,12 +687,6 @@ msgstr ""
 msgid "You have selected the following package(s) to upgrade:"
 msgstr ""
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
-msgid ""
-"Extra dependencies of the selected package(s) that are also going to be "
-"installed:"
-msgstr ""
-
 #: .tmp/statemanager.py:106
 msgid ""
 "Reverse dependencies of the selected package(s) that are also going to be "
@@ -448,11 +697,6 @@ msgstr ""
 msgid ""
 "Extra dependencies of the selected package(s) that are also going to be "
 "upgraded:"
-msgstr ""
-
-#: .tmp/statemanager.py:130 .tmp/mainwindow_kde4.py:81
-#: .tmp/mainwindow_kde4.py:86 .tmp/mainwindow.py:74 .tmp/mainwindow.py:79
-msgid "Currently your basket is empty."
 msgstr ""
 
 #: .tmp/statemanager.py:132
@@ -494,248 +738,4 @@ msgstr ""
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
-msgstr ""
-
-#: .tmp/ui_mainwindow.py:33 .tmp/about.py:24 .tmp/about.py:25
-#: .tmp/mainwidget.py:285 .tmp/mainwidget.py:297
-msgid "Package Manager"
-msgstr ""
-
-#: .tmp/progressdialog.py:45
-#, python-format
-msgid "Operation - %1%"
-msgstr ""
-
-#: .tmp/progressdialog.py:48 .tmp/commontext.py:16
-msgid "configuring"
-msgstr ""
-
-#: .tmp/progressdialog.py:48 .tmp/commontext.py:15
-msgid "extracting"
-msgstr ""
-
-#: .tmp/progressdialog.py:52
-msgid "Downloading package list of %1"
-msgstr ""
-
-#: .tmp/progressdialog.py:54
-msgid "%1 %2"
-msgstr ""
-
-#: .tmp/progressdialog.py:59
-msgid "%1 / %2 package %3"
-msgstr ""
-
-#: .tmp/progressdialog.py:65
-msgid "<p align='center'>%1 / %2, %3</p>"
-msgstr ""
-
-#: .tmp/progressdialog.py:88
-msgid "<b>Cancelling operation...</b>"
-msgstr ""
-
-#: .tmp/settingsdialog.py:150
-msgid "Open Directory"
-msgstr ""
-
-#: .tmp/settingsdialog.py:159
-msgid "Warning"
-msgstr ""
-
-#: .tmp/settingsdialog.py:160
-msgid "All the cached packages will be deleted. Are you sure? "
-msgstr ""
-
-#: .tmp/settingsdialog.py:221
-msgid "Not a valid repository name"
-msgstr ""
-
-#: .tmp/settingsdialog.py:226
-msgid ""
-"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
-"again.</qt>"
-msgstr ""
-
-#: .tmp/about.py:27
-msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr ""
-
-#: .tmp/about.py:35
-msgid "Gökmen Göksel"
-msgstr ""
-
-#: .tmp/about.py:35
-msgid "Developer"
-msgstr ""
-
-#: .tmp/about.py:36
-msgid "Faik Uygur"
-msgstr ""
-
-#: .tmp/about.py:36
-msgid "First Author"
-msgstr ""
-
-#: .tmp/mainwidget.py:64
-msgid "All Packages are up to date"
-msgstr ""
-
-#: .tmp/mainwidget.py:116
-msgid "All Updates"
-msgstr ""
-
-#: .tmp/mainwidget.py:117
-msgid "Security Updates"
-msgstr ""
-
-#: .tmp/mainwidget.py:118
-msgid "Critical Updates"
-msgstr ""
-
-#: .tmp/mainwidget.py:239
-msgid "Network Error"
-msgstr ""
-
-#: .tmp/mainwidget.py:240
-msgid "Please check your network connections and try again."
-msgstr ""
-
-#: .tmp/mainwidget.py:242
-msgid "Authorization Error"
-msgstr ""
-
-#: .tmp/mainwidget.py:243
-msgid "You are not authorized for this operation."
-msgstr ""
-
-#: .tmp/mainwidget.py:246
-msgid ""
-"Package not found. It may be upgraded in or removed from the repository. "
-"Please try upgrading repository informations."
-msgstr ""
-
-#: .tmp/mainwindow_kde4.py:102 .tmp/mainwindow.py:113
-msgid "Show Installable Packages"
-msgstr ""
-
-#: .tmp/mainwindow_kde4.py:108 .tmp/mainwindow.py:123
-msgid "Show Installed Packages"
-msgstr ""
-
-#: .tmp/mainwindow_kde4.py:113 .tmp/mainwindow.py:132
-msgid "Show Upgradable Packages"
-msgstr ""
-
-#: .tmp/tray.py:69 .tmp/tray.py:195 .tmp/tray.py:223 .tmp/grouplist.py:36
-msgid "All"
-msgstr ""
-
-#: .tmp/tray.py:185 .tmp/tray.py:214
-msgid "Update"
-msgstr ""
-
-#: .tmp/tray.py:189 .tmp/mainwindow.py:100
-msgid "Quit"
-msgstr ""
-
-#: .tmp/tray.py:199
-msgid "Updates"
-msgstr ""
-
-#: .tmp/tray.py:199
-msgid "There are %1 updates available!"
-msgstr ""
-
-#: .tmp/tray.py:230
-msgid "There are <b>%1</b> updates available!"
-msgstr ""
-
-#: .tmp/tray.py:231
-msgid "Show Updates"
-msgstr ""
-
-#: .tmp/tray.py:231
-msgid "Ignore"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:99
-msgid "Basket"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:100
-msgid "Selected package(s) for install:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:102
-msgid "Total Size:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:103
-msgid "<b>2.2 MB</b>"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:105
-msgid "Download Size:"
-msgstr ""
-
-#: .tmp/ui_basketdialog.py:106
-msgid "<b>2.0 MB</"
-msgstr ""
-
-#: .tmp/commontext.py:16
-msgid "removing"
-msgstr ""
-
-#: .tmp/commontext.py:17
-msgid "installing"
-msgstr ""
-
-#: .tmp/ui_summarydialog.py:49
-msgid "Operation Summary"
-msgstr ""
-
-#: .tmp/ui_summarydialog.py:50
-msgid ""
-"You can start the new installed application by double-clicking on the list "
-"below or later from the applications menu."
-msgstr ""
-
-#: .tmp/ui_summarydialog.py:51
-msgid "&Ok"
-msgstr ""
-
-#: .tmp/mainwindow.py:96
-msgid "File"
-msgstr ""
-
-#: .tmp/mainwindow.py:97
-msgid "Settings"
-msgstr ""
-
-#: .tmp/mainwindow.py:98 .tmp/mainwindow.py:104
-msgid "Help"
-msgstr ""
-
-#: .tmp/pm-install.py:47
-msgid "%prog packages_to_install"
-msgstr ""
-
-#: .tmp/ui_repodialog.py:55
-msgid "Add New Repository"
-msgstr ""
-
-#: .tmp/ui_repodialog.py:56
-msgid "Name of the repository, e.g <b>pardus-devel</b>"
-msgstr ""
-
-#: .tmp/ui_repodialog.py:59
-msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-msgstr ""
-
-#: .tmp/ui_repodialog.py:60
-msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr ""
-
-#: .tmp/helpdialog.py:31
-msgid "Package Manager Help"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 23:17+0300\n"
+"POT-Creation-Date: 2010-06-03 09:47+0300\n"
 "PO-Revision-Date: 2009-12-19 13:28+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -50,14 +50,14 @@ msgid "Update Requirements"
 msgstr "Requis par la mise à jour"
 
 #: .tmp/basketdialog.py:125
-msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
 msgstr "Vous devez <b>redémarrer</b> votre système pour que les versions à jour des paquets suivants prennent effet :"
 
 #: .tmp/basketdialog.py:132
-msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
+msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Vous devez redémarrer les services du système suivants  afin que les versions mises à jour des paquets sélectionnés prennent effet :"
 
-#: .tmp/basketdialog.py:155 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Erreur de Pisi"
@@ -723,29 +723,44 @@ msgstr "Vous pouvez lancer l'application que vous venez d'installer en double-cl
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Cancel"
-#~ msgstr "Annuler"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nouveaux paquets installés avec succès."
+#~ msgid "Use proxy server"
+#~ msgstr "Utiliser un serveur proxy"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Sélection inverse des paquets"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "L'installation de %1 a réussi."
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "L'installeur de paquets est déjà démarré !"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation des paquets terminée avec succès"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "%p%"
+#~ msgstr "%p%"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installation de %1"
+#~ msgid "Summary"
+#~ msgstr "Résumé"
 
-#~ msgid "Package Installer"
-#~ msgstr "Installeur de paquets"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Limite de bande passante :"
 
-#~ msgid "Maintainer"
-#~ msgstr "Mainteneur"
+#~ msgid "Update check"
+#~ msgstr "Vérifier les mises à jour"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(mettez 0 pour illimité)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Effacer le cache"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
+
+#~ msgid "Delete"
+#~ msgstr "Effacer"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -760,41 +775,26 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Sélectionner tous les paquets de ce groupe</p></body></html>"
 
-#~ msgid "Delete"
-#~ msgstr "Effacer"
+#~ msgid "Maintainer"
+#~ msgstr "Mainteneur"
 
-#~ msgid "Ok"
-#~ msgstr "Ok"
+#~ msgid "Package Installer"
+#~ msgstr "Installeur de paquets"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Installing %1"
+#~ msgstr "Installation de %1"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Effacer le cache"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(mettez 0 pour illimité)"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "L'installeur de paquets est déjà démarré !"
 
-#~ msgid "Update check"
-#~ msgstr "Vérifier les mises à jour"
+#~ msgid "Reverse package selections"
+#~ msgstr "Sélection inverse des paquets"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Limite de bande passante :"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nouveaux paquets installés avec succès."
 
-#~ msgid "Summary"
-#~ msgstr "Résumé"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation des paquets terminée avec succès"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "L'installation de %1 a réussi."
-
-#~ msgid "Use proxy server"
-#~ msgstr "Utiliser un serveur proxy"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Cancel"
+#~ msgstr "Annuler"
