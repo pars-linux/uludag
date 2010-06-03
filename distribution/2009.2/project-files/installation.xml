@@ -187,10 +187,12 @@
         <SelectedPackage>tree</SelectedPackage>
         <SelectedPackage>unarj</SelectedPackage>
         <SelectedPackage>unrar</SelectedPackage>
+        <SelectedPackage>usb-modeswitch</SelectedPackage>
         <SelectedPackage>user-manager</SelectedPackage>
         <SelectedPackage>v4l-conexant-firmware</SelectedPackage>
         <SelectedPackage>v4l-dvb-firmware</SelectedPackage>
         <SelectedPackage>vbetool</SelectedPackage>
+        <SelectedPackage>vim</SelectedPackage>
         <SelectedPackage>virtualbox-guest-utils</SelectedPackage>
         <SelectedPackage>wget</SelectedPackage>
         <SelectedPackage>whois</SelectedPackage>
@@ -336,6 +338,7 @@
         <Package>cracklib</Package>
         <Package>crda</Package>
         <Package>cryptsetup-luks</Package>
+        <Package>ctags</Package>
         <Package>ctdb</Package>
         <Package>cups</Package>
         <Package>cupsddk</Package>
@@ -961,6 +964,7 @@
         <Package>unrar</Package>
         <Package>unzip</Package>
         <Package>urlgrabber</Package>
+        <Package>usb-modeswitch</Package>
         <Package>usbutils</Package>
         <Package>user-manager</Package>
         <Package>utempter</Package>
@@ -970,6 +974,7 @@
         <Package>vbetool</Package>
         <Package>vcdimager</Package>
         <Package>vigra</Package>
+        <Package>vim</Package>
         <Package>virtualbox-guest-utils</Package>
         <Package>virtuoso</Package>
         <Package>vixie-cron</Package>
