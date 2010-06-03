@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-02 23:17+0300\n"
+"POT-Creation-Date: 2010-06-03 09:47+0300\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -51,14 +51,14 @@ msgid "Update Requirements"
 msgstr ""
 
 #: .tmp/basketdialog.py:125
-msgid "You must <b>restart</b> your system in order the updated versions of the following package(s) to take effect:"
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
 msgstr ""
 
 #: .tmp/basketdialog.py:132
-msgid "You must restart following system services in order the updated versions of the selected package(s) to take effect:"
+msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr ""
 
-#: .tmp/basketdialog.py:155 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi Fejl"
@@ -752,23 +752,39 @@ msgstr "Du kan starte det installerede program ved at dobbeltklikke på det i li
 msgid "&Ok"
 msgstr "&OK"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
 
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+
+#~ msgid "Clear Cache"
+#~ msgstr "Ryd mellemlager"
+
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
+
+#~ msgid "Ok"
+#~ msgstr "OK"
+
+#~ msgid "Delete"
+#~ msgstr "Slet"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -783,36 +799,20 @@ msgstr "&OK"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
-#~ msgid "Delete"
-#~ msgstr "Slet"
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
 
-#~ msgid "Ok"
-#~ msgstr "OK"
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
 
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
 
-#~ msgid "Clear Cache"
-#~ msgstr "Ryd mellemlager"
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
 
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
 
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
-
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
