@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 13:17+0300\n"
+"POT-Creation-Date: 2010-06-04 06:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgid "Form1"
 msgstr ""
 
 #: src/ui_maindialog.py:129
-msgid "Upgrading from Pardus to version 2009.1"
+msgid "Upgrading from Pardus to version 2009"
 msgstr ""
 
 #: src/ui_maindialog.py:131
@@ -120,12 +120,12 @@ msgid "You are not authorized for this operation."
 msgstr ""
 
 #: src/maindialog.py:46
-msgid "Upgrading from %1 to version 2009.1"
+msgid "Upgrading from %1 to version 2009"
 msgstr ""
 
 #: src/maindialog.py:63
 msgid ""
-"<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
+"<qt>Upgrade to Pardus 2009 completed. Upgrade-manager will now restart the "
 "system."
 msgstr ""
 

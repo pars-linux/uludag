@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: upgrade-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 13:17+0300\n"
+"POT-Creation-Date: 2010-06-04 06:55+0300\n"
 "PO-Revision-Date: 2009-12-01 21:27+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -21,8 +21,8 @@ msgid "Form1"
 msgstr "Form1"
 
 #: src/ui_maindialog.py:129
-msgid "Upgrading from Pardus to version 2009.1"
-msgstr "Uppgraderar från Pardus till version 2009.1"
+msgid "Upgrading from Pardus to version 2009"
+msgstr "Uppgraderar från Pardus till version 2009"
 
 #: src/ui_maindialog.py:131
 msgid "Preparing to upgrade"
@@ -121,12 +121,12 @@ msgid "You are not authorized for this operation."
 msgstr ""
 
 #: src/maindialog.py:46
-msgid "Upgrading from %1 to version 2009.1"
-msgstr ""
+msgid "Upgrading from %1 to version 2009"
+msgstr "Uppgraderar från Pardus till version 2009"
 
 #: src/maindialog.py:63
 msgid ""
-"<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
+"<qt>Upgrade to Pardus 2009 completed. Upgrade-manager will now restart the "
 "system."
 msgstr ""
 

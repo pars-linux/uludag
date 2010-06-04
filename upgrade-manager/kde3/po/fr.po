@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-10 13:17+0300\n"
+"POT-Creation-Date: 2010-06-04 06:55+0300\n"
 "PO-Revision-Date: 2009-12-01 17:57+0100\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -22,8 +22,8 @@ msgid "Form1"
 msgstr "Form1"
 
 #: src/ui_maindialog.py:129
-msgid "Upgrading from Pardus to version 2009.1"
-msgstr "Migration vers Pardus 2009.1"
+msgid "Upgrading from Pardus to version 2009"
+msgstr "Migration vers Pardus 2009"
 
 #: src/ui_maindialog.py:131
 msgid "Preparing to upgrade"
@@ -126,15 +126,15 @@ msgid "You are not authorized for this operation."
 msgstr "Vous n'êtes pas authorisé à effectuer cette opération."
 
 #: src/maindialog.py:46
-msgid "Upgrading from %1 to version 2009.1"
-msgstr "Migration de la version %1 vers la version 2009.1"
+msgid "Upgrading from %1 to version 2009"
+msgstr "Migration de la version %1 vers la version 2009"
 
 #: src/maindialog.py:63
 msgid ""
-"<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the "
+"<qt>Upgrade to Pardus 2009 completed. Upgrade-manager will now restart the "
 "system."
 msgstr ""
-"<qt>Migration vers Pardus 2009.1 terminée. L'assistant va maintenant "
+"<qt>Migration vers Pardus 2009 terminée. L'assistant va maintenant "
 "redémarrer l'ordinateur."
 
 #: src/maindialog.py:70
