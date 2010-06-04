@@ -43,7 +43,7 @@ class MainDialog(UI_MainDialog):
             currentRelease = " ".join(open("/etc/pardus-release", "r").readline().split()[0:2])
         except Exception, e:
             currentRelease = "Pardus 2008"
-        self.versionTo.setText(i18n("Upgrading from %1 to version 2009.1").arg(currentRelease))
+        self.versionTo.setText(i18n("Upgrading from %1 to version 2009").arg(currentRelease))
 
     def upgrade(self):
         self.state.runNextStep()
@@ -60,7 +60,7 @@ class MainDialog(UI_MainDialog):
 
     def reboot(self):
         self.step_selected(REBOOT_STEP)
-        message = i18n("<qt>Upgrade to Pardus 2009.1 completed. Upgrade-manager will now restart the system.")
+        message = i18n("<qt>Upgrade to Pardus 2009 completed. Upgrade-manager will now restart the system.")
         message += i18n("<br><br>Do you want to continue?</qt>")
 
         if KMessageBox.Yes == KMessageBox.warningYesNo(self,
