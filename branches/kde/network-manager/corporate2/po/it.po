@@ -126,6 +126,9 @@ msgid ""
 "a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
+"Il Gestore di Rete non è stato in grado di comunicare con la tua periferica di rete. Se è\n"
+"una periferica senza fili, assicurati che sia attivata. Generalmente nei portatili\n"
+"la si può attivare con i tasti Fn."
 
 #: comariface.py:184
 msgid ""
