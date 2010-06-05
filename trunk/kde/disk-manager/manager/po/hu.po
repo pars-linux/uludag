@@ -1,15 +1,14 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: Pardus 2009\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-30 11:24+0300\n"
-"PO-Revision-Date: 2010-06-03 11:34+0100\n"
-"Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
+"PO-Revision-Date: 2010-06-05 22:40+0100\n"
+"Last-Translator: Mihailov Ferenc <fmihailov@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +16,7 @@ msgstr ""
 
 #: .tmp/ui_edit.py:67
 msgid "Mount Disk Automatically"
-msgstr "Lemez felcsatolása automatikusan"
+msgstr "Lemez automatikus felcsatolása"
 
 #: .tmp/ui_edit.py:68
 msgid "Mount Point:"
@@ -51,11 +50,13 @@ msgstr "Törlés"
 msgid "Add New"
 msgstr "Új hozzáadása"
 
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+#: .tmp/diskmanager/pagedialog.py:31
+#: .tmp/diskmanager/pagedialog.py:34
 msgid "Settings"
 msgstr "Beállítások"
 
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22
 msgid "Disk Manager"
 msgstr "Lemez menedzser"
 
@@ -77,7 +78,7 @@ msgstr "Aktuális karbantartó"
 
 #: .tmp/diskmanager/main.py:86
 msgid "There are no packages that provide backend for this application. Please make sure that packages are installed and configured correctly."
-msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+msgstr "Nem elérhetők az alkalmazás hátterét biztosító csomagok . Kérem ellenőrizze hogy a csomagokat megfelelően telepítette és konfigurálta ."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -91,7 +92,9 @@ msgstr "Minden elem"
 msgid "Add"
 msgstr "Hozzáad"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
+#: .tmp/diskmanager/main.py:272
+#: .tmp/diskmanager/main.py:282
 #: .tmp/diskmanager/main.py:321
 msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
+
