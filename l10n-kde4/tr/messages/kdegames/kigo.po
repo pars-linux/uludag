@@ -262,7 +262,7 @@ msgstr "Arturo Silva"
 
 #: main.cpp:48
 msgid "Default theme designer"
-msgstr "Ön tanımlı tema tasarımcısı"
+msgstr "Öntanımlı tema tasarımcısı"
 
 #. i18n: file: kigo.kcfg:9
 #. i18n: ectx: label, entry (EngineList), group (Backend)

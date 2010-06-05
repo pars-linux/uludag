@@ -3055,7 +3055,7 @@ msgstr "Kabuk"
 #: apps/konsole/data/profiles/Shell.profile:87
 msgctxt "Comment"
 msgid "Konsole default profile"
-msgstr "Konsole ön tanımlı profili"
+msgstr "Konsole öntanımlı profili"
 
 #: apps/konsole/desktop/konsole.desktop:9
 msgctxt "Name"
@@ -3351,7 +3351,7 @@ msgstr "Dizin Görünümü"
 msgctxt "Comment"
 msgid "Display the contents of folders (User's home folder as default)"
 msgstr ""
-"Dizinlerin içeriğini göster (Ön tanımlı olarak kullanıcının ev dizinini "
+"Dizinlerin içeriğini göster (Öntanımlı olarak kullanıcının ev dizinini "
 "kullan)"
 
 #: runtime/attica/kcm/kcm_attica.desktop:12
@@ -3403,12 +3403,12 @@ msgstr "kdbg"
 #: runtime/kcontrol/componentchooser/componentchooser.desktop:13
 msgctxt "Name"
 msgid "Default Applications"
-msgstr "Ön tanımlı Uygulamalar"
+msgstr "Öntanımlı Uygulamalar"
 
 #: runtime/kcontrol/componentchooser/componentchooser.desktop:95
 msgctxt "Comment"
 msgid "Choose the default components for various services"
-msgstr "Çeşitli servisler için ön tanımlı bileşenleri seçin"
+msgstr "Çeşitli servisler için öntanımlı bileşenleri seçin"
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_browser.desktop:4
 msgctxt "Name|standard desktop component"
@@ -3421,7 +3421,7 @@ msgid ""
 "Here you can configure your default web browser. All KDE applications in "
 "which you can select hyperlinks should honor this setting."
 msgstr ""
-"Burada ön tanımlı web tarayıcınızı yapılandırabilirsiniz. Tüm KDE "
+"Burada öntanımlı web tarayıcınızı yapılandırabilirsiniz. Tüm KDE "
 "uygulamalarında bulunan bağlantılar bu seçenek kullanılarak açılacaktır."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_filemanager.desktop:4
@@ -3436,7 +3436,7 @@ msgid ""
 "and all KDE applications in which you can open folders will use this file "
 "manager."
 msgstr ""
-"Buradan ön tanımlı dosya yöneticinizi yapılandırabilirsiniz. K menüsünde ve "
+"Buradan öntanımlı dosya yöneticinizi yapılandırabilirsiniz. K menüsünde ve "
 "KDE uygulamalarında bulunan tüm dizin açan uygulamalar için bu uygulama "
 "kullanılacaktır."
 
@@ -3451,7 +3451,7 @@ msgid ""
 "This service allows you to configure your default email client. All KDE "
 "applications which need access to an email client application should honor "
 "this setting."
-msgstr "Bu servis ön tanımlı e-posta istemcinizi seçmenize yardımcı olur."
+msgstr "Bu servis öntanımlı e-posta istemcinizi seçmenize yardımcı olur."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_terminal.desktop:4
 msgctxt "Name|standard desktop component"
@@ -3464,7 +3464,7 @@ msgid ""
 "This service allows you to configure your default terminal emulator. All KDE "
 "applications which invoke a terminal emulator application should honor this "
 "setting."
-msgstr "Bu servis ön tanımlı uçbirim uygulamasını seçmenize yardımcı olur."
+msgstr "Bu servis öntanımlı uçbirim uygulamasını seçmenize yardımcı olur."
 
 #: runtime/kcontrol/componentchooser/componentservices/kcm_wm.desktop:4
 msgctxt "Name|standard desktop component"
@@ -5759,7 +5759,7 @@ msgstr "Merkez Avrupa"
 #: runtime/l10n/C/entry.desktop:2
 msgctxt "Name"
 msgid "Default"
-msgstr "Ön tanımlı"
+msgstr "Öntanımlı"
 
 #: runtime/l10n/cf/entry.desktop:2
 msgctxt "Name"
@@ -8947,7 +8947,7 @@ msgstr "KDE'yi çoklu monitör kullanmak için yapılandır"
 #: workspace/kdm/kfrontend/pics/default_blue.jpg.desktop:3
 msgctxt "Name"
 msgid "Default Blue"
-msgstr "Ön tanımlı Mavi"
+msgstr "Öntanımlı Mavi"
 
 #: workspace/kdm/kfrontend/sessions/9wm.desktop:5
 msgctxt "Name"
@@ -9499,7 +9499,7 @@ msgid ""
 "KHotkeys. (Note that this group and all its actions are disabled by default.)"
 msgstr ""
 "Bu grup KHotkeys uygulamasının bir çok özelliğini gösteren örnekler içerir. "
-"(Bu grubun ve eylemlerinin ön tanımlı olarak pasifleştirilmiş olduğunu "
+"(Bu grubun ve eylemlerinin öntanımlı olarak pasifleştirilmiş olduğunu "
 "unutmayın.)"
 
 #: workspace/khotkeys/data/kde32b1.khotkeys:73
@@ -9902,7 +9902,7 @@ msgid ""
 "Press, move up, release.\\nConflicts with Opera-style 'Up #2', which is "
 "disabled by default."
 msgstr ""
-"Bas, yukarı taşı, bırak.\\nOpera-biçimi ile çakışır 'Yukarı #2', ön tanımlı "
+"Bas, yukarı taşı, bırak.\\nOpera-biçimi ile çakışır 'Yukarı #2', öntanımlı "
 "olarak pasifleştirilmiştir."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:3163
@@ -9929,7 +9929,7 @@ msgstr "Bas, yukarı taşı, aşağı taşı, bırak."
 #: workspace/khotkeys/data/printscreen.khotkeys:5
 msgctxt "Comment"
 msgid "This group contains actions that are set up by default."
-msgstr "Bu grup ön tanımlı olarak ayarlanan eylemleri içerir."
+msgstr "Bu grup öntanımlı olarak ayarlanan eylemleri içerir."
 
 #: workspace/khotkeys/data/printscreen.khotkeys:79
 msgctxt "Name"
@@ -9991,7 +9991,7 @@ msgstr "Web-URL"
 #: workspace/klipper/klipperrc.desktop:1890
 msgctxt "Description"
 msgid "Open with &default Browser"
-msgstr "&Ön tanımlı tarayıcı ile aç"
+msgstr "&Öntanımlı tarayıcı ile aç"
 
 #: workspace/klipper/klipperrc.desktop:354
 #: workspace/klipper/klipperrc.desktop:1969
@@ -10293,7 +10293,7 @@ msgstr "Web"
 #: workspace/kwin/data/fsp_workarounds_1.kwinrules:2
 msgctxt "Description"
 msgid "(Default) Disable focus stealing prevention for XV"
-msgstr "(Ön tanımlı) XV için odaklama edinimi engellemesini pasifleştir"
+msgstr "(Öntanımlı) XV için odaklama edinimi engellemesini pasifleştir"
 
 #: workspace/kwin/effects/blur/blur.desktop:2
 msgctxt "Name"
@@ -11576,7 +11576,7 @@ msgstr "Masaüstü"
 #: workspace/plasma/desktop/containments/desktop/plasma-containment-desktop.desktop:65
 msgctxt "Comment"
 msgid "Default desktop containment"
-msgstr "Ön tanımlı masaüstü içeriği"
+msgstr "Öntanımlı masaüstü içeriği"
 
 #: workspace/plasma/desktop/containments/panel/plasma-containment-panel.desktop:2
 msgctxt "Name"
@@ -11623,7 +11623,7 @@ msgstr "Ağda yeni bir gereç yayınlandı."
 #: workspace/plasma/generic/animators/default/plasma-animator-default.desktop:2
 msgctxt "Name"
 msgid "Default Plasma Animator"
-msgstr "Ön tanımlı Plasma Canlandırıcısı"
+msgstr "Öntanımlı Plasma Canlandırıcısı"
 
 #: workspace/plasma/generic/applets/activitybar/plasma-applet-activitybar.desktop:2
 msgctxt "Name"

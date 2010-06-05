@@ -978,8 +978,8 @@ msgid ""
 "where the original case is preserved."
 msgstr ""
 "Bu seçenek Tidy programının etiket isimlerini büyük harfle yazıp "
-"yazmayacağını belirler. Ön tanımlı değer hayırdır. Orijinal karakterlerin "
-"korunduğu XML girdileri dışında, ön tanımlı hayır seçeneğinde etiketler "
+"yazmayacağını belirler. Öntanımlı değer hayırdır. Orijinal karakterlerin "
+"korunduğu XML girdileri dışında, öntanımlı hayır seçeneğinde etiketler "
 "küçük harfle yazılır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:139
@@ -991,8 +991,8 @@ msgid ""
 "XML input, where the original case is preserved."
 msgstr ""
 "Bu seçenek Tidy programının nitelik isimlerini büyük harfle yazıp "
-"yazmayacağını belirler. Ön tanımlı değer hayırdır. Orijinal karakterlerin "
-"korunduğu XML girdileri dışında, ön tanımlı hayır seçeneğinde nitelik "
+"yazmayacağını belirler. Öntanımlı değer hayırdır. Orijinal karakterlerin "
+"korunduğu XML girdileri dışında, öntanımlı hayır seçeneğinde nitelik "
 "isimleri küçük harfle yazılır."
 
 #. i18n: file: cfg/klinkstatus.kcfg:146

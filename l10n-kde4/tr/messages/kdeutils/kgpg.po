@@ -3208,7 +3208,7 @@ msgid ""
 "<p>You can reach your default key by pressing &quot;Ctrl+Home&quot; in the "
 "key manager.</p>\n"
 msgstr ""
-"<p>Ön tanımlı anahtarınıza ulaşmak için anahtar yöneticisinde &quot;Ctrl"
+"<p>Öntanımlı anahtarınıza ulaşmak için anahtar yöneticisinde &quot;Ctrl"
 "+Home&quot; tuşlarına basabilirsiniz..</p>\n"
 
 #. i18n: file: tips:57

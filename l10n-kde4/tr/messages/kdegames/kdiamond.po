@@ -86,7 +86,7 @@ msgstr "Eugene Trounev"
 
 #: main.cpp:44
 msgid "Default theme"
-msgstr "Ön tanımlı tema"
+msgstr "Öntanımlı tema"
 
 #: main.cpp:45
 msgid "Felix Lemke"

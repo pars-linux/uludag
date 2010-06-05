@@ -99,7 +99,7 @@ msgid ""
 msgstr ""
 "Bileşen '%1' şu anda etkin. Sadece şu anda etkin olmayan genel kısayollar "
 "listeden kaldırılacak.\n"
-"Tüm genel kısayollar bir sonraki başlangıçta tekrar ön tanımlı değerleri ile "
+"Tüm genel kısayollar bir sonraki başlangıçta tekrar öntanımlı değerleri ile "
 "kayıt edilecekler."
 
 #: kglobalshortcutseditor.cpp:510 kglobalshortcutseditor.cpp:520

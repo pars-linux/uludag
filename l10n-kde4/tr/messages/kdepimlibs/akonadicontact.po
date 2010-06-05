@@ -190,7 +190,7 @@ msgstr "Kişi grubu üyeleri:"
 #. i18n: ectx: label, entry (DefaultResourceId), group (SpecialCollections)
 #: rc.cpp:9
 msgid "Id of the resource containing the default recent contacts collection."
-msgstr "ön tanımlı son erişilen kişi koleksiyonunu içeren öz kaynağın KD'si."
+msgstr "öntanımlı son erişilen kişi koleksiyonunu içeren öz kaynağın KD'si."
 
 #. i18n: file: recentcontactscollections.kcfg:10
 #. i18n: ectx: whatsthis, entry (DefaultResourceId), group (SpecialCollections)
