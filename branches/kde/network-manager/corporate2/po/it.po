@@ -1,21 +1,22 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Andrea Decorte <adecorte@gmail.com>, 2007.
+# Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-05-10 15:27+0300\n"
-"PO-Revision-Date: 2007-11-12 20:40+0100\n"
-"Last-Translator: Andrea Decorte <adecorte@gmail.com>\n"
-"Language-Team: Italian <pardus-translation-it@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-05 17:06+0200\n"
+"Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
+"Language-Team: Italian <pardus-translators@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: browser.py:51
 msgid "Name:"
@@ -136,10 +137,13 @@ msgid ""
 "Make sure that the network you're trying to connect is able to assign IP addresses\n"
 "through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
+"Il serivizio DHCP non è stato in grado di assegnare un indirizzo IP alla tua scheda di rete.\n"
+"Assicurati che la rete a cui ti vuoi connettere sia in grado di assegnare un indirizzo IP tramite\n"
+"il suo servizio DHCP. Altrimenti, dovrai assegnare manualmente un indirizzo IP."
 
 #: comariface.py:190
 msgid "Network Manager - Error"
-msgstr "Gestore della rete: Errore"
+msgstr "Gestore di Rete: Errore"
 
 #: comariface.py:353
 msgid "new connection"
@@ -171,7 +175,7 @@ msgstr "Errore COMAR"
 
 #: connsharing.py:127
 msgid "Changing States of Interfaces Failed"
-msgstr ""
+msgstr "Cambiamento dello stato delle interfacce fallito"
 
 #: connsharing.py:129
 msgid "DHCP Server Error"
@@ -179,23 +183,23 @@ msgstr "Errore Server DHCP"
 
 #: connsharing.py:156
 msgid "The interfaces that you have selected must be different to share internet connection"
-msgstr ""
+msgstr "L'interfaccia che hai selezionato deve essere diversa da quella per la condivisione."
 
 #: connsharing.py:156
 msgid "Check Selected Interfaces"
-msgstr ""
+msgstr "Controlla Interfacce Selezionate"
 
 #: connsharing.py:166
 msgid "The sharing of your connection has been successfully done."
-msgstr ""
+msgstr "La condivisione della tua connessione è stata effettuata con successo."
 
 #: connsharing.py:166
 msgid "Sharing is OK"
-msgstr ""
+msgstr "Condivisione OK!"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
+msgstr "Non hai un IP per l'interfaccia addetta alla connessione"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -213,7 +217,7 @@ msgstr "Il modulo Gestore della rete è già in esecuzione!"
 
 #: network-manager.py:98
 msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
-msgstr ""
+msgstr "Al momento, il backend è riservato a GNOME NetworkManager. Devi impostare il backend a COMAR per usare questa applet."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -293,7 +297,7 @@ msgstr "Scansione"
 
 #: connection.py:277
 msgid "Security:"
-msgstr ""
+msgstr "Sicurezza:"
 
 #: connection.py:280
 msgid "No authentication"
