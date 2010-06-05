@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -383,6 +383,20 @@ msgid ""
 " -N, --no-color  Don't use color in output\n"
 " -q, --quiet     Don't print replies"
 msgstr ""
+"usage: service [<options>] [<service>] <command>\n"
+"where command is:\n"
+" list Display service list\n"
+" status Display service status\n"
+" info Display service status\n"
+" on Auto start the service\n"
+" off Don't auto start the service\n"
+" start Start the service\n"
+" stop Stop the service\n"
+" restart Stop the service, then start again\n"
+" reload Reload the configuration (if service supports this)\n"
+"and option is:\n"
+" -N, --no-color Don't use color in output\n"
+" -q, --quiet Don't print replies"
 
 #: bin/service.py:355
 #, python-format
