@@ -11137,7 +11137,7 @@ msgstr "Kaydedilecek eklenti yok."
 #~ "the trash folder, but you may change that in the folder view."
 #~ msgstr ""
 #~ "Virüslü olarak sınıflandırılmış iletileri bulmak ve önceden belirlenen "
-#~ "bir dizine taşımak içn bir filtre oluşturuldu. Ön tanımlı dizin çöp "
+#~ "bir dizine taşımak içn bir filtre oluşturuldu. Öntanımlı dizin çöp "
 #~ "dizinidir, fakat bunu dizin görünümünde değiştirebilirsiniz."
 
 #~ msgid "Additionally, mark detected viral messages as read"

@@ -84,7 +84,7 @@ msgid ""
 "with changing anything here, the defaults are good enough in most cases."
 msgstr ""
 "Bu sayfadaki seçenekler veri güvenliği ve tutarlılığı arasındaki dengeyi "
-"sağlayan parametreleri değiştirmenize izin verir. Ön tanımlı seçenekler çoğu "
+"sağlayan parametreleri değiştirmenize izin verir. Öntanımlı seçenekler çoğu "
 "durumda yeterince iyidir ve değiştirmeniz önerilmez."
 
 #. i18n: file: settingsdialog.ui:120

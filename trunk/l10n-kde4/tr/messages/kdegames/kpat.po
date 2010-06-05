@@ -261,12 +261,12 @@ msgstr "Çözüm için aracı kullan (hata ayıklayıcı)"
 
 #: main.cpp:208
 msgid "Game range start (default 0:INT_MAX)"
-msgstr "Oyun aralığı başlangıcı (ön tanımlı 0:INT_MAX)"
+msgstr "Oyun aralığı başlangıcı (öntanımlı 0:INT_MAX)"
 
 #: main.cpp:209
 msgid "Game range end (default start:start if start given)"
 msgstr ""
-"Oyun aralığı bitişi (ön tanımlı başlangıç:başlangıç eğer başlatma verildiyse)"
+"Oyun aralığı bitişi (öntanımlı başlangıç:başlangıç eğer başlatma verildiyse)"
 
 #: main.cpp:210
 #, kde-format

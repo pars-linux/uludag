@@ -550,7 +550,7 @@ msgid ""
 "enable the advanced settings below.</p>"
 msgstr ""
 "<p>Lütfen arayüz için tercih ettiğiniz alt ağ maskesini buraya giriniz.</p>\n"
-"<p>Küçük özel ağlar için 255.255.255.0 genellikle uygun bir ön tanımlı "
+"<p>Küçük özel ağlar için 255.255.255.0 genellikle uygun bir öntanımlı "
 "değerdir.</p>\n"
 "<p>Bu alan aşağıdaki gelişmiş ayarlar etkinleştirildikten hemen sonra açılır "
 "kutudan birleşik kutuya dönüşecektir.</p>"
@@ -908,13 +908,13 @@ msgstr "Yönler"
 #. i18n: ectx: property (title), widget (Q3GroupBox, gbDefaultGateway)
 #: rc.cpp:259
 msgid "Default Gateway"
-msgstr "Ön tanımlı Ağ Geçidi "
+msgstr "Öntanımlı Ağ Geçidi "
 
 #. i18n: file: knetworkconfdlg.ui:300
 #. i18n: ectx: property (toolTip), widget (KLineEdit, kleDefaultRoute)
 #: rc.cpp:265
 msgid "Default Gateway IP address"
-msgstr "Ön tanımlı alt geçit IP adresi"
+msgstr "Öntanımlı alt geçit IP adresi"
 
 #. i18n: file: knetworkconfdlg.ui:323
 #. i18n: ectx: property (text), widget (QLabel, TextLabel1_2)

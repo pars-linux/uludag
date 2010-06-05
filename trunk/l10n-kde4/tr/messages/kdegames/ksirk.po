@@ -252,7 +252,7 @@ msgstr "Kaynak Seç"
 
 #: Jabber/jabbercontact.cpp:197
 msgid "Automatic (best/default resource)"
-msgstr "Otomatik (en iyi/ön tanımlı kaynak)"
+msgstr "Otomatik (en iyi/öntanımlı kaynak)"
 
 #: Jabber/jabbercontact.cpp:250
 msgid "Voice call"

@@ -510,7 +510,7 @@ msgstr "Grup"
 
 #: kgame/kplayer.cpp:94 kgame/kplayer.cpp:96
 msgid "default"
-msgstr "ön tanımlı"
+msgstr "öntanımlı"
 
 #: kgame/kplayer.cpp:95 highscore/kscoredialog.cpp:116
 #: highscore/kexthighscore_internal.h:64

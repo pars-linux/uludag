@@ -320,7 +320,7 @@ msgstr "Granatier"
 #: granatier/arenas/granatier.desktop:34
 msgctxt "Description"
 msgid "Default Granatier Arena"
-msgstr "Ön tanımlı Granatier Arenası"
+msgstr "Öntanımlı Granatier Arenası"
 
 #: granatier/arenas/labyrinth.desktop:2 kmahjongg/layouts/labyrinth.desktop:2
 msgctxt "Name"
@@ -460,7 +460,7 @@ msgstr "Dağ Macerası"
 #: kapman/themes/mountain.desktop:41
 msgctxt "Description"
 msgid "Default"
-msgstr "Ön tanımlı"
+msgstr "Öntanımlı"
 
 #: kapman/themes/mummies_crypt.desktop:2
 msgctxt "Name"
@@ -1236,7 +1236,7 @@ msgstr "KGoldrunner için beyaz üzerine siyah, tek renkli bir tema"
 #: kgoldrunner/themes/default.desktop:2
 msgctxt "Name"
 msgid "KGoldRunner Default"
-msgstr "KGoldrunner Ön tanımlı"
+msgstr "KGoldrunner Öntanımlı"
 
 #: kgoldrunner/themes/default.desktop:50
 msgctxt "Description"
@@ -1292,12 +1292,12 @@ msgstr "KGoldrunner'a 8-bit görünümünü geri getiren ölçeklenebilir bir te
 #: libkmahjongg/tilesets/default.desktop:2
 msgctxt "Name"
 msgid "Default"
-msgstr "Ön tanımlı"
+msgstr "Öntanımlı"
 
 #: kigo/data/themes/default.desktop:55
 msgctxt "Description"
 msgid "Kigo Default theme for KDE 4"
-msgstr "KDE4 için Ön tanımlı Kigo teması"
+msgstr "KDE4 için Öntanımlı Kigo teması"
 
 #: kigo/src/gui/kigo.desktop:8
 msgctxt "Name"
@@ -1361,7 +1361,7 @@ msgid ""
 "<qt><p>The default Killbots game type.</p><p>Includes a medium size grid, "
 "safe teleports, fast enemies and pushable junkheaps.</p></qt>"
 msgstr ""
-"<qt><p>Ön tanımlı Killbots oyun tipi.</p><p>Orta boy bir oyun alanı, güvenli "
+"<qt><p>Öntanımlı Killbots oyun tipi.</p><p>Orta boy bir oyun alanı, güvenli "
 "ışınlamalar, hızlı düşmanlar ve itilebilir değersiz yığınlar içermekte.</p></"
 "qt>"
 
@@ -1431,7 +1431,7 @@ msgstr "Öldür Robotu"
 #: killbots/themes/robotkill.desktop:41
 msgctxt "Description"
 msgid "The default Killbots theme."
-msgstr "Ön tanımlı Killbots teması"
+msgstr "Öntanımlı Killbots teması"
 
 #: kiriki/src/kiriki.desktop:2
 msgctxt "Name"
@@ -1456,7 +1456,7 @@ msgstr "Bölge Ele Geçirme Oyunu"
 #: kjumpingcube/pics/default.desktop:2
 msgctxt "Name"
 msgid "KJumpingCube Default"
-msgstr "KJumpingCube Ön tanımlı"
+msgstr "KJumpingCube Öntanımlı"
 
 #: kjumpingcube/pics/default.desktop:49
 msgctxt "Description"
@@ -1706,7 +1706,7 @@ msgstr "Kiril alfabesi harfi Zh'ı temsilen 6 uçlu haç"
 #: kmahjongg/layouts/default.desktop:55
 msgctxt "Description"
 msgid "Default KMahjongg game layout"
-msgstr "Ön tanımlı KMahjongg oyun yerleşimi"
+msgstr "Öntanımlı KMahjongg oyun yerleşimi"
 
 #: kmahjongg/layouts/dragon.desktop:2
 msgctxt "Name"
@@ -2397,7 +2397,7 @@ msgstr "Dön"
 #: knetwalk/themes/default.desktop:55
 msgctxt "Description"
 msgid "KNetWalk Default theme for KDE 4"
-msgstr "KDE 4 için KNetWalk ön tanımlı teması"
+msgstr "KDE 4 için KNetWalk öntanımlı teması"
 
 #: knetwalk/themes/electronic.desktop:2
 msgctxt "Name"
@@ -2898,12 +2898,12 @@ msgstr "KTron"
 #: ktron/themes/default.desktop:3
 msgctxt "Name"
 msgid "KTron Default Theme"
-msgstr "KTron Ön tanımlı Teması"
+msgstr "KTron Öntanımlı Teması"
 
 #: ktron/themes/default.desktop:40
 msgctxt "Description"
 msgid "Default theme for KTron."
-msgstr "KTron için ön tanımlı tema."
+msgstr "KTron için öntanımlı tema."
 
 #: ktron/themes/neon.desktop:3
 msgctxt "Name"

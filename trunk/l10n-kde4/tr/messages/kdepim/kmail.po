@@ -2479,7 +2479,7 @@ msgid ""
 "trash folder, but you may change that in the folder view."
 msgstr ""
 "Virüslü olarak sınıflandırılmış iletileri bulmak ve önceden belirlenen bir "
-"dizine taşımak için bir filtre oluşturuldu. Ön tanımlı dizin çöp dizinidir, "
+"dizine taşımak için bir filtre oluşturuldu. Öntanımlı dizin çöp dizinidir, "
 "fakat bunu dizin görünümünde değiştirebilirsiniz."
 
 #: antispamwizard.cpp:1132

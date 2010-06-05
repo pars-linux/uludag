@@ -65,7 +65,7 @@ msgstr "Doğal masaüstü kabuğu"
 #. i18n: ectx: property (text), widget (QLabel, descrNative)
 #: rc.cpp:18
 msgid "System's default desktop shell"
-msgstr "Sistemin ön tanımlı masaüstü kabuğu"
+msgstr "Sistemin öntanımlı masaüstü kabuğu"
 
 #. i18n: file: platform.ui:61
 #. i18n: ectx: property (toolTip), widget (QRadioButton, optPlasma)
@@ -184,7 +184,7 @@ msgid ""
 "may wish to disable it if you have issues with that."
 msgstr ""
 "Bu seçenek Windows'un Başlat menüsü girdilerinin yeniden oluşturulup "
-"oluşturulmayacağını tanımlar. Ön tanımlı olarak başlatma menü girdileri "
+"oluşturulmayacağını tanımlar. Öntanımlı olarak başlatma menü girdileri "
 "otomatik olarak yeniden oluşturulurlar, ancak problem yaşıyorsanız bu "
 "seçeneği kapatmak isteyebilirsiniz"
 

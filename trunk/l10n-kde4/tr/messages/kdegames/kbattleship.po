@@ -358,7 +358,7 @@ msgstr "Rakibiniz oyundan çıktı"
 #. i18n: ectx: label, entry (Hostname), group (network)
 #: rc.cpp:3
 msgid "Default hostname for multiplayer games."
-msgstr "Çoklu oyunculu oyunlar için ön tanımlı sunucu adı."
+msgstr "Çoklu oyunculu oyunlar için öntanımlı sunucu adı."
 
 #. i18n: file: kbattleship.kcfg:13
 #. i18n: ectx: label, entry (Port), group (network)

@@ -257,8 +257,8 @@ msgid ""
 "honor your changes in the System Settings. All other choices will override "
 "that setting."
 msgstr ""
-"Bu uygulamada kullanmak üzere istediğiniz bir ön tanımlı metin düzenleme "
-"bileşeni seçin. If you choose <B>Sistem Ön Tanımlı</B> seçerseniz, "
+"Bu uygulamada kullanmak üzere istediğiniz bir öntanımlı metin düzenleme "
+"bileşeni seçin. If you choose <B>Sistem Öntanımlı</B> seçerseniz, "
 "kullandığınız uygulama Sistem Ayarlarındaki seçiminize sadık kalacak. Diğer "
 "tüm seçenekler öntanımlı seçeneği geçersiz kılacak."
 
@@ -2642,7 +2642,7 @@ msgstr "Oluşturulacak eklenti sınıfının adı"
 
 #: kdewidgets/makekdewidgets.cpp:91
 msgid "Default widget group name to display in designer"
-msgstr "Tasarlayıcıda gösterilecek ön tanımlı parçacık grubu adı"
+msgstr "Tasarlayıcıda gösterilecek öntanımlı parçacık grubu adı"
 
 #: kdewidgets/makekdewidgets.cpp:94
 msgid "makekdewidgets"
