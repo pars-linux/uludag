@@ -350,9 +350,9 @@ msgid "Welcome"
 msgstr "Willkommen"
 
 #: .tmp/ScrWelcome.py:32
-#, fuzzy, python-format
+#, python-format
 msgid "Welcome to %s"
-msgstr "Willkommen"
+msgstr "Willkommen zur %s"
 
 #: .tmp/ui_goodbyeWidget.py:411
 msgid "<b>Your settings have been applied.</b> Now you can start enjoying Pardus or you can checkout the following links and applications for more settings or for help and support. Don't forget to <b>join our community!</b>"
