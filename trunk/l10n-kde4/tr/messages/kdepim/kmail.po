@@ -4438,7 +4438,7 @@ msgstr "Görünüm"
 
 #: kmreaderwin.cpp:2055
 msgid "Scroll To"
-msgstr "Kaydır<"
+msgstr "Eklentiye Git"
 
 #: kmreaderwin.cpp:2060 kmcomposewin.cpp:2702
 msgid "Save As..."
