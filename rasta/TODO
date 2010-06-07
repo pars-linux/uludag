@@ -1,4 +1,11 @@
 Rasta TODO
 ==========
 
-+ Ability to choose font size of editor
+ - Localization support
+ - Use Pds IconLoader
+ - Add template support
+ - Find a proper solution for big files in live view
+ - Add command-line options
+ - Add settings screen
+ - Add 80 character wrap function
+

@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+# Rasta RST Editor
+# 2010 - Gökmen Göksel <gokmen:pardus.org.tr>
+
+# This program is free software; you can redistribute it and/or modify it under
+# the terms of the GNU General Public License as published by the Free
+# Software Foundation; either version 2 of the License, or (at your option)
+# any later version.
+
 # Python Libs
 import os
 import shutil
@@ -12,6 +20,9 @@ from distutils.command.build import build
 from distutils.command.clean import clean
 from distutils.command.sdist import sdist
 from distutils.sysconfig import get_python_lib
+
+# RastaLibs
+from rastaLib import __version__
 
 PROJECT = 'rasta'
 PROJECT_LIB = 'rastaLib'
@@ -63,7 +74,7 @@ class Uninstall(Command):
             os.unlink(executable)
 
 setup(name=PROJECT,
-      version='1.0',
+      version=__version__,
       description='Rasta: The Rst Editor',
       long_description='Live view supported Qt4 based Webkit integrated Rst editor for Pardus Developers and all others.',
       license='GNU GPL2',
