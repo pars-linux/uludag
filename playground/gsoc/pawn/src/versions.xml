@@ -3,6 +3,7 @@
 	<version id="pardus2009.2">
 		<name>Pardus 2009.2 Geronticus eremita</name>
 		<size>713031680</size>
+		<type>32bit</type>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
@@ -19,6 +20,7 @@
 	<version id="pardus2009.1">
 		<name>Pardus 2009.1 Anthropoides virgo</name>
 		<size>716177408</size>
+		<type>32bit</type>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
@@ -35,6 +37,7 @@
 	<version id="pardus2009">
 		<name>Pardus 2009</name>
 		<size>720156672</size>
+		<type>32bit</type>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
