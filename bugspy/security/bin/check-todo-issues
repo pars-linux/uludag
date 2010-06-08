@@ -32,8 +32,11 @@ TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
 TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
 
 TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
-               "2008": TRACKER_PARDUS_2008,
                "corporate2": TRACKER_PARDUS_CORPORATE2}
+
+# Global variable that is used when asked for which pardus versions are affected
+PARDUS_RELEASES = {"1": "2009",
+                   "2": "corporate2"}
 
 DEFAULT_ISSUE_REGEX = '^CVE-20(0[3-9]|10)'
 DEFAULT_TODO_REGEX = '^\s+TODO: check$'
@@ -398,7 +401,7 @@ class EntryEditor:
                     if source == u"CONFIRM":
                         bug_url = url
                         references += "%s: %s\n" % (source, url)
-                    elif source in ["BID", "SECUNIA", "FEDORA", "SUSE", "OSVDB"]:
+                    elif source in ["BID", "SECUNIA", "FEDORA", "UBUNTU", "SUSE", "OSVDB", "VUPEN", "MLIST"]:
                         references += "%s: %s\n" % (source, url)
 
             description += "%s\n" % references
@@ -438,8 +441,7 @@ class EntryEditor:
         # ask which versions
         print "\nWhich Pardus versions are affected?"
         print "1- Pardus 2009"
-        print "2- Pardus 2008"
-        print "3- Pardus Corporate2\n"
+        print "2- Pardus Corporate2\n"
 
         affected_pardus_versions = []
         while 1:
@@ -461,17 +463,13 @@ class EntryEditor:
                 print affected_pardus_versions
                 continue
 
-            map = {"1": "2009",
-                   "2": "2008",
-                   "3": "corporate2"}
-
-            if not answer in map.keys():
+            if not answer in PARDUS_RELEASES.keys():
                 print "Invalid entry"
             else:
-                if map.get(answer) in affected_pardus_versions:
+                if PARDUS_RELEASES.get(answer) in affected_pardus_versions:
                     print "This is already selected"
                 else:
-                    affected_pardus_versions.append(map.get(answer))
+                    affected_pardus_versions.append(PARDUS_RELEASES.get(answer))
                     print affected_pardus_versions
 
 
