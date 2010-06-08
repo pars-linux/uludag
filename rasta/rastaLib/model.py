@@ -11,7 +11,7 @@
 
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QVariant
-from PyQt4.QtGui import QAbstractTableModel
+from PyQt4.QtCore import QAbstractTableModel
 
 class LogTableModel(QAbstractTableModel):
     def __init__(self, logs, parent=None, *args):

@@ -68,9 +68,6 @@ class RstLexer(QsciLexerCustom):
         source = ''
         if end > editor.length():
             end = editor.length()
-        if end > start:
-            source = bytearray(end - start)
-            SCI(QsciScintilla.SCI_GETTEXTRANGE, start, end, source)
         if not source:
             return
 

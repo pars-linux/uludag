@@ -154,7 +154,7 @@ class Rasta(QMainWindow):
                 "Live view supported Qt4 based Webkit "
                 "integrated Rst editor for Pardus Developers "
                 "and all others. "
-                "\n\nAuthor: Gökmen Göksel <gokmen@pardus.org.tr>"))
+                "\n\nAuthor: Gökmen Göksel <gokmen@pardus.org.tr>", "UTF-8"))
 
     def addTable(self):
         """ Add Rst style table """
@@ -257,7 +257,7 @@ class Rasta(QMainWindow):
             model = LogTableModel(logs, self)
             self.ui.logs.setModel(model)
             self.ui.logs.resizeColumnsToContents()
-            self.ui.webView.setHtml(unicode(html))
+            self.ui.webView.setHtml(unicode(html, 'UTF-8'))
             if len(logs) > 0:
                 self.ui.Logs.show()
             else:
