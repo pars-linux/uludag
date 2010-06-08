@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pardus ver="1.0" lastUpdated="24/01/2010">
+	<version id="pardus2009.2">
+		<name>Pardus 2009.2 Geronticus eremita</name>
+		<size>713031680</size>
+		<mirrors>
+			<source type="default" protocol="ftp">
+				<hostname>ftp.pardus.org.tr</hostname>
+				<login>true</login>
+				<username>anonymous</username>
+				<password>anonymous</password>
+				<port>21</port>
+				<path>/pub/pardus/kurulan/2009.2/</path>
+				<filename>Pardus-2009.2-Geronticus-eremita.iso</filename>
+			</source>
+		</mirrors>
+	</version>
+
+	<version id="pardus2009.1">
+		<name>Pardus 2009.1 Anthropoides virgo</name>
+		<size>716177408</size>
+		<mirrors>
+			<source type="default" protocol="ftp">
+				<hostname>ftp.pardus.org.tr</hostname>
+				<login>true</login>
+				<username>anonymous</username>
+				<password>anonymous</password>
+				<port>21</port>
+				<path>/pub/pardus/kurulan/2009.1/</path>
+				<filename>Pardus_2009.1_Anthropoides_virgo.iso</filename>
+			</source>
+		</mirrors>
+	</version>
+	
+	<version id="pardus2009">
+		<name>Pardus 2009</name>
+		<size>720156672</size>
+		<mirrors>
+			<source type="default" protocol="ftp">
+				<hostname>ftp.pardus.org.tr</hostname>
+				<login>true</login>
+				<username>anonymous</username>
+				<password>anonymous</password>
+				<port>21</port>
+				<path>/pub/pardus/kurulan/2009/</path>
+				<filename>Pardus_2009.iso</filename>
+			</source>
+		</mirrors>
+	</version>
+</pardus>
