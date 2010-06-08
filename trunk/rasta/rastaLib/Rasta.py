@@ -44,6 +44,7 @@ except ImportError:
 
 # RstLexer for Docutils
 from rstLexer import RstLexer
+from model import LogTableModel
 
 TMPFILE = "/tmp/untitled.rst"
 
@@ -233,6 +234,7 @@ class Rasta(QMainWindow):
                 source or force:
             if not source:
                 source = unicode(self.ui.textEdit.text())
+
             PUB.set_source(source)
             PUB.set_destination()
             PUB.document = PUB.reader.read(PUB.source, PUB.parser, PUB.settings)
@@ -374,26 +376,3 @@ class Rasta(QMainWindow):
             return
         event.accept()
 
-class LogTableModel(QAbstractTableModel):
-    def __init__(self, logs, parent=None, *args):
-        QAbstractTableModel.__init__(self, parent, *args)
-        self.arraydata = logs
-        self.headerdata = ["Line", "Message"]
-
-    def rowCount(self, parent):
-        return len(self.arraydata)
-
-    def columnCount(self, parent):
-        return len(self.headerdata)
-
-    def data(self, index, role):
-        if not index.isValid():
-            return QVariant()
-        elif role != Qt.DisplayRole:
-            return QVariant()
-        return QVariant(self.arraydata[index.row()][index.column()])
-
-    def headerData(self, col, orientation, role):
-        if orientation == Qt.Horizontal and role == Qt.DisplayRole:
-            return QVariant(self.headerdata[col])
-        return QVariant()
