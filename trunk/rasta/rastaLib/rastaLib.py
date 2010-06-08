@@ -5,7 +5,7 @@
 # 2010 - Gökmen Göksel <gokmen:pardus.org.tr>
 
 # This program is free software; you can redistribute it and/or modify it under
-# the terms of the GNU General Public License as published by the Free
+# the terms of the GNU General Public License as Published by the Free
 # Software Foundation; either version 2 of the License, or (at your option)
 # any later version.
 
@@ -21,10 +21,9 @@ except ImportError:
 
 # Docutils
 try:
-    from docutils.core import publish_string
-    import docutils.io, docutils.nodes
+    import docutils.io
+    import docutils.nodes
     from docutils.core import Publisher
-    from docutils.parsers.rst.roles import _roles as docutils_roles
     from StringIO import StringIO
 except ImportError:
     sys.exit("Please install 'docutils' package.")
@@ -42,20 +41,23 @@ try:
     from mainWindow import Ui_Rasta
 except ImportError:
     sys.exit("Please run 'setup.py build' first.")
+
+# RstLexer for Docutils
 from rstLexer import RstLexer
 
 TMPFILE = "/tmp/untitled.rst"
 
 # Global Publisher for Docutils
-pub = Publisher(source_class=docutils.io.StringInput,
+PUB = Publisher(source_class=docutils.io.StringInput,
         destination_class=docutils.io.StringOutput)
-pub.set_reader('standalone', None, 'restructuredtext')
-pub.set_writer('html')
-pub.get_settings()
-pub.settings.halt_level = 7
-pub.settings.warning_stream = StringIO()
+PUB.set_reader('standalone', None, 'restructuredtext')
+PUB.set_writer('html')
+PUB.get_settings()
+PUB.settings.halt_level = 7
+PUB.settings.warning_stream = StringIO()
 
-def clearLog(log):
+def clear_log(log):
+    """ Removes not needed lines from log output """
     try:
         piks = piksemel.parseString(unicode(log))
         return piks.getAttribute("line"), piks.getTagData("paragraph")
@@ -113,7 +115,7 @@ class Rasta(QMainWindow):
         self.settings = QSettings()
         self.readSettings()
 
-        self.fileName = TMPFILE
+        self.file_name = TMPFILE
         if "--hidesource" in arguments:
             self.ui.actionShow_Source.toggle()
         if len(arguments) > 1:
@@ -200,7 +202,7 @@ class Rasta(QMainWindow):
         self.ui.Logs.setVisible(state)
 
     def showHelp(self):
-        _tmp = self.fileName
+        _tmp = self.file_name
         if os.path.exists("/usr/share/rasta/HELP"):
             self.updateRst(
                     source = self.loadFile("/usr/share/rasta/HELP", 
@@ -208,12 +210,12 @@ class Rasta(QMainWindow):
         else:
             self.ui.webView.load(
                     QUrl("http://developer.pardus.org.tr/howto/howto-rst.html"))
-        self.fileName = _tmp
+        self.file_name = _tmp
 
     def newFile(self):
         if self.checkModified():
             self.ui.textEdit.clear()
-            self.fileName = TMPFILE
+            self.file_name = TMPFILE
 
     def updateRst(self, source = None, force = False):
         if self.ui.actionLive_Update.isChecked() or\
@@ -221,24 +223,24 @@ class Rasta(QMainWindow):
                 source or force:
             if not source:
                 source = unicode(self.ui.textEdit.text())
-            pub.set_source(source)
-            pub.set_destination()
-            pub.document = pub.reader.read(pub.source, pub.parser, pub.settings)
-            pub.apply_transforms()
+            PUB.set_source(source)
+            PUB.set_destination()
+            PUB.document = PUB.reader.read(PUB.source, PUB.parser, PUB.settings)
+            PUB.apply_transforms()
 
             logs = []
             self.ui.textEdit.markerDeleteAll(31)
-            for node in pub.document.traverse(docutils.nodes.problematic):
+            for node in PUB.document.traverse(docutils.nodes.problematic):
                 node.parent.replace(node, node.children[0])
-            for node in pub.document.traverse(docutils.nodes.system_message):
-                log = clearLog(node)
+            for node in PUB.document.traverse(docutils.nodes.system_message):
+                log = clear_log(node)
                 node.parent.remove(node)
                 logs.append(log)
                 line = int(log[0])
                 if self.ui.textEdit.lines() >= line:
                     self.ui.textEdit.markerAdd(line-1,31)
 
-            html = pub.writer.write(pub.document, pub.destination)
+            html = PUB.writer.write(PUB.document, PUB.destination)
 
             model = LogTableModel(logs, self)
             self.ui.logs.setModel(model)
@@ -258,26 +260,26 @@ class Rasta(QMainWindow):
                           QMessageBox.Discard |
                           QMessageBox.Cancel)
             if (ret == QMessageBox.Save):
-                 return self.saveFile()
+                return self.saveFile()
             elif (ret == QMessageBox.Cancel):
-                 return False
+                return False
         return True
 
     def fileOpen(self):
         if self.checkModified():
-            fileName = QFileDialog.getOpenFileName(self)
-            if (not fileName.isEmpty()):
-                self.loadFile(fileName)
+            file_name = QFileDialog.getOpenFileName(self)
+            if (not file_name.isEmpty()):
+                self.loadFile(file_name)
 
-    def loadFile(self, fileName, parseString=False):
-        fileObject = QFile(fileName)
+    def loadFile(self, file_name, parseString=False):
+        fileObject = QFile(file_name)
         if (not fileObject.open(QFile.ReadOnly | QFile.Text)):
             QMessageBox.warning(self, "Rasta",
                                  QString("Cannot read file %1:\n%2.")
-                                 .arg(fileName)
+                                 .arg(file_name)
                                  .arg(fileObject.errorString()))
             return
-        self.fileName = fileName
+        self.file_name = file_name
         content = QTextStream(fileObject)
         QApplication.setOverrideCursor(Qt.WaitCursor)
         fileContent = content.readAll()
@@ -288,20 +290,21 @@ class Rasta(QMainWindow):
         self.ui.textEdit.setModified(False)
 
     def saveFile(self):
-        if self.fileName == TMPFILE or self.sender() == self.ui.actionSave_As:
+        if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:
             getNewFileName = QFileDialog.getSaveFileName(self, "Save File")
             if not getNewFileName.isEmpty():
-                self.fileName = getNewFileName
+                self.file_name = getNewFileName
             else:
                 return
-        fileObject = QFile(self.fileName)
+        fileObject = QFile(self.file_name)
         if (not fileObject.open(QFile.WriteOnly | QFile.Text)):
-            QMessageBox.warning(this, "Rasta",
-                                 QString("Cannot write file %1:\n%2.")
-                                 .arg(fileName)
-                                 .arg(file.errorString()));
+            QMessageBox.warning(self, "Rasta",
+                                QString("Cannot write file %1:\n%2.")
+                                .arg(self.file_name)
+                                .arg(file.errorString()))
             return False
 
+        # fileObject.write(self.ui.textEdit.text())
         out = QTextStream(fileObject)
         QApplication.setOverrideCursor(Qt.WaitCursor)
         out << self.ui.textEdit.text()
@@ -324,7 +327,8 @@ class Rasta(QMainWindow):
         # For TextEdit
         self.settings.beginGroup("TextEdit")
         self.settings.setValue("size", self.ui.textEdit.size())
-        self.settings.setValue("font", self.ui.textEdit.lexer().dfont.toString())
+        self.settings.setValue("font",
+                                self.ui.textEdit.lexer().dfont.toString())
         self.settings.endGroup()
 
     def readSettings(self):
