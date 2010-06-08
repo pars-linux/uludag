@@ -17,8 +17,11 @@ TRACKER_PARDUS_2008 = "./data/Pardus/tracker.2008.ini"
 TRACKER_PARDUS_CORPORATE2 = "./data/Pardus/tracker.corporate2.ini"
 
 TRACKER_MAP = {"2009": TRACKER_PARDUS_2009,
-               "2008": TRACKER_PARDUS_2008,
                "corporate2": TRACKER_PARDUS_CORPORATE2}
+
+# Global variable that is used when asked for which pardus versions are affected
+PARDUS_RELEASES = {"1": "2009",
+                   "2": "corporate2"}
 
 log = logging.getLogger("bugzilla")
 log.setLevel(logging.DEBUG)
@@ -89,8 +92,7 @@ def main(filename):
 
     print "Which Pardus versions are affected?"
     print "1- Pardus 2009"
-    print "2- Pardus 2008"
-    print "3- Pardus Corporate2\n"
+    print "2- Pardus Corporate2\n"
 
     affected_pardus_versions = []
     while 1:
@@ -112,17 +114,13 @@ def main(filename):
             print affected_pardus_versions
             continue
 
-        map = {"1": "2009",
-               "2": "2008",
-               "3": "corporate2"}
-
-        if not answer in map.keys():
+        if not answer in PARDUS_RELEASES.keys():
             print "Invalid entry"
         else:
-            if map.get(answer) in affected_pardus_versions:
+            if PARDUS_RELEASES.get(answer) in affected_pardus_versions:
                 print "This is already selected"
             else:
-                affected_pardus_versions.append(map.get(answer))
+                affected_pardus_versions.append(PARDUS_RELEASES.get(answer))
                 print affected_pardus_versions
 
     print ''
