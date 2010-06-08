@@ -12,4 +12,5 @@ Rasta TODO
  - Add zemberek spell-check support
  - Add HTML print support
  - Add save as HTML support (çohönemli)
-
+ - Include file name in window title
+ - Consider using spaces instead of tabs (?)
