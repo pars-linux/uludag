@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Rasta RST Editor
-# 2010 - Gökmen Göksel <gokmen:pardus.org.tr>
+""" Rasta RST Editor
+    2010 - Gökmen Göksel <gokmen:pardus.org.tr> """
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as Published by the Free
@@ -126,27 +126,29 @@ class Rasta(QMainWindow):
             self.showHelp()
 
     def buildSci(self, font = None):
-        # QSci Settings
+        """ It builds QScintilla components """
         lexer = RstLexer(self.ui.textEdit, font)
         cfont = lexer.dfont
-        fontMetric = QFontMetrics(cfont)
+        font_metric = QFontMetrics(cfont)
         self.ui.textEdit.setLexer(lexer)
         self.ui.textEdit.setUtf8(True)
         self.ui.textEdit.setMarginLineNumbers(0, True)
-        self.ui.textEdit.setMarginWidth(0, fontMetric.width( "00000" ) + 5)
+        self.ui.textEdit.setMarginWidth(0, font_metric.width( "00000" ) + 5)
         self.ui.textEdit.setCaretLineVisible(True)
         self.ui.textEdit.setWrapMode(1)
         self.ui.textEdit.setFolding(True)
         self.ui.textEdit.setEdgeMode(QsciScintilla.EdgeLine)
         self.ui.textEdit.setEdgeColumn(80)
         self.ui.textEdit.setEdgeColor(QColor("#999"))
-        self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"),31)
+        self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"), 31)
 
     def showFontDialog(self):
+        """ Show font selection dialog for QScintilla component """
         font = QFontDialog.getFont(self.ui.textEdit.lexer().dfont)[0]
         self.buildSci(font)
 
     def showAbout(self):
+        """ Show About dialog """
         QMessageBox.about(self, "Rasta the Rst Editor", unicode(
                 "Live view supported Qt4 based Webkit "
                 "integrated Rst editor for Pardus Developers "
@@ -154,24 +156,26 @@ class Rasta(QMainWindow):
                 "\n\nAuthor: Gökmen Göksel <gokmen@pardus.org.tr>"))
 
     def addTable(self):
-        self.ui.textEdit.beginUndoAction()
+        """ Add Rst style table """
+        editor = self.ui.textEdit
+        editor.beginUndoAction()
         row = QInputDialog.getInteger(self, "Add Table", "Number of rows :")
         if row[1]:
             column = QInputDialog.getInteger(self, "Add Table", 
                     "Number of columns :")
             if column[1]:
-                t = self.ui.textEdit
-                curline = t.getCursorPosition()[0]
-                t.insert("\n")
-                for j in range(row[0]):
-                    t.insert("%s+\n" % ("+-------" * column[0]))
-                    t.insert("%s|\n" % ("|       " * column[0]))
-                t.insert("%s+\n" % ("+-------" * column[0]))
-        self.ui.textEdit.endUndoAction()
+                curline = editor.getCursorPosition()[0]
+                editor.insert("\n")
+                for times in range(row[0]):
+                    editor.insert("%s+\n" % ("+-------" * column[0]))
+                    editor.insert("%s|\n" % ("|       " * column[0]))
+                editor.insert("%s+\n" % ("+-------" * column[0]))
+        editor.endUndoAction()
 
     def editTrigger(self):
+        """ If user clicks some of edit action it calls this method """
         marker = None
-        xx, yy, xy, yz = self.ui.textEdit.getSelection()
+        pos_xx, pos_yy, pos_xy, pos_yz = self.ui.textEdit.getSelection()
         self.ui.textEdit.beginUndoAction()
         if self.sender() == self.ui.actionBold:
             marker = "**"
@@ -180,44 +184,50 @@ class Rasta(QMainWindow):
         elif self.sender() == self.ui.actionCode:
             marker = "``"
         elif self.sender() == self.ui.actionHeader:
-            self.ui.textEdit.insertAt("\n%s" % ("-"*(yz-yy)),xy,yz+1)
+            self.ui.textEdit.insertAt("\n%s" % ("-" * (pos_yz-pos_yy)),
+                                      pos_xy, pos_yz+1)
         elif self.sender() == self.ui.actionLink:
             link, res = QInputDialog.getText(self, "Insert Link", "Address :")
             if res:
                 if not unicode(link[0]).startswith("http"):
                     link = "http://%s" % link
-                self.ui.textEdit.insertAt("`", xx, yy)
-                self.ui.textEdit.insertAt(" <%s>`_" % link, xy, yz+1)
+                self.ui.textEdit.insertAt("`", pos_xx, pos_yy)
+                self.ui.textEdit.insertAt(" <%s>`_" % link, pos_xy, pos_yz + 1)
         if marker:
-            self.ui.textEdit.insertAt(marker, xx, yy)
-            self.ui.textEdit.insertAt(marker, xy, yz+len(marker))
+            self.ui.textEdit.insertAt(marker, pos_xx, pos_yy)
+            self.ui.textEdit.insertAt(marker, pos_xy, pos_yz + len(marker))
         self.ui.textEdit.endUndoAction()
 
     def goToLine(self, index):
+        """ Set cursor position to the given index """
         self.ui.textEdit.setFocus()
         self.ui.textEdit.setCursorPosition(
                 index.child(index.row(),0).data().toInt()[0]-1,0)
 
     def toggleLogs(self, state):
+        """ Show or Hide the log view """
         self.ui.Logs.setVisible(state)
 
     def showHelp(self):
+        """ Show help for rst, it loads HELP document to the webview """
         _tmp = self.file_name
         if os.path.exists("/usr/share/rasta/HELP"):
             self.updateRst(
                     source = self.loadFile("/usr/share/rasta/HELP", 
-                        parseString = True))
+                        parse_string = True))
         else:
             self.ui.webView.load(
                     QUrl("http://developer.pardus.org.tr/howto/howto-rst.html"))
         self.file_name = _tmp
 
     def newFile(self):
+        """ Create new file """
         if self.checkModified():
             self.ui.textEdit.clear()
             self.file_name = TMPFILE
 
     def updateRst(self, source = None, force = False):
+        """ Rebuild current source and show it in webview """
         if self.ui.actionLive_Update.isChecked() or\
                 self.sender() == self.ui.actionUpdate_Now or\
                 source or force:
@@ -238,7 +248,7 @@ class Rasta(QMainWindow):
                 logs.append(log)
                 line = int(log[0])
                 if self.ui.textEdit.lines() >= line:
-                    self.ui.textEdit.markerAdd(line-1,31)
+                    self.ui.textEdit.markerAdd(line-1, 31)
 
             html = PUB.writer.write(PUB.document, PUB.destination)
 
@@ -252,6 +262,7 @@ class Rasta(QMainWindow):
                 self.ui.Logs.hide()
 
     def checkModified(self):
+        """ Checks if the document was modified and asks for saving """
         if (self.ui.textEdit.isModified()):
             ret = QMessageBox.warning(self, "Rasta",
                           "The document has been modified.\n"
@@ -266,46 +277,49 @@ class Rasta(QMainWindow):
         return True
 
     def fileOpen(self):
+        """ It shows Open File dialog """
         if self.checkModified():
             file_name = QFileDialog.getOpenFileName(self)
             if (not file_name.isEmpty()):
                 self.loadFile(file_name)
 
-    def loadFile(self, file_name, parseString=False):
-        fileObject = QFile(file_name)
-        if (not fileObject.open(QFile.ReadOnly | QFile.Text)):
+    def loadFile(self, file_name, parse_string=False):
+        """ Load given file and show it in QSci component """
+        file_object = QFile(file_name)
+        if (not file_object.open(QFile.ReadOnly | QFile.Text)):
             QMessageBox.warning(self, "Rasta",
                                  QString("Cannot read file %1:\n%2.")
                                  .arg(file_name)
-                                 .arg(fileObject.errorString()))
+                                 .arg(file_object.errorString()))
             return
         self.file_name = file_name
-        content = QTextStream(fileObject)
+        content = QTextStream(file_object)
         QApplication.setOverrideCursor(Qt.WaitCursor)
-        fileContent = content.readAll()
+        file_content = content.readAll()
         QApplication.restoreOverrideCursor()
-        if parseString:
-            return unicode(fileContent)
-        self.ui.textEdit.setText(fileContent)
+        if parse_string:
+            return unicode(file_content)
+        self.ui.textEdit.setText(file_content)
         self.ui.textEdit.setModified(False)
 
     def saveFile(self):
+        """ File save operation """
         if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:
-            getNewFileName = QFileDialog.getSaveFileName(self, "Save File")
-            if not getNewFileName.isEmpty():
-                self.file_name = getNewFileName
+            get_new_file_name = QFileDialog.getSaveFileName(self, "Save File")
+            if not get_new_file_name.isEmpty():
+                self.file_name = get_new_file_name
             else:
                 return
-        fileObject = QFile(self.file_name)
-        if (not fileObject.open(QFile.WriteOnly | QFile.Text)):
+        file_object = QFile(self.file_name)
+        if (not file_object.open(QFile.WriteOnly | QFile.Text)):
             QMessageBox.warning(self, "Rasta",
                                 QString("Cannot write file %1:\n%2.")
                                 .arg(self.file_name)
-                                .arg(file.errorString()))
+                                .arg(file_object.errorString()))
             return False
 
         # fileObject.write(self.ui.textEdit.text())
-        out = QTextStream(fileObject)
+        out = QTextStream(file_object)
         QApplication.setOverrideCursor(Qt.WaitCursor)
         out << self.ui.textEdit.text()
         QApplication.restoreOverrideCursor()
