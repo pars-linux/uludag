@@ -8,4 +8,5 @@ Rasta TODO
  - Add command-line options
  - Add settings screen
  - Add 80 character wrap function
-
+ - Add zemberek spell-check support
+ - Add HTML print support
