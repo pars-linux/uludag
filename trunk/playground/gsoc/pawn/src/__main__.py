@@ -6,13 +6,13 @@ from ftpdownloader import FTPDownloader
 app = QtGui.QApplication(sys.argv)
 from versionmanager import Mirror
 m = Mirror()
-m.hostname='ftp.ahmetalpbalkan.com'
+m.hostname='ftp.pardus.org.tr'
 m.login='true'
-m.username='ahmetalpbalkan'
-m.password='1993ky'
+m.username='anonymous'
+m.password='anonymous'
 m.port='21'
-m.path='/ahmetalpbalkan.com/stor/files'
-m.filename='test.in' #'Pardus_2009.1_Anthropoides_virgo.iso'
+m.path='/pub'
+m.filename='md5summer.exe' #'Pardus_2009.1_Anthropoides_virgo.iso'
 
 widget = QtGui.QWidget()
 widget.resize(500,500)
@@ -26,7 +26,7 @@ QtCore.QObject.connect(d, QtCore.SIGNAL('stateChanged(int)'), d.logChangeState)
 QtCore.QObject.connect(d, QtCore.SIGNAL('done(bool)'), d.processDone)
 #QtCore.QObject.connect(d, QtCore.SIGNAL('rawCommandReply(int, const QString)'), d.cmd) #TODO: Does not work!
 QtCore.QObject.connect(d, QtCore.SIGNAL('dataTransferProgress(qint64,qint64)'), d.traceTransferProgress)
-#QtCore.QObject.connect(d, QtCore.SIGNAL('readyRead()'), d.red)
+QtCore.QObject.connect(d, QtCore.SIGNAL('readyRead()'), d.writeBack)
 
 widget.show()
 sys.exit(app.exec_())
