@@ -8,13 +8,181 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-09 14:56+0300\n"
+"POT-Creation-Date: 2010-06-09 15:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/mainWindow.py:237
+msgid "Rasta the Rst Editor"
+msgstr ""
+
+#: .tmp/mainWindow.py:238
+msgid "&File"
+msgstr ""
+
+#: .tmp/mainWindow.py:239
+msgid "&Options"
+msgstr ""
+
+#: .tmp/mainWindow.py:240
+msgid "Help"
+msgstr ""
+
+#: .tmp/mainWindow.py:241
+msgid "&Edit"
+msgstr ""
+
+#: .tmp/mainWindow.py:242
+msgid "Logs"
+msgstr ""
+
+#: .tmp/mainWindow.py:243
+msgid "Editor Tools"
+msgstr ""
+
+#: .tmp/mainWindow.py:244
+msgid "Open"
+msgstr ""
+
+#: .tmp/mainWindow.py:245
+msgid "Ctrl+O"
+msgstr ""
+
+#: .tmp/mainWindow.py:246
+msgid "Save"
+msgstr ""
+
+#: .tmp/mainWindow.py:247
+msgid "Ctrl+S"
+msgstr ""
+
+#: .tmp/mainWindow.py:248
+msgid "Save As"
+msgstr ""
+
+#: .tmp/mainWindow.py:249
+msgid "Exit"
+msgstr ""
+
+#: .tmp/mainWindow.py:250
+msgid "Ctrl+Q"
+msgstr ""
+
+#: .tmp/mainWindow.py:251
+msgid "Build on the fly"
+msgstr ""
+
+#: .tmp/mainWindow.py:252
+msgid "It can be slow.."
+msgstr ""
+
+#: .tmp/mainWindow.py:253
+msgid "Build"
+msgstr ""
+
+#: .tmp/mainWindow.py:254
+msgid "F5"
+msgstr ""
+
+#: .tmp/mainWindow.py:255
+msgid "Rst Howto"
+msgstr ""
+
+#: .tmp/mainWindow.py:256
+msgid "F1"
+msgstr ""
+
+#: .tmp/mainWindow.py:257
+msgid "About"
+msgstr ""
+
+#: .tmp/mainWindow.py:258
+msgid "New"
+msgstr ""
+
+#: .tmp/mainWindow.py:259
+msgid "Ctrl+N"
+msgstr ""
+
+#: .tmp/mainWindow.py:260
+msgid "Show Logs"
+msgstr ""
+
+#: .tmp/mainWindow.py:261
+msgid "F2"
+msgstr ""
+
+#: .tmp/mainWindow.py:262
+msgid "Bold"
+msgstr ""
+
+#: .tmp/mainWindow.py:263
+msgid "Ctrl+B"
+msgstr ""
+
+#: .tmp/mainWindow.py:264
+msgid "Italic"
+msgstr ""
+
+#: .tmp/mainWindow.py:265
+msgid "Ctrl+I"
+msgstr ""
+
+#: .tmp/mainWindow.py:266
+msgid "Link"
+msgstr ""
+
+#: .tmp/mainWindow.py:267
+msgid "Ctrl+L"
+msgstr ""
+
+#: .tmp/mainWindow.py:268
+msgid "Header"
+msgstr ""
+
+#: .tmp/mainWindow.py:269
+msgid "Ctrl+H"
+msgstr ""
+
+#: .tmp/mainWindow.py:270
+msgid "Add Table"
+msgstr ""
+
+#: .tmp/mainWindow.py:271
+msgid "Undo"
+msgstr ""
+
+#: .tmp/mainWindow.py:272
+msgid "Redo"
+msgstr ""
+
+#: .tmp/mainWindow.py:273
+msgid "Code"
+msgstr ""
+
+#: .tmp/mainWindow.py:274
+msgid "Show Output"
+msgstr ""
+
+#: .tmp/mainWindow.py:275
+msgid "F3"
+msgstr ""
+
+#: .tmp/mainWindow.py:276
+msgid "Show Source"
+msgstr ""
+
+#: .tmp/mainWindow.py:277
+msgid "F4"
+msgstr ""
+
+#: .tmp/mainWindow.py:278
+msgid "Select Editor Font"
+msgstr ""
 
 #: .tmp/rasta.py:28
 msgid ""

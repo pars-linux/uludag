@@ -7,13 +7,181 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Rasta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-09 14:56+0300\n"
+"POT-Creation-Date: 2010-06-09 15:27+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/mainWindow.py:237
+msgid "Rasta the Rst Editor"
+msgstr "Rasta Rst Düzenleyici"
+
+#: .tmp/mainWindow.py:238
+msgid "&File"
+msgstr "&Dosya"
+
+#: .tmp/mainWindow.py:239
+msgid "&Options"
+msgstr "&Secenekler"
+
+#: .tmp/mainWindow.py:240
+msgid "Help"
+msgstr "Yardım"
+
+#: .tmp/mainWindow.py:241
+msgid "&Edit"
+msgstr "Dü&zenle"
+
+#: .tmp/mainWindow.py:242
+msgid "Logs"
+msgstr "Uyarılar"
+
+#: .tmp/mainWindow.py:243
+msgid "Editor Tools"
+msgstr "Düzenleyici Araçları"
+
+#: .tmp/mainWindow.py:244
+msgid "Open"
+msgstr "Aç"
+
+#: .tmp/mainWindow.py:245
+msgid "Ctrl+O"
+msgstr ""
+
+#: .tmp/mainWindow.py:246
+msgid "Save"
+msgstr "Kaydet"
+
+#: .tmp/mainWindow.py:247
+msgid "Ctrl+S"
+msgstr ""
+
+#: .tmp/mainWindow.py:248
+msgid "Save As"
+msgstr "Farklı Kaydet"
+
+#: .tmp/mainWindow.py:249
+msgid "Exit"
+msgstr "Çıkış"
+
+#: .tmp/mainWindow.py:250
+msgid "Ctrl+Q"
+msgstr ""
+
+#: .tmp/mainWindow.py:251
+msgid "Build on the fly"
+msgstr "Yazarken derle"
+
+#: .tmp/mainWindow.py:252
+msgid "It can be slow.."
+msgstr "Yavaş olabilir"
+
+#: .tmp/mainWindow.py:253
+msgid "Build"
+msgstr "Derle"
+
+#: .tmp/mainWindow.py:254
+msgid "F5"
+msgstr ""
+
+#: .tmp/mainWindow.py:255
+msgid "Rst Howto"
+msgstr "Rst Nasıl"
+
+#: .tmp/mainWindow.py:256
+msgid "F1"
+msgstr ""
+
+#: .tmp/mainWindow.py:257
+msgid "About"
+msgstr "Hakkında"
+
+#: .tmp/mainWindow.py:258
+msgid "New"
+msgstr "Yeni"
+
+#: .tmp/mainWindow.py:259
+msgid "Ctrl+N"
+msgstr ""
+
+#: .tmp/mainWindow.py:260
+msgid "Show Logs"
+msgstr "Uyarıları Göster"
+
+#: .tmp/mainWindow.py:261
+msgid "F2"
+msgstr ""
+
+#: .tmp/mainWindow.py:262
+msgid "Bold"
+msgstr "Koyu"
+
+#: .tmp/mainWindow.py:263
+msgid "Ctrl+B"
+msgstr ""
+
+#: .tmp/mainWindow.py:264
+msgid "Italic"
+msgstr "Italik"
+
+#: .tmp/mainWindow.py:265
+msgid "Ctrl+I"
+msgstr ""
+
+#: .tmp/mainWindow.py:266
+msgid "Link"
+msgstr "Bağlantı"
+
+#: .tmp/mainWindow.py:267
+msgid "Ctrl+L"
+msgstr ""
+
+#: .tmp/mainWindow.py:268
+msgid "Header"
+msgstr "Başlık"
+
+#: .tmp/mainWindow.py:269
+msgid "Ctrl+H"
+msgstr ""
+
+#: .tmp/mainWindow.py:270
+msgid "Add Table"
+msgstr "Tablo Ekle"
+
+#: .tmp/mainWindow.py:271
+msgid "Undo"
+msgstr "Geri Al"
+
+#: .tmp/mainWindow.py:272
+msgid "Redo"
+msgstr "Yinele"
+
+#: .tmp/mainWindow.py:273
+msgid "Code"
+msgstr "Kod"
+
+#: .tmp/mainWindow.py:274
+msgid "Show Output"
+msgstr "Çıktıyı Göster"
+
+#: .tmp/mainWindow.py:275
+msgid "F3"
+msgstr ""
+
+#: .tmp/mainWindow.py:276
+msgid "Show Source"
+msgstr "Kaynağı Göster"
+
+#: .tmp/mainWindow.py:277
+msgid "F4"
+msgstr ""
+
+#: .tmp/mainWindow.py:278
+msgid "Select Editor Font"
+msgstr "Düzenleyici Yazıtipini seçin"
 
 #: .tmp/rasta.py:28
 msgid ""
@@ -32,4 +200,3 @@ msgstr ""
 "Seçenekler :\n"
 " --help          : Bu yardımı gösterir\n"
 " --hidesource    : Kaynak penceresini gizler\n"
-
