@@ -14,6 +14,8 @@ from PyQt4.QtGui import QApplication, QMainWindow, QColor, QFont
 from PyQt4.Qsci import QsciScintilla, QsciLexerCustom
 
 class RstLexer(QsciLexerCustom):
+    """ Rst Highligter Lexer for QScintilla """
+
     def __init__(self, parent, font=None):
         QsciLexerCustom.__init__(self, parent)
         self._styles = {
@@ -22,7 +24,7 @@ class RstLexer(QsciLexerCustom):
             2: 'Key',
             3: 'Bullet'
             }
-        for key,value in self._styles.iteritems():
+        for key, value in self._styles.iteritems():
             setattr(self, value, key)
         if font:
             if font is QVariant:
@@ -32,12 +34,15 @@ class RstLexer(QsciLexerCustom):
             self.dfont = QFont('Droid Sans Mono', 10)
 
     def language(self):
+        """ The type of files that match with this Lexer """
         return 'Rst Files'
 
     def description(self, style):
+        """ Details of file type """
         return self._styles.get(style, '')
 
     def defaultColor(self, style):
+        """ Default colors for given style """
         if style == self.Default:
             return QColor('#000000')
         elif style == self.Comment:
@@ -49,20 +54,24 @@ class RstLexer(QsciLexerCustom):
         return QsciLexerCustom.defaultColor(self, style)
 
     def defaultPaper(self, style):
+        """ Default paper for given style """
         return QsciLexerCustom.defaultPaper(self, style)
 
     def defaultEolFill(self, style):
+        """ Default End Of Line character for given style """
         return QsciLexerCustom.defaultEolFill(self, style)
 
     def defaultFont(self, style):
+        """ Default font for given style """
         return self.dfont
 
     def styleText(self, start, end):
+        """ Makes some style for given start between end """
         editor = self.editor()
         if editor is None:
             return
 
-        SCI = editor.SendScintilla
+        sci = editor.SendScintilla
         set_style = self.setStyling
 
         source = ''
@@ -71,7 +80,7 @@ class RstLexer(QsciLexerCustom):
         if not source:
             return
 
-        index = SCI(QsciScintilla.SCI_LINEFROMPOSITION, start)
+        index = sci(QsciScintilla.SCI_LINEFROMPOSITION, start)
 
         state = self.Default
 
