@@ -18,6 +18,7 @@ class RstLexer(QsciLexerCustom):
 
     def __init__(self, parent, font=None):
         QsciLexerCustom.__init__(self, parent)
+        self.file_type = 'Rst Files'
         self._styles = {
             0: 'Default',
             1: 'Comment',
@@ -35,7 +36,7 @@ class RstLexer(QsciLexerCustom):
 
     def language(self):
         """ The type of files that match with this Lexer """
-        return 'Rst Files'
+        return self.file_type
 
     def description(self, style):
         """ Details of file type """
