@@ -8,14 +8,14 @@ class FTPDownloader(QFtp):
     '''ISO downloader via ftp protocol specialized for
     Mirror object -- a QFtp instance. Transfers files
     in Binary and PASV mode.'''
-    
-    def __init__(self, mirror, destinationFile):
+
+    speedCalculateInterval = 5.0 # seconds
+
+    def __init__(self, mirror=None, destinationFile=None):
 	QFtp.__init__(self) # TODO: or parent? solve this.
-	print dir(self.TransferType)
-	
+
 	self.mirror = mirror
 	self.filePath = destinationFile
-	self.speedCalculateInterval = 5.0 #seconds
 	self.downloading = False
 
 	QtCore.QObject.connect(self, QtCore.SIGNAL('commandFinished(int,bool)'), self.logCommandFinished)
@@ -23,6 +23,12 @@ class FTPDownloader(QFtp):
 	QtCore.QObject.connect(self, QtCore.SIGNAL('done(bool)'), self.processDone)
 	QtCore.QObject.connect(self, QtCore.SIGNAL('dataTransferProgress(qint64,qint64)'), self.traceTransferProgress)
 	QtCore.QObject.connect(self, QtCore.SIGNAL('readyRead()'), self.writeBack)
+
+    def setMirror(self, mirror):
+	self.mirror = mirror
+
+    def setDestinationPath(self, destinationFile):
+	self.filePath = destinationFile
 
     def startTransfer(self):
 	if self.downloading:
@@ -72,7 +78,7 @@ class FTPDownloader(QFtp):
 	    self.downloadSpeed = (transferredSize-self.initialBytes) / (time.time()-self.timeCounter)
 	    self.timeCounter = time.time()
 	    self.initialBytes = transferredSize
-	    print self.downloadSpeed/1024, 'kilobytes/sec --', self.percentageCompleted, '%--', 'ETA:%d sec (%d min).'% (self.ETA, self.ETA/60)
+	    #print self.downloadSpeed/1024, 'kilobytes/sec --', self.percentageCompleted, '%--', 'ETA:%d sec (%d min).'% (self.ETA, self.ETA/60)
 
 	self.percentageCompleted = 100.0*transferredSize/totalSize
 	try:
@@ -101,7 +107,7 @@ class FTPDownloader(QFtp):
 	    self.fsock.close()
 
     def logChangeState(self, changed):
-	log.info("FTP state changed to "+str(changed))
+	log.debug("FTP state changed to "+str(changed))
 
     def writeBack(self):
 	socketData = self.readAll()
