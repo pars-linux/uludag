@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-""" Rasta RST Editor
-    2010 - Gökmen Göksel <gokmen:pardus.org.tr> """
+''' Rasta RST Editor
+    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as Published by the Free
@@ -11,8 +11,12 @@
 
 from utils import *
 
+# i18n Support
+import gettext
+_ = gettext.translation('rasta', fallback=True).ugettext
+
 class Rasta(QMainWindow):
-    """ Rasta main class """
+    ''' Rasta main class '''
 
     def __init__(self, arguments):
         QMainWindow.__init__(self)
@@ -24,10 +28,10 @@ class Rasta(QMainWindow):
         self.readSettings()
 
         self.file_name = TMPFILE
-        if "--hidesource" in arguments:
+        if '--hidesource' in arguments:
             self.ui.actionShow_Source.toggle()
         if len(arguments) > 1:
-            if not unicode(arguments[1]).startswith("--"):
+            if not unicode(arguments[1]).startswith('--'):
                 self.loadFile(arguments[1])
                 self.updateRst(force = True)
         else:
@@ -36,7 +40,7 @@ class Rasta(QMainWindow):
         self.buildToolbar()
 
     def updateRst(self, source = None, force = False):
-        """ Rebuild current source and show it in webview """
+        ''' Rebuild current source and show it in webview '''
         if self.ui.actionLive_Update.isChecked() or\
                 self.sender() == self.ui.actionUpdate_Now or\
                 source or force:
@@ -72,43 +76,43 @@ class Rasta(QMainWindow):
                 self.ui.Logs.hide()
 
     def addTable(self):
-        """ Add Rst style table """
+        ''' Add Rst style table '''
         editor = self.ui.textEdit
         editor.beginUndoAction()
-        row = QInputDialog.getInteger(self, "Add Table", "Number of rows :")
+        row = QInputDialog.getInteger(self, _('Add Table'), _('Number of rows :'))
         if row[1]:
-            column = QInputDialog.getInteger(self, "Add Table", 
-                    "Number of columns :")
+            column = QInputDialog.getInteger(self, _('Add Table'),
+                    _('Number of columns :'))
             if column[1]:
                 curline = editor.getCursorPosition()[0]
-                editor.insert("\n")
+                editor.insert('\n')
                 for times in range(row[0]):
-                    editor.insert("%s+\n" % ("+-------" * column[0]))
-                    editor.insert("%s|\n" % ("|       " * column[0]))
-                editor.insert("%s+\n" % ("+-------" * column[0]))
+                    editor.insert('%s+\n' % ('+-------' * column[0]))
+                    editor.insert('%s|\n' % ('|       ' * column[0]))
+                editor.insert('%s+\n' % ('+-------' * column[0]))
         editor.endUndoAction()
 
     def editTrigger(self):
-        """ If user clicks some of edit action it calls this method """
+        ''' If user clicks some of edit action it calls this method '''
         marker = None
         pos_xx, pos_yy, pos_xy, pos_yz = self.ui.textEdit.getSelection()
         self.ui.textEdit.beginUndoAction()
         if self.sender() == self.ui.actionBold:
-            marker = "**"
+            marker = '**'
         elif self.sender() == self.ui.actionItalic:
-            marker = "*"
+            marker = '*'
         elif self.sender() == self.ui.actionCode:
-            marker = "``"
+            marker = '``'
         elif self.sender() == self.ui.actionHeader:
-            self.ui.textEdit.insertAt("\n%s" % ("-" * (pos_yz-pos_yy)),
+            self.ui.textEdit.insertAt('\n%s' % ('-' * (pos_yz-pos_yy)),
                                       pos_xy, pos_yz+1)
         elif self.sender() == self.ui.actionLink:
-            link, res = QInputDialog.getText(self, "Insert Link", "Address :")
+            link, res = QInputDialog.getText(self, _('Insert Link'), _('Address :'))
             if res:
-                if not unicode(link[0]).startswith("http"):
-                    link = "http://%s" % link
-                self.ui.textEdit.insertAt("`", pos_xx, pos_yy)
-                self.ui.textEdit.insertAt(" <%s>`_" % link, pos_xy, pos_yz + 1)
+                if not unicode(link[0]).startswith('http'):
+                    link = 'http://%s' % link
+                self.ui.textEdit.insertAt('`', pos_xx, pos_yy)
+                self.ui.textEdit.insertAt(' <%s>`_' % link, pos_xy, pos_yz + 1)
         if marker:
             self.ui.textEdit.insertAt(marker, pos_xx, pos_yy)
             self.ui.textEdit.insertAt(marker, pos_xy, pos_yz + len(marker))
@@ -117,24 +121,24 @@ class Rasta(QMainWindow):
     ## File Operations
 
     def newFile(self):
-        """ Create new file """
+        ''' Create new file '''
         if self.checkModified():
             self.ui.textEdit.clear()
             self.file_name = TMPFILE
 
     def fileOpen(self):
-        """ It shows Open File dialog """
+        ''' It shows Open File dialog '''
         if self.checkModified():
             file_name = QFileDialog.getOpenFileName(self)
             if (not file_name.isEmpty()):
                 self.loadFile(file_name)
 
     def loadFile(self, file_name, parse_string=False):
-        """ Load given file and show it in QSci component """
+        ''' Load given file and show it in QSci component '''
         file_object = QFile(file_name)
         if (not file_object.open(QFile.ReadOnly | QFile.Text)):
-            QMessageBox.warning(self, "Rasta",
-                                 QString("Cannot read file %1:\n%2.")
+            QMessageBox.warning(self, 'Rasta',
+                                 QString(_('Cannot read file %1:\n%2.'))
                                  .arg(file_name)
                                  .arg(file_object.errorString()))
             return
@@ -149,17 +153,17 @@ class Rasta(QMainWindow):
         self.ui.textEdit.setModified(False)
 
     def saveFile(self):
-        """ File save operation """
+        ''' File save operation '''
         if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:
-            get_new_file_name = QFileDialog.getSaveFileName(self, "Save File")
+            get_new_file_name = QFileDialog.getSaveFileName(self, _('Save File'))
             if not get_new_file_name.isEmpty():
                 self.file_name = get_new_file_name
             else:
                 return
         file_object = QFile(self.file_name)
         if (not file_object.open(QFile.WriteOnly | QFile.Text)):
-            QMessageBox.warning(self, "Rasta",
-                                QString("Cannot write file %1:\n%2.")
+            QMessageBox.warning(self, 'Rasta',
+                                QString(_('Cannot write file %1:\n%2.'))
                                 .arg(self.file_name)
                                 .arg(file_object.errorString()))
             return False
@@ -174,80 +178,80 @@ class Rasta(QMainWindow):
     ## Some Dialogs
 
     def showFontDialog(self):
-        """ Show font selection dialog for QScintilla component """
+        ''' Show font selection dialog for QScintilla component '''
         font = QFontDialog.getFont(self.ui.textEdit.lexer().dfont)[0]
         self.buildSci(font)
 
     def showAbout(self):
-        """ Show About dialog """
-        QMessageBox.about(self, "Rasta the Rst Editor", unicode(
-                "Live view supported Qt4 based Webkit "
-                "integrated Rst editor for Pardus Developers "
-                "and all others. "
-                "\n\nAuthor: Gökmen Göksel <gokmen@pardus.org.tr>", "UTF-8"))
+        ''' Show About dialog '''
+        QMessageBox.about(self, _('Rasta the Rst Editor'),
+                                _('Live view supported Qt4 based Webkit '
+                                  'integrated Rst editor for Pardus Developers'
+                                  ' and all others.\n\n Author: Gökmen Göksel '
+                                  '<gokmen@pardus.org.tr>'))
 
     def showHelp(self):
-        """ Show help for rst, it loads HELP document to the webview """
+        ''' Show help for rst, it loads HELP document to the webview '''
         _tmp = self.file_name
-        if os.path.exists("/usr/share/rasta/HELP"):
+        if os.path.exists('/usr/share/rasta/HELP'):
             self.updateRst(
-                    source = self.loadFile("/usr/share/rasta/HELP", 
+                    source = self.loadFile('/usr/share/rasta/HELP',
                         parse_string = True))
         else:
             self.ui.webView.load(
-                    QUrl("http://developer.pardus.org.tr/howto/howto-rst.html"))
+                    QUrl('http://developer.pardus.org.tr/howto/howto-rst.html'))
         self.file_name = _tmp
 
     def toggleLogs(self, state):
-        """ Show or Hide the log view """
+        ''' Show or Hide the log view '''
         self.ui.Logs.setVisible(state)
 
     ## Settings
 
     def writeSettings(self):
-        """ Write settings config file """
+        ''' Write settings config file '''
 
         # For MainWindow
-        self.settings.beginGroup("MainWindow")
-        self.settings.setValue("size", self.size())
-        self.settings.setValue("pos", self.pos())
-        self.settings.setValue("liveupdate", 
+        self.settings.beginGroup('MainWindow')
+        self.settings.setValue('size', self.size())
+        self.settings.setValue('pos', self.pos())
+        self.settings.setValue('liveupdate',
                 self.ui.actionLive_Update.isChecked())
-        self.settings.setValue("showlogs", self.ui.actionShow_Logs.isChecked())
+        self.settings.setValue('showlogs', self.ui.actionShow_Logs.isChecked())
         self.settings.endGroup()
 
         # For TextEdit
-        self.settings.beginGroup("TextEdit")
-        self.settings.setValue("size", self.ui.textEdit.size())
-        self.settings.setValue("font",
+        self.settings.beginGroup('TextEdit')
+        self.settings.setValue('size', self.ui.textEdit.size())
+        self.settings.setValue('font',
                                 self.ui.textEdit.lexer().dfont.toString())
         self.settings.endGroup()
 
     def readSettings(self):
-        """ Read settings from config file """
+        ''' Read settings from config file '''
 
         # For MainWindow
-        self.settings.beginGroup("MainWindow")
-        self.resize(self.settings.value("size", QSize(800, 400)).toSize())
-        self.move(self.settings.value("pos", QPoint(20, 20)).toPoint())
+        self.settings.beginGroup('MainWindow')
+        self.resize(self.settings.value('size', QSize(800, 400)).toSize())
+        self.move(self.settings.value('pos', QPoint(20, 20)).toPoint())
         self.ui.actionLive_Update.setChecked(
-                self.settings.value("liveupdate", True).toBool())
+                self.settings.value('liveupdate', True).toBool())
         self.ui.actionShow_Logs.setChecked(
-                self.settings.value("showlogs", True).toBool())
+                self.settings.value('showlogs', True).toBool())
         self.toggleLogs(self.ui.actionShow_Logs.isChecked())
         self.settings.endGroup()
 
         # For TextEdit
-        self.settings.beginGroup("TextEdit")
+        self.settings.beginGroup('TextEdit')
         self.ui.textEdit.resize(
-                self.settings.value("size", QSize(300, 560)).toSize())
+                self.settings.value('size', QSize(300, 560)).toSize())
         self.buildSci(self.settings.value('font', 'Sans Mono'))
         self.settings.endGroup()
 
     ## UI Utils
 
     def buildToolbar(self):
-        """ Build toolbar actions and connect them to proper methods """
+        ''' Build toolbar actions and connect them to proper methods '''
 
         # Toolbar
         self.ui.toolBar.addAction(self.ui.actionNew)
@@ -289,36 +293,36 @@ class Rasta(QMainWindow):
         self.ui.logs.doubleClicked.connect(self.goToLine)
 
     def buildSci(self, font = None):
-        """ It builds QScintilla components """
+        ''' It builds QScintilla components '''
         lexer = RstLexer(self.ui.textEdit, font)
         cfont = lexer.dfont
         font_metric = QFontMetrics(cfont)
         self.ui.textEdit.setLexer(lexer)
         self.ui.textEdit.setUtf8(True)
         self.ui.textEdit.setMarginLineNumbers(0, True)
-        self.ui.textEdit.setMarginWidth(0, font_metric.width( "00000" ) + 5)
+        self.ui.textEdit.setMarginWidth(0, font_metric.width( '00000' ) + 5)
         self.ui.textEdit.setCaretLineVisible(True)
         self.ui.textEdit.setWrapMode(1)
         self.ui.textEdit.setFolding(True)
         self.ui.textEdit.setEdgeMode(QsciScintilla.EdgeLine)
         self.ui.textEdit.setEdgeColumn(80)
-        self.ui.textEdit.setEdgeColor(QColor("#999"))
-        self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"), 31)
+        self.ui.textEdit.setEdgeColor(QColor('#999'))
+        self.ui.textEdit.markerDefine(QPixmap(':/icons/warning.png'), 31)
         self.ui.textEdit.setIndentationsUseTabs(False)
         self.ui.textEdit.setIndentationWidth(4)
 
     def goToLine(self, index):
-        """ Set cursor position to the given index """
+        ''' Set cursor position to the given index '''
         self.ui.textEdit.setFocus()
         self.ui.textEdit.setCursorPosition(
                 index.child(index.row(),0).data().toInt()[0]-1,0)
 
     def checkModified(self):
-        """ Checks if the document was modified and asks for saving """
+        ''' Checks if the document was modified and asks for saving '''
         if (self.ui.textEdit.isModified()):
-            ret = QMessageBox.warning(self, "Rasta",
-                          "The document has been modified.\n"
-                          "Do you want to save your changes?",
+            ret = QMessageBox.warning(self, 'Rasta',
+                          _('The document has been modified.\n'
+                            'Do you want to save your changes?'),
                           QMessageBox.Save |
                           QMessageBox.Discard |
                           QMessageBox.Cancel)
@@ -329,7 +333,7 @@ class Rasta(QMainWindow):
         return True
 
     def closeEvent(self, event):
-        """ Catch close event to write settings before closing """
+        ''' Catch close event to write settings before closing '''
         self.writeSettings()
         if not self.checkModified():
             event.ignore()

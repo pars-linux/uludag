@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-""" Rasta RST Editor
-    2010 - Gökmen Göksel <gokmen:pardus.org.tr> """
+''' Rasta RST Editor
+    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -36,15 +36,15 @@ def update_messages():
     os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py -g %s' %
              (PROJECT_LIB, PROJECT))
     os.system('cp -R %s/*.py .tmp/' % PROJECT_LIB)
-    os.system('cp rasta .tmp/rasta.py')
-    os.system("ls .tmp/* | xargs xgettext --default-domain=%s "
-              "--keyword=_ --keyword=i18n -o po/%s.pot" % (PROJECT, PROJECT))
-    for item in os.listdir("po"):
-        if item.endswith(".po"):
-            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po "
-                      "po/%s po/%s.pot" % (item, PROJECT))
-            os.system("cp .tmp/temp.po po/%s" % item)
-    os.system("rm -rf .tmp")
+    os.system('cp rasta .tmp/rasta-app.py')
+    os.system('ls .tmp/* | xargs xgettext --default-domain=%s '
+              '--keyword=_ --keyword=i18n -o po/%s.pot' % (PROJECT, PROJECT))
+    for item in os.listdir('po'):
+        if item.endswith('.po'):
+            os.system('msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po '
+                      'po/%s po/%s.pot' % (item, PROJECT))
+            os.system('cp .tmp/temp.po po/%s' % item)
+    os.system('rm -rf .tmp')
 
 class Clean(clean):
     def run(self):
@@ -99,24 +99,24 @@ class Install(install):
     def run(self):
         install.run(self)
 
-        root_dir = "/usr/share"
+        root_dir = '/usr/share'
         if self.root:
-            root_dir = "%s/usr/share" % self.root
+            root_dir = '%s/usr/share' % self.root
 
-        locale_dir = os.path.join(root_dir, "locale")
+        locale_dir = os.path.join(root_dir, 'locale')
         # Install locales
-        print "Installing locales..."
-        for filename in glob.glob1("po", "*.po"):
-            lang = filename.rsplit(".", 1)[0]
-            os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
+        print 'Installing locales...'
+        for filename in glob.glob1('po', '*.po'):
+            lang = filename.rsplit('.', 1)[0]
+            os.system('msgfmt po/%s.po -o po/%s.mo' % (lang, lang))
             try:
-                os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
+                os.makedirs(os.path.join(locale_dir, '%s/LC_MESSAGES' % lang))
             except OSError:
                 pass
-            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir,
-                 "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+            shutil.copy('po/%s.mo' % lang, os.path.join(locale_dir,
+                 '%s/LC_MESSAGES' % lang, '%s.mo' % PROJECT))
 
-if "update_messages" in sys.argv:
+if 'update_messages' in sys.argv:
     update_messages()
     sys.exit(0)
 
