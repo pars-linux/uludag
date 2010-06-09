@@ -11,6 +11,8 @@
 
 # Python Libs
 import os
+import sys
+import glob
 import shutil
 
 # DistUtils
@@ -19,6 +21,7 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.clean import clean
 from distutils.command.sdist import sdist
+from distutils.command.install import install
 from distutils.sysconfig import get_python_lib
 
 # RastaLibs
@@ -26,6 +29,21 @@ from rasta_lib import __version__
 
 PROJECT = 'rasta'
 PROJECT_LIB = 'rasta_lib'
+
+def update_messages():
+    os.system('rm -rf .tmp')
+    os.makedirs('.tmp')
+    os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py' % PROJECT_LIB)
+    os.system('cp -R %s/*.py .tmp/' % PROJECT_LIB)
+    os.system('cp rasta .tmp/rasta.py')
+    os.system("ls .tmp/* | xargs xgettext --default-domain=%s "
+              "--keyword=_ --keyword=i18n -o po/%s.pot" % (PROJECT, PROJECT))
+    for item in os.listdir("po"):
+        if item.endswith(".po"):
+            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po "
+                      "po/%s po/%s.pot" % (item, PROJECT))
+            os.system("cp .tmp/temp.po po/%s" % item)
+    os.system("rm -rf .tmp")
 
 class Clean(clean):
     def run(self):
@@ -75,6 +93,31 @@ class Uninstall(Command):
             print ' removing: ', executable
             os.unlink(executable)
 
+class Install(install):
+    def run(self):
+        install.run(self)
+
+        root_dir = "/usr/share"
+        if self.root:
+            root_dir = "%s/usr/share" % self.root
+
+        locale_dir = os.path.join(root_dir, "locale")
+        # Install locales
+        print "Installing locales..."
+        for filename in glob.glob1("po", "*.po"):
+            lang = filename.rsplit(".", 1)[0]
+            os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
+            try:
+                os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
+            except OSError:
+                pass
+            shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir,
+                 "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
+
+if "update_messages" in sys.argv:
+    update_messages()
+    sys.exit(0)
+
 setup(name=PROJECT,
       version=__version__,
       description='Rasta: The Rst Editor',
@@ -88,6 +131,7 @@ setup(name=PROJECT,
       data_files = [('/usr/share/%s' % PROJECT, ['AUTHORS', 'README', 'COPYING', 'HELP'])],
       cmdclass = {
           'uninstall':Uninstall,
+          'install'  :Install,
           'build'    :Build,
           'clean'    :Clean,
           'sdist'    :Dist,

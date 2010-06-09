@@ -20,6 +20,20 @@ from PyQt4.QtCore import QCoreApplication
 from rasta_lib import __version__
 from rasta_lib.rasta import Rasta
 
+# i18n Support
+import gettext
+_ = gettext.translation('rasta', fallback=True).ugettext
+
+USAGE = _(
+"""
+Usage :
+ $ rasta [filename] [options]
+
+Options :
+ --help          : Show this help
+ --hidesource    : Hide source window
+""")
+
 if __name__ == "__main__":
     app = QApplication(sys.argv)
 
@@ -32,13 +46,7 @@ if __name__ == "__main__":
     arguments = QCoreApplication.arguments()
     if len(arguments)>1:
         if arguments[1] == "--help":
-            print "Usage :"
-            print " $ rasta [filename] [options]"
-            print
-            print "Options :"
-            print " --help          : Show this help"
-            print " --hidesource    : Hide source window"
-            sys.exit(0)
+            sys.exit(USAGE)
 
     RastaUI = Rasta(arguments)
     RastaUI.show()

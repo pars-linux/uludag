@@ -1,0 +1,35 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Rasta\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-09 14:56+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .tmp/rasta.py:28
+msgid ""
+"\n"
+"Usage :\n"
+" $ rasta [filename] [options]\n"
+"\n"
+"Options :\n"
+" --help          : Show this help\n"
+" --hidesource    : Hide source window\n"
+msgstr ""
+"\n"
+"Kullanım :\n"
+" $ rasta [dosya_adı] [seçenekler]\n"
+"\n"
+"Seçenekler :\n"
+" --help          : Bu yardımı gösterir\n"
+" --hidesource    : Kaynak penceresini gizler\n"
+
