@@ -1291,17 +1291,17 @@ msgstr "Habeş"
 #: kcalendarsystem.cpp:113
 msgctxt "@item Calendar system"
 msgid "Gregorian"
-msgstr "Gürcüce"
+msgstr "Miladi"
 
 #: kcalendarsystem.cpp:117
 msgctxt "@item Calendar system"
 msgid "Gregorian (Proleptic)"
-msgstr "Gürcüce (İlerisi için)"
+msgstr "Miladi (Proleptik)"
 
 #: kcalendarsystem.cpp:121
 msgctxt "@item Calendar system"
 msgid "Hebrew"
-msgstr "İbranice"
+msgstr "İbrani"
 
 #: kcalendarsystem.cpp:125
 msgctxt "@item Calendar system"
