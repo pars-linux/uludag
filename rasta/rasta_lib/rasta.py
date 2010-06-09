@@ -125,6 +125,7 @@ class Rasta(QMainWindow):
         if self.checkModified():
             self.ui.textEdit.clear()
             self.file_name = TMPFILE
+        self.setWindowTitle('Rasta :: %s' % self.file_name)
 
     def fileOpen(self):
         ''' It shows Open File dialog '''
@@ -151,6 +152,7 @@ class Rasta(QMainWindow):
             return unicode(file_content)
         self.ui.textEdit.setText(file_content)
         self.ui.textEdit.setModified(False)
+        self.setWindowTitle('Rasta :: %s' % file_name)
 
     def saveFile(self):
         ''' File save operation '''
@@ -173,6 +175,7 @@ class Rasta(QMainWindow):
         out << self.ui.textEdit.text()
         QApplication.restoreOverrideCursor()
         self.ui.textEdit.setModified(False)
+        self.setWindowTitle('Rasta :: %s' % self.file_name)
         return True
 
     ## Some Dialogs
