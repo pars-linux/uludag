@@ -142,6 +142,8 @@ class Rasta(QMainWindow):
         self.ui.textEdit.setEdgeColumn(80)
         self.ui.textEdit.setEdgeColor(QColor("#999"))
         self.ui.textEdit.markerDefine(QPixmap(":/icons/warning.png"), 31)
+        self.ui.textEdit.setIndentationsUseTabs(False)
+        self.ui.textEdit.setIndentationWidth(4)
 
     def showFontDialog(self):
         """ Show font selection dialog for QScintilla component """
