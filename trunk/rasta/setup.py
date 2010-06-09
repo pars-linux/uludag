@@ -22,16 +22,17 @@ from distutils.command.sdist import sdist
 from distutils.sysconfig import get_python_lib
 
 # RastaLibs
-from rastaLib import __version__
+from rasta_lib import __version__
 
 PROJECT = 'rasta'
-PROJECT_LIB = 'rastaLib'
+PROJECT_LIB = 'rasta_lib'
 
 class Clean(clean):
     def run(self):
         print 'Cleaning ...'
         os.system('find -name *.pyc|xargs rm -rf')
-        for compiled in ('rastaLib/mainWindow.py', 'rastaLib/icons_rc.py'):
+        for compiled in ('%s/mainWindow.py' % PROJECT_LIB,
+                         '%s/icons_rc.py' % PROJECT_LIB):
             if os.path.exists(compiled):
                 print ' removing: ', compiled
                 os.unlink(compiled)
@@ -44,8 +45,9 @@ class Clean(clean):
 class Build(build):
     def run(self):
         print 'Building ...'
-        os.system('pyuic4 gui/mainWindow.ui -o rastaLib/mainWindow.py')
-        os.system('pyrcc4 rastaLib/icons.qrc -o rastaLib/icons_rc.py')
+        os.system('pyuic4 gui/mainWindow.ui -o %s/mainWindow.py' % PROJECT_LIB)
+        os.system('pyrcc4 %s/icons.qrc -o %s/icons_rc.py' %
+                 (PROJECT_LIB, PROJECT_LIB))
         build.run(self)
 
 class Dist(sdist):
