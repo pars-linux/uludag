@@ -1,8 +1,6 @@
 Rasta TODO
 ==========
 
- - Localization support
- - Use Pds IconLoader
  - Add template support
  - Find a proper solution for big files in live view
  - Add command-line options
@@ -13,5 +11,7 @@ Rasta TODO
  - Add HTML print support
  - Add save as HTML support (çohönemli)
  - Include file name in window title
+
  ✔ Using spaces instead of tabs
+ ✔ Localization support
 

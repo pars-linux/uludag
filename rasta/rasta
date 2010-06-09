@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-""" Rasta RST Editor
-    2010 - Gökmen Göksel <gokmen:pardus.org.tr> """
+''' Rasta RST Editor
+    2010 - Gökmen Göksel <gokmen:pardus.org.tr> '''
 
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -25,27 +25,27 @@ import gettext
 _ = gettext.translation('rasta', fallback=True).ugettext
 
 USAGE = _(
-"""
+'''
 Usage :
  $ rasta [filename] [options]
 
 Options :
  --help          : Show this help
  --hidesource    : Hide source window
-""")
+''')
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     # Application Settings
-    QCoreApplication.setOrganizationName("Pardus")
-    QCoreApplication.setOrganizationDomain("pt.pardus.org.tr")
-    QCoreApplication.setApplicationName("Rasta")
+    QCoreApplication.setOrganizationName('Pardus')
+    QCoreApplication.setOrganizationDomain('pt.pardus.org.tr')
+    QCoreApplication.setApplicationName('Rasta')
     QCoreApplication.setApplicationVersion(__version__)
 
     arguments = QCoreApplication.arguments()
     if len(arguments)>1:
-        if arguments[1] == "--help":
+        if arguments[1] == '--help':
             sys.exit(USAGE)
 
     RastaUI = Rasta(arguments)

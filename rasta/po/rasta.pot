@@ -8,15 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-09 15:27+0300\n"
+"POT-Creation-Date: 2010-06-09 16:03+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/mainWindow.py:237
+#: .tmp/mainWindow.py:237 .tmp/rasta.py:187
 msgid "Rasta the Rst Editor"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 msgid "Ctrl+H"
 msgstr ""
 
-#: .tmp/mainWindow.py:270
+#: .tmp/mainWindow.py:270 .tmp/rasta.py:82 .tmp/rasta.py:84
 msgid "Add Table"
 msgstr ""
 
@@ -184,7 +184,7 @@ msgstr ""
 msgid "Select Editor Font"
 msgstr ""
 
-#: .tmp/rasta.py:28
+#: .tmp/rasta-app.py:28
 msgid ""
 "\n"
 "Usage :\n"
@@ -193,4 +193,64 @@ msgid ""
 "Options :\n"
 " --help          : Show this help\n"
 " --hidesource    : Hide source window\n"
+msgstr ""
+
+#: .tmp/rasta.py:82
+msgid "Number of rows :"
+msgstr ""
+
+#: .tmp/rasta.py:85
+msgid "Number of columns :"
+msgstr ""
+
+#: .tmp/rasta.py:110
+msgid "Insert Link"
+msgstr ""
+
+#: .tmp/rasta.py:110
+msgid "Address :"
+msgstr ""
+
+#: .tmp/rasta.py:141
+msgid ""
+"Cannot read file %1:\n"
+"%2."
+msgstr ""
+
+#: .tmp/rasta.py:158
+msgid "Save File"
+msgstr ""
+
+#: .tmp/rasta.py:166
+msgid ""
+"Cannot write file %1:\n"
+"%2."
+msgstr ""
+
+#: .tmp/rasta.py:188
+msgid ""
+"Live view supported Qt4 based Webkit integrated Rst editor for Pardus "
+"Developers and all others.\n"
+"\n"
+" Author: Gökmen Göksel <gokmen@pardus.org.tr>"
+msgstr ""
+
+#: .tmp/rasta.py:324
+msgid ""
+"The document has been modified.\n"
+"Do you want to save your changes?"
+msgstr ""
+
+#: .tmp/utils.py:19
+#, python-format
+msgid "Please install \"%s\" package."
+msgstr ""
+
+#: .tmp/utils.py:48
+msgid "Please run \"setup.py build\" first."
+msgstr ""
+
+#: .tmp/utils.py:71
+#, python-format
+msgid "Rasta parse error: %s"
 msgstr ""
