@@ -17,8 +17,8 @@ from PyQt4.QtGui import QApplication
 from PyQt4.QtCore import QCoreApplication
 
 # Rasta Core Library
-from rastaLib import __version__
-from rastaLib.Rasta import Rasta
+from rasta_lib import __version__
+from rasta_lib.Rasta import Rasta
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
