@@ -22,6 +22,7 @@ class Rasta(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_Rasta()
         self.ui.setupUi(self)
+	self.setUnifiedTitleAndToolBarOnMac(True)
 
         # System settings
         self.settings = QSettings()
