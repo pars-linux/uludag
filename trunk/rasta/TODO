@@ -13,4 +13,5 @@ Rasta TODO
  - Add HTML print support
  - Add save as HTML support (çohönemli)
  - Include file name in window title
- - Consider using spaces instead of tabs (?)
+ ✔ Using spaces instead of tabs
+
