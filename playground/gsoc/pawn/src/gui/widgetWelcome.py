@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'widgetWelcome.ui'
+# Form implementation generated from reading ui file './widgetWelcome.ui'
 #
-# Created: Wed Jun  9 15:19:54 2010
+# Created: Thu Jun 10 03:53:47 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -10,8 +10,6 @@
 from PyQt4 import QtCore, QtGui
 
 class Ui_widgetWelcome(object):
-    title = "Welcome to PaWn!"
-
     def setupUi(self, widgetWelcome):
         widgetWelcome.setObjectName("widgetWelcome")
         widgetWelcome.resize(462, 264)

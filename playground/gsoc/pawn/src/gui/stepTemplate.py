@@ -2,6 +2,8 @@
 class StepWidget():
     heading = ''
 
+    finishStep = False
+
     def __init__(self):
 	pass
 
@@ -18,4 +20,4 @@ class StepWidget():
 	return -1
 
     def isFinishStep(self):
-	return False
+	return self.finishStep

@@ -2,11 +2,13 @@ from PyQt4 import QtGui,QtCore
 
 from gui.widgetMain import Ui_MainWidget
 import gui.stepWelcome as stepWelcome
-from gui.stepTemplate import StepWidget
+import gui.stepConfiguration as stepConfiguration
 import gui.stepSource as stepSource
+import gui.stepOptISO as stepOptISO
+import gui.stepOptCD as stepOptCD
 
 class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
-    steps = [stepWelcome, stepSource] # step screen widgets
+    steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD] # step screen widgets
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):
@@ -18,9 +20,9 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 	self.setupUi(self)
 	self.connectSignals()
 	self.populateWidgets()
+	self.updateNavButtons()
+	self.jumpScreen(0)
 	self.show()
-
-	self.jumpScreen(0) # start
 
 	self.move(300,200)
 
@@ -34,39 +36,40 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 	for step in self.steps:
 	    self.stackedWidget.addWidget(step.Widget())
 
-    def	changeScreen(self, index):
-	print 'requested to change to', index
-
+    def	proceedScreen(self, index):
+	print 'requested to proceed to', index
 	prevIndex =  self.stackedWidget.currentIndex()
 	
 	if not (prevIndex == index):
 	    prevWidget = self.stackedWidget.widget(prevIndex)
-
-	    if(prevWidget.onSubmit()):
-		curWidget = self.stackedWidget.widget(index)
+	    if prevWidget.onSubmit():
 		self.historyStack.append(prevIndex)
 		self.jumpScreen(index)
-		print 'changed index to ',index
-		
-		curWidget.onEnter()
+		print 'appended', self.historyStack
+
 
     def jumpScreen(self, index):
-	print self.historyStack
 	self.stackedWidget.setCurrentIndex(index)
 	self.onScreenChange() # event
 
-    def findNextIndex(self):
+	curWidget = self.stackedWidget.widget(index)
+	curWidget.onEnter()
+
+    def nextIndex(self):
 	return self.stackedWidget.currentWidget().nextIndex()
 
     def goNext(self):
-	self.changeScreen(self.findNextIndex())
+	self.proceedScreen(self.nextIndex())
 
     def goBack(self):
 	if len(self.historyStack):
-	    self.jumpScreen(self.historyStack.pop())
+	    curWidget = self.stackedWidget.currentWidget()
+	    if(curWidget.onRollback()):
+		print 'pop', self.historyStack
+		self.jumpScreen(self.historyStack.pop())
 
     def goFinish(self):
-	print 'Finish!!!1'
+	print 'Finish!!!11'
 
     def onScreenChange(self):
 	self.updateNavButtons()
@@ -74,15 +77,17 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 
     def updateNavButtons(self):
 	if len(self.historyStack) == 0:
-	    self.btnBack.setEnabled(False)
-	    self.btnFinish.setEnabled(False)
+	    self.btnBack.hide()
+	    self.btnFinish.hide()
 	else:
 	    if self.stackedWidget.currentWidget().isFinishStep():
-		self.btnBack.setEnabled(False)
-		self.btnNext.setEnabled(False)
-		self.btnFinish.setEnabled(True)
+		self.btnBack.hide()
+		self.btnNext.hide()
+		self.btnFinish.show()
 	    else:
-		self.btnFinish.setEnabled(False)
+		self.btnBack.show()
+		self.btnFinish.hide()
+
 
     def updateHeading(self):
 	heading = self.stackedWidget.currentWidget().heading
