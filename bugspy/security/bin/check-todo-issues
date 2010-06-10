@@ -478,7 +478,8 @@ class EntryEditor:
         answer = sys.stdin.readline()
         if answer[0] != "\n":
             assigned_to = answer.replace("\n","")
-            print "Bug is assigned to: %s" % assigned_to
+            print "Bug is assigned and CCed to: %s" % assigned_to
+            new_bug["cc"] = assigned_to
         else:
             assigned_to = None
             print "Not assigning. Assignee is default."
@@ -522,7 +523,6 @@ class EntryEditor:
             new_bug["url"] = bug_url
             new_bug["component"] = component
             new_bug["product"] = "Güvenlik / Security"
-            new_bug["cc"] = assigned_to
 
             # add bug for each Pardus version and add depends_on.
             self.bugreporter.login()

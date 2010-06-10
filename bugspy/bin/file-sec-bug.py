@@ -128,7 +128,8 @@ def main(filename):
     answer = sys.stdin.readline()
     if answer[0] != "\n":
         assigned_to = answer.replace("\n", "")
-        print "Bug is assigned to: %s" % assigned_to
+        print "Bug is assigned and CCed to: %s" % assigned_to
+        new_bug["cc"] = assigned_to
     else:
         assigned_to = None
         print "Not assigning. Assignee is default."
