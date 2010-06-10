@@ -187,6 +187,7 @@ class Bugzilla:
             assigned_to: E-mail address to assign a bug
             blocks: Bugs that this bug blocks
             dependson: Bug that depends on.
+            cc: Add e-mail address to cc list
 
         Raises:
             BugzillaError: You should first login to modify the bug
@@ -220,24 +221,24 @@ class Bugzilla:
         #     print x
 
         if args.has("title"):
-            log.debug("Setting new title..")
+            log.debug("New title: %s" % args.title)
             self.browser["short_desc"] = args.title
 
         if args.has("status"):
-            log.debug("Setting bug_status..")
+            log.debug("Bug_status: %s" % args.status)
             self.browser["bug_status"] = [args.status]
 
         if args.has("resolution"):
-            log.debug("Setting resolution..")
+            log.debug("Resolution: %s" % args.resolution)
             self.browser["resolution"] = [args.resolution]
 
         if args.has("comment"):
-            log.debug("Setting comment..")
+            log.debug("Setting comment")
             self.browser["comment"] = args.comment
 
         if args.has("security"):
             # Pardus has specific setting for security vulnerabilities that will not be public. The checkbox name is "bit-10"
-            log.debug("Marking this as security")
+            log.debug("Marking as security")
             if args.security == "1":
                 # if the bug has bit-10 field set
                 if len(self.browser["bit-10"]) != 0:
@@ -252,23 +253,23 @@ class Bugzilla:
                     self.browser["bit-10"] = []
 
         if args.has("assigned_to"):
-            log.debug("Setting assign_to: %s" % args.assigned_to)
+            log.debug("Assigned: %s" % args.assigned_to)
             self.browser["assigned_to"] = args.assigned_to
 
         if args.has("dependson"):
-            log.debug("Bug dependson : %s" % args.dependson)
+            log.debug("Dependson: %s" % args.dependson)
             self.browser["dependson"] = args.dependson
 
         if args.has("blocks"):
-            log.debug("Bug blocks: %s" % args.blocks)
+            log.debug("Blocks: %s" % args.blocks)
             self.browser["blocked"] = args.blocks
 
         if args.has("cc"):
-            log.debug("Adding to cc: %s" % args.cc)
+            log.debug("CC: %s" % args.cc)
             self.browser["newcc"] = args.cc
 
         if args.has("version"):
-            log.debug("Changing version to: %s" % args.version)
+            log.debug("Version: %s" % args.version)
             self.browser["version"] = [args.version]
 
         log.info("Submitting the changes")
@@ -300,6 +301,7 @@ class Bugzilla:
             alias: Bug alias (NOT IMPLEMENTED)
             blocks: Bugs that this bug blocks
             dependson: Bug that depends on.
+            cc: E-mail addresses to CC
 
         Returns:
             Integer indicating the bugzilla id for new bug
@@ -329,32 +331,36 @@ class Bugzilla:
         self.browser["comment"] = args.description
 
         if args.has("url"):
-            log.debug("Adding URL")
+            log.debug("URL: %s" % args.url)
             self.browser["bug_file_loc"] = args.url
 
         if args.has("security"):
-            log.debug("Setting security tag")
+            log.debug("Security: 1")
             self.browser["bit-10"] = ["1"]
 
         if args.has("status"):
-            log.debug("Setting bug_status..")
+            log.debug("Bug_status: %s" % args.status)
             self.browser["bug_status"] = [args.status]
 
         if args.has("assigned_to"):
-            log.debug("Assigning bug to: %s" % args.assigned_to)
+            log.debug("Assign: %s" % args.assigned_to)
             self.browser["assigned_to"] = args.assigned_to
 
         if args.has("dependson"):
-            log.debug("Bug dependson : %s" % args.dependson)
+            log.debug("Depends on: %s" % args.dependson)
             self.browser["dependson"] = args.dependson
 
         if args.has("blocks"):
-            log.debug("Bug blocks: %s" % args.blocks)
+            log.debug("Blocks: %s" % args.blocks)
             self.browser["blocked"] = args.blocks
 
         if args.has("version"):
-            log.debug("Changing version to: %s" % args.version)
+            log.debug("Version: %s" % args.version)
             self.browser["version"] = [args.version]
+
+        if args.has("cc"):
+            log.debug("CC: %s" % args.cc)
+            self.browser["cc"] = args.cc
 
         # FIXME: Our bugzilla page doesn't show alias field. 
         # FIXME: Uncomment it when it is done
@@ -376,8 +382,3 @@ class Bugzilla:
             log.error("Wohoops. Unexpected data returned after submitting.")
             return False
 
-
-
-    # FIXME: remove it on production
-    def write_file(self, file, data):
-        open("/tmp/%s" % file, "w+").write(data)
