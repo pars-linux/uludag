@@ -13,8 +13,11 @@ from PyQt4.QtCore import QVariant
 from PyQt4.QtGui import QApplication, QMainWindow, QColor, QFont
 from PyQt4.Qsci import QsciScintilla, QsciLexerCustom
 
-import enchant
-SPELL = enchant.Dict('tr_TR')
+try:
+    import enchant
+    SPELL = enchant.Dict('tr_TR')
+except:
+    SPELL = False
 
 class RstLexer(QsciLexerCustom):
     ''' Rst Highligter Lexer for QScintilla '''
@@ -108,7 +111,7 @@ class RstLexer(QsciLexerCustom):
                     state = self.Key
                 elif chr(line[0]) in ('*','-'):
                     state = self.Bullet
-                else:
+                elif SPELL:
                     i = 1
                     for word in line.split():
                         if not SPELL.check(word):
