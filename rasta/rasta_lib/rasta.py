@@ -22,7 +22,7 @@ class Rasta(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_Rasta()
         self.ui.setupUi(self)
-	self.setUnifiedTitleAndToolBarOnMac(True)
+        self.setUnifiedTitleAndToolBarOnMac(True)
 
         # System settings
         self.settings = QSettings()
@@ -80,7 +80,8 @@ class Rasta(QMainWindow):
         ''' Add Rst style table '''
         editor = self.ui.textEdit
         editor.beginUndoAction()
-        row = QInputDialog.getInteger(self, _('Add Table'), _('Number of rows :'))
+        row = QInputDialog.getInteger(self,
+                _('Add Table'), _('Number of rows :'))
         if row[1]:
             column = QInputDialog.getInteger(self, _('Add Table'),
                     _('Number of columns :'))
@@ -108,7 +109,8 @@ class Rasta(QMainWindow):
             self.ui.textEdit.insertAt('\n%s' % ('-' * (pos_yz-pos_yy)),
                                       pos_xy, pos_yz+1)
         elif self.sender() == self.ui.actionLink:
-            link, res = QInputDialog.getText(self, _('Insert Link'), _('Address :'))
+            link, res = QInputDialog.getText(self,
+                    _('Insert Link'), _('Address :'))
             if res:
                 if not unicode(link[0]).startswith('http'):
                     link = 'http://%s' % link
@@ -158,7 +160,8 @@ class Rasta(QMainWindow):
     def saveFile(self):
         ''' File save operation '''
         if self.file_name == TMPFILE or self.sender() == self.ui.actionSave_As:
-            get_new_file_name = QFileDialog.getSaveFileName(self, _('Save File'))
+            get_new_file_name = QFileDialog.getSaveFileName(self,
+                                                            _('Save File'))
             if not get_new_file_name.isEmpty():
                 self.file_name = get_new_file_name
             else:
@@ -189,18 +192,17 @@ class Rasta(QMainWindow):
     def showAbout(self):
         ''' Show About dialog '''
         QMessageBox.about(self, _('Rasta the Rst Editor'),
-                                _('Live view supported Qt4 based Webkit '
-                                  'integrated Rst editor for Pardus Developers'
-                                  ' and all others.\n\n Author: Gökmen Göksel '
-                                  '<gokmen@pardus.org.tr>'))
+                               _('Live view supported Qt4 based Webkit '
+                                 'integrated Rst editor for Pardus Developers'
+                                 ' and all others.\n\n Author: Gökmen Göksel '
+                                 '<gokmen@pardus.org.tr>'))
 
     def showHelp(self):
         ''' Show help for rst, it loads HELP document to the webview '''
         _tmp = self.file_name
         if os.path.exists('/usr/share/rasta/HELP'):
-            self.updateRst(
-                    source = self.loadFile('/usr/share/rasta/HELP',
-                        parse_string = True))
+            self.updateRst(source = self.loadFile('/usr/share/rasta/HELP',
+                           parse_string = True))
         else:
             self.ui.webView.load(
                     QUrl('http://developer.pardus.org.tr/howto/howto-rst.html'))
@@ -301,6 +303,7 @@ class Rasta(QMainWindow):
         lexer = RstLexer(self.ui.textEdit, font)
         cfont = lexer.dfont
         font_metric = QFontMetrics(cfont)
+
         self.ui.textEdit.setLexer(lexer)
         self.ui.textEdit.setUtf8(True)
         self.ui.textEdit.setMarginLineNumbers(0, True)
@@ -314,6 +317,7 @@ class Rasta(QMainWindow):
         self.ui.textEdit.markerDefine(QPixmap(':/icons/warning.png'), 31)
         self.ui.textEdit.setIndentationsUseTabs(False)
         self.ui.textEdit.setIndentationWidth(4)
+        self.ui.textEdit.setAutoCompletionSource(QsciScintilla.AcsDocument)
 
     def goToLine(self, index):
         ''' Set cursor position to the given index '''
@@ -343,5 +347,4 @@ class Rasta(QMainWindow):
             event.ignore()
             return
         event.accept()
-
 

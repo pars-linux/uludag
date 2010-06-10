@@ -13,6 +13,9 @@ from PyQt4.QtCore import QVariant
 from PyQt4.QtGui import QApplication, QMainWindow, QColor, QFont
 from PyQt4.Qsci import QsciScintilla, QsciLexerCustom
 
+import enchant
+SPELL = enchant.Dict('tr_TR')
+
 class RstLexer(QsciLexerCustom):
     ''' Rst Highligter Lexer for QScintilla '''
 
@@ -23,7 +26,8 @@ class RstLexer(QsciLexerCustom):
             0: 'Default',
             1: 'Comment',
             2: 'Key',
-            3: 'Bullet'
+            3: 'Bullet',
+            4: 'Mispell'
             }
         for key, value in self._styles.iteritems():
             setattr(self, value, key)
@@ -52,6 +56,8 @@ class RstLexer(QsciLexerCustom):
             return QColor('#CC6600')
         elif style == self.Key:
             return QColor('blue')
+        elif style == self.Mispell:
+            return QColor('red')
         return QsciLexerCustom.defaultColor(self, style)
 
     def defaultPaper(self, style):
@@ -78,6 +84,10 @@ class RstLexer(QsciLexerCustom):
         source = ''
         if end > editor.length():
             end = editor.length()
+        if end > start:
+            # source = b'\x00' * (end - start)
+            source = bytearray(end - start)
+            sci(QsciScintilla.SCI_GETTEXTRANGE, start, end, source)
         if not source:
             return
 
@@ -88,18 +98,22 @@ class RstLexer(QsciLexerCustom):
         self.startStyling(start, 0x1f)
 
         for line in source.splitlines(True):
+            state = self.Default
             length = len(line)
-            if length == 1:
-                state = self.Default
-            else:
+            if length > 1:
                 firsttwo = line[0:2]
                 if firsttwo == '..':
                     state = self.Comment
-                elif line.find('--') > -1 or line.find('==') > -1 :
+                elif '--' in line or '==' in line:
                     state = self.Key
                 elif chr(line[0]) in ('*','-'):
                     state = self.Bullet
                 else:
-                    state = self.Default
+                    i = 1
+                    for word in line.split():
+                        if not SPELL.check(word):
+                            set_style(len(word), self.Mispell)
+                            i = 2
+                        else:
+                            set_style(len(word) + i, self.Default)
             set_style(length, state)
-
