@@ -522,6 +522,7 @@ class EntryEditor:
             new_bug["url"] = bug_url
             new_bug["component"] = component
             new_bug["product"] = "Güvenlik / Security"
+            new_bug["cc"] = assigned_to
 
             # add bug for each Pardus version and add depends_on.
             self.bugreporter.login()
@@ -545,7 +546,6 @@ class EntryEditor:
                                               component=component,
                                               status="ASSIGNED",
                                               assigned_to=assigned_to,
-                                              cc=cc_address,
                                               version=affected_version,
                                               product="Güvenlik / Security",
                                               blocks=bugno)
