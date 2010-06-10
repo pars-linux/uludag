@@ -4,10 +4,10 @@
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-03 09:47+0300\n"
-"PO-Revision-Date: YEAR-MO-DA 17:07+0100\n"
+"PO-Revision-Date: 2010-06-05 17:07+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
 "MIME-Version: 1.0\n"
