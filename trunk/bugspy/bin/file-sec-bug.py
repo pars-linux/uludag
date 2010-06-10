@@ -172,6 +172,7 @@ def main(filename):
 
         if bugno:
             print "Success! http://bugs.pardus.org.tr/%s" % (bugno)
+            print "   %s" % title
 
             # add each entry to files and file a bug
             for affected_version in affected_pardus_versions:
@@ -189,8 +190,8 @@ def main(filename):
                                   product="Güvenlik / Security",
                                   blocks=bugno)
 
-
-                print "Bug %s <%s> has been created" % (no, bug_title)
+                print "Success! http://bugs.pardus.org.tr/%s" % no
+                print "   %s" % bug_title
 
                 # FIXME: Add them to tracker file when we move to new tracker system
                 #file = TRACKER_MAP.get(affected_version)
