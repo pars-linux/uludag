@@ -161,6 +161,9 @@ def setup_action_parser(action):
         p.add_option("--alias",
                 help="optional: bug alias")
 
+        p.add_option("--cc",
+                help="optional: email address to cc")
+
         p.add_option("--blocks",
                 help="optional: the bugs that this bug blocks")
 
@@ -360,9 +363,11 @@ def main():
             if opt.assigned_to:
                 new["assigned_to"] = opt.assigned_to
 
-
             if opt.blocks:
                 new["blocks"] = opt.blocks
+
+            if opt.cc:
+                new["cc"] = opt.cc
 
             if opt.depends:
                 new["dependson"] = opt.depends
