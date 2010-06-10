@@ -5,7 +5,7 @@ Howto Rasta on Mac OS X
 
 1. **Python**:
 
- Python already installed in OSX (to test it open Terminal and type “python”)
+ Download and install Python 2.6 > from http://python.org/download (DMG: install as usual)	 
 
 2. **Qt4**:
 
