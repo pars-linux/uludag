@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'widgetSource.ui'
+# Form implementation generated from reading ui file './widgetSource.ui'
 #
-# Created: Wed Jun  9 15:22:03 2010
+# Created: Thu Jun 10 03:53:46 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -10,14 +10,11 @@
 from PyQt4 import QtCore, QtGui
 
 class Ui_widgetSource(object):
-
-    title = "Installation Source"
-
     def setupUi(self, widgetSource):
         widgetSource.setObjectName("widgetSource")
-        widgetSource.resize(495, 273)
+        widgetSource.resize(425, 167)
         self.verticalLayoutWidget = QtGui.QWidget(widgetSource)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 481, 271))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 421, 161))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -45,7 +42,7 @@ class Ui_widgetSource(object):
 
     def retranslateUi(self, widgetSource):
         self.label.setText(QtGui.QApplication.translate("widgetSource", "Label for installation source about PaWn", None, QtGui.QApplication.UnicodeUTF8))
-        self.optInternet.setText(QtGui.QApplication.translate("widgetSource", "Download Pardus from Internet", None, QtGui.QApplication.UnicodeUTF8))
+        self.optInternet.setText(QtGui.QApplication.translate("widgetSource", "Download Pardus from Internet (recommended)", None, QtGui.QApplication.UnicodeUTF8))
         self.optCD.setText(QtGui.QApplication.translate("widgetSource", "I have Pardus installation CD", None, QtGui.QApplication.UnicodeUTF8))
         self.optISO.setText(QtGui.QApplication.translate("widgetSource", "I have Pardus installation file (.ISO)", None, QtGui.QApplication.UnicodeUTF8))
 

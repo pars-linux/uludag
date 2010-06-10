@@ -4,7 +4,7 @@ from PyQt4 import QtGui
 from gui.widgetSource import Ui_widgetSource
 
 class Widget(QtGui.QWidget, StepWidget):
-    heading = "Select the source"
+    heading = "Choose the source"
 
     def __init__(self):
 	QtGui.QWidget.__init__(self,None)
@@ -13,10 +13,29 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.gui = Ui_widgetSource()
 	self.gui.setupUi(self)
 
+	self.options = [self.gui.optInternet, self.gui.optISO, self.gui.optCD]
 
     def nextIndex(self):
-	print 'THIS IS SPARTAAAAAAAAAAAA!!!'
-	return -1
+	if self.gui.optISO.isChecked():
+	    return 3
+	if self.gui.optCD.isChecked():
+	    return 4
 
-    def isFinishStep(self):
+	return 0 # TODO: implement other interfaces
+
+    def onSubmit(self):
+	for option in self.options:
+	    if option.isChecked():
+		return True
+
+	error = QtGui.QMessageBox(self)
+	error.setWindowTitle("Warning")
+	error.setText("Please choose an option to proceed.")
+	error.show()
+	return False
+
+    def onRollback(self):
+	for option in self.options:
+	    option.setChecked(False)
+
 	return True

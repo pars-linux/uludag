@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>706</width>
-    <height>393</height>
+    <width>602</width>
+    <height>343</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <x>0</x>
      <y>110</y>
      <width>141</width>
-     <height>281</height>
+     <height>221</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="navigationLayout"/>
@@ -46,10 +46,10 @@
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>40</y>
-     <width>551</width>
-     <height>291</height>
+     <x>160</x>
+     <y>60</y>
+     <width>441</width>
+     <height>231</height>
     </rect>
    </property>
    <property name="maximumSize">
@@ -66,7 +66,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>350</y>
+     <y>300</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -78,8 +78,8 @@
   <widget class="QPushButton" name="btnNext">
    <property name="geometry">
     <rect>
-     <x>630</x>
-     <y>350</y>
+     <x>530</x>
+     <y>300</y>
      <width>71</width>
      <height>41</height>
     </rect>
@@ -91,8 +91,8 @@
   <widget class="QPushButton" name="btnFinish">
    <property name="geometry">
     <rect>
-     <x>540</x>
-     <y>350</y>
+     <x>450</x>
+     <y>300</y>
      <width>81</width>
      <height>41</height>
     </rect>
@@ -105,7 +105,7 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>0</y>
+     <y>10</y>
      <width>541</width>
      <height>41</height>
     </rect>

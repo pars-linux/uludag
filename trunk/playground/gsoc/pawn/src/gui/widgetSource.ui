@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>495</width>
-    <height>273</height>
+    <width>425</width>
+    <height>167</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>481</width>
-     <height>271</height>
+     <width>421</width>
+     <height>161</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -37,7 +37,7 @@
         <item>
          <widget class="QRadioButton" name="optInternet">
           <property name="text">
-           <string>Download Pardus from Internet</string>
+           <string>Download Pardus from Internet (recommended)</string>
           </property>
          </widget>
         </item>

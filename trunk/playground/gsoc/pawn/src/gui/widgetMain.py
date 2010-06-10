@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'widgetMain.ui'
+# Form implementation generated from reading ui file './widgetMain.ui'
 #
-# Created: Wed Jun  9 22:18:18 2010
+# Created: Thu Jun 10 03:53:45 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -12,9 +12,9 @@ from PyQt4 import QtCore, QtGui
 class Ui_MainWidget(object):
     def setupUi(self, MainWidget):
         MainWidget.setObjectName("MainWidget")
-        MainWidget.resize(706, 393)
+        MainWidget.resize(602, 343)
         self.verticalLayoutWidget = QtGui.QWidget(MainWidget)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 110, 141, 281))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 110, 141, 221))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.navigationLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.navigationLayout.setObjectName("navigationLayout")
@@ -23,20 +23,20 @@ class Ui_MainWidget(object):
         self.logo.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.logo.setObjectName("logo")
         self.stackedWidget = QtGui.QStackedWidget(MainWidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(150, 40, 551, 291))
+        self.stackedWidget.setGeometry(QtCore.QRect(160, 60, 441, 231))
         self.stackedWidget.setMaximumSize(QtCore.QSize(551, 16777215))
         self.stackedWidget.setObjectName("stackedWidget")
         self.btnBack = QtGui.QPushButton(MainWidget)
-        self.btnBack.setGeometry(QtCore.QRect(150, 350, 71, 41))
+        self.btnBack.setGeometry(QtCore.QRect(150, 300, 71, 41))
         self.btnBack.setObjectName("btnBack")
         self.btnNext = QtGui.QPushButton(MainWidget)
-        self.btnNext.setGeometry(QtCore.QRect(630, 350, 71, 41))
+        self.btnNext.setGeometry(QtCore.QRect(530, 300, 71, 41))
         self.btnNext.setObjectName("btnNext")
         self.btnFinish = QtGui.QPushButton(MainWidget)
-        self.btnFinish.setGeometry(QtCore.QRect(540, 350, 81, 41))
+        self.btnFinish.setGeometry(QtCore.QRect(450, 300, 81, 41))
         self.btnFinish.setObjectName("btnFinish")
         self.lblHeading = QtGui.QLabel(MainWidget)
-        self.lblHeading.setGeometry(QtCore.QRect(150, 0, 541, 41))
+        self.lblHeading.setGeometry(QtCore.QRect(150, 10, 541, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         font.setWeight(75)
