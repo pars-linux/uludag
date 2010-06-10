@@ -127,11 +127,20 @@ def main(filename):
     print "Assign this bug to [Enter=default]: ",
     answer = sys.stdin.readline()
     if answer[0] != "\n":
-        assigned_to = answer.replace("\n","")
+        assigned_to = answer.replace("\n", "")
         print "Bug is assigned to: %s" % assigned_to
     else:
         assigned_to = None
         print "Not assigning. Assignee is default."
+
+    print ''
+    print "Add CC [Enter=none]: ",
+    answer = sys.stdin.readline()
+    if answer[0] != "\n":
+        cc_address = answer.replace("\n", "")
+        print "Address CCed: %s" % cc_address
+    else:
+        cc_address = None
 
     print ''
     print "Make his bug private? [Y/n]: ",
@@ -143,11 +152,12 @@ def main(filename):
 
     print '\n!!!!!!!!!!!!!!!!!!!!!!!!!!!'
     print '!!!!!!!!!!!!!!!!!!!!!!!!!!!'
-    print "Title:     %s" % title
-    print "Component: %s" % component
-    print "Affected:  %s" % ', '.join(affected_pardus_versions)
-    print "Private?:  %s" % new_bug["security"]
-    print "Assigned:  %s" % assigned_to
+    print "Title     : %s" % title
+    print "Component : %s" % component
+    print "Affected  : %s" % ', '.join(affected_pardus_versions)
+    print "Private?  : %s" % new_bug["security"]
+    print "Assigned  : %s" % assigned_to
+    print "CCed      : %s" % cc_address
     print description + "\n"
 
     print "\nWill file this bug [Y/n]: ",
@@ -173,6 +183,7 @@ def main(filename):
                                   component=component,
                                   status="ASSIGNED",
                                   assigned_to=assigned_to,
+                                  cc=cc_address,
                                   version=affected_version,
                                   product="Güvenlik / Security",
                                   blocks=bugno)
