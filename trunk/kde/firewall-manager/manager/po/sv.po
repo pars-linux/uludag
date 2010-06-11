@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: firewall-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 2009-06-30 18:48+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,43 +16,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_item.py:65
-msgid "Active or deactivate module."
-msgstr "Aktivera eller avaktivera modul."
+#: .tmp/firewallmanager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr ""
 
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Redigera"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Ta bort"
-
-#: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
-msgid "Start"
-msgstr "Starta"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Lägg till ny"
-
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
-msgid "Settings"
-msgstr "Anpassa"
-
-#: .tmp/firewallmanager/service.py:38
-msgid "Firewall is activated."
-msgstr "Brandväggen är aktiverad."
-
-#: .tmp/firewallmanager/service.py:41
-msgid "Stop"
-msgstr "Stoppa"
-
-#: .tmp/firewallmanager/service.py:43
-msgid "Firewall is deactivated."
-msgstr "Brandväggen är inte aktiverad."
-
-#: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
+#: .tmp/firewallmanager.desktop.in.h:2 .tmp/firewallmanager/about.py:20
+#: .tmp/firewallmanager/about.py:22 .tmp/kcm_firewallmanager.desktop.in.h:1
 msgid "Firewall Manager"
 msgstr "Brandväggshanteraren"
 
@@ -77,8 +46,7 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Det finns inte något paket som tillhandahåller bakände för det här "
-"programmet.\n"
+"Det finns inte något paket som tillhandahåller bakände för det här programmet.\n"
 "Vänligen se till att paketen är rätt installerade och inställda."
 
 #: .tmp/firewallmanager/main.py:200
@@ -94,3 +62,38 @@ msgstr "Åtgärd"
 msgid "Access denied."
 msgstr "Åtkomst nekas."
 
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Anpassa"
+
+#: .tmp/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Brandväggen är aktiverad."
+
+#: .tmp/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Stoppa"
+
+#: .tmp/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Brandväggen är inte aktiverad."
+
+#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
+msgid "Start"
+msgstr "Starta"
+
+#: .tmp/ui_item.py:69
+msgid "Active or deactivate module."
+msgstr "Aktivera eller avaktivera modul."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Redigera"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Ta bort"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Lägg till ny"
