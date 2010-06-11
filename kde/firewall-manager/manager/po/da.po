@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 2009-08-20 11:37+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -16,43 +16,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_item.py:65
-msgid "Active or deactivate module."
-msgstr "Aktiver eller deaktiver modulet."
+#: .tmp/firewallmanager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr ""
 
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Rediger"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Slet"
-
-#: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
-msgid "Start"
-msgstr "Start"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Tilføj ny"
-
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
-msgid "Settings"
-msgstr "Indstillinger"
-
-#: .tmp/firewallmanager/service.py:38
-msgid "Firewall is activated."
-msgstr "Firewall er aktiveret"
-
-#: .tmp/firewallmanager/service.py:41
-msgid "Stop"
-msgstr "Stop"
-
-#: .tmp/firewallmanager/service.py:43
-msgid "Firewall is deactivated."
-msgstr "Firewall er deaktiveret"
-
-#: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
+#: .tmp/firewallmanager.desktop.in.h:2 .tmp/firewallmanager/about.py:20
+#: .tmp/firewallmanager/about.py:22 .tmp/kcm_firewallmanager.desktop.in.h:1
 msgid "Firewall Manager"
 msgstr "Håndtering af firewall"
 
@@ -78,8 +47,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Der er ikke nogen pakker der kan agere backend for dette program.\n"
-"Kontroller venligst at de nødvendige pakker er installeret og "
-"konfigureret korrekt."
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret korrekt."
 
 #: .tmp/firewallmanager/main.py:200
 msgid "All"
@@ -94,4 +62,38 @@ msgstr "Handling"
 msgid "Access denied."
 msgstr "Adgang nægtet."
 
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Indstillinger"
 
+#: .tmp/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Firewall er aktiveret"
+
+#: .tmp/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Stop"
+
+#: .tmp/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Firewall er deaktiveret"
+
+#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
+msgid "Start"
+msgstr "Start"
+
+#: .tmp/ui_item.py:69
+msgid "Active or deactivate module."
+msgstr "Aktiver eller deaktiver modulet."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Rediger"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Slet"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Tilføj ny"

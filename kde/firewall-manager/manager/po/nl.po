@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 01/07/09 21:41\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -16,43 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/ui_item.py:65
-msgid "Active or deactivate module."
-msgstr "Module in- of uitschakelen."
+#: .tmp/firewallmanager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr ""
 
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Bewerken"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: .tmp/ui_service.py:41 .tmp/firewallmanager/service.py:46
-msgid "Start"
-msgstr "Starten"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
-
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
-msgid "Settings"
-msgstr "Instellingen"
-
-#: .tmp/firewallmanager/service.py:38
-msgid "Firewall is activated."
-msgstr "Firewall is ingeschakeld."
-
-#: .tmp/firewallmanager/service.py:41
-msgid "Stop"
-msgstr "Stoppen"
-
-#: .tmp/firewallmanager/service.py:43
-msgid "Firewall is deactivated."
-msgstr "Firewall is uitgeschakeld."
-
-#: .tmp/firewallmanager/about.py:20 .tmp/firewallmanager/about.py:22
+#: .tmp/firewallmanager.desktop.in.h:2 .tmp/firewallmanager/about.py:20
+#: .tmp/firewallmanager/about.py:22 .tmp/kcm_firewallmanager.desktop.in.h:1
 msgid "Firewall Manager"
 msgstr "Firewallbeheer"
 
@@ -93,3 +62,38 @@ msgstr "Actie"
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Instellingen"
+
+#: .tmp/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Firewall is ingeschakeld."
+
+#: .tmp/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Stoppen"
+
+#: .tmp/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Firewall is uitgeschakeld."
+
+#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
+msgid "Start"
+msgstr "Starten"
+
+#: .tmp/ui_item.py:69
+msgid "Active or deactivate module."
+msgstr "Module in- of uitschakelen."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Bewerken"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
