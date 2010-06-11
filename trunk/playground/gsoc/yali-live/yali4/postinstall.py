@@ -59,7 +59,11 @@ def initbaselayout():
     cp("usr/share/baselayout/passwd", "etc/passwd")
     cp("usr/share/baselayout/shadow", "etc/shadow")
     os.chmod(os.path.join(consts.target_dir, "etc/shadow"), 0600)
-    cp("usr/share/baselayout/group", "etc/group")
+
+    #cp("usr/share/baselayout/group", "etc/group")
+    # Temporarily removed since --configure-pending not available for Live (causing error)
+    #TODO: Need to figure out a simple fix
+
 
     # create empty log file
     touch("var/log/lastlog")

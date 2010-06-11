@@ -1,18 +1,19 @@
 #!/bin/bash
 
-if [ -d "/yali" ];
-then
+rm -rf /yali
+umount /yali
 
-	echo "Yali is ready in /yali ..."
-	rm -rf /yali/* ;
-else
-
-mkdir /yali
+mkdir /yali/backup -p
+cp /usr/lib/python2.6/site-packages/yali4/* /yali/ -Rp
 mount --bind /yali/ /usr/lib/python2.6/site-packages/yali4/
 
-fi
+
+cp /yali/sysutil* /yali/backup -Rp
+cp -Rp yali4/*.py /yali
+cp -Rp yali4/gui/* /yali/gui
+cp /yali/backup/* /yali/ -Rp
 
 
-echo build and install
+#echo build and install
 
-python setup.py install
+#python setup.py install

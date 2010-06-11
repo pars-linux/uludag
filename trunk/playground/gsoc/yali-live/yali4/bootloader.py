@@ -26,6 +26,7 @@ import yali4.partitionrequest as request
 from yali4.partitionrequest import partrequests
 import yali4.gui.context as ctx
 from pardus.sysutils import get_kernel_option
+from yali4.gui.installdata import *
 
 grub_conf_tmp = """\
 default 0
@@ -269,6 +270,16 @@ class BootLoader:
         major = findGrubDev(grub_install_root)
         if opts.__eq__("harddisk"):
             major = major.replace(major[2],chr(ord(major[2])+1))
+
+        # Create /boot/grub/message file for install target
+        if ctx.yali.install_type == YALI_LIVEINSTALL:
+            source_dir = os.path.join(consts.source_dir,"boot/isolinux/")
+            if os.system("cd %s; ls . | cpio -o > %s/boot/grub/message" %(source_dir,consts.target_dir)) > 0:
+                ctx.debugger.log("IG: Failed to create /boot/grub/message")
+            else:
+                ctx.debugger.log("IG: Created /boot/grub/message")
+
+            
 
         ctx.debugger.log("IG: I have found major as '%s'" % major)
         if ctx.installData.bootLoaderOption == 1:
