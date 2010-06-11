@@ -1,19 +1,29 @@
 Pardus Testing Framework
 ------------------------
 
-The aim of this project is to create a testing framework for Pardus
-which will interpret and execute XML-based test case files
-and then send the results back to the testing team - all with minimum user intervention. 
+The aim of this project is to implement a testing framework for Pardus that allows the
+Pardus testing team and other developers to easily test their software, all with minimum
+user intervention. 
+
+
+How it works:
+-------------
+
+i.   The developer/ tester create a XML testcase file and send it over to the user. 
+ii.  The framework on the user's end interprets the XML file and carries out the required tests. 
+iii. The test data and report is then sent back to the developer/ tester. 
+
+All this is done with the minimum effort on part of the end user.
 
 There are two major components of this project:
 
-1. Interpretation and execution of XML test case files.
-2. Allowing the testing team to easily create the test case files.
+1. Interpretation and execution of XML testcase files.
+2. Creation of XML testcase files.
 
 
+Technical details:
+------------------
 
-
-
-
-
+The testing framework would run on Python 2.6 and requires the 'lxml' library, 
+which is required for both parsing and the creation of the XML testcase files.
  
