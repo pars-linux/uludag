@@ -7,23 +7,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-15 18:48-0300\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 2010-05-15 18:48-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
-msgid "Signal Strength"
-msgstr "Força do Sinal"
-
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
 msgstr "Gerenciador de Rede"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr ""
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -38,30 +38,34 @@ msgid "Current Maintainer"
 msgstr "Mantenedor Atual"
 
 #: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/about.py:33
 msgid "Developer"
 msgstr "Desenvolvedor"
 
-#: .tmp/networkmanager/base.py:186
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/base.py:195
 msgid "Available Profiles"
 msgstr "Perfis Disponíveis"
 
-#: .tmp/networkmanager/base.py:208
+#: .tmp/networkmanager/base.py:217
 msgid "All Profiles"
 msgstr "Todos os Perfis"
 
-#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
 msgid "No Device Found"
 msgstr "Nenhum Dispositivo Encontrado"
 
-#: .tmp/networkmanager/base.py:396
+#: .tmp/networkmanager/base.py:405
 msgid "No Authentication"
 msgstr "Nenhuma Autenticação"
 
-#: .tmp/networkmanager/base.py:624
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
 msgstr "Você realmente quer remover o perfil %1?"
 
@@ -77,130 +81,154 @@ msgstr "Por favor insira o código PIN para"
 msgid "You've typed the wrong PIN code for 3 times"
 msgstr "Você digitou o código PIN incorreto por 3 vezes"
 
-#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+#: .tmp/networkmanager/widgets.py:280 .tmp/ui_main.py:346
 msgid "Refresh"
 msgstr "Recarregar"
 
-#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+#: .tmp/networkmanager/widgets.py:312 .tmp/ui_main.py:345
 msgid "Scanning..."
 msgstr "Procurando..."
 
-#: .tmp/networkmanager/widgets.py:378
+#: .tmp/networkmanager/widgets.py:382
 msgid "Disconnected"
 msgstr "Desconectado"
 
-#: .tmp/networkmanager/widgets.py:383
+#: .tmp/networkmanager/widgets.py:387
 #, python-format
 msgid "Connected: %s"
 msgstr "Conectado: %s"
 
-#: .tmp/networkmanager/widgets.py:388
+#: .tmp/networkmanager/widgets.py:392
 msgid "Connecting"
 msgstr "Conectando"
 
-#: .tmp/networkmanager/widgets.py:396
+#: .tmp/networkmanager/widgets.py:400
 msgid "Cable or device is unplugged"
 msgstr "O cabo ou dispositivo está desplugado"
 
-#: .tmp/networkmanager/widgets.py:412
+#: .tmp/networkmanager/widgets.py:416
 msgid "Access denied"
 msgstr "Acesso negado"
 
-#: .tmp/ui_main.py:334
+#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
+msgid "Signal Strength"
+msgstr "Força do Sinal"
+
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Mudar estado da conexão."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Editar conexão"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Deletar conexão"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr " %p %"
+
+#: .tmp/ui_main.py:342
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_main.py:335
+#: .tmp/ui_main.py:343
 msgid "Create Profile"
 msgstr "Criar Perfis"
 
-#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+#: .tmp/ui_main.py:344 .tmp/ui_nameserver.py:42
 msgid "Nameserver Settings"
 msgstr "Configurações do Servidor de Nomes"
 
-#: .tmp/ui_main.py:339
+#: .tmp/ui_main.py:347
 msgid "Profile Name :"
 msgstr "Nome do Perfil :"
 
-#: .tmp/ui_main.py:340
+#: .tmp/ui_main.py:348
 msgid "Device : "
 msgstr "Dispositivo :"
 
-#: .tmp/ui_main.py:341
+#: .tmp/ui_main.py:349
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: .tmp/ui_main.py:342
+#: .tmp/ui_main.py:350
 msgid "Network Settings"
 msgstr "Configurações da Rede"
 
-#: .tmp/ui_main.py:343
+#: .tmp/ui_main.py:351
 msgid "Use DHCP"
 msgstr "Usar DHCP"
 
-#: .tmp/ui_main.py:344
+#: .tmp/ui_main.py:352
 msgid "Use Manual Settings"
 msgstr "Usar Configurações Manuais"
 
-#: .tmp/ui_main.py:345
+#: .tmp/ui_main.py:353
 msgid "Address :"
 msgstr "Endereço :"
 
-#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+#: .tmp/ui_main.py:354 .tmp/ui_main.py:357
 msgid "Custom"
 msgstr "Personalizado"
 
-#: .tmp/ui_main.py:347
+#: .tmp/ui_main.py:355
 msgid "Network Mask :"
 msgstr "Máscara de Rede :"
 
-#: .tmp/ui_main.py:348
+#: .tmp/ui_main.py:356
 msgid "Default Gateway :"
 msgstr "Endereço de Gateway Padrão:"
 
-#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+#: .tmp/ui_main.py:358 .tmp/ui_nameserver.py:44
 msgid "Name Servers"
 msgstr "Servidores de Nomes:"
 
-#: .tmp/ui_main.py:351
+#: .tmp/ui_main.py:359
 msgid "Default"
 msgstr "Padrão"
 
-#: .tmp/ui_main.py:352
+#: .tmp/ui_main.py:360
 msgid "Automatic"
 msgstr "Automático"
 
-#: .tmp/ui_main.py:353
+#: .tmp/ui_main.py:361
 msgid "Custom :"
 msgstr "Personalizado :"
 
-#: .tmp/ui_main.py:354
+#: .tmp/ui_main.py:362
 msgid "Remote"
 msgstr "Remoto"
 
-#: .tmp/ui_main.py:355
+#: .tmp/ui_main.py:363
 msgid "Network Name (ESSID) :"
 msgstr "Nome da Rede (ESSID) :"
 
-#: .tmp/ui_main.py:356
+#: .tmp/ui_main.py:364
 msgid "Scan"
 msgstr "Procurar"
 
-#: .tmp/ui_main.py:357
+#: .tmp/ui_main.py:365
 msgid "Security Type :"
 msgstr "Tipo de Chave de Segurança :"
 
-#: .tmp/ui_main.py:358
+#: .tmp/ui_main.py:366
 msgid "Settings"
 msgstr "Configurações"
 
-#: .tmp/ui_main.py:359
+#: .tmp/ui_main.py:367
 msgid "Key :"
 msgstr "Chave :"
 
-#: .tmp/ui_main.py:360
+#: .tmp/ui_main.py:368
 msgid "Hide Password"
 msgstr "Esconder Senha"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Nome da Máquina"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
@@ -245,23 +273,3 @@ msgstr "Lembrar o PIN para essa conexão"
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
 msgstr "Configurações de Segurança"
-
-#: .tmp/ui_item.py:103
-msgid "Set connection state."
-msgstr "Mudar estado da conexão."
-
-#: .tmp/ui_item.py:104
-msgid "Edit connection"
-msgstr "Editar conexão"
-
-#: .tmp/ui_item.py:105
-msgid "Delete connection"
-msgstr "Deletar conexão"
-
-#: .tmp/ui_item.py:107
-msgid "  %p %"
-msgstr " %p %"
-
-#: .tmp/ui_nameserver.py:43
-msgid "Machine Name"
-msgstr "Nome da Máquina"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-16 15:55+0200\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 2010-06-02 09:15+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: Hungarian <hu@li.org>\n"
@@ -15,13 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
-msgid "Signal Strength"
-msgstr "Jelerősség"
-
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
 msgstr "Hálózat menedzser"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr ""
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -36,30 +37,34 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/about.py:33
 msgid "Developer"
 msgstr "Fejlesztő"
 
-#: .tmp/networkmanager/base.py:186
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/base.py:195
 msgid "Available Profiles"
 msgstr "Elérhető profilok"
 
-#: .tmp/networkmanager/base.py:208
+#: .tmp/networkmanager/base.py:217
 msgid "All Profiles"
 msgstr "Minden profil"
 
-#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
 msgid "No Device Found"
 msgstr "Nem található eszköz"
 
-#: .tmp/networkmanager/base.py:396
+#: .tmp/networkmanager/base.py:405
 msgid "No Authentication"
 msgstr "Nincs hitelesítve"
 
-#: .tmp/networkmanager/base.py:624
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
 msgstr "Valóban el akarod távolítani a profil %1?"
 
@@ -75,130 +80,154 @@ msgstr "Kérlek írd be a PIN kódod"
 msgid "You've typed the wrong PIN code for 3 times"
 msgstr "Három(3) alkalommal rossz PIN kódot adtál meg"
 
-#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+#: .tmp/networkmanager/widgets.py:280 .tmp/ui_main.py:346
 msgid "Refresh"
 msgstr "Frissítés"
 
-#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+#: .tmp/networkmanager/widgets.py:312 .tmp/ui_main.py:345
 msgid "Scanning..."
 msgstr "Letapogatás..."
 
-#: .tmp/networkmanager/widgets.py:378
+#: .tmp/networkmanager/widgets.py:382
 msgid "Disconnected"
 msgstr "Szétkapcsolva"
 
-#: .tmp/networkmanager/widgets.py:383
+#: .tmp/networkmanager/widgets.py:387
 #, python-format
 msgid "Connected: %s"
 msgstr "Kapcsolódva: %s"
 
-#: .tmp/networkmanager/widgets.py:388
+#: .tmp/networkmanager/widgets.py:392
 msgid "Connecting"
 msgstr "Kapcsolódás"
 
-#: .tmp/networkmanager/widgets.py:396
+#: .tmp/networkmanager/widgets.py:400
 msgid "Cable or device is unplugged"
 msgstr "Kábel vagy eszköz nincs csatlakoztatva"
 
-#: .tmp/networkmanager/widgets.py:412
+#: .tmp/networkmanager/widgets.py:416
 msgid "Access denied"
 msgstr "Hozzáférés megtagadva"
 
-#: .tmp/ui_main.py:334
+#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
+msgid "Signal Strength"
+msgstr "Jelerősség"
+
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Kapcsolat státuszának beállítása."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Kapcsolat szerkesztése"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Kapcsolat törlése"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/ui_main.py:342
 msgid "Form"
 msgstr "Forma"
 
-#: .tmp/ui_main.py:335
+#: .tmp/ui_main.py:343
 msgid "Create Profile"
 msgstr "Profil készítése"
 
-#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+#: .tmp/ui_main.py:344 .tmp/ui_nameserver.py:42
 msgid "Nameserver Settings"
 msgstr "Névszerver beállítások"
 
-#: .tmp/ui_main.py:339
+#: .tmp/ui_main.py:347
 msgid "Profile Name :"
 msgstr "Profil név:"
 
-#: .tmp/ui_main.py:340
+#: .tmp/ui_main.py:348
 msgid "Device : "
 msgstr "Eszköz : "
 
-#: .tmp/ui_main.py:341
+#: .tmp/ui_main.py:349
 msgid "Cancel"
 msgstr "Mégse"
 
-#: .tmp/ui_main.py:342
+#: .tmp/ui_main.py:350
 msgid "Network Settings"
 msgstr "Hálózati beállítások"
 
-#: .tmp/ui_main.py:343
+#: .tmp/ui_main.py:351
 msgid "Use DHCP"
 msgstr "DHCP használata"
 
-#: .tmp/ui_main.py:344
+#: .tmp/ui_main.py:352
 msgid "Use Manual Settings"
 msgstr "Kézi beállítás használata"
 
-#: .tmp/ui_main.py:345
+#: .tmp/ui_main.py:353
 msgid "Address :"
 msgstr "Cím :"
 
-#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+#: .tmp/ui_main.py:354 .tmp/ui_main.py:357
 msgid "Custom"
 msgstr "Egyedi"
 
-#: .tmp/ui_main.py:347
+#: .tmp/ui_main.py:355
 msgid "Network Mask :"
 msgstr "Hálózata maszk :"
 
-#: .tmp/ui_main.py:348
+#: .tmp/ui_main.py:356
 msgid "Default Gateway :"
 msgstr "Alapértelmezett hozzáférés :"
 
-#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+#: .tmp/ui_main.py:358 .tmp/ui_nameserver.py:44
 msgid "Name Servers"
 msgstr "Névszerverek"
 
-#: .tmp/ui_main.py:351
+#: .tmp/ui_main.py:359
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: .tmp/ui_main.py:352
+#: .tmp/ui_main.py:360
 msgid "Automatic"
 msgstr "Automatikus"
 
-#: .tmp/ui_main.py:353
+#: .tmp/ui_main.py:361
 msgid "Custom :"
 msgstr "Egyedi :"
 
-#: .tmp/ui_main.py:354
+#: .tmp/ui_main.py:362
 msgid "Remote"
 msgstr "Távoli"
 
-#: .tmp/ui_main.py:355
+#: .tmp/ui_main.py:363
 msgid "Network Name (ESSID) :"
 msgstr "Hálózati név (ESSID) :"
 
-#: .tmp/ui_main.py:356
+#: .tmp/ui_main.py:364
 msgid "Scan"
 msgstr "Letapogatás"
 
-#: .tmp/ui_main.py:357
+#: .tmp/ui_main.py:365
 msgid "Security Type :"
 msgstr "Biztonsági típus :"
 
-#: .tmp/ui_main.py:358
+#: .tmp/ui_main.py:366
 msgid "Settings"
 msgstr "Beállítás"
 
-#: .tmp/ui_main.py:359
+#: .tmp/ui_main.py:367
 msgid "Key :"
 msgstr "Kulcs :"
 
-#: .tmp/ui_main.py:360
+#: .tmp/ui_main.py:368
 msgid "Hide Password"
 msgstr "Jelszó elrejtése"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Gépnév"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
@@ -243,23 +272,3 @@ msgstr "A PIN megjegyzése ehhez a kapcsolathoz"
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
 msgstr "Biztonsági beállítások"
-
-#: .tmp/ui_item.py:103
-msgid "Set connection state."
-msgstr "Kapcsolat státuszának beállítása."
-
-#: .tmp/ui_item.py:104
-msgid "Edit connection"
-msgstr "Kapcsolat szerkesztése"
-
-#: .tmp/ui_item.py:105
-msgid "Delete connection"
-msgstr "Kapcsolat törlése"
-
-#: .tmp/ui_item.py:107
-msgid "  %p %"
-msgstr "  %p %"
-
-#: .tmp/ui_nameserver.py:43
-msgid "Machine Name"
-msgstr "Gépnév"

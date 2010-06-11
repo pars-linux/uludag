@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: network-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-16 15:55+0200\n"
+"POT-Creation-Date: 2010-06-11 16:48+0300\n"
 "PO-Revision-Date: 2009-09-08 11:46+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -17,13 +17,14 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .tmp/ui_ap.py:53 .tmp/ui_item.py:106
-msgid "Signal Strength"
-msgstr "Signal styrke"
-
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
 #: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
 msgid "Network Manager"
 msgstr "Netværkshåndtering"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr ""
 
 #: .tmp/networkmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -38,30 +39,34 @@ msgid "Current Maintainer"
 msgstr "Nuværende vedligeholder"
 
 #: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/about.py:33
 msgid "Developer"
 msgstr "Udvikler"
 
-#: .tmp/networkmanager/base.py:186
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/networkmanager/base.py:195
 msgid "Available Profiles"
 msgstr "Tilgængelige profiler"
 
-#: .tmp/networkmanager/base.py:208
+#: .tmp/networkmanager/base.py:217
 msgid "All Profiles"
 msgstr "Alle profiler"
 
-#: .tmp/networkmanager/base.py:210 .tmp/networkmanager/base.py:212
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
 msgid "No Device Found"
 msgstr "Ingen enheder fundet"
 
-#: .tmp/networkmanager/base.py:396
+#: .tmp/networkmanager/base.py:405
 msgid "No Authentication"
 msgstr "Ingen godkendelse"
 
-#: .tmp/networkmanager/base.py:624
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr ""
+
+#: .tmp/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
 msgstr "Vil du virkelig fjerne følgende profil %1?"
 
@@ -77,132 +82,156 @@ msgstr ""
 msgid "You've typed the wrong PIN code for 3 times"
 msgstr ""
 
-#: .tmp/networkmanager/widgets.py:279 .tmp/ui_main.py:338
+#: .tmp/networkmanager/widgets.py:280 .tmp/ui_main.py:346
 msgid "Refresh"
 msgstr "Genopfrisk"
 
-#: .tmp/networkmanager/widgets.py:311 .tmp/ui_main.py:337
+#: .tmp/networkmanager/widgets.py:312 .tmp/ui_main.py:345
 msgid "Scanning..."
 msgstr "Scanner..."
 
-#: .tmp/networkmanager/widgets.py:378
+#: .tmp/networkmanager/widgets.py:382
 msgid "Disconnected"
 msgstr "Ikke forbundet"
 
-#: .tmp/networkmanager/widgets.py:383
+#: .tmp/networkmanager/widgets.py:387
 #, python-format
 msgid "Connected: %s"
 msgstr "Forbundet: %s"
 
-#: .tmp/networkmanager/widgets.py:388
+#: .tmp/networkmanager/widgets.py:392
 msgid "Connecting"
 msgstr "Forbinder"
 
-#: .tmp/networkmanager/widgets.py:396
+#: .tmp/networkmanager/widgets.py:400
 #, fuzzy
 msgid "Cable or device is unplugged"
 msgstr "Kabel eller enhed er ikke sluttet til."
 
-#: .tmp/networkmanager/widgets.py:412
+#: .tmp/networkmanager/widgets.py:416
 #, fuzzy
 msgid "Access denied"
 msgstr "Adgang nægtet."
 
-#: .tmp/ui_main.py:334
+#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
+msgid "Signal Strength"
+msgstr "Signal styrke"
+
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Sæt forbindelsesstatus."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Rediger forbindelse"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Slet forbindelse"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/ui_main.py:342
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_main.py:335
+#: .tmp/ui_main.py:343
 msgid "Create Profile"
 msgstr "Opret profil"
 
-#: .tmp/ui_main.py:336 .tmp/ui_nameserver.py:42
+#: .tmp/ui_main.py:344 .tmp/ui_nameserver.py:42
 msgid "Nameserver Settings"
 msgstr "Navneserver indstillinger"
 
-#: .tmp/ui_main.py:339
+#: .tmp/ui_main.py:347
 msgid "Profile Name :"
 msgstr "Profil navn :"
 
-#: .tmp/ui_main.py:340
+#: .tmp/ui_main.py:348
 msgid "Device : "
 msgstr "Enhed :"
 
-#: .tmp/ui_main.py:341
+#: .tmp/ui_main.py:349
 msgid "Cancel"
 msgstr "Fortryd"
 
-#: .tmp/ui_main.py:342
+#: .tmp/ui_main.py:350
 msgid "Network Settings"
 msgstr "Netværks indstillinger"
 
-#: .tmp/ui_main.py:343
+#: .tmp/ui_main.py:351
 msgid "Use DHCP"
 msgstr "Benyt DHCP"
 
-#: .tmp/ui_main.py:344
+#: .tmp/ui_main.py:352
 msgid "Use Manual Settings"
 msgstr "Benyt manuelle indstillinger"
 
-#: .tmp/ui_main.py:345
+#: .tmp/ui_main.py:353
 msgid "Address :"
 msgstr "Adresse :"
 
-#: .tmp/ui_main.py:346 .tmp/ui_main.py:349
+#: .tmp/ui_main.py:354 .tmp/ui_main.py:357
 msgid "Custom"
 msgstr "Tilpasset"
 
-#: .tmp/ui_main.py:347
+#: .tmp/ui_main.py:355
 msgid "Network Mask :"
 msgstr "Netværks maske :"
 
-#: .tmp/ui_main.py:348
+#: .tmp/ui_main.py:356
 msgid "Default Gateway :"
 msgstr "Standard Gateway :"
 
-#: .tmp/ui_main.py:350 .tmp/ui_nameserver.py:44
+#: .tmp/ui_main.py:358 .tmp/ui_nameserver.py:44
 msgid "Name Servers"
 msgstr "Navne servere"
 
-#: .tmp/ui_main.py:351
+#: .tmp/ui_main.py:359
 msgid "Default"
 msgstr "Standard"
 
-#: .tmp/ui_main.py:352
+#: .tmp/ui_main.py:360
 msgid "Automatic"
 msgstr "Automatisk"
 
-#: .tmp/ui_main.py:353
+#: .tmp/ui_main.py:361
 msgid "Custom :"
 msgstr "Tilpasset :"
 
-#: .tmp/ui_main.py:354
+#: .tmp/ui_main.py:362
 msgid "Remote"
 msgstr "Fjern"
 
-#: .tmp/ui_main.py:355
+#: .tmp/ui_main.py:363
 msgid "Network Name (ESSID) :"
 msgstr "Netværks navn (ESSID) :"
 
-#: .tmp/ui_main.py:356
+#: .tmp/ui_main.py:364
 msgid "Scan"
 msgstr "Scan"
 
-#: .tmp/ui_main.py:357
+#: .tmp/ui_main.py:365
 msgid "Security Type :"
 msgstr "Sikkerheds type :"
 
-#: .tmp/ui_main.py:358
+#: .tmp/ui_main.py:366
 msgid "Settings"
 msgstr "Indstillinger"
 
-#: .tmp/ui_main.py:359
+#: .tmp/ui_main.py:367
 msgid "Key :"
 msgstr "Nøgle :"
 
-#: .tmp/ui_main.py:360
+#: .tmp/ui_main.py:368
 msgid "Hide Password"
 msgstr "Gem kodeord"
+
+#: .tmp/ui_nameserver.py:43
+msgid "Machine Name"
+msgstr "Maskin navn"
 
 #: .tmp/ui_nmwizard.py:92
 msgid "Dialog"
@@ -250,28 +279,8 @@ msgstr ""
 msgid "Security Settings"
 msgstr "Sikkerheds indstillinger"
 
-#: .tmp/ui_item.py:103
-msgid "Set connection state."
-msgstr "Sæt forbindelsesstatus."
-
-#: .tmp/ui_item.py:104
-msgid "Edit connection"
-msgstr "Rediger forbindelse"
-
-#: .tmp/ui_item.py:105
-msgid "Delete connection"
-msgstr "Slet forbindelse"
-
-#: .tmp/ui_item.py:107
-msgid "  %p %"
-msgstr "  %p %"
-
-#: .tmp/ui_nameserver.py:43
-msgid "Machine Name"
-msgstr "Maskin navn"
+#~ msgid "Esc"
+#~ msgstr "Esc"
 
 #~ msgid "Apply"
 #~ msgstr "Anvend"
-
-#~ msgid "Esc"
-#~ msgstr "Esc"
