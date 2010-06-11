@@ -100,10 +100,8 @@ class RstLexer(QsciLexerCustom):
         if not source:
             return
 
-        index = sci(QsciScintilla.SCI_LINEFROMPOSITION, start)
         state = self.Default
         self.startStyling(start, 0x1f)
-        # print 'START:',start
         for line in source.splitlines(True):
             state = self.Default
 
