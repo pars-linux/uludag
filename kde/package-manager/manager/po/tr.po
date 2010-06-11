@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 09:47+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-05-05 15:25+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -20,8 +20,9 @@ msgstr ""
 "Plural-Forms: nplurals=1;plural=0;\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:285
-#: .tmp/mainwidget.py:297 .tmp/ui_mainwindow.py:33
+#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:299
+#: .tmp/mainwidget.py:311 .tmp/package-manager.desktop.in.h:2
+#: .tmp/packagemanager-helper.desktop.in.h:2 .tmp/ui_mainwindow.py:33
 msgid "Package Manager"
 msgstr "Paket Yöneticisi"
 
@@ -61,7 +62,7 @@ msgstr "Aşağıdaki güncellemelerin geçerli olabilmesi için bilgisayarınız
 msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Seçili güncellemelerin geçerli olabilmesi için aşağıdaki sistem servislerini yeniden başlatmanız gerekiyor:"
 
-#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:259 .tmp/mainwidget.py:262
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi Hatası"
@@ -98,39 +99,39 @@ msgstr "Paket Yöneticisi Yardım"
 msgid "Show main window"
 msgstr "Ana pencereyi göster"
 
-#: .tmp/mainwidget.py:64
+#: .tmp/mainwidget.py:66
 msgid "All Packages are up to date"
 msgstr "Tüm Paketler güncel"
 
-#: .tmp/mainwidget.py:116
+#: .tmp/mainwidget.py:123
 msgid "All Updates"
 msgstr "Tüm Güncellemeler"
 
-#: .tmp/mainwidget.py:117
+#: .tmp/mainwidget.py:124
 msgid "Security Updates"
 msgstr "Güvenlik Güncellemeleri"
 
-#: .tmp/mainwidget.py:118
+#: .tmp/mainwidget.py:125
 msgid "Critical Updates"
 msgstr "Kritik Güncellemeler"
 
-#: .tmp/mainwidget.py:239
+#: .tmp/mainwidget.py:253
 msgid "Network Error"
 msgstr "Ağ Hatası"
 
-#: .tmp/mainwidget.py:240
+#: .tmp/mainwidget.py:254
 msgid "Please check your network connections and try again."
 msgstr "Lütfen ağ ayarlarınızı kontrol edin ve tekrar deneyin."
 
-#: .tmp/mainwidget.py:242
+#: .tmp/mainwidget.py:256
 msgid "Authorization Error"
 msgstr "Yetkilendirme Hatası"
 
-#: .tmp/mainwidget.py:243
+#: .tmp/mainwidget.py:257
 msgid "You are not authorized for this operation."
 msgstr "Bu işlemi gerçekleştirmek için yetkiniz yok."
 
-#: .tmp/mainwidget.py:246
+#: .tmp/mainwidget.py:260
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Paket bulunamadı. Depoda güncellenmiş veya depodan kaldırılmış olabilir. Lütfen depo bilgilerini güncellemeyi deneyin."
 
@@ -171,6 +172,14 @@ msgstr "Güncellemeleri Göster"
 msgid "Package Manager Settings"
 msgstr "Paket Yöneticisi Ayarları"
 
+#: .tmp/package-manager.desktop.in.h:1
+msgid "Add or Remove Software"
+msgstr ""
+
+#: .tmp/package-manager.desktop.in.h:3
+msgid "PiSi Package Manager Graphical User Interface"
+msgstr ""
+
 #: .tmp/packagedelegate.py:48
 msgid "critical"
 msgstr "kritik"
@@ -202,6 +211,11 @@ msgstr "Paket Boyutu:"
 #: .tmp/packagedelegate.py:70
 msgid "Installed Version:"
 msgstr "Kurulu Sürüm:"
+
+#: .tmp/packagemanager-helper.desktop.in.h:1
+#, fuzzy
+msgid "Add/Remove/Update Packages"
+msgstr "Paket(ler)i Kaldır"
 
 #: .tmp/pm-install.py:47
 msgid "%prog packages_to_install"
@@ -296,7 +310,7 @@ msgstr "Depo Güncelleniyor"
 msgid "Updating Repository(s)"
 msgstr "Depo(lar) Güncelleniyor"
 
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
+#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:107
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Paket(ler)i Kur"
@@ -345,7 +359,7 @@ msgstr "Aşağıdaki paket(ler)i kaldırmak üzere seçtiniz:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Aşağıdaki paket(ler)i güncellemek üzere seçtiniz:"
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Seçili paketlerin ayrıca kurulacak olan ek bağımlılıkları:"
 
@@ -433,27 +447,27 @@ msgstr "Web Tarayıcı"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/ui_basketdialog.py:99
+#: .tmp/ui_basketdialog.py:102
 msgid "Basket"
 msgstr "Sepet"
 
-#: .tmp/ui_basketdialog.py:100
+#: .tmp/ui_basketdialog.py:103
 msgid "Selected package(s) for install:"
 msgstr "Kurulmak üzere seçilmiş paket(ler):"
 
-#: .tmp/ui_basketdialog.py:102
+#: .tmp/ui_basketdialog.py:105
 msgid "Total Size:"
 msgstr "Toplam Boyut:"
 
-#: .tmp/ui_basketdialog.py:103
+#: .tmp/ui_basketdialog.py:106
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:105
+#: .tmp/ui_basketdialog.py:108
 msgid "Download Size:"
 msgstr "İndirme Boyutu:"
 
-#: .tmp/ui_basketdialog.py:106
+#: .tmp/ui_basketdialog.py:109
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</b>"
 
@@ -725,44 +739,29 @@ msgstr "Yeni kurulan uygulamayı aşağıdaki listeden çift-tıklayarak veya da
 msgid "&Ok"
 msgstr "&Tamam"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Cancel"
+#~ msgstr "İptal"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Vekil sunucu kullan"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 yeni paket başarı ile kuruldu."
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "%1 başarılı bir şekilde kuruldu"
+#~ msgid "Reverse package selections"
+#~ msgstr "Paket seçimlerini tersine çevir"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketlerin kurulumu tamamlandı"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Kurucusu zaten çalışıyor!"
 
-#~ msgid "%p%"
-#~ msgstr "%%p"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "Summary"
-#~ msgstr "Özet"
+#~ msgid "Installing %1"
+#~ msgstr "%1 kuruluyor"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bant genişliği sınırı:"
+#~ msgid "Package Installer"
+#~ msgstr "Paket Kurucusu"
 
-#~ msgid "Update check"
-#~ msgstr "Güncelleme kontrolü"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Önbelleği Temizle"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Tamam"
-
-#~ msgid "Delete"
-#~ msgstr "Sil"
+#~ msgid "Maintainer"
+#~ msgstr "Bakıcı"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -777,26 +776,41 @@ msgstr "&Tamam"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Bu gruptaki tüm paketleri seç</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Bakıcı"
+#~ msgid "Delete"
+#~ msgstr "Sil"
 
-#~ msgid "Package Installer"
-#~ msgstr "Paket Kurucusu"
+#~ msgid "Ok"
+#~ msgstr "Tamam"
 
-#~ msgid "Installing %1"
-#~ msgstr "%1 kuruluyor"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "Clear Cache"
+#~ msgstr "Önbelleği Temizle"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Kurucusu zaten çalışıyor!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(Sınırı kaldırmak için 0 kullanın)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Paket seçimlerini tersine çevir"
+#~ msgid "Update check"
+#~ msgstr "Güncelleme kontrolü"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 yeni paket başarı ile kuruldu."
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bant genişliği sınırı:"
 
-#~ msgid "Cancel"
-#~ msgstr "İptal"
+#~ msgid "Summary"
+#~ msgstr "Özet"
+
+#~ msgid "%p%"
+#~ msgstr "%%p"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketlerin kurulumu tamamlandı"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "%1 başarılı bir şekilde kuruldu"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Vekil sunucu kullan"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 09:47+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -17,8 +17,9 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:285
-#: .tmp/mainwidget.py:297 .tmp/ui_mainwindow.py:33
+#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:299
+#: .tmp/mainwidget.py:311 .tmp/package-manager.desktop.in.h:2
+#: .tmp/packagemanager-helper.desktop.in.h:2 .tmp/ui_mainwindow.py:33
 msgid "Package Manager"
 msgstr "Pakethanteraren"
 
@@ -58,7 +59,7 @@ msgstr "Du måste <b>starta om</b> ditt system för att uppdatering av följande
 msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Du måste starta om följande systemtjänster för att uppdateringen skall träda i kraft:"
 
-#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:259 .tmp/mainwidget.py:262
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi-fel"
@@ -95,39 +96,39 @@ msgstr "Handbok Pakethanteraren"
 msgid "Show main window"
 msgstr "Visa huvudfönster"
 
-#: .tmp/mainwidget.py:64
+#: .tmp/mainwidget.py:66
 msgid "All Packages are up to date"
 msgstr "Alla paket är uppdaterade"
 
-#: .tmp/mainwidget.py:116
+#: .tmp/mainwidget.py:123
 msgid "All Updates"
 msgstr "Alla uppdateringar"
 
-#: .tmp/mainwidget.py:117
+#: .tmp/mainwidget.py:124
 msgid "Security Updates"
 msgstr "Säkerhetsuppdateringar"
 
-#: .tmp/mainwidget.py:118
+#: .tmp/mainwidget.py:125
 msgid "Critical Updates"
 msgstr "Kritiska uppdateringar"
 
-#: .tmp/mainwidget.py:239
+#: .tmp/mainwidget.py:253
 msgid "Network Error"
 msgstr "Nätverksfel"
 
-#: .tmp/mainwidget.py:240
+#: .tmp/mainwidget.py:254
 msgid "Please check your network connections and try again."
 msgstr "Kontrollera din nätverksanslutning och försök igen."
 
-#: .tmp/mainwidget.py:242
+#: .tmp/mainwidget.py:256
 msgid "Authorization Error"
 msgstr "Auktoriseringsfel"
 
-#: .tmp/mainwidget.py:243
+#: .tmp/mainwidget.py:257
 msgid "You are not authorized for this operation."
 msgstr "Du har inte behörighet till den här åtgärden."
 
-#: .tmp/mainwidget.py:246
+#: .tmp/mainwidget.py:260
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Paketet finns ej. Det kan vara uppdaterat i, eller borttaget ur, förrådet. Försök att uppdatera förrådsinformationen."
 
@@ -168,6 +169,14 @@ msgstr "Visa paket med uppdateringar"
 msgid "Package Manager Settings"
 msgstr "Anpassa - Pakethanteraren"
 
+#: .tmp/package-manager.desktop.in.h:1
+msgid "Add or Remove Software"
+msgstr ""
+
+#: .tmp/package-manager.desktop.in.h:3
+msgid "PiSi Package Manager Graphical User Interface"
+msgstr ""
+
 #: .tmp/packagedelegate.py:48
 msgid "critical"
 msgstr "kritisk"
@@ -199,6 +208,11 @@ msgstr "Paketstorlek:"
 #: .tmp/packagedelegate.py:70
 msgid "Installed Version:"
 msgstr "Installerad version:"
+
+#: .tmp/packagemanager-helper.desktop.in.h:1
+#, fuzzy
+msgid "Add/Remove/Update Packages"
+msgstr "Ta bort paket"
 
 #: .tmp/pm-install.py:47
 msgid "%prog packages_to_install"
@@ -293,7 +307,7 @@ msgstr "Uppdaterar förråd"
 msgid "Updating Repository(s)"
 msgstr "Uppdaterar förråd"
 
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
+#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:107
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Installera paket"
@@ -342,7 +356,7 @@ msgstr "Du har markerat följande paket för borttagning:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Du har markerat följande paket för uppdatering:"
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Extra beroenden för valda paket som också kommer att installeras:"
 
@@ -430,27 +444,27 @@ msgstr "Webbläsare"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/ui_basketdialog.py:99
+#: .tmp/ui_basketdialog.py:102
 msgid "Basket"
 msgstr "Korg"
 
-#: .tmp/ui_basketdialog.py:100
+#: .tmp/ui_basketdialog.py:103
 msgid "Selected package(s) for install:"
 msgstr "Valda paket för installation:"
 
-#: .tmp/ui_basketdialog.py:102
+#: .tmp/ui_basketdialog.py:105
 msgid "Total Size:"
 msgstr "Sammanlagd storlek:"
 
-#: .tmp/ui_basketdialog.py:103
+#: .tmp/ui_basketdialog.py:106
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:105
+#: .tmp/ui_basketdialog.py:108
 msgid "Download Size:"
 msgstr "Hämtningsstorlek:"
 
-#: .tmp/ui_basketdialog.py:106
+#: .tmp/ui_basketdialog.py:109
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
@@ -722,44 +736,29 @@ msgstr "Du kan starta det nyinstallerade programmet genom att dubbelklicka på d
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
 
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cachetömning"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -774,26 +773,41 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "Clear Cache"
+#~ msgstr "Cachetömning"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
 
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"

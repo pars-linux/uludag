@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 09:47+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -15,8 +15,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:285
-#: .tmp/mainwidget.py:297 .tmp/ui_mainwindow.py:33
+#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:299
+#: .tmp/mainwidget.py:311 .tmp/package-manager.desktop.in.h:2
+#: .tmp/packagemanager-helper.desktop.in.h:2 .tmp/ui_mainwindow.py:33
 msgid "Package Manager"
 msgstr "Gerenciador de Pacotes"
 
@@ -56,7 +57,7 @@ msgstr "Você deve <b>reinicializar</b> o seu sistema para que as versões atual
 msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Você deve reinicializar os seguintes serviços de sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
 
-#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:259 .tmp/mainwidget.py:262
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Erro do PiSi"
@@ -93,39 +94,39 @@ msgstr "Ajuda do Gerenciador de Pacote"
 msgid "Show main window"
 msgstr "Mostrar tela principal"
 
-#: .tmp/mainwidget.py:64
+#: .tmp/mainwidget.py:66
 msgid "All Packages are up to date"
 msgstr ""
 
-#: .tmp/mainwidget.py:116
+#: .tmp/mainwidget.py:123
 msgid "All Updates"
 msgstr "Todas as Atualizações"
 
-#: .tmp/mainwidget.py:117
+#: .tmp/mainwidget.py:124
 msgid "Security Updates"
 msgstr "Atualizações de Segurança"
 
-#: .tmp/mainwidget.py:118
+#: .tmp/mainwidget.py:125
 msgid "Critical Updates"
 msgstr "Atualizações Críticas"
 
-#: .tmp/mainwidget.py:239
+#: .tmp/mainwidget.py:253
 msgid "Network Error"
 msgstr "Erro de Conectividade de Rede"
 
-#: .tmp/mainwidget.py:240
+#: .tmp/mainwidget.py:254
 msgid "Please check your network connections and try again."
 msgstr "Por favor cheque as conexões de rede e tente novamente."
 
-#: .tmp/mainwidget.py:242
+#: .tmp/mainwidget.py:256
 msgid "Authorization Error"
 msgstr "Erro de Autorização"
 
-#: .tmp/mainwidget.py:243
+#: .tmp/mainwidget.py:257
 msgid "You are not authorized for this operation."
 msgstr "Você não está autorizado para executar essa operação."
 
-#: .tmp/mainwidget.py:246
+#: .tmp/mainwidget.py:260
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Pacote não encontrado. Ele pode ter sido atualizado ou removido do repositório. Por favor tente atualizar as informações do repositório."
 
@@ -166,6 +167,14 @@ msgstr "Mostrar Pacotes Atualizáveis"
 msgid "Package Manager Settings"
 msgstr "Configurações do Gerenciador de Pacotes"
 
+#: .tmp/package-manager.desktop.in.h:1
+msgid "Add or Remove Software"
+msgstr ""
+
+#: .tmp/package-manager.desktop.in.h:3
+msgid "PiSi Package Manager Graphical User Interface"
+msgstr ""
+
 #: .tmp/packagedelegate.py:48
 msgid "critical"
 msgstr ""
@@ -197,6 +206,11 @@ msgstr "Tamanho do Pacote:"
 #: .tmp/packagedelegate.py:70
 msgid "Installed Version:"
 msgstr "Versão Instalada:"
+
+#: .tmp/packagemanager-helper.desktop.in.h:1
+#, fuzzy
+msgid "Add/Remove/Update Packages"
+msgstr "Removendo Pacote(s)"
 
 #: .tmp/pm-install.py:47
 msgid "%prog packages_to_install"
@@ -291,7 +305,7 @@ msgstr "Atualizando Repositório"
 msgid "Updating Repository(s)"
 msgstr "Atualizando Repositório(s)"
 
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
+#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:107
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Instalar Pacote(s)"
@@ -340,7 +354,7 @@ msgstr "Você selecionou o(s) seguinte(s) pacote(s) para remover:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Você selecionou o(s) seguinte(s) pacote(s) para atualização:"
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Dependências extras para o(s) pacote(s) selecionado(s) que também serão instaladas:"
 
@@ -428,27 +442,27 @@ msgstr "Navegadores da Internet"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/ui_basketdialog.py:99
+#: .tmp/ui_basketdialog.py:102
 msgid "Basket"
 msgstr "Cesta"
 
-#: .tmp/ui_basketdialog.py:100
+#: .tmp/ui_basketdialog.py:103
 msgid "Selected package(s) for install:"
 msgstr "Pacote(s) selecionado(s) para instalar:"
 
-#: .tmp/ui_basketdialog.py:102
+#: .tmp/ui_basketdialog.py:105
 msgid "Total Size:"
 msgstr "Tamanho Total:"
 
-#: .tmp/ui_basketdialog.py:103
+#: .tmp/ui_basketdialog.py:106
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:105
+#: .tmp/ui_basketdialog.py:108
 msgid "Download Size:"
 msgstr "Tamanho para Download:"
 
-#: .tmp/ui_basketdialog.py:106
+#: .tmp/ui_basketdialog.py:109
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
@@ -727,20 +741,20 @@ msgstr "Você pode iniciar a nova aplicação instalado com um clique duplo na l
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
-
-#~ msgid "Use proxy server"
-#~ msgstr "Usar servidor de proxy"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Finalizou com sucesso a instalação de %1"
-
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
+#~ msgid "Summary"
+#~ msgstr "Resumo"
 
 #~ msgid "%p%"
 #~ msgstr "%p%"
 
-#~ msgid "Summary"
-#~ msgstr "Resumo"
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Finalizou com sucesso a instalação de %1"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Usar servidor de proxy"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
