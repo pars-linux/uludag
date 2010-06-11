@@ -41,25 +41,19 @@ def print_package_list(tree):
 def output_package_list(file, tree):
     """Print the list of packages in the XML file to an output file"""
     packageList = print_package_list(tree)
-    if os.path.isfile(file):
-        choice = raw_input("The file '{0}' exists. Do you wish to overwrite (y / n)? : ".format(os.path.abspath(file)))
-        validChoices = ['y', 'Y', 'yes', 'YES', 'Yes']
-        if choice in validChoices:
-            tempFile = open(os.path.abspath(file), 'w')
-            output = string.join(packageList, '\n')
-            tempFile.write(output)
-            tempFile.close()
-            print "The list of packages has been written to: '{0}'".format(os.path.abspath(file))
-            sys.exit()
-        else:
-            print '[Aborting]'
-    else:
-        tempFile = open(os.path.abspath(file), 'w')
-        output = string.join(packageList, '\n')
-        tempFile.write(output)
-        tempFile.close()
-        print "The list of packages has been written to: '{0}'".format(os.path.abspath(file))
-        sys.exit()
+    while True:
+        if os.path.isfile(file):
+            choice = raw_input("The file '{0}' exists. Do you wish to overwrite (y / n)? : ".format(os.path.abspath(file)))
+            if choice in ('y', 'Y', 'yes', 'YES'):
+                break
+            else:
+                sys.exit('[Aborting]')
+    tempFile = open(os.path.abspath(file), 'w')
+    output = string.join(packageList, '\n')
+    tempFile.write(output)
+    tempFile.close()
+    print "The list of packages has been written to: '{0}'".format(os.path.abspath(file))
+    sys.exit()
 
 
 def main():
@@ -107,7 +101,7 @@ def main():
         print '[Solution]: Request the testcase author for a new file or fix it manually.'
         sys.exit()
     # Check the options here and call the respective functions
-    if options.package:
+    if options.package and options.allpackage is None:
         selected_package_parse(options.package)
     if options.allpackage and options.package is None:
         output_package_list(options.allpackage, documentTree)
