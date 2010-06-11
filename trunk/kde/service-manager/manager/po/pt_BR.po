@@ -7,86 +7,34 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-15 19:00-0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-05-15 19:00-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_item.py:99 .tmp/ui_main.py:55
-msgid "Form"
-msgstr "Form"
-
-#: .tmp/ui_item.py:100
-msgid "serviceName"
-msgstr "serviceName"
-
-#: .tmp/ui_item.py:101
-msgid "serviceDesc"
-msgstr "serviceDesc"
-
-#: .tmp/ui_item.py:102
-msgid "Start service"
-msgstr "Iniciar serviço"
-
-#: .tmp/ui_item.py:103
-msgid "Reload service"
-msgstr "Reiniciar serviço"
-
-#: .tmp/ui_item.py:104
-msgid "Stop service"
-msgstr "Parar serviço"
-
-#: .tmp/ui_item.py:105
-msgid "Run on start"
-msgstr "Executar na inicialização do sistema"
-
-#: .tmp/ui_main.py:56
-msgid "type service name to search..."
-msgstr "digite o nome do serviço para buscar..."
-
-#: .tmp/ui_main.py:57
-msgid "Servers"
-msgstr "Servers"
-
-#: .tmp/ui_main.py:58
-msgid "System Services"
-msgstr "Serviços do Sistema"
-
-#: .tmp/ui_main.py:59
-msgid "Startup Services"
-msgstr "Serviços de Inicialização"
-
-#: .tmp/ui_main.py:60
-msgid "Running Services"
-msgstr "Serviços em Execução"
-
-#: .tmp/ui_main.py:61
-msgid "All Services"
-msgstr "Todos os Serviços"
-
-#: .tmp/ui_main.py:62
-msgid "Getting service info... %p%"
-msgstr "Pegando informação do serviço... %p%"
-
+#: .tmp/kcm_servicemanager.desktop.in.h:1 .tmp/servicemanager.desktop.in.h:2
 #: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
 msgid "Service Manager"
 msgstr "Gerenciador de Serviço"
+
+#: .tmp/servicemanager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr ""
 
 #: .tmp/servicemanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/servicemanager/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Mantenedor Atual"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -95,3 +43,59 @@ msgstr "Bahadır Kandemir"
 #: .tmp/servicemanager/about.py:33
 msgid "COMAR Author"
 msgstr "Autor do COMAR"
+
+#: .tmp/ui_item.py:103 .tmp/ui_main.py:56
+msgid "Form"
+msgstr "Form"
+
+#: .tmp/ui_item.py:104
+msgid "serviceName"
+msgstr "serviceName"
+
+#: .tmp/ui_item.py:105
+msgid "serviceDesc"
+msgstr "serviceDesc"
+
+#: .tmp/ui_item.py:106
+msgid "Start service"
+msgstr "Iniciar serviço"
+
+#: .tmp/ui_item.py:107
+msgid "Reload service"
+msgstr "Reiniciar serviço"
+
+#: .tmp/ui_item.py:108
+msgid "Stop service"
+msgstr "Parar serviço"
+
+#: .tmp/ui_item.py:109
+msgid "Run on start"
+msgstr "Executar na inicialização do sistema"
+
+#: .tmp/ui_main.py:57
+msgid "type service name to search..."
+msgstr "digite o nome do serviço para buscar..."
+
+#: .tmp/ui_main.py:58
+msgid "Servers"
+msgstr "Servers"
+
+#: .tmp/ui_main.py:59
+msgid "System Services"
+msgstr "Serviços do Sistema"
+
+#: .tmp/ui_main.py:60
+msgid "Startup Services"
+msgstr "Serviços de Inicialização"
+
+#: .tmp/ui_main.py:61
+msgid "Running Services"
+msgstr "Serviços em Execução"
+
+#: .tmp/ui_main.py:62
+msgid "All Services"
+msgstr "Todos os Serviços"
+
+#: .tmp/ui_main.py:63
+msgid "Getting service info... %p%"
+msgstr "Pegando informação do serviço... %p%"

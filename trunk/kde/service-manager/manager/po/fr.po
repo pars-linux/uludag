@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: service-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 16:19+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2009-08-19 11:09+0200\n"
 "Last-Translator: Philippe Svetoslavsky <philsvet@gmail.com>\n"
 "Language-Team: French <kde-i18n-doc@kde.org>\n"
@@ -16,77 +16,26 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .tmp/ui_item.py:99 .tmp/ui_main.py:55
-msgid "Form"
-msgstr "Formulaire"
-
-#: .tmp/ui_item.py:100
-msgid "serviceName"
-msgstr "serviceName"
-
-#: .tmp/ui_item.py:101
-msgid "serviceDesc"
-msgstr "serviceDesc"
-
-#: .tmp/ui_item.py:102
-msgid "Start service"
-msgstr "Démarrer le service"
-
-#: .tmp/ui_item.py:103
-msgid "Reload service"
-msgstr "Recharger le service"
-
-#: .tmp/ui_item.py:104
-msgid "Stop service"
-msgstr "Arrêter le service"
-
-#: .tmp/ui_item.py:105
-msgid "Run on start"
-msgstr "Lancer au démarrage"
-
-#: .tmp/ui_main.py:56
-msgid "type service name to search..."
-msgstr "Tapez le nom du service désiré..."
-
-#: .tmp/ui_main.py:57
-msgid "Servers"
-msgstr "Serveurs"
-
-#: .tmp/ui_main.py:58
-msgid "System Services"
-msgstr "Services du système"
-
-#: .tmp/ui_main.py:59
-msgid "Startup Services"
-msgstr "Services de démarrage"
-
-#: .tmp/ui_main.py:60
-msgid "Running Services"
-msgstr "Services activés"
-
-#: .tmp/ui_main.py:61
-msgid "All Services"
-msgstr "Tous les services"
-
-#: .tmp/ui_main.py:62
-msgid "Getting service info... %p%"
-msgstr "Obtention d'information sur le service... %p%"
-
+#: .tmp/kcm_servicemanager.desktop.in.h:1 .tmp/servicemanager.desktop.in.h:2
 #: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
 msgid "Service Manager"
 msgstr "Gestionnaire de services"
+
+#: .tmp/servicemanager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr ""
 
 #: .tmp/servicemanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/servicemanager/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Mainteneur actuel"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -96,3 +45,58 @@ msgstr "Bahadır Kandemir"
 msgid "COMAR Author"
 msgstr "Auteur de COMAR"
 
+#: .tmp/ui_item.py:103 .tmp/ui_main.py:56
+msgid "Form"
+msgstr "Formulaire"
+
+#: .tmp/ui_item.py:104
+msgid "serviceName"
+msgstr "serviceName"
+
+#: .tmp/ui_item.py:105
+msgid "serviceDesc"
+msgstr "serviceDesc"
+
+#: .tmp/ui_item.py:106
+msgid "Start service"
+msgstr "Démarrer le service"
+
+#: .tmp/ui_item.py:107
+msgid "Reload service"
+msgstr "Recharger le service"
+
+#: .tmp/ui_item.py:108
+msgid "Stop service"
+msgstr "Arrêter le service"
+
+#: .tmp/ui_item.py:109
+msgid "Run on start"
+msgstr "Lancer au démarrage"
+
+#: .tmp/ui_main.py:57
+msgid "type service name to search..."
+msgstr "Tapez le nom du service désiré..."
+
+#: .tmp/ui_main.py:58
+msgid "Servers"
+msgstr "Serveurs"
+
+#: .tmp/ui_main.py:59
+msgid "System Services"
+msgstr "Services du système"
+
+#: .tmp/ui_main.py:60
+msgid "Startup Services"
+msgstr "Services de démarrage"
+
+#: .tmp/ui_main.py:61
+msgid "Running Services"
+msgstr "Services activés"
+
+#: .tmp/ui_main.py:62
+msgid "All Services"
+msgstr "Tous les services"
+
+#: .tmp/ui_main.py:63
+msgid "Getting service info... %p%"
+msgstr "Obtention d'information sur le service... %p%"
