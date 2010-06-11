@@ -16,6 +16,8 @@ from PyQt4.Qsci import QsciScintilla, QsciLexerCustom
 try:
     import enchant
     SPELL = enchant.Dict('tr_TR')
+    import string
+    KAKAPELLA = string.digits + string.punctuation + '\n' + ' '
 except:
     SPELL = False
 
@@ -78,6 +80,7 @@ class RstLexer(QsciLexerCustom):
     def styleText(self, start, end):
         ''' Makes some style for given start between end '''
         editor = self.editor()
+
         if editor is None:
             return
 
@@ -85,38 +88,47 @@ class RstLexer(QsciLexerCustom):
         set_style = self.setStyling
 
         source = ''
+
         if end > editor.length():
             end = editor.length()
+
         if end > start:
             # source = b'\x00' * (end - start)
             source = bytearray(end - start)
             sci(QsciScintilla.SCI_GETTEXTRANGE, start, end, source)
+
         if not source:
             return
 
         index = sci(QsciScintilla.SCI_LINEFROMPOSITION, start)
-
         state = self.Default
-
         self.startStyling(start, 0x1f)
-
+        # print 'START:',start
         for line in source.splitlines(True):
             state = self.Default
+
             length = len(line)
             if length > 1:
                 firsttwo = line[0:2]
-                if firsttwo == '..':
+                if SPELL:
+                    buffer = bytearray()
+                    for char in line:
+                        if not chr(char) in KAKAPELLA:
+                            buffer.append(char)
+                        else:
+                            if len(buffer) > 0:
+                                if not SPELL.check(buffer):
+                                    set_style(len(buffer), self.Mispell)
+                                else:
+                                    set_style(len(buffer), self.Default)
+                                buffer = bytearray()
+                            set_style(1, self.Default)
+                elif firsttwo == '..':
                     state = self.Comment
                 elif '--' in line or '==' in line:
                     state = self.Key
                 elif chr(line[0]) in ('*','-'):
                     state = self.Bullet
-                elif SPELL:
-                    i = 1
-                    for word in line.split():
-                        if not SPELL.check(word):
-                            set_style(len(word), self.Mispell)
-                            i = 2
-                        else:
-                            set_style(len(word) + i, self.Default)
+
             set_style(length, state)
+
