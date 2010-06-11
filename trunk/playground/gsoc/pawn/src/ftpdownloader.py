@@ -14,7 +14,6 @@ class FTPDownloader(QFtp):
     errorMessage = ''
 
     statsChanged = QtCore.pyqtSignal(int, int, int, name='statsChanged') # percentageCompleted, downloadSpeed, ETA
-    #, long, int, long, long, 
 
     def __init__(self, destinationFile=None, mirror=None):
 	QFtp.__init__(self) # TODO: or parent? solve this.
@@ -134,6 +133,7 @@ class FTPDownloader(QFtp):
     def writeBack(self):
 	socketData = self.readAll()
 	self.fsock.write(socketData)
+	socketData = None
 
     def cleanCorruptFile(self):
 	"Removes partially completed local file after a bad transfer."
