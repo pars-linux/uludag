@@ -712,5 +712,9 @@ msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 ütközik a: [%2]\n"
 
 #: .tmp/statemanager.py:169
-msgid "Remove the conflicting packages from the system?"
-msgstr "Eltávolítod az ütköző csomagokat a rendszerből?"
+msgid ""
+"\n"
+"Remove the conflicting packages from the system?"
+msgstr ""
+"\n"
+"Eltávolítod az ütköző csomagokat a rendszerből?"
