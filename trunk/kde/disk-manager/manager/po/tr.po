@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: tr\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:47+0300\n"
 "PO-Revision-Date: 2009-06-27 17:05+0300\n"
 "Last-Translator: \n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -19,47 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=1;plural=0;\n"
 
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Diski Otomatik Bağla"
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr ""
 
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Bağlama Noktası:"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Dosya Sistemi:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Seçenekler:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Öntanımlı Seçenekler"
-
-#: .tmp/ui_item.py:65
-msgid "Mount or unmount disk."
-msgstr "Diski bağla ya da ayır."
-
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Düzenle"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Sil"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Yeni Ekle"
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Ayarlar"
-
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Disk Yöneticisi"
 
@@ -85,8 +50,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Bu uygulamanın ihtiyaç duyduğu altyapıyı sunan herhangi bir paket yok.\n"
-"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını "
-"kontrol edin."
+"Lütfen paketlerin kurulum ve yapılandırmasının düzgün olup olmadığını kontrol edin."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -100,7 +64,47 @@ msgstr "Tüm Öğeler"
 msgid "Add"
 msgstr "Ekle"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
-#: .tmp/diskmanager/main.py:321
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Erişim reddedildi."
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Ayarlar"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Diski Otomatik Bağla"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Bağlama Noktası:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Dosya Sistemi:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Seçenekler:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Öntanımlı Seçenekler"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Diski bağla ya da ayır."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Düzenle"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Sil"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Yeni Ekle"

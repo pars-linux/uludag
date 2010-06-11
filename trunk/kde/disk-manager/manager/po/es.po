@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:47+0300\n"
 "PO-Revision-Date: 2009-07-12 21:35-0400\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail dot org>\n"
 "Language-Team: Spanish <es@li.org>\n"
@@ -18,50 +18,14 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-# favor revisar contexto, "disco" deberia ser más generico - como partición, medio extraíble, recurso compartido en la red, etc
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Montar unidad automáticamente"
-
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Punto de Montaje:"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Sistema de Archivos:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Opciones:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Opciones por omisión"
-
-#: .tmp/ui_item.py:65
-msgid "Mount or unmount disk."
-msgstr "Montar o desmontar disco."
-
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Modificar"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Eliminar"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Agregar Nuevo"
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Configuración"
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr ""
 
 # favor revisar, porque la idea es:
 # administrar puntos de montaje para particiones, discos y medios de almacenamiento - pero en lenguaje sencillo
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Administrar Montaje de Unidades de Almacenamiento"
 
@@ -87,8 +51,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "No hay aplicativo que respalda las funciones de esta pantalla.\n"
-"Por favor asegúrese que los paquetes respectivos estén instalados y "
-"configurados de manera correcta."
+"Por favor asegúrese que los paquetes respectivos estén instalados y configurados de manera correcta."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -102,8 +65,48 @@ msgstr "Todos"
 msgid "Add"
 msgstr "Agregar"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
-#: .tmp/diskmanager/main.py:321
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Acceso denegado."
 
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Configuración"
+
+# favor revisar contexto, "disco" deberia ser más generico - como partición, medio extraíble, recurso compartido en la red, etc
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Montar unidad automáticamente"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Punto de Montaje:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Sistema de Archivos:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Opciones:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Opciones por omisión"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Montar o desmontar disco."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Modificar"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Eliminar"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Agregar Nuevo"

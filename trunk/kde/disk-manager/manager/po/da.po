@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:47+0300\n"
 "PO-Revision-Date: 2009-08-18 22:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
@@ -17,47 +17,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Monter Enheden Automatisk"
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr ""
 
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Monteringspunkt:"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Filsystem:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Muligheder:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Standard muligheder"
-
-#: .tmp/ui_item.py:65
-msgid "Mount or unmount disk."
-msgstr "Monter eller afmonter enhed."
-
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Rediger"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Slet"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Tilføj ny"
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Indstillinger"
-
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Enheds håndtering"
 
@@ -83,8 +48,7 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Der er ikke nogen pakker der kan agere backend for dette program.\n"
-"Kontroller venligst at de nødvendige pakker er installeret og "
-"konfigureret korrekt."
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret korrekt."
 
 #: .tmp/diskmanager/main.py:175
 msgid "Mounted at %1"
@@ -98,9 +62,47 @@ msgstr "Alle elementer"
 msgid "Add"
 msgstr "Tilføj"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
-#: .tmp/diskmanager/main.py:321
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Adgang nægtet."
 
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Indstillinger"
 
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Monter Enheden Automatisk"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Monteringspunkt:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Filsystem:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Muligheder:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Standard muligheder"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Monter eller afmonter enhed."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Rediger"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Slet"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Tilføj ny"
