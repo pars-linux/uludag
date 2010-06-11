@@ -88,8 +88,8 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Nincs csomag, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \n"
-"Győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően van e konfigurálva."
+"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
+"Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
 
 #: .tmp/systemmanager/main.py:98
 msgid "None"
