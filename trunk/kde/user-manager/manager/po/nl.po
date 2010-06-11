@@ -2,25 +2,20 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-11 16:50+0300\n"
-"PO-Revision-Date: 30/12/09 15:44\n"
+"PO-Revision-Date: 2010-06-11 16:20+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-
-#: .tmp/kcm_usermanager.desktop.in.h:1 .tmp/usermanager.desktop.in.h:2
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Gebruikerbeheer"
 
 #: .tmp/ui_editgroup.py:81
 msgid "Group Information"
@@ -37,6 +32,15 @@ msgstr "Nr.:"
 #: .tmp/ui_editgroup.py:84 .tmp/ui_edituser.py:197
 msgid "Auto"
 msgstr "Auto"
+
+#: .tmp/usermanager.desktop.in.h:1
+msgid "An application for managing user accounts."
+msgstr "Een toepassing voor het beheren van gebruikersaccounten."
+
+#: .tmp/usermanager.desktop.in.h:2 .tmp/usermanager/about.py:20
+#: .tmp/usermanager/about.py:22 .tmp/kcm_usermanager.desktop.in.h:1
+msgid "User Manager"
+msgstr "Gebruikerbeheer"
 
 #: .tmp/ui_edituser.py:192
 msgid "User Information"
@@ -98,6 +102,10 @@ msgstr "Hoofdgroep:"
 msgid "Groups"
 msgstr "Groepen"
 
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
+
 #: .tmp/ui_item.py:60
 msgid "Edit"
 msgstr "Bewerken"
@@ -105,30 +113,6 @@ msgstr "Bewerken"
 #: .tmp/ui_item.py:61
 msgid "Delete"
 msgstr "Verwijderen"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
-
-#: .tmp/usermanager.desktop.in.h:1
-msgid "An application for managing user accounts."
-msgstr ""
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
 
 #: .tmp/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -166,6 +150,22 @@ msgstr "Deze gebruikersnaam wordt al gebruikt."
 msgid "User name must not start with a number."
 msgstr "Gebruikersnaam mag niet starten met een cijfer."
 
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
+
 #: .tmp/usermanager/main.py:94
 msgid ""
 "There are no packages that provide backend for this application.\n"
@@ -201,7 +201,8 @@ msgstr "Toegang geweigerd."
 
 #: .tmp/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr "Kan <b>%1</b> niet verwijderen. De gebruiker is op dit moment aangemeld."
+msgstr ""
+"Kan <b>%1</b> niet verwijderen. De gebruiker is op dit moment aangemeld."
 
 #: .tmp/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -214,3 +215,4 @@ msgstr "Ook gebruikerbestanden verwijderen. (Dit kan lang duren.)"
 #: .tmp/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
 msgstr "Wilt u groep '%1' verwijderen?"
+
