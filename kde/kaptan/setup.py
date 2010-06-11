@@ -27,18 +27,35 @@ def update_messages():
     # Create empty directory
     os.system("rm -rf .tmp")
     os.makedirs(".tmp")
+
     # Collect UI files
     for filename in glob.glob1("src/gui", "*.ui"):
         os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py src/gui/%s" % (filename.split(".")[0], filename))
+
     # Collect Python files
     for filename in glob.glob1("src/gui", "*.py"):
         shutil.copy("src/gui/%s" % filename, ".tmp")
+
+    # Collect desktop files
+    os.system("cp -R data/*.desktop.in .tmp/")
+
+    # Generate headers for desktop files
+    for filename in glob.glob(".tmp/*.desktop.in"):
+        os.system("intltool-extract --type=gettext/ini %s" % filename)
+
     # Generate POT file
-    os.system("xgettext --default-domain=%s --keyword=_ --keyword=i18n --keyword=ki18n -o po/%s.pot .tmp/*" % (about.catalog, about.catalog))
+    os.system("find .tmp -name '*.py' -o -name '*.h' | "
+              "xargs xgettext --default-domain=%s \
+                        --keyword=_ \
+                        --keyword=N_ \
+                        --keyword=i18n \
+                        --keyword=ki18n \
+                        -o po/%s.pot" % (about.catalog, about.catalog))
+
     # Update PO files
     for item in os.listdir("po"):
         if item.endswith(".po"):
-            os.system("msgmerge -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
+            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
             os.system("cp .tmp/temp.po po/%s" % item)
     # Remove temporary directory
     os.system("rm -rf .tmp")
@@ -75,19 +92,28 @@ class Install(install):
         locale_dir = os.path.join(kde_dir, "share/locale")
         autostart_dir = os.path.join(kde_dir, "share/autostart")
         project_dir = os.path.join(kde_dir, "share/apps", about.appName)
+
         # Make directories
         print "Making directories..."
         makeDirs(bin_dir)
+
         #makeDirs(locale_dir)
         makeDirs(autostart_dir)
         makeDirs(project_dir)
+
         # Install desktop files
         print "Installing desktop files..."
+
+        for flename in glob.glob("data/*.desktop.in"):
+            os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
+
         for filename in glob.glob1("data", "*.desktop"):
             shutil.copy("data/%s" % filename, autostart_dir)
+
         # Install codes
         print "Installing codes..."
         os.system("cp -R build/* %s/" % project_dir)
+
         # Install locales
         print "Installing locales..."
         for filename in glob.glob1("po", "*.po"):
