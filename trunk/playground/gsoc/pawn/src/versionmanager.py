@@ -12,24 +12,21 @@ class Version():
 class Mirror:
     pass
 
-class VersionManager(QtCore.QObject):
+class VersionManager():
     _versions_file_path = 'versions.xml'
     _update_host = 'www.ahmetalpbalkan.com'
     _update_path = '/versions.xml'
     proxyHost, proxyIP = '', ''
     updateContents = ''
 
-    #transferDone = QtCore.pyqtSignal(bool, name='transferDone') # success
-    
     def __init__(self):
-	QtCore.QObject.__init__(self)
         self.versions = []
 	self.parseDefinitionsFile()
 
 	self.http = QHttp(None)
-        QtCore.QObject.connect(self.http, QtCore.SIGNAL('dataReadProgress(int,int)'), self.updateProgress)
+        QtCore.QObject.connect(self.http, QtCore.SIGNAL('readyRead(QHttpResponseHeader)'), self.updateProgress)
 	QtCore.QObject.connect(self.http, QtCore.SIGNAL('done(bool)'), self.updateFinished)
-
+	
 
     def updateProxy(self, host, ip):
 	self.proxyHost = host
@@ -112,7 +109,8 @@ class VersionManager(QtCore.QObject):
 	self.http.get(self._update_path)
 	self.http.close()
 
-    def	updateProgress(self, transferred, total):
+    def	updateProgress(self, header):
+	print 'ready!'
 	self.updateContents += self.http.readAll()
 
     def updateFinished(self, bool):

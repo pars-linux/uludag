@@ -37,7 +37,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	return False
 
     def onRollback(self):
-	print 'ROLLBACK on source'
 	for option in self.options:
 	    option.setChecked(False) # TODO: Does not work LOL
 
