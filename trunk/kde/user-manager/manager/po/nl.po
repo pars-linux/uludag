@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-30 13:41+0200\n"
+"POT-Creation-Date: 2010-06-11 16:50+0300\n"
 "PO-Revision-Date: 30/12/09 15:44\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
@@ -17,87 +17,92 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: .tmp/ui_edituser.py:184
-msgid "User Information"
-msgstr "Gebruikerinformatie"
+#: .tmp/kcm_usermanager.desktop.in.h:1 .tmp/usermanager.desktop.in.h:2
+#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+msgid "User Manager"
+msgstr "Gebruikerbeheer"
 
-#: .tmp/ui_edituser.py:185
-msgid "Full Name:"
-msgstr "Volledige naam:"
-
-#: .tmp/ui_edituser.py:186
-msgid "Password:"
-msgstr "Wachtwoord:"
-
-#: .tmp/ui_edituser.py:187
-msgid "Password (Again):"
-msgstr "Wachtwoord (nogmaals):"
-
-#: .tmp/ui_edituser.py:188 .tmp/ui_editgroup.py:80
-msgid "No.:"
-msgstr "Nr.:"
-
-#: .tmp/ui_edituser.py:189 .tmp/ui_editgroup.py:81
-msgid "Auto"
-msgstr "Auto"
-
-#: .tmp/ui_edituser.py:190
-msgid "Username:"
-msgstr "Gebruikernaam:"
-
-#: .tmp/ui_edituser.py:191
-msgid "Home Directory:"
-msgstr "Persoonlijke map:"
-
-#: .tmp/ui_edituser.py:192
-msgid "Shell:"
-msgstr "Shell:"
-
-#: .tmp/ui_edituser.py:193
-msgid "Give administrator rights."
-msgstr "Geef systeembeheerderrechten."
-
-#: .tmp/ui_edituser.py:194
-msgid "Use system settings."
-msgstr "Gebruik systeeminstellingen."
-
-#: .tmp/ui_edituser.py:195
-msgid "Authorize user."
-msgstr "Autoriseer gebruiker."
-
-#: .tmp/ui_edituser.py:196
-msgid "Deny user."
-msgstr "Weiger gebruiker."
-
-#: .tmp/ui_edituser.py:197
-msgid "Apply this policy to all actions."
-msgstr "Dit beleid op alle acties toepassen."
-
-#: .tmp/ui_edituser.py:198
-msgid "Authorizations"
-msgstr "Autorisaties"
-
-#: .tmp/ui_edituser.py:199
-msgid "Main Group:"
-msgstr "Hoofdgroep:"
-
-#: .tmp/ui_edituser.py:200 .tmp/usermanager/main.py:196
-msgid "Groups"
-msgstr "Groepen"
-
-#: .tmp/ui_editgroup.py:78
+#: .tmp/ui_editgroup.py:81
 msgid "Group Information"
 msgstr "Groepinformatie"
 
-#: .tmp/ui_editgroup.py:79
+#: .tmp/ui_editgroup.py:82
 msgid "Group Name:"
 msgstr "Groepnaam:"
 
-#: .tmp/ui_item.py:56
+#: .tmp/ui_editgroup.py:83 .tmp/ui_edituser.py:196
+msgid "No.:"
+msgstr "Nr.:"
+
+#: .tmp/ui_editgroup.py:84 .tmp/ui_edituser.py:197
+msgid "Auto"
+msgstr "Auto"
+
+#: .tmp/ui_edituser.py:192
+msgid "User Information"
+msgstr "Gebruikerinformatie"
+
+#: .tmp/ui_edituser.py:193
+msgid "Full Name:"
+msgstr "Volledige naam:"
+
+#: .tmp/ui_edituser.py:194
+msgid "Password:"
+msgstr "Wachtwoord:"
+
+#: .tmp/ui_edituser.py:195
+msgid "Password (Again):"
+msgstr "Wachtwoord (nogmaals):"
+
+#: .tmp/ui_edituser.py:198
+msgid "Username:"
+msgstr "Gebruikernaam:"
+
+#: .tmp/ui_edituser.py:199
+msgid "Home Directory:"
+msgstr "Persoonlijke map:"
+
+#: .tmp/ui_edituser.py:200
+msgid "Shell:"
+msgstr "Shell:"
+
+#: .tmp/ui_edituser.py:201
+msgid "Give administrator rights."
+msgstr "Geef systeembeheerderrechten."
+
+#: .tmp/ui_edituser.py:202
+msgid "Use system settings."
+msgstr "Gebruik systeeminstellingen."
+
+#: .tmp/ui_edituser.py:203
+msgid "Authorize user."
+msgstr "Autoriseer gebruiker."
+
+#: .tmp/ui_edituser.py:204
+msgid "Deny user."
+msgstr "Weiger gebruiker."
+
+#: .tmp/ui_edituser.py:205
+msgid "Apply this policy to all actions."
+msgstr "Dit beleid op alle acties toepassen."
+
+#: .tmp/ui_edituser.py:206
+msgid "Authorizations"
+msgstr "Autorisaties"
+
+#: .tmp/ui_edituser.py:207
+msgid "Main Group:"
+msgstr "Hoofdgroep:"
+
+#: .tmp/ui_edituser.py:208 .tmp/usermanager/main.py:196
+msgid "Groups"
+msgstr "Groepen"
+
+#: .tmp/ui_item.py:60
 msgid "Edit"
 msgstr "Bewerken"
 
-#: .tmp/ui_item.py:57
+#: .tmp/ui_item.py:61
 msgid "Delete"
 msgstr "Verwijderen"
 
@@ -105,39 +110,59 @@ msgstr "Verwijderen"
 msgid "Add New"
 msgstr "Nieuwe toevoegen"
 
-#: .tmp/usermanager/edit.py:255
+#: .tmp/usermanager.desktop.in.h:1
+msgid "An application for managing user accounts."
+msgstr ""
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
+
+#: .tmp/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
 msgstr "Ten minste één groep dient geselecteerd te zijn."
 
-#: .tmp/usermanager/edit.py:320
+#: .tmp/usermanager/edit.py:323
 msgid "Start with typing this user's full name."
 msgstr "Begin met het typen van de volledige naam van deze gebruiker."
 
-#: .tmp/usermanager/edit.py:323
+#: .tmp/usermanager/edit.py:326
 msgid "You should enter a password for this user."
 msgstr "U dient een wachtwoord voor deze gebruiker op te geven."
 
-#: .tmp/usermanager/edit.py:328
+#: .tmp/usermanager/edit.py:331
 msgid "Password must be longer."
 msgstr "Wachtwoord dient langer zijn."
 
-#: .tmp/usermanager/edit.py:332
+#: .tmp/usermanager/edit.py:335
 msgid "Don't use your full name or user name as a password."
 msgstr "Gebruik niet uw eigen naam of naam van de gebruik als wachtwoord."
 
-#: .tmp/usermanager/edit.py:335
+#: .tmp/usermanager/edit.py:338
 msgid "Passwords don't match."
 msgstr "Wachtwoorden komen niet overeen."
 
-#: .tmp/usermanager/edit.py:340
+#: .tmp/usermanager/edit.py:343
 msgid "You must enter a user name."
 msgstr "U dient een gebruikersnaam op te geven."
 
-#: .tmp/usermanager/edit.py:343
+#: .tmp/usermanager/edit.py:346
 msgid "This user name is used by another user."
 msgstr "Deze gebruikersnaam wordt al gebruikt."
 
-#: .tmp/usermanager/edit.py:347
+#: .tmp/usermanager/edit.py:350
 msgid "User name must not start with a number."
 msgstr "Gebruikersnaam mag niet starten met een cijfer."
 
@@ -189,24 +214,3 @@ msgstr "Ook gebruikerbestanden verwijderen. (Dit kan lang duren.)"
 #: .tmp/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
 msgstr "Wilt u groep '%1' verwijderen?"
-
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Gebruikerbeheer"
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
-
