@@ -1,5 +1,6 @@
 import xml.dom.minidom
-import urllib2
+from PyQt4.QtNetwork import QHttp
+from PyQt4 import QtCore
 
 from logger import getLogger
 log = getLogger("VersionManager")
@@ -11,21 +12,41 @@ class Version():
 class Mirror:
     pass
 
-class VersionManager:
+class VersionManager(QtCore.QObject):
     _versions_file_path = 'versions.xml'
-    _definitions_file_url = 'http://www.ahmetalpbalkan.com/versions.xml'
+    _update_host = 'www.ahmetalpbalkan.com'
+    _update_path = '/versions.xml'
     proxyHost, proxyIP = '', ''
+    updateContents = ''
+
+    #transferDone = QtCore.pyqtSignal(bool, name='transferDone') # success
     
     def __init__(self):
+	QtCore.QObject.__init__(self)
         self.versions = []
 	self.parseDefinitionsFile()
-        
+
+	self.http = QHttp(None)
+        QtCore.QObject.connect(self.http, QtCore.SIGNAL('dataReadProgress(int,int)'), self.updateProgress)
+	QtCore.QObject.connect(self.http, QtCore.SIGNAL('done(bool)'), self.updateFinished)
+
+
+    def updateProxy(self, host, ip):
+	self.proxyHost = host
+	self.proxyIP = ip
+
+    def useProxy(self):
+	if self.proxyHost and self.proxyIP:
+	    self.http.setProxy(self.proxyHost, int(self.proxyIP))
+	    log.error('Proxy activated in update transfer.')
+
     def readFromFile(self):
         try:
             with open(self._versions_file_path,'r') as definitionsFile:
                 self._xmlContent = definitionsFile.read()
         except IOError as err:
-            log.error("Could not read version definitions file.")
+	    self.err = "Could not read version definitions file."
+            log.error(self.err)
             
 
     # a module for extracting texts in a nodelist
@@ -56,7 +77,8 @@ class VersionManager:
             for version in versions:
                 self.versions.append(self._handleVersion(version))
         except:
-            log.error("Error while parsing definitions XML file.")
+	    self.err = "Error while parsing definitions XML file."
+            log.error(self.err)
 
     def _handleVersion(self, version):
         ver = Version()
@@ -84,37 +106,44 @@ class VersionManager:
 
         return mir  
     
-    def updateDefinitionsFile(self, loadUpdated = True):
-        contents = ''
-        try:
-            stream = urllib2.urlopen(self._definitions_file_url)
-            while True:
-                buf = stream.read(1024)
-                if not len(buf):
-                    break
-                else:
-                    contents += buf
-        except:
-	    err = "Could not reach version definitions URL. Check your internet connection."
-            log.error(err)
-	    return False
+    def updateDefinitionsFile(self):
+	self.useProxy()
+	self.http.setHost(self._update_host)
+	self.http.get(self._update_path)
+	self.http.close()
 
-        if contents:
-            try:
-#                writestream = open(self._versions_file_path, 'w')
-#                writestream.close()
-		if loadUpdated:
-		    self.parseDefinitionsFile()
-		return True, None 
-            except:
-		err = 'Could not write to version definitions file.'
-                log.error(err)
-		return False, err
+    def	updateProgress(self, transferred, total):
+	self.updateContents += self.http.readAll()
+
+    def updateFinished(self, bool):
+	if True:
+	    if self.updateContents:
+		log.debug('Update file retrieved successfully.')
+		try:
+		    writestream = open(self._versions_file_path, 'w')
+		    writestream.write(self.updateContents)
+		    self.updateContents = None
+		    writestream.close()
+		    log.debug('Update file written successfully.')
+		except:
+		    self.err = 'Could not write to version definitions file.'
+		    log.error(self.err)
+		    self.transferDone.emit(False)
+
+		self.parseDefinitionsFile() # inefficient but OK
+		self.guiCallback(True)
+	    else:
+		self.err = 'Retrieved update is empty.\nMost probably update server is broken. If you use proxy, make sure that it works fine.'
+		log.error(self.err)
+		self.transferDone.emit(False)
+	else:
+	    self.err = "Could not reach version definitions URL. Check your internet connection."
+	    log.error(self.err)
+	    self.guiCallback(False)
 
 
-    def updateProxy(self, host, ip):
-	self.proxyHost = host
-	self.proxyIP = ip
+    def connectGui(self, guiCallback):
+	self.guiCallback = guiCallback
 
     def __repr__(self):
 	r = ''

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pardus ver="1.0" lastUpdated="24/01/2010">
 	<version id="pardus2009.2">
-		<name>Pardus 2009.2 Geronticus eremita</name>
+		<name>Pardus 2009.2 Geronticus eremita (32 bit)</name>
 		<size>713031680</size>
 		<type>32bit</type>
 		<mirrors>
@@ -19,7 +19,7 @@
 	</version>
 
 	<version id="pardus2009.1">
-		<name>Pardus 2009.1 Anthropoides virgo</name>
+		<name>Pardus 2009.1 Anthropoides virgo (32 bit)</name>
 		<size>716177408</size>
 		<type>32bit</type>
 		<mirrors>
@@ -37,7 +37,7 @@
 	</version>
 	
 	<version id="pardus2009">
-		<name>Pardus 2009</name>
+		<name>Pardus 2009 (32 bit)</name>
 		<size>720156672</size>
 		<type>32bit</type>
 		<mirrors>

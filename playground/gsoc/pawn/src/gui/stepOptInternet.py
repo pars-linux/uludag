@@ -13,6 +13,8 @@ class Widget(QtGui.QWidget, StepWidget):
 
 	self.gui = Ui_widgetOptInternet()
 	self.gui.setupUi(self)
+	self.mainEngine.versionManager.connectGui(self.slotUpdateDone)
+
 	self.connect(self.gui.comboVersion, QtCore.SIGNAL('currentIndexChanged(int)'), self.versionChanged)
 	self.connect(self.gui.comboMirror, QtCore.SIGNAL('currentIndexChanged(int)'), self.mirrorChanged)
 	self.connect(self.gui.btnProxy1, QtCore.SIGNAL('clicked()'), self.setUpdateProxy)
@@ -94,12 +96,16 @@ class Widget(QtGui.QWidget, StepWidget):
 	return True
 
     def updateVersions(self):
-	success, msg =self.mainEngine.versionManager.updateDefinitionsFile(True)
+	self.gui.btnUpdate.setText('Updating...')
+	self.mainEngine.versionManager.updateDefinitionsFile()
 	
+
+    def slotUpdateDone(self, success):
 	if success:
 	    self.populateVersions()
+	    self.gui.btnUpdate.setText('Updated!')
+	    self.gui.btnUpdate.setEnabled(False)
 	    QtGui.QMessageBox.information(self, 'Update Completed', 'New version list is ready to use.', QtGui.QMessageBox.Ok)
-	    
 	else:
-	    QtGui.QMessageBox.warning(self, 'Error in Update', msg, QtGui.QMessageBox.Ok)
-	    
+	    self.gui.btnUpdate.setText('Update Failed')
+	    QtGui.QMessageBox.warning(self, 'Error in Update', self.mainEngine.versionManager.err, QtGui.QMessageBox.Ok)
