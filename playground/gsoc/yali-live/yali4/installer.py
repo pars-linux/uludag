@@ -15,6 +15,7 @@ import os
 import dbus
 import time
 import shutil
+import sysutils
 
 # we need i18n
 import gettext
@@ -564,6 +565,7 @@ class Yali:
 
         stepsBase = [{"text":_("Copy Pisi index..."),"operation":yali4.postinstall.copyPisiIndex},
                      {"text":_("Setting misc. package configurations..."),"operation":yali4.postinstall.setPackages},
+                     {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs},
                      {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
 
         if self.install_type in [YALI_INSTALL, YALI_DVDINSTALL, YALI_FIRSTBOOT,YALI_LIVEINSTALL]:
@@ -572,6 +574,11 @@ class Yali:
             rootWidget.steps.setOperations(self.plugin.config.steps)
 
         rootWidget.steps.setOperations(stepsBase)
+
+
+    def generateInitramfs(self):
+        ctx.debugger.log("Generating Initramfs.")
+        sysutils.chrootRun("/sbin/mkinitramfs")
 
     def installBootloader(self, pardusPart = None):
         if not ctx.installData.bootLoaderDev:

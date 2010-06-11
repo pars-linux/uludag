@@ -211,7 +211,8 @@ Have fun!
         # run dbus in chroot
         yali4.sysutils.chrootDbus()
 
-	yali4.sysutils.run("sed -i 's/AutoLoginEnable=true/AutoLoginEnable=false/' %s/etc/X11/kdm/kdmrc" %consts.target_dir) 
+        pars=yali4.users.User("pars")
+        pars.setAutoLogin(False)
 
         ctx.yali.info.updateMessage(_("Configuring packages.."))
         qevent = InstallEvent(QEvent.User, EventAllFinished)
