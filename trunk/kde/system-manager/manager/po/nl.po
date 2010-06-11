@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:25+0300\n"
+"POT-Creation-Date: 2010-06-11 16:50+0300\n"
 "PO-Revision-Date: 29/07/09 21:07\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Nederlansd <kde-i18n-nl@kde.org>\n"
@@ -17,61 +17,14 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_main.py:156
-msgid "Language Settings"
-msgstr "Taalinstellingen"
-
-#: .tmp/ui_main.py:157
-msgid "System Language:"
-msgstr "Systeemtaal:"
-
-#: .tmp/ui_main.py:158
-msgid "Console Keyboard Layout:"
-msgstr "Toetsenbordindeling in Konsole:"
-
-#: .tmp/ui_main.py:159
-msgid ""
-"Note that these settings do not effect your desktop. Desktop settings can be "
-"changed in 'Regional & Language' module in System Settings."
-msgstr "Merk op dat deze instellingen geen effect hebben op het bureaublad. Bureaublad-instellingen kunnen in het module Land/regio en taal in Systeeminstellingen gewijzigd worden."
-
-#: .tmp/ui_main.py:160
-msgid "Service Settings"
-msgstr "Dienstinstellingen"
-
-#: .tmp/ui_main.py:161
-msgid "First Service to Start:"
-msgstr "Eerste dienst om te starten:"
-
-#: .tmp/ui_main.py:162
-msgid ""
-"Although services are started parallel manner in boot process, users may "
-"want to start a single service before checking dependencies."
-msgstr "Ofschoon diensten tijdens het opstartproces parallel opgestart worden, kunnen gebruikers een enkel dienst opstarten voordat afhankelijkheden gecontroleerd worden."
-
-#: .tmp/ui_main.py:163
-msgid "Clock Settings"
-msgstr "Klokinstellingen"
-
-#: .tmp/ui_main.py:164
-msgid "Keep the hardware clock in UTC"
-msgstr "Houdt de hardwareklok op UTC"
-
-#: .tmp/ui_main.py:165
-msgid "Normalize systematic drift of the hardware clock"
-msgstr "Normaliseer systematische drift van de hardwareklok"
-
-#: .tmp/ui_main.py:166
-msgid "Console Settings"
-msgstr "Console-instellingen"
-
-#: .tmp/ui_main.py:167
-msgid "Number of Real Consoles:"
-msgstr "Aantal werkelijke consoles:"
-
+#: .tmp/kcm_systemmanager.desktop.in.h:1 .tmp/systemmanager.desktop.in.h:2
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
 msgstr "Systeembeheer"
+
+#: .tmp/systemmanager.desktop.in.h:1
+msgid "An application for managing settings like system language, keyboard and timezone."
+msgstr ""
 
 #: .tmp/systemmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -101,3 +54,50 @@ msgstr ""
 msgid "None"
 msgstr "Geen"
 
+#: .tmp/ui_main.py:160
+msgid "Language Settings"
+msgstr "Taalinstellingen"
+
+#: .tmp/ui_main.py:161
+msgid "System Language:"
+msgstr "Systeemtaal:"
+
+#: .tmp/ui_main.py:162
+msgid "Console Keyboard Layout:"
+msgstr "Toetsenbordindeling in Konsole:"
+
+#: .tmp/ui_main.py:163
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Merk op dat deze instellingen geen effect hebben op het bureaublad. Bureaublad-instellingen kunnen in het module Land/regio en taal in Systeeminstellingen gewijzigd worden."
+
+#: .tmp/ui_main.py:164
+msgid "Service Settings"
+msgstr "Dienstinstellingen"
+
+#: .tmp/ui_main.py:165
+msgid "First Service to Start:"
+msgstr "Eerste dienst om te starten:"
+
+#: .tmp/ui_main.py:166
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Ofschoon diensten tijdens het opstartproces parallel opgestart worden, kunnen gebruikers een enkel dienst opstarten voordat afhankelijkheden gecontroleerd worden."
+
+#: .tmp/ui_main.py:167
+msgid "Clock Settings"
+msgstr "Klokinstellingen"
+
+#: .tmp/ui_main.py:168
+msgid "Keep the hardware clock in UTC"
+msgstr "Houdt de hardwareklok op UTC"
+
+#: .tmp/ui_main.py:169
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normaliseer systematische drift van de hardwareklok"
+
+#: .tmp/ui_main.py:170
+msgid "Console Settings"
+msgstr "Console-instellingen"
+
+#: .tmp/ui_main.py:171
+msgid "Number of Real Consoles:"
+msgstr "Aantal werkelijke consoles:"

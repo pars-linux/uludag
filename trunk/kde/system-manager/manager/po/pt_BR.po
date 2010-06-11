@@ -1,13 +1,13 @@
 # Translation of pt_BR.po to Brazilian Portuguese
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Diogo Lima <diogo.urb@gmail.com>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-15 19:06-0300\n"
+"POT-Creation-Date: 2010-06-11 16:50+0300\n"
 "PO-Revision-Date: 2010-05-15 19:06-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -15,57 +15,14 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_main.py:156
-msgid "Language Settings"
-msgstr "Configurações de Língua"
-
-#: .tmp/ui_main.py:157
-msgid "System Language:"
-msgstr "Língua do Sistema"
-
-#: .tmp/ui_main.py:158
-msgid "Console Keyboard Layout:"
-msgstr "Layout do Teclado no Console:"
-
-#: .tmp/ui_main.py:159
-msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
-msgstr "Note que essas configurações não fazem efeito na sua área de trabalho. As configurações para a área de trabalho devem ser modificadas no módulo 'Regional & Idioma' das Configurações do Sistema."
-
-#: .tmp/ui_main.py:160
-msgid "Service Settings"
-msgstr "Configurações dos Serviços"
-
-#: .tmp/ui_main.py:161
-msgid "First Service to Start:"
-msgstr "Primeiro Serviço a Iniciar:"
-
-#: .tmp/ui_main.py:162
-msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
-msgstr "Ainda que os serviços sejam executados de forma paralela no processo de inicialização, os usuários podem quere executar um serviço antes de checar as dependências."
-
-#: .tmp/ui_main.py:163
-msgid "Clock Settings"
-msgstr "Configurações da Hora"
-
-#: .tmp/ui_main.py:164
-msgid "Keep the hardware clock in UTC"
-msgstr "Manter o relógio do hardware em UTC"
-
-#: .tmp/ui_main.py:165
-msgid "Normalize systematic drift of the hardware clock"
-msgstr "Normaliza o desvio sistemático do relógio do hardware"
-
-#: .tmp/ui_main.py:166
-msgid "Console Settings"
-msgstr "Configurações do Console"
-
-#: .tmp/ui_main.py:167
-msgid "Number of Real Consoles:"
-msgstr "Número real de Consoles:"
-
+#: .tmp/kcm_systemmanager.desktop.in.h:1 .tmp/systemmanager.desktop.in.h:2
 #: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
 msgid "System Manager"
 msgstr "Gerenciador do Sistema"
+
+#: .tmp/systemmanager.desktop.in.h:1
+msgid "An application for managing settings like system language, keyboard and timezone."
+msgstr ""
 
 #: .tmp/systemmanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
@@ -94,3 +51,51 @@ msgstr ""
 #: .tmp/systemmanager/main.py:98
 msgid "None"
 msgstr "Nenhum"
+
+#: .tmp/ui_main.py:160
+msgid "Language Settings"
+msgstr "Configurações de Língua"
+
+#: .tmp/ui_main.py:161
+msgid "System Language:"
+msgstr "Língua do Sistema"
+
+#: .tmp/ui_main.py:162
+msgid "Console Keyboard Layout:"
+msgstr "Layout do Teclado no Console:"
+
+#: .tmp/ui_main.py:163
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Note que essas configurações não fazem efeito na sua área de trabalho. As configurações para a área de trabalho devem ser modificadas no módulo 'Regional & Idioma' das Configurações do Sistema."
+
+#: .tmp/ui_main.py:164
+msgid "Service Settings"
+msgstr "Configurações dos Serviços"
+
+#: .tmp/ui_main.py:165
+msgid "First Service to Start:"
+msgstr "Primeiro Serviço a Iniciar:"
+
+#: .tmp/ui_main.py:166
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Ainda que os serviços sejam executados de forma paralela no processo de inicialização, os usuários podem quere executar um serviço antes de checar as dependências."
+
+#: .tmp/ui_main.py:167
+msgid "Clock Settings"
+msgstr "Configurações da Hora"
+
+#: .tmp/ui_main.py:168
+msgid "Keep the hardware clock in UTC"
+msgstr "Manter o relógio do hardware em UTC"
+
+#: .tmp/ui_main.py:169
+msgid "Normalize systematic drift of the hardware clock"
+msgstr "Normaliza o desvio sistemático do relógio do hardware"
+
+#: .tmp/ui_main.py:170
+msgid "Console Settings"
+msgstr "Configurações do Console"
+
+#: .tmp/ui_main.py:171
+msgid "Number of Real Consoles:"
+msgstr "Número real de Consoles:"
