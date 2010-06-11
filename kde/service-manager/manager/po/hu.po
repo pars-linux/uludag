@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-27 16:19+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-06-02 19:08+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -15,77 +15,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_item.py:99 .tmp/ui_main.py:55
-msgid "Form"
-msgstr "Forma"
-
-#: .tmp/ui_item.py:100
-msgid "serviceName"
-msgstr "szolgáltatásNév"
-
-#: .tmp/ui_item.py:101
-msgid "serviceDesc"
-msgstr "szolgáltatásLeírás"
-
-#: .tmp/ui_item.py:102
-msgid "Start service"
-msgstr "Szolgáltatás indítása"
-
-#: .tmp/ui_item.py:103
-msgid "Reload service"
-msgstr "Szolgáltatás újratöltése"
-
-#: .tmp/ui_item.py:104
-msgid "Stop service"
-msgstr "Szolgáltatás leállítása"
-
-#: .tmp/ui_item.py:105
-msgid "Run on start"
-msgstr "Futás indulásnál"
-
-#: .tmp/ui_main.py:56
-msgid "type service name to search..."
-msgstr "gépeld be a szolgáltatás nevét, amit keresel..."
-
-#: .tmp/ui_main.py:57
-msgid "Servers"
-msgstr "Szerverek"
-
-#: .tmp/ui_main.py:58
-msgid "System Services"
-msgstr "Rendszerszolgáltatások"
-
-#: .tmp/ui_main.py:59
-msgid "Startup Services"
-msgstr "Betöltődő szolgáltatások"
-
-#: .tmp/ui_main.py:60
-msgid "Running Services"
-msgstr "Futó szolgáltatások"
-
-#: .tmp/ui_main.py:61
-msgid "All Services"
-msgstr "Minde nszolgáltatás"
-
-#: .tmp/ui_main.py:62
-msgid "Getting service info... %p%"
-msgstr "Információgyűjtés a szolgáltatásról... %p%"
-
+#: .tmp/kcm_servicemanager.desktop.in.h:1 .tmp/servicemanager.desktop.in.h:2
 #: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
 msgid "Service Manager"
 msgstr "Szolgáltatás menedzser"
+
+#: .tmp/servicemanager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr ""
 
 #: .tmp/servicemanager/about.py:24
 msgid "(c) 2009 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: .tmp/servicemanager/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
 #: .tmp/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -94,3 +43,59 @@ msgstr "Bahadır Kandemir"
 #: .tmp/servicemanager/about.py:33
 msgid "COMAR Author"
 msgstr "COMAR szerző"
+
+#: .tmp/ui_item.py:103 .tmp/ui_main.py:56
+msgid "Form"
+msgstr "Forma"
+
+#: .tmp/ui_item.py:104
+msgid "serviceName"
+msgstr "szolgáltatásNév"
+
+#: .tmp/ui_item.py:105
+msgid "serviceDesc"
+msgstr "szolgáltatásLeírás"
+
+#: .tmp/ui_item.py:106
+msgid "Start service"
+msgstr "Szolgáltatás indítása"
+
+#: .tmp/ui_item.py:107
+msgid "Reload service"
+msgstr "Szolgáltatás újratöltése"
+
+#: .tmp/ui_item.py:108
+msgid "Stop service"
+msgstr "Szolgáltatás leállítása"
+
+#: .tmp/ui_item.py:109
+msgid "Run on start"
+msgstr "Futás indulásnál"
+
+#: .tmp/ui_main.py:57
+msgid "type service name to search..."
+msgstr "gépeld be a szolgáltatás nevét, amit keresel..."
+
+#: .tmp/ui_main.py:58
+msgid "Servers"
+msgstr "Szerverek"
+
+#: .tmp/ui_main.py:59
+msgid "System Services"
+msgstr "Rendszerszolgáltatások"
+
+#: .tmp/ui_main.py:60
+msgid "Startup Services"
+msgstr "Betöltődő szolgáltatások"
+
+#: .tmp/ui_main.py:61
+msgid "Running Services"
+msgstr "Futó szolgáltatások"
+
+#: .tmp/ui_main.py:62
+msgid "All Services"
+msgstr "Minde nszolgáltatás"
+
+#: .tmp/ui_main.py:63
+msgid "Getting service info... %p%"
+msgstr "Információgyűjtés a szolgáltatásról... %p%"
