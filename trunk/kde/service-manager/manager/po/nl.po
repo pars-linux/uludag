@@ -2,76 +2,29 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-11 16:49+0300\n"
-"PO-Revision-Date: 14/06/09 22:39\n"
+"PO-Revision-Date: 2010-06-11 16:34+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: .tmp/kcm_servicemanager.desktop.in.h:1 .tmp/servicemanager.desktop.in.h:2
 #: .tmp/servicemanager/about.py:20 .tmp/servicemanager/about.py:22
 msgid "Service Manager"
 msgstr "Dienstbeheer"
 
-#: .tmp/servicemanager.desktop.in.h:1
-msgid "An application for managing system services."
-msgstr ""
-
-#: .tmp/servicemanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/servicemanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
-
-#: .tmp/servicemanager/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/servicemanager/about.py:33
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/servicemanager/about.py:33
-msgid "COMAR Author"
-msgstr "COMAR-auteur"
-
-#: .tmp/ui_item.py:103 .tmp/ui_main.py:56
+#: .tmp/ui_main.py:56 .tmp/ui_item.py:103
 msgid "Form"
 msgstr "Form"
-
-#: .tmp/ui_item.py:104
-msgid "serviceName"
-msgstr "dienstnaam"
-
-#: .tmp/ui_item.py:105
-msgid "serviceDesc"
-msgstr "dienstbeschrijving"
-
-#: .tmp/ui_item.py:106
-msgid "Start service"
-msgstr "Dienst starten"
-
-#: .tmp/ui_item.py:107
-msgid "Reload service"
-msgstr "Dienst herladen"
-
-#: .tmp/ui_item.py:108
-msgid "Stop service"
-msgstr "Dienst stoppen"
-
-#: .tmp/ui_item.py:109
-msgid "Run on start"
-msgstr "Bij opstarten uitvoeren"
 
 #: .tmp/ui_main.py:57
 msgid "type service name to search..."
@@ -100,3 +53,52 @@ msgstr "Alle diensten"
 #: .tmp/ui_main.py:63
 msgid "Getting service info... %p%"
 msgstr "Dienstinformatie wordt opgehaald... %p%"
+
+#: .tmp/servicemanager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr "Een toepassing voor het beheren van systeemdiensten."
+
+#: .tmp/ui_item.py:104
+msgid "serviceName"
+msgstr "dienstnaam"
+
+#: .tmp/ui_item.py:105
+msgid "serviceDesc"
+msgstr "dienstbeschrijving"
+
+#: .tmp/ui_item.py:106
+msgid "Start service"
+msgstr "Dienst starten"
+
+#: .tmp/ui_item.py:107
+msgid "Reload service"
+msgstr "Dienst herladen"
+
+#: .tmp/ui_item.py:108
+msgid "Stop service"
+msgstr "Dienst stoppen"
+
+#: .tmp/ui_item.py:109
+msgid "Run on start"
+msgstr "Bij opstarten uitvoeren"
+
+#: .tmp/servicemanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
+
+#: .tmp/servicemanager/about.py:33
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/servicemanager/about.py:33
+msgid "COMAR Author"
+msgstr "COMAR-auteur"
+
