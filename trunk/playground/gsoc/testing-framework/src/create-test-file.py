@@ -5,7 +5,7 @@ import sys
 try:
     from lxml import etree
 except ImportError:
-    sys.exit('Error importing the \'lxml\' library.\nYou need the lxml library package installed to run this software.\nExit')
+    sys.exit("Error importing the 'lxml' library.\nYou need the 'lxml' library package installed to run this software.")
     
     
 def print_tag(question):
@@ -16,10 +16,9 @@ def print_tag(question):
 
 
 def main():
-    """Ask the user for the type of test case and output it accordingly."""
-    print '- Pardus GNU/ Linux Testing Framework -'
+    """Ask the user for the type of testcase and output it accordingly."""
     while True:
-        print 'What type of a test case do you want?'
+        print 'What type of a testcase do you want?'
         print '1. Install\t2. GUI\n3. Shell\t4. Automated'
         try:
             answer = int(raw_input('Enter a value [1 - 4] > ')) 
@@ -29,10 +28,13 @@ def main():
         if not answer in range(1, 5):
             print '\nInvalid input. Enter a value between [1 - 4]\n'
             continue 
-        # Extend the dictionary below to add more test cases
+        # Extend the dictionary below to add more testcases
         testcases = {1: "install", 2: "gui", 3: "shell", 4: "automated"}
         return testcases[answer]
-    
-    
+
+
 if __name__ == '__main__':
+    welcomeMessage = 'Pardus Testing Framework'
+    print welcomeMessage, '\n', len(welcomeMessage) * '-'
+    
     main()
