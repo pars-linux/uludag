@@ -1,7 +1,9 @@
 #!/bin/bash
+#Tweaked bindScript by SarathLakshman
+echo Binding Yali;
 
-rm -rf /yali
-umount /yali
+rm -rf /yali 
+umount /yali > /dev/null
 
 mkdir /yali/backup -p
 cp /usr/lib/python2.6/site-packages/yali4/* /yali/ -Rp
