@@ -2,28 +2,33 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-11 16:48+0300\n"
-"PO-Revision-Date: 01/07/09 21:41\n"
+"PO-Revision-Date: 2010-06-11 16:42+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/firewallmanager.desktop.in.h:1
-msgid "An application for managing firewall."
-msgstr ""
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
 
-#: .tmp/firewallmanager.desktop.in.h:2 .tmp/firewallmanager/about.py:20
-#: .tmp/firewallmanager/about.py:22 .tmp/kcm_firewallmanager.desktop.in.h:1
+#: .tmp/kcm_firewallmanager.desktop.in.h:1 .tmp/firewallmanager/about.py:20
+#: .tmp/firewallmanager/about.py:22 .tmp/firewallmanager.desktop.in.h:2
 msgid "Firewall Manager"
 msgstr "Firewallbeheer"
+
+#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Instellingen"
 
 #: .tmp/firewallmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -40,6 +45,22 @@ msgstr "Bahadır Kandemir"
 #: .tmp/firewallmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
+
+#: .tmp/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Firewall is ingeschakeld."
+
+#: .tmp/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Stoppen"
+
+#: .tmp/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Firewall is uitgeschakeld."
+
+#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
+msgid "Start"
+msgstr "Starten"
 
 #: .tmp/firewallmanager/main.py:96
 msgid ""
@@ -62,26 +83,6 @@ msgstr "Actie"
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
-msgid "Settings"
-msgstr "Instellingen"
-
-#: .tmp/firewallmanager/service.py:38
-msgid "Firewall is activated."
-msgstr "Firewall is ingeschakeld."
-
-#: .tmp/firewallmanager/service.py:41
-msgid "Stop"
-msgstr "Stoppen"
-
-#: .tmp/firewallmanager/service.py:43
-msgid "Firewall is deactivated."
-msgstr "Firewall is uitgeschakeld."
-
-#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
-msgid "Start"
-msgstr "Starten"
-
 #: .tmp/ui_item.py:69
 msgid "Active or deactivate module."
 msgstr "Module in- of uitschakelen."
@@ -94,6 +95,7 @@ msgstr "Bewerken"
 msgid "Delete"
 msgstr "Verwijderen"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
+#: .tmp/firewallmanager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr "Een toepassing voor het beheren van de firewall."
+
