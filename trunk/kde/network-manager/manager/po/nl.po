@@ -2,73 +2,25 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-11 16:48+0300\n"
-"PO-Revision-Date: 16/12/09 20:52\n"
+"PO-Revision-Date: 2010-06-11 16:27+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
-#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager/about.py:20
+#: .tmp/networkmanager/about.py:22 .tmp/networkmanager.desktop.in.h:2
 msgid "Network Manager"
 msgstr "Netwerkbeheer"
-
-#: .tmp/networkmanager.desktop.in.h:1
-msgid "An application for managing network connections."
-msgstr ""
-
-#: .tmp/networkmanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Ontwikkelaar"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/base.py:195
-msgid "Available Profiles"
-msgstr "Beschikbare profielen"
-
-#: .tmp/networkmanager/base.py:217
-msgid "All Profiles"
-msgstr "Alle profielen"
-
-#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
-msgid "No Device Found"
-msgstr "Geen apparaat gevonden"
-
-#: .tmp/networkmanager/base.py:405
-msgid "No Authentication"
-msgstr "Geen authenticatie"
-
-#: .tmp/networkmanager/base.py:554
-msgid "There is already a profile named '%1'."
-msgstr ""
-
-#: .tmp/networkmanager/base.py:643
-msgid "Do you really want to remove profile %1?"
-msgstr "Werkelijk profiel %1 verwijderen?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
@@ -111,25 +63,89 @@ msgstr "Kabel of apparaat niet aangesloten"
 msgid "Access denied"
 msgstr "Toegang geweigerd"
 
-#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
-msgid "Signal Strength"
-msgstr "Signaalsterkte"
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/ui_item.py:108
-msgid "Set connection state."
-msgstr "Stel verbindingstatus in."
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: .tmp/ui_item.py:109
-msgid "Edit connection"
-msgstr "Verbinding bewerken"
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
 
-#: .tmp/ui_item.py:110
-msgid "Delete connection"
-msgstr "Verbinding verwijderen"
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
-#: .tmp/ui_item.py:112
-msgid "  %p %"
-msgstr "  %p %"
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Ontwikkelaar"
+
+#: .tmp/networkmanager/base.py:195
+msgid "Available Profiles"
+msgstr "Beschikbare profielen"
+
+#: .tmp/networkmanager/base.py:217
+msgid "All Profiles"
+msgstr "Alle profielen"
+
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
+msgid "No Device Found"
+msgstr "Geen apparaat gevonden"
+
+#: .tmp/networkmanager/base.py:405
+msgid "No Authentication"
+msgstr "Geen authenticatie"
+
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr "Er bestaat reeds een profiel met de naam '%1'."
+
+#: .tmp/networkmanager/base.py:643
+msgid "Do you really want to remove profile %1?"
+msgstr "Werkelijk profiel %1 verwijderen?"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Dialoog"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Details"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Apparaat"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Apparaat:"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Kies een operator"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Operator:"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN:"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "PIN voor deze verbinding onthouden"
 
 #: .tmp/ui_main.py:342
 msgid "Form"
@@ -227,50 +243,35 @@ msgstr "Sleutel :"
 msgid "Hide Password"
 msgstr "Wachtwoord verbergen"
 
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Stel verbindingstatus in."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Verbinding bewerken"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Verbinding verwijderen"
+
+#: .tmp/ui_item.py:111 .tmp/ui_ap.py:56
+msgid "Signal Strength"
+msgstr "Signaalsterkte"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr "Een toepassing voor het beheren van de netwerkverbindingen."
+
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Machinenaam"
 
-#: .tmp/ui_nmwizard.py:92
-msgid "Dialog"
-msgstr "Dialoog"
-
-#: .tmp/ui_nmwizard.py:93
-msgid "Details"
-msgstr "Details"
-
-#: .tmp/ui_nmwizard.py:94
-msgid "IMEI"
-msgstr "IMEI"
-
-#: .tmp/ui_nmwizard.py:95
-msgid "Device"
-msgstr "Apparaat"
-
-#: .tmp/ui_nmwizard.py:96
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: .tmp/ui_nmwizard.py:97
-msgid "Device:"
-msgstr "Apparaat:"
-
-#: .tmp/ui_nmwizard.py:98
-msgid "Select an operator"
-msgstr "Kies een operator"
-
-#: .tmp/ui_nmwizard.py:99
-msgid "Operator:"
-msgstr "Operator:"
-
-#: .tmp/ui_nmwizard.py:100
-msgid "PIN:"
-msgstr "PIN:"
-
-#: .tmp/ui_nmwizard.py:101
-msgid "Remember PIN for this connection"
-msgstr "PIN voor deze verbinding onthouden"
-
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
 msgstr "Beveiligingsinstellingen"
+
