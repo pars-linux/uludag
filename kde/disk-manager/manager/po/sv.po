@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: disk-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:47+0300\n"
 "PO-Revision-Date: 2009-06-30 18:47+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,47 +16,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Montera automatiskt"
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr ""
 
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Monteringspunkt:"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Filsystem:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Alternativ:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Standardalternativ"
-
-#: .tmp/ui_item.py:65
-msgid "Mount or unmount disk."
-msgstr "Montera eller avmontera en enhet."
-
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Redigera"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Ta bort"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Lägg till ny"
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Inställningar"
-
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Hårddiskhanteraren"
 
@@ -81,8 +46,7 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Det finns inte något paket som tillhandahåller bakände för det här "
-"programmet.\n"
+"Det finns inte något paket som tillhandahåller bakände för det här programmet.\n"
 "Vänligen se till att paketen är rätt installerade och inställda."
 
 #: .tmp/diskmanager/main.py:175
@@ -97,8 +61,47 @@ msgstr "Alla poster"
 msgid "Add"
 msgstr "Lägg till"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
-#: .tmp/diskmanager/main.py:321
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Åtkomst nekad."
 
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Inställningar"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Montera automatiskt"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Monteringspunkt:"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Filsystem:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Alternativ:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Standardalternativ"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Montera eller avmontera en enhet."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Redigera"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Ta bort"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Lägg till ny"

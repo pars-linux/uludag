@@ -7,56 +7,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-15 19:29-0300\n"
+"POT-Creation-Date: 2010-06-11 16:47+0300\n"
 "PO-Revision-Date: 2010-05-15 19:29-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/"
-"listinfo/pardus-translation-ptbr>\n"
+"Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Montar Disco Automaticamente"
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr ""
 
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Ponto de Montage"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Tipo de Sistema de Arquivos:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Opções:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Opções Padrões"
-
-#: .tmp/ui_item.py:65
-msgid "Mount or unmount disk."
-msgstr "Montar ou desmontar disco."
-
-#: .tmp/ui_item.py:66
-msgid "Edit"
-msgstr "Editar"
-
-#: .tmp/ui_item.py:67
-msgid "Delete"
-msgstr "Deletar"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Adicionar Novo"
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Configurações"
-
-#: .tmp/diskmanager/about.py:20 .tmp/diskmanager/about.py:22
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Gerenciador de Disco"
 
@@ -96,7 +60,47 @@ msgstr "Todos os Itens"
 msgid "Add"
 msgstr "Adicionar"
 
-#: .tmp/diskmanager/main.py:272 .tmp/diskmanager/main.py:282
-#: .tmp/diskmanager/main.py:321
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Acesso negado."
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Configurações"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Montar Disco Automaticamente"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Ponto de Montage"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Tipo de Sistema de Arquivos:"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Opções:"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Opções Padrões"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Montar ou desmontar disco."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Editar"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Deletar"
+
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Adicionar Novo"
