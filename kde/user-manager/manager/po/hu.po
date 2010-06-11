@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -140,8 +140,12 @@ msgid "User name must not start with a number."
 msgstr "Felhasználónév nem kezdődhet számmal."
 
 #: .tmp/usermanager/main.py:94
-msgid "There are no packages that provide backend for this application. Please make sure that packages are installed and configured correctly."
-msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
+"Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
 
 #: .tmp/usermanager/main.py:195
 msgid "Users"
