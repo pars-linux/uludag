@@ -71,7 +71,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.mainEngine.password = None
 
     def onSubmit(self):
-	return True
 	# TODO: 'Not enough free space' warnings
 	errorText = ''
 
