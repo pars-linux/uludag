@@ -6,13 +6,13 @@ from gui.widgetSource import Ui_widgetSource
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Choose the source"
 
-    def __init__(self):
+    def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
-	StepWidget.__init__(self)
+	StepWidget.__init__(self, mainEngine)
 
 	self.gui = Ui_widgetSource()
 	self.gui.setupUi(self)
-
+	
 	self.options = [self.gui.optInternet, self.gui.optISO, self.gui.optCD]
 
     def nextIndex(self):
@@ -20,6 +20,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	    return 3
 	if self.gui.optCD.isChecked():
 	    return 4
+	if self.gui.optInternet.isChecked():
+	    return 5
 
 	return 0 # TODO: implement other interfaces
 
@@ -35,7 +37,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	return False
 
     def onRollback(self):
+	print 'ROLLBACK on source'
 	for option in self.options:
-	    option.setChecked(False)
+	    option.setChecked(False) # TODO: Does not work LOL
 
 	return True

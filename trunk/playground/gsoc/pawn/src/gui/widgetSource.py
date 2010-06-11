@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './widgetSource.ui'
 #
-# Created: Thu Jun 10 04:10:32 2010
+# Created: Fri Jun 11 02:42:44 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -26,6 +26,7 @@ class Ui_widgetSource(object):
         self.verticalLayout_2 = QtGui.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.optInternet = QtGui.QRadioButton(self.verticalLayoutWidget)
+        self.optInternet.setChecked(True)
         self.optInternet.setObjectName("optInternet")
         self.verticalLayout_2.addWidget(self.optInternet)
         self.optCD = QtGui.QRadioButton(self.verticalLayoutWidget)

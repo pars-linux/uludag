@@ -6,16 +6,15 @@ from gui.widgetOptISO import Ui_widgetOptISO
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Choose ISO File"
 
-    def __init__(self):
+    def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
-	StepWidget.__init__(self)
+	StepWidget.__init__(self, mainEngine)
 
 	self.gui = Ui_widgetOptISO()
 	self.gui.setupUi(self)
 
 	self.fileName = ''
 	QtCore.QObject.connect(self.gui.btnBrowse, QtCore.SIGNAL('clicked()'), self.openFileDialog)
-	QtCore.QObject.connect(self.gui.txtFileName, QtCore.SIGNAL('clicked()'), self.openFileDialog)
 
     def openFileDialog(self):
 	fileDialog =QtGui.QFileDialog()
@@ -29,10 +28,7 @@ class Widget(QtGui.QWidget, StepWidget):
 
     def onSubmit(self):
 	if not self.fileName:
-	    error = QtGui.QMessageBox(self)
-	    error.setWindowTitle("Warning")
-	    error.setText("Please choose an ISO file (*.iso) to proceed.")
-	    error.show()
+	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose an ISO file (*.iso) to proceed.', QtGui.QMessageBox.Ok)
 	    return False
 	else:
 	    return True

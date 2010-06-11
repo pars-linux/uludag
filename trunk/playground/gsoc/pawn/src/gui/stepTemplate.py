@@ -4,8 +4,8 @@ class StepWidget():
 
     finishStep = False
 
-    def __init__(self):
-	pass
+    def __init__(self, mainEngine):
+	self.mainEngine = mainEngine
 
     def onEnter(self):
 	pass
