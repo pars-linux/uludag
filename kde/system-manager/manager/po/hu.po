@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -84,8 +84,12 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: .tmp/systemmanager/main.py:70
-msgid "There are no packages that provide backend for this application. Please make sure that packages are installed and configured correctly."
-msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Nincs csomag, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \n"
+"Győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően van e konfigurálva."
 
 #: .tmp/systemmanager/main.py:98
 msgid "None"
