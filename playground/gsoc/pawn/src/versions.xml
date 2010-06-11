@@ -7,6 +7,7 @@
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
+				<country>TR</country>
 				<login>true</login>
 				<username>anonymous</username>
 				<password>anonymous</password>
@@ -24,6 +25,7 @@
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
+				<country>TR</country>
 				<login>true</login>
 				<username>anonymous</username>
 				<password>anonymous</password>
@@ -40,7 +42,19 @@
 		<type>32bit</type>
 		<mirrors>
 			<source type="default" protocol="ftp">
+				<hostname>ftp.linux.org.tr</hostname>
+				<country>TR</country>
+				<login>true</login>
+				<username>anonymous</username>
+				<password>anonymous</password>
+				<port>21</port>
+				<path>/pardus/kurulan/2009/</path>
+				<filename>Pardus_2009.iso</filename>
+			</source>
+
+			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
+				<country>TR</country>
 				<login>true</login>
 				<username>anonymous</username>
 				<password>anonymous</password>

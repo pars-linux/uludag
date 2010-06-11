@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './widgetOptCD.ui'
 #
-# Created: Thu Jun 10 04:10:32 2010
+# Created: Fri Jun 11 02:42:43 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!

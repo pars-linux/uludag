@@ -1,18 +1,24 @@
 import xml.dom.minidom
 import urllib2
 
-class Version:
-    pass
+from logger import getLogger
+log = getLogger("VersionManager")
+
+class Version():
+    def __repr__(self):
+	return ' '.join((self.name, self.size, self.id))
 
 class Mirror:
     pass
 
 class VersionManager:
     _versions_file_path = 'versions.xml'
-    _definitions_file_url = 'http://N/A'
+    _definitions_file_url = 'http://www.ahmetalpbalkan.com/versions.xml'
+    proxyHost, proxyIP = '', ''
     
     def __init__(self):
         self.versions = []
+	self.parseDefinitionsFile()
         
     def readFromFile(self):
         try:
@@ -42,7 +48,7 @@ class VersionManager:
     #   + version...
     def parseDefinitionsFile(self):
         self.readFromFile()
-        self.versions = list()
+        self.versions = []
         
         try:
             dom = xml.dom.minidom.parseString(self._xmlContent)
@@ -57,8 +63,9 @@ class VersionManager:
         
         ver.size = self._getText(version.getElementsByTagName("size")[0].childNodes)
         ver.name = self._getText(version.getElementsByTagName("name")[0].childNodes)
+	ver.type = self._getText(version.getElementsByTagName("type")[0].childNodes)
         ver.id = (version.getAttribute("id"))
-        mirrors = version.getElementsByTagName("mirrors")
+        mirrors = version.getElementsByTagName("mirrors")[0].getElementsByTagName("source")
         mirrorList = list()
         for mirror in mirrors:
             mirrorList.append(self._handleMirror(mirror))
@@ -68,16 +75,16 @@ class VersionManager:
         
     def _handleMirror(self, mirror):
         mir = Mirror()
-        fields = ["hostname", "login", "username", "password", "port", 
+        fields = ["hostname", "country", "login", "username", "password", "port",
                   "path", "filename"]
         
         for field in fields:
             value = self._getText(mirror.getElementsByTagName(field)[0].childNodes)
             setattr(mir, field, value)
-        
+
         return mir  
     
-    def updateDefinitionsFile(self):
+    def updateDefinitionsFile(self, loadUpdated = True):
         contents = ''
         try:
             stream = urllib2.urlopen(self._definitions_file_url)
@@ -88,11 +95,32 @@ class VersionManager:
                 else:
                     contents += buf
         except:
-            log.error("Could not reach version definitions URL.")
+	    err = "Could not reach version definitions URL. Check your internet connection."
+            log.error(err)
+	    return False
 
         if contents:
             try:
-                writestream = open(self._versions_file_path, 'w')
-                writestream.close()
+#                writestream = open(self._versions_file_path, 'w')
+#                writestream.close()
+		if loadUpdated:
+		    self.parseDefinitionsFile()
+		return True, None 
             except:
-                log.error("Could not write to version definitions file.")
+		err = 'Could not write to version definitions file.'
+                log.error(err)
+		return False, err
+
+
+    def updateProxy(self, host, ip):
+	self.proxyHost = host
+	self.proxyIP = ip
+
+    def __repr__(self):
+	r = ''
+	for v in self.versions:
+	    r+= ' '.join((v.name, v.size, v.id, '\n'))
+	    for m in v.mirrors:
+		r+= ' '.join(('  ', m.hostname, m.country, m.port, m.username, m.password, m.path, '\n'))
+
+	return r

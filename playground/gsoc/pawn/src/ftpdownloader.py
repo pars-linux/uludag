@@ -1,4 +1,4 @@
-import sys, os, time
+import sys, os, time, math
 from PyQt4.QtNetwork import QFtp
 from PyQt4 import QtCore, QtGui
 from logger import getLogger
@@ -9,10 +9,16 @@ class FTPDownloader(QFtp):
     Mirror object -- a QFtp instance. Transfers files
     in Binary and PASV mode.'''
 
-    speedCalculateInterval = 5.0 # seconds
+    speedCalculateInterval = 3.0 # seconds
+    proxyHost, proxyIP, fsock = None,None,None
+    errorMessage = ''
 
-    def __init__(self, mirror=None, destinationFile=None):
+    statsChanged = QtCore.pyqtSignal(int, int, int, name='statsChanged') # percentageCompleted, downloadSpeed, ETA
+    #, long, int, long, long, 
+
+    def __init__(self, destinationFile=None, mirror=None):
 	QFtp.__init__(self) # TODO: or parent? solve this.
+	self.updateProxy()
 
 	self.mirror = mirror
 	self.filePath = destinationFile
@@ -27,10 +33,16 @@ class FTPDownloader(QFtp):
     def setMirror(self, mirror):
 	self.mirror = mirror
 
+    def updateProxy(self, host=None, ip=None):
+	if host: self.proxyHost = host
+	if ip: self.proxyIP = ip
+	
     def setDestinationPath(self, destinationFile):
 	self.filePath = destinationFile
 
     def startTransfer(self):
+	log.debug("Starting transfer...")
+
 	if self.downloading:
 	    return
 
@@ -41,6 +53,10 @@ class FTPDownloader(QFtp):
         self.cd(self.mirror.path)
 
 	self.initializeDownload()
+
+	if self.proxyHost and self.proxyIP:
+	    self.setProxy(self.proxyHost, long(self.proxyIP)) #QFtp method
+	    
 	self.initializeFile()
 
         self.get(self.mirror.filename) #start the transfer
@@ -66,10 +82,14 @@ class FTPDownloader(QFtp):
 
     def logCommandFinished(self, id, error):
 	if error:
-	    log.error("FTP Error in command "+str(id)+". "+self.errorString())
+	    self.errorMessage = "FTP Error: "+self.errorString().replace('\n', '')
+	    log.error(self.errorMessage)
+	else:
+	    log.debug('Command finished: %d' % id)
 
     def traceTransferProgress(self, transferredSize, totalSize):
 	self.downloading = True
+	self.percentageCompleted = 100.0*transferredSize/totalSize
 
 	if self.packetCounter == 0:
 	    self.totalBytes = totalSize # TODO: Discuss is it faster w/o 'if'?
@@ -78,9 +98,10 @@ class FTPDownloader(QFtp):
 	    self.downloadSpeed = (transferredSize-self.initialBytes) / (time.time()-self.timeCounter)
 	    self.timeCounter = time.time()
 	    self.initialBytes = transferredSize
-	    #print self.downloadSpeed/1024, 'kilobytes/sec --', self.percentageCompleted, '%--', 'ETA:%d sec (%d min).'% (self.ETA, self.ETA/60)
+	    print self.downloadSpeed/1024, 'kilobytes/sec --', self.percentageCompleted, '%--', 'ETA:%d sec (%d min).'% (self.ETA, self.ETA/60)
 
-	self.percentageCompleted = 100.0*transferredSize/totalSize
+	    self.statsChanged.emit(int(self.percentageCompleted*100), int(math.floor(self.downloadSpeed)), int(self.ETA))
+
 	try:
 	    self.ETA = (totalSize-transferredSize)/self.downloadSpeed #seconds
 	except ZeroDivisionError:
@@ -98,12 +119,13 @@ class FTPDownloader(QFtp):
 	    self.averageSpeed = 0 #ZeroDivisionError
 	
 	if error:
-	    log.error("FTP transfer completed with errors: "+self.errorString())
+	    self.errorMessage = "Interrupted. "+self.errorString().replace('\n', '')
+	    log.error(self.errorMessage)
 	    self.cleanCorruptFile()
 	else:
-	    log.info("FTP transfer completed in %s seconds. (%f kb/s) %d packets."  % (self.timeCompleted, self.averageSpeed/1024.0, self.packetCounter))
+	    log.debug("FTP transfer completed in %s seconds. (%f kb/s) %d packets."  % (self.timeCompleted, self.averageSpeed/1024.0, self.packetCounter))
 
-	if not self.fsock.closed:
+	if self.fsock and (not self.fsock.closed):
 	    self.fsock.close()
 
     def logChangeState(self, changed):
@@ -115,4 +137,13 @@ class FTPDownloader(QFtp):
 
     def cleanCorruptFile(self):
 	"Removes partially completed local file after a bad transfer."
+	log.debug('Corrupt file has been deleted.')
 	os.remove(self.filePath)
+
+    def connectGui(self, gui):
+	QtCore.QObject.connect(self, QtCore.SIGNAL('stateChanged(int)'), gui.slotStateChange)
+	QtCore.QObject.connect(self, QtCore.SIGNAL('done(bool)'), gui.slotProcessDone)
+	QtCore.QObject.connect(self, QtCore.SIGNAL('statsChanged(int, int, int)'), gui.slotStatsChange)
+	QtCore.QObject.connect(self, QtCore.SIGNAL('dataTransferProgress(qint64,qint64)'), gui.slotTransferProgress)
+
+	QtCore.QObject.connect(self, QtCore.SIGNAL('dataTransferProgress(qint64,qint64)'), self.traceTransferProgress)

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>397</width>
-    <height>218</height>
+    <width>395</width>
+    <height>216</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@
        <widget class="QComboBox" name="comboDrive"/>
       </item>
       <item>
-       <widget class="QLabel" name="lblDriveFreeSize">
+       <widget class="QLabel" name="lblDriveFreeSpace">
         <property name="text">
          <string>GB free</string>
         </property>
@@ -51,6 +51,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
        <widget class="QSlider" name="sizeSlider">
+        <property name="singleStep">
+         <number>1</number>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -75,7 +78,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lblFreeSpace">
+       <widget class="QLabel" name="lblFreeLeft">
         <property name="text">
          <string>GB free</string>
         </property>
@@ -108,7 +111,7 @@
      </widget>
     </item>
     <item row="6" column="1">
-     <widget class="QLineEdit" name="passwordLineEdit">
+     <widget class="QLineEdit" name="txtPassword">
       <property name="echoMode">
        <enum>QLineEdit::Password</enum>
       </property>

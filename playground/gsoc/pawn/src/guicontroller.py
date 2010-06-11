@@ -6,9 +6,11 @@ import gui.stepConfiguration as stepConfiguration
 import gui.stepSource as stepSource
 import gui.stepOptISO as stepOptISO
 import gui.stepOptCD as stepOptCD
+import gui.stepOptInternet as stepOptInternet
+import gui.stepDownloading as stepDownloading
 
 class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
-    steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD] # step screen widgets
+    steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD, stepOptInternet, stepDownloading] # step screen widgets
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):
@@ -34,7 +36,7 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 
     def populateWidgets(self):
 	for step in self.steps:
-	    self.stackedWidget.addWidget(step.Widget())
+	    self.stackedWidget.addWidget(step.Widget(self.mainEngine))
 
     def	proceedScreen(self, index):
 	print 'requested to proceed to', index
@@ -69,7 +71,7 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 		self.jumpScreen(self.historyStack.pop())
 
     def goFinish(self):
-	print 'Finish!!!11'
+	print 'Finish!!!!!'
 
     def onScreenChange(self):
 	self.updateNavButtons()
