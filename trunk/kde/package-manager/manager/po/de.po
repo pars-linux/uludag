@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-03 09:47+0300\n"
+"POT-Creation-Date: 2010-06-11 16:49+0300\n"
 "PO-Revision-Date: 2010-01-15 00:20+0100\n"
 "Last-Translator: Stefan Wilhelm <sw 1976 de {at} google mail dot com>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -19,8 +19,9 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:285
-#: .tmp/mainwidget.py:297 .tmp/ui_mainwindow.py:33
+#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:299
+#: .tmp/mainwidget.py:311 .tmp/package-manager.desktop.in.h:2
+#: .tmp/packagemanager-helper.desktop.in.h:2 .tmp/ui_mainwindow.py:33
 msgid "Package Manager"
 msgstr "Paket-Manager"
 
@@ -60,7 +61,7 @@ msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden aktualisi
 msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Sie müssen die folgenden System-Dienste <b>neu starten</b>, damit diese Wirkung zeigen:"
 
-#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:245 .tmp/mainwidget.py:248
+#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:259 .tmp/mainwidget.py:262
 #: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi Fehler"
@@ -98,39 +99,39 @@ msgstr "Hilfe des Paket Managers"
 msgid "Show main window"
 msgstr "Hauptfenster zeigen"
 
-#: .tmp/mainwidget.py:64
+#: .tmp/mainwidget.py:66
 msgid "All Packages are up to date"
 msgstr ""
 
-#: .tmp/mainwidget.py:116
+#: .tmp/mainwidget.py:123
 msgid "All Updates"
 msgstr "Alle Aktualisierungen"
 
-#: .tmp/mainwidget.py:117
+#: .tmp/mainwidget.py:124
 msgid "Security Updates"
 msgstr "Sicherheitsupdates"
 
-#: .tmp/mainwidget.py:118
+#: .tmp/mainwidget.py:125
 msgid "Critical Updates"
 msgstr "Kritische Updates"
 
-#: .tmp/mainwidget.py:239
+#: .tmp/mainwidget.py:253
 msgid "Network Error"
 msgstr "Netzwerkfehler"
 
-#: .tmp/mainwidget.py:240
+#: .tmp/mainwidget.py:254
 msgid "Please check your network connections and try again."
 msgstr "Bitte prüfen Sie Ihre Netzwerkverbindung und versuchen Sie es noch einmal."
 
-#: .tmp/mainwidget.py:242
+#: .tmp/mainwidget.py:256
 msgid "Authorization Error"
 msgstr "Authorisationsfehler"
 
-#: .tmp/mainwidget.py:243
+#: .tmp/mainwidget.py:257
 msgid "You are not authorized for this operation."
 msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 
-#: .tmp/mainwidget.py:246
+#: .tmp/mainwidget.py:260
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Paket nicht gefunden. Möglicherweise ist es im Depot aktualisiert oder entfernt worden. Bitte versuchen Sie die Depot-Information zu aktualisieren."
 
@@ -171,6 +172,14 @@ msgstr "Upgrades anzeigen"
 msgid "Package Manager Settings"
 msgstr "Einstellungen des Paket Managers"
 
+#: .tmp/package-manager.desktop.in.h:1
+msgid "Add or Remove Software"
+msgstr ""
+
+#: .tmp/package-manager.desktop.in.h:3
+msgid "PiSi Package Manager Graphical User Interface"
+msgstr ""
+
 #: .tmp/packagedelegate.py:48
 msgid "critical"
 msgstr "kritisch"
@@ -203,6 +212,11 @@ msgstr "Paketgrösse:"
 #: .tmp/packagedelegate.py:70
 msgid "Installed Version:"
 msgstr "Installierte Version"
+
+#: .tmp/packagemanager-helper.desktop.in.h:1
+#, fuzzy
+msgid "Add/Remove/Update Packages"
+msgstr "Paket(e) entfernen"
 
 #: .tmp/pm-install.py:47
 msgid "%prog packages_to_install"
@@ -299,7 +313,7 @@ msgstr "Depot wird aktualisiert"
 msgid "Updating Repository(s)"
 msgstr "Depot wird aktualisiert"
 
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:104
+#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:107
 #: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Paket(e) installieren"
@@ -348,7 +362,7 @@ msgstr "Ausgewählte Paket(e) sind zu entfernen:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:101
+#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Erforderliche Pakete, die zusätzlich installiert werden:"
 
@@ -440,28 +454,28 @@ msgstr "Webbrowser"
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/ui_basketdialog.py:99
+#: .tmp/ui_basketdialog.py:102
 msgid "Basket"
 msgstr "Korb"
 
-#: .tmp/ui_basketdialog.py:100
+#: .tmp/ui_basketdialog.py:103
 msgid "Selected package(s) for install:"
 msgstr "Ausgewählte Pakete zur Installation:"
 
-#: .tmp/ui_basketdialog.py:102
+#: .tmp/ui_basketdialog.py:105
 msgid "Total Size:"
 msgstr "Gesamtgrösse:"
 
-#: .tmp/ui_basketdialog.py:103
+#: .tmp/ui_basketdialog.py:106
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
 # Zweifel..
-#: .tmp/ui_basketdialog.py:105
+#: .tmp/ui_basketdialog.py:108
 msgid "Download Size:"
 msgstr "Download Grösse:"
 
-#: .tmp/ui_basketdialog.py:106
+#: .tmp/ui_basketdialog.py:109
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
@@ -739,32 +753,20 @@ msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklic
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Proxy-Server verwenden"
+#~ msgid "Reverse package selections"
+#~ msgstr "Paketmarkierungen invertieren"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Installer ist schon gestartet"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+#~ msgid "Installing %1"
+#~ msgstr "%1 wird installiert"
 
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Max. Bandbreite:"
+#~ msgid "Package Installer"
+#~ msgstr "Paket Installer"
 
-#~ msgid "Update check"
-#~ msgstr "Updateüberprüfung"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(0 für kein Limit)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cache leeren"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Löschen"
+#~ msgid "Maintainer"
+#~ msgstr "Aktueller Betreuer"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -779,17 +781,29 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Aktueller Betreuer"
+#~ msgid "Delete"
+#~ msgstr "Löschen"
 
-#~ msgid "Package Installer"
-#~ msgstr "Paket Installer"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "%1 wird installiert"
+#~ msgid "Clear Cache"
+#~ msgstr "Cache leeren"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Installer ist schon gestartet"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(0 für kein Limit)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Paketmarkierungen invertieren"
+#~ msgid "Update check"
+#~ msgstr "Updateüberprüfung"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Max. Bandbreite:"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Proxy-Server verwenden"
