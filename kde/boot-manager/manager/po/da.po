@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:46+0300\n"
 "PO-Revision-Date: 2009-08-18 22:32+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <  pardus-translators@pardus.org.tr>\n"
@@ -17,7 +17,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr ""
+
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
+#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Opstartsindlæser"
 
@@ -43,18 +48,17 @@ msgid ""
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
 "Der er ikke nogen pakker der kan agere backend for dette program.\n"
-"Kontroller venligst at de nødvendige pakker er installeret og "
-"konfigureret korrekt."
+"Kontroller venligst at de nødvendige pakker er installeret og konfigureret korrekt."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Alle elementer"
 
-#: .tmp/bootmanager/main.py:303
+#: .tmp/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Vil du slette '%1'?"
 
-#: .tmp/bootmanager/main.py:334
+#: .tmp/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Adgang nægtet."
 
@@ -87,11 +91,8 @@ msgid "Ramdisk File"
 msgstr "Ramdisk fil"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Fil som indeholder et minimalt operativsystem til indlæsning af "
-"kernemoduler."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Fil som indeholder et minimalt operativsystem til indlæsning af kernemoduler."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -101,15 +102,15 @@ msgstr "Opstarts muligheder"
 msgid "Boot options for operating system."
 msgstr "Opstarts muligheder for operativsystemet."
 
-#: .tmp/ui_item.py:65
+#: .tmp/ui_item.py:69
 msgid "Set or unset entry as default boot entry."
 msgstr "Aktiver eller deaktivér punktet som værende standard opstartspunkt"
 
-#: .tmp/ui_item.py:66
+#: .tmp/ui_item.py:70
 msgid "Edit"
 msgstr "Rediger"
 
-#: .tmp/ui_item.py:67
+#: .tmp/ui_item.py:71
 msgid "Delete"
 msgstr "Slet"
 
@@ -117,8 +118,6 @@ msgstr "Slet"
 msgid "Add New"
 msgstr "Tilføj ny"
 
-#: .tmp/ui_options.py:36
+#: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Visningstid for opstartsmenuen:"
-
-

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: boot-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:46+0300\n"
 "PO-Revision-Date: 2009-07-12 11:16+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -16,7 +16,12 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr ""
+
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
+#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Starthanteraren"
 
@@ -41,19 +46,18 @@ msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
 msgstr ""
-"Det finns inte något paket som tillhandahåller bakände för det här "
-"programmet.\n"
+"Det finns inte något paket som tillhandahåller bakände för det här programmet.\n"
 "Vänligen se till att paketen är rätt installerade och inställda."
 
 #: .tmp/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Alla poster"
 
-#: .tmp/bootmanager/main.py:303
+#: .tmp/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Vill du ta bort '%1'?"
 
-#: .tmp/bootmanager/main.py:334
+#: .tmp/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Åtkomst nekad."
 
@@ -86,11 +90,8 @@ msgid "Ramdisk File"
 msgstr "Ramdiskfil"
 
 #: .tmp/ui_edit.py:141
-msgid ""
-"File that contains a micro operating system for preloading kernel modules."
-msgstr ""
-"Fil som innehåller ett minimalt operativsystem för förladdning av "
-"kärnmoduler."
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "Fil som innehåller ett minimalt operativsystem för förladdning av kärnmoduler."
 
 #: .tmp/ui_edit.py:142
 msgid "Boot Options"
@@ -100,15 +101,15 @@ msgstr "Startalternativ"
 msgid "Boot options for operating system."
 msgstr "Startalternativ för operativsystemet."
 
-#: .tmp/ui_item.py:65
+#: .tmp/ui_item.py:69
 msgid "Set or unset entry as default boot entry."
 msgstr "Aktivera eller avaktivera post som förvalt startalternativ."
 
-#: .tmp/ui_item.py:66
+#: .tmp/ui_item.py:70
 msgid "Edit"
 msgstr "Redigera"
 
-#: .tmp/ui_item.py:67
+#: .tmp/ui_item.py:71
 msgid "Delete"
 msgstr "Ta bort"
 
@@ -116,8 +117,6 @@ msgstr "Ta bort"
 msgid "Add New"
 msgstr "Lägg till ny"
 
-#: .tmp/ui_options.py:36
+#: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Visningstid för startmeny:"
-
-

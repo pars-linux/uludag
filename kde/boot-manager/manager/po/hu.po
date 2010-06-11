@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:46+0300\n"
 "PO-Revision-Date: 2010-06-01 18:48+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -15,7 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr ""
+
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
+#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Boot menedzser"
 
@@ -47,11 +52,11 @@ msgstr ""
 msgid "All Items"
 msgstr "Minden elem"
 
-#: .tmp/bootmanager/main.py:303
+#: .tmp/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Biztosan törölni akarod '%1'?"
 
-#: .tmp/bootmanager/main.py:334
+#: .tmp/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
 
@@ -95,15 +100,15 @@ msgstr "Boot opciók"
 msgid "Boot options for operating system."
 msgstr "Boot opciók az operációs rendszer részére."
 
-#: .tmp/ui_item.py:65
+#: .tmp/ui_item.py:69
 msgid "Set or unset entry as default boot entry."
 msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
 
-#: .tmp/ui_item.py:66
+#: .tmp/ui_item.py:70
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: .tmp/ui_item.py:67
+#: .tmp/ui_item.py:71
 msgid "Delete"
 msgstr "Törlés"
 
@@ -111,6 +116,6 @@ msgstr "Törlés"
 msgid "Add New"
 msgstr "Új hozzáadása"
 
-#: .tmp/ui_options.py:36
+#: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Boot menü várakozási ideje:"

@@ -1,14 +1,14 @@
 # translation to de (german)
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Stefan Wilhelm <sw1976de at googlemail dot com>, 2009.
 # Klemens Häckel <click3d at linuxmail (dot) org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-30 11:24+0300\n"
+"POT-Creation-Date: 2010-06-11 16:46+0300\n"
 "PO-Revision-Date: 2010-01-11 22:24-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -20,7 +20,12 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr ""
+
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
+#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
 msgid "Boot Manager"
 msgstr "Boot-Menü"
 
@@ -52,11 +57,11 @@ msgstr ""
 msgid "All Items"
 msgstr "Alle Elemente"
 
-#: .tmp/bootmanager/main.py:303
+#: .tmp/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Wollen Sie '%1' löschen?"
 
-#: .tmp/bootmanager/main.py:334
+#: .tmp/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Zugriff verweigert."
 
@@ -102,15 +107,15 @@ msgstr "Boot-Optionen"
 msgid "Boot options for operating system."
 msgstr "Boot-Optionen für das Betriebssystem."
 
-#: .tmp/ui_item.py:65
+#: .tmp/ui_item.py:69
 msgid "Set or unset entry as default boot entry."
 msgstr "Als Standard Booteintrag setzen."
 
-#: .tmp/ui_item.py:66
+#: .tmp/ui_item.py:70
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: .tmp/ui_item.py:67
+#: .tmp/ui_item.py:71
 msgid "Delete"
 msgstr "Löschen"
 
@@ -118,6 +123,6 @@ msgstr "Löschen"
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
-#: .tmp/ui_options.py:36
+#: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Zeit, die das Bootmenü angezeigt wird:"
