@@ -49,6 +49,7 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 		self.jumpScreen(index)
 		#print 'appended', self.historyStack
 
+
     def jumpScreen(self, index):
 	self.stackedWidget.setCurrentIndex(index)
 	self.onScreenChange() # event
@@ -66,11 +67,10 @@ class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
 	if len(self.historyStack):
 	    curWidget = self.stackedWidget.currentWidget()
 	    if(curWidget.onRollback()):
-		print 'pop', self.historyStack
 		self.jumpScreen(self.historyStack.pop())
 
     def goFinish(self):
-	print 'Finish!!!!!'
+	pass
 
     def onScreenChange(self):
 	self.updateNavButtons()
