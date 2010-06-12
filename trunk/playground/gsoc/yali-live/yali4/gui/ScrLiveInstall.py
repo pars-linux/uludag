@@ -211,8 +211,18 @@ Have fun!
         # run dbus in chroot
         yali4.sysutils.chrootDbus()
 
+        #Remove Autologin for default Live user pars
         pars=yali4.users.User("pars")
         pars.setAutoLogin(False)
+
+        #Remove autologin as root for virtual terminals
+        inittablive = os.path.join(consts.target_dir,"etc/inittab")
+        inittab = file(inittablive).read()
+        inittab = inittab.replace("--autologin root ","")
+        f = file(inittablive,"w")
+        f.write(inittab)
+        f.close()
+    
 
         ctx.yali.info.updateMessage(_("Configuring packages.."))
         qevent = InstallEvent(QEvent.User, EventAllFinished)
