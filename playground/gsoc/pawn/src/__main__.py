@@ -4,6 +4,7 @@ from PyQt4 import QtGui
 from guicontroller import PaWnGui
 from ftpdownloader import FTPDownloader
 from versionmanager import VersionManager
+from compatibility import Compatibility
 
 class Config(object):
     def __repr__(self, repr = ''):
@@ -14,6 +15,7 @@ class Config(object):
 class PaWn():
     def __init__(self):
 	self.config = Config()
+	self.compatibility = Compatibility()
 	self.versionManager = VersionManager()
 	self.initFTP()
 
