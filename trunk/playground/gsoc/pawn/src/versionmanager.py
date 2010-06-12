@@ -112,7 +112,6 @@ class VersionManager():
 	self.http.close()
 
     def	updateProgress(self, header):
-	print 'ready!'
 	self.updateContents += self.http.readAll()
 
     def updateFinished(self, bool):
