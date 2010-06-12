@@ -15,7 +15,7 @@ class LogicalDisk():
 
     def __repr__(self):
 	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.FreeSpace, self.Size, self.Path)))
-	
+
 
 class Compatibility():
 
@@ -26,33 +26,35 @@ class Compatibility():
     def __init__(self):
 
 	try:
-	    import wmi
+	    from wmi import wmi
 	    self.wmi = wmi.WMI()
 	    self.winArchitecture()
 	    self.winTotalMemory()
 	    self.winPopulateDisks()
+	    log.debug('Running on Windows.')
 	except (NameError, ImportError) as e:
+	    log.debug('Running on Linux.')
 	    # TODO: Windows systems without WMI (ME, 98, NT, 3.1 checks)
 	    self.wmi = None
 	    self.unixTotalMemory()
 	    self.unixArchitecture()
 	    self.unixPopulateDisks()
 
-	log.info('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
+	log.debug('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
 
     def winArchitecture(self):
 	if(self.wmi):
-	        if(wmiDriver.Win32_Processor(Architecture = 0x0)):
+	        if(self.wmi.Win32_Processor(Architecture = 0x0)):
 		    name = 'x86'
 		    bits = 32
-		elif(wmiDriver.Win32_Processor(Architecture = 0x9)):
+		elif(self.wmi.Win32_Processor(Architecture = 0x9)):
 		    name = 'x64'
 		    bits = 64
 		else:
 		    name = 'Intel Itanium, MIPS or PowerPC'
 		    bits = 32
 
-		self.architectureBit, self.architectureName = result, name
+		self.architectureBit, self.architectureName = bits, name
 		self.os = 'Windows'
 
     def unixArchitecture(self):
@@ -80,18 +82,18 @@ class Compatibility():
 	file.close()
 
     def winTotalMemory(self):
-	cs = wmi.Win32_ComputerSystem()
+	cs = self.wmi.Win32_ComputerSystem()
 	totalMemory = None
 	for o in cs:
 	    if o.TotalPhysicalMemory != None:
 		totalMemory = long(o.TotalPhysicalMemory.encode('utf8'))
 		break
-	
+
 	self.totalMemory = totalMemory
 
     def winPopulateDisks(self):
 	self.disks = []
-	for disk in wmiDriver.Win32_LogicalDisk(DriveType=3):
+	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
 	    self.disks.append(LogicalDisk(disk.DeviceID, disk.FreeSpace, disk.Size, disk.DeviceID))# #Caption, Size, FreeSpace, FileSystem
 
 
