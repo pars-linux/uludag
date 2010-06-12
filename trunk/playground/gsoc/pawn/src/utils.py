@@ -8,7 +8,7 @@ def humanReadableSize(bytes):
 	x += 1
 	part = bytes & 0x3ff
 	bytes >>= 10
-    return '%d.%d %s' % (bytes, part, sizeUnits[x])
+    return '%d.%d %s' % (bytes, part/10, sizeUnits[x])
 
 def humanReadableTime(seconds):
     if seconds>=24*60*60:
