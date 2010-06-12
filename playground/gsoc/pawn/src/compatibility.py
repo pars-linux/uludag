@@ -79,7 +79,7 @@ class Compatibility():
 
     def unixPopulateDisks(self):
 	self.disks = []
-	for disk in commands.getstatusoutput('df')[1].split('\n')[1:]:
+	for disk in commands.getstatusoutput('df --block-size=1')[1].split('\n')[1:]:
 	    p=disk.split()
 	    name = p[0]
 	    free = long(p[3])

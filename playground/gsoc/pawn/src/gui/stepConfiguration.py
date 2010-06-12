@@ -1,4 +1,6 @@
+import math
 from gui.stepTemplate import StepWidget
+from utils import humanReadableSize
 from PyQt4 import QtGui,QtCore
 
 from gui.widgetConfiguration import Ui_widgetConfiguration
@@ -6,8 +8,8 @@ from gui.widgetConfiguration import Ui_widgetConfiguration
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Configure Your Pardus"
 
-    defaultSize = 5
-    minSize = 3
+    defaultSize = 4*1024*1024*1024
+    minSize = 3*1024*1024*1024
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
@@ -21,49 +23,71 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.mainEngine = mainEngine
 	self.populateDrives()
 
-    def driveChanged(self, index):
-	free = self.freeSpaceOnDrive()
-	self.gui.lblDriveFreeSpace.setText('%d GB Free' % free)
 
-	self.updateSliderRange()
+    def driveChanged(self, index):
+	h=humanReadableSize
+	free = self.freeSpaceOnDrive()
+	total = self.totalSpaceOnDrive()
+	self.gui.lblDriveFreeSpace.setText('%s free' % (humanReadableSize(free)))
+
 	self.updateProgressBarRange()
+
+	percentage = math.floor((self.defaultSize-self.minSize)*100/(free-self.minSize)*1.0)
+
+	self.gui.sizeSlider.setValue(percentage)
+
 
 
     def sizeChanged(self, value):
+	h=humanReadableSize
 	free = self.freeSpaceOnDrive()
-	value = self.gui.sizeSlider.value()
-	freeLeft = free-value
-	
-	self.gui.pbFreeSpace.setValue(free+value)
-	self.gui.lblFreeLeft.setText('%d GB Free' % freeLeft)
-	self.gui.lblSize.setText('%d GB' % self.gui.sizeSlider.value())
-	
+	total = self.totalSpaceOnDrive()
+	sliderValue = self.gui.sizeSlider.value()
 
-    def updateSliderRange(self):
-	free = self.freeSpaceOnDrive()
+	self.tmpSize = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
+	percentUsed = (total-free+(self.tmpSize))*100/(total*1.0)
 
-	self.gui.sizeSlider.setMinimum(self.minSize)
-	self.gui.sizeSlider.setMaximum(free)
-	self.gui.sizeSlider.setValue(self.defaultSize)
+	size = self.tmpSize
+
+	print percentUsed
+	if (percentUsed>100):
+	    percentUsed = 99
+
+	if (self.tmpSize > free):
+	    size = free
+
+	self.gui.pbFreeSpace.setValue(percentUsed)
+	self.gui.lblFreeLeft.setText('%s Free' % h(free-size))
+	self.gui.lblSize.setText('%s' % h(size))
+	
 
     def updateProgressBarRange(self):
-	total = self.totalSpaceOnDrive()
-
 	self.gui.pbFreeSpace.setMinimum(0)
-	self.gui.pbFreeSpace.setMaximum(total)
+	self.gui.pbFreeSpace.setMaximum(99)
 
     def freeSpaceOnDrive(self):
-	return 30 # TODO: !
+	drive = self.getSelectedDrive()
+
+	if drive: return drive.FreeSpace
+	else: return 0
+
 
     def totalSpaceOnDrive(self):
-	return 100 # TODO: !
+	drive = self.getSelectedDrive()
+	
+	if drive: return drive.Size
+	else: return 0
 
     def populateDrives(self):
-	drives = ['C:', 'D:', 'E:']
-
 	self.gui.comboDrive.clear()
-	for drive in drives:
-	    self.gui.comboDrive.addItem(drive)
+	for disk in self.mainEngine.compatibility.disks:
+	    self.gui.comboDrive.addItem(disk.DeviceID)
+
+    def getSelectedDrive(self):
+	for disk in self.mainEngine.compatibility.disks:
+	    if disk.DeviceID == self.gui.comboDrive.currentText():
+		return disk
+	return None
 
     def onEnter(self):
 	self.gui.txtPassword.setText('')
@@ -78,17 +102,20 @@ class Widget(QtGui.QWidget, StepWidget):
 	password = self.gui.txtPassword.text()
 	retypePassword = self.gui.txtRetypePassword.text()
 
-	if not username:  # TODO: other limitations?
-	    errorText += 'Please enter a username.\n'
-
-	if not password:
-	    errorText += 'Please enter a password.\n'
-
-	if not retypePassword :
-	    errorText += 'Please retype the password.\n'
+	if self.getSelectedDrive().FreeSpace < self.tmpSize:
+	    errorText += 'You do not have enough (%s required) free space on current drive.\n' % humanReadableSize(self.tmpSize)
 	else:
-	    if password != retypePassword:
-		errorText += 'Passwords do not match. Be careful.'
+	    if not username:  # TODO: other limitations?
+		errorText += 'Please enter a username.\n'
+
+	    if not password:
+		errorText += 'Please enter a password.\n'
+
+	    if not retypePassword :
+		errorText += 'Please retype the password.\n'
+	    else:
+		if password != retypePassword:
+		    errorText += 'Passwords do not match. Be careful.'
 
 	if errorText:
 	    error = QtGui.QMessageBox(self)

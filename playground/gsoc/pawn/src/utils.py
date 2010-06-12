@@ -2,13 +2,14 @@ sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB']
 timeUnits = ['sec', 'min', 'hr', 'day(s)']
 
 def humanReadableSize(bytes):
+    bytes = long(bytes)
     x = 0
     part = 0
-    while bytes >= 1024:
+    while bytes/1024>0:
 	x += 1
-	part = bytes & 0x3ff
+	part = int((bytes % 1024)/1024.0*100)
 	bytes >>= 10
-    return '%d.%d %s' % (bytes, part/10, sizeUnits[x])
+    '%d.%d %s' % (bytes, part, sizeUnits[x])
 
 def humanReadableTime(seconds):
     if seconds>=24*60*60:
