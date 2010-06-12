@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pardus ver="1.0" lastUpdated="24/01/2010">
 	<version id="pardus2009.2">
-		<name>Pardus 2009.2 Geronticus eremita (32 bit)</name>
+		<name>Pardus 2009.2 Geronticus eremita (64 bit)</name>
 		<size>713031680</size>
-		<type>32bit</type>
+		<type>64-bit</type>
+		<minmemory>268435456</minmemory>
+		<memory>536870912</memory>
+		<minspace>1258291200</minspace>
+		<space>4194304000</space>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
@@ -21,7 +25,11 @@
 	<version id="pardus2009.1">
 		<name>Pardus 2009.1 Anthropoides virgo (32 bit)</name>
 		<size>716177408</size>
-		<type>32bit</type>
+		<type>32-bit</type>
+		<minmemory>268435456</minmemory>
+		<memory>536870912</memory>
+		<minspace>1258291200</minspace>
+		<space>4194304000</space>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.pardus.org.tr</hostname>
@@ -39,7 +47,11 @@
 	<version id="pardus2009">
 		<name>Pardus 2009 (32 bit)</name>
 		<size>720156672</size>
-		<type>32bit</type>
+		<type>32-bit</type>
+		<minmemory>268435456</minmemory>
+		<memory>536870912</memory>
+		<minspace>1258291200</minspace>
+		<space>4194304000</space>
 		<mirrors>
 			<source type="default" protocol="ftp">
 				<hostname>ftp.linux.org.tr</hostname>

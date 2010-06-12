@@ -7,7 +7,7 @@ log = getLogger("VersionManager")
 
 class Version():
     def __repr__(self):
-	return ' '.join((self.name, self.size, self.id))
+	return ' '.join((self.name, self.size, self.id, self.minmemory, self.memory))
 
 class Mirror:
     pass
@@ -79,11 +79,13 @@ class VersionManager():
 
     def _handleVersion(self, version):
         ver = Version()
-        
-        ver.size = self._getText(version.getElementsByTagName("size")[0].childNodes)
-        ver.name = self._getText(version.getElementsByTagName("name")[0].childNodes)
-	ver.type = self._getText(version.getElementsByTagName("type")[0].childNodes)
-        ver.id = (version.getAttribute("id"))
+        fields = ["size", "name", "type", "minmemory", "memory", "minspace",
+                  "space"]
+
+	for field in fields:
+	    value =self._getText(version.getElementsByTagName(field)[0].childNodes)
+	    setattr(ver, field, value)
+
         mirrors = version.getElementsByTagName("mirrors")[0].getElementsByTagName("source")
         mirrorList = list()
         for mirror in mirrors:
