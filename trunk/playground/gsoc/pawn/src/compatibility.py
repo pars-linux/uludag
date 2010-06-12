@@ -1,4 +1,4 @@
-import psutil, commands
+import commands
 
 from logger import getLogger
 log = getLogger("Compatibility")
@@ -24,22 +24,23 @@ class Compatibility():
     os, wmi = None, None
 
     def __init__(self):
-	self.getTotalMemory()
 
 	try:
 	    import wmi
 	    self.wmi = wmi.WMI()
-	    self.winArchitectureBit()
+	    self.winArchitecture()
+	    self.winTotalMemory()
 	    self.winPopulateDisks()
 	except (NameError, ImportError) as e:
 	    # TODO: Windows systems without WMI (ME, 98, NT, 3.1 checks)
 	    self.wmi = None
-	    self.unixArchitectureBit()
+	    self.unixTotalMemory()
+	    self.unixArchitecture()
 	    self.unixPopulateDisks()
 
 	log.info('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
 
-    def winArchitectureBit(self):
+    def winArchitecture(self):
 	if(self.wmi):
 	        if(wmiDriver.Win32_Processor(Architecture = 0x0)):
 		    name = 'x86'
@@ -54,7 +55,7 @@ class Compatibility():
 		self.architectureBit, self.architectureName = result, name
 		self.os = 'Windows'
 
-    def unixArchitectureBit(self):
+    def unixArchitecture(self):
 	out = commands.getstatusoutput('grep lm /proc/cpuinfo')[1] #if lm exists x64.
 
 	if(out):
@@ -68,10 +69,25 @@ class Compatibility():
 
 	self.os = 'Windows'
 
-    def getTotalMemory(self):
-	self.totalMemory = psutil.TOTAL_PHYMEM # cross-platform
-	return self.totalMemory
+    def unixTotalMemory(self):
+	file = open('/proc/meminfo')
+	if file:
+	    self.totalMemory = long(file.read().split('\n')[0].split()[1])*1024
+	    #\n splitting lines of /proc/meminfo
+	    #[0] is MemTotal:   123123123 kB line.
+	    #.split()[1] gets 123123123 part
+	    #1024 for kb to byte conversion
+	file.close()
 
+    def winTotalMemory(self):
+	cs = wmi.Win32_ComputerSystem()
+	totalMemory = None
+	for o in cs:
+	    if o.TotalPhysicalMemory != None:
+		totalMemory = long(o.TotalPhysicalMemory.encode('utf8'))
+		break
+	
+	self.totalMemory = totalMemory
 
     def winPopulateDisks(self):
 	self.disks = []
