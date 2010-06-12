@@ -1,4 +1,4 @@
-import sys, os, time, math
+import os, time, math
 from PyQt4.QtNetwork import QFtp
 from PyQt4 import QtCore, QtGui
 from logger import getLogger
@@ -97,9 +97,9 @@ class FTPDownloader(QFtp):
 	    self.downloadSpeed = (transferredSize-self.initialBytes) / (time.time()-self.timeCounter)
 	    self.timeCounter = time.time()
 	    self.initialBytes = transferredSize
-	    print self.downloadSpeed/1024, 'kilobytes/sec --', self.percentageCompleted, '%--', 'ETA:%d sec (%d min).'% (self.ETA, self.ETA/60)
 
-	    self.statsChanged.emit(int(self.percentageCompleted*100), int(math.floor(self.downloadSpeed)), int(self.ETA))
+	    self.statsChanged.emit(int(self.percentageCompleted*100),
+		int(math.floor(self.downloadSpeed)), int(self.ETA))
 
 	try:
 	    self.ETA = (totalSize-transferredSize)/self.downloadSpeed #seconds
