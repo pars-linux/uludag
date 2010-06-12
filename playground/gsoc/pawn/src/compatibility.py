@@ -4,15 +4,17 @@ from logger import getLogger
 log = getLogger("Compatibility")
 
 class LogicalDisk():
-    DeviceID, FreeSpace, Size = None, 0, 0
+    DeviceID, FreeSpace, Size, Path = None, 0, 0, None
 
-    def __init__(self, id, free, size):
+    def __init__(self, id, free, size, path = None):
 	self.DeviceID = id
 	self.FreeSpace = free
 	self.Size = size
+	self.Path = path
+
 
     def __repr__(self):
-	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.FreeSpace, self.Size)))
+	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.FreeSpace, self.Size, self.Path)))
 	
 
 class Compatibility():
@@ -74,14 +76,21 @@ class Compatibility():
     def winPopulateDisks(self):
 	self.disks = []
 	for disk in wmiDriver.Win32_LogicalDisk(DriveType=3):
-	    self.disks.append(LogicalDisk(DeviceID, disk.FreeSpace, disk.Size))# #Caption, Size, FreeSpace, FileSystem
+	    self.disks.append(LogicalDisk(disk.DeviceID, disk.FreeSpace, disk.Size, disk.DeviceID))# #Caption, Size, FreeSpace, FileSystem
 
 
     def unixPopulateDisks(self):
 	self.disks = []
 	for disk in commands.getstatusoutput('df --block-size=1')[1].split('\n')[1:]:
+	    #--block-size=1  for getting result in bytes
+	    #[1] for .getstatusoutput returns [int status, str output]
+	    #\n separates each logical disk
+	    #[1:] for removing description line from df output.
+
 	    p=disk.split()
 	    name = p[0]
 	    free = long(p[3])
 	    size = long(p[2])+long(p[3])
-	    self.disks.append(LogicalDisk(name,free,size))
+	    path = str(p[5])
+
+	    self.disks.append(LogicalDisk(name,free,size, path))

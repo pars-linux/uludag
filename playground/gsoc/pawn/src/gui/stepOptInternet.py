@@ -149,7 +149,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	report += '%s is prepared for %s architectures.\n\n' % (self.version.name, self.version.type)
 
 	if self.version.type=='64-bit':
-	    print archBit
 	    if archBit==32:
 		report += '!!! '
 		report += 'Your architecture is NOT COMPATIBLE with %s. It is STRONGLY recommended NOT to install.' % self.version.name
