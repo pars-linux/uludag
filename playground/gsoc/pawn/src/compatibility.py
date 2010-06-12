@@ -35,7 +35,7 @@ class Compatibility():
 	    self.unixArchitectureBit()
 	    self.unixPopulateDisks()
 
-	log.info('Architecture is %dbit, %s.' % (self.architectureBit,self.architectureName))
+	log.info('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
 
     def winArchitectureBit(self):
 	if(self.wmi):

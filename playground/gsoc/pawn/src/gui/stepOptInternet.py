@@ -1,7 +1,7 @@
 from gui.widgetOptInternet import Ui_widgetOptInternet
 from gui.stepTemplate import StepWidget
 from PyQt4 import QtGui,QtCore
-from utils import humanReadableSize
+from utils import humanReadableSize as hrS
 from gui.widgetOptInternet import Ui_widgetOptInternet
 
 class Widget(QtGui.QWidget, StepWidget):
@@ -20,6 +20,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.connect(self.gui.btnProxy1, QtCore.SIGNAL('clicked()'), self.setUpdateProxy)
 	self.connect(self.gui.btnProxy2, QtCore.SIGNAL('clicked()'), self.setDownloadProxy)
 	self.connect(self.gui.btnUpdate, QtCore.SIGNAL('clicked()'), self.updateVersions)
+	self.connect(self.gui.btnCheck, QtCore.SIGNAL('clicked()'), self.checkCompatibility)
+
 
 	self.populateVersions()
 
@@ -47,7 +49,7 @@ class Widget(QtGui.QWidget, StepWidget):
     def versionChanged(self, index):
 	if self.gui.comboVersion.currentIndex() > -1:
 	    self.version = self.getVersionByName(self.gui.comboVersion.currentText())
-	    self.gui.lblSize.setText('%s' % humanReadableSize(int(self.version.size)))
+	    self.gui.lblSize.setText('%s' % hrS(int(self.version.size)))
 	    self.populateMirrors(self.version)
 
     def populateMirrors(self, version):
@@ -83,8 +85,17 @@ class Widget(QtGui.QWidget, StepWidget):
 	if not self.version:  # TODO: other limitations?
 	    errorText += 'Please choose a version.\n'
 
-	if not self.mirror:
+	elif not self.mirror:
 	    errorText += 'Please choose a mirror.\n'
+
+	else:
+	    if long(self.version.minspace) > self.mainEngine.config.size:
+		errorText += 'You have reserved %s for installation but %s requires %s of space (recommended %s). Go back and increase installation size.\n' % (hrS(self.mainEngine.config.size), self.version.name, hrS(self.version.minspace), hrS(self.version.space))
+
+	    archBit = self.mainEngine.compatibility.architectureBit
+
+	    if self.version.type=='64-bit' and archBit==32:
+		errorText += '%s is an 64-bit operating system and will not work on your %d-bit architecture. Try installing a 32-bit alternative.'  %(self.version.name, archBit)
 
 	if errorText:
 	    QtGui.QMessageBox.warning(self, 'Warning', errorText, QtGui.QMessageBox.Ok)
@@ -109,3 +120,61 @@ class Widget(QtGui.QWidget, StepWidget):
 	else:
 	    self.gui.btnUpdate.setText('Update Failed')
 	    QtGui.QMessageBox.warning(self, 'Error in Update', self.mainEngine.versionManager.err, QtGui.QMessageBox.Ok)
+
+    def checkCompatibility(self):
+	report = ''
+
+	totalMemory = self.mainEngine.compatibility.totalMemory
+	minmemory = long(self.version.minmemory)
+	memory = long(self.version.memory)
+
+	report += 'Memory (RAM):\n'
+	report += 'You have %s memory. ' % hrS(totalMemory)
+	report += '%s requires at least %s of memory. Recommended is %s.\n\n' % (self.version.name, hrS(memory), hrS(minmemory))
+
+	if totalMemory < minmemory:
+	    report += '!!! '
+	    report += 'YOU DO NOT HAVE ENOUGH MEMORY. (%s) It is strongly recommended not to install.' % hrS(totalMemory)
+	elif totalMemory > memory:
+	    report += 'It is OK to use %s safely.' % self.version.name
+	else:
+	    report += 'You have enough memory to run under minimal conditions but you may have problems during your usage. It is recommended to add memory to your computer.'
+	report += '\n\n'
+
+	archBit = self.mainEngine.compatibility.architectureBit
+	archType = self.mainEngine.compatibility.architectureName
+	
+	report += 'CPU Architecture:\n'
+	report += 'Your CPU has %d-bit (%s) architecture. ' % (archBit, archType)
+	report += '%s is prepared for %s architectures.\n\n' % (self.version.name, self.version.type)
+
+	if self.version.type=='64-bit':
+	    print archBit
+	    if archBit==32:
+		report += '!!! '
+		report += 'Your architecture is NOT COMPATIBLE with %s. It is STRONGLY recommended NOT to install.' % self.version.name
+	    elif archBit==64:
+		report += 'It is safe to use %s with your computer.'  % self.version.name
+	elif self.version.type == '32-bit':
+	    # reserved for future architecture designs.
+	    report += 'It is safe to use %s with your computer.'  % self.version.name
+	report += '\n\n'
+
+	minspace = long(self.version.minspace)
+	space = long(self.version.space)
+	size = self.mainEngine.config.size
+
+	report += 'Free Space:\n'
+	report += 'Your have reserved %s of free space for installation. ' % hrS(size)
+	report += '%s requires %s of free space (recommended %s).\n\n' % (self.version.name, hrS(minspace), hrS(space))
+
+	if size < minspace:
+	    report += '!!! '
+	    report += 'You DO NOT HAVE ENOUGH free space reserved. (%s) It is strongly recommended not to install if you do not have any free space.' % hrS(size)
+	elif size > space:
+	    report += 'It is OK to use %s safely.' % self.version.name
+	else:
+	    report += 'It is OK to use %s. However it is better to reserve more free space for future usage.'
+	
+	if report:
+	    QtGui.QMessageBox.information(self, 'Compatibility Report', report, QtGui.QMessageBox.Ok)

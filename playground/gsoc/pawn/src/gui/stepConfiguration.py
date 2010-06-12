@@ -8,8 +8,8 @@ from gui.widgetConfiguration import Ui_widgetConfiguration
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Configure Your Pardus"
 
-    defaultSize = 4*1024*1024*1024
-    minSize = 3*1024*1024*1024
+    defaultSize = 5*1024*1024*1024
+    minSize = 1.5*1024*1024*1024
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
@@ -44,16 +44,15 @@ class Widget(QtGui.QWidget, StepWidget):
 	total = self.totalSpaceOnDrive()
 	sliderValue = self.gui.sizeSlider.value()
 
-	self.tmpSize = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
-	percentUsed = (total-free+(self.tmpSize))*100/(total*1.0)
+	self.size = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
+	percentUsed = (total-free+(self.size))*100/(total*1.0)
 
-	size = self.tmpSize
+	size = self.size
 
-	print percentUsed
 	if (percentUsed>100):
 	    percentUsed = 99
 
-	if (self.tmpSize > free):
+	if (self.size > free):
 	    size = free
 
 	self.gui.pbFreeSpace.setValue(percentUsed)
@@ -102,8 +101,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	password = self.gui.txtPassword.text()
 	retypePassword = self.gui.txtRetypePassword.text()
 
-	if self.getSelectedDrive().FreeSpace < self.tmpSize:
-	    errorText += 'You do not have enough (%s required) free space on current drive.\n' % humanReadableSize(self.tmpSize)
+	if self.getSelectedDrive().FreeSpace < self.size:
+	    errorText += 'You do not have enough (%s required) free space on current drive.\n' % humanReadableSize(self.size)
 	else:
 	    if not username:  # TODO: other limitations?
 		errorText += 'Please enter a username.\n'
@@ -118,14 +117,13 @@ class Widget(QtGui.QWidget, StepWidget):
 		    errorText += 'Passwords do not match. Be careful.'
 
 	if errorText:
-	    error = QtGui.QMessageBox(self)
-	    error.setWindowTitle("Warning")
-	    error.setText(errorText)
-	    error.show()
+	    QtGui.QMessageBox.warning(self, 'Warning', errorText, QtGui.QMessageBox.Ok)
 	    return False
 
 	self.mainEngine.config.username = username
 	self.mainEngine.config.password = password
+	self.mainEngine.config.drive = self.getSelectedDrive()
+	self.mainEngine.config.size = self.size
 	# TODO: config size and drive
 	return True
 
