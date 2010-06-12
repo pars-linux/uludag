@@ -1,12 +1,13 @@
 import psutil
 
-class Compatability():
+class Compatibility():
 
     totalMemory, architectureBit = None,None
 
-    def __init__(self):
+    def __init__(self)
 	self.totalMemory = psutil.TOTAL_PHYMEM
 	
+	
 
-c=Compatability()
+c=Compatibility()
 print c.totalMemory
