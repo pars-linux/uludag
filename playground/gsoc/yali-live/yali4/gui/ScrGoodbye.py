@@ -87,7 +87,7 @@ don't you?
         ctx.yali.info.updateAndShow(_('<b>Rebooting system. Please wait!</b>'))
 
         # remove cd...
-        if not ctx.yali.install_type == YALI_FIRSTBOOT:
+        if not ctx.yali.install_type in [YALI_FIRSTBOOT, YALI_LIVEINSTALL]:
             ctx.debugger.log("Trying to eject the CD.")
             yali4.sysutils.ejectCdrom()
 
