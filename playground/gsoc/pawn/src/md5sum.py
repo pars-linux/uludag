@@ -19,7 +19,3 @@ class MD5sum():
 	    log.error('Could not open file at %s' % path)
 
 	return m.hexdigest()
-
-
-c = MD5sum()
-print c.encryptFile('utils.py')

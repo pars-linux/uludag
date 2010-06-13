@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './widgetSource.ui'
 #
-# Created: Fri Jun 11 11:58:27 2010
+# Created: Sun Jun 13 15:00:44 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -25,13 +25,19 @@ class Ui_widgetSource(object):
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.verticalLayout_2 = QtGui.QVBoxLayout()
         self.verticalLayout_2.setObjectName("verticalLayout_2")
+        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem)
         self.optInternet = QtGui.QRadioButton(self.verticalLayoutWidget)
         self.optInternet.setChecked(True)
         self.optInternet.setObjectName("optInternet")
         self.verticalLayout_2.addWidget(self.optInternet)
+        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem1)
         self.optCD = QtGui.QRadioButton(self.verticalLayoutWidget)
         self.optCD.setObjectName("optCD")
         self.verticalLayout_2.addWidget(self.optCD)
+        spacerItem2 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
+        self.verticalLayout_2.addItem(spacerItem2)
         self.optISO = QtGui.QRadioButton(self.verticalLayoutWidget)
         self.optISO.setObjectName("optISO")
         self.verticalLayout_2.addWidget(self.optISO)
