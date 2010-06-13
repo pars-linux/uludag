@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -13,61 +13,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
-#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
-#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager/about.py:20
+#: .tmp/networkmanager/about.py:22 .tmp/networkmanager.desktop.in.h:2
 msgid "Network Manager"
 msgstr "Nätverkshanteraren"
-
-#: .tmp/networkmanager.desktop.in.h:1
-msgid "An application for managing network connections."
-msgstr ""
-
-#: .tmp/networkmanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Nuvarande utvecklare"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Utvecklare"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/base.py:195
-msgid "Available Profiles"
-msgstr "Tillgängliga profiler"
-
-#: .tmp/networkmanager/base.py:217
-msgid "All Profiles"
-msgstr "Alla profiler"
-
-#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
-msgid "No Device Found"
-msgstr "Ingen enhet funnen"
-
-#: .tmp/networkmanager/base.py:405
-msgid "No Authentication"
-msgstr "Ingen autentisering"
-
-#: .tmp/networkmanager/base.py:554
-msgid "There is already a profile named '%1'."
-msgstr ""
-
-#: .tmp/networkmanager/base.py:643
-msgid "Do you really want to remove profile %1?"
-msgstr "Vill du verkligen ta bort profil %1?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
@@ -110,25 +62,89 @@ msgstr "Kabel eller enhet är ej ansluten"
 msgid "Access denied"
 msgstr "Åtkomst nekad"
 
-#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
-msgid "Signal Strength"
-msgstr "Signalstyrka"
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/ui_item.py:108
-msgid "Set connection state."
-msgstr "Växla anslutningsläge."
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: .tmp/ui_item.py:109
-msgid "Edit connection"
-msgstr "Redigera anslutning"
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
 
-#: .tmp/ui_item.py:110
-msgid "Delete connection"
-msgstr "Ta bort anslutning"
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
-#: .tmp/ui_item.py:112
-msgid "  %p %"
-msgstr "  %p %"
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Utvecklare"
+
+#: .tmp/networkmanager/base.py:195
+msgid "Available Profiles"
+msgstr "Tillgängliga profiler"
+
+#: .tmp/networkmanager/base.py:217
+msgid "All Profiles"
+msgstr "Alla profiler"
+
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
+msgid "No Device Found"
+msgstr "Ingen enhet funnen"
+
+#: .tmp/networkmanager/base.py:405
+msgid "No Authentication"
+msgstr "Ingen autentisering"
+
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr "Det finns redan en profil med namnet '%1'."
+
+#: .tmp/networkmanager/base.py:643
+msgid "Do you really want to remove profile %1?"
+msgstr "Vill du verkligen ta bort profil %1?"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Dialog"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Detaljer"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Enhet:"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Enhet:"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Välj en operatör"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Operatör:"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN:"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "Kom ihåg PIN-kod för den här anslutningen"
 
 #: .tmp/ui_main.py:342
 msgid "Form"
@@ -226,49 +242,33 @@ msgstr "Nyckel:"
 msgid "Hide Password"
 msgstr "Dölj lösenord"
 
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Växla anslutningsläge."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Redigera anslutning"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Ta bort anslutning"
+
+#: .tmp/ui_item.py:111 .tmp/ui_ap.py:56
+msgid "Signal Strength"
+msgstr "Signalstyrka"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr "Ett program för hantering av nätverksanslutningar"
+
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Värdnamn"
-
-#: .tmp/ui_nmwizard.py:92
-msgid "Dialog"
-msgstr "Dialog"
-
-#: .tmp/ui_nmwizard.py:93
-msgid "Details"
-msgstr "Detaljer"
-
-#: .tmp/ui_nmwizard.py:94
-msgid "IMEI"
-msgstr "IMEI"
-
-#: .tmp/ui_nmwizard.py:95
-msgid "Device"
-msgstr "Enhet:"
-
-#: .tmp/ui_nmwizard.py:96
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: .tmp/ui_nmwizard.py:97
-msgid "Device:"
-msgstr "Enhet:"
-
-#: .tmp/ui_nmwizard.py:98
-msgid "Select an operator"
-msgstr "Välj en operatör"
-
-#: .tmp/ui_nmwizard.py:99
-msgid "Operator:"
-msgstr "Operatör:"
-
-#: .tmp/ui_nmwizard.py:100
-msgid "PIN:"
-msgstr "PIN:"
-
-#: .tmp/ui_nmwizard.py:101
-msgid "Remember PIN for this connection"
-msgstr "Kom ihåg PIN-kod för den här anslutningen"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
