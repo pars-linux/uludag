@@ -34,7 +34,7 @@ msgstr "Auto"
 
 #: .tmp/usermanager.desktop.in.h:1
 msgid "An application for managing user accounts."
-msgstr "Une application pour gérer les comptes des utilisateurs."
+msgstr "Une application de gestion des comptes des utilisateurs."
 
 #: .tmp/usermanager.desktop.in.h:2 .tmp/usermanager/about.py:20
 #: .tmp/usermanager/about.py:22 .tmp/kcm_usermanager.desktop.in.h:1
