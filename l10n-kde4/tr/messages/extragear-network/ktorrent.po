@@ -2763,7 +2763,7 @@ msgstr "KTorrent'in KDE3 sürümünden tüm torrentleri içe aktar"
 
 #: ktorrent/gui.cpp:442
 msgid "Show/Hide KTorrent"
-msgstr "TKorrent Uygulamasını Göster / Gizle"
+msgstr "KTorrent Uygulamasını Göster/Gizle"
 
 #: ktorrent/gui.cpp:447
 msgid "Group View Visible"
