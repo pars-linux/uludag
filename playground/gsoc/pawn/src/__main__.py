@@ -8,7 +8,7 @@ from compatibility import Compatibility
 from md5sum import MD5sum
 
 from logger import getLogger
-log = getLogger("FTPDownloader")
+log = getLogger('PaWn')
 
 class Config(object):
     def __repr__(self, repr = ''):
