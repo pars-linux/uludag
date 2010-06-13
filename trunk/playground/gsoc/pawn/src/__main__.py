@@ -5,6 +5,10 @@ from guicontroller import PaWnGui
 from ftpdownloader import FTPDownloader
 from versionmanager import VersionManager
 from compatibility import Compatibility
+from md5sum import MD5sum
+
+from logger import getLogger
+log = getLogger("FTPDownloader")
 
 class Config(object):
     def __repr__(self, repr = ''):
@@ -17,6 +21,7 @@ class PaWn():
 	self.config = Config()
 	self.compatibility = Compatibility()
 	self.versionManager = VersionManager()
+	self.md5sum = MD5sum()
 	self.initFTP()
 
 	self.gui = PaWnGui(self)

@@ -1,6 +1,6 @@
 import os, time, math
 from PyQt4.QtNetwork import QFtp
-from PyQt4 import QtCore, QtGui
+from PyQt4 import QtCore
 from logger import getLogger
 log = getLogger("FTPDownloader")
 
