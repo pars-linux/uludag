@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -13,61 +13,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
-#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
-#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager/about.py:20
+#: .tmp/networkmanager/about.py:22 .tmp/networkmanager.desktop.in.h:2
 msgid "Network Manager"
 msgstr "Gestionnaire réseau"
-
-#: .tmp/networkmanager.desktop.in.h:1
-msgid "An application for managing network connections."
-msgstr ""
-
-#: .tmp/networkmanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mainteneur actuel"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Développeur"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/base.py:195
-msgid "Available Profiles"
-msgstr "Profils disponibles"
-
-#: .tmp/networkmanager/base.py:217
-msgid "All Profiles"
-msgstr "Tous les profils"
-
-#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
-msgid "No Device Found"
-msgstr "Aucun matériel trouvé"
-
-#: .tmp/networkmanager/base.py:405
-msgid "No Authentication"
-msgstr "Aucune authentification"
-
-#: .tmp/networkmanager/base.py:554
-msgid "There is already a profile named '%1'."
-msgstr ""
-
-#: .tmp/networkmanager/base.py:643
-msgid "Do you really want to remove profile %1?"
-msgstr "Voulez-vous vraiment supprimer le profil %1 ?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
@@ -110,25 +62,89 @@ msgstr "Câble ou matériel débranché."
 msgid "Access denied"
 msgstr "Accès refusé."
 
-#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
-msgid "Signal Strength"
-msgstr "Intensité du signal"
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/ui_item.py:108
-msgid "Set connection state."
-msgstr "Spécifier l'état de connexion."
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: .tmp/ui_item.py:109
-msgid "Edit connection"
-msgstr "Modifier la connexion"
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
 
-#: .tmp/ui_item.py:110
-msgid "Delete connection"
-msgstr "Supprimer la connexion"
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
-#: .tmp/ui_item.py:112
-msgid "  %p %"
-msgstr "  %p %"
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Développeur"
+
+#: .tmp/networkmanager/base.py:195
+msgid "Available Profiles"
+msgstr "Profils disponibles"
+
+#: .tmp/networkmanager/base.py:217
+msgid "All Profiles"
+msgstr "Tous les profils"
+
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
+msgid "No Device Found"
+msgstr "Aucun matériel trouvé"
+
+#: .tmp/networkmanager/base.py:405
+msgid "No Authentication"
+msgstr "Aucune authentification"
+
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr "Il existe déjà un profil nommé « % 1 »."
+
+#: .tmp/networkmanager/base.py:643
+msgid "Do you really want to remove profile %1?"
+msgstr "Voulez-vous vraiment supprimer le profil %1 ?"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Dialog"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Détails"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Matériel"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI :"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Périphérique :"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Choisissez un opérateur"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Opérateur :"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN :"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "Se souvenir du PIN pour cette connexion"
 
 #: .tmp/ui_main.py:342
 msgid "Form"
@@ -226,49 +242,33 @@ msgstr "Clef :"
 msgid "Hide Password"
 msgstr "Cacher le mot de passe"
 
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Spécifier l'état de connexion."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Modifier la connexion"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Supprimer la connexion"
+
+#: .tmp/ui_item.py:111 .tmp/ui_ap.py:56
+msgid "Signal Strength"
+msgstr "Intensité du signal"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr "Une application pour gérer les connexions réseau."
+
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Nom de la machine"
-
-#: .tmp/ui_nmwizard.py:92
-msgid "Dialog"
-msgstr "Dialog"
-
-#: .tmp/ui_nmwizard.py:93
-msgid "Details"
-msgstr "Détails"
-
-#: .tmp/ui_nmwizard.py:94
-msgid "IMEI"
-msgstr "IMEI"
-
-#: .tmp/ui_nmwizard.py:95
-msgid "Device"
-msgstr "Matériel"
-
-#: .tmp/ui_nmwizard.py:96
-msgid "IMEI:"
-msgstr "IMEI :"
-
-#: .tmp/ui_nmwizard.py:97
-msgid "Device:"
-msgstr "Périphérique :"
-
-#: .tmp/ui_nmwizard.py:98
-msgid "Select an operator"
-msgstr "Choisissez un opérateur"
-
-#: .tmp/ui_nmwizard.py:99
-msgid "Operator:"
-msgstr "Opérateur :"
-
-#: .tmp/ui_nmwizard.py:100
-msgid "PIN:"
-msgstr "PIN :"
-
-#: .tmp/ui_nmwizard.py:101
-msgid "Remember PIN for this connection"
-msgstr "Se souvenir du PIN pour cette connexion"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
