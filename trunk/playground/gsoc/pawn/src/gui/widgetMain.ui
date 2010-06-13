@@ -6,47 +6,17 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>602</width>
+    <width>456</width>
     <height>343</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>PArdus Windows iNstaller</string>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>110</y>
-     <width>141</width>
-     <height>221</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="navigationLayout"/>
-  </widget>
-  <widget class="QLabel" name="logo">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>10</y>
-     <width>141</width>
-     <height>91</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LeftToRight</enum>
-   </property>
-   <property name="styleSheet">
-    <string notr="true"/>
-   </property>
-   <property name="text">
-    <string>Logo Label</string>
-   </property>
-  </widget>
   <widget class="QStackedWidget" name="stackedWidget">
    <property name="geometry">
     <rect>
-     <x>160</x>
+     <x>10</x>
      <y>60</y>
      <width>441</width>
      <height>231</height>
@@ -65,7 +35,7 @@
   <widget class="QPushButton" name="btnBack">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>0</x>
      <y>300</y>
      <width>71</width>
      <height>41</height>
@@ -78,7 +48,7 @@
   <widget class="QPushButton" name="btnNext">
    <property name="geometry">
     <rect>
-     <x>530</x>
+     <x>380</x>
      <y>300</y>
      <width>71</width>
      <height>41</height>
@@ -91,7 +61,7 @@
   <widget class="QPushButton" name="btnFinish">
    <property name="geometry">
     <rect>
-     <x>450</x>
+     <x>300</x>
      <y>300</y>
      <width>81</width>
      <height>41</height>
@@ -104,9 +74,9 @@
   <widget class="QLabel" name="lblHeading">
    <property name="geometry">
     <rect>
-     <x>150</x>
+     <x>10</x>
      <y>10</y>
-     <width>541</width>
+     <width>441</width>
      <height>41</height>
     </rect>
    </property>

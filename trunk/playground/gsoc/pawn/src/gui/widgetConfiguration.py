@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './widgetConfiguration.ui'
 #
-# Created: Fri Jun 11 11:58:25 2010
+# Created: Sun Jun 13 15:00:42 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!

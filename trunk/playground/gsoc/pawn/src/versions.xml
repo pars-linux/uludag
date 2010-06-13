@@ -79,4 +79,27 @@
 	    </source>
 	</mirrors>
     </version>
+
+    <version id="md5summer">
+	<name>md5summer</name>
+	<size>907264</size>
+	<type>32-bit</type>
+	<md5sum>6f122df5e2b86bc0bc8885cafe4b9eab</md5sum>
+	<minmemory>0</minmemory>
+	<memory>0</memory>
+	<minspace>907264</minspace>
+	<space>907264</space>
+	<mirrors>
+	    <source type="default" protocol="ftp">
+		<hostname>ftp.pardus.org.tr</hostname>
+		<country>TR</country>
+		<login>true</login>
+		<username>anonymous</username>
+		<password>anonymous</password>
+		<port>21</port>
+		<path>/pub/</path>
+		<filename>md5summer.exe</filename>
+	    </source>
+	</mirrors>
+    </version>
 </pardus>

@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file './widgetDownloading.ui'
 #
-# Created: Fri Jun 11 11:58:25 2010
+# Created: Sun Jun 13 15:00:42 2010
 #      by: PyQt4 UI code generator 4.5.4
 #
 # WARNING! All changes made in this file will be lost!
@@ -78,6 +78,9 @@ class Ui_widgetDownloading(object):
         self.version.setObjectName("version")
         self.formLayout_4.setWidget(0, QtGui.QFormLayout.FieldRole, self.version)
         self.verticalLayout.addLayout(self.formLayout_4)
+        self.btnCheck = QtGui.QPushButton(widgetDownloading)
+        self.btnCheck.setGeometry(QtCore.QRect(330, 170, 105, 31))
+        self.btnCheck.setObjectName("btnCheck")
 
         self.retranslateUi(widgetDownloading)
         QtCore.QMetaObject.connectSlotsByName(widgetDownloading)
@@ -96,4 +99,5 @@ class Ui_widgetDownloading(object):
         self.completed.setText(QtGui.QApplication.translate("widgetDownloading", "0 of 0 MB", None, QtGui.QApplication.UnicodeUTF8))
         self.lblETA.setText(QtGui.QApplication.translate("widgetDownloading", "ETA:", None, QtGui.QApplication.UnicodeUTF8))
         self.ETA.setText(QtGui.QApplication.translate("widgetDownloading", "N/A", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnCheck.setText(QtGui.QApplication.translate("widgetDownloading", "Validate File", None, QtGui.QApplication.UnicodeUTF8))
 
