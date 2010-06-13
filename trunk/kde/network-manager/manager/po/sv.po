@@ -264,7 +264,7 @@ msgstr "  %p %"
 
 #: .tmp/networkmanager.desktop.in.h:1
 msgid "An application for managing network connections."
-msgstr "Ett program för hantering av nätverksanslutningar"
+msgstr "Ett program för hantering av nätverksanslutningar."
 
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
