@@ -100,7 +100,7 @@ msgstr "Aucune authentification"
 
 #: .tmp/networkmanager/base.py:554
 msgid "There is already a profile named '%1'."
-msgstr "Il existe déjà un profil nommé « % 1 »."
+msgstr "Il existe déjà un profil nommé « %1 »."
 
 #: .tmp/networkmanager/base.py:643
 msgid "Do you really want to remove profile %1?"
