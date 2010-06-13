@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
@@ -15,11 +15,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
-
-#: .tmp/kcm_usermanager.desktop.in.h:1 .tmp/usermanager.desktop.in.h:2
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
-msgid "User Manager"
-msgstr "Configuration des utilisateurs"
 
 #: .tmp/ui_editgroup.py:81
 msgid "Group Information"
@@ -36,6 +31,15 @@ msgstr "N° :"
 #: .tmp/ui_editgroup.py:84 .tmp/ui_edituser.py:197
 msgid "Auto"
 msgstr "Auto"
+
+#: .tmp/usermanager.desktop.in.h:1
+msgid "An application for managing user accounts."
+msgstr "Une application pour gérer les comptes des utilisateurs."
+
+#: .tmp/usermanager.desktop.in.h:2 .tmp/usermanager/about.py:20
+#: .tmp/usermanager/about.py:22 .tmp/kcm_usermanager.desktop.in.h:1
+msgid "User Manager"
+msgstr "Configuration des utilisateurs"
 
 #: .tmp/ui_edituser.py:192
 msgid "User Information"
@@ -97,6 +101,10 @@ msgstr "Groupe principal :"
 msgid "Groups"
 msgstr "Groupes"
 
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
 #: .tmp/ui_item.py:60
 msgid "Edit"
 msgstr "Modifier"
@@ -104,30 +112,6 @@ msgstr "Modifier"
 #: .tmp/ui_item.py:61
 msgid "Delete"
 msgstr "Supprimer"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Ajouter un nouveau"
-
-#: .tmp/usermanager.desktop.in.h:1
-msgid "An application for managing user accounts."
-msgstr ""
-
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
-
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/usermanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/usermanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mainteneur actuel"
 
 #: .tmp/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -164,6 +148,22 @@ msgstr "Ce nom d'utilisateur est déjà utilisé par quelqu'un d'autre."
 #: .tmp/usermanager/edit.py:350
 msgid "User name must not start with a number."
 msgstr "Le nom d'utilisateur ne doit pas commencer par un nombre."
+
+#: .tmp/usermanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/usermanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/usermanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/usermanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
 
 #: .tmp/usermanager/main.py:94
 msgid ""
