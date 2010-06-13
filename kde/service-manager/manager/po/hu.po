@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -20,57 +20,9 @@ msgstr ""
 msgid "Service Manager"
 msgstr "Szolgáltatás menedzser"
 
-#: .tmp/servicemanager.desktop.in.h:1
-msgid "An application for managing system services."
-msgstr ""
-
-#: .tmp/servicemanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/servicemanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Aktuális karbantartó"
-
-#: .tmp/servicemanager/about.py:32
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/servicemanager/about.py:33
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/servicemanager/about.py:33
-msgid "COMAR Author"
-msgstr "COMAR szerző"
-
-#: .tmp/ui_item.py:103 .tmp/ui_main.py:56
+#: .tmp/ui_main.py:56 .tmp/ui_item.py:103
 msgid "Form"
 msgstr "Forma"
-
-#: .tmp/ui_item.py:104
-msgid "serviceName"
-msgstr "szolgáltatásNév"
-
-#: .tmp/ui_item.py:105
-msgid "serviceDesc"
-msgstr "szolgáltatásLeírás"
-
-#: .tmp/ui_item.py:106
-msgid "Start service"
-msgstr "Szolgáltatás indítása"
-
-#: .tmp/ui_item.py:107
-msgid "Reload service"
-msgstr "Szolgáltatás újratöltése"
-
-#: .tmp/ui_item.py:108
-msgid "Stop service"
-msgstr "Szolgáltatás leállítása"
-
-#: .tmp/ui_item.py:109
-msgid "Run on start"
-msgstr "Futás indulásnál"
 
 #: .tmp/ui_main.py:57
 msgid "type service name to search..."
@@ -99,3 +51,51 @@ msgstr "Minde nszolgáltatás"
 #: .tmp/ui_main.py:63
 msgid "Getting service info... %p%"
 msgstr "Információgyűjtés a szolgáltatásról... %p%"
+
+#: .tmp/servicemanager.desktop.in.h:1
+msgid "An application for managing system services."
+msgstr "Egy alkalmazás a rendszerszolgáltatások menedzselésére."
+
+#: .tmp/ui_item.py:104
+msgid "serviceName"
+msgstr "szolgáltatásNév"
+
+#: .tmp/ui_item.py:105
+msgid "serviceDesc"
+msgstr "szolgáltatásLeírás"
+
+#: .tmp/ui_item.py:106
+msgid "Start service"
+msgstr "Szolgáltatás indítása"
+
+#: .tmp/ui_item.py:107
+msgid "Reload service"
+msgstr "Szolgáltatás újratöltése"
+
+#: .tmp/ui_item.py:108
+msgid "Stop service"
+msgstr "Szolgáltatás leállítása"
+
+#: .tmp/ui_item.py:109
+msgid "Run on start"
+msgstr "Futás indulásnál"
+
+#: .tmp/servicemanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
+
+#: .tmp/servicemanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
+
+#: .tmp/servicemanager/about.py:33
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/servicemanager/about.py:33
+msgid "COMAR Author"
+msgstr "COMAR szerző"
