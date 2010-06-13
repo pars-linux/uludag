@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -15,50 +15,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/bootmanager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr ""
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Új hozzáadása"
 
-#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
-#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
-msgid "Boot Manager"
-msgstr "Boot menedzser"
+#: .tmp/ui_item.py:69
+msgid "Set or unset entry as default boot entry."
+msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
 
-#: .tmp/bootmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Szerkesztés"
 
-#: .tmp/bootmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/bootmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/bootmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Aktuális karbantartó"
-
-#: .tmp/bootmanager/main.py:99
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please make sure that packages are installed and configured correctly."
-msgstr ""
-"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
-"Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
-
-#: .tmp/bootmanager/main.py:198
-msgid "All Items"
-msgstr "Minden elem"
-
-#: .tmp/bootmanager/main.py:306
-msgid "Do you want to delete '%1'?"
-msgstr "Biztosan törölni akarod '%1'?"
-
-#: .tmp/bootmanager/main.py:337
-msgid "Access denied."
-msgstr "Hozzáférés megtagadva."
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Törlés"
 
 #: .tmp/ui_edit.py:134
 msgid "Title"
@@ -100,22 +71,51 @@ msgstr "Boot opciók"
 msgid "Boot options for operating system."
 msgstr "Boot opciók az operációs rendszer részére."
 
-#: .tmp/ui_item.py:69
-msgid "Set or unset entry as default boot entry."
-msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
-
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Szerkesztés"
-
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Törlés"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Új hozzáadása"
-
 #: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Boot menü várakozási ideje:"
+
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/kcm_bootmanager.desktop.in.h:1
+msgid "Boot Manager"
+msgstr "Boot menedzser"
+
+#: .tmp/bootmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/bootmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/bootmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/bootmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
+
+#: .tmp/bootmanager/main.py:99
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
+"Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
+
+#: .tmp/bootmanager/main.py:198
+msgid "All Items"
+msgstr "Minden elem"
+
+#: .tmp/bootmanager/main.py:306
+msgid "Do you want to delete '%1'?"
+msgstr "Biztosan törölni akarod '%1'?"
+
+#: .tmp/bootmanager/main.py:337
+msgid "Access denied."
+msgstr "Hozzáférés megtagadva."
+
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr "Egy alkalmazás a boot loader menedzselésére."
