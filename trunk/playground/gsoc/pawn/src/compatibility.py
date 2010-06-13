@@ -94,7 +94,7 @@ class Compatibility():
     def winPopulateDisks(self):
 	self.disks = []
 	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
-	    self.disks.append(LogicalDisk(disk.DeviceID, disk.FreeSpace, disk.Size, disk.DeviceID))# #Caption, Size, FreeSpace, FileSystem
+	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.DeviceID.encode('utf8'))))# #Caption, Size, FreeSpace, FileSystem
 
 
     def unixPopulateDisks(self):

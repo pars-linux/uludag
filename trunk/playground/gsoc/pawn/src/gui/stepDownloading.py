@@ -112,10 +112,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	    self.gui.completed.setText('%s of %s' % (humanReadableSize(transferredSize), humanReadableSize(totalSize)))
 	    self.counter = 0
 
-	
-
     def onRollback(self):
-	reply = QtGui.QMessageBox.warning(self, 'Are you sure to cancel?', 'If you go back, downloading will be cancelled and you will be have to start over again.', QtGui.QMessageBox.Yes, QtGui.QMessageBox.Cancel)
+	reply = QtGui.QMessageBox.warning(self, 'Warning', 'Are you sure to cancel? If you go back, downloading will be cancelled and you will be have to start over again.', QtGui.QMessageBox.Yes, QtGui.QMessageBox.Cancel)
 
 	if reply == QtGui.QMessageBox.Yes:
 	    self.mainEngine.ftpDownloader = None

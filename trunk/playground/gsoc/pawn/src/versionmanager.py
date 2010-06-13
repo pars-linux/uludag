@@ -83,9 +83,10 @@ class VersionManager():
                   "space", 'md5sum']
 
 	for field in fields:
-	    value =self._getText(version.getElementsByTagName(field)[0].childNodes)
+	    value =self._getText(version.getElementsByTagName(field)[0].childNodes).encode('utf8')
 	    setattr(ver, field, value)
-
+	ver.id = version.getAttribute("id").encode('utf8')
+	
         mirrors = version.getElementsByTagName("mirrors")[0].getElementsByTagName("source")
         mirrorList = list()
         for mirror in mirrors:
@@ -100,7 +101,7 @@ class VersionManager():
                   "path", "filename"]
         
         for field in fields:
-            value = self._getText(mirror.getElementsByTagName(field)[0].childNodes)
+            value = self._getText(mirror.getElementsByTagName(field)[0].childNodes).encode('utf8')
             setattr(mir, field, value)
 
         return mir  
