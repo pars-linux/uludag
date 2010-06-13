@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Pardus 2009\n"
@@ -14,58 +14,21 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/diskmanager.desktop.in.h:1
-msgid "An application for managing partitions and their mount paths."
-msgstr ""
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Új hozzáadása"
 
-#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
-#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
-msgid "Disk Manager"
-msgstr "Lemez menedzser"
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Lemez fel-, vagy lecsatolása."
 
-#: .tmp/diskmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Szerkesztés"
 
-#: .tmp/diskmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/diskmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/diskmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Aktuális karbantartó"
-
-#: .tmp/diskmanager/main.py:86
-#, fuzzy
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please make sure that packages are installed and configured correctly."
-msgstr "Nem elérhetők az alkalmazás hátterét biztosító csomagok . Kérem ellenőrizze hogy a csomagokat megfelelően telepítette és konfigurálta ."
-
-#: .tmp/diskmanager/main.py:175
-msgid "Mounted at %1"
-msgstr "Felcsatolva a %1"
-
-#: .tmp/diskmanager/main.py:194
-msgid "All Items"
-msgstr "Minden elem"
-
-#: .tmp/diskmanager/main.py:205
-msgid "Add"
-msgstr "Hozzáad"
-
-#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
-#: .tmp/diskmanager/main.py:322
-msgid "Access denied."
-msgstr "Hozzáférés megtagadva."
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Beállítások"
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Törlés"
 
 #: .tmp/ui_edit.py:67
 msgid "Mount Disk Automatically"
@@ -87,18 +50,54 @@ msgstr "Opciók:"
 msgid "Default Options"
 msgstr "Alapbeállítások"
 
-#: .tmp/ui_item.py:69
-msgid "Mount or unmount disk."
-msgstr "Lemez fel-, vagy lecsatolása."
+#: .tmp/diskmanager.desktop.in.h:1
+msgid "An application for managing partitions and their mount paths."
+msgstr "Egy alkalmazás a partíciók és a csatolási pontok menedzselésére"
 
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Szerkesztés"
+#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
+#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
+msgid "Disk Manager"
+msgstr "Lemez menedzser"
 
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Törlés"
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Beállítások"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Új hozzáadása"
+#: .tmp/diskmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/diskmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/diskmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/diskmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
+
+#: .tmp/diskmanager/main.py:86
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr "Nincsenek csomagok, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \\ NKérem győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően van-e konfigurálva."
+
+#: .tmp/diskmanager/main.py:175
+msgid "Mounted at %1"
+msgstr "Felcsatolva a %1"
+
+#: .tmp/diskmanager/main.py:194
+msgid "All Items"
+msgstr "Minden elem"
+
+#: .tmp/diskmanager/main.py:205
+msgid "Add"
+msgstr "Hozzáad"
+
+#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
+#: .tmp/diskmanager/main.py:322
+msgid "Access denied."
+msgstr "Hozzáférés megtagadva."
