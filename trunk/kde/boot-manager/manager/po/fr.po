@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -13,53 +13,24 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
-#: .tmp/bootmanager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr ""
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Ajouter un nouveau"
 
-#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
-#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
-msgid "Boot Manager"
-msgstr "Démarrage du système"
+#: .tmp/ui_item.py:69
+msgid "Set or unset entry as default boot entry."
+msgstr "Marquer comme entrée de démarrage par défaut."
 
-#: .tmp/bootmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Modifier"
 
-#: .tmp/bootmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/bootmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/bootmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mainteneur actuel"
-
-#: .tmp/bootmanager/main.py:99
-msgid ""
-"There are no packages that provide backend for this application.\n"
-"Please make sure that packages are installed and configured correctly."
-msgstr ""
-"Cette application n'existe pas en version utilisable dans une console.\n"
-"Merci de vous assurer que les paquets sont correctement installés et configurés."
-
-#: .tmp/bootmanager/main.py:198
-msgid "All Items"
-msgstr "Tous les items"
-
-#: .tmp/bootmanager/main.py:306
-msgid "Do you want to delete '%1'?"
-msgstr "Voulez-vous supprimer '%1' ?"
-
-#: .tmp/bootmanager/main.py:337
-msgid "Access denied."
-msgstr "Accès refusé."
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Supprimer"
 
 #: .tmp/ui_edit.py:134
 msgid "Title"
@@ -101,22 +72,51 @@ msgstr "Options de démarrage du PC"
 msgid "Boot options for operating system."
 msgstr "Options de démarrage du système d'exploitation."
 
-#: .tmp/ui_item.py:69
-msgid "Set or unset entry as default boot entry."
-msgstr "Marquer comme entrée de démarrage par défaut."
-
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Modifier"
-
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Supprimer"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Ajouter un nouveau"
-
 #: .tmp/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Durée d'affichage du menu de démarrage :"
+
+#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
+#: .tmp/bootmanager.desktop.in.h:2 .tmp/kcm_bootmanager.desktop.in.h:1
+msgid "Boot Manager"
+msgstr "Démarrage du système"
+
+#: .tmp/bootmanager/about.py:24
+msgid "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+
+#: .tmp/bootmanager/about.py:25
+msgid " "
+msgstr " "
+
+#: .tmp/bootmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
+
+#: .tmp/bootmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mainteneur actuel"
+
+#: .tmp/bootmanager/main.py:99
+msgid ""
+"There are no packages that provide backend for this application.\n"
+"Please make sure that packages are installed and configured correctly."
+msgstr ""
+"Cette application n'existe pas en version utilisable dans une console.\n"
+"Merci de vous assurer que les paquets sont correctement installés et configurés."
+
+#: .tmp/bootmanager/main.py:198
+msgid "All Items"
+msgstr "Tous les items"
+
+#: .tmp/bootmanager/main.py:306
+msgid "Do you want to delete '%1'?"
+msgstr "Voulez-vous supprimer '%1' ?"
+
+#: .tmp/bootmanager/main.py:337
+msgid "Access denied."
+msgstr "Accès refusé."
+
+#: .tmp/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr "Une application de gestion du chargeur de démarrage."
