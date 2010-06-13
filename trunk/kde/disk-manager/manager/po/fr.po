@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Philippe Svetoslavsky <philsvet@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -16,14 +16,54 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 0.3\n"
 
+#: .tmp/ui_main.py:77
+msgid "Add New"
+msgstr "Ajouter un nouveau"
+
+#: .tmp/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Monter ou démonter le disque."
+
+#: .tmp/ui_item.py:70
+msgid "Edit"
+msgstr "Modifier"
+
+#: .tmp/ui_item.py:71
+msgid "Delete"
+msgstr "Supprimer"
+
+#: .tmp/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Monter automatiquement le disque"
+
+#: .tmp/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Point de montage :"
+
+#: .tmp/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Type de système de fichiers :"
+
+#: .tmp/ui_edit.py:70
+msgid "Options:"
+msgstr "Options :"
+
+#: .tmp/ui_edit.py:71
+msgid "Default Options"
+msgstr "Options par défaut :"
+
 #: .tmp/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
+msgstr "Une application de gestion des partitions et de leurs points de montage."
 
 #: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
 #: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
 msgid "Disk Manager"
 msgstr "Gestionnaire de partitions de disques durs"
+
+#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Paramètres"
 
 #: .tmp/diskmanager/about.py:24
 msgid "(c) 2006-2009 TUBITAK/UEKAE"
@@ -65,43 +105,3 @@ msgstr "Ajouter"
 #: .tmp/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Accès refusé."
-
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Paramètres"
-
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Monter automatiquement le disque"
-
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Point de montage :"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Type de système de fichiers :"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Options :"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Options par défaut :"
-
-#: .tmp/ui_item.py:69
-msgid "Mount or unmount disk."
-msgstr "Monter ou démonter le disque."
-
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Modifier"
-
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Supprimer"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Ajouter un nouveau"
