@@ -8,8 +8,8 @@ from gui.widgetConfiguration import Ui_widgetConfiguration
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Configure Your Pardus"
 
-    defaultSize = long(5*1024*1024*1024)
-    minSize = long(1.5*1024*1024*1024)
+    defaultSize = long(0.5*1024*1024*1024)
+    minSize = long(0.2*1024*1024*1024)
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
@@ -44,15 +44,15 @@ class Widget(QtGui.QWidget, StepWidget):
 	total = self.totalSpaceOnDrive()
 	sliderValue = self.gui.sizeSlider.value()
 
-	self.size = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
-	percentUsed = (total-free+(self.size))*100/(total*1.0)
+	self.installationSize = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
+	percentUsed = (total-free+(self.installationSize))*100/(total*1.0)
 
-	size = self.size
+	size = self.installationSize
 
 	if (percentUsed>100):
 	    percentUsed = 99
 
-	if (self.size > free):
+	if (self.installationSize > free):
 	    size = free
 
 	self.gui.pbFreeSpace.setValue(percentUsed)
@@ -101,7 +101,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	password = self.gui.txtPassword.text()
 	retypePassword = self.gui.txtRetypePassword.text()
 
-	if self.getSelectedDrive().FreeSpace < self.size:
+	if self.getSelectedDrive().FreeSpace < self.installationSize:
 	    errorText += 'You do not have enough (%s required) free space on current drive.\n' % humanReadableSize(self.size)
 	else:
 	    if not username:  # TODO: other limitations?
@@ -118,12 +118,12 @@ class Widget(QtGui.QWidget, StepWidget):
 
 	if errorText:
 	    QtGui.QMessageBox.warning(self, 'Warning', errorText, QtGui.QMessageBox.Ok)
-	    return False
+	    #return False # TODO: re-activate ASAP.
 
 	self.mainEngine.config.username = username
 	self.mainEngine.config.password = password
 	self.mainEngine.config.drive = self.getSelectedDrive()
-	self.mainEngine.config.size = self.size
+	self.mainEngine.config.size = self.installationSize
 	# TODO: config size and drive
 	return True
 

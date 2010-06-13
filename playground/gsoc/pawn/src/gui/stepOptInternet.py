@@ -49,7 +49,7 @@ class Widget(QtGui.QWidget, StepWidget):
     def versionChanged(self, index):
 	if self.gui.comboVersion.currentIndex() > -1:
 	    self.version = self.getVersionByName(self.gui.comboVersion.currentText())
-	    self.gui.lblSize.setText('%s' % hrS(int(self.version.size)))
+	    self.gui.lblSize.setText('%s' % hrS(self.version.size))
 	    self.populateMirrors(self.version)
 
     def populateMirrors(self, version):
@@ -139,7 +139,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	    report += 'It is OK to use %s safely.' % self.version.name
 	else:
 	    report += 'You have enough memory to run under minimal conditions but you may have problems during your usage. It is recommended to add memory to your computer.'
-	report += '\n\n'
+	report += '\n------------------------------------\n'
 
 	archBit = self.mainEngine.compatibility.architectureBit
 	archType = self.mainEngine.compatibility.architectureName
@@ -157,7 +157,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	elif self.version.type == '32-bit':
 	    # reserved for future architecture designs.
 	    report += 'It is safe to use %s with your computer.'  % self.version.name
-	report += '\n\n'
+	report += '\n------------------------------------\n'
 
 	minspace = long(self.version.minspace)
 	space = long(self.version.space)

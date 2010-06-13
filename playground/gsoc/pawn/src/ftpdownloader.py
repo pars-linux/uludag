@@ -1,4 +1,6 @@
-import os, time, math
+import os
+import time
+import math
 from PyQt4.QtNetwork import QFtp
 from PyQt4 import QtCore
 from logger import getLogger
