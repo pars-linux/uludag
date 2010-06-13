@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -15,58 +15,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager.desktop.in.h:2
-#: .tmp/networkmanager/about.py:20 .tmp/networkmanager/about.py:22
+#: .tmp/kcm_networkmanager.desktop.in.h:1 .tmp/networkmanager/about.py:20
+#: .tmp/networkmanager/about.py:22 .tmp/networkmanager.desktop.in.h:2
 msgid "Network Manager"
 msgstr "Hálózat menedzser"
-
-#: .tmp/networkmanager.desktop.in.h:1
-msgid "An application for managing network connections."
-msgstr ""
-
-#: .tmp/networkmanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Bahadır Kandemir"
-msgstr "Bahadır Kandemir"
-
-#: .tmp/networkmanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Aktuális karbantartó"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Fejlesztő"
-
-#: .tmp/networkmanager/about.py:33
-msgid "Gökmen GÖKSEL"
-msgstr "Gökmen GÖKSEL"
-
-#: .tmp/networkmanager/base.py:195
-msgid "Available Profiles"
-msgstr "Elérhető profilok"
-
-#: .tmp/networkmanager/base.py:217
-msgid "All Profiles"
-msgstr "Minden profil"
-
-#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
-msgid "No Device Found"
-msgstr "Nem található eszköz"
-
-#: .tmp/networkmanager/base.py:405
-msgid "No Authentication"
-msgstr "Nincs hitelesítve"
-
-#: .tmp/networkmanager/base.py:554
-msgid "There is already a profile named '%1'."
-msgstr ""
-
-#: .tmp/networkmanager/base.py:643
-msgid "Do you really want to remove profile %1?"
-msgstr "Valóban el akarod távolítani a profil %1?"
 
 #: .tmp/networkmanager/widgets.py:74
 msgid "Enter PIN"
@@ -109,25 +61,89 @@ msgstr "Kábel vagy eszköz nincs csatlakoztatva"
 msgid "Access denied"
 msgstr "Hozzáférés megtagadva"
 
-#: .tmp/ui_ap.py:56 .tmp/ui_item.py:111
-msgid "Signal Strength"
-msgstr "Jelerősség"
+#: .tmp/networkmanager/about.py:24
+msgid "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/ui_item.py:108
-msgid "Set connection state."
-msgstr "Kapcsolat státuszának beállítása."
+#: .tmp/networkmanager/about.py:32
+msgid "Bahadır Kandemir"
+msgstr "Bahadır Kandemir"
 
-#: .tmp/ui_item.py:109
-msgid "Edit connection"
-msgstr "Kapcsolat szerkesztése"
+#: .tmp/networkmanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Aktuális karbantartó"
 
-#: .tmp/ui_item.py:110
-msgid "Delete connection"
-msgstr "Kapcsolat törlése"
+#: .tmp/networkmanager/about.py:33
+msgid "Gökmen GÖKSEL"
+msgstr "Gökmen GÖKSEL"
 
-#: .tmp/ui_item.py:112
-msgid "  %p %"
-msgstr "  %p %"
+#: .tmp/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Fejlesztő"
+
+#: .tmp/networkmanager/base.py:195
+msgid "Available Profiles"
+msgstr "Elérhető profilok"
+
+#: .tmp/networkmanager/base.py:217
+msgid "All Profiles"
+msgstr "Minden profil"
+
+#: .tmp/networkmanager/base.py:219 .tmp/networkmanager/base.py:221
+msgid "No Device Found"
+msgstr "Nem található eszköz"
+
+#: .tmp/networkmanager/base.py:405
+msgid "No Authentication"
+msgstr "Nincs hitelesítve"
+
+#: .tmp/networkmanager/base.py:554
+msgid "There is already a profile named '%1'."
+msgstr "Már létezik a profil neve \"% 1 '."
+
+#: .tmp/networkmanager/base.py:643
+msgid "Do you really want to remove profile %1?"
+msgstr "Valóban el akarod távolítani a profil %1?"
+
+#: .tmp/ui_nmwizard.py:92
+msgid "Dialog"
+msgstr "Párbeszéd"
+
+#: .tmp/ui_nmwizard.py:93
+msgid "Details"
+msgstr "Részletek"
+
+#: .tmp/ui_nmwizard.py:94
+msgid "IMEI"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:95
+msgid "Device"
+msgstr "Eszköz"
+
+#: .tmp/ui_nmwizard.py:96
+msgid "IMEI:"
+msgstr "IMEI:"
+
+#: .tmp/ui_nmwizard.py:97
+msgid "Device:"
+msgstr "Eszköz:"
+
+#: .tmp/ui_nmwizard.py:98
+msgid "Select an operator"
+msgstr "Válassz egy operátort"
+
+#: .tmp/ui_nmwizard.py:99
+msgid "Operator:"
+msgstr "Operátor:"
+
+#: .tmp/ui_nmwizard.py:100
+msgid "PIN:"
+msgstr "PIN:"
+
+#: .tmp/ui_nmwizard.py:101
+msgid "Remember PIN for this connection"
+msgstr "A PIN megjegyzése ehhez a kapcsolathoz"
 
 #: .tmp/ui_main.py:342
 msgid "Form"
@@ -225,49 +241,33 @@ msgstr "Kulcs :"
 msgid "Hide Password"
 msgstr "Jelszó elrejtése"
 
+#: .tmp/ui_item.py:108
+msgid "Set connection state."
+msgstr "Kapcsolat státuszának beállítása."
+
+#: .tmp/ui_item.py:109
+msgid "Edit connection"
+msgstr "Kapcsolat szerkesztése"
+
+#: .tmp/ui_item.py:110
+msgid "Delete connection"
+msgstr "Kapcsolat törlése"
+
+#: .tmp/ui_item.py:111 .tmp/ui_ap.py:56
+msgid "Signal Strength"
+msgstr "Jelerősség"
+
+#: .tmp/ui_item.py:112
+msgid "  %p %"
+msgstr "  %p %"
+
+#: .tmp/networkmanager.desktop.in.h:1
+msgid "An application for managing network connections."
+msgstr "Egy alkalmazás a hálózati kapcsolatok menedzselésére."
+
 #: .tmp/ui_nameserver.py:43
 msgid "Machine Name"
 msgstr "Gépnév"
-
-#: .tmp/ui_nmwizard.py:92
-msgid "Dialog"
-msgstr "Párbeszéd"
-
-#: .tmp/ui_nmwizard.py:93
-msgid "Details"
-msgstr "Részletek"
-
-#: .tmp/ui_nmwizard.py:94
-msgid "IMEI"
-msgstr "IMEI:"
-
-#: .tmp/ui_nmwizard.py:95
-msgid "Device"
-msgstr "Eszköz"
-
-#: .tmp/ui_nmwizard.py:96
-msgid "IMEI:"
-msgstr "IMEI:"
-
-#: .tmp/ui_nmwizard.py:97
-msgid "Device:"
-msgstr "Eszköz:"
-
-#: .tmp/ui_nmwizard.py:98
-msgid "Select an operator"
-msgstr "Válassz egy operátort"
-
-#: .tmp/ui_nmwizard.py:99
-msgid "Operator:"
-msgstr "Operátor:"
-
-#: .tmp/ui_nmwizard.py:100
-msgid "PIN:"
-msgstr "PIN:"
-
-#: .tmp/ui_nmwizard.py:101
-msgid "Remember PIN for this connection"
-msgstr "A PIN megjegyzése ehhez a kapcsolathoz"
 
 #: .tmp/ui_security.py:35
 msgid "Security Settings"
