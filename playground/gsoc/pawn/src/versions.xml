@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pardus ver="1.0" lastUpdated="24/01/2010">
     <version id="pardus2009.2">
-	<name>Pardus 2009.2 Geronticus eremita (Türkçe)</name>
+	<name>Pardus 2009.2 Geronticus eremita</name>
 	<size>713031680</size>
 	<type>32-bit</type>
 	<md5sum>eab230392ecdba0a4f8dbae1b4f914fb</md5sum>
@@ -24,7 +24,7 @@
     </version>
 
     <version id="pardus2009.1">
-	<name>Pardus 2009.1 Anthropoides virgo (Türkçe)</name>
+	<name>Pardus 2009.1 Anthropoides virgo</name>
 	<size>716177408</size>
 	<type>32-bit</type>
 	<md5sum>104583ecd4d649cc58eafcaf94b4dceb</md5sum>
@@ -47,7 +47,7 @@
     </version>
 
     <version id="pardus2009">
-	<name>Pardus 2009 (Türkçe)</name>
+	<name>Pardus 2009</name>
 	<size>720156672</size>
 	<type>32-bit</type>
 	<md5sum>d0836e92d77e016f5f9c8feb23afca55</md5sum>
