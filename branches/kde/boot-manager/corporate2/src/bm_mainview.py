@@ -69,7 +69,7 @@ class widgetEntryList(QWidget):
         layout.addWidget(self.labelTimeout, 2, 2)
 
         self.spinTimeout = QSpinBox(self)
-        self.spinTimeout.setMinValue(3)
+        self.spinTimeout.setMinValue(1)
         self.spinTimeout.setMaxValue(30)
         layout.addWidget(self.spinTimeout, 2, 3)
 
