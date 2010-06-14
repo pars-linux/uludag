@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeutils\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-29 23:30+0000\n"
+"POT-Creation-Date: 2010-06-12 23:33+0000\n"
 "PO-Revision-Date: 2010-04-19 16:01+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -384,7 +384,7 @@ msgctxt "Name"
 msgid "ELF structure"
 msgstr "ELF yapısı"
 
-#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:38
+#: okteta/kasten/controllers/view/structures/schema/example/elf/elf.desktop:40
 msgctxt "Comment"
 msgid "Structure for Executable Linking Format (ELF)"
 msgstr "Executable Linking Format (ELF) Yapısı"
@@ -404,7 +404,7 @@ msgctxt "Name"
 msgid "PNG file header"
 msgstr "PNG dosya başlığı"
 
-#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:44
+#: okteta/kasten/controllers/view/structures/schema/example/png/png.desktop:45
 msgctxt "Comment"
 msgid ""
 "A test structure containing the PNG file header (file must be set to big-"
@@ -417,7 +417,7 @@ msgctxt "Name"
 msgid "Another simple test"
 msgstr "Bir diğer basit test"
 
-#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:41
+#: okteta/kasten/controllers/view/structures/schema/example/test_2/test_2.desktop:42
 msgctxt "Comment"
 msgid "A few more test structures"
 msgstr "Bir kaç test yapısı daha"
@@ -427,7 +427,7 @@ msgctxt "Name"
 msgid "Simple test"
 msgstr "Basit test"
 
-#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:42
+#: okteta/kasten/controllers/view/structures/schema/example/test/test.desktop:43
 msgctxt "Comment"
 msgid "A few test structures"
 msgstr "Bir kaç test yapısı"

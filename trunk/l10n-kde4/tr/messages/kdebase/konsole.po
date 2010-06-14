@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: konsole\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-16 01:20+0200\n"
+"POT-Creation-Date: 2010-06-05 01:22+0200\n"
 "PO-Revision-Date: 2009-09-26 15:04+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -231,7 +231,7 @@ msgstr "Adrese E-posta Gönder..."
 msgid "Copy Email Address"
 msgstr "E-posta Adresini Kopyala"
 
-#: HistorySizeDialog.cpp:51 SessionController.cpp:528
+#: HistorySizeDialog.cpp:51 SessionController.cpp:527
 msgid "Scrollback Options"
 msgstr "Geçmiş Seçenekleri"
 
@@ -567,20 +567,20 @@ msgstr "&Yer İmleri"
 msgid "Show Menu Bar"
 msgstr "Menü çubuğunu göster"
 
-#: MainWindow.cpp:290 Part.cpp:117
+#: MainWindow.cpp:289 Part.cpp:117
 msgid "Manage Profiles..."
 msgstr "Profilleri Yönet..."
 
-#: MainWindow.cpp:363
+#: MainWindow.cpp:362
 msgid "You have multiple tabs in this window, are you sure you want to quit?"
 msgstr ""
 "Bu pencerede birden çok sekme açık, çıkmak istediğinizden emin misiniz?"
 
-#: MainWindow.cpp:365 SessionController.cpp:633
+#: MainWindow.cpp:364 SessionController.cpp:632
 msgid "Confirm Close"
 msgstr "Kapatmayı Doğrula"
 
-#: MainWindow.cpp:367
+#: MainWindow.cpp:366
 msgid "Close Current Tab"
 msgstr "Geçerli Sekmeyi Kapat"
 
@@ -1628,89 +1628,89 @@ msgstr "Seçimi Yapıştır"
 msgid "&Rename Tab..."
 msgstr "Sekmeyi &Yeniden Adlandır..."
 
-#: SessionController.cpp:439
+#: SessionController.cpp:438
 msgid "&All Tabs in Current Window"
 msgstr "Geçerli Penceredeki &Tüm Sekmeler"
 
-#: SessionController.cpp:446
+#: SessionController.cpp:445
 msgid "&Select Tabs..."
 msgstr "Sekmeleri &Seç..."
 
-#: SessionController.cpp:453
+#: SessionController.cpp:452
 msgid "&None"
 msgstr "&Hiçbiri"
 
-#: SessionController.cpp:460
+#: SessionController.cpp:459
 msgid "Clear && Reset"
 msgstr "Temizle && Sıfırla"
 
-#: SessionController.cpp:465
+#: SessionController.cpp:464
 msgid "&ZModem Upload..."
 msgstr "&ZModem Dosya Gönderimi..."
 
-#: SessionController.cpp:471
+#: SessionController.cpp:470
 msgid "Monitor for &Activity"
 msgstr "Etkinlikleri İ&zle"
 
-#: SessionController.cpp:476
+#: SessionController.cpp:475
 msgid "Monitor for &Silence"
 msgstr "Sessiz&likleri İzle"
 
-#: SessionController.cpp:482
+#: SessionController.cpp:481
 msgid "Character Encoding"
 msgstr "Karakter Kodlaması"
 
-#: SessionController.cpp:489
+#: SessionController.cpp:488
 msgid "Increase Text Size"
 msgstr "Metin Boyutunu Büyüt"
 
-#: SessionController.cpp:495
+#: SessionController.cpp:494
 msgid "Decrease Text Size"
 msgstr "Metin Boyutunu Küçült"
 
-#: SessionController.cpp:501
+#: SessionController.cpp:500
 msgid "Search Output..."
 msgstr "Arama Çıktısı..."
 
-#: SessionController.cpp:510
+#: SessionController.cpp:509
 msgid "Find Next"
 msgstr "Sonrakini Bul"
 
-#: SessionController.cpp:517
+#: SessionController.cpp:516
 msgid "Find Previous"
 msgstr "Öncekini Bul"
 
-#: SessionController.cpp:523
+#: SessionController.cpp:522
 msgid "Save Output..."
 msgstr "Çıktıyı Kaydet..."
 
-#: SessionController.cpp:533
+#: SessionController.cpp:532
 msgid "Clear Scrollback && Reset"
 msgstr "Geçmişi Temizle && Sıfırla"
 
-#: SessionController.cpp:539
+#: SessionController.cpp:538
 msgid "Edit Current Profile..."
 msgstr "Geçerli Profili Düzenle..."
 
-#: SessionController.cpp:543
+#: SessionController.cpp:542
 msgid "Change Profile"
 msgstr "Profil Değiştir"
 
-#: SessionController.cpp:583
+#: SessionController.cpp:582
 msgid "Rename Tab"
 msgstr "Sekmeyi Yeniden Adlandır"
 
-#: SessionController.cpp:584
+#: SessionController.cpp:583
 msgid "Enter new tab text:"
 msgstr "Yeni sekme metnini gir:"
 
-#: SessionController.cpp:627
+#: SessionController.cpp:626
 msgid ""
 "A program is currently running in this session.  Are you sure you want to "
 "close it?"
 msgstr "Bu oturumda bir uygulama açık. Kapatmak istediğinizden emin misiniz?"
 
-#: SessionController.cpp:630
+#: SessionController.cpp:629
 #, kde-format
 msgid ""
 "The program '%1' is currently running in this session.  Are you sure you "
@@ -1718,11 +1718,11 @@ msgid ""
 msgstr ""
 "'%1' uygulaması bu oturumda çalışıyor. Kapatmak istediğinizden emin misiniz?"
 
-#: SessionController.cpp:1188
+#: SessionController.cpp:1187
 msgid "Save ZModem Download to..."
 msgstr "ZModem dosyasını kaydet..."
 
-#: SessionController.cpp:1197
+#: SessionController.cpp:1196
 msgid ""
 "<p>A ZModem file transfer attempt has been detected, but no suitable ZModem "
 "software was found on this system.\n"
@@ -1732,11 +1732,11 @@ msgstr ""
 "bulunamadı.\n"
 "<p>rzsz veya lrzsz paketini kurmak isteyebilirsiniz.\n"
 
-#: SessionController.cpp:1209
+#: SessionController.cpp:1208
 msgid "<p>The current session already has a ZModem file transfer in progress."
 msgstr "<p>Mevcut oturum zaten devam eden bir ZModem dosya transferine sahip."
 
-#: SessionController.cpp:1218
+#: SessionController.cpp:1217
 msgid ""
 "<p>No suitable ZModem software was found on this system.\n"
 "<p>You may wish to install the 'rzsz' or 'lrzsz' package.\n"
@@ -1744,21 +1744,21 @@ msgstr ""
 "<p>Uygun ZModem yazılımı bulunamadı.\n"
 "<p>rzsz veya lrzsz paketini kurmak isteyebilirsiniz.\n"
 
-#: SessionController.cpp:1224
+#: SessionController.cpp:1223
 msgid "Select Files for ZModem Upload"
 msgstr "ZModem üzerinden gönderilecek dosyaları seçin"
 
-#: SessionController.cpp:1296
+#: SessionController.cpp:1295
 #, kde-format
 msgid "Save Output From %1"
 msgstr "%1 Çıktısını Kaydet"
 
-#: SessionController.cpp:1307
+#: SessionController.cpp:1306
 #, kde-format
 msgid "%1 is an invalid URL, the output could not be saved."
 msgstr "%1 geçersiz bir adres, çıktı kaydedilmeyecek."
 
-#: SessionController.cpp:1396
+#: SessionController.cpp:1395
 #, kde-format
 msgid ""
 "A problem occurred when saving the output.\n"
@@ -1943,7 +1943,7 @@ msgstr "Görünümü Küçült"
 msgid "Switch to Tab %1"
 msgstr "%1 sekmesine geç"
 
-#: Vt102Emulation.cpp:965
+#: Vt102Emulation.cpp:967
 msgid ""
 "No keyboard translator available.  The information needed to convert key "
 "presses into characters to send to the terminal is missing."

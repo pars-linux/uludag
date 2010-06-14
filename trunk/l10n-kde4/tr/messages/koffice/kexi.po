@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kexi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-17 01:27+0200\n"
+"POT-Creation-Date: 2010-05-29 01:28+0200\n"
 "PO-Revision-Date: 2009-09-26 21:02+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -4376,21 +4376,26 @@ msgstr "\"%1\" eklentisi yüklenirken hata oluştu"
 msgid "No plugin for class \"%1\""
 msgstr "\"%1\" sınıfı için eklenti yok"
 
-#: core/kexiaboutdata.cpp:29
+#: core/kexiaboutdata.cpp:30
+#, fuzzy
+#| msgid "This application is a part of the KOffice suite."
+msgid ""
+"Database creation for everyone\n"
+"\n"
+"This application is a part of the KOffice suite."
+msgstr "Bu uygulama KOffice araç takımının bir parçasıdır."
+
+#: core/kexiaboutdata.cpp:32
 msgid "Database creation for everyone"
 msgstr "Herkes için kolay veriabanı oluşturma"
 
-#: core/kexiaboutdata.cpp:31
-msgid "This application is a part of the KOffice suite."
-msgstr "Bu uygulama KOffice araç takımının bir parçasıdır."
-
-#: core/kexiaboutdata.cpp:48
+#: core/kexiaboutdata.cpp:49
 #, fuzzy
 #| msgid "(c) 2002-2009, Kexi Team"
 msgid "(c) 2002-2010, Kexi Team"
 msgstr "(C) 2003-2009, Kexi Takımı"
 
-#: core/kexiaboutdata.cpp:49
+#: core/kexiaboutdata.cpp:50
 msgid ""
 "This software is developed by Kexi Team - an international group\n"
 "of independent developers."
@@ -4399,11 +4404,11 @@ msgstr ""
 "bağımsız\n"
 "geliştiricilerden oluşur."
 
-#: core/kexiaboutdata.cpp:56
+#: core/kexiaboutdata.cpp:57
 msgid "Jarosław Staniek"
 msgstr "Jarosław Staniek"
 
-#: core/kexiaboutdata.cpp:56
+#: core/kexiaboutdata.cpp:57
 msgid ""
 "Project maintainer & developer, design, KexiDB, commercially supported "
 "version, MS Windows version"
@@ -4411,35 +4416,35 @@ msgstr ""
 "Projeyi yürüten ve geliştiren, tasarım, KexiDB, ticari destekli sürüm, MS "
 "Windows sürümü"
 
-#: core/kexiaboutdata.cpp:58
+#: core/kexiaboutdata.cpp:59
 msgid "OpenOffice Polska LLC"
 msgstr "OpenOffice Polska LLC"
 
-#: core/kexiaboutdata.cpp:58
+#: core/kexiaboutdata.cpp:59
 msgid "Sponsoring and support (employer of Jarosław Staniek in 2003-2007)"
 msgstr ""
 
-#: core/kexiaboutdata.cpp:60
+#: core/kexiaboutdata.cpp:61
 msgid "Sebastian Sauer"
 msgstr "Sebastian Sauer"
 
-#: core/kexiaboutdata.cpp:60
+#: core/kexiaboutdata.cpp:61
 msgid "Scripting module (KROSS), Python language bindings, design"
 msgstr "Betik modülü (KROSS), Python bağlantıları, tasarım"
 
-#: core/kexiaboutdata.cpp:62
+#: core/kexiaboutdata.cpp:63
 msgid "Adam Pigg"
 msgstr "Adam Pigg"
 
-#: core/kexiaboutdata.cpp:62
+#: core/kexiaboutdata.cpp:63
 msgid "PostgreSQL database driver, Migration and Reporting modules"
 msgstr "PostgreSQL veritabanı sürücüsü, Yükseltme ve Aktarım modülleri"
 
-#: core/kexiaboutdata.cpp:64
+#: core/kexiaboutdata.cpp:65
 msgid "Sharan Rao"
 msgstr "Sharan Rao"
 
-#: core/kexiaboutdata.cpp:64
+#: core/kexiaboutdata.cpp:65
 msgid ""
 "Sybase/MS SQL Server database drivers, xBase migration plugin, improvements "
 "for KexiDB"
@@ -4447,19 +4452,19 @@ msgstr ""
 "Sybase/MSSQL Sunucu sürücüsü, KexiDB için xBase aktarım eklentisi ve "
 "geliştirmeler"
 
-#: core/kexiaboutdata.cpp:66
+#: core/kexiaboutdata.cpp:67
 msgid "Cédric Pasteur"
 msgstr "Cédric Pasteur"
 
-#: core/kexiaboutdata.cpp:66
+#: core/kexiaboutdata.cpp:67
 msgid "First version of Property Editor and Form Designer"
 msgstr "Özellik Düzenleyici ve Form tasarımcısının ilk sürümü"
 
-#: core/kexiaboutdata.cpp:68
+#: core/kexiaboutdata.cpp:69
 msgid "Martin Ellis"
 msgstr "Martin Ellis"
 
-#: core/kexiaboutdata.cpp:68
+#: core/kexiaboutdata.cpp:69
 msgid ""
 "Contributions for MySQL and KexiDB, fixes, Migration module, MS Access file "
 "format support"
@@ -4467,100 +4472,100 @@ msgstr ""
 "MySQL ve KexiDB için destek, düzeltmeler, Taşıma modülü, ve MS Access dosya "
 "biçimi desteği"
 
-#: core/kexiaboutdata.cpp:70
+#: core/kexiaboutdata.cpp:71
 msgid "Christian Nitschkowski"
 msgstr "Christian Nitschkowski"
 
-#: core/kexiaboutdata.cpp:70
+#: core/kexiaboutdata.cpp:71
 msgid "Graphics effects, helper dialogs"
 msgstr "Grafik efektleri ve yardımcı bildirim pencereleri "
 
-#: core/kexiaboutdata.cpp:72
+#: core/kexiaboutdata.cpp:73
 msgid "Lucijan Busch"
 msgstr "Lucijan Busch"
 
-#: core/kexiaboutdata.cpp:72
+#: core/kexiaboutdata.cpp:73
 msgid "Former project maintainer & developer"
 msgstr "İlk proje bakım ve geliştirme"
 
-#: core/kexiaboutdata.cpp:74
+#: core/kexiaboutdata.cpp:75
 msgid "Peter Simonsson"
 msgstr "Peter Simonsson"
 
-#: core/kexiaboutdata.cpp:74
+#: core/kexiaboutdata.cpp:75
 msgid "Former developer"
 msgstr "İlk Geliştirici"
 
-#: core/kexiaboutdata.cpp:76
+#: core/kexiaboutdata.cpp:77
 msgid "Joseph Wenninger"
 msgstr "Joseph Wenninger"
 
-#: core/kexiaboutdata.cpp:76
+#: core/kexiaboutdata.cpp:77
 msgid "Original Form Designer, original user interface & much more"
 msgstr "Özgün Form Tasarımı, özgün kullanıcı arayüzü ve çok daha fazlası"
 
-#: core/kexiaboutdata.cpp:78
+#: core/kexiaboutdata.cpp:79
 msgid "Seth Kurzenberg"
 msgstr "Seth Kurzenberg"
 
-#: core/kexiaboutdata.cpp:78
+#: core/kexiaboutdata.cpp:79
 msgid "CQL++, SQL assistance"
 msgstr "CQL++, SQL yardımı"
 
-#: core/kexiaboutdata.cpp:80
+#: core/kexiaboutdata.cpp:81
 msgid "Laurent Montel"
 msgstr "Laurent Montel"
 
-#: core/kexiaboutdata.cpp:80
+#: core/kexiaboutdata.cpp:81
 msgid "Original code cleanings"
 msgstr "Özgün kod temizleme"
 
-#: core/kexiaboutdata.cpp:82
+#: core/kexiaboutdata.cpp:83
 msgid "Till Busch"
 msgstr "Till Busch"
 
-#: core/kexiaboutdata.cpp:82
+#: core/kexiaboutdata.cpp:83
 msgid "Bugfixes, original Table Widget"
 msgstr "Hata giderme ve özgün tablo bileşenleri"
 
-#: core/kexiaboutdata.cpp:85
+#: core/kexiaboutdata.cpp:86
 msgid "Daniel Molkentin"
 msgstr "Daniel Molkentin"
 
-#: core/kexiaboutdata.cpp:85
+#: core/kexiaboutdata.cpp:86
 msgid "Initial design improvements"
 msgstr "İlk tasarım ve geliştirmeler"
 
-#: core/kexiaboutdata.cpp:87
+#: core/kexiaboutdata.cpp:88
 msgid "Kristof Borrey"
 msgstr "Kristof Borrey"
 
-#: core/kexiaboutdata.cpp:87
+#: core/kexiaboutdata.cpp:88
 msgid "Icons and user interface research"
 msgstr "Simgeler ve kullanıcı arayüzü çalışmaları"
 
-#: core/kexiaboutdata.cpp:89
+#: core/kexiaboutdata.cpp:90
 msgid "Tomas Krassnig"
 msgstr "Tomas Krassnig"
 
-#: core/kexiaboutdata.cpp:89
+#: core/kexiaboutdata.cpp:90
 msgid "Coffee sponsoring"
 msgstr "Kahve sponsorluğu"
 
-#: core/kexiaboutdata.cpp:91
+#: core/kexiaboutdata.cpp:92
 msgid "Paweł Wirecki / OpenOffice Polska"
 msgstr "Paweł Wirecki / OpenOffice Polska"
 
-#: core/kexiaboutdata.cpp:91
+#: core/kexiaboutdata.cpp:92
 msgid "Numerous bug reports, usability tests, technical support"
 msgstr "Pek çok hata kaydı, kullanılabilirlik sınaması, teknik destek"
 
-#: core/kexiaboutdata.cpp:94 rc.cpp:1
+#: core/kexiaboutdata.cpp:95 rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Özer Kavak"
 
-#: core/kexiaboutdata.cpp:94 rc.cpp:2
+#: core/kexiaboutdata.cpp:95 rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "ozerkavak@gmail.com"

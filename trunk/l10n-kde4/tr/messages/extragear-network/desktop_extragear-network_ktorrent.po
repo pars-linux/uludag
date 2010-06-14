@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_extragear-network_ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-18 23:29+0000\n"
+"POT-Creation-Date: 2010-05-27 23:31+0000\n"
 "PO-Revision-Date: 2010-05-26 08:41+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -169,7 +169,7 @@ msgctxt "Name"
 msgid "Magnet Generator"
 msgstr "Magnet Üretici"
 
-#: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:26
+#: plugins/magnetgenerator/ktmagnetgeneratorplugin.desktop:30
 msgctxt "Comment"
 msgid "Generates magnet links"
 msgstr "Magnet bağlantıları oluşturur"
@@ -224,10 +224,6 @@ msgid "Automatic Resume"
 msgstr "Otomatik Devam Et"
 
 #: plugins/scripting/scripts/auto_resume/auto_resume.desktop:44
-#| msgctxt "Comment"
-#| msgid ""
-#| "Script to automatically resume after some time, when the paused state is "
-#| "enabled"
 msgctxt "Comment"
 msgid ""
 "Script to automatically resume after some time, when the suspended state is "
@@ -327,4 +323,3 @@ msgstr "ZeroConf"
 msgctxt "Comment"
 msgid "Discover peers on the local network using the Zeroconf protocol"
 msgstr "Zeroconf protokolünü kullanarak yerel ağdaki paylaşımcıları bulur"
-

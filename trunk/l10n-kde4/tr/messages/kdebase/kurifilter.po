@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kurifilter\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-11-16 06:13+0100\n"
+"POT-Creation-Date: 2010-06-07 01:20+0200\n"
 "PO-Revision-Date: 2010-05-09 01:28+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -31,7 +31,7 @@ msgstr "Kısayollar"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: ikwsopts.cpp:241
+#: ikwsopts.cpp:243
 msgid ""
 "<p>In this module you can configure the web shortcuts feature. Web shortcuts "
 "allow you to quickly search or lookup words on the Internet. For example, to "

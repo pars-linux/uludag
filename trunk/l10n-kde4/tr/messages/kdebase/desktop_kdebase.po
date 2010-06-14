@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdebase\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-19 23:28+0000\n"
+"POT-Creation-Date: 2010-06-08 23:30+0000\n"
 "PO-Revision-Date: 2010-04-28 14:02+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -254,7 +254,7 @@ msgctxt "Name"
 msgid "Qt Assistant"
 msgstr "Qt Assistant"
 
-#: apps/kappfinder/apps/Development/assistant.desktop:89
+#: apps/kappfinder/apps/Development/assistant.desktop:90
 msgctxt "GenericName"
 msgid "Document Browser"
 msgstr "Belge Tarayıcı"
@@ -264,7 +264,7 @@ msgctxt "GenericName"
 msgid "Data Display Debugger"
 msgstr "Veri Gösterim Hata Ayıklayıcısı"
 
-#: apps/kappfinder/apps/Development/ddd.desktop:88
+#: apps/kappfinder/apps/Development/ddd.desktop:89
 msgctxt "Name"
 msgid "DDD"
 msgstr "DDD"
@@ -274,7 +274,7 @@ msgctxt "Name"
 msgid "Qt Designer"
 msgstr "Qt Designer"
 
-#: apps/kappfinder/apps/Development/designer.desktop:89
+#: apps/kappfinder/apps/Development/designer.desktop:90
 msgctxt "GenericName"
 msgid "Interface Designer"
 msgstr "Arayüz Tasarım Programı"
@@ -284,7 +284,7 @@ msgctxt "Name"
 msgid "Qt DlgEdit"
 msgstr "Qt DlgEdit"
 
-#: apps/kappfinder/apps/Development/dlgedit.desktop:88
+#: apps/kappfinder/apps/Development/dlgedit.desktop:89
 msgctxt "GenericName"
 msgid "Dialog Editor"
 msgstr "İletişim Kutusu Düzenleyicisi"
@@ -294,7 +294,7 @@ msgctxt "Name"
 msgid "Eclipse"
 msgstr "Eclipse"
 
-#: apps/kappfinder/apps/Development/eclipse.desktop:89
+#: apps/kappfinder/apps/Development/eclipse.desktop:90
 msgctxt "GenericName"
 msgid "Eclipse IDE"
 msgstr "Eclipse Tümleşik Geliştirme Ortamı"
@@ -309,7 +309,7 @@ msgctxt "GenericName"
 msgid "Java IDE"
 msgstr "Java Tümleşik Geliştirme Ortamı"
 
-#: apps/kappfinder/apps/Development/Forte.desktop:90
+#: apps/kappfinder/apps/Development/Forte.desktop:91
 msgctxt "Name"
 msgid "Forte"
 msgstr "Forte"
@@ -319,7 +319,7 @@ msgctxt "GenericName"
 msgid "J2ME Toolkit"
 msgstr "J2ME Araç Takımı"
 
-#: apps/kappfinder/apps/Development/j2mewtk.desktop:90
+#: apps/kappfinder/apps/Development/j2mewtk.desktop:91
 msgctxt "Name"
 msgid "J2ME"
 msgstr "J2ME"
@@ -329,7 +329,7 @@ msgctxt "Name"
 msgid "Qt Linguist"
 msgstr "Qt Linguist"
 
-#: apps/kappfinder/apps/Development/linguist.desktop:89
+#: apps/kappfinder/apps/Development/linguist.desktop:90
 msgctxt "GenericName"
 msgid "Translation Tool"
 msgstr "Çeviri Aracı"
@@ -339,7 +339,7 @@ msgctxt "GenericName"
 msgid "Palm/Wireless Emulator"
 msgstr "Palm/Wireless Öykünücüsü"
 
-#: apps/kappfinder/apps/Development/pose.desktop:90
+#: apps/kappfinder/apps/Development/pose.desktop:91
 msgctxt "Name"
 msgid "Pose"
 msgstr "Pose"
@@ -349,7 +349,7 @@ msgctxt "Name"
 msgid "Sced"
 msgstr "Sced"
 
-#: apps/kappfinder/apps/Development/sced.desktop:87
+#: apps/kappfinder/apps/Development/sced.desktop:88
 msgctxt "GenericName"
 msgid "Scene Modeler"
 msgstr "Manzara Modelleme Programı"
@@ -359,15 +359,15 @@ msgctxt "Name"
 msgid "Emacs"
 msgstr "Emacs"
 
-#: apps/kappfinder/apps/Editors/emacs.desktop:88
-#: apps/kappfinder/apps/Editors/gedit.desktop:88
-#: apps/kappfinder/apps/Editors/gvim.desktop:88
-#: apps/kappfinder/apps/Editors/lemacs.desktop:88
-#: apps/kappfinder/apps/Editors/nano.desktop:88
-#: apps/kappfinder/apps/Editors/nedit.desktop:89
-#: apps/kappfinder/apps/Editors/pico.desktop:88
-#: apps/kappfinder/apps/Editors/xedit.desktop:89
-#: apps/kappfinder/apps/Editors/xemacs.desktop:88 apps/kwrite/kwrite.desktop:2
+#: apps/kappfinder/apps/Editors/emacs.desktop:89
+#: apps/kappfinder/apps/Editors/gedit.desktop:89
+#: apps/kappfinder/apps/Editors/gvim.desktop:89
+#: apps/kappfinder/apps/Editors/lemacs.desktop:89
+#: apps/kappfinder/apps/Editors/nano.desktop:89
+#: apps/kappfinder/apps/Editors/nedit.desktop:90
+#: apps/kappfinder/apps/Editors/pico.desktop:89
+#: apps/kappfinder/apps/Editors/xedit.desktop:90
+#: apps/kappfinder/apps/Editors/xemacs.desktop:89 apps/kwrite/kwrite.desktop:2
 msgctxt "GenericName"
 msgid "Text Editor"
 msgstr "Metin Düzenleyici"
@@ -417,7 +417,7 @@ msgctxt "Name"
 msgid "Alephone - No OpenGL"
 msgstr "Alephone - (OpenGL yok)"
 
-#: apps/kappfinder/apps/Games/Arcade/alephone.desktop:87
+#: apps/kappfinder/apps/Games/Arcade/alephone.desktop:88
 msgctxt "Comment"
 msgid ""
 "An open source version of Marathon Infinity for SDL that has OpenGL disabled"
@@ -430,7 +430,7 @@ msgctxt "Name"
 msgid "Alephone"
 msgstr "Alephone"
 
-#: apps/kappfinder/apps/Games/Arcade/alephone-nogl.desktop:87
+#: apps/kappfinder/apps/Games/Arcade/alephone-nogl.desktop:88
 msgctxt "Comment"
 msgid "An open source version of Marathon Infinity for SDL"
 msgstr "Marathon Infinity'nin açık kaynak kodlu sürümü"
@@ -440,19 +440,19 @@ msgctxt "Name"
 msgid "Batallion"
 msgstr "Batallion"
 
-#: apps/kappfinder/apps/Games/Arcade/battalion.desktop:88
-#: apps/kappfinder/apps/Games/Arcade/ClanBomber.desktop:87
-#: apps/kappfinder/apps/Games/Arcade/cxhextris.desktop:87
-#: apps/kappfinder/apps/Games/Arcade/GnobotsII.desktop:88
-#: apps/kappfinder/apps/Games/Arcade/Mures.desktop:88
-#: apps/kappfinder/apps/Games/Arcade/scavenger.desktop:88
-#: apps/kappfinder/apps/Games/Arcade/SuperMethaneBrothers.desktop:87
-#: apps/kappfinder/apps/Games/Arcade/Trophy.desktop:87
-#: apps/kappfinder/apps/Games/Arcade/XKobo.desktop:88
-#: apps/kappfinder/apps/Games/Arcade/XSoldier.desktop:88
-#: apps/kappfinder/apps/Games/Board/Gataxx.desktop:88
-#: apps/kappfinder/apps/Games/Board/Gnotravex.desktop:88
-#: apps/kappfinder/apps/Games/penguin-command.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/battalion.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/ClanBomber.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/cxhextris.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/GnobotsII.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/Mures.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/scavenger.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/SuperMethaneBrothers.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/Trophy.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/XKobo.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/XSoldier.desktop:89
+#: apps/kappfinder/apps/Games/Board/Gataxx.desktop:89
+#: apps/kappfinder/apps/Games/Board/Gnotravex.desktop:89
+#: apps/kappfinder/apps/Games/penguin-command.desktop:89
 msgctxt "GenericName"
 msgid "Arcade Game"
 msgstr "Macera oyunu"
@@ -462,7 +462,7 @@ msgctxt "Name"
 msgid "Battleball"
 msgstr "Battleball"
 
-#: apps/kappfinder/apps/Games/Arcade/battleball.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/battleball.desktop:89
 msgctxt "GenericName"
 msgid "Ball Game"
 msgstr "Top Oyunu"
@@ -482,7 +482,7 @@ msgctxt "GenericName"
 msgid "Tetris-Like Game"
 msgstr "Tetris Benzeri Bir Oyun"
 
-#: apps/kappfinder/apps/Games/Arcade/FrozenBubble.desktop:90
+#: apps/kappfinder/apps/Games/Arcade/FrozenBubble.desktop:91
 msgctxt "Name"
 msgid "Frozen Bubble"
 msgstr "Donmuş Toplar"
@@ -492,7 +492,7 @@ msgctxt "Name"
 msgid "Gnibbles"
 msgstr "Gnibbles"
 
-#: apps/kappfinder/apps/Games/Arcade/Gnibbles.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/Gnibbles.desktop:89
 msgctxt "GenericName"
 msgid "GNOME Nibbles Game"
 msgstr "GNOME Nibbles Oyunu"
@@ -512,8 +512,8 @@ msgctxt "Name"
 msgid "Rocks n Diamonds"
 msgstr "Rocks n Diamonds"
 
-#: apps/kappfinder/apps/Games/Arcade/rocksndiamonds.desktop:88
-#: apps/kappfinder/apps/Games/Board/Glines.desktop:88
+#: apps/kappfinder/apps/Games/Arcade/rocksndiamonds.desktop:89
+#: apps/kappfinder/apps/Games/Board/Glines.desktop:89
 msgctxt "GenericName"
 msgid "Tactical Game"
 msgstr "Taktik oyunu"
@@ -538,7 +538,7 @@ msgctxt "GenericName"
 msgid "Racing Game"
 msgstr "Yarış oyunu"
 
-#: apps/kappfinder/apps/Games/Arcade/TuxRacer.desktop:89
+#: apps/kappfinder/apps/Games/Arcade/TuxRacer.desktop:90
 msgctxt "Name"
 msgid "TuxRacer"
 msgstr "Penguen Yarışçı"
@@ -573,7 +573,7 @@ msgctxt "Name"
 msgid "GNOME Mahjongg"
 msgstr "GNOME Mahjongg"
 
-#: apps/kappfinder/apps/Games/Board/Gmahjongg.desktop:88
+#: apps/kappfinder/apps/Games/Board/Gmahjongg.desktop:89
 msgctxt "GenericName"
 msgid "Tile Game"
 msgstr "Taş oyunu"
@@ -583,7 +583,7 @@ msgctxt "Name"
 msgid "GNOME Mines"
 msgstr "GNOME Mayınlar"
 
-#: apps/kappfinder/apps/Games/Board/Gmines.desktop:88
+#: apps/kappfinder/apps/Games/Board/Gmines.desktop:89
 msgctxt "GenericName"
 msgid "Logic Game"
 msgstr "Mantık Oyunu"
@@ -598,7 +598,7 @@ msgctxt "Name"
 msgid "Gnotski"
 msgstr "Gnotski"
 
-#: apps/kappfinder/apps/Games/Board/Gnotski.desktop:88
+#: apps/kappfinder/apps/Games/Board/Gnotski.desktop:89
 msgctxt "GenericName"
 msgid "GNOME Klotski Game"
 msgstr "GNOME Klotski Oyunu"
@@ -613,9 +613,9 @@ msgctxt "Name"
 msgid "Iagno"
 msgstr "Iagno"
 
-#: apps/kappfinder/apps/Games/Board/Iagno.desktop:88
-#: apps/kappfinder/apps/Games/Board/SameGnome.desktop:88
-#: apps/kappfinder/apps/Games/Board/Xgammon.desktop:88
+#: apps/kappfinder/apps/Games/Board/Iagno.desktop:89
+#: apps/kappfinder/apps/Games/Board/SameGnome.desktop:89
+#: apps/kappfinder/apps/Games/Board/Xgammon.desktop:89
 msgctxt "GenericName"
 msgid "Board Game"
 msgstr "Tahta Oyunu"
@@ -630,7 +630,7 @@ msgctxt "GenericName"
 msgid "Chess Game"
 msgstr "Satranç oyunu"
 
-#: apps/kappfinder/apps/Games/Board/xboard.desktop:90
+#: apps/kappfinder/apps/Games/Board/xboard.desktop:91
 msgctxt "Name"
 msgid "Xboard"
 msgstr "Xboard"
@@ -645,10 +645,10 @@ msgctxt "Name"
 msgid "AisleRiot"
 msgstr "AisleRiot"
 
-#: apps/kappfinder/apps/Games/Card/AisleRiot.desktop:88
-#: apps/kappfinder/apps/Games/Card/FreeCell.desktop:88
+#: apps/kappfinder/apps/Games/Card/AisleRiot.desktop:89
+#: apps/kappfinder/apps/Games/Card/FreeCell.desktop:89
 #: apps/kappfinder/apps/Games/Card/PySol.desktop:2
-#: apps/kappfinder/apps/Games/Card/XPat2.desktop:88
+#: apps/kappfinder/apps/Games/Card/XPat2.desktop:89
 msgctxt "GenericName"
 msgid "Card Game"
 msgstr "İskambil Oyunu"
@@ -658,7 +658,7 @@ msgctxt "Name"
 msgid "FreeCell"
 msgstr "FreeCell"
 
-#: apps/kappfinder/apps/Games/Card/PySol.desktop:91
+#: apps/kappfinder/apps/Games/Card/PySol.desktop:92
 msgctxt "Name"
 msgid "PySol"
 msgstr "PySol"
@@ -678,7 +678,7 @@ msgctxt "Name"
 msgid "Defendguin"
 msgstr "Defendguin"
 
-#: apps/kappfinder/apps/Games/defendguin.desktop:89
+#: apps/kappfinder/apps/Games/defendguin.desktop:90
 msgctxt "GenericName"
 msgid "Game"
 msgstr "Oyun"
@@ -688,7 +688,7 @@ msgctxt "Name"
 msgid "ChessMail"
 msgstr "Satranç Postası"
 
-#: apps/kappfinder/apps/Games/Emulators/cmail.desktop:88
+#: apps/kappfinder/apps/Games/Emulators/cmail.desktop:89
 msgctxt "GenericName"
 msgid "Email for Chess"
 msgstr "Satranç için E-Posta iletisi"
@@ -698,7 +698,7 @@ msgctxt "GenericName"
 msgid "Arcade Emulator"
 msgstr "Macera Oyunu Öykünücüsü"
 
-#: apps/kappfinder/apps/Games/Emulators/qmamecat.desktop:90
+#: apps/kappfinder/apps/Games/Emulators/qmamecat.desktop:91
 msgctxt "Name"
 msgid "Qmamecat"
 msgstr "Qmamecat"
@@ -708,7 +708,7 @@ msgctxt "Name"
 msgid "GTali"
 msgstr "GTali"
 
-#: apps/kappfinder/apps/Games/GTali.desktop:88
+#: apps/kappfinder/apps/Games/GTali.desktop:89
 msgctxt "GenericName"
 msgid "Dice Game"
 msgstr "Zar oyunu"
@@ -723,7 +723,7 @@ msgctxt "Name"
 msgid "Angband"
 msgstr "Angband"
 
-#: apps/kappfinder/apps/Games/Roguelikes/angband.desktop:88
+#: apps/kappfinder/apps/Games/Roguelikes/angband.desktop:89
 msgctxt "Comment"
 msgid "Dive into Angband and defeat Morgoth"
 msgstr "Angband'a dalıp Morgoth'u mağlup edin"
@@ -733,7 +733,7 @@ msgctxt "Name"
 msgid "Moria"
 msgstr "Moria"
 
-#: apps/kappfinder/apps/Games/Roguelikes/moria.desktop:88
+#: apps/kappfinder/apps/Games/Roguelikes/moria.desktop:89
 msgctxt "Comment"
 msgid "Dive into Moria and defeat the Balrog"
 msgstr "Moria'ya dalıp Balrog'u mağlup edin"
@@ -743,8 +743,8 @@ msgctxt "Name"
 msgid "NetHack"
 msgstr "NetHack"
 
-#: apps/kappfinder/apps/Games/Roguelikes/nethack.desktop:87
-#: apps/kappfinder/apps/Games/Roguelikes/tome.desktop:86
+#: apps/kappfinder/apps/Games/Roguelikes/nethack.desktop:88
+#: apps/kappfinder/apps/Games/Roguelikes/tome.desktop:87
 msgctxt "GenericName"
 msgid "Quest Game"
 msgstr "Araştırma Oyunu"
@@ -754,7 +754,7 @@ msgctxt "Name"
 msgid "Rogue"
 msgstr "Rogue"
 
-#: apps/kappfinder/apps/Games/Roguelikes/rogue.desktop:87
+#: apps/kappfinder/apps/Games/Roguelikes/rogue.desktop:88
 msgctxt "GenericName"
 msgid "The Original"
 msgstr "Orijinal"
@@ -769,7 +769,7 @@ msgctxt "Name"
 msgid "ZAngband"
 msgstr "ZAngband"
 
-#: apps/kappfinder/apps/Games/Roguelikes/zangband.desktop:87
+#: apps/kappfinder/apps/Games/Roguelikes/zangband.desktop:88
 msgctxt "GenericName"
 msgid "Defeat the Serpent of Chaos"
 msgstr "Kaos İblisini mağlup edin"
@@ -779,8 +779,8 @@ msgctxt "Name"
 msgid "Freeciv"
 msgstr "Freeciv"
 
-#: apps/kappfinder/apps/Games/TacticStrategy/freeciv.desktop:89
-#: apps/kappfinder/apps/Games/xshipwars.desktop:89
+#: apps/kappfinder/apps/Games/TacticStrategy/freeciv.desktop:90
+#: apps/kappfinder/apps/Games/xshipwars.desktop:90
 msgctxt "GenericName"
 msgid "Strategy Game"
 msgstr "Strateji Oyunu"
@@ -790,7 +790,7 @@ msgctxt "Name"
 msgid "Freeciv Server"
 msgstr "Freeciv Sunucusu"
 
-#: apps/kappfinder/apps/Games/TacticStrategy/freecivserver.desktop:78
+#: apps/kappfinder/apps/Games/TacticStrategy/freecivserver.desktop:79
 msgctxt "Comment"
 msgid "A server for Freeciv"
 msgstr "Freeciv için bir sunucu"
@@ -800,7 +800,7 @@ msgctxt "Name"
 msgid "XScorch"
 msgstr "XScorch"
 
-#: apps/kappfinder/apps/Games/TacticStrategy/xscorch.desktop:89
+#: apps/kappfinder/apps/Games/TacticStrategy/xscorch.desktop:90
 msgctxt "Comment"
 msgid "A free Scorched Earth clone for UNIX and X"
 msgstr "UNIX ve X için serbest bir Scorched Earth sürümü"
@@ -815,7 +815,7 @@ msgctxt "Name"
 msgid "X Bitmap"
 msgstr "X Bitmap"
 
-#: apps/kappfinder/apps/Graphics/bitmap.desktop:88
+#: apps/kappfinder/apps/Graphics/bitmap.desktop:89
 msgctxt "GenericName"
 msgid "Bitmap Creator"
 msgstr "Bitmap oluşturucu"
@@ -825,7 +825,7 @@ msgctxt "Name"
 msgid "Blender"
 msgstr "Blender"
 
-#: apps/kappfinder/apps/Graphics/blender.desktop:88
+#: apps/kappfinder/apps/Graphics/blender.desktop:89
 msgctxt "GenericName"
 msgid "3D Modeler/Renderer"
 msgstr "3B Modelleme Programı"
@@ -835,7 +835,7 @@ msgctxt "Name"
 msgid "Electric Eyes"
 msgstr "Elektrik Gözler"
 
-#: apps/kappfinder/apps/Graphics/ElectricEyes.desktop:88
+#: apps/kappfinder/apps/Graphics/ElectricEyes.desktop:89
 msgctxt "GenericName"
 msgid "Image Viewer"
 msgstr "Resim Göstericisi"
@@ -845,7 +845,7 @@ msgctxt "Name"
 msgid "GhostView"
 msgstr "GhostView"
 
-#: apps/kappfinder/apps/Graphics/ghostview.desktop:89
+#: apps/kappfinder/apps/Graphics/ghostview.desktop:90
 msgctxt "GenericName"
 msgid "PostScript Viewer"
 msgstr "PostScript Görüntüleyici"
@@ -855,7 +855,7 @@ msgctxt "Name"
 msgid "GIMP"
 msgstr "GIMP"
 
-#: apps/kappfinder/apps/Graphics/gimp.desktop:79
+#: apps/kappfinder/apps/Graphics/gimp.desktop:80
 msgctxt "GenericName"
 msgid "Image Manipulation Program"
 msgstr "Resim İşleme Programı"
@@ -875,7 +875,7 @@ msgctxt "Name"
 msgid "GPhoto"
 msgstr "GPhoto"
 
-#: apps/kappfinder/apps/Graphics/GPhoto.desktop:88
+#: apps/kappfinder/apps/Graphics/GPhoto.desktop:89
 msgctxt "GenericName"
 msgid "Digital Camera Program"
 msgstr "Dijital Kamera Programı"
@@ -885,7 +885,7 @@ msgctxt "Name"
 msgid "Gqview"
 msgstr "Gqview"
 
-#: apps/kappfinder/apps/Graphics/Gqview.desktop:88
+#: apps/kappfinder/apps/Graphics/Gqview.desktop:89
 msgctxt "GenericName"
 msgid "Image Browser"
 msgstr "Resim Tarayıcı"
@@ -895,7 +895,7 @@ msgctxt "Name"
 msgid "GV"
 msgstr "GV"
 
-#: apps/kappfinder/apps/Graphics/gv.desktop:88
+#: apps/kappfinder/apps/Graphics/gv.desktop:89
 msgctxt "GenericName"
 msgid "Postscript Viewer"
 msgstr "Postscript Görüntüleyici"
@@ -905,8 +905,8 @@ msgctxt "Name"
 msgid "Inkscape"
 msgstr "Inkscape"
 
-#: apps/kappfinder/apps/Graphics/inkscape.desktop:87
-#: apps/kappfinder/apps/Graphics/sodipodi.desktop:89
+#: apps/kappfinder/apps/Graphics/inkscape.desktop:88
+#: apps/kappfinder/apps/Graphics/sodipodi.desktop:90
 msgctxt "GenericName"
 msgid "Vector Drawing"
 msgstr "Vektör Tabanlı Çizim"
@@ -916,7 +916,7 @@ msgctxt "Name"
 msgid "Sketch"
 msgstr "Taslak"
 
-#: apps/kappfinder/apps/Graphics/Sketch.desktop:88
+#: apps/kappfinder/apps/Graphics/Sketch.desktop:89
 msgctxt "GenericName"
 msgid "Vector-based Drawing Program"
 msgstr "Vektör Tabanlı Çizim Programı"
@@ -931,8 +931,8 @@ msgctxt "Name"
 msgid "TGif"
 msgstr "TGif"
 
-#: apps/kappfinder/apps/Graphics/tgif.desktop:89
-#: apps/kappfinder/apps/Graphics/xfig.desktop:92
+#: apps/kappfinder/apps/Graphics/tgif.desktop:90
+#: apps/kappfinder/apps/Graphics/xfig.desktop:93
 msgctxt "GenericName"
 msgid "Drawing Program"
 msgstr "Çizim Programı"
@@ -942,7 +942,7 @@ msgctxt "Name"
 msgid "X DVI"
 msgstr "X DVI"
 
-#: apps/kappfinder/apps/Graphics/xdvi.desktop:91
+#: apps/kappfinder/apps/Graphics/xdvi.desktop:92
 msgctxt "GenericName"
 msgid "DVI Viewer"
 msgstr "DVI Görüntüleyici"
@@ -957,7 +957,7 @@ msgctxt "Name"
 msgid "X Paint"
 msgstr "X Paint"
 
-#: apps/kappfinder/apps/Graphics/xpaint.desktop:90
+#: apps/kappfinder/apps/Graphics/xpaint.desktop:91
 msgctxt "GenericName"
 msgid "Paint Program"
 msgstr "Boyama Programı"
@@ -967,7 +967,7 @@ msgctxt "Name"
 msgid "Xpcd"
 msgstr "Xpcd"
 
-#: apps/kappfinder/apps/Graphics/Xpcd.desktop:87
+#: apps/kappfinder/apps/Graphics/Xpcd.desktop:88
 msgctxt "GenericName"
 msgid "PhotoCD Tools"
 msgstr "PhotoCD Araçları"
@@ -977,7 +977,7 @@ msgctxt "Name"
 msgid "XV"
 msgstr "XV"
 
-#: apps/kappfinder/apps/Graphics/xv.desktop:89
+#: apps/kappfinder/apps/Graphics/xv.desktop:90
 msgctxt "GenericName"
 msgid "Picture Viewer"
 msgstr "Resim Görüntüleyici"
@@ -987,7 +987,7 @@ msgctxt "Name"
 msgid "Xwpick"
 msgstr "Xwpick"
 
-#: apps/kappfinder/apps/Graphics/Xwpick.desktop:87
+#: apps/kappfinder/apps/Graphics/Xwpick.desktop:88
 msgctxt "GenericName"
 msgid "Screen Capture Program"
 msgstr "Ekran Yakalama Programı"
@@ -997,17 +997,17 @@ msgctxt "Name"
 msgid "Arena"
 msgstr "Arena"
 
-#: apps/kappfinder/apps/Internet/arena.desktop:90
-#: apps/kappfinder/apps/Internet/epiphany.desktop:87
-#: apps/kappfinder/apps/Internet/Galeon.desktop:88
-#: apps/kappfinder/apps/Internet/mozilla.desktop:92
-#: apps/kappfinder/apps/Internet/mozilla-firefox.desktop:91
-#: apps/kappfinder/apps/Internet/netscape6.desktop:79
-#: apps/kappfinder/apps/Internet/netscape.desktop:92
-#: apps/kappfinder/apps/Internet/opera.desktop:89
-#: apps/kappfinder/apps/Internet/Terminal/Links.desktop:89
-#: apps/kappfinder/apps/Internet/Terminal/Lynx.desktop:88
-#: apps/kappfinder/apps/Internet/Terminal/w3m.desktop:88
+#: apps/kappfinder/apps/Internet/arena.desktop:91
+#: apps/kappfinder/apps/Internet/epiphany.desktop:88
+#: apps/kappfinder/apps/Internet/Galeon.desktop:89
+#: apps/kappfinder/apps/Internet/mozilla.desktop:93
+#: apps/kappfinder/apps/Internet/mozilla-firefox.desktop:92
+#: apps/kappfinder/apps/Internet/netscape6.desktop:80
+#: apps/kappfinder/apps/Internet/netscape.desktop:93
+#: apps/kappfinder/apps/Internet/opera.desktop:90
+#: apps/kappfinder/apps/Internet/Terminal/Links.desktop:90
+#: apps/kappfinder/apps/Internet/Terminal/Lynx.desktop:89
+#: apps/kappfinder/apps/Internet/Terminal/w3m.desktop:89
 #: apps/konqueror/konqbrowser.desktop:95
 msgctxt "GenericName"
 msgid "Web Browser"
@@ -1018,14 +1018,14 @@ msgctxt "Name"
 msgid "Balsa"
 msgstr "Balsa"
 
-#: apps/kappfinder/apps/Internet/balsa.desktop:88
-#: apps/kappfinder/apps/Internet/Evolution.desktop:88
-#: apps/kappfinder/apps/Internet/mozilla-thunderbird.desktop:91
-#: apps/kappfinder/apps/Internet/Netscapemessenger.desktop:89
-#: apps/kappfinder/apps/Internet/Sylpheed.desktop:88
-#: apps/kappfinder/apps/Internet/Terminal/mutt.desktop:91
-#: apps/kappfinder/apps/Internet/Terminal/pine.desktop:91
-#: apps/kappfinder/apps/Internet/xfmail.desktop:91
+#: apps/kappfinder/apps/Internet/balsa.desktop:89
+#: apps/kappfinder/apps/Internet/Evolution.desktop:89
+#: apps/kappfinder/apps/Internet/mozilla-thunderbird.desktop:92
+#: apps/kappfinder/apps/Internet/Netscapemessenger.desktop:90
+#: apps/kappfinder/apps/Internet/Sylpheed.desktop:89
+#: apps/kappfinder/apps/Internet/Terminal/mutt.desktop:92
+#: apps/kappfinder/apps/Internet/Terminal/pine.desktop:92
+#: apps/kappfinder/apps/Internet/xfmail.desktop:92
 msgctxt "GenericName"
 msgid "Mail Client"
 msgstr "E-posta İstemcisi"
@@ -1035,7 +1035,7 @@ msgctxt "Name"
 msgid "BlueFish"
 msgstr "BlueFish"
 
-#: apps/kappfinder/apps/Internet/BlueFish.desktop:87
+#: apps/kappfinder/apps/Internet/BlueFish.desktop:88
 msgctxt "GenericName"
 msgid "HTML Editor"
 msgstr "HTML Düzenleyici"
@@ -1046,7 +1046,7 @@ msgctxt "GenericName"
 msgid "BitTorrent GUI"
 msgstr "BitTorrent Arayüzü"
 
-#: apps/kappfinder/apps/Internet/btdownloadgui.desktop:90
+#: apps/kappfinder/apps/Internet/btdownloadgui.desktop:91
 msgctxt "Name"
 msgid "BitTorrent Python wxGTK GUI"
 msgstr "BitTorrent Python wxGTK Arayüzü"
@@ -1056,9 +1056,9 @@ msgctxt "Name"
 msgid "Coolmail"
 msgstr "Coolmail"
 
-#: apps/kappfinder/apps/Internet/coolmail.desktop:92
-#: apps/kappfinder/apps/Internet/Faces.desktop:88
-#: apps/kappfinder/apps/Internet/xbiff.desktop:92
+#: apps/kappfinder/apps/Internet/coolmail.desktop:93
+#: apps/kappfinder/apps/Internet/Faces.desktop:89
+#: apps/kappfinder/apps/Internet/xbiff.desktop:93
 msgctxt "GenericName"
 msgid "Mail Alert"
 msgstr "Posta Uyarısı"
@@ -1068,7 +1068,7 @@ msgctxt "Name"
 msgid "DCTC GUI"
 msgstr "DCTC GUI"
 
-#: apps/kappfinder/apps/Internet/dc_gui.desktop:90
+#: apps/kappfinder/apps/Internet/dc_gui.desktop:91
 msgctxt "GenericName"
 msgid "Direct Connect Clone"
 msgstr "Direct Connect Programı"
@@ -1078,9 +1078,9 @@ msgctxt "Name"
 msgid "Dpsftp"
 msgstr "Dpsftp"
 
-#: apps/kappfinder/apps/Internet/Dpsftp.desktop:88
-#: apps/kappfinder/apps/Internet/gFTP.desktop:88
-#: apps/kappfinder/apps/Internet/xftp.desktop:89
+#: apps/kappfinder/apps/Internet/Dpsftp.desktop:89
+#: apps/kappfinder/apps/Internet/gFTP.desktop:89
+#: apps/kappfinder/apps/Internet/xftp.desktop:90
 msgctxt "GenericName"
 msgid "FTP Browser"
 msgstr "FTP Tarayıcı"
@@ -1090,7 +1090,7 @@ msgctxt "Name"
 msgid "DrakSync"
 msgstr "DrakSync"
 
-#: apps/kappfinder/apps/Internet/DrakSync.desktop:88
+#: apps/kappfinder/apps/Internet/DrakSync.desktop:89
 msgctxt "GenericName"
 msgid "Folder Synchronization"
 msgstr "Dizin Senkronizasyonu"
@@ -1100,7 +1100,7 @@ msgctxt "Name"
 msgid "eDonkey2000 GTK+ Core Controller"
 msgstr "eDonkey2000 GTK+ Denetleyici"
 
-#: apps/kappfinder/apps/Internet/ed2k_gui.desktop:87
+#: apps/kappfinder/apps/Internet/ed2k_gui.desktop:88
 msgctxt "GenericName"
 msgid "eDonkey2000 GUI"
 msgstr "eDonkey2000 Grafik Arayüzü"
@@ -1115,8 +1115,8 @@ msgctxt "Name"
 msgid "Ethereal"
 msgstr "Ethereal"
 
-#: apps/kappfinder/apps/Internet/ethereal.desktop:87
-#: apps/kappfinder/apps/Internet/wireshark.desktop:84
+#: apps/kappfinder/apps/Internet/ethereal.desktop:88
+#: apps/kappfinder/apps/Internet/wireshark.desktop:85
 msgctxt "GenericName"
 msgid "Network Analyzer"
 msgstr "Ağ Analiz Programı"
@@ -1136,7 +1136,7 @@ msgctxt "Name"
 msgid "Fetchmailconf"
 msgstr "Fetchmailconf"
 
-#: apps/kappfinder/apps/Internet/Fetchmailconf.desktop:87
+#: apps/kappfinder/apps/Internet/Fetchmailconf.desktop:88
 msgctxt "GenericName"
 msgid "Fetchmail Configuration"
 msgstr "Fetchmail Yapılandırması"
@@ -1146,8 +1146,8 @@ msgctxt "Name"
 msgid "Gabber"
 msgstr "Gabber"
 
-#: apps/kappfinder/apps/Internet/Gabber.desktop:88
-#: apps/kappfinder/apps/Internet/gaim.desktop:87
+#: apps/kappfinder/apps/Internet/Gabber.desktop:89
+#: apps/kappfinder/apps/Internet/gaim.desktop:88
 msgctxt "GenericName"
 msgid "Instant Messenger"
 msgstr "Hızlı Mesajlaşma Uygulaması"
@@ -1172,8 +1172,8 @@ msgctxt "Name"
 msgid "GNOMEICU"
 msgstr "GNOMEICU"
 
-#: apps/kappfinder/apps/Internet/GnomeICU.desktop:88
-#: apps/kappfinder/apps/Internet/licq.desktop:89
+#: apps/kappfinder/apps/Internet/GnomeICU.desktop:89
+#: apps/kappfinder/apps/Internet/licq.desktop:90
 msgctxt "GenericName"
 msgid "ICQ Messenger"
 msgstr "ICQ Hızlı Mesajlaşma Uygulaması"
@@ -1183,7 +1183,7 @@ msgctxt "Name"
 msgid "GnomeMeeting"
 msgstr "GnomeMeeting"
 
-#: apps/kappfinder/apps/Internet/gnomemeeting.desktop:88
+#: apps/kappfinder/apps/Internet/gnomemeeting.desktop:89
 msgctxt "GenericName"
 msgid "Video Conferencing"
 msgstr "Video Konferans"
@@ -1198,7 +1198,7 @@ msgctxt "Name"
 msgid "GNOME Telnet"
 msgstr "GNOME Telnet"
 
-#: apps/kappfinder/apps/Internet/gtelnet.desktop:88
+#: apps/kappfinder/apps/Internet/gtelnet.desktop:89
 msgctxt "GenericName"
 msgid "Remote Access"
 msgstr "Uzaktan Erişim"
@@ -1208,7 +1208,7 @@ msgctxt "Name"
 msgid "ickle"
 msgstr "ickle"
 
-#: apps/kappfinder/apps/Internet/ickle.desktop:89
+#: apps/kappfinder/apps/Internet/ickle.desktop:90
 msgctxt "GenericName"
 msgid "ICQ2000 Chat"
 msgstr "ICQ2000"
@@ -1223,8 +1223,8 @@ msgctxt "Name"
 msgid "KNews"
 msgstr "KNews"
 
-#: apps/kappfinder/apps/Internet/knews.desktop:88
-#: apps/kappfinder/apps/Internet/Pan.desktop:88
+#: apps/kappfinder/apps/Internet/knews.desktop:89
+#: apps/kappfinder/apps/Internet/Pan.desktop:89
 msgctxt "GenericName"
 msgid "Usenet News Reader"
 msgstr "Usenet Haber Okuyucu"
@@ -1239,7 +1239,7 @@ msgctxt "Name"
 msgid "MLDonkey GTK+ Core Controller"
 msgstr "MLDonkey GTK+ Denetleyicisi"
 
-#: apps/kappfinder/apps/Internet/mldonkey_gui.desktop:86
+#: apps/kappfinder/apps/Internet/mldonkey_gui.desktop:87
 msgctxt "GenericName"
 msgid "MLDonkey GUI"
 msgstr "MLDonkey Arayüzü"
@@ -1279,7 +1279,7 @@ msgctxt "Name"
 msgid "Nmapfe"
 msgstr "Nmapfe"
 
-#: apps/kappfinder/apps/Internet/Nmapfe.desktop:87
+#: apps/kappfinder/apps/Internet/Nmapfe.desktop:88
 msgctxt "GenericName"
 msgid "Port Scanner"
 msgstr "Port Tarayıcı"
@@ -1299,18 +1299,18 @@ msgctxt "Name"
 msgid "Sylpheed"
 msgstr "Sylpheed"
 
-#: apps/kappfinder/apps/Internet/Terminal/btdownloadcurses.desktop:90
+#: apps/kappfinder/apps/Internet/Terminal/btdownloadcurses.desktop:91
 msgctxt "Name"
 msgid "BitTorrent Python Curses GUI"
 msgstr "BitTorrent Python Grafiksel Arayüzü"
 
 #: apps/kappfinder/apps/Internet/Terminal/lftp.desktop:2
-#: apps/kappfinder/apps/Internet/Terminal/ncftp.desktop:88
+#: apps/kappfinder/apps/Internet/Terminal/ncftp.desktop:89
 msgctxt "GenericName"
 msgid "FTP Client"
 msgstr "FTP İstemcisi"
 
-#: apps/kappfinder/apps/Internet/Terminal/lftp.desktop:91
+#: apps/kappfinder/apps/Internet/Terminal/lftp.desktop:92
 msgctxt "Name"
 msgid "Lftp"
 msgstr "Lftp"
@@ -1345,7 +1345,7 @@ msgctxt "GenericName"
 msgid "SILC Client"
 msgstr "SILC İstemcisi"
 
-#: apps/kappfinder/apps/Internet/Terminal/silc.desktop:90
+#: apps/kappfinder/apps/Internet/Terminal/silc.desktop:91
 msgctxt "Name"
 msgid "SILC"
 msgstr "SILC"
@@ -1355,7 +1355,7 @@ msgctxt "Name"
 msgid "Slrn"
 msgstr "Slrn"
 
-#: apps/kappfinder/apps/Internet/Terminal/slrn.desktop:91
+#: apps/kappfinder/apps/Internet/Terminal/slrn.desktop:92
 msgctxt "GenericName"
 msgid "News Reader"
 msgstr "Haber Okuyucu"
@@ -1380,7 +1380,7 @@ msgctxt "Name"
 msgid "XChat"
 msgstr "XChat"
 
-#: apps/kappfinder/apps/Internet/xchat.desktop:91
+#: apps/kappfinder/apps/Internet/xchat.desktop:92
 msgctxt "GenericName"
 msgid "IRC Chat"
 msgstr "IRC Programı"
@@ -1400,7 +1400,7 @@ msgctxt "GenericName"
 msgid "Videotext Viewer"
 msgstr "Videotext Gösterici"
 
-#: apps/kappfinder/apps/Multimedia/alevt.desktop:78
+#: apps/kappfinder/apps/Multimedia/alevt.desktop:79
 msgctxt "Name"
 msgid "AleVT"
 msgstr "AleVT"
@@ -1410,7 +1410,7 @@ msgctxt "Name"
 msgid "AlsaMixerGui"
 msgstr "AlsaMixerGui"
 
-#: apps/kappfinder/apps/Multimedia/alsamixergui.desktop:88
+#: apps/kappfinder/apps/Multimedia/alsamixergui.desktop:89
 msgctxt "GenericName"
 msgid "Alsa Mixer Frontend"
 msgstr "Alsa Ses Karıştırıcı Ön yüzü"
@@ -1420,7 +1420,7 @@ msgctxt "Name"
 msgid "ams"
 msgstr "ams"
 
-#: apps/kappfinder/apps/Multimedia/ams.desktop:82
+#: apps/kappfinder/apps/Multimedia/ams.desktop:83
 msgctxt "GenericName"
 msgid "Alsa Modular Synthesizer"
 msgstr "Alsa Modüler Sentezleyici"
@@ -1430,7 +1430,7 @@ msgctxt "Name"
 msgid "amSynth"
 msgstr "amSynth"
 
-#: apps/kappfinder/apps/Multimedia/amsynth.desktop:81
+#: apps/kappfinder/apps/Multimedia/amsynth.desktop:82
 msgctxt "GenericName"
 msgid "Retro Analog - Modeling Softsynth"
 msgstr "Retro Analog - Modeling Softsynth"
@@ -1440,7 +1440,7 @@ msgctxt "Name"
 msgid "Ardour"
 msgstr "Ardour"
 
-#: apps/kappfinder/apps/Multimedia/ardour.desktop:84
+#: apps/kappfinder/apps/Multimedia/ardour.desktop:85
 msgctxt "GenericName"
 msgid "Multitrack Audio Studio"
 msgstr "Çoklu İz İşleyebilen Ses Stüdyosu"
@@ -1450,9 +1450,9 @@ msgctxt "Name"
 msgid "Audacity"
 msgstr "Audacity"
 
-#: apps/kappfinder/apps/Multimedia/audacity.desktop:89
-#: apps/kappfinder/apps/Multimedia/rezound.desktop:88
-#: apps/kappfinder/apps/Multimedia/sweep.desktop:89
+#: apps/kappfinder/apps/Multimedia/audacity.desktop:90
+#: apps/kappfinder/apps/Multimedia/rezound.desktop:89
+#: apps/kappfinder/apps/Multimedia/sweep.desktop:90
 msgctxt "GenericName"
 msgid "Audio Editor"
 msgstr "Ses Düzenleyicisi"
@@ -1462,7 +1462,7 @@ msgctxt "Name"
 msgid "Aumix"
 msgstr "Aumix"
 
-#: apps/kappfinder/apps/Multimedia/Aumix.desktop:87
+#: apps/kappfinder/apps/Multimedia/Aumix.desktop:88
 msgctxt "GenericName"
 msgid "Audio Mixer"
 msgstr "Ses Karıştırıcısı"
@@ -1472,7 +1472,7 @@ msgctxt "GenericName"
 msgid "AVI Video Player"
 msgstr "AVI Video Yürütücüsü"
 
-#: apps/kappfinder/apps/Multimedia/aviplay.desktop:91
+#: apps/kappfinder/apps/Multimedia/aviplay.desktop:92
 msgctxt "Name"
 msgid "Aviplay"
 msgstr "Aviplay"
@@ -1482,7 +1482,7 @@ msgctxt "Name"
 msgid "Broadcast 2000"
 msgstr "Broadcast 2000"
 
-#: apps/kappfinder/apps/Multimedia/bcast2000.desktop:88
+#: apps/kappfinder/apps/Multimedia/bcast2000.desktop:89
 msgctxt "GenericName"
 msgid "Audio and Video IDE"
 msgstr "Ses ve görüntü için tümleşik geliştirme ortamı"
@@ -1492,8 +1492,8 @@ msgctxt "Name"
 msgid "DJPlay"
 msgstr "DJPlay"
 
-#: apps/kappfinder/apps/Multimedia/djplay.desktop:85
-#: apps/kappfinder/apps/Multimedia/mixxx.desktop:82
+#: apps/kappfinder/apps/Multimedia/djplay.desktop:86
+#: apps/kappfinder/apps/Multimedia/mixxx.desktop:83
 msgctxt "GenericName"
 msgid "DJ-Mixer and Player"
 msgstr "DJ-Karıştırıcı ve Oynatıcı"
@@ -1503,7 +1503,7 @@ msgctxt "Name"
 msgid "EcaMegaPedal"
 msgstr "EcaMegaPedal"
 
-#: apps/kappfinder/apps/Multimedia/ecamegapedal.desktop:81
+#: apps/kappfinder/apps/Multimedia/ecamegapedal.desktop:82
 msgctxt "GenericName"
 msgid "Ecasound Effektrack"
 msgstr "Ecasound Effektrack"
@@ -1513,7 +1513,7 @@ msgctxt "Name"
 msgid "EnjoyMPEG"
 msgstr "EnjoyMPEG"
 
-#: apps/kappfinder/apps/Multimedia/enjoympeg.desktop:87
+#: apps/kappfinder/apps/Multimedia/enjoympeg.desktop:88
 #: apps/kappfinder/apps/Multimedia/gtv.desktop:2
 msgctxt "GenericName"
 msgid "MPEG Player"
@@ -1524,8 +1524,8 @@ msgctxt "Name"
 msgid "FreeBirth"
 msgstr "FreeBirth"
 
-#: apps/kappfinder/apps/Multimedia/freebirth.desktop:84
-#: apps/kappfinder/apps/Multimedia/hydrogen.desktop:82
+#: apps/kappfinder/apps/Multimedia/freebirth.desktop:85
+#: apps/kappfinder/apps/Multimedia/hydrogen.desktop:83
 msgctxt "GenericName"
 msgid "Drum Machine"
 msgstr "Davul Makinesi"
@@ -1535,7 +1535,7 @@ msgctxt "Name"
 msgid "FreqTweak"
 msgstr "FreqTweak"
 
-#: apps/kappfinder/apps/Multimedia/freqtweak.desktop:82
+#: apps/kappfinder/apps/Multimedia/freqtweak.desktop:83
 msgctxt "GenericName"
 msgid "Effects for Jack"
 msgstr "Jack için Efektler"
@@ -1545,7 +1545,7 @@ msgctxt "Name"
 msgid "gAlan"
 msgstr "gAlan"
 
-#: apps/kappfinder/apps/Multimedia/galan.desktop:85
+#: apps/kappfinder/apps/Multimedia/galan.desktop:86
 msgctxt "GenericName"
 msgid "Modular Synth"
 msgstr "Modüler Sentezleyici"
@@ -1555,12 +1555,12 @@ msgctxt "Name"
 msgid "Grip"
 msgstr "Grip"
 
-#: apps/kappfinder/apps/Multimedia/Grip.desktop:89
+#: apps/kappfinder/apps/Multimedia/Grip.desktop:90
 msgctxt "GenericName"
 msgid "CD Player/Ripper"
 msgstr "CD Çalıcı/Aktarıcı"
 
-#: apps/kappfinder/apps/Multimedia/gtv.desktop:91
+#: apps/kappfinder/apps/Multimedia/gtv.desktop:92
 msgctxt "Name"
 msgid "GTV"
 msgstr "GTV"
@@ -1575,7 +1575,7 @@ msgctxt "Name"
 msgid "Jack-Rack"
 msgstr "Jack-Rack"
 
-#: apps/kappfinder/apps/Multimedia/jack-rack.desktop:81
+#: apps/kappfinder/apps/Multimedia/jack-rack.desktop:82
 msgctxt "GenericName"
 msgid "Jack Effectrack"
 msgstr "Jack Effectrack"
@@ -1585,7 +1585,7 @@ msgctxt "Name"
 msgid "Jamin"
 msgstr "Jamin"
 
-#: apps/kappfinder/apps/Multimedia/jamin.desktop:84
+#: apps/kappfinder/apps/Multimedia/jamin.desktop:85
 msgctxt "GenericName"
 msgid "Jack Mastering Tool"
 msgstr "Jack Yönetim Aracı"
@@ -1595,7 +1595,7 @@ msgctxt "Name"
 msgid "Jazz"
 msgstr "Jazz"
 
-#: apps/kappfinder/apps/Multimedia/jazz.desktop:89
+#: apps/kappfinder/apps/Multimedia/jazz.desktop:90
 msgctxt "GenericName"
 msgid "Sound Processor"
 msgstr "Ses İşleyici"
@@ -1605,7 +1605,7 @@ msgctxt "GenericName"
 msgid "Dual Channel VU-Meter"
 msgstr "Çift Kanallı VU-Meter"
 
-#: apps/kappfinder/apps/Multimedia/meterbridge.desktop:82
+#: apps/kappfinder/apps/Multimedia/meterbridge.desktop:83
 msgctxt "Name"
 msgid "Meterbridge"
 msgstr "Meterbridge"
@@ -1624,17 +1624,17 @@ msgstr "MP3 Bilgisi"
 #: apps/kappfinder/apps/Multimedia/mtv.desktop:2
 #: apps/kappfinder/apps/Multimedia/realplayer.desktop:2
 #: apps/kappfinder/apps/Multimedia/xine.desktop:2
-#: apps/kappfinder/apps/Multimedia/XMovie.desktop:88
+#: apps/kappfinder/apps/Multimedia/XMovie.desktop:89
 msgctxt "GenericName"
 msgid "Video Player"
 msgstr "Video Yürütücüsü"
 
-#: apps/kappfinder/apps/Multimedia/mplayer.desktop:92
+#: apps/kappfinder/apps/Multimedia/mplayer.desktop:93
 msgctxt "Name"
 msgid "MPlayer"
 msgstr "MPlayer"
 
-#: apps/kappfinder/apps/Multimedia/mtv.desktop:91
+#: apps/kappfinder/apps/Multimedia/mtv.desktop:92
 msgctxt "Name"
 msgid "MpegTV"
 msgstr "MpegTV"
@@ -1644,7 +1644,7 @@ msgctxt "Name"
 msgid "MusE"
 msgstr "MusE"
 
-#: apps/kappfinder/apps/Multimedia/muse.desktop:85
+#: apps/kappfinder/apps/Multimedia/muse.desktop:86
 msgctxt "GenericName"
 msgid "Music Sequencer"
 msgstr "Müzik Ardışımlayıcı"
@@ -1654,7 +1654,7 @@ msgctxt "GenericName"
 msgid "DVD Player"
 msgstr "DVD Oynatıcı"
 
-#: apps/kappfinder/apps/Multimedia/ogle.desktop:92
+#: apps/kappfinder/apps/Multimedia/ogle.desktop:93
 msgctxt "Name"
 msgid "Ogle"
 msgstr "Ogle"
@@ -1664,7 +1664,7 @@ msgctxt "GenericName"
 msgid "MOV Video Player"
 msgstr "MOV Video Yürütücü"
 
-#: apps/kappfinder/apps/Multimedia/oqtplayer.desktop:91
+#: apps/kappfinder/apps/Multimedia/oqtplayer.desktop:92
 msgctxt "Name"
 msgid "OQTPlayer"
 msgstr "OQTPlayer"
@@ -1674,7 +1674,7 @@ msgctxt "Name"
 msgid "QJackCtl"
 msgstr "QJackCtl"
 
-#: apps/kappfinder/apps/Multimedia/qjackctl.desktop:82
+#: apps/kappfinder/apps/Multimedia/qjackctl.desktop:83
 msgctxt "GenericName"
 msgid "Control for Jack"
 msgstr "Jack Denetimi"
@@ -1684,12 +1684,12 @@ msgctxt "Name"
 msgid "QSynth"
 msgstr "QSynth"
 
-#: apps/kappfinder/apps/Multimedia/qsynth.desktop:81
+#: apps/kappfinder/apps/Multimedia/qsynth.desktop:82
 msgctxt "GenericName"
 msgid "Control for FluidSynth"
 msgstr "FluidSynth Denetimi"
 
-#: apps/kappfinder/apps/Multimedia/realplayer.desktop:92
+#: apps/kappfinder/apps/Multimedia/realplayer.desktop:93
 msgctxt "Name"
 msgid "RealPlayer"
 msgstr "RealPlayer"
@@ -1704,7 +1704,7 @@ msgctxt "Name"
 msgid "Slab"
 msgstr "Slab"
 
-#: apps/kappfinder/apps/Multimedia/slab.desktop:87
+#: apps/kappfinder/apps/Multimedia/slab.desktop:88
 msgctxt "GenericName"
 msgid "Audio Recorder"
 msgstr "Ses Kaydedici"
@@ -1719,7 +1719,7 @@ msgctxt "Name"
 msgid "vkeybd"
 msgstr "vkeybd"
 
-#: apps/kappfinder/apps/Multimedia/vkeybd.desktop:82
+#: apps/kappfinder/apps/Multimedia/vkeybd.desktop:83
 msgctxt "GenericName"
 msgid "Virtual MIDI Keyboard"
 msgstr "Sanal MIDI Klavyesi"
@@ -1729,7 +1729,7 @@ msgctxt "GenericName"
 msgid "Watch TV!"
 msgstr "TV İzle!"
 
-#: apps/kappfinder/apps/Multimedia/xawtv.desktop:90
+#: apps/kappfinder/apps/Multimedia/xawtv.desktop:91
 msgctxt "Name"
 msgid "XawTV"
 msgstr "XawTV"
@@ -1739,12 +1739,12 @@ msgctxt "Name"
 msgid "XCam"
 msgstr "XCam"
 
-#: apps/kappfinder/apps/Multimedia/xcam.desktop:88
+#: apps/kappfinder/apps/Multimedia/xcam.desktop:89
 msgctxt "GenericName"
 msgid "Camera Program"
 msgstr "Kamera Programı"
 
-#: apps/kappfinder/apps/Multimedia/xine.desktop:92
+#: apps/kappfinder/apps/Multimedia/xine.desktop:93
 msgctxt "Name"
 msgid "Xine"
 msgstr "Xine"
@@ -1754,7 +1754,7 @@ msgctxt "GenericName"
 msgid "Multimedia Player"
 msgstr "Çoklu Ortam Yürütücüsü"
 
-#: apps/kappfinder/apps/Multimedia/xmms.desktop:91
+#: apps/kappfinder/apps/Multimedia/xmms.desktop:92
 msgctxt "Name"
 msgid "XMMS"
 msgstr "XMMS"
@@ -1764,7 +1764,7 @@ msgctxt "GenericName"
 msgid "Playlist Tool"
 msgstr "Çalma Listesi Aracı"
 
-#: apps/kappfinder/apps/Multimedia/xmms-enqueue.desktop:91
+#: apps/kappfinder/apps/Multimedia/xmms-enqueue.desktop:92
 msgctxt "Name"
 msgid "Enqueue in XMMS"
 msgstr "XMMS Kuyruğuna Ekle"
@@ -1779,7 +1779,7 @@ msgctxt "Name"
 msgid "ZynaddsubFX"
 msgstr "ZynaddsubFX"
 
-#: apps/kappfinder/apps/Multimedia/zynaddsubfx.desktop:81
+#: apps/kappfinder/apps/Multimedia/zynaddsubfx.desktop:82
 msgctxt "GenericName"
 msgid "Soft Synth"
 msgstr "Soft Sentezleyici"
@@ -1789,10 +1789,10 @@ msgctxt "Name"
 msgid "AbiWord"
 msgstr "AbiWord"
 
-#: apps/kappfinder/apps/Office/abiword.desktop:88
-#: apps/kappfinder/apps/Office/lyx.desktop:88
-#: apps/kappfinder/apps/Office/WordPerfect2000.desktop:94
-#: apps/kappfinder/apps/Office/WordPerfect.desktop:94
+#: apps/kappfinder/apps/Office/abiword.desktop:89
+#: apps/kappfinder/apps/Office/lyx.desktop:89
+#: apps/kappfinder/apps/Office/WordPerfect2000.desktop:95
+#: apps/kappfinder/apps/Office/WordPerfect.desktop:95
 msgctxt "GenericName"
 msgid "Word Processor"
 msgstr "Kelime İşlemci"
@@ -1802,8 +1802,8 @@ msgctxt "Name"
 msgid "Acrobat Reader"
 msgstr "Acrobat Reader"
 
-#: apps/kappfinder/apps/Office/acroread.desktop:92
-#: apps/kappfinder/apps/Office/xpdf.desktop:89
+#: apps/kappfinder/apps/Office/acroread.desktop:93
+#: apps/kappfinder/apps/Office/xpdf.desktop:90
 msgctxt "GenericName"
 msgid "PDF Viewer"
 msgstr "PDF Görüntüleyici"
@@ -1813,7 +1813,7 @@ msgctxt "Name"
 msgid "Applix"
 msgstr "Applix"
 
-#: apps/kappfinder/apps/Office/Applix.desktop:94
+#: apps/kappfinder/apps/Office/Applix.desktop:95
 msgctxt "GenericName"
 msgid "Office Suite"
 msgstr "Ofis Araç Takımı"
@@ -1823,8 +1823,8 @@ msgctxt "Name"
 msgid "Dia"
 msgstr "Dia"
 
-#: apps/kappfinder/apps/Office/Dia.desktop:88
-#: apps/kappfinder/apps/Office/Guppi.desktop:88
+#: apps/kappfinder/apps/Office/Dia.desktop:89
+#: apps/kappfinder/apps/Office/Guppi.desktop:89
 msgctxt "GenericName"
 msgid "Program for Diagrams"
 msgstr "Şema Yazılımı"
@@ -1834,7 +1834,7 @@ msgctxt "Name"
 msgid "GNOME-Cal"
 msgstr "GNOME-Cal"
 
-#: apps/kappfinder/apps/Office/Gnome-Cal.desktop:88
+#: apps/kappfinder/apps/Office/Gnome-Cal.desktop:89
 msgctxt "GenericName"
 msgid "Personal Calendar"
 msgstr "Kişisel Takvim"
@@ -1844,7 +1844,7 @@ msgctxt "Name"
 msgid "GNOME-Card"
 msgstr "GNOME-Card"
 
-#: apps/kappfinder/apps/Office/Gnome-Card.desktop:89
+#: apps/kappfinder/apps/Office/Gnome-Card.desktop:90
 msgctxt "GenericName"
 msgid "Contact Manager"
 msgstr "Kişi, Adres Yöneticisi"
@@ -1859,7 +1859,7 @@ msgctxt "Name"
 msgid "GnuCash"
 msgstr "GnuCash"
 
-#: apps/kappfinder/apps/Office/gnucash.desktop:91
+#: apps/kappfinder/apps/Office/gnucash.desktop:92
 msgctxt "GenericName"
 msgid "Finance Manager"
 msgstr "Muhasebe Yazılımı"
@@ -1869,8 +1869,8 @@ msgctxt "Name"
 msgid "Gnumeric"
 msgstr "Gnumeric"
 
-#: apps/kappfinder/apps/Office/Gnumeric.desktop:88
-#: apps/kappfinder/apps/Office/XsLite.desktop:93
+#: apps/kappfinder/apps/Office/Gnumeric.desktop:89
+#: apps/kappfinder/apps/Office/XsLite.desktop:94
 msgctxt "GenericName"
 msgid "Spread Sheet"
 msgstr "Hesap Çizelgesi"
@@ -1885,7 +1885,7 @@ msgctxt "Name"
 msgid "Ical"
 msgstr "Ical"
 
-#: apps/kappfinder/apps/Office/Ical.desktop:88
+#: apps/kappfinder/apps/Office/Ical.desktop:89
 msgctxt "GenericName"
 msgid "Calendar Program"
 msgstr "Takvim Programı"
@@ -1900,7 +1900,7 @@ msgctxt "Name"
 msgid "MrProject"
 msgstr "MrProject"
 
-#: apps/kappfinder/apps/Office/mrproject.desktop:91
+#: apps/kappfinder/apps/Office/mrproject.desktop:92
 msgctxt "GenericName"
 msgid "Project Manager"
 msgstr "Proje Yöneticisi"
@@ -1915,7 +1915,7 @@ msgctxt "Name"
 msgid "Plan"
 msgstr "Plan"
 
-#: apps/kappfinder/apps/Office/plan.desktop:94
+#: apps/kappfinder/apps/Office/plan.desktop:95
 msgctxt "GenericName"
 msgid "Calendar Manager"
 msgstr "Takvim Yöneticisi"
@@ -1925,7 +1925,7 @@ msgctxt "GenericName"
 msgid "Bibliographic Database"
 msgstr "Bibliyografik Veritabanı"
 
-#: apps/kappfinder/apps/Office/pybliographic.desktop:91
+#: apps/kappfinder/apps/Office/pybliographic.desktop:92
 msgctxt "Name"
 msgid "Pybliographic"
 msgstr "Pybliographic"
@@ -1935,7 +1935,7 @@ msgctxt "Name"
 msgid "Scribus"
 msgstr "Scribus"
 
-#: apps/kappfinder/apps/Office/scribus.desktop:88
+#: apps/kappfinder/apps/Office/scribus.desktop:89
 msgctxt "GenericName"
 msgid "Desktop Publishing"
 msgstr "Masaüstü Yayıncılık"
@@ -1955,7 +1955,7 @@ msgctxt "Name"
 msgid "xacc"
 msgstr "xacc"
 
-#: apps/kappfinder/apps/Office/XAcc.desktop:94
+#: apps/kappfinder/apps/Office/XAcc.desktop:95
 msgctxt "GenericName"
 msgid "Personal Accounting Tool"
 msgstr "Kişisel Muhasebe Aracı"
@@ -1975,7 +1975,7 @@ msgctxt "Name"
 msgid "Citrix ICA Client"
 msgstr "Citrix ICA İstemcisi"
 
-#: apps/kappfinder/apps/System/citrix_ica.desktop:88
+#: apps/kappfinder/apps/System/citrix_ica.desktop:89
 msgctxt "GenericName"
 msgid "WTS Client"
 msgstr "WTS İstemcisi"
@@ -1985,7 +1985,7 @@ msgctxt "Name"
 msgid "EditXRes"
 msgstr "EditXRes"
 
-#: apps/kappfinder/apps/System/editres.desktop:88
+#: apps/kappfinder/apps/System/editres.desktop:89
 msgctxt "GenericName"
 msgid "X Resource Editor"
 msgstr "X Kaynak Düzenleyicisi"
@@ -2000,7 +2000,7 @@ msgctxt "Name"
 msgid "Terminal"
 msgstr "Uçbirim"
 
-#: apps/kappfinder/apps/System/Terminal/aterm.desktop:92
+#: apps/kappfinder/apps/System/Terminal/aterm.desktop:93
 #: apps/kappfinder/apps/Utilities/xutils/xterm.desktop:3
 msgctxt "GenericName"
 msgid "Terminal Program"
@@ -2011,7 +2011,7 @@ msgctxt "Name"
 msgid "Procinfo"
 msgstr "Procinfo"
 
-#: apps/kappfinder/apps/System/Terminal/procinfo.desktop:90
+#: apps/kappfinder/apps/System/Terminal/procinfo.desktop:91
 msgctxt "GenericName"
 msgid "System Process Information"
 msgstr "Sistem Süreç Bilgileri"
@@ -2021,7 +2021,7 @@ msgctxt "GenericName"
 msgid "ouR eXtended Virtual Terminal"
 msgstr "Geliştirilmiş Sanal Terminal"
 
-#: apps/kappfinder/apps/System/Terminal/rxvt.desktop:89
+#: apps/kappfinder/apps/System/Terminal/rxvt.desktop:90
 msgctxt "Name"
 msgid "RXVT"
 msgstr "RXVT"
@@ -2031,7 +2031,7 @@ msgctxt "Name"
 msgid "Vmstat"
 msgstr "Vmstat"
 
-#: apps/kappfinder/apps/System/Terminal/vmstat.desktop:90
+#: apps/kappfinder/apps/System/Terminal/vmstat.desktop:91
 msgctxt "GenericName"
 msgid "Virtual Memory Statistics"
 msgstr "Sanal Bellek İstatistikleri"
@@ -2041,7 +2041,7 @@ msgctxt "Name"
 msgid "Wine"
 msgstr "Wine"
 
-#: apps/kappfinder/apps/System/wine.desktop:89
+#: apps/kappfinder/apps/System/wine.desktop:90
 msgctxt "GenericName"
 msgid "Run Windows Programs"
 msgstr "Windows Programlarını Çalıştır"
@@ -2051,7 +2051,7 @@ msgctxt "Name"
 msgid "X osview"
 msgstr "X osview"
 
-#: apps/kappfinder/apps/System/xosview.desktop:88
+#: apps/kappfinder/apps/System/xosview.desktop:89
 #: workspace/ksysguard/gui/ksysguard.desktop:82
 msgctxt "GenericName"
 msgid "System Monitor"
@@ -2067,7 +2067,7 @@ msgctxt "Name"
 msgid "Tux"
 msgstr "Tux"
 
-#: apps/kappfinder/apps/Toys/xpinguin.desktop:88
+#: apps/kappfinder/apps/Toys/xpinguin.desktop:89
 msgctxt "GenericName"
 msgid "Linux Mascot"
 msgstr "Linux Maskotu"
@@ -2077,8 +2077,8 @@ msgctxt "Name"
 msgid "Calctool"
 msgstr "Hesap Aracı"
 
-#: apps/kappfinder/apps/Utilities/calctool.desktop:87
-#: apps/kappfinder/apps/Utilities/xutils/xcalc.desktop:90
+#: apps/kappfinder/apps/Utilities/calctool.desktop:88
+#: apps/kappfinder/apps/Utilities/xutils/xcalc.desktop:91
 msgctxt "GenericName"
 msgid "Calculator"
 msgstr "Hesap Makinesi"
@@ -2088,7 +2088,7 @@ msgctxt "Name"
 msgid "E-Notes"
 msgstr "E-Notlar"
 
-#: apps/kappfinder/apps/Utilities/e-notes.desktop:88
+#: apps/kappfinder/apps/Utilities/e-notes.desktop:89
 msgctxt "GenericName"
 msgid "Personal Notes"
 msgstr "Kişisel Notlar"
@@ -2098,7 +2098,7 @@ msgctxt "Name"
 msgid "GKrellM"
 msgstr "GKrellM"
 
-#: apps/kappfinder/apps/Utilities/GKrellM.desktop:89
+#: apps/kappfinder/apps/Utilities/GKrellM.desktop:90
 msgctxt "GenericName"
 msgid "GNU Krell Monitors"
 msgstr "GNU Krell İzleyiciler"
@@ -2108,7 +2108,7 @@ msgctxt "Name"
 msgid "GNOME Who"
 msgstr "GNOME Kim"
 
-#: apps/kappfinder/apps/Utilities/GnomeWho.desktop:87
+#: apps/kappfinder/apps/Utilities/GnomeWho.desktop:88
 msgctxt "GenericName"
 msgid "System Info Tool"
 msgstr "Sistem Bilgisi Aracı"
@@ -2118,8 +2118,8 @@ msgctxt "Name"
 msgid "OClock"
 msgstr "OClock"
 
-#: apps/kappfinder/apps/Utilities/oclock.desktop:87
-#: apps/kappfinder/apps/Utilities/xutils/xclock.desktop:96
+#: apps/kappfinder/apps/Utilities/oclock.desktop:88
+#: apps/kappfinder/apps/Utilities/xutils/xclock.desktop:97
 msgctxt "GenericName"
 msgid "Clock"
 msgstr "Saat"
@@ -2139,7 +2139,7 @@ msgctxt "Name"
 msgid "X-Gnokii"
 msgstr "X-Gnokii"
 
-#: apps/kappfinder/apps/Utilities/xgnokii.desktop:87
+#: apps/kappfinder/apps/Utilities/xgnokii.desktop:88
 msgctxt "GenericName"
 msgid "Mobile Phone Management Tool"
 msgstr "Mobil Telefon Yönetim Aracı"
@@ -2154,7 +2154,7 @@ msgctxt "Name"
 msgid "X Clipboard"
 msgstr "X Panosu"
 
-#: apps/kappfinder/apps/Utilities/xutils/xclipboard.desktop:89
+#: apps/kappfinder/apps/Utilities/xutils/xclipboard.desktop:90
 msgctxt "GenericName"
 msgid "Clipboard Viewer"
 msgstr "Pano Görüntüleyici"
@@ -2169,7 +2169,7 @@ msgctxt "Name"
 msgid "X Console"
 msgstr "X Konsol"
 
-#: apps/kappfinder/apps/Utilities/xutils/xconsole.desktop:89
+#: apps/kappfinder/apps/Utilities/xutils/xconsole.desktop:90
 msgctxt "GenericName"
 msgid "Console Message Viewer"
 msgstr "Konsol Mesajı Görüntüleyici"
@@ -2179,7 +2179,7 @@ msgctxt "Name"
 msgid "X Kill"
 msgstr "X Kill"
 
-#: apps/kappfinder/apps/Utilities/xutils/Xkill.desktop:88
+#: apps/kappfinder/apps/Utilities/xutils/Xkill.desktop:89
 msgctxt "GenericName"
 msgid "Window Termination Tool"
 msgstr "Pencere Sonlandırma Aracı"
@@ -2189,7 +2189,7 @@ msgctxt "Name"
 msgid "X Load"
 msgstr "X Load"
 
-#: apps/kappfinder/apps/Utilities/xutils/xload.desktop:95
+#: apps/kappfinder/apps/Utilities/xutils/xload.desktop:96
 msgctxt "GenericName"
 msgid "Monitors System Load"
 msgstr "Sistem Yükünü İzler"
@@ -2199,7 +2199,7 @@ msgctxt "Name"
 msgid "X Magnifier"
 msgstr "X Magnifier"
 
-#: apps/kappfinder/apps/Utilities/xutils/xmag.desktop:90
+#: apps/kappfinder/apps/Utilities/xutils/xmag.desktop:91
 msgctxt "GenericName"
 msgid "Desktop Magnifier"
 msgstr "Masaüstü Büyüteci"
@@ -2209,12 +2209,12 @@ msgctxt "Name"
 msgid "X Refresh"
 msgstr "X Refresh"
 
-#: apps/kappfinder/apps/Utilities/xutils/Xrefresh.desktop:87
+#: apps/kappfinder/apps/Utilities/xutils/Xrefresh.desktop:88
 msgctxt "GenericName"
 msgid "Refresh Screen"
 msgstr "Ekranı Tazele"
 
-#: apps/kappfinder/apps/Utilities/xutils/xterm.desktop:89
+#: apps/kappfinder/apps/Utilities/xutils/xterm.desktop:90
 msgctxt "Name"
 msgid "X Terminal"
 msgstr "X Terminal"
@@ -2224,7 +2224,7 @@ msgctxt "Name"
 msgid "X Traceroute"
 msgstr "X Traceroute"
 
-#: apps/kappfinder/apps/Utilities/xutils/Xtraceroute.desktop:86
+#: apps/kappfinder/apps/Utilities/xutils/Xtraceroute.desktop:87
 msgctxt "GenericName"
 msgid "Network Tool"
 msgstr "Ağ Aracı"
@@ -2264,7 +2264,7 @@ msgctxt "Name"
 msgid "Devices"
 msgstr "Aygıtlar"
 
-#: apps/kinfocenter/info/devices.desktop:102
+#: apps/kinfocenter/info/devices.desktop:103
 msgctxt "Comment"
 msgid "Attached devices information"
 msgstr "Bağlanmış aygıtlar hakkında bilgi"
@@ -2324,7 +2324,7 @@ msgctxt "Name"
 msgid "Sound"
 msgstr "Ses"
 
-#: apps/kinfocenter/info/sound.desktop:101
+#: apps/kinfocenter/info/sound.desktop:102
 msgctxt "Comment"
 msgid "Sound information"
 msgstr "Ses hakkında bilgi"
@@ -2395,7 +2395,7 @@ msgctxt "Name"
 msgid "Partitions"
 msgstr "Disk Bölümleri"
 
-#: apps/kinfocenter/partition/kcm_partition.desktop:99
+#: apps/kinfocenter/partition/kcm_partition.desktop:100
 msgctxt "Comment"
 msgid "Partition information"
 msgstr "Bölümleme hakkında bilgi"
@@ -2425,7 +2425,7 @@ msgctxt "Name"
 msgid "Processor Information"
 msgstr "İşlemci Bilgileri"
 
-#: apps/kinfocenter/solidproc/kcmsolidproc.desktop:89
+#: apps/kinfocenter/solidproc/kcmsolidproc.desktop:90
 msgctxt "Comment"
 msgid "Processor Information"
 msgstr "İşlemci Bilgileri"
@@ -2504,7 +2504,7 @@ msgctxt "Name"
 msgid "KDED Konqueror Preloader Module"
 msgstr "KDED Konqueror Önyükleme Modülü"
 
-#: apps/konqueror/preloader/konqy_preloader.desktop:83
+#: apps/konqueror/preloader/konqy_preloader.desktop:84
 msgctxt "Comment"
 msgid "Reduces Konqueror startup time"
 msgstr "Konqueror açılış zamanını azaltır"
@@ -3153,7 +3153,7 @@ msgctxt "Name"
 msgid "KDED Favicon Module"
 msgstr "KDE Favicon Modülü"
 
-#: apps/lib/konq/favicons/favicons.desktop:89
+#: apps/lib/konq/favicons/favicons.desktop:90
 #: runtime/platforms/win/kwinstartmenu/winstartmenu.desktop:76
 msgctxt "Comment"
 msgid "Shortcut icon support"
@@ -3359,7 +3359,7 @@ msgctxt "Name"
 msgid "Open Collaboration Services provider management"
 msgstr "Açık İşbirliği Hizmetleri sağlayıcı yönetimi"
 
-#: runtime/attica/kcm/kcm_attica.desktop:58
+#: runtime/attica/kcm/kcm_attica.desktop:59
 msgctxt "Comment"
 msgid "Manage Open Collaboration Services providers"
 msgstr "Açık İşbirliği Hizmetleri sağlayıcılarını yönet"
@@ -3371,7 +3371,7 @@ msgid "Air"
 msgstr "Air"
 
 #: runtime/desktoptheme/air/metadata.desktop:71
-#: workspace/plasma/netbook/desktoptheme/air-netbook/metadata.desktop:52
+#: workspace/plasma/netbook/desktoptheme/air-netbook/metadata.desktop:53
 msgctxt "Comment"
 msgid "A breath of fresh air"
 msgstr "Temiz havadan bir nefes"
@@ -3551,7 +3551,7 @@ msgctxt "Name"
 msgid "System Notifications"
 msgstr "Sistem Bildirimleri"
 
-#: runtime/kcontrol/knotify/kcmnotify.desktop:101
+#: runtime/kcontrol/knotify/kcmnotify.desktop:102
 msgctxt "Comment"
 msgid "System Notification Configuration"
 msgstr "Sistem Bildirimi Yapılandırması"
@@ -3606,38 +3606,38 @@ msgctxt "Comment"
 msgid "KDE Global Shortcuts Daemon"
 msgstr "KDE Genel Kısayol Servisi"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:60
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:61
 msgctxt "Name"
 msgid "kglobalaccel"
 msgstr "kglobalaccel"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:124
-#: runtime/phonon/platform_kde/phonon.notifyrc:76
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:125
+#: runtime/phonon/platform_kde/phonon.notifyrc:77
 msgctxt "Name"
 msgid "Application"
 msgstr "Uygulama"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:201
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:202
 msgctxt "Comment"
 msgid "The application name"
 msgstr "Uygulama adı"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:263
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:264
 msgctxt "Name"
 msgid "Global Shortcut Registration"
 msgstr "Genel Kısayol Kaydı"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:322
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:323
 msgctxt "Comment"
 msgid "An application registered new global shortcuts."
 msgstr "Bir uygulama yeni bir genel kısayol kaydetti."
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:384
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:385
 msgctxt "Name"
 msgid "Global Shortcut Triggered"
 msgstr "Genel Kısayol Tetiklendi"
 
-#: runtime/kglobalaccel/kglobalaccel.notifyrc:440
+#: runtime/kglobalaccel/kglobalaccel.notifyrc:441
 msgctxt "Comment"
 msgid "The user triggered a global shortcut"
 msgstr "Kullanıcı bir genel kısayolu tetikledi"
@@ -4001,176 +4001,176 @@ msgctxt "Comment"
 msgid "KDE System Notifications"
 msgstr "KDE Sistem Bildirimleri"
 
-#: runtime/knotify/kde.notifyrc:81
+#: runtime/knotify/kde.notifyrc:82
 msgctxt "Name"
 msgid "Trash: Emptied"
 msgstr "Çöp: Boşaltıldı"
 
-#: runtime/knotify/kde.notifyrc:157
+#: runtime/knotify/kde.notifyrc:158
 msgctxt "Comment"
 msgid "The trash has been emptied"
 msgstr "Çöp boşaltıldı"
 
-#: runtime/knotify/kde.notifyrc:238
+#: runtime/knotify/kde.notifyrc:239
 msgctxt "Name"
 msgid "Textcompletion: Rotation"
 msgstr "Metin tamamlama: Döndürme"
 
-#: runtime/knotify/kde.notifyrc:311
+#: runtime/knotify/kde.notifyrc:312
 msgctxt "Comment"
 msgid "The end of the list of matches has been reached"
 msgstr "Eşleşme listesinin sonuna ulaşıldı"
 
-#: runtime/knotify/kde.notifyrc:391
+#: runtime/knotify/kde.notifyrc:392
 msgctxt "Name"
 msgid "Textcompletion: No Match"
 msgstr "Metin tamamlama: Eşleşme yok"
 
-#: runtime/knotify/kde.notifyrc:466
+#: runtime/knotify/kde.notifyrc:467
 msgctxt "Comment"
 msgid "No matching completion was found"
 msgstr "Eşleşen tamamlama bulunamadı"
 
-#: runtime/knotify/kde.notifyrc:546
+#: runtime/knotify/kde.notifyrc:547
 msgctxt "Name"
 msgid "Textcompletion: Partial Match"
 msgstr "Metin tamamlama: Kısmi Eşleşme"
 
-#: runtime/knotify/kde.notifyrc:621
+#: runtime/knotify/kde.notifyrc:622
 msgctxt "Comment"
 msgid "There is more than one possible match"
 msgstr "Birden fazla eşleşme var"
 
-#: runtime/knotify/kde.notifyrc:701
+#: runtime/knotify/kde.notifyrc:702
 msgctxt "Name"
 msgid "Fatal Error"
 msgstr "Sonlandırıcı Hata"
 
-#: runtime/knotify/kde.notifyrc:780
+#: runtime/knotify/kde.notifyrc:781
 msgctxt "Comment"
 msgid "There was a serious error causing the program to exit"
 msgstr "Uygulamadan çıkılacak kadar önemli bir hata oluştu"
 
-#: runtime/knotify/kde.notifyrc:861
-#: workspace/powerdevil/powerdevil.notifyrc:295
+#: runtime/knotify/kde.notifyrc:862
+#: workspace/powerdevil/powerdevil.notifyrc:296
 msgctxt "Name"
 msgid "Notification"
 msgstr "Bildirim"
 
-#: runtime/knotify/kde.notifyrc:942
+#: runtime/knotify/kde.notifyrc:943
 msgctxt "Comment"
 msgid "Something special happened in the program"
 msgstr "Uygulamada bazı özel durumlar oluştu"
 
-#: runtime/knotify/kde.notifyrc:1022
-#: workspace/powerdevil/powerdevil.notifyrc:144
+#: runtime/knotify/kde.notifyrc:1023
+#: workspace/powerdevil/powerdevil.notifyrc:145
 msgctxt "Name"
 msgid "Warning"
 msgstr "Uyarı"
 
-#: runtime/knotify/kde.notifyrc:1104
+#: runtime/knotify/kde.notifyrc:1105
 msgctxt "Comment"
 msgid "There was an error in the program which may cause problems"
 msgstr "Uygulamada sorunlara neden olabilecek bir hata oluştu"
 
-#: runtime/knotify/kde.notifyrc:1184
+#: runtime/knotify/kde.notifyrc:1185
 msgctxt "Name"
 msgid "Catastrophe"
 msgstr "Felaket"
 
-#: runtime/knotify/kde.notifyrc:1260
+#: runtime/knotify/kde.notifyrc:1261
 msgctxt "Comment"
 msgid "A very serious error occurred, at least causing the program to exit"
 msgstr "En azından uygulamadan çıkılacak kadar önemli bir hata oluştu"
 
-#: runtime/knotify/kde.notifyrc:1339
+#: runtime/knotify/kde.notifyrc:1340
 #: workspace/kwin/effects/login/login.desktop:2
 msgctxt "Name"
 msgid "Login"
 msgstr "Giriş"
 
-#: runtime/knotify/kde.notifyrc:1420
+#: runtime/knotify/kde.notifyrc:1421
 msgctxt "Comment"
 msgid "KDE is starting up"
 msgstr "KDE başlatılıyor"
 
-#: runtime/knotify/kde.notifyrc:1504
+#: runtime/knotify/kde.notifyrc:1505
 #: workspace/kwin/effects/logout/logout.desktop:2
 msgctxt "Name"
 msgid "Logout"
 msgstr "Çıkış"
 
-#: runtime/knotify/kde.notifyrc:1585
+#: runtime/knotify/kde.notifyrc:1586
 msgctxt "Comment"
 msgid "KDE is exiting"
 msgstr "KDE kapatılıyor"
 
-#: runtime/knotify/kde.notifyrc:1669
+#: runtime/knotify/kde.notifyrc:1670
 msgctxt "Name"
 msgid "Logout Canceled"
 msgstr "Çıkış İptal Edildi"
 
-#: runtime/knotify/kde.notifyrc:1748
+#: runtime/knotify/kde.notifyrc:1749
 msgctxt "Comment"
 msgid "KDE logout was canceled"
 msgstr "KDE çıkışı iptal edildi"
 
-#: runtime/knotify/kde.notifyrc:1828
+#: runtime/knotify/kde.notifyrc:1829
 msgctxt "Name"
 msgid "Print Error"
 msgstr "Yazdırma Hatası"
 
-#: runtime/knotify/kde.notifyrc:1908
+#: runtime/knotify/kde.notifyrc:1909
 msgctxt "Comment"
 msgid "A print error has occurred"
 msgstr "Bir yazdırma hatası oluştu"
 
-#: runtime/knotify/kde.notifyrc:1989
+#: runtime/knotify/kde.notifyrc:1990
 msgctxt "Name"
 msgid "Information Message"
 msgstr "Bilgi İletisi"
 
-#: runtime/knotify/kde.notifyrc:2069
+#: runtime/knotify/kde.notifyrc:2070
 msgctxt "Comment"
 msgid "An information message is being shown"
 msgstr "Bir bilgi iletisi gösterildi"
 
-#: runtime/knotify/kde.notifyrc:2150
+#: runtime/knotify/kde.notifyrc:2151
 msgctxt "Name"
 msgid "Warning Message"
 msgstr "Uyarı İletisi"
 
-#: runtime/knotify/kde.notifyrc:2230
+#: runtime/knotify/kde.notifyrc:2231
 msgctxt "Comment"
 msgid "A warning message is being shown"
 msgstr "Bir uyarı iletisi gösterildi"
 
-#: runtime/knotify/kde.notifyrc:2310
+#: runtime/knotify/kde.notifyrc:2311
 msgctxt "Name"
 msgid "Critical Message"
 msgstr "Kritik İleti"
 
-#: runtime/knotify/kde.notifyrc:2384
+#: runtime/knotify/kde.notifyrc:2385
 msgctxt "Comment"
 msgid "A critical message is being shown"
 msgstr "Kritik bir ileti gösterildi"
 
-#: runtime/knotify/kde.notifyrc:2463
+#: runtime/knotify/kde.notifyrc:2464
 msgctxt "Name"
 msgid "Question"
 msgstr "Soru"
 
-#: runtime/knotify/kde.notifyrc:2545
+#: runtime/knotify/kde.notifyrc:2546
 msgctxt "Comment"
 msgid "A question is being asked"
 msgstr "Bir soru soruldu"
 
-#: runtime/knotify/kde.notifyrc:2627
+#: runtime/knotify/kde.notifyrc:2628
 msgctxt "Name"
 msgid "Beep"
 msgstr "Biip"
 
-#: runtime/knotify/kde.notifyrc:2707
+#: runtime/knotify/kde.notifyrc:2708
 msgctxt "Comment"
 msgid "Sound bell"
 msgstr "Ses zili"
@@ -4190,7 +4190,7 @@ msgctxt "Name"
 msgid "KDED Password Module"
 msgstr "KDED Parola Modülü"
 
-#: runtime/kpasswdserver/kpasswdserver.desktop:80
+#: runtime/kpasswdserver/kpasswdserver.desktop:81
 msgctxt "Comment"
 msgid "Password caching support"
 msgstr "Parola önbellekleme desteği"
@@ -4423,7 +4423,7 @@ msgctxt "Name"
 msgid "KDE Time Zone Daemon"
 msgstr "KDE Saat Dilimi Servisi"
 
-#: runtime/ktimezoned/ktimezoned.desktop:86
+#: runtime/ktimezoned/ktimezoned.desktop:87
 msgctxt "Comment"
 msgid "Time zone daemon for KDE"
 msgstr "KDE için saat dilimi servisi"
@@ -5531,17 +5531,17 @@ msgctxt "Comment"
 msgid "The KDE Wallet Daemon"
 msgstr "KDE Cüzdan Servisi"
 
-#: runtime/kwalletd/kwalletd.notifyrc:64
+#: runtime/kwalletd/kwalletd.notifyrc:65
 msgctxt "Name"
 msgid "kwalletd"
 msgstr "kwalletd"
 
-#: runtime/kwalletd/kwalletd.notifyrc:130
+#: runtime/kwalletd/kwalletd.notifyrc:131
 msgctxt "Name"
 msgid "Needs password"
 msgstr "Parola gerektirir"
 
-#: runtime/kwalletd/kwalletd.notifyrc:194
+#: runtime/kwalletd/kwalletd.notifyrc:195
 msgctxt "Comment"
 msgid "The KDE Wallet Daemon requests a password"
 msgstr "KDE Cüzdan Servisi bir parola ister"
@@ -8167,42 +8167,42 @@ msgctxt "Comment"
 msgid "The Nepomuk Storage Service"
 msgstr "Nepomuk Depolama Servisi"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:148
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:149
 msgctxt "Name"
 msgid "Failed to start Nepomuk"
 msgstr "Nepomuk başlatılamadı"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:203
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:205
 msgctxt "Comment"
 msgid "The Nepomuk Semantic Desktop system could not be started"
 msgstr "Nepomuk Semantik Masaüstü sistemi başlatılamadı"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:257
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:259
 msgctxt "Name"
 msgid "Converting Nepomuk data"
 msgstr "Nepomuk verileri dönüştürülüyor"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:328
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:330
 msgctxt "Comment"
 msgid "All Nepomuk data is converted to a new storage backend"
 msgstr "Tüm Nepomuk verileri yeni depolama arka ucuna dönüştürüldü"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:400
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:402
 msgctxt "Name"
 msgid "Converting Nepomuk data failed"
 msgstr "Nepomuk verileri dönüştürülemedi"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:471
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:473
 msgctxt "Comment"
 msgid "Converting Nepomuk data to a new backend failed"
 msgstr "Nepomuk verileri yeni arka uca dönüştürülemedi"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:543
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:545
 msgctxt "Name"
 msgid "Converting Nepomuk data done"
 msgstr "Nepomuk verileri dönüştürüldü"
 
-#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:614
+#: runtime/nepomuk/services/storage/nepomukstorage.notifyrc:616
 msgctxt "Comment"
 msgid "Successfully converted Nepomuk data to new backend"
 msgstr "Nepomuk verileri yeni arka uca başarılı bir şekilde dönüştürüldü"
@@ -8226,22 +8226,22 @@ msgctxt "Comment"
 msgid "Search service file indexer"
 msgstr "Arama servisi dosya indeksleyici"
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:58
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:59
 msgctxt "Name"
 msgid "Initial Indexing started"
 msgstr "Temel İndeksleme başladı"
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:131
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:132
 msgctxt "Comment"
 msgid "Indexing of local files for fast searches has started."
 msgstr "Hızlı arama için yerel dosyaların indekslenme işlemi başlatıldı."
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:188
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:189
 msgctxt "Name"
 msgid "Initial Indexing finished"
 msgstr "Temel İndeksleme tamamlandı"
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:260
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:261
 msgctxt "Comment"
 msgid ""
 "The initial indexing of local files for fast desktop searches has completed."
@@ -8249,22 +8249,22 @@ msgstr ""
 "Hızlı masaüstü araması için yerel dosyaların temel indeksleme işlemi "
 "tamamlandı."
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:317
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:318
 msgctxt "Name"
 msgid "Indexing suspended"
 msgstr "İndeksleme beklemeye alındı"
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:389
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:390
 msgctxt "Comment"
 msgid "File indexing has been suspended by the search service."
 msgstr "Dosya indeksleyici arama servisi tarafından durduruldu."
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:446
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:447
 msgctxt "Name"
 msgid "Indexing resumed"
 msgstr "İndeksleme çalışmaya devam ettirildi"
 
-#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:518
+#: runtime/nepomuk/services/strigi/nepomukstrigiservice.notifyrc:519
 msgctxt "Comment"
 msgid "File indexing has been resumed by the search service."
 msgstr "Dosya indeksleyici arama servisi tarafından devam ettirildi."
@@ -8289,7 +8289,7 @@ msgctxt "Name"
 msgid "Sound Policy Server"
 msgstr "Ses Politikası Sunucu"
 
-#: runtime/phonon/kded-module/phononserver.desktop:74
+#: runtime/phonon/kded-module/phononserver.desktop:75
 msgctxt "Comment"
 msgid "A server to centralize decisions and data of applications using Phonon"
 msgstr ""
@@ -8306,12 +8306,12 @@ msgctxt "Comment"
 msgid "Phonon: KDE's Multimedia Library"
 msgstr "Phonon: KDE'nin Çoklu Ortam Kitaplığı"
 
-#: runtime/phonon/platform_kde/phonon.notifyrc:156
+#: runtime/phonon/platform_kde/phonon.notifyrc:157
 msgctxt "Name"
 msgid "Audio Device Fallback"
 msgstr "Ses Aygıtı Yedeği"
 
-#: runtime/phonon/platform_kde/phonon.notifyrc:227
+#: runtime/phonon/platform_kde/phonon.notifyrc:228
 msgctxt "Comment"
 msgid ""
 "Notification on automatic fallback if the preferred device is unavailable"
@@ -8384,7 +8384,7 @@ msgctxt "Name"
 msgid "Solid Auto-eject service"
 msgstr "Solid Otomatik-çıkarma servisi"
 
-#: runtime/solidautoeject/solidautoeject.desktop:61
+#: runtime/solidautoeject/solidautoeject.desktop:62
 msgctxt "Comment"
 msgid ""
 "Allows to automatically release drives when their eject button is pushed"
@@ -8417,7 +8417,7 @@ msgctxt "Name"
 msgid "Solid User Interface Server"
 msgstr "Solid Kullanıcı Arayüzü Sunucusu"
 
-#: runtime/soliduiserver/soliduiserver.desktop:80
+#: runtime/soliduiserver/soliduiserver.desktop:81
 msgctxt "Comment"
 msgid "A User Interface server for Solid, the hardware detection system"
 msgstr "Solid için bir kullanıcı arayüzü sunucu, donanım bulma sistemi"
@@ -8432,12 +8432,12 @@ msgctxt "Comment"
 msgid "KDE Accessibility Tool"
 msgstr "KDE Erişilebilirlik Aracı"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:87
+#: workspace/kcontrol/access/kaccess.notifyrc:88
 msgctxt "Name"
 msgid "A modifier key has become active"
 msgstr "Bir değiştirici tuş etkinleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:161
+#: workspace/kcontrol/access/kaccess.notifyrc:162
 msgctxt "Comment"
 msgid ""
 "A modifier key (e.g. Shift or Ctrl) has changed its state and is now active"
@@ -8445,12 +8445,12 @@ msgstr ""
 "Bir değiştirici tuşun (Shift veya Ctrl gibi) durumu değiştirildi ve "
 "etkinleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:236
+#: workspace/kcontrol/access/kaccess.notifyrc:237
 msgctxt "Name"
 msgid "A modifier key has become inactive"
 msgstr "Bir değiştirici tuş pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:310
+#: workspace/kcontrol/access/kaccess.notifyrc:311
 msgctxt "Comment"
 msgid ""
 "A modifier key (e.g. Shift or Ctrl) has changed its state and is now inactive"
@@ -8458,12 +8458,12 @@ msgstr ""
 "Bir değiştirici tuşun (Shift veya Ctrl gibi) durumu değiştirildi ve "
 "pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:385
+#: workspace/kcontrol/access/kaccess.notifyrc:386
 msgctxt "Name"
 msgid "A modifier key has been locked"
 msgstr "Bir değiştirici tuş kilitlendi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:459
+#: workspace/kcontrol/access/kaccess.notifyrc:460
 msgctxt "Comment"
 msgid ""
 "A modifier key (e.g. Shift or Ctrl) has been locked and is now active for "
@@ -8472,12 +8472,12 @@ msgstr ""
 "Bir değiştirici tuş (Shift ya da Ctrl gibi) kilitlendi ve bundan sonraki tüm "
 "tuş basma eylemleri için etkinleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:533
+#: workspace/kcontrol/access/kaccess.notifyrc:534
 msgctxt "Name"
 msgid "A lock key has been activated"
 msgstr "Bir kilitleme tuşu etkinleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:609
+#: workspace/kcontrol/access/kaccess.notifyrc:610
 msgctxt "Comment"
 msgid ""
 "A lock key (e.g. Caps Lock or Num Lock) has changed its state and is now "
@@ -8486,12 +8486,12 @@ msgstr ""
 "Bir kilitleme tuşunun (Caps Lock ya da Num Lock gibi.) durumu değiştirildi "
 "ve etkinleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:683
+#: workspace/kcontrol/access/kaccess.notifyrc:684
 msgctxt "Name"
 msgid "A lock key has been deactivated"
 msgstr "Bir kilitleme tuşu pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:758
+#: workspace/kcontrol/access/kaccess.notifyrc:759
 msgctxt "Comment"
 msgid ""
 "A lock key (e.g. Caps Lock or Num Lock) has changed its state and is now "
@@ -8500,42 +8500,42 @@ msgstr ""
 "Bir kilitleme tuşunun (Caps Lock ya da Num Lock gibi.) durumu değiştirildi "
 "ve pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:832
+#: workspace/kcontrol/access/kaccess.notifyrc:833
 msgctxt "Name"
 msgid "Sticky keys has been enabled or disabled"
 msgstr "Yapışkan tuşlar etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:905
+#: workspace/kcontrol/access/kaccess.notifyrc:906
 msgctxt "Comment"
 msgid "Sticky keys has been enabled or disabled"
 msgstr "Yapışkan tuşlar etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:983
+#: workspace/kcontrol/access/kaccess.notifyrc:984
 msgctxt "Name"
 msgid "Slow keys has been enabled or disabled"
 msgstr "Yavaş tuşlar etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:1055
+#: workspace/kcontrol/access/kaccess.notifyrc:1056
 msgctxt "Comment"
 msgid "Slow keys has been enabled or disabled"
 msgstr "Yavaş tuşlar etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:1132
+#: workspace/kcontrol/access/kaccess.notifyrc:1133
 msgctxt "Name"
 msgid "Bounce keys has been enabled or disabled"
 msgstr "Sıçrama tuşları etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:1204
+#: workspace/kcontrol/access/kaccess.notifyrc:1205
 msgctxt "Comment"
 msgid "Bounce keys has been enabled or disabled"
 msgstr "Sıçrama tuşları etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:1281
+#: workspace/kcontrol/access/kaccess.notifyrc:1282
 msgctxt "Name"
 msgid "Mouse keys has been enabled or disabled"
 msgstr "Fare tuşları etkinleştirildi ya da pasifleştirildi"
 
-#: workspace/kcontrol/access/kaccess.notifyrc:1354
+#: workspace/kcontrol/access/kaccess.notifyrc:1355
 msgctxt "Comment"
 msgid "Mouse keys has been enabled or disabled"
 msgstr "Fare tuşları etkinleştirildi ya da pasifleştirildi"
@@ -8700,7 +8700,7 @@ msgctxt "Name"
 msgid "Login Manager"
 msgstr "Giriş Yöneticisi"
 
-#: workspace/kcontrol/kdm/kdm.desktop:103
+#: workspace/kcontrol/kdm/kdm.desktop:104
 msgctxt "Comment"
 msgid "Configure the login manager (KDM)"
 msgstr "Giriş yöneticisini yapılandır (KDM)"
@@ -8924,7 +8924,7 @@ msgid ""
 msgstr "KDE için parçacıkların davranışlarını ve biçimini değiştirmeyi sağlar"
 
 #: workspace/kcontrol/workspaceoptions/workspaceoptions.desktop:13
-#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:58
+#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:59
 msgctxt "Name"
 msgid "Workspace"
 msgstr "Çalışma alanı"
@@ -9459,7 +9459,7 @@ msgctxt "Name"
 msgid "KHotKeys"
 msgstr "KHotKeys"
 
-#: workspace/khotkeys/app/khotkeys.desktop:86
+#: workspace/khotkeys/app/khotkeys.desktop:87
 msgctxt "Comment"
 msgid "KHotKeys daemon. No daemon, no hotkeys."
 msgstr "KHotKeys servisi. Servis yoksa kısayol da yoktur."
@@ -9916,7 +9916,7 @@ msgid "Press, move down, release."
 msgstr "Bas, aşağı taşı, bırak."
 
 #: workspace/khotkeys/data/konqueror_gestures_kde321.khotkeys:3409
-#: workspace/kwin/kwin.notifyrc:3548
+#: workspace/kwin/kwin.notifyrc:3549
 msgctxt "Name"
 msgid "New Window"
 msgstr "Yeni Pencere"
@@ -10085,52 +10085,52 @@ msgctxt "Comment"
 msgid "The KDE Screen Saver"
 msgstr "KDE Ekran Koruyucusu"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:63
+#: workspace/krunner/lock/kscreenlocker.notifyrc:64
 msgctxt "Name"
 msgid "Screen saver started"
 msgstr "Ekran koruyucu başlatıldı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:121
+#: workspace/krunner/lock/kscreenlocker.notifyrc:122
 msgctxt "Comment"
 msgid "The screen saver has been started"
 msgstr "Ekran koruyucu başlatıldı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:181
+#: workspace/krunner/lock/kscreenlocker.notifyrc:182
 msgctxt "Name"
 msgid "Screen locked"
 msgstr "Ekran kilitlendi"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:240
+#: workspace/krunner/lock/kscreenlocker.notifyrc:242
 msgctxt "Comment"
 msgid "The screen has been locked"
 msgstr "Ekran kilitlendi"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:302
+#: workspace/krunner/lock/kscreenlocker.notifyrc:305
 msgctxt "Name"
 msgid "Screen saver exited"
 msgstr "Ekran koruyucudan çıkıldı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:358
+#: workspace/krunner/lock/kscreenlocker.notifyrc:361
 msgctxt "Comment"
 msgid "The screen saver has finished"
 msgstr "Ekran koruyucu bitti"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:419
+#: workspace/krunner/lock/kscreenlocker.notifyrc:422
 msgctxt "Name"
 msgid "Screen unlocked"
 msgstr "Ekranın kilidi açıldı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:479
+#: workspace/krunner/lock/kscreenlocker.notifyrc:483
 msgctxt "Comment"
 msgid "The screen has been unlocked"
 msgstr "Ekranın kilidi açıldı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:539
+#: workspace/krunner/lock/kscreenlocker.notifyrc:544
 msgctxt "Name"
 msgid "Screen unlock failed"
 msgstr "Ekran kilidi açılamadı"
 
-#: workspace/krunner/lock/kscreenlocker.notifyrc:599
+#: workspace/krunner/lock/kscreenlocker.notifyrc:605
 msgctxt "Comment"
 msgid "Failed attempt to unlock the screen"
 msgstr "Ekran kilidini açma denemesi başarısız oldu"
@@ -10173,7 +10173,7 @@ msgctxt "Name"
 msgid "Session Manager"
 msgstr "Oturum Yöneticisi"
 
-#: workspace/ksmserver/kcm/kcmsmserver.desktop:99
+#: workspace/ksmserver/kcm/kcmsmserver.desktop:100
 msgctxt "Comment"
 msgid "Configure the session manager and logout settings"
 msgstr "Oturum yöneticisi ve çıkış ayarlarını yapılandır"
@@ -10193,22 +10193,22 @@ msgctxt "Comment"
 msgid "KDE System Guard"
 msgstr "KDE Sistem Koruyucu"
 
-#: workspace/ksysguard/example/ksysguard.notifyrc:87
+#: workspace/ksysguard/example/ksysguard.notifyrc:88
 msgctxt "Name"
 msgid "Pattern Matched"
 msgstr "Eşleşen Desen"
 
-#: workspace/ksysguard/example/ksysguard.notifyrc:162
+#: workspace/ksysguard/example/ksysguard.notifyrc:163
 msgctxt "Comment"
 msgid "Search pattern matched"
 msgstr "Eşleşen örüntüyü ara"
 
-#: workspace/ksysguard/example/ksysguard.notifyrc:241
+#: workspace/ksysguard/example/ksysguard.notifyrc:242
 msgctxt "Name"
 msgid "Sensor Alarm"
 msgstr "Algılayıcı Alarmı"
 
-#: workspace/ksysguard/example/ksysguard.notifyrc:316
+#: workspace/ksysguard/example/ksysguard.notifyrc:317
 msgctxt "Comment"
 msgid "Sensor exceeded critical limit"
 msgstr "Alıcı kritik limiti geçti"
@@ -10406,7 +10406,7 @@ msgctxt "Name"
 msgid "Fade Desktop"
 msgstr "Masaüstü Kaybolması"
 
-#: workspace/kwin/effects/fadedesktop/fadedesktop.desktop:62
+#: workspace/kwin/effects/fadedesktop/fadedesktop.desktop:63
 msgctxt "Comment"
 msgid "Fade between virtual desktops when switching between them"
 msgstr "Sanal masaüstleri arasında geçiş yapılırken kaybolma efektini kullan"
@@ -10630,7 +10630,7 @@ msgctxt "Name"
 msgid "Slide Back"
 msgstr "Geriye Kaydır"
 
-#: workspace/kwin/effects/slideback/slideback.desktop:64
+#: workspace/kwin/effects/slideback/slideback.desktop:65
 msgctxt "Comment"
 msgid "Slide back windows losing focus"
 msgstr "Odaklamayı kaybeden pencereler için slayt efekti"
@@ -10856,7 +10856,7 @@ msgctxt "Name"
 msgid "Windows"
 msgstr "Pencereler"
 
-#: workspace/kwin/kcmkwin/kwindecoration/kwindecoration.desktop:93
+#: workspace/kwin/kcmkwin/kwindecoration/kwindecoration.desktop:94
 msgctxt "Comment"
 msgid "Configure the look and feel of window titles"
 msgstr "Pencere başlıklarını görünümlerini yapılandır"
@@ -10866,7 +10866,7 @@ msgctxt "Name"
 msgid "Multiple Desktops"
 msgstr "Çoklu Masaüstü"
 
-#: workspace/kwin/kcmkwin/kwindesktop/desktop.desktop:98
+#: workspace/kwin/kcmkwin/kwindesktop/desktop.desktop:99
 msgctxt "Comment"
 msgid "You can configure how many virtual desktops there are."
 msgstr "Kaç görsel masaüstüne sahip olacağınızı buradan ayarlayabilirsiniz."
@@ -10928,7 +10928,7 @@ msgctxt "Name"
 msgid "Window-Specific"
 msgstr "Pencereye Özel"
 
-#: workspace/kwin/kcmkwin/kwinrules/kwinrules.desktop:89
+#: workspace/kwin/kcmkwin/kwinrules/kwinrules.desktop:90
 msgctxt "Comment"
 msgid "Configure settings specifically for a window"
 msgstr "Bir pencere için özel olan seçenekleri yapılandır"
@@ -10948,7 +10948,7 @@ msgctxt "Name"
 msgid "Navigate Through Windows"
 msgstr "Pencereler Arasında Gez"
 
-#: workspace/kwin/kcmkwin/kwintabbox/kwintabbox.desktop:67
+#: workspace/kwin/kcmkwin/kwintabbox/kwintabbox.desktop:68
 msgctxt "Comment"
 msgid "Configure the behavior for navigating through windows."
 msgstr "Pencereler arasında gezinme davranışını yapılandır."
@@ -10958,429 +10958,429 @@ msgctxt "Comment"
 msgid "The KDE Window Manager"
 msgstr "KDE Pencere Yöneticisi"
 
-#: workspace/kwin/kwin.notifyrc:86
+#: workspace/kwin/kwin.notifyrc:87
 msgctxt "Name"
 msgid "Change to Desktop 1"
 msgstr "1. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:169
+#: workspace/kwin/kwin.notifyrc:170
 msgctxt "Comment"
 msgid "Virtual desktop one is selected"
 msgstr "Sanal masaüstü bir seçili"
 
-#: workspace/kwin/kwin.notifyrc:253
+#: workspace/kwin/kwin.notifyrc:254
 msgctxt "Name"
 msgid "Change to Desktop 2"
 msgstr "2. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:336
+#: workspace/kwin/kwin.notifyrc:337
 msgctxt "Comment"
 msgid "Virtual desktop two is selected"
 msgstr "Sanal masaüstü iki seçili"
 
-#: workspace/kwin/kwin.notifyrc:421
+#: workspace/kwin/kwin.notifyrc:422
 msgctxt "Name"
 msgid "Change to Desktop 3"
 msgstr "3. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:504
+#: workspace/kwin/kwin.notifyrc:505
 msgctxt "Comment"
 msgid "Virtual desktop three is selected"
 msgstr "Sanal masaüstü üç seçili"
 
-#: workspace/kwin/kwin.notifyrc:589
+#: workspace/kwin/kwin.notifyrc:590
 msgctxt "Name"
 msgid "Change to Desktop 4"
 msgstr "4. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:672
+#: workspace/kwin/kwin.notifyrc:673
 msgctxt "Comment"
 msgid "Virtual desktop four is selected"
 msgstr "Sanal masaüstü dört seçili"
 
-#: workspace/kwin/kwin.notifyrc:756
+#: workspace/kwin/kwin.notifyrc:757
 msgctxt "Name"
 msgid "Change to Desktop 5"
 msgstr "5. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:839
+#: workspace/kwin/kwin.notifyrc:840
 msgctxt "Comment"
 msgid "Virtual desktop five is selected"
 msgstr "Sanal masaüstü beş seçili"
 
-#: workspace/kwin/kwin.notifyrc:924
+#: workspace/kwin/kwin.notifyrc:925
 msgctxt "Name"
 msgid "Change to Desktop 6"
 msgstr "6. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1007
+#: workspace/kwin/kwin.notifyrc:1008
 msgctxt "Comment"
 msgid "Virtual desktop six is selected"
 msgstr "Sanal masaüstü altı seçili"
 
-#: workspace/kwin/kwin.notifyrc:1090
+#: workspace/kwin/kwin.notifyrc:1091
 msgctxt "Name"
 msgid "Change to Desktop 7"
 msgstr "7. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1173
+#: workspace/kwin/kwin.notifyrc:1174
 msgctxt "Comment"
 msgid "Virtual desktop seven is selected"
 msgstr "Sanal masaüstü yedi seçili"
 
-#: workspace/kwin/kwin.notifyrc:1258
+#: workspace/kwin/kwin.notifyrc:1259
 msgctxt "Name"
 msgid "Change to Desktop 8"
 msgstr "8. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1341
+#: workspace/kwin/kwin.notifyrc:1342
 msgctxt "Comment"
 msgid "Virtual desktop eight is selected"
 msgstr "Sanal masaüstü sekiz seçili"
 
-#: workspace/kwin/kwin.notifyrc:1426
+#: workspace/kwin/kwin.notifyrc:1427
 msgctxt "Name"
 msgid "Change to Desktop 9"
 msgstr "9. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1507
+#: workspace/kwin/kwin.notifyrc:1508
 msgctxt "Comment"
 msgid "Virtual desktop nine is selected"
 msgstr "Sanal masaüstü dokuz seçili"
 
-#: workspace/kwin/kwin.notifyrc:1590
+#: workspace/kwin/kwin.notifyrc:1591
 msgctxt "Name"
 msgid "Change to Desktop 10"
 msgstr "10. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1671
+#: workspace/kwin/kwin.notifyrc:1672
 msgctxt "Comment"
 msgid "Virtual desktop ten is selected"
 msgstr "Sanal masaüstü on seçili"
 
-#: workspace/kwin/kwin.notifyrc:1754
+#: workspace/kwin/kwin.notifyrc:1755
 msgctxt "Name"
 msgid "Change to Desktop 11"
 msgstr "11. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1835
+#: workspace/kwin/kwin.notifyrc:1836
 msgctxt "Comment"
 msgid "Virtual desktop eleven is selected"
 msgstr "Sanal masaüstü on bir seçili"
 
-#: workspace/kwin/kwin.notifyrc:1917
+#: workspace/kwin/kwin.notifyrc:1918
 msgctxt "Name"
 msgid "Change to Desktop 12"
 msgstr "12. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:1998
+#: workspace/kwin/kwin.notifyrc:1999
 msgctxt "Comment"
 msgid "Virtual desktop twelve is selected"
 msgstr "Sanal masaüstü on iki seçili"
 
-#: workspace/kwin/kwin.notifyrc:2080
+#: workspace/kwin/kwin.notifyrc:2081
 msgctxt "Name"
 msgid "Change to Desktop 13"
 msgstr "13. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2161
+#: workspace/kwin/kwin.notifyrc:2162
 msgctxt "Comment"
 msgid "Virtual desktop thirteen is selected"
 msgstr "Sanal masaüstü on üç seçili"
 
-#: workspace/kwin/kwin.notifyrc:2244
+#: workspace/kwin/kwin.notifyrc:2245
 msgctxt "Name"
 msgid "Change to Desktop 14"
 msgstr "14. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2325
+#: workspace/kwin/kwin.notifyrc:2326
 msgctxt "Comment"
 msgid "Virtual desktop fourteen is selected"
 msgstr "Sanal masaüstü on dört seçili"
 
-#: workspace/kwin/kwin.notifyrc:2407
+#: workspace/kwin/kwin.notifyrc:2408
 msgctxt "Name"
 msgid "Change to Desktop 15"
 msgstr "15. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2488
+#: workspace/kwin/kwin.notifyrc:2489
 msgctxt "Comment"
 msgid "Virtual desktop fifteen is selected"
 msgstr "Sanal masaüstü on beş seçili"
 
-#: workspace/kwin/kwin.notifyrc:2571
+#: workspace/kwin/kwin.notifyrc:2572
 msgctxt "Name"
 msgid "Change to Desktop 16"
 msgstr "16. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2652
+#: workspace/kwin/kwin.notifyrc:2653
 msgctxt "Comment"
 msgid "Virtual desktop sixteen is selected"
 msgstr "Sanal masaüstü on altı seçili"
 
-#: workspace/kwin/kwin.notifyrc:2735
+#: workspace/kwin/kwin.notifyrc:2736
 msgctxt "Name"
 msgid "Change to Desktop 17"
 msgstr "17. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2816
+#: workspace/kwin/kwin.notifyrc:2817
 msgctxt "Comment"
 msgid "Virtual desktop seventeen is selected"
 msgstr "Sanal masaüstü on yedi seçili"
 
-#: workspace/kwin/kwin.notifyrc:2898
+#: workspace/kwin/kwin.notifyrc:2899
 msgctxt "Name"
 msgid "Change to Desktop 18"
 msgstr "18. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:2979
+#: workspace/kwin/kwin.notifyrc:2980
 msgctxt "Comment"
 msgid "Virtual desktop eighteen is selected"
 msgstr "Sanal masaüstü on sekiz seçili"
 
-#: workspace/kwin/kwin.notifyrc:3062
+#: workspace/kwin/kwin.notifyrc:3063
 msgctxt "Name"
 msgid "Change to Desktop 19"
 msgstr "19. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:3143
+#: workspace/kwin/kwin.notifyrc:3144
 msgctxt "Comment"
 msgid "Virtual desktop nineteen is selected"
 msgstr "Sanal masaüstü on dokuz seçili"
 
-#: workspace/kwin/kwin.notifyrc:3226
+#: workspace/kwin/kwin.notifyrc:3227
 msgctxt "Name"
 msgid "Change to Desktop 20"
 msgstr "20. Masaüstüne Git"
 
-#: workspace/kwin/kwin.notifyrc:3307
+#: workspace/kwin/kwin.notifyrc:3308
 msgctxt "Comment"
 msgid "Virtual desktop twenty is selected"
 msgstr "Sanal masaüstü yirmi seçili"
 
-#: workspace/kwin/kwin.notifyrc:3390
+#: workspace/kwin/kwin.notifyrc:3391
 msgctxt "Name"
 msgid "Activate Window"
 msgstr "Pencereyi Etkinleştir"
 
-#: workspace/kwin/kwin.notifyrc:3469
+#: workspace/kwin/kwin.notifyrc:3470
 msgctxt "Comment"
 msgid "Another window is activated"
 msgstr "Başka bir pencere etkinleştirildi"
 
-#: workspace/kwin/kwin.notifyrc:3635
+#: workspace/kwin/kwin.notifyrc:3636
 msgctxt "Comment"
 msgid "New window"
 msgstr "Yeni pencere"
 
-#: workspace/kwin/kwin.notifyrc:3720
+#: workspace/kwin/kwin.notifyrc:3721
 msgctxt "Name"
 msgid "Delete Window"
 msgstr "Pencereyi Sil"
 
-#: workspace/kwin/kwin.notifyrc:3798
+#: workspace/kwin/kwin.notifyrc:3799
 msgctxt "Comment"
 msgid "Delete window"
 msgstr "Pencereyi sil"
 
-#: workspace/kwin/kwin.notifyrc:3881
+#: workspace/kwin/kwin.notifyrc:3882
 msgctxt "Name"
 msgid "Window Close"
 msgstr "Pencereyi Kapat"
 
-#: workspace/kwin/kwin.notifyrc:3961
+#: workspace/kwin/kwin.notifyrc:3962
 msgctxt "Comment"
 msgid "A window closes"
 msgstr "Bir pencereyi kapatır"
 
-#: workspace/kwin/kwin.notifyrc:4046
+#: workspace/kwin/kwin.notifyrc:4047
 msgctxt "Name"
 msgid "Window Shade Up"
 msgstr "Pencere Yukarı"
 
-#: workspace/kwin/kwin.notifyrc:4121
+#: workspace/kwin/kwin.notifyrc:4122
 msgctxt "Comment"
 msgid "A window is shaded up"
 msgstr "Pencere yukarı gizlendi"
 
-#: workspace/kwin/kwin.notifyrc:4198
+#: workspace/kwin/kwin.notifyrc:4199
 msgctxt "Name"
 msgid "Window Shade Down"
 msgstr "Pencere Aşağı"
 
-#: workspace/kwin/kwin.notifyrc:4272
+#: workspace/kwin/kwin.notifyrc:4273
 msgctxt "Comment"
 msgid "A window is shaded down"
 msgstr "Pencere aşağı gizlendi"
 
-#: workspace/kwin/kwin.notifyrc:4347
+#: workspace/kwin/kwin.notifyrc:4348
 msgctxt "Name"
 msgid "Window Minimize"
 msgstr "Pencereyi Simge Haline Getir"
 
-#: workspace/kwin/kwin.notifyrc:4425
+#: workspace/kwin/kwin.notifyrc:4426
 msgctxt "Comment"
 msgid "A window is minimized"
 msgstr "Bir pencere simge haline getirildi"
 
-#: workspace/kwin/kwin.notifyrc:4507
+#: workspace/kwin/kwin.notifyrc:4508
 msgctxt "Name"
 msgid "Window Unminimize"
 msgstr "Pencereyi Simge Halinden Çıkar"
 
-#: workspace/kwin/kwin.notifyrc:4581
+#: workspace/kwin/kwin.notifyrc:4582
 msgctxt "Comment"
 msgid "A Window is restored"
 msgstr "Bir pencere eski boyutuna getirildi"
 
-#: workspace/kwin/kwin.notifyrc:4662
+#: workspace/kwin/kwin.notifyrc:4663
 msgctxt "Name"
 msgid "Window Maximize"
 msgstr "Pencereyi Kapla"
 
-#: workspace/kwin/kwin.notifyrc:4741
+#: workspace/kwin/kwin.notifyrc:4742
 msgctxt "Comment"
 msgid "A window is maximized"
 msgstr "Bir pencere büyütüldü"
 
-#: workspace/kwin/kwin.notifyrc:4823
+#: workspace/kwin/kwin.notifyrc:4824
 msgctxt "Name"
 msgid "Window Unmaximize"
 msgstr "Pencereyi Küçült"
 
-#: workspace/kwin/kwin.notifyrc:4900
+#: workspace/kwin/kwin.notifyrc:4901
 msgctxt "Comment"
 msgid "A window loses maximization"
 msgstr "Bir pencere büyümesini kaybetti"
 
-#: workspace/kwin/kwin.notifyrc:4978
+#: workspace/kwin/kwin.notifyrc:4979
 msgctxt "Name"
 msgid "Window on All Desktops"
 msgstr "Pencere Tüm Masaüstlerinde"
 
-#: workspace/kwin/kwin.notifyrc:5053
+#: workspace/kwin/kwin.notifyrc:5054
 msgctxt "Comment"
 msgid "A window is made visible on all desktops"
 msgstr "Bir pencere tüm masaüstlerinde görünür hale getirildi"
 
-#: workspace/kwin/kwin.notifyrc:5134
+#: workspace/kwin/kwin.notifyrc:5135
 msgctxt "Name"
 msgid "Window Not on All Desktops"
 msgstr "Pencere Tüm Masaüstlerinde Değil"
 
-#: workspace/kwin/kwin.notifyrc:5207
+#: workspace/kwin/kwin.notifyrc:5208
 msgctxt "Comment"
 msgid "A Window is no longer visible on all desktops"
 msgstr "Bir pencere tüm masaüstlerinde gizli hale getirildi"
 
-#: workspace/kwin/kwin.notifyrc:5286
+#: workspace/kwin/kwin.notifyrc:5287
 msgctxt "Name"
 msgid "New Dialog"
 msgstr "Yeni Pencere"
 
-#: workspace/kwin/kwin.notifyrc:5369
+#: workspace/kwin/kwin.notifyrc:5370
 msgctxt "Comment"
 msgid "Transient window (a dialog) appears"
 msgstr "Geçici pencere (bir iletişim kutusu) gösterilir"
 
-#: workspace/kwin/kwin.notifyrc:5443
+#: workspace/kwin/kwin.notifyrc:5444
 msgctxt "Name"
 msgid "Delete Dialog"
 msgstr "Pencereyi Sil"
 
-#: workspace/kwin/kwin.notifyrc:5524
+#: workspace/kwin/kwin.notifyrc:5525
 msgctxt "Comment"
 msgid "Transient window (a dialog) is removed"
 msgstr "Bir iletişim kutusu kaldırıldı"
 
-#: workspace/kwin/kwin.notifyrc:5599
+#: workspace/kwin/kwin.notifyrc:5600
 msgctxt "Name"
 msgid "Window Move Start"
 msgstr "Pencere Taşı Başlangıcı"
 
-#: workspace/kwin/kwin.notifyrc:5676
+#: workspace/kwin/kwin.notifyrc:5677
 msgctxt "Comment"
 msgid "A window has begun moving"
 msgstr "Bir pencere hareket etmeye başladı"
 
-#: workspace/kwin/kwin.notifyrc:5752
+#: workspace/kwin/kwin.notifyrc:5753
 msgctxt "Name"
 msgid "Window Move End"
 msgstr "Pencere Taşı Bitişi"
 
-#: workspace/kwin/kwin.notifyrc:5829
+#: workspace/kwin/kwin.notifyrc:5830
 msgctxt "Comment"
 msgid "A window has completed its moving"
 msgstr "Bir pencere hareketini tamamladı"
 
-#: workspace/kwin/kwin.notifyrc:5905
+#: workspace/kwin/kwin.notifyrc:5906
 msgctxt "Name"
 msgid "Window Resize Start"
 msgstr "Pencere Boyutlandır Başlangıcı"
 
-#: workspace/kwin/kwin.notifyrc:5982
+#: workspace/kwin/kwin.notifyrc:5983
 msgctxt "Comment"
 msgid "A window has begun resizing"
 msgstr "Bir pencere yeniden boyutlandırılmaya başladı"
 
-#: workspace/kwin/kwin.notifyrc:6058
+#: workspace/kwin/kwin.notifyrc:6059
 msgctxt "Name"
 msgid "Window Resize End"
 msgstr "Pencere Boyutlandır Bitişi"
 
-#: workspace/kwin/kwin.notifyrc:6135
+#: workspace/kwin/kwin.notifyrc:6136
 msgctxt "Comment"
 msgid "A window has finished resizing"
 msgstr "Bir pencerenin yeniden boyutlandırma işlemi bitti"
 
-#: workspace/kwin/kwin.notifyrc:6211
+#: workspace/kwin/kwin.notifyrc:6212
 msgctxt "Name"
 msgid "Window on Current Desktop Demands Attention"
 msgstr "Geçerli Masaüstündeki Pencere Dikkat İstiyor"
 
-#: workspace/kwin/kwin.notifyrc:6279
+#: workspace/kwin/kwin.notifyrc:6280
 msgctxt "Comment"
 msgid "A window on the current virtual desktop demands attention"
 msgstr "Geçerli sanal masaüstündeki bir pencere dikkat istiyor"
 
-#: workspace/kwin/kwin.notifyrc:6351
+#: workspace/kwin/kwin.notifyrc:6352
 msgctxt "Name"
 msgid "Window on Other Desktop Demands Attention"
 msgstr "Başka Bir Masaüstündeki Pencere Dikkat İstiyor"
 
-#: workspace/kwin/kwin.notifyrc:6419
+#: workspace/kwin/kwin.notifyrc:6420
 msgctxt "Comment"
 msgid "A window on an inactive virtual desktop demands attention"
 msgstr "Pasif bir sanal masaüstündeki bir pencere dikkat istiyor"
 
-#: workspace/kwin/kwin.notifyrc:6488
+#: workspace/kwin/kwin.notifyrc:6489
 msgctxt "Name"
 msgid "Compositing Performance Is Slow"
 msgstr "Birleşiklik Başarımı Yavaş"
 
-#: workspace/kwin/kwin.notifyrc:6549
+#: workspace/kwin/kwin.notifyrc:6550
 msgctxt "Comment"
 msgid ""
 "The compositing performance was too slow and compositing has been suspended"
 msgstr ""
 "Birleşiklik (compositing) başarımı çok düşük, birleşiklik askıya alındı"
 
-#: workspace/kwin/kwin.notifyrc:6611
+#: workspace/kwin/kwin.notifyrc:6612
 msgctxt "Name"
 msgid "Compositing has been suspended"
 msgstr "Birleşiklik askıya alındı"
 
-#: workspace/kwin/kwin.notifyrc:6668
+#: workspace/kwin/kwin.notifyrc:6669
 msgctxt "Comment"
 msgid "Another application has requested to suspend compositing."
 msgstr "Başka bir uygulama birleşikliğin askıya alınmasını istedi."
 
-#: workspace/kwin/kwin.notifyrc:6724
+#: workspace/kwin/kwin.notifyrc:6725
 msgctxt "Name"
 msgid "Effects not supported"
 msgstr "Efektler desteklenmiyor"
 
-#: workspace/kwin/kwin.notifyrc:6783
+#: workspace/kwin/kwin.notifyrc:6784
 msgctxt "Comment"
 msgid "Some effects are not supported by backend or hardware."
 msgstr "Bazı efektler arka uç ya da donanım tarafından desteklenmiyor."
@@ -11403,12 +11403,12 @@ msgctxt "Comment"
 msgid "KDE write daemon"
 msgstr "KDE write servisi"
 
-#: workspace/kwrited/kwrited.notifyrc:73
+#: workspace/kwrited/kwrited.notifyrc:74
 msgctxt "Name"
 msgid "New message received"
 msgstr "Yeni ileti alındı"
 
-#: workspace/kwrited/kwrited.notifyrc:140
+#: workspace/kwrited/kwrited.notifyrc:141
 msgctxt "Comment"
 msgid "The daemon received a new message sent with wall(1) or write(1)"
 msgstr "Servis wall(1) ya da write(1) ile gönderilen yeni bir ileti aldı"
@@ -11454,12 +11454,12 @@ msgid "Change how the read and writes of a given process are prioritized"
 msgstr ""
 "Verilen sürecin okuma/yazmalarının nasıl önceliklendirildiğini değiştir"
 
-#: workspace/libs/ksysguard/processcore/actions.actions:385
+#: workspace/libs/ksysguard/processcore/actions.actions:386
 msgctxt "Name"
 msgid "Change CPU Scheduler and priority"
 msgstr "İşlemci Zamanlayıcısını ve önceliği değiştir"
 
-#: workspace/libs/ksysguard/processcore/actions.actions:434
+#: workspace/libs/ksysguard/processcore/actions.actions:436
 msgctxt "Description"
 msgid ""
 "Change which CPU scheduler is to schedule the running of a given process"
@@ -11583,7 +11583,7 @@ msgctxt "Name"
 msgid "Panel"
 msgstr "Panel"
 
-#: workspace/plasma/desktop/containments/panel/plasma-containment-panel.desktop:87
+#: workspace/plasma/desktop/containments/panel/plasma-containment-panel.desktop:88
 #: workspace/plasma/netbook/containments/netpanel/plasma-containment-midpanel.desktop:67
 #: workspace/plasma/netbook/containments/netpanel/plasma-containment-netpanel.desktop:56
 msgctxt "Comment"
@@ -11610,12 +11610,12 @@ msgctxt "Comment"
 msgid "Plasma Desktop Shell"
 msgstr "Plasma Masaüstü Kabuğu"
 
-#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:116
+#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:117
 msgctxt "Name"
 msgid "New widget published"
 msgstr "Yeni gereç yayınlandı"
 
-#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:169
+#: workspace/plasma/desktop/shell/data/plasma-desktop.notifyrc:170
 msgctxt "Comment"
 msgid "A new widget has become available on the network."
 msgstr "Ağda yeni bir gereç yayınlandı."
@@ -11736,7 +11736,7 @@ msgctxt "Name"
 msgid "System Monitor - CPU"
 msgstr "Sistem İzleyici - İşlemci"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_cpu.desktop:71
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_cpu.desktop:72
 msgctxt "Comment"
 msgid "A CPU usage monitor"
 msgstr "Bir işlemci kullanımı izleyici"
@@ -11746,7 +11746,7 @@ msgctxt "Name"
 msgid "System Monitor - Hard Disk"
 msgstr "Sistem İzleyici - Sabit Disk"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_hdd.desktop:72
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_hdd.desktop:73
 msgctxt "Comment"
 msgid "A hard disk usage monitor"
 msgstr "Bir sabit disk kullanımı izleyici"
@@ -11756,7 +11756,7 @@ msgctxt "Name"
 msgid "System Monitor - Hardware Info"
 msgstr "Sistem İzleyici - Donanım Bilgileri"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_hwinfo.desktop:71
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_hwinfo.desktop:72
 msgctxt "Comment"
 msgid "Show hardware info"
 msgstr "Donanım bilgilerini göster"
@@ -11766,7 +11766,7 @@ msgctxt "Name"
 msgid "System Monitor - Network"
 msgstr "Sistem İzleyici - Ağ"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_net.desktop:71
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_net.desktop:72
 msgctxt "Comment"
 msgid "A network usage monitor"
 msgstr "Bir ağ kullanımı izleyici"
@@ -11776,7 +11776,7 @@ msgctxt "Name"
 msgid "System Monitor - RAM"
 msgstr "Sistem İzleyici - Bellek"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_ram.desktop:59
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_ram.desktop:60
 msgctxt "Comment"
 msgid "A RAM usage monitor"
 msgstr "Bir bellek kullanımı izleyici"
@@ -11786,7 +11786,7 @@ msgctxt "Name"
 msgid "System Monitor - Temperature"
 msgstr "Sistem İzleyici - Sıcaklık"
 
-#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_temperature.desktop:72
+#: workspace/plasma/generic/applets/system-monitor/plasma-applet-sm_temperature.desktop:73
 msgctxt "Comment"
 msgid "A system temperature monitor"
 msgstr "Bir sistem sıcaklığı izleyici"
@@ -11811,7 +11811,7 @@ msgctxt "Name"
 msgid "KDED Status Notifier watcher"
 msgstr "KDED Durum Bildirimi İzleyici"
 
-#: workspace/plasma/generic/applets/systemtray/statusnotifierwatcher/statusnotifierwatcher.desktop:51
+#: workspace/plasma/generic/applets/systemtray/statusnotifierwatcher/statusnotifierwatcher.desktop:52
 msgctxt "Comment"
 msgid ""
 "Keep track of applications that want to use the D-Bus based status notifier "
@@ -12287,7 +12287,7 @@ msgctxt "Name|plasma runner"
 msgid "Devices"
 msgstr "Aygıtlar"
 
-#: workspace/plasma/generic/runners/solid/plasma-runner-solid.desktop:58
+#: workspace/plasma/generic/runners/solid/plasma-runner-solid.desktop:59
 msgctxt "Comment"
 msgid "Manage removable devices"
 msgstr "Çıkarılabilir aygıtları yönet"
@@ -12307,7 +12307,7 @@ msgctxt "Name|plasma runner"
 msgid "Windows"
 msgstr "Pencereler"
 
-#: workspace/plasma/generic/runners/windows/plasma-runner-windows.desktop:62
+#: workspace/plasma/generic/runners/windows/plasma-runner-windows.desktop:63
 msgctxt "Comment"
 msgid "List windows and desktops and switch them"
 msgstr "Pencereleri ve masaüstlerini listele ve seç"
@@ -12495,7 +12495,7 @@ msgctxt "Name"
 msgid "Newspaper activity"
 msgstr "Gazete etkinliği"
 
-#: workspace/plasma/netbook/containments/newspaper/plasma-containment-newspaper.desktop:57
+#: workspace/plasma/netbook/containments/newspaper/plasma-containment-newspaper.desktop:58
 msgctxt "Comment"
 msgid "An activity that puts widgets on two columns"
 msgstr "Gereçleri iki sütuna yerleştiren bir etkinlik"
@@ -12582,7 +12582,7 @@ msgctxt "Name"
 msgid "Search and Launch Engine"
 msgstr "Ara ve Çalıştır Motoru"
 
-#: workspace/plasma/netbook/dataengines/searchlaunch/plasma-engine-searchlaunch.desktop:57
+#: workspace/plasma/netbook/dataengines/searchlaunch/plasma-engine-searchlaunch.desktop:58
 msgctxt "Comment"
 msgid "Engine to handle queries to SAL containment"
 msgstr "SAL içericisine gelen sorgular için bir motor"
@@ -12612,7 +12612,7 @@ msgctxt "Name"
 msgid "Desktop Theme Details"
 msgstr "Masaüstü Teması Ayrıntıları"
 
-#: workspace/plasma/tools/desktopthemedetails/desktopthemedetails.desktop:80
+#: workspace/plasma/tools/desktopthemedetails/desktopthemedetails.desktop:81
 msgctxt "Comment"
 msgid "Customize individual desktop theme items"
 msgstr "Masaüstü tema ögelerini özelleştir"
@@ -12648,52 +12648,52 @@ msgctxt "Comment"
 msgid "PowerDevil"
 msgstr "PowerDevil"
 
-#: workspace/powerdevil/powerdevil.notifyrc:226
+#: workspace/powerdevil/powerdevil.notifyrc:227
 msgctxt "Comment"
 msgid "Used for warning notifications"
 msgstr "Uyarı bildirimleri için kullanılır"
 
-#: workspace/powerdevil/powerdevil.notifyrc:376
+#: workspace/powerdevil/powerdevil.notifyrc:377
 msgctxt "Comment"
 msgid "Used for standard notifications"
 msgstr "Standart bildirimler için kullanılır"
 
-#: workspace/powerdevil/powerdevil.notifyrc:446
+#: workspace/powerdevil/powerdevil.notifyrc:447
 msgctxt "Name"
 msgid "Critical notification"
 msgstr "Kritik bildirim"
 
-#: workspace/powerdevil/powerdevil.notifyrc:516
+#: workspace/powerdevil/powerdevil.notifyrc:517
 msgctxt "Comment"
 msgid "Notifies a critical event"
 msgstr "Bir kritik olayı bildirir"
 
-#: workspace/powerdevil/powerdevil.notifyrc:587
+#: workspace/powerdevil/powerdevil.notifyrc:588
 msgctxt "Name"
 msgid "Low Battery"
 msgstr "Düşük Pil Seviyesi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:655
+#: workspace/powerdevil/powerdevil.notifyrc:656
 msgctxt "Comment"
 msgid "Your battery has reached low level"
 msgstr "Pil seviyesi düşük düzeye ulaştı"
 
-#: workspace/powerdevil/powerdevil.notifyrc:731
+#: workspace/powerdevil/powerdevil.notifyrc:732
 msgctxt "Name"
 msgid "Battery at warning level"
 msgstr "Pil seviyesi uyarı seviyesine geldiğinde"
 
-#: workspace/powerdevil/powerdevil.notifyrc:801
+#: workspace/powerdevil/powerdevil.notifyrc:802
 msgctxt "Comment"
 msgid "Your battery has reached warning level"
 msgstr "Pil seviyesi uyarı düzeyine ulaştı"
 
-#: workspace/powerdevil/powerdevil.notifyrc:877
+#: workspace/powerdevil/powerdevil.notifyrc:878
 msgctxt "Name"
 msgid "Battery at critical level"
 msgstr "Pil seviyesi kritik düzye ulaştığında"
 
-#: workspace/powerdevil/powerdevil.notifyrc:947
+#: workspace/powerdevil/powerdevil.notifyrc:948
 msgctxt "Comment"
 msgid ""
 "Your battery has reached critical level. This notification triggers a "
@@ -12704,52 +12704,52 @@ msgstr ""
 "gerçekleştirmeden önce bir geri sayım işlemini tetikler. Bu seçeneği açık "
 "bırakmanız şiddetle önerilir."
 
-#: workspace/powerdevil/powerdevil.notifyrc:1016
+#: workspace/powerdevil/powerdevil.notifyrc:1017
 msgctxt "Name"
 msgid "AC adaptor plugged in"
 msgstr "AC adaptörünün fişi takıldı"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1086
+#: workspace/powerdevil/powerdevil.notifyrc:1087
 msgctxt "Comment"
 msgid "The power adaptor has been plugged in"
 msgstr "Güç adaptörünün fişi takıldı"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1162
+#: workspace/powerdevil/powerdevil.notifyrc:1163
 msgctxt "Name"
 msgid "AC adaptor unplugged"
 msgstr "AC adaptörünün fişi çekildi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1232
+#: workspace/powerdevil/powerdevil.notifyrc:1233
 msgctxt "Comment"
 msgid "The power adaptor has been unplugged"
 msgstr "Güç adaptörünün fişi çekildi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1308
+#: workspace/powerdevil/powerdevil.notifyrc:1309
 msgctxt "Name"
 msgid "Job error"
 msgstr "Görev hatası"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1378
+#: workspace/powerdevil/powerdevil.notifyrc:1379
 msgctxt "Comment"
 msgid "There was an error while performing a job"
 msgstr "Bir görev yapılırken bir hata oluştu"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1450
+#: workspace/powerdevil/powerdevil.notifyrc:1451
 msgctxt "Name"
 msgid "Profile Changed"
 msgstr "Profil Değiştirildi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1520
+#: workspace/powerdevil/powerdevil.notifyrc:1521
 msgctxt "Comment"
 msgid "The profile was changed"
 msgstr "Profil değiştirildi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1595
+#: workspace/powerdevil/powerdevil.notifyrc:1596
 msgctxt "Name"
 msgid "Performing a suspension job"
 msgstr "Bir askıya alma işlemi yapılıyor"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1661
+#: workspace/powerdevil/powerdevil.notifyrc:1662
 msgctxt "Comment"
 msgid ""
 "This notification is displayed when a suspension job is about to be done, "
@@ -12758,22 +12758,22 @@ msgstr ""
 "Bu bildirim bir askıya alma işlemi tamamlanmak üzereyken gösterilir ve geri "
 "sayım işlemi başlar. Bu seçeneği açık bırakmanız şiddetle önerilir."
 
-#: workspace/powerdevil/powerdevil.notifyrc:1726
+#: workspace/powerdevil/powerdevil.notifyrc:1727
 msgctxt "Name"
 msgid "Internal PowerDevil Error"
 msgstr "PowerDevil İç Hatası"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1793
+#: workspace/powerdevil/powerdevil.notifyrc:1794
 msgctxt "Comment"
 msgid "PowerDevil has triggered an internal error"
 msgstr "PowerDevil bir iç hatayı tetikledi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1863
+#: workspace/powerdevil/powerdevil.notifyrc:1864
 msgctxt "Name"
 msgid "Suspension inhibited"
 msgstr "Askıya alma işlemi geciktirildi"
 
-#: workspace/powerdevil/powerdevil.notifyrc:1926
+#: workspace/powerdevil/powerdevil.notifyrc:1927
 msgctxt "Comment"
 msgid "The suspension has been inhibited because an application requested it"
 msgstr "Bir uygulama istediği için askıya alma işlemi geciktirildi"
@@ -12823,7 +12823,7 @@ msgctxt "Name"
 msgid "Network Status Daemon"
 msgstr "Ağ Durumu Servisi"
 
-#: workspace/solid/networking/kded/networkstatus.desktop:71
+#: workspace/solid/networking/kded/networkstatus.desktop:72
 msgctxt "Comment"
 msgid ""
 "Tracks status of network interfaces and provides notification to "
@@ -12875,31 +12875,31 @@ msgctxt "Name"
 msgid "Object Name"
 msgstr "Nesne Adı"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AcAdapter.desktop:63
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:192
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AcAdapter.desktop:64
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:193
 msgctxt "Name"
 msgid "Plugged"
 msgstr "Fişe takılı"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AcAdapter.desktop:128
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AudioInterface.desktop:385
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:383
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Block.desktop:249
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:252
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:194
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-DvbInterface.desktop:315
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-GenericInterface.desktop:64
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-NetworkInterface.desktop:322
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:831
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:578
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:194
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Processor.desktop:312
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:252
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SmartCardReader.desktop:124
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageAccess.desktop:190
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageDrive.desktop:319
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:445
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Video.desktop:130
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AcAdapter.desktop:129
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AudioInterface.desktop:386
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:384
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Block.desktop:250
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:253
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:195
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-DvbInterface.desktop:316
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-GenericInterface.desktop:65
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-NetworkInterface.desktop:323
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:832
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:579
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:195
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Processor.desktop:313
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:253
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SmartCardReader.desktop:125
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageAccess.desktop:191
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageDrive.desktop:320
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:446
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Video.desktop:131
 msgctxt "Name"
 msgid "Solid Device"
 msgstr "Solid Aygıtı"
@@ -12926,7 +12926,7 @@ msgctxt "Name"
 msgid "Name"
 msgstr "İsim"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AudioInterface.desktop:318
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-AudioInterface.desktop:319
 msgctxt "Name"
 msgid "Soundcard Type"
 msgstr "Ses Kartı Tipi"
@@ -12941,13 +12941,13 @@ msgctxt "Name"
 msgid "Charge State"
 msgstr "Şarj Durumu"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:256
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:257
 msgctxt "Name"
 msgid "Rechargeable"
 msgstr "Yeniden şarj edilebilir"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:317
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:186
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Battery.desktop:318
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:187
 msgctxt "Name"
 msgid "Type"
 msgstr "Tip"
@@ -12973,20 +12973,20 @@ msgctxt "Name"
 msgid "Has State"
 msgstr "Duruma Sahip"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:126
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Button.desktop:127
 msgctxt "Name"
 msgid "State Value"
 msgstr "Durum Değeri"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:63
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:63
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Video.desktop:63
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:64
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:64
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Video.desktop:64
 msgctxt "Name"
 msgid "Supported Drivers"
 msgstr "Desteklenen Sürücüler"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:129
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:129
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-Camera.desktop:130
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-PortableMediaPlayer.desktop:130
 msgctxt "Name"
 msgid "Supported Protocols"
 msgstr "Desteklenen Protokoller"
@@ -13016,7 +13016,7 @@ msgctxt "Name"
 msgid "Mac Address"
 msgstr "Mac Adresi"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-NetworkInterface.desktop:257
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-NetworkInterface.desktop:258
 msgctxt "Name"
 msgid "Wireless"
 msgstr "Kablosuz"
@@ -13064,25 +13064,25 @@ msgctxt "Name"
 msgid "Label"
 msgstr "Etiket"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:574
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:575
 msgctxt "Name"
 msgid "Rewritable"
 msgstr "Yeniden yazılabilir"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:639
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:253
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:640
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:254
 msgctxt "Name"
 msgid "Size"
 msgstr "Boyut"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:703
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:317
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:704
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:318
 msgctxt "Name"
 msgid "Usage"
 msgstr "Kullanım"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:767
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:381
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDisc.desktop:768
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageVolume.desktop:382
 msgctxt "Name"
 msgid "Uuid"
 msgstr "Uuid"
@@ -13105,28 +13105,28 @@ msgctxt "Name"
 msgid "Hotpluggable"
 msgstr "Çıkarılıp takılabilir"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:253
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:254
 msgctxt "Name"
 msgid "Read Speed"
 msgstr "Okuma hızı"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:317
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageDrive.desktop:253
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:318
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-StorageDrive.desktop:254
 msgctxt "Name"
 msgid "Removable"
 msgstr "Çıkarılabilir"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:382
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:383
 msgctxt "Name"
 msgid "Supported Media"
 msgstr "Desteklenen Ortam"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:447
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:448
 msgctxt "Name"
 msgid "Write Speed"
 msgstr "Yazma Hızı"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:512
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-OpticalDrive.desktop:513
 msgctxt "Name"
 msgid "Write Speeds"
 msgstr "yazma Hızları"
@@ -13151,17 +13151,17 @@ msgctxt "Name"
 msgid "Number"
 msgstr "Numara"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:124
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:125
 msgctxt "Name"
 msgid "Port"
 msgstr "Port"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:187
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SerialInterface.desktop:188
 msgctxt "Name"
 msgid "Serial Type"
 msgstr "Seri Port Tipi"
 
-#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SmartCardReader.desktop:63
+#: workspace/solid/solid-actions-kcm/device-actions/solid-device-SmartCardReader.desktop:64
 msgctxt "Name"
 msgid "Reader Type"
 msgstr "Okuyucu Tipi"

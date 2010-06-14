@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: krdc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-30 01:24+0200\n"
+"POT-Creation-Date: 2010-05-29 01:25+0200\n"
 "PO-Revision-Date: 2010-05-12 10:57+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -115,7 +115,7 @@ msgstr "Açılıştan sonra bağlanılacak adresler"
 msgid "KDE Remote Desktop Client started"
 msgstr "KDE Uzak Masaüstü İstemcisi başlatıldı"
 
-#: mainwindow.cpp:155 mainwindow.cpp:994
+#: mainwindow.cpp:155 mainwindow.cpp:992
 msgid "New Connection"
 msgstr "Yeni Bağlantı"
 
@@ -183,7 +183,7 @@ msgstr "Bozulmuş Adres"
 msgid "The entered address cannot be handled."
 msgstr "Girilen adres kullanılamaz."
 
-#: mainwindow.cpp:324 mainwindow.cpp:661 config/hostpreferenceslist.cpp:119
+#: mainwindow.cpp:324 mainwindow.cpp:659 config/hostpreferenceslist.cpp:119
 msgid "Unusable URL"
 msgstr "Kullanılamaz URL"
 
@@ -213,62 +213,62 @@ msgctxt ""
 msgid "KDE Remote Desktop Client (Full Screen)"
 msgstr "KDE Uzak Masaüstü İstemcisi (Tam ekran)"
 
-#: mainwindow.cpp:660 config/hostpreferenceslist.cpp:118
+#: mainwindow.cpp:658 config/hostpreferenceslist.cpp:118
 msgid "The selected host cannot be handled."
 msgstr "Seçilen makine kullanılmaz."
 
-#: mainwindow.cpp:677
+#: mainwindow.cpp:675
 msgid "Add Bookmark"
 msgstr "Yer İmi Ekle"
 
-#: mainwindow.cpp:678
+#: mainwindow.cpp:676
 msgid "Close Tab"
 msgstr "Sekmeyi Kapat"
 
-#: mainwindow.cpp:740
+#: mainwindow.cpp:738
 msgid "Switch to Window Mode"
 msgstr "Pencere Kipine Geç"
 
-#: mainwindow.cpp:741
+#: mainwindow.cpp:739
 msgid "Window Mode"
 msgstr "Pencere Kipi"
 
-#: mainwindow.cpp:761
+#: mainwindow.cpp:759
 msgid "Minimize Full Screen Window"
 msgstr "Tam Ekran Pencereyi Küçült"
 
-#: mainwindow.cpp:775
+#: mainwindow.cpp:773
 msgid "Stick Toolbar"
 msgstr "Araç Çubuğuna Yapış"
 
-#: mainwindow.cpp:892
+#: mainwindow.cpp:890
 msgid "Are you sure you want to quit the KDE Remote Desktop Client?"
 msgstr "KDE Uzak Masaüstü İstemcisininden çıkmak istediğinizden emin misiniz?"
 
-#: mainwindow.cpp:893
+#: mainwindow.cpp:891
 msgid "Confirm Quit"
 msgstr "Çıkışı Doğrula"
 
-#: mainwindow.cpp:1010
+#: mainwindow.cpp:1008
 msgid ""
 "<h1>KDE Remote Desktop Client</h1><br /><br />What would you like to do?<br /"
 ">"
 msgstr ""
 "<h1>KDE Uzak Masaüstü İstemcisi</h1><br /><br />Ne yapmak istersiniz?<br />"
 
-#: mainwindow.cpp:1035
+#: mainwindow.cpp:1033
 msgid "Connect to:"
 msgstr "Şuna bağlan:"
 
-#: mainwindow.cpp:1038
+#: mainwindow.cpp:1036
 msgid "Goto Address"
 msgstr "Adrese Git"
 
-#: mainwindow.cpp:1063 mainwindow.cpp:1158
+#: mainwindow.cpp:1061 mainwindow.cpp:1156
 msgid "Filter"
 msgstr "Filtrele"
 
-#: mainwindow.cpp:1135
+#: mainwindow.cpp:1133
 msgid "Remote Desktops"
 msgstr "Uzak Masaüstleri"
 

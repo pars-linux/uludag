@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_launcher\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-13 01:23+0200\n"
+"POT-Creation-Date: 2010-06-05 01:22+0200\n"
 "PO-Revision-Date: 2010-05-05 16:06+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -309,27 +309,27 @@ msgstr "<b>%3</b> üzerinde <b>%1 (%2)</b>"
 msgid "Advanced"
 msgstr "Gelişmiş"
 
-#: ui/contextmenufactory.cpp:153
+#: ui/contextmenufactory.cpp:156
 msgid "Remove From Favorites"
 msgstr "Yer İmlerinden Kaldır"
 
-#: ui/contextmenufactory.cpp:158
+#: ui/contextmenufactory.cpp:161
 msgid "Add to Favorites"
 msgstr "Yer İmlerine Ekle"
 
-#: ui/contextmenufactory.cpp:190
+#: ui/contextmenufactory.cpp:193
 msgid "Add to Desktop"
 msgstr "Masaüstüne Ekle"
 
-#: ui/contextmenufactory.cpp:197
+#: ui/contextmenufactory.cpp:200
 msgid "Add to Panel"
 msgstr "Panele Ekle"
 
-#: ui/contextmenufactory.cpp:222
+#: ui/contextmenufactory.cpp:225
 msgid "Eject"
 msgstr "Çıkart"
 
-#: ui/contextmenufactory.cpp:224
+#: ui/contextmenufactory.cpp:227
 msgid "Safely Remove"
 msgstr "Güvenli Kaldır"
 

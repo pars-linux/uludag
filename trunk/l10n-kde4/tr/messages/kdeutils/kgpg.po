@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-11 01:24+0200\n"
+"POT-Creation-Date: 2010-05-24 01:23+0200\n"
 "PO-Revision-Date: 2010-04-27 15:31+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -207,7 +207,7 @@ msgstr "Anahtar sunucusuna yükleme işlemi hatasız sonuçlandı"
 msgid "Upload to keyserver failed"
 msgstr "Anahtar sunucusuna gönderme işlemi başarısız oldu"
 
-#: keyservers.cpp:193 keysmanager.cpp:1353
+#: keyservers.cpp:193 keysmanager.cpp:1358
 msgid "Import Key From Keyserver"
 msgid_plural "Import Keys From Keyserver"
 msgstr[0] "Anahtarları Anahtar Sunucusundan İçeriye Aktar"
@@ -232,131 +232,131 @@ msgstr[0] "%1 tane eşleşen anahtar bulundu"
 msgid "You must choose a key."
 msgstr "Bir anahtar seçmelisiniz."
 
-#: keysmanager.cpp:129
+#: keysmanager.cpp:128
 msgid "Key Management"
 msgstr "Anahtar Yönetimi"
 
-#: keysmanager.cpp:138
+#: keysmanager.cpp:137
 msgid "&Open Editor"
 msgstr "Dü&zenleyiciyi Aç"
 
-#: keysmanager.cpp:142
+#: keysmanager.cpp:141
 msgid "&Key Server Dialog"
 msgstr "Anahtar Sunucusu &Penceresi"
 
-#: keysmanager.cpp:148 selectpublickeydialog.cpp:139
+#: keysmanager.cpp:147 selectpublickeydialog.cpp:139
 msgid "&Go to Default Key"
 msgstr "Öntanımlı A&nahtara Git"
 
-#: keysmanager.cpp:170
+#: keysmanager.cpp:169
 msgid "Tip of the &Day"
 msgstr "&Günün İpucu"
 
-#: keysmanager.cpp:174
+#: keysmanager.cpp:173
 msgid "View GnuPG Manual"
 msgstr "GnuPG Kılavuzunu Oku"
 
-#: keysmanager.cpp:180
+#: keysmanager.cpp:179
 msgid "&Refresh List"
 msgstr "&Listeyi Tazele"
 
-#: keysmanager.cpp:186
+#: keysmanager.cpp:185
 msgid "&Show Only Secret Keys"
 msgstr "Sadece Gizli Anahtarları &Göster"
 
-#: keysmanager.cpp:191
+#: keysmanager.cpp:190
 msgid "Show &Long Key Id"
 msgstr "Uzun Anahtar Kimliğini &Göster"
 
-#: keysmanager.cpp:197
+#: keysmanager.cpp:196
 msgid "K&ey Properties"
 msgstr "A&nahtar Özellikleri"
 
-#: keysmanager.cpp:202
+#: keysmanager.cpp:201
 msgid "Edit Key in &Terminal"
 msgstr "Anahtarı Terminalde &Düzenle"
 
-#: keysmanager.cpp:208
+#: keysmanager.cpp:207
 msgid "&Generate Key Pair..."
 msgstr "Anahtar Çifti &Oluştur..."
 
-#: keysmanager.cpp:219
+#: keysmanager.cpp:218
 msgid "&Import Key..."
 msgstr "Anahtarı İçer&iye Aktar..."
 
-#: keysmanager.cpp:225
+#: keysmanager.cpp:224
 msgid "&Create New Contact in Address Book"
 msgstr "Adres Defterinde Yeni &Kişi Oluştur"
 
-#: keysmanager.cpp:233
+#: keysmanager.cpp:232
 msgid "&Edit Group..."
 msgstr "&Grubu Düzenle..."
 
-#: keysmanager.cpp:237
+#: keysmanager.cpp:236
 msgid "&Delete Group"
 msgstr "Grubu S&il"
 
-#: keysmanager.cpp:247
+#: keysmanager.cpp:246
 msgid "Set as De&fault Key"
 msgstr "Anah&tarı Öntanımlı Olarak Ayarla"
 
-#: keysmanager.cpp:250
+#: keysmanager.cpp:249
 msgid "&Add Photo..."
 msgstr "Fotoğraf E&kle..."
 
-#: keysmanager.cpp:253
+#: keysmanager.cpp:252
 msgid "&Add User Id..."
 msgstr "Kullanıcı Kimliği &Ekle..."
 
-#: keysmanager.cpp:256
+#: keysmanager.cpp:255
 msgid "Export Secret Key..."
 msgstr "Gizli Anahtarı Dışarıya Aktar..."
 
-#: keysmanager.cpp:259
+#: keysmanager.cpp:258
 msgid "Delete Key Pair"
 msgstr "Anahtar Çiftini Sil"
 
-#: keysmanager.cpp:263
+#: keysmanager.cpp:262
 msgid "Revoke Key..."
 msgstr "Anahtarı Feshet..."
 
-#: keysmanager.cpp:266
+#: keysmanager.cpp:265
 msgid "&Regenerate Public Key"
 msgstr "Açık Anahta&rı Yeniden Oluştur"
 
-#: keysmanager.cpp:272
+#: keysmanager.cpp:271
 msgid "Set User Id as &Primary"
 msgstr "Kullanıcı Kimliğini &Birincil Olarak Ayarla"
 
-#: keysmanager.cpp:276
+#: keysmanager.cpp:275
 msgid "&Open Photo"
 msgstr "Fo&toğrafı Aç"
 
-#: keysmanager.cpp:280
+#: keysmanager.cpp:279
 msgid "&Delete Photo"
 msgstr "Fotoğ&rafı Sil"
 
-#: keysmanager.cpp:288
+#: keysmanager.cpp:287
 msgid "Import &Missing Signatures From Keyserver"
 msgstr "&Eksik İmzaları Anahtar Sunucusundan İçeriye Aktar"
 
-#: keysmanager.cpp:304 model/kgpgitemmodel.cpp:285
+#: keysmanager.cpp:303 model/kgpgitemmodel.cpp:285
 msgid "Trust"
 msgstr "Güvenilirlik"
 
-#: keysmanager.cpp:307 model/kgpgitemmodel.cpp:286
+#: keysmanager.cpp:306 model/kgpgitemmodel.cpp:286
 msgid "Size"
 msgstr "Boyut"
 
-#: keysmanager.cpp:310 model/kgpgitemmodel.cpp:288
+#: keysmanager.cpp:309 model/kgpgitemmodel.cpp:288
 msgid "Creation"
 msgstr "Oluşturulma"
 
-#: keysmanager.cpp:313 model/kgpgitemmodel.cpp:287
+#: keysmanager.cpp:312 model/kgpgitemmodel.cpp:287
 msgid "Expiration"
 msgstr "Zaman aşımı"
 
-#: keysmanager.cpp:318
+#: keysmanager.cpp:317
 msgid "&Photo ID's"
 msgstr "&Fotoğraf Kimlikleri"
 
@@ -364,77 +364,77 @@ msgstr "&Fotoğraf Kimlikleri"
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_SignMenu)
 #. i18n: file: conf_misc.ui:178
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_DecryptMenu)
-#: keysmanager.cpp:322 rc.cpp:155 rc.cpp:169
+#: keysmanager.cpp:321 rc.cpp:155 rc.cpp:169
 msgid "Disable"
 msgstr "Pasifleştir"
 
-#: keysmanager.cpp:323
+#: keysmanager.cpp:322
 msgctxt "small picture"
 msgid "Small"
 msgstr "Küçük"
 
-#: keysmanager.cpp:324
+#: keysmanager.cpp:323
 msgctxt "medium picture"
 msgid "Medium"
 msgstr "Orta"
 
-#: keysmanager.cpp:325
+#: keysmanager.cpp:324
 msgctxt "large picture"
 msgid "Large"
 msgstr "Büyük"
 
-#: keysmanager.cpp:329
+#: keysmanager.cpp:328
 msgid "Minimum &Trust"
 msgstr "En Düşük &Güvenilirlik"
 
-#: keysmanager.cpp:332
+#: keysmanager.cpp:331
 msgctxt "no filter: show all keys"
 msgid "&None"
 msgstr "&Hiçbiri"
 
-#: keysmanager.cpp:333
+#: keysmanager.cpp:332
 msgctxt "show only active keys"
 msgid "&Active"
 msgstr "&Etkin"
 
-#: keysmanager.cpp:334
+#: keysmanager.cpp:333
 msgctxt "show only keys with at least marginal trust"
 msgid "&Marginal"
 msgstr "&Kısmen"
 
-#: keysmanager.cpp:335
+#: keysmanager.cpp:334
 msgctxt "show only keys with at least full trust"
 msgid "&Full"
 msgstr "&Tam"
 
-#: keysmanager.cpp:336
+#: keysmanager.cpp:335
 msgctxt "show only ultimately trusted keys"
 msgid "&Ultimate"
 msgstr "&Sınırsız"
 
 #. i18n: file: searchres.ui:28
 #. i18n: ectx: property (text), widget (QLabel, filterEditLabel)
-#: keysmanager.cpp:436 rc.cpp:570
+#: keysmanager.cpp:435 rc.cpp:570
 msgid "Search:"
 msgstr "Ara: "
 
-#: keysmanager.cpp:446
+#: keysmanager.cpp:445
 msgctxt ""
 "Name of the action that is a search line, shown for example in the toolbar "
 "configuration dialog"
 msgid "Search Line"
 msgstr "Arama Satırı"
 
-#: keysmanager.cpp:451
+#: keysmanager.cpp:450
 msgctxt "Name of the action that gives the focus to the search line"
 msgid "Focus Search Line"
 msgstr "Arama Satırına Odakla"
 
-#: keysmanager.cpp:472
+#: keysmanager.cpp:471
 msgid "00000 Keys, 000 Groups"
 msgstr "00000 Anahtar, 000 Grup"
 
-#: keysmanager.cpp:499
+#: keysmanager.cpp:498
 msgid ""
 "Another key generation operation is still in progress.\n"
 "Please wait a moment until this operation is complete."
@@ -442,56 +442,56 @@ msgstr ""
 "Başka bir anahtar oluşturma işlemi devam ediyor.\n"
 "Lütfen bu işlemin bitmesini bekleyin."
 
-#: keysmanager.cpp:500 keysmanager.cpp:525 keysmanager.cpp:574
+#: keysmanager.cpp:499 keysmanager.cpp:524 keysmanager.cpp:573
 msgid "Generating new key pair"
 msgstr "Yeni anahtar çifti oluşturuluyor"
 
-#: keysmanager.cpp:526
+#: keysmanager.cpp:525
 msgid "Can not start \"konsole\" application for expert mode."
 msgstr "Uzman kipi için \"konsole\" uygulaması başlatılamadı."
 
-#: keysmanager.cpp:567 keysmanager.cpp:2564
+#: keysmanager.cpp:566 keysmanager.cpp:2569
 msgctxt "Application ready for user input"
 msgid "Ready"
 msgstr "Hazır"
 
-#: keysmanager.cpp:578
+#: keysmanager.cpp:577
 msgid "Bad passphrase. Cannot generate a new key pair."
 msgstr "Yanlış parola. Anahtar çifti oluşturulmadı."
 
-#: keysmanager.cpp:581
+#: keysmanager.cpp:580
 msgid "Aborted by the user. Cannot generate a new key pair."
 msgstr "Kullanıcı tarafından iptal edildi. Anahtar çifti oluşturulmadı."
 
-#: keysmanager.cpp:584
+#: keysmanager.cpp:583
 msgid "The email address is not valid. Cannot generate a new key pair."
 msgstr "E-posta adresi geçerli değil. Anahtar çifti oluşturulmadı."
 
-#: keysmanager.cpp:587
+#: keysmanager.cpp:586
 msgid "The name is not accepted by gpg. Cannot generate a new key pair."
 msgstr "Bu isim gpg tarafından kabul edilmiyor. Anahtar çifti oluşturulmadı."
 
 #. i18n: file: newkey.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, newKey)
-#: keysmanager.cpp:593 rc.cpp:527
+#: keysmanager.cpp:592 rc.cpp:527
 msgid "New Key Pair Created"
 msgstr "Yeni Anahtar Çifti Oluşturuldu"
 
-#: keysmanager.cpp:633 keysmanager.cpp:637
+#: keysmanager.cpp:632 keysmanager.cpp:636
 msgid "backup copy"
 msgstr "yedek kopya"
 
-#: keysmanager.cpp:643
+#: keysmanager.cpp:642
 msgid "gpg process did not finish. Cannot generate a new key pair."
 msgstr "gpg süreci tamamlanmadı. Anahtar çifti oluşturulmadı."
 
-#: keysmanager.cpp:751
+#: keysmanager.cpp:750
 msgid "You can only refresh primary keys. Please check your selection."
 msgstr ""
 "Sadece birincil anahtarları tazeleyebilirsiniz. Lütfen seçiminizi kontrol "
 "edin."
 
-#: keysmanager.cpp:865
+#: keysmanager.cpp:864
 msgid ""
 "Another operation is still in progress.\n"
 "Please wait a moment until this operation is complete."
@@ -499,11 +499,11 @@ msgstr ""
 "Başka bir işlem devam ediyor.\n"
 "Lütfen bu işlemin bitmesini bekleyin."
 
-#: keysmanager.cpp:865 keysmanager.cpp:870
+#: keysmanager.cpp:864 keysmanager.cpp:869
 msgid "Add New User Id"
 msgstr "Yeni Kullanıcı Kimliği Ekle"
 
-#: keysmanager.cpp:905
+#: keysmanager.cpp:904
 msgid ""
 "The image must be a JPEG file. Remember that the image is stored within your "
 "public key, so if you use a very large picture, your key will become very "
@@ -514,7 +514,7 @@ msgstr ""
 "büyük olacaktır. 240x288 boyutlarına yakın bir dosya kullanmanız uygun "
 "olacaktır."
 
-#: keysmanager.cpp:937
+#: keysmanager.cpp:936
 #, kde-format
 msgid ""
 "<qt>Are you sure you want to delete Photo id <b>%1</b><br/>from key <b>%2 "
@@ -523,106 +523,106 @@ msgstr ""
 "<qt><b>%1</b> Fotoğraf kimliğini<br/><b>%2 &lt;%3&gt;</b> anahtarından "
 "silmek istediğinizden emin misiniz?</qt>"
 
-#: keysmanager.cpp:1038
+#: keysmanager.cpp:1037
 #, kde-format
 msgid "<qt>Search string '<b>%1</b>' not found.</qt>"
 msgstr "<qt> Aranılan '<b>%1</b>' ifadesi bulunamadı.</qt>"
 
-#: keysmanager.cpp:1111
+#: keysmanager.cpp:1110
 msgid "Unable to contact the address book. Please check your installation."
 msgstr "Adres Defteri'ne ulaşılamadı. Lütfen kurulumunuzu kontrol edin."
 
-#: keysmanager.cpp:1172
+#: keysmanager.cpp:1171
 msgid "Public Key"
 msgstr "Açık Anahtar"
 
-#: keysmanager.cpp:1175
+#: keysmanager.cpp:1174
 msgid "Sub Key"
 msgstr "Alt Anahtar"
 
-#: keysmanager.cpp:1178
+#: keysmanager.cpp:1177
 msgid "Secret Key Pair"
 msgstr "Gizli Anahtar Çifti"
 
-#: keysmanager.cpp:1181
+#: keysmanager.cpp:1180
 msgid "Key Group"
 msgstr "Anahtar Grubu"
 
-#: keysmanager.cpp:1184
+#: keysmanager.cpp:1183
 msgid "Signature"
 msgstr "İmza"
 
-#: keysmanager.cpp:1187
+#: keysmanager.cpp:1186
 msgid "User ID"
 msgstr "Kullanıcı Kimliği"
 
-#: keysmanager.cpp:1190
+#: keysmanager.cpp:1189
 msgid "Revocation Signature"
 msgstr "Feshetme İmzası"
 
-#: keysmanager.cpp:1193
+#: keysmanager.cpp:1192
 msgid "Photo ID"
 msgstr "Fotoğraf Kimliği"
 
-#: keysmanager.cpp:1196
+#: keysmanager.cpp:1195
 msgid "Orphaned Secret Key"
 msgstr "Terk Edilmiş Gizli Anahtar"
 
-#: keysmanager.cpp:1201
+#: keysmanager.cpp:1200
 msgid "Group member"
 msgstr "Grup üyesi"
 
-#: keysmanager.cpp:1302
+#: keysmanager.cpp:1307
 msgid "&Sign User ID ..."
 msgid_plural "&Sign User IDs ..."
 msgstr[0] "&Kullanıcı Kimliklerini İmzala ..."
 
-#: keysmanager.cpp:1303
+#: keysmanager.cpp:1308
 msgid "E&xport Public Key..."
 msgid_plural "E&xport Public Keys..."
 msgstr[0] "&Genel Anahtarları Dışarıya Aktar..."
 
-#: keysmanager.cpp:1304
+#: keysmanager.cpp:1309
 msgid "&Refresh Key From Keyserver"
 msgid_plural "&Refresh Keys From Keyserver"
 msgstr[0] "Anahta&rları Anahtar Sunucusundan Tazele"
 
-#: keysmanager.cpp:1305
+#: keysmanager.cpp:1310
 msgid "&Create Group with Selected Key..."
 msgid_plural "&Create Group with Selected Keys..."
 msgstr[0] "&Seçili Anahtarlar ile Grup Oluştur..."
 
-#: keysmanager.cpp:1306
+#: keysmanager.cpp:1311
 msgid "&Sign Key..."
 msgid_plural "&Sign Keys..."
 msgstr[0] "A&nahtarları İmzala..."
 
-#: keysmanager.cpp:1307
+#: keysmanager.cpp:1312
 msgid "&Delete User ID"
 msgid_plural "&Delete User IDs"
 msgstr[0] "&Kullanıcı Kimliklerini Sil"
 
-#: keysmanager.cpp:1355
+#: keysmanager.cpp:1360
 msgid "Delete Sign&ature"
 msgid_plural "Delete Sign&atures"
 msgstr[0] "İmzaları &Sil"
 
-#: keysmanager.cpp:1376
+#: keysmanager.cpp:1381
 msgid "&Delete Key"
 msgid_plural "&Delete Keys"
 msgstr[0] "&Anahtarları Sil"
 
-#: keysmanager.cpp:1400
+#: keysmanager.cpp:1405
 msgid "Create Revocation Certificate"
 msgstr "Feshetme Sertifikası Oluştur"
 
-#: keysmanager.cpp:1406 keysmanager.cpp:1801
+#: keysmanager.cpp:1411 keysmanager.cpp:1806
 #, kde-format
 msgctxt "<Name> (<Email>) ID: <KeyId>"
 msgid "%1 (%2) ID: %3"
 msgstr "%1 (%2) Kimlik: %3"
 
-#: keysmanager.cpp:1449
+#: keysmanager.cpp:1454
 msgid ""
 "<qt>Secret keys <b>should not</b> be saved in an unsafe place.<br/>If "
 "someone else can access this file, encryption with this key will be "
@@ -632,11 +632,11 @@ msgstr ""
 ">Birisi bu dosyaya erişirse bu anahtarla yapılan şifrelemeler tehlikeye "
 "girecektir.<br/>Anahtarın dışarıya aktarılmasına devam edilsin mi?</qt>"
 
-#: keysmanager.cpp:1461
+#: keysmanager.cpp:1466
 msgid "Export PRIVATE KEY As"
 msgstr "GİZLİ ANAHTARI Dışarıya Farklı Aktar"
 
-#: keysmanager.cpp:1479
+#: keysmanager.cpp:1484
 #, kde-format
 msgid ""
 "<qt>Your <b>private</b> key \"%1\" was successfully exported to<br/>%2.<br/"
@@ -645,7 +645,7 @@ msgstr ""
 "<qt><b>Gizli</b> anahtarınız \"%1\" başarılı bir şekilde <br/>%2 konumuna "
 "aktarıldı.<br/><b>Güvenli olmayan</b> bir yerde saklamayın.</qt>"
 
-#: keysmanager.cpp:1482
+#: keysmanager.cpp:1487
 msgid ""
 "Your secret key could not be exported.\n"
 "Check the key."
@@ -653,22 +653,22 @@ msgstr ""
 "Gizli anahtarınız dışarıya aktarılamadı.\n"
 "Anahtarı kontrol edin."
 
-#: keysmanager.cpp:1515
+#: keysmanager.cpp:1520
 msgid "Public Key Export"
 msgstr "Açık Anahtarı Dışarıya Aktar"
 
-#: keysmanager.cpp:1532 editor/kgpgeditor.cpp:507
+#: keysmanager.cpp:1537 editor/kgpgeditor.cpp:507
 msgid "Save File"
 msgstr "Dosya Kaydet"
 
-#: keysmanager.cpp:1596
+#: keysmanager.cpp:1601
 #, kde-format
 msgid "<qt>The public key was successfully exported to<br/>%2</qt>"
 msgid_plural "<qt>The %1 public keys were successfully exported to<br/>%2</qt>"
 msgstr[0] ""
 "<qt>%1 açık anahtarınız başarılı bir şekilde <br/>%2 konumuna aktarıldı</qt>"
 
-#: keysmanager.cpp:1600 keysmanager.cpp:1615 keysmanager.cpp:1629
+#: keysmanager.cpp:1605 keysmanager.cpp:1620 keysmanager.cpp:1634
 msgid ""
 "Your public key could not be exported\n"
 "Check the key."
@@ -676,7 +676,7 @@ msgstr ""
 "Açık anahtarınız dışarıya aktarılamadı\n"
 "Anahtarı kontrol edin."
 
-#: keysmanager.cpp:1653
+#: keysmanager.cpp:1658
 msgid ""
 "<qt>A viewer for JPEG images is not specified.<br/>Please check your "
 "installation.</qt>"
@@ -684,11 +684,11 @@ msgstr ""
 "<qt>JPEG dosyaları için bir gösterici belirtilmemiş.<br/>Lütfen kurulumunuzu "
 "kontrol edin.</qt>"
 
-#: keysmanager.cpp:1653
+#: keysmanager.cpp:1658
 msgid "Show photo"
 msgstr "Fotoğrafı göster"
 
-#: keysmanager.cpp:1738
+#: keysmanager.cpp:1743
 msgid ""
 "<p>This key is an orphaned secret key (secret key without public key.) It is "
 "currently not usable.</p><p>Would you like to regenerate the public key?</p>"
@@ -697,24 +697,24 @@ msgstr ""
 "gizli anahtar.)  Bu haliyle kullanılabilir değildir.</p><p>Açık anahtarı "
 "yeniden oluşturmak ister misiniz?</p>"
 
-#: keysmanager.cpp:1739
+#: keysmanager.cpp:1744
 msgid "Generate"
 msgstr "Oluştur"
 
-#: keysmanager.cpp:1739
+#: keysmanager.cpp:1744
 msgid "Do Not Generate"
 msgstr "Oluşturma"
 
-#: keysmanager.cpp:1769
+#: keysmanager.cpp:1774
 #, kde-format
 msgid "<qt>Are you sure you want to delete group <b>%1</b> ?</qt>"
 msgstr "<qt><b>%1</b> grubunu silmek istediğinize emin misiniz?</qt>"
 
-#: keysmanager.cpp:1769 keysmanager.cpp:2367
+#: keysmanager.cpp:1774 keysmanager.cpp:2372
 msgid "Delete"
 msgstr "Sil"
 
-#: keysmanager.cpp:1792
+#: keysmanager.cpp:1797
 msgid ""
 "<qt>You cannot create a group containing signatures, subkeys or other groups."
 "</qt>"
@@ -722,23 +722,23 @@ msgstr ""
 "<qt>İmzalar, alt anahtarlar veya başka gruplar içeren bir grup "
 "oluşturamazsınız.</qt>"
 
-#: keysmanager.cpp:1806
+#: keysmanager.cpp:1811
 msgid "Create New Group"
 msgstr "Yeni Grup Oluştur"
 
-#: keysmanager.cpp:1807
+#: keysmanager.cpp:1812
 msgctxt "Enter the name of the group you are creating now"
 msgid "Enter new group name:"
 msgstr "Yeni grup adını girin:"
 
-#: keysmanager.cpp:1813
+#: keysmanager.cpp:1818
 msgid ""
 "Following keys are not valid or not trusted and will not be added to the "
 "group:"
 msgstr ""
 "Aşağıdaki anahtarlar geçerli veya güvenli değil, gruba eklenmeyecekler:"
 
-#: keysmanager.cpp:1822
+#: keysmanager.cpp:1827
 #, kde-format
 msgid ""
 "<qt>No valid or trusted key was selected. The group <b>%1</b> will not be "
@@ -747,17 +747,17 @@ msgstr ""
 "<qt>Geçerli veya güvenilir anahtar seçilmedi. <b>%1</b> grubu "
 "oluşturulmayacak.</qt>"
 
-#: keysmanager.cpp:1834
+#: keysmanager.cpp:1839
 msgid "Group Properties"
 msgstr "Grup Özellikleri"
 
-#: keysmanager.cpp:1871
+#: keysmanager.cpp:1876
 msgid "You can only sign primary keys. Please check your selection."
 msgstr ""
 "Sadece birincil anahtarları imzalayabilirsiniz. Lütfen seçiminizi kontrol "
 "edin."
 
-#: keysmanager.cpp:1880
+#: keysmanager.cpp:1885
 #, kde-format
 msgid ""
 "<qt>You are about to sign key:<br /><br />%1<br />ID: %2<br />Fingerprint: "
@@ -770,7 +770,7 @@ msgstr ""
 "dahil olmadığından emin olmak için anahtarın parmak izini telefonla veya "
 "anahtar sahibi ile görüşerek kontrol etmelisiniz.</qt>"
 
-#: keysmanager.cpp:1884
+#: keysmanager.cpp:1889
 #, kde-format
 msgid ""
 "<qt>You are about to sign key:<br /><br />%1 (%2)<br />ID: %3<br /"
@@ -783,20 +783,20 @@ msgstr ""
 "iletişiminize dahil olmadığından emin olmak için anahtarın parmak izini "
 "telefonla veya anahtar sahibi ile görüşerek kontrol etmelisiniz.</qt>"
 
-#: keysmanager.cpp:1898 keysmanager.cpp:1980 kgpgfirstassistant.cpp:279
+#: keysmanager.cpp:1903 keysmanager.cpp:1985 kgpgfirstassistant.cpp:279
 #: model/keylistproxymodel.cpp:100
 #, kde-format
 msgctxt "Name: ID"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: keysmanager.cpp:1900 keysmanager.cpp:1983 kgpgfirstassistant.cpp:281
+#: keysmanager.cpp:1905 keysmanager.cpp:1988 kgpgfirstassistant.cpp:281
 #, kde-format
 msgctxt "Name (Email): ID"
 msgid "%1 (%2): %3"
 msgstr "%1 (%2): %3"
 
-#: keysmanager.cpp:1906
+#: keysmanager.cpp:1911
 msgid ""
 "<qt>You are about to sign the following keys in one pass.<br/><b>If you have "
 "not carefully checked all fingerprints, the security of your communications "
@@ -806,13 +806,13 @@ msgstr ""
 "dikkatli bir şekilde tüm parmak izlerini kontrol etmediyseniz, "
 "iletişiminizin güvenliği tehlikeye atılmış olabilir.</b></qt>"
 
-#: keysmanager.cpp:1946
+#: keysmanager.cpp:1951
 msgid "You can only sign user ids and photo ids. Please check your selection."
 msgstr ""
 "Sadece kullanıcı ids dosyalarını ve fotoğraf ids dosyalarını "
 "imzalayabilirsiniz. Lütfen seçiminizi kontrol edin."
 
-#: keysmanager.cpp:1960
+#: keysmanager.cpp:1965
 #, kde-format
 msgid ""
 "<qt>You are about to sign user id:<br /><br />%1<br />ID: %2<br /"
@@ -825,7 +825,7 @@ msgstr ""
 "iletişiminize dahil olmadığından emin olmak için anahtarın parmak izini "
 "telefonla veya anahtar sahibi ile buluşarak kontrol etmelisiniz.</qt>"
 
-#: keysmanager.cpp:1964
+#: keysmanager.cpp:1969
 #, kde-format
 msgid ""
 "<qt>You are about to sign user id:<br /><br />%1 (%2)<br />ID: %3<br /"
@@ -838,7 +838,7 @@ msgstr ""
 "iletişiminize dahil olmadığından emin olmak için anahtarın parmak izini "
 "telefonla veya anahtar sahibi ile buluşarak kontrol etmelisiniz.</qt>"
 
-#: keysmanager.cpp:1989
+#: keysmanager.cpp:1994
 msgid ""
 "<qt>You are about to sign the following user ids in one pass.<br/><b>If you "
 "have not carefully checked all fingerprints, the security of your "
@@ -848,17 +848,17 @@ msgstr ""
 "><b>Eğer dikkatli bir şekilde tüm parmak izlerini kontrol etmediyseniz, "
 "iletişiminizin güvenliği tehlikeye atılmış olabilir.</b></qt>"
 
-#: keysmanager.cpp:2059
+#: keysmanager.cpp:2064
 #, kde-format
 msgid "<qt>Bad passphrase, key <b>%1 (%2)</b> not signed.</qt>"
 msgstr "<qt>Yanlış parola<b>%1 (%2)</b> anahtarı imzalanmadı.</qt>"
 
-#: keysmanager.cpp:2063
+#: keysmanager.cpp:2068
 #, kde-format
 msgid "<qt>The key <b>%1 (%2)</b> is already signed.</qt>"
 msgstr "<qt><b>%1 (%2)</b> anahtarı imzalandı.</qt>"
 
-#: keysmanager.cpp:2068
+#: keysmanager.cpp:2073
 #, kde-format
 msgid ""
 "<qt>Signing key <b>%1</b> with key <b>%2</b> failed.<br />Do you want to try "
@@ -867,17 +867,17 @@ msgstr ""
 "<qt><b>%2</b> anahtarı kullanılarak <b>%1</b> anahtarı imzalanamadı.<br /"
 ">Anahtar imzalamayı konsol kipinde denemek ister misiniz?</qt>"
 
-#: keysmanager.cpp:2136
+#: keysmanager.cpp:2141
 msgid "All signatures for this key are already in your keyring"
 msgid_plural "All signatures for this keys are already in your keyring"
 msgstr[0] ""
 "Bu ananahtarlar için kullanılan tüm imzalar zaten anahtar zincirinizde var"
 
-#: keysmanager.cpp:2225
+#: keysmanager.cpp:2230
 msgid "Edit key manually to delete a self-signature."
 msgstr "Kendi imzanızı silmek için anahtarı elle düzenleyin"
 
-#: keysmanager.cpp:2229
+#: keysmanager.cpp:2234
 #, kde-format
 msgid ""
 "<qt>Are you sure you want to delete signature<br /><b>%1</b><br />from user "
@@ -886,16 +886,16 @@ msgstr ""
 "<qt><b>%3</b> anahtarının <b>%2</b> kullanıcı kimliğinden<br /><b>%1</b> "
 "imzasını silmek istediğinizden emin misiniz?</qt>"
 
-#: keysmanager.cpp:2248
+#: keysmanager.cpp:2253
 msgid "Requested operation was unsuccessful, please edit the key manually."
 msgstr "İstenilen işlem başarısız oldu, lütfen anahtarı elle düzenleyin."
 
-#: keysmanager.cpp:2291
+#: keysmanager.cpp:2296
 #, kde-format
 msgid "<qt>Cannot open file <b>%1</b> for printing...</qt>"
 msgstr "<qt><b>%1</b> dosyası baskı için açılamıyor...</qt>"
 
-#: keysmanager.cpp:2320
+#: keysmanager.cpp:2325
 msgid ""
 "<qt>The key you are deleting is a member of the following key group. Do you "
 "want to remove it from this group?</qt>"
@@ -906,13 +906,13 @@ msgstr[0] ""
 "<qt>Sildiğiniz anahtar aşağıdaki anahtar gruplarının bir üyesi. Bu "
 "gruplardan silmek istediğinizden emin misiniz?</qt>"
 
-#: keysmanager.cpp:2324 keysmanager.cpp:2374 keysmanager.cpp:2389
-#: keysmanager.cpp:2392 keysmanager.cpp:2402 keysmanager.cpp:2416
-#: keysmanager.cpp:2426
+#: keysmanager.cpp:2329 keysmanager.cpp:2379 keysmanager.cpp:2394
+#: keysmanager.cpp:2397 keysmanager.cpp:2407 keysmanager.cpp:2421
+#: keysmanager.cpp:2431
 msgid "Delete key"
 msgstr "Anahtarı Sil"
 
-#: keysmanager.cpp:2365
+#: keysmanager.cpp:2370
 #, kde-format
 msgid ""
 "<p>Delete <b>secret</b> key pair <b>%1</b>?</p>Deleting this key pair means "
@@ -922,7 +922,7 @@ msgstr ""
 "silmek, bu anahtar ile şifrelenmiş dosyaları bir daha açamayacağınız "
 "anlamına gelir."
 
-#: keysmanager.cpp:2374 keysmanager.cpp:2402
+#: keysmanager.cpp:2379 keysmanager.cpp:2407
 msgid ""
 "Another key delete operation is still in progress.\n"
 "Please wait a moment until this operation is complete."
@@ -930,29 +930,29 @@ msgstr ""
 "Bir başka anahtar silme işlemi devam ediyor.\n"
 "Lütfen işlemin bitmesini bekleyin."
 
-#: keysmanager.cpp:2389
+#: keysmanager.cpp:2394
 #, kde-format
 msgid "Key <b>%1</b> deleted."
 msgstr "<b>%1</b> anahtarı silindi."
 
-#: keysmanager.cpp:2392
+#: keysmanager.cpp:2397
 #, kde-format
 msgid "Deleting key <b>%1</b> failed."
 msgstr "<b>%1</b> anahtarını silme işlemi başarısız oldu."
 
-#: keysmanager.cpp:2416
+#: keysmanager.cpp:2421
 #, kde-format
 msgid "Can not delete key <b>%1</b> while it is edited in terminal."
 msgstr "Konsolda düzenlenen <b>%1</b> anahtarı silinemez."
 
-#: keysmanager.cpp:2426
+#: keysmanager.cpp:2431
 msgid ""
 "You have selected items that are not keys. They can not be deleted with this "
 "menu entry."
 msgstr ""
 "Anahtar olmayan ögeler seçtiniz. Bu dosyalar bu menü girdisi ile silinemez."
 
-#: keysmanager.cpp:2448
+#: keysmanager.cpp:2453
 #, kde-format
 msgid ""
 "<qt>The following are secret key pairs:<br/><b>%1</b><br/>They will not be "
@@ -961,55 +961,55 @@ msgstr ""
 "<qt>Aşağıdakiler gizli anahtar çiftleridir:<br/><b>%1</b>Bu çiftler "
 "silinmeyecekler.</qt>"
 
-#: keysmanager.cpp:2460
+#: keysmanager.cpp:2465
 #, kde-format
 msgid "<qt><b>Delete the following public key?</b></qt>"
 msgid_plural "<qt><b>Delete the following %1 public keys?</b></qt>"
 msgstr[0] "<qt><b>Aşağıdaki %1 açık anahtar silinsin mi?</b></qt>"
 
-#: keysmanager.cpp:2491 keysmanager.cpp:2550
+#: keysmanager.cpp:2496 keysmanager.cpp:2555
 msgid "Key Import"
 msgstr "Anahtar Al"
 
-#: keysmanager.cpp:2498
+#: keysmanager.cpp:2503
 msgid "Open File"
 msgstr "Dosyayı Aç"
 
-#: keysmanager.cpp:2533
+#: keysmanager.cpp:2538
 msgid "Importing..."
 msgstr "Alınıyor..."
 
-#: keysmanager.cpp:2550
+#: keysmanager.cpp:2555
 msgid "Key importing failed. Please see the detailed log for more information."
 msgstr ""
 "Anahtar içeriye aktarılamadı. Daha fazla bilgi için ayrıntılı günlük kaydı "
 "dosyasına bakın."
 
-#: keysmanager.cpp:2616
+#: keysmanager.cpp:2621
 msgid "KGpg - encryption tool"
 msgstr "KGpg - şifreleme aracı"
 
-#: keysmanager.cpp:2637
+#: keysmanager.cpp:2642
 msgid "Ke&y Manager"
 msgstr "&Anahtar Yöneticisi"
 
-#: keysmanager.cpp:2641
+#: keysmanager.cpp:2646
 msgid "&Encrypt Clipboard"
 msgstr "&Panoyu şifrele"
 
-#: keysmanager.cpp:2644
+#: keysmanager.cpp:2649
 msgid "&Decrypt Clipboard"
 msgstr "Pano&yu aç"
 
-#: keysmanager.cpp:2647
+#: keysmanager.cpp:2652
 msgid "&Sign/Verify Clipboard"
 msgstr "Pano&yu İmzala/Doğrula"
 
-#: keysmanager.cpp:2679 keysmanager.cpp:2738 keysmanager.cpp:2756
+#: keysmanager.cpp:2684 keysmanager.cpp:2743 keysmanager.cpp:2761
 msgid "Clipboard is empty."
 msgstr "Pano boş."
 
-#: keysmanager.cpp:2728
+#: keysmanager.cpp:2733
 msgid "Text successfully encrypted."
 msgstr "Metin başarılı bir şekilde şifrelendi."
 

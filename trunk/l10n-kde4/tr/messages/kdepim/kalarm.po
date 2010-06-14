@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kalarm\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-20 01:23+0200\n"
+"POT-Creation-Date: 2010-06-04 01:25+0200\n"
 "PO-Revision-Date: 2009-11-13 23:13+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -73,34 +73,34 @@ msgctxt "@info/plain"
 msgid "At login"
 msgstr "Girişte"
 
-#: cal/kaeventdata.cpp:2360 cal/kaeventdata.cpp:2398
+#: cal/kaeventdata.cpp:2360 cal/kaeventdata.cpp:2395
 #, kde-format
 msgctxt "@info/plain"
 msgid "1 Minute"
 msgid_plural "%1 Minutes"
 msgstr[0] "%1 Dakika"
 
-#: cal/kaeventdata.cpp:2362 cal/kaeventdata.cpp:2400
+#: cal/kaeventdata.cpp:2362 cal/kaeventdata.cpp:2397
 #, kde-format
 msgctxt "@info/plain"
 msgid "1 Hour"
 msgid_plural "%1 Hours"
 msgstr[0] "%1 Saat"
 
-#: cal/kaeventdata.cpp:2366 cal/kaeventdata.cpp:2402
+#: cal/kaeventdata.cpp:2366 cal/kaeventdata.cpp:2399
 #, kde-format
 msgctxt "@info/plain Hours and minutes"
 msgid "%1h %2m"
 msgstr "%1h %2m"
 
-#: cal/kaeventdata.cpp:2369 cal/kaeventdata.cpp:2406
+#: cal/kaeventdata.cpp:2369 cal/kaeventdata.cpp:2403
 #, kde-format
 msgctxt "@info/plain"
 msgid "1 Day"
 msgid_plural "%1 Days"
 msgstr[0] "%1 Gün"
 
-#: cal/kaeventdata.cpp:2371 cal/kaeventdata.cpp:2407
+#: cal/kaeventdata.cpp:2371 cal/kaeventdata.cpp:2404
 #, kde-format
 msgctxt "@info/plain"
 msgid "1 Week"
@@ -126,7 +126,7 @@ msgctxt "@info/plain No recurrence"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: cal/kaeventdata.cpp:2409
+#: cal/kaeventdata.cpp:2406
 msgctxt "@info/plain No repetition"
 msgid "None"
 msgstr "Hiçbiri"
@@ -1206,35 +1206,35 @@ msgctxt "@info:tooltip"
 msgid "Add a new alarm template calendar"
 msgstr "Yeni bir alarm şablonu takvimi ekle"
 
-#: resourceselector.cpp:162 resourceconfigdialog.cpp:47
+#: resourceselector.cpp:187 resourceconfigdialog.cpp:47
 msgctxt "@title:window"
 msgid "Calendar Configuration"
 msgstr "Takvim Yapılandırması"
 
-#: resourceselector.cpp:163
+#: resourceselector.cpp:188
 msgctxt "@info"
 msgid "Select storage type of new calendar:"
 msgstr "Yeni takvimin depolama türünü seçin:"
 
-#: resourceselector.cpp:170
+#: resourceselector.cpp:195
 #, kde-format
 msgctxt "@info"
 msgid "Unable to create calendar of type <resource>%1</resource>."
 msgstr "<resource>%1</resource> türünün takvimi oluşturulamadı."
 
-#: resourceselector.cpp:173
+#: resourceselector.cpp:198
 #, kde-format
 msgctxt "@info/plain"
 msgid "%1 calendar"
 msgstr "%1 takvim"
 
-#: resourceselector.cpp:218
+#: resourceselector.cpp:243
 #, fuzzy
 msgctxt "@info"
 msgid "You cannot make your default active alarm calendar read-only."
 msgstr "Gerçekten seçili %1 uyarısını silmek istiyor musunuz?"
 
-#: resourceselector.cpp:225
+#: resourceselector.cpp:250
 #, fuzzy
 msgctxt "@info"
 msgid ""
@@ -1242,18 +1242,18 @@ msgid ""
 "alarms are configured to be kept."
 msgstr "Gerçekten seçili %1 uyarısını silmek istiyor musunuz?"
 
-#: resourceselector.cpp:229
+#: resourceselector.cpp:254
 msgctxt "@info"
 msgid "Do you really want to make your default calendar read-only?"
 msgstr "Gerçekten öntanımlı takviminizi salt okunur yapmak istiyor musunuz?"
 
-#: resourceselector.cpp:252
+#: resourceselector.cpp:277
 #, fuzzy
 msgctxt "@info"
 msgid "You cannot remove your default active alarm calendar."
 msgstr "Gerçekten seçili %1 uyarısını silmek istiyor musunuz?"
 
-#: resourceselector.cpp:259
+#: resourceselector.cpp:284
 #, fuzzy
 msgctxt "@info"
 msgid ""
@@ -1261,7 +1261,7 @@ msgid ""
 "are configured to be kept."
 msgstr "Gerçekten seçili %1 uyarısını silmek istiyor musunuz?"
 
-#: resourceselector.cpp:264
+#: resourceselector.cpp:289
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -1269,7 +1269,7 @@ msgid ""
 "from the list?"
 msgstr "Gerçekten seçili %1 alarm şablonunu silmek istiyor musunuz?"
 
-#: resourceselector.cpp:265
+#: resourceselector.cpp:290
 #, fuzzy, kde-format
 msgctxt "@info"
 msgid ""
@@ -1277,72 +1277,72 @@ msgid ""
 "list?"
 msgstr "Gerçekten seçili %1 alarm şablonunu silmek istiyor musunuz?"
 
-#: resourceselector.cpp:297
+#: resourceselector.cpp:322
 msgctxt "@action Reload calendar"
 msgid "Re&load"
 msgstr "Yeniden Yük&le"
 
-#: resourceselector.cpp:300
+#: resourceselector.cpp:325
 msgctxt "@action"
 msgid "&Save"
 msgstr "&Kaydet"
 
-#: resourceselector.cpp:303
+#: resourceselector.cpp:328
 msgctxt "@action"
 msgid "Show &Details"
 msgstr "&Ayrıntıları Göster"
 
-#: resourceselector.cpp:306
+#: resourceselector.cpp:331
 msgctxt "@action"
 msgid "Set &Color..."
 msgstr "&Rengi Ayarla..."
 
-#: resourceselector.cpp:309
+#: resourceselector.cpp:334
 msgctxt "@action"
 msgid "Clear C&olor"
 msgstr "Rengi &Temizle"
 
-#: resourceselector.cpp:312 mainwindow.cpp:462
+#: resourceselector.cpp:337 mainwindow.cpp:462
 msgctxt "@action"
 msgid "&Edit..."
 msgstr "&Düzenle..."
 
-#: resourceselector.cpp:315
+#: resourceselector.cpp:340
 msgctxt "@action"
 msgid "&Remove"
 msgstr "&Kaldır"
 
-#: resourceselector.cpp:321
+#: resourceselector.cpp:346
 msgctxt "@action"
 msgid "&Add..."
 msgstr "&Ekle..."
 
-#: resourceselector.cpp:324
+#: resourceselector.cpp:349
 msgctxt "@action"
 msgid "Im&port..."
 msgstr "&İçeriye Aktar..."
 
-#: resourceselector.cpp:327 mainwindow.cpp:530
+#: resourceselector.cpp:352 mainwindow.cpp:530
 msgctxt "@action"
 msgid "E&xport..."
 msgstr "&Dışarıya Aktar..."
 
-#: resourceselector.cpp:384
+#: resourceselector.cpp:409
 msgctxt "@action"
 msgid "Use as &Default for Active Alarms"
 msgstr "Etkin Alarmlar için &Öntanımlı olarak kullan"
 
-#: resourceselector.cpp:385
+#: resourceselector.cpp:410
 msgctxt "@action"
 msgid "Use as &Default for Archived Alarms"
 msgstr "&Arşivlenmiş Alarmlar için Öntanımlı olarak kullan"
 
-#: resourceselector.cpp:386
+#: resourceselector.cpp:411
 msgctxt "@action"
 msgid "Use as &Default for Alarm Templates"
 msgstr "Alarm &Şablonları için Öntanımlı olarak kullan"
 
-#: resourceselector.cpp:463
+#: resourceselector.cpp:488
 #, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "Add a new active alarm calendar"
@@ -1350,7 +1350,7 @@ msgctxt "@info/plain"
 msgid "It is not an active alarm calendar."
 msgstr "Yeni bir etkin alarm takvimi ekle"
 
-#: resourceselector.cpp:466
+#: resourceselector.cpp:491
 #, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "Add a new archived alarm calendar"
@@ -1358,7 +1358,7 @@ msgctxt "@info/plain"
 msgid "It is not an archived alarm calendar."
 msgstr "Yeni bir arşivlenmiş alarm takvimi ekle"
 
-#: resourceselector.cpp:469
+#: resourceselector.cpp:494
 #, fuzzy
 #| msgctxt "@info:tooltip"
 #| msgid "Add a new alarm template calendar"
@@ -1366,7 +1366,7 @@ msgctxt "@info/plain"
 msgid "It is not an alarm template calendar."
 msgstr "Yeni bir alarm şablonu takvimi ekle"
 
-#: resourceselector.cpp:474
+#: resourceselector.cpp:499
 #, kde-format
 msgctxt "@info"
 msgid ""
@@ -2201,22 +2201,22 @@ msgid ""
 "unexpected times after daylight saving time shifts.</para>"
 msgstr ""
 
-#: alarmtimewidget.cpp:292 alarmtimewidget.cpp:318
+#: alarmtimewidget.cpp:291 alarmtimewidget.cpp:317
 msgctxt "@info"
 msgid "Invalid time"
 msgstr "Geçersiz saat"
 
-#: alarmtimewidget.cpp:311
+#: alarmtimewidget.cpp:310
 msgctxt "@info"
 msgid "Invalid date"
 msgstr "Geçersiz tarih"
 
-#: alarmtimewidget.cpp:332
+#: alarmtimewidget.cpp:331
 msgctxt "@info"
 msgid "Alarm date has already expired"
 msgstr "Alarm tarihi zaten geçmiş"
 
-#: alarmtimewidget.cpp:344
+#: alarmtimewidget.cpp:343
 msgctxt "@info"
 msgid "Alarm time has already expired"
 msgstr "Alarm saati yeni geçmiş"
@@ -4259,7 +4259,7 @@ msgctxt "@info"
 msgid "Unable to locate this email in <application>KMail</application>"
 msgstr "Bu e-posta <application>KMail</application> içerisinde bulunamadı"
 
-#: messagewin.cpp:2061
+#: messagewin.cpp:2063
 msgctxt "@info"
 msgid "<para>Cannot defer alarm:</para><para>Alarm not found.</para>"
 msgstr "<para>Alarm ertelenemedi:</para><para>Alarm bulunamadı.</para>"

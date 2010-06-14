@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: okular_poppler\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-01-10 06:16+0100\n"
+"POT-Creation-Date: 2010-06-04 01:24+0200\n"
 "PO-Revision-Date: 2009-10-27 00:07+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -120,7 +120,7 @@ msgstr "Bilinmeyen Şifreleme"
 msgid "Unknown Optimization"
 msgstr "Bilinmeyen İyileştirme"
 
-#: generator_pdf.cpp:1593
+#: generator_pdf.cpp:1596
 msgid "Saving files with /Encrypt is not supported."
 msgstr "Dosyaları Şifreleyerek kaydetme desteklenmiyor."
 

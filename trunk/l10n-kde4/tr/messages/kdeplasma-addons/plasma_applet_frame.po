@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_frame\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-08 01:26+0200\n"
+"POT-Creation-Date: 2010-06-11 01:26+0200\n"
 "PO-Revision-Date: 2010-04-20 11:01+0300\n"
 "Last-Translator: Gökmen Göksel <gokmen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -125,7 +125,9 @@ msgstr "Resim:"
 #. i18n: file: imageSettings.ui:73
 #. i18n: ectx: property (filter), widget (KUrlComboRequester, picRequester)
 #: rc.cpp:33
-msgid "*.png *.jpeg *.jpg *.svg *.svgz"
+#, fuzzy
+#| msgid "*.png *.jpeg *.jpg *.svg *.svgz"
+msgid "*.png *.jpeg *.jpg *.svg *.svgz *.bmp *.tif"
 msgstr "*.png *.jpeg *.jpg *.svg *.svgz"
 
 #. i18n: file: imageSettings.ui:164
