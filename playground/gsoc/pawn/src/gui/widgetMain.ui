@@ -68,7 +68,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Finish</string>
+    <string>Finish!</string>
    </property>
   </widget>
   <widget class="QLabel" name="lblHeading">

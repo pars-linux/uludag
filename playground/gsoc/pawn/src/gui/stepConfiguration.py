@@ -1,3 +1,4 @@
+
 import math
 from gui.stepTemplate import StepWidget
 from utils import humanReadableSize
@@ -55,14 +56,14 @@ class Widget(QtGui.QWidget, StepWidget):
 	if (self.installationSize > free):
 	    size = free
 
-	self.gui.pbFreeSpace.setValue(percentUsed)
+	if not int(percentUsed)==self.gui.pbFreeSpace.value():
+	    self.gui.pbFreeSpace.setValue(int(percentUsed))
 	self.gui.lblFreeLeft.setText('%s Free' % h(free-size))
 	self.gui.lblSize.setText('%s' % h(size))
 	
 
     def updateProgressBarRange(self):
-	self.gui.pbFreeSpace.setMinimum(0)
-	self.gui.pbFreeSpace.setMaximum(99)
+	pass
 
     def freeSpaceOnDrive(self):
 	drive = self.getSelectedDrive()

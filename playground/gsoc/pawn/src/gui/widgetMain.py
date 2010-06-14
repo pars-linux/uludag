@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetMain.ui'
 #
-# Created: Sun Jun 13 15:00:43 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:51 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -33,6 +33,7 @@ class Ui_MainWidget(object):
         font.setWeight(75)
         font.setBold(True)
         self.lblHeading.setFont(font)
+        self.lblHeading.setText("")
         self.lblHeading.setObjectName("lblHeading")
 
         self.retranslateUi(MainWidget)
@@ -43,5 +44,5 @@ class Ui_MainWidget(object):
         MainWidget.setWindowTitle(QtGui.QApplication.translate("MainWidget", "PArdus Windows iNstaller", None, QtGui.QApplication.UnicodeUTF8))
         self.btnBack.setText(QtGui.QApplication.translate("MainWidget", "<Back", None, QtGui.QApplication.UnicodeUTF8))
         self.btnNext.setText(QtGui.QApplication.translate("MainWidget", "Next>", None, QtGui.QApplication.UnicodeUTF8))
-        self.btnFinish.setText(QtGui.QApplication.translate("MainWidget", "Finish", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnFinish.setText(QtGui.QApplication.translate("MainWidget", "Finish!", None, QtGui.QApplication.UnicodeUTF8))
 

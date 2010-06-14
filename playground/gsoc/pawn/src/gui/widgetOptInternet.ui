@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>452</width>
-    <height>232</height>
+    <width>462</width>
+    <height>234</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -104,7 +104,7 @@
     <item>
      <widget class="QPushButton" name="btnProxy2">
       <property name="text">
-       <string>Set Proxy For Download</string>
+       <string>Configure Proxy for Download</string>
       </property>
      </widget>
     </item>

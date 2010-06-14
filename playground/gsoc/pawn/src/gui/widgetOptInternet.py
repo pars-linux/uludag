@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetOptInternet.ui'
 #
-# Created: Sun Jun 13 15:00:43 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:52 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,8 @@ from PyQt4 import QtCore, QtGui
 class Ui_widgetOptInternet(object):
     def setupUi(self, widgetOptInternet):
         widgetOptInternet.setObjectName("widgetOptInternet")
-        widgetOptInternet.resize(452, 232)
+        widgetOptInternet.resize(462, 234)
+        widgetOptInternet.setWindowTitle("")
         self.formLayoutWidget = QtGui.QWidget(widgetOptInternet)
         self.formLayoutWidget.setGeometry(QtCore.QRect(10, 10, 421, 114))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
@@ -76,6 +77,6 @@ class Ui_widgetOptInternet(object):
         self.btnProxy1.setText(QtGui.QApplication.translate("widgetOptInternet", "Set Proxy", None, QtGui.QApplication.UnicodeUTF8))
         self.lblVersion.setText(QtGui.QApplication.translate("widgetOptInternet", "Version List:", None, QtGui.QApplication.UnicodeUTF8))
         self.btnCheck.setText(QtGui.QApplication.translate("widgetOptInternet", "Check Compatibility", None, QtGui.QApplication.UnicodeUTF8))
-        self.btnProxy2.setText(QtGui.QApplication.translate("widgetOptInternet", "Set Proxy For Download", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnProxy2.setText(QtGui.QApplication.translate("widgetOptInternet", "Configure Proxy for Download", None, QtGui.QApplication.UnicodeUTF8))
         self.lblDescription.setText(QtGui.QApplication.translate("widgetOptInternet", "You are about to download Pardus from Internet. Make sure that you are connected to Internet.", None, QtGui.QApplication.UnicodeUTF8))
 

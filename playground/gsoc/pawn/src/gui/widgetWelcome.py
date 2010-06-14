@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetWelcome.ui'
 #
-# Created: Sun Jun 13 15:00:44 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:52 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,6 +13,7 @@ class Ui_widgetWelcome(object):
     def setupUi(self, widgetWelcome):
         widgetWelcome.setObjectName("widgetWelcome")
         widgetWelcome.resize(462, 264)
+        widgetWelcome.setWindowTitle("")
         self.verticalLayoutWidget = QtGui.QWidget(widgetWelcome)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(20, 10, 421, 231))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")

@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetConfiguration.ui'
 #
-# Created: Sun Jun 13 15:00:42 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:50 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,9 +12,10 @@ from PyQt4 import QtCore, QtGui
 class Ui_widgetConfiguration(object):
     def setupUi(self, widgetConfiguration):
         widgetConfiguration.setObjectName("widgetConfiguration")
-        widgetConfiguration.resize(395, 216)
+        widgetConfiguration.resize(416, 216)
+        widgetConfiguration.setWindowTitle("")
         self.formLayoutWidget = QtGui.QWidget(widgetConfiguration)
-        self.formLayoutWidget.setGeometry(QtCore.QRect(10, 10, 381, 204))
+        self.formLayoutWidget.setGeometry(QtCore.QRect(0, 3, 301, 211))
         self.formLayoutWidget.setObjectName("formLayoutWidget")
         self.formLayout = QtGui.QFormLayout(self.formLayoutWidget)
         self.formLayout.setFieldGrowthPolicy(QtGui.QFormLayout.ExpandingFieldsGrow)
@@ -22,15 +23,6 @@ class Ui_widgetConfiguration(object):
         self.lblDrive = QtGui.QLabel(self.formLayoutWidget)
         self.lblDrive.setObjectName("lblDrive")
         self.formLayout.setWidget(1, QtGui.QFormLayout.LabelRole, self.lblDrive)
-        self.horizontalLayout_1 = QtGui.QHBoxLayout()
-        self.horizontalLayout_1.setObjectName("horizontalLayout_1")
-        self.comboDrive = QtGui.QComboBox(self.formLayoutWidget)
-        self.comboDrive.setObjectName("comboDrive")
-        self.horizontalLayout_1.addWidget(self.comboDrive)
-        self.lblDriveFreeSpace = QtGui.QLabel(self.formLayoutWidget)
-        self.lblDriveFreeSpace.setObjectName("lblDriveFreeSpace")
-        self.horizontalLayout_1.addWidget(self.lblDriveFreeSpace)
-        self.formLayout.setLayout(1, QtGui.QFormLayout.FieldRole, self.horizontalLayout_1)
         self.horizontalLayout_2 = QtGui.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.sizeSlider = QtGui.QSlider(self.formLayoutWidget)
@@ -38,19 +30,13 @@ class Ui_widgetConfiguration(object):
         self.sizeSlider.setOrientation(QtCore.Qt.Horizontal)
         self.sizeSlider.setObjectName("sizeSlider")
         self.horizontalLayout_2.addWidget(self.sizeSlider)
-        self.lblSize = QtGui.QLabel(self.formLayoutWidget)
-        self.lblSize.setObjectName("lblSize")
-        self.horizontalLayout_2.addWidget(self.lblSize)
         self.formLayout.setLayout(2, QtGui.QFormLayout.FieldRole, self.horizontalLayout_2)
         self.horizontalLayout_3 = QtGui.QHBoxLayout()
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         self.pbFreeSpace = QtGui.QProgressBar(self.formLayoutWidget)
-        self.pbFreeSpace.setProperty("value", QtCore.QVariant(0))
+        self.pbFreeSpace.setProperty("value", 0)
         self.pbFreeSpace.setObjectName("pbFreeSpace")
         self.horizontalLayout_3.addWidget(self.pbFreeSpace)
-        self.lblFreeLeft = QtGui.QLabel(self.formLayoutWidget)
-        self.lblFreeLeft.setObjectName("lblFreeLeft")
-        self.horizontalLayout_3.addWidget(self.lblFreeLeft)
         self.formLayout.setLayout(3, QtGui.QFormLayout.FieldRole, self.horizontalLayout_3)
         self.hLine = QtGui.QFrame(self.formLayoutWidget)
         self.hLine.setFrameShape(QtGui.QFrame.HLine)
@@ -83,19 +69,30 @@ class Ui_widgetConfiguration(object):
         self.lblInstallation = QtGui.QLabel(self.formLayoutWidget)
         self.lblInstallation.setObjectName("lblInstallation")
         self.formLayout.setWidget(2, QtGui.QFormLayout.LabelRole, self.lblInstallation)
+        self.comboDrive = QtGui.QComboBox(self.formLayoutWidget)
+        self.comboDrive.setObjectName("comboDrive")
+        self.formLayout.setWidget(1, QtGui.QFormLayout.FieldRole, self.comboDrive)
+        self.lblFreeLeft = QtGui.QLabel(widgetConfiguration)
+        self.lblFreeLeft.setGeometry(QtCore.QRect(310, 70, 101, 23))
+        self.lblFreeLeft.setObjectName("lblFreeLeft")
+        self.lblSize = QtGui.QLabel(widgetConfiguration)
+        self.lblSize.setGeometry(QtCore.QRect(310, 40, 101, 23))
+        self.lblSize.setObjectName("lblSize")
+        self.lblDriveFreeSpace = QtGui.QLabel(widgetConfiguration)
+        self.lblDriveFreeSpace.setGeometry(QtCore.QRect(310, 10, 101, 25))
+        self.lblDriveFreeSpace.setObjectName("lblDriveFreeSpace")
 
         self.retranslateUi(widgetConfiguration)
-        QtCore.QObject.connect(self.sizeSlider, QtCore.SIGNAL("valueChanged(int)"), self.pbFreeSpace.setValue)
         QtCore.QMetaObject.connectSlotsByName(widgetConfiguration)
 
     def retranslateUi(self, widgetConfiguration):
         self.lblDrive.setText(QtGui.QApplication.translate("widgetConfiguration", "Installation Drive", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblDriveFreeSpace.setText(QtGui.QApplication.translate("widgetConfiguration", "GB free", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblSize.setText(QtGui.QApplication.translate("widgetConfiguration", " GB", None, QtGui.QApplication.UnicodeUTF8))
-        self.lblFreeLeft.setText(QtGui.QApplication.translate("widgetConfiguration", "GB free", None, QtGui.QApplication.UnicodeUTF8))
         self.lblUsername.setText(QtGui.QApplication.translate("widgetConfiguration", "Username", None, QtGui.QApplication.UnicodeUTF8))
         self.lblPassword.setText(QtGui.QApplication.translate("widgetConfiguration", "Password", None, QtGui.QApplication.UnicodeUTF8))
         self.LblRetypePassword.setText(QtGui.QApplication.translate("widgetConfiguration", "Retype Password ", None, QtGui.QApplication.UnicodeUTF8))
         self.lblFree.setText(QtGui.QApplication.translate("widgetConfiguration", "After Installation", None, QtGui.QApplication.UnicodeUTF8))
         self.lblInstallation.setText(QtGui.QApplication.translate("widgetConfiguration", "Installation Size", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblFreeLeft.setText(QtGui.QApplication.translate("widgetConfiguration", "GB free", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblSize.setText(QtGui.QApplication.translate("widgetConfiguration", " GB", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblDriveFreeSpace.setText(QtGui.QApplication.translate("widgetConfiguration", "GB free", None, QtGui.QApplication.UnicodeUTF8))
 
