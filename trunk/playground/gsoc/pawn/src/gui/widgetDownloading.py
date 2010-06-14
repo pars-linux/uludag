@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetDownloading.ui'
 #
-# Created: Sun Jun 13 15:00:42 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:51 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,6 +13,7 @@ class Ui_widgetDownloading(object):
     def setupUi(self, widgetDownloading):
         widgetDownloading.setObjectName("widgetDownloading")
         widgetDownloading.resize(446, 207)
+        widgetDownloading.setWindowTitle("")
         self.verticalLayoutWidget = QtGui.QWidget(widgetDownloading)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 441, 200))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
@@ -24,7 +25,7 @@ class Ui_widgetDownloading(object):
         self.lblProgress.setObjectName("lblProgress")
         self.horizontalLayout_3.addWidget(self.lblProgress)
         self.progressBar = QtGui.QProgressBar(self.verticalLayoutWidget)
-        self.progressBar.setProperty("value", QtCore.QVariant(0))
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
         self.horizontalLayout_3.addWidget(self.progressBar)
         self.verticalLayout.addLayout(self.horizontalLayout_3)
@@ -41,12 +42,14 @@ class Ui_widgetDownloading(object):
         self.lblMirror.setObjectName("lblMirror")
         self.formLayout_4.setWidget(1, QtGui.QFormLayout.LabelRole, self.lblMirror)
         self.mirror = QtGui.QLabel(self.verticalLayoutWidget)
+        self.mirror.setText("")
         self.mirror.setObjectName("mirror")
         self.formLayout_4.setWidget(1, QtGui.QFormLayout.FieldRole, self.mirror)
         self.lblStatus = QtGui.QLabel(self.verticalLayoutWidget)
         self.lblStatus.setObjectName("lblStatus")
         self.formLayout_4.setWidget(2, QtGui.QFormLayout.LabelRole, self.lblStatus)
         self.status = QtGui.QLabel(self.verticalLayoutWidget)
+        self.status.setText("")
         self.status.setWordWrap(False)
         self.status.setObjectName("status")
         self.formLayout_4.setWidget(2, QtGui.QFormLayout.FieldRole, self.status)
@@ -75,6 +78,7 @@ class Ui_widgetDownloading(object):
         self.ETA.setObjectName("ETA")
         self.formLayout_4.setWidget(6, QtGui.QFormLayout.FieldRole, self.ETA)
         self.version = QtGui.QLabel(self.verticalLayoutWidget)
+        self.version.setText("")
         self.version.setObjectName("version")
         self.formLayout_4.setWidget(0, QtGui.QFormLayout.FieldRole, self.version)
         self.verticalLayout.addLayout(self.formLayout_4)

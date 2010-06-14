@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetOptCD.ui'
 #
-# Created: Sun Jun 13 15:00:43 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:51 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -12,7 +12,8 @@ from PyQt4 import QtCore, QtGui
 class Ui_widgetOptCD(object):
     def setupUi(self, widgetOptCD):
         widgetOptCD.setObjectName("widgetOptCD")
-        widgetOptCD.resize(401, 174)
+        widgetOptCD.resize(407, 174)
+        widgetOptCD.setWindowTitle("")
         self.verticalLayoutWidget = QtGui.QWidget(widgetOptCD)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 401, 171))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")

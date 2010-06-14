@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>395</width>
+    <width>416</width>
     <height>216</height>
    </rect>
   </property>
@@ -16,10 +16,10 @@
   <widget class="QWidget" name="formLayoutWidget">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>381</width>
-     <height>204</height>
+     <x>0</x>
+     <y>3</y>
+     <width>301</width>
+     <height>211</height>
     </rect>
    </property>
    <layout class="QFormLayout" name="formLayout">
@@ -33,20 +33,6 @@
       </property>
      </widget>
     </item>
-    <item row="1" column="1">
-     <layout class="QHBoxLayout" name="horizontalLayout_1">
-      <item>
-       <widget class="QComboBox" name="comboDrive"/>
-      </item>
-      <item>
-       <widget class="QLabel" name="lblDriveFreeSpace">
-        <property name="text">
-         <string>GB free</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
     <item row="2" column="1">
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
@@ -59,13 +45,6 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="lblSize">
-        <property name="text">
-         <string> GB</string>
-        </property>
-       </widget>
-      </item>
      </layout>
     </item>
     <item row="3" column="1">
@@ -74,13 +53,6 @@
        <widget class="QProgressBar" name="pbFreeSpace">
         <property name="value">
          <number>0</number>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lblFreeLeft">
-        <property name="text">
-         <string>GB free</string>
         </property>
        </widget>
       </item>
@@ -145,26 +117,51 @@
       </property>
      </widget>
     </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="comboDrive"/>
+    </item>
    </layout>
+  </widget>
+  <widget class="QLabel" name="lblFreeLeft">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>70</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GB free</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblSize">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>40</y>
+     <width>101</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string> GB</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblDriveFreeSpace">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>10</y>
+     <width>101</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>GB free</string>
+   </property>
   </widget>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>sizeSlider</sender>
-   <signal>valueChanged(int)</signal>
-   <receiver>pbFreeSpace</receiver>
-   <slot>setValue(int)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>244</x>
-     <y>58</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>231</x>
-     <y>87</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

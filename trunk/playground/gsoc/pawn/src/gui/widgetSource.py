@@ -2,8 +2,8 @@
 
 # Form implementation generated from reading ui file './widgetSource.ui'
 #
-# Created: Sun Jun 13 15:00:44 2010
-#      by: PyQt4 UI code generator 4.5.4
+# Created: Mon Jun 14 20:48:52 2010
+#      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
 
@@ -13,6 +13,7 @@ class Ui_widgetSource(object):
     def setupUi(self, widgetSource):
         widgetSource.setObjectName("widgetSource")
         widgetSource.resize(425, 167)
+        widgetSource.setWindowTitle("")
         self.verticalLayoutWidget = QtGui.QWidget(widgetSource)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 421, 161))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
