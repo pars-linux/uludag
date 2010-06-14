@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kopete\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-12 01:23+0200\n"
+"POT-Creation-Date: 2010-06-10 01:23+0200\n"
 "PO-Revision-Date: 2010-05-12 11:21+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1237,22 +1237,22 @@ msgctxt "@item:inmenu Never encrypt messages"
 msgid "Ne&ver"
 msgstr "&Asla"
 
-#: plugins/otr/otrplugin.cpp:164
+#: plugins/otr/otrplugin.cpp:177
 msgid "An error occurred while encrypting the message."
 msgstr "İleti şifrelenirken bir hata oluştu."
 
-#: plugins/otr/otrplugin.cpp:191
+#: plugins/otr/otrplugin.cpp:230
 msgctxt "@info:status"
 msgid "Your policy settings do not allow encrypted sessions to this contact."
 msgstr "Kural ayarlarınız bu kişi için şifreli oturumlara izin vermiyor."
 
-#: plugins/otr/otrplugin.cpp:200
+#: plugins/otr/otrplugin.cpp:239
 #, kde-format
 msgctxt "@info:status"
 msgid "Attempting to refresh the OTR session with <b>%1</b>..."
 msgstr "<b>%1</b> ile açılan OTR oturumu yenilenmeye çalışılıyor..."
 
-#: plugins/otr/otrplugin.cpp:202
+#: plugins/otr/otrplugin.cpp:241
 #, kde-format
 msgctxt "@info:status"
 msgid "Attempting to start a private OTR session with <b>%1</b>..."
@@ -7591,14 +7591,14 @@ msgid "This version of Skype is too old, consider upgrading"
 msgstr "Skype sürümü çok eski, yükseltme yapmanız önerilir"
 
 #: protocols/skype/libskype/skype.cpp:287
-#: protocols/skype/skypeeditaccount.cpp:200
-#: protocols/skype/skypeeditaccount.cpp:215
-#: protocols/skype/skypeeditaccount.cpp:232
-#: protocols/skype/skypeeditaccount.cpp:240
+#: protocols/skype/skypeeditaccount.cpp:211
+#: protocols/skype/skypeeditaccount.cpp:226
+#: protocols/skype/skypeeditaccount.cpp:243
+#: protocols/skype/skypeeditaccount.cpp:251
 #: protocols/skype/skypeaccount.cpp:1080 protocols/skype/skypeaccount.cpp:1094
-#: protocols/skype/skypeaccount.cpp:1113 protocols/skype/skypeaccount.cpp:1118
-#: protocols/skype/skypeaccount.cpp:1126 protocols/skype/skypeaccount.cpp:1137
-#: protocols/skype/skypeaccount.cpp:1142
+#: protocols/skype/skypeaccount.cpp:1116 protocols/skype/skypeaccount.cpp:1121
+#: protocols/skype/skypeaccount.cpp:1129 protocols/skype/skypeaccount.cpp:1141
+#: protocols/skype/skypeaccount.cpp:1146
 msgid "Skype protocol"
 msgstr "Skype protokol"
 
@@ -7700,26 +7700,26 @@ msgstr "Sadece bir skype hesabınız olabilir."
 msgid "Wrong Information"
 msgstr "Yanlış Bilgi"
 
-#: protocols/skype/skypeeditaccount.cpp:197
+#: protocols/skype/skypeeditaccount.cpp:208
 msgid "Configure Skype client"
 msgstr "Skype İstemcisini Yapılandır"
 
-#: protocols/skype/skypeeditaccount.cpp:197
+#: protocols/skype/skypeeditaccount.cpp:208
 msgid "Please enter your skype user name"
 msgstr "Lütfen skype kullanıcı adınızı girin"
 
-#: protocols/skype/skypeeditaccount.cpp:200
+#: protocols/skype/skypeeditaccount.cpp:211
 msgid "You must enter your skype user name"
 msgstr "Skype kullanıcı adını girmelisiniz"
 
-#: protocols/skype/skypeeditaccount.cpp:215
-#: protocols/skype/skypeeditaccount.cpp:232
+#: protocols/skype/skypeeditaccount.cpp:226
+#: protocols/skype/skypeeditaccount.cpp:243
 #, kde-format
 msgid "Cannot create/open file %1 for configuring the Skype client."
 msgstr ""
 "Skype istemcisini yapılandırmak için %1 dosyası oluşturulamadı/açılamadı."
 
-#: protocols/skype/skypeeditaccount.cpp:240
+#: protocols/skype/skypeeditaccount.cpp:251
 msgid ""
 "Process has completed.\n"
 "Skype is now configured for Kopete.\n"
@@ -7854,16 +7854,16 @@ msgstr "Test Araması Yap"
 msgid "Cannot open info about user %1"
 msgstr "%1 kullanıcısı hakkındaki bilgiler açılamıyor"
 
-#: protocols/skype/skypeaccount.cpp:1094 protocols/skype/skypeaccount.cpp:1113
-#: protocols/skype/skypeaccount.cpp:1118 protocols/skype/skypeaccount.cpp:1142
+#: protocols/skype/skypeaccount.cpp:1094 protocols/skype/skypeaccount.cpp:1116
+#: protocols/skype/skypeaccount.cpp:1121 protocols/skype/skypeaccount.cpp:1146
 msgid "Unknown action from SkypeActionHandler"
 msgstr "SkypeActionHandler ögesinden bilinmeyen eylem"
 
-#: protocols/skype/skypeaccount.cpp:1126
+#: protocols/skype/skypeaccount.cpp:1129
 msgid "Add contact from SkypeActionHandler is not supported yet"
 msgstr "SkypeActionHandler'den kişi ekleme işlemi şu anda desteklenmiyor"
 
-#: protocols/skype/skypeaccount.cpp:1137
+#: protocols/skype/skypeaccount.cpp:1141
 msgid "Send voicemail from SkypeActionHandler is not supported yet"
 msgstr ""
 "SkypeActionHandler'den sesli posta gönderme işlemi şu anda desteklenmiyor"

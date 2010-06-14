@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kplatoui\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-11 01:27+0200\n"
+"POT-Creation-Date: 2010-06-10 01:26+0200\n"
 "PO-Revision-Date: 2009-09-28 01:57+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -619,7 +619,7 @@ msgstr ""
 msgid "Can start project later than time: %1"
 msgstr ""
 
-#: kernel/kptproject.cpp:2187
+#: kernel/kptproject.cpp:2189
 msgid "Plan"
 msgstr "Plan"
 

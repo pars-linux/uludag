@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: palapeli\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-04 01:22+0200\n"
+"POT-Creation-Date: 2010-05-27 01:23+0200\n"
 "PO-Revision-Date: 2010-04-22 13:41+0300\n"
 "Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -154,13 +154,13 @@ msgstr "Otomatik kayıt"
 msgid "Lock the puzzle table area"
 msgstr "Bulmaca tablo alanını kilitle"
 
-#: src/engine/scene.cpp:226
+#: src/engine/scene.cpp:230
 msgid ""
 "You have finished the puzzle the last time. Do you want to restart it now?"
 msgstr ""
 "Son seferde bulmacayı çözmüştünüz. Şimdi yeniden başlatmak istiyor musunuz?"
 
-#: src/engine/scene.cpp:282
+#: src/engine/scene.cpp:286
 msgid "Great! You have finished the puzzle."
 msgstr "Harika! Bulmacayı tamamladınız."
 

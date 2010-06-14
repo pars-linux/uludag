@@ -91,7 +91,6 @@ msgstr "'%1' dizini silinemedi."
 
 #: contactsresource.cpp:437
 #, kde-format
-#| msgid "Unable to remove file '%1'"
 msgid "Unable to move file '%1' to '%2', '%2' already exists."
 msgstr "'%1' dosyası '%2' konumuna taşınamadı, '%2' zaten mevcut."
 

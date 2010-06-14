@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-19 01:19+0200\n"
+"POT-Creation-Date: 2010-06-05 01:24+0200\n"
 "PO-Revision-Date: 2010-05-09 00:11+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -5925,27 +5925,27 @@ msgstr "Uyumluluk Testi"
 msgid "Regression tester for khtml"
 msgstr "Khtml için Uyumluluk Testi Aracı"
 
-#: khtml/khtmlimage.cpp:192
+#: khtml/khtmlimage.cpp:197
 #, kde-format
 msgid "%1 (%2 - %3x%4 Pixels)"
 msgstr "%1 (%2 - %3x%4 Benek)"
 
-#: khtml/khtmlimage.cpp:194
+#: khtml/khtmlimage.cpp:199
 #, kde-format
 msgid "%1 - %2x%3 Pixels"
 msgstr "%1 - %2x%3 Benek"
 
-#: khtml/khtmlimage.cpp:199
+#: khtml/khtmlimage.cpp:204
 #, kde-format
 msgid "%1 (%2x%3 Pixels)"
 msgstr "%1 (%2x%3 Benek)"
 
-#: khtml/khtmlimage.cpp:201
+#: khtml/khtmlimage.cpp:206
 #, kde-format
 msgid "Image - %1x%2 Pixels"
 msgstr "Resim - %1x%2 Benek"
 
-#: khtml/khtmlimage.cpp:207
+#: khtml/khtmlimage.cpp:212
 msgid "Done."
 msgstr "Bitti."
 

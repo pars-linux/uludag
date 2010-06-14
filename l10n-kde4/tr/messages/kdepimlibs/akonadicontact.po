@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: akonadicontact\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-04 01:24+0200\n"
+"POT-Creation-Date: 2010-06-09 01:24+0200\n"
 "PO-Revision-Date: 2010-05-13 14:23+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -344,7 +344,7 @@ msgstr "Yeni Bağlantılar"
 msgid "<p style=\"color: white;\"><b>Waiting for operation</b><br/></p>"
 msgstr "<p style=\"color: white;\"><b>İşlem bekleniyor</b><br/></p>"
 
-#: actions/dialphonenumberaction.cpp:57
+#: actions/dialphonenumberaction.cpp:66
 msgid ""
 "There is no application set which could be executed. Please go to the "
 "settings dialog and configure one."

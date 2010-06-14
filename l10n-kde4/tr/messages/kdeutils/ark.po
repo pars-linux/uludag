@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ark\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-10 01:22+0200\n"
+"POT-Creation-Date: 2010-06-06 01:27+0200\n"
 "PO-Revision-Date: 2010-04-19 16:01+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -293,7 +293,7 @@ msgstr "'%1' dizini var. Arşivi buraya açmak istediğinizden emin misiniz?"
 msgid "Folder exists"
 msgstr "Dizin var"
 
-#: kerfuffle/extractiondialog.cpp:111 part/part.cpp:342 part/part.cpp:723
+#: kerfuffle/extractiondialog.cpp:111 part/part.cpp:343 part/part.cpp:724
 msgid "Cancel"
 msgstr "İptal"
 
@@ -418,11 +418,11 @@ msgctxt "Unnamed column"
 msgid "??"
 msgstr "??"
 
-#: part/arkviewer.cpp:61
+#: part/arkviewer.cpp:63
 msgid "Closing preview"
 msgstr "Önizleme kapatılıyor"
 
-#: part/arkviewer.cpp:62
+#: part/arkviewer.cpp:64
 msgid "Please wait while the preview is being closed..."
 msgstr "Önizleme kapatılırken lütfen bekleyin..."
 
@@ -482,24 +482,24 @@ msgstr "<b>Parola korumalı:</b> Evet<br/>"
 msgid "Operation finished."
 msgstr "İşlem tamamlandı."
 
-#: part/part.cpp:210
+#: part/part.cpp:211
 msgid "Show information panel"
 msgstr "Bilgi çubuğunu göster"
 
-#: part/part.cpp:219
+#: part/part.cpp:220
 msgctxt "to preview a file inside an archive"
 msgid "Pre&view"
 msgstr "&Önizleme"
 
-#: part/part.cpp:221
+#: part/part.cpp:222
 msgid "Click to preview the selected file"
 msgstr "Seçilen dosyayı önizlemek için tıklayın"
 
-#: part/part.cpp:226
+#: part/part.cpp:227
 msgid "E&xtract"
 msgstr "&Aç"
 
-#: part/part.cpp:228
+#: part/part.cpp:229
 msgid ""
 "Click to open an extraction dialog, where you can choose to extract either "
 "all files or just the selected ones"
@@ -507,70 +507,70 @@ msgstr ""
 "Bir açma penceresi açmak için tıklayın, bu pencereden tüm dosyaları ya da "
 "seçtiğiniz dosyaları nereye açacağınızı belirleyebilirsiniz"
 
-#: part/part.cpp:235
+#: part/part.cpp:236
 msgid "Add &File..."
 msgstr "Dosya &Ekle..."
 
-#: part/part.cpp:236
+#: part/part.cpp:237
 msgid "Click to add files to the archive"
 msgstr "Arşive dosya eklemek için tıklayın"
 
-#: part/part.cpp:242
+#: part/part.cpp:243
 msgid "Add Fo&lder..."
 msgstr "Dizin &Ekle..."
 
-#: part/part.cpp:243
+#: part/part.cpp:244
 msgid "Click to add a folder to the archive"
 msgstr "Arşive bir dizin eklemek için tıklayın"
 
-#: part/part.cpp:249
+#: part/part.cpp:250
 msgid "De&lete"
 msgstr "&Sil"
 
-#: part/part.cpp:251
+#: part/part.cpp:252
 msgid "Click to delete the selected files"
 msgstr "Seçili dosyaları silmek için tıklayın"
 
-#: part/part.cpp:272
+#: part/part.cpp:273
 msgid "Recent folders"
 msgstr "Son Dizinler"
 
-#: part/part.cpp:276
+#: part/part.cpp:277
 msgid "Quick Extract To..."
 msgstr "Buraya Hızlı Aç..."
 
-#: part/part.cpp:333
+#: part/part.cpp:334
 msgid "ArkPart"
 msgstr "Ark Parçacığı"
 
-#: part/part.cpp:342
+#: part/part.cpp:343
 #, kde-format
 msgid "The file '%1' already exists. Would you like to open it instead?"
 msgstr ""
 "'%1' dosyası var. Bu işlemi yapmak yerine o dosyayı açmak ister misiniz?"
 
-#: part/part.cpp:342
+#: part/part.cpp:343
 msgid "File Exists"
 msgstr "Dosya Var"
 
-#: part/part.cpp:342
+#: part/part.cpp:343
 msgid "Open File"
 msgstr "Dosya Aç"
 
-#: part/part.cpp:349
+#: part/part.cpp:350
 #, kde-format
 msgid "Error opening archive: the file '%1' was not found."
 msgstr "Arşiv açma hatası: '%1' dosyası bulunamadı."
 
-#: part/part.cpp:349 part/part.cpp:393 part/part.cpp:429
+#: part/part.cpp:350 part/part.cpp:394 part/part.cpp:430
 msgid "Error Opening Archive"
 msgstr "Arşiv Açılamadı"
 
-#: part/part.cpp:379
+#: part/part.cpp:380
 msgid "Unable to Determine Archive Type"
 msgstr "Arşiv Tipi Belirlenemedi"
 
-#: part/part.cpp:380
+#: part/part.cpp:381
 msgid ""
 "Ark was unable to determine the archive type of the filename.\n"
 "\n"
@@ -580,7 +580,7 @@ msgstr ""
 "\n"
 "Lütfen aşağıdan doğru arşiv tipini seçin."
 
-#: part/part.cpp:393
+#: part/part.cpp:394
 #, kde-format
 msgid ""
 "Ark was not able to open the archive '%1'. No library capable of handling "
@@ -588,48 +588,48 @@ msgid ""
 msgstr ""
 "Ark '%1' arşivini açamadı. Bu dosyayı işlemek için bir kitaplık bulunamadı."
 
-#: part/part.cpp:429
+#: part/part.cpp:430
 #, kde-format
 msgid "Reading the archive '%1' failed with the error '%2'"
 msgstr "'%1' arşiv dosyası okunamadı, hata '%2'"
 
-#: part/part.cpp:688
+#: part/part.cpp:689
 msgid "Add Files"
 msgstr "Dosya Ekle"
 
-#: part/part.cpp:696
+#: part/part.cpp:697
 msgid "Add Folder"
 msgstr "Dizin Ekle"
 
-#: part/part.cpp:723
+#: part/part.cpp:724
 msgid "Deleting these files is not undoable. Are you sure you want to do this?"
 msgstr ""
 "Bu dosyalar silme işlemi geri alınamaz. Bunu yapmak istediğinizden emin "
 "misiniz?"
 
-#: part/part.cpp:723
+#: part/part.cpp:724
 msgid "Delete files"
 msgstr "Dosyaları sil"
 
-#: part/part.cpp:764
+#: part/part.cpp:765
 #, kde-format
 msgid ""
 "A file named <b>%1</b> already exists. Are you sure you want to overwrite it?"
 msgstr ""
 "<b>%1</b> isminde bir dosya zaten var. Bunun üzerine yazmak istiyor musunuz?"
 
-#: part/part.cpp:766
+#: part/part.cpp:767
 msgid "Overwrite"
 msgstr "Üzerine Yaz"
 
-#: part/part.cpp:778
+#: part/part.cpp:779
 #, kde-format
 msgid ""
 "The file <b>%1</b> cannot be copied to the specified location. The archive "
 "does not exist anymore."
 msgstr "<b>%1</b> dosyası belirtilen konuma kopyalanamadı. Arşiv artık yok."
 
-#: part/part.cpp:790
+#: part/part.cpp:791
 #, kde-format
 msgid ""
 "The archive could not be saved as <b>%1</b>. Try to save it in another "

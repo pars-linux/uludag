@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: knode\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-01-02 06:01+0100\n"
+"POT-Creation-Date: 2010-05-24 01:24+0200\n"
 "PO-Revision-Date: 2010-05-10 15:19+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -29,7 +29,7 @@ msgstr "Projeyi yürüten"
 msgid "Former maintainer"
 msgstr "Önceden projeyi yürüten"
 
-#: aboutdata.cpp:46 knjobdata.cpp:155
+#: aboutdata.cpp:46 knjobdata.cpp:154
 msgid "KNode"
 msgstr "KNode"
 
@@ -2284,11 +2284,11 @@ msgstr ""
 "Kontrollü bir gruba haber yolluyorsunuz.\n"
 "Haberiniz grupta hemen yer almayabilir."
 
-#: knjobdata.cpp:157
+#: knjobdata.cpp:156
 msgid "Sending message"
 msgstr "İleti gönderiliyor"
 
-#: knjobdata.cpp:166 scheduler.cpp:206
+#: knjobdata.cpp:165 scheduler.cpp:206
 msgid "Waiting..."
 msgstr "Bekleniyor..."
 

@@ -62,7 +62,6 @@ msgid "New Printer"
 msgstr "Yeni Yazıcı"
 
 #: system-config-printer-kde.py:608
-#| msgid "Basic Server Settings"
 msgid "Server Settings"
 msgstr "Sunucu Ayarları"
 

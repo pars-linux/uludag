@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdesdk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 23:29+0000\n"
+"POT-Creation-Date: 2010-06-05 23:32+0000\n"
 "PO-Revision-Date: 2010-05-26 08:44+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -147,7 +147,7 @@ msgstr ""
 
 #: kapptemplate/templates/C++/kapp4/src/%{APPNAMELC}.desktop:2
 #: kapptemplate/templates/C++/kpartapp/src/%{APPNAMELC}.desktop:2
-#: kapptemplate/templates/C++/ktexteditor/ktexteditor_%{APPNAMELC}.desktop:34
+#: kapptemplate/templates/C++/ktexteditor/ktexteditor_%{APPNAMELC}.desktop:35
 #: kapptemplate/templates/C++/plasmoid/plasma-applet-%{APPNAMELC}.desktop:2
 #: kapptemplate/templates/C++/runner/%{APPNAMELC}.desktop:2
 #: kapptemplate/templates/ruby/kderubyapp/src/%{APPNAMELC}.desktop:2
@@ -212,7 +212,7 @@ msgctxt "Comment"
 msgid "%{APPNAME}"
 msgstr "%{APPNAME}"
 
-#: kapptemplate/templates/C++/ktexteditor/ktexteditor_%{APPNAMELC}.desktop:75
+#: kapptemplate/templates/C++/ktexteditor/ktexteditor_%{APPNAMELC}.desktop:76
 #, fuzzy
 #| msgctxt "Name"
 #| msgid "%{APPNAME}"
@@ -221,13 +221,11 @@ msgid "%{APPNAME}"
 msgstr "%{APPNAME}"
 
 #: kapptemplate/templates/C++/ktexteditor/ktexteditor.kdevtemplate:3
-#| msgctxt "Name"
-#| msgid "KTextEditor KTTSD Plugin"
 msgctxt "Name"
 msgid "KTextEditor Plugin Template"
 msgstr "KTextEditor Eklenti Şablonu"
 
-#: kapptemplate/templates/C++/ktexteditor/ktexteditor.kdevtemplate:33
+#: kapptemplate/templates/C++/ktexteditor/ktexteditor.kdevtemplate:34
 msgctxt "Comment"
 msgid ""
 "A KTextEditor plugin template to perform special operations on text in "

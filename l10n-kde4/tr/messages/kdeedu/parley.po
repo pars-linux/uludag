@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: parley\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 01:26+0200\n"
+"POT-Creation-Date: 2010-06-02 01:22+0200\n"
 "PO-Revision-Date: 2010-04-28 13:15+0300\n"
 "Last-Translator: Renan Cakirerk\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -709,11 +709,11 @@ msgstr "Zaman Açıklamasını Siliniyor"
 
 #. i18n: file: src/entry-dialogs/summarywordwidget.ui:32
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: src/vocabulary/containermodel.cpp:171 rc.cpp:242
+#: src/vocabulary/containermodel.cpp:178 rc.cpp:242
 msgid "Lesson"
 msgstr "Ders"
 
-#: src/vocabulary/containermodel.cpp:179
+#: src/vocabulary/containermodel.cpp:186
 msgid "Number of entries in this lesson."
 msgstr "Bu dersteki girdilerin sayısı."
 

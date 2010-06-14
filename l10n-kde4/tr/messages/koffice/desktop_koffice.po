@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_koffice\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-19 23:28+0000\n"
+"POT-Creation-Date: 2010-05-24 23:34+0000\n"
 "PO-Revision-Date: 2009-09-28 01:44+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -774,7 +774,7 @@ msgctxt "Name"
 msgid "Text"
 msgstr "Metin"
 
-#: kexi/migration/txt/keximigrate_txt.desktop:29
+#: kexi/migration/txt/keximigrate_txt.desktop:30
 msgctxt "Comment"
 msgid "Text Migration Driver for Kexi"
 msgstr "Kexi için Metin Taşıma Sürücüsü"
@@ -900,7 +900,7 @@ msgid "KPlato"
 msgstr "KPlato"
 
 #: kplato/kplato.desktop:56 kplato/kplatopart.desktop:57
-#: kplato/workpackage/kplatowork.desktop:32
+#: kplato/workpackage/kplatowork.desktop:33
 #: kplato/workpackage/kplatoworkpart.desktop:57
 msgctxt "GenericName"
 msgid "Project Management"
@@ -916,7 +916,7 @@ msgctxt "Name"
 msgid "KPlato Scheduler Plugin"
 msgstr "KPlato Zamanlayıcı Eklentisi"
 
-#: kplato/libs/kernel/kplato_schedulerplugin.desktop:26
+#: kplato/libs/kernel/kplato_schedulerplugin.desktop:27
 msgctxt "Comment"
 msgid "A plugin that calculates a project schedule"
 msgstr "Proje zamanlamasını hesaplayan bir eklenti"
@@ -926,7 +926,7 @@ msgctxt "Name"
 msgid "RCPS Scheduler"
 msgstr ""
 
-#: kplato/plugins/schedulers/rcps/kplatorcpsscheduler.desktop:27
+#: kplato/plugins/schedulers/rcps/kplatorcpsscheduler.desktop:28
 msgctxt "Comment"
 msgid "Genetics based Resource Conflict Project Scheduler"
 msgstr ""
@@ -1012,7 +1012,7 @@ msgctxt "Name"
 msgid "Bar Wipe"
 msgstr "Çubuk Temizleme"
 
-#: kpresenter/plugins/pageeffects/barwipe/kpr_pageeffect_barwipe.desktop:29
+#: kpresenter/plugins/pageeffects/barwipe/kpr_pageeffect_barwipe.desktop:30
 msgctxt "Comment"
 msgid "Bar Wipe Page Effect"
 msgstr "Çubuk Temizleme Sayfa Efekti"
@@ -1022,7 +1022,7 @@ msgctxt "Name"
 msgid "Clock wipe"
 msgstr "Saat temizleme"
 
-#: kpresenter/plugins/pageeffects/clockwipe/kpr_pageeffect_clockwipe.desktop:29
+#: kpresenter/plugins/pageeffects/clockwipe/kpr_pageeffect_clockwipe.desktop:30
 msgctxt "Comment"
 msgid "Clock wipe Page Effects"
 msgstr "Saat temizleme Sayfa Efekti"
@@ -1032,7 +1032,7 @@ msgctxt "Name"
 msgid "Edge wipe"
 msgstr "Kenar temizleme"
 
-#: kpresenter/plugins/pageeffects/edgewipe/kpr_pageeffect_edgewipe.desktop:29
+#: kpresenter/plugins/pageeffects/edgewipe/kpr_pageeffect_edgewipe.desktop:30
 msgctxt "Comment"
 msgid "Edge Wipe Page Effects"
 msgstr "Kenar Temizleme Sayfa Efekti"
@@ -1042,7 +1042,7 @@ msgctxt "Name"
 msgid "Exploding Page"
 msgstr "Patlayan Sayfa"
 
-#: kpresenter/plugins/pageeffects/example/kpr_pageeffect_example.desktop:31
+#: kpresenter/plugins/pageeffects/example/kpr_pageeffect_example.desktop:32
 msgctxt "Comment"
 msgid "Exploding Page Page Effect"
 msgstr "Patlayan Sayfa Efekti"
@@ -1052,7 +1052,7 @@ msgctxt "Name"
 msgid "Iris Wipe"
 msgstr "Gökkuşağı Temizleme"
 
-#: kpresenter/plugins/pageeffects/iriswipe/kpr_pageeffect_iriswipe.desktop:28
+#: kpresenter/plugins/pageeffects/iriswipe/kpr_pageeffect_iriswipe.desktop:29
 msgctxt "Comment"
 msgid "Iris Wipe Page Effects"
 msgstr "Gökkuşağı Temizleme Sayfa Efekti"
@@ -1062,7 +1062,7 @@ msgctxt "Name"
 msgid "Matrix wipe"
 msgstr "Matris temizleme"
 
-#: kpresenter/plugins/pageeffects/matrixwipe/kpr_pageeffect_matrixwipe.desktop:29
+#: kpresenter/plugins/pageeffects/matrixwipe/kpr_pageeffect_matrixwipe.desktop:30
 msgctxt "Comment"
 msgid "Matrix wipe Page Effects"
 msgstr "Matris temizleme Sayfa Efekti"
@@ -1072,7 +1072,7 @@ msgctxt "Name"
 msgid "Slide Wipe"
 msgstr "Saydam Temizleme"
 
-#: kpresenter/plugins/pageeffects/slidewipe/kpr_pageeffect_slidewipe.desktop:28
+#: kpresenter/plugins/pageeffects/slidewipe/kpr_pageeffect_slidewipe.desktop:29
 msgctxt "Comment"
 msgid "Slide Wipe Page Effect"
 msgstr "Saydam Temizleme Sayfa Efekti"
@@ -1082,7 +1082,7 @@ msgctxt "Name"
 msgid "Jiggle and Wiggle"
 msgstr "Kıpır Kıpır"
 
-#: kpresenter/plugins/shapeanimations/example/kpr_shapeanimation_example.desktop:28
+#: kpresenter/plugins/shapeanimations/example/kpr_shapeanimation_example.desktop:29
 msgctxt "Comment"
 msgid "Jiggle and Wiggle that Shape!"
 msgstr "Kıpır Kıpır Şekil!"
@@ -1536,7 +1536,7 @@ msgctxt "Name"
 msgid "CTL Color Spaces"
 msgstr ""
 
-#: krita/plugins/colorspaces/ctlcs/krita_ctlcs_plugin.desktop:24
+#: krita/plugins/colorspaces/ctlcs/krita_ctlcs_plugin.desktop:25
 msgctxt "Comment"
 msgid "Color model written using the Color Transformation Language."
 msgstr "Renk Dönüşümü Dili ile yazılmış renk modeli."
@@ -1546,7 +1546,7 @@ msgctxt "Name"
 msgid "Some extensions to color spaces"
 msgstr "Resim boşlukları için bazı uzantılar"
 
-#: krita/plugins/colorspaces/extensions/krita_colorspaces_extensions_plugin.desktop:32
+#: krita/plugins/colorspaces/extensions/krita_colorspaces_extensions_plugin.desktop:33
 msgctxt "Comment"
 msgid "Some extensions to color spaces"
 msgstr "Resim boşlukları için bazı uzantılar"
@@ -1615,7 +1615,7 @@ msgctxt "Name"
 msgid "DigitalMixer"
 msgstr ""
 
-#: krita/plugins/extensions/dockers/digitalmixer/krita_digitalmixer.desktop:23
+#: krita/plugins/extensions/dockers/digitalmixer/krita_digitalmixer.desktop:24
 msgctxt "Comment"
 msgid "DigitalMixer"
 msgstr ""
@@ -1625,7 +1625,7 @@ msgctxt "Name"
 msgid "SmallColorSelector"
 msgstr "Küçük Renk Seçici"
 
-#: krita/plugins/extensions/dockers/smallcolorselector/krita_smallcolorselector.desktop:29
+#: krita/plugins/extensions/dockers/smallcolorselector/krita_smallcolorselector.desktop:30
 msgctxt "Comment"
 msgid "SmallColorSelector"
 msgstr "Küçük Renk Seçici"
@@ -1635,7 +1635,7 @@ msgctxt "Name"
 msgid "SpecificColorSelector"
 msgstr "Özel Renk Seçici"
 
-#: krita/plugins/extensions/dockers/specificcolorselector/krita_specificcolorselector.desktop:28
+#: krita/plugins/extensions/dockers/specificcolorselector/krita_specificcolorselector.desktop:29
 msgctxt "Comment"
 msgid "SpecificColorSelector"
 msgstr "Özel Renk Seçici"
@@ -1645,7 +1645,7 @@ msgctxt "Name"
 msgid "TriangleColorSelector"
 msgstr "Üçgen Renk Seçici"
 
-#: krita/plugins/extensions/dockers/trianglecolorselector/kritatrianglecolorselector.desktop:29
+#: krita/plugins/extensions/dockers/trianglecolorselector/kritatrianglecolorselector.desktop:30
 msgctxt "Comment"
 msgid "TriangleColorSelector"
 msgstr "Üçgen Renk Seçici"
@@ -1660,7 +1660,7 @@ msgctxt "Name"
 msgid "ExtensionsManager"
 msgstr "Eklenti Yöneticisi"
 
-#: krita/plugins/extensions/extensionsmanager/kritaextensionsmanager.desktop:24
+#: krita/plugins/extensions/extensionsmanager/kritaextensionsmanager.desktop:25
 msgctxt "Comment"
 msgid "ExtensionsManager"
 msgstr "Eklenti Yöneticisi"
@@ -1726,7 +1726,7 @@ msgctxt "Name"
 msgid "Shiva Kernel Language Support For Filters"
 msgstr "Shiva Kernel Dil Desteği"
 
-#: krita/plugins/extensions/shiva/kritashivafilters.desktop:21
+#: krita/plugins/extensions/shiva/kritashivafilters.desktop:22
 #, fuzzy
 #| msgctxt "Comment"
 #| msgid "Shiva Kernel Language Support"
@@ -1742,7 +1742,7 @@ msgctxt "Name"
 msgid "Shiva Kernel Language Support For Generators"
 msgstr "Shiva Kernel Dil Desteği"
 
-#: krita/plugins/extensions/shiva/kritashivagenerators.desktop:21
+#: krita/plugins/extensions/shiva/kritashivagenerators.desktop:22
 #, fuzzy
 #| msgctxt "Comment"
 #| msgid "Shiva Kernel Language Support"
@@ -1755,7 +1755,7 @@ msgctxt "Name"
 msgid "Together"
 msgstr "Birlikte"
 
-#: krita/plugins/extensions/together/kritatogether.desktop:35
+#: krita/plugins/extensions/together/kritatogether.desktop:36
 msgctxt "Comment"
 msgid "Together"
 msgstr "Birlikte"
@@ -1825,7 +1825,7 @@ msgctxt "Name"
 msgid "Dodge and Burn Filter"
 msgstr ""
 
-#: krita/plugins/filters/dodgeburn/kritadodgeburn.desktop:20
+#: krita/plugins/filters/dodgeburn/kritadodgeburn.desktop:21
 msgctxt "Comment"
 msgid "Dodge and Burn Filter"
 msgstr ""
@@ -1925,7 +1925,7 @@ msgctxt "Comment"
 msgid "Random pick to an image"
 msgstr "Bir görüntüye rastgele dokunuş"
 
-#: krita/plugins/filters/randompickfilter/kritarandompickfilter.desktop:38
+#: krita/plugins/filters/randompickfilter/kritarandompickfilter.desktop:39
 msgctxt "Name"
 msgid "Random pick Filter"
 msgstr "Rastgele alma Filtresi"
@@ -2686,17 +2686,17 @@ msgctxt "Name"
 msgid "Parsing failed"
 msgstr "Ayrıştırma başarısız oldu"
 
-#: kspread/kspread.notifyrc:345
+#: kspread/kspread.notifyrc:346
 msgctxt "Comment"
 msgid "Parsing of a cell's formula failed"
 msgstr "Hücrelerin formüllerinin ayrıştırılması başarılamadı"
 
-#: kspread/kspread.notifyrc:375
+#: kspread/kspread.notifyrc:377
 msgctxt "Name"
 msgid "Validity failed"
 msgstr "Geçerlilik doğrulaması başarısız oldu"
 
-#: kspread/kspread.notifyrc:405
+#: kspread/kspread.notifyrc:408
 msgctxt "Comment"
 msgid "Validation for a cell failed"
 msgstr "Bir hücre için geçerlilik doğrulaması başarısız oldu"
@@ -2877,7 +2877,7 @@ msgctxt "Name"
 msgid "Filter effect definition"
 msgstr ""
 
-#: libs/flake/filtereffect.desktop:25
+#: libs/flake/filtereffect.desktop:26
 msgctxt "Comment"
 msgid "Definition of a flake filter effect"
 msgstr ""
@@ -2887,7 +2887,7 @@ msgctxt "Name"
 msgid "Shape border definition"
 msgstr "Şekil kenarlığı tanımlaması"
 
-#: libs/flake/flakeborder.desktop:34
+#: libs/flake/flakeborder.desktop:35
 msgctxt "Comment"
 msgid "Definition of a flake shape border"
 msgstr "Bir ızgara şekilli sınırın tanımı"
@@ -2907,7 +2907,7 @@ msgctxt "Name"
 msgid "Flake device definition"
 msgstr "Flake aygıt tanımlaması"
 
-#: libs/flake/flakedevice.desktop:30
+#: libs/flake/flakedevice.desktop:31
 msgctxt "Comment"
 msgid "Definition of flake devices"
 msgstr "Izgara aygıtlarının tanımı"
@@ -2917,7 +2917,7 @@ msgctxt "Name"
 msgid "Shape definition"
 msgstr "Şekil tanımlaması"
 
-#: libs/flake/flakeshape.desktop:36
+#: libs/flake/flakeshape.desktop:37
 msgctxt "Comment"
 msgid "Definition of a flake shape object"
 msgstr "Izgara şekilli nesnenin tanımı"
@@ -2927,7 +2927,7 @@ msgctxt "Name"
 msgid "Flake tool definition"
 msgstr "Flake araç tanımlaması"
 
-#: libs/flake/flaketool.desktop:35
+#: libs/flake/flaketool.desktop:36
 msgctxt "Comment"
 msgid "Definition of flake tools"
 msgstr "Flake araçlarının tanımlaması"
@@ -2937,7 +2937,7 @@ msgctxt "Name"
 msgid "Presentation Event Action Plugin"
 msgstr "Sunum Olay Durumu Eklentisi"
 
-#: libs/flake/presentationeventaction.desktop:30
+#: libs/flake/presentationeventaction.desktop:31
 msgctxt "Comment"
 msgid "A plugin that contains a presentation event action"
 msgstr "Sunum olay durumu içeren bir eklenti"
@@ -2947,7 +2947,7 @@ msgctxt "Name"
 msgid "Script Event Action Plugin"
 msgstr "Betik Olay Durumu Eklentisi"
 
-#: libs/flake/scripteventaction.desktop:29
+#: libs/flake/scripteventaction.desktop:30
 msgctxt "Comment"
 msgid "A plugin that contains a script event action"
 msgstr "Betik olay durumunu içeren bir eklenti"
@@ -2972,7 +2972,7 @@ msgctxt "Name"
 msgid "Text Editing plugin for the KOffice text tool"
 msgstr "KOffice metin aracı için Metin Düzenleme eklentisi"
 
-#: libs/kotext/texteditingplugin.desktop:25
+#: libs/kotext/texteditingplugin.desktop:26
 msgctxt "Comment"
 msgid "Definition of a text-editing plugin"
 msgstr "Metin düzenleme eklentisi tanımı"

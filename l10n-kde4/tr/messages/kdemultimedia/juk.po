@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: juk\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-22 01:26+0100\n"
+"POT-Creation-Date: 2010-06-12 01:24+0200\n"
 "PO-Revision-Date: 2010-05-13 13:43+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,8 @@ msgstr "Seçili dosyalar silinmek üzere"
 msgid "Folder List"
 msgstr "Dizin Listesi"
 
-#: exampleoptions.cpp:55 main.cpp:48 systemtray.cpp:478 systemtray.cpp:491
+#: exampleoptions.cpp:55 main.cpp:48 playlist.cpp:412 systemtray.cpp:478
+#: systemtray.cpp:491
 msgid "JuK"
 msgstr "JuK"
 
@@ -222,7 +223,7 @@ msgstr ""
 msgid "File Renamer"
 msgstr "Dosya Adı Değiştirici"
 
-#: historyplaylist.cpp:65
+#: historyplaylist.cpp:41
 msgid "Time"
 msgstr "Zaman"
 
@@ -604,7 +605,7 @@ msgstr "MusicBrainz sunucusuna bağlanma hatası."
 msgid "back to playlist"
 msgstr "çalma listesine geri dön"
 
-#: nowplaying.cpp:340 nowplaying.cpp:355 playlistcollection.cpp:557
+#: nowplaying.cpp:340 nowplaying.cpp:355 playlistcollection.cpp:558
 msgid "History"
 msgstr "Geçmiş"
 
@@ -628,216 +629,216 @@ msgstr "Kipleri Göster"
 msgid "Show &History"
 msgstr "&Geçmişi Göster"
 
-#: playlistbox.cpp:214 playlistcollection.cpp:399
+#: playlistbox.cpp:214 playlistcollection.cpp:400
 msgctxt "verb, copy the playlist"
 msgid "Duplicate"
 msgstr "Kopyala"
 
-#: playlistbox.cpp:334
+#: playlistbox.cpp:330
 msgid "Do you want to delete these files from the disk as well?"
 msgstr "Bu dosyaları diskinizden de silmek istiyor musunuz?"
 
-#: playlistbox.cpp:334
+#: playlistbox.cpp:330
 msgid "Keep"
 msgstr "Sakla"
 
-#: playlistbox.cpp:344
+#: playlistbox.cpp:340
 msgid "Could not delete these files."
 msgstr "Bu dosyalar silinemedi."
 
-#: playlistbox.cpp:351
+#: playlistbox.cpp:347
 msgid "Are you sure you want to remove these playlists from your collection?"
 msgstr "Bu parça listesini koleksiyonunuzdan silmek istediğinize emin misiniz?"
 
-#: playlistbox.cpp:354
+#: playlistbox.cpp:350
 msgid "Remove Items?"
 msgstr "Parçaları Kaldır?"
 
 #. i18n: file: tagguesserconfigdlgwidget.ui:100
 #. i18n: ectx: property (text), widget (KPushButton, bRemove)
-#: playlistbox.cpp:355 rc.cpp:251
+#: playlistbox.cpp:351 rc.cpp:251
 msgid "&Remove"
 msgstr "&Kaldır"
 
-#: playlistbox.cpp:673
+#: playlistbox.cpp:669
 msgid "Hid&e"
 msgstr "&Gizle"
 
-#: playlistbox.cpp:675 playlistcollection.cpp:885
+#: playlistbox.cpp:671 playlistcollection.cpp:889
 msgid "R&emove"
 msgstr "&Kaldır"
 
-#: playlistcollection.cpp:188
+#: playlistcollection.cpp:189
 msgid "Dynamic List"
 msgstr "Değişken Liste"
 
-#: playlistcollection.cpp:228
+#: playlistcollection.cpp:229
 msgid "Now Playing"
 msgstr "Şu Anda Çalan"
 
-#: playlistcollection.cpp:330
+#: playlistcollection.cpp:331
 msgid ""
 "Do you want to add these items to the current list or to the collection list?"
 msgstr ""
 "Bu ögeleri mevcut listeye veya arşiv listesine eklemek istiyor musunuz?"
 
-#: playlistcollection.cpp:332
+#: playlistcollection.cpp:333
 msgctxt "current playlist"
 msgid "Current"
 msgstr "Mevcut"
 
-#: playlistcollection.cpp:333
+#: playlistcollection.cpp:334
 msgid "Collection"
 msgstr "Arşiv"
 
-#: playlistcollection.cpp:387
+#: playlistcollection.cpp:388
 msgid "Rename"
 msgstr "Yeniden Adlandır"
 
-#: playlistcollection.cpp:501
+#: playlistcollection.cpp:502
 msgid "Search Playlist"
 msgstr "Çalma Listesinde Ara"
 
-#: playlistcollection.cpp:518
+#: playlistcollection.cpp:519
 msgid "Create Folder Playlist"
 msgstr "Yeni Parça Listesi Oluştur"
 
-#: playlistcollection.cpp:736
+#: playlistcollection.cpp:740
 msgid "Please enter a name for this playlist:"
 msgstr "Bu parça listesi için isim girin:"
 
-#: playlistcollection.cpp:846
+#: playlistcollection.cpp:850
 msgctxt "new playlist"
 msgid "&New"
 msgstr "&Yeni"
 
-#: playlistcollection.cpp:849
+#: playlistcollection.cpp:853
 msgid "&Empty Playlist..."
 msgstr "&Boş Parça Listesi..."
 
-#: playlistcollection.cpp:851
+#: playlistcollection.cpp:855
 msgid "&Search Playlist..."
 msgstr "&Çalma Listesinde Ara..."
 
-#: playlistcollection.cpp:853
+#: playlistcollection.cpp:857
 msgid "Playlist From &Folder..."
 msgstr "&Dizinden Çalma Listesi..."
 
-#: playlistcollection.cpp:859
+#: playlistcollection.cpp:863
 msgid "&Guess Tag Information"
 msgstr "Başlık Bi&lgisini Tahmin Et"
 
-#: playlistcollection.cpp:864
+#: playlistcollection.cpp:868
 msgid "From &File Name"
 msgstr "Dosya A&dından"
 
-#: playlistcollection.cpp:866
+#: playlistcollection.cpp:870
 msgid "From &Internet"
 msgstr "İnternette&n"
 
-#: playlistcollection.cpp:869
+#: playlistcollection.cpp:873
 msgid "Guess Tag Information From &File Name"
 msgstr "Dosya A&dından Başlık Bilgisini Tahmin Et"
 
-#: playlistcollection.cpp:874
+#: playlistcollection.cpp:878
 msgid "Play First Track"
 msgstr "İlk Parçayı Çal"
 
-#: playlistcollection.cpp:875
+#: playlistcollection.cpp:879
 msgid "Play Next Album"
 msgstr "Sonraki Albümü Çal"
 
-#: playlistcollection.cpp:881
+#: playlistcollection.cpp:885
 msgid "Add &Folder..."
 msgstr "&Dizin Ekle..."
 
-#: playlistcollection.cpp:882
+#: playlistcollection.cpp:886
 msgid "&Rename..."
 msgstr "&Yeniden adlandır..."
 
-#: playlistcollection.cpp:883
+#: playlistcollection.cpp:887
 msgctxt "verb, copy the playlist"
 msgid "D&uplicate..."
 msgstr "Ko&pyala..."
 
-#: playlistcollection.cpp:886
+#: playlistcollection.cpp:890
 msgid "Reload"
 msgstr "Yeniden Yükle"
 
-#: playlistcollection.cpp:887
+#: playlistcollection.cpp:891
 msgid "Edit Search..."
 msgstr "Aramayı Düzenle..."
 
-#: playlistcollection.cpp:889
+#: playlistcollection.cpp:893
 msgid "&Delete"
 msgstr "Si&l"
 
-#: playlistcollection.cpp:890
+#: playlistcollection.cpp:894
 msgid "Refresh"
 msgstr "Yenile"
 
-#: playlistcollection.cpp:891
+#: playlistcollection.cpp:895
 msgid "&Rename File"
 msgstr "&Dosyayı Yeniden Adlandır"
 
 #. i18n: file: coverdialogbase.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, CoverDialogBase)
-#: playlistcollection.cpp:893 rc.cpp:3
+#: playlistcollection.cpp:897 rc.cpp:3
 msgid "Cover Manager"
 msgstr "Kapak Yöneticisi"
 
-#: playlistcollection.cpp:896
+#: playlistcollection.cpp:900
 msgid "&View Cover"
 msgstr "Kapağı &Görüntüle"
 
-#: playlistcollection.cpp:898
+#: playlistcollection.cpp:902
 msgid "Get Cover From &File..."
 msgstr "Kapağı &Dosyadan Al..."
 
-#: playlistcollection.cpp:900
+#: playlistcollection.cpp:904
 msgid "Get Cover From &Internet..."
 msgstr "Kapağı &İnternetten Al..."
 
-#: playlistcollection.cpp:902
+#: playlistcollection.cpp:906
 msgid "&Delete Cover"
 msgstr "Kapağı Si&l"
 
-#: playlistcollection.cpp:904
+#: playlistcollection.cpp:908
 msgid "Show Cover &Manager"
 msgstr "Kapak Yöneticisi&ni Göster"
 
-#: playlistcollection.cpp:908
+#: playlistcollection.cpp:912
 msgid "Show &Play Queue"
 msgstr "Ç&alma Kuyruğunu Göster"
 
-#: playlist.cpp:550
+#: playlist.cpp:555
 #, kde-format
 msgid "Could not save to file %1."
 msgstr "%1 dosyası kaydedilemedi."
 
-#: playlist.cpp:816
+#: playlist.cpp:821
 msgid "Are you sure you want to delete these covers?"
 msgstr "Bu kapakları silmek istediğinize emin misiniz?"
 
-#: playlist.cpp:818
+#: playlist.cpp:823
 msgid "&Delete Covers"
 msgstr "Kapakları &Sil"
 
-#: playlist.cpp:847
+#: playlist.cpp:852
 msgid "Select Cover Image File"
 msgstr "Kapak Resim Dosyası Seç"
 
-#: playlist.cpp:995
+#: playlist.cpp:1000
 msgid "Could not delete these files"
 msgstr "Bu dosyalar silinemedi"
 
-#: playlist.cpp:996
+#: playlist.cpp:1001
 msgid "Could not move these files to the Trash"
 msgstr "Bu dosyalar Çöp Kutusuna taşınamadı"
 
 #. i18n: file: trackpickerdialogbase.ui:97
 #. i18n: ectx: property (text), widget (K3ListView, trackList)
-#: playlist.cpp:1509 rc.cpp:260
+#: playlist.cpp:1514 rc.cpp:260
 msgid "Track Name"
 msgstr "Parça Adı"
 
@@ -847,7 +848,7 @@ msgstr "Parça Adı"
 #. i18n: ectx: property (text), widget (QLineEdit, m_exampleArtist)
 #. i18n: file: trackpickerdialogbase.ui:108
 #. i18n: ectx: property (text), widget (K3ListView, trackList)
-#: playlist.cpp:1510 rc.cpp:6 rc.cpp:74 rc.cpp:263 tagrenameroptions.cpp:102
+#: playlist.cpp:1515 rc.cpp:6 rc.cpp:74 rc.cpp:263 tagrenameroptions.cpp:102
 msgid "Artist"
 msgstr "Sanatçı"
 
@@ -855,85 +856,85 @@ msgstr "Sanatçı"
 #. i18n: ectx: property (text), widget (QLineEdit, m_exampleAlbum)
 #. i18n: file: trackpickerdialogbase.ui:119
 #. i18n: ectx: property (text), widget (K3ListView, trackList)
-#: playlist.cpp:1511 rc.cpp:77 rc.cpp:266 tagrenameroptions.cpp:106
+#: playlist.cpp:1516 rc.cpp:77 rc.cpp:266 tagrenameroptions.cpp:106
 msgid "Album"
 msgstr "Albüm"
 
-#: playlist.cpp:1512
+#: playlist.cpp:1517
 msgid "Cover"
 msgstr "Kapak"
 
 #. i18n: file: trackpickerdialogbase.ui:130
 #. i18n: ectx: property (text), widget (K3ListView, trackList)
-#: playlist.cpp:1513 rc.cpp:269 tagrenameroptions.cpp:110
+#: playlist.cpp:1518 rc.cpp:269 tagrenameroptions.cpp:110
 msgctxt "cd track number"
 msgid "Track"
 msgstr "Parça"
 
 #. i18n: file: exampleoptionsbase.ui:235
 #. i18n: ectx: property (text), widget (QLineEdit, m_exampleGenre)
-#: playlist.cpp:1514 rc.cpp:80 tagrenameroptions.cpp:115
+#: playlist.cpp:1519 rc.cpp:80 tagrenameroptions.cpp:115
 msgid "Genre"
 msgstr "Tür"
 
 #. i18n: file: trackpickerdialogbase.ui:141
 #. i18n: ectx: property (text), widget (K3ListView, trackList)
-#: playlist.cpp:1515 rc.cpp:272 tagrenameroptions.cpp:119
+#: playlist.cpp:1520 rc.cpp:272 tagrenameroptions.cpp:119
 msgid "Year"
 msgstr "Yıl"
 
-#: playlist.cpp:1516
+#: playlist.cpp:1521
 msgid "Length"
 msgstr "Uzunluk"
 
-#: playlist.cpp:1517
+#: playlist.cpp:1522
 msgid "Bitrate"
 msgstr "Bit oranı"
 
-#: playlist.cpp:1518
+#: playlist.cpp:1523
 msgid "Comment"
 msgstr "Açıklama"
 
 #. i18n: file: trackpickerdialogbase.ui:21
 #. i18n: ectx: property (title), widget (QGroupBox, fileInfoGroup)
-#: playlist.cpp:1519 rc.cpp:254
+#: playlist.cpp:1524 rc.cpp:254
 msgid "File Name"
 msgstr "Dosya Adı"
 
-#: playlist.cpp:1520
+#: playlist.cpp:1525
 msgid "File Name (full path)"
 msgstr "Dosya Adı (tam yol)"
 
-#: playlist.cpp:1696
+#: playlist.cpp:1701
 msgid "&Show Columns"
 msgstr "S&ütunları Göster"
 
-#: playlist.cpp:2115
+#: playlist.cpp:2120
 msgid "Add to Play Queue"
 msgstr "Çalma listesine ekle"
 
-#: playlist.cpp:2128 playlist.cpp:2278
+#: playlist.cpp:2133 playlist.cpp:2283
 msgid "Edit"
 msgstr "Düzenle"
 
-#: playlist.cpp:2143
+#: playlist.cpp:2148
 msgid "Create Playlist From Selected Items..."
 msgstr "Seçilen Ögelerden Çalma Listesi Oluştur..."
 
-#: playlist.cpp:2164
+#: playlist.cpp:2169
 #, kde-format
 msgid "Edit '%1'"
 msgstr "Düzenle: '%1'"
 
-#: playlist.cpp:2276
+#: playlist.cpp:2281
 msgid "This will edit multiple files. Are you sure?"
 msgstr "Bu işlem çoklu dosyaları düzenleyecek. Emin misiniz?"
 
-#: playlist.cpp:2333 playlistcollection.h:171
+#: playlist.cpp:2338 playlistcollection.h:172
 msgid "Create New Playlist"
 msgstr "Yeni Parça Listesi Oluştur"
 
-#: playlist.cpp:2342
+#: playlist.cpp:2347
 msgid ""
 "Manual column widths have been enabled.  You can switch back to automatic "
 "column sizes in the view menu."
@@ -941,15 +942,15 @@ msgstr ""
 "Elle sütun boyutlandırma etkinleştirildi. Görünüm menüsünden kendiliğinden "
 "değişen sütun genişliğini yeniden etkinleştirebilirsiniz."
 
-#: playlist.cpp:2345
+#: playlist.cpp:2350
 msgid "Manual Column Widths Enabled"
 msgstr "Elle Sütun Boyutlandırma Etkin"
 
-#: playlistsplitter.cpp:152
+#: playlistsplitter.cpp:149
 msgid "Show &Search Bar"
 msgstr "Arama &Çubuğunu Göster"
 
-#: playlistsplitter.cpp:155
+#: playlistsplitter.cpp:152
 msgid "Edit Track Search"
 msgstr "Parça Aramasını Düzenle"
 
@@ -1503,64 +1504,64 @@ msgctxt "a playing track, %1 is artist, %2 is song title"
 msgid "%1 - %2"
 msgstr "%1 - %2"
 
-#: tageditor.cpp:492
+#: tageditor.cpp:476
 msgid "Show &Tag Editor"
 msgstr "B&aşlık Düzenleyiciyi Göster"
 
-#: tageditor.cpp:496
+#: tageditor.cpp:480
 msgid "&Save"
 msgstr "&Kaydet"
 
-#: tageditor.cpp:534
+#: tageditor.cpp:518
 msgid "&Artist name:"
 msgstr "&Sanatçı adı:"
 
-#: tageditor.cpp:538
+#: tageditor.cpp:522
 msgid "&Track name:"
 msgstr "İ&z adı:"
 
-#: tageditor.cpp:543
+#: tageditor.cpp:527
 msgid "Album &name:"
 msgstr "A&lbüm adı:"
 
-#: tageditor.cpp:547
+#: tageditor.cpp:531
 msgid "&Genre:"
 msgstr "&Tür:"
 
-#: tageditor.cpp:568
+#: tageditor.cpp:552
 msgid "&File name:"
 msgstr "&Dosya adı:"
 
-#: tageditor.cpp:585
+#: tageditor.cpp:569
 msgctxt "cd track number"
 msgid "T&rack:"
 msgstr "Pa&rça:"
 
-#: tageditor.cpp:590
+#: tageditor.cpp:574
 msgid "&Year:"
 msgstr "&Yıl:"
 
-#: tageditor.cpp:609
+#: tageditor.cpp:593
 msgid "Length:"
 msgstr "Uzunluk:"
 
-#: tageditor.cpp:618
+#: tageditor.cpp:602
 msgid "Bitrate:"
 msgstr "Bit oranı:"
 
-#: tageditor.cpp:628
+#: tageditor.cpp:612
 msgid "&Comment:"
 msgstr "&Açıklama:"
 
-#: tageditor.cpp:747
+#: tageditor.cpp:731
 msgid "Do you want to save your changes to:\n"
 msgstr "Değişiklikler buraya kaydedilsin mi? :\n"
 
-#: tageditor.cpp:749
+#: tageditor.cpp:733
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: tageditor.cpp:771
+#: tageditor.cpp:755
 msgid "Enable"
 msgstr "Etkinleştir"
 
@@ -1677,7 +1678,7 @@ msgstr "Yeni arama terimleri girin:"
 msgid "New Search"
 msgstr "Yeni Arama"
 
-#: playlistcollection.h:174
+#: playlistcollection.h:175
 msgid "Playlist"
 msgstr "Parça Listesi"
 

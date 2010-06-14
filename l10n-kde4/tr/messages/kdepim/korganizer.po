@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: korganizer\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-12 01:24+0200\n"
+"POT-Creation-Date: 2010-06-11 01:25+0200\n"
 "PO-Revision-Date: 2010-05-10 15:56+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -327,7 +327,7 @@ msgid "%1 <numid>%2</numid>"
 msgstr "%1 <numid>%2</numid>"
 
 #: printing/calprintdefaultplugins.cpp:1303
-#: printing/calprintdefaultplugins.cpp:1389 views/todoview/kotodomodel.cpp:809
+#: printing/calprintdefaultplugins.cpp:1388 views/todoview/kotodomodel.cpp:809
 #: views/listview/kolistview.cpp:233
 msgid "Summary"
 msgstr "Özet"
@@ -363,12 +363,12 @@ msgstr "Azalan"
 msgid "To-do list"
 msgstr "Yapılacaklar listesi"
 
-#: printing/calprintdefaultplugins.cpp:1397
+#: printing/calprintdefaultplugins.cpp:1396
 msgctxt "@label to-do percentage complete"
 msgid "Complete"
 msgstr "Bitmiş"
 
-#: printing/calprintdefaultplugins.cpp:1405
+#: printing/calprintdefaultplugins.cpp:1404
 msgctxt "@label to-do due date"
 msgid "Due"
 msgstr "Son Tarih"
@@ -1886,7 +1886,7 @@ msgid "Opens a print dialog for this journal entry"
 msgstr "Bu günlük girdisi için bir yazdırma penceresi açar"
 
 #: views/multiagendaview/multiagendaview.cpp:59
-#: views/agendaview/koagendaview.cpp:701
+#: views/agendaview/koagendaview.cpp:702
 msgid "All Day"
 msgstr "Tüm Gün"
 
@@ -1906,13 +1906,13 @@ msgstr "Bitiş Tarihi"
 msgid "End Time"
 msgstr "Bitiş Zamanı"
 
-#: views/agendaview/koagendaview.cpp:531
+#: views/agendaview/koagendaview.cpp:532
 #, kde-format
 msgctxt "short_weekday date (e.g. Mon 13)"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: views/agendaview/koagendaview.cpp:1485
+#: views/agendaview/koagendaview.cpp:1492
 msgid "Unable to modify this to-do, because it cannot be locked."
 msgstr "Bu yapılacak ögesi düzenlenemiyor, çünkü bu öge kilitlenemiyor."
 
@@ -2768,7 +2768,7 @@ msgstr ""
 "Lütfen daha fazla katılımcı eklemeden önce, örnek katılımcının bilgilerini "
 "düzenleyin."
 
-#: koattendeeeditor.cpp:277 koattendeeeditor.cpp:533
+#: koattendeeeditor.cpp:277 koattendeeeditor.cpp:539
 msgctxt "@item:intext sample attendee name"
 msgid "Firstname Lastname"
 msgstr "Ad Soyad"
@@ -2794,19 +2794,19 @@ msgctxt "@label"
 msgid "Organizer: %1"
 msgstr "Düzenleyici: %1"
 
-#: koattendeeeditor.cpp:472
+#: koattendeeeditor.cpp:478
 #, kde-format
 msgctxt "@label"
 msgid "Delegated to %1"
 msgstr "Yetki verilen: %1"
 
-#: koattendeeeditor.cpp:474
+#: koattendeeeditor.cpp:480
 #, kde-format
 msgctxt "@label"
 msgid "Delegated from %1"
 msgstr "Yetkisi havale edilen: %1"
 
-#: koattendeeeditor.cpp:476
+#: koattendeeeditor.cpp:482
 msgctxt "@label"
 msgid "Not delegated"
 msgstr "Temsil edilmedi"

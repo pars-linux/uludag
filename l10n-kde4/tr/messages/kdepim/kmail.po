@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-18 01:27+0200\n"
+"POT-Creation-Date: 2010-06-12 01:26+0200\n"
 "PO-Revision-Date: 2010-05-10 15:40+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -733,18 +733,18 @@ msgstr "Hesap Türü: IMAP Hesabı"
 msgid "Filtering"
 msgstr "Filtreleme"
 
-#: accountdialog.cpp:588
+#: accountdialog.cpp:586
 msgctxt "Placeholder for the case that there is no folder."
 msgid "<placeholder>none</placeholder>"
 msgstr "<placeholder>hiçbiri</placeholder>"
 
-#: accountdialog.cpp:608 accountdialog.cpp:615 subscriptiondialog.cpp:183
+#: accountdialog.cpp:606 accountdialog.cpp:613 subscriptiondialog.cpp:183
 #: kmkernel.cpp:1391 kmfoldercachedimap.cpp:273 kmfoldercachedimap.cpp:2259
 #: kmfolderimap.cpp:203 kmfolderimap.cpp:921
 msgid "inbox"
 msgstr "Gelen Kutusu"
 
-#: accountdialog.cpp:643
+#: accountdialog.cpp:641
 msgid ""
 "The server does not seem to support unique message numbers, but this is a "
 "requirement for leaving messages on the server.\n"
@@ -756,7 +756,7 @@ msgstr ""
 "Bazı sunucular yeteneklerini doğru olarak bildirmedikleri için, siz yine de "
 "alınan iletilerin sunucuda bırakılmasını seçebilirsiniz."
 
-#: accountdialog.cpp:659
+#: accountdialog.cpp:657
 msgid ""
 "The server does not seem to support fetching message headers, but this is a "
 "requirement for filtering messages on the server.\n"
@@ -768,7 +768,7 @@ msgstr ""
 "Bazı sunucular yeteneklerini doğru olarak bildirmedikleri için, siz yine de "
 "iletilerin sunucu üzerindeyken filtrelenmelerini seçebilirsiniz."
 
-#: accountdialog.cpp:674
+#: accountdialog.cpp:672
 msgid ""
 "Please note that this feature can cause some POP3 servers that do not "
 "support pipelining to send corrupted mail;\n"
@@ -791,11 +791,11 @@ msgstr ""
 "ilk önce kendinize toplu postalar göndererek ve onları indirerek bazı "
 "testler yapabilirsiniz."
 
-#: accountdialog.cpp:734 accountdialog.cpp:764
+#: accountdialog.cpp:732 accountdialog.cpp:762
 msgid "Please specify a server and port on the General tab first."
 msgstr "Lütfen önce Genel sekmesinde bir sunucu ve port numarası tanımlayınız."
 
-#: accountdialog.cpp:833
+#: accountdialog.cpp:831
 msgid ""
 "The server does not seem to support pipelining; therefore, this option has "
 "been disabled.\n"
@@ -814,7 +814,7 @@ msgstr ""
 "kendinize büyük sayıda test iletileri göndererek ve POP sunucusundan bunları "
 "indirerek test edin."
 
-#: accountdialog.cpp:854
+#: accountdialog.cpp:852
 msgid ""
 "The server does not seem to support unique message numbers, but this is a "
 "requirement for leaving messages on the server; therefore, this option has "
@@ -828,7 +828,7 @@ msgstr ""
 "Bazı sunucular yeteneklerini doğru olarak bildirmedikleri için, yine de "
 "alınmış iletileri sunucuda bırakma özelliğini aktif hale getirebilirsiniz."
 
-#: accountdialog.cpp:869
+#: accountdialog.cpp:867
 msgid ""
 "The server does not seem to support fetching message headers, but this is a "
 "requirement for filtering messages on the server; therefore, this option has "
@@ -843,55 +843,55 @@ msgstr ""
 "iletilerin sunucu üzerinde filtrelenme özelliğini aktif hale "
 "getirebilirsiniz."
 
-#: accountdialog.cpp:900 configuredialog.cpp:3771 configuredialog.cpp:3774
-#: configuredialog.cpp:3777 configuredialog.cpp:3781 configuredialog.cpp:3784
-#: configuredialog.cpp:3787 vacationdialog.cpp:184
+#: accountdialog.cpp:898 configuredialog.cpp:3796 configuredialog.cpp:3799
+#: configuredialog.cpp:3802 configuredialog.cpp:3806 configuredialog.cpp:3809
+#: configuredialog.cpp:3812 vacationdialog.cpp:184
 msgid " day"
 msgid_plural " days"
 msgstr[0] " gün"
 
-#: accountdialog.cpp:906
+#: accountdialog.cpp:904
 msgid " message"
 msgid_plural " messages"
 msgstr[0] " ileti"
 
-#: accountdialog.cpp:912
+#: accountdialog.cpp:910
 msgid " byte"
 msgid_plural " bytes"
 msgstr[0] " bayt"
 
-#: accountdialog.cpp:1159 accountdialog.cpp:1186
+#: accountdialog.cpp:1157 accountdialog.cpp:1184
 msgid "Choose Location"
 msgstr "Konum Seç"
 
-#: accountdialog.cpp:1174
+#: accountdialog.cpp:1172
 msgid "Only local files are currently supported."
 msgstr "Sadece yerel dosyalar destekleniyor."
 
-#: accountdialog.cpp:1268
+#: accountdialog.cpp:1266
 msgid "Fetching Namespaces..."
 msgstr "İsimlendirmeler Alınıyor..."
 
-#: accountdialog.cpp:1329
+#: accountdialog.cpp:1327
 msgctxt "Empty namespace string."
 msgid "Empty"
 msgstr "Boş"
 
-#: accountdialog.cpp:1449
+#: accountdialog.cpp:1447
 msgctxt "Personal namespace"
 msgid "Personal"
 msgstr "Kişisel"
 
-#: accountdialog.cpp:1451
+#: accountdialog.cpp:1449
 msgctxt "Namespace accessible for others."
 msgid "Other Users"
 msgstr "Diğer Kullanıcılar"
 
-#: accountdialog.cpp:1453
+#: accountdialog.cpp:1451
 msgid "Shared"
 msgstr "Paylaşılan"
 
-#: accountdialog.cpp:1455
+#: accountdialog.cpp:1453
 #, kde-format
 msgid "Edit Namespace '%1'"
 msgstr "'%1' İsimlendirmesini Düzenle"
@@ -1892,15 +1892,15 @@ msgstr ""
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Bu nasıl çalışır?</a>"
 
-#: templatesconfiguration.cpp:324
+#: templatesconfiguration.cpp:333
 msgid "Default new message template"
 msgstr "Öntanımlı yeni ileti şablonu"
 
-#: templatesconfiguration.cpp:330
+#: templatesconfiguration.cpp:339
 msgid "Default reply template"
 msgstr "Öntanımlı yanıtlama şablonu"
 
-#: templatesconfiguration.cpp:334
+#: templatesconfiguration.cpp:343
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -1914,11 +1914,11 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: templatesconfiguration.cpp:341
+#: templatesconfiguration.cpp:350
 msgid "Default reply all template"
 msgstr "Öntanımlı tümünü yanıtla şablonu"
 
-#: templatesconfiguration.cpp:344
+#: templatesconfiguration.cpp:353
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -1932,11 +1932,11 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: templatesconfiguration.cpp:353
+#: templatesconfiguration.cpp:362
 msgid "Default forward template"
 msgstr "Öntanımlı yönlendirme şablonu"
 
-#: templatesconfiguration.cpp:359
+#: templatesconfiguration.cpp:368
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -2160,7 +2160,7 @@ msgstr "Ka&ldır"
 #. i18n: ectx: property (text), widget (QPushButton, mModifyButton)
 #. i18n: file: ui/accountspagereceivingtab.ui:59
 #. i18n: ectx: property (text), widget (QPushButton, mModifyAccountButton)
-#: simplestringlisteditor.cpp:100 configuredialog.cpp:3094 rc.cpp:895
+#: simplestringlisteditor.cpp:100 configuredialog.cpp:3107 rc.cpp:895
 #: rc.cpp:1186
 msgid "&Modify..."
 msgstr "&Değiştir..."
@@ -5428,11 +5428,11 @@ msgstr "<qt><b>%1</b> isimli kimliği gerçekten silmek istiyor musunuz?</qt>"
 msgid "Remove Identity"
 msgstr "Girdiyi Sil"
 
-#: configuredialog.cpp:484 configuredialog.cpp:3035
+#: configuredialog.cpp:484 configuredialog.cpp:3041
 msgid "Add..."
 msgstr "Ekle..."
 
-#: configuredialog.cpp:486 configuredialog.cpp:3037
+#: configuredialog.cpp:486 configuredialog.cpp:3043
 msgid "Modify..."
 msgstr "Değiştir..."
 
@@ -5981,11 +5981,11 @@ msgstr "Harici Düzenleyici"
 msgid "<b>%f</b> will be replaced with the filename to edit."
 msgstr "<b>%f</b> düzenlenecek dosya adıyla değiştirilecektir."
 
-#: configuredialog.cpp:2987
+#: configuredialog.cpp:2993
 msgid "Repl&y Subject Prefixes"
 msgstr "&Yanıtlama Konusu Önekleri"
 
-#: configuredialog.cpp:2992 configuredialog.cpp:3027
+#: configuredialog.cpp:2998 configuredialog.cpp:3033
 msgid ""
 "Recognize any sequence of the following prefixes\n"
 "(entries are case-insensitive regular expressions):"
@@ -5995,99 +5995,99 @@ msgstr ""
 
 #. i18n: file: ui/accountspagereceivingtab.ui:49
 #. i18n: ectx: property (text), widget (QPushButton, mAddAccountButton)
-#: configuredialog.cpp:3002 configuredialog.cpp:3093 configuredialog.cpp:3457
+#: configuredialog.cpp:3008 configuredialog.cpp:3106 configuredialog.cpp:3482
 #: rc.cpp:1183
 msgid "A&dd..."
 msgstr "&Ekle..."
 
-#: configuredialog.cpp:3002 configuredialog.cpp:3242 configuredialog.cpp:3457
+#: configuredialog.cpp:3008 configuredialog.cpp:3255 configuredialog.cpp:3482
 msgid "Re&move"
 msgstr "&Sil"
 
-#: configuredialog.cpp:3003 configuredialog.cpp:3458
+#: configuredialog.cpp:3009 configuredialog.cpp:3483
 msgid "Mod&ify..."
 msgstr "&Değiştir..."
 
-#: configuredialog.cpp:3004
+#: configuredialog.cpp:3010
 msgid "Enter new reply prefix:"
 msgstr "Yeni yanıt ön ekini girin:"
 
-#: configuredialog.cpp:3022
+#: configuredialog.cpp:3028
 msgid "For&ward Subject Prefixes"
 msgstr "Yönlendirme &Konusu Önekleri"
 
 #. i18n: file: ui/identitypage.ui:66
 #. i18n: ectx: property (text), widget (QPushButton, mRemoveButton)
-#: configuredialog.cpp:3036 configuredialog.cpp:3093 rc.cpp:907
+#: configuredialog.cpp:3042 configuredialog.cpp:3106 rc.cpp:907
 msgid "Remo&ve"
 msgstr "Ka&ldır"
 
-#: configuredialog.cpp:3038
+#: configuredialog.cpp:3044
 msgid "Enter new forward prefix:"
 msgstr "Yeni iletim önekini girin:"
 
-#: configuredialog.cpp:3085
+#: configuredialog.cpp:3098
 msgid ""
 "This list is checked for every outgoing message from the top to the bottom "
 "for a charset that contains all required characters."
 msgstr ""
 "Bu liste, giden her e-posta için yukarıdan aşağıya doğru denetlenecektir."
 
-#: configuredialog.cpp:3094
+#: configuredialog.cpp:3107
 msgid "Enter charset:"
 msgstr "Karakter kümesini girin:"
 
-#: configuredialog.cpp:3100
+#: configuredialog.cpp:3113
 msgid "&Keep original charset when replying or forwarding (if possible)"
 msgstr "&Yanıtlarken ya da iletirken asıl karakter kümesini koru (mümkünse)."
 
-#: configuredialog.cpp:3135
+#: configuredialog.cpp:3148
 msgid "This charset is not supported."
 msgstr "Bu karakter kümesi desteklenmiyor."
 
-#: configuredialog.cpp:3192
+#: configuredialog.cpp:3205
 msgid "&Use custom message-id suffix"
 msgstr "Ö&zel İleti kimliği son ekini kullan"
 
-#: configuredialog.cpp:3206
+#: configuredialog.cpp:3219
 msgid "Custom message-&id suffix:"
 msgstr "Özel &İleti-kimliği (message-id) son eki:"
 
-#: configuredialog.cpp:3221
+#: configuredialog.cpp:3234
 msgid "Define custom mime header fields:"
 msgstr "Özel mime başlık etiketleri tanımla:"
 
-#: configuredialog.cpp:3230
+#: configuredialog.cpp:3243
 msgctxt "@title:column Name of the mime header."
 msgid "Name"
 msgstr "İsim"
 
-#: configuredialog.cpp:3231
+#: configuredialog.cpp:3244
 msgctxt "@title:column Value of the mimeheader."
 msgid "Value"
 msgstr "Değer"
 
-#: configuredialog.cpp:3238
+#: configuredialog.cpp:3251
 msgctxt "@action:button Add new mime header field."
 msgid "Ne&w"
 msgstr "Ye&ni"
 
-#: configuredialog.cpp:3251
+#: configuredialog.cpp:3264
 msgctxt "@label:textbox Name of the mime header."
 msgid "&Name:"
 msgstr "İsi&m:"
 
-#: configuredialog.cpp:3261
+#: configuredialog.cpp:3274
 msgid "&Value:"
 msgstr "&Kaynak:"
 
 #. i18n: file: kmail.kcfg.cmake:371
 #. i18n: ectx: label, entry (OutlookCompatibleAttachments), group (Composer)
-#: configuredialog.cpp:3425 rc.cpp:1685
+#: configuredialog.cpp:3450 rc.cpp:1685
 msgid "Outlook-compatible attachment naming"
 msgstr "Outlook-uyumlu eklenti isimlendirmesi"
 
-#: configuredialog.cpp:3428
+#: configuredialog.cpp:3453
 msgid ""
 "Turn this option on to make Outlook(tm) understand attachment names "
 "containing non-English characters"
@@ -6095,20 +6095,20 @@ msgstr ""
 "Outlook'un İngilizce-Olmayan eklenti isimlerini anlayabilmesi için bu "
 "seçeneği aktif hale getirin"
 
-#: configuredialog.cpp:3439
+#: configuredialog.cpp:3464
 msgid "E&nable detection of missing attachments"
 msgstr "Eksik eklentilerin bulunmasını etki&nleştir"
 
-#: configuredialog.cpp:3446
+#: configuredialog.cpp:3471
 msgid "Recognize any of the following key words as intention to attach a file:"
 msgstr ""
 "Bu anahtar kelimelerin herhangi birini dosya eklentisi isteği olarak algıla:"
 
-#: configuredialog.cpp:3459
+#: configuredialog.cpp:3484
 msgid "Enter new key word:"
 msgstr "Yeni anahtar kelimeyi girin:"
 
-#: configuredialog.cpp:3494
+#: configuredialog.cpp:3519
 msgid ""
 "You have chosen to encode attachment names containing non-English characters "
 "in a way that is understood by Outlook(tm) and other mail clients that do "
@@ -6126,77 +6126,77 @@ msgstr ""
 "anlaşılmayabileceğine dikkat edin; başka bir seçeneğiniz yok ise, bu "
 "seçeneği aktif hale getirmemeniz gerekir."
 
-#: configuredialog.cpp:3522
+#: configuredialog.cpp:3547
 msgid "Reading"
 msgstr "Okuma"
 
-#: configuredialog.cpp:3528
+#: configuredialog.cpp:3553
 msgid "Composing"
 msgstr "Düzenleme"
 
-#: configuredialog.cpp:3534
+#: configuredialog.cpp:3559
 msgid "Warnings"
 msgstr "Uyarılar"
 
-#: configuredialog.cpp:3540
+#: configuredialog.cpp:3565
 msgid "S/MIME Validation"
 msgstr "S/MIME Doğrulaması"
 
-#: configuredialog.cpp:3546
+#: configuredialog.cpp:3571
 msgid "Crypto Backends"
 msgstr "Şifreleme Arka Uçları"
 
-#: configuredialog.cpp:3633
+#: configuredialog.cpp:3658
 msgid ""
 "Changing the global HTML setting will override all folder specific values."
 msgstr "Genel HTML ayarları tüm dizinlere özel değerleri değiştirecek."
 
-#: configuredialog.cpp:3894
+#: configuredialog.cpp:3919
 msgid "This option requires dirmngr >= 0.9.0"
 msgstr "Bu seçenek dirmngr >= 0.9.0 gerektirir"
 
 #. i18n: file: ui/smimeconfiguration.ui:182
 #. i18n: ectx: property (text), widget (QLabel, systemHTTPProxy)
-#: configuredialog.cpp:4005 rc.cpp:1282
+#: configuredialog.cpp:4030 rc.cpp:1282
 msgid "no proxy"
 msgstr "vekil sunucu yok"
 
-#: configuredialog.cpp:4006
+#: configuredialog.cpp:4031
 #, kde-format
 msgid "(Current system setting: %1)"
 msgstr "(Şu anki sistem ayarları: %1)"
 
-#: configuredialog.cpp:4168 kmmainwidget.cpp:801 kmmainwidget.cpp:802
+#: configuredialog.cpp:4193 kmmainwidget.cpp:801 kmmainwidget.cpp:802
 msgid "Folders"
 msgstr "Dizinler"
 
-#: configuredialog.cpp:4171
+#: configuredialog.cpp:4196
 msgid "Groupware"
 msgstr "Grup Çalışması"
 
-#: configuredialog.cpp:4174
+#: configuredialog.cpp:4199
 msgid "Invitations"
 msgstr "Davetler"
 
 #. i18n: file: ui/miscpagegroupwaretab.ui:108
 #. i18n: ectx: property (toolTip), widget (QLabel, mFolderComboLabel)
-#: configuredialog.cpp:4302 rc.cpp:423
+#: configuredialog.cpp:4327 rc.cpp:423
 msgid "Set the parent of the resource folders"
 msgstr "Kaynak klasörleri için ana klasörü seçin"
 
-#: configuredialog.cpp:4351
+#: configuredialog.cpp:4376
 msgid "<Choose a Folder>"
 msgstr "<Bir Dizin Seçin>"
 
-#: configuredialog.cpp:4452
+#: configuredialog.cpp:4477
 msgid "&Resource folders are subfolders of:"
 msgstr "Kaynak dizinle&ri, bu dizinin bir alt dizinidir:"
 
-#: configuredialog.cpp:4455
+#: configuredialog.cpp:4480
 msgid "&Resource folders are in account:"
 msgstr "Kaynak dizinleri bu hesaptadır:"
 
-#: configuredialog.cpp:4508
+#: configuredialog.cpp:4533
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
 "changes the invitation mails to be sent in the text of the mail instead; "
@@ -7343,11 +7343,11 @@ msgstr "Kişi grubunun saklanacağı adres defteri klasörünü seçin:"
 msgid "Import Archive"
 msgstr "Arşivi İçeri Aktar"
 
-#: importarchivedialog.cpp:55 archivefolderdialog.cpp:65
+#: importarchivedialog.cpp:55 archivefolderdialog.cpp:69
 msgid "&Folder:"
 msgstr "&Klasör:"
 
-#: importarchivedialog.cpp:63 archivefolderdialog.cpp:91
+#: importarchivedialog.cpp:63 archivefolderdialog.cpp:95
 msgid "&Archive File:"
 msgstr "&Arşiv Dosyası:"
 
@@ -10831,44 +10831,44 @@ msgstr "İleti dizine eklenemiyor:"
 msgid "Could not add message to folder (No space left on device?)"
 msgstr "İleti dizine eklenemiyor (Yeterli disk alanı yok?)"
 
-#: archivefolderdialog.cpp:42
+#: archivefolderdialog.cpp:46
 msgctxt "Start of the filename for a mail archive file"
 msgid "Archive"
 msgstr "Arşiv"
 
-#: archivefolderdialog.cpp:49
+#: archivefolderdialog.cpp:53
 msgid "Archive Folder"
 msgstr "Klasör Arşivle"
 
-#: archivefolderdialog.cpp:75
+#: archivefolderdialog.cpp:79
 msgid "F&ormat:"
 msgstr "B&içim:"
 
-#: archivefolderdialog.cpp:81
+#: archivefolderdialog.cpp:85
 msgid "Compressed Zip Archive (.zip)"
 msgstr "Sıkıştırılmış Zip Arşivi (.zip)"
 
-#: archivefolderdialog.cpp:82
+#: archivefolderdialog.cpp:86
 msgid "Uncompressed Archive (.tar)"
 msgstr "Sıkıştırılmamış Arşiv (.tar)"
 
-#: archivefolderdialog.cpp:83
+#: archivefolderdialog.cpp:87
 msgid "BZ2-Compressed Tar Archive (.tar.bz2)"
 msgstr "BZ2 ile Sıkıştırılmış Tar Arşivi (.tar.bz2)"
 
-#: archivefolderdialog.cpp:84
+#: archivefolderdialog.cpp:88
 msgid "GZ-Compressed Tar Archive (.tar.gz)"
 msgstr "GZ ile Sıkıştırılmış Tar Arşivi (.tar.gz)"
 
-#: archivefolderdialog.cpp:104
+#: archivefolderdialog.cpp:108
 msgid "&Delete folders after completion"
 msgstr "Tamamlandıktan sonra klasörleri &sil"
 
-#: archivefolderdialog.cpp:156
+#: archivefolderdialog.cpp:160
 msgid "Please select the folder that should be archived."
 msgstr "Lütfen arşivlenecek klasörü seçin."
 
-#: archivefolderdialog.cpp:157
+#: archivefolderdialog.cpp:161
 msgid "No folder selected"
 msgstr "Klasör seçilmedi"
 

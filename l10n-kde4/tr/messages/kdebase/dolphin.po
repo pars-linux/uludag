@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: dolphin\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-20 01:20+0200\n"
+"POT-Creation-Date: 2010-06-06 01:21+0200\n"
 "PO-Revision-Date: 2010-04-19 16:41+0300\n"
 "Last-Translator: Gökçen Eraslan <gokcen@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1200,7 +1200,7 @@ msgctxt "@label:textbox"
 msgid "Filter:"
 msgstr "Filtrele:"
 
-#: dolphindirlister.cpp:40
+#: dolphindirlister.cpp:41
 msgctxt "@info:status"
 msgid "Unknown error."
 msgstr "Bilinmeyen hata."
@@ -2092,12 +2092,12 @@ msgctxt "@info:status"
 msgid "Delete operation completed."
 msgstr "Silme işlemi tamamlandı."
 
-#: dolphinview.cpp:1262
+#: dolphinview.cpp:1263
 msgctxt "@info:status"
 msgid "The location is empty."
 msgstr "Bu konum boş."
 
-#: dolphinview.cpp:1264
+#: dolphinview.cpp:1265
 #, kde-format
 msgctxt "@info:status"
 msgid "The location '%1' is invalid."

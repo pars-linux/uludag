@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-03 01:20+0200\n"
+"POT-Creation-Date: 2010-06-05 01:25+0200\n"
 "PO-Revision-Date: 2010-05-09 00:03+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -5133,89 +5133,89 @@ msgstr "Tüm çerezleri kaldır"
 msgid "Reload configuration file"
 msgstr "Yapılandırma dosyasını yeniden yükle"
 
-#: ../kioslave/http/http.cpp:559
+#: ../kioslave/http/http.cpp:563
 msgid "No host specified."
 msgstr "Hiç makine adı belirtilmemiş."
 
-#: ../kioslave/http/http.cpp:1392
+#: ../kioslave/http/http.cpp:1396
 msgid "The resource cannot be deleted."
 msgstr "Kaynak silinemedi."
 
-#: ../kioslave/http/http.cpp:1513
+#: ../kioslave/http/http.cpp:1517
 msgid "Otherwise, the request would have succeeded."
 msgstr "Belirtilseydi, istek başarılı olacaktı."
 
-#: ../kioslave/http/http.cpp:1517
+#: ../kioslave/http/http.cpp:1521
 msgctxt "request type"
 msgid "retrieve property values"
 msgstr "özellik değerlerini al"
 
-#: ../kioslave/http/http.cpp:1520
+#: ../kioslave/http/http.cpp:1524
 msgctxt "request type"
 msgid "set property values"
 msgstr "özellik değerlerini ayarla"
 
-#: ../kioslave/http/http.cpp:1523
+#: ../kioslave/http/http.cpp:1527
 msgctxt "request type"
 msgid "create the requested folder"
 msgstr "istenilen dizini oluştur"
 
-#: ../kioslave/http/http.cpp:1526
+#: ../kioslave/http/http.cpp:1530
 msgctxt "request type"
 msgid "copy the specified file or folder"
 msgstr "belirtilen dizin ya da dosyayı kopyala"
 
-#: ../kioslave/http/http.cpp:1529
+#: ../kioslave/http/http.cpp:1533
 msgctxt "request type"
 msgid "move the specified file or folder"
 msgstr "belirtilen dizin ya da dosyayı taşı"
 
-#: ../kioslave/http/http.cpp:1532
+#: ../kioslave/http/http.cpp:1536
 msgctxt "request type"
 msgid "search in the specified folder"
 msgstr "belirtilen dizin içerisinde ara"
 
-#: ../kioslave/http/http.cpp:1535
+#: ../kioslave/http/http.cpp:1539
 msgctxt "request type"
 msgid "lock the specified file or folder"
 msgstr "belirtilen dizin ya da dosyayı kilitle"
 
-#: ../kioslave/http/http.cpp:1538
+#: ../kioslave/http/http.cpp:1542
 msgctxt "request type"
 msgid "unlock the specified file or folder"
 msgstr "belirtilen dizin ya da dosyanın kilidini aç"
 
-#: ../kioslave/http/http.cpp:1541
+#: ../kioslave/http/http.cpp:1545
 msgctxt "request type"
 msgid "delete the specified file or folder"
 msgstr "belirtilen dizin ya da dosyayı sil"
 
-#: ../kioslave/http/http.cpp:1544
+#: ../kioslave/http/http.cpp:1548
 msgctxt "request type"
 msgid "query the server's capabilities"
 msgstr "sunucunun özelliklerini sorgula"
 
-#: ../kioslave/http/http.cpp:1547
+#: ../kioslave/http/http.cpp:1551
 msgctxt "request type"
 msgid "retrieve the contents of the specified file or folder"
 msgstr "belirtilen dizin ya da dosyanın içeriğini al"
 
-#: ../kioslave/http/http.cpp:1550
+#: ../kioslave/http/http.cpp:1554
 msgctxt "request type"
 msgid "run a report in the specified folder"
 msgstr "belirtilen dizin içerisinde bir rapor çalıştır"
 
-#: ../kioslave/http/http.cpp:1562
+#: ../kioslave/http/http.cpp:1566
 #, kde-format
 msgctxt "%1: code, %2: request type"
 msgid "An unexpected error (%1) occurred while attempting to %2."
 msgstr "%2 uygulanırken beklenmedik bir hata oluştu (%1)."
 
-#: ../kioslave/http/http.cpp:1570
+#: ../kioslave/http/http.cpp:1574
 msgid "The server does not support the WebDAV protocol."
 msgstr "Sunucu WebDAV protokolünü desteklemiyor."
 
-#: ../kioslave/http/http.cpp:1612
+#: ../kioslave/http/http.cpp:1616
 #, kde-format
 msgctxt "%1: request type, %2: url"
 msgid ""
@@ -5225,17 +5225,17 @@ msgstr ""
 "%1, %2 işlemi sırasında bir hata oluştu. Bu hata ile ilgili özet bilgi "
 "aşağıdadır."
 
-#: ../kioslave/http/http.cpp:1626 ../kioslave/http/http.cpp:1731
+#: ../kioslave/http/http.cpp:1630 ../kioslave/http/http.cpp:1735
 #, kde-format
 msgctxt "%1: request type"
 msgid "Access was denied while attempting to %1."
 msgstr "%1 işlem yapılırken erişim engellendi."
 
-#: ../kioslave/http/http.cpp:1633
+#: ../kioslave/http/http.cpp:1637
 msgid "The specified folder already exists."
 msgstr "Belirtilen dizin zaten var."
 
-#: ../kioslave/http/http.cpp:1639 ../kioslave/http/http.cpp:1736
+#: ../kioslave/http/http.cpp:1643 ../kioslave/http/http.cpp:1740
 msgid ""
 "A resource cannot be created at the destination until one or more "
 "intermediate collections (folders) have been created."
@@ -5243,7 +5243,7 @@ msgstr ""
 "Bir veya daha fazla ara koleksiyon (dizin) yaratılmadan, bu öz kaynak "
 "hedefte oluşturulamaz."
 
-#: ../kioslave/http/http.cpp:1648
+#: ../kioslave/http/http.cpp:1652
 #, kde-format
 msgid ""
 "The server was unable to maintain the liveness of the properties listed in "
@@ -5254,26 +5254,26 @@ msgstr ""
 "senkronizasyonunu sağlayamadı veya dosyaların üzerine yazılmamasını "
 "isterken, siz bir dosyanın üzerine yazmaya çalıştınız. %1"
 
-#: ../kioslave/http/http.cpp:1658
+#: ../kioslave/http/http.cpp:1662
 #, kde-format
 msgid "The requested lock could not be granted. %1"
 msgstr "İstenen kilit tamamlanamadı: %1"
 
-#: ../kioslave/http/http.cpp:1664
+#: ../kioslave/http/http.cpp:1668
 msgid "The server does not support the request type of the body."
 msgstr "Bu istek talebini sunucu anlamadı."
 
-#: ../kioslave/http/http.cpp:1669 ../kioslave/http/http.cpp:1743
+#: ../kioslave/http/http.cpp:1673 ../kioslave/http/http.cpp:1747
 #, kde-format
 msgctxt "%1: request type"
 msgid "Unable to %1 because the resource is locked."
 msgstr "%1 yapılamadı çünkü kaynak kilitli."
 
-#: ../kioslave/http/http.cpp:1673
+#: ../kioslave/http/http.cpp:1677
 msgid "This action was prevented by another error."
 msgstr "Bu eylem başka bir hata nedeniyle engellendi."
 
-#: ../kioslave/http/http.cpp:1680 ../kioslave/http/http.cpp:1748
+#: ../kioslave/http/http.cpp:1684 ../kioslave/http/http.cpp:1752
 #, kde-format
 msgctxt "%1: request type"
 msgid ""
@@ -5282,7 +5282,7 @@ msgid ""
 msgstr ""
 "%1 yapılamadı çünkü hedef sunucu dosya ya da dizin kabul etmeyi reddediyor."
 
-#: ../kioslave/http/http.cpp:1687 ../kioslave/http/http.cpp:1754
+#: ../kioslave/http/http.cpp:1691 ../kioslave/http/http.cpp:1758
 msgid ""
 "The destination resource does not have sufficient space to record the state "
 "of the resource after the execution of this method."
@@ -5290,77 +5290,77 @@ msgstr ""
 "Hedef öz kaynak, öz kaynağın bu metodun çalıştırılmasından sonraki durumunu "
 "kaydedecek alana sahip değil."
 
-#: ../kioslave/http/http.cpp:1709
+#: ../kioslave/http/http.cpp:1713
 #, kde-format
 msgctxt "request type"
 msgid "upload %1"
 msgstr "%1 yükle"
 
-#: ../kioslave/http/http.cpp:1720
+#: ../kioslave/http/http.cpp:1724
 #, kde-format
 msgctxt "%1: response code, %2: request type"
 msgid "An unexpected error (%1) occurred while attempting to %2."
 msgstr "%2 uygulanırken beklenmedik bir hata oluştu (%1)."
 
-#: ../kioslave/http/http.cpp:2469
+#: ../kioslave/http/http.cpp:2473
 #, kde-format
 msgid "%1 contacted. Waiting for reply..."
 msgstr "%1 ile bağlantı kuruldu. Yanıt bekleniyor..."
 
-#: ../kioslave/http/http.cpp:2834
+#: ../kioslave/http/http.cpp:2838
 msgid "Server processing request, please wait..."
 msgstr "Sunucu isteği işliyor, lütfen bekleyiniz..."
 
-#: ../kioslave/http/http.cpp:3194
+#: ../kioslave/http/http.cpp:3198
 msgid "Unknown Authorization method."
 msgstr "Bilinmeyen Yetkilendirme Yöntemi."
 
-#: ../kioslave/http/http.cpp:3223
+#: ../kioslave/http/http.cpp:3227
 msgid "Authentication Failed."
 msgstr "Yetki Denetimi Başarısız."
 
-#: ../kioslave/http/http.cpp:3224 ../kioslave/http/http.cpp:4895
+#: ../kioslave/http/http.cpp:3228 ../kioslave/http/http.cpp:4899
 msgid "Proxy Authentication Failed."
 msgstr "Vekil Sunucu Yetki Denetimi Başarısız."
 
-#: ../kioslave/http/http.cpp:3256
+#: ../kioslave/http/http.cpp:3260
 msgid "Authorization failed."
 msgstr "Yetkilendirme başarısız."
 
-#: ../kioslave/http/http.cpp:3646
+#: ../kioslave/http/http.cpp:3650
 msgid "Requesting data to send"
 msgstr "Gönderilecek veri alınıyor"
 
-#: ../kioslave/http/http.cpp:3678
+#: ../kioslave/http/http.cpp:3682
 #, kde-format
 msgid "Sending data to %1"
 msgstr "%1 adresine veri gönderiliyor"
 
-#: ../kioslave/http/http.cpp:4097
+#: ../kioslave/http/http.cpp:4101
 #, kde-format
 msgid "Retrieving %1 from %2..."
 msgstr "%2 adresinden %1 alınıyor..."
 
-#: ../kioslave/http/http.cpp:4103
+#: ../kioslave/http/http.cpp:4107
 #, kde-format
 msgid "Retrieving from %1..."
 msgstr "%1 adresinden alınıyor..."
 
-#: ../kioslave/http/http.cpp:4820 ../kioslave/ftp/ftp.cpp:477
+#: ../kioslave/http/http.cpp:4824 ../kioslave/ftp/ftp.cpp:477
 msgid "You need to supply a username and a password to access this site."
 msgstr "Bu adrese girmek için bir kullanıcı adı ve parolası vermelisiniz."
 
-#: ../kioslave/http/http.cpp:4827 ../kioslave/ftp/ftp.cpp:479
+#: ../kioslave/http/http.cpp:4831 ../kioslave/ftp/ftp.cpp:479
 msgid "Site:"
 msgstr "Adres:"
 
-#: ../kioslave/http/http.cpp:4828 ../kioslave/http/http.cpp:4844
-#: ../kioslave/http/http.cpp:4894
+#: ../kioslave/http/http.cpp:4832 ../kioslave/http/http.cpp:4848
+#: ../kioslave/http/http.cpp:4898
 #, kde-format
 msgid "<b>%1</b> at <b>%2</b>"
 msgstr "<b>%1</b>, <b>%2</b>"
 
-#: ../kioslave/http/http.cpp:4835 ../kioslave/http/http.cpp:4889
+#: ../kioslave/http/http.cpp:4839 ../kioslave/http/http.cpp:4893
 msgid ""
 "You need to supply a username and a password for the proxy server listed "
 "below before you are allowed to access any sites."
@@ -5368,7 +5368,7 @@ msgstr ""
 "Herhangi bir siteye girmeden önce aşağıda listelenen vekil sunucular için "
 "bir kullanıcı adı ve parola girmelisiniz."
 
-#: ../kioslave/http/http.cpp:4843 ../kioslave/http/http.cpp:4893
+#: ../kioslave/http/http.cpp:4847 ../kioslave/http/http.cpp:4897
 msgid "Proxy:"
 msgstr "Vekil sunucu:"
 
