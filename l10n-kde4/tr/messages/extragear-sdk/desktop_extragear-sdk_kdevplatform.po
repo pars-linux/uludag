@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop files\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-12 23:33+0000\n"
+"POT-Creation-Date: 2010-06-14 23:41+0000\n"
 "PO-Revision-Date: 2009-10-27 00:13+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -77,7 +77,7 @@ msgctxt "Name"
 msgid "CVS Support"
 msgstr "CVS Desteği"
 
-#: plugins/cvs/kdevcvs.desktop:66 plugins/subversion/kdevsubversion.desktop:62
+#: plugins/cvs/kdevcvs.desktop:66 plugins/subversion/kdevsubversion.desktop:64
 msgctxt "GenericName"
 msgid "Version Control Support"
 msgstr "Sürüm Kontrol Desteği"
@@ -273,12 +273,12 @@ msgid ""
 "classes/functions."
 msgstr ""
 
-#: plugins/quickopen/kdevquickopen.desktop:30
+#: plugins/quickopen/kdevquickopen.desktop:31
 msgctxt "Name"
 msgid "Quick Open"
 msgstr "Hızlı Aç"
 
-#: plugins/quickopen/kdevquickopen.desktop:59
+#: plugins/quickopen/kdevquickopen.desktop:60
 msgctxt "GenericName"
 msgid "Quick Open"
 msgstr "Hızlı Aç"
@@ -289,12 +289,12 @@ msgid ""
 "This plugin allows to store code snippets and insert them into open files"
 msgstr ""
 
-#: plugins/snippet/kdevsnippet.desktop:30
+#: plugins/snippet/kdevsnippet.desktop:31
 msgctxt "Name"
 msgid "Code Snippets Support"
 msgstr "Kod Parçacıkları Desteği"
 
-#: plugins/snippet/kdevsnippet.desktop:57
+#: plugins/snippet/kdevsnippet.desktop:58
 msgctxt "GenericName"
 msgid "Code Snippets Support"
 msgstr "Kod Parçacıkları Desteği"
@@ -309,7 +309,7 @@ msgctxt "Comment"
 msgid "This plugin integrates subversion to KDevelop."
 msgstr "Bu eklenti Subversion ile KDevelop uygulamasını bütünleştirir"
 
-#: plugins/subversion/kdevsubversion.desktop:34
+#: plugins/subversion/kdevsubversion.desktop:35
 msgctxt "Name"
 msgid "Subversion Support"
 msgstr "Subversion Desteği"
@@ -319,12 +319,12 @@ msgctxt "Comment"
 msgid "This plugin integrates Bazaar to KDevelop"
 msgstr "Bu eklenti Bazaar uygulamasını KDevelop ile bütünleştirir"
 
-#: shell/kross/examples/bzrkdevelop/kdevbzr.desktop:33
+#: shell/kross/examples/bzrkdevelop/kdevbzr.desktop:34
 msgctxt "Name"
 msgid "KDevBzr"
 msgstr "KDevBzr"
 
-#: shell/kross/examples/bzrkdevelop/kdevbzr.desktop:64
+#: shell/kross/examples/bzrkdevelop/kdevbzr.desktop:66
 msgctxt "GenericName"
 msgid "Bzr frontend"
 msgstr "Bzr önyüzü"
@@ -334,12 +334,12 @@ msgctxt "Comment"
 msgid "Compile a file"
 msgstr "Bir dosya derle"
 
-#: shell/kross/examples/compileone/kdevcompileone.desktop:35
+#: shell/kross/examples/compileone/kdevcompileone.desktop:36
 msgctxt "Name"
 msgid "CompileOne"
 msgstr "CompileOne"
 
-#: shell/kross/examples/compileone/kdevcompileone.desktop:63
+#: shell/kross/examples/compileone/kdevcompileone.desktop:65
 msgctxt "GenericName"
 msgid "CompileOne"
 msgstr "Bir Dosya Derle"
@@ -349,12 +349,12 @@ msgctxt "Comment"
 msgid "GUI Example"
 msgstr "Grafiksel Kullanıcı Arayüzü Örneği"
 
-#: shell/kross/examples/guiexample/kdevguiexample.desktop:34
+#: shell/kross/examples/guiexample/kdevguiexample.desktop:35
 msgctxt "Name"
 msgid "GUIExample"
 msgstr "Grafiksel Kullanıcı Arayüzü Örneği"
 
-#: shell/kross/examples/guiexample/kdevguiexample.desktop:63
+#: shell/kross/examples/guiexample/kdevguiexample.desktop:65
 msgctxt "GenericName"
 msgid "GUIExample"
 msgstr "Grafiksel Kullanıcı Arayüzü Örneği"
@@ -364,7 +364,7 @@ msgctxt "Name"
 msgid "KDevelop MSVC Manager"
 msgstr "KDevelop MSVC Yöneticisi"
 
-#: shell/kross/examples/msvckdevelop/kdevmsvcmanager.desktop:33
+#: shell/kross/examples/msvckdevelop/kdevmsvcmanager.desktop:34
 msgctxt "Comment"
 msgid "Imports MSVC projects"
 msgstr "MSCV projelerini içeriye aktarır"
@@ -374,7 +374,7 @@ msgctxt "Name"
 msgid "KDevelop Kross Support"
 msgstr "KDevelop Kross Desteği"
 
-#: shell/kross/kdevkrossplugin.desktop:33
+#: shell/kross/kdevkrossplugin.desktop:34
 msgctxt "Comment"
 msgid "KDevelop Kross Support"
 msgstr "KDevelop Kross Desteği"
@@ -384,7 +384,7 @@ msgctxt "Name"
 msgid "Background Parser"
 msgstr "Arkaplan Ayrıştırıcı"
 
-#: shell/settings/kcm_kdev_bgsettings.desktop:40
+#: shell/settings/kcm_kdev_bgsettings.desktop:41
 #, fuzzy
 #| msgctxt "Comment"
 #| msgid "Configure Background Parser settings"
@@ -446,7 +446,7 @@ msgctxt "Name"
 msgid "Source Formatter"
 msgstr "Kaynak Biçimlendirici"
 
-#: shell/settings/kcm_kdevsourceformattersettings.desktop:37
+#: shell/settings/kcm_kdevsourceformattersettings.desktop:38
 #, fuzzy
 #| msgctxt "Name"
 #| msgid "Source Formatter"
@@ -472,12 +472,12 @@ msgctxt "Comment"
 msgid "This plugin is purely for unit-test"
 msgstr "Bu eklenti tamamen birim-testleri içindir"
 
-#: shell/tests/share/kde4/services/kdevnonguiinterfaceplugin.desktop:30
+#: shell/tests/share/kde4/services/kdevnonguiinterfaceplugin.desktop:31
 msgctxt "Name"
 msgid "KDevNonGuiInterface"
 msgstr "KDevNonGuiInterface"
 
-#: shell/tests/share/kde4/services/kdevnonguiinterfaceplugin.desktop:57
+#: shell/tests/share/kde4/services/kdevnonguiinterfaceplugin.desktop:59
 msgctxt "GenericName"
 msgid "NonGuiInterface"
 msgstr "Grafiksel Olmayan Arayüz"
