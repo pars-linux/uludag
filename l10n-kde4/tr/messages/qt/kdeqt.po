@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: kdeqt\n"
 "Report-Msgid-Bugs-To: qt-bugs@trolltech.com\n"
 "POT-Creation-Date: 2010-04-20 01:29+0200\n"
-"PO-Revision-Date: 2009-07-31 10:50+0300\n"
+"PO-Revision-Date: 2010-06-15 10:36+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -750,7 +750,7 @@ msgstr "Bağlantıyı Kaydet...&Bağlantıyı Farklı Kaydet..."
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:88
 msgctxt "Copy Link context menu item"
 msgid "Copy Link"
-msgstr "&Bağlantyı  Kopyala"
+msgstr "&Bağlantıyı  Kopyala"
 
 #: 3rdparty/webkit/WebCore/platform/qt/Localizations.cpp:93
 msgctxt "Open Image in New Window context menu item"
