@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kexi\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-29 01:28+0200\n"
+"POT-Creation-Date: 2010-06-15 01:34+0200\n"
 "PO-Revision-Date: 2009-09-26 21:02+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -29,16 +29,16 @@ msgctxt "Unbound Auto Field"
 msgid " (unbound)"
 msgstr ""
 
-#: plugins/forms/widgets/kexidbimagebox.cpp:572
+#: plugins/forms/widgets/kexidbimagebox.cpp:581
 msgid "Click to show actions for this image box"
 msgstr "Bu resim kutusu için eylemleri göster"
 
-#: plugins/forms/widgets/kexidbimagebox.cpp:584
+#: plugins/forms/widgets/kexidbimagebox.cpp:593
 #, kde-format
 msgid "Click to show actions for \"%1\" image box"
 msgstr "\"%1\" isimli resim kutusu için eylemleri göster"
 
-#: plugins/forms/widgets/kexidbimagebox.cpp:688
+#: plugins/forms/widgets/kexidbimagebox.cpp:697
 msgctxt "Unbound Image Box"
 msgid "(unbound)"
 msgstr ""
@@ -318,7 +318,7 @@ msgid "Size"
 msgstr "Boyut"
 
 #: plugins/forms/kexidbfactory.cpp:347
-#: widget/utils/kexicontextmenuutils.cpp:290 kexidb/utils.cpp:1251
+#: widget/utils/kexicontextmenuutils.cpp:289 kexidb/utils.cpp:1251
 msgid "Image"
 msgstr "Resim"
 
@@ -1880,28 +1880,28 @@ msgstr "İmleci son satıra götürür."
 msgid "Moves cursor to new row and allows inserting."
 msgstr "İmleci yeni bir satıra götürür ve giriş yapılabilir."
 
-#: widget/utils/kexicontextmenuutils.cpp:73
+#: widget/utils/kexicontextmenuutils.cpp:72
 msgid "Insert From &File..."
 msgstr "Do&syadan Ekle..."
 
-#: widget/utils/kexicontextmenuutils.cpp:89
+#: widget/utils/kexicontextmenuutils.cpp:88
 msgid "&Clear"
 msgstr "&Temizle"
 
-#: widget/utils/kexicontextmenuutils.cpp:98
+#: widget/utils/kexicontextmenuutils.cpp:97
 #: widget/KexiPropertyEditorView.cpp:46 main/KexiMainWindow.cpp:2217
 msgid "Properties"
 msgstr "Özellikler"
 
-#: widget/utils/kexicontextmenuutils.cpp:132
+#: widget/utils/kexicontextmenuutils.cpp:131
 msgid "Insert Image From File"
 msgstr "Dosyadan Resim Ekle"
 
-#: widget/utils/kexicontextmenuutils.cpp:203
+#: widget/utils/kexicontextmenuutils.cpp:202
 msgid "Save Image to File"
 msgstr "Resmi Dosyaya Kaydet"
 
-#: widget/utils/kexicontextmenuutils.cpp:228
+#: widget/utils/kexicontextmenuutils.cpp:227
 #, kde-format
 msgid "File \"%1\" already exists.<p>Do you want to replace it with a new one?"
 msgstr ""
@@ -1910,16 +1910,16 @@ msgstr ""
 
 #. i18n: file: main/kexifinddialog.ui:103
 #. i18n: ectx: property (text), widget (KPushButton, m_btnReplace)
-#: widget/utils/kexicontextmenuutils.cpp:230 main/KexiMainWindow.cpp:3603
-#: migration/importwizard.cpp:801 rc.cpp:171
+#: widget/utils/kexicontextmenuutils.cpp:229 main/KexiMainWindow.cpp:3604
+#: migration/importwizard.cpp:807 rc.cpp:171
 msgid "&Replace"
 msgstr "Üze&rine Yaz"
 
-#: widget/utils/kexicontextmenuutils.cpp:230
+#: widget/utils/kexicontextmenuutils.cpp:229
 msgid "&Don't Replace"
 msgstr "Ü&zerine Yazma"
 
-#: widget/utils/kexicontextmenuutils.cpp:319
+#: widget/utils/kexicontextmenuutils.cpp:310
 #, kde-format
 msgctxt "Object name : Object type"
 msgid "%1 : %2"
@@ -3117,7 +3117,7 @@ msgstr "İnternet'ten örnek veritabanları indir"
 msgid "Downloads example databases from the Internet."
 msgstr "İnternet'ten örnek veritabanları indirir."
 
-#: main/KexiMainWindow.cpp:657 main/KexiMainWindow.cpp:3295
+#: main/KexiMainWindow.cpp:657 main/KexiMainWindow.cpp:3296
 msgid "Open Recent"
 msgstr "Son Kullanılanı Aç"
 
@@ -3133,7 +3133,7 @@ msgstr "Seçili penceredeki nesnenin değişikliklerini kaydeder."
 msgid "Save &As..."
 msgstr "F&arklı Kaydet..."
 
-#: main/KexiMainWindow.cpp:684 main/KexiMainWindow.cpp:3311
+#: main/KexiMainWindow.cpp:684 main/KexiMainWindow.cpp:3312
 msgid "Save object as"
 msgstr "Nesneyi farklı kaydet"
 
@@ -3473,10 +3473,10 @@ msgstr "Kexi uygulamasının hata raporlarını gösterir."
 msgid "Shows \"What's This\" tool."
 msgstr "\"Bu Nedir\" aracını gösterir."
 
-#: main/KexiMainWindow.cpp:1142 migration/importwizard.cpp:960
-#: migration/importwizard.cpp:967 migration/importwizard.cpp:969
-#: migration/importwizard.cpp:971 migration/importwizard.cpp:973
-#: migration/importwizard.cpp:975
+#: main/KexiMainWindow.cpp:1142 migration/importwizard.cpp:966
+#: migration/importwizard.cpp:973 migration/importwizard.cpp:975
+#: migration/importwizard.cpp:977 migration/importwizard.cpp:979
+#: migration/importwizard.cpp:981
 msgid "Help"
 msgstr "Yardım"
 
@@ -3496,7 +3496,7 @@ msgstr "K Masaüstü Araçları hakkında bilgi verir."
 msgid "This shows useful tips on the use of this application."
 msgstr "Bu uygulamanın kullanımı hakkında kullanışlı ipuçları gösterir."
 
-#: main/KexiMainWindow.cpp:1154 main/KexiMainWindow.cpp:4553
+#: main/KexiMainWindow.cpp:1154 main/KexiMainWindow.cpp:4563
 msgid "Important Information"
 msgstr "Önemli Bilgi"
 
@@ -3602,90 +3602,90 @@ msgstr ""
 "Seçili nesnelerin açılışta kendiliğinden başlamasını veya çalışmasını "
 "istediniz ancak, bir kısmı başlamayacak veya çalışmayacak."
 
-#: main/KexiMainWindow.cpp:3252
+#: main/KexiMainWindow.cpp:3253
 msgid "Recently Opened Databases"
 msgstr "En Son Açılan Veritabanları"
 
-#: main/KexiMainWindow.cpp:3271
+#: main/KexiMainWindow.cpp:3272
 msgid "Recently Connected Database Servers"
 msgstr "En Son Bağlanılan Veritabanı Sunucuları"
 
-#: main/KexiMainWindow.cpp:3365
+#: main/KexiMainWindow.cpp:3366
 msgid "From File..."
 msgstr "Dosyadan..."
 
-#: main/KexiMainWindow.cpp:3370
+#: main/KexiMainWindow.cpp:3371
 msgid "From Server..."
 msgstr "Sunucudan..."
 
-#: main/KexiMainWindow.cpp:3481
+#: main/KexiMainWindow.cpp:3482
 #, kde-format
 msgid "Selected view is not supported for \"%1\" object."
 msgstr "Seçilen görünüm \"%1\" nesnesi için desteklenmiyor."
 
-#: main/KexiMainWindow.cpp:3483
+#: main/KexiMainWindow.cpp:3484
 #, kde-format
 msgid "Selected view (%1) is not supported by this object type (%2)."
 msgstr "Seçilen (%1) görünümü, (%2) tipi nesne için desteklenmiyor."
 
-#: main/KexiMainWindow.cpp:3495 core/KexiWindow.cpp:673
+#: main/KexiMainWindow.cpp:3496 core/KexiWindow.cpp:673
 #, kde-format
 msgid "Switching to other view failed (%1)."
 msgstr "Diğer pencereye geçiş başarısız (%1)."
 
-#: main/KexiMainWindow.cpp:3580
+#: main/KexiMainWindow.cpp:3581
 msgid "Save Object As"
 msgstr "Nesneyi Farklı Kaydet"
 
-#: main/KexiMainWindow.cpp:3601
+#: main/KexiMainWindow.cpp:3602
 msgid "Do you want to replace it?"
 msgstr "Üzerine yazmak istiyor musunuz?"
 
-#: main/KexiMainWindow.cpp:3604
+#: main/KexiMainWindow.cpp:3605
 msgid "&Choose Other Name..."
 msgstr "&Başka bir isim seç..."
 
-#: main/KexiMainWindow.cpp:3621
+#: main/KexiMainWindow.cpp:3622
 msgid "Please choose other name."
 msgstr "Lütfen başka bir isim seçiniz."
 
-#: main/KexiMainWindow.cpp:3644
+#: main/KexiMainWindow.cpp:3645
 #, kde-format
 msgid "Saving \"%1\" object failed."
 msgstr "\"%1\" nesnesinin kaydı başarısız."
 
-#: main/KexiMainWindow.cpp:3661
+#: main/KexiMainWindow.cpp:3662
 #, kde-format
 msgid "Saving new \"%1\" object failed."
 msgstr "Yeni \"%1\" nesnesinin kaydı başarısız."
 
-#: main/KexiMainWindow.cpp:3713 main/KexiMainWindow.cpp:5008
+#: main/KexiMainWindow.cpp:3714 main/KexiMainWindow.cpp:5018
 msgid "Save changes"
 msgstr "Değişiklikleri kaydet"
 
-#: main/KexiMainWindow.cpp:3715 main/KexiMainWindow.cpp:5010
+#: main/KexiMainWindow.cpp:3716 main/KexiMainWindow.cpp:5020
 #, kde-format
 msgid ""
 "Pressing this button will save all recent changes made in \"%1\" object."
 msgstr "Bu düğme,\"%1\" nesnesinde yapılmış tüm değişiklikleri kaydeder."
 
-#: main/KexiMainWindow.cpp:3719
+#: main/KexiMainWindow.cpp:3720
 #, kde-format
 msgid ""
 "Pressing this button will discard all recent changes made in \"%1\" object."
 msgstr "Bu düğme,\"%1\" nesnesinde yapılmış tüm değişiklikleri iptal eder."
 
-#: main/KexiMainWindow.cpp:3741
+#: main/KexiMainWindow.cpp:3742
 msgid "Do you want to save changes?"
 msgstr "Değişiklikleri kaydetmek istiyor musunuz?"
 
-#: main/KexiMainWindow.cpp:4111
+#: main/KexiMainWindow.cpp:4121
 #, kde-format
 msgctxt "opening is not allowed in \"data view/design view/text view\" mode"
 msgid "opening is not allowed in \"%1\" mode"
 msgstr "\"%1\" kipinde açılamaz."
 
-#: main/KexiMainWindow.cpp:4328
+#: main/KexiMainWindow.cpp:4338
 #, kde-format
 msgid ""
 "Do you want to permanently delete:\n"
@@ -3696,51 +3696,51 @@ msgstr ""
 "Dosyasını kalıcı olarak silmek istiyor musunuz?\n"
 "Uyarı! bu işlemin geri dönüşü yoktur."
 
-#: main/KexiMainWindow.cpp:4332
+#: main/KexiMainWindow.cpp:4342
 msgid "Delete"
 msgstr "Sil"
 
-#: main/KexiMainWindow.cpp:4382
+#: main/KexiMainWindow.cpp:4392
 msgid "Could not remove object."
 msgstr "Nesne silinemedi"
 
-#: main/KexiMainWindow.cpp:4396 core/kexiproject.cpp:872
+#: main/KexiMainWindow.cpp:4406 core/kexiproject.cpp:872
 msgid "Could not set empty name for this object."
 msgstr "Nesneye bir isim verilmelidir. Boş bırakılamaz."
 
-#: main/KexiMainWindow.cpp:4404
+#: main/KexiMainWindow.cpp:4414
 #, kde-format
 msgid "Renaming object \"%1\" failed."
 msgstr "\"%1\" nesnesinin ismi değiştirilemedi."
 
-#: main/KexiMainWindow.cpp:4612
+#: main/KexiMainWindow.cpp:4622
 #, kde-format
 msgid "Could not start project \"%1\" in Final Mode."
 msgstr ""
 
-#: main/KexiMainWindow.cpp:4616
+#: main/KexiMainWindow.cpp:4626
 msgid "No Final Mode data found."
 msgstr ""
 
-#: main/KexiMainWindow.cpp:4623
+#: main/KexiMainWindow.cpp:4633
 msgid "Error reading Final Mode data."
 msgstr ""
 
-#: main/KexiMainWindow.cpp:4652
+#: main/KexiMainWindow.cpp:4662
 msgid "Specified plugin does not exist."
 msgstr "İstenen eklenti bulunamadı."
 
-#: main/KexiMainWindow.cpp:4661
+#: main/KexiMainWindow.cpp:4671
 msgid "Specified object could not be opened."
 msgstr "İstenen nesne açılamadı."
 
-#: main/KexiMainWindow.cpp:4745
+#: main/KexiMainWindow.cpp:4755
 #, kde-format
 msgid "Compacting database file <nobr>\"%1\"</nobr> is not supported."
 msgstr ""
 "<nobr>\"%1\"</nobr> veritabanı dosyası için sıkıştırma işlemi desteklenmiyor."
 
-#: main/KexiMainWindow.cpp:4757
+#: main/KexiMainWindow.cpp:4767
 msgid ""
 "The current project has to be closed before compacting the database. It will "
 "be open again after compacting.\n"
@@ -3752,22 +3752,22 @@ msgstr ""
 "\n"
 "Devam etmek istiyor musunuz?"
 
-#: main/KexiMainWindow.cpp:5014
+#: main/KexiMainWindow.cpp:5024
 #, kde-format
 msgid ""
 "Pressing this button will ignore all unsaved changes made in \"%1\" object."
 msgstr ""
 "Bu düğmeyeye basarak \"%1\" nesnesindeki tüm değişiklikler iptal edilecek."
 
-#: main/KexiMainWindow.cpp:5019
+#: main/KexiMainWindow.cpp:5029
 msgid "Do you want to save changes before printing?"
 msgstr "Yazdırmadan önce değişiklikleri kaydetmek istiyor musunuz?"
 
-#: main/KexiMainWindow.cpp:5021
+#: main/KexiMainWindow.cpp:5031
 msgid "Do you want to save changes before making print preview?"
 msgstr "Ön izlemeden önce değişikleri kaydetmek istiyor musunuz?"
 
-#: main/KexiMainWindow.cpp:5023
+#: main/KexiMainWindow.cpp:5033
 msgid "Do you want to save changes before showing page setup?"
 msgstr "Sayfa ayarlarına geçmeden önce değişikleri kaydetmek istiyor musunuz?"
 
@@ -3820,7 +3820,7 @@ msgstr "Bu işlev %2 uygulamasının %1 sürümünde çalışmaz."
 msgid "\"%1\" function is not available for version %2 of %3 application."
 msgstr "\"%1\" işlevi, %3 uygulamasının %2 sürümünde çalışmaz."
 
-#: core/kexiinternalpart.cpp:53 core/kexipartmanager.cpp:135
+#: core/kexiinternalpart.cpp:53 core/kexipartmanager.cpp:137
 #, fuzzy, kde-format
 #| msgid ""
 #| "Incompatible migration driver's \"%1\" version: found version %2, "
@@ -4366,12 +4366,12 @@ msgstr ""
 "\"%1\" servis tipi yüklü değil. Kexi kurulumunuzu kontrol edin. İptal "
 "ediliyor."
 
-#: core/kexipartmanager.cpp:148
+#: core/kexipartmanager.cpp:150
 #, kde-format
 msgid "Error while loading plugin \"%1\""
 msgstr "\"%1\" eklentisi yüklenirken hata oluştu"
 
-#: core/kexipartmanager.cpp:181 core/kexipartmanager.cpp:191
+#: core/kexipartmanager.cpp:192
 #, kde-format
 msgid "No plugin for class \"%1\""
 msgstr "\"%1\" sınıfı için eklenti yok"
@@ -4684,7 +4684,7 @@ msgstr ""
 "İçeriye tablo aktarma yardımcısı mevcut bir veritabanından Kexi veritabanı "
 "içerisine tablo aktarmanızı sağlar."
 
-#: migration/importtablewizard.cpp:121 migration/importwizard.cpp:181
+#: migration/importtablewizard.cpp:121 migration/importwizard.cpp:191
 msgid ""
 "Click \"Next\" button to continue or \"Cancel\" button to exit this wizard."
 msgstr ""
@@ -4695,7 +4695,7 @@ msgstr ""
 msgid "Welcome to the Table Importing Wizard"
 msgstr "İçeriye Tablo Aktarma Yardımcısına Hoş Geldiniz"
 
-#: migration/importtablewizard.cpp:155 migration/importwizard.cpp:213
+#: migration/importtablewizard.cpp:155 migration/importwizard.cpp:223
 msgid "Select Location for Source Database"
 msgstr "Kaynak Veritabanının Yerini Seçiniz"
 
@@ -4705,11 +4705,11 @@ msgstr "Kaynak Veritabanının Yerini Seçiniz"
 msgid "Select the Table to Import"
 msgstr "İçeriye Aktarılacak Tabloları Seçin"
 
-#: migration/importtablewizard.cpp:202 migration/importwizard.cpp:372
+#: migration/importtablewizard.cpp:202 migration/importwizard.cpp:382
 msgid "Advanced Options"
 msgstr "Gelişmiş Seçenekler"
 
-#: migration/importtablewizard.cpp:211 migration/importwizard.cpp:382
+#: migration/importtablewizard.cpp:211 migration/importwizard.cpp:392
 msgid "Importing"
 msgstr "İçeri aktarılıyor"
 
@@ -4717,8 +4717,8 @@ msgstr "İçeri aktarılıyor"
 msgid "Alter the Detected Design"
 msgstr ""
 
-#: migration/importtablewizard.cpp:244 migration/importwizard.cpp:406
-#: migration/importwizard.cpp:822
+#: migration/importtablewizard.cpp:244 migration/importwizard.cpp:416
+#: migration/importwizard.cpp:828
 msgid "Success"
 msgstr "Başarılı"
 
@@ -4747,7 +4747,7 @@ msgstr ""
 "\n"
 "Şu tabloları içeriye aktarmayı seçtiniz:\n"
 
-#: migration/importtablewizard.cpp:403 migration/importwizard.cpp:701
+#: migration/importtablewizard.cpp:403 migration/importwizard.cpp:707
 msgid "No appropriate migration driver found."
 msgstr "Uygun bir göç sürücüsü bulunamadı."
 
@@ -4860,7 +4860,7 @@ msgstr "Veritabanı aktarımları için \"%1\" sürücüsü yüklenemedi."
 msgid "Import Database"
 msgstr "İçeri Veritabanı Aktar"
 
-#: migration/importwizard.cpp:164
+#: migration/importwizard.cpp:174
 #, kde-format
 msgid ""
 "<qt>Database Importing wizard is about to import \"%1\" database <nobr>"
@@ -4869,7 +4869,7 @@ msgstr ""
 "<qt>Veritabanı içeri aktarma yardımcısı \"%1\" veritabanını <nobr>(%2 "
 "bağlantısı ile)</nobr> Kexi veritabanı olarak içeri aktaracak.</qt>"
 
-#: migration/importwizard.cpp:173
+#: migration/importwizard.cpp:183
 #, kde-format
 msgid ""
 "<qt>Database Importing wizard is about to import <nobr>\"%1\"</nobr> file of "
@@ -4878,7 +4878,7 @@ msgstr ""
 "<qt>Veritabanı içeri aktarma yardımcısı, <nobr>\"%1\" veritabanını </nobr> "
 "\"%2\" dosya türü ve Kexi veritabanı olarak içeri aktaracak.</qt>"
 
-#: migration/importwizard.cpp:177
+#: migration/importwizard.cpp:187
 msgid ""
 "Database Importing wizard allows you to import an existing database into a "
 "Kexi database."
@@ -4886,79 +4886,79 @@ msgstr ""
 "İçeri veritabanı aktarma yardımcısı, mevcut bir veritabanını, Kexi "
 "veritabanı olarak içeri aktarır."
 
-#: migration/importwizard.cpp:184
+#: migration/importwizard.cpp:194
 msgid "Welcome to the Database Importing Wizard"
 msgstr "İçeri Veritabanı Aktarma Yardımcısına Hoş Geldiniz"
 
-#: migration/importwizard.cpp:225
+#: migration/importwizard.cpp:235
 msgid "Select Source Database"
 msgstr "Kaynak Veritabanını Seçiniz"
 
-#: migration/importwizard.cpp:244
+#: migration/importwizard.cpp:254
 msgid "Destination database type:"
 msgstr "Oluşturulacak veritabanı türü"
 
-#: migration/importwizard.cpp:250
+#: migration/importwizard.cpp:260
 msgid "Database project stored in a file"
 msgstr "Dosya halinde veritabanı projesi"
 
-#: migration/importwizard.cpp:251
+#: migration/importwizard.cpp:261
 msgid "Database project stored on a server"
 msgstr "Sunucuda saklanan veritabanı projesi"
 
-#: migration/importwizard.cpp:265
+#: migration/importwizard.cpp:275
 msgid "Select Destination Database Type"
 msgstr "Oluşturulacak Veritabanı Türünü Seçiniz"
 
-#: migration/importwizard.cpp:273
+#: migration/importwizard.cpp:283
 msgid "Destination project's caption:"
 msgstr "Oluşturulacak projenin başlığı:"
 
-#: migration/importwizard.cpp:278
+#: migration/importwizard.cpp:288
 msgid "Select Destination Database Project's Caption"
 msgstr "Oluşturulacak Projenin Başlığını Seçiniz"
 
-#: migration/importwizard.cpp:313
+#: migration/importwizard.cpp:323
 msgid "Select Location for Destination Database"
 msgstr "Oluşturulacak Veritabanının Yerini Seçiniz"
 
-#: migration/importwizard.cpp:330
+#: migration/importwizard.cpp:340
 msgid "Structure and data"
 msgstr "Yapısı ve verileri"
 
-#: migration/importwizard.cpp:334
+#: migration/importwizard.cpp:344
 msgid "Structure only"
 msgstr "Sadece yapısı"
 
-#: migration/importwizard.cpp:339
+#: migration/importwizard.cpp:349
 msgid "Select Type of Import"
 msgstr "İçeri aktarım rüeünü seçiniz"
 
-#: migration/importwizard.cpp:399
+#: migration/importwizard.cpp:409
 msgid "Open imported project"
 msgstr "İçeri aktarılan projeyi aç"
 
-#: migration/importwizard.cpp:417
+#: migration/importwizard.cpp:427
 msgid "No new database name was entered."
 msgstr "Veritabanı ismi girilmedi."
 
-#: migration/importwizard.cpp:423
+#: migration/importwizard.cpp:433
 msgid "Source database is the same as destination."
 msgstr "Kaynak ve hedef veritabanı aynı olamaz."
 
-#: migration/importwizard.cpp:427
+#: migration/importwizard.cpp:437
 msgid "Following problems were found with the data you entered:"
 msgstr "Girdiğiniz değerlerde, aşağıdaki hatalar bulundu:"
 
-#: migration/importwizard.cpp:429
+#: migration/importwizard.cpp:439
 msgid "Please click 'Back' button and correct these errors."
 msgstr "Lütfen 'Geri' düğmesine tıklayarak bu hataları düzeltin."
 
-#: migration/importwizard.cpp:478
+#: migration/importwizard.cpp:488
 msgid "Select source database you wish to import:"
 msgstr "İçeri aktarılacak kaynak veritabanını seç:"
 
-#: migration/importwizard.cpp:543
+#: migration/importwizard.cpp:549
 msgid ""
 "All required information has now been gathered. Click \"Next\" button to "
 "start importing.\n"
@@ -4970,22 +4970,22 @@ msgstr ""
 "\n"
 "Veritabanının boyutuna göre işlem süresi değişir."
 
-#: migration/importwizard.cpp:798
+#: migration/importwizard.cpp:804
 #, kde-format
 msgid "Database %1 already exists.<p>Do you want to replace it with a new one?"
 msgstr ""
 "Database %1 already exists.<p> Aynı isimle yeni bir veritabanı oluşturmak "
 "istiyor musunuz?"
 
-#: migration/importwizard.cpp:801
+#: migration/importwizard.cpp:807
 msgid "No"
 msgstr "Hayır"
 
-#: migration/importwizard.cpp:836
+#: migration/importwizard.cpp:842
 msgid "Failure"
 msgstr "Başarısız"
 
-#: migration/importwizard.cpp:839
+#: migration/importwizard.cpp:845
 #, kde-format
 msgid ""
 "<p>Import failed.</p>%1<p>%2</p><p>You can click \"Back\" button and try "
@@ -4994,50 +4994,50 @@ msgstr ""
 "<p>İçeri aktarım başarısız. </p>%1<p>%2</p><p> \"Ger\"i düğmesine tıklayarak "
 "tekrar deneyebilirsinz.</p>"
 
-#: migration/importwizard.cpp:860
+#: migration/importwizard.cpp:866
 msgid "Select source database filename."
 msgstr "Kaynak veritabanı ismini seçiniz."
 
-#: migration/importwizard.cpp:865
+#: migration/importwizard.cpp:871
 msgid "Select source database."
 msgstr "Kaynak veritabanını seçiniz."
 
-#: migration/importwizard.cpp:879
+#: migration/importwizard.cpp:885
 msgid "Could not import database. This type is not supported."
 msgstr "Veritabanı içeri aktarılamadı. Bu tür desteklenmiyor."
 
-#: migration/importwizard.cpp:880
+#: migration/importwizard.cpp:886
 #, kde-format
 msgid "Could not import database \"%1\". This type is not supported."
 msgstr "\"%1\" Veritabanı içeri aktarılamadı. Bu tür desteklenmiyor."
 
-#: migration/importwizard.cpp:894
+#: migration/importwizard.cpp:900
 msgid "Importing in progress..."
 msgstr "İçeri aktarma işlemi sürüyor..."
 
-#: migration/importwizard.cpp:898
+#: migration/importwizard.cpp:904
 #, kde-format
 msgid "Database has been imported into Kexi database project \"%1\"."
 msgstr "Veritabanı, \"%1\" isimli Kexi projesi olarak içeri aktarıldı."
 
-#: migration/importwizard.cpp:960 migration/importwizard.cpp:975
+#: migration/importwizard.cpp:966 migration/importwizard.cpp:981
 msgid "No help is available for this page."
 msgstr "Bu sayfa için yardım bulunamadı."
 
-#: migration/importwizard.cpp:967
+#: migration/importwizard.cpp:973
 msgid "Here you can choose the location to import data from."
 msgstr "Verinin alınacağı konumu buradan seçebilirsiniz."
 
-#: migration/importwizard.cpp:969
+#: migration/importwizard.cpp:975
 msgid "Here you can choose the actual database to import data from."
 msgstr ""
 "Verilerin alınıp içeri aktarılacağı veritebanını buradan seçebilirsiniz."
 
-#: migration/importwizard.cpp:971
+#: migration/importwizard.cpp:977
 msgid "Here you can choose the location to save the data."
 msgstr "Verinin kaydedileceği yeri buradan seçebilirsiniz."
 
-#: migration/importwizard.cpp:973
+#: migration/importwizard.cpp:979
 msgid ""
 "Here you can choose the location to save the data in and the new database "
 "name."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevphp\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-08 01:30+0200\n"
+"POT-Creation-Date: 2010-06-15 01:36+0200\n"
 "PO-Revision-Date: 2009-05-18 14:40+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -78,40 +78,40 @@ msgstr "Özellikler sonda belirtilemez."
 msgid "Properties cannot be declared abstract."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:441
+#: duchain/builders/declarationbuilder.cpp:450
 #, kde-format
 msgid "Cannot redeclare private property %1 from this context."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:447
+#: duchain/builders/declarationbuilder.cpp:456
 #, kde-format
 msgid "Cannot redeclare protected property %1 from this context."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:512
+#: duchain/builders/declarationbuilder.cpp:521
 msgid ""
 "Only booleans, ints, floats and strings are allowed for class constants."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:525
+#: duchain/builders/declarationbuilder.cpp:534
 msgid "Default value for parameters with a class type hint can only be NULL."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:528
+#: duchain/builders/declarationbuilder.cpp:537
 msgid "Following parameters must have a default value assigned."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:592
+#: duchain/builders/declarationbuilder.cpp:601
 #, kde-format
 msgid "Cannot redeclare PHP internal %1."
 msgstr "PHP bütünleşiği %1 yeniden tanımlanamaz."
 
-#: duchain/builders/declarationbuilder.cpp:596
+#: duchain/builders/declarationbuilder.cpp:605
 #, kde-format
 msgid "Cannot redeclare %1, already declared in %2 on line %3."
 msgstr ""
 
-#: duchain/builders/declarationbuilder.cpp:656
+#: duchain/builders/declarationbuilder.cpp:665
 msgid "Cannot re-assign $this."
 msgstr ""
 

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_comic\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-17 01:26+0200\n"
+"POT-Creation-Date: 2010-06-15 01:31+0200\n"
 "PO-Revision-Date: 2010-05-13 13:59+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -65,23 +65,23 @@ msgstr "Mevcut &pozisyonu akılda tut"
 msgid "Visit the comic website"
 msgstr "Karikatür sitesine git"
 
-#: comic.cpp:343
+#: comic.cpp:344
 #, kde-format
 msgctxt "an abbrevation for Number"
 msgid "# %1"
 msgstr "# %1"
 
-#: comic.cpp:404
+#: comic.cpp:405
 msgid "General"
 msgstr "Genel"
 
-#: comic.cpp:404
+#: comic.cpp:405
 msgid "Press the \"Get New Comics ...\" button to install comics."
 msgstr ""
 "Yeni Çizgi romanlar indirmek için \"Yeni Çizgi Romanlar Al...\" düğmesine "
 "basın."
 
-#: comic.cpp:405
+#: comic.cpp:406
 msgid "Appearance"
 msgstr "Görünüm"
 
@@ -89,11 +89,11 @@ msgstr "Görünüm"
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: file: comicSettings.ui:206
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: comic.cpp:814 comic.cpp:816 rc.cpp:24 rc.cpp:48
+#: comic.cpp:815 comic.cpp:817 rc.cpp:24 rc.cpp:48
 msgid "Comic"
 msgstr "Karikatür öykü"
 
-#: comic.cpp:954
+#: comic.cpp:955
 msgid ""
 "Show at actual size in a different view.  Alternatively, click with the "
 "middle mouse button on the comic."

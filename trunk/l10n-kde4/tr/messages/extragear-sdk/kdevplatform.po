@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevplatform\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-12 01:31+0200\n"
+"POT-Creation-Date: 2010-06-15 01:36+0200\n"
 "PO-Revision-Date: 2009-11-02 18:29+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -346,7 +346,7 @@ msgid "Copy Value"
 msgstr "Değeri Kopyala"
 
 #: interfaces/contextmenuextension.cpp:142 shell/debugcontroller.cpp:375
-#: shell/runcontroller.cpp:79 shell/uicontroller.cpp:86
+#: shell/uicontroller.cpp:86 shell/runcontroller.cpp:79
 msgid "Debug"
 msgstr "Hata Ayıkla"
 
@@ -427,48 +427,6 @@ msgstr ""
 msgid "Error generating code: %1"
 msgstr ""
 
-#: language/codegen/createclass.cpp:76
-#, fuzzy, kde-format
-#| msgid "Create New Class"
-msgid "Create New Class in %1"
-msgstr "Yeni Sınıf Oluştur"
-
-#: language/codegen/createclass.cpp:351
-msgid "Class Basics"
-msgstr ""
-
-#: language/codegen/createclass.cpp:352
-msgid "Identify the class and any classes from which it is to inherit."
-msgstr ""
-
-#: language/codegen/createclass.cpp:495
-msgid "License"
-msgstr "Lisans"
-
-#: language/codegen/createclass.cpp:496
-msgid "Choose the license under which to place the new class."
-msgstr ""
-
-#: language/codegen/createclass.cpp:626
-msgid "Could not load previous license"
-msgstr "Önceki lisans yüklenemedi"
-
-#: language/codegen/createclass.cpp:640
-msgid "The specified license already exists. Please provide a different name."
-msgstr ""
-
-#: language/codegen/createclass.cpp:650
-msgid "There was an error writing the file."
-msgstr ""
-
-#: language/codegen/createclass.cpp:683
-msgid "Output"
-msgstr "Çıktı"
-
-#: language/codegen/createclass.cpp:684
-msgid "Choose where to save the new class."
-msgstr ""
-
 #: language/codegen/overridespage.cpp:57
 msgid "Override Methods"
 msgstr ""
@@ -488,6 +446,48 @@ msgstr "Protected"
 #: language/codegen/overridespage.cpp:171
 msgid "Private"
 msgstr "Özel"
+
+#: language/codegen/createclass.cpp:76
+#, fuzzy, kde-format
+#| msgid "Create New Class"
+msgid "Create New Class in %1"
+msgstr "Yeni Sınıf Oluştur"
+
+#: language/codegen/createclass.cpp:351
+msgid "Class Basics"
+msgstr ""
+
+#: language/codegen/createclass.cpp:352
+msgid "Identify the class and any classes from which it is to inherit."
+msgstr ""
+
+#: language/codegen/createclass.cpp:500
+msgid "License"
+msgstr "Lisans"
+
+#: language/codegen/createclass.cpp:501
+msgid "Choose the license under which to place the new class."
+msgstr ""
+
+#: language/codegen/createclass.cpp:631
+msgid "Could not load previous license"
+msgstr "Önceki lisans yüklenemedi"
+
+#: language/codegen/createclass.cpp:645
+msgid "The specified license already exists. Please provide a different name."
+msgstr ""
+
+#: language/codegen/createclass.cpp:655
+msgid "There was an error writing the file."
+msgstr ""
+
+#: language/codegen/createclass.cpp:688
+msgid "Output"
+msgstr "Çıktı"
+
+#: language/codegen/createclass.cpp:689
+msgid "Choose where to save the new class."
+msgstr ""
 
 #: language/duchain/forwarddeclaration.cpp:63
 #, kde-format
@@ -1723,131 +1723,6 @@ msgstr "Proje açılıyor"
 msgid "Already opening %1, not opening again"
 msgstr ""
 
-#: shell/runcontroller.cpp:88
-msgid "Profile"
-msgstr "Profil"
-
-#: shell/runcontroller.cpp:97
-msgid "Execute"
-msgstr "Çalıştır"
-
-#: shell/runcontroller.cpp:386
-#, kde-format
-msgid ""
-"Launcher could not be found for the name '%1'. Check the launch "
-"configuration."
-msgstr ""
-
-#: shell/runcontroller.cpp:402
-msgid "Configure Launches..."
-msgstr ""
-
-#: shell/runcontroller.cpp:404 shell/runcontroller.cpp:405
-msgid "Open Launch Configuration Dialog"
-msgstr "Çalıştırma Yapılandırma Penceresini Aç"
-
-#: shell/runcontroller.cpp:406
-msgid ""
-"<p>Opens a dialog to setup new launch configurations, or to change the "
-"existing ones.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:409
-msgid "Execute Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:410
-msgctxt "Short text for 'Execute Launch' used in the toolbar"
-msgid "Execute"
-msgstr "Çalıştır"
-
-#: shell/runcontroller.cpp:412 shell/runcontroller.cpp:413
-msgid "Execute current Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:414
-msgid ""
-"<b>Execute Launch</b><p>Executes the target or the program specified in "
-"currently active launch configuration.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:418
-msgid "Debug Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:420
-msgctxt "Short text for 'Debug Launch' used in the toolbar"
-msgid "Debug"
-msgstr "Hata Ayıkla"
-
-#: shell/runcontroller.cpp:421 shell/runcontroller.cpp:422
-msgid "Debug current Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:423
-msgid ""
-"<b>Debug Launch</b><p>Executes the target or the program specified in "
-"currently active launch configuration inside a Debugger.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:427
-msgid "Profile Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:428 shell/runcontroller.cpp:429
-msgid "Profile current Launch"
-msgstr ""
-
-#: shell/runcontroller.cpp:430
-msgid ""
-"<b>Profile Launch</b><p>Executes the target or the program specified in "
-"currently active launch configuration inside a Profiler.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:434
-msgid "Stop Jobs"
-msgstr "Görevleri durdur"
-
-#: shell/runcontroller.cpp:435
-msgctxt "Short text for 'Stop Jobs' used in the toolbar"
-msgid "Stop"
-msgstr "Durdur"
-
-#: shell/runcontroller.cpp:437
-msgid "Stop all currently running jobs"
-msgstr "Çalışan tüm görevleri durdur"
-
-#: shell/runcontroller.cpp:438
-msgid "<b>Stop Jobs</b><p>Requests that all running jobs are stopped.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:443 shell/runcontroller.cpp:444
-#: shell/runcontroller.cpp:445
-msgid "Current Launch Configuration"
-msgstr "Geçerli Çalıştırma Yapılandırması"
-
-#: shell/runcontroller.cpp:446
-msgid "<p>Select which launch configuration to run when run is invoked.</p>"
-msgstr ""
-
-#: shell/runcontroller.cpp:515
-msgid "Unnamed job"
-msgstr "İsimsiz görev"
-
-#: shell/runcontroller.cpp:602
-msgid "Process Error"
-msgstr "Süreç Hatası"
-
-#: shell/runcontroller.cpp:793
-#, kde-format
-msgid "New %1 Configuration"
-msgstr "Yeni %1 Yapılandırma"
-
-#: shell/runcontroller.cpp:828
-#, kde-format
-msgid "%1 As..."
-msgstr "%1 Olarak..."
-
 #: shell/savedialog.cpp:55
 msgid "Save Modified Files?"
 msgstr "Değiştirilmiş Dosyalar Kaydedilsin mi?"
@@ -2186,6 +2061,131 @@ msgstr "Kapat"
 #| msgid "Loading"
 msgid "Load"
 msgstr "Yükleniyor"
+
+#: shell/runcontroller.cpp:88
+msgid "Profile"
+msgstr "Profil"
+
+#: shell/runcontroller.cpp:97
+msgid "Execute"
+msgstr "Çalıştır"
+
+#: shell/runcontroller.cpp:386
+#, kde-format
+msgid ""
+"Launcher could not be found for the name '%1'. Check the launch "
+"configuration."
+msgstr ""
+
+#: shell/runcontroller.cpp:402
+msgid "Configure Launches..."
+msgstr ""
+
+#: shell/runcontroller.cpp:404 shell/runcontroller.cpp:405
+msgid "Open Launch Configuration Dialog"
+msgstr "Çalıştırma Yapılandırma Penceresini Aç"
+
+#: shell/runcontroller.cpp:406
+msgid ""
+"<p>Opens a dialog to setup new launch configurations, or to change the "
+"existing ones.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:409
+msgid "Execute Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:410
+msgctxt "Short text for 'Execute Launch' used in the toolbar"
+msgid "Execute"
+msgstr "Çalıştır"
+
+#: shell/runcontroller.cpp:412 shell/runcontroller.cpp:413
+msgid "Execute current Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:414
+msgid ""
+"<b>Execute Launch</b><p>Executes the target or the program specified in "
+"currently active launch configuration.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:418
+msgid "Debug Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:420
+msgctxt "Short text for 'Debug Launch' used in the toolbar"
+msgid "Debug"
+msgstr "Hata Ayıkla"
+
+#: shell/runcontroller.cpp:421 shell/runcontroller.cpp:422
+msgid "Debug current Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:423
+msgid ""
+"<b>Debug Launch</b><p>Executes the target or the program specified in "
+"currently active launch configuration inside a Debugger.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:427
+msgid "Profile Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:428 shell/runcontroller.cpp:429
+msgid "Profile current Launch"
+msgstr ""
+
+#: shell/runcontroller.cpp:430
+msgid ""
+"<b>Profile Launch</b><p>Executes the target or the program specified in "
+"currently active launch configuration inside a Profiler.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:434
+msgid "Stop Jobs"
+msgstr "Görevleri durdur"
+
+#: shell/runcontroller.cpp:435
+msgctxt "Short text for 'Stop Jobs' used in the toolbar"
+msgid "Stop"
+msgstr "Durdur"
+
+#: shell/runcontroller.cpp:437
+msgid "Stop all currently running jobs"
+msgstr "Çalışan tüm görevleri durdur"
+
+#: shell/runcontroller.cpp:438
+msgid "<b>Stop Jobs</b><p>Requests that all running jobs are stopped.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:443 shell/runcontroller.cpp:444
+#: shell/runcontroller.cpp:445
+msgid "Current Launch Configuration"
+msgstr "Geçerli Çalıştırma Yapılandırması"
+
+#: shell/runcontroller.cpp:446
+msgid "<p>Select which launch configuration to run when run is invoked.</p>"
+msgstr ""
+
+#: shell/runcontroller.cpp:515
+msgid "Unnamed job"
+msgstr "İsimsiz görev"
+
+#: shell/runcontroller.cpp:602
+msgid "Process Error"
+msgstr "Süreç Hatası"
+
+#: shell/runcontroller.cpp:793
+#, kde-format
+msgid "New %1 Configuration"
+msgstr "Yeni %1 Yapılandırma"
+
+#: shell/runcontroller.cpp:828
+#, kde-format
+msgid "%1 As..."
+msgstr "%1 Olarak..."
 
 #: sublime/container.cpp:141
 msgid "Line: 00000 Col: 000"

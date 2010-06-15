@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-26 01:24+0200\n"
+"POT-Creation-Date: 2010-06-15 01:29+0200\n"
 "PO-Revision-Date: 2010-05-12 10:48+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1934,7 +1934,7 @@ msgstr "Aktarımlar"
 msgid "Transfer details:"
 msgstr "Aktarım ayrıntıları:"
 
-#: ui/tray.cpp:42 main.cpp:140 mainwindow.cpp:90 mainwindow.cpp:463
+#: ui/tray.cpp:42 main.cpp:141 mainwindow.cpp:90 mainwindow.cpp:463
 msgid "KGet"
 msgstr "KGet"
 
@@ -2400,11 +2400,11 @@ msgctxt "@label text in footer"
 msgid "KGet Web Interface | Valid XHTML 1.0 Strict &amp; CSS"
 msgstr "KGet Web Arayüzü | Valid XHTML 1.0 Strict &amp; CSS"
 
-#: main.cpp:142
+#: main.cpp:143
 msgid "An advanced download manager for KDE"
 msgstr "KDE için gelişmiş indirme yöneticisi"
 
-#: main.cpp:144
+#: main.cpp:145
 msgid ""
 "(C) 2005 - 2009, The KGet developers\n"
 "(C) 2001 - 2002, Patrick Charbonnier\n"
@@ -2416,99 +2416,99 @@ msgstr ""
 "(C) 2002, Carsten Pfeiffer\n"
 "(C) 1998 - 2000, Matej Koss"
 
-#: main.cpp:148
+#: main.cpp:149
 msgid "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
 msgstr "<a href=\"mailto:kget@kde.org\">kget@kde.org</a>"
 
-#: main.cpp:150
+#: main.cpp:151
 msgid "Lukas Appelhans"
 msgstr "Lukas Appelhans"
 
-#: main.cpp:150
+#: main.cpp:151
 msgid "Maintainer, Core Developer, Torrent Plugin Author"
 msgstr "Projeyi Yürüten, Çekirdek Geliştirici, Torrent Eklentisinin Yazarı"
 
-#: main.cpp:151
+#: main.cpp:152
 msgid "Dario Massarin"
 msgstr "Dario Massarin"
 
-#: main.cpp:151 main.cpp:152 main.cpp:154
+#: main.cpp:152 main.cpp:153 main.cpp:155
 msgid "Core Developer"
 msgstr "Çekirdek Geliştirici"
 
-#: main.cpp:152
+#: main.cpp:153
 msgid "Urs Wolfer"
 msgstr "Urs Wolfer"
 
-#: main.cpp:153
+#: main.cpp:154
 msgid "Manolo Valdes"
 msgstr "Manolo Valdes"
 
-#: main.cpp:153
+#: main.cpp:154
 msgid "Core Developer, Multithreaded Plugin Author"
 msgstr "Çekirdek Geliştirici, Çoklu iş Eklenti Yazarı"
 
-#: main.cpp:154
+#: main.cpp:155
 msgid "Matthias Fuchs"
 msgstr "Matthias Fuchs"
 
-#: main.cpp:155
+#: main.cpp:156
 msgid "Javier Goday"
 msgstr "Javier Goday"
 
-#: main.cpp:155
+#: main.cpp:156
 msgid "Developer"
 msgstr "Geliştirici"
 
-#: main.cpp:156
+#: main.cpp:157
 msgid "Patrick Charbonnier"
 msgstr "Patrick Charbonnier"
 
-#: main.cpp:156 main.cpp:157 main.cpp:158
+#: main.cpp:157 main.cpp:158 main.cpp:159
 msgid "Former Developer"
 msgstr "Eski Geliştirici"
 
-#: main.cpp:157
+#: main.cpp:158
 msgid "Carsten Pfeiffer"
 msgstr "Carsten Pfeiffer"
 
-#: main.cpp:158
+#: main.cpp:159
 msgid "Matej Koss"
 msgstr "Matej Koss"
 
-#: main.cpp:159
+#: main.cpp:160
 msgid "Joris Guisson"
 msgstr "Joris Guisson"
 
-#: main.cpp:159
+#: main.cpp:160
 msgid "BTCore (KTorrent) Developer"
 msgstr "BTCore (KTorrent) Geliştiricisi"
 
-#: main.cpp:160
+#: main.cpp:161
 msgid "Mensur Zahirovic (Nookie)"
 msgstr "Mensur Zahirovic (Nookie)"
 
-#: main.cpp:160
+#: main.cpp:161
 msgid "Design of Web Interface"
 msgstr "Web Arayüzü Tasarımı"
 
-#: main.cpp:165
+#: main.cpp:166
 msgid "Start KGet with drop target"
 msgstr "KGet uygulamasını masaüstü simgesi ile birlikte başlat"
 
-#: main.cpp:166
+#: main.cpp:167
 msgid "Start KGet with hidden main window"
 msgstr "KGet uygulamasını ana penceresi gizli olarak başlat"
 
-#: main.cpp:167
+#: main.cpp:168
 msgid "Start KGet without drop target animation"
 msgstr "KGet uygulamasını masaüstü simgesi olmadan başlat"
 
-#: main.cpp:169
+#: main.cpp:170
 msgid "Execute Unit Testing"
 msgstr "Birim Testlerini Çalıştır"
 
-#: main.cpp:171
+#: main.cpp:172
 msgid "URL(s) to download"
 msgstr "İndirilecek Adres(ler)"
 
