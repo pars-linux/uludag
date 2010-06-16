@@ -214,84 +214,84 @@ msgstr "Leírás"
 
 #: yali4/gui/Ui/installwidget.py:74
 msgid "Installing Package: "
-msgstr ""
+msgstr "Csomag telepítése:"
 
 #: yali4/gui/Ui/keyboardwidget.py:61
 msgid "Choose a keyboard layout:"
-msgstr ""
+msgstr "Válassza ki a billentyűzetkiosztást:"
 
 #: yali4/gui/Ui/keyboardwidget.py:62
 msgid "Test selected layout:"
-msgstr ""
+msgstr "Kiválasztott elrendezés tesztelése:"
 
 #: yali4/gui/Ui/main.py:223
 msgid "Yali4"
-msgstr ""
+msgstr "Yali4"
 
 #: yali4/gui/Ui/main.py:225
 msgid "Screen Name"
-msgstr ""
+msgstr "Képernyő név"
 
 #: yali4/gui/Ui/main.py:227
 msgid "Details about the screen"
-msgstr ""
+msgstr "Részletek a képernyőn"
 
 #: yali4/gui/Ui/main.py:228
 msgid "..."
-msgstr ""
+msgstr "..."
 
 #: yali4/gui/Ui/main.py:229 yali4/gui/YaliWindow.py:297
 msgid "Release Notes"
-msgstr ""
+msgstr "Kiadási megjegyzések"
 
 #: yali4/gui/Ui/main.py:230
 msgid "Toggle Help"
-msgstr ""
+msgstr "Segítség választása"
 
 #: yali4/gui/Ui/main.py:231
 msgid "Previous Screen"
-msgstr ""
+msgstr "Előző képernyő"
 
 #: yali4/gui/Ui/main.py:232
 msgid "Back"
-msgstr ""
+msgstr "Vissza"
 
 #: yali4/gui/Ui/main.py:233
 msgid "Next Screen"
-msgstr ""
+msgstr "Következő képernyő"
 
 #: yali4/gui/Ui/main.py:234 yali4/gui/ScrSummary.py:83
 #: yali4/gui/ScrSummary.py:326
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: yali4/gui/Ui/partedit.py:167
 msgid "Partition 1 on FUJISTU - /dev/sda1"
-msgstr ""
+msgstr "Partíció 1 FUJISTU - / dev/sda1"
 
 #: yali4/gui/Ui/partedit.py:168
 msgid "Use :"
-msgstr ""
+msgstr "Használata:"
 
 #: yali4/gui/Ui/partedit.py:169
 msgid "Size :"
-msgstr ""
+msgstr "Méret:"
 
 #: yali4/gui/Ui/partedit.py:170 yali4/gui/Ui/partresize.py:93
 msgid " MB"
-msgstr ""
+msgstr "MB"
 
 #: yali4/gui/Ui/partedit.py:171
 msgid "Format :"
-msgstr ""
+msgstr "Formátum:"
 
 #: yali4/gui/Ui/partedit.py:172
 msgid "Yes, format this partition"
-msgstr ""
+msgstr "Igen, formázd ezt a partíciót"
 
 #: yali4/gui/Ui/partedit.py:173
 msgid "File System :"
-msgstr ""
+msgstr "Fájlrendszer:"
 
 #: yali4/gui/Ui/partedit.py:174
 msgid "Delete Partition"
