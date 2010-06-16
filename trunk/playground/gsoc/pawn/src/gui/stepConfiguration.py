@@ -26,9 +26,7 @@ class Widget(QtGui.QWidget, StepWidget):
 
 
     def driveChanged(self, index):
-	h=humanReadableSize
 	free = self.freeSpaceOnDrive()
-	total = self.totalSpaceOnDrive()
 	self.gui.lblDriveFreeSpace.setText('%s free' % (humanReadableSize(free)))
 
 	self.updateProgressBarRange()
