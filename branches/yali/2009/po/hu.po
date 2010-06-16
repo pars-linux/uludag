@@ -54,7 +54,6 @@ msgid "Form1"
 msgstr "Form1"
 
 #: yali4/gui/Ui/autopartwidget.py:116
-#, fuzzy
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -129,55 +128,55 @@ msgstr "Válasszuk ki a boot loader telepítési helyét"
 
 #: yali4/gui/Ui/bootloaderwidget.py:82 yali4/gui/Ui/rescuegrubwidget.py:79
 msgid "First bootable disk (recommended)"
-msgstr ""
+msgstr "Első rendszerindító lemez (ajánlott)"
 
 #: yali4/gui/Ui/bootloaderwidget.py:83 yali4/gui/Ui/rescuegrubwidget.py:80
 msgid "Pardus installed partition"
-msgstr ""
+msgstr "Pardus telepített partíció"
 
 #: yali4/gui/Ui/bootloaderwidget.py:84 yali4/gui/Ui/rescuegrubwidget.py:81
 msgid "Selected disk below"
-msgstr ""
+msgstr "Kiválasztott lemez alatt"
 
 #: yali4/gui/Ui/bootloaderwidget.py:85
 msgid "Don't install bootloader"
-msgstr ""
+msgstr "Ne telepítse a boot-loader-t"
 
 #: yali4/gui/Ui/bootloaderwidget.py:86
 msgid "Automatically add other operating systems to the GRUB Menu"
-msgstr ""
+msgstr "Automatikusan hozzáadja az egyéb operációs rendszereket GRUB menühöz"
 
 #: yali4/gui/Ui/checkcdwidget.py:82
 msgid "You can check the integrity of the packages in installation media. Although this is an optional step, we encourage you to do it in order to avoid any possible errors in the installation process."
-msgstr ""
+msgstr "Ellenőrizni tudja a csomagok integritását a telepítő médián. Bár ez a lépés nem kötelező, azt javasoljuk, hogy ezt tegye meg annak érdekében, hogy elkerülhesse az esetleges hibákat a telepítés során."
 
 #: yali4/gui/Ui/checkcdwidget.py:83 yali4/gui/ScrCheckCD.py:56
 msgid "Check Packages Integrity"
-msgstr ""
+msgstr "Ellenőrizd a csomagok integritását"
 
 #: yali4/gui/Ui/connectionlist.py:71
 msgid "To use PiSi History support, you may need to be online. You can use a connection profile from the list below."
-msgstr ""
+msgstr "Ahhoz, hogy használni tudja PiSi History támogatást, be kell jelentkeznie a hálózatba. Használhatja a kapcsolat profilt a lenti listából."
 
 #: yali4/gui/Ui/connectionlist.py:73
 msgid "Connect"
-msgstr ""
+msgstr "Összeköt"
 
 #: yali4/gui/Ui/datetimewidget.py:91
 msgid "The current time"
-msgstr ""
+msgstr "A jelenlegi idő"
 
 #: yali4/gui/Ui/datetimewidget.py:92 yali4/gui/Ui/datetimewidget.py:93
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: yali4/gui/Ui/datetimewidget.py:94
 msgid "Time Zone"
-msgstr ""
+msgstr "Időzóna"
 
 #: yali4/gui/Ui/exception.py:60 yali4/__init__.py:69
 msgid "Error"
-msgstr ""
+msgstr "Hiba"
 
 #: yali4/gui/Ui/exception.py:61
 msgid ""
@@ -187,28 +186,31 @@ msgid ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Please fill a bug report at <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> attaching the following backtrace.</p></body></html>"
 msgstr ""
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\"> \\ N <html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\"> \\ N <p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"> Kérjük, töltse ki a hibajelentést <span style=\" font-weight:600;\">http://bugs.pardus.org.tr/</span> csatolva a következő visszakövetést. </p></body></html>"
 
 #: yali4/gui/Ui/exception.py:66
 msgid "Show Backtrace"
-msgstr ""
+msgstr "Visszakövetés megjenítése"
 
 #: yali4/gui/Ui/exception.py:67 yali4/gui/Ui/rescuewidget.py:94
 #: yali4/gui/ScrGoodbye.py:85 yali4/gui/ScrRescueFinish.py:87
 #: yali4/gui/ScrSummary.py:71 yali4/installer.py:702
 msgid "Reboot"
-msgstr ""
+msgstr "Újraindítás"
 
 #: yali4/gui/Ui/installwidget.py:71
 msgid "Form3"
-msgstr ""
+msgstr "Form3"
 
 #: yali4/gui/Ui/installwidget.py:72
 msgid "pix"
-msgstr ""
+msgstr "pix"
 
 #: yali4/gui/Ui/installwidget.py:73
 msgid "Desc"
-msgstr ""
+msgstr "Leírás"
 
 #: yali4/gui/Ui/installwidget.py:74
 msgid "Installing Package: "
