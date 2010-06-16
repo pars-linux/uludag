@@ -515,11 +515,11 @@ msgstr "A Pardus 2009.2 előtelepített nyílt forráskódú asztali környezete
 
 #: yali4/gui/descSlide.py:21
 msgid "With the arrival of KDE 4.4, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin."
-msgstr ""
+msgstr "A KDE 4.4 érkezésével, a Konqueror helyébe egy új és nagyon tehetséges fájlkezelő kerül, a Dolphin. A Dolphin könnyen használható, és a mappák megtekintésén túl lehetővé teszi, hogy csoportosítsuk őket különböző módokon, a hozzáadott funkciókkal pedig részletes információk birtokába juthatunk használatával. Ha bármikor szükséges a mappák kezelése, akkor arra Dolphin a legalkalmasabb."
 
 #: yali4/gui/descSlide.py:22
 msgid "With Pardus 2009.2, Kpdf is replaced with Okular. Okular supports many file formats and you can view all your files without any additional software, take notes on bookmarks on them."
-msgstr ""
+msgstr "A Pardus 2009.2-ben a Kpdf helyére a Okular kerül. Az Okular támogat számos fájlformátumot, és megtekintheti az összes fájlját további szoftverek hozzáadása nélkül, továbbá használhat jegyzeteket és könyvjelzőket."
 
 #: yali4/gui/descSlide.py:23
 msgid "Pardus includes many genuine technologies aiming for an easier use and management. TASMA has been replaced with System Manager in Pardus 2009.2, but you will still find all these management tools built into the System Manager interface."
@@ -575,23 +575,23 @@ msgstr ""
 
 #: yali4/gui/DiskWidgets.py:87
 msgid "Manual Partitioning selected."
-msgstr ""
+msgstr "Manuális particionálás kiválasztva."
 
 #: yali4/gui/DiskWidgets.py:192
 #, python-format
 msgid "'Install Root' size must be larger than %s MB."
-msgstr ""
+msgstr "\"Gyökérpartíció telepítés\" mérete nagyobb legyen, mint% s MB."
 
 #: yali4/gui/DiskWidgets.py:222 yali4/gui/ScrBootloader.py:69
 #: yali4/gui/ScrKahyaCheck.py:99 yali4/gui/ScrPartitionAuto.py:71
 #: yali4/gui/ScrRescue.py:48
 msgid "Can't find a storage device!"
-msgstr ""
+msgstr "Nem található tároló eszköz!"
 
 #: yali4/gui/DiskWidgets.py:238
 #, python-format
 msgid "%0.1f GB free"
-msgstr ""
+msgstr "% 0.1f GB szabad"
 
 #: yali4/gui/DiskWidgets.py:240
 #, python-format
