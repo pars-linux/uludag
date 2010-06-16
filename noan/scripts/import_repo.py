@@ -96,7 +96,7 @@ def fetchIndex(target, tmp="/tmp"):
 def updateDB(path_source, path_stable, path_test, options):
     from django.core.mail import send_mail
     from django.contrib.auth.models import User
-    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces
+    from noan.repository.models import Distribution, Source, Package, Binary, Update, BuildDependency, RuntimeDependency, Replaces, SourcePackageDetail, IsA, License, Summary, Description, BinaryPackageDetail
     from noan.profile.models import Profile
 
     def createUser(email, name):
@@ -120,7 +120,7 @@ def updateDB(path_source, path_stable, path_test, options):
             print '    New developer: %s' % username
             # E-mail password
             data = {"username": username, "password": password, "name": name, "email": email}
-            send_mail(MAIL_SUBJECT % data, MAIL_BODY % data, 'no-reply@pardus.org.tr', [email])
+            #send_mail(MAIL_SUBJECT % data, MAIL_BODY % data, 'no-reply@pardus.org.tr', [email])
         return user
 
     def parseSourceIndex(_index):
@@ -155,13 +155,35 @@ def updateDB(path_source, path_stable, path_test, options):
                 dependency = BuildDependency(source=source, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
                 dependency.save()
 
+            # Create the source package information
+            part_of = pspec.source.partOf
+            source_info = SourcePackageDetail.objects.create(part_of=part_of)
+            for is_a in pspec.source.isA:
+                print '     IsA: %s' % is_a
+                source_info.isa_set.create(name=is_a)
+            for license in pspec.source.license:
+                print '     License: %s' % license
+                source_info.license_set.create(name=license)
+            summary = pspec.source.summary
+            for language in summary.keys():
+                print '     Summary Language: %s' % language
+                print '     Summary Text: %s' % summary[language]
+                source_info.summary_set.create(language=language, text=summary[language])
+            description = pspec.source.description
+            for language in description.keys():
+                print '     Description Language: %s' % language
+                print '     Description Text: %s' % description[language]
+                source_info.description_set.create(language=language, text=description[language])
+
             # Add or update package info
             for pack in pspec.packages:
                 try:
                     package = Package.objects.get(name=pack.name, source=source)
+                    if package.info == source_info: source_info.delete()
+                    else: package.info.sourcepackagedetail = source_info
                     package.save()
                 except Package.DoesNotExist:
-                    package = Package(name=pack.name, source=source)
+                    package = Package(name=pack.name, source=source, info=source_info)
                     package.save()
                     print '    New package: %s' % package.name
 
@@ -241,17 +263,26 @@ def updateDB(path_source, path_stable, path_test, options):
             if len(updates) == 0:
                 return
 
+            # Create the binary package information
+            binary_info = BinaryPackageDetail.objects.create(architecture=pisi_package.architecture, installed_size=int(pisi_package.installedSize), package_size=int(pisi_package.packageSize), package_hash=pisi_package.packageHash)
+
             update = updates[0]
             try:
                 binary = Binary.objects.get(no=pisi_package.build, package=package)
+                if binary.info == binary_info: binary_info.delete()
+                else: binary.info = binary_info
                 if _type == 'stable' and binary.resolution == 'pending':
                     binary.resolution = 'released'
                     binary.save()
                     print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
             except Binary.DoesNotExist:
-                binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution)
+                binary = Binary(no=pisi_package.build, package=package, update=update, resolution=resolution, info=binary_info)
                 binary.save()
                 print '  Marking %s-%s as %s' % (package.name, pisi_package.build, binary.resolution)
+            print '     Architecture: %s' % (binary.info.architecture)
+            print '     Installed Size: %s' % (binary.info.installed_size)
+            print '     Package Size: %s' % (binary.info.package_size)
+            print '     Hash: %s' % (binary.info.package_hash)
 
             if _type == 'test':
                 # Mark other 'pending' binaries as 'reverted'
