@@ -257,5 +257,6 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.searchLine.clear()
         self.progressDialog.hide()
         self.state.setState(StateManager.INSTALL)
+        self.setActionButton()
         restoreCursor()
         self.initialize()
