@@ -28,6 +28,7 @@ from summarydialog import SummaryDialog
 from operationmanager import OperationManager
 from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
+from modemanager import ModeManager
 
 from pmutils import *
 
@@ -38,6 +39,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.searchButton.setIcon(KIcon("edit-find"))
         self.statusUpdater = StatusUpdater()
         self.state = StateManager(self)
+        self.mode = ModeManager()
         self.basket = BasketDialog(self.state)
         self.initialize()
         self.setSelectAll()
@@ -248,3 +250,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
         self.statusUpdater.wait()
         self.basket.show()
         restoreCursor()
+
+    def switchMode(self, mode):
+        self.mode.setMode(mode)
+        waitCursor()
+        self.searchLine.clear()
+        self.progressDialog.hide()
+        self.state.setState(StateManager.INSTALL)
+        restoreCursor()
+        self.initialize()
