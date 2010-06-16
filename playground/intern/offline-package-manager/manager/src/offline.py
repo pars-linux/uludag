@@ -23,8 +23,6 @@ import pisi
 from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 
-from pisi.db.packagedb import PackageDB
-
 import backend
 
 working_path = os.getenv("HOME") + "/offline"
