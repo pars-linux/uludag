@@ -523,11 +523,11 @@ msgstr "A Pardus 2009.2-ben a Kpdf helyére a Okular kerül. Az Okular támogat 
 
 #: yali4/gui/descSlide.py:23
 msgid "Pardus includes many genuine technologies aiming for an easier use and management. TASMA has been replaced with System Manager in Pardus 2009.2, but you will still find all these management tools built into the System Manager interface."
-msgstr ""
+msgstr "A Pardus a különféle technológiák könnyebb és egyszerűbb felhasználását célozza meg. A TASMA fel lett váltva a Rendszer Menedzserre a  Pardus 2009.2-ben, de még mindig megtalálhatja az összes beépített eszköz kezelési beállítását az új felületen."
 
 #: yali4/gui/descSlide.py:24
 msgid "Kaptan (Turkish for 'Captain') is what welcomes you to your Pardus installation. Using Kaptan, you can configure your desktop, changing the taskbar's location, wallpaper and desktop theme, and internet connection settings. Kaptan also allows you to add the Contribution Repository to your package management settings. Even more, Kaptan includes options to set intelligent search and an online Pardus Beginner's Tour."
-msgstr ""
+msgstr "A Kaptan (török a \"kapitány\") alkalmazás fogja várni az első indításánál a telepítést követően. A Kaptan segítségével beállíthatja az asztalon a tálca helyét, a háttérképet, az asztali témát, és az internet kapcsolatát. A Kaptan azt is lehetővé teszi, hogy felvehesse a közreműködő programozók csomagtárolóját. A Kaptan lehetőséget ad az intelligens asztali keresésre és az Online Pardus Beginner's Tour használatához."
 
 #: yali4/gui/descSlide.py:25
 msgid "It is possible to install hundreds of software found in Pardus' package repositories with a single click. Using the Package Manager, you can install PiSi packages with the click of a button, not having to deal with screen after screen of detailed configuration options. After package installations, all you need to do is to start the applications. It is all that easy!"
