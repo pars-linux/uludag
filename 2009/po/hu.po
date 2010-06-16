@@ -382,79 +382,79 @@ msgstr "Válasszuk a működés és <b>kattintson</b> a Tovább gombra ..."
 
 #: yali4/gui/Ui/rescuewidget.py:91
 msgid "Reinstall GRUB (boot problems)"
-msgstr ""
+msgstr "Telepítse újra a GRUB-ot (boot problémák)"
 
 #: yali4/gui/Ui/rescuewidget.py:92
 msgid "PiSi history (undo package operations)"
-msgstr ""
+msgstr "PiSi History (csomag műveletek visszavonása)"
 
 #: yali4/gui/Ui/rescuewidget.py:93
 msgid "Change password (lost password)"
-msgstr ""
+msgstr "Jelszó módosítása (elfelejtett jelszó)"
 
 #: yali4/gui/Ui/rootpasswidget.py:180
 msgid "<p align=\"left\">System administrator user (root) handles important system maintanence tasks. Enter a password for this special user and do not forget this password. Keep in mind that for privacy reasons, you shouldn't write this password elsewhere.</p>"
-msgstr ""
+msgstr "<p align=\"left\"> Rendszergazda felhasználó (root) kezeli a rendszer karbantartásához fontos feladatokat. Adja meg a jelszót ehhez a speciális felhasználóhoz és ne felejtse el. Ne feledje, hogy adatvédelmi okokból, ne írjuk ezt a jelszót be máshol. </p>"
 
 #: yali4/gui/Ui/rootpasswidget.py:181
 msgid "System administrator password:"
-msgstr ""
+msgstr "Rendszergazda jelszó:"
 
 #: yali4/gui/Ui/rootpasswidget.py:182
 msgid "System administrator password (again):"
-msgstr ""
+msgstr "Rendszergazda jelszó (ismét):"
 
 #: yali4/gui/Ui/rootpasswidget.py:191
 msgid "Hostname:"
-msgstr ""
+msgstr "Hostnév:"
 
 #: yali4/gui/Ui/setupuserswidget.py:177
 msgid "Real Name:"
-msgstr ""
+msgstr "Valódi neve:"
 
 #: yali4/gui/Ui/setupuserswidget.py:178
 msgid "User Name:"
-msgstr ""
+msgstr "Felhasználói név:"
 
 #: yali4/gui/Ui/setupuserswidget.py:179
 msgid "Password:"
-msgstr ""
+msgstr "Jelszó:"
 
 #: yali4/gui/Ui/setupuserswidget.py:180
 msgid "Password (again):"
-msgstr ""
+msgstr "Jelszó (újra):"
 
 #: yali4/gui/Ui/setupuserswidget.py:181
 msgid "User ID"
-msgstr ""
+msgstr "Felhasználói azonosító"
 
 #: yali4/gui/Ui/setupuserswidget.py:182
 msgid "Give administrator privileges to this user"
-msgstr ""
+msgstr "Adjon meg rendszergazdai jogosultsággal bíró felhasználót"
 
 #: yali4/gui/Ui/setupuserswidget.py:183
 msgid "Not recommended"
-msgstr ""
+msgstr "Nem ajánlott"
 
 #: yali4/gui/Ui/setupuserswidget.py:184
 msgid "Do not ask any password to this user"
-msgstr ""
+msgstr "Ne kérdezzen semmilyen jelszót ettől a felhasználótól"
 
 #: yali4/gui/Ui/setupuserswidget.py:185
 msgid "Advanced"
-msgstr ""
+msgstr "Haladó"
 
 #: yali4/gui/Ui/setupuserswidget.py:186
 msgid "Edit Selected User"
-msgstr ""
+msgstr "Kiválasztott felhasználó szerkesztése"
 
 #: yali4/gui/Ui/setupuserswidget.py:187
 msgid "Delete Selected User"
-msgstr ""
+msgstr "Kiválasztott felhasználó törlése"
 
 #: yali4/gui/Ui/setupuserswidget.py:188
 msgid "Auto Login User :"
-msgstr ""
+msgstr "Felhasználó automatikus bejelentkeztetése:"
 
 #: yali4/gui/Ui/setupuserswidget.py:189
 msgid "Auto Login Disabled"
