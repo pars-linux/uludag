@@ -73,15 +73,80 @@ class Source(models.Model):
         unique_together = ('name', 'distribution')
 
 
+class SourcePackageDetail(models.Model):
+    """
+        Database model to display the information about source package
+
+        isa: The category that the package belongs to, ForeignKey
+        part_of: Group of the package
+        license: License of the package, ForeignKey
+        summary: Summary of the source package description, ForeignKey
+        description: Description of the package, ForeignKey
+    """
+    part_of = models.CharField(max_length=64, blank=True)
+
+    class Meta:
+        verbose_name = _('package detail')
+        verbose_name_plural = _('package details')
+
+
+class IsA(models.Model):
+    """
+        Database model to keep the category that the package belongs to
+    """
+    source = models.ForeignKey(SourcePackageDetail, verbose_name=_('source package detail'))
+    name = models.CharField(max_length=25, blank=True)
+
+    def __unicode__(self):
+        return name
+
+
+class License(models.Model):
+    """
+        Database model to keep the license information of the package
+    """
+    source = models.ForeignKey(SourcePackageDetail, verbose_name=_('license'))
+    name = models.CharField(max_length=50, blank=True)
+
+    def __unicode__(self):
+        return name
+
+
+class Summary(models.Model):
+    """
+        Database model to keep the summary of teh source package with language information
+    """
+    source = models.ForeignKey(SourcePackageDetail, verbose_name=_('description'))
+    language = models.CharField(max_length=5, default='en', blank=True)
+    text = models.TextField(blank=True)
+    
+    def __unicode__(self):
+        return text
+
+
+class Description(models.Model):
+    """
+        Database model to keep the description of the source package with its language information
+    """
+    source = models.ForeignKey(SourcePackageDetail, verbose_name=_('summary'))
+    language = models.CharField(max_length=5, default='en', blank=True)
+    text = models.TextField(blank=True)
+    
+    def __unicode__(self):
+        return text
+
+
 class Package(models.Model):
     """
         Database model for package in repository.
 
         name: Name of the package
         source: Source that contains the package
+        info: Information about the source of the package
     """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
+    info = models.ForeignKey(SourcePackageDetail, verbose_name=_('source package details'))
 
     def __unicode__(self):
         return _('%(package)s (source: %(source)s, distro: %(distro)s)') % {'package': self.name, 'source': self.source.name, 'distro': self.source.distribution}
@@ -94,6 +159,23 @@ class Package(models.Model):
         verbose_name_plural = _('packages')
         ordering = ['name']
         unique_together = ('name', 'source')
+
+
+class BinaryPackageDetail(models.Model):
+    """
+        architecture: Compiled arctitecture of the package
+        installed_size: Installed size of the package in bytes
+        package_size: Package size in bytes
+        package_hash: Hash of the package to be checked
+    """
+    architecture = models.CharField(max_length=10, verbose_name=_('architecture'))
+    installed_size = models.IntegerField(verbose_name=_('installed size'), default=0, blank=True)
+    package_size = models.IntegerField(verbose_name=_('package size'))
+    package_hash = models.CharField(max_length=64, verbose_name=_('package hash'))
+
+    class Meta:
+        verbose_name = _('binary package detail')
+        verbose_name_plural = _('binary package details')
 
 
 class BuildDependency(models.Model):
@@ -235,11 +317,13 @@ class Binary(models.Model):
         package: Package
         update: Update
         resolution: 'pending', 'released' or 'reverted'. Import scripts set this value.
+        info: BinaryPackageDetail
     """
 
     no = models.IntegerField(verbose_name=_('build no'))
     package = models.ForeignKey(Package, verbose_name=_('package'))
     update = models.ForeignKey(Update, verbose_name=_('update'))
+    info = models.ForeignKey(BinaryPackageDetail, verbose_name=_('binary package details'))
     resolution = models.CharField(max_length=32, choices=RELEASE_RESOLUTIONS, verbose_name=_('resolution'))
     linked_binary = models.ManyToManyField('Binary', symmetrical=False)
 
