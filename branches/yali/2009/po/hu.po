@@ -458,60 +458,60 @@ msgstr "Felhasználó automatikus bejelentkeztetése:"
 
 #: yali4/gui/Ui/setupuserswidget.py:189
 msgid "Auto Login Disabled"
-msgstr ""
+msgstr "Automatikus bejelentkezés letiltva"
 
 #: yali4/gui/Ui/setupuserswidget.py:190
 msgid "Users:"
-msgstr ""
+msgstr "Felhasználók:"
 
 #: yali4/gui/Ui/setupuserswidget.py:191 yali4/gui/ScrUsers.py:262
 #: yali4/gui/ScrUsers.py:304 yali4/gui/ScrUsers.py:374
 msgid "Create User"
-msgstr ""
+msgstr "Felhasználó létrehozása"
 
 #: yali4/gui/Ui/summarywidget.py:54
 msgid "If you check this, Yalı will install all language packages in this release"
-msgstr ""
+msgstr "Ha bejelöli ezt, a Yalı telepíti az összes nyelvi csomagot, ami ebben a kiadásban támogatott"
 
 #: yali4/gui/Ui/summarywidget.py:55
 msgid "Install all language packages"
-msgstr ""
+msgstr "Telepítse az összes nyelvi csomagok"
 
 #: yali4/gui/Ui/welcomewidget.py:93
 msgid "All software developed by TUBITAK/UEKAE is licensed under GNU/GPL. Other software have their corresponding licenses. To install and/or use Pardus, you must accept them. Do you accept GNU/GPL and other, corresponding licences?"
-msgstr ""
+msgstr "Minden TUBITAK / UEKAE által kifejlesztett szoftver GNU / GPL licenc alatt áll. Egyéb szoftverek a megfelelő engedélyekkel bírnak. A Pardus telepítéséhez és / vagy használatához el kell fogadni ezeket. Elfogadja a GNU / GPL és egyéb, megfelelő engedélyeket?"
 
 #: yali4/gui/Ui/welcomewidget.py:94
 msgid "Read GPL"
-msgstr ""
+msgstr "GPL elolvasása"
 
 #: yali4/gui/Ui/welcomewidget.py:95
 msgid "Reboot System"
-msgstr ""
+msgstr "Rendszer újraindítása"
 
 #: yali4/gui/Ui/welcomewidget.py:96
 msgid "Yes, I accept."
-msgstr ""
+msgstr "Igen, elfogadom."
 
 #: yali4/gui/Ui/welcomewidget.py:97
 msgid "No, I don't accept."
-msgstr ""
+msgstr "Nem, nem fogadom el."
 
 #: yali4/gui/debugger.py:28
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
 #: yali4/gui/descSlide.py:18
 msgid "Hello, there. The easiest-ever install tool YALI has begun Pardus installation. It is now time to relax and learn about some of the features of Pardus 2009.2 while it is being installed."
-msgstr ""
+msgstr "Üdvözlet felhasználó! Minden idők legegyszerűbb telepítő eszköze, a YALI megkezdte a Pardus telepítését. Elérkezett az idő a kikapcsolódásra, és hogy megtanulja néhány jellemzőjét a Pardus 2009.2-nek, amíg folyamatban van telepítés."
 
 #: yali4/gui/descSlide.py:19
 msgid "Pardus 2009.2 is a Linux distribution that everybody can easily install and use. With Pardus 2009.2, you can do anything that you could otherwise do with other operating systems. With its fast, secure and stable infrastructure, Pardus opens the path to software libre."
-msgstr ""
+msgstr "Pardus 2009.2 olyan Linux disztribúció, amely mindenkinek könnyen telepíthető és használható. A Pardus 2009.2-vel bármit megtehetsz, amit egyébként más operációs rendszerekkel. A gyors, biztonságos és stabil infrastruktúrára épülő Pardus megnyitja az utat a szabad szoftverek világába."
 
 #: yali4/gui/descSlide.py:20
 msgid "Pardus 2009.2 comes preinstalled with the open source desktop environment KDE 4.4. You will have a much better desktop experience compared to what you have seen so far. Following the installation, you can choose to use the classical desktop view that includes icons to your files and folders, or you can have any number of the preinstalled plasma widgets on your desktop and add interesting functionality to your view. You can have an analog clock on your desktop; even more, you can have a real-time weather report, your notes and RSS feeds right on your desktop."
-msgstr ""
+msgstr "A Pardus 2009.2 előtelepített nyílt forráskódú asztali környezete a KDE 4.4. Sokkal jobb asztali élményt képes nyújtani, mint amit eddig láttunk. A telepítést követően tetszőlegesen variálhatjuk a klasszikus munkakörnyezetet, ami magába foglalja az ikonokat és a mappákat, illetve tetszőleges számú, előre telepített plazma alkalmazást rakhatunk ki az asztalra a jobb felhasználói élmény elérése érdekében. Így kerülhet az asztalunkra analóg óra, vagy akár valós-idejű időjárás jelentés, jegyzetek és RSS hírolvasó kisalkalmazás."
 
 #: yali4/gui/descSlide.py:21
 msgid "With the arrival of KDE 4.4, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin."
