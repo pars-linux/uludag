@@ -295,27 +295,27 @@ msgstr "Fájlrendszer:"
 
 #: yali4/gui/Ui/partedit.py:174
 msgid "Delete Partition"
-msgstr ""
+msgstr "Partíció törlése"
 
 #: yali4/gui/Ui/partedit.py:175
 msgid "Resize Partition"
-msgstr ""
+msgstr "Partíció átméretezése"
 
 #: yali4/gui/Ui/partedit.py:176
 msgid "Changes will be applied after Summary Screen."
-msgstr ""
+msgstr "A változásokat az összefoglaló képernyő lehet alkalmazni."
 
 #: yali4/gui/Ui/partedit.py:177
 msgid "Refresh Disks"
-msgstr ""
+msgstr "Lemezek frissítése"
 
 #: yali4/gui/Ui/partedit.py:178
 msgid "Reset All Changes"
-msgstr ""
+msgstr "Minden változás visszavonása"
 
 #: yali4/gui/Ui/partedit.py:179
 msgid "Apply"
-msgstr ""
+msgstr "Alkalmazás"
 
 #: yali4/gui/Ui/partresize.py:86
 msgid ""
@@ -330,55 +330,55 @@ msgstr ""
 
 #: yali4/gui/Ui/partresize.py:94 yali4/gui/Ui/setupuserswidget.py:192
 msgid "Cancel"
-msgstr ""
+msgstr "Mégsem"
 
 #: yali4/gui/Ui/partresize.py:95
 msgid "Resize"
-msgstr ""
+msgstr "Átméretezés"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:106
 msgid "User to change password of:"
-msgstr ""
+msgstr "Jelszó változás a felhasználónál:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:107
 msgid "New password:"
-msgstr ""
+msgstr "Új jelszó:"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:108
 msgid "New password (again):"
-msgstr ""
+msgstr "Új jelszó (ismét):"
 
 #: yali4/gui/Ui/rescuepasswordwidget.py:109
 msgid "Update Password"
-msgstr ""
+msgstr "Jelszó frissítése"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:69
 msgid "Connection Status:"
-msgstr ""
+msgstr "Kapcsolat állapota:"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:70
 msgid "Not Connected"
-msgstr ""
+msgstr "Nincs csatlakoztatva"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:71
 msgid "To use PiSi's history feature, you may need to be online. Select connection profile."
-msgstr ""
+msgstr "Ahhoz, hogy használni tudja PiSi History funkciót, be kell jelentkeznie. Válasszuk ki a kapcsolat profilt."
 
 #: yali4/gui/Ui/rescuepisiwidget.py:72
 msgid "Select Connection"
-msgstr ""
+msgstr "Válasszunk a kapcsolatot"
 
 #: yali4/gui/Ui/rescuepisiwidget.py:73
 msgid "Operation to undo:"
-msgstr ""
+msgstr "Művelet visszavonása:"
 
 #: yali4/gui/Ui/rescuewidget.py:89
 msgid "Select the partition Pardus is installed on"
-msgstr ""
+msgstr "Válassza ki a partíciót, amelyre a Pardus telepítve van"
 
 #: yali4/gui/Ui/rescuewidget.py:90
 msgid "Select operation and click <b>Next</b>..."
-msgstr ""
+msgstr "Válasszuk a működés és <b>kattintson</b> a Tovább gombra ..."
 
 #: yali4/gui/Ui/rescuewidget.py:91
 msgid "Reinstall GRUB (boot problems)"
