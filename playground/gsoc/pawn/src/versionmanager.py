@@ -41,7 +41,7 @@ class VersionManager():
         try:
             with open(self._versions_file_path,'r') as definitionsFile:
                 self._xmlContent = definitionsFile.read()
-        except IOError as err:
+        except IOError:
 	    self.err = "Could not read version definitions file."
             log.error(self.err)
             

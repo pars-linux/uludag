@@ -32,7 +32,7 @@ class Compatibility():
 	    self.winTotalMemory()
 	    self.winPopulateDisks()
 	    log.debug('Running on Windows.')
-	except (NameError, ImportError) as e:
+	except (NameError, ImportError):
 	    log.debug('Running on Linux.')
 	    # TODO: Windows systems without WMI (ME, 98, NT, 3.1 checks)
 	    self.wmi = None

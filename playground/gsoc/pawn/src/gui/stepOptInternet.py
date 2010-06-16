@@ -71,7 +71,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	    if len(proxy)==2:
 		target.updateProxy(proxy[0],proxy[1])
 	    else:
-		warning = QtGui.QMessageBox.warning(self, 'Error', 'Proxy could not be set. Invalid proxy format. i.e 4.4.4.4:4444', QtGui.QMessageBox.Ok)
+		QtGui.QMessageBox.warning(self, 'Error', 'Proxy could not be set. Invalid proxy format. i.e 4.4.4.4:4444', QtGui.QMessageBox.Ok)
 
     def mirrorChanged(self):
 	self.mirror = self.getMirrorByName(self.gui.comboMirror.currentText().split(' ')[0])
