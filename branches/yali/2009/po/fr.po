@@ -539,7 +539,7 @@ msgstr "Pardus 2009.2 vous offre la meilleure intégration de l'environnement de
 
 #: yali4/gui/descSlide.py:21
 msgid "With the arrival of KDE 4.4, Konqueror is replaced with a new and very talented file manager, Dolphin. Dolphin is easy to use, and when it comes to viewing folders, it allows you to sort them in various ways, adding functionality like grouping and detailed information right on the spot. Anything you may need on viewing folders, you have it with Dolphin."
-msgstr "Avec l'arrivée de KDE 4.4, Konqueror est remplacé par un nouveau et talentueux gestionnaire de fichier, Dolphin. Dolphin est très facile à utiliser. Il autorise plusieurs sortes de tri de dossiers, peut les grouper et afficher des informations détaillées. Il devrait satisfaire tous vos besoins."
+msgstr "Avec l'arrivée de KDE 4.4, Konqueror est remplacé par un nouveau et talentueux gestionnaire de fichiers, Dolphin. Dolphin est très facile à utiliser. Il autorise plusieurs sortes de tri de dossiers, peut les grouper et afficher des informations détaillées. Il devrait satisfaire tous vos besoins."
 
 #: yali4/gui/descSlide.py:22
 msgid "With Pardus 2009.2, Kpdf is replaced with Okular. Okular supports many file formats and you can view all your files without any additional software, take notes on bookmarks on them."
