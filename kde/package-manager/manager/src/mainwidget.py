@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009, TUBITAK/UEKAE
+# Copyright (C) 2009-2010, TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -11,19 +11,25 @@
 # Please read the COPYING file.
 #
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import *
+from PyQt4.QtGui import QPixmap
+from PyQt4.QtGui import QMessageBox
+from PyQt4.QtGui import QLabel
+from PyQt4.QtGui import QWidget
+
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QSize
+from PyQt4.QtCore import QTimer
+from PyQt4.QtCore import QVariant
+from PyQt4.QtCore import QRegExp
 
 from context import *
 from context import _time
 
-if Pds.session == pds.Kde4:
-    from ui_mainwidget_kde4 import Ui_MainWidget
-else:
-    from ui_mainwidget_x11 import Ui_MainWidget
+from ui_mainwidget_kde4 import Ui_MainWidget
 
 from packageproxy import PackageProxy
-from packagemodel import PackageModel, GroupRole
+from packagemodel import PackageModel
+from packagemodel import GroupRole
 from packagedelegate import PackageDelegate
 from progressdialog import ProgressDialog
 from statemanager import StateManager
@@ -32,8 +38,9 @@ from operationmanager import OperationManager
 from basketdialog import BasketDialog
 from statusupdater import StatusUpdater
 
-from pmutils import *
 import config
+from pmutils import waitCursor
+from pmutils import restoreCursor
 
 class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def __init__(self, parent=None, silence = False):

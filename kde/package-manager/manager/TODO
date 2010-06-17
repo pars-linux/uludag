@@ -21,3 +21,10 @@ PackageKit Tasks:
   - Get notifications from PackageKit
   - Show warnings or errors
 
+KDE Integration Tasks:
+----------------------
+
+ - Cleanup PDS stuff
+ - Use KConfig instead of QSettings
+ - Use KActions widely
+ - Cleanup imports

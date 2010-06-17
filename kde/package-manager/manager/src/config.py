@@ -10,9 +10,8 @@
 #
 # Please read the COPYING file
 
-from PyQt4.Qt import QVariant, QSettings
-
-general = 'General'
+from PyQt4.Qt import QVariant
+from PyQt4.Qt import QSettings
 
 defaults = {"SystemTray":False,
             "UpdateCheck":False,
