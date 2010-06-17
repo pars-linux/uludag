@@ -12,6 +12,7 @@
 #
 
 from PyQt4 import QtGui
+from PyQt4.QtGui import QLabel
 from PyQt4.QtCore import *
 
 from PyKDE4.kdeui import *
@@ -44,6 +45,14 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.initializeTray()
         self.connectMainSignals()
         _time()
+
+    def resizeEvent(self, event):
+        # info label should be resized automatically,
+        # if the mainwindow resized.
+        width = self.width()
+        height = self.statusBar().height() + 4
+        self.statusLabel.resize(QSize(width, height))
+        self.statusLabel.move(0, self.height() - height + 2)#self.width() / 2 - 170, self.height() / 2 - 40)
 
     def connectMainSignals(self):
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
@@ -78,10 +87,17 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
             self.tray.updateTrayUnread()
 
     def initializeStatusBar(self):
-        self.statusLabel = QtGui.QLabel(i18n("Currently your basket is empty."), self.statusBar())
-        self.statusLabel.setAlignment(Qt.AlignCenter)
-        self.statusBar().addWidget(self.statusLabel)
-        self.statusBar().setSizeGripEnabled(True)
+
+        # An info label to show a proper information,
+        # if there is no updates available.
+        self.statusLabel = QLabel(self)
+        self.statusLabel = QLabel(i18n("Currently your basket is empty."), self)
+        self.statusLabel.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
+        self.statusLabel.setStyleSheet("background-color:rgba(0,0,0,220); \
+                                 color:white; \
+                                 border: 1px solid white;")
+        # self.info.hide()
+        self.statusLabel.show()
         self.wheelMovie = QtGui.QMovie(self)
         self.statusLabel.setText(i18n("Currently your basket is empty."))
         self.wheelMovie.setFileName(":/data/wheel.mng")

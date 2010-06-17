@@ -23,6 +23,7 @@ from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
 from mainwindow_kde4 import MainWindow
 
 # Package Manager Specific Imports
+import config
 from about import aboutData
 from pmlogging import logger
 from localedata import setSystemLocale
@@ -69,6 +70,10 @@ if __name__ == '__main__':
     # Check if show-mainwindow used in sys.args to show mainWindow
     args = KCmdLineArgs.parsedArgs()
     if args.isSet("show-mainwindow"):
+        manager.show()
+
+    # If system tray disabled show mainwindow at first
+    if not config.PMConfig().systemTray():
         manager.show()
 
     # Set exception handler

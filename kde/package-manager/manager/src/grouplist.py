@@ -12,6 +12,7 @@
 #
 
 from PyQt4.QtCore import Qt
+from PyQt4.QtCore import SIGNAL
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import QVariant
 
