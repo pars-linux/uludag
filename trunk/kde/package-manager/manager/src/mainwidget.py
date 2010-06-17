@@ -15,12 +15,14 @@ from PyQt4.QtGui import QPixmap
 from PyQt4.QtGui import QMessageBox
 from PyQt4.QtGui import QLabel
 from PyQt4.QtGui import QWidget
+from PyQt4.QtGui import qApp
 
 from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QSize
 from PyQt4.QtCore import QTimer
 from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QRegExp
+from PyQt4.QtCore import SIGNAL
 
 from context import *
 from context import _time
@@ -42,9 +44,9 @@ import config
 from pmutils import waitCursor
 from pmutils import restoreCursor
 
-class MainWidget(QtGui.QWidget, Ui_MainWidget):
+class MainWidget(QWidget, Ui_MainWidget):
     def __init__(self, parent=None, silence = False):
-        QtGui.QWidget.__init__(self, parent)
+        QWidget.__init__(self, parent)
         self.setupUi(self)
         self.parent = parent
         self._selectedGroups = []
@@ -69,21 +71,25 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
     def initializeInfoBox(self):
         # An info label to show a proper information,
         # if there is no updates available.
-        self.info = QtGui.QLabel(self)
+        self.info = QLabel(self)
         self.info.setText(i18n("All Packages are up to date"))
         self.info.setAlignment(Qt.AlignVCenter | Qt.AlignCenter)
         self.info.setStyleSheet("background-color:rgba(0,0,0,220); \
                                  color:white; \
                                  border: 1px solid white; \
-                                 border-radius: 10px; \
+                                 border-top-left-radius: 10px; \
+                                 border-top-right-radius: 10px; \
                                 ")
-        self.info.resize(QSize(340, 80))
+        self.info.resize(self.size())
         self.info.hide()
 
-    def resizeEvent(self, event):
+    #def resizeEvent(self, event):
         # info label should be resized automatically,
         # if the mainwindow resized.
-        self.info.move(self.width() / 2 - 170, self.height() / 2 - 40)
+        #width = self.width()
+        #height = 40
+        #self.info.resize(QSize(width, height))
+        #self.info.move(0,self.height()-height)#self.width() / 2 - 170, self.height() / 2 - 40)
 
     def connectMainSignals(self):
         self.connect(self.actionButton, SIGNAL("clicked()"), self.showBasket)
@@ -189,10 +195,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
 
         # Show the info label if there are updates available
         # otherwise hide it.
+        """
         if self.state.inUpgrade() and self.groupList.count() == 0:
             self.info.show()
         else:
             self.info.hide()
+        """
 
     def packageFilter(self, text):
         self.packageList.model().setFilterRole(Qt.DisplayRole)
@@ -269,7 +277,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             errorTitle = i18n("Pisi Error")
             errorMessage = message
 
-        self.messageBox = QtGui.QMessageBox(errorTitle, errorMessage, QtGui.QMessageBox.Critical, QtGui.QMessageBox.Ok, 0, 0)
+        self.messageBox = QMessageBox(errorTitle, errorMessage, QMessageBox.Critical, QMessageBox.Ok, 0, 0)
         self.messageBox.show()
 
         if self.state.state == self.state.UPGRADE:
@@ -290,12 +298,12 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
                 self.emit(SIGNAL("repositoriesUpdated()"))
             self.initialize()
         else:
-            QtGui.qApp.exit()
+            qApp.exit()
 
     def actionCancelled(self):
         self.progressDialog.hide()
         if self.state.silence:
-            QtGui.qApp.exit()
+            qApp.exit()
         else:
             self.groupFilter()
 
@@ -309,7 +317,7 @@ class MainWidget(QtGui.QWidget, Ui_MainWidget):
             from PyKDE4.kdecore import KComponentData
             KNotification.event("Summary",
                     self.state.getSummaryInfo(self.operation.totalPackages),
-                    QtGui.QPixmap(),
+                    QPixmap(),
                     None,
                     KNotification.CloseOnTimeout,
                     KComponentData("package-manager", "package-manager", KComponentData.SkipMainComponentRegistration)
