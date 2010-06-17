@@ -11,27 +11,28 @@
 # Please read the COPYING file.
 #
 
-import context as ctx
+# Package Manager Version String
+version = "2.9.0"
 
-version = "2.2.4"
+# PyKDE4 Imports
+from PyKDE4.kdecore import ki18n, KAboutData
 
-if ctx.Pds.session == ctx.pds.Kde4:
-    from PyKDE4.kdecore import ki18n, KAboutData
+# Application Data
+appName     = "package-manager"
+catalog     = appName
+programName = ki18n("Package Manager")
+description = ki18n("Package Manager")
+license     = KAboutData.License_GPL
+copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
+text        = ki18n(None)
+homePage    = "http://www.pardus.org.tr/eng/projects"
+bugEmail    = "bugs@pardus.org.tr"
+aboutData   = KAboutData(appName, catalog, programName, version,
+                         description, license, copyright, text,
+                         homePage, bugEmail)
 
-    # Application Data
-    appName     = "package-manager"
-    catalog     = appName
-    programName = ki18n("Package Manager")
-    description = ki18n("Package Manager")
-    license     = KAboutData.License_GPL
-    copyright   = ki18n("(c) 2009-2010 TUBITAK/UEKAE")
-    text        = ki18n(None)
-    homePage    = "http://www.pardus.org.tr/eng/projects"
-    bugEmail    = "bugs@pardus.org.tr"
-    aboutData   = KAboutData(appName, catalog, programName, version, \
-                    description, license, copyright, text, homePage, bugEmail)
+# Authors
+aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Developer"))
+aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("First Author"))
+aboutData.setProgramIconName(":/data/package-manager.png")
 
-    # Authors
-    aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Developer"))
-    aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("First Author"))
-    aboutData.setProgramIconName(":/data/package-manager.png")

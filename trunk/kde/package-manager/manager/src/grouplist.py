@@ -11,17 +11,21 @@
 # Please read the COPYING file.
 #
 
-from PyQt4 import QtGui
-from PyQt4.QtCore import *
+from PyQt4.QtCore import Qt
+from PyQt4.QtCore import QSize
+from PyQt4.QtCore import QVariant
+
+from PyQt4.QtGui import QListWidget
+from PyQt4.QtGui import QListWidgetItem
 
 import backend
 
 from context import *
 from statemanager import StateManager
 
-class GroupList(QtGui.QListWidget):
+class GroupList(QListWidget):
     def __init__(self, parent=None):
-        QtGui.QListWidget.__init__(self, parent)
+        QListWidget.__init__(self, parent)
         self.iface = backend.pm.Iface()
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
 
@@ -50,7 +54,7 @@ class GroupList(QtGui.QListWidget):
             package_count = content[2] #len(self.state.packages())
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
-        item = QtGui.QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
+        item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
 

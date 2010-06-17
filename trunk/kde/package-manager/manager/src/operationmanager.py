@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2009 TUBITAK/UEKAE
+# Copyright (C) 2009-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,12 +12,13 @@
 
 import time
 
-from PyQt4.QtCore import QObject, SIGNAL
+from PyQt4.QtCore import QObject
+from PyQt4.QtCore import SIGNAL
 
 import context as ctx
 i18n = ctx.Pds.i18n
 
-from pmutils import *
+from pmutils import humanReadableSize
 from pmlogging import logger
 
 class OperationManager(QObject):

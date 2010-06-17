@@ -11,81 +11,69 @@
 # Please read the COPYING file.
 #
 
-import os
+# Python Imports
 import sys
-import traceback
-import context as ctx
-
-from PyQt4 import QtGui
-from PyQt4.QtCore import *
-
 import dbus
-
-from localedata import setSystemLocale
-from pmlogging import logger
-import config
 import signal
+import traceback
 
-if ctx.Pds.session == ctx.pds.Kde4:
-    from PyKDE4.kdeui import KUniqueApplication, KApplication
-    from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
-    from about import aboutData
-else:
-    from pds.quniqueapp import QUniqueApplication
+# PyKDE4 Imports
+from PyKDE4.kdeui import KUniqueApplication, KApplication
+from PyKDE4.kdecore import KCmdLineArgs, ki18n, KCmdLineOptions
+from mainwindow_kde4 import MainWindow
+
+# Package Manager Specific Imports
+from about import aboutData
+from pmlogging import logger
+from localedata import setSystemLocale
 
 def handleException(exception, value, tb):
+    """
+    Exception Handler
+
+    @param exception: exception object
+    @param value: exception message
+    @param tb: traceback log 
+    """
     logger.error("".join(traceback.format_exception(exception, value, tb)))
 
+# Package Manager Main App
 if __name__ == '__main__':
-    setSystemLocale()
 
+    # Catch signals
     signal.signal(signal.SIGINT, signal.SIG_DFL)
+
+    # Create a dbus mainloop if its not exists
     if not dbus.get_default_main_loop():
         from dbus.mainloop.qt import DBusQtMainLoop
         DBusQtMainLoop(set_as_default = True)
 
-    if ctx.Pds.session == ctx.pds.Kde4:
-        from mainwindow_kde4 import MainWindow
+    # Initialize Command Line arguments from sys.argv
+    KCmdLineArgs.init(sys.argv, aboutData)
 
-        KCmdLineArgs.init(sys.argv, aboutData)
-        options = KCmdLineOptions()
-        options.add("show-mainwindow", ki18n("Show main window"))
-        KCmdLineArgs.addCmdLineOptions(options)
+    # Add Command Line options
+    options = KCmdLineOptions()
+    options.add("show-mainwindow", ki18n("Show main window"))
+    KCmdLineArgs.addCmdLineOptions(options)
 
-        app = KUniqueApplication(True, True)
+    # Create a unique KDE Application
+    app = KUniqueApplication(True, True)
 
-        # It should set just before MainWindow call
-        setSystemLocale()
+    # Set system Locale, we may not need it anymore
+    # It should set just before MainWindow call
+    setSystemLocale()
 
-        manager = MainWindow()
-        args = KCmdLineArgs.parsedArgs()
-        if args.isSet("show-mainwindow"):
-            manager.show()
+    # Create MainWindow
+    manager = MainWindow()
 
-    else:
-        from mainwindow import MainWindow
-
-        pid = os.fork()
-        if pid:
-            os._exit(0)
-
-        app = QUniqueApplication(sys.argv, catalog='package-manager')
-
-        setSystemLocale()
-
-        manager = MainWindow(app)
-        app.setMainWindow(manager)
-
-        # Set application font from system
-        font = ctx.Pds.settings('font','Dejavu Sans,10').split(',')
-        app.setFont(QtGui.QFont(font[0], int(font[1])))
-
-        if config.PMConfig().systemTray():
-            app.setQuitOnLastWindowClosed(False)
-
-    if not config.PMConfig().systemTray():
+    # Check if show-mainwindow used in sys.args to show mainWindow
+    args = KCmdLineArgs.parsedArgs()
+    if args.isSet("show-mainwindow"):
         manager.show()
 
+    # Set exception handler
     sys.excepthook = handleException
-    ctx._time()
+
+    # Run the Package Manager
     app.exec_()
+
