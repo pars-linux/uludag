@@ -15,6 +15,8 @@ from utils import *
 import gettext
 _ = gettext.translation('rasta', fallback=True).ugettext
 
+from qrstedit import RstTextEdit
+
 class Rasta(QMainWindow):
     ''' Rasta main class '''
 
@@ -22,6 +24,10 @@ class Rasta(QMainWindow):
         QMainWindow.__init__(self)
         self.ui = Ui_Rasta()
         self.ui.setupUi(self)
+
+        self.ui.textEdit = RstTextEdit(self.ui.splitter)
+        self.ui.webView = QtWebKit.QWebView(self.ui.splitter)
+
         self.setUnifiedTitleAndToolBarOnMac(True)
 
         # System settings
@@ -46,7 +52,7 @@ class Rasta(QMainWindow):
                 self.sender() == self.ui.actionUpdate_Now or\
                 source or force:
             if not source:
-                source = unicode(self.ui.textEdit.text())
+                source = unicode(self.ui.textEdit.toPlainText())
 
             PUB.set_source(source)
             PUB.set_destination()
@@ -54,7 +60,7 @@ class Rasta(QMainWindow):
             PUB.apply_transforms()
 
             logs = []
-            self.ui.textEdit.markerDeleteAll(31)
+            # self.ui.textEdit.markerDeleteAll(31)
             for node in PUB.document.traverse(docutils.nodes.problematic):
                 node.parent.replace(node, node.children[0])
             for node in PUB.document.traverse(docutils.nodes.system_message):
@@ -62,8 +68,8 @@ class Rasta(QMainWindow):
                 node.parent.remove(node)
                 logs.append(log)
                 line = int(log[0])
-                if self.ui.textEdit.lines() >= line:
-                    self.ui.textEdit.markerAdd(line-1, 31)
+                # if self.ui.textEdit.lines() >= line:
+                    # self.ui.textEdit.markerAdd(line-1, 31)
 
             html = PUB.writer.write(PUB.document, PUB.destination)
 
@@ -176,7 +182,7 @@ class Rasta(QMainWindow):
 
         out = QTextStream(file_object)
         QApplication.setOverrideCursor(Qt.WaitCursor)
-        out << self.ui.textEdit.text()
+        out << self.ui.textEdit.toPlainText()
         QApplication.restoreOverrideCursor()
         self.ui.textEdit.setModified(False)
         self.setWindowTitle('Rasta :: %s' % self.file_name)
@@ -186,8 +192,8 @@ class Rasta(QMainWindow):
 
     def showFontDialog(self):
         ''' Show font selection dialog for QScintilla component '''
-        font = QFontDialog.getFont(self.ui.textEdit.lexer().dfont)[0]
-        self.buildSci(font)
+        self.ui.textEdit.setFont(QFontDialog.getFont(self.ui.textEdit.font())[0])
+        #self.buildSci(font)
 
     def showAbout(self):
         ''' Show About dialog '''
@@ -300,6 +306,7 @@ class Rasta(QMainWindow):
 
     def buildSci(self, font = None):
         ''' It builds QScintilla components '''
+        return
         lexer = RstLexer(self.ui.textEdit, font)
         cfont = lexer.dfont
         font_metric = QFontMetrics(cfont)

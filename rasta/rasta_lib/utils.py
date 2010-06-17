@@ -34,12 +34,12 @@ except ImportError:
     sys.exit(INSTALL_PACKAGE_WARNING % 'docutils')
 
 # PyQt4 Core Libraries
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
 try:
-    from PyQt4.Qsci import QsciScintilla
+    from PyQt4.QtCore import *
+    from PyQt4.QtGui import *
+    from PyQt4 import QtWebKit
 except ImportError:
-    sys.exit(INSTALL_PACKAGE_WARNING % 'qscintilla2-python')
+    sys.exit(INSTALL_PACKAGE_WARNING % 'Qt4')
 
 # Rasta Core Library
 try:
