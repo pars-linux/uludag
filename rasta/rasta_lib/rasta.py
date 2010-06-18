@@ -103,29 +103,32 @@ class Rasta(QMainWindow):
     def editTrigger(self):
         ''' If user clicks some of edit action it calls this method '''
         marker = None
-        pos_xx, pos_yy, pos_xy, pos_yz = self.ui.textEdit.getSelection()
-        self.ui.textEdit.beginUndoAction()
-        if self.sender() == self.ui.actionBold:
-            marker = '**'
-        elif self.sender() == self.ui.actionItalic:
-            marker = '*'
-        elif self.sender() == self.ui.actionCode:
-            marker = '``'
-        elif self.sender() == self.ui.actionHeader:
-            self.ui.textEdit.insertAt('\n%s' % ('-' * (pos_yz-pos_yy)),
-                                      pos_xy, pos_yz+1)
-        elif self.sender() == self.ui.actionLink:
-            link, res = QInputDialog.getText(self,
-                    _('Insert Link'), _('Address :'))
-            if res:
-                if not unicode(link[0]).startswith('http'):
-                    link = 'http://%s' % link
-                self.ui.textEdit.insertAt('`', pos_xx, pos_yy)
-                self.ui.textEdit.insertAt(' <%s>`_' % link, pos_xy, pos_yz + 1)
-        if marker:
-            self.ui.textEdit.insertAt(marker, pos_xx, pos_yy)
-            self.ui.textEdit.insertAt(marker, pos_xy, pos_yz + len(marker))
-        self.ui.textEdit.endUndoAction()
+        cursor = self.ui.textEdit.textCursor()
+        if cursor.hasSelection():
+            selection = cursor.selectedText()
+            if self.sender() == self.ui.actionBold:
+                marker = '**'
+            elif self.sender() == self.ui.actionItalic:
+                marker = '*'
+            elif self.sender() == self.ui.actionCode:
+                marker = '``'
+            elif self.sender() == self.ui.actionLink:
+                link, res = QInputDialog.getText(self,
+                        _('Insert Link'), _('Address :'))
+                if res:
+                    if not unicode(link[0]).startswith('http'):
+                        link = 'http://%s' % link
+
+                    cursor.beginEditBlock()
+                    cursor.removeSelectedText()
+                    cursor.insertText("`%s <%s>`_" % (selection, link))
+                    cursor.endEditBlock()
+
+            if marker:
+                cursor.beginEditBlock()
+                cursor.removeSelectedText()
+                cursor.insertText("%s%s%s" % (marker, selection, marker))
+                cursor.endEditBlock()
 
     ## File Operations
 
@@ -159,8 +162,8 @@ class Rasta(QMainWindow):
         QApplication.restoreOverrideCursor()
         if parse_string:
             return unicode(file_content)
-        self.ui.textEdit.setText(file_content)
-        self.ui.textEdit.setModified(False)
+        self.ui.textEdit.setPlainText(file_content)
+        self.ui.textEdit.document().setModified(False)
         self.setWindowTitle('Rasta :: %s' % file_name)
 
     def saveFile(self):
