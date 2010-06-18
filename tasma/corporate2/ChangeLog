@@ -1,3 +1,6 @@
+2010-06-18 Ozan Çağlayan <ozan@pardus.org.tr>
+	* applnk/: Add RootOnly to clock module (#12964)
+
 2009-12-17 Ozan Çağlayan <ozan@pardus.org.tr>
 	* applnk/: Fix numerous icon mappings according to BCTango, hide arts
 	configuration section,
