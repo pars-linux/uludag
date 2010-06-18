@@ -184,16 +184,15 @@ class Rasta(QMainWindow):
         QApplication.setOverrideCursor(Qt.WaitCursor)
         out << self.ui.textEdit.toPlainText()
         QApplication.restoreOverrideCursor()
-        self.ui.textEdit.setModified(False)
+        self.ui.textEdit.document().setModified(False)
         self.setWindowTitle('Rasta :: %s' % self.file_name)
         return True
 
     ## Some Dialogs
 
     def showFontDialog(self):
-        ''' Show font selection dialog for QScintilla component '''
+        ''' Show font selection dialog for RstEdit component '''
         self.ui.textEdit.setFont(QFontDialog.getFont(self.ui.textEdit.font())[0])
-        #self.buildSci(font)
 
     def showAbout(self):
         ''' Show About dialog '''
@@ -235,8 +234,7 @@ class Rasta(QMainWindow):
         # For TextEdit
         self.settings.beginGroup('TextEdit')
         self.settings.setValue('size', self.ui.textEdit.size())
-        self.settings.setValue('font',
-                                self.ui.textEdit.lexer().dfont.toString())
+        self.settings.setValue('font', self.ui.textEdit.font().toString())
         self.settings.endGroup()
 
     def readSettings(self):
@@ -305,26 +303,8 @@ class Rasta(QMainWindow):
         self.ui.logs.doubleClicked.connect(self.goToLine)
 
     def buildSci(self, font = None):
-        ''' It builds QScintilla components '''
-        return
-        lexer = RstLexer(self.ui.textEdit, font)
-        cfont = lexer.dfont
-        font_metric = QFontMetrics(cfont)
-
-        self.ui.textEdit.setLexer(lexer)
-        self.ui.textEdit.setUtf8(True)
-        self.ui.textEdit.setMarginLineNumbers(0, True)
-        self.ui.textEdit.setMarginWidth(0, font_metric.width( '00000' ) + 5)
-        self.ui.textEdit.setCaretLineVisible(True)
-        self.ui.textEdit.setWrapMode(1)
-        self.ui.textEdit.setFolding(True)
-        self.ui.textEdit.setEdgeMode(QsciScintilla.EdgeLine)
-        self.ui.textEdit.setEdgeColumn(80)
-        self.ui.textEdit.setEdgeColor(QColor('#999'))
-        self.ui.textEdit.markerDefine(QPixmap(':/icons/warning.png'), 31)
-        self.ui.textEdit.setIndentationsUseTabs(False)
-        self.ui.textEdit.setIndentationWidth(4)
-        self.ui.textEdit.setAutoCompletionSource(QsciScintilla.AcsDocument)
+        ''' It builds RstEdit component '''
+        self.ui.textEdit.setFont(QFont(font))
 
     def goToLine(self, index):
         ''' Set cursor position to the given index '''
@@ -334,7 +314,7 @@ class Rasta(QMainWindow):
 
     def checkModified(self):
         ''' Checks if the document was modified and asks for saving '''
-        if (self.ui.textEdit.isModified()):
+        if (self.ui.textEdit.document().isModified()):
             ret = QMessageBox.warning(self, 'Rasta',
                           _('The document has been modified.\n'
                             'Do you want to save your changes?'),
