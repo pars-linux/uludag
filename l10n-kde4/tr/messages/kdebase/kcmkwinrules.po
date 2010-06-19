@@ -111,7 +111,7 @@ msgstr "Geçersizlik Tipi"
 #. i18n: ectx: property (text), item, widget (KComboBox, type)
 #: detectwidget.cpp:105 rc.cpp:152 rc.cpp:694 rc.cpp:959 rc.cpp:1501
 msgid "Standalone Menubar"
-msgstr "Tekbasşına Menü Çubuğu"
+msgstr "Bağımsız Menü Çubuğu"
 
 #. i18n: file: ruleswidgetbase.ui:291
 #. i18n: ectx: property (text), item, widget (QListWidget, types)
