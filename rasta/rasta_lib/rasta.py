@@ -84,21 +84,23 @@ class Rasta(QMainWindow):
 
     def addTable(self):
         ''' Add Rst style table '''
-        editor = self.ui.textEdit
-        editor.beginUndoAction()
+        cursor = self.ui.textEdit.textCursor()
+        cursor.beginEditBlock()
+        char_format = QTextCharFormat()
+        char_format.setFontFixedPitch(True)
+        cursor.setCharFormat(char_format)
         row = QInputDialog.getInteger(self,
                 _('Add Table'), _('Number of rows :'))
         if row[1]:
             column = QInputDialog.getInteger(self, _('Add Table'),
                     _('Number of columns :'))
             if column[1]:
-                curline = editor.getCursorPosition()[0]
-                editor.insert('\n')
+                cursor.insertText('\n')
                 for times in range(row[0]):
-                    editor.insert('%s+\n' % ('+-------' * column[0]))
-                    editor.insert('%s|\n' % ('|       ' * column[0]))
-                editor.insert('%s+\n' % ('+-------' * column[0]))
-        editor.endUndoAction()
+                    cursor.insertText('%s+\n' % ('+-------' * column[0]))
+                    cursor.insertText('%s|\n' % ('|       ' * column[0]))
+                cursor.insertText('%s+\n' % ('+-------' * column[0]))
+        cursor.endEditBlock()
 
     def editTrigger(self):
         ''' If user clicks some of edit action it calls this method '''
@@ -216,10 +218,6 @@ class Rasta(QMainWindow):
                     QUrl('http://developer.pardus.org.tr/howto/howto-rst.html'))
         self.file_name = _tmp
 
-    def toggleLogs(self, state):
-        ''' Show or Hide the log view '''
-        self.ui.Logs.setVisible(state)
-
     ## Settings
 
     def writeSettings(self):
@@ -251,7 +249,7 @@ class Rasta(QMainWindow):
                 self.settings.value('liveupdate', True).toBool())
         self.ui.actionShow_Logs.setChecked(
                 self.settings.value('showlogs', True).toBool())
-        self.toggleLogs(self.ui.actionShow_Logs.isChecked())
+        self.ui.Logs.setVisible(self.ui.actionShow_Logs.isChecked())
         self.settings.endGroup()
 
         # For TextEdit
@@ -292,7 +290,9 @@ class Rasta(QMainWindow):
         self.ui.actionSave_As.triggered.connect(self.saveFile)
         self.ui.actionNew.triggered.connect(self.newFile)
         self.ui.actionUpdate_Now.triggered.connect(self.updateRst)
-        self.ui.actionShow_Logs.toggled.connect(self.toggleLogs)
+        self.ui.actionShow_Logs.toggled.connect(self.ui.Logs.setVisible)
+        self.ui.actionShow_Source.toggled.connect(self.ui.textEdit.setVisible)
+        self.ui.actionShow_Output.toggled.connect(self.ui.webView.setVisible)
         self.ui.actionBold.triggered.connect(self.editTrigger)
         self.ui.actionItalic.triggered.connect(self.editTrigger)
         self.ui.actionCode.triggered.connect(self.editTrigger)

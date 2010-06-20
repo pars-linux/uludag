@@ -29,6 +29,7 @@ class RstTextEdit(QPlainTextEdit):
         self.dict = enchant.Dict()
         self.highlighter = RstHighlighter(self.document())
         self.highlighter.setDict(self.dict)
+        self.cursorPositionChanged.connect(self.highlightCurrentLine)
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton:
@@ -37,6 +38,20 @@ class RstTextEdit(QPlainTextEdit):
             event = QMouseEvent(QEvent.MouseButtonPress, event.pos(),
                 Qt.LeftButton, Qt.LeftButton, Qt.NoModifier)
         QPlainTextEdit.mousePressEvent(self, event)
+
+    def highlightCurrentLine(self):
+        extraSelections = []
+
+        if not self.isReadOnly():
+            selection = QTextEdit.ExtraSelection()
+            lineColor = QColor(Qt.yellow).lighter(160)
+            selection.format.setBackground(lineColor)
+            selection.format.setProperty(QTextFormat.FullWidthSelection, True)
+            selection.cursor = self.textCursor()
+            selection.cursor.clearSelection()
+            extraSelections.append(selection)
+
+        self.setExtraSelections(extraSelections)
 
     def contextMenuEvent(self, event):
         popup_menu = self.createStandardContextMenu()

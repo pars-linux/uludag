@@ -54,19 +54,6 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuOptions">
-    <property name="title">
-     <string>&amp;Options</string>
-    </property>
-    <addaction name="separator"/>
-    <addaction name="actionLive_Update"/>
-    <addaction name="actionUpdate_Now"/>
-    <addaction name="separator"/>
-    <addaction name="actionShow_Logs"/>
-    <addaction name="actionShow_Output"/>
-    <addaction name="actionShow_Source"/>
-    <addaction name="actionSelect_Editor_Font"/>
-   </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>Help</string>
@@ -90,6 +77,19 @@
     <addaction name="actionHeader"/>
     <addaction name="separator"/>
     <addaction name="actionAdd_Table"/>
+   </widget>
+   <widget class="QMenu" name="menuOptions">
+    <property name="title">
+     <string>&amp;Options</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionLive_Update"/>
+    <addaction name="actionUpdate_Now"/>
+    <addaction name="separator"/>
+    <addaction name="actionShow_Logs"/>
+    <addaction name="actionShow_Output"/>
+    <addaction name="actionShow_Source"/>
+    <addaction name="actionSelect_Editor_Font"/>
    </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
@@ -282,7 +282,7 @@
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="icon">
     <iconset resource="../rasta_lib/icons.qrc">
