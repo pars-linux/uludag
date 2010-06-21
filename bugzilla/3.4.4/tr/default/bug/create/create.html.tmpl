@@ -615,7 +615,7 @@ TUI_hide_default('expert_fields');
       <b>Önem</b>
     </td>
     <td valign="top">
-      <select name="bug_severity" size="4">
+      <select name="bug_severity" size="5">
         <option name="blocking" value="blocking">
           Acil: Tüm sistemi kullanılamaz hale getiren hatalar
         </option>
@@ -626,7 +626,10 @@ TUI_hide_default('expert_fields');
           Normal: Programın bir kısmını kullanılmaz hale getiren hatalar
         </option>
         <option name="low" value="low">
-          Küçük: Yeni bir özellik isteği, çeviri eksiği veya kozmetik hatalar
+          Küçük: İyileştirme, çeviri eksiği veya kozmetik hatalar
+        </option>
+        <option name="newfeature" value="newfeature">
+          Yeni Özellik: Yeni bir özellik isteği
         </option>
       </select>
       <p>

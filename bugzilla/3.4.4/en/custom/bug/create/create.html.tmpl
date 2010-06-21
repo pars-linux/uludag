@@ -613,7 +613,7 @@ TUI_hide_default('expert_fields');
       <b>Severity</b>
     </td>
     <td valign="top">
-      <select name="bug_severity" size="4">
+      <select name="bug_severity" size="5">
         <option name="blocking" value="blocking">
          Urgent: The bug makes whole system unusable.
         </option>
@@ -624,7 +624,10 @@ TUI_hide_default('expert_fields');
         Normal: The bug which makes a part of the program unusable.
         </option>
         <option name="low" value="low">
-        Low: A cosmetic problem, such as a misspelled word or misaligned text or a new feature.
+        Low: A cosmetic problem, such as a misspelled word or misaligned text or an enhancement.
+        </option>
+        <option name="newfeature" value="newfeature">
+        New Feature: A new feature
         </option>
       </select>
       <p>
