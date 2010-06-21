@@ -601,7 +601,7 @@ msgstr "Gökmen Göksel"
 
 #: .tmp/about.py:35
 msgid "Developer"
-msgstr "Fejlszető"
+msgstr "Fejlesztő"
 
 #: .tmp/about.py:36
 msgid "Faik Uygur"
