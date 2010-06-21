@@ -6,6 +6,7 @@ from ftpdownloader import FTPDownloader
 from versionmanager import VersionManager
 from compatibility import Compatibility
 from md5sum import MD5sum
+from installer import Installer
 
 from logger import getLogger
 log = getLogger('PaWn')
@@ -17,17 +18,24 @@ class Config(object):
 	return repr
 
 class PaWn():
+    application = 'Pardus (Paw)'
+    appid = 'Pardus'
+    version = '0.1'
+    publisher = 'TUBITAK/UEKAE'
+    home = 'http://www.pardus.org.tr'
+
     def __init__(self):
 	self.config = Config()
 	self.compatibility = Compatibility()
 	self.versionManager = VersionManager()
 	self.md5sum = MD5sum()
 	self.initFTP()
+        self.installer = Installer(self)
 
 	self.gui = PaWnGui(self)
 
     def initFTP(self):
-	self.ftpDownloader = FTPDownloader('test.iso')
+	self.ftpDownloader = FTPDownloader()
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
