@@ -20,11 +20,17 @@ TIME_ZONE = 'Europe/Istanbul'
 # Language code for this installation.
 LANGUAGE_CODE = 'tr'
 
+_ = lambda s: s
+LANGUAGES = (
+        ('tr', _('Turkish')),
+        ('en', _('English')),
+)
+
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
 # to load the internationalization machinery.
-USE_I18N = False
+USE_I18N = True
 
 # Site root
 SITE_ROOT = "/"
