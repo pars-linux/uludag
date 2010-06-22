@@ -16,7 +16,7 @@ def arguments_parse():
                       dest='custompackages',
                       metavar='FILE',
                       help='specify the input file for custom package processing')
-    parser.add_option('-a', '--all',
+    parser.add_option('-o', '--out',
                       dest='allpackages',
                       metavar='FILE',
                       help='specify the output file to print the list of packages in the input XML')
@@ -29,9 +29,9 @@ def arguments_parse():
     if len(args) != 0:
         parser.error('Invalid number of arguments.')
         sys.exit(1)
-    # Either call -p or -a, but not both
+    # Either call -p or -o, but not both
     if options.custompackages and options.allpackages:
-        print "[Error]: Specify either the '-p' or the '-a' option, but not both."
+        print "[Error]: Specify either the '-p' or the '-o' option, but not both."
         sys.exit(1)
     # Since both cannot be true, check which is and return accordingly
     return options.filename, options.custompackages, options.allpackages

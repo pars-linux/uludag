@@ -16,7 +16,7 @@ def check_file(file):
         sys.exit("[Error]: The file '{0}' is not a valid file or the file does not exist.".format(file))
     if not '.xml' in fileExtension:
         sys.exit("[Error]: Only XML files are supported. The file '{0}' is an invalid testcase file.".format(file))
-    print "[Parsing file]:\t'{0}'\n".format(fileAbsolutePath)
+    print "[Parsing file]:\t'{0}'".format(fileAbsolutePath)
 
 
 def main():
@@ -32,10 +32,10 @@ def main():
     # Now check the conditions and create the object
     parsefile = XMLParser(os.path.abspath(filename))
     if custompackages is not None:
-        parsefile.selected_package_parse(os.path.abspath(custompackages))
+        parsefile.custom_package_parse(os.path.abspath(custompackages))
     if allpackages is not None:
         parsefile.output_package_list(os.path.abspath(allpackages))
-    
-	
+    parsefile.parser_main()
+
 if __name__ == '__main__':
     main()
