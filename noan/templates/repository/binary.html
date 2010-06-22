@@ -57,4 +57,28 @@
         </li>
         {% endfor %}
     </ul>
+
+    <h2>{% trans "Package Files"%}</h2>
+    <table>
+        <tr>
+            <th>{% trans "Type" %}</th>
+            <th>{% trans "Path" %}</th>
+            <th>{% trans "Size" %}</th>
+            <th>{% trans "GID" %}</th>
+            <th>{% trans "UID" %}</th>
+            <th>{% trans "Mode" %}</th>
+            <th>{% trans "Tag" %}</th>
+        </tr>
+        {% for file in files.list %}
+        <tr>
+            <td>{{ file.type }}</td>
+            <td>{{ file.path }}</td>
+            <td>{{ file.size|filesizeformat }}</td>
+            <td>{{ file.gid }}</td>
+            <td>{{ file.uid }}</td>
+            <td>{{ file.mode }}</td>
+            <td>{{ file.tag }}</td>
+        </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
