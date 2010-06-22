@@ -17,6 +17,9 @@ from noan.wrappers import render_response
 
 from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
 
+import urllib
+import os
+import pisi
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -32,13 +35,15 @@ def list_source_packages(request, distName, distRelease):
     if not sources.count() > 0:
         return HttpResponse("Not Found, 404")
 
+    LANGUAGE_CODE = request.LANGUAGE_CODE
     # - generate dict to use in object_list
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     object_dict = {
             'queryset': sources,
             'paginate_by': SOURCE_PACKAGES_PER_PAGE,
             'template_name': 'repository/source-packages-list.html',
-            'template_object_name': 'source'
+            'template_object_name': 'source',
+            'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE}
             }
 
     return object_list(request, **object_dict)
@@ -51,8 +56,10 @@ def view_source_detail(request, distName, distRelease, sourceName):
     """
     source = Source.objects.get(name=sourceName, distribution__name=distName, distribution__release=distRelease)
 
+    LANGUAGE_CODE = request.LANGUAGE_CODE
     context = {
         'source': source,
+        'LANGUAGE_CODE': LANGUAGE_CODE,
     }
     return render_response(request, 'repository/source.html', context)
 
@@ -66,8 +73,10 @@ def view_package_detail(request, distName, distRelease, sourceName, packageName)
 
     package = Package.objects.get(name=packageName, source__name=sourceName, source__distribution__name=distName, source__distribution__release=distRelease)
 
+    LANGUAGE_CODE = request.LANGUAGE_CODE
     context = {
         'package': package,
+        'LANGUAGE_CODE': LANGUAGE_CODE,
     }
     return render_response(request, 'repository/package.html', context)
 
@@ -99,9 +108,26 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
         if len(results):
             user_result = results[0]
 
+    # get the files of the pisi package
+    # it is better to download the package from a local machine, it will be faster
+    base_path = 'http://packages.pardus.org.tr'
+    distro = binary.package.source.distribution.name.lower()
+    release = binary.package.source.distribution.release
+    suffix = "-".join([distro, release])
+    path = os.path.join(base_path, suffix)
+    pisi_package = binary.get_filename()
+    pisi_url = os.path.join(path, pisi_package)
+    tmp_path = os.path.join('/tmp', pisi_package)
+    url = urllib.URLopener()
+    url.retrieve(pisi_url, tmp_path)
+    package = pisi.package.Package(tmp_path)
+    files = package.get_files()
+    os.unlink(tmp_path)
+
     context = {
         'binary': binary,
         'user_result': user_result,
+        'files': files,
     }
     return render_response(request, 'repository/binary.html', context)
 
