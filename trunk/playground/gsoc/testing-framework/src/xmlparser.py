@@ -19,7 +19,7 @@ class XMLParser:
         try:
             self.tree = etree.parse(self.xmlfile)
         except etree.XMLSyntaxError, detail:
-            print '[Error]: The testcase file cannot be executed due to an invalid syntax.'
+            print '\n[Error]: The testcase file cannot be executed due to an invalid syntax.'
             print '[Detail]:', detail
             print '[Solution]: Request the testcase author for a new file or fix it manually.'
             sys.exit(1)
@@ -64,10 +64,15 @@ class XMLParser:
                     break
                 else:
                     sys.exit('[Aborting]')
-        tempFile = open(outputFile, 'w')
-        output = string.join(packageList, '\n')
-        tempFile.write(output)
-        tempFile.close()
+        try:
+            tempFile = open(outputFile, 'w')
+            output = string.join(packageList, '\n')
+            tempFile.write(output)
+            tempFile.close()
+        except IOError:
+            print '[Error]: An error occurred while trying to write the output package file.'
+            print '[Solution]: Please ensure that the output file name and path is valid.'
+            sys.exit(1)
         sys.exit("The list of packages has been written to: '{0}'".format(outputFile))
     
     def print_package_list(self):
