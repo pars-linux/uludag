@@ -137,24 +137,7 @@ def updateDB(path_source, path_stable, path_test, options):
         def importSpec(pspec):
             # Add or update developer
             maintained_by = createUser(pspec.source.packager.email, pspec.source.packager.name)
-
-            # Add source or update maintainer
-            try:
-                source = Source.objects.get(name=pspec.source.name, distribution=distribution)
-                source.maintained_by = maintained_by
-                source.save()
-            except Source.DoesNotExist:
-                source = Source(name=pspec.source.name, distribution=distribution, maintained_by=maintained_by)
-                source.save()
-            print '  Source: %s' % source.name
-
-            # Update build dependencies
-            for dep in BuildDependency.objects.filter(source=source):
-                dep.delete()
-            for dep in pspec.source.buildDependencies:
-                dependency = BuildDependency(source=source, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
-                dependency.save()
-
+            
             # Create the source package information
             part_of = pspec.source.partOf
             source_info = SourcePackageDetail.objects.create(part_of=part_of)
@@ -175,15 +158,32 @@ def updateDB(path_source, path_stable, path_test, options):
                 print '     Description Text: %s' % description[language]
                 source_info.description_set.create(language=language, text=description[language])
 
+            # Add source or update maintainer
+            try:
+                source = Source.objects.get(name=pspec.source.name, distribution=distribution)
+                source.maintained_by = maintained_by
+                if source.info == source_info: source.info.delete()
+                else: source.info.sourcepackagedetail = source_info
+                source.save()
+            except Source.DoesNotExist:
+                source = Source(name=pspec.source.name, distribution=distribution, maintained_by=maintained_by, info=source_info)
+                source.save()
+            print '  Source: %s' % source.name
+
+            # Update build dependencies
+            for dep in BuildDependency.objects.filter(source=source):
+                dep.delete()
+            for dep in pspec.source.buildDependencies:
+                dependency = BuildDependency(source=source, name=dep.package, version=toString(dep.version), version_to=toString(dep.versionTo), version_from=toString(dep.versionFrom), release=toInt(dep.release), release_to=toInt(dep.releaseTo), release_from=toInt(dep.releaseFrom))
+                dependency.save()
+
             # Add or update package info
             for pack in pspec.packages:
                 try:
                     package = Package.objects.get(name=pack.name, source=source)
-                    if package.info == source_info: source_info.delete()
-                    else: package.info.sourcepackagedetail = source_info
                     package.save()
                 except Package.DoesNotExist:
-                    package = Package(name=pack.name, source=source, info=source_info)
+                    package = Package(name=pack.name, source=source)
                     package.save()
                     print '    New package: %s' % package.name
 
