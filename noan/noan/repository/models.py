@@ -47,32 +47,6 @@ class Distribution(models.Model):
         unique_together = ('name', 'release')
 
 
-class Source(models.Model):
-    """
-        Database model for sources in repository.
-
-        name: Name of the source
-        distribution: Distribution that contains the source
-        maintained_by: Source maintainer
-    """
-
-    name = models.CharField(max_length=64, verbose_name=_('name'))
-    distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
-    maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
-
-    def __unicode__(self):
-        return u'%s (%s)' % (self.name, self.distribution)
-
-    def get_url(self):
-        return '%s/%s' % (self.distribution.get_url(), self.name)
-
-    class Meta:
-        verbose_name = _('source')
-        verbose_name_plural = _('sources')
-        ordering = ['name']
-        unique_together = ('name', 'distribution')
-
-
 class SourcePackageDetail(models.Model):
     """
         Database model to display the information about source package
@@ -90,6 +64,33 @@ class SourcePackageDetail(models.Model):
         verbose_name_plural = _('package details')
 
 
+class Source(models.Model):
+    """
+        Database model for sources in repository.
+
+        name: Name of the source
+        distribution: Distribution that contains the source
+        maintained_by: Source maintainer
+    """
+
+    name = models.CharField(max_length=64, verbose_name=_('name'))
+    distribution = models.ForeignKey(Distribution, verbose_name=_('distribution'))
+    maintained_by = models.ForeignKey(User, verbose_name=_('maintained by'))
+    info = models.ForeignKey(SourcePackageDetail, verbose_name=_('source package details'))
+
+    def __unicode__(self):
+        return u'%s (%s)' % (self.name, self.distribution)
+
+    def get_url(self):
+        return '%s/%s' % (self.distribution.get_url(), self.name)
+
+    class Meta:
+        verbose_name = _('source')
+        verbose_name_plural = _('sources')
+        ordering = ['name']
+        unique_together = ('name', 'distribution')
+
+
 class IsA(models.Model):
     """
         Database model to keep the category that the package belongs to
@@ -98,7 +99,7 @@ class IsA(models.Model):
     name = models.CharField(max_length=25, blank=True)
 
     def __unicode__(self):
-        return name
+        return self.name
 
 
 class License(models.Model):
@@ -109,7 +110,7 @@ class License(models.Model):
     name = models.CharField(max_length=50, blank=True)
 
     def __unicode__(self):
-        return name
+        return self.name
 
 
 class Summary(models.Model):
@@ -121,7 +122,7 @@ class Summary(models.Model):
     text = models.TextField(blank=True)
     
     def __unicode__(self):
-        return text
+        return '%s: %s' % (self.language, self.text)
 
 
 class Description(models.Model):
@@ -133,7 +134,7 @@ class Description(models.Model):
     text = models.TextField(blank=True)
     
     def __unicode__(self):
-        return text
+        return '%s: %s' % (self.language, self.text)
 
 
 class Package(models.Model):
@@ -146,7 +147,6 @@ class Package(models.Model):
     """
     name = models.CharField(max_length=64, verbose_name=_('name'))
     source = models.ForeignKey(Source, verbose_name=_('source'))
-    info = models.ForeignKey(SourcePackageDetail, verbose_name=_('source package details'))
 
     def __unicode__(self):
         return _('%(package)s (source: %(source)s, distro: %(distro)s)') % {'package': self.name, 'source': self.source.name, 'distro': self.source.distribution}
