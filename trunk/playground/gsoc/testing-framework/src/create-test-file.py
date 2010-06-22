@@ -36,5 +36,4 @@ def main():
 if __name__ == '__main__':
     welcomeMessage = 'Pardus Testing Framework'
     print welcomeMessage, '\n', len(welcomeMessage) * '-'
-    
     main()
