@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="Docutils 0.6: http://docutils.sourceforge.net/" />
-<title>Yeni Özellik İsteği Politikası</title>
+<title>Yeni Özellik İstekleri</title>
 <style type="text/css">
 
 /*
@@ -304,8 +304,8 @@ ul.auto-toc {
 </style>
 </head>
 <body>
-<div class="document" id="yeni-ozellik-istegi-politikasi">
-<h1 class="title">Yeni Özellik İsteği Politikası</h1>
+<div class="document" id="yeni-ozellik-istekleri">
+<h1 class="title">Yeni Özellik İstekleri</h1>
 
 <div class="contents topic" id="contents">
 <p class="topic-title first">Contents</p>
@@ -360,7 +360,7 @@ ul.auto-toc {
 </li>
 <li><p class="first">Yapılacak olan değişikliği veya iyileştirmeyi yararlı bulacak bir kullanıcı topluluğu olmalıdır.</p>
 </li>
-<li><p class="first">Yapılacak olan değişiklik veya iyileştirme bir zorunluluk getirmemelidir.
+<li><p class="first">Yapılacak olan değişiklik veya geliştirme bir zorunluluk getirmemelidir.
 Yapılacak olan değişiklik bir konfigurasyon dosyasını etkilemekte ve son kullanıcıyı güncellemelerden sonra sistemi düzeltmek için müdahale etmeye zorlamamalıdır.</p>
 </li>
 <li><p class="first">Yeni özellik istekleri yeni paket istekleri ile karıştırılmamalıdır.</p>
@@ -488,14 +488,23 @@ Yapılacak olan değişiklik bir konfigurasyon dosyasını etkilemekte ve son ku
 <h3>a.Özgürlük İçin -&gt; Beyin kısmından gelen yeni özellik istekleri:</h3>
 <blockquote>
 <ol class="arabic">
-<li><p class="first">Eğer rapor eksik ve anlaşılmayan bilgiler içeriyor ise Sürüm Camia Temsilcisi veya grubu tarafından gerekli uyarılar yorum olarak yazılır. bkz. <a class="reference internal" href="#ozgurluk-icin-beyin">Özgürlük İçin / Beyin:</a></p>
+<li><p class="first">Eğer rapor <a class="reference internal" href="#ozellik-nedir">Özellik nedir?</a> kriterlerine uymuyor ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir. bkz. <a class="reference internal" href="#ozgurluk-icin-beyin">Özgürlük İçin / Beyin:</a></p>
+</li>
+<li><dl class="first docutils">
+<dt>Eğer rapor yeni özellik isteği taslağına uymuyor veya anlaşılır değil ise, bu raporun düzeltilmesi için Sürüm Camia Temsilcisi veya grubu tarafından uyarı yorumu yapılır.</dt>
+<dd><ol class="first last arabic simple">
+<li>Düzeltme yeni özellik isteği son tarihinden önce gerçekleştirilemez ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir.</li>
+<li>Düzeltme yeni özellik isteği son tarihinden önce düzeltilmiş ise aşağıda bulunan işlemler gerçekleştirilecektir:</li>
+</ol>
+</dd>
+</dl>
 </li>
 <li><dl class="first docutils">
 <dt>Eğer rapor eksiksiz ve anlaşılır bir şekilde yazılmış ve <a class="reference internal" href="#ozellik-nedir">Özellik nedir?</a> kriterlerine uyuyor ise, Sürüm Camia Temsilcisi veya grubu tarafından:</dt>
 <dd><ul class="first last simple">
 <li><a class="reference external" href="http://bugs.pardus.org.tr">http://bugs.pardus.org.tr</a> adresinden &quot;Distribution Process -&gt; New Feature&quot; ürünü altına yeni bir hata raporu açılır,</li>
 <li>Özgürlük İçin -&gt; Beyin'de yapılmış ayrıntılı açıklama bu rapora kopyalanır,</li>
-<li>&quot;newfeature&quot; önem derecesi ile raporu işaretlerler.</li>
+<li>&quot;newfeature&quot; önem derecesi ile raporu işaretlenir.</li>
 <li>Eğer raporlanan yeni özellik birden fazla yeni özeliği içinde barındırıyor ise bu özellikler için ayrı ayrı hatalar açılmalıdır</li>
 </ul>
 </dd>
@@ -506,23 +515,52 @@ Yapılacak olan değişiklik bir konfigurasyon dosyasını etkilemekte ve son ku
 </div>
 <div class="section" id="b-bugzilla-uzerinden-gelen-yeni-ozellik-istekleri">
 <h3>b.Bugzilla üzerinden gelen yeni özellik istekleri:</h3>
+<p>Bugzilla üzerinden gelen yeni özellik istekleri Sürüm Yöneticileri, uygulama sahipleri ve Sürüm Camia Temsilcisi ve grubu tarafından gözden geçirilebilir. Bugzilla üzerinden kullanıcılar tararafından bildirilen bazı hata raporları iyileştirme veya yeni özellik niteliği taşıyabilmektedir, fakat kullanıcı tarafından çoğunlukla önem derecesi default değeri (normal) ile raporlanmaktadır. Burada amaç bugzilla'yı sürekli gözden geçirip yeni özellik ve iyileştirmelerin önem derecelerini ilgili şekilde değiştirmektir.</p>
 <blockquote>
 <ol class="arabic simple">
-<li>Eğer rapor eksik ve anlaşılmayan bilgiler içeriyor ise Sürüm Camia Temsilcisi veya grubu tarafından gerekli uyarılar yorum olarak yazılır. bkz. <a class="reference internal" href="#bugzilla-araciligi-ile">Bugzilla aracılığı ile:</a></li>
-<li>Eğer rapor eksiksiz ve anlaşılır bir şekilde yazılmış ve <a class="reference internal" href="#ozellik-nedir">Özellik nedir?</a> kriterlerine uyuyor ise, Sürüm Camia Temsilcisi veya grubu, &quot;newfeature&quot; önem derecesi ile raporu işaretlerler.</li>
+<li>Bu gözden geçirme en az haftada bir şeklinde olmak üzere yapılmalı ve eğer rapor anlaşılır bir şekilde yazılmış ve <a class="reference internal" href="#ozellik-nedir">Özellik nedir?</a> kriterlerine uyuyor ise, iyileştirme isteği olarak girilmiş olanlar &quot;low&quot;, yeni özellik isteği olarak girilmiş olanlar &quot;newfeature&quot; önem derecesini almalıdır.</li>
+<li>Eğer rapor anlaşılır değil ve <a class="reference internal" href="#ozellik-nedir">Özellik nedir?</a> kriterlerine uymuyor ise &quot;KARAR VERİLDİ/ GEÇERSİZ&quot; olarak işaretlenir.</li>
 </ol>
 </blockquote>
+</div>
+<div class="section" id="sunulan-ozelligin-kabul-edilmesi">
+<h3>Sunulan Özelliğin Kabul Edilmesi</h3>
+<p>Bir sonraki yeni sürüme girecek özellik isteklerinin bir son tarihi bulunmaktadır. Bu tarihten sonra bir hafta içerisinde raporlanan tüm &quot;newfeature&quot; ve &quot;low&quot; önem derecesine sahip hata raporları ilgili sürüm yöneticisi ve uygulamanın sahibi tarafından gözden geçirilir ve yeni sürüme girip girmemesi veya bir sonraki sürüme kalması konusunda karar verilir. Bu işlemler aşağıdaki şekilde yapılacaktır:</p>
 <ol class="arabic">
 <li><dl class="first docutils">
-<dt>Sürüm yöneticisi ve ilgili uygulamanın sahibi &quot;newfeature&quot; önem derecesi ile işaretlenmiş olan yeni özelliği gözden geçirirler:</dt>
+<dt>Sürüm yöneticisi ve ilgili uygulamanın sahibi &quot;newfeature&quot; ve &quot;low&quot; önem derecesi ile işaretlenmiş olan yeni özelliği gözden geçirirler:</dt>
+<dd><ol class="first last arabic">
+<li><p class="first">Yeni özelliğin uygun olmadığı düşünülürse raporu &quot;KARAR VERİLDİ/ GEÇERSİZ&quot; olarak işaretlerler.</p>
+</li>
+<li><p class="first">Yeni özelliğin bu sürümde değil bir sonraki sürümde yapılabileceği düşünürlerse  &quot;KARAR VERİLDİ / DAHA SONRA&quot; olarak işaretenir.</p>
+</li>
+<li><dl class="first docutils">
+<dt>Yeni Özeliğin uygun olduğunu düşünürlerse:</dt>
 <dd><ol class="first last arabic simple">
-<li>Yeni Özeliğin uygun olduğunu düşünürlerse raporu &quot;KARAR VERİLDİ / DAHA SONRA&quot; olarak işaretlerler. Gerekirse ilgili sürümün izleyici hatası olarak seçerler.</li>
-<li>Yeni özelliğin uygun olmadığını düşünürlerse raporu &quot;KARAR VERİLDİ/ GEÇERSİZ&quot; olarak işaretlerler.</li>
+<li>Durum &quot;KARAR VERİLDİ / HATIRLAT&quot; olarak değiştirilir</li>
+<li>Gerekirse ürün ve bileşeni değiştirilir</li>
+<li>İlgili sürümün izleyici hatası haline getirilir</li>
+<li>Bu yeni özellik task haline getirildiğinde gerekli linki hatanın adres bölümüne eklenir.</li>
+<li>Gerekli değişiklikler bugzilla ve diğer yönetim aracı tarafından izlenebilecek şekilde SVN commitleri ile yapılır.</li>
 </ol>
 </dd>
 </dl>
 </li>
 </ol>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="kabul-edilen-ozelligin-tamamlanmasi">
+<h3>Kabul Edilen Özelliğin Tamamlanması</h3>
+<p>Yeni özelliklerin tamamlanması gereken bir son tarih bulunmaktadır (feature freeze).</p>
+<blockquote>
+<ol class="arabic simple">
+<li>Geliştirici bu son tarihe kadar yeni özelliği tamamlayamaz ise raporun durumunu &quot;KARAR VERİLDİ / DAHA SONRA&quot; olarak işaretler ve yeni özellik bir sonraki sürüme kalır.</li>
+<li>Geliştirici yeni özelliği verilen son tarihe kadar tamamlayabilir ise hata raporunu SVN commit mesajları ile &quot;KARAR VERİLDİ / ÇÖZÜLDÜ&quot; olarak işaretler.</li>
+</ol>
+</blockquote>
 </div>
 </div>
 <div class="section" id="sundugum-ozelligin-gelismelerini-nasil-takip-edebilirim">
@@ -531,13 +569,15 @@ Yapılacak olan değişiklik bir konfigurasyon dosyasını etkilemekte ve son ku
 <li><p class="first">Hata durumu &quot;KARAR VERİLDİ/ GEÇERSİZ&quot; olarak işaretlenmiş ise isteğiniz maalesef kabul edilmemiş demektir. Lütfen durumunu değiştirmeyiniz.</p>
 </li>
 <li><dl class="first docutils">
-<dt>Sunulan yeni özellik &quot;KARAR VERİLDİ / DAHA SONRA&quot; durumunu almış ise isteğiniz yeni özellik olarak kabul edilmiş demektir.</dt>
+<dt>Sunulan yeni özelliğin durumu &quot;KARAR VERİLDİ / HATIRLAT&quot; şeklinde ise istediğiniz yeni özellik olarak kabul edilmiş demektir.</dt>
 <dd><ol class="first last arabic simple">
 <li>Bu özellik geliştirilmeye başlandığında geliştiricisi tarafından yapılan değişikliklerin SVN log'ları hataya yansıtılacaktır.</li>
 <li>Yeni özellik tamamlandığında &quot;KARAR VERİLDİ/ ÇÖZÜLDÜ&quot; olarak geliştiricisi tarafından işaretlenecektir.</li>
 </ol>
 </dd>
 </dl>
+</li>
+<li><p class="first">Sunulan yeni özellik &quot;KARAR VERİLDİ / DAHA SONRA&quot; durumunu almış ise istediğiniz yeni özellik bir sonraki sürüme aktarılmış demektir.</p>
 </li>
 </ol>
 </div>

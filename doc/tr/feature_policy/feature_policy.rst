@@ -1,5 +1,5 @@
-Yeni Özellik İsteği Politikası
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Yeni Özellik İstekleri
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. contents:: :depth: 2
 
@@ -29,7 +29,7 @@ Yeni Özellik İsteği Politikası
     #. Düzgün bir şekilde geliştirilmediğinde ve eksiklikleri bulunduğunda sürümü öteleyebilecek kadar önemli olmalıdır.
     #. Sürüm notlarına konulabilecek kadar önemli bir özellik olmalıdır.
     #. Yapılacak olan değişikliği veya iyileştirmeyi yararlı bulacak bir kullanıcı topluluğu olmalıdır.
-    #. Yapılacak olan değişiklik veya iyileştirme bir zorunluluk getirmemelidir.
+    #. Yapılacak olan değişiklik veya geliştirme bir zorunluluk getirmemelidir.
        Yapılacak olan değişiklik bir konfigurasyon dosyasını etkilemekte ve son kullanıcıyı güncellemelerden sonra sistemi düzeltmek için müdahale etmeye zorlamamalıdır.
     #. Yeni özellik istekleri yeni paket istekleri ile karıştırılmamalıdır.
     #. Bir paketin güncellenme isteği yeni bir özellik isteği değildir.
@@ -77,7 +77,7 @@ Katkıda bulunacağım yeni bir özelliği nasıl sunabilirim?
     #. Katkıda bulunmak istediğiniz yeni bir özelliği bugzilla üzerinden yukarıda bulunan `Bugzilla aracılığı ile:`_ açıklamalarını takip ederek yapabilirsiniz.
     #. Eğer yeni özellik ile ilgili herhangi bir geliştirme yapmış iseniz, bu değişiklikleri yama olarak eklenti bölümünden ekleyebilirsiniz.
 
-Daha önce sunduğun bir yeni özelliği nasıl iptal edebilirim?
+Daha önce sunduğum bir yeni özelliği nasıl iptal edebilirim?
 ------------------------------------------------------------
     #. Daha önce bu yeni özellik için raporlamış olduğunuz hatayı "KARAR VERİLDİ/ GEÇERSİZ" olarak işaretlemeniz yeterlidir.
 
@@ -95,7 +95,7 @@ Süreç
 ^^^^^
 
 #. Yeni özellik isteği http://bugs.pardus.org.tr veya  http://www.ozgurlukicin.com/yenifikir/ üzerinden girilir. bkz. `Katkıda bulunmayacağım yeni bir özelliği nasıl sunabilirim?`_
-#. Yeni özellik istekleri Sürüm Camia Temsilcisi veya grubu tarafından gözden geçirilir: 
+#. Yeni özellik istekleri Sürüm Camia Temsilcisi veya grubu tarafından gözden geçirilir:
 
     * Yeni özellik isteklerinin girişi için bir son tarih bulunmaktadır, bu son tarih sürüm yöneticisi tarafından belirlenir ve bu tarihten 2 hafta ve 1 hafta öncesinde uyarılar gerekli topluluk iletişim araçlarından gönderilecektir.
     * Bu uyarı tarihleri ve yeni özellik giriş tarihi bitimi sonrasında Sürüm Camia Temsilcisi ve grubu bu özellikleri aşağıda anlatıldığı şekilde gözden geçireceklerdir.
@@ -103,30 +103,58 @@ Süreç
 
 a.Özgürlük İçin -> Beyin kısmından gelen yeni özellik istekleri:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        #. Eğer rapor eksik ve anlaşılmayan bilgiler içeriyor ise Sürüm Camia Temsilcisi veya grubu tarafından gerekli uyarılar yorum olarak yazılır. bkz. `Özgürlük İçin / Beyin:`_
+        #. Eğer rapor `Özellik nedir?`_ kriterlerine uymuyor ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir. bkz. `Özgürlük İçin / Beyin:`_
+        #. Eğer rapor yeni özellik isteği taslağına uymuyor veya anlaşılır değil ise, bu raporun düzeltilmesi için Sürüm Camia Temsilcisi veya grubu tarafından uyarı yorumu yapılır. 
+            #. Düzeltme yeni özellik isteği son tarihinden önce gerçekleştirilemez ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir.
+            #. Düzeltme yeni özellik isteği son tarihinden önce düzeltilmiş ise aşağıda bulunan işlemler gerçekleştirilecektir:
+
         #. Eğer rapor eksiksiz ve anlaşılır bir şekilde yazılmış ve `Özellik nedir?`_ kriterlerine uyuyor ise, Sürüm Camia Temsilcisi veya grubu tarafından:
             - http://bugs.pardus.org.tr adresinden "Distribution Process -> New Feature" ürünü altına yeni bir hata raporu açılır,
             - Özgürlük İçin -> Beyin'de yapılmış ayrıntılı açıklama bu rapora kopyalanır,
-            - "newfeature" önem derecesi ile raporu işaretlerler.
+            - "newfeature" önem derecesi ile raporu işaretlenir.
             - Eğer raporlanan yeni özellik birden fazla yeni özeliği içinde barındırıyor ise bu özellikler için ayrı ayrı hatalar açılmalıdır
 
 b.Bugzilla üzerinden gelen yeni özellik istekleri:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-        #. Eğer rapor eksik ve anlaşılmayan bilgiler içeriyor ise Sürüm Camia Temsilcisi veya grubu tarafından gerekli uyarılar yorum olarak yazılır. bkz. `Bugzilla aracılığı ile:`_
-        #. Eğer rapor eksiksiz ve anlaşılır bir şekilde yazılmış ve `Özellik nedir?`_ kriterlerine uyuyor ise, Sürüm Camia Temsilcisi veya grubu, "newfeature" önem derecesi ile raporu işaretlerler.
 
-#. Sürüm yöneticisi ve ilgili uygulamanın sahibi "newfeature" önem derecesi ile işaretlenmiş olan yeni özelliği gözden geçirirler:
-    #. Yeni Özeliğin uygun olduğunu düşünürlerse raporu "KARAR VERİLDİ / DAHA SONRA" olarak işaretlerler. Gerekirse ilgili sürümün izleyici hatası olarak seçerler.
-    #. Yeni özelliğin uygun olmadığını düşünürlerse raporu "KARAR VERİLDİ/ GEÇERSİZ" olarak işaretlerler.
+Bugzilla üzerinden gelen yeni özellik istekleri Sürüm Yöneticileri, uygulama sahipleri ve Sürüm Camia Temsilcisi ve grubu tarafından gözden geçirilebilir. Bugzilla üzerinden kullanıcılar tararafından bildirilen bazı hata raporları iyileştirme veya yeni özellik niteliği taşıyabilmektedir, fakat kullanıcı tarafından çoğunlukla önem derecesi default değeri (normal) ile raporlanmaktadır. Burada amaç bugzilla'yı sürekli gözden geçirip yeni özellik ve iyileştirmelerin önem derecelerini ilgili şekilde değiştirmektir.
+
+    #. Bu gözden geçirme en az haftada bir şeklinde olmak üzere yapılmalı ve eğer rapor anlaşılır bir şekilde yazılmış ve `Özellik nedir?`_ kriterlerine uyuyor ise, iyileştirme isteği olarak girilmiş olanlar "low", yeni özellik isteği olarak girilmiş olanlar "newfeature" önem derecesini almalıdır.
+    #. Eğer rapor anlaşılır değil ve `Özellik nedir?`_ kriterlerine uymuyor ise "KARAR VERİLDİ/ GEÇERSİZ" olarak işaretlenir.
+
+
+Sunulan Özelliğin Kabul Edilmesi
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Bir sonraki yeni sürüme girecek özellik isteklerinin bir son tarihi bulunmaktadır. Bu tarihten sonra bir hafta içerisinde raporlanan tüm "newfeature" ve "low" önem derecesine sahip hata raporları ilgili sürüm yöneticisi ve uygulamanın sahibi tarafından gözden geçirilir ve yeni sürüme girip girmemesi veya bir sonraki sürüme kalması konusunda karar verilir. Bu işlemler aşağıdaki şekilde yapılacaktır: 
+
+#. Sürüm yöneticisi ve ilgili uygulamanın sahibi "newfeature" ve "low" önem derecesi ile işaretlenmiş olan yeni özelliği gözden geçirirler:
+    #. Yeni özelliğin uygun olmadığı düşünülürse raporu "KARAR VERİLDİ/ GEÇERSİZ" olarak işaretlerler.
+    #. Yeni özelliğin bu sürümde değil bir sonraki sürümde yapılabileceği düşünürlerse  "KARAR VERİLDİ / DAHA SONRA" olarak işaretenir.
+    #. Yeni Özeliğin uygun olduğunu düşünürlerse:
+        #. Durum "KARAR VERİLDİ / HATIRLAT" olarak değiştirilir
+        #. Gerekirse ürün ve bileşeni değiştirilir
+        #. İlgili sürümün izleyici hatası haline getirilir
+        #. Bu yeni özellik task haline getirildiğinde gerekli linki hatanın adres bölümüne eklenir.
+        #. Gerekli değişiklikler bugzilla ve diğer yönetim aracı tarafından izlenebilecek şekilde SVN commitleri ile yapılır.
+
+Kabul Edilen Özelliğin Tamamlanması
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yeni özelliklerin tamamlanması gereken bir son tarih bulunmaktadır (feature freeze).
+
+    #. Geliştirici bu son tarihe kadar yeni özelliği tamamlayamaz ise raporun durumunu "KARAR VERİLDİ / DAHA SONRA" olarak işaretler ve yeni özellik bir sonraki sürüme kalır.
+    #. Geliştirici yeni özelliği verilen son tarihe kadar tamamlayabilir ise hata raporunu SVN commit mesajları ile "KARAR VERİLDİ / ÇÖZÜLDÜ" olarak işaretler.
 
 
 Sunduğum özelliğin gelişmelerini nasıl takip edebilirim?
 --------------------------------------------------------
 
 #. Hata durumu "KARAR VERİLDİ/ GEÇERSİZ" olarak işaretlenmiş ise isteğiniz maalesef kabul edilmemiş demektir. Lütfen durumunu değiştirmeyiniz.
-#. Sunulan yeni özellik "KARAR VERİLDİ / DAHA SONRA" durumunu almış ise isteğiniz yeni özellik olarak kabul edilmiş demektir.
+#. Sunulan yeni özelliğin durumu "KARAR VERİLDİ / HATIRLAT" şeklinde ise istediğiniz yeni özellik olarak kabul edilmiş demektir.
     #. Bu özellik geliştirilmeye başlandığında geliştiricisi tarafından yapılan değişikliklerin SVN log'ları hataya yansıtılacaktır.
     #. Yeni özellik tamamlandığında "KARAR VERİLDİ/ ÇÖZÜLDÜ" olarak geliştiricisi tarafından işaretlenecektir.
+#. Sunulan yeni özellik "KARAR VERİLDİ / DAHA SONRA" durumunu almış ise istediğiniz yeni özellik bir sonraki sürüme aktarılmış demektir.
 
 Neden bu süreç önemlidir ve önemsemeliyim?
 ----------------------------------------------------
