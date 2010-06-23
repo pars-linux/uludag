@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--    Document Type Declaration of Pardus versions
+        definition for Paw installer.
+-->
+
+<!ELEMENT pardus (version+)>
+    <!ATTLIST pardus ver CDATA #REQUIRED>
+    <!ATTLIST pardus updated CDATA #REQUIRED>
+
+    <!-- version definition -->,
+    <!ELEMENT version (name,size,type,md5sum,minmemory,memory,minspace,space,mirrors)>
+
+        <!ATTLIST version id ID #REQUIRED>
+
+        <!ELEMENT name (#PCDATA)>
+        <!ELEMENT size (#PCDATA)>
+        <!ELEMENT type (#PCDATA)>
+        <!ELEMENT md5sum (#PCDATA)>
+        <!ELEMENT minmemory (#PCDATA)>
+        <!ELEMENT memory (#PCDATA)>
+        <!ELEMENT minspace (#PCDATA)>
+        <!ELEMENT space (#PCDATA)>
+        <!ELEMENT mirrors (source+)>
+
+            <!-- Mirror (source) definition -->
+            <!ELEMENT source (hostname, country, login, username,
+                              password, port, path, filename)>
+                <!ELEMENT hostname (#PCDATA)>
+                <!ELEMENT country (#PCDATA)>
+                <!ELEMENT login (#PCDATA)>
+                <!ELEMENT username (#PCDATA)>
+                <!ELEMENT password (#PCDATA)>
+                <!ELEMENT port (#PCDATA)>
+                <!ELEMENT path (#PCDATA)>
+                <!ELEMENT filename (#PCDATA)>
