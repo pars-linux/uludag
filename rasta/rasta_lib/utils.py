@@ -47,8 +47,7 @@ try:
 except ImportError:
     sys.exit(_('Please run "setup.py build" first.'))
 
-# RstLexer for Docutils
-from rst_lexer import RstLexer
+# Log Model for log view
 from model import LogTableModel
 
 TMPFILE = '/tmp/untitled.rst'
