@@ -103,6 +103,9 @@ Süreç
 
 a.Özgürlük İçin -> Beyin kısmından gelen yeni özellik istekleri:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        ..  image:: feature_oi.png
+
         #. Eğer rapor `Özellik nedir?`_ kriterlerine uymuyor ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir. bkz. `Özgürlük İçin / Beyin:`_
         #. Eğer rapor yeni özellik isteği taslağına uymuyor veya anlaşılır değil ise, bu raporun düzeltilmesi için Sürüm Camia Temsilcisi veya grubu tarafından uyarı yorumu yapılır. 
             #. Düzeltme yeni özellik isteği son tarihinden önce gerçekleştirilemez ise yeni özellik isteği red hazır cevabı Sürüm Camia Temsilcisi veya grubu tarafından yorum olarak gönderilir.
@@ -114,8 +117,11 @@ a.Özgürlük İçin -> Beyin kısmından gelen yeni özellik istekleri:
             - "newfeature" önem derecesi ile raporu işaretlenir.
             - Eğer raporlanan yeni özellik birden fazla yeni özeliği içinde barındırıyor ise bu özellikler için ayrı ayrı hatalar açılmalıdır
 
+
 b.Bugzilla üzerinden gelen yeni özellik istekleri:
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+       ..  image:: feature_bugzilla.png
 
 Bugzilla üzerinden gelen yeni özellik istekleri Sürüm Yöneticileri, uygulama sahipleri ve Sürüm Camia Temsilcisi ve grubu tarafından gözden geçirilebilir. Bugzilla üzerinden kullanıcılar tararafından bildirilen bazı hata raporları iyileştirme veya yeni özellik niteliği taşıyabilmektedir, fakat kullanıcı tarafından çoğunlukla önem derecesi default değeri (normal) ile raporlanmaktadır. Burada amaç bugzilla'yı sürekli gözden geçirip yeni özellik ve iyileştirmelerin önem derecelerini ilgili şekilde değiştirmektir.
 
