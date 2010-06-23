@@ -1,9 +1,8 @@
-from wmi import wmi
-
 from logger import getLogger
 log = getLogger('Installer Backend')
 
 try:
+    from wmi import wmi
     import _winreg
 except ImportError:
     log.debug('Could not import _winreg. Missing module.')
