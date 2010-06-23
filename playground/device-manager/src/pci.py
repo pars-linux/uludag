@@ -15,6 +15,7 @@ class PCIDevice(object):
         self.manufacturer = ""
         self.product = ""
         self.driver = ""
+        self.module = ""
         self.busid = os.path.basename(sysfs_path)
         for k in ("vendor", "device", "subsystem_vendor", "subsystem_device"):
             try:
@@ -30,18 +31,20 @@ class PCIDevice(object):
 
         # Detect the driver
         try:
-            self.__dict__["driver"] = os.path.basename(os.readlink(os.path.join(sysfs_path, "driver")))
+            self.driver = os.path.basename(os.readlink(os.path.join(sysfs_path, "driver")))
+            self.module = os.path.basename(os.readlink("/sys/bus/pci/drivers/%s/module" % self.driver))
         except OSError:
             pass
 
     def __str__(self):
         """Human readable str representation."""
-        return "%s [%s:%s]  %s %s\n  Subsystem: [%s:%s]\n  Driver in use: %s\n"  % (self.busid,
-                                                                                    self.vendor, self.device,
-                                                                                    self.manufacturer, self.product,
-                                                                                    self.subsystem_vendor,
-                                                                                    self.subsystem_device,
-                                                                                    self.driver)
+        return "%s [%s:%s]  %s %s\n  Subsystem: [%s:%s]\n  Driver in use: %s %s\n"  % (self.busid,
+                                                                                       self.vendor, self.device,
+                                                                                       self.manufacturer, self.product,
+                                                                                       self.subsystem_vendor,
+                                                                                       self.subsystem_device,
+                                                                                       self.driver,
+                                                                                       "(%s)" % self.module if self.module else "")
 
 class PCIBus(object):
     """Class which abstracts the PCI Bus and the devices."""
