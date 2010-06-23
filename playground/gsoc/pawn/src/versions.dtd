@@ -7,7 +7,7 @@
     <!ATTLIST pardus ver CDATA #REQUIRED>
     <!ATTLIST pardus updated CDATA #REQUIRED>
 
-    <!-- version definition -->,
+    <!-- version definition -->
     <!ELEMENT version (name,size,type,md5sum,minmemory,memory,minspace,space,mirrors)>
 
         <!ATTLIST version id ID #REQUIRED>
