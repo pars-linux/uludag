@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pardus SYSTEM "versions.dtd">
+
 <pardus ver="1.0" lastUpdated="24/01/2010">
     <version id="pardus2009.2">
 	<name>Pardus 2009.2 Geronticus eremita</name>
@@ -10,7 +12,7 @@
 	<minspace>1258291200</minspace>
 	<space>4194304000</space>
 	<mirrors>
-	    <source type="default" protocol="ftp">
+	    <source>
 		<hostname>ftp.pardus.org.tr</hostname>
 		<country>TR</country>
 		<login>true</login>
@@ -33,7 +35,7 @@
 	<minspace>1258291200</minspace>
 	<space>4194304000</space>
 	<mirrors>
-	    <source type="default" protocol="ftp">
+	    <source>
 		<hostname>ftp.pardus.org.tr</hostname>
 		<country>TR</country>
 		<login>true</login>
@@ -56,7 +58,7 @@
 	<minspace>1258291200</minspace>
 	<space>4194304000</space>
 	<mirrors>
-	    <source type="default" protocol="ftp">
+	    <source>
 		<hostname>ftp.linux.org.tr</hostname>
 		<country>TR</country>
 		<login>true</login>
@@ -67,7 +69,7 @@
 		<filename>Pardus_2009.iso</filename>
 	    </source>
 
-	    <source type="default" protocol="ftp">
+	    <source>
 		<hostname>ftp.pardus.org.tr</hostname>
 		<country>TR</country>
 		<login>true</login>
@@ -90,7 +92,7 @@
 	<minspace>907264</minspace>
 	<space>907264</space>
 	<mirrors>
-	    <source type="default" protocol="ftp">
+	    <source>
 		<hostname>ftp.pardus.org.tr</hostname>
 		<country>TR</country>
 		<login>true</login>
