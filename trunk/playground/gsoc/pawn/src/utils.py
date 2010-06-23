@@ -3,6 +3,8 @@ timeUnitsSingle = ['second', 'minute', 'hour', 'day']
 timeUnitsPlural = ['seconds', 'minutes', 'hours', 'days']
 
 def humanReadableSize(bytes):
+    global sizeUnits
+
     bytes = long(bytes)
     x = 0
     part = 0
@@ -13,6 +15,10 @@ def humanReadableSize(bytes):
     return '%d.%d %s' % (bytes, part, sizeUnits[x])
 
 def humanReadableTime(seconds):
+    global timeUnitsSingle
+    global timeUnitsPlural
+
+
     if seconds>=24*60*60:
 	v1=seconds/(24*60*60)
 	v2=(seconds%(24*60*60))/(60*60)
@@ -34,10 +40,10 @@ def humanReadableTime(seconds):
 	u1=1
 	u2=0
 
-	if(v1==1): u1 = timeUnitsSingle[u1]
-	else: u1 = timeUnitsPlural[u1]
-	if(v2==1): u2 = timeUnitsSingle[u2]
-	else: u2 = timeUnitsPlural[u2]
+    if(v1==1): u1 = timeUnitsSingle[u1]
+    else: u1 = timeUnitsPlural[u1]
+    if(v2==1): u2 = timeUnitsSingle[u2]
+    else: u2 = timeUnitsPlural[u2]
 
 
     return '%d %s %d %s' % (v1,u1,v2,u2)

@@ -9,8 +9,8 @@ from gui.widgetConfiguration import Ui_widgetConfiguration
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Configure Your Pardus"
 
-    defaultSize = long(0.5*1024*1024*1024)
-    minSize = long(0.2*1024*1024*1024)
+    defaultSize = long(5.0*1024*1024*1024)
+    minSize = long(1.0*1024*1024*1024)
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
