@@ -18,7 +18,7 @@ import pisi
 
 from pmlogging import logger
 
-import offline
+from offlineparser import OfflineParser
 
 # for rewrited pisi.api functions
 #--------------------------------
@@ -48,7 +48,7 @@ class Iface(Singleton):
             self.oidb = pisi.db.offline_idb.Offline_InstallDB()
             self.initDB()
 
-        self.offline = offline.Offline()
+        self.offlineparser = OfflineParser()
 
     def initialized(self):
         return "link" in self.__dict__
@@ -91,7 +91,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.add_package(pkg)
 
-        self.offline.saveProcess(all_packages, "install")
+        self.offlineparser.saveOperation(all_packages, "install")
 
     def removePackages(self, packages):
         all_packages = packages + self.requires_list
@@ -99,7 +99,7 @@ class Iface(Singleton):
         for pkg in all_packages:
             self.oidb.remove_package(pkg)
 
-        self.offline.saveProcess(all_packages, "remove")
+        self.offlineparser.saveOperation(all_packages, "remove")
 
     def upgradePackages(self, packages):
         self.installPackages(packages)
@@ -267,6 +267,9 @@ class Iface(Singleton):
 
     def fetch(self, packages, path):
         pisi.api.fetch(packages, path)
+
+    def setIndex(self, filename):
+        self.oidb.setIndex(filename)
 
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.
