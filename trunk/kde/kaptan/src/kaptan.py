@@ -28,39 +28,20 @@ import gui.tools as tools
 from gui.progressPie import DrawPie
 from gui.kaptanMenu import Menu
 
-def loadFile(_file):
-    try:
-        f = file(_file)
-        d = [a.strip() for a in f]
-        d = (x for x in d if x and x[0] != "#")
-        f.close()
-        return d
-    except:
-        return []
-
-def profileSended():
-    ''' Do not show smolt screen if profile was already sended.'''
-    file = open("/etc/smolt/pub-uuid-smolt.pardus.org.tr", 'r')
-
-    if file.read() != '':
-        return True
-
-    return False
-
-if tools.isLiveCD():
-    availableScreens = [welcomeWidget, keyboardWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget, summaryWidget, goodbyeWidget]
-elif profileSended():
-    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, packageWidget, summaryWidget, goodbyeWidget]
-else:
-    availableScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, searchWidget, networkWidget, smoltWidget, packageWidget, summaryWidget, goodbyeWidget]
 
 class Kaptan(QtGui.QWidget):
-    def __init__(self, parent=None):
+    def __init__(self, parent = None):
+
         QtGui.QWidget.__init__(self, parent)
         self.ui = Ui_kaptanUI()
 
         self.ui.setupUi(self)
-        self.screens = availableScreens
+
+        # Kaptan screen settings
+        self.commonScreens = [welcomeWidget, mouseWidget, styleWidget, menuWidget, wallpaperWidget, networkWidget]
+        self.endScreens = [summaryWidget, goodbyeWidget]
+        self.screens = self.appendOtherScreens(self.commonScreens) + self.endScreens
+
         self.screenData = None
         self.moveInc = 1
         self.menuText = ""
@@ -88,6 +69,34 @@ class Kaptan(QtGui.QWidget):
         QtCore.QObject.connect(self.ui.buttonBack, QtCore.SIGNAL("clicked()"), self.slotBack)
         QtCore.QObject.connect(self.ui.buttonFinish, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
         QtCore.QObject.connect(self.ui.buttonCancel, QtCore.SIGNAL("clicked()"), QtGui.qApp, QtCore.SLOT("quit()"))
+
+    def smoltProfileSent(self):
+        ''' Do not show smolt screen if profile was already sended.'''
+        smolt_uuid_path = "/etc/smolt/pub-uuid-smolt.pardus.org.tr"
+
+        if os.path.exists(smolt_uuid_path):
+            if os.path.getsize(smolt_uuid_path) > 0:
+                return True
+
+        return False
+
+    def appendOtherScreens(self, commonScreens):
+        screens = commonScreens
+
+        # Append other screens depending on the following cases
+        if tools.isLiveCD():
+            screens.append(keyboardWidget)
+
+        else:
+            if self.smoltProfileSent():
+                screens.append(packageWidget)
+                screens.append(searchWidget)
+            else:
+                screens.append(searchWidget)
+                screens.append(smoltWidget)
+                screens.append(packageWidget)
+
+        return screens
 
     def slotFinished(self):
         if wallpaperWidget.Widget.selectedWallpaper:
