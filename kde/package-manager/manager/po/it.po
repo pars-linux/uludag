@@ -1,7 +1,7 @@
 # translation of it.po to italiano
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Siciliano Edivad <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
@@ -21,7 +21,7 @@ msgstr ""
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Aggiungi e rimuovi software"
 
 #: data/package-manager.desktop.in.h:2
 #: data/packagemanager-helper.desktop.in.h:2 src/about.py:23 src/about.py:24
@@ -31,24 +31,23 @@ msgstr "Gestore di Pacchetti"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "Una GUI per il package-manager PiSi"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Rimuovi pacchetto/i"
+msgstr "Applica i cambiamenti"
 
 #: src/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -59,14 +58,14 @@ msgid "First Author"
 msgstr "Primo autore"
 
 #: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/about.py:37
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -103,7 +102,7 @@ msgstr "Mostra finestra principale"
 
 #: src/mainwidget.py:75
 msgid "All Packages are up to date"
-msgstr ""
+msgstr "Tutti i pacchetti sono aggiornati."
 
 #: src/mainwidget.py:136
 msgid "All Updates"
@@ -417,24 +416,24 @@ msgid "Update"
 msgstr "Aggiorna"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Aggiornamenti"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Ci sono <b>%1</b> aggiornamenti disponibili!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Ignora"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Mostra aggiornamenti"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Ignora"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
