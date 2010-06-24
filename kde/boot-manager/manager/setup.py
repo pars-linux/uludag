@@ -21,44 +21,50 @@ from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from code.bootmanager import about
+from src.bootmanager import about
+
+PROJECT = 'boot-manager'
 
 def update_messages():
-    # Create empty directory
-    os.system("rm -rf .tmp")
-    os.makedirs(".tmp")
-
     # Collect UI files
+    files = open("infiles.list", "w")
+    filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+            os.system("/usr/kde/4/bin/pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
 
-    # Collect Python files
-    os.system("cp -R code/* .tmp/")
-
-    # Collect desktop files
-    os.system("cp -R data/*.desktop.in .tmp/")
-
-    # Generate headers for desktop files
-    for filename in glob.glob(".tmp/*.desktop.in"):
+    # Collect headers for desktop files
+    for filename in glob.glob("data/*.desktop.in"):
         os.system("intltool-extract --type=gettext/ini %s" % filename)
 
+    filelist = os.popen("find data src ui -name '*.h' -o -name '*.py'").read().strip().split("\n")
+    filelist.sort()
+    files.write("\n".join(filelist))
+    files.close()
+
     # Generate POT file
-    os.system("find .tmp -name '*.py' -o -name '*.h' | "
-              "xargs xgettext --default-domain=%s  \
-                              --keyword=_ \
-                              --keyword=N_ \
-                              --keyword=i18n \
-                              --keyword=ki18n \
-                              -o po/%s.pot" % (about.catalog, about.catalog))
+    os.system("xgettext --default-domain=%s \
+                        --keyword=_ \
+                        --keyword=N_ \
+                        --keyword=i18n \
+                        --keyword=ki18n \
+                        --kde \
+                        -ci18n -ki18n:1 -ki18nc:1c,2 -ki18np:1,2 -ki18ncp:1c,2,3 -ktr2i18n:1 \
+                        -kI18N_NOOP:1 -kI18N_NOOP2:1c,2 -kaliasLocale -kki18n:1 -kki18nc:1c,2 \
+                        -kki18np:1,2 -kki18ncp:1c,2,3 \
+                        --files-from=infiles.list \
+                        -o po/%s.pot" % (PROJECT, PROJECT))
 
     # Update PO files
-    for item in os.listdir("po"):
-        if item.endswith(".po"):
-            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
-            os.system("cp .tmp/temp.po po/%s" % item)
+    for item in glob.glob1("po", "*.po"):
+        os.system("msgmerge --update --no-wrap --sort-by-file po/%s po/%s.pot" % (item, PROJECT))
 
-    # Remove temporary directory
-    os.system("rm -rf .tmp")
+    # Cleanup
+    os.unlink("infiles.list")
+    for f in [_f for _f in filelist if _f.startswith("ui/") or _f.endswith(".h")]:
+        try:
+            os.unlink(f)
+        except OSError:
+            pass
 
 def makeDirs(dir):
     try:
@@ -72,7 +78,7 @@ class Build(build):
         os.system("rm -rf build")
         # Copy codes
         print "Copying PYs..."
-        os.system("cp -R code/ build/")
+        os.system("cp -R src/ build/")
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
