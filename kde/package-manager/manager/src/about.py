@@ -15,7 +15,7 @@
 version = "2.9.0"
 
 # PyKDE4 Imports
-from PyKDE4.kdecore import ki18n, KAboutData
+from PyKDE4.kdecore import ki18n, ki18nc, KAboutData
 
 # Application Data
 appName     = "package-manager"
@@ -32,7 +32,8 @@ aboutData   = KAboutData(appName, catalog, programName, version,
                          homePage, bugEmail)
 
 # Authors
-aboutData.addAuthor (ki18n("Gökmen Göksel"), ki18n("Developer"))
-aboutData.addAuthor (ki18n("Faik Uygur"), ki18n("First Author"))
+aboutData.addAuthor(ki18n("Gökmen Göksel"), ki18n("Developer"))
+aboutData.addAuthor(ki18n("Faik Uygur"), ki18n("First Author"))
+aboutData.setTranslator(ki18nc("NAME OF TRANSLATORS", "Your names"), ki18nc("EMAIL OF TRANSLATORS", "Your emails"))
 aboutData.setProgramIconName(":/data/package-manager.png")
 
