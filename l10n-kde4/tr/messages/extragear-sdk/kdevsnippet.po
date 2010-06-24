@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevsnippet\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-08 01:30+0200\n"
+"POT-Creation-Date: 2010-06-23 01:30+0200\n"
 "PO-Revision-Date: 2009-09-15 17:26+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -46,8 +46,8 @@ msgstr "Bir Parçacık Deposu Ekle"
 msgid "<empty snippet>"
 msgstr "Yeni Parçacık"
 
-#: snippetcompletionmodel.cpp:60 snippetplugin.cpp:48 snippetplugin.cpp:86
-#: snippetview.cpp:43 snippetview.cpp:154
+#: snippetplugin.cpp:48 snippetplugin.cpp:86 snippetview.cpp:43
+#: snippetview.cpp:154 snippetcompletionmodel.cpp:57
 msgid "Snippets"
 msgstr "Parçacıklar"
 

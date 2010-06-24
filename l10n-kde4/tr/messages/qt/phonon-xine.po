@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phonon-xine\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-05-13 01:26+0200\n"
+"POT-Creation-Date: 2010-06-22 01:31+0200\n"
 "PO-Revision-Date: 2009-04-19 19:32+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -106,7 +106,7 @@ msgstr ""
 "Preamp gain - tüm kazanç değerlerini değiştirmek için kullanılır\n"
 "10 Dengeleyici bant - asıl IIR dengeleyici parametreleri.\n"
 
-#: mediaobject.cpp:356 xinestream.cpp:255
+#: mediaobject.cpp:359 xinestream.cpp:255
 #, qt-format
 msgid "Cannot open media data at '<i>%1</i>'"
 msgstr "Buradaki '<i>%1</i>' aygıtı açamıyor"

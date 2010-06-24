@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: phonon_kde\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:27+0100\n"
+"POT-Creation-Date: 2010-06-18 01:21+0200\n"
 "PO-Revision-Date: 2008-04-30 04:09+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@lists.kde.org>\n"
@@ -21,16 +21,16 @@ msgstr ""
 msgid "create method returned 0"
 msgstr "oluşturma yöntemi 0 döndürdü"
 
-#: kdeplatformplugin.cpp:170
+#: kdeplatformplugin.cpp:173
 #, kde-format
 msgid "<qt>Unable to use the <b>%1</b> Multimedia Backend:<br/>%2</qt>"
 msgstr "<qt><b>%1</b> Çokluortam Arka Ucu kullanılamıyor:<br/>%2</qt>"
 
-#: kdeplatformplugin.cpp:190
+#: kdeplatformplugin.cpp:192
 msgid "Unable to find a Multimedia Backend"
 msgstr "Bir Çokluortam Arka Ucu bulunamadı"
 
-#: kdeplatformplugin.cpp:225
+#: kdeplatformplugin.cpp:227
 msgid "Unable to find the requested Multimedia Backend"
 msgstr "İstenilen Çokluortam Arka Ucu bulunamadı"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kgamma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-09-10 06:23+0200\n"
+"POT-Creation-Date: 2010-06-24 01:24+0200\n"
 "PO-Revision-Date: 2008-01-28 00:08+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -17,68 +17,68 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: kgamma.cpp:144
+#: kgamma.cpp:147
 msgid "&Select test picture:"
 msgstr "Deneme re&smini seçin:"
 
-#: kgamma.cpp:149
+#: kgamma.cpp:152
 msgid "Gray Scale"
 msgstr "Gri Ton"
 
-#: kgamma.cpp:150
+#: kgamma.cpp:153
 msgid "RGB Scale"
 msgstr "RGB Ton"
 
-#: kgamma.cpp:151
+#: kgamma.cpp:154
 msgid "CMY Scale"
 msgstr "CMY Ton"
 
-#: kgamma.cpp:152
+#: kgamma.cpp:155
 msgid "Dark Gray"
 msgstr "Koyu Gri"
 
-#: kgamma.cpp:153
+#: kgamma.cpp:156
 msgid "Mid Gray"
 msgstr "Orta Gri"
 
-#: kgamma.cpp:154
+#: kgamma.cpp:157
 msgid "Light Gray"
 msgstr "Açık Gri"
 
-#: kgamma.cpp:208
+#: kgamma.cpp:211
 msgid "Gamma:"
 msgstr "Gama:"
 
-#: kgamma.cpp:211
+#: kgamma.cpp:214
 msgid "Red:"
 msgstr "Kırmızı:"
 
-#: kgamma.cpp:214
+#: kgamma.cpp:217
 msgid "Green:"
 msgstr "Yeşil:"
 
-#: kgamma.cpp:217
+#: kgamma.cpp:220
 msgid "Blue:"
 msgstr "Mavi:"
 
-#: kgamma.cpp:263
+#: kgamma.cpp:266
 msgid "Save settings system wide"
 msgstr "Ayarları sistem geneli için kaydet"
 
-#: kgamma.cpp:266
+#: kgamma.cpp:269
 msgid "Sync screens"
 msgstr "Ekranı eşzamanla"
 
-#: kgamma.cpp:272
+#: kgamma.cpp:275
 #, kde-format
 msgid "Screen %1"
 msgstr "Ekran %1"
 
-#: kgamma.cpp:290
+#: kgamma.cpp:293
 msgid "Gamma correction is not supported by your graphics hardware or driver."
 msgstr "Gama düzeltme ekran kartınız veya sürücünüz tarafından desteklenmiyor."
 
-#: kgamma.cpp:598
+#: kgamma.cpp:601
 msgid ""
 "<h1>Monitor Gamma</h1> This is a tool for changing monitor gamma correction. "
 "Use the four sliders to define the gamma correction either as a single "

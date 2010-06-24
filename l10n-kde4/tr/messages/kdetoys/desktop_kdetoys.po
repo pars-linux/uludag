@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdetoys\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-01-11 06:12+0000\n"
+"POT-Creation-Date: 2010-06-15 23:33+0000\n"
 "PO-Revision-Date: 2008-01-29 01:05+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
@@ -148,22 +148,22 @@ msgctxt "Comment"
 msgid "The KDE Tea Cooker"
 msgstr "Çay Pişirici"
 
-#: kteatime/src/kteatime.notifyrc:65
+#: kteatime/src/kteatime.notifyrc:66
 msgctxt "Name"
 msgid "Tea is ready"
 msgstr "Çay hazır"
 
-#: kteatime/src/kteatime.notifyrc:125
+#: kteatime/src/kteatime.notifyrc:127
 msgctxt "Comment"
 msgid "Tea is ready"
 msgstr "Çay hazır"
 
-#: kteatime/src/kteatime.notifyrc:190
+#: kteatime/src/kteatime.notifyrc:193
 msgctxt "Name"
 msgid "Tea is getting lonely"
 msgstr "Çay yalnızlaşıyor"
 
-#: kteatime/src/kteatime.notifyrc:238
+#: kteatime/src/kteatime.notifyrc:242
 msgctxt "Comment"
 msgid "Tea is getting lonely."
 msgstr "Çay yalnızlaşıyor."

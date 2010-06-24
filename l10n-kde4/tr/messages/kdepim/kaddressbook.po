@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcontactmanager\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-16 01:24+0200\n"
+"POT-Creation-Date: 2010-06-24 01:27+0200\n"
 "PO-Revision-Date: 2010-05-10 15:59+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -566,62 +566,62 @@ msgctxt "@label"
 msgid "File to import:"
 msgstr "İçeriye aktarılacak dosya:"
 
-#: xxport/csv/csvimportdialog.cpp:282
+#: xxport/csv/csvimportdialog.cpp:283
 msgctxt "@title:group"
 msgid "Delimiter"
 msgstr "Sınırlayıcı"
 
-#: xxport/csv/csvimportdialog.cpp:293
+#: xxport/csv/csvimportdialog.cpp:294
 msgctxt "@option:radio Field separator"
 msgid "Comma"
 msgstr "Virgül"
 
-#: xxport/csv/csvimportdialog.cpp:298
+#: xxport/csv/csvimportdialog.cpp:299
 msgctxt "@option:radio Field separator"
 msgid "Semicolon"
 msgstr "Noktalı virgül"
 
-#: xxport/csv/csvimportdialog.cpp:302
+#: xxport/csv/csvimportdialog.cpp:303
 msgctxt "@option:radio Field separator"
 msgid "Tabulator"
 msgstr "Tablolayıcı"
 
-#: xxport/csv/csvimportdialog.cpp:306
+#: xxport/csv/csvimportdialog.cpp:307
 msgctxt "@option:radio Field separator"
 msgid "Space"
 msgstr "Boşluk"
 
-#: xxport/csv/csvimportdialog.cpp:310
+#: xxport/csv/csvimportdialog.cpp:311
 msgctxt "@option:radio Custum field separator"
 msgid "Other"
 msgstr "Diğer"
 
-#: xxport/csv/csvimportdialog.cpp:318
+#: xxport/csv/csvimportdialog.cpp:319
 msgctxt "@label:listbox"
 msgid "Text quote:"
 msgstr "Metin alıntı:"
 
-#: xxport/csv/csvimportdialog.cpp:323
+#: xxport/csv/csvimportdialog.cpp:324
 msgctxt "@item:inlistbox Qoute character option"
 msgid "\""
 msgstr "\""
 
-#: xxport/csv/csvimportdialog.cpp:324
+#: xxport/csv/csvimportdialog.cpp:325
 msgctxt "@item:inlistbox Quote character option"
 msgid "'"
 msgstr "'"
 
-#: xxport/csv/csvimportdialog.cpp:325
+#: xxport/csv/csvimportdialog.cpp:326
 msgctxt "@item:inlistbox Quote character option"
 msgid "None"
 msgstr "Hiçbiri"
 
-#: xxport/csv/csvimportdialog.cpp:329
+#: xxport/csv/csvimportdialog.cpp:330
 msgctxt "@label:listbox"
 msgid "Date format:"
 msgstr "Tarih biçimi:"
 
-#: xxport/csv/csvimportdialog.cpp:335
+#: xxport/csv/csvimportdialog.cpp:336
 msgctxt "@info:tooltip"
 msgid ""
 "<para><list><item>y: year with 2 digits</item><item>Y: year with 4 digits</"
@@ -635,71 +635,71 @@ msgstr ""
 "gün</item><item>D: 2 haneli gün</item><item>H: 2 haneli saat</item><item>I: "
 "2 haneli dakika</item><item>S: 2 haneli saniye</item></list></para>"
 
-#: xxport/csv/csvimportdialog.cpp:348
+#: xxport/csv/csvimportdialog.cpp:349
 msgctxt "@label:listbox"
 msgid "Text codec:"
 msgstr "Metin kodlaması:"
 
-#: xxport/csv/csvimportdialog.cpp:355
+#: xxport/csv/csvimportdialog.cpp:356
 msgctxt "@option:check"
 msgid "Skip first row of file"
 msgstr "Dosyanın ilk satırını atla"
 
-#: xxport/csv/csvimportdialog.cpp:368
+#: xxport/csv/csvimportdialog.cpp:369
 msgctxt "@action:button"
 msgid "Apply Template..."
 msgstr "Şablonu Uygula..."
 
-#: xxport/csv/csvimportdialog.cpp:369
+#: xxport/csv/csvimportdialog.cpp:370
 msgctxt "@action:button"
 msgid "Save Template..."
 msgstr "Şablonu Kaydet..."
 
-#: xxport/csv/csvimportdialog.cpp:388
+#: xxport/csv/csvimportdialog.cpp:389
 #, kde-format
 msgctxt "@item:inlistbox Codec setting"
 msgid "Local (%1)"
 msgstr "Yerel (%1)"
 
-#: xxport/csv/csvimportdialog.cpp:389
+#: xxport/csv/csvimportdialog.cpp:390
 msgctxt "@item:inlistbox Codec setting"
 msgid "Latin1"
 msgstr "Latin1"
 
-#: xxport/csv/csvimportdialog.cpp:390
+#: xxport/csv/csvimportdialog.cpp:391
 msgctxt "@item:inlistbox Codec setting"
 msgid "Unicode"
 msgstr "Unicode"
 
-#: xxport/csv/csvimportdialog.cpp:391
+#: xxport/csv/csvimportdialog.cpp:392
 msgctxt "@item:inlistbox Codec setting"
 msgid "Microsoft Unicode"
 msgstr "Microsoft Unicode"
 
-#: xxport/csv/csvimportdialog.cpp:473
+#: xxport/csv/csvimportdialog.cpp:474
 msgctxt "@info:status"
 msgid "You have to assign at least one column."
 msgstr "En azından bir sütun atamanız gerekiyor."
 
-#: xxport/csv/csvimportdialog.cpp:489
+#: xxport/csv/csvimportdialog.cpp:490
 msgid "There are no templates available yet."
 msgstr "Henüz kullanılabilir bir şablon yok."
 
-#: xxport/csv/csvimportdialog.cpp:489
+#: xxport/csv/csvimportdialog.cpp:490
 msgid "No templates available"
 msgstr "Kullanılabilir şablon yok"
 
-#: xxport/csv/csvimportdialog.cpp:549
+#: xxport/csv/csvimportdialog.cpp:550
 msgctxt "@title:window"
 msgid "Template Name"
 msgstr "Şablon Adı"
 
-#: xxport/csv/csvimportdialog.cpp:550
+#: xxport/csv/csvimportdialog.cpp:551
 msgctxt "@info"
 msgid "Please enter a name for the template:"
 msgstr "Şablon için lütfen bir isim girin:"
 
-#: xxport/csv/csvimportdialog.cpp:592
+#: xxport/csv/csvimportdialog.cpp:593
 msgctxt "@info:status"
 msgid "Cannot open input file."
 msgstr "Girdi dosyası açılamıyor."
@@ -975,7 +975,7 @@ msgid ""
 msgstr ""
 "Seçili adres defteri klasörünün özelliklerini düzenlemek için bir pencere aç."
 
-#: standardcontactactionmanager.cpp:61 standardcontactactionmanager.cpp:85
+#: standardcontactactionmanager.cpp:61 standardcontactactionmanager.cpp:119
 #, kde-format
 msgid "Copy Contact"
 msgid_plural "Copy %1 Contacts"
@@ -985,7 +985,7 @@ msgstr[0] "%1 Kişiyi Kopyala"
 msgid "Copy the selected contacts to the clipboard."
 msgstr "Seçili kişiyi panoya kopyala."
 
-#: standardcontactactionmanager.cpp:63 standardcontactactionmanager.cpp:87
+#: standardcontactactionmanager.cpp:63 standardcontactactionmanager.cpp:121
 #, kde-format
 msgid "Delete Contact"
 msgid_plural "Delete %1 Contacts"
@@ -995,7 +995,7 @@ msgstr[0] "%1 Kişiyi Sil"
 msgid "Delete the selected contacts from the address book."
 msgstr "Seçil kişiyi adres defterinden sil."
 
-#: standardcontactactionmanager.cpp:65 standardcontactactionmanager.cpp:89
+#: standardcontactactionmanager.cpp:65 standardcontactactionmanager.cpp:123
 #, kde-format
 msgid "Cut Contact"
 msgid_plural "Cut %1 Contacts"
@@ -1005,59 +1005,59 @@ msgstr[0] "%1 Kişiyi Kes"
 msgid "Cut the selected contacts from the address book."
 msgstr "Seçil kişiyi adres defterinden kes."
 
-#: standardcontactactionmanager.cpp:91 standardcontactactionmanager.cpp:319
+#: standardcontactactionmanager.cpp:125 standardcontactactionmanager.cpp:362
 msgid "Edit Contact..."
 msgstr "Kişiyi Düzenle..."
 
-#: standardcontactactionmanager.cpp:94
+#: standardcontactactionmanager.cpp:128
 #, kde-format
 msgid "Copy Group"
 msgid_plural "Copy %1 Groups"
 msgstr[0] "%1 Grubu Kopyala"
 
-#: standardcontactactionmanager.cpp:96
+#: standardcontactactionmanager.cpp:130
 #, kde-format
 msgid "Delete Group"
 msgid_plural "Delete %1 Groups"
 msgstr[0] "%1 Grubu Sil"
 
-#: standardcontactactionmanager.cpp:98
+#: standardcontactactionmanager.cpp:132
 #, kde-format
 msgid "Cut Group"
 msgid_plural "Cut %1 Groups"
 msgstr[0] "%1 Grubu Kes"
 
-#: standardcontactactionmanager.cpp:100
+#: standardcontactactionmanager.cpp:134
 msgid "Edit Group..."
 msgstr "Grubu Düzenle..."
 
-#: standardcontactactionmanager.cpp:172
+#: standardcontactactionmanager.cpp:207
 msgid "Add Address Book"
 msgstr "Adres Defteri Ekle"
 
-#: standardcontactactionmanager.cpp:192
+#: standardcontactactionmanager.cpp:227
 #, kde-format
 msgid "Could not add address book: %1"
 msgstr "Adres defteri eklenemedi: %1"
 
-#: standardcontactactionmanager.cpp:193
+#: standardcontactactionmanager.cpp:228
 msgid "Adding Address Book failed"
 msgstr "Adres Defteri Eklenemedi"
 
-#: standardcontactactionmanager.cpp:216
+#: standardcontactactionmanager.cpp:251
 #, kde-format
 msgid "Do you really want to delete address book '%1'?"
 msgstr "Gerçekten '%1' adres defterini silmek istiyor musunuz?"
 
-#: standardcontactactionmanager.cpp:219
+#: standardcontactactionmanager.cpp:254
 msgid "Delete Address Book?"
 msgstr "Adres Defteri Silinsin mi?"
 
-#: standardcontactactionmanager.cpp:301
+#: standardcontactactionmanager.cpp:344
 msgid "New &Contact..."
 msgstr "&Yeni Kişi..."
 
-#: standardcontactactionmanager.cpp:303
+#: standardcontactactionmanager.cpp:346
 msgid ""
 "Create a new contact<p>You will be presented with a dialog where you can add "
 "data about a person, including addresses and phone numbers.</p>"
@@ -1066,11 +1066,11 @@ msgstr ""
 "numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla "
 "karşılaşacaksınız.</p>"
 
-#: standardcontactactionmanager.cpp:310
+#: standardcontactactionmanager.cpp:353
 msgid "New &Group..."
 msgstr "&Yeni Grup..."
 
-#: standardcontactactionmanager.cpp:312
+#: standardcontactactionmanager.cpp:355
 msgid ""
 "Create a new group<p>You will be presented with a dialog where you can add a "
 "new group of contacts.</p>"
@@ -1078,7 +1078,7 @@ msgstr ""
 "Yeni bir grup oluştur<p>Yeni bir kişi grubu ekleyebileceğiniz bir pencere "
 "karşınıza çıkacaktır.</p>"
 
-#: standardcontactactionmanager.cpp:320
+#: standardcontactactionmanager.cpp:363
 msgid ""
 "Edit the selected contact<p>You will be presented with a dialog where you "
 "can edit the data stored about a person, including addresses and phone "
@@ -1088,11 +1088,11 @@ msgstr ""
 "numaralarını da kapsayan) girmenize yardımcı olan bir iletişim kutusuyla "
 "karşılaşacaksınız.</p>"
 
-#: standardcontactactionmanager.cpp:329
+#: standardcontactactionmanager.cpp:372
 msgid "Add &Address Book..."
 msgstr "&Adres Defteri Ekle..."
 
-#: standardcontactactionmanager.cpp:330
+#: standardcontactactionmanager.cpp:373
 msgid ""
 "Add a new address book<p>You will be presented with a dialog where you can "
 "select the type of the address book that shall be added.</p>"
@@ -1100,11 +1100,11 @@ msgstr ""
 "Yeni adres defteri ekle<p>Yeni bir adres defteri ekleyebileceğiniz bir "
 "pencere karşınıza çıkacak.</p>"
 
-#: standardcontactactionmanager.cpp:338
+#: standardcontactactionmanager.cpp:381
 msgid "&Delete Address Book"
 msgstr "Adres Defteri &Sil"
 
-#: standardcontactactionmanager.cpp:339
+#: standardcontactactionmanager.cpp:382
 msgid ""
 "Delete the selected address book<p>The currently selected address book will "
 "be deleted, along with all the contacts and contact groups it contains.</p>"
@@ -1112,11 +1112,11 @@ msgstr ""
 "Seçili adres defterini sil<p>Şu an seçili konumda olan adres defteri, "
 "içerdiği tüm kişiler ve kişi grupları ile beraber silinecektir.</p>"
 
-#: standardcontactactionmanager.cpp:348
+#: standardcontactactionmanager.cpp:391
 msgid "Address Book Properties..."
 msgstr "Adres Defteri Özellikleri..."
 
-#: standardcontactactionmanager.cpp:349
+#: standardcontactactionmanager.cpp:392
 msgid "Open a dialog to edit properties of the selected address book."
 msgstr "Seçili adres defterinin özelliklerini düzenlemek için bir pencere aç."
 
@@ -1161,19 +1161,19 @@ msgstr "Tanımlanmamış"
 msgid "Anniversary"
 msgstr "Yıl dönümü"
 
-#: contactfields.cpp:58
+#: contactfields.cpp:60
 msgid "EMail (preferred)"
 msgstr "E-posta (tercih edilen)"
 
-#: contactfields.cpp:59
+#: contactfields.cpp:61
 msgid "EMail (2)"
 msgstr "E-Posta (2)"
 
-#: contactfields.cpp:60
+#: contactfields.cpp:62
 msgid "EMail (3)"
 msgstr "E-Posta (3)"
 
-#: contactfields.cpp:61
+#: contactfields.cpp:63
 msgid "EMail (4)"
 msgstr "E-Posta (4)"
 

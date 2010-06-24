@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_devicenotifier\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-27 01:22+0200\n"
+"POT-Creation-Date: 2010-06-21 01:22+0200\n"
 "PO-Revision-Date: 2010-05-09 00:37+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -42,22 +42,22 @@ msgctxt "@info:status Free disk space"
 msgid "%1 free"
 msgstr "%1 boş"
 
-#: devicenotifier.cpp:202
+#: devicenotifier.cpp:206
 #, kde-format
 msgid "1 action for this device"
 msgid_plural "%1 actions for this device"
 msgstr[0] "Bu aygıt için %1 eylem"
 
-#: devicenotifier.cpp:271
+#: devicenotifier.cpp:275
 msgid "No devices plugged in"
 msgstr "Takılı aygıt yok"
 
-#: devicenotifier.cpp:275
+#: devicenotifier.cpp:279
 #, kde-format
 msgid "Last plugged in device: %1"
 msgstr "Son takılan aygıtlar : %1"
 
-#: devicenotifier.cpp:377
+#: devicenotifier.cpp:381
 msgctxt "General options page"
 msgid "General"
 msgstr "Genel"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeplasma-addons\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-04-25 23:28+0000\n"
+"POT-Creation-Date: 2010-06-22 23:32+0000\n"
 "PO-Revision-Date: 2010-05-13 14:02+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgctxt "Name"
 msgid "Bouncy Ball"
 msgstr "Zıplayan Top"
 
-#: applets/bball/plasma-applet-bball.desktop:44
+#: applets/bball/plasma-applet-bball.desktop:45
 msgctxt "Comment"
 msgid "A bouncy ball for plasma"
 msgstr "Plasma için bir zıplayan top"
@@ -177,7 +177,7 @@ msgctxt "Name"
 msgid "KDE Observatory"
 msgstr "KDE Gözlem Evi"
 
-#: applets/kdeobservatory/plasma-applet-kdeobservatory.desktop:38
+#: applets/kdeobservatory/plasma-applet-kdeobservatory.desktop:39
 msgctxt "Comment"
 msgid "Visualize the KDE ecosystem"
 msgstr "KDE ekosistemini canlandır"
@@ -187,7 +187,7 @@ msgctxt "Name"
 msgid "Input Method Panel"
 msgstr "Giriş Yöntemi Paneli"
 
-#: applets/kimpanel/src/plasma-applet-kimpanel.desktop:37
+#: applets/kimpanel/src/plasma-applet-kimpanel.desktop:38
 msgctxt "Comment"
 msgid "A generic input method panel for Oriental languages"
 msgstr "Doğu dilleri için ortak giriş yöntemi paneli"
@@ -387,7 +387,7 @@ msgctxt "Comment"
 msgid "Stay informed with the Social Desktop"
 msgstr "Sosyal Masaüstünü kullan, haberin olsun"
 
-#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.desktop:89
+#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.desktop:90
 #: applets/opendesktop/plasma-applet-opendesktop.desktop:100
 msgctxt "Keywords"
 msgid "Utilities"
@@ -403,7 +403,7 @@ msgctxt "Name"
 msgid "New Activity"
 msgstr "Yeni Etkinlik"
 
-#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc:78
+#: applets/opendesktop-activities/plasma-applet-opendesktop-activities.notifyrc:79
 msgctxt "Comment"
 msgid "Something interesting has happened in your friends network"
 msgstr "Arkadaşlarınızın ağında ilginç bir şeyler oldu"
@@ -459,7 +459,7 @@ msgctxt "Name"
 msgid "Keyboard"
 msgstr "Klavye"
 
-#: applets/plasmaboard/plasma_applet_plasmaboard.desktop:43
+#: applets/plasmaboard/plasma_applet_plasmaboard.desktop:44
 msgctxt "Comment"
 msgid "A virtual, on-screen keyboard"
 msgstr "Sanal bir masaüstü klavyesi"
@@ -484,7 +484,7 @@ msgctxt "Name"
 msgid "Qalculate!"
 msgstr "Qalculate!"
 
-#: applets/qalculate/plasma-applet-qalculate.desktop:41
+#: applets/qalculate/plasma-applet-qalculate.desktop:42
 msgctxt "Comment"
 msgid "A powerful mathematical equation solver"
 msgstr "Gelişmiş bir matematiksel eşitlik çözücü"
@@ -529,7 +529,7 @@ msgctxt "Name"
 msgid "Spell Check"
 msgstr "İmla Denetimi"
 
-#: applets/spellcheck/plasma-applet-spellcheck.desktop:41
+#: applets/spellcheck/plasma-applet-spellcheck.desktop:42
 msgctxt "Comment"
 msgid "Fast spell checking"
 msgstr "Hızlı imla denetimi"
@@ -725,7 +725,7 @@ msgctxt "Name"
 msgid "Control Audio Player"
 msgstr "Müzik Çaları Yönet"
 
-#: runners/audioplayercontrol/plasma-runner-audioplayercontrol.desktop:37
+#: runners/audioplayercontrol/plasma-runner-audioplayercontrol.desktop:38
 msgctxt "Comment"
 msgid ""
 "Allows to control MPRIS audio players (it is able to search through Amarok's "
@@ -814,7 +814,7 @@ msgctxt "Name"
 msgid "KDE Documentation"
 msgstr "KDE Belgelendirmesi"
 
-#: runners/mediawiki/plasma-runner-userbase.desktop:39
+#: runners/mediawiki/plasma-runner-userbase.desktop:40
 msgctxt "Comment"
 msgid "Search on KDE's Userbase"
 msgstr "KDE Userbase'de ara"
@@ -824,7 +824,7 @@ msgctxt "Name"
 msgid "Wikipedia"
 msgstr "Wikipedia"
 
-#: runners/mediawiki/plasma-runner-wikipedia.desktop:42
+#: runners/mediawiki/plasma-runner-wikipedia.desktop:43
 msgctxt "Comment"
 msgid "Search on Wikipedia"
 msgstr "Wikipedia'da ara"
@@ -834,7 +834,7 @@ msgctxt "Name"
 msgid "Wikitravel"
 msgstr "Wikitravel"
 
-#: runners/mediawiki/plasma-runner-wikitravel.desktop:39
+#: runners/mediawiki/plasma-runner-wikitravel.desktop:40
 msgctxt "Comment"
 msgid "Search on Wikitravel"
 msgstr "Wikitravel'da ara"
