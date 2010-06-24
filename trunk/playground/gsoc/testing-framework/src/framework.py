@@ -43,7 +43,7 @@ def main():
     # Now check the conditions and create the object
     if custompackages is not None:
         customparsefile = XMLParser(os.path.abspath(filename), custom_package_parse(custompackages))
-        print "Parse only the packages in the file: '{0}'".format(os.path.abspath(custompackages))
+        print "Custom package parsing using file: '{0}'".format(os.path.abspath(custompackages))
         customparsefile.parser_main()
     else:
         parsefile = XMLParser(os.path.abspath(filename), None)

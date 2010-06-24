@@ -13,6 +13,9 @@ def test_install(packagelist, installedpackages, availablepackages):
     """Use the pisi api to install the packages"""
     # Packages which are in the testcase file and are not installed
     packagestNotInstalled = list(set(packagelist) - set(installedpackages))
+    if not packagestNotInstalled:
+        print 'All the required packages are installed.'
+        return
     # Install only packages that are in all the repositories
     packagesNotInRepo = list(set(packagestNotInstalled) - set((availablepackages)))
     if packagesNotInRepo:
@@ -20,8 +23,8 @@ def test_install(packagelist, installedpackages, availablepackages):
     # Only try installing those packages which are in the repository
     finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
     totalPackages = len(finalPacakges)
-    if not finalPacakges:
-        print 'All the required packages are installed.'
+    if totalPackages == 0:
+        print 'No packages were installed.'
         return
     print 'Number of packages to be installed: [ {0} ]'.format(totalPackages)
     sizeInMB = 1024.0 * 1024.0
@@ -35,7 +38,7 @@ def test_install(packagelist, installedpackages, availablepackages):
         singlePackage = string.split(finalPacakges[counter])
         try:
             install(singlePackage)
-            print '\nFinished installing the required packages.'
+            print "\nFinished installing the following packages: '{0}'".format(string.join(finalPacakges, ', '))
         except PrivilegeError:      # in case the user doesn't have permission
             print '[Error]: The framework is not running with root privileges.'
             print '[Solution]: To install the packages, run the framework with root privileges.'
