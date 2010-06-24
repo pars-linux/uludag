@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -25,9 +25,8 @@ msgid "Boot Manager"
 msgstr "Boot menedzser"
 
 #: src/bootmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -38,14 +37,14 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/bootmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/bootmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Az Ön neve"
+
+#: src/bootmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "Az Ön email-címe"
 
 #: src/bootmanager/main.py:99
 msgid ""
