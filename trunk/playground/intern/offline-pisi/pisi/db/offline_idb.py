@@ -30,11 +30,11 @@ class Offline_InstallDB():
     def __init__(self):
         self.pdb = pisi.db.packagedb.PackageDB()
 
-        f = open("/tmp/offline-pm.data", "r")
-        index_xml = f.read()
-        f.close()
-        doc = piksemel.parse(index_xml)
+    def setIndex(self, filename):
+        doc = piksemel.parse(filename)
+        self.initialize(doc)
 
+    def initialize(self, doc):
         self.installed_db = self.__generate_installed_pkgs(doc)
         self.rev_deps_db = self.__generate_revdeps(doc)
 
