@@ -12,15 +12,15 @@
  
 import backend
 
-class ModeManager:
+class SessionManager:
 
     (NORMAL, OFFLINE) = range(2)
 
     def __init__(self):
 	pass
 
-    def setMode(self, mode):
-	if mode == self.NORMAL:
+    def setSession(self, session):
+	if session == self.NORMAL:
 	    backend.pm = backend.normal_pm
 	else:
 	    backend.pm = backend.offline_pm

@@ -23,9 +23,9 @@ from ui_mainwindow import Ui_MainWindow
 from mainwidget import MainWidget
 from statemanager import StateManager
 from settingsdialog import SettingsDialog
+from offlinemanager import OfflineManager
+from sessionmanager import SessionManager
 from tray import Tray
-from offline import OfflineManager
-from modemanager import ModeManager
 
 import backend
 import config
@@ -37,17 +37,26 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.setWindowIcon(KIcon(":/data/package-manager.png"))
         self.setCentralWidget(MainWidget(self))
         self.settingsDialog = SettingsDialog(self)
-        self.offlinemanager = OfflineManager()
         self.initializeActions()
         self.initializeStatusBar()
         self.initializeTray()
         self.connectMainSignals()
+        
+        self.offlinemanager = OfflineManager()
+        self.connectOfflineSignals()
 
     def connectMainSignals(self):
+        self.connect(self, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("packagesChanged()"), self.centralWidget().initialize)
         self.connect(self.settingsDialog, SIGNAL("traySettingChanged()"), self.tray.settingsChanged)
         self.connect(self.centralWidget().state, SIGNAL("repositoriesChanged()"), self.tray.populateRepositoryMenu)
         self.connect(KApplication.kApplication(), SIGNAL("shutDown()"), self.slotQuit)
+
+    def connectOfflineSignals(self):
+        self.connect(self, SIGNAL("importIndex(str)"), self.offlinemanager.importIndex)
+        self.connect(self, SIGNAL("exportIndex(str)"), self.offlinemanager.exportIndex)
+        self.connect(self, SIGNAL("openSession(str)"), self.offlinemanager.openSession)
+        self.connect(self, SIGNAL("saveSession(str)"), self.offlinemanager.saveSession)
 
     def initializeTray(self):
         self.tray = Tray(self)
@@ -106,21 +115,21 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         self.connect(self.showUpgradeAction, SIGNAL("triggered()"), lambda:self.centralWidget().switchState(StateManager.UPGRADE))
         actionGroup.addAction(self.showUpgradeAction)
 
-        self.importIndexAction = KToggleAction(KIcon("list-add"), "Import Index", self)
+        self.importIndexAction = KToggleAction(KIcon("list-add"), i18n("Import Index"), self)
         self.actionCollection().addAction("importIndexAction", self.importIndexAction)
         self.connect(self.importIndexAction, SIGNAL("triggered()"), self.importIndex)
 
-        self.exportIndexAction = KToggleAction(KIcon("list-remove"), "Export Index", self)
+        self.exportIndexAction = KToggleAction(KIcon("list-remove"), i18n("Export Index"), self)
         self.actionCollection().addAction("exportIndexAction", self.exportIndexAction)
         self.connect(self.exportIndexAction, SIGNAL("triggered()"), self.exportIndex)
 
-        self.denemeAction = KToggleAction(KIcon("list-add"), "Import Offline Jobs", self)
-        self.actionCollection().addAction("denemeAction", self.denemeAction)
-        self.connect(self.denemeAction, SIGNAL("triggered()"), self.importOfflineJobs)
+        self.openSessionAction = KToggleAction(KIcon("list-add"), i18n("Open Session"), self)
+        self.actionCollection().addAction("openSessionAction", self.openSessionAction)
+        self.connect(self.openSessionAction, SIGNAL("triggered()"), self.openSession)
 
-        self.closeOfflineModeAction = KToggleAction(KIcon("list-remove"), "Close Offline Mode", self)
-        self.actionCollection().addAction("closeOfflineModeAction", self.closeOfflineModeAction)
-        self.connect(self.closeOfflineModeAction, SIGNAL("triggered()"), self.closeOfflineMode)
+        self.saveSessionAction = KToggleAction(KIcon("list-remove"), i18n("Save Session"), self)
+        self.actionCollection().addAction("saveSessionAction", self.saveSessionAction)
+        self.connect(self.saveSessionAction, SIGNAL("triggered()"), self.saveSession)
 
     def statusWaiting(self):
         self.statusLabel.setMovie(self.wheelMovie)
@@ -147,32 +156,33 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
         if backend.pm.Iface().operationInProgress():
             return
 
-    def switchMode(self, mode):
-        self.centralWidget().switchMode(mode)
+    def switchSession(self, session):
+        self.centralWidget().switchSession(session)
         self.showInstallAction.setChecked(True)
 
     def importIndex(self):
-        filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.xml", self, i18n("Select project file")))
+        filename = str(KFileDialog.getOpenFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Import index file")))
 
         if filename:
-            self.offlinemanager.importIndex(filename)
-            self.switchMode(ModeManager.OFFLINE)
+            self.switchSession(SessionManager.OFFLINE)
+            self.emit(SIGNAL("importIndex(str)"), filename)
+            self.emit(SIGNAL("packagesChanged()"))
 
     def exportIndex(self):
-        filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Select project file")))
+        filename = str(KFileDialog.getSaveFileName(KUrl("pisi-installed"), "*.xml", self, i18n("Export index file")))
 
         if filename:
-            self.offlinemanager.exportIndex(filename)
+            self.emit(SIGNAL("exportIndex(str)"), filename)
 
-    def importOfflineJobs(self):
-        filename = str(KFileDialog.getOpenFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
-
-        if filename:
-            self.offlinemanager.startProcesses(filename)
-
-    def closeOfflineMode(self):
-        filename = str(KFileDialog.getSaveFileName(KUrl("pisi_files"), "*.tar", self, i18n("Select project file")))
+    def openSession(self):
+        filename = str(KFileDialog.getOpenFileName(KUrl("pisi-archive"), "*.offline", self, i18n("Open offline session")))
 
         if filename:
-            self.offlinemanager.writeCatalog(filename)
-            self.switchMode(ModeManager.NORMAL)
+            self.emit(SIGNAL("openSession(str)"), filename)
+
+    def saveSession(self):
+        filename = str(KFileDialog.getSaveFileName(KUrl("pisi-archive"), "*.offline", self, i18n("Save offline session")))
+
+        if filename:
+            self.emit(SIGNAL("saveSession(str)"), filename)
+            self.switchSession(SessionManager.NORMAL)

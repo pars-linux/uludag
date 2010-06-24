@@ -9,8 +9,8 @@
       <Separator />
       <Action name="importIndexAction" />
       <Action name="exportIndexAction" />
-      <Action name="denemeAction" />
-      <Action name="closeOfflineModeAction" />
+      <Action name="openSessionAction" />
+      <Action name="saveSessionAction" />
     </Menu>
   </MenuBar>
   <ToolBar iconSize="16" name="mainToolBar" >
