@@ -37,7 +37,6 @@ class RstTextEdit(QPlainTextEdit):
 
         self.updateLineNumberAreaWidth(0)
         self.highlightCurrentLine()
-        self.lineNumberArea.hide()
 
     def lineNumberAreaWidth(self):
         digits = 3
