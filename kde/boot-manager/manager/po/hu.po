@@ -37,14 +37,14 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/bootmanager/about.py:33
-msgctxt "NAME OF TRANSLATORS"
+msgctxt "FORDÍTÓ NEVE"
 msgid "Your names"
-msgstr "Az Ön neve"
+msgstr "Kovács Dániel"
 
 #: src/bootmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
+msgctxt "FORDÍTÓ EMAIL-CÍME"
 msgid "Your emails"
-msgstr "Az Ön email-címe"
+msgstr "bicskas9323@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
