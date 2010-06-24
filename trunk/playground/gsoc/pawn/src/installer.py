@@ -1,18 +1,24 @@
+import tempfile
+import os
+
 from logger import getLogger
 log = getLogger('Installer Backend')
 
 try:
     from wmi import wmi
     import _winreg
-except ImportError:
+except ImportError, NameError:
     log.debug('Could not import _winreg. Missing module.')
 
 class Installer():
     def __init__(self, mainEngine):
         self.mainEngine = mainEngine
-        self.wmi = wmi.WMI(privileges=["Shutdown"])
-        self.reg = wmi.WMI(namespace="DEFAULT").StdRegProv
-        self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
+#        self.wmi = wmi.WMI(privileges=["Shutdown"])
+#        self.reg = wmi.WMI(namespace="DEFAULT").StdRegProv
+#        self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
+
+        self.setTempFolder()
+        self.setTempFile()
 
 
     def _setRegistryKey(self, hlmPath, keyName, keyValue, isDWORD = False):
@@ -61,8 +67,12 @@ class Installer():
     def reboot(self):
         self.wmi.Win32_OperatingSystem(Primary = 1)[0].Reboot()
 
-    def getTempFolder(self):
-        pass
+    def setTempFolder(self):
+        self.mainEngine.config.tmpDir = tempfile.mkdtemp()
 
-    def getInstallationPath(self):
-        pass
+    def setTempFile(self):
+        self.mainEngine.config.isoFile = \
+            os.path.join(self.mainEngine.config.tmpDir, 'downloaded.iso')
+
+    def getInstallationRoot(self):
+        return os.path.join(self.mainEngine.config.drive, 'Pardus')

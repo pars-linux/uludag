@@ -18,7 +18,6 @@ def humanReadableTime(seconds):
     global timeUnitsSingle
     global timeUnitsPlural
 
-
     if seconds>=24*60*60:
 	v1=seconds/(24*60*60)
 	v2=(seconds%(24*60*60))/(60*60)
@@ -47,3 +46,4 @@ def humanReadableTime(seconds):
 
 
     return '%d %s %d %s' % (v1,u1,v2,u2)
+

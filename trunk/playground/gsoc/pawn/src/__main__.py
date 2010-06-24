@@ -1,4 +1,4 @@
-import sys
+import sys, time
 from PyQt4 import QtGui
 
 from guicontroller import PaWnGui
@@ -29,17 +29,19 @@ class PaWn():
 	self.compatibility = Compatibility()
 	self.versionManager = VersionManager()
 	self.md5sum = MD5sum()
-	self.initFTP()
+	
 
         if self.compatibility.wmi:
             self.installer = Installer(self)
         else:
             self.installer = None
 
+
+        self.installer = Installer(self)
+
+        self.ftpDownloader = FTPDownloader(self.config.isoFile)
 	self.gui = PaWnGui(self)
 
-    def initFTP(self):
-	self.ftpDownloader = FTPDownloader('test.iso')
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
