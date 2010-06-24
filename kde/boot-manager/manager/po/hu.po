@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:46+0300\n"
+"POT-Creation-Date: 2010-06-24 16:37+0300\n"
 "PO-Revision-Date: 2010-06-01 18:48+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -15,88 +15,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Új hozzáadása"
+#: data/bootmanager.desktop.in.h:1
+msgid "An application for managing boot loader."
+msgstr "Egy alkalmazás a boot loader menedzselésére."
 
-#: .tmp/ui_item.py:69
-msgid "Set or unset entry as default boot entry."
-msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
-
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Szerkesztés"
-
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Törlés"
-
-#: .tmp/ui_edit.py:134
-msgid "Title"
-msgstr "Cím"
-
-#: .tmp/ui_edit.py:135
-msgid "Name of the boot entry to be shown at the boot menu."
-msgstr "A boot-bejegyzés neve a boot-menüben található."
-
-#: .tmp/ui_edit.py:136
-msgid "Disk"
-msgstr "Lemez"
-
-#: .tmp/ui_edit.py:137
-msgid "Disk that contains operating system."
-msgstr "A lemez, amely tartalmazza az operációs rendszert."
-
-#: .tmp/ui_edit.py:138
-msgid "Kernel"
-msgstr "Kernel"
-
-#: .tmp/ui_edit.py:139
-msgid "Operating system kernel."
-msgstr "Operációs rendszer kernel."
-
-#: .tmp/ui_edit.py:140
-msgid "Ramdisk File"
-msgstr "Ramdisk fájl"
-
-#: .tmp/ui_edit.py:141
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "A fájl, amely tartalmazza a mikro-operációs rendszert a betöltött kernel-moduloknak."
-
-#: .tmp/ui_edit.py:142
-msgid "Boot Options"
-msgstr "Boot opciók"
-
-#: .tmp/ui_edit.py:143
-msgid "Boot options for operating system."
-msgstr "Boot opciók az operációs rendszer részére."
-
-#: .tmp/ui_options.py:37
-msgid "Boot menu display time:"
-msgstr "Boot menü várakozási ideje:"
-
-#: .tmp/bootmanager/about.py:20 .tmp/bootmanager/about.py:22
-#: .tmp/bootmanager.desktop.in.h:2 .tmp/kcm_bootmanager.desktop.in.h:1
+#: data/bootmanager.desktop.in.h:2 data/kcm_bootmanager.desktop.in.h:1
+#: src/bootmanager/about.py:20 src/bootmanager/about.py:22
 msgid "Boot Manager"
 msgstr "Boot menedzser"
 
-#: .tmp/bootmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/bootmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/bootmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/bootmanager/about.py:32
+#: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/bootmanager/about.py:32
+#: src/bootmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
-#: .tmp/bootmanager/main.py:99
+#: src/bootmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/bootmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -104,18 +55,77 @@ msgstr ""
 "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
 "Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
 
-#: .tmp/bootmanager/main.py:198
+#: src/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Minden elem"
 
-#: .tmp/bootmanager/main.py:306
+#: src/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Biztosan törölni akarod '%1'?"
 
-#: .tmp/bootmanager/main.py:337
+#: src/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
 
-#: .tmp/bootmanager.desktop.in.h:1
-msgid "An application for managing boot loader."
-msgstr "Egy alkalmazás a boot loader menedzselésére."
+#: ui/ui_edit.py:134
+msgid "Title"
+msgstr "Cím"
+
+#: ui/ui_edit.py:135
+msgid "Name of the boot entry to be shown at the boot menu."
+msgstr "A boot-bejegyzés neve a boot-menüben található."
+
+#: ui/ui_edit.py:136
+msgid "Disk"
+msgstr "Lemez"
+
+#: ui/ui_edit.py:137
+msgid "Disk that contains operating system."
+msgstr "A lemez, amely tartalmazza az operációs rendszert."
+
+#: ui/ui_edit.py:138
+msgid "Kernel"
+msgstr "Kernel"
+
+#: ui/ui_edit.py:139
+msgid "Operating system kernel."
+msgstr "Operációs rendszer kernel."
+
+#: ui/ui_edit.py:140
+msgid "Ramdisk File"
+msgstr "Ramdisk fájl"
+
+#: ui/ui_edit.py:141
+msgid "File that contains a micro operating system for preloading kernel modules."
+msgstr "A fájl, amely tartalmazza a mikro-operációs rendszert a betöltött kernel-moduloknak."
+
+#: ui/ui_edit.py:142
+msgid "Boot Options"
+msgstr "Boot opciók"
+
+#: ui/ui_edit.py:143
+msgid "Boot options for operating system."
+msgstr "Boot opciók az operációs rendszer részére."
+
+#: ui/ui_item.py:69
+msgid "Set or unset entry as default boot entry."
+msgstr "Bejegyzés aktiválása vagy deaktiválása mint alapértelmezett boot-bejegyzés."
+
+#: ui/ui_item.py:70
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: ui/ui_item.py:71
+msgid "Delete"
+msgstr "Törlés"
+
+#: ui/ui_main.py:77
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#: ui/ui_options.py:37
+msgid "Boot menu display time:"
+msgstr "Boot menü várakozási ideje:"
+
+#~ msgid " "
+#~ msgstr " "
