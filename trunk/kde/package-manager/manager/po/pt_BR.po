@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pt_BR\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:49+0300\n"
+"POT-Creation-Date: 2010-06-24 16:20+0300\n"
 "PO-Revision-Date: 2010-05-15 20:02-0300\n"
 "Last-Translator: Diogo Lima <diogo.urb@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <http://liste.uludag.org.tr/mailman/listinfo/pardus-translation-ptbr>\n"
@@ -15,390 +15,392 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/about.py:24 .tmp/about.py:25 .tmp/mainwidget.py:299
-#: .tmp/mainwidget.py:311 .tmp/package-manager.desktop.in.h:2
-#: .tmp/packagemanager-helper.desktop.in.h:2 .tmp/ui_mainwindow.py:33
-msgid "Package Manager"
-msgstr "Gerenciador de Pacotes"
-
-#: .tmp/about.py:27
-msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009-2010 TUBITAK/UEKAE"
-
-#: .tmp/about.py:35
-msgid "Developer"
-msgstr "Desenvolvedor"
-
-#: .tmp/about.py:35
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: .tmp/about.py:36
-msgid "Faik Uygur"
-msgstr "Faik Uygur"
-
-#: .tmp/about.py:36
-msgid "First Author"
-msgstr "Primeiro Autor"
-
-#: .tmp/basketdialog.py:114
-msgid "Do you want to continue ?"
-msgstr "Você quer continuar ?"
-
-#: .tmp/basketdialog.py:115
-msgid "Update Requirements"
-msgstr "Atualizar Requerimentos"
-
-#: .tmp/basketdialog.py:125
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr "Você deve <b>reinicializar</b> o seu sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
-
-#: .tmp/basketdialog.py:132
-msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr "Você deve reinicializar os seguintes serviços de sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
-
-#: .tmp/basketdialog.py:154 .tmp/mainwidget.py:259 .tmp/mainwidget.py:262
-#: .tmp/settingsdialog.py:220 .tmp/settingsdialog.py:225
-msgid "Pisi Error"
-msgstr "Erro do PiSi"
-
-#: .tmp/commontext.py:15 .tmp/operationmanager.py:130
-msgid "downloading"
-msgstr "fazendo download"
-
-#: .tmp/commontext.py:15 .tmp/progressdialog.py:48
-msgid "extracting"
-msgstr "extraindo"
-
-#: .tmp/commontext.py:16 .tmp/progressdialog.py:48
-msgid "configuring"
-msgstr "configurando"
-
-#: .tmp/commontext.py:16
-msgid "removing"
-msgstr "removendo"
-
-#: .tmp/commontext.py:17
-msgid "installing"
-msgstr "instalando"
-
-#: .tmp/grouplist.py:36 .tmp/tray.py:69 .tmp/tray.py:195 .tmp/tray.py:223
-msgid "All"
-msgstr "Todos"
-
-#: .tmp/helpdialog.py:31
-msgid "Package Manager Help"
-msgstr "Ajuda do Gerenciador de Pacote"
-
-#: .tmp/main.py:52
-msgid "Show main window"
-msgstr "Mostrar tela principal"
-
-#: .tmp/mainwidget.py:66
-msgid "All Packages are up to date"
-msgstr ""
-
-#: .tmp/mainwidget.py:123
-msgid "All Updates"
-msgstr "Todas as Atualizações"
-
-#: .tmp/mainwidget.py:124
-msgid "Security Updates"
-msgstr "Atualizações de Segurança"
-
-#: .tmp/mainwidget.py:125
-msgid "Critical Updates"
-msgstr "Atualizações Críticas"
-
-#: .tmp/mainwidget.py:253
-msgid "Network Error"
-msgstr "Erro de Conectividade de Rede"
-
-#: .tmp/mainwidget.py:254
-msgid "Please check your network connections and try again."
-msgstr "Por favor cheque as conexões de rede e tente novamente."
-
-#: .tmp/mainwidget.py:256
-msgid "Authorization Error"
-msgstr "Erro de Autorização"
-
-#: .tmp/mainwidget.py:257
-msgid "You are not authorized for this operation."
-msgstr "Você não está autorizado para executar essa operação."
-
-#: .tmp/mainwidget.py:260
-msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
-msgstr "Pacote não encontrado. Ele pode ter sido atualizado ou removido do repositório. Por favor tente atualizar as informações do repositório."
-
-#: .tmp/mainwindow.py:74 .tmp/mainwindow.py:79 .tmp/mainwindow_kde4.py:81
-#: .tmp/mainwindow_kde4.py:86 .tmp/statemanager.py:130
-msgid "Currently your basket is empty."
-msgstr "Sua cesta está atualmente vazia."
-
-#: .tmp/mainwindow.py:96
-msgid "File"
-msgstr "Arquivo"
-
-#: .tmp/mainwindow.py:97
-msgid "Settings"
-msgstr "Configurações"
-
-#: .tmp/mainwindow.py:98 .tmp/mainwindow.py:104
-msgid "Help"
-msgstr "Ajuda"
-
-#: .tmp/mainwindow.py:100 .tmp/tray.py:189
-msgid "Quit"
-msgstr "Sair"
-
-#: .tmp/mainwindow.py:113 .tmp/mainwindow_kde4.py:102
-msgid "Show Installable Packages"
-msgstr "Mostrar Pacotes Instaláveis"
-
-#: .tmp/mainwindow.py:123 .tmp/mainwindow_kde4.py:108
-msgid "Show Installed Packages"
-msgstr "Mostrar Pacotes Instalados"
-
-#: .tmp/mainwindow.py:132 .tmp/mainwindow_kde4.py:113
-msgid "Show Upgradable Packages"
-msgstr "Mostrar Pacotes Atualizáveis"
-
-#: .tmp/mainwindow.py:142 .tmp/ui_settingsdialog.py:370
-msgid "Package Manager Settings"
-msgstr "Configurações do Gerenciador de Pacotes"
-
-#: .tmp/package-manager.desktop.in.h:1
+#: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
 msgstr ""
 
-#: .tmp/package-manager.desktop.in.h:3
+#: data/package-manager.desktop.in.h:2
+#: data/packagemanager-helper.desktop.in.h:2 src/about.py:23 src/about.py:24
+#: src/mainwidget.py:314 src/mainwidget.py:326 ui/ui_mainwindow.py:33
+msgid "Package Manager"
+msgstr "Gerenciador de Pacotes"
+
+#: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
 msgstr ""
 
-#: .tmp/packagedelegate.py:48
-msgid "critical"
-msgstr ""
-
-#: .tmp/packagedelegate.py:49
-msgid "security"
-msgstr ""
-
-#: .tmp/packagedelegate.py:65
-msgid "Description:"
-msgstr "Descrição:"
-
-#: .tmp/packagedelegate.py:66
-msgid "Website:"
-msgstr "Site:"
-
-#: .tmp/packagedelegate.py:67
-msgid "Release:"
-msgstr "Lançamento:"
-
-#: .tmp/packagedelegate.py:68
-msgid "Repository:"
-msgstr "repositório:"
-
-#: .tmp/packagedelegate.py:69
-msgid "Package Size:"
-msgstr "Tamanho do Pacote:"
-
-#: .tmp/packagedelegate.py:70
-msgid "Installed Version:"
-msgstr "Versão Instalada:"
-
-#: .tmp/packagemanager-helper.desktop.in.h:1
+#: data/packagemanager-helper.desktop.in.h:1
 #, fuzzy
 msgid "Add/Remove/Update Packages"
 msgstr "Removendo Pacote(s)"
 
-#: .tmp/pm-install.py:47
+#: src/about.py:26
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Desenvolvedor"
+
+#: src/about.py:35
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
+
+#: src/about.py:36
+msgid "Faik Uygur"
+msgstr "Faik Uygur"
+
+#: src/about.py:36
+msgid "First Author"
+msgstr "Primeiro Autor"
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/about.py:37
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/basketdialog.py:114
+msgid "Do you want to continue ?"
+msgstr "Você quer continuar ?"
+
+#: src/basketdialog.py:115
+msgid "Update Requirements"
+msgstr "Atualizar Requerimentos"
+
+#: src/basketdialog.py:125
+msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
+msgstr "Você deve <b>reinicializar</b> o seu sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
+
+#: src/basketdialog.py:132
+msgid "You must restart following system services for the updated package(s) to take effect:"
+msgstr "Você deve reinicializar os seguintes serviços de sistema para que as versões atualizadas do(s) pacote(s) tenha(m) efeito:"
+
+#: src/basketdialog.py:154 src/mainwidget.py:274 src/mainwidget.py:277
+#: src/settingsdialog.py:220 src/settingsdialog.py:225
+msgid "Pisi Error"
+msgstr "Erro do PiSi"
+
+#: src/grouplist.py:41 src/tray.py:69 src/tray.py:195 src/tray.py:223
+msgid "All"
+msgstr "Todos"
+
+#: src/helpdialog.py:31
+msgid "Package Manager Help"
+msgstr "Ajuda do Gerenciador de Pacote"
+
+#: src/main.py:57
+msgid "Show main window"
+msgstr "Mostrar tela principal"
+
+#: src/mainwidget.py:75
+msgid "All Packages are up to date"
+msgstr ""
+
+#: src/mainwidget.py:136
+msgid "All Updates"
+msgstr "Todas as Atualizações"
+
+#: src/mainwidget.py:137
+msgid "Security Updates"
+msgstr "Atualizações de Segurança"
+
+#: src/mainwidget.py:138
+msgid "Critical Updates"
+msgstr "Atualizações Críticas"
+
+#: src/mainwidget.py:268
+msgid "Network Error"
+msgstr "Erro de Conectividade de Rede"
+
+#: src/mainwidget.py:269
+msgid "Please check your network connections and try again."
+msgstr "Por favor cheque as conexões de rede e tente novamente."
+
+#: src/mainwidget.py:271
+msgid "Authorization Error"
+msgstr "Erro de Autorização"
+
+#: src/mainwidget.py:272
+msgid "You are not authorized for this operation."
+msgstr "Você não está autorizado para executar essa operação."
+
+#: src/mainwidget.py:275
+msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
+msgstr "Pacote não encontrado. Ele pode ter sido atualizado ou removido do repositório. Por favor tente atualizar as informações do repositório."
+
+#: src/mainwindow.py:74 src/mainwindow.py:79 src/mainwindow_kde4.py:94
+#: src/mainwindow_kde4.py:102 src/statemanager.py:130
+msgid "Currently your basket is empty."
+msgstr "Sua cesta está atualmente vazia."
+
+#: src/mainwindow.py:96
+msgid "File"
+msgstr "Arquivo"
+
+#: src/mainwindow.py:97
+msgid "Settings"
+msgstr "Configurações"
+
+#: src/mainwindow.py:98 src/mainwindow.py:104
+msgid "Help"
+msgstr "Ajuda"
+
+#: src/mainwindow.py:100 src/tray.py:189
+msgid "Quit"
+msgstr "Sair"
+
+#: src/mainwindow.py:113 src/mainwindow_kde4.py:118
+msgid "Show Installable Packages"
+msgstr "Mostrar Pacotes Instaláveis"
+
+#: src/mainwindow.py:123 src/mainwindow_kde4.py:124
+msgid "Show Installed Packages"
+msgstr "Mostrar Pacotes Instalados"
+
+#: src/mainwindow.py:132 src/mainwindow_kde4.py:129
+msgid "Show Upgradable Packages"
+msgstr "Mostrar Pacotes Atualizáveis"
+
+#: src/mainwindow.py:142 ui/ui_settingsdialog.py:370
+msgid "Package Manager Settings"
+msgstr "Configurações do Gerenciador de Pacotes"
+
+#: src/operationmanager.py:131
+msgid "downloading"
+msgstr "fazendo download"
+
+#: src/packagedelegate.py:48
+msgid "critical"
+msgstr ""
+
+#: src/packagedelegate.py:49
+msgid "security"
+msgstr ""
+
+#: src/packagedelegate.py:65
+msgid "Description:"
+msgstr "Descrição:"
+
+#: src/packagedelegate.py:66
+msgid "Website:"
+msgstr "Site:"
+
+#: src/packagedelegate.py:67
+msgid "Release:"
+msgstr "Lançamento:"
+
+#: src/packagedelegate.py:68
+msgid "Repository:"
+msgstr "repositório:"
+
+#: src/packagedelegate.py:69
+msgid "Package Size:"
+msgstr "Tamanho do Pacote:"
+
+#: src/packagedelegate.py:70
+msgid "Installed Version:"
+msgstr "Versão Instalada:"
+
+#: src/pm-install.py:47
 msgid "%prog packages_to_install"
 msgstr ""
 
-#: .tmp/progressdialog.py:45
+#: src/progressdialog.py:45
 #, python-format
 msgid "Operation - %1%"
 msgstr "Operação - %1%"
 
-#: .tmp/progressdialog.py:52
+#: src/progressdialog.py:48
+msgid "configuring"
+msgstr "configurando"
+
+#: src/progressdialog.py:48
+msgid "extracting"
+msgstr "extraindo"
+
+#: src/progressdialog.py:52
 msgid "Downloading package list of %1"
 msgstr "Fazendo download da lista de pacotes de %1"
 
-#: .tmp/progressdialog.py:54
+#: src/progressdialog.py:54
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: .tmp/progressdialog.py:59
+#: src/progressdialog.py:59
 msgid "%1 / %2 package %3"
 msgstr "%1 / %2 pacote %3"
 
-#: .tmp/progressdialog.py:65
+#: src/progressdialog.py:65
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: .tmp/progressdialog.py:77 .tmp/ui_progressdialog.py:154
+#: src/progressdialog.py:77 ui/ui_progressdialog.py:154
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Preparando o PiSi...</h3>"
 
-#: .tmp/progressdialog.py:81 .tmp/ui_progressdialog.py:159
+#: src/progressdialog.py:81 ui/ui_progressdialog.py:159
 msgid "Status:"
 msgstr "Estado:"
 
-#: .tmp/progressdialog.py:82 .tmp/ui_progressdialog.py:156
+#: src/progressdialog.py:82 ui/ui_progressdialog.py:156
 msgid "--  / --"
 msgstr "-- / --"
 
-#: .tmp/progressdialog.py:83 .tmp/ui_progressdialog.py:155
+#: src/progressdialog.py:83 ui/ui_progressdialog.py:155
 msgid "Time remaining:"
 msgstr "Tempo para finalização:"
 
-#: .tmp/progressdialog.py:84 .tmp/ui_progressdialog.py:157
+#: src/progressdialog.py:84 ui/ui_progressdialog.py:157
 msgid "--:--:--"
 msgstr "--:--:--"
 
-#: .tmp/progressdialog.py:88
+#: src/progressdialog.py:88
 msgid "<b>Cancelling operation...</b>"
 msgstr "<b>Cancelando a operação...</b>"
 
-#: .tmp/settingsdialog.py:150
+#: src/settingsdialog.py:150
 msgid "Open Directory"
 msgstr "Abrir Diretório"
 
-#: .tmp/settingsdialog.py:159
+#: src/settingsdialog.py:159
 msgid "Warning"
 msgstr "Aviso"
 
-#: .tmp/settingsdialog.py:160
+#: src/settingsdialog.py:160
 msgid "All the cached packages will be deleted. Are you sure? "
 msgstr "Todos os pacotes em cache serão deletados. Você tem certeza?"
 
-#: .tmp/settingsdialog.py:221
+#: src/settingsdialog.py:221
 msgid "Not a valid repository name"
 msgstr "Não é um nome de repositório válido"
 
-#: .tmp/settingsdialog.py:226
+#: src/settingsdialog.py:226
 msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
 msgstr "<qt>Endereço de repositório deveria terminar com o sufixo xml ou xml.bz2.<p>Por favor tente novamente.</qt>"
 
-#: .tmp/statemanager.py:72
+#: src/statemanager.py:72
 msgid "Installing Package(s)"
 msgstr "Instalando Pacote(s)"
 
-#: .tmp/statemanager.py:73
+#: src/statemanager.py:73
 msgid "Removing Package(s)"
 msgstr "Removendo Pacote(s)"
 
-#: .tmp/statemanager.py:74
+#: src/statemanager.py:74
 msgid "Upgrading Package(s)"
 msgstr "Atualizando Pacote(s)"
 
-#: .tmp/statemanager.py:75
+#: src/statemanager.py:75
 msgid "Applying Repository Changes"
 msgstr "Aplicando Modificações do Repositório"
 
-#: .tmp/statemanager.py:76
+#: src/statemanager.py:76
 msgid "Updating Repository"
 msgstr "Atualizando Repositório"
 
-#: .tmp/statemanager.py:77
+#: src/statemanager.py:77
 msgid "Updating Repository(s)"
 msgstr "Atualizando Repositório(s)"
 
-#: .tmp/statemanager.py:80 .tmp/ui_basketdialog.py:107
-#: .tmp/ui_mainwidget_kde4.py:93 .tmp/ui_mainwidget_x11.py:82
+#: src/statemanager.py:80 ui/ui_basketdialog.py:107
+#: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Instalar Pacote(s)"
 
-#: .tmp/statemanager.py:81
+#: src/statemanager.py:81
 msgid "Remove Package(s)"
 msgstr "Removendo Pacote(s)"
 
-#: .tmp/statemanager.py:82
+#: src/statemanager.py:82
 msgid "Upgrade Package(s)"
 msgstr "Atualizando Pacote(s)"
 
-#: .tmp/statemanager.py:85
+#: src/statemanager.py:85
 msgid "installed"
 msgstr "instalado"
 
-#: .tmp/statemanager.py:86
+#: src/statemanager.py:86
 msgid "removed"
 msgstr "removido"
 
-#: .tmp/statemanager.py:87
+#: src/statemanager.py:87
 msgid "upgraded"
 msgstr "atualizado"
 
-#: .tmp/statemanager.py:95
+#: src/statemanager.py:95
 msgid "%1 new package(s) have been installed succesfully."
 msgstr "%1 novo(s) pacote(s) foi(ram) instalado(s) com sucesso."
 
-#: .tmp/statemanager.py:96
+#: src/statemanager.py:96
 msgid "%1 package(s) have been removed succesfully."
 msgstr "%1 pacote(s) foi(ram) removido(s) com sucesso."
 
-#: .tmp/statemanager.py:97
+#: src/statemanager.py:97
 msgid "%1 package(s) have been upgraded succesfully."
 msgstr "%1 pacote(s) foi(ram) atualizado(s) com sucesso."
 
-#: .tmp/statemanager.py:100
+#: src/statemanager.py:100
 msgid "You have selected the following package(s) to install:"
 msgstr "Você selecionou o(s) seguinte(s) pacote(s) para instalar:"
 
-#: .tmp/statemanager.py:101
+#: src/statemanager.py:101
 msgid "You have selected the following package(s) to removal:"
 msgstr "Você selecionou o(s) seguinte(s) pacote(s) para remover:"
 
-#: .tmp/statemanager.py:102
+#: src/statemanager.py:102
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Você selecionou o(s) seguinte(s) pacote(s) para atualização:"
 
-#: .tmp/statemanager.py:105 .tmp/ui_basketdialog.py:104
+#: src/statemanager.py:105 ui/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Dependências extras para o(s) pacote(s) selecionado(s) que também serão instaladas:"
 
-#: .tmp/statemanager.py:106
+#: src/statemanager.py:106
 msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
 msgstr "Dependências reversas para o(s) pacote(s) selecionado(s) que também serão removidas:"
 
-#: .tmp/statemanager.py:107
+#: src/statemanager.py:107
 msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
 msgstr "Dependências extras para o(s) pacote(s) selecionado(s) que também serão atualizadas:"
 
-#: .tmp/statemanager.py:132
+#: src/statemanager.py:132
 msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
 msgstr "Atualmente existem <b>%1</b> pacote(s) selecionado(s) do total de <b>%2</b> de tamanho"
 
-#: .tmp/statemanager.py:135
+#: src/statemanager.py:135
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
 msgstr "com <b>%1</b> dependências reversas do total <b>%2</b> de tamanho "
 
-#: .tmp/statemanager.py:137
+#: src/statemanager.py:137
 msgid "with <b>%1</b> extra dependencies of total <b>%2</b> of size "
 msgstr "com <b>%1</b> dependências extras do total <b>%2</b> de tamanho "
 
-#: .tmp/statemanager.py:138
+#: src/statemanager.py:138
 msgid "in your basket."
 msgstr "na sua cesta."
 
-#: .tmp/statemanager.py:161
+#: src/statemanager.py:161
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Pacotes selecionados [%1] estão em conflito uns com os outros. Esses pacotes não podem ser instalados juntos."
 
-#: .tmp/statemanager.py:162 .tmp/statemanager.py:170
+#: src/statemanager.py:162 src/statemanager.py:170
 msgid "Conflict Error"
 msgstr "Erro de Conflito"
 
-#: .tmp/statemanager.py:166
+#: src/statemanager.py:166
 msgid "The following packages conflicts:\n"
 msgstr "Os seguintes conflitos de pacotes:\n"
 
-#: .tmp/statemanager.py:168
+#: src/statemanager.py:168
 msgid "%1 conflicts with: [%2]\n"
 msgstr "%1 conflita com: [%2]\n"
 
-#: .tmp/statemanager.py:169
+#: src/statemanager.py:169
 msgid ""
 "\n"
 "Remove the conflicting packages from the system?"
@@ -406,124 +408,124 @@ msgstr ""
 "\n"
 "Remover pacotes conflitantes do sistema?"
 
-#: .tmp/tray.py:185 .tmp/tray.py:214
+#: src/tray.py:185 src/tray.py:214
 msgid "Update"
 msgstr "Atualizar"
 
-#: .tmp/tray.py:199
+#: src/tray.py:199
 msgid "There are %1 updates available!"
 msgstr "Existem %1 atualizações disponíveis!"
 
-#: .tmp/tray.py:199
+#: src/tray.py:199
 msgid "Updates"
 msgstr "Atualizações"
 
-#: .tmp/tray.py:230
+#: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Existem <b>%1</b> atualizações disponíveis!"
 
-#: .tmp/tray.py:231
+#: src/tray.py:231
 msgid "Ignore"
 msgstr "Ignorar"
 
-#: .tmp/tray.py:231
+#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Exibir Atualizações"
 
-#: .tmp/ui_appitem.py:57
+#: ui/ui_appitem.py:57
 msgid "Application"
 msgstr "Aplicativos"
 
-#: .tmp/ui_appitem.py:58
+#: ui/ui_appitem.py:58
 msgid "Web Tarayıcı"
 msgstr "Navegadores da Internet"
 
-#: .tmp/ui_appitem.py:59
+#: ui/ui_appitem.py:59
 msgid "Firefox"
 msgstr "Firefox"
 
-#: .tmp/ui_basketdialog.py:102
+#: ui/ui_basketdialog.py:102
 msgid "Basket"
 msgstr "Cesta"
 
-#: .tmp/ui_basketdialog.py:103
+#: ui/ui_basketdialog.py:103
 msgid "Selected package(s) for install:"
 msgstr "Pacote(s) selecionado(s) para instalar:"
 
-#: .tmp/ui_basketdialog.py:105
+#: ui/ui_basketdialog.py:105
 msgid "Total Size:"
 msgstr "Tamanho Total:"
 
-#: .tmp/ui_basketdialog.py:106
+#: ui/ui_basketdialog.py:106
 msgid "<b>2.2 MB</b>"
 msgstr "<b>2.2 MB</b>"
 
-#: .tmp/ui_basketdialog.py:108
+#: ui/ui_basketdialog.py:108
 msgid "Download Size:"
 msgstr "Tamanho para Download:"
 
-#: .tmp/ui_basketdialog.py:109
+#: ui/ui_basketdialog.py:109
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: .tmp/ui_mainwidget_kde4.py:86 .tmp/ui_mainwidget_x11.py:75
-#: .tmp/ui_pminstaller.py:33
+#: ui/ui_mainwidget_kde4.py:86 ui/ui_mainwidget_x11.py:75
+#: ui/ui_pminstaller.py:33
 msgid "Form"
 msgstr "Form"
 
-#: .tmp/ui_mainwidget_kde4.py:87 .tmp/ui_mainwidget_x11.py:76
+#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_x11.py:76
 msgid "Category Panel"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:88 .tmp/ui_mainwidget_x11.py:77
+#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_x11.py:77
 #, fuzzy
 msgid "Search Bar"
 msgstr "Buscar"
 
-#: .tmp/ui_mainwidget_kde4.py:89 .tmp/ui_mainwidget_x11.py:78
+#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_x11.py:78
 msgid "Click to search"
 msgstr "Clique para Buscar"
 
-#: .tmp/ui_mainwidget_kde4.py:90 .tmp/ui_mainwidget_x11.py:79
+#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_x11.py:79
 #, fuzzy
 msgid "Search Button"
 msgstr "Buscar"
 
-#: .tmp/ui_mainwidget_kde4.py:91 .tmp/ui_mainwidget_x11.py:80
+#: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
 msgid "Search"
 msgstr "Buscar"
 
-#: .tmp/ui_mainwidget_kde4.py:92 .tmp/ui_mainwidget_x11.py:81
+#: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
 msgid "Action Button for current states action"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:94 .tmp/ui_mainwidget_x11.py:83
+#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
 msgstr ""
 
-#: .tmp/ui_mainwidget_kde4.py:95 .tmp/ui_mainwidget_x11.py:84
+#: ui/ui_mainwidget_kde4.py:95 ui/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
 msgstr "Selecione todos os pacotes nesse grupo"
 
-#: .tmp/ui_mainwidget_kde4.py:96 .tmp/ui_mainwidget_x11.py:85
+#: ui/ui_mainwidget_kde4.py:96 ui/ui_mainwidget_x11.py:85
 #, fuzzy
 msgid "Package List"
 msgstr "Lista de pacote"
 
-#: .tmp/ui_mainwidget_kde4.py:97 .tmp/ui_mainwidget_x11.py:86
+#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_x11.py:86
 #, fuzzy
 msgid "Update Types"
 msgstr "Atualizações"
 
-#: .tmp/ui_progressdialog.py:153
+#: ui/ui_progressdialog.py:153
 msgid "Operation"
 msgstr "Operações"
 
-#: .tmp/ui_progressdialog.py:158
+#: ui/ui_progressdialog.py:158
 msgid "Operation:"
 msgstr "Operação:"
 
-#: .tmp/ui_progressdialog.py:160
+#: ui/ui_progressdialog.py:160
 msgid ""
 "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
@@ -537,224 +539,230 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#: .tmp/ui_progressdialog.py:165 .tmp/ui_settingsdialog.py:414
+#: ui/ui_progressdialog.py:165 ui/ui_settingsdialog.py:414
 msgid "&Cancel"
 msgstr "&Cancelar"
 
-#: .tmp/ui_progressdialog.py:166
+#: ui/ui_progressdialog.py:166
 msgid "Alt+C"
 msgstr "Alt+C"
 
-#: .tmp/ui_repodialog.py:55
+#: ui/ui_repodialog.py:55
 msgid "Add New Repository"
 msgstr "Adicionar Novo Repositório"
 
-#: .tmp/ui_repodialog.py:56
+#: ui/ui_repodialog.py:56
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Nome do Repositório, ex. <b>pardus-devel</b>"
 
-#: .tmp/ui_repodialog.py:57 .tmp/ui_settingsdialog.py:394
+#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:394
 msgid "Repository Name"
 msgstr "Nome do Repositório"
 
-#: .tmp/ui_repodialog.py:58 .tmp/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:58 ui/ui_settingsdialog.py:395
 msgid "Repository Address"
 msgstr "Endereço do Repositório"
 
-#: .tmp/ui_repodialog.py:59
+#: ui/ui_repodialog.py:59
 #, fuzzy
 msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
 
-#: .tmp/ui_repodialog.py:60
+#: ui/ui_repodialog.py:60
 #, fuzzy
 msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
-#: .tmp/ui_settingsdialog.py:371
+#: ui/ui_settingsdialog.py:371
 msgid "Package list"
 msgstr "Lista de pacote"
 
-#: .tmp/ui_settingsdialog.py:372
+#: ui/ui_settingsdialog.py:372
 msgid "&Show only desktop applications"
 msgstr "&Mostrar apenas aplicativos da área de trabalho"
 
-#: .tmp/ui_settingsdialog.py:373
+#: ui/ui_settingsdialog.py:373
 msgid "Show Component information "
 msgstr "Mostrar informação do componente "
 
-#: .tmp/ui_settingsdialog.py:374
+#: ui/ui_settingsdialog.py:374
 msgid "System tray icon"
 msgstr "Ícone de bandeja do sistema"
 
-#: .tmp/ui_settingsdialog.py:375
+#: ui/ui_settingsdialog.py:375
 msgid "Enable system tray icon"
 msgstr "Habilitar ícone de bandeja do sistema"
 
-#: .tmp/ui_settingsdialog.py:376
+#: ui/ui_settingsdialog.py:376
 msgid "Hide system tray if there is no update."
 msgstr "Ocultar o ícone de bandeja do sistema quando não houver nenhuma atualização."
 
-#: .tmp/ui_settingsdialog.py:377
+#: ui/ui_settingsdialog.py:377
 msgid "Enable &periodic update check"
 msgstr "Habilitar checagem de atualizações &periódicas"
 
-#: .tmp/ui_settingsdialog.py:378
+#: ui/ui_settingsdialog.py:378
 msgid "Check interval :"
 msgstr "Intervalo de checagem :"
 
-#: .tmp/ui_settingsdialog.py:379
+#: ui/ui_settingsdialog.py:379
 msgid " min"
 msgstr " min"
 
-#: .tmp/ui_settingsdialog.py:380
+#: ui/ui_settingsdialog.py:380
 msgid "Install updates automatically"
 msgstr "Instalar atualizações automaticamente"
 
-#: .tmp/ui_settingsdialog.py:381
+#: ui/ui_settingsdialog.py:381
 msgid "Bandwidth limit"
 msgstr "Limite de Banda"
 
-#: .tmp/ui_settingsdialog.py:382
+#: ui/ui_settingsdialog.py:382
 msgid " kb/s"
 msgstr " kb/s"
 
-#: .tmp/ui_settingsdialog.py:383
+#: ui/ui_settingsdialog.py:383
 msgid "Use bandwidth limit :"
 msgstr "Usar limite de banda :"
 
-#: .tmp/ui_settingsdialog.py:384
+#: ui/ui_settingsdialog.py:384
 msgid "&General Settings"
 msgstr "&Configurações Padrões"
 
-#: .tmp/ui_settingsdialog.py:385
+#: ui/ui_settingsdialog.py:385
 msgid "&Use hard disk cache for downloaded software"
 msgstr "&Usar cache de disco para download de aplicativos"
 
-#: .tmp/ui_settingsdialog.py:386
+#: ui/ui_settingsdialog.py:386
 msgid "Maximum cache size:"
 msgstr "Tamanho máximo de cache:"
 
-#: .tmp/ui_settingsdialog.py:387
+#: ui/ui_settingsdialog.py:387
 msgid "Unlimited"
 msgstr "Ilimitado"
 
-#: .tmp/ui_settingsdialog.py:388
+#: ui/ui_settingsdialog.py:388
 msgid " Mib"
 msgstr " Mib"
 
-#: .tmp/ui_settingsdialog.py:389
+#: ui/ui_settingsdialog.py:389
 msgid "Current cache dir:"
 msgstr "Diretório do cache atual:"
 
-#: .tmp/ui_settingsdialog.py:390
+#: ui/ui_settingsdialog.py:390
 msgid "Select..."
 msgstr "Selecionar..."
 
-#: .tmp/ui_settingsdialog.py:391
+#: ui/ui_settingsdialog.py:391
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
 msgstr "Limpar o cache do disco vai remover todos os downloads de softwares. Isso não remove os aplicativos instalados ou afeta a estabilidade do seu sistema."
 
-#: .tmp/ui_settingsdialog.py:392
+#: ui/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
 msgstr "&Limpar cache do disco agora"
 
-#: .tmp/ui_settingsdialog.py:393
+#: ui/ui_settingsdialog.py:393
 msgid "C&ache"
 msgstr "C&ache"
 
-#: .tmp/ui_settingsdialog.py:396
+#: ui/ui_settingsdialog.py:396
 msgid "&Add New Repository"
 msgstr "&Adicionar Novo Repositório"
 
-#: .tmp/ui_settingsdialog.py:397
+#: ui/ui_settingsdialog.py:397
 msgid "Remove Repository"
 msgstr "Remover Repositório"
 
-#: .tmp/ui_settingsdialog.py:398
+#: ui/ui_settingsdialog.py:398
 msgid "Move &Up"
 msgstr "Mover para &Cima"
 
-#: .tmp/ui_settingsdialog.py:399
+#: ui/ui_settingsdialog.py:399
 msgid "Move &Down"
 msgstr "Mover para &Baixo"
 
-#: .tmp/ui_settingsdialog.py:400
+#: ui/ui_settingsdialog.py:400
 msgid "&Repositories"
 msgstr "&Repositórios"
 
-#: .tmp/ui_settingsdialog.py:401
+#: ui/ui_settingsdialog.py:401
 msgid "HTTP proxy server:"
 msgstr "Servidor de Proxy HTTP:"
 
-#: .tmp/ui_settingsdialog.py:402 .tmp/ui_settingsdialog.py:405
-#: .tmp/ui_settingsdialog.py:407
+#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
+#: ui/ui_settingsdialog.py:407
 msgid "Port:"
 msgstr "Porta:"
 
-#: .tmp/ui_settingsdialog.py:403
+#: ui/ui_settingsdialog.py:403
 msgid "Use this proxy server for all protocols"
 msgstr "Usar esse servidor de proxy para todos os protocolos"
 
-#: .tmp/ui_settingsdialog.py:404
+#: ui/ui_settingsdialog.py:404
 msgid "HTTPS proxy server:"
 msgstr "Servidor de Proxy HTTPS:"
 
-#: .tmp/ui_settingsdialog.py:406
+#: ui/ui_settingsdialog.py:406
 msgid "FTP proxy server:"
 msgstr "Servidor de Proxy FTP:"
 
-#: .tmp/ui_settingsdialog.py:408
+#: ui/ui_settingsdialog.py:408
 msgid "No proxy server"
 msgstr "Nenhum servidor de proxy"
 
-#: .tmp/ui_settingsdialog.py:409
+#: ui/ui_settingsdialog.py:409
 #, fuzzy
 msgid "Use manual settings"
 msgstr "&Configurações Padrões"
 
-#: .tmp/ui_settingsdialog.py:410
+#: ui/ui_settingsdialog.py:410
 msgid "Use Desktop Enviorenment's settings"
 msgstr ""
 
-#: .tmp/ui_settingsdialog.py:411
+#: ui/ui_settingsdialog.py:411
 msgid "&Proxy"
 msgstr "&Proxy"
 
-#: .tmp/ui_settingsdialog.py:412
+#: ui/ui_settingsdialog.py:412
 msgid "&Help"
 msgstr "&Ajuda"
 
-#: .tmp/ui_settingsdialog.py:413
+#: ui/ui_settingsdialog.py:413
 msgid "&OK"
 msgstr "&OK"
 
-#: .tmp/ui_summarydialog.py:49
+#: ui/ui_summarydialog.py:49
 msgid "Operation Summary"
 msgstr "Resumo da Operação"
 
-#: .tmp/ui_summarydialog.py:50
+#: ui/ui_summarydialog.py:50
 msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
 msgstr "Você pode iniciar a nova aplicação instalado com um clique duplo na lista abaixo ou depois através do menu de aplicativos."
 
-#: .tmp/ui_summarydialog.py:51
+#: ui/ui_summarydialog.py:51
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "Summary"
-#~ msgstr "Resumo"
+#~ msgid "removing"
+#~ msgstr "removendo"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgid "installing"
+#~ msgstr "instalando"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
-
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Finalizou com sucesso a instalação de %1"
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
 
 #~ msgid "Use proxy server"
 #~ msgstr "Usar servidor de proxy"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Finalizou com sucesso a instalação de %1"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Finalizou com sucesso a instalação dos pacotes"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Summary"
+#~ msgstr "Resumo"
