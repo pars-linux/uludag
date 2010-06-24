@@ -4,9 +4,20 @@
 import os
 import string
 import sys
+
 from xmlparser import XMLParser
 from clarguments import arguments_parse
 
+
+def custom_package_parse(infile):
+    """Parse only the selected packages from a given file"""
+    try:
+        return [line.rstrip() for line in open(os.path.abspath(infile))]   
+    except IOError:
+        print "[Error]: Invalid package input file: '{0}' or the file does not exist.".format(os.path.abspath(infile))
+        print '[Solution]: Make sure that the input file contains packages seperated by a newline.'
+        sys.exit(1)
+    
     
 def check_file(file):
     """Check for validity of the testcase file."""
@@ -30,12 +41,16 @@ def main():
     # Check whether the file is valid or not
     check_file(filename)
     # Now check the conditions and create the object
-    parsefile = XMLParser(os.path.abspath(filename))
     if custompackages is not None:
-        parsefile.custom_package_parse(os.path.abspath(custompackages))
-    if allpackages is not None:
-        parsefile.output_package_list(os.path.abspath(allpackages))
-    parsefile.parser_main()
+        customparsefile = XMLParser(os.path.abspath(filename), custom_package_parse(custompackages))
+        print "Parse only the packages in the file: '{0}'".format(os.path.abspath(custompackages))
+        customparsefile.parser_main()
+    else:
+        parsefile = XMLParser(os.path.abspath(filename), None)
+        if allpackages is not None:
+            parsefile.output_package_list(os.path.abspath(allpackages))
+        parsefile.parser_main()
+
 
 if __name__ == '__main__':
     main()

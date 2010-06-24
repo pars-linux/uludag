@@ -4,8 +4,11 @@
 import sys
 import os
 import string
+
 from pisi.api import list_installed
+from pisi.api import list_available
 from testcases import testinstall
+
 try:
     from lxml import etree
 except ImportError:
@@ -14,7 +17,7 @@ except ImportError:
 
 class XMLParser:
     """The main parser class."""
-    def __init__(self, xmlfile, tree=None, rootelement=None):
+    def __init__(self, xmlfile, custompackage, tree=None, rootelement=None):
         self.xmlfile = xmlfile
         try:
             self.tree = etree.parse(self.xmlfile)
@@ -24,17 +27,30 @@ class XMLParser:
             print '[Solution]: Request the testcase author for a new file or fix it manually.'
             sys.exit(1)
         self.rootelement = self.tree.getroot()
+        self.custompackage = custompackage
     
     def parser_main(self):
         """The entry point for normal execution."""
         totalTestcases = 0
         # Get the total number of testcases in the file
-        for element in self.tree.iter('testcase'):
-            totalTestcases += 1
+        for element in self.tree.getiterator('testcase'):
+                totalTestcases += 1               
         counter = 0
+        # If the -p option is true, parse only the packages present in that file
+        # The ElementTree is modified at this stage, so as to ease the parsing
+        if self.custompackage is not None:
+            customCounter = 0
+            while customCounter < totalTestcases:
+                element = self.rootelement[customCounter]
+                for custom in element.getiterator('package'):
+                    if custom.text in self.custompackage:
+                        pass
+                    else:
+                        element.remove(custom)
+                customCounter += 1
         # Run each testcase
         while counter < totalTestcases:
-            print '\n-- Running test [{0} of {1}] --'.format(counter+1, totalTestcases)
+            print '\n-- Running test [ {0} of {1} ] --'.format(counter+1, totalTestcases)
             element = self.rootelement[counter]
             elementtext = element.get('test')
             # Based on the type of testcase, call the appropriate one
@@ -43,20 +59,20 @@ class XMLParser:
             counter += 1
     
     def test_install(self, element):
-        """Call the module for testcase type INSTALL"""
+        """Call the module for testcase type INSTALL."""
         listInstall = []
         for text in element.getiterator('package'):
             listInstall.append(text.text)
-        testinstall.test_install(listInstall, self.installed_packages())
+        testinstall.test_install(listInstall, self.installed_packages(), self.available_packages())
     
     def test_gui(self, element):
-        """Call the module for testcase type GUI"""
+        """Call the module for testcase type GUI."""
+        print 'Yeah gui! You are next :)'
 
-
-    def output_package_list(self, outFile):
+    def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""
         packageList = self.print_package_list()
-        outputFile = os.path.abspath(outFile)
+        outputFile = os.path.abspath(outfile)
         if os.path.isfile(outputFile):
             while True:
                 choice = raw_input("The file '{0}' exists. Do you wish to overwrite (y / n)? : ".format(outputFile))
@@ -65,10 +81,10 @@ class XMLParser:
                 else:
                     sys.exit('[Aborting]')
         try:
-            tempFile = open(outputFile, 'w')
+            writeFile = open(outputFile, 'w')
             output = string.join(packageList, '\n')
-            tempFile.write(output)
-            tempFile.close()
+            writeFile.write(output)
+            writeFile.close()
         except IOError:
             print '[Error]: An error occurred while trying to write the output package file.'
             print '[Solution]: Please ensure that the output file name and path is valid.'
@@ -81,18 +97,11 @@ class XMLParser:
         for element in self.tree.getiterator('package'):
             packageList.append(element.text)
         return packageList
-    
-    def custom_package_parse(self, inFile):
-        """Parse only the selected packages from a given file"""
-        try:
-            customPackageList = [line.rstrip() for line in open(os.path.abspath(inFile))]
-            print "Custom package parsing using file: '{0}'".format(os.path.abspath(inFile))
-        except IOError:
-            print "[Error]: Invalid package input file: '{0}' or the file does not exist.".format(os.path.abspath(inFile))
-            print '[Solution]: Make sure that the input file contains packages seperated by a newline.'
-            sys.exit(1)
 
     def installed_packages(self):
         """Use the Pisi API to fetch the list of installed packages."""
-        installedPackageList = list_installed()
-        return installedPackageList
+        return list_installed()     # Pisi API
+    
+    def available_packages(self):
+        """Use the Pisi API to fetch the list of available packages."""
+        return list_available()     # Pisi API
