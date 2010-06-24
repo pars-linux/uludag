@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: korganizer\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-11 01:25+0200\n"
+"POT-Creation-Date: 2010-06-23 01:26+0200\n"
 "PO-Revision-Date: 2010-05-10 15:56+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1533,17 +1533,17 @@ msgid "%2 (1 year)"
 msgid_plural "%2 (%1 years)"
 msgstr[0] "%2 (%1 yıl)"
 
-#: views/monthview/monthitem.cpp:457 views/agendaview/koagenda.cpp:1050
+#: views/monthview/monthitem.cpp:457 views/agendaview/koagenda.cpp:1051
 msgid ""
 "Unable to add the exception item to the calendar. No change will be done."
 msgstr "İstisna ögesi takvime eklenemedi. Hiç bir değişiklik yapılmayacak."
 
 #: views/monthview/monthitem.cpp:459 views/monthview/monthitem.cpp:488
-#: views/agendaview/koagenda.cpp:1052 views/agendaview/koagenda.cpp:1085
+#: views/agendaview/koagenda.cpp:1053 views/agendaview/koagenda.cpp:1086
 msgid "Error Occurred"
 msgstr "Bir Hata Oluştu"
 
-#: views/monthview/monthitem.cpp:486 views/agendaview/koagenda.cpp:1083
+#: views/monthview/monthitem.cpp:486 views/agendaview/koagenda.cpp:1084
 msgid "Unable to add the future items to the calendar. No change will be done."
 msgstr "Gelecek ögeleri takvime eklenemiyor. Hiç bir değişiklik yapılmayacak."
 
@@ -1936,21 +1936,21 @@ msgstr "%1 - %2"
 msgid "- %1"
 msgstr "- %1"
 
-#: views/agendaview/koagenda.cpp:853
+#: views/agendaview/koagenda.cpp:854
 msgid "Unable to lock item for modification. You cannot make any changes."
 msgstr ""
 "Değişiklik yapmak için olayı kilitleyemiyorum. Herhangi bir değişiklik "
 "yapamazsınız."
 
-#: views/agendaview/koagenda.cpp:855
+#: views/agendaview/koagenda.cpp:856
 msgid "Locking Failed"
 msgstr "Kilitleme Başarısız Oldu"
 
-#: views/agendaview/koagenda.cpp:1032
+#: views/agendaview/koagenda.cpp:1033
 msgid "Dissociate event from recurrence"
 msgstr "Olayı yinelemeden ayır"
 
-#: views/agendaview/koagenda.cpp:1067
+#: views/agendaview/koagenda.cpp:1068
 msgid "Split future recurrences"
 msgstr "Gelecek yinelemeleri ayır"
 
@@ -4388,38 +4388,38 @@ msgctxt "@info:whatsthis"
 msgid "Click this button to decline the invitation."
 msgstr "Daveti reddetmek için bu düğmeye tıklayın."
 
-#: koeditorgeneralevent.cpp:548 koeditorgeneralevent.cpp:560
+#: koeditorgeneralevent.cpp:551 koeditorgeneralevent.cpp:563
 msgctxt "@label"
 msgid "Duration: "
 msgstr "Süre: "
 
-#: koeditorgeneralevent.cpp:549
+#: koeditorgeneralevent.cpp:552
 #, kde-format
 msgctxt "@label"
 msgid "1 Day"
 msgid_plural "%1 Days"
 msgstr[0] "%1 Gün"
 
-#: koeditorgeneralevent.cpp:562
+#: koeditorgeneralevent.cpp:565
 #, kde-format
 msgctxt "@label"
 msgid "1 hour"
 msgid_plural "%1 hours"
 msgstr[0] "%1 saat"
 
-#: koeditorgeneralevent.cpp:566
+#: koeditorgeneralevent.cpp:569
 msgctxt "@label"
 msgid ", "
 msgstr ", "
 
-#: koeditorgeneralevent.cpp:569
+#: koeditorgeneralevent.cpp:572
 #, kde-format
 msgctxt "@label"
 msgid "1 minute"
 msgid_plural "%1 minutes"
 msgstr[0] "%1 dakika"
 
-#: koeditorgeneralevent.cpp:580
+#: koeditorgeneralevent.cpp:583
 msgctxt "@info:whatsthis"
 msgid ""
 "Shows the duration of the event or to-do with the current start and end "
@@ -4428,45 +4428,45 @@ msgstr ""
 "Olay veya yapılacak ögesinin süresini geçerli başlangıç ve bitiş tarihlerini "
 "ve saatleri ile gösterir."
 
-#: koeditorgeneralevent.cpp:597
+#: koeditorgeneralevent.cpp:600
 #, kde-format
 msgctxt "@label"
 msgid "From: %1   To: %2   %3"
 msgstr "Başlangıç: %1   Bitiş:%2   %3"
 
-#: koeditorgeneralevent.cpp:610
+#: koeditorgeneralevent.cpp:613
 #, kde-format
 msgctxt "@info"
 msgid "Please specify a valid start time, for example '%1'."
 msgstr "Lütfen geçerli bir başlangıç saati girin, örneğin '%1'."
 
-#: koeditorgeneralevent.cpp:612 koeditorgeneralevent.cpp:622
-#: koeditorgeneralevent.cpp:633 koeditorgeneralevent.cpp:643
-#: koeditorgeneralevent.cpp:663 koeditorgeneralevent.cpp:675
-#: koeditorgeneralevent.cpp:691
+#: koeditorgeneralevent.cpp:615 koeditorgeneralevent.cpp:625
+#: koeditorgeneralevent.cpp:636 koeditorgeneralevent.cpp:646
+#: koeditorgeneralevent.cpp:666 koeditorgeneralevent.cpp:678
+#: koeditorgeneralevent.cpp:694
 msgctxt "@title:window"
 msgid "Event Entry Validation"
 msgstr "Olay Giriş Doğrulaması"
 
-#: koeditorgeneralevent.cpp:620
+#: koeditorgeneralevent.cpp:623
 #, kde-format
 msgctxt "@info"
 msgid "Please specify a valid end time, for example '%1'."
 msgstr "Lütfen geçerli bir bitiş saati girin, örneğin '%1'."
 
-#: koeditorgeneralevent.cpp:631
+#: koeditorgeneralevent.cpp:634
 #, kde-format
 msgctxt "@info"
 msgid "Please specify a valid start date, for example '%1'."
 msgstr "Lütfen geçerli bir başlangıç tarihi girin, örneğin '%1'."
 
-#: koeditorgeneralevent.cpp:641
+#: koeditorgeneralevent.cpp:644
 #, kde-format
 msgctxt "@info"
 msgid "Please specify a valid end date, for example '%1'."
 msgstr "Lütfen geçerli bir bitiş tarihi girin, örneğin '%1'."
 
-#: koeditorgeneralevent.cpp:661
+#: koeditorgeneralevent.cpp:664
 msgctxt "@info"
 msgid ""
 "The event ends before it starts.\n"
@@ -4475,13 +4475,13 @@ msgstr ""
 "Olay başlamadan önce bitiyor.\n"
 "Lütfen tarihleri ve saatleri düzeltin."
 
-#: koeditorgeneralevent.cpp:673
+#: koeditorgeneralevent.cpp:676
 #, kde-format
 msgctxt "@info"
 msgid "You specified a starting date/time in the past '%1'"
 msgstr "Geçmiş '%1' içinde başlangıç tarihi/saati belirlediniz."
 
-#: koeditorgeneralevent.cpp:689
+#: koeditorgeneralevent.cpp:692
 #, kde-format
 msgctxt "@info"
 msgid "You specified an ending date/time in the past '%1'"

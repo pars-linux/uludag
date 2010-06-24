@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdevphp\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-15 01:36+0200\n"
+"POT-Creation-Date: 2010-06-23 01:30+0200\n"
 "PO-Revision-Date: 2009-05-18 14:40+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -182,12 +182,12 @@ msgstr ""
 msgid "Niko Sams"
 msgstr ""
 
-#: phpparsejob.cpp:168
+#: phpparsejob.cpp:167
 #, kde-format
 msgid "Included file %1 could not be found."
 msgstr "İçerilen %1 dosyası bulunamadı."
 
-#: phpparsejob.cpp:181
+#: phpparsejob.cpp:180
 #, kde-format
 msgid "File %1 includes itself."
 msgstr "%1 dosyası kendisini içeriyor."

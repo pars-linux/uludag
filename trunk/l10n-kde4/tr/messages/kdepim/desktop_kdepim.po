@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdepim\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-08 23:31+0000\n"
+"POT-Creation-Date: 2010-06-15 23:33+0000\n"
 "PO-Revision-Date: 2010-05-10 16:12+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -1610,7 +1610,7 @@ msgctxt "Name"
 msgid "Birthdays & Anniversaries"
 msgstr "Doğum günleri & Yıl dönümleri"
 
-#: runtime/resources/birthdays/birthdaysresource.desktop:38
+#: runtime/resources/birthdays/birthdaysresource.desktop:39
 msgctxt "Comment"
 msgid ""
 "Provides access to birthday and anniversary dates of contacts in your "

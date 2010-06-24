@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: blogilo\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-26 20:29+0100\n"
+"POT-Creation-Date: 2010-06-19 01:24+0200\n"
 "PO-Revision-Date: 2009-11-04 18:58+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -307,12 +307,12 @@ msgstr "Tamamlanmamış alanlar"
 msgid "Trying to guess blog and API type..."
 msgstr "Günlük ve API tipi bulunmaya çalışılıyor..."
 
-#: src/addeditblog.cpp:158 src/addeditblog.cpp:211
+#: src/addeditblog.cpp:163 src/addeditblog.cpp:226
 msgid ""
 "Auto configuration failed. You have to set Blog API on Advanced tab manually."
 msgstr ""
 
-#: src/addeditblog.cpp:214
+#: src/addeditblog.cpp:229
 msgid ""
 "The program could not guess the API of your blog, but has found an XMLRPC "
 "interface and is trying to use it.\n"
@@ -322,15 +322,15 @@ msgstr ""
 
 #. i18n: file: src/waitwidgetbase.ui:19
 #. i18n: ectx: property (text), widget (QLabel, operationNameLabel)
-#: src/addeditblog.cpp:262 rc.cpp:119
+#: src/addeditblog.cpp:281 rc.cpp:119
 msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
 
-#: src/addeditblog.cpp:264
+#: src/addeditblog.cpp:283
 msgid "Fetching Blog Id..."
 msgstr "Günlük Kimliği Alınıyor..."
 
-#: src/addeditblog.cpp:281
+#: src/addeditblog.cpp:300
 msgid ""
 "Fetching the blog id timed out. Check your Internet connection,and your "
 "homepage URL, username or password.\n"
@@ -339,42 +339,42 @@ msgid ""
 "Publishing in its configuration."
 msgstr ""
 
-#: src/addeditblog.cpp:294
+#: src/addeditblog.cpp:313
 msgid ""
 "The API guess function has failed, please check your Internet connection. "
 "Otherwise, you have to set the API type manually on the Advanced tab."
 msgstr ""
 
-#: src/addeditblog.cpp:296
+#: src/addeditblog.cpp:315
 msgid "Auto Configuration Failed"
 msgstr "Otomatik Yapılandırma Başarısız Oldu"
 
-#: src/addeditblog.cpp:305
+#: src/addeditblog.cpp:324
 msgid ""
 "Fetching BlogID Failed.\n"
 "Please check your Internet connection."
 msgstr ""
 
-#: src/addeditblog.cpp:341
+#: src/addeditblog.cpp:360
 msgid "Which blog?"
 msgstr "Hangi günlük?"
 
-#: src/addeditblog.cpp:436
+#: src/addeditblog.cpp:455
 msgctxt "Supported feature or Not"
 msgid "Yes"
 msgstr "Evet"
 
-#: src/addeditblog.cpp:438
+#: src/addeditblog.cpp:457
 msgctxt "Supported feature or Not"
 msgid "No, API does not support it"
 msgstr "Hayır, API henüz desteklemiyor"
 
-#: src/addeditblog.cpp:439
+#: src/addeditblog.cpp:458
 msgctxt "Supported feature or Not"
 msgid "No, Blogilo does not yet support it"
 msgstr "Hayır, Blogilo henüz desteklemiyor"
 
-#: src/addeditblog.cpp:520
+#: src/addeditblog.cpp:539
 msgid ""
 "Blog ID has not yet been retrieved.\n"
 "You can fetch the blog ID by clicking on \"Auto Configure\" or the \"Fetch ID"

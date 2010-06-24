@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ktorrent\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-06-07 01:29+0200\n"
+"POT-Creation-Date: 2010-06-22 01:30+0200\n"
 "PO-Revision-Date: 2010-04-19 21:26+0300\n"
 "Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
@@ -384,13 +384,13 @@ msgstr "Tam Ekranı Aç/Kapat"
 msgid "KTorrent is playing a video."
 msgstr "KTorrent bir video oynatıyor."
 
-#: plugins/webinterface/httpserver.cpp:332
+#: plugins/webinterface/httpserver.cpp:335
 #, fuzzy
 #| msgid "Cannot find webinterface skins!"
 msgid "Cannot find web interface skins."
 msgstr "Web arayüzü dış görünümleri bulunamadı!"
 
-#: plugins/webinterface/httpserver.cpp:497
+#: plugins/webinterface/httpserver.cpp:500
 msgid "Unsupported HTTP method"
 msgstr "Desteklenmeyen HTTP yöntemi"
 

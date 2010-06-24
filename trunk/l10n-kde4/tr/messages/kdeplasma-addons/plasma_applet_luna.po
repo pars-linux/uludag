@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_luna\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-02-10 01:31+0100\n"
+"POT-Creation-Date: 2010-06-19 01:25+0200\n"
 "PO-Revision-Date: 2008-11-30 07:23+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -28,37 +28,37 @@ msgstr "Genel"
 msgid "Full Moon"
 msgstr "Dolunay"
 
-#: luna.cpp:215
+#: luna.cpp:217
 msgid "New Moon"
 msgstr "Yeni Ay"
 
-#: luna.cpp:224
+#: luna.cpp:226
 #, kde-format
 msgid "Waxing Crescent (New Moon was yesterday)"
 msgid_plural "Waxing Crescent (%1 days since New Moon)"
 msgstr[0] "Büyüyen Hilal (Yeniaydan sonra %1 gün geçti)"
 
-#: luna.cpp:228
+#: luna.cpp:230
 msgid "First Quarter"
 msgstr "İlk Dördün"
 
-#: luna.cpp:237
+#: luna.cpp:239
 #, kde-format
 msgid "Waxing Gibbous (Tomorrow is Full Moon)"
 msgid_plural "Waxing Gibbous (%1 days to Full Moon)"
 msgstr[0] "Büyüyen Dışbükey (Dolunay'a %1 gün var)"
 
-#: luna.cpp:250
+#: luna.cpp:252
 #, kde-format
 msgid "Waning Gibbous (Yesterday was Full Moon)"
 msgid_plural "Waning Gibbous (%1 days since Full Moon)"
 msgstr[0] "Küçülen Dışbükey (Dolunaydan sonra %1 gün geçti)"
 
-#: luna.cpp:254
+#: luna.cpp:256
 msgid "Last Quarter"
 msgstr "Son Dördün"
 
-#: luna.cpp:265
+#: luna.cpp:267
 #, kde-format
 msgid "Waning Crescent (Tomorrow is New Moon)"
 msgid_plural "Waning Crescent (%1 days to New Moon)"

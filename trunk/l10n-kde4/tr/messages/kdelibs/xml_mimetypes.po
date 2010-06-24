@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: xml_mimetypes\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2009-10-07 07:03+0200\n"
+"POT-Creation-Date: 2010-06-21 01:26+0200\n"
 "PO-Revision-Date: 2009-05-10 12:54+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
@@ -172,155 +172,155 @@ msgstr "Metalink indirmesi"
 msgid "Microsoft Media Format"
 msgstr "Microsoft Medya Biçimi"
 
-#: kde.xml.podir/kde.xml.in.h:50
+#: kde.xml.podir/kde.xml.in.h:51
 msgid "NewzBin usenet index"
 msgstr "NewzBin usenet indeksi"
 
-#: kde.xml.podir/kde.xml.in.h:51
+#: kde.xml.podir/kde.xml.in.h:52
 msgid "Objective-C header"
 msgstr "Objective-C başlığı"
 
-#: kde.xml.podir/kde.xml.in.h:53
+#: kde.xml.podir/kde.xml.in.h:54
 msgid "Ogg multimedia file"
 msgstr "Ogg çokluortam dosyası"
 
-#: kde.xml.podir/kde.xml.in.h:55
+#: kde.xml.podir/kde.xml.in.h:56
 msgid "Ogg/Ogm Video"
 msgstr "Ogg/Ogm Videosu"
 
-#: kde.xml.podir/kde.xml.in.h:56
+#: kde.xml.podir/kde.xml.in.h:57
 msgid "Okular document archive"
 msgstr "Okular belge arşivi"
 
-#: kde.xml.podir/kde.xml.in.h:57
+#: kde.xml.podir/kde.xml.in.h:58
 msgid "Quanta project"
 msgstr "Quanta projesi"
 
-#: kde.xml.podir/kde.xml.in.h:59
+#: kde.xml.podir/kde.xml.in.h:60
 msgid "RDF/XML document"
 msgstr "RDF/XML belgesi"
 
-#: kde.xml.podir/kde.xml.in.h:60
+#: kde.xml.podir/kde.xml.in.h:61
 msgid "RELAX NG"
 msgstr "RELAX NG"
 
-#: kde.xml.podir/kde.xml.in.h:62
+#: kde.xml.podir/kde.xml.in.h:63
 msgid "RealAudio plugin file"
 msgstr "RealAudio eklenti dosyası"
 
-#: kde.xml.podir/kde.xml.in.h:63
+#: kde.xml.podir/kde.xml.in.h:64
 msgid "SNF bitmap font"
 msgstr "SNF bitmap yazı tipi"
 
-#: kde.xml.podir/kde.xml.in.h:64
+#: kde.xml.podir/kde.xml.in.h:65
 msgid "SuperKaramba theme"
 msgstr "SuperKaramba teması"
 
-#: kde.xml.podir/kde.xml.in.h:66
+#: kde.xml.podir/kde.xml.in.h:67
 msgid "TriG RDF document"
 msgstr "TriG RDF belgesi"
 
-#: kde.xml.podir/kde.xml.in.h:68
+#: kde.xml.podir/kde.xml.in.h:69
 msgid "Turtle RDF document"
 msgstr "Turtle RDF belgesi"
 
-#: kde.xml.podir/kde.xml.in.h:69
+#: kde.xml.podir/kde.xml.in.h:70
 msgid "Umbrello UML Modeller file"
 msgstr "Umbrello UML Modelleyici dosyası"
 
-#: kde.xml.podir/kde.xml.in.h:71
+#: kde.xml.podir/kde.xml.in.h:72
 msgid "Vorbis audio"
 msgstr "Vorbis sesi"
 
-#: kde.xml.podir/kde.xml.in.h:72
+#: kde.xml.podir/kde.xml.in.h:73
 msgid "W3C XML schema"
 msgstr "W3C XML şeması"
 
-#: kde.xml.podir/kde.xml.in.h:73
+#: kde.xml.podir/kde.xml.in.h:74
 msgid "Windows link"
 msgstr "Windows bağlantısı"
 
-#: kde.xml.podir/kde.xml.in.h:74
+#: kde.xml.podir/kde.xml.in.h:75
 msgid "Windows server"
 msgstr "Windows sunucusu"
 
-#: kde.xml.podir/kde.xml.in.h:75
+#: kde.xml.podir/kde.xml.in.h:76
 msgid "Windows workgroup"
 msgstr "Windows çalışma grubu"
 
-#: kde.xml.podir/kde.xml.in.h:76
+#: kde.xml.podir/kde.xml.in.h:77
 msgid "abc musical notation file"
 msgstr "abc müzik notalama dosyası"
 
-#: kde.xml.podir/kde.xml.in.h:77
+#: kde.xml.podir/kde.xml.in.h:78
 msgid "all files"
 msgstr "tüm dosyalar"
 
-#: kde.xml.podir/kde.xml.in.h:78
+#: kde.xml.podir/kde.xml.in.h:79
 msgid "all files and folders"
 msgstr "tüm dosyalar ve dizinler"
 
-#: kde.xml.podir/kde.xml.in.h:79
+#: kde.xml.podir/kde.xml.in.h:80
 msgid "compressed Winamp skin"
 msgstr "sıkıştırılmış Winamp arayüz teması"
 
-#: kde.xml.podir/kde.xml.in.h:81
+#: kde.xml.podir/kde.xml.in.h:82
 msgid "data for database server connection"
 msgstr "veritabanı bağlantısı için veri"
 
-#: kde.xml.podir/kde.xml.in.h:82
+#: kde.xml.podir/kde.xml.in.h:83
 msgid "file to open a shell"
 msgstr "bir uçbirim açmak için dosya"
 
-#: kde.xml.podir/kde.xml.in.h:83
+#: kde.xml.podir/kde.xml.in.h:84
 msgid "fonts package"
 msgstr "yazı tipi paketi"
 
-#: kde.xml.podir/kde.xml.in.h:84
+#: kde.xml.podir/kde.xml.in.h:85
 msgid "mime encapsulated web archive"
 msgstr "kapsüllenmiş web arşivi"
 
-#: kde.xml.podir/kde.xml.in.h:85
+#: kde.xml.podir/kde.xml.in.h:86
 msgid "mms: URIs"
 msgstr "mms: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:86
+#: kde.xml.podir/kde.xml.in.h:87
 msgid "mmst: URIs"
 msgstr "mmst: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:87
+#: kde.xml.podir/kde.xml.in.h:88
 msgid "mmsu: URIs"
 msgstr "mmsu: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:88
+#: kde.xml.podir/kde.xml.in.h:89
 msgid "plasmoid"
 msgstr "plasma programcığı"
 
-#: kde.xml.podir/kde.xml.in.h:89
+#: kde.xml.podir/kde.xml.in.h:90
 msgid "pnm: URIs"
 msgstr "pnm: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:90
+#: kde.xml.podir/kde.xml.in.h:91
 msgid "potato"
 msgstr "patates"
 
-#: kde.xml.podir/kde.xml.in.h:91
+#: kde.xml.podir/kde.xml.in.h:92
 msgid "rtspt: URIs"
 msgstr "rtspt: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:92
+#: kde.xml.podir/kde.xml.in.h:93
 msgid "rtspu: URIs"
 msgstr "rtspu: Adresleri"
 
-#: kde.xml.podir/kde.xml.in.h:94
+#: kde.xml.podir/kde.xml.in.h:95
 msgid "shortcut to Kexi project on database server"
 msgstr "veritabanı üzerindeki Kexi projesine kısayol"
 
-#: kde.xml.podir/kde.xml.in.h:95
+#: kde.xml.podir/kde.xml.in.h:96
 msgid "vocabulary trainer document"
 msgstr "sözcük hazinesi çalışma belgesi"
 
-#: kde.xml.podir/kde.xml.in.h:96
+#: kde.xml.podir/kde.xml.in.h:97
 msgid "web archive"
 msgstr "web arşivi"
 

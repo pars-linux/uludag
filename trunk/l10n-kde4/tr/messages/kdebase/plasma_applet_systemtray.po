@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_systemtray\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
-"POT-Creation-Date: 2010-05-07 01:21+0200\n"
+"POT-Creation-Date: 2010-06-18 01:22+0200\n"
 "PO-Revision-Date: 2009-11-19 16:39+0200\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
@@ -127,60 +127,56 @@ msgstr[0] "%2 / %1 dosya"
 msgid "Less"
 msgstr "Daha Az"
 
-#: ui/applet.cpp:109
-msgid "add default applets"
-msgstr "öntanımlı programcıkları ekle"
-
-#: ui/applet.cpp:164
+#: ui/applet.cpp:162
 msgid "No notifications and no jobs"
 msgstr "Hiç bildirim ve görev yok"
 
-#: ui/applet.cpp:282
+#: ui/applet.cpp:281
 msgid "Recent notifications"
 msgstr "Son bildirimler"
 
-#: ui/applet.cpp:303
+#: ui/applet.cpp:302
 msgctxt "Show all recent notifications"
 msgid "Recent"
 msgstr "En Son"
 
-#: ui/applet.cpp:593
+#: ui/applet.cpp:592
 msgid "Information"
 msgstr "Bilgiler"
 
-#: ui/applet.cpp:595
+#: ui/applet.cpp:594
 msgid "Choose which information to show"
 msgstr "Hangi bilgilerin gösterileceğini seçin"
 
-#: ui/applet.cpp:596
+#: ui/applet.cpp:595
 msgid "Auto Hide"
 msgstr "Otomatik Gizle"
 
-#: ui/applet.cpp:597
+#: ui/applet.cpp:596
 msgid "Plasma Widgets"
 msgstr "Plasma Gereçleri"
 
-#: ui/applet.cpp:627
+#: ui/applet.cpp:626
 msgctxt "Item will be automatically shown or hidden from the systray"
 msgid "Auto"
 msgstr "Otomatik"
 
-#: ui/applet.cpp:628
+#: ui/applet.cpp:627
 msgctxt "Item is never visible in the systray"
 msgid "Hidden"
 msgstr "Gizli"
 
-#: ui/applet.cpp:629
+#: ui/applet.cpp:628
 msgctxt "Item is always visible in the systray"
 msgid "Always Visible"
 msgstr "Her Zaman Görünür"
 
-#: ui/applet.cpp:935
+#: ui/applet.cpp:943
 #, kde-format
 msgid "%1 [Finished]"
 msgstr "%1 [Tamamlandı]"
 
-#: ui/applet.cpp:973
+#: ui/applet.cpp:981
 msgid "Recently Completed Jobs"
 msgstr "Son Tamamlanan Görevler"
 
@@ -284,6 +280,9 @@ msgstr "Sistem servisleri"
 #: rc.cpp:41
 msgid "Hardware control"
 msgstr "Donanım denetimi"
+
+#~ msgid "add default applets"
+#~ msgstr "öntanımlı programcıkları ekle"
 
 #~ msgid "more"
 #~ msgstr "daha fazla"
