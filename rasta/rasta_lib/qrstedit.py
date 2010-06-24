@@ -18,18 +18,70 @@ import sys
 import enchant
 
 from PyQt4.Qt import *
-from PyQt4.QtCore import pyqtSignal
+from PyQt4.QtCore import pyqtSignal, QChar
 
 class RstTextEdit(QPlainTextEdit):
 
     def __init__(self, *args):
         QPlainTextEdit.__init__(self, *args)
+        self.lineNumberArea = LineNumber(self)
 
         # Default dictionary based on the current locale.
         self.dict = enchant.Dict()
         self.highlighter = RstHighlighter(self.document())
         self.highlighter.setDict(self.dict)
+
         self.cursorPositionChanged.connect(self.highlightCurrentLine)
+        self.blockCountChanged.connect(self.updateLineNumberAreaWidth)
+        self.updateRequest.connect(self.updateLineNumberArea)
+
+        self.updateLineNumberAreaWidth(0)
+        self.highlightCurrentLine()
+
+    def lineNumberAreaWidth(self):
+        digits = 3
+        max_ = max(1, self.blockCount())
+        while max_ >= 1000:
+            max_ /= 1000
+            digits += 1
+        return 10 + self.fontMetrics().width(QChar('9')) * digits
+
+    def updateLineNumberAreaWidth(self, width):
+        self.setViewportMargins(self.lineNumberAreaWidth(), 0, 0, 0)
+
+    def updateLineNumberArea(self, rect, num):
+        if num:
+            self.lineNumberArea.scroll(0, num)
+        else:
+            self.lineNumberArea.update(0, rect.y(), self.lineNumberArea.width(), rect.height())
+
+        if rect.contains(self.viewport().rect()):
+            self.updateLineNumberAreaWidth(0)
+
+    def resizeEvent(self, event):
+        QPlainTextEdit(self).resizeEvent(event)
+        cr = QRect(self.contentsRect())
+        self.lineNumberArea.setGeometry(QRect(cr.left(), cr.top(), self.lineNumberAreaWidth(), cr.height()))
+
+    def lineNumberAreaPaintEvent(self, event):
+        painter = QPainter(self.lineNumberArea)
+        painter.fillRect(event.rect(), Qt.lightGray)
+
+        block = QTextBlock(self.firstVisibleBlock())
+        blockNumber = block.blockNumber()
+        top = int(self.blockBoundingGeometry(block).translated(self.contentOffset()).top())
+        bottom = top + int(self.blockBoundingRect(block).height())
+        while block.isValid() and (top <= event.rect().bottom()):
+            if block.isVisible() and (bottom >= event.rect().top()):
+                number = QString.number(blockNumber + 1)
+                painter.setPen(Qt.black)
+                painter.drawText(0, top, self.lineNumberArea.width() - 4, self.fontMetrics().height(),
+                                 Qt.AlignRight, number)
+
+            block = block.next()
+            top = bottom
+            bottom = top + int(self.blockBoundingRect(block).height())
+            blockNumber += 1
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton:
@@ -80,9 +132,7 @@ class RstTextEdit(QPlainTextEdit):
         popup_menu.exec_(event.globalPos())
 
     def correctWord(self, word):
-        '''
-        Replaces the selected text with word.
-        '''
+        # Replaces the selected text with word.
         cursor = self.textCursor()
         cursor.beginEditBlock()
 
@@ -90,6 +140,17 @@ class RstTextEdit(QPlainTextEdit):
         cursor.insertText(word)
 
         cursor.endEditBlock()
+
+class LineNumber(QWidget):
+    def __init__(self, editor):
+        QWidget.__init__(self, editor)
+        self.editor = editor
+
+    def sizeHint(self):
+        return QSize(self.editor.lineNumberAreaWidth(), 0)
+
+    def paintEvent(self, event):
+        self.editor.lineNumberAreaPaintEvent(event)
 
 class RstHighlighter(QSyntaxHighlighter):
 
