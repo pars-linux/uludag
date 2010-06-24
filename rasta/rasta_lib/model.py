@@ -13,13 +13,17 @@ from PyQt4.QtCore import Qt
 from PyQt4.QtCore import QVariant
 from PyQt4.QtCore import QAbstractTableModel
 
+# i18n Support
+import gettext
+_ = gettext.translation('rasta', fallback=True).ugettext
+
 class LogTableModel(QAbstractTableModel):
     ''' Log table model for showing the logs in a proper way '''
 
     def __init__(self, logs, parent=None, *args):
         QAbstractTableModel.__init__(self, parent, *args)
         self.arraydata = logs
-        self.headerdata = ['Line', 'Message']
+        self.headerdata = [_('Line'), _('Message')]
 
     def rowCount(self, parent):
         ''' Return number of logs '''

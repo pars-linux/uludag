@@ -37,28 +37,7 @@ Howto Rasta on Mac OS X
   sudo make install
   cd ..
 
-5. **QScintilla**:
-
- http://www.riverbankcomputing.co.uk/software/qscintilla/download
-
- You can use QScintilla-gpl*.zip/tar.gz (development snapshot)
-
- Installing::
-
-  cd QScintilla*
-  cd Qt4
-  qmake qscintilla.pro -spec macx-g++
-  make
-  sudo make install
-
- Qsci module::
-
-  cd ../Python
-  python configure.py
-  make
-  sudo make install
-
-6. **Docutils**:
+5. **Docutils**:
 
  http://prdownloads.sourceforge.net/docutils/docutils-0.6.tar.gz?download
 
@@ -67,7 +46,7 @@ Howto Rasta on Mac OS X
   cd docutils-0.6
   sudo python setup.py install
 
-7. **Piksemel**:
+6. **Piksemel**:
 
  http://svn.pardus.org.tr/uludag/trunk/piksemel
 
@@ -80,7 +59,7 @@ Howto Rasta on Mac OS X
   cd piksemel
   sudo python setup.py install
 
-8. **Rasta \\o/**:
+7. **Rasta \\o/**:
 
  http://svn.pardus.org.tr/uludag/trunk/rasta
 
