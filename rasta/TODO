@@ -11,6 +11,8 @@ Rasta TODO
  - Add zemberek spell-check support
  - Add HTML print support
  - Add save as HTML support (çohönemli)
+ - Remove piksemel dependency
+ - Add a shiny highlight method for setCurrentLine
 
  ✔ Include file name in window title
  ✔ Using spaces instead of tabs
