@@ -53,14 +53,14 @@ msgid "First Author"
 msgstr "Első szerző"
 
 #: src/about.py:37
-msgctxt "NAME OF TRANSLATORS"
+msgctxt "FORDÍTÓK NEVE"
 msgid "Your names"
-msgstr "Az Ön neve"
+msgstr "Kovács Dániel"
 
 #: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
+msgctxt "FORDÍTÓK EMAIL-CÍME"
 msgid "Your emails"
-msgstr "Az Ön email-címe"
+msgstr "bicskas9323@gmail.com"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
