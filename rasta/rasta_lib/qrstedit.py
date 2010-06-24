@@ -46,6 +46,16 @@ class RstTextEdit(QPlainTextEdit):
                 Qt.LeftButton, Qt.LeftButton, Qt.NoModifier)
         QPlainTextEdit.mousePressEvent(self, event)
 
+    def setCurrentLine(self, line):
+        block = QTextBlock(self.firstVisibleBlock())
+        while block.isValid():
+            if block.blockNumber() == line:
+                cursor = self.textCursor()
+                cursor.setPosition(block.position(), QTextCursor.MoveAnchor)
+                self.setTextCursor(cursor)
+                break
+            block = block.next()
+
     def highlightCurrentLine(self):
         extraSelections = []
 

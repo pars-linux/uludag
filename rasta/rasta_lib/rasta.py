@@ -313,8 +313,8 @@ class Rasta(QMainWindow):
     def goToLine(self, index):
         ''' Set cursor position to the given index '''
         self.ui.textEdit.setFocus()
-        self.ui.textEdit.setCursorPosition(
-                index.child(index.row(),0).data().toInt()[0]-1,0)
+        self.ui.textEdit.setCurrentLine(
+                index.child(index.row(),0).data().toInt()[0]-1)
 
     def checkModified(self):
         ''' Checks if the document was modified and asks for saving '''
