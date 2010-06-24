@@ -36,56 +36,7 @@ class RstTextEdit(QPlainTextEdit):
         self.highlighter.setDict(self.dict)
 
         self.cursorPositionChanged.connect(self.highlightCurrentLine)
-        self.blockCountChanged.connect(self.updateLineNumberAreaWidth)
-        self.updateRequest.connect(self.updateLineNumberArea)
-
-        self.updateLineNumberAreaWidth(0)
         self.highlightCurrentLine()
-
-    def lineNumberAreaWidth(self):
-        digits = 3
-        max_ = max(1, self.blockCount())
-        while max_ >= 1000:
-            max_ /= 1000
-            digits += 1
-        return 10 + self.fontMetrics().width(QChar('9')) * digits
-
-    def updateLineNumberAreaWidth(self, width):
-        self.setViewportMargins(self.lineNumberAreaWidth(), 0, 0, 0)
-
-    def updateLineNumberArea(self, rect, num):
-        if num:
-            self.lineNumberArea.scroll(0, num)
-        else:
-            self.lineNumberArea.update(0, rect.y(), self.lineNumberArea.width(), rect.height())
-
-        if rect.contains(self.viewport().rect()):
-            self.updateLineNumberAreaWidth(0)
-
-    def resizeEvent(self, event):
-        QPlainTextEdit(self).resizeEvent(event)
-        cr = QRect(self.contentsRect())
-        self.lineNumberArea.setGeometry(QRect(cr.left(), cr.top(), self.lineNumberAreaWidth(), cr.height()))
-
-    def lineNumberAreaPaintEvent(self, event):
-        painter = QPainter(self.lineNumberArea)
-        painter.fillRect(event.rect(), Qt.lightGray)
-
-        block = QTextBlock(self.firstVisibleBlock())
-        blockNumber = block.blockNumber()
-        top = int(self.blockBoundingGeometry(block).translated(self.contentOffset()).top())
-        bottom = top + int(self.blockBoundingRect(block).height())
-        while block.isValid() and (top <= event.rect().bottom()):
-            if block.isVisible() and (bottom >= event.rect().top()):
-                number = QString.number(blockNumber + 1)
-                painter.setPen(Qt.black)
-                painter.drawText(0, top, self.lineNumberArea.width() - 4, self.fontMetrics().height(),
-                                 Qt.AlignRight, number)
-
-            block = block.next()
-            top = bottom
-            bottom = top + int(self.blockBoundingRect(block).height())
-            blockNumber += 1
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton:
@@ -146,17 +97,68 @@ class RstTextEdit(QPlainTextEdit):
         cursor.endEditBlock()
 
 class LineNumber(QWidget):
+
+    """ Line Number widget for RstTextEdit component """
+
     def __init__(self, editor):
         QWidget.__init__(self, editor)
         self.editor = editor
 
+        self.editor.blockCountChanged.connect(self.updateAreaWidth)
+        self.editor.updateRequest.connect(self.updateLineNumber)
+
+        self.updateAreaWidth()
+
+    def resizeEvent(self, event):
+        cr = QRect(self.editor.contentsRect())
+        self.setGeometry(QRect(cr.left(), cr.top(), self.areaWidth(), cr.height()))
+
+    def updateLineNumber(self, rect, num):
+        if num:
+            self.scroll(0, num)
+        else:
+            self.update(0, rect.y(), self.width(), rect.height())
+
+        if rect.contains(self.editor.viewport().rect()):
+            self.updateAreaWidth()
+
+    def updateAreaWidth(self, width = 0):
+        self.editor.setViewportMargins(self.areaWidth(), 0, 0, 0)
+
     def sizeHint(self):
-        return QSize(self.editor.lineNumberAreaWidth(), 0)
+        return QSize(self.areaWidth(), 0)
+
+    def areaWidth(self):
+        digits = 3
+        max_ = max(1, self.editor.blockCount())
+        while max_ >= 1000:
+            max_ /= 1000
+            digits += 1
+        return 10 + self.editor.fontMetrics().width(QChar('9')) * digits
 
     def paintEvent(self, event):
-        self.editor.lineNumberAreaPaintEvent(event)
+        painter = QPainter(self)
+        painter.fillRect(event.rect(), Qt.lightGray)
+
+        block = QTextBlock(self.editor.firstVisibleBlock())
+        blockNumber = block.blockNumber()
+        top = int(self.editor.blockBoundingGeometry(block).translated(self.editor.contentOffset()).top())
+        bottom = top + int(self.editor.blockBoundingRect(block).height())
+        while block.isValid() and (top <= event.rect().bottom()):
+            if block.isVisible() and (bottom >= event.rect().top()):
+                number = QString.number(blockNumber + 1)
+                painter.setPen(Qt.black)
+                painter.drawText(0, top, self.width() - 4, self.editor.fontMetrics().height(),
+                                 Qt.AlignRight, number)
+
+            block = block.next()
+            top = bottom
+            bottom = top + int(self.editor.blockBoundingRect(block).height())
+            blockNumber += 1
 
 class RstHighlighter(QSyntaxHighlighter):
+
+    """ Rst Highlighter for Rest format """
 
     WORDS = u'(?iu)[\w\']+'
 
@@ -191,18 +193,13 @@ class RstHighlighter(QSyntaxHighlighter):
                 self.setFormat(word_object.start(),
                     word_object.end() - word_object.start(), format)
 
-
 class SpellAction(QAction):
-
-    '''
-    A special QAction that returns the text in a signal.
-    '''
+    """ A special QAction that returns the text in a signal."""
 
     correct = pyqtSignal(unicode)
 
     def __init__(self, *args):
         QAction.__init__(self, *args)
-
         self.triggered.connect(lambda x: self.correct.emit(
             unicode(self.text())))
 
