@@ -35,8 +35,6 @@ class Rasta(QMainWindow):
         self.readSettings()
 
         self.file_name = TMPFILE
-        if '--hidesource' in arguments:
-            self.ui.actionShow_Source.toggle()
         if len(arguments) > 1:
             if not unicode(arguments[1]).startswith('--'):
                 self.loadFile(arguments[1])
@@ -45,6 +43,9 @@ class Rasta(QMainWindow):
             self.showHelp()
 
         self.buildToolbar()
+
+        if '--hide-source' in arguments:
+            self.ui.actionShow_Source.toggle()
 
     def updateRst(self, source = None, force = False):
         ''' Rebuild current source and show it in webview '''

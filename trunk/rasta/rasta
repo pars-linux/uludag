@@ -30,8 +30,8 @@ Usage :
  $ rasta [filename] [options]
 
 Options :
- --help          : Show this help
- --hidesource    : Hide source window
+ --help         : Show this help
+ --hide-source  : Hide source window
 ''')
 
 if __name__ == '__main__':
