@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:46+0300\n"
+"POT-Creation-Date: 2010-06-24 16:37+0300\n"
 "PO-Revision-Date: 2010-01-11 22:24-0300\n"
 "Last-Translator: Klemens Häckel <click3d at linuxmail (dot) org>\n"
 "Language-Team: Spanish <kde-i18n-doc@kde.org>\n"
@@ -20,32 +20,39 @@ msgstr ""
 "X-Poedit-Country: GERMANY\n"
 "X-Generator: Lokalize 0.3\n"
 
-#: .tmp/bootmanager.desktop.in.h:1
+#: data/bootmanager.desktop.in.h:1
 msgid "An application for managing boot loader."
 msgstr ""
 
-#: .tmp/bootmanager.desktop.in.h:2 .tmp/bootmanager/about.py:20
-#: .tmp/bootmanager/about.py:22 .tmp/kcm_bootmanager.desktop.in.h:1
+#: data/bootmanager.desktop.in.h:2 data/kcm_bootmanager.desktop.in.h:1
+#: src/bootmanager/about.py:20 src/bootmanager/about.py:22
 msgid "Boot Manager"
 msgstr "Boot-Menü"
 
-#: .tmp/bootmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/bootmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/bootmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/bootmanager/about.py:32
+#: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/bootmanager/about.py:32
+#: src/bootmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: .tmp/bootmanager/main.py:99
+#: src/bootmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/bootmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/bootmanager/main.py:99
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -53,76 +60,79 @@ msgstr ""
 "Für das Backend dieser Applikation sind keine Pakete vorhanden.\n"
 "Bitte stellen Sie sicher, dass die erforderlichen Pakete installiert und korrekt konfiguriert sind."
 
-#: .tmp/bootmanager/main.py:198
+#: src/bootmanager/main.py:198
 msgid "All Items"
 msgstr "Alle Elemente"
 
-#: .tmp/bootmanager/main.py:306
+#: src/bootmanager/main.py:306
 msgid "Do you want to delete '%1'?"
 msgstr "Wollen Sie '%1' löschen?"
 
-#: .tmp/bootmanager/main.py:337
+#: src/bootmanager/main.py:337
 msgid "Access denied."
 msgstr "Zugriff verweigert."
 
-#: .tmp/ui_edit.py:134
+#: ui/ui_edit.py:134
 msgid "Title"
 msgstr "Titel"
 
-#: .tmp/ui_edit.py:135
+#: ui/ui_edit.py:135
 msgid "Name of the boot entry to be shown at the boot menu."
 msgstr "Name des Boot-Eintrages, der im Boot-Menü gezeigt wird."
 
 # Partition, Festplatte oder Platte?
 # In Pardus 2008 vermutlich "Wurzel" genannt
-#: .tmp/ui_edit.py:136
+#: ui/ui_edit.py:136
 msgid "Disk"
 msgstr "Partition"
 
-#: .tmp/ui_edit.py:137
+#: ui/ui_edit.py:137
 msgid "Disk that contains operating system."
 msgstr "Partition mit dem Betriebssystem."
 
-#: .tmp/ui_edit.py:138
+#: ui/ui_edit.py:138
 msgid "Kernel"
 msgstr "Kernel"
 
-#: .tmp/ui_edit.py:139
+#: ui/ui_edit.py:139
 msgid "Operating system kernel."
 msgstr "Kernel des Betriebssystems."
 
-#: .tmp/ui_edit.py:140
+#: ui/ui_edit.py:140
 msgid "Ramdisk File"
 msgstr "Ramdisk Datei"
 
-#: .tmp/ui_edit.py:141
+#: ui/ui_edit.py:141
 msgid "File that contains a micro operating system for preloading kernel modules."
 msgstr "Datei welches ein Micro-Betriebssystem enthält, um Kernelmodule vorab zu laden."
 
-#: .tmp/ui_edit.py:142
+#: ui/ui_edit.py:142
 msgid "Boot Options"
 msgstr "Boot-Optionen"
 
-#: .tmp/ui_edit.py:143
+#: ui/ui_edit.py:143
 msgid "Boot options for operating system."
 msgstr "Boot-Optionen für das Betriebssystem."
 
-#: .tmp/ui_item.py:69
+#: ui/ui_item.py:69
 msgid "Set or unset entry as default boot entry."
 msgstr "Als Standard Booteintrag setzen."
 
-#: .tmp/ui_item.py:70
+#: ui/ui_item.py:70
 msgid "Edit"
 msgstr "Bearbeiten"
 
-#: .tmp/ui_item.py:71
+#: ui/ui_item.py:71
 msgid "Delete"
 msgstr "Löschen"
 
-#: .tmp/ui_main.py:77
+#: ui/ui_main.py:77
 msgid "Add New"
 msgstr "Neu hinzufügen"
 
-#: .tmp/ui_options.py:37
+#: ui/ui_options.py:37
 msgid "Boot menu display time:"
 msgstr "Zeit, die das Bootmenü angezeigt wird:"
+
+#~ msgid " "
+#~ msgstr " "
