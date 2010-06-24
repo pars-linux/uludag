@@ -20,6 +20,10 @@ import enchant
 from PyQt4.Qt import *
 from PyQt4.QtCore import pyqtSignal, QChar
 
+# i18n Support
+import gettext
+_ = gettext.translation('rasta', fallback=True).ugettext
+
 class RstTextEdit(QPlainTextEdit):
 
     def __init__(self, *args):
@@ -118,7 +122,7 @@ class RstTextEdit(QPlainTextEdit):
         if self.textCursor().hasSelection():
             text = unicode(self.textCursor().selectedText())
             if not self.dict.check(text):
-                spell_menu = QMenu('Spelling Suggestions')
+                spell_menu = QMenu(_('Spelling Suggestions'))
                 for word in self.dict.suggest(text):
                     action = SpellAction(word, spell_menu)
                     action.correct.connect(self.correctWord)
@@ -171,16 +175,17 @@ class RstHighlighter(QSyntaxHighlighter):
         text = unicode(text)
 
         format = QTextCharFormat()
-        format.setUnderlineStyle(QTextCharFormat.SpellCheckUnderline)
-
-        format.setUnderlineColor(Qt.green)
         start = 0
         for line in text.splitlines():
-            if line.lstrip(' ').startswith('*'):
+            if any(line.lstrip(' ').startswith(pointer) 
+                    for pointer in ('*', '-', '#.')):
+                format.setForeground(QBrush(Qt.darkCyan))
                 self.setFormat(start, start + len(line), format)
             start = len(line)
 
+        format.setUnderlineStyle(QTextCharFormat.SpellCheckUnderline)
         format.setUnderlineColor(Qt.red)
+
         for word_object in re.finditer(self.WORDS, text):
             if not self.dict.check(word_object.group()):
                 self.setFormat(word_object.start(),
