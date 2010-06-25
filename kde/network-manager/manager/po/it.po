@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -39,23 +39,23 @@ msgid "Current Maintainer"
 msgstr "Maintainer corrente"
 
 #: src/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Sviluppatore"
-
-#: src/networkmanager/about.py:33
 #, fuzzy
 msgid "Gökmen Göksel"
 msgstr "Gökmen GÖKSEL"
 
-#: src/networkmanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+#: src/networkmanager/about.py:33
+msgid "Developer"
+msgstr "Sviluppatore"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/networkmanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
