@@ -37,12 +37,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Fejlesztő"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Fejlesztő"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -53,16 +53,14 @@ msgid "First Author"
 msgstr "Első szerző"
 
 #: src/about.py:37
-#, fuzzy
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "bicskas9323@gmail.com"
-
-#: src/about.py:37
-#, fuzzy
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
 msgstr "Kovács Dániel"
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -73,12 +71,20 @@ msgid "Update Requirements"
 msgstr "Frissítés követelmények"
 
 #: src/basketdialog.py:125
-msgid "You must <b>restart</b> your system for the updates in the following package(s) to take effect:"
-msgstr "<b>Újra kell indítanod</b> a rendszered, hogy a frissítés a következő csomag(okra) hatással legyen:"
+msgid ""
+"You must <b>restart</b> your system for the updates in the following package"
+"(s) to take effect:"
+msgstr ""
+"<b>Újra kell indítanod</b> a rendszered, hogy a frissítés a következő csomag"
+"(okra) hatással legyen:"
 
 #: src/basketdialog.py:132
-msgid "You must restart following system services for the updated package(s) to take effect:"
-msgstr "Újra kell indítanod a következő rendszer-szolgáltatásokat, hogy a kiválasztott csomag(ok) frissített verzióira hatással legyen:"
+msgid ""
+"You must restart following system services for the updated package(s) to "
+"take effect:"
+msgstr ""
+"Újra kell indítanod a következő rendszer-szolgáltatásokat, hogy a "
+"kiválasztott csomag(ok) frissített verzióira hatással legyen:"
 
 #: src/basketdialog.py:154 src/mainwidget.py:274 src/mainwidget.py:277
 #: src/settingsdialog.py:220 src/settingsdialog.py:225
@@ -130,8 +136,12 @@ msgid "You are not authorized for this operation."
 msgstr "Nem vagy felhatalmazva ehhez a művelethez."
 
 #: src/mainwidget.py:275
-msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
-msgstr "Csomag nem található. Frissítve vagy eltávolítva a tárolóból. Kérlek próbáld meg frissíteni a tároló adatait."
+msgid ""
+"Package not found. It may be upgraded in or removed from the repository. "
+"Please try upgrading repository informations."
+msgstr ""
+"Csomag nem található. Frissítve vagy eltávolítva a tárolóból. Kérlek próbáld "
+"meg frissíteni a tároló adatait."
 
 #: src/mainwindow.py:74 src/mainwindow.py:79 src/mainwindow_kde4.py:94
 #: src/mainwindow_kde4.py:102 src/statemanager.py:130
@@ -280,8 +290,12 @@ msgid "Not a valid repository name"
 msgstr "Nem érvényes tároló név"
 
 #: src/settingsdialog.py:226
-msgid "<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try again.</qt>"
-msgstr "<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie.<p>Kérlek, próbáld újra.</qt>"
+msgid ""
+"<qt>Repository address should end with xml or xml.bz2 suffix.<p>Please try "
+"again.</qt>"
+msgstr ""
+"<qt>A tároló címének xml vagy xml.bz2 kiterjesztésre kell végződnie."
+"<p>Kérlek, próbáld újra.</qt>"
 
 #: src/statemanager.py:72
 msgid "Installing Package(s)"
@@ -357,20 +371,29 @@ msgid "You have selected the following package(s) to upgrade:"
 msgstr "A következő csomag(okat) jelölted ki frissítésre:"
 
 #: src/statemanager.py:105 ui/ui_basketdialog.py:104
-msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"installed:"
 msgstr "A kiválasztott csomag(ok) extra függőségei is telepítésre kerülnek:"
 
 #: src/statemanager.py:106
-msgid "Reverse dependencies of the selected package(s) that are also going to be removed:"
+msgid ""
+"Reverse dependencies of the selected package(s) that are also going to be "
+"removed:"
 msgstr "Az eltávolításra kijelölt csomag(ok) függőségei is törlésre kerülnek:"
 
 #: src/statemanager.py:107
-msgid "Extra dependencies of the selected package(s) that are also going to be upgraded:"
+msgid ""
+"Extra dependencies of the selected package(s) that are also going to be "
+"upgraded:"
 msgstr "A kiválasztott csomag extra függőségei is frissítésre kerülnek:"
 
 #: src/statemanager.py:132
-msgid "Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
-msgstr "Az aktuális csomag <b>%1</b> a kiválasztott csomag(ok) <b>%2</b> a teljes méretének "
+msgid ""
+"Currently there are <b>%1</b> selected package(s) of total <b>%2</b> of size "
+msgstr ""
+"Az aktuális csomag <b>%1</b> a kiválasztott csomag(ok) <b>%2</b> a teljes "
+"méretének "
 
 #: src/statemanager.py:135
 msgid "with <b>%1</b> reverse dependencies of total <b>%2</b> of size "
@@ -385,8 +408,12 @@ msgid "in your basket."
 msgstr "a kosaradban"
 
 #: src/statemanager.py:161
-msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
-msgstr "A kiválasztott csomag [1%] ütközik egy másikkal. Ezek a csomagok együtt nem telepíthetők."
+msgid ""
+"Selected packages [%1] are in conflict with each other. These packages can "
+"not be installed together."
+msgstr ""
+"A kiválasztott csomag [1%] ütközik egy másikkal. Ezek a csomagok együtt nem "
+"telepíthetők."
 
 #: src/statemanager.py:162 src/statemanager.py:170
 msgid "Conflict Error"
@@ -413,24 +440,24 @@ msgid "Update"
 msgstr "Frissít"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "%1 frissítés elérhető!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Frissítés"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "%1 frissítés elérhető!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "<b>%1</b> frissítés elérhető!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Mellőz"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Mutasd a frissítéseket"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Mellőz"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
@@ -523,17 +550,27 @@ msgstr "Művelet"
 
 #: ui/ui_progressdialog.py:160
 msgid ""
-"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 msgstr ""
-" <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+" <!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+"REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css"
+"\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
+"</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-"
+"weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-"
+"left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span "
+"style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
 #: ui/ui_progressdialog.py:165 ui/ui_settingsdialog.py:414
 msgid "&Cancel"
@@ -648,8 +685,13 @@ msgid "Select..."
 msgstr "Válassz..."
 
 #: ui/ui_settingsdialog.py:391
-msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr "Eltávolítja a  lemez gyorsítótárából eltávolítja az összes letöltött szoftvert. Ez nem törli a telepített szoftvert, illetve nem érinti a rendszer stabilitását."
+msgid ""
+"Clearing the disk cache will remove all downloaded software. This will not "
+"delete installed software or affect your system stability."
+msgstr ""
+"Eltávolítja a  lemez gyorsítótárából eltávolítja az összes letöltött "
+"szoftvert. Ez nem törli a telepített szoftvert, illetve nem érinti a "
+"rendszer stabilitását."
 
 #: ui/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
@@ -729,8 +771,12 @@ msgid "Operation Summary"
 msgstr "Művelet összegzése"
 
 #: ui/ui_summarydialog.py:50
-msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "Az újonnan telepített alkalmazást elindíthatod duplán kattintva a lista alatt, vagy később az alkalmazás-menüben."
+msgid ""
+"You can start the new installed application by double-clicking on the list "
+"below or later from the applications menu."
+msgstr ""
+"Az újonnan telepített alkalmazást elindíthatod duplán kattintva a lista "
+"alatt, vagy később az alkalmazás-menüben."
 
 #: ui/ui_summarydialog.py:51
 msgid "&Ok"
