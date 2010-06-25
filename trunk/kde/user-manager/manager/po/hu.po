@@ -25,9 +25,8 @@ msgid "An application for managing user accounts."
 msgstr "Egy alkalmazás a felhasználói profilok menedzselésére."
 
 #: src/usermanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -38,14 +37,14 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/usermanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/usermanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kovács Dániel"
+
+#: src/usermanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -122,7 +121,8 @@ msgstr "Hozzáférés megtagadva."
 
 #: src/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr "Nem törölhet a <b>%1</b>. Ez a felhasználó jelenleg be van jelentkezve."
+msgstr ""
+"Nem törölhet a <b>%1</b>. Ez a felhasználó jelenleg be van jelentkezve."
 
 #: src/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -130,7 +130,9 @@ msgstr "Biztosan törölni szetnéd ezt a felhasználót '%1' (%2)?"
 
 #: src/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
-msgstr "A felhasználói fájlok is el lesznek távolítva. (Ez hosszabb időt vehet igénybe.)"
+msgstr ""
+"A felhasználói fájlok is el lesznek távolítva. (Ez hosszabb időt vehet "
+"igénybe.)"
 
 #: src/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
