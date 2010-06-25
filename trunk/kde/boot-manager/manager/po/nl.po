@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 09:51+0300\n"
-"PO-Revision-Date: 2010-06-11 16:23+0200\n"
+"PO-Revision-Date: 2010-06-25 09:30+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "Boot Manager"
 msgstr "Opstartbeheer"
 
 #: src/bootmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-20010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -40,14 +39,14 @@ msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
 #: src/bootmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/bootmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/bootmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: src/bootmanager/main.py:99
 msgid ""
@@ -98,8 +97,11 @@ msgid "Ramdisk File"
 msgstr "Ramdisk-bestand"
 
 #: ui/ui_edit.py:141
-msgid "File that contains a micro operating system for preloading kernel modules."
-msgstr "Bestand dat een micro besturingssysteem bevat voor het voorladen van kernelmodules."
+msgid ""
+"File that contains a micro operating system for preloading kernel modules."
+msgstr ""
+"Bestand dat een micro besturingssysteem bevat voor het voorladen van "
+"kernelmodules."
 
 #: ui/ui_edit.py:142
 msgid "Boot Options"
