@@ -43,9 +43,8 @@ class XMLParser:
             while customCounter < totalTestcases:
                 element = self.rootelement[customCounter]
                 for custom in element.getiterator('package'):
-                    if custom.text in self.custompackage:
-                        pass
-                    else:
+                    # if the text is not in the tag, remove the tag
+                    if not custom.text in self.custompackage:
                         element.remove(custom)
                 customCounter += 1
         # Run each testcase
