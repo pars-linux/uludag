@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:50+0300\n"
+"POT-Creation-Date: 2010-06-25 10:11+0300\n"
 "PO-Revision-Date: 2009-07-01 22:18+0100\n"
 "Last-Translator: Stefan <sw1976de@googlemail.com>\n"
 "Language-Team: German <es@li.org>\n"
@@ -18,32 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: .tmp/kcm_systemmanager.desktop.in.h:1 .tmp/systemmanager.desktop.in.h:2
-#: .tmp/systemmanager/about.py:20 .tmp/systemmanager/about.py:22
+#: data/kcm_systemmanager.desktop.in.h:1 data/systemmanager.desktop.in.h:2
+#: src/systemmanager/about.py:20 src/systemmanager/about.py:22
 msgid "System Manager"
 msgstr "Grundeinstellungen"
 
-#: .tmp/systemmanager.desktop.in.h:1
+#: data/systemmanager.desktop.in.h:1
 msgid "An application for managing settings like system language, keyboard and timezone."
 msgstr ""
 
-#: .tmp/systemmanager/about.py:24
-msgid "(c) 2009 TUBITAK/UEKAE"
+#: src/systemmanager/about.py:24
+#, fuzzy
+msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
-#: .tmp/systemmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/systemmanager/about.py:32
+#: src/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/systemmanager/about.py:32
+#: src/systemmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktueller Betreuer"
 
-#: .tmp/systemmanager/main.py:70
+#: src/systemmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/systemmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/systemmanager/main.py:70
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -51,54 +58,57 @@ msgstr ""
 "Es gibt kein Programm das die Funktionen für den aktuellen Bildschirm ausführt.\n"
 "Bitte stellen Sie sicher, dass die entsprechenden Pakete installiert und korrekt konfiguriert wurden."
 
-#: .tmp/systemmanager/main.py:98
+#: src/systemmanager/main.py:98
 msgid "None"
 msgstr "Keine"
 
-#: .tmp/ui_main.py:160
+#: ui/ui_main.py:160
 msgid "Language Settings"
 msgstr "Spracheinstellung"
 
-#: .tmp/ui_main.py:161
+#: ui/ui_main.py:161
 msgid "System Language:"
 msgstr "Systemsprache:"
 
-#: .tmp/ui_main.py:162
+#: ui/ui_main.py:162
 msgid "Console Keyboard Layout:"
 msgstr "Tastatur-Layout in Konsole:"
 
-#: .tmp/ui_main.py:163
+#: ui/ui_main.py:163
 msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
 msgstr "Beachten Sie, dass die gewählte Einstellung hier keinen Einfluss auf Ihre Desktop-Umgebung hat. Um die Sprache des Desktops zu ändern, gehen Sie in das Modul: Systemeinstellungen in das Modul 'Regional & Sprache'."
 
-#: .tmp/ui_main.py:164
+#: ui/ui_main.py:164
 msgid "Service Settings"
 msgstr "Systemdienste"
 
-#: .tmp/ui_main.py:165
+#: ui/ui_main.py:165
 msgid "First Service to Start:"
 msgstr "Erster Dienst beim Systemstart:"
 
-#: .tmp/ui_main.py:166
+#: ui/ui_main.py:166
 msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
 msgstr "Obwohl Dienste während des Boot-Prozesses parallel gestartet werden, kann ein Benutzer einen einzelnen Dienst starten wollen, bevor die Abhängigkeiten geprüft werden."
 
-#: .tmp/ui_main.py:167
+#: ui/ui_main.py:167
 msgid "Clock Settings"
 msgstr "Einstellung der Uhr"
 
-#: .tmp/ui_main.py:168
+#: ui/ui_main.py:168
 msgid "Keep the hardware clock in UTC"
 msgstr "Die Hardware-clock ist auf UTC eingestellt"
 
-#: .tmp/ui_main.py:169
+#: ui/ui_main.py:169
 msgid "Normalize systematic drift of the hardware clock"
 msgstr "Systematische Zeitdrift der Hardware-Uhr ausgleichen"
 
-#: .tmp/ui_main.py:170
+#: ui/ui_main.py:170
 msgid "Console Settings"
 msgstr "Einstellungen"
 
-#: .tmp/ui_main.py:171
+#: ui/ui_main.py:171
 msgid "Number of Real Consoles:"
 msgstr "Anzahl der echten Konsolen:"
+
+#~ msgid " "
+#~ msgstr " "
