@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:01+0300\n"
-"PO-Revision-Date: 2010-06-11 16:32+0200\n"
+"PO-Revision-Date: 2010-06-25 09:34+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "Disk Manager"
 msgstr "Schijfbeheer"
 
 #: src/diskmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-20010 TUBITAK/UEKAE"
 
 #: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -40,14 +39,14 @@ msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
 #: src/diskmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: src/diskmanager/main.py:86
 msgid ""
