@@ -25,18 +25,16 @@ msgid "An application for managing system services."
 msgstr "Egy alkalmazás a rendszerszolgáltatások menedzselésére."
 
 #: src/servicemanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+
+#: src/servicemanager/about.py:32
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
-
-#: src/servicemanager/about.py:32
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -47,14 +45,14 @@ msgid "COMAR Author"
 msgstr "COMAR szerző"
 
 #: src/servicemanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/servicemanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kovács Dániel"
+
+#: src/servicemanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com"
 
 #: ui/ui_item.py:103 ui/ui_main.py:56
 msgid "Form"
