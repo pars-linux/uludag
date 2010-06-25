@@ -25,9 +25,8 @@ msgid "Firewall Manager"
 msgstr "Tűzfal menedzser"
 
 #: src/firewallmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -38,14 +37,14 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/firewallmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/firewallmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kovács Dániel"
+
+#: src/firewallmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com"
 
 #: src/firewallmanager/main.py:96
 msgid ""
