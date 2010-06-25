@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -26,18 +26,16 @@ msgid "An application for managing system services."
 msgstr "Ett program för hantering av systemtjänster."
 
 #: src/servicemanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+
+#: src/servicemanager/about.py:32
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Nuvarande utvecklare"
-
-#: src/servicemanager/about.py:32
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -48,14 +46,14 @@ msgid "COMAR Author"
 msgstr "COMAR-utvecklare"
 
 #: src/servicemanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/servicemanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Patrik Karlsson"
+
+#: src/servicemanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
 
 #: ui/ui_item.py:103 ui/ui_main.py:56
 msgid "Form"
