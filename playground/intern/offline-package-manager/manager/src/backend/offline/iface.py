@@ -45,7 +45,7 @@ class Iface(Singleton):
         if not self.initialized():
             self.source = source
             self.initComar()
-            self.oidb = pisi.db.offline_idb.Offline_InstallDB()
+            self.odb = pisi.db.offlinedb.OfflineDB()
             self.initDB()
 
         self.offlineparser = OfflineParser()
@@ -89,7 +89,7 @@ class Iface(Singleton):
         all_packages = packages + self.depends_list
 
         for pkg in all_packages:
-            self.oidb.add_package(pkg)
+            self.odb.add_package(pkg)
 
         self.offlineparser.saveOperation(all_packages, "install")
 
@@ -97,7 +97,7 @@ class Iface(Singleton):
         all_packages = packages + self.requires_list
 
         for pkg in all_packages:
-            self.oidb.remove_package(pkg)
+            self.odb.remove_package(pkg)
 
         self.offlineparser.saveOperation(all_packages, "remove")
 
@@ -156,9 +156,9 @@ class Iface(Singleton):
 
     def getPackageList(self):
         if self.source == self.REPO:
-            return list( set(pisi.api.list_available()) - set(self.oidb.list_installed()) - set(self.replaces.values()) )
+            return list( set(pisi.api.list_available()) - set(self.odb.list_installed()) - set(self.replaces.values()) )
         else:
-            return self.oidb.list_installed()
+            return self.odb.list_installed()
 
     def getUpdates(self):
         lu = set(self.list_upgradable())
@@ -193,17 +193,17 @@ class Iface(Singleton):
         if self.source == self.REPO:
             return self.pdb.get_isa_packages(isa)
         else:
-            return self.oidb.get_isa_packages(isa)
+            return self.odb.get_isa_packages(isa)
 
     def getPackage(self, name):
         if self.source == self.REPO:
             return self.pdb.get_package(name)
         else:
-            return self.oidb.get_package(name)
+            return self.odb.get_package(name)
 
     def getDepends(self, packages):
         base = self.get_base_upgrade_order(packages)
-        if not self.oidb.has_package(packages[0]):
+        if not self.odb.has_package(packages[0]):
             deps = pisi.api.get_install_order(packages)
         else:
             deps = self.get_upgrade_order(packages)
@@ -258,7 +258,7 @@ class Iface(Singleton):
             if self.source == self.REPO:
                 return self.pdb.search_in_packages(packages, terms)
             else:
-                return self.oidb.search_package(terms)
+                return self.odb.search_package(terms)
         except Exception:
             return []
 
@@ -269,7 +269,7 @@ class Iface(Singleton):
         pisi.api.fetch(packages, path)
 
     def setIndex(self, filename):
-        self.oidb.setIndex(filename)
+        self.odb.setIndex(filename)
 
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.
@@ -280,10 +280,10 @@ class Iface(Singleton):
         Return a list of packages that are upgraded in the repository -> list_of_strings
         """
 
-        #self.oidb = pisi.db.offline_idb.Offline_InstallDB()  # already defined above InitDB()
+        #self.odb = pisi.db.offline_idb.Offline_InstallDB()  # already defined above InitDB()
         is_upgradable = lambda pkg: self.is_upgradable(pkg, ctx.get_option('ignore_build_no'))
 
-        upgradable = filter(self.is_upgradable, self.oidb.list_installed())
+        upgradable = filter(self.is_upgradable, self.odb.list_installed())
         # replaced packages can not pass is_upgradable test, so we add them manually.list_installed())
         upgradable.extend(pisi.api.list_replaces())
 
@@ -296,10 +296,10 @@ class Iface(Singleton):
 
     def is_upgradable(self, name, ignore_build = False):
 
-        if not self.oidb.has_package(name):
+        if not self.odb.has_package(name):
             return False
 
-        (i_version, i_release, i_build, i_distro, i_distro_release) = self.oidb.get_version_and_distro_release(name)
+        (i_version, i_release, i_build, i_distro, i_distro_release) = self.odb.get_version_and_distro_release(name)
 
         try:
             version, release, build, distro, distro_release = self.pdb.get_version_and_distro_release(name, self.pdb.which_repo(name))
@@ -332,7 +332,7 @@ class Iface(Singleton):
         if not ctx.config.values.general.ignore_safety and not ctx.get_option('ignore_safety'):
             if self.cdb.has_component('system.base'):
                 systembase = set(self.cdb.get_union_component('system.base').packages)
-                extra_installs = filter(lambda x: not self.oidb.has_package(x), systembase - set(A))
+                extra_installs = filter(lambda x: not self.odb.has_package(x), systembase - set(A))
                 if extra_installs:
                     ctx.ui.warning(_('Safety switch: Following packages in system.base will be installed: ') +
                             util.strlist(extra_installs))
@@ -383,7 +383,7 @@ class Iface(Singleton):
                 pkg = self.pdb.get_package(x)
                 for dep in pkg.runtimeDependencies():
                     # add packages that can be upgraded,
-                    if self.oidb.has_package(dep.package) and dep.satisfied_by_installed():
+                    if self.odb.has_package(dep.package) and dep.satisfied_by_installed():
                         continue
 
                     if dep.satisfied_by_repo():
@@ -405,7 +405,7 @@ class Iface(Singleton):
                     rev_deps = self.pdb.get_rev_deps(x)
                     for (rev_dep, depinfo) in rev_deps:
                         # add only installed but unsatisfied reverse dependencies
-                        if (self.oidb.has_package(rev_dep) and
+                        if (self.odb.has_package(rev_dep) and
                                 not depinfo.satisfied_by_installed() and self.is_upgradable(rev_dep)):
                             if not depinfo.satisfied_by_repo():
                                 raise Exception(_('Reverse dependency %s of %s cannot be satisfied') % (rev_dep, x))
@@ -434,7 +434,7 @@ class Iface(Singleton):
         # try to construct a pisi graph of packages to
         # install / reinstall
 
-        G_f = pgraph.PGraph(self.oidb)               # construct G_f
+        G_f = pgraph.PGraph(self.odb)               # construct G_f
 
         # find the (install closure) graph of G_f by package
         # set A using packagedb
@@ -444,11 +444,11 @@ class Iface(Singleton):
         while len(B) > 0:
             Bp = set()
             for x in B:
-                rev_deps = self.oidb.get_rev_deps(x)
+                rev_deps = self.odb.get_rev_deps(x)
                 for (rev_dep, depinfo) in rev_deps:
                     # we don't deal with uninstalled rev deps
                     # and unsatisfied dependencies (this is important, too)
-                    if self.oidb.has_package(rev_dep) and depinfo.satisfied_by_installed():
+                    if self.odb.has_package(rev_dep) and depinfo.satisfied_by_installed():
                         if not rev_dep in G_f.vertices():
                             Bp.add(rev_dep)
                             G_f.add_plain_dep(rev_dep, x)
