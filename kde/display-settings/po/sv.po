@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 0.3\n"
 
 #: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
 msgid "Configure display devices"
@@ -47,27 +47,26 @@ msgid "Display Configuration Tool"
 msgstr "Verktyg för bildskärmsinställning"
 
 #: src/displaysettings/about.py:23
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: src/displaysettings/about.py:31
-msgid "Current Maintainer"
-msgstr "Nuvarande utvecklare"
+msgstr "(c) 2010 TUBITAK/UEKAE"
 
 #: src/displaysettings/about.py:31
 msgid "Fatih Aşıcı"
 msgstr "Fatih Aşıcı"
 
-#: src/displaysettings/about.py:32
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+#: src/displaysettings/about.py:31
+msgid "Current Maintainer"
+msgstr "Nuvarande utvecklare"
 
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Patrik Karlsson"
+
+#: src/displaysettings/about.py:32
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -151,9 +150,10 @@ msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Tryck \"Välj...\"-knappen för att välja en bildskärm</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
+#, fuzzy
 msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: src/displaysettings/screenswidget.py:193
 #: src/displaysettings/screenswidget.py:268
