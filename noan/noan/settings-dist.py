@@ -93,6 +93,8 @@ AUTH_PROFILE_MODULE = 'profile.Profile'
 
 LOGIN_REDIRECT_URL = '/noan/'
 
+CACHE_BACKEND = 'db://querytable'
+
 #EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 #EMAIL_HOST = 'mail.pardus.org.tr'
 

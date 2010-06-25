@@ -12,6 +12,8 @@ from django.views.generic.list_detail import object_list
 
 from noan.repository.models import Distribution, Package, Source, Binary, TestResult
 
+from noan.repository.forms import SearchForm
+
 # we have this wrapper to avoid using "context_instance" kwarg in every function.
 from noan.wrappers import render_response
 
@@ -20,6 +22,8 @@ from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
 import urllib
 import os
 import pisi
+from django.core.cache import cache
+from django.db.models import Q
 
 def repository_index(request):
     distributions = Distribution.objects.all()
@@ -154,3 +158,116 @@ def list_pending_packages(request, distName, distRelease):
             }
 
     return object_list(request, **object_dict)
+
+
+def search(request):
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            keyword = request.POST.get('keyword', '')
+            source = request.POST.get('source', False)
+            binary = request.POST.get('binary', False)
+            summary = request.POST.get('summary', False)
+            description = request.POST.get('description', False)
+            dist_name = request.POST.get('dist_name', 'Pardus')
+            dist_release = request.POST.get('dist_release', '2008')
+
+            unified_sources = None
+            unified_binaries = None
+
+            if source:
+                sources = Source.objects.filter(name__icontains=keyword)
+                summaries = Source.objects.filter(info__summary__id = -1)
+                descriptions = Source.objects.filter(info__description__id = -1)
+                if summary:
+                    summaries = Source.objects.filter(info__summary__text__icontains=keyword)
+                if description: 
+                    descriptions = Source.objects.filter(info__description__text__icontains=keyword)
+                unified_sources = sources | summaries | descriptions
+                # i need to find a better way here like using set
+                #s1 = set(sources).union(set(summaries).union(set(descriptions))
+                unified_sources = unified_sources.filter(distribution__name__icontains=dist_name)
+                unified_sources = unified_sources.filter(distribution__release__icontains=dist_release)
+                unified_sources = unified_sources.distinct()
+
+            if binary:
+                binaries = Binary.objects.filter(package__name__icontains=keyword)
+                summaries = Binary.objects.filter(package__source__info__summary__id = -1)
+                descriptions = Binary.objects.filter(package__source__info__description__id = -1)
+                if summary:
+                    summaries = Binary.objects.filter(package__source__info__summary__text__icontains=keyword)
+                if description: 
+                    descriptions = Binary.objects.filter(package__source__info__description__text__icontains=keyword)
+
+                unified_binaries = binaries | summaries | descriptions
+                unified_binaries =  unified_binaries.filter(package__source__distribution__name__icontains=dist_name)
+                unified_binaries =  unified_binaries.filter(package__source__distribution__release__icontains=dist_release)
+                unified_binaries = unified_binaries.distinct()
+
+            if unified_sources and not unified_binaries:
+                result = unified_sources
+                sources_len = unified_sources.count()
+            if unified_binaries and not unified_sources:
+                result = unified_binaries
+                sources_len = 1
+            if unified_binaries and unified_sources:
+                # this part is not working, different type of querysets can not be combined, i should find a solution for it
+                result = unified_sources | unified_binaries
+                sources_len = unified_sources.count()
+
+            # format the sources_len so as to slice the source package part at the template
+            sources_len = '":' + str(sources_len) + '"'
+            binary_len = '"' + str(sources_len) + ':"'
+
+            # set the result to the db, pagination will use results from cache when the GET request is called
+            # saving the result at the dictionary is a workaround, it is nto possible to save the queryset object directly at the db
+            rslt = dict()
+            rslt['tmp'] = result
+            cache.set('query_result', rslt)
+            cache.set('sources_len', sources_len)
+            cache.set('binary_len', binary_len)
+
+            LANGUAGE_CODE = request.LANGUAGE_CODE
+            # - generate dict to use in object_list
+            # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+            object_dict = {
+                'queryset': result,
+                'paginate_by': SOURCE_PACKAGES_PER_PAGE,
+                'template_name': 'repository/search_result.html',
+                'template_object_name': 'packages',
+                'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE, 'sources_len': sources_len, 'binary_len': binary_len}
+                }
+
+            return object_list(request, **object_dict)
+
+    if request.method == 'GET' and request.GET.get('page'):
+
+        try:
+            result = cache.get('query_result')['tmp']
+            # default timeout is 3600 sec, if the timeout is passed, return to the form page
+        except TypeError:
+            return HttpResponseRedirect('./')
+
+        sources_len = cache.get('sources_len')
+        binary_len = cache.get('binary_len')
+        LANGUAGE_CODE = request.LANGUAGE_CODE
+        # - generate dict to use in object_list
+        # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+        object_dict = {
+            'queryset': result,
+            'paginate_by': SOURCE_PACKAGES_PER_PAGE,
+            'template_name': 'repository/search_result.html',
+            'template_object_name': 'packages',
+            'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE, 'sources_len': sources_len, 'binary_len': binary_len}
+        }
+        
+        return object_list(request, **object_dict)
+
+    else:
+        form = SearchForm()
+
+    context = {
+            'form': form,
+        }
+
+    return render_response(request, 'repository/search.html', context)

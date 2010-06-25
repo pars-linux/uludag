@@ -30,6 +30,9 @@ Install
 - Compile translations:
     $ ./manage.py compilemessages
 
+- Create the database cache
+    $ ./manage.py createcachetable querytable 
+
 - Create .htaccess file in project dir:
     SetHandler python-program
     PythonHandler django.core.handlers.modpython
