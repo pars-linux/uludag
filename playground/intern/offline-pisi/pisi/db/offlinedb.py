@@ -25,7 +25,7 @@ import piksemel
 import pisi.metadata
 import pisi.dependency
 
-class Offline_InstallDB():
+class OfflineDB():
 
     def __init__(self):
         self.pdb = pisi.db.packagedb.PackageDB()
