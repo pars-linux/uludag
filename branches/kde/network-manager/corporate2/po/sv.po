@@ -1,7 +1,7 @@
 # translation of sv.po to
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2008, 2009.
 msgid ""
 msgstr ""
@@ -10,12 +10,12 @@ msgstr ""
 "POT-Creation-Date: 2010-05-10 15:27+0300\n"
 "PO-Revision-Date: 2009-01-06 11:04+0100\n"
 "Last-Translator: Patrik Karlsson <patrik@pardus.nu>\n"
-"Language-Team:  <sv@li.org>\n"
+"Language-Team: <sv@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: KBabel 1.11.4\n"
-"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
 
 #: browser.py:51
 msgid "Name:"
@@ -121,25 +121,19 @@ msgstr "Du saknar behörighet för denna åtgärd."
 
 #: comariface.py:179
 msgid ""
-"Network Manager was not able to communicate with your network device. If "
-"it's\n"
-"a wireless interface, make sure that its radio switch is turned on. This is "
-"usually\n"
+"Network Manager was not able to communicate with your network device. If it's\n"
+"a wireless interface, make sure that its radio switch is turned on. This is usually\n"
 "done through a switch or Fn keys in modern notebooks."
 msgstr ""
 "Nätverkshanteraren kunde inte få kontakt med ditt nätverkskort.\n"
-"Om det är ett trådlöst kort, se till att det är aktiverat. Det görs "
-"vanligen\n"
+"Om det är ett trådlöst kort, se till att det är aktiverat. Det görs vanligen\n"
 "med en knapp eller någon Fn-tangent på moderna bärbara datorer."
 
 #: comariface.py:184
 msgid ""
-"The DHCP service was not able to assign an IP address to your network "
-"interface.\n"
-"Make sure that the network you're trying to connect is able to assign IP "
-"addresses\n"
-"through its DHCP service. Otherwise, you have to manually assign an IP "
-"address."
+"The DHCP service was not able to assign an IP address to your network interface.\n"
+"Make sure that the network you're trying to connect is able to assign IP addresses\n"
+"through its DHCP service. Otherwise, you have to manually assign an IP address."
 msgstr ""
 "DHCP-tjänsten kunde inte tilldela någon IP-adress till nätverkskortet.\n"
 "Se till att nätverket du försöker ansluta till kan dela ut IP-adresser\n"
@@ -186,9 +180,7 @@ msgid "DHCP Server Error"
 msgstr "DHCP-serverfel"
 
 #: connsharing.py:156
-msgid ""
-"The interfaces that you have selected must be different to share internet "
-"connection"
+msgid "The interfaces that you have selected must be different to share internet connection"
 msgstr "Du måste välja ett annat gränssnitt för att dela Internetanslutning"
 
 #: connsharing.py:156
@@ -205,8 +197,7 @@ msgstr "Delning är ok"
 
 #: connsharing.py:267
 msgid "You do not have an ip address for the interface that goes to internet"
-msgstr ""
-"Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
+msgstr "Du har inte någon IP-adress för gränssnittet som är anslutet till Internet"
 
 #: connsharing.py:267
 msgid "IP address not found"
@@ -223,10 +214,8 @@ msgid "Network manager module is already started!"
 msgstr "Nätverkshanteraren körs redan!"
 
 #: network-manager.py:98
-msgid ""
-"Current networking backend is set to GNOME NetworkManager. You should switch "
-"back to COMAR backend for being able to use this network applet."
-msgstr ""
+msgid "Current networking backend is set to GNOME NetworkManager. You should switch back to COMAR backend for being able to use this network applet."
+msgstr "Aktuell nätverksbakände är satt till GNOME NetworkManager. Du behöver växla tillbaka till COMARs bakände för att kunna köra detta miniprogram."
 
 #: newconn.py:26
 msgid "Create a new connection"
@@ -397,10 +386,8 @@ msgid "Configure network connection"
 msgstr "Anpasa nätverksanslutning"
 
 #: autoswitch.py:71
-msgid ""
-"Your wireless interface has been disabled by kill switch. Please activate it "
-"first."
-msgstr ""
+msgid "Your wireless interface has been disabled by kill switch. Please activate it first."
+msgstr "Ditt trådlösa nätverkskort har stängts av av hårdvarubrytaren. Vänligen aktivera den först."
 
 #: autoswitch.py:79
 msgid "Scanning..."
@@ -476,15 +463,10 @@ msgstr "Nätverksminiprogram"
 #~ msgstr "Väntar på D-Bus..."
 
 #~ msgid "Connection to the DBus unexpectedly closed, trying to reconnect..."
-#~ msgstr ""
-#~ "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
+#~ msgstr "Anslutningen till D-Bus avslutades oväntat, försöker att återansluta..."
 
-#~ msgid ""
-#~ "Cannot connect to the DBus! If it is not running you should start it with "
-#~ "the 'service dbus start' command in a root console."
-#~ msgstr ""
-#~ "Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med "
-#~ "kommandot 'service dbus start' som root."
+#~ msgid "Cannot connect to the DBus! If it is not running you should start it with the 'service dbus start' command in a root console."
+#~ msgstr "Kan inte ansluta till D-Bus! Om den inte körs bör du starta den med kommandot 'service dbus start' som root."
 
 #~ msgid "Share Connection"
 #~ msgstr "Dela anslutning"
