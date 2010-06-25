@@ -1,7 +1,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: Pardus 2009\n"
@@ -38,7 +38,7 @@ msgstr "Aktuális karbantartó"
 #: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kovács Dániel,Mihailov Ferenc"
+msgstr "Daniel Kovács,Ferenc Mihailov"
 
 #: src/diskmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
@@ -49,10 +49,7 @@ msgstr "bicskas9323@gmail.com,fmihailov@gmail.com"
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
-msgstr ""
-"Nincsenek csomagok, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \\ "
-"NKérem győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően "
-"van-e konfigurálva."
+msgstr "Nincsenek csomagok, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \\ NKérem győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően van-e konfigurálva."
 
 #: src/diskmanager/main.py:175
 msgid "Mounted at %1"
