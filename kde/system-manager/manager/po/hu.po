@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -21,12 +21,8 @@ msgid "System Manager"
 msgstr "Rendszermenedzser"
 
 #: data/systemmanager.desktop.in.h:1
-msgid ""
-"An application for managing settings like system language, keyboard and "
-"timezone."
-msgstr ""
-"Egy alkalmazás a beállítások menedzselésére, például a nyelv, a billentyűzet "
-"kiosztás és az időzóna beállításainak részére."
+msgid "An application for managing settings like system language, keyboard and timezone."
+msgstr "Egy alkalmazás a beállítások menedzselésére, például a nyelv, a billentyűzet kiosztás és az időzóna beállításainak részére."
 
 #: src/systemmanager/about.py:24
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
@@ -43,7 +39,7 @@ msgstr "Aktuális karbantartó"
 #: src/systemmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kovács Dániel"
+msgstr "Daniel Kovács"
 
 #: src/systemmanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
@@ -75,12 +71,8 @@ msgid "Console Keyboard Layout:"
 msgstr "A konzol billentyűzet kiosztása:"
 
 #: ui/ui_main.py:163
-msgid ""
-"Note that these settings do not effect your desktop. Desktop settings can be "
-"changed in 'Regional & Language' module in System Settings."
-msgstr ""
-"Jegyezd meg, ez a beállítás nem érvényes az asztalodra. Az asztali "
-"beállításokat a 'Régió & Nyelv' modul alatt találod a Rendszerbeállításoknál."
+msgid "Note that these settings do not effect your desktop. Desktop settings can be changed in 'Regional & Language' module in System Settings."
+msgstr "Jegyezd meg, ez a beállítás nem érvényes az asztalodra. Az asztali beállításokat a 'Régió & Nyelv' modul alatt találod a Rendszerbeállításoknál."
 
 #: ui/ui_main.py:164
 msgid "Service Settings"
@@ -91,13 +83,8 @@ msgid "First Service to Start:"
 msgstr "Első szolgáltatás indulásnál:"
 
 #: ui/ui_main.py:166
-msgid ""
-"Although services are started parallel manner in boot process, users may "
-"want to start a single service before checking dependencies."
-msgstr ""
-"Annak ellenére, hogy a szolgáltatások párhuzamosan indulnak a boot során, "
-"néhány felhasználó szeretne egy adott szolgáltatást indítani a függőségek "
-"ellenőrzése előtt."
+msgid "Although services are started parallel manner in boot process, users may want to start a single service before checking dependencies."
+msgstr "Annak ellenére, hogy a szolgáltatások párhuzamosan indulnak a boot során, néhány felhasználó szeretne egy adott szolgáltatást indítani a függőségek ellenőrzése előtt."
 
 #: ui/ui_main.py:167
 msgid "Clock Settings"
