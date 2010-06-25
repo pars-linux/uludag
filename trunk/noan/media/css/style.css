@@ -150,3 +150,8 @@ div.paginator div.curr {
     border:1px solid #234F32;
 }
 .paginator_block { text-align: center; }
+
+form div {
+    font-size: 9px;
+    color: gray;
+}
