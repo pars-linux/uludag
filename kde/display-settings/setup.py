@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2006-2009 TUBITAK/UEKAE
+# Copyright (C) 2006-2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it under
 # the terms of the GNU General Public License as published by the Free
@@ -12,58 +12,76 @@
 #
 
 import os
-import glob
 import sys
+import glob
+import tempfile
 
 from distutils.core import setup
-from distutils.cmd import Command
 from distutils.command.build import build
 from distutils.command.install import install
 
-from code.displaysettings import about
+from src.displaysettings import about
+
+PROJECT = about.appName
+
+# For future PDS integration, uncomment the following lines
+# when ready.
+if True:#'kde4' in sys.argv:
+    #sys.argv.remove('kde4')
+    FOR_KDE_4 = True
+    print 'UI files will be created for KDE 4..'
+
+def makeDirs(directory):
+    if not os.path.exists(directory):
+        try:
+            os.makedirs(directory)
+        except OSError:
+            pass
 
 def update_messages():
-    # Create empty directory
-    os.system("rm -rf .tmp")
-    os.makedirs(".tmp")
+    files = tempfile.mkstemp()[1]
 
     # Collect UI files
+    filelist = []
     for filename in glob.glob1("ui", "*.ui"):
-        os.system("/usr/kde/4/bin/pykde4uic -o .tmp/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        if FOR_KDE_4:
+            os.system("/usr/kde/4/bin/pykde4uic -o ui/ui_%s.py ui/%s" % (filename.split(".")[0], filename))
+        else:
+            os.system("/usr/bin/pyuic4 -o ui/ui_%s.py ui/%s -g %s" % (filename.split(".")[0], filename, PROJECT))
 
-    # Collect Python files
-    os.system("cp -R code/* .tmp/")
-
-    # Collect desktop files
-    os.system("cp -R data/*.desktop.in .tmp/")
-
-    # Generate headers for desktop files
-    for filename in glob.glob(".tmp/*.desktop.in"):
+    # Collect headers for desktop files
+    for filename in glob.glob("data/*.desktop.in"):
         os.system("intltool-extract --type=gettext/ini %s" % filename)
 
+    filelist = os.popen("find data src ui -name '*.h' -o -name '*.py'").read().strip().split("\n")
+    filelist.sort()
+    with open(files, "w") as _files:
+        _files.write("\n".join(filelist))
+
     # Generate POT file
-    os.system("find .tmp -name '*.py' -o -name '*.h' | "
-              "xargs xgettext --default-domain=%s \
-                              --keyword=_ \
-                              --keyword=N_ \
-                              --keyword=i18n \
-                              --keyword=ki18n \
-                              -o po/%s.pot" % (about.catalog, about.catalog))
+    os.system("xgettext --default-domain=%s \
+                        --keyword=_ \
+                        --keyword=N_ \
+                        --keyword=i18n \
+                        --keyword=ki18n \
+                        --kde \
+                        -ci18n -ki18n:1 -ki18nc:1c,2 -ki18np:1,2 -ki18ncp:1c,2,3 -ktr2i18n:1 \
+                        -kI18N_NOOP:1 -kI18N_NOOP2:1c,2 -kaliasLocale -kki18n:1 -kki18nc:1c,2 \
+                        -kki18np:1,2 -kki18ncp:1c,2,3 \
+                        --files-from=%s \
+                        -o po/%s.pot" % (PROJECT, files, PROJECT))
 
     # Update PO files
-    for item in os.listdir("po"):
-        if item.endswith(".po"):
-            os.system("msgmerge --no-wrap --sort-by-file -q -o .tmp/temp.po po/%s po/%s.pot" % (item, about.catalog))
-            os.system("cp .tmp/temp.po po/%s" % item)
+    for item in glob.glob1("po", "*.po"):
+        os.system("msgmerge --update --no-wrap --sort-by-file po/%s po/%s.pot" % (item, PROJECT))
 
-    # Remove temporary directory
-    os.system("rm -rf .tmp")
-
-def makeDirs(dir):
-    try:
-        os.makedirs(dir)
-    except OSError:
-        pass
+    # Cleanup
+    os.unlink(files)
+    for f in [_f for _f in filelist if _f.startswith("ui/") or _f.endswith(".h")]:
+        try:
+            os.unlink(f)
+        except OSError:
+            pass
 
 class Build(build):
     def run(self):
