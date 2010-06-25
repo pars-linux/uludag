@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 16:20+0300\n"
+"POT-Creation-Date: 2010-06-25 09:42+0300\n"
 "PO-Revision-Date: 2009-09-08 11:38+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -768,45 +768,23 @@ msgstr "Du kan starte det installerede program ved at dobbeltklikke på det i li
 msgid "&Ok"
 msgstr "&OK"
 
-#~ msgid "removing"
-#~ msgstr "fjerner"
+#~ msgid "Reverse package selections"
+#~ msgstr "Fjern markering af pakker"
 
-#~ msgid "installing"
-#~ msgstr "installerer"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakke håndteringer kører allerede!"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "pm-install"
+#~ msgstr "pm-installation"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Benyt proxy server"
+#~ msgid "Installing %1"
+#~ msgstr "Installerer %1"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerede %1 succesfuldt"
+#~ msgid "Package Installer"
+#~ msgstr "Pakke håndtering"
 
-#, fuzzy
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installerede %1 succesfuldt"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Båndbredde begrænsning"
-
-#~ msgid "Update check"
-#~ msgstr "Tjek efter opdateringer"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(benyt 0 hvis ingen begrænsning)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Ryd mellemlager"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "OK"
-
-#~ msgid "Delete"
-#~ msgstr "Slet"
+#~ msgid "Maintainer"
+#~ msgstr "Vedligeholder"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -821,20 +799,42 @@ msgstr "&OK"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Vælg alle pakker i denne gruppe</p> </body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Vedligeholder"
+#~ msgid "Delete"
+#~ msgstr "Slet"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakke håndtering"
+#~ msgid "Ok"
+#~ msgstr "OK"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerer %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installation"
+#~ msgid "Clear Cache"
+#~ msgstr "Ryd mellemlager"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakke håndteringer kører allerede!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(benyt 0 hvis ingen begrænsning)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Fjern markering af pakker"
+#~ msgid "Update check"
+#~ msgstr "Tjek efter opdateringer"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Båndbredde begrænsning"
+
+#, fuzzy
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerede %1 succesfuldt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Benyt proxy server"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "installing"
+#~ msgstr "installerer"
+
+#~ msgid "removing"
+#~ msgstr "fjerner"

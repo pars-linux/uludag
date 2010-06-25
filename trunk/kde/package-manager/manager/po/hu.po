@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 16:20+0300\n"
+"POT-Creation-Date: 2010-06-25 09:42+0300\n"
 "PO-Revision-Date: 2010-06-05 17:07+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -37,12 +37,12 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Gökmen Göksel"
-msgstr "Gökmen Göksel"
-
-#: src/about.py:35
 msgid "Developer"
 msgstr "Fejlesztő"
+
+#: src/about.py:35
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -53,14 +53,16 @@ msgid "First Author"
 msgstr "Első szerző"
 
 #: src/about.py:37
-msgctxt "FORDÍTÓK NEVE"
-msgid "Your names"
-msgstr "Kovács Dániel"
-
-#: src/about.py:37
-msgctxt "FORDÍTÓK EMAIL-CÍME"
+#, fuzzy
+msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "bicskas9323@gmail.com"
+
+#: src/about.py:37
+#, fuzzy
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "Kovács Dániel"
 
 #: src/basketdialog.py:114
 msgid "Do you want to continue ?"
@@ -411,24 +413,24 @@ msgid "Update"
 msgstr "Frissít"
 
 #: src/tray.py:199
-msgid "Updates"
-msgstr "Frissítés"
-
-#: src/tray.py:199
 msgid "There are %1 updates available!"
 msgstr "%1 frissítés elérhető!"
+
+#: src/tray.py:199
+msgid "Updates"
+msgstr "Frissítés"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "<b>%1</b> frissítés elérhető!"
 
 #: src/tray.py:231
-msgid "Show Updates"
-msgstr "Mutasd a frissítéseket"
-
-#: src/tray.py:231
 msgid "Ignore"
 msgstr "Mellőz"
+
+#: src/tray.py:231
+msgid "Show Updates"
+msgstr "Mutasd a frissítéseket"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
@@ -734,8 +736,8 @@ msgstr "Az újonnan telepített alkalmazást elindíthatod duplán kattintva a l
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "removing"
-#~ msgstr "eltávolítás"
-
 #~ msgid "installing"
 #~ msgstr "telepítés"
+
+#~ msgid "removing"
+#~ msgstr "eltávolítás"
