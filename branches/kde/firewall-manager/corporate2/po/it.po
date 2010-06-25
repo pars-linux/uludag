@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Andrea Decorte <adecorte@gmail.com>, 2007.
 msgid ""
 msgstr ""
@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: KBabel 1.11.4\n"
 
 #: src/firewall.py:188 src/firewall-config.py:133
 msgid "Firewall Configuration"
@@ -35,36 +35,23 @@ msgstr "Alt + M"
 
 #: src/firewall.py:194
 msgid "Click here to stop the firewall and allow all incoming connections."
-msgstr ""
-"Clicca qui per fermare il firewall e consentire tutte le connessioni in "
-"ingresso."
+msgstr "Clicca qui per fermare il firewall e consentire tutte le connessioni in ingresso."
 
 #: src/firewall.py:196
-msgid ""
-"All incoming connections are <b>rejected</b> by default. If you want to "
-"allow other computers to access services on this computer, check the service "
-"below:"
-msgstr ""
-"Tutte le connessioni in ingresso sono <b>bloccate</b> di default. Se vuoi "
-"permettere a altri computer di accedere ai servizi su questo computer, "
-"seleziona tale servizio qui sotto:"
+msgid "All incoming connections are <b>rejected</b> by default. If you want to allow other computers to access services on this computer, check the service below:"
+msgstr "Tutte le connessioni in ingresso sono <b>bloccate</b> di default. Se vuoi permettere a altri computer di accedere ai servizi su questo computer, seleziona tale servizio qui sotto:"
 
 #: src/firewall.py:197
 msgid "Incoming Connections"
 msgstr "Connessioni in ingresso"
 
 #: src/firewall.py:198
-msgid ""
-"In this tab, you can create your own firewall rules. Use '+' button to "
-"create rules, and uncheck rules from list to remove them."
-msgstr ""
-"In questa sezione puoi creare le tue regole per il firewall. Usa il pulsante "
-"'+' per creare le regole, e deselezionale dalla lista per rimuoverle."
+msgid "In this tab, you can create your own firewall rules. Use '+' button to create rules, and uncheck rules from list to remove them."
+msgstr "In questa sezione puoi creare le tue regole per il firewall. Usa il pulsante '+' per creare le regole, e deselezionale dalla lista per rimuoverle."
 
 #: src/firewall.py:201
-#, fuzzy
 msgid "Outgoing Connections"
-msgstr "Connessioni in ingresso"
+msgstr "Connessioni in uscita"
 
 #: src/firewall.py:204
 msgid "Alt+H"
@@ -125,12 +112,8 @@ msgid "<b><font size='+1'>Firewall is running</font></b>"
 msgstr "<b><font size='+1'>Il firewall è in esecuzione</font></b>"
 
 #: src/firewall-config.py:262
-msgid ""
-"Click here to stop the firewall and allow all incoming and outgoing "
-"connections."
-msgstr ""
-"Clicca qui per fermare il firewall e permettere tutte le connessioni in "
-"ingresso e in uscita."
+msgid "Click here to stop the firewall and allow all incoming and outgoing connections."
+msgstr "Clicca qui per fermare il firewall e permettere tutte le connessioni in ingresso e in uscita."
 
 #: src/firewall-config.py:267
 msgid "&Start Firewall"
@@ -141,12 +124,8 @@ msgid "<b><font size='+1'>Firewall is not running</font></b>"
 msgstr "<b><font size='+1'>Il firewall non è in esecuzione</font></b>"
 
 #: src/firewall-config.py:270
-msgid ""
-"Click here to start the firewall and allow connections only to specified "
-"services."
-msgstr ""
-"Clicca qui per avviare il firewall e consentire esclusivamente le "
-"connessioni ai servizi specificati."
+msgid "Click here to start the firewall and allow connections only to specified services."
+msgstr "Clicca qui per avviare il firewall e consentire esclusivamente le connessioni ai servizi specificati."
 
 #: src/firewall-config.py:384
 msgid "Pardus Firewall Interface is already running!"
@@ -202,8 +181,7 @@ msgstr "Condivisione desktop"
 #~ msgstr "Consenti tutte le connessioni in uscita attraverso le porte %s"
 
 #~ msgid "You are not allowed to edit firewall settings."
-#~ msgstr ""
-#~ "Non hai i permessi necessari per modificare le impostazioni del firewall."
+#~ msgstr "Non hai i permessi necessari per modificare le impostazioni del firewall."
 
 #~ msgid "Access Denied"
 #~ msgstr "Accesso negato"
