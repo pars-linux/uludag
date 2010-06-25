@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -39,7 +39,7 @@ msgstr "Aktuális karbantartó"
 #: src/usermanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kovács Dániel"
+msgstr "Daniel Kovács"
 
 #: src/usermanager/about.py:33
 msgctxt "EMAIL OF TRANSLATORS"
@@ -121,8 +121,7 @@ msgstr "Hozzáférés megtagadva."
 
 #: src/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr ""
-"Nem törölhet a <b>%1</b>. Ez a felhasználó jelenleg be van jelentkezve."
+msgstr "Nem törölhet a <b>%1</b>. Ez a felhasználó jelenleg be van jelentkezve."
 
 #: src/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
@@ -130,9 +129,7 @@ msgstr "Biztosan törölni szetnéd ezt a felhasználót '%1' (%2)?"
 
 #: src/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
-msgstr ""
-"A felhasználói fájlok is el lesznek távolítva. (Ez hosszabb időt vehet "
-"igénybe.)"
+msgstr "A felhasználói fájlok is el lesznek távolítva. (Ez hosszabb időt vehet igénybe.)"
 
 #: src/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
