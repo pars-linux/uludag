@@ -60,7 +60,7 @@ msgstr "Aktuális karbantartó"
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Kovács Dániel"
+msgstr "Daniel Kovács"
 
 #: src/displaysettings/about.py:32
 msgctxt "EMAIL OF TRANSLATORS"
