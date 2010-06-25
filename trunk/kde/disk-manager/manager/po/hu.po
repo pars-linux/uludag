@@ -24,9 +24,8 @@ msgid "Disk Manager"
 msgstr "Lemez menedzser"
 
 #: src/diskmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -37,20 +36,23 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/diskmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/diskmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kovács Dániel,Mihailov Ferenc"
+
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com,fmihailov@gmail.com"
 
 #: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
-msgstr "Nincsenek csomagok, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \\ NKérem győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően van-e konfigurálva."
+msgstr ""
+"Nincsenek csomagok, amelyek hátteret biztosítanak ehhez az alkalmazáshoz. \\ "
+"NKérem győződjön meg arról, hogy a csomag telepítve van-e, és megfelelően "
+"van-e konfigurálva."
 
 #: src/diskmanager/main.py:175
 msgid "Mounted at %1"
