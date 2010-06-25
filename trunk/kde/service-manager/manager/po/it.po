@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -31,13 +31,13 @@ msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009 TUBITAK/UEKAE"
 
 #: src/servicemanager/about.py:32
-msgid "Current Maintainer"
-msgstr "Mantainer corrente"
-
-#: src/servicemanager/about.py:32
 #, fuzzy
 msgid "Gökmen Göksel"
 msgstr "Gökmen GÖKSEL"
+
+#: src/servicemanager/about.py:32
+msgid "Current Maintainer"
+msgstr "Mantainer corrente"
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -48,14 +48,14 @@ msgid "COMAR Author"
 msgstr ""
 
 #: src/servicemanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/servicemanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/servicemanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: ui/ui_item.py:103 ui/ui_main.py:56
 msgid "Form"
