@@ -2,7 +2,7 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-#
+# 
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
@@ -92,19 +92,14 @@ msgstr "TV kimenet"
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please be sure that packages are installed and configured correctly."
-msgstr ""
-"Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek "
-"telepítsd fel a szükséges csomagot és állítsd be helyesen."
+msgstr "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
 
 #: src/displaysettings/deviceswidget.py:85
 #: src/displaysettings/screenswidget.py:77
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until "
-"you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
-msgstr ""
-"Nem található érvényes beállítás. A kijelző beállításai nem elérhetőek, amíg "
-"nem konfigurálod újra. Szeretnéd most beállítani biztonságosan?"
+msgstr "Nem található érvényes beállítás. A kijelző beállításai nem elérhetőek, amíg nem konfigurálod újra. Szeretnéd most beállítani biztonságosan?"
 
 #: src/displaysettings/deviceswidget.py:94
 #: src/displaysettings/deviceswidget.py:269
@@ -114,22 +109,12 @@ msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
 
 #: src/displaysettings/deviceswidget.py:119
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr ""
-"<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd "
-"gyártójától. Szeretnéd ezt a meghajtót használni?</p></qt>"
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr "<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd gyártójától. Szeretnéd ezt a meghajtót használni?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
-msgid ""
-"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
-"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
-"<b>%1</b> from video card options.</qt>"
-msgstr ""
-"<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd "
-"gyártójától. Ahhoz, hogy használni tudd, fel kell telepítened a <b>%2</b> "
-"csomagot és válaszd ki <b>%1</b> a videokártya opciók közül."
+msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
+msgstr "<qt>A legjobb teljesítményhez használd a <b>%1</b> meghajtót az eszközöd gyártójától. Ahhoz, hogy használni tudd, fel kell telepítened a <b>%2</b> csomagot és válaszd ki <b>%1</b> a videokártya opciók közül."
 
 #: src/displaysettings/deviceswidget.py:144
 msgid "Start Package Manager"
@@ -157,15 +142,12 @@ msgstr "Egyedi monitor"
 
 #: src/displaysettings/outputdialog.py:78
 msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
-msgstr ""
-"<qt><i>Kattints a \"Válassz...\" gombra a monitor kiválasztásához</i></qt>"
+msgstr "<qt><i>Kattints a \"Válassz...\" gombra a monitor kiválasztásához</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
-msgctxt ""
-"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
-"(LVDS, VGA, etc.)"
+msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: src/displaysettings/screenswidget.py:193
 #: src/displaysettings/screenswidget.py:268
@@ -213,15 +195,8 @@ msgid "Output Configuration"
 msgstr "Kimenet beállítás"
 
 #: ui/ui_output.py:226
-msgid ""
-"If the frequency ranges that your monitor supports are not detected for some "
-"reason, you can specify them here. Be careful with these values, as an "
-"inaccurate value may damage your monitor, especially if it is an old model."
-msgstr ""
-"Ha nem észlelhető a monitorod támogatott frissítési frekvenciája, akkor itt "
-"meg tudod adni a helyes értéket. Óvatosan a számokkal, ha túl nagy értéket "
-"adsz meg, előfordulhat, hogy fizikailag sérül a kijelződ, főleg ha régi "
-"gyártmányról van szó."
+msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
+msgstr "Ha nem észlelhető a monitorod támogatott frissítési frekvenciája, akkor itt meg tudod adni a helyes értéket. Óvatosan a számokkal, ha túl nagy értéket adsz meg, előfordulhat, hogy fizikailag sérül a kijelződ, főleg ha régi gyártmányról van szó."
 
 #: ui/ui_output.py:227
 msgid "Specify Ranges"
@@ -272,15 +247,8 @@ msgid "Frequency Ranges"
 msgstr "Frekvencia tartomány"
 
 #: ui/ui_output.py:239
-msgid ""
-"If your monitor's dimensions are not correctly detected, fonts and other "
-"visual objects might seem larger or smaller than normal. In order to fix "
-"this problem, you can specify your monitor's dimensions here."
-msgstr ""
-"Ha a monitorod síkja nincs helyesen észlelve, akkor előfordulhat, hogy a "
-"betűk és a többi vizuális objektum kisebbnek, vagy nagyobbnak tűnik a "
-"normálisnál. Ezt a problémát itt tudod megoldani, a monitor helyes "
-"értékeinek beállításával."
+msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
+msgstr "Ha a monitorod síkja nincs helyesen észlelve, akkor előfordulhat, hogy a betűk és a többi vizuális objektum kisebbnek, vagy nagyobbnak tűnik a normálisnál. Ezt a problémát itt tudod megoldani, a monitor helyes értékeinek beállításával."
 
 #: ui/ui_output.py:240
 msgid "Specify Display Size"
