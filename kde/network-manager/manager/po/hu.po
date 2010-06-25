@@ -25,9 +25,8 @@ msgid "An application for managing network connections."
 msgstr "Egy alkalmazás a hálózati kapcsolatok menedzselésére."
 
 #: src/networkmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -38,23 +37,22 @@ msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
 #: src/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Fejlesztő"
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/networkmanager/about.py:33
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
-
-#: src/networkmanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "Developer"
+msgstr "Fejlesztő"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Kovács Dániel"
+
+#: src/networkmanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "bicskas9323@gmail.com"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
