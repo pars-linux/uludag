@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
 msgstr ""
@@ -32,7 +32,7 @@ msgstr "Periferiche"
 #: data/kcm_displaydevices.desktop.in.h:3
 #: data/kcm_displaysettings.desktop.in.h:3
 msgid "python display screen video monitor manager"
-msgstr ""
+msgstr "Un gestore per monitor scritto in Python"
 
 #: data/kcm_displaysettings.desktop.in.h:1
 msgid "Resize and rotate displays"
@@ -47,27 +47,26 @@ msgid "Display Configuration Tool"
 msgstr "Strumento di configurazione dello schermo"
 
 #: src/displaysettings/about.py:23
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: src/displaysettings/about.py:31
-msgid "Current Maintainer"
-msgstr "Manutentore corrente"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/displaysettings/about.py:31
 msgid "Fatih Aşıcı"
 msgstr "Fatih Aşıcı"
 
-#: src/displaysettings/about.py:32
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+#: src/displaysettings/about.py:31
+msgid "Current Maintainer"
+msgstr "Manutentore corrente"
 
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/displaysettings/about.py:32
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -153,7 +152,7 @@ msgstr "<qt><i>Cliccca sul pulsante \"Scegli\" per selezionare un monitor.</i></
 #: src/displaysettings/screenswidget.py:175
 msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: src/displaysettings/screenswidget.py:193
 #: src/displaysettings/screenswidget.py:268
