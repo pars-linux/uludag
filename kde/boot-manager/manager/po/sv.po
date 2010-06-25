@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -26,9 +26,8 @@ msgid "Boot Manager"
 msgstr "Starthanteraren"
 
 #: src/bootmanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/bootmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -39,14 +38,14 @@ msgid "Current Maintainer"
 msgstr "Nuvarande utvecklare"
 
 #: src/bootmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/bootmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Patrik Karlsson"
+
+#: src/bootmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
 
 #: src/bootmanager/main.py:99
 msgid ""
