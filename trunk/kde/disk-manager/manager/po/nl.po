@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:47+0300\n"
+"POT-Creation-Date: 2010-06-25 10:01+0300\n"
 "PO-Revision-Date: 2010-06-11 16:32+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -17,73 +17,39 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Nieuwe toevoegen"
-
-#: .tmp/ui_item.py:69
-msgid "Mount or unmount disk."
-msgstr "Schijf aankoppelen of niet aankoppelen."
-
-#: .tmp/ui_item.py:70
-msgid "Edit"
-msgstr "Bewerken"
-
-#: .tmp/ui_item.py:71
-msgid "Delete"
-msgstr "Verwijderen"
-
-#: .tmp/ui_edit.py:67
-msgid "Mount Disk Automatically"
-msgstr "Schijf automatisch aankoppelen"
-
-#: .tmp/ui_edit.py:68
-msgid "Mount Point:"
-msgstr "Aankoppelpunt:"
-
-#: .tmp/ui_edit.py:69
-msgid "Filesystem Type:"
-msgstr "Type bestandsysteem:"
-
-#: .tmp/ui_edit.py:70
-msgid "Options:"
-msgstr "Opties:"
-
-#: .tmp/ui_edit.py:71
-msgid "Default Options"
-msgstr "Standaard opties"
-
-#: .tmp/diskmanager.desktop.in.h:1
+#: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
-msgstr ""
-"Een toepassing voor het beheren van partities en aankoppelpunten."
+msgstr "Een toepassing voor het beheren van partities en aankoppelpunten."
 
-#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
-#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
+#: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
+#: src/diskmanager/about.py:20 src/diskmanager/about.py:22
 msgid "Disk Manager"
 msgstr "Schijfbeheer"
 
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
-msgid "Settings"
-msgstr "Instellingen"
-
-#: .tmp/diskmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/diskmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/diskmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/diskmanager/about.py:32
+#: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/diskmanager/about.py:32
+#: src/diskmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
-#: .tmp/diskmanager/main.py:86
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/diskmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -91,20 +57,62 @@ msgstr ""
 "Er zijn geen pakketten die backend voor deze toepassing geven.\n"
 "Installeer de pakketten en stel ze correct in."
 
-#: .tmp/diskmanager/main.py:175
+#: src/diskmanager/main.py:175
 msgid "Mounted at %1"
 msgstr "Aangekoppeld op %1"
 
-#: .tmp/diskmanager/main.py:194
+#: src/diskmanager/main.py:194
 msgid "All Items"
 msgstr "Alle items"
 
-#: .tmp/diskmanager/main.py:205
+#: src/diskmanager/main.py:205
 msgid "Add"
 msgstr "Toevoegen"
 
-#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
-#: .tmp/diskmanager/main.py:322
+#: src/diskmanager/main.py:273 src/diskmanager/main.py:283
+#: src/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Toegang geweigerd."
 
+#: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
+msgid "Settings"
+msgstr "Instellingen"
+
+#: ui/ui_edit.py:67
+msgid "Mount Disk Automatically"
+msgstr "Schijf automatisch aankoppelen"
+
+#: ui/ui_edit.py:68
+msgid "Mount Point:"
+msgstr "Aankoppelpunt:"
+
+#: ui/ui_edit.py:69
+msgid "Filesystem Type:"
+msgstr "Type bestandsysteem:"
+
+#: ui/ui_edit.py:70
+msgid "Options:"
+msgstr "Opties:"
+
+#: ui/ui_edit.py:71
+msgid "Default Options"
+msgstr "Standaard opties"
+
+#: ui/ui_item.py:69
+msgid "Mount or unmount disk."
+msgstr "Schijf aankoppelen of niet aankoppelen."
+
+#: ui/ui_item.py:70
+msgid "Edit"
+msgstr "Bewerken"
+
+#: ui/ui_item.py:71
+msgid "Delete"
+msgstr "Verwijderen"
+
+#: ui/ui_main.py:77
+msgid "Add New"
+msgstr "Nieuwe toevoegen"
+
+#~ msgid " "
+#~ msgstr " "

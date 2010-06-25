@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:47+0300\n"
+"POT-Creation-Date: 2010-06-25 10:01+0300\n"
 "PO-Revision-Date: 2010-04-03 13:03+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -18,32 +18,39 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/diskmanager.desktop.in.h:1
+#: data/diskmanager.desktop.in.h:1
 msgid "An application for managing partitions and their mount paths."
 msgstr ""
 
-#: .tmp/diskmanager.desktop.in.h:2 .tmp/diskmanager/about.py:20
-#: .tmp/diskmanager/about.py:22 .tmp/kcm_diskmanager.desktop.in.h:1
+#: data/diskmanager.desktop.in.h:2 data/kcm_diskmanager.desktop.in.h:1
+#: src/diskmanager/about.py:20 src/diskmanager/about.py:22
 msgid "Disk Manager"
 msgstr "Gestore Disco"
 
-#: .tmp/diskmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/diskmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/diskmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/diskmanager/about.py:32
+#: src/diskmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/diskmanager/about.py:32
+#: src/diskmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Manutentore corrente"
 
-#: .tmp/diskmanager/main.py:86
+#: src/diskmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/diskmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/diskmanager/main.py:86
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -51,59 +58,62 @@ msgstr ""
 "Non ci sono pacchetti che forniscano un backend per questa applicazione.\n"
 "Per favore, assicurati che i pacchetti siano stati installati e configurati correttamente."
 
-#: .tmp/diskmanager/main.py:175
+#: src/diskmanager/main.py:175
 msgid "Mounted at %1"
 msgstr "Montato su %1"
 
-#: .tmp/diskmanager/main.py:194
+#: src/diskmanager/main.py:194
 msgid "All Items"
 msgstr "Tutti gli oggetti"
 
-#: .tmp/diskmanager/main.py:205
+#: src/diskmanager/main.py:205
 msgid "Add"
 msgstr "Aggiungi"
 
-#: .tmp/diskmanager/main.py:273 .tmp/diskmanager/main.py:283
-#: .tmp/diskmanager/main.py:322
+#: src/diskmanager/main.py:273 src/diskmanager/main.py:283
+#: src/diskmanager/main.py:322
 msgid "Access denied."
 msgstr "Accesso negato."
 
-#: .tmp/diskmanager/pagedialog.py:31 .tmp/diskmanager/pagedialog.py:34
+#: src/diskmanager/pagedialog.py:31 src/diskmanager/pagedialog.py:34
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: .tmp/ui_edit.py:67
+#: ui/ui_edit.py:67
 msgid "Mount Disk Automatically"
 msgstr "Monta disco automaticamente"
 
-#: .tmp/ui_edit.py:68
+#: ui/ui_edit.py:68
 msgid "Mount Point:"
 msgstr "Punto di mount:"
 
-#: .tmp/ui_edit.py:69
+#: ui/ui_edit.py:69
 msgid "Filesystem Type:"
 msgstr "Tipo di filesystem:"
 
-#: .tmp/ui_edit.py:70
+#: ui/ui_edit.py:70
 msgid "Options:"
 msgstr "Opzioni:"
 
-#: .tmp/ui_edit.py:71
+#: ui/ui_edit.py:71
 msgid "Default Options"
 msgstr "Opzioni predefinite"
 
-#: .tmp/ui_item.py:69
+#: ui/ui_item.py:69
 msgid "Mount or unmount disk."
 msgstr "Monta o smonta disco."
 
-#: .tmp/ui_item.py:70
+#: ui/ui_item.py:70
 msgid "Edit"
 msgstr "Modifica"
 
-#: .tmp/ui_item.py:71
+#: ui/ui_item.py:71
 msgid "Delete"
 msgstr "Elimina"
 
-#: .tmp/ui_main.py:77
+#: ui/ui_main.py:77
 msgid "Add New"
 msgstr "Nuovo"
+
+#~ msgid " "
+#~ msgstr " "
