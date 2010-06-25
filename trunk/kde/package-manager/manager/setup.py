@@ -15,6 +15,7 @@ import os
 import sys
 import glob
 import shutil
+import tempfile
 
 from src import about
 
@@ -24,7 +25,7 @@ from distutils.command.build import build
 from distutils.command.clean import clean
 from distutils.command.install import install
 
-PROJECT = 'package-manager'
+PROJECT = about.appName
 FOR_KDE_4 = False
 
 if 'kde4' in sys.argv:
@@ -32,9 +33,17 @@ if 'kde4' in sys.argv:
     FOR_KDE_4 = True
     print 'UI files will be created for KDE 4.. '
 
+def makeDirs(directory):
+    if not os.path.exists(directory):
+        try:
+            os.makedirs(directory)
+        except OSError:
+            pass
+
 def update_messages():
+    files = tempfile.mkstemp()[1]
+
     # Collect UI files
-    files = open("infiles.list", "w")
     filelist = []
     for filename in glob.glob1("ui", "*.ui"):
         if FOR_KDE_4:
@@ -48,8 +57,8 @@ def update_messages():
 
     filelist = os.popen("find data src ui -name '*.h' -o -name '*.py'").read().strip().split("\n")
     filelist.sort()
-    files.write("\n".join(filelist))
-    files.close()
+    with open(files, "w") as _files:
+        _files.write("\n".join(filelist))
 
     # Generate POT file
     os.system("xgettext --default-domain=%s \
@@ -61,27 +70,21 @@ def update_messages():
                         -ci18n -ki18n:1 -ki18nc:1c,2 -ki18np:1,2 -ki18ncp:1c,2,3 -ktr2i18n:1 \
                         -kI18N_NOOP:1 -kI18N_NOOP2:1c,2 -kaliasLocale -kki18n:1 -kki18nc:1c,2 \
                         -kki18np:1,2 -kki18ncp:1c,2,3 \
-                        --files-from=infiles.list \
-                        -o po/%s.pot" % (PROJECT, PROJECT))
+                        --files-from=%s \
+                        -o po/%s.pot" % (PROJECT, files, PROJECT))
 
     # Update PO files
     for item in glob.glob1("po", "*.po"):
         os.system("msgmerge --update --no-wrap --sort-by-file po/%s po/%s.pot" % (item, PROJECT))
 
     # Cleanup
-    os.unlink("infiles.list")
+    os.unlink(files)
     for f in [_f for _f in filelist if _f.startswith("ui/") or _f.endswith(".h")]:
         try:
             os.unlink(f)
         except OSError:
             pass
 
-def makeDirs(dir):
-    if not os.path.exists(dir):
-        try:
-            os.makedirs(dir)
-        except OSError:
-            pass
 
 class Build(build):
     def run(self):
@@ -111,8 +114,8 @@ class Install(install):
         def rst2doc(lang):
             if os.path.exists(os.path.join('help', lang)):
                 for doc in ('main_help', 'preferences_help'):
-                    if os.path.exists(os.path.join('help',lang,'%s.rst' % doc)):
-                        os.system("rst2html --stylesheet help/help.css help/%s/%s.rst > help/%s/%s.html" % (lang,doc,lang,doc))
+                    if os.path.exists(os.path.join('help', lang,'%s.rst' % doc)):
+                        os.system("rst2html --stylesheet help/help.css help/%s/%s.rst > help/%s/%s.html" % (lang, doc, lang, doc))
 
         if self.root:
             root_dir = "%s/usr/share" % self.root
@@ -164,10 +167,7 @@ class Install(install):
             lang = filename.rsplit(".", 1)[0]
             rst2doc(lang)
             os.system("msgfmt po/%s.po -o po/%s.mo" % (lang, lang))
-            try:
-                os.makedirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
-            except OSError:
-                pass
+            makeDirs(os.path.join(locale_dir, "%s/LC_MESSAGES" % lang))
             shutil.copy("po/%s.mo" % lang, os.path.join(locale_dir, "%s/LC_MESSAGES" % lang, "%s.mo" % PROJECT))
         rst2doc('en')
         print "Installing help files..."
@@ -187,7 +187,7 @@ class Install(install):
             else:
                 os.symlink(os.path.join(project_dir, "%s.py" % PROJECT), os.path.join(bin_dir, PROJECT))
                 os.symlink(os.path.join(project_dir, "pm-install.py"), os.path.join(bin_dir, "pm-install"))
-        except OSError, e:
+        except OSError:
             pass
 
 class Uninstall(Command):
