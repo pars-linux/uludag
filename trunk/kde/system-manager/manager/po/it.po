@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 msgid ""
 msgstr ""
@@ -26,9 +26,8 @@ msgid "An application for managing settings like system language, keyboard and t
 msgstr ""
 
 #: src/systemmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/systemmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -39,14 +38,14 @@ msgid "Current Maintainer"
 msgstr "Mantainer corrente"
 
 #: src/systemmanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/systemmanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/systemmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/systemmanager/main.py:70
 msgid ""
