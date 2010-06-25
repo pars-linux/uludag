@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: da\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:50+0300\n"
+"POT-Creation-Date: 2010-06-25 10:06+0300\n"
 "PO-Revision-Date: 2009-09-08 12:06+0200\n"
 "Last-Translator: Peter Lyberth <peterjensen84@gmail.com>\n"
 "Language-Team: Danish <pardus-translators@pardus.org.tr>\n"
@@ -16,156 +16,75 @@ msgstr ""
 "X-Generator: Lokalize 0.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/kcm_usermanager.desktop.in.h:1 .tmp/usermanager.desktop.in.h:2
-#: .tmp/usermanager/about.py:20 .tmp/usermanager/about.py:22
+#: data/kcm_usermanager.desktop.in.h:1 data/usermanager.desktop.in.h:2
+#: src/usermanager/about.py:20 src/usermanager/about.py:22
 msgid "User Manager"
 msgstr "Brugerhåndtering"
 
-#: .tmp/ui_editgroup.py:81
-msgid "Group Information"
-msgstr "Gruppe informationer"
-
-#: .tmp/ui_editgroup.py:82
-msgid "Group Name:"
-msgstr "Gruppenavn"
-
-#: .tmp/ui_editgroup.py:83 .tmp/ui_edituser.py:196
-msgid "No.:"
-msgstr "Nr.:"
-
-#: .tmp/ui_editgroup.py:84 .tmp/ui_edituser.py:197
-msgid "Auto"
-msgstr "Automatisk"
-
-#: .tmp/ui_edituser.py:192
-msgid "User Information"
-msgstr "Bruger information"
-
-#: .tmp/ui_edituser.py:193
-msgid "Full Name:"
-msgstr "Fuldt navn:"
-
-#: .tmp/ui_edituser.py:194
-msgid "Password:"
-msgstr "Kodeord:"
-
-#: .tmp/ui_edituser.py:195
-msgid "Password (Again):"
-msgstr "Kodeord (Igen):"
-
-#: .tmp/ui_edituser.py:198
-msgid "Username:"
-msgstr "Brugernavn:"
-
-#: .tmp/ui_edituser.py:199
-msgid "Home Directory:"
-msgstr "Hjemmemappe:"
-
-#: .tmp/ui_edituser.py:200
-msgid "Shell:"
-msgstr "Skal:"
-
-#: .tmp/ui_edituser.py:201
-msgid "Give administrator rights."
-msgstr "Giv administrator rettigheder."
-
-#: .tmp/ui_edituser.py:202
-msgid "Use system settings."
-msgstr "Benyt system indstillinger."
-
-#: .tmp/ui_edituser.py:203
-msgid "Authorize user."
-msgstr "Godkend bruger."
-
-#: .tmp/ui_edituser.py:204
-msgid "Deny user."
-msgstr "Nægt bruger."
-
-#: .tmp/ui_edituser.py:205
-msgid "Apply this policy to all actions."
-msgstr "Anvend denne politik ved alle handlinger."
-
-#: .tmp/ui_edituser.py:206
-msgid "Authorizations"
-msgstr "Godkendelser"
-
-#: .tmp/ui_edituser.py:207
-msgid "Main Group:"
-msgstr "Hovedgruppe:"
-
-#: .tmp/ui_edituser.py:208 .tmp/usermanager/main.py:196
-msgid "Groups"
-msgstr "Grupper"
-
-#: .tmp/ui_item.py:60
-msgid "Edit"
-msgstr "Rediger"
-
-#: .tmp/ui_item.py:61
-msgid "Delete"
-msgstr "Slet"
-
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Tilføj ny"
-
-#: .tmp/usermanager.desktop.in.h:1
+#: data/usermanager.desktop.in.h:1
 msgid "An application for managing user accounts."
 msgstr ""
 
-#: .tmp/usermanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/usermanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/usermanager/about.py:25
-msgid " "
-msgstr ""
-
-#: .tmp/usermanager/about.py:32
+#: src/usermanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/usermanager/about.py:32
+#: src/usermanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Nuværende vedligeholder"
 
-#: .tmp/usermanager/edit.py:258
+#: src/usermanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/usermanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
 msgstr "Der skal vælges mindst en gruppe."
 
-#: .tmp/usermanager/edit.py:323
+#: src/usermanager/edit.py:323
 msgid "Start with typing this user's full name."
 msgstr "Start med at indtaste denne bruger fulde navn."
 
-#: .tmp/usermanager/edit.py:326
+#: src/usermanager/edit.py:326
 msgid "You should enter a password for this user."
 msgstr "Du bør indtaste et kodeord for denne bruger."
 
-#: .tmp/usermanager/edit.py:331
+#: src/usermanager/edit.py:331
 msgid "Password must be longer."
 msgstr "Kodeordet skal være længere."
 
-#: .tmp/usermanager/edit.py:335
+#: src/usermanager/edit.py:335
 msgid "Don't use your full name or user name as a password."
 msgstr "Benyt ikke dit fulde navn eller brugernavn som kodeord ."
 
-#: .tmp/usermanager/edit.py:338
+#: src/usermanager/edit.py:338
 msgid "Passwords don't match."
 msgstr "Kodeordene er ikke ens."
 
-#: .tmp/usermanager/edit.py:343
+#: src/usermanager/edit.py:343
 msgid "You must enter a user name."
 msgstr "Du skal indtaste et brugernavn."
 
-#: .tmp/usermanager/edit.py:346
+#: src/usermanager/edit.py:346
 msgid "This user name is used by another user."
 msgstr "Dette brugernavn benyttes af en anden bruger."
 
-#: .tmp/usermanager/edit.py:350
+#: src/usermanager/edit.py:350
 msgid "User name must not start with a number."
 msgstr "Brugernavnet må ikke starte med et tal."
 
-#: .tmp/usermanager/main.py:94
+#: src/usermanager/main.py:94
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -173,43 +92,131 @@ msgstr ""
 "Der er ikke nogen pakker der kan agere backend for dette program.\n"
 "Kontroller venligst at de nødvendige pakker er installeret og konfigureret korrekt."
 
-#: .tmp/usermanager/main.py:195
+#: src/usermanager/main.py:195
 msgid "Users"
 msgstr "Brugere"
 
-#: .tmp/usermanager/main.py:197
+#: src/usermanager/main.py:196 ui/ui_edituser.py:208
+msgid "Groups"
+msgstr "Grupper"
+
+#: src/usermanager/main.py:197
 msgid "All Users"
 msgstr "Alle brugere"
 
-#: .tmp/usermanager/main.py:198
+#: src/usermanager/main.py:198
 msgid "All Groups"
 msgstr "Alle grupper"
 
-#: .tmp/usermanager/main.py:209
+#: src/usermanager/main.py:209
 msgid "Add User"
 msgstr "Tilføj bruger"
 
-#: .tmp/usermanager/main.py:214
+#: src/usermanager/main.py:214
 msgid "Add Group"
 msgstr "Tilføj gruppe"
 
-#: .tmp/usermanager/main.py:235 .tmp/usermanager/main.py:249
-#: .tmp/usermanager/main.py:395
+#: src/usermanager/main.py:235 src/usermanager/main.py:249
+#: src/usermanager/main.py:395
 msgid "Access denied."
 msgstr "Adgang nægtet."
 
-#: .tmp/usermanager/main.py:320
+#: src/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
 msgstr ""
 
-#: .tmp/usermanager/main.py:324
+#: src/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
 msgstr "Vil du slette bruger '%1' (%2)?"
 
-#: .tmp/usermanager/main.py:325
+#: src/usermanager/main.py:325
 msgid "Also remove user files. (This may take long.)"
 msgstr "Slet også brugerfiler (dette kan tage lang tid)."
 
-#: .tmp/usermanager/main.py:333
+#: src/usermanager/main.py:333
 msgid "Do you want to delete group '%1'?"
 msgstr "Vil du slette gruppe '%1'?"
+
+#: ui/ui_editgroup.py:81
+msgid "Group Information"
+msgstr "Gruppe informationer"
+
+#: ui/ui_editgroup.py:82
+msgid "Group Name:"
+msgstr "Gruppenavn"
+
+#: ui/ui_editgroup.py:83 ui/ui_edituser.py:196
+msgid "No.:"
+msgstr "Nr.:"
+
+#: ui/ui_editgroup.py:84 ui/ui_edituser.py:197
+msgid "Auto"
+msgstr "Automatisk"
+
+#: ui/ui_edituser.py:192
+msgid "User Information"
+msgstr "Bruger information"
+
+#: ui/ui_edituser.py:193
+msgid "Full Name:"
+msgstr "Fuldt navn:"
+
+#: ui/ui_edituser.py:194
+msgid "Password:"
+msgstr "Kodeord:"
+
+#: ui/ui_edituser.py:195
+msgid "Password (Again):"
+msgstr "Kodeord (Igen):"
+
+#: ui/ui_edituser.py:198
+msgid "Username:"
+msgstr "Brugernavn:"
+
+#: ui/ui_edituser.py:199
+msgid "Home Directory:"
+msgstr "Hjemmemappe:"
+
+#: ui/ui_edituser.py:200
+msgid "Shell:"
+msgstr "Skal:"
+
+#: ui/ui_edituser.py:201
+msgid "Give administrator rights."
+msgstr "Giv administrator rettigheder."
+
+#: ui/ui_edituser.py:202
+msgid "Use system settings."
+msgstr "Benyt system indstillinger."
+
+#: ui/ui_edituser.py:203
+msgid "Authorize user."
+msgstr "Godkend bruger."
+
+#: ui/ui_edituser.py:204
+msgid "Deny user."
+msgstr "Nægt bruger."
+
+#: ui/ui_edituser.py:205
+msgid "Apply this policy to all actions."
+msgstr "Anvend denne politik ved alle handlinger."
+
+#: ui/ui_edituser.py:206
+msgid "Authorizations"
+msgstr "Godkendelser"
+
+#: ui/ui_edituser.py:207
+msgid "Main Group:"
+msgstr "Hovedgruppe:"
+
+#: ui/ui_item.py:60
+msgid "Edit"
+msgstr "Rediger"
+
+#: ui/ui_item.py:61
+msgid "Delete"
+msgstr "Slet"
+
+#: ui/ui_main.py:77
+msgid "Add New"
+msgstr "Tilføj ny"
