@@ -1,6 +1,6 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Patrik Karlsson <patrik@pardus.nu>, 2009.
 msgid ""
 msgstr ""
@@ -26,9 +26,8 @@ msgid "An application for managing network connections."
 msgstr "Ett program för hantering av nätverksanslutningar."
 
 #: src/networkmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -39,23 +38,22 @@ msgid "Current Maintainer"
 msgstr "Nuvarande utvecklare"
 
 #: src/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Utvecklare"
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/networkmanager/about.py:33
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
-
-#: src/networkmanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "Developer"
+msgstr "Utvecklare"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Patrik Karlsson"
+
+#: src/networkmanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "patrik@trixon.se"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
