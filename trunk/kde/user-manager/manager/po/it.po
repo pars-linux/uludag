@@ -1,7 +1,7 @@
 # translation of it.po to Italian
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-#
+# 
 # Siciliano Davide <edivad95@gmail.com>, 2009.
 # Davide Siciliano <edivad95@gmail.com>, 2010.
 msgid ""
@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: data/kcm_usermanager.desktop.in.h:1 data/usermanager.desktop.in.h:2
 #: src/usermanager/about.py:20 src/usermanager/about.py:22
@@ -25,12 +25,11 @@ msgstr "Gestione utenti"
 
 #: data/usermanager.desktop.in.h:1
 msgid "An application for managing user accounts."
-msgstr ""
+msgstr "Un'applicazione per gestire gli account."
 
 #: src/usermanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -41,14 +40,14 @@ msgid "Current Maintainer"
 msgstr "Maintainer corrente"
 
 #: src/usermanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/usermanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Davide Siciliano"
+
+#: src/usermanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "edivad95@gmail.com"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
