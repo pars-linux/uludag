@@ -27,8 +27,7 @@ def test_install(packagelist, installedpackages, availablepackages):
         print 'No packages were installed.'
         return
     print 'Number of packages to be installed: [ {0} ]'.format(totalPackages)
-    sizeInMB = 1024.0 * 1024.0
-    print 'Installing required packages, please wait ... (Size: {0:.2f} MB)'.format(calculate_download_size(finalPacakges)[0]/sizeInMB)
+    print 'Installing required packages, please wait ... (Size: {0:.2f} MB)'.format(calculate_download_size(finalPacakges)[0]/1024.0 * 1024.0)
     counter = 0 
     while counter < totalPackages:
         # Pisi installs new packages by using a list. However if we pass all the
@@ -40,7 +39,6 @@ def test_install(packagelist, installedpackages, availablepackages):
             install(singlePackage)
             print "\nFinished installing the following packages: '{0}'".format(string.join(finalPacakges, ', '))
         except PrivilegeError:      # in case the user doesn't have permission
-            print '[Error]: The framework is not running with root privileges.'
-            print '[Solution]: To install the packages, run the framework with root privileges.'
+            print '\n[Error]: To install the packages, run the framework with root privileges.'
             return
         counter += 1

@@ -1,29 +1,79 @@
 Pardus Testing Framework
 ------------------------
-
-The aim of this project is to implement a testing framework for Pardus that allows the
-Pardus testing team and other developers to easily test their software, all with minimum
-user intervention. 
+Written from scratch as a 'Google Summer of Code 2010' project
 
 
-How it works:
+Requirements:
 -------------
-
-i.   The developer/ tester create a XML testcase file and send it over to the user. 
-ii.  The framework on the user's end interprets the XML file and carries out the required tests. 
-iii. The test data and report is then sent back to the developer/ tester. 
-
-All this is done with the minimum effort on part of the end user.
-
-There are two major components of this project:
-
-1. Interpretation and execution of XML testcase files.
-2. Creation of XML testcase files.
+Pardus Linux
+Python 2.6+
+lxml 2.2+
 
 
-Technical details:
-------------------
+Usage:
+------
+The input file (specified by the '-f' option) is mandatory.
+Usage: framework.py [options] arguments
 
-The testing framework would run on Python 2.6 and requires the 'lxml' library, 
-which is required for both parsing and the creation of the XML testcase files.
- 
+Options:
+  -h, --help            show this help message and exit
+  -f FILE, --file=FILE  specify the input XML testcase file for testing
+                        (REQUIRED)
+  -p FILE, --packages=FILE
+                        specify the input file for custom package processing
+  -o FILE, --out=FILE   specify the output file to print the list of packages
+                        in the input XML
+
+
+Options Detail:
+---------------
+1]. -f : XML Testcase Input File
+
+The '-f' option is used to specify the input testcase XML file. This option is REQUIRED.
+
+
+2]. -p : Custom Package Processing
+
+The '-p' option is used to specify an input file which has a list of the specific packages
+that you want to parse against the testcase input file (specified by the '-f' option).
+
+For example, you want to run the tests only on the packages 'P1' and 'P2', the tests for 
+which are present in the input testcase file. To create a custom package input file, 
+create a new file and enter the list of packages, seperated by a newline, as shown:
+
+P1
+P2
+
+Then, pass the '-p' option to the framework:
+
+python framework.py -f <testcase-XML-file> -p <package-input-file>
+
+Note that you can only pass a file with the list of packages as an argument to '-p' and 
+not a list of packages. We will fix this in the future.
+
+
+3]. -o : Output Package List
+
+The '-o' option is used to print a list of all the packages present in the testcase input
+file specified by the '-f' switch. 
+
+python framework.py -f <testcase-XML-file> -o <output-package-file>
+
+This will output the list of all the packages in the testcase file to the file specified.
+
+*NOTE*: You can either use the '-p' or the '-o' option, but not both.
+The framework will throw up an error, but you have been warned!
+
+
+Bugs:
+-----
+
+There is no bug tracker associated as of now, however you can always report your bugs
+to the author at: sukhbir [dot] in [at] gmail [dot] com
+
+For feature requests, use the same address above. 
+
+Use the framework to do good and help others! 
+
+
+-- AUTHORS
