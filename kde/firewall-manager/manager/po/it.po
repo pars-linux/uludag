@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: it\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:48+0300\n"
+"POT-Creation-Date: 2010-06-25 10:31+0300\n"
 "PO-Revision-Date: 2010-05-15 11:57+0200\n"
 "Last-Translator: Davide Siciliano <edivad95@gmail.com>\n"
 "Language-Team: Italian <>\n"
@@ -18,32 +18,39 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .tmp/firewallmanager.desktop.in.h:1
+#: data/firewallmanager.desktop.in.h:1
 msgid "An application for managing firewall."
 msgstr ""
 
-#: .tmp/firewallmanager.desktop.in.h:2 .tmp/firewallmanager/about.py:20
-#: .tmp/firewallmanager/about.py:22 .tmp/kcm_firewallmanager.desktop.in.h:1
+#: data/firewallmanager.desktop.in.h:2 data/kcm_firewallmanager.desktop.in.h:1
+#: src/firewallmanager/about.py:20 src/firewallmanager/about.py:22
 msgid "Firewall Manager"
 msgstr "Firewall Manager"
 
-#: .tmp/firewallmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/firewallmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/firewallmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/firewallmanager/about.py:32
+#: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/firewallmanager/about.py:32
+#: src/firewallmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Mantainer corrente"
 
-#: .tmp/firewallmanager/main.py:96
+#: src/firewallmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: src/firewallmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#: src/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -51,51 +58,54 @@ msgstr ""
 "Non ci sono pacchetti che forniscano un backend per questa applicazione.\n"
 "Per favore, assicurati che i pacchetti siano installati e configurati correttamente."
 
-#: .tmp/firewallmanager/main.py:200
+#: src/firewallmanager/main.py:200
 msgid "All"
 msgstr "Tutti"
 
-#: .tmp/firewallmanager/main.py:211
+#: src/firewallmanager/main.py:211
 msgid "Action"
 msgstr "Azione"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:280
-#: .tmp/firewallmanager/main.py:317
+#: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
+#: src/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Accesso negato."
 
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
+#: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: .tmp/firewallmanager/service.py:38
+#: src/firewallmanager/service.py:38
 msgid "Firewall is activated."
 msgstr "Firewall attivato."
 
-#: .tmp/firewallmanager/service.py:41
+#: src/firewallmanager/service.py:41
 msgid "Stop"
 msgstr "Ferma"
 
-#: .tmp/firewallmanager/service.py:43
+#: src/firewallmanager/service.py:43
 msgid "Firewall is deactivated."
 msgstr "Firewall disattivato."
 
-#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
+#: src/firewallmanager/service.py:46 ui/ui_service.py:42
 msgid "Start"
 msgstr "Avvia"
 
-#: .tmp/ui_item.py:69
+#: ui/ui_item.py:69
 msgid "Active or deactivate module."
 msgstr "Attiva o disattiva modulo."
 
-#: .tmp/ui_item.py:70
+#: ui/ui_item.py:70
 msgid "Edit"
 msgstr "Modifica"
 
-#: .tmp/ui_item.py:71
+#: ui/ui_item.py:71
 msgid "Delete"
 msgstr "Elimina"
 
-#: .tmp/ui_main.py:77
+#: ui/ui_main.py:77
 msgid "Add New"
 msgstr "Aggiungi"
+
+#~ msgid " "
+#~ msgstr " "

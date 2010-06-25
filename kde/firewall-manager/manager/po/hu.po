@@ -2,12 +2,12 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # Daniel Kovács <bicskas9323@gmail.com>, 2010.
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: hu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-11 16:48+0300\n"
+"POT-Creation-Date: 2010-06-25 10:31+0300\n"
 "PO-Revision-Date: 2010-06-03 11:41+0100\n"
 "Last-Translator: Daniel Kovács <bicskas9323@gmail.com>\n"
 "Language-Team: HUNGARIAN <LL@li.org>\n"
@@ -15,52 +15,39 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: .tmp/ui_main.py:77
-msgid "Add New"
-msgstr "Új hozzáadása"
+#: data/firewallmanager.desktop.in.h:1
+msgid "An application for managing firewall."
+msgstr "Egy alkalmazás a tűzfal menedzselésére."
 
-#: .tmp/kcm_firewallmanager.desktop.in.h:1 .tmp/firewallmanager/about.py:20
-#: .tmp/firewallmanager/about.py:22 .tmp/firewallmanager.desktop.in.h:2
+#: data/firewallmanager.desktop.in.h:2 data/kcm_firewallmanager.desktop.in.h:1
+#: src/firewallmanager/about.py:20 src/firewallmanager/about.py:22
 msgid "Firewall Manager"
 msgstr "Tűzfal menedzser"
 
-#: .tmp/firewallmanager/pagedialog.py:31 .tmp/firewallmanager/pagedialog.py:35
-msgid "Settings"
-msgstr "Beállítások"
-
-#: .tmp/firewallmanager/about.py:24
-msgid "(c) 2006-2009 TUBITAK/UEKAE"
+#: src/firewallmanager/about.py:24
+#, fuzzy
+msgid "(c) 2006-2010 TUBITAK/UEKAE"
 msgstr "(c) 2006-2009 TUBITAK/UEKAE"
 
-#: .tmp/firewallmanager/about.py:25
-msgid " "
-msgstr " "
-
-#: .tmp/firewallmanager/about.py:32
+#: src/firewallmanager/about.py:32
 msgid "Bahadır Kandemir"
 msgstr "Bahadır Kandemir"
 
-#: .tmp/firewallmanager/about.py:32
+#: src/firewallmanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Aktuális karbantartó"
 
-#: .tmp/firewallmanager/service.py:38
-msgid "Firewall is activated."
-msgstr "Tűzfal aktiválva."
+#: src/firewallmanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
 
-#: .tmp/firewallmanager/service.py:41
-msgid "Stop"
-msgstr "Leállítás"
+#: src/firewallmanager/about.py:33
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
 
-#: .tmp/firewallmanager/service.py:43
-msgid "Firewall is deactivated."
-msgstr "Tűzfal deaktiválva."
-
-#: .tmp/firewallmanager/service.py:46 .tmp/ui_service.py:42
-msgid "Start"
-msgstr "Indulás"
-
-#: .tmp/firewallmanager/main.py:96
+#: src/firewallmanager/main.py:96
 msgid ""
 "There are no packages that provide backend for this application.\n"
 "Please make sure that packages are installed and configured correctly."
@@ -68,31 +55,54 @@ msgstr ""
 "Nincs csomag, amely hátteret biztosítana ennek az alkalmazásnak. \n"
 "Kérlek telepítsd fel a szükséges csomagot és állítsd be helyesen."
 
-#: .tmp/firewallmanager/main.py:200
+#: src/firewallmanager/main.py:200
 msgid "All"
 msgstr "Mind"
 
-#: .tmp/firewallmanager/main.py:211
+#: src/firewallmanager/main.py:211
 msgid "Action"
 msgstr "Művelet"
 
-#: .tmp/firewallmanager/main.py:257 .tmp/firewallmanager/main.py:280
-#: .tmp/firewallmanager/main.py:317
+#: src/firewallmanager/main.py:257 src/firewallmanager/main.py:280
+#: src/firewallmanager/main.py:317
 msgid "Access denied."
 msgstr "Hozzáférés megtagadva."
 
-#: .tmp/ui_item.py:69
+#: src/firewallmanager/pagedialog.py:31 src/firewallmanager/pagedialog.py:35
+msgid "Settings"
+msgstr "Beállítások"
+
+#: src/firewallmanager/service.py:38
+msgid "Firewall is activated."
+msgstr "Tűzfal aktiválva."
+
+#: src/firewallmanager/service.py:41
+msgid "Stop"
+msgstr "Leállítás"
+
+#: src/firewallmanager/service.py:43
+msgid "Firewall is deactivated."
+msgstr "Tűzfal deaktiválva."
+
+#: src/firewallmanager/service.py:46 ui/ui_service.py:42
+msgid "Start"
+msgstr "Indulás"
+
+#: ui/ui_item.py:69
 msgid "Active or deactivate module."
 msgstr "Modul aktiválása, vagy deaktiválása."
 
-#: .tmp/ui_item.py:70
+#: ui/ui_item.py:70
 msgid "Edit"
 msgstr "Szerkesztés"
 
-#: .tmp/ui_item.py:71
+#: ui/ui_item.py:71
 msgid "Delete"
 msgstr "Törlés"
 
-#: .tmp/firewallmanager.desktop.in.h:1
-msgid "An application for managing firewall."
-msgstr "Egy alkalmazás a tűzfal menedzselésére."
+#: ui/ui_main.py:77
+msgid "Add New"
+msgstr "Új hozzáadása"
+
+#~ msgid " "
+#~ msgstr " "
