@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 16:20+0300\n"
+"POT-Creation-Date: 2010-06-25 09:42+0300\n"
 "PO-Revision-Date: 2010-01-15 00:20+0100\n"
 "Last-Translator: Stefan Wilhelm <sw 1976 de {at} google mail dot com>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
@@ -755,38 +755,20 @@ msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklic
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "removing"
-#~ msgstr "wird entfernt"
+#~ msgid "Reverse package selections"
+#~ msgstr "Paketmarkierungen invertieren"
 
-#~ msgid "installing"
-#~ msgstr "wird installiert"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paket Installer ist schon gestartet"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Proxy-Server verwenden"
+#~ msgid "Installing %1"
+#~ msgstr "%1 wird installiert"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+#~ msgid "Package Installer"
+#~ msgstr "Paket Installer"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Max. Bandbreite:"
-
-#~ msgid "Update check"
-#~ msgstr "Updateüberprüfung"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(0 für kein Limit)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cache leeren"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Löschen"
+#~ msgid "Maintainer"
+#~ msgstr "Aktueller Betreuer"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -801,17 +783,35 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Aktueller Betreuer"
+#~ msgid "Delete"
+#~ msgstr "Löschen"
 
-#~ msgid "Package Installer"
-#~ msgstr "Paket Installer"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "%1 wird installiert"
+#~ msgid "Clear Cache"
+#~ msgstr "Cache leeren"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paket Installer ist schon gestartet"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(0 für kein Limit)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Paketmarkierungen invertieren"
+#~ msgid "Update check"
+#~ msgstr "Updateüberprüfung"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Max. Bandbreite:"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installation von %1 erfolgreich abgeschlossen"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Proxy-Server verwenden"
+
+#~ msgid "installing"
+#~ msgstr "wird installiert"
+
+#~ msgid "removing"
+#~ msgstr "wird entfernt"

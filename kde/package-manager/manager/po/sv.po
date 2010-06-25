@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: package-manager\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 16:20+0300\n"
+"POT-Creation-Date: 2010-06-25 09:42+0300\n"
 "PO-Revision-Date: 2010-05-27 18:03+0200\n"
 "Last-Translator: Patrik Karlsson <patrik@trixon.se>\n"
 "Language-Team: Swedish <pardus-translators@pardus.org.tr>\n"
@@ -737,50 +737,29 @@ msgstr "Du kan starta det nyinstallerade programmet genom att dubbelklicka på d
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "removing"
-#~ msgstr "Tar bort"
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
-#~ msgid "installing"
-#~ msgstr "Installerar"
+#~ msgid "12 new packages are installed  succesfully."
+#~ msgstr "12 nya paket har installerats framgångsrikt."
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "padding-left:15px;"
+#~ msgid "Reverse package selections"
+#~ msgstr "Invertera paketmarkering"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Använd proxyserver"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Paketinstalleraren körs redan!"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installerade %1 framgångsrikt"
+#~ msgid "pm-install"
+#~ msgstr "pm-install"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+#~ msgid "Installing %1"
+#~ msgstr "Installerar %1"
 
-#~ msgid "%p%"
-#~ msgstr "%p%"
+#~ msgid "Package Installer"
+#~ msgstr "Pakethanteraren"
 
-#~ msgid "Summary"
-#~ msgstr "Sammanställning"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Maximal nerladdningshastighet:"
-
-#~ msgid "Update check"
-#~ msgstr "Uppdateringskontroll"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(använd 0 för obegränsad)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Cachetömning"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
+#~ msgid "Maintainer"
+#~ msgstr "Underhållare"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -795,26 +774,47 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Välj alla paket i den här gruppen</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Underhållare"
+#~ msgid "Delete"
+#~ msgstr "Ta bort"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakethanteraren"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installerar %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-install"
+#~ msgid "Clear Cache"
+#~ msgstr "Cachetömning"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Paketinstalleraren körs redan!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(använd 0 för obegränsad)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Invertera paketmarkering"
+#~ msgid "Update check"
+#~ msgstr "Uppdateringskontroll"
 
-#~ msgid "12 new packages are installed  succesfully."
-#~ msgstr "12 nya paket har installerats framgångsrikt."
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Maximal nerladdningshastighet:"
 
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"
+#~ msgid "Summary"
+#~ msgstr "Sammanställning"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Paketinstallation avslutatdes framgångsrikt"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installerade %1 framgångsrikt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Använd proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "padding-left:15px;"
+
+#~ msgid "installing"
+#~ msgstr "Installerar"
+
+#~ msgid "removing"
+#~ msgstr "Tar bort"

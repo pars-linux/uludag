@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-24 16:20+0300\n"
+"POT-Creation-Date: 2010-06-25 09:42+0300\n"
 "PO-Revision-Date: 2010-06-11 16:14+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -737,50 +737,23 @@ msgstr "De nieuw geïnstalleerde toepassing kan door dubbelklikken op onderstaan
 msgid "&Ok"
 msgstr "&Ok"
 
-#~ msgid "removing"
-#~ msgstr "verwijderen"
+#~ msgid "Reverse package selections"
+#~ msgstr "Keer pakketselectie om"
 
-#~ msgid "installing"
-#~ msgstr "installeren"
+#~ msgid "Package Installer is already started!"
+#~ msgstr "Pakket-installeerder is reeds gestart!"
 
-#~ msgid "padding-left:15px;"
-#~ msgstr "opvullen-links:15px;"
+#~ msgid "pm-install"
+#~ msgstr "pm-installeer"
 
-#~ msgid "Use proxy server"
-#~ msgstr "Gebruik proxyserver"
+#~ msgid "Installing %1"
+#~ msgstr "Installeren van %1"
 
-#~ msgid "Succesfully finished installing %1"
-#~ msgstr "Installatie van %1 is gelukt"
+#~ msgid "Package Installer"
+#~ msgstr "Pakket-installeerder"
 
-#~ msgid "Succesfully finished installing packages"
-#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
-
-#~ msgid "%p%"
-#~ msgstr "%p%"
-
-#~ msgid "Summary"
-#~ msgstr "Samenvatting"
-
-#~ msgid "Bandwidth limit:"
-#~ msgstr "Bandbreedtelimiet:"
-
-#~ msgid "Update check"
-#~ msgstr "Opwaaderingen controleren"
-
-#~ msgid "(use 0 for no limit)"
-#~ msgstr "(gebruik 0 voor geen limiet)"
-
-#~ msgid "Clear Cache"
-#~ msgstr "Buffer wissen"
-
-#~ msgid "TextLabel"
-#~ msgstr "TextLabel"
-
-#~ msgid "Ok"
-#~ msgstr "Ok"
-
-#~ msgid "Delete"
-#~ msgstr "Verwijderen"
+#~ msgid "Maintainer"
+#~ msgstr "Onderhouder"
 
 #~ msgid ""
 #~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
@@ -795,20 +768,47 @@ msgstr "&Ok"
 #~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
 #~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Selecteer alle pakketten in deze groep</p></body></html>"
 
-#~ msgid "Maintainer"
-#~ msgstr "Onderhouder"
+#~ msgid "Delete"
+#~ msgstr "Verwijderen"
 
-#~ msgid "Package Installer"
-#~ msgstr "Pakket-installeerder"
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
-#~ msgid "Installing %1"
-#~ msgstr "Installeren van %1"
+#~ msgid "TextLabel"
+#~ msgstr "TextLabel"
 
-#~ msgid "pm-install"
-#~ msgstr "pm-installeer"
+#~ msgid "Clear Cache"
+#~ msgstr "Buffer wissen"
 
-#~ msgid "Package Installer is already started!"
-#~ msgstr "Pakket-installeerder is reeds gestart!"
+#~ msgid "(use 0 for no limit)"
+#~ msgstr "(gebruik 0 voor geen limiet)"
 
-#~ msgid "Reverse package selections"
-#~ msgstr "Keer pakketselectie om"
+#~ msgid "Update check"
+#~ msgstr "Opwaaderingen controleren"
+
+#~ msgid "Bandwidth limit:"
+#~ msgstr "Bandbreedtelimiet:"
+
+#~ msgid "Summary"
+#~ msgstr "Samenvatting"
+
+#~ msgid "%p%"
+#~ msgstr "%p%"
+
+#~ msgid "Succesfully finished installing packages"
+#~ msgstr "Succesvolle installatie van pakketten is beëindigd"
+
+#~ msgid "Succesfully finished installing %1"
+#~ msgstr "Installatie van %1 is gelukt"
+
+#~ msgid "Use proxy server"
+#~ msgstr "Gebruik proxyserver"
+
+#~ msgid "padding-left:15px;"
+#~ msgstr "opvullen-links:15px;"
+
+#~ msgid "installing"
+#~ msgstr "installeren"
+
+#~ msgid "removing"
+#~ msgstr "verwijderen"
