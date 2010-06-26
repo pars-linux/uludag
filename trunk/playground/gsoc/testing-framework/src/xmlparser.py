@@ -7,6 +7,7 @@ import string
 
 from pisi.api import list_installed
 from pisi.api import list_available
+
 from testcases import testinstall
 
 try:
@@ -59,10 +60,11 @@ class XMLParser:
     
     def test_install(self, element):
         """Call the module for testcase type INSTALL."""
-        listInstall = []
+        packageList = []
         for text in element.getiterator('package'):
-            listInstall.append(text.text)
-        testinstall.test_install(listInstall, self.installed_packages(), self.available_packages())
+            packageList.append(text.text)
+        testcaseInstall = testinstall.TestInstall(packageList, self.installed_packages(), self.available_packages())
+        testcaseInstall.test_install()
     
     def test_gui(self, element):
         """Call the module for testcase type GUI."""
