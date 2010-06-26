@@ -50,25 +50,30 @@ class XMLParser:
                 customCounter += 1
         # Run each testcase
         while counter < totalTestcases:
-            print '\n-- Running test [ {0} of {1} ] --'.format(counter+1, totalTestcases)
+            print "[ Running test '{0}' of '{1}' ]".format(counter+1, totalTestcases)
             element = self.rootelement[counter]
             elementtext = element.get('test')
             # Based on the type of testcase, call the appropriate one
-            print "\t'{0}'\n".format(elementtext)
-            dict(install=self.test_install, gui=self.test_gui)[elementtext](element)        # one line hack to call the appropriate method!
+            print "Type of test: '{0}'".format(elementtext)
+            # If no package tag is there, move on to the next testcase
+            packageList = []
+            for packageTag in element.getiterator('package'):
+                packageList.append(packageTag.text)
+            if not packageList:
+                print 'No package specified for testing. Skipping test ...\n'
+                counter += 1
+                continue
+            dict(install=self.test_install, gui=self.test_gui)[elementtext](element, packageList)        # one line hack to call the appropriate method!
             counter += 1
     
-    def test_install(self, element):
+    def test_install(self, element, packagelist):
         """Call the module for testcase type INSTALL."""
-        packageList = []
-        for text in element.getiterator('package'):
-            packageList.append(text.text)
-        testcaseInstall = testinstall.TestInstall(packageList, self.installed_packages(), self.available_packages())
-        testcaseInstall.test_install()
+        testcaseinstall = testinstall.TestInstall(packagelist, self.installed_packages(), self.available_packages())
+        testcaseinstall.test_install_main()
     
-    def test_gui(self, element):
+    def test_gui(self, element, packagelist):
         """Call the module for testcase type GUI."""
-        print 'Yeah gui! You are next :)'
+  
 
     def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""

@@ -27,7 +27,7 @@ def check_file(file):
         sys.exit("[Error]: The file '{0}' is not a valid file or the file does not exist.".format(file))
     if not '.xml' in fileExtension:
         sys.exit("[Error]: Only XML files are supported. The file '{0}' is an invalid testcase file.".format(file))
-    print "[Parsing file]:\t'{0}'".format(fileAbsolutePath)
+    print "[Parsing file]:\t'{0}'\n".format(fileAbsolutePath)
 
 
 def main():
