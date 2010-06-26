@@ -1,5 +1,5 @@
-Pardus Testing Framework
-------------------------
+=== Pardus Testing Framework ===
+
 Written from scratch as a 'Google Summer of Code 2010' project
 
 
@@ -25,8 +25,9 @@ Options:
                         in the input XML
 
 
-Options Detail:
----------------
+Options Details:
+----------------
+
 1]. -f : XML Testcase Input File
 
 The '-f' option is used to specify the input testcase XML file. This option is REQUIRED.
@@ -39,7 +40,7 @@ that you want to parse against the testcase input file (specified by the '-f' op
 
 For example, you want to run the tests only on the packages 'P1' and 'P2', the tests for 
 which are present in the input testcase file. To create a custom package input file, 
-create a new file and enter the list of packages, seperated by a newline, as shown:
+create a new file and enter the list of packages, separated by a newline, as shown:
 
 P1
 P2
@@ -68,11 +69,9 @@ The framework will throw up an error, but you have been warned!
 Bugs:
 -----
 
-There is no bug tracker associated as of now, however you can always report your bugs
-to the author at: sukhbir [dot] in [at] gmail [dot] com
-
-For feature requests, use the same address above. 
-
+There is no bug tracker associated as of now, however you can always report bugs and
+request for new features to the author at: sukhbir [dot] in [at] gmail [dot] com
+ 
 Use the framework to do good and help others! 
 
 
