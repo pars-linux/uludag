@@ -15,6 +15,7 @@ from PyQt4.QtCore import QObject, SIGNAL
 from PyKDE4.kdecore import i18n
 
 from offlineparser import OfflineParser
+from sessionmanager import SessionManager
 
 import backend
 
@@ -56,11 +57,38 @@ class OfflineManager(QObject):
 
         self.emit(SIGNAL("currentProgress(int)"), percent)
 
-    def importIndex(self, filename):
+    def importIndex(self, filename):        
         backend.pm.Iface().setIndex(filename)
 
     def exportIndex(self, filename):
-        pass
+        iface = backend.pm.Iface()
+
+        source = iface.source  # store current source
+        iface.setSource(None)  # set source None
+
+        list_installed = iface.getPackageList()  # get installed package list
+        packages = []
+
+        self.totalPackages = len(list_installed)
+        self.packageNo = 0
+
+        for name in list_installed:
+            packages.append(iface.getPackage(name))
+            self.packageNo += 1
+            self.updateExportingProgress()
+
+        session = SessionManager()
+        session.setSession(session.OFFLINE)
+
+        try:
+            backend.pm.Iface().writeIndex(packages, filename)
+            print "Index file is written successfully."
+        except:
+            print "Index file could not written!"
+
+        # set source and session to their previous states
+        backend.pm.Iface().setSource(source)
+        session.setSession(session.NORMAL)
 
     def saveSession(self, filename):
         self.offlineparser.saveArchive(filename)
