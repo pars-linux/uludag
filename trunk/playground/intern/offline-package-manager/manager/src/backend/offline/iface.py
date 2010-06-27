@@ -271,6 +271,18 @@ class Iface(Singleton):
     def setIndex(self, filename):
         self.odb.setIndex(filename)
 
+    def writeIndex(self, packages, filename):
+        index = pisi.index.Index()
+
+        index.components = None
+        index.groups = None
+        index.distribution = None
+        
+        index.packages = packages
+
+        index.write(filename, sha1sum=False, compress=pisi.file.File.bz2, sign=None)
+        
+
 # --------------------------------------------------------------
 # Rewrited pisi.api functions are below with their requirements.
 # --------------------------------------------------------------
@@ -289,7 +301,6 @@ class Iface(Singleton):
 
         # consider also blacklist filtering
         upgradable = pisi.blacklist.exclude_from(upgradable, ctx.const.blacklist)
-        # YAMUK YAPARSA BU PISI.BLACKLIST YAPAR :)
 
         return upgradable
 
