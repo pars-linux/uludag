@@ -87,8 +87,8 @@ class OfflineManager(QObject):
             print "Index file could not written!"
 
         # set source and session to their previous states
-        backend.pm.Iface().setSource(source)
         session.setSession(session.NORMAL)
+        iface.setSource(source)
 
     def saveSession(self, filename):
         self.offlineparser.saveArchive(filename)
