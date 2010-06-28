@@ -5,18 +5,19 @@
 # Görkem Çetin <gorkem@kde.org>, 2003.
 # Ahmet AYGÜN <ahmet@zion.gen.tr>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kteatime\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-04 06:32+0200\n"
-"PO-Revision-Date: 2009-08-15 21:06+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:13+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
@@ -121,7 +122,6 @@ msgid "KDE utility for making a fine cup of tea."
 msgstr "KDE çay demleme aracı."
 
 #: src/main.cpp:31
-#, fuzzy
 #| msgid ""
 #| "(c) 1998-1999, Matthias Hoelzer-Kluepfel\n"
 #| " (c) 2002-2003, Martin Willers\n"
@@ -133,7 +133,7 @@ msgid ""
 msgstr ""
 "(c) 1998-1999, Matthias Hoelzer-Kluepfel\n"
 " (c) 2002-2003, Martin Willers\n"
-" (c) 2007-2009, Stefan Böhmann"
+" (c) 2007-2010, Stefan Böhmann"
 
 #: src/main.cpp:37
 msgid "Matthias Hoelzer-Kluepfel"
@@ -169,16 +169,14 @@ msgid "Configure Tea Cooker"
 msgstr "Demliği Yapılandır"
 
 #: src/settings.cpp:52
-#, fuzzy
 #| msgid "Configure &Notifications..."
 msgid "Configure &amp;Notifications..."
 msgstr "&Bildirimleri Yapılandır..."
 
 #: src/settings.cpp:53 src/settings.cpp:61
-#, fuzzy
 #| msgid "Configure &Notifications..."
 msgid "Configure notifications"
-msgstr "&Bildirimleri Yapılandır..."
+msgstr "Bildirimleri yapılandır"
 
 #: src/settings.cpp:58
 msgid "Save changes and close dialog."
