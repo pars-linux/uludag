@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libplasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-25 05:12+0200\n"
-"PO-Revision-Date: 2010-06-28 11:09+0300\n"
+"PO-Revision-Date: 2010-06-28 13:08+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -445,7 +445,7 @@ msgstr "Bu programcığı geri topla"
 
 #: extenders/extenderitem.cpp:823
 msgid "Reattach"
-msgstr ""
+msgstr "Yeniden tuttur"
 
 #: extenders/extenderitem.cpp:848
 msgid "Close"
