@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: katepart4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-19 15:54+0200\n"
-"PO-Revision-Date: 2010-05-23 14:50+0300\n"
+"PO-Revision-Date: 2010-06-28 13:48+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -506,10 +506,9 @@ msgid "Add..."
 msgstr "Ekle..."
 
 #: search/katesearchbar.cpp:318
-#, fuzzy
 #| msgid "Reached bottom, continued from top"
 msgid "Reached top, continued from bottom"
-msgstr "Sona ulaşıldı, baştan devam ediliyor"
+msgstr "Başa ulaşıldı, sondan devam ediliyor"
 
 #: search/katesearchbar.cpp:320
 msgid "Reached bottom, continued from top"
@@ -520,11 +519,11 @@ msgid "Not found"
 msgstr "Bulunamadı"
 
 #: search/katesearchbar.cpp:613
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Not found"
 msgid "1 match found"
 msgid_plural "%1 matches found"
-msgstr[0] "Bulunamadı"
+msgstr[0] ""
 
 #: search/katesearchbar.cpp:846
 #, fuzzy, kde-format
@@ -664,16 +663,14 @@ msgid "End case conversion"
 msgstr "Büyük küçük harf dönüşümünü bitir"
 
 #: search/katesearchbar.cpp:1115
-#, fuzzy
 #| msgid "Begin lowercase conversion"
 msgid "Lowercase first character conversion"
-msgstr "Küçük harfe dönüştürmeye başla"
+msgstr "İlk karakteri küçültme dönüşümü"
 
 #: search/katesearchbar.cpp:1116
-#, fuzzy
 #| msgid "Begin uppercase conversion"
 msgid "Uppercase first character conversion"
-msgstr "Büyük harfe dönüştürmeye başla"
+msgstr "İlk karakteri büyütme dönüşümü"
 
 #: search/katesearchbar.cpp:1117
 msgid "Replacement counter (for Replace All)"
@@ -888,10 +885,9 @@ msgid "Revert the most recent undo operation"
 msgstr "En son yapılan Geri-Al işlemlerini geri al"
 
 #: view/kateview.cpp:334
-#, fuzzy
 #| msgid "Word Wrap"
 msgid "Apply &Word Wrap"
-msgstr "Kelime Kaydırma"
+msgstr "&Kelimeyi Kaydır"
 
 #: view/kateview.cpp:335
 msgid ""
@@ -960,11 +956,10 @@ msgstr ""
 "olduğu dilin renklendirme kuralları içinde tanımlanmıştır."
 
 #: view/kateview.cpp:366
-#, fuzzy
 #| msgctxt "@item:intable Text context"
 #| msgid "Comment"
 msgid "Toggle Comment"
-msgstr "Yorum"
+msgstr "Yorumu Aç/Kapa"
 
 #: view/kateview.cpp:369
 msgid "&Read Only Mode"
@@ -1257,7 +1252,7 @@ msgstr "Belge kaydedilirken hangi satır sonlandırmanın seçileceği"
 
 #: view/kateview.cpp:556
 msgid "Add &Byte Order Mark (BOM)"
-msgstr ""
+msgstr "&Byte Order Mark (BOM) Ekle"
 
 #: view/kateview.cpp:558
 msgid ""
@@ -1615,7 +1610,7 @@ msgstr "Öntanımlı Öge Stilini kullan"
 
 #: view/kateviewhelpers.cpp:1578
 msgid "Disable Annotation Bar"
-msgstr ""
+msgstr "Açıklama Çubuğunu Gösterme"
 
 #: document/katedocument.cpp:128
 #, kde-format
@@ -1663,10 +1658,9 @@ msgstr ""
 "okunur-yazılır kipe geçebilirsiniz."
 
 #: document/katedocument.cpp:2168
-#, fuzzy
 #| msgid "E&ncoding"
 msgid "Broken Encoding"
-msgstr "&Kodlama"
+msgstr "Bozuk &Kodlama"
 
 #: document/katedocument.cpp:2191
 #, kde-format
@@ -1938,7 +1932,7 @@ msgstr "<b>Not:</b> Yeni sürümler otomatik olarak seçildi."
 #: dialogs/katedialogs.cpp:1214
 msgid ""
 "The list of highlightings could not be found on / retrieved from the server"
-msgstr ""
+msgstr "Vurgulama listesi sunucuda bulunamadı / alınamadı"
 
 #: dialogs/katedialogs.cpp:1305
 msgid "&Go to line:"
@@ -3163,7 +3157,6 @@ msgstr "Sadece &seçim   "
 #. i18n: file: search/searchbarpower.ui:230
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:86
-#, fuzzy
 #| msgid "&Mode"
 msgid "Mo&de:"
 msgstr "&Kip"
@@ -3172,7 +3165,7 @@ msgstr "&Kip"
 #. i18n: ectx: property (text), widget (KPushButton, findAll)
 #: rc.cpp:89
 msgid "&Find All"
-msgstr ""
+msgstr "&Tümünü Bul"
 
 #. i18n: file: search/searchbarpower.ui:254
 #. i18n: ectx: property (toolTip), widget (QToolButton, mutate)
@@ -3776,10 +3769,9 @@ msgstr ""
 #. i18n: file: dialogs/opensaveconfigwidget.ui:48
 #. i18n: ectx: property (text), widget (QLabel, lblEncodingDetection)
 #: rc.cpp:434
-#, fuzzy
 #| msgid "Encoding auto&detection:"
 msgid "&Encoding Detection:"
-msgstr "Kodlama otomatik &tanıması:"
+msgstr "&Kodlama Algılama:"
 
 #. i18n: file: dialogs/opensaveconfigwidget.ui:58
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbEncodingDetection)
@@ -3793,10 +3785,9 @@ msgstr ""
 #. i18n: file: dialogs/opensaveconfigwidget.ui:65
 #. i18n: ectx: property (text), widget (QLabel, lblEncodingDetection)
 #: rc.cpp:440
-#, fuzzy
 #| msgid "&Encoding:"
 msgid "&Fallback Encoding"
-msgstr "&Kodlama:"
+msgstr ""
 
 #. i18n: file: dialogs/opensaveconfigwidget.ui:75
 #. i18n: ectx: property (whatsThis), widget (KComboBox, cmbEncodingFallback)
@@ -5010,12 +5001,11 @@ msgstr "Alerts"
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/ample.xml:3
 #: rc.cpp:923
-#, fuzzy
 #| msgctxt "Language"
 #| msgid "YAML"
 msgctxt "Language"
 msgid "AMPLE"
-msgstr "YAML"
+msgstr "AMPLE"
 
 #. i18n: tag language attribute section
 #. i18n: file: syntax/data/ample.xml:3
@@ -6028,12 +6018,11 @@ msgstr "Python"
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/qml.xml:4
 #: rc.cpp:1601
-#, fuzzy
 #| msgctxt "Language"
 #| msgid "SML"
 msgctxt "Language"
 msgid "QML"
-msgstr "SML"
+msgstr "QML"
 
 #. i18n: tag language attribute name
 #. i18n: file: syntax/data/rapidq.xml:3
