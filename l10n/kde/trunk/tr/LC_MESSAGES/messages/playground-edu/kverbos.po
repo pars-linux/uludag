@@ -2,18 +2,19 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kverbos\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-03 05:03+0200\n"
-"PO-Revision-Date: 2009-10-01 15:40+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:04+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: controlline.cpp:75 qlearning.cpp:254
@@ -135,10 +136,9 @@ msgid "Show always the foreign infinitive if possible"
 msgstr "Mümkünse her zaman yabancı mastarı göster"
 
 #: kvtmlsettings.cpp:185
-#, fuzzy
 #| msgid "Show always the Spanish infinitiv"
 msgid "Show always the Spanish infinitive"
-msgstr "Her zaman İspanyolca mastarı göster"
+msgstr "Daima İspanyolca mastarı göster"
 
 #: main.cpp:42
 msgid "KVerbos"
@@ -302,6 +302,13 @@ msgid ""
 "VerbViewTrainer if a word is entered that is not yet in the selection.  If "
 "this option is set, such verbs are added automatically to the list."
 msgstr ""
+"Kullanıcılar fiil seçimi ile bildikleri ve pratik yapmak istedikleri "
+"fiilleri seçebilirler. "
+"Bazı alıştırmalarda kullanıcı bu seçimde yer almayan fiillerle "
+"karşılaşabilir; "
+"örneğin VerbViewTrainer alıştırmasında seçimde yer almayan bir kelime "
+"girildiğinde. Bu seçenek etkin olduğunda bu fiiller otomatik olarak listeye "
+"eklenir."
 
 #. i18n: file: kverbos.kcfg:28
 #. i18n: ectx: label, entry, group (kverbos)
@@ -327,6 +334,11 @@ msgid ""
 "case, the program can present the verb either in Spanish; according to the "
 "translation; or an arbitrary mix of the two."
 msgstr ""
+"Eğer bir KVTML dosyası yüklendiyse, bir fiil için bir çeviri mevcut olabilir."
+" Bu "
+"durumda uygulama, fiili ya İspanyolca ya da çeviriye göre çevirisiyle "
+"beraber "
+"harmanlayarak sunabilir."
 
 #. i18n: file: kverbos.kcfg:39
 #. i18n: ectx: label, entry, group (kverbos)
@@ -356,6 +368,9 @@ msgid ""
 "option is set, the user login widget is not shown and the default user "
 "settings are used throughout."
 msgstr ""
+"Bu seçenek seçili değilse, uygulama kullanıcıların öğrenim grubunu ve "
+"adlarını seçebildikleri bir giriş ekranıyla açılır. Eğer bu seçenek etkinse, "
+"bu giriş ekranı gösterilmez ve öntanımlı kullanıcı ayarları kullanılır."
 
 #. i18n: file: kverbos.kcfg:57
 #. i18n: ectx: label, entry, group (kverbos)
@@ -377,6 +392,11 @@ msgid ""
 "learning session.  If there are fewer than this, some verbs that are blocked "
 "at the moment are used to fill the list of verbs to learn."
 msgstr ""
+"Alıştırma formlarında, bir öğrenim oturumu için en az bu kadar fiil olması "
+"gerekir. "
+"Eğer bu sayıdan daha az fiil mevcutsa, şu an engellenen bazı fiiller "
+"eksikleri "
+"kapatmak için listeye dahil edilecektir."
 
 #. i18n: file: kverbos.kcfg:75
 #. i18n: ectx: label, entry, group (clock)
@@ -398,10 +418,9 @@ msgstr "Zamanlayıcının sayacağı dakika olarak süre."
 #. i18n: file: kverbos.kcfg:91
 #. i18n: ectx: label, entry, group (kvtml)
 #: rc.cpp:99
-#, fuzzy
 #| msgid "If true then the contents of the kvtml files in the list are loaded."
 msgid "If true then the contents of the KVTML files in the list are loaded."
-msgstr "Eğer etkinse, listedeki kvtml dosyalarının içeriği yüklenir."
+msgstr "Eğer etkinse, listedeki KVTML dosyalarının içeriği yüklenir."
 
 #. i18n: file: kverbos.kcfg:95
 #. i18n: ectx: label, entry (fileList), group (kvtml)
@@ -874,3 +893,4 @@ msgstr ""
 "align:center;> <p class=heavy>Lo siento! No conozco el verbo:<br><span "
 "style=color:red;>**infinitivo**</span></p> </td> <td width=5%>  </td> </tr> "
 "</tbody> </table> </body> </html>"
+

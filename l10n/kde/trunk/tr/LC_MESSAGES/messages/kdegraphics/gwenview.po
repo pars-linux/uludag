@@ -4,19 +4,20 @@
 #
 # Koray Löker <loker@pardus.org.tr>, 2008.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: gwenview\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-19 05:01+0200\n"
-"PO-Revision-Date: 2009-11-08 21:00+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-06-28 12:51+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: app/documentpanel.cpp:291 app/thumbnailviewpanel.cpp:106
 #: app/mainwindow.cpp:310 lib/documentview/documentview.cpp:123
@@ -82,7 +83,6 @@ msgid "Date"
 msgstr "Tarih"
 
 #: app/thumbnailviewpanel.cpp:138
-#, fuzzy
 #| msgctxt "@item:intable"
 #| msgid "Image Size"
 msgctxt "@action:inmenu"
@@ -90,7 +90,6 @@ msgid "Image Size"
 msgstr "Resim Boyutu"
 
 #: app/thumbnailviewpanel.cpp:139
-#, fuzzy
 #| msgctxt "@item:intable"
 #| msgid "File Size"
 msgctxt "@action:inmenu"
@@ -422,10 +421,9 @@ msgid "An Image Viewer"
 msgstr "Resim Gösterici"
 
 #: app/main.cpp:115 part/gvpart.cpp:123
-#, fuzzy
 #| msgid "Copyright 2000-2009 Aurélien Gâteau"
 msgid "Copyright 2000-2010 Aurélien Gâteau"
-msgstr "Telif Hakları 2000-2009 Aurélien Gâteau"
+msgstr "Telif Hakları 2000-2010 Aurélien Gâteau"
 
 #: app/main.cpp:117 importer/main.cpp:45 part/gvpart.cpp:125
 msgid "Aurélien Gâteau"
@@ -856,10 +854,9 @@ msgid "Photo Importer"
 msgstr "İçeriye Fotoğraf Aktarıcı"
 
 #: importer/main.cpp:43
-#, fuzzy
 #| msgid "Copyright 2000-2009 Aurélien Gâteau"
 msgid "Copyright 2009-2010 Aurélien Gâteau"
-msgstr "Telif Hakları 2000-2009 Aurélien Gâteau"
+msgstr "Telif Hakları 2009-2010 Aurélien Gâteau"
 
 #: importer/main.cpp:52
 msgid "Source folder"
@@ -1059,11 +1056,11 @@ msgstr ""
 "haklarınızın olup olmadığını kontrol edin."
 
 #: lib/document/loadingjob.cpp:56
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@info"
 #| msgid "Could not upload file."
 msgid "Could not load document %1"
-msgstr "Dosya gönderilemedi."
+msgstr "%1 belgesi yüklenemedi"
 
 #: lib/print/printhelper.cpp:129
 msgid "Print Image"
@@ -1211,24 +1208,22 @@ msgstr "Ana Araç Çubuğu"
 #. i18n: file: app/generalconfigpage.ui:17
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:23
-#, fuzzy
 #| msgid "&View background color:"
 msgid "Background color:"
-msgstr "Arkaplan &Rengi:"
+msgstr "Arkaplan rengi:"
 
 #. i18n: file: app/generalconfigpage.ui:51
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:26
 msgid "Videos:"
-msgstr ""
+msgstr "Videolar:"
 
 #. i18n: file: app/generalconfigpage.ui:58
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ListVideos)
 #: rc.cpp:29
-#, fuzzy
 #| msgid "Show Sidebar"
 msgid "Show videos"
-msgstr "Yan Çubuğu Göster"
+msgstr "Videoları göster"
 
 #. i18n: file: app/thumbnailviewpanel.ui:64
 #. i18n: ectx: property (text), widget (Gwenview::StatusBarToolButton, mAddFilterButton)
@@ -1639,7 +1634,6 @@ msgstr ""
 #. i18n: file: lib/gwenviewconfig.kcfg:38
 #. i18n: ectx: whatsthis, entry (BlackListedExtensions), group (General)
 #: rc.cpp:239
-#, fuzzy
 #| msgid ""
 #| "A list of filename extensions Gwenview should not try to\n"
 #| "\t\t\tload. This is useful to exclude raw files which are recognized as\n"
@@ -1650,9 +1644,11 @@ msgid ""
 "\t\t\tTIFF or JPEG. We exclude *.new as well because this is the extension\n"
 "\t\t\tused for temporary files by KSaveFile."
 msgstr ""
-"Gwenview uygulamasının yüklemeyi denemeyeceği dosya uzantıları.\t\t\tBu "
-"seçenek, TIFF veya JPEG olarak algılanan ham dosyaları\n"
-"\t\t\thariç bırakmak için kullanışlıdır."
+"Gwenview uygulamasının yüklemeyi denemeyeceği dosya\n"
+"\t\t\tuzantılarının listesi. Bu seçenek, TIFF veya JPEG olarak algılanan\n"
+"\t\t\tham dosyaları gözardı etmek için kullanışlıdır. KSaveFile geçici "
+"dosyalarını\n"
+"\t\t\ttemsil eden .new uzantısına sahip dosyalar da gözardı edilir."
 
 #. i18n: file: lib/gwenviewconfig.kcfg:188
 #. i18n: ectx: label, entry (random), group (slide show)

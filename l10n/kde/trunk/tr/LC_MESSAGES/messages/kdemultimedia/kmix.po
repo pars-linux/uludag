@@ -12,13 +12,14 @@
 # Engin Çağatay <engincagatay@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmix\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-27 04:48+0200\n"
-"PO-Revision-Date: 2010-05-13 13:45+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 12:34+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -324,20 +325,18 @@ msgid "Set &Record Source"
 msgstr "&Kayıt Kaynağını Belirle"
 
 #: mdwslider.cpp:98
-#, fuzzy
 #| msgid "M&ute"
 msgid "Mo&ve"
-msgstr "S&essiz"
+msgstr "T&aşı"
 
 #: mdwslider.cpp:140
 msgid "Toggle Mute"
 msgstr "Sesi Kapat / Aç"
 
 #: mdwslider.cpp:328 mdwslider.cpp:393 mdwslider.cpp:488
-#, fuzzy
 #| msgid "(capture)"
 msgid "capture"
-msgstr "(yakala)"
+msgstr "(kayıt)"
 
 #: mdwslider.cpp:332 mdwslider.cpp:398
 #, kde-format
@@ -615,20 +614,18 @@ msgid "Playback Devices"
 msgstr "Çalma Aygıtları"
 
 #: mixer_pulse.cpp:945
-#, fuzzy
 #| msgid "Capture"
 msgid "Capture Devices"
-msgstr "Yakala"
+msgstr "Kayıt Aygıtları"
 
 #: mixer_pulse.cpp:951
 msgid "Playback Streams"
 msgstr "Çalma Akışları"
 
 #: mixer_pulse.cpp:959
-#, fuzzy
 #| msgid "Capture"
 msgid "Capture Streams"
-msgstr "Yakala"
+msgstr "Kayıt Akışları"
 
 #: mixer_sun.cpp:67
 msgid "Master Volume"
