@@ -198,22 +198,22 @@ def search(request):
 
             if in_package == 'Binary':
                 if exact:
-                    binaries = Binary.objects.filter(package__name__exact=keyword)
+                    binaries = Package.objects.filter(name__exact=keyword)
                     unified_binaries = binaries
                 else:
-                    binaries = Binary.objects.filter(package__name__icontains=keyword)
-                    summaries = Binary.objects.filter(package__source__info__summary__id = -1)
-                    descriptions = Binary.objects.filter(package__source__info__description__id = -1)
+                    binaries = Package.objects.filter(name__icontains=keyword)
+                    summaries = Package.objects.filter(source__info__summary__id = -1)
+                    descriptions = Package.objects.filter(source__info__description__id = -1)
                     if summary:
-                        summaries = Binary.objects.filter(package__source__info__summary__text__icontains=keyword)
+                        summaries = Package.objects.filter(source__info__summary__text__icontains=keyword)
                     if description: 
-                        descriptions = Binary.objects.filter(package__source__info__description__text__icontains=keyword)
+                        descriptions = Package.objects.filter(source__info__description__text__icontains=keyword)
 
                     unified_binaries = binaries | summaries | descriptions
                     unified_binaries = unified_binaries.distinct()
 
-                unified_binaries =  unified_binaries.filter(package__source__distribution__name__icontains=dist_name)
-                unified_binaries =  unified_binaries.filter(package__source__distribution__release__icontains=dist_release)
+                unified_binaries =  unified_binaries.filter(source__distribution__name__icontains=dist_name)
+                unified_binaries =  unified_binaries.filter(source__distribution__release__icontains=dist_release)
 
             if unified_sources and not unified_binaries:
                 result = unified_sources
