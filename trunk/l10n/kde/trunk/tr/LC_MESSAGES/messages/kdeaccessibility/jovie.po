@@ -2,18 +2,19 @@
 # Cemil MUTLU <mawilos@gmail.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kttsd\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-16 04:52+0200\n"
-"PO-Revision-Date: 2009-10-26 23:52+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-06-28 13:06+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: rc.cpp:1
@@ -36,26 +37,24 @@ msgstr "Genel"
 #. i18n: file: kcmkttsmgr/kcmkttsmgrwidget.ui:40
 #. i18n: ectx: property (text), widget (QLabel, kttsdVersion)
 #: rc.cpp:8 kcmkttsmgr/kcmkttsmgr.cpp:1154
-#, fuzzy
 #| msgid "KTTSD not running"
 msgid "Jovie not running"
-msgstr "KTTSD çalışmıyor"
+msgstr "Jovie çalışmıyor"
 
 #. i18n: file: kcmkttsmgr/kcmkttsmgrwidget.ui:63
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, enableJovieCheckBox)
 #: rc.cpp:11
 msgid "Check to start the KTTS Daemon and enable Text-to-Speech."
 msgstr ""
-"KTTS Artalan Sürecini başlatmak ve Konuşma Metni'ni etkinleştirmek için "
-"işaretleyin."
+"KTTS arkaplan hizmetini başlatmak ve Text-to-Speech işlevini "
+"etkinleştirmek için işaretleyin."
 
 #. i18n: file: kcmkttsmgr/kcmkttsmgrwidget.ui:66
 #. i18n: ectx: property (text), widget (QCheckBox, enableJovieCheckBox)
 #: rc.cpp:14
-#, fuzzy
 #| msgid "&Enable Text-to-Speech System (KTTSD)"
 msgid "&Enable Text-to-Speech System (Jovie)"
-msgstr "Konuşma M&etni Sistemini Etkinleştir (KTTSD)"
+msgstr "Text-to-Speech sistemini (Jovie) &etkinleştir"
 
 #. i18n: file: kcmkttsmgr/kcmkttsmgrwidget.ui:74
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage)
@@ -1019,10 +1018,9 @@ msgid "KDE Text-to-Speech"
 msgstr "KDE Konuşma-Metni"
 
 #: jovie/jovietrayicon.cpp:59
-#, fuzzy
 #| msgid "Text-to-Speech Manager"
 msgid "KDE Text-to-Speech Manager"
-msgstr "Konuşma-Metni Yöneticisi"
+msgstr "KDE Text-to-Speech Yapılandırma Aracı"
 
 #: jovie/jovietrayicon.cpp:68
 msgid "&Stop/Delete"
@@ -1049,20 +1047,18 @@ msgid "&Configure"
 msgstr "Yapıla&ndır"
 
 #: jovie/jovietrayicon.cpp:88
-#, fuzzy
 #| msgid "KTTS &Handbook"
 msgid "Jovie &Handbook"
-msgstr "KTTS &El Kitabı"
+msgstr "Jovie &El Kitabı"
 
 #: jovie/jovietrayicon.cpp:91
 msgid "&About Jovie"
-msgstr ""
+msgstr "Jovie &Hakkında"
 
 #: jovie/main.cpp:41
-#, fuzzy
 #| msgid "Voice"
 msgid "Jovie"
-msgstr "Ses"
+msgstr "Jovie"
 
 #: jovie/main.cpp:42
 msgid "Text-to-speech synthesis daemon"
@@ -1151,20 +1147,18 @@ msgstr ""
 "istediğinizden emin olun.</p>"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:667
-#, fuzzy
 #| msgid "Voice"
 msgid "jovie"
-msgstr "Ses"
+msgstr "jovie"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:667
 msgid "KCMKttsMgr"
 msgstr "KCMKKttsMgr"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:669
-#, fuzzy
 #| msgid "Jeremy Whiting"
 msgid "(c) 2010, Jeremy Whiting"
-msgstr "Jeremy Whiting"
+msgstr "(c) 2010, Jeremy Whiting"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:671
 msgid "Author"
@@ -1175,10 +1169,10 @@ msgid "Select Filter"
 msgstr "Filtre Seç"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:1114
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "KTTSD Version: %1"
 msgid "Jovie Version: %1"
-msgstr "KTTSD Sürümü: %1"
+msgstr "Jovie Sürümü: %1"
 
 #: kcmkttsmgr/kcmkttsmgr.cpp:1324
 msgid "Filter Configuration"

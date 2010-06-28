@@ -13,13 +13,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: okular\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-05 04:54+0200\n"
-"PO-Revision-Date: 2010-04-20 11:15+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 12:54+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -312,44 +313,42 @@ msgid "No application found for opening file of mimetype %1."
 msgstr "%1 dosya tipini açmak için bir uygulama bulunamadı."
 
 #: core/document.cpp:3077
-#, fuzzy
 #| msgid "Could not open the temporary file for saving."
 msgid "Could not open a temporary file"
-msgstr "Geçici dosya kaydetmek için açılamadı."
+msgstr "Geçici dosya açılamadı"
 
 #: core/document.cpp:3079
 msgid "Print conversion failed"
-msgstr ""
+msgstr "Yazdırma dönüşümü başarısız"
 
 #: core/document.cpp:3081
 msgid "Printing process crashed"
-msgstr ""
+msgstr "Yazdırma süreci çöktü"
 
 #: core/document.cpp:3083
 msgid "Printing process could not start"
-msgstr ""
+msgstr "Yazdırma işlemi başlatılamadı"
 
 #: core/document.cpp:3085
 msgid "Printing to file failed"
-msgstr ""
+msgstr "Dosyaya yazdırma işlemi başarısız"
 
 #: core/document.cpp:3087
 msgid "Printer was in invalid state"
-msgstr ""
+msgstr "Yazıcı geçersiz bir durumda"
 
 #: core/document.cpp:3089
-#, fuzzy
 #| msgid "Unable to find the Okular component."
 msgid "Unable to find file to print"
-msgstr "Okular bileşeni bulunamıyor."
+msgstr "Yazdırılacak dosya bulunamadı"
 
 #: core/document.cpp:3091
 msgid "There was no file to print"
-msgstr ""
+msgstr "Yazdırılacak dosya yok"
 
 #: core/document.cpp:3093
 msgid "Could not find a suitable binary for printing"
-msgstr ""
+msgstr "Yazdırmak için uygun bir çalıştırılabilir dosya bulunamadı"
 
 #: core/document.cpp:3829
 msgid "Title"
@@ -548,10 +547,9 @@ msgid "Facing Pages"
 msgstr "Dönen Sayfalar"
 
 #: ui/pageview.cpp:419
-#, fuzzy
 #| msgid "Center &first page"
 msgid "Facing Pages (Center First Page)"
-msgstr "&İlk sayfayı ortala"
+msgstr "Dönen Sayfalar (İlk Sayfayı Ortala)"
 
 #: ui/pageview.cpp:420
 msgid "Overview"
@@ -855,17 +853,15 @@ msgid "Remove Bookmark"
 msgstr "Yer İmini Kaldır"
 
 #: ui/bookmarklist.cpp:273
-#, fuzzy
 #| msgid "Open Document"
 msgctxt "Opens the selected document"
 msgid "Open Document"
 msgstr "Belge Aç"
 
 #: ui/bookmarklist.cpp:274
-#, fuzzy
 #| msgid "Remove Bookmark"
 msgid "Remove Bookmarks"
-msgstr "Yer İmini Kaldır"
+msgstr "Yer İmlerini Kaldır"
 
 #: ui/annotationmodel.cpp:297 part.cpp:1732
 #, kde-format
@@ -1910,19 +1906,22 @@ msgid "Printing this document is not allowed."
 msgstr "Bu belgenin yazdırılmasına izin verilmiyor."
 
 #: part.cpp:2013
-#, fuzzy
 #| msgid "Could not print the document. Please report to bugs.kde.org"
 msgid ""
 "Could not print the document. Unknown error. Please report to bugs.kde.org"
-msgstr "Belge basılamıyor. Lütfen durumu bugs.kde.org'a rapor ediniz"
+msgstr ""
+"Bu belge yazdırılamıyor. Bilinmeyen hata. Lütfen bugs.kde.org adresinden "
+"hata raporlayınız."
 
 #: part.cpp:2017
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Could not print the document. Please report to bugs.kde.org"
 msgid ""
 "Could not print the document. Detailed error is \"%1\". Please report to "
 "bugs.kde.org"
-msgstr "Belge basılamıyor. Lütfen durumu bugs.kde.org'a rapor ediniz"
+msgstr ""
+"Belge yazdırılamıyor. Detaylı hata \"%1\". Lütfen bugs.kde.org adresinden "
+"hata raporlayınız."
 
 #: part.cpp:2072
 msgid "Go to the place you were before"

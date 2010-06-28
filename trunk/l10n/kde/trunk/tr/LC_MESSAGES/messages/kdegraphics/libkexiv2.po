@@ -11,13 +11,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H.Gökhan SARI <hsa2@difuzyon.net>, 2008.
 # Osman Tosun <rainman.neu@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: digikam\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-03 04:54+0200\n"
-"PO-Revision-Date: 2009-10-12 16:51+0300\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-06-28 12:56+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1737,7 +1738,7 @@ msgstr "%1 boyutunda veri"
 
 #: libkexiv2/subjectwidget.cpp:133
 msgid "Use structured definition of the subject matter:"
-msgstr ""
+msgstr "Konunun yapısal tanımını kullan:"
 
 #: libkexiv2/subjectwidget.cpp:139
 msgid ""

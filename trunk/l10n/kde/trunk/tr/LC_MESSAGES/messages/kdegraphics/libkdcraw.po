@@ -4,18 +4,19 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Serhat Demirkol <serhat_demirkol@yahoo.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libkdcraw\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-07 04:49+0200\n"
-"PO-Revision-Date: 2009-11-10 16:16+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
+"PO-Revision-Date: 2010-06-28 12:47+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: libkdcraw/dcrawsettingswidget.cpp:173
@@ -264,13 +265,16 @@ msgstr ""
 
 #: libkdcraw/dcrawsettingswidget.cpp:333
 msgid "Correct false colors in highlights"
-msgstr ""
+msgstr "Vurgulardaki yanlış renkleri düzelt"
 
 #: libkdcraw/dcrawsettingswidget.cpp:334
 msgid ""
 "<p>If enabled, images with overblown channels are processed much more "
 "accurately, without 'pink clouds' (and blue highlights under tungsten lamps)."
 msgstr ""
+"<p>Etkinleştirildiğinde, fazla pozlanmış kanallar daha ciddi bir şekilde, "
+"'pembe bulut' "
+"(ve tungsten lamba altındaki mavi vurgular) olmayacak şekilde işlenir."
 
 #: libkdcraw/dcrawsettingswidget.cpp:338
 msgid "Auto Brightness"
@@ -290,7 +294,6 @@ msgid "Brightness:"
 msgstr "Parlaklık:"
 
 #: libkdcraw/dcrawsettingswidget.cpp:347
-#, fuzzy
 #| msgid ""
 #| "<p><b>Brighness</b><p>Specify the brightness level of output image.The "
 #| "default value is 1.0 (works in 8-bit mode only).<p>"
@@ -298,8 +301,9 @@ msgid ""
 "<p><b>Brightness</b><p>Specify the brightness level of output image.The "
 "default value is 1.0 (works in 8-bit mode only).<p>"
 msgstr ""
-"<p><b>Parlaklık</b><p>Çıkış resminin parlaklık seviyesini belirleyin. "
-"Öntanımlı değer 1.0 (yalnızca 8-bit kipinde çalışır).<p>"
+"<p><b>Parlaklık</b><p>Çıkış resminin parlaklık seviyesini belirleyin.  "
+"Öntanımlı "
+"değer 1.0 (sadece 8-bit kipte çalışır).<p>"
 
 #: libkdcraw/dcrawsettingswidget.cpp:357
 msgid "Black:"
