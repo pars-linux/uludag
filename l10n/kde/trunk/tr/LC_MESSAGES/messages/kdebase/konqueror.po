@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-07 04:47+0200\n"
-"PO-Revision-Date: 2010-06-28 13:29+0300\n"
+"PO-Revision-Date: 2010-06-28 15:36+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -683,12 +683,12 @@ msgstr "Kenar çubuğunuz işlevsel değil veya ulaşılamaz. Yeni gird ekleneme
 
 #: src/konqmainwindow.cpp:5160 src/konqmainwindow.cpp:5167
 msgid "Web Sidebar"
-msgstr "Web Yan Çubuğu"
+msgstr "Web Kenar Çubuğu"
 
 #: src/konqmainwindow.cpp:5165
 #, kde-format
 msgid "Add new web extension \"%1\" to your sidebar?"
-msgstr "\"%1\" web uzantısı yan çubuğa eklensin mi?"
+msgstr "\"%1\" web uzantısı kenar çubuğuna eklensin mi?"
 
 #: src/konqmainwindow.cpp:5167
 msgid "Add"
@@ -1310,7 +1310,7 @@ msgstr "&Profili Sil"
 #: sidebar/test/modulemanagertest.cpp:89
 #: sidebar/test/modulemanagertest.cpp:115
 msgid "SideBar Test Plugin"
-msgstr "Yan Çubuk Sınama Eklentisi"
+msgstr "Kenar Çubuğu Test Eklentisi"
 
 #: sidebar/trees/dirtree_module/dirtree_module.cpp:417
 #, kde-format
@@ -1438,7 +1438,7 @@ msgstr "Yol veya Adres:"
 #: sidebar/trees/konqsidebar_oldtreemodule.cpp:180
 msgctxt "@title:window"
 msgid "Add folder sidebar module"
-msgstr "Dizin yan çubuğu modülü ekle"
+msgstr "Kenar çubuğu dizin modülü ekle"
 
 #: sidebar/web_module/web_module.cpp:57
 msgid "&Open Link"
@@ -1463,17 +1463,17 @@ msgstr " sn"
 #: sidebar/web_module/web_module.cpp:280
 msgctxt "@action:inmenu Add"
 msgid "Web Sidebar Module"
-msgstr "Web Yan Çubuğu Modülü"
+msgstr "Web Kenar Çubuk Modülü"
 
 #: sidebar/web_module/web_module.cpp:301
 msgctxt "@title:window"
 msgid "Add web sidebar module"
-msgstr "Ağ yan çubuğu modülü ekle"
+msgstr "Web kenar çubuk modülü ekle"
 
 #: sidebar/history_module/history_module.cpp:126
 msgctxt "@action:inmenu Add"
 msgid "History Sidebar Module"
-msgstr "Geçmiş Yan Çubuğu Modülü"
+msgstr "Geçmiş Kenar Çubuk Modülü"
 
 #: sidebar/history_module/history_module.cpp:149
 msgctxt "@title:tab"
@@ -1504,12 +1504,12 @@ msgstr[0] "Gün"
 #: sidebar/history_module/kcmhistory.cpp:198
 msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
 msgstr ""
-"<h1>Geçmiş Yan Çubuğu</h1> Geçmiş yan çubuğunu buradan "
+"<h1>Geçmiş Kenar Çubuğu</h1> Geçmiş kenar çubuğunu buradan "
 "yapılandırabilirsiniz."
 
 #: sidebar/sidebar_part.cpp:28
 msgid "Extended Sidebar"
-msgstr "Yan Çubuğu Yapılandır"
+msgstr "Gelişmiş Kenar Çubuğu"
 
 #: sidebar/sidebar_widget.cpp:94
 msgid "Rollback to System Default"
@@ -1517,7 +1517,7 @@ msgstr "Sistem Öntanımlılarına Geç"
 
 #: sidebar/sidebar_widget.cpp:154 sidebar/sidebar_widget.cpp:431
 msgid "Configure Sidebar"
-msgstr "Yan Çubuğu Yapılandır"
+msgstr "Kenar Çubuğunu Yapılandır"
 
 #: sidebar/sidebar_widget.cpp:156
 msgid "Add New"
@@ -1537,7 +1537,7 @@ msgstr "Yapılandırma Düğmesini Göster"
 
 #: sidebar/sidebar_widget.cpp:166
 msgid "Close Sidebar"
-msgstr "Yan Çubuğu Kapat"
+msgstr "Kenar Çubuğunu Kapat"
 
 #: sidebar/sidebar_widget.cpp:224
 msgid "This entry already exists."
@@ -1549,8 +1549,8 @@ msgid ""
 "default ones.<br /><b>This procedure is irreversible</b><br />Do you want to "
 "proceed?</qt>"
 msgstr ""
-"<qt> Bu kenar çubuğundan sizin eklediğiniz girdileri kaldırılır ve öntanımlı "
-"olanlar eklenir.<br /><b>Bu yöntem tersine işlemez</b><br />Uygulamak "
+"<qt> Bu, kenar çubuğundan sizin eklediğiniz girdileri kaldırır ve öntanımlı "
+"olanları ekler.<br /><b>Bu işlem geri alınamaz</b><br />Devam etmek "
 "istiyor musunuz?</qt>"
 
 #: sidebar/sidebar_widget.cpp:277
@@ -1575,7 +1575,6 @@ msgid "<qt>Do you really want to remove the <b>%1</b> tab?</qt>"
 msgstr "<qt>Gerçekten <b>\"%1\"</b> ögesini silmek istiyor musunuz?</qt>"
 
 #: sidebar/sidebar_widget.cpp:372
-#, fuzzy
 #| msgid ""
 #| "You have hidden the navigation panel configuration button. To make it "
 #| "visible again, click the right mouse button on any of the navigation "
@@ -1585,9 +1584,10 @@ msgid ""
 "click the right mouse button on any of the sidebar buttons and select \"Show "
 "Configuration Button\"."
 msgstr ""
-"Gezgin paneli yapılandırma düğmesini gizlemek.Bunu yapmak için gezgin paneli "
-"üzerinde sağ tıklanır ve \"Yapılandırma Düğmesini Göster\" seçeneği "
-"işaretlenir."
+"Kenar çubuğunu yapılandırma düğmesini gizlediniz. Tekrar görünür yapmak "
+"için, "
+"herhangi bir kenar çubuğuna sağ tıklayıp \"Yapılandırma Düğmesini Göster\" "
+"seçeneğini işaretleyin."
 
 #: sidebar/sidebar_widget.cpp:549
 msgid "Set Name..."
@@ -1614,7 +1614,7 @@ msgstr "Web modülü"
 #| msgid "Web Sidebar Module"
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "Yerler Yan Çubuk Modülü"
+msgstr "Yerler Kenar Çubuk Modülü"
 
 #: sidebar/places_module/places_module.cpp:142
 msgctxt "@title:tab"

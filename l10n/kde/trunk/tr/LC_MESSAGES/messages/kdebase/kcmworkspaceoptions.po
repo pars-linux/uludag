@@ -4,13 +4,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmworkspaceoptions\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-07 04:40+0200\n"
-"PO-Revision-Date: 2010-05-09 01:04+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 15:23+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +23,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: rc.cpp:3 rc.cpp:35
 msgid "Workspace Type:"
-msgstr ""
+msgstr "Çalışma Alanı Türü:"
 
 #. i18n: file: mainpage.ui:30
 #. i18n: ectx: property (text), item, widget (QComboBox, formFactor)
@@ -42,31 +43,31 @@ msgstr "Netbook"
 #. i18n: ectx: property (text), widget (QLabel, dashboardLabel)
 #: rc.cpp:12 rc.cpp:44
 msgid "Dashboard:"
-msgstr "Kontrol paneli:"
+msgstr "Dashboard:"
 
 #. i18n: file: mainpage.ui:71
 #. i18n: ectx: property (text), item, widget (QComboBox, dashboardMode)
 #: rc.cpp:15 rc.cpp:47
 msgid "Show Desktop Widgets"
-msgstr "Masaüstü Gereçlerini Göster"
+msgstr "Masaüstü Programcıklarını Göster"
 
 #. i18n: file: mainpage.ui:76
 #. i18n: ectx: property (text), item, widget (QComboBox, dashboardMode)
 #: rc.cpp:18 rc.cpp:50
 msgid "Show an Independent Widget Set"
-msgstr "Bağımsız Gereç Kümesi Göster"
+msgstr "Bağımsız Programcık Kümesi Göster"
 
 #. i18n: file: mainpage.ui:112
 #. i18n: ectx: property (text), widget (QLabel, tooltipDelayLabel)
 #: rc.cpp:21 rc.cpp:53
 msgid "Informational Tips:"
-msgstr ""
+msgstr "Bilgi İpuçları:"
 
 #. i18n: file: mainpage.ui:130
 #. i18n: ectx: property (specialValueText), widget (QDoubleSpinBox, toolTipDelay)
 #: rc.cpp:24 rc.cpp:56
 msgid "Do not show"
-msgstr ""
+msgstr "Gösterme"
 
 #. i18n: file: mainpage.ui:133
 #. i18n: ectx: property (prefix), widget (QDoubleSpinBox, toolTipDelay)
@@ -78,23 +79,22 @@ msgstr ""
 #. i18n: ectx: property (suffix), widget (QDoubleSpinBox, toolTipDelay)
 #: rc.cpp:30 rc.cpp:62
 msgid " seconds"
-msgstr ""
+msgstr " saniye"
 
 #: rc.cpp:31
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Serdar Soytetir"
+msgstr "Serdar Soytetir, Ozan Çağlayan"
 
 #: rc.cpp:32
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "tulliana@gmail.com"
+msgstr "tulliana@gmail.com, ozan@pardus.org.tr"
 
 #: workspaceoptions.cpp:48
-#, fuzzy
 #| msgid "Global options for the Plasma workspace"
 msgid "Global options for the Plasma Workspace"
-msgstr "Plasma çalışma alanı için genel seçenekler"
+msgstr "Plasma Çalışma Alanı için genel ayarlar"
 
 #: workspaceoptions.cpp:50
 msgid "(c) 2009 Marco Martin"

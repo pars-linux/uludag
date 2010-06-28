@@ -3,14 +3,15 @@
 # Adil YILDIZ <adil@linux-sevenler.org>, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcmkwinrules\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-04 06:26+0200\n"
-"PO-Revision-Date: 2010-04-20 14:08+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
-"Language-Team: Turkish <turkce@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 16:26+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1447,21 +1448,20 @@ msgstr "Düzenle..."
 #. i18n: ectx: property (text), widget (QCheckBox, enable_tilingoption)
 #: rc.cpp:649 rc.cpp:1495
 msgid "T&iling"
-msgstr ""
+msgstr "Döşe&me"
 
 #. i18n: file: ruleswidgetbase.ui:1718
 #. i18n: ectx: property (text), item, widget (KComboBox, tilingoption)
 #: rc.cpp:661 rc.cpp:1507
-#, fuzzy
 #| msgid "Title:"
 msgid "Tiled"
-msgstr "Başlık:"
+msgstr "Döşeli"
 
 #. i18n: file: ruleswidgetbase.ui:1723
 #. i18n: ectx: property (text), item, widget (KComboBox, tilingoption)
 #: rc.cpp:664 rc.cpp:1510
 msgid "Floating"
-msgstr ""
+msgstr "Kayan"
 
 #. i18n: file: ruleswidgetbase.ui:1731
 #. i18n: ectx: property (text), widget (QCheckBox, enable_skippager)
@@ -1472,10 +1472,9 @@ msgstr "Say&falayıcıyı atla"
 #. i18n: file: ruleswidgetbase.ui:1738
 #. i18n: ectx: property (text), widget (QCheckBox, enable_skipswitcher)
 #: rc.cpp:670 rc.cpp:1516
-#, fuzzy
 #| msgid "Skip pa&ger"
 msgid "Skip &switcher"
-msgstr "Say&falayıcıyı atla"
+msgstr "&Değiştiriciyi atla"
 
 #. i18n: file: ruleswidgetbase.ui:1793
 #. i18n: ectx: attribute (title), widget (QWidget, TabPage5)
@@ -1505,7 +1504,7 @@ msgstr "Şeffaf"
 #. i18n: ectx: property (text), widget (QCheckBox, enable_type)
 #: rc.cpp:742 rc.cpp:1588
 msgid "Window &type"
-msgstr "Pencere &tipi"
+msgstr "Pencere &türü"
 
 #. i18n: file: ruleswidgetbase.ui:1909
 #. i18n: ectx: property (text), widget (QCheckBox, enable_moveresizemode)
@@ -1518,13 +1517,13 @@ msgstr "Taşı&ma/boyutlandırma"
 #: rc.cpp:766 rc.cpp:1612
 msgctxt "no focus stealing prevention"
 msgid "None"
-msgstr "Yok"
+msgstr "Hiçbiri"
 
 #. i18n: file: ruleswidgetbase.ui:1969
 #. i18n: ectx: property (text), item, widget (KComboBox, fsplevel)
 #: rc.cpp:769 rc.cpp:1615
 msgid "Low"
-msgstr "Düüşk"
+msgstr "Düşük"
 
 #. i18n: file: ruleswidgetbase.ui:1974
 #. i18n: ectx: property (text), item, widget (KComboBox, fsplevel)
