@@ -7,13 +7,14 @@
 # Ömer Fadıl USTA <omer_fad@hotmail.com>,2003.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kxkb\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-12 04:59+0200\n"
-"PO-Revision-Date: 2010-05-09 01:28+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 15:19+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,10 +24,9 @@ msgstr ""
 
 #: kcm_add_layout_dialog.cpp:54
 msgid "Any language"
-msgstr ""
+msgstr "Herhangi bir dil"
 
 #: kcm_add_layout_dialog.cpp:104 kcm_view_models.cpp:226
-#, fuzzy
 #| msgctxt "Default variant"
 #| msgid "Default"
 msgctxt "variant"
@@ -34,42 +34,41 @@ msgid "Default"
 msgstr "Öntanımlı"
 
 #: kcm_keyboard.cpp:53
-#, fuzzy
 #| msgid "KDE Keyboard Layout Switcher"
 msgid "KDE Keyboard Control Module"
-msgstr "KDE Klavye Düzeni Seçici"
+msgstr "KDE Klavye Denetim Modülü"
 
 #: kcm_keyboard.cpp:55
-#, fuzzy
 #| msgid "Copyright (C) 2006-2007 Andriy Rysin"
 msgid "(c) 2010 Andriy Rysin"
-msgstr "Copyright (C) 2006-2007 Andriy Rysin"
+msgstr "(c) 2010 Andriy Rysin"
 
 #: kcm_keyboard.cpp:58
 msgid ""
 "<h1>Keyboard</h1> This control module can be used to configure keyboard "
 "parameters and layouts."
 msgstr ""
+"<h1>Klavye</h1> Bu denetim modülü klavye parametrelerinin ve düzeninin "
+"yapılandırılması için kullanılır."
 
 #: kcm_keyboard_widget.cpp:157
 msgctxt "unknown keyboard model vendor"
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmeyen"
 
 #: kcm_keyboard_widget.cpp:159
 #, kde-format
 msgctxt "vendor | keyboard model"
 msgid "%1 | %2"
-msgstr ""
+msgstr "%1 | %2"
 
 #: kcm_keyboard_widget.cpp:169
 #, kde-format
 msgid "Only up to %1 keyboard layout is supported"
 msgid_plural "Only up to %1 keyboard layouts are supported"
-msgstr[0] ""
+msgstr[0] "En fazla %1 klavye düzeni desteklenmektedir"
 
 #: kcm_keyboard_widget.cpp:451
-#, fuzzy
 #| msgctxt "no shortcut defined"
 #| msgid "None"
 msgctxt "no shortcuts defined"
@@ -77,14 +76,13 @@ msgid "None"
 msgstr "Hiçbiri"
 
 #: kcm_keyboard_widget.cpp:460
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Main shortcuts:"
 msgid "%1 shortcut"
 msgid_plural "%1 shortcuts"
-msgstr[0] "Ana kısayollar:"
+msgstr[0] "%1 kısayolları"
 
 #: kcm_view_models.cpp:179
-#, fuzzy
 #| msgid "Map"
 msgctxt "layout map name"
 msgid "Map"
@@ -104,7 +102,7 @@ msgstr "Etiket"
 
 #: keyboard_applet.cpp:48
 msgid "XKB extension failed to initialize"
-msgstr ""
+msgstr "XKB eklentisi başlatılamadı"
 
 #~ msgid "Layout Name"
 #~ msgstr "Düzen Adı"
