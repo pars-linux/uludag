@@ -3,13 +3,14 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_kwintabbox\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-13 04:45+0200\n"
-"PO-Revision-Date: 2010-05-09 01:17+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:31+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -290,15 +291,14 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QCheckBox, showDesktopBox)
 #: rc.cpp:104 rc.cpp:225
 msgid "Adds an entry to minimize all windows."
-msgstr ""
+msgstr "Tüm pencereleri panele küçültmek için bir girdi ekler."
 
 #. i18n: file: main.ui:153
 #. i18n: ectx: property (text), widget (QCheckBox, showDesktopBox)
 #: rc.cpp:107 rc.cpp:228
-#, fuzzy
 #| msgid "Current Desktop"
 msgid "Include desktop"
-msgstr "Geçerli Masaüstü"
+msgstr "Masaüstünü içer"
 
 #. i18n: file: main.ui:163
 #. i18n: ectx: property (title), widget (QGroupBox, showTabBox)
@@ -337,3 +337,4 @@ msgstr "Serdar Soytetir"
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "tulliana@gmail.com"
+
