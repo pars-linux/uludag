@@ -165,55 +165,70 @@ def search(request):
         form = SearchForm(request.POST)
         if form.is_valid():
             keyword = request.POST.get('keyword', '')
-            source = request.POST.get('source', False)
-            binary = request.POST.get('binary', False)
+            #source = request.POST.get('source', False)
+            #binary = request.POST.get('binary', False)
+            in_package = request.POST.get('in_package', 'Binary')
             summary = request.POST.get('summary', False)
             description = request.POST.get('description', False)
             dist_name = request.POST.get('dist_name', 'Pardus')
             dist_release = request.POST.get('dist_release', '2008')
+            exact = request.POST.get('exact', '')
 
             unified_sources = None
             unified_binaries = None
 
-            if source:
-                sources = Source.objects.filter(name__icontains=keyword)
-                summaries = Source.objects.filter(info__summary__id = -1)
-                descriptions = Source.objects.filter(info__description__id = -1)
-                if summary:
-                    summaries = Source.objects.filter(info__summary__text__icontains=keyword)
-                if description: 
-                    descriptions = Source.objects.filter(info__description__text__icontains=keyword)
-                unified_sources = sources | summaries | descriptions
-                # i need to find a better way here like using set
-                #s1 = set(sources).union(set(summaries).union(set(descriptions))
+            if in_package == 'Source':
+                if exact:
+                    sources = Source.objects.filter(name__exact=keyword)
+                    unified_sources = sources
+                else:
+                    sources = Source.objects.filter(name__icontains=keyword)
+                    summaries = Source.objects.filter(info__summary__id = -1)
+                    descriptions = Source.objects.filter(info__description__id = -1)
+                    if summary:
+                        summaries = Source.objects.filter(info__summary__text__icontains=keyword)
+                    if description: 
+                        descriptions = Source.objects.filter(info__description__text__icontains=keyword)
+                    unified_sources = sources | summaries | descriptions
+                    # i need to find a better way here like using set
+                    #s1 = set(sources).union(set(summaries).union(set(descriptions))
                 unified_sources = unified_sources.filter(distribution__name__icontains=dist_name)
                 unified_sources = unified_sources.filter(distribution__release__icontains=dist_release)
                 unified_sources = unified_sources.distinct()
 
-            if binary:
-                binaries = Binary.objects.filter(package__name__icontains=keyword)
-                summaries = Binary.objects.filter(package__source__info__summary__id = -1)
-                descriptions = Binary.objects.filter(package__source__info__description__id = -1)
-                if summary:
-                    summaries = Binary.objects.filter(package__source__info__summary__text__icontains=keyword)
-                if description: 
-                    descriptions = Binary.objects.filter(package__source__info__description__text__icontains=keyword)
+            if in_package == 'Binary':
+                if exact:
+                    binaries = Binary.objects.filter(package__name__exact=keyword)
+                    unified_binaries = binaries
+                else:
+                    binaries = Binary.objects.filter(package__name__icontains=keyword)
+                    summaries = Binary.objects.filter(package__source__info__summary__id = -1)
+                    descriptions = Binary.objects.filter(package__source__info__description__id = -1)
+                    if summary:
+                        summaries = Binary.objects.filter(package__source__info__summary__text__icontains=keyword)
+                    if description: 
+                        descriptions = Binary.objects.filter(package__source__info__description__text__icontains=keyword)
 
-                unified_binaries = binaries | summaries | descriptions
+                    unified_binaries = binaries | summaries | descriptions
+                    unified_binaries = unified_binaries.distinct()
+
                 unified_binaries =  unified_binaries.filter(package__source__distribution__name__icontains=dist_name)
                 unified_binaries =  unified_binaries.filter(package__source__distribution__release__icontains=dist_release)
-                unified_binaries = unified_binaries.distinct()
 
             if unified_sources and not unified_binaries:
                 result = unified_sources
                 sources_len = unified_sources.count()
-            if unified_binaries and not unified_sources:
+            elif unified_binaries and not unified_sources:
                 result = unified_binaries
                 sources_len = 1
-            if unified_binaries and unified_sources:
+            else:
+                # create an empty result
+                result = Source.objects.filter(id=-1)
+                sources_len = 1
+            #if unified_binaries and unified_sources:
                 # this part is not working, different type of querysets can not be combined, i should find a solution for it
-                result = unified_sources | unified_binaries
-                sources_len = unified_sources.count()
+            #    result = unified_sources | unified_binaries
+            #    sources_len = unified_sources.count()
 
             # format the sources_len so as to slice the source package part at the template
             sources_len = '":' + str(sources_len) + '"'
@@ -240,7 +255,7 @@ def search(request):
 
             return object_list(request, **object_dict)
 
-    if request.method == 'GET' and request.GET.get('page'):
+    elif request.method == 'GET' and request.GET.get('page'):
 
         try:
             result = cache.get('query_result')['tmp']
