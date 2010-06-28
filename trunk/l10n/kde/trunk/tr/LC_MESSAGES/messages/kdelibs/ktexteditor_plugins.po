@@ -6,13 +6,14 @@
 # Necmettin Begiter <necmettin.begiter@gmail.com>, 2007.
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ktexteditor_plugins\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-07 04:39+0200\n"
-"PO-Revision-Date: 2010-04-27 16:46+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:41+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -267,22 +268,21 @@ msgstr "Otomatik parantez özelliği kapatıldı"
 
 #: autobrace/autobrace_config.cpp:37
 msgid "Automatically add closing brackets ) and ]"
-msgstr ""
+msgstr "] ve ) kapatma işaretlerini otomatik olarak ekle"
 
 #: autobrace/autobrace_config.cpp:38
-#, fuzzy
 #| msgid "Automatically &show completion list"
 msgid "Automatically add closing quotation marks"
-msgstr "Tamamlama listesini otomatik olarak Gö&ster"
+msgstr ""
 
 #: kte_iconinserter/iconinserterplugin.cpp:38
 msgid "Select an Icon to use it inside the Code"
-msgstr ""
+msgstr "Kodun içerisinde kullanmak için bir simge seçin"
 
 #: kte_iconinserter/iconinserterplugin.cpp:38
 #: kte_iconinserter/iconinserterplugin.cpp:48
 msgid "Insert Code for KIcon-Creation"
-msgstr ""
+msgstr "KIcon-Creation için Kod ekleyin"
 
 #: kte_iconinserter/iconinserterplugin.cpp:47
 msgid "Insert KIcon-Code"
@@ -399,7 +399,7 @@ msgstr ""
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:357
 #, kde-format
 msgid "error %1"
-msgstr ""
+msgstr "hata %1"
 
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:428
 msgid "No valid Insane HTML markup detected at current cursor position"
