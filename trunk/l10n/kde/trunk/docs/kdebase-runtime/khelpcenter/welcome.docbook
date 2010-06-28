@@ -1,0 +1,99 @@
+<chapter id="welcome-to-kde">
+<chapterinfo>
+<date
+>2002-01-18</date>
+<releaseinfo
+>3.00.00</releaseinfo>
+</chapterinfo>
+<title
+>&kde; 'ye Hoşgeldiniz</title>
+<anchor id="welcome"/>
+
+<para
+> <emphasis
+>&kde; grubu  sizi kullancı dostu &UNIX; ortamına davet ediyor.</emphasis
+> </para>
+
+<sect1 id="welcome-page">
+<title
+>K Masaüstü Ortamına Hoşgeldiniz</title>
+
+<sect2 id="welcome-information-about-kde">
+<title
+>&kde; hakkında bilgi</title>
+
+<para
+>&kde; , &UNIX; iş istasyonlar için güzel bir grafiksel masaüstü ortamdır. &kde; , masaüstü kullanımı kolaydır. Grafiklerle, gelişmiş özelliklerle ve daha önemlisi &UNIX; 'in gücüyle birleştirerek sizlerin karşısına çıkıyor. </para>
+
+<para
+><link linkend="what-is-kde"
+>K Masaüstü Ortamı nedir?</link
+></para>
+
+<para
+><link linkend="contact"
+>&kde; Projesine iletişim</link
+></para>
+
+<para
+><link linkend="support"
+>&kde; Projesini destekleyin</link
+></para>
+
+<para
+><link linkend="links"
+>Kullanışlı bağlantılar</link
+></para>
+
+</sect2>
+
+<sect2 id="welcome-getting-the-most-out-of-kde">
+<title
+>&kde; 'yi en popüler hale getirin.</title>
+
+<sect3 id="welcome-general-documentation">
+<title
+>Genel belgeler</title>
+
+<para
+><ulink url="help:/khelpcenter/quickstart"
+>Masaüstünde Küçük Bir Gezinti</ulink
+></para>
+
+<para
+><ulink url="help:/khelpcenter/userguide"
+>&kde; Kullanıcı Kılavuzu</ulink
+></para>
+
+<para
+><ulink url="help:/khelpcenter/faq"
+>Sıkça sorulan sorular</ulink
+></para>
+
+</sect3>
+
+<sect3 id="welcome-basic-applications">
+<title
+>Temel uygulamalar</title>
+
+<para
+><ulink url="help:/kicker"
+>Masaüstü Paneli</ulink
+></para>
+
+<para
+><ulink url="help:/kcontrol"
+>Kontrol Merkezi</ulink
+></para>
+
+<para
+><ulink url="help:/konqueror"
+>Dosya Yöneticisi</ulink
+></para>
+
+</sect3>
+</sect2>
+</sect1>
+</chapter>
+
+
