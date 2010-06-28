@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-25 05:10+0200\n"
-"PO-Revision-Date: 2010-05-08 20:41+0300\n"
+"PO-Revision-Date: 2010-06-28 13:53+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -23,13 +23,13 @@ msgstr ""
 #, kde-format
 msgctxt "%1 is the name of the activity"
 msgid "Do you really want to remove %1?"
-msgstr ""
+msgstr "%1 etkinliğini gerçekten kaldırmak istiyor musunuz?"
 
 #: activity.cpp:114
 #, kde-format
 msgctxt "@title:window %1 is the name of the activity"
 msgid "Remove %1"
-msgstr ""
+msgstr "%1 etkinliğini kaldır"
 
 #: dashboardview.cpp:108
 msgid "Hide Dashboard"
@@ -53,7 +53,7 @@ msgstr "Panel Ekle"
 
 #: desktopcorona.cpp:548 plasmaapp.cpp:1306
 msgid "unnamed"
-msgstr ""
+msgstr "isimsiz"
 
 #: interactiveconsole.cpp:63
 msgid "&Execute"
@@ -81,10 +81,9 @@ msgid "Open Script File"
 msgstr "Betik Dosyası Aç"
 
 #: interactiveconsole.cpp:297
-#, fuzzy
 #| msgid "Open Script File"
 msgid "Save Script File"
-msgstr "Betik Dosyası Aç"
+msgstr "Betik Dosyasını Kaydet"
 
 #: interactiveconsole.cpp:381
 #, kde-format
@@ -201,16 +200,15 @@ msgid "Show Dashboard"
 msgstr "Kontrol Panelini Göster"
 
 #: plasmaapp.cpp:784
-#, fuzzy
 #| msgid "Activity"
 msgid "Activities..."
-msgstr "Eylem"
+msgstr "Etkinlikler..."
 
 #: plasmaapp.cpp:1143
 #, kde-format
 msgctxt "%1 is the activity name"
 msgid "copy of %1"
-msgstr ""
+msgstr "%1 kopyası"
 
 #: plasmaapp.cpp:1275
 #, kde-format

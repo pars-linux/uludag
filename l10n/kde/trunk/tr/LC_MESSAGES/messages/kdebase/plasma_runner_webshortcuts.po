@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: krunner_webshortcutsrunner\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-03 04:52+0200\n"
-"PO-Revision-Date: 2010-05-09 01:10+0300\n"
+"PO-Revision-Date: 2010-06-28 13:51+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: webshortcutrunner.cpp:104
 #, kde-format
 msgid "Opens \"%1\" in a web browser with the query :q:."
-msgstr ""
+msgstr "\"%1\" "
 
 #: webshortcutrunner.cpp:185
 #, kde-format
