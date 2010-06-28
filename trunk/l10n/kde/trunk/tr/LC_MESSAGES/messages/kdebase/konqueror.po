@@ -15,13 +15,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: konqueror\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-07 04:47+0200\n"
-"PO-Revision-Date: 2010-05-09 01:09+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:29+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -678,7 +679,7 @@ msgstr "isimsiz"
 #: src/konqmainwindow.cpp:5160
 msgid ""
 "Your sidebar is not functional or unavailable. A new entry cannot be added."
-msgstr "Kenar çubuğunuz işlevsel değil veya ulaşılamaz. Yeni girdi yapılamaz."
+msgstr "Kenar çubuğunuz işlevsel değil veya ulaşılamaz. Yeni gird eklenemedi."
 
 #: src/konqmainwindow.cpp:5160 src/konqmainwindow.cpp:5167
 msgid "Web Sidebar"
@@ -849,15 +850,17 @@ msgid "Ask Me Later"
 msgstr "Daha Sonra Sor"
 
 #: src/konqmain.cpp:96
-#, fuzzy
 #| msgid "Start without a default window"
 msgid "Start without a default window, when called without URLs"
-msgstr "Öntanımlı pencere ile başlatma"
+msgstr "URL olmadan çağırıldığında öntanımlı pencere olmadan başlat"
 
 #: src/konqmain.cpp:98
 msgid ""
 "Preload for later use. This mode does not support URLs on the command line"
 msgstr ""
+"Diğer kullanımlar için önceden yükle. Bu kip komut satırından verilen URL "
+"adreslerini "
+"desteklemez."
 
 #: src/konqmain.cpp:100
 msgid "Profile to open"
@@ -1501,7 +1504,7 @@ msgstr[0] "Gün"
 #: sidebar/history_module/kcmhistory.cpp:198
 msgid "<h1>History Sidebar</h1> You can configure the history sidebar here."
 msgstr ""
-"<h1>Tarih Kenar Çubuğu</h1> Tarih kenar çubuğunu burada "
+"<h1>Geçmiş Yan Çubuğu</h1> Geçmiş yan çubuğunu buradan "
 "yapılandırabilirsiniz."
 
 #: sidebar/sidebar_part.cpp:28
@@ -1607,17 +1610,16 @@ msgid "Web module"
 msgstr "Web modülü"
 
 #: sidebar/places_module/places_module.cpp:119
-#, fuzzy
 #| msgctxt "@action:inmenu Add"
 #| msgid "Web Sidebar Module"
 msgctxt "@action:inmenu Add"
 msgid "Places Sidebar Module"
-msgstr "Web Yan Çubuğu Modülü"
+msgstr "Yerler Yan Çubuk Modülü"
 
 #: sidebar/places_module/places_module.cpp:142
 msgctxt "@title:tab"
 msgid "Places"
-msgstr ""
+msgstr "Yerler"
 
 #: about/konq_aboutpage.cc:79 about/konq_aboutpage.cc:81
 #: about/konq_aboutpage.cc:135 about/konq_aboutpage.cc:137
