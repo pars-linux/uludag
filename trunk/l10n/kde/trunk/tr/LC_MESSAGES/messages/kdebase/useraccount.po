@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: useraccount\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-27 04:51+0200\n"
-"PO-Revision-Date: 2010-05-09 00:45+0300\n"
+"PO-Revision-Date: 2010-06-28 13:50+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -214,10 +214,9 @@ msgstr "Parolanın yazılırken görünme şekli"
 #. i18n: file: main_widget.ui:44
 #. i18n: ectx: property (toolTip), widget (KPushButton, btnChangeFace)
 #: rc.cpp:21
-#, fuzzy
 #| msgid "Change your Face"
 msgid "Change your image"
-msgstr "Resminizi yapılandırın"
+msgstr "Resminizi değiştirin"
 
 #. i18n: file: main_widget.ui:72
 #. i18n: ectx: property (text), widget (QLabel, lblClickButtonInfo)

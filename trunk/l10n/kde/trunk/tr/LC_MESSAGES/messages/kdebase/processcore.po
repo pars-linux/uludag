@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: processcore\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-03 04:52+0200\n"
-"PO-Revision-Date: 2008-01-24 07:46+0200\n"
+"PO-Revision-Date: 2010-06-28 13:51+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr "sayfalama"
 #: process.cpp:74
 msgctxt "process status"
 msgid "finished"
-msgstr ""
+msgstr "bitti"
 
 #: process.cpp:75
 msgctxt "process status"
@@ -121,7 +121,7 @@ msgstr "Round Robin"
 #: process.cpp:83
 msgctxt "Scheduler"
 msgid "Interactive"
-msgstr ""
+msgstr "Etkileşimli"
 
 #: process.cpp:84
 msgctxt "Scheduler"
@@ -129,7 +129,6 @@ msgid "Batch"
 msgstr "Yığın"
 
 #: process.cpp:85
-#, fuzzy
 #| msgctxt "Priority Class"
 #| msgid "Idle"
 msgctxt "Scheduler"
