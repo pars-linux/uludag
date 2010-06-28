@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: kio4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-23 04:59+0200\n"
-"PO-Revision-Date: 2010-06-28 13:07+0300\n"
+"PO-Revision-Date: 2010-06-28 13:41+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -3301,7 +3301,7 @@ msgstr "ISO Hız Değerleri"
 #| msgid "Mask"
 msgctxt "@label EXIF"
 msgid "Make"
-msgstr ""
+msgstr "Marka"
 
 #: kfile/knfotranslator.cpp:71
 msgctxt "@label EXIF"
@@ -4715,12 +4715,12 @@ msgstr "GMT"
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Görkem Çetin"
+msgstr "Görkem Çetin, H. İbrahim Güngör"
 
 #: rc.cpp:2
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr "gorkem@kde.org.tr"
+msgstr "gorkem@kde.org.tr, ibrahim@pardus.org.tr"
 
 #. i18n: file: kfile/kpropertiesdesktopadvbase.ui:11
 #. i18n: ectx: property (title), widget (QGroupBox, buttonGroup2)
