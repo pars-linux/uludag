@@ -11,13 +11,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcalc\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-20 04:53+0200\n"
-"PO-Revision-Date: 2010-04-19 15:55+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 14:52+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,23 +81,22 @@ msgstr "&Sabitler"
 
 #: kcalc.cpp:197
 msgid "Simple Mode"
-msgstr ""
+msgstr "Basit Kip"
 
 #: kcalc.cpp:201
 msgid "Science Mode"
-msgstr ""
+msgstr "Bilim Kipi"
 
 #: kcalc.cpp:205
-#, fuzzy
 #| msgid "&Statistic Buttons"
 msgid "Statistic Mode"
-msgstr "İ&statistiksel Düğmeler"
+msgstr "İstatistik Kipi"
 
 #. i18n: file: kcalc.kcfg:119
 #. i18n: ectx: label, entry (CalculatorMode), group (General)
 #: kcalc.cpp:209 rc.cpp:210
 msgid "Numeral System Mode"
-msgstr ""
+msgstr "Sayısal Sistem Kipi"
 
 #: kcalc.cpp:214
 msgid "&Constants Buttons"
@@ -118,7 +118,7 @@ msgstr "Görüntüyü hafızaya ekle"
 #: kcalc.cpp:352
 msgctxt "Subtract from memory"
 msgid "M−"
-msgstr ""
+msgstr "M−"
 
 #: kcalc.cpp:352
 msgid "Subtract from memory"
@@ -917,42 +917,41 @@ msgstr ""
 #. i18n: file: kcalc.kcfg:107
 #. i18n: ectx: label, entry (CalculatorMode), group (General)
 #: rc.cpp:192
-#, fuzzy
 #| msgid "KDE Calculator"
 msgid "Easy Calculator Mode"
-msgstr "KDE Hesap Makinesi"
+msgstr "Kolay Kip"
 
 #. i18n: file: kcalc.kcfg:108
 #. i18n: ectx: whatsthis, entry (CalculatorMode), group (General)
 #: rc.cpp:195
 msgid "A very simple mode where only the basic calculator buttons are shown"
-msgstr ""
+msgstr "Sadece temel hesaplama düğmelerinin göründüğü çok basit bir kip"
 
 #. i18n: file: kcalc.kcfg:111
 #. i18n: ectx: label, entry (CalculatorMode), group (General)
 #: rc.cpp:198
 msgid "Science Calculator Mode"
-msgstr ""
+msgstr "Bilimsel Kip"
 
 #. i18n: file: kcalc.kcfg:112
 #. i18n: ectx: whatsthis, entry (CalculatorMode), group (General)
 #: rc.cpp:201
 msgid "Mode with science buttons and optional constants buttons"
-msgstr ""
+msgstr "Bilimsel düğmeler ve seçilebilir sabit değer düğmeleri sunan kip."
 
 #. i18n: file: kcalc.kcfg:115
 #. i18n: ectx: label, entry (CalculatorMode), group (General)
 #: rc.cpp:204
-#, fuzzy
 #| msgid "&Statistic Buttons"
 msgid "Statistic Calculator Mode"
-msgstr "İ&statistiksel Düğmeler"
+msgstr "İstatistiksel Kip"
 
 #. i18n: file: kcalc.kcfg:116
 #. i18n: ectx: whatsthis, entry (CalculatorMode), group (General)
 #: rc.cpp:207
 msgid "Mode with additional statistics buttons and optional constants buttons"
 msgstr ""
+"Ek istatistiksel düğmeler ve seçilebilir sabit değer düğmeleri sunan kip."
 
 #. i18n: file: kcalc.kcfg:120
 #. i18n: ectx: whatsthis, entry (CalculatorMode), group (General)
@@ -960,6 +959,8 @@ msgstr ""
 msgid ""
 "Mode with logic buttons and selectable base. Optional bit edit available."
 msgstr ""
+"Mantık düğmeleri ve seçilebilir sayı tabanı sunan kip. Seçimli bit düzenleme "
+"mevcut."
 
 #. i18n: file: kcalc.kcfg:125
 #. i18n: ectx: label, entry (ShowBitset), group (General)
@@ -1430,18 +1431,16 @@ msgstr "C6"
 #. i18n: file: kcalc.ui:552
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbCube)
 #: rc.cpp:523
-#, fuzzy
 #| msgid "Cube root"
 msgid "Cube"
-msgstr "Küp kök"
+msgstr "Küp"
 
 #. i18n: file: kcalc.ui:555
 #. i18n: ectx: property (text), widget (KCalcButton, pbCube)
 #: rc.cpp:526
-#, fuzzy
 #| msgid "3"
 msgid "x3"
-msgstr "3"
+msgstr "x3"
 
 #. i18n: file: kcalc.ui:568
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbDivision)
@@ -1453,7 +1452,7 @@ msgstr "Bölme"
 #. i18n: ectx: property (text), widget (KCalcButton, pbDivision)
 #: rc.cpp:532
 msgid "÷"
-msgstr ""
+msgstr "÷"
 
 #. i18n: file: kcalc.ui:584
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbMultiplication)
@@ -1465,7 +1464,7 @@ msgstr "Çarpma"
 #. i18n: ectx: property (text), widget (KCalcButton, pbMultiplication)
 #: rc.cpp:538
 msgid "×"
-msgstr ""
+msgstr "×"
 
 #. i18n: file: kcalc.ui:600
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbMinus)
@@ -1478,7 +1477,7 @@ msgstr "Minus"
 #: rc.cpp:544
 msgctxt "- calculator button"
 msgid "−"
-msgstr ""
+msgstr "−"
 
 #. i18n: file: kcalc.ui:616
 #. i18n: ectx: property (text), widget (KCalcButton, pb7)
@@ -1603,19 +1602,19 @@ msgstr "."
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbShift)
 #: rc.cpp:625
 msgid "Second button function"
-msgstr ""
+msgstr "İkincil düğme işlevi"
 
 #. i18n: file: kcalc.ui:827
 #. i18n: ectx: property (text), widget (KCalcButton, pbShift)
 #: rc.cpp:628
 msgid "Shift"
-msgstr ""
+msgstr "Shift"
 
 #. i18n: file: kcalc.ui:830
 #. i18n: ectx: property (shortcut), widget (KCalcButton, pbShift)
 #: rc.cpp:631
 msgid "Ctrl+2"
-msgstr ""
+msgstr "Ctrl+2"
 
 #. i18n: file: kcalc.ui:840
 #. i18n: ectx: property (toolTip), widget (KCalcButton, pbClear)
@@ -1732,7 +1731,7 @@ msgstr "İşareti değiştir"
 #. i18n: ectx: property (text), widget (KCalcButton, pbPlusMinus)
 #: rc.cpp:692
 msgid "+/−"
-msgstr ""
+msgstr "+/−"
 
 #. i18n: file: kcalcui.rc:4
 #. i18n: ectx: Menu (settings)

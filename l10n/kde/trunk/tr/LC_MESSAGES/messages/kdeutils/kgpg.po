@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-21 04:59+0200\n"
-"PO-Revision-Date: 2010-04-27 15:31+0300\n"
+"PO-Revision-Date: 2010-06-28 13:52+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,22 +25,21 @@ msgstr ""
 #: caff.cpp:262
 msgctxt "Email template placeholder for key id"
 msgid "KEYID"
-msgstr ""
+msgstr "KEYID"
 
 #: caff.cpp:263
 msgctxt "Email template placeholder for key id"
 msgid "UIDNAME"
-msgstr ""
+msgstr "UIDNAME"
 
 #: detailedconsole.cpp:34
 msgid "Info"
 msgstr "Bilgi"
 
 #: groupedit.cpp:34
-#, fuzzy
 #| msgid "Available Trusted Keys"
 msgid "Available Keys"
-msgstr "Uygun Güvenilir Anahtarlar"
+msgstr "Mevcut Anahtarlar"
 
 #: groupedit.cpp:37
 msgid "Available Trusted Keys"
@@ -2277,16 +2276,15 @@ msgstr ""
 #. i18n: file: conf_misc.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: rc.cpp:224
-#, fuzzy
 #| msgid "Do Not Use"
 msgid "Do not send"
-msgstr "Kullanma"
+msgstr "Gönderme"
 
 #. i18n: file: conf_misc.ui:345
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: rc.cpp:227
 msgid "Email template"
-msgstr ""
+msgstr "E-posta şablonu"
 
 #. i18n: file: conf_misc.ui:353
 #. i18n: ectx: property (whatsThis), widget (KTextEdit, kcfg_EmailTemplate)

@@ -9,13 +9,14 @@
 # Bekir SONAT <cortexbs@yahoo.com>, 2005.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: desktop_kdeutils\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-24 03:03+0000\n"
-"PO-Revision-Date: 2010-04-19 16:01+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:56+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -264,67 +265,63 @@ msgid "View file decrypted"
 msgstr "Dosyayı şifrelemesi açılmış olarak göster"
 
 #: kremotecontrol/dataengine/plasma-engine-kremotecontrol.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Remote Controls"
 msgctxt "Name"
 msgid "Remote Control Data Engine"
-msgstr "Uzaktan Kontroller"
+msgstr "Uzaktan Denetim Veri Motoru"
 
 #: kremotecontrol/dataengine/plasma-engine-kremotecontrol.desktop:24
 msgctxt "Comment"
 msgid "Data engine for kremotecontrol"
-msgstr ""
+msgstr "kremotecontrol için veri motoru"
 
 #: kremotecontrol/kcmremotecontrol/kcm_remotecontrol.desktop:22
 msgctxt "Name"
 msgid "Remote Controls"
-msgstr "Uzaktan Kontroller"
+msgstr "Uzaktan Kumanda"
 
 #: kremotecontrol/kcmremotecontrol/kcm_remotecontrol.desktop:79
 msgctxt "Comment"
 msgid "Configure your remote controls for use with applications"
-msgstr "Uzaktan kontrol ayarlarınızı uygulamalarla kullanmak için ayarla"
+msgstr ""
+"Uygulamalarla kullanmak istediğiniz uzaktan kumandaları "
+"yapılandırın."
 
 #: kremotecontrol/kded/kremotecontroldaemon.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Remote Controls"
 msgctxt "Name"
 msgid "K Remote Control Daemon"
-msgstr "Uzaktan Kontroller"
+msgstr "KRemote Denetim Hizmeti"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Remote Controls"
 msgctxt "Comment"
 msgid "KRemoteControl Daemon"
-msgstr "Uzaktan Kontroller"
+msgstr "KRemoteControl Hizmeti"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:26
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Remote Controls"
 msgctxt "Name"
 msgid "KRemoteControl notification"
-msgstr "Uzaktan Kontroller"
+msgstr "KRemoteControl bildirimi"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:47
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Irkick global notification event"
 msgctxt "Comment"
 msgid "KRemoteControl global notification event"
-msgstr "Irkick genel bildirim olayı"
+msgstr "KRemoteControl global bildirim olayı"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:72
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Mode event"
 msgctxt "Name"
 msgid "Mode switch event"
-msgstr "Kip olayı"
+msgstr "Kip değiştirme olayı"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:92
 msgctxt "Comment"
@@ -337,20 +334,18 @@ msgid "Application event"
 msgstr "Uygulama olayı"
 
 #: kremotecontrol/kded/kremotecontroldaemon.notifyrc:179
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Irkick has triggered an application"
 msgctxt "Comment"
 msgid "KRemoteControl has started an application"
-msgstr "Irkick bir uygulama tarafında çalıştırıldı"
+msgstr "KRemoteControl bir uygulama başlattı"
 
 #: kremotecontrol/krcdnotifieritem/krcdnotifieritem.desktop:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Remote Controls"
 msgctxt "Name"
 msgid "KRemoteControl Notifier Item"
-msgstr "Uzaktan Kontroller"
+msgstr "KRemoteControl Bildirim Ögesi"
 
 #: ktimer/ktimer.desktop:2
 msgctxt "GenericName"
@@ -391,23 +386,22 @@ msgstr "KWallet Yönetim Aracı"
 #: okteta/kasten/controllers/view/structures/examples/bitfields/bitfields.desktop:7
 msgctxt "Name"
 msgid "Bitfields test"
-msgstr ""
+msgstr "Bitfields testi"
 
 #: okteta/kasten/controllers/view/structures/examples/dynamic-array-js/dynamic.desktop:7
 msgctxt "Name"
 msgid ""
 "Testing dynamic length arrays (JS). Do not translate, it's a waste of time"
-msgstr ""
+msgstr "Dinamik uzunluklu diziler (JS) test ediliyor."
 
 #: okteta/kasten/controllers/view/structures/examples/dynamic-array-js/dynamic.desktop:22
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "A test structure for dynamic arrays"
 msgctxt "Comment"
 msgid ""
 "A test structure for dynamic arrays (JS). Do not translate, it's a waste of "
 "time"
-msgstr "Dinamik diziler için test yapısı"
+msgstr "Dinamik uzunluklu diziler (JS) için test."
 
 #: okteta/kasten/controllers/view/structures/examples/dynamic/dynamic.desktop:7
 msgctxt "Name"
@@ -427,12 +421,11 @@ msgstr "ELF yapısı"
 
 #: okteta/kasten/controllers/view/structures/examples/elf/elf.desktop:41
 #: okteta/kasten/controllers/view/structures/examples/elf-js/elf-js.desktop:43
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "Structure for Executable Linking Format (ELF)"
 msgctxt "Comment"
 msgid "Structure for Executable and Linkable Format (ELF)"
-msgstr "Executable Linking Format (ELF) Yapısı"
+msgstr "Executable Linking Format (ELF) dosya biçimi için yapı"
 
 #: okteta/kasten/controllers/view/structures/examples/enum/enum.desktop:7
 msgctxt "Name"
@@ -458,20 +451,18 @@ msgstr ""
 "PNG dosya başlığı içeren test yapısı (dosya big-endian olarak ayarlanmalı)"
 
 #: okteta/kasten/controllers/view/structures/examples/simple-js/simple-js.desktop:7
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Simple test"
 msgctxt "Name"
 msgid "JavaScript test"
-msgstr "Basit test"
+msgstr "JavaScript test"
 
 #: okteta/kasten/controllers/view/structures/examples/simple-js/simple-js.desktop:30
-#, fuzzy
 #| msgctxt "Comment"
 #| msgid "A test structure for enums"
 msgctxt "Comment"
 msgid "Just testing structures defined in JS"
-msgstr "Enum'lar için test yapısı"
+msgstr "JS bünyesinde tanımlı yapıları test eder"
 
 #: okteta/kasten/controllers/view/structures/examples/test_2/test_2.desktop:7
 msgctxt "Name"
