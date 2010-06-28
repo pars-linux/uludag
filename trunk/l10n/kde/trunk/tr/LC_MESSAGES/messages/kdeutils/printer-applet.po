@@ -4,18 +4,19 @@
 #
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
 # Muhammet Kara <muhammet.k@gmail.com>, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: printer-applet\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-17 05:49+0200\n"
-"PO-Revision-Date: 2009-03-20 05:00+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:45+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: printer-applet.py:254
@@ -41,10 +42,9 @@ msgstr "&Tazele"
 #. i18n: file: printer-applet.ui:157
 #. i18n: ectx: property (text), widget (QStatusBar, statusbar)
 #: printer-applet.py:268 rc.py:66
-#, fuzzy
 #| msgid "Printer off-line"
 msgid "Printer Configuration..."
-msgstr "Yazıcı çevrimdışı"
+msgstr "Yazıcı Yapılandırması..."
 
 #. i18n: file: printer-applet.ui:115
 #. i18n: ectx: property (text), widget (QStatusBar, statusbar)
@@ -176,10 +176,9 @@ msgid_plural "%1 documents queued"
 msgstr[0] "%1 belge kuyruğa eklendi"
 
 #: printer-applet.py:651
-#, fuzzy
 #| msgid "Printer Status"
 msgid "Print Status"
-msgstr "Yazıcı Durumu"
+msgstr "Yazdırma Durumu"
 
 #: printer-applet.py:860
 msgid "There was a problem sending document `%1' (job %2) to the printer."
@@ -257,7 +256,7 @@ msgstr "&Görünüm"
 #. i18n: ectx: Menu (settings)
 #: rc.py:6
 msgid "&Settings"
-msgstr ""
+msgstr "&Ayarlar"
 
 #. i18n: file: printer-applet-printers.ui:13
 #. i18n: ectx: property (windowTitle), widget (QWidget, Form)
@@ -337,7 +336,7 @@ msgstr "Görünüm"
 #. i18n: ectx: property (title), widget (QMenu, menuSettings)
 #: rc.py:48
 msgid "Settings"
-msgstr ""
+msgstr "Ayarlar"
 
 #. i18n: file: printer-applet.ui:124
 #. i18n: ectx: property (text), widget (QStatusBar, statusbar)

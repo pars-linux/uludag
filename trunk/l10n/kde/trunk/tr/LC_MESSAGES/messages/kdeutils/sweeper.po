@@ -6,19 +6,20 @@
 #
 # Görkem Çetin <gorkem@kde.org>, 2003, 2004.
 # Serdar Soytetir <tulliana@gmail.com>, 2008, 2009.
+# Ozan Çağlayan <ozan@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: sweeper\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-06 04:56+0200\n"
-"PO-Revision-Date: 2009-03-20 04:59+0200\n"
-"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
-"Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 13:45+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 0.3\n"
+"X-Generator: Lokalize 1.0\n"
 
 #: main.cpp:28
 msgid "Sweeper"
@@ -59,7 +60,7 @@ msgstr "Küçük Resim Önbelleği"
 
 #: main.cpp:42
 msgid "Sweeps without user interaction"
-msgstr ""
+msgstr "Kullanıcı etkileşimi olmadan temizler"
 
 #: privacyfunctions.cpp:50 privacyfunctions.cpp:59 privacyfunctions.cpp:68
 msgid "A thumbnail could not be removed."
