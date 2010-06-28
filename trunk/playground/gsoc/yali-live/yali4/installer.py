@@ -563,15 +563,24 @@ class Yali:
                  {"text":_("Writing Console Data..."),"operation":yali4.postinstall.writeConsoleData},
                  {"text":_("Migrating X.org Configuration..."),"operation":yali4.postinstall.migrateXorgConf}]
 
+
+        stepsLive = [{"text":_("Generating DBus machine-id..."),"operation":self.generateDBusMachineID},
+                     {"text":_("Copying kernel..."),"operation":self.copyKernelfromLive},
+                     {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs}]
+
         stepsBase = [{"text":_("Copy Pisi index..."),"operation":yali4.postinstall.copyPisiIndex},
                      {"text":_("Setting misc. package configurations..."),"operation":yali4.postinstall.setPackages},
-                     {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs},
                      {"text":_("Installing BootLoader..."),"operation":self.installBootloader}]
+
+
 
         if self.install_type in [YALI_INSTALL, YALI_DVDINSTALL, YALI_FIRSTBOOT,YALI_LIVEINSTALL]:
             rootWidget.steps.setOperations(steps)
         elif self.install_type == YALI_PLUGIN:
             rootWidget.steps.setOperations(self.plugin.config.steps)
+      
+        if self.install_type == YALI_LIVEINSTALL:
+            rootWidget.steps.setOperations(stepsLive)
 
         rootWidget.steps.setOperations(stepsBase)
 
@@ -579,6 +588,28 @@ class Yali:
     def generateInitramfs(self):
         ctx.debugger.log("Generating Initramfs.")
         sysutils.chrootRun("/sbin/mkinitramfs")
+        return True
+
+    def copyKernelfromLive(self):
+        "Copy kernel from Live media to install filesystem"
+
+        ctx.debugger.log("Copying kernel from Live.")
+        import commands, shutil
+        kernel_src = os.path.join(consts.source_dir, "boot/kernel")
+        kname = "kernel-"+commands.getoutput("uname -r")
+        kernel_dst = os.path.join(consts.target_dir,"boot/",kname)
+        
+        shutil.copyfile(kernel_src, kernel_dst)
+        return True
+        
+
+    def generateDBusMachineID(self):
+        "Generate a machine_id at /var/lib/dbus/machine-id"
+        ctx.debugger.log("Generating dbus machine-id")
+        os.remove(os.path.join(consts.target_dir,"var/lib/dbus/machine-id"))
+        sysutils.chrootRun("/usr/bin/dbus-uuidgen --ensure")
+        return True
+        
 
     def installBootloader(self, pardusPart = None):
         if not ctx.installData.bootLoaderDev:
