@@ -10,13 +10,13 @@ class PCIDevice(object):
         """PCIDevice constructor."""
         self.vendor = ""
         self.device = ""
-        self.subsystem_vendor = ""
-        self.subsystem_device = ""
-        self.manufacturer = ""
-        self.product = ""
         self.driver = ""
         self.module = ""
-        self.busid = os.path.basename(sysfs_path)
+        self.product = ""
+        self.manufacturer = ""
+        self.subsystem_vendor = ""
+        self.subsystem_device = ""
+        self.bus_id = os.path.basename(sysfs_path)
         for k in ("vendor", "device", "subsystem_vendor", "subsystem_device"):
             try:
                 self.__dict__[k] = \
@@ -38,7 +38,7 @@ class PCIDevice(object):
 
     def __str__(self):
         """Human readable str representation."""
-        return "%s [%s:%s]  %s %s\n  Subsystem: [%s:%s]\n  Driver in use: %s %s\n"  % (self.busid,
+        return "%s [%s:%s]  %s %s\n  Subsystem: [%s:%s]\n  Driver in use: %s %s\n"  % (self.bus_id,
                                                                                        self.vendor, self.device,
                                                                                        self.manufacturer, self.product,
                                                                                        self.subsystem_vendor,
@@ -50,13 +50,13 @@ class PCIBus(object):
     """Class which abstracts the PCI Bus and the devices."""
     def __init__(self):
         """PCIBus constructor."""
-        self.sysfs_path = "/sys/bus/pci/devices"
+        self.__sysfs_path = "/sys/bus/pci/devices"
         self.devices = {}
 
-        self.ids = self.populate_id_db()
+        self.__ids = self.__populate_id_db()
         self.detect()
 
-    def populate_id_db(self):
+    def __populate_id_db(self):
         """Returns a dictionary representing the pci.ids file."""
         id_dict = {}
         last_vendor = []
@@ -75,8 +75,8 @@ class PCIBus(object):
 
     def detect(self):
         """Detect currently available PCI devices."""
-        for device in glob.glob("%s/*" % self.sysfs_path):
-            self.devices[os.path.basename(device)] = PCIDevice(device, self.ids)
+        for device in glob.glob("%s/*" % self.__sysfs_path):
+            self.devices[os.path.basename(device)] = PCIDevice(device, self.__ids)
 
 
 ##############
@@ -116,28 +116,28 @@ def test_pci_device_informations():
         if not line.startswith(("\t", " ")):
             # device
             fields = line.split()
-            busid = fields[0]
+            bus_id = fields[0]
             #devclass = fields[1].strip(":")
             (vendor, device) = fields[2].split(":")
             vendor = "0x%s" % vendor
             device = "0x%s" % device
-            devices[busid] = [vendor, device]
+            devices[bus_id] = [vendor, device]
         elif "Subsystem" in line:
             (subvendor, subdevice) = line.split(":", 1)[-1].strip().split(":")
             subvendor = "0x%s" % subvendor
             subdevice = "0x%s" % subdevice
-            devices[busid].extend([subvendor, subdevice])
+            devices[bus_id].extend([subvendor, subdevice])
         elif "driver in use" in line:
-            devices[busid].append(line.split(":")[-1].strip())
+            devices[bus_id].append(line.split(":")[-1].strip())
 
     for dev in glob.glob("/sys/bus/pci/devices/*"):
         pci_device = PCIDevice(dev)
-        busid = os.path.basename(dev).replace("0000:", "")
-        if check(devices[busid], pci_device):
-            print "%s -> PASSED" % busid
+        bus_id = os.path.basename(dev).replace("0000:", "")
+        if check(devices[bus_id], pci_device):
+            print "%s -> PASSED" % bus_id
         else:
-            print "%s -> FAILED" % busid
-            print devices[busid]
+            print "%s -> FAILED" % bus_id
+            print devices[bus_id]
             print pci_device
             print
 
