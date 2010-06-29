@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kdelibs4\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-06 04:50+0200\n"
-"PO-Revision-Date: 2010-05-09 00:14+0300\n"
+"PO-Revision-Date: 2010-06-29 15:03+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -31,19 +31,19 @@ msgstr ""
 #: kcalendarsystemjalali.cpp:72
 msgctxt "Calendar Era: Jalali Islamic Era, years > 0, LongFormat"
 msgid "Anno Persico"
-msgstr ""
+msgstr "Anno Persico"
 
 #: kcalendarsystemjalali.cpp:73
 msgctxt "Calendar Era: Jalali Islamic Era, years > 0, ShortFormat"
 msgid "AP"
-msgstr ""
+msgstr "AP"
 
 #: kcalendarsystemjalali.cpp:74
 #, c-format
 msgctxt ""
 "(kdedt-format) Jalali, AP, full era year format used for %EY, e.g. 2000 AP"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemjalali.cpp:338
 msgctxt "of Farvardin short"
@@ -331,51 +331,51 @@ msgstr "Yek-shanbe"
 #: kcalendarsystemgregorianproleptic.cpp:55 kcalendarsystemgregorian.cpp:81
 msgctxt "Calendar Era: Gregorian Common Era, years < 0, LongFormat"
 msgid "Before Common Era"
-msgstr ""
+msgstr "Before Common Era"
 
 #: kcalendarsystemgregorianproleptic.cpp:56 kcalendarsystemgregorian.cpp:82
 msgctxt "Calendar Era: Gregorian Common Era, years < 0, ShortFormat"
 msgid "BCE"
-msgstr ""
+msgstr "BCE"
 
 #: kcalendarsystemgregorianproleptic.cpp:58 kcalendarsystemgregorian.cpp:84
 msgctxt "Calendar Era: Gregorian Christian Era, years < 0, LongFormat"
 msgid "Before Christ"
-msgstr ""
+msgstr "İsa'dan Önce"
 
 #: kcalendarsystemgregorianproleptic.cpp:59 kcalendarsystemgregorian.cpp:85
 msgctxt "Calendar Era: Gregorian Christian Era, years < 0, ShortFormat"
 msgid "BC"
-msgstr ""
+msgstr "İÖ"
 
 #: kcalendarsystemgregorianproleptic.cpp:61 kcalendarsystemgregorian.cpp:87
 #, c-format
 msgctxt ""
 "(kdedt-format) Gregorian, BC, full era year format used for %EY, e.g. 2000 BC"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemgregorianproleptic.cpp:65 kcalendarsystemgregorian.cpp:91
 msgctxt "Calendar Era: Gregorian Common Era, years > 0, LongFormat"
 msgid "Common Era"
-msgstr ""
+msgstr "Common Era"
 
 #: kcalendarsystemgregorianproleptic.cpp:66 kcalendarsystemgregorian.cpp:92
 msgctxt "Calendar Era: Gregorian Common Era, years > 0, ShortFormat"
 msgid "CE"
-msgstr ""
+msgstr "CE"
 
 #: kcalendarsystemgregorianproleptic.cpp:68 kcalendarsystemgregorian.cpp:94
 #: kcalendarsystemjapanese.cpp:57
 msgctxt "Calendar Era: Gregorian Christian Era, years > 0, LongFormat"
 msgid "Anno Domini"
-msgstr ""
+msgstr "Anno Domini"
 
 #: kcalendarsystemgregorianproleptic.cpp:69 kcalendarsystemgregorian.cpp:95
 #: kcalendarsystemjapanese.cpp:58
 msgctxt "Calendar Era: Gregorian Christian Era, years > 0, ShortFormat"
 msgid "AD"
-msgstr ""
+msgstr "AD"
 
 #: kcalendarsystemgregorianproleptic.cpp:71 kcalendarsystemgregorian.cpp:97
 #: kcalendarsystemjapanese.cpp:59
@@ -383,7 +383,7 @@ msgstr ""
 msgctxt ""
 "(kdedt-format) Gregorian, AD, full era year format used for %EY, e.g. 2000 AD"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemgregorianproleptic.cpp:326 kcalendarsystemgregorian.cpp:330
 #: kcalendarsystemjulian.cpp:339
@@ -733,19 +733,19 @@ msgstr "Pazar"
 #: kcalendarsystemhijri.cpp:64
 msgctxt "Calendar Era: Hijri Islamic Era, years > 0, LongFormat"
 msgid "Anno Hegirae"
-msgstr ""
+msgstr "Anno Hegirae"
 
 #: kcalendarsystemhijri.cpp:65
 msgctxt "Calendar Era: Hijri Islamic Era, years > 0, ShortFormat"
 msgid "AH"
-msgstr ""
+msgstr "AH"
 
 #: kcalendarsystemhijri.cpp:66
 #, c-format
 msgctxt ""
 "(kdedt-format) Hijri, AH, full era year format used for %EY, e.g. 2000 AH"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemhijri.cpp:329 kcalendarsystemhijri.cpp:360
 msgid "of Muharram"
@@ -990,7 +990,7 @@ msgstr "Celali"
 #: kcalendarsystem.cpp:164
 msgctxt "@item Calendar system"
 msgid "Japanese"
-msgstr ""
+msgstr "Japanese"
 
 #: kcalendarsystem.cpp:168
 msgctxt "@item Calendar system"
@@ -1000,14 +1000,13 @@ msgstr "Julian"
 #: kcalendarsystem.cpp:172
 msgctxt "@item Calendar system"
 msgid "Taiwanese"
-msgstr ""
+msgstr "Taiwanese"
 
 #: kcalendarsystem.cpp:176
-#, fuzzy
 #| msgid "R. Thaani"
 msgctxt "@item Calendar system"
 msgid "Thai"
-msgstr "R. Thaani"
+msgstr "Thai"
 
 #: kcalendarsystem.cpp:179
 msgctxt "@item Calendar system"
@@ -1017,7 +1016,7 @@ msgstr "Geçersiz Takvim Tipi"
 #: kcalendarsystem.cpp:2255
 msgctxt "Negative symbol as used for year numbers, e.g. -5 = 5 BC"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: kcalendarsystem.cpp:2292
 msgid "Today"
@@ -1030,19 +1029,19 @@ msgstr "Dün"
 #: kcalendarsystemethiopian.cpp:48
 msgctxt "Calendar Era: Ethiopian Incarnation Era, years > 0, LongFormat"
 msgid "Amata Mehrat"
-msgstr ""
+msgstr "Amata Mehrat"
 
 #: kcalendarsystemethiopian.cpp:49
 msgctxt "Calendar Era: Ethiopian Incarnation Era, years > 0, ShortFormat"
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: kcalendarsystemethiopian.cpp:50
 #, c-format
 msgctxt ""
 "(kdedt-format) Ethiopian, AM, full era year format used for %EY, e.g. 2000 AM"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemethiopian.cpp:223
 msgctxt "Ethiopian month 1 - ShortNamePossessive"
@@ -1377,19 +1376,19 @@ msgstr "Ehud"
 #: kcalendarsystemcoptic.cpp:45
 msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, LongFormat"
 msgid "Anno Martyrum"
-msgstr ""
+msgstr "Anno Martyrum"
 
 #: kcalendarsystemcoptic.cpp:46
 msgctxt "Calendar Era: Coptic Era of Martyrs, years > 0, ShortFormat"
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: kcalendarsystemcoptic.cpp:47
 #, c-format
 msgctxt ""
 "(kdedt-format) Coptic, AM, full era year format used for %EY, e.g. 2000 AM"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemcoptic.cpp:321
 msgctxt "Coptic month 1 - ShortNamePossessive"
@@ -1722,16 +1721,15 @@ msgid "Tkyriakē"
 msgstr "Tkyriakē"
 
 #: kcalendarsystemindiannational.cpp:71
-#, fuzzy
 #| msgid "Safar"
 msgctxt "Calendar Era: Indian National Saka Era, years > 0, LongFormat"
 msgid "Saka Era"
-msgstr "Safar"
+msgstr "Saka Era"
 
 #: kcalendarsystemindiannational.cpp:72
 msgctxt "Calendar Era: Indian National Saka Era, years > 0, ShortFormat"
 msgid "SE"
-msgstr ""
+msgstr "SE"
 
 #: kcalendarsystemindiannational.cpp:73
 #, c-format
@@ -1739,7 +1737,7 @@ msgctxt ""
 "(kdedt-format) Indian National, SE, full era year format used for %EY, e.g. "
 "2000 SE"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemindiannational.cpp:321
 msgctxt "Indian National month 1 - ShortNamePossessive"
@@ -2054,19 +2052,19 @@ msgstr "Raviãra"
 #: kcalendarsystemhebrew.cpp:281
 msgctxt "Calendar Era: Hebrew Era, years > 0, LongFormat"
 msgid "Anno Mundi"
-msgstr ""
+msgstr "Anno Mundi"
 
 #: kcalendarsystemhebrew.cpp:282
 msgctxt "Calendar Era: Hebrew Era, years > 0, ShortFormat"
 msgid "AM"
-msgstr ""
+msgstr "AM"
 
 #: kcalendarsystemhebrew.cpp:283
 #, c-format
 msgctxt ""
 "(kdedt-format) Hebrew, AM, full era year format used for %EY, e.g. 2000 AM"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemhebrew.cpp:805
 msgid "of Tishrey"
@@ -2183,61 +2181,61 @@ msgstr "Adar II"
 #: kcalendarsystemjulian.cpp:74
 msgctxt "Calendar Era: Julian Common Era, years < 0, LongFormat"
 msgid "Before Common Era"
-msgstr ""
+msgstr "Before Common Era"
 
 #: kcalendarsystemjulian.cpp:75
 msgctxt "Calendar Era: Julian Common Era, years < 0, ShortFormat"
 msgid "BCE"
-msgstr ""
+msgstr "BCE"
 
 #: kcalendarsystemjulian.cpp:77
 msgctxt "Calendar Era: Julian Christian Era, years < 0, LongFormat"
 msgid "Before Christ"
-msgstr ""
+msgstr "İsa'dan Önce"
 
 #: kcalendarsystemjulian.cpp:78
 msgctxt "Calendar Era: Julian Christian Era, years < 0, ShortFormat"
 msgid "BC"
-msgstr ""
+msgstr "İÖ"
 
 #: kcalendarsystemjulian.cpp:80
 #, c-format
 msgctxt ""
 "(kdedt-format) Julian, BC, full era year format used for %EY, e.g. 2000 BC"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemjulian.cpp:84
 msgctxt "Calendar Era: Julian Common Era, years > 0, LongFormat"
 msgid "Common Era"
-msgstr ""
+msgstr "Common Era"
 
 #: kcalendarsystemjulian.cpp:85
 msgctxt "Calendar Era: Julian Common Era, years > 0, ShortFormat"
 msgid "CE"
-msgstr ""
+msgstr "CE"
 
 #: kcalendarsystemjulian.cpp:87
 msgctxt "Calendar Era: Julian Christian Era, years > 0, LongFormat"
 msgid "Anno Domini"
-msgstr ""
+msgstr "Anno Domini"
 
 #: kcalendarsystemjulian.cpp:88
 msgctxt "Calendar Era: Julian Christian Era, years > 0, ShortFormat"
 msgid "AD"
-msgstr ""
+msgstr "AD"
 
 #: kcalendarsystemjulian.cpp:90
 #, c-format
 msgctxt ""
 "(kdedt-format) Julian, AD, full era year format used for %EY, e.g. 2000 AD"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemjapanese.cpp:62
 msgctxt "Calendar Era: Japanese Nengō, Meiji Era, LongFormat"
 msgid "Meiji"
-msgstr ""
+msgstr "Meiji"
 
 #: kcalendarsystemjapanese.cpp:64
 #, c-format
@@ -2245,7 +2243,7 @@ msgctxt ""
 "(kdedt-format) Japanese, Meiji, full era year format used for %EY, year = 1, "
 "e.g. Meiji 1"
 msgid "%EC Gannen"
-msgstr ""
+msgstr "%EC Gannen"
 
 #: kcalendarsystemjapanese.cpp:66
 #, c-format
@@ -2253,12 +2251,12 @@ msgctxt ""
 "(kdedt-format) Japanese, Meiji, full era year format used for %EY, year > 1, "
 "e.g. Meiji 22"
 msgid "%EC %Ey"
-msgstr ""
+msgstr "%EC %Ey"
 
 #: kcalendarsystemjapanese.cpp:69
 msgctxt "Calendar Era: Japanese Nengō, Taishō Era, LongFormat"
 msgid "Taishō"
-msgstr ""
+msgstr "Taishō"
 
 #: kcalendarsystemjapanese.cpp:71
 #, c-format
@@ -2266,7 +2264,7 @@ msgctxt ""
 "(kdedt-format) Japanese, Taishō, full era year format used for %EY, year = "
 "1, e.g. Taishō 1"
 msgid "%EC Gannen"
-msgstr ""
+msgstr "%EC Gannen"
 
 #: kcalendarsystemjapanese.cpp:73
 #, c-format
@@ -2274,15 +2272,14 @@ msgctxt ""
 "(kdedt-format) Japanese, Taishō, full era year format used for %EY, year > "
 "1, e.g. Taishō 22"
 msgid "%EC %Ey"
-msgstr ""
+msgstr "%EC %Ey"
 
 #: kcalendarsystemjapanese.cpp:76
-#, fuzzy
 #| msgctxt "Shahrivar short"
 #| msgid "Sha"
 msgctxt "Calendar Era: Japanese Nengō, Shōwa Era, LongFormat"
 msgid "Shōwa"
-msgstr "Sha"
+msgstr "Shōwa"
 
 #: kcalendarsystemjapanese.cpp:78
 #, c-format
@@ -2290,7 +2287,7 @@ msgctxt ""
 "(kdedt-format) Japanese, Shōwa, full era year format used for %EY, year = 1, "
 "e.g. Shōwa 1"
 msgid "%EC Gannen"
-msgstr ""
+msgstr "%EC Gannen"
 
 #: kcalendarsystemjapanese.cpp:80
 #, c-format
@@ -2298,12 +2295,12 @@ msgctxt ""
 "(kdedt-format) Japanese, Shōwa, full era year format used for %EY, year > 1, "
 "e.g. Shōwa 22"
 msgid "%EC %Ey"
-msgstr ""
+msgstr "%EC %Ey"
 
 #: kcalendarsystemjapanese.cpp:83
 msgctxt "Calendar Era: Japanese Nengō, Heisei Era, LongFormat"
 msgid "Heisei"
-msgstr ""
+msgstr "Heisei"
 
 #: kcalendarsystemjapanese.cpp:85
 #, c-format
@@ -2311,7 +2308,7 @@ msgctxt ""
 "(kdedt-format) Japanese, Heisei, full era year format used for %EY, year = "
 "1, e.g. Heisei 1"
 msgid "%EC Gannen"
-msgstr ""
+msgstr "%EC Gannen"
 
 #: kcalendarsystemjapanese.cpp:87
 #, c-format
@@ -2319,10 +2316,9 @@ msgctxt ""
 "(kdedt-format) Japanese, Heisei, full era year format used for %EY, year > "
 "1, e.g. Heisei 22"
 msgid "%EC %Ey"
-msgstr ""
+msgstr "%EC %Ey"
 
 #: kcalendarsystemjapanese.cpp:287
-#, fuzzy
 #| msgctxt "Ethiopian month 9 - ShortName"
 #| msgid "Gen"
 msgctxt "Japanese year 1 of era"
@@ -2332,33 +2328,33 @@ msgstr "Gen"
 #: kcalendarsystemthai.cpp:56
 msgctxt "Calendar Era: Thai Buddhist Era, years > 0, LongFormat"
 msgid "Buddhist Era"
-msgstr ""
+msgstr "Budist Era"
 
 #: kcalendarsystemthai.cpp:57
 msgctxt "Calendar Era: Thai Buddhist Era, years > 0, ShortFormat"
 msgid "BE"
-msgstr ""
+msgstr "BE"
 
 #: kcalendarsystemthai.cpp:58
 #, c-format
 msgctxt ""
 "(kdedt-format) Thai, BE, full era year format used for %EY, e.g. 2000 BE"
 msgid "%Ey %EC"
-msgstr ""
+msgstr "%Ey %EC"
 
 #: kcalendarsystemminguo.cpp:55
 msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, LongFormat"
 msgid "Republic of China Era"
-msgstr ""
+msgstr "Republic of China Era"
 
 #: kcalendarsystemminguo.cpp:56
 msgctxt "Calendar Era: Taiwan Republic of China Era, years > 0, ShortFormat"
 msgid "ROC"
-msgstr ""
+msgstr "ROC"
 
 #: kcalendarsystemminguo.cpp:57
 #, c-format
 msgctxt ""
 "(kdedt-format) Taiwan, ROC, full era year format used for %EY, e.g. ROC 99"
 msgid "%EC %Ey"
-msgstr ""
+msgstr "%EC %Ey"
