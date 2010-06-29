@@ -15,8 +15,8 @@ msgstr ""
 "Project-Id-Version: kget\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-18 04:51+0200\n"
-"PO-Revision-Date: 2010-05-12 10:48+0300\n"
-"Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-29 09:52+0300\n"
+"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,16 +49,14 @@ msgid "Turn Off Computer"
 msgstr "Bilgisayarı Kapat"
 
 #: conf/preferencesdialog.cpp:56
-#, fuzzy
 #| msgid "Turn Off Computer"
 msgid "Hibernate Computer"
-msgstr "Bilgisayarı Kapat"
+msgstr "Hazırda Beklet"
 
 #: conf/preferencesdialog.cpp:57
-#, fuzzy
 #| msgid "Turn Off Computer"
 msgid "Suspend Computer"
-msgstr "Bilgisayarı Kapat"
+msgstr "Askıya Al"
 
 #: conf/preferencesdialog.cpp:72
 msgid "Appearance"
@@ -189,7 +187,7 @@ msgid "My Downloads"
 msgstr "İndirme yeniden başlatıldı"
 
 #: core/kget.cpp:794
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<p>The following file has finished downloading:</p><p style=\"font-size: "
 #| "small;\">                      %1</p>"
@@ -197,14 +195,13 @@ msgid ""
 "<p>The following transfer has been added to the download list:</p><p style="
 "\"font-size: small;\">\\%1</p>"
 msgstr ""
-"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: small;"
-"\">                      %1</p>"
+"<p>Aşağıdaki indirme görevi listeye eklendi:</p><p style=\"font-size: "
+"small;\">\\%1</p>"
 
 #: core/kget.cpp:795
-#, fuzzy
 #| msgid "Downloaded"
 msgid "Download added"
-msgstr "İndirildi"
+msgstr "İndirme görevi eklendi"
 
 #: core/kget.cpp:805
 msgid "Unable to continue: KGet cannot download using this protocol."
@@ -312,12 +309,11 @@ msgid "File already exists"
 msgstr "Dosya zaten var"
 
 #: core/kget.cpp:1111
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<html><p>Plugin loader could not load the plugin:<br/><i>%1</i></p></html>"
 msgid "Plugin loader could not load the plugin: %1."
-msgstr ""
-"<html><p>Eklenti yükleyici şu eklentiyi yükleyemedi:<br/><i>%1</i></p></html>"
+msgstr "Eklenti yükleyici eklentiyi yükleyemedi: %1."
 
 #: core/kget.cpp:1129
 #, kde-format
@@ -342,7 +338,7 @@ msgstr ""
 "yerel bir dosya değil."
 
 #: core/kget.cpp:1244
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<p>The following file has finished downloading:</p><p style=\"font-size: "
 #| "small;\">                      %1</p>"
@@ -350,15 +346,14 @@ msgid ""
 "<p>The following file has finished downloading:</p><p style=\"font-size: "
 "small;\">\\%1</p>"
 msgstr ""
-"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: small;"
-"\">                      %1</p>"
+"<p>Aşağıdaki dosya indirildi:</p><p style=\"font-size: small;\">\\%1</p>"
 
 #: core/kget.cpp:1245
 msgid "Download completed"
 msgstr "İndirme tamamlandı"
 
 #: core/kget.cpp:1248
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "<p>The following file has finished downloading:</p><p style=\"font-size: "
 #| "small;\">                      %1</p>"
@@ -366,14 +361,14 @@ msgid ""
 "<p>The following transfer has been started:</p><p style=\"font-size: small;"
 "\">\\%1</p>"
 msgstr ""
-"<p>Aşağıdaki dosyanın indirme işlemi bitti:</p><p style=\"font-size: small;"
-"\">                      %1</p>"
+"<p>Aşağıdaki dosyanın indirilmesine başlandı:</p><p style=\"font-size: "
+"small; "
+"\">\\%1</p>"
 
 #: core/kget.cpp:1249
-#, fuzzy
 #| msgid "Download speed"
 msgid "Download started"
-msgstr "İndirme Hızı"
+msgstr "İndirme işlemi başladı"
 
 #: core/kget.cpp:1294
 msgid "KGet is now closing, as all downloads have completed."
@@ -384,47 +379,44 @@ msgid "The computer will now turn off, as all downloads have completed."
 msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi kapatılıyor."
 
 #: core/kget.cpp:1298
-#, fuzzy
 #| msgid "Auto shutdown"
 msgctxt "Shutting down computer"
 msgid "Shutdown"
-msgstr "Otomatik kapat"
+msgstr "Bilgisayarı Kapat"
 
 #: core/kget.cpp:1301
-#, fuzzy
 #| msgid "The computer will now turn off, as all downloads have completed."
 msgid "The computer will now suspend to disk, as all downloads have completed."
-msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi kapatılıyor."
+msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi hazırda bekletilecek."
 
 #: core/kget.cpp:1301
 msgctxt "Hibernating computer"
 msgid "Hibernating"
-msgstr ""
+msgstr "Hazırda Bekletiliyor"
 
 #: core/kget.cpp:1304
-#, fuzzy
 #| msgid "The computer will now turn off, as all downloads have completed."
 msgid "The computer will now suspend to RAM, as all downloads have completed."
-msgstr "Tüm aktarımlar tamamlandı, bilgisayar şimdi kapatılıyor."
+msgstr ""
+"Tüm aktarımlar tamamlandı, bilgisayar şimdi bellek kullanarak askıya "
+"alınacak."
 
 #: core/kget.cpp:1304
-#, fuzzy
 #| msgctxt "Preview pending"
 #| msgid "Pending"
 msgctxt "Suspending computer"
 msgid "Suspending"
-msgstr "Bekleyen"
+msgstr "Askıya alınıyor"
 
 #: core/kget.cpp:1312
-#, fuzzy
 #| msgid "Aborted"
 msgctxt "abort the proposed action"
 msgid "Abort"
-msgstr "İptal edildi"
+msgstr "İptal Et"
 
 #: core/kget.cpp:1322
 msgid "<p>All transfers have been finished.</p>"
-msgstr ""
+msgstr "<p>Tüm aktarımlar tamamlandı.</p>"
 
 #: core/kget.cpp:1323
 msgid "Downloads completed"
@@ -694,20 +686,18 @@ msgid "Downloading Metalink File...."
 msgstr "Metalink Dosyası İndiriliyor...."
 
 #: transfer-plugins/metalink/metalink.cpp:134
-#, fuzzy
 #| msgid ""
 #| "The key to verify the signature is missing, do you want to download it?"
 msgid ""
 "A newer version of this Metalink might exist, do you want to download it?"
 msgstr ""
-"İmzayı doğrulamak için gerekli olan anahtar eksik. İndirmek istiyor musunuz?"
+"Bu Metalink dosyasının yeni bir sürümü mevcut, tekrar indirmek ister misiniz?"
 
 #: transfer-plugins/metalink/metalink.cpp:135
-#, fuzzy
 #| msgctxt "redownload selected transfer item"
 #| msgid "Redownload Selected"
 msgid "Redownload Metalink"
-msgstr "Seçilenleri Yeniden İndir"
+msgstr "Metalink'i tekrar indir"
 
 #: transfer-plugins/metalink/metalink.cpp:219
 msgid "Download failed, no working URLs were found."
@@ -1889,10 +1879,9 @@ msgid "No Links"
 msgstr "Bağlantı Yok"
 
 #: extensions/konqueror/kget_plug_in.cpp:284
-#, fuzzy
 #| msgid "Unable to communicate with the KGet download manager!"
 msgid "Unable to communicate with the KGet download manager."
-msgstr "KGet indirme yöneticisi ile iletişime geçilemiyor!"
+msgstr "KGet indirme yöneticisiyle iletişime geçilemiyor."
 
 #: extensions/konqueror/kget_plug_in.cpp:285
 msgid "Communication Error"
@@ -2416,7 +2405,6 @@ msgstr "&Aşağıya Taşı"
 #. i18n: file: conf/dlggroups.ui:17
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_DirectoriesAsSuggestion)
 #: rc.cpp:41
-#, fuzzy
 #| msgid "Use default directories for groups as suggestion"
 msgid "Use default folders for groups as suggestion"
 msgstr "Gruplar için öneri olarak öntanımlı dizinleri kullan"
@@ -3177,10 +3165,9 @@ msgstr "Her aktarım için indirme sınırı:"
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:89
 #. i18n: ectx: property (text), widget (QCheckBox, utpBox)
 #: rc.cpp:472
-#, fuzzy
 #| msgid "Enable popup tooltip"
 msgid "Enable UTP protocol"
-msgstr "Açılan ipuçlarını etkinleştir"
+msgstr "UTP protokolünü etkinleştir"
 
 #. i18n: file: transfer-plugins/bittorrent/btsettingswidget.ui:105
 #. i18n: ectx: property (title), widget (QGroupBox, folderGroupBox)
@@ -3666,18 +3653,16 @@ msgstr "Bir Adres Girin"
 #. i18n: file: ui/mirror/mirroradddlg.ui:63
 #. i18n: ectx: property (text), widget (QLabel, labelPriority)
 #: rc.cpp:730
-#, fuzzy
 #| msgid "Priority"
 msgid "Priority:"
-msgstr "Öncelik"
+msgstr "Öncelik:"
 
 #. i18n: file: ui/mirror/mirroradddlg.ui:70
 #. i18n: ectx: property (toolTip), widget (KIntNumInput, priority)
 #: rc.cpp:733
-#, fuzzy
 #| msgid "Optional: The preference of the mirror, 1 lowest 100 highest."
 msgid "Optional: The priority of the mirror, 1 highest 999999 lowest."
-msgstr "Seçimli: Yansı tercihi, en düşük 1 en yüksek 100."
+msgstr "İsteğe bağlı: Yansı önceliği, en yüksek 1 en düşük 9999999."
 
 #. i18n: file: ui/mirror/mirroradddlg.ui:89
 #. i18n: ectx: property (text), widget (QLabel, labelLocation)
