@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kgpg\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-21 04:59+0200\n"
-"PO-Revision-Date: 2010-06-28 13:52+0300\n"
+"PO-Revision-Date: 2010-06-29 09:10+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -217,19 +217,19 @@ msgstr "Aranacak bir sözcük girmelisiniz."
 #: keyservers.cpp:119
 msgid "You need to configure keyservers before trying to download keys."
 msgstr ""
+"Anahtarları indirmeyi denemeden önce anahtar sunucuları yapılandırmanız "
+"gerekiyor."
 
 #: keyservers.cpp:120
-#, fuzzy
 #| msgid "Upload to keyserver failed"
 msgid "No keyservers defined"
-msgstr "Anahtar sunucusuna gönderme işlemi başarısız oldu"
+msgstr "Hiç anahtar sunucusu tanımlanmamış"
 
 #: keyservers.cpp:157
-#, fuzzy
 #| msgid "Key Import"
 msgctxt "Caption of message box"
 msgid "Key Import Finished"
-msgstr "Anahtar Al"
+msgstr "Anahtar Alımı Tamamlandı"
 
 #: keyservers.cpp:185
 msgid "Upload to keyserver finished without errors"
@@ -261,11 +261,10 @@ msgid_plural "Found %1 matching keys"
 msgstr[0] "%1 tane eşleşen anahtar bulundu"
 
 #: keyservers.cpp:278
-#, fuzzy
 #| msgid "Found 1 matching key"
 #| msgid_plural "Found %1 matching keys"
 msgid "No matching keys found"
-msgstr "%1 tane eşleşen anahtar bulundu"
+msgstr "Eşleşen anahtar bulunamadı"
 
 #: keyservers.cpp:326
 msgid "You must choose a key."
@@ -545,7 +544,6 @@ msgid "Add New User Id"
 msgstr "Yeni Kullanıcı Kimliği Ekle"
 
 #: keysmanager.cpp:922
-#, fuzzy
 #| msgid ""
 #| "The image must be a JPEG file. Remember that the image is stored within "
 #| "your public key, so if you use a very large picture, your key will become "
@@ -558,8 +556,8 @@ msgid ""
 msgstr ""
 "Resim bir JPEG dosyası olmalıdır. Resmin açık anahtarınızın içinde yer "
 "alacağını unutmayın. Eğer çok büyük bir resim seçerseniz, anahtarınız da çok "
-"büyük olacaktır. 240x288 boyutlarına yakın bir dosya kullanmanız uygun "
-"olacaktır."
+"büyük olacaktır. 240x288 boyutlarına yakın bir dosya kullanmanız ve resmin "
+"boyutunun 6 KB'tan fazla olmamasına özen gösterin."
 
 #: keysmanager.cpp:954
 #, kde-format
@@ -605,7 +603,7 @@ msgstr "Kullanıcı Kimliği"
 
 #: keysmanager.cpp:1207
 msgid "Revocation Signature"
-msgstr "Feshetme İmzası"
+msgstr "İptal İmzası"
 
 #: keysmanager.cpp:1210
 msgid "Photo ID"
@@ -625,12 +623,11 @@ msgid_plural "&Sign User IDs ..."
 msgstr[0] "&Kullanıcı Kimliklerini İmzala ..."
 
 #: keysmanager.cpp:1326
-#, fuzzy
 #| msgid "&Sign User ID ..."
 #| msgid_plural "&Sign User IDs ..."
 msgid "Sign and &Mail User ID ..."
 msgid_plural "Sign and &Mail User IDs ..."
-msgstr[0] "&Kullanıcı Kimliklerini İmzala ..."
+msgstr[0] "Kullanıcı Kimliklerini İmzala ve &Gönder ..."
 
 #: keysmanager.cpp:1327
 msgid "E&xport Public Key..."
@@ -669,7 +666,7 @@ msgstr[0] "&Anahtarları Sil"
 
 #: keysmanager.cpp:1452
 msgid "Creation of the revocation certificate failed..."
-msgstr "Feshetme belgesi oluşturma işlemi başarısız..."
+msgstr "İptal sertifikası oluşturulamadı..."
 
 #: keysmanager.cpp:1467
 msgid ""
@@ -1030,12 +1027,13 @@ msgid ""
 "<qt>The text in the clipboard does not look like a key, but like encrypted "
 "text.<br />Do you want to decrypt it first and then try importing it?</qt>"
 msgstr ""
+"<qt>Panodaki metin bir anahtardan ziyade şifreli bir metne benziyor.<br /> "
+"Şifresini çözdükten sonra içeriye aktarmak ister misiniz?</qt>"
 
 #: keysmanager.cpp:2583
-#, fuzzy
 #| msgid "&Encrypt Clipboard"
 msgid "Import from Clipboard"
-msgstr "&Panoyu şifrele"
+msgstr "Panodan Aktar"
 
 #: keysmanager.cpp:2603
 msgid "Importing..."
@@ -1162,10 +1160,9 @@ msgid "Tar"
 msgstr "Tar"
 
 #: kgpgexternalactions.cpp:94
-#, fuzzy
 #| msgid "Tar"
 msgid "Tar/XZ"
-msgstr "Tar"
+msgstr "Tar/XZ"
 
 #: kgpgexternalactions.cpp:162 kgpgexternalactions.cpp:348 kgpglibrary.cpp:112
 #: editor/kgpgeditor.cpp:524
@@ -1334,6 +1331,8 @@ msgid ""
 "Your GnuPG version (%1) seems to be too old.<br />Compatibility with "
 "versions before 1.4.0 is no longer guaranteed."
 msgstr ""
+"GnuPG sürümünüz (%1) oldukça eski.<br />1.4.0 öncesi sürümlerle "
+"uyumluluk resmi olarak desteklenmiyor."
 
 #: kgpginterface.cpp:568
 msgid "An error occurred while scanning your keyring"
@@ -1498,7 +1497,6 @@ msgid "New GnuPG Home Location"
 msgstr "Yeni GnuPG Başlangıç Konumu"
 
 #: kgpgoptions.cpp:150
-#, fuzzy
 #| msgid ""
 #| "No configuration file was found in the selected location.\n"
 #| "Do you want to create it now ?\n"
@@ -1510,11 +1508,10 @@ msgid ""
 "\n"
 "Without a configuration file, neither KGpg nor GnuPG will work properly."
 msgstr ""
-"Seçilen yerleşimde herhangi bir yapılandırma dosyası bulunamadı.\n"
-"Şimdi bir tane oluşturulmasını ister misiniz ?\n"
+"Seçilen konumda yapılandırma dosyası bulunamadı.\n"
+"Oluşturmak istiyor musunuz?\n"
 "\n"
-"Yapılandırma dosyası olmaksızın, ne KGpg ne de Gnupg düzgün olarak "
-"çalışamayacaktır."
+"Yapılandırma dosyası olmadan KGpg ve GnuPG düzgün çalışmaz."
 
 #: kgpgoptions.cpp:151
 msgid "No Configuration File Found"
@@ -1588,7 +1585,7 @@ msgstr "(Öntanımlı)"
 
 #: kgpgrevokewidget.cpp:40
 msgid "Create Revocation Certificate"
-msgstr "Feshetme Sertifikası Oluştur"
+msgstr "İptal Sertifikası Oluştur"
 
 #: kgpgtextinterface.cpp:119
 msgid "Enter passphrase (symmetrical encryption)"
@@ -1659,7 +1656,7 @@ msgstr "<qt>Bu imza geçerli ve anahtar tam olarak güvenilir<br /></qt>"
 #: kgpgtextinterface.cpp:649 editor/kgpgtextedit.cpp:296
 msgctxt "Caption of message box"
 msgid "Verification Finished"
-msgstr ""
+msgstr "Doğrulama Tamamlandı"
 
 #: kgpgtextinterface.cpp:652 editor/kgpgtextedit.cpp:311
 #, kde-format
@@ -1912,12 +1909,17 @@ msgid ""
 "the <em>Allow encryption with untrusted keys</em> option this allows "
 "untrusted keys to become member of a key group.</p></qt>"
 msgstr ""
+"<qt><b>Güvenilmeyen anahtarların anahtar gruplarının üyesi olmasına izin "
+"ver:</b><br /><p>Bir anahtar grubu, birden fazla alıcıya aynı anda basit "
+"şifreleme olanağı sunar. <em>Güvenilmeyen anahtarlar ile şifrelemeye "
+"izin ver</em> seçeneğine benzer olarak, bu seçenek güvenilmeyen anahtarların "
+"bir anahtar grubunun üyesi olmalarına izin verir.</p></qt>"
 
 #. i18n: file: conf_encryption.ui:148
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AllowUntrustedGroupMembers)
 #: rc.cpp:67
 msgid "Allow untrusted keys as members of key groups"
-msgstr ""
+msgstr "Güvenilmeyen anahtarların anahtar grupları üyeliğine izin ver"
 
 #. i18n: file: conf_encryption.ui:156
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, kcfg_HideUserID)
@@ -2243,7 +2245,7 @@ msgstr "Son dosyalar"
 #. i18n: ectx: attribute (title), widget (QWidget, tabSigning)
 #: rc.cpp:209
 msgid "Key Signing"
-msgstr ""
+msgstr "Anahtar İmzalama"
 
 #. i18n: file: conf_misc.ui:314
 #. i18n: ectx: property (whatsThis), widget (QLabel, label_2)
@@ -2254,24 +2256,31 @@ msgid ""
 "with every other User Id you signed, only with the first Id you signed or to "
 "not send them at all."
 msgstr ""
+"Burada, bir e-posta adresi içermeyen kullanıcı kimliklerinin (Fotoğraf "
+"kimlikleri "
+"gibi) anahtar sahibine nasıl gönderileceğini tanımlayabilirsiniz. Bu "
+"kimlikleri ister "
+"imzaladığınız diğer Kullanıcı Kimlikleriyle, ister imzaladığınız ilk "
+"Kullanıcı "
+"Kimliğiyle gönderebilir, isterseniz hiç göndermemeyi seçebilirsiniz."
 
 #. i18n: file: conf_misc.ui:317
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: rc.cpp:215
 msgid "Mailing of User Ids without Email Addresses"
-msgstr ""
+msgstr "E-posta Adresi İçermeyen Kullanıcı Kimliklerinin Gönderimi"
 
 #. i18n: file: conf_misc.ui:325
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: rc.cpp:218
 msgid "Send with every Email"
-msgstr ""
+msgstr "Her e-posta ile gönder"
 
 #. i18n: file: conf_misc.ui:330
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
 #: rc.cpp:221
 msgid "Send only with first Email"
-msgstr ""
+msgstr "Sadece ilk e-posta ile gönder"
 
 #. i18n: file: conf_misc.ui:335
 #. i18n: ectx: property (text), item, widget (KComboBox, kcfg_MailUats)
@@ -2296,6 +2305,12 @@ msgid ""
 "The placeholders surrounded by the percent signs (like %KEYID%) will be "
 "replaced with the corresponding text for every single mail."
 msgstr ""
+"\"Kullanıcı Kimliklerini İmzala ve Gönder\" eylemi tarafından gönderilen "
+"e-posta metni.\n"
+"\n"
+"Yüzde işaretleriyle çevrili özel ifadeler (%KEYID% gibi) her e-posta "
+"metninde gerçek "
+"değerleriyle değiştirilecektir."
 
 #. i18n: file: conf_servers.ui:29
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_4)
@@ -2683,7 +2698,7 @@ msgstr "Güvenilir olmayan anahtarlar ile şifrelemeye izin ver."
 #. i18n: ectx: label, entry (AllowUntrustedGroupMembers), group (Encryption)
 #: rc.cpp:419
 msgid "Allow untrusted keys to become members of key groups."
-msgstr ""
+msgstr "Güvenilmeyen anahtarların anahtar grupları üyeliğine izin ver."
 
 #. i18n: file: kgpg.kcfg:44
 #. i18n: ectx: label, entry (HideUserID), group (Encryption)
@@ -2910,12 +2925,14 @@ msgstr "Mümkün olduğunda HTTP vekili kullan."
 msgid ""
 "This is the text of the email sent by the \"Sign and Mail User ID\" action."
 msgstr ""
+"\"Kullanıcı Kimliklerini İmzala ve Gönder\" eylemi tarafından gönderilen "
+"e-posta metni."
 
 #. i18n: file: kgpgrevokewidget.ui:18
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: rc.cpp:533
 msgid "Create revocation certificate for"
-msgstr "Feshetme belgesini oluşturma nedeni."
+msgstr "İptal sertifikasının oluşturulma sebebi"
 
 #. i18n: file: kgpgrevokewidget.ui:28
 #. i18n: ectx: property (text), widget (QLabel, keyID)
@@ -2927,7 +2944,7 @@ msgstr "anahtar no"
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: rc.cpp:539
 msgid "Reason for revocation:"
-msgstr "Feshetme için sebep:"
+msgstr "İptal sebebi:"
 
 #. i18n: file: kgpgrevokewidget.ui:56
 #. i18n: ectx: property (text), item, widget (KComboBox, comboBox1)
@@ -3023,7 +3040,7 @@ msgstr "Anahtarı Öntanımlı Yap"
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox1)
 #: rc.cpp:597
 msgid "Revocation Certificate"
-msgstr "Feshetme Belgesi"
+msgstr "İptal Sertifikası"
 
 #. i18n: file: newkey.ui:157
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -3032,7 +3049,7 @@ msgid ""
 "It is recommended to save or print a revocation certificate in case your key "
 "is compromised."
 msgstr ""
-"Anahtarınızın tehlikeye düşmesi olasılığına karşı bir feshetme belgesi "
+"Anahtarınızın tehlikeye düşmesi olasılığına karşı bir iptal sertifikası  "
 "kaydetmeniz ya da yazdırmanız önerilir."
 
 #. i18n: file: newkey.ui:169
@@ -3243,10 +3260,11 @@ msgid ""
 "<p>Drag a public key into the editor window and kgpg will automatically "
 "import it if you want.</p>\n"
 msgstr ""
-"<p>Eğer bir metin dosyasının şifrelemesini açmak istiyorsanız, düzenleyici "
-"penceresinie sürükleyip bırakmanız yeterli olacaktır. Gerisini Kgpg "
-"yapacaktır. Uzak sistemlerdeki dosyalar bile bu şekilde bırakılabilir.</p>\n"
-"<p>Düzenleyici penceresinie bir açık anahtar sürükleyin, isterseniz kpgp "
+"<p>Eğer bir metin dosyasının şifresini çözmek istiyorsanız, düzenleyici "
+"penceresine sürükleyip bırakmanız yeterli olacaktır. Gerisini KGpg "
+"halledecektir. Uzak sistemlerdeki dosyalar bile bu şekilde bırakılabilir.</p>"
+"\n"
+"<p>Düzenleyici penceresine açık anahtar sürüklediğinizde, KGpg isterseniz  "
 "otomatik olarak içeriye aktaracaktır.</p>\n"
 
 #. i18n: file: tips:7
@@ -3635,17 +3653,17 @@ msgid "Could not download file."
 msgstr "Dosya indirilemedi."
 
 #: editor/kgpgtextedit.cpp:117
-#, fuzzy
 #| msgid ""
 #| "<p>The file <b>%1</b> is a public key.<br />Do you want to import it ?</p>"
 msgid ""
 "<qt>This file is a <b>public</b> key.<br />Do you want to import it instead "
 "of opening it in editor?</qt>"
 msgstr ""
-"<p><b>%1</b> dosyası açık bir anahtardır.<br /> Almak istiyor musunuz?</p>"
+"<qt>Bu dosya bir <b>açık</b> anahtardır.<br /> Bir düzenleyicide açmak "
+"yerine "
+"içeriye aktarmak istiyor musunuz?</qt>"
 
 #: editor/kgpgtextedit.cpp:120
-#, fuzzy
 #| msgid ""
 #| "<qt>This file is a <b>private</b> key.\n"
 #| "Please use kgpg key management to import it.</qt>"
@@ -3653,14 +3671,14 @@ msgid ""
 "<qt>This file is a <b>private</b> key.<br />Do you want to import it instead "
 "of opening it in editor?</qt>"
 msgstr ""
-"<qt>Bu dosya <b>gizli</b> bir anahtar.\n"
-"Lütfen içeriye aktarmak için kgpg anahtar yöneticisini kullanın.</qt>"
+"<qt>Bu dosya bir <b>özel</b> anahtardır.<br /> Bir düzenleyicide açmak "
+"yerine "
+"içeriye aktarmak istiyor musunuz?</qt>"
 
 #: editor/kgpgtextedit.cpp:125
-#, fuzzy
 #| msgid "Decrypt & Open in Editor"
 msgid "Key file dropped on Editor"
-msgstr "Şifreyi Aç & Düzenleyicide Göster"
+msgstr "Düzenleyiciye anahtar dosyası bırakıldı"
 
 #: editor/kgpgtextedit.cpp:268
 msgid "Encryption failed."
@@ -3739,11 +3757,11 @@ msgid "ID %1, %2-bit %3 key, created %4"
 msgstr "Kimlik %1, %2 bit %3 anahtar, oluşturulma zamanı %4"
 
 #: model/kgpgsearchresultmodel.cpp:218
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Photo ID"
 msgid "One Photo ID"
 msgid_plural "%1 Photo IDs"
-msgstr[0] "Fotoğraf Kimliği"
+msgstr[0] "%1 Fotoğraf Kimliği"
 
 #: transactions/kgpgaddphoto.cpp:41
 msgid "This image is very large. Use it anyway?"
@@ -3831,10 +3849,10 @@ msgid "Key %1 generated"
 msgstr "%1 anahtarı oluşturuldu"
 
 #: transactions/kgpggeneraterevoke.cpp:49
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Create revocation certificate for"
 msgid "Generating Revocation Certificate for key %1"
-msgstr "Feshetme belgesini oluşturma nedeni."
+msgstr "%1 anahtarı için iptal sertifikası üretiliyor"
 
 #: transactions/kgpgimport.cpp:118
 msgid ""
@@ -3896,7 +3914,7 @@ msgstr[0] "<qt><br />%1 imza içeriye aktarıldı.</qt>"
 #, kde-format
 msgid "<qt><br />One revocation certificate imported.</qt>"
 msgid_plural "<qt><br />%1 revocation certificates imported.</qt>"
-msgstr[0] "<qt><br />%1 feshetme sertifikası içeriye aktarıldı.</qt>"
+msgstr[0] "<qt><br />%1 iptal sertifikası içeriye aktarıldı.</qt>"
 
 #: transactions/kgpgimport.cpp:139
 #, kde-format
