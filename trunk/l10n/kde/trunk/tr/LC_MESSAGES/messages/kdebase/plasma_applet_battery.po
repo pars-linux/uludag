@@ -6,13 +6,14 @@
 # Serdar Soytetir <tulliana@gmail.com>, 2007, 2008, 2009.
 # Ayhan YALÇINSOY <dellpardus@hotmail.com>, 2008.
 # Onur Küçük <onur@pardus.org.tr>, 2010.
+# H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_battery\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-14 04:46+0200\n"
-"PO-Revision-Date: 2010-04-20 14:05+0300\n"
-"Last-Translator: Onur Küçük <onur@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 15:02+0300\n"
+"Last-Translator: H. Ibrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <turkce@pardus.org.tr>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +36,6 @@ msgid "AC Adapter:"
 msgstr "AC Adaptör:"
 
 #: battery.cpp:217 battery.cpp:686
-#, fuzzy
 #| msgid "Plugged in "
 msgid "Plugged in"
 msgstr "Fişe takılı "
@@ -53,24 +53,21 @@ msgid "Screen Brightness"
 msgstr "Ekran Parlaklığı"
 
 #: battery.cpp:517
-#, fuzzy
 #| msgid "Power Profile"
 msgid "Power Profile:"
 msgstr "Güç Profili"
 
 #: battery.cpp:547
-#, fuzzy
 #| msgid "Sleep"
 msgctxt "Suspend the computer to RAM; translation should be short"
 msgid "Sleep"
-msgstr "Uyku Kipine Geç"
+msgstr "Uyut"
 
 #: battery.cpp:561
-#, fuzzy
 #| msgid "Hibernate"
 msgctxt "Suspend the computer to disk; translation should be short"
 msgid "Hibernate"
-msgstr "Askıya Al"
+msgstr "Hazırda Beklet"
 
 #: battery.cpp:574
 msgctxt "tooltip on the config button in the popup"
