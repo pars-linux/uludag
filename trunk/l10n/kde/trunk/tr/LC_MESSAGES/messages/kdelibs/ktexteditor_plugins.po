@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: ktexteditor_plugins\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-05-07 04:39+0200\n"
-"PO-Revision-Date: 2010-06-28 13:41+0300\n"
+"PO-Revision-Date: 2010-06-29 10:12+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -273,7 +273,7 @@ msgstr "] ve ) kapatma işaretlerini otomatik olarak ekle"
 #: autobrace/autobrace_config.cpp:38
 #| msgid "Automatically &show completion list"
 msgid "Automatically add closing quotation marks"
-msgstr ""
+msgstr "Tırnak işaretlerini otomatik olarak kapat"
 
 #: kte_iconinserter/iconinserterplugin.cpp:38
 msgid "Select an Icon to use it inside the Code"
@@ -282,21 +282,23 @@ msgstr "Kodun içerisinde kullanmak için bir simge seçin"
 #: kte_iconinserter/iconinserterplugin.cpp:38
 #: kte_iconinserter/iconinserterplugin.cpp:48
 msgid "Insert Code for KIcon-Creation"
-msgstr "KIcon-Creation için Kod ekleyin"
+msgstr "KIcon-Creation için Kod Yerleştir"
 
 #: kte_iconinserter/iconinserterplugin.cpp:47
 msgid "Insert KIcon-Code"
-msgstr ""
+msgstr "KIcon-Code Yerleştir"
 
 #: kte_iconinserter/iconinserterplugin.cpp:49
 msgid ""
 "<b>IconInserter</b><p> Select an icon and use it as a KIcon in your source "
 "code."
 msgstr ""
+"<b>IconInserter</b><p> Bir simge seçin ve kaynak kodunuzda bu simgeyi KIcon "
+"olarak kullanın"
 
 #: kte_iconinserter/iconinserterplugin.cpp:66
 msgid "Select the Icon you want to use in your code as KIcon."
-msgstr ""
+msgstr "Kaynak kodunuzda KIcon olarak kullanmak istediğiniz simgeyi seçin."
 
 #: exporter/exporterpluginview.cpp:56
 msgid "Copy as &HTML"
@@ -394,7 +396,7 @@ msgstr "Tarih && Saat Ekle"
 
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:66
 msgid "Insane HTML (LE) Expansion"
-msgstr ""
+msgstr "Insane HTML (LE) Eklentisi"
 
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:357
 #, kde-format
@@ -404,11 +406,12 @@ msgstr "hata %1"
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:428
 msgid "No valid Insane HTML markup detected at current cursor position"
 msgstr ""
+"Şu anki imleç pozisyonunda geçerli bir Insane HTML işareti algılanamadı"
 
 #: kte_insanehtml_le/insanehtmlplugin_le.cpp:432
 #, kde-format
 msgid "This looks like valid Insane HTML markup: %1"
-msgstr ""
+msgstr "Bu geçerli bir Insane HTML işareti gibi duruyor: %1"
 
 #: rc.cpp:1
 msgctxt "NAME OF TRANSLATORS"
