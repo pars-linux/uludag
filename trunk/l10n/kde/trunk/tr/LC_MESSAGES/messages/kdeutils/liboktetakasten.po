@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: okteta\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-23 05:02+0200\n"
-"PO-Revision-Date: 2010-04-30 13:24+0300\n"
+"PO-Revision-Date: 2010-06-29 09:22+0300\n"
 "Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -61,12 +61,11 @@ msgid "Dec"
 msgstr "Ondalık"
 
 #: gui/liboktetawidgets/addresscombobox_p.cpp:50
-#, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Export"
 msgctxt "@item:inlistbox coding of offset in the expression format"
 msgid "Expr"
-msgstr "Dışarıya Aktar"
+msgstr "Expr"
 
 #: gui/io/generator/sequence/bytearraysequencegenerator.cpp:51
 msgctxt "name of the generated data"
@@ -148,39 +147,36 @@ msgid "Pattern inserted."
 msgstr "İfade eklendi."
 
 #: gui/io/streamencoder/base32/bytearraybase32streamencoder.cpp:105
-#, fuzzy
 #| msgctxt "name of the encoding target"
 #| msgid "Base64"
 msgctxt "name of the encoding target"
 msgid "Base32"
-msgstr "Base64"
+msgstr "Base32"
 
 #: gui/io/streamencoder/base32/bytearraybase32streamencoderconfigeditor.cpp:50
-#, fuzzy
 #| msgid "Value coding:"
 msgctxt ""
 "@label:listbox the type of the used encoding: Classic, Base32hex or z-base-"
 "32."
 msgid "Encoding:"
-msgstr "Değer kodlaması:"
+msgstr "Kodlama:"
 
 #: gui/io/streamencoder/base32/bytearraybase32streamencoderconfigeditor.cpp:55
 msgctxt "@item:inmenu Doing the base32 using the classical encoding"
 msgid "Classic"
-msgstr ""
+msgstr "Klasik"
 
 #: gui/io/streamencoder/base32/bytearraybase32streamencoderconfigeditor.cpp:57
 msgctxt "@item:inmenu Doing the base32 using the Base32hex encoding"
 msgid "Base32hex"
-msgstr ""
+msgstr "Base32hex"
 
 #: gui/io/streamencoder/base32/bytearraybase32streamencoderconfigeditor.cpp:59
 msgctxt "@item:inmenu Doing the base32 using the z-base-32 encoding"
 msgid "z-base-32"
-msgstr ""
+msgstr "z-base-32"
 
 #: gui/io/streamencoder/values/bytearrayvaluesstreamencoder.cpp:44
-#, fuzzy
 #| msgctxt "@item name of the encoding result"
 #| msgid "Values"
 msgctxt "name of the encoding target"
@@ -227,40 +223,36 @@ msgid "View in Plain Text"
 msgstr "Düz Metin olarak Göster"
 
 #: gui/io/streamencoder/chars/bytearraycharsstreamencoder.cpp:47
-#, fuzzy
 #| msgctxt "@info:tooltip column contains the character with the value"
 #| msgid "Character"
 msgctxt "name of the encoding target"
 msgid "Characters"
-msgstr "Karakter"
+msgstr "Karakterler"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoder.cpp:86
-#, fuzzy
 #| msgid "Value coding:"
 msgctxt "name of the encoding target"
 msgid "Uuencoding"
-msgstr "Değer kodlaması:"
+msgstr "Uuencoding"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:51
 #: gui/io/streamencoder/xxencoding/bytearrayxxencodingstreamencoderconfigeditor.cpp:50
 msgctxt "@label:textbox file name internally given to the encoded data"
 msgid "Internal name of file:"
-msgstr ""
+msgstr "Dosyanın iç adı:"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:61
-#, fuzzy
 #| msgid "Value coding:"
 msgctxt "@label:listbox the type of the used encoding: historical or Base64."
 msgid "Encoding:"
-msgstr "Değer kodlaması:"
+msgstr "Kodlama:"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:66
 msgctxt "@item:inmenu Doing the uuencoding using the historical encoding"
 msgid "Historical"
-msgstr ""
+msgstr "Tarihsel"
 
 #: gui/io/streamencoder/uuencoding/bytearrayuuencodingstreamencoderconfigeditor.cpp:68
-#, fuzzy
 #| msgctxt "name of the encoding target"
 #| msgid "Base64"
 msgctxt "@item:inmenu Doing the uuencoding using the base64 encoding"
@@ -273,16 +265,15 @@ msgid "Base64"
 msgstr "Base64"
 
 #: gui/io/streamencoder/xxencoding/bytearrayxxencodingstreamencoder.cpp:70
-#, fuzzy
 #| msgid "Value coding:"
 msgctxt "name of the encoding target"
 msgid "Xxencoding"
-msgstr "Değer kodlaması:"
+msgstr "Xxencoding"
 
 #: gui/io/streamencoder/base85/bytearraybase85streamencoder.cpp:73
 msgctxt "name of the encoding target"
 msgid "Ascii85"
-msgstr ""
+msgstr "Ascii85"
 
 #: gui/io/streamencoder/sourcecode/bytearraysourcecodestreamencoderconfigeditor.cpp:52
 msgctxt "@label:textbox name of the created variable"
@@ -307,7 +298,6 @@ msgid "Unsigned as hexadecimal:"
 msgstr "İşaretsizleri onaltılık göster:"
 
 #: gui/io/streamencoder/sourcecode/bytearraysourcecodestreamencoder.cpp:69
-#, fuzzy
 #| msgctxt "@item name of the encoding result"
 #| msgid "C Array"
 msgctxt "name of the encoding target"
@@ -318,55 +308,51 @@ msgstr "C Dizisi"
 #: gui/io/streamencoder/ihex/bytearrayihexstreamencoderconfigeditor.cpp:50
 msgctxt "@label:listbox the size in bits of the addresses."
 msgid "Address size:"
-msgstr ""
+msgstr "Adres boyutu:"
 
 #: gui/io/streamencoder/srec/bytearraysrecstreamencoderconfigeditor.cpp:55
 #: gui/io/streamencoder/ihex/bytearrayihexstreamencoderconfigeditor.cpp:57
-#, fuzzy
 #| msgctxt "@label:textbox"
 #| msgid "Float 32-bit"
 msgctxt "@item:inmenu address size"
 msgid "32-bit"
-msgstr "Float 32-bit"
+msgstr "32-bit"
 
 #: gui/io/streamencoder/srec/bytearraysrecstreamencoderconfigeditor.cpp:57
-#, fuzzy
 #| msgid " bit"
 #| msgid_plural " bits"
 msgctxt "@item:inmenu address size"
 msgid "24-bit"
-msgstr " bit"
+msgstr "24-bit"
 
 #: gui/io/streamencoder/srec/bytearraysrecstreamencoderconfigeditor.cpp:59
 #: gui/io/streamencoder/ihex/bytearrayihexstreamencoderconfigeditor.cpp:59
-#, fuzzy
 #| msgctxt "@label:textbox"
 #| msgid "Signed 16-bit"
 msgctxt "@item:inmenu address size"
 msgid "16-bit"
-msgstr "Signed 16-bit"
+msgstr "16-bit"
 
 #: gui/io/streamencoder/srec/bytearraysrecstreamencoder.cpp:164
 msgctxt "name of the encoding target"
 msgid "S-Record"
-msgstr ""
+msgstr "S-Record"
 
 #: gui/io/streamencoder/ihex/bytearrayihexstreamencoderconfigeditor.cpp:61
-#, fuzzy
 #| msgid " bit"
 #| msgid_plural " bits"
 msgctxt "@item:inmenu address size"
 msgid "8-bit"
-msgstr " bit"
+msgstr "8-bit"
 
 #: gui/io/streamencoder/ihex/bytearrayihexstreamencoder.cpp:156
 msgctxt "name of the encoding target"
 msgid "Intel Hex"
-msgstr ""
+msgstr "Intel Hex"
 
 #: gui/io/streamencoder/bytearraytextstreamencoderpreview.cpp:43
 msgid "The preview uses maximal the first 100 bytes."
-msgstr ""
+msgstr "Önizleme en fazla ilk 100 baytı kullanır."
 
 #: controllers/view/gotooffset/gotooffsetcontroller.cpp:47
 msgctxt "@action:inmenu"
@@ -525,7 +511,7 @@ msgstr "yapı"
 #: controllers/view/structures/datatypes/boolbitfielddatainformation.h:60
 msgctxt "Data type"
 msgid "boolean bitfield"
-msgstr ""
+msgstr "boolean bit alanı"
 
 #: controllers/view/structures/datatypes/int32datainformation.h:52
 msgctxt "Data type"
@@ -547,16 +533,16 @@ msgstr "short"
 #, kde-format
 msgctxt "not all values in this structure are as they should be"
 msgid "Validation failed: \"%1\""
-msgstr ""
+msgstr "Doğrulama başarısız: \"%1\""
 
 #: controllers/view/structures/datatypes/primitivedatainformation.cpp:66
 #: controllers/view/structures/datatypes/datainformationwithchildren.cpp:196
 msgctxt "not all values in this structure are as they should be"
 msgid "Validation failed."
-msgstr ""
+msgstr "Doğrulama başarısız."
 
 #: controllers/view/structures/datatypes/primitivedatainformation.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Name: %1\n"
 #| "Value: %2\n"
@@ -575,8 +561,10 @@ msgstr ""
 "İsim: %1\n"
 "Değer: %2\n"
 "\n"
-"Tip: %3\n"
-"Boyut: %4"
+"Tür: %3\n"
+"Boyut: %4\n"
+"\n"
+"%5"
 
 #: controllers/view/structures/datatypes/primitivedatainformation.cpp:72
 #, kde-format
@@ -594,19 +582,19 @@ msgstr ""
 "Boyut: %4"
 
 #: controllers/view/structures/datatypes/abstractbitfielddatainformation.cpp:26
-#, fuzzy, kde-format
+#, kde-format
 #| msgid " bit"
 #| msgid_plural " bits"
 msgid "%1 bit"
 msgid_plural "%1 bits"
-msgstr[0] " bit"
+msgstr[0] "%1 bit"
 
 #: controllers/view/structures/datatypes/abstractbitfielddatainformation.cpp:42
 #, kde-format
 msgctxt "Data type"
 msgid "bitfield (%1 bit wide)"
 msgid_plural "bitfield (%1 bits wide)"
-msgstr[0] ""
+msgstr[0] "bit alanı (%1 bit genişliğinde)"
 
 #: controllers/view/structures/datatypes/int64datainformation.h:52
 msgctxt "Data type"
@@ -634,28 +622,27 @@ msgid_plural "%1 bytes"
 msgstr[0] "%1 bayt"
 
 #: controllers/view/structures/datatypes/datainformation.cpp:68
-#, fuzzy, kde-format
+#, kde-format
 #| msgid " bit"
 #| msgid_plural " bits"
 msgid "1 bit"
 msgid_plural "%1 bits"
-msgstr[0] " bit"
+msgstr[0] "%1 bit"
 
 #: controllers/view/structures/datatypes/datainformation.cpp:69
-#, fuzzy, kde-format
+#, kde-format
 #| msgctxt "@item description of bookmark"
 #| msgid "%1: %2"
 msgctxt "number of bytes, then number of bits"
 msgid "%1 %2"
-msgstr "%1: %2"
+msgstr "%1 %2"
 
 #: controllers/view/structures/datatypes/signedbitfielddatainformation.h:60
-#, fuzzy
 #| msgctxt "Data type"
 #| msgid "unsigned byte"
 msgctxt "Data type"
 msgid "signed bitfield"
-msgstr "unsigned byte"
+msgstr "işaretli bit alanı"
 
 #: controllers/view/structures/datatypes/chardatainformation.h:53
 msgctxt "Data type"
@@ -668,7 +655,7 @@ msgid "unsigned int"
 msgstr "unsigned int"
 
 #: controllers/view/structures/datatypes/datainformationwithchildren.cpp:199
-#, fuzzy, kde-format
+#, kde-format
 #| msgid ""
 #| "Name: %2\n"
 #| "Value: %3\n"
@@ -701,8 +688,10 @@ msgstr[0] ""
 "İsim: %2\n"
 "Değer: %3\n"
 "\n"
-"Tip: %4\n"
-"Boyut: %5 (%1 children)"
+"Tür: %4\n"
+"Boyut: %5 (%1 çocuk)\n"
+"\n"
+" %6"
 
 #: controllers/view/structures/datatypes/datainformationwithchildren.cpp:205
 #, kde-format
@@ -782,12 +771,11 @@ msgid "double"
 msgstr "double"
 
 #: controllers/view/structures/datatypes/unsignedbitfielddatainformation.h:59
-#, fuzzy
 #| msgctxt "Data type"
 #| msgid "unsigned byte"
 msgctxt "Data type"
 msgid "unsigned bitfield"
-msgstr "unsigned byte"
+msgstr "işaretsiz bit alanı"
 
 #: controllers/view/structures/datatypes/int8datainformation.h:50
 msgctxt "Data type"
@@ -800,10 +788,9 @@ msgid "bool (1 byte)"
 msgstr "bool (1 byte)"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:65
-#, fuzzy
 #| msgid "Structures"
 msgid "Get New Structures..."
-msgstr "Yapılar"
+msgstr "Yeni Yapıları Al..."
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:156
 #: controllers/view/structures/settings/structuresmanagerview.cpp:180
@@ -834,10 +821,9 @@ msgid "Structure Definitions"
 msgstr "Yapı Tanımlamaları"
 
 #: controllers/view/structures/settings/structuresmanagerview.cpp:253
-#, fuzzy
 #| msgid "Structure Definitions"
 msgid "Dynamic Structure Definitions"
-msgstr "Yapı Tanımlamaları"
+msgstr "Dinamik Yapı Tanımları"
 
 #: controllers/view/structures/settings/structureaddremovewidget.cpp:56
 msgctxt "@info:label"
@@ -875,19 +861,17 @@ msgid "The byte order used to decode the values."
 msgstr "Değerleri çözmek için kullanılacak bayt sırası."
 
 #: controllers/view/structures/structview.cpp:106
-#, fuzzy
 #| msgctxt "value of a data structure (primitive type)"
 #| msgid "Value"
 msgid "Validate"
-msgstr "Değer"
+msgstr "Doğrula"
 
 #: controllers/view/structures/structview.cpp:108
-#, fuzzy
 #| msgctxt "@info:label"
 #| msgid "Installed structures:"
 msgctxt "@info:tooltip"
 msgid "Validate all structures."
-msgstr "Yüklenen yapılar:"
+msgstr "Tüm yapılar doğrula."
 
 #: controllers/view/structures/structview.cpp:129
 msgid "Settings"
@@ -914,7 +898,7 @@ msgstr "Yapı yönetimi"
 msgctxt ""
 "@action:pushbutton unlock the starting offset of the current structure"
 msgid "Unlock"
-msgstr ""
+msgstr "Kilidi aç"
 
 #: controllers/view/structures/structview.cpp:309
 msgctxt "@info:tooltip"
@@ -922,17 +906,19 @@ msgid ""
 "Unlock selected structure, i.e. the starting offset is always set to the "
 "current cursor position."
 msgstr ""
+"Seçili yapının kilidini çöz. Böylece başlangıç ofseti daima geçerli imleç "
+"pozisyonunu gösterir."
 
 #: controllers/view/structures/structview.cpp:316
 msgctxt ""
 "@action:pushbutton unlock the starting offset of the current structure"
 msgid "Lock"
-msgstr ""
+msgstr "Kilitle"
 
 #: controllers/view/structures/structview.cpp:318
 msgctxt "@info:tooltip"
 msgid "Lock selected structure to current offset."
-msgstr ""
+msgstr "Seçilen yapıyı geçerli ofsete kilitle."
 
 #: controllers/view/structures/structtool.cpp:197
 msgctxt "name of a data structure"
@@ -1058,7 +1044,6 @@ msgid "String"
 msgstr "Dizgi"
 
 #: controllers/view/stringsextract/stringsextracttoolviewfactory.cpp:38
-#, fuzzy
 #| msgctxt "@title:window of the tool to extract strings"
 #| msgid "Strings"
 msgctxt "@title:window"
@@ -1642,20 +1627,18 @@ msgid "Show &Non-printing Chars"
 msgstr "&Yazdırılamaz Karakterleri Göster"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:70
-#, fuzzy
 #| msgctxt "@label:textbox to define after how many items the list is wrapped"
 #| msgid "Items per line:"
 msgctxt "@action:inmenu"
 msgid "Set Bytes per Line..."
-msgstr "Satır başına öge:"
+msgstr "Satır başına Bayt Miktarını Ayarla:"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:75
-#, fuzzy
 #| msgctxt "@label:textbox to define after how many items the list is wrapped"
 #| msgid "Items per line:"
 msgctxt "@action:inmenu"
 msgid "Set Bytes per Group..."
-msgstr "Dosyaların ham verilerini düzenle"
+msgstr "Grup başına Bayt Miktarını Ayarla:"
 
 #: controllers/view/viewconfig/viewconfigcontroller.cpp:80
 msgctxt "@title:menu"
@@ -1709,33 +1692,31 @@ msgstr "Değerler ve Karakterler"
 #: controllers/view/viewconfig/bytesperlinedialog.cpp:49
 msgctxt "@label:spinbox number of bytes which are shown per line"
 msgid "Per Line:"
-msgstr ""
+msgstr "Satır başına:"
 
 #: controllers/view/viewconfig/bytesperlinedialog.cpp:53
-#, fuzzy
 #| msgctxt "@label:textbox to define after how many items the list is wrapped"
 #| msgid "Items per line:"
 msgctxt "@title:window"
 msgid "Bytes per Line"
-msgstr "Satır başına öge:"
+msgstr "Satır başına Bayt:"
 
 #: controllers/view/viewconfig/bytespergroupdialog.cpp:48
 msgctxt "@label"
 msgid "No grouping."
-msgstr ""
+msgstr "Gruplama yok."
 
 #: controllers/view/viewconfig/bytespergroupdialog.cpp:52
 msgctxt "@label:spinbox number of bytes which are grouped"
 msgid "Per Group:"
-msgstr ""
+msgstr "Grup başına:"
 
 #: controllers/view/viewconfig/bytespergroupdialog.cpp:56
-#, fuzzy
 #| msgctxt "@label:textbox to define after how many items the list is wrapped"
 #| msgid "Items per line:"
 msgctxt "@title:window"
 msgid "Bytes per Group"
-msgstr "Dosyaların ham verilerini düzenle"
+msgstr "Grup başına Bayt:"
 
 #: controllers/view/checksum/checksumtool.cpp:78
 #: controllers/view/checksum/checksumtoolviewfactory.cpp:38
