@@ -123,6 +123,7 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     pisi_url = os.path.join(path, pisi_package)
     tmp_path = os.path.join('/tmp', pisi_package)
     url = urllib.URLopener()
+    if os.path.exists(tmp_path): os.unlink(tmp_path)
     url.retrieve(pisi_url, tmp_path)
     package = pisi.package.Package(tmp_path)
     files = package.get_files()
