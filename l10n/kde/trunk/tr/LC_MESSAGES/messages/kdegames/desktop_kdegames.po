@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: desktop_kdegames\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-19 03:19+0000\n"
-"PO-Revision-Date: 2010-04-28 14:21+0300\n"
+"PO-Revision-Date: 2010-06-29 16:11+0300\n"
 "Last-Translator: Serdar Dalgıç <serdar@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -423,25 +423,23 @@ msgid "Water Bomb Theme"
 msgstr "Su Bombası Teması"
 
 #: kajongg/kajongg.desktop:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "KMahjongg"
 msgctxt "Name"
 msgid "Kajongg"
-msgstr "KMahjongg"
+msgstr "Kajongg"
 
 #: kajongg/kajongg.desktop:28
 msgctxt "Comment"
 msgid "The ancient Chinese board game for 4 players"
-msgstr ""
+msgstr "4 kişilik eski Çin oyunu"
 
 #: kajongg/kajongg.desktop:49
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "KMahjongg"
 msgctxt "GenericName"
 msgid "Mah Jongg"
-msgstr "KMahjongg"
+msgstr "Mah Jongg"
 
 #: kapman/kapman.desktop:4
 msgctxt "Name"
@@ -1136,12 +1134,11 @@ msgid "Three-in-a-row game"
 msgstr "Bir-satırda-üç oyunu"
 
 #: kdiamond/src/kdiamond.notifyrc:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "KDiamond"
 msgctxt "Comment"
 msgid "KDiamond Game"
-msgstr "KDiamond"
+msgstr "KDiamond Oyunu"
 
 #: kdiamond/src/kdiamond.notifyrc:27
 msgctxt "Name"
@@ -2256,12 +2253,11 @@ msgid "Minesweeper-like Game"
 msgstr "Mayın Tarlası-benzeri Oyun"
 
 #: kmines/data/kmines.notifyrc:3
-#, fuzzy
 #| msgctxt "GenericName"
 #| msgid "Minesweeper-like Game"
 msgctxt "Comment"
 msgid "KMines Minesweeper-like Game"
-msgstr "Mayın Tarlası-benzeri Oyun"
+msgstr "KMines Mayın Tarlası-benzeri Oyun"
 
 #: kmines/data/kmines.notifyrc:27
 msgctxt "Name"
@@ -2392,12 +2388,11 @@ msgid "Network Construction Game"
 msgstr "Ağ Yapılandırma Oyunu"
 
 #: knetwalk/src/knetwalk.notifyrc:3
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "KNetWalk"
 msgctxt "Comment"
 msgid "KNetWalk Game"
-msgstr "KNetWalk"
+msgstr "KNetWalk Oyunu"
 
 #: knetwalk/src/knetwalk.notifyrc:28 kreversi/sounds/kreversi.notifyrc:28
 msgctxt "Name"
@@ -2728,41 +2723,38 @@ msgstr "Sabır Kart Oyunu"
 #: kpat/themes/ancientegypt.desktop:2
 msgctxt "Name"
 msgid "Desert Sands"
-msgstr ""
+msgstr "Çöl Kumları"
 
 #: kpat/themes/cleangreen.desktop:2
 msgctxt "Name"
 msgid "Clean Green"
-msgstr ""
+msgstr "Temiz Yeşil"
 
 #: kpat/themes/cleangreen.desktop:22
-#, fuzzy
 #| msgctxt "Description"
 #| msgid "Simple KBreakOut theme"
 msgctxt "Description"
 msgid "A simple green felt theme"
-msgstr "Basit KBreakOut teması"
+msgstr "Basit bir yeşil keçe teması"
 
 #: kpat/themes/greenblaze.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Green Blase"
 msgctxt "Name"
 msgid "Green Blaze"
-msgstr "Yeşil Bolluk"
+msgstr "Yeşil Ateş"
 
 #: kpat/themes/oldertheme.desktop:2
-#, fuzzy
 #| msgctxt "Description"
 #| msgid "Clanbomber Theme"
 msgctxt "Name"
 msgid "Older Theme"
-msgstr "Clanbomber Teması"
+msgstr "Eski Tema"
 
 #: kpat/themes/oldertheme.desktop:22
 msgctxt "Description"
 msgid "An older, unnamed KPat theme."
-msgstr ""
+msgstr "Eski, isimsiz KPat teması."
 
 #: kreversi/kreversi.desktop:3
 msgctxt "Name"
@@ -2775,12 +2767,11 @@ msgid "Reversi Board Game"
 msgstr "Reversi Tahta Oyunu"
 
 #: kreversi/sounds/kreversi.notifyrc:3
-#, fuzzy
 #| msgctxt "GenericName"
 #| msgid "Reversi Board Game"
 msgctxt "Comment"
 msgid "KReversi Game"
-msgstr "Reversi Tahta Oyunu"
+msgstr "Reversi Oyunu"
 
 #: kreversi/sounds/kreversi.notifyrc:366
 msgctxt "Name"
@@ -3010,7 +3001,7 @@ msgstr "Çocuklar için Resim Oyunu"
 #: ktuberling/pics/butterflies.desktop:2
 msgctxt "Name"
 msgid "Butterflies"
-msgstr ""
+msgstr "Kelebekler"
 
 #: ktuberling/pics/christmas.desktop:2
 msgctxt "Name"
@@ -3045,7 +3036,7 @@ msgstr "Robin Tux"
 #: ktuberling/pics/robot_workshop.desktop:2
 msgctxt "Name"
 msgid "Robot workshop"
-msgstr ""
+msgstr "Robot atölyesi"
 
 #: ktuberling/pics/train_valley.desktop:2
 msgctxt "Name"
@@ -3232,15 +3223,14 @@ msgstr "Basit Gelecek"
 #: libkdegames/carddecks/svg-nicu-white/index.desktop:2
 msgctxt "Name"
 msgid "Nicu White"
-msgstr ""
+msgstr "Nicu Beyazı"
 
 #: libkdegames/carddecks/svg-oxygen-air/index.desktop:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Oxygen"
 msgctxt "Name"
 msgid "Oxygen Air"
-msgstr "Oxygen"
+msgstr "Oxygen Air"
 
 #: libkdegames/carddecks/svg-penguins/index.desktop:2
 msgctxt "Name"
@@ -3481,12 +3471,11 @@ msgid "Jigsaw puzzle game"
 msgstr "Yapboz bulmaca oyunu"
 
 #: palapeli/src/palapeli.notifyrc:2
-#, fuzzy
 #| msgctxt "Name"
 #| msgid "Palapeli puzzles"
 msgctxt "Comment"
 msgid "Palapeli Jigsaw Puzzle"
-msgstr "Palapeli bulmacaları"
+msgstr "Palapeli Yapboz Bulmacası"
 
 #: palapeli/src/palapeli.notifyrc:27
 msgctxt "Name"
