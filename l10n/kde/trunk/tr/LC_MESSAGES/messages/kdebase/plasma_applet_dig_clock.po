@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_dig_clock\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-04 05:06+0200\n"
-"PO-Revision-Date: 2009-05-08 22:51+0300\n"
+"PO-Revision-Date: 2010-06-28 15:10+0300\n"
 "Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <yerellestirme@kde.org.tr>\n"
 "MIME-Version: 1.0\n"
@@ -52,13 +52,13 @@ msgstr "%1 %2"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:3 rc.cpp:99
 msgid "Font style:"
-msgstr "Yazı tipi biçimi:"
+msgstr "Yazı tipi biçemi:"
 
 #. i18n: file: clockConfig.ui:49
 #. i18n: ectx: property (toolTip), widget (QCheckBox, plainClockFontBold)
 #: rc.cpp:6 rc.cpp:102
 msgid "Check if you want the font in bold"
-msgstr "Yazı tiplerini kalın göstermek istiyorsanız işaretleyin"
+msgstr "Yazı tipini kalın göstermek istiyorsanız işaretleyin"
 
 #. i18n: file: clockConfig.ui:52
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, plainClockFontBold)
@@ -76,7 +76,7 @@ msgstr "&Kalın"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, plainClockFontItalic)
 #: rc.cpp:15 rc.cpp:111
 msgid "Check if you want the font in italic"
-msgstr "Yazı tiplerini yatık göstermek istiyorsanız işaretleyin"
+msgstr "Yazı tipini yatık göstermek istiyorsanız işaretleyin"
 
 #. i18n: file: clockConfig.ui:65
 #. i18n: ectx: property (whatsThis), widget (QCheckBox, plainClockFontItalic)
@@ -109,7 +109,7 @@ msgid ""
 "This is default. The clock will get its font color from the current desktop "
 "theme."
 msgstr ""
-"Bu öntanımlıdır. Saat yazı tipi rengini geçerli masaüstü temasından alır."
+"Bu öntanımlıdır. Saat, yazı tipi rengini geçerli masaüstü temasından alır."
 
 #. i18n: file: clockConfig.ui:116
 #. i18n: ectx: property (text), widget (QRadioButton, useThemeColor)

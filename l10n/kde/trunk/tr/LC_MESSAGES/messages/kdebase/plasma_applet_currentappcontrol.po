@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: plasma_applet_currentappcontrol\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-18 04:48+0200\n"
-"PO-Revision-Date: 2010-06-29 09:33+0300\n"
-"Last-Translator: Ozan Çağlayan <ozan@pardus.org.tr>\n"
+"PO-Revision-Date: 2010-06-28 15:03+0300\n"
+"Last-Translator: Serdar Soytetir <tulliana@gmail.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,5 +40,4 @@ msgstr "Genel"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: rc.cpp:3
 msgid "Always list the applications in a menu"
-msgstr "Uygulamaları daima bir menüde listele"
-
+msgstr "Uygulamaları menüde her zaman listele"

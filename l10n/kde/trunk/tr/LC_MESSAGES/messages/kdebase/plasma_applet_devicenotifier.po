@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_devicenotifier\n"
 "Report-Msgid-Bugs-To: http://bugs.kde.org\n"
 "POT-Creation-Date: 2010-06-21 04:54+0200\n"
-"PO-Revision-Date: 2010-05-09 00:37+0300\n"
+"PO-Revision-Date: 2010-06-28 15:08+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -22,10 +22,9 @@ msgstr ""
 
 #: deviceitem.cpp:285
 msgid "Click to eject this disc."
-msgstr ""
+msgstr "Diski çıkarmak için tıklayın"
 
 #: deviceitem.cpp:287
-#, fuzzy
 #| msgid "Click to safely remove this device from the computer."
 msgid "Click to safely remove this device."
 msgstr "Bu aygıtı güvenli bir şekilde kaldırmak için tıklayın."
@@ -34,7 +33,8 @@ msgstr "Bu aygıtı güvenli bir şekilde kaldırmak için tıklayın."
 msgid ""
 "It is currently <b>not safe</b> to remove this device: applications may be "
 "accessing it. Click the eject button to safely remove this device."
-msgstr ""
+msgstr "Bu aygıtın kaldırılması <br>güvenli değil</b>: uygulamalar diski "
+"kullanıyor olabilir. Bu aygıtı güvenli kaldırmak için çıkar düğmesine basın."
 
 #: deviceitem.cpp:291
 msgid "Click to access this device from other applications."
@@ -42,14 +42,16 @@ msgstr "Bu aygıta diğer uygulamalardan erişmek için tıklayın."
 
 #: deviceitem.cpp:293
 msgid "It is currently safe to remove this device."
-msgstr ""
+msgstr "Aygıtın kaldırılması güvenli."
 
 #: deviceitem.cpp:295
 msgid ""
 "It is currently <b>not safe</b> to remove this device: applications may be "
 "accessing other volumes on this device. Click the eject button on these "
 "other volumes to safely remove this device."
-msgstr ""
+msgstr "Bu aygıtın kaldırılması <br>güvenli değil</b>: uygulamalar aygıttaki  "
+"diğer bölümleri kullanıyor olabilir. Bu aygıtı güvenli kaldırmak için diğer "
+"bölümlerdeki çıkarma düğmesine basın."
 
 #: deviceitem.cpp:388
 #, kde-format
@@ -62,14 +64,14 @@ msgctxt ""
 "Accessing is a less technical word for Mounting; translation should be short "
 "and mean 'Currently mounting this device'"
 msgid "Accessing..."
-msgstr ""
+msgstr "Erişiliyor..."
 
 #: deviceitem.cpp:445
 msgctxt ""
 "Removing is a less technical word for Unmounting; translation shoud be short "
 "and mean 'Currently unmounting this device'"
 msgid "Removing..."
-msgstr ""
+msgstr "Kaldırılıyor..."
 
 #: devicenotifier.cpp:235
 #, kde-format
@@ -78,26 +80,24 @@ msgid_plural "%1 actions for this device"
 msgstr[0] "Bu aygıt için %1 eylem"
 
 #: devicenotifier.cpp:303
-#, fuzzy
 #| msgid "No devices plugged in."
 msgid "No devices available."
-msgstr "Takılı aygıt yok."
+msgstr "Kullanılır aygıt yok."
 
 #: devicenotifier.cpp:307
-#, fuzzy, kde-format
+#, kde-format
 #| msgid "Last plugged in device: %1"
 msgid "Most recent device: %1"
-msgstr "Son takılan aygıtlar : %1"
+msgstr "Son takılan aygıt: %1"
 
 #: devicenotifier.cpp:409
-#, fuzzy
 #| msgid "Display:"
 msgid "Display"
-msgstr "Göster:"
+msgstr "Göster"
 
 #: devicenotifier.cpp:412
 msgid "Automounting"
-msgstr ""
+msgstr "Otomatik bağlama"
 
 #: notifierdialog.cpp:68
 msgid "Show hidden devices"
@@ -110,14 +110,13 @@ msgid "Hide %1"
 msgstr "%1 ögesini gizle "
 
 #: notifierdialog.cpp:993
-#, fuzzy
 #| msgid "All devices"
 msgid "Available Devices"
-msgstr "Tüm aygıtlar"
+msgstr "Kullanılabilen Aygıtlar"
 
 #: notifierdialog.cpp:995
 msgid "No Devices Available"
-msgstr ""
+msgstr "Kullanılabilen Aygıt Yok"
 
 #. i18n: file: configurationpage.ui:17
 #. i18n: ectx: property (text), widget (QRadioButton, removableDevices)
@@ -137,21 +136,18 @@ msgstr "Sadece çıkarılabilir olmayan aygıtlar"
 msgid "All devices"
 msgstr "Tüm aygıtlar"
 
-#, fuzzy
 #~| msgid "Device is plugged in and can be accessed by applications."
 #~ msgid ""
 #~ "Device is plugged in and the volume can be accessed by applications. It "
 #~ "is not safe to remove this device."
 #~ msgstr "Aygıt takıldı ve uygulamalar tarafından erişilebilir durumda."
 
-#, fuzzy
 #~| msgid "Device is plugged in, but not mounted for access yet."
 #~ msgid ""
 #~ "Device is plugged in and the volume is not mounted for access yet. The "
 #~ "device can be safely removed."
 #~ msgstr "Aygıt takıldı ama erişilmek üzere bağlanmadı."
 
-#, fuzzy
 #~| msgid ""
 #~| "Could not unmount the device.\n"
 #~| "One or more files on this device are open within an application."
@@ -171,7 +167,6 @@ msgstr "Tüm aygıtlar"
 #~ "Bu aygıt üzerindeki bir ya da daha fazla dosya bir uygulama ile açılmış "
 #~ "durumda."
 
-#, fuzzy
 #~| msgid "Cannot mount the disc."
 #~ msgid "Could not mount device %1."
 #~ msgstr "Disk bağlanamadı."
