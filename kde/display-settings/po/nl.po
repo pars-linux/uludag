@@ -2,19 +2,19 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antoon Tolboom <atolboo@gmail.com>, 2009.
+# Antoon Tolboom <atolboo@gmail.com>, 2009, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:34+0300\n"
-"PO-Revision-Date: 06/12/09 21:31\n"
+"PO-Revision-Date: 2010-06-30 10:52+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
-"Language-Team: Nederlands <kde-i18n-nl@kde.org>\n"
+"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: KBabel 1.11.4\n"
+"X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: data/displaysettings.desktop.in.h:1 data/kcm_displaydevices.desktop.in.h:1
@@ -48,27 +48,26 @@ msgid "Display Configuration Tool"
 msgstr "Beeldbeheer gereedschap"
 
 #: src/displaysettings/about.py:23
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
-
-#: src/displaysettings/about.py:31
-msgid "Current Maintainer"
-msgstr "Huidige onderhouder"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/displaysettings/about.py:31
 msgid "Fatih Aşıcı"
 msgstr "Fatih Aşıcı"
 
-#: src/displaysettings/about.py:32
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+#: src/displaysettings/about.py:31
+msgid "Current Maintainer"
+msgstr "Huidige onderhouder"
 
 #: src/displaysettings/about.py:32
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/displaysettings/about.py:32
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: src/displaysettings/device.py:60
 msgid "Default Output"
@@ -102,10 +101,12 @@ msgstr ""
 #: src/displaysettings/deviceswidget.py:85
 #: src/displaysettings/screenswidget.py:77
 msgid ""
-"Cannot find a valid configuration. Display settings won't be enabled until you create a new configuration.\n"
+"Cannot find a valid configuration. Display settings won't be enabled until "
+"you create a new configuration.\n"
 "Would you like to create a safe configuration now?"
 msgstr ""
-"Kan geen geldige configuratie vinden. Scherminstellingen kan niet ingeschakeld worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
+"Kan geen geldige configuratie vinden. Scherminstellingen kan niet "
+"ingeschakeld worden tenzij er een nieuwe configuratie aanmaakt wordt.\n"
 "Nu een nieuwe configuratie aanmaken?"
 
 #: src/displaysettings/deviceswidget.py:94
@@ -116,12 +117,22 @@ msgid "Access denied."
 msgstr "Toegang geweigerd."
 
 #: src/displaysettings/deviceswidget.py:119
-msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. Do you want to use this driver?</p></qt>"
-msgstr "<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , uitgegeven door de fabrikant. Wilt u dit stuurprogramma gebruiken?</p></qt>"
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. Do you want to use this driver?</p></qt>"
+msgstr ""
+"<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , "
+"uitgegeven door de fabrikant. Wilt u dit stuurprogramma gebruiken?</p></qt>"
 
 #: src/displaysettings/deviceswidget.py:139
-msgid "<qt>To get better performance, you may want to use <b>%1</b> driver provided by hardware vendor. To use it, you must install <b>%2</b> package and choose <b>%1</b> from video card options.</qt>"
-msgstr "<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , uitgegeven door de fabrikant. Om het te gebruiken, installeer het <b>%2</b> pakket en selecteer <b>%1</b> bij de videokaart opties.</qt>"
+msgid ""
+"<qt>To get better performance, you may want to use <b>%1</b> driver provided "
+"by hardware vendor. To use it, you must install <b>%2</b> package and choose "
+"<b>%1</b> from video card options.</qt>"
+msgstr ""
+"<qt>Voor betere prestaties, gebruik het stuurprogramma <b>%1</b> , "
+"uitgegeven door de fabrikant. Om het te gebruiken, installeer het <b>%2</b> "
+"pakket en selecteer <b>%1</b> bij de videokaart opties.</qt>"
 
 #: src/displaysettings/deviceswidget.py:144
 msgid "Start Package Manager"
@@ -152,9 +163,11 @@ msgid "<qt><i>Click \"Choose...\" button to select a monitor</i></qt>"
 msgstr "<qt><i>Klik knop \"Kiezen..\" om de monitor te selecteren</i></qt>"
 
 #: src/displaysettings/screenswidget.py:175
-msgctxt "Shown in menus, lists, etc. %1 = localized output type, %2 = output name (LVDS, VGA, etc.)"
+msgctxt ""
+"Shown in menus, lists, etc. %1 = localized output type, %2 = output name "
+"(LVDS, VGA, etc.)"
 msgid "%1 (%2)"
-msgstr ""
+msgstr "%1 (%2)"
 
 #: src/displaysettings/screenswidget.py:193
 #: src/displaysettings/screenswidget.py:268
@@ -202,8 +215,15 @@ msgid "Output Configuration"
 msgstr "Uitganginstellingen"
 
 #: ui/ui_output.py:226
-msgid "If the frequency ranges that your monitor supports are not detected for some reason, you can specify them here. Be careful with these values, as an inaccurate value may damage your monitor, especially if it is an old model."
-msgstr "Indien het frequentiebereik van de monitor om een of andere reden niet gedetecteerd wordt, kunnen ze hier opgegeven worden. Wees voorzichtig met deze waarden, daar onjuist getallen je monitor kan beschadigen, en vooral bij oudere modellen."
+msgid ""
+"If the frequency ranges that your monitor supports are not detected for some "
+"reason, you can specify them here. Be careful with these values, as an "
+"inaccurate value may damage your monitor, especially if it is an old model."
+msgstr ""
+"Indien het frequentiebereik van de monitor om een of andere reden niet "
+"gedetecteerd wordt, kunnen ze hier opgegeven worden. Wees voorzichtig met "
+"deze waarden, daar onjuist getallen je monitor kan beschadigen, en vooral "
+"bij oudere modellen."
 
 #: ui/ui_output.py:227
 msgid "Specify Ranges"
@@ -254,8 +274,15 @@ msgid "Frequency Ranges"
 msgstr "Frequentiebereik"
 
 #: ui/ui_output.py:239
-msgid "If your monitor's dimensions are not correctly detected, fonts and other visual objects might seem larger or smaller than normal. In order to fix this problem, you can specify your monitor's dimensions here."
-msgstr "Indien de afmetingen van de monitor niet correct gedetecteerd zijn, lettertypen en ander zichtbare effecten groter of kleiner lijken dan normaal. Geef dan de afmetingen van de monitor hier op, om deze problemen op te lossen."
+msgid ""
+"If your monitor's dimensions are not correctly detected, fonts and other "
+"visual objects might seem larger or smaller than normal. In order to fix "
+"this problem, you can specify your monitor's dimensions here."
+msgstr ""
+"Indien de afmetingen van de monitor niet correct gedetecteerd zijn, "
+"lettertypen en ander zichtbare effecten groter of kleiner lijken dan "
+"normaal. Geef dan de afmetingen van de monitor hier op, om deze problemen op "
+"te lossen."
 
 #: ui/ui_output.py:240
 msgid "Specify Display Size"
@@ -368,3 +395,4 @@ msgstr "16 Bit"
 #: ui/ui_videocard.py:84
 msgid "24 Bit"
 msgstr "24 Bit"
+
