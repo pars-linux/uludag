@@ -244,7 +244,11 @@ def updateDB(path_source, path_stable, path_test, options):
         elif _type == 'stable':
             resolution = 'released'
 
-        distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+        try:
+            distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+        except ValueError:
+            distroName = _index.distribution.sourceName
+            distroRelease = _index.distribution.version
         print '  Distribution: %s-%s' % (distroName, distroRelease)
 
         # Add distribution to database
