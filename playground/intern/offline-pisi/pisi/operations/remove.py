@@ -84,11 +84,11 @@ in the respective order to satisfy dependencies:
         else:
             ctx.ui.info(_('Package %s is not installed. Cannot remove.') % x)
 
-def plan_remove(A):
+def plan_remove(A, installdb = pisi.db.installdb.InstallDB):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
-    installdb = pisi.db.installdb.InstallDB()
+    installdb = installdb()
 
     G_f = pgraph.PGraph(installdb)               # construct G_f
 
