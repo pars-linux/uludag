@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+#
 #    Copyright (C) 2010 Ozan Çağlayan <ozan@pardus.org.tr>
 #
 #    This program is free software; you can redistribute it and/or modify
