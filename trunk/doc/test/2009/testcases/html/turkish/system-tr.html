@@ -196,18 +196,18 @@ system-tr.pdf pisi testini gerçekleştiriniz.
 </LI><LI CLASS="li-itemize">programming-tr.pdf sympy testini gerçekleştiriniz.
 </LI><LI CLASS="li-itemize">programming-tr.pdf python-iptables testini gerçekleştiriniz.
 </LI></UL></LI><LI CLASS="li-enumerate">openssl paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim">  # openssl ciphers -v 
-  # openssl ciphers -v -tls1
-  # openssl speed
-  # openssl req  -new -newkey rsa:1024 -nodes -keyout mykey.pem -out myreq.pem
+</P><PRE CLASS="verbatim">   openssl ciphers -v 
+   openssl ciphers -v -tls1
+   openssl speed
+   openssl req  -new -newkey rsa:1024 -nodes -keyout mykey.pem -out myreq.pem
   // verify signature
-  # openssl req -in myreq.pem -noout -verify -key mykey.pem
+   openssl req -in myreq.pem -noout -verify -key mykey.pem
   // check info
-  # openssl req -in myreq.pem -noout -text
+   openssl req -in myreq.pem -noout -text
 
 </PRE></LI><LI CLASS="li-enumerate">usbutils paketi kurulumu sonrası:<P>Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"># usb-devices
-# lsusb
+</P><PRE CLASS="verbatim"> usb-devices
+ lsusb
 </PRE></LI><LI CLASS="li-enumerate">udev paketi kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın ve düzgün bir şekilde açıldığını gözlemleyin. </P><P>Ses, kamera, mount, görüntü gibi işlemlerin düzgün çalıştığını gözlemleyin.
 </P></LI><LI CLASS="li-enumerate">Aşağıda bulunan paketler kurulum testine tabidir.
 <PRE CLASS="verbatim">e2fsprogs 

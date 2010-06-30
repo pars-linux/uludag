@@ -353,14 +353,14 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin:
 \begin{verbatim}
-  # openssl ciphers -v 
-  # openssl ciphers -v -tls1
-  # openssl speed
-  # openssl req  -new -newkey rsa:1024 -nodes -keyout mykey.pem -out myreq.pem
+   openssl ciphers -v 
+   openssl ciphers -v -tls1
+   openssl speed
+   openssl req  -new -newkey rsa:1024 -nodes -keyout mykey.pem -out myreq.pem
   // verify signature
-  # openssl req -in myreq.pem -noout -verify -key mykey.pem
+   openssl req -in myreq.pem -noout -verify -key mykey.pem
   // check info
-  # openssl req -in myreq.pem -noout -text
+   openssl req -in myreq.pem -noout -text
 
 \end{verbatim}
 
@@ -369,8 +369,8 @@ Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözleml
 
 Aşağıda bulunan komutların düzgün çalıştığını gözlemleyin:
 \begin{verbatim}
-# usb-devices
-# lsusb
+ usb-devices
+ lsusb
 \end{verbatim}
 
 

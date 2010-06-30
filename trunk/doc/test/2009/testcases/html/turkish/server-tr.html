@@ -52,16 +52,6 @@ TD P{margin:0px;}
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc1">1</A>  Auth alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 freeradius paketi kurulumu sonrası:<P>Servis yöneticisinden freeradius servisini başlatın.</P><P>Serisin başlatılmış olduğunu gözlemleyin:
 </P><PRE CLASS="verbatim"> service freeradius status
-</PRE></LI><LI CLASS="li-enumerate">mit-kerberos paketi kurulumu sonrası:
-<PRE CLASS="verbatim">sudo pisi it -c system.devel
-wget ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.16.00.tar.gz
-tar xf tcsh-6.16.00.tar.gz
-cd tcsh-6.16.00 
-./configure --prefix=/usr
-sudo make
-sudo make install
-cd ..
-
 </PRE></LI></OL><!--TOC section Proxy alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc2">2</A>  Proxy alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
 squid paketi kurulumu sonrası:<P>Servis yöneticisinden squid başlatın, aşağıdaki komut ile başlatıldığına emin olun:
@@ -131,12 +121,12 @@ virtuoso-utils
  postgresql-server
  postgresql-odbc
 </PRE><P>Servis yöneticisinden postgreql sunucusunu başlatın. Aşağıdaki komut ile sunucunun başlatılmış olduğunu gözlemleyin.
-</P><PRE CLASS="verbatim"> # service postgresql-server status
+</P><PRE CLASS="verbatim">  service postgresql-server status
 </PRE><P>Süreçlerin postgres kullanıcısı ile çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"># ps aux|grep postgres 
+</P><PRE CLASS="verbatim"> ps aux|grep postgres 
 </PRE><P>Aşağıdaki komutu kullanarak sql komut satırına geçin ve ikinci satırdaki sql komutunu çalıştırın:
-</P><PRE CLASS="verbatim"># psql -h localhost -d postgres -U postgres
-# select * from information_schema.tables ;
+</P><PRE CLASS="verbatim"> psql -h localhost -d postgres -U postgres
+ select * from information_schema.tables ;
 </PRE><P>İşlemlerin sorunsuz olarak gerçekleştiğini gözlemleyin.</P></LI><LI CLASS="li-enumerate">firebird-superserver ve firebird-client paketleri kurulumu sonrası:<P>Bilgisayarınızı yeniden başlatın,</P><P>Servis yöneticisinden firebird-superserver’ı başlatın.</P><P>Aşağıda bulunan komutları sırası ile çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin:
 </P><PRE CLASS="verbatim"># cd /opt/firebird/examples/empbuild
 # isql (2008 için)
@@ -147,25 +137,25 @@ SQL&gt; show tables;
 SQL&gt; select *from COUNTRY
 </PRE></LI><LI CLASS="li-enumerate">mysql-client, mysql-server, mysql-lib paketleri kurulumu sonrası:
 <UL CLASS="itemize"><LI CLASS="li-itemize">
-Servise yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullanarak başlatılmış olduğundan emin olun:<PRE CLASS="verbatim"> service list
+Servis yöneticisinden Mysql’i başlatın ve aşağıda bulunan komutu kullanarak başlatılmış olduğundan emin olun:<PRE CLASS="verbatim"> service list
 </PRE></LI><LI CLASS="li-itemize">Aşağıda bulunan komutları çalıştırın ve sorunsuz bir şekilde çalıştıklarını gözlemleyin.
 <PRE CLASS="verbatim"> sudo mysql 
  show databases;
  use mysql;
  show tables;
 </PRE></LI></UL></LI><LI CLASS="li-enumerate">mysql-man-pages paketi kurulumu sonrası:<P>Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
-</P><PRE CLASS="verbatim"># man myisampack 
+</P><PRE CLASS="verbatim">man myisampack 
 </PRE></LI></OL><!--TOC section Diğerleri-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Diğerleri</H2><!--SEC END --><UL CLASS="itemize"><LI CLASS="li-itemize">ntp-server paketi kurulumu sonrası:<P>Servis yöneticisinden ntp deamon’u başlatın, aşağıda bulunan komut ile servisin başlatılmış olduğunu gözlemleyin.
 </P><PRE CLASS="verbatim"> service ntp_server status
 </PRE></LI><LI CLASS="li-itemize">dhcp paketi kurulumu sonrası:<P>Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
-</P><PRE CLASS="verbatim"># ping 4.2.2.1
+</P><PRE CLASS="verbatim"> ping 4.2.2.1
 </PRE></LI><LI CLASS="li-itemize">bind paketleri kurulumu sonrası:
 <PRE CLASS="verbatim"># dig www.google.com
 </PRE>Yukarıda bulunan komutun düzgün bir şekilde dns sunucuları listelediğini gözlemleyin.</LI><LI CLASS="li-itemize">samba paketi kurulumu sonrası:<P>Servis yöneticisinden samba servisini başlatın.</P><P>Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
-</P><PRE CLASS="verbatim"> # service samba status 
+</P><PRE CLASS="verbatim">  service samba status 
 </PRE><P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin:
-</P><PRE CLASS="verbatim"># sudo testparm /etc/samba/smb.conf
+</P><PRE CLASS="verbatim"> sudo testparm /etc/samba/smb.conf
 </PRE></LI></UL><!--CUT END -->
 <!--HTMLFOOT-->
 <!--ENDHTML-->
