@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:17+0300\n"
-"PO-Revision-Date: 2010-06-11 16:34+0200\n"
+"PO-Revision-Date: 2010-06-30 11:24+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,18 +27,16 @@ msgid "An application for managing system services."
 msgstr "Een toepassing voor het beheren van systeemdiensten."
 
 #: src/servicemanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
+
+#: src/servicemanager/about.py:32
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/servicemanager/about.py:32
 msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
-
-#: src/servicemanager/about.py:32
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
 
 #: src/servicemanager/about.py:33
 msgid "Bahadır Kandemir"
@@ -49,14 +47,14 @@ msgid "COMAR Author"
 msgstr "COMAR-auteur"
 
 #: src/servicemanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/servicemanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/servicemanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: ui/ui_item.py:103 ui/ui_main.py:56
 msgid "Form"
@@ -113,3 +111,4 @@ msgstr "Alle diensten"
 #: ui/ui_main.py:63
 msgid "Getting service info... %p%"
 msgstr "Dienstinformatie wordt opgehaald... %p%"
+
