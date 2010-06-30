@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>ibus</Name>
+        <Summary xml:lang="tr">özet yaz</Summary>
+        <Description xml:lang="tr">tanımla uzun</Description>
+    </Source>
+</PISI>

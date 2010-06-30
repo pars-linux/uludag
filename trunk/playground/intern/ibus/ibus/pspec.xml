@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+<PISI>
+    <Source>
+        <Name>ibus</Name>
+        <Homepage>http://code.google.com/p/ibus/</Homepage>
+        <Packager>
+            <Name>Caner Başaran</Name>
+            <Email>basaran.caner@gmail.com</Email>
+        </Packager>
+        <License>LGPLv2.1</License>
+        <Icon>ibus</Icon>
+        <IsA>app:gui</IsA>
+        <Summary>ozet yaz</Summary>
+        <Description>aciklama yaz</Description>
+        <Archive sha1sum="f70059dcdc0399479d9aa16dd8bc3d6fb60f53ee" type="targz">http://ibus.googlecode.com/files/ibus-1.3.5.tar.gz</Archive>
+        <BuildDependencies>
+            <Dependency versionFrom="2.4">cmake</Dependency>
+            <Dependency versionFrom="2.5">python</Dependency>
+            <Dependency versionFrom="0.74">dbus-glib</Dependency>
+            <Dependency versionFrom="0.83">dbus-python</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>intltool</Dependency>
+            <Dependency>libtool</Dependency>
+            <Dependency>notify-python</Dependency>
+            <Dependency>iso-codes</Dependency>
+            <Dependency>gtk-doc</Dependency>
+            <Dependency>gettext</Dependency>
+            <Dependency>cvs</Dependency>
+        </BuildDependencies>
+        <Patches>
+            <Patch level="1">hede.patch</Patch>
+        </Patches>
+        <!--
+        -->
+    </Source>
+
+    <Package>
+        <Name>ibus</Name>
+        <!--
+        <RuntimeDependencies>
+            <Dependency versionFrom="">Dep1</Dependency>
+            <Dependency versionFrom="">Dep2</Dependency>
+            <Dependency versionFrom="">Dep3</Dependency>
+            <Dependency versionFrom="">Dep4</Dependency>
+        </RuntimeDependencies>
+        -->
+        <Files>
+            <Path fileType="all">/</Path>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="config">/etc</Path>
+            <Path fileType="library">/usr/lib</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="man">/usr/share/man</Path>
+            <Path fileType="info">/usr/share/info</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+        <!--
+        <AdditionalFiles>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/ibus.desktop">ibus.desktop</AdditionalFile>
+            <AdditionalFile owner="root" permission="0644" target="/usr/share/pixmaps/ibus.png">ibus.png</AdditionalFile>
+        </AdditionalFiles>
+        -->
+        <!--
+       <Provides>
+             <COMAR script="package.py">System.Package</COMAR>
+             <COMAR script="service.py">System.Service</COMAR>
+        </Provides>
+        -->
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2010-06-30</Date>
+            <Version>1.3.5</Version>
+            <Comment>First release</Comment>
+            <Name>Caner Başaran</Name>
+            <Email>basaran.caner@gmail.com</Email>
+        </Update>
+    </History>
+</PISI>
