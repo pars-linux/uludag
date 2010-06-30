@@ -9,10 +9,11 @@ from django.forms.util import ErrorList
 from noan.repository.models import Distribution
 
 def fill_dist_name():
-    dists = Distribution.objects.all().distinct()
-    name_li = []
-    for distribution in dists:
-        name_li.append((distribution.name, distribution.name))
+    dist_li = []
+    dists = Distribution.objects.all().values('name')
+    for dist in dists:
+        if dist['name'] not in dist_li: dist_li.append(dist['name'])
+    name_li = map(lambda x: (x,x), dist_li)
 
     return name_li
 
@@ -21,7 +22,7 @@ def fill_dist_release():
     release_li = []
     for distribution in dists:
         release_li.append((distribution.release,  distribution.release))
-    
+
     return release_li
 
 class SearchForm(forms.Form):
