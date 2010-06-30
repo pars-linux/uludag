@@ -67,3 +67,12 @@ class Kernel(object):
         """Returns true if the given module is loaded."""
         return os.path.exists(os.path.join("/sys/module", name))
 
+    def get_total_memory(self):
+        """Returns the amount of RAM installed in the maching in MB."""
+        mem = 0.0
+        with open("/proc/meminfo", "r") as _file:
+            for line in _file.readlines():
+                if line.startswith("MemTotal:"):
+                    mem = int((int(line.split()[1])/1024.0))
+                    break
+        return mem
