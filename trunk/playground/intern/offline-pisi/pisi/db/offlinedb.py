@@ -24,17 +24,20 @@ import piksemel
 #PISI
 import pisi.metadata
 import pisi.dependency
+import pisi.db.lazydb as lazydb
 
-class OfflineDB():
+class OfflineDB(lazydb.LazyDB):
 
     def __init__(self):
-        self.pdb = pisi.db.packagedb.PackageDB()
+        lazydb.LazyDB.__init__(self, cacheable=False)
 
     def setIndex(self, filename):
         doc = piksemel.parse(filename)
         self.initialize(doc)
 
     def initialize(self, doc):
+        self.pdb = pisi.db.packagedb.PackageDB()
+        
         self.installed_db = self.__generate_installed_pkgs(doc)
         self.rev_deps_db = self.__generate_revdeps(doc)
 

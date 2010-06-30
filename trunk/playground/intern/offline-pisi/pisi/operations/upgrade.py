@@ -173,7 +173,7 @@ def upgrade(A=[], repo=None):
         install_op = atomicoperations.Install(path, ignore_file_conflicts = True)
         install_op.install(True)
 
-def plan_upgrade(A):
+def plan_upgrade(A, installdb = pisi.db.installdb.InstallDB):
     # try to construct a pisi graph of packages to
     # install / reinstall
 
@@ -191,9 +191,9 @@ def plan_upgrade(A):
     for x in A:
         G_f.add_package(x)
     B = A
-
-    installdb = pisi.db.installdb.InstallDB()
     
+    installdb = installdb()
+
     while len(B) > 0:
         Bp = set()
         for x in B:
@@ -237,8 +237,8 @@ def plan_upgrade(A):
     order.reverse()
     return G_f, order
 
-def upgrade_base(A = set()):
-    installdb = pisi.db.installdb.InstallDB()
+def upgrade_base(A = set(), installdb = pisi.db.installdb.InstallDB):
+    installdb = installdb()
     componentdb = pisi.db.componentdb.ComponentDB()
     ignore_build = ctx.get_option('ignore_build_no')
     if not ctx.config.values.general.ignore_safety and not ctx.get_option('ignore_safety'):
@@ -261,9 +261,9 @@ def upgrade_base(A = set()):
             ctx.ui.warning(_('Safety switch: the component system.base cannot be found'))
     return set()
 
-def is_upgradable(name, ignore_build = False):
+def is_upgradable(name, ignore_build = False, installdb = pisi.db.installdb.InstallDB):
 
-    installdb = pisi.db.installdb.InstallDB()
+    installdb = installdb()
     packagedb = pisi.db.packagedb.PackageDB()
 
     if not installdb.has_package(name):

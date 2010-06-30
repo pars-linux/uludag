@@ -215,11 +215,11 @@ def list_newest(repo=None, since=None):
     """
     return pisi.db.packagedb.PackageDB().list_newest(repo, since)
 
-def list_upgradable():
+def list_upgradable(installdb=pisi.db.installdb.InstallDB):
     """
     Return a list of packages that are upgraded in the repository -> list_of_strings
     """
-    installdb = pisi.db.installdb.InstallDB()
+    installdb = installdb()
     is_upgradable = lambda pkg: pisi.operations.upgrade.is_upgradable(pkg, ctx.get_option('ignore_build_no'))
 
     upgradable = filter(is_upgradable, installdb.list_installed())
@@ -248,26 +248,26 @@ def get_install_order(packages):
     i_graph, order = install_order(packages)
     return order
 
-def get_remove_order(packages):
+def get_remove_order(packages, installdb=pisi.db.installdb.InstallDB):
     """
     Return a list of packages in the remove order -> list_of_strings
     @param packages: list of package names -> list_of_strings
     """
     remove_order = pisi.operations.remove.plan_remove
-    i_graph, order = remove_order(packages)
+    i_graph, order = remove_order(packages, installdb)
     return order
 
-def get_upgrade_order(packages):
+def get_upgrade_order(packages, installdb=pisi.db.installdb.InstallDB):
     """
     Return a list of packages in the upgrade order with extra needed
     dependencies -> list_of_strings
     @param packages: list of package names -> list_of_strings
     """
     upgrade_order = pisi.operations.upgrade.plan_upgrade
-    i_graph, order = upgrade_order(packages)
+    i_graph, order = upgrade_order(packages, installdb)
     return order
 
-def get_base_upgrade_order(packages):
+def get_base_upgrade_order(packages, installdb=pisi.db.installdb.InstallDB):
     """
     Return a list of packages of the system.base component that needs to be upgraded
     or installed in install order -> list_of_strings
@@ -275,7 +275,7 @@ def get_base_upgrade_order(packages):
     @param packages: list of package names -> list_of_strings
     """
     upgrade_order = pisi.operations.upgrade.upgrade_base
-    order = upgrade_order(packages)
+    order = upgrade_order(packages, installdb)
     return list(order)
 
 def get_conflicts(packages):
