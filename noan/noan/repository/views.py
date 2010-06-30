@@ -118,6 +118,7 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     distro = binary.package.source.distribution.name.lower()
     release = binary.package.source.distribution.release
     suffix = "-".join([distro, release])
+    if binary.resolution == 'pending': suffix += '-test'
     path = os.path.join(base_path, suffix)
     pisi_package = binary.get_filename()
     pisi_url = os.path.join(path, pisi_package)
