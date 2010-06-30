@@ -47,6 +47,10 @@ class CPU(object):
         # Definition for each flag can be found in "arch/x86/include/asm/cpufeature.h"
         self.flags = self.flags.split()
 
+    def has_flag(self, flag):
+        """Returns true if the given flag is supported by the CPU."""
+        return flag in self.flags
+
     def supports_pae(self):
         """Returns true if the processor supports PAE (Physical Address Extension)."""
         return "pae" in self.flags
