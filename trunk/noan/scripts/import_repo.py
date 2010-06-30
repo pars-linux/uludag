@@ -124,7 +124,11 @@ def updateDB(path_source, path_stable, path_test, options):
         return user
 
     def parseSourceIndex(_index):
-        distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+        try:
+            distroName, distroRelease = _index.distribution.sourceName.split('-', 1)
+        except ValueError:
+            distroName = _index.distribution.sourceName
+            distroRelease = _index.distribution.version
         print '  Distribution: %s-%s' % (distroName, distroRelease)
 
         # Add distribution to database
@@ -140,7 +144,8 @@ def updateDB(path_source, path_stable, path_test, options):
             
             # Create the source package information
             part_of = pspec.source.partOf
-            source_info = SourcePackageDetail.objects.create(part_of=part_of)
+            source_uri = pspec.source.sourceURI
+            source_info = SourcePackageDetail.objects.create(part_of=part_of, source_uri=source_uri)
             for is_a in pspec.source.isA:
                 print '     IsA: %s' % is_a
                 source_info.isa_set.create(name=is_a)
