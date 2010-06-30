@@ -304,7 +304,30 @@ def createProfile(nm) :
 
         functions[_devices[deviceNo].type](nm , _devices[deviceNo])
 
-#def stateProfile(nm,command) :
+def stateProfile(nm ,command) :
+    try :
+        profile = sys.argv[2]
+    except :
+        printUsage()
+        return 1
+
+    def stateProfileDown(nm ,profile) :
+        for active_conn in nm.active_connections :
+            if active_conn.connection.settings.id == profile :
+                active_conn.devices[0].disconnect()
+
+    def stateProfileUp(nm, profile) :
+        for conn in nm.connections :
+            if conn.settings.id == profile :
+                for device in nm.devices :
+                    if device.hwaddress == conn.settings.mac_address :
+                        nm.activate_connection(conn,device)
+
+
+    if command == "down" :
+        stateProfileDown(nm ,profile)
+    elif command == "up" :
+        stateProfileUp(nm ,profile)
 
 
 
