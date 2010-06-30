@@ -27,18 +27,18 @@ Serisin başlatılmış olduğunu gözlemleyin:
 \end{verbatim}
 
 
-\item mit-kerberos paketi kurulumu sonrası:
-\begin{verbatim}
-sudo pisi it -c system.devel
-wget ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.16.00.tar.gz
-tar xf tcsh-6.16.00.tar.gz
-cd tcsh-6.16.00 
-./configure --prefix=/usr
-sudo make
-sudo make install
-cd ..
-
-\end{verbatim}
+% \item mit-kerberos paketi kurulumu sonrası:
+% \begin{verbatim}
+% sudo pisi it -c system.devel
+% wget ftp://ftp.funet.fi/pub/unix/shells/tcsh/tcsh-6.16.00.tar.gz
+% tar xf tcsh-6.16.00.tar.gz
+% cd tcsh-6.16.00 
+% ./configure --prefix=/usr
+% sudo make
+% sudo make install
+% cd ..
+% 
+% \end{verbatim}
 \end{enumerate}
 
 \section{Proxy alt bileşeni}
@@ -202,18 +202,18 @@ ipython paketini kurun ve aşağıda bulunan komutların düzgün çalıştığ�
 
 Servis yöneticisinden postgreql sunucusunu başlatın. Aşağıdaki komut ile sunucunun başlatılmış olduğunu gözlemleyin.
 \begin{verbatim}
- # service postgresql-server status
+  service postgresql-server status
 \end{verbatim}
 
 Süreçlerin postgres kullanıcısı ile çalıştığını gözlemleyin:
 \begin{verbatim}
-# ps aux|grep postgres 
+ ps aux|grep postgres 
 \end{verbatim}
 
 Aşağıdaki komutu kullanarak sql komut satırına geçin ve ikinci satırdaki sql komutunu çalıştırın:
 \begin{verbatim}
-# psql -h localhost -d postgres -U postgres
-# select * from information_schema.tables ;
+ psql -h localhost -d postgres -U postgres
+ select * from information_schema.tables ;
 \end{verbatim}
 
 İşlemlerin sorunsuz olarak gerçekleştiğini gözlemleyin.
@@ -237,7 +237,7 @@ SQL> select *from COUNTRY
 
  \item mysql-client, mysql-server, mysql-lib paketleri kurulumu sonrası:
 \begin{itemize}
- \item Servise yöneticisinden Mysql'i başlatın ve  aşağıda bulunan komutu kullanarak başlatılmış olduğundan emin olun:
+ \item Servis yöneticisinden Mysql'i başlatın ve  aşağıda bulunan komutu kullanarak başlatılmış olduğundan emin olun:
 
 \begin{verbatim}
  service list
@@ -257,7 +257,7 @@ SQL> select *from COUNTRY
 
 Aşağıda bulunan komutun man sayfasını düzgün açtığından emin olun.
 \begin{verbatim}
-# man myisampack 
+man myisampack 
 \end{verbatim}
 
 \end{enumerate}
@@ -279,7 +279,7 @@ Servis yöneticisinden ntp deamon'u başlatın, aşağıda bulunan komut ile ser
 
 Ağ yöneticisinden dhcp kullanarak bir ağa bağlanmayı deneyin. Daha sonra konsoldan aşağıda bulunan komutu çalıştırın ve ağa bağlı olduğununuzu gözlemleyin.
 \begin{verbatim}
-# ping 4.2.2.1
+ ping 4.2.2.1
 \end{verbatim}
 
 \item bind paketleri kurulumu sonrası:
@@ -294,12 +294,12 @@ Servis yöneticisinden samba servisini başlatın.
 
 Aşağıda bulunan komut ile servisin başlatıldığını gözlemleyin.
 \begin{verbatim}
- # service samba status 
+  service samba status 
 \end{verbatim}
 
  Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin:
 \begin{verbatim}
-# sudo testparm /etc/samba/smb.conf
+ sudo testparm /etc/samba/smb.conf
 \end{verbatim}
 
 \end{itemize}

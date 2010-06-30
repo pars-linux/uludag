@@ -212,10 +212,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir:
  perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE></LI><LI CLASS="li-enumerate">perl-libwww paketi kurulumu sonrası:<P>Aşağıda bulunan dosyayı indirin ve açın.
 </P><PRE CLASS="verbatim">wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/libwww-perl.tar.gz
-perl "-MExtUtils::Command::MM" "-e" "test_harness(0,'blib/lib', 'blib/arch')" t/*.t
 </PRE><P>Konsoldan;
-</P><PRE CLASS="verbatim"># cd libwww-perl
-# perl t/TEST
+</P><PRE CLASS="verbatim"> cd libwww-perl
+ perl t/TEST
 </PRE><P>Komutlarını çalıştırın ve testlerden "ok" sonuçlarının döndüğünü gözlemleyin.</P></LI><LI CLASS="li-enumerate">perl-Yaml paketi kurulumu sonrası:<P>Aşağıda bulunan komutu çalıştırın ve sorunsuz bir şekilde çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim"> wget http://cekirdek.pardus.org.tr/~semen/dist/test/programming/language/perl/perl-yaml-test.pm
  perl perl-yaml-test.pm
