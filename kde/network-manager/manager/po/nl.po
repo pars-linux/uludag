@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:22+0300\n"
-"PO-Revision-Date: 2010-06-11 16:27+0200\n"
+"PO-Revision-Date: 2010-06-30 11:01+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "An application for managing network connections."
 msgstr "Een toepassing voor het beheren van de netwerkverbindingen."
 
 #: src/networkmanager/about.py:24
-#, fuzzy
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
-msgstr "(c) 2009 TUBITAK/UEKAE"
+msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/networkmanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -40,23 +39,22 @@ msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
 #: src/networkmanager/about.py:33
-msgid "Developer"
-msgstr "Ontwikkelaar"
+msgid "Gökmen Göksel"
+msgstr "Gökmen Göksel"
 
 #: src/networkmanager/about.py:33
-#, fuzzy
-msgid "Gökmen Göksel"
-msgstr "Gökmen GÖKSEL"
-
-#: src/networkmanager/about.py:34
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgid "Developer"
+msgstr "Ontwikkelaar"
 
 #: src/networkmanager/about.py:34
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/networkmanager/about.py:34
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: src/networkmanager/base.py:195
 msgid "Available Profiles"
@@ -286,3 +284,4 @@ msgstr "PIN voor deze verbinding onthouden"
 #: ui/ui_security.py:35
 msgid "Security Settings"
 msgstr "Beveiligingsinstellingen"
+
