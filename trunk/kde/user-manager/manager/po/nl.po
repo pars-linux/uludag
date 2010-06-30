@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: nl\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 10:06+0300\n"
-"PO-Revision-Date: 2010-06-11 16:20+0200\n"
+"PO-Revision-Date: 2010-06-30 11:04+0200\n"
 "Last-Translator: Antoon Tolboom <atolboo@gmail.com>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
 "MIME-Version: 1.0\n"
@@ -27,9 +27,8 @@ msgid "An application for managing user accounts."
 msgstr "Een toepassing voor het beheren van gebruikersaccounten."
 
 #: src/usermanager/about.py:24
-#, fuzzy
 msgid "(c) 2006-2010 TUBITAK/UEKAE"
-msgstr "(c) 2006-2009 TUBITAK/UEKAE"
+msgstr "(c) 2006-2010 TUBITAK/UEKAE"
 
 #: src/usermanager/about.py:32
 msgid "Bahadır Kandemir"
@@ -40,14 +39,14 @@ msgid "Current Maintainer"
 msgstr "Huidige onderhouder"
 
 #: src/usermanager/about.py:33
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-
-#: src/usermanager/about.py:33
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "Antoon Tolboom"
+
+#: src/usermanager/about.py:33
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "atolboo@gmail.com"
 
 #: src/usermanager/edit.py:258
 msgid "There has to be at least one group selected."
@@ -124,7 +123,8 @@ msgstr "Toegang geweigerd."
 
 #: src/usermanager/main.py:320
 msgid "Cannot delete <b>%1</b>. The user is currently logged in."
-msgstr "Kan <b>%1</b> niet verwijderen. De gebruiker is op dit moment aangemeld."
+msgstr ""
+"Kan <b>%1</b> niet verwijderen. De gebruiker is op dit moment aangemeld."
 
 #: src/usermanager/main.py:324
 msgid "Do you want to delete user '%1' (%2)?"
