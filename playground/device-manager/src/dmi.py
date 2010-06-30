@@ -30,35 +30,36 @@ class DMI(object):
         self.__sysfs_dmi_path = "/sys/class/dmi/id"
 
         # Provided DMI informations
-        self.bios_date = ""
-        self.bios_vendor = ""
-        self.bios_version = ""
-        self.board_asset_tag = ""
-        self.board_name = ""
-        self.board_serial = ""
-        self.board_vendor = ""
-        self.board_version = ""
-        self.chassis_asset_tag = ""
-        self.chassis_serial = ""
-        self.chassis_type = ""
-        self.chassis_vendor = ""
-        self.chassis_version = ""
-        self.modalias = ""
-        self.product_name = ""
-        self.product_serial = ""
-        self.product_uuid = ""
-        self.product_version = ""
-        self.sys_vendor = ""
+        self.__props = [
+                    "bios_date",
+                    "bios_vendor",
+                    "bios_version",
+                    "board_asset_tag",
+                    "board_name",
+                    "board_serial",
+                    "board_vendor",
+                    "board_version",
+                    "chassis_asset_tag",
+                    "chassis_serial",
+                    "chassis_type",
+                    "chassis_vendor",
+                    "chassis_version",
+                    "modalias",
+                    "product_name",
+                    "product_serial",
+                    "product_uuid",
+                    "product_version",
+                    "sys_vendor",
+                ]
 
         # Parse DMI data
         self.__parse_dmi_data()
 
     def __parse_dmi_data(self):
         """Traverse /sys/class/dmi to provide BIOS DMI informations."""
-        dmi_dict = {}
-        for _file in [_f for _f in os.listdir(self.__sysfs_dmi_path) if not \
-                _f.startswith(("uevent", "power", "subsystem"))]:
-            dmi_dict[_file] = open(os.path.join(self.__sysfs_dmi_path,
-                                                _file), "r").read().strip()
-
-        self.__dict__.update(dmi_dict)
+        for key in self.__props:
+            try:
+                self.__dict__[key] = open(os.path.join(self.__sysfs_dmi_path,
+                    key), "r").read().strip()
+            except IOError:
+                self.__dict__[key] = ""
