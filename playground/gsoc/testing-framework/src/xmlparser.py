@@ -1,14 +1,16 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import sys
 import os
+import sys
 import string
 
 from pisi.api import list_installed
 from pisi.api import list_available
 
 from testcases import testinstall
+
+from clcolorize import colorize
 
 try:
     from lxml import etree
@@ -23,9 +25,9 @@ class XMLParser:
         try:
             self.tree = etree.parse(self.xmlfile)
         except etree.XMLSyntaxError, detail:
-            print '\n[Error]: The testcase file cannot be executed due to an invalid syntax.'
-            print '[Detail]:', detail
-            print '[Solution]: Request the testcase author for a new file or fix it manually.'
+            print colorize('Error: The testcase file cannot be executed due to an invalid syntax.', 'red')
+            print 'Detail: {0}'.format(detail)
+            print colorize('Solution: Request the testcase author for a new file or fix it manually.', 'green')
             sys.exit(1)
         self.rootelement = self.tree.getroot()
         self.custompackage = custompackage
@@ -50,11 +52,11 @@ class XMLParser:
                 customCounter += 1
         # Run each testcase
         while counter < totalTestcases:
-            print "[ Running test '{0}' of '{1}' ]".format(counter+1, totalTestcases)
+            print colorize("[ Running test '{0}' of '{1}' ]", 'yellow').format(counter+1, totalTestcases)
             element = self.rootelement[counter]
-            elementtext = element.get('test')
+            elementText = element.get('test')
             # Based on the type of testcase, call the appropriate one
-            print "Type of test: '{0}'".format(elementtext)
+            print "Type of test: '{0}'".format(elementText)
             # If no package tag is there, move on to the next testcase
             packageList = []
             for packageTag in element.getiterator('package'):
@@ -63,7 +65,11 @@ class XMLParser:
                 print 'No package specified for testing. Skipping test ...\n'
                 counter += 1
                 continue
-            dict(install=self.test_install, gui=self.test_gui)[elementtext](element, packageList)        # one line hack to call the appropriate method!
+            # one line hack to call the appropriate method!        
+            dict(install=self.test_install,
+                 gui=self.test_gui,
+                 shell=self.test_shell,
+                 automated=self.test_automated)[elementText](element, packageList)   
             counter += 1
     
     def test_install(self, element, packagelist):
@@ -73,6 +79,17 @@ class XMLParser:
     
     def test_gui(self, element, packagelist):
         """Call the module for testcase type GUI."""
+        installedPackages = self.installed_packages()
+        print packagelist
+        sys.exit()
+        
+    def test_shell(self, element, packagelist):
+        """Call the module for testcase type SHELL."""
+        print 'SHELL'
+        
+    def test_automated(self, element, packagelist):
+        """Call the module for testcase type AUTOMATED."""
+        print 'AUTOMATED'
   
 
     def output_package_list(self, outfile):
@@ -85,17 +102,19 @@ class XMLParser:
                 if choice in ('y', 'Y', 'yes', 'YES'):
                     break
                 else:
-                    sys.exit('[Aborting]')
+                    print colorize('Aborting', 'red')
+                    sys.exit(1)
         try:
             writeFile = open(outputFile, 'w')
             output = string.join(packageList, '\n')
             writeFile.write(output)
             writeFile.close()
         except IOError:
-            print '[Error]: An error occurred while trying to write the output package file.'
-            print '[Solution]: Please ensure that the output file name and path is valid.'
+            print colorize('Error: An error occurred while trying to write the output package file.', 'red')
+            print colorize('Solution: Please ensure that the output file name and path is valid.', 'green')
             sys.exit(1)
-        sys.exit("The list of packages has been written to: '{0}'".format(outputFile))
+        print colorize("The list of packages has been written to: '{0}'", 'green').format(outputFile)
+        sys.exit(1)
     
     def print_package_list(self):
         """Print the list of packages in the XML file."""
