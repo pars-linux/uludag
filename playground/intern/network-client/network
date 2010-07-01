@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 #
-# Network configuration tool
-# Copyright (C) 2006-2009, TUBITAK/UEKAE
+# Network configuration tool for NetworkManager
+# Copyright (C) 2010 TUBITAK/UEKAE
 #
 # This program is free software; you can redistribute it and/or modify it
 # under the terms of the GNU General Public License as published by the
@@ -11,10 +11,10 @@
 #
 import sys
 import dbus
+import uuid
+
 from networkmanager import *
 from networkmanager.ipaddr import *
-import uuid
-import pdb
 
 useColor = True
 
@@ -50,6 +50,7 @@ def printUsage():
     print "    connections     Show connections"
     print "    devices         Show devices"
     print "    create          Create profile"
+    print "    edit            Edit profile"
     print "    delete          Delete profile"
     print "    up <profile>    Bring profile up"
     print "    down <profile>  Bring profile down"
@@ -57,7 +58,7 @@ def printUsage():
     print "Options:"
     print "    --no-color      Don't colorize output"
     print
-    
+
 def getInput(label):
     try:
         return raw_input(colorize(("%s > " % label), 'light'))
@@ -87,11 +88,11 @@ def printDevices(nm):
 
 def deleteProfile(nm):
 
-    ETHERNET=[]
-    WIFI=[]
-    CDMA=[]
-    GSM=[]
-    UNKNOWN=[]
+    ETHERNET = []
+    WIFI = []
+    CDMA = []
+    GSM = []
+    UNKNOWN = []
 
     connections = {
                 '802-3-ethernet' : ETHERNET,
@@ -105,30 +106,29 @@ def deleteProfile(nm):
         connections[connection.settings.type] += [connection]
 
 
-    list = []
+    connection_list = []
     index_ = 1
     #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
 
-    for connectionType in connections.keys() :
+    for connectionType in connections.keys():
 
         if len(connections[connectionType]) > 0:
             connString = connectionType.split("-").pop().capitalize()
             print colorize("%s profiles" % connString, 'green')
             for connection in connections[connectionType] :
                 print "  [%s] %s" % (index_, str(connection.settings.id).capitalize())
-                list += [connection]
+                connection_list += [connection]
                 index_ += 1
-    connection = list[(getNumber("Delete", 1, index_ - 1) - 1)]
+    connection = connection_list[(getNumber("Delete", 1, index_ - 1) - 1)]
     connection.delete()
 
 
 
-def createProfileETHERNET(nm,_device) :
+def createProfileETHERNET(nm, _device) :
 
     settings = None
     settings = WiredSettings()
     settings.uuid = str(uuid.uuid4())
-    #pdb.set_trace()
     settings.device = _device
     settings.mac_address = _device.hwaddress
 
@@ -192,7 +192,6 @@ def createProfileWIFI(nm,_device):
     settings = None
     settings = WirelessSettings()
     settings.uuid = str(uuid.uuid4())
-    #pdb.set_trace()
     settings.device = _device
 
 
@@ -266,7 +265,7 @@ def createProfile(nm) :
             DeviceType.WIFI : createProfileWIFI
             }
 
-    for device in nm.devices :
+    for device in nm.devices:
         devices[device.type] += [device]
 
 
@@ -274,25 +273,25 @@ def createProfile(nm) :
     print colorize("Select interface:", "yellow")
 
 
-    list = []
+    device_list = []
     #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
 
-    for interface in devices.keys() :
+    for interface in devices.keys():
         if len(devices[interface]) > 0:
             print "  [%s] %s" % (index_, str(interface).capitalize())
-            list += [interface]
+            device_list += [interface]
             index_ += 1
 
-    max=0
-    for interface in devices.keys() :
-        max += len(devices[interface])
+    _max=0
+    for interface in devices.keys():
+        _max += len(devices[interface])
 
 
     packageNo = getNumber("Interface", 1, max) - 1
 
     index_ = 1
 
-    _devices = devices[list[packageNo]]
+    _devices = devices[device_list[packageNo]]
 
     if len(_devices) > 0:
         print
@@ -302,16 +301,16 @@ def createProfile(nm) :
         index_ += 1
         deviceNo = getNumber("Device", 1, max) - 1
 
-        functions[_devices[deviceNo].type](nm , _devices[deviceNo])
+        functions[_devices[deviceNo].type](nm, _devices[deviceNo])
 
-def stateProfile(nm ,command) :
+def stateProfile(nm, command) :
     try :
         profile = sys.argv[2]
     except :
         printUsage()
         return 1
 
-    def stateProfileDown(nm ,profile) :
+    def stateProfileDown(nm, profile) :
         for active_conn in nm.active_connections :
             if active_conn.connection.settings.id == profile :
                 active_conn.devices[0].disconnect()
@@ -325,15 +324,15 @@ def stateProfile(nm ,command) :
 
 
     if command == "down" :
-        stateProfileDown(nm ,profile)
+        stateProfileDown(nm, profile)
     elif command == "up" :
-        stateProfileUp(nm ,profile)
+        stateProfileUp(nm, profile)
 
 
-
-
+#####################
+### Main function ###
+#####################
 def main():
-
     try:
         command = sys.argv[1]
     except:
@@ -345,18 +344,19 @@ def main():
         useColor = False
         sys.argv.remove("--no-color")
 
-    nm = NetworkManager()
+    # Create NetworkManager handle
+    nm_handle = NetworkManager()
 
     if command == "connections":
-        return printConnections(nm)
+        return printConnections(nm_handle)
     elif command == "devices":
-        return printDevices(nm)
+        return printDevices(nm_handle)
     elif command == "create":
-        return createProfile(nm)
+        return createProfile(nm_handle)
     elif command == "delete":
-        return deleteProfile(nm)
+        return deleteProfile(nm_handle)
     elif command in ("up", "down"):
-        return stateProfile(nm,command)
+        return stateProfile(nm_handle, command)
     else:
         printUsage()
         return 1
