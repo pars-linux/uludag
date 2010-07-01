@@ -92,6 +92,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             textstream = QTextStream(fileobject)
             textstream.setCodec("UTF-8")
             self.textEdit.setPlainText(textstream.readAll())
+            self.textEdit.document().setModified(False)
+            print self.textEdit.document().isModified()
             self.setWindowTitle("%s - TextEditor" % 
                                 QFileInfo(self.path).fileName())
         except(IOError, OSError), error:
@@ -120,6 +122,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             textstream = QTextStream(fileobject)
             textstream.setCodec("UTF-8")
             textstream << self.textEdit.toPlainText()
+            self.textEdit.document().setModified(False)
             self.setWindowTitle("%s - TextEditor" % 
                                 QFileInfo(self.path).fileName())
         except (IOError, OSError), error:
@@ -136,14 +139,19 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         To reset ui
         """
+        
         document = self.textEdit.document()
         document.clear()
         document.setModified(False)
         self.path = ""
         self.setWindowTitle(self.tr("unnamed - TextEditor"))
+        
+        
     def modified(self):
-        document = self.textEdit.document()
-        document.setModified(True)
+        """
+        if document is modified then put a star
+        """
+        
         if self.path is "":
             self.setWindowTitle(self.tr("unnamed* - TextEditor"))
         else:
