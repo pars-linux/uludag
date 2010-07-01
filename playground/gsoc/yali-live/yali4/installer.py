@@ -565,6 +565,7 @@ class Yali:
 
 
         stepsLive = [{"text":_("Generating DBus machine-id..."),"operation":self.generateDBusMachineID},
+                     {"text":_("Copying additional install files..."),"operation":self.copyInstalladditional},
                      {"text":_("Copying kernel..."),"operation":self.copyKernelfromLive},
                      {"text":_("Generating Initramfs..."),"operation":self.generateInitramfs}]
 
@@ -602,6 +603,18 @@ class Yali:
         shutil.copyfile(kernel_src, kernel_dst)
         return True
         
+
+    def copyInstalladditional(self):
+        "Copy additional install data by extracting additional.lar.lzma from CDRom root"
+
+        ctx.debugger.log("Copying additional files by extracting additional.tar.lzma")
+
+        install_additional_file = os.path.join(consts.source_dir,'additional.tar.lzma')
+
+        if os.path.exists(install_additional_file):
+            os.system("/bin/tar -xJf %s -C %s" %(install_additional_file, consts.target_dir))
+            return True    
+
 
     def generateDBusMachineID(self):
         "Generate a machine_id at /var/lib/dbus/machine-id"
