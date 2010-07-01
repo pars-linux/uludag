@@ -88,18 +88,12 @@ def printDevices(nm):
 
 def deleteProfile(nm):
 
-    ETHERNET = []
-    WIFI = []
-    CDMA = []
-    GSM = []
-    UNKNOWN = []
-
     connections = {
-                '802-3-ethernet' : ETHERNET,
-                '802-11-wireless' : WIFI,
-                'cdma' : CDMA,
-                'gsm' : GSM,
-                'unknown' : UNKNOWN
+                '802-11-wireless'   : [],
+                '802-3-ethernet'    : [],
+                'cdma'              : [],
+                'gsm'               : [],
+                'unknown'           : [],
             }
 
     for connection in nm.connections:
@@ -154,7 +148,7 @@ def createProfileETHERNET(nm, _device) :
     elif dns == 2 :
         dns_mode = "manual"
         dns_address = getInput("Address")
-        settings.dns=dns_address
+        settings.dns = dns_address
     elif dns == 3 :
         dns_mode = "auto"
         dns_address = ""
@@ -188,7 +182,7 @@ def createProfileETHERNET(nm, _device) :
 
 
 
-def createProfileWIFI(nm,_device):
+def createProfileWIFI(nm_handle, _device):
     settings = None
     settings = WirelessSettings()
     settings.uuid = str(uuid.uuid4())
@@ -224,7 +218,7 @@ def createProfileWIFI(nm,_device):
     profile = None
     profiles = []
 
-    for i in nm.connections :
+    for i in nm_handle.connections :
         profiles += [i.settings.id]
 
     print
@@ -236,28 +230,22 @@ def createProfileWIFI(nm,_device):
             profile = None
 
     settings.id = profile
-    nm.add_connection(settings)
+    nm_handle.add_connection(settings)
 
 
 
-def createProfile(nm) :
+def createProfile(nm_handle) :
 
-    if len(nm.devices) == 0 :
+    if len(nm_handle.devices) == 0 :
         # No network devices
         return
 
-    ETHERNET=[]
-    WIFI=[]
-    CDMA=[]
-    GSM=[]
-    UNKNOWN=[]
-
     devices = {
-        DeviceType.UNKNOWN : UNKNOWN,
-        DeviceType.WIFI : WIFI,
-        DeviceType.GSM : GSM,
-        DeviceType.CDMA : CDMA,
-        DeviceType.ETHERNET : ETHERNET
+        DeviceType.UNKNOWN  : [],
+        DeviceType.WIFI     : [],
+        DeviceType.GSM      : [],
+        DeviceType.CDMA     : [],
+        DeviceType.ETHERNET : [],
     }
 
     functions = {
@@ -265,7 +253,7 @@ def createProfile(nm) :
             DeviceType.WIFI : createProfileWIFI
             }
 
-    for device in nm.devices:
+    for device in nm_handle.devices:
         devices[device.type] += [device]
 
 
@@ -282,7 +270,7 @@ def createProfile(nm) :
             device_list += [interface]
             index_ += 1
 
-    _max=0
+    _max = 0
     for interface in devices.keys():
         _max += len(devices[interface])
 
@@ -301,32 +289,32 @@ def createProfile(nm) :
         index_ += 1
         deviceNo = getNumber("Device", 1, max) - 1
 
-        functions[_devices[deviceNo].type](nm, _devices[deviceNo])
+        functions[_devices[deviceNo].type](nm_handle, _devices[deviceNo])
 
-def stateProfile(nm, command) :
+def stateProfile(nm_handle, command) :
     try :
         profile = sys.argv[2]
     except :
         printUsage()
         return 1
 
-    def stateProfileDown(nm, profile) :
-        for active_conn in nm.active_connections :
+    def stateProfileDown(nm_handle, profile) :
+        for active_conn in nm_handle.active_connections :
             if active_conn.connection.settings.id == profile :
                 active_conn.devices[0].disconnect()
 
-    def stateProfileUp(nm, profile) :
-        for conn in nm.connections :
+    def stateProfileUp(nm_handle, profile) :
+        for conn in nm_handle.connections :
             if conn.settings.id == profile :
-                for device in nm.devices :
+                for device in nm_handle.devices :
                     if device.hwaddress == conn.settings.mac_address :
-                        nm.activate_connection(conn,device)
+                        nm_handle.activate_connection(conn, device)
 
 
     if command == "down" :
-        stateProfileDown(nm, profile)
+        stateProfileDown(nm_handle, profile)
     elif command == "up" :
-        stateProfileUp(nm, profile)
+        stateProfileUp(nm_handle, profile)
 
 
 #####################
