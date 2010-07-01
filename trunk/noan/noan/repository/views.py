@@ -94,11 +94,45 @@ def view_isa_info(request, distName, distRelease, repoType, isA):
     object_dict = {
             'queryset': sources,
             'paginate_by': SOURCE_PACKAGES_PER_PAGE,
-            'template_name': 'repository/isa_list.html',
+            'template_name': 'repository/isa_partof_list.html',
             'template_object_name': 'source',
             'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE}
             }
     
+    return object_list(request, **object_dict)
+
+
+# List of source packages that belong to a certain partOf category
+def view_partof_info(request, distName, distRelease, repoType, partOf):
+    """
+        partOf: <partOf> section in pspec.xml
+    """
+    sources = Source.objects.filter(distribution__type=repoType, distribution__name=distName, distribution__release=distRelease, info__part_of=partOf)
+    if not sources.count() > 0:
+        return HttpResponse("Not Found, 404")
+
+    LANGUAGE_CODE = request.LANGUAGE_CODE
+    # - generate dict to use in object_list
+    # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
+    if request.method == 'GET' and request.GET.get('page'):
+        try:
+            sources = cache.get('query_result')['tmp']
+            # default timeout is 3600 sec, if the timeout is passed, return to the form page
+        except TypeError:
+            return HttpResponseRedirect('./')
+    else:
+        rslt = dict()
+        rslt['tmp'] = sources
+        cache.set('query_result', rslt)
+
+    object_dict = {
+            'queryset': sources,
+            'paginate_by': SOURCE_PACKAGES_PER_PAGE,
+            'template_name': 'repository/isa_partof_list.html',
+            'template_object_name': 'source',
+            'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE}
+            }
+
     return object_list(request, **object_dict)
 
 

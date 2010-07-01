@@ -13,7 +13,9 @@ urlpatterns = patterns('',
     # Details of <Source> section in pspec.xml
     url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/$', 'noan.repository.views.view_source_detail', name="repo-source-info"),
     # List of isa packages
-    url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<repoType>[^/]+)/(?P<isA>[^/]+)/$', 'noan.repository.views.view_isa_info', name="isa-source-info"),
+    url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<repoType>[^/]+)/isa/(?P<isA>[^/]+)/$', 'noan.repository.views.view_isa_info', name="isa-source-info"),
+    # List of partOf packages
+    url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<repoType>[^/]+)/partof/(?P<partOf>[^/]+)/$', 'noan.repository.views.view_partof_info', name="partof-source-info"),
     # Binary package (*.pisi) detail
     url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)-(?P<binaryNo>\d+)/$', 'noan.repository.views.view_binary_detail', name="repo-binary-info"),
     # Details of <Package> section in pspec.xml
