@@ -1,0 +1,4 @@
+This is 7-zip standalone command line executable v9.15 and has been directly included to this project as compiled under GNU LGPL license.
+
+Source codes can be obtained from SourceForge Project Page: http://sourceforge.net/projects/sevenzip/
+
