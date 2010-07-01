@@ -131,11 +131,20 @@ def updateDB(path_source, path_stable, path_test, options):
             distroRelease = _index.distribution.version
         print '  Distribution: %s-%s' % (distroName, distroRelease)
 
+        # repo name
+        try:
+            binaryName = _index.distribution.sourceName.split('-', 1)[1]
+        except IndexError:
+            if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
+            else: binaryName = 'Pardus'
+        if binaryName == 'Contrib': repoType = 'contrib'
+        else: repoType = 'stable'
+
         # Add distribution to database
         try:
-            distribution = Distribution.objects.get(name=distroName, release=distroRelease)
+            distribution = Distribution.objects.get(name=distroName, release=distroRelease, type=repoType)
         except Distribution.DoesNotExist:
-            distribution = Distribution(name=distroName, release=distroRelease)
+            distribution = Distribution(name=distroName, release=distroRelease, type=repoType)
             distribution.save()
 
         def importSpec(pspec):
@@ -250,10 +259,19 @@ def updateDB(path_source, path_stable, path_test, options):
             distroName = _index.distribution.sourceName
             distroRelease = _index.distribution.version
         print '  Distribution: %s-%s' % (distroName, distroRelease)
+        
+        # repo name
+        try:
+            binaryName = _index.distribution.sourceName.split('-', 1)[1]
+        except IndexError:
+            if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
+            else: binaryName = 'Pardus'
+        if binaryName == 'Contrib': repoType = 'contrib'
+        else: repoType = 'stable'
 
         # Add distribution to database
         try:
-            distribution = Distribution.objects.get(name=distroName, release=distroRelease)
+            distribution = Distribution.objects.get(name=distroName, release=distroRelease, type=repoType)
         except Distribution.DoesNotExist:
             return
 
