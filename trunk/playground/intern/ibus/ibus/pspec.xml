@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+xml version="1.0" ?>
 <!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
 <PISI>
     <Source>
@@ -15,17 +15,12 @@
         <Description>IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. It provides full featured and user friendly input method user interface. It also may help developers to develop input method easily.</Description>
         <Archive sha1sum="f70059dcdc0399479d9aa16dd8bc3d6fb60f53ee" type="targz">http://ibus.googlecode.com/files/ibus-1.3.5.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency versionFrom="2.4">cmake</Dependency>
-            <Dependency versionFrom="2.5">python</Dependency>
-            <Dependency versionFrom="0.74">dbus-glib</Dependency>
-            <Dependency versionFrom="0.83">dbus-python</Dependency>
             <Dependency>gtk2</Dependency>
             <Dependency>intltool</Dependency>
             <Dependency>libtool</Dependency>
             <Dependency>notify-python</Dependency>
             <Dependency>iso-codes</Dependency>
             <Dependency>gtk-doc</Dependency>
-            <Dependency>gettext</Dependency>
             <Dependency>cvs</Dependency>
             <Dependency>pygobject</Dependency>
         </BuildDependencies>
@@ -47,9 +42,23 @@
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="config">/etc</Path>
             <Path fileType="library">/usr/lib</Path>
-            <Path fileType="header">/usr/include</Path>
             <Path fileType="data">/usr/share</Path>
             <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>ibus-libs</Name>
+        <Files>
+            <Path fileType="library">/usr/lib/libibus.so.*</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>ibus-devel</Name>
+        <Files>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib/lib*.so /usr/lib/pkgconfig/</Path>
         </Files>
     </Package>
 

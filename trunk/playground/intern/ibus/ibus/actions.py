@@ -10,7 +10,8 @@ from pisi.actionsapi import get
 
 def setup():
     autotools.configure("--disable-static \
-                         --disable-schemas-install")
+                         --disable-schemas-install \
+                         --enable-key-snooper")
 
 def build():
     autotools.make()
