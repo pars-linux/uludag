@@ -1,6 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
+"""
+Main.py - TextEditor's main file
+"""
 # Copyright (C) 2010 Taha Doğan Güneş <tdgunes@gmail.com>
 #
 # This program is free software; you can redistribute it and/or modify
@@ -43,12 +45,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                      SIGNAL("triggered()"), self.load_file)
         self.connect(self.actionSave, 
                      SIGNAL("triggered()"), self.save_file)
+        self.connect(self.actionSave_As, 
+                     SIGNAL("triggered()"), self.save_as_file)
         self.connect(self.actionNew, 
                      SIGNAL("triggered()"), self.new_file)
         self.connect(self.textEdit.document(), 
                      SIGNAL("modificationChanged(bool)"), self.modified)
-
-       
+        
+        
         self.path = ""
         
         
@@ -98,14 +102,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                 QFileInfo(self.path).fileName())
         except(IOError, OSError), error:
             QMessageBox.warning(self, 
-                               self.tr("TextEditor - Load Error"),
-                               self.tr("Unable to load {0}:{1}".format(self.path,
-                               error)))                                                                                
+                                self.tr("TextEditor - Load Error"),
+                                self.tr("Unable to load {0} : {1}".format(self.path,
+                                                                        error)))
+            self.path = ""
         finally:
             if fileobject is not None:
                 fileobject.close()
                 
                 
+    def save_as_file(self):
+        """
+        Saving file with a new name or a new extension
+        """
+        self.path = ""
+        self.save_file()
+        
+        
     def save_file(self):
         """
         Saving file to the path where getting from QFileDialog
@@ -130,6 +143,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                                 self.tr("TextEditor - Save Error"), 
                                 self.tr("Unable to save {0}:{1}".format( 
                                 self.path, error)))
+            self.path = ""
         finally:
             if fileobject is not None:
                 fileobject.close()
@@ -150,6 +164,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def modified(self):
         """
         if document is modified then put a star
+        Note: This function doesn't need :
+        self.textEdit.document().setModified(True)
         """
         
         if self.path is "":
@@ -158,8 +174,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             self.setWindowTitle("%s* - TextEditor" % 
                                 QFileInfo(self.path).fileName())
                                
-                               
-if __name__ == "__main__":
+def main():
+    """
+    loader function to start the application
+    """
     app = QApplication(sys.argv)
     locale = QLocale.system().name()
     translator = QTranslator()
@@ -168,4 +186,6 @@ if __name__ == "__main__":
     main_window = MainWindow()
     main_window.show()
     app.exec_()
-
+    
+if __name__ == "__main__":
+    main()
