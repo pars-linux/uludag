@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
 try:
     from lxml import etree
 except ImportError:

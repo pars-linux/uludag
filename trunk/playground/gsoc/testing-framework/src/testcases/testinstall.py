@@ -9,6 +9,7 @@ from pisi.api import calculate_download_size
 
 from pisi.errors import PrivilegeError
 
+from clcolorize import colorize
 
 class TestInstall:
     """class for the testcase install."""
@@ -22,7 +23,7 @@ class TestInstall:
         # Packages which are in the testcase file and are not installed
         packagestNotInstalled = list(set(self.packagelist) - set(self.installedpackages))
         if not packagestNotInstalled:
-            print 'All the required packages are installed.\n'
+            print colorize('All the required packages are installed.\n', 'green')
             return
         # Install only packages that are in all the repositories
         packagesNotInRepo = list(set(packagestNotInstalled) - set((self.availablepackages)))
@@ -32,10 +33,11 @@ class TestInstall:
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
         totalPackages = len(finalPacakges)
         if totalPackages == 0:
-            print 'No packages were installed.\n'
+            print colorize('No packages were installed.\n', 'green')
             return
-        print "Number of packages to be installed: '{0}'".format(totalPackages)
-        print "Installing required packages, please wait ... 'Size: {0:.2f} MB'".format(calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0))
+        downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
+        print "Number of packages to be installed: '{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize)
+        print 'Installing required packages, please wait ... '
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
@@ -46,7 +48,7 @@ class TestInstall:
             try:
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
-                print '\n[Error]: To install the packages, run the framework with root privileges.'
+                print colorize('Error: To install the packages, run the framework with root privileges.\n', 'red')
                 return
             counter += 1
-        print "Finished installing the following packages: '{0}'\n".format(string.join(finalPacakges, ', '))
+        print colorize("Finished installing the following packages: '{0}'\n", 'green').format(string.join(finalPacakges, ', '))
