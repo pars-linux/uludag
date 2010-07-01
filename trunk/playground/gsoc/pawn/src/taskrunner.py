@@ -4,6 +4,9 @@ from logger import getLogger
 log = getLogger("TaskRunner")
 
 class Task(QtCore.QThread):
+    '''
+    Qt-Threaded task.
+    '''
     def __init__(self, method = None, description = None, callback = None):
         QtCore.QThread.__init__(self)
         self.method = method
@@ -70,25 +73,3 @@ class TaskList():
     def queue_task(self, task):
         if isinstance(task, Task):
             self.tasks.append(task)
-
-#import time,sys
-#def f():
-#    print time.time()
-#    time.sleep(2)
-#    print 'hi'
-#
-#def h():
-#    time.sleep(5)
-#    print 'lol'
-#    print time.time()
-#
-#uygulama = QtCore.QCoreApplication(sys.argv)
-#
-#tl = TaskList()
-#t = Task(f, 'dummy', tl.startNext)
-#s = Task(h, 'naive', tl.startNext)
-#tl.queue_task(t)
-#tl.queue_task(s)
-#tl.start()
-#
-#sys.exit(uygulama.exec_())
