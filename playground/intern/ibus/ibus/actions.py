@@ -10,13 +10,11 @@ from pisi.actionsapi import get
 
 def setup():
     autotools.configure("--disable-static \
-            --disable-schemas-install \
-            --disable-dbus-python-check")
+                         --disable-schemas-install")
 
 def build():
     autotools.make()
 
 def install():
     autotools.install("libexecdir=%s/%s" % (get.installDIR(), get.libexecDIR()))
-    #autotools.install()
     pisitools.dodoc("AUTHORS", "ChangeLog", "COPYING", "NEWS", "README")

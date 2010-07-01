@@ -11,8 +11,8 @@
         <License>LGPLv2.1</License>
         <Icon>ibus</Icon>
         <IsA>app:gui</IsA>
-        <Summary>ozet yaz</Summary>
-        <Description>aciklama yaz</Description>
+        <Summary>Intelligent Input Bus for Linux OS </Summary>
+        <Description>IBus is an Intelligent Input Bus. It is a new input framework for Linux OS. It provides full featured and user friendly input method user interface. It also may help developers to develop input method easily.</Description>
         <Archive sha1sum="f70059dcdc0399479d9aa16dd8bc3d6fb60f53ee" type="targz">http://ibus.googlecode.com/files/ibus-1.3.5.tar.gz</Archive>
         <BuildDependencies>
             <Dependency versionFrom="2.4">cmake</Dependency>
@@ -27,24 +27,21 @@
             <Dependency>gtk-doc</Dependency>
             <Dependency>gettext</Dependency>
             <Dependency>cvs</Dependency>
+            <Dependency>pygobject</Dependency>
         </BuildDependencies>
         <Patches>
             <Patch level="1">hede.patch</Patch>
         </Patches>
-        <!--
-        -->
     </Source>
 
     <Package>
         <Name>ibus</Name>
-        <!--
         <RuntimeDependencies>
-            <Dependency versionFrom="">Dep1</Dependency>
-            <Dependency versionFrom="">Dep2</Dependency>
-            <Dependency versionFrom="">Dep3</Dependency>
-            <Dependency versionFrom="">Dep4</Dependency>
+            <Dependency>pygtk</Dependency>
+            <Dependency>iso-codes</Dependency>
+            <Dependency>notify-python</Dependency>
+            <Dependency>pyxdg</Dependency>
         </RuntimeDependencies>
-        -->
         <Files>
             <Path fileType="all">/</Path>
             <Path fileType="executable">/usr/bin</Path>
@@ -52,22 +49,15 @@
             <Path fileType="library">/usr/lib</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="data">/usr/share</Path>
-            <Path fileType="man">/usr/share/man</Path>
-            <Path fileType="info">/usr/share/info</Path>
             <Path fileType="doc">/usr/share/doc</Path>
         </Files>
-        <!--
-        <AdditionalFiles>
-            <AdditionalFile owner="root" permission="0644" target="/usr/share/applications/ibus.desktop">ibus.desktop</AdditionalFile>
-            <AdditionalFile owner="root" permission="0644" target="/usr/share/pixmaps/ibus.png">ibus.png</AdditionalFile>
-        </AdditionalFiles>
-        -->
-        <!--
-       <Provides>
-             <COMAR script="package.py">System.Package</COMAR>
-             <COMAR script="service.py">System.Service</COMAR>
-        </Provides>
-        -->
+    </Package>
+
+    <Package>
+        <Name>ibus-devel-docs</Name>
+        <Files>
+            <Path fileType="doc">/usr/share/gtk-doc</Path>
+        </Files>
     </Package>
 
     <History>
