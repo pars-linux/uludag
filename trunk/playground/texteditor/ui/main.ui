@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>TextEdit</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../data/texteditor.qrc">
+    <normaloff>:/texteditor.png</normaloff>:/texteditor.png</iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
@@ -41,19 +45,7 @@
     <addaction name="separator"/>
     <addaction name="actionExit"/>
    </widget>
-   <widget class="QMenu" name="menuEdit">
-    <property name="title">
-     <string>Edit</string>
-    </property>
-   </widget>
-   <widget class="QMenu" name="menuHelp">
-    <property name="title">
-     <string>Help</string>
-    </property>
-   </widget>
    <addaction name="menuFile"/>
-   <addaction name="menuEdit"/>
-   <addaction name="menuHelp"/>
   </widget>
   <action name="actionNew">
    <property name="text">
@@ -81,6 +73,8 @@
    </property>
   </action>
  </widget>
- <resources/>
+ <resources>
+  <include location="../data/texteditor.qrc"/>
+ </resources>
  <connections/>
 </ui>

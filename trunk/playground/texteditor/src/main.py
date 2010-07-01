@@ -66,7 +66,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             
     def ready_to_go(self):
         """
-        To be check unsaved changes and asking to the user.
+        To check unsaved changes and asking to the user.
         """
         if self.textEdit.document().isModified():
             question = QMessageBox.question(self,
@@ -87,6 +87,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         Loading a text file to the self.textEdit
         """
+        self.ready_to_go()
         fileobject = None
         self.path = QFileDialog.getOpenFileName(self, "TextEditor","")
         try:
@@ -153,7 +154,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         """
         To reset ui
         """
-        
+        self.ready_to_go()
         document = self.textEdit.document()
         document.clear()
         document.setModified(False)
