@@ -77,6 +77,7 @@ Examples::
      - foo-bar
      - foo-addon-bar
      - foo-applet-bar
+     - foo-backend-bar
      - foo-extension-bar
      - foo-plugin-bar
 
