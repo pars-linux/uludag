@@ -1,3 +1,10 @@
+import os.path
+import subprocess
+import os
+
+from logger import getLogger
+log = getLogger('Utils')
+
 sizeUnits = ['bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB']
 timeUnitsSingle = ['second', 'minute', 'hour', 'day']
 timeUnitsPlural = ['seconds', 'minutes', 'hours', 'days']
@@ -47,3 +54,27 @@ def humanReadableTime(seconds):
 
     return '%d %s %d %s' % (v1,u1,v2,u2)
 
+
+def run_shell_cmd(cmdargs):
+    '''
+    This is a blocking method and may take a long time to complete.
+    Use this with a threading instance or twisted library.
+    '''
+
+    if isinstance(cmdargs, list):
+        cmdargs[0] = os.path.normpath(os.path.abspath(cmdargs[0]))
+
+    sp = subprocess.Popen(
+        args = cmdargs,
+        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+    )
+
+    retcode = sp.wait() # wait until process returns
+
+    # TODO: all those can be replaced with subprocess.call(cmdargs) or check_call
+
+    if retcode == 0:
+        return sp.stdout.read()
+    else:
+        log.exception("Error code returned from shell executable:[%s]||return code: %d||stderr=%s||stdout=%s||"
+            % (' '.join(cmdargs), retcode, sp.stderr.read(), sp.stdout.read()))
