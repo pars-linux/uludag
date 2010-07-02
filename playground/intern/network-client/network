@@ -87,15 +87,14 @@ def print_connections(nm_handle):
             }
 
     for connection in nm_handle.connections:
-        connections[connection.settings.type] += [connection]
+        connections[connection.settings.type].append(connection)
 
-    for connection_key in connections.keys():
+    for connection_key in connections:
         if len(connections[connection_key]) > 0:
             conn_interface = connection_key.split("-").pop().capitalize()
             print colorize("%s profiles" % conn_interface, 'green')
 
             for profile in connections[connection_key]:
-
                 for active in nm_handle.active_connections:
                     if active.connection.settings.id == profile.settings.id:
                         state_mark = "X"
@@ -115,9 +114,9 @@ def print_devices(nm_handle):
     }
 
     for device in nm_handle.devices:
-        devices[device.type] += [device]
+        devices[device.type].append(device)
 
-    for device_key in devices.keys():
+    for device_key in devices:
         if len(devices[device_key]) > 0:
             print colorize("%s devices" % str(device_key).capitalize(), 'green')
             for device in devices[device_key]:
@@ -135,20 +134,20 @@ def delete_profile(nm_handle):
             }
 
     for connection in nm_handle.connections:
-        connections[connection.settings.type] += [connection]
+        connections[connection.settings.type].append(connection)
 
 
     connection_list = []
     index_ = 1
     #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
 
-    for connection_type in connections.keys():
+    for connection_type in connections:
         if len(connections[connection_type]) > 0:
             conn_interface = connection_type.split("-").pop().capitalize()
             print colorize("%s profiles" % conn_interface, 'green')
             for connection in connections[connection_type]:
                 print "  [%s] %s" % (index_, str(connection.settings.id).capitalize())
-                connection_list += [connection]
+                connection_list.append(connection)
                 index_ += 1
     connection = connection_list[(get_number("Delete", 1, index_ - 1) - 1)]
     connection.delete()
@@ -194,7 +193,7 @@ def create_profile_ethernet(nm_handle, _device):
     profiles = []
 
     for i in nm_handle.connections:
-        profiles += [i.settings.id]
+        profiles.append(i.settings.id)
 
     print
     while not profile:
@@ -237,7 +236,7 @@ def create_profile(nm_handle):
             }
 
     for device in nm_handle.devices:
-        devices[device.type] += [device]
+        devices[device.type].append(device)
 
 
     index_ = 1
@@ -247,14 +246,14 @@ def create_profile(nm_handle):
     device_list = []
     #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
 
-    for interface in devices.keys():
+    for interface in devices:
         if len(devices[interface]) > 0:
             print "  [%s] %s" % (index_, str(interface).capitalize())
-            device_list += [interface]
+            device_list.append(interface)
             index_ += 1
 
     _max = 0
-    for interface in devices.keys():
+    for interface in devices:
         _max += len(devices[interface])
 
     package_no = get_number("Interface", 1, _max) - 1
