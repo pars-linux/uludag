@@ -1,8 +1,8 @@
 color blue/green yellow/red white/magenta white/magenta
-timeout 0
+timeout {TIMEOUT}
 hiddenmenu
 default /default
 
-title Pardus 2009.2
-kernel /boot/kernel vga=791 liveroot=/dev/sda1
-initrd /boot/initrd
+title {VERSION}
+kernel {PATH_KERNEL} {KERNEL_PARAMS}
+initrd {PATH_INITRD}
