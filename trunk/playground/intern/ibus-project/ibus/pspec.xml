@@ -25,7 +25,7 @@ xml version="1.0" ?>
             <Dependency>pygobject</Dependency>
         </BuildDependencies>
         <Patches>
-            <Patch level="1">hede.patch</Patch>
+            <Patch level="1">For-not-reinterprete-python.patch</Patch>
         </Patches>
     </Source>
 
@@ -36,6 +36,8 @@ xml version="1.0" ?>
             <Dependency>iso-codes</Dependency>
             <Dependency>notify-python</Dependency>
             <Dependency>pyxdg</Dependency>
+            <Dependency>gtk2</Dependency>
+            <Dependency>gconf</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="all">/</Path>
@@ -58,7 +60,8 @@ xml version="1.0" ?>
         <Name>ibus-devel</Name>
         <Files>
             <Path fileType="header">/usr/include</Path>
-            <Path fileType="library">/usr/lib/lib*.so /usr/lib/pkgconfig/</Path>
+            <Path fileType="library">/usr/lib/lib*.so</Path>
+            <Path fileType="library">/usr/lib/pkgconfig/</Path>
         </Files>
     </Package>
 
