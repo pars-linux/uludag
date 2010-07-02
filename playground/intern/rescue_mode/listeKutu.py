@@ -3,7 +3,7 @@ import menuItem
 import urwid
 
 class listInfo(urwid.Frame):
-  def __init__(self,fn_o_info,palette,header="",):
+  def __init__(self,fn_o_info,palette,header=""):
     
     
     self.palette = palette
@@ -45,5 +45,32 @@ class listInfo(urwid.Frame):
   def createFooter(self,text):
     self.footer = urwid.LineBox(urwid.Text(text))
     
+    
+class InputDialog(urwid.Frame):
+  
+  def __init__(self,button,button_function,palette,header=""):
+    self.palette = palette
+   
+    
+    self.simpleList = urwid.SimpleListWalker([])
+    
+    liste = urwid.ListBox(self.simpleList)
+    #liste = urwid.Filler(liste,'top')
+    urwid.Frame.__init__(self,liste)
+    self.header = urwid.Pile([urwid.LineBox(urwid.Text(header)),urwid.Divider(),urwid.Divider()])
+    self.footer = urwid.Padding(urwid.LineBox(urwid.AttrWrap(urwid.Padding(menuItem.MenuItem(button,button_function),'center'),self.palette[0],self.palette[1])),'center',30)
+    
+  def addInputItem(self,label):
+    item= urwid.LineBox( urwid.AttrWrap(urwid.Edit(label),self.palette[0],self.palette[1]))
+    self.simpleList.insert(0,item)
+    
+  def getContents(self):
+    return self.simpleList.contents
+  
+  def unhandled_input(self, input):
+    if input == 'down':
+      self.set_focus('footer')
+    if input == 'up':
+      self.set_focus('body')
   
   

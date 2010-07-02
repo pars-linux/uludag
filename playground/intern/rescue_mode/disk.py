@@ -18,7 +18,7 @@ def getPardusPartitions():
   pardusPartitions=[]
   
   for i in getPartitionsLabels():
-    if "PARDUS_ROOTx" in i:
+    if "PARDUS_ROOT" in i:
 	i = [i,diskutils.getDeviceByLabel(i)]
 	pardusPartitions.append(i)
 	
@@ -27,12 +27,13 @@ def getPardusPartitions():
 def getPardusVLP():
   
   pardusVLP = []
-  
+  link = comar.Link()
   for i in getPardusPartitions():
     path = "/mnt/rescue_disk/"+i[0]
     if os.path.exists(path):
-     # pass
-      comar.Link().Disk.Manager["mudur"].umount(path)
+      mounteds= link.Disk.Manager["mudur"].getMounted()
+      if path in str(mounteds):
+	comar.Link().Disk.Manager["mudur"].umount(path)
     else:
       os.makedirs(path)
     comar.Link().Disk.Manager["mudur"].mount(i[1],path)
@@ -42,7 +43,10 @@ def getPardusVLP():
   
   return pardusVLP
 
-
+def get_partitions_path(disk):
+    link = comar.Link()
+    mounteds = link.Disk.Manager["mudur"].getMounted()
+    return str(filter(lambda part: part[0]==disk,mounteds)[0][1])
   
 def main():
   pass
