@@ -8,6 +8,10 @@ from noan.settings import SITE_ROOT
 
 from pisi.version import Version as Pisi_Version
 
+import tempfile
+import urllib
+import piksemel
+
 
 TEST_RESULTS = (
     ('yes', _('Can go to stable')),
@@ -96,6 +100,32 @@ class Source(models.Model):
         url = "/".join([base_url, suffix, self.distribution.release, self.distribution.type, self.info.source_uri])
 
         return url[:-9]
+
+    def get_devel_url(self):
+        base_url = 'http://svn.pardus.org.tr'
+        if self.distribution.type == 'stable':
+            suffix = 'pardus'
+        if self.distribution.type == 'contrib':
+            suffix = 'contrib'
+
+        url = "/".join([base_url, suffix, self.distribution.release, 'devel', self.info.source_uri])
+
+        return url[:-9]
+
+    def get_devel_pspec(self):
+        return self.get_devel_url() + 'pspec.xml'
+
+    def get_devel_release_version_no(self):
+        url = urllib.urlopen(self.get_devel_pspec())
+        tmp = tempfile.NamedTemporaryFile()
+        tmp.write(url.read())
+        tmp.flush()
+        pspec = piksemel.parse(tmp.name)
+        history = pspec.getTag('History')
+        release = history.getTag('Update').getAttribute('release')
+        version = history.getTag('Update').getTagData('Version')
+        tmp.close()
+        return '-'.join([version, release])
 
     class Meta:
         verbose_name = _('source')
