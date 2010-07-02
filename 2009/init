@@ -193,6 +193,11 @@ find_live_mount() {
     then
         for x in $*
         do
+            FS_TYPE=`disktype $ROOT_DEVICE | grep KERNELMODULE | awk '{print $2}'`
+            if [ -f /lib/modules/*/$FS_TYPE.ko ]
+            then
+                modprobe $FS_TYPE 1> /dev/null 2>&1
+            fi
             mount -r ${x} /newroot/mnt/cdrom > /dev/null 2>&1
 
             if [ "$?" = "0" ]
@@ -381,8 +386,8 @@ then
     ROOT_DEVICE=""
     manage_tmpfs
 
-    # modprobe filesystems that are not in kernel, for live disks
-    for i in nls_cp857 nls_utf8 vfat
+    # modprobe codepages since they are not automatically loaded
+    for i in nls_cp857 nls_utf8
     do
         modprobe ${i} 1> /dev/null 2>&1
     done
