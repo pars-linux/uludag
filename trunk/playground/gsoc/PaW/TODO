@@ -4,9 +4,6 @@ TODO (not ordered)
 * Using WMI, throw compatibility error for Windows versions older than Windows
   2000. i.e. 95/98/Me. keyword: os major version
 
-* Using WMI, detect the system whether it is NT/2000/XP/2003 or Vista/7/newer
-  for installing grub4dos using bcdedit or boot.ini
-
 * safe boot.ini modifier.
 * boot.ini backup system
 * safe boot.ini cleaner upon uninstallation
@@ -33,16 +30,19 @@ TODO (not ordered)
 
 * plan about uninstall script.
 
-* create kernel-path, initrd-path, img-path props on version definitions xml
-  file.
-
 * ISO-extractor script. (fix 7za.exe win cli not working issue) extract files to
   destination folder.
 
 * Copy-from-CD script -- copies required kernel, initrd etc. from directly CD
   to the destination folder.
 
+* verify kernel, initrd, img paths from 2009, and 2009.1, live CDs.
+
 DONE (order by date in desc.)
 ------------------------------
 
-nothing, yet.
+* create kernel-path, initrd-path, img-path props on version definitions xml
+  file.
+
+* Using WMI, detect the system whether it is NT/2000/XP/2003 or Vista/7/newer
+  for installing grub4dos using bcdedit or boot.ini
