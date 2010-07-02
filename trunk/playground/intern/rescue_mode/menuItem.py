@@ -14,7 +14,11 @@ class MenuItem(urwid.Text):
         if key == "enter":
        #     self.state = True
             if self.fn != None:
-	      self.fn(self.args)
+	      if self.args != None:
+		self.fn(self.args)
+	      else:
+		self.fn()
+	    
         return key
  #   def mouse_event(self,size,event,button,col,row,focus):
   #      if event=='mouse release':
