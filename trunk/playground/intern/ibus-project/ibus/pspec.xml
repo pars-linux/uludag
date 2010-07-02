@@ -38,8 +38,8 @@ xml version="1.0" ?>
             <Dependency>pyxdg</Dependency>
             <Dependency>gtk2</Dependency>
             <Dependency>gconf</Dependency>
-            <Dependency>ibus-libs</Dependency>
-            <Dependency>ibus-gtk2</Dependency>
+            <Dependency versionFrom="1.3.5">ibus-libs</Dependency>
+            <Dependency versionFrom="1.3.5">ibus-gtk2</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
@@ -59,7 +59,7 @@ xml version="1.0" ?>
     <Package>
         <Name>ibus-gtk2</Name>
         <RuntimeDependencies>
-            <Dependency>ibus</Dependency>
+            <Dependency versionFrom="1.3.5">ibus</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="library">/usr/lib/gtk-2.0/2.10.0/immodules/im-ibus.so</Path>
@@ -76,7 +76,7 @@ xml version="1.0" ?>
     <Package>
         <Name>ibus-devel</Name>
         <RuntimeDependencies>
-            <Dependency>ibus</Dependency>
+            <Dependency versionFrom="1.3.5">ibus</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include</Path>
@@ -89,7 +89,7 @@ xml version="1.0" ?>
     <Package>
         <Name>ibus-docs-html</Name>
         <RuntimeDependencies>
-            <Dependency>ibus</Dependency>
+            <Dependency versionFrom="1.3.5">ibus</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="doc">/usr/share/gtk-doc/html</Path>
