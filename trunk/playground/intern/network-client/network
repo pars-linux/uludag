@@ -244,7 +244,6 @@ def create_profile(nm_handle):
 
     device_list = []
     #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
-
     for interface in devices:
         if len(devices[interface]) > 0:
             print "  [%s] %s" % (index_, str(interface).capitalize())
@@ -298,12 +297,24 @@ def set_profile_state(nm_handle, command):
 
                         if interface:
                             # The interface is given
-                            print interface
                             for device in nm_handle.devices:
                                 if device.interface == interface:
                                     nm_handle.activate_connection(conn, device)
                         else:
-                            print "Ask"
+                            device_list_type = []
+                            for device in nm_handle.devices:
+                                if str(device.type) == conn.settings.type.split("-").pop().upper():
+                                    device_list_type.append(device),
+                            if len(device_list_type) > 0:
+                                print colorize("Select device:", "yellow")
+                                index_ = 1
+                                for device in device_list_type:
+                                    print "  [%s] %s" % (index_, device)
+                                    index_ += 1
+                                device_no = get_number("Device", 1, index_-1) - 1
+                                device=device_list_type[device_no]
+                                nm_handle.activate_connection(conn, device)
+
 
     try:
         profile = sys.argv[2]
