@@ -38,16 +38,31 @@ xml version="1.0" ?>
             <Dependency>pyxdg</Dependency>
             <Dependency>gtk2</Dependency>
             <Dependency>gconf</Dependency>
+            <Dependency>ibus-libs</Dependency>
+            <Dependency>ibus-gtk2</Dependency>
         </RuntimeDependencies>
         <Files>
-            <Path fileType="all">/</Path>
             <Path fileType="executable">/usr/bin</Path>
-            <Path fileType="config">/etc</Path>
-            <Path fileType="library">/usr/lib</Path>
-            <Path fileType="library">/usr/lib/lib/python2.6/site-packages/ibus</Path>
+            <Path fileType="executable">/usr/libexec/ibus-gconf</Path>
+            <Path fileType="executable">/usr/libexec/ibus-ui-gtk</Path>
+            <Path fileType="executable">/usr/libexec/ibus-x11</Path>
+            <Path fileType="config">/etc/gconf/schemas/ibus.schemas</Path>
+            <Path fileType="library">/usr/lib/python2.6/site-packages/ibus</Path>
             <Path fileType="data">/usr/share/ibus</Path>
             <Path fileType="data">/usr/share/applications</Path>
+            <Path fileType="data">/usr/share/icons/hicolor/*/apps/*</Path>
+            <Path fileType="localedata">/usr/share/locale/</Path>
             <Path fileType="doc">/usr/share/doc</Path>
+        </Files>
+    </Package>
+
+    <Package>
+        <Name>ibus-gtk2</Name>
+        <RuntimeDependencies>
+            <Dependency>ibus</Dependency>
+        </RuntimeDependencies>
+        <Files>
+            <Path fileType="library">/usr/lib/gtk-2.0/2.10.0/immodules/im-ibus.so</Path>
         </Files>
     </Package>
 
@@ -60,16 +75,22 @@ xml version="1.0" ?>
 
     <Package>
         <Name>ibus-devel</Name>
+        <RuntimeDependencies>
+            <Dependency>ibus</Dependency>
+        </RuntimeDependencies>
         <Files>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib/lib*.so</Path>
             <Path fileType="library">/usr/lib/pkgconfig</Path>
-            <Path fileType="data">/usr/share/vala/vapi/ibus1.0.vapi</Path>
+            <Path fileType="data">/usr/share/vala/vapi/ibus-1.0.vapi</Path>
         </Files>
     </Package>
 
     <Package>
         <Name>ibus-docs-html</Name>
+        <RuntimeDependencies>
+            <Dependency>ibus</Dependency>
+        </RuntimeDependencies>
         <Files>
             <Path fileType="doc">/usr/share/gtk-doc/html</Path>
         </Files>
