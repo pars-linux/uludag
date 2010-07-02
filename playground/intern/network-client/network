@@ -45,16 +45,16 @@ def print_usage():
     print "Usage: %s <command> <option>" % sys.argv[0]
     print
     print "Commands:"
-    print "    connections     Show connections"
-    print "    devices         Show devices"
-    print "    create          Create profile"
-    print "    edit            Edit profile"
-    print "    delete          Delete profile"
-    print "    up <profile>    Bring profile up"
-    print "    down <profile>  Bring profile down"
+    print "    connections                      Show connections"
+    print "    devices                          Show devices"
+    print "    create                           Create connection"
+    print "    edit                             Edit connection"
+    print "    delete                           Delete connection"
+    print "    up <connection> [interface]      Bring connection up on the given interface"
+    print "    down <connection>                Bring connection down"
     print
     print "Options:"
-    print "    --no-color      Don't colorize output"
+    print "    --no-color                       Don't colorize output"
     print
 
 def get_input(label):
