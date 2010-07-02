@@ -14,7 +14,7 @@ class FetchTestCase(unittest.TestCase):
         unittest.TestCase.setUp(self)
         self.spec = SpecFile()
         self.spec.read('repos/pardus-2007/system/base/curl/pspec.xml')
-        self.url = uri.URI(self.spec.source.archive.uri)
+        self.url = uri.URI(self.spec.source.sourceURI)
         self.url.set_auth_info(("user", "pass"))
         self.destpath = ctx.config.archives_dir()
         self.fetch = Fetcher(self.url, self.destpath)

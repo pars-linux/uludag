@@ -10,7 +10,7 @@ class FileTestCase(unittest.TestCase):
 
     def testMakeUri(self):
         self.spec = SpecFile()
-        self.url = uri.URI(self.spec.source.archive.uri)
+        self.url = uri.URI(self.spec.source.sourceURI)
         f = File('repos/pardus-2007/system/base/curl/pspec.xml', File.read)
         self.assert_(f.make_uri('uri'))
 
@@ -28,16 +28,8 @@ class FileTestCase(unittest.TestCase):
         r = f.readlines()
         assert (len(r) > 0)
 
-    def testIsatty(self):
-        f = File('repos/pardus-2007/system/base/curl/pspec.xml', File.read)
-        assert not f.isatty()
-
-    def testFileNo(self):
-        f = File('repos/pardus-2007/system/base/curl/pspec.xml', File.read)
-        assert not 3 == f.fileno()
-
     def testRemoteRead(self):
-        f = File('http://uludag.org.tr/bulten/index.html', File.read)
+        f = File('http://www.pardus.org.tr/urunler/pardus-2009.2-Geronticus_eremita-surum-notlari-tr.html', File.read)
         r = f.readlines()
         assert (len(r) > 0)
 

@@ -70,6 +70,7 @@ class ItemByRepoTestCase(testcase.TestCase):
         db = pisi.db.itembyrepo.ItemByRepo({})
         assert db.item_repos("caracal") == ["caracal"]
         # repos were created by testcase.py
+        print db.item_repos()
         assert db.item_repos() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src']
 
     def testGetItem(self):

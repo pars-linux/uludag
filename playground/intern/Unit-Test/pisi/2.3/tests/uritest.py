@@ -11,7 +11,7 @@ class UriTestCase(unittest.TestCase):
 
     def testSetUri(self):
         self.spec = SpecFile()
-        self.url = uri.URI(self.spec.source.archive.uri)
+        self.url = uri.URI(self.spec.source.sourceURI)
         self.url.set_uri('uri')
         assert 'uri' ==  self.url.get_uri()
         self.url.set_uri('urix')
