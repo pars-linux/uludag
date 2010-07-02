@@ -60,11 +60,11 @@ class ShellTestCase(unittest.TestCase):
     def testCopy(self):
         from pisi.actionsapi.shelltools import copy
 
-        copy('/pisi/tests', '/pisi/tests-copy')
-        self.assertEqual(os.path.islink('pisi/tests-copy'),False)
+        copy('./tests', './tests-copy')
+        self.assertEqual(os.path.islink('./tests-copy'),False)
 
-        copy('pisi/tests/scripts/sync-licenses', 'pisi/tests/scripts/sync-licenses-copy')
-        self.assertEqual(os.path.islink('pisi/tests/scripts/sync-licenses-copy'),False)
+        copy('./tests/sync-licences.txt', './tests/sync-licences-copy.txt')
+        self.assertEqual(os.path.islink('./tests/sync-licences.txt'),False)
 
     def testIsLink(self):
         from pisi.actionsapi.shelltools import sym
@@ -86,7 +86,7 @@ class ShellTestCase(unittest.TestCase):
         assert not isDirectory('doc/dependency.pdf')
         assert isDirectory('/usr/lib')
         assert isDirectory('/etc/pisi')
-        assert not isDirectory('/tests/shelltest.py')
+        assert not isDirectory('tests/shelltest.py')
 
     def testRealPath(self):
         from pisi.actionsapi.shelltools import realPath
