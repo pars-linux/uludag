@@ -44,7 +44,9 @@ xml version="1.0" ?>
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="config">/etc</Path>
             <Path fileType="library">/usr/lib</Path>
-            <Path fileType="data">/usr/share</Path>
+            <Path fileType="library">/usr/lib/lib/python2.6/site-packages/ibus</Path>
+            <Path fileType="data">/usr/share/ibus</Path>
+            <Path fileType="data">/usr/share/applications</Path>
             <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
@@ -61,14 +63,15 @@ xml version="1.0" ?>
         <Files>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib/lib*.so</Path>
-            <Path fileType="library">/usr/lib/pkgconfig/</Path>
+            <Path fileType="library">/usr/lib/pkgconfig</Path>
+            <Path fileType="data">/usr/share/vala/vapi/ibus1.0.vapi</Path>
         </Files>
     </Package>
 
     <Package>
-        <Name>ibus-devel-docs</Name>
+        <Name>ibus-docs-html</Name>
         <Files>
-            <Path fileType="doc">/usr/share/gtk-doc</Path>
+            <Path fileType="doc">/usr/share/gtk-doc/html</Path>
         </Files>
     </Package>
 
