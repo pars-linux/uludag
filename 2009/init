@@ -114,7 +114,7 @@ parse_config() {
                 LIVEROOT=$(echo $inputline|cut -f2- -d=)
             ;;
             resume=*)
-                RESUME_DEVICE="${x#resume=}"
+                RESUME_DEVICE="${inputline#resume=}"
             ;;
             noresume=*)
                 NORESUME=$(echo $inputline|cut -f2- -d=)
@@ -123,7 +123,7 @@ parse_config() {
                 COPYTORAM=1
             ;;
             init=*)
-                INIT="${x#INIT=}"
+                INIT="${inputline#INIT=}"
             ;;
         esac
     done < $INITRAMFSCONF
@@ -167,7 +167,7 @@ parse_cmdline() {
             ;;
             liveroot=*)
                 LIVE=1
-                LIVEROOT=$(echo $inputline|cut -f2- -d=)
+                LIVEROOT=$(echo ${x}|cut -f2- -d=)
             ;;
             resume=*)
                 RESUME_DEVICE="${x#resume=}"
