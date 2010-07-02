@@ -1,4 +1,5 @@
 import commands
+import platform
 
 from logger import getLogger
 log = getLogger("Compatibility")
@@ -11,7 +12,6 @@ class LogicalDisk():
 	self.FreeSpace = free
 	self.Size = size
 	self.Path = path
-
 
     def __repr__(self):
 	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.FreeSpace, self.Size, self.Path)))
@@ -28,9 +28,9 @@ class Compatibility():
 	try:
 	    from wmi import wmi
 	    self.wmi = wmi.WMI()
-	    self.winArchitecture()
-	    self.winTotalMemory()
+            self.winTotalMemory()
 	    self.winPopulateDisks()
+	    self.winArchitecture()
 	    log.debug('Running on Windows.')
 	except (NameError, ImportError):
 	    log.debug('Running on Linux.')
@@ -43,6 +43,12 @@ class Compatibility():
 	log.debug('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
 
     def winArchitecture(self):
+        """
+        Notice: Takes almost 2.5 seconds on my avg laptop running Win 7.
+        Considerably slower than all other WMI operations. May take longer on
+        older PCs.
+        """
+        #TODO: Causes performance bottleneck, find alternative.
 	if(self.wmi):
 	        if(self.wmi.Win32_Processor(Architecture = 0x0)):
 		    name = 'x86'
@@ -112,3 +118,23 @@ class Compatibility():
 	    path = str(p[5])
 
 	    self.disks.append(LogicalDisk(name,free,size, path))
+
+    def winMajorVersion(self):
+        """
+        Returns major versions for Microsoft(tm) Windows(r) family.
+        In fact, just returns v from v.m.b version sequence.
+        Here are a few:
+            0: Unknown, undetermined.
+            1: Windows 1.0
+            2: Windows 2.0
+            3: Windows 3.0, NT 3.1
+            4: Windows 95, Windows 98, Windows Me
+            5: Windows 2000, Windows XP, Windows Server 2003
+            6: Windows Vista, Windows 7
+
+        Notice: WMI is slower than platform.version here.
+        """
+        try:
+            return platform.version().split('.')[0]
+        except:
+            return 0
