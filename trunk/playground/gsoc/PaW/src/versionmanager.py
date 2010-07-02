@@ -80,7 +80,7 @@ class VersionManager():
     def _handleVersion(self, version):
         ver = Version()
         fields = ["size", "name", "type", "minmemory", "memory", "minspace",
-                  "space", 'md5sum']
+                  "space", "md5sum", "kernel", "initrd", "img"]
 
 	for field in fields:
 	    value =self._getText(version.getElementsByTagName(field)[0].childNodes).encode('utf8')
