@@ -1,9 +1,9 @@
 THANKS
 ----------------------
 
-* Onur Kucuk for modifying initrd for make Pardus to be able to detect FAT32
-  or NTFS when booting from grub4dos.
-
 * The whole Pardus community for their helps, embracing the project and offering
   a better workplace in their office.
+
+* Onur Kucuk for modifying initrd in order to make Pardus to detect  FAT32 or
+  NTFS when booting from grub4dos.
 
