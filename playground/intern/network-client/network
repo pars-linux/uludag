@@ -94,12 +94,11 @@ def print_connections(nm_handle):
             print colorize("%s profiles" % conn_interface, 'green')
 
             for profile in connections[connection_key]:
+                state_mark = " "
                 for active in nm_handle.active_connections:
                     if active.connection.settings.id == profile.settings.id:
                         state_mark = "X"
-                    else:
-                        state_mark = " "
-                    print "[%s]  %s%s    %s" % (colorize(state_mark, 'green'), colorize(profile.settings.id, 'cyan'), "","")
+                print "[%s]  %s%s    %s" % (colorize(state_mark, 'green'), colorize(profile.settings.id, 'cyan'), "","")
 
 
 
@@ -267,7 +266,7 @@ def create_profile(nm_handle):
         print colorize("Select device:", "yellow")
         for device in _devices:
             print "  [%s] %s" % (index_, device)
-        index_ += 1
+            index_ += 1
         device_no = get_number("Device", 1, _max) - 1
 
         functions[_devices[device_no].type](nm_handle, _devices[device_no])
@@ -282,6 +281,9 @@ def set_profile_state(nm_handle, command):
     def set_profile_state_up(nm_handle, profile):
         for conn in nm_handle.connections:
             if conn.settings.id == profile:
+                # FIXME: if conn.settings.mac_address is empty don't search for devices
+                #if conn.settings.mac_address = ""
+                #else:
                 for device in nm_handle.devices:
                     if conn.settings.mac_address and device.hwaddress == conn.settings.mac_address:
                         nm_handle.activate_connection(conn, device)
@@ -297,9 +299,11 @@ def set_profile_state(nm_handle, command):
                         if interface:
                             # The interface is given
                             print interface
+                            for device in nm_handle.devices:
+                                if device.interface == interface:
+                                    nm_handle.activate_connection(conn, device)
                         else:
                             print "Ask"
-
 
     try:
         profile = sys.argv[2]
