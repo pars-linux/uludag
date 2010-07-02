@@ -8,7 +8,8 @@
     <!ATTLIST pardus lastUpdated CDATA #REQUIRED>
 
     <!-- version definition -->
-    <!ELEMENT version (name,size,type,md5sum,minmemory,memory,minspace,space,mirrors)>
+    <!ELEMENT version (name,size,type,md5sum,minmemory,memory,
+                       minspace,space,kernel,initrd,img,mirrors)>
 
         <!ATTLIST version id ID #REQUIRED>
 
@@ -20,6 +21,10 @@
         <!ELEMENT memory (#PCDATA)>
         <!ELEMENT minspace (#PCDATA)>
         <!ELEMENT space (#PCDATA)>
+        <!ELEMENT kernel (#PCDATA)>
+        <!ELEMENT initrd (#PCDATA)>
+        <!ELEMENT img (#PCDATA)>
+
         <!ELEMENT mirrors (source+)>
 
             <!-- Mirror (source) definition -->
