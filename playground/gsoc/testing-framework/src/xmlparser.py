@@ -52,7 +52,7 @@ class XMLParser:
                 customCounter += 1
         # Run each testcase
         while counter < totalTestcases:
-            print colorize("[ Running test '{0}' of '{1}' ]", 'yellow').format(counter+1, totalTestcases)
+            print "[ Running test", colorize("{0} / {1}", 'bold').format(counter+1, totalTestcases), ']' 
             element = self.rootelement[counter]
             elementText = element.get('test')
             # Based on the type of testcase, call the appropriate one
@@ -65,11 +65,13 @@ class XMLParser:
                 print 'No package specified for testing. Skipping test ...\n'
                 counter += 1
                 continue
-            # one line hack to call the appropriate method!        
-            dict(install=self.test_install,
-                 gui=self.test_gui,
-                 shell=self.test_shell,
-                 automated=self.test_automated)[elementText](element, packageList)   
+            # one line hack to call the appropriate method
+            dict(
+                install=self.test_install,
+                gui=self.test_gui,
+                shell=self.test_shell,
+                automated=self.test_automated
+                )[elementText](element, packageList)   
             counter += 1
     
     def test_install(self, element, packagelist):
@@ -81,7 +83,6 @@ class XMLParser:
         """Call the module for testcase type GUI."""
         installedPackages = self.installed_packages()
         print packagelist
-        sys.exit()
         
     def test_shell(self, element, packagelist):
         """Call the module for testcase type SHELL."""
@@ -114,7 +115,7 @@ class XMLParser:
             print colorize('Solution: Please ensure that the output file name and path is valid.', 'green')
             sys.exit(1)
         print colorize("The list of packages has been written to: '{0}'", 'green').format(outputFile)
-        sys.exit(1)
+        sys.exit()
     
     def print_package_list(self):
         """Print the list of packages in the XML file."""

@@ -11,6 +11,7 @@ from pisi.errors import PrivilegeError
 
 from clcolorize import colorize
 
+
 class TestInstall:
     """class for the testcase install."""
     def __init__(self, packagelist, installedpackages, availablepackages):
@@ -28,7 +29,7 @@ class TestInstall:
         # Install only packages that are in all the repositories
         packagesNotInRepo = list(set(packagestNotInstalled) - set((self.availablepackages)))
         if packagesNotInRepo:
-            print "The following packages were not found in the repository: '{0}'".format(string.join(packagesNotInRepo, ', '))
+            print "The following packages were not found in the repository:", colorize('{0}', 'red').format(string.join(packagesNotInRepo, ', '))
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
         totalPackages = len(finalPacakges)

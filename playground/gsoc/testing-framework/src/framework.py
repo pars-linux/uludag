@@ -37,7 +37,7 @@ def check_file(file):
 
 def main():
     """Call the command line and the parser modules."""
-    print colorize('Pardus Testing Framework\n', 'yellow')
+    print colorize('Pardus Testing Framework\n', 'bold')
     # Call the clarguments module
     filename, custompackages, allpackages = arguments_parse()
     # Check whether the file is valid or not
