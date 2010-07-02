@@ -13,9 +13,7 @@ import sys
 import uuid
 
 from networkmanager import NetworkManager, WiredSettings, DeviceType
-#from networkmanager.ipaddr import DeviceType
 
-use_color = True
 
 # Color characters
 colors = {'red'       : '\x1b[31;01m',
@@ -34,6 +32,7 @@ colors = {'red'       : '\x1b[31;01m',
          'magentadark': '\x1b[35;0m',
          'normal'     : '\x1b[0m'}
 
+use_color = True
 
 def colorize(msg, color):
     global use_color
@@ -105,6 +104,7 @@ def print_connections(nm_handle):
 
 
 def print_devices(nm_handle):
+    """Print the device list."""
     devices = {
         DeviceType.UNKNOWN  : [],
         DeviceType.WIFI     : [],
@@ -116,11 +116,11 @@ def print_devices(nm_handle):
     for device in nm_handle.devices:
         devices[device.type].append(device)
 
-    for device_key in devices:
-        if len(devices[device_key]) > 0:
-            print colorize("%s devices" % str(device_key).capitalize(), 'green')
-            for device in devices[device_key]:
-                print "  %s\t(%s)" % (device.driver, device.interface)
+    for device in devices:
+        if len(devices[device]) > 0:
+            print colorize("%s devices" % str(device).capitalize(), 'green')
+            for dev in devices[device]:
+                print "  %s\t(%s)" % (dev.driver, dev.interface)
 
 
 def delete_profile(nm_handle):
@@ -273,31 +273,45 @@ def create_profile(nm_handle):
         functions[_devices[device_no].type](nm_handle, _devices[device_no])
 
 
-
-def state_profile(nm_handle, command):
-    try:
-        profile = sys.argv[2]
-    except:
-        print_usage()
-        return 1
-
-    def state_profile_down(nm_handle, profile):
+def set_profile_state(nm_handle, command):
+    def set_profile_state_down(nm_handle, profile):
         for active_conn in nm_handle.active_connections:
             if active_conn.connection.settings.id == profile:
                 active_conn.devices[0].disconnect()
 
-    def state_profile_up(nm_handle, profile):
+    def set_profile_state_up(nm_handle, profile):
         for conn in nm_handle.connections:
             if conn.settings.id == profile:
                 for device in nm_handle.devices:
-                    if device.hwaddress == conn.settings.mac_address:
+                    if conn.settings.mac_address and device.hwaddress == conn.settings.mac_address:
                         nm_handle.activate_connection(conn, device)
+                    else:
+                        # The connection doesn't have a fixed MAC so we have to ask for the interface
+                        # or use a possibly given interface through command-line
+                        try:
+                            interface = sys.argv[3]
+                        except IndexError:
+                            # We have to ask for the interface if we can't match with the MAC address
+                            interface = None
+
+                        if interface:
+                            # The interface is given
+                            print interface
+                        else:
+                            print "Ask"
+
+
+    try:
+        profile = sys.argv[2]
+    except IndexError:
+        print_usage()
+        return 1
 
 
     if command == "down":
-        state_profile_down(nm_handle, profile)
+        set_profile_state_down(nm_handle, profile)
     elif command == "up":
-        state_profile_up(nm_handle, profile)
+        set_profile_state_up(nm_handle, profile)
 
 
 #####################
@@ -306,7 +320,7 @@ def state_profile(nm_handle, command):
 def main():
     try:
         command = sys.argv[1]
-    except:
+    except IndexError:
         print_usage()
         return 1
 
@@ -327,7 +341,7 @@ def main():
     elif command == "delete":
         delete_profile(nm_handle)
     elif command in ("up", "down"):
-        state_profile(nm_handle, command)
+        set_profile_state(nm_handle, command)
     else:
         print_usage()
         return 1
