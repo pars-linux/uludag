@@ -72,26 +72,26 @@ def populate_template(template_contents, values):
     return template_contents
 
 
-def run_shell_cmd(cmdargs, shell = False):
+def run_shell_cmd(cmdargs, shell = False, stdout = subprocess.PIPE,
+    stderr = subprocess.PIPE):
     '''
     This is a blocking method and may take a long time to complete.
     Use this with a threading instance or twisted library.
     '''
-
-    if isinstance(cmdargs, list):
-        cmdargs[0] = os.path.normpath(os.path.abspath(cmdargs[0]))
+    #log.debug(' '.join(cmdargs))
 
     sp = subprocess.Popen(
         args = cmdargs,
-        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        stdin=subprocess.PIPE, stdout=stdout, stderr=stderr,
         shell = shell
     )
 
     retcode = sp.wait() # wait until process returns
     # TODO: all those can be replaced with subprocess.call(cmdargs) or check_call
-
+    
     if retcode == 0:
-        return sp.stdout.read()
+        if sp.stdout:
+            return sp.stdout.read()
     else:
         log.exception("Error code returned from shell executable:[%s]||return code: %d||stderr=%s||stdout=%s||"
             % (' '.join(cmdargs), retcode, sp.stderr.read(), sp.stdout.read()))
