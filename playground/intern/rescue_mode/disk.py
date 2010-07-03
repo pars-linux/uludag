@@ -33,11 +33,12 @@ def getPardusVLP():
     if os.path.exists(path):
       mounteds= link.Disk.Manager["mudur"].getMounted()
       if path in str(mounteds):
-	comar.Link().Disk.Manager["mudur"].umount(path)
+	#comar.Link().Disk.Manager["mudur"].umount(path)
+	pass
     else:
       os.makedirs(path)
-    comar.Link().Disk.Manager["mudur"].mount(i[1],path)
-    pardusVLP.append([open(path+"/etc/pardus-release").read().rstrip("\n"),i[0],i[1]])
+    #comar.Link().Disk.Manager["mudur"].mount(i[1],path)
+    pardusVLP.append([open(path+"/etc/pardus-release").read().rstrip("\n"),i[1],i[0],path])
   
   pardusVLP.reverse()
   
