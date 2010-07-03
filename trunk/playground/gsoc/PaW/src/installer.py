@@ -1,5 +1,5 @@
 import tempfile
-import os
+import os,time
 from utils import *
 
 from logger import getLogger
@@ -12,7 +12,10 @@ except ImportError, NameError:
     log.debug('Could not import _winreg. Missing module.')
 
 class Installer():
-    grub_loader_file = 'parldr'
+    grub_loader_file = 'grldr'
+    grub_loader_path = 'files/grldr'
+    mbr_file = 'grldr.mbr'
+    mbr_path = 'filer/grldr.mbr'
 
     def __init__(self, mainEngine):
         self.mainEngine = mainEngine
@@ -92,9 +95,15 @@ class Installer():
         return os.path.join(system_drive_root, self.grub_loader_file)
 
     def modify_boot_ini(self):
+        """
+        Windows 2000, Windows XP, Windows 2003 Server has boot.ini under primary
+        partition. We simply append c:\grldr="Pardus" to launch grub4dos from
+        ntldr (Windows NT Loader).
+        """
         # read boot.ini
         fstream = None
-        system_drive_root = '%s\\'% self.mainEngine.compatibility.OS.SystemDrive
+        system_drive_root = '%s\\'% os.getenv('SystemDrive')
+        # alternative is self.mainEngine.compatibility.OS.SystemDrive
         boot_ini_path = os.path.join(system_drive_root,'boot.ini')
         # TODO: Fail-safe and better path join.
 
@@ -136,3 +145,51 @@ class Installer():
 
         # restore system+readonly+hidden attribs of boot.ini
         run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path])
+
+def modify_bcd():
+    """
+    For Windows Vista and Windows 7, we use bcdedit command to launch
+    grub4dos from boot sector. bcdedit.exe is under System32 folder.
+    For more, see http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
+
+    bcdedit /create /d "Start GRUB4DOS" /application bootsector
+    bcdedit /set {id} device boot
+    bcdedit /set {id} path \grldr.mbr
+    bcdedit /displayorder {id} /addlast
+    """
+
+    bcdedit_paths = [ # possible paths for bcdedit.
+        os.path.join(os.getenv('SystemDrive')+'\\', 'Windows', 'System32', 'bcdedit.exe'),
+        os.path.join(os.getenv('windir'), 'System32', 'bcdedit.exe'),
+        os.path.join(os.getenv('systemroot'), 'System32', 'bcdedit.exe'),
+        os.path.join(os.getenv('windir'), 'sysnative', 'bcdedit.exe'),
+        os.path.join(os.getenv('systemroot'), 'sysnative', 'bcdedit.exe')
+        ]
+
+    for path in bcdedit_paths:
+        if os.path.isfile(path):
+            bcdedit_path = path
+            break
+        else:
+            bcdedit_path = None
+
+    if not bcdedit_path:
+        log.exception('Could not locate bcdedit.exe')
+        return
+
+    guid = run_shell_cmd([bcdedit_path,'/create', '/d', 'Pardus', '/application', 'bootsector'])
+    # TODO: replace app name
+    guid = guid[guid.index('{') : guid.index('}')+1] # fetch {...} guid from message string
+
+    config_commands = [
+        [bcdedit_path, '/set', guid, 'device', 'boot'],
+        [bcdedit_path, '/set', guid, 'path', '\\grldr.mbr'],
+        [bcdedit_path, '/displayorder', guid, '/addlast']
+    ]
+
+    for cmd in config_commands:
+        run_shell_cmd(cmd)
+
+    self.mainEngine.config.bcd_guid = guid
+    # TODO: save bcd_guid to the REGISTRY
+
