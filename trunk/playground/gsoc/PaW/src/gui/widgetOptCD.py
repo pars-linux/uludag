@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './widgetOptCD.ui'
+# Form implementation generated from reading ui file 'widgetOptCD.ui'
 #
-# Created: Mon Jun 14 20:48:51 2010
+# Created: Sat Jul 03 15:50:39 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -15,7 +15,7 @@ class Ui_widgetOptCD(object):
         widgetOptCD.resize(407, 174)
         widgetOptCD.setWindowTitle("")
         self.verticalLayoutWidget = QtGui.QWidget(widgetOptCD)
-        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 401, 171))
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 0, 418, 171))
         self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
         self.verticalLayout = QtGui.QVBoxLayout(self.verticalLayoutWidget)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -37,6 +37,6 @@ class Ui_widgetOptCD(object):
         QtCore.QMetaObject.connectSlotsByName(widgetOptCD)
 
     def retranslateUi(self, widgetOptCD):
-        self.lblDescription.setText(QtGui.QApplication.translate("widgetOptCD", "Description for choosing CD/DVD path", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblDescription.setText(QtGui.QApplication.translate("widgetOptCD", "Choose your CD drive which has Pardus Live CD in it.", None, QtGui.QApplication.UnicodeUTF8))
         self.btnBrowse.setText(QtGui.QApplication.translate("widgetOptCD", "Browse...", None, QtGui.QApplication.UnicodeUTF8))
 

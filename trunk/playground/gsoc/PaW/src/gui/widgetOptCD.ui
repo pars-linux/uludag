@@ -18,7 +18,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>401</width>
+     <width>418</width>
      <height>171</height>
     </rect>
    </property>
@@ -26,7 +26,7 @@
     <item>
      <widget class="QLabel" name="lblDescription">
       <property name="text">
-       <string>Description for choosing CD/DVD path</string>
+       <string>Choose your CD drive which has Pardus Live CD in it.</string>
       </property>
      </widget>
     </item>
