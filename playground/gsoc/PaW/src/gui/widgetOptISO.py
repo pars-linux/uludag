@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './widgetOptISO.ui'
+# Form implementation generated from reading ui file 'widgetOptISO.ui'
 #
-# Created: Mon Jun 14 20:48:52 2010
+# Created: Sat Jul 03 18:08:03 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -32,11 +32,19 @@ class Ui_widgetOptISO(object):
         self.btnBrowse.setObjectName("btnBrowse")
         self.horizontalLayout.addWidget(self.btnBrowse)
         self.verticalLayout.addLayout(self.horizontalLayout)
+        self.lblVersion = QtGui.QLabel(self.verticalLayoutWidget)
+        self.lblVersion.setObjectName("lblVersion")
+        self.verticalLayout.addWidget(self.lblVersion)
+        self.btnValidate = QtGui.QPushButton(self.verticalLayoutWidget)
+        self.btnValidate.setObjectName("btnValidate")
+        self.verticalLayout.addWidget(self.btnValidate)
 
         self.retranslateUi(widgetOptISO)
         QtCore.QMetaObject.connectSlotsByName(widgetOptISO)
 
     def retranslateUi(self, widgetOptISO):
-        self.labelDescription.setText(QtGui.QApplication.translate("widgetOptISO", "Description for choosing ISO from file.", None, QtGui.QApplication.UnicodeUTF8))
+        self.labelDescription.setText(QtGui.QApplication.translate("widgetOptISO", "Choose a Pardus Live CD image (.iso) file from your computer.", None, QtGui.QApplication.UnicodeUTF8))
         self.btnBrowse.setText(QtGui.QApplication.translate("widgetOptISO", "Browse...", None, QtGui.QApplication.UnicodeUTF8))
+        self.lblVersion.setText(QtGui.QApplication.translate("widgetOptISO", "Please choose a file from the form above to proceed.", None, QtGui.QApplication.UnicodeUTF8))
+        self.btnValidate.setText(QtGui.QApplication.translate("widgetOptISO", "Validate ISO File (Optional)", None, QtGui.QApplication.UnicodeUTF8))
 

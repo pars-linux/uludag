@@ -93,7 +93,7 @@
         <item>
          <widget class="QRadioButton" name="optISO">
           <property name="text">
-           <string>I have Pardus installation file (.ISO)</string>
+           <string>I have Pardus Live CD image (.ISO)</string>
           </property>
          </widget>
         </item>

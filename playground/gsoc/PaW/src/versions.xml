@@ -4,9 +4,9 @@
 <pardus ver="1.0" lastUpdated="24/01/2010">
     <version id="pardus2009.2">
 	<name>Pardus 2009.2 Geronticus eremita</name>
-	<size>713031680</size>
+	<size>731906048</size>
 	<type>32-bit</type>
-	<md5sum>eab230392ecdba0a4f8dbae1b4f914fb</md5sum>
+	<md5sum>72c3112874944dd82aca1600b7a0c57a</md5sum>
 	<minmemory>268435456</minmemory>
 	<memory>536870912</memory>
 	<minspace>1258291200</minspace>
@@ -22,17 +22,17 @@
 		<username>anonymous</username>
 		<password>anonymous</password>
 		<port>21</port>
-		<path>/pub/pardus/kurulan/2009.2/</path>
-		<filename>Pardus-2009.2-Geronticus-eremita.iso</filename>
+		<path>/pub/pardus/calisan/2009.2/</path>
+		<filename>Pardus-Calisan-2009.2-Geronticus-eremita.iso</filename>
 	    </source>
 	</mirrors>
     </version>
 
     <version id="pardus2009.1">
 	<name>Pardus 2009.1 Anthropoides virgo</name>
-	<size>716177408</size>
+	<size>730857472</size>
 	<type>32-bit</type>
-	<md5sum>104583ecd4d649cc58eafcaf94b4dceb</md5sum>
+	<md5sum>0d4af4056adfaa11af29348eb77ea81a</md5sum>
 	<minmemory>268435456</minmemory>
 	<memory>536870912</memory>
 	<minspace>1258291200</minspace>
@@ -48,45 +48,8 @@
 		<username>anonymous</username>
 		<password>anonymous</password>
 		<port>21</port>
-		<path>/pub/pardus/kurulan/2009.1/</path>
-		<filename>Pardus_2009.1_Anthropoides_virgo.iso</filename>
-	    </source>
-	</mirrors>
-    </version>
-
-    <version id="pardus2009">
-	<name>Pardus 2009</name>
-	<size>720156672</size>
-	<type>32-bit</type>
-	<md5sum>d0836e92d77e016f5f9c8feb23afca55</md5sum>
-	<minmemory>268435456</minmemory>
-	<memory>536870912</memory>
-	<minspace>1258291200</minspace>
-	<space>4194304000</space>
-        <kernel>boot/kernel</kernel>
-        <initrd>boot/initrd</initrd>
-        <img>pardus.img</img>
-	<mirrors>
-	    <source>
-		<hostname>ftp.linux.org.tr</hostname>
-		<country>TR</country>
-		<login>true</login>
-		<username>anonymous</username>
-		<password>anonymous</password>
-		<port>21</port>
-		<path>/pardus/kurulan/2009/</path>
-		<filename>Pardus_2009.iso</filename>
-	    </source>
-
-	    <source>
-		<hostname>ftp.pardus.org.tr</hostname>
-		<country>TR</country>
-		<login>true</login>
-		<username>anonymous</username>
-		<password>anonymous</password>
-		<port>21</port>
-		<path>/pub/pardus/kurulan/2009/</path>
-		<filename>Pardus_2009.iso</filename>
+		<path>/pub/pardus/calisan/2009.1/</path>
+		<filename>Pardus_Calisan_2009.1_Anthropoides_virgo.iso</filename>
 	    </source>
 	</mirrors>
     </version>

@@ -7,7 +7,7 @@ log = getLogger("VersionManager")
 
 class Version():
     def __repr__(self):
-	return ' '.join((self.name, self.size, self.id, self.minmemory, self.memory))
+	return ' '.join((self.name, self.size, self.id, self.md5sum))
 
 class Mirror:
     pass
@@ -141,6 +141,19 @@ class VersionManager():
 	    log.error(self.err)
 	    self.guiCallback(False)
 
+    def getBySize(self, size):
+        'Size in bytes.'
+        for version in self.versions:
+            if long(version.size) == long(size):
+                return version
+        return None
+
+    def getByMD5Sum(self, hash):
+        'MD5 hash as in versions.xml'
+        for version in self.versions:
+            if str(version.md5sum) == str(hash):
+                return version
+        return None
 
     def connectGui(self, guiCallback):
 	self.guiCallback = guiCallback
