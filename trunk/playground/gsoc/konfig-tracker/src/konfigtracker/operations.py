@@ -1,9 +1,3 @@
-#-----------------------------------------------------------
-# Operations.py
-# Author : Jain Basil Aliyas
-# Date : 8 June, 2010
-#-----------------------------------------------------------
-
 from PyKDE4.kdecore import KStandardDirs
 
 from time import strftime,localtime
@@ -33,7 +27,6 @@ def Commit():
 		repo.execute(["git","commit","-a","-m",message])
 	except git.errors.GitCommandError:
 		pass
-	print message
 
 def AddToDB():
 	"""
@@ -54,3 +47,32 @@ def Backup():
 	if DirUtil.copy_tree(srcPath,destPath,update=1):
 		AddToDB()
 
+def restore(commitId):
+	"""
+	Restore the config files to a particular commit
+	"""
+	#check whether this commitId is at the head now. If yes, don't perform the restore.
+	repo = git.Git(GetLocalDir() + "/KonfigTrackerDB/")
+	repo.execute(["git","read-tree",commitId])
+	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
+	destPath = str(GetLocalDir() + "/share")
+	srcPath = "/tmp/config"
+	DirUtil.copy_tree(srcPath,destPath,update=1)
+
+def restoreParent(commitId):
+	"""
+	Restore to parent of a commit passed
+	"""
+	repo = git.Git(GetLocalDir() + "/KonfigTrackerDB/")
+	parent=repo.commits(commitId).parents
+	repo.execute(["git","read-tree",parent])
+	repo.execute(["git","checkout-index","-a","--prefix=/tmp/"])
+	destPath = str(GetLocalDir() + "/share")
+	srcPath = "/tmp/config"
+	DirUtil.copy_tree(srcPath,destPath,update=1)
+
+def packData(commitId):
+	"""
+	Pack the data at this commit into an archive
+	"""
+	pass	
