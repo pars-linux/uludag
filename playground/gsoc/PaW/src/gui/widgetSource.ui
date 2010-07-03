@@ -73,7 +73,7 @@
         <item>
          <widget class="QRadioButton" name="optCD">
           <property name="text">
-           <string>I have Pardus installation CD</string>
+           <string>I have Pardus Live CD</string>
           </property>
          </widget>
         </item>
