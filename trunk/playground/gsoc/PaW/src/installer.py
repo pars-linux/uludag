@@ -146,50 +146,49 @@ class Installer():
         # restore system+readonly+hidden attribs of boot.ini
         run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path])
 
-def modify_bcd():
-    """
-    For Windows Vista and Windows 7, we use bcdedit command to launch
-    grub4dos from boot sector. bcdedit.exe is under System32 folder.
-    For more, see http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
+    def modify_bcd(self):
+        """
+        For Windows Vista and Windows 7, we use bcdedit command to launch
+        grub4dos from boot sector. bcdedit.exe is under System32 folder.
+        For more, see http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
 
-    bcdedit /create /d "Start GRUB4DOS" /application bootsector
-    bcdedit /set {id} device boot
-    bcdedit /set {id} path \grldr.mbr
-    bcdedit /displayorder {id} /addlast
-    """
+        bcdedit /create /d "Start GRUB4DOS" /application bootsector
+        bcdedit /set {id} device boot
+        bcdedit /set {id} path \grldr.mbr
+        bcdedit /displayorder {id} /addlast
+        """
 
-    bcdedit_paths = [ # possible paths for bcdedit.
-        os.path.join(os.getenv('SystemDrive')+'\\', 'Windows', 'System32', 'bcdedit.exe'),
-        os.path.join(os.getenv('windir'), 'System32', 'bcdedit.exe'),
-        os.path.join(os.getenv('systemroot'), 'System32', 'bcdedit.exe'),
-        os.path.join(os.getenv('windir'), 'sysnative', 'bcdedit.exe'),
-        os.path.join(os.getenv('systemroot'), 'sysnative', 'bcdedit.exe')
+        bcdedit_paths = [ # possible paths for bcdedit.
+            os.path.join(os.getenv('SystemDrive')+'\\', 'Windows', 'System32', 'bcdedit.exe'),
+            os.path.join(os.getenv('windir'), 'System32', 'bcdedit.exe'),
+            os.path.join(os.getenv('systemroot'), 'System32', 'bcdedit.exe'),
+            os.path.join(os.getenv('windir'), 'sysnative', 'bcdedit.exe'),
+            os.path.join(os.getenv('systemroot'), 'sysnative', 'bcdedit.exe')
+            ]
+
+        for path in bcdedit_paths:
+            if os.path.isfile(path):
+                bcdedit_path = path
+                break
+            else:
+                bcdedit_path = None
+
+        if not bcdedit_path:
+            log.exception('Could not locate bcdedit.exe')
+            return
+
+        guid = run_shell_cmd([bcdedit_path,'/create', '/d', self.mainEngine.application, '/application', 'bootsector'])
+        # TODO: replace app name
+        guid = guid[guid.index('{') : guid.index('}')+1] # fetch {...} guid from message string
+
+        config_commands = [
+            [bcdedit_path, '/set', guid, 'device', 'boot'],
+            [bcdedit_path, '/set', guid, 'path', '\\grldr.mbr'],
+            [bcdedit_path, '/displayorder', guid, '/addlast']
         ]
 
-    for path in bcdedit_paths:
-        if os.path.isfile(path):
-            bcdedit_path = path
-            break
-        else:
-            bcdedit_path = None
+        for cmd in config_commands:
+            run_shell_cmd(cmd)
 
-    if not bcdedit_path:
-        log.exception('Could not locate bcdedit.exe')
-        return
-
-    guid = run_shell_cmd([bcdedit_path,'/create', '/d', 'Pardus', '/application', 'bootsector'])
-    # TODO: replace app name
-    guid = guid[guid.index('{') : guid.index('}')+1] # fetch {...} guid from message string
-
-    config_commands = [
-        [bcdedit_path, '/set', guid, 'device', 'boot'],
-        [bcdedit_path, '/set', guid, 'path', '\\grldr.mbr'],
-        [bcdedit_path, '/displayorder', guid, '/addlast']
-    ]
-
-    for cmd in config_commands:
-        run_shell_cmd(cmd)
-
-    self.mainEngine.config.bcd_guid = guid
-    # TODO: save bcd_guid to the REGISTRY
-
+        self.mainEngine.config.bcd_guid = guid
+        # TODO: save bcd_guid to the REGISTRY
