@@ -49,16 +49,13 @@ class Compatibility():
         Considerably slower than all other WMI operations. May take longer on
         older PCs.
         """
-        #TODO: Causes performance bottleneck, find alternative.
+        # TODO: Still causes performance bottleneck, find alternative.
 	if(self.wmi):
-	        if(self.wmi.Win32_Processor(Architecture = 0x0)):
-		    name = 'x86'
-		    bits = 32
-		elif(self.wmi.Win32_Processor(Architecture = 0x9)):
+	        if(self.wmi.Win32_Processor(Architecture = 0x9)):
 		    name = 'x64'
 		    bits = 64
-		else:
-		    name = 'Intel Itanium, MIPS or PowerPC'
+                else:
+		    name = 'x32'
 		    bits = 32
 
 		self.architectureBit, self.architectureName = bits, name
@@ -135,6 +132,9 @@ class Compatibility():
 
         Notice: WMI is slower than platform.version here.
         """
+#        Alternative:
+#            wmi.WMI().Win32_OperatingSystem()[0].Version
+
         try:
             return platform.version().split('.')[0]
         except:
