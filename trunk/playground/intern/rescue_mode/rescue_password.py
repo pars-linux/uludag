@@ -1,30 +1,47 @@
 # -*- coding: utf-8 -*-
-import os, dbus, comar
+import os, dbus, comar, subprocess
 
 
-_sys_dirs ["dev","proc","sys"]
+_sys_dirs = ["dev","proc","sys"]
 
-def chrootRun(cmd):
-    os.system("chroot %s %s" % ("/", cmd))
+def chrootRun(path,cmd):
+    temp = "chroot %s %s" % (path, cmd)
+   # print temp
+   # os.system(temp)
+    subprocess.call(temp,shell=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
-class pardus_dbus:
+class pardusDbus:
   def __init__(self,path):
+      
     for _dir in _sys_dirs:
         tgt = os.path.join(path, _dir)
-        os.system("mount --bind /%s %s" % (_dir, tgt))
+	temp = "mount --bind /%s %s" % (_dir, tgt)
+	#print temp
+        os.system(temp)
+  
+     
+    chrootRun(path,"/sbin/ldconfig")
+    chrootRun(path,"/sbin/update-environment")
+    chrootRun(path,"/bin/service dbus start")
+    
+    self.sokcet_file = os.path.join(path,"var/run/dbus/system_bus_socket")
+    #print self.sokcet_file
+    asd = "unix:path=%s" %self.sokcet_file
+    #print asd
+    dbus.bus.BusConnection(address_or_type=asd)
+    
+  def getUserlist(self):
+      link = comar.Link(socket=self.sokcet_file)
+      users = link.User.Manager["baselayout"].userList()
+      return filter(lambda user: user[0]==0 or (user[0]>=1000 and user[0]<=65000), users)
 
-    chrootRun("/sbin/ldconfig")
-    chrootRun("/sbin/update-environment")
-    chrootRun("/bin/service dbus start")
-    
-    sokcet_file = os.path.join(path,"var/run/dbus/system_bus_socket")
-    dbus.bus.BusConnection(address_or_type="unix:path=%s" % sokcet_file)
-    
-def get_userlist():
-    link = comar.Link(socket=ctx.consts.dbus_socket_file)
-    users = link.User.Manager["baselayout"].userList()
-    return filter(lambda user: user[0]==0 or (user[0]>=1000 and user[0]<=65000), users)
+def main():
+  a = pardusDbus("/mnt/rescue_disk/PARDUS_ROOT")
+  print a.getUserlist()
+
+if __name__ == "__main__":
+  main()
     
 
   

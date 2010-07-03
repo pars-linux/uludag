@@ -3,9 +3,9 @@ import urwid
 import time
 import disk
 import listeKutu
-import menuItem
+import menuItem , rescue_password
 from pardus import diskutils
-from pardus import procutils
+import subprocess
 import os , parted
 
 class Program:
@@ -58,6 +58,7 @@ class Program:
       return "Seçilen disk : "+item.args[0]+" label:"+item.args[1]
     
     def diskSec(device):
+      self.selectedDisk = device
       self.in_co.append(device)
       self.pardusDevice = diskutils.parseLinuxDevice(device[0])
       self.otherDevices = diskutils.getDeviceMap()
@@ -67,14 +68,14 @@ class Program:
     listFrame = listeKutu.listInfo(diskBilgisi,['pardus','focus'],"Lütfen listeden disk bölümünü seçin") 
         
     for i in disk.getPardusVLP():
-       listFrame.addMenuItem(i[0],diskSec,[i[2],i[1]])
+       listFrame.addMenuItem(i[0],diskSec,[i[1],i[2],i[3]])
         
     self.pencereOlustur(listFrame,80,15)
   
   
   def islemSecmeEkrani(self):
 
-    listFrame = listeKutu.listInfo("Seçilen disk : "+self.in_co[0][0]+" label:"+self.in_co[0][1],
+    listFrame = listeKutu.listInfo("Seçilen disk : "+self.selectedDisk[0]+" label:"+self.selectedDisk[1],
     ['pardus','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
     
     listFrame.addMenuItem("Pisi geçmişi",None)
@@ -140,23 +141,15 @@ setup %s
 quit
 """ % (root_path, setupto)
 
-        shell = """#!/bin/bash
-grub --no-floppy --batch < /tmp/_grub"""
-        #
         
 	fd =  file('/tmp/_grub','w')
 	fd.write(batch_template)
 	fd.close()
         
-	fd =  file('/tmp/grub.sh','w')
-	fd.write(shell)
-        
-	fd.close()
-	os.chmod('/tmp/grub.sh',0100)
-      
         
 #       f = file("/dev/null", "w")
-#	procutils.run_quiet("/tmp/grub.sh")    
+#	procutils.run_quiet("/tmp/grub.sh")  
+#	subprocess.call("grup -no-floppy --batch < /tmp/_grub",shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     
     
       
@@ -183,17 +176,21 @@ grub --no-floppy --batch < /tmp/_grub"""
 #######################################  
   
   def getUserList(self):
-    path = disk.get_partitions_path(self.in_co[0][0])
-    listFrame = listeKutu.listInfo(path,
+  #  self.pop_up("Diske bağlanılıyor")
+   # path = disk.get_partitions_path(self.in_co[0][0])
+    self.pop_up("DBUS'a bağlanılıyor")
+    dbus = rescue_password.pardusDbus(self.selectedDisk[2])
+    self.pop_up("Kullanıcı listesi alınıyor")
+    users = dbus.getUserlist()
+    listFrame = listeKutu.listInfo(self.selectedDisk[2],
     ['pardus','focus'],"Lütfen kullanıcı seçiniz")
     
     
-    
-    listFrame.addMenuItem("root",None)
-    listFrame.addMenuItem("burak",self.getPassword)
-    listFrame.addMenuItem("doruk",self.grubIslemEkrani)
+    for user in users:
+      listFrame.addMenuItem(str(user[1]),None)
     
     self.pencereOlustur(listFrame,80,30)
+    self.loop.widget = self.mainFrame
     
   
   def getPassword(self):
