@@ -28,4 +28,3 @@ class Widget(QtGui.QWidget, StepWidget):
 
     def nextIndex(self):
 	return 1
-    
