@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file './widgetMain.ui'
+# Form implementation generated from reading ui file 'widgetMain.ui'
 #
-# Created: Mon Jun 14 20:48:51 2010
+# Created: Sat Jul 03 21:55:42 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -18,13 +18,13 @@ class Ui_MainWidget(object):
         self.stackedWidget.setMaximumSize(QtCore.QSize(551, 16777215))
         self.stackedWidget.setObjectName("stackedWidget")
         self.btnBack = QtGui.QPushButton(MainWidget)
-        self.btnBack.setGeometry(QtCore.QRect(0, 300, 71, 41))
+        self.btnBack.setGeometry(QtCore.QRect(0, 310, 71, 31))
         self.btnBack.setObjectName("btnBack")
         self.btnNext = QtGui.QPushButton(MainWidget)
-        self.btnNext.setGeometry(QtCore.QRect(380, 300, 71, 41))
+        self.btnNext.setGeometry(QtCore.QRect(380, 310, 71, 31))
         self.btnNext.setObjectName("btnNext")
         self.btnFinish = QtGui.QPushButton(MainWidget)
-        self.btnFinish.setGeometry(QtCore.QRect(300, 300, 81, 41))
+        self.btnFinish.setGeometry(QtCore.QRect(300, 310, 81, 31))
         self.btnFinish.setObjectName("btnFinish")
         self.lblHeading = QtGui.QLabel(MainWidget)
         self.lblHeading.setGeometry(QtCore.QRect(10, 10, 441, 41))
@@ -41,7 +41,7 @@ class Ui_MainWidget(object):
         QtCore.QMetaObject.connectSlotsByName(MainWidget)
 
     def retranslateUi(self, MainWidget):
-        MainWidget.setWindowTitle(QtGui.QApplication.translate("MainWidget", "PArdus Windows iNstaller", None, QtGui.QApplication.UnicodeUTF8))
+        MainWidget.setWindowTitle(QtGui.QApplication.translate("MainWidget", "PaW: Pardus Windows Installer", None, QtGui.QApplication.UnicodeUTF8))
         self.btnBack.setText(QtGui.QApplication.translate("MainWidget", "<Back", None, QtGui.QApplication.UnicodeUTF8))
         self.btnNext.setText(QtGui.QApplication.translate("MainWidget", "Next>", None, QtGui.QApplication.UnicodeUTF8))
         self.btnFinish.setText(QtGui.QApplication.translate("MainWidget", "Finish!", None, QtGui.QApplication.UnicodeUTF8))

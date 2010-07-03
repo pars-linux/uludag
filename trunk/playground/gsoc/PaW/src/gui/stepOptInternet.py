@@ -130,7 +130,7 @@ class Widget(QtGui.QWidget, StepWidget):
 
 	report += 'Memory (RAM):\n'
 	report += 'You have %s memory. ' % hrS(totalMemory)
-	report += '%s requires at least %s of memory. Recommended is %s.\n\n' % (self.version.name, hrS(memory), hrS(minmemory))
+	report += '%s requires at least %s of memory. Recommended is %s.\n\n' % (self.version.name, hrS(minmemory), hrS(memory))
 
 	if totalMemory < minmemory:
 	    report += '!!! '
