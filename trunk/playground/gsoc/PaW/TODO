@@ -17,9 +17,8 @@ TODO (not ordered)
 * Live CD or ISO detection feature for versions prior to Pardus 2011, prevent
   usage of those Install CDs or Install ISO files.
 
-* plan about boot.ini template
-
-* menu.lst.tpl (template) populator feature.
+* menu.lst.tpl (template) populator feature. (can be replaced by generic
+  template populator feature.
 
 * grub4dos installer (grldr, menu.lst). copy files to the destinations.
 
@@ -36,13 +35,4 @@ TODO (not ordered)
 * Copy-from-CD script -- copies required kernel, initrd etc. from directly CD
   to the destination folder.
 
-* verify kernel, initrd, img paths from 2009, and 2009.1, live CDs.
-
-DONE (order by date in desc.)
-------------------------------
-
-* create kernel-path, initrd-path, img-path props on version definitions xml
-  file.
-
-* Using WMI, detect the system whether it is NT/2000/XP/2003 or Vista/7/newer
-  for installing grub4dos using bcdedit or boot.ini
+* verify kernel, initrd, img PATHs from 2009, and 2009.1, live CDs.

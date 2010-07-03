@@ -1,5 +1,6 @@
 import tempfile
 import os
+from utils import *
 
 from logger import getLogger
 log = getLogger('Installer Backend')
@@ -11,6 +12,8 @@ except ImportError, NameError:
     log.debug('Could not import _winreg. Missing module.')
 
 class Installer():
+    grub_loader_file = 'parldr'
+
     def __init__(self, mainEngine):
         self.mainEngine = mainEngine
 
@@ -20,7 +23,10 @@ class Installer():
         except:
             log.warning("Could not use WMI. Most probably on Linux.")
 
-        self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
+        try:
+            self.hlmPath = "SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall\\" + self.mainEngine.appid
+        except AttributeError:
+            pass # supress
 
         self.setTempFolder()
         self.setTempFile()
@@ -80,3 +86,47 @@ class Installer():
 
     def getInstallationRoot(self):
         return os.path.join(self.mainEngine.config.drive, self.mainEngine.appid)
+
+    def modify_boot_ini(self):
+        # read boot.ini
+        fstream = None
+        boot_ini_path = os.path.join('%s\\'%self.mainEngine.config.drive.DeviceID,'boot.ini')
+        # TODO: Fail-safe and better path join.
+
+        if not os.path.isfile(boot_ini_path):
+            log.exception('Could not locate boot.ini')
+            return
+
+        attrib_path = os.path.join(os.getenv('WINDIR'), 'System32', 'attrib.exe')
+        run_shell_cmd([attrib_path, '-S', '-H', '-R', boot_ini_path]) # enable
+
+        try:
+            fstream = open(boot_ini_path, 'r')
+            contents = fstream.read()
+            fstream.close()
+        except:
+            log.exception('Could not open boot.ini file for reading and writing.')
+            return
+
+
+        print contents
+        config = {
+            'OLD_CONTENTS' : contents,
+            'GRUB_LOADER_PATH' : self.grub_loader_file,
+            'OPTION_NAME' : self.mainEngine.application
+        }
+        
+        new_contents = populate_template_file('files/boot.ini.tpl', config)
+
+        if fstream:
+            try:
+                fstream = open(boot_ini_path, 'w')
+                fstream.write(new_contents)
+            except IOError, err:
+                log.debug('IOError on updating: %s' % str(err))
+            finally:
+                fstream.close()
+        else:
+            log.exception('Could not write boot.ini file.')
+
+        run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path]) # restore

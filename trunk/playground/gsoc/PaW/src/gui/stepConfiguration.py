@@ -123,7 +123,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.mainEngine.config.password = password
 	self.mainEngine.config.drive = self.getSelectedDrive()
 	self.mainEngine.config.size = self.installationSize
-	# TODO: config size and drive
 	return True
 
 
