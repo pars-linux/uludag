@@ -19,7 +19,7 @@ class Config(object):
 
 class PaWn():
     application = 'Pardus (Paw)' # ASCII, please.
-    appid = 'Pardus'
+    appid = 'Pardus' # ASCII, please.
     version = '0.1'
     publisher = 'TUBITAK/UEKAE'
     home = 'http://www.pardus.org.tr'
