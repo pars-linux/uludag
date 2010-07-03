@@ -87,32 +87,36 @@ class Installer():
     def getInstallationRoot(self):
         return os.path.join(self.mainEngine.config.drive, self.mainEngine.appid)
 
+    def getGrubLoaderDestination(self):
+        system_drive_root = '%s\\'% self.mainEngine.compatibility.OS.SystemDrive
+        return os.path.join(system_drive_root, self.grub_loader_file)
+
     def modify_boot_ini(self):
         # read boot.ini
         fstream = None
-        boot_ini_path = os.path.join('%s\\'%self.mainEngine.config.drive.DeviceID,'boot.ini')
+        system_drive_root = '%s\\'% self.mainEngine.compatibility.OS.SystemDrive
+        boot_ini_path = os.path.join(system_drive_root,'boot.ini')
         # TODO: Fail-safe and better path join.
 
         if not os.path.isfile(boot_ini_path):
             log.exception('Could not locate boot.ini')
             return
 
+        # make boot.ini editable.
         attrib_path = os.path.join(os.getenv('WINDIR'), 'System32', 'attrib.exe')
-        run_shell_cmd([attrib_path, '-S', '-H', '-R', boot_ini_path]) # enable
+        run_shell_cmd([attrib_path, '-S', '-H', '-R', boot_ini_path])
 
         try:
-            fstream = open(boot_ini_path, 'r')
+            fstream = open(boot_ini_path, 'r') #reading stream
             contents = fstream.read()
             fstream.close()
         except:
             log.exception('Could not open boot.ini file for reading and writing.')
             return
 
-
-        print contents
         config = {
             'OLD_CONTENTS' : contents,
-            'GRUB_LOADER_PATH' : self.grub_loader_file,
+            'GRUB_LOADER_PATH' : self.getGrubLoaderDestination(),
             'OPTION_NAME' : self.mainEngine.application
         }
         
@@ -120,13 +124,15 @@ class Installer():
 
         if fstream:
             try:
-                fstream = open(boot_ini_path, 'w')
+                fstream = open(boot_ini_path, 'w') # writing stream
                 fstream.write(new_contents)
+                log.debug('New boot.ini contents are written.')
             except IOError, err:
-                log.debug('IOError on updating: %s' % str(err))
+                log.exception('IOError on updating: %s' % str(err))
             finally:
                 fstream.close()
         else:
             log.exception('Could not write boot.ini file.')
 
-        run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path]) # restore
+        # restore system+readonly+hidden attribs of boot.ini
+        run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path])

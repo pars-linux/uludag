@@ -21,7 +21,7 @@ class Compatibility():
 
     totalMemory, architectureBit, architectureName = None, None, None
     disks = []
-    os, wmi = None, None
+    OS, wmi = None, None
 
     def __init__(self):
 
@@ -31,6 +31,7 @@ class Compatibility():
             self.winTotalMemory()
 	    self.winPopulateDisks()
 	    self.winArchitecture()
+            self.OS = self.wmi.Win32_OperatingSystem()[0] # for .SystemDrvie
 	    log.debug('Running on Windows.')
 	except (NameError, ImportError):
 	    log.debug('Running on Linux.')
