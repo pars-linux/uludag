@@ -24,7 +24,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.mainEngine = mainEngine
 	self.populateDrives()
 
-
     def driveChanged(self, index):
 	free = self.freeSpaceOnDrive()
 	self.gui.lblDriveFreeSpace.setText('%s free' % (humanReadableSize(free)))
@@ -34,8 +33,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	percentage = math.floor((self.defaultSize-self.minSize)*100/(free-self.minSize)*1.0)
 
 	self.gui.sizeSlider.setValue(percentage)
-
-
 
     def sizeChanged(self, value):
 	h=humanReadableSize
@@ -79,11 +76,13 @@ class Widget(QtGui.QWidget, StepWidget):
     def populateDrives(self):
 	self.gui.comboDrive.clear()
 	for disk in self.mainEngine.compatibility.disks:
-	    self.gui.comboDrive.addItem(disk.DeviceID)
+	    self.gui.comboDrive.addItem('%s %s' %(disk.DeviceID, disk.Name))
 
     def getSelectedDrive(self):
 	for disk in self.mainEngine.compatibility.disks:
-	    if disk.DeviceID == self.gui.comboDrive.currentText():
+	    if disk.DeviceID == self.gui.comboDrive.currentText()[:2]:
+                # TODO: TBD: First 2 letters of combobox is drive letter+colon.
+                # This may fail in the future.
 		return disk
 	return None
 

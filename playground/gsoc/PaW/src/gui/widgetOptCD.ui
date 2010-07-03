@@ -33,18 +33,7 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLineEdit" name="txtPath">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnBrowse">
-        <property name="text">
-         <string>Browse...</string>
-        </property>
-       </widget>
+       <widget class="QComboBox" name="comboDrive"/>
       </item>
      </layout>
     </item>

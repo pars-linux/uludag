@@ -5,41 +5,56 @@ from logger import getLogger
 log = getLogger("Compatibility")
 
 class LogicalDisk():
-    DeviceID, FreeSpace, Size, Path = None, 0, 0, None
+    DeviceID, Name, FreeSpace, Size, FileSystem = None, None, 0, 0, None
 
-    def __init__(self, id, free, size, path = None):
+    def __init__(self, id, name, free, size, filesystem = None):
 	self.DeviceID = id
+        self.Name = name
 	self.FreeSpace = free
 	self.Size = size
-	self.Path = path
+	self.FileSystem = filesystem
 
     def __repr__(self):
-	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.FreeSpace, self.Size, self.Path)))
+	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
+
+
+class CD():
+    DeviceID, Name, FreeSpace, Size = None, None, 0, 0
+
+    def __init__(self, id, name, free = 0, size = 0):
+	self.DeviceID = id
+        self.Name = name
+	self.FreeSpace = free
+	self.Size = size
+
+    def __repr__(self):
+	return 'CD: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
 
 class Compatibility():
 
     totalMemory, architectureBit, architectureName = None, None, None
-    disks = []
+    disks, cds = [], []
     OS, wmi = None, None
 
     def __init__(self):
-
 	try:
 	    from wmi import wmi
 	    self.wmi = wmi.WMI()
+            log.debug('Running on Windows.')
             self.winTotalMemory()
 	    self.winPopulateDisks()
+            self.winPopulateCDs()
 	    self.winArchitecture()
             self.OS = self.wmi.Win32_OperatingSystem()[0] # for .SystemDrvie
-	    log.debug('Running on Windows.')
-	except (NameError, ImportError):
+	except (ImportError):
 	    log.debug('Running on Linux.')
 	    # TODO: Windows systems without WMI (ME, 98, NT, 3.1 checks)
 	    self.wmi = None
 	    self.unixTotalMemory()
 	    self.unixArchitecture()
 	    self.unixPopulateDisks()
+            # TODO: Linux populate CDs
 
 	log.debug('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
 
@@ -98,8 +113,20 @@ class Compatibility():
     def winPopulateDisks(self):
 	self.disks = []
 	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
-	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.DeviceID.encode('utf8'))))# #Caption, Size, FreeSpace, FileSystem
+	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
 
+    def winPopulateCDs(self):
+	self.cds = []
+	for cd in self.wmi.Win32_LogicalDisk(DriveType=5):
+            # TODO: TBD: First 2 letters of combobox is drive letter + colon.
+            # This may fail in the future.
+            DeviceID, VolumeName, Size, FreeSpace = None, None, 0, 0
+            if hasattr(cd, 'DeviceID'): DeviceID = str(cd.DeviceID.encode('utf8'))
+            if hasattr(cd, 'VolumeName') and cd.VolumeName: VolumeName = str(cd.VolumeName.encode('utf8'))
+            if hasattr(cd, 'FreeSpace') and cd.FreeSpace: FreeSpace = long(cd.FreeSpace) or 0
+            if hasattr(cd, 'Size') and cd.Size: Size = long(cd.Size) or 0
+
+            self.cds.append(CD(DeviceID, VolumeName, FreeSpace,Size)) # Caption, Size, VolumeName, FreeSpace
 
     def unixPopulateDisks(self):
 	self.disks = []
@@ -133,8 +160,7 @@ class Compatibility():
         Notice: WMI is slower than platform.version here.
         """
 #        Alternative:
-#            wmi.WMI().Win32_OperatingSystem()[0].Version
-
+#            str(wmi.WMI().Win32_OperatingSystem()[0].Version.encode('utf8'))
         try:
             return platform.version().split('.')[0]
         except:

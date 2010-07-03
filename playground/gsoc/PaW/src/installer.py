@@ -1,4 +1,5 @@
 import tempfile
+import shutil
 import os
 from utils import run_shell_cmd
 

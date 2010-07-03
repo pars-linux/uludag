@@ -2,7 +2,7 @@
 
 # Form implementation generated from reading ui file 'widgetSource.ui'
 #
-# Created: Sat Jul 03 17:59:47 2010
+# Created: Sat Jul 03 21:55:41 2010
 #      by: PyQt4 UI code generator 4.7.3
 #
 # WARNING! All changes made in this file will be lost!
@@ -49,7 +49,7 @@ class Ui_widgetSource(object):
         QtCore.QMetaObject.connectSlotsByName(widgetSource)
 
     def retranslateUi(self, widgetSource):
-        self.label.setText(QtGui.QApplication.translate("widgetSource", "Label for installation source about PaWn", None, QtGui.QApplication.UnicodeUTF8))
+        self.label.setText(QtGui.QApplication.translate("widgetSource", "Choose the installation source of Pardus. ", None, QtGui.QApplication.UnicodeUTF8))
         self.optInternet.setText(QtGui.QApplication.translate("widgetSource", "Download Pardus from Internet (recommended)", None, QtGui.QApplication.UnicodeUTF8))
         self.optCD.setText(QtGui.QApplication.translate("widgetSource", "I have Pardus Live CD", None, QtGui.QApplication.UnicodeUTF8))
         self.optISO.setText(QtGui.QApplication.translate("widgetSource", "I have Pardus Live CD image (.ISO)", None, QtGui.QApplication.UnicodeUTF8))
