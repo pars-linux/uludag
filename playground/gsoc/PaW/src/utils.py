@@ -55,7 +55,24 @@ def humanReadableTime(seconds):
     return '%d %s %d %s' % (v1,u1,v2,u2)
 
 
-def run_shell_cmd(cmdargs):
+def populate_template_file(path, values):
+    try:
+        ifstream = open(path, 'r')
+        template_contents = ifstream.read()
+        ifstream.close()
+    except:
+        return False
+
+    return populate_template(template_contents, values)
+
+def populate_template(template_contents, values):
+    for key,value in values.iteritems():
+        template_contents = template_contents.replace('{%s}' % key, value)
+
+    return template_contents
+
+
+def run_shell_cmd(cmdargs, shell = False):
     '''
     This is a blocking method and may take a long time to complete.
     Use this with a threading instance or twisted library.
@@ -66,11 +83,11 @@ def run_shell_cmd(cmdargs):
 
     sp = subprocess.Popen(
         args = cmdargs,
-        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE
+        stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+        shell = shell
     )
 
     retcode = sp.wait() # wait until process returns
-
     # TODO: all those can be replaced with subprocess.call(cmdargs) or check_call
 
     if retcode == 0:

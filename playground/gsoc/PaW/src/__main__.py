@@ -18,7 +18,7 @@ class Config(object):
 	return repr
 
 class PaWn():
-    application = 'Pardus (Paw)'
+    application = 'Pardus (Paw)' # ASCII, please.
     appid = 'Pardus'
     version = '0.1'
     publisher = 'TUBITAK/UEKAE'
