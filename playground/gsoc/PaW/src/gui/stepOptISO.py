@@ -1,6 +1,5 @@
 import sys
 import os
-from utils import humanReadableSize
 from gui.stepTemplate import StepWidget
 from PyQt4 import QtGui, QtCore
 

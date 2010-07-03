@@ -1,6 +1,6 @@
 import tempfile
-import os,time
-from utils import *
+import os
+from utils import run_shell_cmd
 
 from logger import getLogger
 log = getLogger('Installer Backend')
@@ -12,6 +12,7 @@ except ImportError, NameError:
     log.debug('Could not import _winreg. Missing module.')
 
 class Installer():
+    iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
     grub_loader_file = 'grldr'
     grub_loader_path = 'files/grldr'
     mbr_file = 'grldr.mbr'
@@ -192,3 +193,37 @@ class Installer():
 
         self.mainEngine.config.bcd_guid = guid
         # TODO: save bcd_guid to the REGISTRY
+
+
+    def extract_from_iso(self, source, destination, file_paths):
+        """
+        For 7z, file paths should be specified as a/b/c
+        Instead of file path 'list', single file path entry is also OK.
+        """
+        if not isinstance(file_paths, list): file_paths = [file_paths]
+
+        executable = self.iso_extractor
+        destination = os.path.abspath(destination)
+        source = os.path.abspath(source)
+
+        if not os.path.isfile(executable):
+            log.error('Could not file ISO extractor executable.')
+            return
+
+        if not os.path.isfile(source):
+            log.error('Could not find ISO file.')
+            return
+
+        if not os.path.isdir(destination):
+            log.error('Could not find destination folder.')
+            return
+
+        # TODO: CRITICAL-TBD
+        # ' '.join(file_path) in command list doesn't work with subprocess according
+        # to stdout output. However ' '.join-ing shell commands and obtaining a
+        # string and running it on shell works perfectly. However, when file_paths
+        # has only 1 item, it works. so for now, we switch to foreach statement.
+        # This is not good for performance, as expected.
+        for file_path in file_paths:
+            run_shell_cmd([executable,'e', '-o'+destination, '-y', source, file_path])
+            log.debug('Extracted: %s' % file_path)
