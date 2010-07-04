@@ -65,7 +65,7 @@ def populate_template_file(path, values):
 
 def populate_template(template_contents, values):
     for key,value in values.iteritems():
-        template_contents = template_contents.replace('{%s}' % key, value)
+        template_contents = template_contents.replace('{%s}' % key, str(value))
 
     return template_contents
 

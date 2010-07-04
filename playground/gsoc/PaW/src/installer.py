@@ -3,6 +3,7 @@ import tempfile
 import shutil
 import os
 from utils import run_shell_cmd
+from utils import populate_template_file
 
 from logger import getLogger
 log = getLogger('Installer Backend')
@@ -15,12 +16,17 @@ except ImportError, NameError:
 
 class Installer():
     iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
+    
+    grub_default_timeout = 0
     grub_loader_file = 'grldr'
-    grub_loader_path = 'files/grldr'
-    mbr_file = 'grldr.mbr'
-    mbr_path = 'filer/grldr.mbr'
+    grub_loader_path = '/grldr'
+    grub_mbr_file = 'grldr.mbr'
+    grub_mbr_path = '/grldr.mbr'
+    grub_identifier_file = 'pardus'
+    grub_identifier_path = '/pardus'
 
     default_kernel_path = 'boot/kernel'
+    default_kernel_params = ''
     default_initrd_path = 'boot/initrd'
     default_img_path = 'pardus.img'
 
@@ -283,4 +289,72 @@ class Installer():
                 shutil.copy(path, destination)
                 log.debug('%s copied to %s' % (path, destination))
             except IOError as e:
-                log.error('Could not copy: %s' % e)
+                log.error('Could not copy: %s' % e); return False
+        return True
+
+    def modify_boot_sequence(self):
+        winMajorVersion = self.mainEngine.compatibility.winMajorVersion
+
+        if winMajorVersion < 6:
+            # Windows 2000, XP, Server 2003. <5 already prevented to install.
+            log.debug('Detected Windows 2000, XP or Server 2003.')
+            return self.modify_boot_ini()
+        else:
+            # Windows Vista, Windows 7 or newer.
+            log.debug('Detected Windows Vista, Windows 7 or newer.')
+            return self.modify_bcd()
+
+    def copy_grub4dos_files(self):
+        os_drive = self.mainEngine.compatibility.OS.SystemDrive
+        destination = os.path.abspath(os_drive + '\\')
+        source = os.path.abspath(os.path.join('files', 'grub4dos'))
+
+        # prepare menu.lst template
+        if self.mainEngine.version:
+            log.info('Preparing menu.lst for %s' % self.mainEngine.version.name)
+            values = {
+                'TIMEOUT': self.grub_default_timeout,
+                'DISTRO' : self.mainEngine.version.name,
+                'IDENTIFIER_PATH' : self.grub_identifier_path,
+                'PATH_KERNEL' : '/'.join(['', self.mainEngine.appid, 'boot',
+                    os.path.basename(self.mainEngine.version.kernel)]),
+                'KERNEL_PARAMS' : self.mainEngine.version.kernelparams,
+                'PATH_INITRD' : '/'.join(['', self.mainEngine.appid, 'boot',
+                    os.path.basename(self.mainEngine.version.initrd)])
+            }
+        else:
+            log.info('Preparing menu.lst using hardcoded default values')
+            values = {
+                'TIMEOUT': self.grub_default_timeout,
+                'DISTRO' : self.mainEngine.appid,
+                'IDENTIFIER_PATH' : self.grub_identifier_path,
+                'PATH_KERNEL' : '/'.join(['', self.mainEngine.appid, 'boot',
+                    os.path.basename(self.default_kernel_path)]),
+                'KERNEL_PARAMS' : self.default_kernel_params,
+                'PATH_INITRD' : '/'.join(['', self.mainEngine.appid, 'boot',
+                    os.path.basename(self.default_initrd_path)])
+            }
+
+        # save menu.lst under OS drive root.
+        menu_lst_dest = os.path.join(destination, 'menu.lst')
+        menu_lst = populate_template_file(os.path.join(source,'menu.lst.tpl'), values)
+        try:
+            menu_lst_stream = open(menu_lst_dest, 'w')
+            menu_lst_stream.write(menu_lst)
+            menu_lst_stream.close
+            log.debug('%s created successfully.' % menu_lst_dest)
+        except IOError as e:
+            log.error('Could not write %s. %s' % (menu_lst_dest,e)); return False
+
+        # copy rest of grub4dos files
+        files = ['grldr', 'grldr.mbr', 'pardus']
+        for file_name in files:
+            path = os.path.abspath(os.path.join(source,file_name))
+            if not os.path.isfile(path):
+                log.error('Could not locate %s' % path); return False
+            try:
+                shutil.copy(path, destination)
+                log.debug('%s copied to %s' % (os.path.basename(path), destination))
+            except IOError as e:
+                log.error('Could not copy grub4dos file: %s' % e); return False
+        return True
