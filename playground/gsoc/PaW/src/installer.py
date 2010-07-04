@@ -1,3 +1,4 @@
+import os.path
 import tempfile
 import shutil
 import os
@@ -18,6 +19,10 @@ class Installer():
     grub_loader_path = 'files/grldr'
     mbr_file = 'grldr.mbr'
     mbr_path = 'filer/grldr.mbr'
+
+    default_kernel_path = 'boot/kernel'
+    default_initrd_path = 'boot/initrd'
+    default_img_path = 'pardus.img'
 
     def __init__(self, mainEngine):
         self.mainEngine = mainEngine
@@ -111,7 +116,7 @@ class Installer():
 
         if not os.path.isfile(boot_ini_path):
             log.exception('Could not locate boot.ini')
-            return
+            return False
 
         # make boot.ini editable.
         attrib_path = os.path.join(os.getenv('WINDIR'), 'System32', 'attrib.exe')
@@ -123,7 +128,7 @@ class Installer():
             fstream.close()
         except:
             log.exception('Could not open boot.ini file for reading and writing.')
-            return
+            return False
 
         config = {
             'OLD_CONTENTS' : contents,
@@ -140,20 +145,19 @@ class Installer():
                 log.debug('New boot.ini contents are written.')
             except IOError, err:
                 log.exception('IOError on updating: %s' % str(err))
+                return False
             finally:
                 fstream.close()
-        else:
-            log.exception('Could not write boot.ini file.')
 
         # restore system+readonly+hidden attribs of boot.ini
         run_shell_cmd([attrib_path, '+S', '+H', '+R', boot_ini_path])
+        return True
 
     def modify_bcd(self):
         """
         For Windows Vista and Windows 7, we use bcdedit command to launch
         grub4dos from boot sector. bcdedit.exe is under System32 folder.
-        For more, see
-http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
+        For more, see http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
 
         bcdedit /create /d "Start GRUB4DOS" /application bootsector
         bcdedit /set {id} device boot
@@ -195,7 +199,8 @@ http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_fo
 
         self.mainEngine.config.bcd_guid = guid
         # TODO: save bcd_guid to the REGISTRY
-
+        log.debug('bcdedit record created successfully.')
+        return True
 
     def extract_from_iso(self, source, destination, file_paths):
         """
@@ -210,15 +215,15 @@ http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_fo
 
         if not os.path.isfile(executable):
             log.error('Could not file ISO extractor executable.')
-            return
+            return False
 
         if not os.path.isfile(source):
             log.error('Could not find ISO file.')
-            return
+            return False
 
         if not os.path.isdir(destination):
             log.error('Could not find destination folder.')
-            return
+            return False
 
         # TODO: CRITICAL-TBD
         # ' '.join(file_path) in command list doesn't work with subprocess according
@@ -229,3 +234,53 @@ http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_fo
         for file_path in file_paths:
             run_shell_cmd([executable,'e', '-o'+destination, '-y', source, file_path])
             log.debug('Extracted: %s' % file_path)
+
+        return True
+
+    def createDirStructure(self):
+        "Creates directory structure on installation drive."
+        base = self.mainEngine.config.drive.DeviceID + '\\' + self.mainEngine.appid + '\\'
+
+        self.mainEngine.config.installationRoot = base
+
+        dirs = [
+            '.',
+            'boot',
+            'help',
+            'log']
+
+        for dir in dirs:
+            path = os.path.join(base, dir)
+            try:
+                os.mkdir(path)
+                log.debug('%s created.' % path)
+            except OSError:
+                log.debug('%s already exists.' % path)
+
+        return True
+
+    def copy_cd_files(self):
+        cd_root = self.mainEngine.config.cdDrive.DeviceID + '\\'
+        destination = os.path.abspath(
+            os.path.join(self.mainEngine.config.installationRoot, 'boot'))
+
+        if self.mainEngine.version:
+            files = [
+                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
+                self.mainEngine.version.img]
+        else:
+            log.warning('Could not recognize version. Using default CD paths.')
+            files = [self.default_kernel_path, self.default_initrd_path,
+                self.default_img_path]
+
+        for file_path in files:
+            path = os.path.abspath(os.path.join(cd_root, file_path))
+            if not os.path.isfile(path):
+                log.error('Could not locate %s' % path)
+                return False
+
+            try:
+                shutil.copy(path, destination)
+                log.debug('%s copied to %s' % (path, destination))
+            except IOError as e:
+                log.error('Could not copy: %s' % e)

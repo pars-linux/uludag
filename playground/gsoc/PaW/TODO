@@ -4,35 +4,22 @@ TODO (not ordered)
 * Using WMI, throw compatibility error for Windows versions older than Windows
   2000. i.e. 95/98/Me. keyword: os major version
 
-* safe boot.ini modifier.
 * boot.ini backup system
 * safe boot.ini cleaner upon uninstallation
 
-* grub4dos record creator using bcdedit
 * grub4dos record removal method using bcdedit safely
 * bcdedit backup system (if possible) + restore tool
 
-* plan about installation directory structure
+* plan more on installation directory structure
 
 * Live CD or ISO detection feature for versions prior to Pardus 2011, prevent
   usage of those Install CDs or Install ISO files.
-
-* menu.lst.tpl (template) populator feature. (can be replaced by generic
-  template populator feature.
 
 * grub4dos installer (grldr, menu.lst). copy files to the destinations.
 
 * idea of renaming grldr as parldr (any better ideas in terms of 8.3 naming
   convention?)
 
-* create tools/ folder and move 3rd party tools into.
-
 * plan about uninstall script.
-
-* ISO-extractor script. (fix 7za.exe win cli not working issue) extract files to
-  destination folder.
-
-* Copy-from-CD script -- copies required kernel, initrd etc. from directly CD
-  to the destination folder.
 
 * verify kernel, initrd, img PATHs from 2009, and 2009.1, live CDs.
