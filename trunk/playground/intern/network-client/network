@@ -16,21 +16,23 @@ from networkmanager import NetworkManager, WiredSettings, DeviceType
 
 
 # Color characters
-colors = {'red'       : '\x1b[31;01m',
-         'blue'       : '\x1b[34;01m',
-         'cyan'       : '\x1b[36;01m',
-         'gray'       : '\x1b[30;01m',
-         'green'      : '\x1b[32;01m',
-         'light'      : '\x1b[37;01m',
-         'yellow'     : '\x1b[33;01m',
-         'magenta'    : '\x1b[35;01m',
-         'reddark'    : '\x1b[31;0m',
-         'bluedark'   : '\x1b[34;0m',
-         'cyandark'   : '\x1b[36;0m',
-         'graydark'   : '\x1b[30;0m',
-         'greendark'  : '\x1b[32;0m',
-         'magentadark': '\x1b[35;0m',
-         'normal'     : '\x1b[0m'}
+colors = {
+            'red'       : '\x1b[31;01m',
+            'blue'       : '\x1b[34;01m',
+            'cyan'       : '\x1b[36;01m',
+            'gray'       : '\x1b[30;01m',
+            'green'      : '\x1b[32;01m',
+            'light'      : '\x1b[37;01m',
+            'yellow'     : '\x1b[33;01m',
+            'magenta'    : '\x1b[35;01m',
+            'reddark'    : '\x1b[31;0m',
+            'bluedark'   : '\x1b[34;0m',
+            'cyandark'   : '\x1b[36;0m',
+            'graydark'   : '\x1b[30;0m',
+            'greendark'  : '\x1b[32;0m',
+            'magentadark': '\x1b[35;0m',
+            'normal'     : '\x1b[0m'
+         }
 
 use_color = True
 
@@ -100,7 +102,19 @@ def print_connections(nm_handle):
                         state_mark = "X"
                 print "[%s]  %s%s    %s" % (colorize(state_mark, 'green'), colorize(profile.settings.id, 'cyan'), "","")
 
+def print_device(nm_device):
+    """Pretty print a specific device."""
+    vendor = ""
+    model = ""
+    if gudev_handle:
+        udev_device = gudev_handle.query_by_subsystem_and_name("net", nm_device.interface)
+        if udev_device:
+            vendor = udev_device.get_property("ID_VENDOR_FROM_DATABASE")
+            model = udev_device.get_property("ID_MODEL_FROM_DATABASE")
 
+    print " %6s %s %s [driver: %s]" % (colorize(nm_device.interface, "light"),
+                                       vendor, model,
+                                       colorize(nm_device.driver, "yellow"))
 
 def print_devices(nm_handle):
     """Print the device list."""
@@ -119,7 +133,7 @@ def print_devices(nm_handle):
         if len(devices[device]) > 0:
             print colorize("%s devices" % str(device).capitalize(), 'green')
             for dev in devices[device]:
-                print "  %s\t(%s)" % (dev.driver, dev.interface)
+                print_device(dev)
 
 
 def delete_profile(nm_handle):
@@ -346,6 +360,16 @@ def main():
 
     # Create NetworkManager handle
     nm_handle = NetworkManager()
+
+    # If available create a gudev client for vendor/device informations
+    global gudev_handle
+    try:
+        gudev_handle = None
+        import gudev
+    except ImportError:
+        pass
+    else:
+        gudev_handle = gudev.Client("net")
 
     if command == "connections":
         print_connections(nm_handle)
