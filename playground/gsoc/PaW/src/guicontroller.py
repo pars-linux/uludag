@@ -8,9 +8,11 @@ import gui.stepOptISO as stepOptISO
 import gui.stepOptCD as stepOptCD
 import gui.stepOptInternet as stepOptInternet
 import gui.stepDownloading as stepDownloading
+import gui.stepInstalling as stepInstalling
 
 class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
-    steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD, stepOptInternet, stepDownloading] # step screen widgets
+    steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD,
+        stepOptInternet, stepDownloading, stepInstalling] # step screen widgets
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):

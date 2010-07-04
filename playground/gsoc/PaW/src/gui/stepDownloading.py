@@ -128,7 +128,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	    return False
 
     def onSubmit(self):
-	return False
+	# TODO: submit downloaded ISO path.
+        return False
 
     def nextIndex(self):
-	return 0
+	return 7
