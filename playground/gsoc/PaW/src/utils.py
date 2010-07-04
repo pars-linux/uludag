@@ -1,6 +1,4 @@
-import os.path
 import subprocess
-import os
 
 from logger import getLogger
 log = getLogger('Utils')
@@ -88,10 +86,34 @@ def run_shell_cmd(cmdargs, shell = False, stdout = subprocess.PIPE,
 
     retcode = sp.wait() # wait until process returns
     # TODO: all those can be replaced with subprocess.call(cmdargs) or check_call
-    
+
     if retcode == 0:
         if sp.stdout:
             return sp.stdout.read()
     else:
         log.exception("Error code returned from shell executable:[%s]||return code: %d||stderr=%s||stdout=%s||"
             % (' '.join(cmdargs), retcode, sp.stderr.read(), sp.stdout.read()))
+
+# Simple Levenshtein Distance snippet.
+# Author: Magnus Lie Hetland <magnus at hetland.org>
+# Source: http://hetland.org/coding/
+# License: LICENSE PENDING
+def levenshtein(a,b):
+    "Calculates the Levenshtein distance between a and b."
+    n, m = len(a), len(b)
+    if n > m:
+        # Make sure n <= m, to use O(min(n,m)) space
+        a,b = b,a
+        n,m = m,n
+
+    current = range(n+1)
+    for i in range(1,m+1):
+        previous, current = current, [i]+[0]*n
+        for j in range(1,n+1):
+            add, delete = previous[j]+1, current[j-1]+1
+            change = previous[j-1]
+            if a[j-1] != b[i-1]:
+                change = change + 1
+            current[j] = min(add, delete, change)
+
+    return current[n]

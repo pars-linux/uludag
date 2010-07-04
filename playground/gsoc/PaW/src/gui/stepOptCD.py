@@ -1,8 +1,10 @@
 import os
+import sys
+import ConfigParser
+from utils import levenshtein
 
 from gui.stepTemplate import StepWidget
 from PyQt4 import QtGui
-
 from gui.widgetOptCD import Ui_widgetOptCD
 
 class Widget(QtGui.QWidget, StepWidget):
@@ -46,10 +48,51 @@ class Widget(QtGui.QWidget, StepWidget):
         True if any IO, Permission errors occur. That means CD is not readable.
         """
         try:
-            print CD.DeviceID
             return not isinstance(os.listdir(CD.DeviceID),list) # check i.e. f:\
         except WindowsError, IOError:
             return True
+
+    def locate_gfxboot_cfg(self, path):
+            """
+            Locates first occurrence of gfxboot.cfg in the path.
+                'path' should be an absolute path.
+            """
+            filename = 'gfxboot.cfg'
+            contents = os.listdir(path)
+            try: index = contents.index(filename)
+            except ValueError: index = -1 # indicates does not exist
+
+            if not index == -1 and os.path.isfile(os.path.join(path,filename)):
+                return os.path.join(path, filename)
+            else:
+                for item in contents:
+                    if os.path.isdir(os.path.join(path, item)): # nested dirs
+                        result = self.locate_gfxboot_cfg(os.path.join(path,item))
+                        if result: return result
+            return None
+
+    def determineCDVersion(self, tolerance = 5):
+        """
+        Determines Pardus release version by parsing gfxboot.cfg and
+        obtaining distro name then comparing it with names defined in
+        versions.xml file using Levenshtein distance of 'tolerance' value.
+        Newer version with appropriate distane will be matched.
+        """
+        # TODO: tolerance TBD.
+        currentDrive = self.getSelectedCDDrive()
+
+        gfxboot_cfg = self.locate_gfxboot_cfg('%s\\' % currentDrive.DeviceID)
+        if not gfxboot_cfg: return None
+
+        config_parser = ConfigParser.ConfigParser()
+        config_parser.read(gfxboot_cfg)
+        distro_name = config_parser.get('base','distro')
+
+        if not distro_name: return None
+
+        for version in self.mainEngine.versionManager.versions:
+            if levenshtein(version.name, distro_name) < tolerance:
+                return version
 
     def onSubmit(self):
 	currentDrive = self.getSelectedCDDrive()
@@ -62,7 +105,14 @@ class Widget(QtGui.QWidget, StepWidget):
             return False
 	else:
             self.mainEngine.config.cdDrive = self.getSelectedCDDrive()
-	    return True
+            version = self.determineCDVersion()
+
+            if version:
+                self.mainEngine.version = version
+            else:
+                reply = QtGui.QMessageBox.warning(self, 'Unknown Pardus CD/DVD', 'Unable to identify Pardus release of CD/DVD in %s. It is NOT recommended to continue installation. Do you want to exit?' % currentDrive.DeviceID, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+                if reply == QtGui.QMessageBox.Yes: sys.exit()
+	    return False # TODO: make this true.
 
     def nextIndex(self):
 	return 0

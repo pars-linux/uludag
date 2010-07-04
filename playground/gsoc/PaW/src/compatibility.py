@@ -39,7 +39,7 @@ class Compatibility():
 
     def __init__(self):
 	try:
-	    from wmi import wmi
+	    from tools.wmi import wmi
 	    self.wmi = wmi.WMI()
             log.debug('Running on Windows.')
             self.winTotalMemory()
@@ -113,7 +113,8 @@ class Compatibility():
     def winPopulateDisks(self):
 	self.disks = []
 	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
-	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
+	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long
+(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
 
     def winPopulateCDs(self):
 	self.cds = []
