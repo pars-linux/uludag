@@ -7,10 +7,10 @@ from logger import getLogger
 log = getLogger('Installer Backend')
 
 try:
-    from wmi import wmi
+    from tools.wmi import wmi
     import _winreg
 except ImportError, NameError:
-    log.debug('Could not import _winreg. Missing module.')
+    log.debug('Could not import _winreg or wmi. Missing module.')
 
 class Installer():
     iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
@@ -130,7 +130,7 @@ class Installer():
             'GRUB_LOADER_PATH' : self.getGrubLoaderDestination(),
             'OPTION_NAME' : self.mainEngine.application
         }
-        
+
         new_contents = populate_template_file('files/boot.ini.tpl', config)
 
         if fstream:
@@ -152,7 +152,8 @@ class Installer():
         """
         For Windows Vista and Windows 7, we use bcdedit command to launch
         grub4dos from boot sector. bcdedit.exe is under System32 folder.
-        For more, see http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
+        For more, see
+http://grub4dos.sourceforge.net/wiki/index.php/Grub4dos_tutorial#Booting_GRUB_for_DOS_via_the_Windows_Vista_boot_manager
 
         bcdedit /create /d "Start GRUB4DOS" /application bootsector
         bcdedit /set {id} device boot
