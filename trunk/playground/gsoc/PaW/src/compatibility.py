@@ -1,5 +1,6 @@
 import commands
 import platform
+import ctypes
 
 from logger import getLogger
 log = getLogger("Compatibility")
@@ -166,3 +167,7 @@ class Compatibility():
             return int(platform.version().split('.')[0])
         except:
             return 0
+
+    def isAdministrator(self):
+        "Returns true if the user logged in has administrator privileges."
+        return bool(ctypes.windll.shell32.IsUserAnAdmin())

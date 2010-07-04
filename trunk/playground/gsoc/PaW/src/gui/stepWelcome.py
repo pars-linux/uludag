@@ -22,8 +22,11 @@ class Widget(QtGui.QWidget, StepWidget):
             # see Compatibility.winMajorVersion method for details.
             QtGui.QMessageBox.critical(self, 'Compatibility Error', 'This installer does not support your operating system. Please install Windows 2000, XP, 2003 or newer.', QtGui.QMessageBox.Ok)
             return False
-        else:
-            return True
+        elif not self.mainEngine.compatibility.isAdministrator():
+            QtGui.QMessageBox.critical(self, 'Not Enough Privileges', 'You do not have administrator user privileges. Please try to run this program as an administrator.', QtGui.QMessageBox.Ok)
+            return False
+
+        return True
         
 
     def nextIndex(self):
