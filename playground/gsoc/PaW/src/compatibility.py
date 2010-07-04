@@ -163,6 +163,6 @@ class Compatibility():
 #        Alternative:
 #            str(wmi.WMI().Win32_OperatingSystem()[0].Version.encode('utf8'))
         try:
-            return platform.version().split('.')[0]
+            return int(platform.version().split('.')[0])
         except:
             return 0
