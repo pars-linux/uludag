@@ -46,21 +46,6 @@ class Widget(QtGui.QWidget, StepWidget):
         else:
             self.gui.lblVersion.setText('Unknown Pardus Live CD image.')
 
-    def onSubmit(self):
-	if not self.filePath:
-	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose an ISO file (*.iso) to proceed.', QtGui.QMessageBox.Ok)
-	    return False
-	else:
-            if not self.version:
-                reply = QtGui.QMessageBox.warning(self, 'Unknown CD Image',
-                            'Could not determine version of ISO file. It is not recommended to continue installation.\nDo you want to quit?', QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
-
-                if reply == QtGui.QMessageBox.Yes:
-                    sys.exit() # TODO: do not exit immediately. rollback changes.
-
-            self.mainEngine.version = self.version
-	    return True
-
     def md5sumFile(self):
         if not self.filePath:
             return None
@@ -93,6 +78,21 @@ class Widget(QtGui.QWidget, StepWidget):
 	    method = QtGui.QMessageBox.error
 
 	method(self, title, msg, QtGui.QMessageBox.Ok)
+
+    def onSubmit(self):
+	if not self.filePath:
+	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose an ISO file (*.iso) to proceed.', QtGui.QMessageBox.Ok)
+	    return False
+	else:
+            if not self.version:
+                reply = QtGui.QMessageBox.warning(self, 'Unknown CD Image',
+                            'Could not determine version of ISO file. It is not recommended to continue installation.\nDo you want to quit?', QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+
+                if reply == QtGui.QMessageBox.Yes:
+                    sys.exit() # TODO: do not exit immediately. rollback changes.
+
+            self.mainEngine.version = self.version
+	    return True
 
     def nextIndex(self):
 	return 0
