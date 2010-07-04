@@ -9,6 +9,9 @@
 # Free Software Foundation; either version 2 of the License, or (at your
 # option) any later version. Please read the COPYING file.
 #
+
+"""Interactive network configuration tool for NetworkManager"""
+
 import sys
 import uuid
 
@@ -16,7 +19,7 @@ from networkmanager import NetworkManager, WiredSettings, DeviceType
 
 
 # Color characters
-colors = {
+COLORS = {
             'red'       : '\x1b[31;01m',
             'blue'       : '\x1b[34;01m',
             'cyan'       : '\x1b[36;01m',
@@ -34,16 +37,18 @@ colors = {
             'normal'     : '\x1b[0m'
          }
 
-use_color = True
+USE_COLOR = True
+GUDEV_HANDLE = None
 
 def colorize(msg, color):
-    global use_color
-    if not use_color:
+    """Colorize the given message if requested."""
+    if not USE_COLOR:
         return msg
     else:
-        return "%s%s%s" % (colors[color], msg, colors['normal'])
+        return "%s%s%s" % (COLORS[color], msg, COLORS['normal'])
 
 def print_usage():
+    """Print usage information."""
     print "Usage: %s <command> <option>" % sys.argv[0]
     print
     print "Commands:"
@@ -60,6 +65,7 @@ def print_usage():
     print
 
 def get_input(label):
+    """Get input from the terminal."""
     try:
         return raw_input(colorize(("%s > " % label), 'light'))
     except (KeyboardInterrupt, EOFError):
@@ -67,6 +73,7 @@ def get_input(label):
         sys.exit(1)
 
 def get_number(label, min_, max_):
+    """Get a number from the terminal."""
     index_ = min_ - 1
     while index_ < min_ or index_ > max_:
         try:
@@ -78,7 +85,15 @@ def get_number(label, min_, max_):
             sys.exit(1)
     return index_
 
+def print_connection(nm_settings, state):
+    """Print a specific connection."""
+    print "[%s]  %s%s    %s" % (colorize(state, 'green'),
+                                colorize(nm_settings.id, 'cyan'),
+                                "",
+                                "")
+
 def print_connections(nm_handle):
+    """Print connection list."""
     connections = {
                 '802-11-wireless'   : [],
                 '802-3-ethernet'    : [],
@@ -93,21 +108,23 @@ def print_connections(nm_handle):
     for connection_key in connections:
         if len(connections[connection_key]) > 0:
             conn_interface = connection_key.split("-").pop().capitalize()
-            print colorize("%s profiles" % conn_interface, 'green')
+            print colorize("%s connections" % conn_interface, 'green')
 
-            for profile in connections[connection_key]:
+            for connection in connections[connection_key]:
                 state_mark = " "
                 for active in nm_handle.active_connections:
-                    if active.connection.settings.id == profile.settings.id:
+                    if active.connection.settings.id == connection.settings.id:
                         state_mark = "X"
-                print "[%s]  %s%s    %s" % (colorize(state_mark, 'green'), colorize(profile.settings.id, 'cyan'), "","")
+                    print_connection(state_mark, connection.settings)
 
 def print_device(nm_device):
     """Pretty print a specific device."""
     vendor = ""
     model = ""
-    if gudev_handle:
-        udev_device = gudev_handle.query_by_subsystem_and_name("net", nm_device.interface)
+    if GUDEV_HANDLE is not None:
+        udev_device = \
+                GUDEV_HANDLE.query_by_subsystem_and_name("net",
+                                                         nm_device.interface)
         if udev_device:
             vendor = udev_device.get_property("ID_VENDOR_FROM_DATABASE")
             model = udev_device.get_property("ID_MODEL_FROM_DATABASE")
@@ -136,8 +153,8 @@ def print_devices(nm_handle):
                 print_device(dev)
 
 
-def delete_profile(nm_handle):
-
+def delete_connection(nm_handle):
+    """Delete a connection."""
     connections = {
                 '802-11-wireless'   : [],
                 '802-3-ethernet'    : [],
@@ -152,22 +169,21 @@ def delete_profile(nm_handle):
 
     connection_list = []
     index_ = 1
-    #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
 
     for connection_type in connections:
         if len(connections[connection_type]) > 0:
             conn_interface = connection_type.split("-").pop().capitalize()
-            print colorize("%s profiles" % conn_interface, 'green')
+            print colorize("%s connections" % conn_interface, 'green')
             for connection in connections[connection_type]:
-                print "  [%s] %s" % (index_, str(connection.settings.id).capitalize())
+                print "  [%s] %s" % (index_,
+                                     str(connection.settings.id).capitalize())
                 connection_list.append(connection)
                 index_ += 1
     connection = connection_list[(get_number("Delete", 1, index_ - 1) - 1)]
     connection.delete()
 
-
-
-def create_profile_ethernet(nm_handle, _device):
+def create_ethernet_connection(nm_handle, _device):
+    """Create an ethernet connection."""
 
     settings = None
     settings = WiredSettings()
@@ -202,21 +218,21 @@ def create_profile_ethernet(nm_handle, _device):
         dns_mode = "auto"
         dns_address = ""
 
-    profile = None
-    profiles = []
+    connection_id = None
+    connection_ids = []
 
-    for i in nm_handle.connections:
-        profiles.append(i.settings.id)
+    for conn in nm_handle.connections:
+        connection_ids.append(conn.settings.id)
 
     print
-    while not profile:
-        profile = get_input("Profile name").strip()
-        if profile in profiles:
-            print "There is already a profile named '%s'" % profile
+    while not connection_id:
+        connection_id = get_input("Profile name").strip()
+        if connection_id in connection_ids:
+            print "There is already a connection named '%s'" % connection_id
             print
-            profile = None
+            connection_id = None
 
-    settings.id = profile
+    settings.id = connection_id
     nm_handle.add_connection(settings)
     #possible_settings = ('dns','num','user','pass')
     #for s in possible_settings:
@@ -224,13 +240,12 @@ def create_profile_ethernet(nm_handle, _device):
       #      settings.s = params[s]
 
 
-
-
-def create_profile_wifi(nm_handle, _device):
+def create_wireless_connection(nm_handle, _device):
+    """Create a wireless connection."""
     pass
 
-def create_profile(nm_handle):
-
+def create_connection(nm_handle):
+    """Create a connection."""
     if len(nm_handle.devices) == 0:
         # No network devices
         return
@@ -244,8 +259,8 @@ def create_profile(nm_handle):
     }
 
     functions = {
-            DeviceType.ETHERNET : create_profile_ethernet,
-            DeviceType.WIFI : create_profile_wifi,
+            DeviceType.ETHERNET : create_ethernet_connection,
+            DeviceType.WIFI : create_wireless_connection,
             }
 
     for device in nm_handle.devices:
@@ -257,7 +272,6 @@ def create_profile(nm_handle):
 
 
     device_list = []
-    #Aşağıda yazdırdıktan sonra hangi interface in seçildiğini bulmak için
     for interface in devices:
         if len(devices[interface]) > 0:
             print "  [%s] %s" % (index_, str(interface).capitalize())
@@ -268,11 +282,11 @@ def create_profile(nm_handle):
     for interface in devices:
         _max += len(devices[interface])
 
-    package_no = get_number("Interface", 1, _max) - 1
+    connection_no = get_number("Interface", 1, _max) - 1
 
     index_ = 1
 
-    _devices = devices[device_list[package_no]]
+    _devices = devices[device_list[connection_no]]
 
     if len(_devices) > 0:
         print
@@ -280,33 +294,40 @@ def create_profile(nm_handle):
         for device in _devices:
             print "  [%s] %s" % (index_, device)
             index_ += 1
-        device_no = get_number("Device", 1, _max) - 1
+        dev_no = get_number("Device", 1, _max) - 1
 
-        functions[_devices[device_no].type](nm_handle, _devices[device_no])
+        functions[_devices[dev_no].type](nm_handle, _devices[dev_no])
 
 
-def set_profile_state(nm_handle, command):
-    def set_profile_state_down(nm_handle, profile):
+def set_connection_state(nm_handle, command):
+    """Set the state of a given connection."""
+    def set_connection_state_down(nm_handle, connection_id):
+        """Set the state of a given connection to Down."""
         for active_conn in nm_handle.active_connections:
-            if active_conn.connection.settings.id == profile:
+            if active_conn.connection.settings.id == connection_id:
                 active_conn.devices[0].disconnect()
 
-    def set_profile_state_up(nm_handle, profile):
+    def set_connection_state_up(nm_handle, connection_id):
+        """Set the state of a given connection to Up."""
         for conn in nm_handle.connections:
-            if conn.settings.id == profile:
-                # FIXME: if conn.settings.mac_address is empty don't search for devices
+            if conn.settings.id == connection_id:
+                # FIXME: if conn.settings.mac_address is empty
+                # don't search for devices
                 #if conn.settings.mac_address = ""
                 #else:
                 for device in nm_handle.devices:
-                    if conn.settings.mac_address and device.hwaddress == conn.settings.mac_address:
+                    if conn.settings.mac_address and \
+                       device.hwaddress == conn.settings.mac_address:
                         nm_handle.activate_connection(conn, device)
                     else:
-                        # The connection doesn't have a fixed MAC so we have to ask for the interface
-                        # or use a possibly given interface through command-line
+                        # The connection doesn't have a fixed MAC so
+                        # we have to ask for the interface
+                        # or use a possibly given interface through CLI
                         try:
                             interface = sys.argv[3]
                         except IndexError:
-                            # We have to ask for the interface if we can't match with the MAC address
+                            # We have to ask for the interface if we
+                            # can't match with the MAC address
                             interface = None
 
                         if interface:
@@ -317,36 +338,37 @@ def set_profile_state(nm_handle, command):
                         else:
                             device_list_type = []
                             for device in nm_handle.devices:
-                                if str(device.type) == conn.settings.type.split("-").pop().upper():
-                                    device_list_type.append(device),
+                                if str(device.type) == \
+                                   conn.settings.type.split("-").pop().upper():
+                                    device_list_type.append(device)
                             if len(device_list_type) > 0:
                                 print colorize("Select device:", "yellow")
                                 index_ = 1
                                 for device in device_list_type:
                                     print "  [%s] %s" % (index_, device)
                                     index_ += 1
-                                device_no = get_number("Device", 1, index_-1) - 1
-                                device=device_list_type[device_no]
+                                dev_no = get_number("Device", 1, index_-1) - 1
+                                device = device_list_type[dev_no]
                                 nm_handle.activate_connection(conn, device)
 
 
     try:
-        profile = sys.argv[2]
+        connection_id = sys.argv[2]
     except IndexError:
         print_usage()
         return 1
 
-
     if command == "down":
-        set_profile_state_down(nm_handle, profile)
+        set_connection_state_down(nm_handle, connection_id)
     elif command == "up":
-        set_profile_state_up(nm_handle, profile)
+        set_connection_state_up(nm_handle, connection_id)
 
 
 #####################
 ### Main function ###
 #####################
 def main():
+    """Main entry point to the interactive NetworkManager utility."""
     try:
         command = sys.argv[1]
     except IndexError:
@@ -354,33 +376,32 @@ def main():
         return 1
 
     if "--no-color" in sys.argv:
-        global use_color
-        use_color = False
+        global USE_COLOR
+        USE_COLOR = False
         sys.argv.remove("--no-color")
 
     # Create NetworkManager handle
     nm_handle = NetworkManager()
 
     # If available create a gudev client for vendor/device informations
-    global gudev_handle
     try:
-        gudev_handle = None
         import gudev
     except ImportError:
         pass
     else:
-        gudev_handle = gudev.Client("net")
+        global GUDEV_HANDLE
+        GUDEV_HANDLE = gudev.Client("net")
 
     if command == "connections":
         print_connections(nm_handle)
     elif command == "devices":
         print_devices(nm_handle)
     elif command == "create":
-        create_profile(nm_handle)
+        create_connection(nm_handle)
     elif command == "delete":
-        delete_profile(nm_handle)
+        delete_connection(nm_handle)
     elif command in ("up", "down"):
-        set_profile_state(nm_handle, command)
+        set_connection_state(nm_handle, command)
     else:
         print_usage()
         return 1
