@@ -24,9 +24,9 @@ def getPardusPartitions():
 	
   return pardusPartitions
   
-def getPardusVLP():
+def getPardusPartInfo():
   
-  pardusVLP = []
+  pardusPartInfo = []
   link = comar.Link()
   for i in getPardusPartitions():
     path = "/mnt/rescue_disk/"+i[0]
@@ -38,11 +38,11 @@ def getPardusVLP():
     else:
       os.makedirs(path)
     #comar.Link().Disk.Manager["mudur"].mount(i[1],path)
-    pardusVLP.append([open(path+"/etc/pardus-release").read().rstrip("\n"),i[1],i[0],path])
+    pardusPartInfo.append([open(path+"/etc/pardus-release").read().rstrip("\n"),i[1],i[0],path])
   
-  pardusVLP.reverse()
+  pardusPartInfo.reverse()
   
-  return pardusVLP
+  return pardusPartInfo
 
 def get_partitions_path(disk):
     link = comar.Link()
