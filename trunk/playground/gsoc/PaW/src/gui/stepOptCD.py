@@ -112,7 +112,8 @@ class Widget(QtGui.QWidget, StepWidget):
             else:
                 reply = QtGui.QMessageBox.warning(self, 'Unknown Pardus CD/DVD', 'Unable to identify Pardus release of CD/DVD in %s. It is NOT recommended to continue installation. Do you want to exit?' % currentDrive.DeviceID, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
                 if reply == QtGui.QMessageBox.Yes: sys.exit()
-	    return False # TODO: make this true.
+                
+	    return True
 
     def nextIndex(self):
-	return 0
+	return 7

@@ -91,8 +91,9 @@ class Widget(QtGui.QWidget, StepWidget):
                 if reply == QtGui.QMessageBox.Yes:
                     sys.exit() # TODO: do not exit immediately. rollback changes.
 
+            self.mainEngine.config.isoPath = self.filePath
             self.mainEngine.version = self.version
 	    return True
 
     def nextIndex(self):
-	return 0
+	return 7

@@ -4,9 +4,8 @@ from logger import getLogger
 log = getLogger("TaskRunner")
 
 class Task(QtCore.QThread):
-    '''
-    Qt-Threaded task.
-    '''
+    "Threaded task using QThread class of Qt."
+    
     def __init__(self, method = None, description = None, callback = None):
         QtCore.QThread.__init__(self)
         self.method = method
@@ -14,10 +13,8 @@ class Task(QtCore.QThread):
         self.callback = callback
 
     def run(self):
-        if callable(self.method):
-            self.method()
-        else:
-            log.warning("Non-callable method on %s" % self.description)
+        if callable(self.method): self.method()
+        else: log.warning("Non-callable method on %s" % self.description)
 
     def onFinish(self):
         self.finished = True
@@ -25,21 +22,26 @@ class Task(QtCore.QThread):
         if callable(self.callback):
             self.callback()
         else:
-            log.warning("Non-callable callback received on %s" % self.description)
+            log.warning("Non-callable callback received on %s"%self.description)
 
     def isFinished(self):
         return self.finished
 
 class TaskList():
+    "Execution framework for Task threads."
     tasks = []
+    currentTask = None
 
-    def __init__(self, name = None, description = None, tasks = None):
-        if tasks: self.tasks = tasks
+    def __init__(self, name = None, tasks = None, callback = None):
+        self.setTasks(tasks)
         if name: self.name = name
-        if description: self.description = description
-
-        self.index = 0
+        self.callback = callback
+        
         self.finished = False
+        self.index = 0
+
+    def setTasks(self, tasks):
+        if isinstance(tasks,list): self.tasks = tasks
 
     def empty(self):
         self.tasks = []
@@ -48,7 +50,10 @@ class TaskList():
         return self.finished
 
     def getPercentage(self):
-        return int((self.index * 1.0)/ len(self.tasks) * 100)
+        try:
+            return int((self.index * 1.0)/ (len(self.tasks)) * 100)
+        except ZeroDivisionError:
+            return 0
 
     def start(self):
         self.index = 0
@@ -57,18 +62,21 @@ class TaskList():
 
     def done(self):
         self.finished = True
+        self.callback()
 
     def startNext(self):
+        if callable(self.callback): self.callback() # on advance signal
         if self.index == len(self.tasks):
             self.done()
             return
 
-        curTask = self.tasks[self.index]
+        self.currentTask = self.tasks[self.index]
         self.index += 1
 
-        curTask.start()
-        if(curTask.wait()):
-            curTask.onFinish()
+        log.info('Starting task: %s' % self.currentTask.description)
+        self.currentTask.start()
+        if(self.currentTask.wait()):
+            self.currentTask.onFinish()
 
     def queue_task(self, task):
         if isinstance(task, Task):

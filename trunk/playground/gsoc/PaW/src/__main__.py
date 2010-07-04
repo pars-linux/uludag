@@ -35,7 +35,7 @@ class PaWn():
 	self.gui = PaWnGui(self)
 
     def initFTP(self):
-        self.ftpDownloader = FTPDownloader(self.config.isoFile)
+        self.ftpDownloader = FTPDownloader('test.iso')
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)
