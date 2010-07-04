@@ -293,7 +293,7 @@ class Installer():
         return True
 
     def modify_boot_sequence(self):
-        winMajorVersion = self.mainEngine.compatibility.winMajorVersion
+        winMajorVersion = self.mainEngine.compatibility.winMajorVersion()
 
         if winMajorVersion < 6:
             # Windows 2000, XP, Server 2003. <5 already prevented to install.
