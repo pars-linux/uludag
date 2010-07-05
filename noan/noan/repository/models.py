@@ -37,7 +37,7 @@ class Distribution(models.Model):
 
     name = models.CharField(max_length=64, verbose_name=_('name'))
     release = models.CharField(max_length=64, verbose_name=_('release'))
-    type = models.CharField(max_length=8, verbose_name=_('type'))
+    type = models.CharField(max_length=10, verbose_name=_('type'))
 
     def __unicode__(self):
         return u'%s %s' % (self.name, self.release)
@@ -64,6 +64,7 @@ class SourcePackageDetail(models.Model):
     """
     part_of = models.CharField(max_length=64, blank=True)
     source_uri = models.CharField(max_length=150, blank=True)
+    home_page = models.CharField(max_length=150, blank=True)
 
     class Meta:
         verbose_name = _('package detail')
@@ -94,10 +95,17 @@ class Source(models.Model):
         base_url = 'http://svn.pardus.org.tr'
         if self.distribution.type == 'stable':
             suffix = 'pardus'
-        if self.distribution.type == 'contrib':
+        elif self.distribution.type == 'contrib':
             suffix = 'contrib'
+        elif self.distribution.type == 'corporate':
+            suffix = 'pardus'
+        else: suffix = 'pardus'
 
-        url = "/".join([base_url, suffix, self.distribution.release, self.distribution.type, self.info.source_uri])
+        if self.distribution.type != 'corporate':
+            url = "/".join([base_url, suffix, self.distribution.release, self.distribution.type, self.info.source_uri])
+        else: 
+            postfix = self.distribution.type + self.distribution.release
+            url = "/".join([base_url, suffix, postfix, 'devel', self.info.source_uri])
 
         return url[:-9]
 

@@ -133,11 +133,15 @@ def updateDB(path_source, path_stable, path_test, options):
 
         # repo name
         try:
-            binaryName = _index.distribution.sourceName.split('-', 1)[1]
+            if _index.distribution.sourceName.find(" ") != -1:
+                binaryName = _index.distribution.sourceName.split()[1]
+            else:
+                binaryName = _index.distribution.sourceName.split('-', 1)[1]
         except IndexError:
             if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
             else: binaryName = 'Pardus'
         if binaryName == 'Contrib': repoType = 'contrib'
+        elif binaryName == 'Corporate': repoType = 'corporate'
         else: repoType = 'stable'
 
         # Add distribution to database
@@ -154,7 +158,8 @@ def updateDB(path_source, path_stable, path_test, options):
             # Create the source package information
             part_of = pspec.source.partOf
             source_uri = pspec.source.sourceURI
-            source_info = SourcePackageDetail.objects.create(part_of=part_of, source_uri=source_uri)
+            home_page = pspec.source.homepage
+            source_info = SourcePackageDetail.objects.create(part_of=part_of, source_uri=source_uri, home_page=home_page)
             for is_a in pspec.source.isA:
                 print '     IsA: %s' % is_a
                 source_info.isa_set.create(name=is_a)
@@ -262,11 +267,15 @@ def updateDB(path_source, path_stable, path_test, options):
         
         # repo name
         try:
-            binaryName = _index.distribution.sourceName.split('-', 1)[1]
+            if _index.distribution.sourceName.find(" ") != -1:
+                binaryName = _index.distribution.sourceName.split()[1]
+            else:
+                binaryName = _index.distribution.sourceName.split('-', 1)[1]
         except IndexError:
             if _index.distribution.binaryName == 'Contrib': binaryName = 'Contrib'
             else: binaryName = 'Pardus'
         if binaryName == 'Contrib': repoType = 'contrib'
+        elif binaryName == 'Corporate': repoType = 'corporate'
         else: repoType = 'stable'
 
         # Add distribution to database
