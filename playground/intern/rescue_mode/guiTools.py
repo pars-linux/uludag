@@ -31,18 +31,20 @@ class listDialog(urwid.Frame):
     
     f_bayrak = False
     
-    if "function" in str(type(fn_o_info)):
-      self.function = fn_o_info
-      urwid.connect_signal(self.simpleList, "modified",self.listeModified)
-    else:
-      f_bayrak=True
-      
+    if fn_o_info != None: 
+      if "function" in str(type(fn_o_info)):
+	self.function = fn_o_info
+	urwid.connect_signal(self.simpleList, "modified",self.listeModified)
+      else:
+	f_bayrak=True	
+	
     
     liste = urwid.LineBox(urwid.ListBox(self.simpleList))
     
     urwid.Frame.__init__(self,liste)
     self.header = urwid.LineBox(urwid.Text(header))
     
+	
     if f_bayrak:
       self.createFooter(fn_o_info)
     
