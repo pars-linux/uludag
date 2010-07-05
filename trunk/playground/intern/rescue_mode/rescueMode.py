@@ -22,38 +22,33 @@ class Program:
     self.in_co = []
  
     #İç Pencereyi oluştur
-    body = urwid.Filler(urwid.Text("Açılış yazısı"),'top')
-    header = urwid.Pile([urwid.Divider(),urwid.Text("Merhaba")])
+    listFrame = guiTools.listDialog(None,['pardus','focus'],"Yapmak istediğiniz işlemi seçiniz") 
     
-    button = urwid.Button("Kurtarma Moduna Geç",self.diskSecmeEkrani)
-    button = urwid.AttrWrap(button,'pardus','focus')
+    listFrame.addMenuItem("Shell'e git",self.kapat)
+    listFrame.addMenuItem("Windows boot loader'ı yükle",self.winListScreen)
+    listFrame.addMenuItem("Pardus'u kurtar",self.diskSecmeEkrani)
     
-    button2 = urwid.Button("Shell'e git",self.kapat)
-    button2 = urwid.AttrWrap(button2,'pardus','focus')
-    
-    l = [button,button2]
-    
-    #footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> çıkış"),'right'),'pardus')
-    #header = urwid.AttrWrap(urwid.Text("Pardus 2011 Kurtarma Moduna Hoşgeldiniz"),'pardus')
-    #footer = urwid.AttrWrap(urwid.Padding(urwid.Text("<Yön Tuşları> menüde dolaşmak | <F1> çıkış"),'right'),'pardus')
-    #urwid.connect_signal(button,'click',self.diskSec)
-    bt = urwid.GridFlow(l, 30, 3, 1, 'center')
-    self.window=urwid.Frame(body,header,urwid.Pile([urwid.Divider(),bt],focus_item=1))
-    
-    self.window.set_focus('footer')
-    self.window=urwid.LineBox(urwid.AttrWrap(self.window,'pardus'))
-    self.window = urwid.Padding(self.window, 'center', 80 )
-    self.window = urwid.Filler(self.window, 'middle', 15 )
-    #self.window = self.window
-    
-    
-    #Pencereyi MainFrame'e yerleştir
-    self.mainFrame.body = self.window
+    self.pencereOlustur(listFrame,80,15)
   
   
   
+  def winListScreen(self):
+    def winInfo(item):
+      return "Seçilen Windows diski :"+item.args[3]+" dosya sistemi:"+item.args[2]
+    self.pop_up("Windows kurulu diskler aranıyor")
+    listFrame = guiTools.listDialog(winInfo,['pardus','focus'],"Bootloader'ını geri yüklemek istediğiniz Windows'u seçiniz")
+    for win in diskTools.getWinBootPartitions():
+      listFrame.addMenuItem("Windows%s"%win[1],self.installWinBootLoader,win)
+    
+    self.pencereOlustur(listFrame,80,15)
+    self.loop.widget = self.mainFrame
   
-  def diskSecmeEkrani(self,button):
+  def installWinBootLoader(self,win):
+    
+    subprocess.call("./install-mbr -p %d %s"%(win[1],win[0]),shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    self.pop_up("./install-mbr -p %d %s"%(win[1],win[0]))
+  
+  def diskSecmeEkrani(self):
     
     def diskBilgisi(item):
       return "Seçilen disk : "+item.args[0]+" label:"+item.args[1]
