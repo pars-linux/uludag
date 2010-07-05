@@ -1511,7 +1511,7 @@ msgstr "Tarihte bugün"
 #: plugins/thisdayinhistory/thisdayinhistory.cpp:81
 msgctxt "Localized Wikipedia website"
 msgid "http://en.wikipedia.org/wiki/"
-msgstr "http://en.wikipedia.org/wiki/"
+msgstr "http://tr.wikipedia.org/wiki/"
 
 #: plugins/thisdayinhistory/thisdayinhistory.cpp:67
 msgctxt "Qt date format used by thelocalized Wikipedia"
