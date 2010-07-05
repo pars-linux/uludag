@@ -16,6 +16,7 @@ import sys
 import uuid
 
 from networkmanager import NetworkManager, WiredSettings, DeviceType
+from optparse import OptionParser, OptionGroup
 
 
 # Color characters
@@ -47,23 +48,6 @@ def colorize(msg, color):
     else:
         return "%s%s%s" % (COLORS[color], msg, COLORS['normal'])
 
-def print_usage():
-    """Print usage information."""
-    print "Usage: %s <command> <option>" % sys.argv[0]
-    print
-    print "Commands:"
-    print "    connections                      Show connections"
-    print "    devices                          Show devices"
-    print "    create                           Create connection"
-    print "    edit                             Edit connection"
-    print "    delete                           Delete connection"
-    print "    up <connection> [interface]      Bring connection up on the given interface"
-    print "    down <connection>                Bring connection down"
-    print
-    print "Options:"
-    print "    --no-color                       Don't colorize output"
-    print
-
 def get_input(label):
     """Get input from the terminal."""
     try:
@@ -85,7 +69,7 @@ def get_number(label, min_, max_):
             sys.exit(1)
     return index_
 
-def print_connection(nm_settings, state):
+def print_connection(state, nm_settings):
     """Print a specific connection."""
     print "[%s]  %s%s    %s" % (colorize(state, 'green'),
                                 colorize(nm_settings.id, 'cyan'),
@@ -299,7 +283,7 @@ def create_connection(nm_handle):
         functions[_devices[dev_no].type](nm_handle, _devices[dev_no])
 
 
-def set_connection_state(nm_handle, command):
+def set_connection_state(nm_handle, command, connection_id):
     """Set the state of a given connection."""
     def set_connection_state_down(nm_handle, connection_id):
         """Set the state of a given connection to Down."""
@@ -351,13 +335,6 @@ def set_connection_state(nm_handle, command):
                                 device = device_list_type[dev_no]
                                 nm_handle.activate_connection(conn, device)
 
-
-    try:
-        connection_id = sys.argv[2]
-    except IndexError:
-        print_usage()
-        return 1
-
     if command == "down":
         set_connection_state_down(nm_handle, connection_id)
     elif command == "up":
@@ -369,11 +346,10 @@ def set_connection_state(nm_handle, command):
 #####################
 def main():
     """Main entry point to the interactive NetworkManager utility."""
-    try:
-        command = sys.argv[1]
-    except IndexError:
-        print_usage()
-        return 1
+
+
+
+
 
     if "--no-color" in sys.argv:
         global USE_COLOR
@@ -392,18 +368,80 @@ def main():
         global GUDEV_HANDLE
         GUDEV_HANDLE = gudev.Client("net")
 
-    if command == "connections":
+
+    usage = """Usage: %s <command> <option>"
+Commands:
+    --connections                      Show connections"
+    --devices                          Show devices"
+    --create                           Create connection"
+    --edit                             Edit connection"
+    --delete                           Delete connection"
+    --up <connection> [interface]      Bring connection up on the given interface"
+    --down <connection>                Bring connection down"
+
+Options:
+    --no-color                       Don't colorize output"
+""" % sys.argv[0]
+
+    parser = OptionParser(usage)
+
+    action_group = OptionGroup(parser, "Action", "Specify what action to perform (choose one).")
+
+
+    action_group.add_option("-c","--connections",
+                    action="store_const",
+                    dest="action",
+                    const="connections",
+                    help='Show connections')
+
+    action_group.add_option("-d","--devices",
+                    action="store_const",
+                    dest="action",
+                    const="devices",
+                    help='Show devices')
+
+    action_group.add_option("-C","--create",
+                    action="store_const",
+                    dest="action",
+                    const="create",
+                    help='Create connection')
+
+    action_group.add_option("-D","--delete",
+                    action="store_const",
+                    dest="action",
+                    const="delete",
+                    help='Delete connection')
+
+    action_group.add_option("-u","--up",
+                    action="store",
+                    dest="up",
+                    help='Up connection')
+
+    action_group.add_option("-w","--down",
+                    action="store",
+                    dest="down",
+                    help='Down connection')
+
+
+    parser.add_option_group(action_group)
+
+
+    (options, args) = parser.parse_args()
+
+    if options.action == "connections":
         print_connections(nm_handle)
-    elif command == "devices":
+    elif options.action == "devices":
         print_devices(nm_handle)
-    elif command == "create":
+    elif options.action == "create":
         create_connection(nm_handle)
-    elif command == "delete":
+    elif options.action == "delete":
         delete_connection(nm_handle)
-    elif command in ("up", "down"):
-        set_connection_state(nm_handle, command)
+    elif options.up is not None:
+        set_connection_state(nm_handle, "up", options.up)
+    elif options.down is not None:
+        set_connection_state(nm_handle, "down", options.down)
     else:
-        print_usage()
+        parser.print_usage()
         return 1
 
     # FIXME: Do better error handling
