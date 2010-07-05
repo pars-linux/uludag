@@ -46,11 +46,10 @@ class Widget(QtGui.QWidget, ScreenWidget):
 <font size="+2">Congratulations</font>
 <font size="+1">
 <p>
-You have successfully installed Pardus on your computer. After restarting
-your computer, you can finally enjoy the full benefits of Pardus.
+Pardus is successfully installed. You can start using it just after restarting your computer.
 </p>
 <P>
-Click Next to proceed. One note: You remember your password, don't you?
+Please click Next to proceed. One note: You remember your password, don't you?
 </p>
 </font>
 """)

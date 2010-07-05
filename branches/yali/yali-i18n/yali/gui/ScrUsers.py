@@ -183,7 +183,7 @@ Proceed with the installation after you make your selections.
 
         if not p1 == '' and (str(p1).lower() == str(self.ui.username.text()).lower() or \
                 str(p1).lower() == str(self.ui.realname.text()).lower()):
-            self.showError(_('Don\'t use your user name or name as a password.'))
+            self.showError(_('Please don\'t use your name or user name as your password.'))
             return
         elif p2 != p1 and p2:
             self.showError(_('Passwords do not match.'))

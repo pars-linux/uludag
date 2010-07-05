@@ -27,13 +27,14 @@ from yali.gui.GUIAdditional import Gpl
 ##
 # Welcome screen is the first screen to be shown.
 class Widget(QtGui.QWidget, ScreenWidget):
-    title = _("Welcome")
+    title = _("Welcome to Pardus")
     # FIXME: Use system's pardus release to gather version info and use it if needed
     help = _("""
 <font size="+2">Welcome</font>
-<font size="+1"><p>Welcome to Pardus that contains many easy-to-use software components. You can do everything you need to, including, but not limited to, connecting to the Internet, creating documents, playing games, listening to music using Pardus.</p>
-<p>This application will help you with the installation of Pardus to your computer in few and easy steps and then do what is necessary to identify and configure your hardware. We advise you to backup your data in your disk(s) before starting with the installation.</p>
-<p>You can start the installation process (and step in on a free world) by pressing the Next button.</p>
+<font size="+1"><p>Pardus offers many easy-to-use tools for your desktop. The first of all, is this application which will help you to install Pardus easily.</p>
+<p>After a few steps where you can choose which disk/partition to use, your username/password etc. Pardus will be configure your hardware and be installed.</p>
+<p>We strongly suggest you to backup your data before starting.</p>
+<p>If you are ready just hit the Next button... Oh wait! Did you <strong>read</strong> and accept the General Public License? Please do it, that's the warranty of your freedom!</p>
 </font>
 """)
 
