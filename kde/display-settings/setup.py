@@ -93,7 +93,7 @@ class Build(build):
 
         # Copy codes
         print "Copying PYs..."
-        os.system("cp -R code/* build/app/")
+        os.system("cp -R src/* build/app/")
 
         # Create xcb binding
         os.system("python xcb/py_client.py xcb/nvctrl.xml")
