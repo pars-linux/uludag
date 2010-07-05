@@ -33,7 +33,10 @@ class Widget(QtGui.QWidget, StepWidget):
     def onAdvance(self, percentage):
         self.gui.progressBar.setValue(percentage)
         currentTask = self.mainEngine.installer.tasklist.currentTask
+
         if currentTask:
+            # TODO: bug: does not update status label:
+            # most probably about threading issues.
             self.gui.lblStatus.setText(currentTask.description)
 
         if self.mainEngine.installer.tasklist.isFinished():

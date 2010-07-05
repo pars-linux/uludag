@@ -5,6 +5,7 @@ log = getLogger("TaskRunner")
 
 class Task(QtCore.QThread):
     "Threaded task using QThread class of Qt."
+    description, method, callback = None, None, None
     
     def __init__(self, method = None, description = None, callback = None):
         QtCore.QThread.__init__(self)
@@ -26,6 +27,9 @@ class Task(QtCore.QThread):
 
     def isFinished(self):
         return self.finished
+
+    def __repr__(self):
+        return 'Task: %s' % self.description
 
 class TaskList():
     "Execution framework for Task threads."

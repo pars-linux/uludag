@@ -217,7 +217,8 @@ class Installer():
             run_shell_cmd(cmd)
 
         self.mainEngine.config.bcd_guid = guid
-        self._setRegistryKey(self.hlmPath, 'BcdeditGUID', guid)
+        #self._setRegistryKey(self.hlmPath, 'BcdeditGUID', guid)
+        # TODO: enable this after registry errors are fixed. 
         log.debug('bcdedit record created successfully.')
         return True
 
@@ -252,7 +253,7 @@ class Installer():
         # This is not good for performance, as expected.
         for file_path in file_paths:
             run_shell_cmd([executable, 'e', '-o' + destination, '-y', source, file_path])
-            log.debug('Extracted: %s' % file_path)
+            log.debug('Extracted from ISO: %s' % file_path)
 
         return True
 
@@ -277,6 +278,29 @@ class Installer():
                 log.debug('%s already exists.' % path)
 
         return True
+
+    def extract_iso_files(self):
+        source = self.mainEngine.config.isoPath
+        destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
+
+        if not os.path.isfile(source):
+            log.error('Could not locate ISO %s' % source)
+            return False
+
+        if self.mainEngine.version:
+            files = [
+                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
+                self.mainEngine.version.img]
+        else:
+            log.warning('Could not recognize version. Using default CD paths.')
+            files = [self.default_kernel_path, self.default_initrd_path,
+                self.default_img_path]
+
+        self.extract_from_iso(source, destination, files)
+        log.debug('Files extracted from ISO.')
+        return True
+
+            
 
     def copy_cd_files(self):
         cd_root = self.mainEngine.config.cdDrive.DeviceID + '\\'
@@ -400,11 +424,22 @@ class Installer():
             Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            Task(self.installationRegistry, 'Creating Registry keys', cb),
+            # Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
-            Task(foo, 'Cleanup after installation', cb),
-            Task(foo, 'Ejecting CD tray', cb),
+            Task(foo, 'CD cleanup after installation', cb),
+            Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]
 
     def get_iso_installation_tasks(self, associated_tasklist):
-        return []
+        cb = associated_tasklist.startNext # callback
+
+        def foo():pass
+        return [
+            Task(self.createDirStructure, 'Creating directory structure', cb),
+            Task(self.extract_iso_files, 'Extracting files from ISO', cb),
+            Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
+            Task(foo, 'Copying uninstallation files', cb),
+            # Task(self.installationRegistry, 'Creating Registry keys', cb),
+            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(foo, 'ISO cleanup after installation', cb)
+        ]

@@ -76,7 +76,6 @@ def run_shell_cmd(cmdargs, shell = False, stdout = subprocess.PIPE,
     This is a blocking method and may take a long time to complete.
     Use this with a threading instance or twisted library.
     '''
-    print ' '.join(cmdargs)
 
     sp = subprocess.Popen(
         args = cmdargs,
