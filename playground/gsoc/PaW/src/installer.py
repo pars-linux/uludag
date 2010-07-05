@@ -1,11 +1,14 @@
-from logger import getLogger
 import os
 import shutil
+import ctypes
+import tempfile
 from taskrunner import Task
 from taskrunner import TaskList
-import tempfile
+
 from utils import populate_template_file
 from utils import run_shell_cmd
+
+from logger import getLogger
 log = getLogger('Installer Backend')
 
 try:
@@ -88,8 +91,12 @@ class Installer():
             log.exception('Could not remove registry keys upon uninstallation.')
 
     def ejectCD(self):
-        # TODO: If CD/DVD is used, eject it after installation.
-        pass
+        "If CD/DVD is used, eject CD/DVD-ROM tray after installation."
+        # TODO: Known bug, only ejects first CD-ROM drive tray.
+        try:
+            return bool(ctypes.windll.WINMM.mciSendStringW(u"set cdaudio door open", None, 0, None))
+        except:
+            return False
 
     def reboot(self):
         self.wmi.Win32_OperatingSystem(Primary=1)[0].Reboot()
