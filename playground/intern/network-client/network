@@ -286,49 +286,46 @@ def set_connection_state_down(nm_handle, connection_id):
         if active_conn.connection.settings.id == connection_id:
             active_conn.devices[0].disconnect()
 
-def set_connection_state_up(nm_handle, connection_id):
+def set_connection_state_up(nm_handle, connection_id, interface):
     """Set the state of a given connection to Up."""
-    for conn in nm_handle.connections:
-        if conn.settings.id == connection_id:
-            # FIXME: if conn.settings.mac_address is empty
-            # don't search for devices
-            #if conn.settings.mac_address = ""
-            #else:
-            for device in nm_handle.devices:
-                if conn.settings.mac_address and \
-                   device.hwaddress == conn.settings.mac_address:
-                    nm_handle.activate_connection(conn, device)
-                else:
-                    # The connection doesn't have a fixed MAC so
-                    # we have to ask for the interface
-                    # or use a possibly given interface through CLI
-                    try:
-                        interface = sys.argv[3]
-                    except IndexError:
-                        # We have to ask for the interface if we
-                        # can't match with the MAC address
-                        interface = None
-
-                    if interface:
-                        # The interface is given
-                        for device in nm_handle.devices:
-                            if device.interface == interface:
-                                nm_handle.activate_connection(conn, device)
-                    else:
-                        device_list_type = []
-                        for device in nm_handle.devices:
-                            if str(device.type) == \
-                               conn.settings.type.split("-").pop().upper():
-                                device_list_type.append(device)
-                        if len(device_list_type) > 0:
-                            print colorize("Select device:", "yellow")
-                            index_ = 1
-                            for device in device_list_type:
-                                print "  [%s] %s" % (index_, device)
-                                index_ += 1
-                            dev_no = get_number("Device", 1, index_-1) - 1
-                            device = device_list_type[dev_no]
+    conn = nm_handle.get_connections_by_id(connection_id)
+    if(conn is not None):
+        conn = conn[0]
+        # FIXME: if conn.settings.mac_address is empty
+        # don't search for devices
+        #if conn.settings.mac_address = ""
+        #else:
+        for device in nm_handle.devices:
+            if conn.settings.mac_address and \
+               device.hwaddress == conn.settings.mac_address:
+                nm_handle.activate_connection(conn, device)
+                print "a"
+            else:
+                # The connection doesn't have a fixed MAC so
+                # we have to ask for the interface
+                # or use a possibly given interface through CLI
+                if interface:
+                    # The interface is given
+                    for device in nm_handle.devices:
+                        if device.interface == interface:
                             nm_handle.activate_connection(conn, device)
+                else:
+                    device_list_type = []
+                    for device in nm_handle.devices:
+                        if str(device.type) == \
+                           conn.settings.type.split("-").pop().upper():
+                            device_list_type.append(device)
+                    if len(device_list_type) > 0:
+                        print colorize("Select device:", "yellow")
+                        index_ = 1
+                        for device in device_list_type:
+                            print "  [%s] %s" % (index_, device)
+                            index_ += 1
+                        dev_no = get_number("Device", 1, index_-1) - 1
+                        device = device_list_type[dev_no]
+                        nm_handle.activate_connection(conn, device)
+    else:
+        print "There is no connection named: %s" %connection_id
 
 
 #####################
@@ -416,7 +413,10 @@ When activating a connection, you should either provide an interface like
     elif options.action == "remove":
         remove_connection(nm_handle)
     elif options.a_connection is not None:
-        set_connection_state_up(nm_handle, options.a_connection)
+        interface = None
+        if len(args) > 0:
+            interface = args[0]
+        set_connection_state_up(nm_handle, options.a_connection, interface)
     elif options.d_connection is not None:
         set_connection_state_down(nm_handle, options.d_connection)
     else:
