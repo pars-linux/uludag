@@ -54,7 +54,7 @@ class ItemByRepoTestCase(testcase.TestCase):
         assert self.testdb.tdb.has_item("acpica")
 
     def testWhichRepo(self):
-        assert self.testdb.tdb.which_repo("acpica") == "pardus-2007"
+        assert self.testdb.tdb.which_repo("ethtool") == "pardus-2007"
         assert self.testdb.tdb.which_repo("kmess") == "contrib-2007"
 
     def testGetItemAndRepository(self):

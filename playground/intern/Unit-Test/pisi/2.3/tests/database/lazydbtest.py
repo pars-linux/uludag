@@ -25,14 +25,14 @@ class LazyDBTestCase(unittest.TestCase):
 
     def testDatabaseMethodForcingInit(self):
         db = TestDB()
-        db.getTestField()
+        assert db.getTestField()
         assert db.__dict__.has_key("testfield")
-        del TestDB._the_instance
+#        del db._the_instances
 
     def testDatabaseWithoutInit(self):
-        db = TestDB()
+        db = TestDB
         assert not db.__dict__.has_key("testfield")
-        del TestDB._the_instance
+#        del TestDB._the_instances
 
     def testSingletonBehaviour(self):
         db = TestDB()

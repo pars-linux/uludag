@@ -32,7 +32,7 @@ class DependencyTestCase(unittest.TestCase):
         relation.package = "ctorrent"
         depinfo = pisi.dependency.Dependency(relation)
         assert not depinfo.satisfied_by_repo()
-
+"""
     def testSatisfiesRuntimeDeps(self):
         pisi.api.install(["ethtool"])
         assert pisi.dependency.satisfies_runtime_deps("ethtool")
@@ -43,3 +43,4 @@ class DependencyTestCase(unittest.TestCase):
         assert pisi.dependency.installable("zlib")
         assert pisi.dependency.installable("ethtool")
         assert not pisi.dependency.installable("paket")
+"""

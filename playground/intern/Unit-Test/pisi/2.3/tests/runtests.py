@@ -13,25 +13,27 @@
 
 import unittest
 import database
+"""
+from database.repodbtest import RepoDBTestCase
+from database.packagedbtest import PackageDBTestCase
+from database.sourcedbtest import SourceDBTestCase
+from database.installdbtest import InstallDBTestCase
+from database.componentdbtest import ComponentDBTestCase
+from database.filesdbtest import FilesDBTestCase
+from database.itembyrepotest import ItemByRepoTestCase # acayip
+"""
+from database.lazydbtest import LazyDBTestCase
 
-##from database.repodbtest import RepoDBTestCase
-##from database.packagedbtest import PackageDBTestCase
-#from database.sourcedbtest import SourceDBTestCase
-#from database.installdbtest import InstallDBTestCase
-#from database.componentdbtest import ComponentDBTestCase
-#from database.filesdbtest import FilesDBTestCase
-##from database.lazydbtest import LazyDBTestCase
-#from database.itembyrepotest import ItemByRepoTestCase
 
 from archivetests import ArchiveTestCase
-##from configfiletest import ConfigFileTestCase
+from configfiletest import ConfigFileTestCase
 from conflicttests import ConflictTestCase
 from constanttest import ConstantTestCase
-#from dependencytest import DependencyTestCase ## wtf is installable? runtime_dep???
-#from fetchtest import FetchTestCase
+from dependencytest import DependencyTestCase 
+from fetchtest import FetchTestCase
 from filetest import FileTestCase
 from filestest import FilesTestCase
-##from graphtest import GraphTestCase
+from graphtest import GraphTestCase 
 from historytest import HistoryTestCase
 from metadatatest import MetadataTestCase
 from mirrorstest import MirrorsTestCase
@@ -40,7 +42,7 @@ from relationtest import RelationTestCase
 from replacetest import ReplaceTestCase
 from shelltest import ShellTestCase
 from specfiletests import SpecFileTestCase
-#from srcarchivetest import SourceArchiveTestCase
+from srcarchivetest import SourceArchiveTestCase
 from uritest import UriTestCase
 from utiltest import UtilTestCase
 from versiontest import VersionTestCase
