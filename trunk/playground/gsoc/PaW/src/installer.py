@@ -59,13 +59,12 @@ class Installer():
             else:
                 self.reg.SetStringValue(hDefKey=_winreg.HKEY_LOCAL_MACHINE,
                                         sSubKeyName=hlmPath, sValueName=keyName, sValue=keyValue)
-        except:
-            log.exception('Could not set registry key %s.' % keyName)
+        except Exception as e:
+            log.exception('Could not set registry key %s: %s' % (keyName,e))
 
 
     def installationRegistry(self):
         # TODO: InstallLocation, DisplayIcon, Comments
-        uninstallString = 'defrag.exe'
 
         try:
             self.reg.CreateKey(hDefKey=_winreg.HKEY_LOCAL_MACHINE,
@@ -82,6 +81,8 @@ class Installer():
         self._setRegistryKey(self.hlmPath, 'Publisher', self.mainEngine.home)
         self._setRegistryKey(self.hlmPath, 'NoModify', 1, True)
         self._setRegistryKey(self.hlmPath, 'NoRepair', 1, True)
+
+        log.debug('Finished creating installation registry keys.')
 
     def uninstallationRegistry(self):
         try:
@@ -110,6 +111,10 @@ class Installer():
 
     def getInstallationRoot(self):
         return os.path.join(self.mainEngine.config.drive.DeviceID + '\\', self.mainEngine.appid)
+
+    def getUninstallationString(self):
+        return ''
+        # TODO: Implement.
 
     def getGrubLoaderDestination(self):
         system_drive_root = '%s\\' % self.mainEngine.compatibility.OS.SystemDrive
@@ -198,13 +203,13 @@ class Installer():
             log.exception('Could not locate bcdedit.exe')
             return
 
-        guid = run_shell_cmd([bcdedit_path, '/create', '/d', '\"'+self.mainEngine.appid+'\"', '/application', 'bootsector'])
+        guid = run_shell_cmd([bcdedit_path, '/create', '/d', self.mainEngine.appid, '/application', 'bootsector'])
         # TODO: replace app name
         guid = guid[guid.index('{'): guid.index('}') + 1] # fetch {...} guid from message string
 
         config_commands = [
             [bcdedit_path, '/set', guid, 'device', 'boot'],
-            [bcdedit_path, '/set', guid, 'path', '\\'+self.grub_loader_file],
+            [bcdedit_path, '/set', guid, 'path', '\\'+self.grub_mbr_file],
             [bcdedit_path, '/displayorder', guid, '/addlast']
         ]
 
@@ -212,7 +217,7 @@ class Installer():
             run_shell_cmd(cmd)
 
         self.mainEngine.config.bcd_guid = guid
-        # TODO: save bcd_guid to the REGISTRY
+        self._setRegistryKey(self.hlmPath, 'BcdeditGUID', guid)
         log.debug('bcdedit record created successfully.')
         return True
 
@@ -395,7 +400,7 @@ class Installer():
             Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            Task(foo, 'Creating Registry keys', cb),
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'Cleanup after installation', cb),
             Task(foo, 'Ejecting CD tray', cb),
