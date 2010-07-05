@@ -7,6 +7,9 @@ from gui.stepTemplate import StepWidget
 from PyQt4 import QtGui
 from gui.widgetOptCD import Ui_widgetOptCD
 
+from logger import getLogger
+log = getLogger('CD Option Step')
+
 class Widget(QtGui.QWidget, StepWidget):
     heading = "Show Your CD/DVD Path"
     cd = None
@@ -71,7 +74,7 @@ class Widget(QtGui.QWidget, StepWidget):
                         if result: return result
             return None
 
-    def determineCDVersion(self, tolerance = 5):
+    def determineCDVersion(self, tolerance = 10):
         """
         Determines Pardus release version by parsing gfxboot.cfg and
         obtaining distro name then comparing it with names defined in
@@ -82,17 +85,33 @@ class Widget(QtGui.QWidget, StepWidget):
         currentDrive = self.getSelectedCDDrive()
 
         gfxboot_cfg = self.locate_gfxboot_cfg('%s\\' % currentDrive.DeviceID)
-        if not gfxboot_cfg: return None
+        if not gfxboot_cfg:
+            log.debug('Could not locate gfxboot.cfg')
+            return None
 
         config_parser = ConfigParser.ConfigParser()
         config_parser.read(gfxboot_cfg)
         distro_name = config_parser.get('base','distro')
 
-        if not distro_name: return None
+        if not distro_name:
+            log.debug('No distro specified in gfxboot.cfg')
+            return None
 
+        result = None
         for version in self.mainEngine.versionManager.versions:
-            if levenshtein(version.name, distro_name) < tolerance:
-                return version
+            l_distance = levenshtein(version.name, distro_name)
+            if l_distance < tolerance:
+                result = version
+                
+        if result:
+            log.debug('Detected version: %s' % result.name)
+            return result
+        else:
+            log.debug('Could not detect version in Levenshtein distance of %d.' % tolerance)
+        return None
+
+
+        
 
     def onSubmit(self):
 	currentDrive = self.getSelectedCDDrive()
