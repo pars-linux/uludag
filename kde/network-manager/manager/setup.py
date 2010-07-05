@@ -90,7 +90,7 @@ class Build(build):
         os.system("rm -rf build")
         # Copy codes
         print "Copying PYs..."
-        os.system("cp -R code/ build/")
+        os.system("cp -R src/ build/")
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
