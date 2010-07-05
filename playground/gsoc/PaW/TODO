@@ -1,9 +1,6 @@
 TODO (not ordered)
 --------------------
 
-* Using WMI, throw compatibility error for Windows versions older than Windows
-  2000. i.e. 95/98/Me. keyword: os major version
-
 * boot.ini backup system
 * safe boot.ini cleaner upon uninstallation
 
@@ -23,14 +20,3 @@ TODO (not ordered)
 * plan about uninstall script.
 
 * verify kernel, initrd, img PATHs from 2009, and 2009.1, live CDs.
-
-* current plan for CD installation tasks:
-    # create dir structure
-    # copy files from CD
-    # copy grub4dos files
-    ? copy uninstallation files etc.
-    ? write windows registry keys
-    # update nt boot sequence
-    ? cleanup
-    # eject CD
-    # reboot or not
