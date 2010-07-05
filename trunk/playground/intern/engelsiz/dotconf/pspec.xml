@@ -9,7 +9,7 @@
             <Name>Eda Okur</Name>
             <Email>eda.okur@boun.edu.tr</Email>
         </Packager>
-        <License>GNUv2.1</License>
+        <License>LGPLv2.1</License>
         <IsA>library</IsA>
         <Summary>configuration-file parser library</Summary>
         <Description>Dot.conf is a simple-to-use and powerful configuration-file parser library written in C. Required for OpenTTS.</Description>
@@ -18,14 +18,10 @@
 
     <Package>
         <Name>dotconf</Name>
-        <RuntimeDependencies>
-            <Dependency>pkgconfig</Dependency>
-            <Dependency>automake</Dependency>
-        </RuntimeDependencies>
         <Files>
-            <Path fileType="executable">/usr/bin</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
             <Path fileType="doc">/usr/share/doc</Path>
         </Files>
     </Package>
