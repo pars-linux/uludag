@@ -33,7 +33,6 @@ def repository_index(request):
     }
     return render_response(request, 'repository/index.html', context)
 
-
 def list_source_packages(request, distName, distRelease):
     sources = Source.objects.filter(distribution__name=distName, distribution__release=distRelease)
     if not sources.count() > 0:
@@ -183,9 +182,14 @@ def view_binary_detail(request, distName, distRelease, sourceName, packageName, 
     # get the files of the pisi package
     # it is better to download the package from a local machine, it will be faster
     base_path = 'http://packages.pardus.org.tr'
-    distro = binary.package.source.distribution.name.lower()
-    release = binary.package.source.distribution.release
-    suffix = "-".join([distro, release])
+    if binary.package.source.distribution.type == 'corporate':
+        distro = 'corporate'
+        release = '2'
+        suffix = distro + release
+    else:
+        distro = binary.package.source.distribution.name.lower()
+        release = binary.package.source.distribution.release
+        suffix = "-".join([distro, release])
     if binary.resolution == 'pending': suffix += '-test'
     path = os.path.join(base_path, suffix)
     pisi_package = binary.get_filename()
@@ -356,3 +360,38 @@ def search(request):
         }
 
     return render_response(request, 'repository/search.html', context)
+
+def orphan(request):
+    distributions = Distribution.objects.all()
+
+    context = {
+            'distributions': distributions,
+        }
+
+    return render_response(request, 'repository/orphan.html', context)
+
+def list_orphan_packages(request, distName, distRelease):
+    distribution = Distribution.objects.get(name=distName, release=distRelease)
+    result = distribution.get_orphan_list(distribution.name, distribution.release)
+    
+    if request.method == 'GET' and request.GET.get('page'):
+        try:
+            result = cache.get('query_result')['tmp']
+            # default timeout is 3600 sec, if the timeout is passed, return to the form page
+        except TypeError:
+            return HttpResponseRedirect('./')
+    else:
+        rslt = dict()
+        rslt['tmp'] = result
+        cache.set('query_result', rslt)
+   
+    LANGUAGE_CODE = request.LANGUAGE_CODE
+    object_dict = {
+        'queryset': result,
+        'paginate_by': SOURCE_PACKAGES_PER_PAGE,
+        'template_name': 'repository/source-packages-list.html',
+        'template_object_name': 'source',
+        'extra_context': {'LANGUAGE_CODE': LANGUAGE_CODE}
+    }
+    
+    return object_list(request, **object_dict)

@@ -44,6 +44,17 @@ class Distribution(models.Model):
 
     def get_url(self):
         return SITE_ROOT + '/repository/%s/%s' % (self.name, self.release)
+    
+    def get_orphan_url(self):
+        return SITE_ROOT + '/repository/orphan/%s/%s/list/all/' % (self.name, self.release)
+    
+    def get_orphan_list(self, distName, distRelease):
+        distribution = Distribution.objects.get(name=distName, release=distRelease)
+        source = Source.objects.filter(maintained_by__first_name='Pardus', distribution=distribution)
+        return source
+
+    def get_orphan_count(self):
+        return self.get_orphan_list(self.name, self.release).count()
 
     class Meta:
         verbose_name = _('distribution')
@@ -115,8 +126,15 @@ class Source(models.Model):
             suffix = 'pardus'
         if self.distribution.type == 'contrib':
             suffix = 'contrib'
+        if self.distribution.type == 'corporate':
+            suffix = 'pardus'
+        else: suffix = 'pardus'
 
-        url = "/".join([base_url, suffix, self.distribution.release, 'devel', self.info.source_uri])
+        if self.distribution.type == 'corporate':
+            postfix = self.distribution.type + self.distribution.release
+            url = "/".join([base_url, suffix, postfix, 'devel', self.info.source_uri])
+        else:
+            url = "/".join([base_url, suffix, self.distribution.release, 'devel', self.info.source_uri])
 
         return url[:-9]
 

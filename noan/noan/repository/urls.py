@@ -22,4 +22,8 @@ urlpatterns = patterns('',
     url(r'^(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/(?P<sourceName>[^/]+)/(?P<packageName>[^/]+)/$', 'noan.repository.views.view_package_detail', name="repo-package-info"),
     # search
     url(r'^search/$', 'noan.repository.views.search', name="search"),
+    # orphan
+    url(r'^orphan/$', 'noan.repository.views.orphan', name="orphan"),
+    # List of orphan packages
+    url(r'^orphan/(?P<distName>[^/]+)/(?P<distRelease>[^/]+)/list/all/$', 'noan.repository.views.list_orphan_packages', name="list-orphan"),
 )
