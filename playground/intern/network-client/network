@@ -75,6 +75,8 @@ def print_connection(state, nm_settings):
                                 colorize(nm_settings.id, 'cyan'),
                                 "",
                                 "")
+    #print "\tAddress: %s, Netmask: %s, Gateway: %s" % (nm_settings.address, nm_settings.netmask, nm_settings.gateway),
+    #print 
 
 def print_connections(nm_handle):
     """Print connection list."""
@@ -88,7 +90,6 @@ def print_connections(nm_handle):
 
     for connection in nm_handle.connections:
         connections[connection.settings.type].append(connection)
-
     for connection_key in connections:
         if len(connections[connection_key]) > 0:
             conn_interface = connection_key.split("-").pop().capitalize()
@@ -99,7 +100,7 @@ def print_connections(nm_handle):
                 for active in nm_handle.active_connections:
                     if active.connection.settings.id == connection.settings.id:
                         state_mark = "X"
-                    print_connection(state_mark, connection.settings)
+                print_connection(state_mark, connection.settings)
 
 def print_device(nm_device):
     """Pretty print a specific device."""
@@ -149,7 +150,6 @@ def remove_connection(nm_handle):
 
     for connection in nm_handle.connections:
         connections[connection.settings.type].append(connection)
-
 
     connection_list = []
     index_ = 1
@@ -291,39 +291,36 @@ def set_connection_state_up(nm_handle, connection_id, interface):
     conn = nm_handle.get_connections_by_id(connection_id)
     if(conn is not None):
         conn = conn[0]
-        # FIXME: if conn.settings.mac_address is empty
-        # don't search for devices
-        #if conn.settings.mac_address = ""
-        #else:
+        if interface:
+            # The interface is given
+            for device in nm_handle.devices:
+                if device.interface == interface:
+                    nm_handle.activate_connection(conn, device)
+                    return
+
         for device in nm_handle.devices:
             if conn.settings.mac_address and \
                device.hwaddress == conn.settings.mac_address:
                 nm_handle.activate_connection(conn, device)
-                print "a"
-            else:
-                # The connection doesn't have a fixed MAC so
-                # we have to ask for the interface
-                # or use a possibly given interface through CLI
-                if interface:
-                    # The interface is given
-                    for device in nm_handle.devices:
-                        if device.interface == interface:
-                            nm_handle.activate_connection(conn, device)
-                else:
-                    device_list_type = []
-                    for device in nm_handle.devices:
-                        if str(device.type) == \
-                           conn.settings.type.split("-").pop().upper():
-                            device_list_type.append(device)
-                    if len(device_list_type) > 0:
-                        print colorize("Select device:", "yellow")
-                        index_ = 1
-                        for device in device_list_type:
-                            print "  [%s] %s" % (index_, device)
-                            index_ += 1
-                        dev_no = get_number("Device", 1, index_-1) - 1
-                        device = device_list_type[dev_no]
-                        nm_handle.activate_connection(conn, device)
+                return
+
+        # The connection doesn't have a fixed MAC so
+        # we have to ask for the interface
+        # or use a possibly given interface through CLI
+        device_list_type = []
+        for device in nm_handle.devices:
+            if str(device.type) == \
+               conn.settings.type.split("-").pop().upper():
+                device_list_type.append(device)
+        if len(device_list_type) > 0:
+            print colorize("Select device:", "yellow")
+            index_ = 1
+            for device in device_list_type:
+                print "  [%s] %s" % (index_, device)
+                index_ += 1
+            dev_no = get_number("Device", 1, index_-1) - 1
+            device = device_list_type[dev_no]
+            nm_handle.activate_connection(conn, device)
     else:
         print "There is no connection named: %s" %connection_id
 
