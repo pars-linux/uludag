@@ -17,7 +17,12 @@ class Widget(QtGui.QWidget, StepWidget):
     def onEnter(self):
         self.installed = False
         self.updateButtons()
-        self.gui.lblVersion.setText(self.mainEngine.version.name)
+        if self.mainEngine.version:
+            versionName = self.mainEngine.version.name
+        else:
+            versionName = 'Unknown'
+
+        self.gui.lblVersion.setText(versionName)
         self.mainEngine.installer.start()
 
     def updateButtons(self):
@@ -35,8 +40,6 @@ class Widget(QtGui.QWidget, StepWidget):
             self.gui.lblStatus.setText('Finished. Click Next to proceed.')
             self.installed = True
             self.updateButtons()
-            
-        print percentage
 
     def onFinish(self):
         self.installed = True

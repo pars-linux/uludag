@@ -198,13 +198,13 @@ class Installer():
             log.exception('Could not locate bcdedit.exe')
             return
 
-        guid = run_shell_cmd([bcdedit_path, '/create', '/d', self.mainEngine.application, '/application', 'bootsector'])
+        guid = run_shell_cmd([bcdedit_path, '/create', '/d', '\"'+self.mainEngine.appid+'\"', '/application', 'bootsector'])
         # TODO: replace app name
         guid = guid[guid.index('{'): guid.index('}') + 1] # fetch {...} guid from message string
 
         config_commands = [
             [bcdedit_path, '/set', guid, 'device', 'boot'],
-            [bcdedit_path, '/set', guid, 'path', '\\grldr.mbr'],
+            [bcdedit_path, '/set', guid, 'path', '\\'+self.grub_loader_file],
             [bcdedit_path, '/displayorder', guid, '/addlast']
         ]
 
