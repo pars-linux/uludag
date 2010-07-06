@@ -6,6 +6,7 @@
 from PyQt4.QtCore import Qt
 from PyQt4.QtGui import QGraphicsLinearLayout
 from PyQt4.QtGui import QGridLayout
+from PyQt4.QtGui import QCheckBox
 from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
 import comar
@@ -51,7 +52,7 @@ class HelloWorldApplet(plasmascript.Applet):
         self.theme.setImagePath("widgets/background")
         self.setBackgroundHints(Plasma.Applet.DefaultBackground)
 
-        self.layout = QGraphicsLinearLayout(Qt.Horizontal, self.applet)
+        self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
         label = Plasma.Label(self.applet)
         label.setText("<h1>Firewall Plasmoid</h1>")
         
@@ -66,12 +67,24 @@ class HelloWorldApplet(plasmascript.Applet):
         baslat_pb.setText("Start")
         durdur_pb=Plasma.PushButton(self.applet)
         durdur_pb.setText("Stop")
+        
+        self.incoming_cb=Plasma.CheckBox(self.applet)
+        self.incoming_cb.setText("Block incoming connections")
+        self.shareint_cb=Plasma.CheckBox(self.applet)
+        self.shareint_cb.setText("Sharing internet")
+        self.outgoing_cb=Plasma.CheckBox(self.applet)
+        self.outgoing_cb.setText("Block outgoing connections")
+        
         self.layout.addItem(label)
+        self.layout.addItem(self.bilgi_label)
         self.layout.addItem(baslat_pb)
         self.layout.addItem(durdur_pb)
-        self.layout.addItem(self.bilgi_label)
+        self.layout.addItem(self.incoming_cb)
+        self.layout.addItem(self.shareint_cb)
+        self.layout.addItem(self.outgoing_cb)
+        
         self.applet.setLayout(self.layout)
-        self.resize(125,125)
+        self.resize(300,300)
         
         QObject.connect(baslat_pb, SIGNAL("clicked()"), self.baslat)
         QObject.connect(durdur_pb, SIGNAL("clicked()"), self.durdur)
