@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>opentts</Name>
+        <Summary xml:lang="tr">OpenTTS konuşma(speech) sunucusu</Summary>
+        <Description xml:lang="tr">OpenTTS projesi, konuşma sentezi için cihaz-bağımsız bir katman sunar. Seslendirme yapılmak istenen uygulamalar ve konuşma sentezleyiciler için basit bir arayüz sunar.</Description>
+    </Source>
+</PISI>
+
