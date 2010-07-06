@@ -1,4 +1,4 @@
-TODO (not ordered)
+TODO
 --------------------
 
 * boot.ini backup system
@@ -6,6 +6,10 @@ TODO (not ordered)
 
 * grub4dos record removal method using bcdedit safely
 * bcdedit backup system (if possible) + restore tool
+
+* solve gui freezing problem during installation.
+
+* edit initramfs to boot CD properly from nested folder other than device root.
 
 * plan more on installation directory structure
 

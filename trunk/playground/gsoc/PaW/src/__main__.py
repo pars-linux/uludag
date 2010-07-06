@@ -20,7 +20,7 @@ class Config(object):
 class PaWn():
     application = 'Pardus (Paw)' # ASCII, please.
     appid = 'Pardus' # ASCII, please.
-    version = '0.1'
+    appversion = '0.1'
     publisher = 'TUBITAK/UEKAE'
     home = 'http://www.pardus.org.tr'
 
@@ -35,7 +35,8 @@ class PaWn():
 	self.gui = PaWnGui(self)
 
     def initFTP(self):
-        self.ftpDownloader = FTPDownloader('test.iso')
+        log.info('FTP Downloader inited for %s.' % self.config.tmpFile)
+        self.ftpDownloader = FTPDownloader(self.config.tmpFile)
 
 if __name__=='__main__':
     app = QtGui.QApplication(sys.argv)

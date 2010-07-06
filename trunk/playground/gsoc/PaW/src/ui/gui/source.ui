@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>456</width>
-    <height>264</height>
+    <width>480</width>
+    <height>182</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -21,7 +21,7 @@
        <property name="text">
         <string>Please choose the installation source for Pardus.
 
-It is recommended to download Pardus from Internet if you do not have Pardus CD. However if you have Pardus CD or ISO, you can choose those options, too.</string>
+It is recommended to download Pardus from Internet if you do not have Pardus CD. However, if you have Pardus CD or ISO, you can choose those options, too.</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignJustify|Qt::AlignVCenter</set>
@@ -38,7 +38,7 @@ It is recommended to download Pardus from Internet if you do not have Pardus CD.
          <item>
           <widget class="QRadioButton" name="optInternet">
            <property name="text">
-            <string>Download Pardus from Internet (recommended, requires Internet connection)</string>
+            <string>Download Pardus from Internet (recommended, requires Internet)</string>
            </property>
            <property name="checked">
             <bool>true</bool>

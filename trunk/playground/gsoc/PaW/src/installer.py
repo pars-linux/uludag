@@ -5,6 +5,7 @@ import tempfile
 from taskrunner import Task
 from taskrunner import TaskList
 
+import registry
 from utils import populate_template_file
 from utils import run_shell_cmd
 
@@ -19,7 +20,7 @@ except ImportError, NameError:
 
 class Installer():
     gui = None
-    iso_extractor = "c:\\Progra~1\\7-Zip\\7z.exe" # TODO: test purposes.
+    iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
     
     grub_default_timeout = 0
     grub_loader_file = 'grldr'
@@ -35,11 +36,11 @@ class Installer():
     default_img_path = 'pardus.img'
 
     def __init__(self, mainEngine):
+        "Initialize installer instance."
         self.mainEngine = mainEngine
 
         try:
             self.wmi = wmi.WMI(privileges=["Shutdown"])
-            self.reg = wmi.WMI(namespace="DEFAULT").StdRegProv
         except:
             log.warning("Could not use WMI. Most probably on Linux.")
 
@@ -48,41 +49,29 @@ class Installer():
         except AttributeError:
             pass # supress
 
+        # creates path for temp file and folder
         self.setTempFolder()
         self.setTempFile()
 
-    def _setRegistryKey(self, hlmPath, keyName, keyValue, isDWORD=False):
-        try:
-            if isDWORD:
-                self.reg.SetDWORDValue(hDefKey=_winreg.HKEY_LOCAL_MACHINE,
-                                       sSubKeyName=hlmPath, sValueName=keyName, uValue=keyValue)
-            else:
-                self.reg.SetStringValue(hDefKey=_winreg.HKEY_LOCAL_MACHINE,
-                                        sSubKeyName=hlmPath, sValueName=keyName, sValue=keyValue)
-        except Exception as e:
-            log.exception('Could not set registry key %s: %s' % (keyName,e))
-
-
     def installationRegistry(self):
         # TODO: InstallLocation, DisplayIcon, Comments
-
         try:
-            self.reg.CreateKey(hDefKey=_winreg.HKEY_LOCAL_MACHINE,
-                               sSubKeyName=self.hlmPath)
-            log.debug(self.hlmPath + ' registry key is created.')
-        except:
-            log.exception(self.hlmPath + ' registry key could not be created.')
+            key = registry.hCreateKey(self.hlmPath)
+        except Exception as e:
+            log.exception(self.hlmPath + ' registry key could not be created: %s' % e)
+            return False
 
-        self._setRegistryKey(self.hlmPath, 'DisplayName', self.mainEngine.application)
-        self._setRegistryKey(self.hlmPath, 'DisplayVersion', self.mainEngine.version)
-        self._setRegistryKey(self.hlmPath, 'UninstallString', uninstallString)
-        self._setRegistryKey(self.hlmPath, 'HelpLink', self.mainEngine.home)
-        self._setRegistryKey(self.hlmPath, 'URLInfoAbout', self.mainEngine.home)
-        self._setRegistryKey(self.hlmPath, 'Publisher', self.mainEngine.home)
-        self._setRegistryKey(self.hlmPath, 'NoModify', 1, True)
-        self._setRegistryKey(self.hlmPath, 'NoRepair', 1, True)
+        registry.hSetValue(key, 'DisplayName', self.mainEngine.application)
+        registry.hSetValue(key, 'DisplayVersion', self.mainEngine.appversion)
+        registry.hSetValue(key, 'UninstallString', self.getUninstallationString())
+        registry.hSetValue(key, 'HelpLink', self.mainEngine.home)
+        registry.hSetValue(key, 'URLInfoAbout', self.mainEngine.home)
+        registry.hSetValue(key, 'Publisher', self.mainEngine.home)
+        registry.hSetValue(key, 'NoModify', 1, True)
+        registry.hSetValue(key, 'NoRepair', 1, True)
 
         log.debug('Finished creating installation registry keys.')
+        return True
 
     def uninstallationRegistry(self):
         try:
@@ -106,7 +95,7 @@ class Installer():
         self.mainEngine.config.tmpDir = tempfile.mkdtemp()
 
     def setTempFile(self):
-        self.mainEngine.config.isoFile = \
+        self.mainEngine.config.tmpFile = \
             os.path.join(self.mainEngine.config.tmpDir, 'downloaded.iso')
 
     def getInstallationRoot(self):
@@ -217,7 +206,7 @@ class Installer():
             run_shell_cmd(cmd)
 
         self.mainEngine.config.bcd_guid = guid
-        #self._setRegistryKey(self.hlmPath, 'BcdeditGUID', guid)
+        registry.hSetValue(self.hlmPath, 'BcdeditGUID', guid)
         # TODO: enable this after registry errors are fixed. 
         log.debug('bcdedit record created successfully.')
         return True
@@ -266,7 +255,7 @@ class Installer():
         dirs = [
             '.',
             'boot',
-            'help',
+            'backup',
             'log']
 
         for dir in dirs:
@@ -424,7 +413,7 @@ class Installer():
             Task(self.copy_cd_files, 'Copying files from CD', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            # Task(self.installationRegistry, 'Creating Registry keys', cb),
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'CD cleanup after installation', cb),
             Task(self.ejectCD, 'Ejecting CD tray', cb),
@@ -435,11 +424,11 @@ class Installer():
 
         def foo():pass
         return [
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.createDirStructure, 'Creating directory structure', cb),
             Task(self.extract_iso_files, 'Extracting files from ISO', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            # Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'ISO cleanup after installation', cb)
         ]
