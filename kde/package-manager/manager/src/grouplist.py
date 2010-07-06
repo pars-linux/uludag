@@ -28,6 +28,7 @@ class GroupList(QListWidget):
     def __init__(self, parent=None):
         QListWidget.__init__(self, parent)
         self.iface = backend.pm.Iface()
+        self.defaultIcon = KIcon(('applications-other', 'package'), KIconLoader.SizeSmallMedium)
         self.connect(self, SIGNAL("itemClicked(QListWidgetItem*)"), self.groupChanged)
 
     def setState(self, state):
@@ -51,10 +52,12 @@ class GroupList(QListWidget):
             if package_count == 0:
                 return
         else:
-            localName, icon_path = content[0], content[1] #unicode(i18('All')), 'media-optical'
-            package_count = content[2] #len(self.state.packages())
+            localName, icon_path = content[0], content[1]
+            package_count = content[2]
 
         icon = KIcon(icon_path, KIconLoader.SizeSmallMedium)
+        if icon.isNull():
+            icon = self.defaultIcon
         item = QListWidgetItem(icon, "%s (%d)" % (localName, package_count), self)
         item.setData(Qt.UserRole, QVariant(unicode(name)))
         item.setSizeHint(QSize(0, KIconLoader.SizeMedium))
