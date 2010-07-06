@@ -1,23 +1,23 @@
 from PyQt4 import QtGui,QtCore
 
-from gui.widgetMain import Ui_MainWidget
-import gui.stepWelcome as stepWelcome
-import gui.stepConfiguration as stepConfiguration
-import gui.stepSource as stepSource
-import gui.stepOptISO as stepOptISO
-import gui.stepOptCD as stepOptCD
-import gui.stepOptInternet as stepOptInternet
-import gui.stepDownloading as stepDownloading
-import gui.stepInstalling as stepInstalling
+from ui.gui.main import Ui_main
+import ui.controller.stepWelcome as stepWelcome
+import ui.controller.stepConfiguration as stepConfiguration
+import ui.controller.stepSource as stepSource
+import ui.controller.stepOptISO as stepOptISO
+import ui.controller.stepOptCD as stepOptCD
+import ui.controller.stepOptInternet as stepOptInternet
+import ui.controller.stepDownloading as stepDownloading
+import ui.controller.stepInstalling as stepInstalling
 
-class PaWnGui(QtGui.QWidget, Ui_MainWidget): #is also a mainWidget
+class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD,
         stepOptInternet, stepDownloading, stepInstalling] # step screen widgets
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):
 	QtGui.QWidget.__init__(self, parent)
-	Ui_MainWidget.__init__(self)
+	Ui_main.__init__(self)
 
 	self.mainEngine = mainEngine
 
