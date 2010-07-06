@@ -17,7 +17,6 @@ import uuid
 from optparse import OptionParser
 
 from networkmanager import NetworkManager, WiredSettings, DeviceType
-import ipaddr
 
 # Color characters
 COLORS = {
@@ -205,19 +204,12 @@ def create_ethernet_connection(nm_handle, _device):
     if dns == 1:
         dns_mode = "manual"
 
-        dns_address = get_input("First Address")
-        dns_address2 = get_input("Second Address")
-
-        import socket
-        import dbus
-        dns_list = []
-        dns_list.append(socket.htonl(int(ipaddr.IPAddress(dns_address, version=4))))
-        dns_list.append(socket.htonl(int(ipaddr.IPAddress(dns_address2, version=4))))
+        primary_dns = get_input("First Address")
+        secondary_dns = get_input("Second Address")
 
         settings._settings["ipv4"]["ignore-auto-dns"] = True
-        settings._settings["ipv4"]["dns"] = \
-                dbus.Array(dns_list, signature='u')
-
+        #FIXME: networkmanager library does not support more than one dns address
+        settings.dns = primary_dns
     elif dns == 2:
         dns_mode = "auto"
     connection_id = None
