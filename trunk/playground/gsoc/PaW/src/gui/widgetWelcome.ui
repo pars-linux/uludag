@@ -13,32 +13,41 @@
   <property name="windowTitle">
    <string/>
   </property>
-  <widget class="QWidget" name="verticalLayoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>10</y>
-     <width>421</width>
-     <height>231</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QLabel" name="lblWelcome">
-      <property name="text">
-       <string>Welcome message for PaWn</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="lblDescription">
-      <property name="text">
-       <string>Installation description about PaWn</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="lblWelcome">
+       <property name="text">
+        <string>Welcome to PaW–Pardus Installer for Microsoft(R) Windows(TM)!
+
+You can set up a Pardus Linux installation to your computer easily and without loss of your files or documents.
+
+Pardus is an Linux based open source and free operating system powered by TÜBİTAK/UEKAE.</string>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblDescription">
+       <property name="text">
+        <string>This setup wizard will help you proceed configuration and installation of Pardus. Please press Next to start configuring your new Pardus!
+
+It is recommeded to close all running programs before starting installation. </string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+       </property>
+       <property name="wordWrap">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
