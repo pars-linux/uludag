@@ -5,6 +5,8 @@ import sys
 
 from optparse import OptionParser
 
+from clcolorize import colorize
+
 
 def arguments_parse():
     """Handle the command line arguments."""
@@ -24,7 +26,7 @@ def arguments_parse():
     (options, args) = parser.parse_args()
     # If no arguments are passed just print the help message
     if options.filename is None:
-        print "The input file (specified by the '-f' option) is mandatory."
+        print colorize("The input file (specified by the '-f' option) is mandatory.", 'red')
         parser.print_help()
         sys.exit(1)
     if len(args) != 0:
@@ -32,7 +34,7 @@ def arguments_parse():
         sys.exit(1)
     # Either call -p or -o, but not both
     if options.custompackages and options.allpackages:
-        print "[Error]: Specify either the '-p' or the '-o' option, but not both."
+        print colorize("Error: Specify either the '-p' or the '-o' option, but not both.", 'red')
         sys.exit(1)
     # Since both cannot be true, check which is and return accordingly
     return options.filename, options.custompackages, options.allpackages

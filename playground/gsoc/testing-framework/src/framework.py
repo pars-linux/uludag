@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import string
 import sys
 
 from xmlparser import XMLParser
@@ -32,7 +31,7 @@ def check_file(file):
     if not '.xml' in fileExtension:
         print colorize("Only XML files are supported. The file '{0}' is an invalid testcase file.", 'red').format(file)
         sys.exit(1)
-    print "[ Parsing file ]:\t'{0}'\n".format(fileAbsolutePath)
+    print 'Parsing file:  {0}\n'.format(fileAbsolutePath)
 
 
 def main():
@@ -45,7 +44,7 @@ def main():
     # Now check the conditions and create the object
     if custompackages is not None:
         customparsefile = XMLParser(os.path.abspath(filename), custom_package_parse(custompackages))
-        print "[ Custom parsing ]:\t'{0}'\n".format(os.path.abspath(custompackages))
+        print "Custom parsing:\t'{0}'\n".format(os.path.abspath(custompackages))
         customparsefile.parser_main()
     else:
         parsefile = XMLParser(os.path.abspath(filename), None)

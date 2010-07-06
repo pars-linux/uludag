@@ -1,55 +1,57 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import string
-
 from pisi.api import install
 from pisi.api import list_available
 from pisi.api import calculate_download_size
 
 from pisi.errors import PrivilegeError
 
-from clcolorize import colorize
-
 
 class TestInstall:
-    """class for the testcase install."""
-    def __init__(self, packagelist, installedpackages, availablepackages):
+    """This class will first check for packages which are already installed, then
+    will check all the available repositories to see whether the package exists.
+    After checking all the above, then only it would proceed to call the Pisi API
+    to attempt to install the packages."""
+    def __init__(self, packagelist, installedpackages, availablepackages, report=None):
         self.packagelist = packagelist
         self.installedpackages = installedpackages
         self.availablepackages = availablepackages
+        self.report = list()
     
     def test_install_main(self):
-        """Use the pisi api to install the packages"""
-        # Packages which are in the testcase file and are not installed
+        """Check the conditions and call the Pisi API to install the packages"""
+        # Packages in the testcase file but not installed
         packagestNotInstalled = list(set(self.packagelist) - set(self.installedpackages))
         if not packagestNotInstalled:
-            print colorize('All the required packages are installed.\n', 'green')
+            self.report.append('All the required packages are installed')
             return
-        # Install only packages that are in all the repositories
+       
+        # Install only packages that are in all the available repositories
         packagesNotInRepo = list(set(packagestNotInstalled) - set((self.availablepackages)))
         if packagesNotInRepo:
-            print "The following packages were not found in the repository:", colorize('{0}', 'red').format(string.join(packagesNotInRepo, ', '))
+            self.report.append("The following packages were not found in the repository: '{0}'".format(', '.join(packagesNotInRepo)))
+       
         # Only try installing those packages which are in the repository
         finalPacakges = list(set(packagestNotInstalled) - set(packagesNotInRepo))
         totalPackages = len(finalPacakges)
         if totalPackages == 0:
-            print colorize('No packages were installed.\n', 'green')
+            self.report.append('No packages were installed\n')
             return
+        
         downloadSize = calculate_download_size(finalPacakges)[0]/(1024.0 * 1024.0)
-        print "Number of packages to be installed: '{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize)
-        print 'Installing required packages, please wait ... '
+        self.report.append("Number of packages to be installed: '{0}', total size: '{1:.2f} MB'".format(totalPackages, downloadSize))
         counter = 0 
         while counter < totalPackages:
             # Pisi installs new packages by using a list. However if we pass all the
             # packages as a single list, we don't have much control over the errors.
             # That is why pass a single package as a list here
             package = finalPacakges[counter]
-            singlePackage = string.split(finalPacakges[counter])
+            singlePackage = package.split()
             try:
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
-                print colorize('Error: To install the packages, run the framework with root privileges.\n', 'red')
+                self.report.append('Error: To install the packages, run the framework with root privileges')
                 return
             counter += 1
-        print colorize("Finished installing the following packages: '{0}'\n", 'green').format(string.join(finalPacakges, ', '))
+        self.report.append("Finished installing the following packages: '{0}'".format(', '.join(finalPacakges)))
