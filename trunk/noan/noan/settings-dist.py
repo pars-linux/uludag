@@ -11,8 +11,8 @@ ADMINS = (
 MANAGERS = ADMINS
 
 # Database
-DATABASE_ENGINE = 'sqlite3'
-DATABASE_NAME = '/path_to/noan/db/noan.sqlite3'
+DATABASE_ENGINE = 'mysql'
+#DATABASE_NAME = '/path_to/noan/db/noan.sqlite3'
 
 # Local time zone for this installation.
 TIME_ZONE = 'Europe/Istanbul'
