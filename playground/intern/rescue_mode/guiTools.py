@@ -12,14 +12,26 @@ class MenuItem(urwid.Text):
         return True
     def keypress(self,size,key):
         if key == "enter":
-       #     self.state = True
             if self.fn != None:
 	      if self.args != None:
 		self.fn(self.args)
 	      else:
 		self.fn()
-	    
         return key
+        
+class PasswordEdit(urwid.Edit):
+  def __init__(self,label):
+    urwid.Edit.__init__(self,label)
+    self.password = ""
+   
+  def keypress(self,size,key):
+    if self.valid_char(key):
+      self.password+=key
+      self.insert_text("*")
+    elif key in ["backspace","delete"]:      
+      self.edit_text =self.edit_text[:-1]
+    #else:
+    return key
 
 class listDialog(urwid.Frame):
   def __init__(self,fn_o_info,palette,header=""):
@@ -29,14 +41,14 @@ class listDialog(urwid.Frame):
     
     self.simpleList = urwid.SimpleListWalker([])
     
-    f_bayrak = False
+    fn_flag = False
     
     if fn_o_info != None: 
       if "function" in str(type(fn_o_info)):
 	self.function = fn_o_info
 	urwid.connect_signal(self.simpleList, "modified",self.listeModified)
       else:
-	f_bayrak=True	
+	fn_flag=True	
 	
     
     liste = urwid.LineBox(urwid.ListBox(self.simpleList))
@@ -45,7 +57,7 @@ class listDialog(urwid.Frame):
     self.header = urwid.LineBox(urwid.Text(header))
     
 	
-    if f_bayrak:
+    if fn_flag:
       self.createFooter(fn_o_info)
     
     
@@ -72,8 +84,8 @@ class PasswordDialog(urwid.Frame):
   def __init__(self,function,palette,editCaptions,header="",footer=""):
     self.palette = palette
     self.function = function
-    self.passwd = urwid.Edit(editCaptions[0])
-    self.re_passwd = urwid.Edit(editCaptions[1])
+    self.passwd = PasswordEdit(editCaptions[0])
+    self.re_passwd = PasswordEdit(editCaptions[1])
     
     self.simpleList = urwid.SimpleListWalker([urwid.LineBox( urwid.AttrWrap(self.passwd,self.palette[0],self.palette[1])),
     urwid.LineBox( urwid.AttrWrap(self.re_passwd,self.palette[0],self.palette[1]))])
@@ -92,7 +104,13 @@ class PasswordDialog(urwid.Frame):
 
   def unhandled_input(self, input):
     if input == 'enter':
-	self.function(self.passwd.get_edit_text(),self.re_passwd.get_edit_text())
+	self.function(self.passwd.password,self.re_passwd.password)
+	
+if __name__=="__main__":
+  ps = PasswordEdit("burak")
+  ps = urwid.Filler(ps,"top")
+  loop = urwid.MainLoop(ps)
+  loop.run()
   
 
 

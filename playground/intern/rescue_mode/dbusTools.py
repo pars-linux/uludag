@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 import os, dbus, comar, subprocess
+from shellTools import chrootRun
 
 
 _sys_dirs = ["dev","proc","sys"]
 
-def chrootRun(path,cmd):
-    subprocess.call("chroot %s %s" % (path, cmd),shell=True,stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 
 class pardusDbus:
