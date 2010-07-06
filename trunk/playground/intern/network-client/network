@@ -296,7 +296,12 @@ def set_connection_state_up(nm_handle, connection_id, interface=None):
             # The interface is given
             for device in nm_handle.devices:
                 if device.interface == interface:
-                    nm_handle.activate_connection(conn, device)
+                    conn_mac_addr = conn.settings.mac_address
+                    if conn_mac_addr is None\
+                            or conn_mac_addr == device.hwaddress:
+                                nm_handle.activate_connection(conn, device)
+                    else:
+                        print "The connection's mac address did not match this device"
                     return
 
         for device in nm_handle.devices:
