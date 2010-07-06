@@ -19,7 +19,7 @@ except ImportError, NameError:
 
 class Installer():
     gui = None
-    iso_extractor = "c:\\Progra~1\\Utils\\7-Zip\\7z.exe" # TODO: test purposes.
+    iso_extractor = "c:\\Progra~1\\7-Zip\\7z.exe" # TODO: test purposes.
     
     grub_default_timeout = 0
     grub_loader_file = 'grldr'
