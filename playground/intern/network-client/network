@@ -102,7 +102,8 @@ def print_connections(nm_handle):
         connections[connection.settings.type].append(connection)
     for connection_key in connections:
         if len(connections[connection_key]) > 0:
-            conn_interface = connection_key.split("-").pop().capitalize()
+            # Convert ethernet->Ethernet, wireless->Wireless, etc.
+            conn_interface = connection_key.split("-")[-1].capitalize()
             print colorize("%s connections" % conn_interface, 'green')
 
             for connection in connections[connection_key]:
@@ -164,19 +165,18 @@ def remove_connection(nm_handle):
         connections[connection.settings.type].append(connection)
 
     connection_list = []
-    index_ = 1
 
     for connection_type in connections:
         if len(connections[connection_type]) > 0:
             conn_interface = connection_type.split("-").pop().capitalize()
             print colorize("%s connections" % conn_interface, 'green')
-            for connection in connections[connection_type]:
-                print "  [%s] %s" % (index_,
-                                     str(connection.settings.id).capitalize())
+            for (index, connection) in enumerate(connections[connection_type]):
+                print "  [%s] %s" % (index+1,
+                                     connection.settings.id)
                 connection_list.append(connection)
-                index_ += 1
-    connection = connection_list[(get_number("Delete", 1, index_ - 1) - 1)]
-    connection.delete()
+
+            connection = connection_list[(get_number("Delete", 1, len(connections[connection_type])) - 1)]
+            connection.delete()
 
 def create_ethernet_connection(nm_handle, _device):
     """Create an ethernet connection."""
@@ -198,7 +198,6 @@ def create_ethernet_connection(nm_handle, _device):
         settings.gateway = get_input("Gateway")
 
     print colorize("Select Name server (DNS) assignment method:", "yellow")
-    #print "  [1] Use default name servers"
     print "  [1] Enter an name server address manually"
     print "  [2] Automatically obtain from DHCP"
     dns = get_number("Type", 1, 2)
@@ -259,37 +258,26 @@ def create_connection(nm_handle):
     for device in nm_handle.devices:
         devices[device.type].append(device)
 
-
-    index_ = 1
-    print colorize("Select interface:", "yellow")
-
+    print colorize("Select device type:", "yellow")
 
     device_list = []
-    for interface in devices:
-        if len(devices[interface]) > 0:
-            print "  [%s] %s" % (index_, str(interface).capitalize())
-            device_list.append(interface)
-            index_ += 1
+    for device in devices:
+        if len(devices[device]) > 0:
+            device_list.append(device)
+            print "  [%s] %s" % (len(device_list), str(device).capitalize())
 
-    _max = 0
-    for interface in devices:
-        _max += len(devices[interface])
+    device_type = get_number("Device type", 1, len(device_list))
 
-    connection_no = get_number("Interface", 1, _max) - 1
+    filtered_devices = devices[device_list[device_type-1]]
 
-    index_ = 1
-
-    _devices = devices[device_list[connection_no]]
-
-    if len(_devices) > 0:
+    if len(filtered_devices) > 0:
         print
         print colorize("Select device:", "yellow")
-        for device in _devices:
-            print "  [%s] %s" % (index_, device)
-            index_ += 1
-        dev_no = get_number("Device", 1, _max) - 1
+        for (index, device) in enumerate(filtered_devices):
+            print "  [%s] %s" % (index+1, device)
+        dev_no = get_number("Device", 1, len(filtered_devices)) - 1
 
-        functions[_devices[dev_no].type](nm_handle, _devices[dev_no])
+        functions[filtered_devices[dev_no].type](nm_handle, filtered_devices[dev_no])
 
 
 def set_connection_state_down(nm_handle, connection_id):
@@ -298,16 +286,16 @@ def set_connection_state_down(nm_handle, connection_id):
         if active_conn.connection.settings.id == connection_id:
             active_conn.devices[0].disconnect()
 
-def set_connection_state_up(nm_handle, connection_id, interfaces=None):
+def set_connection_state_up(nm_handle, connection_id, interface=None):
     """Set the state of a given connection to Up."""
     conn = nm_handle.get_connections_by_id(connection_id)
     if conn is not None:
         # FIXME: We're always taking the first one, check again.
         conn = conn[0]
-        if interfaces is not None:
+        if interface is not None:
             # The interface is given
             for device in nm_handle.devices:
-                if device.interface == interfaces[0]:
+                if device.interface == interface:
                     nm_handle.activate_connection(conn, device)
                     return
 
@@ -320,22 +308,20 @@ def set_connection_state_up(nm_handle, connection_id, interfaces=None):
         # The connection doesn't have a fixed MAC so
         # we have to ask for the interface
         # or use a possibly given interface through CLI
-        device_list_type = []
+        device_list = []
         for device in nm_handle.devices:
             if str(device.type) == \
                conn.settings.type.split("-").pop().upper():
-                device_list_type.append(device)
-        if len(device_list_type) > 0:
+                device_list.append(device)
+        if len(device_list) > 0:
             print colorize("Select device:", "yellow")
-            index_ = 1
-            for device in device_list_type:
-                print "  [%s] %s" % (index_, device)
-                index_ += 1
-            dev_no = get_number("Device", 1, index_-1) - 1
-            device = device_list_type[dev_no]
+            for (index, device) in enumerate(device_list):
+                print "  [%s] %s" % (index+1, device)
+            dev_no = get_number("Device", 1, len(device_list)) - 1
+            device = device_list[dev_no]
             nm_handle.activate_connection(conn, device)
     else:
-        print "There is no connection named: %s" %connection_id
+        print "There is no connection named: %s" % connection_id
 
 
 #####################
@@ -413,6 +399,10 @@ When activating a connection, you should either provide an interface like
 
 
     (options, args) = parser.parse_args()
+    try:
+        interface = args[0]
+    except IndexError:
+        interface = None
 
     if options.action == "connections":
         print_connections(nm_handle)
@@ -423,7 +413,7 @@ When activating a connection, you should either provide an interface like
     elif options.action == "remove":
         remove_connection(nm_handle)
     elif options.a_connection is not None:
-        set_connection_state_up(nm_handle, options.a_connection, interfaces=args)
+        set_connection_state_up(nm_handle, options.a_connection, interface)
     elif options.d_connection is not None:
         set_connection_state_down(nm_handle, options.d_connection)
     else:
