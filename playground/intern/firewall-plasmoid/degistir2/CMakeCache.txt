@@ -20,6 +20,9 @@ AUTOMOC4_EXECUTABLE:FILEPATH=/usr/bin/automoc4
 //The directory containing a CMake configuration file for Automoc4.
 Automoc4_DIR:PATH=/usr/lib/automoc4
 
+//No help, variable specified on the command line.
+CMAKE-INSTALL-PREFIX:UNINITIALIZED=/usr/kde/4
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/usr/bin/ar
 

@@ -90,19 +90,19 @@ void PlasmaTutorial1::init()
   layout->setOrientation(Qt::Vertical);
  
   kapat_pushButton = new Plasma::PushButton(this);
-  kapat_pushButton->setIcon(QIcon("icons/development.png"));
+  kapat_pushButton->setIcon(KIcon("system-shutdown"));
   kapat_pushButton->setText("Bilgisayarı kapat");
   
   yb_pushButton = new Plasma::PushButton(this);
-  yb_pushButton->setIcon(QIcon("icons/education.png"));
+  yb_pushButton->setIcon(KIcon("system-reboot"));
   yb_pushButton->setText("Yeniden başlat");
   
   askiyaAl_pushButton=new Plasma::PushButton(this);
-  askiyaAl_pushButton->setIcon(QIcon("icons/internet.png"));
+  askiyaAl_pushButton->setIcon(KIcon("system-suspend-hibernate"));
   askiyaAl_pushButton->setText("Askıya al");
   
   ekraniKilitle_pushButton = new Plasma::PushButton(this);
-  ekraniKilitle_pushButton->setIcon(QIcon("icons/pen.png"));
+  ekraniKilitle_pushButton->setIcon(KIcon("system-lock-screen"));
   ekraniKilitle_pushButton->setText("Ekranı kilitle");
   
 
