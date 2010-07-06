@@ -90,7 +90,6 @@ class MainWindow(KXmlGuiWindow, Ui_MainWindow):
 
         # An info label to show a proper information,
         # if there is no updates available.
-        self.statusLabel = QLabel(self)
         self.statusLabel = QLabel(i18n("Currently your basket is empty."), self)
         self.statusLabel.setAlignment(Qt.AlignVCenter | Qt.AlignLeft)
         self.statusLabel.setStyleSheet("background-color:rgba(0,0,0,220); \
