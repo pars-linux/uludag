@@ -1,72 +1,91 @@
 # -*- coding: utf-8 -*-
-# Copyright stuff
-
-#Firewall plasmoid try in Python by Baris Akkurt
+#
+# Copyright 2010 D. Barış Akkurt <dbarisakkurt@gmail.com>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU Library General Public License as
+# published by the Free Software Foundation; either version 2, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details
+#
+# You should have received a copy of the GNU Library General Public
+# License along with this program; if not, write to the
+# Free Software Foundation, Inc.,
+# 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+#
 
 from PyQt4.QtCore import Qt
-from PyQt4.QtGui import QGraphicsLinearLayout
-from PyQt4.QtGui import QGridLayout
+from PyQt4.QtCore import *
+from PyQt4.QtGui import QGraphicsGridLayout
 from PyQt4.QtGui import QCheckBox
+from PyQt4.QtGui import QPixmap
 from PyKDE4.plasma import Plasma
 from PyKDE4 import plasmascript
-import comar
-import dbus
-from PyQt4.QtCore import *
-
+import comar, dbus
 
 if not dbus.get_default_main_loop():
     from dbus.mainloop.qt import DBusQtMainLoop
     DBusQtMainLoop(set_as_default=True)
-
  
 class HelloWorldApplet(plasmascript.Applet):
     def __init__(self,parent,args=None):
+	"""Regular init method for the class of the plasmoid"""
         plasmascript.Applet.__init__(self,parent)
         
     def baslat(self):
-	link=comar.Link()#comar baglantisi
-	#link.System.Service[dbus.String("iptables")].start()#onemli satirlar bunlar
+	"""Method for openning the firewall manager"""
+	link=comar.Link()
 	link.Network.Firewall[dbus.String("iptables")].setState("on")
-	#link.System.Service[dbus.String("iptables")].start(async=self.handler)
 	self.bilgi_label.setText("<p style='color:green'>Firewall is working now.</p>")
 
     def durdur(self):
+	"""Method for closing the firewall manager"""
 	link=comar.Link()
-	#link.System.Service[dbus.String("iptables")].stop()
 	link.Network.Firewall[dbus.String("iptables")].setState("off")
-	#link.System.Service[dbus.String("iptables")].start(async=self.handler)
 	self.bilgi_label.setText("<p style='color:red'>Firewall is stopped now.</p>")
 	
- 
     def init(self):
+	"""init method for the plasmoid. GUI stuff is located here."""
 	link=comar.Link()
-	#gs=link.Network.Firewall[dbus.String("iptables")].getState()
-	#print gs
-	self.typeOf, self.description, self.stateOfFirewall=link.System.Service[dbus.String("iptables")].info()
-	#print self.stateOfFirewall
-	#print type(self.stateOfFirewall)
-        self.setHasConfigurationInterface(True)#burası true olacak sanırım ayar penceresi için
+
+        self.setHasConfigurationInterface(True)
         self.setAspectRatioMode(Plasma.Square)
+        self.resize(400,200)
  
         self.theme = Plasma.Svg(self)
         self.theme.setImagePath("widgets/background")
         self.setBackgroundHints(Plasma.Applet.DefaultBackground)
-
-        self.layout = QGraphicsLinearLayout(Qt.Vertical, self.applet)
+        self.layout=QGraphicsGridLayout(self.applet)
+        
         label = Plasma.Label(self.applet)
         label.setText("<h1>Firewall Plasmoid</h1>")
-        
+        self.kilit=Plasma.IconWidget(self.applet)
         self.bilgi_label=Plasma.Label(self.applet)
-        #self.bilgi_label.setText("")
-        #link.Network.Firewall[dbus.String("iptables")].getState()
-        if link.Network.Firewall[dbus.String("iptables")].getState()==dbus.String(u"on"):      #self.stateOfFirewall==dbus.String("on"):
+
+        if link.Network.Firewall[dbus.String("iptables")].getState()==dbus.String(u"on"):
 	    self.bilgi_label.setText("<p style='color:green'>Firewall is working now.</p>")
+	    self.kilit.setIcon("object-locked")
+	    self.kilit.setMaximumWidth(40)
 	else:
 	    self.bilgi_label.setText("<p style='color:red'>Firewall is stopped now.</p>")
+	    self.kilit.setMaximumWidth(40)
+	    self.kilit.setIcon("object-unlocked")
+
         baslat_pb=Plasma.PushButton(self.applet)
         baslat_pb.setText("Start")
         durdur_pb=Plasma.PushButton(self.applet)
         durdur_pb.setText("Stop")
+        
+        gelen_simge=Plasma.IconWidget(self.applet)
+        gelen_simge.setIcon("application-x-smb-workgroup")
+        paylasim_simge=Plasma.IconWidget(self.applet)
+        paylasim_simge.setIcon("application-x-smb-server")
+        giden_simge=Plasma.IconWidget(self.applet)
+        giden_simge.setIcon("security-medium")
         
         self.incoming_cb=Plasma.CheckBox(self.applet)
         self.incoming_cb.setText("Block incoming connections")
@@ -75,16 +94,18 @@ class HelloWorldApplet(plasmascript.Applet):
         self.outgoing_cb=Plasma.CheckBox(self.applet)
         self.outgoing_cb.setText("Block outgoing connections")
         
-        self.layout.addItem(label)
-        self.layout.addItem(self.bilgi_label)
-        self.layout.addItem(baslat_pb)
-        self.layout.addItem(durdur_pb)
-        self.layout.addItem(self.incoming_cb)
-        self.layout.addItem(self.shareint_cb)
-        self.layout.addItem(self.outgoing_cb)
-        
-        self.applet.setLayout(self.layout)
-        self.resize(300,300)
+        self.layout.addItem(label, 0, 0,1,4)
+        self.layout.addItem(self.kilit, 1,0)
+        self.layout.addItem(self.bilgi_label,1,1)
+        self.layout.addItem(baslat_pb,1,2)
+        self.layout.addItem(durdur_pb,1,3)
+        self.layout.addItem(gelen_simge,2,0,1,1)
+        self.layout.addItem(paylasim_simge,3,0,1,1)
+        self.layout.addItem(giden_simge,4,0,1,1)
+        self.layout.addItem(self.incoming_cb,2,1,1,4)
+        self.layout.addItem(self.shareint_cb,3,1,1,4)
+        self.layout.addItem(self.outgoing_cb,4,1,1,4)
+        self.applet.setLayout(self.layout)        
         
         QObject.connect(baslat_pb, SIGNAL("clicked()"), self.baslat)
         QObject.connect(durdur_pb, SIGNAL("clicked()"), self.durdur)
@@ -92,13 +113,15 @@ class HelloWorldApplet(plasmascript.Applet):
         link.listenSignals("Network.Firewall", self.handler)
 
     def handler(self, *args):
+	"""Handler method for receiving signals from Comar"""
 	link=comar.Link()
-	if link.Network.Firewall[dbus.String("iptables")].getState()==dbus.String(u"on"):      #self.stateOfFirewall==dbus.String("on"):
+	if link.Network.Firewall[dbus.String("iptables")].getState()==dbus.String(u"on"):
 	    self.bilgi_label.setText("<p style='color:green'>Firewall is working now.</p>")
+
+	    self.kilit.setIcon("object-locked")
 	else:
 	    self.bilgi_label.setText("<p style='color:red'>Firewall is stopped now.</p>")
-	#pass
-      
- 
+	    self.kilit.setIcon("object-unlocked")
+        
 def CreateApplet(parent):
     return HelloWorldApplet(parent) 
