@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-02 22:53+0530\n"
-"PO-Revision-Date: 2010-07-06 13:53+0300\n"
+"PO-Revision-Date: 2010-07-06 13:58+0300\n"
 "Last-Translator: H. İbrahim Güngör <ibrahim@pardus.org.tr>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "Yüz Denetiminden Vazgeçiliyor. Tekrar Deneyin."
 
 #: src/pam_face_authentication.cpp:538
 msgid "Keep proper distance with the camera."
-msgstr "Kamera ile aranızdaki uygun bir mesafe ayarlayın."
+msgstr "Kamera ile aranızda uygun bir mesafe ayarlayın."
 
 #: src/pam_face_authentication.cpp:552
 msgid "Unable query image from your webcam."
