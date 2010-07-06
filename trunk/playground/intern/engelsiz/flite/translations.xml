@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<PISI>
+    <Source>
+        <Name>flite</Name>
+        <Summary xml:lang="tr">Flite, küçük ve hızlı konuşma sentezleyici</Summary>
+        <Description xml:lang="tr">Flite (festival-lite), CMU tarafından geliştirilmiş küçük ve hızlı bir run-time konuşma sentezleyicisidir. Flite, Festival'e alternatif sentezleyici olarak, öncelikle küçük gömülü sistemler ve/veya buyuk sunucular için tasarlanmıştır.</Description>
+    </Source>
+</PISI>
+

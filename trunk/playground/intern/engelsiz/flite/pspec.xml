@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!DOCTYPE PISI SYSTEM "http://www.pardus.org.tr/projeler/pisi/pisi-spec.dtd">
+
+<PISI>
+    <Source>
+        <Name>flite</Name>
+        <Homepage>http://www.speech.cs.cmu.edu/flite/index.html</Homepage>
+        <Packager>
+            <Name>Eda Okur</Name>
+            <Email>eda.okur@boun.edu.tr</Email>
+        </Packager>
+        <License>MIT</License>
+        <IsA>app:gui</IsA>
+        <Summary>Flite: a small run-time speech synthesis engine</Summary>
+        <Description>Flite (festival-lite) is a small, fast run-time speech synthesis engine developed at CMU and primarily designed for small embedded machines and/or large servers. Flite is designed as an alternative synthesis engine to Festival for voices built using the FestVox suite of voice building tools.</Description>
+        <Archive sha1sum="5370eebe917ba2b57dfdbaf15013b99bbe748631" type="tarbz2">http://www.speech.cs.cmu.edu/flite/packed/flite-1.4/flite-1.4-release.tar.bz2</Archive>
+    </Source>
+
+    <Package>
+        <Name>flite</Name>
+        <Files>
+            <Path fileType="executable">/usr/bin</Path>
+            <Path fileType="doc">/usr/share/doc</Path>
+            <Path fileType="data">/usr/share</Path>
+            <Path fileType="header">/usr/include</Path>
+            <Path fileType="library">/usr/lib</Path>
+        </Files>
+    </Package>
+
+    <History>
+        <Update release="1">
+            <Date>2010-07-05</Date>
+            <Version>1.4</Version>
+            <Comment>First release.</Comment>
+            <Name>Eda Okur</Name>
+            <Email>eda.okur@boun.edu.tr</Email>
+        </Update>
+    </History>
+</PISI>
+ 
