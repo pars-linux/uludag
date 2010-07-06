@@ -17,7 +17,7 @@ import uuid
 from optparse import OptionParser
 
 from networkmanager import NetworkManager, WiredSettings, DeviceType
-
+import ipaddr
 
 # Color characters
 COLORS = {
@@ -204,12 +204,22 @@ def create_ethernet_connection(nm_handle, _device):
     dns_address = ""
     if dns == 1:
         dns_mode = "manual"
-        dns_address = get_input("Address")
-        settings.dns = dns_address
+
+        dns_address = get_input("First Address")
+        dns_address2 = get_input("Second Address")
+
+        import socket
+        import dbus
+        dns_list = []
+        dns_list.append(socket.htonl(int(ipaddr.IPAddress(dns_address, version=4))))
+        dns_list.append(socket.htonl(int(ipaddr.IPAddress(dns_address2, version=4))))
+
+        settings._settings["ipv4"]["ignore-auto-dns"] = True
+        settings._settings["ipv4"]["dns"] = \
+                dbus.Array(dns_list, signature='u')
+
     elif dns == 2:
         dns_mode = "auto"
-        dns_address = ""
-
     connection_id = None
     connection_ids = []
 
@@ -226,11 +236,6 @@ def create_ethernet_connection(nm_handle, _device):
 
     settings.id = connection_id
     nm_handle.add_connection(settings)
-    #possible_settings = ('dns','num','user','pass')
-    #for s in possible_settings:
-     #   if s in params:
-      #      settings.s = params[s]
-
 
 def create_wireless_connection(nm_handle, _device):
     """Create a wireless connection."""
