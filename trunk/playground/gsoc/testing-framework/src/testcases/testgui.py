@@ -36,9 +36,10 @@ class TestGUI:
             
     def download_file(self, file):
         """Download a file using wget."""
-        downloadFile = ['wget'] + ['-m'] + ['-nd'] + file 
+        downloadFile = ['wget'] + ['-m'] + ['-nd'] + file
+        fileName = os.path.basename(''.join(file))
         startwget = subprocess.call(downloadFile, stderr=open(os.devnull, 'w'))
         if startwget == 0:
-            print 'File downloaded to: ', colorize('{0}', 'bold').format(os.getcwd())
+            print colorize('{0}', 'bold').format(fileName), " downloaded to: '{0}'".format(os.getcwd())
         else:
             print "The file specified for the download doesn't exist."
