@@ -14,6 +14,7 @@ COLOR = {
 
 RESET = '\033[0m'       
 
+
 def colorize(text, color):
     """Return the text with the selected color."""
     return '{0}{1}{2}'.format(COLOR[color], text, RESET)
