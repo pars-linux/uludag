@@ -41,9 +41,8 @@ def getPardusPartInfo():
   for i in getPardusPartitions():
     path = "/mnt/rescue_disk/"+i[0]
     if os.path.exists(path):
-      
+      flag = True
       for mounted in link.Disk.Manager["mudur"].getMounted():
-	flag = True
 	if str(mounted[1])==path:
 	  flag = False
 	  if str(mounted[0])!=i[1] :
@@ -71,7 +70,7 @@ def getWindowsPartitions():
     disk = parted.PedDisk.new(device)
     path = disk.next_partition()
     while path:
-      if path.num >= 1:
+      if path.fs_type:
 	if path.fs_type.name in ("ntfs", "fat32"):
 	  if isWindowsBoot("%s%d"%(i[1],path.num),path.fs_type.name):
 	    windowsPartitions.append([i[1],path.num,path.fs_type.name,"%s%d"%(i[1],path.num)])

@@ -17,12 +17,24 @@ setup %s
 quit
 """ % (root_path, setupto)
 
+  shell = """#!/bin/bash
+grub --no-floppy --batch < /tmp/_grub"""
+
   fd =  file('/tmp/_grub','w')
   fd.write(batch_template)
   fd.close()
+  
+          
+  fd =  file('/tmp/grub.sh','w')
+  fd.write(shell)
         
+  fd.close()
+  os.chmod('/tmp/grub.sh',0100)
+      
         
-  #run_quiet("grup -no-floppy --batch < /tmp/_grub")
+#       f = file("/dev/null", "w")
+  procutils.run_quiet("/tmp/grub.sh")  
+        
     
 def installWindowsBootLoader(windows):
     run_quiet("./install-mbr  -i n -p D -t  %d %s"%(windows[1],windows[0]))
