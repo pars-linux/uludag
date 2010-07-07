@@ -5,6 +5,8 @@ from pisi.api import install
 from pisi.api import list_available
 from pisi.api import calculate_download_size
 
+from clcolorize import colorize
+
 from pisi.errors import PrivilegeError
 
 
@@ -49,9 +51,11 @@ class TestInstall:
             package = finalPacakges[counter]
             singlePackage = package.split()
             try:
+                print 'Installing packages, please wait ... Size:', colorize('{0:.2f} MB', 'bold').format(downloadSize)
                 install(singlePackage)
             except PrivilegeError:      # in case the user doesn't have permission
                 self.report.append('Error: To install the packages, run the framework with root privileges')
+                print colorize('Failed: Privilege error. Run as root user.', 'red')
                 return
             counter += 1
         self.report.append("Finished installing the following packages: '{0}'".format(', '.join(finalPacakges)))

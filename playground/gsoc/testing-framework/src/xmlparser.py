@@ -11,14 +11,17 @@ from pisi.api import list_available
 
 from testcases import testinstall
 from testcases import testgui
+from testcases import testautomated
+from testcases import testshell
 
 from clcolorize import colorize
 
-TESTCASE = list()
+FINISH = colorize('\nFinished\n', 'green')
 
 
 class XMLParser:
     """The main parser class."""
+    testreport = list()
     def __init__(self, xmlfile, custompackage, tree=None, rootelement=None):
         self.xmlfile = xmlfile
         try:
@@ -62,7 +65,7 @@ class XMLParser:
                 packageList.append(packageTag.text)
             if not packageList:
                 print colorize('Nothing to test. Skipping ...\n', 'red')
-                TESTCASE.append(None)
+                self.testreport.append(None)
                 counter += 1
                 continue
             # one line hack to call the appropriate method
@@ -71,34 +74,36 @@ class XMLParser:
                 automated=self.test_automated,
                 gui=self.test_gui,
                 shell=self.test_shell,
-                )[elementText](element, packageList, counter)   
+                )[elementText](element, packageList, counter)
+            print colorize('-' * 13, 'bold'), '\n'
             counter += 1
+        self.generate_report(totalTestcases)
         
     def test_install(self, element, packagelist, counter):
         """Call the module for testcase type INSTALL."""
-        TESTCASE.append(testinstall.TestInstall(packagelist,
+        self.testreport.append(testinstall.TestInstall(packagelist,
                                                 self.installed_packages(),
                                                 self.available_packages()))
-        TESTCASE[counter].test_install_main()
-        print colorize('Finished\n', 'green')
-        
+        self.testreport[counter].test_install_main()
+        print FINISH
     
     def test_gui(self, element, packagelist, counter):
         """Call the module for testcase type GUI."""
         caseList = self.testcase_tag_parse(element, 'case')
         if len(caseList) == 0:
             print colorize('No <case> tag found. Skipping test ...\n', 'red')
-            TESTCASE.append(None)
-        packageList = self.testcase_tag_parse(element, 'package')
-        testgui_install = testinstall.TestInstall(packageList,
+            self.testreport.append(None)
+            return
+        testgui_install = testinstall.TestInstall(packagelist,
                                                   self.installed_packages(),
                                                   self.available_packages())
         testgui_install.test_install_main()
-        TESTCASE.append(testgui.TestGUI(element))
-        TESTCASE[counter].report.extend(testgui_install.report)
-        TESTCASE[counter].test_gui_main()
+        self.testreport.append(testgui.TestGUI(element))
+        # Add the install report to the final report
+        self.testreport[counter].report.extend(testgui_install.report)
+        self.testreport[counter].test_gui_main()
+        print FINISH
         
-    
     def test_automated(self, element, packagelist, counter):
         """Call the module for testcase type AUTOMATED."""
         totalPackages = len(packagelist)
@@ -111,30 +116,57 @@ class XMLParser:
         # ignore all the expected tags but accept the first one. If no <expected>
         # tag is found, the test will be skipped. 
         expectedTextList = self.testcase_tag_parse(element, 'expected')
-        if expectedTextList is None:
+        if len(expectedTextList) == 0:
             print colorize('No <expected> tag found. Skipping test ...\n', 'red')
+            self.testreport.append(None)
             return
-        if len(expectedTextList) > 1:
+        if len(expectedTextList) == 0:
             print colorize('Multiple <expected> tags found, using only the first one ...', 'green')
+            self.testreport.append(None)
             del(expectedTextList[1:])
         expectedText = ''.join(expectedTextList)
         # Do the same for the <command> tag
         commandTextList = self.testcase_tag_parse(element, 'command')
-        if commandTextList is None:
+        if len(commandTextList) == 0:
             print colorize('No <command> tag found. Skipping test ...\n', 'red')
+            self.testreport.append(None)
             return
         if len(commandTextList) > 1:
             print colorize('Multiple <command> tags found, using only the first one ...', 'green')
             del(commandTextList[1:])
-        commandText = ''.join(commandTextList)  
-        TESTCASE_AUTOMATED.append(testautomated.TestAutomated(packagelist, commandText, expectedText))
-        TESTCASE_AUTOMATED[counter].test_automated_main()
-    
-    def test_shell(self, element, packagelist):
+        commandText = ''.join(commandTextList)
+        testautomated_install = testinstall.TestInstall(packagelist,
+                                                  self.installed_packages(),
+                                                  self.available_packages())
+        testautomated_install.test_install_main()
+        self.testreport.append(testautomated.TestAutomated(packagelist,
+                                                  commandText,
+                                                  expectedText))
+        self.testreport[counter].report.extend(testautomated_install.report)
+        self.testreport[counter].test_automated_main()
+        print FINISH
+        
+    def test_shell(self, element, packagelist, counter):
         """Call the module for testcase type SHELL."""
-
-   
-  
+        # Just check for the command tag here, don't do anything else!
+        commandList = self.testcase_tag_parse(element, 'command')
+        if len(commandList) == 0:
+            print colorize('No <command> tag found. Skipping test ...\n', 'red')
+            self.testreport.append(None)
+            return
+        textList = self.testcase_tag_parse(element, 'text')
+        if len(textList) == 0:
+            print colorize('No <text> tag found. Skipping test ...\n', 'red')
+            self.testreport.append(None)
+            return
+        testshell_install = testinstall.TestInstall(packagelist,
+                                                  self.installed_packages(),
+                                                  self.available_packages())
+        testshell_install.test_install_main()
+        self.testreport.append(testshell.TestShell(element, textList))
+        self.testreport[counter].report.extend(testshell_install.report)
+        self.testreport[counter].test_shell_main()
+        print FINISH
 
     def output_package_list(self, outfile):
         """Print the list of packages in the XML file to an output file."""
@@ -186,5 +218,10 @@ class XMLParser:
         """Use the Pisi API to fetch the list of available packages."""
         return list_available()     # Pisi API
         
-    def generate_report(self, totalCases):
+    def generate_report(self, totaltests):
         """Generate a report and write it to a file."""
+        counter = 0
+        while counter < totaltests:
+            print self.testreport[counter].report
+            print '-' * 8
+            counter += 1
