@@ -25,6 +25,7 @@ def Commit():
 	message = "Backup on "+ backupTime
 	try:
 		repo.execute(["git","commit","-a","-m",message])
+		print message
 	except git.errors.GitCommandError:
 		pass
 
