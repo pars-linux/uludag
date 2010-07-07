@@ -38,8 +38,11 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.gui.comboDrive.clear()
         self.mainEngine.compatibility.winPopulateCDs()
         cdDrives = self.mainEngine.compatibility.cds
-        if not cdDrives or len(cdDrives)==1:
+        if not cdDrives or len(cdDrives) == 0:
             self.gui.lblPath.setText("No CD/DVD-ROM detected on your computer.")
+            self.gui.comboDrive.setDisabled(True)
+        else:
+            self.gui.comboDrive.setDisabled(False)
 	for cd in cdDrives:
 	    self.gui.comboDrive.addItem('%s %s' %(cd.DeviceID, cd.Name))
 
