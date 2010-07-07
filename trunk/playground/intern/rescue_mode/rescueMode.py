@@ -60,11 +60,15 @@ class rescueMode:
     
     #show info to user by pop up
     self.pop_up("Windows kurulu diskler aranıyor")
-    frame = guiTools.listDialog(windowsInfo,['pardus','focus'],"Bootloader'ını geri yüklemek istediğiniz Windows'u seçiniz")
-    for windows in diskTools.getWindowsPartitions():
-      frame.addMenuItem("Windows%s"%windows[1],installWinBootLoader,windows)
-    self.createWindow(frame,80,15)
+    windowsPartitions = diskTools.getWindowsPartitions()
     
+    if windowsPartitions:
+      frame = guiTools.listDialog(windowsInfo,['pardus','focus'],"Bootloader'ını geri yüklemek istediğiniz Windows'u seçiniz")
+      for windows in diskTools.getWindowsPartitions():
+	frame.addMenuItem("Windows%s"%windows[1],installWinBootLoader,windows)
+      self.createWindow(frame,80,15)
+    else:
+      self.finalScreen("Sistemde kurulu Windows bulunamadı.")
     #close pop up and show windowsListScreen
     self.loop.widget = self.mainFrame
     
@@ -82,13 +86,18 @@ class rescueMode:
       self.otherDevices = diskutils.getDeviceMap()
       self.selectOperationScreen()
     
-    frame = guiTools.listDialog(diskInfo,['pardus','focus'],"Lütfen listeden disk bölümünü seçin") 
-        
-    for pardus in diskTools.getPardusPartInfo():
-       frame.addMenuItem(pardus[0],selectDisk,[pardus[1],pardus[2],pardus[3]])
-        
-    self.createWindow(frame,80,15)
-  
+    pardusPartitions = diskTools.getPardusPartInfo()
+    
+    if pardusPartitions:
+    
+      frame = guiTools.listDialog(diskInfo,['pardus','focus'],"Lütfen listeden disk bölümünü seçin") 
+	  
+      for pardus in diskTools.getPardusPartInfo():
+	frame.addMenuItem(pardus[0],selectDisk,[pardus[1],pardus[2],pardus[3]])
+	  
+      self.createWindow(frame,80,15)
+    else:
+      self.finalScreen("Sistemde kurulu Pardus bulunamadı.")
   
   def selectOperationScreen(self,forward=True):
     if forward:
@@ -232,9 +241,9 @@ class rescueMode:
     self.loop.widget=widget
     self.loop.draw_screen()
     
-  def finalScreen(self,arg):
+  def finalScreen(self,message):
     self.screenContainer = [self.rescueOptionsScreen]
-    body = urwid.Padding(urwid.Text(arg+" Bilgisayarı yeniden başlatma için enter'a basınız"),'center')
+    body = urwid.Padding(urwid.Text(message+" Bilgisayarı yeniden başlatma için enter'a basınız"),'center')
     body = body = urwid.Filler(body,'middle')
     self.createWindow(body,80,10)
     self.loop.widget=self.mainFrame
