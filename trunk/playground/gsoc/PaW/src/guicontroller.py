@@ -6,13 +6,14 @@ import ui.controller.stepConfiguration as stepConfiguration
 import ui.controller.stepSource as stepSource
 import ui.controller.stepOptISO as stepOptISO
 import ui.controller.stepOptCD as stepOptCD
+import ui.controller.stepOptUSB as stepOptUSB
 import ui.controller.stepOptInternet as stepOptInternet
 import ui.controller.stepDownloading as stepDownloading
 import ui.controller.stepInstalling as stepInstalling
 
 class PaWnGui(QtGui.QWidget, Ui_main): #is also a mainWidget
     steps = [stepWelcome, stepConfiguration, stepSource, stepOptISO, stepOptCD,
-        stepOptInternet, stepDownloading, stepInstalling] # step screen widgets
+        stepOptInternet, stepOptUSB, stepDownloading, stepInstalling] # steps
     historyStack = []
 
     def __init__(self, mainEngine, parent=None):

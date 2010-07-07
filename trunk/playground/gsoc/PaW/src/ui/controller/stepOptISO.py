@@ -95,4 +95,4 @@ class Widget(QtGui.QWidget, StepWidget):
 	    return True
 
     def nextIndex(self):
-	return 7
+	return 8

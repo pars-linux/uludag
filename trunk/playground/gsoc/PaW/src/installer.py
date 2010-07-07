@@ -292,6 +292,7 @@ class Installer():
             
 
     def copy_cd_files(self):
+        log.debug('Start copying files from CD.')
         cd_root = self.mainEngine.config.cdDrive.DeviceID + '\\'
         destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
 
@@ -306,6 +307,34 @@ class Installer():
 
         for file_path in files:
             path = os.path.abspath(os.path.join(cd_root, file_path))
+            if not os.path.isfile(path):
+                log.error('Could not locate %s' % path)
+                return False
+
+            try:
+                shutil.copy(path, destination)
+                log.debug('%s copied to %s' % (path, destination))
+            except IOError as e:
+                log.error('Could not copy: %s' % e); return False
+        return True
+
+    def copy_usb_files(self):
+        # TODO: Duplicate of copy_usb_files.
+        log.debug('Start copying files from USB.')
+        usb_root = self.mainEngine.config.usbDrive.DeviceID + '\\'
+        destination = os.path.abspath(os.path.join(self.getInstallationRoot(), 'boot'))
+
+        if self.mainEngine.version:
+            files = [
+                self.mainEngine.version.kernel, self.mainEngine.version.initrd,
+                self.mainEngine.version.img]
+        else:
+            log.warning('Could not recognize version. Using default USB paths.')
+            files = [self.default_kernel_path, self.default_initrd_path,
+                self.default_img_path]
+
+        for file_path in files:
+            path = os.path.abspath(os.path.join(usb_root, file_path))
             if not os.path.isfile(path):
                 log.error('Could not locate %s' % path)
                 return False
@@ -389,9 +418,16 @@ class Installer():
         self.tasklist = TaskList(callback=self.onAdvance)
         
         if hasattr(self.mainEngine.config, 'isoPath'):
+            log.debug('ISO installation is starting...')
             tasks = self.get_iso_installation_tasks(self.tasklist)
-        else:
+        elif hasattr(self.mainEngine.config, 'usbDrive'):
+            log.debug('USB installation is starting...')
+            tasks = self.get_usb_installation_tasks(self.tasklist)
+        elif hasattr(self.mainEngine.config, 'cdDrive'):
+            log.debug('CD installation is starting...')
             tasks = self.get_cd_installation_tasks(self.tasklist)
+        else:
+            log.error('Installation source could not be determined.')
 
         self.tasklist.setTasks(tasks)
         self.tasklist.start()
@@ -419,16 +455,32 @@ class Installer():
             Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]
 
-    def get_iso_installation_tasks(self, associated_tasklist):
+    def get_usb_installation_tasks(self, associated_tasklist):
         cb = associated_tasklist.startNext # callback
 
         def foo():pass
         return [
-            Task(self.installationRegistry, 'Creating Registry keys', cb),
             Task(self.createDirStructure, 'Creating directory structure', cb),
-            Task(self.extract_iso_files, 'Extracting files from ISO', cb),
+            Task(self.copy_usb_files, 'Copying files from USB', cb),
             Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
             Task(foo, 'Copying uninstallation files', cb),
-            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
+            #Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
             Task(foo, 'ISO cleanup after installation', cb)
+        ]
+
+    def get_cd_installation_tasks(self, associated_tasklist):
+        cb = associated_tasklist.startNext # callback
+
+        def foo():pass
+
+        return [
+            Task(self.createDirStructure, 'Creating directory structure', cb),
+            Task(self.copy_cd_files, 'Copying files from CD', cb),
+            Task(self.copy_grub4dos_files, 'Copying and preparing GRUB files', cb),
+            Task(foo, 'Copying uninstallation files', cb),
+            Task(self.installationRegistry, 'Creating Registry keys', cb),
+            Task(self.modify_boot_sequence, 'Modifying Windows boot configuration', cb),
+            Task(foo, 'CD cleanup after installation', cb),
+            Task(self.ejectCD, 'Ejecting CD tray', cb),
         ]

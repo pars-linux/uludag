@@ -22,7 +22,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.connect(self.gui.sizeSlider, QtCore.SIGNAL('valueChanged(int)'), self.sizeChanged)
 	
 	self.mainEngine = mainEngine
-	self.populateDrives()
+	
 
     def driveChanged(self, index):
 	free = self.freeSpaceOnDrive()
@@ -41,7 +41,10 @@ class Widget(QtGui.QWidget, StepWidget):
 	sliderValue = self.gui.sizeSlider.value()
 
 	self.installationSize = math.floor((free-self.minSize) * sliderValue / 100.0 + self.minSize)
-	percentUsed = (total-free+(self.installationSize))*100/(total*1.0)
+        try:
+            percentUsed = (total-free+(self.installationSize))*100/(total*1.0)
+        except ZeroDivisionError as e:
+            percentUsed = 0
 
 	size = self.installationSize
 
@@ -75,8 +78,10 @@ class Widget(QtGui.QWidget, StepWidget):
 
     def populateDrives(self):
 	self.gui.comboDrive.clear()
+        self.mainEngine.compatibility.winPopulateDisks()
 	for disk in self.mainEngine.compatibility.disks:
 	    self.gui.comboDrive.addItem('%s %s' %(disk.DeviceID, disk.Name))
+
 
     def getSelectedDrive(self):
 	for disk in self.mainEngine.compatibility.disks:
@@ -87,6 +92,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	return None
 
     def onEnter(self):
+        self.populateDrives()
+
 	self.gui.txtPassword.setText('')
 	self.gui.txtRetypePassword.setText('')
 	self.mainEngine.password = None

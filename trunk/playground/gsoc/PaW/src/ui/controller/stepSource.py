@@ -12,7 +12,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.gui = Ui_source()
 	self.gui.setupUi(self)
 	
-	self.options = [self.gui.optInternet, self.gui.optISO, self.gui.optCD]
+	self.options = [self.gui.optInternet, self.gui.optISO,
+            self.gui.optCD, self.gui.optUSB]
 
     def nextIndex(self):
 	if self.gui.optISO.isChecked():
@@ -21,6 +22,8 @@ class Widget(QtGui.QWidget, StepWidget):
 	    return 4
 	if self.gui.optInternet.isChecked():
 	    return 5
+        if self.gui.optUSB.isChecked():
+	    return 6
 
 	return 0 # TODO: implement other interfaces
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>cd</class>
- <widget class="QWidget" name="cd">
+ <class>usb</class>
+ <widget class="QWidget" name="usb">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="lblDescription">
      <property name="text">
-      <string>Choose your CD/DVD drive which has Pardus Live CD or DVD.</string>
+      <string>Choose your USB (Universal Serial Bus) drive which has Pardus Live CD or DVD contents.</string>
      </property>
     </widget>
    </item>
