@@ -8,19 +8,18 @@
 from pisi.actionsapi import autotools
 from pisi.actionsapi import pisitools
 
+
 WorkDir = "flite-1.4-release"
 
 def setup():
-    #autotools.configure("--disable-static")  
-    #autotools.configure("--prefix=/usr")
     autotools.configure("--enable-shared \
-                         --with-audio=alsa" )
+                         --with-audio=alsa \
+                         --disable-static" )
 
 def build():
     autotools.make("-j1")
 
 def install():
-    #autotools.rawInstall("DESTDIR=%s" % get.installDIR())
     autotools.install()
     
     pisitools.dodoc("COPYING", "README")
