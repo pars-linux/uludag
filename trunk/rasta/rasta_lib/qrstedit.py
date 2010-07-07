@@ -113,7 +113,7 @@ class LineNumber(QWidget):
     def __init__(self, editor):
         QWidget.__init__(self, editor)
         self.editor = editor
-
+        self.editor.resizeEvent = self.resizeEvent
         self.editor.blockCountChanged.connect(self.updateAreaWidth)
         self.editor.updateRequest.connect(self.updateLineNumber)
 
