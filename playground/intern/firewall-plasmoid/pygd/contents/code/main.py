@@ -48,6 +48,35 @@ class HelloWorldApplet(plasmascript.Applet):
 	link.Network.Firewall[dbus.String("iptables")].setState("off")
 	self.bilgi_label.setText("<p style='color:red'>Firewall is stopped now.</p>")
 	
+    def blockGelen(self, value):
+        if self.incoming_cb.isChecked():
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("block_incoming","on")
+	else:
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("block_incoming","off")
+	    
+    def paylasim(self, value):
+        if self.incoming_cb.isChecked():
+	    #print "cek edilmis2"
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("internet_sharing","on")
+	else:
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("internet_sharing","off")
+	    #print "edilmemis2"
+
+    def blockGiden(self, value):
+        if self.incoming_cb.isChecked():
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("block_outgoing","on")
+	    #print "cek edilmis3"
+	else:
+	    link=comar.Link()
+	    link.Network.Firewall[dbus.String("iptables")].setModuleState("block_outgoing","off")
+	    #print "edilmemis3"
+
+	
     def init(self):
 	"""init method for the plasmoid. GUI stuff is located here."""
 	link=comar.Link()
@@ -109,19 +138,36 @@ class HelloWorldApplet(plasmascript.Applet):
         
         QObject.connect(baslat_pb, SIGNAL("clicked()"), self.baslat)
         QObject.connect(durdur_pb, SIGNAL("clicked()"), self.durdur)
+        QObject.connect(self.incoming_cb, SIGNAL("toggled(bool)"), self.blockGelen)
+        QObject.connect(self.shareint_cb, SIGNAL("toggled(bool)"), self.paylasim)
+        QObject.connect(self.outgoing_cb, SIGNAL("toggled(bool)"), self.blockGiden)
         
         link.listenSignals("Network.Firewall", self.handler)
-
+        
     def handler(self, *args):
 	"""Handler method for receiving signals from Comar"""
 	link=comar.Link()
 	if link.Network.Firewall[dbus.String("iptables")].getState()==dbus.String(u"on"):
 	    self.bilgi_label.setText("<p style='color:green'>Firewall is working now.</p>")
-
 	    self.kilit.setIcon("object-locked")
 	else:
 	    self.bilgi_label.setText("<p style='color:red'>Firewall is stopped now.</p>")
 	    self.kilit.setIcon("object-unlocked")
-        
+	
+	if link.Network.Firewall[dbus.String("iptables")].getModuleState("block_incoming")==dbus.String(u"on"):
+	    self.incoming_cb.setChecked(True)
+	else:
+	    self.incoming_cb.setChecked(False)
+	    
+	if link.Network.Firewall[dbus.String("iptables")].getModuleState("internet_sharing")==dbus.String(u"on"):
+	    self.shareint_cb.setChecked(True)
+	else:
+	    self.shareint_cb.setChecked(False)
+	
+	if link.Network.Firewall[dbus.String("iptables")].getModuleState("block_outgoing")==dbus.String(u"on"):
+	    self.outgoing_cb.setChecked(True)
+	else:
+	    self.outgoing_cb.setChecked(False)
+
 def CreateApplet(parent):
     return HelloWorldApplet(parent) 
