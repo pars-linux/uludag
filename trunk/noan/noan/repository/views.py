@@ -22,6 +22,7 @@ from noan.settings import SOURCE_PACKAGES_PER_PAGE, PENDING_PACKAGES_PER_PAGE
 import urllib
 import os
 import pisi
+import hashlib
 from django.core.cache import cache
 from django.db.models import Q
 
@@ -73,6 +74,8 @@ def view_isa_info(request, distName, distRelease, repoType, isA):
         isA: <isA> section in pspec.xml
     """
     sources = Source.objects.filter(distribution__type=repoType, distribution__name=distName, distribution__release=distRelease, info__isa__name=isA)
+    values = str(sources.values())
+    id = hashlib.md5(values).hexdigest()
     if not sources.count() > 0:
         return HttpResponse("Not Found, 404")
 
@@ -81,14 +84,14 @@ def view_isa_info(request, distName, distRelease, repoType, isA):
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     if request.method == 'GET' and request.GET.get('page'):
         try:
-            sources = cache.get('query_result')['tmp']
+            sources = cache.get(id)['tmp']
             # default timeout is 3600 sec, if the timeout is passed, return to the form page
         except TypeError:
             return HttpResponseRedirect('./')
     else:
         rslt = dict()
         rslt['tmp'] = sources
-        cache.set('query_result', rslt)
+        cache.set(id, rslt)
 
     object_dict = {
             'queryset': sources,
@@ -107,6 +110,8 @@ def view_partof_info(request, distName, distRelease, repoType, partOf):
         partOf: <partOf> section in pspec.xml
     """
     sources = Source.objects.filter(distribution__type=repoType, distribution__name=distName, distribution__release=distRelease, info__part_of=partOf)
+    values = str(sources.values())
+    id = hashlib.md5(values).hexdigest()
     if not sources.count() > 0:
         return HttpResponse("Not Found, 404")
 
@@ -115,14 +120,14 @@ def view_partof_info(request, distName, distRelease, repoType, partOf):
     # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
     if request.method == 'GET' and request.GET.get('page'):
         try:
-            sources = cache.get('query_result')['tmp']
+            sources = cache.get(id)['tmp']
             # default timeout is 3600 sec, if the timeout is passed, return to the form page
         except TypeError:
             return HttpResponseRedirect('./')
     else:
         rslt = dict()
         rslt['tmp'] = sources
-        cache.set('query_result', rslt)
+        cache.set(id, rslt)
 
     object_dict = {
             'queryset': sources,
@@ -308,13 +313,23 @@ def search(request):
             sources_len = '":' + str(sources_len) + '"'
             binary_len = '"' + str(sources_len) + ':"'
 
+            # create unique ids for the cache query result
+            values = str(result.values())
+            result_id = hashlib.md5(values).hexdigest()
+            request.session['result_id'] = result_id
+
+            sources_len_id = hashlib.md5(sources_len).hexdigest()
+            request.session['sources_len_id'] = sources_len_id
+            binary_len_id = hashlib.md5(binary_len).hexdigest()
+            request.session['binary_len_id'] = binary_len_id
+
             # set the result to the db, pagination will use results from cache when the GET request is called
             # saving the result at the dictionary is a workaround, it is nto possible to save the queryset object directly at the db
             rslt = dict()
             rslt['tmp'] = result
-            cache.set('query_result', rslt)
-            cache.set('sources_len', sources_len)
-            cache.set('binary_len', binary_len)
+            cache.set(result_id, rslt)
+            cache.set(sources_len_id, sources_len)
+            cache.set(binary_len_id, binary_len)
 
             LANGUAGE_CODE = request.LANGUAGE_CODE
             # - generate dict to use in object_list
@@ -331,14 +346,19 @@ def search(request):
 
     elif request.method == 'GET' and request.GET.get('page'):
 
+        result_id = request.session.GET('result_id')
+
         try:
-            result = cache.get('query_result')['tmp']
+            result = cache.get(result_id)['tmp']
             # default timeout is 3600 sec, if the timeout is passed, return to the form page
         except TypeError:
             return HttpResponseRedirect('./')
 
-        sources_len = cache.get('sources_len')
-        binary_len = cache.get('binary_len')
+        sources_len_id = request.session.GET('sources_len_id')
+        binary_len_id = request.session.GET('binary_len_id')
+
+        sources_len = cache.get(sources_len_id)
+        binary_len = cache.get(binary_len_id)
         LANGUAGE_CODE = request.LANGUAGE_CODE
         # - generate dict to use in object_list
         # - django appends _list suffix to template_object_name, see: http://docs.djangoproject.com/en/1.0/ref/generic-views/
@@ -373,17 +393,19 @@ def orphan(request):
 def list_orphan_packages(request, distName, distRelease):
     distribution = Distribution.objects.get(name=distName, release=distRelease)
     result = distribution.get_orphan_list(distribution.name, distribution.release)
+    values = str(result.values())
+    id = hashlib.md5(values).hexdigest()
     
     if request.method == 'GET' and request.GET.get('page'):
         try:
-            result = cache.get('query_result')['tmp']
+            result = cache.get(id)['tmp']
             # default timeout is 3600 sec, if the timeout is passed, return to the form page
         except TypeError:
             return HttpResponseRedirect('./')
     else:
         rslt = dict()
         rslt['tmp'] = result
-        cache.set('query_result', rslt)
+        cache.set(id, rslt)
    
     LANGUAGE_CODE = request.LANGUAGE_CODE
     object_dict = {
