@@ -38,7 +38,7 @@ class Widget(QtGui.QWidget, StepWidget):
 	self.gui.comboDrive.clear()
         self.mainEngine.compatibility.winPopulateUSBs()
         usbDrives = self.mainEngine.compatibility.usbs
-        if not usbDrives or len(usbDrives)==0:
+        if not usbDrives or len(usbDrives) == 0:
             self.gui.lblPath.setText("No plugged USB drive detected on your computer.")
             self.gui.comboDrive.setDisabled(True)
         else:

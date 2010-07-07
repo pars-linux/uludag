@@ -39,6 +39,11 @@ class Widget(QtGui.QWidget, StepWidget):
             # most probably about threading issues.
             self.gui.lblStatus.setText(currentTask.description)
 
+            txt = self.gui.textEdit.toPlainText()
+            txt += currentTask.description+'\n'
+            self.gui.textEdit.setText(txt)
+            self.gui.textEdit.ensureCursorVisible() # TODO: Does not work?
+
         if self.mainEngine.installer.tasklist.isFinished():
             self.gui.lblStatus.setText('Finished. Click Next to proceed.')
             self.installed = True
