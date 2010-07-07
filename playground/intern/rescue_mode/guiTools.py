@@ -98,6 +98,8 @@ class PasswordDialog(urwid.Frame):
    
   
   def clearBoxes(self):
+      self.passwd.password=""
+      self.re_passwd.password=""
       self.passwd.set_edit_text("")
       self.re_passwd.set_edit_text("")
       self.simpleList.set_focus(0)

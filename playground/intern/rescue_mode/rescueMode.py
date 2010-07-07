@@ -190,15 +190,18 @@ class rescueMode:
       if passwd == re_passwd:
 	if passwd != "" :  
 	  if len(passwd) >3:
-	    self.pop_up("Şifre değiştiriliyor")
-	    time.sleep(1)
-	    if self.dbus.setUserPass(int(user[0]), passwd):
-		self.pop_up("Kullanıcının şifresi değiştirilemedi.")
+	    if passwd != user[1]:
+	      self.pop_up("Şifre değiştiriliyor")
+	      time.sleep(1)
+	      if self.dbus.setUserPass(int(user[0]), passwd):
+		  self.pop_up("Kullanıcının şifresi değiştirilemedi.")
+	      else:
+		  self.finalScreen("Kullanıcının şifresi değiştirildi.")
+	      return True
 	    else:
-		self.finalScreen("Kullanıcının şifresi değiştirildi.")
-	    return True
+	      error_message("Kullanıcı adınız parolanız olamaz")
 	  else:
-	    error_message("Sifre çok kısa")
+	    error_message("Parolanız çok kısa")
 	    return False
       else:
 	error_message("Yanlış giriş yaptınız lütfen tekrar deneyin pass: "+passwd+" pass2: "+re_passwd )
@@ -235,6 +238,7 @@ class rescueMode:
     body = body = urwid.Filler(body,'middle')
     self.createWindow(body,80,10)
     self.loop.widget=self.mainFrame
+    self.otherUnhandled_input = None
    
   def run(self):
     self.loop = urwid.MainLoop(self.mainFrame,self.palette,unhandled_input=self.IO)
