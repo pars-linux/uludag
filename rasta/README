@@ -12,6 +12,7 @@ Requirements:
   * PyQt
   * piksemel
   * docutils
+  * pyenchant
 
 How to Run:
 ===========
