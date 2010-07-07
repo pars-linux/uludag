@@ -28,8 +28,11 @@
             <Path fileType="executable">/usr/bin</Path>
             <Path fileType="doc">/usr/share/doc</Path>
             <Path fileType="data">/usr/share</Path>
+            <Path fileType="data">/usr/lib/pkgconfig</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib</Path>
+            <Path fileType="library">/usr/lib/python2.6</Path>
+            <Path fileType="config">/usr/share/opentts</Path>
             <Path fileType="config">/etc/opentts</Path>
         </Files>
     </Package>
