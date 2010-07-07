@@ -1,6 +1,3 @@
-Kaptan TODO List
-=========================
-
 Legend:
 
 - Todo
@@ -8,26 +5,20 @@ Legend:
 / In progress
 + Accomplished
 
-    optional:
-    + kaptan background
-    if possible optimize more
-    notification setter
-    detach network manager
-    summary screen => kaptan is now applying settings please wait
-    surume ozel wallpaperlar en ustte cikmali
+TODO:
 
-    must:
-    + update po => correct turkish welcome note
-    + smolt default screen => table, not privacy policy
-    + clicking behavior minimum size
+    General
+        / Normalize folder structure
+        - Modify code to work with the new folder structure
+        -? Plugin support for easy screen addition
+        -? Optimize performance
+        - Add a notification tool chooser
 
+    Network Screen
+        - Detached network manager
 
-    test
-    ----
-    test on 5 different computers
+    Summary screen
+        - Kaptan is now applying settings please wait
 
-    cd mode:
-    dark, light theme, functions
-
-    normal mode:
-    dark, light theme, functions
+    Wallpaper Screen
+        - Prioritized wallpapers
