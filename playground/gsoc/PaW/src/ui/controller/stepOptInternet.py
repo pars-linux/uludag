@@ -76,9 +76,6 @@ class Widget(QtGui.QWidget, StepWidget):
     def mirrorChanged(self):
 	self.mirror = self.getMirrorByName(self.gui.comboMirror.currentText().split(' ')[0])
 	
-    def nextIndex(self):
-	return 6 # TODO: implement
-
     def onSubmit(self):
 	errorText=''
 	
@@ -177,3 +174,6 @@ class Widget(QtGui.QWidget, StepWidget):
 	
 	if report:
 	    QtGui.QMessageBox.information(self, 'Compatibility Report', report, QtGui.QMessageBox.Ok)
+
+    def nextIndex(self):
+	return 7

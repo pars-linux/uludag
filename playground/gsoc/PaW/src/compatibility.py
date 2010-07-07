@@ -5,9 +5,9 @@ import ctypes
 from logger import getLogger
 log = getLogger("Compatibility")
 
+# TODO: Write an wrapper class for CD, LogicalDisk and USB.
 class LogicalDisk():
     DeviceID, Name, FreeSpace, Size, FileSystem = None, None, 0, 0, None
-
     def __init__(self, id, name, free, size, filesystem = None):
 	self.DeviceID = id
         self.Name = name
@@ -18,10 +18,8 @@ class LogicalDisk():
     def __repr__(self):
 	return 'Disk: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
-
 class CD():
     DeviceID, Name, FreeSpace, Size = None, None, 0, 0
-
     def __init__(self, id, name, free = 0, size = 0):
 	self.DeviceID = id
         self.Name = name
@@ -31,11 +29,22 @@ class CD():
     def __repr__(self):
 	return 'CD: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
 
+class USB():
+    DeviceID, Name, FreeSpace, Size = None, None, 0, 0
+    def __init__(self, id, name, free = 0, size = 0):
+	self.DeviceID = id
+        self.Name = name
+	self.FreeSpace = free
+	self.Size = size
+
+    def __repr__(self):
+	return 'USB: '+' '.join(map(str, (self.DeviceID, self.Name, self.FreeSpace, self.Size)))
+
 
 class Compatibility():
 
     totalMemory, architectureBit, architectureName = None, None, None
-    disks, cds = [], []
+    disks, cds, usbs = [], [], []
     OS, wmi = None, None
 
     def __init__(self):
@@ -44,8 +53,6 @@ class Compatibility():
 	    self.wmi = wmi.WMI()
             log.debug('Running on Windows.')
             self.winTotalMemory()
-	    self.winPopulateDisks()
-            self.winPopulateCDs()
 	    self.winArchitecture()
             self.OS = self.wmi.Win32_OperatingSystem()[0] # for .SystemDrvie
 	except (ImportError):
@@ -54,7 +61,6 @@ class Compatibility():
 	    self.wmi = None
 	    self.unixTotalMemory()
 	    self.unixArchitecture()
-	    self.unixPopulateDisks()
             # TODO: Linux populate CDs
 
 	log.debug('Running on %d bit (%s).' % (self.architectureBit,self.architectureName))
@@ -114,8 +120,7 @@ class Compatibility():
     def winPopulateDisks(self):
 	self.disks = []
 	for disk in self.wmi.Win32_LogicalDisk(DriveType=3):
-	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long
-(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
+	    self.disks.append(LogicalDisk(str(disk.DeviceID.encode('utf8')), str(disk.VolumeName.encode('utf8')), long(disk.FreeSpace), long(disk.Size), str(disk.FileSystem.encode('utf8'))))# Caption, Size, VolumeName, FreeSpace, FileSystem
 
     def winPopulateCDs(self):
 	self.cds = []
@@ -123,13 +128,27 @@ class Compatibility():
             # TODO: TBD: First 2 letters of combobox is drive letter + colon.
             # This may fail in the future.
             DeviceID, VolumeName, Size, FreeSpace = None, None, 0, 0
-            if hasattr(cd, 'DeviceID'): DeviceID = str(cd.DeviceID.encode('utf8'))
+            if hasattr(cd, 'DeviceID') and cd.DeviceID: DeviceID = str(cd.DeviceID.encode('utf8'))
             if hasattr(cd, 'VolumeName') and cd.VolumeName: VolumeName = str(cd.VolumeName.encode('utf8'))
             if hasattr(cd, 'FreeSpace') and cd.FreeSpace: FreeSpace = long(cd.FreeSpace) or 0
             if hasattr(cd, 'Size') and cd.Size: Size = long(cd.Size) or 0
 
             self.cds.append(CD(DeviceID, VolumeName, FreeSpace,Size)) # Caption, Size, VolumeName, FreeSpace
 
+    def winPopulateUSBs(self):
+        from time import time as t
+	self.usbs = []
+	for usb in self.wmi.Win32_LogicalDisk(DriveType=2):
+            # TODO: TBD: First 2 letters of combobox is drive letter + colon.
+            # This may fail in the future.
+            DeviceID, VolumeName, Size, FreeSpace = None, None, 0, 0
+            if hasattr(usb, 'DeviceID') and usb.DeviceID: DeviceID = str(usb.DeviceID.encode('utf8'))
+            if hasattr(usb, 'VolumeName') and usb.VolumeName: VolumeName = str(usb.VolumeName.encode('utf8'))
+            if hasattr(usb, 'FreeSpace') and usb.FreeSpace: FreeSpace = long(usb.FreeSpace) or 0
+            if hasattr(usb, 'Size') and usb.Size: Size = long(usb.Size) or 0
+
+            self.usbs.append(USB(DeviceID, VolumeName, FreeSpace,Size)) # Caption, Size, VolumeName, FreeSpace
+            
     def unixPopulateDisks(self):
 	self.disks = []
 	for disk in commands.getstatusoutput('df --block-size=1')[1].split('\n')[1:]:

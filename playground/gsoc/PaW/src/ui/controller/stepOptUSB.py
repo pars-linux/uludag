@@ -5,61 +5,54 @@ from utils import levenshtein
 
 from PyQt4 import QtGui, QtCore
 from ui.controller.stepTemplate import StepWidget
-from ui.gui.cd import Ui_cd
+from ui.gui.usb import Ui_usb
 
 from logger import getLogger
-log = getLogger('CD Option Step')
+log = getLogger('USB Option Step')
 
 class Widget(QtGui.QWidget, StepWidget):
-    heading = "Install from Pardus Live CD/DVD"
-    cd = None
+    heading = "Install from USB Memory Stick"
+    usb = None
 
     def __init__(self, mainEngine):
 	QtGui.QWidget.__init__(self,None)
 	StepWidget.__init__(self, mainEngine)
 
-	self.gui = Ui_cd()
+	self.gui = Ui_usb()
 	self.gui.setupUi(self)
         self.connect(self.gui.comboDrive, QtCore.SIGNAL('currentIndexChanged(int)'), self.onDriveUpdated)
 
     def onEnter(self):
-        self.populateCDs()
+        self.populateUSBs()
 
     def onDriveUpdated(self):
         pass
-#        version = self.determineCDVersion()
+#        version = self.determineUSBVersion()
 #        if version:
-#            cdDrive = getSelectedCDDrive()
-#            self.gui.lblPath.setText("%s CD detected in %s successfully." % (version.name, cdDrive.DeviceID))
+#            usbDrive = self.getSelectedUSBDrive()
+#            self.gui.lblPath.setText("%s CD detected in %s successfully." % (version.name, usbDrive.DeviceID))
 #        else:
-#            self.gui.lblPath.setText("Unrecognized Pardus CD in drive.")
+#            self.gui.lblPath.setText("Unrecognized Pardus CD in drive %s." % self.usbPath)
 
-    def populateCDs(self):
+    def populateUSBs(self):
 	self.gui.comboDrive.clear()
-        self.mainEngine.compatibility.winPopulateCDs()
-        cdDrives = self.mainEngine.compatibility.cds
-        if not cdDrives or len(cdDrives)==1:
-            self.gui.lblPath.setText("No CD/DVD-ROM detected on your computer.")
-	for cd in cdDrives:
-	    self.gui.comboDrive.addItem('%s %s' %(cd.DeviceID, cd.Name))
+        self.mainEngine.compatibility.winPopulateUSBs()
+        usbDrives = self.mainEngine.compatibility.usbs
+        if not usbDrives or len(usbDrives)==0:
+            self.gui.lblPath.setText("No plugged USB drive detected on your computer.")
+            self.gui.comboDrive.setDisabled(True)
+        else:
+            self.gui.comboDrive.setDisabled(False)
+	for usb in usbDrives:
+	    self.gui.comboDrive.addItem('%s %s' %(usb.DeviceID, usb.Name))
 
-    def getSelectedCDDrive(self):
-	for cd in self.mainEngine.compatibility.cds:
-	    if cd.DeviceID == self.gui.comboDrive.currentText()[:2]:
+    def getSelectedUSBDrive(self):
+	for usb in self.mainEngine.compatibility.usbs:
+	    if usb.DeviceID == self.gui.comboDrive.currentText()[:2]:
                 # TODO: TBD: First 2 letters of combobox is drive letter+colon.
                 # This may fail in the future.
-		return cd
+		return usb
 	return None
-
-    def isEmptyDrive(self, CD):
-        """
-        Returns False if CD root is accessible.
-        True if any IO, Permission errors occur. That means CD is not readable.
-        """
-        try:
-            return not isinstance(os.listdir(CD.DeviceID),list) # check i.e. f:\
-        except WindowsError, IOError:
-            return True
 
     def locate_gfxboot_cfg(self, path):
             """
@@ -67,12 +60,7 @@ class Widget(QtGui.QWidget, StepWidget):
                 'path' should be an absolute path.
             """
             filename = 'gfxboot.cfg'
-            try:
-                contents = os.listdir(path)
-            except WindowsError as e:
-                log.error('Could not reach CD drive. %s' % e)
-                return None
-            
+            contents = os.listdir(path)
             try: index = contents.index(filename)
             except ValueError: index = -1 # indicates does not exist
 
@@ -85,7 +73,7 @@ class Widget(QtGui.QWidget, StepWidget):
                         if result: return result
             return None
 
-    def determineCDVersion(self, tolerance = 10):
+    def determineUSBVersion(self, tolerance = 10):
         """
         Determines Pardus release version by parsing gfxboot.cfg and
         obtaining distro name then comparing it with names defined in
@@ -93,9 +81,8 @@ class Widget(QtGui.QWidget, StepWidget):
         Newer version with appropriate distane will be matched.
         """
         # TODO: tolerance TBD.
-        currentDrive = self.getSelectedCDDrive()
-        if not currentDrive: return None
-        
+        currentDrive = self.getSelectedUSBDrive()
+
         gfxboot_cfg = self.locate_gfxboot_cfg('%s\\' % currentDrive.DeviceID)
         if not gfxboot_cfg:
             log.debug('Could not locate gfxboot.cfg')
@@ -110,12 +97,11 @@ class Widget(QtGui.QWidget, StepWidget):
             return None
 
         result = None
-        # TODO: improve algorithm!
         for version in self.mainEngine.versionManager.versions:
             l_distance = levenshtein(version.name, distro_name)
             if l_distance < tolerance:
                 result = version
-                
+
         if result:
             log.debug('Detected version: %s' % result.name)
             return result
@@ -124,25 +110,21 @@ class Widget(QtGui.QWidget, StepWidget):
         return None
 
     def onSubmit(self):
-	currentDrive = self.getSelectedCDDrive()
+	currentDrive = self.getSelectedUSBDrive()
 
         if not currentDrive:
-	    QtGui.QMessageBox.warning(self, 'Warning', 'Please choose Pardus CD drive or folder to proceed.', QtGui.QMessageBox.Ok)
-	    return False
-        elif self.isEmptyDrive(currentDrive):
-            QtGui.QMessageBox.warning(self, 'Could not read CD/DVD', 'You do not have CD/DVD in %s or drive is not ready. If you have a working CD/DVD in it, please try again.' % currentDrive.DeviceID, QtGui.QMessageBox.Ok)
+            QtGui.QMessageBox.warning(self, 'Warning', 'Please choose USB drive which has Pardus CD contents to proceed.', QtGui.QMessageBox.Ok)
             return False
 	else:
-            self.mainEngine.config.cdDrive = self.getSelectedCDDrive()
-            version = self.determineCDVersion()
-
+            self.mainEngine.config.usbDrive = self.getSelectedUSBDrive()
+            version = self.determineUSBVersion()
             if version:
                 self.mainEngine.version = version
             else:
-                reply = QtGui.QMessageBox.warning(self, 'Unknown Pardus CD/DVD', 'Unable to identify Pardus release of CD/DVD in %s. It is NOT recommended to continue installation. Do you want to exit?' % currentDrive.DeviceID, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
+                reply = QtGui.QMessageBox.warning(self, 'Unknown Pardus Live CD contents in USB.', 'Unable to identify Pardus release of CD/DVD in %s. It is NOT recommended to continue installation. Do you want to exit?' % currentDrive.DeviceID, QtGui.QMessageBox.Yes, QtGui.QMessageBox.No)
                 if reply == QtGui.QMessageBox.Yes: sys.exit()
-                
+
 	    return True
 
     def nextIndex(self):
-	return 8
+        return 8

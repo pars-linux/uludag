@@ -59,6 +59,13 @@ It is recommended to download Pardus from Internet if you do not have Pardus CD.
            </property>
           </widget>
          </item>
+         <item>
+          <widget class="QRadioButton" name="optUSB">
+           <property name="text">
+            <string>I have Pardus Live CD contents in my USB memory stick.</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>
