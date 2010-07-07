@@ -40,7 +40,11 @@ class rescueMode:
   def goShell(self):
     """This function closes the rescue mode and turn the shell"""
     raise urwid.ExitMainLoop()
-  
+
+#######################################
+######## WINDOWS PROCESS ##############
+#######################################
+
   def windowsListScreen(self,forward=True):
     """This function shows the installed windows in a list on the screen"""
     if forward:
@@ -106,7 +110,7 @@ class rescueMode:
     frame = guiTools.listDialog("Seçilen disk : "+self.selectedDisk[0]+" label:"+self.selectedDisk[1],
     ['pardus','focus'],"Lütfen yapamak istediğiniz işlemi seçin")
     
-    frame.addMenuItem("Pisi geçmişi",None)
+    frame.addMenuItem("Pisi geçmişi",self.pisiHistoryListScreen)
     frame.addMenuItem("Parola Değiştir",self.userlistScreen)
     frame.addMenuItem("GRUB'ı tekrar yükle",self.grubOperationScreen)
     
@@ -223,7 +227,36 @@ class rescueMode:
     self.otherUnhandled_input = frame.unhandled_input
     #while(True):
     self.createWindow(frame,80,15)
-     
+    
+    
+#######################################
+######## PISI HISTORY #################
+#######################################    
+
+  def pisiHistoryListScreen(self,forward=True):
+    if forward:
+      self.screenContainer.append(self.selectOperationScreen)
+      
+      
+    def takeBack2(no):
+      self.pop_up("Pisi geçmişi kurtarılıyor %d"%no)
+      #time.sleep(1)
+      self.dbus.takeBack(no)
+      self.finalScreen("Pisi geçmişi kurtarıldı.")
+    
+    self.pop_up("DBUS'a bağlanılıyor")
+    self.dbus = dbusTools.pardusDbus(self.selectedDisk[2])
+    self.pop_up("Pisi geçmişi alınıyor")
+    historys = self.dbus.getHistory()
+    frame = guiTools.listDialog(self.selectedDisk[2],
+    ['pardus','focus'],"Lütfen kurtarmak istediğiniz geçmişi seçiniz")
+    
+    
+    for history in historys:
+      frame.addMenuItem("no: %d tarih: %s saat: %s"%(history.no,history.date,history.time),takeBack2,history.no)
+    
+    self.createWindow(frame,80,30)
+    self.loop.widget = self.mainFrame
 
   def createWindow(self,body,width,height,header=None,footer=None):
     
