@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: de\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-25 09:42+0300\n"
-"PO-Revision-Date: 2010-01-15 00:20+0100\n"
-"Last-Translator: Stefan Wilhelm <sw 1976 de {at} google mail dot com>\n"
+"PO-Revision-Date: 2010-07-08 00:11+0100\n"
+"Last-Translator: Stefan Wilhelm <sw@pardususer.de>\n"
 "Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,34 +21,37 @@ msgstr ""
 
 #: data/package-manager.desktop.in.h:1
 msgid "Add or Remove Software"
-msgstr ""
+msgstr "Software hinzufügen oder entfernen"
 
 #: data/package-manager.desktop.in.h:2
-#: data/packagemanager-helper.desktop.in.h:2 src/about.py:23 src/about.py:24
-#: src/mainwidget.py:314 src/mainwidget.py:326 ui/ui_mainwindow.py:33
+#: data/packagemanager-helper.desktop.in.h:2
+#: src/about.py:23
+#: src/about.py:24
+#: src/mainwidget.py:314
+#: src/mainwidget.py:326
+#: ui/ui_mainwindow.py:33
 msgid "Package Manager"
 msgstr "Paket-Manager"
 
 #: data/package-manager.desktop.in.h:3
 msgid "PiSi Package Manager Graphical User Interface"
-msgstr ""
+msgstr "PiSi Paket-Manager grafische Nutzeroberfläche (GUI)"
 
 #: data/packagemanager-helper.desktop.in.h:1
-#, fuzzy
 msgid "Add/Remove/Update Packages"
-msgstr "Paket(e) entfernen"
+msgstr "Hinzufügen/Entfernen/Aktualisieren von Paketen"
 
 #: src/about.py:26
 msgid "(c) 2009-2010 TUBITAK/UEKAE"
 msgstr "(c) 2009-2010 TUBITAK/UEKAE"
 
 #: src/about.py:35
-msgid "Developer"
-msgstr "Entwickler"
-
-#: src/about.py:35
 msgid "Gökmen Göksel"
 msgstr "Gökmen Göksel"
+
+#: src/about.py:35
+msgid "Developer"
+msgstr "Entwickler"
 
 #: src/about.py:36
 msgid "Faik Uygur"
@@ -56,16 +59,16 @@ msgstr "Faik Uygur"
 
 #: src/about.py:36
 msgid "First Author"
-msgstr "Erster Author"
-
-#: src/about.py:37
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
+msgstr "Erster Autor"
 
 #: src/about.py:37
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
+msgstr ""
+
+#: src/about.py:37
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
 msgstr ""
 
 #: src/basketdialog.py:114
@@ -84,13 +87,19 @@ msgstr "Sie müssen Ihr System <b>neu starten</b>, damit die folgenden aktualisi
 msgid "You must restart following system services for the updated package(s) to take effect:"
 msgstr "Sie müssen die folgenden System-Dienste <b>neu starten</b>, damit diese Wirkung zeigen:"
 
-#: src/basketdialog.py:154 src/mainwidget.py:274 src/mainwidget.py:277
-#: src/settingsdialog.py:220 src/settingsdialog.py:225
+#: src/basketdialog.py:154
+#: src/mainwidget.py:274
+#: src/mainwidget.py:277
+#: src/settingsdialog.py:220
+#: src/settingsdialog.py:225
 msgid "Pisi Error"
 msgstr "Pisi Fehler"
 
 # Zweifel - habe hier Gesamt gelöscht, und Alle hineingeschrieben (kh)
-#: src/grouplist.py:41 src/tray.py:69 src/tray.py:195 src/tray.py:223
+#: src/grouplist.py:41
+#: src/tray.py:69
+#: src/tray.py:195
+#: src/tray.py:223
 msgid "All"
 msgstr "Alle"
 
@@ -104,7 +113,7 @@ msgstr "Hauptfenster zeigen"
 
 #: src/mainwidget.py:75
 msgid "All Packages are up to date"
-msgstr ""
+msgstr "Alle Pakete sind auf dem neuesten Stand!"
 
 #: src/mainwidget.py:136
 msgid "All Updates"
@@ -138,8 +147,11 @@ msgstr "Sie sind für diesen Vorgang nicht autorisiert."
 msgid "Package not found. It may be upgraded in or removed from the repository. Please try upgrading repository informations."
 msgstr "Paket nicht gefunden. Möglicherweise ist es im Depot aktualisiert oder entfernt worden. Bitte versuchen Sie die Depot-Information zu aktualisieren."
 
-#: src/mainwindow.py:74 src/mainwindow.py:79 src/mainwindow_kde4.py:94
-#: src/mainwindow_kde4.py:102 src/statemanager.py:130
+#: src/mainwindow.py:74
+#: src/mainwindow.py:79
+#: src/mainwindow_kde4.py:94
+#: src/mainwindow_kde4.py:102
+#: src/statemanager.py:130
 msgid "Currently your basket is empty."
 msgstr "Im Augenblick ist Ihr Korb leer."
 
@@ -151,27 +163,33 @@ msgstr "Datei"
 msgid "Settings"
 msgstr "Einstellungen"
 
-#: src/mainwindow.py:98 src/mainwindow.py:104
+#: src/mainwindow.py:98
+#: src/mainwindow.py:104
 msgid "Help"
 msgstr "Hilfe"
 
-#: src/mainwindow.py:100 src/tray.py:189
+#: src/mainwindow.py:100
+#: src/tray.py:189
 msgid "Quit"
 msgstr "Verlassen"
 
-#: src/mainwindow.py:113 src/mainwindow_kde4.py:118
+#: src/mainwindow.py:113
+#: src/mainwindow_kde4.py:118
 msgid "Show Installable Packages"
 msgstr "Neue Pakete anzeigen"
 
-#: src/mainwindow.py:123 src/mainwindow_kde4.py:124
+#: src/mainwindow.py:123
+#: src/mainwindow_kde4.py:124
 msgid "Show Installed Packages"
 msgstr "Installierte Pakete anzeigen"
 
-#: src/mainwindow.py:132 src/mainwindow_kde4.py:129
+#: src/mainwindow.py:132
+#: src/mainwindow_kde4.py:129
 msgid "Show Upgradable Packages"
 msgstr "Upgrades anzeigen"
 
-#: src/mainwindow.py:142 ui/ui_settingsdialog.py:370
+#: src/mainwindow.py:142
+#: ui/ui_settingsdialog.py:370
 msgid "Package Manager Settings"
 msgstr "Einstellungen des Paket Managers"
 
@@ -195,10 +213,10 @@ msgstr "Beschreibung:"
 msgid "Website:"
 msgstr "Webseite"
 
-# oder Version?
+# geändert in Version, da passender! SW
 #: src/packagedelegate.py:67
 msgid "Release:"
-msgstr "Veröffentlichung:"
+msgstr "Version:"
 
 #: src/packagedelegate.py:68
 msgid "Repository:"
@@ -210,7 +228,7 @@ msgstr "Paketgrösse:"
 
 #: src/packagedelegate.py:70
 msgid "Installed Version:"
-msgstr "Installierte Version"
+msgstr "Installierte Version:"
 
 #: src/pm-install.py:47
 msgid "%prog packages_to_install"
@@ -223,7 +241,7 @@ msgstr "Vorgang - %1%"
 
 #: src/progressdialog.py:48
 msgid "configuring"
-msgstr "konfigurieren"
+msgstr "konfiguriere"
 
 #: src/progressdialog.py:48
 msgid "extracting"
@@ -247,23 +265,28 @@ msgstr "Paket %1 / %2: %3"
 msgid "<p align='center'>%1 / %2, %3</p>"
 msgstr "<p align='center'>%1 / %2, %3</p>"
 
-#: src/progressdialog.py:77 ui/ui_progressdialog.py:154
+#: src/progressdialog.py:77
+#: ui/ui_progressdialog.py:154
 msgid "<h3>Preparing PiSi...</h3>"
 msgstr "<h3>Vorbereitung PiSi...</h3>"
 
-#: src/progressdialog.py:81 ui/ui_progressdialog.py:159
+#: src/progressdialog.py:81
+#: ui/ui_progressdialog.py:159
 msgid "Status:"
 msgstr "Status:"
 
-#: src/progressdialog.py:82 ui/ui_progressdialog.py:156
+#: src/progressdialog.py:82
+#: ui/ui_progressdialog.py:156
 msgid "--  / --"
 msgstr "--  / --"
 
-#: src/progressdialog.py:83 ui/ui_progressdialog.py:155
+#: src/progressdialog.py:83
+#: ui/ui_progressdialog.py:155
 msgid "Time remaining:"
 msgstr "Verbleibende Zeit:"
 
-#: src/progressdialog.py:84 ui/ui_progressdialog.py:157
+#: src/progressdialog.py:84
+#: ui/ui_progressdialog.py:157
 msgid "--:--:--"
 msgstr "--:--:--"
 
@@ -315,8 +338,10 @@ msgstr "Depot wird aktualisiert"
 msgid "Updating Repository(s)"
 msgstr "Depot wird aktualisiert"
 
-#: src/statemanager.py:80 ui/ui_basketdialog.py:107
-#: ui/ui_mainwidget_kde4.py:93 ui/ui_mainwidget_x11.py:82
+#: src/statemanager.py:80
+#: ui/ui_basketdialog.py:107
+#: ui/ui_mainwidget_kde4.py:93
+#: ui/ui_mainwidget_x11.py:82
 msgid "Install Package(s)"
 msgstr "Paket(e) installieren"
 
@@ -364,7 +389,8 @@ msgstr "Ausgewählte Paket(e) sind zu entfernen:"
 msgid "You have selected the following package(s) to upgrade:"
 msgstr "Ausgewählte Paket(e) sind zu aktualisieren:"
 
-#: src/statemanager.py:105 ui/ui_basketdialog.py:104
+#: src/statemanager.py:105
+#: ui/ui_basketdialog.py:104
 msgid "Extra dependencies of the selected package(s) that are also going to be installed:"
 msgstr "Erforderliche Pakete, die zusätzlich installiert werden:"
 
@@ -399,7 +425,8 @@ msgstr "in Ihrem Korb."
 msgid "Selected packages [%1] are in conflict with each other. These packages can not be installed together."
 msgstr "Ausgewählte Pakete [%1] stehen in Konflikt miteinander. Diese Pakete können nicht zusammen installiert werden."
 
-#: src/statemanager.py:162 src/statemanager.py:170
+#: src/statemanager.py:162
+#: src/statemanager.py:170
 msgid "Conflict Error"
 msgstr "Konfliktfehler"
 
@@ -420,29 +447,30 @@ msgstr ""
 "\n"
 "Konfliktverursachende Pakete vom System entfernen?"
 
-#: src/tray.py:185 src/tray.py:214
+#: src/tray.py:185
+#: src/tray.py:214
 msgid "Update"
 msgstr "Aktualisieren"
 
 #: src/tray.py:199
-msgid "There are %1 updates available!"
-msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
-
-#: src/tray.py:199
 msgid "Updates"
 msgstr "Updates"
+
+#: src/tray.py:199
+msgid "There are %1 updates available!"
+msgstr "Es sind <b>%1</b> Aktualisierungen verfügbar!"
 
 #: src/tray.py:230
 msgid "There are <b>%1</b> updates available!"
 msgstr "Es sind <b>%1</b> Updates verfügbar!"
 
 #: src/tray.py:231
-msgid "Ignore"
-msgstr "Ignoriere"
-
-#: src/tray.py:231
 msgid "Show Updates"
 msgstr "Updates anzeigen"
+
+#: src/tray.py:231
+msgid "Ignore"
+msgstr "Ignoriere"
 
 #: ui/ui_appitem.py:57
 msgid "Application"
@@ -481,48 +509,59 @@ msgstr "Download Grösse:"
 msgid "<b>2.0 MB</"
 msgstr "<b>2.0 MB</"
 
-#: ui/ui_mainwidget_kde4.py:86 ui/ui_mainwidget_x11.py:75
+#: ui/ui_mainwidget_kde4.py:86
+#: ui/ui_mainwidget_x11.py:75
 #: ui/ui_pminstaller.py:33
 msgid "Form"
 msgstr "Form"
 
-#: ui/ui_mainwidget_kde4.py:87 ui/ui_mainwidget_x11.py:76
+#: ui/ui_mainwidget_kde4.py:87
+#: ui/ui_mainwidget_x11.py:76
 msgid "Category Panel"
 msgstr "Kategoriefeld"
 
-#: ui/ui_mainwidget_kde4.py:88 ui/ui_mainwidget_x11.py:77
+#: ui/ui_mainwidget_kde4.py:88
+#: ui/ui_mainwidget_x11.py:77
 msgid "Search Bar"
 msgstr "Suchleiste"
 
-#: ui/ui_mainwidget_kde4.py:89 ui/ui_mainwidget_x11.py:78
+#: ui/ui_mainwidget_kde4.py:89
+#: ui/ui_mainwidget_x11.py:78
 msgid "Click to search"
 msgstr "Geben Sie Ihre Suche ein"
 
-#: ui/ui_mainwidget_kde4.py:90 ui/ui_mainwidget_x11.py:79
+#: ui/ui_mainwidget_kde4.py:90
+#: ui/ui_mainwidget_x11.py:79
 msgid "Search Button"
 msgstr "Suchleiste"
 
-#: ui/ui_mainwidget_kde4.py:91 ui/ui_mainwidget_x11.py:80
+#: ui/ui_mainwidget_kde4.py:91
+#: ui/ui_mainwidget_x11.py:80
 msgid "Search"
 msgstr "Suche"
 
-#: ui/ui_mainwidget_kde4.py:92 ui/ui_mainwidget_x11.py:81
+#: ui/ui_mainwidget_kde4.py:92
+#: ui/ui_mainwidget_x11.py:81
 msgid "Action Button for current states action"
 msgstr "Aktionsknopf für den Status aktueller Vorgänge "
 
-#: ui/ui_mainwidget_kde4.py:94 ui/ui_mainwidget_x11.py:83
+#: ui/ui_mainwidget_kde4.py:94
+#: ui/ui_mainwidget_x11.py:83
 msgid "Toggler for selection all packages in Package List"
 msgstr "Umschalter für die Auswahl aller Pakete in der Paketliste"
 
-#: ui/ui_mainwidget_kde4.py:95 ui/ui_mainwidget_x11.py:84
+#: ui/ui_mainwidget_kde4.py:95
+#: ui/ui_mainwidget_x11.py:84
 msgid "Select all packages in this group"
 msgstr "Alle Pakete in dieser Gruppe auswählen"
 
-#: ui/ui_mainwidget_kde4.py:96 ui/ui_mainwidget_x11.py:85
+#: ui/ui_mainwidget_kde4.py:96
+#: ui/ui_mainwidget_x11.py:85
 msgid "Package List"
 msgstr "Paketliste"
 
-#: ui/ui_mainwidget_kde4.py:97 ui/ui_mainwidget_x11.py:86
+#: ui/ui_mainwidget_kde4.py:97
+#: ui/ui_mainwidget_x11.py:86
 msgid "Update Types"
 msgstr "Updatemöglichkeiten"
 
@@ -548,7 +587,8 @@ msgstr ""
 "</style></head><body style=\" font-family:'Droid Sans'; font-size:10pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">-- / --, -- KB/s</span></p></body></html>"
 
-#: ui/ui_progressdialog.py:165 ui/ui_settingsdialog.py:414
+#: ui/ui_progressdialog.py:165
+#: ui/ui_settingsdialog.py:414
 msgid "&Cancel"
 msgstr "&Abbrechen"
 
@@ -564,23 +604,23 @@ msgstr "Neues Depot hinzufügen"
 msgid "Name of the repository, e.g <b>pardus-devel</b>"
 msgstr "Name des Depots, z.B. <b>pardus-devel</b>"
 
-#: ui/ui_repodialog.py:57 ui/ui_settingsdialog.py:394
+#: ui/ui_repodialog.py:57
+#: ui/ui_settingsdialog.py:394
 msgid "Repository Name"
 msgstr "Depot-Name"
 
-#: ui/ui_repodialog.py:58 ui/ui_settingsdialog.py:395
+#: ui/ui_repodialog.py:58
+#: ui/ui_settingsdialog.py:395
 msgid "Repository Address"
 msgstr "Depot-Adresse"
 
 #: ui/ui_repodialog.py:59
-#, fuzzy
 msgid "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/pardus-2009/pisi-index.xml.bz2"
+msgstr "http://packages.pardus.org.tr/pardus-2009.2/pisi-index.xml.bz2"
 
 #: ui/ui_repodialog.py:60
-#, fuzzy
 msgid "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
-msgstr "http://paketler.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
+msgstr "http://packages.pardus.org.tr/contrib-2009/pisi-index.xml.bz2"
 
 #: ui/ui_settingsdialog.py:371
 msgid "Package list"
@@ -664,9 +704,7 @@ msgstr "Wähle..."
 
 #: ui/ui_settingsdialog.py:391
 msgid "Clearing the disk cache will remove all downloaded software. This will not delete installed software or affect your system stability."
-msgstr ""
-"Durch das leeren des Festplatten-Caches werden die heruntergeladenen Programme entfernt.  \n"
-"Die installierten Programme werden dadurch nicht gelöscht und es wird auch keine Auswirkung auf die Systemstabilität haben."
+msgstr "Durch das Leeren des Festplatten-Caches werden die heruntergeladenen Programme entfernt. Die installierten Programme werden dadurch nicht gelöscht, und es wird auch keine Auswirkung auf die Systemstabilität haben."
 
 #: ui/ui_settingsdialog.py:392
 msgid "C&lean disk cache now"
@@ -700,7 +738,8 @@ msgstr "&Depots"
 msgid "HTTP proxy server:"
 msgstr "HTTP-Proxy-Server:"
 
-#: ui/ui_settingsdialog.py:402 ui/ui_settingsdialog.py:405
+#: ui/ui_settingsdialog.py:402
+#: ui/ui_settingsdialog.py:405
 #: ui/ui_settingsdialog.py:407
 msgid "Port:"
 msgstr "Port:"
@@ -741,15 +780,13 @@ msgstr "&Hilfe"
 msgid "&OK"
 msgstr "&OK"
 
-# Zweifel - oder Vorgangs/Aktions-Report/ Bericht ? Zusammenfassung finde ich
-# nicht gut
 #: ui/ui_summarydialog.py:49
 msgid "Operation Summary"
 msgstr "Aktions-Report"
 
 #: ui/ui_summarydialog.py:50
 msgid "You can start the new installed application by double-clicking on the list below or later from the applications menu."
-msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklick in diesem Fenster starten, oder starten Sie die Programme wie gewohnt vom Systemmenü aus."
+msgstr "Sie können jetzt die neu installierten Programme durch einen Doppelklick in diesem Fenster starten, oder Sie starten die Programme wie gewohnt vom Systemmenü aus."
 
 #: ui/ui_summarydialog.py:51
 msgid "&Ok"
@@ -771,17 +808,27 @@ msgstr "&Ok"
 #~ msgstr "Aktueller Betreuer"
 
 #~ msgid ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in this group</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Select all packages in "
+#~ "this group</p></body></html>"
 #~ msgstr ""
-#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+#~ "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/"
+#~ "REC-html40/strict.dtd\">\n"
+#~ "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/"
+#~ "css\">\n"
 #~ "p, li { white-space: pre-wrap; }\n"
-#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser Gruppe auswählen</p></body></html>"
+#~ "</style></head><body style=\" font-family:'Droid Sans'; font-size:8pt; "
+#~ "font-weight:400; font-style:normal;\">\n"
+#~ "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-"
+#~ "right:0px; -qt-block-indent:0; text-indent:0px;\">Alle Pakete aus dieser "
+#~ "Gruppe auswählen</p></body></html>"
 
 #~ msgid "Delete"
 #~ msgstr "Löschen"
