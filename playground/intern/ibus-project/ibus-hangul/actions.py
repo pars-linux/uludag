@@ -16,7 +16,7 @@ def build():
     autotools.make()
 
 def install():
-    autotools.rawInstall("DESTDIR=%s libexecdir=%s" %(get.installDIR(), get.libexecDIR()))
+    autotools.rawInstall("DESTDIR=%s libexecdir=/%s" %(get.installDIR(), get.libexecDIR()))
 
     pisitools.dodoc("AUTHORS", "ChangeLog", "COPYING", "NEWS", "README")
 
