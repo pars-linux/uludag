@@ -18,6 +18,9 @@
             <Dependency>ibus-devel</Dependency>
             <Dependency>libhangul-devel</Dependency>
         </BuildDependencies>
+        <Patches>
+            <Patch level="1">no-compile-hack.patch</Patch>
+        </Patches>
     </Source>
 
     <Package>
