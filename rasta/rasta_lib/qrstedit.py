@@ -18,7 +18,7 @@ import sys
 import enchant
 
 from PyQt4.Qt import *
-from PyQt4.QtCore import pyqtSignal, QChar
+from PyQt4.QtCore import pyqtSignal, QChar, QPropertyAnimation
 
 # i18n Support
 import gettext
@@ -28,7 +28,7 @@ class RstTextEdit(QPlainTextEdit):
 
     def __init__(self, *args):
         QPlainTextEdit.__init__(self, *args)
-        self.lineNumberArea = LineNumber(self)
+        LineNumber(self)
 
         # Default dictionary based on the current locale.
         self.dict = enchant.Dict()
@@ -37,6 +37,9 @@ class RstTextEdit(QPlainTextEdit):
 
         self.cursorPositionChanged.connect(self.highlightCurrentLine)
         self.highlightCurrentLine()
+
+        insertShortcut = QShortcut(Qt.Key_Insert, self)
+        insertShortcut.activated.connect(lambda: self.setOverwriteMode(not self.overwriteMode()))
 
     def mousePressEvent(self, event):
         if event.button() == Qt.RightButton:
