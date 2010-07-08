@@ -23,6 +23,7 @@
             <Dependency>alsa-lib</Dependency>
             <Dependency>pulseaudio</Dependency>
             <Dependency>espeak</Dependency>
+            <Dependency>flite</Dependency>
         </BuildDependencies>
     </Source>
 
@@ -35,6 +36,7 @@
             <Dependency>alsa-lib</Dependency>
             <Dependency>pulseaudio</Dependency>
             <Dependency>espeak</Dependency>
+            <Dependency>flite</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
