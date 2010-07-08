@@ -14,8 +14,8 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
-from gui.ScreenWidget import ScreenWidget
-from gui.menuWidget import Ui_menuWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.menuWidget import Ui_menuWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):

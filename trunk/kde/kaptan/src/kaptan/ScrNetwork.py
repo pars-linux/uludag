@@ -16,8 +16,8 @@ from PyQt4.QtGui import *
 from PyKDE4.kdecore import ki18n
 from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 
-from gui.ScreenWidget import ScreenWidget
-from gui.networkWidget import Ui_networkWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.networkWidget import Ui_networkWidget
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Network")

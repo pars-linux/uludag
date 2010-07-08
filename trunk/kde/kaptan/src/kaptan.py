@@ -7,26 +7,26 @@ from PyKDE4 import kdeui
 from PyQt4.QtCore import QTimeLine
 from PyKDE4.kdecore import ki18n, KAboutData, KCmdLineArgs, KConfig
 
-import gui, subprocess, os, dbus
+import kaptan, subprocess, os, dbus
 
-from gui.kaptanMain import Ui_kaptanUI
-import gui.ScrWelcome as welcomeWidget
-import gui.ScrMouse as mouseWidget
-import gui.ScrNetwork as networkWidget
-import gui.ScrWallpaper  as wallpaperWidget
-import gui.ScrGoodbye  as goodbyeWidget
-import gui.ScrStyle  as styleWidget
-import gui.ScrMenu  as menuWidget
-import gui.ScrSearch  as searchWidget
-import gui.ScrSummary  as summaryWidget
-import gui.ScrKeyboard  as keyboardWidget
-import gui.ScrPackage as packageWidget
-import gui.ScrSmolt as smoltWidget
+from kaptan.kaptanMain import Ui_kaptanUI
+import kaptan.ScrWelcome as welcomeWidget
+import kaptan.ScrMouse as mouseWidget
+import kaptan.ScrNetwork as networkWidget
+import kaptan.ScrWallpaper  as wallpaperWidget
+import kaptan.ScrGoodbye  as goodbyeWidget
+import kaptan.ScrStyle  as styleWidget
+import kaptan.ScrMenu  as menuWidget
+import kaptan.ScrSearch  as searchWidget
+import kaptan.ScrSummary  as summaryWidget
+import kaptan.ScrKeyboard  as keyboardWidget
+import kaptan.ScrPackage as packageWidget
+import kaptan.ScrSmolt as smoltWidget
 
-import gui.tools as tools
+import kaptan.tools as tools
 
-from gui.progressPie import DrawPie
-from gui.kaptanMenu import Menu
+from kaptan.progressPie import DrawPie
+from kaptan.kaptanMenu import Menu
 
 
 class Kaptan(QtGui.QWidget):

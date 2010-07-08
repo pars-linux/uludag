@@ -15,9 +15,9 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KGlobal, KConfig
 #from PyKDE4.kutils import KCModuleInfo, KCModuleProxy
 import subprocess, sys
-from gui.ScreenWidget import ScreenWidget
-from gui.goodbyeWidget import Ui_goodbyeWidget
-import gui.ScrSmolt as smoltWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.goodbyeWidget import Ui_goodbyeWidget
+import kaptan.ScrSmolt as smoltWidget
 
 sys.path.append('/usr/kde/4/share/apps/migration/')
 from migration.utils import partition

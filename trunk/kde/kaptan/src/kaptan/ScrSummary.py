@@ -16,19 +16,19 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import QMessageBox
 from PyKDE4.kdecore import ki18n, KConfig
 import subprocess,os, dbus
-from gui.ScreenWidget import ScreenWidget
-from gui.summaryWidget import Ui_summaryWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.summaryWidget import Ui_summaryWidget
 from PyKDE4 import kdeui
 # import other widgets to get the latest configuration
-import gui.ScrWallpaper as wallpaperWidget
-import gui.ScrMouse as mouseWidget
-import gui.ScrWallpaper  as wallpaperWidget
-import gui.ScrStyle  as styleWidget
-import gui.ScrMenu  as menuWidget
-import gui.ScrSearch  as searchWidget
-import gui.ScrSmolt  as smoltWidget
+import kaptan.ScrWallpaper as wallpaperWidget
+import kaptan.ScrMouse as mouseWidget
+import kaptan.ScrWallpaper  as wallpaperWidget
+import kaptan.ScrStyle  as styleWidget
+import kaptan.ScrMenu  as menuWidget
+import kaptan.ScrSearch  as searchWidget
+import kaptan.ScrSmolt  as smoltWidget
 
-import gui.tools as tools
+import kaptan.tools as tools
 
 class Widget(QtGui.QWidget, ScreenWidget):
     title = ki18n("Summary")

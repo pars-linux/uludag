@@ -16,10 +16,10 @@ from PyQt4 import QtGui
 from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KConfig
 
-import gui.ScrSummary  as summaryWidget
-import gui.ScrSummary  as summaryWidget
-from gui.ScreenWidget import ScreenWidget
-from gui.keyboardWidget import Ui_keyboardWidget
+import kaptan.ScrSummary  as summaryWidget
+import kaptan.ScrSummary  as summaryWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.keyboardWidget import Ui_keyboardWidget
 import subprocess
 
 from pardus import localedata

@@ -47,7 +47,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="raw.qrc">:/raw/pics/kde.png</pixmap>
+      <pixmap resource="../data/kaptan.qrc">:/raw/pics/kde.png</pixmap>
      </property>
     </widget>
    </item>
@@ -270,7 +270,7 @@ border: 1px solid rgb(255, 255, 255);
   </layout>
  </widget>
  <resources>
-  <include location="raw.qrc"/>
+  <include location="../data/kaptan.qrc"/>
  </resources>
  <connections/>
 </ui>
