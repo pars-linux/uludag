@@ -109,6 +109,20 @@ class Installer():
         system_drive_root = '%s\\' % self.mainEngine.compatibility.OS.SystemDrive
         return os.path.join(system_drive_root, self.grub_loader_file)
 
+    def backup_boot_ini(self, boot_ini_path):
+        """
+        Backups boot.ini file at given path.
+        Precondition: boot_ini_path exists.
+        """
+        destination = os.path.join(self.getInstallationRoot(), 'backup')
+        try:
+            shutil.copy(boot_ini_path, destination)
+        except IOError as e:
+            log.error('Could not copy boot.ini: %s' % e)
+            return False
+        log.debug('Boot.ini backup completed.')
+        return True
+
     def modify_boot_ini(self):
         """
         Windows 2000, Windows XP, Windows 2003 Server has boot.ini under primary
@@ -120,11 +134,15 @@ class Installer():
         system_drive_root = '%s\\' % os.getenv('SystemDrive')
         # alternative is self.mainEngine.compatibility.OS.SystemDrive
         boot_ini_path = os.path.join(system_drive_root, 'boot.ini')
+
         # TODO: Fail-safe and better path join.
 
         if not os.path.isfile(boot_ini_path):
             log.exception('Could not locate boot.ini')
             return False
+
+        # Backup bootini file
+        self.backup_boot_ini(boot_ini_path)
 
         # make boot.ini editable.
         attrib_path = os.path.join(os.getenv('WINDIR'), 'System32', 'attrib.exe')
