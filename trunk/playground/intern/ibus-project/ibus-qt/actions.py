@@ -13,8 +13,9 @@ def setup():
     cmaketools.configure()
 
 def build():
-    autotools.make()
+    cmaketools.make()
 
 def install():
     autotools.rawInstall("DESTDIR=%s" % get.installDIR())
-
+    
+    pisitools.dodoc("AUTHORS", "ChangeLog", "COPYING", "NEWS", "README")
