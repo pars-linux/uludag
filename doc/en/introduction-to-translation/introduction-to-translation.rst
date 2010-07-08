@@ -143,7 +143,7 @@ Adding Non-Existing Translation File
    If there is no translation file for your language, please do the following
    steps:
 
-   * Download the POT file and copy it as your own language's **po** file.
+   * Download the POT file and rename the file to your locale:
 
       .. image:: images/dl-pot.png
 
@@ -152,7 +152,7 @@ Adding Non-Existing Translation File
 
       .. image:: images/add-new.png
 
-   * Type your new file name in the field marked replacing the file name with
+   * Type your new file name in the marked field and replace the file name with
      your locale. See the image:
 
        **po/your_lang.po**
