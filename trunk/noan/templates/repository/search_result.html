@@ -4,6 +4,8 @@
 {% block content %}
 
 
+{% ifnotequal sources_len "0" %}
+
 <h1>Source Packages</h1>
 <table>
     <tr>
@@ -11,7 +13,7 @@
         <th>{% trans "Summary" %}</th>
         <th>{% trans "Description" %}</th>
     </tr>
-    {% for package in packages_list|slice:sources_len  %}
+    {% for package in packages_list  %}
         <tr>
             <td><a href="{{ package.get_url }}">{{ package.name }}</a></td>
             
@@ -38,6 +40,8 @@
     {% endfor %}
 </table>
 
+{% else %}
+
 <h1>Binary Packages</h1>
 <table>
     <tr>
@@ -45,21 +49,21 @@
         <th>{% trans "Summary" %}</th>
         <th>{% trans "Description" %}</th>
     </tr>
-    {% for package in packages_list|slice:binary_len  %}
+    {% for package in packages_list %}
         <tr>
-            <td><a href="{{ package.package.source.get_url }}">{{ package.package.name }}</a></td>
+            <td><a href="{{ package.source.get_url }}">{{ package.name }}</a></td>
             
-            {% for summary in package.package.source.info.summary_set.all %}
+            {% for summary in package.source.info.summary_set.all %}
             {% ifequal summary.language LANGUAGE_CODE %}
                 <td>{{ summary.text }}</td>
             {% else %}
-                {% ifequal package.package.source.info.summary_set.count 1 %}
+                {% ifequal package.source.info.summary_set.count 1 %}
                     <td></td>
                 {% endifequal %}
             {% endifequal %}
             {% endfor %}
             
-            {% for description in package.package.source.info.description_set.all %}
+            {% for description in package.source.info.description_set.all %}
             {% ifequal description.language LANGUAGE_CODE %}
                 <td>{{ description.text }}</td>
             {% else %}
@@ -71,6 +75,8 @@
         </tr>
     {% endfor %}
 </table>
+
+{% endifnotequal %}
 
     <p></p>
 

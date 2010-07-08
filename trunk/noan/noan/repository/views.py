@@ -297,21 +297,18 @@ def search(request):
             if unified_sources and not unified_binaries:
                 result = unified_sources
                 sources_len = unified_sources.count()
+                binary_len = 0
             elif unified_binaries and not unified_sources:
                 result = unified_binaries
-                sources_len = 1
+                binary_len = unified_binaries.count()
+                sources_len = 0
             else:
                 # create an empty result
                 result = Source.objects.filter(id=-1)
-                sources_len = 1
-            #if unified_binaries and unified_sources:
-                # this part is not working, different type of querysets can not be combined, i should find a solution for it
-            #    result = unified_sources | unified_binaries
-            #    sources_len = unified_sources.count()
+                sources_len = result.count()
 
-            # format the sources_len so as to slice the source package part at the template
-            sources_len = '":' + str(sources_len) + '"'
-            binary_len = '"' + str(sources_len) + ':"'
+            sources_len = str(sources_len)
+            binary_len = str(binary_len)
 
             # create unique ids for the cache query result
             values = str(result.values())
