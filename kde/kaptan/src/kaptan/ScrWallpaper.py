@@ -22,7 +22,7 @@ from kaptan.ScreenWidget import ScreenWidget
 from kaptan.wallpaperWidget import Ui_wallpaperWidget
 from widgets import WallpaperItemWidget
 
-from desktopparser import DesktopParser
+from kaptan.desktopparser import DesktopParser
 from ConfigParser import ConfigParser
 
 

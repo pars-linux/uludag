@@ -73,6 +73,11 @@ class Build(build):
         # Copy codes
         print "Copying PYs..."
         os.system("cp -R src build/")
+
+        # Copy kde-themes
+        print "Copying kde-themes..."
+        os.system("cp -R data/kde-themes build/kaptan/")
+
         # Copy compiled UIs and RCs
         print "Generating UIs..."
         for filename in glob.glob1("ui", "*.ui"):
@@ -104,7 +109,7 @@ class Install(install):
         # Install desktop files
         print "Installing desktop files..."
 
-        for flename in glob.glob("data/*.desktop.in"):
+        for filename in glob.glob("data/*.desktop.in"):
             os.system("intltool-merge -d po %s %s" % (filename, filename[:-3]))
 
         for filename in glob.glob1("data", "*.desktop"):
