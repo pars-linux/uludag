@@ -13,8 +13,8 @@ class Menu:
         self.position = 0
         self.menuText = ""
         self.menuNode = " <span style='font-size:%spt; %s'>%s</span> "
-        self.seperatorL = "<span style='font-size:11pt'><img src=':/raw/pics/menu-arrow-left.png'></span>"
-        self.seperatorR = "<span style='font-size:11pt'><img src=':/raw/pics/menu-arrow-right.png'></span>"
+        self.seperatorL = "<span style='font-size:11pt'><img src=':/raw/pixmap/menu-arrow-left.png'></span>"
+        self.seperatorR = "<span style='font-size:11pt'><img src=':/raw/pixmap/menu-arrow-right.png'></span>"
 
         # get titles
         self.titles = titles
