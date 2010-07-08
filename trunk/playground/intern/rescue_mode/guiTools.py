@@ -69,7 +69,8 @@ class listDialog(urwid.Frame):
     
   def addMenuItem(self,label,function,args=None):
     item= urwid.AttrWrap(MenuItem(" - "+label,function,args),self.palette[0],self.palette[1])
-    self.simpleList.insert(0,item)
+   # self.simpleList.insert(0,item)
+    self.simpleList.append(item)
     
   def getContents(self):
     return self.simpleList.contents
