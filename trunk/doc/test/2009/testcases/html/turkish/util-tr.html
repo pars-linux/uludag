@@ -71,7 +71,11 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
   lrzip -d test_lrzip.lrz -O test/
 </PRE></LI></OL><!--TOC section Crypt alt bileşeni-->
 <H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc3">3</A>  Crypt alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">
-mcrypt paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
+johntripper paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz bir şekilde çalıştığını gözlemleyin.
+</P><PRE CLASS="verbatim"> unmask 077
+ sudo unshadow /etc/passwd /etc/shadow &gt; mypasswd
+ sudo john -si mypasswd 
+</PRE></LI><LI CLASS="li-enumerate">mcrypt paketi kurulumu sonrası:<P>Aşağıda bulunan komutların sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">  mcrypt --list
   wget http://cekirdek.pardus.org.tr/~semen/dist/test/util/test_mcrypt
   mcrypt -a blowfish test_mcrypt
@@ -122,7 +126,9 @@ Aşağıda bulunan paketler sadece kurulum testine tabidir.
 sudo pisi it amsn
 bash: amsn: command not found
 </PRE></LI></OL><!--TOC section Misc alt bileşeni-->
-<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Misc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">multitail paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
+<H2 CLASS="section"><!--SEC ANCHOR --><A NAME="htoc7">7</A>  Misc alt bileşeni</H2><!--SEC END --><OL CLASS="enumerate" type=1><LI CLASS="li-enumerate">Aşağıda bulunan paketler sadece kurulum testine tabidir.
+<PRE CLASS="verbatim"> augeas
+</PRE></LI><LI CLASS="li-enumerate">multitail paketi kurulumu sonrası:<P>Aşağıda bulunan komutun sorunsuz çalıştığını gözlemleyin.
 </P><PRE CLASS="verbatim">sudo multitail /var/log/comar3/trace.log 
 </PRE></LI><LI CLASS="li-enumerate">strace paketi kurulumu sonrası: <P>Aşağıda bulunan komutununu a2p bin dosyasının sistem çağrılarını, bu çağrılara verilen parametreleri ve dönüş değerlerini gösterdiğini gözlemleyin.
 </P><PRE CLASS="verbatim">strace /usr/bin/a2p 
