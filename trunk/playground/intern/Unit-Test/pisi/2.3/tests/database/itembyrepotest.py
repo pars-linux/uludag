@@ -54,7 +54,7 @@ class ItemByRepoTestCase(testcase.TestCase):
         assert self.testdb.tdb.has_item("acpica")
 
     def testWhichRepo(self):
-        assert self.testdb.tdb.which_repo("ethtool") == "pardus-2007"
+        assert self.testdb.tdb.which_repo("aggdraw") == "pardus-2007"
         assert self.testdb.tdb.which_repo("kmess") == "contrib-2007"
 
     def testGetItemAndRepository(self):
@@ -70,7 +70,6 @@ class ItemByRepoTestCase(testcase.TestCase):
         db = pisi.db.itembyrepo.ItemByRepo({})
         assert db.item_repos("caracal") == ["caracal"]
         # repos were created by testcase.py
-        print db.item_repos()
         assert db.item_repos() == ['pardus-2007', 'contrib-2007', 'pardus-2007-src']
 
     def testGetItem(self):

@@ -14,8 +14,12 @@ import testcase
 import pisi
 
 class SourceDBTestCase(testcase.TestCase):
-    
-    sourcedb = pisi.db.sourcedb.SourceDB()
+
+    def setUp(self):
+        testcase.TestCase.setUp(self)
+
+        self.sourcedb = pisi.db.sourcedb.SourceDB()
+
 
     def testListSources(self):
         assert set(self.sourcedb.list_sources()) == set(['ethtool', 'nfdump', 'shadow', 'libidn', 
