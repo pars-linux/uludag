@@ -10,7 +10,14 @@ from pisi.actionsapi import pisitools
 
 
 def setup():
-    autotools.configure("--disable-static")  
+    autotools.configure("--disable-static \
+                         --without-ibmtts \
+                         --without-ivona \
+                         --without-nas \
+                         --with-alsa \
+                         --with-espeak \
+                         --with-libao \
+                         --with-pulse")
 
 def build():
     autotools.make()

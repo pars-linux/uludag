@@ -11,18 +11,30 @@
         </Packager>
         <License>GPLv2</License>
         <IsA>service</IsA>
+        <IsA>app:console</IsA>
+        <IsA>library</IsA>
         <Summary>OpenTTS speech server</Summary>
         <Description>The OpenTTS project provides a device independent layer for speech synthesis. It provides a simple interface for client applications (applications that want to speak), and speech synthesizers.</Description>
         <Archive sha1sum="889363a3c540dd4e7b314f3ea393f68a4091f04a" type="targz">http://files.opentts.org/opentts/opentts-0.1.tar.gz</Archive>
         <BuildDependencies>
-            <Dependency versionFrom="1.0">dotconf</Dependency>
+            <Dependency>dotconf</Dependency>
+            <Dependency>libsndfile</Dependency>
+            <Dependency>libao</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>pulseaudio</Dependency>
+            <Dependency>espeak</Dependency>
         </BuildDependencies>
     </Source>
 
     <Package>
         <Name>opentts</Name>
         <RuntimeDependencies>
-            <Dependency versionFrom="1.0">dotconf</Dependency>
+            <Dependency>dotconf</Dependency>
+            <Dependency>libsndfile</Dependency>
+            <Dependency>libao</Dependency>
+            <Dependency>alsa-lib</Dependency>
+            <Dependency>pulseaudio</Dependency>
+            <Dependency>espeak</Dependency>
         </RuntimeDependencies>
         <Files>
             <Path fileType="executable">/usr/bin</Path>
@@ -31,8 +43,8 @@
             <Path fileType="data">/usr/lib/pkgconfig</Path>
             <Path fileType="header">/usr/include</Path>
             <Path fileType="library">/usr/lib</Path>
-            <Path fileType="library">/usr/lib/python2.6</Path>
-            <Path fileType="config">/usr/share/opentts</Path>
+            <Path fileType="library">/usr/lib/python2.*</Path>
+            <Path fileType="data">/usr/share/opentts</Path>
             <Path fileType="config">/etc/opentts</Path>
         </Files>
     </Package>
