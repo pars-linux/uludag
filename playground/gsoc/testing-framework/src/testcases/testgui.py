@@ -22,7 +22,7 @@ class TestGUI:
         while counter < totalCases:
             print colorize('Case {0} of {1}',
                            'bold').format(counter+1, totalCases)
-            print 'Package: ', colorize('{0}', 'bold').format(''.join(self.packagelist))
+            print 'Package: ', colorize('{0}', 'bold').format(''.join(self.packagelist[counter]))
             downloadList = []
             for downloadTag in case[counter].getiterator('download'):
                 downloadList.append(downloadTag.text)
