@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from shellTools import run_quiet
+from os import chmod
+from pardus import procutils
 
 def installGrub(pardusDisk,option):
   
@@ -29,7 +31,7 @@ grub --no-floppy --batch < /tmp/_grub"""
   fd.write(shell)
         
   fd.close()
-  os.chmod('/tmp/grub.sh',0100)
+  chmod('/tmp/grub.sh',0100)
       
         
 #       f = file("/dev/null", "w")
