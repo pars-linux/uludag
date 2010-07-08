@@ -38,7 +38,7 @@
       <string/>
      </property>
      <property name="pixmap">
-      <pixmap resource="raw.qrc">:/raw/pics/preferences-desktop-keyboard.png</pixmap>
+      <pixmap resource="../data/kaptan.qrc">:/raw/pics/preferences-desktop-keyboard.png</pixmap>
      </property>
     </widget>
    </item>
@@ -175,7 +175,7 @@ border: 1px solid rgb(236, 236, 236, 80);
   </layout>
  </widget>
  <resources>
-  <include location="raw.qrc"/>
+  <include location="../data/kaptan.qrc"/>
  </resources>
  <connections/>
 </ui>

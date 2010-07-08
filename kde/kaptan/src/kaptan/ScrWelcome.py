@@ -16,8 +16,8 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n
 from PyKDE4.kdecore import i18n
 
-from gui.ScreenWidget import ScreenWidget
-from gui.welcomeWidget import Ui_welcomeWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.welcomeWidget import Ui_welcomeWidget
 
 import subprocess
 

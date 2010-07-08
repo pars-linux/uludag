@@ -16,8 +16,8 @@ from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 
 import dbus
 
-from gui.ScreenWidget import ScreenWidget
-from gui.searchWidget import Ui_searchWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.searchWidget import Ui_searchWidget
 
 
 class Widget(QtGui.QWidget, ScreenWidget):

@@ -15,8 +15,8 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KConfig
 from PyKDE4.kdeui import KGlobalSettings
 
-from gui.ScreenWidget import ScreenWidget
-from gui.mouseWidget import Ui_mouseWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.mouseWidget import Ui_mouseWidget
 
 from Xlib import display
 RIGHT_HANDED, LEFT_HANDED = range(2)

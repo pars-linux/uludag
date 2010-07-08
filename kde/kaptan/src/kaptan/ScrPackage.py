@@ -16,8 +16,8 @@ from PyKDE4.kdecore import ki18n, KConfig, KProcess
 
 from PyKDE4 import kdeui
 
-from gui.ScreenWidget import ScreenWidget
-from gui.packageWidget import Ui_packageWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.packageWidget import Ui_packageWidget
 
 import subprocess
 import pisi

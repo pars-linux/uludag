@@ -17,8 +17,8 @@ from PyKDE4 import kdeui
 
 import os, sys, Image, dbus, glob
 
-from gui.ScreenWidget import ScreenWidget
-from gui.styleWidget import Ui_styleWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.styleWidget import Ui_styleWidget
 from stylewidget import StyleItemWidget
 
 from desktopparser import DesktopParser

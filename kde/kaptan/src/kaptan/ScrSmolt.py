@@ -17,8 +17,8 @@ from PyQt4 import QtGui
 from PyQt4 import QtCore
 
 from PyKDE4 import kdecore
-from gui.ScreenWidget import ScreenWidget
-from gui.smoltWidget import Ui_smoltWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.smoltWidget import Ui_smoltWidget
 
 sys.path.append('/usr/share/smolt/client')
 

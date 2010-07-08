@@ -18,8 +18,8 @@ from PyQt4.QtCore import *
 from PyKDE4.kdecore import ki18n, KStandardDirs, KGlobal, KConfig
 import os, sys, subprocess
 
-from gui.ScreenWidget import ScreenWidget
-from gui.wallpaperWidget import Ui_wallpaperWidget
+from kaptan.ScreenWidget import ScreenWidget
+from kaptan.wallpaperWidget import Ui_wallpaperWidget
 from widgets import WallpaperItemWidget
 
 from desktopparser import DesktopParser
