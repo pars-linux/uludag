@@ -343,7 +343,7 @@ def search(request):
 
     elif request.method == 'GET' and request.GET.get('page'):
 
-        result_id = request.session.GET('result_id')
+        result_id = request.session.get('result_id')
 
         try:
             result = cache.get(result_id)['tmp']
@@ -351,8 +351,8 @@ def search(request):
         except TypeError:
             return HttpResponseRedirect('./')
 
-        sources_len_id = request.session.GET('sources_len_id')
-        binary_len_id = request.session.GET('binary_len_id')
+        sources_len_id = request.session.get('sources_len_id')
+        binary_len_id = request.session.get('binary_len_id')
 
         sources_len = cache.get(sources_len_id)
         binary_len = cache.get(binary_len_id)
