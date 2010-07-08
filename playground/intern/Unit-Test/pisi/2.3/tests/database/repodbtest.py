@@ -15,8 +15,9 @@ import pisi
 
 class RepoDBTestCase(testcase.TestCase):
 
-    repodb = pisi.db.repodb.RepoDB()
-#    print repodb.list_repos()
+    def setUp(self):
+        testcase.TestCase.setUp(self)
+        self.repodb = pisi.db.repodb.RepoDB()
 
     def testAddRemoveRepo(self):
 #	print self.repodb.list_repos()
@@ -25,8 +26,8 @@ class RepoDBTestCase(testcase.TestCase):
         self.repodb.add_repo("contrib-2007-src", repo)
         assert "contrib-2007-src" in self.repodb.list_repos()
         self.repodb.remove_repo("contrib-2007-src")
-        assert "contrib-2007" not in self.repodb.list_repos()
-        assert "pardus-2007" not in self.repodb.list_repos()
+        assert "contrib-2007" in self.repodb.list_repos()
+        assert "pardus-2007" in self.repodb.list_repos()
         assert "contrib-2007-src" not in self.repodb.list_repos()
 
     def testAddRemoveCycle(self):
@@ -40,22 +41,20 @@ class RepoDBTestCase(testcase.TestCase):
         assert "test-repo" not in self.repodb.list_repos()
 
     def testListRepos(self):
-        assert set(self.repodb.list_repos()) == set(['pardus-2009.2', 'contrib'])
+        assert set(self.repodb.list_repos()) == set(['pardus-2007', 'contrib-2007', 'pardus-2007-src'])
 
     def testGetSourceRepos(self):
-#	print self.repodb.get_source_repos()
-        assert set(self.repodb.get_source_repos()) == set()
+        assert set(self.repodb.get_source_repos()) == set(['pardus-2007-src'])
 
 
 
 #burda repo uyumsuzluğu var!!!
     def testGetBinaryRepos(self):
-#	print self.repodb.get_binary_repos()
-#        assert set(self.repodb.get_binary_repos()) == set(['pardus-2009.2', 'contrib'])
-	pass
+        assert set(self.repodb.get_binary_repos()) == set(['pardus-2007', 'contrib-2007'])
       
     def testGetRepo(self):
-        repo = self.repodb.get_repo("pardus-2007")
+#	print "bsd bsd:  "
+	repo = self.repodb.get_repo("pardus-2007")
         uri = repo.indexuri
         assert uri.get_uri() == "repos/pardus-2007-bin/pisi-index.xml.bz2"
 

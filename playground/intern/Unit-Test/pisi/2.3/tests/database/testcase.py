@@ -1,6 +1,7 @@
 import unittest
 
 import pisi
+import pisi.context as ctx
 
 class TestCase(unittest.TestCase):
 
@@ -11,6 +12,9 @@ class TestCase(unittest.TestCase):
         pisi.api.set_options(options)
         pisi.api.set_comar(False)
 
+        ctx.config.values.general.distribution = "Pardus"
+        ctx.config.values.general.distribution_release = "2007"
+
         if not pisi.api.list_repos():
             pisi.api.add_repo("pardus-2007", "repos/pardus-2007-bin/pisi-index.xml.bz2")
             pisi.api.add_repo("contrib-2007", "repos/contrib-2007-bin/pisi-index.xml.bz2")
@@ -18,4 +22,7 @@ class TestCase(unittest.TestCase):
             pisi.api.update_repo("pardus-2007")
             pisi.api.update_repo("contrib-2007")
             pisi.api.update_repo("pardus-2007-src")
+            
+            
+            
             

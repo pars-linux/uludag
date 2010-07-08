@@ -15,7 +15,9 @@ import pisi
 
 class PackageDBTestCase(testcase.TestCase):
     
-    packagedb = pisi.db.packagedb.PackageDB()
+    def setUp(self):
+        testcase.TestCase.setUp(self)
+        self.packagedb = pisi.db.packagedb.PackageDB()
 
     def testGetPackage(self):
         pkg = self.packagedb.get_package("ncftp", "pardus-2007")
