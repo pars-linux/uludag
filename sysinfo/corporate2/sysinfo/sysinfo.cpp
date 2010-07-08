@@ -235,14 +235,6 @@ void kio_sysinfoProtocol::get(const KURL & /*url*/)
     dynamicInfo += addToStock("network", i18n("Network Folders"), "remote:/" , "remote:/");
     dynamicInfo += finishStock();
 
-    // net info
-    int state = netInfo();
-    if (state >= 1) { // assume no network manager / networkstatus
-        dynamicInfo += startStock(i18n("Network"));
-        dynamicInfo += addToStock("network", netStatus(state));
-        dynamicInfo += finishStock();
-    }
-
     // memory info
     memoryInfo();
 
@@ -410,21 +402,6 @@ QString kio_sysinfoProtocol::diskInfo()
     return result;
 }
 
-
-int kio_sysinfoProtocol::netInfo() const
-{
-    DCOPRef nsd("kded", "networkstatus");
-    nsd.setDCOPClient(m_dcopClient);
-    DCOPReply reply = nsd.call("status");
-
-    if (reply.isValid())
-        return reply;
-
-    kdDebug() << k_funcinfo << "Reply is invalid" << endl;
-
-    return 0;
-}
-
 #include <GL/glx.h>
 
 bool isOpenGlSupported() {
@@ -517,22 +494,6 @@ bool kio_sysinfoProtocol::glInfo()
 
     pclose(fd);
     return true;
-}
-
-QString kio_sysinfoProtocol::netStatus(int code) const
-{
-    if (code == 1 || code == 2)
-        return i18n("Network is <strong>unreachable</strong>");
-    else if (code == 3 || code == 4 || code == 6)
-        return i18n("You are <strong>offline</strong>");
-    else if (code == 5)
-        return i18n("Network is <strong>shutting down</strong>");
-    else if (code == 7)
-        return i18n("<strong>Establishing</strong> connection to the network");
-    else if (code == 8)
-        return i18n("You are <strong>online</strong>");
-
-    return i18n("Unknown network status");
 }
 
 QString kio_sysinfoProtocol::readFromFile(const QString & filename, const QString & info, const char * sep, const bool getlast) const

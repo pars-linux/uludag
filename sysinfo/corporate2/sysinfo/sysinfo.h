@@ -130,18 +130,6 @@ private:
     QString diskInfo();
 
     /**
-     * Query the online status
-     * @return Unknown = 0, NoNetworks = 1, Unreachable, OfflineDisconnected,  OfflineFailed, ShuttingDown, Offline, Establishing, Online
-     */
-    int netInfo() const;
-
-    /**
-     * @return a verbose string containing the network status
-     * @see netInfo()
-     */
-    QString netStatus( int code ) const;
-
-    /**
      * Get info about kernel and OS version (uname)
      */
     void osInfo();

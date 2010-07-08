@@ -88,7 +88,6 @@ KSysinfoPart::KSysinfoPart( QWidget * parent, const char * name )
 
     rescanTimer->start( 20000, true );
 
-    connectDCOPSignal( "kded", "networkstatus", "statusChange(QString,int)", "rescan()", false );
     installEventFilter( this );
 }
 
